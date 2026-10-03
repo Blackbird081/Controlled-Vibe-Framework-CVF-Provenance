@@ -1,0 +1,57 @@
+{
+  "schemaVersion": "cvf.dispatchInputIdentity.v1",
+  "batchId": "CVF-NCR-S05-CONTROL-FIXTURE-DESIGN",
+  "dispatchBaseHead": "3ad98955772a12779f16adf512030479c5fcfe31",
+  "operatorInstruction": "Prepare one GC-018 pair for control-helper and fixture design with exact effect scope; user manually relays the work order; worker effects/commit remain forbidden",
+  "operatorInputDisposition": "Current task authorization for design only; no invented rights/listener/effects grant",
+  "inputIdentities": [
+    {
+      "path": "docs/reviews/CVF_CVF_NCR_C1_METADATA_COMPLETION_SOURCE_DELTA_COMPLETION_2026-10-03.md",
+      "rawSha256": "d7eb78ff39301218cf5fe07a2e556905ca8069d92bb5dd1168589b1f1f4c14cf",
+      "authorityClass": "GOVERNED_RETAINED_SOURCE"
+    },
+    {
+      "path": "docs/reference/CVF_NCR_VIDEO_COMPOSITION_READINESS_DESIGN_2026-10-03.md",
+      "rawSha256": "de3673a2f41695bfa83692095fd0d67f96cea924d48809aefd8b14266c8e6d87",
+      "authorityClass": "GOVERNED_RETAINED_SOURCE"
+    },
+    {
+      "path": "docs/reference/CVF_NCR_C1_METADATA_COMPLETION_SOURCE_DELTA_2026-10-03.md",
+      "rawSha256": "e94ea7abb7879be6cfb0a72a5a830a0a0ae6dff5fab8fe4565f0d116ab819269",
+      "authorityClass": "GOVERNED_RETAINED_SOURCE"
+    },
+    {
+      "path": "docs/reviews/evidence/cvf-ncr-c1-metadata-completion-source-delta-2026-10-03.json",
+      "rawSha256": "01282c741e247fc7aea350399038dcb5b493caf6d19e145e5f7d8edc46047aa1",
+      "authorityClass": "GOVERNED_RETAINED_SOURCE"
+    },
+    {
+      "path": "docs/reviews/CVF_CVF_NCR_C1_METADATA_SOURCE_DELTA_WORKER_RETURN_2026-10-03.md",
+      "rawSha256": "f2243c77c713020ea37ec5203e9af1380bacd47adf2bc523a4706ff1506a4f64",
+      "authorityClass": "GOVERNED_RETAINED_SOURCE"
+    },
+    {
+      "path": ".cvf/runtime/CVF_NCR_S05_C1_P1_PREPARATION_ENVELOPE_DRAFT_2026-10-03.md",
+      "rawSha256": "c97da396054ae245a9d96351c8f46867364f09a33003c4497f92516fc27a0d45",
+      "authorityClass": "LOCAL_PROPOSAL_NOT_CANONICAL"
+    },
+    {
+      "path": ".cvf/runtime/CVF_NCR_S05_C1_P1_R1_SETUP_ADMISSION_REVIEW_2026-10-03.md",
+      "rawSha256": "631fe81aab367ec00de090d00ab8c99bd420d0ad718de09efdc3555d07881b74",
+      "authorityClass": "LOCAL_PROPOSAL_NOT_CANONICAL"
+    },
+    {
+      "path": ".cvf/runtime/cvf-ncr-s05-c1-p1-r1-manifest-candidate-rev2-2026-10-03.json",
+      "rawSha256": "d2bdb31e8ae40b553fffdc6e271470a08958589cccbb0953dd2b6638d8a640c9",
+      "authorityClass": "LOCAL_PROPOSAL_NOT_CANONICAL"
+    }
+  ],
+  "workerOutputPaths": [
+    "docs/reference/CVF_NCR_S05_CONTROL_FIXTURE_DESIGN_2026-10-03.md",
+    "docs/reviews/evidence/cvf-ncr-s05-control-fixture-design-worker-2026-10-03.json",
+    "docs/reviews/CVF_CVF_NCR_S05_CONTROL_FIXTURE_DESIGN_WORKER_RETURN_2026-10-03.md"
+  ],
+  "inputClaimBoundary": "Ignored local drafts are evidence inputs, not authority; retained component identities not current runtime proof",
+  "costs": "UNKNOWN",
+  "publicExportDisposition": "DEFERRED_PRIVATE_ONLY"
+}
