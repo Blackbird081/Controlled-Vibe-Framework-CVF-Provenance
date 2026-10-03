@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_C1_BOUNDED_READINESS_ASSESSMENT_2026-10-03.md",
     "workOrderSha256": "d423f5f5b26b92ccfd42dc77930b469813484e872d3d5d820276282e9254bff9"
   },
-  "currentAuthoritySyncReason": "D105 readiness dispatch at a3359c1fc73f0b67fb4589df3b6ba6236e75f853; pair raw hashes bound; bounded metadata reads, no runtime admission.",
+  "currentAuthoritySyncReason": "D106 readiness closure at 12eb9ad045ae25cd4f33e2dc26e6dbe4a9ad62c9; pair historical. Next metadata/source-only packet; runtime not admitted.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
