@@ -1,0 +1,174 @@
+{
+ "schemaVersion": "cvf.s05.s1SupervisorSourceR1WorkerEvidence.v1",
+ "batchId": "CVF-NCR-S05-S1-SUPERVISOR-SOURCE-R1",
+ "executionBaseHead": "88b0e39df57f21f5df8e2226b8eb7e1e8d7ebb1e",
+ "materialCommit": "573fad2014e501bcc847bf0c39328daea3269cc6",
+ "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_S05_S1_SUPERVISOR_SOURCE_R1_2026-10-03.md",
+ "interfaceVersion": "local-supervisor-source@0.2.0",
+ "envelopeVersion": "local-supervisor-envelope@2",
+ "status": "SOURCE_PLAN_ONLY",
+ "claimLevel": "PASS_STATIC_ONLY",
+ "workerMode": "WORKER_MUST_NOT_COMMIT",
+ "sourceRoot": "D:\\UNG DUNG AI\\TOOL AI 2026\\CVF-NCR-S05-S1-SOURCE-R1-20261003",
+ "frozenOriginalRoot": "D:\\UNG DUNG AI\\TOOL AI 2026\\CVF-NCR-S05-S1-SOURCE-20261003",
+ "releaseIdentityChecks": {
+  "headEqualsReleasedHead": true,
+  "worktreeCleanAtStart": true,
+  "baselineSha256": "cecf0ad471b240dd4544c65617b8425864a0a5881a98c517f08e93e71e1f3d0f",
+  "workOrderSha256": "c81990478154c30d899dd96aa891a0b4e973d5bf509bd60e624c3882610351bc",
+  "contractSha256": "23a041243cdf87a4a4cf8aaecd5313d0d3cf70900359b26996bfe4c7a4270f98",
+  "inputReceiptSha256": "6640c48cd9b7b26695df8dff550a6d7bb99f2db8fc19f71c405dedffc6295de2",
+  "inputIdentitiesMatchReceipt": 7,
+  "preImplementationGate": "PASS (exit 0, COMPLIANT, 40.66s) before any write"
+ },
+ "rootSafetyRecord": {
+  "checkedAtUtc": "2026-10-03T11:28:52Z",
+  "targetExisted": false,
+  "ancestorsChecked": ["D:\\", "D:\\UNG DUNG AI", "D:\\UNG DUNG AI\\TOOL AI 2026"],
+  "anyAncestorReparsePoint": false,
+  "resolvedParentEqualsLiteral": true,
+  "parentOwner": "LAM-RUBY\\DELL (running user DELL)",
+  "cvfOutputsAbsent": true,
+  "limitation": "check instant only; no ACL, capacity or ownership certification"
+ },
+ "originalCustody": {
+  "beforeAnyWrite": "MATCH (sha256sum against the receipt ledger at startup)",
+  "afterSourceWrites": "MATCH (checked before the return was created)",
+  "afterReturnCreation": {"checkedAtUtc": "2026-10-03T11:49:16.477881+00:00", "originalSourceFiles": [{"path": "README.md", "bytes": 2389, "sha256": "24f13f2e15148f54b71844a0173b97dcce2183b6bed7c0bb71b31d6237af7ae4", "matchesReceipt": true}, {"path": "src/supervisor.py", "bytes": 6536, "sha256": "a09fa3b3906a500db60694b0391a97f0f91d4a26d825bb5159949cf27f17b4b6", "matchesReceipt": true}, {"path": "src/envelope_contract.py", "bytes": 7555, "sha256": "e1c34d51c7d1fef19d25cfbc4548d98448404986e4741e540f4f580c168cff61", "matchesReceipt": true}, {"path": "src/windows_job.py", "bytes": 2848, "sha256": "eb89c44b779fec8c085a91630952047bb2463e8919b166ace8429ca084b41028", "matchesReceipt": true}, {"path": "src/boundary_admission.py", "bytes": 3665, "sha256": "fb6e912ee239eb415f73aedb0b3ed7059068a5cb8b5518891f82222cb1a2af1d", "matchesReceipt": true}, {"path": "fixtures/fx_d1.py", "bytes": 1728, "sha256": "8c3dda5c73829d09513d8ac751c008533b99985859088da26ce8f631e981a3a7", "matchesReceipt": true}, {"path": "fixtures/fx_m1.py", "bytes": 2075, "sha256": "7152bf61e4ba674ef3ce7c3c785251f5382ebea3b6efaa55888844ee7f6da054", "matchesReceipt": true}, {"path": "fixtures/fx_t1.py", "bytes": 1613, "sha256": "9f64999e1c9232dc309d9c6c61cb98a9db0e5d553df46d310bac2d1996e00a50", "matchesReceipt": true}, {"path": "fixtures/fx_b1.py", "bytes": 1511, "sha256": "2bdde7615be66479dc7c2f0718a72c8676ff2cdcbcaf6075c184098754f7fb20", "matchesReceipt": true}, {"path": "fixtures/fx_n1.py", "bytes": 1869, "sha256": "b667d80aaae7da117c67226769da0901f0a356e9ea3e7cee3e8f5458690f42f2", "matchesReceipt": true}, {"path": "fixtures/fx_l1.py", "bytes": 2036, "sha256": "ecac3fb7c2dca41c2e9947288a32abb5687fa9ca4c190e4d67879e2533c8d1f4", "matchesReceipt": true}, {"path": "evidence/requirement-map.json", "bytes": 4404, "sha256": "d6415637977dc6d123466bad4ba4f449e880999f2320ba038c503693c3c813dd", "matchesReceipt": true}, {"path": "WORKER_RETURN.md", "bytes": 3470, "sha256": "5bc282f0730043429dd15507017c877d7dcb1323f33e4571cee6122d066e90ff", "matchesReceipt": true}, {"path": "evidence/source-manifest.json", "bytes": 2381, "sha256": "49e85446096dc88ae5be1b89a5a83bdccbc2a8d05d9358ca6e38609568778d2f", "matchesReceipt": true}], "originalCvfArtifacts": [{"path": "docs/reviews/CVF_CVF_NCR_S05_S1_SUPERVISOR_SOURCE_WORKER_RETURN_2026-10-03.md", "sha256": "fd0fb054d63f10abedf70ff57205d8b047067ab9cb89babb5b592fc4c9463203", "matchesReceipt": true}, {"path": "docs/reviews/evidence/cvf-ncr-s05-s1-supervisor-source-worker-2026-10-03.json", "sha256": "246a27347ce744156056fcf205edeb282312a17b72efaa1bd9c08e96683f1d1c", "matchesReceipt": true}], "result": "MATCH, no drift"}
+ },
+ "writeLedger": [
+  {"id": "D1", "mode": "os.mkdir without exist_ok", "actor": "worker", "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\CVF-NCR-S05-S1-SOURCE-R1-20261003", "beforeExists": false, "result": "CREATED", "createdUtc": "2026-10-03T11:29:00Z"},
+  {"id": "D2", "mode": "os.mkdir without exist_ok", "actor": "worker", "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\CVF-NCR-S05-S1-SOURCE-R1-20261003\\src", "beforeExists": false, "result": "CREATED", "createdUtc": "2026-10-03T11:29:00Z"},
+  {"id": "D3", "mode": "os.mkdir without exist_ok", "actor": "worker", "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\CVF-NCR-S05-S1-SOURCE-R1-20261003\\fixtures", "beforeExists": false, "result": "CREATED", "createdUtc": "2026-10-03T11:29:00Z"},
+  {"id": "D4", "mode": "os.mkdir without exist_ok", "actor": "worker", "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\CVF-NCR-S05-S1-SOURCE-R1-20261003\\evidence", "beforeExists": false, "result": "CREATED", "createdUtc": "2026-10-03T11:29:00Z"},
+  {"id": "F1", "mode": "open(path,'xb')", "actor": "worker", "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\CVF-NCR-S05-S1-SOURCE-R1-20261003\\src\\envelope_contract.py", "beforeExists": false, "result": "CREATED", "bytes": 13282, "sha256": "995faa63e9ad88b718f6a09650ce13ba7db35fc6301af855c40273b9505b8841", "createdUtc": "2026-10-03T11:33:59Z", "readbackDiskEqualsPayload": true, "toolIdentity": "python 3.11 stdin script, PowerShell tool here-string"},
+  {"id": "F2", "mode": "open(path,'xb')", "actor": "worker", "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\CVF-NCR-S05-S1-SOURCE-R1-20261003\\src\\windows_job.py", "beforeExists": false, "result": "CREATED", "bytes": 2875, "sha256": "d96fe1f9ebd7cb67f0c7c62f7415ca31d627d2be3b8c452a4945777ab0c615bd", "createdUtc": "2026-10-03T11:34:29Z", "readbackDiskEqualsPayload": true, "toolIdentity": "python 3.11 stdin script, PowerShell tool here-string"},
+  {"id": "F3", "mode": "open(path,'xb')", "actor": "worker", "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\CVF-NCR-S05-S1-SOURCE-R1-20261003\\src\\boundary_admission.py", "beforeExists": false, "result": "CREATED", "bytes": 6269, "sha256": "4694079dc067db5facbbbc36c7d1f025447205a9d06cbc5b0fba92f3a7cbdb03", "createdUtc": "2026-10-03T11:34:29Z", "readbackDiskEqualsPayload": true, "toolIdentity": "python 3.11 stdin script, PowerShell tool here-string"},
+  {"id": "F4", "mode": "open(path,'xb')", "actor": "worker", "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\CVF-NCR-S05-S1-SOURCE-R1-20261003\\src\\supervisor.py", "beforeExists": false, "result": "CREATED", "bytes": 10671, "sha256": "6c81e5dd4f16089a245859eddc816a48e5bba7fb97b025e9a3cdc43da8d668f3", "createdUtc": "2026-10-03T11:35:01Z", "readbackDiskEqualsPayload": true, "toolIdentity": "python 3.11 stdin script, PowerShell tool here-string"},
+  {"id": "F5", "mode": "open(path,'xb')", "actor": "worker", "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\CVF-NCR-S05-S1-SOURCE-R1-20261003\\fixtures\\fx_d1.py", "beforeExists": false, "result": "CREATED", "bytes": 1860, "sha256": "4b9ca0e851a80c41cb012b518a110c99afbf2aa1f86233d37e91d1c15e25158a", "createdUtc": "2026-10-03T11:35:38Z", "readbackDiskEqualsPayload": true, "toolIdentity": "python 3.11 stdin script, PowerShell tool here-string"},
+  {"id": "F6", "mode": "open(path,'xb')", "actor": "worker", "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\CVF-NCR-S05-S1-SOURCE-R1-20261003\\fixtures\\fx_m1.py", "beforeExists": false, "result": "CREATED", "bytes": 2207, "sha256": "2b4014a34f42cbab2c35a265387fc39be60e29e51cc3f0acc4d1a6e6823b1cdd", "createdUtc": "2026-10-03T11:35:38Z", "readbackDiskEqualsPayload": true, "toolIdentity": "python 3.11 stdin script, PowerShell tool here-string"},
+  {"id": "F7", "mode": "open(path,'xb')", "actor": "worker", "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\CVF-NCR-S05-S1-SOURCE-R1-20261003\\fixtures\\fx_t1.py", "beforeExists": false, "result": "CREATED", "bytes": 1793, "sha256": "80ed447868bbb9a43e74a3c7e3ce6828a931d45358b39b342c804bfbbc8214b3", "createdUtc": "2026-10-03T11:35:38Z", "readbackDiskEqualsPayload": true, "toolIdentity": "python 3.11 stdin script, PowerShell tool here-string"},
+  {"id": "F8", "mode": "open(path,'xb')", "actor": "worker", "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\CVF-NCR-S05-S1-SOURCE-R1-20261003\\fixtures\\fx_b1.py", "beforeExists": false, "result": "CREATED", "bytes": 1643, "sha256": "66769fcfef428d055241c0f3c47c32ff2698428a2ecf14afcb68cc3eb9a2f5ca", "createdUtc": "2026-10-03T11:35:38Z", "readbackDiskEqualsPayload": true, "toolIdentity": "python 3.11 stdin script, PowerShell tool here-string"},
+  {"id": "F9", "mode": "open(path,'xb')", "actor": "worker", "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\CVF-NCR-S05-S1-SOURCE-R1-20261003\\fixtures\\fx_n1.py", "beforeExists": false, "result": "CREATED", "bytes": 2001, "sha256": "5f6ca9ffe3b96033d5c35798b72bb75d944c43a7720a6d1115452d2cf12e36e3", "createdUtc": "2026-10-03T11:35:38Z", "readbackDiskEqualsPayload": true, "toolIdentity": "python 3.11 stdin script, PowerShell tool here-string"},
+  {"id": "F10", "mode": "open(path,'xb')", "actor": "worker", "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\CVF-NCR-S05-S1-SOURCE-R1-20261003\\fixtures\\fx_l1.py", "beforeExists": false, "result": "CREATED", "bytes": 2168, "sha256": "d4839a1233fbdaa0850a2e4fbf30c248589488e57d0428a0c3451fef37143b2f", "createdUtc": "2026-10-03T11:35:38Z", "readbackDiskEqualsPayload": true, "toolIdentity": "python 3.11 stdin script, PowerShell tool here-string"},
+  {"id": "F11", "mode": "open(path,'xb')", "actor": "worker", "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\CVF-NCR-S05-S1-SOURCE-R1-20261003\\README.md", "beforeExists": false, "result": "CREATED", "bytes": 5519, "sha256": "6425bfca1d9213b819c9e30dd7f8f557dab677073e999649d7c3288a5a7e681a", "createdUtc": "2026-10-03T11:37:15Z", "readbackDiskEqualsPayload": true, "toolIdentity": "python 3.11 stdin script, PowerShell tool here-string"},
+  {"id": "F12", "mode": "open(path,'xb')", "actor": "worker", "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\CVF-NCR-S05-S1-SOURCE-R1-20261003\\evidence\\requirement-map.json", "beforeExists": false, "result": "CREATED", "bytes": 14845, "sha256": "1e024ce7c14ef643b61cbd4c2fbdfe62a29f6bb9c4dc68f8f77849fd3c99647f", "createdUtc": "2026-10-03T11:38:26Z", "readbackDiskEqualsPayload": true, "toolIdentity": "python 3.11 stdin script, PowerShell tool here-string"},
+  {"id": "F13", "mode": "open(path,'xb')", "actor": "worker", "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\CVF-NCR-S05-S1-SOURCE-R1-20261003\\WORKER_RETURN.md", "beforeExists": false, "result": "CREATED", "bytes": 4402, "sha256": "3d3001978772a9cdbee251902e91efec92f1f6b19c1fc769837b05220b6f3fa7", "createdUtc": "2026-10-03T11:39:02Z", "readbackDiskEqualsPayload": true, "toolIdentity": "python 3.11 stdin script, PowerShell tool here-string"},
+  {"id": "F14", "mode": "open(path,'xb')", "actor": "worker", "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\CVF-NCR-S05-S1-SOURCE-R1-20261003\\evidence\\source-manifest.json", "beforeExists": false, "result": "CREATED", "bytes": 2767, "sha256": "8a1efd8a72511469752b88daff8c2ca54a9f60ae83725e569c5ff82ae6780b58", "createdUtc": "2026-10-03T11:39:14Z", "readbackDiskEqualsPayload": true, "toolIdentity": "python 3.11 stdin script, PowerShell tool here-string"},
+  {"id": "R1", "mode": "open(path,'xb')", "actor": "worker", "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\docs\\reviews\\CVF_CVF_NCR_S05_S1_SUPERVISOR_SOURCE_R1_WORKER_RETURN_2026-10-03.md", "beforeExists": false, "result": "CREATED", "bytes": 30190, "sha256": "12116c9c696752b487b74de9d6ec75bd3e53e90efad92b8f6a6f7f72512bd6ce", "createdUtc": "2026-10-03T11:47:38Z", "readbackDiskEqualsPayload": true, "preflightSha256EqualsDisk": true, "toolIdentity": "python 3.11 stdin script, PowerShell tool here-string"},
+  {"id": "R2", "mode": "open(path,'xb')", "actor": "worker", "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\docs\\reviews\\evidence\\cvf-ncr-s05-s1-supervisor-source-r1-worker-2026-10-03.json", "beforeExists": "checked in the creating script", "result": "PLANNED_UNTIL_POST_WRITE_TOOL_EVENT", "note": "this file describes its own creation; its self-hash stays outside the file"}
+ ],
+ "sourceLedger": [
+  {"path": "README.md", "fullPath": "D:\\UNG DUNG AI\\TOOL AI 2026\\CVF-NCR-S05-S1-SOURCE-R1-20261003\\README.md", "bytes": 5519, "sha256": "6425bfca1d9213b819c9e30dd7f8f557dab677073e999649d7c3288a5a7e681a", "lines": 95, "actor": "worker", "status": "CREATED", "mode": "open(path,'xb')", "createdUtc": "2026-10-03T11:37:15Z"},
+  {"path": "src/supervisor.py", "fullPath": "D:\\UNG DUNG AI\\TOOL AI 2026\\CVF-NCR-S05-S1-SOURCE-R1-20261003\\src\\supervisor.py", "bytes": 10671, "sha256": "6c81e5dd4f16089a245859eddc816a48e5bba7fb97b025e9a3cdc43da8d668f3", "lines": 262, "actor": "worker", "status": "CREATED", "mode": "open(path,'xb')", "createdUtc": "2026-10-03T11:35:01Z"},
+  {"path": "src/envelope_contract.py", "fullPath": "D:\\UNG DUNG AI\\TOOL AI 2026\\CVF-NCR-S05-S1-SOURCE-R1-20261003\\src\\envelope_contract.py", "bytes": 13282, "sha256": "995faa63e9ad88b718f6a09650ce13ba7db35fc6301af855c40273b9505b8841", "lines": 391, "actor": "worker", "status": "CREATED", "mode": "open(path,'xb')", "createdUtc": "2026-10-03T11:33:59Z"},
+  {"path": "src/windows_job.py", "fullPath": "D:\\UNG DUNG AI\\TOOL AI 2026\\CVF-NCR-S05-S1-SOURCE-R1-20261003\\src\\windows_job.py", "bytes": 2875, "sha256": "d96fe1f9ebd7cb67f0c7c62f7415ca31d627d2be3b8c452a4945777ab0c615bd", "lines": 93, "actor": "worker", "status": "CREATED", "mode": "open(path,'xb')", "createdUtc": "2026-10-03T11:34:29Z"},
+  {"path": "src/boundary_admission.py", "fullPath": "D:\\UNG DUNG AI\\TOOL AI 2026\\CVF-NCR-S05-S1-SOURCE-R1-20261003\\src\\boundary_admission.py", "bytes": 6269, "sha256": "4694079dc067db5facbbbc36c7d1f025447205a9d06cbc5b0fba92f3a7cbdb03", "lines": 183, "actor": "worker", "status": "CREATED", "mode": "open(path,'xb')", "createdUtc": "2026-10-03T11:34:29Z"},
+  {"path": "fixtures/fx_d1.py", "fullPath": "D:\\UNG DUNG AI\\TOOL AI 2026\\CVF-NCR-S05-S1-SOURCE-R1-20261003\\fixtures\\fx_d1.py", "bytes": 1860, "sha256": "4b9ca0e851a80c41cb012b518a110c99afbf2aa1f86233d37e91d1c15e25158a", "lines": 55, "actor": "worker", "status": "CREATED", "mode": "open(path,'xb')", "createdUtc": "2026-10-03T11:35:38Z"},
+  {"path": "fixtures/fx_m1.py", "fullPath": "D:\\UNG DUNG AI\\TOOL AI 2026\\CVF-NCR-S05-S1-SOURCE-R1-20261003\\fixtures\\fx_m1.py", "bytes": 2207, "sha256": "2b4014a34f42cbab2c35a265387fc39be60e29e51cc3f0acc4d1a6e6823b1cdd", "lines": 60, "actor": "worker", "status": "CREATED", "mode": "open(path,'xb')", "createdUtc": "2026-10-03T11:35:38Z"},
+  {"path": "fixtures/fx_t1.py", "fullPath": "D:\\UNG DUNG AI\\TOOL AI 2026\\CVF-NCR-S05-S1-SOURCE-R1-20261003\\fixtures\\fx_t1.py", "bytes": 1793, "sha256": "80ed447868bbb9a43e74a3c7e3ce6828a931d45358b39b342c804bfbbc8214b3", "lines": 52, "actor": "worker", "status": "CREATED", "mode": "open(path,'xb')", "createdUtc": "2026-10-03T11:35:38Z"},
+  {"path": "fixtures/fx_b1.py", "fullPath": "D:\\UNG DUNG AI\\TOOL AI 2026\\CVF-NCR-S05-S1-SOURCE-R1-20261003\\fixtures\\fx_b1.py", "bytes": 1643, "sha256": "66769fcfef428d055241c0f3c47c32ff2698428a2ecf14afcb68cc3eb9a2f5ca", "lines": 49, "actor": "worker", "status": "CREATED", "mode": "open(path,'xb')", "createdUtc": "2026-10-03T11:35:38Z"},
+  {"path": "fixtures/fx_n1.py", "fullPath": "D:\\UNG DUNG AI\\TOOL AI 2026\\CVF-NCR-S05-S1-SOURCE-R1-20261003\\fixtures\\fx_n1.py", "bytes": 2001, "sha256": "5f6ca9ffe3b96033d5c35798b72bb75d944c43a7720a6d1115452d2cf12e36e3", "lines": 58, "actor": "worker", "status": "CREATED", "mode": "open(path,'xb')", "createdUtc": "2026-10-03T11:35:38Z"},
+  {"path": "fixtures/fx_l1.py", "fullPath": "D:\\UNG DUNG AI\\TOOL AI 2026\\CVF-NCR-S05-S1-SOURCE-R1-20261003\\fixtures\\fx_l1.py", "bytes": 2168, "sha256": "d4839a1233fbdaa0850a2e4fbf30c248589488e57d0428a0c3451fef37143b2f", "lines": 60, "actor": "worker", "status": "CREATED", "mode": "open(path,'xb')", "createdUtc": "2026-10-03T11:35:38Z"},
+  {"path": "evidence/source-manifest.json", "fullPath": "D:\\UNG DUNG AI\\TOOL AI 2026\\CVF-NCR-S05-S1-SOURCE-R1-20261003\\evidence\\source-manifest.json", "bytes": 2767, "sha256": "8a1efd8a72511469752b88daff8c2ca54a9f60ae83725e569c5ff82ae6780b58", "lines": 80, "actor": "worker", "status": "CREATED", "mode": "open(path,'xb')", "createdUtc": "2026-10-03T11:39:14Z"},
+  {"path": "evidence/requirement-map.json", "fullPath": "D:\\UNG DUNG AI\\TOOL AI 2026\\CVF-NCR-S05-S1-SOURCE-R1-20261003\\evidence\\requirement-map.json", "bytes": 14845, "sha256": "1e024ce7c14ef643b61cbd4c2fbdfe62a29f6bb9c4dc68f8f77849fd3c99647f", "lines": 397, "actor": "worker", "status": "CREATED", "mode": "open(path,'xb')", "createdUtc": "2026-10-03T11:38:26Z"},
+  {"path": "WORKER_RETURN.md", "fullPath": "D:\\UNG DUNG AI\\TOOL AI 2026\\CVF-NCR-S05-S1-SOURCE-R1-20261003\\WORKER_RETURN.md", "bytes": 4402, "sha256": "3d3001978772a9cdbee251902e91efec92f1f6b19c1fc769837b05220b6f3fa7", "lines": 77, "actor": "worker", "status": "CREATED", "mode": "open(path,'xb')", "createdUtc": "2026-10-03T11:39:02Z"}
+ ],
+ "ledgerTotals": {
+  "fileCount": 14,
+  "totalBytes": 72302,
+  "byteCeiling": 1048576,
+  "extraFiles": 0,
+  "bytecodeOrCacheFiles": 0,
+  "directories": ["(root)", "src", "fixtures", "evidence"]
+ },
+ "manifestRecipe": "evidence/source-manifest.json lists the thirteen files other than itself with raw bytes and SHA-256; the root WORKER_RETURN.md carries no manifest digest",
+ "manifestDigest": {
+  "path": "evidence/source-manifest.json",
+  "sha256": "8a1efd8a72511469752b88daff8c2ca54a9f60ae83725e569c5ff82ae6780b58"
+ },
+ "requirementMap": [
+  {"requirementId": "C1-VALIDATE-ENVELOPE", "contractItem": 1, "sourceSymbol": "src/envelope_contract.py:290", "plannedAssertion": "typed JSON tree, missing field, UNKNOWN whole-value sentinel, traversal, duplicate or case-colliding or file-descendant colliding paths, exact output and hash join, malformed digest, unsupported version and non-finite limits are rejected with reason IDs; no defaults; no TypeError or OverflowError for caller data", "unresolvedEvidence": "none beyond Local static review; no runtime result"},
+  {"requirementId": "C2-DECIDE-ADMISSION", "contractItem": 2, "sourceSymbol": "src/supervisor.py:81", "plannedAssertion": "verdict is ALLOW_SOURCE_PLAN or NO_GO; launch_authority is NO_GO in every outcome; capability claims are recorded, never trusted", "unresolvedEvidence": "OS enforcement evidence is not acquired"},
+  {"requirementId": "C3-SUPERVISOR-PLAN", "contractItem": 3, "sourceSymbol": "src/supervisor.py:103", "plannedAssertion": "NEW to VALIDATED to SOURCE_PLAN_ONLY or REJECTED; guarded transitions; one cumulative caller deadline; committed bytes and working set are separate fields; attempts only increase", "unresolvedEvidence": "monotonic clock source is caller input; no runtime timing proof"},
+  {"requirementId": "C4-WINDOWS-JOB-BACKEND", "contractItem": 4, "sourceSymbol": "src/windows_job.py:62", "plannedAssertion": "every lifecycle and query method raises NotAdmitted; no ctypes binding and no process call", "unresolvedEvidence": "NATIVE_ABI_DEFINITIONS_UNVERIFIED and the other entries of UNRESOLVED_NATIVE_EVIDENCE"},
+  {"requirementId": "C5-BOUNDARY-ADMISSION", "contractItem": 5, "sourceSymbol": "src/boundary_admission.py:179", "plannedAssertion": "missing disk, zero-egress, privilege or custody proof is NO_GO; forbidden fallback mechanisms and malformed digests are refused; os_action_enabled is always False", "unresolvedEvidence": "no mechanism proof acquired for any boundary"},
+  {"requirementId": "C6-FX-D1", "contractItem": 6, "sourceSymbol": "fixtures/fx_d1.py:31", "plannedAssertion": "64 MiB capacity, 16 MiB overhead, 80 MiB total, 96 MiB attempted, outside-root denial; positive, negative and unknown cases", "unresolvedEvidence": "disk allocation mechanism unproven; cases NOT_EXECUTED_PLANNED"},
+  {"requirementId": "C6-FX-M1", "contractItem": 6, "sourceSymbol": "fixtures/fx_m1.py:33", "plannedAssertion": "256 MiB committed limit; positive 64 MiB; single 384 MiB; four children each 96 MiB", "unresolvedEvidence": "committed-memory semantics unverified; cases NOT_EXECUTED_PLANNED"},
+  {"requirementId": "C6-FX-T1", "contractItem": 6, "sourceSymbol": "fixtures/fx_t1.py:29", "plannedAssertion": "20 s deadline, cancel at 5 s, supervisor death and orphan check, 2 s end tolerance", "unresolvedEvidence": "orphan inspection method unproven; cases NOT_EXECUTED_PLANNED"},
+  {"requirementId": "C6-FX-B1", "contractItem": 6, "sourceSymbol": "fixtures/fx_b1.py:28", "plannedAssertion": "pre-resume job membership and breakaway denial assertions", "unresolvedEvidence": "membership and breakaway semantics unverified; cases NOT_EXECUTED_PLANNED"},
+  {"requirementId": "C6-FX-N1", "contractItem": 6, "sourceSymbol": "fixtures/fx_n1.py:30", "plannedAssertion": "DNS, TCP and UDP denial planned; 2 s timeout recorded as NOT_PROVEN, never PASS", "unresolvedEvidence": "zero-egress mechanism unproven; cases NOT_EXECUTED_PLANNED"},
+  {"requirementId": "C6-FX-L1", "contractItem": 6, "sourceSymbol": "fixtures/fx_l1.py:32", "plannedAssertion": "1 MiB log and 2 MiB evidence caps; 600 s fixture within 3600 s aggregate; counters never reset", "unresolvedEvidence": "cap enforcement unproven; cases NOT_EXECUTED_PLANNED"}
+ ],
+ "repairMap": [
+  {"findingId": "F-01", "policy": "sibling-relative package imports only in supervisor.py; no absolute fallback; no except clause; no loader or sys.path change", "sourceSymbols": ["src/supervisor.py:21", "src/supervisor.py:22", "src/supervisor.py:23"], "counterexamplePlans": [{"id": "F01-CE-1", "inputs": ["a dependency module raises ImportError while being imported"], "expected": "ImportError propagates because supervisor.py has no Try node", "status": "NOT_EXECUTED_PLANNED"}, {"id": "F01-CE-2", "inputs": ["an ambient module named envelope_contract exists on sys.path"], "expected": "never consulted: the only import nodes are three ImportFrom nodes with level 1", "status": "NOT_EXECUTED_PLANNED"}, {"id": "F01-CE-3", "inputs": ["inspect imports by AST only, without executing any file"], "expected": "three relative ImportFrom nodes and no absolute import of a sibling", "status": "NOT_EXECUTED_PLANNED"}]},
+  {"findingId": "F-02", "policy": "finite nonnegative input and candidate total computed before mutation; one cumulative deadline; exceeded status recorded, never enabling", "sourceSymbols": ["src/supervisor.py:200", "src/envelope_contract.py:118"], "counterexamplePlans": [{"id": "F02-CE-1", "inputs": ["seconds = NaN", "seconds = +Infinity", "seconds = -Infinity"], "expected": "PlanInputError, elapsed and phase_log unchanged", "status": "NOT_EXECUTED_PLANNED"}, {"id": "F02-CE-2", "inputs": ["two finite floats near the float maximum whose sum overflows"], "expected": "PlanInputError ELAPSED_ACCUMULATION_NOT_FINITE, unchanged", "status": "NOT_EXECUTED_PLANNED"}, {"id": "F02-CE-3", "inputs": ["negative seconds", "seconds = True", "an integer wider than 64 bits"], "expected": "PlanInputError, unchanged", "status": "NOT_EXECUTED_PLANNED"}, {"id": "F02-CE-4", "inputs": ["the same phase label recorded twice"], "expected": "both accumulate; nothing resets", "status": "NOT_EXECUTED_PLANNED"}, {"id": "F02-CE-5", "inputs": ["deadline 20 with phases 5 then 3"], "expected": "remaining 15.0 then 12.0, status WITHIN_DEADLINE", "status": "NOT_EXECUTED_PLANNED"}, {"id": "F02-CE-6", "inputs": ["deadline 20 with a phase of 25 seconds"], "expected": "remaining 0.0, status DEADLINE_EXCEEDED_RECORDED, deadline_exceeded True, no action enabled", "status": "NOT_EXECUTED_PLANNED"}]},
+  {"findingId": "F-03", "policy": "exact-type JSON tree scan before hashing or set membership; depth 64 container levels with root level 0; structured reason IDs", "sourceSymbols": ["src/envelope_contract.py:179", "src/envelope_contract.py:290"], "counterexamplePlans": [{"id": "F03-CE-1", "inputs": ["envelope_version = []", "envelope_version = {}", "stage = []", "stage = {}"], "expected": "UNSUPPORTED_ENVELOPE_VERSION or STAGE_NOT_RECOGNIZED, no TypeError", "status": "NOT_EXECUTED_PLANNED"}, {"id": "F03-CE-2", "inputs": ["effects = [[]]", "effects = [{}]"], "expected": "EFFECT_ID_NOT_RECOGNIZED, no TypeError", "status": "NOT_EXECUTED_PLANNED"}, {"id": "F03-CE-3", "inputs": ["a limit or attempt_cap integer wider than 64 bits"], "expected": "INTEGER_TOO_LARGE, no OverflowError", "status": "NOT_EXECUTED_PLANNED"}, {"id": "F03-CE-4", "inputs": ["a tuple, set, bytes or custom object anywhere", "a nonstring key", "a cycle", "65 nested container levels"], "expected": "UNSUPPORTED_TYPE, NON_STRING_KEY, CYCLE_DETECTED, NESTING_TOO_DEEP", "status": "NOT_EXECUTED_PLANNED"}, {"id": "F03-CE-5", "inputs": ["phase label that is empty, blank or not a string"], "expected": "PlanInputError PHASE_LABEL_NOT_NONEMPTY_STRING before recording", "status": "NOT_EXECUTED_PLANNED"}]},
+  {"findingId": "F-04", "policy": "outputs and artifact_hashes nonempty and one-to-one with identical case-sensitive spellings; fullmatch digest", "sourceSymbols": ["src/envelope_contract.py:290", "src/envelope_contract.py:113", "src/boundary_admission.py:145"], "counterexamplePlans": [{"id": "F04-CE-1", "inputs": ["artifact_hashes = {}", "outputs = [a.txt] with a missing hash", "a hash key that is not an output"], "expected": "ARTIFACT_HASHES_NOT_NONEMPTY_MAPPING, OUTPUT_WITHOUT_HASH, HASH_KEY_WITHOUT_OUTPUT", "status": "NOT_EXECUTED_PLANNED"}, {"id": "F04-CE-2", "inputs": ["output A.txt with hash key a.txt", "two hash keys that differ only by case"], "expected": "OUTPUT_WITHOUT_HASH and HASH_KEY_WITHOUT_OUTPUT; HASH_KEY_DUPLICATE_OR_CASE_COLLISION", "status": "NOT_EXECUTED_PLANNED"}, {"id": "F04-CE-3", "inputs": ["63 or 65 hex characters", "64 hex characters plus a terminal newline or CRLF", "an uppercase digest", "a non-string digest"], "expected": "ARTIFACT_HASH_MALFORMED; PROOF_HASH_MALFORMED in boundary proofs", "status": "NOT_EXECUTED_PLANNED"}]},
+  {"findingId": "F-05", "policy": "state checked before any assignment; isolated retained copy; revalidation before sealing; REJECTED for invalid data", "sourceSymbols": ["src/supervisor.py:146", "src/supervisor.py:164"], "counterexamplePlans": [{"id": "F05-CE-1", "inputs": ["validate called a second time after VALIDATED, SOURCE_PLAN_ONLY or REJECTED"], "expected": "PlanStateError before any assignment; retained envelope, counters and log unchanged", "status": "NOT_EXECUTED_PLANNED"}, {"id": "F05-CE-2", "inputs": ["retained copy tampered before sealing: version, limits or a digest"], "expected": "RETAINED_ENVELOPE_REVALIDATION_FAILED, state REJECTED, never SOURCE_PLAN_ONLY", "status": "NOT_EXECUTED_PLANNED"}, {"id": "F05-CE-3", "inputs": ["capabilities claiming every control is enforced"], "expected": "claims recorded not trusted; launch_authority stays NO_GO", "status": "NOT_EXECUTED_PLANNED"}]},
+  {"findingId": "F-06", "policy": "conservative lexical Windows path policy for root segments, outputs and hash keys; no filesystem-equivalence claim", "sourceSymbols": ["src/envelope_contract.py:226", "src/envelope_contract.py:248", "src/envelope_contract.py:274"], "counterexamplePlans": [{"id": "F06-CE-1", "inputs": ["CON", "NUL.txt", "COM1.log", "lpt3", "COM with superscript 1"], "expected": "PATH_RESERVED_DEVICE_NAME", "status": "NOT_EXECUTED_PLANNED"}, {"id": "F06-CE-2", "inputs": ["a with a/b", "A/b with a"], "expected": "OUTPUT_FILE_DESCENDANT_COLLISION and HASH_KEY_FILE_DESCENDANT_COLLISION", "status": "NOT_EXECUTED_PLANNED"}, {"id": "F06-CE-3", "inputs": ["root segment ending in a dot or a space", "traversal", "a colon stream", "a drive-letter escape"], "expected": "OWNED_ROOT_PATH_TRAILING_DOT_OR_SPACE, PATH_TRAVERSAL_SEGMENT, PATH_COLON_DRIVE_OR_STREAM", "status": "NOT_EXECUTED_PLANNED"}, {"id": "F06-CE-4", "inputs": ["ordinary distinct files a.txt and b/c.txt"], "expected": "accepted by the lexical policy, subject to the other guards", "status": "NOT_EXECUTED_PLANNED"}]},
+  {"findingId": "F-07", "policy": "UNKNOWN is a whole-value sentinel after strip and casefold in any key or value; same policy in envelope and boundary proofs", "sourceSymbols": ["src/envelope_contract.py:108", "src/boundary_admission.py:44"], "counterexamplePlans": [{"id": "F07-CE-1", "inputs": ["unknown", "UNKNOWN", "padded Unknown as any value or key"], "expected": "UNKNOWN_SENTINEL_PRESENT, PROOF_CONTAINS_UNKNOWN", "status": "NOT_EXECUTED_PLANNED"}, {"id": "F07-CE-2", "inputs": ["custody_owner = KnownUnknownsTeam"], "expected": "not the sentinel; other guards still apply", "status": "NOT_EXECUTED_PLANNED"}]}
+ ],
+ "fixturePlans": {
+  "FX-D1": {"cases": ["D1-POS-CAPACITY", "D1-NEG-ATTEMPT-96", "D1-NEG-OUTSIDE-ROOT", "D1-UNK-MECHANISM"], "status": "NOT_EXECUTED_PLANNED"},
+  "FX-M1": {"cases": ["M1-POS-64", "M1-NEG-SINGLE-384", "M1-NEG-TREE-4X96", "M1-UNK-WORKING-SET"], "status": "NOT_EXECUTED_PLANNED"},
+  "FX-T1": {"cases": ["T1-POS-DEADLINE", "T1-POS-CANCEL-5S", "T1-NEG-SUPERVISOR-DEATH", "T1-UNK-ORPHAN-INSPECTION"], "status": "NOT_EXECUTED_PLANNED"},
+  "FX-B1": {"cases": ["B1-POS-MEMBERSHIP", "B1-NEG-BREAKAWAY", "B1-NEG-DESCENDANT", "B1-UNK-SEMANTICS"], "status": "NOT_EXECUTED_PLANNED"},
+  "FX-N1": {"cases": ["N1-NEG-DNS", "N1-NEG-TCP", "N1-NEG-UDP", "N1-UNK-TIMEOUT-2S", "N1-UNK-MECHANISM"], "status": "NOT_EXECUTED_PLANNED"},
+  "FX-L1": {"cases": ["L1-POS-WITHIN-CAPS", "L1-NEG-LOG-OVERFLOW", "L1-NEG-EVIDENCE-OVERFLOW", "L1-NEG-COUNTER-RESET", "L1-UNK-ENFORCEMENT"], "status": "NOT_EXECUTED_PLANNED"}
+ },
+ "staticObservations": {
+  "method": "stdlib ast.parse and byte reads only; no import, compile, evaluation, run or bytecode",
+  "perFile": {"src/supervisor.py": {"imports": [".:boundary_admission", ".:envelope_contract", ".:windows_job"], "bannedCalls": [], "tryNodes": 0, "topLevelCallStatements": 0}, "src/envelope_contract.py": {"imports": ["math", "re"], "bannedCalls": [], "tryNodes": 0, "topLevelCallStatements": 0}, "src/windows_job.py": {"imports": [], "bannedCalls": [], "tryNodes": 0, "topLevelCallStatements": 0}, "src/boundary_admission.py": {"imports": ["math", "re"], "bannedCalls": [], "tryNodes": 0, "topLevelCallStatements": 0}, "fixtures/fx_d1.py": {"imports": [], "bannedCalls": [], "tryNodes": 0, "topLevelCallStatements": 0}, "fixtures/fx_m1.py": {"imports": [], "bannedCalls": [], "tryNodes": 0, "topLevelCallStatements": 0}, "fixtures/fx_t1.py": {"imports": [], "bannedCalls": [], "tryNodes": 0, "topLevelCallStatements": 0}, "fixtures/fx_b1.py": {"imports": [], "bannedCalls": [], "tryNodes": 0, "topLevelCallStatements": 0}, "fixtures/fx_n1.py": {"imports": [], "bannedCalls": [], "tryNodes": 0, "topLevelCallStatements": 0}, "fixtures/fx_l1.py": {"imports": [], "bannedCalls": [], "tryNodes": 0, "topLevelCallStatements": 0}},
+  "nativeBackendMethodsRaisingNotAdmitted": 8,
+  "supervisorHasTryNode": false,
+  "launchAuthority": "NO_GO in every decide_admission outcome",
+  "osActionEnabled": "False constant in boundary_admission, supervisor snapshot and all six fixture plans"
+ },
+ "externalWriteInventory": {
+  "created": ["root", "src", "fixtures", "evidence", "fourteen allowlisted files"],
+  "modified": [],
+  "deleted": [],
+  "partialWrites": [],
+  "helperFiles": "none created; payload and helper code ran from standard input only"
+ },
+ "attemptsWithoutFileEffect": [
+  {"kind": "shell tool parse failure", "count": 3, "effect": "bash parse error before Python ran; no path touched"},
+  {"kind": "PowerShell safety-scanner block", "count": 2, "effect": "rejected before execution; no path touched"},
+  {"kind": "payload script stopped on a locator error", "count": 1, "effect": "raised before its create call; no path touched"},
+  {"kind": "unneeded repository size probe", "count": 1, "effect": "directory metadata only; abandoned; outside the admitted read envelope; disclosed deviation"}
+ ],
+ "historicalRetained": {
+  "originalFirstFastGateFail": "WORKER_REPORTED, no historical log, none invented",
+  "laterPass": "separate outcome",
+  "deviations": ["DV-STARTUP", "DV-READ-AHEAD", "DV-CREATION", "DV-EVIDENCE"],
+  "originalReturnsModified": false
+ },
+ "oldStopRetained": {
+  "problemKey": "cvf-ncr-c1-metadata-footprint",
+  "ordinal": 2,
+  "disposition": "STOP_REASSESS_ARCHITECTURE",
+  "counters": [0, 0, 1, 2],
+  "touched": false,
+  "c1SpecificBehaviourInSource": false
+ },
+ "scec": {
+  "problemKey": "local-supervisor-source-contract",
+  "chainMode": "SUCCESSOR",
+  "chainOrdinal": 1,
+  "blockersResolved": []
+ },
+ "proofIds": {
+  "PROOF-OWNER": "sourceLedger and writeLedger actor, mode and result",
+  "PROOF-AUTHORITY": "releaseIdentityChecks joined to bootstrap currentAuthority hashes",
+  "PROOF-IDENTITY": "sourceLedger raw bytes and SHA-256 for fourteen files plus manifestDigest",
+  "PROOF-RECOVERY": "rootSafetyRecord, writeLedger and originalCustody; no cleanup or rollback exercised",
+  "PROOF-BOUNDARY": "staticObservations and externalWriteInventory",
+  "PROOF-CASE-PLAN": "fixturePlans and repairMap counterexample plans, all NOT_EXECUTED_PLANNED",
+  "PROOF-SOURCE": "requirementMap and repairMap source locators",
+  "PROOF-RETURN": {"path": "docs/reviews/CVF_CVF_NCR_S05_S1_SUPERVISOR_SOURCE_R1_WORKER_RETURN_2026-10-03.md", "rawSha256": "12116c9c696752b487b74de9d6ec75bd3e53e90efad92b8f6a6f7f72512bd6ce", "bytes": 30190, "note": "binds the new Markdown return; this file carries no hash of itself and the return carries no hash of this file"}
+ },
+ "limitations": ["behaviour of every function is unverified; no source was executed", "native ABI, job semantics, disk, egress, privilege and custody mechanisms have no evidence", "counterexample plans are not executed", "path policy is lexical only", "DS-01..DS-19 NOT_EXECUTED_PLANNED", "all costs UNKNOWN"],
+ "independentProbe": "PENDING_REVIEWER_EXECUTION",
+ "commit": "none; worker did not stage or commit"
+}

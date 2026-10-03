@@ -1,0 +1,60 @@
+{
+  "schemaVersion": "cvf.s05.r1EvidenceRelayInputs@1",
+  "dispatchBaseHead": "88b0e39df57f21f5df8e2226b8eb7e1e8d7ebb1e",
+  "operatorInstruction": "ban la orchestrator/reviewer, phat work order, toi copy giao claude lam",
+  "operatorInstructionVerbatim": "b\u1ea1n l\u00e0 orchestrator/reviewer,ph\u00e1t work order, t\u00f4i copy giao claude l\u00e0m",
+  "role": "INTERNAL_AGENT_LOCAL_ORCHESTRATOR_REVIEWER",
+  "decisionOwner": "LOCAL",
+  "sourceVerdict": "PASS_STATIC_REPAIR_CORRESPONDENCE_ONLY",
+  "closure": "WITHHELD_HISTORICAL_WRITE_EVENT_JOIN",
+  "frozenWorkerArtifacts": [
+    {
+      "path": "docs/reviews/CVF_CVF_NCR_S05_S1_SUPERVISOR_SOURCE_R1_WORKER_RETURN_2026-10-03.md",
+      "bytes": 30190,
+      "rawSha256": "12116c9c696752b487b74de9d6ec75bd3e53e90efad92b8f6a6f7f72512bd6ce"
+    },
+    {
+      "path": "docs/reviews/evidence/cvf-ncr-s05-s1-supervisor-source-r1-worker-2026-10-03.json",
+      "bytes": 34325,
+      "rawSha256": "b52f33717b0f6c948979e8566a5e1ff42137be9b80554263af50df2342458ce7"
+    }
+  ],
+  "independentProbe": {
+    "path": "docs/reviews/evidence/cvf-ncr-s05-s1-supervisor-source-r1-local-probe-2026-10-03.json",
+    "rawSha256": "422767c1a64eeefb91fc45ff14fb6b70b84eb805fb21e5527f7bbe8c68c776cc",
+    "oracle": "docs/reviews/evidence/cvf-ncr-s05-s1-supervisor-source-r1-local-oracle-2026-10-03.py",
+    "oracleRawSha256": "357dd8f90baa382f7f7f55bcff5846ea86ba8b1a199b608cde92b6aae8810759",
+    "checksPassed": 71,
+    "checksTotal": 71,
+    "negativeAstMutationsDetected": 8,
+    "workerSourceExecuted": false
+  },
+  "oldC1": {
+    "problemKey": "cvf-ncr-c1-metadata-footprint",
+    "ordinal": 2,
+    "disposition": "STOP",
+    "counters": [
+      0,
+      0,
+      1,
+      2
+    ]
+  },
+  "sourceChain": "local-supervisor-source-contract SUCCESSOR1 retained; no successor transition",
+  "historicalEventDisposition": "NOT_RELAYED_NOT_INFERRED",
+  "workerOutputs": [
+    "docs/reviews/CVF_CVF_NCR_S05_S1_R1_EVIDENCE_RELAY_WORKER_RETURN_2026-10-03.md",
+    "docs/reviews/evidence/cvf-ncr-s05-s1-r1-evidence-relay-worker-2026-10-03.json"
+  ],
+  "materialPaths": [
+    "docs/baselines/CVF_GC018_CVF_NCR_S05_S1_R1_EVIDENCE_RELAY_2026-10-03.md",
+    "docs/reviews/CVF_CVF_NCR_S05_S1_SUPERVISOR_SOURCE_R1_LOCAL_REVIEW_2026-10-03.md",
+    "docs/reviews/CVF_CVF_NCR_S05_S1_SUPERVISOR_SOURCE_R1_WORKER_RETURN_2026-10-03.md",
+    "docs/reviews/evidence/cvf-ncr-s05-s1-r1-evidence-relay-inputs-2026-10-03.json",
+    "docs/reviews/evidence/cvf-ncr-s05-s1-supervisor-source-r1-local-oracle-2026-10-03.py",
+    "docs/reviews/evidence/cvf-ncr-s05-s1-supervisor-source-r1-local-probe-2026-10-03.json",
+    "docs/reviews/evidence/cvf-ncr-s05-s1-supervisor-source-r1-worker-2026-10-03.json",
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_S05_S1_R1_EVIDENCE_RELAY_2026-10-03.md"
+  ],
+  "costs": "UNKNOWN"
+}

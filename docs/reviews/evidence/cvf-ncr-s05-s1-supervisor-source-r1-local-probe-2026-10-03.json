@@ -1,0 +1,550 @@
+{
+  "schemaVersion": "cvf.s05.s1R1LocalIndependentStaticProbe.v1",
+  "actor": "local-s05-s1-r1-independent-reviewer",
+  "sourceExecutionCount": 0,
+  "workerEvidenceRawSha256": "b52f33717b0f6c948979e8566a5e1ff42137be9b80554263af50df2342458ce7",
+  "oracleRawSha256": "357dd8f90baa382f7f7f55bcff5846ea86ba8b1a199b608cde92b6aae8810759",
+  "checks": [
+    {
+      "id": "exact-file-set",
+      "passed": true,
+      "details": null
+    },
+    {
+      "id": "identity:README.md",
+      "passed": true,
+      "details": null
+    },
+    {
+      "id": "line-cap:README.md",
+      "passed": true,
+      "details": null
+    },
+    {
+      "id": "identity:WORKER_RETURN.md",
+      "passed": true,
+      "details": null
+    },
+    {
+      "id": "line-cap:WORKER_RETURN.md",
+      "passed": true,
+      "details": null
+    },
+    {
+      "id": "identity:evidence/requirement-map.json",
+      "passed": true,
+      "details": null
+    },
+    {
+      "id": "line-cap:evidence/requirement-map.json",
+      "passed": true,
+      "details": null
+    },
+    {
+      "id": "identity:evidence/source-manifest.json",
+      "passed": true,
+      "details": null
+    },
+    {
+      "id": "line-cap:evidence/source-manifest.json",
+      "passed": true,
+      "details": null
+    },
+    {
+      "id": "identity:fixtures/fx_b1.py",
+      "passed": true,
+      "details": null
+    },
+    {
+      "id": "line-cap:fixtures/fx_b1.py",
+      "passed": true,
+      "details": null
+    },
+    {
+      "id": "identity:fixtures/fx_d1.py",
+      "passed": true,
+      "details": null
+    },
+    {
+      "id": "line-cap:fixtures/fx_d1.py",
+      "passed": true,
+      "details": null
+    },
+    {
+      "id": "identity:fixtures/fx_l1.py",
+      "passed": true,
+      "details": null
+    },
+    {
+      "id": "line-cap:fixtures/fx_l1.py",
+      "passed": true,
+      "details": null
+    },
+    {
+      "id": "identity:fixtures/fx_m1.py",
+      "passed": true,
+      "details": null
+    },
+    {
+      "id": "line-cap:fixtures/fx_m1.py",
+      "passed": true,
+      "details": null
+    },
+    {
+      "id": "identity:fixtures/fx_n1.py",
+      "passed": true,
+      "details": null
+    },
+    {
+      "id": "line-cap:fixtures/fx_n1.py",
+      "passed": true,
+      "details": null
+    },
+    {
+      "id": "identity:fixtures/fx_t1.py",
+      "passed": true,
+      "details": null
+    },
+    {
+      "id": "line-cap:fixtures/fx_t1.py",
+      "passed": true,
+      "details": null
+    },
+    {
+      "id": "identity:src/boundary_admission.py",
+      "passed": true,
+      "details": null
+    },
+    {
+      "id": "line-cap:src/boundary_admission.py",
+      "passed": true,
+      "details": null
+    },
+    {
+      "id": "identity:src/envelope_contract.py",
+      "passed": true,
+      "details": null
+    },
+    {
+      "id": "line-cap:src/envelope_contract.py",
+      "passed": true,
+      "details": null
+    },
+    {
+      "id": "identity:src/supervisor.py",
+      "passed": true,
+      "details": null
+    },
+    {
+      "id": "line-cap:src/supervisor.py",
+      "passed": true,
+      "details": null
+    },
+    {
+      "id": "identity:src/windows_job.py",
+      "passed": true,
+      "details": null
+    },
+    {
+      "id": "line-cap:src/windows_job.py",
+      "passed": true,
+      "details": null
+    },
+    {
+      "id": "external-byte-cap",
+      "passed": true,
+      "details": null
+    },
+    {
+      "id": "manifest-thirteen-join",
+      "passed": true,
+      "details": null
+    },
+    {
+      "id": "frozen-artifact:docs/reviews/CVF_CVF_NCR_S05_S1_SUPERVISOR_SOURCE_WORKER_RETURN_2026-10-03.md",
+      "passed": true,
+      "details": null
+    },
+    {
+      "id": "frozen-artifact:docs/reviews/evidence/cvf-ncr-s05-s1-supervisor-source-worker-2026-10-03.json",
+      "passed": true,
+      "details": null
+    },
+    {
+      "id": "frozen-source:README.md",
+      "passed": true,
+      "details": null
+    },
+    {
+      "id": "frozen-source:src/supervisor.py",
+      "passed": true,
+      "details": null
+    },
+    {
+      "id": "frozen-source:src/envelope_contract.py",
+      "passed": true,
+      "details": null
+    },
+    {
+      "id": "frozen-source:src/windows_job.py",
+      "passed": true,
+      "details": null
+    },
+    {
+      "id": "frozen-source:src/boundary_admission.py",
+      "passed": true,
+      "details": null
+    },
+    {
+      "id": "frozen-source:fixtures/fx_d1.py",
+      "passed": true,
+      "details": null
+    },
+    {
+      "id": "frozen-source:fixtures/fx_m1.py",
+      "passed": true,
+      "details": null
+    },
+    {
+      "id": "frozen-source:fixtures/fx_t1.py",
+      "passed": true,
+      "details": null
+    },
+    {
+      "id": "frozen-source:fixtures/fx_b1.py",
+      "passed": true,
+      "details": null
+    },
+    {
+      "id": "frozen-source:fixtures/fx_n1.py",
+      "passed": true,
+      "details": null
+    },
+    {
+      "id": "frozen-source:fixtures/fx_l1.py",
+      "passed": true,
+      "details": null
+    },
+    {
+      "id": "frozen-source:evidence/requirement-map.json",
+      "passed": true,
+      "details": null
+    },
+    {
+      "id": "frozen-source:WORKER_RETURN.md",
+      "passed": true,
+      "details": null
+    },
+    {
+      "id": "frozen-source:evidence/source-manifest.json",
+      "passed": true,
+      "details": null
+    },
+    {
+      "id": "release-input:docs/reference/CVF_NCR_S05_SUPERVISOR_SOURCE_CONTRACT_R1_2026-10-03.md",
+      "passed": true,
+      "details": null
+    },
+    {
+      "id": "release-input:docs/reviews/CVF_CVF_NCR_S05_S1_SUPERVISOR_SOURCE_LOCAL_REVIEW_2026-10-03.md",
+      "passed": true,
+      "details": null
+    },
+    {
+      "id": "release-input:docs/reviews/evidence/cvf-ncr-s05-s1-supervisor-source-local-findings-2026-10-03.json",
+      "passed": true,
+      "details": null
+    },
+    {
+      "id": "release-input:docs/reviews/evidence/cvf-ncr-s05-s1-supervisor-source-local-static-oracle-2026-10-03.py",
+      "passed": true,
+      "details": null
+    },
+    {
+      "id": "release-input:docs/reviews/CVF_CVF_NCR_S05_S1_SUPERVISOR_SOURCE_WORKER_RETURN_2026-10-03.md",
+      "passed": true,
+      "details": null
+    },
+    {
+      "id": "release-input:docs/reviews/evidence/cvf-ncr-s05-s1-supervisor-source-worker-2026-10-03.json",
+      "passed": true,
+      "details": null
+    },
+    {
+      "id": "release-input:docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_S05_S1_SUPERVISOR_SOURCE_2026-10-03.md",
+      "passed": true,
+      "details": null
+    },
+    {
+      "id": "PROOF-RETURN-join",
+      "passed": true,
+      "details": null
+    },
+    {
+      "id": "F01-sibling-imports-only",
+      "passed": true,
+      "details": null
+    },
+    {
+      "id": "F02-finite-before-mutation",
+      "passed": true,
+      "details": null
+    },
+    {
+      "id": "F03-tree-first-and-enum-type-guards",
+      "passed": true,
+      "details": null
+    },
+    {
+      "id": "F04-digest-fullmatch",
+      "passed": true,
+      "details": null
+    },
+    {
+      "id": "F04-output-hash-exact-join",
+      "passed": true,
+      "details": null
+    },
+    {
+      "id": "F05-state-before-assignment",
+      "passed": true,
+      "details": null
+    },
+    {
+      "id": "F05-seal-rechecks-and-refuses",
+      "passed": true,
+      "details": null
+    },
+    {
+      "id": "F06-lexical-prefix-device-policy",
+      "passed": true,
+      "details": null
+    },
+    {
+      "id": "F07-whole-value-sentinel",
+      "passed": true,
+      "details": null
+    },
+    {
+      "id": "no-enabled-effect-call-or-import",
+      "passed": true,
+      "details": null
+    },
+    {
+      "id": "six-fixture-builders",
+      "passed": true,
+      "details": null
+    },
+    {
+      "id": "launch-no-go",
+      "passed": true,
+      "details": null
+    },
+    {
+      "id": "eight-os-methods-unavailable",
+      "passed": true,
+      "details": null
+    },
+    {
+      "id": "source-os-flags-false",
+      "passed": true,
+      "details": null
+    },
+    {
+      "id": "working-set-not-limit",
+      "passed": true,
+      "details": null
+    },
+    {
+      "id": "oracle-eight-negative-mutations",
+      "passed": true,
+      "details": [
+        {
+          "id": "relative-import-level",
+          "detected": true,
+          "kind": "AST_ONLY_NEVER_EVALUATED"
+        },
+        {
+          "id": "finite-guard-rename",
+          "detected": true,
+          "kind": "AST_ONLY_NEVER_EVALUATED"
+        },
+        {
+          "id": "digest-match",
+          "detected": true,
+          "kind": "AST_ONLY_NEVER_EVALUATED"
+        },
+        {
+          "id": "missing-hash-join",
+          "detected": true,
+          "kind": "AST_ONLY_NEVER_EVALUATED"
+        },
+        {
+          "id": "missing-seal-refusal",
+          "detected": true,
+          "kind": "AST_ONLY_NEVER_EVALUATED"
+        },
+        {
+          "id": "missing-device-reason",
+          "detected": true,
+          "kind": "AST_ONLY_NEVER_EVALUATED"
+        },
+        {
+          "id": "substring-sentinel",
+          "detected": true,
+          "kind": "AST_ONLY_NEVER_EVALUATED"
+        },
+        {
+          "id": "native-import",
+          "detected": true,
+          "kind": "AST_ONLY_NEVER_EVALUATED"
+        }
+      ]
+    }
+  ],
+  "sourceLedger": [
+    {
+      "path": "README.md",
+      "bytes": 5519,
+      "rawSha256": "6425bfca1d9213b819c9e30dd7f8f557dab677073e999649d7c3288a5a7e681a"
+    },
+    {
+      "path": "WORKER_RETURN.md",
+      "bytes": 4402,
+      "rawSha256": "3d3001978772a9cdbee251902e91efec92f1f6b19c1fc769837b05220b6f3fa7"
+    },
+    {
+      "path": "evidence/requirement-map.json",
+      "bytes": 14845,
+      "rawSha256": "1e024ce7c14ef643b61cbd4c2fbdfe62a29f6bb9c4dc68f8f77849fd3c99647f"
+    },
+    {
+      "path": "evidence/source-manifest.json",
+      "bytes": 2767,
+      "rawSha256": "8a1efd8a72511469752b88daff8c2ca54a9f60ae83725e569c5ff82ae6780b58"
+    },
+    {
+      "path": "fixtures/fx_b1.py",
+      "bytes": 1643,
+      "rawSha256": "66769fcfef428d055241c0f3c47c32ff2698428a2ecf14afcb68cc3eb9a2f5ca"
+    },
+    {
+      "path": "fixtures/fx_d1.py",
+      "bytes": 1860,
+      "rawSha256": "4b9ca0e851a80c41cb012b518a110c99afbf2aa1f86233d37e91d1c15e25158a"
+    },
+    {
+      "path": "fixtures/fx_l1.py",
+      "bytes": 2168,
+      "rawSha256": "d4839a1233fbdaa0850a2e4fbf30c248589488e57d0428a0c3451fef37143b2f"
+    },
+    {
+      "path": "fixtures/fx_m1.py",
+      "bytes": 2207,
+      "rawSha256": "2b4014a34f42cbab2c35a265387fc39be60e29e51cc3f0acc4d1a6e6823b1cdd"
+    },
+    {
+      "path": "fixtures/fx_n1.py",
+      "bytes": 2001,
+      "rawSha256": "5f6ca9ffe3b96033d5c35798b72bb75d944c43a7720a6d1115452d2cf12e36e3"
+    },
+    {
+      "path": "fixtures/fx_t1.py",
+      "bytes": 1793,
+      "rawSha256": "80ed447868bbb9a43e74a3c7e3ce6828a931d45358b39b342c804bfbbc8214b3"
+    },
+    {
+      "path": "src/boundary_admission.py",
+      "bytes": 6269,
+      "rawSha256": "4694079dc067db5facbbbc36c7d1f025447205a9d06cbc5b0fba92f3a7cbdb03"
+    },
+    {
+      "path": "src/envelope_contract.py",
+      "bytes": 13282,
+      "rawSha256": "995faa63e9ad88b718f6a09650ce13ba7db35fc6301af855c40273b9505b8841"
+    },
+    {
+      "path": "src/supervisor.py",
+      "bytes": 10671,
+      "rawSha256": "6c81e5dd4f16089a245859eddc816a48e5bba7fb97b025e9a3cdc43da8d668f3"
+    },
+    {
+      "path": "src/windows_job.py",
+      "bytes": 2875,
+      "rawSha256": "d96fe1f9ebd7cb67f0c7c62f7415ca31d627d2be3b8c452a4945777ab0c615bd"
+    }
+  ],
+  "features": {
+    "F01-sibling-imports-only": true,
+    "F02-finite-before-mutation": true,
+    "F03-tree-first-and-enum-type-guards": true,
+    "F04-digest-fullmatch": true,
+    "F04-output-hash-exact-join": true,
+    "F05-state-before-assignment": true,
+    "F05-seal-rechecks-and-refuses": true,
+    "F06-lexical-prefix-device-policy": true,
+    "F07-whole-value-sentinel": true,
+    "no-enabled-effect-call-or-import": true,
+    "six-fixture-builders": true,
+    "launch-no-go": true,
+    "eight-os-methods-unavailable": true,
+    "source-os-flags-false": true,
+    "working-set-not-limit": true
+  },
+  "mutations": [
+    {
+      "id": "relative-import-level",
+      "detected": true,
+      "kind": "AST_ONLY_NEVER_EVALUATED"
+    },
+    {
+      "id": "finite-guard-rename",
+      "detected": true,
+      "kind": "AST_ONLY_NEVER_EVALUATED"
+    },
+    {
+      "id": "digest-match",
+      "detected": true,
+      "kind": "AST_ONLY_NEVER_EVALUATED"
+    },
+    {
+      "id": "missing-hash-join",
+      "detected": true,
+      "kind": "AST_ONLY_NEVER_EVALUATED"
+    },
+    {
+      "id": "missing-seal-refusal",
+      "detected": true,
+      "kind": "AST_ONLY_NEVER_EVALUATED"
+    },
+    {
+      "id": "missing-device-reason",
+      "detected": true,
+      "kind": "AST_ONLY_NEVER_EVALUATED"
+    },
+    {
+      "id": "substring-sentinel",
+      "detected": true,
+      "kind": "AST_ONLY_NEVER_EVALUATED"
+    },
+    {
+      "id": "native-import",
+      "detected": true,
+      "kind": "AST_ONLY_NEVER_EVALUATED"
+    }
+  ],
+  "pendingWriteEvents": [
+    {
+      "id": "R2",
+      "mode": "open(path,'xb')",
+      "actor": "worker",
+      "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\docs\\reviews\\evidence\\cvf-ncr-s05-s1-supervisor-source-r1-worker-2026-10-03.json",
+      "beforeExists": "checked in the creating script",
+      "result": "PLANNED_UNTIL_POST_WRITE_TOOL_EVENT",
+      "note": "this file describes its own creation; its self-hash stays outside the file"
+    }
+  ],
+  "sourceReviewVerdict": "PASS_STATIC_REPAIR_CORRESPONDENCE",
+  "closureVerdict": "WITHHELD_PENDING_FINAL_WRITE_EVENT_CORROBORATION",
+  "claimBoundary": "Identity/AST correspondence and static deductions, not behaviour/OS proof; historical create mode not independently observed."
+}
