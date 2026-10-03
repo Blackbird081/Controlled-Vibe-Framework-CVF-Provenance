@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_C1_METADATA_FOOTPRINT_ANALYSIS_2026-10-03.md",
     "workOrderSha256": "a1da0b45258d79429e3cbf7f34ee09e89efc3ff180f860488cd9fbcc3baf1c44"
   },
-  "currentAuthoritySyncReason": "D107 metadata dispatch at 2295e396ee3d4b4e8305901628255bc2cae2e1c6; pair raw hashes bound. No resolver/install/proof admission.",
+  "currentAuthoritySyncReason": "D108 metadata closure at 8599c065d7cde3c6a3df1a6d65fe3a3329d3d15e; pair historical. Next bounded metadata/source admission; runtime not admitted.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
