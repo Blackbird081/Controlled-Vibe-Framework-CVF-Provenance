@@ -1,6 +1,6 @@
 # CVF Agent Handoff V63 - ACEL Applied-Knowledge Owner Enrichment
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `8a603d0cb9d075640482d91af87278245d21f228`; batch `CVF-NCR-S05-CONTROL-FIXTURE-DESIGN`; design only, runtime NOT_ADMITTED; send/B2 STOP.
+Current HEAD recorded for this handoff: `a05cb67354d34e89d6c9c3310db6e6df61e4da15`; batch `CVF-NCR-S05-CONTROL-FIXTURE-DESIGN`; design only, runtime NOT_ADMITTED; send/B2 STOP.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
