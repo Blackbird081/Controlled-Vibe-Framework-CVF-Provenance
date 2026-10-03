@@ -1,0 +1,112 @@
+{
+  "schemaVersion": "cvf.downstreamFindingIntakeRegistry@1.0.0",
+  "owner": "docs/reference/CVF_FINDING_TO_GOVERNANCE_LEARNING_TRIGGER_STANDARD.md",
+  "recordingRule": "Parent-owned. Generation of an intake is not acceptance; only the Local reviewer records accept/decline. No new ADIF ID is assigned here.",
+  "entries": [
+    {
+      "intakeId": "CCMAI-DOWNSTREAM-GATE-2026-10-01",
+      "sourceSnapshot": {
+        "path": "docs/reviews/evidence/ccmai-to-cvf-downstream-gate-learning-intake-2026-10-01.txt",
+        "sha256": "26c17a4a4891bc0aad95e9e9ecded9531f768f8824d57176b2d37aa0f9ba2545"
+      },
+      "authority": "ADVISORY_INTAKE_NOT_PRIVATE_CVF_PROOF",
+      "sourceProjectClaims": "UNVERIFIED: project commits, PR runs and review outcomes in the snapshot are worker-reported; only the Core gaps were re-verified against current Core source",
+      "parentWorkOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_DGIP_T1_R1_DOWNSTREAM_GATE_INHERITANCE_2026-10-03.md",
+      "findings": [
+        {
+          "id": "F1-continuity-drift",
+          "defectClass": "MACHINE_GATE_GAP",
+          "dedup": [
+            {
+              "owner": "docs/reference/CVF_GOLDEN_DOWNSTREAM_BOOTSTRAP_LEARNING_INTAKE_2026-07-23.md",
+              "disposition": "EXTENDS_EXISTING",
+              "reason": "executable drift/golden proof learning extended to continuity"
+            },
+            {
+              "owner": "docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0052.md",
+              "disposition": "EXTENDS_EXISTING",
+              "reason": "continuity pin and post-mode literal class"
+            }
+          ],
+          "reusableControl": "CVF-DG-CONT-01",
+          "workerProposedDisposition": "MACHINE_CHECK_ADDED",
+          "parentDisposition": "ACCEPTED_BOUNDED_HERMETIC_FILE_CONTROL_ONLY"
+        },
+        {
+          "id": "F2-status-fail-open",
+          "defectClass": "MACHINE_GATE_GAP",
+          "dedup": [
+            {
+              "owner": "docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0058.md",
+              "disposition": "INDEPENDENT_REASON",
+              "reason": "ADIF-0058 is dispatch-release readiness, not status-grammar applicability"
+            }
+          ],
+          "reusableControl": "CVF-DG-APPL-01 / work-order status grammar",
+          "workerProposedDisposition": "MACHINE_CHECK_ADDED",
+          "parentDisposition": "ACCEPTED_BOUNDED_HERMETIC_FILE_CONTROL_ONLY"
+        },
+        {
+          "id": "F3-installed-not-invoked",
+          "defectClass": "RULE_GAP",
+          "dedup": [
+            {
+              "owner": "docs/reference/CVF_GOLDEN_DOWNSTREAM_BOOTSTRAP_LEARNING_INTAKE_2026-07-23.md",
+              "disposition": "EXTENDS_EXISTING",
+              "reason": "doctor/bridge claims narrowed to installed/invoked/proven states"
+            }
+          ],
+          "reusableControl": "CVF-DG-INST-01 / CVF-DG-CLAIM-01 / coverage readout",
+          "workerProposedDisposition": "MACHINE_CHECK_ADDED",
+          "parentDisposition": "ACCEPTED_BOUNDED_HERMETIC_FILE_CONTROL_ONLY"
+        },
+        {
+          "id": "F4-project-to-parent-intake",
+          "defectClass": "PHASE_GATE_PLACEMENT_GAP",
+          "dedup": [
+            {
+              "owner": "docs/reference/CVF_FINDING_TO_GOVERNANCE_LEARNING_TRIGGER_STANDARD.md",
+              "disposition": "EXTENDS_EXISTING",
+              "reason": "F2G owner gains a bounded downstream intake template"
+            }
+          ],
+          "reusableControl": "runner intake subcommand and intake schema",
+          "workerProposedDisposition": "STANDARD_ADDED",
+          "parentDisposition": "ACCEPTED_BOUNDED_HERMETIC_FILE_CONTROL_ONLY"
+        },
+        {
+          "id": "F5-reviewer-local-repair",
+          "defectClass": "ORCHESTRATOR_PACKET_GAP",
+          "dedup": [
+            {
+              "owner": "docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0026.md",
+              "disposition": "EXTENDS_EXISTING",
+              "reason": "parent reviewer-local repair route projected into the downstream template and checked as a decision envelope"
+            },
+            {
+              "owner": "docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0050.md",
+              "disposition": "NOT_A_DUPLICATE",
+              "reason": "different defect; consulted only for the private/public boundary"
+            }
+          ],
+          "reusableControl": "CVF-DG-ROUTE-01 and downstream template section",
+          "workerProposedDisposition": "TEMPLATE_UPDATED",
+          "parentDisposition": "ACCEPTED_BOUNDED_HERMETIC_FILE_CONTROL_ONLY"
+        }
+      ],
+      "parentLinks": {
+        "standard": "docs/reference/downstream_gate_profile/CVF_DOWNSTREAM_GATE_PROFILE_STANDARD.md",
+        "goldenProof": "scripts/test_cvf_downstream_gate_profile.ps1",
+        "checker": "governance/compat/check_gate_to_role_closeability.py",
+        "workerReturn": "docs/reviews/CVF_DGIP_T1_R1_DOWNSTREAM_GATE_INHERITANCE_WORKER_RETURN_2026-10-03.md",
+        "completionReview": "docs/reviews/CVF_DGIP_T1_DOWNSTREAM_GATE_INHERITANCE_COMPLETION_2026-10-03.md",
+        "independentProbe": "docs/reviews/evidence/cvf-dgip-t1-r1-local-probe-2026-10-03.json"
+      },
+      "deferred": [
+        "real CCMAI adoption",
+        "hosted PR verification",
+        "public rollout"
+      ]
+    }
+  ]
+}

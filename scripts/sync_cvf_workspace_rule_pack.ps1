@@ -311,6 +311,7 @@ $manifest = [ordered]@{
     artifactCount = $copied.Count
     artifacts = @($copied)
     workspaceRootFiles = @($materializedRootFiles)
+    claimBoundary = "COPIED_NOT_INVOKED: rule-pack files are guidance copies; copying a checker is not invoking it. Per-project gate state is reported by the downstream gate profile coverage (INSTALLED, INVOKED, PROVEN_HERMETIC)."
 }
 
 $manifestPath = Join-Path $profileRoot "RULE_PACK_MANIFEST.json"
@@ -391,7 +392,9 @@ Source commit: $sourceCommit
 
 Rule packs are curated copies from the provenance repository into this local
 workspace. Use them as local guidance for downstream projects. Do not treat
-this folder as a public export or a full provenance mirror.
+this folder as a public export or a full provenance mirror. Copying a checker
+here is not invoking it: gate invocation is reported per project by the doctor
+(downstream gate profile coverage), never inferred from these files.
 
 ## Commands
 
