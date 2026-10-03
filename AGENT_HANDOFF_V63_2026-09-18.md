@@ -1,6 +1,6 @@
 # CVF Agent Handoff V63 - ACEL Applied-Knowledge Owner Enrichment
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `4f02d606186b91a7b75f3bfa76710557ff970efe`; batch `CVF-NCR-S05-S1-R1-EVIDENCE-RELAY`; R1 static probe complete/closure withheld; historical-event relay only, frozen source; no source/runtime successor; old C1/send/B2 STOP.
+Current HEAD recorded for this handoff: `d24e8430adfee44f2ca1c802dfb92ea0f7225bfa`; batch `CVF-NCR-S05-S1-R1-EVIDENCE-RELAY`; Local reviewed BLOCKED/INCOMPLETE_RETAINED_EVENT; relay STOP, source closure withheld; no redispatch; old C1/send/B2 STOP.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -8,9 +8,9 @@ Remote tracking: `origin/main`; resolve SHA live. External agent memory is non-c
 ## Purpose
 Carry CVF-NCR v2.7 and closed AKOE/G1-G7. Applied-knowledge details remain in the governed roadmap.
 ## Scope / Target / Owner Boundary
-Role: Local orchestrator/reviewer. Phase: S1 R1 historical evidence relay dispatch; technical owner: Local; effect owner: operator; P11 parked.
+Role: Local orchestrator/reviewer. Phase: S1 R1 blocked relay Local disposition; technical owner: Local; effect owner: operator; P11 parked.
 ## Startup Acknowledgment
-Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`; handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=bound S1 R1 historical-event relay; role=Local orchestrator/reviewer; phase=documentary custody relay; decision owner=Local; parked=Q001/Q004, effect, P11, public sync, deployment.
+Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`; handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=Local reassessment after blocked relay, no dispatch; role=Local orchestrator/reviewer; phase=blocked return review complete; decision owner=Local; parked=Q001/Q004, effect, P11, public sync, deployment.
 ## Current Mode
 `cvf_ncr_p10_closed_p11_parked`. CVF-NCR-R1-S11-R1 is closed at `bd15b2600` after material `1a538d10d`. P10 is `ACTIVE_PRODUCTION_RUNTIME`; P11 stays parked. Latest closed learning-history wave: `LHW24`.
 ## Active Boundary
@@ -21,9 +21,9 @@ AKOE authority: `docs/roadmaps/CVF_ACEL_APPLIED_KNOWLEDGE_OWNER_ENRICHMENT_ROADM
 - Q001 SQLite target-publication correction is Local-accepted bounded at `a90756b6a`: reviewer repaired post-publication validation after raw-SQL repro; focused 37/37, worker 42/42, Local 6/6 and pre-commit 90/90 passed. Q001/R0 and real cutover remain open.
 - HTML B2 read-only owner/storage audit at `2364bfbaa` is `REVIEW_COMPLETE_NO_DISPATCH`: route returns transient HTML; source hash and receipt do not identify exact rendered bytes; inspected candidate ledgers/adapters do not own durable HTML acceptance. D037 names the missing actor, store, writer and recovery choices. B1 remains Local-accepted bounded at `31bb2d88c`; Q001/R0 Profile A and B2 implementation stay parked.
 - B1 Print R2 accepted bounded at `6251ca305`: worker 5/5, units 45/45; Local 120-line probe: 3 pages/all rows/end marker, opaque origin/zero Print hits. Review: `docs/reviews/CVF_CVF_NCR_HTML_B1_PRINT_COMPLETENESS_R2_COMPLETION_2026-10-01.md`. Width 700px; renderer only; Q001/Q004 OPEN. Preview owner audit complete; no Print successor.
-- S05-S1 R1 evidence relay `4f02d6061`: docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_S05_S1_R1_EVIDENCE_RELAY_2026-10-03.md; static probe 71/71 plus eight AST mutations complete, closure withheld for historical JSON writer event. Two appendices only; NOT_RETAINED => stop. Both roots/returns frozen, no R2/source execution/install/render; C1 STOP unchanged.
+- S05-S1 R1 relay return `d24e8430a`: docs/reviews/CVF_CVF_NCR_S05_S1_R1_EVIDENCE_RELAY_LOCAL_REVIEW_2026-10-03.md; BLOCKED_WITH_REASON/INCOMPLETE_RETAINED_EVENT retained. Local 24/24 documentary checks plus six mutations; historical gate UTC/hash missing, temporary-log scope deviation retained. Relay STOP/no redispatch; source closure withheld, both roots/returns frozen; C1 STOP unchanged.
 ## Core Guard Self-Protection Authorization
-Authorized guard-maintenance scope: bind `4f02d606186b91a7b75f3bfa76710557ff970efe` / `CVF-NCR-S05-S1-R1-EVIDENCE-RELAY`; six paths below. Operator requests work order/manual relay; continuity only, frozen source/returns, no source successor. Rollback sync only; preserve material/static evidence and old C1 STOP.
+Authorized guard-maintenance scope: bind blocked-relay Local disposition `d24e8430adfee44f2ca1c802dfb92ea0f7225bfa`; six paths below. Operator delivered worker return; continuity only, no dispatch/source successor. Rollback sync only, preserve frozen source/returns and old C1 STOP.
 Authorized guard-maintenance scope: bind B2b packet material `588f8d63f` and release only its internal worker next move.
 Protected paths:
 - `AGENT_HANDOFF_V63_2026-09-18.md`

@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_S05_S1_R1_EVIDENCE_RELAY_2026-10-03.md",
     "workOrderSha256": "4b567b6fb54bf9c4e626d9dca3ab200500f21c13d75f168d032bdc84ed2a4622"
   },
-  "currentAuthoritySyncReason": "S1 R1 historical-event relay pair 4f02d606186b91a7b75f3bfa76710557ff970efe; static probe complete/closure withheld, source frozen; actual bound gate before manual copy.",
+  "currentAuthoritySyncReason": "Local blocked-relay review d24e8430adfee44f2ca1c802dfb92ea0f7225bfa; historical pair retained read-only, no active dispatch; source closure withheld and all successors frozen.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
