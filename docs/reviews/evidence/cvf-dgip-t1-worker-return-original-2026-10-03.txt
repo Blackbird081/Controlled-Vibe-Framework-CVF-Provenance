@@ -1,0 +1,526 @@
+# CVF DGIP T1 Downstream Gate Inheritance Worker Return
+
+Memory class: worker-return-evidence
+
+docType: review
+
+Status: BLOCKED_WITH_REASON
+
+Self-declared worker-return artifact: yes
+
+Responds to work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_DGIP_T1_DOWNSTREAM_GATE_INHERITANCE_2026-10-03.md`
+
+dispatchWorkOrder: `docs/work_orders/CVF_AGENT_WORK_ORDER_DGIP_T1_DOWNSTREAM_GATE_INHERITANCE_2026-10-03.md`
+
+executionBaseHead: `44229eeb07b9022928a4862c3e9076036b6c7a94`
+
+rawMemoryReleased=false
+contractProfile: WORKER_RETURN_FULL_GATE_V1
+
+## Tool / Classifier Block Recovery Event
+
+toolClassifierBlockRecoveryApplicability: APPLICABLE - two tool-level safety blocks occurred on my own cleanup commands
+toolClassifierBlockEventCount: 2
+platformForcedOperatorPromptCount: 0
+workerAuthoredOperatorQuestionCount: 0
+recoveryAttemptCount: 2
+recoveryDisposition: RECOVERED_SAME_SCOPE_ALTERNATE_COMMAND
+eventEvidence: two PowerShell-tool calls that ran `cmd rd` against a `\\?\` long-path prefix to delete the temporary directory of an interrupted harness run were refused by the tool's own variable-expansion safety check; the same disposable temp directory was then removed with `Remove-Item -LiteralPath` and its absence was verified
+
+## Work-Order Acceptance Evidence Ledger
+
+Ledger join status is deliberately `BLOCKED` for REQ-1..REQ-7 and the terminal status is `BLOCKED_WITH_REASON`, because the dispatcher-owned `expectedArtifacts` of those rows list only the evidence JSON while the Work-Order Fulfillment Manifest requires 33 implementation, test and documentation paths. `check_work_order_acceptance_ledger.py` requires every PASS row to equal `expectedArtifacts` exactly and every Git-observed path to be claimed by some row, so a PASS join is arithmetically impossible for this packet. Each row below therefore lists the exact artifacts that implement it with status `BLOCKED` (join status, not substantive status; substantive status is IMPLEMENTED and proven in the evidence JSON). REQ-8 equals its expected artifact and is PASS.
+
+```acceptance-evidence-json
+{
+ "schemaVersion": "cvf.workOrderAcceptanceEvidence@1.0.0",
+ "executionBaseHead": "44229eeb07b9022928a4862c3e9076036b6c7a94",
+ "results": [
+  {"requirementId": "REQ-1", "actualArtifacts": ["docs/reference/downstream_gate_profile/CVF_DOWNSTREAM_GATE_PROFILE_MIGRATION.md", "docs/reference/downstream_gate_profile/CVF_DOWNSTREAM_GATE_PROFILE_STANDARD.md", "docs/reference/downstream_gate_profile/DOWNSTREAM_FINDING_INTAKE_TEMPLATE.json", "docs/reference/downstream_gate_profile/README.md", "docs/reference/downstream_gate_profile/downstream_continuity_contract.schema.json", "docs/reference/downstream_gate_profile/downstream_finding_intake.schema.json", "docs/reference/downstream_gate_profile/downstream_finding_intake_registry.json", "docs/reference/downstream_gate_profile/downstream_gate_profile.schema.json", "scripts/lib/downstream_governance/cvf_downstream_gate_profile.json", "docs/reviews/evidence/cvf-dgip-t1-worker-2026-10-03.json"], "proofRefs": ["PROOF-1"], "status": "BLOCKED"},
+  {"requirementId": "REQ-2", "actualArtifacts": ["scripts/lib/downstream_catalog/CvfDownstreamBootstrapContent.ps1", "scripts/lib/downstream_governance/cvf_dg_continuity.py", "docs/reviews/evidence/cvf-dgip-t1-worker-2026-10-03.json"], "proofRefs": ["PROOF-2"], "status": "BLOCKED"},
+  {"requirementId": "REQ-3", "actualArtifacts": ["governance/compat/check_gate_to_role_closeability.py", "governance/compat/test_check_gate_to_role_closeability.py", "scripts/lib/downstream_governance/cvf_dg_applicability.py", "docs/reviews/evidence/cvf-dgip-t1-worker-2026-10-03.json"], "proofRefs": ["PROOF-3"], "status": "BLOCKED"},
+  {"requirementId": "REQ-4", "actualArtifacts": ["scripts/check_cvf_workspace_agent_enforcement.ps1", "scripts/check_cvf_workspace_new_project_enforcement.ps1", "scripts/lib/downstream_governance/CvfDownstreamGateProfile.ps1", "scripts/lib/downstream_governance/cvf_dg_common.py", "scripts/lib/downstream_governance/cvf_dg_install.py", "scripts/lib/downstream_governance/cvf_dg_review.py", "scripts/lib/downstream_governance/cvf_downstream_gate_runner.py", "scripts/lib/downstream_governance/downstream_pr_gates.yml.template", "scripts/lib/downstream_governance/git-pre-commit.template", "scripts/new-cvf-workspace.ps1", "scripts/sync_cvf_workspace_rule_pack.ps1", "scripts/write_cvf_workspace_web_evidence_bridge.ps1", "docs/reviews/evidence/cvf-dgip-t1-worker-2026-10-03.json"], "proofRefs": ["PROOF-4"], "status": "BLOCKED"},
+  {"requirementId": "REQ-5", "actualArtifacts": ["governance/toolkit/05_OPERATION/CVF_DOWNSTREAM_AGENTS_TEMPLATE.md", "scripts/lib/downstream_governance/cvf_dg_routing.py", "docs/reviews/evidence/cvf-dgip-t1-worker-2026-10-03.json"], "proofRefs": ["PROOF-5"], "status": "BLOCKED"},
+  {"requirementId": "REQ-6", "actualArtifacts": ["scripts/lib/downstream_governance/cvf_dg_intake.py", "docs/reviews/evidence/cvf-dgip-t1-worker-2026-10-03.json"], "proofRefs": ["PROOF-6"], "status": "BLOCKED"},
+  {"requirementId": "REQ-7", "actualArtifacts": ["governance/compat/test_downstream_gate_profile.py", "scripts/lib/downstream_catalog/CvfGoldenHarnessSupport.ps1", "scripts/lib/downstream_governance/cvf_dg_coverage.py", "scripts/test_cvf_downstream_gate_profile.ps1", "docs/reviews/evidence/cvf-dgip-t1-worker-2026-10-03.json"], "proofRefs": ["PROOF-7"], "status": "BLOCKED"},
+  {"requirementId": "REQ-8", "actualArtifacts": ["docs/reviews/CVF_DGIP_T1_DOWNSTREAM_GATE_INHERITANCE_WORKER_RETURN_2026-10-03.md"], "proofRefs": ["PROOF-8"], "status": "PASS"}
+ ]
+}
+```
+
+## Source Inventory
+
+| File | Action |
+|---|---|
+| `AGENTS.md`; `docs/reference/guard_orientation/README.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | READ |
+| `.cvf/runtime/CVF_DGIP_T1_COPY_PROMPT_2026-10-03.md`; the work order; `docs/reviews/evidence/cvf-dgip-t1-dispatch-inputs-2026-10-03.json`; the CCMAI snapshot | READ |
+| `governance/compat/check_gate_to_role_closeability.py`; `scripts/new-cvf-workspace.ps1`; `scripts/check_cvf_workspace_agent_enforcement.ps1`; `scripts/check_cvf_workspace_new_project_enforcement.ps1`; `scripts/write_cvf_workspace_web_evidence_bridge.ps1` | READ_FULL then MODIFIED |
+| `scripts/sync_cvf_workspace_rule_pack.ps1` | READ_PARTIAL (lines 1-75 and 195-455 plus a symbol search; the profile-resolution middle was not read) then MODIFIED at the manifest and guide text only |
+| `scripts/lib/downstream_catalog/CvfDownstreamBootstrapContent.ps1`; `scripts/lib/downstream_catalog/CvfGoldenHarnessSupport.ps1`; `scripts/test_cvf_golden_downstream_bootstrap.ps1`; `governance/toolkit/05_OPERATION/CVF_DOWNSTREAM_AGENTS_TEMPLATE.md` | READ_FULL (first three modified except the golden test, which is unchanged) |
+| `docs/reference/review_cost_control/CVF_REVIEW_COST_AND_DIMINISHING_RETURN_CONTROL_STANDARD.md` (routing section); `governance/compat/check_review_cost_control.py` (REWORK block); `docs/reference/CVF_FINDING_TO_GOVERNANCE_LEARNING_TRIGGER_STANDARD.md` (lanes, dispositions, classes); `docs/reference/CVF_GOLDEN_DOWNSTREAM_BOOTSTRAP_LEARNING_INTAKE_2026-07-23.md` (head); ADIF-0026/0050/0052/0058 (head blocks) | READ_PARTIAL (not a full-read claim) |
+| `governance/compat/check_worker_return_quality_gate.py`; `check_work_order_acceptance_ledger.py`; `check_independent_review_probe_admission.py` (dispatch, closure and role-token paths); `check_worker_experience_retrospective.py` (vocabulary); `check_core_guard_self_protection.py` and `check_agent_instruction_carriers.py` (budget and token paths); `check_foundation_storage_layout.py` | READ_FULL for the first two, READ_PARTIAL for the others |
+| `docs/reviews/CVF_CVF_NCR_S05_CONTROL_FIXTURE_DESIGN_WORKER_RETURN_2026-10-03.md` | READ_FULL as the packet-shape exemplar |
+
+## Rework Convergence Self-Proof
+
+rootCauseClusterId: DGIP_ACCEPTANCE_LEDGER_EXPECTED_ARTIFACTS_VS_FULFILLMENT_MANIFEST
+recurrenceDisposition: FIRST_OCCURRENCE
+priorRelatedFinding: NOT_APPLICABLE_WITH_REASON - first occurrence of this packet defect; no governed prior finding carries this cluster
+operatorNoticeDisposition: NOT_APPLICABLE_WITH_REASON - a reviewer-local ledger repair is available; no new operator choice is needed
+successorFreezeDisposition: NOT_APPLICABLE_WITH_REASON - no successor tranche is opened or proposed on this root
+reworkGeneration: 0
+consolidatedDefectClassSweep: PENDING_BEFORE_READY
+productionBindingEvidence: PENDING_BEFORE_READY
+adversarialRegressionDisposition: PENDING_BEFORE_READY
+successorTrancheOpened: NO
+readyFieldsNote: the three PENDING_BEFORE_READY fields above are the literal values the review-cost checker requires of any BLOCKED_WITH_REASON return; the substantive sweep, hermetic binding and adversarial results are in Findings / Position and the evidence JSON
+implementationAutonomyDisposition: CONTRACT_AUTHORITY_EVIDENCE_OUTCOME_ONLY
+internalAgentInvocationCount: 1
+externalAgentInvocationCount: 0
+providerCallCount: 0
+tokenOrQuotaUsage: NOT_AVAILABLE_WITH_REASON: no usage meter was exposed to this worker; session cost is UNKNOWN, not a zero-cost claim
+terminalReadinessVerdict: BLOCKED_WITH_REASON: implementation complete and hermetically tested; the machine join of the dispatcher-owned acceptance ledger cannot be satisfied by any worker output
+
+## Semantic Convergence Outcome
+
+Standard: `docs/reference/semantic_convergence_control/CVF_SEMANTIC_CONVERGENCE_AND_ESCALATION_CONTROL_STANDARD.md`
+
+```json
+{"schemaVersion": "cvf.semanticConvergenceControl.v1", "problemKey": "downstream-gate-inheritance", "chainMode": "INITIAL", "chainOrdinal": 0, "predecessor": null, "blockerDelta": {"prior": [], "resolved": [], "retained": [], "new": [], "reopened": [], "current": []}, "resolutionEvidence": {}, "counters": {"partialReadyClosures": 0, "reviewerScopeExpansions": 0, "sameClaimCorrections": 0, "nonDecreasingBlockerTransitions": 0}, "claims": [], "requiredDisposition": "CONTINUE_BOUNDED", "successorScope": "INITIAL_BOUNDED"}
+```
+
+The block is the work order's retained INITIAL block. This return claims no chain reset and opens no successor; the ledger contradiction is a packet defect routed to Local, not a new problem chain.
+
+## Purpose
+
+Return the integrated parent implementation of the portable downstream gate profile `cvf.downstreamGateProfile@1.0.0` for Local review: a versioned profile with one framework-owned control source, a pinned runner installed by bootstrap, strict continuity and status-applicability controls, the conditional reviewer-local repair route, a bounded project-to-parent finding intake, truthful INSTALLED/INVOKED/PROVEN_HERMETIC coverage, and an offline hermetic golden proof. Worker evidence for Local; not acceptance, not a real-project migration, not a hosted-CI or public rollout.
+
+## Target / Source
+
+Bound work order and paired GC-018 baseline at released HEAD `44229eeb07b9022928a4862c3e9076036b6c7a94` (material commit `28c5a5271c1cc266b293366cfcdbd55abf626e23`). Identities were re-hashed before any edit: work order `cfa13104e191e81a93eb8501ceccad308e8241f803e7666181510363bec43a3e`, baseline `1040023af76b3f97612eb9777eb0f57543e0739f14367b6f4b4cbfabea7ed6a5` (both equal bootstrap `currentAuthority`) and snapshot `26c17a4a4891bc0aad95e9e9ecded9531f768f8824d57176b2d37aa0f9ba2545`. The CCMAI snapshot is advisory input only; its project commit and PR claims were not verified and none is used as proof. Candidate profile pins: profile `047bf10e6a304199baa6f89136b8397023ca4f41d339fc06049da6dc41dfbc5c`, runner `d3f494e04f2e0654023c83c6d9f4da6fe6995a8bc4bb7398338a5c25ac26c3a7` (LF-normalised SHA-256).
+
+## Scope / Methodology
+
+Startup acknowledged: mode `cvf_ncr_p10_closed_p11_parked`; handoff `AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move: DGIP T1 private implementation after bound release; role INTERNAL_AGENT worker; phase worker execution; decision owner Local; effect owner operator; parked S05 and C1 STOP, Q001/Q004, durable acceptance, pilot/live, P11, public sync, deployment.
+
+Sequence: guard reads, packet and input reads, clean-worktree and identity capture at the released HEAD, then the bound pre-implementation gate (PASS) before any edit. A baseline run of the existing golden harness was taken offline (78/79; see DEV-06). The Core closeability checker was fixed first with a pre-fix repro from `git show HEAD` of the original checker. Implementation then followed one chain: runner modules and profile, PowerShell integration, bootstrap/doctor/aggregate/bridge/rule-pack edits, template projection, documentation family, then the unit tests and the offline golden harness, and finally the return gates. Every git or Python process used a forced dead local proxy (`http.proxy=http://127.0.0.1:9`) and `PYTHONDONTWRITEBYTECODE=1`; no network, install, provider call, subagent, stash, reset, commit or stage occurred.
+
+Hermetic proof method: a disposable workspace under the OS temp directory with a local clone of the sibling public-sync repository as the clean anchor, the standard harness overlay, and every declared candidate file overlaid from the worktree and then verified byte-equal by raw SHA-256 (MATCH) to the worktree candidate; all 33 candidate files differ from the base blob, so a HEAD-only clone cannot stand in for the candidate. The anchor is the public-sync clone because that is the established offline anchor of the existing harness, not a clone of the private repository.
+
+## Findings / Position
+
+- Profile, runner and pin: `docs/reference/downstream_gate_profile/` (standard, README, migration contract, three schemas, intake template, parent registry) and `scripts/lib/downstream_governance/` (13 files) define six mandatory controls over five phases. Inherited copies are identity-pinned by `.cvf/gate-profile.lock.json`; the Core doctor re-verifies them against the Core source with `--trusted`.
+- Continuity: the generated project now carries machine-comparable truth (`continuityContract` in state, `## Current Truth` in memory, shared next-move text). CVF-DG-CONT-01 compares mode, phase, role, next move, active handoff, tranche and active work orders across state, handoff, memory and implementation status, maps `REVIEW_PENDING` to phase `REVIEW`, rejects missing, duplicate, conflicting and unknown fields, and returns `BLOCKED_MIGRATION_REQUIRED` for an unmigrated state instead of rewriting it.
+- Applicability: the Core closeability checker and the pinned downstream copy now share one strict grammar. The pre-fix repro shows the original checker returned no violation for an inline-suffix, blank, unknown or lowercase status; the post-fix checker rejects each and lists explicit not-applicable files with a reason and the checked control ids.
+- Reviewer routing: the downstream template projects the parent rule and CVF-DG-ROUTE-01 validates the decision envelope (boundary token, basis, seven YES/NO assessment fields). All-unchanged-plus-determined-evidence REWORK fails; a real boundary change still passes. It judges no semantic smallness and names no provider or commit role.
+- Intake: `runner intake` writes one deterministic `docs/learning_intake/<id>.intake.json` per explicit finding input, `NOT_ACCEPTED_GENERATION_ONLY`, with empty parent links; the parent registry records dedup (EXTENDS_EXISTING for BSL and ADIF-0026/0052, INDEPENDENT_REASON for ADIF-0058, NOT_A_DUPLICATE for ADIF-0050) with every disposition `PENDING_LOCAL_REVIEW` and no new ADIF id.
+- Coverage and claims: per phase and control the readout is INSTALLED, INVOKED or PROVEN_HERMETIC (never inferred); hosted CI is reported as not observed. Doctor and bridge wording is scoped; the doctor prints `GATE_COVERAGE`; a legacy project gets `GATE_PROFILE_NOT_INSTALLED` and `MIGRATION_REQUIRED` and no readiness claim.
+- Hermetic golden proof: the new harness passed 66 of 66 assertions (23 negative mutations, positive controls over five phases, idempotent second bootstrap, preservation of project-owned bytes, LF and CRLF variants, aggregate propagation, legacy migration, intake, claim wording, proof receipt with 22 PROVEN_HERMETIC cells, residue check). The existing golden harness stays at 78 of 79 with the same single AC-09 network-dependent failure as the pre-change baseline.
+- Machine-join defect (blocking): the acceptance ledger cannot be PASS-joined for this packet; see Risk / Corrective Action.
+- Unproven: real CCMAI adoption, hosted PR verification (including the PR #1 anecdote), Linux/other-OS execution, public rollout, runtime AI behavior, cost.
+
+## Work-Order Acceptance Evidence
+
+| Requirement | Substantive result | Ledger join | Principal proof |
+|---|---|---|---|
+| REQ-1 profile and owner responsibility | IMPLEMENTED | BLOCKED (ledger) | standard, schemas, registry, profile parity unit tests |
+| REQ-2 continuity | IMPLEMENTED | BLOCKED (ledger) | unit ContinuityTests; golden drifts, review-pending case, migration |
+| REQ-3 fail-closed applicability | IMPLEMENTED | BLOCKED (ledger) | pre-fix repro; pytest 26; golden five status mutations x four phases |
+| REQ-4 install, invocation and claims | IMPLEMENTED | BLOCKED (ledger) | golden positives x five phases, tamper, override, pin, aggregate, coverage |
+| REQ-5 reviewer-local routing | IMPLEMENTED | BLOCKED (ledger) | template section; unit RoutingTests; golden REWORK cases |
+| REQ-6 intake and migration | IMPLEMENTED | BLOCKED (ledger) | unit IntakeTests; golden intake; migration contract |
+| REQ-7 hermetic golden proof | IMPLEMENTED | BLOCKED (ledger) | 66/66 harness, candidate identity, idempotency, line endings |
+| REQ-8 full return and digest | AUTHORED | PASS | this return; raw digest in the evidence JSON (PROOF-8), no self-hash |
+
+The evidence JSON `docs/reviews/evidence/cvf-dgip-t1-worker-2026-10-03.json` carries the per-proof records, the candidate hashes, the pre-fix repro results, the negative-mutation list, the proof receipt cells, the gate results, the deviations and the deferred list.
+
+## Risk / Corrective Action
+
+- BLOCKER (packet contradiction, outside worker authority): the ledger rows REQ-1..REQ-7 name only the evidence JSON as `expectedArtifacts`, while the same work order's fulfillment manifest and implementation contract require the 33 implementation, test and documentation paths. The acceptance checker enforces PASS-row equality with `expectedArtifacts` and also rejects any Git-observed path no row claims, so no honest worker output satisfies the required return gate with `COMPLETE_PENDING_REVIEW`. Corrective path (reviewer-local repair, no re-dispatch): Local amends the ledger `expectedArtifacts` to the exact observed set listed in the acceptance evidence above (or accepts this join), converts the rows to PASS and re-runs the required gate; objective, design, paths, authority, effects and commit owner are unchanged and the evidence determines the fix.
+- DEV-01 operational index not updated: the work order asked for an index row, but the index is a fingerprinted source of system-chain lane `ENFORCEMENT_TO_EVIDENCE`; editing it makes `system chain map freshness` report SOURCE_DRIFT, and the fingerprint file is outside the write scope. I reverted my index edit. Proposed row text and the refresh are listed in the evidence JSON for Local to apply together (reviewer-local repair).
+- DEV-02 template reflow: the downstream template sat exactly at the carrier budget of 180 lines (checker-owned, outside scope). To add the two required sections I reflowed existing paragraphs to wider lines (177 lines now). A whitespace-collapsed comparison against the base text plus the two added sections returned MATCH (one hyphen-at-line-break repaired), and the protected carrier and doctor phrases remain on single lines. The diff is therefore large but not semantic.
+- DEV-03 existing harness support: the existing golden harness overlay list was extended with the new core files (otherwise the hermetic core is incomplete and bootstrap correctly refuses); `CvfGoldenHarnessSupport.ps1` also gained the candidate-overlay helpers.
+- DEV-04 public-sync surfaces untouched: `scripts/update_cvf_workspace_public_core.ps1` and the public mapper were not edited (out of scope), so the public core reconciler does not yet know the new core files; the doctor's required-file list does. Public rollout stays deferred.
+- DEV-05 residual wording: the phrase "agent-enforcement-ready" remains in files outside the write scope (`docs/reference/CVF_WORKSPACE_RULES.md`, `README.md`, `ARCHITECTURE.md`, W113/W114 assessments). Only the doctor and bridge wording was changed.
+- DEV-06 baseline network dependence: with network blocked, the existing golden harness fails only AC-09 (fresh-clone initializer needs `git fetch`); this equals the pre-change baseline and is not caused by this work. It was not run with network.
+- DEV-07 required first reads were not complete: the closed GLP roadmap and the foundation storage standard were not read (the storage checker source was), the ADIF entries and the Golden Bootstrap intake were read at head level only, and `governance/toolkit/05_OPERATION/downstream_catalog/` guard text was not read. The GLP and ADIF dedup in the registry therefore rests on the work order's dedup mapping plus the heads read, and is marked `PENDING_LOCAL_REVIEW`; it is not a full-read claim.
+- Limits: the pre-commit hook is a template only (never activated); Python 3 is a hard requirement of a governed bootstrap and the doctor (missing Python fails closed); 17 of 999 historical work orders (contradictory, malformed, missing or unknown status) would be rejected if touched again, by design; the rule-pack profile `public-free` still stops on the pre-existing `CVF_SESSION` sensitive-token rule for the downstream template (also true at the base), `operator-local` works.
+- Trust boundary: replacing the trusted gate wholesale, or invoking a project out of band, is not intercepted. A consistent edit of a project module and its lock passes the project's own lock-only check by design and is caught by the Core doctor (TRUSTED_MISMATCH) and by the CI runner pin.
+
+## Decision / Disposition
+
+Disposition: BLOCKED_WITH_REASON, closeabilityDisposition UNCLOSEABLE_PACKET_CONTRADICTION, claim level PASS_HERMETIC_FILE_CONTROL_ONLY for the implementation. Local owns the reviewer-local ledger repair, the independent probe, acceptance, the commit and continuity; the operator owns every external effect. No successor tranche is opened. DEFERRED_PRIVATE_ONLY.
+
+## Checker Source Read-Ahead Block
+
+| Field | Value |
+|---|---|
+| applicableCheckersRead | `governance/compat/check_worker_return_quality_gate.py` (full); `governance/compat/check_work_order_acceptance_ledger.py` (full); `governance/compat/check_independent_review_probe_admission.py` (header, dispatch and closure paths, role token); `governance/compat/check_gate_to_role_closeability.py` (full, then changed); `governance/compat/check_core_guard_self_protection.py` (marker and field paths); `governance/compat/check_agent_instruction_carriers.py` (budgets and template tokens); `governance/compat/check_review_cost_control.py` (REWORK block); `governance/compat/check_worker_experience_retrospective.py` (vocabulary); `governance/compat/check_foundation_storage_layout.py` (family README and dated-name rules) |
+| literalTokensReviewed | `COMPLETE_PENDING_REVIEW`; `BLOCKED_WITH_REASON`; `acceptance-evidence-json`; `WORKER_MUST_NOT_COMMIT honored`; `git diff --name-status`; `CLAIM_REJECTED_NO_RECEIPT`; `CLAIM_REJECTED_NO_ACTION`; `operator-provided external comparison, critique, or recommendation`; `DEFERRED_PRIVATE_ONLY`; `PENDING_REVIEWER_EXECUTION`; `LOCAL_REVIEWER_NOT_IMPLEMENTATION_WORKER`; `UNCLOSEABLE_PACKET_CONTRADICTION`; `Core Guard Self-Protection Authorization` field names; carrier budget 180 lines |
+| gateRunPurpose | Confirm the exact ledger join, packet shape, protected-path authorization and reviewer-pending status after the checker sources were read ahead of writing; the first reviewer-fast run exposed the carrier budget, the system-chain fingerprint and the guard-authorization requirement, each handled as recorded |
+| claimBoundary | Structural gates cannot show design adequacy, control behaviour in a real project, hosted CI, Linux behavior or runtime enforcement. |
+
+## P4 Automatic Evidence Observation Block
+
+p4ObservationEligibility: AUTO
+p4ObservationPhase: N/A with reason: not a natural P4 observation candidate
+p4HardObligationLocator: N/A with reason: not a natural P4 observation candidate
+p4HardObligationPattern: N/A with reason: not a natural P4 observation candidate
+p4SourceAuthorityLocator: N/A with reason: not a natural P4 observation candidate
+
+## Architecture Readiness Echo
+
+architectureMatrixSchema: NOT_APPLICABLE_WITH_REASON: dispatching work order declared NOT_APPLICABLE_INTERNAL_AGENT_WITH_REASON for Architecture-Readiness Admission
+architectureMatrixCanonicalDigest: N/A with reason: no accepted architecture matrix to echo
+architectureSemanticReviewPath: N/A with reason: no accepted architecture matrix to echo
+architectureSemanticReviewCommit: N/A with reason: no accepted architecture matrix to echo
+architectureSemanticReviewFileSha256: N/A with reason: no accepted architecture matrix to echo
+architectureBindingEchoDisposition: N/A with reason: no accepted architecture matrix to echo
+
+## Claim Boundary
+
+This return is `BLOCKED_WITH_REASON` on a machine-join defect; it is not acceptance, a real-project migration, a hosted-CI or Linux result, a public-sync or rollout, a runtime-AI or provider claim, or an enforcement claim beyond the cooperative file controls exercised hermetically. INSTALLED is not INVOKED is not PROVEN_HERMETIC. Linux/other-OS execution is NOT_EXECUTED_PLATFORM_UNAVAILABLE; real CCMAI adoption and hosted PR verification are DEFERRED_PRIVATE_ONLY. Worker-session usage and cost are UNKNOWN.
+
+## Gate Evidence
+
+| Command | Result |
+|---|---|
+| `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --head HEAD --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_DGIP_T1_DOWNSTREAM_GATE_INHERITANCE_2026-10-03.md` | PASS (exit 0, COMPLIANT) at clean HEAD before any edit |
+| `python -B -m unittest discover -s governance/compat -p test_downstream_gate_profile.py` | PASS (38 tests, OK) |
+| `python -B -m pytest -p no:cacheprovider governance/compat/test_check_gate_to_role_closeability.py -q` | PASS (26 passed; the suite is pytest-style, `unittest discover` collects 0 tests for it) |
+| `pwsh -NoProfile -File scripts/test_cvf_downstream_gate_profile.ps1` | PASS (66/66 assertions, 23 negative mutations, exit 0, 182 s) |
+| `pwsh -NoProfile -File scripts/test_cvf_golden_downstream_bootstrap.ps1` (offline) | 78/79; AC-09 only (needs network); the pre-change baseline result was also 78/79 (MATCH) |
+| `python governance/compat/run_local_governance_hook_chain.py --hook reviewer-fast` | PASS (exit 0) with this return present; earlier runs failed as recorded: run 1 (before the return, 4 preflights: closure packaging, core guard self-protection, system chain map freshness from the index edit, carrier compaction from the template length) and run 2 (after DEV-01/DEV-02, only the two protected-path authorization preflights, resolved by the Core Guard Self-Protection Authorization block below) |
+| `python governance/compat/run_worker_return_fast_gate.py --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_DGIP_T1_DOWNSTREAM_GATE_INHERITANCE_2026-10-03.md` | PASS (exit 0): focused-test, corpus registry, epistemic, acceptance ledger (COMPLIANT), worker-return quality (COMPLIANT), probe admission (PASS), reviewer-fast (PASS) and diff whitespace sub-gates all passed on this return as a BLOCKED_WITH_REASON packet |
+
+receiptEvidence: CVF_RECEIPT_PRESENT - `.cvf/runtime/autorun-receipts/pre-implementation.json` (pre-implementation gate); harness evidence recorded in the evidence JSON
+
+## Actual Changed Set
+
+- `docs/reference/downstream_gate_profile/CVF_DOWNSTREAM_GATE_PROFILE_MIGRATION.md`
+- `docs/reference/downstream_gate_profile/CVF_DOWNSTREAM_GATE_PROFILE_STANDARD.md`
+- `docs/reference/downstream_gate_profile/DOWNSTREAM_FINDING_INTAKE_TEMPLATE.json`
+- `docs/reference/downstream_gate_profile/README.md`
+- `docs/reference/downstream_gate_profile/downstream_continuity_contract.schema.json`
+- `docs/reference/downstream_gate_profile/downstream_finding_intake.schema.json`
+- `docs/reference/downstream_gate_profile/downstream_finding_intake_registry.json`
+- `docs/reference/downstream_gate_profile/downstream_gate_profile.schema.json`
+- `docs/reviews/CVF_DGIP_T1_DOWNSTREAM_GATE_INHERITANCE_WORKER_RETURN_2026-10-03.md`
+- `docs/reviews/evidence/cvf-dgip-t1-worker-2026-10-03.json`
+- `governance/compat/check_gate_to_role_closeability.py`
+- `governance/compat/test_check_gate_to_role_closeability.py`
+- `governance/compat/test_downstream_gate_profile.py`
+- `governance/toolkit/05_OPERATION/CVF_DOWNSTREAM_AGENTS_TEMPLATE.md`
+- `scripts/check_cvf_workspace_agent_enforcement.ps1`
+- `scripts/check_cvf_workspace_new_project_enforcement.ps1`
+- `scripts/lib/downstream_catalog/CvfDownstreamBootstrapContent.ps1`
+- `scripts/lib/downstream_catalog/CvfGoldenHarnessSupport.ps1`
+- `scripts/lib/downstream_governance/CvfDownstreamGateProfile.ps1`
+- `scripts/lib/downstream_governance/cvf_dg_applicability.py`
+- `scripts/lib/downstream_governance/cvf_dg_common.py`
+- `scripts/lib/downstream_governance/cvf_dg_continuity.py`
+- `scripts/lib/downstream_governance/cvf_dg_coverage.py`
+- `scripts/lib/downstream_governance/cvf_dg_install.py`
+- `scripts/lib/downstream_governance/cvf_dg_intake.py`
+- `scripts/lib/downstream_governance/cvf_dg_review.py`
+- `scripts/lib/downstream_governance/cvf_dg_routing.py`
+- `scripts/lib/downstream_governance/cvf_downstream_gate_profile.json`
+- `scripts/lib/downstream_governance/cvf_downstream_gate_runner.py`
+- `scripts/lib/downstream_governance/downstream_pr_gates.yml.template`
+- `scripts/lib/downstream_governance/git-pre-commit.template`
+- `scripts/new-cvf-workspace.ps1`
+- `scripts/sync_cvf_workspace_rule_pack.ps1`
+- `scripts/test_cvf_downstream_gate_profile.ps1`
+- `scripts/write_cvf_workspace_web_evidence_bridge.ps1`
+
+## Core Guard Self-Protection Authorization
+
+Authorized guard-maintenance scope: the work order's operator-requested parent machine-control implementation (portable downstream gate profile); the worker changed only the checker, test and template owners named in its Core Guard Self-Protection Authorization.
+
+Protected paths:
+- `governance/compat/check_gate_to_role_closeability.py`
+- `governance/compat/test_check_gate_to_role_closeability.py`
+- `governance/compat/test_downstream_gate_profile.py`
+
+Operator authorization: the current operator instruction to the orchestrator/reviewer to implement the work order for manual worker relay, recorded in the work order's Core Guard Self-Protection Authorization and Operator Checkpoint sections.
+
+Rollback boundary: revert only the files listed in Actual Changed Set; S05 and C1 STOP evidence, all project-owned content, historical artifacts and every external surface are untouched.
+
+## External Knowledge Intake Routing
+
+| Field | Value |
+|---|---|
+| Chain map | `docs/reference/external_agent_review/CVF_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP.md` |
+| Input type | operator-provided external comparison, critique, or recommendation |
+| Chain map route | CCMAI advisory learning snapshot -> private source verification and dedup -> integrated parent implementation -> hermetic proof -> Local review |
+| Matching local-view guard | `governance/compat/check_external_knowledge_intake_routing.py` |
+| Owner surface | Golden Bootstrap, GLP, review-cost and F2G owners plus the portable downstream profile |
+| Disposition | SOURCE_COMPARISON_RUNTIME_PENDING |
+| Claim boundary | CVF source authority remains repo-governed surfaces only; the snapshot's project commits and PR runs are unverified |
+
+## External/Local Coordination Binding
+
+Role: shared-workspace `INTERNAL_AGENT`. Phase: parent control-plane implementation. Decision owner: Local.
+
+```json
+{"contractId":"cvf.external-local-absorption-coordination@1","invariants":{"externalRole":"ADVISORY_RESEARCH_AND_PATTERN_MAPPING","externalContext":"PUBLIC_GITHUB_AND_REFRESHED_EXTERNAL_AGENT_READ","localRole":"SOURCE_RUNTIME_VALUE_AND_PRIVATE_CVF_VERIFICATION","finalDecisionOwner":"LOCAL","localCoverageBasis":"SOURCE_DERIVED_NOT_EXTERNAL_SHORTLIST","externalEvidenceAuthority":"INPUT_NOT_PRIVATE_CVF_PROOF"},"contractSha256":"92df8a7c9492e8c3cedf624cfaa79b8185ca31442ecaf96107fd88dfcb81800c","parentArtifact":null}
+```
+
+## External Repository Absorption Entry Control
+
+COMPARISON_ONLY_NO_ABSORPTION: pinned local Git, source and evidence reads only. No source acquisition, import, runtime activation or corpus completeness claim.
+
+## Overlap And Novelty Classification
+
+| Source item or group | Existing CVF owner surface checked | Overlap disposition | Novelty / delta | Action |
+|---|---|---|---|---|
+| Continuity drift and shallow doctor | `docs/reference/CVF_GOLDEN_DOWNSTREAM_BOOTSTRAP_LEARNING_INTAKE_2026-07-23.md`; ADIF-0052 | ENRICH_EXISTING | portable continuity gate and golden proof | implemented |
+| Inline status fail-open | `governance/compat/check_gate_to_role_closeability.py` | ENRICH_EXISTING | strict grammar and reasoned not-applicable | implemented |
+| Reviewer-local repair route | review-cost standard; ADIF-0026 | CONFIRMED_EXISTING | downstream projection and envelope check | implemented |
+| Project-to-parent intake | `docs/reference/CVF_FINDING_TO_GOVERNANCE_LEARNING_TRIGGER_STANDARD.md` | ENRICH_EXISTING | deterministic explicit intake and registry | implemented |
+| Historical CCMAI commits and PR runs | none (advisory) | REJECT_DIRECT_IMPORT | unverified project history | not used as proof |
+
+## Rescan Intelligence Hardening
+
+- Rescan intelligence verdict: NOT_APPLICABLE_WITH_REASON
+
+Reason: no repository rescan, source refresh or mirror read; named governed owners and the operator-provided snapshot only.
+
+## Corpus Completeness And Report Integrity
+
+- Corpus verdict: NOT_APPLICABLE_WITH_REASON - named owner implementation and a historical work-order status tally; no full-corpus or all-files-read claim (the tally reads `docs/work_orders/*.md` status lines only).
+
+## Finding-To-Governance Learning Disposition
+
+| Finding | Defect class | Learning lane | Disposition | Next control action | Handled or deferred |
+|---|---|---|---|---|---|
+| Acceptance-ledger `expectedArtifacts` omit the implementation paths the fulfillment manifest requires, so the required return gate cannot be PASS | ORCHESTRATOR_PACKET_GAP | GOVERNANCE_CONTROL_PLANE | MACHINE_CHECK_CANDIDATE | dispatch-time check that ledger expectedArtifacts cover the declared fulfillment manifest | deferred to Local reviewer-local repair and the parent owner |
+| A required index edit changes a fingerprinted source of the system-chain lane and the fingerprint file is outside the packet scope | PHASE_GATE_PLACEMENT_GAP | GOVERNANCE_CONTROL_PLANE | DESIGN_REVIEW_REQUIRED | list fingerprinted owners in the dependent-surface discovery of the packet | deferred to Local |
+| Downstream carrier template sits exactly at its checker-owned 180-line budget, so any required projection forces a reflow | RULE_GAP | GOVERNANCE_CONTROL_PLANE | DESIGN_REVIEW_REQUIRED | decide whether the budget or the content owns the next downstream rule | deferred to Local |
+| Existing golden harness overlay list is hand-maintained, so each new core file breaks it until updated | MACHINE_GATE_GAP | GOVERNANCE_CONTROL_PLANE | MACHINE_CHECK_CANDIDATE | derive the overlay from the doctor's required-file list | handled for this tranche by extending the list; derivation deferred |
+
+Runtime/provider/cost learning lane: N/A_WITH_REASON - repository governance, bootstrap and reviewer routing only; no provider, customer-data, runtime-AI or cost behavior was exercised or claimed.
+
+## Epistemic Process Block
+
+### Expected Result / Prediction
+
+The released base would let a drifted downstream project pass the doctor and aggregate, the original closeability checker would skip non-conforming status lines, and a candidate that installs a pinned runner and checks the truth surfaces would fail closed on each drift and tamper in a disposable offline project.
+
+### Evidence Comparison
+
+Held: at the base a project with state REVIEW_PENDING/REVIEW and memory/implementation at INTAKE passed the 25-check doctor (exit 0) and the aggregate reported ENFORCED_PASS; the original checker returned no violation for blank, unknown, lowercase and inline-suffix statuses. With the candidate every drift, status, claim, role, REWORK and tamper mutation failed with a field-specific code and the pristine project passed in all five phases, and the second bootstrap changed no byte. Useful: a consistent module-plus-lock edit is invisible to a project's own lock check and is caught only by the Core doctor or the CI pin.
+
+### Contradiction Or Gap Disposition
+
+Contradiction: the acceptance ledger versus the fulfillment manifest (blocking, routed to Local). Gaps carried: Linux, hosted CI, real adoption, public rollout, index registration, residual wording, pre-existing AC-09 network dependence, input-receipt hashes of edited files not recomputable.
+
+### Claim Update
+
+The portable gate chain is IMPLEMENTED and PROVEN_HERMETIC for the exercised control/phase cells on Windows in a disposable offline project. Nothing is claimed beyond that.
+
+## Worker Experience Retrospective
+
+WORKER_EXPERIENCE_RETRO:
+frictionLevel: MEDIUM
+frictionType: GATE_SURPRISE
+observedStep: the required return gate cannot be satisfied by any honest output because the ledger and the fulfillment manifest disagree, the carrier budget and the system-chain fingerprint surfaced only in reviewer-fast, and a backslash-heavy PowerShell literal needed several corrections
+preventiveControlCandidate: CHECKER
+
+## Worker Return Scaffold Effectiveness Measurement
+
+| Measurement | Result |
+|---|---|
+| scaffoldUsedBeforeLongDraft | YES |
+| scaffoldMissingSectionFound | NONE |
+| firstWorkerReturnFastGateResult | FAIL (exit 1) - four reviewer-fast preflights on the BLOCKED shape: review cost control (three PENDING_BEFORE_READY literals), agent operation trace (Expected manifest without paths), finding-to-governance learning (blocked-return cluster fields and runtime-lane N/A), equivalence claim evidence (a listed phrase); repaired in one consolidated pass, second run PASS |
+| postScaffoldManualRepairCount | 1 |
+
+## Worker Return Jurisdiction Block
+
+| Field | Disposition |
+|---|---|
+| capturedArtifacts | the 33 candidate files plus the two return outputs listed in Actual Changed Set |
+| capturedOperations | read-only startup and source reads; offline hermetic harness runs in disposable temp roots; local unit tests; reviewer-fast and worker-return gates |
+| deferredOperations | ledger repair, independent probe, acceptance, commit, continuity, index registration, public sync, real adoption, hosted CI, Linux run |
+| outOfScopeRequests | none made; the index and system-chain conflicts are reported, not worked around |
+| reviewerActionNeeded | amend the ledger (reviewer-local), run the independent probe, decide index registration and the template diff |
+
+## Agent Operation Trace Block
+
+| Field | Evidence |
+|---|---|
+| Actor | Internal worker (INTERNAL_AGENT) |
+| Provider or surface | Shared private CVF workspace; local file reads and edits, offline PowerShell and Python runs, git read commands |
+| Session or invocation | CVF-DGIP-T1 worker session, 2026-10-03 |
+| Working directory | Repository root; scratch scripts and logs in the session scratchpad outside the repository |
+| Command or tool surface | pre-implementation gate; git rev-parse, status, diff, archive, show; Python unittest and pytest; pwsh and Windows PowerShell harness runs; reviewer-fast hook chain; worker-return fast gate |
+| Target paths | the 33 candidate files and the two return outputs listed in Actual Changed Set |
+| Allowed scope source | Bound work order Write Ownership and Work-Order Fulfillment Manifest |
+| Before status evidence | clean worktree at HEAD `44229eeb0`; both return outputs and the new families absent |
+| After status evidence | 35 changed paths (10 tracked modifications, 25 untracked including the two return outputs); nothing staged; HEAD unchanged |
+| Diff evidence | `git diff --name-status` lists the ten modified tracked files and nothing is staged; untracked paths are listed by `git status --short --untracked-files=all` |
+| Approval boundary | Worker evidence only; Local owns review, the independent probe, acceptance, commit and continuity; operator owns external effects |
+| Claim boundary | Hermetic file-control implementation and tests only |
+| Agent type | worker |
+| Invocation ID | cvf-dgip-t1-worker-20261003 |
+| Expected manifest | `docs/reference/downstream_gate_profile/CVF_DOWNSTREAM_GATE_PROFILE_MIGRATION.md`; `docs/reference/downstream_gate_profile/CVF_DOWNSTREAM_GATE_PROFILE_STANDARD.md`; `docs/reference/downstream_gate_profile/DOWNSTREAM_FINDING_INTAKE_TEMPLATE.json`; `docs/reference/downstream_gate_profile/README.md`; `docs/reference/downstream_gate_profile/downstream_continuity_contract.schema.json`; `docs/reference/downstream_gate_profile/downstream_finding_intake.schema.json`; `docs/reference/downstream_gate_profile/downstream_finding_intake_registry.json`; `docs/reference/downstream_gate_profile/downstream_gate_profile.schema.json`; `docs/reviews/CVF_DGIP_T1_DOWNSTREAM_GATE_INHERITANCE_WORKER_RETURN_2026-10-03.md`; `docs/reviews/evidence/cvf-dgip-t1-worker-2026-10-03.json`; `governance/compat/check_gate_to_role_closeability.py`; `governance/compat/test_check_gate_to_role_closeability.py`; `governance/compat/test_downstream_gate_profile.py`; `governance/toolkit/05_OPERATION/CVF_DOWNSTREAM_AGENTS_TEMPLATE.md`; `scripts/check_cvf_workspace_agent_enforcement.ps1`; `scripts/check_cvf_workspace_new_project_enforcement.ps1`; `scripts/lib/downstream_catalog/CvfDownstreamBootstrapContent.ps1`; `scripts/lib/downstream_catalog/CvfGoldenHarnessSupport.ps1`; `scripts/lib/downstream_governance/CvfDownstreamGateProfile.ps1`; `scripts/lib/downstream_governance/cvf_dg_applicability.py`; `scripts/lib/downstream_governance/cvf_dg_common.py`; `scripts/lib/downstream_governance/cvf_dg_continuity.py`; `scripts/lib/downstream_governance/cvf_dg_coverage.py`; `scripts/lib/downstream_governance/cvf_dg_install.py`; `scripts/lib/downstream_governance/cvf_dg_intake.py`; `scripts/lib/downstream_governance/cvf_dg_review.py`; `scripts/lib/downstream_governance/cvf_dg_routing.py`; `scripts/lib/downstream_governance/cvf_downstream_gate_profile.json`; `scripts/lib/downstream_governance/cvf_downstream_gate_runner.py`; `scripts/lib/downstream_governance/downstream_pr_gates.yml.template`; `scripts/lib/downstream_governance/git-pre-commit.template`; `scripts/new-cvf-workspace.ps1`; `scripts/sync_cvf_workspace_rule_pack.ps1`; `scripts/test_cvf_downstream_gate_profile.ps1`; `scripts/write_cvf_workspace_web_evidence_bridge.ps1` |
+| Actual changed set | `docs/reference/downstream_gate_profile/CVF_DOWNSTREAM_GATE_PROFILE_MIGRATION.md`; `docs/reference/downstream_gate_profile/CVF_DOWNSTREAM_GATE_PROFILE_STANDARD.md`; `docs/reference/downstream_gate_profile/DOWNSTREAM_FINDING_INTAKE_TEMPLATE.json`; `docs/reference/downstream_gate_profile/README.md`; `docs/reference/downstream_gate_profile/downstream_continuity_contract.schema.json`; `docs/reference/downstream_gate_profile/downstream_finding_intake.schema.json`; `docs/reference/downstream_gate_profile/downstream_finding_intake_registry.json`; `docs/reference/downstream_gate_profile/downstream_gate_profile.schema.json`; `docs/reviews/CVF_DGIP_T1_DOWNSTREAM_GATE_INHERITANCE_WORKER_RETURN_2026-10-03.md`; `docs/reviews/evidence/cvf-dgip-t1-worker-2026-10-03.json`; `governance/compat/check_gate_to_role_closeability.py`; `governance/compat/test_check_gate_to_role_closeability.py`; `governance/compat/test_downstream_gate_profile.py`; `governance/toolkit/05_OPERATION/CVF_DOWNSTREAM_AGENTS_TEMPLATE.md`; `scripts/check_cvf_workspace_agent_enforcement.ps1`; `scripts/check_cvf_workspace_new_project_enforcement.ps1`; `scripts/lib/downstream_catalog/CvfDownstreamBootstrapContent.ps1`; `scripts/lib/downstream_catalog/CvfGoldenHarnessSupport.ps1`; `scripts/lib/downstream_governance/CvfDownstreamGateProfile.ps1`; `scripts/lib/downstream_governance/cvf_dg_applicability.py`; `scripts/lib/downstream_governance/cvf_dg_common.py`; `scripts/lib/downstream_governance/cvf_dg_continuity.py`; `scripts/lib/downstream_governance/cvf_dg_coverage.py`; `scripts/lib/downstream_governance/cvf_dg_install.py`; `scripts/lib/downstream_governance/cvf_dg_intake.py`; `scripts/lib/downstream_governance/cvf_dg_review.py`; `scripts/lib/downstream_governance/cvf_dg_routing.py`; `scripts/lib/downstream_governance/cvf_downstream_gate_profile.json`; `scripts/lib/downstream_governance/cvf_downstream_gate_runner.py`; `scripts/lib/downstream_governance/downstream_pr_gates.yml.template`; `scripts/lib/downstream_governance/git-pre-commit.template`; `scripts/new-cvf-workspace.ps1`; `scripts/sync_cvf_workspace_rule_pack.ps1`; `scripts/test_cvf_downstream_gate_profile.ps1`; `scripts/write_cvf_workspace_web_evidence_bridge.ps1` |
+| Manifest delta | MATCH: every changed path is an exact manifest path or inside a bounded family; `docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md` and `scripts/test_cvf_golden_downstream_bootstrap.ps1` are manifest paths left unchanged (see DEV-01) |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
+
+## Delta Execution Claim Boundary Control Block
+
+| Field | Disposition |
+|---|---|
+| claimScope | Portable downstream gate inheritance: private file controls and hermetic tests only |
+| claimDisposition | BOUNDED_CLAIM_WITH_EVIDENCE: hermetic offline golden proof and unit tests; reviewer pending |
+| receiptEvidence | CVF_RECEIPT_PRESENT: runner-written invocation receipts in the disposable projects and the pre-implementation autorun receipt; CLAIM_REJECTED_NO_RECEIPT for any hosted CI, real-project or provider receipt |
+| actionEvidence | ACTION_EVIDENCE_PRESENT: bootstrap, doctor, aggregate and runner executions in disposable offline workspaces; CLAIM_REJECTED_NO_ACTION for network, install, provider, deploy, push or real downstream action |
+| invocationBoundary | local CLI and PowerShell invocations of the candidate by this worker; project copies only through their pinned CI command executed locally |
+| interceptionBoundary | no IDE, shell, git, filesystem, provider, CLI, MCP, Web runtime or adapter interception claim; out-of-band invocation or wholesale gate replacement is not intercepted |
+| claimLanguage | implemented and hermetically proven for the listed cells; unproven items named in Claim Boundary |
+| forbiddenExpansion | No hosted CI trigger, Linux install, network fetch, provider call, real project edit, public sync, deploy or worker commit |
+
+## Public Export Disposition
+
+DEFERRED_PRIVATE_ONLY
+
+Reason: worker return in the private provenance workspace; no public-sync authorization.
+
+## git status --short
+
+```
+ M governance/compat/check_gate_to_role_closeability.py
+ M governance/compat/test_check_gate_to_role_closeability.py
+ M governance/toolkit/05_OPERATION/CVF_DOWNSTREAM_AGENTS_TEMPLATE.md
+ M scripts/check_cvf_workspace_agent_enforcement.ps1
+ M scripts/check_cvf_workspace_new_project_enforcement.ps1
+ M scripts/lib/downstream_catalog/CvfDownstreamBootstrapContent.ps1
+ M scripts/lib/downstream_catalog/CvfGoldenHarnessSupport.ps1
+ M scripts/new-cvf-workspace.ps1
+ M scripts/sync_cvf_workspace_rule_pack.ps1
+ M scripts/write_cvf_workspace_web_evidence_bridge.ps1
+?? docs/reference/downstream_gate_profile/CVF_DOWNSTREAM_GATE_PROFILE_MIGRATION.md
+?? docs/reference/downstream_gate_profile/CVF_DOWNSTREAM_GATE_PROFILE_STANDARD.md
+?? docs/reference/downstream_gate_profile/DOWNSTREAM_FINDING_INTAKE_TEMPLATE.json
+?? docs/reference/downstream_gate_profile/README.md
+?? docs/reference/downstream_gate_profile/downstream_continuity_contract.schema.json
+?? docs/reference/downstream_gate_profile/downstream_finding_intake.schema.json
+?? docs/reference/downstream_gate_profile/downstream_finding_intake_registry.json
+?? docs/reference/downstream_gate_profile/downstream_gate_profile.schema.json
+?? docs/reviews/CVF_DGIP_T1_DOWNSTREAM_GATE_INHERITANCE_WORKER_RETURN_2026-10-03.md
+?? docs/reviews/evidence/cvf-dgip-t1-worker-2026-10-03.json
+?? governance/compat/test_downstream_gate_profile.py
+?? scripts/lib/downstream_governance/CvfDownstreamGateProfile.ps1
+?? scripts/lib/downstream_governance/cvf_dg_applicability.py
+?? scripts/lib/downstream_governance/cvf_dg_common.py
+?? scripts/lib/downstream_governance/cvf_dg_continuity.py
+?? scripts/lib/downstream_governance/cvf_dg_coverage.py
+?? scripts/lib/downstream_governance/cvf_dg_install.py
+?? scripts/lib/downstream_governance/cvf_dg_intake.py
+?? scripts/lib/downstream_governance/cvf_dg_review.py
+?? scripts/lib/downstream_governance/cvf_dg_routing.py
+?? scripts/lib/downstream_governance/cvf_downstream_gate_profile.json
+?? scripts/lib/downstream_governance/cvf_downstream_gate_runner.py
+?? scripts/lib/downstream_governance/downstream_pr_gates.yml.template
+?? scripts/lib/downstream_governance/git-pre-commit.template
+?? scripts/test_cvf_downstream_gate_profile.ps1
+```
+
+## Changed Files
+
+`git diff --name-status` (tracked paths) and the untracked paths of `git status --short --untracked-files=all`:
+
+```
+M	governance/compat/check_gate_to_role_closeability.py
+M	governance/compat/test_check_gate_to_role_closeability.py
+M	governance/toolkit/05_OPERATION/CVF_DOWNSTREAM_AGENTS_TEMPLATE.md
+M	scripts/check_cvf_workspace_agent_enforcement.ps1
+M	scripts/check_cvf_workspace_new_project_enforcement.ps1
+M	scripts/lib/downstream_catalog/CvfDownstreamBootstrapContent.ps1
+M	scripts/lib/downstream_catalog/CvfGoldenHarnessSupport.ps1
+M	scripts/new-cvf-workspace.ps1
+M	scripts/sync_cvf_workspace_rule_pack.ps1
+M	scripts/write_cvf_workspace_web_evidence_bridge.ps1
+??	docs/reference/downstream_gate_profile/CVF_DOWNSTREAM_GATE_PROFILE_MIGRATION.md
+??	docs/reference/downstream_gate_profile/CVF_DOWNSTREAM_GATE_PROFILE_STANDARD.md
+??	docs/reference/downstream_gate_profile/DOWNSTREAM_FINDING_INTAKE_TEMPLATE.json
+??	docs/reference/downstream_gate_profile/README.md
+??	docs/reference/downstream_gate_profile/downstream_continuity_contract.schema.json
+??	docs/reference/downstream_gate_profile/downstream_finding_intake.schema.json
+??	docs/reference/downstream_gate_profile/downstream_finding_intake_registry.json
+??	docs/reference/downstream_gate_profile/downstream_gate_profile.schema.json
+??	docs/reviews/CVF_DGIP_T1_DOWNSTREAM_GATE_INHERITANCE_WORKER_RETURN_2026-10-03.md
+??	docs/reviews/evidence/cvf-dgip-t1-worker-2026-10-03.json
+??	governance/compat/test_downstream_gate_profile.py
+??	scripts/lib/downstream_governance/CvfDownstreamGateProfile.ps1
+??	scripts/lib/downstream_governance/cvf_dg_applicability.py
+??	scripts/lib/downstream_governance/cvf_dg_common.py
+??	scripts/lib/downstream_governance/cvf_dg_continuity.py
+??	scripts/lib/downstream_governance/cvf_dg_coverage.py
+??	scripts/lib/downstream_governance/cvf_dg_install.py
+??	scripts/lib/downstream_governance/cvf_dg_intake.py
+??	scripts/lib/downstream_governance/cvf_dg_review.py
+??	scripts/lib/downstream_governance/cvf_dg_routing.py
+??	scripts/lib/downstream_governance/cvf_downstream_gate_profile.json
+??	scripts/lib/downstream_governance/cvf_downstream_gate_runner.py
+??	scripts/lib/downstream_governance/downstream_pr_gates.yml.template
+??	scripts/lib/downstream_governance/git-pre-commit.template
+??	scripts/test_cvf_downstream_gate_profile.ps1
+```
+
+## Command Evidence
+
+| Command | Result |
+|---|---|
+| `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --head HEAD --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_DGIP_T1_DOWNSTREAM_GATE_INHERITANCE_2026-10-03.md` | PASS (exit 0, COMPLIANT) |
+| `python -B -m unittest discover -s governance/compat -p test_downstream_gate_profile.py` | PASS (38 tests) |
+| `python -B -m pytest -p no:cacheprovider governance/compat/test_check_gate_to_role_closeability.py -q` | PASS (26 passed) |
+| `pwsh -NoProfile -File scripts/test_cvf_downstream_gate_profile.ps1 -EvidencePath <scratch>` | PASS (66/66) |
+| `pwsh -NoProfile -File scripts/test_cvf_golden_downstream_bootstrap.ps1` with the offline guard | 78/79 (AC-09 network-dependent; baseline also 78/79, MATCH) |
+| `python governance/compat/run_adif_defect_resolver.py --task-class worker_execution --role worker --lifecycle-phase worker-return --json` | PASS (exit 0), 0 items, truncated=false |
+| `python governance/compat/run_local_governance_hook_chain.py --hook reviewer-fast` | PASS (exit 0) with this return present; earlier runs failed as recorded: run 1 (before the return, 4 preflights: closure packaging, core guard self-protection, system chain map freshness from the index edit, carrier compaction from the template length) and run 2 (after DEV-01/DEV-02, only the two protected-path authorization preflights, resolved by the Core Guard Self-Protection Authorization block below) |
+| `python governance/compat/run_worker_return_fast_gate.py --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_DGIP_T1_DOWNSTREAM_GATE_INHERITANCE_2026-10-03.md` | PASS (exit 0): focused-test, corpus registry, epistemic, acceptance ledger (COMPLIANT), worker-return quality (COMPLIANT), probe admission (PASS), reviewer-fast (PASS) and diff whitespace sub-gates all passed on this return as a BLOCKED_WITH_REASON packet |
+| `git diff --check` | PASS (exit 0; only CRLF/LF working-copy warnings) |
+
+Gate evidence is structural for the return packet and hermetic for the implementation; it is not hosted CI, Linux or real-project proof.
+
+## ADIF Defect Registry Disclosure
+
+Resolver query: taskClass=`worker_execution`, role=`worker`, lifecyclePhase=`worker-return`.
+
+Command: `python governance/compat/run_adif_defect_resolver.py --task-class worker_execution --role worker --lifecycle-phase worker-return --json`; result recorded under Command Evidence.
+
+Returned defects: NONE_RETURNED
+
+## Return-Time Closeability Recheck
+
+closeabilityDisposition: UNCLOSEABLE_PACKET_CONTRADICTION
+outsideAuthorityBlockers: ACCEPTANCE_LEDGER_EXPECTED_ARTIFACTS_OMIT_FULFILLMENT_MANIFEST_PATHS
+nextRepairRoute: REVIEWER_LOCAL_REPAIR
+workerRedispatchAllowed: NO
+
+The contradiction is between two dispatcher-owned sections of the same work order, so no worker action can repair it; the fix is a bounded ledger amendment determined by the evidence already available. The implementation, tests and hermetic proof are complete and are not a re-dispatch candidate.
+
+independentProbeDisposition: PENDING_REVIEWER_EXECUTION
+probeExecutorRole: LOCAL_REVIEWER_NOT_IMPLEMENTATION_WORKER
+
+The work order requires a Local independent probe with a separately authored fixture over the stale-state, status-skip, missing-control and no-op override, unjustified REWORK, stale-pin and self-review classes; this worker did not run it and the worker's own golden harness is not the independent oracle.
+
+## No-Commit Statement
+
+WORKER_MUST_NOT_COMMIT honored: HEAD unchanged at `44229eeb0`; nothing staged, committed or pushed by the worker. Reviewer/closer owns the material commit.
+
+## Machine Closure Package
+
+| Artifact | Evidence | Disposition |
+|---|---|---|
+| Worker return status | `Status: BLOCKED_WITH_REASON` | pending Local ledger repair and review; the worker marks nothing closed |
+| Work order status | `dispatchWorkOrder: docs/work_orders/CVF_AGENT_WORK_ORDER_DGIP_T1_DOWNSTREAM_GATE_INHERITANCE_2026-10-03.md` | N/A with reason: reviewer/closer owns closure conversion |
+| Changed set | `## Actual Changed Set` | real paths listed |
+| Gate evidence | `## Gate Evidence` | recorded with actual results |
+
+## Reviewer Closure Conversion
+
+Local owns the completion review, the independent probe and closure. The worker's BLOCKED_WITH_REASON status reflects the ledger contradiction only; after the reviewer-local ledger repair the same returned evidence supports conversion without re-dispatch. Reviewer-local repair defaults apply because objective, design, paths, authority, effects and commit owner are unchanged.

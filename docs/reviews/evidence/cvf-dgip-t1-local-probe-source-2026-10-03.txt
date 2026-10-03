@@ -1,0 +1,114 @@
+"""Local independent refusal oracle; no worker fixture/test imports, no network."""
+import sys
+sys.dont_write_bytecode = True
+import hashlib
+import json
+import os
+import shutil
+import subprocess
+from pathlib import Path
+from datetime import datetime, timezone
+
+ROOT = Path.cwd()
+LIB = ROOT / 'scripts/lib/downstream_governance'
+RUNNER = LIB / 'cvf_downstream_gate_runner.py'
+OUT = ROOT / '.cvf/runtime/dgip-t1-local-probe'
+OUT.mkdir(exist_ok=False)
+BASE = OUT / 'fixture'
+BASE.mkdir()
+ENV = {**os.environ, 'PYTHONDONTWRITEBYTECODE':'1', 'GIT_TERMINAL_PROMPT':'0'}
+profile = json.loads((LIB / 'cvf_downstream_gate_profile.json').read_text())
+results = []
+
+def put(root, rel, value):
+    path = root / rel
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(value if isinstance(value,str) else json.dumps(value,indent=2)+'\n',encoding='utf-8')
+
+def invoke(root, *args, runner=RUNNER):
+    done = subprocess.run([sys.executable,'-B',str(runner),*args,'--project-root',str(root)],env=ENV,cwd=root,text=True,capture_output=True)
+    return {'exitCode':done.returncode,'stdout':done.stdout,'stderr':done.stderr}
+
+handoff = 'CVF_SESSION/handoffs/LOCAL_ORACLE.md'
+state = {'schemaVersion':'1.0','continuityContract':'cvf.downstreamContinuityContract@1.0.0','projectName':'LocalOracle',
+         'currentMode':'REVIEW_PENDING','activePhase':'REVIEW','phaseModel':['INTAKE','DESIGN','SPEC','WORK_ORDER','BUILD','REVIEW','FREEZE'],
+         'activeHandoff':handoff,'nextAllowedMove':'Review candidate evidence independently.','parkedOperatorCheckpoint':None,
+         'activeRole':'REVIEWER','roleRoute':'SINGLE_AGENT_MULTI_ROLE_ALLOWED','updatedAt':'2026-10-03'}
+impl = {'schemaVersion':'1.0','projectName':'LocalOracle','overallStatus':'REVIEW_PENDING','currentPhase':'REVIEW',
+        'completedCapabilities':[],'activeWorkOrders':[],'knownLimitations':[],'evidence':[],'updatedAt':'2026-10-03'}
+put(BASE,'CVF_SESSION/ACTIVE_SESSION_STATE.json',state)
+put(BASE,'IMPLEMENTATION_STATUS.json',impl)
+put(BASE,'CVF_SESSION_MEMORY.md',f'# Local fixture\n## Current Truth\n- Contract: {state["continuityContract"]}\n- Current mode: REVIEW_PENDING\n- Active phase: REVIEW\n- Active handoff: {handoff}\n')
+put(BASE,handoff,'# Local handoff\nStatus: ACTIVE\n## Current State\n- Current mode: REVIEW_PENDING\n- Active phase: REVIEW\n- Active role: REVIEWER\n- Next allowed move: Review candidate evidence independently.\n')
+installed = invoke(BASE,'install','--core-root',str(ROOT),'--core-commit','44229eeb07b9022928a4862c3e9076036b6c7a94')
+assert installed['exitCode']==0, installed
+lock = json.loads((BASE/'.cvf/gate-profile.lock.json').read_text())
+pins = ['--expect-profile-sha256',lock['profileSha256'],'--expect-runner-sha256',lock['runnerSha256']]
+
+def case(name, mutate, phase='pr-ci', packet=None, pinned=False, expected='REFUSE'):
+    root=OUT/name
+    shutil.copytree(BASE,root)
+    mutate(root)
+    args=['run','--phase',phase,'--json','--no-receipt']
+    if packet: args += ['--packet',packet]
+    if pinned: args += pins
+    done=invoke(root,*args,runner=root/'scripts/cvf_gates/cvf_downstream_gate_runner.py')
+    actual='PASS' if done['exitCode']==0 else 'REFUSE'
+    results.append({'id':name,'expected':expected,'actual':actual,'oraclePass':actual==expected,**done})
+    return root
+
+case('P01-pristine',lambda r:None,pinned=True,expected='PASS')
+def edit_json(r,rel,key,value):
+    data=json.loads((r/rel).read_text()); data[key]=value; put(r,rel,data)
+case('N01-memory-stale',lambda r:put(r,'CVF_SESSION_MEMORY.md',(r/'CVF_SESSION_MEMORY.md').read_text().replace('Active phase: REVIEW','Active phase: BUILD')))
+case('N02-state-stale',lambda r:edit_json(r,'CVF_SESSION/ACTIVE_SESSION_STATE.json','activePhase','BUILD'))
+case('N03-handoff-stale',lambda r:put(r,handoff,(r/handoff).read_text().replace('Active role: REVIEWER','Active role: WORKER')))
+case('N04-control-missing',lambda r:(r/'scripts/cvf_gates/cvf_dg_continuity.py').unlink(),pinned=True)
+case('N05-no-op-override',lambda r:put(r,'.cvf/gate-profile.local.json',{'disableMandatory':True}),pinned=True)
+wo='docs/work_orders/CVF_AGENT_WORK_ORDER_LOCAL_ORACLE.md'
+case('N06-inline-active-status',lambda r:put(r,wo,'docType: work_order\nStatus: DISPATCH_READY (local oracle)\n'),packet=wo)
+case('N07-unknown-status',lambda r:put(r,wo,'docType: work_order\nStatus: MYSTERY\n'),packet=wo)
+review='docs/reviews/LOCAL_ORACLE.md'
+case('N08-self-review',lambda r:put(r,review,'Risk: R2\nWorker: Same\nReviewer: Same\n'),phase='worker-return',packet=review)
+route='dispatchKind: REWORK\nreviewerLocalRepairBoundary: NEW_EVIDENCE_REQUIRED\nreviewerLocalRepairBasis: Local already has all evidence to determine this correction.\n'+''.join(f'{k}: YES\n' for k in profile['reviewerRouting']['assessmentFields'])+'focusedVerification: independent refusal oracle\n'
+case('N09-unjustified-rework',lambda r:put(r,review,route),packet=review)
+case('N10-unsupported-claim',lambda r:put(r,review,'Gate claim: CVF-DG-CONT-01=PROVEN_HERMETIC\n'),phase='worker-return',packet=review)
+case('N11-stale-pin',lambda r:edit_json(r,'.cvf/gate-profile.lock.json','profileSha256','0'*64),pinned=True)
+case('N12-false-ci',lambda r:put(r,review,'ci verified\n'),phase='worker-return',packet=review)
+
+def clean_bad_pr(r):
+    put(r,wo,'docType: work_order\nStatus: MYSTERY\n')
+    put(r,review,'Risk: R2\nWorker: Same\nReviewer: Same\nci verified\n'+route)
+    put(r,'.gitignore','.cvf/runtime/\n')
+    hooks=r/'empty-hooks'; hooks.mkdir()
+    commands=[['init','-q'],['add','.'],['-c','user.name=Local oracle','-c','user.email=local-oracle@example.invalid','-c',f'core.hooksPath={hooks}','commit','-qm','disposable Local fixture']]
+    for args in commands:
+        done=subprocess.run(['git',*args],cwd=r,env=ENV,text=True,capture_output=True)
+        assert done.returncode==0,done.stderr
+case('N13-clean-checkout-pr-packet-omission',clean_bad_pr,pinned=True)
+
+def repin_noop(r):
+    rel='scripts/cvf_gates/cvf_dg_continuity.py'
+    put(r,rel,'from cvf_dg_common import ControlResult\ndef check_continuity(project_root,profile):\n    return ControlResult("CVF-DG-CONT-01","PASS")\n')
+    data=json.loads((r/'.cvf/gate-profile.lock.json').read_text())
+    data['files']['cvf_dg_continuity.py']=hashlib.sha256((r/rel).read_bytes().replace(b'\r\n',b'\n')).hexdigest()
+    put(r,'.cvf/gate-profile.lock.json',data)
+    edit_json(r,'CVF_SESSION/ACTIVE_SESSION_STATE.json','activePhase','BUILD')
+root=case('N14-ci-pins-consistent-noop-module',repin_noop,pinned=True)
+trusted=invoke(root,'run','--phase','bootstrap','--trusted','--no-receipt','--json')
+results.append({'id':'P02-trusted-core-refuses-N14','expected':'REFUSE','actual':'PASS' if trusted['exitCode']==0 else 'REFUSE','oraclePass':trusted['exitCode']!=0,**trusted})
+case('N15-risk-typo-self-review',lambda r:put(r,review,'Risk: r2\nWorker: Same\nReviewer: Same\n'),phase='worker-return',packet=review)
+case('N16-malformed-gate-claim',lambda r:put(r,review,'Gate claim: CVF-DG-CONT-01=PROVEN_HERMETIC extra text\n'),phase='worker-return',packet=review)
+case('N17-duplicate-handoff-status',lambda r:put(r,handoff,(r/handoff).read_text()+'\nStatus: ARCHIVED\n'))
+case('N18-active-order-draft',lambda r:(put(r,wo,'docType: work_order\nStatus: DRAFT\n'),edit_json(r,'IMPLEMENTATION_STATUS.json','activeWorkOrders',[wo])),packet=wo)
+
+e=json.loads((ROOT/'docs/reviews/evidence/cvf-dgip-t1-worker-2026-10-03.json').read_text())
+print(json.dumps({'candidateFilesShape':type(e['candidateFiles']).__name__,'candidateExample':e['candidateFiles'][:1] if isinstance(e['candidateFiles'],list) else list(e['candidateFiles'].items())[:1]}))
+record={'schemaVersion':'cvf.dgip.localIndependentProbe@1.0.0','batchId':'CVF-DGIP-T1','executorRole':'LOCAL_REVIEWER_NOT_IMPLEMENTATION_WORKER',
+        'fixtureMethod':'Reviewer-authored JSON/Markdown fixture; CLI refusal oracle; no worker test/harness imports. Only temporary fixture commits, never provenance commits.',
+        'executedAtUtc':datetime.now(timezone.utc).isoformat(),'platform':sys.platform,'networkCalls':0,'providerCalls':0,'cost':'UNKNOWN',
+        'sourceHashes':{str(p.relative_to(ROOT)).replace('\\','/'):hashlib.sha256(p.read_bytes()).hexdigest() for p in [*LIB.glob('*'),ROOT/'governance/compat/check_gate_to_role_closeability.py'] if p.is_file()},
+        'results':results,'oraclePassed':sum(x['oraclePass'] for x in results),'oracleTotal':len(results),'failOpenCases':[x['id'] for x in results if not x['oraclePass']]}
+target=ROOT/'docs/reviews/evidence/cvf-dgip-t1-local-probe-2026-10-03.json'
+target.write_text(json.dumps(record,indent=2)+'\n',encoding='utf-8')
+print(json.dumps({k:record[k] for k in ['oraclePassed','oracleTotal','failOpenCases']}))

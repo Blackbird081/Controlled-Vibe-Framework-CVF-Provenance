@@ -1,0 +1,673 @@
+{
+ "schemaVersion": "cvf.dgipT1WorkerEvidence@1",
+ "batchId": "CVF-DGIP-T1",
+ "workerReturnDisposition": "BLOCKED_WITH_REASON",
+ "dispositionReason": "UNCLOSEABLE_PACKET_CONTRADICTION: dispatcher-owned acceptance-ledger expectedArtifacts omit the implementation paths that the Work-Order Fulfillment Manifest requires, so check_work_order_acceptance_ledger.py reports every implementation path as 'Git observed unclaimed' unless the rows are BLOCKED. Implementation and hermetic proof are complete; Local reviewer-local repair (ledger amendment) unblocks the machine join.",
+ "substantiveImplementationStatus": "IMPLEMENTED_AND_HERMETICALLY_TESTED_PENDING_LOCAL_REVIEW",
+ "identity": {
+  "executionBaseHead": "44229eeb07b9022928a4862c3e9076036b6c7a94",
+  "dispatchBaseHead": "6c3e5ac7f39ba1406e09c99a4d1f9a1fb00b923c",
+  "materialCommit": "28c5a5271c1cc266b293366cfcdbd55abf626e23",
+  "workOrderRawSha256": "cfa13104e191e81a93eb8501ceccad308e8241f803e7666181510363bec43a3e",
+  "baselineRawSha256": "1040023af76b3f97612eb9777eb0f57543e0739f14367b6f4b4cbfabea7ed6a5",
+  "snapshotRawSha256": "26c17a4a4891bc0aad95e9e9ecded9531f768f8824d57176b2d37aa0f9ba2545",
+  "cleanWorktreeAtStart": true,
+  "providerCalls": 0,
+  "subagents": 0,
+  "network": "NONE (dead-proxy guard forced on every git/harness process)",
+  "cost": "UNKNOWN"
+ },
+ "inputRecheck": [
+  {
+   "path": "scripts/new-cvf-workspace.ps1",
+   "receiptRawSha256": "a9084c6f78a05081ad1b489c06bc871c5c60481298d9f7e1c1cef06f72f5ec6a",
+   "baseBlobSha256": "7e5567c55026f3be44f11c924d44835d6fb98b1fb4268dfedf6453af89927032",
+   "receiptCheck": "NOT_RECOMPUTED: the worktree file was edited by this candidate and its pre-edit raw hash was not captured; the receipt hashes working-tree bytes (mixed/CRLF endings) which a blob read cannot reproduce"
+  },
+  {
+   "path": "scripts/check_cvf_workspace_agent_enforcement.ps1",
+   "receiptRawSha256": "904e9ad6e739ada770909fbba05aac987d6199f4587cbf6061afd49b9a5c2b43",
+   "baseBlobSha256": "2410bbabf88f12581d2e34a71efe247fe9080ebb299a58eb6f9ff6a35818796b",
+   "receiptCheck": "NOT_RECOMPUTED: the worktree file was edited by this candidate and its pre-edit raw hash was not captured; the receipt hashes working-tree bytes (mixed/CRLF endings) which a blob read cannot reproduce"
+  },
+  {
+   "path": "scripts/check_cvf_workspace_new_project_enforcement.ps1",
+   "receiptRawSha256": "c0720c9735cab12aea114f4c76fa4cfb1201153ba4f8e3a67ee2de0e7cc9eb60",
+   "baseBlobSha256": "c0720c9735cab12aea114f4c76fa4cfb1201153ba4f8e3a67ee2de0e7cc9eb60",
+   "receiptCheck": "NOT_RECOMPUTED: the worktree file was edited by this candidate and its pre-edit raw hash was not captured; the receipt hashes working-tree bytes (mixed/CRLF endings) which a blob read cannot reproduce"
+  },
+  {
+   "path": "scripts/write_cvf_workspace_web_evidence_bridge.ps1",
+   "receiptRawSha256": "18e8f17450840d977a002d9f06c26efcf645f56ee5ee4da2736f92d32a5ea207",
+   "baseBlobSha256": "18e8f17450840d977a002d9f06c26efcf645f56ee5ee4da2736f92d32a5ea207",
+   "receiptCheck": "NOT_RECOMPUTED: the worktree file was edited by this candidate and its pre-edit raw hash was not captured; the receipt hashes working-tree bytes (mixed/CRLF endings) which a blob read cannot reproduce"
+  },
+  {
+   "path": "scripts/sync_cvf_workspace_rule_pack.ps1",
+   "receiptRawSha256": "43d072b7b879a55bd470a113959348119e61eecd404b8c61c251652ae3082c10",
+   "baseBlobSha256": "43d072b7b879a55bd470a113959348119e61eecd404b8c61c251652ae3082c10",
+   "receiptCheck": "NOT_RECOMPUTED: the worktree file was edited by this candidate and its pre-edit raw hash was not captured; the receipt hashes working-tree bytes (mixed/CRLF endings) which a blob read cannot reproduce"
+  },
+  {
+   "path": "scripts/lib/downstream_catalog/CvfDownstreamBootstrapContent.ps1",
+   "receiptRawSha256": "689cadbc832d1dc17622fb3a5844dc794ea05965c96c5fbcf09b5439fa5955c9",
+   "baseBlobSha256": "b8e20f061ce0aaad50579a3a1863afe266080bc506b2f8318a2d7547d2e306f5",
+   "receiptCheck": "NOT_RECOMPUTED: the worktree file was edited by this candidate and its pre-edit raw hash was not captured; the receipt hashes working-tree bytes (mixed/CRLF endings) which a blob read cannot reproduce"
+  },
+  {
+   "path": "scripts/lib/downstream_catalog/CvfGoldenHarnessSupport.ps1",
+   "receiptRawSha256": "d08e76d4a3371c153da2c98d99dcc95418198fecfa5a8714d524cea7e608169a",
+   "baseBlobSha256": "cc1b1f31fce3a00ef1e4f6b034e0e12bf26c8c05480ff1afb332608fe7cc75f4",
+   "receiptCheck": "NOT_RECOMPUTED: the worktree file was edited by this candidate and its pre-edit raw hash was not captured; the receipt hashes working-tree bytes (mixed/CRLF endings) which a blob read cannot reproduce"
+  },
+  {
+   "path": "scripts/test_cvf_golden_downstream_bootstrap.ps1",
+   "receiptRawSha256": "75b58399b5c22fb3f71857a0fd71df826258063927085a009de00c0a8ba7e8f0",
+   "baseBlobSha256": "8660bf27d0e7e9c8140d97ab0062010cd8b7bbba6e845ccc27340bf4b891642d",
+   "receiptCheck": "MATCH",
+   "currentWorktreeRawSha256": "75b58399b5c22fb3f71857a0fd71df826258063927085a009de00c0a8ba7e8f0"
+  },
+  {
+   "path": "governance/toolkit/05_OPERATION/CVF_DOWNSTREAM_AGENTS_TEMPLATE.md",
+   "receiptRawSha256": "0ed3c44eebdc6b673c8a7533f153362e457fdfffce7ce4c0d9a7b2c806820a74",
+   "baseBlobSha256": "0ed3c44eebdc6b673c8a7533f153362e457fdfffce7ce4c0d9a7b2c806820a74",
+   "receiptCheck": "NOT_RECOMPUTED: the worktree file was edited by this candidate and its pre-edit raw hash was not captured; the receipt hashes working-tree bytes (mixed/CRLF endings) which a blob read cannot reproduce"
+  },
+  {
+   "path": "governance/compat/check_gate_to_role_closeability.py",
+   "receiptRawSha256": "45af54ed3caf09c484403aea0437e9c66433fa2f7f89674c4d7bc47e8e1146a6",
+   "baseBlobSha256": "45af54ed3caf09c484403aea0437e9c66433fa2f7f89674c4d7bc47e8e1146a6",
+   "receiptCheck": "NOT_RECOMPUTED: the worktree file was edited by this candidate and its pre-edit raw hash was not captured; the receipt hashes working-tree bytes (mixed/CRLF endings) which a blob read cannot reproduce"
+  },
+  {
+   "path": "governance/compat/test_check_gate_to_role_closeability.py",
+   "receiptRawSha256": "529b44dd2d8da073062344b649591d59f54b29e8c3a78754963ad002f4d80dd4",
+   "baseBlobSha256": "529b44dd2d8da073062344b649591d59f54b29e8c3a78754963ad002f4d80dd4",
+   "receiptCheck": "NOT_RECOMPUTED: the worktree file was edited by this candidate and its pre-edit raw hash was not captured; the receipt hashes working-tree bytes (mixed/CRLF endings) which a blob read cannot reproduce"
+  },
+  {
+   "path": "docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md",
+   "receiptRawSha256": "97af19eed3b227084bb495067a8663a7c19e72c844976e4494e80d01f097ea90",
+   "baseBlobSha256": "55a119ef423c9151c20d2e744e426d66fc2fc2a53bdf7ac8dbe7c49e671b5af8",
+   "receiptCheck": "MATCH",
+   "currentWorktreeRawSha256": "97af19eed3b227084bb495067a8663a7c19e72c844976e4494e80d01f097ea90"
+  }
+ ],
+ "profile": {
+  "profileId": "cvf.downstreamGateProfile@1.0.0",
+  "continuityContract": "cvf.downstreamContinuityContract@1.0.0",
+  "statusGrammar": "cvf.workOrderStatusGrammar@1.0.0",
+  "profileSha256": "047bf10e6a304199baa6f89136b8397023ca4f41d339fc06049da6dc41dfbc5c",
+  "runnerSha256": "d3f494e04f2e0654023c83c6d9f4da6fe6995a8bc4bb7398338a5c25ac26c3a7",
+  "hashAlgorithm": "sha256 over LF-normalised bytes"
+ },
+ "candidateFiles": [
+  {
+   "path": "docs/reference/downstream_gate_profile/CVF_DOWNSTREAM_GATE_PROFILE_MIGRATION.md",
+   "rawSha256": "c3720b832cdcb2827feb43799f36f9567295eff21554baccaa943d74a750dba7",
+   "lfSha256": "c3720b832cdcb2827feb43799f36f9567295eff21554baccaa943d74a750dba7",
+   "trackedAtBase": false,
+   "differsFromBase": true
+  },
+  {"path": "docs/reference/downstream_gate_profile/CVF_DOWNSTREAM_GATE_PROFILE_STANDARD.md", "rawSha256": "5e1c47c08e2091b528986e2cf5d2d393dd3028dea66b09f81ed924189a9e2ffb", "lfSha256": "5e1c47c08e2091b528986e2cf5d2d393dd3028dea66b09f81ed924189a9e2ffb", "trackedAtBase": false, "differsFromBase": true},
+  {
+   "path": "docs/reference/downstream_gate_profile/downstream_continuity_contract.schema.json",
+   "rawSha256": "64a8391a4fa3823e22c25c7550b44a8a124484b1a3f84df391cae8e1e0afd3c7",
+   "lfSha256": "64a8391a4fa3823e22c25c7550b44a8a124484b1a3f84df391cae8e1e0afd3c7",
+   "trackedAtBase": false,
+   "differsFromBase": true
+  },
+  {"path": "docs/reference/downstream_gate_profile/downstream_finding_intake_registry.json", "rawSha256": "31c103dbef9ae0974b97e10217e4d1c02897b00cb5532eb7f0b816550287530c", "lfSha256": "31c103dbef9ae0974b97e10217e4d1c02897b00cb5532eb7f0b816550287530c", "trackedAtBase": false, "differsFromBase": true},
+  {"path": "docs/reference/downstream_gate_profile/DOWNSTREAM_FINDING_INTAKE_TEMPLATE.json", "rawSha256": "2f5111f1d44eebaae852560284f201c1f855f4b9de32e62a3cadccc872331c8d", "lfSha256": "2f5111f1d44eebaae852560284f201c1f855f4b9de32e62a3cadccc872331c8d", "trackedAtBase": false, "differsFromBase": true},
+  {"path": "docs/reference/downstream_gate_profile/downstream_finding_intake.schema.json", "rawSha256": "0eba61e1abfd8a3f5896c459d0c705481e4890ff0dde9c66e3cc7b9348eae441", "lfSha256": "0eba61e1abfd8a3f5896c459d0c705481e4890ff0dde9c66e3cc7b9348eae441", "trackedAtBase": false, "differsFromBase": true},
+  {"path": "docs/reference/downstream_gate_profile/downstream_gate_profile.schema.json", "rawSha256": "00a5fbbd114435904da62c92c8a15f809d93bbdd3536361f99245d379f41dcd3", "lfSha256": "00a5fbbd114435904da62c92c8a15f809d93bbdd3536361f99245d379f41dcd3", "trackedAtBase": false, "differsFromBase": true},
+  {"path": "docs/reference/downstream_gate_profile/README.md", "rawSha256": "8366efea5292cb35765d7e68e881666c10a4cf3e5f47cda010a59e129aeae80b", "lfSha256": "8366efea5292cb35765d7e68e881666c10a4cf3e5f47cda010a59e129aeae80b", "trackedAtBase": false, "differsFromBase": true},
+  {"path": "governance/compat/check_gate_to_role_closeability.py", "rawSha256": "8f00c6421eebe3c1b237e5307ac6e2b0b0343c9a35cf635bbab17aa886e00e8e", "lfSha256": "8f00c6421eebe3c1b237e5307ac6e2b0b0343c9a35cf635bbab17aa886e00e8e", "trackedAtBase": true, "differsFromBase": true},
+  {"path": "governance/compat/test_check_gate_to_role_closeability.py", "rawSha256": "8d10a003420f2252d1eec5ca32ac866c0baa592aab08901d6264c3cfab5eba41", "lfSha256": "8d10a003420f2252d1eec5ca32ac866c0baa592aab08901d6264c3cfab5eba41", "trackedAtBase": true, "differsFromBase": true},
+  {"path": "governance/compat/test_downstream_gate_profile.py", "rawSha256": "3436fb538725b6c019c6e51fad2602d7e6999cb4e562ca52c5c40df0a74b03a8", "lfSha256": "3436fb538725b6c019c6e51fad2602d7e6999cb4e562ca52c5c40df0a74b03a8", "trackedAtBase": false, "differsFromBase": true},
+  {"path": "governance/toolkit/05_OPERATION/CVF_DOWNSTREAM_AGENTS_TEMPLATE.md", "rawSha256": "6d317a4adec95a11b702c322655c4504ffd741078984a619d47c6145aa6613fb", "lfSha256": "6d317a4adec95a11b702c322655c4504ffd741078984a619d47c6145aa6613fb", "trackedAtBase": true, "differsFromBase": true},
+  {"path": "scripts/check_cvf_workspace_agent_enforcement.ps1", "rawSha256": "bc60cb54a15980c7a96e74b2a5491dc9b92c9dff31e43f595227a50767a49416", "lfSha256": "b336f446b233955453b4f4627c0458bc7a604488d69070cd7b9f5bb9f044325e", "trackedAtBase": true, "differsFromBase": true},
+  {"path": "scripts/check_cvf_workspace_new_project_enforcement.ps1", "rawSha256": "9c2c7ec9670d20193d023789c5b11407a677e1ce48cd7ce0edc901cfff7686b7", "lfSha256": "9c2c7ec9670d20193d023789c5b11407a677e1ce48cd7ce0edc901cfff7686b7", "trackedAtBase": true, "differsFromBase": true},
+  {"path": "scripts/lib/downstream_catalog/CvfDownstreamBootstrapContent.ps1", "rawSha256": "7a0bb11cafe60dcef0b93f3edbce6826602cbf3306d2df9dd368a1d67e70304e", "lfSha256": "aebdb2357e21ef2a6e8f325a5fbd3e1c68319d60ce5fd193f4bcad9dc4a36088", "trackedAtBase": true, "differsFromBase": true},
+  {"path": "scripts/lib/downstream_catalog/CvfGoldenHarnessSupport.ps1", "rawSha256": "5262648b8909b444f531a4656bbd3aec9917d6b0c48797408c548968988174cf", "lfSha256": "abeaec2982ce63021e94b8d8548d42bea68b3f652bd3ff530fd1387ec658b94d", "trackedAtBase": true, "differsFromBase": true},
+  {"path": "scripts/lib/downstream_governance/cvf_dg_applicability.py", "rawSha256": "bffde44fe38494b0dea9e658fb82eaaec31f3bd25c9964445fa837dd29b01c67", "lfSha256": "bffde44fe38494b0dea9e658fb82eaaec31f3bd25c9964445fa837dd29b01c67", "trackedAtBase": false, "differsFromBase": true},
+  {"path": "scripts/lib/downstream_governance/cvf_dg_common.py", "rawSha256": "0ed1b75da28a052f7e55eade55d0c617a0f4a8c4701e8b016e95aa5fa8f48208", "lfSha256": "0ed1b75da28a052f7e55eade55d0c617a0f4a8c4701e8b016e95aa5fa8f48208", "trackedAtBase": false, "differsFromBase": true},
+  {"path": "scripts/lib/downstream_governance/cvf_dg_continuity.py", "rawSha256": "23c8d2ad1e28b74eed7e7edd6a0dd53a3c598a8ad4da9467eb88f179d140884f", "lfSha256": "23c8d2ad1e28b74eed7e7edd6a0dd53a3c598a8ad4da9467eb88f179d140884f", "trackedAtBase": false, "differsFromBase": true},
+  {"path": "scripts/lib/downstream_governance/cvf_dg_coverage.py", "rawSha256": "4a5eefbd6fca233dea47fffa5a06f7945313d706a5a4919ae8c6f31544a7322a", "lfSha256": "4a5eefbd6fca233dea47fffa5a06f7945313d706a5a4919ae8c6f31544a7322a", "trackedAtBase": false, "differsFromBase": true},
+  {"path": "scripts/lib/downstream_governance/cvf_dg_install.py", "rawSha256": "f4e87f72d45bd20142c9a1bbe12678f23998311a276af8a2755cafdd3fdcef6e", "lfSha256": "f4e87f72d45bd20142c9a1bbe12678f23998311a276af8a2755cafdd3fdcef6e", "trackedAtBase": false, "differsFromBase": true},
+  {"path": "scripts/lib/downstream_governance/cvf_dg_intake.py", "rawSha256": "266d79da83d718b591725801dd4c19a135fabc61730d33e4ecc40d0dbf82ecaf", "lfSha256": "266d79da83d718b591725801dd4c19a135fabc61730d33e4ecc40d0dbf82ecaf", "trackedAtBase": false, "differsFromBase": true},
+  {"path": "scripts/lib/downstream_governance/cvf_dg_review.py", "rawSha256": "a36b67c064c01b8140de1350213d54d0eb99748d61236a5587577031cf689f8c", "lfSha256": "a36b67c064c01b8140de1350213d54d0eb99748d61236a5587577031cf689f8c", "trackedAtBase": false, "differsFromBase": true},
+  {"path": "scripts/lib/downstream_governance/cvf_dg_routing.py", "rawSha256": "a39419336ea31ec155c285291f3d5684046e8b18d88dbf47c422b3c2c59632cf", "lfSha256": "a39419336ea31ec155c285291f3d5684046e8b18d88dbf47c422b3c2c59632cf", "trackedAtBase": false, "differsFromBase": true},
+  {"path": "scripts/lib/downstream_governance/cvf_downstream_gate_profile.json", "rawSha256": "047bf10e6a304199baa6f89136b8397023ca4f41d339fc06049da6dc41dfbc5c", "lfSha256": "047bf10e6a304199baa6f89136b8397023ca4f41d339fc06049da6dc41dfbc5c", "trackedAtBase": false, "differsFromBase": true},
+  {"path": "scripts/lib/downstream_governance/cvf_downstream_gate_runner.py", "rawSha256": "d3f494e04f2e0654023c83c6d9f4da6fe6995a8bc4bb7398338a5c25ac26c3a7", "lfSha256": "d3f494e04f2e0654023c83c6d9f4da6fe6995a8bc4bb7398338a5c25ac26c3a7", "trackedAtBase": false, "differsFromBase": true},
+  {"path": "scripts/lib/downstream_governance/CvfDownstreamGateProfile.ps1", "rawSha256": "989386ce4bd74d2c361402586f7a93b0dc19fa45345d9b2f039eed0f4aeaef44", "lfSha256": "989386ce4bd74d2c361402586f7a93b0dc19fa45345d9b2f039eed0f4aeaef44", "trackedAtBase": false, "differsFromBase": true},
+  {"path": "scripts/lib/downstream_governance/downstream_pr_gates.yml.template", "rawSha256": "232b0a644903e3a7707553bcf69f7b85aac8c07dc17be3bafac9f1ddcd9f6d4a", "lfSha256": "232b0a644903e3a7707553bcf69f7b85aac8c07dc17be3bafac9f1ddcd9f6d4a", "trackedAtBase": false, "differsFromBase": true},
+  {"path": "scripts/lib/downstream_governance/git-pre-commit.template", "rawSha256": "07a9f381089f7f4689772c992e57d4ac89b059ef3c76b061ff07cb5da8a80279", "lfSha256": "07a9f381089f7f4689772c992e57d4ac89b059ef3c76b061ff07cb5da8a80279", "trackedAtBase": false, "differsFromBase": true},
+  {"path": "scripts/new-cvf-workspace.ps1", "rawSha256": "92d6c11e7a8956825cd9ffdc5c76d5f2556a9ea7c5f087ccee7f9f484cdf9593", "lfSha256": "7646b2b4727b8ba3b34907d9a819a12497f7552a9bb4b2686740a0364723878a", "trackedAtBase": true, "differsFromBase": true},
+  {"path": "scripts/sync_cvf_workspace_rule_pack.ps1", "rawSha256": "9b051b9f3704979d1f0257b1b06ed5049fcee258a94b8616185d7af9640557f0", "lfSha256": "9b051b9f3704979d1f0257b1b06ed5049fcee258a94b8616185d7af9640557f0", "trackedAtBase": true, "differsFromBase": true},
+  {"path": "scripts/test_cvf_downstream_gate_profile.ps1", "rawSha256": "c9d56e51b130e9d69205a31caf857b4a43c3caa5591f68122d6113c42488c43b", "lfSha256": "c9d56e51b130e9d69205a31caf857b4a43c3caa5591f68122d6113c42488c43b", "trackedAtBase": false, "differsFromBase": true},
+  {"path": "scripts/write_cvf_workspace_web_evidence_bridge.ps1", "rawSha256": "ab582afdb04ff57df0635977f890c6e2d8e55fc2d605e8f33e8803b11cd80f03", "lfSha256": "ab582afdb04ff57df0635977f890c6e2d8e55fc2d605e8f33e8803b11cd80f03", "trackedAtBase": true, "differsFromBase": true}
+ ],
+ "fileSizes": {
+  "modifiedExisting": [
+   {"path": "governance/compat/check_gate_to_role_closeability.py", "linesAtBase": 389, "linesNow": 495, "grew": true, "limit": 600},
+   {"path": "governance/compat/test_check_gate_to_role_closeability.py", "linesAtBase": 247, "linesNow": 286, "grew": true, "limit": 600},
+   {"path": "governance/toolkit/05_OPERATION/CVF_DOWNSTREAM_AGENTS_TEMPLATE.md", "linesAtBase": 180, "linesNow": 177, "grew": false, "limit": null},
+   {"path": "scripts/check_cvf_workspace_agent_enforcement.ps1", "linesAtBase": 536, "linesNow": 548, "grew": true, "limit": 600},
+   {"path": "scripts/check_cvf_workspace_new_project_enforcement.ps1", "linesAtBase": 164, "linesNow": 172, "grew": true, "limit": 600},
+   {"path": "scripts/lib/downstream_catalog/CvfDownstreamBootstrapContent.ps1", "linesAtBase": 328, "linesNow": 353, "grew": true, "limit": 600},
+   {"path": "scripts/lib/downstream_catalog/CvfGoldenHarnessSupport.ps1", "linesAtBase": 217, "linesNow": 316, "grew": true, "limit": 600},
+   {"path": "scripts/new-cvf-workspace.ps1", "linesAtBase": 497, "linesNow": 517, "grew": true, "limit": 600},
+   {"path": "scripts/sync_cvf_workspace_rule_pack.ps1", "linesAtBase": 452, "linesNow": 455, "grew": true, "limit": 600},
+   {"path": "scripts/write_cvf_workspace_web_evidence_bridge.ps1", "linesAtBase": 196, "linesNow": 197, "grew": true, "limit": 600}
+  ],
+  "newFiles": [
+   {"path": "docs/reference/downstream_gate_profile/CVF_DOWNSTREAM_GATE_PROFILE_MIGRATION.md", "lines": 63},
+   {"path": "docs/reference/downstream_gate_profile/CVF_DOWNSTREAM_GATE_PROFILE_STANDARD.md", "lines": 171},
+   {"path": "docs/reference/downstream_gate_profile/downstream_continuity_contract.schema.json", "lines": 138},
+   {"path": "docs/reference/downstream_gate_profile/downstream_finding_intake_registry.json", "lines": 110},
+   {"path": "docs/reference/downstream_gate_profile/DOWNSTREAM_FINDING_INTAKE_TEMPLATE.json", "lines": 27},
+   {"path": "docs/reference/downstream_gate_profile/downstream_finding_intake.schema.json", "lines": 201},
+   {"path": "docs/reference/downstream_gate_profile/downstream_gate_profile.schema.json", "lines": 152},
+   {"path": "docs/reference/downstream_gate_profile/README.md", "lines": 58},
+   {"path": "governance/compat/test_downstream_gate_profile.py", "lines": 593},
+   {"path": "scripts/lib/downstream_governance/cvf_dg_applicability.py", "lines": 67},
+   {"path": "scripts/lib/downstream_governance/cvf_dg_common.py", "lines": 199},
+   {"path": "scripts/lib/downstream_governance/cvf_dg_continuity.py", "lines": 168},
+   {"path": "scripts/lib/downstream_governance/cvf_dg_coverage.py", "lines": 126},
+   {"path": "scripts/lib/downstream_governance/cvf_dg_install.py", "lines": 178},
+   {"path": "scripts/lib/downstream_governance/cvf_dg_intake.py", "lines": 111},
+   {"path": "scripts/lib/downstream_governance/cvf_dg_review.py", "lines": 97},
+   {"path": "scripts/lib/downstream_governance/cvf_dg_routing.py", "lines": 81},
+   {"path": "scripts/lib/downstream_governance/cvf_downstream_gate_profile.json", "lines": 89},
+   {"path": "scripts/lib/downstream_governance/cvf_downstream_gate_runner.py", "lines": 201},
+   {"path": "scripts/lib/downstream_governance/CvfDownstreamGateProfile.ps1", "lines": 143},
+   {"path": "scripts/lib/downstream_governance/downstream_pr_gates.yml.template", "lines": 25},
+   {"path": "scripts/lib/downstream_governance/git-pre-commit.template", "lines": 7},
+   {"path": "scripts/test_cvf_downstream_gate_profile.ps1", "lines": 348}
+  ],
+  "familyCounts": {
+   "scripts/lib/downstream_governance/": 13,
+   "docs/reference/downstream_gate_profile/": 8
+  }
+ },
+ "requirements": {
+  "REQ-1": {
+   "artifacts": [
+    "docs/reference/downstream_gate_profile/",
+    "scripts/lib/downstream_governance/cvf_downstream_gate_profile.json"
+   ],
+   "ledgerJoinStatus": "BLOCKED",
+   "substantiveStatus": "IMPLEMENTED",
+   "proof": "PROOF-1"
+  },
+  "REQ-2": {
+   "artifacts": [
+    "scripts/lib/downstream_governance/cvf_dg_continuity.py",
+    "scripts/lib/downstream_catalog/CvfDownstreamBootstrapContent.ps1"
+   ],
+   "ledgerJoinStatus": "BLOCKED",
+   "substantiveStatus": "IMPLEMENTED",
+   "proof": "PROOF-2"
+  },
+  "REQ-3": {
+   "artifacts": [
+    "governance/compat/check_gate_to_role_closeability.py",
+    "governance/compat/test_check_gate_to_role_closeability.py",
+    "scripts/lib/downstream_governance/cvf_dg_applicability.py"
+   ],
+   "ledgerJoinStatus": "BLOCKED",
+   "substantiveStatus": "IMPLEMENTED",
+   "proof": "PROOF-3"
+  },
+  "REQ-4": {
+   "artifacts": [
+    "scripts/new-cvf-workspace.ps1",
+    "scripts/check_cvf_workspace_agent_enforcement.ps1",
+    "scripts/check_cvf_workspace_new_project_enforcement.ps1",
+    "scripts/write_cvf_workspace_web_evidence_bridge.ps1",
+    "scripts/sync_cvf_workspace_rule_pack.ps1",
+    "scripts/lib/downstream_governance/"
+   ],
+   "ledgerJoinStatus": "BLOCKED",
+   "substantiveStatus": "IMPLEMENTED",
+   "proof": "PROOF-4"
+  },
+  "REQ-5": {
+   "artifacts": [
+    "governance/toolkit/05_OPERATION/CVF_DOWNSTREAM_AGENTS_TEMPLATE.md",
+    "scripts/lib/downstream_governance/cvf_dg_routing.py"
+   ],
+   "ledgerJoinStatus": "BLOCKED",
+   "substantiveStatus": "IMPLEMENTED",
+   "proof": "PROOF-5"
+  },
+  "REQ-6": {
+   "artifacts": [
+    "scripts/lib/downstream_governance/cvf_dg_intake.py",
+    "docs/reference/downstream_gate_profile/downstream_finding_intake.schema.json",
+    "docs/reference/downstream_gate_profile/DOWNSTREAM_FINDING_INTAKE_TEMPLATE.json",
+    "docs/reference/downstream_gate_profile/downstream_finding_intake_registry.json"
+   ],
+   "ledgerJoinStatus": "BLOCKED",
+   "substantiveStatus": "IMPLEMENTED",
+   "proof": "PROOF-6"
+  },
+  "REQ-7": {
+   "artifacts": [
+    "scripts/test_cvf_downstream_gate_profile.ps1",
+    "governance/compat/test_downstream_gate_profile.py",
+    "scripts/lib/downstream_catalog/CvfGoldenHarnessSupport.ps1",
+    "scripts/lib/downstream_governance/cvf_dg_coverage.py"
+   ],
+   "ledgerJoinStatus": "BLOCKED",
+   "substantiveStatus": "IMPLEMENTED",
+   "proof": "PROOF-7"
+  },
+  "REQ-8": {
+   "artifacts": [
+    "docs/reviews/CVF_DGIP_T1_DOWNSTREAM_GATE_INHERITANCE_WORKER_RETURN_2026-10-03.md"
+   ],
+   "ledgerJoinStatus": "PASS",
+   "substantiveStatus": "RETURN_AUTHORED",
+   "proof": "PROOF-8"
+  }
+ },
+ "proofs": {
+  "PROOF-1": {
+   "claim": "versioned profile, standard, schemas, owner responsibility, BSL/GLP/ADIF reconciliation",
+   "evidence": [
+    "docs/reference/downstream_gate_profile/",
+    "profile parity unit tests",
+    "downstream_finding_intake_registry.json dedup rows"
+   ]
+  },
+  "PROOF-2": {
+   "claim": "continuity consistency with pinned downstream schema, explicit REVIEW_PENDING mapping, field locators, migration block",
+   "evidence": [
+    "unit: ContinuityTests",
+    "golden: state/memory/handoff/implementation drifts, review-pending stale memory, unknown field, legacy migration"
+   ]
+  },
+  "PROOF-3": {
+   "claim": "fail-closed status applicability with reason + checked control ids",
+   "evidence": [
+    "pre-fix repro (HEAD) vs post-fix table",
+    "pytest 26 passed",
+    "golden: five status mutations x four phases"
+   ]
+  },
+  "PROOF-4": {
+   "claim": "pinned install, doctor/aggregate/PR command/local phase invocation, override and tamper refusal, INSTALLED vs INVOKED vs PROVEN_HERMETIC",
+   "evidence": [
+    "golden positive controls x5 phases",
+    "golden tamper/empty/missing/override/pin/trust-boundary cases",
+    "aggregate propagation",
+    "coverage JSON"
+   ]
+  },
+  "PROOF-5": {
+   "claim": "conditional reviewer-local repair route projected into template and checked as an envelope",
+   "evidence": [
+    "template section",
+    "unit RoutingTests",
+    "golden unjustified and invalid-boundary REWORK; justified REWORK passes"
+   ]
+  },
+  "PROOF-6": {
+   "claim": "bounded deterministic project-to-parent intake with dedup/back-link registry",
+   "evidence": [
+    "unit IntakeTests",
+    "golden intake idempotency/refusal",
+    "registry"
+   ]
+  },
+  "PROOF-7": {
+   "claim": "offline fresh-clone + declared candidate overlay hermetic golden proof, idempotency, preservation, LF/CRLF, bytecode exclusion",
+   "evidence": [
+    "scripts/test_cvf_downstream_gate_profile.ps1 run",
+    "candidate identity check",
+    "second-bootstrap idempotency",
+    "line-ending variants"
+   ]
+  },
+  "PROOF-8": {
+   "claim": "full return bound by raw Markdown digest without a self-hash cycle",
+   "returnMarkdownPath": "docs/reviews/CVF_DGIP_T1_DOWNSTREAM_GATE_INHERITANCE_WORKER_RETURN_2026-10-03.md",
+   "returnMarkdownRawSha256": "c0dad58faebf637b9c5c85592d6d8c89fcce628ff5a67fca1c7212f43ef93400",
+   "returnMarkdownLines": 526,
+   "note": "digest computed after the Markdown was final; this JSON is not hashed inside the Markdown"
+  }
+ },
+ "preFixRepro": {
+  "statusFailOpen": {
+   "pre_fix_HEAD": {
+    "inline_suffix_dash": [],
+    "inline_suffix_paren": [],
+    "blank": [],
+    "duplicate": [
+     "contract_missing"
+    ],
+    "contradictory": [
+     "contract_missing"
+    ],
+    "unknown": [],
+    "lowercase": [],
+    "hold": []
+   },
+   "post_fix_candidate": {
+    "inline_suffix_dash": [
+     "status_malformed"
+    ],
+    "inline_suffix_paren": [
+     "contract_missing"
+    ],
+    "blank": [
+     "status_blank"
+    ],
+    "duplicate": [
+     "status_duplicate"
+    ],
+    "contradictory": [
+     "status_contradictory"
+    ],
+    "unknown": [
+     "status_unknown"
+    ],
+    "lowercase": [
+     "status_malformed"
+    ],
+    "hold": []
+   }
+  },
+  "headDownstreamChain": {
+   "bootstrapExit": 0,
+   "headInstallsGateRunner": false,
+   "headTemplateHasReviewerLocalRepair": false,
+   "pristineDoctorExit": 0,
+   "pristineDoctorClaimsEnforcementReady": true,
+   "pristineDoctorChecks": 25,
+   "driftedDoctorExit": 0,
+   "driftedDoctorOutputHasResultPass": true,
+   "driftedDoctorNamesAnyContinuityMismatch": false,
+   "headDoctorCheckCount": 25,
+   "aggregateExitOnDriftedProject": 0,
+   "aggregateReportsDriftProjectEnforcedPass": true,
+   "headWorkspaceRulesClaim": "bridge/doctor wording at HEAD: 'This workspace is agent-enforcement-ready.'",
+   "residue": 0
+  },
+  "headChainReading": "At the released base HEAD the doctor passes a project whose state says REVIEW_PENDING/REVIEW while memory and implementation status say INTAKE (25 checks, exit 0, wording 'agent-enforcement-ready'), the workspace aggregate reports ENFORCED_PASS, no runner/CI workflow is installed and the downstream template carries no reviewer-local repair routing."
+ },
+ "goldenHarness": {
+  "command": "pwsh -NoProfile -File scripts/test_cvf_downstream_gate_profile.ps1 -EvidencePath <scratch>",
+  "assertions": 66,
+  "passed": 66,
+  "assertionNote": "console summary 66/66; the evidence file lists the first 65 and is written before the final post-cleanup residue assertion (DGIP-CLEAN) runs",
+  "negativeMutations": {
+   "total": 23,
+   "passed": 23,
+   "cases": [
+    {"name": "state-mode-drift", "control": "CVF-DG-CONT-01", "phases": ["bootstrap", "pre-dispatch", "worker-return", "pre-commit", "pr-ci"], "passed": true},
+    {"name": "memory-phase-drift", "control": "CVF-DG-CONT-01", "phases": ["pr-ci"], "passed": true},
+    {"name": "handoff-mode-drift", "control": "CVF-DG-CONT-01", "phases": ["pr-ci"], "passed": true},
+    {"name": "implementation-phase-drift", "control": "CVF-DG-CONT-01", "phases": ["pr-ci"], "passed": true},
+    {"name": "review-pending-stale-memory", "control": "CVF-DG-CONT-01", "phases": ["pr-ci"], "passed": true},
+    {"name": "unknown-state-field", "control": "CVF-DG-CONT-01", "phases": ["pr-ci"], "passed": true},
+    {"name": "inline-issue-suffix-status", "control": "CVF-DG-APPL-01", "phases": ["pre-dispatch", "worker-return", "pre-commit", "pr-ci"], "passed": true},
+    {"name": "unknown-status", "control": "CVF-DG-APPL-01", "phases": ["pre-dispatch", "worker-return", "pre-commit", "pr-ci"], "passed": true},
+    {"name": "blank-status", "control": "CVF-DG-APPL-01", "phases": ["pre-dispatch", "worker-return", "pre-commit", "pr-ci"], "passed": true},
+    {"name": "duplicate-status", "control": "CVF-DG-APPL-01", "phases": ["pre-dispatch", "worker-return", "pre-commit", "pr-ci"], "passed": true},
+    {"name": "active-without-contract", "control": "CVF-DG-APPL-01", "phases": ["pre-dispatch", "worker-return", "pre-commit", "pr-ci"], "passed": true},
+    {"name": "unjustified-rework-deterministic-one-line-repair", "control": "CVF-DG-ROUTE-01", "phases": ["pre-dispatch", "pr-ci"], "passed": true},
+    {"name": "rework-invalid-boundary", "control": "CVF-DG-ROUTE-01", "phases": ["pre-dispatch"], "passed": true},
+    {"name": "r2-worker-self-review", "control": "CVF-DG-ROLE-01", "phases": ["worker-return", "pre-commit", "pr-ci"], "passed": true},
+    {"name": "unsupported-proven-claim", "control": "CVF-DG-CLAIM-01", "phases": ["worker-return", "pre-commit", "pr-ci"], "passed": true},
+    {"name": "blanket-enforcement-claim", "control": "CVF-DG-CLAIM-01", "phases": ["pr-ci"], "passed": true},
+    {"name": "tampered-routing-module", "control": "CVF-DG-INST-01", "phases": ["bootstrap", "pre-dispatch", "worker-return", "pre-commit", "pr-ci"], "passed": true},
+    {"name": "empty-runner-modules", "control": "CVF-DG-INST-01", "phases": ["pr-ci"], "passed": true},
+    {"name": "missing-profile", "control": "CVF-DG-INST-01", "phases": ["pr-ci"], "passed": true},
+    {"name": "noop-project-override", "control": "CVF-DG-INST-01", "phases": ["worker-return"], "passed": true},
+    {"name": "replaced-runner-fails-ci-pin", "control": "CVF-DG-INST-01", "phases": ["pr-ci"], "passed": true},
+    {"name": "consistent-noop-edit", "control": "CVF-DG-INST-01", "phases": ["bootstrap"], "passed": true},
+    {"name": "aggregate-propagation", "control": "CVF-DG-CONT-01", "phases": ["bootstrap"], "passed": true}
+   ]
+  },
+  "provenHermeticCells": [
+   "bootstrap:CVF-DG-CONT-01",
+   "bootstrap:CVF-DG-INST-01",
+   "pr-ci:CVF-DG-APPL-01",
+   "pr-ci:CVF-DG-CLAIM-01",
+   "pr-ci:CVF-DG-CONT-01",
+   "pr-ci:CVF-DG-INST-01",
+   "pr-ci:CVF-DG-ROLE-01",
+   "pr-ci:CVF-DG-ROUTE-01",
+   "pre-commit:CVF-DG-APPL-01",
+   "pre-commit:CVF-DG-CLAIM-01",
+   "pre-commit:CVF-DG-CONT-01",
+   "pre-commit:CVF-DG-INST-01",
+   "pre-commit:CVF-DG-ROLE-01",
+   "pre-dispatch:CVF-DG-APPL-01",
+   "pre-dispatch:CVF-DG-CONT-01",
+   "pre-dispatch:CVF-DG-INST-01",
+   "pre-dispatch:CVF-DG-ROUTE-01",
+   "worker-return:CVF-DG-APPL-01",
+   "worker-return:CVF-DG-CLAIM-01",
+   "worker-return:CVF-DG-CONT-01",
+   "worker-return:CVF-DG-INST-01",
+   "worker-return:CVF-DG-ROLE-01"
+  ],
+  "notExecuted": [
+   {"Id": "DGIP-LINUX", "Status": "NOT_EXECUTED_PLATFORM_UNAVAILABLE", "Reason": "no Linux runtime is available in this session (wsl lists only the docker-desktop internal distro; no install attempted); Linux checkout, hosted CI and cross-OS behavior remain unproven"}
+  ],
+  "python": "Python 3.11.9",
+  "assertionResults": [
+   {"ac": "DGIP-ENV", "name": "Python 3 is available for the portable runner", "pass": true},
+   {"ac": "DGIP-OFFLINE", "name": "Offline guard blocks git network access (no fetch can succeed)", "pass": true},
+   {"ac": "DGIP-IDENT", "name": "Declared candidate set found in the worktree (33 files; 33 differ from HEAD)", "pass": true},
+   {"ac": "DGIP-IDENT", "name": "Every candidate file in the hermetic core is byte-identical to the worktree candidate", "pass": true},
+   {"ac": "DGIP-BOOT", "name": "Fresh bootstrap exits 0 and reports FRESH_INSTALLED", "pass": true},
+   {"ac": "DGIP-BOOT", "name": "Bootstrap installs the pinned runner, profile, closeability checker, CI workflow and hook template", "pass": true},
+   {"ac": "DGIP-BOOT", "name": "Manifest carries the gate-profile marker and requiredDocs; .gitignore ignores .cvf/runtime/", "pass": true},
+   {"ac": "DGIP-CONT", "name": "Initial memory carries machine-comparable truth (contract, mode, phase, handoff)", "pass": true},
+   {"ac": "DGIP-POS", "name": "Positive control phase bootstrap: project runner and trusted Core runner both PASS", "pass": true},
+   {"ac": "DGIP-POS", "name": "Positive control phase pre-dispatch: project runner and trusted Core runner both PASS", "pass": true},
+   {"ac": "DGIP-POS", "name": "Positive control phase worker-return: project runner and trusted Core runner both PASS", "pass": true},
+   {"ac": "DGIP-POS", "name": "Positive control phase pre-commit: project runner and trusted Core runner both PASS", "pass": true},
+   {"ac": "DGIP-POS", "name": "Positive control phase pr-ci: project runner and trusted Core runner both PASS", "pass": true},
+   {"ac": "DGIP-DOCTOR", "name": "Doctor passes the pristine project, reports GATE_COVERAGE and makes no blanket readiness claim", "pass": true},
+   {"ac": "DGIP-COV", "name": "Coverage separates INSTALLED/INVOKED and never invents PROVEN_HERMETIC or hosted CI", "pass": true},
+   {"ac": "DGIP-PIN", "name": "Lock pins equal independently computed LF-normalised hashes and the candidate files", "pass": true},
+   {"ac": "DGIP-CI", "name": "Generated PR workflow carries the runner command with both identity pins (static evidence only)", "pass": true},
+   {"ac": "DGIP-CI", "name": "The extracted PR command passes on the pristine project (actual local invocation, not hosted CI)", "pass": true},
+   {"ac": "DGIP-IDEM", "name": "Second bootstrap is idempotent: ALREADY_INSTALLED, no tracked diff, project/lock/CI bytes identical", "pass": true},
+   {"ac": "DGIP-BYTECODE", "name": "No bytecode or __pycache__ appears in the project or hermetic core after all runs", "pass": true},
+   {"ac": "DGIP-NEG", "name": "state-mode-drift -> CVF-DG-CONT-01 fails in phases [bootstrap,pre-dispatch,worker-return,pre-commit,pr-ci] with SURFACE_MISMATCH", "pass": true},
+   {"ac": "DGIP-NEG", "name": "state-mode-drift -> Core doctor fails with CVF-DG-CONT-01", "pass": true},
+   {"ac": "DGIP-NEG", "name": "memory-phase-drift -> CVF-DG-CONT-01 fails in phases [pr-ci] with CVF_SESSION_MEMORY.md#Active phase", "pass": true},
+   {"ac": "DGIP-NEG", "name": "memory-phase-drift -> Core doctor fails with CVF-DG-CONT-01", "pass": true},
+   {"ac": "DGIP-NEG", "name": "handoff-mode-drift -> CVF-DG-CONT-01 fails in phases [pr-ci] with Current mode", "pass": true},
+   {"ac": "DGIP-NEG", "name": "implementation-phase-drift -> CVF-DG-CONT-01 fails in phases [pr-ci] with IMPLEMENTATION_STATUS.json#/currentPhase", "pass": true},
+   {"ac": "DGIP-NEG", "name": "review-pending-stale-memory -> CVF-DG-CONT-01 fails in phases [pr-ci] with SURFACE_MISMATCH", "pass": true},
+   {"ac": "DGIP-NEG", "name": "review-pending-stale-memory -> Core doctor fails with CVF-DG-CONT-01", "pass": true},
+   {"ac": "DGIP-NEG", "name": "unknown-state-field -> CVF-DG-CONT-01 fails in phases [pr-ci] with UNKNOWN_FIELD", "pass": true},
+   {"ac": "DGIP-NEG", "name": "inline-issue-suffix-status -> CVF-DG-APPL-01 fails in phases [pre-dispatch,worker-return,pre-commit,pr-ci] with status_malformed", "pass": true},
+   {"ac": "DGIP-NEG", "name": "unknown-status -> CVF-DG-APPL-01 fails in phases [pre-dispatch,worker-return,pre-commit,pr-ci] with status_unknown", "pass": true},
+   {"ac": "DGIP-NEG", "name": "blank-status -> CVF-DG-APPL-01 fails in phases [pre-dispatch,worker-return,pre-commit,pr-ci] with status_blank", "pass": true},
+   {"ac": "DGIP-NEG", "name": "duplicate-status -> CVF-DG-APPL-01 fails in phases [pre-dispatch,worker-return,pre-commit,pr-ci] with status_duplicate", "pass": true},
+   {"ac": "DGIP-NEG", "name": "active-without-contract -> CVF-DG-APPL-01 fails in phases [pre-dispatch,worker-return,pre-commit,pr-ci] with contract_missing", "pass": true},
+   {"ac": "DGIP-NEG", "name": "unjustified-rework-deterministic-one-line-repair -> CVF-DG-ROUTE-01 fails in phases [pre-dispatch,pr-ci] with REWORK_UNJUSTIFIED_REVIEWER_LOCAL_AVAILABLE", "pass": true},
+   {"ac": "DGIP-NEG", "name": "rework-invalid-boundary -> CVF-DG-ROUTE-01 fails in phases [pre-dispatch] with REWORK_BOUNDARY_INVALID", "pass": true},
+   {"ac": "DGIP-NEG", "name": "r2-worker-self-review -> CVF-DG-ROLE-01 fails in phases [worker-return,pre-commit,pr-ci] with SELF_REVIEW", "pass": true},
+   {"ac": "DGIP-NEG", "name": "unsupported-proven-claim -> CVF-DG-CLAIM-01 fails in phases [worker-return,pre-commit,pr-ci] with UNSUPPORTED_CLAIM", "pass": true},
+   {"ac": "DGIP-NEG", "name": "blanket-enforcement-claim -> CVF-DG-CLAIM-01 fails in phases [pr-ci] with BROAD_CLAIM_PHRASE", "pass": true},
+   {"ac": "DGIP-NEG", "name": "tampered-routing-module -> CVF-DG-INST-01 fails in phases [bootstrap,pre-dispatch,worker-return,pre-commit,pr-ci] with FILE_TAMPERED", "pass": true},
+   {"ac": "DGIP-NEG", "name": "tampered-routing-module -> Core doctor fails with FILE_TAMPERED", "pass": true},
+   {"ac": "DGIP-NEG", "name": "empty-runner-modules -> CVF-DG-INST-01 fails in phases [pr-ci] with BLOCKED_INVALID_INPUT", "pass": true},
+   {"ac": "DGIP-NEG", "name": "empty-runner-modules -> Core doctor fails with FILE_EMPTY", "pass": true},
+   {"ac": "DGIP-NEG", "name": "missing-profile -> CVF-DG-INST-01 fails in phases [pr-ci] with BLOCKED_INVALID_INPUT", "pass": true},
+   {"ac": "DGIP-NEG", "name": "missing-profile -> Core doctor fails with FILE_MISSING", "pass": true},
+   {"ac": "DGIP-NEG", "name": "noop-project-override -> CVF-DG-INST-01 fails in phases [worker-return] with OVERRIDE_REFUSED", "pass": true},
+   {"ac": "DGIP-NEG", "name": "noop-project-override -> Core doctor fails with OVERRIDE_REFUSED", "pass": true},
+   {"ac": "DGIP-NEG", "name": "replaced-runner-fails-ci-pin -> CVF-DG-INST-01 fails in phases [pr-ci] with RUNNER_PIN_MISMATCH", "pass": true},
+   {"ac": "DGIP-NEG", "name": "Consistent module+lock edit: project lock-only check passes (stated trust boundary), Core doctor fails with TRUSTED_MISMATCH", "pass": true},
+   {"ac": "DGIP-NEG", "name": "CVF_DG_SKIP environment override is refused (non-zero, OVERRIDE_REFUSED)", "pass": true},
+   {"ac": "DGIP-POS", "name": "Justified REWORK passes; an added LOCAL-* control runs alongside the mandatory controls", "pass": true},
+   {"ac": "DGIP-EOL", "name": "CRLF checkout variant: Core doctor and the pinned PR command still PASS (LF-normalised identity)", "pass": true},
+   {"ac": "DGIP-EOL", "name": "LF checkout variant: Core doctor and the pinned PR command still PASS (LF-normalised identity)", "pass": true},
+   {"ac": "DGIP-AGG", "name": "Workspace aggregate passes the clean project and prints gate coverage with a scope disclaimer", "pass": true},
+   {"ac": "DGIP-AGG", "name": "A mandatory gate failure propagates through the doctor to the aggregate (ENFORCED_FAIL, non-zero exit, control named)", "pass": true},
+   {"ac": "DGIP-MIG", "name": "Pre-existing project: bootstrap exits 0, reports MIGRATION_REQUIRED_SKIPPED, installs no gate file, rewrites no project-owned surface", "pass": true},
+   {"ac": "DGIP-MIG", "name": "Doctor gives the legacy project an explicit migration gap (WARN GATE_PROFILE_NOT_INSTALLED, NOT_INSTALLED coverage) and no readiness claim", "pass": true},
+   {"ac": "DGIP-MIG", "name": "Explicit -InstallGateProfile installs tooling only; project-owned surfaces stay byte-identical; unmigrated continuity is a blocking MIGRATION_REQUIRED, not a pass", "pass": true},
+   {"ac": "DGIP-MIG", "name": "After the owner deliberately adopts the contract (no automatic alignment) the doctor passes", "pass": true},
+   {"ac": "DGIP-INTAKE", "name": "Intake is deterministic and idempotent, validates, is not parent acceptance, and refuses an invalid finding", "pass": true},
+   {"ac": "DGIP-COV", "name": "PROVEN_HERMETIC appears exactly for the control/phase cells whose negative mutation passed in this run", "pass": true},
+   {"ac": "DGIP-COV", "name": "A proof receipt bound to a different runner identity grants no PROVEN_HERMETIC", "pass": true},
+   {"ac": "DGIP-CLAIM", "name": "Bridge receipt makes only scoped doctor claims, no blanket readiness, and carries the gate coverage line", "pass": true},
+   {"ac": "DGIP-CLAIM", "name": "Rule-pack manifest and guide state COPIED_NOT_INVOKED (copying a checker is not invoking it)", "pass": true},
+   {"ac": "DGIP-SIZE", "name": "No candidate script/test exceeds the 600-line project guard", "pass": true}
+  ]
+ },
+ "deviations": [
+  {
+   "id": "DEV-01",
+   "summary": "operational index row not applied (system-chain fingerprint conflict outside the write scope)",
+   "detail": "Inserting the row changed docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md to sha256 8d8b1b432344c9fa73422454e1488b9d4cadc51b54c7c3aa7c8c7b963e431b72 and `system chain map freshness` then failed with SOURCE_DRIFT on lane ENFORCEMENT_TO_EVIDENCE (recorded 97af19eed3b227084bb495067a8663a7c19e72c844976e4494e80d01f097ea90). The worker reverted the edit (git checkout of that one file; it had no other change) instead of editing docs/reference/system_chain/CVF_SYSTEM_CHAIN_MAP.json, which is outside the write scope. Local applies the row and refreshes the fingerprint together after governed review.",
+   "proposedRowInsertedAfter": "the row beginning '| Scoping SOT3, governed knowledge authority'",
+   "proposedRow": "| Changing the downstream project bootstrap, workspace doctor, inherited gate runner, work-order status applicability, reviewer-local repair routing, or the project-to-parent finding intake | `docs/reference/downstream_gate_profile/README.md`; `docs/reference/downstream_gate_profile/CVF_DOWNSTREAM_GATE_PROFILE_STANDARD.md`; `docs/reference/CVF_GOLDEN_DOWNSTREAM_BOOTSTRAP_LEARNING_INTAKE_2026-07-23.md` | `docs/reference/downstream_gate_profile/` stable family; `scripts/lib/downstream_governance/` (runner, modules, profile pin, CI and hook templates); `governance/compat/check_gate_to_role_closeability.py` | Profile `cvf.downstreamGateProfile@1.0.0` is a private hermetic file-control implementation: INSTALLED is not INVOKED is not PROVEN_HERMETIC. No hosted CI, real-project adoption, public rollout, Linux execution or runtime AI enforcement is claimed; those stay `DEFERRED_PRIVATE_ONLY` pending separate admission. |"
+  },
+  {
+   "id": "DEV-02",
+   "summary": "downstream AGENTS template reflowed to stay within the 180-line carrier budget",
+   "detail": "checker-owned budget; HEAD text plus the two added sections compares as whitespace-collapsed MATCH (one hyphen-at-line-break repaired); 180 -> 177 lines; carrier checker COMPLIANT"
+  },
+  {"id": "DEV-03", "summary": "existing golden harness overlay list extended and candidate-overlay helpers added to CvfGoldenHarnessSupport.ps1", "detail": "without the extension bootstrap correctly refuses an incomplete hermetic core"},
+  {"id": "DEV-04", "summary": "public-sync surfaces untouched", "detail": "update_cvf_workspace_public_core.ps1 and the public mapper are outside the write scope; the doctor required-file list includes the new core files"},
+  {"id": "DEV-05", "summary": "blanket claim wording remains outside the write scope", "detail": "docs/reference/CVF_WORKSPACE_RULES.md, README.md, ARCHITECTURE.md and W113/W114 assessments still contain 'agent-enforcement-ready'"},
+  {"id": "DEV-06", "summary": "existing golden harness AC-09 needs network", "detail": "fresh-clone initializer runs git fetch; with the offline guard it fails both before and after the change (78/79); not re-run with network"},
+  {"id": "DEV-07", "summary": "required first reads partially performed", "detail": "GLP closed roadmap and the foundation storage standard not read; ADIF entries and Golden Bootstrap intake read at head level; downstream_catalog guard text not read"},
+  {"id": "DEV-08", "summary": "acceptance ledger contradiction", "detail": "see dispositionReason; BLOCKED rows with real artifact sets, terminal status BLOCKED_WITH_REASON, closeability UNCLOSEABLE_PACKET_CONTRADICTION, route REVIEWER_LOCAL_REPAIR"}
+ ],
+ "gates": {
+  "preImplementation": {
+   "command": "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --head HEAD --active-work-order <work order>",
+   "result": "PASS (COMPLIANT)",
+   "cleanHead": "44229eeb07b9022928a4862c3e9076036b6c7a94",
+   "receipt": ".cvf/runtime/autorun-receipts/pre-implementation.json"
+  },
+  "offlineGuard": {
+   "mechanism": "GIT_CONFIG_COUNT=1 http.proxy=http://127.0.0.1:9 (dead local port) on every harness and git process",
+   "probe": "git ls-remote to the public URL failed at the local proxy: no external connection was made",
+   "firstAttemptNote": "an initial insteadOf URL-rewrite guard was replaced after it altered the doctor's remote check; it never reached a network"
+  },
+  "baselineExistingGoldenHarness": {
+   "command": "pwsh -NoProfile -File scripts/test_cvf_golden_downstream_bootstrap.ps1 (offline guard)",
+   "assertions": 79,
+   "passed": 78,
+   "failed": [
+    "AC-09 fresh-clone initializer needs git fetch (network)"
+   ],
+   "when": "before any edit to the bootstrap scripts"
+  },
+  "postChangeExistingGoldenHarness": {
+   "command": "same",
+   "assertions": 79,
+   "passed": 78,
+   "failed": [
+    "AC-09 fresh-clone initializer needs git fetch (network)"
+   ],
+   "comparisonToBaseline": "MATCH",
+   "note": "an intermediate run failed bootstrap with 'public core workspace kit is incomplete' until the harness overlay list was extended (DEV-03)"
+  },
+  "pythonUnit": {
+   "command": "python -B -m unittest discover -s governance/compat -p test_downstream_gate_profile.py",
+   "tests": 38,
+   "result": "OK"
+  },
+  "closeabilityTests": {
+   "command": "python -B -m pytest -p no:cacheprovider governance/compat/test_check_gate_to_role_closeability.py -q",
+   "passed": 26,
+   "note": "suite is pytest-style; the unittest discover form from the work order collects 0 tests for it"
+  },
+  "dgipGoldenHarness": {
+   "command": "pwsh -NoProfile -File scripts/test_cvf_downstream_gate_profile.ps1 -EvidencePath <scratch>",
+   "assertions": 66,
+   "passed": 66,
+   "seconds": 182,
+   "iterations": "run 1 stopped on a candidate-set path-regex defect in the harness helper; run 2 was aborted by me after it exposed the doctor required-file array ordering defect (product); run 3 passed 58/64 (LF variant vs generated catalog views, aggregate failure-detail truncation, legacy fixture handoff date); run 4 passed 64/64; run 5, after adding the bridge and rule-pack wording checks, passed 66/66 and is the cited result"
+  },
+  "reviewerFast": {
+   "run1": {
+    "exit": 1,
+    "failed": [
+     "closure packaging preflight",
+     "core guard self-protection",
+     "system chain map freshness",
+     "agent instruction carrier compaction"
+    ]
+   },
+   "run2": {
+    "exit": 1,
+    "failed": [
+     "closure packaging preflight",
+     "core guard self-protection"
+    ]
+   },
+   "final": {
+    "exit": 0,
+    "within": "run_worker_return_fast_gate"
+   }
+  },
+  "workerReturnFastGate": {
+   "first": {
+    "exit": 1,
+    "failedSubgate": "reviewer-fast",
+    "failedPreflights": [
+     "review cost control",
+     "agent operation trace integrity",
+     "finding-to-governance learning quality",
+     "equivalence claim evidence"
+    ]
+   },
+   "final": {
+    "exit": 0,
+    "subgates": [
+     "corpus scan registry aggregate drift",
+     "epistemic process packet",
+     "work-order acceptance ledger",
+     "worker-return quality gate",
+     "independent review probe admission",
+     "reviewer-fast governance gate",
+     "git diff whitespace check"
+    ]
+   }
+  },
+  "ledgerFinding": {
+   "observation": "with all REQ rows PASS and only the expected artifacts claimed, check_work_order_acceptance_ledger.py reports 'Git observed unclaimed artifact(s)' for every implementation path; PASS-row equality with expectedArtifacts forbids claiming them",
+   "resolution": "rows REQ-1..REQ-7 carry the real artifact set with status BLOCKED, terminal status BLOCKED_WITH_REASON; the ledger gate is then COMPLIANT"
+  },
+  "adif": {
+   "command": "python governance/compat/run_adif_defect_resolver.py --task-class worker_execution --role worker --lifecycle-phase worker-return --json",
+   "items": 0,
+   "truncated": false
+  },
+  "toolBlocks": {
+   "count": 2,
+   "detail": "PowerShell-tool cmd rd with a long-path prefix refused by the tool's own check; recovered with Remove-Item and verified"
+  }
+ },
+ "deferred": [
+  "real CCMAI adoption or migration",
+  "hosted PR/CI execution and PR #1 verification",
+  "Linux/other-OS execution (NOT_EXECUTED_PLATFORM_UNAVAILABLE)",
+  "public sync / public core reconciler and mapper updates",
+  "operational index registration (system-chain fingerprint conflict, see deviations)",
+  "residual blanket-claim wording outside the write scope",
+  "pre-commit hook activation in any real project",
+  "independent Local probe (PENDING_REVIEWER_EXECUTION)"
+ ],
+ "independentProbe": {
+  "independentProbeDisposition": "PENDING_REVIEWER_EXECUTION",
+  "probeExecutorRole": "LOCAL_REVIEWER_NOT_IMPLEMENTATION_WORKER"
+ }
+}

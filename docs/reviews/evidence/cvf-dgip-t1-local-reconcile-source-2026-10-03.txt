@@ -1,0 +1,60 @@
+import sys
+sys.dont_write_bytecode=True
+import json,hashlib,re,subprocess,shutil,os
+from pathlib import Path
+root=Path.cwd()
+e=json.loads((root/'docs/reviews/evidence/cvf-dgip-t1-worker-2026-10-03.json').read_text())
+p=root/'docs/reviews/evidence/cvf-dgip-t1-local-probe-2026-10-03.json'
+record=json.loads(p.read_text())
+checks=[]
+for item in e['candidateFiles']:
+    data=(root/item['path']).read_bytes()
+    checks.append({'path':item['path'],'rawMatch':hashlib.sha256(data).hexdigest()==item['rawSha256'],
+                   'lfMatch':hashlib.sha256(data.replace(b'\r\n',b'\n')).hexdigest()==item['lfSha256']})
+record['workerCandidateReconciliation']=checks
+record['workerMarkdownHash']=hashlib.sha256((root/'docs/reviews/CVF_DGIP_T1_DOWNSTREAM_GATE_INHERITANCE_WORKER_RETURN_2026-10-03.md').read_bytes()).hexdigest()
+record['workerEvidenceHash']=hashlib.sha256((root/'docs/reviews/evidence/cvf-dgip-t1-worker-2026-10-03.json').read_bytes()).hexdigest()
+template='governance/toolkit/05_OPERATION/CVF_DOWNSTREAM_AGENTS_TEMPLATE.md'
+base=subprocess.check_output(['git','show',f'44229eeb07b9022928a4862c3e9076036b6c7a94:{template}']).decode('utf-8')
+candidate=(root/template).read_text(encoding='utf-8')
+without_additions=re.sub(r'(?ms)^### Reviewer-Local Repair Before REWORK\n.*?(?=^## Required First-Read Documents)', '',candidate)
+norm=lambda s:re.sub(r'\s+',' ',s).strip()
+record['templateReflow']={'baseLines':len(base.splitlines()),'candidateLines':len(candidate.splitlines()),
+                         'whitespaceCollapsedMatch':norm(base)==norm(without_additions)}
+if norm(base)!=norm(without_additions):
+    import difflib
+    record['templateReflow']['tokenDiff']=list(difflib.unified_diff(norm(base).split(' '),norm(without_additions).split(' ')))[:80]
+
+fixture=root/'.cvf/runtime/dgip-t1-local-probe/fixture'
+nextroot=root/'.cvf/runtime/dgip-t1-local-probe/supplementary'
+shutil.copytree(fixture,nextroot)
+runner=nextroot/'scripts/cvf_gates/cvf_downstream_gate_runner.py'
+env={**os.environ,'PYTHONDONTWRITEBYTECODE':'1'}
+def run(identifier,args,expected):
+    done=subprocess.run([sys.executable,'-B',str(runner),*args],cwd=nextroot,env=env,text=True,capture_output=True)
+    actual='PASS' if done.returncode==0 else 'REFUSE'
+    record['results'].append({'id':identifier,'expected':expected,'actual':actual,'oraclePass':actual==expected,
+                             'exitCode':done.returncode,'stdout':done.stdout,'stderr':done.stderr})
+run('P03-required-reviewer-fast-phase',['run','--phase','reviewer-fast','--project-root',str(nextroot),'--no-receipt'],'PASS')
+data={'findingId':'LOCAL-ORACLE-F1','title':'Local explicit input','sourceProject':'local-disposable-oracle','sourceSha':'a'*40,
+      'observed':'malformed intake boundary','expected':'reject invalid version and owner','negativeEvidence':[{'locator':'local','description':'independent negative input'}],
+      'chainJoins':[{'join':'project to parent','gap':'missing version validation','earliestControlPoint':'validate intake'}],
+      'defectClass':'MACHINE_GATE_GAP','learningLane':'GOVERNANCE_CONTROL_PLANE','proposedDisposition':'MACHINE_CHECK_CANDIDATE',
+      'candidateControl':'Local intake validation','claimLimits':'Disposable structural fixture only','dedupCandidates':[]}
+input_path=nextroot/'finding.json';input_path.write_text(json.dumps(data))
+run('P04-intake-generation',['intake','--project-root',str(nextroot),'--finding',str(input_path)],'PASS')
+path=nextroot/'docs/learning_intake/LOCAL-ORACLE-F1.intake.json'
+intake=json.loads(path.read_text())
+intake.pop('schemaVersion');intake['profileId']='wrong-profile';intake['parentOwner']='wrong-owner'
+body={k:v for k,v in intake.items() if k!='contentSha256'}
+intake['contentSha256']=hashlib.sha256((json.dumps(body,ensure_ascii=False,indent=2,sort_keys=True)+'\n').encode()).hexdigest()
+path.write_text(json.dumps(intake))
+run('N19-invalid-intake-version-profile-owner',['validate-intake','--record',str(path)],'REFUSE')
+record['oraclePassed']=sum(x['oraclePass'] for x in record['results'])
+record['oracleTotal']=len(record['results'])
+record['failOpenCases']=[x['id'] for x in record['results'] if x['expected']=='REFUSE' and not x['oraclePass']]
+record['missingMandatoryCases']=[x['id'] for x in record['results'] if x['expected']=='PASS' and not x['oraclePass']]
+p.write_text(json.dumps(record,indent=2)+'\n',encoding='utf-8')
+print(json.dumps({'hashMismatch':[x for x in checks if not x['rawMatch'] or not x['lfMatch']],
+                 'templateReflow':record['templateReflow'],'oraclePassed':record['oraclePassed'],'oracleTotal':record['oracleTotal'],
+                 'failOpenCases':record['failOpenCases'],'missingMandatoryCases':record['missingMandatoryCases']}))

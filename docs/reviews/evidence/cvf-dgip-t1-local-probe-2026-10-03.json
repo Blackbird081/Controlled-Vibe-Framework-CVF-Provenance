@@ -1,0 +1,452 @@
+{
+  "schemaVersion": "cvf.dgip.localIndependentProbe@1.0.0",
+  "batchId": "CVF-DGIP-T1",
+  "executorRole": "LOCAL_REVIEWER_NOT_IMPLEMENTATION_WORKER",
+  "fixtureMethod": "Reviewer-authored JSON/Markdown fixture; CLI refusal oracle; no worker test/harness imports. Only temporary fixture commits, never provenance commits.",
+  "executedAtUtc": "2026-10-03T14:57:12.678192+00:00",
+  "platform": "win32",
+  "networkCalls": 0,
+  "providerCalls": 0,
+  "cost": "UNKNOWN",
+  "sourceHashes": {
+    "scripts/lib/downstream_governance/CvfDownstreamGateProfile.ps1": "989386ce4bd74d2c361402586f7a93b0dc19fa45345d9b2f039eed0f4aeaef44",
+    "scripts/lib/downstream_governance/cvf_dg_applicability.py": "bffde44fe38494b0dea9e658fb82eaaec31f3bd25c9964445fa837dd29b01c67",
+    "scripts/lib/downstream_governance/cvf_dg_common.py": "0ed1b75da28a052f7e55eade55d0c617a0f4a8c4701e8b016e95aa5fa8f48208",
+    "scripts/lib/downstream_governance/cvf_dg_continuity.py": "23c8d2ad1e28b74eed7e7edd6a0dd53a3c598a8ad4da9467eb88f179d140884f",
+    "scripts/lib/downstream_governance/cvf_dg_coverage.py": "4a5eefbd6fca233dea47fffa5a06f7945313d706a5a4919ae8c6f31544a7322a",
+    "scripts/lib/downstream_governance/cvf_dg_install.py": "f4e87f72d45bd20142c9a1bbe12678f23998311a276af8a2755cafdd3fdcef6e",
+    "scripts/lib/downstream_governance/cvf_dg_intake.py": "266d79da83d718b591725801dd4c19a135fabc61730d33e4ecc40d0dbf82ecaf",
+    "scripts/lib/downstream_governance/cvf_dg_review.py": "a36b67c064c01b8140de1350213d54d0eb99748d61236a5587577031cf689f8c",
+    "scripts/lib/downstream_governance/cvf_dg_routing.py": "a39419336ea31ec155c285291f3d5684046e8b18d88dbf47c422b3c2c59632cf",
+    "scripts/lib/downstream_governance/cvf_downstream_gate_profile.json": "047bf10e6a304199baa6f89136b8397023ca4f41d339fc06049da6dc41dfbc5c",
+    "scripts/lib/downstream_governance/cvf_downstream_gate_runner.py": "d3f494e04f2e0654023c83c6d9f4da6fe6995a8bc4bb7398338a5c25ac26c3a7",
+    "scripts/lib/downstream_governance/downstream_pr_gates.yml.template": "232b0a644903e3a7707553bcf69f7b85aac8c07dc17be3bafac9f1ddcd9f6d4a",
+    "scripts/lib/downstream_governance/git-pre-commit.template": "07a9f381089f7f4689772c992e57d4ac89b059ef3c76b061ff07cb5da8a80279",
+    "governance/compat/check_gate_to_role_closeability.py": "8f00c6421eebe3c1b237e5307ac6e2b0b0343c9a35cf635bbab17aa886e00e8e"
+  },
+  "results": [
+    {
+      "id": "P01-pristine",
+      "expected": "PASS",
+      "actual": "PASS",
+      "oraclePass": true,
+      "exitCode": 0,
+      "stdout": "{\n  \"exitCode\": 0,\n  \"phase\": \"pr-ci\",\n  \"results\": [\n    {\n      \"checkedControlIds\": [],\n      \"controlId\": \"CVF-DG-INST-01\",\n      \"findings\": [],\n      \"notes\": [],\n      \"ok\": true,\n      \"outcome\": \"PASS\",\n      \"reason\": \"\"\n    },\n    {\n      \"checkedControlIds\": [],\n      \"controlId\": \"CVF-DG-CONT-01\",\n      \"findings\": [],\n      \"notes\": [],\n      \"ok\": true,\n      \"outcome\": \"PASS\",\n      \"reason\": \"\"\n    },\n    {\n      \"checkedControlIds\": [\n        \"work_order_status_grammar\"\n      ],\n      \"controlId\": \"CVF-DG-APPL-01\",\n      \"findings\": [],\n      \"notes\": [],\n      \"ok\": true,\n      \"outcome\": \"NOT_APPLICABLE_WITH_REASON\",\n      \"reason\": \"no candidate work-order packet in scope\"\n    },\n    {\n      \"checkedControlIds\": [\n        \"CVF-DG-ROUTE-01\"\n      ],\n      \"controlId\": \"CVF-DG-ROUTE-01\",\n      \"findings\": [],\n      \"notes\": [],\n      \"ok\": true,\n      \"outcome\": \"NOT_APPLICABLE_WITH_REASON\",\n      \"reason\": \"no dispatch packet declares dispatchKind in scope\"\n    },\n    {\n      \"checkedControlIds\": [\n        \"CVF-DG-ROLE-01\"\n      ],\n      \"controlId\": \"CVF-DG-ROLE-01\",\n      \"findings\": [],\n      \"notes\": [],\n      \"ok\": true,\n      \"outcome\": \"NOT_APPLICABLE_WITH_REASON\",\n      \"reason\": \"no review artifact in scope declares Risk R2 or R3\"\n    },\n    {\n      \"checkedControlIds\": [\n        \"CVF-DG-CLAIM-01\"\n      ],\n      \"controlId\": \"CVF-DG-CLAIM-01\",\n      \"findings\": [],\n      \"notes\": [\n        \"0 explicit claim line(s) and 0 document(s) scanned\"\n      ],\n      \"ok\": true,\n      \"outcome\": \"PASS\",\n      \"reason\": \"\"\n    }\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "N01-memory-stale",
+      "expected": "REFUSE",
+      "actual": "REFUSE",
+      "oraclePass": true,
+      "exitCode": 2,
+      "stdout": "{\n  \"exitCode\": 2,\n  \"phase\": \"pr-ci\",\n  \"results\": [\n    {\n      \"checkedControlIds\": [],\n      \"controlId\": \"CVF-DG-INST-01\",\n      \"findings\": [],\n      \"notes\": [],\n      \"ok\": true,\n      \"outcome\": \"PASS\",\n      \"reason\": \"\"\n    },\n    {\n      \"checkedControlIds\": [],\n      \"controlId\": \"CVF-DG-CONT-01\",\n      \"findings\": [\n        {\n          \"code\": \"SURFACE_MISMATCH\",\n          \"locator\": \"CVF_SESSION/ACTIVE_SESSION_STATE.json#/activePhase\",\n          \"message\": \"activePhase differs across surfaces: CVF_SESSION/ACTIVE_SESSION_STATE.json#/activePhase='REVIEW'; CVF_SESSION/handoffs/LOCAL_ORACLE.md#Active phase='REVIEW'; CVF_SESSION_MEMORY.md#Active phase='BUILD'; IMPLEMENTATION_STATUS.json#/currentPhase='REVIEW'\"\n        }\n      ],\n      \"notes\": [],\n      \"ok\": false,\n      \"outcome\": \"FAIL\",\n      \"reason\": \"\"\n    },\n    {\n      \"checkedControlIds\": [\n        \"work_order_status_grammar\"\n      ],\n      \"controlId\": \"CVF-DG-APPL-01\",\n      \"findings\": [],\n      \"notes\": [],\n      \"ok\": true,\n      \"outcome\": \"NOT_APPLICABLE_WITH_REASON\",\n      \"reason\": \"no candidate work-order packet in scope\"\n    },\n    {\n      \"checkedControlIds\": [\n        \"CVF-DG-ROUTE-01\"\n      ],\n      \"controlId\": \"CVF-DG-ROUTE-01\",\n      \"findings\": [],\n      \"notes\": [],\n      \"ok\": true,\n      \"outcome\": \"NOT_APPLICABLE_WITH_REASON\",\n      \"reason\": \"no dispatch packet declares dispatchKind in scope\"\n    },\n    {\n      \"checkedControlIds\": [\n        \"CVF-DG-ROLE-01\"\n      ],\n      \"controlId\": \"CVF-DG-ROLE-01\",\n      \"findings\": [],\n      \"notes\": [],\n      \"ok\": true,\n      \"outcome\": \"NOT_APPLICABLE_WITH_REASON\",\n      \"reason\": \"no review artifact in scope declares Risk R2 or R3\"\n    },\n    {\n      \"checkedControlIds\": [\n        \"CVF-DG-CLAIM-01\"\n      ],\n      \"controlId\": \"CVF-DG-CLAIM-01\",\n      \"findings\": [],\n      \"notes\": [\n        \"0 explicit claim line(s) and 0 document(s) scanned\"\n      ],\n      \"ok\": true,\n      \"outcome\": \"PASS\",\n      \"reason\": \"\"\n    }\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "N02-state-stale",
+      "expected": "REFUSE",
+      "actual": "REFUSE",
+      "oraclePass": true,
+      "exitCode": 2,
+      "stdout": "{\n  \"exitCode\": 2,\n  \"phase\": \"pr-ci\",\n  \"results\": [\n    {\n      \"checkedControlIds\": [],\n      \"controlId\": \"CVF-DG-INST-01\",\n      \"findings\": [],\n      \"notes\": [],\n      \"ok\": true,\n      \"outcome\": \"PASS\",\n      \"reason\": \"\"\n    },\n    {\n      \"checkedControlIds\": [],\n      \"controlId\": \"CVF-DG-CONT-01\",\n      \"findings\": [\n        {\n          \"code\": \"SURFACE_MISMATCH\",\n          \"locator\": \"CVF_SESSION/ACTIVE_SESSION_STATE.json#/activePhase\",\n          \"message\": \"activePhase differs across surfaces: CVF_SESSION/ACTIVE_SESSION_STATE.json#/activePhase='BUILD'; CVF_SESSION/handoffs/LOCAL_ORACLE.md#Active phase='REVIEW'; CVF_SESSION_MEMORY.md#Active phase='REVIEW'; IMPLEMENTATION_STATUS.json#/currentPhase='REVIEW'\"\n        },\n        {\n          \"code\": \"MODE_PHASE_MISMATCH\",\n          \"locator\": \"CVF_SESSION/ACTIVE_SESSION_STATE.json#/currentMode\",\n          \"message\": \"mode REVIEW_PENDING maps to phase REVIEW but activePhase is BUILD\"\n        }\n      ],\n      \"notes\": [],\n      \"ok\": false,\n      \"outcome\": \"FAIL\",\n      \"reason\": \"\"\n    },\n    {\n      \"checkedControlIds\": [\n        \"work_order_status_grammar\"\n      ],\n      \"controlId\": \"CVF-DG-APPL-01\",\n      \"findings\": [],\n      \"notes\": [],\n      \"ok\": true,\n      \"outcome\": \"NOT_APPLICABLE_WITH_REASON\",\n      \"reason\": \"no candidate work-order packet in scope\"\n    },\n    {\n      \"checkedControlIds\": [\n        \"CVF-DG-ROUTE-01\"\n      ],\n      \"controlId\": \"CVF-DG-ROUTE-01\",\n      \"findings\": [],\n      \"notes\": [],\n      \"ok\": true,\n      \"outcome\": \"NOT_APPLICABLE_WITH_REASON\",\n      \"reason\": \"no dispatch packet declares dispatchKind in scope\"\n    },\n    {\n      \"checkedControlIds\": [\n        \"CVF-DG-ROLE-01\"\n      ],\n      \"controlId\": \"CVF-DG-ROLE-01\",\n      \"findings\": [],\n      \"notes\": [],\n      \"ok\": true,\n      \"outcome\": \"NOT_APPLICABLE_WITH_REASON\",\n      \"reason\": \"no review artifact in scope declares Risk R2 or R3\"\n    },\n    {\n      \"checkedControlIds\": [\n        \"CVF-DG-CLAIM-01\"\n      ],\n      \"controlId\": \"CVF-DG-CLAIM-01\",\n      \"findings\": [],\n      \"notes\": [\n        \"0 explicit claim line(s) and 0 document(s) scanned\"\n      ],\n      \"ok\": true,\n      \"outcome\": \"PASS\",\n      \"reason\": \"\"\n    }\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "N03-handoff-stale",
+      "expected": "REFUSE",
+      "actual": "REFUSE",
+      "oraclePass": true,
+      "exitCode": 2,
+      "stdout": "{\n  \"exitCode\": 2,\n  \"phase\": \"pr-ci\",\n  \"results\": [\n    {\n      \"checkedControlIds\": [],\n      \"controlId\": \"CVF-DG-INST-01\",\n      \"findings\": [],\n      \"notes\": [],\n      \"ok\": true,\n      \"outcome\": \"PASS\",\n      \"reason\": \"\"\n    },\n    {\n      \"checkedControlIds\": [],\n      \"controlId\": \"CVF-DG-CONT-01\",\n      \"findings\": [\n        {\n          \"code\": \"SURFACE_MISMATCH\",\n          \"locator\": \"CVF_SESSION/ACTIVE_SESSION_STATE.json#/activeRole\",\n          \"message\": \"activeRole differs across surfaces: CVF_SESSION/ACTIVE_SESSION_STATE.json#/activeRole='REVIEWER'; CVF_SESSION/handoffs/LOCAL_ORACLE.md#Active role='WORKER'\"\n        }\n      ],\n      \"notes\": [],\n      \"ok\": false,\n      \"outcome\": \"FAIL\",\n      \"reason\": \"\"\n    },\n    {\n      \"checkedControlIds\": [\n        \"work_order_status_grammar\"\n      ],\n      \"controlId\": \"CVF-DG-APPL-01\",\n      \"findings\": [],\n      \"notes\": [],\n      \"ok\": true,\n      \"outcome\": \"NOT_APPLICABLE_WITH_REASON\",\n      \"reason\": \"no candidate work-order packet in scope\"\n    },\n    {\n      \"checkedControlIds\": [\n        \"CVF-DG-ROUTE-01\"\n      ],\n      \"controlId\": \"CVF-DG-ROUTE-01\",\n      \"findings\": [],\n      \"notes\": [],\n      \"ok\": true,\n      \"outcome\": \"NOT_APPLICABLE_WITH_REASON\",\n      \"reason\": \"no dispatch packet declares dispatchKind in scope\"\n    },\n    {\n      \"checkedControlIds\": [\n        \"CVF-DG-ROLE-01\"\n      ],\n      \"controlId\": \"CVF-DG-ROLE-01\",\n      \"findings\": [],\n      \"notes\": [],\n      \"ok\": true,\n      \"outcome\": \"NOT_APPLICABLE_WITH_REASON\",\n      \"reason\": \"no review artifact in scope declares Risk R2 or R3\"\n    },\n    {\n      \"checkedControlIds\": [\n        \"CVF-DG-CLAIM-01\"\n      ],\n      \"controlId\": \"CVF-DG-CLAIM-01\",\n      \"findings\": [],\n      \"notes\": [\n        \"0 explicit claim line(s) and 0 document(s) scanned\"\n      ],\n      \"ok\": true,\n      \"outcome\": \"PASS\",\n      \"reason\": \"\"\n    }\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "N04-control-missing",
+      "expected": "REFUSE",
+      "actual": "REFUSE",
+      "oraclePass": true,
+      "exitCode": 3,
+      "stdout": "RESULT: BLOCKED_INVALID_INPUT inherited module unusable: ModuleNotFoundError: No module named 'cvf_dg_continuity'\n",
+      "stderr": ""
+    },
+    {
+      "id": "N05-no-op-override",
+      "expected": "REFUSE",
+      "actual": "REFUSE",
+      "oraclePass": true,
+      "exitCode": 2,
+      "stdout": "{\n  \"exitCode\": 2,\n  \"phase\": \"pr-ci\",\n  \"results\": [\n    {\n      \"checkedControlIds\": [],\n      \"controlId\": \"CVF-DG-INST-01\",\n      \"findings\": [\n        {\n          \"code\": \"OVERRIDE_REFUSED\",\n          \"locator\": \".cvf/gate-profile.local.json#/disableMandatory\",\n          \"message\": \"local profile may only add controls; it cannot disable, redefine or skip mandatory controls\"\n        }\n      ],\n      \"notes\": [],\n      \"ok\": false,\n      \"outcome\": \"FAIL\",\n      \"reason\": \"\"\n    },\n    {\n      \"checkedControlIds\": [],\n      \"controlId\": \"CVF-DG-CONT-01\",\n      \"findings\": [],\n      \"notes\": [],\n      \"ok\": true,\n      \"outcome\": \"PASS\",\n      \"reason\": \"\"\n    },\n    {\n      \"checkedControlIds\": [\n        \"work_order_status_grammar\"\n      ],\n      \"controlId\": \"CVF-DG-APPL-01\",\n      \"findings\": [],\n      \"notes\": [],\n      \"ok\": true,\n      \"outcome\": \"NOT_APPLICABLE_WITH_REASON\",\n      \"reason\": \"no candidate work-order packet in scope\"\n    },\n    {\n      \"checkedControlIds\": [\n        \"CVF-DG-ROUTE-01\"\n      ],\n      \"controlId\": \"CVF-DG-ROUTE-01\",\n      \"findings\": [],\n      \"notes\": [],\n      \"ok\": true,\n      \"outcome\": \"NOT_APPLICABLE_WITH_REASON\",\n      \"reason\": \"no dispatch packet declares dispatchKind in scope\"\n    },\n    {\n      \"checkedControlIds\": [\n        \"CVF-DG-ROLE-01\"\n      ],\n      \"controlId\": \"CVF-DG-ROLE-01\",\n      \"findings\": [],\n      \"notes\": [],\n      \"ok\": true,\n      \"outcome\": \"NOT_APPLICABLE_WITH_REASON\",\n      \"reason\": \"no review artifact in scope declares Risk R2 or R3\"\n    },\n    {\n      \"checkedControlIds\": [\n        \"CVF-DG-CLAIM-01\"\n      ],\n      \"controlId\": \"CVF-DG-CLAIM-01\",\n      \"findings\": [],\n      \"notes\": [\n        \"0 explicit claim line(s) and 0 document(s) scanned\"\n      ],\n      \"ok\": true,\n      \"outcome\": \"PASS\",\n      \"reason\": \"\"\n    }\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "N06-inline-active-status",
+      "expected": "REFUSE",
+      "actual": "REFUSE",
+      "oraclePass": true,
+      "exitCode": 2,
+      "stdout": "{\n  \"exitCode\": 2,\n  \"phase\": \"pr-ci\",\n  \"results\": [\n    {\n      \"checkedControlIds\": [],\n      \"controlId\": \"CVF-DG-INST-01\",\n      \"findings\": [],\n      \"notes\": [],\n      \"ok\": true,\n      \"outcome\": \"PASS\",\n      \"reason\": \"\"\n    },\n    {\n      \"checkedControlIds\": [],\n      \"controlId\": \"CVF-DG-CONT-01\",\n      \"findings\": [],\n      \"notes\": [],\n      \"ok\": true,\n      \"outcome\": \"PASS\",\n      \"reason\": \"\"\n    },\n    {\n      \"checkedControlIds\": [\n        \"work_order_status_grammar\",\n        \"closeability_contract\"\n      ],\n      \"controlId\": \"CVF-DG-APPL-01\",\n      \"findings\": [\n        {\n          \"code\": \"contract_missing\",\n          \"locator\": \"docs/work_orders/CVF_AGENT_WORK_ORDER_LOCAL_ORACLE.md\",\n          \"message\": \"missing `## Gate-To-Role Closeability Contract`\"\n        }\n      ],\n      \"notes\": [],\n      \"ok\": false,\n      \"outcome\": \"FAIL\",\n      \"reason\": \"\"\n    },\n    {\n      \"checkedControlIds\": [\n        \"CVF-DG-ROUTE-01\"\n      ],\n      \"controlId\": \"CVF-DG-ROUTE-01\",\n      \"findings\": [],\n      \"notes\": [],\n      \"ok\": true,\n      \"outcome\": \"NOT_APPLICABLE_WITH_REASON\",\n      \"reason\": \"no dispatch packet declares dispatchKind in scope\"\n    },\n    {\n      \"checkedControlIds\": [\n        \"CVF-DG-ROLE-01\"\n      ],\n      \"controlId\": \"CVF-DG-ROLE-01\",\n      \"findings\": [],\n      \"notes\": [],\n      \"ok\": true,\n      \"outcome\": \"NOT_APPLICABLE_WITH_REASON\",\n      \"reason\": \"no review artifact in scope declares Risk R2 or R3\"\n    },\n    {\n      \"checkedControlIds\": [\n        \"CVF-DG-CLAIM-01\"\n      ],\n      \"controlId\": \"CVF-DG-CLAIM-01\",\n      \"findings\": [],\n      \"notes\": [\n        \"0 explicit claim line(s) and 1 document(s) scanned\"\n      ],\n      \"ok\": true,\n      \"outcome\": \"PASS\",\n      \"reason\": \"\"\n    }\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "N07-unknown-status",
+      "expected": "REFUSE",
+      "actual": "REFUSE",
+      "oraclePass": true,
+      "exitCode": 2,
+      "stdout": "{\n  \"exitCode\": 2,\n  \"phase\": \"pr-ci\",\n  \"results\": [\n    {\n      \"checkedControlIds\": [],\n      \"controlId\": \"CVF-DG-INST-01\",\n      \"findings\": [],\n      \"notes\": [],\n      \"ok\": true,\n      \"outcome\": \"PASS\",\n      \"reason\": \"\"\n    },\n    {\n      \"checkedControlIds\": [],\n      \"controlId\": \"CVF-DG-CONT-01\",\n      \"findings\": [],\n      \"notes\": [],\n      \"ok\": true,\n      \"outcome\": \"PASS\",\n      \"reason\": \"\"\n    },\n    {\n      \"checkedControlIds\": [\n        \"work_order_status_grammar\",\n        \"closeability_contract\"\n      ],\n      \"controlId\": \"CVF-DG-APPL-01\",\n      \"findings\": [\n        {\n          \"code\": \"status_unknown\",\n          \"locator\": \"docs/work_orders/CVF_AGENT_WORK_ORDER_LOCAL_ORACLE.md\",\n          \"message\": \"Status token MYSTERY is not in the known active or not-applicable sets (grammar cvf.workOrderStatusGrammar@1.0.0)\"\n        }\n      ],\n      \"notes\": [],\n      \"ok\": false,\n      \"outcome\": \"FAIL\",\n      \"reason\": \"\"\n    },\n    {\n      \"checkedControlIds\": [\n        \"CVF-DG-ROUTE-01\"\n      ],\n      \"controlId\": \"CVF-DG-ROUTE-01\",\n      \"findings\": [],\n      \"notes\": [],\n      \"ok\": true,\n      \"outcome\": \"NOT_APPLICABLE_WITH_REASON\",\n      \"reason\": \"no dispatch packet declares dispatchKind in scope\"\n    },\n    {\n      \"checkedControlIds\": [\n        \"CVF-DG-ROLE-01\"\n      ],\n      \"controlId\": \"CVF-DG-ROLE-01\",\n      \"findings\": [],\n      \"notes\": [],\n      \"ok\": true,\n      \"outcome\": \"NOT_APPLICABLE_WITH_REASON\",\n      \"reason\": \"no review artifact in scope declares Risk R2 or R3\"\n    },\n    {\n      \"checkedControlIds\": [\n        \"CVF-DG-CLAIM-01\"\n      ],\n      \"controlId\": \"CVF-DG-CLAIM-01\",\n      \"findings\": [],\n      \"notes\": [\n        \"0 explicit claim line(s) and 1 document(s) scanned\"\n      ],\n      \"ok\": true,\n      \"outcome\": \"PASS\",\n      \"reason\": \"\"\n    }\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "N08-self-review",
+      "expected": "REFUSE",
+      "actual": "REFUSE",
+      "oraclePass": true,
+      "exitCode": 2,
+      "stdout": "{\n  \"exitCode\": 2,\n  \"phase\": \"worker-return\",\n  \"results\": [\n    {\n      \"checkedControlIds\": [],\n      \"controlId\": \"CVF-DG-INST-01\",\n      \"findings\": [],\n      \"notes\": [],\n      \"ok\": true,\n      \"outcome\": \"PASS\",\n      \"reason\": \"\"\n    },\n    {\n      \"checkedControlIds\": [],\n      \"controlId\": \"CVF-DG-CONT-01\",\n      \"findings\": [],\n      \"notes\": [],\n      \"ok\": true,\n      \"outcome\": \"PASS\",\n      \"reason\": \"\"\n    },\n    {\n      \"checkedControlIds\": [\n        \"work_order_status_grammar\"\n      ],\n      \"controlId\": \"CVF-DG-APPL-01\",\n      \"findings\": [],\n      \"notes\": [],\n      \"ok\": true,\n      \"outcome\": \"NOT_APPLICABLE_WITH_REASON\",\n      \"reason\": \"no candidate work-order packet in scope\"\n    },\n    {\n      \"checkedControlIds\": [\n        \"CVF-DG-ROLE-01\"\n      ],\n      \"controlId\": \"CVF-DG-ROLE-01\",\n      \"findings\": [\n        {\n          \"code\": \"SELF_REVIEW\",\n          \"locator\": \"docs/reviews/LOCAL_ORACLE.md#Reviewer\",\n          \"message\": \"R2 review names the same agent as worker and reviewer; an independent reviewer is required\"\n        }\n      ],\n      \"notes\": [],\n      \"ok\": false,\n      \"outcome\": \"FAIL\",\n      \"reason\": \"\"\n    },\n    {\n      \"checkedControlIds\": [\n        \"CVF-DG-CLAIM-01\"\n      ],\n      \"controlId\": \"CVF-DG-CLAIM-01\",\n      \"findings\": [],\n      \"notes\": [\n        \"0 explicit claim line(s) and 1 document(s) scanned\"\n      ],\n      \"ok\": true,\n      \"outcome\": \"PASS\",\n      \"reason\": \"\"\n    }\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "N09-unjustified-rework",
+      "expected": "REFUSE",
+      "actual": "REFUSE",
+      "oraclePass": true,
+      "exitCode": 2,
+      "stdout": "{\n  \"exitCode\": 2,\n  \"phase\": \"pr-ci\",\n  \"results\": [\n    {\n      \"checkedControlIds\": [],\n      \"controlId\": \"CVF-DG-INST-01\",\n      \"findings\": [],\n      \"notes\": [],\n      \"ok\": true,\n      \"outcome\": \"PASS\",\n      \"reason\": \"\"\n    },\n    {\n      \"checkedControlIds\": [],\n      \"controlId\": \"CVF-DG-CONT-01\",\n      \"findings\": [],\n      \"notes\": [],\n      \"ok\": true,\n      \"outcome\": \"PASS\",\n      \"reason\": \"\"\n    },\n    {\n      \"checkedControlIds\": [\n        \"work_order_status_grammar\"\n      ],\n      \"controlId\": \"CVF-DG-APPL-01\",\n      \"findings\": [],\n      \"notes\": [],\n      \"ok\": true,\n      \"outcome\": \"NOT_APPLICABLE_WITH_REASON\",\n      \"reason\": \"no candidate work-order packet in scope\"\n    },\n    {\n      \"checkedControlIds\": [\n        \"CVF-DG-ROUTE-01\"\n      ],\n      \"controlId\": \"CVF-DG-ROUTE-01\",\n      \"findings\": [\n        {\n          \"code\": \"REWORK_UNJUSTIFIED_REVIEWER_LOCAL_AVAILABLE\",\n          \"locator\": \"docs/reviews/LOCAL_ORACLE.md\",\n          \"message\": \"objective, design, paths, authority, effects, commit owner are unchanged and evidence is determined: reviewer-local repair applies before REWORK\"\n        }\n      ],\n      \"notes\": [],\n      \"ok\": false,\n      \"outcome\": \"FAIL\",\n      \"reason\": \"\"\n    },\n    {\n      \"checkedControlIds\": [\n        \"CVF-DG-ROLE-01\"\n      ],\n      \"controlId\": \"CVF-DG-ROLE-01\",\n      \"findings\": [],\n      \"notes\": [\n        \"skipped: docs/reviews/LOCAL_ORACLE.md\"\n      ],\n      \"ok\": true,\n      \"outcome\": \"NOT_APPLICABLE_WITH_REASON\",\n      \"reason\": \"no review artifact in scope declares Risk R2 or R3\"\n    },\n    {\n      \"checkedControlIds\": [\n        \"CVF-DG-CLAIM-01\"\n      ],\n      \"controlId\": \"CVF-DG-CLAIM-01\",\n      \"findings\": [],\n      \"notes\": [\n        \"0 explicit claim line(s) and 1 document(s) scanned\"\n      ],\n      \"ok\": true,\n      \"outcome\": \"PASS\",\n      \"reason\": \"\"\n    }\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "N10-unsupported-claim",
+      "expected": "REFUSE",
+      "actual": "REFUSE",
+      "oraclePass": true,
+      "exitCode": 2,
+      "stdout": "{\n  \"exitCode\": 2,\n  \"phase\": \"worker-return\",\n  \"results\": [\n    {\n      \"checkedControlIds\": [],\n      \"controlId\": \"CVF-DG-INST-01\",\n      \"findings\": [],\n      \"notes\": [],\n      \"ok\": true,\n      \"outcome\": \"PASS\",\n      \"reason\": \"\"\n    },\n    {\n      \"checkedControlIds\": [],\n      \"controlId\": \"CVF-DG-CONT-01\",\n      \"findings\": [],\n      \"notes\": [],\n      \"ok\": true,\n      \"outcome\": \"PASS\",\n      \"reason\": \"\"\n    },\n    {\n      \"checkedControlIds\": [\n        \"work_order_status_grammar\"\n      ],\n      \"controlId\": \"CVF-DG-APPL-01\",\n      \"findings\": [],\n      \"notes\": [],\n      \"ok\": true,\n      \"outcome\": \"NOT_APPLICABLE_WITH_REASON\",\n      \"reason\": \"no candidate work-order packet in scope\"\n    },\n    {\n      \"checkedControlIds\": [\n        \"CVF-DG-ROLE-01\"\n      ],\n      \"controlId\": \"CVF-DG-ROLE-01\",\n      \"findings\": [],\n      \"notes\": [\n        \"skipped: docs/reviews/LOCAL_ORACLE.md\"\n      ],\n      \"ok\": true,\n      \"outcome\": \"NOT_APPLICABLE_WITH_REASON\",\n      \"reason\": \"no review artifact in scope declares Risk R2 or R3\"\n    },\n    {\n      \"checkedControlIds\": [\n        \"CVF-DG-CLAIM-01\"\n      ],\n      \"controlId\": \"CVF-DG-CLAIM-01\",\n      \"findings\": [\n        {\n          \"code\": \"UNSUPPORTED_CLAIM\",\n          \"locator\": \"docs/reviews/LOCAL_ORACLE.md#Gate claim:CVF-DG-CONT-01\",\n          \"message\": \"claims PROVEN_HERMETIC but project evidence supports at most INSTALLED\"\n        }\n      ],\n      \"notes\": [],\n      \"ok\": false,\n      \"outcome\": \"FAIL\",\n      \"reason\": \"\"\n    }\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "N11-stale-pin",
+      "expected": "REFUSE",
+      "actual": "REFUSE",
+      "oraclePass": true,
+      "exitCode": 2,
+      "stdout": "{\n  \"exitCode\": 2,\n  \"phase\": \"pr-ci\",\n  \"results\": [\n    {\n      \"checkedControlIds\": [],\n      \"controlId\": \"CVF-DG-INST-01\",\n      \"findings\": [\n        {\n          \"code\": \"PROFILE_PIN_MISMATCH\",\n          \"locator\": \".cvf/gate-profile.lock.json#/profileSha256\",\n          \"message\": \"lock pin differs from the expected CI pin\"\n        }\n      ],\n      \"notes\": [],\n      \"ok\": false,\n      \"outcome\": \"FAIL\",\n      \"reason\": \"\"\n    },\n    {\n      \"checkedControlIds\": [],\n      \"controlId\": \"CVF-DG-CONT-01\",\n      \"findings\": [],\n      \"notes\": [],\n      \"ok\": true,\n      \"outcome\": \"PASS\",\n      \"reason\": \"\"\n    },\n    {\n      \"checkedControlIds\": [\n        \"work_order_status_grammar\"\n      ],\n      \"controlId\": \"CVF-DG-APPL-01\",\n      \"findings\": [],\n      \"notes\": [],\n      \"ok\": true,\n      \"outcome\": \"NOT_APPLICABLE_WITH_REASON\",\n      \"reason\": \"no candidate work-order packet in scope\"\n    },\n    {\n      \"checkedControlIds\": [\n        \"CVF-DG-ROUTE-01\"\n      ],\n      \"controlId\": \"CVF-DG-ROUTE-01\",\n      \"findings\": [],\n      \"notes\": [],\n      \"ok\": true,\n      \"outcome\": \"NOT_APPLICABLE_WITH_REASON\",\n      \"reason\": \"no dispatch packet declares dispatchKind in scope\"\n    },\n    {\n      \"checkedControlIds\": [\n        \"CVF-DG-ROLE-01\"\n      ],\n      \"controlId\": \"CVF-DG-ROLE-01\",\n      \"findings\": [],\n      \"notes\": [],\n      \"ok\": true,\n      \"outcome\": \"NOT_APPLICABLE_WITH_REASON\",\n      \"reason\": \"no review artifact in scope declares Risk R2 or R3\"\n    },\n    {\n      \"checkedControlIds\": [\n        \"CVF-DG-CLAIM-01\"\n      ],\n      \"controlId\": \"CVF-DG-CLAIM-01\",\n      \"findings\": [],\n      \"notes\": [\n        \"0 explicit claim line(s) and 0 document(s) scanned\"\n      ],\n      \"ok\": true,\n      \"outcome\": \"PASS\",\n      \"reason\": \"\"\n    }\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "N12-false-ci",
+      "expected": "REFUSE",
+      "actual": "REFUSE",
+      "oraclePass": true,
+      "exitCode": 2,
+      "stdout": "{\n  \"exitCode\": 2,\n  \"phase\": \"worker-return\",\n  \"results\": [\n    {\n      \"checkedControlIds\": [],\n      \"controlId\": \"CVF-DG-INST-01\",\n      \"findings\": [],\n      \"notes\": [],\n      \"ok\": true,\n      \"outcome\": \"PASS\",\n      \"reason\": \"\"\n    },\n    {\n      \"checkedControlIds\": [],\n      \"controlId\": \"CVF-DG-CONT-01\",\n      \"findings\": [],\n      \"notes\": [],\n      \"ok\": true,\n      \"outcome\": \"PASS\",\n      \"reason\": \"\"\n    },\n    {\n      \"checkedControlIds\": [\n        \"work_order_status_grammar\"\n      ],\n      \"controlId\": \"CVF-DG-APPL-01\",\n      \"findings\": [],\n      \"notes\": [],\n      \"ok\": true,\n      \"outcome\": \"NOT_APPLICABLE_WITH_REASON\",\n      \"reason\": \"no candidate work-order packet in scope\"\n    },\n    {\n      \"checkedControlIds\": [\n        \"CVF-DG-ROLE-01\"\n      ],\n      \"controlId\": \"CVF-DG-ROLE-01\",\n      \"findings\": [],\n      \"notes\": [\n        \"skipped: docs/reviews/LOCAL_ORACLE.md\"\n      ],\n      \"ok\": true,\n      \"outcome\": \"NOT_APPLICABLE_WITH_REASON\",\n      \"reason\": \"no review artifact in scope declares Risk R2 or R3\"\n    },\n    {\n      \"checkedControlIds\": [\n        \"CVF-DG-CLAIM-01\"\n      ],\n      \"controlId\": \"CVF-DG-CLAIM-01\",\n      \"findings\": [\n        {\n          \"code\": \"BROAD_CLAIM_PHRASE\",\n          \"locator\": \"docs/reviews/LOCAL_ORACLE.md:1\",\n          \"message\": \"blanket enforcement claim; state INSTALLED/INVOKED/PROVEN_HERMETIC per control instead\"\n        }\n      ],\n      \"notes\": [],\n      \"ok\": false,\n      \"outcome\": \"FAIL\",\n      \"reason\": \"\"\n    }\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "N13-clean-checkout-pr-packet-omission",
+      "expected": "REFUSE",
+      "actual": "PASS",
+      "oraclePass": false,
+      "exitCode": 0,
+      "stdout": "{\n  \"exitCode\": 0,\n  \"phase\": \"pr-ci\",\n  \"results\": [\n    {\n      \"checkedControlIds\": [],\n      \"controlId\": \"CVF-DG-INST-01\",\n      \"findings\": [],\n      \"notes\": [],\n      \"ok\": true,\n      \"outcome\": \"PASS\",\n      \"reason\": \"\"\n    },\n    {\n      \"checkedControlIds\": [],\n      \"controlId\": \"CVF-DG-CONT-01\",\n      \"findings\": [],\n      \"notes\": [],\n      \"ok\": true,\n      \"outcome\": \"PASS\",\n      \"reason\": \"\"\n    },\n    {\n      \"checkedControlIds\": [\n        \"work_order_status_grammar\"\n      ],\n      \"controlId\": \"CVF-DG-APPL-01\",\n      \"findings\": [],\n      \"notes\": [],\n      \"ok\": true,\n      \"outcome\": \"NOT_APPLICABLE_WITH_REASON\",\n      \"reason\": \"no candidate work-order packet in scope\"\n    },\n    {\n      \"checkedControlIds\": [\n        \"CVF-DG-ROUTE-01\"\n      ],\n      \"controlId\": \"CVF-DG-ROUTE-01\",\n      \"findings\": [],\n      \"notes\": [],\n      \"ok\": true,\n      \"outcome\": \"NOT_APPLICABLE_WITH_REASON\",\n      \"reason\": \"no dispatch packet declares dispatchKind in scope\"\n    },\n    {\n      \"checkedControlIds\": [\n        \"CVF-DG-ROLE-01\"\n      ],\n      \"controlId\": \"CVF-DG-ROLE-01\",\n      \"findings\": [],\n      \"notes\": [],\n      \"ok\": true,\n      \"outcome\": \"NOT_APPLICABLE_WITH_REASON\",\n      \"reason\": \"no review artifact in scope declares Risk R2 or R3\"\n    },\n    {\n      \"checkedControlIds\": [\n        \"CVF-DG-CLAIM-01\"\n      ],\n      \"controlId\": \"CVF-DG-CLAIM-01\",\n      \"findings\": [],\n      \"notes\": [\n        \"0 explicit claim line(s) and 0 document(s) scanned\"\n      ],\n      \"ok\": true,\n      \"outcome\": \"PASS\",\n      \"reason\": \"\"\n    }\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "N14-ci-pins-consistent-noop-module",
+      "expected": "REFUSE",
+      "actual": "PASS",
+      "oraclePass": false,
+      "exitCode": 0,
+      "stdout": "{\n  \"exitCode\": 0,\n  \"phase\": \"pr-ci\",\n  \"results\": [\n    {\n      \"checkedControlIds\": [],\n      \"controlId\": \"CVF-DG-INST-01\",\n      \"findings\": [],\n      \"notes\": [],\n      \"ok\": true,\n      \"outcome\": \"PASS\",\n      \"reason\": \"\"\n    },\n    {\n      \"checkedControlIds\": [],\n      \"controlId\": \"CVF-DG-CONT-01\",\n      \"findings\": [],\n      \"notes\": [],\n      \"ok\": true,\n      \"outcome\": \"PASS\",\n      \"reason\": \"\"\n    },\n    {\n      \"checkedControlIds\": [\n        \"work_order_status_grammar\"\n      ],\n      \"controlId\": \"CVF-DG-APPL-01\",\n      \"findings\": [],\n      \"notes\": [],\n      \"ok\": true,\n      \"outcome\": \"NOT_APPLICABLE_WITH_REASON\",\n      \"reason\": \"no candidate work-order packet in scope\"\n    },\n    {\n      \"checkedControlIds\": [\n        \"CVF-DG-ROUTE-01\"\n      ],\n      \"controlId\": \"CVF-DG-ROUTE-01\",\n      \"findings\": [],\n      \"notes\": [],\n      \"ok\": true,\n      \"outcome\": \"NOT_APPLICABLE_WITH_REASON\",\n      \"reason\": \"no dispatch packet declares dispatchKind in scope\"\n    },\n    {\n      \"checkedControlIds\": [\n        \"CVF-DG-ROLE-01\"\n      ],\n      \"controlId\": \"CVF-DG-ROLE-01\",\n      \"findings\": [],\n      \"notes\": [],\n      \"ok\": true,\n      \"outcome\": \"NOT_APPLICABLE_WITH_REASON\",\n      \"reason\": \"no review artifact in scope declares Risk R2 or R3\"\n    },\n    {\n      \"checkedControlIds\": [\n        \"CVF-DG-CLAIM-01\"\n      ],\n      \"controlId\": \"CVF-DG-CLAIM-01\",\n      \"findings\": [],\n      \"notes\": [\n        \"0 explicit claim line(s) and 0 document(s) scanned\"\n      ],\n      \"ok\": true,\n      \"outcome\": \"PASS\",\n      \"reason\": \"\"\n    }\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "P02-trusted-core-refuses-N14",
+      "expected": "REFUSE",
+      "actual": "REFUSE",
+      "oraclePass": true,
+      "exitCode": 2,
+      "stdout": "{\n  \"exitCode\": 2,\n  \"phase\": \"bootstrap\",\n  \"results\": [\n    {\n      \"checkedControlIds\": [],\n      \"controlId\": \"CVF-DG-INST-01\",\n      \"findings\": [\n        {\n          \"code\": \"TRUSTED_MISMATCH\",\n          \"locator\": \"scripts/cvf_gates/cvf_dg_continuity.py\",\n          \"message\": \"project copy differs from the trusted Core source\"\n        }\n      ],\n      \"notes\": [],\n      \"ok\": false,\n      \"outcome\": \"FAIL\",\n      \"reason\": \"\"\n    },\n    {\n      \"checkedControlIds\": [],\n      \"controlId\": \"CVF-DG-CONT-01\",\n      \"findings\": [\n        {\n          \"code\": \"SURFACE_MISMATCH\",\n          \"locator\": \"CVF_SESSION/ACTIVE_SESSION_STATE.json#/activePhase\",\n          \"message\": \"activePhase differs across surfaces: CVF_SESSION/ACTIVE_SESSION_STATE.json#/activePhase='BUILD'; CVF_SESSION/handoffs/LOCAL_ORACLE.md#Active phase='REVIEW'; CVF_SESSION_MEMORY.md#Active phase='REVIEW'; IMPLEMENTATION_STATUS.json#/currentPhase='REVIEW'\"\n        },\n        {\n          \"code\": \"MODE_PHASE_MISMATCH\",\n          \"locator\": \"CVF_SESSION/ACTIVE_SESSION_STATE.json#/currentMode\",\n          \"message\": \"mode REVIEW_PENDING maps to phase REVIEW but activePhase is BUILD\"\n        }\n      ],\n      \"notes\": [],\n      \"ok\": false,\n      \"outcome\": \"FAIL\",\n      \"reason\": \"\"\n    }\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "N15-risk-typo-self-review",
+      "expected": "REFUSE",
+      "actual": "PASS",
+      "oraclePass": false,
+      "exitCode": 0,
+      "stdout": "{\n  \"exitCode\": 0,\n  \"phase\": \"worker-return\",\n  \"results\": [\n    {\n      \"checkedControlIds\": [],\n      \"controlId\": \"CVF-DG-INST-01\",\n      \"findings\": [],\n      \"notes\": [],\n      \"ok\": true,\n      \"outcome\": \"PASS\",\n      \"reason\": \"\"\n    },\n    {\n      \"checkedControlIds\": [],\n      \"controlId\": \"CVF-DG-CONT-01\",\n      \"findings\": [],\n      \"notes\": [],\n      \"ok\": true,\n      \"outcome\": \"PASS\",\n      \"reason\": \"\"\n    },\n    {\n      \"checkedControlIds\": [\n        \"work_order_status_grammar\"\n      ],\n      \"controlId\": \"CVF-DG-APPL-01\",\n      \"findings\": [],\n      \"notes\": [],\n      \"ok\": true,\n      \"outcome\": \"NOT_APPLICABLE_WITH_REASON\",\n      \"reason\": \"no candidate work-order packet in scope\"\n    },\n    {\n      \"checkedControlIds\": [\n        \"CVF-DG-ROLE-01\"\n      ],\n      \"controlId\": \"CVF-DG-ROLE-01\",\n      \"findings\": [],\n      \"notes\": [\n        \"skipped: docs/reviews/LOCAL_ORACLE.md\"\n      ],\n      \"ok\": true,\n      \"outcome\": \"NOT_APPLICABLE_WITH_REASON\",\n      \"reason\": \"no review artifact in scope declares Risk R2 or R3\"\n    },\n    {\n      \"checkedControlIds\": [\n        \"CVF-DG-CLAIM-01\"\n      ],\n      \"controlId\": \"CVF-DG-CLAIM-01\",\n      \"findings\": [],\n      \"notes\": [\n        \"0 explicit claim line(s) and 1 document(s) scanned\"\n      ],\n      \"ok\": true,\n      \"outcome\": \"PASS\",\n      \"reason\": \"\"\n    }\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "N16-malformed-gate-claim",
+      "expected": "REFUSE",
+      "actual": "PASS",
+      "oraclePass": false,
+      "exitCode": 0,
+      "stdout": "{\n  \"exitCode\": 0,\n  \"phase\": \"worker-return\",\n  \"results\": [\n    {\n      \"checkedControlIds\": [],\n      \"controlId\": \"CVF-DG-INST-01\",\n      \"findings\": [],\n      \"notes\": [],\n      \"ok\": true,\n      \"outcome\": \"PASS\",\n      \"reason\": \"\"\n    },\n    {\n      \"checkedControlIds\": [],\n      \"controlId\": \"CVF-DG-CONT-01\",\n      \"findings\": [],\n      \"notes\": [],\n      \"ok\": true,\n      \"outcome\": \"PASS\",\n      \"reason\": \"\"\n    },\n    {\n      \"checkedControlIds\": [\n        \"work_order_status_grammar\"\n      ],\n      \"controlId\": \"CVF-DG-APPL-01\",\n      \"findings\": [],\n      \"notes\": [],\n      \"ok\": true,\n      \"outcome\": \"NOT_APPLICABLE_WITH_REASON\",\n      \"reason\": \"no candidate work-order packet in scope\"\n    },\n    {\n      \"checkedControlIds\": [\n        \"CVF-DG-ROLE-01\"\n      ],\n      \"controlId\": \"CVF-DG-ROLE-01\",\n      \"findings\": [],\n      \"notes\": [\n        \"skipped: docs/reviews/LOCAL_ORACLE.md\"\n      ],\n      \"ok\": true,\n      \"outcome\": \"NOT_APPLICABLE_WITH_REASON\",\n      \"reason\": \"no review artifact in scope declares Risk R2 or R3\"\n    },\n    {\n      \"checkedControlIds\": [\n        \"CVF-DG-CLAIM-01\"\n      ],\n      \"controlId\": \"CVF-DG-CLAIM-01\",\n      \"findings\": [],\n      \"notes\": [\n        \"0 explicit claim line(s) and 1 document(s) scanned\"\n      ],\n      \"ok\": true,\n      \"outcome\": \"PASS\",\n      \"reason\": \"\"\n    }\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "N17-duplicate-handoff-status",
+      "expected": "REFUSE",
+      "actual": "PASS",
+      "oraclePass": false,
+      "exitCode": 0,
+      "stdout": "{\n  \"exitCode\": 0,\n  \"phase\": \"pr-ci\",\n  \"results\": [\n    {\n      \"checkedControlIds\": [],\n      \"controlId\": \"CVF-DG-INST-01\",\n      \"findings\": [],\n      \"notes\": [],\n      \"ok\": true,\n      \"outcome\": \"PASS\",\n      \"reason\": \"\"\n    },\n    {\n      \"checkedControlIds\": [],\n      \"controlId\": \"CVF-DG-CONT-01\",\n      \"findings\": [],\n      \"notes\": [],\n      \"ok\": true,\n      \"outcome\": \"PASS\",\n      \"reason\": \"\"\n    },\n    {\n      \"checkedControlIds\": [\n        \"work_order_status_grammar\"\n      ],\n      \"controlId\": \"CVF-DG-APPL-01\",\n      \"findings\": [],\n      \"notes\": [],\n      \"ok\": true,\n      \"outcome\": \"NOT_APPLICABLE_WITH_REASON\",\n      \"reason\": \"no candidate work-order packet in scope\"\n    },\n    {\n      \"checkedControlIds\": [\n        \"CVF-DG-ROUTE-01\"\n      ],\n      \"controlId\": \"CVF-DG-ROUTE-01\",\n      \"findings\": [],\n      \"notes\": [],\n      \"ok\": true,\n      \"outcome\": \"NOT_APPLICABLE_WITH_REASON\",\n      \"reason\": \"no dispatch packet declares dispatchKind in scope\"\n    },\n    {\n      \"checkedControlIds\": [\n        \"CVF-DG-ROLE-01\"\n      ],\n      \"controlId\": \"CVF-DG-ROLE-01\",\n      \"findings\": [],\n      \"notes\": [],\n      \"ok\": true,\n      \"outcome\": \"NOT_APPLICABLE_WITH_REASON\",\n      \"reason\": \"no review artifact in scope declares Risk R2 or R3\"\n    },\n    {\n      \"checkedControlIds\": [\n        \"CVF-DG-CLAIM-01\"\n      ],\n      \"controlId\": \"CVF-DG-CLAIM-01\",\n      \"findings\": [],\n      \"notes\": [\n        \"0 explicit claim line(s) and 0 document(s) scanned\"\n      ],\n      \"ok\": true,\n      \"outcome\": \"PASS\",\n      \"reason\": \"\"\n    }\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "N18-active-order-draft",
+      "expected": "REFUSE",
+      "actual": "PASS",
+      "oraclePass": false,
+      "exitCode": 0,
+      "stdout": "{\n  \"exitCode\": 0,\n  \"phase\": \"pr-ci\",\n  \"results\": [\n    {\n      \"checkedControlIds\": [],\n      \"controlId\": \"CVF-DG-INST-01\",\n      \"findings\": [],\n      \"notes\": [],\n      \"ok\": true,\n      \"outcome\": \"PASS\",\n      \"reason\": \"\"\n    },\n    {\n      \"checkedControlIds\": [],\n      \"controlId\": \"CVF-DG-CONT-01\",\n      \"findings\": [],\n      \"notes\": [],\n      \"ok\": true,\n      \"outcome\": \"PASS\",\n      \"reason\": \"\"\n    },\n    {\n      \"checkedControlIds\": [\n        \"work_order_status_grammar\"\n      ],\n      \"controlId\": \"CVF-DG-APPL-01\",\n      \"findings\": [],\n      \"notes\": [\n        \"docs/work_orders/CVF_AGENT_WORK_ORDER_LOCAL_ORACLE.md: status DRAFT is explicitly not an active dispatch state; closeability contract was NOT checked; unchecked=closeability_contract\"\n      ],\n      \"ok\": true,\n      \"outcome\": \"NOT_APPLICABLE_WITH_REASON\",\n      \"reason\": \"every candidate is explicitly not active; closeability contract was not checked\"\n    },\n    {\n      \"checkedControlIds\": [\n        \"CVF-DG-ROUTE-01\"\n      ],\n      \"controlId\": \"CVF-DG-ROUTE-01\",\n      \"findings\": [],\n      \"notes\": [],\n      \"ok\": true,\n      \"outcome\": \"NOT_APPLICABLE_WITH_REASON\",\n      \"reason\": \"no dispatch packet declares dispatchKind in scope\"\n    },\n    {\n      \"checkedControlIds\": [\n        \"CVF-DG-ROLE-01\"\n      ],\n      \"controlId\": \"CVF-DG-ROLE-01\",\n      \"findings\": [],\n      \"notes\": [],\n      \"ok\": true,\n      \"outcome\": \"NOT_APPLICABLE_WITH_REASON\",\n      \"reason\": \"no review artifact in scope declares Risk R2 or R3\"\n    },\n    {\n      \"checkedControlIds\": [\n        \"CVF-DG-CLAIM-01\"\n      ],\n      \"controlId\": \"CVF-DG-CLAIM-01\",\n      \"findings\": [],\n      \"notes\": [\n        \"0 explicit claim line(s) and 1 document(s) scanned\"\n      ],\n      \"ok\": true,\n      \"outcome\": \"PASS\",\n      \"reason\": \"\"\n    }\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "P03-required-reviewer-fast-phase",
+      "expected": "PASS",
+      "actual": "REFUSE",
+      "oraclePass": false,
+      "exitCode": 3,
+      "stdout": "RESULT: BLOCKED_INVALID_INPUT unknown phase reviewer-fast\n",
+      "stderr": ""
+    },
+    {
+      "id": "P04-intake-generation",
+      "expected": "PASS",
+      "actual": "PASS",
+      "oraclePass": true,
+      "exitCode": 0,
+      "stdout": "INTAKE: WRITTEN D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\dgip-t1-local-probe\\supplementary\\docs\\learning_intake\\LOCAL-ORACLE-F1.intake.json (generation is not parent acceptance)\n",
+      "stderr": ""
+    },
+    {
+      "id": "N19-invalid-intake-version-profile-owner",
+      "expected": "REFUSE",
+      "actual": "PASS",
+      "oraclePass": false,
+      "exitCode": 0,
+      "stdout": "INTAKE_RECORD: VALID\n",
+      "stderr": ""
+    }
+  ],
+  "oraclePassed": 15,
+  "oracleTotal": 23,
+  "failOpenCases": [
+    "N13-clean-checkout-pr-packet-omission",
+    "N14-ci-pins-consistent-noop-module",
+    "N15-risk-typo-self-review",
+    "N16-malformed-gate-claim",
+    "N17-duplicate-handoff-status",
+    "N18-active-order-draft",
+    "N19-invalid-intake-version-profile-owner"
+  ],
+  "workerCandidateReconciliation": [
+    {
+      "path": "docs/reference/downstream_gate_profile/CVF_DOWNSTREAM_GATE_PROFILE_MIGRATION.md",
+      "rawMatch": true,
+      "lfMatch": true
+    },
+    {
+      "path": "docs/reference/downstream_gate_profile/CVF_DOWNSTREAM_GATE_PROFILE_STANDARD.md",
+      "rawMatch": true,
+      "lfMatch": true
+    },
+    {
+      "path": "docs/reference/downstream_gate_profile/downstream_continuity_contract.schema.json",
+      "rawMatch": true,
+      "lfMatch": true
+    },
+    {
+      "path": "docs/reference/downstream_gate_profile/downstream_finding_intake_registry.json",
+      "rawMatch": true,
+      "lfMatch": true
+    },
+    {
+      "path": "docs/reference/downstream_gate_profile/DOWNSTREAM_FINDING_INTAKE_TEMPLATE.json",
+      "rawMatch": true,
+      "lfMatch": true
+    },
+    {
+      "path": "docs/reference/downstream_gate_profile/downstream_finding_intake.schema.json",
+      "rawMatch": true,
+      "lfMatch": true
+    },
+    {
+      "path": "docs/reference/downstream_gate_profile/downstream_gate_profile.schema.json",
+      "rawMatch": true,
+      "lfMatch": true
+    },
+    {
+      "path": "docs/reference/downstream_gate_profile/README.md",
+      "rawMatch": true,
+      "lfMatch": true
+    },
+    {
+      "path": "governance/compat/check_gate_to_role_closeability.py",
+      "rawMatch": true,
+      "lfMatch": true
+    },
+    {
+      "path": "governance/compat/test_check_gate_to_role_closeability.py",
+      "rawMatch": true,
+      "lfMatch": true
+    },
+    {
+      "path": "governance/compat/test_downstream_gate_profile.py",
+      "rawMatch": true,
+      "lfMatch": true
+    },
+    {
+      "path": "governance/toolkit/05_OPERATION/CVF_DOWNSTREAM_AGENTS_TEMPLATE.md",
+      "rawMatch": true,
+      "lfMatch": true
+    },
+    {
+      "path": "scripts/check_cvf_workspace_agent_enforcement.ps1",
+      "rawMatch": true,
+      "lfMatch": true
+    },
+    {
+      "path": "scripts/check_cvf_workspace_new_project_enforcement.ps1",
+      "rawMatch": true,
+      "lfMatch": true
+    },
+    {
+      "path": "scripts/lib/downstream_catalog/CvfDownstreamBootstrapContent.ps1",
+      "rawMatch": true,
+      "lfMatch": true
+    },
+    {
+      "path": "scripts/lib/downstream_catalog/CvfGoldenHarnessSupport.ps1",
+      "rawMatch": true,
+      "lfMatch": true
+    },
+    {
+      "path": "scripts/lib/downstream_governance/cvf_dg_applicability.py",
+      "rawMatch": true,
+      "lfMatch": true
+    },
+    {
+      "path": "scripts/lib/downstream_governance/cvf_dg_common.py",
+      "rawMatch": true,
+      "lfMatch": true
+    },
+    {
+      "path": "scripts/lib/downstream_governance/cvf_dg_continuity.py",
+      "rawMatch": true,
+      "lfMatch": true
+    },
+    {
+      "path": "scripts/lib/downstream_governance/cvf_dg_coverage.py",
+      "rawMatch": true,
+      "lfMatch": true
+    },
+    {
+      "path": "scripts/lib/downstream_governance/cvf_dg_install.py",
+      "rawMatch": true,
+      "lfMatch": true
+    },
+    {
+      "path": "scripts/lib/downstream_governance/cvf_dg_intake.py",
+      "rawMatch": true,
+      "lfMatch": true
+    },
+    {
+      "path": "scripts/lib/downstream_governance/cvf_dg_review.py",
+      "rawMatch": true,
+      "lfMatch": true
+    },
+    {
+      "path": "scripts/lib/downstream_governance/cvf_dg_routing.py",
+      "rawMatch": true,
+      "lfMatch": true
+    },
+    {
+      "path": "scripts/lib/downstream_governance/cvf_downstream_gate_profile.json",
+      "rawMatch": true,
+      "lfMatch": true
+    },
+    {
+      "path": "scripts/lib/downstream_governance/cvf_downstream_gate_runner.py",
+      "rawMatch": true,
+      "lfMatch": true
+    },
+    {
+      "path": "scripts/lib/downstream_governance/CvfDownstreamGateProfile.ps1",
+      "rawMatch": true,
+      "lfMatch": true
+    },
+    {
+      "path": "scripts/lib/downstream_governance/downstream_pr_gates.yml.template",
+      "rawMatch": true,
+      "lfMatch": true
+    },
+    {
+      "path": "scripts/lib/downstream_governance/git-pre-commit.template",
+      "rawMatch": true,
+      "lfMatch": true
+    },
+    {
+      "path": "scripts/new-cvf-workspace.ps1",
+      "rawMatch": true,
+      "lfMatch": true
+    },
+    {
+      "path": "scripts/sync_cvf_workspace_rule_pack.ps1",
+      "rawMatch": true,
+      "lfMatch": true
+    },
+    {
+      "path": "scripts/test_cvf_downstream_gate_profile.ps1",
+      "rawMatch": true,
+      "lfMatch": true
+    },
+    {
+      "path": "scripts/write_cvf_workspace_web_evidence_bridge.ps1",
+      "rawMatch": true,
+      "lfMatch": true
+    }
+  ],
+  "workerMarkdownHash": "c0dad58faebf637b9c5c85592d6d8c89fcce628ff5a67fca1c7212f43ef93400",
+  "workerEvidenceHash": "6330c2fe15c4526ca808827b74a8ce2e1fb83f038d36d729699dd351cf218c19",
+  "templateReflow": {
+    "baseLines": 180,
+    "candidateLines": 177,
+    "whitespaceCollapsedMatch": false,
+    "tokenDiff": [
+      "--- \n",
+      "+++ \n",
+      "@@ -624,8 +624,7 @@\n",
+      " For",
+      " high-risk",
+      " or",
+      "-governance-",
+      "-significant",
+      "+governance-significant",
+      " work,",
+      " REVIEWER",
+      " must"
+    ],
+    "dehyphenationDisposition": "MATCH_AFTER_EXPLICIT_LEXICAL_REPAIR governance- significant -> governance-significant; not strict whitespace-only identity"
+  },
+  "missingMandatoryCases": [
+    "P03-required-reviewer-fast-phase"
+  ],
+  "workerMarkdownProof8Matches": true,
+  "sourceSnapshotHashes": {
+    "docs/reviews/evidence/cvf-dgip-t1-local-probe-source-2026-10-03.txt": "b1b80c5954cf4f8f4d80e5475384939f123a0cd6c097290a693a6584c284a9c5",
+    "docs/reviews/evidence/cvf-dgip-t1-local-reconcile-source-2026-10-03.txt": "7e4f24363218ba6385056fc648eb059a67f04ca8a9269855e2874b9908f73fb0"
+  },
+  "localAuditGate": {
+    "command": "python governance/compat/run_local_governance_hook_chain.py --hook reviewer-fast",
+    "initial": "FAIL (audit trace/blocked cluster/equivalence declarations)",
+    "final": "PASS 69/69",
+    "initialLog": ".cvf/runtime/dgip-t1-local-review-gate.log",
+    "finalLog": ".cvf/runtime/dgip-t1-local-review-gate-final.log",
+    "claimBoundary": "Audit artifact shape only; implementation is BLOCKED and not accepted."
+  }
+}

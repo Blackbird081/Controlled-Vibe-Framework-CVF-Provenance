@@ -1,0 +1,162 @@
+# CVF DGIP T1 - Consolidated Local Review
+
+Memory class: reviewer-evidence
+docType: review
+Status: BLOCKED_WITH_REASON
+rootCauseClusterId: DGIP_T1_INHERITED_INVOCATION_REFUSAL_CHAIN
+recurrenceDisposition: FIRST_OCCURRENCE
+priorRelatedFinding: NOT_APPLICABLE_WITH_REASON - first Local implementation audit of this dispatch
+operatorNoticeDisposition: NOT_APPLICABLE_WITH_REASON - consolidated review recorded; no new operator choice required
+successorFreezeDisposition: NOT_APPLICABLE_WITH_REASON - no successor is opened or released
+Date: 2026-10-03
+Batch ID: CVF-DGIP-T1
+
+## Purpose
+
+Decide worker deviations and independently test the returned refusal chain before acceptance. Decision: retain the candidate and its useful evidence; withhold implementation acceptance. The worker's ledger blocker is real, but repairing that ledger alone cannot close the implementation defects reproduced below.
+
+## Target / Source
+
+- Work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_DGIP_T1_DOWNSTREAM_GATE_INHERITANCE_2026-10-03.md`.
+- Admission: `docs/baselines/CVF_GC018_DGIP_T1_DOWNSTREAM_GATE_INHERITANCE_2026-10-03.md`.
+- Worker return: `docs/reviews/CVF_DGIP_T1_DOWNSTREAM_GATE_INHERITANCE_WORKER_RETURN_2026-10-03.md`.
+- Worker evidence: `docs/reviews/evidence/cvf-dgip-t1-worker-2026-10-03.json`.
+- Local probe: `docs/reviews/evidence/cvf-dgip-t1-local-probe-2026-10-03.json`.
+- Reproducible probe source snapshots: `docs/reviews/evidence/cvf-dgip-t1-local-probe-source-2026-10-03.txt` and `docs/reviews/evidence/cvf-dgip-t1-local-reconcile-source-2026-10-03.txt`.
+
+Execution base remains `44229eeb07b9022928a4862c3e9076036b6c7a94`. Local recomputed all 33 candidate raw and LF-normalized hashes: MATCH to worker evidence. PROOF-8 raw Markdown binding also matches. Worker source and return outputs are preserved; Local has not rewritten their retrospective claims or converted their BLOCKED rows to PASS.
+
+## Scope / Methodology
+
+Startup acknowledged: mode=`cvf_ncr_p10_closed_p11_parked`; handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=DGIP T1 returned-evidence review; role=Local orchestrator/reviewer; phase=private review; decision owner=Local; parked=S05/C1, Q001/Q004, P11, public/deploy.
+
+Apply EVALUATE_RETURNED_EVIDENCE_NOT_RECREATE_IMPLEMENTATION. Consume the reported 38 Python tests, 26 closeability tests and 66 golden assertions within their exercised boundaries. No broad worker-suite rerun. The named information gap is the real inherited invocation/refusal chain on independently selected malformed inputs and a clean PR checkout.
+
+Local wrote a separate JSON/Markdown fixture and CLI exit-code oracle, with no worker fixture or test imports. It installs the actual candidate into disposable local projects, uses REVIEW_PENDING/REVIEW as a positive continuity control, and exercises the installed runner. One fixture uses an isolated temporary Git commit to model a clean checkout; no provenance file is staged or committed. Fixture roots and scripts are retained in ignored local runtime storage. No host-policy change, real downstream mutation, network request or provider call occurs in this probe.
+
+Commands: `python -B .cvf/runtime/dgip-t1-local-probe.py`; `python -B .cvf/runtime/dgip-t1-local-reconcile.py`. Both completed exit 0; those exits mean the observation scripts completed, not that the candidate passed. Result: 15/23 oracle expectations satisfied, seven false PASS cases and one missing required phase. The JSON carries exact output, exit codes, candidate source hashes and worker-return hashes.
+
+## Findings / Position
+
+| ID | Severity | Reproduced contradiction | Source / required correction |
+|---|---|---|---|
+| DGIP-F01 | HIGH | N13: a clean Git checkout containing unknown-status work order, self-review, false CI claim and unjustified REWORK returns pr-ci exit 0. | `scripts/lib/downstream_governance/cvf_dg_common.py` discover_packets uses worktree/untracked paths when base/head are absent; `scripts/lib/downstream_governance/downstream_pr_gates.yml.template` supplies neither. Define an actual PR/push candidate range and fail closed on unresolved discovery. Test a clean committed change with a pristine base, not only explicit packets or untracked fixtures. |
+| DGIP-F02 | HIGH | N14: replace only continuity module with a no-op, update its lock file digest, retain original profile/runner expected CI pins, introduce state drift: pinned project pr-ci returns exit 0. P02 trusted Core refuses the same project. | `scripts/lib/downstream_governance/cvf_dg_install.py` compares expected pins to lock metadata, while module identity is anchored in an editable lock. Bind the actual profile/runner bytes and the complete mandatory dependency identity to an independent trusted anchor. Do not claim the current two CI pins catch consistent module-plus-lock edits. This probe does not replace the trusted Core gate. |
+| DGIP-F03 | HIGH | N15: Risk r2 with the same declared Worker and Reviewer is NOT_APPLICABLE and overall PASS; canonical Risk R2 is refused by N08. | `scripts/lib/downstream_governance/cvf_dg_review.py` check_roles treats every value outside R2/R3 as ungraded. Specify valid risk/applicability grammar; reject unknown, malformed and duplicate declarations, rather than downgrade them. |
+| DGIP-F04 | MEDIUM | N16: an unsupported PROVEN_HERMETIC Gate claim with trailing text is silently absent from claim matching and passes; canonical claim is refused by N10. | `scripts/lib/downstream_governance/cvf_dg_review.py` CLAIM_LINE/check_claims. Collect claim declarations first and reject unparseable declarations before checking evidence. |
+| DGIP-F05 | MEDIUM | N17: active handoff declaring Status ACTIVE and Status ARCHIVED simultaneously passes. | `scripts/lib/downstream_governance/cvf_dg_continuity.py` checks existence of an ACTIVE match. Require exactly one valid active status outside examples/fences and reject contradictions. |
+| DGIP-F06 | MEDIUM | N18: IMPLEMENTATION_STATUS activeWorkOrders names an existing DRAFT work order; continuity and applicability together pass. | `scripts/lib/downstream_governance/cvf_dg_continuity.py` checks existence and phase only. Define and enforce active-work-order status relations using the shared prospective grammar; do not label an unchecked DRAFT contract as an active order. |
+| DGIP-F07 | MEDIUM | N19: emitted intake with schemaVersion removed and profileId/parentOwner changed, followed by recomputation of its content digest, validates as VALID/exit 0. | `scripts/lib/downstream_governance/cvf_dg_intake.py` validate_record. Enforce mandatory record schema/version/profile/owner/link/state fields and allowed values, in addition to integrity and input-field validation. A self-consistent digest does not prove schema conformance. |
+| DGIP-F08 | MEDIUM | P03: required reviewer-fast phase returns BLOCKED_INVALID_INPUT/exit 3. | `scripts/lib/downstream_governance/cvf_downstream_gate_profile.json` lists only five phases. Work-order implementation contract item 4 expressly requires worker-return/reviewer-fast. Implement and test the admitted phase or obtain an explicit reviewed contract amendment; silently omitting it is not fulfillment. |
+
+All eight are one consolidated finding set. Positive controls and refusal cases for stale memory/state/handoff, missing control, no-op local override, canonical inline active status, unknown status, canonical self-review, unjustified REWORK, unsupported claim, stale pin and false CI wording succeeded. Preserve those useful controls and their evidence during repair.
+
+## Deviation Disposition
+
+| Deviation | Local decision | Reason / next control action |
+|---|---|---|
+| DEV-01 | ACCEPT_SCOPE_STOP; LOCAL_REPAIR_DEFERRED_UNTIL_ACCEPTANCE_BATCH | Index registration was explicitly required; its reverse fingerprint was omitted by Local from worker scope. Worker correctly stopped before editing the fingerprint. Apply reviewed index wording and refresh only its source fingerprint together after repaired candidate review; preserve historical fingerprint claims. Owner: Local. Neither index nor fingerprint is changed by this audit. |
+| DEV-02 | ACCEPT_BOUNDED_REFLOW | Base carrier 180 lines; candidate 177. After removing the two new sections, whitespace token comparison differs only at the historical line-break split governance-/significant, now governance-significant. This is a disclosed lexical repair, not strict whitespace-only identity. The two additions are in scope; there is no further retained token loss in this comparison. Preserve the carrier budget. |
+| DEV-07 | PROCESS_NONCOMPLIANCE_RETAINED | Required first reads were skipped/partial; cannot retroactively claim compliant worker startup. Local read the relevant GLP outcomes, foundation storage contract, Golden learning and ADIF ownership/remediation surfaces and agrees with the proposed owner mappings as pending extension targets. This authorizes no implementation acceptance or dedup closure. Repair must use those owners before authoring; registry remains PENDING_LOCAL_REVIEW. |
+| DEV-08 | CONFIRMED_LOCAL_PACKET_DEFECT | REQ-1..REQ-7 expected only the JSON, although implementation paths were mandatory and must be claimed. Local owns correction in the repair admission ledger with explicit path/family ownership and proof joins. Preserve the original release hashes and truthful worker return; no artificial PASS conversion. |
+| DEV-03 / DEV-04 | ACCEPT_BOUNDED_WITH_LIMITS | Candidate overlay helper expansion supports the admitted hermetic tests; public mapper/update paths remain untouched and outside worker scope. |
+| DEV-05 / DEV-06 | DEFER_WITH_EVIDENCE_LIMIT | Residual out-of-scope wording and baseline AC-09 network dependence remain disclosed. Existing golden result is reported 78/79 before and after, never full PASS. No network rerun or unrelated cleanup is admitted. |
+
+## Risk / Corrective Action
+
+Withhold acceptance: REQ-2/3/4/6/7 have decision-changing semantic or coverage gaps beyond the Local ledger defect. The existing Windows golden outcomes are useful for their tested cells; they do not prove clean PR selection, the dependency trust anchor, malformed declaration rejection or the absent reviewer-fast phase.
+
+Repair route: one consolidated internal REWORK packet, no autonomous worker invocation. The packet must retain all eight findings, correct the Local ledger and reverse-fingerprint scope, preserve original evidence, require current-owner read-ahead and adversarial regression for every finding, and undergo the normal bound pre-dispatch chain before manual relay.
+
+Reviewer-local repair assessment: objective, effect ceiling and commit owner remain unchanged. Closed-evidence index/ledger corrections are localized. The implementation repair requires a material change to the dependency trust anchor and a real clean-checkout PR selection contract, together with new integrated proof; it is not merely returned-evidence editing. Route implementation under MATERIAL_DESIGN_CHANGE, with that concrete basis in the future REWORK packet. This audit creates no worker release, successor or provider authority.
+
+## Decision / Recommendation
+
+REVIEW_COMPLETE_IMPLEMENTATION_NOT_ACCEPTED. Worker return retained as BLOCKED_WITH_REASON. Independent probe has actually executed and found the blockers above; no longer merely pending in Local's review. The worker's original pending declaration remains a truthful historical statement.
+
+No material implementation commit, closure conversion, real CCMAI adoption, hosted CI, Linux execution, hook activation, public rollout or live-governance acceptance. SCEC downstream-gate-inheritance INITIAL ordinal 0 is retained as the reviewed dispatch identity; no counter reset or successor admission. Old S05 C1 STOP ordinal 2 remains unchanged.
+
+## Finding-To-Governance Learning Disposition
+
+| Finding | Defect class | Learning lane | Disposition | Next control action | Handled or deferred |
+|---|---|---|---|---|---|
+| DGIP-F01 | PHASE_GATE_PLACEMENT_GAP | GOVERNANCE_CONTROL_PLANE | MACHINE_CHECK_CANDIDATE | clean-checkout candidate selection and missing-range refusal in existing downstream runner/CI chain | deferred to consolidated repair |
+| DGIP-F02 | MACHINE_GATE_GAP | GOVERNANCE_CONTROL_PLANE | DESIGN_REVIEW_REQUIRED | dependency trust anchor, actual-byte pin verification and consistent-repin negative proof | deferred to consolidated repair |
+| DGIP-F03 / F04 / F05 / F06 | MACHINE_GATE_GAP | GOVERNANCE_CONTROL_PLANE | MACHINE_CHECK_CANDIDATE | declaration-first parsing and cross-surface relation negatives in existing owners | deferred to consolidated repair |
+| DGIP-F07 / F08 | MACHINE_GATE_GAP | GOVERNANCE_CONTROL_PLANE | MACHINE_CHECK_CANDIDATE | mandatory intake schema validation and reviewer-fast phase proof | deferred to consolidated repair |
+| DEV-01 / DEV-08 | ORCHESTRATOR_PACKET_GAP | GOVERNANCE_CONTROL_PLANE | RULE_EXISTS | apply ADIF-0052 reverse-pin closure and acceptance-ledger owner mapping in repair admission | Local defect retained; repair deferred |
+| DEV-07 | WORKER_EXECUTION_ERROR | GOVERNANCE_CONTROL_PLANE | RULE_EXISTS | enforce existing startup/read-ahead owners in the repair turn | noncompliance retained |
+
+Runtime/provider/cost learning lane: N/A_WITH_REASON - only local file controls were tested; no provider/runtime observation or measured cost signal. Cost UNKNOWN.
+
+## Epistemic Process Block
+
+### Expected Result / Prediction
+
+A pristine REVIEW_PENDING fixture passes; all admitted malformed, inconsistent, unsupported or bypassed control inputs refuse. A generated PR command must actually select changed packets in a clean checkout.
+
+### Evidence Comparison
+
+Independent CLI oracle: 15/23 expectations satisfied, seven false PASS and one unsupported mandatory phase. All 33 worker candidate hash records reconcile. Existing test evidence is consumed within its actual test boundary; it is not recreated or enlarged into acceptance.
+
+### Contradiction Or Gap Disposition
+
+Eight implementation findings and two Local packet omissions are consolidated before repair. DEV-02 retained-token comparison supports bounded reflow; DEV-07 remains process noncompliance. Linux, hosted CI, real adoption, hook activation and public rollout remain unproven.
+
+### Claim Update
+
+Candidate is implemented and partly exercised hermetically, but not reviewer-accepted as the complete admitted downstream gate chain. Structural worker-return PASS on a blocked packet does not remove these runtime file-control counterexamples.
+
+## Checker Source Read-Ahead Block
+
+| Field | Disposition |
+|---|---|
+| applicableCheckersRead | `governance/compat/check_governed_artifact_checker_read_ahead.py` read through check_text; `governance/compat/check_markdown_structural_completeness.py` metadata/common/review groups; `governance/compat/check_epistemic_process_packet.py` applicability/marker constants; modified closeability source through applicability and evaluation; independent-probe and review-cost owner declarations reused with current work-order probe contract |
+| literalTokensReviewed | review common sections; BLOCKED_WITH_REASON; checker field rows; Expected Result / Prediction, Evidence Comparison, Contradiction Or Gap Disposition, Claim Update; F2G class/lane/disposition |
+| gateRunPurpose | confirmatory evidence of audit-artifact shape, not first discovery of candidate semantic defects |
+| claimBoundary | targeted source/owner reads and separately authored probe; no complete-corpus or all-files-full-read claim |
+
+## Agent Operation Trace Block
+
+| Field | Evidence |
+|---|---|
+| Actor | Local orchestrator/reviewer |
+| Provider or surface | private local workspace |
+| Session or invocation | CVF-DGIP-T1 Local return audit, 2026-10-03 |
+| Working directory | provenance root; disposable fixture roots in ignored runtime storage |
+| Command or tool surface | read-only source/Git inspection; Python CLI probe and reconciliation; apply_patch audit authoring |
+| Target paths | this review; Local probe JSON; two probe source snapshots |
+| Allowed scope source | governing work-order review/probe admission and operator returned-evidence/deviation request |
+| Before status evidence | worker candidate: 35 pending paths, HEAD 44229eeb0, no staged paths |
+| After status evidence | worker files preserved; four Local review/evidence paths added; no implementation acceptance |
+| Diff evidence | git status --short --untracked-files=all; independent hash reconciliation in Local JSON |
+| Approval boundary | Local review disposition only; implementation acceptance and future dispatch withheld |
+| Claim boundary | local file-control counterexamples; no AI governance or remote execution proof |
+| Agent type | reviewer |
+| Invocation ID | cvf-dgip-t1-local-review-20261003 |
+| Expected manifest | `docs/reference/downstream_gate_profile/CVF_DOWNSTREAM_GATE_PROFILE_MIGRATION.md`; `docs/reference/downstream_gate_profile/CVF_DOWNSTREAM_GATE_PROFILE_STANDARD.md`; `docs/reference/downstream_gate_profile/DOWNSTREAM_FINDING_INTAKE_TEMPLATE.json`; `docs/reference/downstream_gate_profile/README.md`; `docs/reference/downstream_gate_profile/downstream_continuity_contract.schema.json`; `docs/reference/downstream_gate_profile/downstream_finding_intake.schema.json`; `docs/reference/downstream_gate_profile/downstream_finding_intake_registry.json`; `docs/reference/downstream_gate_profile/downstream_gate_profile.schema.json`; `docs/reviews/CVF_DGIP_T1_DOWNSTREAM_GATE_INHERITANCE_LOCAL_REVIEW_2026-10-03.md`; `docs/reviews/CVF_DGIP_T1_DOWNSTREAM_GATE_INHERITANCE_WORKER_RETURN_2026-10-03.md`; `docs/reviews/evidence/cvf-dgip-t1-local-probe-2026-10-03.json`; `docs/reviews/evidence/cvf-dgip-t1-local-probe-source-2026-10-03.txt`; `docs/reviews/evidence/cvf-dgip-t1-local-reconcile-source-2026-10-03.txt`; `docs/reviews/evidence/cvf-dgip-t1-worker-2026-10-03.json`; `governance/compat/check_gate_to_role_closeability.py`; `governance/compat/test_check_gate_to_role_closeability.py`; `governance/compat/test_downstream_gate_profile.py`; `governance/toolkit/05_OPERATION/CVF_DOWNSTREAM_AGENTS_TEMPLATE.md`; `scripts/check_cvf_workspace_agent_enforcement.ps1`; `scripts/check_cvf_workspace_new_project_enforcement.ps1`; `scripts/lib/downstream_catalog/CvfDownstreamBootstrapContent.ps1`; `scripts/lib/downstream_catalog/CvfGoldenHarnessSupport.ps1`; `scripts/lib/downstream_governance/CvfDownstreamGateProfile.ps1`; `scripts/lib/downstream_governance/cvf_dg_applicability.py`; `scripts/lib/downstream_governance/cvf_dg_common.py`; `scripts/lib/downstream_governance/cvf_dg_continuity.py`; `scripts/lib/downstream_governance/cvf_dg_coverage.py`; `scripts/lib/downstream_governance/cvf_dg_install.py`; `scripts/lib/downstream_governance/cvf_dg_intake.py`; `scripts/lib/downstream_governance/cvf_dg_review.py`; `scripts/lib/downstream_governance/cvf_dg_routing.py`; `scripts/lib/downstream_governance/cvf_downstream_gate_profile.json`; `scripts/lib/downstream_governance/cvf_downstream_gate_runner.py`; `scripts/lib/downstream_governance/downstream_pr_gates.yml.template`; `scripts/lib/downstream_governance/git-pre-commit.template`; `scripts/new-cvf-workspace.ps1`; `scripts/sync_cvf_workspace_rule_pack.ps1`; `scripts/test_cvf_downstream_gate_profile.ps1`; `scripts/write_cvf_workspace_web_evidence_bridge.ps1` |
+| Actual changed set | `docs/reference/downstream_gate_profile/CVF_DOWNSTREAM_GATE_PROFILE_MIGRATION.md`; `docs/reference/downstream_gate_profile/CVF_DOWNSTREAM_GATE_PROFILE_STANDARD.md`; `docs/reference/downstream_gate_profile/DOWNSTREAM_FINDING_INTAKE_TEMPLATE.json`; `docs/reference/downstream_gate_profile/README.md`; `docs/reference/downstream_gate_profile/downstream_continuity_contract.schema.json`; `docs/reference/downstream_gate_profile/downstream_finding_intake.schema.json`; `docs/reference/downstream_gate_profile/downstream_finding_intake_registry.json`; `docs/reference/downstream_gate_profile/downstream_gate_profile.schema.json`; `docs/reviews/CVF_DGIP_T1_DOWNSTREAM_GATE_INHERITANCE_LOCAL_REVIEW_2026-10-03.md`; `docs/reviews/CVF_DGIP_T1_DOWNSTREAM_GATE_INHERITANCE_WORKER_RETURN_2026-10-03.md`; `docs/reviews/evidence/cvf-dgip-t1-local-probe-2026-10-03.json`; `docs/reviews/evidence/cvf-dgip-t1-local-probe-source-2026-10-03.txt`; `docs/reviews/evidence/cvf-dgip-t1-local-reconcile-source-2026-10-03.txt`; `docs/reviews/evidence/cvf-dgip-t1-worker-2026-10-03.json`; `governance/compat/check_gate_to_role_closeability.py`; `governance/compat/test_check_gate_to_role_closeability.py`; `governance/compat/test_downstream_gate_profile.py`; `governance/toolkit/05_OPERATION/CVF_DOWNSTREAM_AGENTS_TEMPLATE.md`; `scripts/check_cvf_workspace_agent_enforcement.ps1`; `scripts/check_cvf_workspace_new_project_enforcement.ps1`; `scripts/lib/downstream_catalog/CvfDownstreamBootstrapContent.ps1`; `scripts/lib/downstream_catalog/CvfGoldenHarnessSupport.ps1`; `scripts/lib/downstream_governance/CvfDownstreamGateProfile.ps1`; `scripts/lib/downstream_governance/cvf_dg_applicability.py`; `scripts/lib/downstream_governance/cvf_dg_common.py`; `scripts/lib/downstream_governance/cvf_dg_continuity.py`; `scripts/lib/downstream_governance/cvf_dg_coverage.py`; `scripts/lib/downstream_governance/cvf_dg_install.py`; `scripts/lib/downstream_governance/cvf_dg_intake.py`; `scripts/lib/downstream_governance/cvf_dg_review.py`; `scripts/lib/downstream_governance/cvf_dg_routing.py`; `scripts/lib/downstream_governance/cvf_downstream_gate_profile.json`; `scripts/lib/downstream_governance/cvf_downstream_gate_runner.py`; `scripts/lib/downstream_governance/downstream_pr_gates.yml.template`; `scripts/lib/downstream_governance/git-pre-commit.template`; `scripts/new-cvf-workspace.ps1`; `scripts/sync_cvf_workspace_rule_pack.ps1`; `scripts/test_cvf_downstream_gate_profile.ps1`; `scripts/write_cvf_workspace_web_evidence_bridge.ps1` |
+| Manifest delta | MATCH for the 39-path combined observed review set; only four Local evidence paths authored in this turn, worker candidate retained |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
+
+## Audit Artifact Verification
+
+First reviewer-fast run failed three audit-document declarations: combined-worktree trace coverage, blocked-cluster fields and equivalence wording. Local repaired only this audit record; source and worker evidence remained unchanged. The initial log is `.cvf/runtime/dgip-t1-local-review-gate.log`; confirmation rerun is `.cvf/runtime/dgip-t1-local-review-gate-final.log`. Confirmation reviewer-fast PASS 69/69. These artifact gates do not accept the blocked implementation.
+
+## Review Cost
+
+One Local review round; no new worker invocation, no broad duplicate suite, no operator wait. Token/quota/currency cost UNKNOWN. Exact elapsed review minutes NOT_AVAILABLE_WITH_REASON: a review-start timestamp was not captured. This semantic probe exceeds a purely mechanical fast-path review; no ten-minute compliance claim is made.
+
+## ADIF Defect Registry Disclosure
+
+Resolver query: taskClass=`reviewer_return_review`, role=`reviewer`, lifecyclePhase=`pre-closure`.
+Command: `python governance/compat/run_adif_defect_resolver.py --task-class reviewer_return_review --role reviewer --lifecycle-phase pre-closure --json`.
+Result: NONE_RETURNED, totalCandidates=0, truncated=false. Independently consulted ADIF-0026, 0050, 0052, 0058 owner/remediation sections for routing; this is separate from the empty resolver result.
+
+## Public Export Disposition
+
+DEFERRED_PRIVATE_ONLY
+
+## Claim Boundary
+
+Private bounded review with independently reproduced file-control failures. No complete corpus claim, provider/live proof, actual hosted CI or Linux proof, runtime-ready claim, public export or implementation closure.

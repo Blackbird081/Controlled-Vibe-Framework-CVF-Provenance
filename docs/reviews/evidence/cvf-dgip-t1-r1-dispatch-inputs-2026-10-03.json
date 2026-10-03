@@ -1,0 +1,344 @@
+{
+  "schemaVersion": "cvf.dgip.reworkDispatchInputs@1",
+  "batchId": "CVF-DGIP-T1-R1",
+  "parentAssignmentId": "CVF-DGIP-T1",
+  "operatorInstruction": "ti\u1ebfp t\u1ee5c",
+  "interpretation": "Continue Local orchestrator/reviewer work; prepare one consolidated repair packet from retained review. Manual worker relay only after committed bound PASS.",
+  "dispatchBaseHead": "44229eeb07b9022928a4862c3e9076036b6c7a94",
+  "originalExecutionBaseHead": "44229eeb07b9022928a4862c3e9076036b6c7a94",
+  "review": {
+    "path": "docs/reviews/CVF_DGIP_T1_DOWNSTREAM_GATE_INHERITANCE_LOCAL_REVIEW_2026-10-03.md",
+    "rawSha256": "d03cd945eb498d324d7e1259ec287fb3431e9ac5271055abf6ead0a76f139f71",
+    "findingIds": [
+      "DGIP-F01",
+      "DGIP-F02",
+      "DGIP-F03",
+      "DGIP-F04",
+      "DGIP-F05",
+      "DGIP-F06",
+      "DGIP-F07",
+      "DGIP-F08"
+    ],
+    "findingSetDigest": "fac6b1c715dbba6be9063aff146c66fe6af453e710c7544d3e2c3c2e186a4b1b",
+    "digestRecipe": "UTF-8 decoded review Findings / Position section body, CRLF normalized to LF, exact retained trailing newlines; SHA-256"
+  },
+  "sourceBindings": [
+    {
+      "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_DGIP_T1_DOWNSTREAM_GATE_INHERITANCE_2026-10-03.md",
+      "rawSha256": "cfa13104e191e81a93eb8501ceccad308e8241f803e7666181510363bec43a3e"
+    },
+    {
+      "path": "docs/baselines/CVF_GC018_DGIP_T1_DOWNSTREAM_GATE_INHERITANCE_2026-10-03.md",
+      "rawSha256": "1040023af76b3f97612eb9777eb0f57543e0739f14367b6f4b4cbfabea7ed6a5"
+    },
+    {
+      "path": "docs/reviews/CVF_DGIP_T1_DOWNSTREAM_GATE_INHERITANCE_LOCAL_REVIEW_2026-10-03.md",
+      "rawSha256": "4e907066d741160ecfba3a2b15c81d6bb2e3156aa8d5460089d9c3f473298272",
+      "originalRawSha256": "d03cd945eb498d324d7e1259ec287fb3431e9ac5271055abf6ead0a76f139f71"
+    },
+    {
+      "path": "docs/reviews/CVF_DGIP_T1_DOWNSTREAM_GATE_INHERITANCE_WORKER_RETURN_2026-10-03.md",
+      "rawSha256": "a7007c44850bd1dd74bbf035c26c6e8281fe93c13b5dff6969de1fd4287635d2",
+      "originalRawSha256": "c0dad58faebf637b9c5c85592d6d8c89fcce628ff5a67fca1c7212f43ef93400"
+    },
+    {
+      "path": "docs/reviews/evidence/cvf-dgip-t1-worker-2026-10-03.json",
+      "rawSha256": "6330c2fe15c4526ca808827b74a8ce2e1fb83f038d36d729699dd351cf218c19"
+    },
+    {
+      "path": "docs/reference/review_cost_control/CVF_REVIEW_COST_AND_DIMINISHING_RETURN_CONTROL_STANDARD.md",
+      "rawSha256": "17d27144c7db34b717633c14428a778b2b00949f62d71e6a1d8f4f9a2bbe8700"
+    },
+    {
+      "path": "docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0052.md",
+      "rawSha256": "0b118f1928611ab261a11a849cf50b0af910e87bedb2ba3bda8c8e002a93cf42"
+    },
+    {
+      "path": "docs/reference/system_chain/CVF_SYSTEM_CHAIN_MAP.json",
+      "rawSha256": "49e205929eb825f13967043371a954a8a138f7d7f129db14c8fb96da92eb75bb"
+    }
+  ],
+  "inheritedWorktree": [
+    {
+      "path": "docs/reference/downstream_gate_profile/CVF_DOWNSTREAM_GATE_PROFILE_MIGRATION.md",
+      "rawSha256": "c3720b832cdcb2827feb43799f36f9567295eff21554baccaa943d74a750dba7",
+      "bytes": 2608
+    },
+    {
+      "path": "docs/reference/downstream_gate_profile/CVF_DOWNSTREAM_GATE_PROFILE_STANDARD.md",
+      "rawSha256": "5e1c47c08e2091b528986e2cf5d2d393dd3028dea66b09f81ed924189a9e2ffb",
+      "bytes": 9658
+    },
+    {
+      "path": "docs/reference/downstream_gate_profile/DOWNSTREAM_FINDING_INTAKE_TEMPLATE.json",
+      "rawSha256": "2f5111f1d44eebaae852560284f201c1f855f4b9de32e62a3cadccc872331c8d",
+      "bytes": 967
+    },
+    {
+      "path": "docs/reference/downstream_gate_profile/README.md",
+      "rawSha256": "8366efea5292cb35765d7e68e881666c10a4cf3e5f47cda010a59e129aeae80b",
+      "bytes": 2200
+    },
+    {
+      "path": "docs/reference/downstream_gate_profile/downstream_continuity_contract.schema.json",
+      "rawSha256": "64a8391a4fa3823e22c25c7550b44a8a124484b1a3f84df391cae8e1e0afd3c7",
+      "bytes": 2807
+    },
+    {
+      "path": "docs/reference/downstream_gate_profile/downstream_finding_intake.schema.json",
+      "rawSha256": "0eba61e1abfd8a3f5896c459d0c705481e4890ff0dde9c66e3cc7b9348eae441",
+      "bytes": 4228
+    },
+    {
+      "path": "docs/reference/downstream_gate_profile/downstream_finding_intake_registry.json",
+      "rawSha256": "31c103dbef9ae0974b97e10217e4d1c02897b00cb5532eb7f0b816550287530c",
+      "bytes": 5035
+    },
+    {
+      "path": "docs/reference/downstream_gate_profile/downstream_gate_profile.schema.json",
+      "rawSha256": "00a5fbbd114435904da62c92c8a15f809d93bbdd3536361f99245d379f41dcd3",
+      "bytes": 3134
+    },
+    {
+      "path": "docs/reviews/CVF_DGIP_T1_DOWNSTREAM_GATE_INHERITANCE_LOCAL_REVIEW_2026-10-03.md",
+      "rawSha256": "d03cd945eb498d324d7e1259ec287fb3431e9ac5271055abf6ead0a76f139f71",
+      "bytes": 23827,
+      "preservedSnapshot": "docs/reviews/evidence/cvf-dgip-t1-local-review-original-2026-10-03.txt"
+    },
+    {
+      "path": "docs/reviews/CVF_DGIP_T1_DOWNSTREAM_GATE_INHERITANCE_WORKER_RETURN_2026-10-03.md",
+      "rawSha256": "c0dad58faebf637b9c5c85592d6d8c89fcce628ff5a67fca1c7212f43ef93400",
+      "bytes": 56331,
+      "preservedSnapshot": "docs/reviews/evidence/cvf-dgip-t1-worker-return-original-2026-10-03.txt"
+    },
+    {
+      "path": "docs/reviews/evidence/cvf-dgip-t1-local-probe-2026-10-03.json",
+      "rawSha256": "0b49643d67bc20dc93527c9e735987f660fc8fff718644f222737add9d2779f4",
+      "bytes": 49809
+    },
+    {
+      "path": "docs/reviews/evidence/cvf-dgip-t1-local-probe-source-2026-10-03.txt",
+      "rawSha256": "b1b80c5954cf4f8f4d80e5475384939f123a0cd6c097290a693a6584c284a9c5",
+      "bytes": 8713
+    },
+    {
+      "path": "docs/reviews/evidence/cvf-dgip-t1-local-reconcile-source-2026-10-03.txt",
+      "rawSha256": "7e4f24363218ba6385056fc648eb059a67f04ca8a9269855e2874b9908f73fb0",
+      "bytes": 4723
+    },
+    {
+      "path": "docs/reviews/evidence/cvf-dgip-t1-worker-2026-10-03.json",
+      "rawSha256": "6330c2fe15c4526ca808827b74a8ce2e1fb83f038d36d729699dd351cf218c19",
+      "bytes": 49500
+    },
+    {
+      "path": "governance/compat/check_gate_to_role_closeability.py",
+      "rawSha256": "8f00c6421eebe3c1b237e5307ac6e2b0b0343c9a35cf635bbab17aa886e00e8e",
+      "bytes": 22072
+    },
+    {
+      "path": "governance/compat/test_check_gate_to_role_closeability.py",
+      "rawSha256": "8d10a003420f2252d1eec5ca32ac866c0baa592aab08901d6264c3cfab5eba41",
+      "bytes": 12813
+    },
+    {
+      "path": "governance/compat/test_downstream_gate_profile.py",
+      "rawSha256": "3436fb538725b6c019c6e51fad2602d7e6999cb4e562ca52c5c40df0a74b03a8",
+      "bytes": 35643
+    },
+    {
+      "path": "governance/toolkit/05_OPERATION/CVF_DOWNSTREAM_AGENTS_TEMPLATE.md",
+      "rawSha256": "6d317a4adec95a11b702c322655c4504ffd741078984a619d47c6145aa6613fb",
+      "bytes": 11917
+    },
+    {
+      "path": "scripts/check_cvf_workspace_agent_enforcement.ps1",
+      "rawSha256": "bc60cb54a15980c7a96e74b2a5491dc9b92c9dff31e43f595227a50767a49416",
+      "bytes": 28247
+    },
+    {
+      "path": "scripts/check_cvf_workspace_new_project_enforcement.ps1",
+      "rawSha256": "9c2c7ec9670d20193d023789c5b11407a677e1ce48cd7ce0edc901cfff7686b7",
+      "bytes": 5889
+    },
+    {
+      "path": "scripts/lib/downstream_catalog/CvfDownstreamBootstrapContent.ps1",
+      "rawSha256": "7a0bb11cafe60dcef0b93f3edbce6826602cbf3306d2df9dd368a1d67e70304e",
+      "bytes": 17495
+    },
+    {
+      "path": "scripts/lib/downstream_catalog/CvfGoldenHarnessSupport.ps1",
+      "rawSha256": "5262648b8909b444f531a4656bbd3aec9917d6b0c48797408c548968988174cf",
+      "bytes": 17708
+    },
+    {
+      "path": "scripts/lib/downstream_governance/CvfDownstreamGateProfile.ps1",
+      "rawSha256": "989386ce4bd74d2c361402586f7a93b0dc19fa45345d9b2f039eed0f4aeaef44",
+      "bytes": 7948
+    },
+    {
+      "path": "scripts/lib/downstream_governance/cvf_dg_applicability.py",
+      "rawSha256": "bffde44fe38494b0dea9e658fb82eaaec31f3bd25c9964445fa837dd29b01c67",
+      "bytes": 3271
+    },
+    {
+      "path": "scripts/lib/downstream_governance/cvf_dg_common.py",
+      "rawSha256": "0ed1b75da28a052f7e55eade55d0c617a0f4a8c4701e8b016e95aa5fa8f48208",
+      "bytes": 7140
+    },
+    {
+      "path": "scripts/lib/downstream_governance/cvf_dg_continuity.py",
+      "rawSha256": "23c8d2ad1e28b74eed7e7edd6a0dd53a3c598a8ad4da9467eb88f179d140884f",
+      "bytes": 11010
+    },
+    {
+      "path": "scripts/lib/downstream_governance/cvf_dg_coverage.py",
+      "rawSha256": "4a5eefbd6fca233dea47fffa5a06f7945313d706a5a4919ae8c6f31544a7322a",
+      "bytes": 6797
+    },
+    {
+      "path": "scripts/lib/downstream_governance/cvf_dg_install.py",
+      "rawSha256": "f4e87f72d45bd20142c9a1bbe12678f23998311a276af8a2755cafdd3fdcef6e",
+      "bytes": 10047
+    },
+    {
+      "path": "scripts/lib/downstream_governance/cvf_dg_intake.py",
+      "rawSha256": "266d79da83d718b591725801dd4c19a135fabc61730d33e4ecc40d0dbf82ecaf",
+      "bytes": 6771
+    },
+    {
+      "path": "scripts/lib/downstream_governance/cvf_dg_review.py",
+      "rawSha256": "a36b67c064c01b8140de1350213d54d0eb99748d61236a5587577031cf689f8c",
+      "bytes": 5244
+    },
+    {
+      "path": "scripts/lib/downstream_governance/cvf_dg_routing.py",
+      "rawSha256": "a39419336ea31ec155c285291f3d5684046e8b18d88dbf47c422b3c2c59632cf",
+      "bytes": 4508
+    },
+    {
+      "path": "scripts/lib/downstream_governance/cvf_downstream_gate_profile.json",
+      "rawSha256": "047bf10e6a304199baa6f89136b8397023ca4f41d339fc06049da6dc41dfbc5c",
+      "bytes": 6225
+    },
+    {
+      "path": "scripts/lib/downstream_governance/cvf_downstream_gate_runner.py",
+      "rawSha256": "d3f494e04f2e0654023c83c6d9f4da6fe6995a8bc4bb7398338a5c25ac26c3a7",
+      "bytes": 10215
+    },
+    {
+      "path": "scripts/lib/downstream_governance/downstream_pr_gates.yml.template",
+      "rawSha256": "232b0a644903e3a7707553bcf69f7b85aac8c07dc17be3bafac9f1ddcd9f6d4a",
+      "bytes": 852
+    },
+    {
+      "path": "scripts/lib/downstream_governance/git-pre-commit.template",
+      "rawSha256": "07a9f381089f7f4689772c992e57d4ac89b059ef3c76b061ff07cb5da8a80279",
+      "bytes": 398
+    },
+    {
+      "path": "scripts/new-cvf-workspace.ps1",
+      "rawSha256": "92d6c11e7a8956825cd9ffdc5c76d5f2556a9ea7c5f087ccee7f9f484cdf9593",
+      "bytes": 25612
+    },
+    {
+      "path": "scripts/sync_cvf_workspace_rule_pack.ps1",
+      "rawSha256": "9b051b9f3704979d1f0257b1b06ed5049fcee258a94b8616185d7af9640557f0",
+      "bytes": 16625
+    },
+    {
+      "path": "scripts/test_cvf_downstream_gate_profile.ps1",
+      "rawSha256": "c9d56e51b130e9d69205a31caf857b4a43c3caa5591f68122d6113c42488c43b",
+      "bytes": 40922
+    },
+    {
+      "path": "scripts/write_cvf_workspace_web_evidence_bridge.ps1",
+      "rawSha256": "ab582afdb04ff57df0635977f890c6e2d8e55fc2d605e8f33e8803b11cd80f03",
+      "bytes": 6071
+    }
+  ],
+  "inheritedCandidatePaths": [
+    "docs/reference/downstream_gate_profile/CVF_DOWNSTREAM_GATE_PROFILE_MIGRATION.md",
+    "docs/reference/downstream_gate_profile/CVF_DOWNSTREAM_GATE_PROFILE_STANDARD.md",
+    "docs/reference/downstream_gate_profile/DOWNSTREAM_FINDING_INTAKE_TEMPLATE.json",
+    "docs/reference/downstream_gate_profile/README.md",
+    "docs/reference/downstream_gate_profile/downstream_continuity_contract.schema.json",
+    "docs/reference/downstream_gate_profile/downstream_finding_intake.schema.json",
+    "docs/reference/downstream_gate_profile/downstream_finding_intake_registry.json",
+    "docs/reference/downstream_gate_profile/downstream_gate_profile.schema.json",
+    "governance/compat/check_gate_to_role_closeability.py",
+    "governance/compat/test_check_gate_to_role_closeability.py",
+    "governance/compat/test_downstream_gate_profile.py",
+    "governance/toolkit/05_OPERATION/CVF_DOWNSTREAM_AGENTS_TEMPLATE.md",
+    "scripts/check_cvf_workspace_agent_enforcement.ps1",
+    "scripts/check_cvf_workspace_new_project_enforcement.ps1",
+    "scripts/lib/downstream_catalog/CvfDownstreamBootstrapContent.ps1",
+    "scripts/lib/downstream_catalog/CvfGoldenHarnessSupport.ps1",
+    "scripts/lib/downstream_governance/CvfDownstreamGateProfile.ps1",
+    "scripts/lib/downstream_governance/cvf_dg_applicability.py",
+    "scripts/lib/downstream_governance/cvf_dg_common.py",
+    "scripts/lib/downstream_governance/cvf_dg_continuity.py",
+    "scripts/lib/downstream_governance/cvf_dg_coverage.py",
+    "scripts/lib/downstream_governance/cvf_dg_install.py",
+    "scripts/lib/downstream_governance/cvf_dg_intake.py",
+    "scripts/lib/downstream_governance/cvf_dg_review.py",
+    "scripts/lib/downstream_governance/cvf_dg_routing.py",
+    "scripts/lib/downstream_governance/cvf_downstream_gate_profile.json",
+    "scripts/lib/downstream_governance/cvf_downstream_gate_runner.py",
+    "scripts/lib/downstream_governance/downstream_pr_gates.yml.template",
+    "scripts/lib/downstream_governance/git-pre-commit.template",
+    "scripts/new-cvf-workspace.ps1",
+    "scripts/sync_cvf_workspace_rule_pack.ps1",
+    "scripts/test_cvf_downstream_gate_profile.ps1",
+    "scripts/write_cvf_workspace_web_evidence_bridge.ps1"
+  ],
+  "retainedEvidencePaths": [
+    "docs/reviews/CVF_DGIP_T1_DOWNSTREAM_GATE_INHERITANCE_LOCAL_REVIEW_2026-10-03.md",
+    "docs/reviews/CVF_DGIP_T1_DOWNSTREAM_GATE_INHERITANCE_WORKER_RETURN_2026-10-03.md",
+    "docs/reviews/evidence/cvf-dgip-t1-local-probe-2026-10-03.json",
+    "docs/reviews/evidence/cvf-dgip-t1-local-probe-source-2026-10-03.txt",
+    "docs/reviews/evidence/cvf-dgip-t1-local-reconcile-source-2026-10-03.txt",
+    "docs/reviews/evidence/cvf-dgip-t1-worker-2026-10-03.json"
+  ],
+  "candidateAcceptance": "NOT_ACCEPTED",
+  "releaseDisposition": "PENDING_COMMITTED_PACKET_CONTINUITY_AND_FINAL_BOUND_GATE",
+  "effectCeiling": "PRIVATE_OFFLINE_HERMETIC_ONLY_NO_DELEGATION_NO_PROVIDER_NO_NETWORK_NO_WORKER_COMMIT",
+  "cost": "UNKNOWN",
+  "preparationVerification": {
+    "inherited39RawHashReconciliation": "PASS_UNCHANGED",
+    "acceptanceLedger": "PASS",
+    "boundPreDispatch": "FAIL_NO_RELEASE",
+    "log": ".cvf/runtime/dgip-t1-r1-pre-dispatch-bound.log",
+    "failingGateGroups": [
+      "core guard self-protection (42-path combined worktree exceeds 40-path limit)",
+      "dispatch release readiness (R1 uncommitted and current authority/continuity still original)",
+      "work-order dispatch quality (retained source candidate co-observed with future HOLD packet)",
+      "agent operation trace (retained Local review predates three added dispatcher paths)",
+      "corpus completeness (retained Local review lacks applicable corpus section)",
+      "absorption blind-spot control (retained worker return lacks applicable block)"
+    ],
+    "action": "Keep HOLD; preserve original evidence. Resolve isolated documentation/evidence admission and retained-artifact append-only or snapshot-preserving repair before any commit/release; no checker bypass.",
+    "implementationTestsRerun": false,
+    "providerCalls": 0,
+    "workerInvocations": 0,
+    "commits": 0
+  },
+  "retainedEvidenceAmendments": [
+    {
+      "path": "docs/reviews/CVF_DGIP_T1_DOWNSTREAM_GATE_INHERITANCE_LOCAL_REVIEW_2026-10-03.md",
+      "preservedSnapshot": "docs/reviews/evidence/cvf-dgip-t1-local-review-original-2026-10-03.txt",
+      "originalRawSha256": "d03cd945eb498d324d7e1259ec287fb3431e9ac5271055abf6ead0a76f139f71",
+      "currentRawSha256": "4e907066d741160ecfba3a2b15c81d6bb2e3156aa8d5460089d9c3f473298272",
+      "scope": "LOCAL_DECLARATION_TRACE_ONLY_NO_RETROSPECTIVE_OUTCOME_CHANGE"
+    },
+    {
+      "path": "docs/reviews/CVF_DGIP_T1_DOWNSTREAM_GATE_INHERITANCE_WORKER_RETURN_2026-10-03.md",
+      "preservedSnapshot": "docs/reviews/evidence/cvf-dgip-t1-worker-return-original-2026-10-03.txt",
+      "originalRawSha256": "c0dad58faebf637b9c5c85592d6d8c89fcce628ff5a67fca1c7212f43ef93400",
+      "currentRawSha256": "a7007c44850bd1dd74bbf035c26c6e8281fe93c13b5dff6969de1fd4287635d2",
+      "scope": "LOCAL_DECLARATION_TRACE_ONLY_NO_RETROSPECTIVE_OUTCOME_CHANGE"
+    }
+  ],
+  "operatorFollowup": "ra work order r\u1ed3i c\u00f2n ch\u1edd g\u00ec n\u1eefa? giao claude thi c\u00f4ng",
+  "workerFeedbackDisposition": "ACCEPTED_LEDGER_AMENDMENT_ON_NEW_PATH_AND_DEV01_LOCAL_ONLY"
+}
