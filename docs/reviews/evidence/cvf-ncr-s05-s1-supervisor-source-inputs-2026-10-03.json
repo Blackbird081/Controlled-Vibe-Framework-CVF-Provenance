@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "cvf.s05.s1SourceAdmission.inputs.v1",
+  "batchId": "CVF-NCR-S05-S1-SUPERVISOR-SOURCE",
+  "dispatchBaseHead": "64dbfafd53bad6a2ad076bce16cd4851d68b5e27",
+  "operatorInstruction": "ban la orchestrator/reviewer, tien hanh tao work order chu sao cu cho doi hoai vay",
+  "operatorInstructionOriginal": "b\u1ea1n l\u00e0 orchestrator/reviewer, ti\u1ebfn h\u00e0nh t\u1ea1o work order ch\u1ee9 sao c\u1ee9 ch\u1edd \u0111\u1ee3i ho\u00e0i v\u1eady",
+  "scope": "Create/review/release a source-only worker packet; operator manual copy after actual pre-dispatch PASS; no automatic worker/provider invocation. Exact new files only; no source/fixture execution.",
+  "role": "INTERNAL_AGENT dispatcher; Local decision owner",
+  "architectureDecision": "independent source data/state component with mandatory unavailable OS backends; C1 STOP unchanged",
+  "inputIdentities": [
+    {
+      "path": "docs/reference/CVF_NCR_S05_SUPERVISOR_SOURCE_CONTRACT_2026-10-03.md",
+      "rawSha256": "efe0fc6cddacae5ef27f9c559e961c2bc390f6a0e2063f5e757a864a75653b71",
+      "authorityClass": "GOVERNED_PROJECT_CONTRACT"
+    },
+    {
+      "path": "docs/reviews/CVF_CVF_NCR_S05_CONTROL_FIXTURE_DESIGN_LOCAL_REVIEW_2026-10-03.md",
+      "rawSha256": "1ab3c4c3f373f26072afe13dff393b829e25673c86e12e50acb146503d198651",
+      "authorityClass": "GOVERNED_RETAINED_EVIDENCE"
+    },
+    {
+      "path": "docs/reference/CVF_NCR_S05_CONTROL_FIXTURE_DESIGN_2026-10-03.md",
+      "rawSha256": "7bc7a09bb5e4f67a25e8d3f92e156fbb9a8671b118408629af7acb2dc0538b52",
+      "authorityClass": "GOVERNED_RETAINED_EVIDENCE"
+    },
+    {
+      "path": "docs/reviews/evidence/cvf-ncr-s05-control-fixture-design-worker-2026-10-03.json",
+      "rawSha256": "17b14f79c08e206e175e287809461e2986e07ee20beeb98b57f116288741522a",
+      "authorityClass": "GOVERNED_RETAINED_EVIDENCE"
+    },
+    {
+      "path": "docs/reference/semantic_convergence_control/CVF_SEMANTIC_CONVERGENCE_AND_ESCALATION_CONTROL_STANDARD.md",
+      "rawSha256": "1d2753fd56108eb8a0ed5cc5f03ab85ee67e9c18ff4d1390ef55c45473cc0196",
+      "authorityClass": "GOVERNED_RETAINED_EVIDENCE"
+    }
+  ],
+  "sourceRoot": "D:\\UNG DUNG AI\\TOOL AI 2026\\CVF-NCR-S05-S1-SOURCE-20261003",
+  "sourceFiles": [
+    "README.md",
+    "src/supervisor.py",
+    "src/envelope_contract.py",
+    "src/windows_job.py",
+    "src/boundary_admission.py",
+    "fixtures/fx_d1.py",
+    "fixtures/fx_m1.py",
+    "fixtures/fx_t1.py",
+    "fixtures/fx_b1.py",
+    "fixtures/fx_n1.py",
+    "fixtures/fx_l1.py",
+    "evidence/source-manifest.json",
+    "evidence/requirement-map.json",
+    "WORKER_RETURN.md"
+  ],
+  "oldScec": {
+    "problemKey": "cvf-ncr-c1-metadata-footprint",
+    "ordinal": 2,
+    "disposition": "STOP_REASSESS_ARCHITECTURE",
+    "retainedBlocker": "C1_DEPENDENCY_FOOTPRINT_CACHE_SEMANTICS_UNSPECIFIED",
+    "counters": [
+      0,
+      0,
+      1,
+      2
+    ]
+  },
+  "rootAbsence": "HISTORICAL_ONLY_RECHECK_BEFORE_FIRST_WRITE",
+  "workerExecuted": false,
+  "publicExportDisposition": "DEFERRED_PRIVATE_ONLY"
+}
