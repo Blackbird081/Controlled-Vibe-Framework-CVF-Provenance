@@ -36,12 +36,12 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_C1_METADATA_FOOTPRINT_ANALYSIS_2026-10-03.md",
-    "baselineSha256": "da5525a88afa39501741eccf68ada959c0b06eaf84c1571e4c97115fb2c08b2c",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_C1_METADATA_FOOTPRINT_ANALYSIS_2026-10-03.md",
-    "workOrderSha256": "a1da0b45258d79429e3cbf7f34ee09e89efc3ff180f860488cd9fbcc3baf1c44"
+    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_C1_METADATA_COMPLETION_SOURCE_DELTA_2026-10-03.md",
+    "baselineSha256": "71d60a2ded8256752455bb7383a8a297e691e1178a5727ebb8372b1123106970",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_C1_METADATA_COMPLETION_SOURCE_DELTA_2026-10-03.md",
+    "workOrderSha256": "a132503b57805c54bace8ce13cf177d1037499770901e7530f02487398357750"
   },
-  "currentAuthoritySyncReason": "D108 metadata closure at 8599c065d7cde3c6a3df1a6d65fe3a3329d3d15e; pair historical. Next bounded metadata/source admission; runtime not admitted.",
+  "currentAuthoritySyncReason": "D109 metadata completion at b203423ad230cb5ea75becb5d961ef9def1be8ea; pair bound. No install/runtime admission.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
