@@ -36,12 +36,12 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_C1_METADATA_SOURCE_DELTA_REVIEW_BINDING_2026-10-03.md",
-    "baselineSha256": "ae7d861259464f198ee5b8fc4fbf2b7ca45d2836d17811ee1ae06eb17a4010d0",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_C1_METADATA_SOURCE_DELTA_REVIEW_BINDING_2026-10-03.md",
-    "workOrderSha256": "b0b75f8f200586f0c9b246d495c1593875b4c871a77fcd54007dbed1dca91361"
+    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_S05_CONTROL_FIXTURE_DESIGN_2026-10-03.md",
+    "baselineSha256": "ff6116d2bfea553f72edbcc330a92db846e52c82adfda4d04a784c2e38258970",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_S05_CONTROL_FIXTURE_DESIGN_2026-10-03.md",
+    "workOrderSha256": "215d54fc71580743828f357faab68cdf29a0ed54e0134fd01d7b22cfec058029"
   },
-  "currentAuthoritySyncReason": "D110 metadata closed at f1fd09e788a7bd1dabe9b29f299b9dddd0d4357f; review-only pair. Runtime not admitted.",
+  "currentAuthoritySyncReason": "Operator-requested S05 integrated control/fixture design pair at 8a603d0cb9d075640482d91af87278245d21f228; design-only bound release, G2 same-root escalation, effects remain not admitted.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",

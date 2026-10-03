@@ -1,6 +1,6 @@
 # CVF Agent Handoff V63 - ACEL Applied-Knowledge Owner Enrichment
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `f1fd09e788a7bd1dabe9b29f299b9dddd0d4357f`; batch `CVF-NCR-C1-METADATA-COMPLETION`, D110 metadata closed; runtime NOT_ADMITTED; send/B2 STOP.
+Current HEAD recorded for this handoff: `8a603d0cb9d075640482d91af87278245d21f228`; batch `CVF-NCR-S05-CONTROL-FIXTURE-DESIGN`; design only, runtime NOT_ADMITTED; send/B2 STOP.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -8,9 +8,9 @@ Remote tracking: `origin/main`; resolve SHA live. External agent memory is non-c
 ## Purpose
 Carry CVF-NCR v2.7 and closed AKOE/G1-G7. Applied-knowledge details remain in the governed roadmap.
 ## Scope / Target / Owner Boundary
-Role: Local orchestrator/reviewer. Phase: D110 metadata closed, operator checkpoint; technical owner: Local; effect owner: operator; P11 parked.
+Role: Local orchestrator/reviewer. Phase: S05 integrated design dispatch; technical owner: Local; effect owner: operator; P11 parked.
 ## Startup Acknowledgment
-Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`; handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=operator preparation/envelope checkpoint; role=Local reviewer; phase=D110 metadata closed, operator checkpoint; decision owner=Local; parked=Q001/Q004, effect, P11, public sync, deployment.
+Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`; handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=bound S05 integrated design; role=Local reviewer; phase=documentary dispatch; decision owner=Local; parked=Q001/Q004, effect, P11, public sync, deployment.
 ## Current Mode
 `cvf_ncr_p10_closed_p11_parked`. CVF-NCR-R1-S11-R1 is closed at `bd15b2600` after material `1a538d10d`. P10 is `ACTIVE_PRODUCTION_RUNTIME`; P11 stays parked. Latest closed learning-history wave: `LHW24`.
 ## Active Boundary
@@ -21,9 +21,9 @@ AKOE authority: `docs/roadmaps/CVF_ACEL_APPLIED_KNOWLEDGE_OWNER_ENRICHMENT_ROADM
 - Q001 SQLite target-publication correction is Local-accepted bounded at `a90756b6a`: reviewer repaired post-publication validation after raw-SQL repro; focused 37/37, worker 42/42, Local 6/6 and pre-commit 90/90 passed. Q001/R0 and real cutover remain open.
 - HTML B2 read-only owner/storage audit at `2364bfbaa` is `REVIEW_COMPLETE_NO_DISPATCH`: route returns transient HTML; source hash and receipt do not identify exact rendered bytes; inspected candidate ledgers/adapters do not own durable HTML acceptance. D037 names the missing actor, store, writer and recovery choices. B1 remains Local-accepted bounded at `31bb2d88c`; Q001/R0 Profile A and B2 implementation stay parked.
 - B1 Print R2 accepted bounded at `6251ca305`: worker 5/5, units 45/45; Local 120-line probe: 3 pages/all rows/end marker, opaque origin/zero Print hits. Review: `docs/reviews/CVF_CVF_NCR_HTML_B1_PRINT_COMPLETENESS_R2_COMPLETION_2026-10-01.md`. Width 700px; renderer only; Q001/Q004 OPEN. Preview owner audit complete; no Print successor.
-- D110 `f1fd09e78`: metadata qualified, required independent probe20 PASS_STATIC_ONLY, original raws/FAIL retained; review routing corrected. Next operator envelope checkpoint, no automatic successor/runtime. Send/B2 STOP.
+- S05-CFD `8a603d0cb`: integrated G2..G5 design pair; ordinal2 STOP/INTEGRATED_ROOT_CONTRACT, no narrow successor. D110 remains metadata qualified, runtime NOT_ADMITTED; send/B2 STOP.
 ## Core Guard Self-Protection Authorization
-Authorized guard-maintenance scope: bind `f1fd09e788a7bd1dabe9b29f299b9dddd0d4357f` / `CVF-NCR-C1-METADATA-COMPLETION`; six continuity paths below. Delegated Local closure, versioned same-scope review binding; rollback continuity only, preserve material and STOP/effect boundaries.
+Authorized guard-maintenance scope: bind `8a603d0cb9d075640482d91af87278245d21f228` / `CVF-NCR-S05-CONTROL-FIXTURE-DESIGN`; six paths below. Local design dispatch only; rollback continuity, preserve D110 and effects STOP.
 Authorized guard-maintenance scope: bind B2b packet material `588f8d63f` and release only its internal worker next move.
 Protected paths:
 - `AGENT_HANDOFF_V63_2026-09-18.md`
