@@ -1,0 +1,147 @@
+{
+  "schemaVersion": "cvf.s05.r1EvidenceRelayLocalProbe@1",
+  "actor": "local-s05-r1-relay-reviewer",
+  "workerEvidenceRawSha256": "ead5b590bb07aafbd7d8cc1d3f6d2229d349693fe44331718095eff898e2e5d9",
+  "workerReturnRawSha256": "bad3de1f129053da94fedf8be54b7a65905db6ed900f1e65a34fcd301b179bca",
+  "oracleRawSha256": "7be2f759fdae329031e67ba3ceb6b10ebacfd87d53b420a426367c26423a7e11",
+  "checks": [
+    {
+      "id": "return-join",
+      "passed": true
+    },
+    {
+      "id": "blocked-preserved",
+      "passed": true
+    },
+    {
+      "id": "base-binding",
+      "passed": true
+    },
+    {
+      "id": "creation-identity",
+      "passed": true
+    },
+    {
+      "id": "creation-target",
+      "passed": true
+    },
+    {
+      "id": "creation-command-exclusive",
+      "passed": true
+    },
+    {
+      "id": "mode-not-os-proof",
+      "passed": true
+    },
+    {
+      "id": "creation-time-qualified",
+      "passed": true
+    },
+    {
+      "id": "transcription-digest:EVT-PRE-R1-JSON-ATTEMPT",
+      "passed": true
+    },
+    {
+      "id": "transcription-digest:EVT-CREATE-R1-JSON",
+      "passed": true
+    },
+    {
+      "id": "transcription-digest:EVT-GATE-R1-RETURN",
+      "passed": true
+    },
+    {
+      "id": "creation-command-transcription-digest",
+      "passed": true
+    },
+    {
+      "id": "gate-command-transcription-digest",
+      "passed": true
+    },
+    {
+      "id": "gate-time-missing-preserved",
+      "passed": true
+    },
+    {
+      "id": "gate-historical-hash-missing-preserved",
+      "passed": true
+    },
+    {
+      "id": "command-original-hashes-missing",
+      "passed": true
+    },
+    {
+      "id": "gate-current-hash-not-history",
+      "passed": true
+    },
+    {
+      "id": "frozen:docs/reviews/CVF_CVF_NCR_S05_S1_SUPERVISOR_SOURCE_R1_WORKER_RETURN_2026-10-03.md",
+      "passed": true
+    },
+    {
+      "id": "frozen:docs/reviews/evidence/cvf-ncr-s05-s1-supervisor-source-r1-worker-2026-10-03.json",
+      "passed": true
+    },
+    {
+      "id": "no-source-effects-declared",
+      "passed": true
+    },
+    {
+      "id": "stop-freeze",
+      "passed": true
+    },
+    {
+      "id": "old-c1-stop",
+      "passed": true
+    },
+    {
+      "id": "output-budget",
+      "passed": true
+    },
+    {
+      "id": "line-budgets",
+      "passed": true
+    }
+  ],
+  "mutations": [
+    {
+      "id": "wrong-return-digest",
+      "detected": true
+    },
+    {
+      "id": "wrong-historical-target-hash",
+      "detected": true
+    },
+    {
+      "id": "fresh-time-relabeled-historical",
+      "detected": true
+    },
+    {
+      "id": "fresh-hash-relabeled-historical",
+      "detected": true
+    },
+    {
+      "id": "script-mode-relabeled-os-proof",
+      "detected": true
+    },
+    {
+      "id": "blocked-relabeled-ready",
+      "detected": true
+    }
+  ],
+  "sourceExecutionCount": 0,
+  "historicalWriterOrGateReruns": 0,
+  "historicalAuthentication": "NOT_ESTABLISHED_BY_TRANSCRIPTION_HASH",
+  "result": "PASS_DOCUMENTARY_JOIN_BLOCKED_HISTORY",
+  "appendixCurrentIdentities": [
+    {
+      "path": "docs/reviews/CVF_CVF_NCR_S05_S1_R1_EVIDENCE_RELAY_WORKER_RETURN_2026-10-03.md",
+      "bytes": 20672,
+      "rawSha256": "bad3de1f129053da94fedf8be54b7a65905db6ed900f1e65a34fcd301b179bca"
+    },
+    {
+      "path": "docs/reviews/evidence/cvf-ncr-s05-s1-r1-evidence-relay-worker-2026-10-03.json",
+      "bytes": 12762,
+      "rawSha256": "ead5b590bb07aafbd7d8cc1d3f6d2229d349693fe44331718095eff898e2e5d9"
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+ "schemaVersion": "cvf.s05.s1R1EvidenceRelayWorkerEvidence.v1",
+ "batchId": "CVF-NCR-S05-S1-R1-EVIDENCE-RELAY",
+ "executionBaseHead": "cc3114dff7b208fd7413d4a1880dd53add828f76",
+ "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_S05_S1_R1_EVIDENCE_RELAY_2026-10-03.md",
+ "workerMode": "WORKER_MUST_NOT_COMMIT",
+ "status": "BLOCKED_WITH_REASON",
+ "eventDisposition": "INCOMPLETE_RETAINED_EVENT",
+ "rootCauseClusterId": "s05-s1-source-contract-validation-custody",
+ "recurrenceDisposition": "RECURRING_CLUSTER_STOP",
+ "priorRelatedFinding": "docs/reviews/CVF_CVF_NCR_S05_S1_SUPERVISOR_SOURCE_R1_LOCAL_REVIEW_2026-10-03.md",
+ "operatorNoticeDisposition": "OPERATOR_NOTICE_REQUIRED",
+ "successorFreezeDisposition": "FEATURE_SUCCESSORS_FROZEN",
+ "blockedReason": "return-gate event UTC time and event-time raw log hash are MISSING; no reconstruction",
+ "historicalTarget": {
+  "evidencePath": "docs/reviews/evidence/cvf-ncr-s05-s1-supervisor-source-r1-worker-2026-10-03.json",
+  "writeLedgerRow": "R2",
+  "ledgerResultText": "PLANNED_UNTIL_POST_WRITE_TOOL_EVENT"
+ },
+ "retrievalBoundary": "events taken only from this worker's retained R1 task tool context plus one exact existing log named in that context; no history, provider store, filesystem discovery, network or connector; no historical writer or gate re-run",
+ "provenanceClasses": ["TOOL_OUTPUT", "COMMAND_TEXT", "WORKER_ASSERTION", "LOCAL_OR_CURRENT_OBSERVATION"],
+ "historicalEvents": [
+  {"eventId": "EVT-PRE-R1-JSON-ATTEMPT", "role": "preceding attempt, not the final creation", "toolIdentity": "PowerShell tool call piping a Python script to python -B - (stdin here-string)", "result": "script stopped with exit code 6 before its create call; no file written", "rawToolOutputText": "EVIDENCE lines 1180 bytes 38471  (tool exit code 6; the script stopped before its create call)", "rawToolOutputSha256OfTranscribedText": "dc86f2df74e40048264e2df47789603228a1f83cc1463902ff647f47c9b3aea1", "eventUtc": "MISSING", "class": "TOOL_OUTPUT"},
+  {"eventId": "EVT-CREATE-R1-JSON", "role": "final creation of the R1 evidence JSON", "eventDisposition": "RETAINED_ALL_REQUIRED_FIELDS", "toolIdentity": "PowerShell tool call piping a Python script to python -B - (stdin here-string)", "commandIdentity": {"class": "COMMAND_TEXT", "excerptFromToolCallInput": "rec = {\"event\": \"file_create\", \"mode\": \"open(path,'xb')\", \"actor\": \"worker\", \"relPath\": JS, \"resolvedPath\": path, \"beforeExists\": os.path.lexists(path),\n       \"tool\": \"python 3.11 stdin script via PowerShell tool here-string\", \"utc\": datetime.datetime.now(datetime.timezone.utc).isoformat()}\nif rec[\"beforeExists\"]:\n    rec[\"result\"] = \"ABORT_EXISTS\"; print(json.dumps(rec)); sys.exit(3)\nwith open(path, \"xb\") as fh:\n    fh.write(payload)\nback = open(path, \"rb\").read()\nrec.update(result=\"CREATED\", bytes=len(back), sha256=sha(back), diskEqualsPayload=(back == payload), lines=back.count(b\"\\n\"))\nprint(json.dumps(rec), flush=True)", "excerptSha256OfTranscribedText": "be9b423b18f35165718f17a8e88fe7e5ed5a4718a46f2e81da843ae496bc186e", "rawCommandTextHash": "MISSING", "createExclusiveMode": "evidenced by the open(path, \"xb\") line in the command text"}, "target": {"class": "TOOL_OUTPUT", "resolvedPath": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\docs\\reviews\\evidence\\cvf-ncr-s05-s1-supervisor-source-r1-worker-2026-10-03.json"}, "beforeState": {"class": "TOOL_OUTPUT (value authored by the writer script)", "beforeExists": false}, "result": {"class": "TOOL_OUTPUT (value authored by the writer script)", "value": "CREATED", "diskEqualsPayload": true}, "modeLabelInOutput": {"class": "WORKER_ASSERTION", "value": "open(path,'xb')", "note": "string assigned by the script; not an independent OS report"}, "eventUtc": {"class": "TOOL_OUTPUT (script clock)", "value": "2026-10-03T11:49:16.478881+00:00"}, "reportedBytes": 34325, "reportedLines": 174, "reportedSha256": "b52f33717b0f6c948979e8566a5e1ff42137be9b80554263af50df2342458ce7", "rawToolOutputText": "EVIDENCE lines 174 bytes 34325\n{\"event\": \"file_create\", \"mode\": \"open(path,'xb')\", \"actor\": \"worker\", \"relPath\": \"docs/reviews/evidence/cvf-ncr-s05-s1-supervisor-source-r1-worker-2026-10-03.json\", \"resolvedPath\": \"D:\\\\UNG DUNG AI\\\\TOOL AI 2026\\\\Controlled-Vibe-Framework-CVF\\\\docs\\\\reviews\\\\evidence\\\\cvf-ncr-s05-s1-supervisor-source-r1-worker-2026-10-03.json\", \"beforeExists\": false, \"tool\": \"python 3.11 stdin script via PowerShell tool here-string\", \"utc\": \"2026-10-03T11:49:16.478881+00:00\", \"result\": \"CREATED\", \"bytes\": 34325, \"sha256\": \"b52f33717b0f6c948979e8566a5e1ff42137be9b80554263af50df2342458ce7\", \"diskEqualsPayload\": true, \"lines\": 174}", "rawToolOutputSha256OfTranscribedText": "6fa3ffb9a09e279c68afec4258229e8b7fb0aa66ae39953f24302e1455048d47", "locator": "R1 task tool context, PowerShell call whose output begins with the line EVIDENCE lines 174 bytes 34325", "missingFields": ["rawCommandTextHash"], "redactions": "none"},
+  {"eventId": "EVT-GATE-R1-RETURN", "role": "final R1 return-gate run", "eventDisposition": "RETAINED_WITH_MISSING_FIELDS", "toolIdentity": "Bash tool call", "commandIdentity": {"class": "COMMAND_TEXT", "text": "cd \"D:/UNG DUNG AI/TOOL AI 2026/Controlled-Vibe-Framework-CVF\" && export PYTHONDONTWRITEBYTECODE=1 && git rev-parse HEAD && git status --short --untracked-files=all && python governance/compat/run_worker_return_fast_gate.py --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_S05_S1_SUPERVISOR_SOURCE_R1_2026-10-03.md > \"$TEMP/__gate_unused\" 2>&1; echo \"exit=$?\"", "textSha256OfTranscribedText": "825496890a7f39eec98a4ae77f07e08a8a1946b64de1dbe42496e17d545fcba6", "rawCommandTextHash": "MISSING", "note": "output of the gate was redirected to a temporary log outside every allowlist; created by the worker, disclosed in the R1 handoff message"}, "result": {"class": "TOOL_OUTPUT", "value": "exit=0", "logResultText": "COMPLIANT: worker-return fast gate passed in 11.17s."}, "rawToolOutputText": "88b0e39df57f21f5df8e2226b8eb7e1e8d7ebb1e\n?? docs/reviews/CVF_CVF_NCR_S05_S1_SUPERVISOR_SOURCE_R1_WORKER_RETURN_2026-10-03.md\n?? docs/reviews/evidence/cvf-ncr-s05-s1-supervisor-source-r1-worker-2026-10-03.json\nexit=0", "rawToolOutputSha256OfTranscribedText": "bce0bd9582911a95ba925ec33ab0da47173288329364b76541451c11acab0b4e", "eventUtc": "MISSING", "eventUtcNote": "no tool output printed a time; the log modification stamp 'Oct 3 18:49' (local time, zone not printed) came from a later ls tool event and is not an event timestamp", "rawLog": {"path": "C:\\Users\\DELL\\AppData\\Local\\Temp\\__gate_unused", "sizeFromLaterToolEvent": 10998, "modifiedStampFromLaterToolEvent": "Oct 3 18:49", "rawHashAtEventTime": "MISSING", "excerptsFromLaterToolEvents": ["7:PASS: corpus scan registry aggregate drift (0.17s)", "15:Violations: 0", "17:COMPLIANT - epistemic process packet evidence structure is aligned.", "18:PASS: epistemic process packet (0.25s)", "23:COMPLIANT", "24:PASS: work-order acceptance ledger (0.24s)", "31:Eligible worker-return artifacts checked: 1", "32:Violations: 0", "33:COMPLIANT - worker-return packets are review-ready.", "34:PASS: worker-return quality gate (0.45s)", "40:PASS: all applicable artifacts satisfy the independent-probe admission contract.", "41:PASS: independent review probe admission (0.91s)", "53..107 (grep -n): [CVF hook] PASS [1/69] .. [28/69] lines, all PASS", "(tail -12) [CVF hook] PASS [66/69] agent instruction carrier compaction (0.37s)", "(tail -12) [CVF hook] PASS [67/69] epistemic process packet (0.79s)", "(tail -12) [CVF hook] PASS [68/69] dispatch scaffold provenance (0.56s)", "(tail -12) [CVF hook] PASS [69/69] active session state compatibility (2.18s)", "(tail -12) [CVF hook] All reviewer-fast governance checks passed.", "(tail -12) PASS: reviewer-fast governance gate (9.10s)", "(tail -12) === git diff whitespace check ===", "(tail -12) PASS: git diff whitespace check (0.05s)", "(tail -12) COMPLIANT: worker-return fast gate passed in 11.17s.", "(grep -c) count of lines containing [CVF hook] PASS = 69; count of lines containing FAIL = 0"]}, "followUpToolEvents": [{"command": "git diff --check", "output": "exit status 0 (printed as diffcheck=0)", "class": "TOOL_OUTPUT"}, {"command": "git status --short --untracked-files=all", "output": "two ?? lines naming the R1 return and the R1 evidence JSON", "class": "TOOL_OUTPUT"}], "locator": "R1 task tool context, Bash call ending echo exit=0, plus the later ls, grep and tail calls on the log path", "missingFields": ["eventUtc", "rawLogHashAtEventTime", "rawCommandTextHash"], "redactions": "none"}
+ ],
+ "currentObservations": {
+  "class": "LOCAL_OR_CURRENT_OBSERVATION",
+  "note": "taken this turn; equality with historical bytes is not proven by these values",
+  "gateLog": {"path": "C:\\Users\\DELL\\AppData\\Local\\Temp\\__gate_unused", "currentBytes": 10998, "currentSha256": "260179471503d72fcea6002ba5ac1d4e2ae69a312ad4581ea38731443e21c7b3", "currentModifiedUtc": "2026-10-03T11:49:32.042452+00:00", "sizeMatchesEarlierToolEvent": true},
+  "frozenR1Artifacts": [{"path": "docs/reviews/CVF_CVF_NCR_S05_S1_SUPERVISOR_SOURCE_R1_WORKER_RETURN_2026-10-03.md", "receiptBytes": 30190, "receiptSha256": "12116c9c696752b487b74de9d6ec75bd3e53e90efad92b8f6a6f7f72512bd6ce", "currentBytes": 30190, "currentSha256": "12116c9c696752b487b74de9d6ec75bd3e53e90efad92b8f6a6f7f72512bd6ce", "matches": true, "class": "LOCAL_OR_CURRENT_OBSERVATION"}, {"path": "docs/reviews/evidence/cvf-ncr-s05-s1-supervisor-source-r1-worker-2026-10-03.json", "receiptBytes": 34325, "receiptSha256": "b52f33717b0f6c948979e8566a5e1ff42137be9b80554263af50df2342458ce7", "currentBytes": 34325, "currentSha256": "b52f33717b0f6c948979e8566a5e1ff42137be9b80554263af50df2342458ce7", "matches": true, "class": "LOCAL_OR_CURRENT_OBSERVATION"}]
+ },
+ "retrievalLocators": ["R1 task tool context: PowerShell call, output starting EVIDENCE lines 174 bytes 34325", "R1 task tool context: Bash call ending echo exit=0", "R1 task tool context: ls, grep and tail calls on C:\\Users\\DELL\\AppData\\Local\\Temp\\__gate_unused"],
+ "missingFields": ["EVT-GATE-R1-RETURN.eventUtc", "EVT-GATE-R1-RETURN.rawLog.rawHashAtEventTime", "rawCommandTextHash for both events"],
+ "preservationChecks": {
+  "frozenInputsBeforeWrite": "MATCH (receipt hashes) before the first write",
+  "frozenInputsAfterBothWrites": "see currentObservations.frozenR1Artifacts, checked in the creating script after the Markdown write",
+  "sourceRootsTouched": false,
+  "r1WorkerArtifactsModified": false,
+  "oldC1": {"problemKey": "cvf-ncr-c1-metadata-footprint", "ordinal": 2, "counters": [0, 0, 1, 2], "touched": false},
+  "sourceChain": "local-supervisor-source-contract SUCCESSOR1 retained"
+ },
+ "outputWriteRecords": [
+  {"id": "W1", "path": "docs/reviews/CVF_CVF_NCR_S05_S1_R1_EVIDENCE_RELAY_WORKER_RETURN_2026-10-03.md", "mode": "open(path,'xb')", "beforeExists": false, "result": "CREATED", "bytes": 20672, "sha256": "bad3de1f129053da94fedf8be54b7a65905db6ed900f1e65a34fcd301b179bca", "utc": "2026-10-03T12:25:05.072667+00:00", "class": "TOOL_OUTPUT (printed by the writing script, relayed here after the fact)"},
+  {"id": "W2", "path": "docs/reviews/evidence/cvf-ncr-s05-s1-r1-evidence-relay-worker-2026-10-03.json", "mode": "open(path,'xb')", "result": "PLANNED_UNTIL_POST_WRITE_TOOL_EVENT", "note": "this file describes its own creation; its event and self-hash are relayed in the worker final message, outside this file"}
+ ],
+ "proofIds": {
+  "PROOF-IDENTITY": "frozen R1 artifact hashes in currentObservations.frozenR1Artifacts joined to the input receipt",
+  "PROOF-EVENT": "historicalEvents with per-field provenance class; gate event incomplete, see missingFields",
+  "PROOF-BOUNDARY": "retrievalBoundary and preservationChecks",
+  "PROOF-RETURN": {"path": "docs/reviews/CVF_CVF_NCR_S05_S1_R1_EVIDENCE_RELAY_WORKER_RETURN_2026-10-03.md", "rawSha256": "bad3de1f129053da94fedf8be54b7a65905db6ed900f1e65a34fcd301b179bca", "bytes": 20672, "note": "binds the Markdown return; no hash of this file appears here or in the return"}
+ },
+ "requirementResults": {
+  "REQ-1": "PASS",
+  "REQ-2": "BLOCKED",
+  "REQ-3": "PASS"
+ },
+ "independentProbe": "PENDING_REVIEWER_EXECUTION (appendix review only; the R1 source probe is complete)",
+ "limits": {
+  "combinedOutputCeilingBytes": 262144,
+  "markdownLineCeiling": 620,
+  "jsonLineCeiling": 950,
+  "turn": "one cooperative 30-minute turn",
+  "costs": "UNKNOWN",
+  "enforcement": "none claimed"
+ },
+ "claimBoundary": "relay of retained tool context; not acceptance of the historical creation claim; no runtime, OS, source or cost claim; DS-01..DS-19 NOT_EXECUTED_PLANNED",
+ "commit": "none"
+}
