@@ -1,0 +1,76 @@
+{
+  "schemaVersion": "cvf.dgip.dispatchInputs@1",
+  "operatorInstruction": "B\u1ea1n l\u00e0 orchestrator/reviewer; tri\u1ec3n khai work order, t\u00f4i s\u1ebd giao cho claude thi c\u00f4ng",
+  "taskInterpretation": "implement parent-level learning from IDE-selected CCMAI intake; no S05 successor",
+  "dispatchBaseHead": "6c3e5ac7f39ba1406e09c99a4d1f9a1fb00b923c",
+  "externalInput": {
+    "snapshot": "docs/reviews/evidence/ccmai-to-cvf-downstream-gate-learning-intake-2026-10-01.txt",
+    "rawSha256": "26c17a4a4891bc0aad95e9e9ecded9531f768f8824d57176b2d37aa0f9ba2545",
+    "bytes": 13463,
+    "authority": "ADVISORY_INTAKE_NOT_PRIVATE_CVF_PROOF",
+    "sourceProjectCommitClaims": "WORKER_REPORTED_NOT_LOCALLY_VERIFIED"
+  },
+  "localSources": [
+    {
+      "path": "scripts/new-cvf-workspace.ps1",
+      "rawSha256": "a9084c6f78a05081ad1b489c06bc871c5c60481298d9f7e1c1cef06f72f5ec6a"
+    },
+    {
+      "path": "scripts/check_cvf_workspace_agent_enforcement.ps1",
+      "rawSha256": "904e9ad6e739ada770909fbba05aac987d6199f4587cbf6061afd49b9a5c2b43"
+    },
+    {
+      "path": "scripts/check_cvf_workspace_new_project_enforcement.ps1",
+      "rawSha256": "c0720c9735cab12aea114f4c76fa4cfb1201153ba4f8e3a67ee2de0e7cc9eb60"
+    },
+    {
+      "path": "scripts/write_cvf_workspace_web_evidence_bridge.ps1",
+      "rawSha256": "18e8f17450840d977a002d9f06c26efcf645f56ee5ee4da2736f92d32a5ea207"
+    },
+    {
+      "path": "scripts/sync_cvf_workspace_rule_pack.ps1",
+      "rawSha256": "43d072b7b879a55bd470a113959348119e61eecd404b8c61c251652ae3082c10"
+    },
+    {
+      "path": "scripts/lib/downstream_catalog/CvfDownstreamBootstrapContent.ps1",
+      "rawSha256": "689cadbc832d1dc17622fb3a5844dc794ea05965c96c5fbcf09b5439fa5955c9"
+    },
+    {
+      "path": "scripts/lib/downstream_catalog/CvfGoldenHarnessSupport.ps1",
+      "rawSha256": "d08e76d4a3371c153da2c98d99dcc95418198fecfa5a8714d524cea7e608169a"
+    },
+    {
+      "path": "scripts/test_cvf_golden_downstream_bootstrap.ps1",
+      "rawSha256": "75b58399b5c22fb3f71857a0fd71df826258063927085a009de00c0a8ba7e8f0"
+    },
+    {
+      "path": "governance/toolkit/05_OPERATION/CVF_DOWNSTREAM_AGENTS_TEMPLATE.md",
+      "rawSha256": "0ed3c44eebdc6b673c8a7533f153362e457fdfffce7ce4c0d9a7b2c806820a74"
+    },
+    {
+      "path": "governance/compat/check_gate_to_role_closeability.py",
+      "rawSha256": "45af54ed3caf09c484403aea0437e9c66433fa2f7f89674c4d7bc47e8e1146a6"
+    },
+    {
+      "path": "governance/compat/test_check_gate_to_role_closeability.py",
+      "rawSha256": "529b44dd2d8da073062344b649591d59f54b29e8c3a78754963ad002f4d80dd4"
+    },
+    {
+      "path": "docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md",
+      "rawSha256": "97af19eed3b227084bb495067a8663a7c19e72c844976e4494e80d01f097ea90"
+    }
+  ],
+  "dedupOwners": [
+    "docs/reference/CVF_GOLDEN_DOWNSTREAM_BOOTSTRAP_LEARNING_INTAKE_2026-07-23.md",
+    "docs/roadmaps/CVF_WORKSPACE_GOVERNANCE_LEARNING_PROPAGATION_ROADMAP_2026-08-05.md",
+    "docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0026.md",
+    "docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0050.md"
+  ],
+  "noCorpusClaim": true,
+  "dispatcherMaterialPaths": [
+    "docs/baselines/CVF_GC018_DGIP_T1_DOWNSTREAM_GATE_INHERITANCE_2026-10-03.md",
+    "docs/reviews/evidence/ccmai-to-cvf-downstream-gate-learning-intake-2026-10-01.txt",
+    "docs/reviews/evidence/cvf-dgip-t1-dispatch-inputs-2026-10-03.json",
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_DGIP_T1_DOWNSTREAM_GATE_INHERITANCE_2026-10-03.md"
+  ]
+}
