@@ -1,0 +1,39 @@
+{
+ "schemaVersion": "cvf.ncr.metadataCompletionDispatchInputs.v1",
+ "batchId": "CVF-NCR-C1-METADATA-COMPLETION",
+ "authoringBaseHead": "259b18a13cb89559a351a7e479d32258b09b305a",
+ "status": "INPUT_IDENTITIES_NOT_RUNTIME_PROOF",
+ "inputs": [
+  {"path": "docs/reference/CVF_KNOWLEDGE_ABSORPTION_AND_EXTENSION_PRIORITY_STANDARD_2026-04-13.md", "rawSha256": "1eafad1cd23048eff1a11acb27ce51f34bb1929a3306de9237b1ed6734064eee", "gitBlobId": "e142d0ec8fce2d03afcf8b41f7c96b7a7cc7f951", "physicalLines": 344},
+  {"path": "docs/reference/CVF_NCR_GENERAL_VIDEO_DESIGN_2026-10-02.md", "rawSha256": "3ce5e2363c3e29997fcbf42cb4cec59af7447cca38409d4d970e8aa71e5777e0", "gitBlobId": "f22cddd894a9cf976762f8c3b7c3f7a745abf476", "physicalLines": 159},
+  {"path": "docs/reference/CVF_NCR_VIDEO_COMPOSITION_READINESS_DESIGN_2026-10-03.md", "rawSha256": "de3673a2f41695bfa83692095fd0d67f96cea924d48809aefd8b14266c8e6d87", "gitBlobId": "9825df4a26d8a6eebb46533afc33ca951ee59937", "physicalLines": 300},
+  {"path": "docs/reference/CVF_NCR_C1_METADATA_FOOTPRINT_ANALYSIS_2026-10-03.md", "rawSha256": "2111d3b6efb7a64d4dd23dc6914cd60bd40243c7510230771bff06cb83375dbf", "gitBlobId": "aa4c2c8a86774660194b6fb9c5a1406c0b537ab9", "physicalLines": 296},
+  {"path": "docs/reviews/evidence/cvf-ncr-c1-metadata-footprint-analysis-2026-10-03.json", "rawSha256": "ff7bf615795a72a65ccc1c143c70edcc087f13f918197bf64bd19b1fe4a277cd", "gitBlobId": "c012f16aaca47d6e0b1713e71c9658febc097f2c", "physicalLines": 898},
+  {"path": "docs/reviews/CVF_CVF_NCR_C1_METADATA_FOOTPRINT_ANALYSIS_COMPLETION_2026-10-03.md", "rawSha256": "39afa05f0765de8c0856d6cbfd99a2719ccda0b64637faf74ca6019f504531ab", "gitBlobId": "343bfe27cc9bece782c7b13d02c4e9dddbbc94c2", "physicalLines": 218},
+  {"path": "docs/reviews/evidence/cvf-ncr-c1-metadata-footprint-local-review-2026-10-03.json", "rawSha256": "400a5b4666a4fcd93f6d6132400d9ef419a2e1635d0b8e37ac207c558bcb9f28", "gitBlobId": "4044f5670688eedec85cae571296b3d15005331d", "physicalLines": 121},
+  {"path": "docs/reviews/CVF_CVF_NCR_C1_METADATA_FOOTPRINT_ANALYSIS_WORKER_RETURN_2026-10-03.md", "rawSha256": "de778a2c7f9aabbe8ee82bbcd0c8e6384661cd5d102cd971dc0f303076430cf5", "gitBlobId": "5224ab3fca38143b5a1e51ba6e4fc6fbf2ae2a8b", "physicalLines": 342}
+ ],
+ "workerPaths": [
+  "docs/reference/CVF_NCR_C1_METADATA_COMPLETION_SOURCE_DELTA_2026-10-03.md",
+  "docs/reviews/evidence/cvf-ncr-c1-metadata-completion-source-delta-2026-10-03.json",
+  "docs/reviews/CVF_CVF_NCR_C1_METADATA_SOURCE_DELTA_WORKER_RETURN_2026-10-03.md"
+ ],
+ "completionReviewPath": "docs/reviews/CVF_CVF_NCR_C1_METADATA_COMPLETION_SOURCE_DELTA_COMPLETION_2026-10-03.md",
+ "trustedExistingParsingHelper": {
+  "distribution": "packaging",
+  "version": "24.2",
+  "observedPath": "C:/Users/DELL/AppData/Local/Programs/Python/Python311/Lib/site-packages/packaging/__init__.py",
+  "verification": "importlib.metadata version/path only; worker hashes files before pure-data import; no install"
+ },
+ "claimBoundary": "D108 qualified metadata, original archive intact. Bounded text-source refresh and metadata parsing only; runtime/operator choices pending.",
+ "localRoutingAmendment": {
+  "originalPair": [
+   "docs/baselines/CVF_GC018_CVF_NCR_C1_METADATA_COMPLETION_SOURCE_DELTA_2026-10-03.md",
+   "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_C1_METADATA_COMPLETION_SOURCE_DELTA_2026-10-03.md"
+  ],
+  "originalReceipt": "docs/reviews/evidence/cvf-ncr-c1-metadata-completion-dispatch-inputs-2026-10-03.json",
+  "reason": "dispatcher-owned reserved worker-return basename",
+  "scopeChange": false,
+  "redispatchAllowed": false
+ }
+}
