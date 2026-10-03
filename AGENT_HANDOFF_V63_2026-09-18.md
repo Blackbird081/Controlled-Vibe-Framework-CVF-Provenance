@@ -1,6 +1,6 @@
 # CVF Agent Handoff V63 - ACEL Applied-Knowledge Owner Enrichment
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `02d5760b9761a3c68da069be347d48bb94856b08`; standalone S1 source pair; no source execution or C1 runtime grant; old C1 STOP retained; send/B2 STOP.
+Current HEAD recorded for this handoff: `02d5760b9761a3c68da069be347d48bb94856b08`; batch `CVF-NCR-S05-S1-SUPERVISOR-SOURCE`; standalone S1 source pair; no source execution or C1 runtime grant; old C1 STOP retained; send/B2 STOP.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
