@@ -2,16 +2,16 @@
   "schemaVersion": "0.1.0",
   "currentMode": "cvf_ncr_p10_closed_p11_parked",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=CVF-FLAL; NEXT_ACTION_CLASS=FLAL_T2_EXECUTE_INTERNAL_WORKER; BATCH_ID=CVF-FLAL-T2; MATERIAL_COMMIT=cbd3d6ba970066f2d912eb94714944fd73a43072; EXPANSION_ALLOWED=false. Operator2026-10-04 requested Local orchestrator/reviewer work order for manual internal-worker relay. Packet: docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_T2_PARENT_EVIDENCE_VALIDATION_2026-10-04.md; baseline: docs/baselines/CVF_GC018_FLAL_T2_PARENT_EVIDENCE_VALIDATION_2026-10-04.md. Execute only after final bound pre-dispatch PASS; capture clean executionBaseHead. Worker exact10 paths, WORKER_MUST_NOT_COMMIT; return COMPLETE_PENDING_REVIEW and RELEASED_TO_LOCAL_REVIEWER; Local owns independent probe/review/closure. Reuse F2G/PLL and T1 contract; no parallel intake or historical registry backfill. T2/T3 proof unproven, no T3 auto-open. PLL-T1 ACCEPTED_BOUNDED; CCMA pilot/return/application PARKED_BY_OPERATOR; no project edits/tests/migration. S05/C1 STOP; Q001/Q004 OPEN/Profile A; send/B2 STOP; P11/deploy parked. Public candidate0223096622b43f2560b0b22ec0be8e323d66b2a4/run37174587903 separate checkpoint; resume existing pipeline only. No provider, network, Web task, subagent or runtime successor. LHW24 closed. Costs UNKNOWN.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-FLAL; NEXT_ACTION_CLASS=FLAL_T2_EXECUTE_INTERNAL_WORKER; BATCH_ID=CVF-FLAL-T2; MATERIAL_COMMIT=c096b4903576f38ec95b84986de3678b9ee4c577; EXPANSION_ALLOWED=false. Operator2026-10-04 requested Local orchestrator/reviewer work order for manual internal-worker relay. Packet: docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_T2_PARENT_EVIDENCE_VALIDATION_R1_2026-10-04.md; baseline: docs/baselines/CVF_GC018_FLAL_T2_PARENT_EVIDENCE_VALIDATION_R1_2026-10-04.md. Execute only after final bound pre-dispatch PASS; capture clean executionBaseHead. Worker exact10 paths, WORKER_MUST_NOT_COMMIT; return COMPLETE_PENDING_REVIEW and RELEASED_TO_LOCAL_REVIEWER; Local owns independent probe/review/closure. Reuse F2G/PLL and T1 contract; no parallel intake or historical registry backfill. T2/T3 proof unproven, no T3 auto-open. PLL-T1 ACCEPTED_BOUNDED; CCMA pilot/return/application PARKED_BY_OPERATOR; no project edits/tests/migration. S05/C1 STOP; Q001/Q004 OPEN/Profile A; send/B2 STOP; P11/deploy parked. Public candidate0223096622b43f2560b0b22ec0be8e323d66b2a4/run37174587903 separate checkpoint; resume existing pipeline only. No provider, network, Web task, subagent or runtime successor. LHW24 closed. Costs UNKNOWN.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_FLAL_T2_PARENT_EVIDENCE_VALIDATION_2026-10-04.md",
-    "baselineSha256": "0016bca1c2d50fe7d212579a980227990687e944c8e9f780e3e8c262389838cf",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_T2_PARENT_EVIDENCE_VALIDATION_2026-10-04.md",
-    "workOrderSha256": "5f2dd1e32c0d8a861b42d82e8646a75895d1b8cbe72caf34eab0de3885e4487e"
+    "baselinePath": "docs/baselines/CVF_GC018_FLAL_T2_PARENT_EVIDENCE_VALIDATION_R1_2026-10-04.md",
+    "baselineSha256": "72d2d72c18ac5a45817ac4f888eafec1393c30bf38826f9e80635f174511a29b",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_T2_PARENT_EVIDENCE_VALIDATION_R1_2026-10-04.md",
+    "workOrderSha256": "271fa5df7cb0a755b45779fdd06d0b30b662f6576be390e3472429037b373f91"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

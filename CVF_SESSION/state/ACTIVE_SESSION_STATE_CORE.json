@@ -36,12 +36,12 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_FLAL_T2_PARENT_EVIDENCE_VALIDATION_2026-10-04.md",
-    "baselineSha256": "0016bca1c2d50fe7d212579a980227990687e944c8e9f780e3e8c262389838cf",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_T2_PARENT_EVIDENCE_VALIDATION_2026-10-04.md",
-    "workOrderSha256": "5f2dd1e32c0d8a861b42d82e8646a75895d1b8cbe72caf34eab0de3885e4487e"
+    "baselinePath": "docs/baselines/CVF_GC018_FLAL_T2_PARENT_EVIDENCE_VALIDATION_R1_2026-10-04.md",
+    "baselineSha256": "72d2d72c18ac5a45817ac4f888eafec1393c30bf38826f9e80635f174511a29b",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_T2_PARENT_EVIDENCE_VALIDATION_R1_2026-10-04.md",
+    "workOrderSha256": "271fa5df7cb0a755b45779fdd06d0b30b662f6576be390e3472429037b373f91"
   },
-  "currentAuthoritySyncReason": "Operator-requested FLAL-T2 manual internal-worker dispatch at cbd3d6ba970066f2d912eb94714944fd73a43072; fresh paired T2 baseline/work order with P3 shadow route, exact path/proof ledger, closeability graph and pending independent probe. Final bound pre-dispatch gate releases execution; implementation/closure unproven. CCMA remains parked; public checkpoint separate.",
+  "currentAuthoritySyncReason": "Operator-requested FLAL-T2 manual internal-worker dispatch at c096b4903576f38ec95b84986de3678b9ee4c577; fresh paired T2 baseline/work order with P3 shadow route, exact path/proof ledger, closeability graph and pending independent probe. Final bound pre-dispatch gate releases execution; implementation/closure unproven. CCMA remains parked; public checkpoint separate.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",

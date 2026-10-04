@@ -1,6 +1,6 @@
 # CVF Agent Handoff V63 - ACEL Applied-Knowledge Owner Enrichment
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD: `cbd3d6ba970066f2d912eb94714944fd73a43072`; CVF-FLAL-T2 dispatch packet; implementation pending; CCMA parked; S05/C1 STOP.
+Current HEAD: `c096b4903576f38ec95b84986de3678b9ee4c577`; CVF-FLAL-T2 dispatch packet; implementation pending; CCMA parked; S05/C1 STOP.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -25,7 +25,7 @@ AKOE current roadmap `docs/roadmaps/CVF_ACEL_APPLIED_KNOWLEDGE_OWNER_ENRICHMENT_
 - PLL-T1 material `b8ff294eb`: profile1.1, lessons3;12/12+40/40, hooks90/90; CCMA parked. Review: `docs/reviews/CVF_PLL_T1_PROJECT_LEARNING_LOOP_COMPLETION_2026-10-04.md`.
 - DGIP T1 R1 CLOSED_PASS_BOUNDED: material `ca9a2bb3f`; closure `9dcfb681e`,83/83; manifest46/46 MATCH; receipt consumed2026-10-04; probe27/27; DEV07/NET retained; no pending receipt, successor or redispatch; S05/C1 STOP.
 ## Core Guard Self-Protection Authorization
-Authorized guard-maintenance scope: FLAL-T2 dispatch continuity under `cbd3d6ba970066f2d912eb94714944fd73a43072`; six continuity paths only. Operator requested Local dispatch/manual relay; CCMA parked. Rollback: continuity only.
+Authorized guard-maintenance scope: FLAL-T2 dispatch continuity under `c096b4903576f38ec95b84986de3678b9ee4c577`; six continuity paths only. Operator requested Local dispatch/manual relay; CCMA parked. Rollback: continuity only.
 Authorized guard-maintenance scope: bind B2b packet material `588f8d63f` and release only its internal worker next move.
 Protected paths:
 - `AGENT_HANDOFF_V63_2026-09-18.md`
@@ -169,7 +169,7 @@ Rollback boundary: revert only this continuity sync; preserve material `5c1ee025
 - ACEL-AKOE-U1 is `CLOSED_PASS_BOUNDED` at `d9132412a`, disposition `SOURCE_RECONCILED_DEFER_WITH_TRIGGER`. Exact pins, 42 claims, byte hash and verification detail remain in its completion review; no import, runtime/provider, public sync or automatic successor opened.
 - CVF-NCR-R0-W01 source/profile return is Local-accepted bounded at material commit `d9b43a6f6deff7fb19710b5a9a4f50bf2a6015b6`; reviewer-fast 69/69 and pre-commit 90/90 passed. P06/P08 and actual destination/retention/cost remain open. One overbroad worker grep exposed a configured URL in tool output; the return does not reproduce it, and Local/operator config handling remains separate. No pilot or UI action was run.
 ## Next Allowed Move
-PROGRAM_ID=CVF-FLAL; NEXT_ACTION_CLASS=FLAL_T2_EXECUTE_INTERNAL_WORKER; BATCH_ID=CVF-FLAL-T2; MATERIAL_COMMIT=cbd3d6ba970066f2d912eb94714944fd73a43072; EXPANSION_ALLOWED=false. Packet: docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_T2_PARENT_EVIDENCE_VALIDATION_2026-10-04.md. Final bound gate before relay; exact10 worker paths/no commit; CCMA parked; public gate separate.
+PROGRAM_ID=CVF-FLAL; NEXT_ACTION_CLASS=FLAL_T2_EXECUTE_INTERNAL_WORKER; BATCH_ID=CVF-FLAL-T2; MATERIAL_COMMIT=c096b4903576f38ec95b84986de3678b9ee4c577; EXPANSION_ALLOWED=false. Packet: docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_T2_PARENT_EVIDENCE_VALIDATION_R1_2026-10-04.md. Final bound gate before relay; exact10 worker paths/no commit; CCMA parked; public gate separate.
 ## Parked Checkpoints
 - autorun lane-binding R1 is closed at `ee81deeeb`; HRLTP-T2 remains paused for Local no-subagent route reassessment;
 - T3C-C2 is closed and Local verified at `820aae3ec`;
@@ -202,8 +202,8 @@ Authorized guard-maintenance scope: continuity-only binding of operator-selected
 | Working directory | repository root |
 | Command or tool surface | targeted governed-source reads, roadmap validation, state generator and Git |
 | Target paths | active handoff, split session-state sources, generated aggregate/bootstrap, and compact front door |
-| Allowed scope source | operator manual internal-worker relay; `docs/baselines/CVF_GC018_FLAL_T2_PARENT_EVIDENCE_VALIDATION_2026-10-04.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_T2_PARENT_EVIDENCE_VALIDATION_2026-10-04.md` |
-| Before status evidence | worktree clean at material HEAD cbd3d6ba970066f2d912eb94714944fd73a43072; normal hooks90/90 |
+| Allowed scope source | operator manual internal-worker relay; `docs/baselines/CVF_GC018_FLAL_T2_PARENT_EVIDENCE_VALIDATION_R1_2026-10-04.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_T2_PARENT_EVIDENCE_VALIDATION_R1_2026-10-04.md` |
+| Before status evidence | worktree clean at material HEAD c096b4903576f38ec95b84986de3678b9ee4c577; normal hooks90/90 |
 | After status evidence | six continuity paths bind CVF-FLAL-T2 dispatch pair and next worker execution; CCMA parked |
 | Diff evidence | exact continuity manifest before session-only commit |
 | Approval boundary | final committed active-work-order pre-dispatch PASS before manual relay |
