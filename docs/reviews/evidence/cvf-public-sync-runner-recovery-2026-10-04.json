@@ -1,0 +1,80 @@
+{
+  "schemaVersion": "cvf.publicSyncRunnerRecovery@1",
+  "repo": "Blackbird081/Controlled-Vibe-Framework-CVF",
+  "pr": {
+    "headRefOid": "256c2de1778b7358f42ddfeacd240fcf6cfbac6f",
+    "mergeCommit": {
+      "oid": "8a4119e11db00e774ed8e7cf7d9a8caa309e81d1"
+    },
+    "mergedAt": "2026-10-04T06:03:43Z",
+    "state": "MERGED",
+    "url": "https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF/pull/9"
+  },
+  "oldPublicMain": "26c686cc99b8be965d2760f27fe875b03376c643",
+  "originalCandidate": "0223096622b43f2560b0b22ec0be8e323d66b2a4",
+  "recoveryCandidate": "256c2de1778b7358f42ddfeacd240fcf6cfbac6f",
+  "publicMain": "8a4119e11db00e774ed8e7cf7d9a8caa309e81d1",
+  "runs": [
+    {
+      "runId": 37181398333,
+      "conclusion": "success",
+      "url": "https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF/actions/runs/37181398333",
+      "headSha": "256c2de1778b7358f42ddfeacd240fcf6cfbac6f",
+      "jobs": [
+        {
+          "name": "public-sync-preflight",
+          "status": "completed",
+          "conclusion": "success",
+          "runner_name": "GitHub Actions 1000082671",
+          "labels": [
+            "ubuntu-24.04-arm"
+          ]
+        }
+      ]
+    },
+    {
+      "runId": 37181400376,
+      "conclusion": "success",
+      "url": "https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF/actions/runs/37181400376",
+      "headSha": "256c2de1778b7358f42ddfeacd240fcf6cfbac6f",
+      "jobs": [
+        {
+          "name": "public-sync-preflight",
+          "status": "completed",
+          "conclusion": "success",
+          "runner_name": "GitHub Actions 1000082673",
+          "labels": [
+            "ubuntu-24.04-arm"
+          ]
+        }
+      ]
+    }
+  ],
+  "localPublicClone": {
+    "branch": "main",
+    "head": "8a4119e11db00e774ed8e7cf7d9a8caa309e81d1",
+    "ahead": 0,
+    "behind": 0,
+    "clean": true
+  },
+  "workflow": {
+    "path": ".github/workflows/public-sync-preflight.yml",
+    "sha256": "51a4631972e451cf265998cdd272c23743cebdd3bbff53ac0387e6ae924b3637",
+    "runnerLabel": "ubuntu-24.04-arm",
+    "requiredJob": "public-sync-preflight",
+    "permissions": "contents: read"
+  },
+  "protection": {
+    "requiredCheck": "public-sync-preflight",
+    "enforceAdmins": true,
+    "requiredLinearHistory": true,
+    "autoMergeMethod": "REBASE"
+  },
+  "cleanup": {
+    "candidateBranchDeleted": true,
+    "selfHostedRunnersRegistered": 0,
+    "temporaryRunnerInvoked": false,
+    "temporaryDockerImageRemoved": true
+  },
+  "claimBoundary": "Successful publication and deterministic public-candidate preflight only; no AI/provider/runtime/deployment proof. Hosted-runner scheduling root cause remains unproven."
+}
