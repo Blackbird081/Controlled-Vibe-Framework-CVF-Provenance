@@ -1,0 +1,49 @@
+{
+  "schemaVersion": "cvf.wrs.fr2.dispatchInputs.v1",
+  "batchId": "CVF-WRS-FR2",
+  "dispatchBaseHead": "8482be833d8518a485e9ad66f1e9c6aa336b40e3",
+  "sourcePreimageHashes": {
+    "governance/compat/build_dispatch_packet_scaffold.py": "8f18d3ee33f4d0149fb9bfff05a8d4a243d64f58567b3b2763734a6098970904",
+    "governance/compat/test_build_dispatch_packet_scaffold.py": "fe3292fa02f9234117bd454ab6c1191d1ae9f893a935886a1904652601eec91a",
+    "governance/compat/fixtures/woas_r2_source_intake_scaffold_golden.md": "61f29264578b09385027e3836251f0056468e97f8bdec0ed7bc6726546a41cbd",
+    "governance/compat/check_raw_memory_release_invariant.py": "2d92bab1fb0c113506d808f3c670f66f0c44900e99e9a2c60c8f3dee1c59c7d3",
+    "governance/compat/check_public_export_disposition.py": "65478f69dbd7e7d63dc08ba05179e34b8b98862785657c67fa5c89d2fce10e99",
+    "governance/compat/check_continuation_chain.py": "c5d5619801fa4b11bfed46498fb73fc0d629aa7f032c62cf43452874d95f20ff",
+    "docs/reviews/CVF_WRS_FR1_R1_SCAFFOLD_FRICTION_REPAIR_COMPLETION_2026-10-04.md": "2699b8b04ce66c2679f6f9084b3101c7805a6bad7e4dab0cfd2482c3bc4763f8",
+    "docs/reference/CVF_AGENT_WORK_ORDER_FINALITY_AND_REVIEW_CONVERSION_ADDENDUM_2026-06-12.md": "313a5d24c7022582e7c7336fa939feda9df43f2201e99dabb606e8a76c836b8c",
+    "governance/compat/check_semantic_convergence_control.py": "94d4a26f130f5fd20eefa54871e3533e9755164dfc8204864e7f555f211352e9",
+    "governance/compat/check_work_order_acceptance_ledger.py": "8b6ce487f01eb432cab16456da98c79f0995468f6a1da8c16765d204cc6a39b4",
+    "governance/compat/check_review_cost_control.py": "82d970a5f89fb33bb4d400ffc64330d1ee54c637a2817295beb781c77d590c6c",
+    "governance/compat/check_core_guard_self_protection.py": "fb373c5efa08b6fd6a8a4bfcfa7d58918a102e4d23f6f1b3bb29c3689e800c60",
+    "governance/compat/check_gate_to_role_closeability.py": "8f00c6421eebe3c1b237e5307ac6e2b0b0343c9a35cf635bbab17aa886e00e8e",
+    "governance/compat/check_task_governance_route.py": "e3ed17814c16ff75e864a38f08054ba24fc8b3bd52536aafeda038501d310388",
+    "governance/compat/check_agent_operation_trace.py": "57aaac11abdca0b7a94998dfb21bc259d8013ce0b9bdc9d53a906202e9fabaaa",
+    "governance/compat/check_work_order_dispatch_quality.py": "a2356b1d86c32ddd3773eb908e13d0ef698d4cbc58500da2bb983a718caa8988",
+    "governance/compat/check_markdown_structural_completeness.py": "a76806333a19814c1cb1fe04f305dec33a9c5572175db728e30441637d2e78c7",
+    "governance/compat/check_governed_artifact_checker_read_ahead.py": "44f4b67c9441c541a42f91526d8f25c8805efeb1e08e6aed69c60aee6153ef77",
+    "governance/compat/check_baseline_update_compat.py": "8b8e7caf91de61e9085194d65f4b15fc708fcd53bd972a2a13bbe8f44ddfa63e",
+    "governance/compat/check_external_knowledge_intake_routing.py": "1b43209d92a1aba7cfd4c750db8625b2e82e4545b43372cd59ec2504ccc92c96",
+    "governance/compat/check_independent_review_probe_admission.py": "738cfd2da5a58910d7334805fb9bab074ddddfc8c156e4a2a9f4573c6ac51a96"
+  },
+  "newPaths": [
+    "governance/compat/test_dispatch_closure_scaffold_friction.py",
+    "docs/reviews/CVF_WRS_FR2_DISPATCH_CLOSURE_FRICTION_REPAIR_WORKER_RETURN_2026-10-04.md",
+    "docs/reviews/evidence/cvf-wrs-fr2-dispatch-closure-friction-2026-10-04.json"
+  ],
+  "readOnlyProbe": {
+    "baselineRawAssertion": false,
+    "workOrderRawAssertion": false,
+    "completionUnconditionallyOptional": true,
+    "publicSyncAlreadyPresent": true
+  },
+  "scope": [
+    "governance/compat/build_dispatch_packet_scaffold.py",
+    "governance/compat/test_dispatch_closure_scaffold_friction.py",
+    "governance/compat/test_build_dispatch_packet_scaffold.py",
+    "governance/compat/fixtures/woas_r2_source_intake_scaffold_golden.md",
+    "docs/reviews/CVF_WRS_FR2_DISPATCH_CLOSURE_FRICTION_REPAIR_WORKER_RETURN_2026-10-04.md",
+    "docs/reviews/evidence/cvf-wrs-fr2-dispatch-closure-friction-2026-10-04.json"
+  ],
+  "proofStatus": "NOT_EXECUTED_IMPLEMENTATION_PENDING",
+  "operatorSelection": "dispatch/closure scaffold friction repair; CCMA parked"
+}
