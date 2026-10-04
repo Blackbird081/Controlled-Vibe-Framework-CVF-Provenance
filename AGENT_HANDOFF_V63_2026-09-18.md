@@ -1,6 +1,6 @@
 # CVF Agent Handoff V63 - ACEL Applied-Knowledge Owner Enrichment
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD: `601c31e977ae260444697f8836ec825900cd59a0`; CVF-FLAL-T2 Local-accepted bounded; final bound closure gate follows sync; T3 parked; public PR9 waits required check.
+Current HEAD: `58264b15e`; T2 Local-accepted bounded; mixed review-range proof blocked; P4 observation rejected; T3 parked; PR9 queued.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -169,7 +169,7 @@ Rollback boundary: revert only this continuity sync; preserve material `5c1ee025
 - ACEL-AKOE-U1 is `CLOSED_PASS_BOUNDED` at `d9132412a`, disposition `SOURCE_RECONCILED_DEFER_WITH_TRIGGER`. Exact pins, 42 claims, byte hash and verification detail remain in its completion review; no import, runtime/provider, public sync or automatic successor opened.
 - CVF-NCR-R0-W01 source/profile return is Local-accepted bounded at material commit `d9b43a6f6deff7fb19710b5a9a4f50bf2a6015b6`; reviewer-fast 69/69 and pre-commit 90/90 passed. P06/P08 and actual destination/retention/cost remain open. One overbroad worker grep exposed a configured URL in tool output; the return does not reproduce it, and Local/operator config handling remains separate. No pilot or UI action was run.
 ## Next Allowed Move
-PROGRAM_ID=CVF-FLAL; NEXT_ACTION_CLASS=FLAL_T2_CLOSED_BOUNDED_NO_SUCCESSOR; BATCH_ID=CVF-FLAL-T2; MATERIAL_COMMIT=601c31e977ae260444697f8836ec825900cd59a0; EXPANSION_ALLOWED=false. Local accepted T2; probe30/30; final bound closure follows sync. T3/CCMA parked. PR9 reopened/run37174587903 queued; merge policy blocked; main26c686cc unchanged.
+PROGRAM_ID=CVF-FLAL; NEXT_ACTION_CLASS=FLAL_T2_CLOSED_BOUNDED_NO_SUCCESSOR; BATCH_ID=CVF-FLAL-T2; MATERIAL_COMMIT=601c31e977ae260444697f8836ec825900cd59a0; EXPANSION_ALLOWED=false. Local accepted T2; probe30/30; mixed review-material range blocked; P4 observation rejected/no sample. T3/CCMA parked. PR9 reopened/run37174587903 queued; merge policy blocked; main26c686cc unchanged.
 ## Parked Checkpoints
 - autorun lane-binding R1 is closed at `ee81deeeb`; HRLTP-T2 remains paused for Local no-subagent route reassessment;
 - T3C-C2 is closed and Local verified at `820aae3ec`;
@@ -206,8 +206,8 @@ Authorized guard-maintenance scope: continuity-only binding of operator-selected
 | Before status evidence | clean reviewed material 601c31e977ae260444697f8836ec825900cd59a0; normal hooks90/90 |
 | After status evidence | six continuity paths bind Local acceptance, terminal next move and separate blocked old public checkpoint; CCMA parked |
 | Diff evidence | exact continuity manifest before session-only commit |
-| Approval boundary | final committed active-work-order pre-closure PASS; no new worker dispatch |
-| Claim boundary | acceptance continuity only; public main unpromoted; no provider/runtime effect |
+| Approval boundary | split code/session proof only; no mixed-review-range PASS or new worker dispatch |
+| Claim boundary | P4 mixed-range observation rejected; marker/evidence retained; no sample/PASS; public main unchanged |
 | Agent type | Local orchestrator/reviewer and session-sync steward |
 | Invocation ID | cvf-flal-t2-closure-continuity-20261004 |
 | Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md` |
@@ -217,4 +217,4 @@ Authorized guard-maintenance scope: continuity-only binding of operator-selected
 
 ## Claim Boundary
 
-FLAL-T2 Local acceptance after one repair,30 independent probes and affected regressions; bound closure follows sync. T3/CCMA parked. Old public PR9 required gate queued; no public-main promotion or provider/runtime/deploy effect.
+T2 Local-accepted/probe30; mixed range blocked/P4 marker adjudicated. T3/CCMA parked; PR9 queued/main unchanged. No provider/runtime/deploy effect.
