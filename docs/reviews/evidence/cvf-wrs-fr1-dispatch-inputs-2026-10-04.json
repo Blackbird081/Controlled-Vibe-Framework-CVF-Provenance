@@ -1,0 +1,215 @@
+{
+  "schemaVersion": "cvf.wrsFr1DispatchInputs@1",
+  "batchId": "CVF-WRS-FR1",
+  "dispatchBaseHead": "b837ace1e4a081784a868bc7a2fbda7c5c4a63c5",
+  "beforeStatus": "CLEAN",
+  "sourcePins": [
+    {
+      "path": "docs/reviews/CVF_FLAL_T3_OFFLINE_COMPOSITION_COMPLETION_2026-10-04.md",
+      "sha256": "408b61e121108f780d9c10f740398d947430b9c07f17f38c2734a6ba58f67169",
+      "readDepth": "TARGETED_OWNER_INTERFACE",
+      "verifiedSymbol": "Findings / Position; truthful LOW retro and template candidate",
+      "authority": "GOVERNED_LOCAL_SOURCE"
+    },
+    {
+      "path": "docs/reviews/CVF_FLAL_RANGE_T1_RECONCILIATION_WORKER_RETURN_2026-10-04.md",
+      "sha256": "11b8e16157d8ab9005437e4ee620f0c32cc719cbd9b164bf22d1fc90750eca4b",
+      "readDepth": "TARGETED_OWNER_INTERFACE",
+      "verifiedSymbol": "Worker Experience Retrospective; recurring scaffold field friction",
+      "authority": "GOVERNED_LOCAL_SOURCE"
+    },
+    {
+      "path": "governance/compat/build_worker_return_skeleton_scaffold.py",
+      "sha256": "a1834cbd231afe97c5f4c0abce0a4a4a13b3d663331978ce0cceaa5d70b4afeb",
+      "readDepth": "TARGETED_OWNER_INTERFACE",
+      "verifiedSymbol": "build_worker_return_skeleton",
+      "authority": "GOVERNED_LOCAL_SOURCE"
+    },
+    {
+      "path": "governance/compat/run_worker_return_scaffold.py",
+      "sha256": "3f1ce6de4e9ab965bb2bffdf7d406ffb425a7137ce57667573737ed50674cf78",
+      "readDepth": "TARGETED_OWNER_INTERFACE",
+      "verifiedSymbol": "build_scaffold; _section_body",
+      "authority": "GOVERNED_LOCAL_SOURCE"
+    },
+    {
+      "path": "docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md",
+      "sha256": "241bf03c38d469c9543a2b837b4d67537b8f3ea44ca74f787189e1be0b34a380",
+      "readDepth": "TARGETED_OWNER_INTERFACE",
+      "verifiedSymbol": "Worker Return Packet Shape Contract; scaffold guidance",
+      "authority": "GOVERNED_LOCAL_SOURCE"
+    },
+    {
+      "path": "governance/compat/check_worker_experience_retrospective.py",
+      "sha256": "230f30ec0821e94f56daeabcb3b134459706089dae945777f59eb779fa0c0d88",
+      "readDepth": "TARGETED_OWNER_INTERFACE",
+      "verifiedSymbol": "RETRO_NA_REQUIRED_REASON; diagnose",
+      "authority": "GOVERNED_LOCAL_SOURCE"
+    },
+    {
+      "path": "governance/compat/check_work_order_acceptance_ledger.py",
+      "sha256": "8b6ce487f01eb432cab16456da98c79f0995468f6a1da8c16765d204cc6a39b4",
+      "readDepth": "TARGETED_OWNER_INTERFACE",
+      "verifiedSymbol": "validate_return",
+      "authority": "GOVERNED_LOCAL_SOURCE"
+    },
+    {
+      "path": "governance/compat/check_review_cost_control.py",
+      "sha256": "82d970a5f89fb33bb4d400ffc64330d1ee54c637a2817295beb781c77d590c6c",
+      "readDepth": "TARGETED_OWNER_INTERFACE",
+      "verifiedSymbol": "diagnose_worker_return",
+      "authority": "GOVERNED_LOCAL_SOURCE"
+    },
+    {
+      "path": "governance/compat/test_build_dispatch_packet_scaffold.py",
+      "sha256": "e0ccf3581888213bb900ca96e2dac090e504534675775ad13afbdc3b5a7a8c43",
+      "readDepth": "TARGETED_OWNER_INTERFACE",
+      "verifiedSymbol": "test_skeleton_has_worker_experience_and_fast_gate_command",
+      "authority": "GOVERNED_LOCAL_SOURCE"
+    },
+    {
+      "path": "governance/compat/test_run_worker_return_scaffold.py",
+      "sha256": "92e449135f0f21ce85749628e32d84b838c104d6b5f65a35cde637e1a15968b6",
+      "readDepth": "TARGETED_OWNER_INTERFACE",
+      "verifiedSymbol": "WorkerReturnScaffoldTests",
+      "authority": "GOVERNED_LOCAL_SOURCE"
+    }
+  ],
+  "workerPaths": [
+    "governance/compat/build_worker_return_skeleton_scaffold.py",
+    "governance/compat/run_worker_return_scaffold.py",
+    "governance/compat/test_worker_return_scaffold_friction.py",
+    "docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md",
+    "docs/reviews/CVF_WRS_FR1_SCAFFOLD_FRICTION_REPAIR_WORKER_RETURN_2026-10-04.md",
+    "docs/reviews/evidence/cvf-wrs-fr1-scaffold-friction-2026-10-04.json"
+  ],
+  "dispatcherMaterialPaths": [
+    "docs/baselines/CVF_GC018_WRS_FR1_SCAFFOLD_FRICTION_REPAIR_2026-10-04.md",
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_WRS_FR1_SCAFFOLD_FRICTION_REPAIR_2026-10-04.md",
+    "docs/reviews/evidence/cvf-wrs-fr1-dispatch-inputs-2026-10-04.json",
+    "docs/reviews/evidence/cvf-wrs-fr1-worker-return-skeleton-2026-10-04.txt"
+  ],
+  "localContinuityPaths": [
+    "AGENT_HANDOFF_V63_2026-09-18.md",
+    "CVF_SESSION_MEMORY.md",
+    "CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json",
+    "CVF_SESSION/state/entries/nextAllowedMove.json",
+    "CVF_SESSION/ACTIVE_SESSION_STATE.json",
+    "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json"
+  ],
+  "taskManifest": {
+    "schemaVersion": "cvf.taskGovernanceManifest.v1",
+    "taskId": "CVF-WRS-FR1",
+    "requestedProfile": "P3_ELEVATED",
+    "classification": {
+      "taskKind": "PURE_LOCAL_IMPLEMENTATION",
+      "authorityImpact": "ENRICHES_EXISTING_OWNER",
+      "externalEffect": "LOCAL_REVERSIBLE",
+      "dataSensitivity": "PRIVATE_REPO",
+      "reversibility": "GIT_REVERSIBLE",
+      "sourceScale": "NAMED_FILES",
+      "delegation": "MULTI_ROLE_NO_COMMIT",
+      "novelty": "KNOWN_PATTERN"
+    },
+    "pathFamilies": [
+      "governance/compat/build_worker_return_skeleton_scaffold.py",
+      "governance/compat/run_worker_return_scaffold.py",
+      "governance/compat/test_worker_return_scaffold_friction.py",
+      "docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md",
+      "docs/reviews/CVF_WRS_FR1_SCAFFOLD_FRICTION_REPAIR_WORKER_RETURN_2026-10-04.md",
+      "docs/reviews/evidence/cvf-wrs-fr1-scaffold-friction-2026-10-04.json",
+      "docs/baselines/CVF_GC018_WRS_FR1_SCAFFOLD_FRICTION_REPAIR_2026-10-04.md",
+      "docs/work_orders/CVF_AGENT_WORK_ORDER_WRS_FR1_SCAFFOLD_FRICTION_REPAIR_2026-10-04.md",
+      "docs/reviews/evidence/cvf-wrs-fr1-dispatch-inputs-2026-10-04.json",
+      "docs/reviews/evidence/cvf-wrs-fr1-worker-return-skeleton-2026-10-04.txt",
+      "AGENT_HANDOFF_V63_2026-09-18.md",
+      "CVF_SESSION_MEMORY.md",
+      "CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json",
+      "CVF_SESSION/state/entries/nextAllowedMove.json",
+      "CVF_SESSION/ACTIVE_SESSION_STATE.json",
+      "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json"
+    ],
+    "claims": [
+      "Existing scaffold/template completion guidance repair; checker contracts unchanged",
+      "Unfinished scaffolds remain blocked; truthful friction selection required"
+    ],
+    "requiredProof": [
+      "PROOF-GUIDANCE",
+      "PROOF-CONSUMERS",
+      "PROOF-RETURN"
+    ],
+    "operatorCheckpoints": [
+      "CCMA parked; actual projects and production join guard excluded"
+    ],
+    "forbiddenEffects": [
+      "PROVIDER_CALL",
+      "NETWORK",
+      "PROJECT_MUTATION",
+      "PUBLIC_SYNC",
+      "DEPLOYMENT",
+      "WORKER_COMMIT",
+      "HISTORY_REWRITE"
+    ],
+    "sourceEvidence": {
+      "selectedFilesFullyRead": false,
+      "corpusReceiptRef": null,
+      "completenessClaimChanged": false
+    }
+  },
+  "taskRoutingReceipt": {
+    "schemaVersion": "cvf.taskGovernanceRoute.v1",
+    "taskId": "CVF-WRS-FR1",
+    "profile": "P3_ELEVATED",
+    "computedMinimumProfile": "P3_ELEVATED",
+    "classification": {
+      "taskKind": "PURE_LOCAL_IMPLEMENTATION",
+      "authorityImpact": "ENRICHES_EXISTING_OWNER",
+      "externalEffect": "LOCAL_REVERSIBLE",
+      "dataSensitivity": "PRIVATE_REPO",
+      "reversibility": "GIT_REVERSIBLE",
+      "sourceScale": "NAMED_FILES",
+      "delegation": "MULTI_ROLE_NO_COMMIT",
+      "novelty": "KNOWN_PATTERN"
+    },
+    "escalationTriggers": [
+      "CANONICAL_STANDARD_SURFACE",
+      "CONTINUITY_STATE_SURFACE",
+      "DELEGATION_MULTI_ROLE_NO_COMMIT",
+      "GOVERNANCE_MACHINE_SURFACE",
+      "TASKKIND_PURE_LOCAL_IMPLEMENTATION"
+    ],
+    "selectedBundles": [
+      "CORE_INTEGRITY",
+      "ARTIFACT_SHAPE",
+      "SOURCE_PROVENANCE",
+      "DELEGATION_HANDOFF",
+      "CODE_QUALITY",
+      "CONTINUITY"
+    ],
+    "skippedBundles": {
+      "CORPUS_ACCOUNTING": "NO_CORPUS_OR_COMPLETENESS_CHANGE",
+      "STATE_AND_SECURITY": "NO_STATE_AUTH_SECRET_DEPENDENCY_OR_MUTATION_TRIGGER",
+      "RUNTIME_LIVE": "NO_RUNTIME_NETWORK_OR_LIVE_EFFECT",
+      "PUBLIC_RELEASE": "NO_PUBLIC_RELEASE_OR_DESTRUCTIVE_EFFECT"
+    },
+    "estimatedCommandCount": 6,
+    "selectiveExecutionAuthorized": false,
+    "legacyGateDisposition": "RUN_FULL_LEGACY_BUNDLE",
+    "receiptStatus": "ROUTED_SHADOW",
+    "validationErrors": []
+  },
+  "templateBaseLines": 1123,
+  "privateDebtBefore": {
+    "behind": 0,
+    "ahead": 26,
+    "disposition": "CONTINUE_OPERATOR_SELECTED_PRIVATE_DISPATCH_NO_PUSH"
+  },
+  "claimBoundary": "bounded authoring admission; incomplete skeletons remain incomplete; no rule or runtime change",
+  "datedOwnerDiscovery": {
+    "registryPath": "governance/compat/CVF_ACTIVE_WINDOW_REGISTRY.json",
+    "registrySha256": "3ca51de57e7a6b5b8a694ee4223a2959adb7360d6dc6923a2ee62b85073029a4",
+    "ownerPath": "docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md",
+    "classification": "NOT_BINDING_REFERENCE_WITH_REASON",
+    "reason": "Canonical authoring template is absent from registry activePath entries; in-place guidance repair, no authority-window rotation."
+  }
+}
