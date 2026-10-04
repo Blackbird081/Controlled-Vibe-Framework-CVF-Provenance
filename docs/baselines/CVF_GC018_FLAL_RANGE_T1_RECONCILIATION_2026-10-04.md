@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-execution-baseline
 docType: gc018
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 Date: 2026-10-04
 Batch ID: CVF-FLAL-RANGE-T1
 providerExecutionAuthority: FORBIDDEN
@@ -132,3 +132,32 @@ Diagnosis only, not protected repair, T3, project adoption, provider proof or pu
 | docOnlyNewFields | diagnostic receipt/plan; no new checker authority |
 | claimBoundary | diagnostic preparation only |
 
+
+## Local Reviewer Acceptance
+
+Local accepts REQ-1/2 and REQ-3 with consolidated plan correction; original return/evidence preserved. Completion: `docs/reviews/CVF_FLAL_RANGE_T1_RECONCILIATION_COMPLETION_2026-10-04.md`. Independent probe9/9; full committed closure confirmation follows HEAD sync. T3 parked.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_RANGE_T1_RECONCILIATION_2026-10-04.md | CLOSED_PASS_BOUNDED; REQ-1/2/3 reviewed with Local plan correction | PASS |
+| Completion or reviewer artifact | docs/reviews/CVF_FLAL_RANGE_T1_RECONCILIATION_COMPLETION_2026-10-04.md | ACCEPTED_BOUNDED; independent9/9 | PASS |
+| Roadmap state | docs/roadmaps/CVF_FOUNDATION_LEARNING_ADMISSION_AND_LOOPBACK_ROADMAP_2026-10-04.md | T2 accepted bounded; T3 parked; diagnosis does not change roadmap milestones | PASS |
+| Registry JSON | docs/reference/downstream_gate_profile/downstream_finding_intake_registry.json | raw SHA-256 0077d4ba82bfb0c07d404784461f8fbd2f835678a8c4de5a2b2515c3072c2827; measured bytes retained, no diagnostic registry mutation required | PASS |
+| Registry Markdown | docs/reference/downstream_gate_profile/README.md | raw SHA-256 59e0ae7fe57b57ca815d2151c61137f6a1b0049e553c573c29489931e3333adc; existing navigation retained, no registry companion update required | PASS |
+| External evidence digest | N/A with reason: internal worker and Local probe only | no external intake | N/A with reason: no external source |
+| System loop interlock | N/A with reason: diagnosis only, no runtime or project loopback | parked lanes retained | N/A with reason: no interlock change |
+| Session continuity | six active continuity surfaces | frozen paired raw hashes, source next move and generated read models; final HEAD-marker sync follows | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| Fixed active-pair raw hashes | stale edit refuses | Local independent raw-hash cases refuse; refreshed pair passes | PASS |
+| Exact authorization | only covered changed paths admit | Local exact positive and omitted/additional path negatives pass | PASS |
+| Historical failure | retained | T2 original refusal and rejected sample are not reclassified | PASS |
+
+## Current Runtime Freshness Verification
+
+At worker material38faa8647, the existing current-authority and steward owner predicates were inspected and the Local disposable raw-pin/manifest probe passed9/9. Retained registry bytes were measured directly. This is targeted structural freshness; no runtime capability absence or provider behavior claim.

@@ -37,11 +37,11 @@
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_FLAL_RANGE_T1_RECONCILIATION_2026-10-04.md",
-    "baselineSha256": "0a63d74ed5ba50392281599f223c511363632807e8d5dbc7b65f8556d6674b62",
+    "baselineSha256": "5b7620f2af0ba1603c53cf85c6b64df35dddcd5271d95ec24b0a67e71cc0192f",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_RANGE_T1_RECONCILIATION_2026-10-04.md",
-    "workOrderSha256": "68f3b9b1a249dc3057b4967b27b3c764249e1837a3f3c4c2dd5df7a37b8f223f"
+    "workOrderSha256": "a97e254a50ca961465fbe327a11d5e5bbd2fb9a7aecaecc5e11d64035b2b6683"
   },
-  "currentAuthoritySyncReason": "Operator continuation admits bounded existing-owner closure range diagnosis, not T3 or protected repair. Paired material 5e5fb30eebe3950c62ac790f6fa3714ec54077ea; two-path internal no-commit return. Original T2 range failure and technical acceptance retained; public PR9 resolved. Final bound pre-dispatch required. Final binding names EXECUTE diagnostic action and exact batch/material marker; historical authorization lines preserved.",
+  "currentAuthoritySyncReason": "Local admits completion path, accepts bounded RANGE-T1 diagnosis with corrected plan and independent9/9; closes frozen pair and raw-byte pins atomically through exact ten-path existing authorization. Fresh committed pre-closure follows dedicated HEAD sync; no old-range relabeling or successor.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "cvf.flalRangeT1LocalProbe@1",
+  "actor": "CODEX_LOCAL_REVIEWER",
+  "invocation": "codex-flal-range-t1-local-20261004",
+  "oracleSeparation": "Independently authored literal fixture files and invariants; no worker probe imports or replay. Actual owner functions unchanged; root configuration only.",
+  "cases": [
+    {
+      "case": "pinned_active_pair",
+      "expected": [],
+      "observed": [],
+      "pass": true
+    },
+    {
+      "case": "work_order_only_edit_stales_pin",
+      "expected": true,
+      "observed": true,
+      "pass": true
+    },
+    {
+      "case": "both_edits_without_pin_update",
+      "expected": 2,
+      "observed": 2,
+      "pass": true
+    },
+    {
+      "case": "frozen_pair_and_refreshed_pins",
+      "expected": [],
+      "observed": [],
+      "pass": true
+    },
+    {
+      "case": "line_endings_are_raw_byte_identity",
+      "expected": true,
+      "observed": true,
+      "pass": true
+    },
+    {
+      "case": "missing_exact_authorization",
+      "expected": false,
+      "observed": false,
+      "pass": true
+    },
+    {
+      "case": "exact_authorization",
+      "expected": true,
+      "observed": true,
+      "pass": true
+    },
+    {
+      "case": "omitted_hash_source_path",
+      "expected": false,
+      "observed": false,
+      "pass": true
+    },
+    {
+      "case": "additional_unlisted_changed_path",
+      "expected": false,
+      "observed": false,
+      "pass": true
+    }
+  ],
+  "total": 9,
+  "failed": 0,
+  "source": "from pathlib import Path\nimport sys,json,hashlib,tempfile\nroot=Path.cwd()\nsys.path.insert(0,str(root/'governance/compat'))\nimport check_active_session_state as authority\nimport run_agent_commit_steward_preflight as steward\nresults=[]\ndef record(name,expected,observed):\n    results.append({'case':name,'expected':expected,'observed':observed,'pass':expected==observed})\nwith tempfile.TemporaryDirectory(prefix='cvf-local-range-') as dirname:\n    fixture=Path(dirname)\n    before=(authority.REPO_ROOT,steward.REPO_ROOT)\n    authority.REPO_ROOT=fixture\n    steward.REPO_ROOT=fixture\n    try:\n        bp='docs/baselines/local-fixture.md'; wp='docs/work_orders/local-fixture.md'\n        for path in (bp,wp):\n            p=fixture/path;p.parent.mkdir(parents=True,exist_ok=True);p.write_bytes(b'Status: ACTIVE\\n')\n        def digest(path):return hashlib.sha256((fixture/path).read_bytes()).hexdigest()\n        pin={'baselinePath':bp,'baselineSha256':digest(bp),'workOrderPath':wp,'workOrderSha256':digest(wp)}\n        record('pinned_active_pair',[],authority._validate_current_authority(pin))\n        (fixture/wp).write_bytes(b'Status: CLOSED_PASS_BOUNDED\\n')\n        record('work_order_only_edit_stales_pin',True,any('workOrderSha256 does not match' in s for s in authority._validate_current_authority(pin)))\n        (fixture/bp).write_bytes(b'Status: CLOSED_PASS_BOUNDED\\n')\n        record('both_edits_without_pin_update',2,len(authority._validate_current_authority(pin)))\n        pin['workOrderSha256']=digest(wp);pin['baselineSha256']=digest(bp)\n        record('frozen_pair_and_refreshed_pins',[],authority._validate_current_authority(pin))\n        (fixture/wp).write_bytes(b'Status: CLOSED_PASS_BOUNDED\\r\\n')\n        record('line_endings_are_raw_byte_identity',True,any('workOrderSha256 does not match' in s for s in authority._validate_current_authority(pin)))\n        host='docs/reviews/local-closure.md'; paths=(host,bp,wp,'CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json')\n        p=fixture/host;p.parent.mkdir(parents=True,exist_ok=True)\n        def text(manifest):\n            return '## Agent Operation Trace Block\\nActual changed set\\n\\n## Mixed Protected-Path Atomicity Authorization\\nDisposition: AUTHORIZED_EXACT_MANIFEST\\nAtomicity reason: fixed active pair raw hashes.\\nRollback boundary: disposable fixture.\\nExact changed manifest: '+'; '.join('`'+s+'`' for s in manifest)+'\\n'\n        p.write_text('## Agent Operation Trace Block\\nActual changed set\\n',encoding='utf-8')\n        record('missing_exact_authorization',False,steward._has_exact_mixed_atomicity_authorization(host,paths))\n        p.write_text(text(paths),encoding='utf-8')\n        record('exact_authorization',True,steward._has_exact_mixed_atomicity_authorization(host,paths))\n        p.write_text(text(paths[:-1]),encoding='utf-8')\n        record('omitted_hash_source_path',False,steward._has_exact_mixed_atomicity_authorization(host,paths))\n        p.write_text(text(paths),encoding='utf-8')\n        record('additional_unlisted_changed_path',False,steward._has_exact_mixed_atomicity_authorization(host,paths+('unrelated.txt',)))\n    finally:\n        authority.REPO_ROOT,steward.REPO_ROOT=before\ndata={'schemaVersion':'cvf.flalRangeT1LocalProbe@1','actor':'CODEX_LOCAL_REVIEWER','invocation':'codex-flal-range-t1-local-20261004','oracleSeparation':'Independently authored literal fixture files and invariants; no worker probe imports or replay. Actual owner functions unchanged; root configuration only.','cases':results,'total':len(results),'failed':sum(not r['pass'] for r in results),'source':Path(__file__).read_text(encoding='utf-8'),'claimBoundary':'Two owner predicates only. Conditional fixed-active-pair hash obligation is fixture-tested; no universal impossibility of alternative commit strategies or full bundle asserted.'}\nPath('.cvf/runtime/flal-range-t1-local-probe-result.json').write_text(json.dumps(data,indent=2)+'\\n',encoding='utf-8')\nprint(json.dumps({'total':data['total'],'failed':data['failed']}))\nif data['failed']:sys.exit(1)\n",
+  "claimBoundary": "Two owner predicates only. Conditional fixed-active-pair hash obligation is fixture-tested; no universal impossibility of alternative commit strategies or full bundle asserted."
+}

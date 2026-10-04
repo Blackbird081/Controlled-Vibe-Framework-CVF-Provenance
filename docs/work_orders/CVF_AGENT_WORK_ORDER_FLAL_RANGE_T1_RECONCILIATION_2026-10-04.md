@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 docType: work_order
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 Date: 2026-10-04
 Batch ID: CVF-FLAL-RANGE-T1
 Dispatch base head: 56ff4cf6ae23693215d4a49a7efee8e9740ec77e
@@ -215,8 +215,8 @@ laneReleaseEvidence: worker return plus explicit RELEASED_TO_LOCAL_REVIEWER decl
 
 | Field | Value |
 |---|---|
-| completionReviewPath | reviewer disposition inside returned packet; no separate review required unless an unresolved blocker demands it |
-| reviewerOwnedClosurePaths | returned diagnosis/evidence, governing work order/baseline and separately bound continuity; any protected repair requires a separately admitted exact packet |
+| completionReviewPath | `docs/reviews/CVF_FLAL_RANGE_T1_RECONCILIATION_COMPLETION_2026-10-04.md` admitted by Local at return review |
+| reviewerOwnedClosurePaths | exact ten-path atomic manifest in the completion review plus dedicated six-path HEAD sync |
 | closureOwner | Local reviewer/closer |
 | workerCommitPermission | FORBIDDEN |
 
@@ -262,7 +262,7 @@ Returned defects: NONE_RETURNED. Actual totalCandidates=0; not proof that the wh
 | Field | Value |
 |---|---|
 | applicableCheckersRead | governance/compat/check_baseline_update_compat.py; governance/compat/check_markdown_structural_completeness.py; governance/compat/check_governed_artifact_checker_read_ahead.py; governance/compat/check_agent_operation_trace.py; governance/compat/check_core_guard_self_protection.py; governance/compat/check_work_order_dispatch_quality.py; governance/compat/check_work_order_dispatch_quality_artifacts.py; governance/compat/check_work_order_acceptance_ledger.py; governance/compat/check_gate_to_role_closeability.py; governance/compat/check_agent_handoff_boundary.py; governance/compat/check_finding_to_governance_learning.py; governance/compat/check_external_knowledge_intake_routing.py; governance/compat/check_public_export_disposition.py; governance/compat/check_epistemic_process_packet.py; governance/compat/check_dispatch_release_readiness.py; governance/compat/check_task_governance_route.py; governance/compat/check_independent_review_probe_admission.py; governance/compat/check_dispatch_prompt_envelope.py; governance/compat/check_worker_return_quality_gate.py |
-| literalTokensReviewed | DISPATCH_READY; acceptance-ledger-json; exact ACCEPT disposition; LOCAL probe decision owner; gate-role graph; first-section envelope; Expected manifest; Manifest delta; Public Export Disposition |
+| literalTokensReviewed | HISTORICAL_DISPATCH_ADMITTED; acceptance-ledger-json; exact ACCEPT disposition; LOCAL probe decision owner; gate-role graph; first-section envelope; Expected manifest; Manifest delta; Public Export Disposition |
 | gateRunPurpose | confirm admitted implementation packet shape; no implementation proof |
 | claimBoundary | named owner reconciliation and design only; admission only; no implementation or runtime behavior proof |
 
@@ -313,22 +313,22 @@ Claim Update: diagnostic task admitted; production repair and T3 remain unproven
 
 | Field | Evidence |
 |---|---|
-| Actor | Local orchestrator/dispatcher/reviewer |
+| Actor | Codex Local reviewer/closer |
 | Provider or surface | private shared workspace |
-| Session or invocation | cvf-flal-range-t1-dispatch-20261004 |
-| Working directory | provenance repository root |
-| Command or tool surface | targeted source reads, official scaffold, raw hashes, packet conformance gates |
-| Target paths | `docs/baselines/CVF_GC018_FLAL_RANGE_T1_RECONCILIATION_2026-10-04.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_RANGE_T1_RECONCILIATION_2026-10-04.md`; `docs/reviews/evidence/cvf-flal-range-t1-dispatch-inputs-2026-10-04.json`; `docs/reviews/evidence/cvf-flal-range-t1-worker-return-skeleton-2026-10-04.txt`; `AGENT_HANDOFF_V63_2026-09-18.md` |
-| Allowed scope source | operator continuation; disclosed T2 closure limitation |
-| Before status evidence | worktree clean at HEAD 56ff4cf6ae23693215d4a49a7efee8e9740ec77e |
-| After status evidence | four-path diagnostic admission plus required material HEAD marker; implementation not executed |
-| Diff evidence | git diff --name-status; git diff --check; staged exact four-path reconciliation |
-| Approval boundary | final bound pre-dispatch PASS before manual relay |
-| Claim boundary | diagnostic admission only; no retrospective mixed-range PASS |
-| Agent type | INTERNAL_AGENT dispatcher/reviewer |
-| Invocation ID | cvf-flal-range-t1-dispatch-20261004 |
-| Expected manifest | `docs/baselines/CVF_GC018_FLAL_RANGE_T1_RECONCILIATION_2026-10-04.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_RANGE_T1_RECONCILIATION_2026-10-04.md`; `docs/reviews/evidence/cvf-flal-range-t1-dispatch-inputs-2026-10-04.json`; `docs/reviews/evidence/cvf-flal-range-t1-worker-return-skeleton-2026-10-04.txt`; `AGENT_HANDOFF_V63_2026-09-18.md` |
-| Actual changed set | `docs/baselines/CVF_GC018_FLAL_RANGE_T1_RECONCILIATION_2026-10-04.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_RANGE_T1_RECONCILIATION_2026-10-04.md`; `docs/reviews/evidence/cvf-flal-range-t1-dispatch-inputs-2026-10-04.json`; `docs/reviews/evidence/cvf-flal-range-t1-worker-return-skeleton-2026-10-04.txt`; `AGENT_HANDOFF_V63_2026-09-18.md` |
+| Session or invocation | codex-flal-range-t1-local-review-20261004 |
+| Working directory | provenance repository root; disposable fixture root |
+| Command or tool surface | targeted evidence/source reads, separate nine-case probe, raw hashes, generated state, staged governance gates |
+| Target paths | `docs/baselines/CVF_GC018_FLAL_RANGE_T1_RECONCILIATION_2026-10-04.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_RANGE_T1_RECONCILIATION_2026-10-04.md`; `docs/reviews/CVF_FLAL_RANGE_T1_RECONCILIATION_COMPLETION_2026-10-04.md`; `docs/reviews/evidence/cvf-flal-range-t1-local-independent-probe-2026-10-04.json`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Allowed scope source | governing work order Reviewer Closure Conversion; operator submitted return for Local decision |
+| Before status evidence | worker material 38faa8647e01225fadc36365b555466d938c6522; two-path original return/evidence committed; lane released |
+| After status evidence | ten-path Local closure; final committed-range confirmation follows HEAD-marker sync |
+| Diff evidence | git diff --name-status; git diff --check; exact ten-path staged manifest |
+| Approval boundary | no worker redispatch; Local owns completion path and closure |
+| Claim boundary | bounded owner-predicate diagnosis; historical T2 FAIL retained; no full-bundle PASS until later committed receipt |
+| Agent type | LOCAL_REVIEWER_NOT_IMPLEMENTATION_WORKER |
+| Invocation ID | codex-flal-range-t1-local-review-20261004 |
+| Expected manifest | `docs/baselines/CVF_GC018_FLAL_RANGE_T1_RECONCILIATION_2026-10-04.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_RANGE_T1_RECONCILIATION_2026-10-04.md`; `docs/reviews/CVF_FLAL_RANGE_T1_RECONCILIATION_COMPLETION_2026-10-04.md`; `docs/reviews/evidence/cvf-flal-range-t1-local-independent-probe-2026-10-04.json`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Actual changed set | `docs/baselines/CVF_GC018_FLAL_RANGE_T1_RECONCILIATION_2026-10-04.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_RANGE_T1_RECONCILIATION_2026-10-04.md`; `docs/reviews/CVF_FLAL_RANGE_T1_RECONCILIATION_COMPLETION_2026-10-04.md`; `docs/reviews/evidence/cvf-flal-range-t1-local-independent-probe-2026-10-04.json`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |
 
@@ -340,7 +340,7 @@ Reason: parent-only contract design; existing public pipeline is separate.
 
 ## Claim Boundary
 
-DISPATCH_READY declaration; actual release requires committed paired authority, continuity and final bound pre-dispatch PASS. Diagnosis only; original range FAIL and T2 technical acceptance are separate. T3/CCMA parked; S05/C1/send/B2 STOP; Q001/Q004 OPEN/Profile A; P11/deploy parked. No provider invocation, actual-project mutation, public push, guard implementation or history rewrite.
+Historical dispatch was released at 95c8294ef; current Local acceptance and corrected plan are recorded in the completion review. Diagnosis only; original range FAIL and T2 technical acceptance are separate. T3/CCMA parked; S05/C1/send/B2 STOP; Q001/Q004 OPEN/Profile A; P11/deploy parked. No provider invocation, actual-project mutation, public push, guard implementation or history rewrite.
 
 ## Foundation Storage Layout Block
 
@@ -384,7 +384,7 @@ DISPATCH_READY declaration; actual release requires committed paired authority, 
 |---|---|---|
 | docs/roadmaps/CVF_FOUNDATION_LEARNING_ADMISSION_AND_LOOPBACK_ROADMAP_2026-10-04.md T2 bounded validation | preserve technical acceptance; diagnose closure limitation | PROOF-DIAGNOSIS |
 | docs/reviews/CVF_FLAL_T2_PARENT_EVIDENCE_VALIDATION_COMPLETION_2026-10-04.md closure range requirement | existing exact atomicity route and forward repair plan | PROOF-AUTHORIZATION; PROOF-PLAN |
-| Same roadmap T3 offline composition | parked; not dispatched | no successor proof claimed |
+| Same roadmap T3 offline composition | parked; no successor authority | no successor proof claimed |
 
 ## Task Governance Routing Manifest
 
@@ -530,10 +530,10 @@ Existing closure/authority owner evidence is reused within named interfaces only
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: Local authors this four-path diagnostic dispatch and six-path continuity separately. Worker writes only the two-path returned diagnosis/evidence ledger; no guard or canonical standard edits.
-Protected paths: `docs/reviews/CVF_FLAL_RANGE_T1_RECONCILIATION_WORKER_RETURN_2026-10-04.md`; `docs/reviews/evidence/cvf-flal-range-t1-reconciliation-2026-10-04.json`; `docs/baselines/CVF_GC018_FLAL_RANGE_T1_RECONCILIATION_2026-10-04.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_RANGE_T1_RECONCILIATION_2026-10-04.md`; `docs/reviews/evidence/cvf-flal-range-t1-dispatch-inputs-2026-10-04.json`; `docs/reviews/evidence/cvf-flal-range-t1-worker-return-skeleton-2026-10-04.txt`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`.
-Operator authorization: 2026-10-04 continue existing orchestrator/reviewer work and manually relay work to internal worker; reconcile the disclosed T2 closure limitation.
-Rollback boundary: only this new packet, diagnostic return and continuity binding; preserve accepted T2 evidence, original failed range and public merge. No history rewrite.
+Authorized guard-maintenance scope: Local closure of the two-path diagnostic return under Reviewer Closure Conversion; admit this completion review and one independent probe evidence artifact, close the governing pair and bind six continuity paths atomically. No checker, standard, template or collector edit.
+Protected paths: `docs/baselines/CVF_GC018_FLAL_RANGE_T1_RECONCILIATION_2026-10-04.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_RANGE_T1_RECONCILIATION_2026-10-04.md`; `docs/reviews/CVF_FLAL_RANGE_T1_RECONCILIATION_COMPLETION_2026-10-04.md`; `docs/reviews/evidence/cvf-flal-range-t1-local-independent-probe-2026-10-04.json`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`.
+Operator authorization: existing instruction to review the internal worker return; Local decides the named BLOCKED completion path using the governing work order, not a worker scope expansion.
+Rollback boundary: this ten-path closure and later continuity only; preserve worker material, original T2 FAIL, prior adjudication, public merge and parked lanes.
 
 ## Gate-To-Role Closeability Contract
 
@@ -583,6 +583,32 @@ implementation/closure is a later independently reviewed batch.
 ## Mixed Protected-Path Atomicity Authorization
 
 Disposition: AUTHORIZED_EXACT_MANIFEST
-Atomicity reason: pre-release wording correction must carry the current committed material HEAD marker required by GC-020. This declaration uses the existing steward route, not a new exemption. Full authority/next-move binding remains a separate six-path sync.
-Rollback boundary: only five named Local-owned admission paths; no original evidence or history rewrite.
-Exact changed manifest: `docs/baselines/CVF_GC018_FLAL_RANGE_T1_RECONCILIATION_2026-10-04.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_RANGE_T1_RECONCILIATION_2026-10-04.md`; `docs/reviews/evidence/cvf-flal-range-t1-dispatch-inputs-2026-10-04.json`; `docs/reviews/evidence/cvf-flal-range-t1-worker-return-skeleton-2026-10-04.txt`; `AGENT_HANDOFF_V63_2026-09-18.md`.
+Atomicity reason: closing the fixed current-authority baseline/work order changes their raw-byte pins; core and generated read models must bind those final bytes in this same commit. The exact manifest uses the existing steward exception.
+Rollback boundary: only the ten named closure paths; no history rewrite, checker weakening or old evidence replacement.
+Exact changed manifest: `docs/baselines/CVF_GC018_FLAL_RANGE_T1_RECONCILIATION_2026-10-04.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_RANGE_T1_RECONCILIATION_2026-10-04.md`; `docs/reviews/CVF_FLAL_RANGE_T1_RECONCILIATION_COMPLETION_2026-10-04.md`; `docs/reviews/evidence/cvf-flal-range-t1-local-independent-probe-2026-10-04.json`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`.
+
+
+## Local Reviewer Acceptance
+
+Local accepts REQ-1/2 and REQ-3 with consolidated plan correction; original return/evidence preserved. Completion: `docs/reviews/CVF_FLAL_RANGE_T1_RECONCILIATION_COMPLETION_2026-10-04.md`. Independent probe9/9; full committed closure confirmation follows HEAD sync. T3 parked.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_RANGE_T1_RECONCILIATION_2026-10-04.md | CLOSED_PASS_BOUNDED; REQ-1/2/3 reviewed with Local plan correction | PASS |
+| Completion or reviewer artifact | docs/reviews/CVF_FLAL_RANGE_T1_RECONCILIATION_COMPLETION_2026-10-04.md | ACCEPTED_BOUNDED; independent9/9 | PASS |
+| Roadmap state | docs/roadmaps/CVF_FOUNDATION_LEARNING_ADMISSION_AND_LOOPBACK_ROADMAP_2026-10-04.md | T2 accepted bounded; T3 parked; diagnosis does not change roadmap milestones | PASS |
+| Registry JSON | docs/reference/downstream_gate_profile/downstream_finding_intake_registry.json | raw SHA-256 0077d4ba82bfb0c07d404784461f8fbd2f835678a8c4de5a2b2515c3072c2827; measured bytes retained, no diagnostic registry mutation required | PASS |
+| Registry Markdown | docs/reference/downstream_gate_profile/README.md | raw SHA-256 59e0ae7fe57b57ca815d2151c61137f6a1b0049e553c573c29489931e3333adc; existing navigation retained, no registry companion update required | PASS |
+| External evidence digest | N/A with reason: internal worker and Local probe only | no external intake | N/A with reason: no external source |
+| System loop interlock | N/A with reason: diagnosis only, no runtime or project loopback | parked lanes retained | N/A with reason: no interlock change |
+| Session continuity | six active continuity surfaces | frozen paired raw hashes, source next move and generated read models; final HEAD-marker sync follows | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| Fixed active-pair raw hashes | stale edit refuses | Local independent raw-hash cases refuse; refreshed pair passes | PASS |
+| Exact authorization | only covered changed paths admit | Local exact positive and omitted/additional path negatives pass | PASS |
+| Historical failure | retained | T2 original refusal and rejected sample are not reclassified | PASS |

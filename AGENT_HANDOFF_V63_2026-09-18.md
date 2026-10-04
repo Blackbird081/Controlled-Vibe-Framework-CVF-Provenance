@@ -1,6 +1,6 @@
 # CVF Agent Handoff V63 - ACEL Applied-Knowledge Owner Enrichment
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD: `62edc7b05810aed0b43d284fe0eb2029cb0ea7c5`; packet `5e5fb30eebe3950c62ac790f6fa3714ec54077ea`; batch CVF-FLAL-RANGE-T1; diagnosis only; T3/CCMA parked.
+Current HEAD: `38faa8647e01225fadc36365b555466d938c6522`; RANGE-T1 review/probe9; atomic closure gate pending; T2 FAIL retained; T3/CCMA parked.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -8,9 +8,9 @@ Remote tracking branch: `origin/main`. Exact remote SHA must be derived live fro
 ## Purpose
 Carry CVF-NCR v2.8 and closed AKOE/G1-G7. Applied-knowledge details remain in the governed roadmap.
 ## Scope / Target / Owner Boundary
-Role: Local orchestrator/reviewer; phase: manual internal diagnostic dispatch; decision owner: Local; T3/CCMA/S05/P11 parked.
+Role: Local reviewer/closer; phase: RANGE-T1 closure confirmation; decision owner: Local; T3/CCMA/S05/P11 parked.
 ## Startup Acknowledgment
-Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`; handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=FLAL range diagnosis after bound gate; role=Local orchestrator/reviewer; phase=manual internal dispatch; decision owner=Local; T3/CCMA/S05/P11 parked.
+Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`; handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=RANGE-T1 committed closure confirmation; role=Local reviewer/closer; phase=closure; decision owner=Local; T3/CCMA/S05/P11 parked.
 ## Current Mode
 `cvf_ncr_p10_closed_p11_parked`. CVF-NCR-R1-S11-R1 is closed at `bd15b2600` after material `1a538d10d`. P10 is `ACTIVE_PRODUCTION_RUNTIME`; P11 stays parked. Latest closed learning-history wave: `LHW24`.
 ## Active Boundary
@@ -25,7 +25,7 @@ AKOE current roadmap `docs/roadmaps/CVF_ACEL_APPLIED_KNOWLEDGE_OWNER_ENRICHMENT_
 - PLL-T1 material `b8ff294eb`: profile1.1, lessons3;12/12+40/40, hooks90/90; CCMA parked. Review: `docs/reviews/CVF_PLL_T1_PROJECT_LEARNING_LOOP_COMPLETION_2026-10-04.md`.
 - DGIP T1 R1 CLOSED_PASS_BOUNDED: material `ca9a2bb3f`; closure `9dcfb681e`,83/83; manifest46/46 MATCH; receipt consumed2026-10-04; probe27/27; DEV07/NET retained; no pending receipt, successor or redispatch; S05/C1 STOP.
 ## Core Guard Self-Protection Authorization
-Authorized guard-maintenance scope: FLAL range diagnostic continuity under `5e5fb30eebe3950c62ac790f6fa3714ec54077ea`; six paths. Operator continued; preserve T2 acceptance/range FAIL and public merge. Rollback: continuity only.
+Authorized guard-maintenance scope: RANGE-T1 closure continuity at `38faa8647e01225fadc36365b555466d938c6522`; exact ten-path carrier in completion review; preserve T2 FAIL/public merge. Rollback: closure only.
 Authorized guard-maintenance scope: bind B2b packet material `588f8d63f` and release only its internal worker next move.
 Protected paths:
 - `AGENT_HANDOFF_V63_2026-09-18.md`
@@ -169,7 +169,7 @@ Rollback boundary: revert only this continuity sync; preserve material `5c1ee025
 - ACEL-AKOE-U1 is `CLOSED_PASS_BOUNDED` at `d9132412a`, disposition `SOURCE_RECONCILED_DEFER_WITH_TRIGGER`. Exact pins, 42 claims, byte hash and verification detail remain in its completion review; no import, runtime/provider, public sync or automatic successor opened.
 - CVF-NCR-R0-W01 source/profile return is Local-accepted bounded at material commit `d9b43a6f6deff7fb19710b5a9a4f50bf2a6015b6`; reviewer-fast 69/69 and pre-commit 90/90 passed. P06/P08 and actual destination/retention/cost remain open. One overbroad worker grep exposed a configured URL in tool output; the return does not reproduce it, and Local/operator config handling remains separate. No pilot or UI action was run.
 ## Next Allowed Move
-PROGRAM_ID=CVF-FLAL; NEXT_ACTION_CLASS=FLAL_RANGE_T1_EXECUTE_BOUNDED_DIAGNOSTIC; BATCH_ID=CVF-FLAL-RANGE-T1; MATERIAL_COMMIT=5e5fb30eebe3950c62ac790f6fa3714ec54077ea; EXPANSION_ALLOWED=false. Manual two-path no-commit diagnosis after bound gate. T2 technical acceptance/range FAIL retained; T3/CCMA parked. Public PR9 merged/main8a4119e1/required checks PASS.
+PROGRAM_ID=CVF-FLAL; NEXT_ACTION_CLASS=FLAL_RANGE_T1_REVIEWED_CLOSURE_CONFIRMATION_ONLY; BATCH_ID=CVF-FLAL-RANGE-T1; MATERIAL_COMMIT=38faa8647e01225fadc36365b555466d938c6522; EXPANSION_ALLOWED=false. Diagnosis accepted/probe9; exact atomic carrier; full closure pending HEAD sync. No redispatch/T3; CCMA parked; PR9 merged.
 ## Parked Checkpoints
 - autorun lane-binding R1 is closed at `ee81deeeb`; HRLTP-T2 remains paused for Local no-subagent route reassessment;
 - T3C-C2 is closed and Local verified at `820aae3ec`;
