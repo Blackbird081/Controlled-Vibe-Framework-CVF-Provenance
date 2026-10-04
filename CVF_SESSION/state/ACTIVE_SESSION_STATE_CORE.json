@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_T2_PARENT_EVIDENCE_VALIDATION_R1_2026-10-04.md",
     "workOrderSha256": "8773f23d73b4f73f801fbb12fc63e6b3ea0a0d0be1ad59c624ae0639f7ba71ce"
   },
-  "currentAuthoritySyncReason": "Atomic closed FLAL-T2 pair hashes after Local review of worker material 5cdb8390d8fd7ea882628ed571fcff80b2fe8ce7; final handoff/next-move sync is a separate batch. No worker/T3 successor.",
+  "currentAuthoritySyncReason": "Local reviewer accepted and closed FLAL-T2 at 601c31e977ae260444697f8836ec825900cd59a0, after implementation5cdb8390d and independent30/30. Current closed baseline/work-order raw hashes preserved. Separate six-path continuity synchronizes terminal next move; no T3 successor. Old public PR9 is reopened but required GitHub job queued and protected merge rejected.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
