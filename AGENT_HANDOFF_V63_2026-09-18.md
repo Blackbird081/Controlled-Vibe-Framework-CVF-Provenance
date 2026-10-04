@@ -1,6 +1,6 @@
 # CVF Agent Handoff V63 - ACEL Applied-Knowledge Owner Enrichment
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD: `227e2a600aaef6d5253be3c1cd7d177dfe37fc6d`; public PR9 MERGED/main8a4119e1/hosted preflight PASS; T2 accepted with mixed-range limitation; T3/CCMA parked.
+Current HEAD: `dc66afbd9b40c5feede4c44297c9af891f2f98aa`; FLAL range diagnostic packet awaiting authority sync; public PR9 merged; T3/CCMA parked.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE

@@ -43,7 +43,7 @@ successorFreezeDisposition: NOT_APPLICABLE_WITH_REASON - replace with FEATURE_SU
 ## Purpose
 TO_FILL: state the mission prompt for this worker return.
 ## Target / Source
-docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_RANGE_T1_RECONCILIATION_2026-10-04.md; selected parent contract and exact worker manifest.
+docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_RANGE_T1_RECONCILIATION_2026-10-04.md; selected closure/authority owners and exact worker manifest.
 
 ## Scope / Methodology
 TO_FILL: state the scope and methodology of this worker execution.
@@ -115,7 +115,7 @@ Author reminder: fill `blockerDelta`, `counters`, and `claims` with real declare
 | --- | --- |
 | Actor | TO_FILL |
 | Provider or surface | TO_FILL |
-| Session or invocation | CVF-FLAL-RANGE-T1 FLAL parent evidence validation, 2026-10-04 |
+| Session or invocation | CVF-FLAL-RANGE-T1 FLAL closure range diagnosis, 2026-10-04 |
 | Working directory | TO_FILL |
 | Command or tool surface | TO_FILL |
 | Target paths | TO_FILL |
@@ -126,7 +126,7 @@ Author reminder: fill `blockerDelta`, `counters`, and `claims` with real declare
 | Approval boundary | TO_FILL |
 | Claim boundary | TO_FILL |
 | Agent type | TO_FILL |
-| Invocation ID | `flal_t2_parent_evidence_validation-2026-10-04` |
+| Invocation ID | `flal_range_t1_reconciliation-2026-10-04` |
 | Expected manifest | TO_FILL |
 | Actual changed set | TO_FILL |
 | Manifest delta | TO_FILL |

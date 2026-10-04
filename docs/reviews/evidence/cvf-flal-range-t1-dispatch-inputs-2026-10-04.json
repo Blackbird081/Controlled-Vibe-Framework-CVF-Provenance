@@ -173,5 +173,13 @@
     "head": "601c31e977ae260444697f8836ec825900cd59a0",
     "disposition": "BLOCKED_MIXED_TRACE_SESSION_RANGE"
   },
-  "claimBoundary": "diagnostic admission; original failure retained; no repair or successor"
+  "claimBoundary": "diagnostic admission; original failure retained; no repair or successor",
+  "packetCorrection": "Read-only diagnostic wording and output skeleton clarified before release; no worker execution occurred.",
+  "dispatcherCorrectionPaths": [
+    "docs/baselines/CVF_GC018_FLAL_RANGE_T1_RECONCILIATION_2026-10-04.md",
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_RANGE_T1_RECONCILIATION_2026-10-04.md",
+    "docs/reviews/evidence/cvf-flal-range-t1-dispatch-inputs-2026-10-04.json",
+    "docs/reviews/evidence/cvf-flal-range-t1-worker-return-skeleton-2026-10-04.txt",
+    "AGENT_HANDOFF_V63_2026-09-18.md"
+  ]
 }

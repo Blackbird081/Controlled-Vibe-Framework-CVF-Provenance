@@ -11,7 +11,7 @@ Commit mode: WORKER_MUST_NOT_COMMIT
 
 ## Purpose
 
-Diagnose the existing FLAL-T2 committed-range closure refusal and return an executable forward-repair plan using existing owners. Reuse valid technical acceptance and retained failed range evidence. This is a source/contract reconciliation task, not checker implementation or a T3 successor.
+Diagnose the existing FLAL-T2 committed-range closure refusal and return an executable forward-repair plan using existing owners. Reuse valid technical acceptance and retained failed range evidence. This is a read-only source/contract diagnosis with two returned evidence files. No tracked helper, checker implementation or T3 successor is admitted.
 
 ## Scope / Target / Owner Boundary
 

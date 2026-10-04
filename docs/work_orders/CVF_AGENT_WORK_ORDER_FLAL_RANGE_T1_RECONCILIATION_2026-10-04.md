@@ -318,17 +318,17 @@ Claim Update: diagnostic task admitted; production repair and T3 remain unproven
 | Session or invocation | cvf-flal-range-t1-dispatch-20261004 |
 | Working directory | provenance repository root |
 | Command or tool surface | targeted source reads, official scaffold, raw hashes, packet conformance gates |
-| Target paths | `docs/baselines/CVF_GC018_FLAL_RANGE_T1_RECONCILIATION_2026-10-04.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_RANGE_T1_RECONCILIATION_2026-10-04.md`; `docs/reviews/evidence/cvf-flal-range-t1-dispatch-inputs-2026-10-04.json`; `docs/reviews/evidence/cvf-flal-range-t1-worker-return-skeleton-2026-10-04.txt` |
+| Target paths | `docs/baselines/CVF_GC018_FLAL_RANGE_T1_RECONCILIATION_2026-10-04.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_RANGE_T1_RECONCILIATION_2026-10-04.md`; `docs/reviews/evidence/cvf-flal-range-t1-dispatch-inputs-2026-10-04.json`; `docs/reviews/evidence/cvf-flal-range-t1-worker-return-skeleton-2026-10-04.txt`; `AGENT_HANDOFF_V63_2026-09-18.md` |
 | Allowed scope source | operator continuation; disclosed T2 closure limitation |
 | Before status evidence | worktree clean at HEAD 56ff4cf6ae23693215d4a49a7efee8e9740ec77e |
-| After status evidence | four-path diagnostic admission, implementation not executed |
+| After status evidence | four-path diagnostic admission plus required material HEAD marker; implementation not executed |
 | Diff evidence | git diff --name-status; git diff --check; staged exact four-path reconciliation |
 | Approval boundary | final bound pre-dispatch PASS before manual relay |
 | Claim boundary | diagnostic admission only; no retrospective mixed-range PASS |
 | Agent type | INTERNAL_AGENT dispatcher/reviewer |
 | Invocation ID | cvf-flal-range-t1-dispatch-20261004 |
-| Expected manifest | `docs/baselines/CVF_GC018_FLAL_RANGE_T1_RECONCILIATION_2026-10-04.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_RANGE_T1_RECONCILIATION_2026-10-04.md`; `docs/reviews/evidence/cvf-flal-range-t1-dispatch-inputs-2026-10-04.json`; `docs/reviews/evidence/cvf-flal-range-t1-worker-return-skeleton-2026-10-04.txt` |
-| Actual changed set | `docs/baselines/CVF_GC018_FLAL_RANGE_T1_RECONCILIATION_2026-10-04.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_RANGE_T1_RECONCILIATION_2026-10-04.md`; `docs/reviews/evidence/cvf-flal-range-t1-dispatch-inputs-2026-10-04.json`; `docs/reviews/evidence/cvf-flal-range-t1-worker-return-skeleton-2026-10-04.txt` |
+| Expected manifest | `docs/baselines/CVF_GC018_FLAL_RANGE_T1_RECONCILIATION_2026-10-04.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_RANGE_T1_RECONCILIATION_2026-10-04.md`; `docs/reviews/evidence/cvf-flal-range-t1-dispatch-inputs-2026-10-04.json`; `docs/reviews/evidence/cvf-flal-range-t1-worker-return-skeleton-2026-10-04.txt`; `AGENT_HANDOFF_V63_2026-09-18.md` |
+| Actual changed set | `docs/baselines/CVF_GC018_FLAL_RANGE_T1_RECONCILIATION_2026-10-04.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_RANGE_T1_RECONCILIATION_2026-10-04.md`; `docs/reviews/evidence/cvf-flal-range-t1-dispatch-inputs-2026-10-04.json`; `docs/reviews/evidence/cvf-flal-range-t1-worker-return-skeleton-2026-10-04.txt`; `AGENT_HANDOFF_V63_2026-09-18.md` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |
 
@@ -526,7 +526,7 @@ Reuse technical T2 evidence. Four new authorization-fixture cases address the na
 ## Legacy Absorption Coverage Index Disposition
 
 NOT_APPLICABLE_WITH_REASON - no legacy source corpus or re-absorption. Existing
-F2G/ADIF/PLL and LSC owner evidence is reused within named interfaces only.
+Existing closure/authority owner evidence is reused within named interfaces only.
 
 ## Core Guard Self-Protection Authorization
 
@@ -558,14 +558,7 @@ returnTimeRecheck: REQUIRED_BEFORE_REPAIR
 | continuity | CONTINUITY_COMMIT | session-sync-steward | CONTINUITY_COMMIT | exact six continuity paths | EXACT_PATHS | session-sync-steward | CONTINUITY_COMMIT | terminal_completion_review |
 | committed_range_closure | POST_MATERIAL_CLOSURE | reviewer | POST_MATERIAL | split clean committed material/continuity ranges | EXACT_PATHS | closer | CORRECTIVE_MATERIAL_COMMIT | continuity |
 
-Two diagnostic output files keep ordinary implementation topology
-within budget; keep each new Python helper/test at <=400 lines and keep existing
-checker growth to thin delegation/report wiring. Do not compress code to evade
-size limits. If a split is needed, stop for a single Local ledger amendment.
-The final active-work-order pre-dispatch gate runs after dispatch_continuity;
-the pre_dispatch_gate graph row is the prospective packet conformance gate.
-Reviewer evidence and closure authority require their own exact material batch;
-worker cannot mutate Local paths. Graph declarations alone do not prove execution.
+Two diagnostic output files require no tracked helper or checker change. Scratch fixture probes remain disposable and do not expand worker responsibility. Final bound pre-dispatch runs after continuity binding. Graph declarations do not prove execution.
 
 ## Verification Commands
 
@@ -586,3 +579,10 @@ No operator commit question is needed for this authorized private dispatch.
 Readiness evidence is produced by actual staged scope/gates, not by this section.
 Local commits only the reviewed admission batch and then continuity; worker
 implementation/closure is a later independently reviewed batch.
+
+## Mixed Protected-Path Atomicity Authorization
+
+Disposition: AUTHORIZED_EXACT_MANIFEST
+Atomicity reason: pre-release wording correction must carry the current committed material HEAD marker required by GC-020. This declaration uses the existing steward route, not a new exemption. Full authority/next-move binding remains a separate six-path sync.
+Rollback boundary: only five named Local-owned admission paths; no original evidence or history rewrite.
+Exact changed manifest: `docs/baselines/CVF_GC018_FLAL_RANGE_T1_RECONCILIATION_2026-10-04.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_RANGE_T1_RECONCILIATION_2026-10-04.md`; `docs/reviews/evidence/cvf-flal-range-t1-dispatch-inputs-2026-10-04.json`; `docs/reviews/evidence/cvf-flal-range-t1-worker-return-skeleton-2026-10-04.txt`; `AGENT_HANDOFF_V63_2026-09-18.md`.
