@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_RANGE_T1_RECONCILIATION_2026-10-04.md",
     "workOrderSha256": "68f3b9b1a249dc3057b4967b27b3c764249e1837a3f3c4c2dd5df7a37b8f223f"
   },
-  "currentAuthoritySyncReason": "Operator continuation admits bounded existing-owner closure range diagnosis, not T3 or protected repair. Paired material 5e5fb30eebe3950c62ac790f6fa3714ec54077ea; two-path internal no-commit return. Original T2 range failure and technical acceptance retained; public PR9 resolved. Final bound pre-dispatch required.",
+  "currentAuthoritySyncReason": "Operator continuation admits bounded existing-owner closure range diagnosis, not T3 or protected repair. Paired material 5e5fb30eebe3950c62ac790f6fa3714ec54077ea; two-path internal no-commit return. Original T2 range failure and technical acceptance retained; public PR9 resolved. Final bound pre-dispatch required. Final binding names EXECUTE diagnostic action and exact batch/material marker; historical authorization lines preserved.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
