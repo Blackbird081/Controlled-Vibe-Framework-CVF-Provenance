@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 docType: work_order
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 Date: 2026-10-04
 Batch ID: CVF-WRS-FR1-R1
 Dispatch base head: 5e5d471079d9b9026348351a7f562972f8c3a8f2
@@ -194,26 +194,18 @@ Standard: `docs/reference/semantic_convergence_control/CVF_SEMANTIC_CONVERGENCE_
   "schemaVersion": "cvf.semanticConvergenceControl.v1",
   "problemKey": "cvf-wrs-fr1-problem",
   "chainMode": "SUCCESSOR",
-  "chainOrdinal": 1,
+  "chainOrdinal": 3,
   "predecessor": {
-    "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_WRS_FR1_SCAFFOLD_FRICTION_REPAIR_2026-10-04.md",
-    "sha256": "0d482ac4b88ddc15e6c546c1ad7a18c5b9e06880aee27b0d6fb96eb489ed3396"
+    "path": "docs/reviews/CVF_WRS_FR1_R1_SCAFFOLD_FRICTION_REPAIR_WORKER_RETURN_2026-10-04.md",
+    "sha256": "2aa0d30222645e7043a4e8f2bfda29f62fdc1af7498a0f0581e801f330deb707"
   },
   "blockerDelta": {
     "prior": [],
     "resolved": [],
     "retained": [],
-    "new": [
-      "WRS-FR1-F1",
-      "WRS-FR1-F2",
-      "WRS-FR1-F3"
-    ],
+    "new": [],
     "reopened": [],
-    "current": [
-      "WRS-FR1-F1",
-      "WRS-FR1-F2",
-      "WRS-FR1-F3"
-    ]
+    "current": []
   },
   "resolutionEvidence": {},
   "counters": {
@@ -222,9 +214,28 @@ Standard: `docs/reference/semantic_convergence_control/CVF_SEMANTIC_CONVERGENCE_
     "sameClaimCorrections": 0,
     "nonDecreasingBlockerTransitions": 1
   },
-  "claims": [],
-  "requiredDisposition": "ROOT_CONTRACT_REQUIRED",
-  "successorScope": "INTEGRATED_ROOT_CONTRACT"
+  "claims": [
+    {
+      "claimId": "CLAIM-WRS-FR1-F1",
+      "claimClass": "OTHER",
+      "proofClass": "NAMED_OBSERVABLE_PROOF",
+      "evidenceRef": "docs/reviews/evidence/cvf-wrs-fr1-r1-scaffold-friction-2026-10-04.json#PROOF-UNIFORM-GOLDEN"
+    },
+    {
+      "claimId": "CLAIM-WRS-FR1-F2",
+      "claimClass": "OTHER",
+      "proofClass": "NAMED_OBSERVABLE_PROOF",
+      "evidenceRef": "docs/reviews/evidence/cvf-wrs-fr1-r1-scaffold-friction-2026-10-04.json#PROOF-FOUR-WAY-CONSUMERS"
+    },
+    {
+      "claimId": "CLAIM-WRS-FR1-F3",
+      "claimClass": "OTHER",
+      "proofClass": "NAMED_OBSERVABLE_PROOF",
+      "evidenceRef": "docs/reviews/evidence/cvf-wrs-fr1-r1-scaffold-friction-2026-10-04.json#PROOF-TEMPLATE-RETURN"
+    }
+  ],
+  "requiredDisposition": "READY_WITH_EXECUTABLE_PROOF",
+  "successorScope": "EXECUTABLE_IMPLEMENTATION"
 }
 ```
 
@@ -251,7 +262,7 @@ Contract source archive-qualified exception: `docs/reference/CVF_AHB_T2_AGENT_HA
 | nextMoveSurfaces | active handoff, compact front door, core/nextAllowedMove sources and generated bootstrap/state |
 
 sharedWorktreeCoordinationMode: EXPLICIT_LANE_HANDOFF
-activeLaneOwner: INTERNAL_AGENT_SCAFFOLD_WORKER_WRS_FR1_R1
+activeLaneOwner: LOCAL_REVIEWER_CLOSURE_COMPLETE
 laneOwnedPaths: exact eight-path Required Artifact Manifest
 dispatcherMutationBoundary: NO_MUTATION_WHILE_LANE_ACTIVE
 laneReleaseEvidence: worker return plus explicit RELEASED_TO_LOCAL_REVIEWER declaration and actual final git status; Local makes no edits while the worker lane is active.
@@ -309,7 +320,7 @@ Returned defects: NONE_RETURNED. Actual totalCandidates=0; not proof that the wh
 | Field | Value |
 |---|---|
 | applicableCheckersRead | governance/compat/check_baseline_update_compat.py; governance/compat/check_markdown_structural_completeness.py; governance/compat/check_governed_artifact_checker_read_ahead.py; governance/compat/check_agent_operation_trace.py; governance/compat/check_core_guard_self_protection.py; governance/compat/check_work_order_dispatch_quality.py; governance/compat/check_work_order_dispatch_quality_artifacts.py; governance/compat/check_work_order_dispatch_quality_core.py; governance/compat/check_work_order_acceptance_ledger.py; governance/compat/check_gate_to_role_closeability.py; governance/compat/check_review_cost_control.py; governance/compat/check_semantic_convergence_control.py; governance/compat/check_agent_handoff_boundary.py; governance/compat/check_finding_to_governance_learning.py; governance/compat/check_external_knowledge_intake_routing.py; governance/compat/check_public_export_disposition.py; governance/compat/check_epistemic_process_packet.py; governance/compat/check_dispatch_release_readiness.py; governance/compat/check_task_governance_route.py; governance/compat/check_independent_review_probe_admission.py; governance/compat/check_dispatch_prompt_envelope.py; governance/compat/check_worker_return_quality_gate.py |
-| literalTokensReviewed | DISPATCH_READY; acceptance-ledger-json; exact ACCEPT disposition; LOCAL probe decision owner; gate-role graph; first-section envelope; Expected manifest; Manifest delta; Public Export Disposition |
+| literalTokensReviewed | CLOSED_PASS_BOUNDED; acceptance-ledger-json; exact ACCEPT disposition; LOCAL probe decision owner; gate-role graph; first-section envelope; Expected manifest; Manifest delta; Public Export Disposition |
 | gateRunPurpose | confirmation/evidence of admitted rework packet shape; no implemented behavior proof |
 | claimBoundary | existing authoring-owner maintenance admission only; admission only; no implementation or runtime behavior proof |
 
@@ -360,22 +371,22 @@ Claim Update: authoring repair admitted; proof pending; actual projects parked.
 
 | Field | Evidence |
 |---|---|
-| Actor | Local orchestrator/dispatcher/reviewer |
+| Actor | Local reviewer/closer and session-sync steward |
 | Provider or surface | private shared workspace |
-| Session or invocation | cvf-wrs-fr1-r1-dispatch-20261004 |
+| Session or invocation | WRS-FR1-R1 bounded closure2026-10-04 |
 | Working directory | provenance repository root |
-| Command or tool surface | original findings and source audit; official scaffold; raw pins; conformance gates |
-| Allowed scope source | operator continued original friction repair; Local admits bounded golden fixture/test paths |
-| Before status evidence | worktree clean at HEAD 5e5d471079d9b9026348351a7f562972f8c3a8f2 after pending snapshot and dedicated continuity |
-| After status evidence | four-path R1 admission only; implementation not executed |
-| Diff evidence | git diff --name-status; staged exact four paths |
-| Approval boundary | final bound pre-dispatch PASS before manual relay |
-| Claim boundary | R1 admission only; prior worker unaccepted, actual projects parked |
-| Agent type | INTERNAL_AGENT dispatcher/reviewer |
-| Invocation ID | cvf-wrs-fr1-r1-dispatch-20261004 |
-| Target paths | `docs/baselines/CVF_GC018_WRS_FR1_R1_SCAFFOLD_FRICTION_REPAIR_2026-10-04.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_WRS_FR1_R1_SCAFFOLD_FRICTION_REPAIR_2026-10-04.md`; `docs/reviews/evidence/cvf-wrs-fr1-r1-dispatch-inputs-2026-10-04.json`; `docs/reviews/evidence/cvf-wrs-fr1-r1-worker-return-skeleton-2026-10-04.txt` |
-| Expected manifest | `docs/baselines/CVF_GC018_WRS_FR1_R1_SCAFFOLD_FRICTION_REPAIR_2026-10-04.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_WRS_FR1_R1_SCAFFOLD_FRICTION_REPAIR_2026-10-04.md`; `docs/reviews/evidence/cvf-wrs-fr1-r1-dispatch-inputs-2026-10-04.json`; `docs/reviews/evidence/cvf-wrs-fr1-r1-worker-return-skeleton-2026-10-04.txt` |
-| Actual changed set | `docs/baselines/CVF_GC018_WRS_FR1_R1_SCAFFOLD_FRICTION_REPAIR_2026-10-04.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_WRS_FR1_R1_SCAFFOLD_FRICTION_REPAIR_2026-10-04.md`; `docs/reviews/evidence/cvf-wrs-fr1-r1-dispatch-inputs-2026-10-04.json`; `docs/reviews/evidence/cvf-wrs-fr1-r1-worker-return-skeleton-2026-10-04.txt` |
+| Command or tool surface | returned evidence review; Local18 probe; reviewer-fast; state generator and normal Git hooks |
+| Allowed scope source | R1 reviewer closure conversion and operator-selected same authoring repair |
+| Before status evidence | worktree clean at accepted eight-path worker material 090f3bfa8e5935b2603a4b43e440950f323edba5; normal hooks90/90 |
+| After status evidence | exact ten-path fixed pair/raw-pin closure; no worker or successor |
+| Diff evidence | staged exact manifest; git diff --check |
+| Approval boundary | Local accepts F1/F2/F3; fresh committed pre-closure proof follows dedicated HEAD sync |
+| Claim boundary | offline authoring contract only; no provider/live/project/public effect |
+| Agent type | Local reviewer/closer |
+| Invocation ID | wrs-fr1-r1-closure-20261004 |
+| Target paths | `docs/baselines/CVF_GC018_WRS_FR1_R1_SCAFFOLD_FRICTION_REPAIR_2026-10-04.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_WRS_FR1_R1_SCAFFOLD_FRICTION_REPAIR_2026-10-04.md`; `docs/reviews/CVF_WRS_FR1_R1_SCAFFOLD_FRICTION_REPAIR_COMPLETION_2026-10-04.md`; `docs/reviews/evidence/cvf-wrs-fr1-r1-local-independent-probe-2026-10-04.json`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Expected manifest | `docs/baselines/CVF_GC018_WRS_FR1_R1_SCAFFOLD_FRICTION_REPAIR_2026-10-04.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_WRS_FR1_R1_SCAFFOLD_FRICTION_REPAIR_2026-10-04.md`; `docs/reviews/CVF_WRS_FR1_R1_SCAFFOLD_FRICTION_REPAIR_COMPLETION_2026-10-04.md`; `docs/reviews/evidence/cvf-wrs-fr1-r1-local-independent-probe-2026-10-04.json`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Actual changed set | `docs/baselines/CVF_GC018_WRS_FR1_R1_SCAFFOLD_FRICTION_REPAIR_2026-10-04.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_WRS_FR1_R1_SCAFFOLD_FRICTION_REPAIR_2026-10-04.md`; `docs/reviews/CVF_WRS_FR1_R1_SCAFFOLD_FRICTION_REPAIR_COMPLETION_2026-10-04.md`; `docs/reviews/evidence/cvf-wrs-fr1-r1-local-independent-probe-2026-10-04.json`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |
 
@@ -387,7 +398,7 @@ Reason: private authoring repair admission; no public projection.
 
 ## Claim Boundary
 
-DISPATCH_READY R1 amendment only; original snapshot and findings preserved, not accepted. Execution requires committed R1 authority and bound release. Existing checker/production/project/provider/public boundaries retained. No automatic next tranche.
+CLOSED_PASS_BOUNDED for corrected offline authoring guidance and real consumer structural proof only. No active worker/redispatch/successor or runtime/production/project/provider/public authority. Original REQUEST_CHANGES snapshot retained. Fresh bound committed-range receipt is final verification after dedicated HEAD sync; this paragraph does not assert that future receipt has run.
 
 ## Foundation Storage Layout Block
 
@@ -687,3 +698,38 @@ implementation/closure is a later independently reviewed batch.
 ## Private Upstream Debt Disposition
 
 Private provenance push disabled; finish authorized pending snapshot and R1 admission/continuity only. No public projection, push, history rewrite or debt consolidation. Derive current ahead count from Git, not original dispatch count.
+
+## Local Reviewer Acceptance
+
+REQ-1/2/3 and WRS-FR1-F1/F2/F3 accepted bounded in docs/reviews/CVF_WRS_FR1_R1_SCAFFOLD_FRICTION_REPAIR_WORKER_RETURN_2026-10-04.md; Local18/18, reviewer-fast69/69, worker6+80+23 results reused. Template1122<=1123, SCEC raw-hash metadata corrected and evidence repinned; production checkers unchanged. Original failed FR1 preserved, no successor. Accepted worker material 090f3bfa8e5935b2603a4b43e440950f323edba5.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | docs/work_orders/CVF_AGENT_WORK_ORDER_WRS_FR1_R1_SCAFFOLD_FRICTION_REPAIR_2026-10-04.md | CLOSED_PASS_BOUNDED; F1/F2/F3 and REQ-1/2/3 accepted | PASS |
+| Completion or reviewer artifact | docs/reviews/CVF_WRS_FR1_R1_SCAFFOLD_FRICTION_REPAIR_WORKER_RETURN_2026-10-04.md Local Reviewer Acceptance | ACCEPTED_BOUNDED; Local18/18; reviewer-fast69/69; worker109 reports reused | PASS |
+| Roadmap state | N/A with reason: standalone work order; no dedicated roadmap | original friction maintenance task closed, no successor or roadmap update | N/A with reason: no dedicated roadmap |
+| Registry JSON | docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json | retained raw SHA-256 27d19d770761152324dd4efb43c1746ed88040d844292f52cf751e3802240d81; no corpus scan or registry mutation in this authoring repair | PASS |
+| Registry Markdown | docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md | retained raw SHA-256 38ee1871f253607cd704194b0507db5a3070cdba86a2909cda3881018fe38cbd; no corpus scan or registry mutation in this authoring repair | PASS |
+| External evidence digest | N/A with reason: internal shared-workspace worker | no external intake | N/A with reason: no external evidence |
+| System loop interlock | N/A with reason: no runtime or actual project loop | CCMA/S05/P11 remain parked | N/A with reason: no interlock effect |
+| Session continuity | six active continuity paths | final closed-pair raw pins regenerated; dedicated HEAD sync follows | PASS |
+
+## Mixed Protected-Path Atomicity Authorization
+
+Disposition: AUTHORIZED_EXACT_MANIFEST
+Atomicity reason: final fixed active baseline/work order and currentAuthority raw pins must change together; source continuity and generated views bind those exact bytes in this ten-path closure. Existing steward exact-manifest route applies.
+Rollback boundary: ten named closure paths only; preserve accepted worker material, original REQUEST_CHANGES snapshot, parked projects and public merge; no history rewrite.
+Exact changed manifest: `docs/baselines/CVF_GC018_WRS_FR1_R1_SCAFFOLD_FRICTION_REPAIR_2026-10-04.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_WRS_FR1_R1_SCAFFOLD_FRICTION_REPAIR_2026-10-04.md`; `docs/reviews/CVF_WRS_FR1_R1_SCAFFOLD_FRICTION_REPAIR_COMPLETION_2026-10-04.md`; `docs/reviews/evidence/cvf-wrs-fr1-r1-local-independent-probe-2026-10-04.json`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`.
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| Batch-ID output | uniform guidance with identical declared options | Local independent FULL/FAST_DOC golden-versus-arbitrary output equal after identity normalization | PASS |
+| Declared compatibility opts | architecture/P4 opt-outs retained | Local explicit opts match emitted sections | PASS |
+| Completed forms | actual consumers accept truthful LOW/NA, row keys and readiness | worker four-way regressions and Local18 narrow sample | PASS |
+| Invalid/incomplete forms | duplicate/pending-ready/unfinished states refused | actual unchanged consumer diagnostics | PASS |
+| Template budget | <=1123 with unrelated prose restored | actual1122; unrelated normative text comparison PASS | PASS |
+| Range receipt | final verification bound to actual committed HEAD | bound committed pre-closure command follows dedicated HEAD sync; no pending-tree PASS asserted | PASS |

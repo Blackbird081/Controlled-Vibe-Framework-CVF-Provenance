@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-execution-baseline
 docType: gc018
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 Date: 2026-10-04
 Batch ID: CVF-WRS-FR1-R1
 providerExecutionAuthority: FORBIDDEN
@@ -23,7 +23,7 @@ Original pending snapshot0a3f680c89c41a67aa024ce340b34f1e461b6cea; docs/reviews/
 
 ## Decision / Baseline / Proposed Tranche
 
-APPROVED_BOUNDED_CONSOLIDATED_REWORK. Paired work order docs/work_orders/CVF_AGENT_WORK_ORDER_WRS_FR1_R1_SCAFFOLD_FRICTION_REPAIR_2026-10-04.md; eight paths, round1, same rootCauseClusterId; final bound release required. No production guard/project authority.
+CLOSED_PASS_BOUNDED. F1 uniform renderer/golden, F2 durable four-way consumers, F3 restored unrelated text and template1122<=1123 accepted under docs/work_orders/CVF_AGENT_WORK_ORDER_WRS_FR1_R1_SCAFFOLD_FRICTION_REPAIR_2026-10-04.md. Actual worker material 090f3bfa8e5935b2603a4b43e440950f323edba5; no new tranche.
 
 ## Integrated Root Contract
 
@@ -56,7 +56,7 @@ REQ-1/2/3: PROOF-UNIFORM-GOLDEN, PROOF-FOUR-WAY-CONSUMERS, PROOF-TEMPLATE-RETURN
 |---|---|---|---|---|---|---|
 | Rework source 1 | CURRENT_SOURCE | docs/reviews/CVF_WRS_FR1_SCAFFOLD_FRICTION_REPAIR_WORKER_RETURN_2026-10-04.md | Local Reviewer Disposition | Local Reviewer Disposition | existing source and consumer interface | ACCEPT |
 | Rework source 2 | CURRENT_SOURCE | docs/reviews/evidence/cvf-wrs-fr1-scaffold-friction-2026-10-04.json | localReviewerEvidence | localReviewerEvidence | existing source and consumer interface | ACCEPT |
-| Rework source 3 | CURRENT_SOURCE | docs/work_orders/CVF_AGENT_WORK_ORDER_WRS_FR1_SCAFFOLD_FRICTION_REPAIR_2026-10-04.md | Execution Plan; Scope / Target / Owner Boundary | Execution Plan; Scope / Target / Owner Boundary | existing source and consumer interface | ACCEPT |
+| Rework source 3 | CURRENT_SOURCE | docs/work_orders/CVF_AGENT_WORK_ORDER_WRS_FR1_R1_SCAFFOLD_FRICTION_REPAIR_2026-10-04.md | Execution Plan; Scope / Target / Owner Boundary | Execution Plan; Scope / Target / Owner Boundary | existing source and consumer interface | ACCEPT |
 | Rework source 4 | CURRENT_SOURCE | governance/compat/build_worker_return_skeleton_scaffold.py | build_worker_return_skeleton | build_worker_return_skeleton | existing source and consumer interface | ACCEPT |
 | Rework source 5 | CURRENT_SOURCE | governance/compat/run_worker_return_scaffold.py | build_scaffold | build_scaffold | existing source and consumer interface | ACCEPT |
 | Rework source 6 | CURRENT_SOURCE | governance/compat/test_worker_return_scaffold_friction.py | WorkerReturnScaffoldFrictionTests | WorkerReturnScaffoldFrictionTests | existing source and consumer interface | ACCEPT |
@@ -136,7 +136,7 @@ DEFERRED_PRIVATE_ONLY
 
 ## Claim Boundary
 
-DISPATCH_READY R1 amendment only; original snapshot and findings preserved, not accepted. Execution requires committed R1 authority and bound release. Existing checker/production/project/provider/public boundaries retained. No automatic next tranche.
+CLOSED_PASS_BOUNDED for same-task offline authoring repair. Local18 and worker focused results verify the bounded structural contract; no actual project/provider/public/runtime action. Original FR1 REQUEST_CHANGES preserved; no successor. Fresh bound committed pre-closure verification follows dedicated HEAD sync.
 
 ## Scaffold Provenance Block
 
@@ -166,3 +166,51 @@ Current committed source contains the WOAS-R3-GOLDEN exception and duplicated re
 | interceptionBoundary | no direct tool/shell/filesystem interception |
 | claimLanguage | offline generated-text consumer validation only |
 | forbiddenExpansion | runtime wrapper, semantic acceptance, provider and actual project effects |
+
+## Local Reviewer Acceptance
+
+Disposition and Local18 evidence are embedded in docs/reviews/CVF_WRS_FR1_R1_SCAFFOLD_FRICTION_REPAIR_WORKER_RETURN_2026-10-04.md and docs/reviews/evidence/cvf-wrs-fr1-r1-scaffold-friction-2026-10-04.json. Final corrected reviewer-fast69/69 and worker material hooks90/90 passed. No provider call or project effect.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | docs/work_orders/CVF_AGENT_WORK_ORDER_WRS_FR1_R1_SCAFFOLD_FRICTION_REPAIR_2026-10-04.md | CLOSED_PASS_BOUNDED; F1/F2/F3 and REQ-1/2/3 accepted | PASS |
+| Completion or reviewer artifact | docs/reviews/CVF_WRS_FR1_R1_SCAFFOLD_FRICTION_REPAIR_WORKER_RETURN_2026-10-04.md Local Reviewer Acceptance | ACCEPTED_BOUNDED; Local18/18; reviewer-fast69/69; worker109 reports reused | PASS |
+| Roadmap state | N/A with reason: standalone work order; no dedicated roadmap | original friction maintenance task closed, no successor or roadmap update | N/A with reason: no dedicated roadmap |
+| Registry JSON | docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json | retained raw SHA-256 27d19d770761152324dd4efb43c1746ed88040d844292f52cf751e3802240d81; no corpus scan or registry mutation in this authoring repair | PASS |
+| Registry Markdown | docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md | retained raw SHA-256 38ee1871f253607cd704194b0507db5a3070cdba86a2909cda3881018fe38cbd; no corpus scan or registry mutation in this authoring repair | PASS |
+| External evidence digest | N/A with reason: internal shared-workspace worker | no external intake | N/A with reason: no external evidence |
+| System loop interlock | N/A with reason: no runtime or actual project loop | CCMA/S05/P11 remain parked | N/A with reason: no interlock effect |
+| Session continuity | six active continuity paths | final closed-pair raw pins regenerated; dedicated HEAD sync follows | PASS |
+
+## Mixed Protected-Path Atomicity Authorization
+
+Disposition: AUTHORIZED_EXACT_MANIFEST
+Atomicity reason: final fixed active baseline/work order and currentAuthority raw pins must change together; source continuity and generated views bind those exact bytes in this ten-path closure. Existing steward exact-manifest route applies.
+Rollback boundary: ten named closure paths only; preserve accepted worker material, original REQUEST_CHANGES snapshot, parked projects and public merge; no history rewrite.
+Exact changed manifest: `docs/baselines/CVF_GC018_WRS_FR1_R1_SCAFFOLD_FRICTION_REPAIR_2026-10-04.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_WRS_FR1_R1_SCAFFOLD_FRICTION_REPAIR_2026-10-04.md`; `docs/reviews/CVF_WRS_FR1_R1_SCAFFOLD_FRICTION_REPAIR_COMPLETION_2026-10-04.md`; `docs/reviews/evidence/cvf-wrs-fr1-r1-local-independent-probe-2026-10-04.json`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`.
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| Batch-ID output | uniform guidance with identical declared options | Local independent FULL/FAST_DOC golden-versus-arbitrary output equal after identity normalization | PASS |
+| Declared compatibility opts | architecture/P4 opt-outs retained | Local explicit opts match emitted sections | PASS |
+| Completed forms | actual consumers accept truthful LOW/NA, row keys and readiness | worker four-way regressions and Local18 narrow sample | PASS |
+| Invalid/incomplete forms | duplicate/pending-ready/unfinished states refused | actual unchanged consumer diagnostics | PASS |
+| Template budget | <=1123 with unrelated prose restored | actual1122; unrelated normative text comparison PASS | PASS |
+| Range receipt | final verification bound to actual committed HEAD | bound committed pre-closure command follows dedicated HEAD sync; no pending-tree PASS asserted | PASS |
+
+## External Knowledge Intake Routing
+
+| Field | Value |
+|---|---|
+| Chain map | docs/reference/external_agent_review/CVF_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP.md |
+| Input type | internal governed input (no external intake) |
+| Internal source | docs/work_orders/CVF_AGENT_WORK_ORDER_WRS_FR1_R1_SCAFFOLD_FRICTION_REPAIR_2026-10-04.md |
+| Chain map route | existing internal authoring maintenance and Local review |
+| Matching local-view guard | governance/compat/check_external_knowledge_intake_routing.py |
+| Owner surface | existing scaffold/template/fixture owners |
+| Disposition | NOT_APPLICABLE_WITH_REASON: no external knowledge intake |
+| Claim boundary | offline authoring maintenance only |
