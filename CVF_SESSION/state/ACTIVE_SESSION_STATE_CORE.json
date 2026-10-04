@@ -36,12 +36,12 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_FLAL_RANGE_T1_RECONCILIATION_2026-10-04.md",
-    "baselineSha256": "5b7620f2af0ba1603c53cf85c6b64df35dddcd5271d95ec24b0a67e71cc0192f",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_RANGE_T1_RECONCILIATION_2026-10-04.md",
-    "workOrderSha256": "a97e254a50ca961465fbe327a11d5e5bbd2fb9a7aecaecc5e11d64035b2b6683"
+    "baselinePath": "docs/baselines/CVF_GC018_FLAL_T3_OFFLINE_COMPOSITION_2026-10-04.md",
+    "baselineSha256": "af31d71c271c41f91cceae2d1e4db8851d44e6aa7754b95db37aeea8df41ae35",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_T3_OFFLINE_COMPOSITION_2026-10-04.md",
+    "workOrderSha256": "483c745a04b80de72a057bb70d73434fc1aacb9d221845ae96aba5e9ac9e3f54"
   },
-  "currentAuthoritySyncReason": "RANGE-T1 closed-pair raw hashes preserved at exact ten-path closure 4b6e72a5b8dcfa6ffb70c01cb356ae5b4e5233e7; dedicated six-path HEAD sync. Local completion path admitted and plan corrected; full committed-range receipt governs finality. Original T2 failure/sample rejection retained; no worker redispatch, template repair or T3 successor.",
+  "currentAuthoritySyncReason": "Operator continuation; separately admitted test-only T3 composition material b1dc1faf13bf0db9eaccb1adbc7dd033d30d5e91; exact three-path no-commit worker. Production owners read-only; pending generator state retained; source-payload join boundary disclosed. Projects parked, original T2 FAIL retained. Final bound pre-dispatch required.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
