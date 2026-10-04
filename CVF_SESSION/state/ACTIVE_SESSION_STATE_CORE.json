@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_DGIP_T1_R1_DOWNSTREAM_GATE_INHERITANCE_2026-10-03.md",
     "workOrderSha256": "81d718983a74fe14947e2bab432786f87ee3dcc859fdff4fc4bb0b219c0c92b7"
   },
-  "currentAuthoritySyncReason": "Operator authorized External Read/provenance/public synchronization on 2026-10-04; material 9b1a61610d408d5b7058ab3e4bbfb37163e46bde; preserves PLL closure and remote history. currentAuthority retains immutable historical DGIP R1 dispatch pair; no new dispatch. CCMA parked; next move sync/cleanup then bounded parent roadmap reconciliation.",
+  "currentAuthoritySyncReason": "Operator authorized External Read/provenance/public synchronization on 2026-10-04; material 70efadb9429e99488ee8aa4656af237b491fb3d7; preserves PLL closure and remote history. currentAuthority retains immutable historical DGIP R1 dispatch pair; no new dispatch. CCMA parked; next move sync/cleanup then bounded parent roadmap reconciliation.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
