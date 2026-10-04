@@ -1,7 +1,7 @@
 # CVF Foundation Learning Admission And Loopback Roadmap
 
 Memory class: FULL_RECORD
-Status: READY_FOR_T1_CONTRACT_AND_OWNER_RECONCILIATION
+Status: T1_DESIGN_ACCEPTED_T2_DISPATCH_ADMISSION
 docType: roadmap
 Date: 2026-10-04
 Batch ID: CVF-FLAL-T0
@@ -21,8 +21,10 @@ quality, human acceptance, actual delivery or project adoption.
 
 The operator instructed Local to return to the CVF roadmap on 2026-10-04.
 Select parent admission/loopback contract reconciliation as the next tranche.
-This roadmap authorizes design and scoped owner comparison. Implementation
-requires a fresh GC-018 and source-verified work order; no worker is dispatched.
+T1 design material is committed at 1c455746bd8c2f845fbeff7647f51227b8df2d55.
+The operator continued on 2026-10-04 and requested a manual-relay implementation
+order. T2 now has a fresh paired baseline/work order; implementation awaits the
+final committed continuity binding and active-work-order pre-dispatch PASS.
 The operator's CCMA park remains effective. Public sync is a separate pending
 release checkpoint, not a prerequisite for private parent design.
 
@@ -111,7 +113,8 @@ extend/reuse it and decline a duplicate control.
 T1 must make the implementation path concrete before dispatch. Compare F2G,
 ADIF bridge, portable profile and Learning Plane candidate routing by capability,
 not a broad repository scan or per-row recreation of historical evidence.
-T2/T3 remain conditional successors, not currently dispatched work.
+T2 packet admission: `docs/baselines/CVF_GC018_FLAL_T2_PARENT_EVIDENCE_VALIDATION_2026-10-04.md` and `docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_T2_PARENT_EVIDENCE_VALIDATION_2026-10-04.md`.
+T2 implementation/proof remain pending; T3 is not opened automatically.
 
 ## T1 Contract Requirements
 

@@ -1,0 +1,188 @@
+{
+  "schemaVersion": "cvf.flalT2DispatchInputs@1",
+  "batchId": "CVF-FLAL-T2",
+  "dispatchBaseHead": "a84e7a8be368d6cef9fdfd49c8c054cc6ec33803",
+  "beforeStatus": "CLEAN",
+  "sourcePins": [
+    {
+      "path": "docs/reference/downstream_gate_profile/CVF_PROJECT_LEARNING_PARENT_EVIDENCE_CONTRACT.md",
+      "sha256": "b1f8728ca608e846b0c967af20d15c7b6e8f555a6248b4f742c0d3e26bd39d20",
+      "readDepth": "TARGETED_OWNER_INTERFACE",
+      "authority": "GOVERNED_LOCAL_SOURCE"
+    },
+    {
+      "path": "docs/reference/downstream_gate_profile/CVF_PROJECT_LEARNING_LOOP_STANDARD.md",
+      "sha256": "0a6d782deb6c8b602dcc87970e59fdc85f9bba2c9583e7c9b8a7b45ce3e24ee6",
+      "readDepth": "TARGETED_OWNER_INTERFACE",
+      "authority": "GOVERNED_LOCAL_SOURCE"
+    },
+    {
+      "path": "governance/compat/check_finding_to_governance_learning.py",
+      "sha256": "4ae00e90749a22c38c204d2731917b4c11869d2816d7303a5502d6c70f877db5",
+      "readDepth": "TARGETED_OWNER_INTERFACE",
+      "authority": "GOVERNED_LOCAL_SOURCE"
+    },
+    {
+      "path": "governance/compat/test_check_finding_to_governance_learning.py",
+      "sha256": "be0acdb601cde5452298b5a76d5529018d03e23895963bfe5955ad4b1370dae3",
+      "readDepth": "TARGETED_OWNER_INTERFACE",
+      "authority": "GOVERNED_LOCAL_SOURCE"
+    },
+    {
+      "path": "docs/reference/downstream_gate_profile/downstream_finding_intake_registry.json",
+      "sha256": "0077d4ba82bfb0c07d404784461f8fbd2f835678a8c4de5a2b2515c3072c2827",
+      "readDepth": "TARGETED_OWNER_INTERFACE",
+      "authority": "GOVERNED_LOCAL_SOURCE"
+    },
+    {
+      "path": "docs/reference/downstream_gate_profile/downstream_finding_intake.schema.json",
+      "sha256": "289dc9d280f24d94cd5f59e0192aa43bebfb4d5a07a5cda848ab411c80c29337",
+      "readDepth": "TARGETED_OWNER_INTERFACE",
+      "authority": "GOVERNED_LOCAL_SOURCE"
+    },
+    {
+      "path": "docs/reference/downstream_gate_profile/README.md",
+      "sha256": "fa327619fffc1637babf1108bc9aaa21442f825edbdc393289d2078fd71f39ea",
+      "readDepth": "TARGETED_OWNER_INTERFACE",
+      "authority": "GOVERNED_LOCAL_SOURCE"
+    }
+  ],
+  "sourceRegistryMutation": "FORBIDDEN",
+  "workerPaths": [
+    "docs/reference/downstream_gate_profile/parent_learning_evidence.schema.json",
+    "governance/compat/parent_learning_evidence.py",
+    "governance/compat/check_finding_to_governance_learning.py",
+    "governance/compat/test_parent_learning_evidence.py",
+    "governance/compat/test_check_finding_to_governance_learning.py",
+    "docs/reference/downstream_gate_profile/CVF_PROJECT_LEARNING_PARENT_EVIDENCE_CONTRACT.md",
+    "docs/reference/downstream_gate_profile/CVF_PROJECT_LEARNING_LOOP_STANDARD.md",
+    "docs/reference/downstream_gate_profile/README.md",
+    "docs/reviews/CVF_FLAL_T2_PARENT_EVIDENCE_WORKER_RETURN_2026-10-04.md",
+    "docs/reviews/evidence/cvf-flal-t2-parent-evidence-2026-10-04.json"
+  ],
+  "dispatcherMaterialPaths": [
+    "docs/baselines/CVF_GC018_FLAL_T2_PARENT_EVIDENCE_VALIDATION_2026-10-04.md",
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_T2_PARENT_EVIDENCE_VALIDATION_2026-10-04.md",
+    "docs/reviews/evidence/cvf-flal-t2-dispatch-inputs-2026-10-04.json",
+    "docs/reviews/evidence/cvf-flal-t2-worker-return-skeleton-2026-10-04.txt",
+    "docs/roadmaps/CVF_FOUNDATION_LEARNING_ADMISSION_AND_LOOPBACK_ROADMAP_2026-10-04.md"
+  ],
+  "localContinuityPaths": [
+    "AGENT_HANDOFF_V63_2026-09-18.md",
+    "CVF_SESSION_MEMORY.md",
+    "CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json",
+    "CVF_SESSION/state/entries/nextAllowedMove.json",
+    "CVF_SESSION/ACTIVE_SESSION_STATE.json",
+    "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json"
+  ],
+  "taskManifest": {
+    "schemaVersion": "cvf.taskGovernanceManifest.v1",
+    "taskId": "CVF-FLAL-T2",
+    "requestedProfile": "P3_ELEVATED",
+    "classification": {
+      "taskKind": "PURE_LOCAL_IMPLEMENTATION",
+      "authorityImpact": "ENRICHES_EXISTING_OWNER",
+      "externalEffect": "LOCAL_REVERSIBLE",
+      "dataSensitivity": "PRIVATE_REPO",
+      "reversibility": "GIT_REVERSIBLE",
+      "sourceScale": "NAMED_FILES",
+      "delegation": "MULTI_ROLE_NO_COMMIT",
+      "novelty": "NEW_INTERFACE"
+    },
+    "pathFamilies": [
+      "docs/reference/downstream_gate_profile/parent_learning_evidence.schema.json",
+      "governance/compat/parent_learning_evidence.py",
+      "governance/compat/check_finding_to_governance_learning.py",
+      "governance/compat/test_parent_learning_evidence.py",
+      "governance/compat/test_check_finding_to_governance_learning.py",
+      "docs/reference/downstream_gate_profile/CVF_PROJECT_LEARNING_PARENT_EVIDENCE_CONTRACT.md",
+      "docs/reference/downstream_gate_profile/CVF_PROJECT_LEARNING_LOOP_STANDARD.md",
+      "docs/reference/downstream_gate_profile/README.md",
+      "docs/reviews/CVF_FLAL_T2_PARENT_EVIDENCE_WORKER_RETURN_2026-10-04.md",
+      "docs/reviews/evidence/cvf-flal-t2-parent-evidence-2026-10-04.json",
+      "docs/baselines/CVF_GC018_FLAL_T2_PARENT_EVIDENCE_VALIDATION_2026-10-04.md",
+      "docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_T2_PARENT_EVIDENCE_VALIDATION_2026-10-04.md",
+      "docs/reviews/evidence/cvf-flal-t2-dispatch-inputs-2026-10-04.json",
+      "docs/reviews/evidence/cvf-flal-t2-worker-return-skeleton-2026-10-04.txt",
+      "docs/roadmaps/CVF_FOUNDATION_LEARNING_ADMISSION_AND_LOOPBACK_ROADMAP_2026-10-04.md",
+      "AGENT_HANDOFF_V63_2026-09-18.md",
+      "CVF_SESSION_MEMORY.md",
+      "CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json",
+      "CVF_SESSION/state/entries/nextAllowedMove.json",
+      "CVF_SESSION/ACTIVE_SESSION_STATE.json",
+      "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json"
+    ],
+    "claims": [
+      "Offline typed shape and raw-byte reference validation",
+      "Legacy records remain untyped; no semantic acceptance or project effect"
+    ],
+    "requiredProof": [
+      "PROOF-SHAPE",
+      "PROOF-NEGATIVE",
+      "PROOF-LEGACY",
+      "PROOF-OWNER",
+      "PROOF-RETURN"
+    ],
+    "operatorCheckpoints": [
+      "Separate authority for actual project unpark, provider or public effects"
+    ],
+    "forbiddenEffects": [
+      "PROVIDER_CALL",
+      "NETWORK",
+      "PROJECT_MUTATION",
+      "PUBLIC_SYNC",
+      "DEPLOYMENT",
+      "WORKER_COMMIT",
+      "HISTORICAL_BACKFILL"
+    ],
+    "sourceEvidence": {
+      "selectedFilesFullyRead": false,
+      "corpusReceiptRef": null,
+      "completenessClaimChanged": false
+    }
+  },
+  "routingReceipt": {
+    "schemaVersion": "cvf.taskGovernanceRoute.v1",
+    "taskId": "CVF-FLAL-T2",
+    "profile": "P3_ELEVATED",
+    "computedMinimumProfile": "P3_ELEVATED",
+    "classification": {
+      "taskKind": "PURE_LOCAL_IMPLEMENTATION",
+      "authorityImpact": "ENRICHES_EXISTING_OWNER",
+      "externalEffect": "LOCAL_REVERSIBLE",
+      "dataSensitivity": "PRIVATE_REPO",
+      "reversibility": "GIT_REVERSIBLE",
+      "sourceScale": "NAMED_FILES",
+      "delegation": "MULTI_ROLE_NO_COMMIT",
+      "novelty": "NEW_INTERFACE"
+    },
+    "escalationTriggers": [
+      "CANONICAL_STANDARD_SURFACE",
+      "CONTINUITY_STATE_SURFACE",
+      "DELEGATION_MULTI_ROLE_NO_COMMIT",
+      "GOVERNANCE_MACHINE_SURFACE",
+      "NOVELTY_NEW_INTERFACE",
+      "TASKKIND_PURE_LOCAL_IMPLEMENTATION"
+    ],
+    "selectedBundles": [
+      "CORE_INTEGRITY",
+      "ARTIFACT_SHAPE",
+      "SOURCE_PROVENANCE",
+      "DELEGATION_HANDOFF",
+      "CODE_QUALITY",
+      "CONTINUITY"
+    ],
+    "skippedBundles": {
+      "CORPUS_ACCOUNTING": "NO_CORPUS_OR_COMPLETENESS_CHANGE",
+      "STATE_AND_SECURITY": "NO_STATE_AUTH_SECRET_DEPENDENCY_OR_MUTATION_TRIGGER",
+      "RUNTIME_LIVE": "NO_RUNTIME_NETWORK_OR_LIVE_EFFECT",
+      "PUBLIC_RELEASE": "NO_PUBLIC_RELEASE_OR_DESTRUCTIVE_EFFECT"
+    },
+    "estimatedCommandCount": 6,
+    "selectiveExecutionAuthorized": false,
+    "legacyGateDisposition": "RUN_FULL_LEGACY_BUNDLE",
+    "receiptStatus": "ROUTED_SHADOW",
+    "validationErrors": []
+  },
+  "evidenceBoundary": "Admission provenance only; no implementation or gate PASS asserted by this receipt."
+}
