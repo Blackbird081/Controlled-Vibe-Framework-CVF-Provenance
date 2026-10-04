@@ -91,6 +91,16 @@ Claim Update: admission only; no implementation/test PASS claimed before executi
 
 This baseline admits the operator-authorized parent maintenance only. Prior R1 acceptance is retained; no automatic successor authority, CCMA pilot/adoption, provider/API or public effect is transferred.
 
+## ADIF Defect Registry Disclosure
+
+Resolver query: taskClass=`reviewer`, role=`reviewer`, lifecyclePhase=`review`.
+Command: `python -B governance/compat/run_adif_defect_resolver.py --task-class reviewer --role reviewer --lifecycle-phase review --json`.
+Returned defects: NONE_RETURNED.
+The query was run during Local review and initially disclosed only in the completion
+review. Post-commit range validation rejected its absence from this GC-018 baseline;
+this corrective declaration records the same actual zero-entry result. No prior
+pre-dispatch execution or independent understanding claim is inferred.
+
 ## Core Guard Self-Protection Authorization
 
 Authorized guard-maintenance scope: operator-authorized parent-only PLL-T1 standards, templates, installer, bootstrap/catalog discovery and focused local file-control tests.
