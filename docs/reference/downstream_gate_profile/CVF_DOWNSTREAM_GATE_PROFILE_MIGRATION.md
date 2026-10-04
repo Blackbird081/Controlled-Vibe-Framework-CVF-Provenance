@@ -13,7 +13,7 @@ Batch ID: CVF-DGIP-T1
 ## Purpose
 
 Define how projects receive, pin, upgrade and migrate to
-`cvf.downstreamGateProfile@1.0.0` without rewriting history or project-owned content.
+`cvf.downstreamGateProfile@1.1.0` without rewriting history or project-owned content.
 
 ## Scope / Applies To
 
@@ -46,6 +46,24 @@ and the runner `install` subcommand.
    pinned runner command.
 
 ## Upgrade
+
+Profile1.0 historical locks and proofs remain valid within their original scope.
+Core1.1 verification of an old lock returns `LOCK_INVALID`; repeated bootstrap
+reports `DRIFT_PRESERVED` and leaves the lock and learning content unchanged.
+Upgrade explicitly through the trusted Core runner:
+
+```powershell
+python -B <Core>/scripts/lib/downstream_governance/cvf_downstream_gate_runner.py install --project-root <Project> --core-root <Core> --core-commit <CoreSHA> --upgrade
+```
+
+The upgrade creates missing `docs/reviews/learnings/README.md` and
+`LEARNING_RECORD_TEMPLATE.md`, preserving nonempty project-owned versions.
+Empty/conflicting content or a resolved path outside the project returns
+`BLOCKED_LEARNING_HOME`; repair deliberately before retrying. If an existing
+catalog is preserved, register the learning family deliberately and regenerate
+its views with the project catalog manager. No bulk update or parked-project
+adoption is authorized by this standard. The continuity/intake schema versions
+stay1.0; new generated intake records identify profile1.1 and require parent admission.
 
 A new profile version is a new `profileId`. `install --upgrade` replaces the
 inherited files and rewrites the lock only on explicit operator action; the old

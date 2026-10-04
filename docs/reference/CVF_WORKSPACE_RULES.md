@@ -47,6 +47,13 @@ Rules:
 
 ## Application Projects
 
+Each governed project has a shared learning home at `docs/reviews/learnings/`,
+with README discovery and a record template. New profile1.1 bootstraps install it;
+existing projects migrate deliberately. Use
+`downstream_gate_profile/CVF_PROJECT_LEARNING_LOOP_STANDARD.md` for value-filtered
+use case -> CVF -> use case intake. Keep parent acceptance, return delivery and
+project application separate; parked projects receive no adoption mutation.
+
 Each application must live as a sibling of `.Controlled-Vibe-Framework-CVF`.
 
 Rules:

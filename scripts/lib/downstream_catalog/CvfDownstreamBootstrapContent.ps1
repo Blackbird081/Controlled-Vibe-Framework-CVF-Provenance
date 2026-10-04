@@ -5,7 +5,7 @@
 # project guard. Depends on CvfDownstreamCatalogLib.ps1 being dot-sourced
 # in the caller's scope before Install-CvfDownstreamCatalogKit is invoked.
 
-# Downstream continuity contract pin (cvf.downstreamGateProfile@1.0.0). The state
+# Downstream continuity contract pin (cvf.downstreamGateProfile@1.1.0). The state
 # file, handoff, memory front door and implementation status are compared field by
 # field by the portable gate runner; keep these values in one place.
 $Script:CvfContinuityContractId = "cvf.downstreamContinuityContract@1.0.0"
@@ -39,7 +39,8 @@ reports any disagreement with a field-specific locator.
 2. Read ``CVF_SESSION/ACTIVE_SESSION_STATE.json``.
 3. Read the active handoff named by that state file.
 4. Read ``IMPLEMENTATION_STATUS.json`` and ``docs/INDEX.md``.
-5. State current mode, active handoff, next allowed move, parked checkpoint,
+5. Read matching records from ``docs/reviews/learnings/README.md`` before similar work; the home indexes shared findings and parent feedback.
+6. State current mode, active handoff, next allowed move, parked checkpoint,
    and active role before material work.
 
 ## Mandatory Continuity Rehydration
@@ -309,7 +310,8 @@ function Install-CvfDownstreamCatalogKit {
     $artifactRegistryPath = Join-Path $ProjectPath "docs\catalog\ARTIFACT_REGISTRY.json"
     $moduleRegistryPath = Join-Path $ProjectPath "docs\catalog\MODULE_REGISTRY.json"
     if ($catalogState -eq "FRESH") {
-        $artifactRegistry = New-CvfArtifactRegistryObject -ProjectName $ProjectName -DateStamp $DateStamp -InitialHandoffRelative $InitialHandoffRelative
+        $hasLearningHome = Test-Path -LiteralPath (Join-Path $ProjectPath "docs\reviews\learnings") -PathType Container
+        $artifactRegistry = New-CvfArtifactRegistryObject -ProjectName $ProjectName -DateStamp $DateStamp -InitialHandoffRelative $InitialHandoffRelative -IncludeLearningHome:$hasLearningHome
         Set-Content -LiteralPath $artifactRegistryPath -Value ($artifactRegistry | ConvertTo-Json -Depth 6) -Encoding utf8
         Write-Host "[OK]   Created: $artifactRegistryPath" -ForegroundColor Green
         $moduleRegistry = New-CvfModuleRegistryObject -ProjectName $ProjectName -DateStamp $DateStamp

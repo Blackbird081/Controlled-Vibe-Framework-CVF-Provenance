@@ -183,7 +183,7 @@
         },
         {
           "path": "docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md",
-          "sha256": "0e2b6f7449b65cf285e010caf07ac3e1c846dfc0c441756268e4f43df34ee010",
+          "sha256": "a8dac5c8538b3c19e5d6e6442f338420ba55a6babc578165299cd28f9e7474c4",
           "evidenceRole": "corrected archive-qualified citations, honest H2-missing wording, and bounded SOT3 operational routing"
         }
       ]

@@ -13,7 +13,7 @@ Batch ID: CVF-DGIP-T1
 ## Purpose
 
 Define the versioned portable control-plane gate profile
-`cvf.downstreamGateProfile@1.0.0` that a generated downstream project inherits
+`cvf.downstreamGateProfile@1.1.0` that a generated downstream project inherits
 from CVF Core: one framework-owned control source, an identity-pinned installed
 copy, a phase-to-control applicability map, fail-closed outcomes, truthful
 coverage states, a conditional reviewer-local repair route, and a bounded
@@ -58,6 +58,12 @@ doctor (`--trusted`), the Core source.
 | ADIF-0050 (public repository used as authoring source) | NOT_A_DUPLICATE | Different defect; consulted for the private/public boundary, which stays `DEFERRED_PRIVATE_ONLY`. |
 
 ## Phase And Control Applicability Map
+
+Profile1.1 extends the closed profile1.0 with a shared project learning home and
+two pinned Core templates. See `CVF_PROJECT_LEARNING_LOOP_STANDARD.md` and
+`CVF_BUILD_LEARNING_EVIDENCE_CHECKLIST.md`. `CVF-DG-INST-01` additionally requires
+nonempty learning README/template inside the project. Project-authored records
+remain editable and are preserved; learning quality/admission is a Local decision.
 
 Phases: `bootstrap` (doctor and new-project aggregate), `pre-dispatch`,
 `worker-return`, `reviewer-fast`, `pre-commit`, `pr-ci`. Controls are mandatory; a

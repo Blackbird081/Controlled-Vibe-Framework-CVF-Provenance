@@ -107,6 +107,135 @@
         "hosted PR verification",
         "public rollout"
       ]
+    },
+    {
+      "intakeId": "CCMA-PROJECT-LEARNINGS-2026-10-04",
+      "sourceSnapshot": {
+        "path": "docs/reviews/evidence/cvf-pll-source-README-2026-10-04.txt",
+        "sha256": "691e2b2f33b9a297459c4f6a1f13cad9ca0ddcdd4f8551ce3eacfccc715244a7"
+      },
+      "sourceRecords": [
+        {
+          "sourcePath": "D:\\UNG DUNG AI\\TOOL AI 2026\\CVF-Workspace\\Customer-Care-Monitor\\docs\\reviews\\learnings\\README.md",
+          "sourceRawSha256": "a455c99faaa9240ceb7c7beeddf97a5d5077ffe29c1798b970a04219de1d2ae8",
+          "snapshotPath": "docs/reviews/evidence/cvf-pll-source-README-2026-10-04.txt",
+          "snapshotSha256": "691e2b2f33b9a297459c4f6a1f13cad9ca0ddcdd4f8551ce3eacfccc715244a7",
+          "readDisposition": "READ_FULL_SELECTED_FILE",
+          "sourceAuthority": "PROJECT_SHARED_LEARNING_ADVISORY; linked historical claims not independently replayed",
+          "normalization": "UTF-8 bytes; CRLF normalized to LF for Git snapshot"
+        },
+        {
+          "sourcePath": "D:\\UNG DUNG AI\\TOOL AI 2026\\CVF-Workspace\\Customer-Care-Monitor\\docs\\reviews\\learnings\\feedback_shell_cleanup_and_paths.md",
+          "sourceRawSha256": "bd63ce96c4ca5b6be9ba6a692f342d89e25ff430fba0794a14e1ef4b7d7c445e",
+          "snapshotPath": "docs/reviews/evidence/cvf-pll-source-feedback_shell_cleanup_and_paths-2026-10-04.txt",
+          "snapshotSha256": "7a1c6d7da6fdff3eded4d465752d0ca28920ed0655e62dd9d41f2ed9ded10be1",
+          "readDisposition": "READ_FULL_SELECTED_FILE",
+          "sourceAuthority": "PROJECT_SHARED_LEARNING_ADVISORY; linked historical claims not independently replayed",
+          "normalization": "UTF-8 bytes; CRLF normalized to LF for Git snapshot"
+        },
+        {
+          "sourcePath": "D:\\UNG DUNG AI\\TOOL AI 2026\\CVF-Workspace\\Customer-Care-Monitor\\docs\\reviews\\learnings\\feedback_cvf_repair_workflow.md",
+          "sourceRawSha256": "ee3620fecf55dc0d1207a31c6fe676d39a6882a63000e53f8226f65ede4c1124",
+          "snapshotPath": "docs/reviews/evidence/cvf-pll-source-feedback_cvf_repair_workflow-2026-10-04.txt",
+          "snapshotSha256": "61656d751e4a5acdaaceea4762676360ef12f60d2e5a0b3e9ac60f22f890db09",
+          "readDisposition": "READ_FULL_SELECTED_FILE",
+          "sourceAuthority": "PROJECT_SHARED_LEARNING_ADVISORY; linked historical claims not independently replayed",
+          "normalization": "UTF-8 bytes; CRLF normalized to LF for Git snapshot"
+        },
+        {
+          "sourcePath": "D:\\UNG DUNG AI\\TOOL AI 2026\\CVF-Workspace\\Customer-Care-Monitor\\docs\\reviews\\learnings\\feedback_sync_coverage_evidence_layers.md",
+          "sourceRawSha256": "f9783778e58afde533a85f2be1cf8e4e2977e4208c7bb9b02358cd976f1a1c30",
+          "snapshotPath": "docs/reviews/evidence/cvf-pll-source-feedback_sync_coverage_evidence_layers-2026-10-04.txt",
+          "snapshotSha256": "4ef7df271ae25edc50d749406215efac770d4b184c4f50fd62407b5e207fbb2f",
+          "readDisposition": "READ_FULL_SELECTED_FILE",
+          "sourceAuthority": "PROJECT_SHARED_LEARNING_ADVISORY; linked historical claims not independently replayed",
+          "normalization": "UTF-8 bytes; CRLF normalized to LF for Git snapshot"
+        }
+      ],
+      "authority": "ADVISORY_PROJECT_SHARED_RECORDS_NOT_PRIVATE_CVF_PROOF",
+      "sourceProjectClaims": "ATTRIBUTED_NOT_REPLAYED; CCMA pilot and application PARKED_BY_OPERATOR",
+      "parentBaseline": "docs/baselines/CVF_GC018_PLL_T1_PROJECT_LEARNING_LOOP_2026-10-04.md",
+      "findings": [
+        {
+          "id": "PLL-SHELL",
+          "sourceRecord": "docs/reviews/evidence/cvf-pll-source-feedback_shell_cleanup_and_paths-2026-10-04.txt",
+          "defectClass": "WORKER_EXECUTION_ERROR",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE",
+          "dedup": [
+            {
+              "owner": "docs/reference/CVF_AGENT_OPERATION_TRACE_AND_WORKSPACE_INTEGRITY_STANDARD_2026-06-13.md",
+              "disposition": "EXTENDS_EXISTING",
+              "reason": "Existing boundary/evidence controls; add discoverable command, resolved-target and rejection checklist, not historical root-cause attribution"
+            }
+          ],
+          "incrementalValue": "Common cleanup/path/rejection record in learning templates and checklist",
+          "parentDisposition": "MERGED_INTO_EXISTING_PARENT_OWNERS",
+          "reusableControl": "docs/reference/downstream_gate_profile/CVF_BUILD_LEARNING_EVIDENCE_CHECKLIST.md#shell-cleanup-and-paths",
+          "parentImplementation": "IMPLEMENTED_BOUNDED",
+          "returnDelivery": "PARKED_BY_OPERATOR",
+          "sourceProjectApplication": "PARKED_BY_OPERATOR",
+          "historicalProjectProof": "ATTRIBUTED_NOT_REPLAYED"
+        },
+        {
+          "id": "PLL-REPAIR",
+          "sourceRecord": "docs/reviews/evidence/cvf-pll-source-feedback_cvf_repair_workflow-2026-10-04.txt",
+          "defectClass": "WORKER_EXECUTION_ERROR",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE",
+          "dedup": [
+            {
+              "owner": "docs/reference/review_cost_control/CVF_REVIEW_COST_AND_DIMINISHING_RETURN_CONTROL_STANDARD.md",
+              "disposition": "EXTENDS_EXISTING",
+              "reason": "Consume returned evidence; add match-count/applied diff/intended failure/restoration outcome grammar"
+            },
+            {
+              "owner": "docs/reference/CVF_AGENT_WORK_ORDER_EPISTEMIC_PROCESS_BLOCK_ADDENDUM_2026-06-13.md",
+              "disposition": "EXTENDS_EXISTING",
+              "reason": "Keep failure, skip and timeout distinct from later partitioned pass"
+            }
+          ],
+          "incrementalValue": "Explicit NOT_APPLIED/INCONCLUSIVE/KILLED/SURVIVED and restoration evidence in shared checklist",
+          "parentDisposition": "MERGED_INTO_EXISTING_PARENT_OWNERS",
+          "reusableControl": "docs/reference/downstream_gate_profile/CVF_BUILD_LEARNING_EVIDENCE_CHECKLIST.md#repair-negative-fixtures-and-mutations",
+          "parentImplementation": "IMPLEMENTED_BOUNDED",
+          "returnDelivery": "PARKED_BY_OPERATOR",
+          "sourceProjectApplication": "PARKED_BY_OPERATOR",
+          "historicalProjectProof": "ATTRIBUTED_NOT_REPLAYED"
+        },
+        {
+          "id": "PLL-COVERAGE",
+          "sourceRecord": "docs/reviews/evidence/cvf-pll-source-feedback_sync_coverage_evidence_layers-2026-10-04.txt",
+          "defectClass": "WORKER_EXECUTION_ERROR",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE",
+          "dedup": [
+            {
+              "owner": "docs/reference/downstream_gate_profile/CVF_DOWNSTREAM_GATE_PROFILE_STANDARD.md",
+              "disposition": "EXTENDS_EXISTING",
+              "reason": "Installed/invoked/proven claim boundary extended to enumeration/content/storage/checkpoint/adapter/provider/runtime layers"
+            }
+          ],
+          "incrementalValue": "Layer-bound evidence matrix for project sync claims; local fixture not live provider or product completion",
+          "parentDisposition": "MERGED_INTO_EXISTING_PARENT_OWNERS",
+          "reusableControl": "docs/reference/downstream_gate_profile/CVF_BUILD_LEARNING_EVIDENCE_CHECKLIST.md#sync-coverage-and-claims",
+          "parentImplementation": "IMPLEMENTED_BOUNDED",
+          "returnDelivery": "PARKED_BY_OPERATOR",
+          "sourceProjectApplication": "PARKED_BY_OPERATOR",
+          "historicalProjectProof": "ATTRIBUTED_NOT_REPLAYED"
+        }
+      ],
+      "parentLinks": {
+        "admissionRecord": "docs/reviews/CVF_PLL_T1_PROJECT_LEARNING_LOOP_COMPLETION_2026-10-04.md",
+        "standard": "docs/reference/downstream_gate_profile/CVF_PROJECT_LEARNING_LOOP_STANDARD.md",
+        "evidenceChecklist": "docs/reference/downstream_gate_profile/CVF_BUILD_LEARNING_EVIDENCE_CHECKLIST.md",
+        "proof": "docs/reviews/evidence/cvf-pll-t1-evidence-2026-10-04.json",
+        "focusedTests": "governance/compat/test_project_learning_loop.py"
+      },
+      "deferred": [
+        "CCMA pilot",
+        "CCMA loopback/adoption",
+        "hosted CI",
+        "Linux",
+        "runtime/provider/public effects"
+      ]
     }
   ]
 }

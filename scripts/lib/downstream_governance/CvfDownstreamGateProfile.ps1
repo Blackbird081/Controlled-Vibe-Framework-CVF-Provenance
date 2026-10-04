@@ -2,9 +2,9 @@
 #
 # Core-side only; dot-sourced by new-cvf-workspace.ps1, the workspace doctor and the
 # web evidence bridge. The Python runner next to this file is the single
-# framework-owned control source (profile cvf.downstreamGateProfile@1.0.0).
+# framework-owned control source (profile cvf.downstreamGateProfile@1.1.0).
 
-$Script:CvfGateProfileId = "cvf.downstreamGateProfile@1.0.0"
+$Script:CvfGateProfileId = "cvf.downstreamGateProfile@1.1.0"
 $Script:CvfGateProfileCoreFiles = @(
     "governance\compat\check_gate_to_role_closeability.py",
     "scripts\lib\downstream_governance\CvfDownstreamGateProfile.ps1",
@@ -19,7 +19,9 @@ $Script:CvfGateProfileCoreFiles = @(
     "scripts\lib\downstream_governance\cvf_dg_intake.py",
     "scripts\lib\downstream_governance\cvf_dg_coverage.py",
     "scripts\lib\downstream_governance\downstream_pr_gates.yml.template",
-    "scripts\lib\downstream_governance\git-pre-commit.template"
+    "scripts\lib\downstream_governance\git-pre-commit.template",
+    "scripts\lib\downstream_governance\project_learning_home.template.md",
+    "scripts\lib\downstream_governance\project_learning_record.template.md"
 )
 
 function Resolve-CvfPython {

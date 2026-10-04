@@ -15,6 +15,8 @@ CONTROL_ID = "CVF-DG-INST-01"
 LOCK_SCHEMA = "cvf.downstreamGateLock@1.0.0"
 CI_TEMPLATE = "downstream_pr_gates.yml.template"
 OVERRIDE_ENV_VARS = ("CVF_DG_SKIP", "CVF_DOWNSTREAM_GATES_SKIP", "CVF_DG_DISABLE")
+LEARNING_HOME = "docs/reviews/learnings"
+LEARNING_TEMPLATES = {"README.md": "project_learning_home.template.md", "LEARNING_RECORD_TEMPLATE.md": "project_learning_record.template.md"}
 LOCAL_ALLOWED_KEYS = {"schemaVersion", "additionalControls"}
 LOCAL_CONTROL_KEYS = {"id", "phases", "command"}
 
@@ -33,6 +35,43 @@ def _source_for(name: str, profile: dict, lib_dir: Path, core_root: Path | None)
 def _render_workflow(template: str, profile_sha: str, runner_sha: str, bundle_sha: str) -> str:
     return (template.replace("{{PROFILE_SHA256}}", profile_sha).replace("{{RUNNER_SHA256}}", runner_sha)
             .replace("{{BUNDLE_SHA256}}", bundle_sha))
+
+
+def check_learning_home(project_root: Path) -> list[Finding]:
+    """Structure only: editable project learning is never hashed as Core authority."""
+    home = project_root / LEARNING_HOME
+    problems = []
+    for name in LEARNING_TEMPLATES:
+        target = home / name
+        if not target.resolve().is_relative_to(project_root.resolve()):
+            problems.append(Finding("LEARNING_HOME_OUTSIDE_PROJECT", f"{LEARNING_HOME}/{name}", "learning home must stay inside the project"))
+        elif not target.is_file() or not target.read_bytes().strip():
+            problems.append(Finding("LEARNING_HOME_INCOMPLETE", f"{LEARNING_HOME}/{name}", "missing or empty learning discovery/template; deliberate migration required"))
+    return problems
+
+
+def install_learning_home(project_root: Path, lib_dir: Path) -> list[Finding]:
+    """Prepare only missing scaffolds, never replace project-authored learning."""
+    home = project_root / LEARNING_HOME
+    for ancestor in (home, *home.parents):
+        if ancestor == project_root.parent:
+            break
+        if ancestor.exists() and not ancestor.is_dir():
+            return [Finding("LEARNING_HOME_INCOMPLETE", str(ancestor), "learning directory conflicts with existing file; owner repair required")]
+    for name, source in LEARNING_TEMPLATES.items():
+        target = home / name
+        if not target.resolve().is_relative_to(project_root.resolve()):
+            return [Finding("LEARNING_HOME_OUTSIDE_PROJECT", str(target), "refusing write outside project")]
+        if target.exists() and (not target.is_file() or not target.read_bytes().strip()):
+            return [Finding("LEARNING_HOME_INCOMPLETE", str(target), "existing empty/conflicting content preserved; owner repair required")]
+        if not (lib_dir / source).is_file() or not (lib_dir / source).read_bytes().strip():
+            return [Finding("LEARNING_TEMPLATE_MISSING", source, "Core learning template unavailable")]
+    home.mkdir(parents=True, exist_ok=True)
+    for name, source in LEARNING_TEMPLATES.items():
+        target = home / name
+        if not target.exists():
+            target.write_bytes((lib_dir / source).read_bytes())
+    return check_learning_home(project_root)
 
 
 def install(project_root: Path, lib_dir: Path, core_root: Path, core_commit: str,
@@ -61,6 +100,9 @@ def install(project_root: Path, lib_dir: Path, core_root: Path, core_commit: str
         collisions += [p.relative_to(gates).as_posix() for p in gates.rglob("*") if p.is_file() and p.relative_to(gates).as_posix() not in sources] if gates.is_dir() else []
         if collisions:
             return {"status": "BLOCKED_COLLISION", "detail": "project-owned files exist: " + ", ".join(sorted(collisions))}
+    learning_problems = install_learning_home(project_root, lib_dir)
+    if learning_problems:
+        return {"status": "BLOCKED_LEARNING_HOME", "detail": "; ".join(f"{p.code}@{p.locator}" for p in learning_problems)}
     gates.mkdir(parents=True, exist_ok=True)
     files: dict[str, str] = {}
     for name, source in sources.items():
@@ -185,4 +227,5 @@ def verify_install(project_root: Path, lib_dir: Path, core_root: Path | None = N
         if not workflow.is_file() or content_sha256(workflow.read_bytes()) != ci.get("renderedSha256"):
             findings.append(Finding("CI_WORKFLOW_DRIFT", str(ci.get("path")), "generated PR workflow is missing or edited from its pinned rendering"))
     findings.extend(_check_local_override(project_root, profile))
+    findings.extend(check_learning_home(project_root))
     return ControlResult(CONTROL_ID, "FAIL" if findings else "PASS", findings)

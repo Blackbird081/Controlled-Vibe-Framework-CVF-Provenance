@@ -485,7 +485,7 @@ class IntakeTests(Tmp):
     def test_registry_is_parent_owned_and_links_resolve(self) -> None:
         entry = json.loads((DOCS / "downstream_finding_intake_registry.json").read_text(encoding="utf-8"))["entries"][0]
         self.assertEqual(entry["sourceSnapshot"]["sha256"], common.raw_sha256((REPO / entry["sourceSnapshot"]["path"]).read_bytes()))
-        self.assertTrue(all(f["parentDisposition"] == "PENDING_LOCAL_REVIEW" and f["dedup"] and all((REPO / d["owner"]).is_file() for d in f["dedup"]) for f in entry["findings"]))
+        self.assertTrue(all(f["parentDisposition"] == "ACCEPTED_BOUNDED_HERMETIC_FILE_CONTROL_ONLY" and f["dedup"] and all((REPO / d["owner"]).is_file() for d in f["dedup"]) for f in entry["findings"]))
         self.assertTrue(all(k.startswith("worker") or (REPO / v).is_file() for k, v in entry["parentLinks"].items()))
 
 

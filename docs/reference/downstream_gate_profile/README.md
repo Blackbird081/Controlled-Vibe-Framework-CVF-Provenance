@@ -14,7 +14,7 @@ intake.
 
 ## Purpose
 
-Front door for `cvf.downstreamGateProfile@1.0.0`: the portable, versioned control
+Front door for `cvf.downstreamGateProfile@1.1.0`: the portable, versioned control
 profile that generated downstream projects inherit, with its continuity contract,
 status-applicability grammar, reviewer-local repair route, truthful coverage
 states and project-to-parent finding intake.
@@ -32,6 +32,8 @@ Downstream Bootstrap and Workspace Governance Learning Propagation closures.
 3. Schemas: `downstream_gate_profile.schema.json`, `downstream_continuity_contract.schema.json`,
    `downstream_finding_intake.schema.json`; template `DOWNSTREAM_FINDING_INTAKE_TEMPLATE.json`.
 4. `downstream_finding_intake_registry.json` - parent dedup, admission and back-links.
+5. `CVF_PROJECT_LEARNING_LOOP_STANDARD.md` - common learning home, value selection and returned adoption.
+6. `CVF_BUILD_LEARNING_EVIDENCE_CHECKLIST.md` - cleanup, mutation and coverage evidence practice.
 
 ## Owner And Archive
 

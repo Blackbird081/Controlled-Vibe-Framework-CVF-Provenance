@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Portable downstream gate runner (cvf.downstreamGateProfile@1.0.0, stdlib only).
+"""Portable downstream gate runner (cvf.downstreamGateProfile@1.1.0, stdlib only).
 
 Core-owned: scripts/lib/downstream_governance/. A project copy lives in
 scripts/cvf_gates/ and is identity-pinned by .cvf/gate-profile.lock.json.

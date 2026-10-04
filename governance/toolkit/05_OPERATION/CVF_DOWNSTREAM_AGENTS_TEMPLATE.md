@@ -134,7 +134,9 @@ PROVEN_HERMETIC; a doctor PASS or a present file is not an enforcement claim. Ke
 `CVF_SESSION_MEMORY.md`, the active state, the active handoff and `IMPLEMENTATION_STATUS.json` in agreement (mismatch
 is `BLOCKED_CONTINUITY_DRIFT`). A work order has exactly one `Status: TOKEN` line; unknown or malformed status fails
 closed. A finding that may generalize is emitted with the runner `intake` subcommand for the CVF parent owner;
-generation is not acceptance.
+generation is not acceptance. Keep reusable findings in `docs/reviews/learnings/` and read its README by trigger;
+record source/evidence, parent value/dedup decision and returned adoption separately. Parent acceptance does not
+prove project application; parked adoption stays PARKED_BY_OPERATOR. Use the learning template's evidence checks.
 
 ## Required First-Read Documents
 

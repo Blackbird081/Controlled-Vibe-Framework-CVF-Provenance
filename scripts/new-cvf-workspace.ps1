@@ -464,13 +464,14 @@ foreach ($family in @("decisions", "roadmaps", "specs", "work_orders", "reviews"
     Write-ProjectFileIfMissing -FilePath (Join-Path $docsDir "$family\README.md") -Content $familyContent
 }
 
+# The pinned installer prepares the learning home with boundary checks before catalog registration.
+# SKIP and drift-preserved existing profiles never acquire new learning content implicitly.
+$gateProfileStatus = Install-CvfDownstreamGateProfile -ProjectPath $projectPath -CvfCorePath $cvfCorePath -CvfHead $cvfHead -Mode $gateProfileMode
+
 # Governed downstream catalog kit: Artifact Registry, Module Registry, schemas,
 # executable catalog manager, and deterministic Index/Module Catalog views.
 $catalogKitStatus = Install-CvfDownstreamCatalogKit -ProjectPath $projectPath -CvfCorePath $cvfCorePath `
     -ProjectName $ProjectName -DateStamp $dateStamp -InitialHandoffRelative $initialHandoffRelative
-
-# DGIP: pinned runner/profile/CI template (never overwrites project-owned content).
-$gateProfileStatus = Install-CvfDownstreamGateProfile -ProjectPath $projectPath -CvfCorePath $cvfCorePath -CvfHead $cvfHead -Mode $gateProfileMode
 
 # Bootstrap Log
 $logContent = Get-CvfBootstrapLogContent -RecordIdDate $recordIdDate -ProjectName $ProjectName -DateStamp $dateStamp `

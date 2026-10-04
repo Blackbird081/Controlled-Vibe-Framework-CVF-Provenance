@@ -1,5 +1,5 @@
 #!/bin/sh
-# CVF downstream pre-commit preflight template (cvf.downstreamGateProfile@1.0.0).
+# CVF downstream pre-commit preflight template (cvf.downstreamGateProfile@1.1.0).
 # Copy to .git/hooks/pre-commit to activate it. Installing this template does not
 # activate it: the coverage readout reports it as INSTALLED only, never as invoked.
 set -e
