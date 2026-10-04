@@ -1,16 +1,16 @@
 # CVF Agent Handoff V63 - ACEL Applied-Knowledge Owner Enrichment
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD: `b387d69836dd0303b04f86003d0af081ea90244a`; remote overlay merge90/90; PLL-T1 accepted; CCMA parked; S05/C1 STOP.
+Current HEAD: `bde50606c7b17fa5124c6ba43c894473745baf83`; FLAL-T0 roadmap hooks90/90; PLL-T1 accepted; CCMA parked; S05/C1 STOP.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
 Remote tracking branch: `origin/main`. Exact remote SHA must be derived live from git when needed. External agent memory files: non-canonical convenience only.
 ## Purpose
-Carry CVF-NCR v2.7 and closed AKOE/G1-G7. Applied-knowledge details remain in the governed roadmap.
+Carry CVF-NCR v2.8 and closed AKOE/G1-G7. Applied-knowledge details remain in the governed roadmap.
 ## Scope / Target / Owner Boundary
-Role: Local orchestrator/reviewer. Phase: PLL-T1 parent foundation accepted bounded; CCMA parked; S05 frozen; technical owner: Local; effect owner: operator; P11 parked.
+Role: Local maintainer/reviewer. Phase: FLAL-T0 parent roadmap design; technical owner: Local; effect owner: operator; CCMA/S05/P11 parked.
 ## Startup Acknowledgment
-Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`; handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=PLL-T1 parent foundation accepted bounded; role=Local single-agent maintainer/reviewer; decision owner=Local; parked=CCMA pilot/return/application, Q001/Q004, P11/public/deploy.
+Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`; handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=FLAL-T1 contract/owner reconciliation; role=Local single-agent maintainer/reviewer; phase=parent roadmap design; decision owner=Local; parked=CCMA pilot/return/application, Q001/Q004, P11/deploy; public gate separate.
 ## Current Mode
 `cvf_ncr_p10_closed_p11_parked`. CVF-NCR-R1-S11-R1 is closed at `bd15b2600` after material `1a538d10d`. P10 is `ACTIVE_PRODUCTION_RUNTIME`; P11 stays parked. Latest closed learning-history wave: `LHW24`.
 ## Active Boundary
@@ -25,7 +25,7 @@ AKOE current roadmap `docs/roadmaps/CVF_ACEL_APPLIED_KNOWLEDGE_OWNER_ENRICHMENT_
 - PLL-T1 material `b8ff294eb`: profile1.1, lessons3;12/12+40/40, hooks90/90; CCMA parked. Review: `docs/reviews/CVF_PLL_T1_PROJECT_LEARNING_LOOP_COMPLETION_2026-10-04.md`.
 - DGIP T1 R1 CLOSED_PASS_BOUNDED: material `ca9a2bb3f`; closure `9dcfb681e`,83/83; manifest46/46 MATCH; receipt consumed2026-10-04; probe27/27; DEV07/NET retained; no pending receipt, successor or redispatch; S05/C1 STOP.
 ## Core Guard Self-Protection Authorization
-Authorized guard-maintenance scope: operator sync continuity under `b387d69836dd0303b04f86003d0af081ea90244a`; six continuity paths only. Operator authorized External Read/provenance/public refresh; CCMA parked. Rollback: continuity only.
+Authorized guard-maintenance scope: FLAL-T0 roadmap continuity under `bde50606c7b17fa5124c6ba43c894473745baf83`; six continuity paths only. Operator instructed return to parent CVF roadmap; CCMA parked. Rollback: continuity only.
 Authorized guard-maintenance scope: bind B2b packet material `588f8d63f` and release only its internal worker next move.
 Protected paths:
 - `AGENT_HANDOFF_V63_2026-09-18.md`
@@ -169,7 +169,7 @@ Rollback boundary: revert only this continuity sync; preserve material `5c1ee025
 - ACEL-AKOE-U1 is `CLOSED_PASS_BOUNDED` at `d9132412a`, disposition `SOURCE_RECONCILED_DEFER_WITH_TRIGGER`. Exact pins, 42 claims, byte hash and verification detail remain in its completion review; no import, runtime/provider, public sync or automatic successor opened.
 - CVF-NCR-R0-W01 source/profile return is Local-accepted bounded at material commit `d9b43a6f6deff7fb19710b5a9a4f50bf2a6015b6`; reviewer-fast 69/69 and pre-commit 90/90 passed. P06/P08 and actual destination/retention/cost remain open. One overbroad worker grep exposed a configured URL in tool output; the return does not reproduce it, and Local/operator config handling remains separate. No pilot or UI action was run.
 ## Next Allowed Move
-PROGRAM_ID=CVF-PLL; NEXT_ACTION_CLASS=PUBLIC_GATE_PENDING_THEN_PARENT_ROADMAP; MATERIAL_COMMIT=b387d69836dd0303b04f86003d0af081ea90244a; EXPANSION_ALLOWED=false. Authority/details: CVF_SESSION_MEMORY.md. CCMA parked; S05/C1 STOP; P11/deploy parked; public sync authorized.
+PROGRAM_ID=CVF-FLAL; NEXT_ACTION_CLASS=FLAL_T1_CONTRACT_AND_OWNER_RECONCILIATION; BATCH_ID=CVF-FLAL-T0; MATERIAL_COMMIT=bde50606c7b17fa5124c6ba43c894473745baf83; EXPANSION_ALLOWED=false. Authority/details: CVF_SESSION_MEMORY.md. CCMA parked; S05/C1 STOP; P11/deploy parked; public gate separate.
 ## Parked Checkpoints
 - autorun lane-binding R1 is closed at `ee81deeeb`; HRLTP-T2 remains paused for Local no-subagent route reassessment;
 - T3C-C2 is closed and Local verified at `820aae3ec`;
@@ -196,20 +196,20 @@ Authorized guard-maintenance scope: continuity-only binding of operator-selected
 
 | Field | Evidence |
 |---|---|
-| Actor | Local repository auditor, external-return reviewer and session-sync steward |
-| Provider or surface | private CVF workspace and operator-relayed external review files |
-| Session or invocation | operator sync/cleanup continuity, 2026-10-04 |
+| Actor | Local maintainer/reviewer and session-sync steward |
+| Provider or surface | private CVF workspace |
+| Session or invocation | FLAL-T0 parent roadmap continuity, 2026-10-04 |
 | Working directory | repository root |
-| Command or tool surface | governed source reads, external hash verification, apply_patch, state generator, governance gates and Git |
+| Command or tool surface | targeted governed-source reads, roadmap validation, state generator and Git |
 | Target paths | active handoff, split session-state sources, generated aggregate/bootstrap, and compact front door |
-| Allowed scope source | operator parent-only request; `docs/baselines/CVF_GC018_PLL_T1_PROJECT_LEARNING_LOOP_2026-10-04.md` and `docs/reviews/CVF_PLL_T1_PROJECT_LEARNING_LOOP_COMPLETION_2026-10-04.md` |
-| Before status evidence | clean material HEADb387d69836dd0303b04f86003d0af081ea90244a; normal hooks90/90 |
-| After status evidence | six continuity paths bind parent profile1.1 and parked CCMA pilot/return/application; no worker/automatic successor |
+| Allowed scope source | operator return to parent roadmap; `docs/roadmaps/CVF_FOUNDATION_LEARNING_ADMISSION_AND_LOOPBACK_ROADMAP_2026-10-04.md` |
+| Before status evidence | clean material HEADbde50606c7b17fa5124c6ba43c894473745baf83; normal hooks90/90 |
+| After status evidence | six continuity paths bind FLAL-T1 planning next move; CCMA parked; no worker dispatched |
 | Diff evidence | exact continuity manifest before session-only commit |
-| Approval boundary | operator authorized External Read/provenance/public sync; CCMA parked |
-| Claim boundary | Windows structural file controls and normative checklist only; historical failures retained |
+| Approval boundary | operator authorized parent roadmap design; fresh GC-018/work order before implementation |
+| Claim boundary | source-backed planning only; no implementation/provider/public closure |
 | Agent type | Local orchestrator/reviewer and session-sync steward |
-| Invocation ID | cvf-pll-t1-corrected-continuity-20261004 |
+| Invocation ID | cvf-flal-t0-continuity-20261004 |
 | Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md` |
 | Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md` |
 | Manifest delta | MATCH |
@@ -217,4 +217,4 @@ Authorized guard-maintenance scope: continuity-only binding of operator-selected
 
 ## Claim Boundary
 
-PLL-T1 parent file controls only. CCMA parked. Historical states retained; no successor, CCMA edit/test, provider/runtime/public/deploy effect.
+FLAL-T0 planning only; PLL-T1 accepted. CCMA parked. Historical states retained; no worker dispatch, CCMA edit/test or provider/runtime/public/deploy effect.
