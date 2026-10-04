@@ -1,0 +1,177 @@
+{
+  "schemaVersion": "cvf.flalRangeT1DispatchInputs@1",
+  "batchId": "CVF-FLAL-RANGE-T1",
+  "dispatchBaseHead": "56ff4cf6ae23693215d4a49a7efee8e9740ec77e",
+  "beforeStatus": "CLEAN",
+  "sourcePins": [
+    {
+      "path": "docs/reviews/CVF_FLAL_T2_PARENT_EVIDENCE_VALIDATION_COMPLETION_2026-10-04.md",
+      "sha256": "265ba52c4e71d250fbfc6589d1ca1a0c367203c090595e7b326ab491b2e49174",
+      "readDepth": "TARGETED_OWNER_INTERFACE",
+      "verifiedSymbol": "Evidence / Verification; Review Cost Telemetry",
+      "authority": "GOVERNED_LOCAL_SOURCE"
+    },
+    {
+      "path": "governance/compat/run_agent_commit_steward_preflight.py",
+      "sha256": "d88239535cd7144b13a17b47edb86c215b01a93df57b1cf38cd79e79f56663ad",
+      "readDepth": "TARGETED_OWNER_INTERFACE",
+      "verifiedSymbol": "_has_exact_mixed_atomicity_authorization; build_path_plan",
+      "authority": "GOVERNED_LOCAL_SOURCE"
+    },
+    {
+      "path": "governance/compat/run_agent_autorun_workflow_gate.py",
+      "sha256": "8d28ac306eb2d7569571b53a833478b59708e89860ef11ff06115ba8a8ea6a1e",
+      "readDepth": "TARGETED_OWNER_INTERFACE",
+      "verifiedSymbol": "_range_shape_preflight",
+      "authority": "GOVERNED_LOCAL_SOURCE"
+    },
+    {
+      "path": "governance/compat/check_active_session_state.py",
+      "sha256": "7ef59d567124ce99b993d2f67e123cd458f0244797ffe8a87cbd152c6c514834",
+      "readDepth": "TARGETED_OWNER_INTERFACE",
+      "verifiedSymbol": "currentAuthority raw-hash validation",
+      "authority": "GOVERNED_LOCAL_SOURCE"
+    },
+    {
+      "path": "docs/reference/CVF_TRANCHE_COMMIT_CHOREOGRAPHY_STANDARD_2026-06-03.md",
+      "sha256": "c66543cc606b12b82a2e043ea7718a0d48472b8b41379a7488aacecdf2b586c4",
+      "readDepth": "TARGETED_OWNER_INTERFACE",
+      "verifiedSymbol": "Commit choreography; Step 4A",
+      "authority": "GOVERNED_LOCAL_SOURCE"
+    },
+    {
+      "path": "docs/reference/CVF_AGENT_COMMIT_STEWARD_PROTOCOL_STANDARD_2026-06-15.md",
+      "sha256": "7cbe7c61743595c91a62c574c5f923b9a1a60672dea7ac99001972ee8f68ebe8",
+      "readDepth": "TARGETED_OWNER_INTERFACE",
+      "verifiedSymbol": "Commit Split Rule",
+      "authority": "GOVERNED_LOCAL_SOURCE"
+    },
+    {
+      "path": "governance/compat/test_run_agent_commit_steward_preflight.py",
+      "sha256": "59e34a8cb46c6b5dd2aa57597f6d101cbaf643eb9736c58295baa4bb359f18e0",
+      "readDepth": "TARGETED_OWNER_INTERFACE",
+      "verifiedSymbol": "test_authorized_exact_mixed_manifest_uses_session_sync",
+      "authority": "GOVERNED_LOCAL_SOURCE"
+    }
+  ],
+  "workerPaths": [
+    "docs/reviews/CVF_FLAL_RANGE_T1_RECONCILIATION_WORKER_RETURN_2026-10-04.md",
+    "docs/reviews/evidence/cvf-flal-range-t1-reconciliation-2026-10-04.json"
+  ],
+  "dispatcherMaterialPaths": [
+    "docs/baselines/CVF_GC018_FLAL_RANGE_T1_RECONCILIATION_2026-10-04.md",
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_RANGE_T1_RECONCILIATION_2026-10-04.md",
+    "docs/reviews/evidence/cvf-flal-range-t1-dispatch-inputs-2026-10-04.json",
+    "docs/reviews/evidence/cvf-flal-range-t1-worker-return-skeleton-2026-10-04.txt"
+  ],
+  "localContinuityPaths": [
+    "AGENT_HANDOFF_V63_2026-09-18.md",
+    "CVF_SESSION_MEMORY.md",
+    "CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json",
+    "CVF_SESSION/state/entries/nextAllowedMove.json",
+    "CVF_SESSION/ACTIVE_SESSION_STATE.json",
+    "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json"
+  ],
+  "taskManifest": {
+    "schemaVersion": "cvf.taskGovernanceManifest.v1",
+    "taskId": "CVF-FLAL-RANGE-T1",
+    "requestedProfile": "P3_ELEVATED",
+    "classification": {
+      "taskKind": "PURE_LOCAL_IMPLEMENTATION",
+      "authorityImpact": "ENRICHES_EXISTING_OWNER",
+      "externalEffect": "LOCAL_REVERSIBLE",
+      "dataSensitivity": "PRIVATE_REPO",
+      "reversibility": "GIT_REVERSIBLE",
+      "sourceScale": "NAMED_FILES",
+      "delegation": "MULTI_ROLE_NO_COMMIT",
+      "novelty": "NEW_INTERFACE"
+    },
+    "pathFamilies": [
+      "docs/reviews/CVF_FLAL_RANGE_T1_RECONCILIATION_WORKER_RETURN_2026-10-04.md",
+      "docs/reviews/evidence/cvf-flal-range-t1-reconciliation-2026-10-04.json",
+      "docs/baselines/CVF_GC018_FLAL_RANGE_T1_RECONCILIATION_2026-10-04.md",
+      "docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_RANGE_T1_RECONCILIATION_2026-10-04.md",
+      "docs/reviews/evidence/cvf-flal-range-t1-dispatch-inputs-2026-10-04.json",
+      "docs/reviews/evidence/cvf-flal-range-t1-worker-return-skeleton-2026-10-04.txt",
+      "AGENT_HANDOFF_V63_2026-09-18.md",
+      "CVF_SESSION_MEMORY.md",
+      "CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json",
+      "CVF_SESSION/state/entries/nextAllowedMove.json",
+      "CVF_SESSION/ACTIVE_SESSION_STATE.json",
+      "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json"
+    ],
+    "claims": [
+      "Existing closure owner diagnosis only; no checker implementation",
+      "T2 technical acceptance and original failed range retained"
+    ],
+    "requiredProof": [
+      "PROOF-DIAGNOSIS",
+      "PROOF-AUTHORIZATION",
+      "PROOF-PLAN"
+    ],
+    "operatorCheckpoints": [
+      "Separate admitted packet before protected production repair or T3"
+    ],
+    "forbiddenEffects": [
+      "PROVIDER_CALL",
+      "NETWORK",
+      "PROJECT_MUTATION",
+      "PUBLIC_SYNC",
+      "DEPLOYMENT",
+      "WORKER_COMMIT",
+      "HISTORY_REWRITE"
+    ],
+    "sourceEvidence": {
+      "selectedFilesFullyRead": false,
+      "corpusReceiptRef": null,
+      "completenessClaimChanged": false
+    }
+  },
+  "taskRoutingReceipt": {
+    "schemaVersion": "cvf.taskGovernanceRoute.v1",
+    "taskId": "CVF-FLAL-RANGE-T1",
+    "profile": "P3_ELEVATED",
+    "computedMinimumProfile": "P3_ELEVATED",
+    "classification": {
+      "taskKind": "PURE_LOCAL_IMPLEMENTATION",
+      "authorityImpact": "ENRICHES_EXISTING_OWNER",
+      "externalEffect": "LOCAL_REVERSIBLE",
+      "dataSensitivity": "PRIVATE_REPO",
+      "reversibility": "GIT_REVERSIBLE",
+      "sourceScale": "NAMED_FILES",
+      "delegation": "MULTI_ROLE_NO_COMMIT",
+      "novelty": "NEW_INTERFACE"
+    },
+    "escalationTriggers": [
+      "CONTINUITY_STATE_SURFACE",
+      "DELEGATION_MULTI_ROLE_NO_COMMIT",
+      "NOVELTY_NEW_INTERFACE",
+      "TASKKIND_PURE_LOCAL_IMPLEMENTATION"
+    ],
+    "selectedBundles": [
+      "CORE_INTEGRITY",
+      "ARTIFACT_SHAPE",
+      "SOURCE_PROVENANCE",
+      "DELEGATION_HANDOFF",
+      "CODE_QUALITY",
+      "CONTINUITY"
+    ],
+    "skippedBundles": {
+      "CORPUS_ACCOUNTING": "NO_CORPUS_OR_COMPLETENESS_CHANGE",
+      "STATE_AND_SECURITY": "NO_STATE_AUTH_SECRET_DEPENDENCY_OR_MUTATION_TRIGGER",
+      "RUNTIME_LIVE": "NO_RUNTIME_NETWORK_OR_LIVE_EFFECT",
+      "PUBLIC_RELEASE": "NO_PUBLIC_RELEASE_OR_DESTRUCTIVE_EFFECT"
+    },
+    "estimatedCommandCount": 6,
+    "selectiveExecutionAuthorized": false,
+    "legacyGateDisposition": "RUN_FULL_LEGACY_BUNDLE",
+    "receiptStatus": "ROUTED_SHADOW",
+    "validationErrors": []
+  },
+  "historicalRange": {
+    "base": "5cdb8390d8fd7ea882628ed571fcff80b2fe8ce7",
+    "head": "601c31e977ae260444697f8836ec825900cd59a0",
+    "disposition": "BLOCKED_MIXED_TRACE_SESSION_RANGE"
+  },
+  "claimBoundary": "diagnostic admission; original failure retained; no repair or successor"
+}
