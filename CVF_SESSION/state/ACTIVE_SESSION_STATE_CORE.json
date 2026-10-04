@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_WRS_FR1_R1_SCAFFOLD_FRICTION_REPAIR_2026-10-04.md",
     "workOrderSha256": "17c6bd21229dcdbc52074567a7353984eeff43758da4201ef39d77e701631632"
   },
-  "currentAuthoritySyncReason": "R1 closed-pair pins; accepted F1/F2/F3, Local18, metadata corrections; material 090f3bfa8e5935b2603a4b43e440950f323edba5; fresh bound closure verification then stop.",
+  "currentAuthoritySyncReason": "R1 closed-pair pins; accepted F1/F2/F3, Local18, metadata corrections; material 45b55cc4975dd8c5d21a8b9c5edd4105dcaa88d0; fresh bound closure verification then stop.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
