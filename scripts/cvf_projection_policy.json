@@ -166,6 +166,8 @@
     "\\.tmp$"
   ],
   "denyExceptions": [
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/html-artifact-byte-handoff.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/html-artifact-byte-handoff.test.ts",
     "workspace_templates/AGENT_HANDOFF_TEMPLATE.md",
     "EXTENSIONS/CVF_GUARD_CONTRACT/src/runtime/agent-handoff.ts",
     "EXTENSIONS/CVF_GUARD_CONTRACT/src/runtime/agent-handoff.test.ts",

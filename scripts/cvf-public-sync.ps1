@@ -236,6 +236,8 @@ $DENY_PATTERNS = @(
 # blocked token. Keep this list aligned with the public-surface manifest;
 # runtime state and receipt streams are never exceptions here.
 $DENY_EXCEPTIONS = @(
+    'EXTENSIONS\CVF_v1.6_AGENT_PLATFORM\cvf-web\src\lib\html-artifact-byte-handoff.ts',
+    'EXTENSIONS\CVF_v1.6_AGENT_PLATFORM\cvf-web\src\lib\html-artifact-byte-handoff.test.ts',
     'workspace_templates\AGENT_HANDOFF_TEMPLATE.md',
     'EXTENSIONS\CVF_GUARD_CONTRACT\src\runtime\agent-handoff.ts',
     'EXTENSIONS\CVF_GUARD_CONTRACT\src\runtime\agent-handoff.test.ts',
