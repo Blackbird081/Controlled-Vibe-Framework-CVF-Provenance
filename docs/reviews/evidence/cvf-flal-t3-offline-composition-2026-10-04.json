@@ -1,0 +1,226 @@
+{
+  "batchId": "CVF-FLAL-T3",
+  "boundaryDisclosure": "Parent validator treats source.evidence as opaque raw bytes: a regenerated record with different findingId/sourceProject and refreshed pin passes both owners (EXPECTED_BOUNDARY_NOT_PRODUCTION_REFUSAL). Only the fixture oracle detects the divergence. No validator was modified.",
+  "cases": [
+    {
+      "actualOwnerTypes": [],
+      "blockedClaim": "none: structural chain only; no semantic acceptance or project admission",
+      "caseId": "FULL_SYNTHETIC_CHAIN",
+      "classifier": {
+        "invalid": 0,
+        "legacyUntyped": 0,
+        "typedValid": 1
+      },
+      "expectedOwnerTypes": []
+    },
+    {
+      "actualOwnerTypes": [],
+      "blockedClaim": "no RETURNED or APPLIED claim",
+      "caseId": "STAGED_MISSING_RETURN",
+      "classifier": {
+        "invalid": 0,
+        "legacyUntyped": 0,
+        "typedValid": 1
+      },
+      "expectedOwnerTypes": []
+    },
+    {
+      "actualOwnerTypes": [],
+      "blockedClaim": "no APPLIED claim",
+      "caseId": "RETURNED_APPLICATION_NOT_APPLIED",
+      "classifier": {
+        "invalid": 0,
+        "legacyUntyped": 0,
+        "typedValid": 1
+      },
+      "expectedOwnerTypes": []
+    },
+    {
+      "actualOwnerTypes": [],
+      "blockedClaim": "no return or application effect; parked is not a positive transition",
+      "caseId": "PARKED_BY_OPERATOR_NO_APPLICATION",
+      "classifier": {
+        "invalid": 0,
+        "legacyUntyped": 0,
+        "typedValid": 1
+      },
+      "expectedOwnerTypes": []
+    },
+    {
+      "actualOwnerTypes": [
+        "parked_with_receipt"
+      ],
+      "blockedClaim": "no new receipt while parked",
+      "caseId": "PARKED_WITH_RECEIPT",
+      "classifier": {
+        "invalid": 1,
+        "legacyUntyped": 0,
+        "typedValid": 0
+      },
+      "expectedOwnerTypes": [
+        "parked_with_receipt"
+      ]
+    },
+    {
+      "actualOwnerTypes": [
+        "receipt_count"
+      ],
+      "blockedClaim": "APPLIED claim blocked",
+      "caseId": "APPLIED_MISSING_APPLICATION_RECEIPT",
+      "classifier": {
+        "invalid": 1,
+        "legacyUntyped": 0,
+        "typedValid": 0
+      },
+      "expectedOwnerTypes": [
+        "receipt_count"
+      ]
+    },
+    {
+      "actualOwnerTypes": [
+        "receipt_wrong_type"
+      ],
+      "blockedClaim": "APPLIED claim blocked",
+      "caseId": "SHARED_DELIVERY_APPLICATION_RECEIPT",
+      "classifier": {
+        "invalid": 1,
+        "legacyUntyped": 0,
+        "typedValid": 0
+      },
+      "expectedOwnerTypes": [
+        "receipt_wrong_type"
+      ]
+    },
+    {
+      "actualOwnerTypes": [
+        "receipt_wrong_type"
+      ],
+      "blockedClaim": "RETURNED claim blocked",
+      "caseId": "DELIVERY_USES_APPLICATION_KIND",
+      "classifier": {
+        "invalid": 1,
+        "legacyUntyped": 0,
+        "typedValid": 0
+      },
+      "expectedOwnerTypes": [
+        "receipt_wrong_type"
+      ]
+    },
+    {
+      "actualOwnerTypes": [
+        "receipt_join_mismatch"
+      ],
+      "blockedClaim": "RETURNED claim blocked",
+      "caseId": "RECEIPT_FINDING_MISMATCH",
+      "classifier": {
+        "invalid": 1,
+        "legacyUntyped": 0,
+        "typedValid": 0
+      },
+      "expectedOwnerTypes": [
+        "receipt_join_mismatch"
+      ]
+    },
+    {
+      "actualOwnerTypes": [
+        "receipt_join_mismatch"
+      ],
+      "blockedClaim": "APPLIED claim blocked",
+      "caseId": "RECEIPT_SOURCE_PROJECT_MISMATCH",
+      "classifier": {
+        "invalid": 1,
+        "legacyUntyped": 0,
+        "typedValid": 0
+      },
+      "expectedOwnerTypes": [
+        "receipt_join_mismatch"
+      ]
+    },
+    {
+      "actualOwnerTypes": [
+        "receipt_control_mismatch"
+      ],
+      "blockedClaim": "APPLIED claim blocked",
+      "caseId": "RECEIPT_CONTROL_MISMATCH",
+      "classifier": {
+        "invalid": 1,
+        "legacyUntyped": 0,
+        "typedValid": 0
+      },
+      "expectedOwnerTypes": [
+        "receipt_control_mismatch"
+      ]
+    },
+    {
+      "actualOwnerTypes": [
+        "hash_mismatch"
+      ],
+      "blockedClaim": "source evidence claim blocked until re-pinned",
+      "caseId": "STALE_SOURCE_PIN",
+      "expectedOwnerTypes": [
+        "hash_mismatch"
+      ]
+    },
+    {
+      "actualOwnerTypes": [
+        "INTAKE_EXISTS_DIFFERENT"
+      ],
+      "blockedClaim": "generation never overwrites a pinned source",
+      "caseId": "BUILDER_REFUSES_OVERWRITE",
+      "expectedOwnerTypes": [
+        "INTAKE_EXISTS_DIFFERENT"
+      ]
+    },
+    {
+      "actualOwnerTypes": [],
+      "blockedClaim": "no production join guard exists; fixture oracle only",
+      "builderValidateRecordIssues": [],
+      "caseId": "OPAQUE_SOURCE_ID_PROJECT_DIVERGENCE",
+      "classification": "EXPECTED_BOUNDARY_NOT_PRODUCTION_REFUSAL",
+      "classifier": {
+        "invalid": 0,
+        "legacyUntyped": 0,
+        "typedValid": 1
+      },
+      "driftSourceSha256": "6c630acd347275c0b4970f8075374b7dd64880ebd71a3325ec867c88fb2431ae",
+      "expectedOwnerTypes": [],
+      "fixtureOracleDivergentFields": [
+        "findingId",
+        "sourceProject"
+      ]
+    }
+  ],
+  "claimBoundary": "Synthetic structural composition only; no semantic acceptance, project admission, or production source-ID/project join enforcement.",
+  "commands": [],
+  "commit": "none",
+  "decisionReferenceNote": "OBSERVED_LOCAL decision reference is synthetic fixture bytes with actor SYNTHETIC_LOCAL_REVIEWER; never a real parent admission.",
+  "evidenceClass": "SYNTHETIC_OFFLINE",
+  "executionBaseHead": "58123f16748504984dca837b1b3b538cf5ee8163",
+  "fixtureHashNote": "deterministic generated intake bytes; receipt hashes are over fixture-built receipts in disposable roots",
+  "fixtureHashes": {
+    "applicationReceiptSha256": "51485230f3591d50373843074f65098c46f8b6bc02fa83dcfb2b8ecf43b00a6d",
+    "deliveryReceiptSha256": "2a4052ca651df7be756720d3dccfeb71414a877a68c5d635ad98d321766ebef1",
+    "generatedIntakeSha256": "eefaf2a84fa9352e634d055a07d83158f284a891146f35e261b6d61523ff5112",
+    "generatedIntakeSizeBytes": 1355
+  },
+  "generatorState": {
+    "acceptance": "NOT_ACCEPTED_GENERATION_ONLY",
+    "bytesRetained": "byte-for-byte; asserted unchanged after every parent validation",
+    "parentDisposition": "PENDING_PARENT_ADMISSION",
+    "parentLinks": "all null through positive chain"
+  },
+  "providerCalls": 0,
+  "schemaVersion": "cvf.flalT3OfflineComposition.evidence@1",
+  "sourceRawSha256": {
+    "docs/reference/downstream_gate_profile/CVF_PROJECT_LEARNING_LOOP_STANDARD.md": "7823ef18bd387c0a66e66ad929bf35579f6253fbe69c0225076918fad415cdf9",
+    "docs/reviews/CVF_FLAL_RANGE_T1_RECONCILIATION_COMPLETION_2026-10-04.md": "ab6e27c7c72a0ee857e9624c718244833d2934ff57c3928e7245a8f5977268b5",
+    "docs/roadmaps/CVF_FOUNDATION_LEARNING_ADMISSION_AND_LOOPBACK_ROADMAP_2026-10-04.md": "98dbfe1610335a31e8c6e22ffb772687a4e7c078fe432b8bf18a8d8ab46a34ab",
+    "governance/compat/parent_learning_evidence.py": "babaaa7ea9a3d08910d70ff7ce6a29c5c4bcffd88d0a39a0b89b949d5fec825a",
+    "governance/compat/test_downstream_gate_profile.py": "2a42e6d66f39511349999fc44bc2b66e65a2e21945d1dd20569e8e99773bc740",
+    "governance/compat/test_parent_learning_evidence.py": "f4ea619bec6fb6024037edecb30fa372feaad478e677c48b2c4f866af0a46f57",
+    "scripts/lib/downstream_governance/cvf_dg_install.py": "59758a59ebd7e16cda459f2eaa09e014bed38b415c681744cbabe2c62edb39f5",
+    "scripts/lib/downstream_governance/cvf_dg_intake.py": "204aacddb1d1b64439508bcfa73c8632842b0bc1f26dcdf3422d1404e1594efc",
+    "scripts/lib/downstream_governance/cvf_downstream_gate_profile.json": "dd8d8f358fffd68ea71680f96c1f46f68a485c213933c3db631817776fc015f0"
+  },
+  "unchangedSourceAssertions": "asserted in every case via assert_source_unchanged / byte comparison"
+}
