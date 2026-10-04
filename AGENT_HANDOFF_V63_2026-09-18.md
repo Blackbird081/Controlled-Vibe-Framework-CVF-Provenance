@@ -1,6 +1,6 @@
 # CVF Agent Handoff V63 - ACEL Applied-Knowledge Owner Enrichment
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD: `9dcfb681e8692ad1ebde84842a8efaede1f1c3c4`; DGIP R1 material `ca9a2bb3f`; closure83/83 and46/46 MATCH; receipt consumed2026-10-04; S05/C1 STOP.
+Current HEAD: `b8ff294ebd25694b9ea9309e53c05f90a1d29f2f`; PLL-T1 parent material; profile1.1; source CCMA unchanged/PARKED_BY_OPERATOR; S05/C1 STOP.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -8,9 +8,9 @@ Remote tracking: `origin/main`; resolve SHA live. External agent memory is non-c
 ## Purpose
 Carry CVF-NCR v2.7 and closed AKOE/G1-G7. Applied-knowledge details remain in the governed roadmap.
 ## Scope / Target / Owner Boundary
-Role: Local orchestrator/reviewer. Phase: DGIP T1 R1 closed bounded/parked; S05 frozen; technical owner: Local; effect owner: operator; P11 parked.
+Role: Local orchestrator/reviewer. Phase: PLL-T1 parent foundation accepted bounded; CCMA parked; S05 frozen; technical owner: Local; effect owner: operator; P11 parked.
 ## Startup Acknowledgment
-Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`; handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=DGIP T1 R1 closed bounded/parked; role=Local orchestrator/reviewer; phase=R1 closed receipt consumed; decision owner=Local; parked=Q001/Q004, effect, P11, public sync, deployment.
+Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`; handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=PLL-T1 parent foundation accepted bounded; role=Local single-agent maintainer/reviewer; decision owner=Local; parked=CCMA pilot/return/application, Q001/Q004, P11/public/deploy.
 ## Current Mode
 `cvf_ncr_p10_closed_p11_parked`. CVF-NCR-R1-S11-R1 is closed at `bd15b2600` after material `1a538d10d`. P10 is `ACTIVE_PRODUCTION_RUNTIME`; P11 stays parked. Latest closed learning-history wave: `LHW24`.
 ## Active Boundary
@@ -18,12 +18,14 @@ T3B has a Local-verified active v1 specification. Party B is verified and T3C-C1
 Post-G7 Local source intake and Jev P0 are closed at material commit `9ac0ee8e59fa041ddaa93d725796c509400f257a`. The audit records 32 READ plus 8,093 DEFERRED paths. Jev adds fail-closed decision-context binding, incomplete candidate-space escape, and `EVIDENCE_ONLY` judgment authority to the existing ASSF owner. Proof: TypeScript 84/84, Python 61/61, compile PASS, governance 90/90. G1-G7 remain closed.
 AKOE authority: `docs/roadmaps/CVF_ACEL_APPLIED_KNOWLEDGE_OWNER_ENRICHMENT_ROADMAP_2026-09-25.md` at `53bce992f`; owner dispositions and P1-P4 closure blockers live there. Prior three-repository program terminal-accounted; AKOE common closure remains blocked.
 ## Latest Work / Changes
+- PLL continuity: failed literal match/unsupported hook disclosed; partial set completed before staging. Two size refusals retained. RULE_EXISTS: prevalidate full set/budgets.
 - Q001 SQLite target-publication correction is Local-accepted bounded at `a90756b6a`: reviewer repaired post-publication validation after raw-SQL repro; focused 37/37, worker 42/42, Local 6/6 and pre-commit 90/90 passed. Q001/R0 and real cutover remain open.
 - HTML B2 read-only owner/storage audit at `2364bfbaa` is `REVIEW_COMPLETE_NO_DISPATCH`: route returns transient HTML; source hash and receipt do not identify exact rendered bytes; inspected candidate ledgers/adapters do not own durable HTML acceptance. D037 names the missing actor, store, writer and recovery choices. B1 remains Local-accepted bounded at `31bb2d88c`; Q001/R0 Profile A and B2 implementation stay parked.
 - B1 Print R2 accepted bounded at `6251ca305`: worker 5/5, units 45/45; Local 120-line probe: 3 pages/all rows/end marker, opaque origin/zero Print hits. Review: `docs/reviews/CVF_CVF_NCR_HTML_B1_PRINT_COMPLETENESS_R2_COMPLETION_2026-10-01.md`. Width 700px; renderer only; Q001/Q004 OPEN. Preview owner audit complete; no Print successor.
+- PLL-T1 material `b8ff294eb`: profile1.1, lessons3;12/12+40/40, hooks90/90; CCMA parked. Review: `docs/reviews/CVF_PLL_T1_PROJECT_LEARNING_LOOP_COMPLETION_2026-10-04.md`.
 - DGIP T1 R1 CLOSED_PASS_BOUNDED: material `ca9a2bb3f`; closure `9dcfb681e`,83/83; manifest46/46 MATCH; receipt consumed2026-10-04; probe27/27; DEV07/NET retained; no pending receipt, successor or redispatch; S05/C1 STOP.
 ## Core Guard Self-Protection Authorization
-Authorized guard-maintenance scope: DGIP R1 closure receipt consumption under material `ca9a2bb3f`; six continuity paths only. Operator authorization: continue after R1 closure. Rollback boundary: this continuity projection only.
+Authorized guard-maintenance scope: PLL-T1 post-material continuity under `b8ff294ebd25694b9ea9309e53c05f90a1d29f2f`; six continuity paths only. Operator authorization: parent foundation upgrade with CCMA parked. Rollback boundary: this continuity projection only.
 Authorized guard-maintenance scope: bind B2b packet material `588f8d63f` and release only its internal worker next move.
 Protected paths:
 - `AGENT_HANDOFF_V63_2026-09-18.md`
@@ -167,7 +169,7 @@ Rollback boundary: revert only this continuity sync; preserve material `5c1ee025
 - ACEL-AKOE-U1 is `CLOSED_PASS_BOUNDED` at `d9132412a`, disposition `SOURCE_RECONCILED_DEFER_WITH_TRIGGER`. Exact pins, 42 claims, byte hash and verification detail remain in its completion review; no import, runtime/provider, public sync or automatic successor opened.
 - CVF-NCR-R0-W01 source/profile return is Local-accepted bounded at material commit `d9b43a6f6deff7fb19710b5a9a4f50bf2a6015b6`; reviewer-fast 69/69 and pre-commit 90/90 passed. P06/P08 and actual destination/retention/cost remain open. One overbroad worker grep exposed a configured URL in tool output; the return does not reproduce it, and Local/operator config handling remains separate. No pilot or UI action was run.
 ## Next Allowed Move
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=OPERATOR_PREPARATION_ENVELOPE_CHECKPOINT; MATERIAL_COMMIT=f1fd09e788a7bd1dabe9b29f299b9dddd0d4357f; EXPANSION_ALLOWED=false. D110 documentary metadata closed, independent probe20 PASS_STATIC_ONLY, root retained. No automatic metadata/execution successor. Preset/lane/attempt policy/rights-consent/resource-money-time/listener/retiming remain operator gates; runtime NOT_ADMITTED. Full next move: CVF_SESSION_MEMORY.md. Send/B2 STOP; Q001/Q004/P11/public/deploy parked, LHW24 closed.
+PROGRAM_ID=CVF-PLL; NEXT_ACTION_CLASS=PLL_T1_CLOSED_PARENT_ONLY_CCMA_PARKED; MATERIAL_COMMIT=b8ff294ebd25694b9ea9309e53c05f90a1d29f2f; EXPANSION_ALLOWED=false. Details/authority: CVF_SESSION_MEMORY.md. CCMA PARKED_BY_OPERATOR; no edits/tests/migration. S05/C1 STOP; Q001/Q004/P11/public/deploy parked.
 ## Parked Checkpoints
 - autorun lane-binding R1 is closed at `ee81deeeb`; HRLTP-T2 remains paused for Local no-subagent route reassessment;
 - T3C-C2 is closed and Local verified at `820aae3ec`;
@@ -187,9 +189,7 @@ PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=OPERATOR_PREPARATION_ENVELOPE_CHECKPOINT; 
 - promotion or restoration of the thirteen rejected archived paths without fresh Local review.
 
 ## Core Guard Self-Protection Authorization
-
 Authorized guard-maintenance scope: continuity-only binding of independently reviewed Q001 source repair `bc6e8b010` and the operator checkpoint. Protected paths: `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/cvfNcrQ001HtmlIngressRepair20260928.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`. Operator authorization: the operator approved Q001 repair and explicitly allowed single-agent/multi-role execution with one independent reviewer subagent. Rollback boundary: revert only this continuity projection; preserve Q001 material `bc6e8b010`, P10 closure `bd15b2600` and unrelated history.
-
 Authorized guard-maintenance scope: continuity-only binding of operator-selected Docker Q001 receipt proof `87a3da943`. Protected paths: `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/cvfNcrQ001DockerReceipt20260928.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`. Operator authorization: the operator instructed Local to run the Docker receipt proof with the available Docker Desktop. Rollback boundary: revert only this continuity projection; preserve material `87a3da943`, prior Q001 repair `bc6e8b010`, P10 closure `bd15b2600` and unrelated history.
 
 ## Agent Operation Trace Block
@@ -198,18 +198,18 @@ Authorized guard-maintenance scope: continuity-only binding of operator-selected
 |---|---|
 | Actor | Local repository auditor, external-return reviewer and session-sync steward |
 | Provider or surface | private CVF workspace and operator-relayed external review files |
-| Session or invocation | DGIP R1 closure receipt consumption continuity, 2026-10-04 |
+| Session or invocation | PLL-T1 parent maintenance continuity, 2026-10-04 |
 | Working directory | repository root |
 | Command or tool surface | governed source reads, external hash verification, apply_patch, state generator, governance gates and Git |
 | Target paths | active handoff, split session-state sources, generated aggregate/bootstrap, and compact front door |
-| Allowed scope source | operator returned COMPLETE_PENDING_REVIEW and governing R1 Local closure ownership |
-| Before status evidence | clean HEAD9dcfb681e; valid pre-closure receipt83/83 with committed evidence and exact46 manifest |
-| After status evidence | six continuity paths record receipt consumed and R1 CLOSED_PASS_BOUNDED; no next worker or pending receipt |
+| Allowed scope source | operator parent-only request; `docs/baselines/CVF_GC018_PLL_T1_PROJECT_LEARNING_LOOP_2026-10-04.md` and `docs/reviews/CVF_PLL_T1_PROJECT_LEARNING_LOOP_COMPLETION_2026-10-04.md` |
+| Before status evidence | clean material HEADb8ff294ebd25694b9ea9309e53c05f90a1d29f2f; material normal hooks90/90 |
+| After status evidence | six continuity paths bind parent profile1.1 and parked CCMA pilot/return/application; no worker/automatic successor |
 | Diff evidence | exact continuity manifest before session-only commit |
-| Approval boundary | existing Local continuity ownership and operator continuation; all deferred external effects remain parked |
-| Claim boundary | bounded Windows file controls; process deviations retained; AI/live/public/deploy parked |
+| Approval boundary | operator parent-only maintenance; source project and external effects parked |
+| Claim boundary | Windows structural file controls and normative checklist only; historical failures retained |
 | Agent type | Local orchestrator/reviewer and session-sync steward |
-| Invocation ID | cvf-dgip-t1-r1-receipt-consumption-20261004 |
+| Invocation ID | cvf-pll-t1-continuity-20261004 |
 | Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md` |
 | Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md` |
 | Manifest delta | MATCH |
@@ -217,4 +217,4 @@ Authorized guard-maintenance scope: continuity-only binding of operator-selected
 
 ## Claim Boundary
 
-This handoff records terminal G1-G7, bounded AKOE-P1 through AKOE-P4 common Local closure at `a1541eb8b`, and NCR-R1/S07-R1 root reconciliation closure at `f7d8e4842`. The next move is authoring and independent review of a fresh P7 usage-receipt-readiness packet only. No P7 execution, ACTIVE/P8-P10, package-body/runtime invocation, host/provider/live/public/deployment/production effect or G1-G7 successor is authorized by this handoff.
+PLL-T1 parent file controls only. CCMA parked. Historical states retained; no successor, CCMA edit/test, provider/runtime/public/deploy effect.

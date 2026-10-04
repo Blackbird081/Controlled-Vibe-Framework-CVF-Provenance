@@ -1,5 +1,4 @@
 # ACTIVE SESSION FRONT DOOR
-
 Memory class: active-session-front-door
 Status: ACTIVE
 Last compacted: 2026-08-11
@@ -38,11 +37,12 @@ artifact.
 | Prior handoff (archive-qualified) | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V62_2026-09-17.md` |
 | Latest front-door archive | `CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_COMPACTION_ARCHIVE_2026-08-11.md` |
 | Current authority evidence | `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` `currentAuthority` |
+| Parent maintenance | `docs/baselines/CVF_GC018_PLL_T1_PROJECT_LEARNING_LOOP_2026-10-04.md`; `docs/reviews/CVF_PLL_T1_PROJECT_LEARNING_LOOP_COMPLETION_2026-10-04.md` |
 | Freeze posture | `governance_kernel_freeze_recommended` |
 
 ## Startup Acknowledgment
 
-Startup acknowledged: mode=`cvf_ncr_p10_closed_p11_parked`; handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=DGIP T1 R1 closed bounded/parked; role=Local orchestrator/reviewer; phase=R1 closed receipt consumed; S05 frozen; decision owner=Local; effect owner=operator; parked=Q001/Q004, durable acceptance, pilot/live, P11, public sync, deployment.
+Startup acknowledged: mode=`cvf_ncr_p10_closed_p11_parked`; handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=PLL-T1 parent foundation accepted bounded; role=Local single-agent maintainer/reviewer; phase=parent closure; decision owner=Local; parked=CCMA pilot/return/application, Q001/Q004, P11/public/deploy.
 
 ## Current Mode
 
@@ -51,7 +51,7 @@ Current mode: `cvf_ncr_p10_closed_p11_parked`; previous mode marker: `cvf_ncr_p1
 
 ## Next Allowed Move
 Mode: `cvf_ncr_p10_closed_p11_parked`
-PROGRAM_ID=CVF-DGIP; NEXT_ACTION_CLASS=DGIP_T1_R1_CLOSED_BOUNDED_PARKED; BATCH_ID=CVF-DGIP-T1-R1; MATERIAL_COMMIT=ca9a2bb3f59a7f8d40eed434c11097d887e56d53; CLOSURE_HEAD=9dcfb681e8692ad1ebde84842a8efaede1f1c3c4; EXPANSION_ALLOWED=false. R1 CLOSED_PASS_BOUNDED for Windows hermetic file controls; Local controlling review docs/reviews/CVF_DGIP_T1_DOWNSTREAM_GATE_INHERITANCE_COMPLETION_2026-10-03.md terminates T1/R1 worker execution. Independent probe27/27; index/single fingerprint paired; five parent intake decisions accepted bounded. Final composed pre-closure PASS83/83 at base4bbd307d59ef4823fed2dd889d00fbd667cd47c1..closureHead, exact46-path manifest MATCH and committed fingerprint924b5d4207e1670801cf306a3af562d4c7cfcdd4f7288522e665bdaa033a18ac. On 2026-10-04 Local consumed internally valid exact-context receipt without broad rerun; receiptDigest dda6fd0f3cb16845f8a143ee9a33176829d5c2f06fa713f2b6423b73eabb48cc, rawSHA256 ffe5f0661f355ab21260091b344c9136ee04d9c7307981ef664597860638edce; retained .cvf/runtime/dgip-t1-r1-pre-closure-retained-2026-10-04.json is local historical evidence, not portable hidden memory. No pending receipt/worker task or automatic successor/redispatch. Original T1 failures and raw R1 return preserved; DEV07/DEV-R1-NET process violations retained, unguarded79/79 not offline proof; guarded existing golden78/79 AC09 unproven. Consume accepted profile only within existing Core/project CLI trust contract; Linux/hosted CI/real CCMAI adoption/runtime AI/public rollout remain deferred and need specific new authority. S05/C1 STOP frozen; Q001/Q004 OPEN/Profile A, send/B2 STOP, P11/public/deploy parked; LHW24 closed. Costs UNKNOWN.
+PROGRAM_ID=CVF-PLL; NEXT_ACTION_CLASS=PLL_T1_CLOSED_PARENT_ONLY_CCMA_PARKED; BATCH_ID=CVF-PLL-T1; MATERIAL_COMMIT=b8ff294ebd25694b9ea9309e53c05f90a1d29f2f; EXPANSION_ALLOWED=false. Operator-directed parent learning-loop upgrade is ACCEPTED_BOUNDED under docs/baselines/CVF_GC018_PLL_T1_PROJECT_LEARNING_LOOP_2026-10-04.md and docs/reviews/CVF_PLL_T1_PROJECT_LEARNING_LOOP_COMPLETION_2026-10-04.md: profile1.1 shared learning home, conditional startup/catalog discovery, value/dedup filter and separate return/application states. Three CCMA records merged into existing parent owners with cleanup, applied-mutation/restoration and layer-bound evidence checklist. Disposable Windows learning suite12/12, portable regression40/40, reviewer-fast69/69, material pre-commit90/90. Initial test/packet failures retained; no distinct reviewer identity or runtime governance claim. CCMA pilot, return delivery and application PARKED_BY_OPERATOR; do not edit, test, bootstrap or migrate Customer-Care-Monitor. Project HEAD, entry Git status and four source hashes unchanged. Historical DGIP R1 closure and raw evidence remain retained; no worker task, automatic successor or redispatch. Any new parent tranche needs its own admitted scope; Linux/hosted/provider/runtime/public rollout remain unproven. S05/C1 STOP frozen; Q001/Q004 OPEN/Profile A, send/B2 STOP, P11/public/deploy parked; LHW24 closed. Costs UNKNOWN.
 Historical G1-G7 terminal baseline: mode `acel_g1_g7_research_terminally_closed`. G1-G6 terminal review: `docs/reviews/CVF_ACEL_G1_G6_TERMINAL_STOP_CLOSURE_2026-09-24.md`; G7 research closure: `docs/reviews/CVF_ACEL_G7_CROSS_RUN_CAPABILITY_EVOLUTION_RESEARCH_CLOSURE_2026-09-24.md`. The packet-only post-G7 reconciliation review at `docs/reviews/CVF_ACEL_POST_G7_FULL_CORPUS_ABSORPTION_CLOSURE_2026-09-24.md` is superseded for repository absorption by the 2026-09-25 pinned-source audit. G1 is stopped, G2-G6 remain parked, G7 research is closed, and no automatic G1-G7 successor exists.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
