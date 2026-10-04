@@ -59,7 +59,22 @@
     "scripts/test_cvf_golden_downstream_bootstrap.ps1",
     "scripts/update_cvf_workspace_public_core.ps1",
     "scripts/w114_cp7_multi_sample_downstream_proof.ps1",
-    "scripts/write_cvf_workspace_web_evidence_bridge.ps1"
+    "scripts/write_cvf_workspace_web_evidence_bridge.ps1",
+    "scripts/lib/downstream_governance/CvfDownstreamGateProfile.ps1",
+    "scripts/lib/downstream_governance/cvf_dg_applicability.py",
+    "scripts/lib/downstream_governance/cvf_dg_common.py",
+    "scripts/lib/downstream_governance/cvf_dg_continuity.py",
+    "scripts/lib/downstream_governance/cvf_dg_coverage.py",
+    "scripts/lib/downstream_governance/cvf_dg_install.py",
+    "scripts/lib/downstream_governance/cvf_dg_intake.py",
+    "scripts/lib/downstream_governance/cvf_dg_review.py",
+    "scripts/lib/downstream_governance/cvf_dg_routing.py",
+    "scripts/lib/downstream_governance/cvf_downstream_gate_profile.json",
+    "scripts/lib/downstream_governance/cvf_downstream_gate_runner.py",
+    "scripts/lib/downstream_governance/downstream_pr_gates.yml.template",
+    "scripts/lib/downstream_governance/git-pre-commit.template",
+    "scripts/lib/downstream_governance/project_learning_home.template.md",
+    "scripts/lib/downstream_governance/project_learning_record.template.md"
   ],
   "allowedWorkspaceTemplateFiles": [
     "workspace_templates/CVF_WORKSPACE_MEMORY_TEMPLATE.md",
@@ -88,9 +103,14 @@
     {
       "source": "scripts/install_cvf_workspace_root_wrappers_public.ps1",
       "destination": "scripts/install_cvf_workspace_root_wrappers.ps1"
+    },
+    {
+      "source": "scripts/cvf-public-pre-push-hook.sh",
+      "destination": ".githooks/pre-push"
     }
   ],
   "denyPatterns": [
+    "^docs[/\\\\]reference[/\\\\]downstream_gate_profile[/\\\\]downstream_finding_intake_registry\\.json$",
     "^AGENT_HANDOFF",
     "^docs[/\\\\]baselines[/\\\\]",
     "^docs[/\\\\]reviews[/\\\\]",

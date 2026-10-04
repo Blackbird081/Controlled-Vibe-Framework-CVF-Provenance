@@ -89,6 +89,21 @@ $ALLOWED_SCRIPT_FILES = @(
     'scripts\lib\downstream_catalog\manage_cvf_downstream_catalog.ps1',
     'scripts\lib\downstream_catalog\schemas\ARTIFACT_REGISTRY.schema.json',
     'scripts\lib\downstream_catalog\schemas\MODULE_REGISTRY.schema.json',
+    'scripts\lib\downstream_governance\CvfDownstreamGateProfile.ps1',
+    'scripts\lib\downstream_governance\cvf_dg_applicability.py',
+    'scripts\lib\downstream_governance\cvf_dg_common.py',
+    'scripts\lib\downstream_governance\cvf_dg_continuity.py',
+    'scripts\lib\downstream_governance\cvf_dg_coverage.py',
+    'scripts\lib\downstream_governance\cvf_dg_install.py',
+    'scripts\lib\downstream_governance\cvf_dg_intake.py',
+    'scripts\lib\downstream_governance\cvf_dg_review.py',
+    'scripts\lib\downstream_governance\cvf_dg_routing.py',
+    'scripts\lib\downstream_governance\cvf_downstream_gate_profile.json',
+    'scripts\lib\downstream_governance\cvf_downstream_gate_runner.py',
+    'scripts\lib\downstream_governance\downstream_pr_gates.yml.template',
+    'scripts\lib\downstream_governance\git-pre-commit.template',
+    'scripts\lib\downstream_governance\project_learning_home.template.md',
+    'scripts\lib\downstream_governance\project_learning_record.template.md',
     'scripts\sync_cvf_workspace_public_profile.ps1',
     'scripts\test_cvf_golden_downstream_bootstrap.ps1',
     'scripts\update_cvf_workspace_public_core.ps1',
@@ -119,7 +134,6 @@ $MAPPED_FILES = @(
     @{
         Source      = 'scripts\cvf-public-pre-push-hook.sh'
         Destination = '.githooks\pre-push'
-    }
     }
 )
 
@@ -162,6 +176,7 @@ $ALLOWED_DOCS_PATHS = @(
 
 # Denylist: explicit patterns checked at copy time (defense-in-depth)
 $DENY_PATTERNS = @(
+    '^docs[/\\]reference[/\\]downstream_gate_profile[/\\]downstream_finding_intake_registry\.json$',
     '^AGENT_HANDOFF',
     '^docs[/\\]baselines[/\\]',
     '^docs[/\\]reviews[/\\]',
@@ -527,7 +542,6 @@ Source: $govHead - $govMsg
 Synced via cvf-public-sync.ps1 allowlist.
 Internal artifacts excluded: AGENT_HANDOFF, baselines, reviews, roadmaps.
 
-Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>
 "@
 
 Write-Host 'Committing...' -ForegroundColor Yellow
