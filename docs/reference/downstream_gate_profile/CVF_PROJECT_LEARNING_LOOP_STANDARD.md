@@ -65,6 +65,14 @@ Use `NOT_RETURNED`/`NOT_APPLIED` until receipts exist. An operator-parked projec
 stays `PARKED_BY_OPERATOR`: keep the parent result available without editing,
 testing or migrating that project. Apply future loopback only when unparked.
 
+## Parent Evidence Design Binding
+
+`CVF_PROJECT_LEARNING_PARENT_EVIDENCE_CONTRACT.md` specifies an opt-in typed
+parent evidence extension under this standard and existing F2G owners. Its design
+separates five value checks, implementation proof, delivery and application
+receipts. Legacy entries remain untyped; T1 does not implement validation or
+backfill historical decisions. T2 requires its own admitted ready packet.
+
 ## Machine Binding
 
 `cvf_dg_install.install_learning_home` validates all target boundaries and sources

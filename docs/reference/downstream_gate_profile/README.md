@@ -33,7 +33,8 @@ Downstream Bootstrap and Workspace Governance Learning Propagation closures.
    `downstream_finding_intake.schema.json`; template `DOWNSTREAM_FINDING_INTAKE_TEMPLATE.json`.
 4. `downstream_finding_intake_registry.json` - parent dedup, admission and back-links.
 5. `CVF_PROJECT_LEARNING_LOOP_STANDARD.md` - common learning home, value selection and returned adoption.
-6. `CVF_BUILD_LEARNING_EVIDENCE_CHECKLIST.md` - cleanup, mutation and coverage evidence practice.
+6. `CVF_PROJECT_LEARNING_PARENT_EVIDENCE_CONTRACT.md` - parent typed evidence design; implementation remains conditional.
+7. `CVF_BUILD_LEARNING_EVIDENCE_CHECKLIST.md` - cleanup, mutation and coverage evidence practice.
 
 ## Owner And Archive
 
