@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_DGIP_T1_R1_DOWNSTREAM_GATE_INHERITANCE_2026-10-03.md",
     "workOrderSha256": "81d718983a74fe14947e2bab432786f87ee3dcc859fdff4fc4bb0b219c0c92b7"
   },
-  "currentAuthoritySyncReason": "PLL-T1 parent-only operator maintenance ACCEPTED_BOUNDED at corrected material 4af874f615a72628fcd559c45e73c0e45861ace1; governing baseline docs/baselines/CVF_GC018_PLL_T1_PROJECT_LEARNING_LOOP_2026-10-04.md, controlling review docs/reviews/CVF_PLL_T1_PROJECT_LEARNING_LOOP_COMPLETION_2026-10-04.md. currentAuthority retains the last immutable delegated DGIP R1 dispatch pair for historical provenance; no work order was dispatched for this single Local maintenance. Next move is parent-only with CCMA PARKED_BY_OPERATOR; no successor or provider effect. ADIF baseline disclosure correction retained with failed initial closure; exact composed scope40 paths, CCMA parked.",
+  "currentAuthoritySyncReason": "Operator authorized External Read/provenance/public synchronization on 2026-10-04; merge 3a565cb980523ec2007ae9b478b0306942e71dc1 preserves remote overlay and local PLL closure. currentAuthority retains immutable historical DGIP R1 dispatch pair; no new dispatch. CCMA parked; next move sync/cleanup then bounded parent roadmap reconciliation.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
