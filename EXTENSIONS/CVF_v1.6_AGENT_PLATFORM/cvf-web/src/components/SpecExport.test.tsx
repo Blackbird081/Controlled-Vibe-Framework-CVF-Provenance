@@ -1,8 +1,9 @@
+// Text Encoding Exception: Vietnamese user-facing copy and matching localization fixtures.
 /**
  * @vitest-environment jsdom
  */
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
-import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+import { render, screen, fireEvent, waitFor, within, cleanup } from '@testing-library/react';
 import { SpecExport, generateCompleteSpec, generateSpec } from './SpecExport';
 import type { Template } from '@/types';
 import { logEnforcementDecision } from '@/lib/enforcement-log';
@@ -558,5 +559,96 @@ describe('generateSpec Surface 1 English export i18n', () => {
         for (const value of forbidden) {
             expect(spec).not.toContain(value);
         }
+    });
+});
+
+describe('NIS draft review export integration (structural UI only)', () => {
+    const input = {
+        appName: 'WeeklyReport', appType: 'Web App', problem: 'Collect weekly reports',
+        targetUsers: 'Team leads', coreFeatures: 'Collect summaries',
+        successCriteria: 'Include each submitted item once', platforms: 'Web browser',
+        dataNeeds: 'Synthetic reports only', outOfScope: 'Sending email', constraints: 'No employee scoring',
+    };
+
+    beforeEach(async () => {
+        vi.clearAllMocks();
+        const actual = await vi.importActual<typeof import('@/lib/spec-gate')>('@/lib/spec-gate');
+        vi.mocked(evaluateEnforcement).mockImplementation(input => ({
+            status: 'ALLOW',
+            specGate: actual.evaluateSpecGate(input.specFields ?? [], input.specValues ?? {}),
+            reasons: [],
+            governanceStateSnapshot: {} as unknown as ReturnType<typeof evaluateEnforcement>['governanceStateSnapshot'],
+            source: 'client',
+        }));
+    });
+    afterEach(() => { cleanup(); vi.restoreAllMocks(); });
+
+    it('copies and downloads the same current draft shown in preview, with corrected decisions', async () => {
+        const clipboard = vi.fn().mockResolvedValue(undefined);
+        Object.defineProperty(navigator, 'clipboard', { configurable: true, value: { writeText: clipboard } });
+        let downloaded: Blob | undefined;
+        const createUrl = vi.fn((blob: Blob) => { downloaded = blob; return 'blob:nis-draft'; });
+        Object.defineProperty(URL, 'createObjectURL', { configurable: true, value: createUrl });
+        Object.defineProperty(URL, 'revokeObjectURL', { configurable: true, value: vi.fn() });
+        const click = vi.spyOn(HTMLAnchorElement.prototype, 'click').mockImplementation(() => {});
+        const { container } = render(<SpecExport template={appBuilderCompleteTemplate} values={input} />);
+        const access = screen.getByLabelText('Ai được xem, sửa hoặc xuất thông tin? Ai không được phép?');
+        fireEvent.change(access, { target: { value: 'Chỉ trưởng nhóm được xuất.' } });
+        fireEvent.click(screen.getByRole('button', { name: 'Tôi đã xem bản nháp này' }));
+        fireEvent.change(access, { target: { value: 'Chỉ trưởng nhóm được xem; chưa cho xuất.' } });
+        fireEvent.click(screen.getByRole('button', { name: /Xem trước/ }));
+        const preview = container.querySelector('pre')!.textContent!;
+        expect(preview).toContain('Chỉ trưởng nhóm được xem; chưa cho xuất.');
+        expect(preview).not.toContain('Chỉ trưởng nhóm được xuất.');
+        expect(preview).toContain('Đã xem bản này: Chưa');
+        fireEvent.click(screen.getByRole('button', { name: /Sao chép/ }));
+        await waitFor(() => expect(clipboard).toHaveBeenCalledWith(preview));
+        fireEvent.click(screen.getByRole('button', { name: /Xuất packet/ }));
+        expect(click).toHaveBeenCalledOnce();
+        const fileText = await new Promise<string>((resolve, reject) => {
+            const reader = new FileReader();
+            reader.onload = () => resolve(String(reader.result));
+            reader.onerror = () => reject(reader.error);
+            reader.readAsText(downloaded!);
+        });
+        expect(fileText).toBe(preview);
+    });
+
+    it('sends only the reviewed current draft and disables continuation immediately after source edits', () => {
+        const send = vi.fn();
+        const { rerender } = render(<SpecExport template={appBuilderCompleteTemplate} values={input} onSendToAgent={send} />);
+        let button = screen.getByRole('button', { name: /Gửi Packet cho Agent/ }) as HTMLButtonElement;
+        expect(button.disabled).toBe(true);
+        fireEvent.click(screen.getByRole('button', { name: 'Xem đủ 6 câu hỏi' }));
+        const region = screen.getByRole('region', { name: 'Review yêu cầu' });
+        within(region).getAllByRole('textbox').forEach((element, index) => {
+            fireEvent.change(element, { target: { value: `Quyết định người dùng ${index}` } });
+        });
+        fireEvent.click(screen.getByRole('button', { name: 'Tôi đã xem bản nháp này' }));
+        expect(button.disabled).toBe(false);
+        fireEvent.click(button);
+        expect(send).toHaveBeenCalledOnce();
+        expect(send.mock.calls[0][0]).toContain('Quyết định người dùng 5');
+        expect(send.mock.calls[0][0]).toContain('Đã xem bản này: Có, trong phiên hiện tại');
+        expect(send.mock.calls[0][0]).toContain('chỉ làm rõ và review đặc tả');
+        rerender(<SpecExport template={appBuilderCompleteTemplate} values={{ ...input, targetUsers: 'All staff' }} onSendToAgent={send} />);
+        button = screen.getByRole('button', { name: /Gửi Packet cho Agent/ }) as HTMLButtonElement;
+        expect(button.disabled).toBe(true);
+        expect(screen.getByRole('status').textContent).toContain('Chưa xem bản này');
+        expect(screen.getAllByText('Brief liên quan đã thay đổi. Câu trả lời cũ được giữ để bạn kiểm lại.').length).toBeGreaterThan(0);
+        fireEvent.click(button);
+        expect(send).toHaveBeenCalledOnce();
+    });
+
+    it('invalidates viewing on export-mode and language changes without losing answers', () => {
+        render(<SpecExport template={appBuilderCompleteTemplate} values={input} />);
+        fireEvent.change(screen.getByLabelText('Ai được xem, sửa hoặc xuất thông tin? Ai không được phép?'), { target: { value: 'Only leads.' } });
+        fireEvent.click(screen.getByRole('button', { name: 'Tôi đã xem bản nháp này' }));
+        fireEvent.click(screen.getByRole('button', { name: /CVF Guided Agent/ }));
+        expect(screen.getByRole('status').textContent).toContain('Chưa xem bản này');
+        fireEvent.click(screen.getByRole('button', { name: 'Tôi đã xem bản nháp này' }));
+        fireEvent.click(screen.getByRole('button', { name: /English/ }));
+        expect(screen.getByRole('status').textContent).toContain('Not viewed yet');
+        expect((screen.getByLabelText('Who may view, edit or export information, and who may not?') as HTMLTextAreaElement).value).toBe('Only leads.');
     });
 });

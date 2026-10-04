@@ -1,3 +1,4 @@
+// Text Encoding Exception: Vietnamese user-facing copy and matching localization fixtures.
 'use client';
 
 import { useState } from 'react';
@@ -5,6 +6,8 @@ import { Template } from '@/types';
 import { useUserContext } from './UserContext';
 import { WorkflowVisualizer } from './WorkflowVisualizer';
 import { useSettings } from './Settings';
+import { IntentSpecReview, useIntentSpecReview } from './IntentSpecReview';
+import { SpecExportQuickLinks } from './SpecExportQuickLinks';
 import { evaluateSpecGate } from '@/lib/spec-gate';
 import { evaluateEnforcement } from '@/lib/enforcement';
 import { logEnforcementDecision } from '@/lib/enforcement-log';
@@ -938,10 +941,15 @@ export function SpecExport({ template, values, onClose, onSendToAgent }: SpecExp
     const [specGateError, setSpecGateError] = useState(false);
     const { getContextPrompt } = useUserContext();
 
-    const labels = specLabels[exportLang];
+    const labels = template.id === 'app_builder_complete' ? { ...specLabels[exportLang],
+        description: exportLang === 'vi' ? 'Làm rõ yêu cầu và xuất bản nháp để builder review trước bước thiết kế/build.' : 'Clarify requirements and export a draft for builder review before design/build.',
+        instruction: exportLang === 'vi' ? 'Sao chép hoặc tải bản nháp cùng các mục chưa quyết. Bước tiếp theo là làm rõ đặc tả; build cần quyền riêng.' : 'Copy or download the draft with unresolved items. The next step is specification clarification; building needs separate authorization.',
+    } : specLabels[exportLang];
     const modes = modeLabels[exportLang];
     const userContextStr = getContextPrompt();
-    const spec = generateSpec(template, values, exportLang, exportMode, userContextStr);
+    const baseSpec = generateSpec(template, values, exportLang, exportMode, userContextStr);
+    const draftReview = useIntentSpecReview(template.id, values, baseSpec, exportLang);
+    const spec = draftReview.spec;
 
     const requiredFields = template.fields.filter(field => field.required);
     const enforcement = evaluateEnforcement({
@@ -954,7 +962,7 @@ export function SpecExport({ template, values, onClose, onSendToAgent }: SpecExp
     const specGate = enforcement.specGate || evaluateSpecGate(requiredFields, values);
     const missingRequired = specGate.missing;
     const specGateStatus: 'PASS' | 'CLARIFY' | 'FAIL' = specGate.status;
-    const canSendToAgent = specGateStatus === 'PASS';
+    const canSendToAgent = specGateStatus === 'PASS' && draftReview.canContinue;
 
     const autoDetected: AutoDetectResult = autoDetectGovernance({
         templateCategory: template.category,
@@ -965,13 +973,13 @@ export function SpecExport({ template, values, onClose, onSendToAgent }: SpecExp
         && !isRiskAllowed(autoDetected.riskLevel, autoDetected.phase);
     const specGateLabels = exportLang === 'vi'
         ? {
-            pass: 'Spec Gate: PASS — Đủ input để thực thi',
+            pass: draftReview.review ? 'Đã có các trường bắt buộc — cần review yêu cầu riêng' : 'Spec Gate: PASS — Đủ input để thực thi',
             clarify: 'Spec Gate: CLARIFY — Thiếu input bắt buộc, cần bổ sung',
             fail: 'Spec Gate: FAIL — Không đủ dữ liệu để tạo spec',
             missing: 'Thiếu input bắt buộc',
         }
         : {
-            pass: 'Spec Gate: PASS — Ready to execute',
+            pass: draftReview.review ? 'Required fields present — requirements review is separate' : 'Spec Gate: PASS — Ready to execute',
             clarify: 'Spec Gate: CLARIFY — Missing required inputs',
             fail: 'Spec Gate: FAIL — Not enough data to generate spec',
             missing: 'Missing required inputs',
@@ -1018,6 +1026,9 @@ export function SpecExport({ template, values, onClose, onSendToAgent }: SpecExp
             <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
                 {labels.description}
             </p>
+
+            {draftReview.review && <IntentSpecReview review={draftReview.review} language={exportLang}
+                onUpdate={draftReview.update} onAcknowledge={draftReview.acknowledge} />}
 
             <div className="mb-4">
                 <div className="text-xs text-gray-500 mb-2">{modes.modeLabel}:</div>
@@ -1245,33 +1256,7 @@ export function SpecExport({ template, values, onClose, onSendToAgent }: SpecExp
                 )}
             </div>
 
-            <div className="flex flex-wrap gap-2 mb-4">
-                <span className="text-xs text-gray-500 dark:text-gray-400">{labels.quickPaste}</span>
-                <a
-                    href="https://chat.openai.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-xs px-2 py-1 bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 rounded hover:bg-green-200 dark:hover:bg-green-800"
-                >
-                    ChatGPT ↗
-                </a>
-                <a
-                    href="https://claude.ai/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-xs px-2 py-1 bg-orange-100 dark:bg-orange-900 text-orange-700 dark:text-orange-300 rounded hover:bg-orange-200 dark:hover:bg-orange-800"
-                >
-                    Claude ↗
-                </a>
-                <a
-                    href="https://gemini.google.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-xs px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 rounded hover:bg-blue-200 dark:hover:bg-blue-800"
-                >
-                    Gemini ↗
-                </a>
-            </div>
+            <SpecExportQuickLinks label={labels.quickPaste} />
 
             {showPreview && (
                 <div className="mt-4 p-4 bg-gray-50 dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-700 max-h-96 overflow-y-auto">
