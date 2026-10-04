@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_RANGE_T1_RECONCILIATION_2026-10-04.md",
     "workOrderSha256": "a97e254a50ca961465fbe327a11d5e5bbd2fb9a7aecaecc5e11d64035b2b6683"
   },
-  "currentAuthoritySyncReason": "Local admits completion path, accepts bounded RANGE-T1 diagnosis with corrected plan and independent9/9; closes frozen pair and raw-byte pins atomically through exact ten-path existing authorization. Fresh committed pre-closure follows dedicated HEAD sync; no old-range relabeling or successor.",
+  "currentAuthoritySyncReason": "RANGE-T1 closed-pair raw hashes preserved at exact ten-path closure 4b6e72a5b8dcfa6ffb70c01cb356ae5b4e5233e7; dedicated six-path HEAD sync. Local completion path admitted and plan corrected; full committed-range receipt governs finality. Original T2 failure/sample rejection retained; no worker redispatch, template repair or T3 successor.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
