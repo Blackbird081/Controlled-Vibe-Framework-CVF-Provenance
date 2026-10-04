@@ -36,12 +36,12 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_FLAL_T2_PARENT_EVIDENCE_VALIDATION_R1_2026-10-04.md",
-    "baselineSha256": "32a079a3c75f134500c56465c29960a9ce6ae79610f9f8fb8b80e02e7162c9a9",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_T2_PARENT_EVIDENCE_VALIDATION_R1_2026-10-04.md",
-    "workOrderSha256": "8773f23d73b4f73f801fbb12fc63e6b3ea0a0d0be1ad59c624ae0639f7ba71ce"
+    "baselinePath": "docs/baselines/CVF_GC018_FLAL_RANGE_T1_RECONCILIATION_2026-10-04.md",
+    "baselineSha256": "0a63d74ed5ba50392281599f223c511363632807e8d5dbc7b65f8556d6674b62",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_RANGE_T1_RECONCILIATION_2026-10-04.md",
+    "workOrderSha256": "68f3b9b1a249dc3057b4967b27b3c764249e1837a3f3c4c2dd5df7a37b8f223f"
   },
-  "currentAuthoritySyncReason": "Preserve the closed FLAL-T2 paired authority and its known mixed-review-range limitation. Separate operator-authorized old public checkpoint resolved: PR9 merged/public8a4119e1; hosted candidate and main preflights PASS; source mirror/record material 227e2a600aaef6d5253be3c1cd7d177dfe37fc6d; docs/reviews/CVF_PUBLIC_SYNC_RUNNER_RECOVERY_2026-10-04.md. Six-path continuity only; T3/CCMA/S05/P11 parked.",
+  "currentAuthoritySyncReason": "Operator continuation admits bounded existing-owner closure range diagnosis, not T3 or protected repair. Paired material 5e5fb30eebe3950c62ac790f6fa3714ec54077ea; two-path internal no-commit return. Original T2 range failure and technical acceptance retained; public PR9 resolved. Final bound pre-dispatch required.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
