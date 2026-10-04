@@ -2,7 +2,7 @@
 
 Memory class: governed-work-order
 docType: work_order
-Status: DISPATCH_READY
+Status: CLOSED_BLOCKED_BOUNDED
 Date: 2026-10-04
 Batch ID: CVF-WRS-FR2
 GC-018 required: Yes
@@ -146,33 +146,38 @@ Existing dispatch guidance -> independently rendered baseline/work-order -> unch
 
 ## Semantic Convergence Outcome
 
-Standard: `docs/reference/semantic_convergence_control/CVF_SEMANTIC_CONVERGENCE_AND_ESCALATION_CONTROL_STANDARD.md`
-
 ```json
 {
   "schemaVersion": "cvf.semanticConvergenceControl.v1",
   "problemKey": "cvf-wrs-fr2-problem",
-  "chainMode": "INITIAL",
-  "chainOrdinal": 0,
-  "predecessor": null,
+  "chainMode": "SUCCESSOR",
+  "chainOrdinal": 1,
+  "predecessor": {
+    "path": "docs/reviews/CVF_WRS_FR2_DISPATCH_CLOSURE_FRICTION_REPAIR_WORKER_RETURN_2026-10-04.md",
+    "sha256": "2887e5e2e572d2fc4285c90a3b775723289a3bfaf06cf745e14e921a02264394"
+  },
   "blockerDelta": {
     "prior": [],
     "resolved": [],
     "retained": [],
-    "new": [],
+    "new": [
+      "WRS-FR2-CLEAN-START-EVIDENCE-LOSS"
+    ],
     "reopened": [],
-    "current": []
+    "current": [
+      "WRS-FR2-CLEAN-START-EVIDENCE-LOSS"
+    ]
   },
   "resolutionEvidence": {},
   "counters": {
     "partialReadyClosures": 0,
     "reviewerScopeExpansions": 0,
     "sameClaimCorrections": 0,
-    "nonDecreasingBlockerTransitions": 0
+    "nonDecreasingBlockerTransitions": 1
   },
   "claims": [],
   "requiredDisposition": "CONTINUE_BOUNDED",
-  "successorScope": "INITIAL_BOUNDED"
+  "successorScope": "NO_SUCCESSOR"
 }
 ```
 
@@ -199,7 +204,7 @@ Contract source archive-qualified exception: `docs/reference/CVF_AHB_T2_AGENT_HA
 | nextMoveSurfaces | active handoff, compact front door, core/nextAllowedMove sources and generated bootstrap/state |
 
 sharedWorktreeCoordinationMode: EXPLICIT_LANE_HANDOFF
-activeLaneOwner: INTERNAL_AGENT_DISPATCH_SCAFFOLD_WORKER_WRS_FR2
+activeLaneOwner: LOCAL_REVIEWER_TERMINAL_BLOCKED_COMPLETE
 laneOwnedPaths: exact six-path Required Artifact Manifest
 dispatcherMutationBoundary: NO_MUTATION_WHILE_LANE_ACTIVE
 laneReleaseEvidence: worker return plus explicit RELEASED_TO_LOCAL_REVIEWER declaration and actual final git status; Local makes no edits while the worker lane is active.
@@ -361,7 +366,7 @@ Returned defects: NONE_RETURNED; totalCandidates=0 actual query2026-10-04; no re
 | Field | Value |
 |---|---|
 | applicableCheckersRead | governance/compat/check_raw_memory_release_invariant.py; governance/compat/check_public_export_disposition.py; governance/compat/check_continuation_chain.py; governance/compat/check_semantic_convergence_control.py; governance/compat/check_work_order_acceptance_ledger.py; governance/compat/check_review_cost_control.py; governance/compat/check_core_guard_self_protection.py; governance/compat/check_gate_to_role_closeability.py; governance/compat/check_task_governance_route.py; governance/compat/check_agent_operation_trace.py; governance/compat/check_work_order_dispatch_quality.py; governance/compat/check_markdown_structural_completeness.py; governance/compat/check_governed_artifact_checker_read_ahead.py; governance/compat/check_baseline_update_compat.py; governance/compat/check_external_knowledge_intake_routing.py; governance/compat/check_independent_review_probe_admission.py |
-| literalTokensReviewed | DISPATCH_READY; rawMemoryReleased=false; Rule B; completionReviewPath; DEFERRED_PRIVATE_ONLY; public-sync; acceptance-ledger-json; exact manifest |
+| literalTokensReviewed | CLOSED_BLOCKED_BOUNDED; rawMemoryReleased=false; Rule B; completionReviewPath; DEFERRED_PRIVATE_ONLY; public-sync; acceptance-ledger-json; exact manifest |
 | gateRunPurpose | confirm source-derived dispatch/closure contract and later release |
 | claimBoundary | offline scaffold shape only; no runtime/provider proof |
 
@@ -376,22 +381,22 @@ Claim Update: authoring contract only, no current implementation PASS.
 
 | Field | Evidence |
 |---|---|
-| Actor | Local dispatcher |
+| Actor | Local reviewer/closer |
 | Provider or surface | private shared workspace |
-| Session or invocation | WRS-FR2 initial admission2026-10-04 |
-| Working directory | provenance repo root |
-| Command or tool surface | source read, read-only builder probe, scaffold, route, pre-dispatch |
-| Allowed scope source | operator selected dispatch/closure friction repair; CCMA parked |
-| Before status evidence | clean worktree at HEAD 8482be833d8518a485e9ad66f1e9c6aa336b40e3; R1 closed and two final receipts83/83 |
-| After status evidence | four-path dispatch packet; implementation pending |
-| Diff evidence | actual git status and diff check before admission commit |
-| Approval boundary | Local orchestrator admits six-path internal no-commit worker after final release gate |
-| Claim boundary | no provider/live/project/public/production behavior |
-| Agent type | Local dispatcher |
-| Invocation ID | wrs-fr2-admission-20261004 |
-| Target paths | `docs/baselines/CVF_GC018_WRS_FR2_DISPATCH_CLOSURE_FRICTION_REPAIR_2026-10-04.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_WRS_FR2_DISPATCH_CLOSURE_FRICTION_REPAIR_2026-10-04.md`; `docs/reviews/evidence/cvf-wrs-fr2-dispatch-inputs-2026-10-04.json`; `docs/reviews/evidence/cvf-wrs-fr2-worker-return-skeleton-2026-10-04.txt` |
-| Expected manifest | `docs/baselines/CVF_GC018_WRS_FR2_DISPATCH_CLOSURE_FRICTION_REPAIR_2026-10-04.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_WRS_FR2_DISPATCH_CLOSURE_FRICTION_REPAIR_2026-10-04.md`; `docs/reviews/evidence/cvf-wrs-fr2-dispatch-inputs-2026-10-04.json`; `docs/reviews/evidence/cvf-wrs-fr2-worker-return-skeleton-2026-10-04.txt` |
-| Actual changed set | `docs/baselines/CVF_GC018_WRS_FR2_DISPATCH_CLOSURE_FRICTION_REPAIR_2026-10-04.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_WRS_FR2_DISPATCH_CLOSURE_FRICTION_REPAIR_2026-10-04.md`; `docs/reviews/evidence/cvf-wrs-fr2-dispatch-inputs-2026-10-04.json`; `docs/reviews/evidence/cvf-wrs-fr2-worker-return-skeleton-2026-10-04.txt` |
+| Session or invocation | WRS-FR2 terminal blocked closure2026-10-04 |
+| Working directory | private provenance repo root |
+| Command or tool surface | returned evidence review, Local26 probe, targeted6, reviewer-fast69, generator/normal hooks/final committed gates |
+| Allowed scope source | FR2 reviewer-owned closure conversion and operator-confirmed evidence loss |
+| Before status evidence | clean worktree at reviewed material 6546de0050b31efbe9b2067b9a6f6b39be300e1b; normal hooks90/90 |
+| After status evidence | exact ten-path terminal blocked packet; fresh committed gate follows HEAD sync |
+| Diff evidence | actual staged ten-path manifest and diff hygiene |
+| Approval boundary | Local structural acceptance, historical clean-start blocker retained; no full PASS |
+| Claim boundary | offline shape only; no historical clean-start/live/runtime/public effect |
+| Agent type | Local reviewer/closer |
+| Invocation ID | wrs-fr2-terminal-blocked-closure-20261004 |
+| Target paths | `docs/baselines/CVF_GC018_WRS_FR2_DISPATCH_CLOSURE_FRICTION_REPAIR_2026-10-04.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_WRS_FR2_DISPATCH_CLOSURE_FRICTION_REPAIR_2026-10-04.md`; `docs/reviews/CVF_WRS_FR2_DISPATCH_CLOSURE_FRICTION_REPAIR_COMPLETION_2026-10-04.md`; `docs/reviews/evidence/cvf-wrs-fr2-local-independent-probe-2026-10-04.json`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Expected manifest | `docs/baselines/CVF_GC018_WRS_FR2_DISPATCH_CLOSURE_FRICTION_REPAIR_2026-10-04.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_WRS_FR2_DISPATCH_CLOSURE_FRICTION_REPAIR_2026-10-04.md`; `docs/reviews/CVF_WRS_FR2_DISPATCH_CLOSURE_FRICTION_REPAIR_COMPLETION_2026-10-04.md`; `docs/reviews/evidence/cvf-wrs-fr2-local-independent-probe-2026-10-04.json`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Actual changed set | `docs/baselines/CVF_GC018_WRS_FR2_DISPATCH_CLOSURE_FRICTION_REPAIR_2026-10-04.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_WRS_FR2_DISPATCH_CLOSURE_FRICTION_REPAIR_2026-10-04.md`; `docs/reviews/CVF_WRS_FR2_DISPATCH_CLOSURE_FRICTION_REPAIR_COMPLETION_2026-10-04.md`; `docs/reviews/evidence/cvf-wrs-fr2-local-independent-probe-2026-10-04.json`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |
 
@@ -403,7 +408,7 @@ Reason: private admission; public-facing changes require sibling public-sync clo
 
 ## Claim Boundary
 
-rawMemoryReleased=false. Offline scaffold authoring only; pending structural proof is not live governance/release or project effect. CCMA/S05/P11 and production join guard remain parked; worker no-commit.
+rawMemoryReleased=false. CLOSED_BLOCKED_BOUNDED: offline structural implementation is reviewer-accepted after targeted Local proof repair; mandatory historical clean-start proof is permanently unproven. Operator confirmed overwritten receipt; external IDE task log is NOT_CVF_SOURCE and not closure proof. Current packet gates do not retroactively prove clean-start compliance. No worker/redispatch/successor, live/provider/project/public/production authority. CCMA/S05/P11 remain parked.
 
 ## Scaffold Provenance Block
 
@@ -618,3 +623,36 @@ python -B -m unittest discover -s governance/compat -p test_build_dispatch_packe
 python -B governance/compat/run_worker_return_fast_gate.py --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_WRS_FR2_DISPATCH_CLOSURE_FRICTION_REPAIR_2026-10-04.md
 ```
 Local: full pre-dispatch after source-pinned continuity and final bound release; normal hooks and final committed pre-closure without active-work-order flag after review.
+
+## Local Terminal Reviewer Disposition
+
+CLOSED_BLOCKED_BOUNDED. Structural REQ-1/2/3 accepted after targeted Local public regression repair; Local26, targeted6/6, worker80 report reused; reviewer-fast69/69. WRS-FR2-REVIEW-F1 historical clean-start evidence remains blocked after operator confirms original receipt overwritten and unavailable; later receipt87 checks binds final six-path bytes. No historical compliance PASS, redispatch or successor. Reviewed material 6546de0050b31efbe9b2067b9a6f6b39be300e1b.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | docs/work_orders/CVF_AGENT_WORK_ORDER_WRS_FR2_DISPATCH_CLOSURE_FRICTION_REPAIR_2026-10-04.md | CLOSED_BLOCKED_BOUNDED; execution clean-start unproven | PASS |
+| Completion or reviewer artifact | docs/reviews/CVF_WRS_FR2_DISPATCH_CLOSURE_FRICTION_REPAIR_COMPLETION_2026-10-04.md | structural proof accepted; evidence loss recorded, no full compliance PASS | PASS |
+| Roadmap state | N/A with reason: standalone owner maintenance | no roadmap/successor | N/A with reason: no dedicated roadmap |
+| Registry JSON | docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json | retained raw SHA256=27d19d770761152324dd4efb43c1746ed88040d844292f52cf751e3802240d81; no corpus mutation | PASS |
+| Registry Markdown | docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md | retained raw SHA256=38ee1871f253607cd704194b0507db5a3070cdba86a2909cda3881018fe38cbd; no corpus mutation | PASS |
+| External evidence digest | N/A with reason: internal worker | external IDE task log rejected as NOT_CVF_SOURCE | N/A with reason: no external admission |
+| System loop interlock | N/A with reason: offline shape only | CCMA/runtime effect parked | N/A with reason: no interlock effect |
+| Session continuity | six continuity paths | terminal blocked/no successor; raw pins regenerated | PASS |
+| Historical clean pre-implementation receipt | docs/reviews/evidence/cvf-wrs-fr2-dispatch-closure-friction-2026-10-04.json localReviewerEvidence.cleanStartProofFinding | overwritten; available receipt binds all six post-edit paths; operator confirms no retained original | BLOCKED with reason: historical proof lost |
+
+## Mixed Protected-Path Atomicity Authorization
+
+Disposition: AUTHORIZED_EXACT_MANIFEST
+Atomicity reason: final fixed paired status and raw currentAuthority pins must change together with named completion/probe and source/generated continuity in this exact ten-path terminal blocked closure.
+Rollback boundary: these ten paths only; preserve reviewed material, failed/missing historical evidence, prior FR1/R1 and parked/public state.
+Exact changed manifest: `docs/baselines/CVF_GC018_WRS_FR2_DISPATCH_CLOSURE_FRICTION_REPAIR_2026-10-04.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_WRS_FR2_DISPATCH_CLOSURE_FRICTION_REPAIR_2026-10-04.md`; `docs/reviews/CVF_WRS_FR2_DISPATCH_CLOSURE_FRICTION_REPAIR_COMPLETION_2026-10-04.md`; `docs/reviews/evidence/cvf-wrs-fr2-local-independent-probe-2026-10-04.json`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`.
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Evidence | Expected | Actual | Verdict |
+|---|---|---|---|---|
+| Structural boundary | Local probe JSON | independent raw false/completion/public consumers | 26/26 | PASS |
+| Historical clean-start | preserved original later receipt + operator confirmation | clean-before-edit proof | unavailable; later digest exactly matches six handoff paths | BLOCKED |
+| Current committed packet finality | fresh actual pre-closure after HEAD sync | exact committed range/clean tree | required after commit, not yet asserted | N/A with reason: future committed gate |

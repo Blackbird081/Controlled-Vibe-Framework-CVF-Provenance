@@ -37,11 +37,11 @@
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_WRS_FR2_DISPATCH_CLOSURE_FRICTION_REPAIR_2026-10-04.md",
-    "baselineSha256": "0547e90be664e686a3d0894b0caac2496dc97ee81fd66d3f1fe0c59f64c7d0f0",
+    "baselineSha256": "3895eb5b4e359839ae265a4706dd94f9159c559e979c042ec64e68588d46bf35",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_WRS_FR2_DISPATCH_CLOSURE_FRICTION_REPAIR_2026-10-04.md",
-    "workOrderSha256": "badfdc67a44bac49d2bcfbd4c26278bb0d5c8004b6b9ebfde0bab044099377e3"
+    "workOrderSha256": "efbe1db5a2088f59d9c8cd5d089bea5b972e2c3b243e28457a672b94566e698c"
   },
-  "currentAuthoritySyncReason": "Operator selected WRS-FR2 at existing dispatch owner; packet material 883cf6e9ef1639f23b094e1bbddf11dc1d968438; final bound pre-dispatch release required before no-commit worker.",
+  "currentAuthoritySyncReason": "FR2 CLOSED_BLOCKED_BOUNDED: structural acceptance, historical clean receipt loss retained; packet material 6546de0050b31efbe9b2067b9a6f6b39be300e1b; current bound finality only.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",

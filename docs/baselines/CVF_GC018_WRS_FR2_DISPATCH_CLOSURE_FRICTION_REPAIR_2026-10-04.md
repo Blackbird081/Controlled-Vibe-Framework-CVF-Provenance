@@ -2,7 +2,7 @@
 
 Memory class: governed-baseline
 docType: baseline
-Status: DISPATCH_READY
+Status: CLOSED_BLOCKED_BOUNDED
 Date: 2026-10-04
 Batch ID: CVF-WRS-FR2
 providerExecutionAuthority: FORBIDDEN
@@ -13,7 +13,7 @@ R1 accepted/closed at 8482be833d8518a485e9ad66f1e9c6aa336b40e3; source-pinned Lo
 
 ## Decision / Baseline / Proposed Tranche
 
-Admit exact six-path authoring repair under docs/work_orders/CVF_AGENT_WORK_ORDER_WRS_FR2_DISPATCH_CLOSURE_FRICTION_REPAIR_2026-10-04.md; proof pending.
+CLOSED_BLOCKED_BOUNDED. Structural implementation accepted at 6546de0050b31efbe9b2067b9a6f6b39be300e1b; historical clean-start proof lost, no full compliance PASS or successor. Owner work order docs/work_orders/CVF_AGENT_WORK_ORDER_WRS_FR2_DISPATCH_CLOSURE_FRICTION_REPAIR_2026-10-04.md.
 
 ## Implementation Contract
 
@@ -54,7 +54,7 @@ Exact six worker paths in Required Artifact Manifest. Modify existing dispatch s
 | Field | Value |
 |---|---|
 | applicableCheckersRead | governance/compat/check_raw_memory_release_invariant.py; governance/compat/check_public_export_disposition.py; governance/compat/check_continuation_chain.py; governance/compat/check_semantic_convergence_control.py; governance/compat/check_work_order_acceptance_ledger.py; governance/compat/check_review_cost_control.py; governance/compat/check_core_guard_self_protection.py; governance/compat/check_gate_to_role_closeability.py; governance/compat/check_task_governance_route.py; governance/compat/check_agent_operation_trace.py; governance/compat/check_work_order_dispatch_quality.py; governance/compat/check_markdown_structural_completeness.py; governance/compat/check_governed_artifact_checker_read_ahead.py; governance/compat/check_baseline_update_compat.py; governance/compat/check_external_knowledge_intake_routing.py; governance/compat/check_independent_review_probe_admission.py |
-| literalTokensReviewed | DISPATCH_READY; rawMemoryReleased=false; Rule B; completionReviewPath; DEFERRED_PRIVATE_ONLY; public-sync; acceptance-ledger-json; exact manifest |
+| literalTokensReviewed | CLOSED_BLOCKED_BOUNDED; rawMemoryReleased=false; Rule B; completionReviewPath; DEFERRED_PRIVATE_ONLY; public-sync; acceptance-ledger-json; exact manifest |
 | gateRunPurpose | confirm source-derived dispatch/closure contract and later release |
 | claimBoundary | offline scaffold shape only; no runtime/provider proof |
 
@@ -119,7 +119,7 @@ Reason: private admission; public-facing changes require sibling public-sync clo
 
 ## Claim Boundary
 
-rawMemoryReleased=false. Offline scaffold authoring only; pending structural proof is not live governance/release or project effect. CCMA/S05/P11 and production join guard remain parked; worker no-commit.
+rawMemoryReleased=false. CLOSED_BLOCKED_BOUNDED: offline structural implementation is reviewer-accepted after targeted Local proof repair; mandatory historical clean-start proof is permanently unproven. Operator confirmed overwritten receipt; external IDE task log is NOT_CVF_SOURCE and not closure proof. Current packet gates do not retroactively prove clean-start compliance. No worker/redispatch/successor, live/provider/project/public/production authority. CCMA/S05/P11 remain parked.
 
 ## Scaffold Provenance Block
 
@@ -162,3 +162,32 @@ N/A_WITH_REASON - offline internal authoring only; no provider or deployment fre
 | Owner surface | existing scaffold and worker-return template owners |
 | Disposition | internal planning only; no external research or direct import |
 | Claim boundary | shared-workspace Local work; external research ends before internal implementation |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | docs/work_orders/CVF_AGENT_WORK_ORDER_WRS_FR2_DISPATCH_CLOSURE_FRICTION_REPAIR_2026-10-04.md | CLOSED_BLOCKED_BOUNDED; execution clean-start unproven | PASS |
+| Completion or reviewer artifact | docs/reviews/CVF_WRS_FR2_DISPATCH_CLOSURE_FRICTION_REPAIR_COMPLETION_2026-10-04.md | structural proof accepted; evidence loss recorded, no full compliance PASS | PASS |
+| Roadmap state | N/A with reason: standalone owner maintenance | no roadmap/successor | N/A with reason: no dedicated roadmap |
+| Registry JSON | docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json | retained raw SHA256=27d19d770761152324dd4efb43c1746ed88040d844292f52cf751e3802240d81; no corpus mutation | PASS |
+| Registry Markdown | docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md | retained raw SHA256=38ee1871f253607cd704194b0507db5a3070cdba86a2909cda3881018fe38cbd; no corpus mutation | PASS |
+| External evidence digest | N/A with reason: internal worker | external IDE task log rejected as NOT_CVF_SOURCE | N/A with reason: no external admission |
+| System loop interlock | N/A with reason: offline shape only | CCMA/runtime effect parked | N/A with reason: no interlock effect |
+| Session continuity | six continuity paths | terminal blocked/no successor; raw pins regenerated | PASS |
+| Historical clean pre-implementation receipt | docs/reviews/evidence/cvf-wrs-fr2-dispatch-closure-friction-2026-10-04.json localReviewerEvidence.cleanStartProofFinding | overwritten; available receipt binds all six post-edit paths; operator confirms no retained original | BLOCKED with reason: historical proof lost |
+
+## Mixed Protected-Path Atomicity Authorization
+
+Disposition: AUTHORIZED_EXACT_MANIFEST
+Atomicity reason: final fixed paired status and raw currentAuthority pins must change together with named completion/probe and source/generated continuity in this exact ten-path terminal blocked closure.
+Rollback boundary: these ten paths only; preserve reviewed material, failed/missing historical evidence, prior FR1/R1 and parked/public state.
+Exact changed manifest: `docs/baselines/CVF_GC018_WRS_FR2_DISPATCH_CLOSURE_FRICTION_REPAIR_2026-10-04.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_WRS_FR2_DISPATCH_CLOSURE_FRICTION_REPAIR_2026-10-04.md`; `docs/reviews/CVF_WRS_FR2_DISPATCH_CLOSURE_FRICTION_REPAIR_COMPLETION_2026-10-04.md`; `docs/reviews/evidence/cvf-wrs-fr2-local-independent-probe-2026-10-04.json`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`.
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Evidence | Expected | Actual | Verdict |
+|---|---|---|---|---|
+| Structural boundary | Local probe JSON | independent raw false/completion/public consumers | 26/26 | PASS |
+| Historical clean-start | preserved original later receipt + operator confirmation | clean-before-edit proof | unavailable; later digest exactly matches six handoff paths | BLOCKED |
+| Current committed packet finality | fresh actual pre-closure after HEAD sync | exact committed range/clean tree | required after commit, not yet asserted | N/A with reason: future committed gate |

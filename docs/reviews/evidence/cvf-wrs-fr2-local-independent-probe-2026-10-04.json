@@ -1,0 +1,129 @@
+{
+  "schemaVersion": "cvf.wrs.fr2.localIndependentProbe.v1",
+  "actor": "LOCAL_REVIEWER_NOT_IMPLEMENTATION_WORKER",
+  "workerTestImports": false,
+  "cases": [
+    {
+      "case": "LOCAL_PROBE_ZETA_17generic-worker-dispatchbaseline-independent-boundary",
+      "pass": true
+    },
+    {
+      "case": "LOCAL_PROBE_ZETA_17generic-worker-dispatchbaseline-deleted-boundary-refused",
+      "pass": true
+    },
+    {
+      "case": "LOCAL_PROBE_ZETA_17generic-worker-dispatchwork-order-independent-boundary",
+      "pass": true
+    },
+    {
+      "case": "LOCAL_PROBE_ZETA_17generic-worker-dispatchwork-order-deleted-boundary-refused",
+      "pass": true
+    },
+    {
+      "case": "LOCAL_PROBE_ZETA_17source-intakebaseline-independent-boundary",
+      "pass": true
+    },
+    {
+      "case": "LOCAL_PROBE_ZETA_17source-intakebaseline-deleted-boundary-refused",
+      "pass": true
+    },
+    {
+      "case": "LOCAL_PROBE_ZETA_17source-intakework-order-independent-boundary",
+      "pass": true
+    },
+    {
+      "case": "LOCAL_PROBE_ZETA_17source-intakework-order-deleted-boundary-refused",
+      "pass": true
+    },
+    {
+      "case": "LOCAL_PROBE_SIGMA_29generic-worker-dispatchbaseline-independent-boundary",
+      "pass": true
+    },
+    {
+      "case": "LOCAL_PROBE_SIGMA_29generic-worker-dispatchbaseline-deleted-boundary-refused",
+      "pass": true
+    },
+    {
+      "case": "LOCAL_PROBE_SIGMA_29generic-worker-dispatchwork-order-independent-boundary",
+      "pass": true
+    },
+    {
+      "case": "LOCAL_PROBE_SIGMA_29generic-worker-dispatchwork-order-deleted-boundary-refused",
+      "pass": true
+    },
+    {
+      "case": "LOCAL_PROBE_SIGMA_29source-intakebaseline-independent-boundary",
+      "pass": true
+    },
+    {
+      "case": "LOCAL_PROBE_SIGMA_29source-intakebaseline-deleted-boundary-refused",
+      "pass": true
+    },
+    {
+      "case": "LOCAL_PROBE_SIGMA_29source-intakework-order-independent-boundary",
+      "pass": true
+    },
+    {
+      "case": "LOCAL_PROBE_SIGMA_29source-intakework-order-deleted-boundary-refused",
+      "pass": true
+    },
+    {
+      "case": "guidance-rule-b-and-stable-path",
+      "pass": true
+    },
+    {
+      "case": "generated-closed-no-review-refused",
+      "pass": true
+    },
+    {
+      "case": "generated-closed-matching-review-accepted",
+      "pass": true
+    },
+    {
+      "case": "exact-declared-exemption-respected",
+      "pass": true
+    },
+    {
+      "case": "baseline-unfinished-export-refused",
+      "pass": true
+    },
+    {
+      "case": "baseline-completed-private-export-accepted",
+      "pass": true
+    },
+    {
+      "case": "baseline-removed-sync-boundary-refused",
+      "pass": true
+    },
+    {
+      "case": "work-order-unfinished-export-refused",
+      "pass": true
+    },
+    {
+      "case": "work-order-completed-private-export-accepted",
+      "pass": true
+    },
+    {
+      "case": "work-order-removed-sync-boundary-refused",
+      "pass": true
+    }
+  ],
+  "passCount": 26,
+  "probeSourceSha256": "1a71d0f146ebccf6489f321b6f21442eee5912f99311ad0a0a2c6c11741e073d",
+  "probeSource": "from pathlib import Path\nimport sys,json,hashlib,tempfile,re,itertools\nsys.path.insert(0,'governance/compat')\nimport build_dispatch_packet_scaffold as b\nimport check_raw_memory_release_invariant as raw\nimport check_continuation_chain as cont\nimport check_public_export_disposition as pub\nresults=[]\ndef record(name,ok):\n results.append({'case':name,'pass':bool(ok)})\n assert ok,name\nfor batch in ['LOCAL_PROBE_ZETA_17','LOCAL_PROBE_SIGMA_29']:\n for kind in ['generic-worker-dispatch','source-intake']:\n  args=b.ScaffoldArgs(packet_kind=kind,batch_id=batch,title='Local durable memory retrieval fixture',date='2026-10-04',base='c22cbaff3',commit_mode='WORKER_MUST_NOT_COMMIT')\n  active=b.detect_triggers(args)\n  docs=[('baseline','docs/baselines/CVF_GC018_LOCAL_PROBE.md',b.build_gc018_baseline(args,active)),('work-order','docs/work_orders/CVF_AGENT_WORK_ORDER_LOCAL_PROBE.md',b.build_work_order(args,active))]\n  for label,path,doc in docs:\n   boundary=doc.split('## Claim Boundary\\n',1)[1].split('\\n## ',1)[0]\n   record(batch+kind+label+'-independent-boundary', 'rawMemoryReleased=false' in boundary and not raw.diagnose_raw_memory_release_invariant(path,doc))\n   record(batch+kind+label+'-deleted-boundary-refused',any(v['type']=='raw_memory_release_false_missing' for v in raw.diagnose_raw_memory_release_invariant(path,doc.replace('rawMemoryReleased=false',''))))\nargs=b.ScaffoldArgs(packet_kind='generic-worker-dispatch',batch_id='LOCAL_PROBE_47',title='Local continuity fixture',date='2026-10-04',base='c22cbaff3',commit_mode='WORKER_MUST_NOT_COMMIT')\ndoc=b.build_work_order(args,b.detect_triggers(args))\nrecord('guidance-rule-b-and-stable-path','required for CLOSED non-exempt work orders under continuation Rule B' in doc and '(optional; prefer repairing evidence' not in doc and 'docs/reviews/CVF_LOCAL_PROBE_47_COMPLETION_2026-10-04.md' in doc)\nwith tempfile.TemporaryDirectory() as temp:\n root=Path(temp); w=root/'orders'; r=root/'reviews'; w.mkdir();r.mkdir()\n closed=re.sub(r'^Status:.*$','Status: CLOSED',doc,count=1,flags=re.M)\n # Complete the unrelated baseline locator before isolating Rule B.\n closed=closed.replace('GC-018 required: Yes','GC-018 required: No')\n wp=w/'CVF_AGENT_WORK_ORDER_LOCAL_PROBE_47_2026-10-04.md';wp.write_text(closed,encoding='utf-8')\n record('generated-closed-no-review-refused',any(v['rule']=='B' for v in cont._check_work_orders(w,r,set())))\n rp=r/'CVF_LOCAL_PROBE_47_COMPLETION_2026-10-04.md';rp.write_text('# Local fixture\\nWork order: '+wp.name+'\\n',encoding='utf-8')\n record('generated-closed-matching-review-accepted',not cont._check_work_orders(w,r,set()))\n rp.unlink();record('exact-declared-exemption-respected',not cont._check_work_orders(w,r,{wp.name}))\nfor label,_,text in docs:\n unfinished='Status: CLOSED\\n'+text;path='docs/roadmaps/CVF_LOCAL_PROBE_EXPORT.md'\n record(label+'-unfinished-export-refused',any(v['type']=='public_export_disposition_invalid' for v in pub._validate_export_disposition(path,unfinished)))\n section=pub._extract_section(text,pub.REQUIRED_SECTION)\n completed=section.split('Reason:',1)[0]+'Reason: local private fixture; public-facing changes require sibling public-sync clone.\\n'\n fixture=unfinished.replace(section,completed)\n record(label+'-completed-private-export-accepted',not pub._validate_export_disposition(path,fixture))\n record(label+'-removed-sync-boundary-refused',any(v['type']=='public_sync_boundary_missing' for v in pub._validate_export_disposition(path,fixture.replace(completed,completed.replace('public-sync','export scope')))))\noriginal=Path('.cvf/runtime/wrs-fr2-original-worker')\ne=json.loads((original/'cvf-wrs-fr2-dispatch-closure-friction-2026-10-04.json').read_text())\ntarget=json.loads((original/'pre-implementation.json').read_text())['worktreeFingerprint']\npaths=sorted(e['manifest']);data={p:(original/Path(p).name).read_bytes() if (original/Path(p).name).exists() else Path(p).read_bytes() for p in paths};found=[]\nfor n in range(1,7):\n for subset in itertools.combinations(paths,n):\n  h=hashlib.sha256()\n  for p in subset:h.update(p.encode());h.update(bytes([0]));h.update(hashlib.sha256(data[p]).digest());h.update(bytes([0]))\n  if h.hexdigest()==target:found.append(subset)\nout={'schemaVersion':'cvf.wrs.fr2.localIndependentProbe.v1','actor':'LOCAL_REVIEWER_NOT_IMPLEMENTATION_WORKER','workerTestImports':False,'cases':results,'passCount':len(results),'probeSourceSha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),'probeSource':Path(__file__).read_text(),'preImplementationReceiptDiagnostic':{'fingerprint':target,'matchesOriginalFinalPathSubset':found,'cleanStartEvidence':'NOT_PROVEN_BY_AVAILABLE_RECEIPT'},'claimBoundary':'offline shape fixtures only; no historical clean-start, live-governance, runtime, public export or project proof'}\nPath('.cvf/runtime/wrs-fr2-local-independent-probe.json').write_text(json.dumps(out,indent=2)+'\\n',encoding='utf-8')\nprint(json.dumps({'passCount':len(results),'receiptSubset':found,'claimBoundary':out['claimBoundary']}))\n",
+  "preImplementationReceiptDiagnostic": {
+    "fingerprint": "9cfd577594c54ab3548eee8b37b24ffa0011a7ef19399b0b9fc528578c3084bf",
+    "matchesOriginalFinalPathSubset": [
+      [
+        "docs/reviews/CVF_WRS_FR2_DISPATCH_CLOSURE_FRICTION_REPAIR_WORKER_RETURN_2026-10-04.md",
+        "docs/reviews/evidence/cvf-wrs-fr2-dispatch-closure-friction-2026-10-04.json",
+        "governance/compat/build_dispatch_packet_scaffold.py",
+        "governance/compat/fixtures/woas_r2_source_intake_scaffold_golden.md",
+        "governance/compat/test_build_dispatch_packet_scaffold.py",
+        "governance/compat/test_dispatch_closure_scaffold_friction.py"
+      ]
+    ],
+    "cleanStartEvidence": "NOT_PROVEN_BY_AVAILABLE_RECEIPT"
+  },
+  "claimBoundary": "offline shape fixtures only; no historical clean-start, live-governance, runtime, public export or project proof"
+}
