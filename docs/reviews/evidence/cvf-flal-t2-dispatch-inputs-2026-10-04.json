@@ -61,8 +61,8 @@
     "docs/reviews/evidence/cvf-flal-t2-parent-evidence-2026-10-04.json"
   ],
   "dispatcherMaterialPaths": [
-    "docs/baselines/CVF_GC018_FLAL_T2_PARENT_EVIDENCE_VALIDATION_2026-10-04.md",
-    "docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_T2_PARENT_EVIDENCE_VALIDATION_2026-10-04.md",
+    "docs/baselines/CVF_GC018_FLAL_T2_PARENT_EVIDENCE_VALIDATION_R1_2026-10-04.md",
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_T2_PARENT_EVIDENCE_VALIDATION_R1_2026-10-04.md",
     "docs/reviews/evidence/cvf-flal-t2-dispatch-inputs-2026-10-04.json",
     "docs/reviews/evidence/cvf-flal-t2-worker-return-skeleton-2026-10-04.txt",
     "docs/roadmaps/CVF_FOUNDATION_LEARNING_ADMISSION_AND_LOOPBACK_ROADMAP_2026-10-04.md"
@@ -100,8 +100,8 @@
       "docs/reference/downstream_gate_profile/README.md",
       "docs/reviews/CVF_FLAL_T2_PARENT_EVIDENCE_WORKER_RETURN_2026-10-04.md",
       "docs/reviews/evidence/cvf-flal-t2-parent-evidence-2026-10-04.json",
-      "docs/baselines/CVF_GC018_FLAL_T2_PARENT_EVIDENCE_VALIDATION_2026-10-04.md",
-      "docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_T2_PARENT_EVIDENCE_VALIDATION_2026-10-04.md",
+      "docs/baselines/CVF_GC018_FLAL_T2_PARENT_EVIDENCE_VALIDATION_R1_2026-10-04.md",
+      "docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_T2_PARENT_EVIDENCE_VALIDATION_R1_2026-10-04.md",
       "docs/reviews/evidence/cvf-flal-t2-dispatch-inputs-2026-10-04.json",
       "docs/reviews/evidence/cvf-flal-t2-worker-return-skeleton-2026-10-04.txt",
       "docs/roadmaps/CVF_FOUNDATION_LEARNING_ADMISSION_AND_LOOPBACK_ROADMAP_2026-10-04.md",
@@ -184,5 +184,19 @@
     "receiptStatus": "ROUTED_SHADOW",
     "validationErrors": []
   },
-  "evidenceBoundary": "Admission provenance only; no implementation or gate PASS asserted by this receipt."
+  "evidenceBoundary": "Admission provenance only; no implementation or gate PASS asserted by this receipt.",
+  "commandAdmissionCorrection": {
+    "fastGate": "python -B governance/compat/run_worker_return_fast_gate.py --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_T2_PARENT_EVIDENCE_VALIDATION_R1_2026-10-04.md",
+    "workerAuthorizationCarrier": "COPY_EXISTING_AUTHORIZATION_IN_CURRENT_WORKER_RETURN",
+    "gateArgumentSource": "governance/compat/run_worker_return_fast_gate.py:main",
+    "authorizationSource": "governance/compat/check_core_guard_self_protection.py:_authorization_docs",
+    "disposition": "FINAL_DISPATCH_COMMAND_BINDING_NOT_IMPLEMENTATION_PROOF"
+  },
+  "priorUnreleasedPacket": {
+    "baseline": "docs/baselines/CVF_GC018_FLAL_T2_PARENT_EVIDENCE_VALIDATION_2026-10-04.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_T2_PARENT_EVIDENCE_VALIDATION_2026-10-04.md",
+    "materialCommit": "cbd3d6ba970066f2d912eb94714944fd73a43072",
+    "disposition": "SUPERSEDED_BEFORE_WORKER_RELEASE",
+    "reason": "Final supported fast-gate arguments and worker-return authorization carrier; no worker executed and no new scope."
+  }
 }

@@ -113,8 +113,10 @@ extend/reuse it and decline a duplicate control.
 T1 must make the implementation path concrete before dispatch. Compare F2G,
 ADIF bridge, portable profile and Learning Plane candidate routing by capability,
 not a broad repository scan or per-row recreation of historical evidence.
-T2 packet admission: `docs/baselines/CVF_GC018_FLAL_T2_PARENT_EVIDENCE_VALIDATION_2026-10-04.md` and `docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_T2_PARENT_EVIDENCE_VALIDATION_2026-10-04.md`.
+T2 packet admission: `docs/baselines/CVF_GC018_FLAL_T2_PARENT_EVIDENCE_VALIDATION_R1_2026-10-04.md` and `docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_T2_PARENT_EVIDENCE_VALIDATION_R1_2026-10-04.md`.
 T2 implementation/proof remain pending; T3 is not opened automatically.
+The final T2 pair binds the supported active-work-order fast-gate command and
+inherited same-batch worker-return authorization carrier before final relay.
 
 ## T1 Contract Requirements
 

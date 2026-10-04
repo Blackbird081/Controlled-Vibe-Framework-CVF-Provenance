@@ -5,8 +5,8 @@ Date: 2026-10-04
 docType: review
 Batch ID: CVF-FLAL-T2
 Self-declared worker-return artifact: yes
-Responds to work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_T2_PARENT_EVIDENCE_VALIDATION_2026-10-04.md`
-dispatchWorkOrder: `docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_T2_PARENT_EVIDENCE_VALIDATION_2026-10-04.md`
+Responds to work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_T2_PARENT_EVIDENCE_VALIDATION_R1_2026-10-04.md`
+dispatchWorkOrder: `docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_T2_PARENT_EVIDENCE_VALIDATION_R1_2026-10-04.md`
 executionBaseHead: TO_FILL_capture with `git rev-parse --short HEAD` before edits
 rawMemoryReleased=false
 contractProfile: WORKER_RETURN_FULL_GATE_V1
@@ -43,7 +43,7 @@ successorFreezeDisposition: NOT_APPLICABLE_WITH_REASON - replace with FEATURE_SU
 ## Purpose
 TO_FILL: state the mission prompt for this worker return.
 ## Target / Source
-docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_T2_PARENT_EVIDENCE_VALIDATION_2026-10-04.md; selected parent contract and exact worker manifest.
+docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_T2_PARENT_EVIDENCE_VALIDATION_R1_2026-10-04.md; selected parent contract and exact worker manifest.
 
 ## Scope / Methodology
 TO_FILL: state the scope and methodology of this worker execution.
@@ -190,7 +190,7 @@ TO_FILL: list changed files with `git diff --name-status` evidence.
 ## Worker Experience Retrospective
 WORKER_EXPERIENCE_RETRO_NA_WITH_REASON - no blocker in the generated skeleton; replace with concise retrospective if execution reveals worker friction.
 ## Command Evidence
-- `python governance/compat/run_worker_return_fast_gate.py` - BLOCKED: generated skeleton pending worker execution evidence.
+- `python -B governance/compat/run_worker_return_fast_gate.py --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_T2_PARENT_EVIDENCE_VALIDATION_R1_2026-10-04.md` - BLOCKED: generated skeleton pending worker execution evidence.
 - TO_FILL: paste focused test or smoke command evidence when applicable.
 ## No-Commit Statement
 WORKER_MUST_NOT_COMMIT honored: HEAD unchanged; no git commit performed by worker. Reviewer/closer owns material commit.
@@ -207,3 +207,14 @@ workerRedispatchAllowed: NO
 ## Decision / Disposition
 Generated template only. Replace every TO_FILL/PENDING token with actual evidence.
 Use COMPLETE_PENDING_REVIEW only when required pending-worktree gates pass.
+
+
+## Core Guard Self-Protection Authorization
+Authorized guard-maintenance scope: inherited exact ten-path FLAL-T2 parent validation implementation; this return does not authorize Local continuity edits.
+Protected paths: `docs/reference/downstream_gate_profile/parent_learning_evidence.schema.json`; `governance/compat/parent_learning_evidence.py`; `governance/compat/check_finding_to_governance_learning.py`; `governance/compat/test_parent_learning_evidence.py`; `governance/compat/test_check_finding_to_governance_learning.py`; `docs/reference/downstream_gate_profile/CVF_PROJECT_LEARNING_PARENT_EVIDENCE_CONTRACT.md`; `docs/reference/downstream_gate_profile/CVF_PROJECT_LEARNING_LOOP_STANDARD.md`; `docs/reference/downstream_gate_profile/README.md`; `docs/reviews/CVF_FLAL_T2_PARENT_EVIDENCE_WORKER_RETURN_2026-10-04.md`; `docs/reviews/evidence/cvf-flal-t2-parent-evidence-2026-10-04.json`.
+Operator authorization: inherited operator2026-10-04 instruction and paired T2 baseline/work order; worker cannot widen this authority.
+Rollback boundary: only exact T2 implementation material; preserve historical registry, actual projects, prior closure and parked lanes.
+
+## Shared Worktree Lane Release
+laneReleaseDisposition: TO_FILL_RELEASED_TO_LOCAL_REVIEWER_ONLY_WHEN_EXECUTION_STOPS
+Final git status is recorded above; worker stops edits when releasing the lane.
