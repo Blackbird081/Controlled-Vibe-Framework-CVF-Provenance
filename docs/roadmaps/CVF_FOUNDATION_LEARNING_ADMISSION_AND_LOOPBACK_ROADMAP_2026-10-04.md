@@ -1,7 +1,7 @@
 # CVF Foundation Learning Admission And Loopback Roadmap
 
 Memory class: FULL_RECORD
-Status: T2_ACCEPTED_BOUNDED_T3_PARKED
+Status: T3_OFFLINE_COMPOSITION_ADMITTED_PENDING_RETURN
 docType: roadmap
 Date: 2026-10-04
 Batch ID: CVF-FLAL-T0
@@ -115,7 +115,9 @@ T1 must make the implementation path concrete before dispatch. Compare F2G,
 ADIF bridge, portable profile and Learning Plane candidate routing by capability,
 not a broad repository scan or per-row recreation of historical evidence.
 T2 packet admission: `docs/baselines/CVF_GC018_FLAL_T2_PARENT_EVIDENCE_VALIDATION_R1_2026-10-04.md` and `docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_T2_PARENT_EVIDENCE_VALIDATION_R1_2026-10-04.md`.
-T2 implementation material is 5cdb8390d8fd7ea882628ed571fcff80b2fe8ce7; Local accepted offline structural validation after one container-shape repair. Completion: `docs/reviews/CVF_FLAL_T2_PARENT_EVIDENCE_VALIDATION_COMPLETION_2026-10-04.md`. Independent probe30/30; T3 remains parked and requires a separately admitted packet.
+T2 implementation material is 5cdb8390d8fd7ea882628ed571fcff80b2fe8ce7; Local accepted offline structural validation after one container-shape repair. Completion: `docs/reviews/CVF_FLAL_T2_PARENT_EVIDENCE_VALIDATION_COMPLETION_2026-10-04.md`. Independent probe30/30; T3 now has a separately admitted test-only packet; actual projects remain parked.
+
+T3 admission: `docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_T3_OFFLINE_COMPOSITION_2026-10-04.md` and `docs/baselines/CVF_GC018_FLAL_T3_OFFLINE_COMPOSITION_2026-10-04.md`. The worker adds only a dedicated synthetic composition test and dated return/evidence. Source ID/project joins are explicit fixture assertions; existing parent source references remain opaque raw-byte pins. An expected boundary counterexample must disclose this limitation without claiming production enforcement. No automatic successor or project loopback.
 The final T2 pair binds the supported active-work-order fast-gate command and
 inherited same-batch worker-return authorization carrier before final relay.
 
@@ -250,24 +252,24 @@ Named pointer reconciliation only; no corpus-derived map accepted.
 
 ## Agent Operation Trace Block
 
-| Field | Value |
+| Field | Evidence |
 |---|---|
-| Actor | Local maintainer/reviewer; one actor, no independent reviewer identity |
-| Provider or surface | private CVF workspace |
-| Session or invocation | cvf-flal-t0-reentry-20261004 |
-| Working directory | repository root |
-| Command or tool surface | targeted governed-source reads, Git status, roadmap authoring and governance validation |
-| Target paths | docs/roadmaps/CVF_FOUNDATION_LEARNING_ADMISSION_AND_LOOPBACK_ROADMAP_2026-10-04.md |
-| Allowed scope source | operator instruction to return to the CVF roadmap with CCMA parked |
-| Before status evidence | clean HEAD a473251bd1594ebd78c55fe4e5b91841cc069b2c |
-| After status evidence | one new roadmap pending Local validation/commit; no source-project change |
-| Diff evidence | git diff --cached -- docs/roadmaps/CVF_FOUNDATION_LEARNING_ADMISSION_AND_LOOPBACK_ROADMAP_2026-10-04.md |
-| Approval boundary | planning and owner selection only; fresh GC-018/work order before implementation |
-| Claim boundary | source-backed planning; no runtime/governance effectiveness proof |
-| Agent type | Local maintainer/reviewer |
-| Invocation ID | cvf-flal-t0-reentry-20261004 |
-| Expected manifest | docs/roadmaps/CVF_FOUNDATION_LEARNING_ADMISSION_AND_LOOPBACK_ROADMAP_2026-10-04.md |
-| Actual changed set | docs/roadmaps/CVF_FOUNDATION_LEARNING_ADMISSION_AND_LOOPBACK_ROADMAP_2026-10-04.md |
+| Actor | Local orchestrator/dispatcher/reviewer |
+| Provider or surface | private shared workspace |
+| Session or invocation | cvf-flal-t3-dispatch-20261004 |
+| Working directory | provenance repository root |
+| Command or tool surface | targeted source/interface reads, official scaffold, source pins and conformance gates |
+| Allowed scope source | operator continuation; roadmap T3 separately admitted offline composition |
+| Before status evidence | worktree clean at HEAD 00310d07169723373e333393658feead8f226d96 |
+| After status evidence | five-path admission only; worker execution pending |
+| Diff evidence | git diff --name-status; git diff --check; staged exact five paths |
+| Approval boundary | bound pre-dispatch PASS before manual relay |
+| Claim boundary | dispatch only; fixture proof pending; actual projects parked |
+| Agent type | INTERNAL_AGENT dispatcher/reviewer |
+| Invocation ID | cvf-flal-t3-dispatch-20261004 |
+| Target paths | `docs/baselines/CVF_GC018_FLAL_T3_OFFLINE_COMPOSITION_2026-10-04.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_T3_OFFLINE_COMPOSITION_2026-10-04.md`; `docs/reviews/evidence/cvf-flal-t3-dispatch-inputs-2026-10-04.json`; `docs/reviews/evidence/cvf-flal-t3-worker-return-skeleton-2026-10-04.txt`; `docs/roadmaps/CVF_FOUNDATION_LEARNING_ADMISSION_AND_LOOPBACK_ROADMAP_2026-10-04.md` |
+| Expected manifest | `docs/baselines/CVF_GC018_FLAL_T3_OFFLINE_COMPOSITION_2026-10-04.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_T3_OFFLINE_COMPOSITION_2026-10-04.md`; `docs/reviews/evidence/cvf-flal-t3-dispatch-inputs-2026-10-04.json`; `docs/reviews/evidence/cvf-flal-t3-worker-return-skeleton-2026-10-04.txt`; `docs/roadmaps/CVF_FOUNDATION_LEARNING_ADMISSION_AND_LOOPBACK_ROADMAP_2026-10-04.md` |
+| Actual changed set | `docs/baselines/CVF_GC018_FLAL_T3_OFFLINE_COMPOSITION_2026-10-04.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_T3_OFFLINE_COMPOSITION_2026-10-04.md`; `docs/reviews/evidence/cvf-flal-t3-dispatch-inputs-2026-10-04.json`; `docs/reviews/evidence/cvf-flal-t3-worker-return-skeleton-2026-10-04.txt`; `docs/roadmaps/CVF_FOUNDATION_LEARNING_ADMISSION_AND_LOOPBACK_ROADMAP_2026-10-04.md` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |
 
@@ -275,14 +277,9 @@ Named pointer reconciliation only; no corpus-derived map accepted.
 
 DEFERRED_PRIVATE_ONLY
 
-Reason: private parent planning artifact; public-sync is separate and currently queued.
+Reason: private roadmap and T3 admission; no roadmap projection. Prior public PR9 is resolved per docs/reviews/CVF_PUBLIC_SYNC_RUNNER_RECOVERY_2026-10-04.md; its merge is not export of this roadmap.
 No public artifact or successful public promotion is claimed for this roadmap.
 
 ## Claim Boundary
 
-T0 selects parent contract/owner reconciliation. Existing closed work remains
-accepted bounded. CCMA is parked; S05/C1/send/B2 STOP, Q001/Q004 open/Profile A,
-P11/deploy parked, LHW24 closed. Public candidate0223096622b4 and GitHub run37174587903
-remain a separate queued release checkpoint; no bypass or duplicate candidate.
-No worker dispatch, provider invocation, project adoption or implementation
-closure is asserted by this roadmap.
+T2 remains accepted bounded; T3 test-only offline composition admitted, worker proof pending. CCMA parked; S05/C1/send/B2 STOP; Q001/Q004 OPEN/Profile A; P11/deploy parked; LHW24 closed. Prior public PR9 merged at 8a4119e11db00e774ed8e7cf7d9a8caa309e81d1 per the retained Local public-sync review; no new public projection. No provider invocation, semantic project admission or implementation closure asserted.

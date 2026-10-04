@@ -1,0 +1,197 @@
+{
+  "schemaVersion": "cvf.flalT3DispatchInputs@1",
+  "batchId": "CVF-FLAL-T3",
+  "dispatchBaseHead": "00310d07169723373e333393658feead8f226d96",
+  "beforeStatus": "CLEAN",
+  "sourcePins": [
+    {
+      "path": "docs/roadmaps/CVF_FOUNDATION_LEARNING_ADMISSION_AND_LOOPBACK_ROADMAP_2026-10-04.md",
+      "sha256": "98dbfe1610335a31e8c6e22ffb772687a4e7c078fe432b8bf18a8d8ab46a34ab",
+      "readDepth": "TARGETED_OWNER_INTERFACE",
+      "verifiedSymbol": "T3 offline composition milestone",
+      "authority": "GOVERNED_LOCAL_SOURCE"
+    },
+    {
+      "path": "scripts/lib/downstream_governance/cvf_dg_intake.py",
+      "sha256": "204aacddb1d1b64439508bcfa73c8632842b0bc1f26dcdf3422d1404e1594efc",
+      "readDepth": "TARGETED_OWNER_INTERFACE",
+      "verifiedSymbol": "build_intake; build_record; validate_record",
+      "authority": "GOVERNED_LOCAL_SOURCE"
+    },
+    {
+      "path": "scripts/lib/downstream_governance/cvf_dg_install.py",
+      "sha256": "59758a59ebd7e16cda459f2eaa09e014bed38b415c681744cbabe2c62edb39f5",
+      "readDepth": "TARGETED_OWNER_INTERFACE",
+      "verifiedSymbol": "load_profile",
+      "authority": "GOVERNED_LOCAL_SOURCE"
+    },
+    {
+      "path": "scripts/lib/downstream_governance/cvf_downstream_gate_profile.json",
+      "sha256": "dd8d8f358fffd68ea71680f96c1f46f68a485c213933c3db631817776fc015f0",
+      "readDepth": "TARGETED_OWNER_INTERFACE",
+      "verifiedSymbol": "intake; projectPaths",
+      "authority": "GOVERNED_LOCAL_SOURCE"
+    },
+    {
+      "path": "governance/compat/parent_learning_evidence.py",
+      "sha256": "babaaa7ea9a3d08910d70ff7ce6a29c5c4bcffd88d0a39a0b89b949d5fec825a",
+      "readDepth": "TARGETED_OWNER_INTERFACE",
+      "verifiedSymbol": "validate_parent_evidence; classify_registry; strict_json_loads",
+      "authority": "GOVERNED_LOCAL_SOURCE"
+    },
+    {
+      "path": "governance/compat/test_parent_learning_evidence.py",
+      "sha256": "f4ea619bec6fb6024037edecb30fa372feaad478e677c48b2c4f866af0a46f57",
+      "readDepth": "TARGETED_OWNER_INTERFACE",
+      "verifiedSymbol": "existing typed fixture and mutation matrix",
+      "authority": "GOVERNED_LOCAL_SOURCE"
+    },
+    {
+      "path": "governance/compat/test_downstream_gate_profile.py",
+      "sha256": "2a42e6d66f39511349999fc44bc2b66e65a2e21945d1dd20569e8e99773bc740",
+      "readDepth": "TARGETED_OWNER_INTERFACE",
+      "verifiedSymbol": "IntakeTests: standalone generator and record cases",
+      "authority": "GOVERNED_LOCAL_SOURCE"
+    },
+    {
+      "path": "docs/reference/downstream_gate_profile/CVF_PROJECT_LEARNING_LOOP_STANDARD.md",
+      "sha256": "7823ef18bd387c0a66e66ad929bf35579f6253fbe69c0225076918fad415cdf9",
+      "readDepth": "TARGETED_OWNER_INTERFACE",
+      "verifiedSymbol": "source; parent; return; project application boundaries",
+      "authority": "GOVERNED_LOCAL_SOURCE"
+    },
+    {
+      "path": "docs/reviews/CVF_FLAL_RANGE_T1_RECONCILIATION_COMPLETION_2026-10-04.md",
+      "sha256": "ab6e27c7c72a0ee857e9624c718244833d2934ff57c3928e7245a8f5977268b5",
+      "readDepth": "TARGETED_OWNER_INTERFACE",
+      "verifiedSymbol": "bounded closure; historical failure retained",
+      "authority": "GOVERNED_LOCAL_SOURCE"
+    }
+  ],
+  "workerPaths": [
+    "governance/compat/test_flal_offline_learning_composition.py",
+    "docs/reviews/CVF_FLAL_T3_OFFLINE_COMPOSITION_WORKER_RETURN_2026-10-04.md",
+    "docs/reviews/evidence/cvf-flal-t3-offline-composition-2026-10-04.json"
+  ],
+  "dispatcherMaterialPaths": [
+    "docs/baselines/CVF_GC018_FLAL_T3_OFFLINE_COMPOSITION_2026-10-04.md",
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_T3_OFFLINE_COMPOSITION_2026-10-04.md",
+    "docs/reviews/evidence/cvf-flal-t3-dispatch-inputs-2026-10-04.json",
+    "docs/reviews/evidence/cvf-flal-t3-worker-return-skeleton-2026-10-04.txt",
+    "docs/roadmaps/CVF_FOUNDATION_LEARNING_ADMISSION_AND_LOOPBACK_ROADMAP_2026-10-04.md"
+  ],
+  "localContinuityPaths": [
+    "AGENT_HANDOFF_V63_2026-09-18.md",
+    "CVF_SESSION_MEMORY.md",
+    "CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json",
+    "CVF_SESSION/state/entries/nextAllowedMove.json",
+    "CVF_SESSION/ACTIVE_SESSION_STATE.json",
+    "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json"
+  ],
+  "taskManifest": {
+    "schemaVersion": "cvf.taskGovernanceManifest.v1",
+    "taskId": "CVF-FLAL-T3",
+    "requestedProfile": "P3_ELEVATED",
+    "classification": {
+      "taskKind": "PURE_LOCAL_IMPLEMENTATION",
+      "authorityImpact": "USES_EXISTING_OWNER",
+      "externalEffect": "LOCAL_REVERSIBLE",
+      "dataSensitivity": "PRIVATE_REPO",
+      "reversibility": "GIT_REVERSIBLE",
+      "sourceScale": "NAMED_FILES",
+      "delegation": "MULTI_ROLE_NO_COMMIT",
+      "novelty": "OWNER_COMPOSITION"
+    },
+    "pathFamilies": [
+      "governance/compat/test_flal_offline_learning_composition.py",
+      "docs/reviews/CVF_FLAL_T3_OFFLINE_COMPOSITION_WORKER_RETURN_2026-10-04.md",
+      "docs/reviews/evidence/cvf-flal-t3-offline-composition-2026-10-04.json",
+      "docs/baselines/CVF_GC018_FLAL_T3_OFFLINE_COMPOSITION_2026-10-04.md",
+      "docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_T3_OFFLINE_COMPOSITION_2026-10-04.md",
+      "docs/reviews/evidence/cvf-flal-t3-dispatch-inputs-2026-10-04.json",
+      "docs/reviews/evidence/cvf-flal-t3-worker-return-skeleton-2026-10-04.txt",
+      "docs/roadmaps/CVF_FOUNDATION_LEARNING_ADMISSION_AND_LOOPBACK_ROADMAP_2026-10-04.md",
+      "AGENT_HANDOFF_V63_2026-09-18.md",
+      "CVF_SESSION_MEMORY.md",
+      "CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json",
+      "CVF_SESSION/state/entries/nextAllowedMove.json",
+      "CVF_SESSION/ACTIVE_SESSION_STATE.json",
+      "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json"
+    ],
+    "claims": [
+      "Test-only offline composition; production owners unchanged",
+      "Generated intake remains pending; fixture oracle is not production enforcement"
+    ],
+    "requiredProof": [
+      "PROOF-COMPOSITION",
+      "PROOF-BOUNDARIES",
+      "PROOF-RETURN"
+    ],
+    "operatorCheckpoints": [
+      "Actual projects and successors remain parked"
+    ],
+    "forbiddenEffects": [
+      "PROVIDER_CALL",
+      "NETWORK",
+      "PROJECT_MUTATION",
+      "PUBLIC_SYNC",
+      "DEPLOYMENT",
+      "WORKER_COMMIT",
+      "HISTORY_REWRITE"
+    ],
+    "sourceEvidence": {
+      "selectedFilesFullyRead": false,
+      "corpusReceiptRef": null,
+      "completenessClaimChanged": false
+    }
+  },
+  "taskRoutingReceipt": {
+    "schemaVersion": "cvf.taskGovernanceRoute.v1",
+    "taskId": "CVF-FLAL-T3",
+    "profile": "P3_ELEVATED",
+    "computedMinimumProfile": "P3_ELEVATED",
+    "classification": {
+      "taskKind": "PURE_LOCAL_IMPLEMENTATION",
+      "authorityImpact": "USES_EXISTING_OWNER",
+      "externalEffect": "LOCAL_REVERSIBLE",
+      "dataSensitivity": "PRIVATE_REPO",
+      "reversibility": "GIT_REVERSIBLE",
+      "sourceScale": "NAMED_FILES",
+      "delegation": "MULTI_ROLE_NO_COMMIT",
+      "novelty": "OWNER_COMPOSITION"
+    },
+    "escalationTriggers": [
+      "CONTINUITY_STATE_SURFACE",
+      "DELEGATION_MULTI_ROLE_NO_COMMIT",
+      "GOVERNANCE_MACHINE_SURFACE",
+      "TASKKIND_PURE_LOCAL_IMPLEMENTATION"
+    ],
+    "selectedBundles": [
+      "CORE_INTEGRITY",
+      "ARTIFACT_SHAPE",
+      "SOURCE_PROVENANCE",
+      "DELEGATION_HANDOFF",
+      "CODE_QUALITY",
+      "CONTINUITY"
+    ],
+    "skippedBundles": {
+      "CORPUS_ACCOUNTING": "NO_CORPUS_OR_COMPLETENESS_CHANGE",
+      "STATE_AND_SECURITY": "NO_STATE_AUTH_SECRET_DEPENDENCY_OR_MUTATION_TRIGGER",
+      "RUNTIME_LIVE": "NO_RUNTIME_NETWORK_OR_LIVE_EFFECT",
+      "PUBLIC_RELEASE": "NO_PUBLIC_RELEASE_OR_DESTRUCTIVE_EFFECT"
+    },
+    "estimatedCommandCount": 6,
+    "selectiveExecutionAuthorized": false,
+    "legacyGateDisposition": "RUN_FULL_LEGACY_BUNDLE",
+    "receiptStatus": "ROUTED_SHADOW",
+    "validationErrors": []
+  },
+  "scope": "test-only synthetic composition, no production seam",
+  "knownBoundary": "Parent source is opaque pinned bytes; payload ID/project joins require fixture assertions, not production-refusal claims",
+  "claimBoundary": "admission only, no project acceptance or public export",
+  "privateDebtBefore": {
+    "behind": 0,
+    "ahead": 21,
+    "disposition": "CONTINUE_OPERATOR_AUTHORIZED_PRIVATE_DISPATCH_NO_PUSH"
+  }
+}
