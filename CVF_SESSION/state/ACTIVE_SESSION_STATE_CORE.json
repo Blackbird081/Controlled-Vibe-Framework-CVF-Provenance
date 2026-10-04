@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_WRS_FR1_SCAFFOLD_FRICTION_REPAIR_2026-10-04.md",
     "workOrderSha256": "0d482ac4b88ddc15e6c546c1ad7a18c5b9e06880aee27b0d6fb96eb489ed3396"
   },
-  "currentAuthoritySyncReason": "Operator-selected bounded scaffold friction repair material c15b55214f0ae7733a709c16446045d7d5f705ab; six-path no-commit worker, unchanged checker contracts. Prior closures retained; projects parked. Final bound pre-dispatch required.",
+  "currentAuthoritySyncReason": "Pending worker snapshot retained with REQUEST_CHANGES; no acceptance, closure or active worker. Local rework admission only. Material 0a3f680c89c41a67aa024ce340b34f1e461b6cea; preserve parked boundaries.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
