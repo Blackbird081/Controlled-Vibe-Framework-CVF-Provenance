@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_T2_PARENT_EVIDENCE_VALIDATION_R1_2026-10-04.md",
     "workOrderSha256": "8773f23d73b4f73f801fbb12fc63e6b3ea0a0d0be1ad59c624ae0639f7ba71ce"
   },
-  "currentAuthoritySyncReason": "Local reviewer accepted and closed FLAL-T2 at 601c31e977ae260444697f8836ec825900cd59a0, after implementation5cdb8390d and independent30/30. Current closed baseline/work-order raw hashes preserved. Separate six-path continuity synchronizes terminal next move; no T3 successor. Old public PR9 is reopened but required GitHub job queued and protected merge rejected. P4 collector mixed-review-range generation failure reviewer-rejected; raw marker SHA256 23a8a366a4e83ae6a67f1af25fa17bb53f647c87a86aa4b99219b05e5f8b87ff retained with runtime adjudication. No sample enrolled and no full mixed-range closure PASS claimed.",
+  "currentAuthoritySyncReason": "Preserve the closed FLAL-T2 paired authority and its known mixed-review-range limitation. Separate operator-authorized old public checkpoint resolved: PR9 merged/public8a4119e1; hosted candidate and main preflights PASS; source mirror/record material 227e2a600aaef6d5253be3c1cd7d177dfe37fc6d; docs/reviews/CVF_PUBLIC_SYNC_RUNNER_RECOVERY_2026-10-04.md. Six-path continuity only; T3/CCMA/S05/P11 parked.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
