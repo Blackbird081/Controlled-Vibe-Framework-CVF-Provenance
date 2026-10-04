@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 docType: work_order
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 Date: 2026-10-04
 Batch ID: CVF-FLAL-T2
 Dispatch base head: a84e7a8be368d6cef9fdfd49c8c054cc6ec33803
@@ -237,7 +237,7 @@ Contract source archive-qualified exception: `docs/reference/CVF_AHB_T2_AGENT_HA
 | route | MULTI_AGENT_MULTI_ROLE |
 | rolePattern | Local dispatcher -> distinct internal worker -> Local reviewer/closer |
 | phase | admitted packet; implementation pending release gate |
-| baseHeadFor(phase) | dispatchBaseHead=a84e7a8be368d6cef9fdfd49c8c054cc6ec33803; executionBaseHead=WORKER_MUST_CAPTURE_AT_START; closureBaseHead=NOT_EXECUTED_YET |
+| baseHeadFor(phase) | dispatchBaseHead=a84e7a8be368d6cef9fdfd49c8c054cc6ec33803; executionBaseHead=WORKER_MUST_CAPTURE_AT_START; closureBaseHead=EXECUTED_AND_REVIEWED |
 | changedSetScope(phase) | ten exact worker paths; Local material/continuity responsibility separate |
 | traceScope(phase, actor) | actor and captured per-phase base, actual diff and status |
 | commitOwner(phase) | Local reviewer/closer; worker forbidden |
@@ -301,7 +301,7 @@ Returned defects: NONE_RETURNED. Actual totalCandidates=0; not proof that the wh
 | Field | Value |
 |---|---|
 | applicableCheckersRead | governance/compat/check_baseline_update_compat.py; governance/compat/check_markdown_structural_completeness.py; governance/compat/check_governed_artifact_checker_read_ahead.py; governance/compat/check_agent_operation_trace.py; governance/compat/check_core_guard_self_protection.py; governance/compat/check_work_order_dispatch_quality.py; governance/compat/check_work_order_dispatch_quality_artifacts.py; governance/compat/check_work_order_acceptance_ledger.py; governance/compat/check_gate_to_role_closeability.py; governance/compat/check_agent_handoff_boundary.py; governance/compat/check_finding_to_governance_learning.py; governance/compat/check_external_knowledge_intake_routing.py; governance/compat/check_public_export_disposition.py; governance/compat/check_epistemic_process_packet.py; governance/compat/check_dispatch_release_readiness.py; governance/compat/check_task_governance_route.py; governance/compat/check_independent_review_probe_admission.py; governance/compat/check_dispatch_prompt_envelope.py; governance/compat/check_worker_return_quality_gate.py |
-| literalTokensReviewed | DISPATCH_READY; acceptance-ledger-json; exact ACCEPT disposition; LOCAL probe decision owner; gate-role graph; first-section envelope; Expected manifest; Manifest delta; Public Export Disposition |
+| literalTokensReviewed | HISTORICAL_DISPATCH_ADMITTED; acceptance-ledger-json; exact ACCEPT disposition; LOCAL probe decision owner; gate-role graph; first-section envelope; Expected manifest; Manifest delta; Public Export Disposition |
 | gateRunPurpose | confirm admitted implementation packet shape; no implementation proof |
 | claimBoundary | named owner reconciliation and design only; admission only; no implementation or runtime behavior proof |
 
@@ -348,7 +348,7 @@ Claim Update: a design contract is selected; implementation, semantic acceptance
 
 - Corpus verdict: NOT_APPLICABLE_WITH_REASON - targeted owner/source comparison only; no complete corpus or linked historical proof claim.
 
-## Agent Operation Trace Block
+## Historical Dispatch Agent Operation Trace Block
 
 | Field | Evidence |
 |---|---|
@@ -357,7 +357,7 @@ Claim Update: a design contract is selected; implementation, semantic acceptance
 | Session or invocation | cvf-flal-t2-dispatch-20261004 |
 | Working directory | provenance repository root |
 | Command or tool surface | targeted reads, scaffold, hashes, packet authoring, structural/full governance gates |
-| Target paths | `docs/baselines/CVF_GC018_FLAL_T2_PARENT_EVIDENCE_VALIDATION_R1_2026-10-04.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_T2_PARENT_EVIDENCE_VALIDATION_R1_2026-10-04.md`; `docs/reviews/evidence/cvf-flal-t2-dispatch-inputs-2026-10-04.json`; `docs/reviews/evidence/cvf-flal-t2-worker-return-skeleton-2026-10-04.txt`; `docs/roadmaps/CVF_FOUNDATION_LEARNING_ADMISSION_AND_LOOPBACK_ROADMAP_2026-10-04.md` |
+| Target paths | `docs/baselines/CVF_GC018_FLAL_T2_PARENT_EVIDENCE_VALIDATION_R1_2026-10-04.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_T2_PARENT_EVIDENCE_VALIDATION_R1_2026-10-04.md`; `docs/reviews/evidence/cvf-flal-t2-dispatch-inputs-2026-10-04.json`; `docs/reviews/evidence/cvf-flal-t2-worker-return-skeleton-2026-10-04.txt`; `docs/roadmaps/CVF_FOUNDATION_LEARNING_ADMISSION_AND_LOOPBACK_ROADMAP_2026-10-04.md`; `AGENT_HANDOFF_V63_2026-09-18.md` |
 | Allowed scope source | current operator manual-relay instruction and selected T1 contract |
 | Before status evidence | worktree clean at HEAD a84e7a8be368d6cef9fdfd49c8c054cc6ec33803 |
 | After status evidence | five-path admission batch; implementation not executed |
@@ -366,8 +366,8 @@ Claim Update: a design contract is selected; implementation, semantic acceptance
 | Claim boundary | admission only; no implementation or effect proof |
 | Agent type | INTERNAL_AGENT dispatcher/reviewer |
 | Invocation ID | cvf-flal-t2-dispatch-20261004 |
-| Expected manifest | `docs/baselines/CVF_GC018_FLAL_T2_PARENT_EVIDENCE_VALIDATION_R1_2026-10-04.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_T2_PARENT_EVIDENCE_VALIDATION_R1_2026-10-04.md`; `docs/reviews/evidence/cvf-flal-t2-dispatch-inputs-2026-10-04.json`; `docs/reviews/evidence/cvf-flal-t2-worker-return-skeleton-2026-10-04.txt`; `docs/roadmaps/CVF_FOUNDATION_LEARNING_ADMISSION_AND_LOOPBACK_ROADMAP_2026-10-04.md` |
-| Actual changed set | `docs/baselines/CVF_GC018_FLAL_T2_PARENT_EVIDENCE_VALIDATION_R1_2026-10-04.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_T2_PARENT_EVIDENCE_VALIDATION_R1_2026-10-04.md`; `docs/reviews/evidence/cvf-flal-t2-dispatch-inputs-2026-10-04.json`; `docs/reviews/evidence/cvf-flal-t2-worker-return-skeleton-2026-10-04.txt`; `docs/roadmaps/CVF_FOUNDATION_LEARNING_ADMISSION_AND_LOOPBACK_ROADMAP_2026-10-04.md` |
+| Expected manifest | `docs/baselines/CVF_GC018_FLAL_T2_PARENT_EVIDENCE_VALIDATION_R1_2026-10-04.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_T2_PARENT_EVIDENCE_VALIDATION_R1_2026-10-04.md`; `docs/reviews/evidence/cvf-flal-t2-dispatch-inputs-2026-10-04.json`; `docs/reviews/evidence/cvf-flal-t2-worker-return-skeleton-2026-10-04.txt`; `docs/roadmaps/CVF_FOUNDATION_LEARNING_ADMISSION_AND_LOOPBACK_ROADMAP_2026-10-04.md`; `AGENT_HANDOFF_V63_2026-09-18.md` |
+| Actual changed set | `docs/baselines/CVF_GC018_FLAL_T2_PARENT_EVIDENCE_VALIDATION_R1_2026-10-04.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_T2_PARENT_EVIDENCE_VALIDATION_R1_2026-10-04.md`; `docs/reviews/evidence/cvf-flal-t2-dispatch-inputs-2026-10-04.json`; `docs/reviews/evidence/cvf-flal-t2-worker-return-skeleton-2026-10-04.txt`; `docs/roadmaps/CVF_FOUNDATION_LEARNING_ADMISSION_AND_LOOPBACK_ROADMAP_2026-10-04.md`; `AGENT_HANDOFF_V63_2026-09-18.md` |
 | Manifest delta | MATCH: five-path Local admission; ten worker paths remain future |
 | Deletion or rename disposition | N/A with reason: none |
 
@@ -379,7 +379,7 @@ Reason: parent-only contract design; existing public pipeline is separate.
 
 ## Claim Boundary
 
-DISPATCH_READY packet declaration; actual release requires its committed baseline,
+HISTORICAL_DISPATCH_ADMITTED packet declaration; actual release requires its committed baseline,
 continuity binding and final active-work-order pre-dispatch PASS. This artifact
 does not claim implementation, synthetic proof, semantic acceptance or closure.
 CCMA parked; S05/C1 and send/B2 STOP; Q001/Q004 open/Profile A; P11/deploy parked.
@@ -671,3 +671,52 @@ No operator commit question is needed for this authorized private dispatch.
 Readiness evidence is produced by actual staged scope/gates, not by this section.
 Local commits only the reviewed admission batch and then continuity; worker
 implementation/closure is a later independently reviewed batch.
+
+## Local Reviewer Closure
+
+Implementation material: 5cdb8390d8fd7ea882628ed571fcff80b2fe8ce7. Local accepted REQ-1 through REQ-5 after one consolidated malformed-container repair. Independent probe30/30; helper14 tests with one OS skip; F2G36/36; worker-return fast PASS. See `docs/reviews/CVF_FLAL_T2_PARENT_EVIDENCE_VALIDATION_COMPLETION_2026-10-04.md`. Original dispatch declarations are historical; no worker execution successor or T3 release is authorized. Final mechanical closure depends on separate continuity and bound pre-closure PASS.
+
+## Agent Operation Trace Block
+
+| Field | Evidence |
+|---|---|
+| Actor | Codex Local orchestrator/reviewer/closer |
+| Provider or surface | private CVF local workspace |
+| Session or invocation | cvf-flal-t2-local-review-20261004 |
+| Working directory | provenance root; disposable synthetic probe root |
+| Command or tool surface | source/evidence reads, independent probe, bounded container repair, focused regression, normal governance gates and commits |
+| Target paths | `docs/baselines/CVF_GC018_FLAL_T2_PARENT_EVIDENCE_VALIDATION_R1_2026-10-04.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_T2_PARENT_EVIDENCE_VALIDATION_R1_2026-10-04.md`; `docs/roadmaps/CVF_FOUNDATION_LEARNING_ADMISSION_AND_LOOPBACK_ROADMAP_2026-10-04.md`; `docs/reviews/CVF_FLAL_T2_PARENT_EVIDENCE_VALIDATION_COMPLETION_2026-10-04.md`; `docs/reviews/evidence/cvf-flal-t2-local-independent-probe-2026-10-04.json`; `docs/reviews/evidence/cvf-flal-t2-local-independent-probe-source-2026-10-04.txt`; `docs/reviews/evidence/cvf-flal-t2-local-independent-probe-initial-fail-2026-10-04.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `AGENT_HANDOFF_V63_2026-09-18.md` |
+| Allowed scope source | T2 R1 work order Reviewer Closure Conversion; operator instructed review Claude and finish the separate old public-sync checkpoint |
+| Before status evidence | ten-path implementation committed at 5cdb8390d8fd7ea882628ed571fcff80b2fe8ce7; worker lane released; closure material initially clean |
+| After status evidence | separate reviewer acceptance/evidence and atomic currentAuthority hash binding; final continuity follows |
+| Diff evidence | git diff --name-status; git diff --check; exact closure manifest |
+| Approval boundary | Local owns review/closure; no new worker dispatch or project effect |
+| Claim boundary | offline structural acceptance only; public candidate old checkpoint is separate and not exported by this batch |
+| Agent type | LOCAL_REVIEWER_NOT_IMPLEMENTATION_WORKER |
+| Invocation ID | cvf-flal-t2-local-review-20261004 |
+| Expected manifest | `docs/baselines/CVF_GC018_FLAL_T2_PARENT_EVIDENCE_VALIDATION_R1_2026-10-04.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_T2_PARENT_EVIDENCE_VALIDATION_R1_2026-10-04.md`; `docs/roadmaps/CVF_FOUNDATION_LEARNING_ADMISSION_AND_LOOPBACK_ROADMAP_2026-10-04.md`; `docs/reviews/CVF_FLAL_T2_PARENT_EVIDENCE_VALIDATION_COMPLETION_2026-10-04.md`; `docs/reviews/evidence/cvf-flal-t2-local-independent-probe-2026-10-04.json`; `docs/reviews/evidence/cvf-flal-t2-local-independent-probe-source-2026-10-04.txt`; `docs/reviews/evidence/cvf-flal-t2-local-independent-probe-initial-fail-2026-10-04.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `AGENT_HANDOFF_V63_2026-09-18.md` |
+| Actual changed set | `docs/baselines/CVF_GC018_FLAL_T2_PARENT_EVIDENCE_VALIDATION_R1_2026-10-04.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_T2_PARENT_EVIDENCE_VALIDATION_R1_2026-10-04.md`; `docs/roadmaps/CVF_FOUNDATION_LEARNING_ADMISSION_AND_LOOPBACK_ROADMAP_2026-10-04.md`; `docs/reviews/CVF_FLAL_T2_PARENT_EVIDENCE_VALIDATION_COMPLETION_2026-10-04.md`; `docs/reviews/evidence/cvf-flal-t2-local-independent-probe-2026-10-04.json`; `docs/reviews/evidence/cvf-flal-t2-local-independent-probe-source-2026-10-04.txt`; `docs/reviews/evidence/cvf-flal-t2-local-independent-probe-initial-fail-2026-10-04.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `AGENT_HANDOFF_V63_2026-09-18.md` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: none |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_T2_PARENT_EVIDENCE_VALIDATION_R1_2026-10-04.md | CLOSED_PASS_BOUNDED; REQ-1 through REQ-5 reviewed | PASS |
+| Completion or reviewer artifact | docs/reviews/CVF_FLAL_T2_PARENT_EVIDENCE_VALIDATION_COMPLETION_2026-10-04.md | ACCEPTED_BOUNDED; independent probe30/30 | PASS |
+| Roadmap state | docs/roadmaps/CVF_FOUNDATION_LEARNING_ADMISSION_AND_LOOPBACK_ROADMAP_2026-10-04.md | T2_ACCEPTED_BOUNDED_T3_PARKED | PASS |
+| Registry JSON | docs/reference/downstream_gate_profile/downstream_finding_intake_registry.json | historical raw SHA verified; no entry change required | PASS: historical raw bytes preserved; no registry mutation required |
+| Registry Markdown | docs/reference/downstream_gate_profile/README.md | machine binding and accepted owner navigation | PASS |
+| External evidence digest | docs/reviews/evidence/cvf-flal-t2-local-independent-probe-2026-10-04.json | local synthetic evidence; no external research input | N/A with reason: internal worker and Local probe only |
+| System loop interlock | docs/reference/downstream_gate_profile/CVF_PROJECT_LEARNING_LOOP_STANDARD.md | independent lifecycle binding; actual loopback parked | PASS |
+| Session continuity | six active continuity surfaces | separate post-closure-material sync, then bound pre-closure | BLOCKED with reason: final synchronization and committed-range gate follow this material |
+
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| Receipt finding/control/project joins | mismatch refuses | independent30-case probe refuses each mutated join | PASS |
+| Operator park | positive loopback refuses | park contradiction refused | PASS |
+| Legacy history | no synthesized typed claim | 0 typed/8 legacy/0 invalid, exact registry raw SHA preserved | PASS |

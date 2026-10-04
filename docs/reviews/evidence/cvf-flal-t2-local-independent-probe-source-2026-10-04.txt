@@ -1,0 +1,93 @@
+import copy
+import hashlib
+import json
+import os
+import subprocess
+import sys
+import tempfile
+from pathlib import Path
+
+ROOT = Path.cwd()
+sys.path.insert(0, str(ROOT / 'governance/compat'))
+import parent_learning_evidence as validator
+import check_finding_to_governance_learning as owner
+
+rows = []
+def sha(raw): return hashlib.sha256(raw).hexdigest()
+with tempfile.TemporaryDirectory(prefix='cvf-local-flal-probe-') as td:
+    root = Path(td)
+    def ref(name, raw=b'independent raw bytes\r\n', fragment='L1', klass='SYNTHETIC_OFFLINE'):
+        target = root / name
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_bytes(raw)
+        return dict(path=name, sha256=sha(raw), fragment=fragment, evidenceClass=klass)
+    evidence = ref('input/source.txt')
+    control = ref('control/guard.txt', fragment='control:local')
+    def receipt(kind):
+        body = dict(schemaVersion='cvf.learningLoopReceipt@1.0.0', kind=kind, findingId='LOCAL-PROBE', sourceProject='synthetic-recipient', control={k:control[k] for k in ('path','sha256')}, actor='synthetic-owner', authorization=evidence, verification=evidence, claimLimits='synthetic structural chain only')
+        return ref('receipts/'+kind+'.json', json.dumps(body).encode())
+    checks = {n:dict(status='SUPPORTED',reason='synthetic bounded structural support',evidence=[evidence],limits='no semantic proof') for n in ('sourceConfidence','reusableMechanism','existingCoverage','incrementalValue','boundedProof')}
+    life=lambda s,e=[]:dict(state=s,reason='synthetic declared state',evidence=e)
+    positive=dict(schemaVersion='cvf.parentLearningEvidence@1.0.0',findingId='LOCAL-PROBE',source=dict(sourceProject='synthetic-recipient',evidence=evidence),valueChecks=checks,decision=dict(state='ACCEPT',reason='synthetic decision',reviewer='synthetic-local-reviewer',owner='F2G',f2gDisposition='MACHINE_CHECK_ADDED',evidence=[{**evidence,'evidenceClass':'OBSERVED_LOCAL'}]),implementation=life('IMPLEMENTED_BOUNDED',[control,ref('proof/positive.txt',fragment='proof-positive:local'),ref('proof/negative.txt',fragment='proof-negative:local')]),projectResolution=life('OPEN'),returnDelivery=life('RETURNED',[receipt('DELIVERY')]),projectApplication=life('APPLIED',[receipt('APPLICATION')]),claimLimits='synthetic offline probe only')
+    def run(name, obj, expected):
+        try:
+            issues=validator.validate_parent_evidence(obj,'LOCAL-PROBE',root,dispositions=owner.DISPOSITIONS)
+            codes=sorted({x['type'] for x in issues})
+            ok=(not issues) if expected=='VALID' else expected in codes
+            rows.append(dict(case=name,expected=expected,observed=codes,pass_=ok))
+        except Exception as exc:
+            rows.append(dict(case=name,expected=expected,observed=type(exc).__name__,pass_=False))
+    run('minimal-full-positive-chain',positive,'VALID')
+    def mutate(name, fn, code):
+        obj=copy.deepcopy(positive);fn(obj);run(name,obj,code)
+    mutate('missing-value-check',lambda o:o['valueChecks'].pop('boundedProof'),'missing_field')
+    mutate('raw-byte-hash',lambda o:o['source']['evidence'].update(sha256='0'*64),'hash_mismatch')
+    mutate('traversal',lambda o:o['source']['evidence'].update(path='../outside'),'unsafe_locator')
+    mutate('drive-locator',lambda o:o['source']['evidence'].update(path='C:/outside'),'unsafe_locator')
+    mutate('UNC-locator',lambda o:o['source']['evidence'].update(path='//server/share'),'unsafe_locator')
+    junction=root/'junction'
+    created=subprocess.run(['cmd','/c','mklink','/J',str(junction),str(root/'input')],capture_output=True)
+    if created.returncode==0:
+        mutate('Windows-reparse-locator',lambda o:o['source']['evidence'].update(path='junction/source.txt'),'unsafe_locator')
+        os.rmdir(junction)
+    else:
+        rows.append(dict(case='Windows-reparse-locator',expected='unsafe_locator',observed='junction creation failed',pass_=False))
+    mutate('unknown-version',lambda o:o.update(schemaVersion='other'),'unknown_version')
+    mutate('unknown-key',lambda o:o.update(other=1),'unknown_field')
+    mutate('bad-enum-shape',lambda o:o['implementation'].update(state=[]),'invalid_enum')
+    mutate('observed-synthetic-only',lambda o:o['valueChecks']['boundedProof'].update(reason='observed behavior'),'observed_claim_without_observed_evidence')
+    mutate('missing-reviewer',lambda o:o['decision'].update(reviewer=None),'decided_without_reviewer')
+    mutate('missing-implementation-proof',lambda o:o['implementation'].update(evidence=[control]),'implementation_without_proof')
+    mutate('park-contradiction',lambda o:o['returnDelivery'].update(state='PARKED_BY_OPERATOR',evidence=[]),'parked_positive_transition')
+    mutate('application-without-delivery',lambda o:o['returnDelivery'].update(state='NOT_RETURNED',evidence=[]),'applied_without_return')
+    for key,value in [('kind','APPLICATION'),('findingId','other'),('sourceProject','other'),('control',dict(path=control['path'],sha256='0'*64))]:
+        obj=copy.deepcopy(positive)
+        raw=json.loads((root/'receipts/DELIVERY.json').read_bytes());raw[key]=value
+        obj['returnDelivery']['evidence']=[ref('receipts/wrong-'+key+'.json',json.dumps(raw).encode())]
+        run('receipt-'+key,obj,'receipt_wrong_type' if key=='kind' else 'receipt_control_mismatch' if key=='control' else 'receipt_join_mismatch')
+    obj=copy.deepcopy(positive);obj['returnDelivery']['evidence']=[evidence];run('arbitrary-receipt',obj,'receipt_not_typed_json')
+    obj=copy.deepcopy(positive);obj['returnDelivery']['evidence']=[ref('receipts/duplicate.json',b'{"kind":"DELIVERY","kind":"DELIVERY"}')];run('duplicate-receipt-key',obj,'receipt_not_typed_json')
+    for raw in [b'{"x":1,"x":2}',b'{"x":NaN}']:
+        try: validator.strict_json_loads(raw);ok=False
+        except ValueError:ok=True
+        rows.append(dict(case='strict-json-'+raw.decode(),expected='ValueError',pass_=ok))
+    registry='docs/reference/downstream_gate_profile/downstream_finding_intake_registry.json'
+    def registry_case(name,data,expected_invalid):
+        ref(registry,json.dumps(data).encode())
+        report=validator.classify_registry(root,registry,owner.DISPOSITIONS)
+        bound=owner._with_parent_evidence(owner._classify({}),report)
+        ok=report['invalid']>0 and not bound['compliant'] if expected_invalid else report['legacyUntyped']==1 and report['invalid']==0
+        rows.append(dict(case=name,expected='REFUSE' if expected_invalid else 'LEGACY',observed=report,pass_=ok))
+    registry_case('heterogeneous-legacy',dict(entries=[dict(findings=[dict(id='OLD',arbitraryLegacy='historical')])]),False)
+    registry_case('legacy-silent-promotion',dict(entries=[dict(findings=[dict(id='OLD',returnDelivery='RETURNED')])]),True)
+    bad=copy.deepcopy(positive);bad['decision']['reviewer']=None
+    registry_case('production-binding-refuses-typed-invalid',dict(entries=[dict(findings=[dict(id='LOCAL-PROBE',parentEvidence=bad)])]),True)
+    registry_case('malformed-entries-container',dict(entries={'hidden':positive}),True)
+    registry_case('malformed-findings-container',dict(entries=[dict(findings={'hidden':positive})]),True)
+    registry_case('malformed-finding-item',dict(entries=[dict(findings=[None])]),True)
+    ref(registry,json.dumps(dict(entries=[dict(findings=[dict(id='LOCAL-PROBE',parentEvidence=positive)])])).encode())
+    report=owner._parent_evidence_report(root)
+    rows.append(dict(case='production-positive-binding',expected='typedValid=1',observed=report,pass_=report['typedValid']==1 and report['invalid']==0))
+out=dict(schemaVersion='cvf.flalT2IndependentProbe@1',executor='CODEX_LOCAL_REVIEWER',claimBoundary='offline structural synthetic probe; no provider calls',scriptSha256=sha(Path(__file__).read_bytes()),cases=rows,total=len(rows),passed=sum(r['pass_'] for r in rows),failed=sum(not r['pass_'] for r in rows))
+Path('.cvf/runtime/flal-t2-local-probe-result.json').write_text(json.dumps(out,indent=2),encoding='utf-8')
+print(json.dumps(dict(total=out['total'],passed=out['passed'],failed=[r['case'] for r in rows if not r['pass_']]),indent=2))

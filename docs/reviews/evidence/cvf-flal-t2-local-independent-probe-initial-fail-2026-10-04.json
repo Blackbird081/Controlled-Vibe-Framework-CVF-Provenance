@@ -1,0 +1,276 @@
+{
+  "schemaVersion": "cvf.flalT2IndependentProbe@1",
+  "executor": "CODEX_LOCAL_REVIEWER",
+  "claimBoundary": "offline structural synthetic probe; no provider calls",
+  "scriptSha256": "5e50ce19d4899904e7ec1653446919299261930e94abbd7cff52b74d7df6d06f",
+  "cases": [
+    {
+      "case": "minimal-full-positive-chain",
+      "expected": "VALID",
+      "observed": [],
+      "pass_": true
+    },
+    {
+      "case": "missing-value-check",
+      "expected": "missing_field",
+      "observed": [
+        "accept_without_supported_checks",
+        "missing_field"
+      ],
+      "pass_": true
+    },
+    {
+      "case": "raw-byte-hash",
+      "expected": "hash_mismatch",
+      "observed": [
+        "hash_mismatch",
+        "supported_without_valid_evidence"
+      ],
+      "pass_": true
+    },
+    {
+      "case": "traversal",
+      "expected": "unsafe_locator",
+      "observed": [
+        "supported_without_valid_evidence",
+        "unsafe_locator"
+      ],
+      "pass_": true
+    },
+    {
+      "case": "drive-locator",
+      "expected": "unsafe_locator",
+      "observed": [
+        "supported_without_valid_evidence",
+        "unsafe_locator"
+      ],
+      "pass_": true
+    },
+    {
+      "case": "UNC-locator",
+      "expected": "unsafe_locator",
+      "observed": [
+        "supported_without_valid_evidence",
+        "unsafe_locator"
+      ],
+      "pass_": true
+    },
+    {
+      "case": "unknown-version",
+      "expected": "unknown_version",
+      "observed": [
+        "unknown_version"
+      ],
+      "pass_": true
+    },
+    {
+      "case": "unknown-key",
+      "expected": "unknown_field",
+      "observed": [
+        "unknown_field"
+      ],
+      "pass_": true
+    },
+    {
+      "case": "bad-enum-shape",
+      "expected": "invalid_enum",
+      "observed": [
+        "invalid_enum",
+        "loopback_without_implementation",
+        "receipt_without_control"
+      ],
+      "pass_": true
+    },
+    {
+      "case": "observed-synthetic-only",
+      "expected": "observed_claim_without_observed_evidence",
+      "observed": [
+        "observed_claim_without_observed_evidence"
+      ],
+      "pass_": true
+    },
+    {
+      "case": "missing-reviewer",
+      "expected": "decided_without_reviewer",
+      "observed": [
+        "decided_without_reviewer"
+      ],
+      "pass_": true
+    },
+    {
+      "case": "missing-implementation-proof",
+      "expected": "implementation_without_proof",
+      "observed": [
+        "implementation_without_proof"
+      ],
+      "pass_": true
+    },
+    {
+      "case": "park-contradiction",
+      "expected": "parked_positive_transition",
+      "observed": [
+        "applied_without_return",
+        "parked_positive_transition"
+      ],
+      "pass_": true
+    },
+    {
+      "case": "application-without-delivery",
+      "expected": "applied_without_return",
+      "observed": [
+        "applied_without_return"
+      ],
+      "pass_": true
+    },
+    {
+      "case": "receipt-kind",
+      "expected": "receipt_wrong_type",
+      "observed": [
+        "receipt_wrong_type"
+      ],
+      "pass_": true
+    },
+    {
+      "case": "receipt-findingId",
+      "expected": "receipt_join_mismatch",
+      "observed": [
+        "receipt_join_mismatch"
+      ],
+      "pass_": true
+    },
+    {
+      "case": "receipt-sourceProject",
+      "expected": "receipt_join_mismatch",
+      "observed": [
+        "receipt_join_mismatch"
+      ],
+      "pass_": true
+    },
+    {
+      "case": "receipt-control",
+      "expected": "receipt_control_mismatch",
+      "observed": [
+        "receipt_control_mismatch"
+      ],
+      "pass_": true
+    },
+    {
+      "case": "arbitrary-receipt",
+      "expected": "receipt_not_typed_json",
+      "observed": [
+        "receipt_not_typed_json"
+      ],
+      "pass_": true
+    },
+    {
+      "case": "strict-json-{\"x\":1,\"x\":2}",
+      "expected": "ValueError",
+      "pass_": true
+    },
+    {
+      "case": "strict-json-{\"x\":NaN}",
+      "expected": "ValueError",
+      "pass_": true
+    },
+    {
+      "case": "heterogeneous-legacy",
+      "expected": "LEGACY",
+      "observed": {
+        "registry": "docs/reference/downstream_gate_profile/downstream_finding_intake_registry.json",
+        "typedValid": 0,
+        "legacyUntyped": 1,
+        "invalid": 0,
+        "issues": [],
+        "findings": [
+          {
+            "id": "OLD",
+            "outcome": "LEGACY_UNTYPED_NOT_REVALIDATED"
+          }
+        ]
+      },
+      "pass_": true
+    },
+    {
+      "case": "legacy-silent-promotion",
+      "expected": "REFUSE",
+      "observed": {
+        "registry": "docs/reference/downstream_gate_profile/downstream_finding_intake_registry.json",
+        "typedValid": 0,
+        "legacyUntyped": 0,
+        "invalid": 1,
+        "issues": [
+          {
+            "path": "entries[0].findings[0]",
+            "type": "legacy_silent_promotion",
+            "message": "untyped legacy finding claims RETURNED/APPLIED; it cannot synthesize receipts"
+          }
+        ],
+        "findings": [
+          {
+            "id": "OLD",
+            "outcome": "TYPED_INVALID"
+          }
+        ]
+      },
+      "pass_": true
+    },
+    {
+      "case": "production-binding-refuses-typed-invalid",
+      "expected": "REFUSE",
+      "observed": {
+        "registry": "docs/reference/downstream_gate_profile/downstream_finding_intake_registry.json",
+        "typedValid": 0,
+        "legacyUntyped": 0,
+        "invalid": 1,
+        "issues": [
+          {
+            "path": "entries[0].findings[0].parentEvidence.decision",
+            "type": "decided_without_reviewer",
+            "message": "ACCEPT requires a reviewer identity"
+          }
+        ],
+        "findings": [
+          {
+            "id": "LOCAL-PROBE",
+            "outcome": "TYPED_INVALID"
+          }
+        ]
+      },
+      "pass_": true
+    },
+    {
+      "case": "malformed-entries-container",
+      "expected": "REFUSE",
+      "observed": {
+        "registry": "docs/reference/downstream_gate_profile/downstream_finding_intake_registry.json",
+        "typedValid": 0,
+        "legacyUntyped": 0,
+        "invalid": 0,
+        "issues": [],
+        "findings": []
+      },
+      "pass_": false
+    },
+    {
+      "case": "malformed-findings-container",
+      "expected": "REFUSE",
+      "observed": {
+        "registry": "docs/reference/downstream_gate_profile/downstream_finding_intake_registry.json",
+        "typedValid": 0,
+        "legacyUntyped": 1,
+        "invalid": 0,
+        "issues": [],
+        "findings": [
+          {
+            "id": null,
+            "outcome": "LEGACY_UNTYPED_NOT_REVALIDATED"
+          }
+        ]
+      },
+      "pass_": false
+    }
+  ],
+  "total": 26,
+  "passed": 24,
+  "failed": 2
+}

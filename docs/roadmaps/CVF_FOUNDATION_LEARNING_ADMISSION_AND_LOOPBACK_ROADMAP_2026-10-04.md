@@ -1,7 +1,7 @@
 # CVF Foundation Learning Admission And Loopback Roadmap
 
 Memory class: FULL_RECORD
-Status: T1_DESIGN_ACCEPTED_T2_DISPATCH_ADMISSION
+Status: T2_ACCEPTED_BOUNDED_T3_PARKED
 docType: roadmap
 Date: 2026-10-04
 Batch ID: CVF-FLAL-T0
@@ -23,8 +23,9 @@ The operator instructed Local to return to the CVF roadmap on 2026-10-04.
 Select parent admission/loopback contract reconciliation as the next tranche.
 T1 design material is committed at 1c455746bd8c2f845fbeff7647f51227b8df2d55.
 The operator continued on 2026-10-04 and requested a manual-relay implementation
-order. T2 now has a fresh paired baseline/work order; implementation awaits the
-final committed continuity binding and active-work-order pre-dispatch PASS.
+order. T2 was dispatched after the final bound pre-dispatch PASS and has returned
+reviewed implementation. The completion artifact owns the bounded acceptance
+and retained initial probe failure; final continuity is synchronized separately.
 The operator's CCMA park remains effective. Public sync is a separate pending
 release checkpoint, not a prerequisite for private parent design.
 
@@ -114,7 +115,7 @@ T1 must make the implementation path concrete before dispatch. Compare F2G,
 ADIF bridge, portable profile and Learning Plane candidate routing by capability,
 not a broad repository scan or per-row recreation of historical evidence.
 T2 packet admission: `docs/baselines/CVF_GC018_FLAL_T2_PARENT_EVIDENCE_VALIDATION_R1_2026-10-04.md` and `docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_T2_PARENT_EVIDENCE_VALIDATION_R1_2026-10-04.md`.
-T2 implementation/proof remain pending; T3 is not opened automatically.
+T2 implementation material is 5cdb8390d8fd7ea882628ed571fcff80b2fe8ce7; Local accepted offline structural validation after one container-shape repair. Completion: `docs/reviews/CVF_FLAL_T2_PARENT_EVIDENCE_VALIDATION_COMPLETION_2026-10-04.md`. Independent probe30/30; T3 remains parked and requires a separately admitted packet.
 The final T2 pair binds the supported active-work-order fast-gate command and
 inherited same-batch worker-return authorization carrier before final relay.
 

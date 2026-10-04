@@ -37,11 +37,11 @@
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_FLAL_T2_PARENT_EVIDENCE_VALIDATION_R1_2026-10-04.md",
-    "baselineSha256": "72d2d72c18ac5a45817ac4f888eafec1393c30bf38826f9e80635f174511a29b",
+    "baselineSha256": "32a079a3c75f134500c56465c29960a9ce6ae79610f9f8fb8b80e02e7162c9a9",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_T2_PARENT_EVIDENCE_VALIDATION_R1_2026-10-04.md",
-    "workOrderSha256": "271fa5df7cb0a755b45779fdd06d0b30b662f6576be390e3472429037b373f91"
+    "workOrderSha256": "8773f23d73b4f73f801fbb12fc63e6b3ea0a0d0be1ad59c624ae0639f7ba71ce"
   },
-  "currentAuthoritySyncReason": "Operator-requested FLAL-T2 manual internal-worker dispatch at c096b4903576f38ec95b84986de3678b9ee4c577; fresh paired T2 baseline/work order with P3 shadow route, exact path/proof ledger, closeability graph and pending independent probe. Final bound pre-dispatch gate releases execution; implementation/closure unproven. CCMA remains parked; public checkpoint separate.",
+  "currentAuthoritySyncReason": "Atomic closed FLAL-T2 pair hashes after Local review of worker material 5cdb8390d8fd7ea882628ed571fcff80b2fe8ce7; final handoff/next-move sync is a separate batch. No worker/T3 successor.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
