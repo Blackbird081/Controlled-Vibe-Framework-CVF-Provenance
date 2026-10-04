@@ -1,6 +1,6 @@
 # CVF Agent Handoff V63 - ACEL Applied-Knowledge Owner Enrichment
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD: `6546de0050b31efbe9b2067b9a6f6b39be300e1b`; batch CVF-WRS-FR2; CLOSED_BLOCKED_BOUNDED, Local26; original clean receipt lost; current bound finality then stop.
+Current HEAD: `cd114a72923c9ccace1bcfd777d594a312c137a9`; batch CVF-WRS-FR2; CLOSED_BLOCKED_BOUNDED, Local26; original clean receipt lost; current bound finality then stop.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -25,7 +25,7 @@ AKOE current roadmap `docs/roadmaps/CVF_ACEL_APPLIED_KNOWLEDGE_OWNER_ENRICHMENT_
 - PLL-T1 material `b8ff294eb`: profile1.1, lessons3;12/12+40/40, hooks90/90; CCMA parked. Review: `docs/reviews/CVF_PLL_T1_PROJECT_LEARNING_LOOP_COMPLETION_2026-10-04.md`.
 - DGIP T1 R1 CLOSED_PASS_BOUNDED: material `ca9a2bb3f`; closure `9dcfb681e`,83/83; manifest46/46 MATCH; receipt consumed2026-10-04; probe27/27; DEV07/NET retained; no pending receipt, successor or redispatch; S05/C1 STOP.
 ## Core Guard Self-Protection Authorization
-Authorized guard-maintenance scope: FR2 exact ten-path pair/probe closure under `6546de0050b31efbe9b2067b9a6f6b39be300e1b`; original clean receipt lost, no historical PASS/successor.
+Authorized guard-maintenance scope: FR2 six-path final HEAD sync under `cd114a72923c9ccace1bcfd777d594a312c137a9`; original clean receipt lost, no historical PASS/successor.
 Authorized guard-maintenance scope: bind B2b packet material `588f8d63f` and release only its internal worker next move.
 Protected paths:
 - `AGENT_HANDOFF_V63_2026-09-18.md`
@@ -169,7 +169,7 @@ Rollback boundary: revert only this continuity sync; preserve material `5c1ee025
 - ACEL-AKOE-U1 is `CLOSED_PASS_BOUNDED` at `d9132412a`, disposition `SOURCE_RECONCILED_DEFER_WITH_TRIGGER`. Exact pins, 42 claims, byte hash and verification detail remain in its completion review; no import, runtime/provider, public sync or automatic successor opened.
 - CVF-NCR-R0-W01 source/profile return is Local-accepted bounded at material commit `d9b43a6f6deff7fb19710b5a9a4f50bf2a6015b6`; reviewer-fast 69/69 and pre-commit 90/90 passed. P06/P08 and actual destination/retention/cost remain open. One overbroad worker grep exposed a configured URL in tool output; the return does not reproduce it, and Local/operator config handling remains separate. No pilot or UI action was run.
 ## Next Allowed Move
-PROGRAM_ID=CVF-WRS; NEXT_ACTION_CLASS=WRS_FR2_CLOSED_BLOCKED_BOUNDED_NO_SUCCESSOR; BATCH_ID=CVF-WRS-FR2; MATERIAL_COMMIT=6546de0050b31efbe9b2067b9a6f6b39be300e1b; EXPANSION_ALLOWED=false. Structural Local26/targeted6/worker80; clean-start proof BLOCKED/lost, no historical PASS. Current bound finality then stop; no worker/successor; CCMA/S05/P11 parked; PR9 resolved.
+PROGRAM_ID=CVF-WRS; NEXT_ACTION_CLASS=WRS_FR2_CLOSED_BLOCKED_BOUNDED_NO_SUCCESSOR; BATCH_ID=CVF-WRS-FR2; MATERIAL_COMMIT=cd114a72923c9ccace1bcfd777d594a312c137a9; EXPANSION_ALLOWED=false. Structural Local26/targeted6/worker80; clean-start proof BLOCKED/lost, no historical PASS. Current bound finality then stop; no worker/successor; CCMA/S05/P11 parked; PR9 resolved.
 ## Parked Checkpoints
 - autorun lane-binding R1 is closed at `ee81deeeb`; HRLTP-T2 remains paused for Local no-subagent route reassessment;
 - T3C-C2 is closed and Local verified at `820aae3ec`;
@@ -203,7 +203,7 @@ Authorized guard-maintenance scope: continuity-only binding of operator-selected
 | Command or tool surface | targeted governed-source reads, roadmap validation, state generator and Git |
 | Target paths | active handoff, split session-state sources, generated aggregate/bootstrap, and compact front door |
 | Allowed scope source | operator continuation; `docs/baselines/CVF_GC018_WRS_FR1_R1_SCAFFOLD_FRICTION_REPAIR_2026-10-04.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_WRS_FR1_R1_SCAFFOLD_FRICTION_REPAIR_2026-10-04.md` |
-| Before status evidence | clean worktree at reviewed material 6546de0050b31efbe9b2067b9a6f6b39be300e1b; hooks90/90 |
+| Before status evidence | clean worktree at reviewed material cd114a72923c9ccace1bcfd777d594a312c137a9; hooks90/90 |
 | After status evidence | terminal blocked pair/raw pins; fresh committed receipt governs current finality only |
 | Diff evidence | exact continuity manifest before session-only commit |
 | Approval boundary | Local terminal blocked closure; no worker/redispatch/successor |

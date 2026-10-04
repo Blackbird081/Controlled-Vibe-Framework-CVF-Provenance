@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_WRS_FR2_DISPATCH_CLOSURE_FRICTION_REPAIR_2026-10-04.md",
     "workOrderSha256": "efbe1db5a2088f59d9c8cd5d089bea5b972e2c3b243e28457a672b94566e698c"
   },
-  "currentAuthoritySyncReason": "FR2 CLOSED_BLOCKED_BOUNDED: structural acceptance, historical clean receipt loss retained; packet material 6546de0050b31efbe9b2067b9a6f6b39be300e1b; current bound finality only.",
+  "currentAuthoritySyncReason": "FR2 CLOSED_BLOCKED_BOUNDED: structural acceptance, historical clean receipt loss retained; packet material cd114a72923c9ccace1bcfd777d594a312c137a9; current bound finality only.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
