@@ -398,6 +398,8 @@ Reason: private authoring repair admission; no public projection.
 
 ## Claim Boundary
 
+rawMemoryReleased=false. Offline authoring closure grants no memory release.
+
 CLOSED_PASS_BOUNDED for corrected offline authoring guidance and real consumer structural proof only. No active worker/redispatch/successor or runtime/production/project/provider/public authority. Original REQUEST_CHANGES snapshot retained. Fresh bound committed-range receipt is final verification after dedicated HEAD sync; this paragraph does not assert that future receipt has run.
 
 ## Foundation Storage Layout Block

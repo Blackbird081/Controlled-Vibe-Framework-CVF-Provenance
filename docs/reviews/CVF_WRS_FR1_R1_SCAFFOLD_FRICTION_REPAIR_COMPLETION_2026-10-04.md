@@ -61,7 +61,7 @@ probeCommandOrMethod: python -B .cvf/runtime/wrs_fr1_r1_local_probe.py
 probeObservedResult: PASS18/18; uniform golden/arbitrary identity, declared opt-outs, completed and refused consumers, restored template
 oracleSeparationBasis: direct actual helper/consumer calls with distinct Local inputs/options; no worker test fixture import or duplicate suite
 workerOracleSha256: a72fcafc866c764ed71c401431bb6e28a0af2fea1518e1c535203f866789b61b
-probeOracleSha256: 6e3ad7687c7fadc036e153818472648e3a188b18aaee8d630e8cdf9009d504dc
+probeOracleSha256: 5b8ff686e2ca360d44fda9f3e32eb7f450d8f22a4b831533a53823d9ff36e2a8
 workerEvidenceRef: docs/reviews/evidence/cvf-wrs-fr1-r1-scaffold-friction-2026-10-04.json
 probeEvidenceRef: docs/reviews/evidence/cvf-wrs-fr1-r1-local-independent-probe-2026-10-04.json
 
@@ -236,3 +236,11 @@ Exact changed manifest: `docs/baselines/CVF_GC018_WRS_FR1_R1_SCAFFOLD_FRICTION_R
   "parentArtifact": null
 }
 ```
+
+## Final Range Diagnostic
+
+Initial committed full pre-closure failed only raw memory release invariant: baseline/work order omitted explicit rawMemoryReleased=false. Local repaired the assertion and authority pins; probe 18/18 results are unchanged. Failed log retained at .cvf/runtime/wrs-fr1-r1-full-bound-preclosure.log. Post-commit P4-C1 reported UNSAFE_AUTORUN_RECEIPT_GENERATION_FAILED; no population credit is claimed. Fresh bound proof is required before finality.
+
+### P4-C1 Safety Marker Adjudication
+
+Local REJECTS the observation attempt for trusted closure 45b55cc4975dd8c5d21a8b9c5edd4105dcaa88d0, disclosed at 3a97f3b2629c7d144bc0640c4179ab4cfe877119: UNSAFE_AUTORUN_RECEIPT_GENERATION_FAILED was valid fail-closed refusal for the missing raw-memory assertion. No sample/checkpoint credit or historical retry. Under P4-C1 Write Ownership, Local archives the original marker bytes to .cvf/runtime/wrs-fr1-r1-rejected-p4-safety-marker.json; SHA256=2a27a5e627a80bbc44a58dfbfd4b8606b9ed960a4704614bde380f3ed0baa66e. Journal and failed proof remain unchanged. This permits the exact corrective closure commit; it does not relabel historical evidence PASS or relax a checker.

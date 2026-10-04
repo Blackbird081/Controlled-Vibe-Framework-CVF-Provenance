@@ -37,11 +37,11 @@
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_WRS_FR1_R1_SCAFFOLD_FRICTION_REPAIR_2026-10-04.md",
-    "baselineSha256": "6d184e0d42943fd9b8923c8bd38f1ec23fd068cd925037cc62c53d84676f3854",
+    "baselineSha256": "44e1f6293b8949004b303e4ed47ffe6140f216bfaa6edca4963a6beda2af470c",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_WRS_FR1_R1_SCAFFOLD_FRICTION_REPAIR_2026-10-04.md",
-    "workOrderSha256": "17c6bd21229dcdbc52074567a7353984eeff43758da4201ef39d77e701631632"
+    "workOrderSha256": "f360e00822f916a908fa95c062dc4864b84b57d13f71f487959efc93e874c278"
   },
-  "currentAuthoritySyncReason": "R1 closed-pair pins; accepted F1/F2/F3, Local18, metadata corrections; material 45b55cc4975dd8c5d21a8b9c5edd4105dcaa88d0; fresh bound closure verification then stop.",
+  "currentAuthoritySyncReason": "Local raw-memory assertion repair after failed committed pre-closure; exact ten-path closure repair, fresh bound proof required.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",

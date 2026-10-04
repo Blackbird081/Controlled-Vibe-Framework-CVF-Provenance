@@ -136,6 +136,8 @@ DEFERRED_PRIVATE_ONLY
 
 ## Claim Boundary
 
+rawMemoryReleased=false. Offline authoring closure grants no memory release.
+
 CLOSED_PASS_BOUNDED for same-task offline authoring repair. Local18 and worker focused results verify the bounded structural contract; no actual project/provider/public/runtime action. Original FR1 REQUEST_CHANGES preserved; no successor. Fresh bound committed pre-closure verification follows dedicated HEAD sync.
 
 ## Scaffold Provenance Block

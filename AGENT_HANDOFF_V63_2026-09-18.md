@@ -10,7 +10,7 @@ Carry CVF-NCR v2.8 and closed AKOE/G1-G7. Applied-knowledge details remain in th
 ## Scope / Target / Owner Boundary
 Role: Local reviewer/closer; phase: R1 closure verification then stop; decision owner: Local; CCMA/S05/P11 parked.
 ## Startup Acknowledgment
-Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`; handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=R1 bound closure verification then stop; role=Local reviewer/closer; phase=closure; decision owner=Local; CCMA/S05/P11 parked.
+Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`; handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=R1 repaired assertion bound closure verification then stop; role=Local reviewer/closer; phase=closure; decision owner=Local; CCMA/S05/P11 parked.
 ## Current Mode
 `cvf_ncr_p10_closed_p11_parked`. CVF-NCR-R1-S11-R1 is closed at `bd15b2600` after material `1a538d10d`. P10 is `ACTIVE_PRODUCTION_RUNTIME`; P11 stays parked. Latest closed learning-history wave: `LHW24`.
 ## Active Boundary
