@@ -379,6 +379,9 @@ class TestSourceIntakeGoldenFixture(unittest.TestCase):
     same established out-of-manifest-fixture pattern for this tranche's new
     `## Architecture Readiness Admission` block; every other construction
     site keeps the class default `True`.
+
+    WRS-FR2 note: refreshed for independent rawMemoryReleased=false Claim
+    Boundary and explicit continuation Rule B mandatory completion guidance.
     """
 
     GOLDEN_ARGS = dict(

@@ -152,7 +152,7 @@ Contract source archive-qualified exception: `docs/reference/CVF_AHB_T2_AGENT_HA
 
 | Field | Value |
 | --- | --- |
-| completionReviewPath | `docs/reviews/CVF_WOAS-R2-GOLDEN_COMPLETION_2026-07-01.md` (optional; prefer repairing evidence in the worker return per gotcha 30) |
+| completionReviewPath | `docs/reviews/CVF_WOAS-R2-GOLDEN_COMPLETION_2026-07-01.md` (required for CLOSED non-exempt work orders under continuation Rule B; exemption applies only from existing registry) |
 | reviewerOwnedClosurePaths | FILL_ME |
 | closureOwner | FILL_ME |
 | workerCommitPermission | FORBIDDEN |
@@ -261,7 +261,7 @@ git status --short
 
 ## Claim Boundary
 
-FILL_ME: state exactly what this work order authorizes and what it does not.
+rawMemoryReleased=false. Offline authoring guidance only; FILL_ME: state exactly what this work order authorizes and what it does not.
 
 ## Public Export Disposition
 

@@ -1,0 +1,169 @@
+{
+  "schemaVersion": "cvf.wrsFr2Evidence@1",
+  "batchId": "CVF-WRS-FR2",
+  "executionBaseHead": "c22cbaff3ceaf2f30f799e85e4290540907483e4",
+  "status": "COMPLETE_PENDING_REVIEW",
+  "laneRelease": "RELEASED_TO_LOCAL_REVIEWER",
+  "manifest": [
+    "governance/compat/build_dispatch_packet_scaffold.py",
+    "governance/compat/test_dispatch_closure_scaffold_friction.py",
+    "governance/compat/test_build_dispatch_packet_scaffold.py",
+    "governance/compat/fixtures/woas_r2_source_intake_scaffold_golden.md",
+    "docs/reviews/CVF_WRS_FR2_DISPATCH_CLOSURE_FRICTION_REPAIR_WORKER_RETURN_2026-10-04.md",
+    "docs/reviews/evidence/cvf-wrs-fr2-dispatch-closure-friction-2026-10-04.json"
+  ],
+  "sourcePreimageHashes": {
+    "before": {
+      "governance/compat/build_dispatch_packet_scaffold.py": "8f18d3ee33f4d0149fb9bfff05a8d4a243d64f58567b3b2763734a6098970904",
+      "governance/compat/fixtures/woas_r2_source_intake_scaffold_golden.md": "61f29264578b09385027e3836251f0056468e97f8bdec0ed7bc6726546a41cbd",
+      "governance/compat/test_build_dispatch_packet_scaffold.py": "fe3292fa02f9234117bd454ab6c1191d1ae9f893a935886a1904652601eec91a"
+    },
+    "after": {
+      "governance/compat/build_dispatch_packet_scaffold.py": "32e5bd11ff785de601228a15e44b5904b0ed1de53bac467694ac733f0a11bf92",
+      "governance/compat/fixtures/woas_r2_source_intake_scaffold_golden.md": "4e4c9b55f8b3ddad9e8452199f5a20c4f256a5c96ed15e5d0d559a396d81c545",
+      "governance/compat/test_build_dispatch_packet_scaffold.py": "c67dc09590cefca623e7219528460e6e644799a4e5b4b5fdf8dfd854e4743d7b",
+      "governance/compat/test_dispatch_closure_scaffold_friction.py": "0564dd92c621466a9e435ed4c1977527d3b75c3de9f7ddd4872583eede104db1"
+    }
+  },
+  "unchangedConsumerHashes": {
+    "governance/compat/check_raw_memory_release_invariant.py": "2d92bab1fb0c113506d808f3c670f66f0c44900e99e9a2c60c8f3dee1c59c7d3",
+    "governance/compat/check_continuation_chain.py": "c5d5619801fa4b11bfed46498fb73fc0d629aa7f032c62cf43452874d95f20ff",
+    "governance/compat/check_public_export_disposition.py": "65478f69dbd7e7d63dc08ba05179e34b8b98862785657c67fa5c89d2fce10e99"
+  },
+  "preimageDiagnostics": {
+    "baselineRawAssertionBefore": false,
+    "workOrderRawAssertionBefore": false,
+    "completionGuidanceBefore": "OPTIONAL_GOTCHA30",
+    "baselineRawAssertionAfter": true,
+    "workOrderRawAssertionAfter": true,
+    "completionGuidanceAfter": "RULE_B_MANDATORY_NON_EXEMPT_CLOSED"
+  },
+  "caseMatrix": {
+    "PROOF-RAW-BOUNDARY": {
+      "pass": true,
+      "cases": [
+        "baseline_raw_assertion_standalone_pass",
+        "work_order_raw_assertion_standalone_pass",
+        "work_order_with_appended_skeleton_pass",
+        "deleted_token_baseline_refused",
+        "deleted_token_work_order_refused",
+        "two_batch_ids_generic_and_source_intake"
+      ]
+    },
+    "PROOF-CLOSURE-GUIDANCE": {
+      "pass": true,
+      "cases": [
+        "work_order_optional_gotcha30_guidance_absent",
+        "work_order_rule_b_mandatory_guidance_present",
+        "work_order_stable_completion_review_path_present",
+        "continuation_rule_b_uncompleted_closed_order_refused",
+        "continuation_rule_b_matching_completion_review_accepted",
+        "continuation_rule_b_exempt_work_order_accepted"
+      ]
+    },
+    "PROOF-REGRESSION-RETURN": {
+      "pass": true,
+      "cases": [
+        "source_intake_golden_diff_refresh_minimal",
+        "test_build_dispatch_packet_scaffold_80_tests_pass",
+        "test_dispatch_closure_scaffold_friction_6_tests_pass",
+        "public_export_disposition_present_and_valid",
+        "public_export_disposition_missing_refused"
+      ]
+    }
+  },
+  "lineCounts": {
+    "governance/compat/test_dispatch_closure_scaffold_friction.py": 263
+  },
+  "commands": [
+    {
+      "command": "python -B governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base c22cbaff3ceaf2f30f799e85e4290540907483e4 --head HEAD --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_WRS_FR2_DISPATCH_CLOSURE_FRICTION_REPAIR_2026-10-04.md",
+      "exitCode": 0
+    },
+    {
+      "command": "python -B -m unittest discover -s governance/compat -p test_dispatch_closure_scaffold_friction.py",
+      "exitCode": 0
+    },
+    {
+      "command": "python -B -m unittest discover -s governance/compat -p test_build_dispatch_packet_scaffold.py",
+      "exitCode": 0
+    },
+    {
+      "command": "python -B governance/compat/run_worker_return_fast_gate.py --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_WRS_FR2_DISPATCH_CLOSURE_FRICTION_REPAIR_2026-10-04.md",
+      "exitCode": 0
+    }
+  ],
+  "localReviewerEvidence": {
+    "reviewerRole": "LOCAL_REVIEWER_NOT_IMPLEMENTATION_WORKER",
+    "disposition": "TERMINAL_CLOSED_BLOCKED_BOUNDED_PENDING_COMMIT",
+    "preRepairAuditDisposition": "COMPLETE_BEFORE_FIRST_REPAIR",
+    "auditDimensions": [
+      "contract",
+      "schema",
+      "path",
+      "authority",
+      "test",
+      "range",
+      "commit-plan"
+    ],
+    "implementationDisposition": "PASS_BOUNDED_AFTER_LOCAL_TARGETED_REGRESSION_REPAIR",
+    "consumedWorkerSuites": [
+      {
+        "tests": 6,
+        "rerunReason": "named public boundary proof gap; final Local targeted suite6/6 PASS"
+      },
+      {
+        "tests": 80,
+        "rerun": false
+      }
+    ],
+    "publicBoundaryRepair": {
+      "originalGap": "positive used string checks; negative removed entire section rather than only public-sync",
+      "completedFixture": "author selects DEFERRED_PRIVATE_ONLY and truthful reason before actual consumer acceptance",
+      "unfinishedFixture": "multiple guidance dispositions correctly refused; not a generator production failure",
+      "deletedSyncBoundary": "actual generated completed section with only public-sync removed refuses",
+      "sourceChange": false,
+      "checkerChange": false,
+      "firstLocalAttempt": "FAILED expected completed positive: unfinished scaffold lists three enums; preserved as diagnostic",
+      "finalCommand": "python -B -m unittest discover -s governance/compat -p test_dispatch_closure_scaffold_friction.py",
+      "finalResult": "PASS6/6"
+    },
+    "independentProbe": {
+      "passCount": 26,
+      "source": ".cvf/runtime/wrs_fr2_local_probe.py",
+      "result": ".cvf/runtime/wrs-fr2-local-independent-probe.json"
+    },
+    "cleanStartProofFinding": {
+      "findingId": "WRS-FR2-REVIEW-F1",
+      "severity": "P1_EVIDENCE_CHRONOLOGY",
+      "receiptPath": ".cvf/runtime/wrs-fr2-original-worker/pre-implementation.json",
+      "receiptSha256": "682883dd8baff1cb6557b0461466af41ebee15dd1798d680ce8b2b491c1ab78e",
+      "receiptIntegrity": "PASS",
+      "checks": 87,
+      "fingerprint": "9cfd577594c54ab3548eee8b37b24ffa0011a7ef19399b0b9fc528578c3084bf",
+      "reproducedFrom": [
+        [
+          "docs/reviews/CVF_WRS_FR2_DISPATCH_CLOSURE_FRICTION_REPAIR_WORKER_RETURN_2026-10-04.md",
+          "docs/reviews/evidence/cvf-wrs-fr2-dispatch-closure-friction-2026-10-04.json",
+          "governance/compat/build_dispatch_packet_scaffold.py",
+          "governance/compat/fixtures/woas_r2_source_intake_scaffold_golden.md",
+          "governance/compat/test_build_dispatch_packet_scaffold.py",
+          "governance/compat/test_dispatch_closure_scaffold_friction.py"
+        ]
+      ],
+      "disposition": "OPERATOR_CONFIRMED_ORIGINAL_CLEAN_RECEIPT_OVERWRITTEN_NOT_RETAINED",
+      "requiredEvidence": "original earlier receipt/log with same execution HEAD and clean worktree fingerprint, if retained",
+      "forbiddenReplacement": "a new rerun after edits cannot prove historical clean start",
+      "closureDisposition": "CLOSED_BLOCKED_BOUNDED; historical clean-start compliance not accepted",
+      "operatorExplanation": "Operator reports initial clean run then post-edit rerun overwrote default receipt; no clean receipt/log remains in workspace. External provider task log is NOT_CVF_SOURCE and not used as closure proof."
+    },
+    "originalWorkerSnapshots": {
+      "docs/reviews/CVF_WRS_FR2_DISPATCH_CLOSURE_FRICTION_REPAIR_WORKER_RETURN_2026-10-04.md": "b8ed6dee5a699e9e10f784a5298a738a2b9be9e99869ebcee2ef51f2540fbebd",
+      "docs/reviews/evidence/cvf-wrs-fr2-dispatch-closure-friction-2026-10-04.json": "f81fe7402c5ee913f31e7941c6ccc0c088486077180a39f92d207e46d6ca9aa0",
+      "governance/compat/test_dispatch_closure_scaffold_friction.py": "0d6bf4e06d283a1892ff259b09b95d4a5944cf747668e0dc6eb77ac822528247",
+      ".cvf/runtime/autorun-receipts/pre-implementation.json": "682883dd8baff1cb6557b0461466af41ebee15dd1798d680ce8b2b491c1ab78e"
+    },
+    "retroDisposition": "LOW manifest/docstring friction retained; no checker exemption or successor added",
+    "claimBoundary": "offline structural sample only; no historical clean-start, provider/live/runtime/public/project proof"
+  }
+}
