@@ -1,0 +1,60 @@
+{
+  "schemaVersion": "cvf.flalT3LocalIndependentProbe@1",
+  "actor": "CODEX_LOCAL_REVIEWER",
+  "invocation": "codex-flal-t3-local-review-20261004",
+  "oracleSeparation": "Separate literal finding and parent evidence assembled from governed owner interfaces; no worker test imports, fixture reuse or copied validation. Actual production functions unchanged.",
+  "cases": [
+    {
+      "case": "real_builder_and_parent_positive",
+      "expected": [],
+      "actual": [],
+      "pass": true
+    },
+    {
+      "case": "generation_pending_unchanged",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "case": "stale_source_pin_refuses",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "case": "refreshed_pin_opaque_owners_pass",
+      "expected": [],
+      "actual": [],
+      "pass": true
+    },
+    {
+      "case": "independent_join_oracle_exposes_drift",
+      "expected": [
+        "findingId",
+        "sourceProject"
+      ],
+      "actual": [
+        "findingId",
+        "sourceProject"
+      ],
+      "pass": true
+    },
+    {
+      "case": "returned_not_sufficient_for_applied",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "case": "original_source_stays_pending_after_probes",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    }
+  ],
+  "total": 7,
+  "failed": 0,
+  "source": "from pathlib import Path\nimport hashlib,json,tempfile,sys,copy\nrepo=Path.cwd()\nsys.path[:0]=[str(repo/'governance/compat'),str(repo/'scripts/lib/downstream_governance')]\nimport parent_learning_evidence as parent\nimport cvf_dg_intake as intake\nimport cvf_dg_install as install\nimport cvf_dg_common as common\nprofile=install.load_profile(repo/'scripts/lib/downstream_governance')\nresults=[]\ndef note(case,expected,actual):results.append({'case':case,'expected':expected,'actual':actual,'pass':expected==actual})\nwith tempfile.TemporaryDirectory(prefix='local-flal-t3-') as temp:\n root=Path(temp);scratch=root/'inputs';scratch.mkdir()\n def digest(p):return hashlib.sha256(p.read_bytes()).hexdigest()\n def put(name,text,klass='SYNTHETIC_OFFLINE',fragment='local:1'):\n  p=root/name;p.parent.mkdir(parents=True,exist_ok=True);p.write_text(text,encoding='utf-8',newline='\\n')\n  return {'path':name,'sha256':digest(p),'fragment':fragment,'evidenceClass':klass}\n def generate(fid,project):\n  data=json.loads((repo/'docs/reference/downstream_gate_profile/DOWNSTREAM_FINDING_INTAKE_TEMPLATE.json').read_text(encoding='utf-8'))\n  data.update(findingId=fid,sourceProject=project,sourceSha='b'*40,title='Independent composition boundary',observed='Pinned source payload can drift',expected='Claims remain bounded to verified joins',candidateControl='Existing parent evidence owner',claimLimits='Synthetic Local probe; no admission',negativeEvidence=[{'locator':'synthetic:negative','description':'Independent opaque-source counterexample'}],chainJoins=[{'join':'intake to parent','gap':'source payload is opaque','earliestControlPoint':'parent admission'}])\n  p=scratch/(fid+'.json');p.write_text(json.dumps(data),encoding='utf-8')\n  target,issues=intake.build_intake(p,root,profile)\n  assert not issues and target\n  return target,common.load_json_strict(target)\n source,record=generate('LOCAL-T3-A','local-fixture-project')\n raw=source.read_bytes()\n src={'path':source.relative_to(root).as_posix(),'sha256':digest(source),'fragment':'intake','evidenceClass':'SYNTHETIC_OFFLINE'}\n ctl=put('proof/control.txt','local control',fragment='control:local')\n pos=put('proof/positive.txt','local positive',fragment='proof-positive:local')\n neg=put('proof/negative.txt','local negative',fragment='proof-negative:local')\n decision=put('proof/decision.txt','Locally observed synthetic decision bytes; no parent admission','OBSERVED_LOCAL')\n def receipt(kind):\n  r={'schemaVersion':parent.RECEIPT_VERSION,'kind':kind,'findingId':'LOCAL-T3-A','sourceProject':'local-fixture-project','control':{k:ctl[k] for k in ('path','sha256')},'actor':'SYNTHETIC_LOCAL_REVIEWER','authorization':put('proof/'+kind+'-auth.txt','local fixture authorization'),'verification':put('proof/'+kind+'-verify.txt','local fixture verification'),'claimLimits':'Synthetic only'}\n  return put('proof/'+kind+'.json',json.dumps(r))\n def state(s,e=()):return {'state':s,'reason':'synthetic Local observation','evidence':list(e)}\n ev={'schemaVersion':parent.SCHEMA_VERSION,'findingId':'LOCAL-T3-A','source':{'sourceProject':'local-fixture-project','evidence':src},'valueChecks':{n:{'status':'SUPPORTED','reason':'synthetic Local support','evidence':[put('proof/'+n+'.txt','local synthetic '+n)],'limits':'no real project'} for n in parent.CHECK_NAMES},'decision':{'state':'ACCEPT','reason':'synthetic only','reviewer':'SYNTHETIC_LOCAL_REVIEWER','owner':'parent-f2g','f2gDisposition':'MACHINE_CHECK_ADDED','evidence':[decision]},'implementation':state('IMPLEMENTED_BOUNDED',[ctl,pos,neg]),'projectResolution':state('OPEN'),'returnDelivery':state('RETURNED',[receipt('DELIVERY')]),'projectApplication':state('APPLIED',[receipt('APPLICATION')]),'claimLimits':'Synthetic structural sample only'}\n def issues(e):return sorted({x['type'] for x in parent.validate_parent_evidence(e,'LOCAL-T3-A',root,dispositions=['MACHINE_CHECK_ADDED'])})\n note('real_builder_and_parent_positive',[],issues(ev)+[x.code for x in intake.validate_record(record,profile)])\n note('generation_pending_unchanged',True,source.read_bytes()==raw and record['acceptance']=='NOT_ACCEPTED_GENERATION_ONLY' and record['parentDisposition']=='PENDING_PARENT_ADMISSION' and all(v is None for v in record['parentLinks'].values()))\n source.write_bytes(raw+b' ');note('stale_source_pin_refuses',True,'hash_mismatch' in issues(ev));source.write_bytes(raw)\n drift,changed=generate('LOCAL-T3-B','different-fixture-project');altered=copy.deepcopy(ev)\n altered['source']['evidence']={'path':drift.relative_to(root).as_posix(),'sha256':digest(drift),'fragment':'intake','evidenceClass':'SYNTHETIC_OFFLINE'}\n note('refreshed_pin_opaque_owners_pass',[],issues(altered)+[x.code for x in intake.validate_record(changed,profile)])\n note('independent_join_oracle_exposes_drift',['findingId','sourceProject'],[k for k,v in [('findingId',altered['findingId']),('sourceProject',altered['source']['sourceProject'])] if changed[k]!=v])\n missing=copy.deepcopy(ev);missing['projectApplication']['evidence']=[]\n note('returned_not_sufficient_for_applied',True,'receipt_count' in issues(missing))\n note('original_source_stays_pending_after_probes',True,source.read_bytes()==raw and not intake.validate_record(common.load_json_strict(source),profile))\ndata={'schemaVersion':'cvf.flalT3LocalIndependentProbe@1','actor':'CODEX_LOCAL_REVIEWER','invocation':'codex-flal-t3-local-review-20261004','oracleSeparation':'Separate literal finding and parent evidence assembled from governed owner interfaces; no worker test imports, fixture reuse or copied validation. Actual production functions unchanged.','cases':results,'total':len(results),'failed':sum(not r['pass'] for r in results),'source':Path(__file__).read_text(encoding='utf-8'),'claimBoundary':'Synthetic composition sample only; expected opaque-source boundary is not production refusal or real admission.'}\nPath('.cvf/runtime/flal-t3-local-independent-probe.json').write_text(json.dumps(data,indent=2)+'\\n',encoding='utf-8',newline='\\n')\nprint(json.dumps({'total':data['total'],'failed':data['failed']}))\nsys.exit(bool(data['failed']))\n",
+  "claimBoundary": "Synthetic composition sample only; expected opaque-source boundary is not production refusal or real admission."
+}

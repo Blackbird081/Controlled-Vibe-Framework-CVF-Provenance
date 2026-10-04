@@ -1,7 +1,7 @@
 # CVF Foundation Learning Admission And Loopback Roadmap
 
 Memory class: FULL_RECORD
-Status: T3_OFFLINE_COMPOSITION_ADMITTED_PENDING_RETURN
+Status: T3_ACCEPTED_BOUNDED_FOLLOWUPS_PARKED
 docType: roadmap
 Date: 2026-10-04
 Batch ID: CVF-FLAL-T0
@@ -117,7 +117,7 @@ not a broad repository scan or per-row recreation of historical evidence.
 T2 packet admission: `docs/baselines/CVF_GC018_FLAL_T2_PARENT_EVIDENCE_VALIDATION_R1_2026-10-04.md` and `docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_T2_PARENT_EVIDENCE_VALIDATION_R1_2026-10-04.md`.
 T2 implementation material is 5cdb8390d8fd7ea882628ed571fcff80b2fe8ce7; Local accepted offline structural validation after one container-shape repair. Completion: `docs/reviews/CVF_FLAL_T2_PARENT_EVIDENCE_VALIDATION_COMPLETION_2026-10-04.md`. Independent probe30/30; T3 now has a separately admitted test-only packet; actual projects remain parked.
 
-T3 admission: `docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_T3_OFFLINE_COMPOSITION_2026-10-04.md` and `docs/baselines/CVF_GC018_FLAL_T3_OFFLINE_COMPOSITION_2026-10-04.md`. The worker adds only a dedicated synthetic composition test and dated return/evidence. Source ID/project joins are explicit fixture assertions; existing parent source references remain opaque raw-byte pins. An expected boundary counterexample must disclose this limitation without claiming production enforcement. No automatic successor or project loopback.
+T3 admission: `docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_T3_OFFLINE_COMPOSITION_2026-10-04.md` and `docs/baselines/CVF_GC018_FLAL_T3_OFFLINE_COMPOSITION_2026-10-04.md`. The worker added only a dedicated synthetic composition test and dated return/evidence, now accepted bounded in T3 Local Completion. Source ID/project joins are explicit fixture assertions; existing parent source references remain opaque raw-byte pins. The expected boundary counterexample discloses this limitation without claiming production enforcement. No automatic successor or project loopback.
 The final T2 pair binds the supported active-work-order fast-gate command and
 inherited same-batch worker-return authorization carrier before final relay.
 
@@ -254,22 +254,22 @@ Named pointer reconciliation only; no corpus-derived map accepted.
 
 | Field | Evidence |
 |---|---|
-| Actor | Local orchestrator/dispatcher/reviewer |
+| Actor | Codex Local reviewer/closer |
 | Provider or surface | private shared workspace |
-| Session or invocation | cvf-flal-t3-dispatch-20261004 |
-| Working directory | provenance repository root |
-| Command or tool surface | targeted source/interface reads, official scaffold, source pins and conformance gates |
-| Allowed scope source | operator continuation; roadmap T3 separately admitted offline composition |
-| Before status evidence | worktree clean at HEAD 00310d07169723373e333393658feead8f226d96 |
-| After status evidence | five-path admission only; worker execution pending |
-| Diff evidence | git diff --name-status; git diff --check; staged exact five paths |
-| Approval boundary | bound pre-dispatch PASS before manual relay |
-| Claim boundary | dispatch only; fixture proof pending; actual projects parked |
-| Agent type | INTERNAL_AGENT dispatcher/reviewer |
-| Invocation ID | cvf-flal-t3-dispatch-20261004 |
-| Target paths | `docs/baselines/CVF_GC018_FLAL_T3_OFFLINE_COMPOSITION_2026-10-04.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_T3_OFFLINE_COMPOSITION_2026-10-04.md`; `docs/reviews/evidence/cvf-flal-t3-dispatch-inputs-2026-10-04.json`; `docs/reviews/evidence/cvf-flal-t3-worker-return-skeleton-2026-10-04.txt`; `docs/roadmaps/CVF_FOUNDATION_LEARNING_ADMISSION_AND_LOOPBACK_ROADMAP_2026-10-04.md` |
-| Expected manifest | `docs/baselines/CVF_GC018_FLAL_T3_OFFLINE_COMPOSITION_2026-10-04.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_T3_OFFLINE_COMPOSITION_2026-10-04.md`; `docs/reviews/evidence/cvf-flal-t3-dispatch-inputs-2026-10-04.json`; `docs/reviews/evidence/cvf-flal-t3-worker-return-skeleton-2026-10-04.txt`; `docs/roadmaps/CVF_FOUNDATION_LEARNING_ADMISSION_AND_LOOPBACK_ROADMAP_2026-10-04.md` |
-| Actual changed set | `docs/baselines/CVF_GC018_FLAL_T3_OFFLINE_COMPOSITION_2026-10-04.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_T3_OFFLINE_COMPOSITION_2026-10-04.md`; `docs/reviews/evidence/cvf-flal-t3-dispatch-inputs-2026-10-04.json`; `docs/reviews/evidence/cvf-flal-t3-worker-return-skeleton-2026-10-04.txt`; `docs/roadmaps/CVF_FOUNDATION_LEARNING_ADMISSION_AND_LOOPBACK_ROADMAP_2026-10-04.md` |
+| Session or invocation | codex-flal-t3-local-review-20261004 |
+| Working directory | provenance repository root; disposable synthetic fixture root |
+| Command or tool surface | targeted source/evidence review, independent seven-case probe, reviewer-fast, raw hashes and generated continuity |
+| Target paths | `docs/baselines/CVF_GC018_FLAL_T3_OFFLINE_COMPOSITION_2026-10-04.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_T3_OFFLINE_COMPOSITION_2026-10-04.md`; `docs/reviews/CVF_FLAL_T3_OFFLINE_COMPOSITION_COMPLETION_2026-10-04.md`; `docs/reviews/evidence/cvf-flal-t3-local-independent-probe-2026-10-04.json`; `docs/roadmaps/CVF_FOUNDATION_LEARNING_ADMISSION_AND_LOOPBACK_ROADMAP_2026-10-04.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Allowed scope source | operator submitted T3 return; work order Reviewer Closure Conversion |
+| Before status evidence | worktree clean at worker material b8d52bbe698947a8bf19ef14169a09bdba36d39f; lane released; normal hooks90/90 |
+| After status evidence | eleven-path Local closure; final bound committed receipt follows dedicated HEAD sync |
+| Diff evidence | git diff --name-status; git diff --check; exact eleven-path staged manifest |
+| Approval boundary | Local completion/disposition; no worker redispatch or production repair |
+| Claim boundary | synthetic composition only; fixture oracle is not production enforcement |
+| Agent type | LOCAL_REVIEWER_NOT_IMPLEMENTATION_WORKER |
+| Invocation ID | codex-flal-t3-local-review-20261004 |
+| Expected manifest | `docs/baselines/CVF_GC018_FLAL_T3_OFFLINE_COMPOSITION_2026-10-04.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_T3_OFFLINE_COMPOSITION_2026-10-04.md`; `docs/reviews/CVF_FLAL_T3_OFFLINE_COMPOSITION_COMPLETION_2026-10-04.md`; `docs/reviews/evidence/cvf-flal-t3-local-independent-probe-2026-10-04.json`; `docs/roadmaps/CVF_FOUNDATION_LEARNING_ADMISSION_AND_LOOPBACK_ROADMAP_2026-10-04.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Actual changed set | `docs/baselines/CVF_GC018_FLAL_T3_OFFLINE_COMPOSITION_2026-10-04.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_T3_OFFLINE_COMPOSITION_2026-10-04.md`; `docs/reviews/CVF_FLAL_T3_OFFLINE_COMPOSITION_COMPLETION_2026-10-04.md`; `docs/reviews/evidence/cvf-flal-t3-local-independent-probe-2026-10-04.json`; `docs/roadmaps/CVF_FOUNDATION_LEARNING_ADMISSION_AND_LOOPBACK_ROADMAP_2026-10-04.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |
 
@@ -282,4 +282,9 @@ No public artifact or successful public promotion is claimed for this roadmap.
 
 ## Claim Boundary
 
-T2 remains accepted bounded; T3 test-only offline composition admitted, worker proof pending. CCMA parked; S05/C1/send/B2 STOP; Q001/Q004 OPEN/Profile A; P11/deploy parked; LHW24 closed. Prior public PR9 merged at 8a4119e11db00e774ed8e7cf7d9a8caa309e81d1 per the retained Local public-sync review; no new public projection. No provider invocation, semantic project admission or implementation closure asserted.
+T2 and T3 accepted bounded; T4/T5 and actual projects parked. T3 proves offline real-builder composition only, not production source-payload join enforcement or real admission. Local defers production guard to a separately admitted consumer-specific packet. No automatic successor. CCMA/S05/P11 parked; original T2 mixed-range FAIL retained; prior public PR9 resolved, no new roadmap projection.
+
+
+## T3 Local Completion
+
+Completion: `docs/reviews/CVF_FLAL_T3_OFFLINE_COMPOSITION_COMPLETION_2026-10-04.md`; preserved three-path worker material b8d52bbe698947a8bf19ef14169a09bdba36d39f; five tests/fourteen cases consumed, Local7/7 independent sample. Generator remains pending/unaccepted. EXPECTED_BOUNDARY_NOT_PRODUCTION_REFUSAL is a retained cross-owner limitation; no production guard is implemented. Truthful LOW/KEYWORD_TRAP retro accepted; WORK_ORDER_TEMPLATE candidate retained only. T4/T5, provider effects and actual project loopback remain parked.

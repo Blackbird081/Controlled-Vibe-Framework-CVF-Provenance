@@ -37,11 +37,11 @@
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_FLAL_T3_OFFLINE_COMPOSITION_2026-10-04.md",
-    "baselineSha256": "af31d71c271c41f91cceae2d1e4db8851d44e6aa7754b95db37aeea8df41ae35",
+    "baselineSha256": "ec2959c9e23f48b1c8696238c86af97566a4905730b6750886326a8499e8194a",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_T3_OFFLINE_COMPOSITION_2026-10-04.md",
-    "workOrderSha256": "483c745a04b80de72a057bb70d73434fc1aacb9d221845ae96aba5e9ac9e3f54"
+    "workOrderSha256": "45ee44b902aef5e348f752c09a1b1fad9a931b6cbde53bf380d13894550fb97c"
   },
-  "currentAuthoritySyncReason": "Operator continuation; separately admitted test-only T3 composition material b1dc1faf13bf0db9eaccb1adbc7dd033d30d5e91; exact three-path no-commit worker. Production owners read-only; pending generator state retained; source-payload join boundary disclosed. Projects parked, original T2 FAIL retained. Final bound pre-dispatch required.",
+  "currentAuthoritySyncReason": "T3 accepted bounded; worker5/5/fourteen cases consumed, Local7/7; production source-payload guard deferred and truthful LOW retro retained. Fixed pair final raw bytes bound in exact eleven-path atomic closure; final fresh committed receipt follows dedicated HEAD sync. No project effect or successor.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",

@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-execution-baseline
 docType: gc018
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 Date: 2026-10-04
 Batch ID: CVF-FLAL-T3
 providerExecutionAuthority: FORBIDDEN
@@ -70,16 +70,16 @@ This is not a whole-registry semantic guidance absence claim.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: Local authors five-path T3 dispatch and separate six-path continuity. Internal worker creates only the three named synthetic test/return/evidence paths; existing production guards are read-only.
-Protected paths: `governance/compat/test_flal_offline_learning_composition.py`; `docs/reviews/CVF_FLAL_T3_OFFLINE_COMPOSITION_WORKER_RETURN_2026-10-04.md`; `docs/reviews/evidence/cvf-flal-t3-offline-composition-2026-10-04.json`; `docs/baselines/CVF_GC018_FLAL_T3_OFFLINE_COMPOSITION_2026-10-04.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_T3_OFFLINE_COMPOSITION_2026-10-04.md`; `docs/reviews/evidence/cvf-flal-t3-dispatch-inputs-2026-10-04.json`; `docs/reviews/evidence/cvf-flal-t3-worker-return-skeleton-2026-10-04.txt`; `docs/roadmaps/CVF_FOUNDATION_LEARNING_ADMISSION_AND_LOOPBACK_ROADMAP_2026-10-04.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`.
-Operator authorization: 2026-10-04 continuation of Local orchestrator/reviewer work with manual Claude relay; separately admit roadmap T3 offline composition.
-Rollback boundary: only new T3 material and continuity; preserve T2/RANGE-T1 evidence and original T2 FAIL, public merge and parked actual projects. No history rewrite.
+Authorized guard-maintenance scope: Local closes T3 under the admitted Reviewer Closure Conversion. Preserve three-path worker material; add completion and independent probe, close the governing pair, update roadmap and bind six continuity paths atomically. No production checker, schema, profile, template or collector edits.
+Protected paths: `docs/baselines/CVF_GC018_FLAL_T3_OFFLINE_COMPOSITION_2026-10-04.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_T3_OFFLINE_COMPOSITION_2026-10-04.md`; `docs/reviews/CVF_FLAL_T3_OFFLINE_COMPOSITION_COMPLETION_2026-10-04.md`; `docs/reviews/evidence/cvf-flal-t3-local-independent-probe-2026-10-04.json`; `docs/roadmaps/CVF_FOUNDATION_LEARNING_ADMISSION_AND_LOOPBACK_ROADMAP_2026-10-04.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`.
+Operator authorization: submitted internal return for Local review and separate production-guard decision; existing continuation and governing T3 packet.
+Rollback boundary: eleven named closure paths and later HEAD sync only; preserve worker evidence, original T2 FAIL, public merge and parked projects.
 
 ## Dual Agent Surface Matrix
 
 | Consumer class | Interface or owner surface | Authority and risk boundary | Evidence | Adapter boundary | Disposition |
 |---|---|---|---|---|---|
-| INTERNAL_AGENT | existing portable intake and parent evidence owners | synthetic composition only; semantic admission stays Local | source comparison; composition proof pending | existing local CLI, no daemon | CONTRACT_ONLY |
+| INTERNAL_AGENT | existing portable intake and parent evidence owners | synthetic composition only; semantic admission stays Local | worker composition evidence accepted bounded; Local7/7 | existing local CLI, no daemon | CONTRACT_ONLY |
 | EXTERNAL_AGENT_CLI_MCP | same evidence contract, no external execution | no account/credential/CLI/MCP invocation | no justified external adapter in this scope | external adapter deferred | DEFERRED_WITH_REASON |
 
 ## External/Local Coordination Binding
@@ -113,7 +113,7 @@ Existing validators own separate shapes; source pinning does not parse portable 
 Expected Result: compose real generated intake and parent/receipt contracts in disposable fixtures.
 Evidence Comparison: standalone test coverage exists; generated source-to-parent payload joins are not production-parsed.
 Contradiction / Gap Disposition: boundary counterexample explicitly separates owner validation from fixture ID/project oracle.
-Claim Update: offline T3 tests admitted; proof pending and actual projects parked.
+Claim Update: T3 offline composition accepted bounded in the Local completion review; actual projects and production guard remain parked/deferred.
 
 ## Public Export Disposition
 
@@ -121,7 +121,7 @@ DEFERRED_PRIVATE_ONLY
 
 ## Claim Boundary
 
-DISPATCH_READY declaration; execution requires committed paired authority and bound pre-dispatch PASS. T3 offline synthetic composition only; production source-ID/project enforcement and semantic acceptance unproven. CCMA parked; S05/C1/send/B2 STOP; Q001/Q004 OPEN/Profile A; P11/deploy parked. Public PR9 resolved, no new projection. Original T2 range FAIL and rejected sample retained; no routine rerun or enrollment.
+T3 offline synthetic composition accepted bounded. Parent source-payload ID/project enforcement remains a disclosed limit; Local defers production guard to separately admitted consumer-specific work. CCMA/S05/P11 and T4/T5 parked; original T2 FAIL/rejected sample and resolved public PR9 retained. No provider effect, real admission or public projection.
 
 ## Scaffold Provenance Block
 
@@ -153,3 +153,37 @@ At dispatch base 00310d07169723373e333393658feead8f226d96, build_intake and vali
 | claimLanguage | synthetic composition only |
 | forbiddenExpansion | runtime wrapper, semantic acceptance, provider and actual project effects |
 
+
+## Local Reviewer Acceptance
+
+REQ-1/2/3 accepted bounded; worker5/5 and fourteen cases consumed, Local7/7. Completion: `docs/reviews/CVF_FLAL_T3_OFFLINE_COMPOSITION_COMPLETION_2026-10-04.md`. Production guard deferred and truthful LOW retro retained. Fresh bound full closure receipt follows dedicated HEAD sync.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_T3_OFFLINE_COMPOSITION_2026-10-04.md | CLOSED_PASS_BOUNDED; REQ-1/2/3 accepted structurally | PASS |
+| Completion or reviewer artifact | docs/reviews/CVF_FLAL_T3_OFFLINE_COMPOSITION_COMPLETION_2026-10-04.md | ACCEPTED_BOUNDED; Local independent7/7 | PASS |
+| Roadmap state | docs/roadmaps/CVF_FOUNDATION_LEARNING_ADMISSION_AND_LOOPBACK_ROADMAP_2026-10-04.md | T3 accepted bounded; T4/T5 and actual projects parked | PASS |
+| Registry JSON | docs/reference/downstream_gate_profile/downstream_finding_intake_registry.json | retained raw SHA-256 0077d4ba82bfb0c07d404784461f8fbd2f835678a8c4de5a2b2515c3072c2827; no real intake/admission or registry mutation | PASS |
+| Registry Markdown | docs/reference/downstream_gate_profile/README.md | retained raw SHA-256 59e0ae7fe57b57ca815d2151c61137f6a1b0049e553c573c29489931e3333adc; existing navigation retained | PASS |
+| External evidence digest | N/A with reason: internal shared-workspace evidence only | no external intake | N/A with reason: no external evidence |
+| System loop interlock | N/A with reason: no runtime or actual project loopback | parked project boundaries retained | N/A with reason: no interlock effect |
+| Session continuity | six active continuity paths | final paired raw pins bound through source items and generated views; dedicated HEAD sync follows | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| Generated source | pending/unaccepted and byte-preserved | worker cases and independent Local sample retain pending state | PASS |
+| Source integrity | stale pin refuses | actual owner hash_mismatch in separate Local fixture | PASS |
+| Payload ID/project drift | disclose opaque-source owner boundary | refreshed pin passes owners; independent oracle detects both fields | PASS |
+| Application receipt | RETURNED alone cannot prove APPLIED | missing application receipt yields receipt_count | PASS |
+| Production join enforcement | no synthetic proof promotion | explicitly deferred; no production guard or real adoption claimed | PASS |
+
+## Mixed Protected-Path Atomicity Authorization
+
+Disposition: AUTHORIZED_EXACT_MANIFEST
+Atomicity reason: fixed active baseline/work order final bytes and currentAuthority raw pins must change together; source continuity and generated state bind those bytes in the same eleven-path closure. Use the existing steward exact-manifest route.
+Rollback boundary: eleven named closure paths only; no history rewrite or production guard changes.
+Exact changed manifest: `docs/baselines/CVF_GC018_FLAL_T3_OFFLINE_COMPOSITION_2026-10-04.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_T3_OFFLINE_COMPOSITION_2026-10-04.md`; `docs/reviews/CVF_FLAL_T3_OFFLINE_COMPOSITION_COMPLETION_2026-10-04.md`; `docs/reviews/evidence/cvf-flal-t3-local-independent-probe-2026-10-04.json`; `docs/roadmaps/CVF_FOUNDATION_LEARNING_ADMISSION_AND_LOOPBACK_ROADMAP_2026-10-04.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`.
