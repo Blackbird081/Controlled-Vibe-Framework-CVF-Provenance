@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_WRS_FR1_R1_SCAFFOLD_FRICTION_REPAIR_2026-10-04.md",
     "workOrderSha256": "f360e00822f916a908fa95c062dc4864b84b57d13f71f487959efc93e874c278"
   },
-  "currentAuthoritySyncReason": "Local raw-memory assertion repair after failed committed pre-closure; exact ten-path closure repair, fresh bound proof required.",
+  "currentAuthoritySyncReason": "R1 closed-pair pins; accepted F1/F2/F3, Local18, metadata corrections; material 65d97042116be78e7ba8c6656a9a0ba61b4dae70; fresh bound closure verification then stop.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
