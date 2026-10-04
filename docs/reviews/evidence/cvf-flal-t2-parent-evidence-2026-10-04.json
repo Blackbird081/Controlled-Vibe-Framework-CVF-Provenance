@@ -1,0 +1,58 @@
+{
+  "schemaVersion": "cvf.flalT2ParentEvidenceReturnEvidence@1",
+  "batchId": "CVF-FLAL-T2",
+  "executionBaseHead": "1489d7bffad654f9c1d7d8949ced1c8339399f4f",
+  "dispatchBaseHead": "a84e7a8be368d6cef9fdfd49c8c054cc6ec33803",
+  "claimBoundary": "offline structural validation with synthetic fixtures in disposable temp roots; no semantic acceptance, project effect, provider call or real receipt",
+  "statusBefore": "clean (git status --short empty)",
+  "preflight": {
+    "dispatchReleaseReadiness": "COMPLIANT, Violations 0, material commit c096b4903576f38ec95b84986de3678b9ee4c577",
+    "preImplementationAutorun": "COMPLIANT exit 0 (log .cvf/runtime/flal_t2_preimpl.log, receipt .cvf/runtime/autorun-receipts/pre-implementation.json)"
+  },
+  "registry": {
+    "path": "docs/reference/downstream_gate_profile/downstream_finding_intake_registry.json",
+    "sha256Before": "0077d4ba82bfb0c07d404784461f8fbd2f835678a8c4de5a2b2515c3072c2827",
+    "sha256After": "0077d4ba82bfb0c07d404784461f8fbd2f835678a8c4de5a2b2515c3072c2827",
+    "gitDiffEmpty": true,
+    "classification": {"typedValid": 0, "legacyUntyped": 8, "invalid": 0}
+  },
+  "proofs": {
+    "PROOF-SHAPE": {"literal": "TYPED_STRUCTURAL_VALID", "command": "python -B -m unittest discover -s governance/compat -p test_parent_learning_evidence.py", "result": "Ran 13 tests OK (skipped=1: symlink creation not permitted; Windows junction case executed)", "assertion": "test_valid_chain_is_typed_structural_valid, test_schema_matches_helper_constants"},
+    "PROOF-NEGATIVE": {"literal": "PASS", "command": "python -B -m unittest discover -s governance/compat -p test_parent_learning_evidence.py", "result": "OK"},
+    "PROOF-LEGACY": {"literal": "LEGACY_UNTYPED_NOT_REVALIDATED", "command": "python -B -m unittest discover -s governance/compat -p test_check_finding_to_governance_learning.py", "result": "Ran 5 tests OK; legacy classes also in test_parent_learning_evidence.py LegacyCompatibilityTests"},
+    "PROOF-OWNER": {"literal": "PASS", "command": "git diff --check", "result": "no whitespace errors (only an LF/CRLF autocrlf notice); CLI report `parentEvidence` 0/8/0, COMPLIANT; Markdown disposition tests unchanged (pytest 36 passed)"},
+    "PROOF-RETURN": {"literal": "COMPLETE_PENDING_REVIEW", "command": "python -B governance/compat/run_worker_return_fast_gate.py --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_T2_PARENT_EVIDENCE_VALIDATION_R1_2026-10-04.md", "result": "see worker return Command Evidence"}
+  },
+  "negativeClassMatrix": [
+    {"class": "missing each top-level field and each of five value checks", "assertion": "missing_field", "actual": "refused"},
+    {"class": "hash mismatch", "assertion": "hash_mismatch", "actual": "refused"},
+    {"class": "unresolved, absolute, drive, UNC, URL, backslash, traversal, empty, directory and junction locator", "assertion": "unsafe_locator", "actual": "refused (symlink variant skipped by OS privilege)"},
+    {"class": "unknown field / unknown version / unknown enum", "assertion": "unknown_field, unknown_version, invalid_enum", "actual": "refused"},
+    {"class": "raw duplicate JSON keys (record, receipt, registry) and NaN", "assertion": "DuplicateKeyError, receipt_not_typed_json, registry_unparseable", "actual": "refused"},
+    {"class": "attributed-only observed proof", "assertion": "observed_claim_without_observed_evidence", "actual": "refused"},
+    {"class": "ACCEPT without reviewer / without reference / without five SUPPORTED / RULE_EXISTS accept", "assertion": "decided_without_reviewer, decided_without_reference, accept_without_supported_checks, rule_exists_claims_new_value", "actual": "refused"},
+    {"class": "implementation without proof; RETURNED/APPLIED without implementation", "assertion": "implementation_without_proof, loopback_without_implementation", "actual": "refused"},
+    {"class": "arbitrary file as receipt; wrong receipt kind; same file reused across kinds", "assertion": "receipt_not_typed_json, receipt_wrong_type", "actual": "refused"},
+    {"class": "finding / sourceProject(recipient) / control join mismatch", "assertion": "receipt_join_mismatch, receipt_control_mismatch, finding_id_mismatch", "actual": "refused"},
+    {"class": "APPLIED without return or without receipt", "assertion": "applied_without_return, receipt_count", "actual": "refused"},
+    {"class": "parked positive transition", "assertion": "parked_positive_transition", "actual": "refused"},
+    {"class": "legacy silent promotion (RETURNED / APPLIED on untyped finding)", "assertion": "legacy_silent_promotion", "actual": "refused"}
+  ],
+  "resolvedAmbiguities": [
+    "Receipt shape has no recipient field: recipient is bound to receipt.sourceProject, which must equal parentEvidence.source.sourceProject.",
+    "Contract does not say how to tell control from proof references: implementation evidence uses fragment prefixes control:, proof-positive:, proof-negative:.",
+    "source is {sourceProject, evidence} per contract wording."
+  ],
+  "workerPaths": [
+    "docs/reference/downstream_gate_profile/parent_learning_evidence.schema.json",
+    "governance/compat/parent_learning_evidence.py",
+    "governance/compat/check_finding_to_governance_learning.py",
+    "governance/compat/test_parent_learning_evidence.py",
+    "governance/compat/test_check_finding_to_governance_learning.py",
+    "docs/reference/downstream_gate_profile/CVF_PROJECT_LEARNING_PARENT_EVIDENCE_CONTRACT.md",
+    "docs/reference/downstream_gate_profile/CVF_PROJECT_LEARNING_LOOP_STANDARD.md",
+    "docs/reference/downstream_gate_profile/README.md",
+    "docs/reviews/CVF_FLAL_T2_PARENT_EVIDENCE_WORKER_RETURN_2026-10-04.md",
+    "docs/reviews/evidence/cvf-flal-t2-parent-evidence-2026-10-04.json"
+  ]
+}

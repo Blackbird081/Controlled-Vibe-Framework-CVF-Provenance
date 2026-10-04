@@ -33,7 +33,8 @@ Downstream Bootstrap and Workspace Governance Learning Propagation closures.
    `downstream_finding_intake.schema.json`; template `DOWNSTREAM_FINDING_INTAKE_TEMPLATE.json`.
 4. `downstream_finding_intake_registry.json` - parent dedup, admission and back-links.
 5. `CVF_PROJECT_LEARNING_LOOP_STANDARD.md` - common learning home, value selection and returned adoption.
-6. `CVF_PROJECT_LEARNING_PARENT_EVIDENCE_CONTRACT.md` - parent typed evidence design; implementation remains conditional.
+6. `CVF_PROJECT_LEARNING_PARENT_EVIDENCE_CONTRACT.md` - parent typed evidence contract and T2 validation binding.
+   Schema: `parent_learning_evidence.schema.json`.
 7. `CVF_BUILD_LEARNING_EVIDENCE_CHECKLIST.md` - cleanup, mutation and coverage evidence practice.
 
 ## Owner And Archive
@@ -48,7 +49,8 @@ history lives in git and completion reviews. Superseded content is archived unde
 |---|---|
 | Runner and modules | `scripts/lib/downstream_governance/` |
 | Pinned status grammar and closeability | `governance/compat/check_gate_to_role_closeability.py` |
-| Focused Python tests | `governance/compat/test_downstream_gate_profile.py`; `governance/compat/test_check_gate_to_role_closeability.py` |
+| Parent evidence validator (read-only, via F2G checker) | `governance/compat/parent_learning_evidence.py`; `governance/compat/check_finding_to_governance_learning.py` |
+| Focused Python tests | `governance/compat/test_downstream_gate_profile.py`; `governance/compat/test_check_gate_to_role_closeability.py`; `governance/compat/test_parent_learning_evidence.py`; `governance/compat/test_check_finding_to_governance_learning.py` |
 | Offline golden harness | `scripts/test_cvf_downstream_gate_profile.ps1` |
 
 ## Public Export Disposition

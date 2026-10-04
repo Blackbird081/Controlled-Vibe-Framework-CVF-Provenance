@@ -153,6 +153,41 @@ receipt or authorization; parked positive transition; legacy silent promotion.
 A synthetic positive chain proves only fixture composition; it cannot prove live
 AI governance, source-project delivery or production adoption.
 
+## T2 Validation Binding
+
+Batch CVF-FLAL-T2 implements the contract above as read-only structural validation.
+It adds no registry writer, intake command, daemon or project effect.
+
+| Surface | Path |
+|---|---|
+| Closed-shape versioned schema (parentEvidence and receipt) | `docs/reference/downstream_gate_profile/parent_learning_evidence.schema.json` |
+| Validator and mixed-registry classifier | `governance/compat/parent_learning_evidence.py` |
+| Production binding (existing F2G checker and its JSON/text report, `parentEvidence` member) | `governance/compat/check_finding_to_governance_learning.py` |
+| Synthetic fixtures (disposable roots) | `governance/compat/test_parent_learning_evidence.py`; `governance/compat/test_check_finding_to_governance_learning.py` |
+
+Implementation choices that refine, not change, the design:
+
+- The schema is a closed-shape declaration; byte hashes, locator safety, duplicate JSON
+  keys and cross-object joins are enforced by the validator, which hand-parses with
+  duplicate-key and NaN refusal. Reference path components are checked with `lstat`
+  so symlinks and Windows reparse points are refused.
+- `source` is `{sourceProject, evidence}`. Receipt recipient is bound to the receipt
+  `sourceProject`, which must equal the parent evidence `source.sourceProject`; the
+  receipt shape carries no separate recipient field.
+- `implementation` evidence must include references whose fragments start with
+  `control:`, `proof-positive:` and `proof-negative:`. Delivery and application
+  receipts must name that same control path and sha256.
+- An observed/reproduced claim in a value-check reason needs an `OBSERVED_LOCAL`
+  reference. `ACCEPT` with `RULE_EXISTS` is refused; use `MERGE`.
+- A parked returnDelivery or projectApplication admits no receipt evidence.
+- Findings without `parentEvidence` are `LEGACY_UNTYPED_NOT_REVALIDATED`. A legacy
+  finding whose top-level `returnDelivery` is `RETURNED` or `sourceProjectApplication`
+  is `APPLIED` is refused as `legacy_silent_promotion`. Typed-invalid findings are
+  F2G violations; legacy findings are not. The checker reports typed, legacy and
+  invalid counts separately.
+- Validation outcomes are structural. They do not authenticate actors, prove
+  semantic truth, or show any project delivery or adoption.
+
 ## Risk / Corrective Action
 
 Pins and structural joins prevent accidental unsupported declarations, not a
@@ -162,8 +197,9 @@ learning ledger, historical re-review or silent portable profile migration.
 
 ## Claim Boundary
 
-T1 contract/owner reconciliation only. No checker/schema implementation, worker
-dispatch, project edits/tests/migration, provider proof or public release.
+Contract/owner reconciliation (T1) plus offline structural validation with synthetic
+fixtures (T2). No semantic acceptance, project edits/tests/migration, CCMA backfill,
+real receipt, provider proof, runtime governance proof or public release.
 
 ## Source Verification Block
 

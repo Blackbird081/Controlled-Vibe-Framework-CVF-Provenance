@@ -70,8 +70,11 @@ testing or migrating that project. Apply future loopback only when unparked.
 `CVF_PROJECT_LEARNING_PARENT_EVIDENCE_CONTRACT.md` specifies an opt-in typed
 parent evidence extension under this standard and existing F2G owners. Its design
 separates five value checks, implementation proof, delivery and application
-receipts. Legacy entries remain untyped; T1 does not implement validation or
-backfill historical decisions. T2 requires its own admitted ready packet.
+receipts. Legacy entries remain untyped and are never backfilled. Offline structural
+validation is implemented in the existing F2G checker through
+`governance/compat/parent_learning_evidence.py` and
+`parent_learning_evidence.schema.json`; it proves declarations and byte identity,
+not semantic acceptance, delivery or project application.
 
 ## Machine Binding
 

@@ -516,3 +516,54 @@ New gate lessons captured in memory (8 CCLV-T2 specifics beyond FPRC-T1 B1-B6).
     )
     types = [issue["type"] for issue in issues]
     assert "provider_memory_only_learning_escape" not in types
+
+
+import json
+import subprocess
+import sys
+import tempfile
+import unittest
+
+
+class ParentEvidenceBindingTests(unittest.TestCase):
+    """unittest-discoverable proof of the parent evidence binding and legacy/Markdown compatibility."""
+
+    def test_markdown_disposition_behavior_unchanged(self) -> None:
+        self.assertEqual(MODULE._validate_finding_doc("docs/logs/CVF_TEST.md", VALID_DOC), [])
+        invalid = VALID_DOC.split("## Finding-To-Governance Learning Disposition")[0]
+        issues = MODULE._validate_finding_doc("docs/reviews/CVF_TEST.md", invalid)
+        self.assertTrue(any("Finding-To-Governance" in message for message in _messages(issues)))
+
+    def test_committed_registry_reports_legacy_only(self) -> None:
+        report = MODULE._parent_evidence_report()
+        self.assertEqual((report["typedValid"], report["invalid"], report["issues"]), (0, 0, []))
+        self.assertGreater(report["legacyUntyped"], 0)
+
+    def test_invalid_typed_evidence_blocks_but_legacy_does_not(self) -> None:
+        base = {"violations": [], "violationCount": 0, "compliant": True}
+        legacy = {"issues": [], "typedValid": 0, "legacyUntyped": 2, "invalid": 0}
+        self.assertTrue(MODULE._with_parent_evidence(base, legacy)["compliant"])
+        broken = {**legacy, "invalid": 1, "issues": [{"path": "p", "type": "unknown_field", "message": "m"}]}
+        merged = MODULE._with_parent_evidence(base, broken)
+        self.assertEqual((merged["compliant"], merged["violationCount"]), (False, 1))
+
+    def test_invalid_typed_registry_in_disposable_root(self) -> None:
+        rel = MODULE.PARENT_REGISTRY_PATH
+        with tempfile.TemporaryDirectory() as tmp:
+            target = Path(tmp) / rel
+            target.parent.mkdir(parents=True)
+            target.write_text(json.dumps({"entries": [{"findings": [
+                {"id": "a", "parentEvidence": {"schemaVersion": "bad"}}, {"id": "b"}]}]}), encoding="utf-8")
+            report = MODULE._parent_evidence_report(Path(tmp))
+        self.assertEqual((report["typedValid"], report["legacyUntyped"], report["invalid"]), (0, 1, 1))
+
+    def test_cli_json_report_carries_parent_evidence(self) -> None:
+        proc = subprocess.run([sys.executable, "-B", str(MODULE_PATH), "--base", "HEAD", "--head", "HEAD", "--json"],
+                              capture_output=True, text=True, encoding="utf-8")
+        self.assertEqual(proc.returncode, 0, proc.stderr)
+        parent = json.loads(proc.stdout)["parentEvidence"]
+        self.assertEqual(parent["invalid"], 0)
+
+
+if __name__ == "__main__":
+    unittest.main()
