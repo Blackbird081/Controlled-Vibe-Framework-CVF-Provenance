@@ -1,0 +1,401 @@
+{
+  "schemaVersion": "cvf.flalRangeT1ReconciliationEvidence@1",
+  "batchId": "CVF-FLAL-RANGE-T1",
+  "executionBaseHead": "95c8294effbafe2f66a1a8dd0aa7fac45ce0de2f",
+  "dispatchBaseHead": "56ff4cf6ae23693215d4a49a7efee8e9740ec77e",
+  "statusBefore": "clean (git status --short empty)",
+  "preflight": {
+    "dispatchReleaseReadiness": "COMPLIANT, Violations 0, material commit 5e5fb30eebe3950c62ac790f6fa3714ec54077ea",
+    "preImplementationAutorun": "COMPLIANT exit 0 (log .cvf/runtime/flal_range_preimpl.log)"
+  },
+  "claimSeparation": {
+    "originalProductionFail": "RETAINED: pre-closure on 5cdb..601c refused by _range_shape_preflight (adjudicated marker sha256 23a8a366a4e83ae6a67f1af25fa17bb53f647c87a86aa4b99219b05e5f8b87ff, adjudication c0b8c1bb357083e92b11cff0c0e669e36c839231eb42757ca78f68959d6f0e44)",
+    "t2TechnicalAcceptance": "RETAINED: bounded offline structural validation; probe 30/30; not re-run here",
+    "freshFixtureObservation": "disposable-repo observations below; not production history and not a retroactive PASS",
+    "proposedOnlyRepair": "forwardRepairPlan below; nothing in it was executed on the real repository"
+  },
+  "historicalRange": {
+    "base": "5cdb8390d8fd7ea882628ed571fcff80b2fe8ce7",
+    "head": "601c31e977ae260444697f8836ec825900cd59a0",
+    "headIsDirectChildOfBase": true,
+    "commitCountInRange": 1,
+    "headSubject": "review: accept bounded FLAL T2 validation after independent probe",
+    "baseTree": "49b75f7293a806adbd64b8adae1407db22c49025",
+    "headTree": "d229821e330991bd5dea63ef2a204a6ccfe9cf21",
+    "nameStatus": [
+      [
+        "M",
+        "AGENT_HANDOFF_V63_2026-09-18.md"
+      ],
+      [
+        "M",
+        "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json"
+      ],
+      [
+        "M",
+        "CVF_SESSION/ACTIVE_SESSION_STATE.json"
+      ],
+      [
+        "M",
+        "CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json"
+      ],
+      [
+        "M",
+        "docs/baselines/CVF_GC018_FLAL_T2_PARENT_EVIDENCE_VALIDATION_R1_2026-10-04.md"
+      ],
+      [
+        "A",
+        "docs/reviews/CVF_FLAL_T2_PARENT_EVIDENCE_VALIDATION_COMPLETION_2026-10-04.md"
+      ],
+      [
+        "A",
+        "docs/reviews/evidence/cvf-flal-t2-local-independent-probe-2026-10-04.json"
+      ],
+      [
+        "A",
+        "docs/reviews/evidence/cvf-flal-t2-local-independent-probe-initial-fail-2026-10-04.json"
+      ],
+      [
+        "A",
+        "docs/reviews/evidence/cvf-flal-t2-local-independent-probe-source-2026-10-04.txt"
+      ],
+      [
+        "M",
+        "docs/roadmaps/CVF_FOUNDATION_LEARNING_ADMISSION_AND_LOOPBACK_ROADMAP_2026-10-04.md"
+      ],
+      [
+        "M",
+        "docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_T2_PARENT_EVIDENCE_VALIDATION_R1_2026-10-04.md"
+      ]
+    ],
+    "insertionsDeletions": "1046/22",
+    "protectedSessionPaths": 4,
+    "materialPaths": 7,
+    "traceArtifactsDetectedByHasAgentOperationTrace": [
+      "AGENT_HANDOFF_V63_2026-09-18.md",
+      "docs/reviews/CVF_FLAL_T2_PARENT_EVIDENCE_VALIDATION_COMPLETION_2026-10-04.md",
+      "docs/roadmaps/CVF_FOUNDATION_LEARNING_ADMISSION_AND_LOOPBACK_ROADMAP_2026-10-04.md",
+      "docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_T2_PARENT_EVIDENCE_VALIDATION_R1_2026-10-04.md"
+    ],
+    "mixedAtomicityHeadingPresentInAnyTraceArtifactAt601c": false,
+    "completionReviewTraceExpectedAndActualManifest": "both list exactly the 11 range paths, Manifest delta MATCH (so the trace exact-manifest rule was already satisfied)",
+    "originalFailureMatchesFixtureCase1": true,
+    "authorityRawHashFact": "bootstrap currentAuthority at 601c pins sha256 of on-disk CRLF bytes (baseline 32a079a3..., work order 8773f23d...); git blob hashes at 601c differ (168b53b1..., 8f75e5fa...). Hashes must be computed from working-tree bytes, never from git show."
+  },
+  "ownerSymbolMap": [
+    {
+      "obligation": "currentAuthority raw hash of baseline and work order forces same-commit regeneration of core/state/bootstrap when either file changes",
+      "owner": "governance/compat/check_active_session_state.py currentAuthority raw-hash validation (lines ~400-426)",
+      "classification": "SOURCE_DERIVED; baseline/work-order status flips in 601c changed both hashes",
+      "fixtureTested": false
+    },
+    {
+      "obligation": "exact-manifest trace rule: first complete docs/reviews trace artifact must have Expected manifest == Actual changed set == observed A/M/R paths",
+      "owner": "governance/compat/check_agent_operation_trace.py _check_manifest_delta; find_trace_violations",
+      "classification": "SATISFIED at 601c (completion review lists 11 paths, MATCH)",
+      "fixtureTested": false
+    },
+    {
+      "obligation": "mixed trace+session range needs an exact authorization section in ANY detected trace artifact",
+      "owner": "governance/compat/run_agent_commit_steward_preflight.py _has_exact_mixed_atomicity_authorization; build_path_plan",
+      "classification": "NOT SATISFIED at 601c: section absent",
+      "fixtureTested": true
+    },
+    {
+      "obligation": "pre-closure/pre-push refuses a range whose plan has exact_manifest_collision_risk",
+      "owner": "governance/compat/run_agent_autorun_workflow_gate.py _range_shape_preflight",
+      "classification": "fired correctly at 601c",
+      "fixtureTested": true
+    },
+    {
+      "obligation": "split-first default and the explicit exact-mixed-manifest exception",
+      "owner": "docs/reference/CVF_AGENT_COMMIT_STEWARD_PROTOCOL_STANDARD_2026-06-15.md Commit Split Rule",
+      "classification": "the exception is the existing standard route",
+      "fixtureTested": false
+    },
+    {
+      "obligation": "helper contract for commit choreography",
+      "owner": "docs/reference/CVF_TRANCHE_COMMIT_CHOREOGRAPHY_STANDARD_2026-06-03.md Step 4A",
+      "classification": "context only",
+      "fixtureTested": false
+    },
+    {
+      "obligation": "monkeypatched reference test of the authorized route",
+      "owner": "governance/compat/test_run_agent_commit_steward_preflight.py test_authorized_exact_mixed_manifest_uses_session_sync",
+      "classification": "stubs the authorization predicate, so it does not prove section text; this packet's fixtures exercise the unpatched predicate",
+      "fixtureTested": true
+    },
+    {
+      "obligation": "collector range = single commit parent..commit; candidate = changed docs/reviews markdown; never clears or re-enrolls",
+      "owner": "governance/compat/mfrp_shadow_canary_autocollect.py _commit_changed_paths, _single_parent, validate_and_reconcile_receipt",
+      "classification": "adjudicated rejection retained; no re-enrollment",
+      "fixtureTested": false
+    }
+  ],
+  "diagnosis": {
+    "verdict": "OMITTED_EXISTING_AUTHORIZATION_DECLARATION",
+    "defectClass": "ORCHESTRATOR_PACKET_GAP",
+    "inherentCheckerContradiction": false,
+    "reason": "The range legitimately had to be atomic (baseline and work order status changes alter currentAuthority raw hashes), the trace manifest was exact, but the reviewer artifact carried no Mixed Protected-Path Atomicity Authorization section, so the existing fail-closed preflight correctly refused it. Splitting was not available for the hash-bearing files without a transient active-session-state mismatch (source-derived, not fixture-tested).",
+    "notProven": [
+      "whether the full pre-closure bundle would have passed with the section present (only the range-shape gate was exercised)"
+    ]
+  },
+  "fixtureMatrix": {
+    "method": "disposable git repos under ignored .cvf/runtime; historical blobs from 5cdb and 601c copied in; real steward build_path_plan and autorun _range_shape_preflight executed unpatched except module-level REPO_ROOT pointing at the disposable repo; script .cvf/runtime/flal_range_t1_probe.py",
+    "cases": [
+      {
+        "case": "1_missing_block_historical_bytes",
+        "changedPathCount": 11,
+        "protected": 4,
+        "material": 7,
+        "traceArtifacts": [
+          "AGENT_HANDOFF_V63_2026-09-18.md",
+          "docs/reviews/CVF_FLAL_T2_PARENT_EVIDENCE_VALIDATION_COMPLETION_2026-10-04.md",
+          "docs/roadmaps/CVF_FOUNDATION_LEARNING_ADMISSION_AND_LOOPBACK_ROADMAP_2026-10-04.md",
+          "docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_T2_PARENT_EVIDENCE_VALIDATION_R1_2026-10-04.md"
+        ],
+        "mixed": true,
+        "mixedAtomicityAuthorized": false,
+        "exactManifestCollisionRisk": true,
+        "recommendedMode": "split: material first, session-sync/handoff-sync second",
+        "rangeShapePreflightRc": 1,
+        "expectedCollisionRisk": true,
+        "matchesExpectation": true,
+        "preflightHeadline": "FAIL: range mixes Agent Operation Trace exact-manifest artifacts with protected session/handoff paths."
+      },
+      {
+        "case": "1b_generic_exception_prose_only",
+        "changedPathCount": 11,
+        "protected": 4,
+        "material": 7,
+        "traceArtifacts": [
+          "AGENT_HANDOFF_V63_2026-09-18.md",
+          "docs/reviews/CVF_FLAL_T2_PARENT_EVIDENCE_VALIDATION_COMPLETION_2026-10-04.md",
+          "docs/roadmaps/CVF_FOUNDATION_LEARNING_ADMISSION_AND_LOOPBACK_ROADMAP_2026-10-04.md",
+          "docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_T2_PARENT_EVIDENCE_VALIDATION_R1_2026-10-04.md"
+        ],
+        "mixed": true,
+        "mixedAtomicityAuthorized": false,
+        "exactManifestCollisionRisk": true,
+        "recommendedMode": "split: material first, session-sync/handoff-sync second",
+        "rangeShapePreflightRc": 1,
+        "expectedCollisionRisk": true,
+        "matchesExpectation": true,
+        "preflightHeadline": "FAIL: range mixes Agent Operation Trace exact-manifest artifacts with protected session/handoff paths."
+      },
+      {
+        "case": "2_exact_authorized_manifest",
+        "changedPathCount": 11,
+        "protected": 4,
+        "material": 7,
+        "traceArtifacts": [
+          "AGENT_HANDOFF_V63_2026-09-18.md",
+          "docs/reviews/CVF_FLAL_T2_PARENT_EVIDENCE_VALIDATION_COMPLETION_2026-10-04.md",
+          "docs/roadmaps/CVF_FOUNDATION_LEARNING_ADMISSION_AND_LOOPBACK_ROADMAP_2026-10-04.md",
+          "docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_T2_PARENT_EVIDENCE_VALIDATION_R1_2026-10-04.md"
+        ],
+        "mixed": true,
+        "mixedAtomicityAuthorized": true,
+        "exactManifestCollisionRisk": false,
+        "recommendedMode": "session-sync",
+        "rangeShapePreflightRc": 0,
+        "expectedCollisionRisk": false,
+        "matchesExpectation": true,
+        "preflightHeadline": "(silent PASS)"
+      },
+      {
+        "case": "3_missing_one_path",
+        "changedPathCount": 11,
+        "protected": 4,
+        "material": 7,
+        "traceArtifacts": [
+          "AGENT_HANDOFF_V63_2026-09-18.md",
+          "docs/reviews/CVF_FLAL_T2_PARENT_EVIDENCE_VALIDATION_COMPLETION_2026-10-04.md",
+          "docs/roadmaps/CVF_FOUNDATION_LEARNING_ADMISSION_AND_LOOPBACK_ROADMAP_2026-10-04.md",
+          "docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_T2_PARENT_EVIDENCE_VALIDATION_R1_2026-10-04.md"
+        ],
+        "mixed": true,
+        "mixedAtomicityAuthorized": false,
+        "exactManifestCollisionRisk": true,
+        "recommendedMode": "split: material first, session-sync/handoff-sync second",
+        "rangeShapePreflightRc": 1,
+        "expectedCollisionRisk": true,
+        "matchesExpectation": true,
+        "preflightHeadline": "FAIL: range mixes Agent Operation Trace exact-manifest artifacts with protected session/handoff paths."
+      },
+      {
+        "case": "4_one_extra_unrelated_path",
+        "changedPathCount": 12,
+        "protected": 4,
+        "material": 8,
+        "traceArtifacts": [
+          "AGENT_HANDOFF_V63_2026-09-18.md",
+          "docs/reviews/CVF_FLAL_T2_PARENT_EVIDENCE_VALIDATION_COMPLETION_2026-10-04.md",
+          "docs/roadmaps/CVF_FOUNDATION_LEARNING_ADMISSION_AND_LOOPBACK_ROADMAP_2026-10-04.md",
+          "docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_T2_PARENT_EVIDENCE_VALIDATION_R1_2026-10-04.md"
+        ],
+        "mixed": true,
+        "mixedAtomicityAuthorized": false,
+        "exactManifestCollisionRisk": true,
+        "recommendedMode": "split: material first, session-sync/handoff-sync second",
+        "rangeShapePreflightRc": 1,
+        "expectedCollisionRisk": true,
+        "matchesExpectation": true,
+        "preflightHeadline": "FAIL: range mixes Agent Operation Trace exact-manifest artifacts with protected session/handoff paths."
+      },
+      {
+        "case": "5_missing_required_token",
+        "changedPathCount": 11,
+        "protected": 4,
+        "material": 7,
+        "traceArtifacts": [
+          "AGENT_HANDOFF_V63_2026-09-18.md",
+          "docs/reviews/CVF_FLAL_T2_PARENT_EVIDENCE_VALIDATION_COMPLETION_2026-10-04.md",
+          "docs/roadmaps/CVF_FOUNDATION_LEARNING_ADMISSION_AND_LOOPBACK_ROADMAP_2026-10-04.md",
+          "docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_T2_PARENT_EVIDENCE_VALIDATION_R1_2026-10-04.md"
+        ],
+        "mixed": true,
+        "mixedAtomicityAuthorized": false,
+        "exactManifestCollisionRisk": true,
+        "recommendedMode": "split: material first, session-sync/handoff-sync second",
+        "rangeShapePreflightRc": 1,
+        "expectedCollisionRisk": true,
+        "matchesExpectation": true,
+        "preflightHeadline": "FAIL: range mixes Agent Operation Trace exact-manifest artifacts with protected session/handoff paths."
+      }
+    ],
+    "allMatchExpectation": true
+  },
+  "productionReadOnlyObservation": {
+    "note": "real repository, current mutable working-tree documents, read-only build_path_plan on the historical range; NOT historical proof",
+    "plan": {
+      "changed": 11,
+      "protected": 4,
+      "material": 7,
+      "trace": [
+        "AGENT_HANDOFF_V63_2026-09-18.md",
+        "docs/reviews/CVF_FLAL_T2_PARENT_EVIDENCE_VALIDATION_COMPLETION_2026-10-04.md",
+        "docs/roadmaps/CVF_FOUNDATION_LEARNING_ADMISSION_AND_LOOPBACK_ROADMAP_2026-10-04.md",
+        "docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_T2_PARENT_EVIDENCE_VALIDATION_R1_2026-10-04.md"
+      ],
+      "authorized": false,
+      "risk": true
+    },
+    "sourcePinMatches": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "continuationRanges": {
+      "materialOnly 5cdb^..5cdb": "10 changed, 0 protected, mixed=False, risk=False",
+      "mixedReview 5cdb..601c": "11 changed, 4 protected, mixed=True, risk=True",
+      "continuityOnly 601c..5990bdf": "6 changed, 6 protected, mixed=False, risk=False"
+    }
+  },
+  "forwardRepairPlan": {
+    "status": "PROPOSED_ONLY_NOT_EXECUTED",
+    "principle": "No retroactive PASS for 5cdb..601c. Reuse the existing authorization route in future atomic reviewer+continuity commits. No checker, test, standard or collector change.",
+    "localDecisionD0": [
+      "OPTION_A_NO_RETRO_REPAIR_RECOMMENDED_FOR_T2: record T2 closure as split-range evidence (material-only range plus continuity-only range, both shape-clean above) and keep the mixed-range FAIL; apply the template below only to this and later atomic closures.",
+      "OPTION_B_CORRECTIVE_T2_ADDENDUM: add an append-only addendum plus authorization to the T2 completion review inside a future atomic commit, if Local wants a PASS receipt bound to a clean forward range. Not recommended: it edits an accepted artifact and proves nothing new about T2 code."
+    ],
+    "commitsForRangeT1Closure": [
+      {
+        "id": "M1",
+        "kind": "material only, no session paths",
+        "base": "captured Local HEAD at review start (worker executionBaseHead 95c8294ef... if unchanged)",
+        "changedPaths": [
+          "docs/reviews/CVF_FLAL_RANGE_T1_RECONCILIATION_WORKER_RETURN_2026-10-04.md",
+          "docs/reviews/evidence/cvf-flal-range-t1-reconciliation-2026-10-04.json"
+        ],
+        "owner": "Local reviewer/closer (worker files, plus reviewer disposition edits if any)",
+        "gates": [
+          "python -B governance/compat/run_worker_return_fast_gate.py --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_RANGE_T1_RECONCILIATION_2026-10-04.md",
+          "git diff --check",
+          "normal staged hooks"
+        ],
+        "rangeBoundary": "base..M1; expected plan: mixed=False, risk=False"
+      },
+      {
+        "id": "C1",
+        "kind": "atomic closure plus continuity; hash-bearing files change, so it cannot be split",
+        "base": "M1",
+        "changedPaths": [
+          "docs/baselines/CVF_GC018_FLAL_RANGE_T1_RECONCILIATION_2026-10-04.md",
+          "docs/work_orders/CVF_AGENT_WORK_ORDER_FLAL_RANGE_T1_RECONCILIATION_2026-10-04.md",
+          "docs/reviews/CVF_FLAL_RANGE_T1_RECONCILIATION_COMPLETION_2026-10-04.md",
+          "AGENT_HANDOFF_V63_2026-09-18.md",
+          "CVF_SESSION_MEMORY.md",
+          "CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json",
+          "CVF_SESSION/state/entries/nextAllowedMove.json",
+          "CVF_SESSION/ACTIVE_SESSION_STATE.json",
+          "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json"
+        ],
+        "owners": {
+          "baseline, work order status, completion review": "Local reviewer/closer",
+          "six continuity paths": "Local session-sync steward"
+        },
+        "authorizationHost": "docs/reviews/CVF_FLAL_RANGE_T1_RECONCILIATION_COMPLETION_2026-10-04.md (reviewer-owned, not hashed by currentAuthority, so no hash cascade); it must also be the first docs/reviews trace artifact so its Expected manifest and Actual changed set equal the 9 observed paths and Manifest delta says MATCH",
+        "doNotReuse": "the existing five-path Mixed section inside the RANGE-T1 work order: it lists only the dispatch admission manifest and would fail for the C1 set"
+      }
+    ],
+    "exactAuthorizationDeclarationTemplate": "## Mixed Protected-Path Atomicity Authorization\n\nDisposition: AUTHORIZED_EXACT_MANIFEST\nAtomicity reason: baseline and work-order status changes alter currentAuthority raw hashes, which must regenerate core, state and bootstrap in the same commit.\nRollback boundary: revert only this closure commit; preserve M1, original failed range evidence and adjudications.\nExact changed manifest: <every C1 path in backticks, including the host review itself>.",
+    "authorizationRules": [
+      "section lives in a file that build_path_plan detects as a trace artifact (contains '## Agent Operation Trace Block' and 'Actual changed set') and is a .md",
+      "the four literal tokens must appear: 'Disposition: AUTHORIZED_EXACT_MANIFEST', 'Atomicity reason:', 'Rollback boundary:', 'Exact changed manifest:'",
+      "every changed path, including paths from git status of a dirty tree and the host file, must appear as `path` inside the section (up to the next '## ' heading); a single omission or extra changed path fails",
+      "generic EXCEPTION_WITH_REASON prose does not authorize",
+      "the check reads the working-tree file, so commit exactly the bytes that were checked and keep the tree clean"
+    ],
+    "atomicHashRegenerationOrder": [
+      "1. Freeze baseline, work order, completion review text including the authorization section and Agent Operation Trace manifest (9 paths).",
+      "2. Compute sha256 of the on-disk raw bytes (CRLF on this Windows checkout) of the baseline and the work order; never use git show or blob hashes.",
+      "3. Write baselineSha256 and workOrderSha256 into CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json currentAuthority, then run python -B governance/compat/generate_active_session_state.py --generate and --check.",
+      "4. Update handoff HEAD marker, CVF_SESSION_MEMORY.md and nextAllowedMove.json; do not touch the baseline or work order afterward (any later edit invalidates step 2).",
+      "5. Re-run steps 2 and check_active_session_state.py --enforce; stage the exact 9 paths with an explicit list (no add -A)."
+    ],
+    "commandsBeforeCommit": [
+      "git status --short  (expect exactly the 9 C1 paths)",
+      "python -B .cvf/runtime/flal_range_t1_probe.py  (fixture matrix; or the equivalent per-commit plan print below)",
+      "python -B -c \"import sys;sys.path.insert(0,'governance/compat');import run_agent_commit_steward_preflight as s;p=s.build_path_plan('<M1>','HEAD');print(p.mixed_material_and_session,p.mixed_atomicity_authorized,p.exact_manifest_collision_risk)\"  (expect True True False after staging is simulated by a working-tree check)",
+      "python -B governance/compat/run_agent_commit_steward_preflight.py --mode session-sync --base <M1> --head HEAD --enforce (use --plan-only first), then normal staged hooks",
+      "after commit: python -B governance/compat/run_agent_autorun_workflow_gate.py --phase pre-closure --base <M1> --head <C1> --active-work-order <RANGE-T1 work order>"
+    ],
+    "collectorHandling": [
+      "post-commit collector uses parent..commit of each commit and reads committed bytes only; it never clears markers.",
+      "do not re-enroll or relabel the 2026-10-04 FLAL_T2_ATOMIC_HASH_RANGE rejected observation or its adjudication.",
+      "C1 is a single-commit range with a docs/reviews candidate; if its observation block says AUTO the collector may run pre-closure for it. Declare the P4 observation block explicitly (eligible or N/A with reason) and let Local adjudicate any new marker through the existing adjudication path.",
+      "if the collector writes a new safety marker for C1, the next pre-commit fail-closes until Local adjudicates it; plan Local time for that."
+    ],
+    "negativeTestsBeforeRelease": [
+      "N1 remove the section -> risk True (fixture case 1)",
+      "N2 generic EXCEPTION_WITH_REASON only -> risk True (case 1b)",
+      "N3 omit one manifest path -> risk True (case 3)",
+      "N4 add one unrelated changed path -> risk True (case 4)",
+      "N5 drop a required literal token -> risk True (case 5)",
+      "N6 edit baseline/work order after hash regeneration -> check_active_session_state.py --enforce must fail on raw hash"
+    ],
+    "rollback": "revert C1 only (git revert on the Local branch before any push); M1, original FAIL evidence, adjudications and T2 acceptance stay untouched; no history rewrite.",
+    "blockedItems": [
+      "BLOCKED route Local: confirm that completion review path name CVF_FLAL_RANGE_T1_RECONCILIATION_COMPLETION_2026-10-04.md is the admitted closure artifact; the work order says reviewer disposition may stay inside the worker return, in which case the authorization host must be a different trace artifact such as the return itself and its trace manifest must then be rebuilt to the 9 paths (not recommended: the return is worker-owned).",
+      "UNVERIFIED: a full pre-closure bundle run on a fixture or real C1 range has not been executed here."
+    ],
+    "t3": "not opened; T3 and CCMA remain parked"
+  },
+  "preventiveControlCandidates": [
+    "WORK_ORDER_TEMPLATE: closure/review scaffold for atomic reviewer+continuity commits should emit the authorization section skeleton",
+    "HELPER_DIAGNOSTIC: _range_shape_preflight could name which of the four tokens or which paths were missing (no change proposed here)"
+  ],
+  "commands": [
+    "git rev-parse HEAD -> 95c8294effbafe2f66a1a8dd0aa7fac45ce0de2f",
+    "check_dispatch_release_readiness.py --active-work-order ... --enforce -> COMPLIANT",
+    "run_agent_autorun_workflow_gate.py --phase pre-implementation --base 95c8294ef... --head HEAD --active-work-order ... -> COMPLIANT",
+    "git diff --name-status 5cdb8390d8fd7ea882628ed571fcff80b2fe8ce7 601c31e977ae260444697f8836ec825900cd59a0 -> 11 paths",
+    "python -B .cvf/runtime/flal_range_t1_probe.py -> 6 cases, all match expectation"
+  ]
+}
