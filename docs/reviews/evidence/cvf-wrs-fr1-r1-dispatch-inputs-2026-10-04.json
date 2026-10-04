@@ -1,0 +1,294 @@
+{
+  "schemaVersion": "cvf.wrsFr1R1DispatchInputs@1",
+  "batchId": "CVF-WRS-FR1-R1",
+  "dispatchBaseHead": "5e5d471079d9b9026348351a7f562972f8c3a8f2",
+  "beforeStatus": "CLEAN",
+  "sourcePins": [
+    {
+      "path": "docs/reviews/CVF_WRS_FR1_SCAFFOLD_FRICTION_REPAIR_WORKER_RETURN_2026-10-04.md",
+      "sha256": "1eb0f08f28b9248697d5ddf5c17c753ac6fe77fe62316f0e058c2a57635d7321",
+      "readDepth": "TARGETED_OWNER_INTERFACE",
+      "verifiedSymbol": "Local Reviewer Disposition",
+      "authority": "GOVERNED_LOCAL_SOURCE"
+    },
+    {
+      "path": "docs/reviews/evidence/cvf-wrs-fr1-scaffold-friction-2026-10-04.json",
+      "sha256": "cc31fdb940de3f7cb9a977e71475b5d60e493a969fc555811fdc10b7ebaf762b",
+      "readDepth": "TARGETED_OWNER_INTERFACE",
+      "verifiedSymbol": "localReviewerEvidence",
+      "authority": "GOVERNED_LOCAL_SOURCE"
+    },
+    {
+      "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_WRS_FR1_SCAFFOLD_FRICTION_REPAIR_2026-10-04.md",
+      "sha256": "0d482ac4b88ddc15e6c546c1ad7a18c5b9e06880aee27b0d6fb96eb489ed3396",
+      "readDepth": "TARGETED_OWNER_INTERFACE",
+      "verifiedSymbol": "Execution Plan; Scope / Target / Owner Boundary",
+      "authority": "GOVERNED_LOCAL_SOURCE"
+    },
+    {
+      "path": "governance/compat/build_worker_return_skeleton_scaffold.py",
+      "sha256": "b032fb7522fef3a7a423839151e27eb4518e7433cce4e742409bb1bb3741f974",
+      "readDepth": "TARGETED_OWNER_INTERFACE",
+      "verifiedSymbol": "build_worker_return_skeleton",
+      "authority": "GOVERNED_LOCAL_SOURCE"
+    },
+    {
+      "path": "governance/compat/run_worker_return_scaffold.py",
+      "sha256": "97cc22a7c3cae8e9bd7522f2e666e6894c557e1e87245f8f66060d82d8c24168",
+      "readDepth": "TARGETED_OWNER_INTERFACE",
+      "verifiedSymbol": "build_scaffold",
+      "authority": "GOVERNED_LOCAL_SOURCE"
+    },
+    {
+      "path": "governance/compat/test_worker_return_scaffold_friction.py",
+      "sha256": "d5dbb6101f0d5cb4cfa1b01b26987ce8653b32d639a6e5c804ac9286f79d2408",
+      "readDepth": "TARGETED_OWNER_INTERFACE",
+      "verifiedSymbol": "WorkerReturnScaffoldFrictionTests",
+      "authority": "GOVERNED_LOCAL_SOURCE"
+    },
+    {
+      "path": "docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md",
+      "sha256": "135519063b3c04ff1addd6afcb7b476895b2b23024e95bc3942ec74edec4a2fe",
+      "readDepth": "TARGETED_OWNER_INTERFACE",
+      "verifiedSymbol": "Worker Return Packet Shape Contract",
+      "authority": "GOVERNED_LOCAL_SOURCE"
+    },
+    {
+      "path": "governance/compat/fixtures/woas_r3_worker_return_skeleton_golden.md",
+      "sha256": "e3ec4828879d7db62982d5fad53f94d3416df9e4e54d9d3f810ec624734dca6d",
+      "readDepth": "TARGETED_OWNER_INTERFACE",
+      "verifiedSymbol": "Worker Experience Retrospective",
+      "authority": "GOVERNED_LOCAL_SOURCE"
+    },
+    {
+      "path": "governance/compat/test_build_dispatch_packet_scaffold.py",
+      "sha256": "e0ccf3581888213bb900ca96e2dac090e504534675775ad13afbdc3b5a7a8c43",
+      "readDepth": "TARGETED_OWNER_INTERFACE",
+      "verifiedSymbol": "TestWorkerReturnSkeleton",
+      "authority": "GOVERNED_LOCAL_SOURCE"
+    },
+    {
+      "path": "governance/compat/check_worker_experience_retrospective.py",
+      "sha256": "230f30ec0821e94f56daeabcb3b134459706089dae945777f59eb779fa0c0d88",
+      "readDepth": "TARGETED_OWNER_INTERFACE",
+      "verifiedSymbol": "diagnose",
+      "authority": "GOVERNED_LOCAL_SOURCE"
+    },
+    {
+      "path": "governance/compat/check_work_order_acceptance_ledger.py",
+      "sha256": "8b6ce487f01eb432cab16456da98c79f0995468f6a1da8c16765d204cc6a39b4",
+      "readDepth": "TARGETED_OWNER_INTERFACE",
+      "verifiedSymbol": "validate_return",
+      "authority": "GOVERNED_LOCAL_SOURCE"
+    },
+    {
+      "path": "governance/compat/check_review_cost_control.py",
+      "sha256": "82d970a5f89fb33bb4d400ffc64330d1ee54c637a2817295beb781c77d590c6c",
+      "readDepth": "TARGETED_OWNER_INTERFACE",
+      "verifiedSymbol": "diagnose_worker_return",
+      "authority": "GOVERNED_LOCAL_SOURCE"
+    }
+  ],
+  "workerPaths": [
+    "governance/compat/build_worker_return_skeleton_scaffold.py",
+    "governance/compat/run_worker_return_scaffold.py",
+    "governance/compat/test_worker_return_scaffold_friction.py",
+    "docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md",
+    "governance/compat/fixtures/woas_r3_worker_return_skeleton_golden.md",
+    "governance/compat/test_build_dispatch_packet_scaffold.py",
+    "docs/reviews/CVF_WRS_FR1_R1_SCAFFOLD_FRICTION_REPAIR_WORKER_RETURN_2026-10-04.md",
+    "docs/reviews/evidence/cvf-wrs-fr1-r1-scaffold-friction-2026-10-04.json"
+  ],
+  "dispatchPaths": [
+    "docs/baselines/CVF_GC018_WRS_FR1_R1_SCAFFOLD_FRICTION_REPAIR_2026-10-04.md",
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_WRS_FR1_R1_SCAFFOLD_FRICTION_REPAIR_2026-10-04.md",
+    "docs/reviews/evidence/cvf-wrs-fr1-r1-dispatch-inputs-2026-10-04.json",
+    "docs/reviews/evidence/cvf-wrs-fr1-r1-worker-return-skeleton-2026-10-04.txt"
+  ],
+  "localContinuityPaths": [
+    "AGENT_HANDOFF_V63_2026-09-18.md",
+    "CVF_SESSION_MEMORY.md",
+    "CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json",
+    "CVF_SESSION/state/entries/nextAllowedMove.json",
+    "CVF_SESSION/ACTIVE_SESSION_STATE.json",
+    "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json"
+  ],
+  "priorFindingSetDigest": "f46e2c9cec0534a621d2f9145cd6b731109b789afb1fa5f2d9dae3459e2621e7",
+  "priorFindingSetSerialization": "UTF-8 json.dumps(consolidatedFindings,sort_keys=True,separators=(comma,colon))",
+  "consolidatedFindings": [
+    {
+      "id": "WRS-FR1-F1",
+      "priority": "P1",
+      "path": "governance/compat/build_worker_return_skeleton_scaffold.py",
+      "line": 260,
+      "finding": "Production batch-ID special case preserves defective output only for WOAS-R3-GOLDEN and duplicates the complete renderer. Changing only batchId loses acceptance/readiness guidance and returns a retro token refused by the current consumer. Existing golden assertion no longer exercises corrected output. No declared compatibility boundary admits this batch-name branch.",
+      "requiredRepair": "Remove batch-ID behavior and duplicate renderer; apply guidance uniformly. Update the intended-change golden fixture and its relevant assertion under a Local scope amendment; never keep a production test-name exception to obtain a green suite."
+    },
+    {
+      "id": "WRS-FR1-F2",
+      "priority": "P2",
+      "path": "governance/compat/test_worker_return_scaffold_friction.py",
+      "line": 104,
+      "finding": "Completed acceptance/readiness/LOW and malformed row/readiness cases use only standalone FULL output; NA/duplicate/wrong-reason cases use standalone header strings rather than completed generator outputs. Four-way coverage currently checks raw guidance and incomplete acceptance/retro only. Evidence consumer_tests_pass for every profile is broader than worker regression coverage.",
+      "requiredRepair": "Parameterize actual generated outputs across both helpers and both profiles for completed acceptance/readiness/LOW/NA and negative mutations. Add batch-ID invariance regression and retain current consumers. Local44 shows ordinary outputs can work, but does not replace the requested durable worker regression guards."
+    },
+    {
+      "id": "WRS-FR1-F3",
+      "priority": "P2",
+      "path": "docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md",
+      "line": 916,
+      "finding": "The 1123-line count is preserved partly by collapsing unrelated commit-steward and raw-memory paragraphs into long single lines. Dispatch expressly prohibits compressed rule packing and unrelated rewriting to meet the no-growth budget.",
+      "requiredRepair": "Restore unrelated paragraph wrapping and replace only the scaffold-guidance paragraphs with concise guidance within the original 1123-line budget; retain all normative tokens and links."
+    }
+  ],
+  "dependencyAudit": {
+    "contract": "REQ-1 blocked by batch-ID fork; REQ-2 durable regression coverage partial; REQ-3 numeric size/checker hash claims confirmed, targeted template constraint violated",
+    "schema": "Existing three consumer hashes match; no schema/checker edits",
+    "path": "Original exact six worker paths observed; Local stores review inside existing return/evidence; no implementation commit",
+    "authority": "User-selected authoring repair only; current work order forbids existing fixture/test edits and worker redispatch",
+    "test": "Worker6+79+23 results consumed without rerun; Local44 independent ordinary-output expectations match; batch-name counterexample observed",
+    "range": "HEAD unchanged at execution438ee56b0; no staging; worker material remains pending",
+    "commitPlan": "No material/closure/continuity commit for rejected return; Local scope amendment is needed before new worker release"
+  },
+  "taskManifest": {
+    "schemaVersion": "cvf.taskGovernanceManifest.v1",
+    "taskId": "CVF-WRS-FR1-R1",
+    "requestedProfile": "P3_ELEVATED",
+    "classification": {
+      "taskKind": "PURE_LOCAL_IMPLEMENTATION",
+      "authorityImpact": "ENRICHES_EXISTING_OWNER",
+      "externalEffect": "LOCAL_REVERSIBLE",
+      "dataSensitivity": "PRIVATE_REPO",
+      "reversibility": "GIT_REVERSIBLE",
+      "sourceScale": "NAMED_FILES",
+      "delegation": "MULTI_ROLE_NO_COMMIT",
+      "novelty": "KNOWN_PATTERN"
+    },
+    "pathFamilies": [
+      "governance/compat/build_worker_return_skeleton_scaffold.py",
+      "governance/compat/run_worker_return_scaffold.py",
+      "governance/compat/test_worker_return_scaffold_friction.py",
+      "docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md",
+      "governance/compat/fixtures/woas_r3_worker_return_skeleton_golden.md",
+      "governance/compat/test_build_dispatch_packet_scaffold.py",
+      "docs/reviews/CVF_WRS_FR1_R1_SCAFFOLD_FRICTION_REPAIR_WORKER_RETURN_2026-10-04.md",
+      "docs/reviews/evidence/cvf-wrs-fr1-r1-scaffold-friction-2026-10-04.json",
+      "docs/baselines/CVF_GC018_WRS_FR1_R1_SCAFFOLD_FRICTION_REPAIR_2026-10-04.md",
+      "docs/work_orders/CVF_AGENT_WORK_ORDER_WRS_FR1_R1_SCAFFOLD_FRICTION_REPAIR_2026-10-04.md",
+      "docs/reviews/evidence/cvf-wrs-fr1-r1-dispatch-inputs-2026-10-04.json",
+      "docs/reviews/evidence/cvf-wrs-fr1-r1-worker-return-skeleton-2026-10-04.txt",
+      "AGENT_HANDOFF_V63_2026-09-18.md",
+      "CVF_SESSION_MEMORY.md",
+      "CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json",
+      "CVF_SESSION/state/entries/nextAllowedMove.json",
+      "CVF_SESSION/ACTIVE_SESSION_STATE.json",
+      "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json"
+    ],
+    "claims": [
+      "Uniform existing renderer/golden reconciliation; no test-name production branch",
+      "Durable actual-consumer four-way tests and targeted template no-growth"
+    ],
+    "requiredProof": [
+      "PROOF-UNIFORM-GOLDEN",
+      "PROOF-FOUR-WAY-CONSUMERS",
+      "PROOF-TEMPLATE-RETURN"
+    ],
+    "operatorCheckpoints": [
+      "CCMA parked; actual projects and production join guard excluded"
+    ],
+    "forbiddenEffects": [
+      "PROVIDER_CALL",
+      "NETWORK",
+      "PROJECT_MUTATION",
+      "PUBLIC_SYNC",
+      "DEPLOYMENT",
+      "WORKER_COMMIT",
+      "HISTORY_REWRITE"
+    ],
+    "sourceEvidence": {
+      "selectedFilesFullyRead": false,
+      "corpusReceiptRef": null,
+      "completenessClaimChanged": false
+    }
+  },
+  "taskRoutingReceipt": {
+    "schemaVersion": "cvf.taskGovernanceRoute.v1",
+    "taskId": "CVF-WRS-FR1-R1",
+    "profile": "P3_ELEVATED",
+    "computedMinimumProfile": "P3_ELEVATED",
+    "classification": {
+      "taskKind": "PURE_LOCAL_IMPLEMENTATION",
+      "authorityImpact": "ENRICHES_EXISTING_OWNER",
+      "externalEffect": "LOCAL_REVERSIBLE",
+      "dataSensitivity": "PRIVATE_REPO",
+      "reversibility": "GIT_REVERSIBLE",
+      "sourceScale": "NAMED_FILES",
+      "delegation": "MULTI_ROLE_NO_COMMIT",
+      "novelty": "KNOWN_PATTERN"
+    },
+    "escalationTriggers": [
+      "CANONICAL_STANDARD_SURFACE",
+      "CONTINUITY_STATE_SURFACE",
+      "DELEGATION_MULTI_ROLE_NO_COMMIT",
+      "GOVERNANCE_MACHINE_SURFACE",
+      "TASKKIND_PURE_LOCAL_IMPLEMENTATION"
+    ],
+    "selectedBundles": [
+      "CORE_INTEGRITY",
+      "ARTIFACT_SHAPE",
+      "SOURCE_PROVENANCE",
+      "DELEGATION_HANDOFF",
+      "CODE_QUALITY",
+      "CONTINUITY"
+    ],
+    "skippedBundles": {
+      "CORPUS_ACCOUNTING": "NO_CORPUS_OR_COMPLETENESS_CHANGE",
+      "STATE_AND_SECURITY": "NO_STATE_AUTH_SECRET_DEPENDENCY_OR_MUTATION_TRIGGER",
+      "RUNTIME_LIVE": "NO_RUNTIME_NETWORK_OR_LIVE_EFFECT",
+      "PUBLIC_RELEASE": "NO_PUBLIC_RELEASE_OR_DESTRUCTIVE_EFFECT"
+    },
+    "estimatedCommandCount": 6,
+    "selectiveExecutionAuthorized": false,
+    "legacyGateDisposition": "RUN_FULL_LEGACY_BUNDLE",
+    "receiptStatus": "ROUTED_SHADOW",
+    "validationErrors": []
+  },
+  "originalPendingSnapshot": "0a3f680c89c41a67aa024ce340b34f1e461b6cea",
+  "acceptanceDisposition": "ORIGINAL_REQUEST_CHANGES_REWORK_NOT_EXECUTED",
+  "scaffoldCommand": [
+    "python",
+    "-B",
+    "governance/compat/build_dispatch_packet_scaffold.py",
+    "--packet-kind",
+    "protected-governance-path",
+    "--batch-id",
+    "CVF-WRS-FR1-R1",
+    "--title",
+    "Scaffold friction repair rework",
+    "--date",
+    "2026-10-04",
+    "--base",
+    "5e5d471079d9b9026348351a7f562972f8c3a8f2",
+    "--commit-mode",
+    "WORKER_MUST_NOT_COMMIT",
+    "--dispatch-kind",
+    "REWORK",
+    "--review-round-count",
+    "1",
+    "--root-cause-cluster-id",
+    "INITIAL_SCOPE_CVF-WRS-FR1",
+    "--prior-finding-set-digest",
+    "f46e2c9cec0534a621d2f9145cd6b731109b789afb1fa5f2d9dae3459e2621e7",
+    "--include-worker-return-skeleton",
+    "--stdout"
+  ],
+  "scecAdmission": {
+    "requiredDisposition": "ROOT_CONTRACT_REQUIRED",
+    "successorScope": "INTEGRATED_ROOT_CONTRACT",
+    "reviewerScopeExpansions": 1,
+    "integratedContractOwner": "docs/work_orders/CVF_AGENT_WORK_ORDER_WRS_FR1_R1_SCAFFOLD_FRICTION_REPAIR_2026-10-04.md",
+    "unfinishedSkeletonDisposition": "STOP_REASSESS_ARCHITECTURE",
+    "completedReturnRequiredDisposition": "READY_WITH_EXECUTABLE_PROOF",
+    "completedReturnRequiredScope": "EXECUTABLE_IMPLEMENTATION"
+  }
+}
