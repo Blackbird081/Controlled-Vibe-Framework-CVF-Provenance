@@ -233,7 +233,18 @@ def _section_body(section: str) -> list[str]:
         ]
     if section == "Worker Experience Retrospective":
         return [
-            "WORKER_EXPERIENCE_RETRO_NA_WITH_REASON - TODO or replace with concise retrospective.",
+            "WORKER_EXPERIENCE_RETRO:",
+            "frictionLevel: TO_FILL_FROM_ACTUAL_EXECUTION",
+            "frictionType: TO_FILL_FROM_ACTUAL_EXECUTION",
+            "observedStep: TO_FILL_FROM_ACTUAL_EXECUTION",
+            "preventiveControlCandidate: TO_FILL_FROM_ACTUAL_EXECUTION",
+            "",
+            "Complete this structured branch with truthful observed fields. "
+            "Only if actual execution had no friction, replace the entire branch using "
+            "the checker RETRO_NA_TOKEN (WORKER_EXPERIENCE_RETRO_NA_WITH_REASON with colon) and "
+            "exact reason 'no friction beyond normal gates; no gate surprise, no helper gap, "
+            "no worktree contamination this return'; never keep both branches or assert no surprise "
+            "before execution.",
         ]
     if section == "Worker Return Scaffold Effectiveness Measurement":
         return [
@@ -373,6 +384,11 @@ def build_scaffold(title: str = "", profile: str = FULL_PROFILE) -> str:
         "```acceptance-evidence-json",
         '{"schemaVersion":"cvf.workOrderAcceptanceEvidence@1.0.0","executionBaseHead":"TO_FILL","results":[]}',
         "```",
+        "",
+        "Evidence completion guidance: each results row must contain exactly requirementId, actualArtifacts, proofRefs, status (PASS or BLOCKED), matching the dispatcher ledger; the empty array is an unfinished scaffold. Example row format: "
+        '{"requirementId": "REQ-1", "actualArtifacts": ["docs/reviews/x.md"], "proofRefs": ["PROOF-1"], "status": "PASS"}',
+        "",
+        "Readiness completion guidance: READY_FOR_REVIEW requires completed dependency sweep, actual productionBindingEvidence and PASS_TARGETED_DEFECT_CLASS; otherwise keep BLOCKED_WITH_REASON and truthful pending fields. This skeleton grants no readiness or gate PASS.",
         "",
         "NOTE: L1 scaffold only. Replace every TODO line before returning for review.",
         "",

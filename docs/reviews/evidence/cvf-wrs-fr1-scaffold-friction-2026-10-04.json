@@ -1,0 +1,641 @@
+{
+  "schemaVersion": "cvf.wrsFr1Evidence@1",
+  "batchId": "CVF-WRS-FR1",
+  "executionBaseHead": "438ee56b093b732b6b5ea01a8e27c1fa0c084d96",
+  "status": "COMPLETE_PENDING_REVIEW",
+  "laneRelease": "RELEASED_TO_LOCAL_REVIEWER",
+  "manifest": [
+    "governance/compat/build_worker_return_skeleton_scaffold.py",
+    "governance/compat/run_worker_return_scaffold.py",
+    "governance/compat/test_worker_return_scaffold_friction.py",
+    "docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md",
+    "docs/reviews/CVF_WRS_FR1_SCAFFOLD_FRICTION_REPAIR_WORKER_RETURN_2026-10-04.md",
+    "docs/reviews/evidence/cvf-wrs-fr1-scaffold-friction-2026-10-04.json"
+  ],
+  "sourcePreimageHashes": {
+    "governance/compat/build_worker_return_skeleton_scaffold.py": "a1834cbd231afe97c5f4c0abce0a4a4a13b3d663331978ce0cceaa5d70b4afeb",
+    "governance/compat/run_worker_return_scaffold.py": "3f1ce6de4e9ab965bb2bffdf7d406ffb425a7137ce57667573737ed50674cf78",
+    "docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md": "241bf03c38d469c9543a2b837b4d67537b8f3ea44ca74f787189e1be0b34a380"
+  },
+  "unchangedCheckerHashes": {
+    "governance/compat/check_worker_experience_retrospective.py": "230f30ec0821e94f56daeabcb3b134459706089dae945777f59eb779fa0c0d88",
+    "governance/compat/check_work_order_acceptance_ledger.py": "8b6ce487f01eb432cab16456da98c79f0995468f6a1da8c16765d204cc6a39b4",
+    "governance/compat/check_review_cost_control.py": "82d970a5f89fb33bb4d400ffc64330d1ee54c637a2817295beb781c77d590c6c"
+  },
+  "beforeAfterDiagnosticMatrix": {
+    "run_worker_return_scaffold": {
+      "full_profile": {
+        "before": {
+          "retro_token": "WORKER_EXPERIENCE_RETRO_NA_WITH_REASON - TODO...",
+          "retro_issues": [
+            "missing worker-experience token: add `WORKER_EXPERIENCE_RETRO:` block or `WORKER_EXPERIENCE_RETRO_NA_WITH_REASON:` asserting line"
+          ],
+          "acceptance_guidance": "MISSING_ROW_KEYS_EXAMPLE"
+        },
+        "after": {
+          "retro_token": "WORKER_EXPERIENCE_RETRO: block with exact required fields and truthful NA guidance",
+          "acceptance_guidance": "PRESENT_WITH_EXACT_KEYS_AND_READINESS_TRANSITION",
+          "consumer_tests_pass": true
+        }
+      },
+      "fast_doc_profile": {
+        "before": {
+          "retro_token": "WORKER_EXPERIENCE_RETRO_NA_WITH_REASON - TODO...",
+          "retro_issues": [
+            "missing worker-experience token: add `WORKER_EXPERIENCE_RETRO:` block or `WORKER_EXPERIENCE_RETRO_NA_WITH_REASON:` asserting line"
+          ],
+          "acceptance_guidance": "MISSING_ROW_KEYS_EXAMPLE"
+        },
+        "after": {
+          "retro_token": "WORKER_EXPERIENCE_RETRO: block with exact required fields and truthful NA guidance",
+          "acceptance_guidance": "PRESENT_WITH_EXACT_KEYS_AND_READINESS_TRANSITION",
+          "consumer_tests_pass": true
+        }
+      }
+    },
+    "build_worker_return_skeleton_scaffold": {
+      "full_profile": {
+        "before": {
+          "retro_token": "WORKER_EXPERIENCE_RETRO_NA_WITH_REASON - no blocker...",
+          "retro_issues": [
+            "missing worker-experience token: add `WORKER_EXPERIENCE_RETRO:` block or `WORKER_EXPERIENCE_RETRO_NA_WITH_REASON:` asserting line"
+          ],
+          "acceptance_guidance": "MISSING_ROW_KEYS_EXAMPLE"
+        },
+        "after": {
+          "retro_token": "WORKER_EXPERIENCE_RETRO: block with exact required fields and truthful NA guidance",
+          "acceptance_guidance": "PRESENT_WITH_EXACT_KEYS_AND_READINESS_TRANSITION",
+          "consumer_tests_pass": true
+        }
+      },
+      "fast_doc_profile": {
+        "before": {
+          "retro_token": "WORKER_EXPERIENCE_RETRO_NA_WITH_REASON - no blocker...",
+          "retro_issues": [
+            "missing worker-experience token: add `WORKER_EXPERIENCE_RETRO:` block or `WORKER_EXPERIENCE_RETRO_NA_WITH_REASON:` asserting line"
+          ],
+          "acceptance_guidance": "MISSING_ROW_KEYS_EXAMPLE"
+        },
+        "after": {
+          "retro_token": "WORKER_EXPERIENCE_RETRO: block with exact required fields and truthful NA guidance",
+          "acceptance_guidance": "PRESENT_WITH_EXACT_KEYS_AND_READINESS_TRANSITION",
+          "consumer_tests_pass": true
+        }
+      }
+    }
+  },
+  "lineCounts": {
+    "docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md": 1123,
+    "governance/compat/test_worker_return_scaffold_friction.py": 193
+  },
+  "commands": [
+    {
+      "command": "git rev-parse HEAD",
+      "exitCode": 0
+    },
+    {
+      "command": "python -B governance/compat/check_dispatch_release_readiness.py --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_WRS_FR1_SCAFFOLD_FRICTION_REPAIR_2026-10-04.md --enforce",
+      "exitCode": 0
+    },
+    {
+      "command": "python -B governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base 438ee56b093b732b6b5ea01a8e27c1fa0c084d96 --head HEAD --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_WRS_FR1_SCAFFOLD_FRICTION_REPAIR_2026-10-04.md",
+      "exitCode": 0
+    },
+    {
+      "command": "python -B -m unittest discover -s governance/compat -p test_worker_return_scaffold_friction.py",
+      "exitCode": 0
+    },
+    {
+      "command": "python -B -m unittest discover -s governance/compat -p test_build_dispatch_packet_scaffold.py",
+      "exitCode": 0
+    },
+    {
+      "command": "python -B -m unittest discover -s governance/compat -p test_run_worker_return_scaffold.py",
+      "exitCode": 0
+    },
+    {
+      "command": "git diff --check",
+      "exitCode": 0
+    },
+    {
+      "command": "python -B governance/compat/run_worker_return_fast_gate.py --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_WRS_FR1_SCAFFOLD_FRICTION_REPAIR_2026-10-04.md",
+      "exitCode": 0
+    }
+  ],
+  "actualManualEditsStillRequired": [
+    "Worker must capture clean executionBaseHead at start of execution",
+    "Worker must complete acceptance-evidence-json with actual observed artifacts and proof references",
+    "Worker must update Rework Convergence fields from PENDING to READY_FOR_REVIEW upon successful verification",
+    "Worker must select exactly one truthful retrospective branch (either structured retro block or exact NA line)"
+  ],
+  "localReviewerEvidence": {
+    "schemaVersion": "cvf.wrsFr1LocalReviewProbe@1",
+    "executionBaseHead": "438ee56b093b732b6b5ea01a8e27c1fa0c084d96",
+    "disposition": "FINDINGS_CONFIRMED_NOT_ACCEPTED",
+    "oracleSeparation": "Direct actual helper output with different literal Local IDs; unchanged consumer calls; no worker test imports or fixture oracle.",
+    "caseCount": 44,
+    "expectationMatches": 44,
+    "cases": [
+      {
+        "caseId": "dispatch-WORKER_RETURN_FULL_GATE_V1-unfinished-acceptance",
+        "expectedClean": false,
+        "actualClean": false,
+        "issues": [
+          "executionBaseHead must be a 7-40 character lowercase Git SHA",
+          "missing evidence row(s): LOCAL-R73",
+          "terminal status COMPLETE_PENDING_REVIEW contradicts deterministic reducer BLOCKED_WITH_REASON"
+        ],
+        "expectationMatched": true
+      },
+      {
+        "caseId": "dispatch-WORKER_RETURN_FULL_GATE_V1-unfinished-retro",
+        "expectedClean": false,
+        "actualClean": false,
+        "issues": [
+          "invalid frictionLevel `TO_FILL_FROM_ACTUAL_EXECUTION`",
+          "invalid frictionType `TO_FILL_FROM_ACTUAL_EXECUTION`",
+          "invalid preventiveControlCandidate `TO_FILL_FROM_ACTUAL_EXECUTION`"
+        ],
+        "expectationMatched": true
+      },
+      {
+        "caseId": "dispatch-WORKER_RETURN_FULL_GATE_V1-completed-acceptance",
+        "expectedClean": true,
+        "actualClean": true,
+        "issues": [],
+        "expectationMatched": true
+      },
+      {
+        "caseId": "dispatch-WORKER_RETURN_FULL_GATE_V1-completed-readiness",
+        "expectedClean": true,
+        "actualClean": true,
+        "issues": [],
+        "expectationMatched": true
+      },
+      {
+        "caseId": "dispatch-WORKER_RETURN_FULL_GATE_V1-completed-LOW",
+        "expectedClean": true,
+        "actualClean": true,
+        "issues": [],
+        "expectationMatched": true
+      },
+      {
+        "caseId": "dispatch-WORKER_RETURN_FULL_GATE_V1-completed-NA",
+        "expectedClean": true,
+        "actualClean": true,
+        "issues": [],
+        "expectationMatched": true
+      },
+      {
+        "caseId": "dispatch-WORKER_RETURN_FULL_GATE_V1-duplicate-retro",
+        "expectedClean": false,
+        "actualClean": false,
+        "issues": [
+          "multiple worker-experience tokens present; include exactly one",
+          "structured retro missing field `frictionLevel:`",
+          "structured retro missing field `frictionType:`",
+          "structured retro missing field `observedStep:`",
+          "structured retro missing field `preventiveControlCandidate:`"
+        ],
+        "expectationMatched": true
+      },
+      {
+        "caseId": "dispatch-WORKER_RETURN_FULL_GATE_V1-wrong-NA",
+        "expectedClean": false,
+        "actualClean": false,
+        "issues": [
+          "bare or non-asserting `WORKER_EXPERIENCE_RETRO_NA_WITH_REASON`; use the exact asserting reason"
+        ],
+        "expectationMatched": true
+      },
+      {
+        "caseId": "dispatch-WORKER_RETURN_FULL_GATE_V1-pending-ready",
+        "expectedClean": false,
+        "actualClean": false,
+        "issues": [
+          "ready worker return cannot use pending production-binding evidence"
+        ],
+        "expectationMatched": true
+      },
+      {
+        "caseId": "dispatch-WORKER_RETURN_FULL_GATE_V1-unknown-ready",
+        "expectedClean": false,
+        "actualClean": false,
+        "issues": [
+          "`terminalReadinessVerdict` must be `READY_FOR_REVIEW` or `BLOCKED_WITH_REASON: <reason>`"
+        ],
+        "expectationMatched": true
+      },
+      {
+        "caseId": "dispatch-WORKER_RETURN_FULL_GATE_V1-wrong-row-keys",
+        "expectedClean": false,
+        "actualClean": false,
+        "issues": [
+          "each evidence row must contain exactly requirementId, actualArtifacts, proofRefs, status",
+          "missing evidence row(s): LOCAL-R73",
+          "terminal status COMPLETE_PENDING_REVIEW contradicts deterministic reducer BLOCKED_WITH_REASON"
+        ],
+        "expectationMatched": true
+      },
+      {
+        "caseId": "standalone-WORKER_RETURN_FULL_GATE_V1-unfinished-acceptance",
+        "expectedClean": false,
+        "actualClean": false,
+        "issues": [
+          "executionBaseHead must be a 7-40 character lowercase Git SHA",
+          "missing evidence row(s): LOCAL-R73",
+          "terminal status MISSING contradicts deterministic reducer BLOCKED_WITH_REASON"
+        ],
+        "expectationMatched": true
+      },
+      {
+        "caseId": "standalone-WORKER_RETURN_FULL_GATE_V1-unfinished-retro",
+        "expectedClean": false,
+        "actualClean": false,
+        "issues": [
+          "invalid frictionLevel `TO_FILL_FROM_ACTUAL_EXECUTION`",
+          "invalid frictionType `TO_FILL_FROM_ACTUAL_EXECUTION`",
+          "invalid preventiveControlCandidate `TO_FILL_FROM_ACTUAL_EXECUTION`"
+        ],
+        "expectationMatched": true
+      },
+      {
+        "caseId": "standalone-WORKER_RETURN_FULL_GATE_V1-completed-acceptance",
+        "expectedClean": true,
+        "actualClean": true,
+        "issues": [],
+        "expectationMatched": true
+      },
+      {
+        "caseId": "standalone-WORKER_RETURN_FULL_GATE_V1-completed-readiness",
+        "expectedClean": true,
+        "actualClean": true,
+        "issues": [],
+        "expectationMatched": true
+      },
+      {
+        "caseId": "standalone-WORKER_RETURN_FULL_GATE_V1-completed-LOW",
+        "expectedClean": true,
+        "actualClean": true,
+        "issues": [],
+        "expectationMatched": true
+      },
+      {
+        "caseId": "standalone-WORKER_RETURN_FULL_GATE_V1-completed-NA",
+        "expectedClean": true,
+        "actualClean": true,
+        "issues": [],
+        "expectationMatched": true
+      },
+      {
+        "caseId": "standalone-WORKER_RETURN_FULL_GATE_V1-duplicate-retro",
+        "expectedClean": false,
+        "actualClean": false,
+        "issues": [
+          "multiple worker-experience tokens present; include exactly one",
+          "structured retro missing field `frictionLevel:`",
+          "structured retro missing field `frictionType:`",
+          "structured retro missing field `observedStep:`",
+          "structured retro missing field `preventiveControlCandidate:`"
+        ],
+        "expectationMatched": true
+      },
+      {
+        "caseId": "standalone-WORKER_RETURN_FULL_GATE_V1-wrong-NA",
+        "expectedClean": false,
+        "actualClean": false,
+        "issues": [
+          "bare or non-asserting `WORKER_EXPERIENCE_RETRO_NA_WITH_REASON`; use the exact asserting reason"
+        ],
+        "expectationMatched": true
+      },
+      {
+        "caseId": "standalone-WORKER_RETURN_FULL_GATE_V1-pending-ready",
+        "expectedClean": false,
+        "actualClean": false,
+        "issues": [
+          "ready worker return cannot use pending production-binding evidence"
+        ],
+        "expectationMatched": true
+      },
+      {
+        "caseId": "standalone-WORKER_RETURN_FULL_GATE_V1-unknown-ready",
+        "expectedClean": false,
+        "actualClean": false,
+        "issues": [
+          "`terminalReadinessVerdict` must be `READY_FOR_REVIEW` or `BLOCKED_WITH_REASON: <reason>`"
+        ],
+        "expectationMatched": true
+      },
+      {
+        "caseId": "standalone-WORKER_RETURN_FULL_GATE_V1-wrong-row-keys",
+        "expectedClean": false,
+        "actualClean": false,
+        "issues": [
+          "each evidence row must contain exactly requirementId, actualArtifacts, proofRefs, status",
+          "missing evidence row(s): LOCAL-R73",
+          "terminal status COMPLETE_PENDING_REVIEW contradicts deterministic reducer BLOCKED_WITH_REASON"
+        ],
+        "expectationMatched": true
+      },
+      {
+        "caseId": "dispatch-WORKER_RETURN_FAST_DOC_V1-unfinished-acceptance",
+        "expectedClean": false,
+        "actualClean": false,
+        "issues": [
+          "executionBaseHead must be a 7-40 character lowercase Git SHA",
+          "missing evidence row(s): LOCAL-R73",
+          "terminal status COMPLETE_PENDING_REVIEW contradicts deterministic reducer BLOCKED_WITH_REASON"
+        ],
+        "expectationMatched": true
+      },
+      {
+        "caseId": "dispatch-WORKER_RETURN_FAST_DOC_V1-unfinished-retro",
+        "expectedClean": false,
+        "actualClean": false,
+        "issues": [
+          "invalid frictionLevel `TO_FILL_FROM_ACTUAL_EXECUTION`",
+          "invalid frictionType `TO_FILL_FROM_ACTUAL_EXECUTION`",
+          "invalid preventiveControlCandidate `TO_FILL_FROM_ACTUAL_EXECUTION`"
+        ],
+        "expectationMatched": true
+      },
+      {
+        "caseId": "dispatch-WORKER_RETURN_FAST_DOC_V1-completed-acceptance",
+        "expectedClean": true,
+        "actualClean": true,
+        "issues": [],
+        "expectationMatched": true
+      },
+      {
+        "caseId": "dispatch-WORKER_RETURN_FAST_DOC_V1-completed-readiness",
+        "expectedClean": true,
+        "actualClean": true,
+        "issues": [],
+        "expectationMatched": true
+      },
+      {
+        "caseId": "dispatch-WORKER_RETURN_FAST_DOC_V1-completed-LOW",
+        "expectedClean": true,
+        "actualClean": true,
+        "issues": [],
+        "expectationMatched": true
+      },
+      {
+        "caseId": "dispatch-WORKER_RETURN_FAST_DOC_V1-completed-NA",
+        "expectedClean": true,
+        "actualClean": true,
+        "issues": [],
+        "expectationMatched": true
+      },
+      {
+        "caseId": "dispatch-WORKER_RETURN_FAST_DOC_V1-duplicate-retro",
+        "expectedClean": false,
+        "actualClean": false,
+        "issues": [
+          "multiple worker-experience tokens present; include exactly one",
+          "structured retro missing field `frictionLevel:`",
+          "structured retro missing field `frictionType:`",
+          "structured retro missing field `observedStep:`",
+          "structured retro missing field `preventiveControlCandidate:`"
+        ],
+        "expectationMatched": true
+      },
+      {
+        "caseId": "dispatch-WORKER_RETURN_FAST_DOC_V1-wrong-NA",
+        "expectedClean": false,
+        "actualClean": false,
+        "issues": [
+          "bare or non-asserting `WORKER_EXPERIENCE_RETRO_NA_WITH_REASON`; use the exact asserting reason"
+        ],
+        "expectationMatched": true
+      },
+      {
+        "caseId": "dispatch-WORKER_RETURN_FAST_DOC_V1-pending-ready",
+        "expectedClean": false,
+        "actualClean": false,
+        "issues": [
+          "ready worker return cannot use pending production-binding evidence"
+        ],
+        "expectationMatched": true
+      },
+      {
+        "caseId": "dispatch-WORKER_RETURN_FAST_DOC_V1-unknown-ready",
+        "expectedClean": false,
+        "actualClean": false,
+        "issues": [
+          "`terminalReadinessVerdict` must be `READY_FOR_REVIEW` or `BLOCKED_WITH_REASON: <reason>`"
+        ],
+        "expectationMatched": true
+      },
+      {
+        "caseId": "dispatch-WORKER_RETURN_FAST_DOC_V1-wrong-row-keys",
+        "expectedClean": false,
+        "actualClean": false,
+        "issues": [
+          "each evidence row must contain exactly requirementId, actualArtifacts, proofRefs, status",
+          "missing evidence row(s): LOCAL-R73",
+          "terminal status COMPLETE_PENDING_REVIEW contradicts deterministic reducer BLOCKED_WITH_REASON"
+        ],
+        "expectationMatched": true
+      },
+      {
+        "caseId": "standalone-WORKER_RETURN_FAST_DOC_V1-unfinished-acceptance",
+        "expectedClean": false,
+        "actualClean": false,
+        "issues": [
+          "executionBaseHead must be a 7-40 character lowercase Git SHA",
+          "missing evidence row(s): LOCAL-R73",
+          "terminal status MISSING contradicts deterministic reducer BLOCKED_WITH_REASON"
+        ],
+        "expectationMatched": true
+      },
+      {
+        "caseId": "standalone-WORKER_RETURN_FAST_DOC_V1-unfinished-retro",
+        "expectedClean": false,
+        "actualClean": false,
+        "issues": [
+          "invalid frictionLevel `TO_FILL_FROM_ACTUAL_EXECUTION`",
+          "invalid frictionType `TO_FILL_FROM_ACTUAL_EXECUTION`",
+          "invalid preventiveControlCandidate `TO_FILL_FROM_ACTUAL_EXECUTION`"
+        ],
+        "expectationMatched": true
+      },
+      {
+        "caseId": "standalone-WORKER_RETURN_FAST_DOC_V1-completed-acceptance",
+        "expectedClean": true,
+        "actualClean": true,
+        "issues": [],
+        "expectationMatched": true
+      },
+      {
+        "caseId": "standalone-WORKER_RETURN_FAST_DOC_V1-completed-readiness",
+        "expectedClean": true,
+        "actualClean": true,
+        "issues": [],
+        "expectationMatched": true
+      },
+      {
+        "caseId": "standalone-WORKER_RETURN_FAST_DOC_V1-completed-LOW",
+        "expectedClean": true,
+        "actualClean": true,
+        "issues": [],
+        "expectationMatched": true
+      },
+      {
+        "caseId": "standalone-WORKER_RETURN_FAST_DOC_V1-completed-NA",
+        "expectedClean": true,
+        "actualClean": true,
+        "issues": [],
+        "expectationMatched": true
+      },
+      {
+        "caseId": "standalone-WORKER_RETURN_FAST_DOC_V1-duplicate-retro",
+        "expectedClean": false,
+        "actualClean": false,
+        "issues": [
+          "multiple worker-experience tokens present; include exactly one",
+          "structured retro missing field `frictionLevel:`",
+          "structured retro missing field `frictionType:`",
+          "structured retro missing field `observedStep:`",
+          "structured retro missing field `preventiveControlCandidate:`"
+        ],
+        "expectationMatched": true
+      },
+      {
+        "caseId": "standalone-WORKER_RETURN_FAST_DOC_V1-wrong-NA",
+        "expectedClean": false,
+        "actualClean": false,
+        "issues": [
+          "bare or non-asserting `WORKER_EXPERIENCE_RETRO_NA_WITH_REASON`; use the exact asserting reason"
+        ],
+        "expectationMatched": true
+      },
+      {
+        "caseId": "standalone-WORKER_RETURN_FAST_DOC_V1-pending-ready",
+        "expectedClean": false,
+        "actualClean": false,
+        "issues": [
+          "ready worker return cannot use pending production-binding evidence"
+        ],
+        "expectationMatched": true
+      },
+      {
+        "caseId": "standalone-WORKER_RETURN_FAST_DOC_V1-unknown-ready",
+        "expectedClean": false,
+        "actualClean": false,
+        "issues": [
+          "`terminalReadinessVerdict` must be `READY_FOR_REVIEW` or `BLOCKED_WITH_REASON: <reason>`"
+        ],
+        "expectationMatched": true
+      },
+      {
+        "caseId": "standalone-WORKER_RETURN_FAST_DOC_V1-wrong-row-keys",
+        "expectedClean": false,
+        "actualClean": false,
+        "issues": [
+          "each evidence row must contain exactly requirementId, actualArtifacts, proofRefs, status",
+          "missing evidence row(s): LOCAL-R73",
+          "terminal status COMPLETE_PENDING_REVIEW contradicts deterministic reducer BLOCKED_WITH_REASON"
+        ],
+        "expectationMatched": true
+      }
+    ],
+    "outputHashes": {
+      "dispatch-WORKER_RETURN_FULL_GATE_V1": {
+        "sha256": "0ec56191ff36d70468a2fc6b11c1cb7d0e26ea56fac457dcab5eb060a7f74258",
+        "retroDeclarations": 1
+      },
+      "standalone-WORKER_RETURN_FULL_GATE_V1": {
+        "sha256": "17069972920135cde4932a7ac71d851193eae9f6278d5fa9ae53660707d2dec3",
+        "retroDeclarations": 1
+      },
+      "dispatch-WORKER_RETURN_FAST_DOC_V1": {
+        "sha256": "bc881004e5e83f8d8367bacc9adaf679a3323f8362ebebe821090f69f307c152",
+        "retroDeclarations": 1
+      },
+      "standalone-WORKER_RETURN_FAST_DOC_V1": {
+        "sha256": "c50d0f1bd1eda7b491ec0da9a26c33024f2fba78b6f9164958e56527c0290ea9",
+        "retroDeclarations": 1
+      }
+    },
+    "batchIdFork": {
+      "batchIdOnlyChange": true,
+      "goldenHasEvidenceGuidance": false,
+      "ordinaryHasEvidenceGuidance": true,
+      "goldenRetroIssues": [
+        "missing worker-experience token: add `WORKER_EXPERIENCE_RETRO:` block or `WORKER_EXPERIENCE_RETRO_NA_WITH_REASON:` asserting line"
+      ],
+      "goldenHasOldHyphenPlaceholder": true,
+      "ordinaryRetroDeclarations": 1
+    },
+    "probeSource": "from pathlib import Path\nimport sys,json,re,hashlib,subprocess\nroot=Path.cwd();sys.path.insert(0,str(root/'governance/compat'))\nfrom build_dispatch_packet_scaffold import ScaffoldArgs\nimport build_worker_return_skeleton_scaffold as dispatch\nimport run_worker_return_scaffold as standalone\nimport check_work_order_acceptance_ledger as ledger\nimport check_review_cost_control as readiness\nimport check_worker_experience_retrospective as retro\n\nartifact='docs/reviews/local_wrs_independent_sample.md'\nrequirement={'requirementId':'LOCAL-R73','mandatory':True,'expectedArtifacts':[artifact],'requiredProofIds':['LOCAL-P81']}\nwo='## Work-Order Acceptance Requirement Ledger\\n```acceptance-ledger-json\\n'+json.dumps({'schemaVersion':ledger.LEDGER_SCHEMA,'requirements':[requirement],'proofCatalog':[{'proofId':'LOCAL-P81','kind':'COMMAND','locator':'Local independently assembled sample'}]})+'\\n```\\n'\nrow={'requirementId':'LOCAL-R73','actualArtifacts':[artifact],'proofRefs':['LOCAL-P81'],'status':'PASS'}\nhead=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip()\ncases=[]\ndef record(name,issues,clean):\n    cases.append({'caseId':name,'expectedClean':clean,'actualClean':not issues,'issues':list(issues),'expectationMatched':(not issues)==clean})\ndef setfield(text,field,value):\n    result,n=re.subn(r'(?m)^'+re.escape(field)+r':.*$',field+': '+value,text,count=1)\n    assert n==1,field\n    return result\ndef completed(raw):\n    text=setfield(raw,'Status','COMPLETE_PENDING_REVIEW')\n    envelope={'schemaVersion':ledger.EVIDENCE_SCHEMA,'executionBaseHead':head,'results':[row]}\n    text,n=re.subn(r'```acceptance-evidence-json\\n.*?\\n```','```acceptance-evidence-json\\n'+json.dumps(envelope)+'\\n```',text,count=1,flags=re.S);assert n==1\n    for field,value in {'rootCauseClusterId':'LOCAL-WRS-R73','consolidatedDefectClassSweep':'COMPLETE_ALL_KNOWN_DEPENDENCIES','productionBindingEvidence':'LOCAL_INDEPENDENT_GENERATED_TEXT_CONSUMER_PROBE','adversarialRegressionDisposition':'PASS_TARGETED_DEFECT_CLASS','terminalReadinessVerdict':'READY_FOR_REVIEW','frictionLevel':'LOW','frictionType':'KEYWORD_TRAP','observedStep':'Local isolated token and consumer verification','preventiveControlCandidate':'WORK_ORDER_TEMPLATE'}.items():text=setfield(text,field,value)\n    return text\ndef build(batch,profile):\n    args=ScaffoldArgs(packet_kind='generic-worker-dispatch',batch_id=batch,title='Local isolated review',date='2026-10-04',base=head,commit_mode='WORKER_MUST_NOT_COMMIT')\n    args.worker_return_profile=profile\n    return dispatch.build_worker_return_skeleton(args)\noutputs={}\nfor profile in (standalone.FULL_PROFILE,standalone.FAST_DOC_PROFILE):\n    for entry,raw in [('dispatch',build('LOCAL-WRS-73',profile)),('standalone',standalone.build_scaffold('Local independent review',profile))]:\n        label=entry+'-'+profile\n        outputs[label]={'sha256':hashlib.sha256(raw.encode()).hexdigest(),'retroDeclarations':raw.count(retro.RETRO_TOKEN)+raw.count(retro.RETRO_NA_TOKEN)}\n        record(label+'-unfinished-acceptance',ledger.validate_return(wo,raw),False)\n        record(label+'-unfinished-retro',retro.diagnose(artifact,raw).issues,False)\n        text=completed(raw)\n        record(label+'-completed-acceptance',ledger.validate_return(wo,text,{artifact}),True)\n        record(label+'-completed-readiness',readiness.diagnose_worker_return(artifact,text).issues,True)\n        record(label+'-completed-LOW',retro.diagnose(artifact,text).issues,True)\n        na=re.sub(r'WORKER_EXPERIENCE_RETRO:\\nfrictionLevel:.*?preventiveControlCandidate:[^\\n]*',retro.RETRO_NA_TOKEN+' '+retro.RETRO_NA_REQUIRED_REASON,text,count=1,flags=re.S)\n        record(label+'-completed-NA',retro.diagnose(artifact,na).issues,True)\n        record(label+'-duplicate-retro',retro.diagnose(artifact,na+'\\n'+retro.RETRO_TOKEN+'\\n').issues,False)\n        record(label+'-wrong-NA',retro.diagnose(artifact,na.replace(retro.RETRO_NA_REQUIRED_REASON,'no observed friction')).issues,False)\n        record(label+'-pending-ready',readiness.diagnose_worker_return(artifact,setfield(text,'productionBindingEvidence','PENDING_BEFORE_READY')).issues,False)\n        record(label+'-unknown-ready',readiness.diagnose_worker_return(artifact,setfield(text,'terminalReadinessVerdict','READY')).issues,False)\n        wrong=text.replace('\"actualArtifacts\":','\"artifacts\":')\n        record(label+'-wrong-row-keys',ledger.validate_return(wo,wrong),False)\ngolden=build('WOAS-R3-GOLDEN',standalone.FULL_PROFILE)\nordinary=build('LOCAL-WRS-73',standalone.FULL_PROFILE)\nfork={'batchIdOnlyChange':True,'goldenHasEvidenceGuidance':'Evidence completion guidance:' in golden,'ordinaryHasEvidenceGuidance':'Evidence completion guidance:' in ordinary,'goldenRetroIssues':list(retro.diagnose(artifact,golden).issues),'goldenHasOldHyphenPlaceholder':'WORKER_EXPERIENCE_RETRO_NA_WITH_REASON -' in golden,'ordinaryRetroDeclarations':ordinary.count(retro.RETRO_TOKEN)}\nassert fork['goldenHasOldHyphenPlaceholder'] and not fork['goldenHasEvidenceGuidance'] and fork['ordinaryHasEvidenceGuidance']\nassert all(c['expectationMatched'] for c in cases)\noutput={'schemaVersion':'cvf.wrsFr1LocalReviewProbe@1','executionBaseHead':head,'disposition':'FINDINGS_CONFIRMED_NOT_ACCEPTED','oracleSeparation':'Direct actual helper output with different literal Local IDs; unchanged consumer calls; no worker test imports or fixture oracle.','caseCount':len(cases),'expectationMatches':sum(c['expectationMatched'] for c in cases),'cases':cases,'outputHashes':outputs,'batchIdFork':fork,'probeSource':Path(__file__).read_text(encoding='utf-8')}\noutput['probeSourceSha256']=hashlib.sha256(Path(__file__).read_bytes()).hexdigest()\np=root/'docs/reviews/evidence/cvf-wrs-fr1-local-independent-probe-2026-10-04.json';p.write_text(json.dumps(output,indent=2)+'\\n',encoding='utf-8',newline='\\n')\nprint(json.dumps({'consumerChecks':len(cases),'expectationMatches':output['expectationMatches'],'batchIdFork':fork,'disposition':output['disposition']}))\n",
+    "probeSourceSha256": "aad9a2f2ee38837d3d69fae5e9dfabd4141033eda1bc646f1dc6a1917b1c9564",
+    "originalWorkerReturnSha256": "1be9b556c0cf07282b64a08c2f6c3a368dae427dee4808afb9fec49691c1c464",
+    "originalWorkerEvidenceSha256": "33c03ac489c5bc789b3732b2a9389a9fc5c573884a8da763d13c8e9f9ee1ffae",
+    "reviewerDisposition": "REQUEST_CHANGES",
+    "consolidatedFindings": [
+      {
+        "id": "WRS-FR1-F1",
+        "priority": "P1",
+        "path": "governance/compat/build_worker_return_skeleton_scaffold.py",
+        "line": 260,
+        "finding": "Production batch-ID special case preserves defective output only for WOAS-R3-GOLDEN and duplicates the complete renderer. Changing only batchId loses acceptance/readiness guidance and returns a retro token refused by the current consumer. Existing golden assertion no longer exercises corrected output. No declared compatibility boundary admits this batch-name branch.",
+        "requiredRepair": "Remove batch-ID behavior and duplicate renderer; apply guidance uniformly. Update the intended-change golden fixture and its relevant assertion under a Local scope amendment; never keep a production test-name exception to obtain a green suite."
+      },
+      {
+        "id": "WRS-FR1-F2",
+        "priority": "P2",
+        "path": "governance/compat/test_worker_return_scaffold_friction.py",
+        "line": 104,
+        "finding": "Completed acceptance/readiness/LOW and malformed row/readiness cases use only standalone FULL output; NA/duplicate/wrong-reason cases use standalone header strings rather than completed generator outputs. Four-way coverage currently checks raw guidance and incomplete acceptance/retro only. Evidence consumer_tests_pass for every profile is broader than worker regression coverage.",
+        "requiredRepair": "Parameterize actual generated outputs across both helpers and both profiles for completed acceptance/readiness/LOW/NA and negative mutations. Add batch-ID invariance regression and retain current consumers. Local44 shows ordinary outputs can work, but does not replace the requested durable worker regression guards."
+      },
+      {
+        "id": "WRS-FR1-F3",
+        "priority": "P2",
+        "path": "docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md",
+        "line": 916,
+        "finding": "The 1123-line count is preserved partly by collapsing unrelated commit-steward and raw-memory paragraphs into long single lines. Dispatch expressly prohibits compressed rule packing and unrelated rewriting to meet the no-growth budget.",
+        "requiredRepair": "Restore unrelated paragraph wrapping and replace only the scaffold-guidance paragraphs with concise guidance within the original 1123-line budget; retain all normative tokens and links."
+      }
+    ],
+    "dependencyAudit": {
+      "contract": "REQ-1 blocked by batch-ID fork; REQ-2 durable regression coverage partial; REQ-3 numeric size/checker hash claims confirmed, targeted template constraint violated",
+      "schema": "Existing three consumer hashes match; no schema/checker edits",
+      "path": "Original exact six worker paths observed; Local stores review inside existing return/evidence; no implementation commit",
+      "authority": "User-selected authoring repair only; current work order forbids existing fixture/test edits and worker redispatch",
+      "test": "Worker6+79+23 results consumed without rerun; Local44 independent ordinary-output expectations match; batch-name counterexample observed",
+      "range": "HEAD unchanged at execution438ee56b0; no staging; worker material remains pending",
+      "commitPlan": "No material/closure/continuity commit for rejected return; Local scope amendment is needed before new worker release"
+    },
+    "nextRepairRoute": "LOCAL_SCOPE_AMENDMENT_REQUIRED",
+    "workerRedispatchAllowed": "NO",
+    "reviewCost": {
+      "reviewRoundCount": 1,
+      "workerRepairTurnCount": 0,
+      "providerCallCount": 0,
+      "broadWorkerSuiteRerunCount": 0,
+      "latencyDisposition": "BOUNDED_LOCAL_REVIEW",
+      "avoidableDelayClass": "REVIEWER_TOOL_AND_TEMPORARY_MANIFEST_CORRECTION",
+      "diagnostics": [
+        "Initial reviewer-fast invocation used an unsupported autorun phase; corrected to commit steward reviewer-return.",
+        "First steward review saw a temporary seventh Local probe path and refused trace. Probe evidence is now embedded in admitted evidence JSON; original failure preserved in ignored review log. Neither event is attributed to the worker."
+      ]
+    },
+    "shapeVerification": {
+      "command": "python -B governance/compat/run_agent_commit_steward_preflight.py --mode reviewer-return --base 438ee56b093b732b6b5ea01a8e27c1fa0c084d96 --head HEAD --enforce",
+      "exitCode": 0,
+      "reviewerFastChecks": 69,
+      "implementationAccepted": false
+    },
+    "mfrpMeasurement": {
+      "attemptCount": 1194,
+      "eligibleCount": 121,
+      "collectedCount": 37,
+      "populationCount": 37,
+      "checkpoint": "final",
+      "blocking": false
+    }
+  }
+}
