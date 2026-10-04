@@ -115,10 +115,11 @@ $MAPPED_FILES = @(
     @{
         Source      = 'scripts\install_cvf_workspace_root_wrappers_public.ps1'
         Destination = 'scripts\install_cvf_workspace_root_wrappers.ps1'
-    }
+    },
     @{
         Source      = 'scripts\cvf-public-pre-push-hook.sh'
         Destination = '.githooks\pre-push'
+    }
     }
 )
 

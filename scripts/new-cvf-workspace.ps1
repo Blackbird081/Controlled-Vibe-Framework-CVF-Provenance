@@ -79,6 +79,7 @@ $cvfCorePath = Join-Path $workspaceRootResolved ".Controlled-Vibe-Framework-CVF"
 $projectPath = Join-Path $workspaceRootResolved $ProjectName
 $workspaceFilePath = Join-Path $workspaceRootResolved "$ProjectName.code-workspace"
 $workspaceRulesPath = Join-Path $workspaceRootResolved "WORKSPACE_RULES.md"
+$workspaceWrapperInstallerPath = Join-Path $PSScriptRoot "install_cvf_workspace_root_wrappers.ps1"
 $requiredPublicCoreFiles = @(
     "AGENTS.md",
     "AGENT_HANDOFF.md",

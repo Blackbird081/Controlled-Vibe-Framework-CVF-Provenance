@@ -97,22 +97,43 @@ Each catalog entry must declare:
 Directory entries are exported recursively.
 
 Validate the catalog and profile set before publishing or relying on a changed
-overlay configuration. R70A defines the catalog/profile contract only; it does
-not create overlay validation, export, report, or apply scripts.
+overlay configuration:
 
-## Future Implementation Hooks
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\check_cvf_workspace_overlay_catalog.ps1
+```
 
-The following command names are reserved as candidate script surfaces for a
-later implementation tranche. They are not available from R70A and must not be
-cited as executable evidence until a later source-verified packet creates and
-tests them:
+Preview profile composition before export or apply:
 
-- `scripts\check_cvf_workspace_overlay_catalog.ps1`
-- `scripts\get_cvf_workspace_overlay_profile_report.ps1`
-- `scripts\export_cvf_workspace_overlay.ps1`
-- `scripts\apply_cvf_workspace_overlay.ps1`
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\get_cvf_workspace_overlay_profile_report.ps1
 
-## Expected Verification Behavior
+powershell -ExecutionPolicy Bypass -File scripts\get_cvf_workspace_overlay_profile_report.ps1 `
+  -ProfileName premium-workspace `
+  -ShowFiles
+```
+
+## Commands
+
+Export a reviewed overlay bundle:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\export_cvf_workspace_overlay.ps1 `
+  -ProfileName premium-workspace `
+  -OutputPath "D:\CVF-Workspace\_cvf-overlay-staging\premium-workspace" `
+  -Force
+```
+
+Apply an overlay to a workspace hidden core:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\apply_cvf_workspace_overlay.ps1 `
+  -WorkspaceRoot "D:\CVF-Workspace" `
+  -ProfileName provenance-local `
+  -UpdateProjectManifests
+```
+
+## Verification Behavior
 
 The downstream doctor still expects the hidden core to:
 
@@ -177,9 +198,9 @@ Recommended use:
 - `provenance-local`: local full continuity on top of the stable default
 - `provenance-extended-local`: local full continuity plus optional operator and skill lanes
 
-## Future Machine Validation
+## Machine Validation
 
-A later checker or script should fail when:
+The checker must fail when:
 
 - a catalog entry points to a missing path;
 - an `artifactId` or path is duplicated;
@@ -188,7 +209,6 @@ A later checker or script should fail when:
 - `workspace-premium` includes private continuity surfaces;
 - `workspace-provenance-local` uses anything other than `local-only` review
   policy.
-
 ## Claim Boundary
 
 This standard defines the local-first overlay vocabulary, catalog shape, and

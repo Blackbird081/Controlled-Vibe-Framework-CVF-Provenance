@@ -238,6 +238,19 @@ The active manifest should record `paid-user-safe` in
 `CVF_RULE_PACKS/ACTIVE_RULE_PACK.json`. This profile must not use
 `-AllowProvenanceContinuity`.
 
+Bootstrap and reconciliation also install (or refresh) a small set of
+workspace-root wrapper scripts and guides via
+`scripts/install_cvf_workspace_root_wrappers.ps1`:
+
+- `New-CVF-Governed-Project.ps1` - bootstrap + doctor + workspace gate in one command
+- `Run-CVF-NewProject-Enforcement.ps1` - workspace-wide enforcement gate
+- `CVF_WORKSPACE_USER_GUIDE.md` / `CVF_WORKSPACE_HUONG_DAN_SU_DUNG.md` - bilingual workspace-root guide
+
+These wrappers only cover the public-safe flow (new-project bootstrap,
+enforcement gate, and workspace-root guidance). Any local-only overlay
+tooling is a separate, provenance-side concern and is not part of this
+public-safe wrapper set.
+
 ## Update Flow
 
 Reconcile an existing hidden public-core clone from inside
