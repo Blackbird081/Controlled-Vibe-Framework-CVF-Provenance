@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Regression tests for worker-return scaffold friction repair (WRS-FR1)."""
+"""Regression tests for worker-return scaffold friction repair (WRS-FR1-R1)."""
 
 from __future__ import annotations
 
@@ -43,9 +43,9 @@ docType: work_order
 """
 
 
-def _make_scaffold_args(profile: str = rws.FULL_PROFILE) -> SimpleNamespace:
+def _make_scaffold_args(batch_id: str = "CVF-TEST-FR1", profile: str = rws.FULL_PROFILE) -> SimpleNamespace:
     return SimpleNamespace(
-        batch_id="CVF-TEST-FR1",
+        batch_id=batch_id,
         title="Test Friction Repair",
         date="2026-10-04",
         base="438ee56b093b732b6b5ea01a8e27c1fa0c084d96",
@@ -57,15 +57,52 @@ def _make_scaffold_args(profile: str = rws.FULL_PROFILE) -> SimpleNamespace:
     )
 
 
+def _get_four_way_scaffolds() -> list[tuple[str, str]]:
+    return [
+        ("run_full", rws.build_scaffold("Sample Return", rws.FULL_PROFILE)),
+        ("run_fast", rws.build_scaffold("Sample Return", rws.FAST_DOC_PROFILE)),
+        ("build_full", bws.build_worker_return_skeleton(_make_scaffold_args(profile=rws.FULL_PROFILE))),
+        ("build_fast", bws.build_worker_return_skeleton(_make_scaffold_args(profile=rws.FAST_DOC_PROFILE))),
+    ]
+
+
+def _complete_scaffold(
+    base_text: str,
+    retro_mode: str = "STRUCTURED",
+) -> str:
+    text = (
+        base_text.replace("Status: TODO_WORKER_STATUS", "Status: COMPLETE_PENDING_REVIEW")
+        .replace(
+            '{"schemaVersion":"cvf.workOrderAcceptanceEvidence@1.0.0","executionBaseHead":"TO_FILL","results":[]}',
+            '{"schemaVersion":"cvf.workOrderAcceptanceEvidence@1.0.0","executionBaseHead":"438ee56b093b732b",'
+            '"results":[{"requirementId":"REQ-1","actualArtifacts":["docs/reviews/sample_return.md"],'
+            '"proofRefs":["PROOF-1"],"status":"PASS"}]}',
+        )
+        .replace("rootCauseClusterId: INITIAL_SCOPE_PENDING_WORK_ORDER_BINDING", "rootCauseClusterId: CVF-TEST-FR1")
+        .replace("consolidatedDefectClassSweep: PENDING_BEFORE_READY", "consolidatedDefectClassSweep: COMPLETE_ALL_KNOWN_DEPENDENCIES")
+        .replace("productionBindingEvidence: PENDING_BEFORE_READY", "productionBindingEvidence: VERIFIED_SOURCE_TEST_EVIDENCE")
+        .replace("adversarialRegressionDisposition: PENDING_BEFORE_READY", "adversarialRegressionDisposition: PASS_TARGETED_DEFECT_CLASS")
+        .replace("terminalReadinessVerdict: BLOCKED_WITH_REASON: generated scaffold pending worker evidence", "terminalReadinessVerdict: READY_FOR_REVIEW")
+    )
+    if retro_mode == "STRUCTURED":
+        text = (
+            text.replace("frictionLevel: TO_FILL_FROM_ACTUAL_EXECUTION", "frictionLevel: LOW")
+            .replace("frictionType: TO_FILL_FROM_ACTUAL_EXECUTION", "frictionType: KEYWORD_TRAP")
+            .replace("observedStep: TO_FILL_FROM_ACTUAL_EXECUTION", "observedStep: scaffold guidance verification")
+            .replace("preventiveControlCandidate: TO_FILL_FROM_ACTUAL_EXECUTION", "preventiveControlCandidate: WORK_ORDER_TEMPLATE")
+        )
+    elif retro_mode == "TRUTHFUL_NA":
+        start_idx = text.find("WORKER_EXPERIENCE_RETRO:")
+        end_idx = text.find("## Command Evidence")
+        if start_idx != -1 and end_idx != -1:
+            na_line = f"WORKER_EXPERIENCE_RETRO_NA_WITH_REASON: {cwer.RETRO_NA_REQUIRED_REASON}\n\n"
+            text = text[:start_idx] + na_line + text[end_idx:]
+    return text
+
+
 class WorkerReturnScaffoldFrictionTests(unittest.TestCase):
     def test_raw_scaffold_guidance_present_in_both_generators(self) -> None:
-        generators = [
-            ("run_full", rws.build_scaffold("Test Return", rws.FULL_PROFILE)),
-            ("run_fast", rws.build_scaffold("Test Fast", rws.FAST_DOC_PROFILE)),
-            ("build_full", bws.build_worker_return_skeleton(_make_scaffold_args(rws.FULL_PROFILE))),
-            ("build_fast", bws.build_worker_return_skeleton(_make_scaffold_args(rws.FAST_DOC_PROFILE))),
-        ]
-        for name, text in generators:
+        for name, text in _get_four_way_scaffolds():
             with self.subTest(generator=name):
                 self.assertIn("Evidence completion guidance:", text)
                 self.assertIn("Readiness completion guidance:", text)
@@ -80,13 +117,7 @@ class WorkerReturnScaffoldFrictionTests(unittest.TestCase):
                 self.assertIn("preventiveControlCandidate: TO_FILL_FROM_ACTUAL_EXECUTION", text)
 
     def test_raw_scaffolds_remain_fail_closed_before_completion(self) -> None:
-        generators = [
-            ("run_full", rws.build_scaffold("Test Return", rws.FULL_PROFILE)),
-            ("run_fast", rws.build_scaffold("Test Fast", rws.FAST_DOC_PROFILE)),
-            ("build_full", bws.build_worker_return_skeleton(_make_scaffold_args(rws.FULL_PROFILE))),
-            ("build_fast", bws.build_worker_return_skeleton(_make_scaffold_args(rws.FAST_DOC_PROFILE))),
-        ]
-        for name, text in generators:
+        for name, text in _get_four_way_scaffolds():
             with self.subTest(generator=name):
                 ledger_issues = cwoal.validate_return(SYNTHETIC_WORK_ORDER, text)
                 self.assertTrue(any("missing evidence row" in i or "results" in i for i in ledger_issues))
@@ -95,98 +126,79 @@ class WorkerReturnScaffoldFrictionTests(unittest.TestCase):
                 self.assertFalse(retro_diag.is_clean)
                 self.assertTrue(any("invalid frictionLevel" in i for i in retro_diag.issues))
 
-    def test_completed_acceptance_rows_and_ready_for_review_pass(self) -> None:
-        base_text = rws.build_scaffold("Sample Return", rws.FULL_PROFILE)
-        return_text = (
-            base_text.replace("Status: TODO_WORKER_STATUS", "Status: COMPLETE_PENDING_REVIEW")
-            .replace(
-                '{"schemaVersion":"cvf.workOrderAcceptanceEvidence@1.0.0","executionBaseHead":"TO_FILL","results":[]}',
-                '{"schemaVersion":"cvf.workOrderAcceptanceEvidence@1.0.0","executionBaseHead":"438ee56b093b732b",'
-                '"results":[{"requirementId":"REQ-1","actualArtifacts":["docs/reviews/sample_return.md"],'
-                '"proofRefs":["PROOF-1"],"status":"PASS"}]}',
-            )
-            .replace("rootCauseClusterId: INITIAL_SCOPE_PENDING_WORK_ORDER_BINDING", "rootCauseClusterId: CVF-TEST-FR1")
-            .replace("consolidatedDefectClassSweep: PENDING_BEFORE_READY", "consolidatedDefectClassSweep: COMPLETE_ALL_KNOWN_DEPENDENCIES")
-            .replace("productionBindingEvidence: PENDING_BEFORE_READY", "productionBindingEvidence: VERIFIED_SOURCE_TEST_EVIDENCE")
-            .replace("adversarialRegressionDisposition: PENDING_BEFORE_READY", "adversarialRegressionDisposition: PASS_TARGETED_DEFECT_CLASS")
-            .replace("terminalReadinessVerdict: BLOCKED_WITH_REASON: generated scaffold pending worker evidence", "terminalReadinessVerdict: READY_FOR_REVIEW")
-            .replace("frictionLevel: TO_FILL_FROM_ACTUAL_EXECUTION", "frictionLevel: LOW")
-            .replace("frictionType: TO_FILL_FROM_ACTUAL_EXECUTION", "frictionType: KEYWORD_TRAP")
-            .replace("observedStep: TO_FILL_FROM_ACTUAL_EXECUTION", "observedStep: scaffold guidance verification")
-            .replace("preventiveControlCandidate: TO_FILL_FROM_ACTUAL_EXECUTION", "preventiveControlCandidate: WORK_ORDER_TEMPLATE")
-        )
-        ledger_issues = cwoal.validate_return(SYNTHETIC_WORK_ORDER, return_text, {"docs/reviews/sample_return.md"})
-        self.assertEqual(ledger_issues, [])
-        cost_diag = crcc.diagnose_worker_return("docs/reviews/sample_return.md", return_text)
-        self.assertTrue(cost_diag.is_clean, cost_diag.issues)
-        retro_diag = cwer.diagnose("docs/reviews/sample_return.md", return_text)
-        self.assertTrue(retro_diag.is_clean, retro_diag.issues)
+    def test_completed_acceptance_rows_and_ready_for_review_four_way(self) -> None:
+        for name, base_text in _get_four_way_scaffolds():
+            for retro_mode in ("STRUCTURED", "TRUTHFUL_NA"):
+                with self.subTest(generator=name, retro=retro_mode):
+                    return_text = _complete_scaffold(base_text, retro_mode=retro_mode)
+                    ledger_issues = cwoal.validate_return(SYNTHETIC_WORK_ORDER, return_text, {"docs/reviews/sample_return.md"})
+                    self.assertEqual(ledger_issues, [])
+                    cost_diag = crcc.diagnose_worker_return("docs/reviews/sample_return.md", return_text)
+                    self.assertTrue(cost_diag.is_clean, cost_diag.issues)
+                    retro_diag = cwer.diagnose("docs/reviews/sample_return.md", return_text)
+                    self.assertTrue(retro_diag.is_clean, retro_diag.issues)
 
-    def test_unknown_readiness_token_and_wrong_row_keys_refuse(self) -> None:
-        base_text = rws.build_scaffold("Sample Return", rws.FULL_PROFILE)
-        wrong_keys_text = base_text.replace(
-            '"results":[]',
-            '"results":[{"requirementId":"REQ-1","artifacts":["docs/reviews/sample_return.md"],'
-            '"proofs":["PROOF-1"],"status":"PASS"}]',
-        )
-        ledger_issues = cwoal.validate_return(SYNTHETIC_WORK_ORDER, wrong_keys_text)
-        self.assertTrue(any("each evidence row must contain exactly" in i for i in ledger_issues))
+    def test_negative_acceptance_and_readiness_mutations_four_way(self) -> None:
+        for name, base_text in _get_four_way_scaffolds():
+            with self.subTest(generator=name, check="wrong_row_keys"):
+                wrong_keys_text = base_text.replace(
+                    '"results":[]',
+                    '"results":[{"requirementId":"REQ-1","artifacts":["docs/reviews/sample_return.md"],'
+                    '"proofs":["PROOF-1"],"status":"PASS"}]',
+                )
+                ledger_issues = cwoal.validate_return(SYNTHETIC_WORK_ORDER, wrong_keys_text)
+                self.assertTrue(any("each evidence row must contain exactly" in i for i in ledger_issues))
 
-        bad_ready_text = base_text.replace(
-            "terminalReadinessVerdict: BLOCKED_WITH_REASON: generated scaffold pending worker evidence",
-            "terminalReadinessVerdict: READY",
-        )
-        cost_diag = crcc.diagnose_worker_return("docs/reviews/sample_return.md", bad_ready_text)
-        self.assertTrue(any("terminalReadinessVerdict" in i for i in cost_diag.issues))
+            with self.subTest(generator=name, check="bad_readiness_token"):
+                bad_ready_text = base_text.replace(
+                    "terminalReadinessVerdict: BLOCKED_WITH_REASON: generated scaffold pending worker evidence",
+                    "terminalReadinessVerdict: READY",
+                )
+                cost_diag = crcc.diagnose_worker_return("docs/reviews/sample_return.md", bad_ready_text)
+                self.assertTrue(any("terminalReadinessVerdict" in i for i in cost_diag.issues))
 
-        incomplete_ready = (
-            base_text.replace("rootCauseClusterId: INITIAL_SCOPE_PENDING_WORK_ORDER_BINDING", "rootCauseClusterId: CVF-TEST-FR1")
-            .replace("consolidatedDefectClassSweep: PENDING_BEFORE_READY", "consolidatedDefectClassSweep: COMPLETE_ALL_KNOWN_DEPENDENCIES")
-            .replace("adversarialRegressionDisposition: PENDING_BEFORE_READY", "adversarialRegressionDisposition: PASS_TARGETED_DEFECT_CLASS")
-            .replace("terminalReadinessVerdict: BLOCKED_WITH_REASON: generated scaffold pending worker evidence", "terminalReadinessVerdict: READY_FOR_REVIEW")
-        )
-        cost_diag_incomplete = crcc.diagnose_worker_return("docs/reviews/sample_return.md", incomplete_ready)
-        self.assertTrue(any("pending production-binding evidence" in i for i in cost_diag_incomplete.issues))
+            with self.subTest(generator=name, check="incomplete_ready"):
+                incomplete_ready = (
+                    base_text.replace("rootCauseClusterId: INITIAL_SCOPE_PENDING_WORK_ORDER_BINDING", "rootCauseClusterId: CVF-TEST-FR1")
+                    .replace("consolidatedDefectClassSweep: PENDING_BEFORE_READY", "consolidatedDefectClassSweep: COMPLETE_ALL_KNOWN_DEPENDENCIES")
+                    .replace("adversarialRegressionDisposition: PENDING_BEFORE_READY", "adversarialRegressionDisposition: PASS_TARGETED_DEFECT_CLASS")
+                    .replace("terminalReadinessVerdict: BLOCKED_WITH_REASON: generated scaffold pending worker evidence", "terminalReadinessVerdict: READY_FOR_REVIEW")
+                )
+                cost_diag_incomplete = crcc.diagnose_worker_return("docs/reviews/sample_return.md", incomplete_ready)
+                self.assertTrue(any("pending production-binding evidence" in i for i in cost_diag_incomplete.issues))
 
-    def test_truthful_no_friction_na_and_structured_retro_forms_pass(self) -> None:
-        header = "# Return\nStatus: COMPLETE_PENDING_REVIEW\nResponds to work order: docs/work_orders/x.md\n\n"
-        na_text = (
-            header
-            + f"WORKER_EXPERIENCE_RETRO_NA_WITH_REASON: {cwer.RETRO_NA_REQUIRED_REASON}\n"
-        )
-        d_na = cwer.diagnose("docs/reviews/sample_return.md", na_text)
-        self.assertTrue(d_na.is_clean, d_na.issues)
+    def test_negative_retro_mutations_on_actual_scaffolds_four_way(self) -> None:
+        for name, base_text in _get_four_way_scaffolds():
+            completed_text = _complete_scaffold(base_text, retro_mode="STRUCTURED")
 
-        struct_text = (
-            header
-            + "WORKER_EXPERIENCE_RETRO:\n"
-            + "frictionLevel: LOW\n"
-            + "frictionType: KEYWORD_TRAP\n"
-            + "observedStep: scaffold guidance verification\n"
-            + "preventiveControlCandidate: WORK_ORDER_TEMPLATE\n"
-        )
-        d_struct = cwer.diagnose("docs/reviews/sample_return.md", struct_text)
-        self.assertTrue(d_struct.is_clean, d_struct.issues)
+            with self.subTest(generator=name, check="wrong_na_reason"):
+                wrong_na = completed_text.replace(
+                    "WORKER_EXPERIENCE_RETRO:\nfrictionLevel: LOW\nfrictionType: KEYWORD_TRAP\nobservedStep: scaffold guidance verification\npreventiveControlCandidate: WORK_ORDER_TEMPLATE",
+                    "WORKER_EXPERIENCE_RETRO_NA_WITH_REASON: no friction observed",
+                )
+                d_wrong = cwer.diagnose("docs/reviews/sample_return.md", wrong_na)
+                self.assertFalse(d_wrong.is_clean)
+                self.assertTrue(any("exact asserting reason" in i for i in d_wrong.issues))
 
-    def test_wrong_na_reason_and_duplicate_retro_declarations_refuse(self) -> None:
-        header = "# Return\nStatus: COMPLETE_PENDING_REVIEW\nResponds to work order: docs/work_orders/x.md\n\n"
-        wrong_na = header + "WORKER_EXPERIENCE_RETRO_NA_WITH_REASON: no friction observed\n"
-        d_wrong = cwer.diagnose("docs/reviews/sample_return.md", wrong_na)
-        self.assertFalse(d_wrong.is_clean)
-        self.assertTrue(any("exact asserting reason" in i for i in d_wrong.issues))
+            with self.subTest(generator=name, check="duplicate_retro"):
+                dup_text = completed_text.replace(
+                    "WORKER_EXPERIENCE_RETRO:\n",
+                    f"WORKER_EXPERIENCE_RETRO_NA_WITH_REASON: {cwer.RETRO_NA_REQUIRED_REASON}\n\nWORKER_EXPERIENCE_RETRO:\n",
+                )
+                d_dup = cwer.diagnose("docs/reviews/sample_return.md", dup_text)
+                self.assertFalse(d_dup.is_clean)
+                self.assertTrue(any("multiple worker-experience tokens" in i for i in d_dup.issues))
 
-        duplicate_text = (
-            header
-            + f"WORKER_EXPERIENCE_RETRO_NA_WITH_REASON: {cwer.RETRO_NA_REQUIRED_REASON}\n\n"
-            + "WORKER_EXPERIENCE_RETRO:\n"
-            + "frictionLevel: LOW\n"
-            + "frictionType: KEYWORD_TRAP\n"
-            + "observedStep: x\n"
-            + "preventiveControlCandidate: WORK_ORDER_TEMPLATE\n"
-        )
-        d_dup = cwer.diagnose("docs/reviews/sample_return.md", duplicate_text)
-        self.assertFalse(d_dup.is_clean)
-        self.assertTrue(any("multiple worker-experience tokens" in i for i in d_dup.issues))
+    def test_batch_id_invariance_in_skeleton_scaffold(self) -> None:
+        """WRS-FR1-F1/F2: verify batch_id changes do not alter guidance or structure."""
+        for profile in (rws.FULL_PROFILE, rws.FAST_DOC_PROFILE):
+            args_a = _make_scaffold_args(batch_id="WOAS-R3-GOLDEN", profile=profile)
+            args_b = _make_scaffold_args(batch_id="CVF-ARBITRARY-99", profile=profile)
+            out_a = bws.build_worker_return_skeleton(args_a)
+            out_b = bws.build_worker_return_skeleton(args_b)
+            norm_a = out_a.replace("WOAS-R3-GOLDEN", "NORMALIZED_ID").replace("woas-r3-golden", "normalized_id")
+            norm_b = out_b.replace("CVF-ARBITRARY-99", "NORMALIZED_ID").replace("cvf-arbitrary-99", "normalized_id")
+            self.assertEqual(norm_a, norm_b, f"batch-ID drift detected for profile {profile}")
 
 
 if __name__ == "__main__":

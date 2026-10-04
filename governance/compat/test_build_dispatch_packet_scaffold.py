@@ -672,6 +672,24 @@ class TestWorkerReturnSkeleton(unittest.TestCase):
             "worker-return skeleton must not emit real KIOD-R8 required-section heading",
         )
 
+    def test_skeleton_batch_id_invariance(self) -> None:
+        """WRS-FR1-F1: verify uniform rendering regardless of batch_id string."""
+        args_golden = ScaffoldArgs(**self.GOLDEN_ARGS)
+        alt_args = dict(self.GOLDEN_ARGS)
+        alt_args["batch_id"] = "ARBITRARY-BATCH-123"
+        args_alt = ScaffoldArgs(**alt_args)
+        golden_out = build_worker_return_skeleton(args_golden)
+        alt_out = build_worker_return_skeleton(args_alt)
+        norm_golden = (
+            golden_out.replace("WOAS-R3-GOLDEN", "NORMALIZED_ID")
+            .replace("woas-r3-golden", "normalized_id")
+        )
+        norm_alt = (
+            alt_out.replace("ARBITRARY-BATCH-123", "NORMALIZED_ID")
+            .replace("arbitrary-batch-123", "normalized_id")
+        )
+        self.assertEqual(norm_golden, norm_alt)
+
     def test_cli_opt_in_produces_skeleton_section(self) -> None:
         import io
         from contextlib import redirect_stdout

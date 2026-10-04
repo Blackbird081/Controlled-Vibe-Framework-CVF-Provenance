@@ -5,7 +5,7 @@ Emit or create an L1 worker-return scaffold.
 Safety boundary: this helper only prints a skeleton or creates one new markdown
 file under docs/reviews/. It refuses overwrite and paths outside docs/reviews/.
 It does not stage, commit, apply patches, run provider calls, or make a closure
-decision.
+decision. WRS-FR1-R1: uniform guidance.
 """
 
 from __future__ import annotations

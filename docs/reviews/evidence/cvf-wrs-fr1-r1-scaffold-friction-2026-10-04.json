@@ -1,0 +1,200 @@
+{
+  "schemaVersion": "cvf.wrsFr1R1Evidence@1",
+  "batchId": "CVF-WRS-FR1-R1",
+  "executionBaseHead": "6138edb56df4d70892c06b5cb9616b0e9d666549",
+  "status": "COMPLETE_PENDING_REVIEW",
+  "laneRelease": "RELEASED_TO_LOCAL_REVIEWER",
+  "manifest": [
+    "governance/compat/build_worker_return_skeleton_scaffold.py",
+    "governance/compat/run_worker_return_scaffold.py",
+    "governance/compat/test_worker_return_scaffold_friction.py",
+    "docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md",
+    "governance/compat/fixtures/woas_r3_worker_return_skeleton_golden.md",
+    "governance/compat/test_build_dispatch_packet_scaffold.py",
+    "docs/reviews/CVF_WRS_FR1_R1_SCAFFOLD_FRICTION_REPAIR_WORKER_RETURN_2026-10-04.md",
+    "docs/reviews/evidence/cvf-wrs-fr1-r1-scaffold-friction-2026-10-04.json"
+  ],
+  "findingsResolution": {
+    "WRS-FR1-F1": {
+      "status": "RESOLVED",
+      "summary": "Removed WOAS-R3-GOLDEN batch-ID special case and duplicate renderer from build_worker_return_skeleton_scaffold.py. Applied acceptance and retrospective guidance uniformly across all batch IDs. Reconciled woas_r3_worker_return_skeleton_golden.md to reflect the corrected shape with row keys and structured retro block. Added test_skeleton_batch_id_invariance in test_build_dispatch_packet_scaffold.py.",
+      "proofId": "PROOF-UNIFORM-GOLDEN"
+    },
+    "WRS-FR1-F2": {
+      "status": "RESOLVED",
+      "summary": "Updated test_worker_return_scaffold_friction.py to parameterize actual generated scaffold outputs across both helpers (build_worker_return_skeleton_scaffold and run_worker_return_scaffold) and both profiles (FULL and FAST_DOC). Covered completed acceptance rows and readiness for both structured retro and truthful NA forms, negative mutations (wrong row keys, bad readiness tokens, incomplete ready), negative retro mutations (wrong NA reason, duplicate declarations), and batch-ID invariance. Kept module size at 205 lines (<= 400).",
+      "proofId": "PROOF-FOUR-WAY-CONSUMERS"
+    },
+    "WRS-FR1-F3": {
+      "status": "RESOLVED",
+      "summary": "Restored original paragraph wrapping in docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md for unrelated commit-steward and raw-memory paragraphs. Replaced only the scaffold-guidance paragraph with concise 3-line guidance explaining row keys, readiness transition, single truthful retro selection, and unfinished shape-probe limits. Line count preserved at 1122 lines without rule packing.",
+      "proofId": "PROOF-TEMPLATE-RETURN"
+    }
+  },
+  "sourcePreimageHashes": {
+    "governance/compat/build_worker_return_skeleton_scaffold.py": "b032fb7522fef3a7a423839151e27eb4518e7433cce4e742409bb1bb3741f974",
+    "governance/compat/run_worker_return_scaffold.py": "97cc22a7c3cae8e9bd7522f2e666e6894c557e1e87245f8f66060d82d8c24168",
+    "docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md": "135519063b3c04ff1addd6afcb7b476895b2b23024e95bc3942ec74edec4a2fe",
+    "governance/compat/fixtures/woas_r3_worker_return_skeleton_golden.md": "e3ec4828879d7db62982d5fad53f94d3416df9e4e54d9d3f810ec624734dca6d",
+    "governance/compat/test_build_dispatch_packet_scaffold.py": "e0ccf3581888213bb900ca96e2dac090e504534675775ad13afbdc3b5a7a8c43",
+    "governance/compat/test_worker_return_scaffold_friction.py": "d5dbb6101f0d5cb4cfa1b01b26987ce8653b32d639a6e5c804ac9286f79d2408"
+  },
+  "unchangedCheckerHashes": {
+    "governance/compat/check_worker_experience_retrospective.py": "230f30ec0821e94f56daeabcb3b134459706089dae945777f59eb779fa0c0d88",
+    "governance/compat/check_work_order_acceptance_ledger.py": "8b6ce487f01eb432cab16456da98c79f0995468f6a1da8c16765d204cc6a39b4",
+    "governance/compat/check_review_cost_control.py": "82d970a5f89fb33bb4d400ffc64330d1ee54c637a2817295beb781c77d590c6c",
+    "governance/compat/check_semantic_convergence_control.py": "94d4a26f130f5fd20eefa54871e3533e9755164dfc8204864e7f555f211352e9"
+  },
+  "lineCounts": {
+    "docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md": 1122,
+    "governance/compat/test_worker_return_scaffold_friction.py": 205
+  },
+  "commands": [
+    {
+      "command": "git rev-parse HEAD",
+      "exitCode": 0
+    },
+    {
+      "command": "python -B governance/compat/check_dispatch_release_readiness.py --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_WRS_FR1_R1_SCAFFOLD_FRICTION_REPAIR_2026-10-04.md --enforce",
+      "exitCode": 0
+    },
+    {
+      "command": "python -B governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base 6138edb56df4d70892c06b5cb9616b0e9d666549 --head HEAD --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_WRS_FR1_R1_SCAFFOLD_FRICTION_REPAIR_2026-10-04.md",
+      "exitCode": 0
+    },
+    {
+      "command": "python -B -m unittest discover -s governance/compat -p test_build_dispatch_packet_scaffold.py",
+      "exitCode": 0,
+      "proofMarker": "PROOF-UNIFORM-GOLDEN: test_build_dispatch_packet_scaffold.py exitCode 0"
+    },
+    {
+      "command": "python -B -m unittest discover -s governance/compat -p test_worker_return_scaffold_friction.py",
+      "exitCode": 0,
+      "proofMarker": "PROOF-FOUR-WAY-CONSUMERS: test_worker_return_scaffold_friction.py exitCode 0"
+    },
+    {
+      "command": "python -B -m unittest discover -s governance/compat -p test_run_worker_return_scaffold.py",
+      "exitCode": 0
+    },
+    {
+      "command": "git diff --check",
+      "exitCode": 0
+    },
+    {
+      "command": "python -B governance/compat/run_worker_return_fast_gate.py --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_WRS_FR1_R1_SCAFFOLD_FRICTION_REPAIR_2026-10-04.md",
+      "exitCode": 0,
+      "proofMarker": "PROOF-TEMPLATE-RETURN: run_worker_return_fast_gate.py exitCode 0"
+    }
+  ],
+  "actualManualEditsStillRequired": [
+    "Worker must capture clean executionBaseHead at start of execution",
+    "Worker must complete acceptance-evidence-json with actual observed artifacts and proof references",
+    "Worker must update Rework Convergence fields from PENDING to READY_FOR_REVIEW upon successful verification",
+    "Worker must select exactly one truthful retrospective branch (either structured retro block or exact NA line)"
+  ],
+  "localReviewerEvidence": {
+    "disposition": "ACCEPTED_BOUNDED",
+    "originalWorkerEvidenceSha256": "6c4522581bb7c6be0d9d43362a719d2a2373a005203788db5354b79301b8b1d6",
+    "metadataCorrections": [
+      "Actual template1122, not exact1123; remains <=1123.",
+      "SCEC checker raw hash corrected; Git normalized preimage unchanged.",
+      "Return literal changed-files/status lists corrected to include admitted standalone helper."
+    ],
+    "independentProbe": {
+      "schemaVersion": "cvf.wrsFr1R1LocalProbe@1",
+      "head": "6138edb56df4d70892c06b5cb9616b0e9d666549",
+      "disposition": "PASS_INDEPENDENT_PROBE",
+      "oracleSeparation": "Direct actual helpers and unchanged consumers, distinct Local IDs/options; no worker test imports/fixture oracle and no worker suite rerun.",
+      "cases": [
+        {
+          "caseId": "WORKER_RETURN_FULL_GATE_V1-batch-invariant",
+          "pass": true
+        },
+        {
+          "caseId": "WORKER_RETURN_FULL_GATE_V1-guidance-truthful-singular",
+          "pass": true
+        },
+        {
+          "caseId": "WORKER_RETURN_FULL_GATE_V1-optout-boundary",
+          "pass": true
+        },
+        {
+          "caseId": "WORKER_RETURN_FAST_DOC_V1-batch-invariant",
+          "pass": true
+        },
+        {
+          "caseId": "WORKER_RETURN_FAST_DOC_V1-guidance-truthful-singular",
+          "pass": true
+        },
+        {
+          "caseId": "WORKER_RETURN_FAST_DOC_V1-optout-boundary",
+          "pass": true
+        },
+        {
+          "caseId": "dispatch-golden-full-unfinished-refusal",
+          "pass": true
+        },
+        {
+          "caseId": "dispatch-golden-full-completed-LOW",
+          "pass": true
+        },
+        {
+          "caseId": "dispatch-golden-full-completed-NA",
+          "pass": true
+        },
+        {
+          "caseId": "dispatch-golden-full-duplicate-refusal",
+          "pass": true
+        },
+        {
+          "caseId": "dispatch-golden-full-pending-ready-refusal",
+          "pass": true
+        },
+        {
+          "caseId": "standalone-fast-unfinished-refusal",
+          "pass": true
+        },
+        {
+          "caseId": "standalone-fast-completed-LOW",
+          "pass": true
+        },
+        {
+          "caseId": "standalone-fast-completed-NA",
+          "pass": true
+        },
+        {
+          "caseId": "standalone-fast-duplicate-refusal",
+          "pass": true
+        },
+        {
+          "caseId": "standalone-fast-pending-ready-refusal",
+          "pass": true
+        },
+        {
+          "caseId": "template-unrelated-prose-restored",
+          "pass": true
+        },
+        {
+          "caseId": "template-no-growth",
+          "pass": true
+        }
+      ],
+      "caseCount": 18,
+      "probeSource": "from pathlib import Path\nimport sys,json,re,hashlib,subprocess\nroot=Path.cwd();sys.path.insert(0,str(root/'governance/compat'))\nfrom build_dispatch_packet_scaffold import ScaffoldArgs\nimport build_worker_return_skeleton_scaffold as bws\nimport run_worker_return_scaffold as rws\nimport check_work_order_acceptance_ledger as ledger\nimport check_review_cost_control as cost\nimport check_worker_experience_retrospective as retro\ncases=[]\ndef check(name,ok):\n cases.append({'caseId':name,'pass':bool(ok)});assert ok,name\ndef render(batch,profile,echo):\n a=ScaffoldArgs(packet_kind='generic-worker-dispatch',batch_id=batch,title='Local R1 probe',date='2026-10-04',base='6138edb56',commit_mode='WORKER_MUST_NOT_COMMIT',include_architecture_readiness_echo=echo,include_p4_observation_block=echo)\n a.worker_return_profile=profile\n return bws.build_worker_return_skeleton(a)\nfor profile,echo in ((rws.FULL_PROFILE,False),(rws.FAST_DOC_PROFILE,True)):\n a=render('WOAS-R3-GOLDEN',profile,echo);b=render('LOCAL-R1-ORACLE-517',profile,echo)\n check(profile+'-batch-invariant',a.replace('WOAS-R3-GOLDEN','ID').replace('woas-r3-golden','id')==b.replace('LOCAL-R1-ORACLE-517','ID').replace('local-r1-oracle-517','id'))\n check(profile+'-guidance-truthful-singular','Evidence completion guidance:' in a and a.count(retro.RETRO_TOKEN)==1 and a.count(retro.RETRO_NA_TOKEN)==0 and 'frictionLevel: TO_FILL_FROM_ACTUAL_EXECUTION' in a)\n check(profile+'-optout-boundary',('## Architecture Readiness Echo' in a)==echo and ('## P4 Automatic Evidence Observation Block' in a)==echo)\nartifact='docs/reviews/local_r1_517.md';head=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip()\nwo='## Work-Order Acceptance Requirement Ledger\\n```acceptance-ledger-json\\n'+json.dumps({'schemaVersion':ledger.LEDGER_SCHEMA,'requirements':[{'requirementId':'LOCAL-517','mandatory':True,'expectedArtifacts':[artifact],'requiredProofIds':['LOCAL-P517']}],'proofCatalog':[{'proofId':'LOCAL-P517','kind':'COMMAND','locator':'Local direct consumer probe'}]})+'\\n```'\nfor label,raw in [('dispatch-golden-full',render('WOAS-R3-GOLDEN',rws.FULL_PROFILE,False)),('standalone-fast',rws.build_scaffold('Local R1 517',rws.FAST_DOC_PROFILE))]:\n check(label+'-unfinished-refusal',bool(ledger.validate_return(wo,raw)) and not retro.diagnose(artifact,raw).is_clean)\n t=re.sub(r'(?m)^Status:.*$','Status: COMPLETE_PENDING_REVIEW',raw,count=1)\n evidence={'schemaVersion':ledger.EVIDENCE_SCHEMA,'executionBaseHead':head,'results':[{'requirementId':'LOCAL-517','actualArtifacts':[artifact],'proofRefs':['LOCAL-P517'],'status':'PASS'}]}\n t=re.sub(r'```acceptance-evidence-json\\n.*?\\n```','```acceptance-evidence-json\\n'+json.dumps(evidence)+'\\n```',t,count=1,flags=re.S)\n for field,value in {'rootCauseClusterId':'LOCAL-517','consolidatedDefectClassSweep':'COMPLETE_ALL_KNOWN_DEPENDENCIES','productionBindingEvidence':'LOCAL_OFFLINE_OBSERVABLE_PROOF','adversarialRegressionDisposition':'PASS_TARGETED_DEFECT_CLASS','terminalReadinessVerdict':'READY_FOR_REVIEW','frictionLevel':'LOW','frictionType':'KEYWORD_TRAP','observedStep':'Local isolated consumer sample','preventiveControlCandidate':'WORK_ORDER_TEMPLATE'}.items():\n  t,n=re.subn(r'(?m)^'+field+r':.*$',field+': '+value,t,count=1);assert n==1,field\n check(label+'-completed-LOW',not ledger.validate_return(wo,t,{artifact}) and cost.diagnose_worker_return(artifact,t).is_clean and retro.diagnose(artifact,t).is_clean)\n na=re.sub(r'WORKER_EXPERIENCE_RETRO:\\nfrictionLevel:.*?preventiveControlCandidate:[^\\n]*',retro.RETRO_NA_TOKEN+' '+retro.RETRO_NA_REQUIRED_REASON,t,count=1,flags=re.S)\n check(label+'-completed-NA',retro.diagnose(artifact,na).is_clean)\n check(label+'-duplicate-refusal',not retro.diagnose(artifact,na+'\\n'+retro.RETRO_TOKEN+'\\n').is_clean)\n check(label+'-pending-ready-refusal',not cost.diagnose_worker_return(artifact,t.replace('productionBindingEvidence: LOCAL_OFFLINE_OBSERVABLE_PROOF','productionBindingEvidence: PENDING_BEFORE_READY')).is_clean)\npreimage=subprocess.check_output(['git','show','438ee56b093b732b6b5ea01a8e27c1fa0c084d96:docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md'],text=True,encoding='utf-8')\ncurrent=Path('docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md').read_text(encoding='utf-8')\ndef exclude_guidance(t):return re.sub(r'(?ms)^Run the fast gate once while.*?(?=^Reviewer/committer validation)|^Early fast-gate runs.*?(?=^Reviewer/committer validation)','GUIDANCE\\n\\n',t)\n# A removed unrelated blank is harmless but must not mask changed normative prose.\ncheck('template-unrelated-prose-restored',exclude_guidance(preimage).split()==exclude_guidance(current).split())\ncheck('template-no-growth',len(current.splitlines())<=1123)\nsource=Path(__file__).read_text(encoding='utf-8')\nd={'schemaVersion':'cvf.wrsFr1R1LocalProbe@1','head':head,'disposition':'PASS_INDEPENDENT_PROBE','oracleSeparation':'Direct actual helpers and unchanged consumers, distinct Local IDs/options; no worker test imports/fixture oracle and no worker suite rerun.','cases':cases,'caseCount':len(cases),'probeSource':source,'probeSourceSha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest()}\nPath('.cvf/runtime/wrs-fr1-r1-local-independent-probe.json').write_text(json.dumps(d,indent=2)+'\\n',encoding='utf-8',newline='\\n');print(json.dumps({'status':'PASS','caseCount':len(cases)}))\n",
+      "probeSourceSha256": "27bb9c0bb07a05382cdc323fb8a93e799d6b77ddfcc97aed1af65c61a28752da"
+    },
+    "dependencyAudit": {
+      "contract": "All frozen F1/F2/F3 resolved; integrated renderer/golden/consumer contract retained",
+      "schema": "Existing consumers and checker files unchanged; actual raw hashes verified",
+      "path": "Exact eight admitted pending paths, no other changes",
+      "authority": "Local review/closure only; worker released; CCMA/production/public parked",
+      "test": "Worker6/80/23 reports reused; actual regression source consumed, Local18 narrow probe passed; no duplicate worker suite",
+      "range": "Execution HEAD6138edb56 unchanged; material commit precedes paired closure and dedicated HEAD sync",
+      "commitPlan": "Eight-path accepted worker material; exact authorized fixed pair plus six continuity closure; final dedicated HEAD sync and fresh committed-range gate"
+    },
+    "reviewerFast": "PASS69/69 before metadata repair; final gate must confirm repaired bytes",
+    "providerCallCount": 0,
+    "workerRepairTurnCount": 1,
+    "furtherRedispatchRequired": false
+  }
+}

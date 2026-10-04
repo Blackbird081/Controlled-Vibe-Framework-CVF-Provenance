@@ -887,25 +887,20 @@ For a GC-018-authorized docs-only no-commit tranche, the dispatcher may use
 `python governance/compat/run_worker_return_fast_gate.py`. When the work order
 names focused tests, add one `--pytest-target <path>` per test path.
 
-When a no-commit worker return is expected, create the packet from the scaffold before writing long prose:
+When a no-commit worker return is expected, create the packet from the scaffold
+before writing long prose:
 
 ```powershell
 python governance/compat/run_worker_return_scaffold.py --write docs/reviews/<worker-return>.md --title "<worker return title>"
 python governance/compat/run_worker_return_fast_gate.py
 ```
 
-For an eligible compact dispatch, append `--profile WORKER_RETURN_FAST_DOC_V1` to the scaffold command.
+For an eligible compact dispatch, append
+`--profile WORKER_RETURN_FAST_DOC_V1` to the scaffold command.
 
-Run the fast gate once while the file is a short skeleton, then fill content and
-rerun to catch required headings and literal fields before long writing. A short
-skeleton shape probe checks structural presence only; it does not grant readiness
-or full-gate PASS. Unfilled scaffolds remain `BLOCKED_WITH_REASON`. The worker
-must fill `executionBaseHead`, provide every results row in
-`acceptance-evidence-json` (`requirementId`, `actualArtifacts`, `proofRefs`,
-`status`), and update readiness fields before review. Select the truthful retro
-branch: fill the structured `WORKER_EXPERIENCE_RETRO:` block, or if verified no
-friction occurred, replace with `WORKER_EXPERIENCE_RETRO_NA_WITH_REASON:` and its
-exact required reason. Never assert no surprise before execution or keep both.
+Early fast-gate runs check structural shape only; unfilled scaffolds remain `BLOCKED_WITH_REASON`. Worker must
+fill `executionBaseHead`, provide `acceptance-evidence-json` rows (`requirementId`, `actualArtifacts`, `proofRefs`,
+`status`), update readiness before review, and select one truthful retro: `WORKER_EXPERIENCE_RETRO:` or NA line.
 
 Reviewer/committer validation of a returned no-commit worker artifact uses:
 
@@ -913,7 +908,9 @@ Reviewer/committer validation of a returned no-commit worker artifact uses:
 python governance/compat/run_agent_commit_steward_preflight.py --mode reviewer-return --base <closureBaseHead> --head HEAD --enforce
 ```
 
-`worker-return` is not a commit-steward mode. If a worker needs a diagnostic before handoff, use the worker-return fast gate above and the work order's focused tests instead of inventing a commit-steward mode.
+`worker-return` is not a commit-steward mode. If a worker needs a diagnostic
+before handoff, use the worker-return fast gate above and the work order's
+focused tests instead of inventing a commit-steward mode.
 
 Worker-return `## Source Inventory` tables must use a bare action token in the
 action cell: `READ`, `FULL_READ`, `PARTIAL_READ`, or `SOURCE_VERIFIED`. Put
@@ -922,7 +919,9 @@ action cell.
 
 Worker Output Quality Controls:
 
-rawMemoryReleased=false. This template guidance does not release raw memory, retrieval, reinjection, private-output, or memory/RAG write behavior; any such release still requires a fresh source-verified work order and accepted closure.
+rawMemoryReleased=false. This template guidance does not release raw memory,
+retrieval, reinjection, private-output, or memory/RAG write behavior; any such
+release still requires a fresh source-verified work order and accepted closure.
 
 For any no-commit worker return, especially source/test or high-evidence
 tranches, the work order should require the worker to complete and record this
