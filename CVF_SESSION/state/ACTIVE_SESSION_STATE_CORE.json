@@ -36,12 +36,12 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_WRS_FR1_SCAFFOLD_FRICTION_REPAIR_2026-10-04.md",
-    "baselineSha256": "057f0229eab72a1677d998a364fc5899328a2ae1900ebe108b2a2d4f2c61261a",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_WRS_FR1_SCAFFOLD_FRICTION_REPAIR_2026-10-04.md",
-    "workOrderSha256": "0d482ac4b88ddc15e6c546c1ad7a18c5b9e06880aee27b0d6fb96eb489ed3396"
+    "baselinePath": "docs/baselines/CVF_GC018_WRS_FR1_R1_SCAFFOLD_FRICTION_REPAIR_2026-10-04.md",
+    "baselineSha256": "43f8e3ae235b96c5798d65cdc0fd313aca1d0d7c0b2524c325136fb5972c7600",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_WRS_FR1_R1_SCAFFOLD_FRICTION_REPAIR_2026-10-04.md",
+    "workOrderSha256": "ccc315a82c027659b979422ae73f42918942a85d0270954e9df0a030bace31ad"
   },
-  "currentAuthoritySyncReason": "Pending worker snapshot retained with REQUEST_CHANGES; no acceptance, closure or active worker. Local rework admission only. Material 0a3f680c89c41a67aa024ce340b34f1e461b6cea; preserve parked boundaries.",
+  "currentAuthoritySyncReason": "Local admits one consolidated rework, eight exact worker paths including golden fixture and its assertion; original pending snapshot is not accepted. Material ccc050b50b9d6662c58acb51f62c428375658277; preserve parked boundaries.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
