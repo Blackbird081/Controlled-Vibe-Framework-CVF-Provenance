@@ -2,7 +2,7 @@
 
 Memory class: governed-dispatch-baseline
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: CVF-NIS-T1C
 providerExecutionAuthority: FORBIDDEN
@@ -47,7 +47,7 @@ Returned defects: NONE_RETURNED. Actual resolver executed 2026-10-05, candidates
 | Field | Value |
 |---|---|
 | applicableCheckersRead | governance/compat/check_work_order_dispatch_quality.py; governance/compat/check_work_order_dispatch_quality_source.py; governance/compat/check_work_order_dispatch_quality_artifacts.py; governance/compat/check_dispatch_scaffold_provenance.py; governance/compat/check_gate_to_role_closeability.py; governance/compat/check_governed_artifact_checker_read_ahead.py; governance/compat/check_task_governance_route.py; governance/compat/check_baseline_update_compat.py; governance/compat/check_agent_operation_trace.py; governance/compat/check_work_order_acceptance_ledger.py; governance/compat/check_high_risk_local_transaction_proof.py; governance/compat/check_adif_defect_registry_disclosure.py; governance/compat/check_agent_packet_authority_and_encoding.py; governance/compat/check_markdown_structural_completeness.py |
-| literalTokensReviewed | Dispatch Prompt Envelope; Source Verification Block; acceptance-ledger-json; Gate-To-Role Closeability Contract; DISPATCH_READY; Returned defects: NONE_RETURNED; rawMemoryReleased=false |
+| literalTokensReviewed | Dispatch Prompt Envelope; Source Verification Block; acceptance-ledger-json; Gate-To-Role Closeability Contract; CLOSED_PASS_BOUNDED; Returned defects: NONE_RETURNED; rawMemoryReleased=false |
 | gateRunPurpose | Confirmation of source-bound artifact-only dispatch, not first discovery or execution proof |
 | claimBoundary | Validates packet/evidence shape only |
 
@@ -91,3 +91,31 @@ Operator next under delegated Local orchestration authority selects NIS-T1C. Loc
 ## Verification
 
 Pre-dispatch and bound pre-implementation must PASS; full worker-return fast gate required before return; Local review and clean committed closure precede acceptance.
+
+## Closure Disposition
+
+CLOSED_PASS_BOUNDED evaluation only; valid negative findings and Local independent probe accepted in `docs/reviews/CVF_NIS_T1C_BUILDER_HANDOFF_VALUE_PROOF_COMPLETION_2026-10-05.md`. Build-ready remains future target; no successor admitted.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1C_BUILDER_HANDOFF_VALUE_PROOF_2026-10-05.md` | CLOSED_PASS_BOUNDED; evaluation only; no successor | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_NIS_T1C_BUILDER_HANDOFF_VALUE_PROOF_COMPLETION_2026-10-05.md` | independent probe and Local dispositions | PASS |
+| Roadmap state | `docs/roadmaps/CVF_GCLH_MACHINE_FIRST_REVIEW_PREFLIGHT_ROADMAP_2026-09-01.md` | existing review-method owner unchanged; task closed; no S2 release | PASS |
+| Registry JSON | `docs/reviews/evidence/cvf-nis-t1c-local-independent-review-2026-10-05.json` | exact worker/probe bindings and bounded proposed owner deltas; no corpus/runtime registry change applicable | PASS |
+| Registry Markdown | `docs/reviews/CVF_NIS_T1C_BUILDER_HANDOFF_VALUE_PROOF_COMPLETION_2026-10-05.md` | human disposition of the same task evidence; no corpus registry change applicable | PASS |
+| External evidence digest | `docs/reviews/evidence/cvf-nis-t1c-local-independent-review-2026-10-05.json` | repo-local synthetic evidence, SHA256 a1eac386299f89d6cc5b5f3f0ccaf511e0d67b3020858f027401bd47628459c0; no external provider/repository payload | PASS |
+| System loop interlock | `docs/reviews/evidence/cvf-nis-t1c-local-independent-review-2026-10-05.json` | native source -> frozen replay -> Local oracle -> selected proposal; no BUILD | PASS |
+| Session continuity | `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | generated closed-pair pins and next selection; parked lanes retained | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| REQ-1 native replay evidence | actual producer, bound scenario/source/logs | five raw source pins and canonical Git blobs match; two native packet byte digests match raw replay; failed config diagnostic preserved | PASS |
+| REQ-2 evaluation | material coverage and concrete remaining gaps | Local availability-aware correction; all four unknowns retained after entry; effective rule projection proposal | PASS |
+| REQ-3 worker scope | exact four paths, pending return and gate | unchanged worker return SHA256 09f81a72314ffb963ec18ca855254deba608b5b3d4de918f989797dc76315dbd; saved final fast gate COMPLIANT | PASS |
+| Independent positive and negative controls | separately selected assertions | two valid native packets; three adversarial mutations rejected | PASS |
+| Bound claim | no build-ready, UX or live proof | synthetic frozen artifact evaluation only | PASS |
+

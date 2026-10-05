@@ -4,7 +4,7 @@ Memory class: governed-worker-dispatch
 
 docType: work_order
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: CVF-NIS-T1C
 providerExecutionAuthority: FORBIDDEN
@@ -25,7 +25,7 @@ Worker return path: `docs/reviews/CVF_NIS_T1C_BUILDER_HANDOFF_VALUE_PROOF_WORKER
 Role: distinct INTERNAL_AGENT evaluation worker; Local is dispatcher/reviewer/closer.
 Canonical packet: `docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1C_BUILDER_HANDOFF_VALUE_PROOF_2026-10-05.md`; paired baseline: `docs/baselines/CVF_GC018_NIS_T1C_BUILDER_HANDOFF_VALUE_PROOF_2026-10-05.md`; source bindings: `docs/reviews/evidence/cvf-nis-t1c-dispatch-inputs-2026-10-05.json`.
 Commit mode: WORKER_MUST_NOT_COMMIT.
-executionBaseHead: WORKER_MUST_CAPTURE_AT_START.
+executionBaseHead: 4ef9df4b6a20f9634974d49bdf159bb76af89628.
 Current-time notes: 2026-10-05; refresh actual HEAD and verify source pins before edits.
 Do-not-misread notes: T1B-D is closed, not reopened. Synthetic artifact fitness only; no source repair, provider, store, UAC or BUILD effect.
 Required first actions: read startup, guard orientation/literal gotchas, this pair and bound source files; verify clean isolated worktree; capture execution base; run bound pre-implementation before output creation.
@@ -105,7 +105,7 @@ Standard: `docs/reference/semantic_convergence_control/CVF_SEMANTIC_CONVERGENCE_
   },
   "claims": [],
   "requiredDisposition": "CONTINUE_BOUNDED",
-  "successorScope": "INITIAL_BOUNDED"
+  "successorScope": "NO_SUCCESSOR"
 }
 ```
 
@@ -126,7 +126,7 @@ Returned defects: NONE_RETURNED. Actual resolver executed 2026-10-05, candidates
 | Field | Value |
 |---|---|
 | applicableCheckersRead | governance/compat/check_work_order_dispatch_quality.py; governance/compat/check_work_order_dispatch_quality_source.py; governance/compat/check_work_order_dispatch_quality_artifacts.py; governance/compat/check_dispatch_scaffold_provenance.py; governance/compat/check_gate_to_role_closeability.py; governance/compat/check_governed_artifact_checker_read_ahead.py; governance/compat/check_task_governance_route.py; governance/compat/check_baseline_update_compat.py; governance/compat/check_agent_operation_trace.py; governance/compat/check_work_order_acceptance_ledger.py; governance/compat/check_high_risk_local_transaction_proof.py; governance/compat/check_adif_defect_registry_disclosure.py; governance/compat/check_agent_packet_authority_and_encoding.py; governance/compat/check_markdown_structural_completeness.py |
-| literalTokensReviewed | Dispatch Prompt Envelope; Source Verification Block; acceptance-ledger-json; Gate-To-Role Closeability Contract; DISPATCH_READY; Returned defects: NONE_RETURNED; rawMemoryReleased=false |
+| literalTokensReviewed | Dispatch Prompt Envelope; Source Verification Block; acceptance-ledger-json; Gate-To-Role Closeability Contract; CLOSED_PASS_BOUNDED; Returned defects: NONE_RETURNED; rawMemoryReleased=false |
 | gateRunPurpose | Confirmation of source-bound artifact-only dispatch, not first discovery or execution proof |
 | claimBoundary | Validates packet/evidence shape only |
 
@@ -159,7 +159,7 @@ Contract source archive-qualified exception: `docs/reference/CVF_AHB_T2_AGENT_HA
 | route | MULTI_AGENT_MULTI_ROLE |
 | rolePattern | Local dispatcher/reviewer and distinct internal evaluation worker |
 | phase | DISPATCH then IMPLEMENTATION then REVIEW |
-| baseHeadFor(phase) | dispatchBaseHead=5944658abf723cdcec0b46ce83456b07caa6ef31; executionBaseHead=WORKER_MUST_CAPTURE_AT_START; closureBaseHead=REVIEWER_TO_SET |
+| baseHeadFor(phase) | dispatchBaseHead=5944658abf723cdcec0b46ce83456b07caa6ef31; executionBaseHead=4ef9df4b6a20f9634974d49bdf159bb76af89628; closureBaseHead=42022e4071e6e4d5347be47cb926418eb344c5dd |
 | changedSetScope(phase) | Worker exactly four evidence paths; Local admission and continuity separately |
 | traceScope(phase, actor) | worker command/evidence only; Local review does not recreate production replay |
 | commitOwner(phase) | Local closer only; WORKER_MUST_NOT_COMMIT |
@@ -590,3 +590,30 @@ Disposition: AUTHORIZED_EXACT_MANIFEST
 Atomicity reason: activating the new paired admission changes currentAuthority raw hashes; source continuity and generated read models must bind the same final pair. Existing steward exact-manifest authorization; dedicated handoff-only sync follows material commit.
 Rollback boundary: nine named admission/continuity paths only; no history rewrite, source mutation, checker waiver or parked-lane activation.
 Exact changed manifest: `docs/baselines/CVF_GC018_NIS_T1C_BUILDER_HANDOFF_VALUE_PROOF_2026-10-05.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1C_BUILDER_HANDOFF_VALUE_PROOF_2026-10-05.md`; `docs/reviews/evidence/cvf-nis-t1c-dispatch-inputs-2026-10-05.json`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`.
+
+## Reviewer Closure Disposition
+
+Local accepts REQ-1/REQ-2/REQ-3 as valid bounded evaluation evidence, not native build readiness. Original worker return preserved at 42022e4071e6e4d5347be47cb926418eb344c5dd; independent Local probe PASS and semantic corrections in `docs/reviews/CVF_NIS_T1C_BUILDER_HANDOFF_VALUE_PROOF_COMPLETION_2026-10-05.md` and `docs/reviews/evidence/cvf-nis-t1c-local-independent-review-2026-10-05.json`. No source/S2/upstream runtime/provider/BUILD successor opened.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1C_BUILDER_HANDOFF_VALUE_PROOF_2026-10-05.md` | CLOSED_PASS_BOUNDED; evaluation only; no successor | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_NIS_T1C_BUILDER_HANDOFF_VALUE_PROOF_COMPLETION_2026-10-05.md` | independent probe and Local dispositions | PASS |
+| Roadmap state | `docs/roadmaps/CVF_GCLH_MACHINE_FIRST_REVIEW_PREFLIGHT_ROADMAP_2026-09-01.md` | existing review-method owner unchanged; task closed; no S2 release | PASS |
+| Registry JSON | `docs/reviews/evidence/cvf-nis-t1c-local-independent-review-2026-10-05.json` | exact worker/probe bindings and bounded proposed owner deltas; no corpus/runtime registry change applicable | PASS |
+| Registry Markdown | `docs/reviews/CVF_NIS_T1C_BUILDER_HANDOFF_VALUE_PROOF_COMPLETION_2026-10-05.md` | human disposition of the same task evidence; no corpus registry change applicable | PASS |
+| External evidence digest | `docs/reviews/evidence/cvf-nis-t1c-local-independent-review-2026-10-05.json` | repo-local synthetic evidence, SHA256 a1eac386299f89d6cc5b5f3f0ccaf511e0d67b3020858f027401bd47628459c0; no external provider/repository payload | PASS |
+| System loop interlock | `docs/reviews/evidence/cvf-nis-t1c-local-independent-review-2026-10-05.json` | native source -> frozen replay -> Local oracle -> selected proposal; no BUILD | PASS |
+| Session continuity | `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | generated closed-pair pins and next selection; parked lanes retained | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| REQ-1 native replay evidence | actual producer, bound scenario/source/logs | five raw source pins and canonical Git blobs match; two native packet byte digests match raw replay; failed config diagnostic preserved | PASS |
+| REQ-2 evaluation | material coverage and concrete remaining gaps | Local availability-aware correction; all four unknowns retained after entry; effective rule projection proposal | PASS |
+| REQ-3 worker scope | exact four paths, pending return and gate | unchanged worker return SHA256 09f81a72314ffb963ec18ca855254deba608b5b3d4de918f989797dc76315dbd; saved final fast gate COMPLIANT | PASS |
+| Independent positive and negative controls | separately selected assertions | two valid native packets; three adversarial mutations rejected | PASS |
+| Bound claim | no build-ready, UX or live proof | synthetic frozen artifact evaluation only | PASS |

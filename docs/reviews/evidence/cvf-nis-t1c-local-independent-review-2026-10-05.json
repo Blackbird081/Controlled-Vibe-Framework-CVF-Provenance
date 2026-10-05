@@ -1,0 +1,237 @@
+{
+  "schemaVersion": "cvf.nisT1cLocalIndependentReview.v1",
+  "batchId": "CVF-NIS-T1C",
+  "status": "PASS_INDEPENDENT_PROBE",
+  "executionBaseHead": "4ef9df4b6a20f9634974d49bdf159bb76af89628",
+  "workerActor": "nis-t1c-internal-worker",
+  "workerInvocation": "nis-t1c-worker-20261005",
+  "localOracle": {
+    "actor": "nis-t1c-local-reviewer",
+    "invocation": "nis-t1c-local-independent-20261005",
+    "declaredAtUtc": "2026-10-05T08:14:51.561765+00:00",
+    "method": "Independent Python assertions over recorded native UTF-8 packet bytes; source-aware availability, separate from worker token evaluator. No production replay regeneration.",
+    "requiredAfterAnswerStage": [
+      "raw entries",
+      "deadline timezone",
+      "public holiday",
+      "export file format"
+    ],
+    "positivePolicy": [
+      "No automatic scoring or ranking",
+      "No email sending",
+      "equipment line codes stay unchanged",
+      "Auditors have read-only view and no export",
+      "may export their own team's section",
+      "Resolution of C1"
+    ],
+    "unknownFirstAvailability": {
+      "U1": "P1_STAGED",
+      "U2": "P0 brief semantic timezone; P1 explicit ID",
+      "U3": "P1_STAGED",
+      "U4": "P1_STAGED"
+    },
+    "mutations": [
+      "changed UTF-8 packet byte with unchanged digest",
+      "removed fourth unknown with recomputed digest",
+      "stale acknowledged revision on revised packet with otherwise valid content/digest"
+    ],
+    "boundary": "One frozen synthetic case only; no UI, usability, live governance, current-date output determinism or build-ready proof."
+  },
+  "localOracleDeclarationSha256": "6327caaeccea7809a09ddd8ff6498be85c78ee710cdba0a7ba99f0002236ecf5",
+  "probeScriptSha256": "67641cf4949f15a742d36639bda2c5c16ff422fba2dcde273b9dbfa194bfe253",
+  "frozenWorkerArtifactHashes": {
+    "docs/reviews/CVF_NIS_T1C_BUILDER_HANDOFF_VALUE_PROOF_WORKER_RETURN_2026-10-05.md": "09f81a72314ffb963ec18ca855254deba608b5b3d4de918f989797dc76315dbd",
+    "docs/reviews/evidence/cvf-nis-t1c-scenario-2026-10-05.json": "40b2b1b0a8aca2004403915188cd050eb296103059a5070eee5b4ce2861d6e0b",
+    "docs/reviews/evidence/cvf-nis-t1c-replay-2026-10-05.json": "4fae2c19ca58d0b7a933c7fc883cfcc5929c5d1ba61e658edd3d0d95b5da5208",
+    "docs/reviews/evidence/cvf-nis-t1c-readiness-gap-2026-10-05.json": "cd124f015c018ae6b621b47b5bf7911d6474f0fd1b58440db62d8f10a800fa42"
+  },
+  "sourcePins": [
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-review.ts",
+      "sha256": "c8746be8645af3d287c084a6338e84bbf502b4ffc3f9f750f58236c0085a34dc",
+      "gitBlob": "4bfd12d933ed55d788c45cda439e8724991abb07",
+      "workerAndMainMatch": true
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/SpecExport.tsx",
+      "sha256": "24617b9ef2f53e6ac5cf5e4907eaa2dea2d0ba8fbe1578714f8cba22338be2a9",
+      "gitBlob": "bb550ff43785e62534e8cc8432649c537a84ec6a",
+      "workerAndMainMatch": true
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/templates/development.ts",
+      "sha256": "e17bd23353f95cf0fd62988c8abafecdee65dd99aa0848c890276820bdcd4b7c",
+      "gitBlob": "e8993d830cbd07a6aa7b539b34179fdeeed0bc09",
+      "workerAndMainMatch": true
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/spec-export-portable-handoff.ts",
+      "sha256": "8528e8274bb82015398ce7deb10292aff6c7b5a06db83b25c6d8346b7a440795",
+      "gitBlob": "d17f4f6af70dcdfe45e7c9f7254d0a610bc519d9",
+      "workerAndMainMatch": true
+    },
+    {
+      "path": "docs/reviews/CVF_NIS_T1B_D_INTEGRATED_REVIEW_PERSISTENCE_COMPLETION_2026-10-05.md",
+      "sha256": "40a1b4c57e797b41eb9fa48c4050a0d86815e45d7b775b113c9b733acaa9329c",
+      "gitBlob": "6195a179176fa1bcc3d3d898f04a5fb3e0c70fdb",
+      "workerAndMainMatch": true
+    }
+  ],
+  "boundWorkerReceipts": {
+    ".cvf/runtime/nis-t1c-worker-20261005/pre-implementation-w/pre-implementation.json": {
+      "sha256": "c75a05ad64e0f3480b51bb2d1a9114a0f89a28db89212ae11ac13e8c59e50fbc",
+      "bytes": 41110
+    },
+    ".cvf/runtime/nis-t1c-worker-20261005/replay/vitest.config.mjs": {
+      "sha256": "735eb864c2272efb5229d977e72c2dc9d509b8c14ba73279ab1f2b114bdc880a",
+      "bytes": 252
+    },
+    ".cvf/runtime/nis-t1c-worker-20261005/replay/replay.test.ts": {
+      "sha256": "9fadaff74ce4af9c870c66299864d2f71947bab0e1ca2682cd3965ba9c47cca3",
+      "bytes": 5572
+    },
+    ".cvf/runtime/nis-t1c-worker-20261005/replay/replay-raw.json": {
+      "sha256": "edf86dc20d3b7c72d226e69ff58587df178e98e2c01e73b4b887ef187ad2f75c",
+      "bytes": 198437
+    },
+    ".cvf/runtime/nis-t1c-worker-20261005/replay/replay-run1.log": {
+      "sha256": "104cc8e1d74033e03bcd00fd4f61e0f1e98cb798dc9950cebd2ee7b685c60cb2",
+      "bytes": 11964
+    },
+    ".cvf/runtime/nis-t1c-worker-20261005/replay/replay-run2.log": {
+      "sha256": "159e84ad7624043ff01c4911d35439eb2400e5bb8ab1e97b7f58e1e8e4a8d9a4",
+      "bytes": 294
+    },
+    ".cvf/runtime/nis-t1c-worker-20261005/fast-gate-final.log": {
+      "sha256": "70e819afff0aeade478029f770c4c1ec46c1d47c31b4e06c833fe3baeae6199b",
+      "bytes": 10997
+    }
+  },
+  "productionPacketPositiveControls": {
+    "exportedBaselinePacket": {
+      "sha256": "393ecee7594febaf53da2728b3d640ad493f8a1bbfe8b2c77b191392d233b56b",
+      "bytes": 23823,
+      "revision": 8,
+      "unknownIds": [
+        "U1",
+        "U2",
+        "U3",
+        "U4"
+      ],
+      "positiveControl": "PASS"
+    },
+    "exportedRevisedPacket": {
+      "sha256": "02b8d1f51a77a8233d6eab0492344e2781bbb2aa2b1bf460d1e30a73e0308ad1",
+      "bytes": 24158,
+      "revision": 11,
+      "unknownIds": [
+        "U1",
+        "U2",
+        "U3",
+        "U4"
+      ],
+      "positiveControl": "PASS"
+    }
+  },
+  "negativeMutations": [
+    {
+      "mutation": "ALTERED_PACKET_DIGEST",
+      "observedRejection": [
+        "DIGEST_OR_LENGTH"
+      ],
+      "pass": true
+    },
+    {
+      "mutation": "REMOVED_FOURTH_UNKNOWN_REHASHED",
+      "observedRejection": [
+        "MISSING:UNKNOWN U4"
+      ],
+      "pass": true,
+      "recomputedDigest": "545ea60070106576c16d66cbb7a9f626586396a446481ae4dd87efbc9ab1fe5a"
+    },
+    {
+      "mutation": "STALE_ACK_ON_VALID_REVISED_PACKET",
+      "packetRevision": 11,
+      "staleAcknowledgedRevision": 8,
+      "observedRejection": [
+        "STALE_REVISION_ACK"
+      ],
+      "pass": true
+    }
+  ],
+  "availabilityAdjudication": {
+    "P0UnknownTokenFailures": "REJECT_PRODUCT_DEFECT_INFERENCE: U1/U3/U4 and 12-month retention first supplied at P1; timezone already semantically present at P0 without U2 label",
+    "allFourUnknownsVisibleAtP1AndFinal": "PASS",
+    "provenanceConflictAndResolutionCoexist": "PASS_FINDING: clarify effective decision projection; do not erase source provenance"
+  },
+  "localDispositions": [
+    {
+      "workerFinding": "F-UNKNOWN-GRANULARITY",
+      "disposition": "ACCEPT_CAPABILITY_GAP",
+      "reason": "Decision-level confirmation does not track independently unresolved subitems; bounded prompts explicitly disclaim completeness. Preserve confirmation while adding explicit open-item accounting if admitted."
+    },
+    {
+      "workerFinding": "F-READINESS-STATUS-INDEPENDENT",
+      "disposition": "MODIFY",
+      "reason": "Review routing status is not a build-ready certificate. Field-presence summary cannot summarize semantic unknowns; clarify distinct review routing, content confirmation and unresolved items."
+    },
+    {
+      "workerFinding": "F-CONFLICT-RESOLUTION-IN-APPENDIX-ONLY",
+      "disposition": "ACCEPT_HANDOFF_CLARITY_GAP",
+      "reason": "Show effective resolved rule and provenance link without overwriting original inputs."
+    },
+    {
+      "workerFinding": "F-UNKNOWN-VISIBILITY-AT-P0",
+      "disposition": "REJECT_PREMATURE_TOKEN_ORACLE",
+      "reason": "Availability-aware semantics required; producer cannot export unspecified future answers. Initial timezone was already preserved."
+    },
+    {
+      "workerFinding": "F-UNMAPPED-FIELD-FRICTION",
+      "disposition": "RETAIN_DESIGNED_CONSERVATISM",
+      "reason": "Source intentionally invalidates all answered decisions on unmapped changes; optimization optional, not correctness defect."
+    },
+    {
+      "workerFinding": "F-REVISION-TRACKING-WORKS",
+      "disposition": "ACCEPT_BOUNDED",
+      "reason": "Recorded native stage invalidates old ack and preserves changed access after reconfirmation; no UI/live evidence."
+    }
+  ],
+  "proposalDisposition": {
+    "workerOpenItemsLedger": "ADAPT_EXISTING_CONSUMER_ONLY_PENDING_WORK_ORDER",
+    "stage": "S1 handoff content refinement prerequisite candidate; do not relabel as completed S2 design/build",
+    "smallestNext": "Explicit declared open-item/effective-decision projection with revision binding; preserve independent content confirmation. Selected-payload clarify/checklist/plan/tasks/analyze assessment can precede or inform implementation; no forced native-first dependency.",
+    "specKit": "CONDITIONAL_CANDIDATE_NOT_VERIFIED; no exact upstream payload admitted",
+    "successorOpened": false
+  },
+  "providerCalls": 0,
+  "networkCalls": 0,
+  "cost": "UNKNOWN_UNMEASURED",
+  "claimBoundary": "One frozen synthetic case only; no UI, usability, live governance, current-date output determinism or build-ready proof.",
+  "workerWorktreeStatus": "?? docs/reviews/CVF_NIS_T1C_BUILDER_HANDOFF_VALUE_PROOF_WORKER_RETURN_2026-10-05.md\n?? docs/reviews/evidence/cvf-nis-t1c-readiness-gap-2026-10-05.json\n?? docs/reviews/evidence/cvf-nis-t1c-replay-2026-10-05.json\n?? docs/reviews/evidence/cvf-nis-t1c-scenario-2026-10-05.json\n",
+  "workerMaterialCommit": "42022e4071e6e4d5347be47cb926418eb344c5dd",
+  "closureBatchPaths": [
+    "AGENT_HANDOFF_V63_2026-09-18.md",
+    "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json",
+    "CVF_SESSION/ACTIVE_SESSION_STATE.json",
+    "CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json",
+    "CVF_SESSION/state/entries/nextAllowedMove.json",
+    "CVF_SESSION_MEMORY.md",
+    "docs/baselines/CVF_GC018_NIS_T1C_BUILDER_HANDOFF_VALUE_PROOF_2026-10-05.md",
+    "docs/reviews/CVF_NIS_T1C_BUILDER_HANDOFF_VALUE_PROOF_COMPLETION_2026-10-05.md",
+    "docs/reviews/evidence/cvf-nis-t1c-local-independent-review-2026-10-05.json",
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1C_BUILDER_HANDOFF_VALUE_PROOF_2026-10-05.md"
+  ],
+  "closureBaseHead": "42022e4071e6e4d5347be47cb926418eb344c5dd",
+  "acceptanceDisposition": {
+    "REQ-1": "PASS_BOUNDED_REPLAY_EVIDENCE",
+    "REQ-2": "PASS_EVALUATION_WITH_LOCAL_CORRECTIONS",
+    "REQ-3": "PASS_EXACT_FOUR_WORKER_ARTIFACTS"
+  },
+  "additionalLocalSourceVerification": [
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/spec-gate.ts",
+      "sha256": "803a2c04ae0b7122e706793da899597945895266f5be0b450260d61e61be09aa",
+      "scope": "evaluateSpecGate presence-only; not global CVF validation claim"
+    }
+  ]
+}

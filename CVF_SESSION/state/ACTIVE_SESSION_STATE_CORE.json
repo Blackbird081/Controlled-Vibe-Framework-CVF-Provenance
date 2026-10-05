@@ -37,11 +37,11 @@
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_NIS_T1C_BUILDER_HANDOFF_VALUE_PROOF_2026-10-05.md",
-    "baselineSha256": "0f02b8674aac65a64d38f3e0df35dffd4b65bbc743e3bcca566ded43e1689789",
+    "baselineSha256": "97263b9066ec974c8dc387244b3f54dfda81172488dc2f250d0b810a8ad2bf14",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1C_BUILDER_HANDOFF_VALUE_PROOF_2026-10-05.md",
-    "workOrderSha256": "b86517bfbee7f871376b74c34c3d8eefc6fe0ecddf7799cc9f14b4ab1ff8cbd3"
+    "workOrderSha256": "c9cf727a28c15418f9527bab3c6f1268a489e07c87562b251cb53682bf0fd548"
   },
-  "currentAuthoritySyncReason": "CVF-NIS-T1C material c90289716: artifact-only evaluation; T1B-D closed and parked lanes unchanged.",
+  "currentAuthoritySyncReason": "T1C closed evaluation; source/probe accepted; build-ready target and parked lanes retained.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
