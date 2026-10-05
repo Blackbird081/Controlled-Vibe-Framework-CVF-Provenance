@@ -2,16 +2,16 @@
   "schemaVersion": "0.1.0",
   "currentMode": "cvf_ncr_p10_closed_p11_parked",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=CVF-NIS; NEXT_ACTION_CLASS=NIS_T1B_PORTABLE_REVIEW_BINDING; BATCH_ID=CVF-NIS-T1B-A; T1A_MATERIAL_COMMIT=bd47968b316744edd55e6f89cc4f9f6d1913e2b3. Operator 2026-10-05 authorized commit and continuation. T1A consumer implemented; 60/60 structural tests, pre-commit90/90; no AI governance or durable acceptance claim. Direct Local next: bounded portable review-binding candidate under docs/baselines/CVF_GC018_NIS_T1B_PORTABLE_REVIEW_BINDING_2026-10-05.md; admission before source edits. Existing currentAuthority pair retains FR2 terminal historical bindings only, not NIS execution authority. FR2 CLOSED_BLOCKED_BOUNDED, original receipt lost, no successor. CCMA PARKED_BY_OPERATOR; S05/C1/send/B2 STOP; Q001/Q004 OPEN/Profile A; P11/deploy and FLAL T4/T5 parked. T3/RANGE and FR1-R1 closed; opaque-source boundary/DEFER_PRODUCTION_JOIN_GUARD retained; original T2 FAIL retained. Public PR9 merged/main8a4119e1/checksPASS; no push. LHW24 closed; costs UNKNOWN.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-NIS; NEXT_ACTION_CLASS=NIS_T1B_D_INTERNAL_IMPLEMENTATION; BATCH_ID=CVF-NIS-T1B-D. Operator 2026-10-05 delegates Local orchestration/review and manual INTERNAL_AGENT worker relay. A/B/C source checkpoint 5e42818cb; active currentAuthority binds NIS-T1B-D pair. Next: worker in clean linked worktree CVF-NIS-T1B-D captures HEAD/status/pins, full bound pre-implementation PASS, then UI/API save/reopen and private-profile transaction proof; no worker commit. Local owns independent probe, review and closure; worker evidence PENDING_REVIEWER_EXECUTION. No real root/account/provider/BUILD/public activation. FR2 terminal historical receipt loss retained; no successor. CCMA PARKED_BY_OPERATOR; S05/C1/send/B2 STOP; Q001/Q004 OPEN/Profile A; P11/deploy and FLAL T4/T5 parked. T3/RANGE and FR1-R1 closed; opaque-source/DEFER_PRODUCTION_JOIN_GUARD and original T2 FAIL retained. Public PR9 merged/checksPASS; no push. LHW24 closed; costs UNKNOWN.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_WRS_FR2_DISPATCH_CLOSURE_FRICTION_REPAIR_2026-10-04.md",
-    "baselineSha256": "3895eb5b4e359839ae265a4706dd94f9159c559e979c042ec64e68588d46bf35",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_WRS_FR2_DISPATCH_CLOSURE_FRICTION_REPAIR_2026-10-04.md",
-    "workOrderSha256": "efbe1db5a2088f59d9c8cd5d089bea5b972e2c3b243e28457a672b94566e698c"
+    "baselinePath": "docs/baselines/CVF_GC018_NIS_T1B_D_INTEGRATED_REVIEW_PERSISTENCE_2026-10-05.md",
+    "baselineSha256": "2a9ae7cbb53753233e178abbb45bb48fc21f17f8187b0ae48e9e88b42e410f73",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1B_D_INTEGRATED_REVIEW_PERSISTENCE_2026-10-05.md",
+    "workOrderSha256": "101e46c2a50ee01b275bfb203fd9e29f1692b0bda0f09184e8c8455f0acf09e2"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

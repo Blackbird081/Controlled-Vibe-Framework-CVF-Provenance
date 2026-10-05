@@ -42,7 +42,7 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`; handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=FR2 terminal blocked packet finality then stop; role=Local reviewer/closer; phase=closure; decision owner=Local; CCMA/S05/P11 parked.
+Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`; handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=NIS-T1B-D internal worker dispatch; role=Local orchestrator/reviewer; phase=dispatch; decision owner=Local; CCMA/S05/P11 parked.
 
 ## Current Mode
 
@@ -51,7 +51,7 @@ Current mode: `cvf_ncr_p10_closed_p11_parked`; previous mode marker: `cvf_ncr_p1
 
 ## Next Allowed Move
 Mode: `cvf_ncr_p10_closed_p11_parked`
-PROGRAM_ID=CVF-NIS; NEXT_ACTION_CLASS=NIS_T1B_PORTABLE_REVIEW_BINDING; BATCH_ID=CVF-NIS-T1B-A; T1A_MATERIAL_COMMIT=bd47968b316744edd55e6f89cc4f9f6d1913e2b3. Operator 2026-10-05 authorized commit and continuation. T1A consumer implemented; 60/60 structural tests, pre-commit90/90; no AI governance or durable acceptance claim. Direct Local next: bounded portable review-binding candidate under docs/baselines/CVF_GC018_NIS_T1B_PORTABLE_REVIEW_BINDING_2026-10-05.md; admission before source edits. Existing currentAuthority pair retains FR2 terminal historical bindings only, not NIS execution authority. FR2 CLOSED_BLOCKED_BOUNDED, original receipt lost, no successor. CCMA PARKED_BY_OPERATOR; S05/C1/send/B2 STOP; Q001/Q004 OPEN/Profile A; P11/deploy and FLAL T4/T5 parked. T3/RANGE and FR1-R1 closed; opaque-source boundary/DEFER_PRODUCTION_JOIN_GUARD retained; original T2 FAIL retained. Public PR9 merged/main8a4119e1/checksPASS; no push. LHW24 closed; costs UNKNOWN.
+PROGRAM_ID=CVF-NIS; NEXT_ACTION_CLASS=NIS_T1B_D_INTERNAL_IMPLEMENTATION; BATCH_ID=CVF-NIS-T1B-D. Operator 2026-10-05 delegates Local orchestration/review and manual INTERNAL_AGENT worker relay. A/B/C source checkpoint 5e42818cb; active currentAuthority binds NIS-T1B-D pair. Next: worker in clean linked worktree CVF-NIS-T1B-D captures HEAD/status/pins, full bound pre-implementation PASS, then UI/API save/reopen and private-profile transaction proof; no worker commit. Local owns independent probe, review and closure; worker evidence PENDING_REVIEWER_EXECUTION. No real root/account/provider/BUILD/public activation. FR2 terminal historical receipt loss retained; no successor. CCMA PARKED_BY_OPERATOR; S05/C1/send/B2 STOP; Q001/Q004 OPEN/Profile A; P11/deploy and FLAL T4/T5 parked. T3/RANGE and FR1-R1 closed; opaque-source/DEFER_PRODUCTION_JOIN_GUARD and original T2 FAIL retained. Public PR9 merged/checksPASS; no push. LHW24 closed; costs UNKNOWN.
 Historical G1-G7 terminal baseline: mode `acel_g1_g7_research_terminally_closed`. G1-G6 terminal review: `docs/reviews/CVF_ACEL_G1_G6_TERMINAL_STOP_CLOSURE_2026-09-24.md`; G7 research closure: `docs/reviews/CVF_ACEL_G7_CROSS_RUN_CAPABILITY_EVOLUTION_RESEARCH_CLOSURE_2026-09-24.md`. The packet-only post-G7 reconciliation review at `docs/reviews/CVF_ACEL_POST_G7_FULL_CORPUS_ABSORPTION_CLOSURE_2026-09-24.md` is superseded for repository absorption by the 2026-09-25 pinned-source audit. G1 is stopped, G2-G6 remain parked, G7 research is closed, and no automatic G1-G7 successor exists.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1

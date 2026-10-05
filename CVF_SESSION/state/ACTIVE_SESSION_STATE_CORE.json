@@ -36,12 +36,12 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_WRS_FR2_DISPATCH_CLOSURE_FRICTION_REPAIR_2026-10-04.md",
-    "baselineSha256": "3895eb5b4e359839ae265a4706dd94f9159c559e979c042ec64e68588d46bf35",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_WRS_FR2_DISPATCH_CLOSURE_FRICTION_REPAIR_2026-10-04.md",
-    "workOrderSha256": "efbe1db5a2088f59d9c8cd5d089bea5b972e2c3b243e28457a672b94566e698c"
+    "baselinePath": "docs/baselines/CVF_GC018_NIS_T1B_D_INTEGRATED_REVIEW_PERSISTENCE_2026-10-05.md",
+    "baselineSha256": "2a9ae7cbb53753233e178abbb45bb48fc21f17f8187b0ae48e9e88b42e410f73",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1B_D_INTEGRATED_REVIEW_PERSISTENCE_2026-10-05.md",
+    "workOrderSha256": "101e46c2a50ee01b275bfb203fd9e29f1692b0bda0f09184e8c8455f0acf09e2"
   },
-  "currentAuthoritySyncReason": "FR2 CLOSED_BLOCKED_BOUNDED: structural acceptance, historical clean receipt loss retained; packet material cd114a72923c9ccace1bcfd777d594a312c137a9; current bound finality only.",
+  "currentAuthoritySyncReason": "NIS-T1B-D operator-authorized internal implementation dispatch; source checkpoint 5e42818cb; packet material b2016e35a4b11043524ac51c26a49121309391cc; independent profile/transaction acceptance pending; parked lanes preserved.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
