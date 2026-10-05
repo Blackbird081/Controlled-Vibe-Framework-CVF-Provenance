@@ -1,0 +1,981 @@
+{
+  "schemaVersion": "cvf.nisT1gManualBaselineCasepack.v1",
+  "batchId": "CVF-NIS-T1G",
+  "datasetId": "cvf-nis-t1g-manual-baseline-casepack-v1",
+  "datasetDate": "2026-10-05",
+  "datasetDateNote": "A declared constant of the dataset, not a clock reading; the generator never reads the current date and the frozen sources carry their own printed date.",
+  "executionState": "NOT_EXECUTED",
+  "preparationStatus": "READY_FOR_REVIEW",
+  "experimentAdmission": "HOLD_FOR_JOB_A_SOURCE_BINDING_NOT_ESTABLISHED",
+  "statement": "Frozen materials for a later manual-baseline comparison. No arm was run, no reviewer answered, no helper exists. All eleven cases are NOT_EXECUTED.",
+  "roleProtocolNote": "The reviewer views and the answer key live in this one file. The separation is a role protocol, not access isolation: the manual reviewer must be handed only the reviewer package built from reviewerViews and attachments, and anyone who has read the answerKey section cannot report a blinded manual result.",
+  "receiverFormatRef": "docs/reviews/CVF_NIS_T1G_RECEIVER_MANUAL_BASELINE_2026-10-05.md",
+  "protocolRef": "docs/reviews/evidence/cvf-nis-t1g-manual-baseline-protocol-2026-10-05.json",
+  "sourceBindingAdmission": {
+    "JOB_A_periodic_report": {
+      "sourceKind": "EXPORTED_REVIEWED_DRAFT (older producer, pre open-items)",
+      "attachments": [
+        "A",
+        "B"
+      ],
+      "revisions": {
+        "A": 8,
+        "B": 11
+      },
+      "acceptedFilePairing": "SOURCE_BINDING_NOT_ESTABLISHED",
+      "why": "No accepted-file candidate bytes, file hash or actor-bound record exist for these exported drafts; the T1C replay printed draft hashes only, was produced by an older producer pin, and no current verified acceptance was made. Frozen LG1 and LG2 hold only the coreFeatures value Synthetic reporting and cannot stand in for the report rules.",
+      "experimentAdmission": "HOLD",
+      "smallestCorrection": "Local owner route: through the existing producer capture used by T1E, mint a candidate v1 file for the revision 8 and revision 11 reviewed states of this job and freeze its fileSha256 and state; the worker may not run a producer.",
+      "unsupportedContent": [
+        "structured open items U1 to U4 and C1 as ledger items (the frozen bytes carry them only as prose markers inside answers and the constraints field)",
+        "a constraints-text drift with sticky item reconfirmation (the only frozen drift is the targetUsers access change)"
+      ]
+    },
+    "JOB_C_tool_lending": {
+      "sourceKind": "ACCEPTED_FILE_CANDIDATE_BYTES (synthetic LG3)",
+      "attachments": [
+        "C"
+      ],
+      "revisions": {
+        "C": 7
+      },
+      "acceptedFilePairing": "FILE_BYTES_AND_REVISION_ESTABLISHED_SYNTHETIC",
+      "why": "LG3 supplies the exact candidate file bytes, SHA-256 0d4a3dd870fd6f9e85541c8f338cbde2df444db44731c42ed203aeff41b3ac52, revision 7, with the byte-equal Local old-producer capture. Its packetSource is the placeholder Exact source packet CRLF end and every decision answer is Decision for <id>, so it is not an exported packet and carries no user resolutions or open items.",
+      "experimentAdmission": "ELIGIBLE_AS_SYNTHETIC_CONTROL_ONLY",
+      "smallestCorrection": "none needed for the control; no current verified acceptance exists",
+      "unsupportedContent": [
+        "the delegated item, the open unknown and the declared conflict of the tool lending plan fixture (they were plan inputs, not bytes of LG3)"
+      ]
+    }
+  },
+  "attachments": {
+    "A": {
+      "description": "Exported reviewed draft, baseline stage P2_BASELINE_ACKNOWLEDGED (revision 8), periodic report job",
+      "kind": "EXPORTED_REVIEWED_DRAFT",
+      "text": "# Draft for requirements clarification\n\nCurrent scope: specification clarification and review only. Design/build directions below are future steps requiring separate authorization. Viewing this draft does not approve BUILD.\n\n---\n# CVF Agent Handoff Packet (GUIDED MODE)\n**Generated:** 2026-10-05\n**Template:** \ud83d\udce6 App Builder Complete\n**Category:** development\n**Mode:** CVF Guided Agent (5-Phase)\n---\n\n## \ud83d\udccb Context\n\n**Template:** \ud83d\udce6 App Builder Complete\n\nCreate a full product brief and builder-ready handoff without exposing stack choices to the user.\n\n---\n\n## \ud83e\udd1d Packet Purpose\n\n- This packet is written for another AI/agent to read and continue execution.\n- The end user should not need to understand hidden frameworks, stacks, or implementation details.\n- The receiving agent must convert the brief into implementation decisions inside the provided guardrails.\n\n---\n\n## \ud83d\udcdd User Input\n\n- **1. App / product name:** Weekly Equipment Report Compiler\n- **2. What kind of product is this?:** Web App\n- **3. What problem does it solve?:** Every Friday a department head needs one weekly maintenance report compiled from entries submitted by team leads. Compiling by hand takes half a day and entries get lost.\n- **4. Who will use this product?:** Team leads (view and edit own entries only); department head (view all, sole exporter)\n- **5. The most important things the app must do:** 1. Team leads submit a weekly entry per equipment line\n2. System compiles all entries into one weekly report\n3. Department head exports the compiled report\n4. Late, missing and duplicate entries are marked in the report\n- **6. When would you consider the first version successful?:** Department head receives one compiled report by Monday 09:00 containing every submitted entry, with missing, late and duplicate entries visibly marked.\n- **7. What must stay unchanged:** Submitted entries are immutable once submitted; the existing equipment line codes stay unchanged.\n- **8. Where does the app need to run?:** Web browser on office Windows PCs\n- **9. What data does the app need to remember or process?:** Synthetic equipment line code, weekly status text, submitting team lead name, submission time. Source: weekly CSV drop only. No personal evaluation data.\n- **10. Look and feel:** Plain table, high contrast\n- **11. Out of scope:** No automatic scoring or ranking of team leads or people. No email sending in this version.\n- **12. Constraints or special conditions:** Team leads may correct their entry until the Friday 17:00 deadline. Deadline timezone not decided.\n\n\n\n---\n\n## \ud83c\udf10 English Working Brief\n\n**Translation status:** READY_FOR_EXTERNAL_AGENT_REVIEW\n\n- The English export uses normalized English working values for agent-facing execution.\n- User source values may have been entered in Vietnamese, but this packet avoids passing Vietnamese control content to the receiving agent.\n- Product meaning, acceptance criteria, and non-coder intent are preserved where local normalization is confident.\n- Fields marked `TRANSLATION_REQUIRED` must be translated by the operator or an approved LLM before external-agent build work starts.\n\n| Translation metric | Count |\n| --- | ---: |\n| Normalized fields | 0 |\n| Fields needing translation review | 0 |\n\n\n---\n\n## \u2705 Input Coverage\n\n| Field | Provided |\n| --- | --- |\n| 1. App / product name | \u2705 |\n| 2. What kind of product is this? | \u2705 |\n| 3. What problem does it solve? | \u2705 |\n| 4. Who will use this product? | \u2705 |\n| 5. The most important things the app must do | \u2705 |\n| 6. When would you consider the first version successful? | \u2705 |\n| 8. Where does the app need to run? | \u2705 |\n\n\n\n---\n\n## \ud83e\uddf3 Portable Agent Handoff Readiness\n\n**Readiness status:** READY_FOR_EXTERNAL_AGENT_REVIEW\n\n### Receiving Agent Mission\n\n- Treat this packet as the authoritative product brief for the first build plan.\n- Convert the non-coder brief into implementation decisions inside the stated guardrails.\n- Prefer a simple, testable first version over broad platform expansion.\n- Do not ask the non-coder to choose frameworks, databases, hosting, or hidden architecture unless that choice materially changes cost, risk, privacy, or scope.\n\n### Source Values Handling\n\n- This English packet uses agent-facing working values, not raw multilingual source text.\n- If any field says `TRANSLATION_REQUIRED`, stop before build work and request an approved translation.\n- Preserve product meaning, business terms, and acceptance criteria from the English Working Brief.\n- Do not ask the non-coder to make hidden technical choices while resolving translation gaps.\n\n### Implementation Decision Policy\n\n- If a technical detail is missing, choose a conservative default and explain why.\n- If a missing detail changes business risk, privacy, data retention, payment, authentication, or deployment scope, ask one concise clarification question before building.\n- If user-provided constraints conflict, stop and list the conflict instead of guessing.\n\n### Material Details To Reconfirm If Needed\n\nNone identified from the provided source values\n\n### External Agent Acceptance Checklist\n\n- Restate the product goal in one short paragraph.\n- List the first-version workflows the app must support.\n- Identify data objects or records implied by the source values.\n- Propose a practical build plan with milestones.\n- Define acceptance tests mapped to the user's success criteria.\n- Name assumptions and defaults separately from user-provided facts.\n- Keep out-of-scope items out of the first build unless the operator approves expansion.\n\n### Operator Review Gate\n\nAfter the external agent responds, mark the packet:\n\n- PASS: the agent understood the product, made sensible defaults, and produced actionable build steps.\n- PASS_WITH_MINOR_FIX: the agent understood the product but needs small wording or scope corrections.\n- HOLD: the agent misunderstood the product, asked the non-coder to make hidden technical choices, lost source values, or expanded scope without approval.\n\n\n---\n\n## \ud83c\udfaf Task\n\nINTENT:\nI want to create a complete app brief that remains non-coder friendly.\n\nAPP / PRODUCT NAME: Weekly Equipment Report Compiler\nAPP TYPE: Web App\n\nPROBLEM TO SOLVE:\nEvery Friday a department head needs one weekly maintenance report compiled from entries submitted by team leads. Compiling by hand takes half a day and entries get lost.\n\nTARGET USERS:\nTeam leads (view and edit own entries only); department head (view all, sole exporter)\n\nCORE FEATURES:\n1. Team leads submit a weekly entry per equipment line\n2. System compiles all entries into one weekly report\n3. Department head exports the compiled report\n4. Late, missing and duplicate entries are marked in the report\n\nSUCCESS CRITERIA:\nDepartment head receives one compiled report by Monday 09:00 containing every submitted entry, with missing, late and duplicate entries visibly marked.\n\nMUST PRESERVE:\nSubmitted entries are immutable once submitted; the existing equipment line codes stay unchanged.\n\nPLATFORMS:\nWeb browser on office Windows PCs\n\nDATA NEEDS:\nSynthetic equipment line code, weekly status text, submitting team lead name, submission time. Source: weekly CSV drop only. No personal evaluation data.\n\nLOOK AND FEEL:\nPlain table, high contrast\n\nOUT OF SCOPE:\nNo automatic scoring or ranking of team leads or people. No email sending in this version.\n\nCONSTRAINTS:\nTeam leads may correct their entry until the Friday 17:00 deadline. Deadline timezone not decided.\n\nOUTPUT REQUIREMENTS:\n- Ask only for business intent, user outcomes, constraints, and preservation rules\n- Do not ask the end user to choose frameworks, databases, or hidden technical patterns\n- Translate this into a builder-ready governed packet\n- Include acceptance criteria and handoff boundaries\n\n---\n\n## \ud83d\udce4 Expected Output Format\n\n- Product Brief\n- Core Workflows\n- Protected Constraints\n- Builder Plan\n- Acceptance Criteria\n- Handoff Checklist\n\n\n---\n\n## \ud83d\udcd0 Output Template\n\n```markdown\n# Complete App Brief: Weekly Equipment Report Compiler\n\n## 1. Product Goal\n- App name: Weekly Equipment Report Compiler\n- App type: Web App\n\n## 2. Must-Have Workflows\n\n## 3. Data And Constraints\n\n## 4. Protected Boundaries\n\n## 5. Builder Plan\n\n## 6. Acceptance Criteria\n```\n\n\n---\n\n\n\n\n## \u26d4 Execution Constraints\n- Do not invent missing inputs. If required inputs are missing, stop and ask for clarification.\n- Follow the Output Template headings exactly (no reordering).\n- Stay within the scope defined by the Task section.\n- If data is unavailable, state it explicitly as \"Unknown\" instead of guessing.\n\n\n---\n\n\n## \u2705 Validation Hooks\n- Check required inputs against the Input Coverage table.\n- Ensure every Expected Output section is present.\n- Include a Success Criteria Check.\n- If any item is missing, mark the result as \"Not Ready\" and list what's missing.\n\n\n---\n\n## \ud83e\udded CVF Non-Coder Success Standard\n\n- The result must be actionable for a non-coder, not just descriptive.\n- It must stay tailored to the provided inputs instead of drifting into generic advice.\n- It must cover the main requested output shape end-to-end.\n- The receiving agent should choose hidden implementation details itself unless that would materially change risk or business intent.\n- It must remain governance-safe: no bypass suggestions, unsafe shortcuts, or hidden assumptions.\n- If the task cannot be completed safely, provide the clearest safe next step instead of ending in a dead end.\n\n---\n\n## \ud83d\udee1\ufe0f Governed Response Rules\n\n- If the task is allowed, answer directly and clearly.\n- If the task should be BLOCKED or marked NEEDS_APPROVAL, explain why in plain language.\n- When blocked or approval-gated, provide a safe next-step path the user can actually follow.\n- Make risk, review, or approval implications visible instead of burying them in jargon.\n\n---\n\n## \ud83e\udde0 Knowledge Context Preference\n\n- If the user provides governed domain facts, internal policy text, or project-specific context, prioritize that context over generic training knowledge.\n- If important knowledge context is missing, state exactly what context would improve the result instead of guessing.\n- Do not invent proprietary domain facts or internal details that were not provided.\n\n---\n\n# \ud83d\udea6 CVF FULL MODE PROTOCOL\n\n> **CRITICAL**: You are now operating under CVF (Controlled Vibe Framework) Full Mode.\n> This is NOT a suggestion - it's a MANDATORY protocol you MUST follow.\n\n---\n\n## \ud83d\udccc CVF CORE PRINCIPLE\n\n**\"User describes WHAT they want \u2192 AI decides HOW and EXECUTES\"**\n\n- User = Problem owner, Evaluator\n- AI = Solution architect, Decision maker, Executor\n\n---\n\n## \ud83d\udd04 MANDATORY 5-PHASE PROCESS\n\nYou MUST complete each phase in order. NO SHORTCUTS.\n\n---\n\n### \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n### PHASE A: INTAKE \ud83d\udd0d\n### \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\n**YOUR ROLE**: Interpreter - understand the problem deeply\n\n**MANDATORY ACTIONS:**\n1. Restate what user wants in your own words\n2. Identify the REAL goal (not just surface request)\n3. List ALL assumptions you're making\n4. Define what's IN scope and OUT of scope\n5. Identify constraints (time, resources, tech)\n\n**OUTPUT FORMAT (MUST PRODUCE):**\n```\n## \ud83d\udccb PHASE A: Intake Summary\n\n### 1. My Understanding\n[Restate user's goal in your words]\n\n### 2. Assumptions I'm Making\n- Assumption 1: ...\n- Assumption 2: ...\n(user will correct if wrong)\n\n### 3. Scope Definition\n\u2705 IN SCOPE:\n- ...\n\n\u274c OUT OF SCOPE:\n- ...\n\n### 4. Constraints Identified\n- ...\n\n### 5. Questions for Clarification (if any)\n- ...\n\n---\n\u23f8\ufe0f **CHECKPOINT A**: Do you confirm my understanding is correct?\n```\n\n**\u26d4 HARD STOP**: Wait for user confirmation before Design.\n- If user says \"yes\", \"ok\", \"proceed\", or \"confirmed\" \u2192 Go to Design\n- If user corrects you \u2192 Update understanding, re-confirm\n- If unclear \u2192 Ask specific questions\n\n**FORBIDDEN IN PHASE A:**\n- \u274c Proposing solutions\n- \u274c Writing any code\n- \u274c Making technical recommendations\n- \u274c Skipping to build because \"it's obvious\"\n\n---\n\n### \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n### PHASE B: DESIGN \ud83d\udcd0\n### \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\n**YOUR ROLE**: Architect - design the solution\n\n**MANDATORY ACTIONS:**\n1. Propose solution approach (high-level)\n2. If multiple options exist: compare and CHOOSE the best one\n3. YOU make the technical decisions (don't ask user to choose)\n4. Document your decisions with reasoning\n\n**OUTPUT FORMAT (MUST PRODUCE):**\n```\n## \ud83d\udcd0 PHASE B: Design Plan\n\n### 1. Solution Approach\n[High-level description of how you'll solve this]\n\n### 2. Technical Decisions Made\n| Decision | Choice | Reasoning |\n|----------|--------|-----------|\n| ... | ... | ... |\n\n### 3. Implementation Plan\n- Step 1: ...\n- Step 2: ...\n- Step 3: ...\n\n### 4. Expected Deliverables\n- [ ] Deliverable 1\n- [ ] Deliverable 2\n\n### 5. Potential Risks\n- Risk 1: [mitigation]\n\n---\n\u23f8\ufe0f **CHECKPOINT B**: Approve this design to proceed to Build phase?\n```\n\n**\u26d4 HARD STOP**: Wait for user approval before Build.\n\n**FORBIDDEN IN PHASE B:**\n- \u274c Asking \"Which option do you prefer?\" (YOU decide!)\n- \u274c Requesting user to make technical choices\n- \u274c Starting to build before approval\n\n---\n\n### \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n### PHASE C: BUILD \ud83d\udd28\n### \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\n**YOUR ROLE**: Builder - execute with quality\n\n**MANDATORY ACTIONS:**\n1. Build incrementally (one component at a time)\n2. Follow your approved design (no unauthorized changes)\n3. Each output must be COMPLETE and USABLE\n4. If you encounter issues \u2192 solve them, don't stop and ask\n\n**OUTPUT FORMAT:**\n```\n## \ud83d\udd28 PHASE C: Build Output\n\n### Deliverable 1: [Name]\n[Complete, usable output]\n\n### Deliverable 2: [Name]\n[Complete, usable output]\n\n### Implementation Notes\n- Note 1: ...\n\n---\n\u2705 Build complete. Proceeding to Review phase.\n```\n\n**FORBIDDEN IN PHASE C:**\n- \u274c Stopping mid-build to ask trivial questions\n- \u274c Producing incomplete outputs (\"I'll continue if you want...\")\n- \u274c Deviating from approved design without explanation\n\n---\n\n### \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n### PHASE D: REVIEW \u2705\n### \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\n**YOUR ROLE**: Quality owner - ensure excellence\n\n**MANDATORY ACTIONS:**\n1. Self-review against success criteria\n2. Present clear summary of what was delivered\n3. Highlight any deviations or decisions made during build\n4. Ask for user evaluation\n\n**OUTPUT FORMAT:**\n```\n## \u2705 PHASE D: Review & Delivery\n\n### 1. Delivery Summary\n| Deliverable | Status | Notes |\n|-------------|--------|-------|\n| ... | \u2705 Done | ... |\n\n### 2. Success Criteria Check\n- [x] Criterion 1: Met\n- [x] Criterion 2: Met\n\n### 3. Decisions Made During Build\n- Decision: [what & why]\n\n### 4. Known Limitations\n- ...\n\n---\n\ud83c\udfaf **FINAL CHECKPOINT**: \n- Accept this delivery?\n- Any revisions needed?\n```\n\n### PHASE E: FREEZE \ud83d\udd12\n\n**ONLY AFTER ACCEPTANCE:**\n1. Confirm acceptance status\n2. Capture baseline / review artifact / comparison evidence\n3. List open follow-ups\n4. State that the current run is now frozen\n\n**FREEZE OUTPUT FORMAT:**\n```\n## \ud83d\udd12 PHASE E: Freeze Record\n\n### 1. Acceptance Status\n[Accepted / Needs follow-up]\n\n### 2. Evidence\n- Baseline / delta / review artifact\n\n### 3. Open Follow-ups\n- ...\n\n---\n\u2705 Scope frozen for this run.\n```\n\n---\n\n## \u26a0\ufe0f AI ROLE CONSTRAINTS (ALWAYS ENFORCED)\n\n### \u2705 YOU ARE:\n| Role | Meaning |\n|------|---------|\n| **EXECUTOR** | You DO the work, user EVALUATES |\n| **DECISION MAKER** | YOU make technical decisions |\n| **QUALITY OWNER** | YOU ensure output quality |\n| **VIBE CODER** | You turn user's vision into reality |\n\n### \u274c YOU ARE NOT:\n- An advisor who only suggests options\n- A tool waiting for step-by-step instructions\n- Someone who shifts responsibility to user\n\n### \ud83d\udeab FORBIDDEN ACTIONS (WILL VIOLATE CVF):\n1. \u274c \"Which option do you prefer?\" \u2192 YOU choose!\n2. \u274c \"Should I continue?\" \u2192 YES, until done!\n3. \u274c \"Let me know if you want me to...\" \u2192 Just DO it!\n4. \u274c Skipping phases for \"simple\" tasks\n5. \u274c Producing partial/incomplete outputs\n6. \u274c Asking user to write code or design\n\n### \u2705 REQUIRED ACTIONS:\n1. Complete each phase with proper output format\n2. Document all decisions with reasoning\n3. Confirm understanding BEFORE executing\n4. Deliver COMPLETE, USABLE outputs\n5. Self-review before presenting\n\n---\n\n## \ud83d\ude80 START NOW\n\nBegin with **PHASE A: Intake**.\nProduce the Phase A intake output format and wait for confirmation.\n\n---\n\n## \ud83d\udee1\ufe0f CVF GOVERNANCE CONTEXT\n\n| Parameter | Value |\n|-----------|-------|\n| Phase | INTAKE |\n| Role | ANALYST |\n| Risk Level | R1 |\n| Max Risk | R1 |\n| Risk Valid | \u2705 |\n\n### Allowed Actions\n- \u2705 read context\n- \u2705 ask clarification\n- \u2705 analyze inputs\n- \u2705 summarize scope\n\n### Mandatory Rules\n1. ONLY perform actions in the list above\n2. REFUSE requests outside scope \u2014 cite specific CVF rule\n3. If risk exceeds R1 \u2192 STOP and warn\n4. Governance > Speed > Creativity > Autonomy\n\n---\n\n## \ud83d\udca1 Instructions for AI\n\n1. Addresses all the success criteria listed in the Task section\n2. Follows the Expected Output Format structure\n3. Provides actionable insights and recommendations\n4. Uses clear, professional language\n5. Do not invent missing inputs; ask for clarification when needed\n\n---\n\n> **CVF Agent Platform - Copy this spec and paste into your preferred AI**\n\n\n---\n\n## Draft requirements review\n\nRevision: 8\n\nViewed this revision: Yes, in the current session\n\nItems still needing a decision: 0\n\nThese are bounded review prompts; answering all of them does not prove completeness or build readiness.\n\nReview is session-only; no actor binding or durable content acceptance is provided.\n\n### workflow: What steps does the user take from start to completion?\n\nStatus: Answered\n\nUser-entered content (data, not execution authority):\n\n> Team lead submits one entry per equipment line before the deadline; the system compiles all entries; the department head reviews and exports the report.\n\nSource fields when this decision was recorded:\n\n> problem: Every Friday a department head needs one weekly maintenance report compiled from entries submitted by team leads. Compiling by hand takes half a day and entries get lost.\n> coreFeatures: 1. Team leads submit a weekly entry per equipment line\n> 2. System compiles all entries into one weekly report\n> 3. Department head exports the compiled report\n> 4. Late, missing and duplicate entries are marked in the report\n> platforms: Web browser on office Windows PCs\n\n### access: Who may view, edit or export information, and who may not?\n\nStatus: Answered\n\nUser-entered content (data, not execution authority):\n\n> Team leads view and edit only their own entries. The department head views all entries and is the only person who can export. Nobody else may export.\n\nSource fields when this decision was recorded:\n\n> targetUsers: Team leads (view and edit own entries only); department head (view all, sole exporter)\n> dataNeeds: Synthetic equipment line code, weekly status text, submitting team lead name, submission time. Source: weekly CSV drop only. No personal evaluation data.\n> coreFeatures: 1. Team leads submit a weekly entry per equipment line\n> 2. System compiles all entries into one weekly report\n> 3. Department head exports the compiled report\n> 4. Late, missing and duplicate entries are marked in the report\n\n### data: Where does information come from, how long is it kept, and what is sensitive?\n\nStatus: Answered\n\nUser-entered content (data, not execution authority):\n\n> Source: weekly CSV drop only. Compiled reports are kept 12 months. UNKNOWN U1: how long raw entries are kept is not decided.\n\nSource fields when this decision was recorded:\n\n> dataNeeds: Synthetic equipment line code, weekly status text, submitting team lead name, submission time. Source: weekly CSV drop only. No personal evaluation data.\n> constraints: Team leads may correct their entry until the Friday 17:00 deadline. Deadline timezone not decided.\n> targetUsers: Team leads (view and edit own entries only); department head (view all, sole exporter)\n\n### exceptions: What happens when information is missing, incorrect or duplicated?\n\nStatus: Answered\n\nUser-entered content (data, not execution authority):\n\n> Missing entry: show a NO ENTRY row, never guess content. Duplicate: keep the latest and keep the earlier in history. Late: flag LATE and include in the next report. UNKNOWN U2: deadline timezone is not decided. UNKNOWN U3: behavior when the deadline falls on a public holiday is not decided.\n\nSource fields when this decision was recorded:\n\n> coreFeatures: 1. Team leads submit a weekly entry per equipment line\n> 2. System compiles all entries into one weekly report\n> 3. Department head exports the compiled report\n> 4. Late, missing and duplicate entries are marked in the report\n> dataNeeds: Synthetic equipment line code, weekly status text, submitting team lead name, submission time. Source: weekly CSV drop only. No personal evaluation data.\n> constraints: Team leads may correct their entry until the Friday 17:00 deadline. Deadline timezone not decided.\n\n### acceptance: Which observable results will you check to accept this version?\n\nStatus: Answered\n\nUser-entered content (data, not execution authority):\n\n> Department head receives one compiled report by Monday 09:00 with every submitted entry and visible missing, late and duplicate marks. UNKNOWN U4: export file format is not decided.\n\nSource fields when this decision was recorded:\n\n> successCriteria: Department head receives one compiled report by Monday 09:00 containing every submitted entry, with missing, late and duplicate entries visibly marked.\n> coreFeatures: 1. Team leads submit a weekly entry per equipment line\n> 2. System compiles all entries into one weekly report\n> 3. Department head exports the compiled report\n> 4. Late, missing and duplicate entries are marked in the report\n> problem: Every Friday a department head needs one weekly maintenance report compiled from entries submitted by team leads. Compiling by hand takes half a day and entries get lost.\n\n### boundaries: What must stay unchanged, remain out of scope or never happen?\n\nStatus: Answered\n\nUser-entered content (data, not execution authority):\n\n> Resolution of C1: corrections before Friday 17:00 create a new entry version; after the deadline entries are immutable. No automatic scoring or ranking of people.\n\nSource fields when this decision was recorded:\n\n> outOfScope: No automatic scoring or ranking of team leads or people. No email sending in this version.\n> mustPreserve: Submitted entries are immutable once submitted; the existing equipment line codes stay unchanged.\n> constraints: Team leads may correct their entry until the Friday 17:00 deadline. Deadline timezone not decided.",
+      "bytes": 23823,
+      "sha256": "393ecee7594febaf53da2728b3d640ad493f8a1bbfe8b2c77b191392d233b56b",
+      "encoding": "UTF-8, LF only",
+      "provenance": "docs/reviews/evidence/cvf-nis-t1c-replay-2026-10-05.json exportedBaselinePacket.canonicalText (packet text, UTF-8)"
+    },
+    "B": {
+      "description": "Exported reviewed draft, stage P3_REVISED_ACKNOWLEDGED (revision 11), same periodic report job after the access rule changed",
+      "kind": "EXPORTED_REVIEWED_DRAFT",
+      "text": "# Draft for requirements clarification\n\nCurrent scope: specification clarification and review only. Design/build directions below are future steps requiring separate authorization. Viewing this draft does not approve BUILD.\n\n---\n# CVF Agent Handoff Packet (GUIDED MODE)\n**Generated:** 2026-10-05\n**Template:** \ud83d\udce6 App Builder Complete\n**Category:** development\n**Mode:** CVF Guided Agent (5-Phase)\n---\n\n## \ud83d\udccb Context\n\n**Template:** \ud83d\udce6 App Builder Complete\n\nCreate a full product brief and builder-ready handoff without exposing stack choices to the user.\n\n---\n\n## \ud83e\udd1d Packet Purpose\n\n- This packet is written for another AI/agent to read and continue execution.\n- The end user should not need to understand hidden frameworks, stacks, or implementation details.\n- The receiving agent must convert the brief into implementation decisions inside the provided guardrails.\n\n---\n\n## \ud83d\udcdd User Input\n\n- **1. App / product name:** Weekly Equipment Report Compiler\n- **2. What kind of product is this?:** Web App\n- **3. What problem does it solve?:** Every Friday a department head needs one weekly maintenance report compiled from entries submitted by team leads. Compiling by hand takes half a day and entries get lost.\n- **4. Who will use this product?:** Team leads (view and edit own entries only; may also export their own team's section); department head (view all, export all); auditors (read-only view, no export)\n- **5. The most important things the app must do:** 1. Team leads submit a weekly entry per equipment line\n2. System compiles all entries into one weekly report\n3. Department head exports the compiled report\n4. Late, missing and duplicate entries are marked in the report\n- **6. When would you consider the first version successful?:** Department head receives one compiled report by Monday 09:00 containing every submitted entry, with missing, late and duplicate entries visibly marked.\n- **7. What must stay unchanged:** Submitted entries are immutable once submitted; the existing equipment line codes stay unchanged.\n- **8. Where does the app need to run?:** Web browser on office Windows PCs\n- **9. What data does the app need to remember or process?:** Synthetic equipment line code, weekly status text, submitting team lead name, submission time. Source: weekly CSV drop only. No personal evaluation data.\n- **10. Look and feel:** Plain table, high contrast\n- **11. Out of scope:** No automatic scoring or ranking of team leads or people. No email sending in this version.\n- **12. Constraints or special conditions:** Team leads may correct their entry until the Friday 17:00 deadline. Deadline timezone not decided.\n\n\n\n---\n\n## \ud83c\udf10 English Working Brief\n\n**Translation status:** READY_FOR_EXTERNAL_AGENT_REVIEW\n\n- The English export uses normalized English working values for agent-facing execution.\n- User source values may have been entered in Vietnamese, but this packet avoids passing Vietnamese control content to the receiving agent.\n- Product meaning, acceptance criteria, and non-coder intent are preserved where local normalization is confident.\n- Fields marked `TRANSLATION_REQUIRED` must be translated by the operator or an approved LLM before external-agent build work starts.\n\n| Translation metric | Count |\n| --- | ---: |\n| Normalized fields | 0 |\n| Fields needing translation review | 0 |\n\n\n---\n\n## \u2705 Input Coverage\n\n| Field | Provided |\n| --- | --- |\n| 1. App / product name | \u2705 |\n| 2. What kind of product is this? | \u2705 |\n| 3. What problem does it solve? | \u2705 |\n| 4. Who will use this product? | \u2705 |\n| 5. The most important things the app must do | \u2705 |\n| 6. When would you consider the first version successful? | \u2705 |\n| 8. Where does the app need to run? | \u2705 |\n\n\n\n---\n\n## \ud83e\uddf3 Portable Agent Handoff Readiness\n\n**Readiness status:** READY_FOR_EXTERNAL_AGENT_REVIEW\n\n### Receiving Agent Mission\n\n- Treat this packet as the authoritative product brief for the first build plan.\n- Convert the non-coder brief into implementation decisions inside the stated guardrails.\n- Prefer a simple, testable first version over broad platform expansion.\n- Do not ask the non-coder to choose frameworks, databases, hosting, or hidden architecture unless that choice materially changes cost, risk, privacy, or scope.\n\n### Source Values Handling\n\n- This English packet uses agent-facing working values, not raw multilingual source text.\n- If any field says `TRANSLATION_REQUIRED`, stop before build work and request an approved translation.\n- Preserve product meaning, business terms, and acceptance criteria from the English Working Brief.\n- Do not ask the non-coder to make hidden technical choices while resolving translation gaps.\n\n### Implementation Decision Policy\n\n- If a technical detail is missing, choose a conservative default and explain why.\n- If a missing detail changes business risk, privacy, data retention, payment, authentication, or deployment scope, ask one concise clarification question before building.\n- If user-provided constraints conflict, stop and list the conflict instead of guessing.\n\n### Material Details To Reconfirm If Needed\n\nNone identified from the provided source values\n\n### External Agent Acceptance Checklist\n\n- Restate the product goal in one short paragraph.\n- List the first-version workflows the app must support.\n- Identify data objects or records implied by the source values.\n- Propose a practical build plan with milestones.\n- Define acceptance tests mapped to the user's success criteria.\n- Name assumptions and defaults separately from user-provided facts.\n- Keep out-of-scope items out of the first build unless the operator approves expansion.\n\n### Operator Review Gate\n\nAfter the external agent responds, mark the packet:\n\n- PASS: the agent understood the product, made sensible defaults, and produced actionable build steps.\n- PASS_WITH_MINOR_FIX: the agent understood the product but needs small wording or scope corrections.\n- HOLD: the agent misunderstood the product, asked the non-coder to make hidden technical choices, lost source values, or expanded scope without approval.\n\n\n---\n\n## \ud83c\udfaf Task\n\nINTENT:\nI want to create a complete app brief that remains non-coder friendly.\n\nAPP / PRODUCT NAME: Weekly Equipment Report Compiler\nAPP TYPE: Web App\n\nPROBLEM TO SOLVE:\nEvery Friday a department head needs one weekly maintenance report compiled from entries submitted by team leads. Compiling by hand takes half a day and entries get lost.\n\nTARGET USERS:\nTeam leads (view and edit own entries only; may also export their own team's section); department head (view all, export all); auditors (read-only view, no export)\n\nCORE FEATURES:\n1. Team leads submit a weekly entry per equipment line\n2. System compiles all entries into one weekly report\n3. Department head exports the compiled report\n4. Late, missing and duplicate entries are marked in the report\n\nSUCCESS CRITERIA:\nDepartment head receives one compiled report by Monday 09:00 containing every submitted entry, with missing, late and duplicate entries visibly marked.\n\nMUST PRESERVE:\nSubmitted entries are immutable once submitted; the existing equipment line codes stay unchanged.\n\nPLATFORMS:\nWeb browser on office Windows PCs\n\nDATA NEEDS:\nSynthetic equipment line code, weekly status text, submitting team lead name, submission time. Source: weekly CSV drop only. No personal evaluation data.\n\nLOOK AND FEEL:\nPlain table, high contrast\n\nOUT OF SCOPE:\nNo automatic scoring or ranking of team leads or people. No email sending in this version.\n\nCONSTRAINTS:\nTeam leads may correct their entry until the Friday 17:00 deadline. Deadline timezone not decided.\n\nOUTPUT REQUIREMENTS:\n- Ask only for business intent, user outcomes, constraints, and preservation rules\n- Do not ask the end user to choose frameworks, databases, or hidden technical patterns\n- Translate this into a builder-ready governed packet\n- Include acceptance criteria and handoff boundaries\n\n---\n\n## \ud83d\udce4 Expected Output Format\n\n- Product Brief\n- Core Workflows\n- Protected Constraints\n- Builder Plan\n- Acceptance Criteria\n- Handoff Checklist\n\n\n---\n\n## \ud83d\udcd0 Output Template\n\n```markdown\n# Complete App Brief: Weekly Equipment Report Compiler\n\n## 1. Product Goal\n- App name: Weekly Equipment Report Compiler\n- App type: Web App\n\n## 2. Must-Have Workflows\n\n## 3. Data And Constraints\n\n## 4. Protected Boundaries\n\n## 5. Builder Plan\n\n## 6. Acceptance Criteria\n```\n\n\n---\n\n\n\n\n## \u26d4 Execution Constraints\n- Do not invent missing inputs. If required inputs are missing, stop and ask for clarification.\n- Follow the Output Template headings exactly (no reordering).\n- Stay within the scope defined by the Task section.\n- If data is unavailable, state it explicitly as \"Unknown\" instead of guessing.\n\n\n---\n\n\n## \u2705 Validation Hooks\n- Check required inputs against the Input Coverage table.\n- Ensure every Expected Output section is present.\n- Include a Success Criteria Check.\n- If any item is missing, mark the result as \"Not Ready\" and list what's missing.\n\n\n---\n\n## \ud83e\udded CVF Non-Coder Success Standard\n\n- The result must be actionable for a non-coder, not just descriptive.\n- It must stay tailored to the provided inputs instead of drifting into generic advice.\n- It must cover the main requested output shape end-to-end.\n- The receiving agent should choose hidden implementation details itself unless that would materially change risk or business intent.\n- It must remain governance-safe: no bypass suggestions, unsafe shortcuts, or hidden assumptions.\n- If the task cannot be completed safely, provide the clearest safe next step instead of ending in a dead end.\n\n---\n\n## \ud83d\udee1\ufe0f Governed Response Rules\n\n- If the task is allowed, answer directly and clearly.\n- If the task should be BLOCKED or marked NEEDS_APPROVAL, explain why in plain language.\n- When blocked or approval-gated, provide a safe next-step path the user can actually follow.\n- Make risk, review, or approval implications visible instead of burying them in jargon.\n\n---\n\n## \ud83e\udde0 Knowledge Context Preference\n\n- If the user provides governed domain facts, internal policy text, or project-specific context, prioritize that context over generic training knowledge.\n- If important knowledge context is missing, state exactly what context would improve the result instead of guessing.\n- Do not invent proprietary domain facts or internal details that were not provided.\n\n---\n\n# \ud83d\udea6 CVF FULL MODE PROTOCOL\n\n> **CRITICAL**: You are now operating under CVF (Controlled Vibe Framework) Full Mode.\n> This is NOT a suggestion - it's a MANDATORY protocol you MUST follow.\n\n---\n\n## \ud83d\udccc CVF CORE PRINCIPLE\n\n**\"User describes WHAT they want \u2192 AI decides HOW and EXECUTES\"**\n\n- User = Problem owner, Evaluator\n- AI = Solution architect, Decision maker, Executor\n\n---\n\n## \ud83d\udd04 MANDATORY 5-PHASE PROCESS\n\nYou MUST complete each phase in order. NO SHORTCUTS.\n\n---\n\n### \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n### PHASE A: INTAKE \ud83d\udd0d\n### \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\n**YOUR ROLE**: Interpreter - understand the problem deeply\n\n**MANDATORY ACTIONS:**\n1. Restate what user wants in your own words\n2. Identify the REAL goal (not just surface request)\n3. List ALL assumptions you're making\n4. Define what's IN scope and OUT of scope\n5. Identify constraints (time, resources, tech)\n\n**OUTPUT FORMAT (MUST PRODUCE):**\n```\n## \ud83d\udccb PHASE A: Intake Summary\n\n### 1. My Understanding\n[Restate user's goal in your words]\n\n### 2. Assumptions I'm Making\n- Assumption 1: ...\n- Assumption 2: ...\n(user will correct if wrong)\n\n### 3. Scope Definition\n\u2705 IN SCOPE:\n- ...\n\n\u274c OUT OF SCOPE:\n- ...\n\n### 4. Constraints Identified\n- ...\n\n### 5. Questions for Clarification (if any)\n- ...\n\n---\n\u23f8\ufe0f **CHECKPOINT A**: Do you confirm my understanding is correct?\n```\n\n**\u26d4 HARD STOP**: Wait for user confirmation before Design.\n- If user says \"yes\", \"ok\", \"proceed\", or \"confirmed\" \u2192 Go to Design\n- If user corrects you \u2192 Update understanding, re-confirm\n- If unclear \u2192 Ask specific questions\n\n**FORBIDDEN IN PHASE A:**\n- \u274c Proposing solutions\n- \u274c Writing any code\n- \u274c Making technical recommendations\n- \u274c Skipping to build because \"it's obvious\"\n\n---\n\n### \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n### PHASE B: DESIGN \ud83d\udcd0\n### \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\n**YOUR ROLE**: Architect - design the solution\n\n**MANDATORY ACTIONS:**\n1. Propose solution approach (high-level)\n2. If multiple options exist: compare and CHOOSE the best one\n3. YOU make the technical decisions (don't ask user to choose)\n4. Document your decisions with reasoning\n\n**OUTPUT FORMAT (MUST PRODUCE):**\n```\n## \ud83d\udcd0 PHASE B: Design Plan\n\n### 1. Solution Approach\n[High-level description of how you'll solve this]\n\n### 2. Technical Decisions Made\n| Decision | Choice | Reasoning |\n|----------|--------|-----------|\n| ... | ... | ... |\n\n### 3. Implementation Plan\n- Step 1: ...\n- Step 2: ...\n- Step 3: ...\n\n### 4. Expected Deliverables\n- [ ] Deliverable 1\n- [ ] Deliverable 2\n\n### 5. Potential Risks\n- Risk 1: [mitigation]\n\n---\n\u23f8\ufe0f **CHECKPOINT B**: Approve this design to proceed to Build phase?\n```\n\n**\u26d4 HARD STOP**: Wait for user approval before Build.\n\n**FORBIDDEN IN PHASE B:**\n- \u274c Asking \"Which option do you prefer?\" (YOU decide!)\n- \u274c Requesting user to make technical choices\n- \u274c Starting to build before approval\n\n---\n\n### \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n### PHASE C: BUILD \ud83d\udd28\n### \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\n**YOUR ROLE**: Builder - execute with quality\n\n**MANDATORY ACTIONS:**\n1. Build incrementally (one component at a time)\n2. Follow your approved design (no unauthorized changes)\n3. Each output must be COMPLETE and USABLE\n4. If you encounter issues \u2192 solve them, don't stop and ask\n\n**OUTPUT FORMAT:**\n```\n## \ud83d\udd28 PHASE C: Build Output\n\n### Deliverable 1: [Name]\n[Complete, usable output]\n\n### Deliverable 2: [Name]\n[Complete, usable output]\n\n### Implementation Notes\n- Note 1: ...\n\n---\n\u2705 Build complete. Proceeding to Review phase.\n```\n\n**FORBIDDEN IN PHASE C:**\n- \u274c Stopping mid-build to ask trivial questions\n- \u274c Producing incomplete outputs (\"I'll continue if you want...\")\n- \u274c Deviating from approved design without explanation\n\n---\n\n### \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n### PHASE D: REVIEW \u2705\n### \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\n**YOUR ROLE**: Quality owner - ensure excellence\n\n**MANDATORY ACTIONS:**\n1. Self-review against success criteria\n2. Present clear summary of what was delivered\n3. Highlight any deviations or decisions made during build\n4. Ask for user evaluation\n\n**OUTPUT FORMAT:**\n```\n## \u2705 PHASE D: Review & Delivery\n\n### 1. Delivery Summary\n| Deliverable | Status | Notes |\n|-------------|--------|-------|\n| ... | \u2705 Done | ... |\n\n### 2. Success Criteria Check\n- [x] Criterion 1: Met\n- [x] Criterion 2: Met\n\n### 3. Decisions Made During Build\n- Decision: [what & why]\n\n### 4. Known Limitations\n- ...\n\n---\n\ud83c\udfaf **FINAL CHECKPOINT**: \n- Accept this delivery?\n- Any revisions needed?\n```\n\n### PHASE E: FREEZE \ud83d\udd12\n\n**ONLY AFTER ACCEPTANCE:**\n1. Confirm acceptance status\n2. Capture baseline / review artifact / comparison evidence\n3. List open follow-ups\n4. State that the current run is now frozen\n\n**FREEZE OUTPUT FORMAT:**\n```\n## \ud83d\udd12 PHASE E: Freeze Record\n\n### 1. Acceptance Status\n[Accepted / Needs follow-up]\n\n### 2. Evidence\n- Baseline / delta / review artifact\n\n### 3. Open Follow-ups\n- ...\n\n---\n\u2705 Scope frozen for this run.\n```\n\n---\n\n## \u26a0\ufe0f AI ROLE CONSTRAINTS (ALWAYS ENFORCED)\n\n### \u2705 YOU ARE:\n| Role | Meaning |\n|------|---------|\n| **EXECUTOR** | You DO the work, user EVALUATES |\n| **DECISION MAKER** | YOU make technical decisions |\n| **QUALITY OWNER** | YOU ensure output quality |\n| **VIBE CODER** | You turn user's vision into reality |\n\n### \u274c YOU ARE NOT:\n- An advisor who only suggests options\n- A tool waiting for step-by-step instructions\n- Someone who shifts responsibility to user\n\n### \ud83d\udeab FORBIDDEN ACTIONS (WILL VIOLATE CVF):\n1. \u274c \"Which option do you prefer?\" \u2192 YOU choose!\n2. \u274c \"Should I continue?\" \u2192 YES, until done!\n3. \u274c \"Let me know if you want me to...\" \u2192 Just DO it!\n4. \u274c Skipping phases for \"simple\" tasks\n5. \u274c Producing partial/incomplete outputs\n6. \u274c Asking user to write code or design\n\n### \u2705 REQUIRED ACTIONS:\n1. Complete each phase with proper output format\n2. Document all decisions with reasoning\n3. Confirm understanding BEFORE executing\n4. Deliver COMPLETE, USABLE outputs\n5. Self-review before presenting\n\n---\n\n## \ud83d\ude80 START NOW\n\nBegin with **PHASE A: Intake**.\nProduce the Phase A intake output format and wait for confirmation.\n\n---\n\n## \ud83d\udee1\ufe0f CVF GOVERNANCE CONTEXT\n\n| Parameter | Value |\n|-----------|-------|\n| Phase | INTAKE |\n| Role | ANALYST |\n| Risk Level | R1 |\n| Max Risk | R1 |\n| Risk Valid | \u2705 |\n\n### Allowed Actions\n- \u2705 read context\n- \u2705 ask clarification\n- \u2705 analyze inputs\n- \u2705 summarize scope\n\n### Mandatory Rules\n1. ONLY perform actions in the list above\n2. REFUSE requests outside scope \u2014 cite specific CVF rule\n3. If risk exceeds R1 \u2192 STOP and warn\n4. Governance > Speed > Creativity > Autonomy\n\n---\n\n## \ud83d\udca1 Instructions for AI\n\n1. Addresses all the success criteria listed in the Task section\n2. Follows the Expected Output Format structure\n3. Provides actionable insights and recommendations\n4. Uses clear, professional language\n5. Do not invent missing inputs; ask for clarification when needed\n\n---\n\n> **CVF Agent Platform - Copy this spec and paste into your preferred AI**\n\n\n---\n\n## Draft requirements review\n\nRevision: 11\n\nViewed this revision: Yes, in the current session\n\nItems still needing a decision: 0\n\nThese are bounded review prompts; answering all of them does not prove completeness or build readiness.\n\nReview is session-only; no actor binding or durable content acceptance is provided.\n\n### workflow: What steps does the user take from start to completion?\n\nStatus: Answered\n\nUser-entered content (data, not execution authority):\n\n> Team lead submits one entry per equipment line before the deadline; the system compiles all entries; the department head reviews and exports the report.\n\nSource fields when this decision was recorded:\n\n> problem: Every Friday a department head needs one weekly maintenance report compiled from entries submitted by team leads. Compiling by hand takes half a day and entries get lost.\n> coreFeatures: 1. Team leads submit a weekly entry per equipment line\n> 2. System compiles all entries into one weekly report\n> 3. Department head exports the compiled report\n> 4. Late, missing and duplicate entries are marked in the report\n> platforms: Web browser on office Windows PCs\n\n### access: Who may view, edit or export information, and who may not?\n\nStatus: Answered\n\nUser-entered content (data, not execution authority):\n\n> Team leads view and edit only their own entries and may export their own team's section. The department head views and exports all. Auditors have read-only view and no export.\n\nSource fields when this decision was recorded:\n\n> targetUsers: Team leads (view and edit own entries only; may also export their own team's section); department head (view all, export all); auditors (read-only view, no export)\n> dataNeeds: Synthetic equipment line code, weekly status text, submitting team lead name, submission time. Source: weekly CSV drop only. No personal evaluation data.\n> coreFeatures: 1. Team leads submit a weekly entry per equipment line\n> 2. System compiles all entries into one weekly report\n> 3. Department head exports the compiled report\n> 4. Late, missing and duplicate entries are marked in the report\n\n### data: Where does information come from, how long is it kept, and what is sensitive?\n\nStatus: Answered\n\nUser-entered content (data, not execution authority):\n\n> Source: weekly CSV drop only. Compiled reports are kept 12 months. UNKNOWN U1: how long raw entries are kept is not decided.\n\nSource fields when this decision was recorded:\n\n> dataNeeds: Synthetic equipment line code, weekly status text, submitting team lead name, submission time. Source: weekly CSV drop only. No personal evaluation data.\n> constraints: Team leads may correct their entry until the Friday 17:00 deadline. Deadline timezone not decided.\n> targetUsers: Team leads (view and edit own entries only; may also export their own team's section); department head (view all, export all); auditors (read-only view, no export)\n\n### exceptions: What happens when information is missing, incorrect or duplicated?\n\nStatus: Answered\n\nUser-entered content (data, not execution authority):\n\n> Missing entry: show a NO ENTRY row, never guess content. Duplicate: keep the latest and keep the earlier in history. Late: flag LATE and include in the next report. UNKNOWN U2: deadline timezone is not decided. UNKNOWN U3: behavior when the deadline falls on a public holiday is not decided.\n\nSource fields when this decision was recorded:\n\n> coreFeatures: 1. Team leads submit a weekly entry per equipment line\n> 2. System compiles all entries into one weekly report\n> 3. Department head exports the compiled report\n> 4. Late, missing and duplicate entries are marked in the report\n> dataNeeds: Synthetic equipment line code, weekly status text, submitting team lead name, submission time. Source: weekly CSV drop only. No personal evaluation data.\n> constraints: Team leads may correct their entry until the Friday 17:00 deadline. Deadline timezone not decided.\n\n### acceptance: Which observable results will you check to accept this version?\n\nStatus: Answered\n\nUser-entered content (data, not execution authority):\n\n> Department head receives one compiled report by Monday 09:00 with every submitted entry and visible missing, late and duplicate marks. UNKNOWN U4: export file format is not decided.\n\nSource fields when this decision was recorded:\n\n> successCriteria: Department head receives one compiled report by Monday 09:00 containing every submitted entry, with missing, late and duplicate entries visibly marked.\n> coreFeatures: 1. Team leads submit a weekly entry per equipment line\n> 2. System compiles all entries into one weekly report\n> 3. Department head exports the compiled report\n> 4. Late, missing and duplicate entries are marked in the report\n> problem: Every Friday a department head needs one weekly maintenance report compiled from entries submitted by team leads. Compiling by hand takes half a day and entries get lost.\n\n### boundaries: What must stay unchanged, remain out of scope or never happen?\n\nStatus: Answered\n\nUser-entered content (data, not execution authority):\n\n> Resolution of C1: corrections before Friday 17:00 create a new entry version; after the deadline entries are immutable. No automatic scoring or ranking of people.\n\nSource fields when this decision was recorded:\n\n> outOfScope: No automatic scoring or ranking of team leads or people. No email sending in this version.\n> mustPreserve: Submitted entries are immutable once submitted; the existing equipment line codes stay unchanged.\n> constraints: Team leads may correct their entry until the Friday 17:00 deadline. Deadline timezone not decided.",
+      "bytes": 24158,
+      "sha256": "02b8d1f51a77a8233d6eab0492344e2781bbb2aa2b1bf460d1e30a73e0308ad1",
+      "encoding": "UTF-8, LF only",
+      "provenance": "docs/reviews/evidence/cvf-nis-t1c-replay-2026-10-05.json exportedRevisedPacket.canonicalText"
+    },
+    "C": {
+      "description": "Candidate accepted-file bytes of the tool lending control LG3 (cvf.intentSpecReviewCandidate.v1), revision 7",
+      "kind": "ACCEPTED_FILE_CANDIDATE_BYTES",
+      "text": "{\"payload\":{\"schema\":\"cvf.intentSpecReviewCandidate.v1\",\"scope\":\"SPEC_REVIEW_ONLY_NO_BUILD_AUTHORITY\",\"reviewer\":{\"name\":\"Self-declared fixture\",\"verification\":\"SELF_DECLARED\"},\"createdAt\":\"2026-10-05T00:00:00.000Z\",\"language\":\"en\",\"review\":{\"revision\":7,\"values\":{\"appName\":\"Tool Lending Log\",\"appType\":\"Web App\",\"problem\":\"Volunteers lend shared workshop tools and later forget who has which tool.\",\"targetUsers\":\"Volunteers (record loans and returns); workshop lead (view all loans)\",\"coreFeatures\":\"1. Record a loan\\n2. Record a return\\n3. List overdue loans\",\"successCriteria\":\"The workshop lead can list every unreturned tool at any time.\",\"mustPreserve\":\"Existing tool tag codes stay unchanged.\",\"platforms\":\"Phone browser\",\"dataNeeds\":\"Tool tag, borrower first name, date lent.\",\"lookAndFeel\":\"Large buttons\",\"outOfScope\":\"No user accounts or logins. No fines or payments.\",\"constraints\":\"A loan lasts at most 14 days.\"},\"packetSource\":\"Exact source packet\\r\\nend\",\"acknowledgedRevision\":7,\"decisions\":[{\"id\":\"workflow\",\"answer\":\"Decision for workflow\",\"disposition\":\"ANSWERED\",\"needsReconfirmation\":false,\"sourceValues\":{\"problem\":\"Volunteers lend shared workshop tools and later forget who has which tool.\",\"coreFeatures\":\"1. Record a loan\\n2. Record a return\\n3. List overdue loans\",\"platforms\":\"Phone browser\"}},{\"id\":\"access\",\"answer\":\"Decision for access\",\"disposition\":\"ANSWERED\",\"needsReconfirmation\":false,\"sourceValues\":{\"targetUsers\":\"Volunteers (record loans and returns); workshop lead (view all loans)\",\"dataNeeds\":\"Tool tag, borrower first name, date lent.\",\"coreFeatures\":\"1. Record a loan\\n2. Record a return\\n3. List overdue loans\"}},{\"id\":\"data\",\"answer\":\"Decision for data\",\"disposition\":\"ANSWERED\",\"needsReconfirmation\":false,\"sourceValues\":{\"dataNeeds\":\"Tool tag, borrower first name, date lent.\",\"constraints\":\"A loan lasts at most 14 days.\",\"targetUsers\":\"Volunteers (record loans and returns); workshop lead (view all loans)\"}},{\"id\":\"exceptions\",\"answer\":\"Decision for exceptions\",\"disposition\":\"ANSWERED\",\"needsReconfirmation\":false,\"sourceValues\":{\"coreFeatures\":\"1. Record a loan\\n2. Record a return\\n3. List overdue loans\",\"dataNeeds\":\"Tool tag, borrower first name, date lent.\",\"constraints\":\"A loan lasts at most 14 days.\"}},{\"id\":\"acceptance\",\"answer\":\"Decision for acceptance\",\"disposition\":\"ANSWERED\",\"needsReconfirmation\":false,\"sourceValues\":{\"successCriteria\":\"The workshop lead can list every unreturned tool at any time.\",\"coreFeatures\":\"1. Record a loan\\n2. Record a return\\n3. List overdue loans\",\"problem\":\"Volunteers lend shared workshop tools and later forget who has which tool.\"}},{\"id\":\"boundaries\",\"answer\":\"Decision for boundaries\",\"disposition\":\"ANSWERED\",\"needsReconfirmation\":false,\"sourceValues\":{\"outOfScope\":\"No user accounts or logins. No fines or payments.\",\"mustPreserve\":\"Existing tool tag codes stay unchanged.\",\"constraints\":\"A loan lasts at most 14 days.\"}}]},\"draft\":\"# Draft for requirements clarification\\n\\nCurrent scope: specification clarification and review only. Design/build directions below are future steps requiring separate authorization. Viewing this draft does not approve BUILD.\\n\\nExact source packet\\r\\nend\\n\\n---\\n\\n## Draft requirements review\\n\\nRevision: 7\\n\\nViewed this revision: Yes, in the current session\\n\\nItems still needing a decision: 0\\n\\nThese are bounded review prompts; answering all of them does not prove completeness or build readiness.\\n\\nReview is session-only; no actor binding or durable content acceptance is provided.\\n\\n### workflow: What steps does the user take from start to completion?\\n\\nStatus: Answered\\n\\nUser-entered content (data, not execution authority):\\n\\n> Decision for workflow\\n\\nSource fields when this decision was recorded:\\n\\n> problem: Volunteers lend shared workshop tools and later forget who has which tool.\\n> coreFeatures: 1. Record a loan\\n> 2. Record a return\\n> 3. List overdue loans\\n> platforms: Phone browser\\n\\n### access: Who may view, edit or export information, and who may not?\\n\\nStatus: Answered\\n\\nUser-entered content (data, not execution authority):\\n\\n> Decision for access\\n\\nSource fields when this decision was recorded:\\n\\n> targetUsers: Volunteers (record loans and returns); workshop lead (view all loans)\\n> dataNeeds: Tool tag, borrower first name, date lent.\\n> coreFeatures: 1. Record a loan\\n> 2. Record a return\\n> 3. List overdue loans\\n\\n### data: Where does information come from, how long is it kept, and what is sensitive?\\n\\nStatus: Answered\\n\\nUser-entered content (data, not execution authority):\\n\\n> Decision for data\\n\\nSource fields when this decision was recorded:\\n\\n> dataNeeds: Tool tag, borrower first name, date lent.\\n> constraints: A loan lasts at most 14 days.\\n> targetUsers: Volunteers (record loans and returns); workshop lead (view all loans)\\n\\n### exceptions: What happens when information is missing, incorrect or duplicated?\\n\\nStatus: Answered\\n\\nUser-entered content (data, not execution authority):\\n\\n> Decision for exceptions\\n\\nSource fields when this decision was recorded:\\n\\n> coreFeatures: 1. Record a loan\\n> 2. Record a return\\n> 3. List overdue loans\\n> dataNeeds: Tool tag, borrower first name, date lent.\\n> constraints: A loan lasts at most 14 days.\\n\\n### acceptance: Which observable results will you check to accept this version?\\n\\nStatus: Answered\\n\\nUser-entered content (data, not execution authority):\\n\\n> Decision for acceptance\\n\\nSource fields when this decision was recorded:\\n\\n> successCriteria: The workshop lead can list every unreturned tool at any time.\\n> coreFeatures: 1. Record a loan\\n> 2. Record a return\\n> 3. List overdue loans\\n> problem: Volunteers lend shared workshop tools and later forget who has which tool.\\n\\n### boundaries: What must stay unchanged, remain out of scope or never happen?\\n\\nStatus: Answered\\n\\nUser-entered content (data, not execution authority):\\n\\n> Decision for boundaries\\n\\nSource fields when this decision was recorded:\\n\\n> outOfScope: No user accounts or logins. No fines or payments.\\n> mustPreserve: Existing tool tag codes stay unchanged.\\n> constraints: A loan lasts at most 14 days.\"},\"payloadSha256\":\"ce8e549b0c78829eb107f0e98fc21aaaa5c918c110412221748a49e10923ad79\"}\n",
+      "bytes": 6253,
+      "sha256": "0d4a3dd870fd6f9e85541c8f338cbde2df444db44731c42ed203aeff41b3ac52",
+      "encoding": "UTF-8, single JSON line plus newline",
+      "provenance": "docs/reviews/evidence/cvf-nis-t1e-frozen-legacy-2026-10-05.json controls.LG3.fileContent; Local old-producer capture in docs/reviews/evidence/cvf-nis-t1e-local-independent-review-2026-10-05.json localOldProducerCapture.LG3 carries the same eight shared fields"
+    }
+  },
+  "ledgers": {
+    "JOB_A_clean": {
+      "job": "A",
+      "language": "en",
+      "requirements": [
+        {
+          "id": "R1",
+          "title": "Compile one weekly report",
+          "statements": [
+            "System compiles all entries into one weekly report"
+          ],
+          "sources": [
+            "BRIEF_FIELD:coreFeatures"
+          ],
+          "effectiveRules": []
+        },
+        {
+          "id": "R2",
+          "title": "Mark missing, late and duplicate entries",
+          "statements": [
+            "Late, missing and duplicate entries are marked in the report"
+          ],
+          "sources": [
+            "BRIEF_FIELD:coreFeatures",
+            "DECISION:exceptions"
+          ],
+          "effectiveRules": []
+        },
+        {
+          "id": "R3",
+          "title": "Only the department head exports",
+          "statements": [
+            "The department head views all entries and is the only person who can export.",
+            "Department head exports the compiled report"
+          ],
+          "sources": [
+            "DECISION:access",
+            "BRIEF_FIELD:coreFeatures",
+            "DECISION:acceptance"
+          ],
+          "effectiveRules": []
+        },
+        {
+          "id": "R4",
+          "title": "Corrections until the Friday deadline",
+          "statements": [
+            "Team leads may correct their entry until the Friday 17:00 deadline",
+            "Submitted entries are immutable once submitted"
+          ],
+          "sources": [
+            "BRIEF_FIELD:constraints",
+            "BRIEF_FIELD:mustPreserve",
+            "DECISION:boundaries"
+          ],
+          "effectiveRules": [
+            "corrections before Friday 17:00 create a new entry version; after the deadline entries are immutable"
+          ]
+        },
+        {
+          "id": "R5",
+          "title": "No automatic scoring of people",
+          "statements": [
+            "No automatic scoring or ranking of team leads or people."
+          ],
+          "sources": [
+            "BRIEF_FIELD:outOfScope"
+          ],
+          "effectiveRules": []
+        },
+        {
+          "id": "R6",
+          "title": "Keep compiled reports twelve months",
+          "statements": [
+            "Compiled reports are kept 12 months."
+          ],
+          "sources": [
+            "DECISION:data"
+          ],
+          "effectiveRules": []
+        }
+      ],
+      "designs": [
+        {
+          "id": "DE1",
+          "kind": "DATA",
+          "text": "Entry record: equipment line code, status text, submitting team lead, submission time.",
+          "serves": [
+            "R1"
+          ]
+        }
+      ],
+      "tasks": [
+        {
+          "id": "T1",
+          "title": "Define the entry record",
+          "serves": [
+            "R1"
+          ],
+          "design": [
+            "DE1"
+          ],
+          "dependsOn": [],
+          "validations": [
+            "V1"
+          ],
+          "categories": []
+        },
+        {
+          "id": "T2",
+          "title": "Compile the weekly report",
+          "serves": [
+            "R1"
+          ],
+          "design": [],
+          "dependsOn": [
+            "T1"
+          ],
+          "validations": [
+            "V1"
+          ],
+          "categories": []
+        },
+        {
+          "id": "T3",
+          "title": "Mark missing, late and duplicate entries",
+          "serves": [
+            "R2"
+          ],
+          "design": [],
+          "dependsOn": [
+            "T2"
+          ],
+          "validations": [
+            "V2"
+          ],
+          "categories": []
+        },
+        {
+          "id": "T4",
+          "title": "Export for the department head",
+          "serves": [
+            "R3"
+          ],
+          "design": [],
+          "dependsOn": [
+            "T2"
+          ],
+          "validations": [
+            "V3"
+          ],
+          "categories": []
+        },
+        {
+          "id": "T5",
+          "title": "Version corrections before the deadline",
+          "serves": [
+            "R4"
+          ],
+          "design": [],
+          "dependsOn": [
+            "T1"
+          ],
+          "validations": [
+            "V4"
+          ],
+          "categories": []
+        },
+        {
+          "id": "T6",
+          "title": "Keep scoring and ranking out",
+          "serves": [
+            "R5"
+          ],
+          "design": [],
+          "dependsOn": [],
+          "validations": [
+            "V5"
+          ],
+          "categories": []
+        },
+        {
+          "id": "T7",
+          "title": "Retain compiled reports for twelve months",
+          "serves": [
+            "R6"
+          ],
+          "design": [],
+          "dependsOn": [
+            "T2"
+          ],
+          "validations": [
+            "V6"
+          ],
+          "categories": []
+        }
+      ],
+      "validations": [
+        {
+          "id": "V1",
+          "text": "A fixture CSV with N entries yields one report with the same N entries.",
+          "serves": [
+            "R1"
+          ]
+        },
+        {
+          "id": "V2",
+          "text": "A fixture with one missing, one late and one duplicate entry shows three visible marks.",
+          "serves": [
+            "R2"
+          ]
+        },
+        {
+          "id": "V3",
+          "text": "Only the department head role can export.",
+          "serves": [
+            "R3"
+          ]
+        },
+        {
+          "id": "V4",
+          "text": "A correction before the deadline creates a new entry version.",
+          "serves": [
+            "R4"
+          ]
+        },
+        {
+          "id": "V5",
+          "text": "No score or ranking field exists in the report.",
+          "serves": [
+            "R5"
+          ]
+        },
+        {
+          "id": "V6",
+          "text": "A compiled report is still present eleven months after creation.",
+          "serves": [
+            "R6"
+          ]
+        }
+      ],
+      "outOfScopeClaims": [],
+      "authorLimitations": [
+        "The open content list in section 2 comes from the author's reading of the source; its completeness is not established.",
+        "Design, task and validation texts are author proposals, not user statements."
+      ]
+    },
+    "JOB_C_clean": {
+      "job": "C",
+      "language": "en",
+      "requirements": [
+        {
+          "id": "R1",
+          "title": "Record a loan",
+          "statements": [
+            "Record a loan"
+          ],
+          "sources": [
+            "BRIEF_FIELD:coreFeatures",
+            "BRIEF_FIELD:dataNeeds"
+          ],
+          "effectiveRules": []
+        },
+        {
+          "id": "R2",
+          "title": "Record a return",
+          "statements": [
+            "Record a return"
+          ],
+          "sources": [
+            "BRIEF_FIELD:coreFeatures"
+          ],
+          "effectiveRules": []
+        },
+        {
+          "id": "R3",
+          "title": "List overdue loans",
+          "statements": [
+            "List overdue loans",
+            "A loan lasts at most 14 days."
+          ],
+          "sources": [
+            "BRIEF_FIELD:coreFeatures",
+            "BRIEF_FIELD:constraints"
+          ],
+          "effectiveRules": []
+        },
+        {
+          "id": "R4",
+          "title": "The lead can view all loans",
+          "statements": [
+            "workshop lead (view all loans)"
+          ],
+          "sources": [
+            "BRIEF_FIELD:targetUsers"
+          ],
+          "effectiveRules": []
+        },
+        {
+          "id": "R5",
+          "title": "No user accounts or logins",
+          "statements": [
+            "No user accounts or logins."
+          ],
+          "sources": [
+            "BRIEF_FIELD:outOfScope"
+          ],
+          "effectiveRules": []
+        }
+      ],
+      "designs": [],
+      "tasks": [
+        {
+          "id": "T1",
+          "title": "Loan entry form",
+          "serves": [
+            "R1"
+          ],
+          "design": [],
+          "dependsOn": [],
+          "validations": [
+            "V1"
+          ],
+          "categories": []
+        },
+        {
+          "id": "T2",
+          "title": "Return entry form",
+          "serves": [
+            "R2"
+          ],
+          "design": [],
+          "dependsOn": [],
+          "validations": [
+            "V2"
+          ],
+          "categories": []
+        },
+        {
+          "id": "T3",
+          "title": "Overdue list",
+          "serves": [
+            "R3"
+          ],
+          "design": [],
+          "dependsOn": [
+            "T1",
+            "T2"
+          ],
+          "validations": [
+            "V3"
+          ],
+          "categories": []
+        },
+        {
+          "id": "T4",
+          "title": "Lead view of all loans",
+          "serves": [
+            "R4"
+          ],
+          "design": [],
+          "dependsOn": [
+            "T1"
+          ],
+          "validations": [
+            "V4"
+          ],
+          "categories": []
+        },
+        {
+          "id": "T5",
+          "title": "Keep accounts and logins out",
+          "serves": [
+            "R5"
+          ],
+          "design": [],
+          "dependsOn": [],
+          "validations": [
+            "V5"
+          ],
+          "categories": []
+        }
+      ],
+      "validations": [
+        {
+          "id": "V1",
+          "text": "A recorded loan appears in the log.",
+          "serves": [
+            "R1"
+          ]
+        },
+        {
+          "id": "V2",
+          "text": "A recorded return closes the matching loan.",
+          "serves": [
+            "R2"
+          ]
+        },
+        {
+          "id": "V3",
+          "text": "A loan older than 14 days is listed as overdue.",
+          "serves": [
+            "R3"
+          ]
+        },
+        {
+          "id": "V4",
+          "text": "The lead can list every unreturned tool.",
+          "serves": [
+            "R4"
+          ]
+        },
+        {
+          "id": "V5",
+          "text": "No sign-up or login screen exists.",
+          "serves": [
+            "R5"
+          ]
+        }
+      ],
+      "outOfScopeClaims": [],
+      "authorLimitations": [
+        "The source declares no open content marker; absence of a marker is not evidence that the requirements are complete.",
+        "R4 and R5 may conflict on how borrowers are identified. The source does not declare a conflict or resolve one; no decision is made here.",
+        "Design, task and validation texts are author proposals, not user statements."
+      ]
+    }
+  },
+  "openContentMarkers": {
+    "JOB_A": [
+      {
+        "marker": "U1",
+        "where": "DECISION:data",
+        "exactQuote": "UNKNOWN U1: how long raw entries are kept is not decided."
+      },
+      {
+        "marker": "U2",
+        "where": "DECISION:exceptions",
+        "exactQuote": "UNKNOWN U2: deadline timezone is not decided."
+      },
+      {
+        "marker": "U2",
+        "where": "BRIEF_FIELD:constraints",
+        "exactQuote": "Deadline timezone not decided."
+      },
+      {
+        "marker": "U3",
+        "where": "DECISION:exceptions",
+        "exactQuote": "UNKNOWN U3: behavior when the deadline falls on a public holiday is not decided."
+      },
+      {
+        "marker": "U4",
+        "where": "DECISION:acceptance",
+        "exactQuote": "UNKNOWN U4: export file format is not decided."
+      },
+      {
+        "marker": "C1",
+        "where": "DECISION:boundaries",
+        "exactQuote": "Resolution of C1: corrections before Friday 17:00 create a new entry version; after the deadline entries are immutable."
+      }
+    ],
+    "JOB_C": []
+  },
+  "presentationOrder": {
+    "algorithm": "sort the eleven internal keys ascending by lowercase hex SHA-256 of the UTF-8 string CVF-NIS-T1G-order-v1| + internalKey; assign RB-01 upward in that order",
+    "internalKeysInOrder": [
+      "D7",
+      "D5",
+      "D8",
+      "CCB",
+      "D2",
+      "D3",
+      "CCA",
+      "D6",
+      "D1",
+      "D9",
+      "D4"
+    ],
+    "sortKeys": {
+      "D7": "049f7ab7358cad6e6cbdae36380d719beeb3229105a6644543fcc7ac9354b1d6",
+      "D5": "64f7ed8b8fc4ca92bdaeddbf0767b7d049d65366c8f41edc0e3671665d1eaf4d",
+      "D8": "72763cafeb4a32ee7f1e3b8ca466cfa6606341b15083db7c14fb5efe56fa5fdc",
+      "CCB": "848a3b454edb74375e3f9b212c3ebbfc888b447ae9020f8ffb122d8b5a882518",
+      "D2": "916c0f90ea59a52b6b980f9a96e5c56b44f62aadc1b9743ee86c3c5aa0610002",
+      "D3": "99e98cb00ac41b02104b453520b89953807046e0bf7626be1c311b18fd03e3c7",
+      "CCA": "9b54de6b185dbe4b5278ce3881a98c6306f520c90b9a254bddcc84277827df46",
+      "D6": "b411c15fc63fe963983750a6767dbf7fed90988a4e9030e991a10501bfeba66e",
+      "D1": "bc8c495f3e30c121f6fb04b9450e47ef5f52b74fd4ea34169312826c1227b090",
+      "D9": "f2f841339dbf38a8deeea20e5dfcfca413e51b3ceb34a5b7a282b51e84644925",
+      "D4": "fbb1150a0b035eacdf81c8af6aef7947412b96d8ff49ec00e3ee44528d433f49"
+    },
+    "reproducibility": "recompute the sort keys with any SHA-256 tool; the generator wrote identical bytes on repeated runs (see determinism in the worker return evidence)"
+  },
+  "reviewerViews": [
+    {
+      "caseId": "RB-01",
+      "attachments": [
+        "A"
+      ],
+      "viewMarkdown": "# Receiver record for review case RB-01\n\nFormat: cvf.nisReceiverRecord.v1\nLanguage: en\n\n## 1. Source binding\n\n| Field | Value |\n| --- | --- |\n| Ledger bound to attachment | A |\n| Bound source kind | EXPORTED_REVIEWED_DRAFT |\n| Bound source SHA-256 | 393ecee7594febaf53da2728b3d640ad493f8a1bbfe8b2c77b191392d233b56b |\n| Bound source bytes | 23823 |\n| Bound source revision printed in the source | 8 |\n| Viewed revision printed in the source | 8 (printed as Yes, in the current session) |\n| Accepted-file pairing | SOURCE_BINDING_NOT_ESTABLISHED |\n| Current source attachment | A |\n| Current source SHA-256 | 393ecee7594febaf53da2728b3d640ad493f8a1bbfe8b2c77b191392d233b56b |\n| Current source revision | 8 |\n\n## 2. Open content located in the source\n\n| Marker | Where it appears | Exact quote | Cited by |\n| --- | --- | --- | --- |\n| U1 | DECISION:data | UNKNOWN U1: how long raw entries are kept is not decided. | R6 |\n| U2 | DECISION:exceptions | UNKNOWN U2: deadline timezone is not decided. | R2 |\n| U2 | BRIEF_FIELD:constraints | Deadline timezone not decided. | R4 |\n| U3 | DECISION:exceptions | UNKNOWN U3: behavior when the deadline falls on a public holiday is not decided. | R2 |\n| U4 | DECISION:acceptance | UNKNOWN U4: export file format is not decided. | R3 |\n| C1 | DECISION:boundaries | Resolution of C1: corrections before Friday 17:00 create a new entry version; after the deadline entries are immutable. | R4 |\n\n## 3. Requirements\n\n### R1 Compile one weekly report\n\nStatements quoted from the source:\n\n> System compiles all entries into one weekly report\n\nSources: BRIEF_FIELD:coreFeatures\n\nUser resolutions quoted from the source:\n\nNone quoted.\n\n\n### R2 Mark missing, late and duplicate entries\n\nStatements quoted from the source:\n\n> Late, missing and duplicate entries are marked in the report\n\nSources: BRIEF_FIELD:coreFeatures; DECISION:exceptions\n\nUser resolutions quoted from the source:\n\nNone quoted.\n\n\n### R3 Only the department head exports\n\nStatements quoted from the source:\n\n> The department head views all entries and is the only person who can export.\n\n> Department head exports the compiled report\n\nSources: DECISION:access; BRIEF_FIELD:coreFeatures; DECISION:acceptance\n\nUser resolutions quoted from the source:\n\nNone quoted.\n\n\n### R4 Corrections until the Friday deadline\n\nStatements quoted from the source:\n\n> Team leads may correct their entry until the Friday 17:00 deadline\n\n> Submitted entries are immutable once submitted\n\nSources: BRIEF_FIELD:constraints; BRIEF_FIELD:mustPreserve; DECISION:boundaries\n\nUser resolutions quoted from the source:\n\nNone quoted.\n\n\n### R5 No automatic scoring of people\n\nStatements quoted from the source:\n\n> No automatic scoring or ranking of team leads or people.\n\nSources: BRIEF_FIELD:outOfScope\n\nUser resolutions quoted from the source:\n\nNone quoted.\n\n\n### R6 Keep compiled reports twelve months\n\nStatements quoted from the source:\n\n> Compiled reports are kept 12 months.\n\nSources: DECISION:data\n\nUser resolutions quoted from the source:\n\nNone quoted.\n\n## 4. Design elements (author proposals)\n\n| Id | Kind | Text | Serves |\n| --- | --- | --- | --- |\n| DE1 | DATA | Entry record: equipment line code, status text, submitting team lead, submission time. | R1 |\n\n## 5. Tasks (author proposals)\n\n| Id | Title | Serves | Design | Depends on | Validations | Categories |\n| --- | --- | --- | --- | --- | --- | --- |\n| T1 | Define the entry record | R1 | DE1 | - | V1 | - |\n| T2 | Compile the weekly report | R1 | - | T1 | V1 | - |\n| T3 | Mark missing, late and duplicate entries | R2 | - | T2 | V2 | - |\n| T4 | Export for the department head | R3 | - | T2 | V3 | - |\n| T5 | Version corrections before the deadline | R4 | - | T1 | V4 | - |\n| T6 | Keep scoring and ranking out | R5 | - | - | V5 | - |\n| T7 | Retain compiled reports for twelve months | R6 | - | T2 | V6 | - |\n\n## 6. Validations (author proposals)\n\n| Id | Text | Serves |\n| --- | --- | --- |\n| V1 | A fixture CSV with N entries yields one report with the same N entries. | R1 |\n| V2 | A fixture with one missing, one late and one duplicate entry shows three visible marks. | R2 |\n| V3 | Only the department head role can export. | R3 |\n| V4 | A correction before the deadline creates a new entry version. | R4 |\n| V5 | No score or ranking field exists in the report. | R5 |\n| V6 | A compiled report is still present eleven months after creation. | R6 |\n\n## 7. Out-of-scope claims and author limitations\n\nOut-of-scope claims: None.\n\n- L1: The open content list in section 2 comes from the author's reading of the source; its completeness is not established.\n- L2: Design, task and validation texts are author proposals, not user statements.\n\n## 8. Authority statement\n\nTechnical review applies to named scopes only. Build readiness: NOT_ASSESSED\nBuild authority: NOT_GRANTED\n\nRecord SHA-256 (all bytes above this line): 07c69e8d69ffa08683fb565399eadd8eb55479f3c6606543b02e8925bd8bfb5d\n",
+      "viewBytes": 4913,
+      "viewSha256": "d03236295f86bb43433c94b6a20a0d67573a944f47d7d1e3fc5f899d7eb1cf21"
+    },
+    {
+      "caseId": "RB-02",
+      "attachments": [
+        "A"
+      ],
+      "viewMarkdown": "# Receiver record for review case RB-02\n\nFormat: cvf.nisReceiverRecord.v1\nLanguage: en\n\n## 1. Source binding\n\n| Field | Value |\n| --- | --- |\n| Ledger bound to attachment | A |\n| Bound source kind | EXPORTED_REVIEWED_DRAFT |\n| Bound source SHA-256 | 393ecee7594febaf53da2728b3d640ad493f8a1bbfe8b2c77b191392d233b56b |\n| Bound source bytes | 23823 |\n| Bound source revision printed in the source | 8 |\n| Viewed revision printed in the source | 8 (printed as Yes, in the current session) |\n| Accepted-file pairing | SOURCE_BINDING_NOT_ESTABLISHED |\n| Current source attachment | A |\n| Current source SHA-256 | 393ecee7594febaf53da2728b3d640ad493f8a1bbfe8b2c77b191392d233b56b |\n| Current source revision | 8 |\n\n## 2. Open content located in the source\n\n| Marker | Where it appears | Exact quote | Cited by |\n| --- | --- | --- | --- |\n| U1 | DECISION:data | UNKNOWN U1: how long raw entries are kept is not decided. | R6 |\n| U2 | DECISION:exceptions | UNKNOWN U2: deadline timezone is not decided. | R2 |\n| U2 | BRIEF_FIELD:constraints | Deadline timezone not decided. | R4 |\n| U3 | DECISION:exceptions | UNKNOWN U3: behavior when the deadline falls on a public holiday is not decided. | R2 |\n| U4 | DECISION:acceptance | UNKNOWN U4: export file format is not decided. | R3 |\n| C1 | DECISION:boundaries | Resolution of C1: corrections before Friday 17:00 create a new entry version; after the deadline entries are immutable. | R4 |\n\n## 3. Requirements\n\n### R1 Compile one weekly report\n\nStatements quoted from the source:\n\n> System compiles all entries into one weekly report\n\n> The report is emailed to the department head every Friday.\n\nSources: BRIEF_FIELD:coreFeatures\n\nUser resolutions quoted from the source:\n\nNone quoted.\n\n\n### R2 Mark missing, late and duplicate entries\n\nStatements quoted from the source:\n\n> Late, missing and duplicate entries are marked in the report\n\nSources: BRIEF_FIELD:coreFeatures; DECISION:exceptions\n\nUser resolutions quoted from the source:\n\nNone quoted.\n\n\n### R3 Only the department head exports\n\nStatements quoted from the source:\n\n> The department head views all entries and is the only person who can export.\n\n> Department head exports the compiled report\n\nSources: DECISION:access; BRIEF_FIELD:coreFeatures; DECISION:acceptance\n\nUser resolutions quoted from the source:\n\nNone quoted.\n\n\n### R4 Corrections until the Friday deadline\n\nStatements quoted from the source:\n\n> Team leads may correct their entry until the Friday 17:00 deadline\n\n> Submitted entries are immutable once submitted\n\nSources: BRIEF_FIELD:constraints; BRIEF_FIELD:mustPreserve; DECISION:boundaries\n\nUser resolutions quoted from the source:\n\n> corrections before Friday 17:00 create a new entry version; after the deadline entries are immutable\n\n\n### R5 No automatic scoring of people\n\nStatements quoted from the source:\n\n> No automatic scoring or ranking of team leads or people.\n\nSources: BRIEF_FIELD:outOfScope\n\nUser resolutions quoted from the source:\n\nNone quoted.\n\n\n### R6 Keep compiled reports twelve months\n\nStatements quoted from the source:\n\n> Compiled reports are kept 12 months.\n\nSources: DECISION:data\n\nUser resolutions quoted from the source:\n\nNone quoted.\n\n## 4. Design elements (author proposals)\n\n| Id | Kind | Text | Serves |\n| --- | --- | --- | --- |\n| DE1 | DATA | Entry record: equipment line code, status text, submitting team lead, submission time. | R1 |\n\n## 5. Tasks (author proposals)\n\n| Id | Title | Serves | Design | Depends on | Validations | Categories |\n| --- | --- | --- | --- | --- | --- | --- |\n| T1 | Define the entry record | R1 | DE1 | - | V1 | - |\n| T2 | Compile the weekly report | R1 | - | T1 | V1 | - |\n| T3 | Mark missing, late and duplicate entries | R2 | - | T2 | V2 | - |\n| T4 | Export for the department head | R3 | - | T2 | V3 | - |\n| T5 | Version corrections before the deadline | R4 | - | T1 | V4 | - |\n| T6 | Keep scoring and ranking out | R5 | - | - | V5 | - |\n| T7 | Retain compiled reports for twelve months | R6 | - | T2 | V6 | - |\n\n## 6. Validations (author proposals)\n\n| Id | Text | Serves |\n| --- | --- | --- |\n| V1 | A fixture CSV with N entries yields one report with the same N entries. | R1 |\n| V2 | A fixture with one missing, one late and one duplicate entry shows three visible marks. | R2 |\n| V3 | Only the department head role can export. | R3 |\n| V4 | A correction before the deadline creates a new entry version. | R4 |\n| V5 | No score or ranking field exists in the report. | R5 |\n| V6 | A compiled report is still present eleven months after creation. | R6 |\n\n## 7. Out-of-scope claims and author limitations\n\nOut-of-scope claims: None.\n\n- L1: The open content list in section 2 comes from the author's reading of the source; its completeness is not established.\n- L2: Design, task and validation texts are author proposals, not user statements.\n\n## 8. Authority statement\n\nTechnical review applies to named scopes only. Build readiness: NOT_ASSESSED\nBuild authority: NOT_GRANTED\n\nRecord SHA-256 (all bytes above this line): fc4e810161ecdc263602d023c6a5fbe1acf6a924e6a3653740fb40d138fa082c\n",
+      "viewBytes": 5065,
+      "viewSha256": "765b19f9bb558909118c509381b5d128f0b80a474df1f63c6d55f119f60e682f"
+    },
+    {
+      "caseId": "RB-03",
+      "attachments": [
+        "C"
+      ],
+      "viewMarkdown": "# Receiver record for review case RB-03\n\nFormat: cvf.nisReceiverRecord.v1\nLanguage: en\n\n## 1. Source binding\n\n| Field | Value |\n| --- | --- |\n| Ledger bound to attachment | C |\n| Bound source kind | ACCEPTED_FILE_CANDIDATE_BYTES |\n| Bound source SHA-256 | 0d4a3dd870fd6f9e85541c8f338cbde2df444db44731c42ed203aeff41b3ac52 |\n| Bound source bytes | 6253 |\n| Bound source revision printed in the source | 7 |\n| Viewed revision printed in the source | 7 (acknowledgedRevision inside the file) |\n| Accepted-file pairing | FILE_BYTES_AND_REVISION_ESTABLISHED_SYNTHETIC_PLACEHOLDER_PACKET_SOURCE |\n| Current source attachment | C |\n| Current source SHA-256 | 0d4a3dd870fd6f9e85541c8f338cbde2df444db44731c42ed203aeff41b3ac52 |\n| Current source revision | 7 |\n\n## 2. Open content located in the source\n\nNone declared in the source bytes.\n\n## 3. Requirements\n\n### R1 Record a loan\n\nStatements quoted from the source:\n\n> Record a loan\n\nSources: BRIEF_FIELD:coreFeatures; BRIEF_FIELD:dataNeeds\n\nUser resolutions quoted from the source:\n\nNone quoted.\n\n\n### R2 Record a return\n\nStatements quoted from the source:\n\n> Record a return\n\nSources: BRIEF_FIELD:coreFeatures\n\nUser resolutions quoted from the source:\n\nNone quoted.\n\n\n### R3 List overdue loans\n\nStatements quoted from the source:\n\n> List overdue loans\n\n> A loan lasts at most 14 days.\n\nSources: BRIEF_FIELD:coreFeatures; BRIEF_FIELD:constraints\n\nUser resolutions quoted from the source:\n\nNone quoted.\n\n\n### R4 The lead can view all loans\n\nStatements quoted from the source:\n\n> workshop lead (view all loans)\n\nSources: BRIEF_FIELD:targetUsers\n\nUser resolutions quoted from the source:\n\nNone quoted.\n\n\n### R5 No user accounts or logins\n\nStatements quoted from the source:\n\n> No user accounts or logins.\n\nSources: BRIEF_FIELD:outOfScope\n\nUser resolutions quoted from the source:\n\nNone quoted.\n\n## 4. Design elements (author proposals)\n\nNone.\n\n## 5. Tasks (author proposals)\n\n| Id | Title | Serves | Design | Depends on | Validations | Categories |\n| --- | --- | --- | --- | --- | --- | --- |\n| T1 | Loan entry form | R1 | - | - | V1 | - |\n| T2 | Return entry form | R2 | - | - | V2 | - |\n| T3 | Overdue list | R3 | - | T1, T2 | V3 | - |\n| T4 | Lead view of all loans | R4 | - | T1 | V4 | - |\n| T5 | Keep accounts and logins out | R5 | - | - | V5 | - |\n\n## 6. Validations (author proposals)\n\n| Id | Text | Serves |\n| --- | --- | --- |\n| V1 | A recorded loan appears in the log. | R1 |\n| V2 | A recorded return closes the matching loan. | R2 |\n| V3 | A loan older than 14 days is listed as overdue. | R3 |\n| V4 | The lead can list every unreturned tool. | R4 |\n| V5 | No sign-up or login screen exists. | R5 |\n\n## 7. Out-of-scope claims and author limitations\n\nOut-of-scope claims: None.\n\n- L1: The source declares no open content marker; absence of a marker is not evidence that the requirements are complete.\n- L2: R4 and R5 may conflict on how borrowers are identified. The source does not declare a conflict or resolve one; no decision is made here.\n- L3: Design, task and validation texts are author proposals, not user statements.\n\n## 8. Authority statement\n\nTechnical review applies to named scopes only. Build readiness: NOT_ASSESSED\nBuild authority: GRANTED after technical review\n\nRecord SHA-256 (all bytes above this line): d9bd6d6888390c093ad8138803e928b14e944d6e655be1c286ec3aa4b428eb77\n",
+      "viewBytes": 3337,
+      "viewSha256": "e4122faecb4604924f62d530a386c0d7ae37222c34e5b5466c93400158dc3d9f"
+    },
+    {
+      "caseId": "RB-04",
+      "attachments": [
+        "C"
+      ],
+      "viewMarkdown": "# Receiver record for review case RB-04\n\nFormat: cvf.nisReceiverRecord.v1\nLanguage: en\n\n## 1. Source binding\n\n| Field | Value |\n| --- | --- |\n| Ledger bound to attachment | C |\n| Bound source kind | ACCEPTED_FILE_CANDIDATE_BYTES |\n| Bound source SHA-256 | 0d4a3dd870fd6f9e85541c8f338cbde2df444db44731c42ed203aeff41b3ac52 |\n| Bound source bytes | 6253 |\n| Bound source revision printed in the source | 7 |\n| Viewed revision printed in the source | 7 (acknowledgedRevision inside the file) |\n| Accepted-file pairing | FILE_BYTES_AND_REVISION_ESTABLISHED_SYNTHETIC_PLACEHOLDER_PACKET_SOURCE |\n| Current source attachment | C |\n| Current source SHA-256 | 0d4a3dd870fd6f9e85541c8f338cbde2df444db44731c42ed203aeff41b3ac52 |\n| Current source revision | 7 |\n\n## 2. Open content located in the source\n\nNone declared in the source bytes.\n\n## 3. Requirements\n\n### R1 Record a loan\n\nStatements quoted from the source:\n\n> Record a loan\n\nSources: BRIEF_FIELD:coreFeatures; BRIEF_FIELD:dataNeeds\n\nUser resolutions quoted from the source:\n\nNone quoted.\n\n\n### R2 Record a return\n\nStatements quoted from the source:\n\n> Record a return\n\nSources: BRIEF_FIELD:coreFeatures\n\nUser resolutions quoted from the source:\n\nNone quoted.\n\n\n### R3 List overdue loans\n\nStatements quoted from the source:\n\n> List overdue loans\n\n> A loan lasts at most 14 days.\n\nSources: BRIEF_FIELD:coreFeatures; BRIEF_FIELD:constraints\n\nUser resolutions quoted from the source:\n\nNone quoted.\n\n\n### R4 The lead can view all loans\n\nStatements quoted from the source:\n\n> workshop lead (view all loans)\n\nSources: BRIEF_FIELD:targetUsers\n\nUser resolutions quoted from the source:\n\nNone quoted.\n\n\n### R5 No user accounts or logins\n\nStatements quoted from the source:\n\n> No user accounts or logins.\n\nSources: BRIEF_FIELD:outOfScope\n\nUser resolutions quoted from the source:\n\nNone quoted.\n\n## 4. Design elements (author proposals)\n\nNone.\n\n## 5. Tasks (author proposals)\n\n| Id | Title | Serves | Design | Depends on | Validations | Categories |\n| --- | --- | --- | --- | --- | --- | --- |\n| T1 | Loan entry form | R1 | - | - | V1 | - |\n| T2 | Return entry form | R2 | - | - | V2 | - |\n| T3 | Overdue list | R3 | - | T1, T2 | V3 | - |\n| T4 | Lead view of all loans | R4 | - | T1 | V4 | - |\n| T5 | Keep accounts and logins out | R5 | - | - | V5 | - |\n\n## 6. Validations (author proposals)\n\n| Id | Text | Serves |\n| --- | --- | --- |\n| V1 | A recorded loan appears in the log. | R1 |\n| V2 | A recorded return closes the matching loan. | R2 |\n| V3 | A loan older than 14 days is listed as overdue. | R3 |\n| V4 | The lead can list every unreturned tool. | R4 |\n| V5 | No sign-up or login screen exists. | R5 |\n\n## 7. Out-of-scope claims and author limitations\n\nOut-of-scope claims: None.\n\n- L1: The source declares no open content marker; absence of a marker is not evidence that the requirements are complete.\n- L2: R4 and R5 may conflict on how borrowers are identified. The source does not declare a conflict or resolve one; no decision is made here.\n- L3: Design, task and validation texts are author proposals, not user statements.\n\n## 8. Authority statement\n\nTechnical review applies to named scopes only. Build readiness: NOT_ASSESSED\nBuild authority: NOT_GRANTED\n\nRecord SHA-256 (all bytes above this line): af862bff945cae89e5127516dbc763783c3d822ff9e9dd8a510e65fb330bed08\n",
+      "viewBytes": 3318,
+      "viewSha256": "5b36209cf6b9125c5383e727571f8b1c8f5eaf6b7fc5418dd3bdfef65111a5d0"
+    },
+    {
+      "caseId": "RB-05",
+      "attachments": [
+        "C"
+      ],
+      "viewMarkdown": "# Receiver record for review case RB-05\n\nFormat: cvf.nisReceiverRecord.v1\nLanguage: en\n\n## 1. Source binding\n\n| Field | Value |\n| --- | --- |\n| Ledger bound to attachment | C |\n| Bound source kind | ACCEPTED_FILE_CANDIDATE_BYTES |\n| Bound source SHA-256 | 0d4a3dd870fd6f9e85541c8f338cbde2df444db44731c42ed203aeff41b3ac52 |\n| Bound source bytes | 6253 |\n| Bound source revision printed in the source | 7 |\n| Viewed revision printed in the source | 7 (acknowledgedRevision inside the file) |\n| Accepted-file pairing | FILE_BYTES_AND_REVISION_ESTABLISHED_SYNTHETIC_PLACEHOLDER_PACKET_SOURCE |\n| Current source attachment | C |\n| Current source SHA-256 | 0d4a3dd870fd6f9e85541c8f338cbde2df444db44731c42ed203aeff41b3ac52 |\n| Current source revision | 7 |\n\n## 2. Open content located in the source\n\nNone declared in the source bytes.\n\n## 3. Requirements\n\n### R1 Record a loan\n\nStatements quoted from the source:\n\n> Record a loan\n\nSources: BRIEF_FIELD:coreFeatures; BRIEF_FIELD:dataNeeds\n\nUser resolutions quoted from the source:\n\nNone quoted.\n\n\n### R2 Record a return\n\nStatements quoted from the source:\n\n> Record a return\n\nSources: BRIEF_FIELD:coreFeatures\n\nUser resolutions quoted from the source:\n\nNone quoted.\n\n\n### R3 List overdue loans\n\nStatements quoted from the source:\n\n> List overdue loans\n\n> A loan lasts at most 14 days.\n\nSources: BRIEF_FIELD:coreFeatures; BRIEF_FIELD:constraints\n\nUser resolutions quoted from the source:\n\nNone quoted.\n\n\n### R4 The lead can view all loans\n\nStatements quoted from the source:\n\n> workshop lead (view all loans)\n\nSources: BRIEF_FIELD:targetUsers\n\nUser resolutions quoted from the source:\n\nNone quoted.\n\n\n### R5 No user accounts or logins\n\nStatements quoted from the source:\n\n> No user accounts or logins.\n\nSources: BRIEF_FIELD:outOfScope\n\nUser resolutions quoted from the source:\n\nNone quoted.\n\n## 4. Design elements (author proposals)\n\nNone.\n\n## 5. Tasks (author proposals)\n\n| Id | Title | Serves | Design | Depends on | Validations | Categories |\n| --- | --- | --- | --- | --- | --- | --- |\n| T1 | Loan entry form | R1 | - | - | V1 | - |\n| T2 | Return entry form | R2 | - | - | V2 | - |\n| T3 | Overdue list | R3 | - | T1, T2 | V3 | - |\n| T4 | Lead view of all loans | R4 | - | T1 | V4 | - |\n| T5 | Keep accounts and logins out | R5 | - | - | - | - |\n\n## 6. Validations (author proposals)\n\n| Id | Text | Serves |\n| --- | --- | --- |\n| V1 | A recorded loan appears in the log. | R1 |\n| V2 | A recorded return closes the matching loan. | R2 |\n| V3 | A loan older than 14 days is listed as overdue. | R3 |\n| V4 | The lead can list every unreturned tool. | R4 |\n\n## 7. Out-of-scope claims and author limitations\n\nOut-of-scope claims: None.\n\n- L1: The source declares no open content marker; absence of a marker is not evidence that the requirements are complete.\n- L2: R4 and R5 may conflict on how borrowers are identified. The source does not declare a conflict or resolve one; no decision is made here.\n- L3: Design, task and validation texts are author proposals, not user statements.\n\n## 8. Authority statement\n\nTechnical review applies to named scopes only. Build readiness: NOT_ASSESSED\nBuild authority: NOT_GRANTED\n\nRecord SHA-256 (all bytes above this line): 4c8e39b1c87e1b6ebf4fc9d249e022ec3cd30ca620f50480d758747de64c86f0\n",
+      "viewBytes": 3268,
+      "viewSha256": "a09b9f93b6df06ee9c4357a7af367ebc01a5a5735984236b5d1e1e80aaad742f"
+    },
+    {
+      "caseId": "RB-06",
+      "attachments": [
+        "C"
+      ],
+      "viewMarkdown": "# Receiver record for review case RB-06\n\nFormat: cvf.nisReceiverRecord.v1\nLanguage: en\n\n## 1. Source binding\n\n| Field | Value |\n| --- | --- |\n| Ledger bound to attachment | C |\n| Bound source kind | ACCEPTED_FILE_CANDIDATE_BYTES |\n| Bound source SHA-256 | 0d4a3dd870fd6f9e85541c8f338cbde2df444db44731c42ed203aeff41b3ac52 |\n| Bound source bytes | 6253 |\n| Bound source revision printed in the source | 7 |\n| Viewed revision printed in the source | 7 (acknowledgedRevision inside the file) |\n| Accepted-file pairing | FILE_BYTES_AND_REVISION_ESTABLISHED_SYNTHETIC_PLACEHOLDER_PACKET_SOURCE |\n| Current source attachment | C |\n| Current source SHA-256 | 0d4a3dd870fd6f9e85541c8f338cbde2df444db44731c42ed203aeff41b3ac52 |\n| Current source revision | 7 |\n\n## 2. Open content located in the source\n\nNone declared in the source bytes.\n\n## 3. Requirements\n\n### R1 Record a loan\n\nStatements quoted from the source:\n\n> Record a loan\n\nSources: BRIEF_FIELD:coreFeatures; BRIEF_FIELD:dataNeeds\n\nUser resolutions quoted from the source:\n\nNone quoted.\n\n\n### R2 Record a return\n\nStatements quoted from the source:\n\n> Record a return\n\nSources: BRIEF_FIELD:coreFeatures\n\nUser resolutions quoted from the source:\n\nNone quoted.\n\n\n### R3 List overdue loans\n\nStatements quoted from the source:\n\n> List overdue loans\n\n> A loan lasts at most 14 days.\n\nSources: BRIEF_FIELD:coreFeatures; BRIEF_FIELD:constraints\n\nUser resolutions quoted from the source:\n\nNone quoted.\n\n\n### R4 The lead can view all loans\n\nStatements quoted from the source:\n\n> workshop lead (view all loans)\n\nSources: BRIEF_FIELD:targetUsers\n\nUser resolutions quoted from the source:\n\nNone quoted.\n\n\n### R5 No user accounts or logins\n\nStatements quoted from the source:\n\n> No user accounts or logins.\n\nSources: BRIEF_FIELD:outOfScope\n\nUser resolutions quoted from the source:\n\nNone quoted.\n\n## 4. Design elements (author proposals)\n\nNone.\n\n## 5. Tasks (author proposals)\n\n| Id | Title | Serves | Design | Depends on | Validations | Categories |\n| --- | --- | --- | --- | --- | --- | --- |\n| T1 | Loan entry form | R1 | - | - | V1 | - |\n| T2 | Return entry form | R2 | - | - | V2 | - |\n| T3 | Overdue list | R3 | - | T1, T2 | V3 | - |\n| T4 | Lead view of all loans | R4 | - | T1, T9 | V4 | - |\n| T5 | Keep accounts and logins out | R5 | - | - | V5 | - |\n\n## 6. Validations (author proposals)\n\n| Id | Text | Serves |\n| --- | --- | --- |\n| V1 | A recorded loan appears in the log. | R1 |\n| V2 | A recorded return closes the matching loan. | R2 |\n| V3 | A loan older than 14 days is listed as overdue. | R3 |\n| V4 | The lead can list every unreturned tool. | R4 |\n| V5 | No sign-up or login screen exists. | R5 |\n\n## 7. Out-of-scope claims and author limitations\n\nOut-of-scope claims: None.\n\n- L1: The source declares no open content marker; absence of a marker is not evidence that the requirements are complete.\n- L2: R4 and R5 may conflict on how borrowers are identified. The source does not declare a conflict or resolve one; no decision is made here.\n- L3: Design, task and validation texts are author proposals, not user statements.\n\n## 8. Authority statement\n\nTechnical review applies to named scopes only. Build readiness: NOT_ASSESSED\nBuild authority: NOT_GRANTED\n\nRecord SHA-256 (all bytes above this line): 6f5ea4a1a74444a3ec6045d916b423d42cb140351de2867504eeba1b1c80e5c9\n",
+      "viewBytes": 3322,
+      "viewSha256": "36b1e7bd23af96074643fd39f8b1c4436bcb38957ae9c9d83d69d6a0886653dd"
+    },
+    {
+      "caseId": "RB-07",
+      "attachments": [
+        "A"
+      ],
+      "viewMarkdown": "# Receiver record for review case RB-07\n\nFormat: cvf.nisReceiverRecord.v1\nLanguage: en\n\n## 1. Source binding\n\n| Field | Value |\n| --- | --- |\n| Ledger bound to attachment | A |\n| Bound source kind | EXPORTED_REVIEWED_DRAFT |\n| Bound source SHA-256 | 393ecee7594febaf53da2728b3d640ad493f8a1bbfe8b2c77b191392d233b56b |\n| Bound source bytes | 23823 |\n| Bound source revision printed in the source | 8 |\n| Viewed revision printed in the source | 8 (printed as Yes, in the current session) |\n| Accepted-file pairing | SOURCE_BINDING_NOT_ESTABLISHED |\n| Current source attachment | A |\n| Current source SHA-256 | 393ecee7594febaf53da2728b3d640ad493f8a1bbfe8b2c77b191392d233b56b |\n| Current source revision | 8 |\n\n## 2. Open content located in the source\n\n| Marker | Where it appears | Exact quote | Cited by |\n| --- | --- | --- | --- |\n| U1 | DECISION:data | UNKNOWN U1: how long raw entries are kept is not decided. | R6 |\n| U2 | DECISION:exceptions | UNKNOWN U2: deadline timezone is not decided. | R2 |\n| U2 | BRIEF_FIELD:constraints | Deadline timezone not decided. | R4 |\n| U3 | DECISION:exceptions | UNKNOWN U3: behavior when the deadline falls on a public holiday is not decided. | R2 |\n| U4 | DECISION:acceptance | UNKNOWN U4: export file format is not decided. | R3 |\n| C1 | DECISION:boundaries | Resolution of C1: corrections before Friday 17:00 create a new entry version; after the deadline entries are immutable. | R4 |\n\n## 3. Requirements\n\n### R1 Compile one weekly report\n\nStatements quoted from the source:\n\n> System compiles all entries into one weekly report\n\nSources: BRIEF_FIELD:coreFeatures\n\nUser resolutions quoted from the source:\n\nNone quoted.\n\n\n### R2 Mark missing, late and duplicate entries\n\nStatements quoted from the source:\n\n> Late, missing and duplicate entries are marked in the report\n\nSources: BRIEF_FIELD:coreFeatures; DECISION:exceptions\n\nUser resolutions quoted from the source:\n\nNone quoted.\n\n\n### R3 Only the department head exports\n\nStatements quoted from the source:\n\n> The department head views all entries and is the only person who can export.\n\n> Department head exports the compiled report\n\nSources: DECISION:access; BRIEF_FIELD:coreFeatures; DECISION:acceptance\n\nUser resolutions quoted from the source:\n\nNone quoted.\n\n\n### R4 Corrections until the Friday deadline\n\nStatements quoted from the source:\n\n> Team leads may correct their entry until the Friday 17:00 deadline\n\n> Submitted entries are immutable once submitted\n\nSources: BRIEF_FIELD:constraints; BRIEF_FIELD:mustPreserve; DECISION:boundaries\n\nUser resolutions quoted from the source:\n\n> corrections before Friday 17:00 create a new entry version; after the deadline entries are immutable\n\n\n### R5 No automatic scoring of people\n\nStatements quoted from the source:\n\n> No automatic scoring or ranking of team leads or people.\n\nSources: BRIEF_FIELD:outOfScope\n\nUser resolutions quoted from the source:\n\nNone quoted.\n\n\n### R6 Keep compiled reports twelve months\n\nStatements quoted from the source:\n\n> Compiled reports are kept 12 months.\n\nSources: DECISION:data\n\nUser resolutions quoted from the source:\n\nNone quoted.\n\n## 4. Design elements (author proposals)\n\n| Id | Kind | Text | Serves |\n| --- | --- | --- | --- |\n| DE1 | DATA | Entry record: equipment line code, status text, submitting team lead, submission time. | R1 |\n\n## 5. Tasks (author proposals)\n\n| Id | Title | Serves | Design | Depends on | Validations | Categories |\n| --- | --- | --- | --- | --- | --- | --- |\n| T1 | Define the entry record | R1 | DE1 | - | V1 | - |\n| T2 | Compile the weekly report | R1 | - | T1 | V1 | - |\n| T3 | Mark missing, late and duplicate entries | R2 | - | T2 | V2 | - |\n| T4 | Export for the department head | R3 | - | T2 | V3 | - |\n| T5 | Version corrections before the deadline | R4 | - | T1 | V4 | - |\n| T6 | Keep scoring and ranking out | R5 | - | - | V5 | - |\n| T7 | Retain compiled reports for twelve months | R6 | - | T2 | V6 | - |\n\n## 6. Validations (author proposals)\n\n| Id | Text | Serves |\n| --- | --- | --- |\n| V1 | A fixture CSV with N entries yields one report with the same N entries. | R1 |\n| V2 | A fixture with one missing, one late and one duplicate entry shows three visible marks. | R2 |\n| V3 | Only the department head role can export. | R3 |\n| V4 | A correction before the deadline creates a new entry version. | R4 |\n| V5 | No score or ranking field exists in the report. | R5 |\n| V6 | A compiled report is still present eleven months after creation. | R6 |\n\n## 7. Out-of-scope claims and author limitations\n\nOut-of-scope claims: None.\n\n- L1: The open content list in section 2 comes from the author's reading of the source; its completeness is not established.\n- L2: Design, task and validation texts are author proposals, not user statements.\n\n## 8. Authority statement\n\nTechnical review applies to named scopes only. Build readiness: NOT_ASSESSED\nBuild authority: NOT_GRANTED\n\nRecord SHA-256 (all bytes above this line): abc812896de1580e0c7da2831838f407410df249d746c633a3ae2e1998830192\n",
+      "viewBytes": 5003,
+      "viewSha256": "a6aab5e96259ac6c1b77c39b7777f430ce1afd9e1f1c522e4d0e4d07433d9afc"
+    },
+    {
+      "caseId": "RB-08",
+      "attachments": [
+        "A",
+        "B"
+      ],
+      "viewMarkdown": "# Receiver record for review case RB-08\n\nFormat: cvf.nisReceiverRecord.v1\nLanguage: en\n\n## 1. Source binding\n\n| Field | Value |\n| --- | --- |\n| Ledger bound to attachment | A |\n| Bound source kind | EXPORTED_REVIEWED_DRAFT |\n| Bound source SHA-256 | 393ecee7594febaf53da2728b3d640ad493f8a1bbfe8b2c77b191392d233b56b |\n| Bound source bytes | 23823 |\n| Bound source revision printed in the source | 8 |\n| Viewed revision printed in the source | 8 (printed as Yes, in the current session) |\n| Accepted-file pairing | SOURCE_BINDING_NOT_ESTABLISHED |\n| Current source attachment | B |\n| Current source SHA-256 | 02b8d1f51a77a8233d6eab0492344e2781bbb2aa2b1bf460d1e30a73e0308ad1 |\n| Current source revision | 11 |\n\n## 2. Open content located in the source\n\n| Marker | Where it appears | Exact quote | Cited by |\n| --- | --- | --- | --- |\n| U1 | DECISION:data | UNKNOWN U1: how long raw entries are kept is not decided. | R6 |\n| U2 | DECISION:exceptions | UNKNOWN U2: deadline timezone is not decided. | R2 |\n| U2 | BRIEF_FIELD:constraints | Deadline timezone not decided. | R4 |\n| U3 | DECISION:exceptions | UNKNOWN U3: behavior when the deadline falls on a public holiday is not decided. | R2 |\n| U4 | DECISION:acceptance | UNKNOWN U4: export file format is not decided. | R3 |\n| C1 | DECISION:boundaries | Resolution of C1: corrections before Friday 17:00 create a new entry version; after the deadline entries are immutable. | R4 |\n\n## 3. Requirements\n\n### R1 Compile one weekly report\n\nStatements quoted from the source:\n\n> System compiles all entries into one weekly report\n\nSources: BRIEF_FIELD:coreFeatures\n\nUser resolutions quoted from the source:\n\nNone quoted.\n\n\n### R2 Mark missing, late and duplicate entries\n\nStatements quoted from the source:\n\n> Late, missing and duplicate entries are marked in the report\n\nSources: BRIEF_FIELD:coreFeatures; DECISION:exceptions\n\nUser resolutions quoted from the source:\n\nNone quoted.\n\n\n### R3 Only the department head exports\n\nStatements quoted from the source:\n\n> The department head views all entries and is the only person who can export.\n\n> Department head exports the compiled report\n\nSources: DECISION:access; BRIEF_FIELD:coreFeatures; DECISION:acceptance\n\nUser resolutions quoted from the source:\n\nNone quoted.\n\n\n### R4 Corrections until the Friday deadline\n\nStatements quoted from the source:\n\n> Team leads may correct their entry until the Friday 17:00 deadline\n\n> Submitted entries are immutable once submitted\n\nSources: BRIEF_FIELD:constraints; BRIEF_FIELD:mustPreserve; DECISION:boundaries\n\nUser resolutions quoted from the source:\n\n> corrections before Friday 17:00 create a new entry version; after the deadline entries are immutable\n\n\n### R5 No automatic scoring of people\n\nStatements quoted from the source:\n\n> No automatic scoring or ranking of team leads or people.\n\nSources: BRIEF_FIELD:outOfScope\n\nUser resolutions quoted from the source:\n\nNone quoted.\n\n\n### R6 Keep compiled reports twelve months\n\nStatements quoted from the source:\n\n> Compiled reports are kept 12 months.\n\nSources: DECISION:data\n\nUser resolutions quoted from the source:\n\nNone quoted.\n\n## 4. Design elements (author proposals)\n\n| Id | Kind | Text | Serves |\n| --- | --- | --- | --- |\n| DE1 | DATA | Entry record: equipment line code, status text, submitting team lead, submission time. | R1 |\n\n## 5. Tasks (author proposals)\n\n| Id | Title | Serves | Design | Depends on | Validations | Categories |\n| --- | --- | --- | --- | --- | --- | --- |\n| T1 | Define the entry record | R1 | DE1 | - | V1 | - |\n| T2 | Compile the weekly report | R1 | - | T1 | V1 | - |\n| T3 | Mark missing, late and duplicate entries | R2 | - | T2 | V2 | - |\n| T4 | Export for the department head | R3 | - | T2 | V3 | - |\n| T5 | Version corrections before the deadline | R4 | - | T1 | V4 | - |\n| T6 | Keep scoring and ranking out | R5 | - | - | V5 | - |\n| T7 | Retain compiled reports for twelve months | R6 | - | T2 | V6 | - |\n\n## 6. Validations (author proposals)\n\n| Id | Text | Serves |\n| --- | --- | --- |\n| V1 | A fixture CSV with N entries yields one report with the same N entries. | R1 |\n| V2 | A fixture with one missing, one late and one duplicate entry shows three visible marks. | R2 |\n| V3 | Only the department head role can export. | R3 |\n| V4 | A correction before the deadline creates a new entry version. | R4 |\n| V5 | No score or ranking field exists in the report. | R5 |\n| V6 | A compiled report is still present eleven months after creation. | R6 |\n\n## 7. Out-of-scope claims and author limitations\n\nOut-of-scope claims: None.\n\n- L1: The open content list in section 2 comes from the author's reading of the source; its completeness is not established.\n- L2: Design, task and validation texts are author proposals, not user statements.\n\n## 8. Authority statement\n\nTechnical review applies to named scopes only. Build readiness: NOT_ASSESSED\nBuild authority: NOT_GRANTED\n\nRecord SHA-256 (all bytes above this line): 5aaf00efa08bf78b470eb845beb2e9cce72bae8e79b8cd9a35577d570a51d4a3\n",
+      "viewBytes": 5004,
+      "viewSha256": "771b4178d2e63fca8004f8a2e0e5b578a8d05f9372f4b84ce9dfeef4797a7acb"
+    },
+    {
+      "caseId": "RB-09",
+      "attachments": [
+        "A"
+      ],
+      "viewMarkdown": "# Receiver record for review case RB-09\n\nFormat: cvf.nisReceiverRecord.v1\nLanguage: en\n\n## 1. Source binding\n\n| Field | Value |\n| --- | --- |\n| Ledger bound to attachment | A |\n| Bound source kind | EXPORTED_REVIEWED_DRAFT |\n| Bound source SHA-256 | 393ecee7594febaf53da2728b3d640ad493f8a1bbfe8b2c77b191392d233b56b |\n| Bound source bytes | 23823 |\n| Bound source revision printed in the source | 8 |\n| Viewed revision printed in the source | 8 (printed as Yes, in the current session) |\n| Accepted-file pairing | SOURCE_BINDING_NOT_ESTABLISHED |\n| Current source attachment | A |\n| Current source SHA-256 | 393ecee7594febaf53da2728b3d640ad493f8a1bbfe8b2c77b191392d233b56b |\n| Current source revision | 8 |\n\n## 2. Open content located in the source\n\n| Marker | Where it appears | Exact quote | Cited by |\n| --- | --- | --- | --- |\n| U1 | DECISION:data | UNKNOWN U1: how long raw entries are kept is not decided. | R6 |\n| U2 | DECISION:exceptions | UNKNOWN U2: deadline timezone is not decided. | R2 |\n| U2 | BRIEF_FIELD:constraints | Deadline timezone not decided. | R4 |\n| U3 | DECISION:exceptions | UNKNOWN U3: behavior when the deadline falls on a public holiday is not decided. | R2 |\n| U4 | DECISION:acceptance | UNKNOWN U4: export file format is not decided. | R3 |\n| C1 | DECISION:boundaries | Resolution of C1: corrections before Friday 17:00 create a new entry version; after the deadline entries are immutable. | R4 |\n\n## 3. Requirements\n\n### R1 Compile one weekly report\n\nStatements quoted from the source:\n\n> System compiles all entries into one weekly report\n\nSources: BRIEF_FIELD:coreFeatures\n\nUser resolutions quoted from the source:\n\nNone quoted.\n\n\n### R2 Mark missing, late and duplicate entries\n\nStatements quoted from the source:\n\n> Late, missing and duplicate entries are marked in the report\n\nSources: BRIEF_FIELD:coreFeatures; DECISION:exceptions\n\nUser resolutions quoted from the source:\n\nNone quoted.\n\n\n### R3 Only the department head exports\n\nStatements quoted from the source:\n\n> The department head views all entries and is the only person who can export.\n\n> Department head exports the compiled report\n\nSources: DECISION:access; BRIEF_FIELD:coreFeatures; DECISION:acceptance\n\nUser resolutions quoted from the source:\n\nNone quoted.\n\n\n### R4 Corrections until the Friday deadline\n\nStatements quoted from the source:\n\n> Team leads may correct their entry until the Friday 17:00 deadline\n\n> Submitted entries are immutable once submitted\n\nSources: BRIEF_FIELD:constraints; BRIEF_FIELD:mustPreserve; DECISION:boundaries\n\nUser resolutions quoted from the source:\n\n> corrections before Friday 17:00 create a new entry version; after the deadline entries are immutable\n\n\n### R5 No automatic scoring of people\n\nStatements quoted from the source:\n\n> No automatic scoring or ranking of team leads or people.\n\nSources: BRIEF_FIELD:outOfScope\n\nUser resolutions quoted from the source:\n\nNone quoted.\n\n\n### R6 Keep compiled reports twelve months\n\nStatements quoted from the source:\n\n> Compiled reports are kept 12 months.\n\nSources: DECISION:data\n\nUser resolutions quoted from the source:\n\nNone quoted.\n\n## 4. Design elements (author proposals)\n\n| Id | Kind | Text | Serves |\n| --- | --- | --- | --- |\n| DE1 | DATA | Entry record: equipment line code, status text, submitting team lead, submission time. | R1 |\n\n## 5. Tasks (author proposals)\n\n| Id | Title | Serves | Design | Depends on | Validations | Categories |\n| --- | --- | --- | --- | --- | --- | --- |\n| T1 | Define the entry record | R1 | DE1 | - | V1 | - |\n| T2 | Compile the weekly report | R1 | - | T1 | V1 | - |\n| T3 | Mark missing, late and duplicate entries | R2 | - | T2 | V2 | - |\n| T4 | Export for the department head | R3 | - | T2 | V3 | - |\n| T5 | Version corrections before the deadline | R4 | - | T1 | V4 | - |\n| T7 | Retain compiled reports for twelve months | R6 | - | T2 | V6 | - |\n\n## 6. Validations (author proposals)\n\n| Id | Text | Serves |\n| --- | --- | --- |\n| V1 | A fixture CSV with N entries yields one report with the same N entries. | R1 |\n| V2 | A fixture with one missing, one late and one duplicate entry shows three visible marks. | R2 |\n| V3 | Only the department head role can export. | R3 |\n| V4 | A correction before the deadline creates a new entry version. | R4 |\n| V5 | No score or ranking field exists in the report. | R5 |\n| V6 | A compiled report is still present eleven months after creation. | R6 |\n\n## 7. Out-of-scope claims and author limitations\n\nOut-of-scope claims: None.\n\n- L1: The open content list in section 2 comes from the author's reading of the source; its completeness is not established.\n- L2: Design, task and validation texts are author proposals, not user statements.\n\n## 8. Authority statement\n\nTechnical review applies to named scopes only. Build readiness: NOT_ASSESSED\nBuild authority: NOT_GRANTED\n\nRecord SHA-256 (all bytes above this line): c095d13ddd4c5125d387c8433827f1d39852b14ee23c5e12d27014642b077196\n",
+      "viewBytes": 4943,
+      "viewSha256": "8accee1d34c582f6febd6c5d21ac8a68c0267753f9a52aa618e45721bb6fea8b"
+    },
+    {
+      "caseId": "RB-10",
+      "attachments": [
+        "A"
+      ],
+      "viewMarkdown": "# Receiver record for review case RB-10\n\nFormat: cvf.nisReceiverRecord.v1\nLanguage: en\n\n## 1. Source binding\n\n| Field | Value |\n| --- | --- |\n| Ledger bound to attachment | A |\n| Bound source kind | EXPORTED_REVIEWED_DRAFT |\n| Bound source SHA-256 | 393ecee7594febaf53da2728b3d640ad493f8a1bbfe8b2c77b191392d233b56b |\n| Bound source bytes | 23823 |\n| Bound source revision printed in the source | 8 |\n| Viewed revision printed in the source | 8 (printed as Yes, in the current session) |\n| Accepted-file pairing | SOURCE_BINDING_NOT_ESTABLISHED |\n| Current source attachment | A |\n| Current source SHA-256 | 393ecee7594febaf53da2728b3d640ad493f8a1bbfe8b2c77b191392d233b56b |\n| Current source revision | 8 |\n\n## 2. Open content located in the source\n\n| Marker | Where it appears | Exact quote | Cited by |\n| --- | --- | --- | --- |\n| U1 | DECISION:data | UNKNOWN U1: how long raw entries are kept is not decided. | R6 |\n| U2 | DECISION:exceptions | UNKNOWN U2: deadline timezone is not decided. | none |\n| U2 | BRIEF_FIELD:constraints | Deadline timezone not decided. | R4 |\n| U3 | DECISION:exceptions | UNKNOWN U3: behavior when the deadline falls on a public holiday is not decided. | none |\n| U4 | DECISION:acceptance | UNKNOWN U4: export file format is not decided. | R3 |\n| C1 | DECISION:boundaries | Resolution of C1: corrections before Friday 17:00 create a new entry version; after the deadline entries are immutable. | R4 |\n\n## 3. Requirements\n\n### R1 Compile one weekly report\n\nStatements quoted from the source:\n\n> System compiles all entries into one weekly report\n\nSources: BRIEF_FIELD:coreFeatures\n\nUser resolutions quoted from the source:\n\nNone quoted.\n\n\n### R2 Mark missing, late and duplicate entries\n\nStatements quoted from the source:\n\n> Late, missing and duplicate entries are marked in the report\n\nSources: BRIEF_FIELD:coreFeatures\n\nUser resolutions quoted from the source:\n\nNone quoted.\n\n\n### R3 Only the department head exports\n\nStatements quoted from the source:\n\n> The department head views all entries and is the only person who can export.\n\n> Department head exports the compiled report\n\nSources: DECISION:access; BRIEF_FIELD:coreFeatures; DECISION:acceptance\n\nUser resolutions quoted from the source:\n\nNone quoted.\n\n\n### R4 Corrections until the Friday deadline\n\nStatements quoted from the source:\n\n> Team leads may correct their entry until the Friday 17:00 deadline\n\n> Submitted entries are immutable once submitted\n\nSources: BRIEF_FIELD:constraints; BRIEF_FIELD:mustPreserve; DECISION:boundaries\n\nUser resolutions quoted from the source:\n\n> corrections before Friday 17:00 create a new entry version; after the deadline entries are immutable\n\n\n### R5 No automatic scoring of people\n\nStatements quoted from the source:\n\n> No automatic scoring or ranking of team leads or people.\n\nSources: BRIEF_FIELD:outOfScope\n\nUser resolutions quoted from the source:\n\nNone quoted.\n\n\n### R6 Keep compiled reports twelve months\n\nStatements quoted from the source:\n\n> Compiled reports are kept 12 months.\n\nSources: DECISION:data\n\nUser resolutions quoted from the source:\n\nNone quoted.\n\n## 4. Design elements (author proposals)\n\n| Id | Kind | Text | Serves |\n| --- | --- | --- | --- |\n| DE1 | DATA | Entry record: equipment line code, status text, submitting team lead, submission time. | R1 |\n\n## 5. Tasks (author proposals)\n\n| Id | Title | Serves | Design | Depends on | Validations | Categories |\n| --- | --- | --- | --- | --- | --- | --- |\n| T1 | Define the entry record | R1 | DE1 | - | V1 | - |\n| T2 | Compile the weekly report | R1 | - | T1 | V1 | - |\n| T3 | Mark missing, late and duplicate entries | R2 | - | T2 | V2 | - |\n| T4 | Export for the department head | R3 | - | T2 | V3 | - |\n| T5 | Version corrections before the deadline | R4 | - | T1 | V4 | - |\n| T6 | Keep scoring and ranking out | R5 | - | - | V5 | - |\n| T7 | Retain compiled reports for twelve months | R6 | - | T2 | V6 | - |\n\n## 6. Validations (author proposals)\n\n| Id | Text | Serves |\n| --- | --- | --- |\n| V1 | A fixture CSV with N entries yields one report with the same N entries. | R1 |\n| V2 | A fixture with one missing, one late and one duplicate entry shows three visible marks. | R2 |\n| V3 | Only the department head role can export. | R3 |\n| V4 | A correction before the deadline creates a new entry version. | R4 |\n| V5 | No score or ranking field exists in the report. | R5 |\n| V6 | A compiled report is still present eleven months after creation. | R6 |\n\n## 7. Out-of-scope claims and author limitations\n\nOut-of-scope claims: None.\n\n- L1: The open content list in section 2 comes from the author's reading of the source; its completeness is not established.\n- L2: Design, task and validation texts are author proposals, not user statements.\n\n## 8. Authority statement\n\nTechnical review applies to named scopes only. Build readiness: NOT_ASSESSED\nBuild authority: NOT_GRANTED\n\nRecord SHA-256 (all bytes above this line): a590d885db33fd0d217712de8525919ea8817929cdbed007dc99a49765dc543f\n",
+      "viewBytes": 4986,
+      "viewSha256": "47fa9ba207c52f8b99e11fe07129177a6e395f5e11966016ff8349f5b5b88c2f"
+    },
+    {
+      "caseId": "RB-11",
+      "attachments": [
+        "A"
+      ],
+      "viewMarkdown": "# Receiver record for review case RB-11\n\nFormat: cvf.nisReceiverRecord.v1\nLanguage: en\n\n## 1. Source binding\n\n| Field | Value |\n| --- | --- |\n| Ledger bound to attachment | A |\n| Bound source kind | EXPORTED_REVIEWED_DRAFT |\n| Bound source SHA-256 | 393ecee7594febaf53da2728b3d640ad493f8a1bbfe8b2c77b191392d233b56b |\n| Bound source bytes | 23823 |\n| Bound source revision printed in the source | 8 |\n| Viewed revision printed in the source | 8 (printed as Yes, in the current session) |\n| Accepted-file pairing | SOURCE_BINDING_NOT_ESTABLISHED |\n| Current source attachment | A |\n| Current source SHA-256 | 393ecee7594febaf53da2728b3d640ad493f8a1bbfe8b2c77b191392d233b56b |\n| Current source revision | 8 |\n\n## 2. Open content located in the source\n\n| Marker | Where it appears | Exact quote | Cited by |\n| --- | --- | --- | --- |\n| U1 | DECISION:data | UNKNOWN U1: how long raw entries are kept is not decided. | R6 |\n| U2 | DECISION:exceptions | UNKNOWN U2: deadline timezone is not decided. | R2 |\n| U2 | BRIEF_FIELD:constraints | Deadline timezone not decided. | R4 |\n| U3 | DECISION:exceptions | UNKNOWN U3: behavior when the deadline falls on a public holiday is not decided. | R2 |\n| U4 | DECISION:acceptance | UNKNOWN U4: export file format is not decided. | R3 |\n| C1 | DECISION:boundaries | Resolution of C1: corrections before Friday 17:00 create a new entry version; after the deadline entries are immutable. | R4 |\n\n## 3. Requirements\n\n### R1 Compile one weekly report\n\nStatements quoted from the source:\n\n> System compiles all entries into one weekly report\n\nSources: BRIEF_FIELD:coreFeatures\n\nUser resolutions quoted from the source:\n\nNone quoted.\n\n\n### R2 Mark missing, late and duplicate entries\n\nStatements quoted from the source:\n\n> Late, missing and duplicate entries are marked in the report\n\nSources: BRIEF_FIELD:coreFeatures; DECISION:exceptions\n\nUser resolutions quoted from the source:\n\nNone quoted.\n\n\n### R3 Only the department head exports\n\nStatements quoted from the source:\n\n> The department head views all entries and is the only person who can export.\n\n> Department head exports the compiled report\n\nSources: DECISION:access; BRIEF_FIELD:coreFeatures; DECISION:acceptance\n\nUser resolutions quoted from the source:\n\nNone quoted.\n\n\n### R4 Corrections until the Friday deadline\n\nStatements quoted from the source:\n\n> Team leads may correct their entry until the Friday 17:00 deadline\n\n> Submitted entries are immutable once submitted\n\nSources: BRIEF_FIELD:constraints; BRIEF_FIELD:mustPreserve; DECISION:boundaries\n\nUser resolutions quoted from the source:\n\n> corrections before Friday 17:00 create a new entry version; after the deadline entries are immutable\n\n\n### R5 No automatic scoring of people\n\nStatements quoted from the source:\n\n> No automatic scoring or ranking of team leads or people.\n\nSources: BRIEF_FIELD:outOfScope\n\nUser resolutions quoted from the source:\n\nNone quoted.\n\n\n### R6 Keep compiled reports twelve months\n\nStatements quoted from the source:\n\n> Compiled reports are kept 12 months.\n\nSources: DECISION:data\n\nUser resolutions quoted from the source:\n\nNone quoted.\n\n## 4. Design elements (author proposals)\n\n| Id | Kind | Text | Serves |\n| --- | --- | --- | --- |\n| DE1 | DATA | Entry record: equipment line code, status text, submitting team lead, submission time. | R1 |\n\n## 5. Tasks (author proposals)\n\n| Id | Title | Serves | Design | Depends on | Validations | Categories |\n| --- | --- | --- | --- | --- | --- | --- |\n| T1 | Define the entry record | R1 | DE1 | - | V1 | - |\n| T2 | Compile the weekly report | R1 | - | T1, T3 | V1 | - |\n| T3 | Mark missing, late and duplicate entries | R2 | - | T2 | V2 | - |\n| T4 | Export for the department head | R3 | - | T2 | V3 | - |\n| T5 | Version corrections before the deadline | R4 | - | T1 | V4 | - |\n| T6 | Keep scoring and ranking out | R5 | - | - | V5 | - |\n| T7 | Retain compiled reports for twelve months | R6 | - | T2 | V6 | - |\n\n## 6. Validations (author proposals)\n\n| Id | Text | Serves |\n| --- | --- | --- |\n| V1 | A fixture CSV with N entries yields one report with the same N entries. | R1 |\n| V2 | A fixture with one missing, one late and one duplicate entry shows three visible marks. | R2 |\n| V3 | Only the department head role can export. | R3 |\n| V4 | A correction before the deadline creates a new entry version. | R4 |\n| V5 | No score or ranking field exists in the report. | R5 |\n| V6 | A compiled report is still present eleven months after creation. | R6 |\n\n## 7. Out-of-scope claims and author limitations\n\nOut-of-scope claims: None.\n\n- L1: The open content list in section 2 comes from the author's reading of the source; its completeness is not established.\n- L2: Design, task and validation texts are author proposals, not user statements.\n\n## 8. Authority statement\n\nTechnical review applies to named scopes only. Build readiness: NOT_ASSESSED\nBuild authority: NOT_GRANTED\n\nRecord SHA-256 (all bytes above this line): 3c940fb0421451020476c4fa0e99813e6c93edc8b9dac81a6e06032c7a79bc34\n",
+      "viewBytes": 5007,
+      "viewSha256": "949fc2bd7de3d8162d5a8426210c61da82bc9c175ddabc19c2dd7005de7cd752"
+    }
+  ],
+  "answerKey": {
+    "separationNote": "Answer-key section. A reviewer who reads it is placement-aware and cannot report a blinded manual result.",
+    "entries": {
+      "RB-01": {
+        "internalKey": "D7",
+        "class": "APPLICABLE_RESOLUTION_NOT_QUOTED",
+        "isCleanControl": false,
+        "isLimitationCase": false,
+        "requiredLocatorTokens": [
+          "R4"
+        ],
+        "secondaryLocatorTokens": [],
+        "classWordsAnyOf": [
+          "resolution",
+          "quote",
+          "C1",
+          "not quoted"
+        ],
+        "permittedLimitationTokens": [
+          "U1",
+          "U2",
+          "U3",
+          "U4",
+          "C1",
+          "L1"
+        ],
+        "seededFinding": "R4 cites the boundaries decision whose user resolution of C1 is not quoted.",
+        "mutationLocator": "/requirements/3/effectiveRules emptied",
+        "executionStatus": "NOT_EXECUTED"
+      },
+      "RB-02": {
+        "internalKey": "D5",
+        "class": "STATEMENT_ABSENT_FROM_FROZEN_SOURCE",
+        "isCleanControl": false,
+        "isLimitationCase": false,
+        "requiredLocatorTokens": [
+          "R1"
+        ],
+        "secondaryLocatorTokens": [],
+        "classWordsAnyOf": [
+          "email",
+          "not in the source",
+          "absent",
+          "not found in source",
+          "not quoted"
+        ],
+        "permittedLimitationTokens": [
+          "U1",
+          "U2",
+          "U3",
+          "U4",
+          "C1",
+          "L1"
+        ],
+        "seededFinding": "R1 carries a second statement that appears nowhere in the bound source (it also runs against the source's out-of-scope text, a consequence not a second seed).",
+        "mutationLocator": "/requirements/0/statements/1 added",
+        "executionStatus": "NOT_EXECUTED"
+      },
+      "RB-03": {
+        "internalKey": "D8",
+        "class": "INVENTED_BUILD_GRANT_REHASHED",
+        "isCleanControl": false,
+        "isLimitationCase": false,
+        "requiredLocatorTokens": [
+          "authority"
+        ],
+        "secondaryLocatorTokens": [],
+        "classWordsAnyOf": [
+          "GRANTED",
+          "grant",
+          "build"
+        ],
+        "permittedLimitationTokens": [
+          "R4",
+          "R5",
+          "L2",
+          "L1"
+        ],
+        "seededFinding": "Section 8 states Build authority: GRANTED after technical review and the record digest was recomputed to match. A matching digest is not authority; the format has a fixed authority statement.",
+        "mutationLocator": "section 8 authority statement and record digest line",
+        "executionStatus": "NOT_EXECUTED"
+      },
+      "RB-04": {
+        "internalKey": "CCB",
+        "class": "CLEAN_CONTROL_JOB_C",
+        "isCleanControl": true,
+        "isLimitationCase": false,
+        "requiredLocatorTokens": [],
+        "secondaryLocatorTokens": [],
+        "classWordsAnyOf": [],
+        "permittedLimitationTokens": [
+          "R4",
+          "R5",
+          "L2",
+          "L1",
+          "SYNTHETIC_PLACEHOLDER_PACKET_SOURCE"
+        ],
+        "seededFinding": "No record defect is seeded. The ledger honestly declares that R4 and R5 may conflict (limitation L2); disclosing it is not a false positive.",
+        "mutationLocator": "none",
+        "executionStatus": "NOT_EXECUTED"
+      },
+      "RB-05": {
+        "internalKey": "D2",
+        "class": "REQUIREMENT_WITHOUT_VALIDATION",
+        "isCleanControl": false,
+        "isLimitationCase": false,
+        "requiredLocatorTokens": [
+          "R5"
+        ],
+        "secondaryLocatorTokens": [],
+        "classWordsAnyOf": [
+          "validation"
+        ],
+        "permittedLimitationTokens": [
+          "R4",
+          "R5",
+          "L2",
+          "L1"
+        ],
+        "seededFinding": "Requirement R5 has no validation (V5 removed and unlinked from T5) in the tool lending record.",
+        "mutationLocator": "job C ledger: /validations (record V5 removed) and /tasks/4/validations emptied",
+        "executionStatus": "NOT_EXECUTED"
+      },
+      "RB-06": {
+        "internalKey": "D3",
+        "class": "DANGLING_DEPENDENCY",
+        "isCleanControl": false,
+        "isLimitationCase": false,
+        "requiredLocatorTokens": [
+          "T4"
+        ],
+        "secondaryLocatorTokens": [],
+        "classWordsAnyOf": [
+          "T9",
+          "depend",
+          "unknown",
+          "dangling",
+          "missing task"
+        ],
+        "permittedLimitationTokens": [
+          "R4",
+          "R5",
+          "L2",
+          "L1"
+        ],
+        "seededFinding": "Task T4 depends on T9, which does not exist (tool lending record).",
+        "mutationLocator": "job C ledger: /tasks/3/dependsOn gains T9",
+        "executionStatus": "NOT_EXECUTED"
+      },
+      "RB-07": {
+        "internalKey": "CCA",
+        "class": "CLEAN_CONTROL_JOB_A",
+        "isCleanControl": true,
+        "isLimitationCase": false,
+        "requiredLocatorTokens": [],
+        "secondaryLocatorTokens": [],
+        "classWordsAnyOf": [],
+        "permittedLimitationTokens": [
+          "U1",
+          "U2",
+          "U3",
+          "U4",
+          "C1",
+          "L1",
+          "SOURCE_BINDING_NOT_ESTABLISHED"
+        ],
+        "seededFinding": "No record defect is seeded. Requirements R2, R3, R4 and R6 are blocked by open content marked in the source; R1 and R5 have no open content. These blocks are source limitations, not record defects.",
+        "mutationLocator": "none",
+        "executionStatus": "NOT_EXECUTED"
+      },
+      "RB-08": {
+        "internalKey": "D6",
+        "class": "DRIFT_AND_STICKY_RECONFIRMATION_EQUAL_ANSWER",
+        "isCleanControl": false,
+        "isLimitationCase": false,
+        "requiredLocatorTokens": [
+          "R6"
+        ],
+        "secondaryLocatorTokens": [
+          "R3"
+        ],
+        "classWordsAnyOf": [
+          "stale",
+          "changed",
+          "revision",
+          "targetUsers",
+          "reconfirm",
+          "snapshot"
+        ],
+        "permittedLimitationTokens": [
+          "U1",
+          "U2",
+          "U3",
+          "U4",
+          "C1",
+          "L1"
+        ],
+        "seededFinding": "The ledger is bound to revision 8 while the current source is revision 11. R3 is plainly stale (its quoted statement no longer appears in the current access answer). R6 cites the data decision whose answer text is byte-equal in both sources but whose recorded source fields changed (targetUsers); sticky reconfirmation makes R6 stale despite the equal answer. Full credit needs R6; R3 alone is the obvious half.",
+        "mutationLocator": "no ledger edit; current-source attachment B differs from bound attachment A (targetUsers changed; access answer changed; data answer equal, data recorded snapshot changed)",
+        "executionStatus": "NOT_EXECUTED"
+      },
+      "RB-09": {
+        "internalKey": "D1",
+        "class": "REQUIREMENT_WITHOUT_TASK",
+        "isCleanControl": false,
+        "isLimitationCase": false,
+        "requiredLocatorTokens": [
+          "R5"
+        ],
+        "secondaryLocatorTokens": [],
+        "classWordsAnyOf": [
+          "task"
+        ],
+        "permittedLimitationTokens": [
+          "U1",
+          "U2",
+          "U3",
+          "U4",
+          "C1",
+          "L1"
+        ],
+        "seededFinding": "Requirement R5 is served by no task (task T6 removed).",
+        "mutationLocator": "/tasks (record T6 removed; V5 still serves R5)",
+        "executionStatus": "NOT_EXECUTED"
+      },
+      "RB-10": {
+        "internalKey": "D9",
+        "class": "OMITTED_DECISION_CITATION_LIMITATION",
+        "isCleanControl": false,
+        "isLimitationCase": true,
+        "requiredLocatorTokens": [
+          "U3"
+        ],
+        "secondaryLocatorTokens": [],
+        "classWordsAnyOf": [
+          "not cited",
+          "cited by none",
+          "unattached",
+          "no requirement",
+          "completeness",
+          "cannot verify"
+        ],
+        "permittedLimitationTokens": [
+          "U1",
+          "U2",
+          "U3",
+          "U4",
+          "C1",
+          "L1"
+        ],
+        "seededFinding": "R2 no longer cites the exceptions decision, so marker U3 is cited by no requirement. This is a known coverage limitation: the record cannot prove its citations are complete. Scored as limitation disclosure, never as a hit or a false positive.",
+        "mutationLocator": "/requirements/1/sources loses DECISION:exceptions",
+        "executionStatus": "NOT_EXECUTED"
+      },
+      "RB-11": {
+        "internalKey": "D4",
+        "class": "DEPENDENCY_CYCLE",
+        "isCleanControl": false,
+        "isLimitationCase": false,
+        "requiredLocatorTokens": [
+          "T2",
+          "T3"
+        ],
+        "secondaryLocatorTokens": [],
+        "classWordsAnyOf": [
+          "loop",
+          "cycle",
+          "circular"
+        ],
+        "permittedLimitationTokens": [
+          "U1",
+          "U2",
+          "U3",
+          "U4",
+          "C1",
+          "L1"
+        ],
+        "seededFinding": "Tasks T2 and T3 depend on each other.",
+        "mutationLocator": "/tasks/1/dependsOn gains T3 (T3 already depends on T2)",
+        "executionStatus": "NOT_EXECUTED"
+      }
+    }
+  },
+  "leakScan": {
+    "scannedArtifact": "reviewerViews[*].viewMarkdown",
+    "forbiddenPatternsCaseInsensitive": [
+      "seed",
+      "mutat",
+      "defect",
+      "answer key",
+      "expected",
+      "clean",
+      "control",
+      "\\bD[1-9]\\b",
+      "BC-V1",
+      "T1G",
+      "T1F",
+      "helper",
+      "baseline",
+      "limitation case",
+      "hit\\b"
+    ],
+    "matches": [],
+    "note": "A scan of the neutral views only; the attachments are frozen source text and are not scanned, and the receiver format document and checklist are handed over separately."
+  },
+  "scopeOfSeeds": "Six seeded cases mutate the periodic report ledger (D1, D4, D5, D6, D7, D9) and three mutate the tool lending ledger (D2, D3, D8), so each job has one clean control and several seeded records and the job alone does not reveal which record is clean. D6, D7 and D9 need content only the periodic report source has. One pilot of two synthetic jobs does not test generalization.",
+  "claimBoundary": "Frozen synthetic materials and a role protocol only. NOT_EXECUTED: no manual or helper result, no timing, no cost. Frozen candidates and drafts are historical synthetic evidence, not a current acceptance event or actor verification. No product, helper, UX, value or build-ready claim."
+}

@@ -1,0 +1,514 @@
+{
+  "schemaVersion": "cvf.nisT1gManualBaselineProtocol.v1",
+  "batchId": "CVF-NIS-T1G",
+  "executionState": "NOT_EXECUTED",
+  "statement": "A frozen protocol a later reviewer can execute by hand. It specifies no program. The worker ran neither arm; every result field below is UNKNOWN or NOT_EXECUTED.",
+  "casepackRef": {
+    "path": "docs/reviews/evidence/cvf-nis-t1g-manual-baseline-casepack-2026-10-05.json",
+    "sha256": "f3cc5972124b5c0879525061812a2173daa2a687ecbc21d8e0b6814113cf88da",
+    "bytes": 140670,
+    "reviewerViewSha256": {
+      "RB-01": "d03236295f86bb43433c94b6a20a0d67573a944f47d7d1e3fc5f899d7eb1cf21",
+      "RB-02": "765b19f9bb558909118c509381b5d128f0b80a474df1f63c6d55f119f60e682f",
+      "RB-03": "e4122faecb4604924f62d530a386c0d7ae37222c34e5b5466c93400158dc3d9f",
+      "RB-04": "5b36209cf6b9125c5383e727571f8b1c8f5eaf6b7fc5418dd3bdfef65111a5d0",
+      "RB-05": "a09b9f93b6df06ee9c4357a7af367ebc01a5a5735984236b5d1e1e80aaad742f",
+      "RB-06": "36b1e7bd23af96074643fd39f8b1c4436bcb38957ae9c9d83d69d6a0886653dd",
+      "RB-07": "a6aab5e96259ac6c1b77c39b7777f430ce1afd9e1f1c522e4d0e4d07433d9afc",
+      "RB-08": "771b4178d2e63fca8004f8a2e0e5b578a8d05f9372f4b84ce9dfeef4797a7acb",
+      "RB-09": "8accee1d34c582f6febd6c5d21ac8a68c0267753f9a52aa618e45721bb6fea8b",
+      "RB-10": "47fa9ba207c52f8b99e11fe07129177a6e395f5e11966016ff8349f5b5b88c2f",
+      "RB-11": "949fc2bd7de3d8162d5a8426210c61da82bc9c175ddabc19c2dd7005de7cd752"
+    },
+    "attachmentSha256": {
+      "A": "393ecee7594febaf53da2728b3d640ad493f8a1bbfe8b2c77b191392d233b56b",
+      "B": "02b8d1f51a77a8233d6eab0492344e2781bbb2aa2b1bf460d1e30a73e0308ad1",
+      "C": "0d4a3dd870fd6f9e85541c8f338cbde2df444db44731c42ed203aeff41b3ac52"
+    }
+  },
+  "receiverFormatRef": "docs/reviews/CVF_NIS_T1G_RECEIVER_MANUAL_BASELINE_2026-10-05.md",
+  "purpose": "Route selection per T1F Local C-7: compare the document receiver with manual review against a later separately admitted helper arm, on the same frozen records.",
+  "roles": {
+    "seedAuthorAndAnswerKeyReader": {
+      "actor": "nis-t1g-internal-worker (this worker) and anyone who opens the answerKey section",
+      "mayReportBlindedManualResult": false,
+      "reason": "knows every seeded placement; any timing or detection from such an actor is contaminated and is recorded as such"
+    },
+    "manualReviewer": {
+      "actor": "UNKNOWN until separately admitted",
+      "mustBeDistinctFrom": "seed author and answer-key reader",
+      "receives": "only the reviewer package below"
+    },
+    "localAdmission": {
+      "actor": "Local reviewer",
+      "checks": "admission steps below before any execution"
+    },
+    "futureHelperArm": {
+      "actor": "UNKNOWN",
+      "status": "NOT_ADMITTED",
+      "condition": "separately bounded order, an independent comparable helper build and a named receiving consumer; no helper or scratch substitute exists in this slice"
+    }
+  },
+  "reviewerPackage": {
+    "contents": [
+      "receiver format document (docs/reviews/CVF_NIS_T1G_RECEIVER_MANUAL_BASELINE_2026-10-05.md)",
+      "reviewerViews[*].viewMarkdown in presentation order",
+      "attachments A, B and C as the views name them",
+      "genericChecklist below",
+      "blank answer form below"
+    ],
+    "excludes": [
+      "answerKey section",
+      "casepack metadata about seeds, mutation locators, internal keys, scope-of-seeds text",
+      "this protocol's scoring rules and numeric margin",
+      "any T1F or T1G work order, contract or plan text that lists the seeded defect taxonomy, unless disclosed under contamination",
+      "any result of an earlier reviewer"
+    ],
+    "assemblyNote": "A role protocol, not access isolation: the casepack file holds both views and key, so the assembler must copy views and attachments out without the answerKey."
+  },
+  "genericChecklist": [
+    {
+      "id": "G1",
+      "check": "Every record id is unique and has the form R, DE, T or V followed by a number."
+    },
+    {
+      "id": "G2",
+      "check": "Every quoted statement and every quoted user resolution appears exactly, character for character, in the cited source section of the bound attachment."
+    },
+    {
+      "id": "G3",
+      "check": "Every requirement is served by at least one task and at least one validation."
+    },
+    {
+      "id": "G4",
+      "check": "Every task serves at least one existing requirement, and every cross-reference (serves, design, depends on, validations) names an existing record whose subject fits."
+    },
+    {
+      "id": "G5",
+      "check": "The depends-on relation among tasks names only existing tasks and contains no loop."
+    },
+    {
+      "id": "G6",
+      "check": "Each user resolution that applies to a requirement is quoted by that requirement, and no resolution is invented."
+    },
+    {
+      "id": "G7",
+      "check": "Each open content marker is listed with its exact quote; note which requirements cite it, which scopes it blocks and which markers no requirement cites."
+    },
+    {
+      "id": "G8",
+      "check": "Compare the bound source with the current source (hash, revision and the recorded source fields of each cited decision). Any change makes the dependent records stale, even when the text of a user answer is equal."
+    },
+    {
+      "id": "G9",
+      "check": "The authority statement is the fixed one. No record, digest or wording can grant build authority."
+    },
+    {
+      "id": "G10",
+      "check": "Texts are finite and are not placeholder words."
+    },
+    {
+      "id": "G11",
+      "check": "Anything you cannot verify from the supplied bytes is a limitation, not a defect."
+    }
+  ],
+  "blankAnswerForm": {
+    "perCase": {
+      "caseId": "RB-xx",
+      "openedAt": "UNKNOWN",
+      "submittedAt": "UNKNOWN",
+      "elapsedSeconds": "UNKNOWN",
+      "part1ScopeVerdicts": [
+        {
+          "scope": "R1",
+          "verdict": "UNKNOWN",
+          "allowedVerdicts": [
+            "READY_FOR_TECHNICAL_REVIEW",
+            "BLOCKED_BY_OPEN_CONTENT",
+            "BLOCKED_BY_RECORD_DEFECT",
+            "STALE_SOURCE",
+            "REBIND_REQUIRED",
+            "NOT_ASSESSED"
+          ]
+        }
+      ],
+      "part2RecordDefects": [
+        {
+          "locator": "UNKNOWN",
+          "description": "UNKNOWN"
+        }
+      ],
+      "part3LimitationsNoted": [
+        "UNKNOWN"
+      ],
+      "caseVerdict": "UNKNOWN",
+      "allowedCaseVerdicts": [
+        "DEFECT_FOUND",
+        "NO_DEFECT_FOUND",
+        "NOT_ANSWERED"
+      ]
+    },
+    "rules": [
+      "Part 1 states, for each requirement scope, what a technical reviewer can say now. Open content in the source is a Part 1 matter, not a record defect.",
+      "Part 2 lists problems in the record itself that its author must fix, including a record that no longer matches the current source.",
+      "Part 3 lists what could not be verified from the supplied bytes.",
+      "An answer is locked when the case is submitted; no return to a submitted case."
+    ]
+  },
+  "contaminationRecord": {
+    "recordedFor": "every manual reviewer and every helper-arm actor",
+    "fields": {
+      "actor": "UNKNOWN",
+      "invocationId": "UNKNOWN",
+      "role": "UNKNOWN",
+      "contextExposure": "UNKNOWN",
+      "taxonomyFamiliarity": {
+        "question": "Has the actor read any text that lists defect classes such as missing task link, missing validation, dangling dependency, cycle, absent statement, stale source, unquoted resolution, grant, omitted citation (for example the T1F contract or plan)?",
+        "answer": "UNKNOWN"
+      },
+      "placementKnowledge": {
+        "question": "Has the actor seen the answerKey section, the generator, a mutation locator or any view diff against a clean record?",
+        "answer": "UNKNOWN"
+      },
+      "priorViewExposure": {
+        "question": "Has the actor seen any reviewerViews text before the timed attempt?",
+        "answer": "UNKNOWN"
+      }
+    },
+    "blindingLevels": {
+      "B0": "no taxonomy familiarity and no placement knowledge",
+      "B1": "taxonomy familiar, placement blind (acceptable for the primary baseline, disclosed)",
+      "B2": "placement aware (not blinded; the result is invalid as a baseline and may be reported only as contaminated)"
+    },
+    "assignment": {
+      "seedAuthor": "B2",
+      "anyReaderOfAnswerKey": "B2"
+    },
+    "familiarityVersusPlacement": "Taxonomy familiarity and placement knowledge are disclosed separately and never merged into one flag."
+  },
+  "clock": {
+    "start": "preparation timer starts when the reviewer opens the reviewer package and stops when the reviewer says reading is done",
+    "preparationTimebox": {
+      "minutes": 20,
+      "countedSeparately": true,
+      "overrun": "stop reading and start case 1; record the overrun"
+    },
+    "perCaseTimebox": {
+      "minutes": 12,
+      "starts": "when the case view is opened",
+      "stops": "when the answer form for that case is submitted or the box expires"
+    },
+    "totalTimebox": {
+      "minutes": 180,
+      "includes": "preparation plus all eleven cases"
+    },
+    "order": "fixed presentation order RB-01 to RB-11, one primary attempt, no return to a submitted case",
+    "timeoutAndMissing": "a case not submitted at its box end, or not reached at the total box end, is recorded NOT_ANSWERED and scores no hit; it is never replaced by a later answer",
+    "pauses": "a pause is recorded with reason and not counted; no pause between opening and submitting a case unless it is an unplanned interruption, which is recorded",
+    "practiceRuns": "none; a practice rerun may not replace or amend a failed primary result",
+    "rawRetention": "retain the unedited answer forms, the stopwatch log and any notes verbatim as raw evidence before scoring"
+  },
+  "scoring": {
+    "scorer": "Local reviewer or other actor with the answerKey, working only from retained raw responses",
+    "casesD1toD8": {
+      "cases": [
+        "D1",
+        "D2",
+        "D3",
+        "D4",
+        "D5",
+        "D6",
+        "D7",
+        "D8"
+      ],
+      "hit": "caseVerdict is DEFECT_FOUND and at least one Part 2 finding contains every requiredLocatorTokens entry of the key (case-insensitive) and at least one classWordsAnyOf entry; D6 additionally needs the R6 finding, R3 alone is recorded as D6 partial and scores no hit",
+      "miss": "any other outcome including NOT_ANSWERED",
+      "maximum": 8
+    },
+    "cleanControls": {
+      "cases": [
+        "CCA",
+        "CCB"
+      ],
+      "falsePositive": "a Part 2 finding on a clean control that is not a repeat of a limitation the record declares or an open content marker named in permittedLimitationTokens",
+      "honestLimitationDisclosure": "a limitation in Part 3, or a Part 2 finding that only repeats a declared limitation, is not a false positive",
+      "maximumFalsePositives": 0
+    },
+    "caseD9": {
+      "scoredAs": "limitation disclosure only, separate from D1 to D8",
+      "disclosed": "the reviewer names marker U3 as cited by no requirement, or states that the completeness of the citations cannot be verified",
+      "notDisclosed": "otherwise",
+      "neverCountedAs": [
+        "a hit",
+        "a false positive"
+      ],
+      "note": "disclosure is not proof the omission is found automatically"
+    },
+    "reportedTable": [
+      "hits out of 8",
+      "partial D6",
+      "false positives on two controls",
+      "D9 disclosed yes or no",
+      "cases NOT_ANSWERED",
+      "elapsed minutes per case",
+      "preparation minutes"
+    ]
+  },
+  "manualCoverageCriterion": {
+    "statement": "manual review covers the tested defects when hits are 8 of 8, false positives are 0 on both controls, and D9 is disclosed",
+    "scope": "the nine seeds on two synthetic jobs; no wider claim"
+  },
+  "effortMargin": {
+    "unit": "person-minutes",
+    "predeclaredBeforeExecution": true,
+    "formulas": {
+      "totalManual": "Cm_setup + N * Em",
+      "totalHelper": "Cm_setup + Ch_create + Ch_integrate + Ch_maintain + N * Eh",
+      "variables": {
+        "Cm_setup": "one-time cost to author and review the receiver format for manual use (common to both routes, kept explicit)",
+        "Em": "mean measured minutes per reviewed record, manual arm (eleven records)",
+        "Ch_create": "build cost of the helper",
+        "Ch_integrate": "cost to integrate a named receiving consumer",
+        "Ch_maintain": "maintenance over the pilot horizon",
+        "Eh": "mean measured minutes per record using the helper including reading its output",
+        "N": "number of record reviews over the pilot horizon"
+      }
+    },
+    "pilotHorizon": {
+      "N_primary": 12,
+      "months": 12,
+      "sensitivityReported": [
+        4,
+        52
+      ],
+      "rationale": "no production usage exists; one receiver review per month for a year assumes a modest pilot without assuming weekly production adoption; the weekly report job suggests 52 as an upper case and 4 as a short trial, both reported but neither primary"
+    },
+    "comparableMargin": {
+      "ratio": 1.25,
+      "rule": "the manual route is comparable in total effort when totalManual(N_primary) <= 1.25 * totalHelper(N_primary)",
+      "rationale": "a quarter above helper total absorbs measurement noise of one reviewer on eleven records without letting a clearly costlier manual route pass"
+    },
+    "currentValues": {
+      "Cm_setup": "UNKNOWN",
+      "Em": "UNKNOWN",
+      "Ch_create": "UNKNOWN",
+      "Ch_integrate": "UNKNOWN",
+      "Ch_maintain": "UNKNOWN",
+      "Eh": "UNKNOWN",
+      "cost": "UNKNOWN"
+    },
+    "interpretation": [
+      "A reviewer failing at a timebox is not proof of intrinsic helper superiority; it is an inconclusive timebox result when three or more cases are NOT_ANSWERED.",
+      "Helper creation, integration and maintenance are part of the comparison, not only runtime minutes.",
+      "One synthetic pilot is not universal cost or UX evidence."
+    ]
+  },
+  "routeSelection": {
+    "docsOnly": "manual coverage criterion met and totalManual(N_primary) <= 1.25 * totalHelper(N_primary) with D9 visibly disclosed: choose the document receiver and drop the helper",
+    "helperConsidered": "manual misses any of D1 to D8 or produces a false positive on a control, or manual exceeds the margin: a helper may be proposed, but only a separately admitted comparable helper arm that itself reaches 8 of 8, 0 false positives and visible D9 can support selection",
+    "helperDefects": "a helper that misses a deterministic defect or flags a control is repaired or rejected; a fixable helper defect does not prove the document route is cheaper",
+    "inconclusive": "three or more NOT_ANSWERED cases, a contaminated primary reviewer (B2), or a missing effort variable",
+    "noWinnerFromThisSlice": "this slice runs neither arm and selects nothing"
+  },
+  "admissionSteps": [
+    {
+      "id": "S1",
+      "step": "Recompute SHA-256 of attachments A, B and C and of each reviewer view; compare with the casepack and protocol hashes."
+    },
+    {
+      "id": "S2",
+      "step": "Confirm the casepack file hash recorded in the protocol and that the generator-independent order rule reproduces RB-01 to RB-11 from the eleven internal keys."
+    },
+    {
+      "id": "S3",
+      "step": "Run the leak scan patterns over every view; zero matches required."
+    },
+    {
+      "id": "S4",
+      "step": "Confirm the reviewer package excludes the answerKey section and that the manual reviewer is distinct from the seed author and any key reader."
+    },
+    {
+      "id": "S5",
+      "step": "Verify each quoted statement, resolution and open content quote in the clean records against the frozen attachment text."
+    },
+    {
+      "id": "S6",
+      "step": "Independently re-derive at least one seeded placement per seed class from the view text and compare with the answer key locator."
+    },
+    {
+      "id": "S7",
+      "step": "Confirm job A source binding is still SOURCE_BINDING_NOT_ESTABLISHED and that the HOLD for job A is lifted only by Local evidence of a minted accepted-file candidate, or the experiment is limited to review-only inputs and labelled so."
+    },
+    {
+      "id": "S8",
+      "step": "Confirm contamination record, timeboxes, scoring rules, effort formulas, N and the 1.25 margin are present and fixed before any execution."
+    },
+    {
+      "id": "S9",
+      "step": "Confirm every case and result field is NOT_EXECUTED or UNKNOWN and that no helper code or scratch evaluator is part of the package."
+    },
+    {
+      "id": "S10",
+      "step": "Record the admission decision and the actor and invocation of the admitting Local review."
+    }
+  ],
+  "resultTemplates": {
+    "manualArmResult": {
+      "status": "NOT_EXECUTED",
+      "reviewerActor": "UNKNOWN",
+      "invocationId": "UNKNOWN",
+      "blindingLevel": "UNKNOWN",
+      "contaminationRecordRef": "UNKNOWN",
+      "preparationMinutes": "UNKNOWN",
+      "perCase": [
+        {
+          "caseId": "RB-01",
+          "elapsedSeconds": "UNKNOWN",
+          "caseVerdict": "UNKNOWN",
+          "rawFormRef": "UNKNOWN"
+        },
+        {
+          "caseId": "RB-02",
+          "elapsedSeconds": "UNKNOWN",
+          "caseVerdict": "UNKNOWN",
+          "rawFormRef": "UNKNOWN"
+        },
+        {
+          "caseId": "RB-03",
+          "elapsedSeconds": "UNKNOWN",
+          "caseVerdict": "UNKNOWN",
+          "rawFormRef": "UNKNOWN"
+        },
+        {
+          "caseId": "RB-04",
+          "elapsedSeconds": "UNKNOWN",
+          "caseVerdict": "UNKNOWN",
+          "rawFormRef": "UNKNOWN"
+        },
+        {
+          "caseId": "RB-05",
+          "elapsedSeconds": "UNKNOWN",
+          "caseVerdict": "UNKNOWN",
+          "rawFormRef": "UNKNOWN"
+        },
+        {
+          "caseId": "RB-06",
+          "elapsedSeconds": "UNKNOWN",
+          "caseVerdict": "UNKNOWN",
+          "rawFormRef": "UNKNOWN"
+        },
+        {
+          "caseId": "RB-07",
+          "elapsedSeconds": "UNKNOWN",
+          "caseVerdict": "UNKNOWN",
+          "rawFormRef": "UNKNOWN"
+        },
+        {
+          "caseId": "RB-08",
+          "elapsedSeconds": "UNKNOWN",
+          "caseVerdict": "UNKNOWN",
+          "rawFormRef": "UNKNOWN"
+        },
+        {
+          "caseId": "RB-09",
+          "elapsedSeconds": "UNKNOWN",
+          "caseVerdict": "UNKNOWN",
+          "rawFormRef": "UNKNOWN"
+        },
+        {
+          "caseId": "RB-10",
+          "elapsedSeconds": "UNKNOWN",
+          "caseVerdict": "UNKNOWN",
+          "rawFormRef": "UNKNOWN"
+        },
+        {
+          "caseId": "RB-11",
+          "elapsedSeconds": "UNKNOWN",
+          "caseVerdict": "UNKNOWN",
+          "rawFormRef": "UNKNOWN"
+        }
+      ],
+      "hitsOutOf8": "UNKNOWN",
+      "d6Partial": "UNKNOWN",
+      "falsePositivesOnControls": "UNKNOWN",
+      "d9Disclosed": "UNKNOWN",
+      "notAnswered": "UNKNOWN"
+    },
+    "helperArmResult": {
+      "status": "NOT_EXECUTED",
+      "admittedBy": "UNKNOWN",
+      "helperBuildRef": "UNKNOWN",
+      "independenceFromSeedAuthor": "UNKNOWN",
+      "perCase": [
+        {
+          "caseId": "RB-01",
+          "caseVerdict": "UNKNOWN"
+        },
+        {
+          "caseId": "RB-02",
+          "caseVerdict": "UNKNOWN"
+        },
+        {
+          "caseId": "RB-03",
+          "caseVerdict": "UNKNOWN"
+        },
+        {
+          "caseId": "RB-04",
+          "caseVerdict": "UNKNOWN"
+        },
+        {
+          "caseId": "RB-05",
+          "caseVerdict": "UNKNOWN"
+        },
+        {
+          "caseId": "RB-06",
+          "caseVerdict": "UNKNOWN"
+        },
+        {
+          "caseId": "RB-07",
+          "caseVerdict": "UNKNOWN"
+        },
+        {
+          "caseId": "RB-08",
+          "caseVerdict": "UNKNOWN"
+        },
+        {
+          "caseId": "RB-09",
+          "caseVerdict": "UNKNOWN"
+        },
+        {
+          "caseId": "RB-10",
+          "caseVerdict": "UNKNOWN"
+        },
+        {
+          "caseId": "RB-11",
+          "caseVerdict": "UNKNOWN"
+        }
+      ],
+      "hitsOutOf8": "UNKNOWN",
+      "falsePositivesOnControls": "UNKNOWN",
+      "d9VisiblyListed": "UNKNOWN",
+      "cleanControlsFlagged": "UNKNOWN"
+    },
+    "effortLedger": {
+      "status": "NOT_EXECUTED",
+      "Cm_setup": "UNKNOWN",
+      "Em": "UNKNOWN",
+      "Ch_create": "UNKNOWN",
+      "Ch_integrate": "UNKNOWN",
+      "Ch_maintain": "UNKNOWN",
+      "Eh": "UNKNOWN",
+      "N_primary": 12,
+      "totalManual": "UNKNOWN",
+      "totalHelper": "UNKNOWN",
+      "ratio": "UNKNOWN",
+      "withinMargin": "UNKNOWN"
+    },
+    "routeDecision": {
+      "status": "NOT_EXECUTED",
+      "decision": "UNKNOWN",
+      "basis": "UNKNOWN"
+    }
+  },
+  "claimBoundary": "A frozen protocol only. NOT_EXECUTED: no manual or helper result, no timing, no cost. The numeric margin and horizon are predeclared assumptions, not measurements. No product, helper, UX, value or build-ready claim."
+}
