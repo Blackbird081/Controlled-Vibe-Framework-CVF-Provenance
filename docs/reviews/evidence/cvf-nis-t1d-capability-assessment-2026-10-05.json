@@ -1,0 +1,733 @@
+{
+  "schemaVersion": "cvf.nisT1dCapabilityAssessment.v1",
+  "batchId": "CVF-NIS-T1D",
+  "executionBaseHead": "a27c13fa7a30fbc76b755aac539ec65e6dcae49d",
+  "invocationId": "nis-t1d-worker-20261005",
+  "actorRole": "INTERNAL_AGENT",
+  "assessmentScope": "Selected pinned Spec Kit files read as data against the existing CVF non-coder spec-review consumer. Source and contract assessment only; no upstream instruction, hook, script or CLI was invoked, and no product code, test or store was touched.",
+  "workerObservations": {
+    "worktree": "D:/UNG DUNG AI/TOOL AI 2026/Controlled-Vibe-Framework-CVF-NIS-T1D",
+    "headAtStart": "a27c13fa7a30fbc76b755aac539ec65e6dcae49d",
+    "statusAtStart": "clean; zero entries from git status --short",
+    "mirrorHeadObserved": "ae5ade7234be5cb1d975f736c4e06dd46d1326d6",
+    "mirrorStatusObserved": "clean; zero entries",
+    "rawPinCheck": "9 CVF sources and 14 mirror files matched the rawSha256 in docs/reviews/evidence/cvf-nis-t1d-dispatch-inputs-2026-10-05.json; zero mismatches",
+    "workerPreImplementationReceipt": ".cvf/runtime/nis-t1d-worker-20261005/pre-implementation/pre-implementation.json",
+    "workerPreImplementationLog": ".cvf/runtime/nis-t1d-worker-20261005/pre-implementation-worker.log",
+    "workerPreImplementationResult": "COMPLIANT exit 0; this is the worker-owned invocation, distinct from the Local preparation receipt",
+    "networkOrInstallOrUpstreamExecution": "none",
+    "providerCallCount": 0
+  },
+  "license": {
+    "locator": "LICENSE:1-21",
+    "name": "MIT License",
+    "holder": "Copyright GitHub, Inc.",
+    "rawSha256": "2510b446bc1f0cf9702453075d20cd88631e20e5642658edb7325d9c1eb534f7",
+    "obligation": "The copyright and permission notice must accompany copies or substantial portions of the Software (LICENSE:12-13).",
+    "disposition": "No upstream text, structure or code is copied by this assessment or proposed by the contract minimum slice. If a later order copies a substantial portion verbatim, Local must carry the notice; the proposed slice uses CVF-authored wording for every new label."
+  },
+  "freshness": {
+    "pin": "ae5ade7234be5cb1d975f736c4e06dd46d1326d6",
+    "observedOriginMainByLocal": "ae5ade7234be5cb1d975f736c4e06dd46d1326d6",
+    "observedAtUtcByLocal": "2026-10-05T08:46:12.281398+00:00",
+    "workerRefresh": "none; worker offline by order",
+    "disposition": "PIN_EQUALS_OBSERVED_MAIN_AT_LOCAL_CLONE; worker adds no freshness claim"
+  },
+  "cvfSourcePins": [
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-review.ts",
+      "rawSha256": "c8746be8645af3d287c084a6338e84bbf502b4ffc3f9f750f58236c0085a34dc",
+      "gitBlob": "4bfd12d933ed55d788c45cda439e8724991abb07",
+      "locators": {
+        "IntentSpecReviewState": "L49-L55",
+        "ReviewDecision": "L41-L47",
+        "DecisionDisposition": "L4",
+        "INTENT_REVIEW_QUESTIONS": "L6-L37",
+        "createIntentSpecReview": "L68-L78",
+        "synchronizeIntentSpecReview": "L81-L97",
+        "updateReviewDecision": "L99-L116",
+        "decisionNeedsReview": "L118-L123",
+        "buildIntentReviewAppendix": "L146-L174",
+        "buildReviewedDraftPacket": "L176-L181"
+      }
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecReview.tsx",
+      "rawSha256": "acc098743cc9b6e2ac66c4c94ace76531924c049fcdfa874e3654c52df7efdb8",
+      "gitBlob": "fef775fc403db093108e8095a0142c067aa36b63",
+      "locators": {
+        "useIntentSpecReview": "L13-L34",
+        "canContinue": "L32",
+        "IntentSpecReview": "L43-L130",
+        "decisionCard": "L67-L115",
+        "viewedButton": "L123-L126"
+      }
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-confirmation.ts",
+      "rawSha256": "05afbe557d905f583221b4a59bfc04fabbd7d9e6b73c4ff0b7b05fab6ba4d067",
+      "gitBlob": "da9253c361f6cc30527a11d3cad8487c302d1bb0",
+      "locators": {
+        "reviewBindingKey": "L17-L19",
+        "createSpecConfirmationCandidate": "L27-L51",
+        "pendingGate": "L32-L34",
+        "schemaLiteral": "L38",
+        "reviewEmbeddedVerbatim": "L41",
+        "draftReconstruction": "L42",
+        "verifySpecConfirmationReadback": "L54-L62"
+      }
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-acceptance.ts",
+      "rawSha256": "1ea88cc17ba9a6086b68da9b6d1de41c711088c1f7a0c0d863502e44391019a3",
+      "gitBlob": "6e926064e70e75829c1ac6dda527b5193e4ba9b6",
+      "locators": {
+        "exactKeySetHelper": "L15-L19",
+        "checkReview": "L27-L46",
+        "reviewExactFiveKeys": "L28",
+        "decisionExactFiveKeys": "L34",
+        "dispositionAnsweredOrNotApplicableOnly": "L37",
+        "exactCanonicalTextCheck": "L75",
+        "payloadExactSevenKeys": "L76",
+        "schemaAndScopeLiterals": "L78-L79",
+        "draftReconstructionCheck": "L88",
+        "acceptanceRecord": "L89-L101",
+        "prepareIntentSpecAcceptance": "L58-L101",
+        "commitIntentSpecAcceptanceCandidate": "L109-L131"
+      }
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/spec-export-portable-handoff.ts",
+      "rawSha256": "8528e8274bb82015398ce7deb10292aff6c7b5a06db83b25c6d8346b7a440795",
+      "gitBlob": "d17f4f6af70dcdfe45e7c9f7254d0a610bc519d9",
+      "locators": {
+        "buildPortableAgentHandoffReadiness": "L7-L79",
+        "signature": "L7-L12",
+        "presenceOnlyMaterialDetails": "L17-L28",
+        "readinessLine": "L35",
+        "implementationDecisionPolicy": "L51-L55"
+      }
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/SpecExport.tsx",
+      "rawSha256": "24617b9ef2f53e6ac5cf5e4907eaa2dea2d0ba8fbe1578714f8cba22338be2a9",
+      "gitBlob": "bb550ff43785e62534e8cc8432649c537a84ec6a",
+      "locators": {
+        "generateSpec": "L654",
+        "readinessCallInsideGenerateSpec": "L775",
+        "baseSpecThenReviewHook": "L950-L951",
+        "canSendToAgent": "L965",
+        "IntentSpecReviewMount": "L1030-L1031",
+        "generateCompleteSpec": "L1278-L1283"
+      }
+    },
+    {
+      "path": "docs/reviews/CVF_NIS_T1C_BUILDER_HANDOFF_VALUE_PROOF_COMPLETION_2026-10-05.md",
+      "rawSha256": "d9d0509a3a77ddbef438d59dcd98db869fd1528574c8dafd4d48e96a31414011",
+      "gitBlob": "451fb5f1671bc05ad30172a1499b9ea4fcf4635a",
+      "locators": {
+        "findingsPosition": "L28-L39",
+        "minimumNextDelta": "L45-L49"
+      }
+    },
+    {
+      "path": "docs/reviews/evidence/cvf-nis-t1c-local-independent-review-2026-10-05.json",
+      "rawSha256": "a1eac386299f89d6cc5b5f3f0ccaf511e0d67b3020858f027401bd47628459c0",
+      "gitBlob": "679979ef81a792ef21e99e117d0f7fa627b7c844",
+      "locators": {
+        "localDispositions": "top-level key localDispositions"
+      }
+    },
+    {
+      "path": "docs/reviews/CVF_NIS_T1B_D_INTEGRATED_REVIEW_PERSISTENCE_COMPLETION_2026-10-05.md",
+      "rawSha256": "40a1b4c57e797b41eb9fa48c4050a0d86815e45d7b775b113c9b733acaa9329c",
+      "gitBlob": "6195a179176fa1bcc3d3d898f04a5fb3e0c70fdb",
+      "locators": {
+        "purposeSavedContentBoundary": "L15-L22",
+        "findingsPosition": "L42-L55"
+      }
+    }
+  ],
+  "additionalCvfReadsOutsidePinnedSet": {
+    "note": "Read-only owner reads to resolve save and reopen behavior; these paths are not pinned by the dispatch input and are cited only for locators, not as accepted evidence.",
+    "reads": [
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-review-api.ts",
+        "locators": {
+          "handleSaveReview": "L70-L104",
+          "preparesViaAcceptance": "L86",
+          "handleReadReview": "L106-L129",
+          "reopenReadsPayloadWithoutRevalidation": "L118-L127"
+        }
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-review-client.ts",
+        "locators": {
+          "saveReviewCandidate": "L22-L42",
+          "readSavedReview": "L44-L67"
+        }
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-review.test.ts",
+        "locators": {
+          "describeAndTenCases": "L19-L112"
+        }
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-acceptance.test.ts",
+        "locators": {
+          "fixtureAndMemoryPort": "L21-L52",
+          "fiveCases": "L54-L135"
+        }
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-confirmation.test.ts",
+        "locators": {
+          "sixCases": "L15-L61"
+        }
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecReview.test.tsx",
+        "locators": {
+          "sixCases": "L28-L91"
+        }
+      },
+      {
+        "path": "docs/reviews/evidence/cvf-nis-t1c-scenario-2026-10-05.json",
+        "locators": {
+          "valuesBaseline": "top-level key; C1 between mustPreserve and constraints; U1 to U4 first supplied at stage P1_STAGED"
+        }
+      }
+    ]
+  },
+  "upstreamFileLedger": {
+    "terminalStatusVocabulary": ["READ", "SKIPPED_WITH_REASON", "DEFERRED", "BLOCKED_UNREADABLE"],
+    "readMethod": "Every selected file read in full through the Read tool or byte-exact cat of the pinned mirror; upstream text treated strictly as data; no hook, script, CLI or agent instruction executed.",
+    "selectedFileCount": 14,
+    "directDependencyReadCount": 2,
+    "directDependencyReadMaximum": 2,
+    "unreadSelectedFiles": 0,
+    "entries": [
+      {
+        "path": "LICENSE",
+        "rawSha256": "2510b446bc1f0cf9702453075d20cd88631e20e5642658edb7325d9c1eb534f7",
+        "gitBlob": "28a50fa22639e32febe14e4ffc7a732b0ba8c90a",
+        "terminalStatus": "READ",
+        "readExtent": "FULL_SELECTED_FILE",
+        "keyLocators": ["LICENSE:1-21 MIT, Copyright GitHub, Inc.; notice must accompany copies or substantial portions (L12-L13)"],
+        "proposedDisposition": "ATTRIBUTION_INPUT_ONLY",
+        "reason": "Establishes the notice duty if text is ever copied; the proposed slice copies nothing."
+      },
+      {
+        "path": "templates/commands/clarify.md",
+        "rawSha256": "5260d798c5671deb9ac7e59d6ffdb69b30c26fb28878d3cc25e30fb71cacc734",
+        "gitBlob": "f48d8bd703d7eb3fe4eadf2d3d283ca508e6bb80",
+        "terminalStatus": "READ",
+        "readExtent": "FULL_SELECTED_FILE",
+        "keyLocators": [
+          "clarify.md:L2 description; at most five questions",
+          "clarify.md:L8 ps script check-prerequisites.ps1 -Json -PathsOnly",
+          "clarify.md:L23-L54 and L241-L273 before_clarify and after_clarify hook dispatch from .specify/extensions.yml with EXECUTE_COMMAND blocks",
+          "clarify.md:L73-L123 coverage taxonomy marked Clear, Partial or Missing",
+          "clarify.md:L129-L138 queue limits: maximum five, multiple choice of two to five options or at most five words",
+          "clarify.md:L140-L180 one question at a time, recommended option, stop on done or five asked",
+          "clarify.md:L182-L198 integration after each answer; L195 replaces the earlier statement instead of keeping it; L196 atomic overwrite of the spec file",
+          "clarify.md:L210-L227 toggles checkbox markers in checklists/requirements.md",
+          "clarify.md:L237 high-impact unresolved items flagged Deferred when the quota is reached",
+          "clarify.md:L282 coverage summary statuses Resolved, Deferred, Clear, Outstanding"
+        ],
+        "proposedDisposition": "ADAPT_PATTERN_VOCABULARY_ONLY; REJECT_RUNTIME_FOR_SLICE",
+        "reason": "Useful vocabulary (unknown, deferred, outstanding, recommended answer with a stated stake) but state is prose in a file, resolution overwrites the earlier text, there is no conflict provenance, delegation or revision invalidation, and the host effects are repo and agent specific."
+      },
+      {
+        "path": "templates/commands/checklist.md",
+        "rawSha256": "1192784f378fb977b408b72ca1bfb8fc55e129519f3f44bc5d0a7e152c480654",
+        "gitBlob": "6e33f5d4225c539fa1c3860e5409f098a6a8d827",
+        "terminalStatus": "READ",
+        "readExtent": "FULL_SELECTED_FILE",
+        "keyLocators": [
+          "checklist.md:L9-L37 requirements-quality checklist, reviewer-owned markers; L34 marker does not mean implementation complete; L35 command must not mark generated items checked",
+          "checklist.md:L90-L120 up to three dynamic clarifying questions, at most five",
+          "checklist.md:L158-L167 quality dimensions: completeness, clarity, consistency, acceptance criteria, scenario, edge case, non-functional, dependencies, ambiguities and conflicts",
+          "checklist.md:L224-L227 at least 80 percent of items carry a traceability reference; markers Gap, Ambiguity, Conflict, Assumption",
+          "checklist.md:L148 and L258 new items unchecked; checklist-template structure"
+        ],
+        "proposedDisposition": "ADAPT_PATTERN_VOCABULARY_ONLY; DEFER_GENERATOR",
+        "reason": "The separation between a reviewer-owned quality marker and implementation completion is the same separation CVF needs, but the marker is an unbound file checkbox without revision binding, and generating checklist items needs model inference that the review consumer explicitly excludes (intent-spec-review.ts:L2)."
+      },
+      {
+        "path": "templates/commands/plan.md",
+        "rawSha256": "206a0386d20b3eed4c087a4d9de247a3e7b2b59348bf3c801fc74f63ca2726a5",
+        "gitBlob": "d559e517ae59bb3e664b59b528372444baac4626",
+        "terminalStatus": "READ",
+        "readExtent": "FULL_SELECTED_FILE",
+        "keyLocators": [
+          "plan.md:L11-L15 setup-plan.ps1 -Json",
+          "plan.md:L25-L58 and L74-L106 before_plan and after_plan hooks",
+          "plan.md:L66-L72 technical context unknowns marked NEEDS CLARIFICATION; constitution gate; research, data model, contracts, quickstart",
+          "plan.md:L114-L135 Phase 0 research resolves every NEEDS CLARIFICATION",
+          "plan.md:L137-L159 Phase 1 data-model.md, contracts, quickstart.md",
+          "plan.md:L164 error on gate failures or unresolved clarifications"
+        ],
+        "proposedDisposition": "DEFER_PATTERN_TO_LATER_DESIGN_SLICE; REJECT_RUNTIME_FOR_SLICE",
+        "reason": "The plan phase assumes technical decisions (language, dependencies, storage) that the non-coder consumer must not make, so the sections would have to be builder-owned; the unresolved-clarification gate is a future readiness rule, not a draft-confirmation rule."
+      },
+      {
+        "path": "templates/commands/tasks.md",
+        "rawSha256": "2f9176c6e7c23d2a83d2bd018ffa1e67aee977389a57f2a3fe35fe987b425944",
+        "gitBlob": "1b9c4255fe8d9cd76e8f3e5952ada7a17c62a87e",
+        "terminalStatus": "READ",
+        "readExtent": "FULL_SELECTED_FILE",
+        "keyLocators": [
+          "tasks.md:L12-L15 setup-tasks.ps1 -Json",
+          "tasks.md:L65-L69 plan.md and spec.md required, other design documents optional",
+          "tasks.md:L147 tests optional unless requested",
+          "tasks.md:L149-L179 strict line format: checkbox, task id, optional parallel marker, optional story label, description with a file path",
+          "tasks.md:L181-L214 organization by user story, phases Setup, Foundational, stories, Polish",
+          "tasks.md:L200 field constraints quoted verbatim into task text"
+        ],
+        "proposedDisposition": "DEFER_PATTERN_TO_LATER_DESIGN_SLICE; REJECT_RUNTIME_FOR_SLICE",
+        "reason": "The line grammar is regular and could become a deterministic format check later, but a task list requires an accepted plan and design that this consumer does not yet produce, and tasks must trace to open-item ids; neither precondition exists in the minimum slice."
+      },
+      {
+        "path": "templates/commands/analyze.md",
+        "rawSha256": "ffe0640ebe778795737937f2d4ec6f0149d7d55b72692e25369a668f985d1dfe",
+        "gitBlob": "7de2d28f0da797998e5e30d6323b7316a74e60ff",
+        "terminalStatus": "READ",
+        "readExtent": "FULL_SELECTED_FILE",
+        "keyLocators": [
+          "analyze.md:L4-L6 check-prerequisites.ps1 requires spec and tasks",
+          "analyze.md:L58 strictly read-only; L60 constitution conflicts are critical",
+          "analyze.md:L110 requirement keys FR and SC with slugs",
+          "analyze.md:L115-L151 detection passes: duplication, ambiguity, underspecification, constitution, coverage gaps, inconsistency",
+          "analyze.md:L153-L160 severity heuristic; L117 and L242 at most fifty findings; L243 deterministic ids requested of the agent"
+        ],
+        "proposedDisposition": "DEFER_PATTERN_TO_LATER_CONSISTENCY_SLICE; REJECT_RUNTIME_FOR_SLICE",
+        "reason": "The detection categories are a vocabulary for a future consistency review. The report is produced by an agent following prose, so determinism and coverage are requested rather than enforced; it also needs a tasks.md that does not exist for this consumer."
+      },
+      {
+        "path": "templates/spec-template.md",
+        "rawSha256": "3945437fc35cd30a5b2bf7beea680337c3516826d3efa5a6b92c4a7eca1ba28e",
+        "gitBlob": "ceb28776215a098e977650ac090c785dcbf53651",
+        "terminalStatus": "READ",
+        "readExtent": "FULL_SELECTED_FILE",
+        "keyLocators": [
+          "spec-template.md:L98-L99 inline NEEDS CLARIFICATION markers inside requirement lines",
+          "spec-template.md:L26-L69 prioritized independently testable stories",
+          "spec-template.md:L88-L99 FR-numbered functional requirements",
+          "spec-template.md:L106-L118 measurable technology-agnostic success criteria",
+          "spec-template.md:L120-L131 assumptions section"
+        ],
+        "proposedDisposition": "ADAPT_PATTERN_VOCABULARY_ONLY",
+        "reason": "Shows the upstream representation of an unknown: an inline marker in prose that is later replaced. The CVF contract keeps structured ids and the original source text instead."
+      },
+      {
+        "path": "templates/plan-template.md",
+        "rawSha256": "dfba43da2b2a207ff8c177a0fba03af074fd45e261696b4b64172041fad2e992",
+        "gitBlob": "36f2eab16880bac670fe43cbe7ef2b9bc8c3aa2f",
+        "terminalStatus": "READ",
+        "readExtent": "FULL_SELECTED_FILE",
+        "keyLocators": [
+          "plan-template.md:L21-L37 technical context fields each allow NEEDS CLARIFICATION",
+          "plan-template.md:L39-L43 constitution check gate",
+          "plan-template.md:L45-L57 per-feature document tree",
+          "plan-template.md:L106-L113 complexity tracking"
+        ],
+        "proposedDisposition": "DEFER_PATTERN_TO_LATER_DESIGN_SLICE",
+        "reason": "Structural vocabulary for a later builder-owned plan artifact; not needed for the review consumer."
+      },
+      {
+        "path": "templates/tasks-template.md",
+        "rawSha256": "1e448e9153462e8c5b5a55231a54c756d870a82950d4dd9425a2bf5b7008a0d9",
+        "gitBlob": "7fff087cc5a3c51a889d865fd9126607a032d233",
+        "terminalStatus": "READ",
+        "readExtent": "FULL_SELECTED_FILE",
+        "keyLocators": [
+          "tasks-template.md:L16-L20 line format legend",
+          "tasks-template.md:L48-L75 setup and foundational phases",
+          "tasks-template.md:L77-L146 story phases with independent test criteria",
+          "tasks-template.md:L163-L196 dependency and execution order rules",
+          "tasks-template.md:L213-L252 implementation strategy and notes"
+        ],
+        "proposedDisposition": "DEFER_PATTERN_TO_LATER_DESIGN_SLICE",
+        "reason": "Dependency and phase vocabulary for a later tasks artifact; no input exists yet."
+      },
+      {
+        "path": "templates/checklist-template.md",
+        "rawSha256": "c65b7f10aa9a965ea9c7f4e879d4ab0240665473731c5e9e638c4acb3ca9afc4",
+        "gitBlob": "9d1e801c3e168869a04ab60c66ca0dae4a77614f",
+        "terminalStatus": "READ",
+        "readExtent": "FULL_SELECTED_FILE",
+        "keyLocators": [
+          "checklist-template.md:L7-L9 reviewer ownership and marker semantics",
+          "checklist-template.md:L25-L35 category sections with CHK identifiers",
+          "checklist-template.md:L37-L45 notes; implement reads marker state as a gate and must not modify it"
+        ],
+        "proposedDisposition": "ADAPT_PATTERN_VOCABULARY_ONLY",
+        "reason": "Confirms that the marker is reviewer-owned and is not implementation completion; supports keeping CVF viewed confirmation separate from readiness."
+      },
+      {
+        "path": "scripts/powershell/check-prerequisites.ps1",
+        "rawSha256": "c7fa3dac16b9a71c0173dc6431072b83472b0e55177e08eb14be5a0ad8d6fa7a",
+        "gitBlob": "0e9434d06393fbf58f57dff7c9684f86362baeb1",
+        "terminalStatus": "READ",
+        "readExtent": "FULL_SELECTED_FILE",
+        "keyLocators": [
+          "check-prerequisites.ps1:L63 dot-sources common.ps1",
+          "check-prerequisites.ps1:L68-L72 and L75-L94 paths-only mode resolves without persisting feature.json",
+          "check-prerequisites.ps1:L96-L125 exits 1 when the feature directory, plan.md, spec.md or tasks.md is missing",
+          "check-prerequisites.ps1:L127-L153 builds the available document list and resolves a template",
+          "check-prerequisites.ps1:L155-L165 JSON output of FEATURE_DIR and AVAILABLE_DOCS"
+        ],
+        "proposedDisposition": "REJECT_RUNTIME_FOR_SLICE",
+        "reason": "Resolves paths under a .specify repository layout and a feature directory; the consumer holds review state in memory and a private store. No stable library API; stdout JSON is the only interface."
+      },
+      {
+        "path": "scripts/powershell/setup-plan.ps1",
+        "rawSha256": "3b8173f1553bbf67ae021af949a29e2d3e3bb35805be95e4ba8d0ab83173c66f",
+        "gitBlob": "036a54e4d135e20843495f74f2f38d04a1232897",
+        "terminalStatus": "READ",
+        "readExtent": "FULL_SELECTED_FILE",
+        "keyLocators": [
+          "setup-plan.ps1:L29-L36 resolves feature paths or exits 1",
+          "setup-plan.ps1:L39 creates the feature directory",
+          "setup-plan.ps1:L42-L72 copies the plan template to plan.md without overwriting; WriteAllText at L52",
+          "setup-plan.ps1:L75-L88 JSON output"
+        ],
+        "proposedDisposition": "REJECT_RUNTIME_FOR_SLICE",
+        "reason": "Writes files into the working repository by design; a write effect with no CVF consumer or authority."
+      },
+      {
+        "path": "scripts/powershell/setup-tasks.ps1",
+        "rawSha256": "21b0acbc5f0789ca24b5834a8739c372b3694262627312abe209818f06c67f8c",
+        "gitBlob": "4adbbc4b932e70087507527394a57f2d15382e22",
+        "terminalStatus": "READ",
+        "readExtent": "FULL_SELECTED_FILE",
+        "keyLocators": [
+          "setup-tasks.ps1:L35-L47 requires plan.md and spec.md",
+          "setup-tasks.ps1:L58-L65 resolves tasks-template through the override stack or exits 1",
+          "setup-tasks.ps1:L72-L79 JSON output including template content"
+        ],
+        "proposedDisposition": "REJECT_RUNTIME_FOR_SLICE",
+        "reason": "Same repository-layout precondition; no task input exists in the minimum slice."
+      },
+      {
+        "path": "scripts/powershell/common.ps1",
+        "rawSha256": "9837a02a1ca9e61a16a1ff7ec7429c95d8e1c87ec49400cc2807133bb89a5317",
+        "gitBlob": "c90308ef9cfe29c4bbcc16c04d56d0cc80c04330",
+        "terminalStatus": "READ",
+        "readExtent": "FULL_SELECTED_FILE",
+        "keyLocators": [
+          "common.ps1:L7-L26 and L80-L97 repository root found by walking up to .specify; SPECIFY_INIT_DIR override at L40-L76",
+          "common.ps1:L115-L159 Save-FeatureJson writes .specify/feature.json",
+          "common.ps1:L161-L245 Get-FeaturePathsEnv resolves feature directory from SPECIFY_FEATURE_DIRECTORY or feature.json and may persist it",
+          "common.ps1:L329-L350 Get-Python3Command runs candidate Python executables, including an environment override, with a yaml import probe at L336",
+          "common.ps1:L433-L527 Resolve-Template precedence: overrides, presets, extensions, core",
+          "common.ps1:L532-L813 Resolve-TemplateContent composes layers with replace, prepend, append or wrap; parses preset YAML by running Python code at L626-L680"
+        ],
+        "proposedDisposition": "REJECT_RUNTIME_FOR_SLICE",
+        "reason": "Environment-variable driven file writes and subprocess execution on the host. The only transferable idea, layered template override precedence, is unrelated to this consumer and is not selected."
+      },
+      {
+        "path": "templates/commands/specify.md",
+        "rawSha256": "7d5a88e6afa504f1d16503df6bf8664f30e3df812b83f9a456a2eaccaeb638ee",
+        "gitBlob": "52b2b2456500c68c6a9cfbac5de9d2df7bedf918",
+        "terminalStatus": "READ",
+        "readExtent": "FULL_DEPENDENCY_FILE",
+        "dependencyRead": 1,
+        "referencedFrom": "clarify.md:L68 and L232 (command reference), checklist.md:L37 (requirements.md lifecycle), spec-template.md:L96-L99 (marker examples)",
+        "informationGainReason": "Decision gap: whether upstream models an unknown as structured state or has a quota. specify.md defines the NEEDS CLARIFICATION marker policy and creates checklists/requirements.md, which clarify and checklist both reference; without it the unknown model and the quota claim would be inferred rather than sourced.",
+        "keyLocators": [
+          "specify.md:L124-L129 marker only when scope or experience is significantly affected; maximum three markers total",
+          "specify.md:L146-L183 creates checklists/requirements.md including an item that no NEEDS CLARIFICATION marker remains",
+          "specify.md:L199-L232 at most three questions presented together; marker replaced by the answer",
+          "specify.md:L285 no checklist embedded in the spec; L299 limit repeated"
+        ],
+        "proposedDisposition": "ADAPT_PATTERN_VOCABULARY_ONLY",
+        "reason": "Confirms inline unstructured markers, a hard cap of three, and in-place replacement; none of these satisfies a no-quota, provenance-preserving contract."
+      },
+      {
+        "path": "templates/commands/implement.md",
+        "rawSha256": "feab334232940cfd4ecbcdae41cf63ccb7d581a60380230837385f296f7b49bd",
+        "gitBlob": "f98ba525de1bb29efdb520695a4fd3fa8499bbf6",
+        "terminalStatus": "READ",
+        "readExtent": "FULL_DEPENDENCY_FILE",
+        "dependencyRead": 2,
+        "referencedFrom": "checklist.md:L258, checklist-template.md:L41, tasks.md:L8-L10 handoff block",
+        "informationGainReason": "Decision gap: how a checklist marker functions as a gate and whether a human override exists. implement.md is the only upstream consumer of the marker state, so it decides whether the marker is a readiness gate or merely advisory in the source.",
+        "keyLocators": [
+          "implement.md:L56-L59 marker is a read-only gate; checked means reviewer-satisfied, not implementation complete",
+          "implement.md:L61-L88 counts checked and unchecked items; any unchecked item stops and asks whether to proceed anyway; yes continues",
+          "implement.md:L163-L169 execution marks tasks done in tasks.md"
+        ],
+        "proposedDisposition": "ADAPT_PATTERN_VOCABULARY_ONLY",
+        "reason": "Shows a human-overridable, unversioned gate; supports keeping CVF readiness and execution grant separate from viewed confirmation and not deriving either from marker-like state."
+      }
+    ],
+    "exclusionStatement": "All other tracked paths in the pinned mirror (859 outside the selected fourteen per the dispatch input, minus the two dependency files read here) are outside this selected assessment. They are deferred and are not a no-value finding."
+  },
+  "separationOfFacts": [
+    {
+      "fact": "VIEWED_CONFIRMATION",
+      "currentOwner": "acknowledgedRevision equals revision (intent-spec-review.ts:L129-L135)",
+      "meaning": "The user viewed exactly this revision in this session or confirmed the saved bytes.",
+      "doesNotMean": "Unknowns resolved, conflicts resolved, spec complete, build ready or execution granted."
+    },
+    {
+      "fact": "UNRESOLVED_CONTENT",
+      "currentOwner": "none; six decision prompts only (decisionNeedsReview L118-L123); embedded UNKNOWN prose is invisible to it per T1C finding",
+      "meaning": "Explicit user-declared unknown, conflict and delegated items with ids and status.",
+      "doesNotMean": "A detected gap; CVF does not infer unknowns from prose."
+    },
+    {
+      "fact": "REVIEW_ROUTING",
+      "currentOwner": "buildPortableAgentHandoffReadiness L35 routes to external agent review and tests field presence only (L17-L28)",
+      "meaning": "Packet may go to a reviewer.",
+      "doesNotMean": "Readiness for BUILD."
+    },
+    {
+      "fact": "FUTURE_BUILD_READINESS",
+      "currentOwner": "none",
+      "meaning": "A later accepted rule over unresolved items, design, plan, tasks and consistency.",
+      "doesNotMean": "Anything the minimum slice computes; the slice emits NOT_ASSESSED."
+    },
+    {
+      "fact": "EXECUTION_GRANT",
+      "currentOwner": "none in this consumer; scope literal SPEC_REVIEW_ONLY_NO_BUILD_AUTHORITY at intent-spec-confirmation.ts:L38 and intent-spec-acceptance.ts:L79",
+      "meaning": "Separate authority outside the review consumer.",
+      "doesNotMean": "Derivable from any of the four facts above."
+    }
+  ],
+  "capabilityAssessments": [
+    {
+      "capabilityId": "CAP-1",
+      "name": "Explicit unknown, conflict and delegation with effective rule projection (clarify and checklist family)",
+      "upstreamSources": ["templates/commands/clarify.md", "templates/commands/checklist.md", "templates/spec-template.md", "templates/checklist-template.md", "templates/commands/specify.md"],
+      "producerConsumerVerifierMap": {
+        "upstreamProducer": "An agent following clarify.md writes Clarifications bullets and edits the spec file; checklist.md writes checklist files.",
+        "upstreamConsumer": "plan.md and implement.md read the resulting files; implement.md asks a human when markers are unchecked (implement.md:L79-L84).",
+        "upstreamVerifier": "None enforced; clarify.md:L200-L206 lists validation steps for the agent to perform on itself.",
+        "cvfProducer": "IntentSpecReview.tsx user input through updateReviewDecision (intent-spec-review.ts:L99-L116).",
+        "cvfConsumer": "buildReviewedDraftPacket output and the saved candidate (intent-spec-confirmation.ts:L27-L51).",
+        "cvfVerifier": "prepareIntentSpecAcceptance exact reconstruction (intent-spec-acceptance.ts:L58-L101)."
+      },
+      "inputsOutputsEffects": {
+        "inputs": "spec file, optional constitution file, user answers, extension hook configuration",
+        "outputs": "modified spec file, modified requirements checklist, chat report",
+        "effects": "file overwrite, hook command emission and invocation, feature directory resolution",
+        "failureOrDeferBehavior": "Stops after five questions and reports Deferred or Outstanding (clarify.md:L237, L282); aborts when the script JSON cannot be parsed (clarify.md:L68)."
+      },
+      "routes": {
+        "NATIVE": {
+          "disposition": "SELECT",
+          "description": "Extend the existing review state with a bounded, user-declared open-item ledger nested under each of the six decisions, with stable ids, status, resolution or delegation boundary, per-item source snapshot, and a gated appendix section.",
+          "evidenceFor": "T1C Findings and Minimum Next Delta already name this owner route; intent-spec-review.ts has the revision, snapshot and stale machinery to reuse (L81-L97).",
+          "evidenceAgainst": "Requires a new versioned candidate schema because acceptance checks exact key sets (intent-spec-acceptance.ts:L28 and L34).",
+          "independentOfOtherRoutes": true
+        },
+        "PATTERN": {
+          "disposition": "ADAPT_VOCABULARY_ONLY",
+          "description": "Reuse the ideas of an unknown marker, a Deferred or Outstanding status, a recommendation with a stated stake, and a reviewer-owned quality marker that is not implementation completion. Wording is CVF-authored; nothing is copied.",
+          "evidenceFor": "specify.md:L124-L129, clarify.md:L282, checklist.md:L34-L35, implement.md:L57-L59.",
+          "evidenceAgainst": "Upstream resolution overwrites earlier text (clarify.md:L195), caps unknowns at three (specify.md:L128) and five questions (clarify.md:L129), none of which satisfies provenance retention or a no-quota claim boundary.",
+          "independentOfOtherRoutes": true
+        },
+        "RUNTIME": {
+          "disposition": "REJECT_FOR_THIS_SLICE",
+          "description": "Invoke clarify or checklist commands or their scripts from CVF.",
+          "evidenceFor": "None identified for the consumer.",
+          "evidenceAgainst": "Needs a .specify layout, feature.json writes and agent file edits (common.ps1:L115-L159, clarify.md:L196); no callable stable API (stdout JSON only); command text is not an enforcement proof; hook blocks demand execution (clarify.md:L53); a runtime would also overwrite the user brief the consumer must preserve.",
+          "independentOfOtherRoutes": true
+        }
+      },
+      "unknownsKeptExplicit": [
+        "Whether non-coder users find per-decision open points easier than the inline prose they use now; no human UX evidence exists.",
+        "Whether a cap of 50 items and 2000 characters per item suits real jobs; chosen as a fail-closed safety bound, not as a quota."
+      ]
+    },
+    {
+      "capabilityId": "CAP-2",
+      "name": "Design and plan structure (plan family)",
+      "upstreamSources": ["templates/commands/plan.md", "templates/plan-template.md", "scripts/powershell/setup-plan.ps1"],
+      "producerConsumerVerifierMap": {
+        "upstreamProducer": "Agent following plan.md after setup-plan.ps1 copies the template.",
+        "upstreamConsumer": "tasks.md reads plan.md as required input (tasks.md:L66).",
+        "upstreamVerifier": "A constitution gate described in prose (plan.md:L68-L69); error on unresolved clarifications is an instruction (plan.md:L164).",
+        "cvfProducer": "SpecExport.tsx generateSpec with empty design and plan template text addressed to the receiver (T1C completion L39).",
+        "cvfConsumer": "External builder reading the exported packet.",
+        "cvfVerifier": "None for design or plan."
+      },
+      "inputsOutputsEffects": {
+        "inputs": "feature specification, constitution, plan template",
+        "outputs": "plan.md, research.md, data-model.md, contracts, quickstart.md",
+        "effects": "creates a directory and files; may resolve presets through Python subprocess",
+        "failureOrDeferBehavior": "Errors on gate failures or unresolved clarifications (plan.md:L164); script exits 1 when feature paths cannot be resolved (setup-plan.ps1:L33-L36)."
+      },
+      "routes": {
+        "NATIVE": {
+          "disposition": "DEFER",
+          "description": "A builder-owned plan artifact in the existing exporter is a later design slice; no input is ready because open-item ids and effective rules are not yet structured.",
+          "evidenceFor": "T1C names design and plan as remaining gaps.",
+          "evidenceAgainst": "Unresolved content has no machine-readable form yet, so a plan could not honestly cite it.",
+          "independentOfOtherRoutes": true
+        },
+        "PATTERN": {
+          "disposition": "DEFER_HIGH_CANDIDATE",
+          "description": "Phase 0 research and Phase 1 data-model, contracts and quickstart as artifact vocabulary; Technical Context fields must be builder-owned for a non-coder consumer.",
+          "evidenceFor": "plan.md:L114-L159, plan-template.md:L21-L37.",
+          "evidenceAgainst": "Technical Context asks for language, dependencies and storage (plan-template.md:L21-L25), which the consumer tells the non-coder not to choose.",
+          "independentOfOtherRoutes": true
+        },
+        "RUNTIME": {
+          "disposition": "REJECT_FOR_THIS_SLICE",
+          "description": "Run setup-plan.ps1 or the plan command.",
+          "evidenceFor": "None for the consumer.",
+          "evidenceAgainst": "File-writing setup script (setup-plan.ps1:L39, L52) and agent-driven plan generation without enforcement.",
+          "independentOfOtherRoutes": true
+        }
+      },
+      "unknownsKeptExplicit": ["Whether a later plan artifact should live in the exporter or in a new governed owner; not decided here."]
+    },
+    {
+      "capabilityId": "CAP-3",
+      "name": "Tasks and dependencies (tasks family)",
+      "upstreamSources": ["templates/commands/tasks.md", "templates/tasks-template.md", "scripts/powershell/setup-tasks.ps1"],
+      "producerConsumerVerifierMap": {
+        "upstreamProducer": "Agent following tasks.md.",
+        "upstreamConsumer": "analyze.md and implement.md read tasks.md (analyze.md:L94-L100, implement.md:L91).",
+        "upstreamVerifier": "A completion report that confirms format (tasks.md:L137); no enforcement.",
+        "cvfProducer": "None; T1C records tasks and dependencies as absent.",
+        "cvfConsumer": "None.",
+        "cvfVerifier": "None."
+      },
+      "inputsOutputsEffects": {
+        "inputs": "plan.md and spec.md, optional design documents",
+        "outputs": "tasks.md with phases, ids, parallel markers and story labels",
+        "effects": "file creation; later execution marks tasks done in place (implement.md:L169)",
+        "failureOrDeferBehavior": "Script exits 1 without plan.md or spec.md (setup-tasks.ps1:L35-L47)."
+      },
+      "routes": {
+        "NATIVE": {
+          "disposition": "DEFER",
+          "description": "No native producer or input exists; defer until plan artifact exists.",
+          "evidenceFor": "T1C gap list.",
+          "evidenceAgainst": "No upstream artifact to derive tasks from.",
+          "independentOfOtherRoutes": true
+        },
+        "PATTERN": {
+          "disposition": "DEFER_HIGH_CANDIDATE",
+          "description": "The line grammar and phase and dependency rules are regular enough for a later deterministic format check, with a requirement of tracing each task to an open-item id.",
+          "evidenceFor": "tasks.md:L149-L179, tasks-template.md:L163-L196.",
+          "evidenceAgainst": "Format validity does not prove coverage or correct dependencies.",
+          "independentOfOtherRoutes": true
+        },
+        "RUNTIME": {
+          "disposition": "REJECT_FOR_THIS_SLICE",
+          "description": "Run setup-tasks.ps1 or the tasks command.",
+          "evidenceFor": "None for the consumer.",
+          "evidenceAgainst": "Repository-layout precondition (setup-tasks.ps1:L35-L47) and unenforced agent output.",
+          "independentOfOtherRoutes": true
+        }
+      },
+      "unknownsKeptExplicit": ["Whether tasks belong in this product at all or only in the builder's workspace."]
+    },
+    {
+      "capabilityId": "CAP-4",
+      "name": "Cross-artifact consistency (analyze family)",
+      "upstreamSources": ["templates/commands/analyze.md"],
+      "producerConsumerVerifierMap": {
+        "upstreamProducer": "Agent following analyze.md; read-only (analyze.md:L58).",
+        "upstreamConsumer": "A human reading the report; remediation only after approval (analyze.md:L200-L202).",
+        "upstreamVerifier": "None enforced; determinism requested at analyze.md:L243.",
+        "cvfProducer": "evaluateSpecGate is presence-only per T1C completion L39.",
+        "cvfConsumer": "SpecExport.tsx gate label.",
+        "cvfVerifier": "None for consistency."
+      },
+      "inputsOutputsEffects": {
+        "inputs": "spec.md, plan.md, tasks.md, constitution",
+        "outputs": "markdown report in chat with findings table and metrics",
+        "effects": "none beyond reading; hook emission before and after",
+        "failureOrDeferBehavior": "Aborts when a required file is missing (analyze.md:L72)."
+      },
+      "routes": {
+        "NATIVE": {
+          "disposition": "DEFER",
+          "description": "A native consistency check needs structured artifacts first.",
+          "evidenceFor": "T1C names the consistency gap.",
+          "evidenceAgainst": "No tasks or plan input yet.",
+          "independentOfOtherRoutes": true
+        },
+        "PATTERN": {
+          "disposition": "DEFER",
+          "description": "Detection categories A to F and the severity heuristic as vocabulary for a later review lane.",
+          "evidenceFor": "analyze.md:L115-L160.",
+          "evidenceAgainst": "Agent judgment, not an oracle; a conflict flagged by an agent is not a verified conflict.",
+          "independentOfOtherRoutes": true
+        },
+        "RUNTIME": {
+          "disposition": "REJECT_FOR_THIS_SLICE",
+          "description": "Invoke the analyze command.",
+          "evidenceFor": "None for the consumer.",
+          "evidenceAgainst": "Requires tasks.md; nothing enforces determinism or completeness; hook execution blocks.",
+          "independentOfOtherRoutes": true
+        }
+      },
+      "unknownsKeptExplicit": ["Whether any deterministic consistency check can be defined for non-coder briefs without model inference."]
+    }
+  ],
+  "compatibilityFindings": [
+    {
+      "findingId": "CF-1",
+      "statement": "Any new key under the review object or a decision object makes prepareIntentSpecAcceptance reject the file.",
+      "locators": ["intent-spec-acceptance.ts:L15-L19", "intent-spec-acceptance.ts:L28", "intent-spec-acceptance.ts:L34"],
+      "consequence": "A producer that adds a field without changing the accepted schema creates candidates that cannot be saved; the check must not be relaxed, so a versioned schema is required."
+    },
+    {
+      "findingId": "CF-2",
+      "statement": "The candidate embeds the full review state verbatim and also embeds the draft built from it.",
+      "locators": ["intent-spec-confirmation.ts:L41", "intent-spec-confirmation.ts:L42"],
+      "consequence": "Open items must be inside the embedded state or the draft cannot be reconstructed from the file."
+    },
+    {
+      "findingId": "CF-3",
+      "statement": "Acceptance rebuilds the draft with the current buildReviewedDraftPacket and compares it byte for byte.",
+      "locators": ["intent-spec-acceptance.ts:L88"],
+      "consequence": "Any change to the builder output for a state without open items would reject previously valid legacy candidates on a retry or re-save. Legacy states must serialize and render byte-identically."
+    },
+    {
+      "findingId": "CF-4",
+      "statement": "The scope and schema strings are exact literals and the payload has exactly seven keys.",
+      "locators": ["intent-spec-acceptance.ts:L76", "intent-spec-acceptance.ts:L78-L79"],
+      "consequence": "A second schema string needs an explicit dual validator; scope must stay SPEC_REVIEW_ONLY_NO_BUILD_AUTHORITY in both."
+    },
+    {
+      "findingId": "CF-5",
+      "statement": "Confirmation refuses unless the revision is acknowledged and no decision is pending.",
+      "locators": ["intent-spec-confirmation.ts:L32-L34", "intent-spec-review.ts:L118-L127"],
+      "consequence": "Open items must be orthogonal to decision disposition, with only a stale item blocking, or draft confirmation would stop being usable with explicit unknowns."
+    },
+    {
+      "findingId": "CF-6",
+      "statement": "Reopen returns the stored draft and metadata and does not rerun the review validator; the client accepts the same shape.",
+      "locators": ["intent-spec-review-api.ts:L118-L127", "intent-spec-review-client.ts:L44-L67"],
+      "consequence": "Stored records of either schema reopen without change to the API, client, store or actor owners; a v2 draft carries the open items as text."
+    },
+    {
+      "findingId": "CF-7",
+      "statement": "The portable readiness builder has no access to review state and is called inside generateSpec before the review hook is created from its output.",
+      "locators": ["spec-export-portable-handoff.ts:L7-L12", "SpecExport.tsx:L775", "SpecExport.tsx:L950-L951"],
+      "consequence": "T1C suggestion to add the unresolved summary inside the readiness builder is circular. The summary belongs in the review-owned header and appendix; the readiness section is left unchanged and the appendix states which statement takes precedence."
+    },
+    {
+      "findingId": "CF-8",
+      "statement": "synchronizeIntentSpecReview deliberately invalidates every answered decision for an unmapped field change.",
+      "locators": ["intent-spec-review.ts:L85-L96"],
+      "consequence": "Retained as designed (T1C accepted it). Item staleness uses each item's own cited fields so the conservative behavior is not widened."
+    }
+  ],
+  "noGoOrBlocker": {
+    "blockers": [],
+    "disposition": "No source or authority gap prevents an implementation-ready contract. Items for Local choice are listed in the contract with the selected default."
+  },
+  "claimBoundary": "Selected-file source assessment and contract inputs only. No upstream execution, runtime, installation, provider call, product edit, test run, UX evidence, source fit proof, build-ready certificate or repository-wide absorption claim. Excluded upstream paths are deferred, not no-value."
+}

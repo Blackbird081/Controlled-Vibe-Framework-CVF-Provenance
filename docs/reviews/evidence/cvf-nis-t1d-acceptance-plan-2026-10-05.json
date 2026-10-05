@@ -1,0 +1,271 @@
+{
+  "schemaVersion": "cvf.nisT1dAcceptancePlan.v1",
+  "batchId": "CVF-NIS-T1D",
+  "executionState": "NOT_EXECUTED",
+  "plannedOnly": true,
+  "executionBaseHead": "a27c13fa7a30fbc76b755aac539ec65e6dcae49d",
+  "statement": "Every case below is a plan. No test, replay, store call, browser run or provider call was made by the worker. A planned case becoming a passing run is evidence only after a later authorized implementation and Local review.",
+  "oracleAuthorship": "Declared by the worker from the contract and the pinned sources before any implementation exists. The independent Local probe must author separate assertions; this plan is input, not its oracle.",
+  "contractRef": "docs/reviews/CVF_NIS_T1D_CONSUMER_IMPLEMENTATION_CONTRACT_2026-10-05.md",
+  "assessmentRef": "docs/reviews/evidence/cvf-nis-t1d-capability-assessment-2026-10-05.json",
+  "inputOrder": "Each case lists inputs before expected assertions. Unknowns that a user would supply later are not demanded at an earlier stage.",
+  "proposedEnvelope": {
+    "root": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/",
+    "authorized": false,
+    "writePaths": [
+      "lib/intent-spec-open-items.ts",
+      "lib/intent-spec-review.ts",
+      "lib/intent-spec-confirmation.ts",
+      "lib/intent-spec-acceptance.ts",
+      "components/IntentSpecReview.tsx",
+      "lib/intent-spec-open-items.test.ts",
+      "lib/intent-spec-legacy-golden.test.ts",
+      "lib/intent-spec-review.test.ts",
+      "lib/intent-spec-confirmation.test.ts",
+      "lib/intent-spec-acceptance.test.ts",
+      "components/IntentSpecReview.test.tsx",
+      "lib/intent-spec-review-api.test.ts (optional, one added case)"
+    ],
+    "mustStayByteIdentical": [
+      "lib/intent-spec-review-api.ts",
+      "lib/intent-spec-review-client.ts",
+      "lib/intent-spec-file-store.ts",
+      "lib/intent-spec-actor.ts",
+      "lib/intent-spec-private-profile.ts",
+      "components/SpecExport.tsx",
+      "lib/spec-export-portable-handoff.ts",
+      "app/api/intent-spec/reviews/route.ts",
+      "app/api/intent-spec/reviews/[id]/route.ts"
+    ],
+    "rollbackBoundary": "Revert the candidate commit set limited to writePaths. No store, auth, ACL, lock or data change exists to undo; stored v2 records remain readable by reopen and are refused by reverted prepare (fail closed)."
+  },
+  "frozenLegacyControls": {
+    "captureRule": "Capture all digests from the base commit a27c13fa7 before any edit, by calling the unmodified producers, and commit them as constants in the golden test. They are null here because the worker may not run code.",
+    "captureStatus": "TO_CAPTURE_AT_BASE_BY_IMPLEMENTER; Local probe captures its own independently",
+    "fixedClock": "createdAt 2026-10-05T00:00:00.000Z (1791158400000 ms)",
+    "controls": [
+      {
+        "controlId": "LG-1",
+        "description": "Acceptance-test fixture state: values {coreFeatures: Synthetic reporting}, packetSource Exact source packet CRLF end, every decision answered Decision for <id> through updateReviewDecision, acknowledged; language en; reviewer Self-declared fixture",
+        "digestsToCapture": ["buildReviewedDraftPacket sha256", "createSpecConfirmationCandidate fileContent sha256", "fileSha256", "reviewBindingKey sha256", "acceptance record id"],
+        "digests": null
+      },
+      {
+        "controlId": "LG-2",
+        "description": "Same state as LG-1 with language vi",
+        "digestsToCapture": ["draft sha256", "fileSha256", "reviewBindingKey sha256"],
+        "digests": null
+      },
+      {
+        "controlId": "LG-3",
+        "description": "Second job FX-B values with every decision answered, no items, acknowledged, language en",
+        "digestsToCapture": ["draft sha256", "fileSha256", "reviewBindingKey sha256"],
+        "digests": null
+      },
+      {
+        "controlId": "LG-4",
+        "description": "The exact LG-1 saved file bytes stored as a literal for prepare and reopen controls",
+        "digestsToCapture": ["file bytes literal", "record id after prepare"],
+        "digests": null
+      }
+    ]
+  },
+  "fixtures": {
+    "FX-A": {
+      "name": "Periodic maintenance report compiler (the T1C synthetic job)",
+      "synthetic": "Invented equipment lines; no people data; no real records.",
+      "valuesSource": "docs/reviews/evidence/cvf-nis-t1c-scenario-2026-10-05.json valuesBaseline and valuesRevised",
+      "valuesSourceSha256": "25634006d5e24b97536ce9a82d83a94edc9248a3dda797330ecc56a3b5b154e1",
+      "language": "en",
+      "stages": [
+        {
+          "stage": "S0",
+          "inputs": {
+            "values": "valuesBaseline",
+            "decisions": "workflow and access answered with the T1C P0 text; boundaries answered with the T1C conflict text",
+            "items": [
+              {"decision": "boundaries", "kind": "CONFLICT", "status": "OPEN", "sourceFields": ["constraints", "mustPreserve"], "text": "mustPreserve says submitted entries are immutable once submitted, but constraints says team leads may correct an entry until Friday 17:00."}
+            ]
+          },
+          "expected": {
+            "openIds": ["C1"],
+            "counts": {"open": 1, "delegated": 0, "resolved": 0, "stale": 0},
+            "unknownIdsRequired": [],
+            "pendingDecisionsExcludeItems": true,
+            "candidateCreatable": false,
+            "reason": "data, exceptions and acceptance decisions are not yet answered; items neither block nor unblock"
+          }
+        },
+        {
+          "stage": "S1",
+          "inputs": {
+            "values": "valuesBaseline",
+            "decisions": "data, exceptions, acceptance answered with the T1C P1 text, prose markers left as the user typed them; boundaries answered with the T1C resolution text",
+            "items": [
+              {"decision": "data", "kind": "UNKNOWN", "status": "OPEN", "sourceFields": ["dataNeeds"], "text": "How long raw entries are kept is not decided."},
+              {"decision": "exceptions", "kind": "UNKNOWN", "status": "OPEN", "sourceFields": ["constraints"], "text": "The deadline timezone is not decided."},
+              {"decision": "exceptions", "kind": "UNKNOWN", "status": "OPEN", "sourceFields": [], "text": "Behavior when the deadline falls on a public holiday is not decided."},
+              {"decision": "acceptance", "kind": "UNKNOWN", "status": "OPEN", "sourceFields": [], "text": "The export file format is not decided."},
+              {"decision": "boundaries", "kind": "CONFLICT", "status": "RESOLVED", "sourceFields": ["constraints", "mustPreserve"], "text": "same statement as S0", "resolution": "Corrections before Friday 17:00 create a new entry version; after the deadline entries are immutable."}
+            ]
+          },
+          "expected": {
+            "idsByStatus": {"OPEN": ["U1", "U2", "U3", "U4"], "RESOLVED": ["C1"], "DELEGATED": []},
+            "counts": {"open": 4, "delegated": 0, "resolved": 1, "stale": 0},
+            "fourthUnknown": "U4 present and listed; nothing truncated at three, four or five",
+            "pendingDecisions": 0,
+            "candidateCreatable": false,
+            "reason": "not yet acknowledged"
+          }
+        },
+        {
+          "stage": "S2",
+          "inputs": {"action": "acknowledge the S1 revision"},
+          "expected": {
+            "canContinue": true,
+            "candidateCreatable": true,
+            "candidateSchema": "cvf.intentSpecReviewCandidate.v2",
+            "counts": {"open": 4, "delegated": 0, "resolved": 1, "stale": 0},
+            "viewedConfirmationMeaning": "viewed this revision only"
+          }
+        },
+        {
+          "stage": "S2B",
+          "inputs": {"action": "synchronize values to valuesRevised (access rule change in targetUsers)"},
+          "expected": {
+            "acknowledgement": null,
+            "decisionsFlaggedByExistingRule": ["access", "data"],
+            "staleItems": [],
+            "reason": "no item cites targetUsers",
+            "canContinue": false
+          }
+        },
+        {
+          "stage": "S2C",
+          "inputs": {"action": "after acknowledging the baseline, change the constraints field text (deadline wording)"},
+          "expected": {
+            "staleItems": ["C1", "U2"],
+            "freshItems": ["U1", "U3", "U4"],
+            "acknowledgement": null,
+            "canContinue": false,
+            "candidateThrows": "CURRENT_REVIEW_REQUIRED"
+          }
+        },
+        {
+          "stage": "S3",
+          "inputs": {"action": "reconfirm flagged decisions and items, acknowledge, create candidate, prepare, commit through the synthetic port, reopen through the read handler"},
+          "expected": {
+            "candidateSchema": "cvf.intentSpecReviewCandidate.v2",
+            "draftContains": ["U1", "U2", "U3", "U4", "C1", "Effective decision (user-entered): Corrections before Friday 17:00 create a new entry version; after the deadline entries are immutable.", "Build readiness: NOT_ASSESSED"],
+            "sourcePacketRetained": "both original constraint lines present unchanged in the source packet part",
+            "reopenReturnsDraft": true
+          }
+        }
+      ]
+    },
+    "FX-B": {
+      "name": "Workshop tool-lending log (a different job, built to falsify generalization)",
+      "synthetic": "Invented tools and roles; first names only as placeholders; no real data.",
+      "language": "en and vi",
+      "values": {
+        "appName": "Tool Lending Log",
+        "appType": "Web App",
+        "problem": "Volunteers lend shared workshop tools and later forget who has which tool.",
+        "targetUsers": "Volunteers (record loans and returns); workshop lead (view all loans)",
+        "coreFeatures": "1. Record a loan\n2. Record a return\n3. List overdue loans",
+        "successCriteria": "The workshop lead can list every unreturned tool at any time.",
+        "mustPreserve": "Existing tool tag codes stay unchanged.",
+        "platforms": "Phone browser",
+        "dataNeeds": "Tool tag, borrower first name, date lent.",
+        "lookAndFeel": "Large buttons",
+        "outOfScope": "No user accounts or logins. No fines or payments.",
+        "constraints": "A loan lasts at most 14 days."
+      },
+      "inputs": {
+        "decisions": "all six answered with short synthetic prose; no prose markers",
+        "items": [
+          {"decision": "data", "kind": "UNKNOWN", "status": "DELEGATED", "sourceFields": ["dataNeeds"], "text": "How dates are displayed is not decided.", "delegation": "Any common date format is acceptable; do not convert time zones."},
+          {"decision": "exceptions", "kind": "UNKNOWN", "status": "OPEN", "sourceFields": [], "text": "What happens when a tool is lent to someone who is not a volunteer is not decided."},
+          {"decision": "access", "kind": "CONFLICT", "status": "OPEN", "sourceFields": ["outOfScope", "targetUsers"], "text": "The lead must view all loans, which implies identifying people, but outOfScope forbids user accounts and logins."}
+        ]
+      },
+      "expected": {
+        "ids": {"UNKNOWN": ["U1", "U2"], "CONFLICT": ["C1"]},
+        "idsByStatus": {"OPEN": ["U2", "C1"], "DELEGATED": ["U1"], "RESOLVED": []},
+        "counts": {"open": 2, "delegated": 1, "resolved": 0, "stale": 0},
+        "noFourthUnknown": "no case demands a fourth item or a minimum count",
+        "crossQuestionConflict": "C1 is held under access and cites outOfScope, which belongs to the boundaries mapping",
+        "afterChangingOutOfScope": {"staleItems": ["C1"], "freshItems": ["U1", "U2"]},
+        "afterChangingLookAndFeel": {"staleItems": [], "decisionsFlaggedByExistingRule": "every answered decision, unchanged behavior"}
+      }
+    }
+  },
+  "cases": [
+    {"caseId": "AC-L1", "class": "LEGACY_REGRESSION", "ownerTest": "lib/intent-spec-legacy-golden.test.ts", "fixture": "LG-1, LG-2", "inputs": "the LG-1 and LG-2 states with no items", "expected": "buildReviewedDraftPacket sha256 equals the digest captured at the base commit for en and vi; no openItems key and no Build readiness line appear", "status": "NOT_EXECUTED"},
+    {"caseId": "AC-L2", "class": "LEGACY_REGRESSION", "ownerTest": "lib/intent-spec-legacy-golden.test.ts", "fixture": "LG-1, LG-2, LG-3", "inputs": "fixed clock; createSpecConfirmationCandidate on each state", "expected": "schema is cvf.intentSpecReviewCandidate.v1; fileContent sha256, fileSha256 and reviewBindingKey sha256 equal the base digests", "status": "NOT_EXECUTED"},
+    {"caseId": "AC-L3", "class": "LEGACY_REGRESSION", "ownerTest": "lib/intent-spec-acceptance.test.ts", "fixture": "LG-4", "inputs": "the stored LG-1 file bytes literal and its sha256", "expected": "prepareIntentSpecAcceptance accepts; record id equals the base id; commit through the memory port reports readback verified", "status": "NOT_EXECUTED"},
+    {"caseId": "AC-L4", "class": "FAIL_CLOSED_CONTROL", "ownerTest": "lib/intent-spec-acceptance.test.ts", "fixture": "LG-4", "inputs": "the LG-1 file with a valid-looking openItems key added to one decision, payload hash and draft recomputed, schema string left v1", "expected": "rejected with INVALID_SPEC_REVIEW_FILE; the v1 exact key sets are unchanged", "status": "NOT_EXECUTED"},
+    {"caseId": "AC-L5", "class": "LEGACY_REGRESSION", "ownerTest": "existing four test files", "fixture": "none", "inputs": "the existing cases of intent-spec-review, confirmation, acceptance and IntentSpecReview tests, bodies unmodified", "expected": "all pass; edits to those files are additions only (diff shows no removed or altered it bodies)", "status": "NOT_EXECUTED"},
+    {"caseId": "AC-L6", "class": "LEGACY_REGRESSION", "ownerTest": "lib/intent-spec-review-api.test.ts", "fixture": "LG-4", "inputs": "a stored v1 record read through handleReadReview", "expected": "response fields identical to the base behavior; no revalidation is introduced", "status": "NOT_EXECUTED"},
+    {"caseId": "AC-L7", "class": "NORMALIZATION", "ownerTest": "lib/intent-spec-open-items.test.ts", "fixture": "LG-1", "inputs": "add one item to the LG-1 state, then remove it", "expected": "state deep-equals the LG-1 state with no openItems key at any depth; candidate bytes equal AC-L2", "status": "NOT_EXECUTED"},
+    {"caseId": "AC-L8", "class": "GENERALIZATION_LEGACY", "ownerTest": "lib/intent-spec-legacy-golden.test.ts", "fixture": "LG-3", "inputs": "FX-B values with every decision answered and no items", "expected": "v1 schema; digests equal the base capture for the second job", "status": "NOT_EXECUTED"},
+    {"caseId": "AC-V1", "class": "POSITIVE", "ownerTest": "lib/intent-spec-confirmation.test.ts", "fixture": "FX-A S2", "inputs": "the acknowledged S2 state with four open and one resolved item", "expected": "schema is v2; payload has exactly seven keys; scope literal unchanged; decisions with items have six keys, others five; payloadSha256 verifies", "status": "NOT_EXECUTED"},
+    {"caseId": "AC-V2", "class": "POSITIVE", "ownerTest": "lib/intent-spec-acceptance.test.ts", "fixture": "FX-A S2", "inputs": "the v2 candidate bytes", "expected": "prepare accepts; candidate revision equals the state revision; commit through the memory port reports readback verified", "status": "NOT_EXECUTED"},
+    {"caseId": "AC-V3", "class": "NEGATIVE_TAMPER", "ownerTest": "lib/intent-spec-acceptance.test.ts", "fixture": "FX-A S2", "inputs": "v2 file with an item text edited, payloadSha256 recomputed, draft left as originally built", "expected": "rejected because the rebuilt draft differs", "status": "NOT_EXECUTED"},
+    {"caseId": "AC-V4", "class": "NEGATIVE_TABLE", "ownerTest": "lib/intent-spec-acceptance.test.ts", "fixture": "FX-A S2", "inputs": "one mutation per row, hashes recomputed: extra item key; missing item key; duplicate id across decisions; ids X1, U0, U100; id prefix disagreeing with kind; invalid kind; invalid status; CONFLICT with one cited field; DELEGATED with empty delegation; RESOLVED with empty resolution; OPEN with non-empty resolution; OPEN with non-empty delegation; sourceValues keys differing from sourceFields; snapshot differing from stored brief text; needsReconfirmation true; more than six or duplicate cited fields; text over 2000 characters; placeholder-only text; 51 items; prototype-pollution field key; openItems key present but empty; openItems not an array", "expected": "every row rejected with INVALID_SPEC_REVIEW_FILE and none accepted", "status": "NOT_EXECUTED"},
+    {"caseId": "AC-V5", "class": "NEGATIVE_CANONICAL", "ownerTest": "lib/intent-spec-acceptance.test.ts", "fixture": "FX-A S2", "inputs": "v2 file with zero items; schema string v3; v2 file with one decision disposition OPEN", "expected": "all rejected; each state has exactly one canonical encoding", "status": "NOT_EXECUTED"},
+    {"caseId": "AC-V6", "class": "NEGATIVE_BUILD_GRANT", "ownerTest": "lib/intent-spec-acceptance.test.ts", "fixture": "FX-A S2", "inputs": "v2 file with an extra payload key buildReady true; v2 file with scope changed to a build-authority string; v2 file whose draft contains a readiness assertion the builder does not produce; each with hashes recomputed", "expected": "all rejected; the built draft contains the line Build readiness: NOT_ASSESSED once and no readiness assertion derived from items", "status": "NOT_EXECUTED"},
+    {"caseId": "AC-V7", "class": "BINDING", "ownerTest": "lib/intent-spec-confirmation.test.ts", "fixture": "FX-A S2", "inputs": "the same decisions with and without items", "expected": "binding keys differ; readback of one candidate is not verified against the other", "status": "NOT_EXECUTED"},
+    {"caseId": "AC-B1", "class": "FOURTH_UNKNOWN", "ownerTest": "lib/intent-spec-review.test.ts", "fixture": "FX-A S1", "inputs": "the S1 inputs with four unknown items and one resolved conflict", "expected": "OPEN ids U1,U2,U3,U4 in creation order; counts open 4, resolved 1, delegated 0, stale 0; all four appear in the draft; no truncation; no sentence claims the list is complete", "status": "NOT_EXECUTED"},
+    {"caseId": "AC-B2", "class": "NOT_DEMANDED_EARLIER", "ownerTest": "lib/intent-spec-review.test.ts", "fixture": "FX-A S0", "inputs": "the S0 state with only the conflict item", "expected": "no warning, pending entry or error for the absence of U1 to U4", "status": "NOT_EXECUTED"},
+    {"caseId": "AC-B3", "class": "CONFIRMATION_ORTHOGONALITY", "ownerTest": "lib/intent-spec-confirmation.test.ts", "fixture": "FX-A S2", "inputs": "acknowledged state with four OPEN items; a copy with one decision disposition set to CONFLICT", "expected": "candidate creatable with OPEN items; creation refused with CURRENT_REVIEW_REQUIRED when a decision disposition is CONFLICT, as before", "status": "NOT_EXECUTED"},
+    {"caseId": "AC-B4", "class": "EFFECTIVE_RULE", "ownerTest": "lib/intent-spec-review.test.ts", "fixture": "FX-A S1", "inputs": "C1 resolved with the T1C resolution text", "expected": "appendix shows the user-entered resolution and both cited source snapshots; the source packet part still contains both original constraint lines byte for byte; the precedence sentence is present", "status": "NOT_EXECUTED"},
+    {"caseId": "AC-B5", "class": "STALE_REVISION", "ownerTest": "lib/intent-spec-review.test.ts", "fixture": "FX-A S2C", "inputs": "acknowledge, then change constraints", "expected": "C1 and U2 need reconfirmation; U1, U3, U4 do not; acknowledgement cleared; canContinue false; candidate creation throws CURRENT_REVIEW_REQUIRED; after reconfirming items and flagged decisions and acknowledging, creation succeeds and the snapshot is refreshed", "status": "NOT_EXECUTED"},
+    {"caseId": "AC-B6", "class": "CONSERVATISM_RETAINED", "ownerTest": "lib/intent-spec-review.test.ts", "fixture": "FX-A S2", "inputs": "acknowledge, then change lookAndFeel", "expected": "every answered decision needs reconfirmation as today; no item is flagged; acknowledgement cleared", "status": "NOT_EXECUTED"},
+    {"caseId": "AC-B7", "class": "ITEMS_ONLY_UPDATE", "ownerTest": "lib/intent-spec-review.test.ts", "fixture": "FX-A S2B", "inputs": "a decision already flagged for reconfirmation receives an items-only change", "expected": "its answer, disposition, reconfirmation flag and source snapshot are unchanged; revision increases by one; acknowledgement cleared", "status": "NOT_EXECUTED"},
+    {"caseId": "AC-B8", "class": "REVISION_BINDING", "ownerTest": "lib/intent-spec-review.test.ts", "fixture": "FX-A S2", "inputs": "add, edit, resolve, delegate and remove an item; and a no-op change", "expected": "each real change bumps the revision and clears acknowledgement; the no-op returns the identical state reference", "status": "NOT_EXECUTED"},
+    {"caseId": "AC-B9", "class": "DELEGATION", "ownerTest": "lib/intent-spec-review.test.ts", "fixture": "FX-B", "inputs": "U1 delegated with a boundary; a copy with an empty boundary", "expected": "delegated count 1 and resolved count 0; draft shows the boundary and the fixed sentence that delegation does not cover privacy, retention, payment, authentication, deployment or scope changes; the empty-boundary copy is refused and the state unchanged; no default value is chosen by the consumer", "status": "NOT_EXECUTED"},
+    {"caseId": "AC-B10", "class": "NO_QUOTA", "ownerTest": "lib/intent-spec-open-items.test.ts", "fixture": "FX-A variant", "inputs": "12 items; then 50 items; then a 51st", "expected": "12 and 50 retained in order with exact counts; the 51st is refused and the state unchanged, never truncating an earlier item", "status": "NOT_EXECUTED"},
+    {"caseId": "AC-B11", "class": "PLACEHOLDER_REFUSAL", "ownerTest": "lib/intent-spec-open-items.test.ts", "fixture": "none", "inputs": "item text of blank, tbd, unknown, ?, n/a and chua biet with Vietnamese diacritics", "expected": "each refused", "status": "NOT_EXECUTED"},
+    {"caseId": "AC-B12", "class": "CROSS_QUESTION_CONFLICT", "ownerTest": "lib/intent-spec-review.test.ts", "fixture": "FX-B", "inputs": "C1 under access citing targetUsers and outOfScope; then change outOfScope", "expected": "C1 accepted; after the change C1 needs reconfirmation although access's own mapped fields did not change; U1 and U2 stay fresh", "status": "NOT_EXECUTED"},
+    {"caseId": "AC-B13", "class": "NO_CITED_FIELD", "ownerTest": "lib/intent-spec-review.test.ts", "fixture": "FX-B", "inputs": "U2 with no cited fields; change several brief fields", "expected": "U2 never needs reconfirmation from a source change; any revision change still clears acknowledgement", "status": "NOT_EXECUTED"},
+    {"caseId": "AC-B14", "class": "FEWER_THAN_FOUR", "ownerTest": "lib/intent-spec-review.test.ts", "fixture": "FX-B", "inputs": "two unknown items and one conflict", "expected": "counts open 2, delegated 1, resolved 0; no message demands more items", "status": "NOT_EXECUTED"},
+    {"caseId": "AC-B15", "class": "FACT_SEPARATION", "ownerTest": "lib/intent-spec-review.test.ts", "fixture": "FX-A S2", "inputs": "acknowledge with items open; change an item status; acknowledge again", "expected": "the viewed line, the decisions-needing-a-decision line, the unresolved-items line and the Build readiness line are separate; acknowledging does not change item counts; changing an item changes counts only through the revision and clears acknowledgement", "status": "NOT_EXECUTED"},
+    {"caseId": "AC-B16", "class": "LOCALIZATION", "ownerTest": "lib/intent-spec-review.test.ts", "fixture": "FX-B vi and en", "inputs": "the FX-B state rendered in vi and in en", "expected": "kind, status, headings and claim sentences are present in both languages with no raw key leak; the Vietnamese copy sits behind the existing text-encoding exception header", "status": "NOT_EXECUTED"},
+    {"caseId": "AC-B17", "class": "REMOVAL", "ownerTest": "lib/intent-spec-review.test.ts", "fixture": "FX-A S1", "inputs": "remove U4", "expected": "U4 disappears from the draft; revision increases; acknowledgement cleared; the residual risk that removal hides an unknown is recorded in the contract", "status": "NOT_EXECUTED"},
+    {"caseId": "AC-B18", "class": "NO_PROSE_INFERENCE", "ownerTest": "lib/intent-spec-review.test.ts", "fixture": "FX-A S1 prose only", "inputs": "the S1 answers whose prose says UNKNOWN U1 to U3, with zero items declared", "expected": "open count 0; no unresolved section; schema v1; draft bytes equal the legacy-shaped encoding of the same state", "status": "NOT_EXECUTED"},
+    {"caseId": "AC-U1", "class": "UI", "ownerTest": "components/IntentSpecReview.test.tsx", "fixture": "FX-A S1", "inputs": "render the review; add an open point through the per-decision control with valid and invalid input", "expected": "a valid item is stored; invalid input shows the reason and stores nothing; controls have accessible names; a fetch spy records zero calls", "status": "NOT_EXECUTED"},
+    {"caseId": "AC-U2", "class": "UI", "ownerTest": "components/IntentSpecReview.test.tsx", "fixture": "FX-A S1", "inputs": "render with open and resolved items", "expected": "the status line shows item counts separately from items needing a decision and from the viewed state", "status": "NOT_EXECUTED"},
+    {"caseId": "AC-U3", "class": "UI", "ownerTest": "components/IntentSpecReview.test.tsx", "fixture": "FX-A S2C", "inputs": "render after a cited field changed; press the reconfirm control", "expected": "a stale notice shows before and none after; the snapshot is refreshed; canContinue follows", "status": "NOT_EXECUTED"},
+    {"caseId": "AC-U4", "class": "UI_HOOK", "ownerTest": "components/IntentSpecReview.test.tsx", "fixture": "FX-A S2, S2C", "inputs": "hook with OPEN or DELEGATED items and acknowledgement; hook with a stale item; hook for another template", "expected": "canContinue true, false, and review null respectively", "status": "NOT_EXECUTED"},
+    {"caseId": "AC-U5", "class": "UI_REGRESSION", "ownerTest": "components/IntentSpecReview.test.tsx", "fixture": "none", "inputs": "the existing six cases", "expected": "unchanged and passing", "status": "NOT_EXECUTED"},
+    {"caseId": "AC-I1", "class": "INTEGRATION", "ownerTest": "lib/intent-spec-review-api.test.ts (optional) or lib/intent-spec-acceptance.test.ts", "fixture": "FX-A S3", "inputs": "v2 candidate through the save handler with a synthetic actor and test store, then the read handler", "expected": "201 with the readback receipt; reopen returns a draft containing U1 to U4, the C1 effective decision and the NOT_ASSESSED line; every legacy field of the response is unchanged", "status": "NOT_EXECUTED"},
+    {"caseId": "AC-I2", "class": "INTEGRATION", "ownerTest": "lib/intent-spec-review-api.test.ts (optional)", "fixture": "LG-1, FX-A S3", "inputs": "one v1 and one v2 save by the same synthetic actor", "expected": "both succeed with different ids and both reopen", "status": "NOT_EXECUTED"},
+    {"caseId": "AC-I3", "class": "INFORMATIONAL_DOWNGRADE", "ownerTest": "lib/intent-spec-legacy-golden.test.ts", "fixture": "FX-A S3", "inputs": "a frozen copy of the base prepare function applied to the v2 bytes", "expected": "rejected, showing an old reader fails closed instead of misreading", "status": "NOT_EXECUTED"},
+    {"caseId": "AC-S1", "class": "STATIC", "ownerTest": "type check, lint, size guard", "fixture": "none", "inputs": "the touched files", "expected": "type check clean; lint at zero warnings; size guard within thresholds; encoding exception header on files with Vietnamese copy", "status": "NOT_EXECUTED"},
+    {"caseId": "AC-S2", "class": "STATIC", "ownerTest": "git diff review by Local", "fixture": "none", "inputs": "name-only diff against the base commit", "expected": "changed paths are a subset of writePaths; every mustStayByteIdentical path has the base blob", "status": "NOT_EXECUTED"},
+    {"caseId": "AC-S3", "class": "STATIC", "ownerTest": "Local source scan", "fixture": "none", "inputs": "changed files and dependency manifests", "expected": "no upstream-distinctive strings (for example NEEDS CLARIFICATION, EXECUTE_COMMAND, speckit) in changed files; no new dependency or lockfile change", "status": "NOT_EXECUTED"}
+  ],
+  "invariants": [
+    {"id": "INV-LEGACY-BYTES", "statement": "A state with no items serializes, renders, hashes and binds exactly as at the base commit."},
+    {"id": "INV-FAIL-CLOSED", "statement": "No existing strict check is relaxed; v1 and v2 each have exact key sets; unknown shapes are rejected."},
+    {"id": "INV-NO-BUILD", "statement": "No output of this change asserts build readiness or an execution grant; the line says NOT_ASSESSED and the scope literal is unchanged."},
+    {"id": "INV-NO-INFERENCE", "statement": "Items come only from user entry; prose is never parsed; no completeness claim is made about the list."},
+    {"id": "INV-NO-QUOTA", "statement": "No minimum or maximum expected count; the cap is a fail-closed safety bound that never truncates."},
+    {"id": "INV-INPUT-BEFORE-EXPECTATION", "statement": "Inputs precede expectations in every case, and later-supplied unknowns are not demanded earlier."},
+    {"id": "INV-OWNERS-UNTOUCHED", "statement": "Store, actor, auth, routes, API, client, exporter and readiness builder stay byte-identical."}
+  ],
+  "independentProbeMapping": {
+    "probeExecutorRole": "LOCAL_REVIEWER_NOT_IMPLEMENTATION_WORKER",
+    "dispositionAtReturn": "PENDING_REVIEWER_EXECUTION",
+    "positiveControl": "AC-B1 together with AC-L3: the contract preserves the named fourth known unknown and the legacy acceptance boundary",
+    "negativeMutationClasses": [
+      {"class": "altered source digest", "method": "recompute raw sha256 of the nine CVF pins and the fourteen selected plus two dependency upstream files and compare with the ledger in the assessment file; a changed digest must fail the comparison", "bindsTo": "assessment cvfSourcePins and upstreamFileLedger"},
+      {"class": "dropped fourth known unknown", "method": "remove U4 from the FX-A S1 expectations or inputs in a scratch copy; the S1 expectation of four open ids and open count 4 must then disagree", "bindsTo": "FX-A S1 and AC-B1"},
+      {"class": "stale revision", "method": "apply the S2C change to a scratch state and assert the acknowledgement is cleared and the candidate is refused", "bindsTo": "AC-B5"},
+      {"class": "invented BUILD grant", "method": "add a readiness assertion or a buildReady key to a scratch candidate and assert rejection", "bindsTo": "AC-V6 and INV-NO-BUILD"}
+    ],
+    "oracleSeparation": "The Local assertions must be written independently of this plan and executed in a separate invocation; plan expectations are inputs to review only."
+  },
+  "claimBoundary": "A plan only. NOT_EXECUTED for every case. No implementation, runtime, provider, store, UI, UX, source fit, build-ready or live-governance claim. The envelope is proposed, not authorized."
+}
