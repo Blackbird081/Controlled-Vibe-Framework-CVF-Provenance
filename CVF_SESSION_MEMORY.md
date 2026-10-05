@@ -3,10 +3,8 @@ Memory class: active-session-front-door
 Status: ACTIVE
 Last compacted: 2026-08-11
 ## Startup Order
-
 Read progressively, stopping once current facts are resolved; the full
 history/state aggregate is a targeted lookup, not a default startup step:
-
 1. `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` (compact current
    facts: current mode, active handoff, next allowed move)
 2. this front door
@@ -15,7 +13,6 @@ history/state aggregate is a targeted lookup, not a default startup step:
 5. `CVF_SESSION/ACTIVE_SESSION_STATE.json` only as a targeted lookup, when a
    current fact above is missing, contradictory, or the task explicitly
    requires historical evidence
-
 Canonical read-budget standard:
 `docs/reference/CVF_ACTIVE_CONTINUITY_READ_BUDGET_STANDARD_2026-08-10.md`.
 Machine guard: `governance/compat/check_active_session_state.py`.
@@ -118,3 +115,6 @@ External absorption preparation closed at `b4fb661bb`, path correction `100d6bd8
 
 ## Claim Boundary
 This compact current-only pointer carries no closed-tranche narrative; historical evidence lives in the dated archives listed above.
+
+## Dispatch Eligibility Learning Discovery
+Read `docs/reviews/learnings/README.md` before fresh-context/blind-review dispatch. T1H blocked1 retained; generic pre-transfer rule added at 8c0904c53; machine binding candidate only. R1 authority and parked lanes unchanged.

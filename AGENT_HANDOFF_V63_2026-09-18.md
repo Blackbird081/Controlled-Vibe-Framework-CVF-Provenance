@@ -1,6 +1,6 @@
 # CVF Agent Handoff V63 - ACEL Applied-Knowledge Owner Enrichment
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: ff3aa0e2f3c9e3b861ec54be1f9cdd57d852aee1; batch CVF-NIS-T1H material ff3aa0e2f3c9e3b861ec54be1f9cdd57d852aee1; dedicated continuity.
+Current HEAD recorded for this handoff: 8c0904c53949c5b8bee5d193adb1c19439db653e; learning material; dedicated continuity.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -11,6 +11,7 @@ Carry CVF-NCR v2.8 and closed AKOE/G1-G7. Applied-knowledge details remain in th
 Role: Local orchestrator/reviewer; phase: NIS-T1H context redispatch; decision owner: Local; CCMA/S05/P11 parked.
 ## Startup Acknowledgment
 Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`; handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=T1H fresh-context redispatch2; role=Local orchestrator; phase=redispatch; decision owner=Local; parked lanes retained.
+Learning discovery: `docs/reviews/learnings/README.md` before blind/fresh-context dispatch; rule added, machine candidate deferred.
 ## Current Mode
 `cvf_ncr_p10_closed_p11_parked`. CVF-NCR-R1-S11-R1 is closed at `bd15b2600` after material `1a538d10d`. P10 is `ACTIVE_PRODUCTION_RUNTIME`; P11 stays parked. Latest closed learning-history wave: `LHW24`.
 ## Active Boundary
@@ -187,7 +188,6 @@ PROGRAM_ID=CVF-NIS; NEXT_ACTION_CLASS=EXECUTE_BOUNDED_WORK_ORDER; BATCH_ID=CVF-N
 - provider/live work, runtime activation, public sync, deployment or production;
 - every post-AKOE successor without a fresh operator decision;
 - promotion or restoration of the thirteen rejected archived paths without fresh Local review.
-
 ## Core Guard Self-Protection Authorization
 Authorized guard-maintenance scope: continuity-only binding of independently reviewed Q001 source repair `bc6e8b010` and the operator checkpoint. Protected paths: `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/cvfNcrQ001HtmlIngressRepair20260928.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`. Operator authorization: the operator approved Q001 repair and explicitly allowed single-agent/multi-role execution with one independent reviewer subagent. Rollback boundary: revert only this continuity projection; preserve Q001 material `bc6e8b010`, P10 closure `bd15b2600` and unrelated history.
 Authorized guard-maintenance scope: continuity-only binding of operator-selected Docker Q001 receipt proof `87a3da943`. Protected paths: `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/cvfNcrQ001DockerReceipt20260928.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`. Operator authorization: the operator instructed Local to run the Docker receipt proof with the available Docker Desktop. Rollback boundary: revert only this continuity projection; preserve material `87a3da943`, prior Q001 repair `bc6e8b010`, P10 closure `bd15b2600` and unrelated history.
