@@ -11,6 +11,9 @@ import { evaluateEnforcement } from '@/lib/enforcement';
 import { autoDetectGovernance, buildGovernanceSpecBlock } from '@/lib/governance-context';
 
 // Mocks
+vi.mock('next-auth/react', () => ({
+    useSession: () => ({ status: 'authenticated', data: { user: { userId: 'user_a', orgId: 'org_a', teamId: 'team_a' }, expires: '2999-01-01T00:00:00.000Z' } }),
+}));
 vi.mock('@/lib/i18n', () => ({
     useLanguage: () => ({ language: 'en', t: (key: string) => key }),
 }));

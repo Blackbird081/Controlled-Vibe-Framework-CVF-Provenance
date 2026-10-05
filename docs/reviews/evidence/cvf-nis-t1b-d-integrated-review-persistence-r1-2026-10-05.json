@@ -1,0 +1,124 @@
+{
+  "schemaVersion": "cvf.nisT1bDIntegratedEvidence.v1",
+  "batchId": "CVF-NIS-T1B-D",
+  "round": "R1",
+  "executionBaseHead": "2c28581f1f44770c9aebd8ffb707f8b273fa95cf",
+  "workerWorkspace": "D:/UNG DUNG AI/TOOL AI 2026/Controlled-Vibe-Framework-CVF-NIS-T1B-D-R1",
+  "preImplementation": {
+    "declaredDirtyPreimage": "17 pinned R0 source files; 40 current pins matched; not a clean start",
+    "firstRun": {
+      "receipt": ".cvf/runtime/nis-t1b-d-worker-20261005/pre-implementation-r1/pre-implementation.json",
+      "exit": 1,
+      "disposition": "FAILED_ENVELOPE_DIAGNOSTIC_RETAINED_NOT_OVERWRITTEN"
+    },
+    "localEnvelopeRepair": ".cvf/runtime/nis-t1b-d-local-envelope-repair-20261005/WORKER_RESUME.txt",
+    "boundRun": {
+      "receipt": ".cvf/runtime/nis-t1b-d-worker-20261005/pre-implementation-r2/pre-implementation.json",
+      "exit": 0,
+      "sha256": "39a169bda00627fc41647ba0be36f39efac64d140e6dd94af96a2b62933a0bb6",
+      "log": ".cvf/runtime/nis-t1b-d-worker-20261005/pre-implementation-r2.log",
+      "logSha256": "826f5cacb2165e3fd90feda95dfc843d614ada630d8069307d0d923ac2e80c80"
+    }
+  },
+  "findings": {
+    "F1": {
+      "status": "REPAIRED",
+      "change": "hardenPrivate restores and verifies the measured pre-state when the mutation may have started but the rollback handle was not returned; PROFILE_HARDENING_FAILED or PROFILE_RESTORATION_FAILED is reported truthfully",
+      "regressions": [
+        "intent-spec-file-store-profile.test.ts: EXTRA_ALLOW/DENY/INHERITED namespace restored after real hardening fails before handle return",
+        "invocation-created namespace removed on ambiguous hardening failure",
+        "PROFILE_RESTORATION_FAILED reported truthfully, namespace stays private, subsequent peer publishes"
+      ],
+      "proofBoundary": "production hardenPrivate and FileIntentSpecAcceptanceStore on real NTFS state; test-only instrumentation hooks, never supplied by routes"
+    },
+    "F2": {
+      "status": "REPAIRED",
+      "change": "IntentSpecConfirmation reads the existing Auth.js useSession read-only; identity, loading, logout and expiry changes start a new epoch that drops late receipts, clears displayed results and saved ID, and pauses save and reopen",
+      "regressions": [
+        "A->B and A->B->A late save receipt dropped",
+        "A->B->A late reopen record dropped",
+        "logout and loading late receipt dropped with controls paused",
+        "expired session in flight dropped",
+        "displayed save result and saved ID cleared on session change"
+      ],
+      "proofBoundary": "synthetic useSession mock; no live identity claim; no auth-owner edit"
+    },
+    "F4": {
+      "status": "REPAIRED_IN_BINDING",
+      "change": "binding logSha256 is computed over the raw saved log bytes, not LF-normalized text"
+    },
+    "F3": "LOCAL_OWNED_NOT_WORKER_SCOPE",
+    "B1": "LOCAL_FIXTURE_CAPABILITY_NOT_INVOKED_BY_WORKER_SEE_LIMITATION"
+  },
+  "commands": [
+    {
+      "cmd": "vitest run src/lib/intent-spec src/components/IntentSpec src/components/SpecExport.test.tsx src/components/DynamicForm.test.tsx src/app/api/intent-spec",
+      "exit": 0,
+      "result": "13 files 200 tests passed",
+      "log": ".cvf/runtime/nis-t1b-d-worker-20261005/vitest-r1.log",
+      "logSha256": "f968e4b258ec51c2e0b0a18abee229cdf117c59aff5d54e1ef2e92e57b59cf51"
+    },
+    {
+      "cmd": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+      "exit": 0,
+      "log": ".cvf/runtime/nis-t1b-d-worker-20261005/tsc-r1.log",
+      "logSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "cmd": "eslint --max-warnings=0 on changed Confirmation, SpecExport, Review, private-profile and file-store-profile files",
+      "exit": 0
+    },
+    {
+      "cmd": "powershell -NoProfile -File scripts/nis-t1b-d-transaction-probe.ps1",
+      "exit": 2,
+      "status": "BLOCKED_WITH_REASON",
+      "log": ".cvf/runtime/nis-t1b-d-worker-20261005/probe-r1-run1.log",
+      "logSha256": "d4cac22e3f832598e7fd9bf5b4bc0dc54bed7cc5b450901bf2dcd37c4922b1dd",
+      "evidence": ".cvf/runtime/nis-t1b-d-worker-20261005/probe-evidence-20261005T130752262-a58a43d9.json",
+      "evidenceSha256": "8281616437bb72ae1d3d7a01b92bdef376edd64b22051f424eb454f7c2720cc2",
+      "crosscheck": ".cvf/runtime/nis-t1b-d-worker-20261005/probe-evidence-20261005T130752262-a58a43d9.json.crosscheck.json",
+      "crosscheckSha256": "01ca63411427b26b1067186d1b6c5d4867fd14a01e4657a4e311ab3ae7e642d7",
+      "crosscheckAllMatch": true
+    }
+  ],
+  "transactionFields": {
+    "productionPathPeer": "PASS",
+    "deterministicBarrierProtocol": "PASS",
+    "enteredBeforeReleaseOracle": "PASS",
+    "postAcquireFailureInjection": "PASS",
+    "semanticSecurityTuple": "PASS",
+    "rollbackExactness": "FAIL: EXTRA_ALLOW, DENY and INHERITED passed; WRONG_OWNER unexercised"
+  },
+  "limitation": {
+    "field": "rollbackExactness.adversaries.WRONG_OWNER",
+    "status": "UNEXERCISABLE_ON_ORDINARY_WORKER_TOKEN",
+    "detail": "owner assignment refused with the ordinary token; the pinned elevated helper needs interactive UAC consent that this non-interactive session cannot provide; no mock substituted; Local owns the actual different-owner run on repaired source"
+  },
+  "sourceHashes": {
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecConfirmation.test.tsx": "d3722a1bc1a9657df6aa97036b54d6fe712eb11a2a8275f4c7331d5d8be03155",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecConfirmation.tsx": "d411429c5eb77821d345959fec27e2c5a88cc26fb2f38f4ae7e24ee7b95ff58e",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecReview.test.tsx": "880a867fa349b628790e58e086e21afb5547357f29f1c8cda4912c753934730c",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/SpecExport.test.tsx": "9b9a93a0e535560bbb71442f057579f3d28ec9e6e4c71c06bafe121b6d22955a",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-file-store.ts": "3686affcccf45fc01eac4c9fefdea015de1f28021a0af8c2e13a4b1bf038a0fc",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/scripts/nis-t1b-d-probe-build.mjs": "4a14c03a9c49182447bdf283fa5540df5394f43514009dff3587a07b2d903db3",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/scripts/nis-t1b-d-probe-driver.mjs": "9cbe8be7d4420e0ea5d38d6daf95a918920787e36e8178e53040679ea1bfc33b",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/scripts/nis-t1b-d-probe-entry.mjs": "6f401d67765d86a81d1bbcc378c583cc62930266dc25bed1384c86f313c3bc8c",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/scripts/nis-t1b-d-probe-session-stub.mjs": "9330cab47911a9f00e744c4742ed968326f1cbf73bce4ba2ac14b1f1b45871a4",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/scripts/nis-t1b-d-transaction-probe.ps1": "cff7917e091ce0f16b4e9b9f18f52c3a1e1349ddcec6b8cabbdfde730d7c8c83",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/intent-spec/reviews/[id]/route.ts": "c7e9c3d5b504f5071788a4a1004f544a9e04a79ef75adc53fbb1bf8a72dd2fc5",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/intent-spec/reviews/route.ts": "32d6e97ab57d4d5e05a53daaf2128905e2b99a18af5c02d4e9adad62c5a8107a",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecConfirmation.server.test.tsx": "d331b89c5535c01b08469f11f1caf7c74789dcf2062c8ec109582f930b570c2a",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-file-store-profile.test.ts": "5295b8bfafc0a8a11b36f7d6f09dc6cfaf22f8bea3168b787b3491279973c3d3",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-private-profile.test.ts": "d62702cd5a6ba9b93ec29b1de5db07b29a66fcffc11bed377fcf10b461f32ace",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-private-profile.ts": "151146898c5901cbb0bbdaa35bf81d2e533d39ff97d99a39a0808688effe7fa5",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-review-api.test.ts": "fdcd35d852ad6c241af5bff1d0f79b7df31014a5a41c5915d311b4574a8d1ffc",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-review-api.ts": "8b7eecf6b16bf64aef9e50ed88b70f339c41f6c6949ec99fea1b23c455a1c77d",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-review-client.ts": "a6967c65a142c1d1805fbd98548ce326f462f5eefe1609ff70404c89684a472d",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-security-fixture.ts": "c5dddaecf4af62b349d78dfb1b23155be9a8033dd9fd4c67529734e06d09edcd"
+  },
+  "syntheticRootOwnership": "probe-owned nis-t1b-d-* roots under OS temp with verified-contained cleanup by the probe",
+  "foreignDirtyReconciliation": "no foreign path touched by the worker; two generated aggregates were restored by the Local envelope repair before the bound run",
+  "independentProbe": "PENDING_REVIEWER_EXECUTION",
+  "staged": false,
+  "committed": false
+}

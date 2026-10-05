@@ -1,7 +1,12 @@
 // Text Encoding Exception: Vietnamese user-facing copy and matching localization fixtures.
 /** @vitest-environment jsdom */
-import { afterEach, describe, expect, it } from 'vitest';
+import { afterEach, describe, expect, it, vi } from 'vitest';
 import { cleanup, fireEvent, render, screen, within } from '@testing-library/react';
+const auth = vi.hoisted(() => ({
+    session: { status: 'authenticated', data: { user: { userId: 'user_a', orgId: 'org_a', teamId: 'team_a' }, expires: '2999-01-01T00:00:00.000Z' } } as
+        { status: string; data: { user: { userId: string; orgId: string; teamId: string }; expires: string } | null },
+}));
+vi.mock('next-auth/react', () => ({ useSession: () => auth.session }));
 import { IntentSpecReview, useIntentSpecReview } from './IntentSpecReview';
 import type { ReviewLanguage } from '@/lib/intent-spec-review';
 

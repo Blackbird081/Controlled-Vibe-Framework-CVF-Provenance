@@ -3,6 +3,11 @@
 import { webcrypto } from 'node:crypto';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { act, cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react';
+const auth = vi.hoisted(() => ({
+    session: { status: 'authenticated', data: { user: { userId: 'user_a', orgId: 'org_a', teamId: 'team_a' }, expires: '2999-01-01T00:00:00.000Z' } } as
+        { status: string; data: { user: { userId: string; orgId: string; teamId: string }; expires: string } | null },
+}));
+vi.mock('next-auth/react', () => ({ useSession: () => auth.session }));
 import { IntentSpecConfirmation } from './IntentSpecConfirmation';
 import { acknowledgeIntentSpecReview, createIntentSpecReview, updateReviewDecision } from '@/lib/intent-spec-review';
 import { MAX_CONFIRMATION_BYTES } from '@/lib/intent-spec-confirmation';
