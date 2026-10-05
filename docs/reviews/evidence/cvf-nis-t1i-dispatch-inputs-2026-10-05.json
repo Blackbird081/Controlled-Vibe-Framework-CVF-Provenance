@@ -1,0 +1,97 @@
+{
+  "schemaVersion": "cvf.nisT1iDispatchInputs.v1",
+  "baseHead": "44612c178f240c2daa4b2834d92443078f75cb75",
+  "authority": "Repeated operator next under delegated Local orchestration selects one source-bound documentary design/task pilot; not general S2 or BUILD.",
+  "sources": {
+    "docs/reviews/CVF_NIS_T1H_REVIEW_ONLY_MANUAL_ARM_COMPLETION_2026-10-05.md": {
+      "rawSha256": "6455732b956f7558e5275393899c1b56e612da0ce76b6570f92730ccb817c44f",
+      "gitBlob": "5b6168476ef513dbe8adaf1c9a1f0c47c91028bc",
+      "symbols": [
+        "Findings / Position"
+      ]
+    },
+    "docs/reviews/CVF_NIS_T1F_BUILD_READY_BRIDGE_CONTRACT_COMPLETION_2026-10-05.md": {
+      "rawSha256": "14b740490b5a3de638fde1155bc1ae7d2d0ffc39865af44ae25e5016b887dae6",
+      "gitBlob": "df672b72c400a8781c8bf04932f6baab98847707",
+      "symbols": [
+        "Local Choices C-1 To C-7"
+      ]
+    },
+    "docs/reviews/CVF_NIS_T1G_RECEIVER_MANUAL_BASELINE_COMPLETION_2026-10-05.md": {
+      "rawSha256": "3aa0fa76ab31be2539b6c74863050107f4049dd0ff82323aaa2443aedc561a58",
+      "gitBlob": "bbcbf155afa4ae83f984958f790cedb9c25794cc",
+      "symbols": [
+        "LD-4"
+      ]
+    },
+    "docs/reviews/CVF_NIS_T1G_RECEIVER_MANUAL_BASELINE_2026-10-05.md": {
+      "rawSha256": "9712cbc7a91c0c30f9f1128415d7b53f30b0ea75f41a7ab6f448c9d2cf9441b2",
+      "gitBlob": "74c85b256dd6123628712850c98a0f3a3a2fd3fd",
+      "symbols": [
+        "Receiver"
+      ]
+    },
+    "docs/reviews/evidence/cvf-nis-t1c-scenario-2026-10-05.json": {
+      "rawSha256": "40b2b1b0a8aca2004403915188cd050eb296103059a5070eee5b4ce2861d6e0b",
+      "gitBlob": "b908e587bcef0c9d49c1f47d2f05c1fc47fe2e88",
+      "symbols": [
+        "stageInputs"
+      ]
+    },
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-review.ts": {
+      "rawSha256": "43e7a437f6d4695553b396ead83feff15a411b10b3aa37c561ca9da09aa3eefd",
+      "gitBlob": "f959ecdce5cb608f19a18ed1ac6424a668ab588e",
+      "symbols": [
+        "createIntentSpecReview",
+        "buildReviewedDraftPacket",
+        "decisionNeedsReview"
+      ]
+    },
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-open-items.ts": {
+      "rawSha256": "c909f6f264ae2b2596f12a33692654262fb07ac71e8bc49339483483e9cdab00",
+      "gitBlob": "eb26737b9869b096cea342995a3ac1aa8d596cd3",
+      "symbols": [
+        "ReviewOpenItem"
+      ]
+    },
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-confirmation.ts": {
+      "rawSha256": "c73dcae3d89df3072a92604ed4548b01167974cabdb9245c232516289a35519c",
+      "gitBlob": "aceb530c482dc0bd01f30a5d4f4d555141cd4c06",
+      "symbols": [
+        "createSpecConfirmationCandidate",
+        "verifySpecConfirmationReadback"
+      ]
+    },
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-acceptance.ts": {
+      "rawSha256": "b4c452663440bf74cc11833462e3c10ea43e29a2fe156b3d3c9cdef00fc79c12",
+      "gitBlob": "33be8460e53ed56e4133c05a10bed6a64d4956f3",
+      "symbols": [
+        "prepareIntentSpecAcceptance"
+      ]
+    },
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/SpecExport.tsx": {
+      "rawSha256": "24617b9ef2f53e6ac5cf5e4907eaa2dea2d0ba8fbe1578714f8cba22338be2a9",
+      "gitBlob": "bb550ff43785e62534e8cc8432649c537a84ec6a",
+      "symbols": [
+        "generateSpec",
+        "useIntentSpecReview"
+      ]
+    }
+  },
+  "workerArtifacts": [
+    "docs/reviews/CVF_NIS_T1I_SOURCE_BOUND_DOCUMENTARY_HANDOFF_WORKER_RETURN_2026-10-05.md",
+    "docs/reviews/CVF_NIS_T1I_SOURCE_BOUND_DOCUMENTARY_HANDOFF_2026-10-05.md",
+    "docs/reviews/evidence/cvf-nis-t1i-current-producer-capture-2026-10-05.json",
+    "docs/reviews/evidence/cvf-nis-t1i-documentary-trace-plan-2026-10-05.json"
+  ],
+  "newPathsAbsent": [
+    "docs/reviews/CVF_NIS_T1I_SOURCE_BOUND_DOCUMENTARY_HANDOFF_WORKER_RETURN_2026-10-05.md",
+    "docs/reviews/CVF_NIS_T1I_SOURCE_BOUND_DOCUMENTARY_HANDOFF_2026-10-05.md",
+    "docs/reviews/evidence/cvf-nis-t1i-current-producer-capture-2026-10-05.json",
+    "docs/reviews/evidence/cvf-nis-t1i-documentary-trace-plan-2026-10-05.json"
+  ],
+  "fixture": "One synthetic periodic-report fixture; current producer reconstructed from named user inputs, never historical review state passed off as current. Preserve twelve-month retention and exceptions. All added technical assumptions visibly delegated/proposed, not user requirements.",
+  "sourceReadBudget": "Named sources fully for used capability; at most eight directly referenced native dependencies with reason and raw/blob pins. No upstream reread.",
+  "executionGrant": "Only hermetic current pure producer/candidate/readback/verifier capture using existing installed tools in ignored scratch. No server/store/auth session/browser/network/install/provider; no production source edits.",
+  "claimBoundary": "Current synthetic candidate bytes/state binding and documentary plan only; no authenticated acceptance, real user job, BUILD, blinding or cost winner."
+}

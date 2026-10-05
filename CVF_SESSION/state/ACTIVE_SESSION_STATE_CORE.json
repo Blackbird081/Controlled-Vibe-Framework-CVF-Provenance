@@ -36,12 +36,12 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_NIS_T1H_REVIEW_ONLY_MANUAL_ARM_2026-10-05.md",
-    "baselineSha256": "7f8defae334c536e2ec29b498010a9c99e16957f1b9890eec895ea0a21af353c",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1H_REVIEW_ONLY_MANUAL_ARM_2026-10-05.md",
-    "workOrderSha256": "4da143a900e27165af432ce1423c470802a83d49ec6204350c2340ec6ac53cbb"
+    "baselinePath": "docs/baselines/CVF_GC018_NIS_T1I_SOURCE_BOUND_DOCUMENTARY_HANDOFF_2026-10-05.md",
+    "baselineSha256": "ce9c0726fee51cd5c66a29d4e9638e3bf4a7a33d1b4a683cf06c80e568dce7da",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1I_SOURCE_BOUND_DOCUMENTARY_HANDOFF_2026-10-05.md",
+    "workOrderSha256": "b4293a58c16c7f8cbb991cac15d6be2b083dd82b344596ae283686c4a9452448"
   },
-  "currentAuthoritySyncReason": "T1H closure bcc12746f: frozen evidence accepted with limits; seed8/8, jobA control invalid, original coverage unestablished, timeboxes hold, cost winner unknown; no rerun/helper/successor.",
+  "currentAuthoritySyncReason": "Explicit operator next selects T1I pure capture/documentary pilot; T1H evidence remains closed; no general S2/helper/BUILD.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
