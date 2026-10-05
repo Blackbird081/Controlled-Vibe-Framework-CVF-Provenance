@@ -4,7 +4,7 @@ Memory class: governed-worker-dispatch
 
 docType: work_order
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: CVF-NIS-T1G
 providerExecutionAuthority: FORBIDDEN
@@ -126,7 +126,7 @@ Returned defects: NONE_RETURNED. Actual resolver executed 2026-10-05, candidates
 | Field | Value |
 |---|---|
 | applicableCheckersRead | governance/compat/check_work_order_dispatch_quality.py; governance/compat/check_work_order_dispatch_quality_source.py; governance/compat/check_work_order_dispatch_quality_artifacts.py; governance/compat/check_dispatch_scaffold_provenance.py; governance/compat/check_gate_to_role_closeability.py; governance/compat/check_governed_artifact_checker_read_ahead.py; governance/compat/check_task_governance_route.py; governance/compat/check_baseline_update_compat.py; governance/compat/check_agent_operation_trace.py; governance/compat/check_work_order_acceptance_ledger.py; governance/compat/check_independent_review_probe_admission.py; governance/compat/check_absorption_blindspot_control_presence.py; governance/compat/check_external_knowledge_intake_routing.py; governance/compat/check_high_risk_local_transaction_proof.py; governance/compat/check_adif_defect_registry_disclosure.py; governance/compat/check_agent_packet_authority_and_encoding.py; governance/compat/check_markdown_structural_completeness.py; governance/compat/check_dispatch_prompt_envelope.py |
-| literalTokensReviewed | DISPATCH_READY; acceptance-ledger-json; exact four outputs; PENDING_REVIEWER_EXECUTION; structured envelope; exact9 admission |
+| literalTokensReviewed | CLOSED_PASS_BOUNDED; acceptance-ledger-json; exact four outputs; PENDING_REVIEWER_EXECUTION; structured envelope; exact9 admission |
 | gateRunPurpose | confirmation/evidence of documentary dispatch shapes, not first discovery or experimental result |
 | claimBoundary | BC-V1 and product cases NOT_EXECUTED |
 
@@ -550,7 +550,7 @@ Blind-spot verdict: NOT_APPLICABLE_WITH_REASON - named internal documentary prep
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: Local T1G admission-only current-authority/next-move; worker cannot write protected paths.
+Authorized guard-maintenance scope: Local T1G closure authority/next-move only; worker cannot write protected paths.
 Protected paths:
 - `AGENT_HANDOFF_V63_2026-09-18.md`
 - `CVF_SESSION_MEMORY.md`
@@ -558,17 +558,15 @@ Protected paths:
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-Operator authorization: next under delegated Local orchestrator/reviewer/work-order/commit authority, 2026-10-05.
-Rollback boundary: exact9 Local admission paths; preserve prior closure, original workers and parked lanes; no checker edit.
-
+Operator authorization: delegated Local orchestrator/reviewer/full handling and requested T1G disposition; no candidate/helper/runtime successor.
+Rollback boundary: exact11 closure paths, preserve original4 worker and parked lanes.
 
 ## Mixed Protected-Path Atomicity Authorization
 
 Disposition: AUTHORIZED_EXACT_MANIFEST
-Atomicity reason: pair/input and six continuity owners bind the same T1G preparation admission. Dedicated continuity sync follows knowable material SHA.
-Rollback boundary: exact9 Local paths only.
-Exact changed manifest: `docs/baselines/CVF_GC018_NIS_T1G_RECEIVER_MANUAL_BASELINE_2026-10-05.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1G_RECEIVER_MANUAL_BASELINE_2026-10-05.md`; `docs/reviews/evidence/cvf-nis-t1g-dispatch-inputs-2026-10-05.json`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`.
-
+Atomicity reason: paired closure hashes, independent proof, neutral reviewer inputs and six continuity owners bind one disposition; dedicated material SHA follows.
+Rollback boundary: exact11 Local closure paths only.
+Exact changed manifest: `docs/baselines/CVF_GC018_NIS_T1G_RECEIVER_MANUAL_BASELINE_2026-10-05.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1G_RECEIVER_MANUAL_BASELINE_2026-10-05.md`; `docs/reviews/CVF_NIS_T1G_RECEIVER_MANUAL_BASELINE_COMPLETION_2026-10-05.md`; `docs/reviews/evidence/cvf-nis-t1g-local-independent-review-2026-10-05.json`; `docs/reviews/evidence/cvf-nis-t1g-reviewer-inputs-review-only-2026-10-05.json`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`.
 
 ## Task Governance Routing Manifest
 
@@ -683,3 +681,45 @@ T0 SHADOW_FULL_GATE_FALLBACK; selectiveExecutionAuthorized=false; full legacy bu
 
 Use the concrete report packet from T1C replay and tool-lending LG3, not generic LG1/LG2 as a surrogate for the reporting business rules. LG1/LG2 remain compatibility controls only. For each job distinguish exact exported/reviewed bytes, candidate accepted-file bytes, historical synthetic record, and current verified acceptance. Map source state/revision to the actual bytes with raw hashes and explicit locators. Do not claim a current acceptance event. If an accepted-file pairing cannot be established without running a producer/store, retain concrete review-only input and mark SOURCE_BINDING_NOT_ESTABLISHED / experiment admission HOLD with the smallest owner/route correction. This is an allowed bounded preparation outcome. It is not authority to fabricate acceptance, widen scope, or run a producer. Readiness of preparation for Local review is distinct from admission of the eventual experiment.
 
+
+## Reviewer Closure Disposition
+
+Local disposition: CLOSED_PASS_BOUNDED_PREPARATION_MODIFIED_REVIEW_ONLY; LD-1..LD-6 in docs/reviews/CVF_NIS_T1G_RECEIVER_MANUAL_BASELINE_COMPLETION_2026-10-05.md. Independent preparation PASS, no arm executed.
+independentProbeDisposition: PASS_INDEPENDENT_PROBE
+implementationWorkerActor: nis-t1g-worker
+probeExecutorActor: nis-t1g-local-reviewer
+workerInvocationId: nis-t1g-worker-20261005
+probeInvocationId: nis-t1g-local-independent-20261005
+workerOracleSha256: f3cc5972124b5c0879525061812a2173daa2a687ecbc21d8e0b6814113cf88da
+probeOracleSha256: 23436ca419ea1f490f29b50cc418737e81d597e8e9c7843ff3a55b15a240438d
+workerEvidenceRef: docs/reviews/evidence/cvf-nis-t1g-manual-baseline-casepack-2026-10-05.json
+probeEvidenceRef: docs/reviews/evidence/cvf-nis-t1g-local-independent-review-2026-10-05.json
+probeCommandOrMethod: python -B .cvf/runtime/nis-t1g-local-review-20261005/probe.py; independent source-byte and preparation protocol assertions, not BC-V1
+probeObservedResult:149 assertions PASS and6 negative admission controls;13 source pins,3 exact attachments,11 view hashes; no manual/helper execution
+oracleSeparationBasis: distinct Local actor/invocation and assertion source; worker casepack is input, not Local oracle implementation
+
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1G_RECEIVER_MANUAL_BASELINE_2026-10-05.md | CLOSED_PASS_BOUNDED preparation only | PASS |
+| Completion or reviewer artifact | docs/reviews/CVF_NIS_T1G_RECEIVER_MANUAL_BASELINE_COMPLETION_2026-10-05.md | LD-1..LD-6 control original proposal | PASS |
+| Roadmap state | docs/roadmaps/CVF_GCLH_MACHINE_FIRST_REVIEW_PREFLIGHT_ROADMAP_2026-09-01.md | current MFRP applied; NCR P11 parked; successor execution excluded | PASS |
+| Registry JSON | docs/reviews/evidence/cvf-nis-t1g-local-independent-review-2026-10-05.json | independent preparation proof and original hashes | PASS |
+| Registry Markdown | docs/reviews/CVF_NIS_T1G_RECEIVER_MANUAL_BASELINE_COMPLETION_2026-10-05.md | bounded review-only disposition | PASS |
+| External evidence digest | docs/reviews/evidence/cvf-nis-t1g-local-independent-review-2026-10-05.json | SHA256 23436ca419ea1f490f29b50cc418737e81d597e8e9c7843ff3a55b15a240438d | PASS |
+| System loop interlock | docs/reviews/evidence/cvf-nis-t1g-reviewer-inputs-review-only-2026-10-05.json | neutral inputs prepared; no runtime/catalog promotion | PASS |
+| Session continuity | CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json | closed preparation, manual dispatch remains separate, parked lanes retained | PASS |
+
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| REQ-1 receiver | concrete source-bound jobs or honest pairing HOLD | exact report bytes and synthetic LG3; job A review-only, accepted-file gap retained | PASS |
+| REQ-2 preparation | eleven cases and frozen protocol | NOT_EXECUTED; Local package/cost/scoring/scope corrections control | PASS |
+| REQ-3 return | exact4 outputs, gates, no forbidden effects | originals retained, saved87/87 preimpl and final worker fast consumed | PASS |
+| Independent probe | distinct actor/oracle |149 assertions and6 admission controls | PASS |
+| Reviewer blinding | no placement key in inputs | neutral Local package; seed worker and Local B2, later actor unassigned | PASS |
+| Authority | no automatic manual/helper/build | BC-V1 and35 prior cases NOT_EXECUTED; separate later order required | PASS |

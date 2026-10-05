@@ -1,0 +1,812 @@
+{
+  "schemaVersion": "cvf.nisT1gLocalIndependentReview.v1",
+  "batchId": "CVF-NIS-T1G",
+  "executionBaseHead": "61642432f7bf493701868dcf20d7d6b241fbeeb7",
+  "workerActor": "nis-t1g-worker",
+  "reviewerActor": "nis-t1g-local-reviewer",
+  "workerInvocationId": "nis-t1g-worker-20261005",
+  "probeInvocationId": "nis-t1g-local-independent-20261005",
+  "oracleSourceSha256": "a0be34b9156712790b7074ceaab574be2d276d33acb7522aaa8743f142cc0cd1",
+  "workerOracleSha256": "f3cc5972124b5c0879525061812a2173daa2a687ecbc21d8e0b6814113cf88da",
+  "workerArtifactHashes": {
+    "docs/reviews/CVF_NIS_T1G_RECEIVER_MANUAL_BASELINE_WORKER_RETURN_2026-10-05.md": "4fd6a1b574cabc8f5750d511f6d4c4e303f35fafe4d9e3f288e4da96cbae76f3",
+    "docs/reviews/CVF_NIS_T1G_RECEIVER_MANUAL_BASELINE_2026-10-05.md": "9712cbc7a91c0c30f9f1128415d7b53f30b0ea75f41a7ab6f448c9d2cf9441b2",
+    "docs/reviews/evidence/cvf-nis-t1g-manual-baseline-casepack-2026-10-05.json": "f3cc5972124b5c0879525061812a2173daa2a687ecbc21d8e0b6814113cf88da",
+    "docs/reviews/evidence/cvf-nis-t1g-manual-baseline-protocol-2026-10-05.json": "6908686864be9cc0c693f1501255b5dbf29e5ff44a3cddabbb834c46ef7bc06f"
+  },
+  "sourceBindings": {
+    "docs/reviews/CVF_NIS_T1F_BUILD_READY_BRIDGE_CONTRACT_COMPLETION_2026-10-05.md": {
+      "rawSha256": "14b740490b5a3de638fde1155bc1ae7d2d0ffc39865af44ae25e5016b887dae6",
+      "gitBlob": "df672b72c400a8781c8bf04932f6baab98847707",
+      "symbols": [
+        "Minimum Next Delta",
+        "Local Choices C-1 To C-7"
+      ]
+    },
+    "docs/reviews/CVF_NIS_T1F_BUILD_READY_BRIDGE_CONTRACT_2026-10-05.md": {
+      "rawSha256": "64b5f3759aeb83f11e8015a7870b0d625b00cf19ac8ddc24ec70af32fa5111a7",
+      "gitBlob": "ba7a2f135c4ab7da5f909f163014e872e5856256",
+      "symbols": [
+        "BC-V1"
+      ]
+    },
+    "docs/reviews/evidence/cvf-nis-t1f-build-ready-acceptance-plan-2026-10-05.json": {
+      "rawSha256": "2f068f9f4b3c810a9531f7b12ff2b177cd13f2558da336a0398d1debecaa07e4",
+      "gitBlob": "b45b7a41a6c1565d4b499608d95167174664bd05",
+      "symbols": [
+        "valueFalsifier",
+        "fixtures"
+      ]
+    },
+    "docs/reviews/evidence/cvf-nis-t1f-local-independent-review-2026-10-05.json": {
+      "rawSha256": "64f50eb71643d15fa5a2f79a4c15042e9c4cd7fcd3383340988548c346e8d422",
+      "gitBlob": "d18257a8c72caa1d9303f816e9b1ab8384142e79",
+      "symbols": [
+        "claimBoundary"
+      ]
+    },
+    "docs/reviews/evidence/cvf-nis-t1e-frozen-legacy-2026-10-05.json": {
+      "rawSha256": "98a1d469d8ca5166ca5d44bedb19518d0e249aa8cc515af3861ae15312e6c554",
+      "gitBlob": "eef2d5bd870d7a07acc2506e86dee014c9748525",
+      "symbols": [
+        "controls"
+      ]
+    },
+    "docs/reviews/evidence/cvf-nis-t1e-local-independent-review-2026-10-05.json": {
+      "rawSha256": "48d78a0e96e9cb9b4b12beb3f15b20c44582256a22e0296b1a5661460a7ffa52",
+      "gitBlob": "b636cf6b99f62f895c97a94e36995bbef5e5a86a",
+      "symbols": [
+        "localOldProducerCapture"
+      ]
+    },
+    "docs/reviews/evidence/cvf-nis-t1d-acceptance-plan-2026-10-05.json": {
+      "rawSha256": "6bbd1904a0b1319d345180fb4566d5b473e6b0c232cea5ced134f45096d7706c",
+      "gitBlob": "777117bd8764626f24880c26a6664b6858879114",
+      "symbols": [
+        "fixtures"
+      ]
+    },
+    "docs/reviews/evidence/cvf-nis-t1c-scenario-2026-10-05.json": {
+      "rawSha256": "40b2b1b0a8aca2004403915188cd050eb296103059a5070eee5b4ce2861d6e0b",
+      "gitBlob": "b908e587bcef0c9d49c1f47d2f05c1fc47fe2e88",
+      "symbols": [
+        "stageInputs"
+      ]
+    },
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-review.ts": {
+      "rawSha256": "43e7a437f6d4695553b396ead83feff15a411b10b3aa37c561ca9da09aa3eefd",
+      "gitBlob": "f959ecdce5cb608f19a18ed1ac6424a668ab588e",
+      "symbols": [
+        "decisionNeedsReview",
+        "buildReviewedDraftPacket"
+      ]
+    },
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-open-items.ts": {
+      "rawSha256": "c909f6f264ae2b2596f12a33692654262fb07ac71e8bc49339483483e9cdab00",
+      "gitBlob": "eb26737b9869b096cea342995a3ac1aa8d596cd3",
+      "symbols": [
+        "ReviewOpenItem"
+      ]
+    },
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-confirmation.ts": {
+      "rawSha256": "c73dcae3d89df3072a92604ed4548b01167974cabdb9245c232516289a35519c",
+      "gitBlob": "aceb530c482dc0bd01f30a5d4f4d555141cd4c06",
+      "symbols": [
+        "createSpecConfirmationCandidate"
+      ]
+    },
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-acceptance.ts": {
+      "rawSha256": "b4c452663440bf74cc11833462e3c10ea43e29a2fe156b3d3c9cdef00fc79c12",
+      "gitBlob": "33be8460e53ed56e4133c05a10bed6a64d4956f3",
+      "symbols": [
+        "prepareIntentSpecAcceptance"
+      ]
+    },
+    "docs/reviews/evidence/cvf-nis-t1c-replay-2026-10-05.json": {
+      "rawSha256": "4fae2c19ca58d0b7a933c7fc883cfcc5929c5d1ba61e658edd3d0d95b5da5208",
+      "gitBlob": "9b0bf7aa43449ba8f0a56bab86b70cca6c15d88a",
+      "symbols": [
+        "exportedBaselinePacket",
+        "exportedRevisedPacket"
+      ]
+    }
+  },
+  "checks": [
+    {
+      "id": "main clean",
+      "status": "PASS"
+    },
+    {
+      "id": "worker HEAD",
+      "status": "PASS"
+    },
+    {
+      "id": "worker index unchanged",
+      "status": "PASS"
+    },
+    {
+      "id": "worker exact four untracked",
+      "status": "PASS"
+    },
+    {
+      "id": "raw pin docs/reviews/CVF_NIS_T1F_BUILD_READY_BRIDGE_CONTRACT_COMPLETION_2026-10-05.md",
+      "status": "PASS"
+    },
+    {
+      "id": "blob pin docs/reviews/CVF_NIS_T1F_BUILD_READY_BRIDGE_CONTRACT_COMPLETION_2026-10-05.md",
+      "status": "PASS"
+    },
+    {
+      "id": "raw pin docs/reviews/CVF_NIS_T1F_BUILD_READY_BRIDGE_CONTRACT_2026-10-05.md",
+      "status": "PASS"
+    },
+    {
+      "id": "blob pin docs/reviews/CVF_NIS_T1F_BUILD_READY_BRIDGE_CONTRACT_2026-10-05.md",
+      "status": "PASS"
+    },
+    {
+      "id": "raw pin docs/reviews/evidence/cvf-nis-t1f-build-ready-acceptance-plan-2026-10-05.json",
+      "status": "PASS"
+    },
+    {
+      "id": "blob pin docs/reviews/evidence/cvf-nis-t1f-build-ready-acceptance-plan-2026-10-05.json",
+      "status": "PASS"
+    },
+    {
+      "id": "raw pin docs/reviews/evidence/cvf-nis-t1f-local-independent-review-2026-10-05.json",
+      "status": "PASS"
+    },
+    {
+      "id": "blob pin docs/reviews/evidence/cvf-nis-t1f-local-independent-review-2026-10-05.json",
+      "status": "PASS"
+    },
+    {
+      "id": "raw pin docs/reviews/evidence/cvf-nis-t1e-frozen-legacy-2026-10-05.json",
+      "status": "PASS"
+    },
+    {
+      "id": "blob pin docs/reviews/evidence/cvf-nis-t1e-frozen-legacy-2026-10-05.json",
+      "status": "PASS"
+    },
+    {
+      "id": "raw pin docs/reviews/evidence/cvf-nis-t1e-local-independent-review-2026-10-05.json",
+      "status": "PASS"
+    },
+    {
+      "id": "blob pin docs/reviews/evidence/cvf-nis-t1e-local-independent-review-2026-10-05.json",
+      "status": "PASS"
+    },
+    {
+      "id": "raw pin docs/reviews/evidence/cvf-nis-t1d-acceptance-plan-2026-10-05.json",
+      "status": "PASS"
+    },
+    {
+      "id": "blob pin docs/reviews/evidence/cvf-nis-t1d-acceptance-plan-2026-10-05.json",
+      "status": "PASS"
+    },
+    {
+      "id": "raw pin docs/reviews/evidence/cvf-nis-t1c-scenario-2026-10-05.json",
+      "status": "PASS"
+    },
+    {
+      "id": "blob pin docs/reviews/evidence/cvf-nis-t1c-scenario-2026-10-05.json",
+      "status": "PASS"
+    },
+    {
+      "id": "raw pin EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-review.ts",
+      "status": "PASS"
+    },
+    {
+      "id": "blob pin EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-review.ts",
+      "status": "PASS"
+    },
+    {
+      "id": "raw pin EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-open-items.ts",
+      "status": "PASS"
+    },
+    {
+      "id": "blob pin EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-open-items.ts",
+      "status": "PASS"
+    },
+    {
+      "id": "raw pin EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-confirmation.ts",
+      "status": "PASS"
+    },
+    {
+      "id": "blob pin EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-confirmation.ts",
+      "status": "PASS"
+    },
+    {
+      "id": "raw pin EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-acceptance.ts",
+      "status": "PASS"
+    },
+    {
+      "id": "blob pin EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-acceptance.ts",
+      "status": "PASS"
+    },
+    {
+      "id": "raw pin docs/reviews/evidence/cvf-nis-t1c-replay-2026-10-05.json",
+      "status": "PASS"
+    },
+    {
+      "id": "blob pin docs/reviews/evidence/cvf-nis-t1c-replay-2026-10-05.json",
+      "status": "PASS"
+    },
+    {
+      "id": "casepack binding",
+      "status": "PASS"
+    },
+    {
+      "id": "eleven cases",
+      "status": "PASS"
+    },
+    {
+      "id": "unexecuted casepack",
+      "status": "PASS"
+    },
+    {
+      "id": "attachment bytes A",
+      "status": "PASS"
+    },
+    {
+      "id": "attachment hash A",
+      "status": "PASS"
+    },
+    {
+      "id": "attachment bytes B",
+      "status": "PASS"
+    },
+    {
+      "id": "attachment hash B",
+      "status": "PASS"
+    },
+    {
+      "id": "attachment bytes C",
+      "status": "PASS"
+    },
+    {
+      "id": "attachment hash C",
+      "status": "PASS"
+    },
+    {
+      "id": "A exact frozen report",
+      "status": "PASS"
+    },
+    {
+      "id": "B exact frozen revised report",
+      "status": "PASS"
+    },
+    {
+      "id": "C exact frozen candidate",
+      "status": "PASS"
+    },
+    {
+      "id": "C independent old producer file",
+      "status": "PASS"
+    },
+    {
+      "id": "record bytes exist historical",
+      "status": "PASS"
+    },
+    {
+      "id": "RB-01 hash",
+      "status": "PASS"
+    },
+    {
+      "id": "RB-01 bytes",
+      "status": "PASS"
+    },
+    {
+      "id": "RB-01 not executed",
+      "status": "PASS"
+    },
+    {
+      "id": "RB-01 internal record hash",
+      "status": "PASS"
+    },
+    {
+      "id": "RB-01 view-only label scan",
+      "status": "PASS"
+    },
+    {
+      "id": "RB-01 protocol hash",
+      "status": "PASS"
+    },
+    {
+      "id": "RB-02 hash",
+      "status": "PASS"
+    },
+    {
+      "id": "RB-02 bytes",
+      "status": "PASS"
+    },
+    {
+      "id": "RB-02 not executed",
+      "status": "PASS"
+    },
+    {
+      "id": "RB-02 internal record hash",
+      "status": "PASS"
+    },
+    {
+      "id": "RB-02 view-only label scan",
+      "status": "PASS"
+    },
+    {
+      "id": "RB-02 protocol hash",
+      "status": "PASS"
+    },
+    {
+      "id": "RB-03 hash",
+      "status": "PASS"
+    },
+    {
+      "id": "RB-03 bytes",
+      "status": "PASS"
+    },
+    {
+      "id": "RB-03 not executed",
+      "status": "PASS"
+    },
+    {
+      "id": "RB-03 internal record hash",
+      "status": "PASS"
+    },
+    {
+      "id": "RB-03 view-only label scan",
+      "status": "PASS"
+    },
+    {
+      "id": "RB-03 protocol hash",
+      "status": "PASS"
+    },
+    {
+      "id": "RB-04 hash",
+      "status": "PASS"
+    },
+    {
+      "id": "RB-04 bytes",
+      "status": "PASS"
+    },
+    {
+      "id": "RB-04 not executed",
+      "status": "PASS"
+    },
+    {
+      "id": "RB-04 internal record hash",
+      "status": "PASS"
+    },
+    {
+      "id": "RB-04 view-only label scan",
+      "status": "PASS"
+    },
+    {
+      "id": "RB-04 protocol hash",
+      "status": "PASS"
+    },
+    {
+      "id": "RB-05 hash",
+      "status": "PASS"
+    },
+    {
+      "id": "RB-05 bytes",
+      "status": "PASS"
+    },
+    {
+      "id": "RB-05 not executed",
+      "status": "PASS"
+    },
+    {
+      "id": "RB-05 internal record hash",
+      "status": "PASS"
+    },
+    {
+      "id": "RB-05 view-only label scan",
+      "status": "PASS"
+    },
+    {
+      "id": "RB-05 protocol hash",
+      "status": "PASS"
+    },
+    {
+      "id": "RB-06 hash",
+      "status": "PASS"
+    },
+    {
+      "id": "RB-06 bytes",
+      "status": "PASS"
+    },
+    {
+      "id": "RB-06 not executed",
+      "status": "PASS"
+    },
+    {
+      "id": "RB-06 internal record hash",
+      "status": "PASS"
+    },
+    {
+      "id": "RB-06 view-only label scan",
+      "status": "PASS"
+    },
+    {
+      "id": "RB-06 protocol hash",
+      "status": "PASS"
+    },
+    {
+      "id": "RB-07 hash",
+      "status": "PASS"
+    },
+    {
+      "id": "RB-07 bytes",
+      "status": "PASS"
+    },
+    {
+      "id": "RB-07 not executed",
+      "status": "PASS"
+    },
+    {
+      "id": "RB-07 internal record hash",
+      "status": "PASS"
+    },
+    {
+      "id": "RB-07 view-only label scan",
+      "status": "PASS"
+    },
+    {
+      "id": "RB-07 protocol hash",
+      "status": "PASS"
+    },
+    {
+      "id": "RB-08 hash",
+      "status": "PASS"
+    },
+    {
+      "id": "RB-08 bytes",
+      "status": "PASS"
+    },
+    {
+      "id": "RB-08 not executed",
+      "status": "PASS"
+    },
+    {
+      "id": "RB-08 internal record hash",
+      "status": "PASS"
+    },
+    {
+      "id": "RB-08 view-only label scan",
+      "status": "PASS"
+    },
+    {
+      "id": "RB-08 protocol hash",
+      "status": "PASS"
+    },
+    {
+      "id": "RB-09 hash",
+      "status": "PASS"
+    },
+    {
+      "id": "RB-09 bytes",
+      "status": "PASS"
+    },
+    {
+      "id": "RB-09 not executed",
+      "status": "PASS"
+    },
+    {
+      "id": "RB-09 internal record hash",
+      "status": "PASS"
+    },
+    {
+      "id": "RB-09 view-only label scan",
+      "status": "PASS"
+    },
+    {
+      "id": "RB-09 protocol hash",
+      "status": "PASS"
+    },
+    {
+      "id": "RB-10 hash",
+      "status": "PASS"
+    },
+    {
+      "id": "RB-10 bytes",
+      "status": "PASS"
+    },
+    {
+      "id": "RB-10 not executed",
+      "status": "PASS"
+    },
+    {
+      "id": "RB-10 internal record hash",
+      "status": "PASS"
+    },
+    {
+      "id": "RB-10 view-only label scan",
+      "status": "PASS"
+    },
+    {
+      "id": "RB-10 protocol hash",
+      "status": "PASS"
+    },
+    {
+      "id": "RB-11 hash",
+      "status": "PASS"
+    },
+    {
+      "id": "RB-11 bytes",
+      "status": "PASS"
+    },
+    {
+      "id": "RB-11 not executed",
+      "status": "PASS"
+    },
+    {
+      "id": "RB-11 internal record hash",
+      "status": "PASS"
+    },
+    {
+      "id": "RB-11 view-only label scan",
+      "status": "PASS"
+    },
+    {
+      "id": "RB-11 protocol hash",
+      "status": "PASS"
+    },
+    {
+      "id": "deterministic order",
+      "status": "PASS"
+    },
+    {
+      "id": "JOB_A_clean R1 quotes",
+      "status": "PASS"
+    },
+    {
+      "id": "JOB_A_clean R2 quotes",
+      "status": "PASS"
+    },
+    {
+      "id": "JOB_A_clean R3 quotes",
+      "status": "PASS"
+    },
+    {
+      "id": "JOB_A_clean R4 quotes",
+      "status": "PASS"
+    },
+    {
+      "id": "JOB_A_clean R5 quotes",
+      "status": "PASS"
+    },
+    {
+      "id": "JOB_A_clean R6 quotes",
+      "status": "PASS"
+    },
+    {
+      "id": "JOB_C_clean R1 quotes",
+      "status": "PASS"
+    },
+    {
+      "id": "JOB_C_clean R2 quotes",
+      "status": "PASS"
+    },
+    {
+      "id": "JOB_C_clean R3 quotes",
+      "status": "PASS"
+    },
+    {
+      "id": "JOB_C_clean R4 quotes",
+      "status": "PASS"
+    },
+    {
+      "id": "JOB_C_clean R5 quotes",
+      "status": "PASS"
+    },
+    {
+      "id": "D1 no T6 row",
+      "status": "PASS"
+    },
+    {
+      "id": "D2 no V5 row",
+      "status": "PASS"
+    },
+    {
+      "id": "D3 actual dangling T9",
+      "status": "PASS"
+    },
+    {
+      "id": "D4 actual T2 T3 cycle",
+      "status": "PASS"
+    },
+    {
+      "id": "D5 new user quote absent source",
+      "status": "PASS"
+    },
+    {
+      "id": "D6 bound A current B",
+      "status": "PASS"
+    },
+    {
+      "id": "D6 equal answer changed snapshot",
+      "status": "PASS"
+    },
+    {
+      "id": "D7 missing R4 resolution",
+      "status": "PASS"
+    },
+    {
+      "id": "D8 invented grant rehashed",
+      "status": "PASS"
+    },
+    {
+      "id": "D9 omitted exceptions citation",
+      "status": "PASS"
+    },
+    {
+      "id": "job A HOLD retained",
+      "status": "PASS"
+    },
+    {
+      "id": "seed actor excluded",
+      "status": "PASS"
+    },
+    {
+      "id": "timeboxes fixed",
+      "status": "PASS"
+    },
+    {
+      "id": "predeclared margin",
+      "status": "PASS"
+    },
+    {
+      "id": "helper costs unknown",
+      "status": "PASS"
+    },
+    {
+      "id": "no measured results",
+      "status": "PASS"
+    },
+    {
+      "id": "saved worker preimpl",
+      "status": "PASS"
+    },
+    {
+      "id": "saved worker fast",
+      "status": "PASS"
+    },
+    {
+      "id": "no answer key in reviewer package",
+      "status": "PASS"
+    },
+    {
+      "id": "no placement leak experiment section",
+      "status": "PASS"
+    },
+    {
+      "id": "views preserved after package assembly",
+      "status": "PASS"
+    },
+    {
+      "id": "negative altered source hash",
+      "status": "PASS"
+    },
+    {
+      "id": "negative altered view digest",
+      "status": "PASS"
+    },
+    {
+      "id": "negative full receiver leaks placement",
+      "status": "PASS"
+    },
+    {
+      "id": "negative seed author baseline invalid",
+      "status": "PASS"
+    },
+    {
+      "id": "negative unknown cost cannot rank",
+      "status": "PASS"
+    },
+    {
+      "id": "negative unpaired report not accepted",
+      "status": "PASS"
+    }
+  ],
+  "negativeControls": [
+    {
+      "id": "altered source hash",
+      "status": "EXPECTED_REJECTION_OR_LIMITATION_OBSERVED"
+    },
+    {
+      "id": "altered view digest",
+      "status": "EXPECTED_REJECTION_OR_LIMITATION_OBSERVED"
+    },
+    {
+      "id": "full receiver leaks placement",
+      "status": "EXPECTED_REJECTION_OR_LIMITATION_OBSERVED"
+    },
+    {
+      "id": "seed author baseline invalid",
+      "status": "EXPECTED_REJECTION_OR_LIMITATION_OBSERVED"
+    },
+    {
+      "id": "unknown cost cannot rank",
+      "status": "EXPECTED_REJECTION_OR_LIMITATION_OBSERVED"
+    },
+    {
+      "id": "unpaired report not accepted",
+      "status": "EXPECTED_REJECTION_OR_LIMITATION_OBSERVED"
+    }
+  ],
+  "consumedReceipts": [
+    {
+      "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF-NIS-T1G\\.cvf\\runtime\\nis-t1g-worker-20261005\\pre-implementation\\pre-implementation.json",
+      "sha256": "9a27c7fd4bf3594ad16f553e46f78448dce8e40d092b0ab157a6e9be14adaace"
+    },
+    {
+      "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF-NIS-T1G\\.cvf\\runtime\\nis-t1g-worker-20261005\\fast-gate-final.log",
+      "sha256": "c84f22243b223e6e8769ffe342c059a9cad66728260dd8b3e9ce7836ee7a29fe"
+    }
+  ],
+  "reviewerPackageSha256": "28ece326b696672153abd88a5c5ef77b1b57bfcd82dbd119f85f2f071c32a869",
+  "reviewerPackageMethod": "Four neutral format sections only; no full receiver, protocol/scoring, key or permutation algorithm. Exact views/attachment bytes preserved. Role protocol only.",
+  "BC-V1": "NOT_EXECUTED",
+  "cost": "UNKNOWN",
+  "providerCalls": 0,
+  "claimBoundary": "Independent preparation/admission oracle, not a blinded manual arm, product helper or performance/UX proof.",
+  "workerMaterialCommit": "f6fff4a15a48730fa2252a1b664dc2667f318388",
+  "closureBaseHead": "f6fff4a15a48730fa2252a1b664dc2667f318388",
+  "closureBatchPaths": [
+    "docs/baselines/CVF_GC018_NIS_T1G_RECEIVER_MANUAL_BASELINE_2026-10-05.md",
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1G_RECEIVER_MANUAL_BASELINE_2026-10-05.md",
+    "docs/reviews/CVF_NIS_T1G_RECEIVER_MANUAL_BASELINE_COMPLETION_2026-10-05.md",
+    "docs/reviews/evidence/cvf-nis-t1g-local-independent-review-2026-10-05.json",
+    "docs/reviews/evidence/cvf-nis-t1g-reviewer-inputs-review-only-2026-10-05.json",
+    "AGENT_HANDOFF_V63_2026-09-18.md",
+    "CVF_SESSION_MEMORY.md",
+    "CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json",
+    "CVF_SESSION/state/entries/nextAllowedMove.json",
+    "CVF_SESSION/ACTIVE_SESSION_STATE.json",
+    "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json"
+  ],
+  "acceptedArtifactHashes": {
+    "docs/reviews/CVF_NIS_T1G_RECEIVER_MANUAL_BASELINE_WORKER_RETURN_2026-10-05.md": "4fd6a1b574cabc8f5750d511f6d4c4e303f35fafe4d9e3f288e4da96cbae76f3",
+    "docs/reviews/CVF_NIS_T1G_RECEIVER_MANUAL_BASELINE_2026-10-05.md": "9712cbc7a91c0c30f9f1128415d7b53f30b0ea75f41a7ab6f448c9d2cf9441b2",
+    "docs/reviews/evidence/cvf-nis-t1g-manual-baseline-casepack-2026-10-05.json": "f3cc5972124b5c0879525061812a2173daa2a687ecbc21d8e0b6814113cf88da",
+    "docs/reviews/evidence/cvf-nis-t1g-manual-baseline-protocol-2026-10-05.json": "6908686864be9cc0c693f1501255b5dbf29e5ff44a3cddabbb834c46ef7bc06f"
+  },
+  "localDispositions": [
+    {
+      "id": "LD-1",
+      "disposition": "ACCEPT_PREPARATION_REVIEW_ONLY",
+      "finding": "Accept documentary format and concrete frozen materials with these modifications. Select review-only for job A; accepted-file gap remains SOURCE_BINDING_NOT_ESTABLISHED and acceptance admission HOLD. No candidate/producer/store run. Job C is a historical synthetic candidate control, not current actor verification. Any later exercise must be labelled REVIEW_ONLY_HISTORICAL_SYNTHETIC_BYTES, not an accepted-packet BC-V1 proof."
+    },
+    {
+      "id": "LD-2",
+      "disposition": "MODIFY_REVIEWER_PACKAGE",
+      "finding": "Original reviewerPackage includes the entire receiver document, whose Experiment Preparation discloses seeded classes/job placement. Original leak scan covers views only and cannot certify the whole package. Local package includes four neutral format sections, generic checklist, blank form, exact views and attachments only; key, internal order rule, scoring, source-adaptation/experiment/return sections excluded. Taxonomy B1 is expected; seed author and Local key reader are B2 and cannot run a blinded baseline. Shared-file access is still role protocol, not isolation."
+    },
+    {
+      "id": "LD-3",
+      "disposition": "MODIFY_COST_ACCOUNTING",
+      "finding": "Keep1.25 margin and N=12 (sensitivity4/52) as predeclared pilot assumptions, not statistically established noise tolerance. Manual Em includes preparationMinutes/11 plus mean per-case minutes; helper Eh includes its own preparation/output-reading/human-review per-record cost. Keep common setup explicit, add actual helper creation/integration/maintenance costs and no double count. Unknown variables prevent a comparative cost verdict; do not build a helper merely to fill them. Docs remain provisional default, not a proven winner."
+    },
+    {
+      "id": "LD-4",
+      "disposition": "MODIFY_SCORING",
+      "finding": "Required tokens/class words guide scoring but cannot alone determine a hit. Local scorer checks the retained response for the actual defect, cause and locator; correct equivalent wording is admissible with explanation and keyword-only guesses earn no hit. Validate novel findings against supplied evidence: a true unseeded receiver defect invalidates that control/case for clean scoring rather than being suppressed or counted as a reviewer false positive. Freeze this rule before later execution. D9 remains limitation disclosure, not a deterministic hit. Timebox failure alone never proves helper superiority."
+    },
+    {
+      "id": "LD-5",
+      "disposition": "MODIFY_SCOPE_BLOCKING",
+      "finding": "A marker in the same cited decision section is not automatically a blocker for every requirement in that section. Explain the affected business scope and dependency; unrelated unknowns remain visible limitations. Sticky reconfirmation still blocks genuinely dependent stale scopes even with equal answers. Rebind is not review or BUILD authority."
+    },
+    {
+      "id": "LD-6",
+      "disposition": "CORRECT_EVIDENCE_COUNTS",
+      "finding": "Current dispatch inputs contain13 source pins, not the14 claimed in the worker return. LG3 frozen control contains full serialized historical acceptanceRecord bytes as well as its hash, contrary to the receiver table saying only a hash exists. They remain historical synthetic evidence, not current verified acceptance. Original four worker files retained without rewriting these historical claims."
+    }
+  ],
+  "finalDisposition": "CLOSED_PASS_BOUNDED_PREPARATION_MODIFIED_REVIEW_ONLY",
+  "reviewerPackageRef": "docs/reviews/evidence/cvf-nis-t1g-reviewer-inputs-review-only-2026-10-05.json",
+  "manualArm": "NOT_EXECUTED; separate bounded dispatch required",
+  "candidateCreation": "NOT_AUTHORIZED_BY_THIS_CLOSURE",
+  "helperArm": "DEFERRED_NOT_AUTHORIZED"
+}

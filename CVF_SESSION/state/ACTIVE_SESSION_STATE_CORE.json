@@ -37,11 +37,11 @@
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_NIS_T1G_RECEIVER_MANUAL_BASELINE_2026-10-05.md",
-    "baselineSha256": "dfbbd580fde321cd82476ea5b620bc6ffa5cfa0e65430ab078a108c1d206bc06",
+    "baselineSha256": "165879c541d67816178cb9b515a24350b636f0cf811fce4d48b327010736b719",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1G_RECEIVER_MANUAL_BASELINE_2026-10-05.md",
-    "workOrderSha256": "49bf0f4463bf823c410a31613430aabfec81bfa83697b50f5ffd407e26efaf78"
+    "workOrderSha256": "adc4827b94b6007dc623a1b26f3a3c4c2caa8f7d3371a6d1bada3a02341df1ca"
   },
-  "currentAuthoritySyncReason": "T1G material ae7f6e6be: documentary receiver/manual-baseline preparation dispatch; no experiment/helper execution; parked lanes unchanged.",
+  "currentAuthoritySyncReason": "T1G Local preparation closure: review-only route and neutral inputs; no manual/helper execution.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",

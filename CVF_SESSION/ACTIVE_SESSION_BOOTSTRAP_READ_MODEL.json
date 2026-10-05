@@ -2,16 +2,16 @@
   "schemaVersion": "0.1.0",
   "currentMode": "cvf_ncr_p10_closed_p11_parked",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=CVF-NIS; NEXT_ACTION_CLASS=EXECUTE_BOUNDED_WORK_ORDER; BATCH_ID=CVF-NIS-T1G. Documentary receiver and frozen manual-baseline preparation in docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1G_RECEIVER_MANUAL_BASELINE_2026-10-05.md. Exact4 docs/evidence; two source-bound synthetic jobs,11 concrete cases, contamination/scoring/time/total-effort protocol. Worker no stage/commit or experimental arm; Local independent preparation review/commit. No helper/product/runtime/provider/network/install/store/UAC/BUILD/general S2/public/deploy. BC-V1 and35 prior product cases NOT_EXECUTED; prior NIS closed, original workers retained. CCMA parked; S05/C1/send/B2 STOP; Q001/Q004 OPEN/Profile A; P11/deploy/FLAL T4/T5 parked; FR2 historical loss retained; costs UNKNOWN; LHW24 closed; no push. Dispatch material ae7f6e6be; dedicated continuity.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-NIS; NEXT_ACTION_CLASS=BOUNDED_SELECTION_AND_DISPATCH_PLANNING; BATCH_ID=CVF-NIS-T1G. T1G CLOSED_PASS_BOUNDED preparation with Local MODIFY in docs/reviews/CVF_NIS_T1G_RECEIVER_MANUAL_BASELINE_COMPLETION_2026-10-05.md.149 independent preparation assertions and6 controls. Review-only selected for job A; accepted-file gap/HOLD retained, no candidate minted. Neutral reviewer inputs docs/reviews/evidence/cvf-nis-t1g-reviewer-inputs-review-only-2026-10-05.json prepared without key/placement mapping. Fresh reviewer manual exercise requires separate bounded order and exposure/time/cost/scoring declarations; no reviewer invoked here. BC-V1 and11 current/35 prior cases NOT_EXECUTED; helper deferred, no automatic S2. Original workers retained; chat transfer only, no relay. CCMA parked; S05/C1/send/B2 STOP; Q001/Q004 OPEN/Profile A; P11/deploy/FLAL T4/T5 parked; FR2 historical loss retained; costs UNKNOWN; LHW24 closed; no push.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_NIS_T1G_RECEIVER_MANUAL_BASELINE_2026-10-05.md",
-    "baselineSha256": "dfbbd580fde321cd82476ea5b620bc6ffa5cfa0e65430ab078a108c1d206bc06",
+    "baselineSha256": "165879c541d67816178cb9b515a24350b636f0cf811fce4d48b327010736b719",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1G_RECEIVER_MANUAL_BASELINE_2026-10-05.md",
-    "workOrderSha256": "49bf0f4463bf823c410a31613430aabfec81bfa83697b50f5ffd407e26efaf78"
+    "workOrderSha256": "adc4827b94b6007dc623a1b26f3a3c4c2caa8f7d3371a6d1bada3a02341df1ca"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }
