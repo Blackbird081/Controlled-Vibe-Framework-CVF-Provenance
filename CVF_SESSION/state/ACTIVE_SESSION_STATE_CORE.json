@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1G_RECEIVER_MANUAL_BASELINE_2026-10-05.md",
     "workOrderSha256": "adc4827b94b6007dc623a1b26f3a3c4c2caa8f7d3371a6d1bada3a02341df1ca"
   },
-  "currentAuthoritySyncReason": "T1G Local preparation closure: review-only route and neutral inputs; no manual/helper execution.",
+  "currentAuthoritySyncReason": "T1G closure material ea4563c1d: documentary review-only preparation accepted with Local corrections; manual/helper still NOT_EXECUTED.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
