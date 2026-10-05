@@ -1,6 +1,6 @@
 # CVF Agent Handoff V63 - ACEL Applied-Knowledge Owner Enrichment
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `432435f105dc29a31dcb21b8a669935f04c7f316`; batch CVF-NIS-T1F material `432435f105dc29a31dcb21b8a669935f04c7f316`; dedicated continuity.
+Current HEAD recorded for this handoff: fbacd5e311dd43fe9fb9fed29f959f15abd0f790; dispatch transfer standard material; T1F worker return pending Local review.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
