@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1G_RECEIVER_MANUAL_BASELINE_2026-10-05.md",
     "workOrderSha256": "49bf0f4463bf823c410a31613430aabfec81bfa83697b50f5ffd407e26efaf78"
   },
-  "currentAuthoritySyncReason": "T1G preparation admission after T1F Local receiver/manual-first disposition; no experiment/helper execution; parked lanes unchanged.",
+  "currentAuthoritySyncReason": "T1G material ae7f6e6be: documentary receiver/manual-baseline preparation dispatch; no experiment/helper execution; parked lanes unchanged.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
