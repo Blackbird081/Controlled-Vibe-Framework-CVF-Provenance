@@ -1,6 +1,6 @@
 # CVF Agent Handoff V63 - ACEL Applied-Knowledge Owner Enrichment
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: 8c0904c53949c5b8bee5d193adb1c19439db653e; learning material; dedicated continuity.
+Current HEAD recorded for this handoff: 5af47a4b22293c575d1e98538f493301c259047d; recurring block material; dedicated continuity.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -8,9 +8,9 @@ Remote tracking branch: `origin/main`. Exact remote SHA must be derived live fro
 ## Purpose
 Carry CVF-NCR v2.8 and closed AKOE/G1-G7. Applied-knowledge details remain in the governed roadmap.
 ## Scope / Target / Owner Boundary
-Role: Local orchestrator/reviewer; phase: NIS-T1H context redispatch; decision owner: Local; CCMA/S05/P11 parked.
+Role: Local orchestrator/reviewer; phase: NIS-T1H recurring-block admission hold; decision owner: Local; CCMA/S05/P11 parked.
 ## Startup Acknowledgment
-Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`; handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=T1H fresh-context redispatch2; role=Local orchestrator; phase=redispatch; decision owner=Local; parked lanes retained.
+Startup acknowledged: mode=`cvf_ncr_p10_closed_p11_parked`; handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=actor admission only, R1 recurring blocked; Local reviewer/decision owner; parked lanes retained.
 Learning discovery: `docs/reviews/learnings/README.md` before blind/fresh-context dispatch; rule added, machine candidate deferred.
 ## Current Mode
 `cvf_ncr_p10_closed_p11_parked`. CVF-NCR-R1-S11-R1 is closed at `bd15b2600` after material `1a538d10d`. P10 is `ACTIVE_PRODUCTION_RUNTIME`; P11 stays parked. Latest closed learning-history wave: `LHW24`.
@@ -170,7 +170,7 @@ Rollback boundary: revert only this continuity sync; preserve material `5c1ee025
 - ACEL-AKOE-U1 is `CLOSED_PASS_BOUNDED` at `d9132412a`, disposition `SOURCE_RECONCILED_DEFER_WITH_TRIGGER`. Exact pins, 42 claims, byte hash and verification detail remain in its completion review; no import, runtime/provider, public sync or automatic successor opened.
 - CVF-NCR-R0-W01 source/profile return is Local-accepted bounded at material commit `d9b43a6f6deff7fb19710b5a9a4f50bf2a6015b6`; reviewer-fast 69/69 and pre-commit 90/90 passed. P06/P08 and actual destination/retention/cost remain open. One overbroad worker grep exposed a configured URL in tool output; the return does not reproduce it, and Local/operator config handling remains separate. No pilot or UI action was run.
 ## Next Allowed Move
-PROGRAM_ID=CVF-NIS; NEXT_ACTION_CLASS=EXECUTE_BOUNDED_WORK_ORDER; BATCH_ID=CVF-NIS-T1H. Redispatch2/REWORK1 after placement-contaminated blocked1 in docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1H_REVIEW_ONLY_MANUAL_ARM_2026-10-05.md. NEW context no T1G exposure; neutral input only,3 outputs; primary pending. Original worker retained; no helper/runtime/BUILD/S2/public; parked lanes unchanged. Dispatch material ff3aa0e2f; dedicated continuity.
+PROGRAM_ID=CVF-NIS; NEXT_ACTION_CLASS=ACTOR_SELECTION_AND_ADMISSION_ONLY; BATCH_ID=CVF-NIS-T1H. R1 recurring context BLOCKED; FEATURE_SUCCESSORS_FROZEN. Select fresh actor, exposure declaration first; no execution/third dispatch. See docs/reviews/CVF_NIS_T1H_R1_RECURRING_CONTEXT_BLOCK_2026-10-05.md. Worker/packet preserved; parked lanes unchanged.
 ## Parked Checkpoints
 - autorun lane-binding R1 is closed at `ee81deeeb`; HRLTP-T2 remains paused for Local no-subagent route reassessment;
 - T3C-C2 is closed and Local verified at `820aae3ec`;
