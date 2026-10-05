@@ -37,11 +37,11 @@
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_NIS_T1B_D_INTEGRATED_REVIEW_PERSISTENCE_2026-10-05.md",
-    "baselineSha256": "2a9ae7cbb53753233e178abbb45bb48fc21f17f8187b0ae48e9e88b42e410f73",
+    "baselineSha256": "f68dffbfb09be65336bac1d3bc1f90a412f56cb369e1dd54321fac3aef9345ae",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1B_D_INTEGRATED_REVIEW_PERSISTENCE_2026-10-05.md",
-    "workOrderSha256": "101e46c2a50ee01b275bfb203fd9e29f1692b0bda0f09184e8c8455f0acf09e2"
+    "workOrderSha256": "1e747ef76cd96564a8be75a97db0d408f3b2b1f0367d26511d2734b31402f6f6"
   },
-  "currentAuthoritySyncReason": "NIS-T1B-D pair retained; worker isolated at bdc9d047c. Operator-authorized main documentation cleanup material 6b700886bf954c65017c73226ddb1bce9f97c2e1; no worker mutation or NIS acceptance; final six-surface continuity sync.",
+  "currentAuthoritySyncReason": "NIS-T1B-D held repair material b0fc66c0d8f5360a04a66dccaa964d5dad1eab7f; F1-F4 consolidated, B1 fixture checkpoint retained; no worker mutation/redispatch/profile acceptance.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",

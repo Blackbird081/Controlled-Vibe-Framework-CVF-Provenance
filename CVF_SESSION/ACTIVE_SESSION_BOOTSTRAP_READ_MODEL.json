@@ -2,16 +2,16 @@
   "schemaVersion": "0.1.0",
   "currentMode": "cvf_ncr_p10_closed_p11_parked",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=CVF-NIS; NEXT_ACTION_CLASS=EXECUTE_NIS_T1B_D_INTERNAL_IMPLEMENTATION; BATCH_ID=CVF-NIS-T1B-D. Operator 2026-10-05 delegates Local orchestration/review and manual INTERNAL_AGENT worker relay. A/B/C source checkpoint 5e42818cb; active currentAuthority binds NIS-T1B-D pair; work order docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1B_D_INTEGRATED_REVIEW_PERSISTENCE_2026-10-05.md. Next: worker in clean linked worktree CVF-NIS-T1B-D captures HEAD/status/pins, full bound pre-implementation PASS, then UI/API save/reopen and private-profile transaction proof; no worker commit. Local owns independent probe, review and closure; worker evidence PENDING_REVIEWER_EXECUTION. No real root/account/provider/BUILD/public activation. FR2 terminal historical receipt loss retained; no successor. CCMA PARKED_BY_OPERATOR; S05/C1/send/B2 STOP; Q001/Q004 OPEN/Profile A; P11/deploy and FLAL T4/T5 parked. T3/RANGE and FR1-R1 closed; opaque-source/DEFER_PRODUCTION_JOIN_GUARD and original T2 FAIL retained. Public PR9 merged/checksPASS; no push. LHW24 closed; costs UNKNOWN. Main docs backlog independently reconciled at 6b700886b. Worker checkout bdc9d047c unchanged; await its released return before source review/merge.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-NIS; NEXT_ACTION_CLASS=RESOLVE_NIS_T1B_D_REWORK_CHECKPOINT; BATCH_ID=CVF-NIS-T1B-D. Local reviewed released R0 worker tree at bdc9d047c: NOT_ACCEPTED; frozen numeric pins match, reviewer-fast PASS, independent structural diagnostic reproduces hardening rollback gap; full real-security probe incomplete. Same assignment round 1 HOLD_OPERATOR_CHECKPOINT; currentAuthority binds amended pair. Findings F1 rollback initialization, F2 session drift/ABA, F3 five-file probe registry coverage, F4 raw gate-log digest; B1 real WRONG_OWNER proof retained. Next Local resolves NIS-T1B-D-WRONG-OWNER-FIXTURE bounded elevated OS-temp helper authority, then exact Local registry entry/generator, committed release/pins/continuity and pre-dispatch PASS before manual INTERNAL_AGENT worker relay. Worker source/R0 return untouched; no redispatch/staging/commit/profile acceptance now. Main old nine changes reconciled at 6b700886b plus e8016369d. No real root/account/provider/BUILD/public activation. FR2 lost historical receipt retained; CCMA PARKED_BY_OPERATOR; S05/C1/send/B2 STOP; Q001/Q004 OPEN/Profile A; P11/deploy and FLAL T4/T5 parked. T3/RANGE and FR1-R1 closed; opaque-source/DEFER_PRODUCTION_JOIN_GUARD and original T2 FAIL retained; Public PR9 merged/checksPASS; no push; LHW24 closed; costs UNKNOWN.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_NIS_T1B_D_INTEGRATED_REVIEW_PERSISTENCE_2026-10-05.md",
-    "baselineSha256": "2a9ae7cbb53753233e178abbb45bb48fc21f17f8187b0ae48e9e88b42e410f73",
+    "baselineSha256": "f68dffbfb09be65336bac1d3bc1f90a412f56cb369e1dd54321fac3aef9345ae",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1B_D_INTEGRATED_REVIEW_PERSISTENCE_2026-10-05.md",
-    "workOrderSha256": "101e46c2a50ee01b275bfb203fd9e29f1692b0bda0f09184e8c8455f0acf09e2"
+    "workOrderSha256": "1e747ef76cd96564a8be75a97db0d408f3b2b1f0367d26511d2734b31402f6f6"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }
