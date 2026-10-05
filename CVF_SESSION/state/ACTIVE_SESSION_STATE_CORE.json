@@ -37,11 +37,11 @@
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_NIS_T1B_D_INTEGRATED_REVIEW_PERSISTENCE_2026-10-05.md",
-    "baselineSha256": "f68dffbfb09be65336bac1d3bc1f90a412f56cb369e1dd54321fac3aef9345ae",
+    "baselineSha256": "a76afb479deff9983941a22282c347025e7aabf15d2ea03f54fb36e5a70a58cd",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1B_D_INTEGRATED_REVIEW_PERSISTENCE_2026-10-05.md",
-    "workOrderSha256": "1e747ef76cd96564a8be75a97db0d408f3b2b1f0367d26511d2734b31402f6f6"
+    "workOrderSha256": "a2bf6286911a5cae64a271452b2547096a3f35bb0dd9b5eb3893645f3cc572ad"
   },
-  "currentAuthoritySyncReason": "NIS-T1B-D held repair material b0fc66c0d8f5360a04a66dccaa964d5dad1eab7f; F1-F4 consolidated, B1 fixture checkpoint retained; no worker mutation/redispatch/profile acceptance.",
+  "currentAuthoritySyncReason": "NIS-T1B-D R1 material 25ec62ca27597cea15ecd2a3b7bbaa9d120d1e65; approved marked owner helper, actual owner/refusal/restoration PASS, exact registry coverage; R0 frozen, profile acceptance pending.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
