@@ -1,6 +1,6 @@
 # CVF Agent Handoff V63 - ACEL Applied-Knowledge Owner Enrichment
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD: `b2016e35a4b11043524ac51c26a49121309391cc`; CVF-NIS-T1B-D dispatch material; source checkpoint 5e42818cb; implementation/profile acceptance pending.
+Current HEAD: `94fcfb5201d5a4b079249b904f2d2d091e16b764`; CVF-NIS-T1B-D packet material `b2016e35a4b11043524ac51c26a49121309391cc`; implementation/profile acceptance pending.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
