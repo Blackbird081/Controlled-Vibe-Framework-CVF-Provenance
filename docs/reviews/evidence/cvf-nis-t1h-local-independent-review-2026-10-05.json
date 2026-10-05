@@ -1,0 +1,590 @@
+{
+  "schemaVersion": "cvf.nisT1hLocalIndependentReview.v1",
+  "executionBaseHead": "383a03a52bd50f009b6e78ea1c4863c2d82aaafe",
+  "workerActor": "CLAUDE-T1H-R1-FRESH-DECL-20261005-01",
+  "probeActor": "LOCAL_NIS_T1H_SCORER",
+  "probeInvocation": "nis-t1h-local-review-20261005",
+  "oracleSource": "from pathlib import Path\nimport hashlib,json,subprocess,datetime,copy\nr=Path.cwd();w=r.parent/'Controlled-Vibe-Framework-CVF-NIS-T1H-R1';s=r/'.cvf/runtime/nis-t1h-local-review-20261005';s.mkdir(parents=True,exist_ok=True)\nsha=lambda b:hashlib.sha256(b).hexdigest();git=lambda a,cwd=r:subprocess.check_output(['git',*a],cwd=cwd,text=True,encoding='utf-8').strip()\nout=['docs/reviews/CVF_NIS_T1H_REVIEW_ONLY_MANUAL_ARM_WORKER_RETURN_2026-10-05.md','docs/reviews/evidence/cvf-nis-t1h-manual-raw-responses-2026-10-05.json','docs/reviews/evidence/cvf-nis-t1h-manual-exposure-timing-2026-10-05.json']\nassert git(['status','--porcelain'])==''\nassert git(['rev-parse','HEAD'],w)==git(['rev-parse','HEAD'])=='383a03a52bd50f009b6e78ea1c4863c2d82aaafe'\nassert set(x[3:] for x in git(['status','--porcelain'],w).splitlines())==set(out)\nassert git(['write-tree'],w)==git(['rev-parse','HEAD^{tree}'],w)\nraw={p:(w/p).read_bytes() for p in out};a=json.loads(raw[out[1]]);t=json.loads(raw[out[2]])\npkg='docs/reviews/evidence/cvf-nis-t1g-reviewer-inputs-review-only-2026-10-05.json';p=json.loads((r/pkg).read_text());inp=json.loads((r/'docs/reviews/evidence/cvf-nis-t1h-dispatch-inputs-2026-10-05.json').read_text())\nassert sha((w/pkg).read_bytes())==sha((r/pkg).read_bytes())==inp['sources'][pkg]['rawSha256']\nassert len(a['responses'])==len(t['cases'])==len(p['reviewerViews'])==11\nscratch=w/'.cvf/runtime/nis-t1h-worker-20261005';logbytes=(scratch/'timestamps.jsonl').read_bytes();assert sha(logbytes)==t['timestampLogSha256'];events=[json.loads(x) for x in logbytes.splitlines()]\nassert len(events)==25 and events[0]['label']=='prep' and events[1]['kind']=='end' and events[-1]['label']=='all'\nassert all(y['monotonic_ns']>=x['monotonic_ns'] and datetime.datetime.fromisoformat(y['utc'])>=datetime.datetime.fromisoformat(x['utc']) for x,y in zip(events,events[1:]))\nchecks=[];rounding=[];forms=[]\ndef verify_response(x,v):\n assert x['caseId']==v['caseId']\n assert x['viewSha256']==sha(v['viewMarkdown'].encode())\n assert sha(x['rawResponseText'].encode())==x['submittedResponseSha256']\nfor n,(x,c,v) in enumerate(zip(a['responses'],t['cases'],p['reviewerViews']),1):\n verify_response(x,v);assert x['presentationOrder']==c['presentationOrder']==n\n body=x['rawResponseText'].encode();assert (scratch/f'submitted/case{n:02d}.json').read_bytes()==body\n f=json.loads(body);forms.append(f);start,end=events[2*n],events[2*n+1]\n assert start['label']==end['label']==f'case{n:02d}' and start['kind']=='start' and end['kind']=='submit'\n assert end['sha256']==x['submittedResponseSha256']==c['submittedResponseSha256']\n assert c['openedAtUtc']==f['openedAt']==start['utc'] and c['submittedAtUtc']==end['utc']\n assert c['openedMonotonicNs']==start['monotonic_ns'] and c['submittedMonotonicNs']==end['monotonic_ns']\n elapsed=(end['monotonic_ns']-start['monotonic_ns'])/1e9;assert 0<=elapsed<=720\n delta=(datetime.datetime.fromisoformat(end['utc'])-datetime.datetime.fromisoformat(f['submittedAt'])).total_seconds();assert 0<=delta<=.020\n rounding.append({'caseId':x['caseId'],'frozenFormElapsed':f['elapsedSeconds'],'timingFieldElapsed':c['elapsedSecondsMonotonic'],'logBoundaryElapsed':elapsed,'formToLogSubmitMilliseconds':round(delta*1000,3),'formVsLogElapsedMilliseconds':round((f['elapsedSeconds']-elapsed)*1000,3)})\n checks.append({'caseId':x['caseId'],'viewSha256':x['viewSha256'],'responseSha256':x['submittedResponseSha256'],'exactFrozenFileMatch':True,'orderedStartSubmit':True,'logBoundaryElapsedSeconds':elapsed,'within720Seconds':True})\nprep=(events[1]['monotonic_ns']-events[0]['monotonic_ns'])/1e9;continuous=(events[-1]['monotonic_ns']-events[0]['monotonic_ns'])/1e9\nwall=(datetime.datetime.fromisoformat(events[-1]['utc'])-datetime.datetime.fromisoformat(events[0]['utc'])).total_seconds()\nassert abs(prep-t['preparation']['elapsedSecondsMonotonic'])<.001 and prep<=1200 and continuous<=10800\nphaseSum=prep+sum(x['logBoundaryElapsedSeconds'] for x in checks)\nclaimed=t['totals']['activeSecondsPreparationPlusCases'];assert continuous>claimed\nreceipts=[]\npr=scratch/'pre-implementation/pre-implementation.json';d=json.loads(pr.read_text());assert d['status']=='PASS' and all(x['status']=='PASS' for x in d['checks']);assert git(['rev-parse',d['headSha']],w)==git(['rev-parse','HEAD'],w)\nreceipts.append({'path':str(pr),'sha256':sha(pr.read_bytes()),'checks':len(d['checks']),'status':'PASS_CONSUMED_NOT_RERUN'})\nfg=scratch/'fast-gate-final.log';assert 'COMPLIANT: worker-return fast gate passed' in fg.read_text(encoding='utf-8',errors='replace');receipts.append({'path':str(fg),'sha256':sha(fg.read_bytes()),'status':'COMPLIANT_LOG_CONSUMED_NOT_RERUN'})\nnegative=[]\nfor name,mut in [('response_hash',lambda z:z.update(submittedResponseSha256='0'*64)),('view_hash',lambda z:z.update(viewSha256='0'*64))]:\n z=copy.deepcopy(a['responses'][0]);mut(z)\n try:verify_response(z,p['reviewerViews'][0])\n except AssertionError:negative.append({'control':name,'result':'REJECTED'})\n else:raise AssertionError('negative survived')\nz=copy.deepcopy(events);z[3]['monotonic_ns']=z[2]['monotonic_ns']-1;assert not all(y['monotonic_ns']>=x['monotonic_ns'] for x,y in zip(z,z[1:]));negative.append({'control':'reversed_submit_clock','result':'REJECTED'})\nassert abs(claimed-continuous)>4;negative.append({'control':'phase_sum_claimed_as_all_active_without_exclusions','result':'DETECTED_ACTUAL_CONTRADICTION'})\nsem=[('RB-01','D7','R4 resolution C1 omitted','Section3 R4 None quoted vs DECISION:boundaries','HIT'),('RB-02','D5','invented email user statement','Section3 R1 second statement vs A outOfScope/coreFeatures','HIT'),('RB-03','D8','invented BUILD grant despite rehash','Section8 GRANTED after technical review','HIT'),('RB-04','CCB','no asserted record defect; placeholder and L2 limits retained','Part2 empty','CLEAN_CONTROL_PASS'),('RB-05','D2','no validation serves R5','Section5 T5/Section6 missing V5','HIT'),('RB-06','D3','T4 depends on nonexistent T9','Section5 T4 Depends on T1,T9','HIT'),('RB-07','CCA','no asserted defect, but shared V6 coverage gap invalidates clean claim','Section6 V6 eleven months vs Section3 R6 twelve','INVALID_CONTROL_UNSEEDED_COVERAGE_GAP'),('RB-08','D6','R6 stale despite equal answer after targetUsers change; also R3','Section3 R6 DECISION:data vs A/B recorded fields','HIT_FULL'),('RB-09','D1','no task serves R5','Section5 no T6/R5 task; V5 retained','HIT'),('RB-10','D9','uncited U3/DECISION:exceptions affects lateness; judgment explicitly qualified','Section2 U3 none/Section3 R2 Sources','LIMITATION_DISCLOSED_NOT_HIT_NOT_FP'),('RB-11','D4','mutual dependency cycle T2/T3','Section5 T2 T1,T3 and T3 T2','HIT')]\ncasepack='docs/reviews/evidence/cvf-nis-t1g-manual-baseline-casepack-2026-10-05.json';key=json.loads((r/casepack).read_text())['answerKey']['entries'];assert all(key[c]['internalKey']==k for c,k,_,_,_ in sem)\njudgments=[dict(zip(['caseId','key','actualCause','locator','localDisposition'],row)) for row in sem]\naffected=[v['caseId'] for v in p['reviewerViews'] if 'A' in v['attachments']];assert affected==['RB-01','RB-02','RB-07','RB-08','RB-09','RB-10','RB-11']\ntext=p['reviewerViews'][6]['viewMarkdown'];assert 'A compiled report is still present eleven months after creation.' in text and 'Compiled reports are kept 12 months.' in text\nresult={'schemaVersion':'cvf.nisT1hLocalIndependentReview.v1','executionBaseHead':git(['rev-parse','HEAD']),'workerActor':'CLAUDE-T1H-R1-FRESH-DECL-20261005-01','probeActor':'LOCAL_NIS_T1H_SCORER','probeInvocation':'nis-t1h-local-review-20261005','oracleSource':Path(__file__).read_text(),'oracleSha256':sha(Path(__file__).read_bytes()),'workerArtifacts':[{'path':p,'sha256':sha(b)} for p,b in raw.items()],'sourcePins':{'neutral':sha((r/pkg).read_bytes()),'casepack':sha((r/casepack).read_bytes())},'receipts':receipts,'integrityDisposition':'PASS_FROZEN_BYTES_AND_ORDER_WITH_TIMING_ACCOUNTING_LIMITS','checks':checks,'clockLogSha256':sha(logbytes),'clockEvents':events,'roundingAndTwoSampleDifferences':rounding,'timingReconciliation':{'prepSeconds':prep,'workerClaimedPhaseActiveSeconds':claimed,'logPhaseSumSeconds':round(phaseSum,3),'continuousMonotonicSecondsNoExcludedInterruptions':continuous,'wallSeconds':wall,'claimedActiveUnderstatementSeconds':round(continuous-claimed,3),'transitionAndTailOverheadSeconds':round(continuous-phaseSum,3),'manualEmMinutesPerRecordIncludingAllTime':round(continuous/60/11,6),'allTimeboxesSatisfied':True,'claimBoundary':'clock/log byte reconciliation, not independently witnessed elapsed thought or human productivity'},'semanticScoring':judgments,'unseededFinding':{'V6':'VALIDATION_COVERAGE_GAP: eleven-month check cannot reject deletion at11.5months for12month requirement; reject jobA clean-control claim, preserve raw calibration change','U1':'business-scope association concern; no universal R6 block under LD5, not automatically a deterministic schema defect','affectedViews':affected,'cleanControlRB07':'INVALIDATED_NOT_REVIEWER_FALSE_POSITIVE'},'deterministicSeedHits':8,'deterministicSeedCount':8,'eligibleCleanControlCount':1,'eligibleCleanControlPasses':1,'invalidatedCleanControls':1,'D9LimitationDisclosed':True,'manualCoverageCriterion':'NOT_ESTABLISHED: original zeroFP on both controls cannot be evaluated after jobA invalidation','helperArm':'NOT_AUTHORIZED_NOT_EXECUTED','costWinner':'UNKNOWN','negativeControls':negative,'claimBoundary':'one ordered synthetic manual pilot; near-copy learning/calibration retained; self-declared exposure not certified; no live/runtime/UX/build-ready or generalized accuracy claim'}\n(s/'probe-result.json').write_text(json.dumps(result,ensure_ascii=True,indent=2)+'\\n',encoding='utf-8')\nassert all((w/p).read_bytes()==b for p,b in raw.items())\nprint(json.dumps({'integrity':result['integrityDisposition'],'seedHits':'8/8','cleanControls':'1 eligible PASS, RB07 invalidated','coverage':result['manualCoverageCriterion'],'time':result['timingReconciliation'],'negativeControls':len(negative)},indent=2))\n",
+  "oracleSha256": "29408f8fc16d9e0d54e6289a3aa6aa144dd9f7710c0cdcd76eec35764ed98be9",
+  "workerArtifacts": [
+    {
+      "path": "docs/reviews/CVF_NIS_T1H_REVIEW_ONLY_MANUAL_ARM_WORKER_RETURN_2026-10-05.md",
+      "sha256": "7f136e7a61c77e35c6867ebea7079a61584f5d65fb5b158b51de653f8390c582"
+    },
+    {
+      "path": "docs/reviews/evidence/cvf-nis-t1h-manual-raw-responses-2026-10-05.json",
+      "sha256": "6df52797a3001ec01ab119bf24beba7fc271ec8e694f1ea2efd96ddb14ad7423"
+    },
+    {
+      "path": "docs/reviews/evidence/cvf-nis-t1h-manual-exposure-timing-2026-10-05.json",
+      "sha256": "2de0d7b2ac1df8707ffd2d7b744548ab9fb2e320721d950c2b66bf36f9925924"
+    }
+  ],
+  "sourcePins": {
+    "neutral": "28ece326b696672153abd88a5c5ef77b1b57bfcd82dbd119f85f2f071c32a869",
+    "casepack": "f3cc5972124b5c0879525061812a2173daa2a687ecbc21d8e0b6814113cf88da"
+  },
+  "receipts": [
+    {
+      "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF-NIS-T1H-R1\\.cvf\\runtime\\nis-t1h-worker-20261005\\pre-implementation\\pre-implementation.json",
+      "sha256": "16d57eebfcf1f5895089f72ca185f3e39ac01058df18fb1ecdfd54cbbed95ee7",
+      "checks": 87,
+      "status": "PASS_CONSUMED_NOT_RERUN"
+    },
+    {
+      "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF-NIS-T1H-R1\\.cvf\\runtime\\nis-t1h-worker-20261005\\fast-gate-final.log",
+      "sha256": "54ac47c70d02822ec1cceedb57aa7af858c3075fbb10f175ae82d4577cab3ca8",
+      "status": "COMPLIANT_LOG_CONSUMED_NOT_RERUN"
+    }
+  ],
+  "integrityDisposition": "PASS_FROZEN_BYTES_AND_ORDER_WITH_TIMING_ACCOUNTING_LIMITS",
+  "checks": [
+    {
+      "caseId": "RB-01",
+      "viewSha256": "d03236295f86bb43433c94b6a20a0d67573a944f47d7d1e3fc5f899d7eb1cf21",
+      "responseSha256": "d2794df800e30aac9f12dc4658a534c57650e29269f77a4d8135ae3dae92d476",
+      "exactFrozenFileMatch": true,
+      "orderedStartSubmit": true,
+      "logBoundaryElapsedSeconds": 57.094,
+      "within720Seconds": true
+    },
+    {
+      "caseId": "RB-02",
+      "viewSha256": "765b19f9bb558909118c509381b5d128f0b80a474df1f63c6d55f119f60e682f",
+      "responseSha256": "964a8a982c8b108f5ba3c49924af0b299885556a6706c3eeb7d7a4d382575a77",
+      "exactFrozenFileMatch": true,
+      "orderedStartSubmit": true,
+      "logBoundaryElapsedSeconds": 22.547,
+      "within720Seconds": true
+    },
+    {
+      "caseId": "RB-03",
+      "viewSha256": "e4122faecb4604924f62d530a386c0d7ae37222c34e5b5466c93400158dc3d9f",
+      "responseSha256": "95c71361d00a7bbf3b07e2e327693a500ff01cd3fe87c96c38f851039541e690",
+      "exactFrozenFileMatch": true,
+      "orderedStartSubmit": true,
+      "logBoundaryElapsedSeconds": 18.546,
+      "within720Seconds": true
+    },
+    {
+      "caseId": "RB-04",
+      "viewSha256": "5b36209cf6b9125c5383e727571f8b1c8f5eaf6b7fc5418dd3bdfef65111a5d0",
+      "responseSha256": "15d1ba5290cd5726539ae83779b6bc17068ca463330475d2ff33e17f5fdba6bd",
+      "exactFrozenFileMatch": true,
+      "orderedStartSubmit": true,
+      "logBoundaryElapsedSeconds": 10.141,
+      "within720Seconds": true
+    },
+    {
+      "caseId": "RB-05",
+      "viewSha256": "a09b9f93b6df06ee9c4357a7af367ebc01a5a5735984236b5d1e1e80aaad742f",
+      "responseSha256": "307cfff0a4105cc4af7f1b3cccd767324b72f63e04867afa901f41fdf8b73f79",
+      "exactFrozenFileMatch": true,
+      "orderedStartSubmit": true,
+      "logBoundaryElapsedSeconds": 9.391,
+      "within720Seconds": true
+    },
+    {
+      "caseId": "RB-06",
+      "viewSha256": "36b1e7bd23af96074643fd39f8b1c4436bcb38957ae9c9d83d69d6a0886653dd",
+      "responseSha256": "48d236740d05a9d8b8ce8637a41753c5709a16ab00612dd2e0abdfb08b7ca750",
+      "exactFrozenFileMatch": true,
+      "orderedStartSubmit": true,
+      "logBoundaryElapsedSeconds": 7.421,
+      "within720Seconds": true
+    },
+    {
+      "caseId": "RB-07",
+      "viewSha256": "a6aab5e96259ac6c1b77c39b7777f430ce1afd9e1f1c522e4d0e4d07433d9afc",
+      "responseSha256": "55584f49a1f6d82aa54f6d2f08fea80a8d6d4e5bd7cc9e5b324e059b0caa1d4b",
+      "exactFrozenFileMatch": true,
+      "orderedStartSubmit": true,
+      "logBoundaryElapsedSeconds": 12.688,
+      "within720Seconds": true
+    },
+    {
+      "caseId": "RB-08",
+      "viewSha256": "771b4178d2e63fca8004f8a2e0e5b578a8d05f9372f4b84ce9dfeef4797a7acb",
+      "responseSha256": "78c95b33f8694b7dfa076ec8c7806b87186d5e88c29a63307da8b02e1b6715f7",
+      "exactFrozenFileMatch": true,
+      "orderedStartSubmit": true,
+      "logBoundaryElapsedSeconds": 28.86,
+      "within720Seconds": true
+    },
+    {
+      "caseId": "RB-09",
+      "viewSha256": "8accee1d34c582f6febd6c5d21ac8a68c0267753f9a52aa618e45721bb6fea8b",
+      "responseSha256": "1c81f2f8d7222f754fa03881a5a578cbc20d890788c4736fdabe6bdc7ccbf904",
+      "exactFrozenFileMatch": true,
+      "orderedStartSubmit": true,
+      "logBoundaryElapsedSeconds": 10.078,
+      "within720Seconds": true
+    },
+    {
+      "caseId": "RB-10",
+      "viewSha256": "47fa9ba207c52f8b99e11fe07129177a6e395f5e11966016ff8349f5b5b88c2f",
+      "responseSha256": "3d93d9b86ebd002638887f9d2957956b392145bf5acfb6c62356e4a395ceabaf",
+      "exactFrozenFileMatch": true,
+      "orderedStartSubmit": true,
+      "logBoundaryElapsedSeconds": 25.031,
+      "within720Seconds": true
+    },
+    {
+      "caseId": "RB-11",
+      "viewSha256": "949fc2bd7de3d8162d5a8426210c61da82bc9c175ddabc19c2dd7005de7cd752",
+      "responseSha256": "84a9ba17e0489039e3351ec93a04a5bac1b41d39017bc2e022eca0134e7cd5f4",
+      "exactFrozenFileMatch": true,
+      "orderedStartSubmit": true,
+      "logBoundaryElapsedSeconds": 13.531,
+      "within720Seconds": true
+    }
+  ],
+  "clockLogSha256": "c9d596bc22ee70188c8ae3b6cd8f32f0398fb3ff7ab25c58b1d1704cda0d3cc0",
+  "clockEvents": [
+    {
+      "label": "prep",
+      "kind": "start",
+      "utc": "2026-10-05T15:04:13.000321+00:00",
+      "monotonic_ns": 179566796000000,
+      "clock": "time.monotonic_ns (QueryPerformanceCounter) + datetime.now(UTC)",
+      "note": "preparation clock start immediately before displaying format/checklist/blank form/attachments"
+    },
+    {
+      "label": "prep",
+      "kind": "end",
+      "utc": "2026-10-05T15:04:30.129411+00:00",
+      "monotonic_ns": 179583921000000,
+      "clock": "time.monotonic_ns (QueryPerformanceCounter) + datetime.now(UTC)",
+      "note": "preparation clock end; note: first attachments display failed on cp1252 encoding and was re-displayed with UTF-8; one harness status nudge occurred, no work paused"
+    },
+    {
+      "label": "case01",
+      "kind": "start",
+      "utc": "2026-10-05T15:04:30.191450+00:00",
+      "monotonic_ns": 179583984000000,
+      "clock": "time.monotonic_ns (QueryPerformanceCounter) + datetime.now(UTC)",
+      "note": "view opened immediately before display"
+    },
+    {
+      "label": "case01",
+      "kind": "submit",
+      "utc": "2026-10-05T15:05:27.276067+00:00",
+      "monotonic_ns": 179641078000000,
+      "clock": "time.monotonic_ns (QueryPerformanceCounter) + datetime.now(UTC)",
+      "sha256": "d2794df800e30aac9f12dc4658a534c57650e29269f77a4d8135ae3dae92d476",
+      "file": "submitted/case01.json",
+      "elapsedSeconds": 57.094
+    },
+    {
+      "label": "case02",
+      "kind": "start",
+      "utc": "2026-10-05T15:05:31.462639+00:00",
+      "monotonic_ns": 179645265000000,
+      "clock": "time.monotonic_ns (QueryPerformanceCounter) + datetime.now(UTC)",
+      "note": "view opened immediately before display"
+    },
+    {
+      "label": "case02",
+      "kind": "submit",
+      "utc": "2026-10-05T15:05:54.021430+00:00",
+      "monotonic_ns": 179667812000000,
+      "clock": "time.monotonic_ns (QueryPerformanceCounter) + datetime.now(UTC)",
+      "sha256": "964a8a982c8b108f5ba3c49924af0b299885556a6706c3eeb7d7a4d382575a77",
+      "file": "submitted/case02.json",
+      "elapsedSeconds": 22.547
+    },
+    {
+      "label": "case03",
+      "kind": "start",
+      "utc": "2026-10-05T15:05:54.081101+00:00",
+      "monotonic_ns": 179667875000000,
+      "clock": "time.monotonic_ns (QueryPerformanceCounter) + datetime.now(UTC)",
+      "note": "view opened immediately before display"
+    },
+    {
+      "label": "case03",
+      "kind": "submit",
+      "utc": "2026-10-05T15:06:12.627166+00:00",
+      "monotonic_ns": 179686421000000,
+      "clock": "time.monotonic_ns (QueryPerformanceCounter) + datetime.now(UTC)",
+      "sha256": "95c71361d00a7bbf3b07e2e327693a500ff01cd3fe87c96c38f851039541e690",
+      "file": "submitted/case03.json",
+      "elapsedSeconds": 18.546
+    },
+    {
+      "label": "case04",
+      "kind": "start",
+      "utc": "2026-10-05T15:06:12.694976+00:00",
+      "monotonic_ns": 179686484000000,
+      "clock": "time.monotonic_ns (QueryPerformanceCounter) + datetime.now(UTC)",
+      "note": "view opened immediately before display"
+    },
+    {
+      "label": "case04",
+      "kind": "submit",
+      "utc": "2026-10-05T15:06:22.821956+00:00",
+      "monotonic_ns": 179696625000000,
+      "clock": "time.monotonic_ns (QueryPerformanceCounter) + datetime.now(UTC)",
+      "sha256": "15d1ba5290cd5726539ae83779b6bc17068ca463330475d2ff33e17f5fdba6bd",
+      "file": "submitted/case04.json",
+      "elapsedSeconds": 10.125
+    },
+    {
+      "label": "case05",
+      "kind": "start",
+      "utc": "2026-10-05T15:06:22.879271+00:00",
+      "monotonic_ns": 179696671000000,
+      "clock": "time.monotonic_ns (QueryPerformanceCounter) + datetime.now(UTC)",
+      "note": "view opened immediately before display"
+    },
+    {
+      "label": "case05",
+      "kind": "submit",
+      "utc": "2026-10-05T15:06:32.260090+00:00",
+      "monotonic_ns": 179706062000000,
+      "clock": "time.monotonic_ns (QueryPerformanceCounter) + datetime.now(UTC)",
+      "sha256": "307cfff0a4105cc4af7f1b3cccd767324b72f63e04867afa901f41fdf8b73f79",
+      "file": "submitted/case05.json",
+      "elapsedSeconds": 9.391
+    },
+    {
+      "label": "case06",
+      "kind": "start",
+      "utc": "2026-10-05T15:06:32.327441+00:00",
+      "monotonic_ns": 179706125000000,
+      "clock": "time.monotonic_ns (QueryPerformanceCounter) + datetime.now(UTC)",
+      "note": "view opened immediately before display"
+    },
+    {
+      "label": "case06",
+      "kind": "submit",
+      "utc": "2026-10-05T15:06:39.746845+00:00",
+      "monotonic_ns": 179713546000000,
+      "clock": "time.monotonic_ns (QueryPerformanceCounter) + datetime.now(UTC)",
+      "sha256": "48d236740d05a9d8b8ce8637a41753c5709a16ab00612dd2e0abdfb08b7ca750",
+      "file": "submitted/case06.json",
+      "elapsedSeconds": 7.421
+    },
+    {
+      "label": "case07",
+      "kind": "start",
+      "utc": "2026-10-05T15:06:39.805353+00:00",
+      "monotonic_ns": 179713593000000,
+      "clock": "time.monotonic_ns (QueryPerformanceCounter) + datetime.now(UTC)",
+      "note": "view opened immediately before display"
+    },
+    {
+      "label": "case07",
+      "kind": "submit",
+      "utc": "2026-10-05T15:06:52.486464+00:00",
+      "monotonic_ns": 179726281000000,
+      "clock": "time.monotonic_ns (QueryPerformanceCounter) + datetime.now(UTC)",
+      "sha256": "55584f49a1f6d82aa54f6d2f08fea80a8d6d4e5bd7cc9e5b324e059b0caa1d4b",
+      "file": "submitted/case07.json",
+      "elapsedSeconds": 12.688
+    },
+    {
+      "label": "case08",
+      "kind": "start",
+      "utc": "2026-10-05T15:06:52.548020+00:00",
+      "monotonic_ns": 179726343000000,
+      "clock": "time.monotonic_ns (QueryPerformanceCounter) + datetime.now(UTC)",
+      "note": "view opened immediately before display"
+    },
+    {
+      "label": "case08",
+      "kind": "submit",
+      "utc": "2026-10-05T15:07:21.413650+00:00",
+      "monotonic_ns": 179755203000000,
+      "clock": "time.monotonic_ns (QueryPerformanceCounter) + datetime.now(UTC)",
+      "sha256": "78c95b33f8694b7dfa076ec8c7806b87186d5e88c29a63307da8b02e1b6715f7",
+      "file": "submitted/case08.json",
+      "elapsedSeconds": 28.86
+    },
+    {
+      "label": "case09",
+      "kind": "start",
+      "utc": "2026-10-05T15:07:21.474180+00:00",
+      "monotonic_ns": 179755265000000,
+      "clock": "time.monotonic_ns (QueryPerformanceCounter) + datetime.now(UTC)",
+      "note": "view opened immediately before display"
+    },
+    {
+      "label": "case09",
+      "kind": "submit",
+      "utc": "2026-10-05T15:07:31.554758+00:00",
+      "monotonic_ns": 179765343000000,
+      "clock": "time.monotonic_ns (QueryPerformanceCounter) + datetime.now(UTC)",
+      "sha256": "1c81f2f8d7222f754fa03881a5a578cbc20d890788c4736fdabe6bdc7ccbf904",
+      "file": "submitted/case09.json",
+      "elapsedSeconds": 10.078
+    },
+    {
+      "label": "case10",
+      "kind": "start",
+      "utc": "2026-10-05T15:07:31.617726+00:00",
+      "monotonic_ns": 179765406000000,
+      "clock": "time.monotonic_ns (QueryPerformanceCounter) + datetime.now(UTC)",
+      "note": "view opened immediately before display"
+    },
+    {
+      "label": "case10",
+      "kind": "submit",
+      "utc": "2026-10-05T15:07:56.645358+00:00",
+      "monotonic_ns": 179790437000000,
+      "clock": "time.monotonic_ns (QueryPerformanceCounter) + datetime.now(UTC)",
+      "sha256": "3d93d9b86ebd002638887f9d2957956b392145bf5acfb6c62356e4a395ceabaf",
+      "file": "submitted/case10.json",
+      "elapsedSeconds": 25.031
+    },
+    {
+      "label": "case11",
+      "kind": "start",
+      "utc": "2026-10-05T15:07:56.704733+00:00",
+      "monotonic_ns": 179790500000000,
+      "clock": "time.monotonic_ns (QueryPerformanceCounter) + datetime.now(UTC)",
+      "note": "view opened immediately before display"
+    },
+    {
+      "label": "case11",
+      "kind": "submit",
+      "utc": "2026-10-05T15:08:10.242032+00:00",
+      "monotonic_ns": 179804031000000,
+      "clock": "time.monotonic_ns (QueryPerformanceCounter) + datetime.now(UTC)",
+      "sha256": "84a9ba17e0489039e3351ec93a04a5bac1b41d39017bc2e022eca0134e7cd5f4",
+      "file": "submitted/case11.json",
+      "elapsedSeconds": 13.531
+    },
+    {
+      "label": "all",
+      "kind": "end",
+      "utc": "2026-10-05T15:08:10.301455+00:00",
+      "monotonic_ns": 179804093000000,
+      "clock": "time.monotonic_ns (QueryPerformanceCounter) + datetime.now(UTC)",
+      "note": "all eleven views submitted"
+    }
+  ],
+  "roundingAndTwoSampleDifferences": [
+    {
+      "caseId": "RB-01",
+      "frozenFormElapsed": 57.094,
+      "timingFieldElapsed": 57.094,
+      "logBoundaryElapsed": 57.094,
+      "formToLogSubmitMilliseconds": 0.0,
+      "formVsLogElapsedMilliseconds": 0.0
+    },
+    {
+      "caseId": "RB-02",
+      "frozenFormElapsed": 22.547,
+      "timingFieldElapsed": 22.547,
+      "logBoundaryElapsed": 22.547,
+      "formToLogSubmitMilliseconds": 2.027,
+      "formVsLogElapsedMilliseconds": 0.0
+    },
+    {
+      "caseId": "RB-03",
+      "frozenFormElapsed": 18.546,
+      "timingFieldElapsed": 18.546,
+      "logBoundaryElapsed": 18.546,
+      "formToLogSubmitMilliseconds": 0.0,
+      "formVsLogElapsedMilliseconds": 0.0
+    },
+    {
+      "caseId": "RB-04",
+      "frozenFormElapsed": 10.125,
+      "timingFieldElapsed": 10.141,
+      "logBoundaryElapsed": 10.141,
+      "formToLogSubmitMilliseconds": 1.721,
+      "formVsLogElapsedMilliseconds": -16.0
+    },
+    {
+      "caseId": "RB-05",
+      "frozenFormElapsed": 9.391,
+      "timingFieldElapsed": 9.391,
+      "logBoundaryElapsed": 9.391,
+      "formToLogSubmitMilliseconds": 0.0,
+      "formVsLogElapsedMilliseconds": 0.0
+    },
+    {
+      "caseId": "RB-06",
+      "frozenFormElapsed": 7.421,
+      "timingFieldElapsed": 7.421,
+      "logBoundaryElapsed": 7.421,
+      "formToLogSubmitMilliseconds": 1.944,
+      "formVsLogElapsedMilliseconds": 0.0
+    },
+    {
+      "caseId": "RB-07",
+      "frozenFormElapsed": 12.688,
+      "timingFieldElapsed": 12.688,
+      "logBoundaryElapsed": 12.688,
+      "formToLogSubmitMilliseconds": 2.087,
+      "formVsLogElapsedMilliseconds": 0.0
+    },
+    {
+      "caseId": "RB-08",
+      "frozenFormElapsed": 28.86,
+      "timingFieldElapsed": 28.86,
+      "logBoundaryElapsed": 28.86,
+      "formToLogSubmitMilliseconds": 1.998,
+      "formVsLogElapsedMilliseconds": 0.0
+    },
+    {
+      "caseId": "RB-09",
+      "frozenFormElapsed": 10.078,
+      "timingFieldElapsed": 10.078,
+      "logBoundaryElapsed": 10.078,
+      "formToLogSubmitMilliseconds": 0.0,
+      "formVsLogElapsedMilliseconds": 0.0
+    },
+    {
+      "caseId": "RB-10",
+      "frozenFormElapsed": 25.031,
+      "timingFieldElapsed": 25.031,
+      "logBoundaryElapsed": 25.031,
+      "formToLogSubmitMilliseconds": 0.952,
+      "formVsLogElapsedMilliseconds": 0.0
+    },
+    {
+      "caseId": "RB-11",
+      "frozenFormElapsed": 13.531,
+      "timingFieldElapsed": 13.531,
+      "logBoundaryElapsed": 13.531,
+      "formToLogSubmitMilliseconds": 0.0,
+      "formVsLogElapsedMilliseconds": 0.0
+    }
+  ],
+  "timingReconciliation": {
+    "prepSeconds": 17.125,
+    "workerClaimedPhaseActiveSeconds": 232.453,
+    "logPhaseSumSeconds": 232.453,
+    "continuousMonotonicSecondsNoExcludedInterruptions": 237.297,
+    "wallSeconds": 237.301134,
+    "claimedActiveUnderstatementSeconds": 4.844,
+    "transitionAndTailOverheadSeconds": 4.844,
+    "manualEmMinutesPerRecordIncludingAllTime": 0.359541,
+    "allTimeboxesSatisfied": true,
+    "claimBoundary": "clock/log byte reconciliation, not independently witnessed elapsed thought or human productivity"
+  },
+  "semanticScoring": [
+    {
+      "caseId": "RB-01",
+      "key": "D7",
+      "actualCause": "R4 resolution C1 omitted",
+      "locator": "Section3 R4 None quoted vs DECISION:boundaries",
+      "localDisposition": "HIT"
+    },
+    {
+      "caseId": "RB-02",
+      "key": "D5",
+      "actualCause": "invented email user statement",
+      "locator": "Section3 R1 second statement vs A outOfScope/coreFeatures",
+      "localDisposition": "HIT"
+    },
+    {
+      "caseId": "RB-03",
+      "key": "D8",
+      "actualCause": "invented BUILD grant despite rehash",
+      "locator": "Section8 GRANTED after technical review",
+      "localDisposition": "HIT"
+    },
+    {
+      "caseId": "RB-04",
+      "key": "CCB",
+      "actualCause": "no asserted record defect; placeholder and L2 limits retained",
+      "locator": "Part2 empty",
+      "localDisposition": "CLEAN_CONTROL_PASS"
+    },
+    {
+      "caseId": "RB-05",
+      "key": "D2",
+      "actualCause": "no validation serves R5",
+      "locator": "Section5 T5/Section6 missing V5",
+      "localDisposition": "HIT"
+    },
+    {
+      "caseId": "RB-06",
+      "key": "D3",
+      "actualCause": "T4 depends on nonexistent T9",
+      "locator": "Section5 T4 Depends on T1,T9",
+      "localDisposition": "HIT"
+    },
+    {
+      "caseId": "RB-07",
+      "key": "CCA",
+      "actualCause": "no asserted defect, but shared V6 coverage gap invalidates clean claim",
+      "locator": "Section6 V6 eleven months vs Section3 R6 twelve",
+      "localDisposition": "INVALID_CONTROL_UNSEEDED_COVERAGE_GAP"
+    },
+    {
+      "caseId": "RB-08",
+      "key": "D6",
+      "actualCause": "R6 stale despite equal answer after targetUsers change; also R3",
+      "locator": "Section3 R6 DECISION:data vs A/B recorded fields",
+      "localDisposition": "HIT_FULL"
+    },
+    {
+      "caseId": "RB-09",
+      "key": "D1",
+      "actualCause": "no task serves R5",
+      "locator": "Section5 no T6/R5 task; V5 retained",
+      "localDisposition": "HIT"
+    },
+    {
+      "caseId": "RB-10",
+      "key": "D9",
+      "actualCause": "uncited U3/DECISION:exceptions affects lateness; judgment explicitly qualified",
+      "locator": "Section2 U3 none/Section3 R2 Sources",
+      "localDisposition": "LIMITATION_DISCLOSED_NOT_HIT_NOT_FP"
+    },
+    {
+      "caseId": "RB-11",
+      "key": "D4",
+      "actualCause": "mutual dependency cycle T2/T3",
+      "locator": "Section5 T2 T1,T3 and T3 T2",
+      "localDisposition": "HIT"
+    }
+  ],
+  "unseededFinding": {
+    "V6": "VALIDATION_COVERAGE_GAP: eleven-month check cannot reject deletion at11.5months for12month requirement; reject jobA clean-control claim, preserve raw calibration change",
+    "U1": "business-scope association concern; no universal R6 block under LD5, not automatically a deterministic schema defect",
+    "affectedViews": [
+      "RB-01",
+      "RB-02",
+      "RB-07",
+      "RB-08",
+      "RB-09",
+      "RB-10",
+      "RB-11"
+    ],
+    "cleanControlRB07": "INVALIDATED_NOT_REVIEWER_FALSE_POSITIVE"
+  },
+  "deterministicSeedHits": 8,
+  "deterministicSeedCount": 8,
+  "eligibleCleanControlCount": 1,
+  "eligibleCleanControlPasses": 1,
+  "invalidatedCleanControls": 1,
+  "D9LimitationDisclosed": true,
+  "manualCoverageCriterion": "NOT_ESTABLISHED: original zeroFP on both controls cannot be evaluated after jobA invalidation",
+  "helperArm": "NOT_AUTHORIZED_NOT_EXECUTED",
+  "costWinner": "UNKNOWN",
+  "negativeControls": [
+    {
+      "control": "response_hash",
+      "result": "REJECTED"
+    },
+    {
+      "control": "view_hash",
+      "result": "REJECTED"
+    },
+    {
+      "control": "reversed_submit_clock",
+      "result": "REJECTED"
+    },
+    {
+      "control": "phase_sum_claimed_as_all_active_without_exclusions",
+      "result": "DETECTED_ACTUAL_CONTRADICTION"
+    }
+  ],
+  "claimBoundary": "one ordered synthetic manual pilot; near-copy learning/calibration retained; self-declared exposure not certified; no live/runtime/UX/build-ready or generalized accuracy claim"
+}

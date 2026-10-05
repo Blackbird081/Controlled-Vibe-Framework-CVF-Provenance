@@ -2,16 +2,16 @@
   "schemaVersion": "0.1.0",
   "currentMode": "cvf_ncr_p10_closed_p11_parked",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=CVF-NIS; NEXT_ACTION_CLASS=EXECUTE_BOUNDED_WORK_ORDER; BATCH_ID=CVF-NIS-T1H. Release same R1 packet docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1H_REVIEW_ONLY_MANUAL_ARM_2026-10-05.md only to CLAUDE-T1H-R1-FRESH-DECL-20261005-01, admitted by declaration with metadata exposure in docs/reviews/CVF_NIS_T1H_R1_FRESH_CONTEXT_ADMISSION_2026-10-05.md. Sequence1/2 blocked retained; delivery sequence3, existing packet repair generation REWORK1, first primary attempt pending. Actor declares new session/no inherited transcript/no T1G/key/casepack; auto-load CLAUDE.md/T1B memory index/T1H process commit subjects disclosed, not canonical authority or machine verified. Change cwd to R1; own bound pre-implementation; neutral input only; exact3 outputs; preserve clocks/raw responses; no self-score. Conditional on final committed pre-dispatch PASS. Old actor remains excluded; feature successors frozen; no helper/subagent/provider/runtime/BUILD/S2/public. CCMA parked; S05/C1/send/B2 STOP; Q001/Q004 OPEN/Profile A; P11/deploy/FLAL T4/T5 parked; FR2 historical loss retained; costs UNKNOWN; LHW24 closed; no push.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-NIS; NEXT_ACTION_CLASS=LOCAL_DISPOSITION_ONLY; BATCH_ID=CVF-NIS-T1H. CLOSED_PASS_BOUNDED evidence tranche in docs/reviews/CVF_NIS_T1H_REVIEW_ONLY_MANUAL_ARM_COMPLETION_2026-10-05.md. Seed8/8; D9 limitation disclosed; jobA clean control invalidated by V6 coverage gap, original manual coverage NOT_ESTABLISHED. All-active237.297s, all timeboxes hold; self-declared exposure and cross-case calibration retained. No primary rerun, helper/feature successor/provider/runtime/BUILD/S2/public. Docs/manual provisional route; two-arm cost UNKNOWN. Prior blocked1/2 retained. CCMA parked; S05/C1/send/B2 STOP; Q001/Q004 OPEN/Profile A; P11/deploy/FLAL T4/T5 parked; FR2 historical loss retained; costs UNKNOWN; LHW24 closed; no push.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_NIS_T1H_REVIEW_ONLY_MANUAL_ARM_2026-10-05.md",
-    "baselineSha256": "581f78f09c0925b5b7f5b5cb42ba00a16364cc9a461acf93fc86e1c4597614e0",
+    "baselineSha256": "7f8defae334c536e2ec29b498010a9c99e16957f1b9890eec895ea0a21af353c",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1H_REVIEW_ONLY_MANUAL_ARM_2026-10-05.md",
-    "workOrderSha256": "75d2f31bcb15659dc66b7e71e8b42191ea3e56837c57187732e6bdb42900e090"
+    "workOrderSha256": "4da143a900e27165af432ce1423c470802a83d49ec6204350c2340ec6ac53cbb"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

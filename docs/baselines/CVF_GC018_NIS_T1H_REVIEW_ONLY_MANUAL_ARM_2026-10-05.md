@@ -2,7 +2,7 @@
 
 Memory class: governed-dispatch-baseline
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: CVF-NIS-T1H
 providerExecutionAuthority: FORBIDDEN
@@ -47,7 +47,7 @@ Returned defects: NONE_RETURNED. Actual resolver executed 2026-10-05, candidates
 | Field | Value |
 |---|---|
 | applicableCheckersRead | governance/compat/check_work_order_dispatch_quality.py; governance/compat/check_work_order_dispatch_quality_source.py; governance/compat/check_work_order_dispatch_quality_artifacts.py; governance/compat/check_dispatch_scaffold_provenance.py; governance/compat/check_gate_to_role_closeability.py; governance/compat/check_governed_artifact_checker_read_ahead.py; governance/compat/check_task_governance_route.py; governance/compat/check_baseline_update_compat.py; governance/compat/check_agent_operation_trace.py; governance/compat/check_work_order_acceptance_ledger.py; governance/compat/check_independent_review_probe_admission.py; governance/compat/check_absorption_blindspot_control_presence.py; governance/compat/check_external_knowledge_intake_routing.py; governance/compat/check_high_risk_local_transaction_proof.py; governance/compat/check_adif_defect_registry_disclosure.py; governance/compat/check_agent_packet_authority_and_encoding.py; governance/compat/check_markdown_structural_completeness.py; governance/compat/check_dispatch_prompt_envelope.py |
-| literalTokensReviewed | DISPATCH_READY; exact3 outputs; acceptance-ledger-json; PENDING_REVIEWER_EXECUTION; structured envelope |
+| literalTokensReviewed | CLOSED_PASS_BOUNDED; exact3 outputs; acceptance-ledger-json; PENDING_REVIEWER_EXECUTION; structured envelope |
 | gateRunPurpose | confirmation/evidence of manual dispatch shapes, not first discovery or experiment success |
 | claimBoundary | no score, helper, live or build-ready result |
 
@@ -146,3 +146,31 @@ NOT_APPLICABLE_WITH_REASON - no migration or external absorption.
 ## Dispatch Attempt History And Fresh Context Admission
 
 Dispatch sequence1 is BLOCKED_WITH_REASON / PLACEMENT_CONTAMINATION, recorded by Local in docs/reviews/CVF_NIS_T1H_DISPATCH_EXPOSURE_INTAKE_2026-10-05.md and docs/reviews/evidence/cvf-nis-t1h-dispatch-attempts-2026-10-05.json. Actual blocked worker return and worker-owned gate evidence are pinned in the ledger; no retained primary attempt exists. Redispatch sequence2, same T1H assignment, REWORK round1; dataset and exact3 outputs unchanged. Use NEW context that has NEVER read T1G experiment docs/full receiver/casepack, answer key, seed generators, Local probes/scoring or earlier answers; not seed author/key reader. Only the pinned neutral reviewer package plus current pair/startup/generic governance rules may be opened. The sole T1G-named file allowed is the neutral reviewer-inputs-review-only package; no other T1G artifact. A session reset with inherited context is not a fresh actor. Self-declare no such exposure before viewing anything; otherwise return blocked. These are cooperative read constraints, not filesystem isolation.
+
+## Local Closure Disposition
+
+CLOSED_PASS_BOUNDED: accepted frozen manual evidence, not passing original benchmark criterion. Local completion docs/reviews/CVF_NIS_T1H_REVIEW_ONLY_MANUAL_ARM_COMPLETION_2026-10-05.md and proof docs/reviews/evidence/cvf-nis-t1h-local-independent-review-2026-10-05.json control semantic scoring, clean-control invalidation and time reconciliation. Worker material 3c64de110bbfa697b3f7413586267170441aec00. No rerun/helper/feature successor; prior blocked transfers retained.
+
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1H_REVIEW_ONLY_MANUAL_ARM_2026-10-05.md | CLOSED_PASS_BOUNDED evidence tranche; no benchmark winner | PASS |
+| Completion or reviewer artifact | docs/reviews/CVF_NIS_T1H_REVIEW_ONLY_MANUAL_ARM_COMPLETION_2026-10-05.md | semantic scoring and limits below | PASS |
+| Roadmap state | N/A with reason: standalone work order, no dedicated roadmap state changed | no new tranche; existing parked lanes unchanged | N/A with reason: no roadmap mutation |
+| Registry JSON | docs/reviews/evidence/cvf-nis-t1h-local-independent-review-2026-10-05.json | frozen joins, clocks, Local judgments and receipt hashes | PASS |
+| Registry Markdown | docs/reviews/CVF_NIS_T1H_REVIEW_ONLY_MANUAL_ARM_COMPLETION_2026-10-05.md | operator-readable findings and bounded route disposition | PASS |
+| External evidence digest | docs/reviews/evidence/cvf-nis-t1h-local-independent-review-2026-10-05.json | SHA256 453fb380a26b98e08d590ed03aeeb287952b2251c9d0a9fa560ca302a737e90e; actual worker bytes and receipt/log hashes | PASS |
+| System loop interlock | N/A with reason: no runtime or catalog transition | input to recorded manual evidence only; helper deferred | N/A with reason: offline pilot |
+| Session continuity | CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json | closed pilot; no repeated primary attempt; Local disposition only | PASS |
+
+## Acceptance Receipt Assertion Matrix
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| REQ-1 | ordered unedited eleven raw forms | view/form/submitted-file hashes exact; no rewrite or self-score | PASS |
+| REQ-2 | exposure and real clock evidence with honest limits | declaration retained; two-sample differences reconciled; all-active237.297s/timeboxes hold | PASS |
+| REQ-3 | exact3 full return and no forbidden effects | saved worker preimpl/fast evidence, unchanged R1 HEAD/index, original3 | PASS |
+| Probe | distinct Local invocation | eleven joins/four controls, semantic source review | PASS |
+| Original coverage criterion | both eligible clean controls plus seed hits/D9 | jobA clean control invalidated by unseeded coverage gap | BLOCKED |
+| Two-arm cost winner | comparable helper and lifecycle costs | unknown/not executed | BLOCKED |

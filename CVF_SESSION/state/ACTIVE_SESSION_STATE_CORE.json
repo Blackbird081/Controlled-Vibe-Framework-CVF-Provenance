@@ -37,11 +37,11 @@
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_NIS_T1H_REVIEW_ONLY_MANUAL_ARM_2026-10-05.md",
-    "baselineSha256": "581f78f09c0925b5b7f5b5cb42ba00a16364cc9a461acf93fc86e1c4597614e0",
+    "baselineSha256": "7f8defae334c536e2ec29b498010a9c99e16957f1b9890eec895ea0a21af353c",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1H_REVIEW_ONLY_MANUAL_ARM_2026-10-05.md",
-    "workOrderSha256": "75d2f31bcb15659dc66b7e71e8b42191ea3e56837c57187732e6bdb42900e090"
+    "workOrderSha256": "4da143a900e27165af432ce1423c470802a83d49ec6204350c2340ec6ac53cbb"
   },
-  "currentAuthoritySyncReason": "T1H fresh actor declared admission fe4cc8e2f; unchanged packet ff3aa0e2f; bounded R1 release conditional on final pre-dispatch, prior blocks retained; metadata disclosed; feature successors frozen.",
+  "currentAuthoritySyncReason": "T1H bounded evidence closure; seed8/8, jobA clean control invalidated, original coverage unestablished; all-active timing237.297s, helper costs unknown; no primary rerun.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
