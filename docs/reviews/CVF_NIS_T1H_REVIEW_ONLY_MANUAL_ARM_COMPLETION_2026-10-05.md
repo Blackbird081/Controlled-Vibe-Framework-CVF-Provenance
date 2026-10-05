@@ -44,7 +44,7 @@ LD-6 ROUTE: keep existing documentary/manual route provisional. Helper arm, crea
 | RB-11 | D4 | HIT | mutual dependency cycle T2/T3; Section5 T2 T1,T3 and T3 T2 |
 
 ## Risk / Corrective Action
-Do not repeat the frozen manual attempt. Preserve near-copy memory influence and changed calibration in each form. If a future independent experiment is separately authorized, correct/re-admit jobA control and clock-accounting fixtures before execution; not an implementation order now. Accepted-file source pairing for jobA remains unestablished; synthetic jobC placeholders remain evidence limitations. No real noncoder UX, build-ready, source absorption or live governance proof. Original worker gate failures retained in scratch.
+Do not repeat the frozen manual attempt. Preserve near-copy memory influence and changed calibration in each form. If a future independent experiment is separately authorized, correct/re-admit jobA control and clock-accounting fixtures before execution; not an implementation order now. Accepted-file source pairing for jobA remains unestablished; synthetic jobC placeholders remain evidence limitations. No real noncoder UX, build-ready, source absorption or live governance proof. Original worker gate failures retained in scratch. Local closure-shape failures and final probe-digest mismatch are also retained; P4 auto-collection logged UNSAFE_AUTORUN_RECEIPT_GENERATION_FAILED on that mismatch. This repair corrects the proof-artifact hash without changing oracle source or score; final receipt and P4 status are verified separately.
 
 ## Single-Pass Dependency Closure Matrix
 | Dimension | Assessment / correction |
@@ -65,7 +65,7 @@ probeExecutorActor: LOCAL_NIS_T1H_SCORER
 workerInvocationId: nis-t1h-r1-worker-20261005
 probeInvocationId: nis-t1h-local-review-20261005
 workerOracleSha256: 6df52797a3001ec01ab119bf24beba7fc271ec8e694f1ea2efd96ddb14ad7423
-probeOracleSha256: 29408f8fc16d9e0d54e6289a3aa6aa144dd9f7710c0cdcd76eec35764ed98be9
+probeOracleSha256: 453fb380a26b98e08d590ed03aeeb287952b2251c9d0a9fa560ca302a737e90e
 workerEvidenceRef: docs/reviews/evidence/cvf-nis-t1h-manual-raw-responses-2026-10-05.json
 probeEvidenceRef: docs/reviews/evidence/cvf-nis-t1h-local-independent-review-2026-10-05.json
 probeCommandOrMethod: python -B .cvf/runtime/nis-t1h-local-review-20261005/probe.py; frozen hash/view/clock integrity and distinct Local semantic judgment
@@ -102,11 +102,11 @@ tokenOrQuotaUsage: NOT_AVAILABLE_WITH_REASON: no exposed usage meter
 valueDelta: accepted immutable manual evidence; actual seed/limitation scoring, invalid control and all-active timing reconciled without rerun
 stopDisposition: COMPLETE_REVIEW
 preRepairAuditDisposition: COMPLETE_BEFORE_FIRST_REPAIR
-materialCommitCount: 2
-continuityCommitCount: 1
-commitPlanDisposition: EXCEPTION_WITH_REASON: original3 worker bytes committed separately to preserve immutable return trace, then exact10 Local closure and dedicated6 SHA sync
+materialCommitCount: 3
+continuityCommitCount: 2
+commitPlanDisposition: EXCEPTION_WITH_REASON: original3 worker bytes, exact10 Local closure and sync; final-phase checker then exposed Local script-vs-proof digest misbinding; one bounded completion-only correction and dedicated sync, immutable responses/proof unchanged
 latencyDisposition: NOT_MEASURED_WITH_REASON: no continuous Local task meter
-avoidableDelayClass: NONE
+avoidableDelayClass: GATE_DISCOVERY_LOOP
 
 ## Return-Time Closeability Recheck
 closeabilityDisposition: CLOSEABLE
@@ -151,31 +151,32 @@ Local blocked-intake and redispatch history maintenance authorized by the latest
 
 
 ## Mixed Protected-Path Atomicity Authorization
+
 Disposition: AUTHORIZED_EXACT_MANIFEST
-Atomicity reason: current pair/completion/proof and six continuity projections bind one bounded closure; dedicated material-SHA sync follows.
-Rollback boundary: exact10 paths, preserve frozen worker3 and prior blocked returns; no repeated manual arm.
-Exact changed manifest: `docs/baselines/CVF_GC018_NIS_T1H_REVIEW_ONLY_MANUAL_ARM_2026-10-05.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1H_REVIEW_ONLY_MANUAL_ARM_2026-10-05.md`; `docs/reviews/CVF_NIS_T1H_REVIEW_ONLY_MANUAL_ARM_COMPLETION_2026-10-05.md`; `docs/reviews/evidence/cvf-nis-t1h-local-independent-review-2026-10-05.json`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`.
+Atomicity reason: one Local completion hash-binding repair and its dedicated continuity form the final admitted verification range.
+Rollback boundary: one completion plus six continuity paths only; immutable raw/proof and prior closures preserved.
+Exact changed manifest: `docs/reviews/CVF_NIS_T1H_REVIEW_ONLY_MANUAL_ARM_COMPLETION_2026-10-05.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`.
 
 ## Agent Operation Trace Block
 | Field | Evidence |
 |---|---|
 | Actor | Local scorer/reviewer/closer |
 | Provider or surface | private local repository tools, direct API invocations: 0 |
-| Session or invocation | nis-t1h-local-review-20261005 |
+| Session or invocation | nis-t1h-probe-binding-repair-20261005 |
 | Working directory | private provenance repository |
 | Command or tool surface | consume worker receipts; Python independent hash/clock joins; semantic source review; exact-path Git commit and closure gates |
-| Target paths | exact10 Local closure paths |
+| Target paths | docs/reviews/CVF_NIS_T1H_REVIEW_ONLY_MANUAL_ARM_COMPLETION_2026-10-05.md only; separate six-surface continuity follows |
 | Allowed scope source | T1H Reviewer Closure Conversion and delegated Local review/probe/commit authority |
-| Before status evidence | clean main 3c64de110bbfa697b3f7413586267170441aec00 |
-| After status evidence | exact10 closure set; worker original3 retained in R1 |
-| Diff evidence | closure-paths.json and Git cached name-only assertion |
+| Before status evidence | clean main 09d9c25c2baa5deaeb31d78b8184cabb671739a6 |
+| After status evidence | completion proof hash/repair telemetry only; evidence bytes unchanged |
+| Diff evidence | completion-only diff; final range separately includes six continuity paths |
 | Approval boundary | accept bounded manual evidence only, not benchmark or product/runtime capability |
 | Claim boundary | frozen bytes/order and Local semantic judgment, not verified blinding or generalization |
 | Agent type | Local scorer/reviewer |
-| Invocation ID | nis-t1h-local-review-20261005 |
-| Expected manifest | docs/baselines/CVF_GC018_NIS_T1H_REVIEW_ONLY_MANUAL_ARM_2026-10-05.md; docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1H_REVIEW_ONLY_MANUAL_ARM_2026-10-05.md; docs/reviews/CVF_NIS_T1H_REVIEW_ONLY_MANUAL_ARM_COMPLETION_2026-10-05.md; docs/reviews/evidence/cvf-nis-t1h-local-independent-review-2026-10-05.json; AGENT_HANDOFF_V63_2026-09-18.md; CVF_SESSION_MEMORY.md; CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json; CVF_SESSION/state/entries/nextAllowedMove.json; CVF_SESSION/ACTIVE_SESSION_STATE.json; CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json |
-| Actual changed set | docs/baselines/CVF_GC018_NIS_T1H_REVIEW_ONLY_MANUAL_ARM_2026-10-05.md; docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1H_REVIEW_ONLY_MANUAL_ARM_2026-10-05.md; docs/reviews/CVF_NIS_T1H_REVIEW_ONLY_MANUAL_ARM_COMPLETION_2026-10-05.md; docs/reviews/evidence/cvf-nis-t1h-local-independent-review-2026-10-05.json; AGENT_HANDOFF_V63_2026-09-18.md; CVF_SESSION_MEMORY.md; CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json; CVF_SESSION/state/entries/nextAllowedMove.json; CVF_SESSION/ACTIVE_SESSION_STATE.json; CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json |
-| Manifest delta | MATCH |
+| Invocation ID | nis-t1h-probe-binding-repair-20261005 |
+| Expected manifest | N/A with reason: one completion-only correction; dedicated session paths handled separately |
+| Actual changed set | N/A with reason: completion-only material correction, no producer/evidence change |
+| Manifest delta | N/A with reason: material correction plus separate dedicated continuity |
 | Deletion or rename disposition | N/A with reason: none |
 
 ## External Knowledge Intake Routing
@@ -227,3 +228,7 @@ Private synthetic pilot only; no export or push.
 
 ## Claim Boundary
 One ordered synthetic manual attempt with self-declared exposure and cross-case calibration; no independent blinding certificate, human UX, accepted-source fidelity, generalization, cost winner, product/runtime/build-ready or live governance claim. Two blocked transfers remain evidence. No repeated arm/helper/new roadmap or parked lane reopening.
+
+## Independent Reviewer Adjudication
+Reviewer disposition: ACCEPT_WITH_LIMITS
+Local accepts the frozen manual evidence and corrected proof-artifact digest binding. Seed8/8 is descriptive; jobA clean control invalidated, benchmark coverage unestablished, no cost winner or new execution. P4 safety marker for the prior committed digest mismatch is independently adjudicated by Local reviewer/closer: original marker retained in ignored scratch, corrected binding checked before clearing; committed-range closure must still pass after dedicated sync. No oracle/response regeneration or machine guard modification.
