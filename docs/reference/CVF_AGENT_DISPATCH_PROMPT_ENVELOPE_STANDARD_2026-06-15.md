@@ -10,6 +10,8 @@ Established: 2026-06-15; current revision ratifies the shared-workspace chat tra
 
 Standard ID: CVF-ADPES-2026-06-15
 
+EPISTEMIC_PROCESS_NA_WITH_REASON: normative dispatch requirements; observed failure and bounded evidence are in the linked learning record.
+
 ## Purpose
 
 This standard defines the canonical format for the short runtime prompt that
@@ -146,6 +148,39 @@ The existing repository checker validates the canonical envelope; it does
 not inspect chat or ignored files. A checker PASS alone is not evidence
 that this chat-transfer rule was followed.
 
+## Context Eligibility Before Transfer
+
+Applies when a work order requires a fresh context, blind review, independence
+from seed authorship, or exclusion of answer-key/placement knowledge.
+
+Before transfer, the dispatcher MUST bind the intended actor/context to those
+eligibility constraints in the existing dispatch record or canonical packet.
+Record the context origin, known prior task/seed/key exposure, evidence basis,
+and disposition: eligible by declaration, contaminated, or unknown. Do not
+transfer as eligible while origin or exposure is unknown; obtain the declaration
+before supplying review views. The worker MUST recheck admission before views.
+
+A role change, different model/provider, new worktree or nominal new session
+with inherited history does not erase prior exposure. A known seed author,
+answer-key reader or placement-aware context MUST be blocked and replaced by a
+context satisfying the work order. Record the blocked dispatch, stable cause
+and rework history; do not reset it to a normal initial dispatch or erase it.
+
+Declare exactly which neutral package may be read, and exclude seed/key files,
+prior experiment documents, casepacks, generators, scoring/probe materials and
+prior responses as required by the packet. Generic startup/current authority
+rules remain available. Preserve the short chat-only transfer rule; do not
+create another relay file to carry eligibility metadata.
+
+Packet shape, source-pin and release-readiness PASS do not prove context
+eligibility. Self-declared absence of exposure is a cooperative admission basis,
+not machine-verified blinding or access isolation. A missing declaration remains
+pending admission even when the repository preparation gates pass.
+
+Learning source: `docs/reviews/learnings/CVF_DISPATCH_CONTEXT_ELIGIBILITY_LEARNING_2026-10-05.md`.
+This rule is forward applicable; it does not change an in-flight packet's byte
+pins or authorize inspection of excluded answer-key materials.
+
 ## Envelope Template
 
 Copy and complete this block inside the work order's `## Dispatch Prompt Envelope` section:
@@ -205,26 +240,25 @@ Contradiction Or Gap Disposition: N/A with reason: no contradictory evidence sur
 Claim Update Requirement: N/A with reason: no claim was predicted; no update is required.
 
 ## Agent Operation Trace Block
-
 | Field | Evidence |
 |---|---|
 | Actor | Local orchestrator/reviewer |
-| Provider or surface | Local workspace |
-| Session or invocation | 2026-10-05 operator-ratified shared-workspace chat transfer rule |
-| Working directory | `d:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
-| Command or tool surface | PowerShell, apply_patch, repository governance checks |
-| Target paths | prompt-envelope standard, work-order template and existing active-window registry binding |
-| Allowed scope source | operator explicitly requested making the short chat transfer and no relay file rule canonical; T1F return still pending |
-| Before status evidence | clean main at `e06513638a363897190195d1d8caadbd19dd8daf` |
-| After status evidence | two reference files and one active-reference registry binding updated; no T1F packet, worker or checker edit |
-| Diff evidence | `git diff --name-status`; `git status --short` |
-| Approval boundary | existing dispatch reference owners and their canonical-path retention binding; T1F in-flight authority and all parked lanes retained |
-| Claim boundary | repo-local trace only; no OS/user attribution |
-| Agent type | Local orchestrator/reviewer |
-| Invocation ID | `shared-workspace-chat-transfer-rule-20261005` |
-| Expected manifest | `docs/reference/CVF_AGENT_DISPATCH_PROMPT_ENVELOPE_STANDARD_2026-06-15.md`; `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md`; `governance/compat/CVF_ACTIVE_WINDOW_REGISTRY.json` |
-| Actual changed set | `docs/reference/CVF_AGENT_DISPATCH_PROMPT_ENVELOPE_STANDARD_2026-06-15.md`; `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md`; `governance/compat/CVF_ACTIVE_WINDOW_REGISTRY.json` |
-| Manifest delta | MATCH |
+| Provider or surface | local repository tools, no direct provider call |
+| Session or invocation | nis-t1h-learning-20261005 |
+| Working directory | D:/UNG DUNG AI/TOOL AI 2026/Controlled-Vibe-Framework-CVF |
+| Command or tool surface | targeted source reads, Python author, Git exact-path stage/commit, governance checks |
+| Target paths | docs/reference/CVF_AGENT_DISPATCH_PROMPT_ENVELOPE_STANDARD_2026-06-15.md; docs/reviews/learnings/README.md; docs/reviews/learnings/CVF_DISPATCH_CONTEXT_ELIGIBILITY_LEARNING_2026-10-05.md |
+| Allowed scope source | operator request to put dispatch foundation error into learning, 2026-10-05 |
+| Before status evidence | clean main HEAD 73d18189d1656ebf40a7b6339ae533ee81acefd3 |
+| After status evidence | exact3 material learning/standard/index paths; separate continuity update follows |
+| Diff evidence | ignored author log and exact material manifest; Git cached name-only checked before commit |
+| Approval boundary | learning and existing documentation owner only; no in-flight source pin/checker/provider/runtime changes |
+| Claim boundary | written rule and bounded historical failure assessment only |
+| Agent type | INTERNAL_AGENT |
+| Invocation ID | nis-t1h-learning-20261005 |
+| Expected manifest | docs/reference/CVF_AGENT_DISPATCH_PROMPT_ENVELOPE_STANDARD_2026-06-15.md; docs/reviews/learnings/README.md; docs/reviews/learnings/CVF_DISPATCH_CONTEXT_ELIGIBILITY_LEARNING_2026-10-05.md |
+| Actual changed set | docs/reference/CVF_AGENT_DISPATCH_PROMPT_ENVELOPE_STANDARD_2026-06-15.md; docs/reviews/learnings/README.md; docs/reviews/learnings/CVF_DISPATCH_CONTEXT_ELIGIBILITY_LEARNING_2026-10-05.md |
+| Manifest delta | MATCH exact3 material paths |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
 
 ## Public Export Disposition
