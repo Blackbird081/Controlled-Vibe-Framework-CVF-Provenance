@@ -39,7 +39,7 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: mode=`cvf_ncr_p10_closed_p11_parked`; handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=actor admission only, R1 recurring blocked; Local reviewer/decision owner; parked lanes retained.
+Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`; handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=R1 admitted actor only; Local admission reviewer/decision owner; parked lanes retained.
 
 ## Current Mode
 
@@ -48,7 +48,7 @@ Current mode: `cvf_ncr_p10_closed_p11_parked`; previous mode marker: `cvf_ncr_p1
 
 ## Next Allowed Move
 Mode: `cvf_ncr_p10_closed_p11_parked`
-PROGRAM_ID=CVF-NIS; NEXT_ACTION_CLASS=ACTOR_SELECTION_AND_ADMISSION_ONLY; BATCH_ID=CVF-NIS-T1H. Sequence2/R1 BLOCKED_WITH_REASON; RECURRING_CLUSTER_STOP in docs/reviews/CVF_NIS_T1H_R1_RECURRING_CONTEXT_BLOCK_2026-10-05.md. OPERATOR_NOTICE_REQUIRED; FEATURE_SUCCESSORS_FROZEN for NIS-T1H-PLACEMENT-AWARE-WORKER. Stop transfers to original context. Need actual new session without inherited T1G history, not seed/key author/reader; context origin/exposure declaration before views. No third executable dispatch, manual/helper/provider/subagent execution or new worktree now; original3 blocked outputs retained, R1 clean/no outputs. Current authority pair remains pinned; admission hold overrides execution next move. Learning docs/reviews/learnings/README.md; machine candidate NOT_IMPLEMENTED. CCMA parked; S05/C1/send/B2 STOP; Q001/Q004 OPEN/Profile A; P11/deploy/FLAL T4/T5 parked; FR2 historical loss retained; costs UNKNOWN; LHW24 closed; no push.
+PROGRAM_ID=CVF-NIS; NEXT_ACTION_CLASS=EXECUTE_BOUNDED_WORK_ORDER; BATCH_ID=CVF-NIS-T1H. Release same R1 packet docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1H_REVIEW_ONLY_MANUAL_ARM_2026-10-05.md only to CLAUDE-T1H-R1-FRESH-DECL-20261005-01, admitted by declaration with metadata exposure in docs/reviews/CVF_NIS_T1H_R1_FRESH_CONTEXT_ADMISSION_2026-10-05.md. Sequence1/2 blocked retained; delivery sequence3, existing packet repair generation REWORK1, first primary attempt pending. Actor declares new session/no inherited transcript/no T1G/key/casepack; auto-load CLAUDE.md/T1B memory index/T1H process commit subjects disclosed, not canonical authority or machine verified. Change cwd to R1; own bound pre-implementation; neutral input only; exact3 outputs; preserve clocks/raw responses; no self-score. Conditional on final committed pre-dispatch PASS. Old actor remains excluded; feature successors frozen; no helper/subagent/provider/runtime/BUILD/S2/public. CCMA parked; S05/C1/send/B2 STOP; Q001/Q004 OPEN/Profile A; P11/deploy/FLAL T4/T5 parked; FR2 historical loss retained; costs UNKNOWN; LHW24 closed; no push.
 Historical G1-G7 terminal baseline: mode `acel_g1_g7_research_terminally_closed`. G1-G6 terminal review: `docs/reviews/CVF_ACEL_G1_G6_TERMINAL_STOP_CLOSURE_2026-09-24.md`; G7 research closure: `docs/reviews/CVF_ACEL_G7_CROSS_RUN_CAPABILITY_EVOLUTION_RESEARCH_CLOSURE_2026-09-24.md`. The packet-only post-G7 reconciliation review at `docs/reviews/CVF_ACEL_POST_G7_FULL_CORPUS_ABSORPTION_CLOSURE_2026-09-24.md` is superseded for repository absorption by the 2026-09-25 pinned-source audit. G1 is stopped, G2-G6 remain parked, G7 research is closed, and no automatic G1-G7 successor exists.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1

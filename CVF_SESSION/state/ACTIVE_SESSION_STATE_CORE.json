@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1H_REVIEW_ONLY_MANUAL_ARM_2026-10-05.md",
     "workOrderSha256": "75d2f31bcb15659dc66b7e71e8b42191ea3e56837c57187732e6bdb42900e090"
   },
-  "currentAuthoritySyncReason": "T1H recurring context block 5af47a4b2; same packet hashes, actor selection/admission only; cluster FEATURE_SUCCESSORS_FROZEN, no execution redispatch.",
+  "currentAuthoritySyncReason": "T1H fresh actor declared admission fe4cc8e2f; unchanged packet ff3aa0e2f; bounded R1 release conditional on final pre-dispatch, prior blocks retained; metadata disclosed; feature successors frozen.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
