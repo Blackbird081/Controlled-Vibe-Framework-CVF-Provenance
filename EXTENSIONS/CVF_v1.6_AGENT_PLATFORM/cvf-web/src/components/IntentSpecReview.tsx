@@ -2,6 +2,7 @@
 'use client';
 
 import { useState } from 'react';
+import { IntentSpecConfirmation } from './IntentSpecConfirmation';
 import {
     acknowledgeIntentSpecReview, buildReviewedDraftPacket, createIntentSpecReview,
     decisionNeedsReview, getDecisionLabel, getPendingReviewDecisions, INTENT_REVIEW_QUESTIONS,
@@ -123,6 +124,7 @@ export function IntentSpecReview({ review, language, onUpdate, onAcknowledge }: 
                 className="min-h-11 rounded-lg bg-indigo-600 px-3 text-sm text-white focus:ring-2 focus:ring-indigo-400 disabled:opacity-50">
                 {vi ? 'Tôi đã xem bản nháp này' : 'I have viewed this draft'}
             </button>
+            <IntentSpecConfirmation review={review} language={language} />
         </section>
     );
 }
