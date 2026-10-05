@@ -2,7 +2,7 @@
 
 Memory class: governed-dispatch-baseline
 
-Status: DISPATCH_READY
+Status: HOLD_OPERATOR_CHECKPOINT
 
 Batch ID: CVF-NIS-T1B-D
 
@@ -18,11 +18,33 @@ Reviewer owner: Local reviewer/closer
 
 Worker target: distinct INTERNAL_AGENT implementation worker
 
+## Consolidated Rework Admission
+
+reworkAdmissionStatus: HOLD_OPERATOR_CHECKPOINT
+priorFindingSetDigest: 8cd7769b5b2ed9c2e899ec9b54bce7150f929d74f94954acf29d82991eae62f3
+Evidence: `docs/reviews/evidence/cvf-nis-t1b-d-rework-admission-2026-10-05.json`. This amendment controls rework round 1 of the same CVF-NIS-T1B-D assignment. The original worker checkout and frozen R0 return remain untouched and unaccepted. Do not execute or redispatch from this held packet.
+
+| Finding | Owner / minimum outcome | Targeted evidence |
+|---|---|---|
+| F1 HIGH | Worker makes hardening initialization exception-safe, including ambiguous subprocess failure after ACL mutation and restoration failure | Actual production helper regression before rollback handle return; real semantic rollback/readback and subsequent peer acquisition |
+| F2 HIGH | Worker binds save/reopen display and late receipts to the canonical authenticated session lifecycle, including A-B-A | Session switch/logout/loading/expiry regressions plus existing review/language/reviewer generation checks; no protected auth-owner edits |
+| F3 MEDIUM | Local registry owner registers exactly the five returned probe files by source entry and generator | Direct coverage assertion for every exact path, including mjs and ps1; worker remains forbidden to edit registry/checkers |
+| F4 LOW | Worker binds the actual saved gate-log bytes and freezes a new R1 return around the final required gate | Raw file SHA256; preserve R0 return and receipt as historical evidence |
+| B1 BLOCKER | Local reviewer owns real WRONG_OWNER fixture proof after the named authority checkpoint | Actual differing owner, independent complete semantic PRE/POST plus content/existence; no synthetic security success or waived field |
+
+Independent structural diagnostic verified 20 numeric pins and reproduced F1; it does not fulfill the real-security independent proof. Original test receipts are consumed, not broadly rerun. Full contract/schema/path/authority/test/range/commit-plan dependency audit is bound in the evidence JSON before any repair. The expected pending worker preimage is pinned there; a dirty tree must not be called clean.
+
+Checkpoint NIS-T1B-D-WRONG-OWNER-FIXTURE requests one Local elevated Windows helper solely on a marked, caller-created, private OS-temp fixture: assign namespace owner to S-1-5-32-544, let the ordinary unprivileged production probe measure/refuse the actual mismatch and compare semantic PRE=POST plus exact content/existence, then restore the captured original owner. Validate containment and every ancestor against reparse points. No account creation or real store/configuration change. Failed restoration retains the isolated fixture and diagnostics. No privileged operation is authorized by this held proposal.
+
+After checkpoint resolution, Local materializes `docs/corpus-intelligence/registry/entries/nis-t1b-d-private-profile-probes.json` and regenerates the registry, then updates the role graph and actual evidence/pins before release. Do not remove HRLTP fields, lower the claim contract, or rename files as a coverage workaround. Worker R1 outputs use distinct return/evidence paths; original R0 bytes stay frozen. Rework release requires committed pair, matched continuity, exact source/fixture preimage pins, full pre-dispatch PASS and a new bound pre-implementation PASS. No worker staging/commit; no main/worker implementation merge now.
+
 ## Purpose
 
 Complete the existing app_builder_complete Intent-to-Spec review consumer with request-owned save/readback and an explicitly admitted private single-host storage profile. Reuse the checkpointed A/B/C contracts; close their actual UI/API and transaction-proof gaps as one bounded implementation, not another port-only completion. The target is saved content confirmation, not build-ready acceptance or BUILD authority.
 
 ## Scaffold Provenance Block
+
+Initial scaffold retained from committed packet b2016e35a4b11043524ac51c26a49121309391cc; current manual amendment is a held consolidated rework admission, not initial dispatch or completed repair.
 
 | Field | Value |
 |---|---|
@@ -30,7 +52,7 @@ Complete the existing app_builder_complete Intent-to-Spec review consumer with r
 | generatedProfile | web-ui-dashboard plus WORKER_MUST_NOT_COMMIT |
 | generatedSkeletonStatus | USED_AS_STARTING_POINT |
 | manualEditsAfterScaffold | Source-verified consumer scope, checked source checkpoint 5e42818cb4e88a618b0b612528fc351635ca23ea, actor/profile/transaction acceptance, role graph, exact evidence and bounded helper families replaced generated stubs. |
-| checkerReadAheadConfirmation | governance/compat/check_baseline_update_compat.py; governance/compat/check_governed_artifact_checker_read_ahead.py; governance/compat/check_work_order_dispatch_quality.py; governance/compat/check_work_order_dispatch_quality_source.py; governance/compat/check_work_order_dispatch_quality_artifacts.py; governance/compat/check_dispatch_scaffold_provenance.py; governance/compat/check_gate_to_role_closeability.py; governance/compat/check_high_risk_local_transaction_proof.py; governance/compat/check_task_governance_route.py; governance/compat/check_adif_defect_registry_disclosure.py; governance/compat/check_agent_operation_trace.py; governance/compat/check_agent_packet_authority_and_encoding.py; governance/compat/check_core_guard_self_protection.py; governance/compat/check_markdown_structural_completeness.py |
+| checkerReadAheadConfirmation | governance/compat/check_baseline_update_compat.py; governance/compat/check_governed_artifact_checker_read_ahead.py; governance/compat/check_work_order_dispatch_quality.py; governance/compat/check_work_order_dispatch_quality_source.py; governance/compat/check_work_order_dispatch_quality_artifacts.py; governance/compat/check_dispatch_scaffold_provenance.py; governance/compat/check_gate_to_role_closeability.py; governance/compat/check_high_risk_local_transaction_proof.py; governance/compat/check_task_governance_route.py; governance/compat/check_adif_defect_registry_disclosure.py; governance/compat/check_agent_operation_trace.py; governance/compat/check_agent_packet_authority_and_encoding.py; governance/compat/check_core_guard_self_protection.py; governance/compat/check_markdown_structural_completeness.py; governance/compat/check_review_cost_control.py; governance/compat/check_changed_corpus_registry_coverage.py; governance/compat/check_corpus_scan_registry.py |
 | docOnlyNewFields | knownForeignDirtyPaths; seedEvidenceDisposition; profileAdmissionDisposition; no new machine enum or checker rule |
 | claimBoundary | Dispatch admission only; implementation, independent probe and acceptance remain pending. |
 
@@ -45,7 +67,7 @@ Actual resolver executed on 2026-10-05; totalCandidates=0, truncated=false. Work
 
 | Field | Value |
 |---|---|
-| applicableCheckersRead | governance/compat/check_baseline_update_compat.py; governance/compat/check_governed_artifact_checker_read_ahead.py; governance/compat/check_work_order_dispatch_quality.py; governance/compat/check_work_order_dispatch_quality_source.py; governance/compat/check_work_order_dispatch_quality_artifacts.py; governance/compat/check_dispatch_scaffold_provenance.py; governance/compat/check_gate_to_role_closeability.py; governance/compat/check_high_risk_local_transaction_proof.py; governance/compat/check_task_governance_route.py; governance/compat/check_adif_defect_registry_disclosure.py; governance/compat/check_agent_operation_trace.py; governance/compat/check_agent_packet_authority_and_encoding.py; governance/compat/check_core_guard_self_protection.py; governance/compat/check_markdown_structural_completeness.py |
+| applicableCheckersRead | governance/compat/check_baseline_update_compat.py; governance/compat/check_governed_artifact_checker_read_ahead.py; governance/compat/check_work_order_dispatch_quality.py; governance/compat/check_work_order_dispatch_quality_source.py; governance/compat/check_work_order_dispatch_quality_artifacts.py; governance/compat/check_dispatch_scaffold_provenance.py; governance/compat/check_gate_to_role_closeability.py; governance/compat/check_high_risk_local_transaction_proof.py; governance/compat/check_task_governance_route.py; governance/compat/check_adif_defect_registry_disclosure.py; governance/compat/check_agent_operation_trace.py; governance/compat/check_agent_packet_authority_and_encoding.py; governance/compat/check_core_guard_self_protection.py; governance/compat/check_markdown_structural_completeness.py; governance/compat/check_review_cost_control.py; governance/compat/check_changed_corpus_registry_coverage.py; governance/compat/check_corpus_scan_registry.py |
 | literalTokensReviewed | Dispatch Prompt Envelope; Source Verification Block; DISPATCH_READY; acceptance-ledger-json; Gate-To-Role Closeability Contract; High-Risk Local Transaction Proof Applicability; Returned defects: NONE_RETURNED; rawMemoryReleased=false |
 | gateRunPurpose | Confirm source-verified bounded dispatch and role closeability before release; no implementation proof. |
 | claimBoundary | Read-ahead concerns authoring and evidence shapes; never certifies runtime/security outcomes. |

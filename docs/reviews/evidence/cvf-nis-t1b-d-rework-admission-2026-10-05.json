@@ -1,0 +1,364 @@
+{
+  "schemaVersion": "cvf.nisReworkAdmission.v1",
+  "batchId": "CVF-NIS-T1B-D",
+  "reviewRoundCount": 1,
+  "status": "HOLD_OPERATOR_CHECKPOINT",
+  "decisionOwner": "LOCAL_REVIEWER",
+  "workerWorkspace": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF-NIS-T1B-D",
+  "workerExecutionBaseHead": "bdc9d047ce83c4118b916b159d7a695acbee01d6",
+  "mainPreparationBaseHead": "e8016369db7cdf3a0862999a79a569fd664c3628",
+  "priorFindingSetDigest": "8cd7769b5b2ed9c2e899ec9b54bce7150f929d74f94954acf29d82991eae62f3",
+  "findingDigestEncoding": "UTF8_SORTED_KEYS_COMPACT_JSON_WITH_TRAILING_LF_OF_findings",
+  "findings": [
+    {
+      "id": "F1",
+      "severity": "HIGH",
+      "owner": "IMPLEMENTATION_WORKER",
+      "locator": "src/lib/intent-spec-private-profile.ts:101-105; src/lib/intent-spec-file-store.ts:82-83",
+      "finding": "Mutating hardening can reject before the caller receives or registers rollback.",
+      "requiredRegression": "Failure after security mutation but before callback return, restoration failure, and lock/peer recovery."
+    },
+    {
+      "id": "F2",
+      "severity": "HIGH",
+      "owner": "IMPLEMENTATION_WORKER",
+      "locator": "src/components/IntentSpecConfirmation.tsx:24-31,52-72; governing work order Implementation Contract item 4",
+      "finding": "Review/language/reviewer generation does not bind current authenticated session lifecycle or session ABA.",
+      "requiredRegression": "Late save/reopen receipt after A->B and A->B->A, logout, loading/expired state, plus clearing prior displayed results."
+    },
+    {
+      "id": "F3",
+      "severity": "MEDIUM",
+      "owner": "LOCAL_REGISTRY_OWNER",
+      "locator": "governance/compat/check_changed_corpus_registry_coverage.py GOVERNED_SUFFIXES; worker scripts/nis-t1b-d-*",
+      "finding": "Five probe helpers lack corpus scope; mjs/ps1 are omitted from suffix-based checking.",
+      "requiredRegression": "Direct registry_covers_path assertions for all five exact paths regardless of suffix; no checker edits."
+    },
+    {
+      "id": "F4",
+      "severity": "LOW",
+      "owner": "IMPLEMENTATION_WORKER",
+      "locator": "final-return binding finalRequiredGate.logSha256",
+      "finding": "Saved gate log is CRLF; its declared digest covers LF-normalized text. Frozen return/evidence numeric pins match.",
+      "requiredRegression": "Receipt digest equals the saved log raw bytes; capture final return raw pre/post hash around final gate."
+    },
+    {
+      "id": "B1",
+      "severity": "BLOCKER",
+      "owner": "LOCAL_REVIEWER_WITH_OPERATOR_FIXTURE_AUTHORITY",
+      "locator": "worker return REQ-2; HRLTP Evidence Semantics rollbackExactness",
+      "finding": "Real WRONG_OWNER fixture proof unavailable to current worker token; no waiver or mock substitution.",
+      "requiredRegression": "Independent production-path refusal/rollback with actual different-owner synthetic namespace, semantic PRE=POST and exact content/existence; full nine-field contract remains mandatory."
+    }
+  ],
+  "pendingWorkerManifest": [
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecConfirmation.tsx",
+      "status": " M",
+      "sha256": "b8806a455f4f9b0a08302d694c0979ab26168aefd028dfc8e7defb9c8b650f56"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-file-store.ts",
+      "status": " M",
+      "sha256": "3686affcccf45fc01eac4c9fefdea015de1f28021a0af8c2e13a4b1bf038a0fc"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/scripts/nis-t1b-d-probe-build.mjs",
+      "status": "??",
+      "sha256": "4a14c03a9c49182447bdf283fa5540df5394f43514009dff3587a07b2d903db3"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/scripts/nis-t1b-d-probe-driver.mjs",
+      "status": "??",
+      "sha256": "9cbe8be7d4420e0ea5d38d6daf95a918920787e36e8178e53040679ea1bfc33b"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/scripts/nis-t1b-d-probe-entry.mjs",
+      "status": "??",
+      "sha256": "6f401d67765d86a81d1bbcc378c583cc62930266dc25bed1384c86f313c3bc8c"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/scripts/nis-t1b-d-probe-session-stub.mjs",
+      "status": "??",
+      "sha256": "9330cab47911a9f00e744c4742ed968326f1cbf73bce4ba2ac14b1f1b45871a4"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/scripts/nis-t1b-d-transaction-probe.ps1",
+      "status": "??",
+      "sha256": "cff7917e091ce0f16b4e9b9f18f52c3a1e1349ddcec6b8cabbdfde730d7c8c83"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/intent-spec/reviews/[id]/route.ts",
+      "status": "??",
+      "sha256": "c7e9c3d5b504f5071788a4a1004f544a9e04a79ef75adc53fbb1bf8a72dd2fc5"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/intent-spec/reviews/route.ts",
+      "status": "??",
+      "sha256": "32d6e97ab57d4d5e05a53daaf2128905e2b99a18af5c02d4e9adad62c5a8107a"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecConfirmation.server.test.tsx",
+      "status": "??",
+      "sha256": "2055a8222c652e481290662a50c15f20dec2e25abb86a669b488a057f7e1251f"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-file-store-profile.test.ts",
+      "status": "??",
+      "sha256": "20ac75a581fd8252ad676c50089f95b834185085f6cb982b1ba291b8a4ae4964"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-private-profile.test.ts",
+      "status": "??",
+      "sha256": "d62702cd5a6ba9b93ec29b1de5db07b29a66fcffc11bed377fcf10b461f32ace"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-private-profile.ts",
+      "status": "??",
+      "sha256": "4d95d3a7665b815f9099b468cb95a5f7d7f93a626c974a4bc3ead715e3f75ccc"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-review-api.test.ts",
+      "status": "??",
+      "sha256": "fdcd35d852ad6c241af5bff1d0f79b7df31014a5a41c5915d311b4574a8d1ffc"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-review-api.ts",
+      "status": "??",
+      "sha256": "8b7eecf6b16bf64aef9e50ed88b70f339c41f6c6949ec99fea1b23c455a1c77d"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-review-client.ts",
+      "status": "??",
+      "sha256": "a6967c65a142c1d1805fbd98548ce326f462f5eefe1609ff70404c89684a472d"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-security-fixture.ts",
+      "status": "??",
+      "sha256": "c5dddaecf4af62b349d78dfb1b23155be9a8033dd9fd4c67529734e06d09edcd"
+    },
+    {
+      "path": "docs/reviews/CVF_NIS_T1B_D_INTEGRATED_REVIEW_PERSISTENCE_WORKER_RETURN_2026-10-05.md",
+      "status": "??",
+      "sha256": "f0f6c55f360295762545ab04b8cec44fc1b52db3666a7f848b71412e34e5f74e"
+    },
+    {
+      "path": "docs/reviews/evidence/cvf-nis-t1b-d-final-return-binding-2026-10-05.json",
+      "status": "??",
+      "sha256": "3d9602756e5b38a8a2830774e7032a7c4013c92217d4930ed9f3b8dbafca032a"
+    },
+    {
+      "path": "docs/reviews/evidence/cvf-nis-t1b-d-integrated-review-persistence-2026-10-05.json",
+      "status": "??",
+      "sha256": "2b88807d27e6301d9e2e35496e88ac888554ba911b9447f740f8bb76883661e8"
+    }
+  ],
+  "originalFrozenBinding": {
+    "schemaVersion": "cvf.nisT1bDFinalReturnBinding.v1",
+    "batchId": "CVF-NIS-T1B-D",
+    "algorithm": "SHA256",
+    "scope": "EXACT_RETURN_BYTES",
+    "capture": "BEFORE_AND_AFTER_FINAL_REQUIRED_GATE",
+    "returnPath": "docs/reviews/CVF_NIS_T1B_D_INTEGRATED_REVIEW_PERSISTENCE_WORKER_RETURN_2026-10-05.md",
+    "returnSha256Before": "f0f6c55f360295762545ab04b8cec44fc1b52db3666a7f848b71412e34e5f74e",
+    "returnSha256After": "f0f6c55f360295762545ab04b8cec44fc1b52db3666a7f848b71412e34e5f74e",
+    "equality": true,
+    "postGateMutation": "NONE",
+    "integratedEvidencePath": "docs/reviews/evidence/cvf-nis-t1b-d-integrated-review-persistence-2026-10-05.json",
+    "integratedEvidenceSha256": "2b88807d27e6301d9e2e35496e88ac888554ba911b9447f740f8bb76883661e8",
+    "integratedEvidenceShaEmbeddedInReturn": "2b88807d27e6301d9e2e35496e88ac888554ba911b9447f740f8bb76883661e8",
+    "integratedEvidenceMatchesReturnReference": true,
+    "finalRequiredGate": {
+      "command": "python -B governance/compat/run_worker_return_fast_gate.py --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1B_D_INTEGRATED_REVIEW_PERSISTENCE_2026-10-05.md",
+      "exit": 0,
+      "startedUtc": "2026-10-05T02:27:26.443574+00:00",
+      "finishedUtc": "2026-10-05T02:27:31.275770+00:00",
+      "resultLines": [
+        "PASS: corpus scan registry aggregate drift (0.07s)",
+        "COMPLIANT - epistemic process packet evidence structure is aligned.",
+        "PASS: epistemic process packet (0.19s)",
+        "COMPLIANT",
+        "PASS: work-order acceptance ledger (0.15s)",
+        "COMPLIANT - worker-return packets are review-ready.",
+        "PASS: worker-return quality gate (0.27s)",
+        "PASS: all applicable artifacts satisfy the independent-probe admission contract.",
+        "PASS: independent review probe admission (0.42s)",
+        "PASS: reviewer-fast governance gate (3.61s)",
+        "PASS: git diff whitespace check (0.04s)",
+        "COMPLIANT: worker-return fast gate passed in 4.75s."
+      ],
+      "logPath": ".cvf/runtime/nis-t1b-d-worker-20261005/fast-gate-final.log",
+      "logSha256": "2711c3e82d52636eb7629f506e876bb566bf9b39a61dfa524a61c003b0c49cff"
+    },
+    "gitDiffCheckExit": 0,
+    "headAtCapture": "bdc9d047ce83c4118b916b159d7a695acbee01d6",
+    "finalGitStatusShort": [
+      " M EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecConfirmation.tsx",
+      " M EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-file-store.ts",
+      "?? EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/scripts/nis-t1b-d-probe-build.mjs",
+      "?? EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/scripts/nis-t1b-d-probe-driver.mjs",
+      "?? EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/scripts/nis-t1b-d-probe-entry.mjs",
+      "?? EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/scripts/nis-t1b-d-probe-session-stub.mjs",
+      "?? EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/scripts/nis-t1b-d-transaction-probe.ps1",
+      "?? EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/intent-spec/",
+      "?? EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecConfirmation.server.test.tsx",
+      "?? EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-file-store-profile.test.ts",
+      "?? EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-private-profile.test.ts",
+      "?? EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-private-profile.ts",
+      "?? EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-review-api.test.ts",
+      "?? EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-review-api.ts",
+      "?? EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-review-client.ts",
+      "?? EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-security-fixture.ts",
+      "?? docs/reviews/CVF_NIS_T1B_D_INTEGRATED_REVIEW_PERSISTENCE_WORKER_RETURN_2026-10-05.md",
+      "?? docs/reviews/evidence/cvf-nis-t1b-d-final-return-binding-2026-10-05.json",
+      "?? docs/reviews/evidence/cvf-nis-t1b-d-integrated-review-persistence-2026-10-05.json"
+    ],
+    "bindingFileNote": "This receipt is a detached ledger artifact and is not embedded or hashed inside the return; the return is not edited after capture.",
+    "workerReturnDisposition": "BLOCKED_WITH_REASON",
+    "independentProbeDisposition": "PENDING_REVIEWER_EXECUTION",
+    "lane": "RELEASED_TO_LOCAL_REVIEWER",
+    "staged": false,
+    "committed": false
+  },
+  "independentDiagnostic": {
+    "schemaVersion": "local-review-diagnostic.v1",
+    "scope": "STRUCTURAL_CONTROL_FAULT_INJECTION_NOT_REAL_ACL_OR_HRLTP_ACCEPTANCE",
+    "worker": "D:/UNG DUNG AI/TOOL AI 2026/Controlled-Vibe-Framework-CVF-NIS-T1B-D",
+    "hashChecks": [
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecConfirmation.tsx",
+        "match": true
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-file-store.ts",
+        "match": true
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/scripts/nis-t1b-d-probe-build.mjs",
+        "match": true
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/scripts/nis-t1b-d-probe-driver.mjs",
+        "match": true
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/scripts/nis-t1b-d-probe-entry.mjs",
+        "match": true
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/scripts/nis-t1b-d-probe-session-stub.mjs",
+        "match": true
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/scripts/nis-t1b-d-transaction-probe.ps1",
+        "match": true
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/intent-spec/reviews/[id]/route.ts",
+        "match": true
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/intent-spec/reviews/route.ts",
+        "match": true
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecConfirmation.server.test.tsx",
+        "match": true
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-file-store-profile.test.ts",
+        "match": true
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-private-profile.test.ts",
+        "match": true
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-private-profile.ts",
+        "match": true
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-review-api.test.ts",
+        "match": true
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-review-api.ts",
+        "match": true
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-review-client.ts",
+        "match": true
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-security-fixture.ts",
+        "match": true
+      },
+      {
+        "path": "docs/reviews/CVF_NIS_T1B_D_INTEGRATED_REVIEW_PERSISTENCE_WORKER_RETURN_2026-10-05.md",
+        "match": true
+      },
+      {
+        "path": "docs/reviews/evidence/cvf-nis-t1b-d-integrated-review-persistence-2026-10-05.json",
+        "match": true
+      },
+      {
+        "path": ".cvf/runtime/nis-t1b-d-worker-20261005/pre-implementation/pre-implementation.json",
+        "match": true
+      }
+    ],
+    "allHashesMatch": true,
+    "logBinding": {
+      "path": ".cvf/runtime/nis-t1b-d-worker-20261005/fast-gate-final.log",
+      "claimedSha256": "2711c3e82d52636eb7629f506e876bb566bf9b39a61dfa524a61c003b0c49cff",
+      "rawSha256": "6e5fe734451cb5ea1f2976f09cdee6ffa6b80a80bab7296cbb3018e603b1b1cb",
+      "normalizedLfSha256": "2711c3e82d52636eb7629f506e876bb566bf9b39a61dfa524a61c003b0c49cff"
+    },
+    "positiveControl": {
+      "calls": [
+        "MEASURE",
+        "HARDEN",
+        "RESTORE"
+      ],
+      "state": "PRE",
+      "pass": true
+    },
+    "failureAfterSecurityMutation": {
+      "calls": [
+        "MEASURE",
+        "HARDEN"
+      ],
+      "state": "MUTATED",
+      "rejected": true,
+      "rollbackBeforeReject": false,
+      "defectReproduced": true
+    }
+  },
+  "dependencyAudit": {
+    "contract": "Full UI/API and nine HRLTP fields retained; REQ-1 worker PASS not accepted for session drift; REQ-2 remains blocked.",
+    "schema": "Canonical candidate/store/actor APIs retained; session lifecycle invalidation belongs to existing NIS consumer.",
+    "paths": "Bounded returned NIS consumer/probe family; frozen R0 return/evidence preserved; new R1 outputs after release.",
+    "authority": "Worker source repairs; Local exact registry source plus generator; privileged fixture execution remains ungranted.",
+    "tests": "Consume pinned original focused evidence; targeted regressions F1/F2/F4 and independent real production/security proof only.",
+    "range": "Original worker base bdc9d047c, dirty preimage manifest admitted only after pin verification; clean committed closure remains mandatory later.",
+    "commitPlan": "Local admission material, dedicated continuity; no implementation commit/merge/profile acceptance now."
+  },
+  "checkpoint": {
+    "id": "NIS-T1B-D-WRONG-OWNER-FIXTURE",
+    "requestedAuthority": "One Local Windows elevated fixture helper, solely on an explicitly created marked OS-temp fixture; different owner is built-in Administrators SID, no account creation.",
+    "scope": "Create fixture as current caller with a private DACL; elevated helper assigns fixture namespace owner S-1-5-32-544. Unprivileged production-path probe observes genuine owner mismatch and refusal; compare all semantic ACL fields and exact content/existence. Elevated helper restores captured original owner; Local removes only verified fixture after restoration.",
+    "constraints": [
+      "No operator/project store root, account configuration, ACL policy, service, task scheduler, provider, BUILD, deployment or public effect.",
+      "Validate absolute containment under resolved OS temp and marker/run UUID; reject reparse points at every path component; record fixture manifest before mutation.",
+      "Enable no permanent privilege; retain diagnostics; failed restoration keeps isolated fixture and reports BLOCKED instead of deleting proof.",
+      "No operation executes from this proposal."
+    ],
+    "releaseConditions": [
+      "Explicit operator fixture authority or a canonical governed alternative with equivalent real proof.",
+      "Actual helper and independent probe bytes reviewed/pinned before execution; owner-changing helper must run only after that boundary.",
+      "Exact five-file corpus entry materialized by Local and aggregate regenerated; direct coverage checks pass.",
+      "Committed revised pair and matching active continuity; fresh full pre-dispatch and bound pre-implementation receipts."
+    ]
+  },
+  "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
+  "claimBoundary": "Proposal/admission only; no re-dispatch, live identity, privileged execution, runtime acceptance or closure."
+}

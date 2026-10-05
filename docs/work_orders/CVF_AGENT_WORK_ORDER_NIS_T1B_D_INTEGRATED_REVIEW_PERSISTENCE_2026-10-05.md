@@ -4,7 +4,7 @@ Memory class: governed-worker-dispatch
 
 docType: work_order
 
-Status: DISPATCH_READY
+Status: HOLD_OPERATOR_CHECKPOINT
 
 Batch ID: CVF-NIS-T1B-D
 
@@ -18,7 +18,7 @@ Worker: delegated worker
 
 Reviewer/closer: Local reviewer/closer
 
-Worker return path: `docs/reviews/CVF_NIS_T1B_D_INTEGRATED_REVIEW_PERSISTENCE_WORKER_RETURN_2026-10-05.md`
+Worker return path: `docs/reviews/CVF_NIS_T1B_D_INTEGRATED_REVIEW_PERSISTENCE_R1_WORKER_RETURN_2026-10-05.md`
 
 ## Dispatch Prompt Envelope
 
@@ -26,10 +26,30 @@ Role: INTERNAL_AGENT implementation worker; Local is dispatcher/reviewer/closer.
 Canonical packet: `docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1B_D_INTEGRATED_REVIEW_PERSISTENCE_2026-10-05.md`; paired baseline: `docs/baselines/CVF_GC018_NIS_T1B_D_INTEGRATED_REVIEW_PERSISTENCE_2026-10-05.md`.
 Commit mode: WORKER_MUST_NOT_COMMIT. providerExecutionAuthority: FORBIDDEN.
 executionBaseHead: WORKER_MUST_CAPTURE_AT_START.
-Current-time notes: operator 2026-10-05 authorizes orchestration and manual worker relay; this is the active bounded NIS integration assignment.
+Current-time notes: Local has reviewed the released R0 tree. This round-1 amendment is HOLD_OPERATOR_CHECKPOINT, NOT authorized for relay/execution until its release conditions are met.
 Do-not-misread notes: implementation uses the dedicated clean linked worktree; original main-workspace foreign dirty bytes remain preserved. A/B/C are source preimage, not accepted runtime/profile dependencies. No provider/account/root activation or BUILD.
-Required first actions: progressive startup and acknowledgment, named source/checker reads, verify committed authority/pins, capture actual HEAD/status, full bound pre-implementation PASS before edits.
-Return contract: `docs/reviews/CVF_NIS_T1B_D_INTEGRATED_REVIEW_PERSISTENCE_WORKER_RETURN_2026-10-05.md` plus evidence and detached hash binding; COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON; PENDING_REVIEWER_EXECUTION; RELEASED_TO_LOCAL_REVIEWER; no staging/commit.
+Required first actions: stop at HOLD; Local resolves the named fixture checkpoint and coverage route. After governed release, progressive startup, exact pending-preimage preservation and pin verification, capture actual HEAD/status, and full bound pre-implementation PASS before edits.
+Return contract: `docs/reviews/CVF_NIS_T1B_D_INTEGRATED_REVIEW_PERSISTENCE_R1_WORKER_RETURN_2026-10-05.md` plus evidence and detached hash binding; COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON; PENDING_REVIEWER_EXECUTION; RELEASED_TO_LOCAL_REVIEWER; no staging/commit.
+
+## Consolidated Rework Admission
+
+reworkAdmissionStatus: HOLD_OPERATOR_CHECKPOINT
+priorFindingSetDigest: 8cd7769b5b2ed9c2e899ec9b54bce7150f929d74f94954acf29d82991eae62f3
+Evidence: `docs/reviews/evidence/cvf-nis-t1b-d-rework-admission-2026-10-05.json`. This amendment controls rework round 1 of the same CVF-NIS-T1B-D assignment. The original worker checkout and frozen R0 return remain untouched and unaccepted. Do not execute or redispatch from this held packet.
+
+| Finding | Owner / minimum outcome | Targeted evidence |
+|---|---|---|
+| F1 HIGH | Worker makes hardening initialization exception-safe, including ambiguous subprocess failure after ACL mutation and restoration failure | Actual production helper regression before rollback handle return; real semantic rollback/readback and subsequent peer acquisition |
+| F2 HIGH | Worker binds save/reopen display and late receipts to the canonical authenticated session lifecycle, including A-B-A | Session switch/logout/loading/expiry regressions plus existing review/language/reviewer generation checks; no protected auth-owner edits |
+| F3 MEDIUM | Local registry owner registers exactly the five returned probe files by source entry and generator | Direct coverage assertion for every exact path, including mjs and ps1; worker remains forbidden to edit registry/checkers |
+| F4 LOW | Worker binds the actual saved gate-log bytes and freezes a new R1 return around the final required gate | Raw file SHA256; preserve R0 return and receipt as historical evidence |
+| B1 BLOCKER | Local reviewer owns real WRONG_OWNER fixture proof after the named authority checkpoint | Actual differing owner, independent complete semantic PRE/POST plus content/existence; no synthetic security success or waived field |
+
+Independent structural diagnostic verified 20 numeric pins and reproduced F1; it does not fulfill the real-security independent proof. Original test receipts are consumed, not broadly rerun. Full contract/schema/path/authority/test/range/commit-plan dependency audit is bound in the evidence JSON before any repair. The expected pending worker preimage is pinned there; a dirty tree must not be called clean.
+
+Checkpoint NIS-T1B-D-WRONG-OWNER-FIXTURE requests one Local elevated Windows helper solely on a marked, caller-created, private OS-temp fixture: assign namespace owner to S-1-5-32-544, let the ordinary unprivileged production probe measure/refuse the actual mismatch and compare semantic PRE=POST plus exact content/existence, then restore the captured original owner. Validate containment and every ancestor against reparse points. No account creation or real store/configuration change. Failed restoration retains the isolated fixture and diagnostics. No privileged operation is authorized by this held proposal.
+
+After checkpoint resolution, Local materializes `docs/corpus-intelligence/registry/entries/nis-t1b-d-private-profile-probes.json` and regenerates the registry, then updates the role graph and actual evidence/pins before release. Do not remove HRLTP fields, lower the claim contract, or rename files as a coverage workaround. Worker R1 outputs use distinct return/evidence paths; original R0 bytes stay frozen. Rework release requires committed pair, matched continuity, exact source/fixture preimage pins, full pre-dispatch PASS and a new bound pre-implementation PASS. No worker staging/commit; no main/worker implementation merge now.
 
 ## Purpose
 
@@ -37,13 +57,15 @@ Complete the existing app_builder_complete Intent-to-Spec review consumer with r
 
 ## Scaffold Provenance Block
 
+Initial scaffold retained from committed packet b2016e35a4b11043524ac51c26a49121309391cc; current manual amendment is a held consolidated rework admission, not initial dispatch or completed repair.
+
 | Field | Value |
 |---|---|
 | scaffoldHelperCommand | `python -B governance/compat/build_dispatch_packet_scaffold.py --packet-kind web-ui-dashboard --batch-id CVF-NIS-T1B-D --title "NIS T1B Integrated Review Persistence" --date 2026-10-05 --base cc98c79657f86890624fc3a60becd0f2e8adfda3 --commit-mode WORKER_MUST_NOT_COMMIT --dispatch-surface INTERNAL_AGENT --stdout --include-worker-return-skeleton` |
 | generatedProfile | web-ui-dashboard plus WORKER_MUST_NOT_COMMIT |
 | generatedSkeletonStatus | USED_AS_STARTING_POINT |
 | manualEditsAfterScaffold | Source-verified consumer scope, checked source checkpoint 5e42818cb4e88a618b0b612528fc351635ca23ea, actor/profile/transaction acceptance, role graph, exact evidence and bounded helper families replaced generated stubs. |
-| checkerReadAheadConfirmation | governance/compat/check_baseline_update_compat.py; governance/compat/check_governed_artifact_checker_read_ahead.py; governance/compat/check_work_order_dispatch_quality.py; governance/compat/check_work_order_dispatch_quality_source.py; governance/compat/check_work_order_dispatch_quality_artifacts.py; governance/compat/check_dispatch_scaffold_provenance.py; governance/compat/check_gate_to_role_closeability.py; governance/compat/check_high_risk_local_transaction_proof.py; governance/compat/check_task_governance_route.py; governance/compat/check_adif_defect_registry_disclosure.py; governance/compat/check_agent_operation_trace.py; governance/compat/check_agent_packet_authority_and_encoding.py; governance/compat/check_core_guard_self_protection.py; governance/compat/check_markdown_structural_completeness.py |
+| checkerReadAheadConfirmation | governance/compat/check_baseline_update_compat.py; governance/compat/check_governed_artifact_checker_read_ahead.py; governance/compat/check_work_order_dispatch_quality.py; governance/compat/check_work_order_dispatch_quality_source.py; governance/compat/check_work_order_dispatch_quality_artifacts.py; governance/compat/check_dispatch_scaffold_provenance.py; governance/compat/check_gate_to_role_closeability.py; governance/compat/check_high_risk_local_transaction_proof.py; governance/compat/check_task_governance_route.py; governance/compat/check_adif_defect_registry_disclosure.py; governance/compat/check_agent_operation_trace.py; governance/compat/check_agent_packet_authority_and_encoding.py; governance/compat/check_core_guard_self_protection.py; governance/compat/check_markdown_structural_completeness.py; governance/compat/check_review_cost_control.py; governance/compat/check_changed_corpus_registry_coverage.py; governance/compat/check_corpus_scan_registry.py |
 | docOnlyNewFields | knownForeignDirtyPaths; seedEvidenceDisposition; profileAdmissionDisposition; no new machine enum or checker rule |
 | claimBoundary | Dispatch admission only; implementation, independent probe and acceptance remain pending. |
 
@@ -51,29 +73,31 @@ Complete the existing app_builder_complete Intent-to-Spec review consumer with r
 
 Review-Dispatch Convergence Control: REQUIRED
 
-dispatchKind: INITIAL
+dispatchKind: REWORK
 dispatchSurface: INTERNAL_AGENT
 parentAssignmentId: CVF-NIS-T1B-D
-reviewRoundCount: 0
-priorFindingSetDigest: NOT_APPLICABLE_INITIAL_DISPATCH
-dependencyAuditDisposition: COMPLETE_INITIAL_ACCEPTANCE_MATRIX
-reworkFindingDisposition: NOT_APPLICABLE_INITIAL_DISPATCH
+reviewRoundCount: 1
+priorFindingSetDigest: 8cd7769b5b2ed9c2e899ec9b54bce7150f929d74f94954acf29d82991eae62f3
+dependencyAuditDisposition: COMPLETE_BEFORE_FIRST_REPAIR
+reworkFindingDisposition: CONSOLIDATED_ALL_DEPENDENT_FINDINGS
 newIndependentCriticalEvidence: NONE
-regressionGuardDisposition: BASELINE_NEGATIVE_TESTS_PLANNED
+regressionGuardDisposition: REQUIRED_AND_PLANNED_FOR_EACH_TARGETED_DEFECT
 cumulativeExternalInvocationCount: 0
 externalInvocationCeiling: 0
 usageAvailability: NOT_APPLICABLE_INTERNAL_AGENT
 quotaAdmissionDisposition: NOT_APPLICABLE_INTERNAL_AGENT
-nextDispatchDisposition: INITIAL_DISPATCH
-rootCauseClusterId: NOT_APPLICABLE_INITIAL_DISPATCH
-reworkGeneration: 0
-consolidatedDefectClassSweep: COMPLETE_INITIAL_ACCEPTANCE_MATRIX
+nextDispatchDisposition: ONE_CONSOLIDATED_REWORK
+rootCauseClusterId: CVF-NIS-T1B-D-INTEGRATED-ADMISSION
+reworkGeneration: 1
+consolidatedDefectClassSweep: COMPLETE_BEFORE_REWORK_DISPATCH
 successorTrancheOpened: NO
 implementationAutonomyDisposition: CONTRACT_AUTHORITY_EVIDENCE_OUTCOME_ONLY
 preExecutionReviewAdmission: NOT_REQUIRED_BEFORE_EXECUTION
 preExecutionReviewTrigger: NONE
 nextRoutineReviewBoundary: WORKER_RETURN
 reviewerWorkBoundary: EVALUATE_RETURNED_EVIDENCE_NOT_RECREATE_IMPLEMENTATION
+reviewerLocalRepairBoundary: NEW_EVIDENCE_REQUIRED
+reviewerLocalRepairBasis: F1/F2 require targeted production-bound regressions and B1 requires actual different-owner proof beyond the released non-elevated token; operator delegates implementation to the internal worker, Local owns independent acceptance.
 
 
 ## Semantic Convergence Outcome
@@ -88,12 +112,27 @@ Standard: `docs/reference/semantic_convergence_control/CVF_SEMANTIC_CONVERGENCE_
   "chainOrdinal": 0,
   "predecessor": null,
   "blockerDelta": {
-    "prior": [],
+    "prior": [
+      "B1"
+    ],
     "resolved": [],
-    "retained": [],
-    "new": [],
+    "retained": [
+      "B1"
+    ],
+    "new": [
+      "F1",
+      "F2",
+      "F3",
+      "F4"
+    ],
     "reopened": [],
-    "current": []
+    "current": [
+      "B1",
+      "F1",
+      "F2",
+      "F3",
+      "F4"
+    ]
   },
   "resolutionEvidence": {},
   "counters": {
@@ -125,7 +164,7 @@ Actual resolver executed on 2026-10-05; totalCandidates=0, truncated=false. Work
 
 | Field | Value |
 |---|---|
-| applicableCheckersRead | governance/compat/check_baseline_update_compat.py; governance/compat/check_governed_artifact_checker_read_ahead.py; governance/compat/check_work_order_dispatch_quality.py; governance/compat/check_work_order_dispatch_quality_source.py; governance/compat/check_work_order_dispatch_quality_artifacts.py; governance/compat/check_dispatch_scaffold_provenance.py; governance/compat/check_gate_to_role_closeability.py; governance/compat/check_high_risk_local_transaction_proof.py; governance/compat/check_task_governance_route.py; governance/compat/check_adif_defect_registry_disclosure.py; governance/compat/check_agent_operation_trace.py; governance/compat/check_agent_packet_authority_and_encoding.py; governance/compat/check_core_guard_self_protection.py; governance/compat/check_markdown_structural_completeness.py |
+| applicableCheckersRead | governance/compat/check_baseline_update_compat.py; governance/compat/check_governed_artifact_checker_read_ahead.py; governance/compat/check_work_order_dispatch_quality.py; governance/compat/check_work_order_dispatch_quality_source.py; governance/compat/check_work_order_dispatch_quality_artifacts.py; governance/compat/check_dispatch_scaffold_provenance.py; governance/compat/check_gate_to_role_closeability.py; governance/compat/check_high_risk_local_transaction_proof.py; governance/compat/check_task_governance_route.py; governance/compat/check_adif_defect_registry_disclosure.py; governance/compat/check_agent_operation_trace.py; governance/compat/check_agent_packet_authority_and_encoding.py; governance/compat/check_core_guard_self_protection.py; governance/compat/check_markdown_structural_completeness.py; governance/compat/check_review_cost_control.py; governance/compat/check_changed_corpus_registry_coverage.py; governance/compat/check_corpus_scan_registry.py |
 | literalTokensReviewed | Dispatch Prompt Envelope; Source Verification Block; DISPATCH_READY; acceptance-ledger-json; Gate-To-Role Closeability Contract; High-Risk Local Transaction Proof Applicability; Returned defects: NONE_RETURNED; rawMemoryReleased=false |
 | gateRunPurpose | Confirm source-verified bounded dispatch and role closeability before release; no implementation proof. |
 | claimBoundary | Read-ahead concerns authoring and evidence shapes; never certifies runtime/security outcomes. |
@@ -168,7 +207,7 @@ Contract source archive-qualified exception: docs/reference/CVF_AHB_T2_AGENT_HAN
 | nextMoveSurfaces | active handoff, compact front door, source core/nextAllowedMove and generated bootstrap/state |
 
 sharedWorktreeCoordinationMode: EXPLICIT_LANE_HANDOFF
-activeLaneOwner: INTERNAL_AGENT_IMPLEMENTATION_WORKER_AFTER_OPERATOR_RELAY
+activeLaneOwner: LOCAL_REVIEWER_REWORK_ADMISSION_HOLD
 laneOwnedPaths: Allowed Scope bounded families and three exact worker artifacts
 dispatcherMutationBoundary: NO_MUTATION_WHILE_LANE_ACTIVE
 laneReleaseEvidence: RELEASED_TO_LOCAL_REVIEWER plus final actual status and frozen return; Local does not mutate worker paths until release.
@@ -213,16 +252,16 @@ Work-Order Fulfillment Manifest: bounded consumer/probe families and exact manda
 | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/intent-spec/reviews/[id]/route.ts` | Implement/verify required consumer outcome and report exact artifacts |
 | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-file-store.ts` | Implement/verify required consumer outcome and report exact artifacts |
 | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/scripts/nis-t1b-d-transaction-probe.ps1` | Implement/verify required consumer outcome and report exact artifacts |
-| `docs/reviews/CVF_NIS_T1B_D_INTEGRATED_REVIEW_PERSISTENCE_WORKER_RETURN_2026-10-05.md` | Implement/verify required consumer outcome and report exact artifacts |
-| `docs/reviews/evidence/cvf-nis-t1b-d-integrated-review-persistence-2026-10-05.json` | Implement/verify required consumer outcome and report exact artifacts |
-| `docs/reviews/evidence/cvf-nis-t1b-d-final-return-binding-2026-10-05.json` | Implement/verify required consumer outcome and report exact artifacts |
+| `docs/reviews/CVF_NIS_T1B_D_INTEGRATED_REVIEW_PERSISTENCE_R1_WORKER_RETURN_2026-10-05.md` | Implement/verify required consumer outcome and report exact artifacts |
+| `docs/reviews/evidence/cvf-nis-t1b-d-integrated-review-persistence-r1-2026-10-05.json` | Implement/verify required consumer outcome and report exact artifacts |
+| `docs/reviews/evidence/cvf-nis-t1b-d-final-return-binding-r1-2026-10-05.json` | Implement/verify required consumer outcome and report exact artifacts |
 
 Bounded companion tests/helpers follow Allowed Scope; expectedArtifacts are mandatory, ordinary admitted splits remain enumerable. All nine pinned foreign paths are outside worker ownership.
 
 ## Work-Order Acceptance Requirement Ledger
 
 ```acceptance-ledger-json
-{"schemaVersion":"cvf.workOrderAcceptanceLedger@1.0.0","requirements":[{"requirementId":"REQ-1","mandatory":true,"expectedArtifacts":["EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecConfirmation.tsx","EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/intent-spec/reviews/route.ts","EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/intent-spec/reviews/[id]/route.ts","docs/reviews/CVF_NIS_T1B_D_INTEGRATED_REVIEW_PERSISTENCE_WORKER_RETURN_2026-10-05.md","docs/reviews/evidence/cvf-nis-t1b-d-integrated-review-persistence-2026-10-05.json","docs/reviews/evidence/cvf-nis-t1b-d-final-return-binding-2026-10-05.json"],"requiredProofIds":["PROOF-JOIN"]},{"requirementId":"REQ-2","mandatory":true,"expectedArtifacts":["EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-file-store.ts","EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/scripts/nis-t1b-d-transaction-probe.ps1","docs/reviews/CVF_NIS_T1B_D_INTEGRATED_REVIEW_PERSISTENCE_WORKER_RETURN_2026-10-05.md","docs/reviews/evidence/cvf-nis-t1b-d-integrated-review-persistence-2026-10-05.json","docs/reviews/evidence/cvf-nis-t1b-d-final-return-binding-2026-10-05.json"],"requiredProofIds":["PROOF-TRANSACTION"]},{"requirementId":"REQ-3","mandatory":true,"expectedArtifacts":["docs/reviews/CVF_NIS_T1B_D_INTEGRATED_REVIEW_PERSISTENCE_WORKER_RETURN_2026-10-05.md","docs/reviews/evidence/cvf-nis-t1b-d-integrated-review-persistence-2026-10-05.json","docs/reviews/evidence/cvf-nis-t1b-d-final-return-binding-2026-10-05.json"],"requiredProofIds":["PROOF-RETURN"]}],"proofCatalog":[{"proofId":"PROOF-JOIN","kind":"COMMAND","locator":"Focused Vitest UI/API suites, TypeScript and ESLint recorded in worker evidence"},{"proofId":"PROOF-TRANSACTION","kind":"COMMAND","locator":"powershell -NoProfile -File \"EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/scripts/nis-t1b-d-transaction-probe.ps1\""},{"proofId":"PROOF-RETURN","kind":"COMMAND","locator":"python -B governance/compat/run_worker_return_fast_gate.py --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1B_D_INTEGRATED_REVIEW_PERSISTENCE_2026-10-05.md"}]}
+{"schemaVersion":"cvf.workOrderAcceptanceLedger@1.0.0","requirements":[{"requirementId":"REQ-1","mandatory":true,"expectedArtifacts":["EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecConfirmation.tsx","EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/intent-spec/reviews/route.ts","EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/intent-spec/reviews/[id]/route.ts","docs/reviews/CVF_NIS_T1B_D_INTEGRATED_REVIEW_PERSISTENCE_R1_WORKER_RETURN_2026-10-05.md","docs/reviews/evidence/cvf-nis-t1b-d-integrated-review-persistence-r1-2026-10-05.json","docs/reviews/evidence/cvf-nis-t1b-d-final-return-binding-r1-2026-10-05.json"],"requiredProofIds":["PROOF-JOIN"]},{"requirementId":"REQ-2","mandatory":true,"expectedArtifacts":["EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-file-store.ts","EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/scripts/nis-t1b-d-transaction-probe.ps1","docs/reviews/CVF_NIS_T1B_D_INTEGRATED_REVIEW_PERSISTENCE_R1_WORKER_RETURN_2026-10-05.md","docs/reviews/evidence/cvf-nis-t1b-d-integrated-review-persistence-r1-2026-10-05.json","docs/reviews/evidence/cvf-nis-t1b-d-final-return-binding-r1-2026-10-05.json"],"requiredProofIds":["PROOF-TRANSACTION"]},{"requirementId":"REQ-3","mandatory":true,"expectedArtifacts":["docs/reviews/CVF_NIS_T1B_D_INTEGRATED_REVIEW_PERSISTENCE_R1_WORKER_RETURN_2026-10-05.md","docs/reviews/evidence/cvf-nis-t1b-d-integrated-review-persistence-r1-2026-10-05.json","docs/reviews/evidence/cvf-nis-t1b-d-final-return-binding-r1-2026-10-05.json"],"requiredProofIds":["PROOF-RETURN"]}],"proofCatalog":[{"proofId":"PROOF-JOIN","kind":"COMMAND","locator":"Focused Vitest UI/API suites, TypeScript and ESLint recorded in worker evidence"},{"proofId":"PROOF-TRANSACTION","kind":"COMMAND","locator":"powershell -NoProfile -File \"EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/scripts/nis-t1b-d-transaction-probe.ps1\""},{"proofId":"PROOF-RETURN","kind":"COMMAND","locator":"python -B governance/compat/run_worker_return_fast_gate.py --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1B_D_INTEGRATED_REVIEW_PERSISTENCE_2026-10-05.md"}]}
 ```
 
 ## Tool / Classifier Block Recovery Contract
@@ -240,7 +279,7 @@ Use the existing recovery owner; no authorization bypass or scope expansion. Rep
 
 ## Worker Return Packet Shape Contract
 
-workerReturnPath: `docs/reviews/CVF_NIS_T1B_D_INTEGRATED_REVIEW_PERSISTENCE_WORKER_RETURN_2026-10-05.md`
+workerReturnPath: `docs/reviews/CVF_NIS_T1B_D_INTEGRATED_REVIEW_PERSISTENCE_R1_WORKER_RETURN_2026-10-05.md`
 contractProfile: WORKER_RETURN_FULL_GATE_V1
 requiredGate: `python governance/compat/run_worker_return_fast_gate.py`
 individualCheckerSubstitution: FORBIDDEN
@@ -332,7 +371,7 @@ Profile admission is a concrete prerequisite to reporting private-store confirma
 ## Allowed Scope
 
 Modify existing `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecConfirmation.tsx` and its tests; only bounded integration in IntentSpecReview/SpecExport/DynamicForm and their existing tests when necessary. Modify/create `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-*.ts` and tests as bounded consumer helpers, preserving existing canonical review/actor/candidate interfaces or documenting a backward-compatible change. New route family `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/intent-spec/reviews/**` and focused colocated tests; new `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/scripts/nis-t1b-d-transaction-probe.ps1` and bounded sibling nis-t1b-d-* probe helpers only.
-Worker-owned return/evidence: `docs/reviews/CVF_NIS_T1B_D_INTEGRATED_REVIEW_PERSISTENCE_WORKER_RETURN_2026-10-05.md`, `docs/reviews/evidence/cvf-nis-t1b-d-integrated-review-persistence-2026-10-05.json`, `docs/reviews/evidence/cvf-nis-t1b-d-final-return-binding-2026-10-05.json`. Scratch logs and synthetic roots may use .cvf/runtime/nis-t1b-d-worker-20261005 and task-prefixed OS temp locations; verify absolute containment before cleanup. Ordinary file splitting inside named consumer/probe families is authorized under size guards; enumerate actual artifacts in return. No package/dependency/configuration installation.
+Worker-owned return/evidence: `docs/reviews/CVF_NIS_T1B_D_INTEGRATED_REVIEW_PERSISTENCE_R1_WORKER_RETURN_2026-10-05.md`, `docs/reviews/evidence/cvf-nis-t1b-d-integrated-review-persistence-r1-2026-10-05.json`, `docs/reviews/evidence/cvf-nis-t1b-d-final-return-binding-r1-2026-10-05.json`. Scratch logs and synthetic roots may use .cvf/runtime/nis-t1b-d-worker-20261005 and task-prefixed OS temp locations; verify absolute containment before cleanup. Ordinary file splitting inside named consumer/probe families is authorized under size guards; enumerate actual artifacts in return. No package/dependency/configuration installation.
 Filesystem work: guarded immutable record publication, exception-safe ownership, exact readback and rollback of invocation-owned temporary/content/security state in test-owned roots. Windows ACL/owner adversary mutations are authorized only on synthetic worker-created fixtures, never existing operator roots or account configuration. Production profile checks may inspect supplied security state and must refuse unsafe/unsupported state; default remains disabled.
 
 ## Forbidden Scope
@@ -354,11 +393,11 @@ No edits to authentication/policy/impersonation owners, governance/checkers/hook
 2. Implement profile admission and necessary transaction mechanism, actual POST/GET join and UI save/reopen within bounded families. Use test-owned roots only. Diagnose platform inability before pretending a profile is accepted.
 3. Focused UI/API tests cover canonical and adversarial actor/body/hash/source cases, source/language/session drift, exact bytes, cross-actor reads and unavailable/config-error/partial-write/readback failures. Exercise the actual store path with real OS peer and deterministic protocol/security adversaries. Add only meaningful regressions for changed consumer behavior.
 4. Run changed focused tests, TypeScript and focused ESLint, probe driver, full worker-return fast. Consume pinned prior A/B/C results when unchanged; rerun only changed contracts or a named contradiction. No broad duplicate/full provider bundle.
-5. Finalize return and evidence, requirement-linked artifact ledger, truthful single retro and PENDING_REVIEWER_EXECUTION. Capture exact return SHA256 before/after final required worker-return gate into `docs/reviews/evidence/cvf-nis-t1b-d-final-return-binding-2026-10-05.json`; no mutation to frozen return afterward. Retain failing diagnostics, command exits, source/evidence hashes and foreign-byte reconciliation. Release lane to Local; stop uncommitted.
+5. Finalize return and evidence, requirement-linked artifact ledger, truthful single retro and PENDING_REVIEWER_EXECUTION. Capture exact return SHA256 before/after final required worker-return gate into `docs/reviews/evidence/cvf-nis-t1b-d-final-return-binding-r1-2026-10-05.json`; no mutation to frozen return afterward. Retain failing diagnostics, command exits, source/evidence hashes and foreign-byte reconciliation. Release lane to Local; stop uncommitted.
 
 ## Evidence Requirements
 
-`docs/reviews/evidence/cvf-nis-t1b-d-integrated-review-persistence-2026-10-05.json` records executionBaseHead, actual source/artifact hashes, case/requirement proof links, commands/exits, synthetic root ownership and cleanup, actual process IDs/events, all security tuples/rollback comparisons, supported/unsupported profile guarantees, retained diagnostics, exact known-foreign-dirty reconciliation and final status. Raw briefs/token/cookies/keys are never printed. Source fixture content stays synthetic. `docs/reviews/evidence/cvf-nis-t1b-d-final-return-binding-2026-10-05.json` is detached final gate/digest receipt; the final return references it before freezing.
+`docs/reviews/evidence/cvf-nis-t1b-d-integrated-review-persistence-r1-2026-10-05.json` records executionBaseHead, actual source/artifact hashes, case/requirement proof links, commands/exits, synthetic root ownership and cleanup, actual process IDs/events, all security tuples/rollback comparisons, supported/unsupported profile guarantees, retained diagnostics, exact known-foreign-dirty reconciliation and final status. Raw briefs/token/cookies/keys are never printed. Source fixture content stays synthetic. `docs/reviews/evidence/cvf-nis-t1b-d-final-return-binding-r1-2026-10-05.json` is detached final gate/digest receipt; the final return references it before freezing.
 REQ-1 UI/API; REQ-2 profile/transaction; REQ-3 focused regression, frozen return and foreign preservation. No incomplete production join returned as READY. Formal independent execution remains PENDING_REVIEWER_EXECUTION for Local; worker completion may be pending this review-only obligation.
 
 ## Corpus Completeness And Report Integrity
@@ -465,9 +504,9 @@ High-Risk Local Transaction Proof Applicability: REQUIRED
     "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/",
     "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/intent-spec/reviews/",
     "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/scripts/",
-    "docs/reviews/CVF_NIS_T1B_D_INTEGRATED_REVIEW_PERSISTENCE_WORKER_RETURN_2026-10-05.md",
-    "docs/reviews/evidence/cvf-nis-t1b-d-integrated-review-persistence-2026-10-05.json",
-    "docs/reviews/evidence/cvf-nis-t1b-d-final-return-binding-2026-10-05.json",
+    "docs/reviews/CVF_NIS_T1B_D_INTEGRATED_REVIEW_PERSISTENCE_R1_WORKER_RETURN_2026-10-05.md",
+    "docs/reviews/evidence/cvf-nis-t1b-d-integrated-review-persistence-r1-2026-10-05.json",
+    "docs/reviews/evidence/cvf-nis-t1b-d-final-return-binding-r1-2026-10-05.json",
     "docs/baselines/CVF_GC018_NIS_T1B_D_INTEGRATED_REVIEW_PERSISTENCE_2026-10-05.md",
     "docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1B_D_INTEGRATED_REVIEW_PERSISTENCE_2026-10-05.md",
     "docs/reviews/evidence/cvf-nis-t1b-d-dispatch-inputs-2026-10-05.json",
@@ -519,7 +558,7 @@ T0 SHADOW_FULL_GATE_FALLBACK; selectiveExecutionAuthorized=false. Full legacy ga
 ## Gate-To-Role Closeability Contract
 
 closeabilityContractVersion: cvf.gate-role-closeability@1.0.0
-closeabilityDisposition: CLOSEABLE
+closeabilityDisposition: UNCLOSEABLE_PACKET_CONTRADICTION
 implementationTopologyPolicy: BOUNDED_PATH_FAMILIES
 foreseeableFileSplitDisposition: COVERED_BY_BOUNDED_PATH_FAMILY
 returnTimeRecheck: REQUIRED_BEFORE_REPAIR
@@ -646,13 +685,15 @@ Consolidated BLOCKED for forbidden scope, contradictory pin/owner or unavailable
 
 ## Operator Checkpoint
 
-Operator 2026-10-05 authorizes this local implementation dispatch. Real root/account/provider/public/deploy or BUILD activation is outside this packet and requires later explicit authority.
+Original local implementation authority is retained; no re-dispatch from this held amendment. NIS-T1B-D-WRONG-OWNER-FIXTURE requires explicit bounded elevated-helper authority or an admitted equivalent canonical route before release. Real root/account/provider/public/deploy or BUILD activation stays outside scope.
 
 ## Risk / Corrective Action
 
 Never manufacture saved/private/accepted state from field presence, file download, mock actor, pending store port or incomplete security proof. Preserve diagnostics and return blocked on unsupported capabilities.
 
 ## Required First Reads
+
+Current rework input: docs/reviews/evidence/cvf-nis-t1b-d-rework-admission-2026-10-05.json; its pending-preimage pins control after release. The initial dispatch-input manifest below remains historical seed evidence and must not overwrite the returned source or require a false clean start.
 
 AGENTS.md progressive startup; this work order and docs/baselines/CVF_GC018_NIS_T1B_D_INTEGRATED_REVIEW_PERSISTENCE_2026-10-05.md; named inputs/source owners in docs/reviews/evidence/cvf-nis-t1b-d-dispatch-inputs-2026-10-05.json; DESIGN.md; canonical work-order/finality, private transaction and review-cost standards; output checker source before artifact authoring. No full corpus/history scan.
 
