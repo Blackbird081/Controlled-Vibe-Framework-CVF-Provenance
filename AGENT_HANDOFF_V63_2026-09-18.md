@@ -1,6 +1,6 @@
 # CVF Agent Handoff V63 - ACEL Applied-Knowledge Owner Enrichment
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD: `b2016e35a4b11043524ac51c26a49121309391cc`; NIS-T1B-D dispatch material; source checkpoint 5e42818cb; implementation/profile acceptance pending.
+Current HEAD: `b2016e35a4b11043524ac51c26a49121309391cc`; CVF-NIS-T1B-D dispatch material; source checkpoint 5e42818cb; implementation/profile acceptance pending.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -169,7 +169,7 @@ Rollback boundary: revert only this continuity sync; preserve material `5c1ee025
 - ACEL-AKOE-U1 is `CLOSED_PASS_BOUNDED` at `d9132412a`, disposition `SOURCE_RECONCILED_DEFER_WITH_TRIGGER`. Exact pins, 42 claims, byte hash and verification detail remain in its completion review; no import, runtime/provider, public sync or automatic successor opened.
 - CVF-NCR-R0-W01 source/profile return is Local-accepted bounded at material commit `d9b43a6f6deff7fb19710b5a9a4f50bf2a6015b6`; reviewer-fast 69/69 and pre-commit 90/90 passed. P06/P08 and actual destination/retention/cost remain open. One overbroad worker grep exposed a configured URL in tool output; the return does not reproduce it, and Local/operator config handling remains separate. No pilot or UI action was run.
 ## Next Allowed Move
-PROGRAM_ID=CVF-NIS; NEXT_ACTION_CLASS=NIS_T1B_D_INTERNAL_IMPLEMENTATION; BATCH_ID=CVF-NIS-T1B-D. Current authority binds new NIS pair; operator manually relays distinct internal worker to clean linked worktree. Next full bound pre-implementation, UI/API save/reopen and private-profile transaction proof; worker no commit. Local independent acceptance pending. Seed A/B/C 5e42818cb, not runtime closure. CCMA/S05/C1/send/B2/Q001/Q004/P11/FLAL parked boundaries unchanged; LHW24 closed; no provider/real root/BUILD/public effect.
+PROGRAM_ID=CVF-NIS; NEXT_ACTION_CLASS=EXECUTE_NIS_T1B_D_INTERNAL_IMPLEMENTATION; BATCH_ID=CVF-NIS-T1B-D. Current authority binds new NIS pair; operator manually relays distinct internal worker to clean linked worktree. Next full bound pre-implementation, UI/API save/reopen and private-profile transaction proof; worker no commit. Local independent acceptance pending. Seed A/B/C 5e42818cb, not runtime closure. CCMA/S05/C1/send/B2/Q001/Q004/P11/FLAL parked boundaries unchanged; LHW24 closed; no provider/real root/BUILD/public effect.
 ## Parked Checkpoints
 - autorun lane-binding R1 is closed at `ee81deeeb`; HRLTP-T2 remains paused for Local no-subagent route reassessment;
 - T3C-C2 is closed and Local verified at `820aae3ec`;
