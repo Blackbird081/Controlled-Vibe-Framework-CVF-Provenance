@@ -2,7 +2,7 @@
 
 Memory class: governed-dispatch-baseline
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: CVF-NIS-T1B-D
 
@@ -70,7 +70,7 @@ Actual resolver executed on 2026-10-05; totalCandidates=0, truncated=false. Work
 | Field | Value |
 |---|---|
 | applicableCheckersRead | governance/compat/check_baseline_update_compat.py; governance/compat/check_governed_artifact_checker_read_ahead.py; governance/compat/check_work_order_dispatch_quality.py; governance/compat/check_work_order_dispatch_quality_source.py; governance/compat/check_work_order_dispatch_quality_artifacts.py; governance/compat/check_dispatch_scaffold_provenance.py; governance/compat/check_gate_to_role_closeability.py; governance/compat/check_high_risk_local_transaction_proof.py; governance/compat/check_task_governance_route.py; governance/compat/check_adif_defect_registry_disclosure.py; governance/compat/check_agent_operation_trace.py; governance/compat/check_agent_packet_authority_and_encoding.py; governance/compat/check_core_guard_self_protection.py; governance/compat/check_markdown_structural_completeness.py; governance/compat/check_review_cost_control.py; governance/compat/check_changed_corpus_registry_coverage.py; governance/compat/check_corpus_scan_registry.py; governance/compat/check_semantic_convergence_control.py |
-| literalTokensReviewed | Dispatch Prompt Envelope; Source Verification Block; DISPATCH_READY; acceptance-ledger-json; Gate-To-Role Closeability Contract; High-Risk Local Transaction Proof Applicability; Returned defects: NONE_RETURNED; rawMemoryReleased=false |
+| literalTokensReviewed | Dispatch Prompt Envelope; Source Verification Block; CLOSED_PASS_BOUNDED; acceptance-ledger-json; Gate-To-Role Closeability Contract; High-Risk Local Transaction Proof Applicability; Returned defects: NONE_RETURNED; rawMemoryReleased=false |
 | gateRunPurpose | Confirm source-verified bounded dispatch and role closeability before release; no implementation proof. |
 | claimBoundary | Read-ahead concerns authoring and evidence shapes; never certifies runtime/security outcomes. |
 
@@ -103,7 +103,7 @@ Read DESIGN.md before implementation. Retain the existing bilingual operational 
 
 ## Claim Boundary
 
-rawMemoryReleased=false. Operator-authorized local source implementation and synthetic isolated filesystem/security fixtures only. No real project data/root configuration, provider/login call, BUILD authority, public export or reopening parked lanes. Independent probe and final acceptance belong to Local, not the worker.
+rawMemoryReleased=false. Operator-authorized local source implementation and synthetic isolated filesystem/security fixtures only. No real project data/root configuration, provider/login call, BUILD authority, public export or reopening parked lanes. Independent probe and final acceptance are Local-owned; dated closure amendment records execution.
 
 ## Public Export Disposition
 
@@ -133,4 +133,44 @@ Claim Update: dispatch admission only, no complete T1B/S1 or build-ready claim.
 ## Current Runtime Freshness Verification
 
 N/A_WITH_REASON - source-pinned dispatch with synthetic local tests only; no live identity/provider/deployment claim. Read actual source and host capabilities before implementation; do not infer runtime activation from source existence.
+
+
+## Local Closure Amendment - 2026-10-05
+
+closureBaseHead: 793644f67209b64db7c10449074a0bb1044ffbad
+sourceMaterialCommit: 793644f67209b64db7c10449074a0bb1044ffbad
+closureDecisionOwner: LOCAL_REVIEWER_CLOSER
+The earlier dispatch and worker instructions are historical execution contracts.
+This amendment closes the same assignment after Local supplied the missing real
+WRONG_OWNER proof on repaired R1 source, and independently tested F1 rollback.
+Worker return remains BLOCKED at its original timestamp; Local now adjudicates
+REQ-1/REQ-2/REQ-3 PASS in `docs/reviews/evidence/cvf-nis-t1b-d-closure-reconciliation-2026-10-05.json`. Mandatory expectedArtifacts stay unchanged;
+15 admitted companion paths are reconciled separately. The known recurring B1
+fixture capability is acknowledged using the original governed rework admission;
+FIRST_OCCURRENCE does not reset R0 history. No further worker execution is due.
+Profile accepted only at bounded Windows synthetic-fixture scope, without real
+root activation, provider, BUILD, power-loss or stale-lock recovery assurance.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1B_D_INTEGRATED_REVIEW_PERSISTENCE_2026-10-05.md` | CLOSED_PASS_BOUNDED, same assignment, no successor | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_NIS_T1B_D_INTEGRATED_REVIEW_PERSISTENCE_COMPLETION_2026-10-05.md` | Local proof and ledger adjudication | PASS |
+| Roadmap state | `docs/roadmaps/CVF_GCLH_MACHINE_FIRST_REVIEW_PREFLIGHT_ROADMAP_2026-09-01.md` | Existing review-method owner unchanged; bounded NIS task closed; successor unopened | PASS |
+| Registry JSON | `docs/corpus-intelligence/registry/entries/nis-t1b-d-private-profile-probes.json` | Exact five-file registration preserved, NOT_STARTED processing | PASS |
+| Registry Markdown | `docs/corpus-intelligence/README.md` | Existing source-registry navigation retained | PASS |
+| External evidence digest | `docs/reviews/evidence/cvf-nis-t1b-d-r1-local-independent-review-2026-10-05.json` | Repo-local proof digest c2c6358c92a5692bc6692c8855d709faba6b3d5e2e2578a097e3a9524a940e06; original worker bytes pinned in closure reconciliation | PASS |
+| System loop interlock | `docs/reviews/evidence/cvf-nis-t1b-d-closure-reconciliation-2026-10-05.json` | authority -> source -> worker receipt -> separate Local oracle -> closure; no BUILD | PASS |
+| Session continuity | `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Generated from sources with closed pair/currentAuthority and no successor | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| Exact frozen worker return | Raw before=after digest | 0e8f0077cbc549ee534bf43c1b7d9a4e79c840333851937758ecb3cb4f0526f6 | PASS |
+| Current request-owned bytes | Exact server readback, actor namespace | Worker focused 200-test input; production peers and Local readback | PASS |
+| All four security adversaries | Semantic/content preservation and recovery | Three worker adversaries plus fresh Local WRONG_OWNER and three extra F1 fault probes | PASS |
+| Mandatory and companion paths | 8 mandatory +15 admitted companion =23 source/worker artifacts | Closure JSON exact union with all source pins/committed blobs | PASS |
+| Repeated B1 history | Preserve R0 and R1; acknowledge known blocker | Prior governed rework admission B1 and frozen R0 digest; no history reset | PASS |
 

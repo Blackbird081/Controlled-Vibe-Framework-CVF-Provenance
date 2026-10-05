@@ -1,0 +1,588 @@
+{
+  "schemaVersion": "cvf.nisT1bDLocalR1ProbeReview.v1",
+  "batchId": "CVF-NIS-T1B-D",
+  "date": "2026-10-05",
+  "role": "LOCAL_REVIEWER",
+  "phase": "INDEPENDENT_PROBE_AND_RETURN_DISPOSITION",
+  "decisionOwner": "LOCAL",
+  "status": "TECHNICAL_PROBE_PASS_CLOSURE_PENDING",
+  "claimBoundary": "LOCAL_TEST_SESSION; SPEC_REVIEW_ONLY_NO_BUILD_AUTHORITY; no live identity or AI governance assertion, profile activation or tranche closure",
+  "executionBaseHead": "2c28581f1f44770c9aebd8ffb707f8b273fa95cf",
+  "authority": {
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1B_D_INTEGRATED_REVIEW_PERSISTENCE_2026-10-05.md": "a2bf6286911a5cae64a271452b2547096a3f35bb0dd9b5eb3893645f3cc572ad",
+    "docs/baselines/CVF_GC018_NIS_T1B_D_INTEGRATED_REVIEW_PERSISTENCE_2026-10-05.md": "a76afb479deff9983941a22282c347025e7aabf15d2ea03f54fb36e5a70a58cd"
+  },
+  "workerReturnFrozen": {
+    "schemaVersion": "cvf.nisT1bDFinalReturnBinding.v1",
+    "batchId": "CVF-NIS-T1B-D",
+    "round": "R1",
+    "algorithm": "SHA256",
+    "scope": "EXACT_RETURN_BYTES",
+    "capture": "BEFORE_AND_AFTER_FINAL_REQUIRED_GATE",
+    "returnPath": "docs/reviews/CVF_NIS_T1B_D_INTEGRATED_REVIEW_PERSISTENCE_R1_WORKER_RETURN_2026-10-05.md",
+    "returnSha256Before": "0e8f0077cbc549ee534bf43c1b7d9a4e79c840333851937758ecb3cb4f0526f6",
+    "returnSha256After": "0e8f0077cbc549ee534bf43c1b7d9a4e79c840333851937758ecb3cb4f0526f6",
+    "equality": true,
+    "postGateMutation": "NONE",
+    "integratedEvidencePath": "docs/reviews/evidence/cvf-nis-t1b-d-integrated-review-persistence-r1-2026-10-05.json",
+    "integratedEvidenceSha256": "cf24929cb6280ed1bc18ea2bd58083ab5d2485ecdc28bfe3f723a1f8ca1c960b",
+    "finalRequiredGate": {
+      "command": "python -B governance/compat/run_worker_return_fast_gate.py --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1B_D_INTEGRATED_REVIEW_PERSISTENCE_2026-10-05.md",
+      "exit": 0,
+      "startedUtc": "2026-10-05T06:13:49.784160+00:00",
+      "finishedUtc": "2026-10-05T06:13:54.924142+00:00",
+      "resultLines": [
+        "PASS: corpus scan registry aggregate drift (0.08s)",
+        "COMPLIANT - epistemic process packet evidence structure is aligned.",
+        "PASS: epistemic process packet (0.18s)",
+        "COMPLIANT",
+        "PASS: work-order acceptance ledger (0.15s)",
+        "COMPLIANT - worker-return packets are review-ready.",
+        "PASS: worker-return quality gate (0.29s)",
+        "PASS: all applicable artifacts satisfy the independent-probe admission contract.",
+        "PASS: independent review probe admission (0.51s)",
+        "PASS: reviewer-fast governance gate (3.82s)",
+        "PASS: git diff whitespace check (0.04s)",
+        "COMPLIANT: worker-return fast gate passed in 5.07s."
+      ],
+      "logPath": ".cvf/runtime/nis-t1b-d-worker-20261005/fast-gate-final-r1.log",
+      "logSha256": "25cb960563e15fabb0b1aaee1f943e7a5b84bf21042f18462bde31a7c0b7e4b9",
+      "logDigestScope": "RAW_SAVED_LOG_BYTES"
+    },
+    "gitDiffCheckExit": 0,
+    "headAtCapture": "2c28581f1f44770c9aebd8ffb707f8b273fa95cf",
+    "finalGitStatusShort": [
+      " M EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecConfirmation.test.tsx",
+      " M EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecConfirmation.tsx",
+      " M EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecReview.test.tsx",
+      " M EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/SpecExport.test.tsx",
+      " M EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-file-store.ts",
+      "?? EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/scripts/nis-t1b-d-probe-build.mjs",
+      "?? EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/scripts/nis-t1b-d-probe-driver.mjs",
+      "?? EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/scripts/nis-t1b-d-probe-entry.mjs",
+      "?? EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/scripts/nis-t1b-d-probe-session-stub.mjs",
+      "?? EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/scripts/nis-t1b-d-transaction-probe.ps1",
+      "?? EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/intent-spec/",
+      "?? EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecConfirmation.server.test.tsx",
+      "?? EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-file-store-profile.test.ts",
+      "?? EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-private-profile.test.ts",
+      "?? EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-private-profile.ts",
+      "?? EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-review-api.test.ts",
+      "?? EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-review-api.ts",
+      "?? EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-review-client.ts",
+      "?? EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-security-fixture.ts",
+      "?? docs/reviews/CVF_NIS_T1B_D_INTEGRATED_REVIEW_PERSISTENCE_R1_WORKER_RETURN_2026-10-05.md",
+      "?? docs/reviews/evidence/cvf-nis-t1b-d-final-return-binding-r1-2026-10-05.json",
+      "?? docs/reviews/evidence/cvf-nis-t1b-d-integrated-review-persistence-r1-2026-10-05.json"
+    ],
+    "bindingFileNote": "Detached ledger artifact; not embedded or hashed inside the return, and the return is not edited after capture.",
+    "workerReturnDisposition": "BLOCKED_WITH_REASON",
+    "independentProbeDisposition": "PENDING_REVIEWER_EXECUTION",
+    "lane": "RELEASED_TO_LOCAL_REVIEWER",
+    "staged": false,
+    "committed": false
+  },
+  "workerEvidenceRawBindings": {
+    ".cvf/runtime/nis-t1b-d-worker-20261005/pre-implementation-r2/pre-implementation.json": true,
+    ".cvf/runtime/nis-t1b-d-worker-20261005/pre-implementation-r2.log": true,
+    ".cvf/runtime/nis-t1b-d-worker-20261005/vitest-r1.log": true,
+    ".cvf/runtime/nis-t1b-d-worker-20261005/tsc-r1.log": true,
+    ".cvf/runtime/nis-t1b-d-worker-20261005/probe-r1-run1.log": true,
+    ".cvf/runtime/nis-t1b-d-worker-20261005/probe-evidence-20261005T130752262-a58a43d9.json": true,
+    ".cvf/runtime/nis-t1b-d-worker-20261005/probe-evidence-20261005T130752262-a58a43d9.json.crosscheck.json": true
+  },
+  "sourceHashes": {
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecConfirmation.test.tsx": "d3722a1bc1a9657df6aa97036b54d6fe712eb11a2a8275f4c7331d5d8be03155",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecConfirmation.tsx": "d411429c5eb77821d345959fec27e2c5a88cc26fb2f38f4ae7e24ee7b95ff58e",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecReview.test.tsx": "880a867fa349b628790e58e086e21afb5547357f29f1c8cda4912c753934730c",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/SpecExport.test.tsx": "9b9a93a0e535560bbb71442f057579f3d28ec9e6e4c71c06bafe121b6d22955a",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-file-store.ts": "3686affcccf45fc01eac4c9fefdea015de1f28021a0af8c2e13a4b1bf038a0fc",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/scripts/nis-t1b-d-probe-build.mjs": "4a14c03a9c49182447bdf283fa5540df5394f43514009dff3587a07b2d903db3",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/scripts/nis-t1b-d-probe-driver.mjs": "9cbe8be7d4420e0ea5d38d6daf95a918920787e36e8178e53040679ea1bfc33b",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/scripts/nis-t1b-d-probe-entry.mjs": "6f401d67765d86a81d1bbcc378c583cc62930266dc25bed1384c86f313c3bc8c",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/scripts/nis-t1b-d-probe-session-stub.mjs": "9330cab47911a9f00e744c4742ed968326f1cbf73bce4ba2ac14b1f1b45871a4",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/scripts/nis-t1b-d-transaction-probe.ps1": "cff7917e091ce0f16b4e9b9f18f52c3a1e1349ddcec6b8cabbdfde730d7c8c83",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/intent-spec/reviews/[id]/route.ts": "c7e9c3d5b504f5071788a4a1004f544a9e04a79ef75adc53fbb1bf8a72dd2fc5",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/intent-spec/reviews/route.ts": "32d6e97ab57d4d5e05a53daaf2128905e2b99a18af5c02d4e9adad62c5a8107a",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecConfirmation.server.test.tsx": "d331b89c5535c01b08469f11f1caf7c74789dcf2062c8ec109582f930b570c2a",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-file-store-profile.test.ts": "5295b8bfafc0a8a11b36f7d6f09dc6cfaf22f8bea3168b787b3491279973c3d3",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-private-profile.test.ts": "d62702cd5a6ba9b93ec29b1de5db07b29a66fcffc11bed377fcf10b461f32ace",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-private-profile.ts": "151146898c5901cbb0bbdaa35bf81d2e533d39ff97d99a39a0808688effe7fa5",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-review-api.test.ts": "fdcd35d852ad6c241af5bff1d0f79b7df31014a5a41c5915d311b4574a8d1ffc",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-review-api.ts": "8b7eecf6b16bf64aef9e50ed88b70f339c41f6c6949ec99fea1b23c455a1c77d",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-review-client.ts": "a6967c65a142c1d1805fbd98548ce326f462f5eefe1609ff70404c89684a472d",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-security-fixture.ts": "c5dddaecf4af62b349d78dfb1b23155be9a8033dd9fd4c67529734e06d09edcd"
+  },
+  "workerEvidenceConsumed": {
+    "focused": "13 files 200 tests PASS, raw log binding verified; not rerun",
+    "typescript": "exit 0, raw empty log digest verified; not rerun",
+    "eslint": "reported exit 0; no independent saved log in input",
+    "transactionProbe": {
+      "path": ".cvf/runtime/nis-t1b-d-worker-20261005/probe-evidence-20261005T130752262-a58a43d9.json",
+      "sha256": "8281616437bb72ae1d3d7a01b92bdef376edd64b22051f424eb454f7c2720cc2",
+      "exit": 2,
+      "fieldResults": {
+        "productionPathPeer": true,
+        "deterministicBarrierProtocol": true,
+        "enteredBeforeReleaseOracle": true,
+        "postAcquireFailureInjection": true,
+        "semanticSecurityTuple": true,
+        "rollbackExactness": false
+      },
+      "status": "Original BLOCKED receipt preserved; not rewritten to exit 0"
+    },
+    "independentGetAclCrosscheck": {
+      "path": ".cvf/runtime/nis-t1b-d-worker-20261005/probe-evidence-20261005T130752262-a58a43d9.json.crosscheck.json",
+      "sha256": "01ca63411427b26b1067186d1b6c5d4867fd14a01e4657a4e311ab3ae7e642d7",
+      "allMatch": true
+    }
+  },
+  "localIndependent": {
+    "wrongOwner": {
+      "schemaVersion": "cvf.nisWrongOwnerIndependentProbe.v1",
+      "scope": "LOCAL_TEST_SESSION",
+      "productionPath": "commitIntentSpecAcceptanceCandidate -> FileIntentSpecAcceptanceStore.createIfAbsent -> directory -> windowsPrivateSecurity.harden -> hardenPrivate",
+      "assertionPath": "Separate fixed Get-Acl command and full normalized ACE multiset plus raw filesystem content digests",
+      "pre": {
+        "ownerSid": "S-1-5-32-544",
+        "protected": true,
+        "aces": [
+          {
+            "sid": "S-1-5-18",
+            "rights": 2032127,
+            "accessType": "Allow",
+            "isInherited": false,
+            "inheritanceFlags": "ContainerInherit, ObjectInherit",
+            "propagationFlags": "None"
+          },
+          {
+            "sid": "S-1-5-21-1644666849-912006174-747199667-1001",
+            "rights": 2032127,
+            "accessType": "Allow",
+            "isInherited": false,
+            "inheritanceFlags": "ContainerInherit, ObjectInherit",
+            "propagationFlags": "None"
+          }
+        ],
+        "inheritanceState": "NO_INHERITED_ACES"
+      },
+      "post": {
+        "ownerSid": "S-1-5-32-544",
+        "protected": true,
+        "aces": [
+          {
+            "sid": "S-1-5-18",
+            "rights": 2032127,
+            "accessType": "Allow",
+            "isInherited": false,
+            "inheritanceFlags": "ContainerInherit, ObjectInherit",
+            "propagationFlags": "None"
+          },
+          {
+            "sid": "S-1-5-21-1644666849-912006174-747199667-1001",
+            "rights": 2032127,
+            "accessType": "Allow",
+            "isInherited": false,
+            "inheritanceFlags": "ContainerInherit, ObjectInherit",
+            "propagationFlags": "None"
+          }
+        ],
+        "inheritanceState": "NO_INHERITED_ACES"
+      },
+      "contentsBefore": [
+        {
+          "name": "7d1da26bbb1b6b57a7fb7a28273253ffd02f9cb1be73b9e501d0e8fa2d85b56d.json",
+          "length": 4862,
+          "sha256": "7d1da26bbb1b6b57a7fb7a28273253ffd02f9cb1be73b9e501d0e8fa2d85b56d"
+        }
+      ],
+      "contentsAfter": [
+        {
+          "name": "7d1da26bbb1b6b57a7fb7a28273253ffd02f9cb1be73b9e501d0e8fa2d85b56d.json",
+          "length": 4862,
+          "sha256": "7d1da26bbb1b6b57a7fb7a28273253ffd02f9cb1be73b9e501d0e8fa2d85b56d"
+        }
+      ],
+      "failure": "STORE_COMMIT_UNCONFIRMED",
+      "directRefusal": "PROFILE_ROOT_INSECURE",
+      "semanticPreEqualsPost": true,
+      "contentsPreEqualsPost": true,
+      "lockRemoved": true,
+      "originalRecordsPreserved": true,
+      "pass": true,
+      "sourceBundleSha256": "59c330869694379c22ff133aed117cece3390da064df99f41a0fb05eb93b8b58",
+      "helperSha256": "e206c46b6f00789b9090068230c1d09dde2ed7c2a57d9b197f1ed94e4d80af54"
+    },
+    "setOwner": {
+      "action": "SET_WRONG_OWNER",
+      "success": true,
+      "scope": "LOCAL_TEST_SESSION",
+      "startedUtc": "2026-10-05T06:17:07.4920023Z",
+      "helperResult": {
+        "scope": "LOCAL_TEST_SESSION",
+        "action": "SET_WRONG_OWNER",
+        "target": "C:\\Users\\DELL\\AppData\\Local\\Temp\\nis-t1b-d-owner-8739d54b-57cb-4787-9517-340d23314365\\ea4e1d385155462be5e991d9db8b561458e5b1c4a2afe9d6b77274b8498e10f9",
+        "beforeOwnerSid": "S-1-5-21-1644666849-912006174-747199667-1001",
+        "afterOwnerSid": "S-1-5-32-544",
+        "markerSha256": "2c57c92570c1e69143e9f45505165f831bdaf3590195689113d0fb4b7046844b"
+      },
+      "finishedUtc": "2026-10-05T06:17:07.7546409Z"
+    },
+    "restoreOwner": {
+      "action": "RESTORE_OWNER",
+      "success": true,
+      "scope": "LOCAL_TEST_SESSION",
+      "startedUtc": "2026-10-05T06:17:29.1727408Z",
+      "helperResult": {
+        "scope": "LOCAL_TEST_SESSION",
+        "action": "RESTORE_OWNER",
+        "target": "C:\\Users\\DELL\\AppData\\Local\\Temp\\nis-t1b-d-owner-8739d54b-57cb-4787-9517-340d23314365\\ea4e1d385155462be5e991d9db8b561458e5b1c4a2afe9d6b77274b8498e10f9",
+        "beforeOwnerSid": "S-1-5-32-544",
+        "afterOwnerSid": "S-1-5-21-1644666849-912006174-747199667-1001",
+        "markerSha256": "2c57c92570c1e69143e9f45505165f831bdaf3590195689113d0fb4b7046844b"
+      },
+      "finishedUtc": "2026-10-05T06:17:29.4510122Z"
+    },
+    "restorationReadback": {
+      "scope": "LOCAL_TEST_SESSION",
+      "semanticOriginalEqualsRestored": true,
+      "contentsOriginalEqualsRestored": true,
+      "subsequentProductionMutationAndReadback": true,
+      "restored": {
+        "ownerSid": "S-1-5-21-1644666849-912006174-747199667-1001",
+        "protected": true,
+        "aces": [
+          {
+            "sid": "S-1-5-18",
+            "rights": 2032127,
+            "accessType": "Allow",
+            "isInherited": false,
+            "inheritanceFlags": "ContainerInherit, ObjectInherit",
+            "propagationFlags": "None"
+          },
+          {
+            "sid": "S-1-5-21-1644666849-912006174-747199667-1001",
+            "rights": 2032127,
+            "accessType": "Allow",
+            "isInherited": false,
+            "inheritanceFlags": "ContainerInherit, ObjectInherit",
+            "propagationFlags": "None"
+          }
+        ],
+        "inheritanceState": "NO_INHERITED_ACES"
+      }
+    },
+    "cleanup": {
+      "scope": "LOCAL_TEST_SESSION",
+      "fixtureRoot": "C:\\Users\\DELL\\AppData\\Local\\Temp\\nis-t1b-d-owner-8739d54b-57cb-4787-9517-340d23314365",
+      "rootAbsent": true,
+      "method": "Explicit literal files then empty directories; restoration verified before cleanup"
+    },
+    "hardeningInitializationF1": {
+      "scope": "LOCAL_TEST_SESSION",
+      "productionBundleSha256": "59c330869694379c22ff133aed117cece3390da064df99f41a0fb05eb93b8b58",
+      "oracle": "Separate Get-Acl normalized complete ACE multiset; real hardening mutation followed by injected failure; subsequent distinct PID production commit/readback",
+      "results": [
+        {
+          "kind": "EXTRA_ALLOW",
+          "pre": {
+            "ownerSid": "S-1-5-21-1644666849-912006174-747199667-1001",
+            "protected": false,
+            "aces": [
+              {
+                "sid": "S-1-5-18",
+                "rights": 2032127,
+                "accessType": "Allow",
+                "isInherited": true,
+                "inheritanceFlags": "ContainerInherit, ObjectInherit",
+                "propagationFlags": "None"
+              },
+              {
+                "sid": "S-1-5-21-1644666849-912006174-747199667-1001",
+                "rights": 2032127,
+                "accessType": "Allow",
+                "isInherited": true,
+                "inheritanceFlags": "ContainerInherit, ObjectInherit",
+                "propagationFlags": "None"
+              },
+              {
+                "sid": "S-1-5-32-545",
+                "rights": 1179817,
+                "accessType": "Allow",
+                "isInherited": false,
+                "inheritanceFlags": "ContainerInherit, ObjectInherit",
+                "propagationFlags": "None"
+              }
+            ]
+          },
+          "post": {
+            "ownerSid": "S-1-5-21-1644666849-912006174-747199667-1001",
+            "protected": false,
+            "aces": [
+              {
+                "sid": "S-1-5-18",
+                "rights": 2032127,
+                "accessType": "Allow",
+                "isInherited": true,
+                "inheritanceFlags": "ContainerInherit, ObjectInherit",
+                "propagationFlags": "None"
+              },
+              {
+                "sid": "S-1-5-21-1644666849-912006174-747199667-1001",
+                "rights": 2032127,
+                "accessType": "Allow",
+                "isInherited": true,
+                "inheritanceFlags": "ContainerInherit, ObjectInherit",
+                "propagationFlags": "None"
+              },
+              {
+                "sid": "S-1-5-32-545",
+                "rights": 1179817,
+                "accessType": "Allow",
+                "isInherited": false,
+                "inheritanceFlags": "ContainerInherit, ObjectInherit",
+                "propagationFlags": "None"
+              }
+            ]
+          },
+          "contentBefore": [],
+          "contentAfter": [],
+          "mutationObserved": true,
+          "errorCode": "PROFILE_HARDENING_FAILED",
+          "failure": "STORE_COMMIT_UNCONFIRMED",
+          "semanticExact": true,
+          "contentExact": true,
+          "lockRemoved": true,
+          "peer": {
+            "pid": 20300,
+            "readback": true
+          },
+          "pass": true,
+          "cleaned": true
+        },
+        {
+          "kind": "DENY",
+          "pre": {
+            "ownerSid": "S-1-5-21-1644666849-912006174-747199667-1001",
+            "protected": false,
+            "aces": [
+              {
+                "sid": "S-1-5-18",
+                "rights": 2032127,
+                "accessType": "Allow",
+                "isInherited": true,
+                "inheritanceFlags": "ContainerInherit, ObjectInherit",
+                "propagationFlags": "None"
+              },
+              {
+                "sid": "S-1-5-21-1644666849-912006174-747199667-1001",
+                "rights": 2032127,
+                "accessType": "Allow",
+                "isInherited": true,
+                "inheritanceFlags": "ContainerInherit, ObjectInherit",
+                "propagationFlags": "None"
+              },
+              {
+                "sid": "S-1-5-32-546",
+                "rights": 278,
+                "accessType": "Deny",
+                "isInherited": false,
+                "inheritanceFlags": "ContainerInherit, ObjectInherit",
+                "propagationFlags": "None"
+              }
+            ]
+          },
+          "post": {
+            "ownerSid": "S-1-5-21-1644666849-912006174-747199667-1001",
+            "protected": false,
+            "aces": [
+              {
+                "sid": "S-1-5-18",
+                "rights": 2032127,
+                "accessType": "Allow",
+                "isInherited": true,
+                "inheritanceFlags": "ContainerInherit, ObjectInherit",
+                "propagationFlags": "None"
+              },
+              {
+                "sid": "S-1-5-21-1644666849-912006174-747199667-1001",
+                "rights": 2032127,
+                "accessType": "Allow",
+                "isInherited": true,
+                "inheritanceFlags": "ContainerInherit, ObjectInherit",
+                "propagationFlags": "None"
+              },
+              {
+                "sid": "S-1-5-32-546",
+                "rights": 278,
+                "accessType": "Deny",
+                "isInherited": false,
+                "inheritanceFlags": "ContainerInherit, ObjectInherit",
+                "propagationFlags": "None"
+              }
+            ]
+          },
+          "contentBefore": [],
+          "contentAfter": [],
+          "mutationObserved": true,
+          "errorCode": "PROFILE_HARDENING_FAILED",
+          "failure": "STORE_COMMIT_UNCONFIRMED",
+          "semanticExact": true,
+          "contentExact": true,
+          "lockRemoved": true,
+          "peer": {
+            "pid": 1248,
+            "readback": true
+          },
+          "pass": true,
+          "cleaned": true
+        },
+        {
+          "kind": "INHERITED",
+          "pre": {
+            "ownerSid": "S-1-5-21-1644666849-912006174-747199667-1001",
+            "protected": false,
+            "aces": [
+              {
+                "sid": "S-1-5-18",
+                "rights": 2032127,
+                "accessType": "Allow",
+                "isInherited": true,
+                "inheritanceFlags": "ContainerInherit, ObjectInherit",
+                "propagationFlags": "None"
+              },
+              {
+                "sid": "S-1-5-21-1644666849-912006174-747199667-1001",
+                "rights": 2032127,
+                "accessType": "Allow",
+                "isInherited": true,
+                "inheritanceFlags": "ContainerInherit, ObjectInherit",
+                "propagationFlags": "None"
+              }
+            ]
+          },
+          "post": {
+            "ownerSid": "S-1-5-21-1644666849-912006174-747199667-1001",
+            "protected": false,
+            "aces": [
+              {
+                "sid": "S-1-5-18",
+                "rights": 2032127,
+                "accessType": "Allow",
+                "isInherited": true,
+                "inheritanceFlags": "ContainerInherit, ObjectInherit",
+                "propagationFlags": "None"
+              },
+              {
+                "sid": "S-1-5-21-1644666849-912006174-747199667-1001",
+                "rights": 2032127,
+                "accessType": "Allow",
+                "isInherited": true,
+                "inheritanceFlags": "ContainerInherit, ObjectInherit",
+                "propagationFlags": "None"
+              }
+            ]
+          },
+          "contentBefore": [],
+          "contentAfter": [],
+          "mutationObserved": true,
+          "errorCode": "PROFILE_HARDENING_FAILED",
+          "failure": "STORE_COMMIT_UNCONFIRMED",
+          "semanticExact": true,
+          "contentExact": true,
+          "lockRemoved": true,
+          "peer": {
+            "pid": 6616,
+            "readback": true
+          },
+          "pass": true,
+          "cleaned": true
+        }
+      ],
+      "pass": true
+    },
+    "scratchArtifactHashes": {
+      "owner-independent-probe.mjs": "c2425a289a1789186a28f99058981f75803a45a6533da114105c24653178a7a6",
+      "owner-probe-production.cjs": "59c330869694379c22ff133aed117cece3390da064df99f41a0fb05eb93b8b58",
+      "wrong-owner-fixture-helper.PROPOSED.ps1": "e206c46b6f00789b9090068230c1d09dde2ed7c2a57d9b197f1ed94e4d80af54",
+      "run-owner-helper-elevated.ps1": "e1860bfee9ba5b21f5d1fc988638eb30df48d683318a3ea06bdcbb0fe301d319",
+      "owner-fixture-job.json": "8beaa3e03ed5890966cda71d4b15c1d3b8d4da6adbee83c5e95baade2d510ce8",
+      "set_wrong_owner.receipt.json": "86a3e42889cfe1c5df03382be169d379b60cf80114d8db2f18c7e9fc3d527b0a",
+      "wrong-owner-independent-result.json": "aab70e16f31f8050428646f82af76560ed23a781201b4183187f4ff594fd6a49",
+      "restore_owner.receipt.json": "386937936d3f91c47f9c14fdadc0b0c8e376f9c8b485ef0a80c6ff08ecb497a2",
+      "wrong-owner-restoration-result.json": "066fbdf2dd03f461be2f8a9db501a0da5a5aad572d7b712008cc2f47a7cbf234",
+      "owner-cleanup.json": "5b451163ffd5fc7d1751103a738edd1fb6cd51b8604450b6b01b0dc0927eef3b",
+      "f1-independent.mjs": "f838d17da5102a1d2afb594e39cae5b385e282a00f79d8d4f6e93638e61acad7",
+      "f1-independent-result.json": "43727399d5bc13218af1933e36c870bc6ba29fea99e52d1f530ebb6a52450932"
+    }
+  },
+  "findingDisposition": {
+    "F1": {
+      "disposition": "ACCEPT_BOUNDED_REPAIR",
+      "locator": "R1 src/lib/intent-spec-private-profile.ts hardenPrivate; localIndependent.hardeningInitializationF1",
+      "reason": "Real hardening mutation failure before rollback handle restored full semantic pre-state and content; locks removed; distinct subsequent peer readback PASS. Worker restoration-failure regression consumed. No power-loss claim."
+    },
+    "F2": {
+      "disposition": "ACCEPT_BOUNDED_REPAIR",
+      "locator": "R1 src/components/IntentSpecConfirmation.tsx:28-59; src/auth.ts:206-222; ClientProviders.tsx SessionProvider; worker bound 200-test input",
+      "reason": "Existing Auth.js callback supplies userId/orgId/teamId; read-only useSession transitions gate async generation and clear results, including ABA/logout/loading/expiry. Synthetic UI evidence, no live identity acceptance."
+    },
+    "F3": {
+      "disposition": "PRIOR_LOCAL_EXACT_COVERAGE_RETAINED",
+      "locator": "docs/reviews/evidence/cvf-nis-t1b-d-owner-fixture-support-2026-10-05.json#coverageProof"
+    },
+    "F4": {
+      "disposition": "ACCEPT_RAW_BINDING_REPAIR",
+      "locator": "workerReturnFrozen.finalRequiredGate; workerReturnFrozen.returnSha256Before/After",
+      "reason": "Saved raw log, evidence and frozen return hashes independently match; all worker source pins checked."
+    },
+    "B1": {
+      "disposition": "REPAIRED_SOURCE_WRONG_OWNER_PROOF_SATISFIED",
+      "locator": "localIndependent.wrongOwner; localIndependent.restorationReadback",
+      "reason": "Actual elevated pinned helper SET/RESTORE; production refusal ran at ordinary token on repaired bundle; complete semantic/content PRE=POST, lock absent, subsequent production commit/readback. Capability diagnostic resolved without mock."
+    }
+  },
+  "reviewerTransactionAdjudication": {
+    "productionPathPeer": "PASS_CONSUMED_VALID_WORKER_REAL_PID_EVIDENCE_PLUS_LOCAL_SUBSEQUENT_DISTINCT_PID",
+    "deterministicBarrierProtocol": "PASS_CONSUMED_VALID_WORKER_EVIDENCE",
+    "enteredBeforeReleaseOracle": "PASS_CONSUMED_POSITIVE_AND_EARLY_ENTRY_NEGATIVE_CONTROL",
+    "postAcquireFailureInjection": "PASS_CONSUMED_VALID_WORKER_EVIDENCE",
+    "semanticSecurityTuple": "PASS_LOCAL_SEPARATE_GET_ACL_FULL_ACE_MULTISET",
+    "rollbackExactness": "PASS_COMPOSED_FRESH_R1_WORKER_THREE_ADVERSARIES_AND_LOCAL_WRONG_OWNER; LOCAL_F1_ADDITIONAL_THREE_ADVERSARIES",
+    "finalEvidenceHashBinding": "PASS_RAW_WORKER_CAPTURE_VERIFIED",
+    "independentProbeRequired": "EXECUTED_BY_LOCAL_DIFFERENT_ASSERTION_PATH",
+    "adversaries": [
+      "EXTRA_ALLOW",
+      "DENY",
+      "INHERITED",
+      "WRONG_OWNER"
+    ],
+    "singleWorkerProbeExitZeroClaim": false,
+    "profileFinalAcceptance": false,
+    "transactionTarget": "R1 FileIntentSpecAcceptanceStore.createIfAbsent -> publish/directory -> windowsPrivateSecurity.harden -> hardenPrivate; actor-scoped immutable saved-review bytes on fresh synthetic private Windows OS-temp fixture"
+  },
+  "returnMetadataCorrection": {
+    "REQ-2": {
+      "workerAtReturn": "BLOCKED correctly reflects missing WRONG_OWNER proof then; Local later evidence does not change historical status",
+      "reviewerNow": "Technical proof supplied by Local; final acceptance ledger reconciliation is Local-owned",
+      "expectedArtifactsCount": 5,
+      "actualArtifactsCount": 20,
+      "issue": "PASS rows require exact dispatcher expectedArtifacts. BLOCKED rows admit extra actual artifacts, letting companion paths cover the observed Git union. Not evidence that all proof passed.",
+      "minimumRoute": "Reconcile mandatory and allowed companion artifact sets in Local acceptance packet before closure; do not use BLOCKED merely to evade a PASS exact-set mismatch. Frozen worker return preserved."
+    },
+    "recurrence": {
+      "workerDeclaration": "FIRST_OCCURRENCE",
+      "machineLimitation": "R0 has INITIAL_SCOPE_CVF-NIS-T1B-D; R1 has CVF-NIS-T1B-D-INTEGRATED-ADMISSION; checker uses exact cluster ID and local governed path availability",
+      "localDisposition": "KNOWN_REPEATED_B1_CAPABILITY_BLOCKER; FIRST_OCCURRENCE is not accepted as a claim of no related history",
+      "priorGovernedLocator": "docs/reviews/evidence/cvf-nis-t1b-d-rework-admission-2026-10-05.json#findings.B1",
+      "priorR0InputPath": "../Controlled-Vibe-Framework-CVF-NIS-T1B-D/docs/reviews/CVF_NIS_T1B_D_INTEGRATED_REVIEW_PERSISTENCE_WORKER_RETURN_2026-10-05.md",
+      "priorR0InputSha256": "f0f6c55f360295762545ab04b8cec44fc1b52db3666a7f848b71412e34e5f74e",
+      "operatorNotice": "This review responds to operator-visible repeated blocker; no new message to a third party",
+      "successorDisposition": "NONE_OPENED; current assignment only",
+      "minimumRoute": "Carry known recurrence in Local review/addendum using existing governed B1 history; do not rewrite frozen R0/R1 or reset history because another worktree is absent."
+    }
+  },
+  "nextAllowedMove": "Local acceptance-packet/ledger reconciliation and normal closure checks only; no worker source rework ordered, no parked lane reopened",
+  "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
+  "publicExportReason": "No public-sync authorization or export execution"
+}

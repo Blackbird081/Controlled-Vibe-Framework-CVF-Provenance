@@ -1,0 +1,390 @@
+{
+  "schemaVersion": "cvf.nisClosureReconciliation.v1",
+  "batchId": "CVF-NIS-T1B-D",
+  "implementationBaseHead": "2c28581f1f44770c9aebd8ffb707f8b273fa95cf",
+  "sourceMaterialCommit": "793644f67209b64db7c10449074a0bb1044ffbad",
+  "closureBaseHead": "793644f67209b64db7c10449074a0bb1044ffbad",
+  "decisionOwner": "LOCAL_REVIEWER_CLOSER",
+  "workerHistoryPreservation": "R0 and R1 original worktrees and frozen raw worker artifacts unchanged; R1 copied into material commit",
+  "workerReturnedState": "BLOCKED_WITH_REASON, REQ-2 BLOCKED, probe exit2 retained",
+  "localAdjudication": "ALL_THREE_REQUIREMENTS_SATISFIED_WITH_LOCAL_SUPPLEMENTAL_PROOF",
+  "acceptanceLedgerProjection": {
+    "schemaVersion": "cvf.workOrderAcceptanceEvidence@1.0.0",
+    "executionBaseHead": "2c28581f1f44770c9aebd8ffb707f8b273fa95cf",
+    "results": [
+      {
+        "requirementId": "REQ-1",
+        "actualArtifacts": [
+          "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecConfirmation.tsx",
+          "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/intent-spec/reviews/route.ts",
+          "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/intent-spec/reviews/[id]/route.ts",
+          "docs/reviews/CVF_NIS_T1B_D_INTEGRATED_REVIEW_PERSISTENCE_R1_WORKER_RETURN_2026-10-05.md",
+          "docs/reviews/evidence/cvf-nis-t1b-d-integrated-review-persistence-r1-2026-10-05.json",
+          "docs/reviews/evidence/cvf-nis-t1b-d-final-return-binding-r1-2026-10-05.json"
+        ],
+        "proofRefs": [
+          "PROOF-JOIN"
+        ],
+        "status": "PASS"
+      },
+      {
+        "requirementId": "REQ-2",
+        "actualArtifacts": [
+          "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-file-store.ts",
+          "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/scripts/nis-t1b-d-transaction-probe.ps1",
+          "docs/reviews/CVF_NIS_T1B_D_INTEGRATED_REVIEW_PERSISTENCE_R1_WORKER_RETURN_2026-10-05.md",
+          "docs/reviews/evidence/cvf-nis-t1b-d-integrated-review-persistence-r1-2026-10-05.json",
+          "docs/reviews/evidence/cvf-nis-t1b-d-final-return-binding-r1-2026-10-05.json"
+        ],
+        "proofRefs": [
+          "PROOF-TRANSACTION"
+        ],
+        "status": "PASS"
+      },
+      {
+        "requirementId": "REQ-3",
+        "actualArtifacts": [
+          "docs/reviews/CVF_NIS_T1B_D_INTEGRATED_REVIEW_PERSISTENCE_R1_WORKER_RETURN_2026-10-05.md",
+          "docs/reviews/evidence/cvf-nis-t1b-d-integrated-review-persistence-r1-2026-10-05.json",
+          "docs/reviews/evidence/cvf-nis-t1b-d-final-return-binding-r1-2026-10-05.json"
+        ],
+        "proofRefs": [
+          "PROOF-RETURN"
+        ],
+        "status": "PASS"
+      }
+    ]
+  },
+  "mandatoryArtifacts": [
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/scripts/nis-t1b-d-transaction-probe.ps1",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/intent-spec/reviews/[id]/route.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/intent-spec/reviews/route.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecConfirmation.tsx",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-file-store.ts",
+    "docs/reviews/CVF_NIS_T1B_D_INTEGRATED_REVIEW_PERSISTENCE_R1_WORKER_RETURN_2026-10-05.md",
+    "docs/reviews/evidence/cvf-nis-t1b-d-final-return-binding-r1-2026-10-05.json",
+    "docs/reviews/evidence/cvf-nis-t1b-d-integrated-review-persistence-r1-2026-10-05.json"
+  ],
+  "admittedCompanionArtifacts": [
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/scripts/nis-t1b-d-probe-build.mjs",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/scripts/nis-t1b-d-probe-driver.mjs",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/scripts/nis-t1b-d-probe-entry.mjs",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/scripts/nis-t1b-d-probe-session-stub.mjs",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecConfirmation.server.test.tsx",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecConfirmation.test.tsx",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecReview.test.tsx",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/SpecExport.test.tsx",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-file-store-profile.test.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-private-profile.test.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-private-profile.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-review-api.test.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-review-api.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-review-client.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-security-fixture.ts"
+  ],
+  "workerArtifactReconciliation": {
+    "expectedTotal": 23,
+    "observedTotal": 23,
+    "mandatoryTotal": 8,
+    "companionTotal": 15,
+    "unionEqualsWorkerBatch": true,
+    "reason": "Allowed Scope already admits bounded companion tests/helpers; Local separates mandatory PASS projection from companion changed-path accounting. No worker status rewrite or requirement expansion."
+  },
+  "sourceSnapshots": {
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecConfirmation.test.tsx": {
+      "rawSha256": "d3722a1bc1a9657df6aa97036b54d6fe712eb11a2a8275f4c7331d5d8be03155",
+      "committedBlobSha256": "d3722a1bc1a9657df6aa97036b54d6fe712eb11a2a8275f4c7331d5d8be03155",
+      "lfNormalizedMatchesCommit": true
+    },
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecConfirmation.tsx": {
+      "rawSha256": "d411429c5eb77821d345959fec27e2c5a88cc26fb2f38f4ae7e24ee7b95ff58e",
+      "committedBlobSha256": "d411429c5eb77821d345959fec27e2c5a88cc26fb2f38f4ae7e24ee7b95ff58e",
+      "lfNormalizedMatchesCommit": true
+    },
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecReview.test.tsx": {
+      "rawSha256": "880a867fa349b628790e58e086e21afb5547357f29f1c8cda4912c753934730c",
+      "committedBlobSha256": "880a867fa349b628790e58e086e21afb5547357f29f1c8cda4912c753934730c",
+      "lfNormalizedMatchesCommit": true
+    },
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/SpecExport.test.tsx": {
+      "rawSha256": "9b9a93a0e535560bbb71442f057579f3d28ec9e6e4c71c06bafe121b6d22955a",
+      "committedBlobSha256": "9b9a93a0e535560bbb71442f057579f3d28ec9e6e4c71c06bafe121b6d22955a",
+      "lfNormalizedMatchesCommit": true
+    },
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-file-store.ts": {
+      "rawSha256": "3686affcccf45fc01eac4c9fefdea015de1f28021a0af8c2e13a4b1bf038a0fc",
+      "committedBlobSha256": "3686affcccf45fc01eac4c9fefdea015de1f28021a0af8c2e13a4b1bf038a0fc",
+      "lfNormalizedMatchesCommit": true
+    },
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/scripts/nis-t1b-d-probe-build.mjs": {
+      "rawSha256": "4a14c03a9c49182447bdf283fa5540df5394f43514009dff3587a07b2d903db3",
+      "committedBlobSha256": "3cba443c1fedd5c329a1f9449e493bb72f76d8c7b8329fe570b8205c8f5d240b",
+      "lfNormalizedMatchesCommit": true
+    },
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/scripts/nis-t1b-d-probe-driver.mjs": {
+      "rawSha256": "9cbe8be7d4420e0ea5d38d6daf95a918920787e36e8178e53040679ea1bfc33b",
+      "committedBlobSha256": "7bdca05e9f2dbcefdead9636fcbc9d520f039165095a84ecb2d2fa8b4e91b38b",
+      "lfNormalizedMatchesCommit": true
+    },
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/scripts/nis-t1b-d-probe-entry.mjs": {
+      "rawSha256": "6f401d67765d86a81d1bbcc378c583cc62930266dc25bed1384c86f313c3bc8c",
+      "committedBlobSha256": "6f401d67765d86a81d1bbcc378c583cc62930266dc25bed1384c86f313c3bc8c",
+      "lfNormalizedMatchesCommit": true
+    },
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/scripts/nis-t1b-d-probe-session-stub.mjs": {
+      "rawSha256": "9330cab47911a9f00e744c4742ed968326f1cbf73bce4ba2ac14b1f1b45871a4",
+      "committedBlobSha256": "888e375ec816fb97257f98a60137b96c3a034ed726cb7545f1458b6f37b11347",
+      "lfNormalizedMatchesCommit": true
+    },
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/scripts/nis-t1b-d-transaction-probe.ps1": {
+      "rawSha256": "cff7917e091ce0f16b4e9b9f18f52c3a1e1349ddcec6b8cabbdfde730d7c8c83",
+      "committedBlobSha256": "cff7917e091ce0f16b4e9b9f18f52c3a1e1349ddcec6b8cabbdfde730d7c8c83",
+      "lfNormalizedMatchesCommit": true
+    },
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/intent-spec/reviews/[id]/route.ts": {
+      "rawSha256": "c7e9c3d5b504f5071788a4a1004f544a9e04a79ef75adc53fbb1bf8a72dd2fc5",
+      "committedBlobSha256": "c7e9c3d5b504f5071788a4a1004f544a9e04a79ef75adc53fbb1bf8a72dd2fc5",
+      "lfNormalizedMatchesCommit": true
+    },
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/intent-spec/reviews/route.ts": {
+      "rawSha256": "32d6e97ab57d4d5e05a53daaf2128905e2b99a18af5c02d4e9adad62c5a8107a",
+      "committedBlobSha256": "32d6e97ab57d4d5e05a53daaf2128905e2b99a18af5c02d4e9adad62c5a8107a",
+      "lfNormalizedMatchesCommit": true
+    },
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecConfirmation.server.test.tsx": {
+      "rawSha256": "d331b89c5535c01b08469f11f1caf7c74789dcf2062c8ec109582f930b570c2a",
+      "committedBlobSha256": "d331b89c5535c01b08469f11f1caf7c74789dcf2062c8ec109582f930b570c2a",
+      "lfNormalizedMatchesCommit": true
+    },
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-file-store-profile.test.ts": {
+      "rawSha256": "5295b8bfafc0a8a11b36f7d6f09dc6cfaf22f8bea3168b787b3491279973c3d3",
+      "committedBlobSha256": "5295b8bfafc0a8a11b36f7d6f09dc6cfaf22f8bea3168b787b3491279973c3d3",
+      "lfNormalizedMatchesCommit": true
+    },
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-private-profile.test.ts": {
+      "rawSha256": "d62702cd5a6ba9b93ec29b1de5db07b29a66fcffc11bed377fcf10b461f32ace",
+      "committedBlobSha256": "d3f7c2b43410efa7b2cf4b6aaf7522554728da32af2f14a83cd0fc1852af5706",
+      "lfNormalizedMatchesCommit": true
+    },
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-private-profile.ts": {
+      "rawSha256": "151146898c5901cbb0bbdaa35bf81d2e533d39ff97d99a39a0808688effe7fa5",
+      "committedBlobSha256": "2b9f957a0e318077b67555bbe34120f29df6e302e24f23b831cb92190b9e5a17",
+      "lfNormalizedMatchesCommit": true
+    },
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-review-api.test.ts": {
+      "rawSha256": "fdcd35d852ad6c241af5bff1d0f79b7df31014a5a41c5915d311b4574a8d1ffc",
+      "committedBlobSha256": "fdcd35d852ad6c241af5bff1d0f79b7df31014a5a41c5915d311b4574a8d1ffc",
+      "lfNormalizedMatchesCommit": true
+    },
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-review-api.ts": {
+      "rawSha256": "8b7eecf6b16bf64aef9e50ed88b70f339c41f6c6949ec99fea1b23c455a1c77d",
+      "committedBlobSha256": "8b7eecf6b16bf64aef9e50ed88b70f339c41f6c6949ec99fea1b23c455a1c77d",
+      "lfNormalizedMatchesCommit": true
+    },
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-review-client.ts": {
+      "rawSha256": "a6967c65a142c1d1805fbd98548ce326f462f5eefe1609ff70404c89684a472d",
+      "committedBlobSha256": "a6967c65a142c1d1805fbd98548ce326f462f5eefe1609ff70404c89684a472d",
+      "lfNormalizedMatchesCommit": true
+    },
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-security-fixture.ts": {
+      "rawSha256": "c5dddaecf4af62b349d78dfb1b23155be9a8033dd9fd4c67529734e06d09edcd",
+      "committedBlobSha256": "2f2d5620ce7e73869d1aa9c4214133d0254ed7e2ac7a3f8db44a7ca3bde5c756",
+      "lfNormalizedMatchesCommit": true
+    }
+  },
+  "localIndependentEvidence": {
+    "path": "docs/reviews/evidence/cvf-nis-t1b-d-r1-local-independent-review-2026-10-05.json",
+    "sha256": "c2c6358c92a5692bc6692c8855d709faba6b3d5e2e2578a097e3a9524a940e06",
+    "nineFieldAdjudication": {
+      "productionPathPeer": "PASS_CONSUMED_VALID_WORKER_REAL_PID_EVIDENCE_PLUS_LOCAL_SUBSEQUENT_DISTINCT_PID",
+      "deterministicBarrierProtocol": "PASS_CONSUMED_VALID_WORKER_EVIDENCE",
+      "enteredBeforeReleaseOracle": "PASS_CONSUMED_POSITIVE_AND_EARLY_ENTRY_NEGATIVE_CONTROL",
+      "postAcquireFailureInjection": "PASS_CONSUMED_VALID_WORKER_EVIDENCE",
+      "semanticSecurityTuple": "PASS_LOCAL_SEPARATE_GET_ACL_FULL_ACE_MULTISET",
+      "rollbackExactness": "PASS_COMPOSED_FRESH_R1_WORKER_THREE_ADVERSARIES_AND_LOCAL_WRONG_OWNER; LOCAL_F1_ADDITIONAL_THREE_ADVERSARIES",
+      "finalEvidenceHashBinding": "PASS_RAW_WORKER_CAPTURE_VERIFIED",
+      "independentProbeRequired": "EXECUTED_BY_LOCAL_DIFFERENT_ASSERTION_PATH",
+      "adversaries": [
+        "EXTRA_ALLOW",
+        "DENY",
+        "INHERITED",
+        "WRONG_OWNER"
+      ],
+      "singleWorkerProbeExitZeroClaim": false,
+      "profileFinalAcceptance": false,
+      "transactionTarget": "R1 FileIntentSpecAcceptanceStore.createIfAbsent -> publish/directory -> windowsPrivateSecurity.harden -> hardenPrivate; actor-scoped immutable saved-review bytes on fresh synthetic private Windows OS-temp fixture"
+    }
+  },
+  "recurrenceCorrection": {
+    "workerDeclaration": "FIRST_OCCURRENCE",
+    "machineLimitation": "R0 has INITIAL_SCOPE_CVF-NIS-T1B-D; R1 has CVF-NIS-T1B-D-INTEGRATED-ADMISSION; checker uses exact cluster ID and local governed path availability",
+    "localDisposition": "KNOWN_REPEATED_B1_CAPABILITY_BLOCKER; FIRST_OCCURRENCE is not accepted as a claim of no related history",
+    "priorGovernedLocator": "docs/reviews/evidence/cvf-nis-t1b-d-rework-admission-2026-10-05.json#findings.B1",
+    "priorR0InputPath": "../Controlled-Vibe-Framework-CVF-NIS-T1B-D/docs/reviews/CVF_NIS_T1B_D_INTEGRATED_REVIEW_PERSISTENCE_WORKER_RETURN_2026-10-05.md",
+    "priorR0InputSha256": "f0f6c55f360295762545ab04b8cec44fc1b52db3666a7f848b71412e34e5f74e",
+    "operatorNotice": "This review responds to operator-visible repeated blocker; no new message to a third party",
+    "successorDisposition": "NONE_OPENED; current assignment only",
+    "minimumRoute": "Carry known recurrence in Local review/addendum using existing governed B1 history; do not rewrite frozen R0/R1 or reset history because another worktree is absent."
+  },
+  "sourceFindingDisposition": {
+    "F1": {
+      "disposition": "ACCEPT_BOUNDED_REPAIR",
+      "locator": "R1 src/lib/intent-spec-private-profile.ts hardenPrivate; localIndependent.hardeningInitializationF1",
+      "reason": "Real hardening mutation failure before rollback handle restored full semantic pre-state and content; locks removed; distinct subsequent peer readback PASS. Worker restoration-failure regression consumed. No power-loss claim."
+    },
+    "F2": {
+      "disposition": "ACCEPT_BOUNDED_REPAIR",
+      "locator": "R1 src/components/IntentSpecConfirmation.tsx:28-59; src/auth.ts:206-222; ClientProviders.tsx SessionProvider; worker bound 200-test input",
+      "reason": "Existing Auth.js callback supplies userId/orgId/teamId; read-only useSession transitions gate async generation and clear results, including ABA/logout/loading/expiry. Synthetic UI evidence, no live identity acceptance."
+    },
+    "F3": {
+      "disposition": "PRIOR_LOCAL_EXACT_COVERAGE_RETAINED",
+      "locator": "docs/reviews/evidence/cvf-nis-t1b-d-owner-fixture-support-2026-10-05.json#coverageProof"
+    },
+    "F4": {
+      "disposition": "ACCEPT_RAW_BINDING_REPAIR",
+      "locator": "workerReturnFrozen.finalRequiredGate; workerReturnFrozen.returnSha256Before/After",
+      "reason": "Saved raw log, evidence and frozen return hashes independently match; all worker source pins checked."
+    },
+    "B1": {
+      "disposition": "REPAIRED_SOURCE_WRONG_OWNER_PROOF_SATISFIED",
+      "locator": "localIndependent.wrongOwner; localIndependent.restorationReadback",
+      "reason": "Actual elevated pinned helper SET/RESTORE; production refusal ran at ordinary token on repaired bundle; complete semantic/content PRE=POST, lock absent, subsequent production commit/readback. Capability diagnostic resolved without mock."
+    }
+  },
+  "closureBatchPaths": [
+    "AGENT_HANDOFF_V63_2026-09-18.md",
+    "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json",
+    "CVF_SESSION/ACTIVE_SESSION_STATE.json",
+    "CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json",
+    "CVF_SESSION/state/entries/nextAllowedMove.json",
+    "CVF_SESSION_MEMORY.md",
+    "docs/baselines/CVF_GC018_NIS_T1B_D_INTEGRATED_REVIEW_PERSISTENCE_2026-10-05.md",
+    "docs/reference/system_architecture_catalog/CVF_AS_BUILT_SYSTEM_CATALOG_AGGREGATE.json",
+    "docs/reference/system_architecture_catalog/entries/module.web_agent_platform.v1.json",
+    "docs/reviews/CVF_NIS_T1B_D_INTEGRATED_REVIEW_PERSISTENCE_COMPLETION_2026-10-05.md",
+    "docs/reviews/evidence/cvf-nis-t1b-d-closure-reconciliation-2026-10-05.json",
+    "docs/reviews/evidence/cvf-nis-t1b-d-r1-local-independent-review-2026-10-05.json",
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1B_D_INTEGRATED_REVIEW_PERSISTENCE_2026-10-05.md"
+  ],
+  "composedTranchePaths": [
+    "AGENT_HANDOFF_V63_2026-09-18.md",
+    "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json",
+    "CVF_SESSION/ACTIVE_SESSION_STATE.json",
+    "CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json",
+    "CVF_SESSION/state/entries/nextAllowedMove.json",
+    "CVF_SESSION_MEMORY.md",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/scripts/nis-t1b-d-probe-build.mjs",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/scripts/nis-t1b-d-probe-driver.mjs",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/scripts/nis-t1b-d-probe-entry.mjs",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/scripts/nis-t1b-d-probe-session-stub.mjs",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/scripts/nis-t1b-d-transaction-probe.ps1",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/intent-spec/reviews/[id]/route.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/intent-spec/reviews/route.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecConfirmation.server.test.tsx",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecConfirmation.test.tsx",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecConfirmation.tsx",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecReview.test.tsx",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/SpecExport.test.tsx",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-file-store-profile.test.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-file-store.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-private-profile.test.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-private-profile.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-review-api.test.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-review-api.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-review-client.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-security-fixture.ts",
+    "docs/baselines/CVF_GC018_NIS_T1B_D_INTEGRATED_REVIEW_PERSISTENCE_2026-10-05.md",
+    "docs/reference/system_architecture_catalog/CVF_AS_BUILT_SYSTEM_CATALOG_AGGREGATE.json",
+    "docs/reference/system_architecture_catalog/entries/module.web_agent_platform.v1.json",
+    "docs/reviews/CVF_NIS_T1B_D_INTEGRATED_REVIEW_PERSISTENCE_COMPLETION_2026-10-05.md",
+    "docs/reviews/CVF_NIS_T1B_D_INTEGRATED_REVIEW_PERSISTENCE_R1_WORKER_RETURN_2026-10-05.md",
+    "docs/reviews/evidence/cvf-nis-t1b-d-closure-reconciliation-2026-10-05.json",
+    "docs/reviews/evidence/cvf-nis-t1b-d-final-return-binding-r1-2026-10-05.json",
+    "docs/reviews/evidence/cvf-nis-t1b-d-integrated-review-persistence-r1-2026-10-05.json",
+    "docs/reviews/evidence/cvf-nis-t1b-d-r1-local-independent-review-2026-10-05.json",
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1B_D_INTEGRATED_REVIEW_PERSISTENCE_2026-10-05.md"
+  ],
+  "atomicMetadataContinuityReason": "Closed pair and its currentAuthority hashes must agree in every commit. Source material is already separate; Local closure metadata and dependent continuity update atomically without changing worker bytes.",
+  "negativeScan": {
+    "sourcePinsMatch": true,
+    "frozenReturnRawMatch": true,
+    "retainedWorkerProbeExit": 2,
+    "localWrongOwnerPass": true,
+    "allLocalFixturesRemoved": true,
+    "providerCalls": 0,
+    "parkedLaneReopened": false,
+    "newSuccessor": false
+  },
+  "claimScope": "WINDOWS_SINGLE_HOST_PRIVATE_V1 bounded local saved review confirmation only; no power-loss, stale-lock recovery, live identity or BUILD readiness",
+  "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
+  "knowledgeReconciliation": {
+    "scope": "EXACT_36_PATH_NIS_COMPOSED_TRANCHE_ONLY_NOT_REPOSITORY",
+    "regions": [
+      {
+        "region": "WEB_CONSUMER_PROFILE_PROBE_SOURCE",
+        "owner": "Existing Web consumer/profile owners",
+        "paths": [
+          "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecConfirmation.test.tsx",
+          "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecConfirmation.tsx",
+          "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecReview.test.tsx",
+          "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/SpecExport.test.tsx",
+          "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-file-store.ts",
+          "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/scripts/nis-t1b-d-probe-build.mjs",
+          "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/scripts/nis-t1b-d-probe-driver.mjs",
+          "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/scripts/nis-t1b-d-probe-entry.mjs",
+          "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/scripts/nis-t1b-d-probe-session-stub.mjs",
+          "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/scripts/nis-t1b-d-transaction-probe.ps1",
+          "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/intent-spec/reviews/[id]/route.ts",
+          "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/intent-spec/reviews/route.ts",
+          "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecConfirmation.server.test.tsx",
+          "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-file-store-profile.test.ts",
+          "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-private-profile.test.ts",
+          "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-private-profile.ts",
+          "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-review-api.test.ts",
+          "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-review-api.ts",
+          "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-review-client.ts",
+          "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-security-fixture.ts"
+        ],
+        "count": 20
+      },
+      {
+        "region": "FROZEN_WORKER_INPUT_PROOF",
+        "owner": "Internal worker original R1 receipts; Local adjudication",
+        "paths": [
+          "docs/reviews/CVF_NIS_T1B_D_INTEGRATED_REVIEW_PERSISTENCE_R1_WORKER_RETURN_2026-10-05.md",
+          "docs/reviews/evidence/cvf-nis-t1b-d-final-return-binding-r1-2026-10-05.json",
+          "docs/reviews/evidence/cvf-nis-t1b-d-integrated-review-persistence-r1-2026-10-05.json"
+        ],
+        "count": 3
+      },
+      {
+        "region": "LOCAL_AUTHORITY_PROOF_AND_CONTINUITY",
+        "owner": "Local closer; canonical source generators",
+        "paths": [
+          "AGENT_HANDOFF_V63_2026-09-18.md",
+          "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json",
+          "CVF_SESSION/ACTIVE_SESSION_STATE.json",
+          "CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json",
+          "CVF_SESSION/state/entries/nextAllowedMove.json",
+          "CVF_SESSION_MEMORY.md",
+          "docs/baselines/CVF_GC018_NIS_T1B_D_INTEGRATED_REVIEW_PERSISTENCE_2026-10-05.md",
+          "docs/reference/system_architecture_catalog/CVF_AS_BUILT_SYSTEM_CATALOG_AGGREGATE.json",
+          "docs/reference/system_architecture_catalog/entries/module.web_agent_platform.v1.json",
+          "docs/reviews/CVF_NIS_T1B_D_INTEGRATED_REVIEW_PERSISTENCE_COMPLETION_2026-10-05.md",
+          "docs/reviews/evidence/cvf-nis-t1b-d-closure-reconciliation-2026-10-05.json",
+          "docs/reviews/evidence/cvf-nis-t1b-d-r1-local-independent-review-2026-10-05.json",
+          "docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1B_D_INTEGRATED_REVIEW_PERSISTENCE_2026-10-05.md"
+        ],
+        "count": 13
+      }
+    ],
+    "assets": 36,
+    "mapped": 36,
+    "deferred": 0,
+    "unmapped": 0,
+    "filesystemAllExist": true,
+    "driftCheck": "PASS",
+    "noRepositoryScanClaim": true
+  }
+}

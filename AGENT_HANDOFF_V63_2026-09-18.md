@@ -1,6 +1,6 @@
 # CVF Agent Handoff V63 - ACEL Applied-Knowledge Owner Enrichment
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `25ec62ca27597cea15ecd2a3b7bbaa9d120d1e65`; CVF-NIS-T1B-D R1 released packet; R0 frozen/unaccepted.
+Current HEAD recorded for this handoff: `793644f67209b64db7c10449074a0bb1044ffbad`; CVF-NIS-T1B-D accepted source; paired Local closure/continuity follows; R0/R1 frozen receipts retained.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -8,9 +8,9 @@ Remote tracking branch: `origin/main`. Exact remote SHA must be derived live fro
 ## Purpose
 Carry CVF-NCR v2.8 and closed AKOE/G1-G7. Applied-knowledge details remain in the governed roadmap.
 ## Scope / Target / Owner Boundary
-Role: Local orchestrator/reviewer; phase: NIS-T1B-D R1 release; decision owner: Local; CCMA/S05/P11 parked.
+Role: Local orchestrator/reviewer; phase: NIS-T1B-D bounded closure; decision owner: Local; CCMA/S05/P11 parked.
 ## Startup Acknowledgment
-Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`; handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=NIS-T1B-D R1 internal rework; role=Local orchestrator/reviewer; phase=release; decision owner=Local; fixture authority approved, CCMA/S05/P11 parked.
+Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`; handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=select next authorized value slice after NIS-T1B-D bounded closure; role=Local reviewer/closer; phase=closure; decision owner=Local; CCMA/S05/P11 parked.
 ## Current Mode
 `cvf_ncr_p10_closed_p11_parked`. CVF-NCR-R1-S11-R1 is closed at `bd15b2600` after material `1a538d10d`. P10 is `ACTIVE_PRODUCTION_RUNTIME`; P11 stays parked. Latest closed learning-history wave: `LHW24`.
 ## Active Boundary
@@ -169,7 +169,7 @@ Rollback boundary: revert only this continuity sync; preserve material `5c1ee025
 - ACEL-AKOE-U1 is `CLOSED_PASS_BOUNDED` at `d9132412a`, disposition `SOURCE_RECONCILED_DEFER_WITH_TRIGGER`. Exact pins, 42 claims, byte hash and verification detail remain in its completion review; no import, runtime/provider, public sync or automatic successor opened.
 - CVF-NCR-R0-W01 source/profile return is Local-accepted bounded at material commit `d9b43a6f6deff7fb19710b5a9a4f50bf2a6015b6`; reviewer-fast 69/69 and pre-commit 90/90 passed. P06/P08 and actual destination/retention/cost remain open. One overbroad worker grep exposed a configured URL in tool output; the return does not reproduce it, and Local/operator config handling remains separate. No pilot or UI action was run.
 ## Next Allowed Move
-PROGRAM_ID=CVF-NIS; NEXT_ACTION_CLASS=EXECUTE_NIS_T1B_D_R1_INTERNAL_REWORK; BATCH_ID=CVF-NIS-T1B-D. Approved marked helper; actual WRONG_OWNER/restoration PASS, fixture removed; exact coverage 5/5. R1 worktree final HEAD +17 pinned R0 source files, declared dirty; new bound pre-implementation before F1/F2/F4 repairs. R0 frozen, no staging/commit/profile acceptance; Local independent repaired-source proof pending. Old nine changes clean; lanes unchanged.
+PROGRAM_ID=CVF-NIS; NEXT_ACTION_CLASS=SELECT_NEXT_AUTHORIZED_VALUE_SLICE; BATCH_ID=CVF-NIS-T1B-D. Source793644f67; bounded closure in docs/reviews/CVF_NIS_T1B_D_INTEGRATED_REVIEW_PERSISTENCE_COMPLETION_2026-10-05.md. Local WRONG_OWNER/restoration and three F1 fault probes PASS; worker exit2/frozen return retained. Ledger8 mandatory+15 companions=23; known R0 B1 recurrence acknowledged. No successor dispatched, no BUILD/real root/provider/public effect; parked lanes unchanged.
 ## Parked Checkpoints
 - autorun lane-binding R1 is closed at `ee81deeeb`; HRLTP-T2 remains paused for Local no-subagent route reassessment;
 - T3C-C2 is closed and Local verified at `820aae3ec`;
