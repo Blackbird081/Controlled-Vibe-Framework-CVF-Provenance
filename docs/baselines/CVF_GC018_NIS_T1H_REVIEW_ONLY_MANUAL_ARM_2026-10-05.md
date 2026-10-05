@@ -8,7 +8,7 @@ Batch ID: CVF-NIS-T1H
 providerExecutionAuthority: FORBIDDEN
 Date: 2026-10-05
 
-Dispatch base head: 3a30c39fc27cd2a0c2891063af145b76abef7a7f
+Dispatch base head: b94f893d077c89ac5d8deb282da665b754a733bd
 
 Commit mode: WORKER_MUST_NOT_COMMIT
 
@@ -142,3 +142,7 @@ Blind-spot verdict: NOT_APPLICABLE_WITH_REASON - one bounded manual exercise, no
 ## Legacy Absorption Coverage Index Disposition
 
 NOT_APPLICABLE_WITH_REASON - no migration or external absorption.
+
+## Dispatch Attempt History And Fresh Context Admission
+
+Dispatch sequence1 is BLOCKED_WITH_REASON / PLACEMENT_CONTAMINATION, recorded by Local in docs/reviews/CVF_NIS_T1H_DISPATCH_EXPOSURE_INTAKE_2026-10-05.md and docs/reviews/evidence/cvf-nis-t1h-dispatch-attempts-2026-10-05.json. Actual blocked worker return and worker-owned gate evidence are pinned in the ledger; no retained primary attempt exists. Redispatch sequence2, same T1H assignment, REWORK round1; dataset and exact3 outputs unchanged. Use NEW context that has NEVER read T1G experiment docs/full receiver/casepack, answer key, seed generators, Local probes/scoring or earlier answers; not seed author/key reader. Only the pinned neutral reviewer package plus current pair/startup/generic governance rules may be opened. The sole T1G-named file allowed is the neutral reviewer-inputs-review-only package; no other T1G artifact. A session reset with inherited context is not a fresh actor. Self-declare no such exposure before viewing anything; otherwise return blocked. These are cooperative read constraints, not filesystem isolation.

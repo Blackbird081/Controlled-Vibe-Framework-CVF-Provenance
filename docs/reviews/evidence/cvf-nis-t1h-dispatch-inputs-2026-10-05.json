@@ -1,6 +1,6 @@
 {
   "schemaVersion": "cvf.nisT1hDispatchInputs.v1",
-  "baseHead": "3a30c39fc27cd2a0c2891063af145b76abef7a7f",
+  "baseHead": "b94f893d077c89ac5d8deb282da665b754a733bd",
   "authority": "Operator continue under delegated Local authority after T1G preparation closure. One fresh placement-blind review-only manual attempt. No helper or accepted-source experiment grant.",
   "sources": {
     "docs/reviews/evidence/cvf-nis-t1g-reviewer-inputs-review-only-2026-10-05.json": {
@@ -24,5 +24,19 @@
     "docs/reviews/evidence/cvf-nis-t1h-manual-exposure-timing-2026-10-05.json"
   ],
   "sourceReadBudget": "Only this neutral package and generic governance startup/output rules. No prior experiment files, key, original protocol, generator, Local probe/completion or source-diff research.",
-  "claimBoundary": "REVIEW_ONLY_HISTORICAL_SYNTHETIC_BYTES; self-declared exposure; NOT live governance, accepted-packet fidelity, UX, cost winner or helper comparison."
+  "claimBoundary": "REVIEW_ONLY_HISTORICAL_SYNTHETIC_BYTES; self-declared exposure; NOT live governance, accepted-packet fidelity, UX, cost winner or helper comparison.",
+  "dispatchSequence": 2,
+  "dispatchKind": "REWORK",
+  "reviewRoundCount": 1,
+  "priorFindingSetDigest": "1f3bb7c4ffe31b935bd8a8086e20abc5c37ed0b4de97e51937975f1ce0a45f47",
+  "blockedIntake": {
+    "path": "docs/reviews/evidence/cvf-nis-t1h-dispatch-attempts-2026-10-05.json",
+    "sha256": "8b82f8291f374fa74ab5fb9cd902b48b83b03d4547cc4b0941c83fe461618f40",
+    "sourceAssurance": "ACTUAL_BLOCKED_WORKER_RETURN_TWO_EVIDENCE_FILES_AND_WORKER_GATE_RECEIPT_LOG_INSPECTED; EXPOSURE_SELF_REPORTED"
+  },
+  "freshContextRequirement": "Never read T1G experimental documents or casepack; not seed author/key reader. Neutral reviewer-inputs package is the only T1G-named permitted source. No inherited context. Declare exposure before views.",
+  "localIntakeRecord": {
+    "path": "docs/reviews/CVF_NIS_T1H_DISPATCH_EXPOSURE_INTAKE_2026-10-05.md",
+    "rawSha256": "7f7993ad45f7d628b83ab0ee1e4830756f8e40e70c4623fe437ccd4dee625ca8"
+  }
 }

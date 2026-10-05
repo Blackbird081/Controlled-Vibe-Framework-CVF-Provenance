@@ -10,7 +10,7 @@ Batch ID: CVF-NIS-T1H
 providerExecutionAuthority: FORBIDDEN
 Date: 2026-10-05
 
-Dispatch base head: 3a30c39fc27cd2a0c2891063af145b76abef7a7f
+Dispatch base head: b94f893d077c89ac5d8deb282da665b754a733bd
 
 Commit mode: WORKER_MUST_NOT_COMMIT
 
@@ -26,8 +26,8 @@ Worker return path: `docs/reviews/CVF_NIS_T1H_REVIEW_ONLY_MANUAL_ARM_WORKER_RETU
 Role: fresh INTERNAL_AGENT manual reviewer; Local separate scorer/reviewer/closer.
 Canonical packet: docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1H_REVIEW_ONLY_MANUAL_ARM_2026-10-05.md; baseline docs/baselines/CVF_GC018_NIS_T1H_REVIEW_ONLY_MANUAL_ARM_2026-10-05.md; inputs docs/reviews/evidence/cvf-nis-t1h-dispatch-inputs-2026-10-05.json.
 Commit mode: WORKER_MUST_NOT_COMMIT; sharedWorktreeCoordinationMode: SEPARATE_GIT_WORKTREE.
-executionBaseHead: WORKER_MUST_CAPTURE_AT_START; selection base 3a30c39fc27cd2a0c2891063af145b76abef7a7f is not later worker HEAD.
-Current-time notes: review-only historical synthetic bytes; accepted-source gap remains; no helper arm.
+executionBaseHead: WORKER_MUST_CAPTURE_AT_START; redispatch base b94f893d077c89ac5d8deb282da665b754a733bd is not later worker HEAD.
+Current-time notes: redispatch sequence2 / REWORK1 after placement-contaminated blocked sequence1; first retained primary attempt still pending.
 Do-not-misread notes: use a fresh context with no placement knowledge; prior experiment documents/key are excluded reads. Do not create a relay file.
 Required first actions: progressive startup through current pair only; declare exposure before views, verify hashes and run own pre-implementation.
 Return contract: exact3 artifacts with raw responses and real exposure/time records; COMPLETE_PENDING_REVIEW or honest BLOCKED_WITH_REASON; no self-score.
@@ -54,61 +54,73 @@ Run one manual structural-review attempt on the neutral historical synthetic inp
 
 Review-Dispatch Convergence Control: REQUIRED
 
-dispatchKind: INITIAL
+dispatchKind: REWORK
 dispatchSurface: INTERNAL_AGENT
 parentAssignmentId: CVF-NIS-T1H
-reviewRoundCount: 0
-priorFindingSetDigest: NOT_APPLICABLE_INITIAL_DISPATCH
-dependencyAuditDisposition: COMPLETE_INITIAL_ACCEPTANCE_MATRIX
-reworkFindingDisposition: NOT_APPLICABLE_INITIAL_DISPATCH
+reviewRoundCount: 1
+priorFindingSetDigest: 1f3bb7c4ffe31b935bd8a8086e20abc5c37ed0b4de97e51937975f1ce0a45f47
+dependencyAuditDisposition: COMPLETE_BEFORE_FIRST_REPAIR
+reworkFindingDisposition: CONSOLIDATED_ALL_DEPENDENT_FINDINGS
 newIndependentCriticalEvidence: NONE
-regressionGuardDisposition: BASELINE_NEGATIVE_TESTS_PLANNED
+regressionGuardDisposition: REQUIRED_AND_PLANNED_FOR_EACH_TARGETED_DEFECT
 cumulativeExternalInvocationCount: 0
 externalInvocationCeiling: 0
 usageAvailability: NOT_APPLICABLE_INTERNAL_AGENT
 quotaAdmissionDisposition: NOT_APPLICABLE_INTERNAL_AGENT
-nextDispatchDisposition: INITIAL_DISPATCH
-rootCauseClusterId: NOT_APPLICABLE_INITIAL_DISPATCH
-reworkGeneration: 0
-consolidatedDefectClassSweep: COMPLETE_INITIAL_ACCEPTANCE_MATRIX
+nextDispatchDisposition: ONE_CONSOLIDATED_REWORK
+rootCauseClusterId: NIS-T1H-PLACEMENT-AWARE-WORKER
+reworkGeneration: 1
+consolidatedDefectClassSweep: COMPLETE_BEFORE_REWORK_DISPATCH
 successorTrancheOpened: NO
 implementationAutonomyDisposition: CONTRACT_AUTHORITY_EVIDENCE_OUTCOME_ONLY
 preExecutionReviewAdmission: NOT_REQUIRED_BEFORE_EXECUTION
 preExecutionReviewTrigger: NONE
 nextRoutineReviewBoundary: WORKER_RETURN
 reviewerWorkBoundary: EVALUATE_RETURNED_EVIDENCE_NOT_RECREATE_IMPLEMENTATION
+reviewerLocalRepairBoundary: NEW_EVIDENCE_REQUIRED
+reviewerLocalRepairBasis: Local and the prior context are placement-aware; no document edit can erase their exposure. A different context must provide the first retained primary response/time evidence under docs/reviews/CVF_NIS_T1H_DISPATCH_EXPOSURE_INTAKE_2026-10-05.md.
 
 ## Semantic Convergence Outcome
 
-Standard: `docs/reference/semantic_convergence_control/CVF_SEMANTIC_CONVERGENCE_AND_ESCALATION_CONTROL_STANDARD.md`
+Standard: docs/reference/semantic_convergence_control/CVF_SEMANTIC_CONVERGENCE_AND_ESCALATION_CONTROL_STANDARD.md
 
 ```json
 {
   "schemaVersion": "cvf.semanticConvergenceControl.v1",
   "problemKey": "cvf-nis-t1h-problem",
-  "chainMode": "INITIAL",
-  "chainOrdinal": 0,
-  "predecessor": null,
+  "chainMode": "SUCCESSOR",
+  "chainOrdinal": 1,
+  "predecessor": {
+    "path": "docs/reviews/CVF_NIS_T1H_DISPATCH_EXPOSURE_INTAKE_2026-10-05.md",
+    "sha256": "7f7993ad45f7d628b83ab0ee1e4830756f8e40e70c4623fe437ccd4dee625ca8"
+  },
   "blockerDelta": {
-    "prior": [],
+    "prior": [
+      "PLACEMENT_CONTAMINATION"
+    ],
     "resolved": [],
-    "retained": [],
+    "retained": [
+      "PLACEMENT_CONTAMINATION"
+    ],
     "new": [],
     "reopened": [],
-    "current": []
+    "current": [
+      "PLACEMENT_CONTAMINATION"
+    ]
   },
   "resolutionEvidence": {},
   "counters": {
     "partialReadyClosures": 0,
     "reviewerScopeExpansions": 0,
     "sameClaimCorrections": 0,
-    "nonDecreasingBlockerTransitions": 0
+    "nonDecreasingBlockerTransitions": 1
   },
   "claims": [],
   "requiredDisposition": "CONTINUE_BOUNDED",
   "successorScope": "INITIAL_BOUNDED"
 }
 ```
+Actor exposure remains unresolved until fresh-context self-declaration; no source repair or completed attempt claimed.
 
 ## Worker Autonomy / No-Question Rule
 
@@ -154,7 +166,7 @@ Contract source archive-qualified exception: `docs/reference/CVF_AHB_T2_AGENT_HA
 | route | MULTI_AGENT_MULTI_ROLE |
 | rolePattern | Local dispatcher/reviewer and distinct internal evaluation worker |
 | phase | DISPATCH then IMPLEMENTATION then REVIEW |
-| baseHeadFor(phase) | dispatchBaseHead=3a30c39fc27cd2a0c2891063af145b76abef7a7f; executionBaseHead=WORKER_MUST_CAPTURE_AT_START; closureBaseHead=REVIEWER_TO_SET |
+| baseHeadFor(phase) | dispatchBaseHead=b94f893d077c89ac5d8deb282da665b754a733bd; executionBaseHead=WORKER_MUST_CAPTURE_AT_START; closureBaseHead=REVIEWER_TO_SET |
 | changedSetScope(phase) | Worker exactly three evidence paths; Local admission and continuity separately |
 | traceScope(phase, actor) | worker command/evidence only; Local review does not recreate production replay |
 | commitOwner(phase) | Local closer only; WORKER_MUST_NOT_COMMIT |
@@ -284,18 +296,18 @@ Governance, extraction/hash/clock evidence only. No automated substantive checks
 |---|---|
 | Actor | Local dispatcher |
 | Provider or surface | Local private provenance workspace |
-| Session or invocation | nis-t1h-dispatch-20261005 |
+| Session or invocation | nis-t1h-redispatch-20261005 |
 | Working directory | repository root |
 | Command or tool surface | Bounded source reads, local scaffold and admission gates |
-| Target paths | exact9 Local admission/continuity; future3 worker outputs |
+| Target paths | exact11 Local intake/redispatch/continuity; future3 outputs |
 | Allowed scope source | operator continue and delegated Local orchestration |
-| Before status evidence | clean worktree main 3a30c39fc27cd2a0c2891063af145b76abef7a7f |
-| After status evidence | manual admission only; worker pending |
-| Diff evidence | admission-paths.json exact9; no product change |
+| Before status evidence | clean worktree main b94f893d077c89ac5d8deb282da665b754a733bd |
+| After status evidence | blocked sequence1 retained; redispatch sequence2 pending fresh context |
+| Diff evidence | admission-paths.json exact11; dataset unchanged |
 | Approval boundary | one manual review-only attempt, no automated evaluator |
 | Claim boundary | dispatch authoring only |
 | Agent type | dispatcher |
-| Invocation ID | nis-t1h-dispatch-20261005 |
+| Invocation ID | nis-t1h-redispatch-20261005 |
 | Expected manifest | N/A with reason: exact9 Local admission only; future3 outputs separately named |
 | Actual changed set | N/A with reason: admission only, worker pending |
 | Manifest delta | N/A with reason: worker pending |
@@ -544,16 +556,15 @@ Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 Operator authorization: continue under delegated Local orchestrator/reviewer/work-order/commit authority,2026-10-05.
-Rollback boundary: exact9 Local admission paths; preserve prior closures, workers and parked lanes.
-
+Rollback boundary: exact11 Local admission paths; preserve prior closures, workers and parked lanes.
+Local blocked-intake and redispatch history maintenance authorized by the latest operator request; no contaminated-worker return invented.
 
 ## Mixed Protected-Path Atomicity Authorization
 
 Disposition: AUTHORIZED_EXACT_MANIFEST
-Atomicity reason: pair/input and six continuity owners bind one manual admission; dedicated material SHA follows.
-Rollback boundary: exact9 Local paths only.
-Exact changed manifest: `docs/baselines/CVF_GC018_NIS_T1H_REVIEW_ONLY_MANUAL_ARM_2026-10-05.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1H_REVIEW_ONLY_MANUAL_ARM_2026-10-05.md`; `docs/reviews/evidence/cvf-nis-t1h-dispatch-inputs-2026-10-05.json`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`.
-
+Atomicity reason: blocked-intake/SCEC anchor, redispatch pair/input and six continuity owners bind one context-replacement grant. Dedicated material SHA follows.
+Rollback boundary: exact11 Local intake/admission paths; original worker and old receipts retained.
+Exact changed manifest: `docs/baselines/CVF_GC018_NIS_T1H_REVIEW_ONLY_MANUAL_ARM_2026-10-05.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1H_REVIEW_ONLY_MANUAL_ARM_2026-10-05.md`; `docs/reviews/evidence/cvf-nis-t1h-dispatch-inputs-2026-10-05.json`; `docs/reviews/evidence/cvf-nis-t1h-dispatch-attempts-2026-10-05.json`; `docs/reviews/CVF_NIS_T1H_DISPATCH_EXPOSURE_INTAKE_2026-10-05.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`.
 
 ## Task Governance Routing Manifest
 
@@ -576,6 +587,8 @@ Exact changed manifest: `docs/baselines/CVF_GC018_NIS_T1H_REVIEW_ONLY_MANUAL_ARM
     "docs/baselines/CVF_GC018_NIS_T1H_REVIEW_ONLY_MANUAL_ARM_2026-10-05.md",
     "docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1H_REVIEW_ONLY_MANUAL_ARM_2026-10-05.md",
     "docs/reviews/evidence/cvf-nis-t1h-dispatch-inputs-2026-10-05.json",
+    "docs/reviews/evidence/cvf-nis-t1h-dispatch-attempts-2026-10-05.json",
+    "docs/reviews/CVF_NIS_T1H_DISPATCH_EXPOSURE_INTAKE_2026-10-05.md",
     "AGENT_HANDOFF_V63_2026-09-18.md",
     "CVF_SESSION_MEMORY.md",
     "CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json",
@@ -614,7 +627,6 @@ Exact changed manifest: `docs/baselines/CVF_GC018_NIS_T1H_REVIEW_ONLY_MANUAL_ARM
   }
 }
 ```
-
 
 ## Task Governance Routing Receipt
 
@@ -661,3 +673,7 @@ Exact changed manifest: `docs/baselines/CVF_GC018_NIS_T1H_REVIEW_ONLY_MANUAL_ARM
 }
 ```
 T0 SHADOW_FULL_GATE_FALLBACK; selectiveExecutionAuthorized=false; full legacy bundles mandatory.
+
+## Dispatch Attempt History And Fresh Context Admission
+
+Dispatch sequence1 is BLOCKED_WITH_REASON / PLACEMENT_CONTAMINATION, recorded by Local in docs/reviews/CVF_NIS_T1H_DISPATCH_EXPOSURE_INTAKE_2026-10-05.md and docs/reviews/evidence/cvf-nis-t1h-dispatch-attempts-2026-10-05.json. Actual blocked worker return and worker-owned gate evidence are pinned in the ledger; no retained primary attempt exists. Redispatch sequence2, same T1H assignment, REWORK round1; dataset and exact3 outputs unchanged. Use NEW context that has NEVER read T1G experiment docs/full receiver/casepack, answer key, seed generators, Local probes/scoring or earlier answers; not seed author/key reader. Only the pinned neutral reviewer package plus current pair/startup/generic governance rules may be opened. The sole T1G-named file allowed is the neutral reviewer-inputs-review-only package; no other T1G artifact. A session reset with inherited context is not a fresh actor. Self-declare no such exposure before viewing anything; otherwise return blocked. These are cooperative read constraints, not filesystem isolation.

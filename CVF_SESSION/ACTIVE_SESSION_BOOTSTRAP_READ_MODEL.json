@@ -2,16 +2,16 @@
   "schemaVersion": "0.1.0",
   "currentMode": "cvf_ncr_p10_closed_p11_parked",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=CVF-NIS; NEXT_ACTION_CLASS=EXECUTE_BOUNDED_WORK_ORDER; BATCH_ID=CVF-NIS-T1H. One fresh reviewer manual review-only attempt in docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1H_REVIEW_ONLY_MANUAL_ARM_2026-10-05.md. Neutral historical synthetic package only; declare exposure before views, actual preparation/per-case clocks, unedited raw forms; exact3 outputs; no self-score. Prior placement-aware worker/Local cannot supply blind attempt. Local independent integrity/scoring/commit after return; no primary replay. No helper/candidate/product/runtime/provider/network/install/store/UAC/BUILD/general S2/public/deploy. Accepted-source gap remains; comparative cost/UX UNKNOWN. Original workers retained; chat transfer only. CCMA parked; S05/C1/send/B2 STOP; Q001/Q004 OPEN/Profile A; P11/deploy/FLAL T4/T5 parked; FR2 historical loss retained; costs UNKNOWN; LHW24 closed; no push. Dispatch material 5054d33a0; dedicated continuity.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-NIS; NEXT_ACTION_CLASS=EXECUTE_BOUNDED_WORK_ORDER; BATCH_ID=CVF-NIS-T1H. Redispatch sequence2 / REWORK1 in docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1H_REVIEW_ONLY_MANUAL_ARM_2026-10-05.md after sequence1 BLOCKED_WITH_REASON / PLACEMENT_CONTAMINATION in docs/reviews/CVF_NIS_T1H_DISPATCH_EXPOSURE_INTAKE_2026-10-05.md. Prior blocked return/gates retained and pinned; no retained primary attempt. NEW context never read T1G docs/casepack, not seed author/key reader; only neutral reviewer package/current pair/generic rules, exposure first. Exact3 raw response/time/return outputs; Local score/integrity after freeze. Original worker/receipts retained. No helper/candidate/runtime/provider/BUILD/S2/public. CCMA parked; S05/C1/send/B2 STOP; Q001/Q004 OPEN/Profile A; P11/deploy/FLAL T4/T5 parked; FR2 historical loss retained; costs UNKNOWN; LHW24 closed; no push.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_NIS_T1H_REVIEW_ONLY_MANUAL_ARM_2026-10-05.md",
-    "baselineSha256": "0966f9e1a2780410af85088ac010758477a645f63e1ecf04de3759943df0cc48",
+    "baselineSha256": "581f78f09c0925b5b7f5b5cb42ba00a16364cc9a461acf93fc86e1c4597614e0",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1H_REVIEW_ONLY_MANUAL_ARM_2026-10-05.md",
-    "workOrderSha256": "270bdfe7919cc78fbe786d0606a1a0d984bb9baf2dffbe5b79c391e63bdc9267"
+    "workOrderSha256": "75d2f31bcb15659dc66b7e71e8b42191ea3e56837c57187732e6bdb42900e090"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

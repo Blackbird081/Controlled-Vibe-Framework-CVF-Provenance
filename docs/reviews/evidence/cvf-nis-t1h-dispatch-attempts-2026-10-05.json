@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "cvf.nisT1hDispatchAttempts.v1",
+  "batchId": "CVF-NIS-T1H",
+  "date": "2026-10-05",
+  "recordOwner": "LOCAL_ORCHESTRATOR",
+  "evidenceOrigin": "OPERATOR_RELAY_OF_CONTEXT_EXPOSURE_DECLARATION",
+  "assurance": "SELF_REPORTED_EXPOSURE; Local inspected the actual blocked worker return, two evidence files and worker-owned gate receipt/log; original HEAD/index unchanged with exactly three untracked outputs, not hidden-context attestation",
+  "attempts": [
+    {
+      "dispatchSequence": 1,
+      "executionHead": "b94f893d077c89ac5d8deb282da665b754a733bd",
+      "worktree": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF-NIS-T1H",
+      "status": "BLOCKED_WITH_REASON",
+      "reasonCode": "PLACEMENT_CONTAMINATION",
+      "reportedBoundary": "context previously exposed to T1G; not eligible for placement-blind manual attempt",
+      "workerReturnArtifact": {
+        "path": "docs/reviews/CVF_NIS_T1H_REVIEW_ONLY_MANUAL_ARM_WORKER_RETURN_2026-10-05.md",
+        "sha256": "8e43e1dd47a55b0e97f2caa59646ee927e1a1c5b27e5b9450c61fbe02c096ca5"
+      },
+      "workerOwnedGateReceipts": [
+        {
+          "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF-NIS-T1H\\.cvf\\runtime\\nis-t1h-worker-20261005\\pre-implementation\\pre-implementation.json",
+          "sha256": "7515ab529ed177b8a6998dd8bb1545b2cac47170ae1d0301cc3f7b5749dc2d47",
+          "status": "PASS",
+          "checks": 87
+        },
+        {
+          "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF-NIS-T1H\\.cvf\\runtime\\nis-t1h-worker-20261005\\fast-gate-final.log",
+          "sha256": "90215adbb06eef2bbaf957ca17735273e4f3a3223b59adf486893a4fd15c70b6",
+          "status": "COMPLIANT_LOG_INSPECTED_NO_DUPLICATE_RERUN"
+        }
+      ],
+      "localPreparationReceiptsAreNotWorkerReceipts": true,
+      "primaryAttempt": "NOT_EXECUTED_IN_RETAINED_EVIDENCE",
+      "localObservedOutputs": [
+        {
+          "path": "docs/reviews/CVF_NIS_T1H_REVIEW_ONLY_MANUAL_ARM_WORKER_RETURN_2026-10-05.md",
+          "sha256": "8e43e1dd47a55b0e97f2caa59646ee927e1a1c5b27e5b9450c61fbe02c096ca5"
+        },
+        {
+          "path": "docs/reviews/evidence/cvf-nis-t1h-manual-raw-responses-2026-10-05.json",
+          "sha256": "3059e49f5c1b1806b1ff3621737fe7346423cd00411e4bb88a1f089e5be80d24"
+        },
+        {
+          "path": "docs/reviews/evidence/cvf-nis-t1h-manual-exposure-timing-2026-10-05.json",
+          "sha256": "1950da6d29776716f14e3ce6b95d284c17c7538c2236b8525c58cfe887b7a516"
+        }
+      ],
+      "disposition": "PRESERVE_BLOCKED_DISPATCH_DO_NOT_RESET_INITIAL_HISTORY"
+    },
+    {
+      "dispatchSequence": 2,
+      "status": "REDISPATCH_PENDING_FRESH_CONTEXT_ADMISSION",
+      "assignmentRoute": "NEW_CONTEXT_NO_T1G_EXPOSURE_NOT_SEED_AUTHOR_NOT_ANSWER_KEY_READER",
+      "newWorktree": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF-NIS-T1H-R1",
+      "executionHead": "CAPTURE_AFTER_REDISPATCH_COMMIT",
+      "primaryAttempt": "NOT_EXECUTED"
+    }
+  ],
+  "findingSet": [
+    {
+      "findingId": "T1H-EXPOSURE-1",
+      "rootCauseClusterId": "NIS-T1H-PLACEMENT-AWARE-WORKER",
+      "finding": "Prior context is placement contaminated; source data is not defective; replace context before any primary attempt. Local has read the key and cannot repair its own exposure into blindness.",
+      "correction": "One consolidated actor/context reassignment, explicit T1G exclusion, retained dispatch history, no replay or scope expansion."
+    }
+  ],
+  "claimBoundary": "Local intake of operator-relayed disclosure, not a fabricated worker return, gate PASS, completed manual attempt or independently verified blinding."
+}
