@@ -2,16 +2,16 @@
   "schemaVersion": "0.1.0",
   "currentMode": "cvf_ncr_p10_closed_p11_parked",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=CVF-NIS; NEXT_ACTION_CLASS=SELECT_NEXT_AUTHORIZED_SLICE; BATCH_ID=CVF-NIS-T1C. T1C CLOSED_PASS_BOUNDED evaluation; worker material42022e407, Local two-packet/three-mutation independent probe PASS. Build-ready target retained, not certified. Next: bounded existing-consumer open-item/effective-rule projection and selected-payload capability assessment planning; no forced native-first order or automatic S2 implementation. No source/provider/upstream runtime/store/BUILD/public/deploy grant here. T1B-D closed793644f67/5944658ab; R0/R1 and failed receipts retained. CCMA parked; S05/C1/send/B2 STOP; Q001/Q004 OPEN/Profile A; P11/deploy and FLAL T4/T5 parked; FR2 lost historical receipt retained; costs UNKNOWN. LHW24 closed; no push.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-NIS; NEXT_ACTION_CLASS=EXECUTE_BOUNDED_WORK_ORDER; BATCH_ID=CVF-NIS-T1D. Selected pinned Spec Kit capability comparison and existing-consumer implementation contract in docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1D_SELECTED_CAPABILITY_CONSUMER_CONTRACT_2026-10-05.md. Isolated INTERNAL_AGENT worker; exact4 docs/evidence outputs, offline mirror14 selected files plus at most2 direct dependency reads. Resolve explicit open-items/effective rule and candidate.v1 save/reopen compatibility; source/contract only, no product edits or automatic S2. Local owns final review/commit. Worker no network/install/upstream scripts/provider/runtime/store/UAC/BUILD/public/deploy. T1C closed42022e407/de8482bf3; T1B-D closed793644f67/5944658ab; original R0/R1 and failed receipts retained. CCMA parked; S05/C1/send/B2 STOP; Q001/Q004 OPEN/Profile A; P11/deploy/FLAL T4/T5 parked; FR2 historical loss retained; costs UNKNOWN; LHW24 closed; no push.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_NIS_T1C_BUILDER_HANDOFF_VALUE_PROOF_2026-10-05.md",
-    "baselineSha256": "97263b9066ec974c8dc387244b3f54dfda81172488dc2f250d0b810a8ad2bf14",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1C_BUILDER_HANDOFF_VALUE_PROOF_2026-10-05.md",
-    "workOrderSha256": "c9cf727a28c15418f9527bab3c6f1268a489e07c87562b251cb53682bf0fd548"
+    "baselinePath": "docs/baselines/CVF_GC018_NIS_T1D_SELECTED_CAPABILITY_CONSUMER_CONTRACT_2026-10-05.md",
+    "baselineSha256": "833ca34ade6bab5afbbbc19be424f247a1aa930ff2f10c5635b773df8669d272",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1D_SELECTED_CAPABILITY_CONSUMER_CONTRACT_2026-10-05.md",
+    "workOrderSha256": "18fd2d017737d8c8e6056b9abc22c969a3a8d06b0e7cb643fc5a1430b878ffd7"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

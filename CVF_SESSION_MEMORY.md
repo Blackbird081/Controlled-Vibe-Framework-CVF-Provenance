@@ -42,7 +42,7 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`; handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=select bounded consumer/capability delta after T1C evaluation; role=Local reviewer/closer; phase=closure; decision owner=Local; CCMA/S05/P11 parked.
+Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`; handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=execute T1D source/consumer contract; role=Local orchestrator; phase=dispatch; decision owner=Local; CCMA/S05/P11 parked.
 
 ## Current Mode
 
@@ -51,7 +51,7 @@ Current mode: `cvf_ncr_p10_closed_p11_parked`; previous mode marker: `cvf_ncr_p1
 
 ## Next Allowed Move
 Mode: `cvf_ncr_p10_closed_p11_parked`
-PROGRAM_ID=CVF-NIS; NEXT_ACTION_CLASS=SELECT_NEXT_AUTHORIZED_SLICE; BATCH_ID=CVF-NIS-T1C. T1C CLOSED_PASS_BOUNDED evaluation; worker material42022e407, Local two-packet/three-mutation independent probe PASS. Build-ready target retained, not certified. Next: bounded existing-consumer open-item/effective-rule projection and selected-payload capability assessment planning; no forced native-first order or automatic S2 implementation. No source/provider/upstream runtime/store/BUILD/public/deploy grant here. T1B-D closed793644f67/5944658ab; R0/R1 and failed receipts retained. CCMA parked; S05/C1/send/B2 STOP; Q001/Q004 OPEN/Profile A; P11/deploy and FLAL T4/T5 parked; FR2 lost historical receipt retained; costs UNKNOWN. LHW24 closed; no push.
+PROGRAM_ID=CVF-NIS; NEXT_ACTION_CLASS=EXECUTE_BOUNDED_WORK_ORDER; BATCH_ID=CVF-NIS-T1D. Selected pinned Spec Kit capability comparison and existing-consumer implementation contract in docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1D_SELECTED_CAPABILITY_CONSUMER_CONTRACT_2026-10-05.md. Isolated INTERNAL_AGENT worker; exact4 docs/evidence outputs, offline mirror14 selected files plus at most2 direct dependency reads. Resolve explicit open-items/effective rule and candidate.v1 save/reopen compatibility; source/contract only, no product edits or automatic S2. Local owns final review/commit. Worker no network/install/upstream scripts/provider/runtime/store/UAC/BUILD/public/deploy. T1C closed42022e407/de8482bf3; T1B-D closed793644f67/5944658ab; original R0/R1 and failed receipts retained. CCMA parked; S05/C1/send/B2 STOP; Q001/Q004 OPEN/Profile A; P11/deploy/FLAL T4/T5 parked; FR2 historical loss retained; costs UNKNOWN; LHW24 closed; no push.
 Historical G1-G7 terminal baseline: mode `acel_g1_g7_research_terminally_closed`. G1-G6 terminal review: `docs/reviews/CVF_ACEL_G1_G6_TERMINAL_STOP_CLOSURE_2026-09-24.md`; G7 research closure: `docs/reviews/CVF_ACEL_G7_CROSS_RUN_CAPABILITY_EVOLUTION_RESEARCH_CLOSURE_2026-09-24.md`. The packet-only post-G7 reconciliation review at `docs/reviews/CVF_ACEL_POST_G7_FULL_CORPUS_ABSORPTION_CLOSURE_2026-09-24.md` is superseded for repository absorption by the 2026-09-25 pinned-source audit. G1 is stopped, G2-G6 remain parked, G7 research is closed, and no automatic G1-G7 successor exists.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
