@@ -4,7 +4,7 @@ Memory class: governed-worker-dispatch
 
 docType: work_order
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: CVF-NIS-T1F
 providerExecutionAuthority: FORBIDDEN
@@ -22,6 +22,7 @@ Worker return path: `docs/reviews/CVF_NIS_T1F_BUILD_READY_BRIDGE_CONTRACT_WORKER
 
 ## Dispatch Prompt Envelope
 
+```text
 Original authority: operator continue after accepted T1E and delegated Local orchestrator/reviewer/work-order/commit authority.
 Active work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1F_BUILD_READY_BRIDGE_CONTRACT_2026-10-05.md`. Baseline: `docs/baselines/CVF_GC018_NIS_T1F_BUILD_READY_BRIDGE_CONTRACT_2026-10-05.md`. Input: `docs/reviews/evidence/cvf-nis-t1f-dispatch-inputs-2026-10-05.json`.
 Mission: Select the smallest useful bridge from the accepted NIS review packet to job-specific design/plan/tasks/consistency review. Compare existing CVF owners, native adaptation and selected Spec Kit pattern/runtime options independently. Produce a concrete implementation-ready proposal or a named no-change/defer/block disposition. This order authorizes source/contract work only, not product implementation or automatic S2.
@@ -36,6 +37,7 @@ Current-time notes: T1E closed; historical mirror pin retained, no latest-source
 Do-not-misread notes: proposal examples are not build-ready job artifacts or execution grants; no product/runtime/S2.
 Required first actions: progressive startup, verify pins/clean HEAD and run own bound pre-implementation.
 Return contract: exact four outputs, full fast gate and proof joins, COMPLETE_PENDING_REVIEW or named BLOCKED; independent probe PENDING_REVIEWER_EXECUTION.
+```
 
 ## Purpose
 
@@ -130,7 +132,7 @@ Returned defects: NONE_RETURNED. Actual resolver executed 2026-10-05, candidates
 | Field | Value |
 |---|---|
 | applicableCheckersRead | governance/compat/check_work_order_dispatch_quality.py; governance/compat/check_work_order_dispatch_quality_source.py; governance/compat/check_work_order_dispatch_quality_artifacts.py; governance/compat/check_dispatch_scaffold_provenance.py; governance/compat/check_gate_to_role_closeability.py; governance/compat/check_governed_artifact_checker_read_ahead.py; governance/compat/check_task_governance_route.py; governance/compat/check_baseline_update_compat.py; governance/compat/check_agent_operation_trace.py; governance/compat/check_work_order_acceptance_ledger.py; governance/compat/check_independent_review_probe_admission.py; governance/compat/check_absorption_blindspot_control_presence.py; governance/compat/check_external_knowledge_intake_routing.py; governance/compat/check_high_risk_local_transaction_proof.py; governance/compat/check_adif_defect_registry_disclosure.py; governance/compat/check_agent_packet_authority_and_encoding.py; governance/compat/check_markdown_structural_completeness.py |
-| literalTokensReviewed | DISPATCH_READY; exact four outputs; acceptance-ledger-json; independent probe; source/entry/corpus; protected exact9 admission |
+| literalTokensReviewed | CLOSED_PASS_BOUNDED; exact four outputs; acceptance-ledger-json; independent probe; source/entry/corpus; protected exact9 admission |
 | gateRunPurpose | confirmation/evidence of source/contract dispatch shapes, not first discovery or product/readiness proof |
 | claimBoundary | future delta proposal only |
 
@@ -563,7 +565,7 @@ Blind-spot verdict: NOT_APPLICABLE_WITH_REASON - dispatch only; worker reconcile
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: Local T1F admission-only current-authority/next-move, no worker protected-path write.
+Authorized guard-maintenance scope: Local T1F closure authority/next-move only, no worker protected-path write.
 Protected paths:
 - `AGENT_HANDOFF_V63_2026-09-18.md`
 - `CVF_SESSION_MEMORY.md`
@@ -571,17 +573,15 @@ Protected paths:
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-Operator authorization: operator continue under delegated Local orchestrator/reviewer/work-order/commit authority, 2026-10-05.
-Rollback boundary: exact9 admission/continuity paths; preserve accepted T1E and older worker evidence/parked lanes, no checker change.
-
+Operator authorization: delegated Local orchestrator/reviewer/full handling, operator requests final T1F decisions; no runtime or product successor grant.
+Rollback boundary: exact10 closure paths; preserve accepted worker4, original worker and parked lanes; no checker change.
 
 ## Mixed Protected-Path Atomicity Authorization
 
 Disposition: AUTHORIZED_EXACT_MANIFEST
-Atomicity reason: source authority hashes and all six continuity owners must bind the same new pair/input. Dedicated six-surface sync follows knowable material SHA.
-Rollback boundary: exact9 Local paths, no product/checker/worker changes.
-Exact changed manifest: `docs/baselines/CVF_GC018_NIS_T1F_BUILD_READY_BRIDGE_CONTRACT_2026-10-05.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1F_BUILD_READY_BRIDGE_CONTRACT_2026-10-05.md`; `docs/reviews/evidence/cvf-nis-t1f-dispatch-inputs-2026-10-05.json`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`.
-
+Atomicity reason: paired closure hashes, independent proof and all six continuity owners bind one disposition; dedicated material SHA follows.
+Rollback boundary: exact10 Local closure paths, no source/history/gate waiver.
+Exact changed manifest: `docs/baselines/CVF_GC018_NIS_T1F_BUILD_READY_BRIDGE_CONTRACT_2026-10-05.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1F_BUILD_READY_BRIDGE_CONTRACT_2026-10-05.md`; `docs/reviews/CVF_NIS_T1F_BUILD_READY_BRIDGE_CONTRACT_COMPLETION_2026-10-05.md`; `docs/reviews/evidence/cvf-nis-t1f-local-independent-review-2026-10-05.json`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`.
 
 ## Task Governance Routing Manifest
 
@@ -698,3 +698,46 @@ T0 SHADOW_FULL_GATE_FALLBACK; selectiveExecutionAuthorized=false; full legacy bu
 | Existing NIS build-ready target and deferred plan/tasks/consistency | bounded assessment selected after T1E | REQ-1 source alternatives, REQ-2 minimum bridge contract | historical roadmap proposal is context; this pair alone grants offline four-output authoring |
 | NCR P11 and general S2 | parked/unreleased | excluded | no promotion or runtime execution |
 
+
+## Reviewer Closure Disposition
+
+Local source/contract MODIFY accepted with LD-1..LD-6 and seven choices in docs/reviews/CVF_NIS_T1F_BUILD_READY_BRIDGE_CONTRACT_COMPLETION_2026-10-05.md. Helper deferred,35 cases and BC-V1 NOT_EXECUTED. Worker original retained.
+
+independentProbeDisposition: PASS_INDEPENDENT_PROBE
+implementationWorkerActor: nis-t1f-internal-worker
+probeExecutorActor: nis-t1f-local-reviewer
+workerInvocationId: nis-t1f-worker-20261005
+probeInvocationId: nis-t1f-local-independent-20261005
+workerOracleSha256: 2f068f9f4b3c810a9531f7b12ff2b177cd13f2558da336a0398d1debecaa07e4
+probeOracleSha256: 64f50eb71643d15fa5a2f79a4c15042e9c4cd7fcd3383340988548c346e8d422
+workerEvidenceRef: docs/reviews/evidence/cvf-nis-t1f-build-ready-acceptance-plan-2026-10-05.json
+probeEvidenceRef: docs/reviews/evidence/cvf-nis-t1f-local-independent-review-2026-10-05.json
+probeCommandOrMethod: python -B .cvf/runtime/nis-t1f-local-review-20261005/probe.py; independently authored source/contract controls, not proposed helper or BC-V1
+probeObservedResult: 119 assertions PASS, positive zero-item requirement and7 negative controls;32 dispatch pins plus4 dependency bindings; no runtime/product or cost comparison
+oracleSeparationBasis: distinct Local actor/invocation/oracle bytes; original worker plan is input, not Local assertion implementation
+
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1F_BUILD_READY_BRIDGE_CONTRACT_2026-10-05.md | CLOSED_PASS_BOUNDED source/contract only, helper deferred | PASS |
+| Completion or reviewer artifact | docs/reviews/CVF_NIS_T1F_BUILD_READY_BRIDGE_CONTRACT_COMPLETION_2026-10-05.md | Local LD-1..LD-6 and C-1..C-7 | PASS |
+| Roadmap state | docs/roadmaps/CVF_GCLH_MACHINE_FIRST_REVIEW_PREFLIGHT_ROADMAP_2026-09-01.md | current MFRP applied; NCR P11 remains parked; successor execution excluded | PASS |
+| Registry JSON | docs/reviews/evidence/cvf-nis-t1f-local-independent-review-2026-10-05.json | source/oracle/evidence bindings, no runtime catalog promotion | PASS |
+| Registry Markdown | docs/reviews/CVF_NIS_T1F_BUILD_READY_BRIDGE_CONTRACT_COMPLETION_2026-10-05.md | bounded disposition; no corpus/runtime registry claim | PASS |
+| External evidence digest | docs/reviews/evidence/cvf-nis-t1f-local-independent-review-2026-10-05.json | SHA256 64f50eb71643d15fa5a2f79a4c15042e9c4cd7fcd3383340988548c346e8d422 | PASS |
+| System loop interlock | docs/reviews/evidence/cvf-nis-t1f-local-independent-review-2026-10-05.json | source -> assessment -> separate Local review -> conditional disposition | PASS |
+| Session continuity | CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json | closed pair and bounded next planning, parked lanes retained | PASS |
+
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| REQ-1 source | selected source/route comparison |21 CVF +11 upstream pins and4 extra dependency bindings; actual source/contract only | PASS |
+| REQ-2 contract/plan | minimum bridge and planned controls | conditional acceptance with LD corrections, seven choices decided;35 NOT_EXECUTED | PASS |
+| REQ-3 return/scope | exact4 outputs, saved gate evidence | worker original hashes retained, saved final fast PASS consumed | PASS |
+| Independent probe | distinct actor/oracle |119 assertions and7 negative controls, source/contract only | PASS |
+| Helper selection | no invented value evidence | BC-V1 NOT_EXECUTED; document-first route, helper deferred | PASS |
+| Authority | no automatic build/runtime | NOT_ASSESSED/NOT_GRANTED and all parked lanes retained | PASS |

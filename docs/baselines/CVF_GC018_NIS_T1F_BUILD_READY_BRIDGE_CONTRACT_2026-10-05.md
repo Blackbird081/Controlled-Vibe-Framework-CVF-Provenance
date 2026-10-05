@@ -2,7 +2,7 @@
 
 Memory class: governed-dispatch-baseline
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: CVF-NIS-T1F
 providerExecutionAuthority: FORBIDDEN
@@ -47,7 +47,7 @@ Returned defects: NONE_RETURNED. Actual resolver executed 2026-10-05, candidates
 | Field | Value |
 |---|---|
 | applicableCheckersRead | governance/compat/check_work_order_dispatch_quality.py; governance/compat/check_work_order_dispatch_quality_source.py; governance/compat/check_work_order_dispatch_quality_artifacts.py; governance/compat/check_dispatch_scaffold_provenance.py; governance/compat/check_gate_to_role_closeability.py; governance/compat/check_governed_artifact_checker_read_ahead.py; governance/compat/check_task_governance_route.py; governance/compat/check_baseline_update_compat.py; governance/compat/check_agent_operation_trace.py; governance/compat/check_work_order_acceptance_ledger.py; governance/compat/check_independent_review_probe_admission.py; governance/compat/check_absorption_blindspot_control_presence.py; governance/compat/check_external_knowledge_intake_routing.py; governance/compat/check_high_risk_local_transaction_proof.py; governance/compat/check_adif_defect_registry_disclosure.py; governance/compat/check_agent_packet_authority_and_encoding.py; governance/compat/check_markdown_structural_completeness.py |
-| literalTokensReviewed | DISPATCH_READY; exact four outputs; acceptance-ledger-json; independent probe; source/entry/corpus; protected exact9 admission |
+| literalTokensReviewed | CLOSED_PASS_BOUNDED; exact four outputs; acceptance-ledger-json; independent probe; source/entry/corpus; protected exact9 admission |
 | gateRunPurpose | confirmation/evidence of source/contract dispatch shapes, not first discovery or product/readiness proof |
 | claimBoundary | future delta proposal only |
 
@@ -164,3 +164,55 @@ Blind-spot verdict: NOT_APPLICABLE_WITH_REASON - dispatch only; worker reconcile
   "parentArtifact": null
 }
 ```
+
+## Reviewer Closure Disposition
+
+CLOSED_PASS_BOUNDED offline source/contract assessment. Local docs/reviews/CVF_NIS_T1F_BUILD_READY_BRIDGE_CONTRACT_COMPLETION_2026-10-05.md controls LD corrections and C-1..C-7. No successor implementation; helper value unproved.
+
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1F_BUILD_READY_BRIDGE_CONTRACT_2026-10-05.md | CLOSED_PASS_BOUNDED source/contract only, helper deferred | PASS |
+| Completion or reviewer artifact | docs/reviews/CVF_NIS_T1F_BUILD_READY_BRIDGE_CONTRACT_COMPLETION_2026-10-05.md | Local LD-1..LD-6 and C-1..C-7 | PASS |
+| Roadmap state | docs/roadmaps/CVF_GCLH_MACHINE_FIRST_REVIEW_PREFLIGHT_ROADMAP_2026-09-01.md | current MFRP applied; NCR P11 remains parked; successor execution excluded | PASS |
+| Registry JSON | docs/reviews/evidence/cvf-nis-t1f-local-independent-review-2026-10-05.json | source/oracle/evidence bindings, no runtime catalog promotion | PASS |
+| Registry Markdown | docs/reviews/CVF_NIS_T1F_BUILD_READY_BRIDGE_CONTRACT_COMPLETION_2026-10-05.md | bounded disposition; no corpus/runtime registry claim | PASS |
+| External evidence digest | docs/reviews/evidence/cvf-nis-t1f-local-independent-review-2026-10-05.json | SHA256 64f50eb71643d15fa5a2f79a4c15042e9c4cd7fcd3383340988548c346e8d422 | PASS |
+| System loop interlock | docs/reviews/evidence/cvf-nis-t1f-local-independent-review-2026-10-05.json | source -> assessment -> separate Local review -> conditional disposition | PASS |
+| Session continuity | CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json | closed pair and bounded next planning, parked lanes retained | PASS |
+
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| REQ-1 source | selected source/route comparison |21 CVF +11 upstream pins and4 extra dependency bindings; actual source/contract only | PASS |
+| REQ-2 contract/plan | minimum bridge and planned controls | conditional acceptance with LD corrections, seven choices decided;35 NOT_EXECUTED | PASS |
+| REQ-3 return/scope | exact4 outputs, saved gate evidence | worker original hashes retained, saved final fast PASS consumed | PASS |
+| Independent probe | distinct actor/oracle |119 assertions and7 negative controls, source/contract only | PASS |
+| Helper selection | no invented value evidence | BC-V1 NOT_EXECUTED; document-first route, helper deferred | PASS |
+| Authority | no automatic build/runtime | NOT_ASSESSED/NOT_GRANTED and all parked lanes retained | PASS |
+
+
+## Core Guard Self-Protection Authorization
+
+Authorized guard-maintenance scope: Local T1F closure authority/next-move only, no worker protected-path write.
+Protected paths:
+- `AGENT_HANDOFF_V63_2026-09-18.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+Operator authorization: delegated Local orchestrator/reviewer/full handling, operator requests final T1F decisions; no runtime or product successor grant.
+Rollback boundary: exact10 closure paths; preserve accepted worker4, original worker and parked lanes; no checker change.
+
+
+## Mixed Protected-Path Atomicity Authorization
+
+Disposition: AUTHORIZED_EXACT_MANIFEST
+Atomicity reason: paired closure hashes, independent proof and all six continuity owners bind one disposition; dedicated material SHA follows.
+Rollback boundary: exact10 Local closure paths, no source/history/gate waiver.
+Exact changed manifest: `docs/baselines/CVF_GC018_NIS_T1F_BUILD_READY_BRIDGE_CONTRACT_2026-10-05.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1F_BUILD_READY_BRIDGE_CONTRACT_2026-10-05.md`; `docs/reviews/CVF_NIS_T1F_BUILD_READY_BRIDGE_CONTRACT_COMPLETION_2026-10-05.md`; `docs/reviews/evidence/cvf-nis-t1f-local-independent-review-2026-10-05.json`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`.

@@ -37,11 +37,11 @@
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_NIS_T1F_BUILD_READY_BRIDGE_CONTRACT_2026-10-05.md",
-    "baselineSha256": "3c25d962bb9272b8086f5cf1acdeb0621ef01414b794d283e3f6c37f3ce8acd6",
+    "baselineSha256": "8d81a62dc9c8b1fc2b21f55a187ae8d3a280bb73be9a914643fe9173f33d9d2b",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1F_BUILD_READY_BRIDGE_CONTRACT_2026-10-05.md",
-    "workOrderSha256": "b66c14defc36c11d6a087cbbf9d6d04276a4a10a073be9c106e16034885ec872"
+    "workOrderSha256": "9be75da7b4e6b552721ab5c9ff8df9e2be40a55b801104470018c200c13e9cab"
   },
-  "currentAuthoritySyncReason": "T1F material 432435f10: offline bridge contract dispatch; prior NIS closed, parked lanes unchanged.",
+  "currentAuthoritySyncReason": "T1F closed modified source/contract; helper/BC-V1 execution deferred, parked lanes retained.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",

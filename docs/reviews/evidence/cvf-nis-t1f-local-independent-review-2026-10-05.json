@@ -1,0 +1,776 @@
+{
+  "schemaVersion": "cvf.nisT1fLocalIndependentReview.v1",
+  "batchId": "CVF-NIS-T1F",
+  "workerActor": "nis-t1f-internal-worker",
+  "reviewerActor": "nis-t1f-local-reviewer",
+  "workerInvocationId": "nis-t1f-worker-20261005",
+  "probeInvocationId": "nis-t1f-local-independent-20261005",
+  "executionBaseHead": "e06513638a363897190195d1d8caadbd19dd8daf",
+  "localHead": "fbacd5e311dd43fe9fb9fed29f959f15abd0f790",
+  "oracleSourceSha256": "edeae467115775feea8797a91c9c2c718bb4d4dd456f57101eb68641940ea739",
+  "workerOracleSha256": "2f068f9f4b3c810a9531f7b12ff2b177cd13f2558da336a0398d1debecaa07e4",
+  "workerArtifactHashes": {
+    "docs/reviews/CVF_NIS_T1F_BUILD_READY_BRIDGE_CONTRACT_WORKER_RETURN_2026-10-05.md": "8f5936ea8debb681cc7ca7504b8d4bbcfb879ec6f4a207c02217a27b166b0e19",
+    "docs/reviews/evidence/cvf-nis-t1f-build-ready-capability-assessment-2026-10-05.json": "fdc4f4a032f66473e805098f358ece95f7bb7a3db6ef0fd849de23d5a9de5c84",
+    "docs/reviews/CVF_NIS_T1F_BUILD_READY_BRIDGE_CONTRACT_2026-10-05.md": "64b5f3759aeb83f11e8015a7870b0d625b00cf19ac8ddc24ec70af32fa5111a7",
+    "docs/reviews/evidence/cvf-nis-t1f-build-ready-acceptance-plan-2026-10-05.json": "2f068f9f4b3c810a9531f7b12ff2b177cd13f2558da336a0398d1debecaa07e4"
+  },
+  "sourceBindings": [
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-review.ts",
+      "workerRawSha256": "43e7a437f6d4695553b396ead83feff15a411b10b3aa37c561ca9da09aa3eefd",
+      "mainRawSha256": "43e7a437f6d4695553b396ead83feff15a411b10b3aa37c561ca9da09aa3eefd",
+      "blob": "f959ecdce5cb608f19a18ed1ac6424a668ab588e"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-open-items.ts",
+      "workerRawSha256": "c909f6f264ae2b2596f12a33692654262fb07ac71e8bc49339483483e9cdab00",
+      "mainRawSha256": "c909f6f264ae2b2596f12a33692654262fb07ac71e8bc49339483483e9cdab00",
+      "blob": "eb26737b9869b096cea342995a3ac1aa8d596cd3"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-confirmation.ts",
+      "workerRawSha256": "c73dcae3d89df3072a92604ed4548b01167974cabdb9245c232516289a35519c",
+      "mainRawSha256": "c73dcae3d89df3072a92604ed4548b01167974cabdb9245c232516289a35519c",
+      "blob": "aceb530c482dc0bd01f30a5d4f4d555141cd4c06"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-acceptance.ts",
+      "workerRawSha256": "b4c452663440bf74cc11833462e3c10ea43e29a2fe156b3d3c9cdef00fc79c12",
+      "mainRawSha256": "b4c452663440bf74cc11833462e3c10ea43e29a2fe156b3d3c9cdef00fc79c12",
+      "blob": "33be8460e53ed56e4133c05a10bed6a64d4956f3"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/spec-export-portable-handoff.ts",
+      "workerRawSha256": "8528e8274bb82015398ce7deb10292aff6c7b5a06db83b25c6d8346b7a440795",
+      "mainRawSha256": "8528e8274bb82015398ce7deb10292aff6c7b5a06db83b25c6d8346b7a440795",
+      "blob": "d17f4f6af70dcdfe45e7c9f7254d0a610bc519d9"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/SpecExport.tsx",
+      "workerRawSha256": "24617b9ef2f53e6ac5cf5e4907eaa2dea2d0ba8fbe1578714f8cba22338be2a9",
+      "mainRawSha256": "24617b9ef2f53e6ac5cf5e4907eaa2dea2d0ba8fbe1578714f8cba22338be2a9",
+      "blob": "bb550ff43785e62534e8cc8432649c537a84ec6a"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/templates/development.ts",
+      "workerRawSha256": "e17bd23353f95cf0fd62988c8abafecdee65dd99aa0848c890276820bdcd4b7c",
+      "mainRawSha256": "e17bd23353f95cf0fd62988c8abafecdee65dd99aa0848c890276820bdcd4b7c",
+      "blob": "e8993d830cbd07a6aa7b539b34179fdeeed0bc09"
+    },
+    {
+      "path": "docs/reviews/CVF_NIS_T1E_EXPLICIT_OPEN_ITEMS_CONSUMER_COMPLETION_2026-10-05.md",
+      "workerRawSha256": "2d40f81526f10384661beda89d81a99997b013826f698cd9413a2eca567412bb",
+      "mainRawSha256": "2d40f81526f10384661beda89d81a99997b013826f698cd9413a2eca567412bb",
+      "blob": "458ac5f6370ec549b05f05ae21f8d99d1ea5f88b"
+    },
+    {
+      "path": "docs/reviews/CVF_NIS_T1D_SELECTED_CAPABILITY_CONSUMER_CONTRACT_COMPLETION_2026-10-05.md",
+      "workerRawSha256": "21dd5da416234e9cedbc77fc5a90e50a42162acf3a63f928e41593151b809d4c",
+      "mainRawSha256": "21dd5da416234e9cedbc77fc5a90e50a42162acf3a63f928e41593151b809d4c",
+      "blob": "6e38f2f81a2f1d2f216841e200f0440e3542f9dc"
+    },
+    {
+      "path": "docs/reviews/evidence/cvf-nis-t1d-capability-assessment-2026-10-05.json",
+      "workerRawSha256": "9086e9b6b7a6bc73c73ed9595afed0348a4247d5046972b3af7f8f0bd3ac960c",
+      "mainRawSha256": "9086e9b6b7a6bc73c73ed9595afed0348a4247d5046972b3af7f8f0bd3ac960c",
+      "blob": "b0c2f63f0b4366fa7afb2c235e2380822c895698"
+    },
+    {
+      "path": "docs/reviews/evidence/cvf-nis-t1d-acceptance-plan-2026-10-05.json",
+      "workerRawSha256": "6bbd1904a0b1319d345180fb4566d5b473e6b0c232cea5ced134f45096d7706c",
+      "mainRawSha256": "6bbd1904a0b1319d345180fb4566d5b473e6b0c232cea5ced134f45096d7706c",
+      "blob": "777117bd8764626f24880c26a6664b6858879114"
+    },
+    {
+      "path": "docs/reviews/evidence/cvf-nis-t1c-scenario-2026-10-05.json",
+      "workerRawSha256": "40b2b1b0a8aca2004403915188cd050eb296103059a5070eee5b4ce2861d6e0b",
+      "mainRawSha256": "40b2b1b0a8aca2004403915188cd050eb296103059a5070eee5b4ce2861d6e0b",
+      "blob": "b908e587bcef0c9d49c1f47d2f05c1fc47fe2e88"
+    },
+    {
+      "path": "docs/reviews/evidence/cvf-nis-t1e-local-independent-review-2026-10-05.json",
+      "workerRawSha256": "48d78a0e96e9cb9b4b12beb3f15b20c44582256a22e0296b1a5661460a7ffa52",
+      "mainRawSha256": "48d78a0e96e9cb9b4b12beb3f15b20c44582256a22e0296b1a5661460a7ffa52",
+      "blob": "b636cf6b99f62f895c97a94e36995bbef5e5a86a"
+    },
+    {
+      "path": "docs/reference/agent_system_skills/packages/cvf-engineering-spec-driven-development/README.md",
+      "workerRawSha256": "a018b045050c684149c78df961af2f1d27a636d00f378f17d1d5a16461a3aaf9",
+      "mainRawSha256": "a018b045050c684149c78df961af2f1d27a636d00f378f17d1d5a16461a3aaf9",
+      "blob": "74f299dddc3d4be594ac704efebfecd4190aa520"
+    },
+    {
+      "path": "docs/reference/agent_system_skills/packages/cvf-engineering-spec-driven-development/SKILL.md",
+      "workerRawSha256": "17b7b50c8d4c069bd4b84c2487a9ab979b603a5ac86c58304390e06fa50d271c",
+      "mainRawSha256": "17b7b50c8d4c069bd4b84c2487a9ab979b603a5ac86c58304390e06fa50d271c",
+      "blob": "e9bc429059f6846ccdae09216d7956d1536da880"
+    },
+    {
+      "path": "docs/reference/agent_system_skills/packages/cvf-engineering-planning-task-breakdown/README.md",
+      "workerRawSha256": "3cdd62b633fda552b8651be794483ab6abc035f51e1862008012dbc4d57131b8",
+      "mainRawSha256": "3cdd62b633fda552b8651be794483ab6abc035f51e1862008012dbc4d57131b8",
+      "blob": "fb7aaca2424127e919cfa1fd209fd5d57c1d091c"
+    },
+    {
+      "path": "docs/reference/agent_system_skills/packages/cvf-engineering-planning-task-breakdown/SKILL.md",
+      "workerRawSha256": "379a8da6cf5b3cfe012a6816cc03a4345ef303b559d5f0993188222f07547f24",
+      "mainRawSha256": "379a8da6cf5b3cfe012a6816cc03a4345ef303b559d5f0993188222f07547f24",
+      "blob": "0cf1e33825dab47f92c1c1509fc9577414efd0b3"
+    },
+    {
+      "path": "docs/reference/CVF_KNOWLEDGE_ABSORPTION_AND_EXTENSION_PRIORITY_STANDARD_2026-04-13.md",
+      "workerRawSha256": "1eafad1cd23048eff1a11acb27ce51f34bb1929a3306de9237b1ed6734064eee",
+      "mainRawSha256": "1eafad1cd23048eff1a11acb27ce51f34bb1929a3306de9237b1ed6734064eee",
+      "blob": "e142d0ec8fce2d03afcf8b41f7c96b7a7cc7f951"
+    },
+    {
+      "path": "docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md",
+      "workerRawSha256": "e8b91cfc8c792c366807dc7b45312b0baa6000f9e928fe292a8b5c4549323e8a",
+      "mainRawSha256": "e8b91cfc8c792c366807dc7b45312b0baa6000f9e928fe292a8b5c4549323e8a",
+      "blob": "1dfda1a93cf8ea9b2f3046fe3d506e1a2c16633d"
+    },
+    {
+      "path": "DESIGN.md",
+      "workerRawSha256": "15c1b5061bd2e1f763638beb83a84d06eb8ccbc470747c01f236033a834a987e",
+      "mainRawSha256": "15c1b5061bd2e1f763638beb83a84d06eb8ccbc470747c01f236033a834a987e",
+      "blob": "260703ec89ffd2282c3960a891337d2b970740f5"
+    },
+    {
+      "path": "docs/reviews/evidence/cvf-nis-t1c-readiness-gap-2026-10-05.json",
+      "workerRawSha256": "cd124f015c018ae6b621b47b5bf7911d6474f0fd1b58440db62d8f10a800fa42",
+      "mainRawSha256": "cd124f015c018ae6b621b47b5bf7911d6474f0fd1b58440db62d8f10a800fa42",
+      "blob": "5e57e2bf869750decebe6ce47e034009239fbb7e"
+    }
+  ],
+  "checks": [
+    {
+      "id": "worker-head",
+      "status": "PASS"
+    },
+    {
+      "id": "worker-index",
+      "status": "PASS"
+    },
+    {
+      "id": "exact-worker-four",
+      "status": "PASS"
+    },
+    {
+      "id": "cvf-raw:EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-review.ts",
+      "status": "PASS"
+    },
+    {
+      "id": "cvf-blob:EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-review.ts",
+      "status": "PASS"
+    },
+    {
+      "id": "main-canonical:EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-review.ts",
+      "status": "PASS"
+    },
+    {
+      "id": "cvf-raw:EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-open-items.ts",
+      "status": "PASS"
+    },
+    {
+      "id": "cvf-blob:EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-open-items.ts",
+      "status": "PASS"
+    },
+    {
+      "id": "main-canonical:EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-open-items.ts",
+      "status": "PASS"
+    },
+    {
+      "id": "cvf-raw:EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-confirmation.ts",
+      "status": "PASS"
+    },
+    {
+      "id": "cvf-blob:EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-confirmation.ts",
+      "status": "PASS"
+    },
+    {
+      "id": "main-canonical:EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-confirmation.ts",
+      "status": "PASS"
+    },
+    {
+      "id": "cvf-raw:EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-acceptance.ts",
+      "status": "PASS"
+    },
+    {
+      "id": "cvf-blob:EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-acceptance.ts",
+      "status": "PASS"
+    },
+    {
+      "id": "main-canonical:EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-acceptance.ts",
+      "status": "PASS"
+    },
+    {
+      "id": "cvf-raw:EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/spec-export-portable-handoff.ts",
+      "status": "PASS"
+    },
+    {
+      "id": "cvf-blob:EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/spec-export-portable-handoff.ts",
+      "status": "PASS"
+    },
+    {
+      "id": "main-canonical:EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/spec-export-portable-handoff.ts",
+      "status": "PASS"
+    },
+    {
+      "id": "cvf-raw:EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/SpecExport.tsx",
+      "status": "PASS"
+    },
+    {
+      "id": "cvf-blob:EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/SpecExport.tsx",
+      "status": "PASS"
+    },
+    {
+      "id": "main-canonical:EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/SpecExport.tsx",
+      "status": "PASS"
+    },
+    {
+      "id": "cvf-raw:EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/templates/development.ts",
+      "status": "PASS"
+    },
+    {
+      "id": "cvf-blob:EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/templates/development.ts",
+      "status": "PASS"
+    },
+    {
+      "id": "main-canonical:EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/templates/development.ts",
+      "status": "PASS"
+    },
+    {
+      "id": "cvf-raw:docs/reviews/CVF_NIS_T1E_EXPLICIT_OPEN_ITEMS_CONSUMER_COMPLETION_2026-10-05.md",
+      "status": "PASS"
+    },
+    {
+      "id": "cvf-blob:docs/reviews/CVF_NIS_T1E_EXPLICIT_OPEN_ITEMS_CONSUMER_COMPLETION_2026-10-05.md",
+      "status": "PASS"
+    },
+    {
+      "id": "main-canonical:docs/reviews/CVF_NIS_T1E_EXPLICIT_OPEN_ITEMS_CONSUMER_COMPLETION_2026-10-05.md",
+      "status": "PASS"
+    },
+    {
+      "id": "cvf-raw:docs/reviews/CVF_NIS_T1D_SELECTED_CAPABILITY_CONSUMER_CONTRACT_COMPLETION_2026-10-05.md",
+      "status": "PASS"
+    },
+    {
+      "id": "cvf-blob:docs/reviews/CVF_NIS_T1D_SELECTED_CAPABILITY_CONSUMER_CONTRACT_COMPLETION_2026-10-05.md",
+      "status": "PASS"
+    },
+    {
+      "id": "main-canonical:docs/reviews/CVF_NIS_T1D_SELECTED_CAPABILITY_CONSUMER_CONTRACT_COMPLETION_2026-10-05.md",
+      "status": "PASS"
+    },
+    {
+      "id": "cvf-raw:docs/reviews/evidence/cvf-nis-t1d-capability-assessment-2026-10-05.json",
+      "status": "PASS"
+    },
+    {
+      "id": "cvf-blob:docs/reviews/evidence/cvf-nis-t1d-capability-assessment-2026-10-05.json",
+      "status": "PASS"
+    },
+    {
+      "id": "main-canonical:docs/reviews/evidence/cvf-nis-t1d-capability-assessment-2026-10-05.json",
+      "status": "PASS"
+    },
+    {
+      "id": "cvf-raw:docs/reviews/evidence/cvf-nis-t1d-acceptance-plan-2026-10-05.json",
+      "status": "PASS"
+    },
+    {
+      "id": "cvf-blob:docs/reviews/evidence/cvf-nis-t1d-acceptance-plan-2026-10-05.json",
+      "status": "PASS"
+    },
+    {
+      "id": "main-canonical:docs/reviews/evidence/cvf-nis-t1d-acceptance-plan-2026-10-05.json",
+      "status": "PASS"
+    },
+    {
+      "id": "cvf-raw:docs/reviews/evidence/cvf-nis-t1c-scenario-2026-10-05.json",
+      "status": "PASS"
+    },
+    {
+      "id": "cvf-blob:docs/reviews/evidence/cvf-nis-t1c-scenario-2026-10-05.json",
+      "status": "PASS"
+    },
+    {
+      "id": "main-canonical:docs/reviews/evidence/cvf-nis-t1c-scenario-2026-10-05.json",
+      "status": "PASS"
+    },
+    {
+      "id": "cvf-raw:docs/reviews/evidence/cvf-nis-t1e-local-independent-review-2026-10-05.json",
+      "status": "PASS"
+    },
+    {
+      "id": "cvf-blob:docs/reviews/evidence/cvf-nis-t1e-local-independent-review-2026-10-05.json",
+      "status": "PASS"
+    },
+    {
+      "id": "main-canonical:docs/reviews/evidence/cvf-nis-t1e-local-independent-review-2026-10-05.json",
+      "status": "PASS"
+    },
+    {
+      "id": "cvf-raw:docs/reference/agent_system_skills/packages/cvf-engineering-spec-driven-development/README.md",
+      "status": "PASS"
+    },
+    {
+      "id": "cvf-blob:docs/reference/agent_system_skills/packages/cvf-engineering-spec-driven-development/README.md",
+      "status": "PASS"
+    },
+    {
+      "id": "main-canonical:docs/reference/agent_system_skills/packages/cvf-engineering-spec-driven-development/README.md",
+      "status": "PASS"
+    },
+    {
+      "id": "cvf-raw:docs/reference/agent_system_skills/packages/cvf-engineering-spec-driven-development/SKILL.md",
+      "status": "PASS"
+    },
+    {
+      "id": "cvf-blob:docs/reference/agent_system_skills/packages/cvf-engineering-spec-driven-development/SKILL.md",
+      "status": "PASS"
+    },
+    {
+      "id": "main-canonical:docs/reference/agent_system_skills/packages/cvf-engineering-spec-driven-development/SKILL.md",
+      "status": "PASS"
+    },
+    {
+      "id": "cvf-raw:docs/reference/agent_system_skills/packages/cvf-engineering-planning-task-breakdown/README.md",
+      "status": "PASS"
+    },
+    {
+      "id": "cvf-blob:docs/reference/agent_system_skills/packages/cvf-engineering-planning-task-breakdown/README.md",
+      "status": "PASS"
+    },
+    {
+      "id": "main-canonical:docs/reference/agent_system_skills/packages/cvf-engineering-planning-task-breakdown/README.md",
+      "status": "PASS"
+    },
+    {
+      "id": "cvf-raw:docs/reference/agent_system_skills/packages/cvf-engineering-planning-task-breakdown/SKILL.md",
+      "status": "PASS"
+    },
+    {
+      "id": "cvf-blob:docs/reference/agent_system_skills/packages/cvf-engineering-planning-task-breakdown/SKILL.md",
+      "status": "PASS"
+    },
+    {
+      "id": "main-canonical:docs/reference/agent_system_skills/packages/cvf-engineering-planning-task-breakdown/SKILL.md",
+      "status": "PASS"
+    },
+    {
+      "id": "cvf-raw:docs/reference/CVF_KNOWLEDGE_ABSORPTION_AND_EXTENSION_PRIORITY_STANDARD_2026-04-13.md",
+      "status": "PASS"
+    },
+    {
+      "id": "cvf-blob:docs/reference/CVF_KNOWLEDGE_ABSORPTION_AND_EXTENSION_PRIORITY_STANDARD_2026-04-13.md",
+      "status": "PASS"
+    },
+    {
+      "id": "main-canonical:docs/reference/CVF_KNOWLEDGE_ABSORPTION_AND_EXTENSION_PRIORITY_STANDARD_2026-04-13.md",
+      "status": "PASS"
+    },
+    {
+      "id": "cvf-raw:docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md",
+      "status": "PASS"
+    },
+    {
+      "id": "cvf-blob:docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md",
+      "status": "PASS"
+    },
+    {
+      "id": "main-canonical:docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md",
+      "status": "PASS"
+    },
+    {
+      "id": "cvf-raw:DESIGN.md",
+      "status": "PASS"
+    },
+    {
+      "id": "cvf-blob:DESIGN.md",
+      "status": "PASS"
+    },
+    {
+      "id": "main-canonical:DESIGN.md",
+      "status": "PASS"
+    },
+    {
+      "id": "cvf-raw:docs/reviews/evidence/cvf-nis-t1c-readiness-gap-2026-10-05.json",
+      "status": "PASS"
+    },
+    {
+      "id": "cvf-blob:docs/reviews/evidence/cvf-nis-t1c-readiness-gap-2026-10-05.json",
+      "status": "PASS"
+    },
+    {
+      "id": "main-canonical:docs/reviews/evidence/cvf-nis-t1c-readiness-gap-2026-10-05.json",
+      "status": "PASS"
+    },
+    {
+      "id": "mirror-pin",
+      "status": "PASS"
+    },
+    {
+      "id": "mirror-clean",
+      "status": "PASS"
+    },
+    {
+      "id": "upstream-raw:LICENSE",
+      "status": "PASS"
+    },
+    {
+      "id": "upstream-blob:LICENSE",
+      "status": "PASS"
+    },
+    {
+      "id": "upstream-raw:templates/commands/plan.md",
+      "status": "PASS"
+    },
+    {
+      "id": "upstream-blob:templates/commands/plan.md",
+      "status": "PASS"
+    },
+    {
+      "id": "upstream-raw:templates/commands/tasks.md",
+      "status": "PASS"
+    },
+    {
+      "id": "upstream-blob:templates/commands/tasks.md",
+      "status": "PASS"
+    },
+    {
+      "id": "upstream-raw:templates/commands/analyze.md",
+      "status": "PASS"
+    },
+    {
+      "id": "upstream-blob:templates/commands/analyze.md",
+      "status": "PASS"
+    },
+    {
+      "id": "upstream-raw:templates/spec-template.md",
+      "status": "PASS"
+    },
+    {
+      "id": "upstream-blob:templates/spec-template.md",
+      "status": "PASS"
+    },
+    {
+      "id": "upstream-raw:templates/plan-template.md",
+      "status": "PASS"
+    },
+    {
+      "id": "upstream-blob:templates/plan-template.md",
+      "status": "PASS"
+    },
+    {
+      "id": "upstream-raw:templates/tasks-template.md",
+      "status": "PASS"
+    },
+    {
+      "id": "upstream-blob:templates/tasks-template.md",
+      "status": "PASS"
+    },
+    {
+      "id": "upstream-raw:scripts/powershell/check-prerequisites.ps1",
+      "status": "PASS"
+    },
+    {
+      "id": "upstream-blob:scripts/powershell/check-prerequisites.ps1",
+      "status": "PASS"
+    },
+    {
+      "id": "upstream-raw:scripts/powershell/setup-plan.ps1",
+      "status": "PASS"
+    },
+    {
+      "id": "upstream-blob:scripts/powershell/setup-plan.ps1",
+      "status": "PASS"
+    },
+    {
+      "id": "upstream-raw:scripts/powershell/setup-tasks.ps1",
+      "status": "PASS"
+    },
+    {
+      "id": "upstream-blob:scripts/powershell/setup-tasks.ps1",
+      "status": "PASS"
+    },
+    {
+      "id": "upstream-raw:scripts/powershell/common.ps1",
+      "status": "PASS"
+    },
+    {
+      "id": "upstream-blob:scripts/powershell/common.ps1",
+      "status": "PASS"
+    },
+    {
+      "id": "dependencies-budget",
+      "status": "PASS"
+    },
+    {
+      "id": "dependency-raw:docs/reference/agent_system_skills/registry/entries/cvf-engineering-planning-task-breakdown.json",
+      "status": "PASS"
+    },
+    {
+      "id": "dependency-blob:docs/reference/agent_system_skills/registry/entries/cvf-engineering-planning-task-breakdown.json",
+      "status": "PASS"
+    },
+    {
+      "id": "dependency-raw:docs/reference/agent_system_skills/registry/entries/cvf-engineering-spec-driven-development.json",
+      "status": "PASS"
+    },
+    {
+      "id": "dependency-blob:docs/reference/agent_system_skills/registry/entries/cvf-engineering-spec-driven-development.json",
+      "status": "PASS"
+    },
+    {
+      "id": "dependency-raw:docs/reviews/evidence/cvf-nis-t1e-frozen-legacy-2026-10-05.json",
+      "status": "PASS"
+    },
+    {
+      "id": "dependency-blob:docs/reviews/evidence/cvf-nis-t1e-frozen-legacy-2026-10-05.json",
+      "status": "PASS"
+    },
+    {
+      "id": "dependency-raw:EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/vitest.config.ts",
+      "status": "PASS"
+    },
+    {
+      "id": "dependency-blob:EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/vitest.config.ts",
+      "status": "PASS"
+    },
+    {
+      "id": "planned35",
+      "status": "PASS"
+    },
+    {
+      "id": "BC-V1-not-executed",
+      "status": "PASS"
+    },
+    {
+      "id": "two-jobs",
+      "status": "PASS"
+    },
+    {
+      "id": "sticky-decision-admission",
+      "status": "PASS"
+    },
+    {
+      "id": "item-stale-admission",
+      "status": "PASS"
+    },
+    {
+      "id": "helper-absent",
+      "status": "PASS"
+    },
+    {
+      "id": "positive-no-unknown",
+      "status": "PASS"
+    },
+    {
+      "id": "mutation:changed-pin",
+      "status": "PASS"
+    },
+    {
+      "id": "mutation:missing-task",
+      "status": "PASS"
+    },
+    {
+      "id": "mutation:missing-validation",
+      "status": "PASS"
+    },
+    {
+      "id": "mutation:dangling",
+      "status": "PASS"
+    },
+    {
+      "id": "mutation:cycle",
+      "status": "PASS"
+    },
+    {
+      "id": "mutation:rehashed-BUILD",
+      "status": "PASS"
+    },
+    {
+      "id": "mutation:sticky-stale",
+      "status": "PASS"
+    },
+    {
+      "id": "C3-worker-excludes-stale",
+      "status": "PASS"
+    },
+    {
+      "id": "worker-unbound-gap",
+      "status": "PASS"
+    },
+    {
+      "id": "saved-worker-preimpl",
+      "status": "PASS"
+    },
+    {
+      "id": "saved-log:fast-gate-final.log",
+      "status": "PASS"
+    },
+    {
+      "id": "saved-log:scratch/self_check_run.log",
+      "status": "PASS"
+    },
+    {
+      "id": "saved-fast-pass",
+      "status": "PASS"
+    }
+  ],
+  "negativeControls": [
+    {
+      "id": "changed-pin",
+      "sha256": "f1591018fdaa97077e868a3dd4a942b79a7fa892f0b93b938394713b6d4c6746",
+      "rejectedBy": [
+        "SOURCE_PIN"
+      ]
+    },
+    {
+      "id": "missing-task",
+      "sha256": "99197df6096f0515be452cdaa2161575c857efedb0510d08a8f83b03a3ffbbeb",
+      "rejectedBy": [
+        "MISSING_TASK"
+      ]
+    },
+    {
+      "id": "missing-validation",
+      "sha256": "436e42e9d4efab7005fdab64c94da5d1d55f7743db219feeae53718c778ec7f9",
+      "rejectedBy": [
+        "MISSING_VALIDATION"
+      ]
+    },
+    {
+      "id": "dangling",
+      "sha256": "3f9533e746f5334ae13513c22e5092ee26a46195933a2975c2a950fd6e116ee9",
+      "rejectedBy": [
+        "DANGLING"
+      ]
+    },
+    {
+      "id": "cycle",
+      "sha256": "209ad83eaf85d0ce418adb0b255bfe7eee0466fc4b1e0278af3ce8d06332ec44",
+      "rejectedBy": [
+        "CYCLE"
+      ]
+    },
+    {
+      "id": "rehashed-BUILD",
+      "sha256": "c441f048aee9c4c7f9484af5eaaf0d32ccb91f34fce5327e03a61efe64b6b847",
+      "rejectedBy": [
+        "SHAPE_OR_GRANT"
+      ]
+    }
+  ],
+  "consumedReceipts": [
+    {
+      "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF-NIS-T1F\\.cvf\\runtime\\nis-t1f-worker-20261005\\pre-implementation\\pre-implementation.json",
+      "sha256": "9ff251d5473e8e30f4b8db21560bf9553a579b9db17e97f314f62794884419f1",
+      "status": "PASS"
+    },
+    {
+      "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF-NIS-T1F\\.cvf\\runtime\\nis-t1f-worker-20261005\\fast-gate-final.log",
+      "sha256": "64561456701c0f505bac3edc0451910f09a6e79569774cdac8d17194d87e2f90"
+    },
+    {
+      "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF-NIS-T1F\\.cvf\\runtime\\nis-t1f-worker-20261005\\scratch\\self_check_run.log",
+      "sha256": "343720f7b9122b46d434f74a8eb0b666ebb3352ee444a8aebfd8b09d4585b9d4"
+    }
+  ],
+  "BC-V1": "NOT_EXECUTED; manual baseline and separately admitted helper comparison required before selecting implementation",
+  "plannedCases": "35 NOT_EXECUTED",
+  "claimBoundary": "Independent source/contract assertions only; no product helper, provider, runtime, UX, cost comparison or build-ready proof",
+  "workerMaterialCommit": "33f3644526d5f82f09c2e4f42b7641d666aa939e",
+  "closureBaseHead": "33f3644526d5f82f09c2e4f42b7641d666aa939e",
+  "closureBatchPaths": [
+    "docs/baselines/CVF_GC018_NIS_T1F_BUILD_READY_BRIDGE_CONTRACT_2026-10-05.md",
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1F_BUILD_READY_BRIDGE_CONTRACT_2026-10-05.md",
+    "docs/reviews/CVF_NIS_T1F_BUILD_READY_BRIDGE_CONTRACT_COMPLETION_2026-10-05.md",
+    "docs/reviews/evidence/cvf-nis-t1f-local-independent-review-2026-10-05.json",
+    "AGENT_HANDOFF_V63_2026-09-18.md",
+    "CVF_SESSION_MEMORY.md",
+    "CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json",
+    "CVF_SESSION/state/entries/nextAllowedMove.json",
+    "CVF_SESSION/ACTIVE_SESSION_STATE.json",
+    "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json"
+  ],
+  "acceptedArtifactHashes": {
+    "docs/reviews/CVF_NIS_T1F_BUILD_READY_BRIDGE_CONTRACT_WORKER_RETURN_2026-10-05.md": "8f5936ea8debb681cc7ca7504b8d4bbcfb879ec6f4a207c02217a27b166b0e19",
+    "docs/reviews/evidence/cvf-nis-t1f-build-ready-capability-assessment-2026-10-05.json": "fdc4f4a032f66473e805098f358ece95f7bb7a3db6ef0fd849de23d5a9de5c84",
+    "docs/reviews/CVF_NIS_T1F_BUILD_READY_BRIDGE_CONTRACT_2026-10-05.md": "64b5f3759aeb83f11e8015a7870b0d625b00cf19ac8ddc24ec70af32fa5111a7",
+    "docs/reviews/evidence/cvf-nis-t1f-build-ready-acceptance-plan-2026-10-05.json": "2f068f9f4b3c810a9531f7b12ff2b177cd13f2558da336a0398d1debecaa07e4"
+  },
+  "localDispositions": [
+    {
+      "id": "LD-1",
+      "disposition": "MODIFY_CONDITIONAL_ACCEPTANCE",
+      "finding": "Accept selected source assessment and lineage/trace vocabulary; reject unconditional lasting-helper preference and IMPLEMENTATION_READY label. Pure unimported library has no demonstrated receiving consumer or value advantage."
+    },
+    {
+      "id": "LD-2",
+      "disposition": "REJECT_C3_DEFAULT",
+      "finding": "Existing sticky decision/item reconfirmation must block affected readiness and rebinding even when answer/disposition digests match."
+    },
+    {
+      "id": "LD-3",
+      "disposition": "MODIFY_BINDING_AND_LINKS",
+      "finding": "Unbound, incomplete, mismatched or stale pairing requires review/rebind, never positive ready. Rebind alone is not technical review. Cross-links must be coherent, not merely existing ids; no unknowns means absence of declared blocker, not complete requirement semantics."
+    },
+    {
+      "id": "LD-4",
+      "disposition": "MODIFY_SOURCE_CLAIM",
+      "finding": "Markdown can represent digest/revision metadata; selected upstream output does not provide the proposed CVF binding by default. Reject blanket cannot-carry claims and unmeasured manual-review impossibility claim."
+    },
+    {
+      "id": "LD-5",
+      "disposition": "DEFER_BC_V1_EXECUTION",
+      "finding": "No product helper exists. Local source/contract mutation checks are not a BC-V1 helper arm or manual cost trial. Original35 planned cases remain NOT_EXECUTED; use predeclared total-cost comparison before committing to implementation."
+    },
+    {
+      "id": "LD-6",
+      "disposition": "PRESENTATION_REPAIR_ONLY",
+      "finding": "Canonical envelope wrapped as structured text block at Local closure; no new relay file. Existing transfer remains historical evidence. Prior dispatch-rule material handoff marker synchronized in dedicated commit01faf74c7 after its omission was found; failed diagnostics retained."
+    }
+  ],
+  "localChoices": [
+    {
+      "id": "C-1",
+      "disposition": "MODIFY",
+      "decision": "No UI; document/receiver route first. Three-file helper envelope is CONDITIONAL, not selected for implementation without BC-V1 and a named consumer."
+    },
+    {
+      "id": "C-2",
+      "disposition": "ACCEPT_WITH_CONDITION",
+      "decision": "Async SHA-256 digests, strict canonical bytes/keys and safe reference ids; accepted source bytes must bind review state and file hash. A caller-supplied pairing is a limitation, never verified identity."
+    },
+    {
+      "id": "C-3",
+      "disposition": "REJECT_DEFAULT",
+      "decision": "Include decision needsReconfirmation in the canonical decision evidence or independently refuse affected stale decisions before any ready/bind result. Existing decisionNeedsReview also checks stale items. A matching answer digest must not bypass sticky source reconfirmation."
+    },
+    {
+      "id": "C-4",
+      "disposition": "ACCEPT_WITH_CONDITION",
+      "decision": "Seven labels are advisory task metadata, not permission or complete classification. Empty/OTHER categories never authorize sensitive work; supplied delegation excludes the six named business classes."
+    },
+    {
+      "id": "C-5",
+      "disposition": "ACCEPT_WITH_CONDITION",
+      "decision": "Proposed 100/100/300/300/50 and 2000-character bounds are fail-closed resource ceilings, not completeness quotas. Exact nested shapes, distinct safe ids, finite input/reference bytes and coherent cross-links need specified negative cases before implementation."
+    },
+    {
+      "id": "C-6",
+      "disposition": "MODIFY",
+      "decision": "Local supplies a reviewed receiving format and manual review first, tied to existing accepted packet bytes/revision. No ad-hoc production paste path or caller hash trust as source proof. No store/UI/runtime activation."
+    },
+    {
+      "id": "C-7",
+      "disposition": "ACCEPT_WITH_REDESIGN",
+      "decision": "BC-V1 is the route-selection gate. Manual baseline before helper work; helper arm only in separately admitted bounded experiment. Define seeded inputs, clean controls, blinding, scoring, repeatability and comparable-effort threshold before execution. If manual covers D1-D8 at comparable total effort and handles D9 visibly, choose docs and drop helper."
+    }
+  ],
+  "finalDisposition": "CLOSED_PASS_BOUNDED_SOURCE_CONTRACT_MODIFIED_HELPER_DEFERRED"
+}
