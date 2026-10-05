@@ -1,0 +1,118 @@
+{
+  "schemaVersion": "cvf.nisT1gDispatchInputs.v1",
+  "baseHead": "7747d206264bbc24c86b31ef042485db8f81b147",
+  "authority": "Operator next under delegated Local orchestration; T1F Local Minimum Next Delta controls. Exact documentary receiver and experiment preparation only.",
+  "sources": {
+    "docs/reviews/CVF_NIS_T1F_BUILD_READY_BRIDGE_CONTRACT_COMPLETION_2026-10-05.md": {
+      "rawSha256": "14b740490b5a3de638fde1155bc1ae7d2d0ffc39865af44ae25e5016b887dae6",
+      "gitBlob": "df672b72c400a8781c8bf04932f6baab98847707",
+      "symbols": [
+        "Minimum Next Delta",
+        "Local Choices C-1 To C-7"
+      ]
+    },
+    "docs/reviews/CVF_NIS_T1F_BUILD_READY_BRIDGE_CONTRACT_2026-10-05.md": {
+      "rawSha256": "64b5f3759aeb83f11e8015a7870b0d625b00cf19ac8ddc24ec70af32fa5111a7",
+      "gitBlob": "ba7a2f135c4ab7da5f909f163014e872e5856256",
+      "symbols": [
+        "BC-V1"
+      ]
+    },
+    "docs/reviews/evidence/cvf-nis-t1f-build-ready-acceptance-plan-2026-10-05.json": {
+      "rawSha256": "2f068f9f4b3c810a9531f7b12ff2b177cd13f2558da336a0398d1debecaa07e4",
+      "gitBlob": "b45b7a41a6c1565d4b499608d95167174664bd05",
+      "symbols": [
+        "valueFalsifier",
+        "fixtures"
+      ]
+    },
+    "docs/reviews/evidence/cvf-nis-t1f-local-independent-review-2026-10-05.json": {
+      "rawSha256": "64f50eb71643d15fa5a2f79a4c15042e9c4cd7fcd3383340988548c346e8d422",
+      "gitBlob": "d18257a8c72caa1d9303f816e9b1ab8384142e79",
+      "symbols": [
+        "claimBoundary"
+      ]
+    },
+    "docs/reviews/evidence/cvf-nis-t1e-frozen-legacy-2026-10-05.json": {
+      "rawSha256": "98a1d469d8ca5166ca5d44bedb19518d0e249aa8cc515af3861ae15312e6c554",
+      "gitBlob": "eef2d5bd870d7a07acc2506e86dee014c9748525",
+      "symbols": [
+        "controls"
+      ]
+    },
+    "docs/reviews/evidence/cvf-nis-t1e-local-independent-review-2026-10-05.json": {
+      "rawSha256": "48d78a0e96e9cb9b4b12beb3f15b20c44582256a22e0296b1a5661460a7ffa52",
+      "gitBlob": "b636cf6b99f62f895c97a94e36995bbef5e5a86a",
+      "symbols": [
+        "localOldProducerCapture"
+      ]
+    },
+    "docs/reviews/evidence/cvf-nis-t1d-acceptance-plan-2026-10-05.json": {
+      "rawSha256": "6bbd1904a0b1319d345180fb4566d5b473e6b0c232cea5ced134f45096d7706c",
+      "gitBlob": "777117bd8764626f24880c26a6664b6858879114",
+      "symbols": [
+        "fixtures"
+      ]
+    },
+    "docs/reviews/evidence/cvf-nis-t1c-scenario-2026-10-05.json": {
+      "rawSha256": "40b2b1b0a8aca2004403915188cd050eb296103059a5070eee5b4ce2861d6e0b",
+      "gitBlob": "b908e587bcef0c9d49c1f47d2f05c1fc47fe2e88",
+      "symbols": [
+        "stageInputs"
+      ]
+    },
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-review.ts": {
+      "rawSha256": "43e7a437f6d4695553b396ead83feff15a411b10b3aa37c561ca9da09aa3eefd",
+      "gitBlob": "f959ecdce5cb608f19a18ed1ac6424a668ab588e",
+      "symbols": [
+        "decisionNeedsReview",
+        "buildReviewedDraftPacket"
+      ]
+    },
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-open-items.ts": {
+      "rawSha256": "c909f6f264ae2b2596f12a33692654262fb07ac71e8bc49339483483e9cdab00",
+      "gitBlob": "eb26737b9869b096cea342995a3ac1aa8d596cd3",
+      "symbols": [
+        "ReviewOpenItem"
+      ]
+    },
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-confirmation.ts": {
+      "rawSha256": "c73dcae3d89df3072a92604ed4548b01167974cabdb9245c232516289a35519c",
+      "gitBlob": "aceb530c482dc0bd01f30a5d4f4d555141cd4c06",
+      "symbols": [
+        "createSpecConfirmationCandidate"
+      ]
+    },
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-acceptance.ts": {
+      "rawSha256": "b4c452663440bf74cc11833462e3c10ea43e29a2fe156b3d3c9cdef00fc79c12",
+      "gitBlob": "33be8460e53ed56e4133c05a10bed6a64d4956f3",
+      "symbols": [
+        "prepareIntentSpecAcceptance"
+      ]
+    },
+    "docs/reviews/evidence/cvf-nis-t1c-replay-2026-10-05.json": {
+      "rawSha256": "4fae2c19ca58d0b7a933c7fc883cfcc5929c5d1ba61e658edd3d0d95b5da5208",
+      "gitBlob": "9b0bf7aa43449ba8f0a56bab86b70cca6c15d88a",
+      "symbols": [
+        "exportedBaselinePacket",
+        "exportedRevisedPacket"
+      ]
+    }
+  },
+  "workerArtifacts": [
+    "docs/reviews/CVF_NIS_T1G_RECEIVER_MANUAL_BASELINE_WORKER_RETURN_2026-10-05.md",
+    "docs/reviews/CVF_NIS_T1G_RECEIVER_MANUAL_BASELINE_2026-10-05.md",
+    "docs/reviews/evidence/cvf-nis-t1g-manual-baseline-casepack-2026-10-05.json",
+    "docs/reviews/evidence/cvf-nis-t1g-manual-baseline-protocol-2026-10-05.json"
+  ],
+  "newPathsAbsent": [
+    "docs/reviews/CVF_NIS_T1G_RECEIVER_MANUAL_BASELINE_WORKER_RETURN_2026-10-05.md",
+    "docs/reviews/CVF_NIS_T1G_RECEIVER_MANUAL_BASELINE_2026-10-05.md",
+    "docs/reviews/evidence/cvf-nis-t1g-manual-baseline-casepack-2026-10-05.json",
+    "docs/reviews/evidence/cvf-nis-t1g-manual-baseline-protocol-2026-10-05.json"
+  ],
+  "sourceReadBudget": "Named existing inputs only; at most two directly referenced native dependencies with a decision-changing reason and raw/blob pin. No upstream reread or broad research.",
+  "fixtureBinding": "Two concrete jobs: periodic report from exact T1C frozen replay plus T1F/T1D source-state references; tool lending from exact T1E LG3. LG1/LG2 are only minimal compatibility controls and cannot support the full report business rules. Frozen candidate/record examples are synthetic historical evidence, not new acceptance events. When an accepted-file/state pairing for a job cannot be established, mark SOURCE_BINDING_NOT_ESTABLISHED and experiment admission HOLD; never invent a record or silently substitute a generic job. That honest gap is an allowed preparation disposition, not a requirement to implement a producer.",
+  "experimentStatus": "NOT_EXECUTED; no baseline reviewer or helper arm in this grant",
+  "claimBoundary": "Documentary receiver and frozen experimental materials only; no helper/runtime/product/UX/value/build-ready result."
+}

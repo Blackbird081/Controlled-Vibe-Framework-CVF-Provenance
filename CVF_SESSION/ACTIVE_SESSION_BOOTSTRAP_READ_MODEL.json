@@ -2,16 +2,16 @@
   "schemaVersion": "0.1.0",
   "currentMode": "cvf_ncr_p10_closed_p11_parked",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=CVF-NIS; NEXT_ACTION_CLASS=BOUNDED_SELECTION_AND_DISPATCH_PLANNING; BATCH_ID=CVF-NIS-T1F. T1F source/contract CLOSED_PASS_BOUNDED with Local MODIFY in docs/reviews/CVF_NIS_T1F_BUILD_READY_BRIDGE_CONTRACT_COMPLETION_2026-10-05.md.119 independent source/contract assertions and7 negative controls; no helper/BC-V1 runtime proof. C-1..C-7 decided; document receiver/manual baseline first, helper conditional on separately admitted BC-V1 and real consumer.35 cases NOT_EXECUTED; no automatic S2 or product implementation. Canonical envelope formatted; chat transfer standard applies, no new relay. Prior NIS closed; original workers/failed logs retained. CCMA parked; S05/C1/send/B2 STOP; Q001/Q004 OPEN/Profile A; P11/deploy/FLAL T4/T5 parked; FR2 historical loss retained; costs UNKNOWN; LHW24 closed; no push.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-NIS; NEXT_ACTION_CLASS=EXECUTE_BOUNDED_WORK_ORDER; BATCH_ID=CVF-NIS-T1G. Documentary receiver and frozen manual-baseline preparation in docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1G_RECEIVER_MANUAL_BASELINE_2026-10-05.md. Exact4 docs/evidence; two source-bound synthetic jobs,11 concrete cases, contamination/scoring/time/total-effort protocol. Worker no stage/commit or experimental arm; Local independent preparation review/commit. No helper/product/runtime/provider/network/install/store/UAC/BUILD/general S2/public/deploy. BC-V1 and35 prior product cases NOT_EXECUTED; prior NIS closed, original workers retained. CCMA parked; S05/C1/send/B2 STOP; Q001/Q004 OPEN/Profile A; P11/deploy/FLAL T4/T5 parked; FR2 historical loss retained; costs UNKNOWN; LHW24 closed; no push.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_NIS_T1F_BUILD_READY_BRIDGE_CONTRACT_2026-10-05.md",
-    "baselineSha256": "8d81a62dc9c8b1fc2b21f55a187ae8d3a280bb73be9a914643fe9173f33d9d2b",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1F_BUILD_READY_BRIDGE_CONTRACT_2026-10-05.md",
-    "workOrderSha256": "9be75da7b4e6b552721ab5c9ff8df9e2be40a55b801104470018c200c13e9cab"
+    "baselinePath": "docs/baselines/CVF_GC018_NIS_T1G_RECEIVER_MANUAL_BASELINE_2026-10-05.md",
+    "baselineSha256": "dfbbd580fde321cd82476ea5b620bc6ffa5cfa0e65430ab078a108c1d206bc06",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1G_RECEIVER_MANUAL_BASELINE_2026-10-05.md",
+    "workOrderSha256": "49bf0f4463bf823c410a31613430aabfec81bfa83697b50f5ffd407e26efaf78"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }
