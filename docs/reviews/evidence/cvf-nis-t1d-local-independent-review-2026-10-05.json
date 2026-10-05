@@ -1,0 +1,440 @@
+{
+  "schemaVersion": "cvf.nisT1dLocalIndependentReview.v1",
+  "batchId": "CVF-NIS-T1D",
+  "observedAtUtc": "2026-10-05T09:59:32.065567+00:00",
+  "actor": "nis-t1d-local-reviewer",
+  "invocationId": "nis-t1d-local-independent-20261005",
+  "workerActor": "nis-t1d-internal-worker",
+  "workerInvocationId": "nis-t1d-worker-20261005",
+  "status": "PASS_INDEPENDENT_PROBE",
+  "probeClass": "SOURCE_AND_DECLARED_CONTRACT_ONLY",
+  "scriptSha256": "f000dae624ad03b0564723884f3ba5df2271dcac5209aeaa6074ede7a5ea4919",
+  "oracleBeforeExecution": {
+    "sourceHash": "c8746be8645af3d287c084a6338e84bbf502b4ffc3f9f750f58236c0085a34dc",
+    "unknownTexts": [
+      "How long raw entries are kept is not decided.",
+      "The deadline timezone is not decided.",
+      "Behavior when the deadline falls on a public holiday is not decided.",
+      "The export file format is not decided."
+    ],
+    "ackAfterSourceChange": null,
+    "canContinueAfterSourceChange": false,
+    "scope": "SPEC_REVIEW_ONLY_NO_BUILD_AUTHORITY",
+    "buildReadiness": "NOT_ASSESSED",
+    "legacyKeySetRetained": true
+  },
+  "checks": [
+    {
+      "id": "WORKER_FOUR_BYTES_MATCH",
+      "status": "PASS"
+    },
+    {
+      "id": "CVF_RAW:EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-review.ts",
+      "status": "PASS"
+    },
+    {
+      "id": "CVF_BLOB:EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-review.ts",
+      "status": "PASS"
+    },
+    {
+      "id": "CVF_RAW:EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecReview.tsx",
+      "status": "PASS"
+    },
+    {
+      "id": "CVF_BLOB:EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecReview.tsx",
+      "status": "PASS"
+    },
+    {
+      "id": "CVF_RAW:EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-confirmation.ts",
+      "status": "PASS"
+    },
+    {
+      "id": "CVF_BLOB:EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-confirmation.ts",
+      "status": "PASS"
+    },
+    {
+      "id": "CVF_RAW:EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-acceptance.ts",
+      "status": "PASS"
+    },
+    {
+      "id": "CVF_BLOB:EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-acceptance.ts",
+      "status": "PASS"
+    },
+    {
+      "id": "CVF_RAW:EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/spec-export-portable-handoff.ts",
+      "status": "PASS"
+    },
+    {
+      "id": "CVF_BLOB:EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/spec-export-portable-handoff.ts",
+      "status": "PASS"
+    },
+    {
+      "id": "CVF_RAW:EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/SpecExport.tsx",
+      "status": "PASS"
+    },
+    {
+      "id": "CVF_BLOB:EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/SpecExport.tsx",
+      "status": "PASS"
+    },
+    {
+      "id": "CVF_RAW:docs/reviews/CVF_NIS_T1C_BUILDER_HANDOFF_VALUE_PROOF_COMPLETION_2026-10-05.md",
+      "status": "PASS"
+    },
+    {
+      "id": "CVF_BLOB:docs/reviews/CVF_NIS_T1C_BUILDER_HANDOFF_VALUE_PROOF_COMPLETION_2026-10-05.md",
+      "status": "PASS"
+    },
+    {
+      "id": "CVF_RAW:docs/reviews/evidence/cvf-nis-t1c-local-independent-review-2026-10-05.json",
+      "status": "PASS"
+    },
+    {
+      "id": "CVF_BLOB:docs/reviews/evidence/cvf-nis-t1c-local-independent-review-2026-10-05.json",
+      "status": "PASS"
+    },
+    {
+      "id": "CVF_RAW:docs/reviews/CVF_NIS_T1B_D_INTEGRATED_REVIEW_PERSISTENCE_COMPLETION_2026-10-05.md",
+      "status": "PASS"
+    },
+    {
+      "id": "CVF_BLOB:docs/reviews/CVF_NIS_T1B_D_INTEGRATED_REVIEW_PERSISTENCE_COMPLETION_2026-10-05.md",
+      "status": "PASS"
+    },
+    {
+      "id": "NINE_SOURCE_ROWS",
+      "status": "PASS"
+    },
+    {
+      "id": "ASSESSMENT_PIN:EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-review.ts",
+      "status": "PASS"
+    },
+    {
+      "id": "ASSESSMENT_PIN:EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecReview.tsx",
+      "status": "PASS"
+    },
+    {
+      "id": "ASSESSMENT_PIN:EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-confirmation.ts",
+      "status": "PASS"
+    },
+    {
+      "id": "ASSESSMENT_PIN:EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-acceptance.ts",
+      "status": "PASS"
+    },
+    {
+      "id": "ASSESSMENT_PIN:EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/spec-export-portable-handoff.ts",
+      "status": "PASS"
+    },
+    {
+      "id": "ASSESSMENT_PIN:EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/SpecExport.tsx",
+      "status": "PASS"
+    },
+    {
+      "id": "ASSESSMENT_PIN:docs/reviews/CVF_NIS_T1C_BUILDER_HANDOFF_VALUE_PROOF_COMPLETION_2026-10-05.md",
+      "status": "PASS"
+    },
+    {
+      "id": "ASSESSMENT_PIN:docs/reviews/evidence/cvf-nis-t1c-local-independent-review-2026-10-05.json",
+      "status": "PASS"
+    },
+    {
+      "id": "ASSESSMENT_PIN:docs/reviews/CVF_NIS_T1B_D_INTEGRATED_REVIEW_PERSISTENCE_COMPLETION_2026-10-05.md",
+      "status": "PASS"
+    },
+    {
+      "id": "UPSTREAM_14_PLUS_2",
+      "status": "PASS"
+    },
+    {
+      "id": "UPSTREAM_RAW:LICENSE",
+      "status": "PASS"
+    },
+    {
+      "id": "UPSTREAM_BLOB:LICENSE",
+      "status": "PASS"
+    },
+    {
+      "id": "UPSTREAM_RAW:templates/commands/clarify.md",
+      "status": "PASS"
+    },
+    {
+      "id": "UPSTREAM_BLOB:templates/commands/clarify.md",
+      "status": "PASS"
+    },
+    {
+      "id": "UPSTREAM_RAW:templates/commands/checklist.md",
+      "status": "PASS"
+    },
+    {
+      "id": "UPSTREAM_BLOB:templates/commands/checklist.md",
+      "status": "PASS"
+    },
+    {
+      "id": "UPSTREAM_RAW:templates/commands/plan.md",
+      "status": "PASS"
+    },
+    {
+      "id": "UPSTREAM_BLOB:templates/commands/plan.md",
+      "status": "PASS"
+    },
+    {
+      "id": "UPSTREAM_RAW:templates/commands/tasks.md",
+      "status": "PASS"
+    },
+    {
+      "id": "UPSTREAM_BLOB:templates/commands/tasks.md",
+      "status": "PASS"
+    },
+    {
+      "id": "UPSTREAM_RAW:templates/commands/analyze.md",
+      "status": "PASS"
+    },
+    {
+      "id": "UPSTREAM_BLOB:templates/commands/analyze.md",
+      "status": "PASS"
+    },
+    {
+      "id": "UPSTREAM_RAW:templates/spec-template.md",
+      "status": "PASS"
+    },
+    {
+      "id": "UPSTREAM_BLOB:templates/spec-template.md",
+      "status": "PASS"
+    },
+    {
+      "id": "UPSTREAM_RAW:templates/plan-template.md",
+      "status": "PASS"
+    },
+    {
+      "id": "UPSTREAM_BLOB:templates/plan-template.md",
+      "status": "PASS"
+    },
+    {
+      "id": "UPSTREAM_RAW:templates/tasks-template.md",
+      "status": "PASS"
+    },
+    {
+      "id": "UPSTREAM_BLOB:templates/tasks-template.md",
+      "status": "PASS"
+    },
+    {
+      "id": "UPSTREAM_RAW:templates/checklist-template.md",
+      "status": "PASS"
+    },
+    {
+      "id": "UPSTREAM_BLOB:templates/checklist-template.md",
+      "status": "PASS"
+    },
+    {
+      "id": "UPSTREAM_RAW:scripts/powershell/check-prerequisites.ps1",
+      "status": "PASS"
+    },
+    {
+      "id": "UPSTREAM_BLOB:scripts/powershell/check-prerequisites.ps1",
+      "status": "PASS"
+    },
+    {
+      "id": "UPSTREAM_RAW:scripts/powershell/setup-plan.ps1",
+      "status": "PASS"
+    },
+    {
+      "id": "UPSTREAM_BLOB:scripts/powershell/setup-plan.ps1",
+      "status": "PASS"
+    },
+    {
+      "id": "UPSTREAM_RAW:scripts/powershell/setup-tasks.ps1",
+      "status": "PASS"
+    },
+    {
+      "id": "UPSTREAM_BLOB:scripts/powershell/setup-tasks.ps1",
+      "status": "PASS"
+    },
+    {
+      "id": "UPSTREAM_RAW:scripts/powershell/common.ps1",
+      "status": "PASS"
+    },
+    {
+      "id": "UPSTREAM_BLOB:scripts/powershell/common.ps1",
+      "status": "PASS"
+    },
+    {
+      "id": "UPSTREAM_RAW:templates/commands/specify.md",
+      "status": "PASS"
+    },
+    {
+      "id": "UPSTREAM_BLOB:templates/commands/specify.md",
+      "status": "PASS"
+    },
+    {
+      "id": "UPSTREAM_RAW:templates/commands/implement.md",
+      "status": "PASS"
+    },
+    {
+      "id": "UPSTREAM_BLOB:templates/commands/implement.md",
+      "status": "PASS"
+    },
+    {
+      "id": "LEDGER_UNIQUE",
+      "status": "PASS"
+    },
+    {
+      "id": "PLAN_NOT_EXECUTED",
+      "status": "PASS"
+    },
+    {
+      "id": "TWO_DISTINCT_JOBS",
+      "status": "PASS"
+    },
+    {
+      "id": "REVIEW_AFTER_GENERATE",
+      "status": "PASS"
+    },
+    {
+      "id": "ITEM_ONLY_STALE_HAZARD",
+      "status": "PASS"
+    },
+    {
+      "id": "STRICT_LEGACY_KEYS",
+      "status": "PASS"
+    },
+    {
+      "id": "REOPEN_DRAFT_TEXT_ONLY",
+      "status": "PASS"
+    },
+    {
+      "id": "UPSTREAM_HAS_QA_HISTORY",
+      "status": "PASS"
+    },
+    {
+      "id": "CONTRACT_POSITIVE",
+      "status": "PASS"
+    },
+    {
+      "id": "REJECT:ALTERED_SOURCE_DIGEST",
+      "status": "PASS"
+    },
+    {
+      "id": "REJECT:DROPPED_FOURTH_UNKNOWN",
+      "status": "PASS"
+    },
+    {
+      "id": "REJECT:STALE_REVISION",
+      "status": "PASS"
+    },
+    {
+      "id": "REJECT:INVENTED_BUILD_GRANT",
+      "status": "PASS"
+    },
+    {
+      "id": "WORKER_PRE_IMPL",
+      "status": "PASS"
+    },
+    {
+      "id": "SAVED_GATE_PASS",
+      "status": "PASS"
+    }
+  ],
+  "mutations": [
+    {
+      "class": "ALTERED_SOURCE_DIGEST",
+      "status": "REJECTED_BY_CONTRACT_ORACLE",
+      "productRuntimeExecuted": false
+    },
+    {
+      "class": "DROPPED_FOURTH_UNKNOWN",
+      "status": "REJECTED_BY_CONTRACT_ORACLE",
+      "productRuntimeExecuted": false
+    },
+    {
+      "class": "STALE_REVISION",
+      "status": "REJECTED_BY_CONTRACT_ORACLE",
+      "productRuntimeExecuted": false
+    },
+    {
+      "class": "INVENTED_BUILD_GRANT",
+      "status": "REJECTED_BY_CONTRACT_ORACLE",
+      "productRuntimeExecuted": false
+    }
+  ],
+  "workerArtifactHashes": {
+    "docs/reviews/CVF_NIS_T1D_SELECTED_CAPABILITY_CONSUMER_CONTRACT_WORKER_RETURN_2026-10-05.md": "46fa9986929e06f333309ac4e3eca3cd32f8770c5a373127aed4e357c3c64c92",
+    "docs/reviews/evidence/cvf-nis-t1d-capability-assessment-2026-10-05.json": "9086e9b6b7a6bc73c73ed9595afed0348a4247d5046972b3af7f8f0bd3ac960c",
+    "docs/reviews/CVF_NIS_T1D_CONSUMER_IMPLEMENTATION_CONTRACT_2026-10-05.md": "e8830ced33e8e480fc13edcec61f63b3c6c91520de9edd5e385340b2fe94a0bc",
+    "docs/reviews/evidence/cvf-nis-t1d-acceptance-plan-2026-10-05.json": "6bbd1904a0b1319d345180fb4566d5b473e6b0c232cea5ced134f45096d7706c"
+  },
+  "workerLogHashes": {
+    "pre-implementation/pre-implementation.json": "64b635ad695fcd3b886b9a52fefa3fb2c089cf818738ed4eb5dd1f428d791f26",
+    "fast-gate-final.log": "e732c9b1437390eb65b6e2ea1cf43927b8e788c15719b1ecc7a117c5bf223c9e",
+    "fast-gate-run1.log": "1bf3d6bdde23d83a9bcac20a54b7254c9da44ab4c6ed47865bf161cb3666f846",
+    "fast-gate-run2.log": "509141485c0f660b5dafc5b770575d4801ba6b4279dea7fa6ba2f4a0a5dc98ce"
+  },
+  "plannedAcceptanceCount": 44,
+  "plannedAcceptanceExecuted": 0,
+  "legacyDigestsCaptured": false,
+  "productSourceChanged": false,
+  "providerCallCount": 0,
+  "cost": "UNKNOWN",
+  "localDispositions": [
+    {
+      "id": "LD-1",
+      "disposition": "ACCEPT",
+      "finding": "Native nested ledger, additive candidate v2 and item-only stale preservation; summary belongs in review header/appendix."
+    },
+    {
+      "id": "LD-2",
+      "disposition": "MODIFY",
+      "finding": "AC-L7 must compare roundtrip with item-free baseline at equal revision/ack/clock/actor. Never rewind revision or restore prior acknowledgement to force byte equality."
+    },
+    {
+      "id": "LD-3",
+      "disposition": "MODIFY",
+      "finding": "clarify.md records session Q/A at L186-L188. Replacement loses original field statement unless separately retained, not all provenance. Narrow the upstream deficit to structured source snapshot/revision binding."
+    },
+    {
+      "id": "LD-4",
+      "disposition": "MODIFY",
+      "finding": "Future tasks trace requirements/stories and applicable effective rules/items, not every task to an open-item id; no S2 release."
+    },
+    {
+      "id": "LD-5",
+      "disposition": "CLARIFY_BEFORE_IMPLEMENTATION",
+      "finding": "Define canonical nine item keys/order, current-brief safe field keys, explicit item reconfirm operation, sticky stale clearing only after reconfirm, and deterministic fixed-clock/actor legacy fixtures in subsequent exact work order."
+    },
+    {
+      "id": "LD-6",
+      "disposition": "LOCAL_ENVELOPE_REPAIR",
+      "finding": "Full commit hooks caught missing intake/corpus headings not surfaced by worker-fast. Original worker and failed logs retained; guarded Local copies add documentation envelopes only."
+    }
+  ],
+  "claimBoundary": "Offline source identity and declared design falsification only. No runtime execution, v2 acceptance proof, UX, source-fit, absorption, BUILD or provider proof. Four negative contract controls do not execute the planned product acceptance cases.",
+  "acceptedArtifactHashes": {
+    "docs/reviews/CVF_NIS_T1D_SELECTED_CAPABILITY_CONSUMER_CONTRACT_WORKER_RETURN_2026-10-05.md": "4bbc649b5d4a20e5f3ff6eed59ea405ef35fc3e2ebd28c85289cb48b48353556",
+    "docs/reviews/evidence/cvf-nis-t1d-capability-assessment-2026-10-05.json": "9086e9b6b7a6bc73c73ed9595afed0348a4247d5046972b3af7f8f0bd3ac960c",
+    "docs/reviews/CVF_NIS_T1D_CONSUMER_IMPLEMENTATION_CONTRACT_2026-10-05.md": "a97cac551001c084dcfa0e80c4632983b3bc75493a8956dc9d16513b4e0a2f03",
+    "docs/reviews/evidence/cvf-nis-t1d-acceptance-plan-2026-10-05.json": "6bbd1904a0b1319d345180fb4566d5b473e6b0c232cea5ced134f45096d7706c"
+  },
+  "workerMaterialCommit": "4fcb26dc3a001d3ecbc1188d425ea1ea0e000d19",
+  "closureBaseHead": "4fcb26dc3a001d3ecbc1188d425ea1ea0e000d19",
+  "closureBatchPaths": [
+    "docs/baselines/CVF_GC018_NIS_T1D_SELECTED_CAPABILITY_CONSUMER_CONTRACT_2026-10-05.md",
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1D_SELECTED_CAPABILITY_CONSUMER_CONTRACT_2026-10-05.md",
+    "docs/reviews/CVF_NIS_T1D_SELECTED_CAPABILITY_CONSUMER_CONTRACT_COMPLETION_2026-10-05.md",
+    "docs/reviews/evidence/cvf-nis-t1d-local-independent-review-2026-10-05.json",
+    "AGENT_HANDOFF_V63_2026-09-18.md",
+    "CVF_SESSION_MEMORY.md",
+    "CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json",
+    "CVF_SESSION/state/entries/nextAllowedMove.json",
+    "CVF_SESSION/ACTIVE_SESSION_STATE.json",
+    "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json"
+  ],
+  "reviewerEnvelopeRepair": {
+    "scope": "Append Local entry/blindspot blocks to two Markdown copies and contract corpus disposition only; worker copies untouched.",
+    "originalWorkerHashes": {
+      "docs/reviews/CVF_NIS_T1D_SELECTED_CAPABILITY_CONSUMER_CONTRACT_WORKER_RETURN_2026-10-05.md": "46fa9986929e06f333309ac4e3eca3cd32f8770c5a373127aed4e357c3c64c92",
+      "docs/reviews/evidence/cvf-nis-t1d-capability-assessment-2026-10-05.json": "9086e9b6b7a6bc73c73ed9595afed0348a4247d5046972b3af7f8f0bd3ac960c",
+      "docs/reviews/CVF_NIS_T1D_CONSUMER_IMPLEMENTATION_CONTRACT_2026-10-05.md": "e8830ced33e8e480fc13edcec61f63b3c6c91520de9edd5e385340b2fe94a0bc",
+      "docs/reviews/evidence/cvf-nis-t1d-acceptance-plan-2026-10-05.json": "6bbd1904a0b1319d345180fb4566d5b473e6b0c232cea5ced134f45096d7706c"
+    },
+    "firstFailedCommitLog": ".cvf/runtime/nis-t1d-local-review-20261005/worker-material-commit.log",
+    "diagnostic": "Full commit hooks found missing source-envelope blocks and Local untracked evidence confused the worker exact4 trace. Local evidence moved to ignored scratch before exact4 material commit; no gate bypass."
+  }
+}

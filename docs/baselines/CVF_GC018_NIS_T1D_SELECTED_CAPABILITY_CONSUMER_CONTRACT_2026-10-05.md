@@ -2,7 +2,7 @@
 
 Memory class: governed-dispatch-baseline
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: CVF-NIS-T1D
 providerExecutionAuthority: FORBIDDEN
@@ -47,7 +47,7 @@ Returned defects: NONE_RETURNED. Actual resolver executed 2026-10-05, candidates
 | Field | Value |
 |---|---|
 | applicableCheckersRead | governance/compat/check_work_order_dispatch_quality.py; governance/compat/check_work_order_dispatch_quality_source.py; governance/compat/check_work_order_dispatch_quality_artifacts.py; governance/compat/check_dispatch_scaffold_provenance.py; governance/compat/check_gate_to_role_closeability.py; governance/compat/check_governed_artifact_checker_read_ahead.py; governance/compat/check_task_governance_route.py; governance/compat/check_baseline_update_compat.py; governance/compat/check_agent_operation_trace.py; governance/compat/check_work_order_acceptance_ledger.py; governance/compat/check_independent_review_probe_admission.py; governance/compat/check_absorption_blindspot_control_presence.py; governance/compat/check_source_mirror_migration.py; governance/compat/check_external_knowledge_intake_routing.py; governance/compat/check_high_risk_local_transaction_proof.py; governance/compat/check_adif_defect_registry_disclosure.py; governance/compat/check_agent_packet_authority_and_encoding.py; governance/compat/check_markdown_structural_completeness.py |
-| literalTokensReviewed | DISPATCH_READY; Source Verification; exact four artifacts; acceptance-ledger-json; full legacy gates; independent probe role; entry-control/Blind-Spot/Corpus blocks; protected10-path atomicity |
+| literalTokensReviewed | CLOSED_PASS_BOUNDED; Source Verification; exact four artifacts; acceptance-ledger-json; full legacy gates; independent probe role; entry-control/Blind-Spot/Corpus blocks; protected10-path atomicity |
 | gateRunPurpose | confirmation and evidence of source-bound admission after read-ahead; not implementation proof |
 | claimBoundary | source/contract only; no runtime acceptance |
 
@@ -195,3 +195,31 @@ Blind-spot verdict: NOT_APPLICABLE_WITH_REASON - dispatch planning only; worker 
 ```
 
 
+
+
+## Reviewer Closure Disposition
+
+Local accepts selected source/contract outputs with LD-1 through LD-6 in `docs/reviews/CVF_NIS_T1D_SELECTED_CAPABILITY_CONSUMER_CONTRACT_COMPLETION_2026-10-05.md`; original worker versions retained, Local envelope repairs separately bound in `docs/reviews/evidence/cvf-nis-t1d-local-independent-review-2026-10-05.json`. All44 product acceptance cases NOT_EXECUTED; no product/S2/provider/upstream-runtime/BUILD successor released. Worker material 4fcb26dc3a001d3ecbc1188d425ea1ea0e000d19.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1D_SELECTED_CAPABILITY_CONSUMER_CONTRACT_2026-10-05.md` | CLOSED_PASS_BOUNDED; source/contract accepted with Local clarifications | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_NIS_T1D_SELECTED_CAPABILITY_CONSUMER_CONTRACT_COMPLETION_2026-10-05.md` | separate source/contract oracle and semantic disposition | PASS |
+| Roadmap state | docs/roadmaps/CVF_GCLH_MACHINE_FIRST_REVIEW_PREFLIGHT_ROADMAP_2026-09-01.md | existing MFRP owner applied; no successor release or roadmap change | PASS |
+| Registry JSON | `docs/reviews/evidence/cvf-nis-t1d-local-independent-review-2026-10-05.json` | original/accepted artifact and source bindings; no as-built promotion applicable | PASS |
+| Registry Markdown | `docs/reviews/CVF_NIS_T1D_SELECTED_CAPABILITY_CONSUMER_CONTRACT_COMPLETION_2026-10-05.md` | selected contract disposition only; no new corpus/runtime registry owner | PASS |
+| External evidence digest | `docs/reviews/evidence/cvf-nis-t1d-local-independent-review-2026-10-05.json` | selected upstream identities and original worker bindings; SHA256 abbf704eb2e835e38b22c0c06d2945caa6ffdc5d52e87cd991cd0853d1e65314 | PASS |
+| System loop interlock | `docs/reviews/evidence/cvf-nis-t1d-local-independent-review-2026-10-05.json` | source -> contract -> separate Local oracle -> bounded disposition; no BUILD | PASS |
+| Session continuity | CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json | generated closed pair and next planning boundary | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| REQ-1 selected source | 14 selected plus at most2 justified dependencies | 9 CVF source raw/blob pins and16 upstream raw/blob rows match; dependencies specify and implement only | PASS |
+| REQ-2 contract/plan | exact save/reopen policy and planned cases | additive v2; legacy byte policy; 44 cases NOT_EXECUTED; Local LD-1 through LD-5 supersede named proposal details | PASS |
+| REQ-3 return/scope | four worker outputs and saved gate | original hashes plus Local appended envelope hashes; saved worker gate PASS; worker HEAD unchanged | PASS |
+| Independent contract probe | separate actor/invocation/oracle | 77 assertions including positive contract control and4 mutations rejected; no product v2 executed | PASS |
+| Claim boundary | no runtime/UX/build-ready | contract only; golden capture deferred before product edits | PASS |

@@ -37,11 +37,11 @@
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_NIS_T1D_SELECTED_CAPABILITY_CONSUMER_CONTRACT_2026-10-05.md",
-    "baselineSha256": "833ca34ade6bab5afbbbc19be424f247a1aa930ff2f10c5635b773df8669d272",
+    "baselineSha256": "a723a447a65dcd468114daf56ffb186ecb8f7946c26d9b1ca34c3f4eb6226104",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1D_SELECTED_CAPABILITY_CONSUMER_CONTRACT_2026-10-05.md",
-    "workOrderSha256": "18fd2d017737d8c8e6056b9abc22c969a3a8d06b0e7cb643fc5a1430b878ffd7"
+    "workOrderSha256": "8d02e8b01abd797a1f288ecb2e53b1ce7e7c56e00e06dd5e4549be35f8845f74"
   },
-  "currentAuthoritySyncReason": "T1D material 4d5873832: selected source/contract; T1C closed and parked lanes unchanged.",
+  "currentAuthoritySyncReason": "T1D contract closed; Local clarifications and source probe accepted; next exact implementation planning only.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
