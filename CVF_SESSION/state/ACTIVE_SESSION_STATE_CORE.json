@@ -37,11 +37,11 @@
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_NIS_T1I_SOURCE_BOUND_DOCUMENTARY_HANDOFF_2026-10-05.md",
-    "baselineSha256": "ce9c0726fee51cd5c66a29d4e9638e3bf4a7a33d1b4a683cf06c80e568dce7da",
+    "baselineSha256": "0e3d413c3ae7ffb811a440e520bd660b091e6127fe0bfe513ae98ee852fc521f",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1I_SOURCE_BOUND_DOCUMENTARY_HANDOFF_2026-10-05.md",
-    "workOrderSha256": "b4293a58c16c7f8cbb991cac15d6be2b083dd82b344596ae283686c4a9452448"
+    "workOrderSha256": "b1c15b0865f42fe70fb358bb20049924eceee8bcbb663d6db4ee962233405a3b"
   },
-  "currentAuthoritySyncReason": "T1I material a064a5ee2: current pure source-bound synthetic capture and documentary handoff; no helper/general S2/BUILD; parked lanes unchanged.",
+  "currentAuthoritySyncReason": "T1I bounded documentary closure; current synthetic binding matched, receiver digest/scope/policy claims corrected;57 controls; no acceptance/BUILD/runtime successor.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",

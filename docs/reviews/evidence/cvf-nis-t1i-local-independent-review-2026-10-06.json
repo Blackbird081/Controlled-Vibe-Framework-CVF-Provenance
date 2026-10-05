@@ -1,0 +1,693 @@
+{
+  "schemaVersion": "cvf.nisT1iLocalIndependentReview.v1",
+  "reviewDate": "2026-10-06",
+  "workerArtifacts": {
+    "docs/reviews/CVF_NIS_T1I_SOURCE_BOUND_DOCUMENTARY_HANDOFF_WORKER_RETURN_2026-10-05.md": {
+      "rawSha256": "f07b44ac3dd74cd538e649afcb904f0af66b6a2e9ee14e85713d31a409f0ec0e",
+      "bytes": 20714
+    },
+    "docs/reviews/CVF_NIS_T1I_SOURCE_BOUND_DOCUMENTARY_HANDOFF_2026-10-05.md": {
+      "rawSha256": "ce7d798b8c79faa613e0479cb266cbe540f4b8571ea107848e6e03c20c99c38c",
+      "bytes": 20875
+    },
+    "docs/reviews/evidence/cvf-nis-t1i-current-producer-capture-2026-10-05.json": {
+      "rawSha256": "79e5b0e5f0f4891a609df95e98cadd963f7b3a6f75d049801462126d15dc9241",
+      "bytes": 228937
+    },
+    "docs/reviews/evidence/cvf-nis-t1i-documentary-trace-plan-2026-10-05.json": {
+      "rawSha256": "c369d8de0d51ad813a976aba93bb704d7c8f3262050200e96a9edfb09f1c9595",
+      "bytes": 13501
+    }
+  },
+  "checks": [
+    {
+      "name": "worker HEAD unchanged",
+      "pass": true
+    },
+    {
+      "name": "worker index unchanged",
+      "pass": true
+    },
+    {
+      "name": "worker exact4 untracked",
+      "pass": true
+    },
+    {
+      "name": "source raw docs/reviews/CVF_NIS_T1H_REVIEW_ONLY_MANUAL_ARM_COMPLETION_2026-10-05.md",
+      "pass": true
+    },
+    {
+      "name": "source blob docs/reviews/CVF_NIS_T1H_REVIEW_ONLY_MANUAL_ARM_COMPLETION_2026-10-05.md",
+      "pass": true
+    },
+    {
+      "name": "source raw docs/reviews/CVF_NIS_T1F_BUILD_READY_BRIDGE_CONTRACT_COMPLETION_2026-10-05.md",
+      "pass": true
+    },
+    {
+      "name": "source blob docs/reviews/CVF_NIS_T1F_BUILD_READY_BRIDGE_CONTRACT_COMPLETION_2026-10-05.md",
+      "pass": true
+    },
+    {
+      "name": "source raw docs/reviews/CVF_NIS_T1G_RECEIVER_MANUAL_BASELINE_COMPLETION_2026-10-05.md",
+      "pass": true
+    },
+    {
+      "name": "source blob docs/reviews/CVF_NIS_T1G_RECEIVER_MANUAL_BASELINE_COMPLETION_2026-10-05.md",
+      "pass": true
+    },
+    {
+      "name": "source raw docs/reviews/CVF_NIS_T1G_RECEIVER_MANUAL_BASELINE_2026-10-05.md",
+      "pass": true
+    },
+    {
+      "name": "source blob docs/reviews/CVF_NIS_T1G_RECEIVER_MANUAL_BASELINE_2026-10-05.md",
+      "pass": true
+    },
+    {
+      "name": "source raw docs/reviews/evidence/cvf-nis-t1c-scenario-2026-10-05.json",
+      "pass": true
+    },
+    {
+      "name": "source blob docs/reviews/evidence/cvf-nis-t1c-scenario-2026-10-05.json",
+      "pass": true
+    },
+    {
+      "name": "source raw EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-review.ts",
+      "pass": true
+    },
+    {
+      "name": "source blob EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-review.ts",
+      "pass": true
+    },
+    {
+      "name": "source raw EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-open-items.ts",
+      "pass": true
+    },
+    {
+      "name": "source blob EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-open-items.ts",
+      "pass": true
+    },
+    {
+      "name": "source raw EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-confirmation.ts",
+      "pass": true
+    },
+    {
+      "name": "source blob EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-confirmation.ts",
+      "pass": true
+    },
+    {
+      "name": "source raw EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-acceptance.ts",
+      "pass": true
+    },
+    {
+      "name": "source blob EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-acceptance.ts",
+      "pass": true
+    },
+    {
+      "name": "source raw EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/SpecExport.tsx",
+      "pass": true
+    },
+    {
+      "name": "source blob EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/SpecExport.tsx",
+      "pass": true
+    },
+    {
+      "name": "exact file SHA256",
+      "pass": true
+    },
+    {
+      "name": "file byte count",
+      "pass": true
+    },
+    {
+      "name": "canonical candidate JSON",
+      "pass": true
+    },
+    {
+      "name": "canonical payload SHA256",
+      "pass": true
+    },
+    {
+      "name": "review snapshot exact final",
+      "pass": true
+    },
+    {
+      "name": "revision and acknowledgement",
+      "pass": true
+    },
+    {
+      "name": "scope never BUILD",
+      "pass": true
+    },
+    {
+      "name": "synthetic self-declared reviewer",
+      "pass": true
+    },
+    {
+      "name": "binding key separate recompute",
+      "pass": true
+    },
+    {
+      "name": "pure record ID recompute",
+      "pass": true
+    },
+    {
+      "name": "pure actor scope",
+      "pass": true
+    },
+    {
+      "name": "equal-answer data stale",
+      "pass": true
+    },
+    {
+      "name": "final data reconfirmed",
+      "pass": true
+    },
+    {
+      "name": "plan candidate SHA",
+      "pass": true
+    },
+    {
+      "name": "all quoted requirements in draft",
+      "pass": true
+    },
+    {
+      "name": "all quoted open content in draft",
+      "pass": true
+    },
+    {
+      "name": "valid task graph and actual requirement coverage",
+      "pass": true
+    },
+    {
+      "name": "negative dangling",
+      "pass": true
+    },
+    {
+      "name": "negative cycle",
+      "pass": true
+    },
+    {
+      "name": "negative uncovered requirement",
+      "pass": true
+    },
+    {
+      "name": "negative wrong validation",
+      "pass": true
+    },
+    {
+      "name": "candidate altered byte caught",
+      "pass": true
+    },
+    {
+      "name": "candidate altered revision caught",
+      "pass": true
+    },
+    {
+      "name": "future build tests not executed",
+      "pass": true
+    },
+    {
+      "name": "V6 explicit counterexample",
+      "pass": true
+    },
+    {
+      "name": "old V6 fails to distinguish premature deletion",
+      "pass": true
+    },
+    {
+      "name": "new V6 distinguishes named premature deletion",
+      "pass": true
+    },
+    {
+      "name": "insufficient V6 negative model detected",
+      "pass": true
+    },
+    {
+      "name": "calendar leap counterexample to365day shortcut",
+      "pass": true
+    },
+    {
+      "name": "build authority absent",
+      "pass": true
+    },
+    {
+      "name": "reject mislabeled literal receiver digest",
+      "pass": true
+    },
+    {
+      "name": "recover worker digest actual LF prefix convention",
+      "pass": true
+    },
+    {
+      "name": "worker own preimplementation PASS",
+      "pass": true
+    },
+    {
+      "name": "loader not listening and closes",
+      "pass": true
+    }
+  ],
+  "receiverDigest": {
+    "declared": "a2bed12b21e6d1cb63f3b89242e95554df5b0dd0104439d762d7a1fe144d0a48",
+    "actualRawPrefixAboveDigestLine": "7e01075a26df46a8fd2281c43fb0d549352bd4da0c4210e46558d70434efebfd",
+    "actualFullRawFile": "ce7d798b8c79faa613e0479cb266cbe540f4b8571ea107848e6e03c20c99c38c",
+    "disposition": "DECLARED_HASH_REJECTED_FOR_LITERAL_RAW_PREFIX; matches LF prefix INCLUDING digest label"
+  },
+  "workerOwnPreImplementation": {
+    "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF-NIS-T1I\\.cvf\\runtime\\nis-t1i-worker-20261005\\pre-implementation\\pre-implementation.json",
+    "sha256": "c4c61564165f52790469c3a4334d359f0757516f1df4288bc6ee0765207b9f46",
+    "checks": 87
+  },
+  "workerScriptPins": {
+    "generate_producer_capture.mjs": "9019540a6af90d4ad3e5caacae4b6c86beebc80d55495319d1c0795ab2c8f0e3",
+    "mock-auth.js": "d827b12ac8cb4c3b197bfe2ad5a5872337afdc0ca4e88b4ef06eadba3be6479f",
+    "build_artifacts_2_and_3.py": "d26dd60090549c514c35dd47f516fe9bb5283b945126fd4a49c5f6db55e9ab38",
+    "build_artifact_4.py": "78b98ecbc78346b6d86be56a4e26762eb461262381094e00723edca7a7fd9658"
+  },
+  "candidateFileSha256": "76c1b2d8aa0cf623dd9cea9cea8347e9d89bbbc2c507eceaf07733ae74222210",
+  "pureCandidateId": "c4e0c8ebe6b9e7bcb35f54f3e47f45b761fdb9573788d8ecc52b092afa59515f",
+  "semanticScoring": [
+    {
+      "caseId": "worker HEAD unchanged",
+      "key": "LOCAL_CONTROL",
+      "localDisposition": "PASS",
+      "actualCause": "independent frozen-data oracle",
+      "locator": "capture/trace plan"
+    },
+    {
+      "caseId": "worker index unchanged",
+      "key": "LOCAL_CONTROL",
+      "localDisposition": "PASS",
+      "actualCause": "independent frozen-data oracle",
+      "locator": "capture/trace plan"
+    },
+    {
+      "caseId": "worker exact4 untracked",
+      "key": "LOCAL_CONTROL",
+      "localDisposition": "PASS",
+      "actualCause": "independent frozen-data oracle",
+      "locator": "capture/trace plan"
+    },
+    {
+      "caseId": "source raw docs/reviews/CVF_NIS_T1H_REVIEW_ONLY_MANUAL_ARM_COMPLETION_2026-10-05.md",
+      "key": "LOCAL_CONTROL",
+      "localDisposition": "PASS",
+      "actualCause": "independent frozen-data oracle",
+      "locator": "capture/trace plan"
+    },
+    {
+      "caseId": "source blob docs/reviews/CVF_NIS_T1H_REVIEW_ONLY_MANUAL_ARM_COMPLETION_2026-10-05.md",
+      "key": "LOCAL_CONTROL",
+      "localDisposition": "PASS",
+      "actualCause": "independent frozen-data oracle",
+      "locator": "capture/trace plan"
+    },
+    {
+      "caseId": "source raw docs/reviews/CVF_NIS_T1F_BUILD_READY_BRIDGE_CONTRACT_COMPLETION_2026-10-05.md",
+      "key": "LOCAL_CONTROL",
+      "localDisposition": "PASS",
+      "actualCause": "independent frozen-data oracle",
+      "locator": "capture/trace plan"
+    },
+    {
+      "caseId": "source blob docs/reviews/CVF_NIS_T1F_BUILD_READY_BRIDGE_CONTRACT_COMPLETION_2026-10-05.md",
+      "key": "LOCAL_CONTROL",
+      "localDisposition": "PASS",
+      "actualCause": "independent frozen-data oracle",
+      "locator": "capture/trace plan"
+    },
+    {
+      "caseId": "source raw docs/reviews/CVF_NIS_T1G_RECEIVER_MANUAL_BASELINE_COMPLETION_2026-10-05.md",
+      "key": "LOCAL_CONTROL",
+      "localDisposition": "PASS",
+      "actualCause": "independent frozen-data oracle",
+      "locator": "capture/trace plan"
+    },
+    {
+      "caseId": "source blob docs/reviews/CVF_NIS_T1G_RECEIVER_MANUAL_BASELINE_COMPLETION_2026-10-05.md",
+      "key": "LOCAL_CONTROL",
+      "localDisposition": "PASS",
+      "actualCause": "independent frozen-data oracle",
+      "locator": "capture/trace plan"
+    },
+    {
+      "caseId": "source raw docs/reviews/CVF_NIS_T1G_RECEIVER_MANUAL_BASELINE_2026-10-05.md",
+      "key": "LOCAL_CONTROL",
+      "localDisposition": "PASS",
+      "actualCause": "independent frozen-data oracle",
+      "locator": "capture/trace plan"
+    },
+    {
+      "caseId": "source blob docs/reviews/CVF_NIS_T1G_RECEIVER_MANUAL_BASELINE_2026-10-05.md",
+      "key": "LOCAL_CONTROL",
+      "localDisposition": "PASS",
+      "actualCause": "independent frozen-data oracle",
+      "locator": "capture/trace plan"
+    },
+    {
+      "caseId": "source raw docs/reviews/evidence/cvf-nis-t1c-scenario-2026-10-05.json",
+      "key": "LOCAL_CONTROL",
+      "localDisposition": "PASS",
+      "actualCause": "independent frozen-data oracle",
+      "locator": "capture/trace plan"
+    },
+    {
+      "caseId": "source blob docs/reviews/evidence/cvf-nis-t1c-scenario-2026-10-05.json",
+      "key": "LOCAL_CONTROL",
+      "localDisposition": "PASS",
+      "actualCause": "independent frozen-data oracle",
+      "locator": "capture/trace plan"
+    },
+    {
+      "caseId": "source raw EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-review.ts",
+      "key": "LOCAL_CONTROL",
+      "localDisposition": "PASS",
+      "actualCause": "independent frozen-data oracle",
+      "locator": "capture/trace plan"
+    },
+    {
+      "caseId": "source blob EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-review.ts",
+      "key": "LOCAL_CONTROL",
+      "localDisposition": "PASS",
+      "actualCause": "independent frozen-data oracle",
+      "locator": "capture/trace plan"
+    },
+    {
+      "caseId": "source raw EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-open-items.ts",
+      "key": "LOCAL_CONTROL",
+      "localDisposition": "PASS",
+      "actualCause": "independent frozen-data oracle",
+      "locator": "capture/trace plan"
+    },
+    {
+      "caseId": "source blob EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-open-items.ts",
+      "key": "LOCAL_CONTROL",
+      "localDisposition": "PASS",
+      "actualCause": "independent frozen-data oracle",
+      "locator": "capture/trace plan"
+    },
+    {
+      "caseId": "source raw EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-confirmation.ts",
+      "key": "LOCAL_CONTROL",
+      "localDisposition": "PASS",
+      "actualCause": "independent frozen-data oracle",
+      "locator": "capture/trace plan"
+    },
+    {
+      "caseId": "source blob EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-confirmation.ts",
+      "key": "LOCAL_CONTROL",
+      "localDisposition": "PASS",
+      "actualCause": "independent frozen-data oracle",
+      "locator": "capture/trace plan"
+    },
+    {
+      "caseId": "source raw EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-acceptance.ts",
+      "key": "LOCAL_CONTROL",
+      "localDisposition": "PASS",
+      "actualCause": "independent frozen-data oracle",
+      "locator": "capture/trace plan"
+    },
+    {
+      "caseId": "source blob EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-acceptance.ts",
+      "key": "LOCAL_CONTROL",
+      "localDisposition": "PASS",
+      "actualCause": "independent frozen-data oracle",
+      "locator": "capture/trace plan"
+    },
+    {
+      "caseId": "source raw EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/SpecExport.tsx",
+      "key": "LOCAL_CONTROL",
+      "localDisposition": "PASS",
+      "actualCause": "independent frozen-data oracle",
+      "locator": "capture/trace plan"
+    },
+    {
+      "caseId": "source blob EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/SpecExport.tsx",
+      "key": "LOCAL_CONTROL",
+      "localDisposition": "PASS",
+      "actualCause": "independent frozen-data oracle",
+      "locator": "capture/trace plan"
+    },
+    {
+      "caseId": "exact file SHA256",
+      "key": "LOCAL_CONTROL",
+      "localDisposition": "PASS",
+      "actualCause": "independent frozen-data oracle",
+      "locator": "capture/trace plan"
+    },
+    {
+      "caseId": "file byte count",
+      "key": "LOCAL_CONTROL",
+      "localDisposition": "PASS",
+      "actualCause": "independent frozen-data oracle",
+      "locator": "capture/trace plan"
+    },
+    {
+      "caseId": "canonical candidate JSON",
+      "key": "LOCAL_CONTROL",
+      "localDisposition": "PASS",
+      "actualCause": "independent frozen-data oracle",
+      "locator": "capture/trace plan"
+    },
+    {
+      "caseId": "canonical payload SHA256",
+      "key": "LOCAL_CONTROL",
+      "localDisposition": "PASS",
+      "actualCause": "independent frozen-data oracle",
+      "locator": "capture/trace plan"
+    },
+    {
+      "caseId": "review snapshot exact final",
+      "key": "LOCAL_CONTROL",
+      "localDisposition": "PASS",
+      "actualCause": "independent frozen-data oracle",
+      "locator": "capture/trace plan"
+    },
+    {
+      "caseId": "revision and acknowledgement",
+      "key": "LOCAL_CONTROL",
+      "localDisposition": "PASS",
+      "actualCause": "independent frozen-data oracle",
+      "locator": "capture/trace plan"
+    },
+    {
+      "caseId": "scope never BUILD",
+      "key": "LOCAL_CONTROL",
+      "localDisposition": "PASS",
+      "actualCause": "independent frozen-data oracle",
+      "locator": "capture/trace plan"
+    },
+    {
+      "caseId": "synthetic self-declared reviewer",
+      "key": "LOCAL_CONTROL",
+      "localDisposition": "PASS",
+      "actualCause": "independent frozen-data oracle",
+      "locator": "capture/trace plan"
+    },
+    {
+      "caseId": "binding key separate recompute",
+      "key": "LOCAL_CONTROL",
+      "localDisposition": "PASS",
+      "actualCause": "independent frozen-data oracle",
+      "locator": "capture/trace plan"
+    },
+    {
+      "caseId": "pure record ID recompute",
+      "key": "LOCAL_CONTROL",
+      "localDisposition": "PASS",
+      "actualCause": "independent frozen-data oracle",
+      "locator": "capture/trace plan"
+    },
+    {
+      "caseId": "pure actor scope",
+      "key": "LOCAL_CONTROL",
+      "localDisposition": "PASS",
+      "actualCause": "independent frozen-data oracle",
+      "locator": "capture/trace plan"
+    },
+    {
+      "caseId": "equal-answer data stale",
+      "key": "LOCAL_CONTROL",
+      "localDisposition": "PASS",
+      "actualCause": "independent frozen-data oracle",
+      "locator": "capture/trace plan"
+    },
+    {
+      "caseId": "final data reconfirmed",
+      "key": "LOCAL_CONTROL",
+      "localDisposition": "PASS",
+      "actualCause": "independent frozen-data oracle",
+      "locator": "capture/trace plan"
+    },
+    {
+      "caseId": "plan candidate SHA",
+      "key": "LOCAL_CONTROL",
+      "localDisposition": "PASS",
+      "actualCause": "independent frozen-data oracle",
+      "locator": "capture/trace plan"
+    },
+    {
+      "caseId": "all quoted requirements in draft",
+      "key": "LOCAL_CONTROL",
+      "localDisposition": "PASS",
+      "actualCause": "independent frozen-data oracle",
+      "locator": "capture/trace plan"
+    },
+    {
+      "caseId": "all quoted open content in draft",
+      "key": "LOCAL_CONTROL",
+      "localDisposition": "PASS",
+      "actualCause": "independent frozen-data oracle",
+      "locator": "capture/trace plan"
+    },
+    {
+      "caseId": "valid task graph and actual requirement coverage",
+      "key": "LOCAL_CONTROL",
+      "localDisposition": "PASS",
+      "actualCause": "independent frozen-data oracle",
+      "locator": "capture/trace plan"
+    },
+    {
+      "caseId": "negative dangling",
+      "key": "LOCAL_CONTROL",
+      "localDisposition": "PASS",
+      "actualCause": "independent frozen-data oracle",
+      "locator": "capture/trace plan"
+    },
+    {
+      "caseId": "negative cycle",
+      "key": "LOCAL_CONTROL",
+      "localDisposition": "PASS",
+      "actualCause": "independent frozen-data oracle",
+      "locator": "capture/trace plan"
+    },
+    {
+      "caseId": "negative uncovered requirement",
+      "key": "LOCAL_CONTROL",
+      "localDisposition": "PASS",
+      "actualCause": "independent frozen-data oracle",
+      "locator": "capture/trace plan"
+    },
+    {
+      "caseId": "negative wrong validation",
+      "key": "LOCAL_CONTROL",
+      "localDisposition": "PASS",
+      "actualCause": "independent frozen-data oracle",
+      "locator": "capture/trace plan"
+    },
+    {
+      "caseId": "candidate altered byte caught",
+      "key": "LOCAL_CONTROL",
+      "localDisposition": "PASS",
+      "actualCause": "independent frozen-data oracle",
+      "locator": "capture/trace plan"
+    },
+    {
+      "caseId": "candidate altered revision caught",
+      "key": "LOCAL_CONTROL",
+      "localDisposition": "PASS",
+      "actualCause": "independent frozen-data oracle",
+      "locator": "capture/trace plan"
+    },
+    {
+      "caseId": "future build tests not executed",
+      "key": "LOCAL_CONTROL",
+      "localDisposition": "PASS",
+      "actualCause": "independent frozen-data oracle",
+      "locator": "capture/trace plan"
+    },
+    {
+      "caseId": "V6 explicit counterexample",
+      "key": "LOCAL_CONTROL",
+      "localDisposition": "PASS",
+      "actualCause": "independent frozen-data oracle",
+      "locator": "capture/trace plan"
+    },
+    {
+      "caseId": "old V6 fails to distinguish premature deletion",
+      "key": "LOCAL_CONTROL",
+      "localDisposition": "PASS",
+      "actualCause": "independent frozen-data oracle",
+      "locator": "capture/trace plan"
+    },
+    {
+      "caseId": "new V6 distinguishes named premature deletion",
+      "key": "LOCAL_CONTROL",
+      "localDisposition": "PASS",
+      "actualCause": "independent frozen-data oracle",
+      "locator": "capture/trace plan"
+    },
+    {
+      "caseId": "insufficient V6 negative model detected",
+      "key": "LOCAL_CONTROL",
+      "localDisposition": "PASS",
+      "actualCause": "independent frozen-data oracle",
+      "locator": "capture/trace plan"
+    },
+    {
+      "caseId": "calendar leap counterexample to365day shortcut",
+      "key": "LOCAL_CONTROL",
+      "localDisposition": "PASS",
+      "actualCause": "independent frozen-data oracle",
+      "locator": "capture/trace plan"
+    },
+    {
+      "caseId": "build authority absent",
+      "key": "LOCAL_CONTROL",
+      "localDisposition": "PASS",
+      "actualCause": "independent frozen-data oracle",
+      "locator": "capture/trace plan"
+    },
+    {
+      "caseId": "reject mislabeled literal receiver digest",
+      "key": "LOCAL_CONTROL",
+      "localDisposition": "PASS",
+      "actualCause": "independent frozen-data oracle",
+      "locator": "capture/trace plan"
+    },
+    {
+      "caseId": "recover worker digest actual LF prefix convention",
+      "key": "LOCAL_CONTROL",
+      "localDisposition": "PASS",
+      "actualCause": "independent frozen-data oracle",
+      "locator": "capture/trace plan"
+    },
+    {
+      "caseId": "worker own preimplementation PASS",
+      "key": "LOCAL_CONTROL",
+      "localDisposition": "PASS",
+      "actualCause": "independent frozen-data oracle",
+      "locator": "capture/trace plan"
+    },
+    {
+      "caseId": "loader not listening and closes",
+      "key": "LOCAL_CONTROL",
+      "localDisposition": "PASS",
+      "actualCause": "independent frozen-data oracle",
+      "locator": "capture/trace plan"
+    }
+  ],
+  "status": "PASS_WITH_DOCUMENTARY_LIMITS",
+  "findings": {
+    "candidateBinding": "MATCH_SYNTHETIC_ONLY",
+    "historicalJobA": "NOT_RETROACTIVELY_CLOSED",
+    "V6": "DISCRIMINATES_NAMED11_5_COUNTEREXAMPLE_NOT_RUNTIME_PROOF",
+    "calendarClockAnchor": "UNRESOLVED_PROPOSED_POLICY",
+    "rawEntryU1": "NOT_AUTOMATIC_COMPILED_REPORT_R6_BLOCKER",
+    "deadlineU2": "AFFECTS_R2_AND_R4_NOT_AUTOMATIC_RETENTION_TIMEZONE",
+    "D9": "UNCITED_U3_HISTORICAL_NOT_CURRENT_R2_CITATION",
+    "workerControls": "JSON_OUTCOMES_AND_SCRIPT_ONLY_NO_CAPTURE_EXIT_LOG; plan mutation controls executed by Local",
+    "scope": "Vite middleware loader closes; mock authentication fixture; no listening/store/runtime proof"
+  },
+  "oracleSource": "from pathlib import Path\nimport json,hashlib,subprocess,re,copy,calendar,datetime\nr=Path.cwd();w=r.parent/'Controlled-Vibe-Framework-CVF-NIS-T1I';s=r/'.cvf/runtime/nis-t1i-local-review-20261006';s.mkdir(parents=True,exist_ok=True)\nsha=lambda b:hashlib.sha256(b).hexdigest()\ndef git(a,c=r):return subprocess.check_output(['git',*a],cwd=c,text=True,encoding='utf-8').strip()\nchecks=[]\ndef check(name,value):\n checks.append({'name':name,'pass':bool(value)});assert value,name\nip='docs/reviews/evidence/cvf-nis-t1i-dispatch-inputs-2026-10-05.json';inputs=json.loads((r/ip).read_text(encoding='utf-8'))\npaths=inputs['workerArtifacts'];raw={p:(w/p).read_bytes() for p in paths}\ncheck('worker HEAD unchanged',git(['rev-parse','HEAD'],w)=='91dedba69a6fd8f036746e0f1f1417e8dc8939c2')\ncheck('worker index unchanged',git(['write-tree'],w)==git(['rev-parse','HEAD^{tree}'],w))\ncheck('worker exact4 untracked',set(git(['status','--porcelain'],w).splitlines())=={'?? '+p for p in paths})\nfor p,v in inputs['sources'].items():\n check('source raw '+p,sha((r/p).read_bytes())==v['rawSha256']==sha((w/p).read_bytes()))\n check('source blob '+p,git(['rev-parse','HEAD:'+p])==v['gitBlob'])\ncap=json.loads(raw[paths[2]]);plan=json.loads(raw[paths[3]]);doc=raw[paths[1]].decode('utf-8');ret=raw[paths[0]].decode('utf-8')\ncandidate=cap['candidate'];text=candidate['fileContent'];file=json.loads(text);payload=file['payload'];state=payload['review']\ncompact=lambda v:json.dumps(v,ensure_ascii=False,separators=(',',':'))\ncheck('exact file SHA256',sha(text.encode())==candidate['fileSha256'])\ncheck('file byte count',len(text.encode())==candidate['fileBytes'])\ncheck('canonical candidate JSON',compact(file)+'\\n'==text)\ncheck('canonical payload SHA256',sha(compact(payload).encode())==file['payloadSha256'])\ncheck('review snapshot exact final',state==cap['replayTrace'][-1]['stateSnapshot'])\ncheck('revision and acknowledgement',state['revision']==state['acknowledgedRevision']==candidate['revision']==11)\ncheck('scope never BUILD',payload['scope']=='SPEC_REVIEW_ONLY_NO_BUILD_AUTHORITY')\ncheck('synthetic self-declared reviewer',payload['reviewer']=={'name':'SYNTHETIC_TEST_ACTOR','verification':'SELF_DECLARED'})\ncheck('binding key separate recompute',sha(compact({'state':state,'language':payload['language'],'reviewer':payload['reviewer']['name']}).encode())==candidate['bindingKeySha256'])\npure=cap['pureVerifierResult'];record={'schema':'cvf.intentSpecAcceptanceCandidate.v1','state':'PENDING_STORE_COMMIT','scope':payload['scope'],'actor':pure['actor'],'preparedAt':'2026-10-05T00:00:00.000Z','sourceFileSha256':candidate['fileSha256'],'sourceFile':text}\ncheck('pure record ID recompute',sha((compact(record)+'\\n').encode())==pure['candidateId'])\ncheck('pure actor scope',pure['actor']['assurance']=='LOCAL_TEST_SESSION' and pure['state']=='PENDING_STORE_COMMIT')\nstages={x['stage']:x for x in cap['replayTrace']};stale=stages['P2B_RULE_CHANGED_STALE']['stateSnapshot'];before=stages['P2_BASELINE_ACKNOWLEDGED']['stateSnapshot']\ndd=lambda st,id:next(x for x in st['decisions'] if x['id']==id)\ncheck('equal-answer data stale',dd(before,'data')['answer']==dd(stale,'data')['answer'] and dd(stale,'data')['needsReconfirmation'] and stale['acknowledgedRevision'] is None)\ncheck('final data reconfirmed',not dd(state,'data')['needsReconfirmation'] and dd(state,'data')['sourceValues']['targetUsers']==state['values']['targetUsers'])\nbinding=plan['candidateBinding'];check('plan candidate SHA',candidate['fileSha256'] in json.dumps(binding))\ncheck('all quoted requirements in draft',all(q in payload['draft'] for x in plan['requirementCoverage'] for q in x['statements']+x.get('resolutions',[])))\ncheck('all quoted open content in draft',all(x['exactQuote'] in payload['draft'] for x in plan['openContentLedger']))\ndef links(p):\n req={x['requirementId'] for x in p['requirementCoverage']};tasks={x['id']:x for x in p['taskPlan']};vals={x['id']:x for x in p['validationSpecifications']};design={x['id']:x for x in p['designProposals']}\n for t in tasks.values():\n  if t['serves'] not in req or any(x not in tasks for x in t['dependsOn']) or any(x not in vals or vals[x]['serves']!=t['serves'] for x in t['validations']) or (t['design'] and (t['design'] not in design or design[t['design']]['serves']!=t['serves'])):return False\n for rid in req:\n  if not any(t['serves']==rid for t in tasks.values()) or not any(v['serves']==rid for v in vals.values()):return False\n seen=set();active=set()\n def visit(id):\n  if id in active:return False\n  if id in seen:return True\n  active.add(id)\n  if not all(visit(x) for x in tasks[id]['dependsOn']):return False\n  active.remove(id);seen.add(id);return True\n return all(visit(x) for x in tasks)\ncheck('valid task graph and actual requirement coverage',links(plan))\nfor name,mut in [('dangling',lambda p:p['taskPlan'][0]['dependsOn'].append('T999')),('cycle',lambda p:p['taskPlan'][0]['dependsOn'].append('T2')),('uncovered requirement',lambda p:p['taskPlan'].pop()),('wrong validation',lambda p:p['taskPlan'][0]['validations'].append('V6'))]:\n p=copy.deepcopy(plan);mut(p);check('negative '+name,not links(p))\ncheck('candidate altered byte caught',sha((text[:10]+'X'+text[11:]).encode())!=candidate['fileSha256'])\ncheck('candidate altered revision caught',state['revision']!=12)\ncheck('future build tests not executed',all(v['status']=='SPECIFIED_NOT_EXECUTED_PENDING_BUILD' for v in plan['validationSpecifications']))\nv6=next(v for v in plan['validationSpecifications'] if v['id']=='V6');properties=v6['discriminatingProperties']\ncheck('V6 explicit counterexample',all(x in properties for x in ['survivalAt11Point5Months','survivalAt12MonthBoundary','earlyDeletionCounterexampleRejection','timezoneAdherence','noUnrequestedPurgeAt12Months']))\n# Local finite semantic model, explicitly not a product/storage/runtime test.\n# A family that deletes at11.5 survives the old eleven-month observation but fails new counterexample.\nold=lambda delete_at:delete_at>11\nnew=lambda delete_at:delete_at>11.5 and delete_at>=12\ncheck('old V6 fails to distinguish premature deletion',old(11.5) and old(13))\ncheck('new V6 distinguishes named premature deletion',not new(11.5) and new(13))\ncheck('insufficient V6 negative model detected',old(11.5)!=new(11.5))\n# Calendar semantics remain a policy/implementation precondition, not silently360/365 days.\ncheck('calendar leap counterexample to365day shortcut',(datetime.date(2024,3,1)-datetime.date(2023,3,1)).days==366)\ncheck('build authority absent','Build authority: NOT_GRANTED' in doc)\ndigest=re.search(r'Record SHA-256 \\(all bytes above this line\\): ([a-f0-9]{64})',doc)\nrecordbytes=raw[paths[1]].split(b'Record SHA-256 (all bytes above this line):',1)[0]\ncheck('reject mislabeled literal receiver digest',digest and sha(recordbytes)!=digest.group(1))\ncheck('recover worker digest actual LF prefix convention',sha(recordbytes.replace(b'\\r\\n',b'\\n')+b'Record SHA-256 (all bytes above this line): ')==digest.group(1))\nreceipt=w/'.cvf/runtime/nis-t1i-worker-20261005/pre-implementation/pre-implementation.json';rv=json.loads(receipt.read_text(encoding='utf-8'));check('worker own preimplementation PASS',rv['status']=='PASS' and all(x['status']=='PASS' for x in rv['checks']))\nscripts=['generate_producer_capture.mjs','mock-auth.js','build_artifacts_2_and_3.py','build_artifact_4.py'];scriptpins={p:sha((w/'.cvf/runtime/nis-t1i-worker-20261005'/p).read_bytes()) for p in scripts}\nsrc=(w/'.cvf/runtime/nis-t1i-worker-20261005/generate_producer_capture.mjs').read_text(encoding='utf-8');check('loader not listening and closes', 'middlewareMode: true' in src and 'await vite.close()' in src and '.listen(' not in src)\nresult={'schemaVersion':'cvf.nisT1iLocalIndependentReview.v1','reviewDate':'2026-10-06','workerArtifacts':{p:{'rawSha256':sha(v),'bytes':len(v)} for p,v in raw.items()},'checks':checks,'receiverDigest':{'declared':digest.group(1),'actualRawPrefixAboveDigestLine':sha(recordbytes),'actualFullRawFile':sha(raw[paths[1]]),'disposition':'DECLARED_HASH_REJECTED_FOR_LITERAL_RAW_PREFIX; matches LF prefix INCLUDING digest label'},'workerOwnPreImplementation':{'path':str(receipt),'sha256':sha(receipt.read_bytes()),'checks':len(rv['checks'])},'workerScriptPins':scriptpins,'candidateFileSha256':candidate['fileSha256'],'pureCandidateId':pure['candidateId'],'semanticScoring':[{'caseId':x['name'],'key':'LOCAL_CONTROL','localDisposition':'PASS','actualCause':'independent frozen-data oracle','locator':'capture/trace plan'} for x in checks],'status':'PASS_WITH_DOCUMENTARY_LIMITS','findings':{'candidateBinding':'MATCH_SYNTHETIC_ONLY','historicalJobA':'NOT_RETROACTIVELY_CLOSED','V6':'DISCRIMINATES_NAMED11_5_COUNTEREXAMPLE_NOT_RUNTIME_PROOF','calendarClockAnchor':'UNRESOLVED_PROPOSED_POLICY','rawEntryU1':'NOT_AUTOMATIC_COMPILED_REPORT_R6_BLOCKER','deadlineU2':'AFFECTS_R2_AND_R4_NOT_AUTOMATIC_RETENTION_TIMEZONE','D9':'UNCITED_U3_HISTORICAL_NOT_CURRENT_R2_CITATION','workerControls':'JSON_OUTCOMES_AND_SCRIPT_ONLY_NO_CAPTURE_EXIT_LOG; plan mutation controls executed by Local','scope':'Vite middleware loader closes; mock authentication fixture; no listening/store/runtime proof'},'oracleSource':Path(__file__).read_text(encoding='utf-8'),'oracleSha256':sha(Path(__file__).read_bytes()),'claimBoundary':'Separate offline byte/state/graph and finite semantic model; no native producer rerun, store/provider/build or authenticated acceptance.'}\n(s/'probe-result.json').write_text(json.dumps(result,ensure_ascii=True,indent=2)+'\\n',encoding='utf-8')\nprint(json.dumps({'status':result['status'],'checks':len(checks),'candidateFileSha256':candidate['fileSha256']},indent=2))\n",
+  "oracleSha256": "b5435cc09abf1e69df721c6dc16a6a2f115b0d93d835863fd2dbfe8a9833d515",
+  "claimBoundary": "Separate offline byte/state/graph and finite semantic model; no native producer rerun, store/provider/build or authenticated acceptance.",
+  "localIntakeFastGate": {
+    "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\nis-t1i-local-review-20261006\\intake-fast.log",
+    "rawSha256": "bead7b478d2e136b5a457a88a3c741c028ce6b21a0e332042e4612c1f4ef6318",
+    "status": "COMPLIANT",
+    "reason": "worker final fast log absent; one Local intake confirmation, no producer replay"
+  }
+}

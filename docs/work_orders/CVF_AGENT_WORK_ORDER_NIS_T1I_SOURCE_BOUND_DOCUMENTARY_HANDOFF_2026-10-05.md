@@ -4,7 +4,7 @@ Memory class: governed-worker-dispatch
 
 docType: work_order
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: CVF-NIS-T1I
 providerExecutionAuthority: FORBIDDEN
@@ -126,7 +126,7 @@ Returned defects: NONE_RETURNED. Actual resolver executed 2026-10-05, candidates
 | Field | Value |
 |---|---|
 | applicableCheckersRead | governance/compat/check_work_order_dispatch_quality.py; governance/compat/check_work_order_dispatch_quality_source.py; governance/compat/check_work_order_dispatch_quality_artifacts.py; governance/compat/check_dispatch_scaffold_provenance.py; governance/compat/check_gate_to_role_closeability.py; governance/compat/check_governed_artifact_checker_read_ahead.py; governance/compat/check_task_governance_route.py; governance/compat/check_baseline_update_compat.py; governance/compat/check_agent_operation_trace.py; governance/compat/check_work_order_acceptance_ledger.py; governance/compat/check_independent_review_probe_admission.py; governance/compat/check_absorption_blindspot_control_presence.py; governance/compat/check_external_knowledge_intake_routing.py; governance/compat/check_high_risk_local_transaction_proof.py; governance/compat/check_adif_defect_registry_disclosure.py; governance/compat/check_agent_packet_authority_and_encoding.py; governance/compat/check_markdown_structural_completeness.py; governance/compat/check_dispatch_prompt_envelope.py |
-| literalTokensReviewed | DISPATCH_READY; acceptance-ledger-json; PENDING_REVIEWER_EXECUTION; exact4 outputs/exact9 admission |
+| literalTokensReviewed | CLOSED_PASS_BOUNDED; acceptance-ledger-json; PENDING_REVIEWER_EXECUTION; exact4 outputs/exact9 admission |
 | gateRunPurpose | confirmation of source-bound documentary dispatch, not first discovery |
 | claimBoundary | no product/live/build-ready/cost result |
 
@@ -293,23 +293,23 @@ Only dedicated installed-tool pure capture/finite controls; no lifecycle hooks o
 
 | Field | Evidence |
 |---|---|
-| Actor | Local dispatcher |
+| Actor | Local technical reviewer/closer |
 | Provider or surface | Local private provenance workspace |
-| Session or invocation | nis-t1i-dispatch-20261005 |
+| Session or invocation | nis-t1i-local-review-20261006 |
 | Working directory | repository root |
-| Command or tool surface | Bounded source reads, local scaffold and admission gates |
-| Target paths | exact9 Local admission/continuity; worker exact4 pending |
+| Command or tool surface | independent Python byte/state/graph and finite retention counterexample model; one Local intake fast confirmation; no producer replay |
+| Target paths | exact10 Local closure paths |
 | Allowed scope source | operator continue and delegated Local orchestration |
-| Before status evidence | clean worktree main 44612c178f240c2daa4b2834d92443078f75cb75 |
-| After status evidence | exact9 admission only; worker pending |
-| Diff evidence | admission-paths.json exact9; no product change |
-| Approval boundary | pure current candidate capture and one-job documentary plan only |
-| Claim boundary | synthetic source binding, not authenticated acceptance/build readiness |
+| Before status evidence | clean worktree main 75cf6e22ad13141e945d6f8593416afe2d15de10 |
+| After status evidence | exact10 Local closure; original4 worker retained unchanged |
+| Diff evidence | closure-paths.json and cached name-only MATCH |
+| Approval boundary | source-bound synthetic documentary input, not authenticated acceptance/BUILD |
+| Claim boundary | 57 offline controls; no native producer rerun/runtime proof |
 | Agent type | dispatcher |
-| Invocation ID | nis-t1i-dispatch-20261005 |
-| Expected manifest | N/A with reason: admission only; future four worker outputs named |
-| Actual changed set | N/A with reason: exact9 Local admission, no worker execution |
-| Manifest delta | N/A with reason: worker pending |
+| Invocation ID | nis-t1i-local-review-20261006 |
+| Expected manifest | docs/baselines/CVF_GC018_NIS_T1I_SOURCE_BOUND_DOCUMENTARY_HANDOFF_2026-10-05.md; docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1I_SOURCE_BOUND_DOCUMENTARY_HANDOFF_2026-10-05.md; docs/reviews/CVF_NIS_T1I_SOURCE_BOUND_DOCUMENTARY_HANDOFF_COMPLETION_2026-10-05.md; docs/reviews/evidence/cvf-nis-t1i-local-independent-review-2026-10-06.json; AGENT_HANDOFF_V63_2026-09-18.md; CVF_SESSION_MEMORY.md; CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json; CVF_SESSION/state/entries/nextAllowedMove.json; CVF_SESSION/ACTIVE_SESSION_STATE.json; CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json |
+| Actual changed set | docs/baselines/CVF_GC018_NIS_T1I_SOURCE_BOUND_DOCUMENTARY_HANDOFF_2026-10-05.md; docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1I_SOURCE_BOUND_DOCUMENTARY_HANDOFF_2026-10-05.md; docs/reviews/CVF_NIS_T1I_SOURCE_BOUND_DOCUMENTARY_HANDOFF_COMPLETION_2026-10-05.md; docs/reviews/evidence/cvf-nis-t1i-local-independent-review-2026-10-06.json; AGENT_HANDOFF_V63_2026-09-18.md; CVF_SESSION_MEMORY.md; CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json; CVF_SESSION/state/entries/nextAllowedMove.json; CVF_SESSION/ACTIVE_SESSION_STATE.json; CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json |
+| Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename authorized |
 
 ## Delta Execution Claim Boundary Control Block
@@ -552,7 +552,7 @@ Historical Job A accepted-file binding remains unestablished. A current reconstr
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: T1I pair/input admission and six continuity surfaces only; worker forbidden protected paths.
+Authorized guard-maintenance scope: Local T1I bounded documentary closure current-authority/next-move only; worker forbidden protected paths.
 Protected paths:
 - `AGENT_HANDOFF_V63_2026-09-18.md`
 - `CVF_SESSION_MEMORY.md`
@@ -560,17 +560,15 @@ Protected paths:
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-Operator authorization: repeated next under delegated Local dispatch/commit authority,2026-10-05.
-Rollback boundary: exact9 admission only; preserve T1H evidence and parked lanes.
-
+Operator authorization: review/probe/Completion Review/commit under delegated Local authority,2026-10-06.
+Rollback boundary: exact10 Local closure; preserve original4 worker bytes and parked lanes.
 
 ## Mixed Protected-Path Atomicity Authorization
 
 Disposition: AUTHORIZED_EXACT_MANIFEST
-Atomicity reason: pair/input pins and current-authority release must bind one exact dispatch.
-Rollback boundary: exact9 admission only.
-Exact changed manifest: `docs/baselines/CVF_GC018_NIS_T1I_SOURCE_BOUND_DOCUMENTARY_HANDOFF_2026-10-05.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1I_SOURCE_BOUND_DOCUMENTARY_HANDOFF_2026-10-05.md`; `docs/reviews/evidence/cvf-nis-t1i-dispatch-inputs-2026-10-05.json`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`.
-
+Atomicity reason: current pair/completion/proof and six continuity projections bind one bounded closure; dedicated material-SHA sync follows.
+Rollback boundary: exact10 paths; no original worker rewrite.
+Exact changed manifest: `docs/baselines/CVF_GC018_NIS_T1I_SOURCE_BOUND_DOCUMENTARY_HANDOFF_2026-10-05.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1I_SOURCE_BOUND_DOCUMENTARY_HANDOFF_2026-10-05.md`; `docs/reviews/CVF_NIS_T1I_SOURCE_BOUND_DOCUMENTARY_HANDOFF_COMPLETION_2026-10-05.md`; `docs/reviews/evidence/cvf-nis-t1i-local-independent-review-2026-10-06.json`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`.
 
 ## Task Governance Routing Manifest
 
@@ -679,3 +677,31 @@ Exact changed manifest: `docs/baselines/CVF_GC018_NIS_T1I_SOURCE_BOUND_DOCUMENTA
 }
 ```
 T0 SHADOW_FULL_GATE_FALLBACK; selectiveExecutionAuthorized=false; full legacy bundles mandatory.
+
+## Local Closure Disposition
+
+CLOSED_PASS_BOUNDED documentary input only; Local MODIFY / ACCEPT_WITH_LIMITS in docs/reviews/CVF_NIS_T1I_SOURCE_BOUND_DOCUMENTARY_HANDOFF_COMPLETION_2026-10-05.md and proof docs/reviews/evidence/cvf-nis-t1i-local-independent-review-2026-10-06.json. Worker original4 preserved at 75cf6e22ad13141e945d6f8593416afe2d15de10. No historical acceptance resolution or native runtime proof. No automatic helper/general S2/BUILD successor.
+
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1I_SOURCE_BOUND_DOCUMENTARY_HANDOFF_2026-10-05.md | CLOSED_PASS_BOUNDED documentary input only | PASS |
+| Completion or reviewer artifact | docs/reviews/CVF_NIS_T1I_SOURCE_BOUND_DOCUMENTARY_HANDOFF_COMPLETION_2026-10-05.md | Local MODIFY / ACCEPT_WITH_LIMITS | PASS |
+| Roadmap state | N/A with reason: standalone pilot; no roadmap changed | parked lanes unchanged | N/A with reason: no roadmap mutation |
+| Registry JSON | docs/reviews/evidence/cvf-nis-t1i-local-independent-review-2026-10-06.json | 57 offline controls and source/raw hashes | PASS |
+| Registry Markdown | docs/reviews/CVF_NIS_T1I_SOURCE_BOUND_DOCUMENTARY_HANDOFF_COMPLETION_2026-10-05.md | corrected semantic/digest interpretation | PASS |
+| External evidence digest | docs/reviews/evidence/cvf-nis-t1i-local-independent-review-2026-10-06.json | SHA256 4a424a88232eea3547abdaafaa9b18a7b6778645164d984b05c1656fa4e04bcd | PASS |
+| System loop interlock | N/A with reason: no runtime/catalog promotion | source-bound documentary input only | N/A with reason: offline pilot |
+| Session continuity | CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json | Local disposition only; no automatic build | PASS |
+
+## Acceptance Receipt Assertion Matrix
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| REQ-1 | current synthetic candidate bytes/state chain | exact candidate/payload/bindingKey/pure-record hashes and snapshot | PASS |
+| REQ-2 | one-job source-bound documentary plan and controls | quotes/coverage/DAG pass; Local mutations and authoritative scope/digest/policy modifications above | PASS |
+| REQ-3 | exact4 return and boundary/gates | unchanged worker4/HEAD/index; actual worker preimplementation plus Local intake fast | PASS |
+| Runtime retention | real storage discrimination | future tests not executed | BLOCKED |
+| Builder readiness | resolved scope and admission | open policies/proposals, no execution grant | BLOCKED |
+

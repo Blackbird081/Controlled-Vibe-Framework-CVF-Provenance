@@ -2,16 +2,16 @@
   "schemaVersion": "0.1.0",
   "currentMode": "cvf_ncr_p10_closed_p11_parked",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=CVF-NIS; NEXT_ACTION_CLASS=EXECUTE_BOUNDED_WORK_ORDER; BATCH_ID=CVF-NIS-T1I. Current pure producer/candidate capture and one-job documentary requirement/design/task/validation in docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1I_SOURCE_BOUND_DOCUMENTARY_HANDOFF_2026-10-05.md. Exact4 outputs; synthetic candidate only, historical JobA acceptance gap retained. No blind/manual rerun/helper/product/store/server/provider/network/install/UAC/BUILD/general S2/public/deploy. Local independent review/commit; worker no stage/commit. T1H closed bounded, original coverage NOT_ESTABLISHED; docs/manual provisional and costs UNKNOWN. CCMA parked; S05/C1/send/B2 STOP; Q001/Q004 OPEN/Profile A; P11/deploy/FLAL T4/T5 parked; FR2 historical loss; LHW24 closed; no push. Dispatch material a064a5ee2; dedicated continuity.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-NIS; NEXT_ACTION_CLASS=LOCAL_DISPOSITION_ONLY; BATCH_ID=CVF-NIS-T1I. CLOSED_PASS_BOUNDED current synthetic documentary input in docs/reviews/CVF_NIS_T1I_SOURCE_BOUND_DOCUMENTARY_HANDOFF_COMPLETION_2026-10-05.md.57 independent controls; candidate/state binding MATCH, V6 named11.5month counterexample distinguished; receiver declared digest rejected and raw identities in Local proof. Calendar/anchor/timezone and U1/U2/D9 scope corrections control downstream admission. Historical JobA acceptance gap and T1H invalid control retained; no primary rerun/helper/general S2/BUILD/store/runtime/provider/public successor. Docs/manual provisional, costs UNKNOWN. CCMA parked; S05/C1/send/B2 STOP; Q001/Q004 OPEN/Profile A; P11/deploy/FLAL T4/T5 parked; FR2 historical loss; LHW24 closed; no push.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_NIS_T1I_SOURCE_BOUND_DOCUMENTARY_HANDOFF_2026-10-05.md",
-    "baselineSha256": "ce9c0726fee51cd5c66a29d4e9638e3bf4a7a33d1b4a683cf06c80e568dce7da",
+    "baselineSha256": "0e3d413c3ae7ffb811a440e520bd660b091e6127fe0bfe513ae98ee852fc521f",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1I_SOURCE_BOUND_DOCUMENTARY_HANDOFF_2026-10-05.md",
-    "workOrderSha256": "b4293a58c16c7f8cbb991cac15d6be2b083dd82b344596ae283686c4a9452448"
+    "workOrderSha256": "b1c15b0865f42fe70fb358bb20049924eceee8bcbb663d6db4ee962233405a3b"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }
