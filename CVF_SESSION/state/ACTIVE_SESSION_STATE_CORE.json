@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1H_REVIEW_ONLY_MANUAL_ARM_2026-10-05.md",
     "workOrderSha256": "75d2f31bcb15659dc66b7e71e8b42191ea3e56837c57187732e6bdb42900e090"
   },
-  "currentAuthoritySyncReason": "T1H blocked placement-contaminated sequence1 retained; REWORK1 redispatch sequence2 to fresh context; first retained primary attempt pending.",
+  "currentAuthoritySyncReason": "T1H redispatch material ff3aa0e2f: blocked sequence1 retained; REWORK1 sequence2 fresh context admission; no helper/candidate/runtime effects; parked lanes unchanged.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
