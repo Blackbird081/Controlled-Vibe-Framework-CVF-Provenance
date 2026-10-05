@@ -166,7 +166,7 @@ tokenOrQuotaUsage: NOT_AVAILABLE_WITH_REASON: no exposed provider usage meter
 valueDelta: closed request-owned confirmation integration and repaired rollback/session drift; preserved failed history with separate independent proof
 stopDisposition: COMPLETE_REVIEW
 preRepairAuditDisposition: COMPLETE_BEFORE_FIRST_REPAIR
-materialCommitCount: 3
+materialCommitCount: 4
 continuityCommitCount: 2
 commitPlanDisposition: EXCEPTION_WITH_REASON: source23 committed separately; authority-pair closure and dependent continuity require exact13-path atomicity; missing authorization repaired forward, then dedicated handoff-only sync; failed attempts retained
 latencyDisposition: NOT_MEASURED_WITH_REASON: no task-scoped meter
@@ -295,7 +295,7 @@ Returned defects: NONE_RETURNED, totalCandidates0; no new ID assigned.
 
 - Knowledge task class: bounded named-artifact source/closure reconciliation, not repository absorption
 - Source manifest: docs/reviews/evidence/cvf-nis-t1b-d-closure-reconciliation-2026-10-05.json composedTranchePaths, exactly36 named files
-- Source manifest hash: fad34b0364a290ce6fe023a51c6360aee3fe6d47d47c286c03afcee5d0f32d42
+- Source manifest hash: 8a02a478eaf5d65e33792835b2dbe70597826c643a7996a72afef5760f7a8e3a
 - Enumeration safety: filesystem Path.is_file checks for the exact36 declared paths; no full repository enumeration
 - Intake registry or ledger: closure JSON mandatoryArtifacts/admittedCompanionArtifacts and acceptanceLedgerProjection
 - Authority assets: closed work order/baseline, reviewer completion and source continuity owners
