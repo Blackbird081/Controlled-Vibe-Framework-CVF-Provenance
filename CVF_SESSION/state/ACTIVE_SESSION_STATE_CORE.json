@@ -36,12 +36,12 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_NIS_T1D_SELECTED_CAPABILITY_CONSUMER_CONTRACT_2026-10-05.md",
-    "baselineSha256": "a723a447a65dcd468114daf56ffb186ecb8f7946c26d9b1ca34c3f4eb6226104",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1D_SELECTED_CAPABILITY_CONSUMER_CONTRACT_2026-10-05.md",
-    "workOrderSha256": "8d02e8b01abd797a1f288ecb2e53b1ce7e7c56e00e06dd5e4549be35f8845f74"
+    "baselinePath": "docs/baselines/CVF_GC018_NIS_T1E_EXPLICIT_OPEN_ITEMS_CONSUMER_2026-10-05.md",
+    "baselineSha256": "f205b40670764af57e66b05c20c4e1affcfa56af93d323088efe03b0b4484965",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1E_EXPLICIT_OPEN_ITEMS_CONSUMER_2026-10-05.md",
+    "workOrderSha256": "604906ac1bf8298d6d1228d3f00df5b4a49176ad6353b5dd421806d6231e34fa"
   },
-  "currentAuthoritySyncReason": "T1D contract closed; Local clarifications and source probe accepted; next exact implementation planning only.",
+  "currentAuthoritySyncReason": "T1E native consumer dispatch after closed T1D; synthetic scope only; parked lanes retained.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",

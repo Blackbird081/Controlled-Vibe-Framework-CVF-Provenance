@@ -1,0 +1,270 @@
+{
+  "schemaVersion": "cvf.nisT1eDispatchInputs.v1",
+  "batchId": "CVF-NIS-T1E",
+  "dispatchBaseHead": "b90078220da9f97adac98a7c9f3d4c6c831d06bd",
+  "legacyProducerBase": "a27c13fa7a30fbc76b755aac539ec65e6dcae49d",
+  "legacySourceIdentity": "git diff a27c13fa7..b90078220 -- cvf-web/src: EMPTY; all product source/test blobs unchanged by T1D",
+  "authority": "Operator next under delegated Local orchestration/work-order/commit authority2026-10-05",
+  "acceptedT1dClosureCommit": "c9ca87257ee547075b3fed3dae62034ea90ea554",
+  "sources": {
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-review.ts": {
+      "rawSha256": "c8746be8645af3d287c084a6338e84bbf502b4ffc3f9f750f58236c0085a34dc",
+      "gitBlob": "4bfd12d933ed55d788c45cda439e8724991abb07",
+      "disposition": "EXISTING_WRITABLE_PREIMAGE"
+    },
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-confirmation.ts": {
+      "rawSha256": "05afbe557d905f583221b4a59bfc04fabbd7d9e6b73c4ff0b7b05fab6ba4d067",
+      "gitBlob": "da9253c361f6cc30527a11d3cad8487c302d1bb0",
+      "disposition": "EXISTING_WRITABLE_PREIMAGE"
+    },
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-acceptance.ts": {
+      "rawSha256": "1ea88cc17ba9a6086b68da9b6d1de41c711088c1f7a0c0d863502e44391019a3",
+      "gitBlob": "6e926064e70e75829c1ac6dda527b5193e4ba9b6",
+      "disposition": "EXISTING_WRITABLE_PREIMAGE"
+    },
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecReview.tsx": {
+      "rawSha256": "acc098743cc9b6e2ac66c4c94ace76531924c049fcdfa874e3654c52df7efdb8",
+      "gitBlob": "fef775fc403db093108e8095a0142c067aa36b63",
+      "disposition": "EXISTING_WRITABLE_PREIMAGE"
+    },
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-review.test.ts": {
+      "rawSha256": "ea6e483da361108a7f45351b85c104264884cda432c06288a48c6f9dd4297a77",
+      "gitBlob": "22c789b32c0c484cd64e4c685d96d9b5e9603e5d",
+      "disposition": "EXISTING_WRITABLE_PREIMAGE"
+    },
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-confirmation.test.ts": {
+      "rawSha256": "c0afd0bbac2cd1380820cea4b1688d7a30815aee0197a0d10952134f00184d01",
+      "gitBlob": "04ac956bee27cf6afe836d55fa71f6a8168d57ae",
+      "disposition": "EXISTING_WRITABLE_PREIMAGE"
+    },
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-acceptance.test.ts": {
+      "rawSha256": "27962cb481506be66d49b737d6c649357d1a2af3fbb5b5fdac86b4312afc4ea6",
+      "gitBlob": "7d7b4eb805db57a613e0b56661081b6cbd6a163e",
+      "disposition": "EXISTING_WRITABLE_PREIMAGE"
+    },
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecReview.test.tsx": {
+      "rawSha256": "880a867fa349b628790e58e086e21afb5547357f29f1c8cda4912c753934730c",
+      "gitBlob": "31807d29e78ffa72e1038448bfc75e26881b77e3",
+      "disposition": "EXISTING_WRITABLE_PREIMAGE"
+    },
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-review-api.test.ts": {
+      "rawSha256": "fdcd35d852ad6c241af5bff1d0f79b7df31014a5a41c5915d311b4574a8d1ffc",
+      "gitBlob": "f3e6748897c3ce7b647d63d7a4105deb7c971547",
+      "disposition": "EXISTING_WRITABLE_PREIMAGE"
+    },
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-review-api.ts": {
+      "rawSha256": "8b7eecf6b16bf64aef9e50ed88b70f339c41f6c6949ec99fea1b23c455a1c77d",
+      "gitBlob": "461c6b784c70b78d8f49ff4317f033068184f20d",
+      "disposition": "READ_ONLY_PIN"
+    },
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-review-client.ts": {
+      "rawSha256": "a6967c65a142c1d1805fbd98548ce326f462f5eefe1609ff70404c89684a472d",
+      "gitBlob": "1396a8109175a251e54f069ab82da7c1410860e4",
+      "disposition": "READ_ONLY_PIN"
+    },
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-file-store.ts": {
+      "rawSha256": "3686affcccf45fc01eac4c9fefdea015de1f28021a0af8c2e13a4b1bf038a0fc",
+      "gitBlob": "9fadfae654f198d3c6eaf2bb918ef1453cad361c",
+      "disposition": "READ_ONLY_PIN"
+    },
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-actor.ts": {
+      "rawSha256": "987c5ab042f68f31d21b0394f039912cc50e6783314a0afe26925e95f8f69ce1",
+      "gitBlob": "c1239613b539953467917b26106116a8d25f6918",
+      "disposition": "READ_ONLY_PIN"
+    },
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-private-profile.ts": {
+      "rawSha256": "2b9f957a0e318077b67555bbe34120f29df6e302e24f23b831cb92190b9e5a17",
+      "gitBlob": "655a83bca7941e82496b8b8578ac6e96ddf44bde",
+      "disposition": "READ_ONLY_PIN"
+    },
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-security-fixture.ts": {
+      "rawSha256": "2f2d5620ce7e73869d1aa9c4214133d0254ed7e2ac7a3f8db44a7ca3bde5c756",
+      "gitBlob": "a2204d9d81a9152075397a3c1a2f5ba108df8dc9",
+      "disposition": "READ_ONLY_PIN"
+    },
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/SpecExport.tsx": {
+      "rawSha256": "24617b9ef2f53e6ac5cf5e4907eaa2dea2d0ba8fbe1578714f8cba22338be2a9",
+      "gitBlob": "bb550ff43785e62534e8cc8432649c537a84ec6a",
+      "disposition": "READ_ONLY_PIN"
+    },
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/spec-export-portable-handoff.ts": {
+      "rawSha256": "8528e8274bb82015398ce7deb10292aff6c7b5a06db83b25c6d8346b7a440795",
+      "gitBlob": "d17f4f6af70dcdfe45e7c9f7254d0a610bc519d9",
+      "disposition": "READ_ONLY_PIN"
+    },
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecConfirmation.tsx": {
+      "rawSha256": "d411429c5eb77821d345959fec27e2c5a88cc26fb2f38f4ae7e24ee7b95ff58e",
+      "gitBlob": "cd4b1c376ded04ec4a97fc81803afc1a406d7902",
+      "disposition": "READ_ONLY_PIN"
+    },
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/intent-spec/reviews/route.ts": {
+      "rawSha256": "32d6e97ab57d4d5e05a53daaf2128905e2b99a18af5c02d4e9adad62c5a8107a",
+      "gitBlob": "3e15402bfbcae81a574a2685535ec970dba09ad5",
+      "disposition": "READ_ONLY_PIN"
+    },
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/intent-spec/reviews/[id]/route.ts": {
+      "rawSha256": "c7e9c3d5b504f5071788a4a1004f544a9e04a79ef75adc53fbb1bf8a72dd2fc5",
+      "gitBlob": "29f77bb6df72f799e510e448f87652d006fa5ced",
+      "disposition": "READ_ONLY_PIN"
+    },
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/test/setup.ts": {
+      "rawSha256": "bc573b2a6133b07404c42f797bce43fe73464711e0281f29da8234bf2fed6b27",
+      "gitBlob": "0f98d0e762eb93ddef0a2aee4c373aeb65120485",
+      "disposition": "READ_ONLY_PIN"
+    },
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/test/load-local-env.ts": {
+      "rawSha256": "11d7f7e3e50977d5ae532895611040dfc46d1530a96116778b6314bc54f81878",
+      "gitBlob": "1d4ff276fc0116a1f4c2b330be519d89fe7a810c",
+      "disposition": "READ_ONLY_PIN"
+    },
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/test/provider-execution-guard.ts": {
+      "rawSha256": "1d2af9bba82faaf50e07a52ecfb04ff0c19d3ec90ed0b5f4111c0f52b67671a9",
+      "gitBlob": "0ac99261852aa638d53bfd89a3c5d011dcda66cc",
+      "disposition": "READ_ONLY_PIN"
+    },
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/package.json": {
+      "rawSha256": "f03fc2c2700e904dc88e10395d0856983b9b0f9e6f27150713fa402f9e9fe24b",
+      "gitBlob": "a2d00af91d642ddb6ddfe4ce4eb3113d79888771",
+      "disposition": "READ_ONLY_PIN"
+    },
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/package-lock.json": {
+      "rawSha256": "d23ae4aa094b97a2c9149ed84227e9ddd3255db9df67efba8218e7c61e5c4d8b",
+      "gitBlob": "bd171e3ddd5ca66aec21e218a2ae7a4a4816d613",
+      "disposition": "READ_ONLY_PIN"
+    },
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/vitest.config.ts": {
+      "rawSha256": "9a4a65976b5b7a5d038f9cb412a90d417f804108cf1dd33bae4421989a863420",
+      "gitBlob": "d1488d1e4612af183f0759d4aaf63b9c39ea0032",
+      "disposition": "READ_ONLY_PIN"
+    },
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tsconfig.json": {
+      "rawSha256": "d4af4823c8a2919796c5faa29805cd152217fbc25d6021c2da57541a685ea0f6",
+      "gitBlob": "4b63f1c8b6494b52f1e5ccc504cf8ebaf454d778",
+      "disposition": "READ_ONLY_PIN"
+    },
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/eslint.config.mjs": {
+      "rawSha256": "d0ccd1757c31535cdd7762fcfbfa1677a97fef2543b61e2e09322ade86797ffb",
+      "gitBlob": "42a56402b85292cb27442a8211be3ae49af2ee4e",
+      "disposition": "READ_ONLY_PIN"
+    },
+    "DESIGN.md": {
+      "rawSha256": "15c1b5061bd2e1f763638beb83a84d06eb8ccbc470747c01f236033a834a987e",
+      "gitBlob": "260703ec89ffd2282c3960a891337d2b970740f5",
+      "disposition": "READ_ONLY_PIN"
+    },
+    "docs/reviews/CVF_NIS_T1D_SELECTED_CAPABILITY_CONSUMER_CONTRACT_COMPLETION_2026-10-05.md": {
+      "rawSha256": "21dd5da416234e9cedbc77fc5a90e50a42162acf3a63f928e41593151b809d4c",
+      "gitBlob": "6e38f2f81a2f1d2f216841e200f0440e3542f9dc",
+      "disposition": "READ_ONLY_PIN"
+    },
+    "docs/reviews/CVF_NIS_T1D_CONSUMER_IMPLEMENTATION_CONTRACT_2026-10-05.md": {
+      "rawSha256": "a97cac551001c084dcfa0e80c4632983b3bc75493a8956dc9d16513b4e0a2f03",
+      "gitBlob": "312c418070814c0dc1d967d6002b5716050e9707",
+      "disposition": "READ_ONLY_PIN"
+    },
+    "docs/reviews/evidence/cvf-nis-t1d-acceptance-plan-2026-10-05.json": {
+      "rawSha256": "6bbd1904a0b1319d345180fb4566d5b473e6b0c232cea5ced134f45096d7706c",
+      "gitBlob": "777117bd8764626f24880c26a6664b6858879114",
+      "disposition": "READ_ONLY_PIN"
+    },
+    "docs/reviews/evidence/cvf-nis-t1d-local-independent-review-2026-10-05.json": {
+      "rawSha256": "abbf704eb2e835e38b22c0c06d2945caa6ffdc5d52e87cd991cd0853d1e65314",
+      "gitBlob": "ef2daf3e8647d7179df8d278f15863a74b882f05",
+      "disposition": "READ_ONLY_PIN"
+    },
+    "docs/reviews/evidence/cvf-nis-t1c-scenario-2026-10-05.json": {
+      "rawSha256": "40b2b1b0a8aca2004403915188cd050eb296103059a5070eee5b4ce2861d6e0b",
+      "gitBlob": "b908e587bcef0c9d49c1f47d2f05c1fc47fe2e88",
+      "disposition": "READ_ONLY_PIN"
+    }
+  },
+  "productionWritePaths": [
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-open-items.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-review.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-confirmation.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-acceptance.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecReview.tsx"
+  ],
+  "testWritePaths": [
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-open-items.test.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-legacy-golden.test.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-review.test.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-confirmation.test.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-acceptance.test.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecReview.test.tsx",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-review-api.test.ts"
+  ],
+  "workerArtifacts": [
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-open-items.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-review.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-confirmation.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-acceptance.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecReview.tsx",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-open-items.test.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-legacy-golden.test.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-review.test.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-confirmation.test.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-acceptance.test.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecReview.test.tsx",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-review-api.test.ts",
+    "docs/reviews/evidence/cvf-nis-t1e-frozen-legacy-2026-10-05.json",
+    "docs/reviews/evidence/cvf-nis-t1e-acceptance-execution-2026-10-05.json",
+    "docs/reviews/evidence/cvf-nis-t1e-implementation-binding-2026-10-05.json",
+    "docs/reviews/CVF_NIS_T1E_EXPLICIT_OPEN_ITEMS_CONSUMER_WORKER_RETURN_2026-10-05.md"
+  ],
+  "readOnlyPaths": [
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-review-api.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-review-client.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-file-store.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-actor.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-private-profile.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-security-fixture.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/SpecExport.tsx",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/spec-export-portable-handoff.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecConfirmation.tsx",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/intent-spec/reviews/route.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/intent-spec/reviews/[id]/route.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/test/setup.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/test/load-local-env.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/test/provider-execution-guard.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/package.json",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/package-lock.json",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/vitest.config.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tsconfig.json",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/eslint.config.mjs",
+    "DESIGN.md",
+    "docs/reviews/CVF_NIS_T1D_SELECTED_CAPABILITY_CONSUMER_CONTRACT_COMPLETION_2026-10-05.md",
+    "docs/reviews/CVF_NIS_T1D_CONSUMER_IMPLEMENTATION_CONTRACT_2026-10-05.md",
+    "docs/reviews/evidence/cvf-nis-t1d-acceptance-plan-2026-10-05.json",
+    "docs/reviews/evidence/cvf-nis-t1d-local-independent-review-2026-10-05.json",
+    "docs/reviews/evidence/cvf-nis-t1c-scenario-2026-10-05.json"
+  ],
+  "newPathsAbsent": [
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-open-items.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-open-items.test.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-legacy-golden.test.ts"
+  ],
+  "legacyFixturePolicy": {
+    "clockMs": 1791158400000,
+    "createdAt": "2026-10-05T00:00:00.000Z",
+    "reviewer": "Self-declared fixture",
+    "packetSource": "Exact source packet\r\nend",
+    "answerForEachDecision": "Decision for <decision.id>",
+    "LG1values": {
+      "coreFeatures": "Synthetic reporting"
+    },
+    "LG2": "LG1, language vi",
+    "LG3": "FX-B values in the pinned T1D plan; same packetSource/answer/reviewer/clock, language en",
+    "actor": {
+      "userId": "user_fixture",
+      "orgId": "org_fixture",
+      "teamId": "team_fixture",
+      "role": "developer",
+      "assurance": "LOCAL_TEST_SESSION"
+    },
+    "sessionExpiresAtMs": 1791158460000,
+    "preparedAtMs": 1791158400000,
+    "captureRequirement": "Unmodified source producers before first tracked production/test edit; scratch-only harness, existing middleware session verifier fixture; freeze full state/key order, file bytes, draft, binding, acceptance record id. No real session/cookie/store/profile."
+  },
+  "claimBoundary": "Exact native consumer implementation envelope; no upstream code/package/runtime, provider, real store/security, BUILD, public or parked lane grant."
+}
