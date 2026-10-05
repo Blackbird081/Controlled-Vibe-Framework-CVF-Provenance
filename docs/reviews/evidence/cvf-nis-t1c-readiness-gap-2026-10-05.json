@@ -1,0 +1,733 @@
+{
+ "schemaVersion": "cvf.nisT1cReadinessGap.v1",
+ "batchId": "CVF-NIS-T1C",
+ "executionBaseHead": "4ef9df4b6a20f9634974d49bdf159bb76af89628",
+ "scenario": {
+  "path": "docs/reviews/evidence/cvf-nis-t1c-scenario-2026-10-05.json",
+  "sha256": "40b2b1b0a8aca2004403915188cd050eb296103059a5070eee5b4ce2861d6e0b"
+ },
+ "replay": {
+  "path": "docs/reviews/evidence/cvf-nis-t1c-replay-2026-10-05.json",
+  "sha256": "4fae2c19ca58d0b7a933c7fc883cfcc5929c5d1ba61e658edd3d0d95b5da5208"
+ },
+ "oracleAuthorship": "Declared by the worker from the work order Execution Plan and the question-to-field mapping read in intent-spec-review.ts before any replay; replay results never define correctness.",
+ "materialDecisionCoverage": {
+  "rows": [
+   {
+    "id": "MD1",
+    "topic": "purpose: weekly maintenance report compiled from team-lead entries",
+    "token": "weekly maintenance report",
+    "expectedStages": [
+     "P0_INITIAL",
+     "P1_STAGED",
+     "P2_BASELINE_ACKNOWLEDGED",
+     "P2B_RULE_CHANGED_STALE",
+     "P3_REVISED_ACKNOWLEDGED"
+    ],
+    "presence": {
+     "P0_INITIAL": true,
+     "P1_STAGED": true,
+     "P2_BASELINE_ACKNOWLEDGED": true,
+     "P2B_RULE_CHANGED_STALE": true,
+     "P3_REVISED_ACKNOWLEDGED": true
+    },
+    "oracleBaseline": "PRESERVED",
+    "oracleRevised": "PRESERVED",
+    "missingInExpectedStages": []
+   },
+   {
+    "id": "MD2",
+    "topic": "input-source limit: weekly CSV drop only",
+    "token": "weekly CSV drop only",
+    "expectedStages": [
+     "P0_INITIAL",
+     "P1_STAGED",
+     "P2_BASELINE_ACKNOWLEDGED",
+     "P2B_RULE_CHANGED_STALE",
+     "P3_REVISED_ACKNOWLEDGED"
+    ],
+    "presence": {
+     "P0_INITIAL": true,
+     "P1_STAGED": true,
+     "P2_BASELINE_ACKNOWLEDGED": true,
+     "P2B_RULE_CHANGED_STALE": true,
+     "P3_REVISED_ACKNOWLEDGED": true
+    },
+    "oracleBaseline": "PRESERVED",
+    "oracleRevised": "PRESERVED",
+    "missingInExpectedStages": []
+   },
+   {
+    "id": "MD3",
+    "topic": "audience and access: who views",
+    "token": "auditors (read-only view, no export)",
+    "expectedStages": [
+     "P2B_RULE_CHANGED_STALE",
+     "P3_REVISED_ACKNOWLEDGED"
+    ],
+    "presence": {
+     "P0_INITIAL": false,
+     "P1_STAGED": false,
+     "P2_BASELINE_ACKNOWLEDGED": false,
+     "P2B_RULE_CHANGED_STALE": true,
+     "P3_REVISED_ACKNOWLEDGED": true
+    },
+    "oracleBaseline": "PRESERVED",
+    "oracleRevised": "CHANGED_NEEDS_RECONFIRMATION_THEN_RECONFIRMED",
+    "missingInExpectedStages": []
+   },
+   {
+    "id": "MD4",
+    "topic": "edit and export permission: department head sole exporter in baseline; team leads export own section in revised",
+    "token": "sole exporter",
+    "expectedStages": [
+     "P0_INITIAL",
+     "P1_STAGED",
+     "P2_BASELINE_ACKNOWLEDGED"
+    ],
+    "presence": {
+     "P0_INITIAL": true,
+     "P1_STAGED": true,
+     "P2_BASELINE_ACKNOWLEDGED": true,
+     "P2B_RULE_CHANGED_STALE": true,
+     "P3_REVISED_ACKNOWLEDGED": false
+    },
+    "oracleBaseline": "PRESERVED",
+    "oracleRevised": "CHANGED_NEEDS_RECONFIRMATION_THEN_RECONFIRMED",
+    "missingInExpectedStages": []
+   },
+   {
+    "id": "MD5",
+    "topic": "deadline Friday 17:00",
+    "token": "Friday 17:00",
+    "expectedStages": [
+     "P0_INITIAL",
+     "P1_STAGED",
+     "P2_BASELINE_ACKNOWLEDGED",
+     "P2B_RULE_CHANGED_STALE",
+     "P3_REVISED_ACKNOWLEDGED"
+    ],
+    "presence": {
+     "P0_INITIAL": true,
+     "P1_STAGED": true,
+     "P2_BASELINE_ACKNOWLEDGED": true,
+     "P2B_RULE_CHANGED_STALE": true,
+     "P3_REVISED_ACKNOWLEDGED": true
+    },
+    "oracleBaseline": "PRESERVED",
+    "oracleRevised": "PRESERVED",
+    "missingInExpectedStages": []
+   },
+   {
+    "id": "MD6",
+    "topic": "missing, late and duplicate exception handling",
+    "token": "NO ENTRY",
+    "expectedStages": [
+     "P0_INITIAL",
+     "P1_STAGED",
+     "P2_BASELINE_ACKNOWLEDGED",
+     "P2B_RULE_CHANGED_STALE",
+     "P3_REVISED_ACKNOWLEDGED"
+    ],
+    "presence": {
+     "P0_INITIAL": false,
+     "P1_STAGED": true,
+     "P2_BASELINE_ACKNOWLEDGED": true,
+     "P2B_RULE_CHANGED_STALE": true,
+     "P3_REVISED_ACKNOWLEDGED": true
+    },
+    "oracleBaseline": "PRESERVED",
+    "oracleRevised": "PRESERVED",
+    "missingInExpectedStages": [
+     "P0_INITIAL"
+    ]
+   },
+   {
+    "id": "MD7",
+    "topic": "retention: reports 12 months",
+    "token": "kept 12 months",
+    "expectedStages": [
+     "P0_INITIAL",
+     "P1_STAGED",
+     "P2_BASELINE_ACKNOWLEDGED",
+     "P2B_RULE_CHANGED_STALE",
+     "P3_REVISED_ACKNOWLEDGED"
+    ],
+    "presence": {
+     "P0_INITIAL": false,
+     "P1_STAGED": true,
+     "P2_BASELINE_ACKNOWLEDGED": true,
+     "P2B_RULE_CHANGED_STALE": true,
+     "P3_REVISED_ACKNOWLEDGED": true
+    },
+    "oracleBaseline": "PRESERVED",
+    "oracleRevised": "PRESERVED",
+    "missingInExpectedStages": [
+     "P0_INITIAL"
+    ]
+   },
+   {
+    "id": "MD8",
+    "topic": "prohibition of automatic performance scoring",
+    "token": "No automatic scoring or ranking",
+    "expectedStages": [
+     "P0_INITIAL",
+     "P1_STAGED",
+     "P2_BASELINE_ACKNOWLEDGED",
+     "P2B_RULE_CHANGED_STALE",
+     "P3_REVISED_ACKNOWLEDGED"
+    ],
+    "presence": {
+     "P0_INITIAL": true,
+     "P1_STAGED": true,
+     "P2_BASELINE_ACKNOWLEDGED": true,
+     "P2B_RULE_CHANGED_STALE": true,
+     "P3_REVISED_ACKNOWLEDGED": true
+    },
+    "oracleBaseline": "PRESERVED",
+    "oracleRevised": "PRESERVED",
+    "missingInExpectedStages": []
+   },
+   {
+    "id": "C1",
+    "topic": "conflict: immutable once submitted vs correct until Friday 17:00",
+    "token": "CONFLICT C1",
+    "expectedStages": [
+     "P0_INITIAL"
+    ],
+    "presence": {
+     "P0_INITIAL": true,
+     "P1_STAGED": false,
+     "P2_BASELINE_ACKNOWLEDGED": false,
+     "P2B_RULE_CHANGED_STALE": false,
+     "P3_REVISED_ACKNOWLEDGED": false
+    },
+    "oracleBaseline": "CONFLICTING_THEN_RESOLVED_BY_STAGED_ANSWER",
+    "oracleRevised": "PRESERVED",
+    "missingInExpectedStages": []
+   },
+   {
+    "id": "U1",
+    "topic": "unknown: raw entry retention period",
+    "token": "UNKNOWN U1",
+    "expectedStages": [
+     "P0_INITIAL",
+     "P1_STAGED",
+     "P2_BASELINE_ACKNOWLEDGED",
+     "P2B_RULE_CHANGED_STALE",
+     "P3_REVISED_ACKNOWLEDGED"
+    ],
+    "presence": {
+     "P0_INITIAL": false,
+     "P1_STAGED": true,
+     "P2_BASELINE_ACKNOWLEDGED": true,
+     "P2B_RULE_CHANGED_STALE": true,
+     "P3_REVISED_ACKNOWLEDGED": true
+    },
+    "oracleBaseline": "MISSING",
+    "oracleRevised": "MISSING",
+    "missingInExpectedStages": [
+     "P0_INITIAL"
+    ]
+   },
+   {
+    "id": "U2",
+    "topic": "unknown: deadline timezone",
+    "token": "UNKNOWN U2",
+    "expectedStages": [
+     "P0_INITIAL",
+     "P1_STAGED",
+     "P2_BASELINE_ACKNOWLEDGED",
+     "P2B_RULE_CHANGED_STALE",
+     "P3_REVISED_ACKNOWLEDGED"
+    ],
+    "presence": {
+     "P0_INITIAL": false,
+     "P1_STAGED": true,
+     "P2_BASELINE_ACKNOWLEDGED": true,
+     "P2B_RULE_CHANGED_STALE": true,
+     "P3_REVISED_ACKNOWLEDGED": true
+    },
+    "oracleBaseline": "MISSING",
+    "oracleRevised": "MISSING",
+    "missingInExpectedStages": [
+     "P0_INITIAL"
+    ]
+   },
+   {
+    "id": "U3",
+    "topic": "unknown: deadline on a public holiday",
+    "token": "UNKNOWN U3",
+    "expectedStages": [
+     "P0_INITIAL",
+     "P1_STAGED",
+     "P2_BASELINE_ACKNOWLEDGED",
+     "P2B_RULE_CHANGED_STALE",
+     "P3_REVISED_ACKNOWLEDGED"
+    ],
+    "presence": {
+     "P0_INITIAL": false,
+     "P1_STAGED": true,
+     "P2_BASELINE_ACKNOWLEDGED": true,
+     "P2B_RULE_CHANGED_STALE": true,
+     "P3_REVISED_ACKNOWLEDGED": true
+    },
+    "oracleBaseline": "MISSING",
+    "oracleRevised": "MISSING",
+    "missingInExpectedStages": [
+     "P0_INITIAL"
+    ]
+   },
+   {
+    "id": "U4",
+    "topic": "unknown: export file format",
+    "token": "UNKNOWN U4",
+    "expectedStages": [
+     "P0_INITIAL",
+     "P1_STAGED",
+     "P2_BASELINE_ACKNOWLEDGED",
+     "P2B_RULE_CHANGED_STALE",
+     "P3_REVISED_ACKNOWLEDGED"
+    ],
+    "presence": {
+     "P0_INITIAL": false,
+     "P1_STAGED": true,
+     "P2_BASELINE_ACKNOWLEDGED": true,
+     "P2B_RULE_CHANGED_STALE": true,
+     "P3_REVISED_ACKNOWLEDGED": true
+    },
+    "oracleBaseline": "MISSING",
+    "oracleRevised": "MISSING",
+    "missingInExpectedStages": [
+     "P0_INITIAL"
+    ]
+   }
+  ],
+  "reviewStateChecks": [
+   {
+    "stage": "P0_INITIAL",
+    "expected": {
+     "pending": [
+      "data",
+      "exceptions",
+      "acceptance",
+      "boundaries"
+     ],
+     "canContinue": false,
+     "acknowledged": false
+    },
+    "observed": {
+     "pending": [
+      "data",
+      "exceptions",
+      "acceptance",
+      "boundaries"
+     ],
+     "canContinue": false,
+     "acknowledged": false,
+     "needsReconfirmation": [],
+     "revision": 4
+    },
+    "match": true
+   },
+   {
+    "stage": "P1_STAGED",
+    "expected": {
+     "pending": [],
+     "canContinue": false,
+     "acknowledged": false,
+     "note": "all decisions answered but not acknowledged"
+    },
+    "observed": {
+     "pending": [],
+     "canContinue": false,
+     "acknowledged": false,
+     "needsReconfirmation": [],
+     "revision": 8
+    },
+    "match": true
+   },
+   {
+    "stage": "P2_BASELINE_ACKNOWLEDGED",
+    "expected": {
+     "pending": [],
+     "canContinue": true,
+     "acknowledged": true
+    },
+    "observed": {
+     "pending": [],
+     "canContinue": true,
+     "acknowledged": true,
+     "needsReconfirmation": [],
+     "revision": 8
+    },
+    "match": true
+   },
+   {
+    "stage": "P2B_RULE_CHANGED_STALE",
+    "expected": {
+     "pending": [
+      "access",
+      "data"
+     ],
+     "canContinue": false,
+     "acknowledged": false,
+     "needsReconfirmation": [
+      "access",
+      "data"
+     ],
+     "unchangedNotReconfirm": [
+      "workflow",
+      "exceptions",
+      "acceptance",
+      "boundaries"
+     ]
+    },
+    "observed": {
+     "pending": [
+      "access",
+      "data"
+     ],
+     "canContinue": false,
+     "acknowledged": false,
+     "needsReconfirmation": [
+      "access",
+      "data"
+     ],
+     "revision": 9
+    },
+    "match": true
+   },
+   {
+    "stage": "P3_REVISED_ACKNOWLEDGED",
+    "expected": {
+     "pending": [],
+     "canContinue": true,
+     "acknowledged": true
+    },
+    "observed": {
+     "pending": [],
+     "canContinue": true,
+     "acknowledged": true,
+     "needsReconfirmation": [],
+     "revision": 11
+    },
+    "match": true
+   }
+  ],
+  "negativeCaseChecks": [
+   {
+    "id": "N1_PLACEHOLDER_UNKNOWN",
+    "expected": "decision stays pending",
+    "observedDataPending": true,
+    "match": true
+   },
+   {
+    "id": "N2_EMBEDDED_UNKNOWN",
+    "businessExpectation": "should remain pending",
+    "observed": {
+     "pending": [],
+     "canContinue": true,
+     "packetStillShowsUnknownText": true
+    },
+    "match": false,
+    "disposition": "ORACLE_MISMATCH_NATIVE_LIMIT"
+   },
+   {
+    "id": "N3_STALE_ACK",
+    "expected": "ack cleared, canContinue false",
+    "observed": true,
+    "match": true
+   },
+   {
+    "id": "N4_UNCHANGED_RECONFIRM_NOOP",
+    "oracleExpected": "no decision needs reconfirmation after a cosmetic lookAndFeel change; acknowledgement cleared",
+    "observed": {
+     "needsReconfirmation": [
+      "workflow",
+      "access",
+      "data",
+      "exceptions",
+      "acceptance",
+      "boundaries"
+     ],
+     "acknowledged": false
+    },
+    "match": false,
+    "disposition": "ORACLE_MISS_CONSERVATIVE_NATIVE_BEHAVIOR_REPORTED"
+   }
+  ],
+  "staleTokensInRevisedPacket": {
+   "sole exporter": false,
+   "only person who can export": false
+  },
+  "conflictingBriefFieldsBothPresentInRevisedPacket": {
+   "immutableOnceSubmitted": true,
+   "correctUntilFriday1700": true
+  },
+  "oracleMismatches": [
+   {
+    "item": "MD6",
+    "kind": "TOKEN_NOT_VISIBLE_IN_EXPECTED_STAGE",
+    "stages": [
+     "P0_INITIAL"
+    ]
+   },
+   {
+    "item": "MD7",
+    "kind": "TOKEN_NOT_VISIBLE_IN_EXPECTED_STAGE",
+    "stages": [
+     "P0_INITIAL"
+    ]
+   },
+   {
+    "item": "U1",
+    "kind": "TOKEN_NOT_VISIBLE_IN_EXPECTED_STAGE",
+    "stages": [
+     "P0_INITIAL"
+    ]
+   },
+   {
+    "item": "U2",
+    "kind": "TOKEN_NOT_VISIBLE_IN_EXPECTED_STAGE",
+    "stages": [
+     "P0_INITIAL"
+    ]
+   },
+   {
+    "item": "U3",
+    "kind": "TOKEN_NOT_VISIBLE_IN_EXPECTED_STAGE",
+    "stages": [
+     "P0_INITIAL"
+    ]
+   },
+   {
+    "item": "U4",
+    "kind": "TOKEN_NOT_VISIBLE_IN_EXPECTED_STAGE",
+    "stages": [
+     "P0_INITIAL"
+    ]
+   },
+   {
+    "item": "N2_EMBEDDED_UNKNOWN",
+    "kind": "ORACLE_MISMATCH_NATIVE_LIMIT"
+   },
+   {
+    "item": "N4_UNCHANGED_RECONFIRM_NOOP",
+    "kind": "ORACLE_MISS_CONSERVATIVE_NATIVE_BEHAVIOR_REPORTED"
+   }
+  ]
+ },
+ "findings": [
+  {
+   "id": "F-UNKNOWN-GRANULARITY",
+   "severity": "HIGH",
+   "finding": "Four unknown items and one conflict reduce to a decision-level pending list; once the reviewer types prose with UNKNOWN markers every decision clears and the baseline packet is acknowledged with canContinue true (P2, N2). Unknown count equals 4 in prose but the native counter never represents it.",
+   "evidence": [
+    "P2_BASELINE_ACKNOWLEDGED summary",
+    "N2_EMBEDDED_UNKNOWN"
+   ]
+  },
+  {
+   "id": "F-UNKNOWN-VISIBILITY-AT-P0",
+   "severity": "MEDIUM",
+   "finding": "Before the reviewer types answers the unknowns exist nowhere in the packet; the brief fields do not name U1-U4 and OPEN decisions list only the six generic prompts. The oracle token check fails at P0_INITIAL for U1-U4 (declared oracle expected visibility at all stages).",
+   "evidence": [
+    "materialDecisionCoverage.rows U1-U4 missingInExpectedStages"
+   ]
+  },
+  {
+   "id": "F-READINESS-STATUS-INDEPENDENT",
+   "severity": "HIGH",
+   "finding": "The packet always says READY_FOR_EXTERNAL_AGENT_REVIEW and 'None identified from the provided source values' for material details, regardless of review state, in both baseline and revised packets.",
+   "evidence": [
+    "nativeLimitProbes"
+   ]
+  },
+  {
+   "id": "F-CONFLICT-RESOLUTION-IN-APPENDIX-ONLY",
+   "severity": "MEDIUM",
+   "finding": "Resolving C1 does not amend the source brief fields; the revised packet still states both conflicting rules in the brief and the receiver must reconcile them with an appendix answer.",
+   "evidence": [
+    "conflictingBriefFieldsBothPresentInRevisedPacket"
+   ]
+  },
+  {
+   "id": "F-REVISION-TRACKING-WORKS",
+   "severity": "INFO",
+   "finding": "A changed access rule reconfirmed exactly access and data, cleared the baseline acknowledgement, kept unchanged decisions and removed the stale 'sole exporter' wording from the revised packet.",
+   "evidence": [
+    "P2B_RULE_CHANGED_STALE",
+    "staleTokensInRevisedPacket"
+   ]
+  },
+  {
+   "id": "F-UNMAPPED-FIELD-FRICTION",
+   "severity": "LOW",
+   "finding": "A cosmetic change to lookAndFeel (a field mapped to no question) marked all six answered decisions for reconfirmation; the declared oracle predicted none. Native behavior is documented as conservative; the oracle prediction was wrong and is reported as an oracle miss, not corrected.",
+   "evidence": [
+    "N4_UNCHANGED_RECONFIRM_NOOP"
+   ]
+  }
+ ],
+ "factsKeptSeparate": {
+  "contentConfirmation": "review acknowledgement and canContinue only mean the reviewer viewed the current revision with no OPEN, CONFLICT or placeholder decision",
+  "artifactFitness": "assessed here only on one synthetic scenario against the declared oracle",
+  "executionAuthority": "none; packets state design/build need separate authorization; no build, provider or deployment was run"
+ },
+ "receiverQuestions": [
+  {
+   "id": "RQ1",
+   "question": "How do team leads, the department head and auditors authenticate, and who assigns the auditor role?",
+   "probe": "authenticat|login|sign.?in|sso|password",
+   "hitCountInRevisedPacket": 1,
+   "firstHitOffset": 4838,
+   "reading": "PARTIAL_OR_PRESENT_NEEDS_JUDGEMENT"
+  },
+  {
+   "id": "RQ2",
+   "question": "What are the columns, location and owner of the weekly CSV drop, and how is a team lead matched to an equipment line and to 'own team's section'?",
+   "probe": "column|schema|folder|path|upload|team id|team code",
+   "hitCountInRevisedPacket": 1,
+   "firstHitOffset": 9772,
+   "reading": "PARTIAL_OR_PRESENT_NEEDS_JUDGEMENT"
+  },
+  {
+   "id": "RQ3",
+   "question": "What exact sections, order and file format does the exported report have (U4)?",
+   "probe": "UNKNOWN U4",
+   "hitCountInRevisedPacket": 1,
+   "firstHitOffset": 21614,
+   "reading": "OPEN_UNKNOWN_VISIBLE_AS_PROSE_ONLY_YET_REVIEW_STATE_IS_CAN_CONTINUE"
+  },
+  {
+   "id": "RQ4",
+   "question": "Which timezone and holiday rule apply to Friday 17:00 (U2, U3)?",
+   "probe": "UNKNOWN U2|UNKNOWN U3",
+   "hitCountInRevisedPacket": 2,
+   "firstHitOffset": 20623,
+   "reading": "OPEN_UNKNOWN_VISIBLE_AS_PROSE_ONLY_YET_REVIEW_STATE_IS_CAN_CONTINUE"
+  },
+  {
+   "id": "RQ5",
+   "question": "How long are raw entries kept and who deletes them (U1)?",
+   "probe": "UNKNOWN U1",
+   "hitCountInRevisedPacket": 1,
+   "firstHitOffset": 19731,
+   "reading": "OPEN_UNKNOWN_VISIBLE_AS_PROSE_ONLY_YET_REVIEW_STATE_IS_CAN_CONTINUE"
+  },
+  {
+   "id": "RQ6",
+   "question": "What triggers compilation between the Friday 17:00 deadline and Monday 09:00, and who is notified when it is ready?",
+   "probe": "trigger|schedule|notify|notification|cron",
+   "hitCountInRevisedPacket": 0,
+   "firstHitOffset": null,
+   "reading": "UNANSWERED_IN_PACKET"
+  },
+  {
+   "id": "RQ7",
+   "question": "Corrections create a new version: what is the version identifier, and is history visible to the department head and auditors?",
+   "probe": "version",
+   "hitCountInRevisedPacket": 9,
+   "firstHitOffset": 1718,
+   "reading": "PARTIAL_ONLY_THE_PHRASE_NEW_ENTRY_VERSION_EXISTS_IN_THE_C1_RESOLUTION"
+  },
+  {
+   "id": "RQ8",
+   "question": "The brief fields still state both 'immutable once submitted' and 'may correct until Friday 17:00'; which one is authoritative for the receiver?",
+   "probe": "Resolution of C1",
+   "hitCountInRevisedPacket": 1,
+   "firstHitOffset": 22461,
+   "reading": "PRESENT_BUT_AMBIGUOUS_BOTH_CONFLICTING_FIELDS_REMAIN_IN_PACKET_AND_RESOLUTION_LIVES_ONLY_IN_THE_REVIEW_APPENDIX"
+  }
+ ],
+ "receiverCritiqueMethod": "Scripted probes plus worker judgement over the exported revised bytes in a separate pass; no provider; not independent human UX or live governance evidence.",
+ "gapMatrix": [
+  {
+   "area": "workflows",
+   "nativeOwner": "intent-spec-review.ts INTENT_REVIEW_QUESTIONS 'workflow' (line 6) + outputTemplate '## 2. Must-Have Workflows' (development.ts)",
+   "coverage": "PROMPT_ONLY",
+   "gap": "Question prompt and an empty template heading exist; no workflow list, state or actor-step structure is produced or validated.",
+   "locator": "development.ts:135-137 heading with no content"
+  },
+  {
+   "area": "data/access/exceptions",
+   "nativeOwner": "INTENT_REVIEW_QUESTIONS 'access','data','exceptions'; synchronizeIntentSpecReview reconfirmation (lines 81-97)",
+   "coverage": "NATIVE_PARTIAL_STRONG_ON_CHANGE_TRACKING",
+   "gap": "Changed-source reconfirmation works (P2B: access and data reconfirmed, others not). Unknown items are not first-class: decisionNeedsReview (line 118) only treats exact placeholders, OPEN and CONFLICT as pending, so answers containing UNKNOWN U1-U4 clear the gate (N2, P2 canContinue true).",
+   "locator": "intent-spec-review.ts:118-126"
+  },
+  {
+   "area": "acceptance",
+   "nativeOwner": "INTENT_REVIEW_QUESTIONS 'acceptance' + packet '## 6. Acceptance Criteria' + external-agent checklist (spec-export-portable-handoff.ts)",
+   "coverage": "PROMPT_AND_RECEIVER_CHECKLIST",
+   "gap": "No mapping from each success criterion to a testable acceptance test; the receiver is told to define tests itself.",
+   "locator": "spec-export-portable-handoff.ts:61-69"
+  },
+  {
+   "area": "technical delegation",
+   "nativeOwner": "Implementation Decision Policy in spec-export-portable-handoff.ts",
+   "coverage": "NATIVE_POLICY_TEXT",
+   "gap": "Policy states defaults and one-question escalation but nothing records which unknowns were delegated; delegation is not distinguishable from missing.",
+   "locator": "spec-export-portable-handoff.ts:51-55"
+  },
+  {
+   "area": "design/plan",
+   "nativeOwner": "fullModeProtocol Phase B Design Plan template (SpecExport.tsx:201-224)",
+   "coverage": "INSTRUCTION_TEMPLATE_FOR_RECEIVER",
+   "gap": "Empty design/implementation plan templates addressed to the receiver (Step 1: ...); no CVF-side design artifact exists before handoff.",
+   "locator": "SpecExport.tsx:224-227"
+  },
+  {
+   "area": "tasks/dependencies",
+   "nativeOwner": "none",
+   "coverage": "ABSENT",
+   "gap": "The revised packet contains no task list, ordering or dependency (zero matches for 'dependenc'); 'Task' is the intent restatement.",
+   "locator": "P3 packet text search"
+  },
+  {
+   "area": "consistency/validation",
+   "nativeOwner": "spec-gate.ts evaluateSpecGate (required-field presence only)",
+   "coverage": "PRESENCE_ONLY",
+   "gap": "No cross-field consistency check: mustPreserve and constraints contradict each other yet the gate and the readiness status stay READY_FOR_EXTERNAL_AGENT_REVIEW; the Material Details line reports 'None identified' while four unknowns and a conflict exist.",
+   "locator": "spec-gate.ts:16-40; spec-export-portable-handoff.ts:35"
+  }
+ ],
+ "s2": {
+  "smallestSliceProposal": {
+   "id": "S2-UNKNOWN-AND-CONFLICT-LEDGER",
+   "statement": "Add a bounded, deterministic open-items ledger to the existing review state: each unknown, conflict and explicit delegation is a first-class item with id, linked decision, status (OPEN, DELEGATED, RESOLVED) and reason; the pending count and the packet readiness line derive from open items, and a conflict between named brief fields is raised only when the reviewer declares it. No new storage, provider or UI redesign beyond a list in IntentSpecReview.",
+   "ownerDelta": "intent-spec-review.ts (state + decisionNeedsReview), spec-export-portable-handoff.ts (readiness status and Material Details line), IntentSpecReview.tsx (item list), tests",
+   "whyThisFirst": "Directly closes the three observed native limits: unknown items clear the gate, readiness status ignores review, conflict resolution lives only in the appendix. It needs no upstream payload and no provider.",
+   "doesNotClaim": "build-ready acceptance, semantic elicitation by AI, tasks or design generation"
+  },
+  "classification": {
+   "useExistingNative": [
+    "reconfirmation-on-change tracking and stale acknowledgement handling (verified P2B, N3)",
+    "Implementation Decision Policy text",
+    "decision appendix quoting user answers as data"
+   ],
+   "patternCandidate": [
+    "Spec Kit style clarify/checklist pass for open items",
+    "plan/tasks templates with explicit dependency sections"
+   ],
+   "runtimeCandidate": [
+    "Spec Kit CLI or agent command runtime for plan/tasks/analyze"
+   ],
+   "defer": [
+    "automatic conflict detection between free-text fields",
+    "design/plan/tasks generation inside CVF",
+    "any provider-assisted elicitation"
+   ]
+  },
+  "specKitDisposition": {
+   "status": "CONDITIONAL_CANDIDATE_NOT_ACCEPTED",
+   "reason": "No exact upstream payload was read or executed in this order; prior advisory is context only; no fit, adaptation or upstream behavior is claimed.",
+   "triggerForSelectedPayloadAssessment": "Run a selected-payload assessment of only the clarify, plan, tasks and analyze templates after S2 lands and the open-items ledger shows receiver questions still unanswered on a second synthetic scenario; assessment reads exact files, installs nothing.",
+   "notAuthorized": "installation, clone, runtime execution, absorption"
+  }
+ },
+ "cost": "UNKNOWN_UNMEASURED",
+ "providerInvocations": 0,
+ "claimBoundary": "Synthetic artifact fitness and source-gap evaluation only; no AI governance, novice UX, live auth, durable store or build-ready claim."
+}

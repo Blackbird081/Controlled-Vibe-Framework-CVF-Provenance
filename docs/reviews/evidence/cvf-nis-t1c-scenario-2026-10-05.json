@@ -1,0 +1,295 @@
+{
+  "schemaVersion": "cvf.nisT1cScenario.v1",
+  "batchId": "CVF-NIS-T1C",
+  "declaredBeforeReplay": true,
+  "synthetic": "One periodic-report job over invented equipment lines; no people or HR data; no real records.",
+  "templateId": "app_builder_complete",
+  "language": "en",
+  "exportMode": "full",
+  "oracleAuthorship": "Declared by the worker from the work order Execution Plan and the question-to-field mapping read in intent-spec-review.ts before any replay; replay results never define correctness.",
+  "valuesBaseline": {
+    "appName": "Weekly Equipment Report Compiler",
+    "appType": "Web App",
+    "problem": "Every Friday a department head needs one weekly maintenance report compiled from entries submitted by team leads. Compiling by hand takes half a day and entries get lost.",
+    "targetUsers": "Team leads (view and edit own entries only); department head (view all, sole exporter)",
+    "coreFeatures": "1. Team leads submit a weekly entry per equipment line\n2. System compiles all entries into one weekly report\n3. Department head exports the compiled report\n4. Late, missing and duplicate entries are marked in the report",
+    "successCriteria": "Department head receives one compiled report by Monday 09:00 containing every submitted entry, with missing, late and duplicate entries visibly marked.",
+    "mustPreserve": "Submitted entries are immutable once submitted; the existing equipment line codes stay unchanged.",
+    "platforms": "Web browser on office Windows PCs",
+    "dataNeeds": "Synthetic equipment line code, weekly status text, submitting team lead name, submission time. Source: weekly CSV drop only. No personal evaluation data.",
+    "lookAndFeel": "Plain table, high contrast",
+    "outOfScope": "No automatic scoring or ranking of team leads or people. No email sending in this version.",
+    "constraints": "Team leads may correct their entry until the Friday 17:00 deadline. Deadline timezone not decided."
+  },
+  "valuesRevised": {
+    "appName": "Weekly Equipment Report Compiler",
+    "appType": "Web App",
+    "problem": "Every Friday a department head needs one weekly maintenance report compiled from entries submitted by team leads. Compiling by hand takes half a day and entries get lost.",
+    "targetUsers": "Team leads (view and edit own entries only; may also export their own team's section); department head (view all, export all); auditors (read-only view, no export)",
+    "coreFeatures": "1. Team leads submit a weekly entry per equipment line\n2. System compiles all entries into one weekly report\n3. Department head exports the compiled report\n4. Late, missing and duplicate entries are marked in the report",
+    "successCriteria": "Department head receives one compiled report by Monday 09:00 containing every submitted entry, with missing, late and duplicate entries visibly marked.",
+    "mustPreserve": "Submitted entries are immutable once submitted; the existing equipment line codes stay unchanged.",
+    "platforms": "Web browser on office Windows PCs",
+    "dataNeeds": "Synthetic equipment line code, weekly status text, submitting team lead name, submission time. Source: weekly CSV drop only. No personal evaluation data.",
+    "lookAndFeel": "Plain table, high contrast",
+    "outOfScope": "No automatic scoring or ranking of team leads or people. No email sending in this version.",
+    "constraints": "Team leads may correct their entry until the Friday 17:00 deadline. Deadline timezone not decided."
+  },
+  "stageInputs": [
+    {
+      "stage": "P0_INITIAL",
+      "actions": [
+        {
+          "decision": "workflow",
+          "answer": "Team lead submits one entry per equipment line before the deadline; the system compiles all entries; the department head reviews and exports the report."
+        },
+        {
+          "decision": "access",
+          "answer": "Team leads view and edit only their own entries. The department head views all entries and is the only person who can export. Nobody else may export."
+        },
+        {
+          "decision": "boundaries",
+          "answer": "CONFLICT C1: mustPreserve says submitted entries are immutable once submitted, but constraints says team leads may correct their entry until Friday 17:00.",
+          "disposition": "CONFLICT"
+        }
+      ]
+    },
+    {
+      "stage": "P1_STAGED",
+      "actions": [
+        {
+          "decision": "data",
+          "answer": "Source: weekly CSV drop only. Compiled reports are kept 12 months. UNKNOWN U1: how long raw entries are kept is not decided."
+        },
+        {
+          "decision": "exceptions",
+          "answer": "Missing entry: show a NO ENTRY row, never guess content. Duplicate: keep the latest and keep the earlier in history. Late: flag LATE and include in the next report. UNKNOWN U2: deadline timezone is not decided. UNKNOWN U3: behavior when the deadline falls on a public holiday is not decided."
+        },
+        {
+          "decision": "acceptance",
+          "answer": "Department head receives one compiled report by Monday 09:00 with every submitted entry and visible missing, late and duplicate marks. UNKNOWN U4: export file format is not decided."
+        },
+        {
+          "decision": "boundaries",
+          "answer": "Resolution of C1: corrections before Friday 17:00 create a new entry version; after the deadline entries are immutable. No automatic scoring or ranking of people.",
+          "disposition": "ANSWERED"
+        }
+      ]
+    },
+    {
+      "stage": "P2_BASELINE_ACKNOWLEDGED",
+      "actions": [
+        {
+          "acknowledge": true
+        }
+      ]
+    },
+    {
+      "stage": "P2B_RULE_CHANGED_STALE",
+      "actions": [
+        {
+          "synchronizeValues": "valuesRevised"
+        }
+      ]
+    },
+    {
+      "stage": "P3_REVISED_ACKNOWLEDGED",
+      "actions": [
+        {
+          "decision": "access",
+          "answer": "Team leads view and edit only their own entries and may export their own team's section. The department head views and exports all. Auditors have read-only view and no export.",
+          "reconfirm": true
+        },
+        {
+          "decision": "data",
+          "answer": "Source: weekly CSV drop only. Compiled reports are kept 12 months. UNKNOWN U1: how long raw entries are kept is not decided.",
+          "reconfirm": true
+        },
+        {
+          "acknowledge": true
+        }
+      ]
+    }
+  ],
+  "negativeCases": [
+    {
+      "id": "N1_PLACEHOLDER_UNKNOWN",
+      "description": "decision answer exactly 'unknown' on a fresh review",
+      "expected": "decision stays pending"
+    },
+    {
+      "id": "N2_EMBEDDED_UNKNOWN",
+      "description": "answer containing an UNKNOWN marker but non-placeholder prose",
+      "expected_oracle": "business expectation: should remain pending; native behavior is reported, not assumed"
+    },
+    {
+      "id": "N3_STALE_ACK",
+      "description": "acknowledge P2 then change targetUsers",
+      "expected": "acknowledgement cleared and canContinue false"
+    },
+    {
+      "id": "N4_UNCHANGED_RECONFIRM_NOOP",
+      "description": "changing an unrelated field (lookAndFeel) after answers",
+      "expected": "no decision needs reconfirmation; acknowledgement still cleared"
+    }
+  ],
+  "expectedMaterialDecisions": [
+    {
+      "id": "MD1",
+      "topic": "purpose: weekly maintenance report compiled from team-lead entries",
+      "baseline": "PRESERVED",
+      "revised": "PRESERVED",
+      "mustAppearToken": "weekly maintenance report"
+    },
+    {
+      "id": "MD2",
+      "topic": "input-source limit: weekly CSV drop only",
+      "baseline": "PRESERVED",
+      "revised": "PRESERVED",
+      "mustAppearToken": "weekly CSV drop only"
+    },
+    {
+      "id": "MD3",
+      "topic": "audience and access: who views",
+      "baseline": "PRESERVED",
+      "revised": "CHANGED_NEEDS_RECONFIRMATION_THEN_RECONFIRMED",
+      "mustAppearToken": "auditors (read-only view, no export)",
+      "tokenStages": [
+        "P2B_RULE_CHANGED_STALE",
+        "P3_REVISED_ACKNOWLEDGED"
+      ]
+    },
+    {
+      "id": "MD4",
+      "topic": "edit and export permission: department head sole exporter in baseline; team leads export own section in revised",
+      "baseline": "PRESERVED",
+      "revised": "CHANGED_NEEDS_RECONFIRMATION_THEN_RECONFIRMED",
+      "mustAppearToken": "sole exporter",
+      "tokenStages": [
+        "P0_INITIAL",
+        "P1_STAGED",
+        "P2_BASELINE_ACKNOWLEDGED"
+      ]
+    },
+    {
+      "id": "MD5",
+      "topic": "deadline Friday 17:00",
+      "baseline": "PRESERVED",
+      "revised": "PRESERVED",
+      "mustAppearToken": "Friday 17:00"
+    },
+    {
+      "id": "MD6",
+      "topic": "missing, late and duplicate exception handling",
+      "baseline": "PRESERVED",
+      "revised": "PRESERVED",
+      "mustAppearToken": "NO ENTRY"
+    },
+    {
+      "id": "MD7",
+      "topic": "retention: reports 12 months",
+      "baseline": "PRESERVED",
+      "revised": "PRESERVED",
+      "mustAppearToken": "kept 12 months"
+    },
+    {
+      "id": "MD8",
+      "topic": "prohibition of automatic performance scoring",
+      "baseline": "PRESERVED",
+      "revised": "PRESERVED",
+      "mustAppearToken": "No automatic scoring or ranking"
+    },
+    {
+      "id": "C1",
+      "topic": "conflict: immutable once submitted vs correct until Friday 17:00",
+      "baseline": "CONFLICTING_THEN_RESOLVED_BY_STAGED_ANSWER",
+      "revised": "PRESERVED",
+      "mustAppearToken": "CONFLICT C1",
+      "tokenStages": [
+        "P0_INITIAL"
+      ]
+    },
+    {
+      "id": "U1",
+      "topic": "unknown: raw entry retention period",
+      "baseline": "MISSING",
+      "revised": "MISSING",
+      "mustAppearToken": "UNKNOWN U1"
+    },
+    {
+      "id": "U2",
+      "topic": "unknown: deadline timezone",
+      "baseline": "MISSING",
+      "revised": "MISSING",
+      "mustAppearToken": "UNKNOWN U2"
+    },
+    {
+      "id": "U3",
+      "topic": "unknown: deadline on a public holiday",
+      "baseline": "MISSING",
+      "revised": "MISSING",
+      "mustAppearToken": "UNKNOWN U3"
+    },
+    {
+      "id": "U4",
+      "topic": "unknown: export file format",
+      "baseline": "MISSING",
+      "revised": "MISSING",
+      "mustAppearToken": "UNKNOWN U4"
+    }
+  ],
+  "expectedReviewStates": {
+    "P0_INITIAL": {
+      "pending": [
+        "data",
+        "exceptions",
+        "acceptance",
+        "boundaries"
+      ],
+      "canContinue": false,
+      "acknowledged": false
+    },
+    "P1_STAGED": {
+      "pending": [],
+      "canContinue": false,
+      "acknowledged": false,
+      "note": "all decisions answered but not acknowledged"
+    },
+    "P2_BASELINE_ACKNOWLEDGED": {
+      "pending": [],
+      "canContinue": true,
+      "acknowledged": true
+    },
+    "P2B_RULE_CHANGED_STALE": {
+      "pending": [
+        "access",
+        "data"
+      ],
+      "canContinue": false,
+      "acknowledged": false,
+      "needsReconfirmation": [
+        "access",
+        "data"
+      ],
+      "unchangedNotReconfirm": [
+        "workflow",
+        "exceptions",
+        "acceptance",
+        "boundaries"
+      ]
+    },
+    "P3_REVISED_ACKNOWLEDGED": {
+      "pending": [],
+      "canContinue": true,
+      "acknowledged": true
+    }
+  },
+  "businessExpectationOnUnknowns": "Four unknown items U1-U4 must not be clearable by answering prose: a business reviewer expects the build handoff to keep four open items visible and to refuse an unconditional ready state while any remain unresolved or explicitly delegated.",
+  "expectedNativeLimitsToTest": [
+    "review pending counter counts decisions not unknown items",
+    "portable handoff readiness status does not depend on review answers",
+    "no automatic conflict detection between brief fields"
+  ],
+  "forbidden": "no provider, network, UI server, source edit, storage",
+  "declaredAtUtc": "2026-10-05T07:43:21.646635+00:00"
+}

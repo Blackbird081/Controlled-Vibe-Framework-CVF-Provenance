@@ -1,0 +1,401 @@
+{
+ "schemaVersion": "cvf.nisT1cReplay.v1",
+ "batchId": "CVF-NIS-T1C",
+ "executionBaseHead": "4ef9df4b6a20f9634974d49bdf159bb76af89628",
+ "scenarioOrdering": {
+  "scenarioPath": "docs/reviews/evidence/cvf-nis-t1c-scenario-2026-10-05.json",
+  "scenarioSha256": "40b2b1b0a8aca2004403915188cd050eb296103059a5070eee5b4ce2861d6e0b",
+  "declaredAtUtc": "2026-10-05T07:43:21.646635+00:00",
+  "note": "scenario and oracle file was written and hashed before the first replay command; the replay reads inputs only from it"
+ },
+ "preImplementationReceipt": ".cvf/runtime/nis-t1c-worker-20261005/pre-implementation-w/pre-implementation.json",
+ "preImplementationReceiptSha256": "c75a05ad64e0f3480b51bb2d1a9114a0f89a28db89212ae11ac13e8c59e50fbc",
+ "sourcePins": [
+  {
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-review.ts",
+   "pinnedRawSha256": "c8746be8645af3d287c084a6338e84bbf502b4ffc3f9f750f58236c0085a34dc",
+   "checkoutRawSha256": "c8746be8645af3d287c084a6338e84bbf502b4ffc3f9f750f58236c0085a34dc",
+   "checkoutMatchesPin": true,
+   "lfNormalisedSha256": "24a7d9be61f275cb26ff6aeac1d3f4c86d84d1a2b0c8ab37fd3b4cb7d26cb04c",
+   "gitBlob": "4bfd12d933ed55d788c45cda439e8724991abb07",
+   "symbols": [
+    "createIntentSpecReview",
+    "synchronizeIntentSpecReview",
+    "updateReviewDecision",
+    "buildReviewedDraftPacket"
+   ]
+  },
+  {
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/SpecExport.tsx",
+   "pinnedRawSha256": "24617b9ef2f53e6ac5cf5e4907eaa2dea2d0ba8fbe1578714f8cba22338be2a9",
+   "checkoutRawSha256": "24617b9ef2f53e6ac5cf5e4907eaa2dea2d0ba8fbe1578714f8cba22338be2a9",
+   "checkoutMatchesPin": true,
+   "lfNormalisedSha256": "55653ba2f4d041a26165be9789817ab7ace6c0f091dfeea56b75c58ae0a01869",
+   "gitBlob": "bb550ff43785e62534e8cc8432649c537a84ec6a",
+   "symbols": [
+    "generateSpec",
+    "generateCompleteSpec"
+   ]
+  },
+  {
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/templates/development.ts",
+   "pinnedRawSha256": "e17bd23353f95cf0fd62988c8abafecdee65dd99aa0848c890276820bdcd4b7c",
+   "checkoutRawSha256": "e17bd23353f95cf0fd62988c8abafecdee65dd99aa0848c890276820bdcd4b7c",
+   "checkoutMatchesPin": true,
+   "lfNormalisedSha256": "9dc286e0d4e2c37b773d185a7977ef64c404f59e9fff17850bb17602dd2c9763",
+   "gitBlob": "e8993d830cbd07a6aa7b539b34179fdeeed0bc09",
+   "symbols": [
+    "app_builder_complete"
+   ]
+  },
+  {
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/spec-export-portable-handoff.ts",
+   "pinnedRawSha256": "8528e8274bb82015398ce7deb10292aff6c7b5a06db83b25c6d8346b7a440795",
+   "checkoutRawSha256": "8528e8274bb82015398ce7deb10292aff6c7b5a06db83b25c6d8346b7a440795",
+   "checkoutMatchesPin": true,
+   "lfNormalisedSha256": "8528e8274bb82015398ce7deb10292aff6c7b5a06db83b25c6d8346b7a440795",
+   "gitBlob": "d17f4f6af70dcdfe45e7c9f7254d0a610bc519d9",
+   "symbols": [
+    "buildPortableAgentHandoffReadiness"
+   ]
+  },
+  {
+   "path": "docs/reviews/CVF_NIS_T1B_D_INTEGRATED_REVIEW_PERSISTENCE_COMPLETION_2026-10-05.md",
+   "pinnedRawSha256": "40a1b4c57e797b41eb9fa48c4050a0d86815e45d7b775b113c9b733acaa9329c",
+   "checkoutRawSha256": "40a1b4c57e797b41eb9fa48c4050a0d86815e45d7b775b113c9b733acaa9329c",
+   "checkoutMatchesPin": true,
+   "lfNormalisedSha256": "aa5db15d7998e3cfb95922cfcd5b94ce8e682a01813fd4e8ed46ea5171756cc3",
+   "gitBlob": "6195a179176fa1bcc3d3d898f04a5fb3e0c70fdb",
+   "symbols": [
+    "Status: CLOSED_PASS_BOUNDED"
+   ]
+  }
+ ],
+ "pinRepresentationNote": "Checkout raw bytes match the dispatch pins (autocrlf checkout materialised by Local); canonical git blobs are LF; LF-normalised hashes differ from the raw pins for three files, which is representation, not content change.",
+ "invocation": {
+  "tool": "locally installed vitest 4.1.8 (existing node_modules junction, read-only), scratch config outside source tree",
+  "command": "cd EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web && T1C_SCRATCH=<scratch> T1C_WEB_SRC=<web src> T1C_SCENARIO=<scenario> T1C_OUT=<scratch>/replay-raw.json node node_modules/vitest/vitest.mjs run --config <scratch>/vitest.config.mjs",
+  "exit": 0,
+  "productionFunctionsCalled": [
+   "generateSpec",
+   "generateCompleteSpec (src/components/SpecExport.tsx)",
+   "createIntentSpecReview",
+   "synchronizeIntentSpecReview",
+   "updateReviewDecision",
+   "acknowledgeIntentSpecReview",
+   "buildReviewedDraftPacket (src/lib/intent-spec-review.ts)",
+   "developmentTemplates app_builder_complete (src/lib/templates/development.ts)"
+  ],
+  "substitutions": [
+   "Vite alias '@' -> web/src",
+   "jsdom environment",
+   "repository test setup file NOT loaded",
+   "userContext argument to generateSpec omitted (UI passes getContextPrompt())",
+   "no UI render; hook useIntentSpecReview not mounted, its own calls to createIntentSpecReview/synchronizeIntentSpecReview/buildReviewedDraftPacket invoked directly"
+  ],
+  "producerSubstituted": false,
+  "providerCalls": 0,
+  "networkCalls": 0,
+  "scratchFiles": {
+   ".cvf/runtime/nis-t1c-worker-20261005/replay/vitest.config.mjs": "735eb864c2272efb5229d977e72c2dc9d509b8c14ba73279ab1f2b114bdc880a",
+   ".cvf/runtime/nis-t1c-worker-20261005/replay/replay.test.ts": "9fadaff74ce4af9c870c66299864d2f71947bab0e1ca2682cd3965ba9c47cca3",
+   ".cvf/runtime/nis-t1c-worker-20261005/replay/replay-raw.json": "edf86dc20d3b7c72d226e69ff58587df178e98e2c01e73b4b887ef187ad2f75c"
+  },
+  "logs": {
+   "failedFirstAttemptDiagnostic": {
+    "path": ".cvf/runtime/nis-t1c-worker-20261005/replay/replay-run1.log",
+    "sha256": "104cc8e1d74033e03bcd00fd4f61e0f1e98cb798dc9950cebd2ee7b685c60cb2",
+    "cause": "TypeScript config could not resolve vitest/config from the scratch directory; retried unchanged logic with a plain-object .mjs config"
+   },
+   "passingRun": {
+    "path": ".cvf/runtime/nis-t1c-worker-20261005/replay/replay-run2.log",
+    "sha256": "159e84ad7624043ff01c4911d35439eb2400e5bb8ab1e97b7f58e1e8e4a8d9a4"
+   }
+  }
+ },
+ "generatedDate": "2026-10-05",
+ "dateDependenceNote": "generateSpec embeds the current date; digests are stable only on the same date",
+ "generateSpec": {
+  "baseline": {
+   "sha256": "424a4e77b61f07235c50e4e1550c6cce3a91918244db4b646d1ec137cdaf0e75",
+   "bytes": 18166
+  },
+  "revised": {
+   "sha256": "e88affa9897939aac447276087a4b21deab79c1d40082601a86234f971cb517b",
+   "bytes": 18320
+  }
+ },
+ "generateCompleteSpecVi": {
+  "sha256": "39e571b9631d395a275855ca1fe3864f406f88caabd3e77b6addaaa12f9922f8",
+  "bytes": 7884
+ },
+ "stageDigests": [
+  {
+   "stage": "P0_CREATED",
+   "summary": {
+    "revision": 1,
+    "acknowledgedRevision": null,
+    "acknowledged": false,
+    "pending": [
+     "workflow",
+     "access",
+     "data",
+     "exceptions",
+     "acceptance",
+     "boundaries"
+    ],
+    "needsReconfirmation": [],
+    "canContinue": false,
+    "dispositions": {
+     "workflow": "OPEN",
+     "access": "OPEN",
+     "data": "OPEN",
+     "exceptions": "OPEN",
+     "acceptance": "OPEN",
+     "boundaries": "OPEN"
+    }
+   },
+   "packetSha256": "c423d236848b5cc47e0938b356de175ce42c8ce6530d67f465dcc108810a6529",
+   "packetBytes": 22890
+  },
+  {
+   "stage": "P0_INITIAL",
+   "summary": {
+    "revision": 4,
+    "acknowledgedRevision": null,
+    "acknowledged": false,
+    "pending": [
+     "data",
+     "exceptions",
+     "acceptance",
+     "boundaries"
+    ],
+    "needsReconfirmation": [],
+    "canContinue": false,
+    "dispositions": {
+     "workflow": "ANSWERED",
+     "access": "ANSWERED",
+     "data": "OPEN",
+     "exceptions": "OPEN",
+     "acceptance": "OPEN",
+     "boundaries": "CONFLICT"
+    }
+   },
+   "packetSha256": "48b2de038d072e1fe9eb253bc9f02efc98fc22749e0537f32ec7e2a58cfe6c69",
+   "packetBytes": 23285
+  },
+  {
+   "stage": "P1_STAGED",
+   "summary": {
+    "revision": 8,
+    "acknowledgedRevision": null,
+    "acknowledged": false,
+    "pending": [],
+    "needsReconfirmation": [],
+    "canContinue": false,
+    "dispositions": {
+     "workflow": "ANSWERED",
+     "access": "ANSWERED",
+     "data": "ANSWERED",
+     "exceptions": "ANSWERED",
+     "acceptance": "ANSWERED",
+     "boundaries": "ANSWERED"
+    }
+   },
+   "packetSha256": "498316dff533e58dabb66ad631297f6196a9e60a86ee29fbfe1b24b22b561e81",
+   "packetBytes": 23798
+  },
+  {
+   "stage": "P2_BASELINE_ACKNOWLEDGED",
+   "summary": {
+    "revision": 8,
+    "acknowledgedRevision": 8,
+    "acknowledged": true,
+    "pending": [],
+    "needsReconfirmation": [],
+    "canContinue": true,
+    "dispositions": {
+     "workflow": "ANSWERED",
+     "access": "ANSWERED",
+     "data": "ANSWERED",
+     "exceptions": "ANSWERED",
+     "acceptance": "ANSWERED",
+     "boundaries": "ANSWERED"
+    }
+   },
+   "packetSha256": "393ecee7594febaf53da2728b3d640ad493f8a1bbfe8b2c77b191392d233b56b",
+   "packetBytes": 23823
+  },
+  {
+   "stage": "P2B_RULE_CHANGED_STALE",
+   "summary": {
+    "revision": 9,
+    "acknowledgedRevision": null,
+    "acknowledged": false,
+    "pending": [
+     "access",
+     "data"
+    ],
+    "needsReconfirmation": [
+     "access",
+     "data"
+    ],
+    "canContinue": false,
+    "dispositions": {
+     "workflow": "ANSWERED",
+     "access": "ANSWERED",
+     "data": "ANSWERED",
+     "exceptions": "ANSWERED",
+     "acceptance": "ANSWERED",
+     "boundaries": "ANSWERED"
+    }
+   },
+   "packetSha256": "db943e46026a41d39a8eb9c197153d7d35c0ba106154650ce6d044e152a76d0e",
+   "packetBytes": 24053
+  },
+  {
+   "stage": "P3_REVISED_ACKNOWLEDGED",
+   "summary": {
+    "revision": 11,
+    "acknowledgedRevision": 11,
+    "acknowledged": true,
+    "pending": [],
+    "needsReconfirmation": [],
+    "canContinue": true,
+    "dispositions": {
+     "workflow": "ANSWERED",
+     "access": "ANSWERED",
+     "data": "ANSWERED",
+     "exceptions": "ANSWERED",
+     "acceptance": "ANSWERED",
+     "boundaries": "ANSWERED"
+    }
+   },
+   "packetSha256": "02b8d1f51a77a8233d6eab0492344e2781bbb2aa2b1bf460d1e30a73e0308ad1",
+   "packetBytes": 24158
+  }
+ ],
+ "negativeCaseObservations": [
+  {
+   "id": "N1_PLACEHOLDER_UNKNOWN",
+   "revision": 2,
+   "acknowledgedRevision": null,
+   "acknowledged": false,
+   "pending": [
+    "workflow",
+    "access",
+    "data",
+    "exceptions",
+    "acceptance",
+    "boundaries"
+   ],
+   "needsReconfirmation": [],
+   "canContinue": false,
+   "dispositions": {
+    "workflow": "OPEN",
+    "access": "OPEN",
+    "data": "ANSWERED",
+    "exceptions": "OPEN",
+    "acceptance": "OPEN",
+    "boundaries": "OPEN"
+   }
+  },
+  {
+   "id": "N2_EMBEDDED_UNKNOWN",
+   "revision": 7,
+   "acknowledgedRevision": 7,
+   "acknowledged": true,
+   "pending": [],
+   "needsReconfirmation": [],
+   "canContinue": true,
+   "dispositions": {
+    "workflow": "ANSWERED",
+    "access": "ANSWERED",
+    "data": "ANSWERED",
+    "exceptions": "ANSWERED",
+    "acceptance": "ANSWERED",
+    "boundaries": "ANSWERED"
+   },
+   "packetHasUnknownText": true
+  },
+  {
+   "id": "N3_STALE_ACK",
+   "baselineAcknowledged": true,
+   "afterChange": {
+    "revision": 9,
+    "acknowledgedRevision": null,
+    "acknowledged": false,
+    "pending": [
+     "access",
+     "data"
+    ],
+    "needsReconfirmation": [
+     "access",
+     "data"
+    ],
+    "canContinue": false,
+    "dispositions": {
+     "workflow": "ANSWERED",
+     "access": "ANSWERED",
+     "data": "ANSWERED",
+     "exceptions": "ANSWERED",
+     "acceptance": "ANSWERED",
+     "boundaries": "ANSWERED"
+    }
+   }
+  },
+  {
+   "id": "N4_UNCHANGED_RECONFIRM_NOOP",
+   "revision": 9,
+   "acknowledgedRevision": null,
+   "acknowledged": false,
+   "pending": [
+    "workflow",
+    "access",
+    "data",
+    "exceptions",
+    "acceptance",
+    "boundaries"
+   ],
+   "needsReconfirmation": [
+    "workflow",
+    "access",
+    "data",
+    "exceptions",
+    "acceptance",
+    "boundaries"
+   ],
+   "canContinue": false,
+   "dispositions": {
+    "workflow": "ANSWERED",
+    "access": "ANSWERED",
+    "data": "ANSWERED",
+    "exceptions": "ANSWERED",
+    "acceptance": "ANSWERED",
+    "boundaries": "ANSWERED"
+   }
+  }
+ ],
+ "exportedBaselinePacket": {
+  "stage": "P2_BASELINE_ACKNOWLEDGED",
+  "sha256": "393ecee7594febaf53da2728b3d640ad493f8a1bbfe8b2c77b191392d233b56b",
+  "bytes": 23823,
+  "canonicalText": "# Draft for requirements clarification\n\nCurrent scope: specification clarification and review only. Design/build directions below are future steps requiring separate authorization. Viewing this draft does not approve BUILD.\n\n---\n# CVF Agent Handoff Packet (GUIDED MODE)\n**Generated:** 2026-10-05\n**Template:** \ud83d\udce6 App Builder Complete\n**Category:** development\n**Mode:** CVF Guided Agent (5-Phase)\n---\n\n## \ud83d\udccb Context\n\n**Template:** \ud83d\udce6 App Builder Complete\n\nCreate a full product brief and builder-ready handoff without exposing stack choices to the user.\n\n---\n\n## \ud83e\udd1d Packet Purpose\n\n- This packet is written for another AI/agent to read and continue execution.\n- The end user should not need to understand hidden frameworks, stacks, or implementation details.\n- The receiving agent must convert the brief into implementation decisions inside the provided guardrails.\n\n---\n\n## \ud83d\udcdd User Input\n\n- **1. App / product name:** Weekly Equipment Report Compiler\n- **2. What kind of product is this?:** Web App\n- **3. What problem does it solve?:** Every Friday a department head needs one weekly maintenance report compiled from entries submitted by team leads. Compiling by hand takes half a day and entries get lost.\n- **4. Who will use this product?:** Team leads (view and edit own entries only); department head (view all, sole exporter)\n- **5. The most important things the app must do:** 1. Team leads submit a weekly entry per equipment line\n2. System compiles all entries into one weekly report\n3. Department head exports the compiled report\n4. Late, missing and duplicate entries are marked in the report\n- **6. When would you consider the first version successful?:** Department head receives one compiled report by Monday 09:00 containing every submitted entry, with missing, late and duplicate entries visibly marked.\n- **7. What must stay unchanged:** Submitted entries are immutable once submitted; the existing equipment line codes stay unchanged.\n- **8. Where does the app need to run?:** Web browser on office Windows PCs\n- **9. What data does the app need to remember or process?:** Synthetic equipment line code, weekly status text, submitting team lead name, submission time. Source: weekly CSV drop only. No personal evaluation data.\n- **10. Look and feel:** Plain table, high contrast\n- **11. Out of scope:** No automatic scoring or ranking of team leads or people. No email sending in this version.\n- **12. Constraints or special conditions:** Team leads may correct their entry until the Friday 17:00 deadline. Deadline timezone not decided.\n\n\n\n---\n\n## \ud83c\udf10 English Working Brief\n\n**Translation status:** READY_FOR_EXTERNAL_AGENT_REVIEW\n\n- The English export uses normalized English working values for agent-facing execution.\n- User source values may have been entered in Vietnamese, but this packet avoids passing Vietnamese control content to the receiving agent.\n- Product meaning, acceptance criteria, and non-coder intent are preserved where local normalization is confident.\n- Fields marked `TRANSLATION_REQUIRED` must be translated by the operator or an approved LLM before external-agent build work starts.\n\n| Translation metric | Count |\n| --- | ---: |\n| Normalized fields | 0 |\n| Fields needing translation review | 0 |\n\n\n---\n\n## \u2705 Input Coverage\n\n| Field | Provided |\n| --- | --- |\n| 1. App / product name | \u2705 |\n| 2. What kind of product is this? | \u2705 |\n| 3. What problem does it solve? | \u2705 |\n| 4. Who will use this product? | \u2705 |\n| 5. The most important things the app must do | \u2705 |\n| 6. When would you consider the first version successful? | \u2705 |\n| 8. Where does the app need to run? | \u2705 |\n\n\n\n---\n\n## \ud83e\uddf3 Portable Agent Handoff Readiness\n\n**Readiness status:** READY_FOR_EXTERNAL_AGENT_REVIEW\n\n### Receiving Agent Mission\n\n- Treat this packet as the authoritative product brief for the first build plan.\n- Convert the non-coder brief into implementation decisions inside the stated guardrails.\n- Prefer a simple, testable first version over broad platform expansion.\n- Do not ask the non-coder to choose frameworks, databases, hosting, or hidden architecture unless that choice materially changes cost, risk, privacy, or scope.\n\n### Source Values Handling\n\n- This English packet uses agent-facing working values, not raw multilingual source text.\n- If any field says `TRANSLATION_REQUIRED`, stop before build work and request an approved translation.\n- Preserve product meaning, business terms, and acceptance criteria from the English Working Brief.\n- Do not ask the non-coder to make hidden technical choices while resolving translation gaps.\n\n### Implementation Decision Policy\n\n- If a technical detail is missing, choose a conservative default and explain why.\n- If a missing detail changes business risk, privacy, data retention, payment, authentication, or deployment scope, ask one concise clarification question before building.\n- If user-provided constraints conflict, stop and list the conflict instead of guessing.\n\n### Material Details To Reconfirm If Needed\n\nNone identified from the provided source values\n\n### External Agent Acceptance Checklist\n\n- Restate the product goal in one short paragraph.\n- List the first-version workflows the app must support.\n- Identify data objects or records implied by the source values.\n- Propose a practical build plan with milestones.\n- Define acceptance tests mapped to the user's success criteria.\n- Name assumptions and defaults separately from user-provided facts.\n- Keep out-of-scope items out of the first build unless the operator approves expansion.\n\n### Operator Review Gate\n\nAfter the external agent responds, mark the packet:\n\n- PASS: the agent understood the product, made sensible defaults, and produced actionable build steps.\n- PASS_WITH_MINOR_FIX: the agent understood the product but needs small wording or scope corrections.\n- HOLD: the agent misunderstood the product, asked the non-coder to make hidden technical choices, lost source values, or expanded scope without approval.\n\n\n---\n\n## \ud83c\udfaf Task\n\nINTENT:\nI want to create a complete app brief that remains non-coder friendly.\n\nAPP / PRODUCT NAME: Weekly Equipment Report Compiler\nAPP TYPE: Web App\n\nPROBLEM TO SOLVE:\nEvery Friday a department head needs one weekly maintenance report compiled from entries submitted by team leads. Compiling by hand takes half a day and entries get lost.\n\nTARGET USERS:\nTeam leads (view and edit own entries only); department head (view all, sole exporter)\n\nCORE FEATURES:\n1. Team leads submit a weekly entry per equipment line\n2. System compiles all entries into one weekly report\n3. Department head exports the compiled report\n4. Late, missing and duplicate entries are marked in the report\n\nSUCCESS CRITERIA:\nDepartment head receives one compiled report by Monday 09:00 containing every submitted entry, with missing, late and duplicate entries visibly marked.\n\nMUST PRESERVE:\nSubmitted entries are immutable once submitted; the existing equipment line codes stay unchanged.\n\nPLATFORMS:\nWeb browser on office Windows PCs\n\nDATA NEEDS:\nSynthetic equipment line code, weekly status text, submitting team lead name, submission time. Source: weekly CSV drop only. No personal evaluation data.\n\nLOOK AND FEEL:\nPlain table, high contrast\n\nOUT OF SCOPE:\nNo automatic scoring or ranking of team leads or people. No email sending in this version.\n\nCONSTRAINTS:\nTeam leads may correct their entry until the Friday 17:00 deadline. Deadline timezone not decided.\n\nOUTPUT REQUIREMENTS:\n- Ask only for business intent, user outcomes, constraints, and preservation rules\n- Do not ask the end user to choose frameworks, databases, or hidden technical patterns\n- Translate this into a builder-ready governed packet\n- Include acceptance criteria and handoff boundaries\n\n---\n\n## \ud83d\udce4 Expected Output Format\n\n- Product Brief\n- Core Workflows\n- Protected Constraints\n- Builder Plan\n- Acceptance Criteria\n- Handoff Checklist\n\n\n---\n\n## \ud83d\udcd0 Output Template\n\n```markdown\n# Complete App Brief: Weekly Equipment Report Compiler\n\n## 1. Product Goal\n- App name: Weekly Equipment Report Compiler\n- App type: Web App\n\n## 2. Must-Have Workflows\n\n## 3. Data And Constraints\n\n## 4. Protected Boundaries\n\n## 5. Builder Plan\n\n## 6. Acceptance Criteria\n```\n\n\n---\n\n\n\n\n## \u26d4 Execution Constraints\n- Do not invent missing inputs. If required inputs are missing, stop and ask for clarification.\n- Follow the Output Template headings exactly (no reordering).\n- Stay within the scope defined by the Task section.\n- If data is unavailable, state it explicitly as \"Unknown\" instead of guessing.\n\n\n---\n\n\n## \u2705 Validation Hooks\n- Check required inputs against the Input Coverage table.\n- Ensure every Expected Output section is present.\n- Include a Success Criteria Check.\n- If any item is missing, mark the result as \"Not Ready\" and list what's missing.\n\n\n---\n\n## \ud83e\udded CVF Non-Coder Success Standard\n\n- The result must be actionable for a non-coder, not just descriptive.\n- It must stay tailored to the provided inputs instead of drifting into generic advice.\n- It must cover the main requested output shape end-to-end.\n- The receiving agent should choose hidden implementation details itself unless that would materially change risk or business intent.\n- It must remain governance-safe: no bypass suggestions, unsafe shortcuts, or hidden assumptions.\n- If the task cannot be completed safely, provide the clearest safe next step instead of ending in a dead end.\n\n---\n\n## \ud83d\udee1\ufe0f Governed Response Rules\n\n- If the task is allowed, answer directly and clearly.\n- If the task should be BLOCKED or marked NEEDS_APPROVAL, explain why in plain language.\n- When blocked or approval-gated, provide a safe next-step path the user can actually follow.\n- Make risk, review, or approval implications visible instead of burying them in jargon.\n\n---\n\n## \ud83e\udde0 Knowledge Context Preference\n\n- If the user provides governed domain facts, internal policy text, or project-specific context, prioritize that context over generic training knowledge.\n- If important knowledge context is missing, state exactly what context would improve the result instead of guessing.\n- Do not invent proprietary domain facts or internal details that were not provided.\n\n---\n\n# \ud83d\udea6 CVF FULL MODE PROTOCOL\n\n> **CRITICAL**: You are now operating under CVF (Controlled Vibe Framework) Full Mode.\n> This is NOT a suggestion - it's a MANDATORY protocol you MUST follow.\n\n---\n\n## \ud83d\udccc CVF CORE PRINCIPLE\n\n**\"User describes WHAT they want \u2192 AI decides HOW and EXECUTES\"**\n\n- User = Problem owner, Evaluator\n- AI = Solution architect, Decision maker, Executor\n\n---\n\n## \ud83d\udd04 MANDATORY 5-PHASE PROCESS\n\nYou MUST complete each phase in order. NO SHORTCUTS.\n\n---\n\n### \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n### PHASE A: INTAKE \ud83d\udd0d\n### \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\n**YOUR ROLE**: Interpreter - understand the problem deeply\n\n**MANDATORY ACTIONS:**\n1. Restate what user wants in your own words\n2. Identify the REAL goal (not just surface request)\n3. List ALL assumptions you're making\n4. Define what's IN scope and OUT of scope\n5. Identify constraints (time, resources, tech)\n\n**OUTPUT FORMAT (MUST PRODUCE):**\n```\n## \ud83d\udccb PHASE A: Intake Summary\n\n### 1. My Understanding\n[Restate user's goal in your words]\n\n### 2. Assumptions I'm Making\n- Assumption 1: ...\n- Assumption 2: ...\n(user will correct if wrong)\n\n### 3. Scope Definition\n\u2705 IN SCOPE:\n- ...\n\n\u274c OUT OF SCOPE:\n- ...\n\n### 4. Constraints Identified\n- ...\n\n### 5. Questions for Clarification (if any)\n- ...\n\n---\n\u23f8\ufe0f **CHECKPOINT A**: Do you confirm my understanding is correct?\n```\n\n**\u26d4 HARD STOP**: Wait for user confirmation before Design.\n- If user says \"yes\", \"ok\", \"proceed\", or \"confirmed\" \u2192 Go to Design\n- If user corrects you \u2192 Update understanding, re-confirm\n- If unclear \u2192 Ask specific questions\n\n**FORBIDDEN IN PHASE A:**\n- \u274c Proposing solutions\n- \u274c Writing any code\n- \u274c Making technical recommendations\n- \u274c Skipping to build because \"it's obvious\"\n\n---\n\n### \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n### PHASE B: DESIGN \ud83d\udcd0\n### \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\n**YOUR ROLE**: Architect - design the solution\n\n**MANDATORY ACTIONS:**\n1. Propose solution approach (high-level)\n2. If multiple options exist: compare and CHOOSE the best one\n3. YOU make the technical decisions (don't ask user to choose)\n4. Document your decisions with reasoning\n\n**OUTPUT FORMAT (MUST PRODUCE):**\n```\n## \ud83d\udcd0 PHASE B: Design Plan\n\n### 1. Solution Approach\n[High-level description of how you'll solve this]\n\n### 2. Technical Decisions Made\n| Decision | Choice | Reasoning |\n|----------|--------|-----------|\n| ... | ... | ... |\n\n### 3. Implementation Plan\n- Step 1: ...\n- Step 2: ...\n- Step 3: ...\n\n### 4. Expected Deliverables\n- [ ] Deliverable 1\n- [ ] Deliverable 2\n\n### 5. Potential Risks\n- Risk 1: [mitigation]\n\n---\n\u23f8\ufe0f **CHECKPOINT B**: Approve this design to proceed to Build phase?\n```\n\n**\u26d4 HARD STOP**: Wait for user approval before Build.\n\n**FORBIDDEN IN PHASE B:**\n- \u274c Asking \"Which option do you prefer?\" (YOU decide!)\n- \u274c Requesting user to make technical choices\n- \u274c Starting to build before approval\n\n---\n\n### \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n### PHASE C: BUILD \ud83d\udd28\n### \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\n**YOUR ROLE**: Builder - execute with quality\n\n**MANDATORY ACTIONS:**\n1. Build incrementally (one component at a time)\n2. Follow your approved design (no unauthorized changes)\n3. Each output must be COMPLETE and USABLE\n4. If you encounter issues \u2192 solve them, don't stop and ask\n\n**OUTPUT FORMAT:**\n```\n## \ud83d\udd28 PHASE C: Build Output\n\n### Deliverable 1: [Name]\n[Complete, usable output]\n\n### Deliverable 2: [Name]\n[Complete, usable output]\n\n### Implementation Notes\n- Note 1: ...\n\n---\n\u2705 Build complete. Proceeding to Review phase.\n```\n\n**FORBIDDEN IN PHASE C:**\n- \u274c Stopping mid-build to ask trivial questions\n- \u274c Producing incomplete outputs (\"I'll continue if you want...\")\n- \u274c Deviating from approved design without explanation\n\n---\n\n### \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n### PHASE D: REVIEW \u2705\n### \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\n**YOUR ROLE**: Quality owner - ensure excellence\n\n**MANDATORY ACTIONS:**\n1. Self-review against success criteria\n2. Present clear summary of what was delivered\n3. Highlight any deviations or decisions made during build\n4. Ask for user evaluation\n\n**OUTPUT FORMAT:**\n```\n## \u2705 PHASE D: Review & Delivery\n\n### 1. Delivery Summary\n| Deliverable | Status | Notes |\n|-------------|--------|-------|\n| ... | \u2705 Done | ... |\n\n### 2. Success Criteria Check\n- [x] Criterion 1: Met\n- [x] Criterion 2: Met\n\n### 3. Decisions Made During Build\n- Decision: [what & why]\n\n### 4. Known Limitations\n- ...\n\n---\n\ud83c\udfaf **FINAL CHECKPOINT**: \n- Accept this delivery?\n- Any revisions needed?\n```\n\n### PHASE E: FREEZE \ud83d\udd12\n\n**ONLY AFTER ACCEPTANCE:**\n1. Confirm acceptance status\n2. Capture baseline / review artifact / comparison evidence\n3. List open follow-ups\n4. State that the current run is now frozen\n\n**FREEZE OUTPUT FORMAT:**\n```\n## \ud83d\udd12 PHASE E: Freeze Record\n\n### 1. Acceptance Status\n[Accepted / Needs follow-up]\n\n### 2. Evidence\n- Baseline / delta / review artifact\n\n### 3. Open Follow-ups\n- ...\n\n---\n\u2705 Scope frozen for this run.\n```\n\n---\n\n## \u26a0\ufe0f AI ROLE CONSTRAINTS (ALWAYS ENFORCED)\n\n### \u2705 YOU ARE:\n| Role | Meaning |\n|------|---------|\n| **EXECUTOR** | You DO the work, user EVALUATES |\n| **DECISION MAKER** | YOU make technical decisions |\n| **QUALITY OWNER** | YOU ensure output quality |\n| **VIBE CODER** | You turn user's vision into reality |\n\n### \u274c YOU ARE NOT:\n- An advisor who only suggests options\n- A tool waiting for step-by-step instructions\n- Someone who shifts responsibility to user\n\n### \ud83d\udeab FORBIDDEN ACTIONS (WILL VIOLATE CVF):\n1. \u274c \"Which option do you prefer?\" \u2192 YOU choose!\n2. \u274c \"Should I continue?\" \u2192 YES, until done!\n3. \u274c \"Let me know if you want me to...\" \u2192 Just DO it!\n4. \u274c Skipping phases for \"simple\" tasks\n5. \u274c Producing partial/incomplete outputs\n6. \u274c Asking user to write code or design\n\n### \u2705 REQUIRED ACTIONS:\n1. Complete each phase with proper output format\n2. Document all decisions with reasoning\n3. Confirm understanding BEFORE executing\n4. Deliver COMPLETE, USABLE outputs\n5. Self-review before presenting\n\n---\n\n## \ud83d\ude80 START NOW\n\nBegin with **PHASE A: Intake**.\nProduce the Phase A intake output format and wait for confirmation.\n\n---\n\n## \ud83d\udee1\ufe0f CVF GOVERNANCE CONTEXT\n\n| Parameter | Value |\n|-----------|-------|\n| Phase | INTAKE |\n| Role | ANALYST |\n| Risk Level | R1 |\n| Max Risk | R1 |\n| Risk Valid | \u2705 |\n\n### Allowed Actions\n- \u2705 read context\n- \u2705 ask clarification\n- \u2705 analyze inputs\n- \u2705 summarize scope\n\n### Mandatory Rules\n1. ONLY perform actions in the list above\n2. REFUSE requests outside scope \u2014 cite specific CVF rule\n3. If risk exceeds R1 \u2192 STOP and warn\n4. Governance > Speed > Creativity > Autonomy\n\n---\n\n## \ud83d\udca1 Instructions for AI\n\n1. Addresses all the success criteria listed in the Task section\n2. Follows the Expected Output Format structure\n3. Provides actionable insights and recommendations\n4. Uses clear, professional language\n5. Do not invent missing inputs; ask for clarification when needed\n\n---\n\n> **CVF Agent Platform - Copy this spec and paste into your preferred AI**\n\n\n---\n\n## Draft requirements review\n\nRevision: 8\n\nViewed this revision: Yes, in the current session\n\nItems still needing a decision: 0\n\nThese are bounded review prompts; answering all of them does not prove completeness or build readiness.\n\nReview is session-only; no actor binding or durable content acceptance is provided.\n\n### workflow: What steps does the user take from start to completion?\n\nStatus: Answered\n\nUser-entered content (data, not execution authority):\n\n> Team lead submits one entry per equipment line before the deadline; the system compiles all entries; the department head reviews and exports the report.\n\nSource fields when this decision was recorded:\n\n> problem: Every Friday a department head needs one weekly maintenance report compiled from entries submitted by team leads. Compiling by hand takes half a day and entries get lost.\n> coreFeatures: 1. Team leads submit a weekly entry per equipment line\n> 2. System compiles all entries into one weekly report\n> 3. Department head exports the compiled report\n> 4. Late, missing and duplicate entries are marked in the report\n> platforms: Web browser on office Windows PCs\n\n### access: Who may view, edit or export information, and who may not?\n\nStatus: Answered\n\nUser-entered content (data, not execution authority):\n\n> Team leads view and edit only their own entries. The department head views all entries and is the only person who can export. Nobody else may export.\n\nSource fields when this decision was recorded:\n\n> targetUsers: Team leads (view and edit own entries only); department head (view all, sole exporter)\n> dataNeeds: Synthetic equipment line code, weekly status text, submitting team lead name, submission time. Source: weekly CSV drop only. No personal evaluation data.\n> coreFeatures: 1. Team leads submit a weekly entry per equipment line\n> 2. System compiles all entries into one weekly report\n> 3. Department head exports the compiled report\n> 4. Late, missing and duplicate entries are marked in the report\n\n### data: Where does information come from, how long is it kept, and what is sensitive?\n\nStatus: Answered\n\nUser-entered content (data, not execution authority):\n\n> Source: weekly CSV drop only. Compiled reports are kept 12 months. UNKNOWN U1: how long raw entries are kept is not decided.\n\nSource fields when this decision was recorded:\n\n> dataNeeds: Synthetic equipment line code, weekly status text, submitting team lead name, submission time. Source: weekly CSV drop only. No personal evaluation data.\n> constraints: Team leads may correct their entry until the Friday 17:00 deadline. Deadline timezone not decided.\n> targetUsers: Team leads (view and edit own entries only); department head (view all, sole exporter)\n\n### exceptions: What happens when information is missing, incorrect or duplicated?\n\nStatus: Answered\n\nUser-entered content (data, not execution authority):\n\n> Missing entry: show a NO ENTRY row, never guess content. Duplicate: keep the latest and keep the earlier in history. Late: flag LATE and include in the next report. UNKNOWN U2: deadline timezone is not decided. UNKNOWN U3: behavior when the deadline falls on a public holiday is not decided.\n\nSource fields when this decision was recorded:\n\n> coreFeatures: 1. Team leads submit a weekly entry per equipment line\n> 2. System compiles all entries into one weekly report\n> 3. Department head exports the compiled report\n> 4. Late, missing and duplicate entries are marked in the report\n> dataNeeds: Synthetic equipment line code, weekly status text, submitting team lead name, submission time. Source: weekly CSV drop only. No personal evaluation data.\n> constraints: Team leads may correct their entry until the Friday 17:00 deadline. Deadline timezone not decided.\n\n### acceptance: Which observable results will you check to accept this version?\n\nStatus: Answered\n\nUser-entered content (data, not execution authority):\n\n> Department head receives one compiled report by Monday 09:00 with every submitted entry and visible missing, late and duplicate marks. UNKNOWN U4: export file format is not decided.\n\nSource fields when this decision was recorded:\n\n> successCriteria: Department head receives one compiled report by Monday 09:00 containing every submitted entry, with missing, late and duplicate entries visibly marked.\n> coreFeatures: 1. Team leads submit a weekly entry per equipment line\n> 2. System compiles all entries into one weekly report\n> 3. Department head exports the compiled report\n> 4. Late, missing and duplicate entries are marked in the report\n> problem: Every Friday a department head needs one weekly maintenance report compiled from entries submitted by team leads. Compiling by hand takes half a day and entries get lost.\n\n### boundaries: What must stay unchanged, remain out of scope or never happen?\n\nStatus: Answered\n\nUser-entered content (data, not execution authority):\n\n> Resolution of C1: corrections before Friday 17:00 create a new entry version; after the deadline entries are immutable. No automatic scoring or ranking of people.\n\nSource fields when this decision was recorded:\n\n> outOfScope: No automatic scoring or ranking of team leads or people. No email sending in this version.\n> mustPreserve: Submitted entries are immutable once submitted; the existing equipment line codes stay unchanged.\n> constraints: Team leads may correct their entry until the Friday 17:00 deadline. Deadline timezone not decided."
+ },
+ "exportedRevisedPacket": {
+  "stage": "P3_REVISED_ACKNOWLEDGED",
+  "sha256": "02b8d1f51a77a8233d6eab0492344e2781bbb2aa2b1bf460d1e30a73e0308ad1",
+  "bytes": 24158,
+  "canonicalText": "# Draft for requirements clarification\n\nCurrent scope: specification clarification and review only. Design/build directions below are future steps requiring separate authorization. Viewing this draft does not approve BUILD.\n\n---\n# CVF Agent Handoff Packet (GUIDED MODE)\n**Generated:** 2026-10-05\n**Template:** \ud83d\udce6 App Builder Complete\n**Category:** development\n**Mode:** CVF Guided Agent (5-Phase)\n---\n\n## \ud83d\udccb Context\n\n**Template:** \ud83d\udce6 App Builder Complete\n\nCreate a full product brief and builder-ready handoff without exposing stack choices to the user.\n\n---\n\n## \ud83e\udd1d Packet Purpose\n\n- This packet is written for another AI/agent to read and continue execution.\n- The end user should not need to understand hidden frameworks, stacks, or implementation details.\n- The receiving agent must convert the brief into implementation decisions inside the provided guardrails.\n\n---\n\n## \ud83d\udcdd User Input\n\n- **1. App / product name:** Weekly Equipment Report Compiler\n- **2. What kind of product is this?:** Web App\n- **3. What problem does it solve?:** Every Friday a department head needs one weekly maintenance report compiled from entries submitted by team leads. Compiling by hand takes half a day and entries get lost.\n- **4. Who will use this product?:** Team leads (view and edit own entries only; may also export their own team's section); department head (view all, export all); auditors (read-only view, no export)\n- **5. The most important things the app must do:** 1. Team leads submit a weekly entry per equipment line\n2. System compiles all entries into one weekly report\n3. Department head exports the compiled report\n4. Late, missing and duplicate entries are marked in the report\n- **6. When would you consider the first version successful?:** Department head receives one compiled report by Monday 09:00 containing every submitted entry, with missing, late and duplicate entries visibly marked.\n- **7. What must stay unchanged:** Submitted entries are immutable once submitted; the existing equipment line codes stay unchanged.\n- **8. Where does the app need to run?:** Web browser on office Windows PCs\n- **9. What data does the app need to remember or process?:** Synthetic equipment line code, weekly status text, submitting team lead name, submission time. Source: weekly CSV drop only. No personal evaluation data.\n- **10. Look and feel:** Plain table, high contrast\n- **11. Out of scope:** No automatic scoring or ranking of team leads or people. No email sending in this version.\n- **12. Constraints or special conditions:** Team leads may correct their entry until the Friday 17:00 deadline. Deadline timezone not decided.\n\n\n\n---\n\n## \ud83c\udf10 English Working Brief\n\n**Translation status:** READY_FOR_EXTERNAL_AGENT_REVIEW\n\n- The English export uses normalized English working values for agent-facing execution.\n- User source values may have been entered in Vietnamese, but this packet avoids passing Vietnamese control content to the receiving agent.\n- Product meaning, acceptance criteria, and non-coder intent are preserved where local normalization is confident.\n- Fields marked `TRANSLATION_REQUIRED` must be translated by the operator or an approved LLM before external-agent build work starts.\n\n| Translation metric | Count |\n| --- | ---: |\n| Normalized fields | 0 |\n| Fields needing translation review | 0 |\n\n\n---\n\n## \u2705 Input Coverage\n\n| Field | Provided |\n| --- | --- |\n| 1. App / product name | \u2705 |\n| 2. What kind of product is this? | \u2705 |\n| 3. What problem does it solve? | \u2705 |\n| 4. Who will use this product? | \u2705 |\n| 5. The most important things the app must do | \u2705 |\n| 6. When would you consider the first version successful? | \u2705 |\n| 8. Where does the app need to run? | \u2705 |\n\n\n\n---\n\n## \ud83e\uddf3 Portable Agent Handoff Readiness\n\n**Readiness status:** READY_FOR_EXTERNAL_AGENT_REVIEW\n\n### Receiving Agent Mission\n\n- Treat this packet as the authoritative product brief for the first build plan.\n- Convert the non-coder brief into implementation decisions inside the stated guardrails.\n- Prefer a simple, testable first version over broad platform expansion.\n- Do not ask the non-coder to choose frameworks, databases, hosting, or hidden architecture unless that choice materially changes cost, risk, privacy, or scope.\n\n### Source Values Handling\n\n- This English packet uses agent-facing working values, not raw multilingual source text.\n- If any field says `TRANSLATION_REQUIRED`, stop before build work and request an approved translation.\n- Preserve product meaning, business terms, and acceptance criteria from the English Working Brief.\n- Do not ask the non-coder to make hidden technical choices while resolving translation gaps.\n\n### Implementation Decision Policy\n\n- If a technical detail is missing, choose a conservative default and explain why.\n- If a missing detail changes business risk, privacy, data retention, payment, authentication, or deployment scope, ask one concise clarification question before building.\n- If user-provided constraints conflict, stop and list the conflict instead of guessing.\n\n### Material Details To Reconfirm If Needed\n\nNone identified from the provided source values\n\n### External Agent Acceptance Checklist\n\n- Restate the product goal in one short paragraph.\n- List the first-version workflows the app must support.\n- Identify data objects or records implied by the source values.\n- Propose a practical build plan with milestones.\n- Define acceptance tests mapped to the user's success criteria.\n- Name assumptions and defaults separately from user-provided facts.\n- Keep out-of-scope items out of the first build unless the operator approves expansion.\n\n### Operator Review Gate\n\nAfter the external agent responds, mark the packet:\n\n- PASS: the agent understood the product, made sensible defaults, and produced actionable build steps.\n- PASS_WITH_MINOR_FIX: the agent understood the product but needs small wording or scope corrections.\n- HOLD: the agent misunderstood the product, asked the non-coder to make hidden technical choices, lost source values, or expanded scope without approval.\n\n\n---\n\n## \ud83c\udfaf Task\n\nINTENT:\nI want to create a complete app brief that remains non-coder friendly.\n\nAPP / PRODUCT NAME: Weekly Equipment Report Compiler\nAPP TYPE: Web App\n\nPROBLEM TO SOLVE:\nEvery Friday a department head needs one weekly maintenance report compiled from entries submitted by team leads. Compiling by hand takes half a day and entries get lost.\n\nTARGET USERS:\nTeam leads (view and edit own entries only; may also export their own team's section); department head (view all, export all); auditors (read-only view, no export)\n\nCORE FEATURES:\n1. Team leads submit a weekly entry per equipment line\n2. System compiles all entries into one weekly report\n3. Department head exports the compiled report\n4. Late, missing and duplicate entries are marked in the report\n\nSUCCESS CRITERIA:\nDepartment head receives one compiled report by Monday 09:00 containing every submitted entry, with missing, late and duplicate entries visibly marked.\n\nMUST PRESERVE:\nSubmitted entries are immutable once submitted; the existing equipment line codes stay unchanged.\n\nPLATFORMS:\nWeb browser on office Windows PCs\n\nDATA NEEDS:\nSynthetic equipment line code, weekly status text, submitting team lead name, submission time. Source: weekly CSV drop only. No personal evaluation data.\n\nLOOK AND FEEL:\nPlain table, high contrast\n\nOUT OF SCOPE:\nNo automatic scoring or ranking of team leads or people. No email sending in this version.\n\nCONSTRAINTS:\nTeam leads may correct their entry until the Friday 17:00 deadline. Deadline timezone not decided.\n\nOUTPUT REQUIREMENTS:\n- Ask only for business intent, user outcomes, constraints, and preservation rules\n- Do not ask the end user to choose frameworks, databases, or hidden technical patterns\n- Translate this into a builder-ready governed packet\n- Include acceptance criteria and handoff boundaries\n\n---\n\n## \ud83d\udce4 Expected Output Format\n\n- Product Brief\n- Core Workflows\n- Protected Constraints\n- Builder Plan\n- Acceptance Criteria\n- Handoff Checklist\n\n\n---\n\n## \ud83d\udcd0 Output Template\n\n```markdown\n# Complete App Brief: Weekly Equipment Report Compiler\n\n## 1. Product Goal\n- App name: Weekly Equipment Report Compiler\n- App type: Web App\n\n## 2. Must-Have Workflows\n\n## 3. Data And Constraints\n\n## 4. Protected Boundaries\n\n## 5. Builder Plan\n\n## 6. Acceptance Criteria\n```\n\n\n---\n\n\n\n\n## \u26d4 Execution Constraints\n- Do not invent missing inputs. If required inputs are missing, stop and ask for clarification.\n- Follow the Output Template headings exactly (no reordering).\n- Stay within the scope defined by the Task section.\n- If data is unavailable, state it explicitly as \"Unknown\" instead of guessing.\n\n\n---\n\n\n## \u2705 Validation Hooks\n- Check required inputs against the Input Coverage table.\n- Ensure every Expected Output section is present.\n- Include a Success Criteria Check.\n- If any item is missing, mark the result as \"Not Ready\" and list what's missing.\n\n\n---\n\n## \ud83e\udded CVF Non-Coder Success Standard\n\n- The result must be actionable for a non-coder, not just descriptive.\n- It must stay tailored to the provided inputs instead of drifting into generic advice.\n- It must cover the main requested output shape end-to-end.\n- The receiving agent should choose hidden implementation details itself unless that would materially change risk or business intent.\n- It must remain governance-safe: no bypass suggestions, unsafe shortcuts, or hidden assumptions.\n- If the task cannot be completed safely, provide the clearest safe next step instead of ending in a dead end.\n\n---\n\n## \ud83d\udee1\ufe0f Governed Response Rules\n\n- If the task is allowed, answer directly and clearly.\n- If the task should be BLOCKED or marked NEEDS_APPROVAL, explain why in plain language.\n- When blocked or approval-gated, provide a safe next-step path the user can actually follow.\n- Make risk, review, or approval implications visible instead of burying them in jargon.\n\n---\n\n## \ud83e\udde0 Knowledge Context Preference\n\n- If the user provides governed domain facts, internal policy text, or project-specific context, prioritize that context over generic training knowledge.\n- If important knowledge context is missing, state exactly what context would improve the result instead of guessing.\n- Do not invent proprietary domain facts or internal details that were not provided.\n\n---\n\n# \ud83d\udea6 CVF FULL MODE PROTOCOL\n\n> **CRITICAL**: You are now operating under CVF (Controlled Vibe Framework) Full Mode.\n> This is NOT a suggestion - it's a MANDATORY protocol you MUST follow.\n\n---\n\n## \ud83d\udccc CVF CORE PRINCIPLE\n\n**\"User describes WHAT they want \u2192 AI decides HOW and EXECUTES\"**\n\n- User = Problem owner, Evaluator\n- AI = Solution architect, Decision maker, Executor\n\n---\n\n## \ud83d\udd04 MANDATORY 5-PHASE PROCESS\n\nYou MUST complete each phase in order. NO SHORTCUTS.\n\n---\n\n### \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n### PHASE A: INTAKE \ud83d\udd0d\n### \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\n**YOUR ROLE**: Interpreter - understand the problem deeply\n\n**MANDATORY ACTIONS:**\n1. Restate what user wants in your own words\n2. Identify the REAL goal (not just surface request)\n3. List ALL assumptions you're making\n4. Define what's IN scope and OUT of scope\n5. Identify constraints (time, resources, tech)\n\n**OUTPUT FORMAT (MUST PRODUCE):**\n```\n## \ud83d\udccb PHASE A: Intake Summary\n\n### 1. My Understanding\n[Restate user's goal in your words]\n\n### 2. Assumptions I'm Making\n- Assumption 1: ...\n- Assumption 2: ...\n(user will correct if wrong)\n\n### 3. Scope Definition\n\u2705 IN SCOPE:\n- ...\n\n\u274c OUT OF SCOPE:\n- ...\n\n### 4. Constraints Identified\n- ...\n\n### 5. Questions for Clarification (if any)\n- ...\n\n---\n\u23f8\ufe0f **CHECKPOINT A**: Do you confirm my understanding is correct?\n```\n\n**\u26d4 HARD STOP**: Wait for user confirmation before Design.\n- If user says \"yes\", \"ok\", \"proceed\", or \"confirmed\" \u2192 Go to Design\n- If user corrects you \u2192 Update understanding, re-confirm\n- If unclear \u2192 Ask specific questions\n\n**FORBIDDEN IN PHASE A:**\n- \u274c Proposing solutions\n- \u274c Writing any code\n- \u274c Making technical recommendations\n- \u274c Skipping to build because \"it's obvious\"\n\n---\n\n### \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n### PHASE B: DESIGN \ud83d\udcd0\n### \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\n**YOUR ROLE**: Architect - design the solution\n\n**MANDATORY ACTIONS:**\n1. Propose solution approach (high-level)\n2. If multiple options exist: compare and CHOOSE the best one\n3. YOU make the technical decisions (don't ask user to choose)\n4. Document your decisions with reasoning\n\n**OUTPUT FORMAT (MUST PRODUCE):**\n```\n## \ud83d\udcd0 PHASE B: Design Plan\n\n### 1. Solution Approach\n[High-level description of how you'll solve this]\n\n### 2. Technical Decisions Made\n| Decision | Choice | Reasoning |\n|----------|--------|-----------|\n| ... | ... | ... |\n\n### 3. Implementation Plan\n- Step 1: ...\n- Step 2: ...\n- Step 3: ...\n\n### 4. Expected Deliverables\n- [ ] Deliverable 1\n- [ ] Deliverable 2\n\n### 5. Potential Risks\n- Risk 1: [mitigation]\n\n---\n\u23f8\ufe0f **CHECKPOINT B**: Approve this design to proceed to Build phase?\n```\n\n**\u26d4 HARD STOP**: Wait for user approval before Build.\n\n**FORBIDDEN IN PHASE B:**\n- \u274c Asking \"Which option do you prefer?\" (YOU decide!)\n- \u274c Requesting user to make technical choices\n- \u274c Starting to build before approval\n\n---\n\n### \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n### PHASE C: BUILD \ud83d\udd28\n### \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\n**YOUR ROLE**: Builder - execute with quality\n\n**MANDATORY ACTIONS:**\n1. Build incrementally (one component at a time)\n2. Follow your approved design (no unauthorized changes)\n3. Each output must be COMPLETE and USABLE\n4. If you encounter issues \u2192 solve them, don't stop and ask\n\n**OUTPUT FORMAT:**\n```\n## \ud83d\udd28 PHASE C: Build Output\n\n### Deliverable 1: [Name]\n[Complete, usable output]\n\n### Deliverable 2: [Name]\n[Complete, usable output]\n\n### Implementation Notes\n- Note 1: ...\n\n---\n\u2705 Build complete. Proceeding to Review phase.\n```\n\n**FORBIDDEN IN PHASE C:**\n- \u274c Stopping mid-build to ask trivial questions\n- \u274c Producing incomplete outputs (\"I'll continue if you want...\")\n- \u274c Deviating from approved design without explanation\n\n---\n\n### \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n### PHASE D: REVIEW \u2705\n### \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\n**YOUR ROLE**: Quality owner - ensure excellence\n\n**MANDATORY ACTIONS:**\n1. Self-review against success criteria\n2. Present clear summary of what was delivered\n3. Highlight any deviations or decisions made during build\n4. Ask for user evaluation\n\n**OUTPUT FORMAT:**\n```\n## \u2705 PHASE D: Review & Delivery\n\n### 1. Delivery Summary\n| Deliverable | Status | Notes |\n|-------------|--------|-------|\n| ... | \u2705 Done | ... |\n\n### 2. Success Criteria Check\n- [x] Criterion 1: Met\n- [x] Criterion 2: Met\n\n### 3. Decisions Made During Build\n- Decision: [what & why]\n\n### 4. Known Limitations\n- ...\n\n---\n\ud83c\udfaf **FINAL CHECKPOINT**: \n- Accept this delivery?\n- Any revisions needed?\n```\n\n### PHASE E: FREEZE \ud83d\udd12\n\n**ONLY AFTER ACCEPTANCE:**\n1. Confirm acceptance status\n2. Capture baseline / review artifact / comparison evidence\n3. List open follow-ups\n4. State that the current run is now frozen\n\n**FREEZE OUTPUT FORMAT:**\n```\n## \ud83d\udd12 PHASE E: Freeze Record\n\n### 1. Acceptance Status\n[Accepted / Needs follow-up]\n\n### 2. Evidence\n- Baseline / delta / review artifact\n\n### 3. Open Follow-ups\n- ...\n\n---\n\u2705 Scope frozen for this run.\n```\n\n---\n\n## \u26a0\ufe0f AI ROLE CONSTRAINTS (ALWAYS ENFORCED)\n\n### \u2705 YOU ARE:\n| Role | Meaning |\n|------|---------|\n| **EXECUTOR** | You DO the work, user EVALUATES |\n| **DECISION MAKER** | YOU make technical decisions |\n| **QUALITY OWNER** | YOU ensure output quality |\n| **VIBE CODER** | You turn user's vision into reality |\n\n### \u274c YOU ARE NOT:\n- An advisor who only suggests options\n- A tool waiting for step-by-step instructions\n- Someone who shifts responsibility to user\n\n### \ud83d\udeab FORBIDDEN ACTIONS (WILL VIOLATE CVF):\n1. \u274c \"Which option do you prefer?\" \u2192 YOU choose!\n2. \u274c \"Should I continue?\" \u2192 YES, until done!\n3. \u274c \"Let me know if you want me to...\" \u2192 Just DO it!\n4. \u274c Skipping phases for \"simple\" tasks\n5. \u274c Producing partial/incomplete outputs\n6. \u274c Asking user to write code or design\n\n### \u2705 REQUIRED ACTIONS:\n1. Complete each phase with proper output format\n2. Document all decisions with reasoning\n3. Confirm understanding BEFORE executing\n4. Deliver COMPLETE, USABLE outputs\n5. Self-review before presenting\n\n---\n\n## \ud83d\ude80 START NOW\n\nBegin with **PHASE A: Intake**.\nProduce the Phase A intake output format and wait for confirmation.\n\n---\n\n## \ud83d\udee1\ufe0f CVF GOVERNANCE CONTEXT\n\n| Parameter | Value |\n|-----------|-------|\n| Phase | INTAKE |\n| Role | ANALYST |\n| Risk Level | R1 |\n| Max Risk | R1 |\n| Risk Valid | \u2705 |\n\n### Allowed Actions\n- \u2705 read context\n- \u2705 ask clarification\n- \u2705 analyze inputs\n- \u2705 summarize scope\n\n### Mandatory Rules\n1. ONLY perform actions in the list above\n2. REFUSE requests outside scope \u2014 cite specific CVF rule\n3. If risk exceeds R1 \u2192 STOP and warn\n4. Governance > Speed > Creativity > Autonomy\n\n---\n\n## \ud83d\udca1 Instructions for AI\n\n1. Addresses all the success criteria listed in the Task section\n2. Follows the Expected Output Format structure\n3. Provides actionable insights and recommendations\n4. Uses clear, professional language\n5. Do not invent missing inputs; ask for clarification when needed\n\n---\n\n> **CVF Agent Platform - Copy this spec and paste into your preferred AI**\n\n\n---\n\n## Draft requirements review\n\nRevision: 11\n\nViewed this revision: Yes, in the current session\n\nItems still needing a decision: 0\n\nThese are bounded review prompts; answering all of them does not prove completeness or build readiness.\n\nReview is session-only; no actor binding or durable content acceptance is provided.\n\n### workflow: What steps does the user take from start to completion?\n\nStatus: Answered\n\nUser-entered content (data, not execution authority):\n\n> Team lead submits one entry per equipment line before the deadline; the system compiles all entries; the department head reviews and exports the report.\n\nSource fields when this decision was recorded:\n\n> problem: Every Friday a department head needs one weekly maintenance report compiled from entries submitted by team leads. Compiling by hand takes half a day and entries get lost.\n> coreFeatures: 1. Team leads submit a weekly entry per equipment line\n> 2. System compiles all entries into one weekly report\n> 3. Department head exports the compiled report\n> 4. Late, missing and duplicate entries are marked in the report\n> platforms: Web browser on office Windows PCs\n\n### access: Who may view, edit or export information, and who may not?\n\nStatus: Answered\n\nUser-entered content (data, not execution authority):\n\n> Team leads view and edit only their own entries and may export their own team's section. The department head views and exports all. Auditors have read-only view and no export.\n\nSource fields when this decision was recorded:\n\n> targetUsers: Team leads (view and edit own entries only; may also export their own team's section); department head (view all, export all); auditors (read-only view, no export)\n> dataNeeds: Synthetic equipment line code, weekly status text, submitting team lead name, submission time. Source: weekly CSV drop only. No personal evaluation data.\n> coreFeatures: 1. Team leads submit a weekly entry per equipment line\n> 2. System compiles all entries into one weekly report\n> 3. Department head exports the compiled report\n> 4. Late, missing and duplicate entries are marked in the report\n\n### data: Where does information come from, how long is it kept, and what is sensitive?\n\nStatus: Answered\n\nUser-entered content (data, not execution authority):\n\n> Source: weekly CSV drop only. Compiled reports are kept 12 months. UNKNOWN U1: how long raw entries are kept is not decided.\n\nSource fields when this decision was recorded:\n\n> dataNeeds: Synthetic equipment line code, weekly status text, submitting team lead name, submission time. Source: weekly CSV drop only. No personal evaluation data.\n> constraints: Team leads may correct their entry until the Friday 17:00 deadline. Deadline timezone not decided.\n> targetUsers: Team leads (view and edit own entries only; may also export their own team's section); department head (view all, export all); auditors (read-only view, no export)\n\n### exceptions: What happens when information is missing, incorrect or duplicated?\n\nStatus: Answered\n\nUser-entered content (data, not execution authority):\n\n> Missing entry: show a NO ENTRY row, never guess content. Duplicate: keep the latest and keep the earlier in history. Late: flag LATE and include in the next report. UNKNOWN U2: deadline timezone is not decided. UNKNOWN U3: behavior when the deadline falls on a public holiday is not decided.\n\nSource fields when this decision was recorded:\n\n> coreFeatures: 1. Team leads submit a weekly entry per equipment line\n> 2. System compiles all entries into one weekly report\n> 3. Department head exports the compiled report\n> 4. Late, missing and duplicate entries are marked in the report\n> dataNeeds: Synthetic equipment line code, weekly status text, submitting team lead name, submission time. Source: weekly CSV drop only. No personal evaluation data.\n> constraints: Team leads may correct their entry until the Friday 17:00 deadline. Deadline timezone not decided.\n\n### acceptance: Which observable results will you check to accept this version?\n\nStatus: Answered\n\nUser-entered content (data, not execution authority):\n\n> Department head receives one compiled report by Monday 09:00 with every submitted entry and visible missing, late and duplicate marks. UNKNOWN U4: export file format is not decided.\n\nSource fields when this decision was recorded:\n\n> successCriteria: Department head receives one compiled report by Monday 09:00 containing every submitted entry, with missing, late and duplicate entries visibly marked.\n> coreFeatures: 1. Team leads submit a weekly entry per equipment line\n> 2. System compiles all entries into one weekly report\n> 3. Department head exports the compiled report\n> 4. Late, missing and duplicate entries are marked in the report\n> problem: Every Friday a department head needs one weekly maintenance report compiled from entries submitted by team leads. Compiling by hand takes half a day and entries get lost.\n\n### boundaries: What must stay unchanged, remain out of scope or never happen?\n\nStatus: Answered\n\nUser-entered content (data, not execution authority):\n\n> Resolution of C1: corrections before Friday 17:00 create a new entry version; after the deadline entries are immutable. No automatic scoring or ranking of people.\n\nSource fields when this decision was recorded:\n\n> outOfScope: No automatic scoring or ranking of team leads or people. No email sending in this version.\n> mustPreserve: Submitted entries are immutable once submitted; the existing equipment line codes stay unchanged.\n> constraints: Team leads may correct their entry until the Friday 17:00 deadline. Deadline timezone not decided."
+ },
+ "nativeLimitProbes": {
+  "specGateNotDetectingConflict": {
+   "mustPreserve": "Submitted entries are immutable once submitted; the existing equipment line codes stay unchanged.",
+   "constraints": "Team leads may correct their entry until the Friday 17:00 deadline. Deadline timezone not decided."
+  },
+  "portableReadinessStatusInBaselineSpec": true,
+  "portableReadinessStatusInRevisedSpec": true,
+  "materialDetailsToReconfirmLine": "None identified from the provided source values"
+ },
+ "claimBoundary": "Deterministic synthetic replay of production functions; no UI, provider, storage, AI governance or novice UX evidence."
+}
