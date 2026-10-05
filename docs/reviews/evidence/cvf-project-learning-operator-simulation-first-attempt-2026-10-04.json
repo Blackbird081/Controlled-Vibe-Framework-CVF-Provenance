@@ -1,0 +1,11 @@
+{
+  "cleanup": "TemporaryDirectory context removed first disposable fixture",
+  "rerunReason": "Correct only CLI exit-code expectations and exercise the remaining named cases.",
+  "actualExitCode": 2,
+  "diagnosis": "Runner declares EXIT_GATE_FAIL=2; refusal behavior correct. No product defect inferred.",
+  "status": "HARNESS_EXPECTATION_FAIL",
+  "date": "2026-10-04",
+  "case": "refuse different same-ID input",
+  "actualFinding": "INTAKE_EXISTS_DIFFERENT",
+  "expectedExitCode": 1
+}

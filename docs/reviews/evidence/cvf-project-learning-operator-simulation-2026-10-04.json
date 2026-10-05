@@ -1,0 +1,332 @@
+{
+  "schemaVersion": "cvf.localOperatorSimulation.v1",
+  "status": "PASS_STRUCTURAL_ONLY",
+  "date": "2026-10-04",
+  "coreHead": "26dfe4d6a30fdccd3afe1e0669cfca4e9918bcc8",
+  "role": "single Local actor simulating operator and reviewer",
+  "independentReview": false,
+  "sourceBoundary": "new disposable synthetic project only",
+  "claims": "real CLI execution and file/shape/digest behavior only",
+  "limits": [
+    "No semantic finding acceptance",
+    "No actor authentication",
+    "validate-intake accepts a syntactic nonexistent admission link when states/digest match",
+    "No parent registry write or typed receipt admission",
+    "No CCMA or FLAL T4/T5 effects",
+    "No provider/live/runtime-governance proof",
+    "No real-project delivery or adoption"
+  ],
+  "fixture": {
+    "sourceText": "# Synthetic coverage review\n\nEnumeration-only fixture. Storage and checkpoint are NOT RUN.\n",
+    "sourceSha": "22339f75c2ee4227dfdc1b2296eb8333135d72c6",
+    "findingInput": {
+      "findingId": "SIM-COVERAGE-001",
+      "title": "Synthetic enumeration claim review",
+      "sourceProject": "Disposable CVF operator simulation",
+      "sourceSha": "22339f75c2ee4227dfdc1b2296eb8333135d72c6",
+      "observed": "Synthetic source lists enumeration; storage and checkpoint are NOT RUN.",
+      "expected": "The review preserves enumeration-only evidence limits.",
+      "negativeEvidence": [
+        {
+          "locator": "SCENARIO.md",
+          "description": "Synthetic evidence omits storage and checkpoint proof; not a historical incident."
+        }
+      ],
+      "chainJoins": [
+        {
+          "join": "observation -> claim",
+          "gap": "No storage or restart proof in this fixture",
+          "earliestControlPoint": "review claim boundary"
+        }
+      ],
+      "defectClass": "WORKER_EXECUTION_ERROR",
+      "learningLane": "DOCUMENTATION_ONLY_LEARNING",
+      "proposedDisposition": "RULE_EXISTS",
+      "candidateControl": "CVF_BUILD_LEARNING_EVIDENCE_CHECKLIST.md: Sync Coverage And Claims",
+      "claimLimits": "Synthetic CLI shape/digest test only; no real finding, parent admission or adoption.",
+      "dedupCandidates": [
+        "docs/reference/downstream_gate_profile/CVF_BUILD_LEARNING_EVIDENCE_CHECKLIST.md"
+      ]
+    },
+    "generatedRecord": {
+      "acceptance": "NOT_ACCEPTED_GENERATION_ONLY",
+      "candidateControl": "CVF_BUILD_LEARNING_EVIDENCE_CHECKLIST.md: Sync Coverage And Claims",
+      "chainJoins": [
+        {
+          "earliestControlPoint": "review claim boundary",
+          "gap": "No storage or restart proof in this fixture",
+          "join": "observation -> claim"
+        }
+      ],
+      "claimLimits": "Synthetic CLI shape/digest test only; no real finding, parent admission or adoption.",
+      "contentSha256": "36b6f1383789546b96a5296c91288bb04adafb7f80cb90929932e51dc059a265",
+      "dedupCandidates": [
+        "docs/reference/downstream_gate_profile/CVF_BUILD_LEARNING_EVIDENCE_CHECKLIST.md"
+      ],
+      "defectClass": "WORKER_EXECUTION_ERROR",
+      "expected": "The review preserves enumeration-only evidence limits.",
+      "findingId": "SIM-COVERAGE-001",
+      "learningLane": "DOCUMENTATION_ONLY_LEARNING",
+      "negativeEvidence": [
+        {
+          "description": "Synthetic evidence omits storage and checkpoint proof; not a historical incident.",
+          "locator": "SCENARIO.md"
+        }
+      ],
+      "observed": "Synthetic source lists enumeration; storage and checkpoint are NOT RUN.",
+      "parentDisposition": "PENDING_PARENT_ADMISSION",
+      "parentLinks": {
+        "admissionRecord": null,
+        "checker": null,
+        "goldenProof": null,
+        "workOrder": null
+      },
+      "parentOwner": "docs/reference/CVF_FINDING_TO_GOVERNANCE_LEARNING_TRIGGER_STANDARD.md",
+      "profileId": "cvf.downstreamGateProfile@1.1.0",
+      "proposedDisposition": "RULE_EXISTS",
+      "schemaVersion": "cvf.downstreamFindingIntake@1.0.0",
+      "sourceClaimStatus": "UNVERIFIED_UNTIL_PROJECT_EVIDENCE_IS_SEPARATELY_ADMITTED",
+      "sourceProject": "Disposable CVF operator simulation",
+      "sourceSha": "22339f75c2ee4227dfdc1b2296eb8333135d72c6",
+      "title": "Synthetic enumeration claim review"
+    },
+    "journalText": "# Synthetic learning record\n\nILLUSTRATIVE_ONLY; no source incident.\nSource: SCENARIO.md at 22339f75c2ee4227dfdc1b2296eb8333135d72c6\nParent: PENDING_PARENT_ASSESSMENT\nReturn: NOT_RETURNED\nApplication: NOT_APPLIED\n"
+  },
+  "sourceSha256": "03bf79103b9524cac619ed9b92c42c2f75c14f917e163f5d6561def328064b12",
+  "journalSha256": "b8a227817b7fcedaf1823bada080190438f6336c2bcb043aecab2a028829d234",
+  "generatedRecordSha256": "d8a7b6427f79639427de0f213e992098222e011419d6824d0698d8cd79e66d4f",
+  "cases": [
+    {
+      "case": "init synthetic source",
+      "argv": [
+        "git",
+        "init",
+        "-q"
+      ],
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "output": "",
+      "passed": true
+    },
+    {
+      "case": "commit fixture source",
+      "argv": [
+        "git",
+        "-c",
+        "user.name=CVF Simulation",
+        "-c",
+        "user.email=cvf-simulation@example.invalid",
+        "add",
+        "SCENARIO.md"
+      ],
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "output": "",
+      "passed": true
+    },
+    {
+      "case": "pin fixture source",
+      "argv": [
+        "git",
+        "-c",
+        "user.name=CVF Simulation",
+        "-c",
+        "user.email=cvf-simulation@example.invalid",
+        "commit",
+        "-qm",
+        "synthetic coverage fixture"
+      ],
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "output": "",
+      "passed": true
+    },
+    {
+      "case": "fresh disposable install",
+      "argv": [
+        "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "-B",
+        "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\scripts\\lib\\downstream_governance\\cvf_downstream_gate_runner.py",
+        "install",
+        "--project-root",
+        "C:\\Users\\DELL\\AppData\\Local\\Temp\\cvf-operator-simulation-ty7voksh",
+        "--core-root",
+        "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF",
+        "--core-commit",
+        "26dfe4d6a30fdccd3afe1e0669cfca4e9918bcc8"
+      ],
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "output": "GATE_PROFILE_STATUS: FRESH_INSTALLED profile dd8d8f358fff runner 0746fa515613 ci CREATED\n",
+      "passed": true
+    },
+    {
+      "case": "generate using installed project runner",
+      "argv": [
+        "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "-B",
+        "C:\\Users\\DELL\\AppData\\Local\\Temp\\cvf-operator-simulation-ty7voksh\\scripts\\cvf_gates\\cvf_downstream_gate_runner.py",
+        "intake",
+        "--project-root",
+        "C:\\Users\\DELL\\AppData\\Local\\Temp\\cvf-operator-simulation-ty7voksh",
+        "--finding",
+        "C:\\Users\\DELL\\AppData\\Local\\Temp\\cvf-operator-simulation-ty7voksh\\finding-input.json"
+      ],
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "output": "INTAKE: WRITTEN C:\\Users\\DELL\\AppData\\Local\\Temp\\cvf-operator-simulation-ty7voksh\\docs\\learning_intake\\SIM-COVERAGE-001.intake.json (generation is not parent acceptance)\n",
+      "passed": true
+    },
+    {
+      "case": "generation retains pending states and null parent links",
+      "passed": true
+    },
+    {
+      "case": "validate generated record",
+      "argv": [
+        "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "-B",
+        "C:\\Users\\DELL\\AppData\\Local\\Temp\\cvf-operator-simulation-ty7voksh\\scripts\\cvf_gates\\cvf_downstream_gate_runner.py",
+        "validate-intake",
+        "--record",
+        "C:\\Users\\DELL\\AppData\\Local\\Temp\\cvf-operator-simulation-ty7voksh\\docs\\learning_intake\\SIM-COVERAGE-001.intake.json"
+      ],
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "output": "INTAKE_RECORD: VALID\n",
+      "passed": true
+    },
+    {
+      "case": "repeat same intake",
+      "argv": [
+        "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "-B",
+        "C:\\Users\\DELL\\AppData\\Local\\Temp\\cvf-operator-simulation-ty7voksh\\scripts\\cvf_gates\\cvf_downstream_gate_runner.py",
+        "intake",
+        "--project-root",
+        "C:\\Users\\DELL\\AppData\\Local\\Temp\\cvf-operator-simulation-ty7voksh",
+        "--finding",
+        "C:\\Users\\DELL\\AppData\\Local\\Temp\\cvf-operator-simulation-ty7voksh\\finding-input.json"
+      ],
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "output": "INTAKE: WRITTEN C:\\Users\\DELL\\AppData\\Local\\Temp\\cvf-operator-simulation-ty7voksh\\docs\\learning_intake\\SIM-COVERAGE-001.intake.json (generation is not parent acceptance)\n",
+      "passed": true
+    },
+    {
+      "case": "refuse different same-ID input",
+      "argv": [
+        "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "-B",
+        "C:\\Users\\DELL\\AppData\\Local\\Temp\\cvf-operator-simulation-ty7voksh\\scripts\\cvf_gates\\cvf_downstream_gate_runner.py",
+        "intake",
+        "--project-root",
+        "C:\\Users\\DELL\\AppData\\Local\\Temp\\cvf-operator-simulation-ty7voksh",
+        "--finding",
+        "C:\\Users\\DELL\\AppData\\Local\\Temp\\cvf-operator-simulation-ty7voksh\\negative.json"
+      ],
+      "exitCode": 2,
+      "expectedExitCode": 2,
+      "output": "INTAKE_EXISTS_DIFFERENT @ C:\\Users\\DELL\\AppData\\Local\\Temp\\cvf-operator-simulation-ty7voksh\\docs\\learning_intake\\SIM-COVERAGE-001.intake.json: an intake with this findingId already exists with different content; refusing to overwrite\nINTAKE: REFUSED (generation is not parent acceptance)\n",
+      "passed": true
+    },
+    {
+      "case": "refuse Markdown as JSON finding input",
+      "argv": [
+        "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "-B",
+        "C:\\Users\\DELL\\AppData\\Local\\Temp\\cvf-operator-simulation-ty7voksh\\scripts\\cvf_gates\\cvf_downstream_gate_runner.py",
+        "intake",
+        "--project-root",
+        "C:\\Users\\DELL\\AppData\\Local\\Temp\\cvf-operator-simulation-ty7voksh",
+        "--finding",
+        "C:\\Users\\DELL\\AppData\\Local\\Temp\\cvf-operator-simulation-ty7voksh\\docs\\reviews\\learnings\\coverage-example.md"
+      ],
+      "exitCode": 2,
+      "expectedExitCode": 2,
+      "output": "INTAKE_INVALID @ C:\\Users\\DELL\\AppData\\Local\\Temp\\cvf-operator-simulation-ty7voksh\\docs\\reviews\\learnings\\coverage-example.md: unreadable finding input: Expecting value: line 1 column 1 (char 0)\nINTAKE: REFUSED (generation is not parent acceptance)\n",
+      "passed": true
+    },
+    {
+      "case": "refuse changed bytes with stale digest",
+      "argv": [
+        "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "-B",
+        "C:\\Users\\DELL\\AppData\\Local\\Temp\\cvf-operator-simulation-ty7voksh\\scripts\\cvf_gates\\cvf_downstream_gate_runner.py",
+        "validate-intake",
+        "--record",
+        "C:\\Users\\DELL\\AppData\\Local\\Temp\\cvf-operator-simulation-ty7voksh\\negative.json"
+      ],
+      "exitCode": 2,
+      "expectedExitCode": 2,
+      "output": "CONTENT_IDENTITY_MISMATCH @ $/contentSha256: record content differs from its recorded identity\nINTAKE_RECORD: INVALID\n",
+      "passed": true
+    },
+    {
+      "case": "refuse missing field despite recomputed digest",
+      "argv": [
+        "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "-B",
+        "C:\\Users\\DELL\\AppData\\Local\\Temp\\cvf-operator-simulation-ty7voksh\\scripts\\cvf_gates\\cvf_downstream_gate_runner.py",
+        "validate-intake",
+        "--record",
+        "C:\\Users\\DELL\\AppData\\Local\\Temp\\cvf-operator-simulation-ty7voksh\\negative.json"
+      ],
+      "exitCode": 2,
+      "expectedExitCode": 2,
+      "output": "MISSING_FIELD @ $/sourceClaimStatus: mandatory record field sourceClaimStatus is missing\nINTAKE_RECORD: INVALID\n",
+      "passed": true
+    },
+    {
+      "case": "refuse accepted state without admission link",
+      "argv": [
+        "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "-B",
+        "C:\\Users\\DELL\\AppData\\Local\\Temp\\cvf-operator-simulation-ty7voksh\\scripts\\cvf_gates\\cvf_downstream_gate_runner.py",
+        "validate-intake",
+        "--record",
+        "C:\\Users\\DELL\\AppData\\Local\\Temp\\cvf-operator-simulation-ty7voksh\\negative.json"
+      ],
+      "exitCode": 2,
+      "expectedExitCode": 2,
+      "output": "STATE_LINK_INCOHERENT @ $/acceptance: a parent decision needs acceptance equal to parentDisposition and an explicit admissionRecord link\nINTAKE_RECORD: INVALID\n",
+      "passed": true
+    },
+    {
+      "case": "limit: syntactic admission link is not authenticated",
+      "argv": [
+        "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "-B",
+        "C:\\Users\\DELL\\AppData\\Local\\Temp\\cvf-operator-simulation-ty7voksh\\scripts\\cvf_gates\\cvf_downstream_gate_runner.py",
+        "validate-intake",
+        "--record",
+        "C:\\Users\\DELL\\AppData\\Local\\Temp\\cvf-operator-simulation-ty7voksh\\negative.json"
+      ],
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "output": "INTAKE_RECORD: VALID\n",
+      "passed": true
+    },
+    {
+      "case": "restored genuine pending record still validates",
+      "argv": [
+        "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "-B",
+        "C:\\Users\\DELL\\AppData\\Local\\Temp\\cvf-operator-simulation-ty7voksh\\scripts\\cvf_gates\\cvf_downstream_gate_runner.py",
+        "validate-intake",
+        "--record",
+        "C:\\Users\\DELL\\AppData\\Local\\Temp\\cvf-operator-simulation-ty7voksh\\docs\\learning_intake\\SIM-COVERAGE-001.intake.json"
+      ],
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "output": "INTAKE_RECORD: VALID\n",
+      "passed": true
+    }
+  ],
+  "disposableProjectRemoved": true,
+  "durationSeconds": 1.859,
+  "costs": {
+    "tokenUsage": "UNKNOWN",
+    "money": "UNKNOWN"
+  }
+}

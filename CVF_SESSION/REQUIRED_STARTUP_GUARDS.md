@@ -73,13 +73,19 @@ Before material governed work, state or internally confirm:
 
 ## Current Stop Boundary
 
-The current mode is
-`gc048_knowledge_system_foundation_closed_pass_bounded`.
+Resolve the current mode, next allowed move, and parked checkpoints from
+`CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`,
+`CVF_SESSION_MEMORY.md`, and the active handoff they name. This router does
+not maintain a separate current-mode literal or grant continuation authority.
 
-GC-048 Knowledge System foundation is closed. `LHW-RESCAN-A` may open only
-with a fresh GC-018 packet, GC-047 corpus evidence, and GC-048 reconciliation
-evidence. New runtime contracts and public claims of coherent governed
-capability runtime remain blocked unless separately authorized.
+### Historical GC-048 Checkpoint
+
+GC-048 Knowledge System foundation is closed. Its historical mode was
+`gc048_knowledge_system_foundation_closed_pass_bounded`; this is not the
+current session mode. `LHW-RESCAN-A` may open only with a fresh GC-018 packet,
+GC-047 corpus evidence, and GC-048 reconciliation evidence. New runtime
+contracts and public claims of coherent governed capability runtime require
+separate authorization under the current session boundary.
 
 ## Enforcement And Verification
 

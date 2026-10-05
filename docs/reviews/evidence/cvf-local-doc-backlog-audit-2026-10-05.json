@@ -1,0 +1,24 @@
+{
+  "checks": {
+    "artifact": true,
+    "rejectedArtifact": true,
+    "review": true,
+    "decision": true,
+    "intake": true,
+    "CLIReportedCases": true,
+    "CLIExpectedExits": true,
+    "fileChainReportedChecks": true,
+    "contentIdentity": true,
+    "architectureFingerprint": true,
+    "workerSourcePins": true,
+    "authorityPairUnchanged": true
+  },
+  "workerHead": "bdc9d047ce83c4118b916b159d7a695acbee01d6",
+  "workerStatusAtAudit": "",
+  "noWorkerMutation": true,
+  "scenarioCaseCount": 12,
+  "setupCaseCount": 3,
+  "fileChainCheckCount": 14,
+  "historicalCLIReexecuted": false,
+  "status": "PASS_DOCUMENTATION_AUDIT_ONLY"
+}

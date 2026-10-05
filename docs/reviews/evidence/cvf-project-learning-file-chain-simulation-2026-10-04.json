@@ -1,0 +1,376 @@
+{
+  "schemaVersion": "cvf.localFileChainSimulation.v1",
+  "status": "PASS_FIXTURE_ONLY",
+  "date": "2026-10-04",
+  "coreHead": "26dfe4d6a30fdccd3afe1e0669cfca4e9918bcc8",
+  "snapshots": {
+    "admission": {
+      "scope": "disposable enumeration report and Local fixture review only",
+      "authority": "operator explicitly authorized simulation and step3/4 in this session",
+      "consumer": "Local reviewer of bounded file-artifact chain",
+      "expectedArtifact": "enumeration-only report of three source files",
+      "criteria": [
+        "exact input paths and hashes",
+        "no storage or checkpoint claim"
+      ],
+      "forbiddenEffects": [
+        "real project edits",
+        "parent registry writes",
+        "provider/network",
+        "CCMA",
+        "FLAL T4/T5",
+        "public sync",
+        "deployment"
+      ],
+      "claim": "declared task envelope, not a process sandbox"
+    },
+    "sourceSha": "f975e289560c4ef5451ea40685338e13f999618e",
+    "inventory": [
+      {
+        "path": "inputs/alpha.txt",
+        "sha256": "7fed1cb3c4e56bc73624cfed185c6eefda95c6af89bb90f7b2a496c84b71b595"
+      },
+      {
+        "path": "inputs/beta.txt",
+        "sha256": "7b89132f7ec2c46afc8d88fb31221cfb88364dff5e113e1cf3301472206523b2"
+      },
+      {
+        "path": "inputs/gamma.txt",
+        "sha256": "4655df451c3f8974eaa254d2f738bafd2b41751ac3cc8e5b63ed9c27d608684f"
+      }
+    ],
+    "rejectedArtifact": "# Synthetic enumeration report\r\n\r\n| Path | SHA256 |\r\n|---|---|\r\n| inputs/alpha.txt | 7fed1cb3c4e56bc73624cfed185c6eefda95c6af89bb90f7b2a496c84b71b595 |\r\n| inputs/beta.txt | 7b89132f7ec2c46afc8d88fb31221cfb88364dff5e113e1cf3301472206523b2 |\r\n| inputs/gamma.txt | 4655df451c3f8974eaa254d2f738bafd2b41751ac3cc8e5b63ed9c27d608684f |\r\n\r\nStorage: PROVEN\r\nCheckpoint: PROVEN\r\n",
+    "rejectedReview": {
+      "status": "REJECTED_FIXTURE_CANDIDATE",
+      "artifactSha256": "84e94b759fe05e235c40ee6d00ec172aa2d31751b783132bd75622eb300725a7",
+      "actor": "single Local actor, simulated reviewer",
+      "independent": false,
+      "basis": "docs\\reference\\downstream_gate_profile\\CVF_BUILD_LEARNING_EVIDENCE_CHECKLIST.md",
+      "basisSha256": "f579bd373561a34ded5f3eac2c8f2a9e5fb7102ea22003c65f7cbcd12a20363e",
+      "reason": "Inventory establishes enumeration; candidate incorrectly claims storage/checkpoint.",
+      "origin": "deliberately injected synthetic negative candidate"
+    },
+    "acceptedArtifact": "# Synthetic enumeration report\r\n\r\n| Path | SHA256 |\r\n|---|---|\r\n| inputs/alpha.txt | 7fed1cb3c4e56bc73624cfed185c6eefda95c6af89bb90f7b2a496c84b71b595 |\r\n| inputs/beta.txt | 7b89132f7ec2c46afc8d88fb31221cfb88364dff5e113e1cf3301472206523b2 |\r\n| inputs/gamma.txt | 4655df451c3f8974eaa254d2f738bafd2b41751ac3cc8e5b63ed9c27d608684f |\r\n\r\nEnumeration: OBSERVED_LOCAL_SYNTHETIC\r\nStorage: NOT RUN\r\nCheckpoint: NOT RUN\r\n",
+    "acceptedReview": {
+      "status": "ACCEPTED_LOCAL_FIXTURE_ONLY",
+      "artifactSha256": "ed275d069144159dd893f16dde0c172b2f11e47ffa3e3b89d0f1f853a3c7e354",
+      "actor": "same Local actor, simulated reviewer",
+      "independent": false,
+      "basisSha256": "f579bd373561a34ded5f3eac2c8f2a9e5fb7102ea22003c65f7cbcd12a20363e",
+      "priorRejectedSha256": "84e94b759fe05e235c40ee6d00ec172aa2d31751b783132bd75622eb300725a7",
+      "criteriaMet": [
+        "three exact inventory paths and hashes",
+        "enumeration-only claim"
+      ],
+      "limits": [
+        "no independent review",
+        "no real work adoption",
+        "not runtime governance proof"
+      ]
+    },
+    "findingInput": {
+      "findingId": "SIM-CHAIN-001",
+      "title": "Synthetic report claim boundary correction",
+      "sourceProject": "Disposable bounded file chain",
+      "sourceSha": "f975e289560c4ef5451ea40685338e13f999618e",
+      "observed": "Injected fixture claimed storage and checkpoint from enumeration-only input.",
+      "expected": "Accepted fixture report limits claims to enumeration with exact hashes.",
+      "negativeEvidence": [
+        {
+          "locator": "review-rejected.json",
+          "description": "Local review rejected deliberate adverse synthetic candidate; not production incident."
+        }
+      ],
+      "chainJoins": [
+        {
+          "join": "artifact -> acceptance",
+          "gap": "Claim exceeds measured evidence layer",
+          "earliestControlPoint": "Local review before fixture acceptance"
+        }
+      ],
+      "defectClass": "WORKER_EXECUTION_ERROR",
+      "learningLane": "DOCUMENTATION_ONLY_LEARNING",
+      "proposedDisposition": "RULE_EXISTS",
+      "candidateControl": "docs\\reference\\downstream_gate_profile\\CVF_BUILD_LEARNING_EVIDENCE_CHECKLIST.md",
+      "claimLimits": "Disposable scenario only; no new rule gap or real-project adoption.",
+      "dedupCandidates": [
+        "docs\\reference\\downstream_gate_profile\\CVF_BUILD_LEARNING_EVIDENCE_CHECKLIST.md"
+      ]
+    },
+    "generatedIntake": {
+      "acceptance": "NOT_ACCEPTED_GENERATION_ONLY",
+      "candidateControl": "docs\\reference\\downstream_gate_profile\\CVF_BUILD_LEARNING_EVIDENCE_CHECKLIST.md",
+      "chainJoins": [
+        {
+          "earliestControlPoint": "Local review before fixture acceptance",
+          "gap": "Claim exceeds measured evidence layer",
+          "join": "artifact -> acceptance"
+        }
+      ],
+      "claimLimits": "Disposable scenario only; no new rule gap or real-project adoption.",
+      "contentSha256": "604a82c0bb6cced21bc1a884cbc0a73918843d53ffe27ab9fb46686f07ebb22b",
+      "dedupCandidates": [
+        "docs\\reference\\downstream_gate_profile\\CVF_BUILD_LEARNING_EVIDENCE_CHECKLIST.md"
+      ],
+      "defectClass": "WORKER_EXECUTION_ERROR",
+      "expected": "Accepted fixture report limits claims to enumeration with exact hashes.",
+      "findingId": "SIM-CHAIN-001",
+      "learningLane": "DOCUMENTATION_ONLY_LEARNING",
+      "negativeEvidence": [
+        {
+          "description": "Local review rejected deliberate adverse synthetic candidate; not production incident.",
+          "locator": "review-rejected.json"
+        }
+      ],
+      "observed": "Injected fixture claimed storage and checkpoint from enumeration-only input.",
+      "parentDisposition": "PENDING_PARENT_ADMISSION",
+      "parentLinks": {
+        "admissionRecord": null,
+        "checker": null,
+        "goldenProof": null,
+        "workOrder": null
+      },
+      "parentOwner": "docs/reference/CVF_FINDING_TO_GOVERNANCE_LEARNING_TRIGGER_STANDARD.md",
+      "profileId": "cvf.downstreamGateProfile@1.1.0",
+      "proposedDisposition": "RULE_EXISTS",
+      "schemaVersion": "cvf.downstreamFindingIntake@1.0.0",
+      "sourceClaimStatus": "UNVERIFIED_UNTIL_PROJECT_EVIDENCE_IS_SEPARATELY_ADMITTED",
+      "sourceProject": "Disposable bounded file chain",
+      "sourceSha": "f975e289560c4ef5451ea40685338e13f999618e",
+      "title": "Synthetic report claim boundary correction"
+    },
+    "learningDecision": {
+      "status": "DECLINE_NEW_PARENT_CHANGE_FIXTURE_ONLY",
+      "disposition": "RULE_EXISTS",
+      "actor": "single Local source/value reviewer, not independent",
+      "intakeSha256": "8a6eeb4391be757d4b0085ba9ac32ce5490da490eda3c7078d47cb4bc1a9e633",
+      "controlPath": "docs\\reference\\downstream_gate_profile\\CVF_BUILD_LEARNING_EVIDENCE_CHECKLIST.md",
+      "controlSha256": "f579bd373561a34ded5f3eac2c8f2a9e5fb7102ea22003c65f7cbcd12a20363e",
+      "valueChecks": {
+        "sourceConfidence": "Observed synthetic artifact bytes and CLI output; no historical product incident.",
+        "reusableMechanism": "Confusing enumeration with storage/checkpoint can recur.",
+        "existingCoverage": "Existing Sync Coverage And Claims table already separates the layers.",
+        "incrementalValue": "No demonstrated owner/control gap; duplicate new rule would add no value.",
+        "boundedProof": "Rejected and repaired fixture report plus source hashes; prior CLI negative evidence reused."
+      },
+      "parentImplementation": "NOT_IMPLEMENTED",
+      "returnDelivery": "NOT_RETURNED",
+      "projectApplication": "NOT_APPLIED",
+      "reason": "Decline duplicate parent-change proposal; accept only repaired fixture artifact.",
+      "authorityLimit": "local simulation disposition, not parent registry admission"
+    },
+    "closure": {
+      "status": "FINAL_LOCAL_FIXTURE_ONLY",
+      "artifactSha256": "ed275d069144159dd893f16dde0c172b2f11e47ffa3e3b89d0f1f853a3c7e354",
+      "reviewSha256": "58e4f7a968a02a7f56f16fcfd82396a7d05bd6b25892e00a293e8fd8d60eb304",
+      "learningDecisionSha256": "d27c0ffc6014707606a52bb2aa8e62ceed4a6f4bf5514ad7f2cfe29b76ab794b",
+      "newParentChange": "DECLINED_RULE_EXISTS",
+      "successor": "NONE",
+      "claim": "fixture file chain finality only; not CVF tranche or runtime closure"
+    }
+  },
+  "checks": [
+    {
+      "case": "exact three named inputs admitted",
+      "passed": true,
+      "layer": "fixture-admission"
+    },
+    {
+      "case": "Local review rejects injected unsupported claims",
+      "passed": true,
+      "layer": "Local-semantic-fixture-review"
+    },
+    {
+      "case": "repair preserves all named paths and exact source hashes",
+      "passed": true,
+      "layer": "fixture-artifact"
+    },
+    {
+      "case": "repair removes unsupported claims and preserves NOT RUN",
+      "passed": true,
+      "layer": "fixture-artifact"
+    },
+    {
+      "case": "accepted review binds changed artifact and retains rejected candidate",
+      "passed": true,
+      "layer": "fixture-evidence-binding"
+    },
+    {
+      "case": "existing intake command emits fixture candidate",
+      "passed": true,
+      "layer": "existing-CLI"
+    },
+    {
+      "case": "existing CLI validates complete fixture record",
+      "passed": true,
+      "layer": "existing-CLI"
+    },
+    {
+      "case": "five value checks yield RULE_EXISTS and no invented parent implementation",
+      "passed": true,
+      "layer": "Local-value-fixture-review"
+    },
+    {
+      "case": "disposition does not rewrite generated acceptance",
+      "passed": true,
+      "layer": "fixture-state-separation"
+    },
+    {
+      "case": "closure snapshot matches artifact review and learning bytes",
+      "passed": true,
+      "layer": "harness-byte-comparison"
+    },
+    {
+      "case": "harness detects post-acceptance tampering",
+      "passed": true,
+      "layer": "harness-byte-comparison"
+    },
+    {
+      "case": "restored accepted bytes match closure snapshot",
+      "passed": true,
+      "layer": "harness-byte-comparison"
+    },
+    {
+      "case": "parent registry raw bytes unchanged",
+      "passed": true,
+      "layer": "private-boundary"
+    },
+    {
+      "case": "disposable project removed",
+      "passed": true,
+      "layer": "cleanup"
+    }
+  ],
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "init",
+        "-q"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "add",
+        "admission.json",
+        "inputs"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "user.name=CVF Simulation",
+        "-c",
+        "user.email=cvf-simulation@example.invalid",
+        "commit",
+        "-qm",
+        "bounded synthetic chain inputs"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exitCode": 0,
+      "stdout": "f975e289560c4ef5451ea40685338e13f999618e\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "-B",
+        "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\scripts\\lib\\downstream_governance\\cvf_downstream_gate_runner.py",
+        "intake",
+        "--project-root",
+        "C:\\Users\\DELL\\AppData\\Local\\Temp\\cvf-chain-simulation-not9hu0y",
+        "--finding",
+        "C:\\Users\\DELL\\AppData\\Local\\Temp\\cvf-chain-simulation-not9hu0y\\finding-input.json"
+      ],
+      "exitCode": 0,
+      "stdout": "INTAKE: WRITTEN C:\\Users\\DELL\\AppData\\Local\\Temp\\cvf-chain-simulation-not9hu0y\\docs\\learning_intake\\SIM-CHAIN-001.intake.json (generation is not parent acceptance)\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "-B",
+        "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\scripts\\lib\\downstream_governance\\cvf_downstream_gate_runner.py",
+        "validate-intake",
+        "--record",
+        "C:\\Users\\DELL\\AppData\\Local\\Temp\\cvf-chain-simulation-not9hu0y\\docs\\learning_intake\\SIM-CHAIN-001.intake.json"
+      ],
+      "exitCode": 0,
+      "stdout": "INTAKE_RECORD: VALID\n",
+      "stderr": ""
+    }
+  ],
+  "phaseTimes": {
+    "admissionSeconds": 0.431,
+    "initialArtifactReviewSeconds": 0.002,
+    "repairAndAcceptanceSeconds": 0.002,
+    "learningIntakeAndDispositionSeconds": 0.348,
+    "fixtureFinalitySeconds": 0.002
+  },
+  "totalSeconds": 0.797,
+  "repairRounds": 1,
+  "registrySha256BeforeAfter": "0077d4ba82bfb0c07d404784461f8fbd2f835678a8c4de5a2b2515c3072c2827",
+  "roles": "single Local actor simulating operator/author/reviewer/closer",
+  "independentReview": false,
+  "claims": "real local CLI and bounded fixture file observations only",
+  "limits": [
+    "No independent reviewer",
+    "Manual fixture review is not machine semantic enforcement",
+    "Harness hash comparisons are not a new production gate",
+    "Fixture admission and closure are not real CVF tranche authorization or closure",
+    "No parent registry admission/implementation or typed receipt",
+    "No delivery/application, CCMA, FLAL T4/T5, provider/live, public or deployment"
+  ],
+  "costs": {
+    "tokenUsage": "UNKNOWN",
+    "money": "UNKNOWN",
+    "opportunityCost": "UNKNOWN"
+  },
+  "snapshotSerialization": {
+    "jsonSnapshots": {
+      "encoding": "UTF-8 without BOM",
+      "indent": 2,
+      "ensure_ascii": true,
+      "keyOrder": "preserved as stored in snapshots",
+      "lineEndings": "CRLF",
+      "finalNewline": true,
+      "scope": "Harness-written acceptedReview and learningDecision snapshots; excludes generatedIntake"
+    },
+    "generatedIntake": {
+      "encoding": "UTF-8 without BOM",
+      "indent": 2,
+      "ensure_ascii": false,
+      "keyOrder": "sort_keys=true",
+      "lineEndings": "LF",
+      "finalNewline": true,
+      "owner": "cvf_dg_common.canonical_json; cvf_dg_intake.build_intake"
+    },
+    "artifactSnapshots": "UTF-8 exact string contents including retained CRLF",
+    "scope": "Original disposable file byte reconstruction; not the outer evidence JSON file"
+  },
+  "snapshotReplayDiagnostic": {
+    "initialOutcome": "LF_RECONSTRUCTION_MISMATCH",
+    "reason": "QA assumed LF; Windows text-mode JSON writer produced CRLF",
+    "actualArtifactHashMatched": true,
+    "reviewHashMatchedWithCRLF": true,
+    "learningDecisionHashMatchedWithCRLF": true,
+    "disposition": "Explicit serialization recorded; CLI evidence reused; no product failure or test rerun"
+  }
+}
