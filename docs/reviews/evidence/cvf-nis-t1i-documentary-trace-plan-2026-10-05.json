@@ -1,0 +1,417 @@
+{
+  "schemaVersion": "cvf.nisT1iDocumentaryTracePlan.v1",
+  "batchId": "CVF-NIS-T1I",
+  "planDate": "2026-10-05",
+  "executionBaseHead": "91dedba69a6fd8f036746e0f1f1417e8dc8939c2",
+  "dispatchBaseHead": "44612c178f240c2daa4b2834d92443078f75cb75",
+  "consumer": {
+    "role": "Local downstream technical reviewer preparing later builder admission",
+    "boundary": "Judge source fidelity, requirement coverage, and validation discrimination before any builder admission",
+    "decisionOwner": "LOCAL"
+  },
+  "candidateBinding": {
+    "sourceAttachment": "docs/reviews/evidence/cvf-nis-t1i-current-producer-capture-2026-10-05.json",
+    "fileSha256": "76c1b2d8aa0cf623dd9cea9cea8347e9d89bbbc2c507eceaf07733ae74222210",
+    "revision": 11,
+    "fileBytes": 50289,
+    "pairingStatus": "CURRENT_SYNTHETIC_CANDIDATE_ESTABLISHED",
+    "durableAcceptanceStatus": "NOT_ESTABLISHED_SYNTHETIC_ONLY",
+    "recordSha256": "a2bed12b21e6d1cb63f3b89242e95554df5b0dd0104439d762d7a1fe144d0a48"
+  },
+  "requirementCoverage": [
+    {
+      "requirementId": "R1",
+      "title": "Compile one weekly report",
+      "statements": [
+        "System compiles all entries into one weekly report"
+      ],
+      "sources": [
+        "BRIEF_FIELD:coreFeatures"
+      ],
+      "resolutions": [],
+      "servedByTasks": [
+        "T1",
+        "T2"
+      ],
+      "servedByValidations": [
+        "V1"
+      ],
+      "openContentAffecting": []
+    },
+    {
+      "requirementId": "R2",
+      "title": "Mark missing, late and duplicate entries",
+      "statements": [
+        "Late, missing and duplicate entries are marked in the report"
+      ],
+      "sources": [
+        "BRIEF_FIELD:coreFeatures",
+        "DECISION:exceptions"
+      ],
+      "resolutions": [],
+      "servedByTasks": [
+        "T3"
+      ],
+      "servedByValidations": [
+        "V2"
+      ],
+      "openContentAffecting": [
+        "U2",
+        "U3"
+      ]
+    },
+    {
+      "requirementId": "R3",
+      "title": "Export compiled report and team sections by role",
+      "statements": [
+        "Team leads view and edit only their own entries and may export their own team's section. The department head views and exports all. Auditors have read-only view and no export.",
+        "Department head exports the compiled report"
+      ],
+      "sources": [
+        "DECISION:access",
+        "BRIEF_FIELD:coreFeatures",
+        "DECISION:acceptance"
+      ],
+      "resolutions": [],
+      "servedByTasks": [
+        "T4"
+      ],
+      "servedByValidations": [
+        "V3"
+      ],
+      "openContentAffecting": [
+        "U4"
+      ]
+    },
+    {
+      "requirementId": "R4",
+      "title": "Corrections until the Friday deadline",
+      "statements": [
+        "Team leads may correct their entry until the Friday 17:00 deadline",
+        "Submitted entries are immutable once submitted"
+      ],
+      "sources": [
+        "BRIEF_FIELD:constraints",
+        "BRIEF_FIELD:mustPreserve",
+        "DECISION:boundaries"
+      ],
+      "resolutions": [
+        "corrections before Friday 17:00 create a new entry version; after the deadline entries are immutable"
+      ],
+      "servedByTasks": [
+        "T5"
+      ],
+      "servedByValidations": [
+        "V4"
+      ],
+      "openContentAffecting": [
+        "U2",
+        "C1"
+      ]
+    },
+    {
+      "requirementId": "R5",
+      "title": "No automatic scoring of people",
+      "statements": [
+        "No automatic scoring or ranking of team leads or people."
+      ],
+      "sources": [
+        "BRIEF_FIELD:outOfScope"
+      ],
+      "resolutions": [],
+      "servedByTasks": [
+        "T6"
+      ],
+      "servedByValidations": [
+        "V5"
+      ],
+      "openContentAffecting": []
+    },
+    {
+      "requirementId": "R6",
+      "title": "Keep compiled reports twelve months",
+      "statements": [
+        "Compiled reports are kept 12 months."
+      ],
+      "sources": [
+        "DECISION:data"
+      ],
+      "resolutions": [],
+      "servedByTasks": [
+        "T7"
+      ],
+      "servedByValidations": [
+        "V6"
+      ],
+      "openContentAffecting": [
+        "U1"
+      ]
+    }
+  ],
+  "openContentLedger": [
+    {
+      "marker": "U1",
+      "location": "DECISION:data",
+      "exactQuote": "UNKNOWN U1: how long raw entries are kept is not decided.",
+      "citedBy": [
+        "R6"
+      ],
+      "affectedScopeDisposition": "HELD_FOR_USER_CLARIFICATION: raw entry retention is open; compiled report retention (12 months) is unaffected"
+    },
+    {
+      "marker": "U2",
+      "location": "DECISION:exceptions",
+      "exactQuote": "UNKNOWN U2: deadline timezone is not decided.",
+      "citedBy": [
+        "R2"
+      ],
+      "affectedScopeDisposition": "HELD_FOR_USER_CLARIFICATION: deadline timezone must be explicit before automated late flagging"
+    },
+    {
+      "marker": "U2",
+      "location": "BRIEF_FIELD:constraints",
+      "exactQuote": "Deadline timezone not decided.",
+      "citedBy": [
+        "R4"
+      ],
+      "affectedScopeDisposition": "HELD_FOR_USER_CLARIFICATION: Friday 17:00 cutoff timezone pending"
+    },
+    {
+      "marker": "U3",
+      "location": "DECISION:exceptions",
+      "exactQuote": "UNKNOWN U3: behavior when the deadline falls on a public holiday is not decided.",
+      "citedBy": [
+        "R2"
+      ],
+      "affectedScopeDisposition": "HELD_FOR_USER_CLARIFICATION: holiday submission policy pending; preserved as D9 limitation"
+    },
+    {
+      "marker": "U4",
+      "location": "DECISION:acceptance",
+      "exactQuote": "UNKNOWN U4: export file format is not decided.",
+      "citedBy": [
+        "R3"
+      ],
+      "affectedScopeDisposition": "HELD_FOR_USER_CLARIFICATION: export format (CSV vs PDF vs XLSX) pending"
+    },
+    {
+      "marker": "C1",
+      "location": "DECISION:boundaries",
+      "exactQuote": "Resolution of C1: corrections before Friday 17:00 create a new entry version; after the deadline entries are immutable.",
+      "citedBy": [
+        "R4"
+      ],
+      "affectedScopeDisposition": "EFFECTIVE_USER_RESOLUTION: versioned correction permitted before Friday 17:00; immutability enforced after deadline"
+    }
+  ],
+  "designProposals": [
+    {
+      "id": "DE1",
+      "kind": "DATA",
+      "text": "Entry record: equipment line code, status text, submitting team lead, submission time.",
+      "serves": "R1"
+    },
+    {
+      "id": "DE2",
+      "kind": "INTERFACE",
+      "text": "Role-scoped export interface: department head full export, team lead team-section export, auditors read-only.",
+      "serves": "R3"
+    },
+    {
+      "id": "DE3",
+      "kind": "FLOW",
+      "text": "Versioned submission workflow: pre-deadline edits create new versions, post-deadline submissions locked or immutable.",
+      "serves": "R4"
+    }
+  ],
+  "taskPlan": [
+    {
+      "id": "T1",
+      "title": "Define the entry record",
+      "serves": "R1",
+      "design": "DE1",
+      "dependsOn": [],
+      "validations": [
+        "V1"
+      ],
+      "categories": []
+    },
+    {
+      "id": "T2",
+      "title": "Compile the weekly report",
+      "serves": "R1",
+      "design": null,
+      "dependsOn": [
+        "T1"
+      ],
+      "validations": [
+        "V1"
+      ],
+      "categories": []
+    },
+    {
+      "id": "T3",
+      "title": "Mark missing, late and duplicate entries",
+      "serves": "R2",
+      "design": null,
+      "dependsOn": [
+        "T2"
+      ],
+      "validations": [
+        "V2"
+      ],
+      "categories": []
+    },
+    {
+      "id": "T4",
+      "title": "Export for department head and team leads",
+      "serves": "R3",
+      "design": "DE2",
+      "dependsOn": [
+        "T2"
+      ],
+      "validations": [
+        "V3"
+      ],
+      "categories": []
+    },
+    {
+      "id": "T5",
+      "title": "Version corrections before the deadline",
+      "serves": "R4",
+      "design": "DE3",
+      "dependsOn": [
+        "T1"
+      ],
+      "validations": [
+        "V4"
+      ],
+      "categories": []
+    },
+    {
+      "id": "T6",
+      "title": "Keep scoring and ranking out",
+      "serves": "R5",
+      "design": null,
+      "dependsOn": [],
+      "validations": [
+        "V5"
+      ],
+      "categories": []
+    },
+    {
+      "id": "T7",
+      "title": "Retain compiled reports for twelve months",
+      "serves": "R6",
+      "design": null,
+      "dependsOn": [
+        "T2"
+      ],
+      "validations": [
+        "V6"
+      ],
+      "categories": []
+    }
+  ],
+  "validationSpecifications": [
+    {
+      "id": "V1",
+      "text": "A fixture CSV with N entries yields one report with the same N entries.",
+      "serves": "R1",
+      "status": "SPECIFIED_NOT_EXECUTED_PENDING_BUILD"
+    },
+    {
+      "id": "V2",
+      "text": "A fixture with one missing, one late and one duplicate entry shows three visible marks.",
+      "serves": "R2",
+      "status": "SPECIFIED_NOT_EXECUTED_PENDING_BUILD"
+    },
+    {
+      "id": "V3",
+      "text": "Department head role can export compiled report; team lead role can export own team section; unauthorized roles cannot export.",
+      "serves": "R3",
+      "status": "SPECIFIED_NOT_EXECUTED_PENDING_BUILD"
+    },
+    {
+      "id": "V4",
+      "text": "A correction before the deadline creates a new entry version; entries after deadline are immutable.",
+      "serves": "R4",
+      "status": "SPECIFIED_NOT_EXECUTED_PENDING_BUILD"
+    },
+    {
+      "id": "V5",
+      "text": "No score or ranking field exists in the report or compiled output.",
+      "serves": "R5",
+      "status": "SPECIFIED_NOT_EXECUTED_PENDING_BUILD"
+    },
+    {
+      "id": "V6",
+      "text": "Compiled report survives and is retrievable at 11.5 months and at the exact 12-month boundary; premature deletion before 12 months (e.g. at 11.5 months) is rejected; retention respects timezone without unrequested purge.",
+      "serves": "R6",
+      "discriminatingProperties": {
+        "survivalAt11Point5Months": {
+          "condition": "Report must be fully present and retrievable at creationTimestamp + 11.5 months",
+          "purpose": "Verifies data has not been purged prematurely before requirement horizon"
+        },
+        "survivalAt12MonthBoundary": {
+          "condition": "Report must be present at creationTimestamp + 12 months (boundary test)",
+          "purpose": "Verifies exact 12-month retention requirement is satisfied"
+        },
+        "earlyDeletionCounterexampleRejection": {
+          "condition": "Any purge/delete operation requested at or before 11.5 months must be rejected with RETENTION_VIOLATION error",
+          "purpose": "Discriminating check resolving T1H LD-3: ensures the test actively fails if deletion occurs early"
+        },
+        "timezoneAdherence": {
+          "condition": "Creation and retention boundary timestamps must compute against declared timezone once U2 is resolved",
+          "purpose": "Prevents retention boundary drift due to UTC offset discrepancies"
+        },
+        "noUnrequestedPurgeAt12Months": {
+          "condition": "App must not automatically delete data at month 12 unless explicit auto-purge policy is authorized",
+          "purpose": "User requirement states 'reports are kept 12 months', not 'reports must be destroyed on day 366'"
+        }
+      },
+      "status": "SPECIFIED_NOT_EXECUTED_PENDING_BUILD"
+    }
+  ],
+  "crossLinkCoherence": {
+    "acyclicityCheck": "PASS: dependency graph T1->T2->(T3, T4, T7), T1->T5, T6 has no cycles",
+    "danglingDependencyCheck": "PASS: all referenced dependencies (T1, T2) exist in task list",
+    "requirementCoverageCheck": "PASS: R1 through R6 each have >= 1 task and >= 1 validation",
+    "designLinkCheck": "PASS: DE1, DE2, DE3 all map to defined tasks and valid requirements"
+  },
+  "pureControlsExecuted": {
+    "readbackControl": {
+      "name": "verifySpecConfirmationReadback",
+      "status": "PASS",
+      "result": true
+    },
+    "negativeTamperedBytesControl": {
+      "name": "tampered_candidate_bytes_rejected",
+      "status": "PASS",
+      "result": "Readback returned false; acceptance verifier threw exception"
+    },
+    "negativeTamperedShaControl": {
+      "name": "tampered_sha256_rejected",
+      "status": "PASS",
+      "result": "Acceptance verifier threw exception on SHA-256 mismatch"
+    },
+    "negativeStaleReconfirmationControl": {
+      "name": "stale_decision_at_p2b_blocked",
+      "status": "PASS",
+      "result": "createSpecConfirmationCandidate threw CURRENT_REVIEW_REQUIRED"
+    },
+    "negativeMismatchedAckRevisionControl": {
+      "name": "mismatched_acknowledged_revision_blocked",
+      "status": "PASS",
+      "result": "createSpecConfirmationCandidate threw CURRENT_REVIEW_REQUIRED"
+    }
+  },
+  "plannedTestsNotExecuted": [
+    "BUILD_PHASE_CSV_INGESTION_TEST",
+    "BUILD_PHASE_COMPILER_DEDUPLICATION_TEST",
+    "BUILD_PHASE_ROLE_EXPORT_AUTHORIZATION_TEST",
+    "BUILD_PHASE_IMMUTABILITY_TIMELOCK_TEST",
+    "BUILD_PHASE_12_MONTH_RETENTION_STORAGE_TEST"
+  ],
+  "claimBoundary": "Documentary design and trace plan only; pure scratch controls executed; all future build validations marked PLANNED_NOT_EXECUTED. No build authorization granted."
+}
