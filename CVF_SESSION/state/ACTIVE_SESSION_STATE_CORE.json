@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1F_BUILD_READY_BRIDGE_CONTRACT_2026-10-05.md",
     "workOrderSha256": "b66c14defc36c11d6a087cbbf9d6d04276a4a10a073be9c106e16034885ec872"
   },
-  "currentAuthoritySyncReason": "T1F offline bridge assessment/contract admission after T1E closure; no general S2, parked lanes retained.",
+  "currentAuthoritySyncReason": "T1F material 432435f10: offline bridge contract dispatch; prior NIS closed, parked lanes unchanged.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
