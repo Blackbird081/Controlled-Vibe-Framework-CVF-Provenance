@@ -1,6 +1,6 @@
 # CVF Agent Handoff V63 - ACEL Applied-Knowledge Owner Enrichment
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD: `48e85c87383699e656b7c3871f0e0eb1f9fe14bd`; CVF-NIS-T1B-D packet material `b2016e35a4b11043524ac51c26a49121309391cc`; implementation/profile acceptance pending.
+Current HEAD recorded for this handoff: `6b700886bf954c65017c73226ddb1bce9f97c2e1`; independent docs cleanup; CVF-NIS-T1B-D packet `b2016e35a4b11043524ac51c26a49121309391cc`, worker bdc9d047c unchanged; acceptance pending.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -8,7 +8,7 @@ Remote tracking branch: `origin/main`. Exact remote SHA must be derived live fro
 ## Purpose
 Carry CVF-NCR v2.8 and closed AKOE/G1-G7. Applied-knowledge details remain in the governed roadmap.
 ## Scope / Target / Owner Boundary
-Role: Local reviewer/closer; phase: terminal blocked packet finality then stop; decision owner: Local; CCMA/S05/P11 parked.
+Role: Local orchestrator/reviewer; phase: independent docs cleanup, then await NIS worker return; decision owner: Local; CCMA/S05/P11 parked.
 ## Startup Acknowledgment
 Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`; handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=NIS-T1B-D internal worker dispatch; role=Local orchestrator/reviewer; phase=dispatch; decision owner=Local; CCMA/S05/P11 parked.
 ## Current Mode

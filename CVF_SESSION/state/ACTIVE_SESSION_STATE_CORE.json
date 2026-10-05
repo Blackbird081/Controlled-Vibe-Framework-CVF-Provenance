@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1B_D_INTEGRATED_REVIEW_PERSISTENCE_2026-10-05.md",
     "workOrderSha256": "101e46c2a50ee01b275bfb203fd9e29f1692b0bda0f09184e8c8455f0acf09e2"
   },
-  "currentAuthoritySyncReason": "CVF-NIS-T1B-D final six-surface release sync; dispatch material b2016e35a; source checkpoint 5e42818cb; binding correction 48e85c87383699e656b7c3871f0e0eb1f9fe14bd; independent acceptance pending.",
+  "currentAuthoritySyncReason": "NIS-T1B-D pair retained; worker isolated at bdc9d047c. Operator-authorized main documentation cleanup material 6b700886bf954c65017c73226ddb1bce9f97c2e1; no worker mutation or NIS acceptance; final six-surface continuity sync.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
