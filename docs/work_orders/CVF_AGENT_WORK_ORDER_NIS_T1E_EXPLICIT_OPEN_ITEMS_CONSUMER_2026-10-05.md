@@ -735,7 +735,6 @@ Local accepts native consumer material a93a2efa248b78ed524a4cc361d7f71ce7d12dcf 
 ## Independent Review Probe Admission
 
 independentProbeDisposition: PASS_INDEPENDENT_PROBE
-probeExecutorRole: LOCAL_REVIEWER_NOT_IMPLEMENTATION_WORKER
 implementationWorkerActor: nis-t1e-internal-worker
 probeExecutorActor: nis-t1e-local-reviewer
 workerInvocationId: nis-t1e-worker-20261005
@@ -758,3 +757,8 @@ oracleSeparationBasis: distinct Local actor/invocation and separately authored a
 | Independent probe | separate actor/oracle | Local8/8, raw/source/evidence bindings | PASS |
 | Scope | no UX/live/build-ready claim | declared and retained residual risks | PASS |
 
+
+
+## Local P4 Safety Marker Adjudication
+
+P4-C1 post-commit pre-closure rejected the earlier closed packet at f2e4bd89b because probeExecutorRole was declared twice. Local removes only the duplicated role declaration, retains the canonical dispatch role and actual closure proof. Original marker and failed83-command diagnostic are preserved in ignored Local review scratch. Marker removal requires corrected staged probe admission and reviewer-fast PASS; no code/test/provider change, historical receipt remains FAIL. This correction refreshes work-order raw hash in source continuity, no checker waiver.

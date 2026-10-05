@@ -67,7 +67,7 @@ workerRedispatchAllowed: NO
 Review-Cost Telemetry: REQUIRED
 reviewRoundCount: 1
 workerRepairTurnCount: 0
-newRootCauseCountThisRound: 2
+newRootCauseCountThisRound: 3
 dependentFindingCountThisRound: 3
 elapsedReviewMinutes: NOT_AVAILABLE_WITH_REASON: no continuous task-scoped timer
 providerCallCount: 0
@@ -75,9 +75,9 @@ tokenOrQuotaUsage: NOT_AVAILABLE_WITH_REASON: no exposed usage meter
 valueDelta: preserve v1 bytes and v2 user items while closing malformed provenance and noncoder control-label gaps
 stopDisposition: COMPLETE_REVIEW
 preRepairAuditDisposition: COMPLETE_BEFORE_FIRST_REPAIR
-materialCommitCount: 2
-continuityCommitCount: 1
-commitPlanDisposition: EXCEPTION_WITH_REASON: exact16 accepted worker/Local repair material; exact11 closure includes one corrected worker-added test selector and10 metadata/continuity paths after standalone correction was blocked by continuity drift; dedicated handoff-only sync follows
+materialCommitCount: 3
+continuityCommitCount: 2
+commitPlanDisposition: EXCEPTION_WITH_REASON: exact16 accepted worker/Local repair material; exact11 closure includes one corrected worker-added test selector and10 metadata/continuity paths after standalone correction was blocked by continuity drift; dedicated handoff-only sync follows; separate eight-path P4 duplicate-role correction and its handoff sync retained
 latencyDisposition: NOT_MEASURED_WITH_REASON: no task-scoped meter
 avoidableDelayClass: GATE_DISCOVERY_LOOP
 
@@ -131,10 +131,9 @@ Rollback boundary: exact11 Local closure paths; preserve material a93a2efa248b78
 ## Mixed Protected-Path Atomicity Authorization
 
 Disposition: AUTHORIZED_EXACT_MANIFEST
-Atomicity reason: closed-pair raw hashes and six continuity owners must agree in the same batch; one owned test selector correction was blocked alone by post-material continuity drift and is included explicitly, no added product behavior.
-Rollback boundary: exact11 only, original worker preserved.
-Exact changed manifest: `docs/baselines/CVF_GC018_NIS_T1E_EXPLICIT_OPEN_ITEMS_CONSUMER_2026-10-05.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1E_EXPLICIT_OPEN_ITEMS_CONSUMER_2026-10-05.md`; `docs/reviews/CVF_NIS_T1E_EXPLICIT_OPEN_ITEMS_CONSUMER_COMPLETION_2026-10-05.md`; `docs/reviews/evidence/cvf-nis-t1e-local-independent-review-2026-10-05.json`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecReview.test.tsx`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`.
-
+Atomicity reason: remove duplicated independent-probe role in closed work order and refresh its raw authority hash across six continuity owners. Preserve original failed P4 receipt and worker outputs.
+Rollback boundary: exact eight correction paths only.
+Exact changed manifest: `docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1E_EXPLICIT_OPEN_ITEMS_CONSUMER_2026-10-05.md`; `docs/reviews/CVF_NIS_T1E_EXPLICIT_OPEN_ITEMS_CONSUMER_COMPLETION_2026-10-05.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`.
 ## Negative And Fail-Condition Scan
 
 No readonly source drift, provider/install, real store/security/profile change, external source intake or parked-lane expansion. Original failed gates/probes retained. Separate independent negative controls reject mutated digest, U4 omission, stale acknowledgement/item, rehashed invalid v2/BUILD and substituted readback.
@@ -256,3 +255,8 @@ Claim Update: T1E CLOSED_PASS_BOUNDED native consumer synthetic scope only; no a
 ## Claim Boundary
 
 No human noncoder UX, live AI governance, real store/identity/security proof, build-ready certificate or BUILD/provider/public/deploy authority. Original worker return remains historical pending; this Local review supersedes its final disposition only. T1D planned44-case ledger stays unchanged; T1E execution map reports actual tests, not44 independent invocations. Next is bounded roadmap/value selection, no successor execution released.
+
+
+## Local P4 Safety Marker Adjudication
+
+The earlier closure commit f2e4bd89b did not pass its P4-generated pre-closure: the closed work order repeated probeExecutorRole. Local corrects the duplicate declaration and refreshes six continuity surfaces. Original P4 marker and diagnostic retained under the ignored Local review scratch; no historical PASS is inferred. Local reviewer/closer explicitly authorizes removing this marker only after corrected staged probe admission and reviewer-fast pass, then normal corrective commit and final clean committed-range pre-closure. No implementation change or checker bypass.

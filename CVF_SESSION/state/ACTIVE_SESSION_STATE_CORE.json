@@ -39,9 +39,9 @@
     "baselinePath": "docs/baselines/CVF_GC018_NIS_T1E_EXPLICIT_OPEN_ITEMS_CONSUMER_2026-10-05.md",
     "baselineSha256": "1461466d3d8a68b25af936b043d436bc5ef88880a6d963e8c1e58a6119c27cd5",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1E_EXPLICIT_OPEN_ITEMS_CONSUMER_2026-10-05.md",
-    "workOrderSha256": "870f6174d40ddc1fdfdc721400ac900bd28557e7a8d17753be2f788fc33cbb3c"
+    "workOrderSha256": "4a8fa02dc997274939fcac9e1259f618639c22a671e5063b645d2d250b411286"
   },
-  "currentAuthoritySyncReason": "T1E native consumer independently accepted with Local malformed-field and visible-label repair; selection only, no automatic S2.",
+  "currentAuthoritySyncReason": "T1E closure metadata correction after P4 duplicate role rejection; staged admission must pass before marker adjudication, final committed-range closure required.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
