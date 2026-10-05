@@ -36,12 +36,12 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_NIS_T1E_EXPLICIT_OPEN_ITEMS_CONSUMER_2026-10-05.md",
-    "baselineSha256": "1461466d3d8a68b25af936b043d436bc5ef88880a6d963e8c1e58a6119c27cd5",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1E_EXPLICIT_OPEN_ITEMS_CONSUMER_2026-10-05.md",
-    "workOrderSha256": "4a8fa02dc997274939fcac9e1259f618639c22a671e5063b645d2d250b411286"
+    "baselinePath": "docs/baselines/CVF_GC018_NIS_T1F_BUILD_READY_BRIDGE_CONTRACT_2026-10-05.md",
+    "baselineSha256": "3c25d962bb9272b8086f5cf1acdeb0621ef01414b794d283e3f6c37f3ce8acd6",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1F_BUILD_READY_BRIDGE_CONTRACT_2026-10-05.md",
+    "workOrderSha256": "b66c14defc36c11d6a087cbbf9d6d04276a4a10a073be9c106e16034885ec872"
   },
-  "currentAuthoritySyncReason": "T1E closure metadata correction after P4 duplicate role rejection; staged admission must pass before marker adjudication, final committed-range closure required.",
+  "currentAuthoritySyncReason": "T1F offline bridge assessment/contract admission after T1E closure; no general S2, parked lanes retained.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",

@@ -2,16 +2,16 @@
   "schemaVersion": "0.1.0",
   "currentMode": "cvf_ncr_p10_closed_p11_parked",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=CVF-NIS; NEXT_ACTION_CLASS=BOUNDED_SELECTION_AND_DISPATCH_PLANNING; BATCH_ID=CVF-NIS-T1E. T1E explicit-item native consumer CLOSED_PASS_BOUNDED in docs/reviews/CVF_NIS_T1E_EXPLICIT_OPEN_ITEMS_CONSUMER_COMPLETION_2026-10-05.md; Local8/8 independent and34/34 affected regressions; worker140+API3 consumed, no real novice UX/build-ready proof. Choose next minimal value slice from existing roadmap; no successor execution or automatic S2. CCMA parked; S05/C1/send/B2 STOP; Q001/Q004 OPEN/Profile A; P11/deploy/FLAL T4/T5 parked; FR2 historical loss retained; costs UNKNOWN; LHW24 closed; no push. P4 duplicate-role metadata corrected; final closure receipt required.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-NIS; NEXT_ACTION_CLASS=EXECUTE_BOUNDED_WORK_ORDER; BATCH_ID=CVF-NIS-T1F. Offline build-ready bridge capability assessment and smallest consumer contract in docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1F_BUILD_READY_BRIDGE_CONTRACT_2026-10-05.md. Exact4 docs/evidence outputs; existing CVF spec/planning and historical pinned Spec Kit11 files plus max4 direct dependency reads. Two existing synthetic jobs; requirements/task/validation lineage, revision invalidation, material blockers and technical delegation. Local final route/independent review/commit; worker no stage/commit. No product/tests/runtime/provider/network/install/real store/UAC/BUILD/general S2/public/deploy. T1E/T1D/T1C/T1B-D closed; original workers retained. CCMA parked; S05/C1/send/B2 STOP; Q001/Q004 OPEN/Profile A; P11/deploy/FLAL T4/T5 parked; FR2 historical loss retained; costs UNKNOWN; LHW24 closed; no push.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_NIS_T1E_EXPLICIT_OPEN_ITEMS_CONSUMER_2026-10-05.md",
-    "baselineSha256": "1461466d3d8a68b25af936b043d436bc5ef88880a6d963e8c1e58a6119c27cd5",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1E_EXPLICIT_OPEN_ITEMS_CONSUMER_2026-10-05.md",
-    "workOrderSha256": "4a8fa02dc997274939fcac9e1259f618639c22a671e5063b645d2d250b411286"
+    "baselinePath": "docs/baselines/CVF_GC018_NIS_T1F_BUILD_READY_BRIDGE_CONTRACT_2026-10-05.md",
+    "baselineSha256": "3c25d962bb9272b8086f5cf1acdeb0621ef01414b794d283e3f6c37f3ce8acd6",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1F_BUILD_READY_BRIDGE_CONTRACT_2026-10-05.md",
+    "workOrderSha256": "b66c14defc36c11d6a087cbbf9d6d04276a4a10a073be9c106e16034885ec872"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

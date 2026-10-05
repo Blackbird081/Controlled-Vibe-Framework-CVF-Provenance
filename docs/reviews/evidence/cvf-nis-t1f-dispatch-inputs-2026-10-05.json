@@ -1,0 +1,260 @@
+{
+  "schemaVersion": "cvf.nisT1fDispatchInputs.v1",
+  "baseHead": "6db2ff6ef83834c4b8dc9f55ee2cc897e04671bb",
+  "authority": "Operator continue and delegated Local orchestrator/reviewer/work-order authority; only offline bridge assessment/contract admitted",
+  "sources": {
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-review.ts": {
+      "rawSha256": "43e7a437f6d4695553b396ead83feff15a411b10b3aa37c561ca9da09aa3eefd",
+      "gitBlob": "f959ecdce5cb608f19a18ed1ac6424a668ab588e",
+      "symbols": [
+        "buildReviewedDraftPacket",
+        "buildIntentReviewAppendix"
+      ]
+    },
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-open-items.ts": {
+      "rawSha256": "c909f6f264ae2b2596f12a33692654262fb07ac71e8bc49339483483e9cdab00",
+      "gitBlob": "eb26737b9869b096cea342995a3ac1aa8d596cd3",
+      "symbols": [
+        "ReviewOpenItem"
+      ]
+    },
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-confirmation.ts": {
+      "rawSha256": "c73dcae3d89df3072a92604ed4548b01167974cabdb9245c232516289a35519c",
+      "gitBlob": "aceb530c482dc0bd01f30a5d4f4d555141cd4c06",
+      "symbols": [
+        "createSpecConfirmationCandidate"
+      ]
+    },
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-acceptance.ts": {
+      "rawSha256": "b4c452663440bf74cc11833462e3c10ea43e29a2fe156b3d3c9cdef00fc79c12",
+      "gitBlob": "33be8460e53ed56e4133c05a10bed6a64d4956f3",
+      "symbols": [
+        "prepareIntentSpecAcceptance"
+      ]
+    },
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/spec-export-portable-handoff.ts": {
+      "rawSha256": "8528e8274bb82015398ce7deb10292aff6c7b5a06db83b25c6d8346b7a440795",
+      "gitBlob": "d17f4f6af70dcdfe45e7c9f7254d0a610bc519d9",
+      "symbols": [
+        "buildPortableAgentHandoffReadiness"
+      ]
+    },
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/SpecExport.tsx": {
+      "rawSha256": "24617b9ef2f53e6ac5cf5e4907eaa2dea2d0ba8fbe1578714f8cba22338be2a9",
+      "gitBlob": "bb550ff43785e62534e8cc8432649c537a84ec6a",
+      "symbols": [
+        "generateSpec"
+      ]
+    },
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/templates/development.ts": {
+      "rawSha256": "e17bd23353f95cf0fd62988c8abafecdee65dd99aa0848c890276820bdcd4b7c",
+      "gitBlob": "e8993d830cbd07a6aa7b539b34179fdeeed0bc09",
+      "symbols": [
+        "app_builder_complete"
+      ]
+    },
+    "docs/reviews/CVF_NIS_T1E_EXPLICIT_OPEN_ITEMS_CONSUMER_COMPLETION_2026-10-05.md": {
+      "rawSha256": "2d40f81526f10384661beda89d81a99997b013826f698cd9413a2eca567412bb",
+      "gitBlob": "458ac5f6370ec549b05f05ae21f8d99d1ea5f88b",
+      "symbols": [
+        "Claim Boundary"
+      ]
+    },
+    "docs/reviews/CVF_NIS_T1D_SELECTED_CAPABILITY_CONSUMER_CONTRACT_COMPLETION_2026-10-05.md": {
+      "rawSha256": "21dd5da416234e9cedbc77fc5a90e50a42162acf3a63f928e41593151b809d4c",
+      "gitBlob": "6e38f2f81a2f1d2f216841e200f0440e3542f9dc",
+      "symbols": [
+        "Minimum Next Delta"
+      ]
+    },
+    "docs/reviews/evidence/cvf-nis-t1d-capability-assessment-2026-10-05.json": {
+      "rawSha256": "9086e9b6b7a6bc73c73ed9595afed0348a4247d5046972b3af7f8f0bd3ac960c",
+      "gitBlob": "b0c2f63f0b4366fa7afb2c235e2380822c895698",
+      "symbols": [
+        "assessmentScope"
+      ]
+    },
+    "docs/reviews/evidence/cvf-nis-t1d-acceptance-plan-2026-10-05.json": {
+      "rawSha256": "6bbd1904a0b1319d345180fb4566d5b473e6b0c232cea5ced134f45096d7706c",
+      "gitBlob": "777117bd8764626f24880c26a6664b6858879114",
+      "symbols": [
+        "fixtures"
+      ]
+    },
+    "docs/reviews/evidence/cvf-nis-t1c-scenario-2026-10-05.json": {
+      "rawSha256": "40b2b1b0a8aca2004403915188cd050eb296103059a5070eee5b4ce2861d6e0b",
+      "gitBlob": "b908e587bcef0c9d49c1f47d2f05c1fc47fe2e88",
+      "symbols": [
+        "scenario"
+      ]
+    },
+    "docs/reviews/evidence/cvf-nis-t1e-local-independent-review-2026-10-05.json": {
+      "rawSha256": "48d78a0e96e9cb9b4b12beb3f15b20c44582256a22e0296b1a5661460a7ffa52",
+      "gitBlob": "b636cf6b99f62f895c97a94e36995bbef5e5a86a",
+      "symbols": [
+        "claimBoundary"
+      ]
+    },
+    "docs/reference/agent_system_skills/packages/cvf-engineering-spec-driven-development/README.md": {
+      "rawSha256": "a018b045050c684149c78df961af2f1d27a636d00f378f17d1d5a16461a3aaf9",
+      "gitBlob": "74f299dddc3d4be594ac704efebfecd4190aa520",
+      "symbols": [
+        "Owner Surface"
+      ]
+    },
+    "docs/reference/agent_system_skills/packages/cvf-engineering-spec-driven-development/SKILL.md": {
+      "rawSha256": "17b7b50c8d4c069bd4b84c2487a9ab979b603a5ac86c58304390e06fa50d271c",
+      "gitBlob": "e9bc429059f6846ccdae09216d7956d1536da880",
+      "symbols": [
+        "Inputs And Outputs"
+      ]
+    },
+    "docs/reference/agent_system_skills/packages/cvf-engineering-planning-task-breakdown/README.md": {
+      "rawSha256": "3cdd62b633fda552b8651be794483ab6abc035f51e1862008012dbc4d57131b8",
+      "gitBlob": "fb7aaca2424127e919cfa1fd209fd5d57c1d091c",
+      "symbols": [
+        "Owner Surface"
+      ]
+    },
+    "docs/reference/agent_system_skills/packages/cvf-engineering-planning-task-breakdown/SKILL.md": {
+      "rawSha256": "379a8da6cf5b3cfe012a6816cc03a4345ef303b559d5f0993188222f07547f24",
+      "gitBlob": "0cf1e33825dab47f92c1c1509fc9577414efd0b3",
+      "symbols": [
+        "Inputs And Outputs"
+      ]
+    },
+    "docs/reference/CVF_KNOWLEDGE_ABSORPTION_AND_EXTENSION_PRIORITY_STANDARD_2026-04-13.md": {
+      "rawSha256": "1eafad1cd23048eff1a11acb27ce51f34bb1929a3306de9237b1ed6734064eee",
+      "gitBlob": "e142d0ec8fce2d03afcf8b41f7c96b7a7cc7f951",
+      "symbols": [
+        "2.1"
+      ]
+    },
+    "docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md": {
+      "rawSha256": "e8b91cfc8c792c366807dc7b45312b0baa6000f9e928fe292a8b5c4549323e8a",
+      "gitBlob": "1dfda1a93cf8ea9b2f3046fe3d506e1a2c16633d",
+      "symbols": [
+        "P11"
+      ]
+    },
+    "DESIGN.md": {
+      "rawSha256": "15c1b5061bd2e1f763638beb83a84d06eb8ccbc470747c01f236033a834a987e",
+      "gitBlob": "260703ec89ffd2282c3960a891337d2b970740f5",
+      "symbols": [
+        "1. Visual Theme"
+      ]
+    },
+    "docs/reviews/evidence/cvf-nis-t1c-readiness-gap-2026-10-05.json": {
+      "rawSha256": "cd124f015c018ae6b621b47b5bf7911d6474f0fd1b58440db62d8f10a800fa42",
+      "gitBlob": "5e57e2bf869750decebe6ce47e034009239fbb7e",
+      "symbols": [
+        "builderReceiverCritique"
+      ]
+    }
+  },
+  "selectionContext": [
+    {
+      "path": ".cvf/runtime/noncoder-intent-spec-review-20261005/LOCAL_INTENT_TO_SPEC_CONSOLIDATED_ROADMAP_20261005.txt",
+      "rawSha256": "4518966607e5e709b86b12ad7a7555944aa5d8effb28dcb319528c3a1ebfa069",
+      "authority": "HISTORICAL_LOCAL_PROPOSAL_NOT_EXECUTION_AUTHORITY"
+    },
+    {
+      "path": ".cvf/runtime/noncoder-intent-spec-review-20261005/LOCAL_ROADMAP_BUILD_SELECTION_20261005.txt",
+      "rawSha256": "8a73901991f2f90de8189033076aa6576404a4d9ce0397aa17a9c5f494c2111c",
+      "authority": "HISTORICAL_LOCAL_PROPOSAL_NOT_EXECUTION_AUTHORITY"
+    }
+  ],
+  "upstream": {
+    "repository": "https://github.com/github/spec-kit.git",
+    "mirror": ".private_reference/source_mirrors/github__spec-kit",
+    "pin": "ae5ade7234be5cb1d975f736c4e06dd46d1326d6",
+    "freshnessDisposition": "HISTORICAL_LOCAL_PIN_T1D_NO_NEW_UPSTREAM_FRESHNESS_CLAIM",
+    "priorAssessment": "docs/reviews/evidence/cvf-nis-t1d-capability-assessment-2026-10-05.json",
+    "trackedTreeInventoryPath": ".cvf\\runtime\\nis-t1f-dispatch-20261005\\upstream-path-inventory.json",
+    "trackedTreeInventorySha256": "0ae636a87d2b98df9d3ec891850f5c836a6845b228f417a9f00f7a72529e4776",
+    "trackedTreeCount": 873,
+    "inventoryIsNotReadCoverage": true,
+    "selectedFiles": [
+      {
+        "path": "LICENSE",
+        "rawSha256": "2510b446bc1f0cf9702453075d20cd88631e20e5642658edb7325d9c1eb534f7",
+        "gitBlob": "28a50fa22639e32febe14e4ffc7a732b0ba8c90a",
+        "readRequirement": "FULL_SELECTED_FILE_AS_DATA_ONLY"
+      },
+      {
+        "path": "templates/commands/plan.md",
+        "rawSha256": "206a0386d20b3eed4c087a4d9de247a3e7b2b59348bf3c801fc74f63ca2726a5",
+        "gitBlob": "d559e517ae59bb3e664b59b528372444baac4626",
+        "readRequirement": "FULL_SELECTED_FILE_AS_DATA_ONLY"
+      },
+      {
+        "path": "templates/commands/tasks.md",
+        "rawSha256": "2f9176c6e7c23d2a83d2bd018ffa1e67aee977389a57f2a3fe35fe987b425944",
+        "gitBlob": "1b9c4255fe8d9cd76e8f3e5952ada7a17c62a87e",
+        "readRequirement": "FULL_SELECTED_FILE_AS_DATA_ONLY"
+      },
+      {
+        "path": "templates/commands/analyze.md",
+        "rawSha256": "ffe0640ebe778795737937f2d4ec6f0149d7d55b72692e25369a668f985d1dfe",
+        "gitBlob": "7de2d28f0da797998e5e30d6323b7316a74e60ff",
+        "readRequirement": "FULL_SELECTED_FILE_AS_DATA_ONLY"
+      },
+      {
+        "path": "templates/spec-template.md",
+        "rawSha256": "3945437fc35cd30a5b2bf7beea680337c3516826d3efa5a6b92c4a7eca1ba28e",
+        "gitBlob": "ceb28776215a098e977650ac090c785dcbf53651",
+        "readRequirement": "FULL_SELECTED_FILE_AS_DATA_ONLY"
+      },
+      {
+        "path": "templates/plan-template.md",
+        "rawSha256": "dfba43da2b2a207ff8c177a0fba03af074fd45e261696b4b64172041fad2e992",
+        "gitBlob": "36f2eab16880bac670fe43cbe7ef2b9bc8c3aa2f",
+        "readRequirement": "FULL_SELECTED_FILE_AS_DATA_ONLY"
+      },
+      {
+        "path": "templates/tasks-template.md",
+        "rawSha256": "1e448e9153462e8c5b5a55231a54c756d870a82950d4dd9425a2bf5b7008a0d9",
+        "gitBlob": "7fff087cc5a3c51a889d865fd9126607a032d233",
+        "readRequirement": "FULL_SELECTED_FILE_AS_DATA_ONLY"
+      },
+      {
+        "path": "scripts/powershell/check-prerequisites.ps1",
+        "rawSha256": "c7fa3dac16b9a71c0173dc6431072b83472b0e55177e08eb14be5a0ad8d6fa7a",
+        "gitBlob": "0e9434d06393fbf58f57dff7c9684f86362baeb1",
+        "readRequirement": "FULL_SELECTED_FILE_AS_DATA_ONLY"
+      },
+      {
+        "path": "scripts/powershell/setup-plan.ps1",
+        "rawSha256": "3b8173f1553bbf67ae021af949a29e2d3e3bb35805be95e4ba8d0ab83173c66f",
+        "gitBlob": "036a54e4d135e20843495f74f2f38d04a1232897",
+        "readRequirement": "FULL_SELECTED_FILE_AS_DATA_ONLY"
+      },
+      {
+        "path": "scripts/powershell/setup-tasks.ps1",
+        "rawSha256": "21b0acbc5f0789ca24b5834a8739c372b3694262627312abe209818f06c67f8c",
+        "gitBlob": "4adbbc4b932e70087507527394a57f2d15382e22",
+        "readRequirement": "FULL_SELECTED_FILE_AS_DATA_ONLY"
+      },
+      {
+        "path": "scripts/powershell/common.ps1",
+        "rawSha256": "9837a02a1ca9e61a16a1ff7ec7429c95d8e1c87ec49400cc2807133bb89a5317",
+        "gitBlob": "c90308ef9cfe29c4bbcc16c04d56d0cc80c04330",
+        "readRequirement": "FULL_SELECTED_FILE_AS_DATA_ONLY"
+      }
+    ],
+    "workerMayExpandReads": "At most four directly referenced dependency files TOTAL across native/upstream, with decision-changing reason and raw/blob evidence. Targeted path/symbol search allowed; no broad audit. Outside source set defer, never repository no-value."
+  },
+  "workerArtifacts": [
+    "docs/reviews/CVF_NIS_T1F_BUILD_READY_BRIDGE_CONTRACT_WORKER_RETURN_2026-10-05.md",
+    "docs/reviews/evidence/cvf-nis-t1f-build-ready-capability-assessment-2026-10-05.json",
+    "docs/reviews/CVF_NIS_T1F_BUILD_READY_BRIDGE_CONTRACT_2026-10-05.md",
+    "docs/reviews/evidence/cvf-nis-t1f-build-ready-acceptance-plan-2026-10-05.json"
+  ],
+  "newPathsAbsent": [
+    "docs/reviews/CVF_NIS_T1F_BUILD_READY_BRIDGE_CONTRACT_WORKER_RETURN_2026-10-05.md",
+    "docs/reviews/evidence/cvf-nis-t1f-build-ready-capability-assessment-2026-10-05.json",
+    "docs/reviews/CVF_NIS_T1F_BUILD_READY_BRIDGE_CONTRACT_2026-10-05.md",
+    "docs/reviews/evidence/cvf-nis-t1f-build-ready-acceptance-plan-2026-10-05.json"
+  ],
+  "claimBoundary": "SOURCE_AND_CONTRACT_ONLY; no product/package/upstream runtime, real UX, actual implementation plan execution, build-ready acceptance or BUILD authority"
+}
