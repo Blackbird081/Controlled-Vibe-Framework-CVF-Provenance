@@ -1,5 +1,10 @@
 // Text Encoding Exception: Vietnamese user-facing copy and matching localization fixtures.
 /** Local draft review only: no model inference, durable acceptance or execution grant. */
+import {
+    buildOpenItemHeaderLine, buildOpenItemSection, flattenOpenItems, isPlaceholderText, markOpenItemStale,
+    reconfirmOpenItem, sameOpenItems, validateReplacement, type OpenItemError, type ReviewOpenItem,
+} from './intent-spec-open-items';
+
 export type ReviewLanguage = 'vi' | 'en';
 export type DecisionDisposition = 'OPEN' | 'ANSWERED' | 'NOT_APPLICABLE' | 'CONFLICT';
 
@@ -44,6 +49,8 @@ export interface ReviewDecision {
     disposition: DecisionDisposition;
     needsReconfirmation: boolean;
     sourceValues: Record<string, string>;
+    /** Present only when the user declared at least one open item for this decision. */
+    openItems?: ReviewOpenItem[];
 }
 
 export interface IntentSpecReviewState {
@@ -88,20 +95,34 @@ export function synchronizeIntentSpecReview(
     return {
         ...previous, revision: previous.revision + 1, values: { ...values }, packetSource,
         acknowledgedRevision: null,
-        decisions: previous.decisions.map(decision => ({
+        decisions: previous.decisions.map(decision => withStaleItems({
             ...decision,
             needsReconfirmation: decision.needsReconfirmation || (Boolean(decision.answer.trim())
                 && (changedUnmappedField || !sameValues(decision.sourceValues, sourceFor(decision.id, values)))),
-        })),
+        }, values)),
     };
 }
 
+/** Items cite their own fields, so a source change marks only the affected items (sticky until reconfirmed). */
+function withStaleItems(decision: ReviewDecision, values: Record<string, string>): ReviewDecision {
+    if (!decision.openItems) return decision;
+    return { ...decision, openItems: decision.openItems.map(item => markOpenItemStale(item, values)) };
+}
+
+export interface ReviewDecisionChange {
+    answer?: string; disposition?: DecisionDisposition; reconfirm?: boolean;
+    /** Replaces this decision's open items (add, edit, remove). An edit never clears a stale flag. */
+    openItems?: ReviewOpenItem[];
+    /** Explicit reconfirm of one stale item of this decision: refreshes its snapshot, clears only its flag. */
+    reconfirmItem?: string;
+}
+
 export function updateReviewDecision(
-    state: IntentSpecReviewState, id: ReviewQuestionId,
-    change: { answer?: string; disposition?: DecisionDisposition; reconfirm?: boolean },
+    state: IntentSpecReviewState, id: ReviewQuestionId, change: ReviewDecisionChange,
 ): IntentSpecReviewState {
     const previous = state.decisions.find(decision => decision.id === id);
     if (!previous) return state;
+    if (change.openItems !== undefined || change.reconfirmItem !== undefined) return updateWithOpenItems(state, previous, change);
     const answer = change.answer ?? previous.answer;
     const disposition = change.disposition ?? (previous.disposition === 'OPEN' && answer.trim()
         ? 'ANSWERED' : previous.disposition);
@@ -116,10 +137,10 @@ export function updateReviewDecision(
 }
 
 export function decisionNeedsReview(decision: ReviewDecision): boolean {
-    const placeholder = ['', 'n/a', 'unknown', 'tbd', 'todo', '?', 'chưa biết', 'chưa quyết', 'không rõ', 'not applicable', 'không áp dụng']
-        .includes(decision.answer.trim().toLowerCase());
+    const placeholder = isPlaceholderText(decision.answer);
     return decision.needsReconfirmation || placeholder
-        || decision.disposition === 'OPEN' || decision.disposition === 'CONFLICT';
+        || decision.disposition === 'OPEN' || decision.disposition === 'CONFLICT'
+        || Boolean(decision.openItems?.some(item => item.needsReconfirmation));
 }
 
 export function getPendingReviewDecisions(state: IntentSpecReviewState): ReviewDecision[] {
@@ -162,6 +183,7 @@ export function buildIntentReviewAppendix(state: IntentSpecReviewState, language
             quoted(provenance),
         ].filter(Boolean).join('\n\n');
     });
+    const itemRows = openItemRows(state);
     return [
         vi ? '## Review yêu cầu của bản nháp' : '## Draft requirements review',
         `${vi ? 'Phiên bản' : 'Revision'}: ${state.revision}`,
@@ -170,6 +192,7 @@ export function buildIntentReviewAppendix(state: IntentSpecReviewState, language
         vi ? 'Các câu hỏi là gợi ý review có giới hạn; trả lời hết không chứng minh spec đầy đủ hoặc build-ready.' : 'These are bounded review prompts; answering all of them does not prove completeness or build readiness.',
         vi ? 'Review chỉ nằm trong phiên này; chưa có actor binding hoặc lưu/xác nhận bền vững.' : 'Review is session-only; no actor binding or durable content acceptance is provided.',
         ...rows,
+        ...(itemRows.length ? [buildOpenItemSection(itemRows, language)] : []),
     ].join('\n\n');
 }
 
@@ -177,5 +200,63 @@ export function buildReviewedDraftPacket(state: IntentSpecReviewState, language:
     const header = language === 'vi'
         ? '# Bản nháp để làm rõ yêu cầu\n\nPhạm vi hiện tại: chỉ làm rõ và review đặc tả. Các hướng dẫn design/build phía dưới là bước tương lai, cần quyền riêng. Đã xem bản nháp không đồng nghĩa duyệt BUILD.'
         : '# Draft for requirements clarification\n\nCurrent scope: specification clarification and review only. Design/build directions below are future steps requiring separate authorization. Viewing this draft does not approve BUILD.';
-    return `${header}\n\n${state.packetSource}\n\n---\n\n${buildIntentReviewAppendix(state, language)}`;
+    const itemRows = openItemRows(state);
+    const itemLine = itemRows.length ? `\n\n${buildOpenItemHeaderLine(itemRows.map(row => row.item), language)}` : '';
+    return `${header}${itemLine}\n\n${state.packetSource}\n\n---\n\n${buildIntentReviewAppendix(state, language)}`;
+}
+
+/** Items in decision order, then array order; empty when the user declared none. */
+function openItemRows(state: IntentSpecReviewState): { decisionId: ReviewQuestionId; item: ReviewOpenItem }[] {
+    return state.decisions.flatMap(decision => (decision.openItems ?? []).map(item => ({ decisionId: decision.id, item })));
+}
+
+export function getReviewOpenItems(state: IntentSpecReviewState): ReviewOpenItem[] {
+    return flattenOpenItems(state.decisions.map(decision => decision.openItems));
+}
+
+/** Pre-check for a replacement list so the UI can show the reason; the update itself stores nothing on error. */
+export function previewOpenItems(
+    state: IntentSpecReviewState, id: ReviewQuestionId, next: ReviewOpenItem[],
+): OpenItemError | null {
+    const decision = state.decisions.find(item => item.id === id);
+    if (!decision) return 'ITEM_UNKNOWN_ITEM';
+    const others = flattenOpenItems(state.decisions.filter(item => item.id !== id).map(item => item.openItems));
+    return validateReplacement(next, getReviewOpenItems(state), others, state.values);
+}
+
+function updateWithOpenItems(
+    state: IntentSpecReviewState, previous: ReviewDecision, change: ReviewDecisionChange,
+): IntentSpecReviewState {
+    if (change.openItems !== undefined && change.reconfirmItem !== undefined) return state;
+    const before = previous.openItems ?? [];
+    let next: ReviewOpenItem[];
+    if (change.reconfirmItem !== undefined) {
+        const target = before.find(item => item.id === change.reconfirmItem);
+        if (!target || !target.needsReconfirmation) return state;
+        const refreshed = reconfirmOpenItem(target, state.values);
+        if (!refreshed.ok) return state;
+        next = before.map(item => (item === target ? refreshed.value : item));
+    } else {
+        // Anything but a real list (null, a string) is refused; it must never act as an empty list.
+        if (!Array.isArray(change.openItems)) return state;
+        next = change.openItems;
+        if (previewOpenItems(state, previous.id, next)) return state;
+    }
+    const answer = change.answer ?? previous.answer;
+    const disposition = change.disposition ?? (previous.disposition === 'OPEN' && answer.trim()
+        ? 'ANSWERED' : previous.disposition);
+    const decisionChanged = answer !== previous.answer || disposition !== previous.disposition || Boolean(change.reconfirm);
+    if (!decisionChanged && sameOpenItems(before, next)) return state;
+    return {
+        ...state, revision: state.revision + 1, acknowledgedRevision: null,
+        decisions: state.decisions.map(decision => {
+            if (decision.id !== previous.id) return decision;
+            // An items-only change keeps the decision's answer, stale flag and source snapshot untouched.
+            const base: ReviewDecision = decisionChanged
+                ? { ...decision, answer, disposition, needsReconfirmation: false, sourceValues: sourceFor(decision.id, state.values) }
+                : { ...decision };
+            if (next.length) base.openItems = next; else delete base.openItems;
+            return base;
+        }),
+    };
 }

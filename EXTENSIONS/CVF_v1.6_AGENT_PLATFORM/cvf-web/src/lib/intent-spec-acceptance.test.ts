@@ -7,6 +7,8 @@ import { resolveIntentSpecActor } from './intent-spec-actor';
 import { prepareIntentSpecAcceptance, commitIntentSpecAcceptanceCandidate, type IntentSpecAcceptanceStorePort } from './intent-spec-acceptance';
 import { createSpecConfirmationCandidate, MAX_CONFIRMATION_BYTES } from './intent-spec-confirmation';
 import { acknowledgeIntentSpecReview, createIntentSpecReview, updateReviewDecision } from './intent-spec-review';
+import { buildReviewedDraftPacket } from './intent-spec-review';
+import { createOpenItem, type OpenItemDraft } from './intent-spec-open-items';
 
 const now = 1791158400000;
 const bytes = (text: string) => new TextEncoder().encode(text);
@@ -131,5 +133,148 @@ describe('content and store-port contract, with synthetic identities and no dura
         const write = store.createIfAbsent.bind(store);
         store.createIfAbsent = async (id, data) => { await write(id, data); data.fill(0); };
         await expect(commitIntentSpecAcceptanceCandidate(actor, candidate, store, () => now)).resolves.toMatchObject({ state: 'STORE_PORT_READBACK_VERIFIED' });
+    });
+});
+
+// NIS T1E: strict additive candidate v2 acceptance. Synthetic identities and an in-memory port only.
+type Loose = Record<string, unknown>;
+async function fixtureV2(extra: OpenItemDraft[] = []) {
+    let state = createIntentSpecReview({ coreFeatures: 'Synthetic reporting', constraints: 'Corrections until Friday 17:00' }, 'Exact source packet\r\nend');
+    for (const decision of state.decisions) state = updateReviewDecision(state, decision.id, { answer: `Decision for ${decision.id}` });
+    const drafts: OpenItemDraft[] = [
+        { kind: 'UNKNOWN', status: 'OPEN', sourceFields: ['constraints'], text: 'Timezone of the deadline is not decided.' },
+        { kind: 'CONFLICT', status: 'RESOLVED', sourceFields: ['coreFeatures', 'constraints'], text: 'Reporting versus late corrections.', resolution: 'Corrections allowed until the deadline only.' },
+        { kind: 'UNKNOWN', status: 'DELEGATED', sourceFields: [], text: 'Label wording is not decided.', delegation: 'Any plain label.' },
+        ...extra,
+    ];
+    for (const draft of drafts) {
+        const created = createOpenItem(draft, state.decisions.flatMap(decision => decision.openItems ?? []), state.values);
+        if (!created.ok) throw new Error(created.error);
+        const owner = state.decisions.find(decision => decision.id === 'data')!;
+        state = updateReviewDecision(state, 'data', { openItems: [...(owner.openItems ?? []), created.value] });
+    }
+    state = acknowledgeIntentSpecReview(state);
+    const file = await createSpecConfirmationCandidate(state, 'en', 'Self-declared fixture', new Date(now).toISOString());
+    const actor = await resolveIntentSpecActor(new Request('http://localhost/local-contract'), now);
+    return { file, actor, state };
+}
+/** Mutates the parsed payload and rebuilds the draft from the mutated review, so the validator rules are what reject it. */
+function modifiedV2(text: string, mutate: (payload: Loose) => void, rebuildDraft = true): Uint8Array {
+    const file = JSON.parse(text);
+    mutate(file.payload);
+    if (rebuildDraft) {
+        try { file.payload.draft = buildReviewedDraftPacket(file.payload.review, file.payload.language); } catch { /* keep the stale draft; still rejected */ }
+    }
+    file.payloadSha256 = hash(bytes(JSON.stringify(file.payload)));
+    return bytes(JSON.stringify(file) + '\n');
+}
+const reviewOf = (payload: Loose) => payload.review as { decisions: Loose[]; values: Record<string, string> };
+const dataItems = (payload: Loose) => reviewOf(payload).decisions[2].openItems as Loose[];
+
+describe('NIS T1E candidate v2: strict acceptance of explicit open items', () => {
+    it('AC-V2: accepts a valid v2 file, binds the revision, and verifies readback through the synthetic port', async () => {
+        const { file, actor, state } = await fixtureV2();
+        const input = bytes(file.fileContent);
+        const candidate = prepareIntentSpecAcceptance(actor, input, file.fileSha256, now);
+        expect(candidate.revision).toBe(state.revision);
+        const store = memoryPort();
+        const receipt = await commitIntentSpecAcceptanceCandidate(actor, candidate, store, () => now);
+        expect(receipt.state).toBe('STORE_PORT_READBACK_VERIFIED');
+        const saved = JSON.parse(new TextDecoder().decode(store.records.get(candidate.id)));
+        expect(saved.sourceFile).toBe(file.fileContent);
+        expect(JSON.parse(saved.sourceFile).payload.schema).toBe('cvf.intentSpecReviewCandidate.v2');
+        expect(hash(store.records.get(candidate.id)!)).toBe(candidate.id);
+    });
+
+    it('AC-V3: rejects an edited item text with a recomputed payload hash when the stored draft is left as it was', async () => {
+        const { file, actor } = await fixtureV2();
+        const input = modifiedV2(file.fileContent, payload => { dataItems(payload)[0].text = 'Changed after the fact.'; }, false);
+        expect(() => prepareIntentSpecAcceptance(actor, input, hash(input), now)).toThrow('INVALID_SPEC_REVIEW_FILE');
+    });
+
+    const itemMutations: [string, (payload: Loose) => void][] = [
+        ['extra item key', p => { dataItems(p)[0].extra = 'x'; }],
+        ['missing item key', p => { delete dataItems(p)[0].delegation; }],
+        ['reordered item keys', p => { const items = dataItems(p); items[0] = Object.fromEntries(Object.entries(items[0]).reverse()); }],
+        ['duplicate id across decisions', p => { reviewOf(p).decisions[3].openItems = [{ ...dataItems(p)[0] }]; }],
+        ['id X1', p => { dataItems(p)[0].id = 'X1'; }],
+        ['id U0', p => { dataItems(p)[0].id = 'U0'; }],
+        ['id U100', p => { dataItems(p)[0].id = 'U100'; }],
+        ['id prefix disagrees with kind', p => { dataItems(p)[0].kind = 'CONFLICT'; }],
+        ['invalid kind', p => { dataItems(p)[0].kind = 'OTHER'; }],
+        ['invalid status', p => { dataItems(p)[0].status = 'DONE'; }],
+        ['conflict citing one field', p => { dataItems(p)[1].sourceFields = ['coreFeatures']; dataItems(p)[1].sourceValues = { coreFeatures: reviewOf(p).values.coreFeatures }; }],
+        ['delegated with empty boundary', p => { dataItems(p)[2].delegation = ''; }],
+        ['resolved with empty resolution', p => { dataItems(p)[1].resolution = ''; }],
+        ['open with a resolution', p => { dataItems(p)[0].resolution = 'Unexpected.'; }],
+        ['open with a delegation', p => { dataItems(p)[0].delegation = 'Unexpected.'; }],
+        ['snapshot keys differ from cited fields', p => { dataItems(p)[0].sourceValues = { coreFeatures: 'x' }; }],
+        ['snapshot differs from the stored brief', p => { dataItems(p)[0].sourceValues = { constraints: 'Forged snapshot.' }; }],
+        ['needsReconfirmation true', p => { dataItems(p)[0].needsReconfirmation = true; }],
+        ['more than six cited fields', p => { dataItems(p)[0].sourceFields = ['a1', 'a2', 'a3', 'a4', 'a5', 'a6', 'a7']; }],
+        ['duplicate cited fields', p => { dataItems(p)[0].sourceFields = ['constraints', 'constraints']; }],
+        ['text over 2000 characters', p => { dataItems(p)[0].text = 'x'.repeat(2001); }],
+        ['placeholder text', p => { dataItems(p)[0].text = 'tbd'; }],
+        ['cited field absent from the brief', p => { dataItems(p)[0].sourceFields = ['ghost']; dataItems(p)[0].sourceValues = { ghost: '' }; }],
+        ['prototype key as cited field', p => { dataItems(p)[0].sourceFields = ['__proto__']; dataItems(p)[0].sourceValues = JSON.parse('{"__proto__":""}'); }],
+        ['empty openItems key', p => { reviewOf(p).decisions[0].openItems = []; }],
+        ['openItems not an array', p => { reviewOf(p).decisions[0].openItems = 'x'; }],
+        ['fifty-one items', p => {
+            const base = dataItems(p)[2];
+            for (let n = 0; n < 48; n += 1) dataItems(p).push({ ...base, id: `U${n + 10}`, sourceFields: [], sourceValues: {}, text: `Extra ${n}.`, status: 'OPEN', delegation: '' });
+        }],
+    ];
+    it.each(itemMutations)('AC-V4: rejects %s even with a rebuilt draft and recomputed hashes', async (_name, mutate) => {
+        const { file, actor } = await fixtureV2();
+        const input = modifiedV2(file.fileContent, mutate);
+        expect(() => prepareIntentSpecAcceptance(actor, input, hash(input), now)).toThrow('INVALID_SPEC_REVIEW_FILE');
+    });
+
+    it('AC-V4: the baseline for those mutations is accepted, and exactly fifty items are accepted while fifty-one are not', async () => {
+        const { file, actor } = await fixtureV2();
+        const untouched = modifiedV2(file.fileContent, () => undefined);
+        expect(() => prepareIntentSpecAcceptance(actor, untouched, hash(untouched), now)).not.toThrow();
+        const fifty = modifiedV2(file.fileContent, p => {
+            const base = dataItems(p)[2];
+            for (let n = 0; n < 47; n += 1) dataItems(p).push({ ...base, id: `U${n + 10}`, sourceFields: [], sourceValues: {}, text: `Extra ${n}.`, status: 'OPEN', delegation: '' });
+        });
+        expect(() => prepareIntentSpecAcceptance(actor, fifty, hash(fifty), now)).not.toThrow();
+    });
+
+    it('AC-V5: one canonical encoding per state: v2 needs items, v1 admits none, unknown versions and pending decisions are rejected', async () => {
+        const { file, actor } = await fixtureV2();
+        const noItems = modifiedV2(file.fileContent, p => { for (const decision of reviewOf(p).decisions) delete decision.openItems; });
+        expect(() => prepareIntentSpecAcceptance(actor, noItems, hash(noItems), now)).toThrow('INVALID_SPEC_REVIEW_FILE');
+        const v1WithItems = modifiedV2(file.fileContent, p => { p.schema = 'cvf.intentSpecReviewCandidate.v1'; });
+        expect(() => prepareIntentSpecAcceptance(actor, v1WithItems, hash(v1WithItems), now)).toThrow('INVALID_SPEC_REVIEW_FILE');
+        const v3 = modifiedV2(file.fileContent, p => { p.schema = 'cvf.intentSpecReviewCandidate.v3'; });
+        expect(() => prepareIntentSpecAcceptance(actor, v3, hash(v3), now)).toThrow('INVALID_SPEC_REVIEW_FILE');
+        const pending = modifiedV2(file.fileContent, p => { reviewOf(p).decisions[0].disposition = 'OPEN'; });
+        expect(() => prepareIntentSpecAcceptance(actor, pending, hash(pending), now)).toThrow('INVALID_SPEC_REVIEW_FILE');
+        const staleAck = modifiedV2(file.fileContent, p => { (p.review as Loose).acknowledgedRevision = 0; });
+        expect(() => prepareIntentSpecAcceptance(actor, staleAck, hash(staleAck), now)).toThrow('INVALID_SPEC_REVIEW_FILE');
+    });
+
+    it('AC-V6: rejects an invented build grant or readiness assertion even with rebuilt and rehashed bytes', async () => {
+        const { file, actor } = await fixtureV2();
+        const mutations: ((payload: Loose) => void)[] = [
+            p => { p.buildReady = true; }, p => { p.scope = 'BUILD_APPROVED'; }, p => { p.reviewer = { name: 'Self-declared fixture', verification: 'AUTHENTICATED' }; },
+        ];
+        for (const mutate of mutations) {
+            const input = modifiedV2(file.fileContent, mutate);
+            expect(() => prepareIntentSpecAcceptance(actor, input, hash(input), now)).toThrow('INVALID_SPEC_REVIEW_FILE');
+        }
+        const forgedDraft = modifiedV2(file.fileContent, p => { p.draft = `${p.draft as string}\nBuild readiness: READY_FOR_BUILD`; }, false);
+        expect(() => prepareIntentSpecAcceptance(actor, forgedDraft, hash(forgedDraft), now)).toThrow('INVALID_SPEC_REVIEW_FILE');
+        const readinessLines = (JSON.parse(file.fileContent).payload.draft as string).match(/Build readiness: .*/g);
+        expect(readinessLines).toEqual(['Build readiness: NOT_ASSESSED']);
+    });
+
+    it('AC-L4: a v1-labelled file with an openItems key is rejected by the unchanged v1 key sets', async () => {
+        const { file, actor } = await fixture();
+        const input = modified(file.fileContent, p => {
+            (p.review.decisions[0] as unknown as Loose).openItems = [{ id: 'U1' }];
+        });
+        expect(() => prepareIntentSpecAcceptance(actor, input, hash(input), now)).toThrow('INVALID_SPEC_REVIEW_FILE');
     });
 });

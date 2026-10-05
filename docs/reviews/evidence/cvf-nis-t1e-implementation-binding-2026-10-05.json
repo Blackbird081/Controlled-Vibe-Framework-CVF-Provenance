@@ -1,0 +1,422 @@
+{
+ "schemaVersion": "cvf.nisT1eImplementationBinding.v1",
+ "batchId": "CVF-NIS-T1E",
+ "executionBaseHead": "0c6b5a767b33de6e98cc36b6147a8aed1dcb6526",
+ "headAtCapture": "0c6b5a767b33de6e98cc36b6147a8aed1dcb6526",
+ "headUnchangedNoCommit": true,
+ "legacyProducerBase": "a27c13fa7a30fbc76b755aac539ec65e6dcae49d",
+ "chronology": {
+  "order": [
+   "dispatch pins verified (34 of 34)",
+   "worker pre-implementation gate COMPLIANT",
+   "frozen legacy captured from unmodified producers (git status clean)",
+   "first tracked edit",
+   "implementation and tests",
+   "final focused checks",
+   "return and full fast gate"
+  ],
+  "note": "The guard cannot prove chronology. The pre-edit hash ledger and the capture harness output were written before the first tracked edit and are hashed below; Local verifies the old producer independently. File modification times are not claimed as proof."
+ },
+ "ownedPaths": [
+  {
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-open-items.ts",
+   "preimage": "ABSENT_AT_BASE",
+   "postimage": {
+    "rawSha256": "27617dd72897f4afe19cee5f39562a8957d86faf16639839e74785886f0fb3b2",
+    "gitBlobOfWorkingBytes": "4664469de569ceb469f58950e8b7a647c405e4ba"
+   },
+   "role": "production"
+  },
+  {
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-review.ts",
+   "preimage": {
+    "rawSha256": "c8746be8645af3d287c084a6338e84bbf502b4ffc3f9f750f58236c0085a34dc",
+    "gitBlob": "4bfd12d933ed55d788c45cda439e8724991abb07"
+   },
+   "postimage": {
+    "rawSha256": "76daa263b2bf00b6eeaf9df7141f839def5ebd16fddf6c19041edb76b103bc1b",
+    "gitBlobOfWorkingBytes": "f959ecdce5cb608f19a18ed1ac6424a668ab588e"
+   },
+   "role": "production"
+  },
+  {
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-confirmation.ts",
+   "preimage": {
+    "rawSha256": "05afbe557d905f583221b4a59bfc04fabbd7d9e6b73c4ff0b7b05fab6ba4d067",
+    "gitBlob": "da9253c361f6cc30527a11d3cad8487c302d1bb0"
+   },
+   "postimage": {
+    "rawSha256": "c73dcae3d89df3072a92604ed4548b01167974cabdb9245c232516289a35519c",
+    "gitBlobOfWorkingBytes": "aceb530c482dc0bd01f30a5d4f4d555141cd4c06"
+   },
+   "role": "production"
+  },
+  {
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-acceptance.ts",
+   "preimage": {
+    "rawSha256": "1ea88cc17ba9a6086b68da9b6d1de41c711088c1f7a0c0d863502e44391019a3",
+    "gitBlob": "6e926064e70e75829c1ac6dda527b5193e4ba9b6"
+   },
+   "postimage": {
+    "rawSha256": "b4c452663440bf74cc11833462e3c10ea43e29a2fe156b3d3c9cdef00fc79c12",
+    "gitBlobOfWorkingBytes": "33be8460e53ed56e4133c05a10bed6a64d4956f3"
+   },
+   "role": "production"
+  },
+  {
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecReview.tsx",
+   "preimage": {
+    "rawSha256": "acc098743cc9b6e2ac66c4c94ace76531924c049fcdfa874e3654c52df7efdb8",
+    "gitBlob": "fef775fc403db093108e8095a0142c067aa36b63"
+   },
+   "postimage": {
+    "rawSha256": "e69671bccb52fe3d9dce29493591630114c9e30bb98e1a1c4fbe7c0601cf822b",
+    "gitBlobOfWorkingBytes": "4dcff844df5436e51146402e56990c06b5ad37b2"
+   },
+   "role": "production"
+  },
+  {
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-open-items.test.ts",
+   "preimage": "ABSENT_AT_BASE",
+   "postimage": {
+    "rawSha256": "db261f424574e44ffcc9a4bd58cff4423176be2c53ab3ee2755608176cfbd66f",
+    "gitBlobOfWorkingBytes": "5ec9eb9d0aa8ad1d0818bac22b406e752a076730"
+   },
+   "role": "test"
+  },
+  {
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-legacy-golden.test.ts",
+   "preimage": "ABSENT_AT_BASE",
+   "postimage": {
+    "rawSha256": "687715076136786b9f500203a3bf6278ff55cb1511ec9cbca62a6134bcef149d",
+    "gitBlobOfWorkingBytes": "a474f75ac37564300014590e8ac895409ed507cd"
+   },
+   "role": "test"
+  },
+  {
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-review.test.ts",
+   "preimage": {
+    "rawSha256": "ea6e483da361108a7f45351b85c104264884cda432c06288a48c6f9dd4297a77",
+    "gitBlob": "22c789b32c0c484cd64e4c685d96d9b5e9603e5d"
+   },
+   "postimage": {
+    "rawSha256": "614e2b201785f9911fb1274afe7747c3f05dee66bd795a6c1d4726970a5908b0",
+    "gitBlobOfWorkingBytes": "2a74ef89a5b8183ccb9b30ca4e84d9b96c73dd2b"
+   },
+   "role": "test"
+  },
+  {
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-confirmation.test.ts",
+   "preimage": {
+    "rawSha256": "c0afd0bbac2cd1380820cea4b1688d7a30815aee0197a0d10952134f00184d01",
+    "gitBlob": "04ac956bee27cf6afe836d55fa71f6a8168d57ae"
+   },
+   "postimage": {
+    "rawSha256": "45c8753b771139842eec11dc863539ce3e4868941c4aa94291ae8d7b51d9bcd4",
+    "gitBlobOfWorkingBytes": "3a78fd445538730a9c9e0f966437e622db7f1d6d"
+   },
+   "role": "test"
+  },
+  {
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-acceptance.test.ts",
+   "preimage": {
+    "rawSha256": "27962cb481506be66d49b737d6c649357d1a2af3fbb5b5fdac86b4312afc4ea6",
+    "gitBlob": "7d7b4eb805db57a613e0b56661081b6cbd6a163e"
+   },
+   "postimage": {
+    "rawSha256": "244a4a893097f0c3d5e48d90df6234794fd66395586ce63725b3dbea38c62e1b",
+    "gitBlobOfWorkingBytes": "5ecb0d9b00d8a719d5ec9f653fd80c41c6b7ea0c"
+   },
+   "role": "test"
+  },
+  {
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecReview.test.tsx",
+   "preimage": {
+    "rawSha256": "880a867fa349b628790e58e086e21afb5547357f29f1c8cda4912c753934730c",
+    "gitBlob": "31807d29e78ffa72e1038448bfc75e26881b77e3"
+   },
+   "postimage": {
+    "rawSha256": "93baac906b2058ddd9a715851db9654d71fb2657bb1dc5537ef2fd8bbf769a13",
+    "gitBlobOfWorkingBytes": "8731526e9ffff950856672f6db725efa6d93351c"
+   },
+   "role": "test"
+  },
+  {
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-review-api.test.ts",
+   "preimage": {
+    "rawSha256": "fdcd35d852ad6c241af5bff1d0f79b7df31014a5a41c5915d311b4574a8d1ffc",
+    "gitBlob": "f3e6748897c3ce7b647d63d7a4105deb7c971547"
+   },
+   "postimage": {
+    "rawSha256": "48c6fd42a99dd415640491031ad160ae1a87bc60b3009cf897c6b395f27b72a4",
+    "gitBlobOfWorkingBytes": "d1254faf324b077842ca426358cf071c6ee7a247"
+   },
+   "role": "test"
+  },
+  {
+   "path": "docs/reviews/evidence/cvf-nis-t1e-frozen-legacy-2026-10-05.json",
+   "preimage": "ABSENT_AT_BASE",
+   "postimage": {
+    "rawSha256": "98a1d469d8ca5166ca5d44bedb19518d0e249aa8cc515af3861ae15312e6c554",
+    "gitBlobOfWorkingBytes": "eef2d5bd870d7a07acc2506e86dee014c9748525"
+   },
+   "role": "evidence"
+  },
+  {
+   "path": "docs/reviews/evidence/cvf-nis-t1e-acceptance-execution-2026-10-05.json",
+   "preimage": "ABSENT_AT_BASE",
+   "postimage": {
+    "rawSha256": "ff715b9d26d89bea4e3f3ec8d30ba806dc1f5ee2e460c2b5de9a67df9ed23e4a",
+    "gitBlobOfWorkingBytes": "58c9389e036bcbe8356c763ec0a5d26cdee70845"
+   },
+   "role": "evidence"
+  },
+  {
+   "path": "docs/reviews/evidence/cvf-nis-t1e-implementation-binding-2026-10-05.json",
+   "preimage": "ABSENT_AT_BASE",
+   "postimage": "NOT_SELF_HASHED_TO_AVOID_CIRCULAR_BINDING; the return raw digest is recorded in the detached ignored scratch file .cvf/runtime/nis-t1e-worker-20261005/return-digest.txt",
+   "role": "binding evidence"
+  },
+  {
+   "path": "docs/reviews/CVF_NIS_T1E_EXPLICIT_OPEN_ITEMS_CONSUMER_WORKER_RETURN_2026-10-05.md",
+   "preimage": "ABSENT_AT_BASE",
+   "postimage": "NOT_SELF_HASHED_TO_AVOID_CIRCULAR_BINDING; the return raw digest is recorded in the detached ignored scratch file .cvf/runtime/nis-t1e-worker-20261005/return-digest.txt",
+   "role": "worker return"
+  }
+ ],
+ "readOnlyPinsRecomputed": {
+  "count": 25,
+  "allUnchanged": true,
+  "pins": [
+   {
+    "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-review-api.ts",
+    "rawSha256": "8b7eecf6b16bf64aef9e50ed88b70f339c41f6c6949ec99fea1b23c455a1c77d",
+    "unchanged": true
+   },
+   {
+    "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-review-client.ts",
+    "rawSha256": "a6967c65a142c1d1805fbd98548ce326f462f5eefe1609ff70404c89684a472d",
+    "unchanged": true
+   },
+   {
+    "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-file-store.ts",
+    "rawSha256": "3686affcccf45fc01eac4c9fefdea015de1f28021a0af8c2e13a4b1bf038a0fc",
+    "unchanged": true
+   },
+   {
+    "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-actor.ts",
+    "rawSha256": "987c5ab042f68f31d21b0394f039912cc50e6783314a0afe26925e95f8f69ce1",
+    "unchanged": true
+   },
+   {
+    "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-private-profile.ts",
+    "rawSha256": "2b9f957a0e318077b67555bbe34120f29df6e302e24f23b831cb92190b9e5a17",
+    "unchanged": true
+   },
+   {
+    "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-security-fixture.ts",
+    "rawSha256": "2f2d5620ce7e73869d1aa9c4214133d0254ed7e2ac7a3f8db44a7ca3bde5c756",
+    "unchanged": true
+   },
+   {
+    "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/SpecExport.tsx",
+    "rawSha256": "24617b9ef2f53e6ac5cf5e4907eaa2dea2d0ba8fbe1578714f8cba22338be2a9",
+    "unchanged": true
+   },
+   {
+    "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/spec-export-portable-handoff.ts",
+    "rawSha256": "8528e8274bb82015398ce7deb10292aff6c7b5a06db83b25c6d8346b7a440795",
+    "unchanged": true
+   },
+   {
+    "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecConfirmation.tsx",
+    "rawSha256": "d411429c5eb77821d345959fec27e2c5a88cc26fb2f38f4ae7e24ee7b95ff58e",
+    "unchanged": true
+   },
+   {
+    "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/intent-spec/reviews/route.ts",
+    "rawSha256": "32d6e97ab57d4d5e05a53daaf2128905e2b99a18af5c02d4e9adad62c5a8107a",
+    "unchanged": true
+   },
+   {
+    "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/intent-spec/reviews/[id]/route.ts",
+    "rawSha256": "c7e9c3d5b504f5071788a4a1004f544a9e04a79ef75adc53fbb1bf8a72dd2fc5",
+    "unchanged": true
+   },
+   {
+    "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/test/setup.ts",
+    "rawSha256": "bc573b2a6133b07404c42f797bce43fe73464711e0281f29da8234bf2fed6b27",
+    "unchanged": true
+   },
+   {
+    "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/test/load-local-env.ts",
+    "rawSha256": "11d7f7e3e50977d5ae532895611040dfc46d1530a96116778b6314bc54f81878",
+    "unchanged": true
+   },
+   {
+    "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/test/provider-execution-guard.ts",
+    "rawSha256": "1d2af9bba82faaf50e07a52ecfb04ff0c19d3ec90ed0b5f4111c0f52b67671a9",
+    "unchanged": true
+   },
+   {
+    "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/package.json",
+    "rawSha256": "f03fc2c2700e904dc88e10395d0856983b9b0f9e6f27150713fa402f9e9fe24b",
+    "unchanged": true
+   },
+   {
+    "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/package-lock.json",
+    "rawSha256": "d23ae4aa094b97a2c9149ed84227e9ddd3255db9df67efba8218e7c61e5c4d8b",
+    "unchanged": true
+   },
+   {
+    "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/vitest.config.ts",
+    "rawSha256": "9a4a65976b5b7a5d038f9cb412a90d417f804108cf1dd33bae4421989a863420",
+    "unchanged": true
+   },
+   {
+    "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tsconfig.json",
+    "rawSha256": "d4af4823c8a2919796c5faa29805cd152217fbc25d6021c2da57541a685ea0f6",
+    "unchanged": true
+   },
+   {
+    "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/eslint.config.mjs",
+    "rawSha256": "d0ccd1757c31535cdd7762fcfbfa1677a97fef2543b61e2e09322ade86797ffb",
+    "unchanged": true
+   },
+   {
+    "path": "DESIGN.md",
+    "rawSha256": "15c1b5061bd2e1f763638beb83a84d06eb8ccbc470747c01f236033a834a987e",
+    "unchanged": true
+   },
+   {
+    "path": "docs/reviews/CVF_NIS_T1D_SELECTED_CAPABILITY_CONSUMER_CONTRACT_COMPLETION_2026-10-05.md",
+    "rawSha256": "21dd5da416234e9cedbc77fc5a90e50a42162acf3a63f928e41593151b809d4c",
+    "unchanged": true
+   },
+   {
+    "path": "docs/reviews/CVF_NIS_T1D_CONSUMER_IMPLEMENTATION_CONTRACT_2026-10-05.md",
+    "rawSha256": "a97cac551001c084dcfa0e80c4632983b3bc75493a8956dc9d16513b4e0a2f03",
+    "unchanged": true
+   },
+   {
+    "path": "docs/reviews/evidence/cvf-nis-t1d-acceptance-plan-2026-10-05.json",
+    "rawSha256": "6bbd1904a0b1319d345180fb4566d5b473e6b0c232cea5ced134f45096d7706c",
+    "unchanged": true
+   },
+   {
+    "path": "docs/reviews/evidence/cvf-nis-t1d-local-independent-review-2026-10-05.json",
+    "rawSha256": "abbf704eb2e835e38b22c0c06d2945caa6ffdc5d52e87cd991cd0853d1e65314",
+    "unchanged": true
+   },
+   {
+    "path": "docs/reviews/evidence/cvf-nis-t1c-scenario-2026-10-05.json",
+    "rawSha256": "40b2b1b0a8aca2004403915188cd050eb296103059a5070eee5b4ce2861d6e0b",
+    "unchanged": true
+   }
+  ]
+ },
+ "envelope": {
+  "gitStatusShort": [
+   " M EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecReview.test.tsx",
+   " M EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecReview.tsx",
+   " M EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-acceptance.test.ts",
+   " M EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-acceptance.ts",
+   " M EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-confirmation.test.ts",
+   " M EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-confirmation.ts",
+   " M EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-review-api.test.ts",
+   " M EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-review.test.ts",
+   " M EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-review.ts",
+   "?? EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-legacy-golden.test.ts",
+   "?? EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-open-items.test.ts",
+   "?? EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-open-items.ts",
+   "?? docs/reviews/CVF_NIS_T1E_EXPLICIT_OPEN_ITEMS_CONSUMER_WORKER_RETURN_2026-10-05.md",
+   "?? docs/reviews/evidence/cvf-nis-t1e-acceptance-execution-2026-10-05.json",
+   "?? docs/reviews/evidence/cvf-nis-t1e-frozen-legacy-2026-10-05.json",
+   "?? docs/reviews/evidence/cvf-nis-t1e-implementation-binding-2026-10-05.json"
+  ],
+  "changedPathsOutsideOwnedSet": [],
+  "ownedSetSize": 16,
+  "note": "The return and this file are listed once written; extra must be empty at the final check."
+ },
+ "evidenceFileHashes": {
+  "preEdit": {
+   "path": ".cvf/runtime/nis-t1e-worker-20261005/preedit-hash-ledger.txt",
+   "sha256": "7aaf37b20447575457c44f67d10cfaf346b53306a588f2a60dfd237b8f573d11"
+  },
+  "frozenLegacy": {
+   "path": "docs/reviews/evidence/cvf-nis-t1e-frozen-legacy-2026-10-05.json",
+   "sha256": "98a1d469d8ca5166ca5d44bedb19518d0e249aa8cc515af3861ae15312e6c554"
+  },
+  "acceptanceExecution": {
+   "path": "docs/reviews/evidence/cvf-nis-t1e-acceptance-execution-2026-10-05.json",
+   "sha256": "ff715b9d26d89bea4e3f3ec8d30ba806dc1f5ee2e460c2b5de9a67df9ed23e4a"
+  },
+  "workerPreImplementationReceipt": {
+   "path": ".cvf/runtime/nis-t1e-worker-20261005/pre-implementation/pre-implementation.json",
+   "sha256": "19e4b342e10af767ea553a2388dcd46a25db80065cd88ac41c524a61528e09e2"
+  },
+  "workerPreImplementationLog": {
+   "path": ".cvf/runtime/nis-t1e-worker-20261005/pre-implementation-worker.log",
+   "sha256": "4ad85f26a1c230943ce0d134f667c11501f61b3c284dd5d01aa632424bd812d6"
+  },
+  "captureHarnessTest": {
+   "path": ".cvf/runtime/nis-t1e-worker-20261005/capture/capture.test.ts",
+   "sha256": "c9e8f7b0bb7975572a3e011376db8257410dd423156312d45b337c11e8c26d49"
+  },
+  "captureHarnessConfig": {
+   "path": ".cvf/runtime/nis-t1e-worker-20261005/capture/vitest.capture.config.mjs",
+   "sha256": "78ca351efa6505705b509d269b3be9e3c75c541639c7855e1d8fcde8cc19e751"
+  },
+  "captureRawOutput": {
+   "path": ".cvf/runtime/nis-t1e-worker-20261005/capture/capture-output.json",
+   "sha256": "8024f9191308c9eb26d557bb2c7cebeca5cf9ed553afbada27bc57f2a317010b"
+  },
+  "captureRun1Failed": {
+   "path": ".cvf/runtime/nis-t1e-worker-20261005/capture-run1.log",
+   "sha256": "b7733c12f0eab72760d8eb49ab6353939d328bb3ed6b50b7cab329d8d9b56b6b"
+  },
+  "captureRun2": {
+   "path": ".cvf/runtime/nis-t1e-worker-20261005/capture-run2.log",
+   "sha256": "235bf556849690dbdb42bfa3e6c032aa1c9531eb8b46cc62c9ca51e99f2c1819"
+  },
+  "captureRun3": {
+   "path": ".cvf/runtime/nis-t1e-worker-20261005/capture-run3.log",
+   "sha256": "fcc887efa80f72195c3181ad4cc086c74e1fb40017e7861e889d25c294b0116e"
+  },
+  "finalFocusedVitest": {
+   "path": ".cvf/runtime/nis-t1e-worker-20261005/final-vitest-focused.log",
+   "sha256": "360f686a47efe9939766d59717720c40ed11759a6af024581c0d356fbd9ae136"
+  },
+  "finalApiVitest": {
+   "path": ".cvf/runtime/nis-t1e-worker-20261005/final-vitest-api.log",
+   "sha256": "50b0488a44f7c26f66aa50f40127007d0da2b97c7d5a0e301035715ce78b8ede"
+  },
+  "finalTsc": {
+   "path": ".cvf/runtime/nis-t1e-worker-20261005/final-tsc.log",
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "finalEslint": {
+   "path": ".cvf/runtime/nis-t1e-worker-20261005/final-eslint.log",
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "downgradeScratchTest": {
+   "path": ".cvf/runtime/nis-t1e-worker-20261005/downgrade/downgrade.test.ts",
+   "sha256": "c97445f6f61fa137ecd31dfd4311020226b0e722caca00d1f06906963e2d3590"
+  },
+  "downgradeScratchRun": {
+   "path": ".cvf/runtime/nis-t1e-worker-20261005/downgrade-run1.log",
+   "sha256": "6b129c7b6b25d099b678165b67d7eaf397f00ece3cd42e48f7ef04e84a3f7bfd"
+  }
+ },
+ "goldenProvenance": {
+  "capturedFrom": "unmodified native producers at the legacy base blobs (git diff a27c13fa7..0c6b5a767 over cvf-web/src was empty)",
+  "neverRegeneratedFromChangedCode": true,
+  "frozenControls": [
+   "LG1 en",
+   "LG2 vi",
+   "LG3 second job en"
+  ]
+ },
+ "noCommitStatement": "Nothing was staged, committed, stashed or discarded by the worker.",
+ "claimBoundary": "Source and evidence binding for a synthetic consumer implementation. Not live governance, real store or identity, UX, build readiness or any deploy or public effect."
+}

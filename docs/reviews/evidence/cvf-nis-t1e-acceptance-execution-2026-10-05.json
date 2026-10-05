@@ -1,0 +1,454 @@
+{
+ "schemaVersion": "cvf.nisT1eAcceptanceExecution.v1",
+ "batchId": "CVF-NIS-T1E",
+ "executionBaseHead": "0c6b5a767b33de6e98cc36b6147a8aed1dcb6526",
+ "statement": "Execution ledger for the T1E implementation. The T1D plan keeps its 44 historical NOT_EXECUTED rows; this ledger maps each of those cases and the Local corrections to the tests and commands that actually ran. Inputs precede expectations in every fixture. Synthetic content, schema and UI behaviour only; not live governance, store, identity or real non-coder UX evidence.",
+ "planRef": {
+  "path": "docs/reviews/evidence/cvf-nis-t1d-acceptance-plan-2026-10-05.json",
+  "sha256": "6bbd1904a0b1319d345180fb4566d5b473e6b0c232cea5ced134f45096d7706c",
+  "plannedCases": 44
+ },
+ "commands": [
+  {
+   "id": "CMD-FOCUSED",
+   "command": "node node_modules/vitest/vitest.mjs run src/lib/intent-spec-open-items.test.ts src/lib/intent-spec-legacy-golden.test.ts src/lib/intent-spec-review.test.ts src/lib/intent-spec-confirmation.test.ts src/lib/intent-spec-acceptance.test.ts src/components/IntentSpecReview.test.tsx",
+   "cwd": "cvf-web package root",
+   "exit": 0,
+   "files": 6,
+   "tests": 140,
+   "perFile": {
+    "open-items": 18,
+    "legacy-golden": 10,
+    "review": 28,
+    "confirmation": 13,
+    "acceptance": 58,
+    "IntentSpecReview.component": 13
+   },
+   "log": ".cvf/runtime/nis-t1e-worker-20261005/final-vitest-focused.log",
+   "logSha256": "360f686a47efe9939766d59717720c40ed11759a6af024581c0d356fbd9ae136"
+  },
+  {
+   "id": "CMD-API",
+   "command": "node node_modules/vitest/vitest.mjs run src/lib/intent-spec-review-api.test.ts -t \"saves exact confirmed content under the request actor|NIS T1E synthetic v2 save and reopen\"",
+   "exit": 0,
+   "passed": 3,
+   "skippedBySelection": 19,
+   "log": ".cvf/runtime/nis-t1e-worker-20261005/final-vitest-api.log",
+   "logSha256": "50b0488a44f7c26f66aa50f40127007d0da2b97c7d5a0e301035715ce78b8ede"
+  },
+  {
+   "id": "CMD-TSC",
+   "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+   "exit": 0,
+   "output": "empty; no package-wide failure present, so no preexisting failure needed separate recording",
+   "log": ".cvf/runtime/nis-t1e-worker-20261005/final-tsc.log",
+   "logSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+   "id": "CMD-ESLINT",
+   "command": "node node_modules/eslint/bin/eslint.js --max-warnings 0 <twelve changed source and test paths>",
+   "exit": 0,
+   "log": ".cvf/runtime/nis-t1e-worker-20261005/final-eslint.log",
+   "logSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+   "id": "CMD-DOWNGRADE-SCRATCH",
+   "command": "vitest run --config .cvf/runtime/nis-t1e-worker-20261005/downgrade/vitest.downgrade.config.mjs",
+   "exit": 0,
+   "tests": 1,
+   "log": ".cvf/runtime/nis-t1e-worker-20261005/downgrade-run1.log",
+   "logSha256": "6b129c7b6b25d099b678165b67d7eaf397f00ece3cd42e48f7ef04e84a3f7bfd"
+  }
+ ],
+ "notRun": "Full package tests, measured private and security groups, actor and profile suites, browser, server, build and any provider or network step, as the order excludes them.",
+ "diagnosticRuns": {
+  "capture-run1.log": {
+   "note": "frozen capture config path error (scratch only); retained",
+   "sha256": "b7733c12f0eab72760d8eb49ab6353939d328bb3ed6b50b7cab329d8d9b56b6b"
+  },
+  "vitest-review-1.log": {
+   "note": "two review cases failed: a regex expectation of mine was wrong, and openItems null was accepted as an empty list. The null case is a real defect found by the test and fixed in intent-spec-review.ts.",
+   "sha256": "2919d025d6456614ab92602ab183b4f59d28f32f1c3de43e0d723add30e74ed0"
+  },
+  "vitest-conf-1.log": {
+   "note": "one confirmation case failed on a wrong expected key order of the review object; the expectation was corrected to the producer order",
+   "sha256": "9ddfb3d9c0ccd8b492c1f5d687b121d2497c0a687cfdae57d06fa55420356d66"
+  },
+  "vitest-existing-1.log": {
+   "note": "existing four files after production edits: 47 passed",
+   "sha256": "d449a1e5da000af2b59109533ac7a65f91b373fc9c573dba37a3e4a4b481187a"
+  }
+ },
+ "cases": {
+  "AC-L1": {
+   "status": "PASS",
+   "actualTests": [
+    "lib/intent-spec-legacy-golden.test.ts :: AC-L1/L2/L8 %s (LG1 en, LG2 vi draft bytes and sha256)"
+   ],
+   "disclosure": ""
+  },
+  "AC-L2": {
+   "status": "PASS",
+   "actualTests": [
+    "lib/intent-spec-legacy-golden.test.ts :: AC-L1/L2/L8 %s (LG1, LG2, LG3 fileContent, fileSha256, bindingKey)",
+    "lib/intent-spec-confirmation.test.ts :: keeps schema v1 and the original payload key order for a state without items"
+   ],
+   "disclosure": ""
+  },
+  "AC-L3": {
+   "status": "PASS",
+   "actualTests": [
+    "lib/intent-spec-legacy-golden.test.ts :: AC-L3 %s (frozen bytes accepted unchanged; record id, record and readback)"
+   ],
+   "disclosure": ""
+  },
+  "AC-L4": {
+   "status": "PASS",
+   "actualTests": [
+    "lib/intent-spec-legacy-golden.test.ts :: AC-L4: the frozen v1 file with an injected openItems key is rejected",
+    "lib/intent-spec-acceptance.test.ts :: AC-L4: a v1-labelled file with an openItems key is rejected"
+   ],
+   "disclosure": ""
+  },
+  "AC-L5": {
+   "status": "PASS",
+   "actualTests": [
+    "all pre-existing cases of the four existing test files plus the API file selection"
+   ],
+   "disclosure": "git diff --numstat shows zero deleted lines in every modified test file; the pre-existing cases ran green after the production edits (47 cases, log vitest-existing-1.log) and in the final run."
+  },
+  "AC-L6": {
+   "status": "PASS",
+   "actualTests": [
+    "lib/intent-spec-review-api.test.ts :: POST /api/intent-spec/reviews saves exact confirmed content under the request actor and reads it back by ID"
+   ],
+   "disclosure": "Only this one pre-existing API case was run, as the order narrows the API selection; the other 19 cases of that file were skipped by selection, not run."
+  },
+  "AC-L7": {
+   "status": "PASS_CORRECTED",
+   "actualTests": [
+    "lib/intent-spec-legacy-golden.test.ts :: AC-L7 (Local-corrected): adding then removing an item never rewinds the revision, and equal-revision item-free bytes match",
+    "lib/intent-spec-review.test.ts :: keeps item-free output unchanged and returns an item-free decision shape after the last item is removed"
+   ],
+   "disclosure": "Corrected per Local LD-2: revision moves forward by two and acknowledgement is not restored; bytes compared only with an item-free control at the same revision, acknowledgement, clock, reviewer and actor."
+  },
+  "AC-L8": {
+   "status": "PASS",
+   "actualTests": [
+    "lib/intent-spec-legacy-golden.test.ts :: AC-L1/L2/L8 %s (LG3 second job)"
+   ],
+   "disclosure": ""
+  },
+  "AC-V1": {
+   "status": "PASS",
+   "actualTests": [
+    "lib/intent-spec-confirmation.test.ts :: AC-V1: any open item selects schema v2 with the same seven payload keys and the unchanged scope"
+   ],
+   "disclosure": ""
+  },
+  "AC-V2": {
+   "status": "PASS",
+   "actualTests": [
+    "lib/intent-spec-acceptance.test.ts :: AC-V2: accepts a valid v2 file, binds the revision, and verifies readback through the synthetic port"
+   ],
+   "disclosure": ""
+  },
+  "AC-V3": {
+   "status": "PASS",
+   "actualTests": [
+    "lib/intent-spec-acceptance.test.ts :: AC-V3: rejects an edited item text with a recomputed payload hash when the stored draft is left as it was"
+   ],
+   "disclosure": ""
+  },
+  "AC-V4": {
+   "status": "PASS",
+   "actualTests": [
+    "lib/intent-spec-acceptance.test.ts :: AC-V4: rejects %s even with a rebuilt draft and recomputed hashes (27 rows)",
+    "lib/intent-spec-acceptance.test.ts :: AC-V4: the baseline for those mutations is accepted, and exactly fifty items are accepted while fifty-one are not"
+   ],
+   "disclosure": "The 51-item row is 3 base items plus 48 added items. Rows run through it.each, so the 27 rows are 27 test invocations."
+  },
+  "AC-V5": {
+   "status": "PASS",
+   "actualTests": [
+    "lib/intent-spec-acceptance.test.ts :: AC-V5: one canonical encoding per state"
+   ],
+   "disclosure": ""
+  },
+  "AC-V6": {
+   "status": "PASS",
+   "actualTests": [
+    "lib/intent-spec-acceptance.test.ts :: AC-V6: rejects an invented build grant or readiness assertion even with rebuilt and rehashed bytes"
+   ],
+   "disclosure": ""
+  },
+  "AC-V7": {
+   "status": "PASS",
+   "actualTests": [
+    "lib/intent-spec-confirmation.test.ts :: is deterministic for equal state, and binds the items into the binding key"
+   ],
+   "disclosure": ""
+  },
+  "AC-B1": {
+   "status": "PASS",
+   "actualTests": [
+    "lib/intent-spec-review.test.ts :: AC-B1: the fourth unknown is kept with the first three, in creation order, without truncation or completeness claim"
+   ],
+   "disclosure": "Item order follows decision order then creation order, so the conflict listed last; assertions use that order."
+  },
+  "AC-B2": {
+   "status": "PASS",
+   "actualTests": [
+    "lib/intent-spec-review.test.ts :: AC-B2: a stage with only the conflict does not demand an unknown the user has not supplied"
+   ],
+   "disclosure": ""
+  },
+  "AC-B3": {
+   "status": "PASS",
+   "actualTests": [
+    "lib/intent-spec-confirmation.test.ts :: AC-B3: open and delegated items never block confirmation, but a decision-level conflict still does",
+    "lib/intent-spec-review.test.ts :: AC-B3 (state level): open items never block, but a stale item or a decision-level conflict still does"
+   ],
+   "disclosure": ""
+  },
+  "AC-B4": {
+   "status": "PASS_ADJUSTED",
+   "actualTests": [
+    "lib/intent-spec-review.test.ts :: AC-B4: a resolved conflict shows the user decision and both original cited snapshots; the source packet is untouched"
+   ],
+   "disclosure": "The effective decision renders as a label line followed by a quoted block, so the assertion checks the label and the quoted text separately instead of one single-line string named in the plan."
+  },
+  "AC-B5": {
+   "status": "PASS",
+   "actualTests": [
+    "lib/intent-spec-review.test.ts :: AC-B5: a cited-source change marks only the affected items stale and blocks until each is explicitly reconfirmed",
+    "lib/intent-spec-review.test.ts :: AC-B5: a reconfirm of one item leaves every other stale item stale",
+    "lib/intent-spec-confirmation.test.ts :: AC-B5: a stale item blocks creation until it is explicitly reconfirmed and the revision is viewed again",
+    "components/IntentSpecReview.test.tsx :: AC-U3/U4: a stale point blocks continuation until it is explicitly checked again"
+   ],
+   "disclosure": ""
+  },
+  "AC-B6": {
+   "status": "PASS",
+   "actualTests": [
+    "lib/intent-spec-review.test.ts :: AC-B6: an unrelated brief change keeps the designed all-decisions rule but flags no item that does not cite it"
+   ],
+   "disclosure": ""
+  },
+  "AC-B7": {
+   "status": "PASS",
+   "actualTests": [
+    "lib/intent-spec-review.test.ts :: AC-B7: an items-only change preserves the decision answer, disposition, stale flag and source snapshot"
+   ],
+   "disclosure": ""
+  },
+  "AC-B8": {
+   "status": "PASS",
+   "actualTests": [
+    "lib/intent-spec-review.test.ts :: AC-B8: every real item change bumps the revision and clears acknowledgement; a no-op returns the same state"
+   ],
+   "disclosure": ""
+  },
+  "AC-B9": {
+   "status": "PASS",
+   "actualTests": [
+    "lib/intent-spec-review.test.ts :: AC-B9: delegation records the user boundary, counts apart from resolved, and chooses no default"
+   ],
+   "disclosure": ""
+  },
+  "AC-B10": {
+   "status": "SPLIT_PASS",
+   "actualTests": [
+    "lib/intent-spec-open-items.test.ts :: refuses the 51st item without truncating or resetting earlier items",
+    "lib/intent-spec-acceptance.test.ts :: AC-V4: the baseline ... exactly fifty items are accepted while fifty-one are not",
+    "lib/intent-spec-review.test.ts :: AC-B1 (five items retained)"
+   ],
+   "disclosure": "The plan names an intermediate twelve-item run; no separate twelve-item test exists. Fifty items retained in order and the 51st refused are covered, and the five-item fixture keeps every item. Disclosed as a split, not as a twelve-item run."
+  },
+  "AC-B11": {
+   "status": "PASS",
+   "actualTests": [
+    "lib/intent-spec-open-items.test.ts :: keeps trimmed meaningful text and refuses placeholders, blanks and over-length text without changing anything"
+   ],
+   "disclosure": ""
+  },
+  "AC-B12": {
+   "status": "PASS",
+   "actualTests": [
+    "lib/intent-spec-review.test.ts :: AC-B12/B13/B14: a different job with a cross-question conflict, a free unknown and fewer than four unknowns"
+   ],
+   "disclosure": ""
+  },
+  "AC-B13": {
+   "status": "PASS",
+   "actualTests": [
+    "lib/intent-spec-review.test.ts :: AC-B12/B13/B14 (free unknown U2 never stale, acknowledgement cleared by the revision)",
+    "lib/intent-spec-open-items.test.ts :: marks an item stale only for its own cited fields, stickily, and treats a missing field as changed"
+   ],
+   "disclosure": ""
+  },
+  "AC-B14": {
+   "status": "PASS",
+   "actualTests": [
+    "lib/intent-spec-review.test.ts :: AC-B12/B13/B14 (open 2, delegated 1, no minimum count)"
+   ],
+   "disclosure": ""
+  },
+  "AC-B15": {
+   "status": "PASS",
+   "actualTests": [
+    "lib/intent-spec-review.test.ts :: AC-B15: viewed confirmation, decisions still pending, unresolved items and readiness are separate facts"
+   ],
+   "disclosure": ""
+  },
+  "AC-B16": {
+   "status": "PASS_WITH_DISCLOSURE",
+   "actualTests": [
+    "lib/intent-spec-review.test.ts :: AC-B16: the Vietnamese projection carries the same structure behind the encoding exception header",
+    "lib/intent-spec-open-items.test.ts :: has a label and a message for every kind, status and error in both languages",
+    "components/IntentSpecReview.test.tsx :: localizes the open point controls and counts in Vietnamese"
+   ],
+   "disclosure": "Labels and messages are asserted present in both languages; no automated scan for a raw key leaking into rendered text was written."
+  },
+  "AC-B17": {
+   "status": "PASS",
+   "actualTests": [
+    "lib/intent-spec-review.test.ts :: AC-B17: removing an unknown drops it from the draft, bumps the revision and clears acknowledgement"
+   ],
+   "disclosure": ""
+  },
+  "AC-B18": {
+   "status": "PASS",
+   "actualTests": [
+    "lib/intent-spec-review.test.ts :: AC-B18: prose that says UNKNOWN creates no item and leaves the draft in its item-free shape"
+   ],
+   "disclosure": ""
+  },
+  "AC-U1": {
+   "status": "PASS",
+   "actualTests": [
+    "components/IntentSpecReview.test.tsx :: AC-U1: stores a valid open point ... without any network call",
+    "components/IntentSpecReview.test.tsx :: AC-U1: invalid input shows the reason and stores nothing"
+   ],
+   "disclosure": ""
+  },
+  "AC-U2": {
+   "status": "PASS",
+   "actualTests": [
+    "components/IntentSpecReview.test.tsx :: AC-U2: counts of open points show apart from items needing a decision and from viewing"
+   ],
+   "disclosure": ""
+  },
+  "AC-U3": {
+   "status": "PASS",
+   "actualTests": [
+    "components/IntentSpecReview.test.tsx :: AC-U3/U4: a stale point blocks continuation until it is explicitly checked again"
+   ],
+   "disclosure": ""
+  },
+  "AC-U4": {
+   "status": "PASS",
+   "actualTests": [
+    "components/IntentSpecReview.test.tsx :: AC-U3/U4 (hook canContinue true with open points, false with a stale point)",
+    "components/IntentSpecReview.test.tsx :: leaves unrelated templates without any open point control"
+   ],
+   "disclosure": ""
+  },
+  "AC-U5": {
+   "status": "PASS",
+   "actualTests": [
+    "components/IntentSpecReview.test.tsx :: the six pre-existing cases"
+   ],
+   "disclosure": ""
+  },
+  "AC-I1": {
+   "status": "PASS",
+   "actualTests": [
+    "lib/intent-spec-review-api.test.ts :: NIS T1E synthetic v2 save and reopen saves a v2 candidate with open items under the request actor, reads it back and reopens the stored draft"
+   ],
+   "disclosure": "Portable disposable-root fixture of the existing API test file; no measured private profile."
+  },
+  "AC-I2": {
+   "status": "PASS",
+   "actualTests": [
+    "lib/intent-spec-review-api.test.ts :: NIS T1E synthetic v2 save and reopen keeps v1 and v2 records of the same actor distinct and both reopenable, and refuses a stale-marked v2 file"
+   ],
+   "disclosure": ""
+  },
+  "AC-I3": {
+   "status": "PASS_SCRATCH_ONLY",
+   "actualTests": [
+    "scratch harness .cvf/runtime/nis-t1e-worker-20261005/downgrade/downgrade.test.ts :: legacy verifier versus v2"
+   ],
+   "disclosure": "Not a tracked test: the plan placed it in the golden test, but a frozen copy of the base verifier would need a duplicated module graph. A scratch run applied the unmodified a27c13fa7 verifier to a v2 file and it failed closed with INVALID_SPEC_REVIEW_FILE while accepting the v1 file."
+  },
+  "AC-S1": {
+   "status": "PASS",
+   "actualTests": [
+    "tsc --noEmit exit 0",
+    "eslint --max-warnings 0 exit 0 on the twelve changed source and test paths"
+   ],
+   "disclosure": ""
+  },
+  "AC-S2": {
+   "status": "PASS",
+   "actualTests": [
+    "git status --short lists only the sixteen owned paths; read-only pins unchanged (see implementation binding)"
+   ],
+   "disclosure": ""
+  },
+  "AC-S3": {
+   "status": "PASS",
+   "actualTests": [
+    "source scan for NEEDS CLARIFICATION, EXECUTE_COMMAND, speckit and Spec Kit in changed files returned nothing; package.json and lockfile unchanged"
+   ],
+   "disclosure": ""
+  }
+ },
+ "caseTotals": {
+  "planned": 44,
+  "PASS": 39,
+  "otherPassClasses": {
+   "PASS_ADJUSTED": 1,
+   "PASS_CORRECTED": 1,
+   "PASS_SCRATCH_ONLY": 1,
+   "PASS_WITH_DISCLOSURE": 1,
+   "SPLIT_PASS": 1
+  },
+  "FAIL": 0,
+  "BLOCKED": 0,
+  "NOT_EXECUTED": 0,
+  "invocationNote": "Cases map to tests many-to-many: some cases share one test, some tests use it.each, so 44 cases are not 44 test invocations. The tracked suites ran 143 invocations (140 focused plus 3 selected API) and one scratch invocation."
+ },
+ "localCorrections": {
+  "LD-1": {
+   "status": "APPLIED",
+   "evidence": "Summary in review header and appendix only; SpecExport and the readiness helper are byte-identical; items-only update test AC-B7"
+  },
+  "LD-2": {
+   "status": "APPLIED",
+   "evidence": "AC-L7 rewritten in the golden test: revision moves forward, acknowledgement is not restored, bytes compared at equal revision, acknowledgement, clock, reviewer and actor"
+  },
+  "LD-3": {
+   "status": "NOT_APPLICABLE_TO_CODE",
+   "evidence": "Source-reading clarification; no product effect"
+  },
+  "LD-4": {
+   "status": "NOT_APPLICABLE_TO_CODE",
+   "evidence": "Concerns future tasks tracing; no tasks or plan artifact was built"
+  },
+  "LD-5": {
+   "status": "APPLIED",
+   "evidence": "Nine item keys in order, own safe cited fields, bounded text and resolution and delegation length, explicit per-item reconfirm, overlapping user rules shown without a winner (open-items tests, review tests, acceptance AC-V4 rows)"
+  },
+  "LD-6": {
+   "status": "NOT_APPLICABLE_TO_CODE",
+   "evidence": "Local envelope blocks in governed copies"
+  }
+ },
+ "fixtureNotes": {
+  "FX-A": "Stage S0 holds only the conflict; S1 supplies U1 to U4 at the stage the user has them; no case demands an unknown earlier.",
+  "FX-B": "A different job: cross-question conflict, a delegated item, a free unknown, two unknowns plus one conflict, zero-item control LG3. The conflict is fixture data, not a claim that identity requires login."
+ },
+ "claimBoundary": "Synthetic unit, component and portable-fixture results only. No AI inference, upstream code, provider, real operator store, identity, UAC, build, deploy or public effect. A passing run is not live AI governance, real non-coder UX or build readiness."
+}

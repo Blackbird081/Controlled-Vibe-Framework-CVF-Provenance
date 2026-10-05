@@ -1,8 +1,13 @@
 /** Portable review candidate only; no authenticated acceptance or storage guarantee. */
 import {
-    buildReviewedDraftPacket, getPendingReviewDecisions, isCurrentReviewAcknowledged,
+    buildReviewedDraftPacket, getPendingReviewDecisions, getReviewOpenItems, isCurrentReviewAcknowledged,
     type IntentSpecReviewState, type ReviewLanguage,
 } from './intent-spec-review';
+import { validateOpenItemSet, validateStoredOpenItem } from './intent-spec-open-items';
+
+export const CANDIDATE_SCHEMA_V1 = 'cvf.intentSpecReviewCandidate.v1';
+/** Used only when the user declared at least one open item; a state with none keeps the v1 bytes. */
+export const CANDIDATE_SCHEMA_V2 = 'cvf.intentSpecReviewCandidate.v2';
 
 export const MAX_CONFIRMATION_BYTES = 2 * 1024 * 1024;
 
@@ -32,10 +37,14 @@ export async function createSpecConfirmationCandidate(
     if (!isCurrentReviewAcknowledged(state) || getPendingReviewDecisions(state).length) {
         throw new Error('CURRENT_REVIEW_REQUIRED');
     }
+    const items = getReviewOpenItems(state);
+    // Items must be fresh and valid; the acceptance verifier applies the same rules to the saved bytes.
+    if (items.length && (validateOpenItemSet(items)
+        || items.some(item => validateStoredOpenItem(item, state.values)))) throw new Error('CURRENT_REVIEW_REQUIRED');
     // Copy to immutable strings before the first await; caller edits cannot affect the snapshot.
     const bindingKey = reviewBindingKey(state, language, reviewer);
     const payload = JSON.stringify({
-        schema: 'cvf.intentSpecReviewCandidate.v1',
+        schema: items.length ? CANDIDATE_SCHEMA_V2 : CANDIDATE_SCHEMA_V1,
         scope: 'SPEC_REVIEW_ONLY_NO_BUILD_AUTHORITY',
         reviewer: { name: reviewer.trim(), verification: 'SELF_DECLARED' },
         createdAt, language, review: JSON.parse(JSON.stringify(state)),

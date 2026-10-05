@@ -3,6 +3,10 @@ import { webcrypto } from 'node:crypto';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { acknowledgeIntentSpecReview, createIntentSpecReview, updateReviewDecision } from './intent-spec-review';
 import { createSpecConfirmationCandidate, MAX_CONFIRMATION_BYTES, reviewBindingKey, verifySpecConfirmationReadback } from './intent-spec-confirmation';
+import { createHash } from 'node:crypto';
+import { buildReviewedDraftPacket, synchronizeIntentSpecReview } from './intent-spec-review';
+import { CANDIDATE_SCHEMA_V1, CANDIDATE_SCHEMA_V2 } from './intent-spec-confirmation';
+import { createOpenItem, type OpenItemDraft } from './intent-spec-open-items';
 
 beforeEach(() => vi.stubGlobal('crypto', webcrypto));
 function reviewed() {
@@ -57,5 +61,114 @@ describe('portable content binding, without authenticated acceptance or storage 
     it('fails if cryptographic hashing is unavailable', async () => {
         vi.stubGlobal('crypto', { subtle: { digest: () => Promise.reject(new Error('Unavailable')) } });
         await expect(createSpecConfirmationCandidate(reviewed(), 'en', 'Reviewer')).rejects.toThrow('Unavailable');
+    });
+});
+
+// NIS T1E: schema selection and item-bearing candidates. Synthetic fixtures only.
+const T1E_VALUES = { problem: 'Synthetic fixture', targetUsers: 'Team leads', constraints: 'No employee scoring' };
+const T1E_CLOCK = '2026-10-05T00:00:00.000Z';
+function itemState(options: { acknowledge?: boolean; drafts?: OpenItemDraft[] } = {}) {
+    let state = createIntentSpecReview(T1E_VALUES, 'Exact draft\r\nend');
+    for (const decision of state.decisions) state = updateReviewDecision(state, decision.id, { answer: `Decision for ${decision.id}` });
+    const drafts: OpenItemDraft[] = options.drafts ?? [
+        { kind: 'UNKNOWN', status: 'OPEN', sourceFields: ['constraints'], text: 'Retention period is not decided.' },
+        { kind: 'CONFLICT', status: 'RESOLVED', sourceFields: ['constraints', 'targetUsers'], text: 'Scoring ban versus lead review.', resolution: 'Leads review totals only; no per-person score.' },
+    ];
+    for (const draft of drafts) {
+        const created = createOpenItem(draft, state.decisions.flatMap(decision => decision.openItems ?? []), state.values);
+        if (!created.ok) throw new Error(created.error);
+        const owner = state.decisions.find(decision => decision.id === 'data')!;
+        state = updateReviewDecision(state, 'data', { openItems: [...(owner.openItems ?? []), created.value] });
+    }
+    return options.acknowledge === false ? state : acknowledgeIntentSpecReview(state);
+}
+
+describe('NIS T1E candidate schema selection and open-item projection', () => {
+    it('keeps schema v1 and the original payload key order for a state without items', async () => {
+        const file = await createSpecConfirmationCandidate(reviewed(), 'en', 'Self-declared fixture', T1E_CLOCK);
+        const payload = JSON.parse(file.fileContent).payload;
+        expect(payload.schema).toBe(CANDIDATE_SCHEMA_V1);
+        expect(payload.schema).toBe('cvf.intentSpecReviewCandidate.v1');
+        expect(Object.keys(payload)).toEqual(['schema', 'scope', 'reviewer', 'createdAt', 'language', 'review', 'draft']);
+        expect(JSON.stringify(payload)).not.toContain('openItems');
+    });
+
+    it('AC-V1: any open item selects schema v2 with the same seven payload keys and the unchanged scope', async () => {
+        const state = itemState();
+        const file = await createSpecConfirmationCandidate(state, 'en', 'Self-declared fixture', T1E_CLOCK);
+        const parsed = JSON.parse(file.fileContent);
+        expect(parsed.payload.schema).toBe(CANDIDATE_SCHEMA_V2);
+        expect(Object.keys(parsed.payload)).toEqual(['schema', 'scope', 'reviewer', 'createdAt', 'language', 'review', 'draft']);
+        expect(parsed.payload.scope).toBe('SPEC_REVIEW_ONLY_NO_BUILD_AUTHORITY');
+        expect(Object.keys(parsed.payload.review)).toEqual(['revision', 'values', 'packetSource', 'acknowledgedRevision', 'decisions']);
+        const withItems = parsed.payload.review.decisions.filter((decision: Record<string, unknown>) => 'openItems' in decision);
+        expect(withItems.map((decision: { id: string }) => decision.id)).toEqual(['data']);
+        expect(Object.keys(withItems[0])).toEqual(['id', 'answer', 'disposition', 'needsReconfirmation', 'sourceValues', 'openItems']);
+        expect(Object.keys(withItems[0].openItems[0])).toEqual(['id', 'kind', 'text', 'sourceFields', 'sourceValues', 'status', 'resolution', 'delegation', 'needsReconfirmation']);
+        expect(parsed.payload.draft).toContain('Retention period is not decided.');
+        expect(parsed.payload.draft).toContain('Build readiness: NOT_ASSESSED');
+        expect(createHash('sha256').update(JSON.stringify(parsed.payload)).digest('hex')).toBe(parsed.payloadSha256);
+        expect(await verifySpecConfirmationReadback(file, bytes(file.fileContent))).toBe(true);
+    });
+
+    it('is deterministic for equal state, and binds the items into the binding key', async () => {
+        const state = itemState();
+        const first = await createSpecConfirmationCandidate(state, 'en', 'Self-declared fixture', T1E_CLOCK);
+        const second = await createSpecConfirmationCandidate(state, 'en', 'Self-declared fixture', T1E_CLOCK);
+        expect(second.fileContent).toBe(first.fileContent);
+        expect(second.fileSha256).toBe(first.fileSha256);
+        expect(first.bindingKey).toBe(reviewBindingKey(state, 'en', 'Self-declared fixture'));
+        const other = itemState({ drafts: [{ kind: 'UNKNOWN', status: 'OPEN', sourceFields: [], text: 'A different unknown.' }] });
+        const otherFile = await createSpecConfirmationCandidate(other, 'en', 'Self-declared fixture', T1E_CLOCK);
+        expect(otherFile.bindingKey).not.toBe(first.bindingKey);
+        expect(await verifySpecConfirmationReadback(first, bytes(otherFile.fileContent))).toBe(false);
+        expect(first.bindingKey).toContain('openItems');
+    });
+
+    it('AC-B3: open and delegated items never block confirmation, but a decision-level conflict still does', async () => {
+        const state = itemState({ drafts: [
+            { kind: 'UNKNOWN', status: 'OPEN', sourceFields: [], text: 'One.' }, { kind: 'UNKNOWN', status: 'OPEN', sourceFields: [], text: 'Two.' },
+            { kind: 'UNKNOWN', status: 'OPEN', sourceFields: [], text: 'Three.' }, { kind: 'UNKNOWN', status: 'OPEN', sourceFields: [], text: 'Four.' },
+            { kind: 'UNKNOWN', status: 'DELEGATED', sourceFields: [], text: 'Five.', delegation: 'Any common label.' },
+        ] });
+        const file = await createSpecConfirmationCandidate(state, 'en', 'Self-declared fixture', T1E_CLOCK);
+        expect(JSON.parse(file.fileContent).payload.schema).toBe(CANDIDATE_SCHEMA_V2);
+        const conflicted = acknowledgeIntentSpecReview(updateReviewDecision(state, 'access', { disposition: 'CONFLICT' }));
+        await expect(createSpecConfirmationCandidate(conflicted, 'en', 'Self-declared fixture', T1E_CLOCK)).rejects.toThrow('CURRENT_REVIEW_REQUIRED');
+    });
+
+    it('AC-B5: a stale item blocks creation until it is explicitly reconfirmed and the revision is viewed again', async () => {
+        const state = itemState();
+        const changed = { ...T1E_VALUES, constraints: 'No employee scoring or ranking' };
+        let stale = synchronizeIntentSpecReview(state, changed, 'Exact draft\r\nend');
+        await expect(createSpecConfirmationCandidate(acknowledgeIntentSpecReview(stale), 'en', 'Self-declared fixture', T1E_CLOCK)).rejects.toThrow('CURRENT_REVIEW_REQUIRED');
+        for (const id of ['data', 'exceptions', 'boundaries'] as const) stale = updateReviewDecision(stale, id, { reconfirm: true });
+        await expect(createSpecConfirmationCandidate(acknowledgeIntentSpecReview(stale), 'en', 'Self-declared fixture', T1E_CLOCK)).rejects.toThrow('CURRENT_REVIEW_REQUIRED');
+        for (const item of stale.decisions.find(decision => decision.id === 'data')!.openItems!) {
+            stale = updateReviewDecision(stale, 'data', { reconfirmItem: item.id });
+        }
+        const file = await createSpecConfirmationCandidate(acknowledgeIntentSpecReview(stale), 'en', 'Self-declared fixture', T1E_CLOCK);
+        expect(JSON.parse(file.fileContent).payload.review.decisions[2].openItems[0].sourceValues.constraints).toBe('No employee scoring or ranking');
+    });
+
+    it('refuses a state whose items bypassed the update path (duplicate ids, stale snapshot, bad shape)', async () => {
+        const state = itemState();
+        const data = state.decisions.find(decision => decision.id === 'data')!;
+        const forge = (items: unknown[]) => ({ ...state, decisions: state.decisions.map(decision => (decision.id === 'data' ? { ...decision, openItems: items as never } : decision)) });
+        const [a, b] = data.openItems!;
+        const forged = [
+            forge([a, { ...b, id: a.id, kind: a.kind }]), forge([{ ...a, sourceValues: { constraints: 'Forged.' } }, b]),
+            forge([{ ...a, extra: 1 }, b]), forge([{ ...a, text: 'tbd' }, b]),
+        ];
+        for (const bad of forged) await expect(createSpecConfirmationCandidate(bad, 'en', 'Self-declared fixture', T1E_CLOCK)).rejects.toThrow('CURRENT_REVIEW_REQUIRED');
+    });
+
+    it('v1 bytes for an item-free state do not depend on the new helpers (key order and draft are unchanged)', async () => {
+        const state = reviewed();
+        const file = await createSpecConfirmationCandidate(state, 'vi', 'Self-declared fixture', T1E_CLOCK);
+        const payload = JSON.parse(file.fileContent).payload;
+        expect(payload.draft).toBe(buildReviewedDraftPacket(state, 'vi'));
+        expect(JSON.stringify(payload.review)).toBe(JSON.stringify(JSON.parse(JSON.stringify(state))));
+        expect(Object.keys(payload.review.decisions[0])).toEqual(['id', 'answer', 'disposition', 'needsReconfirmation', 'sourceValues']);
     });
 });

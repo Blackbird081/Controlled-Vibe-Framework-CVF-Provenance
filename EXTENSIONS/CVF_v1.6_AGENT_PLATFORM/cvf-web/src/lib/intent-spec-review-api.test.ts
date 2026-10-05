@@ -17,6 +17,7 @@ import { admitPrivateStoreProfile, isPrivateSecurity, measureSecurity, PRIVATE_P
 import { createSpecConfirmationCandidate } from './intent-spec-confirmation';
 import { acknowledgeIntentSpecReview, createIntentSpecReview, updateReviewDecision } from './intent-spec-review';
 import { applyAdversary, FIXTURE_PREFIX, makePrivateRoot, removeFixture } from './intent-spec-security-fixture';
+import { createOpenItem } from './intent-spec-open-items';
 
 const sha = (text: string) => createHash('sha256').update(text).digest('hex');
 const admit = vi.mocked(admitPrivateStoreProfile);
@@ -203,5 +204,63 @@ describe.runIf(process.platform === 'win32')('with the real measured WINDOWS_SIN
         await applyAdversary(privateRoot, 'EXTRA_ALLOW');
         expect((await save()).response.status).toBe(503);
         expect(await fs.readdir(privateRoot)).toEqual([]);
+    });
+});
+
+// NIS T1E: portable synthetic round trip of the additive v2 candidate through the unchanged route handlers.
+async function t1eCandidate() {
+    let review = createIntentSpecReview({ coreFeatures: 'Synthetic reporting', constraints: 'Corrections until Friday 17:00' }, 'Synthetic exact packet');
+    for (const decision of review.decisions) review = updateReviewDecision(review, decision.id, { answer: `Decision ${decision.id}` });
+    const drafts = [
+        { kind: 'UNKNOWN' as const, status: 'OPEN' as const, sourceFields: ['constraints'], text: 'Retention period is not decided.' },
+        { kind: 'UNKNOWN' as const, status: 'OPEN' as const, sourceFields: [], text: 'Deadline timezone is not decided.' },
+        { kind: 'UNKNOWN' as const, status: 'OPEN' as const, sourceFields: [], text: 'Holiday behavior is not decided.' },
+        { kind: 'UNKNOWN' as const, status: 'OPEN' as const, sourceFields: [], text: 'Export file format is not decided.' },
+        { kind: 'CONFLICT' as const, status: 'RESOLVED' as const, sourceFields: ['coreFeatures', 'constraints'], text: 'Reporting versus late corrections.', resolution: 'Corrections allowed until the deadline only.' },
+    ];
+    for (const draft of drafts) {
+        const created = createOpenItem(draft, review.decisions.flatMap(decision => decision.openItems ?? []), review.values);
+        if (!created.ok) throw new Error(created.error);
+        const owner = review.decisions.find(decision => decision.id === 'data')!;
+        review = updateReviewDecision(review, 'data', { openItems: [...(owner.openItems ?? []), created.value] });
+    }
+    return createSpecConfirmationCandidate(acknowledgeIntentSpecReview(review), 'en', 'Fixture reviewer');
+}
+
+describe('NIS T1E synthetic v2 save and reopen', () => {
+    it('saves a v2 candidate with open items under the request actor, reads it back and reopens the stored draft', async () => {
+        const portable = await t1eCandidate();
+        expect(JSON.parse(portable.fileContent).payload.schema).toBe('cvf.intentSpecReviewCandidate.v2');
+        const response = await handleSaveReview(post({ candidate: portable.fileContent, expectedSha256: portable.fileSha256 }));
+        expect(response.status).toBe(201);
+        const body = await response.json();
+        expect(body).toMatchObject({ ok: true, state: 'STORE_PORT_READBACK_VERIFIED', claimBoundary: 'NO_DURABILITY_OR_BUILD_AUTHORITY', scope: 'SPEC_REVIEW_ONLY_NO_BUILD_AUTHORITY', sourceFileSha256: portable.fileSha256, revision: portable.revision, assurance: 'LOCAL_TEST_SESSION' });
+        const read = await handleReadReview(get(body.id), body.id);
+        const saved = await read.json();
+        expect(read.status).toBe(200);
+        expect(saved).toMatchObject({ ok: true, id: body.id, revision: portable.revision, language: 'en', claimBoundary: 'SPEC_REVIEW_ONLY_NO_BUILD_AUTHORITY' });
+        expect(saved.draft).toBe(JSON.parse(portable.fileContent).payload.draft);
+        for (const id of ['U1', 'U2', 'U3', 'U4']) expect(saved.draft).toContain(`### ${id} [Unknown] Open`);
+        expect(saved.draft).toContain('Effective decision (user-entered):');
+        expect(saved.draft).toContain('> Corrections allowed until the deadline only.');
+        expect(saved.draft.trimEnd().endsWith('Build readiness: NOT_ASSESSED')).toBe(true);
+        const record = JSON.parse(new TextDecoder().decode(await fs.readFile(path.join(root, (await fs.readdir(root))[0], `${body.id}.json`))));
+        expect(record.sourceFile).toBe(portable.fileContent);
+        expect(record.actor).toMatchObject({ userId: 'user_fixture', assurance: 'LOCAL_TEST_SESSION' });
+    });
+
+    it('keeps v1 and v2 records of the same actor distinct and both reopenable, and refuses a stale-marked v2 file', async () => {
+        const legacy = await candidate();
+        const v2 = await t1eCandidate();
+        const first = await (await handleSaveReview(post({ candidate: legacy.fileContent, expectedSha256: legacy.fileSha256 }))).json();
+        const second = await (await handleSaveReview(post({ candidate: v2.fileContent, expectedSha256: v2.fileSha256 }))).json();
+        expect(first.id).not.toBe(second.id);
+        expect((await handleReadReview(get(first.id), first.id)).status).toBe(200);
+        expect((await handleReadReview(get(second.id), second.id)).status).toBe(200);
+        const forged = JSON.parse(v2.fileContent);
+        forged.payload.review.decisions[2].openItems[0].needsReconfirmation = true;
+        forged.payloadSha256 = sha(JSON.stringify(forged.payload));
+        const content = JSON.stringify(forged) + '\n';
+        expect((await handleSaveReview(post({ candidate: content, expectedSha256: sha(content) }))).status).toBe(422);
     });
 });

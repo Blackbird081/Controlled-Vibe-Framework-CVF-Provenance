@@ -1,10 +1,11 @@
 /** Server-only acceptance candidate/port contract. No concrete persistence or route. */
 import { createHash } from 'node:crypto';
-import { MAX_CONFIRMATION_BYTES } from './intent-spec-confirmation';
+import { CANDIDATE_SCHEMA_V1, CANDIDATE_SCHEMA_V2, MAX_CONFIRMATION_BYTES } from './intent-spec-confirmation';
 import {
-    buildReviewedDraftPacket, getPendingReviewDecisions, INTENT_REVIEW_QUESTIONS,
+    buildReviewedDraftPacket, getPendingReviewDecisions, getReviewOpenItems, INTENT_REVIEW_QUESTIONS,
     type IntentSpecReviewState,
 } from './intent-spec-review';
+import { validateOpenItemSet, validateStoredOpenItem } from './intent-spec-open-items';
 import { assertCurrentIntentSpecActor, type IntentSpecActor } from './intent-spec-actor';
 
 const hash = (bytes: Uint8Array) => createHash('sha256').update(bytes).digest('hex');
@@ -24,14 +25,21 @@ function stringMap(value: unknown): Record<string, string> {
         || ['__proto__', 'constructor', 'prototype'].includes(key))) fail();
     return value as Record<string, string>;
 }
-function checkReview(input: unknown): IntentSpecReviewState {
+const DECISION_KEYS = ['id', 'answer', 'disposition', 'needsReconfirmation', 'sourceValues'] as const;
+
+/** Version 1 is exactly the original check. Version 2 adds only a non-empty openItems key per decision. */
+function checkReview(input: unknown, version: 1 | 2 = 1): IntentSpecReviewState {
     const review = object(input, ['revision', 'values', 'packetSource', 'decisions', 'acknowledgedRevision']);
     if (!Number.isSafeInteger(review.revision) || (review.revision as number) < 1
         || review.acknowledgedRevision !== review.revision || typeof review.packetSource !== 'string'
         || !Array.isArray(review.decisions) || review.decisions.length !== INTENT_REVIEW_QUESTIONS.length) fail();
     const values = stringMap(review.values);
     review.decisions.forEach((item: unknown, index: number) => {
-        const decision = object(item, ['id', 'answer', 'disposition', 'needsReconfirmation', 'sourceValues']);
+        const withItems = version === 2 && item && typeof item === 'object' && !Array.isArray(item)
+            && Object.hasOwn(item, 'openItems');
+        const decision = object(item, withItems ? [...DECISION_KEYS, 'openItems'] : DECISION_KEYS);
+        if (withItems && (!Array.isArray(decision.openItems) || !decision.openItems.length
+            || decision.openItems.some((entry: unknown) => validateStoredOpenItem(entry, values)))) fail();
         const question = INTENT_REVIEW_QUESTIONS[index];
         if (decision.id !== question.id || typeof decision.answer !== 'string'
             || !['ANSWERED', 'NOT_APPLICABLE'].includes(decision.disposition as string)
@@ -42,6 +50,11 @@ function checkReview(input: unknown): IntentSpecReviewState {
     });
     const result = review as unknown as IntentSpecReviewState;
     if (getPendingReviewDecisions(result).length) fail();
+    if (version === 2) {
+        // One canonical encoding per state: v2 needs at least one item, unique ids and the safety cap.
+        const items = getReviewOpenItems(result);
+        if (!items.length || validateOpenItemSet(items)) fail();
+    }
     return result;
 }
 
@@ -75,7 +88,7 @@ export function prepareIntentSpecAcceptance(
     if (JSON.stringify(file) + '\n' !== text) fail();
     const payload = object(file.payload, ['schema', 'scope', 'reviewer', 'createdAt', 'language', 'review', 'draft']);
     const reviewer = object(payload.reviewer, ['name', 'verification']);
-    if (payload.schema !== 'cvf.intentSpecReviewCandidate.v1'
+    if ((payload.schema !== CANDIDATE_SCHEMA_V1 && payload.schema !== CANDIDATE_SCHEMA_V2)
         || payload.scope !== 'SPEC_REVIEW_ONLY_NO_BUILD_AUTHORITY'
         || !['en', 'vi'].includes(payload.language as string)
         || reviewer.verification !== 'SELF_DECLARED' || typeof reviewer.name !== 'string'
@@ -84,7 +97,7 @@ export function prepareIntentSpecAcceptance(
         || new Date(payload.createdAt).toISOString() !== payload.createdAt
         || typeof file.payloadSha256 !== 'string' || !HASH.test(file.payloadSha256)
         || hash(utf8(JSON.stringify(payload))) !== file.payloadSha256) fail();
-    const review = checkReview(payload.review);
+    const review = checkReview(payload.review, payload.schema === CANDIDATE_SCHEMA_V2 ? 2 : 1);
     if (payload.draft !== buildReviewedDraftPacket(review, payload.language as 'en' | 'vi')) fail();
     const record = JSON.stringify({
         schema: 'cvf.intentSpecAcceptanceCandidate.v1', state: 'PENDING_STORE_COMMIT',
