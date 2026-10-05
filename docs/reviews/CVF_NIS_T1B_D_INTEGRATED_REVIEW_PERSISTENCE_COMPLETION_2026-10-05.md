@@ -116,10 +116,15 @@ WRONG_OWNER and three F1 initialization rollback adversaries; both proof results
 PASS, owner restored, fixtures removed. Nine contract fields are adjudicated in
 closure JSON without fabricating a standalone worker exit0.
 Material normal hook90/90 PASS at `793644f67209b64db7c10449074a0bb1044ffbad`.
-Final committed closure runs from the fresh closureBaseHead through HEAD, with
-clean status and no pending source. The same exact full-tranche range is separately
-checked against the source execution base; receipts are stored in ignored task
-scratch and the operator receives actual final results after execution.
+Initial metadata commit `fe55f48d6f7745ae6a890a18a305a1e56d434677` passed
+normal hooks90/90 but its committed closure range was rejected: the exact mixed
+atomicity authorization was missing. A source-only historical-range attempt also
+refused the unsynchronized handoff marker; neither attempt is PASS closure evidence.
+Forward correction records the existing 13-path authorization below, then a
+dedicated handoff-only sync binds the committed reviewer correction. Final
+pre-closure runs from closureBaseHead through synchronized HEAD; the full36-path
+tranche is independently reconciled against the execution base. Original failure
+logs remain in task scratch; final results require actual PASS receipts.
 
 ## Source Verification Block
 
@@ -161,9 +166,9 @@ tokenOrQuotaUsage: NOT_AVAILABLE_WITH_REASON: no exposed provider usage meter
 valueDelta: closed request-owned confirmation integration and repaired rollback/session drift; preserved failed history with separate independent proof
 stopDisposition: COMPLETE_REVIEW
 preRepairAuditDisposition: COMPLETE_BEFORE_FIRST_REPAIR
-materialCommitCount: 1
-continuityCommitCount: 1
-commitPlanDisposition: EXCEPTION_WITH_REASON: exact worker trace required its23-path source commit first; closure review, closed pair and dependent authority/continuity bind atomically in the following metadata commit
+materialCommitCount: 3
+continuityCommitCount: 2
+commitPlanDisposition: EXCEPTION_WITH_REASON: source23 committed separately; authority-pair closure and dependent continuity require exact13-path atomicity; missing authorization repaired forward, then dedicated handoff-only sync; failed attempts retained
 latencyDisposition: NOT_MEASURED_WITH_REASON: no task-scoped meter
 avoidableDelayClass: GATE_DISCOVERY_LOOP
 
@@ -290,7 +295,7 @@ Returned defects: NONE_RETURNED, totalCandidates0; no new ID assigned.
 
 - Knowledge task class: bounded named-artifact source/closure reconciliation, not repository absorption
 - Source manifest: docs/reviews/evidence/cvf-nis-t1b-d-closure-reconciliation-2026-10-05.json composedTranchePaths, exactly36 named files
-- Source manifest hash: e07dc328fb967b8117a14d06e69db28fc601b8ca09015c1883d09f9d5bb83cbd
+- Source manifest hash: fad34b0364a290ce6fe023a51c6360aee3fe6d47d47c286c03afcee5d0f32d42
 - Enumeration safety: filesystem Path.is_file checks for the exact36 declared paths; no full repository enumeration
 - Intake registry or ledger: closure JSON mandatoryArtifacts/admittedCompanionArtifacts and acceptanceLedgerProjection
 - Authority assets: closed work order/baseline, reviewer completion and source continuity owners
@@ -366,3 +371,10 @@ Records remain LOCAL_TEST_SESSION; real store/account/provider activation and
 BUILD remain unopened. Frozen worker receipts keep their original failed state.
 No successor is dispatched. Final user-facing closure verdict follows actual
 clean nonempty committed checks, not a generated table alone.
+
+## Mixed Protected-Path Atomicity Authorization
+
+Disposition: AUTHORIZED_EXACT_MANIFEST
+Atomicity reason: closing the current baseline/work order changes raw-byte pins in currentAuthority; core and generated read models must bind the final closed pair atomically. This forward reviewer correction records the existing steward authorization for the precise closure range after the separate 23-path source commit.
+Rollback boundary: only these thirteen closure paths, preserving the accepted source commit and all frozen R0/R1 worker evidence; no history rewrite, checker waiver or parked-lane activation.
+Exact changed manifest: `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md`; `docs/baselines/CVF_GC018_NIS_T1B_D_INTEGRATED_REVIEW_PERSISTENCE_2026-10-05.md`; `docs/reference/system_architecture_catalog/CVF_AS_BUILT_SYSTEM_CATALOG_AGGREGATE.json`; `docs/reference/system_architecture_catalog/entries/module.web_agent_platform.v1.json`; `docs/reviews/CVF_NIS_T1B_D_INTEGRATED_REVIEW_PERSISTENCE_COMPLETION_2026-10-05.md`; `docs/reviews/evidence/cvf-nis-t1b-d-closure-reconciliation-2026-10-05.json`; `docs/reviews/evidence/cvf-nis-t1b-d-r1-local-independent-review-2026-10-05.json`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1B_D_INTEGRATED_REVIEW_PERSISTENCE_2026-10-05.md`.

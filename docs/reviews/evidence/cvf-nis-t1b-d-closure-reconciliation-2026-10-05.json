@@ -386,5 +386,14 @@
     "filesystemAllExist": true,
     "driftCheck": "PASS",
     "noRepositoryScanClaim": true
+  },
+  "committedRangeRepair": {
+    "failedClosureCommit": "fe55f48d6f7745ae6a890a18a305a1e56d434677",
+    "failedRangeDisposition": "REJECTED_MISSING_EXACT_MIXED_ATOMICITY_AUTHORIZATION",
+    "sourceOnlyAttempt": "18 gates passed; active-session marker failed before dedicated handoff sync; not accepted closure evidence",
+    "repair": "Forward reviewer correction adds existing exact 13-path mixed atomicity authorization, followed by dedicated handoff-only sync. No history rewrite or checker changes.",
+    "acceptedClosureRangeBase": "793644f67209b64db7c10449074a0bb1044ffbad",
+    "finalReceiptDirectory": ".cvf/runtime/nis-t1b-d-r1-local-review-20261005/committed-closure-final",
+    "fullTrancheVerification": "23 source paths plus 13 closure paths, exact 36-path union; final range guards and clean status required"
   }
 }
