@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1I_SOURCE_BOUND_DOCUMENTARY_HANDOFF_2026-10-05.md",
     "workOrderSha256": "b4293a58c16c7f8cbb991cac15d6be2b083dd82b344596ae283686c4a9452448"
   },
-  "currentAuthoritySyncReason": "Explicit operator next selects T1I pure capture/documentary pilot; T1H evidence remains closed; no general S2/helper/BUILD.",
+  "currentAuthoritySyncReason": "T1I material a064a5ee2: current pure source-bound synthetic capture and documentary handoff; no helper/general S2/BUILD; parked lanes unchanged.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
