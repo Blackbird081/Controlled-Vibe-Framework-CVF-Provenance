@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1E_EXPLICIT_OPEN_ITEMS_CONSUMER_2026-10-05.md",
     "workOrderSha256": "604906ac1bf8298d6d1228d3f00df5b4a49176ad6353b5dd421806d6231e34fa"
   },
-  "currentAuthoritySyncReason": "T1E native consumer dispatch after closed T1D; synthetic scope only; parked lanes retained.",
+  "currentAuthoritySyncReason": "T1E material 35c92c7b5: native consumer dispatch; T1D/T1C closed and parked lanes unchanged.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
