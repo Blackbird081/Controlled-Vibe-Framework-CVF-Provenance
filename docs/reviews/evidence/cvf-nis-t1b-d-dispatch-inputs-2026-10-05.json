@@ -1,0 +1,208 @@
+{
+  "schemaVersion": "cvf.nisDispatchInputs.v1",
+  "batchId": "CVF-NIS-T1B-D",
+  "dispatchBaseHead": "5e42818cb4e88a618b0b612528fc351635ca23ea",
+  "sourceHashes": {
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-review.ts": "24a7d9be61f275cb26ff6aeac1d3f4c86d84d1a2b0c8ab37fd3b4cb7d26cb04c",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-confirmation.ts": "05afbe557d905f583221b4a59bfc04fabbd7d9e6b73c4ff0b7b05fab6ba4d067",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-actor.ts": "987c5ab042f68f31d21b0394f039912cc50e6783314a0afe26925e95f8f69ce1",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-acceptance.ts": "1ea88cc17ba9a6086b68da9b6d1de41c711088c1f7a0c0d863502e44391019a3",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-file-store.ts": "ec854d2c70ed6889834b4fe3fbd8da2ecebd68f64d80800ae6e6a6650f6c3523",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/middleware-auth.ts": "3877b34d112185040a331019e9cd9915c9152059ad42ee2c26e1a9833452b40e",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecReview.tsx": "70867612677fb79a10fc7ee94905c68129f7532433d279fc91e712d66bc93b37",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecConfirmation.tsx": "cce2237e1fba996b0f5f7c97d392cb368a822f18496090cd64116d36c9a432e0",
+    "governance/compat/check_baseline_update_compat.py": "11181274c721f7615924e4b38784e5142bd334332ccafcf4c6bd6ad1ee2a14e8",
+    "governance/compat/check_governed_artifact_checker_read_ahead.py": "bd83ef0b119c6190cf2d4e5f3fa44a7e45254d5fcca34137a2df48ad4a207275",
+    "governance/compat/check_work_order_dispatch_quality.py": "b6a42e78898a11cdb8ed85775226753de61c70c6e2fb9c454aa8d0949c05f67b",
+    "governance/compat/check_work_order_dispatch_quality_source.py": "b0b91b686628a79e8d17efcd2329445a44a736d9700b147c34fc6b4b9cb6a5db",
+    "governance/compat/check_work_order_dispatch_quality_artifacts.py": "fd1cc23b072a46e287e8322d93b6e0517370b807f613736061e1ad51771e84dd",
+    "governance/compat/check_dispatch_scaffold_provenance.py": "7aae404af745bb54d4afccaace748d4bcff91f578d73c5950ca05b99c2e54e9e",
+    "governance/compat/check_gate_to_role_closeability.py": "8f00c6421eebe3c1b237e5307ac6e2b0b0343c9a35cf635bbab17aa886e00e8e",
+    "governance/compat/check_high_risk_local_transaction_proof.py": "027289a7c471bee62d03f499b4f9c1b727afbd92fa373d96b9bae3c24c07fa3d",
+    "governance/compat/check_task_governance_route.py": "9a6a9747b778e7e58b9b8cb3327f3aa9f73b162a03736c0435ca21e8e3ad15db",
+    "governance/compat/check_adif_defect_registry_disclosure.py": "cb0854fbc5e2766fd9ce411e997bd22ddb0089437fd2def487570b2045ac5d1b",
+    "governance/compat/check_agent_operation_trace.py": "361b4e864098486e5cdfd84d1b424f422c26c64252b961e1703868811b5f296b",
+    "governance/compat/check_agent_packet_authority_and_encoding.py": "4ec7b94e88ce60c246a1b7ba4ed7f4386167c5af30ceb57e2ff726a1947b0f95",
+    "governance/compat/check_core_guard_self_protection.py": "92388d7bbd51d287449325b83e5a9cf966688021216fd3a102557d9c8b42a71d",
+    "governance/compat/check_markdown_structural_completeness.py": "a3c32582f73afb7762fb32a9ba2273dbde5e4251948f1b117f27ea4606f1b720"
+  },
+  "sourceHashScope": "EXACT_CLEAN_LINKED_WORKTREE_BYTES_CORE_AUTOCRLF_FALSE",
+  "workerWorkspace": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF-NIS-T1B-D",
+  "workerBeforeStatus": "EMPTY_CLEAN_WORKTREE",
+  "knownForeignDirtyPaths": [
+    {
+      "path": "AGENT_HANDOFF_V63_2026-09-18.md",
+      "status": " M",
+      "sha256": "e1fc372d56e8e7ca9fc0f01c3e060eb76ce32823db170195ce5576e3ddc6fd72"
+    },
+    {
+      "path": "ARCHITECTURE.md",
+      "status": " M",
+      "sha256": "fcbc2fdb1d678dc1f92d5f32744c6a8a97fa159fdf47e183cee41994916f6cb2"
+    },
+    {
+      "path": "CVF_SESSION/REQUIRED_STARTUP_GUARDS.md",
+      "status": " M",
+      "sha256": "d97c2892b7abd32772a808bae5482f65b8763febcc762c20145c49e5129e43f5"
+    },
+    {
+      "path": "docs/reference/downstream_gate_profile/README.md",
+      "status": " M",
+      "sha256": "faf89dc46817a5a9df6c52cb442acc7a412ed8183b5128f53559aa424f61ec19"
+    },
+    {
+      "path": "docs/reference/system_chain/CVF_SYSTEM_CHAIN_MAP.json",
+      "status": " M",
+      "sha256": "a6644b8109f6320e7605ecb4c26ff2ee77603208f17f197f47cb201a38365952"
+    },
+    {
+      "path": "docs/reference/downstream_gate_profile/CVF_PROJECT_LEARNING_OPERATOR_GUIDE.md",
+      "status": "??",
+      "sha256": "027ffbf237f08d36b3a5358647c99193c29813dfb0510da941bca1f451fb4d0e"
+    },
+    {
+      "path": "docs/reviews/evidence/cvf-project-learning-file-chain-simulation-2026-10-04.json",
+      "status": "??",
+      "sha256": "07fed7a99617f9d8a572f6a9596d1e176f37c8d0558c74283bb1ee2005a1653d"
+    },
+    {
+      "path": "docs/reviews/evidence/cvf-project-learning-operator-simulation-2026-10-04.json",
+      "status": "??",
+      "sha256": "9511dbe87844cd09366ed249d30fc56919f1decb108de69e981e2722a66b58a9"
+    },
+    {
+      "path": "docs/reviews/evidence/cvf-project-learning-operator-simulation-first-attempt-2026-10-04.json",
+      "status": "??",
+      "sha256": "050cc79e8e270b628a2fc78ac9c8910694ee648fe1c8cfe2f5eabc79e030272b"
+    }
+  ],
+  "foreignHashScope": "MAIN_WORKSPACE_PRE_DISPATCH_SNAPSHOT_NOT_WORKER_TREE; handoff material/continuity edits owned by Local, original recorded-for-this-handoff label hunk preserved",
+  "seedEvidenceDisposition": [
+    {
+      "slice": "A",
+      "path": ".cvf/runtime/nis-t1b-20261005/implementation-evidence.json",
+      "sha256": "6d1b8a05c46d1e47fefebe2c4565e292d439cccf78f6518f0086189156a2e04f",
+      "record": {
+        "status": "IMPLEMENTED_VERIFIED_UNCOMMITTED",
+        "batch": "CVF-NIS-T1B-A",
+        "head": "cc98c79657f86890624fc3a60becd0f2e8adfda3",
+        "materialCommit": "bd47968b316744edd55e6f89cc4f9f6d1913e2b3",
+        "continuityCommit": "cc98c79657f86890624fc3a60becd0f2e8adfda3",
+        "sourceHashes": {
+          "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecReview.tsx": "acc098743cc9b6e2ac66c4c94ace76531924c049fcdfa874e3654c52df7efdb8",
+          "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-confirmation.ts": "05afbe557d905f583221b4a59bfc04fabbd7d9e6b73c4ff0b7b05fab6ba4d067",
+          "docs/baselines/CVF_GC018_NIS_T1B_PORTABLE_REVIEW_BINDING_2026-10-05.md": "669ed4dc9c357a7c8081aaa097165729cd680661fbb0049d745fe51c180f48a7",
+          "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecConfirmation.test.tsx": "9c382e72c449bfc8ba52718dcf05e5b93a2764a8ec7eeceb7fe9d0856aa30bf8",
+          "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecConfirmation.tsx": "cce2237e1fba996b0f5f7c97d392cb368a822f18496090cd64116d36c9a432e0",
+          "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-confirmation.test.ts": "c0afd0bbac2cd1380820cea4b1688d7a30815aee0197a0d10952134f00184d01"
+        },
+        "priorNonHandoffDrift": [],
+        "priorHandoffEdit": "Preserved as unstaged Current HEAD -> Current HEAD recorded for this handoff; owned continuity changes committed separately",
+        "tests": "65/65, five files; tests-final.log",
+        "lint": "PASS, five changed source/test paths; lint-final.log",
+        "autorun": "85/85 PASS; post-edit/pre-implementation.json",
+        "claimBoundary": [
+          "exact revision portable candidate",
+          "self-declared reviewer only",
+          "current-session byte readback",
+          "no authenticated durable acceptance",
+          "no complete S1 or build-ready claim",
+          "no provider/live or stopped-lane effects"
+        ],
+        "retainedFailures": [
+          "material-commit.log: encoding exception fixed",
+          "continuity-commit.log: generator flag failure fixed",
+          "continuity-commit-r1.log: handoff byte budget fixed",
+          "admission.log: literal wording and missing continuity fixed",
+          "tests-r0.log: DOM setup with node environment fixed"
+        ],
+        "nextDependency": "Authenticated actor and fail-closed storage/recovery profile remain to be selected for full T1B; portable file candidate does not discharge them",
+        "typecheck": "PASS, tsc --noEmit --incremental false; typecheck-final.log, exit 0",
+        "receiptSha256": "0a8c8f5a537b4c52b49f478ff6769cb0de09426a681942b9cae576c202970146"
+      },
+      "disposition": "HISTORICAL_SYNTHETIC_INPUT_NOT_FORMAL_ACCEPTANCE"
+    },
+    {
+      "slice": "B",
+      "path": ".cvf/runtime/nis-t1b-b-20261005/implementation-evidence.json",
+      "sha256": "99b1887074e8c90bd28241da838886ef276502ced0acab03af32916035f50d7e",
+      "record": {
+        "batch": "CVF-NIS-T1B-B",
+        "status": "IMPLEMENTED_VERIFIED_UNCOMMITTED",
+        "head": "cc98c79657f86890624fc3a60becd0f2e8adfda3",
+        "role": "Local implementer and verifier, single actor",
+        "sourceHashes": {
+          "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-acceptance.ts": "1ea88cc17ba9a6086b68da9b6d1de41c711088c1f7a0c0d863502e44391019a3",
+          "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-actor.ts": "987c5ab042f68f31d21b0394f039912cc50e6783314a0afe26925e95f8f69ce1",
+          "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-acceptance.test.ts": "27962cb481506be66d49b737d6c649357d1a2af3fbb5b5fdac86b4312afc4ea6",
+          "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-actor.test.ts": "cb3bf19662dc99a2e2c30535dc238cd8b842a8e0a086b5e84aa20b5aaa7e085b",
+          "docs/baselines/CVF_GC018_NIS_T1B_SERVER_ACCEPTANCE_CONTRACT_2026-10-05.md": "c98e66b4aa8eab4d0ce0876d78312c6f4d7a1ec0cb681ec3f6cd792579605844"
+        },
+        "priorDirtyPathDrift": [],
+        "tests": "40/40 PASS, two focused files; tests-final-r1.log",
+        "typecheck": "PASS, tsc --noEmit --incremental false; typecheck-final.log",
+        "lint": "PASS, four new files; lint-final.log",
+        "gate": "85/85 pre-implementation PASS; post-edit-final/pre-implementation.json",
+        "gateReceiptSha256": "55f8ef67ebc84f7d8a72eff1213efc8a8c2bf7ae3c469f9b4ba736c0b70557d3",
+        "retainedDiagnostics": [
+          "admission original baseHead typo corrected before source mutation; admission-final refreshed",
+          "typecheck.log: unknown-value narrowing corrected, final check PASS"
+        ],
+        "claims": {
+          "fullT1BOrS1Closed": false,
+          "syntheticPortReadbackProved": true,
+          "durabilityProved": false,
+          "liveAuthenticationProved": false,
+          "identityOwnerReused": "Auth.js request verifier, exercised with synthetic fixture boundary only",
+          "concretePersistenceImplemented": false,
+          "independentReview": false,
+          "aiGovernanceProof": false,
+          "serverContractImplemented": true
+        },
+        "nextScope": "Concrete private artifact store plus restart/failure/readback proof and UI join. Before high-risk transactions follow canonical HRLTP admission and independent-probe obligations; no existing stopped ledger, HTML B2 or deployment lane is reopened."
+      },
+      "disposition": "HISTORICAL_SYNTHETIC_INPUT_NOT_FORMAL_ACCEPTANCE"
+    },
+    {
+      "slice": "C",
+      "path": ".cvf/runtime/nis-t1b-c-20261005/implementation-evidence.json",
+      "sha256": "75c022f8a2ec88b8d2538034d1835158db32135d4b71b223cefd3ad3e7516f4c",
+      "record": {
+        "batch": "CVF-NIS-T1B-C",
+        "status": "IMPLEMENTED_VERIFIED_UNCOMMITTED",
+        "head": "cc98c79657f86890624fc3a60becd0f2e8adfda3",
+        "sourceHashes": {
+          "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-file-store.test.ts": "c7879c4419f8213140977645a143d6d42489436fc9fa14b6b9611e8f428101a8",
+          "docs/baselines/CVF_GC018_NIS_T1B_PRIVATE_FILE_STORE_2026-10-05.md": "196f427647ac4d581185a0e399577107794e5bb298662650ae8e740ab350812f",
+          "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-file-store.ts": "ec854d2c70ed6889834b4fe3fbd8da2ecebd68f64d80800ae6e6a6650f6c3523"
+        },
+        "priorDirtyPathDrift": [],
+        "tests": "17/17 PASS, real test-owned local filesystem plus delegated native I/O fault injection; tests-final.log",
+        "typecheck": "PASS, tsc --noEmit --incremental false; typecheck-final.log",
+        "lint": "PASS, two new files; lint-final.log",
+        "autorun": "85/85 pre-implementation PASS; post-edit/pre-implementation.json",
+        "receiptSha256": "0c674e1a668fba7bb2d3324f1cd02df6de5564ca8317f5807f8c74e5121ae4a4",
+        "claims": {
+          "localFilesystemRoundtrip": true,
+          "independentReviewerProbe": false,
+          "secondProcessByteRead": true,
+          "realDataUsed": false,
+          "fullT1BOrS1Closed": false,
+          "formalTransactionProof": "PENDING_REVIEWER_EXECUTION",
+          "concreteAdapterImplemented": true,
+          "authenticatedLiveLogin": false,
+          "freshInstanceRead": true,
+          "runtimeActivated": false,
+          "directoryPowerLossDurability": false,
+          "windowsACLPrivacyProof": false
+        },
+        "profile": "Explicit existing private root, trusted single host/root owner, content-addressed immutable actor namespaces; no default directory",
+        "nextScope": "Independent transaction/profile review and UI/API join remain separate; no real-data root selected or configured. Preserve NO_DURABILITY_OR_BUILD_AUTHORITY response until the applicable proof and admission are complete."
+      },
+      "disposition": "HISTORICAL_SYNTHETIC_INPUT_NOT_FORMAL_ACCEPTANCE"
+    }
+  ],
+  "workerStartPolicy": "CLEAN_LINKED_WORKTREE_CAPTURE_AFTER_FINAL_DISPATCH_CHECKOUT",
+  "independentProbe": "PENDING_REVIEWER_EXECUTION",
+  "providerExecutionAuthority": "FORBIDDEN"
+}
