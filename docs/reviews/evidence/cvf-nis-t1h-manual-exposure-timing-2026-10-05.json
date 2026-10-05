@@ -1,0 +1,237 @@
+{
+ "schemaVersion": "cvf.nisT1hManualExposureTiming.v1",
+ "executionBaseHead": "383a03a52bd50f009b6e78ea1c4863c2d82aaafe",
+ "actorDeclaration": {
+  "actorBinding": "CLAUDE-T1H-R1-FRESH-DECL-20261005-01",
+  "admissionRecord": "docs/reviews/CVF_NIS_T1H_R1_FRESH_CONTEXT_ADMISSION_2026-10-05.md",
+  "declaredBeforeViews": true,
+  "declarationSource": "Declared by the worker in an earlier turn of this session before any view, relayed by the operator to Local; self-declared, not machine-verified.",
+  "contextOrigin": "New session; no preceding turns or inherited transcript before the first operator message; session started in the original CVF repository root, then worked in the R1 worktree by absolute path.",
+  "harnessAutoLoadDisclosure": [
+   "Original-repo CLAUDE.md (provider-local aid, NOT_CVF_SOURCE)",
+   "Auto-memory MEMORY.md index stopping at NIS T1B with no T1G/T1H entry",
+   "gitStatus of the original repo: clean, five recent commit subjects including T1H blocked/hold/learning subjects (titles only; commit contents never read)",
+   "Environment, tool and skill listings"
+  ],
+  "taxonomyFamiliarity": "Possible generic familiarity with CVF governance/review taxonomy from CLAUDE.md and MEMORY.md; no specific placement, key, case-diff or prior-answer knowledge. The neutral checklist and format were first read during the preparation clock.",
+  "priorViewExposure": "NONE before this attempt; views were opened one at a time after the per-case clock started.",
+  "placementKnowledge": "NONE_DECLARED. No seeded class label, hit count, expected answer, casepack, generator, Local probe, T1G experiment document or answer key was read. The only T1G-named file opened is the neutral reviewer-inputs-review-only package.",
+  "contextExposureDuringExecution": "Later cases are near-copies of earlier cases (same base record, different edits). I did not run a cross-case diff, but I noticed repeated text; each later case's Part 3 discloses this. My calibration of two shared low-confidence items (U1 cited by R6; V6 eleven vs twelve months) moved from 'defect' in RB-01 to 'low-confidence concern' in RB-02 and later cases after seeing them repeat. RB-01 was not amended.",
+  "subagentsUsed": false,
+  "helperOrEvaluatorUsed": false,
+  "providerOrNetworkCalls": 0
+ },
+ "filesReadByWorker": [
+  "docs/reviews/CVF_NIS_T1H_R1_FRESH_CONTEXT_ADMISSION_2026-10-05.md",
+  "docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1H_REVIEW_ONLY_MANUAL_ARM_2026-10-05.md",
+  "docs/reviews/evidence/cvf-nis-t1h-dispatch-inputs-2026-10-05.json",
+  "CVF_SESSION_MEMORY.md",
+  "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json",
+  "docs/reference/guard_orientation/README.md",
+  "docs/reviews/evidence/cvf-nis-t1g-reviewer-inputs-review-only-2026-10-05.json (neutral package: top-level key names, then format/checklist/blank form/attachments during preparation, then views one at a time)",
+  "governance/compat/run_worker_return_fast_gate.py (head), governance/compat/check_worker_return_quality_gate.py (head), build_dispatch_packet_scaffold.py --help and generated skeleton (governance helper output)"
+ ],
+ "filesNotRead": [
+  "AGENT_HANDOFF_V63_2026-09-18.md (progressive startup stopped once the bootstrap and front door resolved current facts)",
+  "All T1G experiment documents, casepack, key, seed generators, Local probes, prior T1H blocked-return documents and the recurring-context-block record",
+  "docs/baselines/CVF_GC018_NIS_T1H_REVIEW_ONLY_MANUAL_ARM_2026-10-05.md (pin hash verified only)"
+ ],
+ "pinVerification": {
+  "workOrderSha256": "75d2f31bcb15659dc66b7e71e8b42191ea3e56837c57187732e6bdb42900e090",
+  "baselineSha256": "581f78f09c0925b5b7f5b5cb42ba00a16364cc9a461acf93fc86e1c4597614e0",
+  "neutralPackageRawSha256": "28ece326b696672153abd88a5c5ef77b1b57bfcd82dbd119f85f2f071c32a869",
+  "neutralPackageGitBlob": "e119adefc29bcfd67d7116bd8506ca909d46c790",
+  "result": "ALL_MATCH_BEFORE_VIEWS_DISPLAYED"
+ },
+ "preImplementation": {
+  "command": "python -B governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base 383a03a52bd50f009b6e78ea1c4863c2d82aaafe --head HEAD --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1H_REVIEW_ONLY_MANUAL_ARM_2026-10-05.md --receipt-dir .cvf/runtime/nis-t1h-worker-20261005/pre-implementation",
+  "result": "COMPLIANT (exit 0, 7.93s)",
+  "receipt": ".cvf/runtime/nis-t1h-worker-20261005/pre-implementation/pre-implementation.json (ignored scratch)",
+  "ranBeforeFirstView": true
+ },
+ "clockSource": "Python time.monotonic_ns (Windows QueryPerformanceCounter) for elapsed; datetime.now(UTC) for wall timestamps; log .cvf/runtime/nis-t1h-worker-20261005/timestamps.jsonl (ignored scratch)",
+ "timestampLogSha256": "c9d596bc22ee70188c8ae3b6cd8f32f0398fb3ff7ab25c58b1d1704cda0d3cc0",
+ "preparation": {
+  "startUtc": "2026-10-05T15:04:13.000321+00:00",
+  "endUtc": "2026-10-05T15:04:30.129411+00:00",
+  "elapsedSecondsMonotonic": 17.125,
+  "limitSeconds": 1200,
+  "withinLimit": true,
+  "displayedFields": [
+   "format",
+   "genericChecklist",
+   "blankAnswerForm",
+   "attachments A, B, C (full text)"
+  ],
+  "interruptions": [
+   "First display of attachments raised a Python cp1252 UnicodeEncodeError (tool-output encoding, not a clock pause); re-displayed with UTF-8 output; no work paused.",
+   "A harness status nudge ('say what you are doing') appeared during later phases; no work paused."
+  ]
+ },
+ "cases": [
+  {
+   "presentationOrder": 1,
+   "caseId": "RB-01",
+   "openedAtUtc": "2026-10-05T15:04:30.191450+00:00",
+   "submittedAtUtc": "2026-10-05T15:05:27.276067+00:00",
+   "openedMonotonicNs": 179583984000000,
+   "submittedMonotonicNs": 179641078000000,
+   "elapsedSecondsMonotonic": 57.094,
+   "caseLimitSeconds": 720,
+   "withinCaseLimit": true,
+   "interruptions": [],
+   "submittedResponseSha256": "d2794df800e30aac9f12dc4658a534c57650e29269f77a4d8135ae3dae92d476",
+   "status": "ANSWERED"
+  },
+  {
+   "presentationOrder": 2,
+   "caseId": "RB-02",
+   "openedAtUtc": "2026-10-05T15:05:31.462639+00:00",
+   "submittedAtUtc": "2026-10-05T15:05:54.021430+00:00",
+   "openedMonotonicNs": 179645265000000,
+   "submittedMonotonicNs": 179667812000000,
+   "elapsedSecondsMonotonic": 22.547,
+   "caseLimitSeconds": 720,
+   "withinCaseLimit": true,
+   "interruptions": [],
+   "submittedResponseSha256": "964a8a982c8b108f5ba3c49924af0b299885556a6706c3eeb7d7a4d382575a77",
+   "status": "ANSWERED"
+  },
+  {
+   "presentationOrder": 3,
+   "caseId": "RB-03",
+   "openedAtUtc": "2026-10-05T15:05:54.081101+00:00",
+   "submittedAtUtc": "2026-10-05T15:06:12.627166+00:00",
+   "openedMonotonicNs": 179667875000000,
+   "submittedMonotonicNs": 179686421000000,
+   "elapsedSecondsMonotonic": 18.546,
+   "caseLimitSeconds": 720,
+   "withinCaseLimit": true,
+   "interruptions": [],
+   "submittedResponseSha256": "95c71361d00a7bbf3b07e2e327693a500ff01cd3fe87c96c38f851039541e690",
+   "status": "ANSWERED"
+  },
+  {
+   "presentationOrder": 4,
+   "caseId": "RB-04",
+   "openedAtUtc": "2026-10-05T15:06:12.694976+00:00",
+   "submittedAtUtc": "2026-10-05T15:06:22.821956+00:00",
+   "openedMonotonicNs": 179686484000000,
+   "submittedMonotonicNs": 179696625000000,
+   "elapsedSecondsMonotonic": 10.141,
+   "caseLimitSeconds": 720,
+   "withinCaseLimit": true,
+   "interruptions": [],
+   "submittedResponseSha256": "15d1ba5290cd5726539ae83779b6bc17068ca463330475d2ff33e17f5fdba6bd",
+   "status": "ANSWERED"
+  },
+  {
+   "presentationOrder": 5,
+   "caseId": "RB-05",
+   "openedAtUtc": "2026-10-05T15:06:22.879271+00:00",
+   "submittedAtUtc": "2026-10-05T15:06:32.260090+00:00",
+   "openedMonotonicNs": 179696671000000,
+   "submittedMonotonicNs": 179706062000000,
+   "elapsedSecondsMonotonic": 9.391,
+   "caseLimitSeconds": 720,
+   "withinCaseLimit": true,
+   "interruptions": [],
+   "submittedResponseSha256": "307cfff0a4105cc4af7f1b3cccd767324b72f63e04867afa901f41fdf8b73f79",
+   "status": "ANSWERED"
+  },
+  {
+   "presentationOrder": 6,
+   "caseId": "RB-06",
+   "openedAtUtc": "2026-10-05T15:06:32.327441+00:00",
+   "submittedAtUtc": "2026-10-05T15:06:39.746845+00:00",
+   "openedMonotonicNs": 179706125000000,
+   "submittedMonotonicNs": 179713546000000,
+   "elapsedSecondsMonotonic": 7.421,
+   "caseLimitSeconds": 720,
+   "withinCaseLimit": true,
+   "interruptions": [],
+   "submittedResponseSha256": "48d236740d05a9d8b8ce8637a41753c5709a16ab00612dd2e0abdfb08b7ca750",
+   "status": "ANSWERED"
+  },
+  {
+   "presentationOrder": 7,
+   "caseId": "RB-07",
+   "openedAtUtc": "2026-10-05T15:06:39.805353+00:00",
+   "submittedAtUtc": "2026-10-05T15:06:52.486464+00:00",
+   "openedMonotonicNs": 179713593000000,
+   "submittedMonotonicNs": 179726281000000,
+   "elapsedSecondsMonotonic": 12.688,
+   "caseLimitSeconds": 720,
+   "withinCaseLimit": true,
+   "interruptions": [],
+   "submittedResponseSha256": "55584f49a1f6d82aa54f6d2f08fea80a8d6d4e5bd7cc9e5b324e059b0caa1d4b",
+   "status": "ANSWERED"
+  },
+  {
+   "presentationOrder": 8,
+   "caseId": "RB-08",
+   "openedAtUtc": "2026-10-05T15:06:52.548020+00:00",
+   "submittedAtUtc": "2026-10-05T15:07:21.413650+00:00",
+   "openedMonotonicNs": 179726343000000,
+   "submittedMonotonicNs": 179755203000000,
+   "elapsedSecondsMonotonic": 28.86,
+   "caseLimitSeconds": 720,
+   "withinCaseLimit": true,
+   "interruptions": [],
+   "submittedResponseSha256": "78c95b33f8694b7dfa076ec8c7806b87186d5e88c29a63307da8b02e1b6715f7",
+   "status": "ANSWERED"
+  },
+  {
+   "presentationOrder": 9,
+   "caseId": "RB-09",
+   "openedAtUtc": "2026-10-05T15:07:21.474180+00:00",
+   "submittedAtUtc": "2026-10-05T15:07:31.554758+00:00",
+   "openedMonotonicNs": 179755265000000,
+   "submittedMonotonicNs": 179765343000000,
+   "elapsedSecondsMonotonic": 10.078,
+   "caseLimitSeconds": 720,
+   "withinCaseLimit": true,
+   "interruptions": [],
+   "submittedResponseSha256": "1c81f2f8d7222f754fa03881a5a578cbc20d890788c4736fdabe6bdc7ccbf904",
+   "status": "ANSWERED"
+  },
+  {
+   "presentationOrder": 10,
+   "caseId": "RB-10",
+   "openedAtUtc": "2026-10-05T15:07:31.617726+00:00",
+   "submittedAtUtc": "2026-10-05T15:07:56.645358+00:00",
+   "openedMonotonicNs": 179765406000000,
+   "submittedMonotonicNs": 179790437000000,
+   "elapsedSecondsMonotonic": 25.031,
+   "caseLimitSeconds": 720,
+   "withinCaseLimit": true,
+   "interruptions": [],
+   "submittedResponseSha256": "3d93d9b86ebd002638887f9d2957956b392145bf5acfb6c62356e4a395ceabaf",
+   "status": "ANSWERED"
+  },
+  {
+   "presentationOrder": 11,
+   "caseId": "RB-11",
+   "openedAtUtc": "2026-10-05T15:07:56.704733+00:00",
+   "submittedAtUtc": "2026-10-05T15:08:10.242032+00:00",
+   "openedMonotonicNs": 179790500000000,
+   "submittedMonotonicNs": 179804031000000,
+   "elapsedSecondsMonotonic": 13.531,
+   "caseLimitSeconds": 720,
+   "withinCaseLimit": true,
+   "interruptions": [],
+   "submittedResponseSha256": "84a9ba17e0489039e3351ec93a04a5bac1b41d39017bc2e022eca0134e7cd5f4",
+   "status": "ANSWERED"
+  }
+ ],
+ "totals": {
+  "wallStartUtc": "2026-10-05T15:04:13.000321+00:00",
+  "wallEndUtc": "2026-10-05T15:08:10.301455+00:00",
+  "wallSeconds": 237.297,
+  "activeSecondsPreparationPlusCases": 232.453,
+  "activeLimitSeconds": 10800,
+  "withinActiveLimit": true,
+  "excludedInterruptions": "none excluded"
+ },
+ "claimBoundary": "Agent attempt; reasoning latency, not a person-productivity or human-cost equivalent. Self-declared exposure; no valid-blinding certificate. Timed values are measured with the stated clock; no value is invented."
+}
