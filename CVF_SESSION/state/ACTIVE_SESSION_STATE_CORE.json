@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1H_REVIEW_ONLY_MANUAL_ARM_2026-10-05.md",
     "workOrderSha256": "270bdfe7919cc78fbe786d0606a1a0d984bb9baf2dffbe5b79c391e63bdc9267"
   },
-  "currentAuthoritySyncReason": "T1H one review-only manual attempt admitted after T1G; neutral package only, helper and acceptance effects excluded.",
+  "currentAuthoritySyncReason": "T1G material 5054d33a0: fresh reviewer manual review-only admission; no helper/candidate/runtime effects; parked lanes unchanged.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
