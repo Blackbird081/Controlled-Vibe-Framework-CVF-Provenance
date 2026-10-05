@@ -66,12 +66,15 @@ Unknown or contaminated context must not be admitted; obtain a declaration befor
 Latest relay again comes from the same contaminated seed-author context. R1 remains clean at 73d18189d with no outputs. See `docs/reviews/CVF_NIS_T1H_R1_RECURRING_CONTEXT_BLOCK_2026-10-05.md` for RECURRING_CLUSTER_STOP, operator notice and cluster-specific FEATURE_SUCCESSORS_FROZEN. The original event/pins are unchanged; this is a second blocked transfer, not another primary attempt.
 Parent written rule remains present; effective pre-transfer actor admission FAILED_NOT_APPLIED. Delivery to a new actor NOT_RETURNED; no eligible recipient yet identified. Next action is actor selection/admission only; do not send the execution prompt again to the old session. Machine candidate remains NOT_IMPLEMENTED. No third executable dispatch is authorized by this update.
 
+## Fresh Actor Admission Follow-Up
+New Claude session declares no inherited transcript/T1G/key/casepack exposure but discloses CLAUDE.md, T1B auto-memory index and T1H process commit subjects. Local admits the exact session by declaration under `docs/reviews/CVF_NIS_T1H_R1_FRESH_CONTEXT_ADMISSION_2026-10-05.md`; metadata is retained, not relabeled absolute cleanliness. Prior blocked transfers remain. Current actor admission accepted; transfer/primary attempt/integrity review still pending. Machine binding NOT_IMPLEMENTED. Same-context hold lifted only for this actor and existing manual slice after final release; feature successors remain frozen.
+
 ## Resolution And Loopback States
-Project resolution: repeat blocked transfer to original actor; R1 on Local admission hold, not completed baseline.
+Project resolution: two blocked transfers retained; separate actor now admitted by declaration, repository release/primary attempt pending.
 Parent decision: MERGE_INTO_EXISTING_OWNER.
 Parent implementation: WRITTEN_RULE_ADDED; machine candidate NOT_IMPLEMENTED.
 Return delivery: Git-backed control/discovery record added; no independent delivery receipt from new reviewer yet, NOT_RETURNED.
-Source-project application: R1 contains written exclusions but pre-transfer actor admission FAILED_NOT_APPLIED; manual outcome NOT_EXECUTED.
+Source-project application: earlier pre-transfer admission FAILED_NOT_APPLIED; current new-actor declaration admission ACCEPTED_BY_LOCAL; actual transfer and manual outcome NOT_EXECUTED.
 Proof required for stronger closure: known contaminated/unknown actor denied before views; eligible separate context declares origin/exposure, follows neutral-only reads, freezes responses/timing and returns integrity evidence for Local review. This batch does not execute those acceptance cases.
 
 ## Epistemic Process Block
@@ -91,22 +94,22 @@ Claim Update: written reusable control added; no claim of machine-enforced or in
 ## Agent Operation Trace Block
 | Field | Evidence |
 |---|---|
-| Actor | Local orchestrator/reviewer |
-| Provider or surface | repository tools only; no provider call or subagent |
-| Session or invocation | nis-t1h-recurrence-20261005 |
+| Actor | Local admission reviewer |
+| Provider or surface | repository tools, no provider call or subagent |
+| Session or invocation | nis-t1h-admission-20261005 |
 | Working directory | D:/UNG DUNG AI/TOOL AI 2026/Controlled-Vibe-Framework-CVF |
-| Command or tool surface | targeted source reads, Git state/hash checks, exact material writes/staging and governance commit |
-| Target paths | docs/reviews/learnings/CVF_DISPATCH_CONTEXT_ELIGIBILITY_LEARNING_2026-10-05.md; docs/reviews/CVF_NIS_T1H_R1_RECURRING_CONTEXT_BLOCK_2026-10-05.md |
-| Allowed scope source | operator report of repeat dispatch failure under delegated Local review/learning authority |
-| Before status evidence | clean main 6434fe35e247a292cc6098f446380420ce9f70bf; clean R1 73d18189d |
-| After status evidence | exact2 material paths; dedicated continuity follows |
-| Diff evidence | exact material-paths.json and Git cached name-only check |
-| Approval boundary | record/control-state only; no active packet/source pin mutation or new actor execution |
-| Claim boundary | relay declaration and observed Git state; not hidden-context attestation |
+| Command or tool surface | targeted criteria/source reads, declaration assessment, exact-path writes/staging/commit and repository gate preparation |
+| Target paths | docs/reviews/CVF_NIS_T1H_R1_FRESH_CONTEXT_ADMISSION_2026-10-05.md; docs/reviews/learnings/CVF_DISPATCH_CONTEXT_ELIGIBILITY_LEARNING_2026-10-05.md |
+| Allowed scope source | operator supplies new actor declaration for Local admission under delegated orchestration authority |
+| Before status evidence | clean main 478263b1a275334cab866658af4a10ed294513fb; R1 clean/no outputs |
+| After status evidence | exact2 admission/learning material paths; six-surface continuity follows |
+| Diff evidence | material-paths.json exact2 and Git cached name-only assertion |
+| Approval boundary | same pinned packet/manual scope only after release; no new actor/runtime/provider authority |
+| Claim boundary | declared eligibility, not hidden-context verification or completed manual arm |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | nis-t1h-recurrence-20261005 |
-| Expected manifest | docs/reviews/learnings/CVF_DISPATCH_CONTEXT_ELIGIBILITY_LEARNING_2026-10-05.md; docs/reviews/CVF_NIS_T1H_R1_RECURRING_CONTEXT_BLOCK_2026-10-05.md |
-| Actual changed set | docs/reviews/learnings/CVF_DISPATCH_CONTEXT_ELIGIBILITY_LEARNING_2026-10-05.md; docs/reviews/CVF_NIS_T1H_R1_RECURRING_CONTEXT_BLOCK_2026-10-05.md |
+| Invocation ID | nis-t1h-admission-20261005 |
+| Expected manifest | docs/reviews/CVF_NIS_T1H_R1_FRESH_CONTEXT_ADMISSION_2026-10-05.md; docs/reviews/learnings/CVF_DISPATCH_CONTEXT_ELIGIBILITY_LEARNING_2026-10-05.md |
+| Actual changed set | docs/reviews/CVF_NIS_T1H_R1_FRESH_CONTEXT_ADMISSION_2026-10-05.md; docs/reviews/learnings/CVF_DISPATCH_CONTEXT_ELIGIBILITY_LEARNING_2026-10-05.md |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |
 
