@@ -2,16 +2,16 @@
   "schemaVersion": "0.1.0",
   "currentMode": "cvf_ncr_p10_closed_p11_parked",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=CVF-NIS; NEXT_ACTION_CLASS=EXECUTE_BOUNDED_WORK_ORDER; BATCH_ID=CVF-NIS-T1E. Native explicit-item consumer implementation in docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1E_EXPLICIT_OPEN_ITEMS_CONSUMER_2026-10-05.md. Exact16 owned paths; pre-edit a27c13fa7 legacy capture, sticky item staleness, review summary, strict candidate v2 and legacy v1, vi/en UI, synthetic save/reopen and focused/type/lint checks. Worker no stage/commit. Local independent proof/closure. No upstream/provider/network/install, real store/security/UAC, BUILD/plan/tasks/S2/public/deploy. T1D/T1C/T1B-D closed; originals retained; CCMA parked; S05/C1/send/B2 STOP; Q001/Q004 OPEN/Profile A; P11/FLAL T4/T5 parked; FR2 historical loss retained; cost UNKNOWN; LHW24 closed; no push. Dispatch material 35c92c7b5; dedicated continuity.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-NIS; NEXT_ACTION_CLASS=BOUNDED_SELECTION_AND_DISPATCH_PLANNING; BATCH_ID=CVF-NIS-T1E. T1E explicit-item native consumer CLOSED_PASS_BOUNDED in docs/reviews/CVF_NIS_T1E_EXPLICIT_OPEN_ITEMS_CONSUMER_COMPLETION_2026-10-05.md; Local8/8 independent and34/34 affected regressions; worker140+API3 consumed, no real novice UX/build-ready proof. Choose next minimal value slice from existing roadmap; no successor execution or automatic S2. CCMA parked; S05/C1/send/B2 STOP; Q001/Q004 OPEN/Profile A; P11/deploy/FLAL T4/T5 parked; FR2 historical loss retained; costs UNKNOWN; LHW24 closed; no push.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_NIS_T1E_EXPLICIT_OPEN_ITEMS_CONSUMER_2026-10-05.md",
-    "baselineSha256": "f205b40670764af57e66b05c20c4e1affcfa56af93d323088efe03b0b4484965",
+    "baselineSha256": "1461466d3d8a68b25af936b043d436bc5ef88880a6d963e8c1e58a6119c27cd5",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1E_EXPLICIT_OPEN_ITEMS_CONSUMER_2026-10-05.md",
-    "workOrderSha256": "604906ac1bf8298d6d1228d3f00df5b4a49176ad6353b5dd421806d6231e34fa"
+    "workOrderSha256": "870f6174d40ddc1fdfdc721400ac900bd28557e7a8d17753be2f788fc33cbb3c"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

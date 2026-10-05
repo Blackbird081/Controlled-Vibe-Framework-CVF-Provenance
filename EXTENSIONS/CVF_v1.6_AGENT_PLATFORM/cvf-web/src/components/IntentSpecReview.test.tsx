@@ -102,7 +102,7 @@ describe('NIS T1E open points in the requirements review UI', () => {
     const addPoint = (text: string, options: { fields?: string[]; status?: string; extra?: string } = {}) => {
         fireEvent.click(screen.getAllByRole('button', { name: 'Add an open point' })[0]);
         fireEvent.change(screen.getByLabelText('What is unknown or in conflict'), { target: { value: text } });
-        for (const field of options.fields ?? []) fireEvent.click(screen.getByLabelText(({ coreFeatures: '5. The most important things the app must do', dataNeeds: '9. What data does the app need to remember or process?', targetUsers: '4. Who will use this product?' } as Record<string, string>)[field]));
+        for (const field of options.fields ?? []) fireEvent.click(screen.getByLabelText(({ lookAndFeel: '10. Look and feel', coreFeatures: '5. The most important things the app must do', dataNeeds: '9. What data does the app need to remember or process?', targetUsers: '4. Who will use this product?' } as Record<string, string>)[field]));
         if (options.status) fireEvent.change(screen.getByLabelText('Open point status'), { target: { value: options.status } });
         if (options.extra !== undefined) {
             fireEvent.change(screen.getByLabelText(options.status === 'DELEGATED' ? 'What the builder may decide' : 'Decision that applies'), { target: { value: options.extra } });

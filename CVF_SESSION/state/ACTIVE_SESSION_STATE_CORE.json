@@ -37,11 +37,11 @@
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_NIS_T1E_EXPLICIT_OPEN_ITEMS_CONSUMER_2026-10-05.md",
-    "baselineSha256": "f205b40670764af57e66b05c20c4e1affcfa56af93d323088efe03b0b4484965",
+    "baselineSha256": "1461466d3d8a68b25af936b043d436bc5ef88880a6d963e8c1e58a6119c27cd5",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1E_EXPLICIT_OPEN_ITEMS_CONSUMER_2026-10-05.md",
-    "workOrderSha256": "604906ac1bf8298d6d1228d3f00df5b4a49176ad6353b5dd421806d6231e34fa"
+    "workOrderSha256": "870f6174d40ddc1fdfdc721400ac900bd28557e7a8d17753be2f788fc33cbb3c"
   },
-  "currentAuthoritySyncReason": "T1E material 35c92c7b5: native consumer dispatch; T1D/T1C closed and parked lanes unchanged.",
+  "currentAuthoritySyncReason": "T1E native consumer independently accepted with Local malformed-field and visible-label repair; selection only, no automatic S2.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",

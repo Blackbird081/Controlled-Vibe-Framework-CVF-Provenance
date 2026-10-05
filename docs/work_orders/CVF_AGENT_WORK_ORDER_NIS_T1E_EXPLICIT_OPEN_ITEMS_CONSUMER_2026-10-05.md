@@ -4,7 +4,7 @@ Memory class: governed-worker-dispatch
 
 docType: work_order
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: CVF-NIS-T1E
 providerExecutionAuthority: FORBIDDEN
@@ -126,7 +126,7 @@ Returned defects: NONE_RETURNED. Actual resolver executed 2026-10-05, candidates
 | Field | Value |
 |---|---|
 | applicableCheckersRead | governance/compat/check_work_order_dispatch_quality.py; governance/compat/check_work_order_dispatch_quality_source.py; governance/compat/check_work_order_dispatch_quality_artifacts.py; governance/compat/check_dispatch_scaffold_provenance.py; governance/compat/check_gate_to_role_closeability.py; governance/compat/check_governed_artifact_checker_read_ahead.py; governance/compat/check_task_governance_route.py; governance/compat/check_baseline_update_compat.py; governance/compat/check_agent_operation_trace.py; governance/compat/check_work_order_acceptance_ledger.py; governance/compat/check_independent_review_probe_admission.py; governance/compat/check_absorption_blindspot_control_presence.py; governance/compat/check_external_knowledge_intake_routing.py; governance/compat/check_high_risk_local_transaction_proof.py; governance/compat/check_adif_defect_registry_disclosure.py; governance/compat/check_agent_packet_authority_and_encoding.py; governance/compat/check_markdown_structural_completeness.py; governance/compat/check_corpus_scan_registry.py; governance/compat/check_review_cost_control.py |
-| literalTokensReviewed | DISPATCH_READY; exact16 worker paths; acceptance-ledger-json; bounded synthetic execution; independent nonworker probe; source-envelope dispositions; exact9 admission protected paths |
+| literalTokensReviewed | CLOSED_PASS_BOUNDED; exact16 worker paths; acceptance-ledger-json; bounded synthetic execution; independent nonworker probe; source-envelope dispositions; exact9 admission protected paths |
 | gateRunPurpose | confirmation evidence after source/read-ahead; no product proof |
 | claimBoundary | documentation dispatch checks only |
 
@@ -713,3 +713,48 @@ Exact changed manifest: `docs/baselines/CVF_GC018_NIS_T1E_EXPLICIT_OPEN_ITEMS_CO
 }
 ```
 T0 SHADOW_FULL_GATE_FALLBACK; selectiveExecutionAuthorized=false; full legacy bundles mandatory.
+
+
+## Reviewer Closure Disposition
+
+Local accepts native consumer material a93a2efa248b78ed524a4cc361d7f71ce7d12dcf plus the explicit owned-test selector correction in the closure batch. Final disposition and original/accepted source bindings: `docs/reviews/CVF_NIS_T1E_EXPLICIT_OPEN_ITEMS_CONSUMER_COMPLETION_2026-10-05.md` and `docs/reviews/evidence/cvf-nis-t1e-local-independent-review-2026-10-05.json`. Synthetic consumer proof only; no automatic S2 or live/UX/build-ready promotion. Original worker preserved.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1E_EXPLICIT_OPEN_ITEMS_CONSUMER_2026-10-05.md` | CLOSED_PASS_BOUNDED; exact native consumer accepted | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_NIS_T1E_EXPLICIT_OPEN_ITEMS_CONSUMER_COMPLETION_2026-10-05.md` | separate Local old/current producer and boundary probe | PASS |
+| Roadmap state | docs/roadmaps/CVF_GCLH_MACHINE_FIRST_REVIEW_PREFLIGHT_ROADMAP_2026-09-01.md | existing MFRP owner applied, no successor release or roadmap expansion | PASS |
+| Registry JSON | `docs/reviews/evidence/cvf-nis-t1e-local-independent-review-2026-10-05.json` | original/accepted source/evidence bindings; existing catalog disposition, no new owner topology | PASS |
+| Registry Markdown | `docs/reviews/CVF_NIS_T1E_EXPLICIT_OPEN_ITEMS_CONSUMER_COMPLETION_2026-10-05.md` | bounded consumer disposition, no new corpus/runtime owner or public claim | PASS |
+| External evidence digest | `docs/reviews/evidence/cvf-nis-t1e-local-independent-review-2026-10-05.json` | internal worker evidence and distinct Local oracle; SHA256 48d78a0e96e9cb9b4b12beb3f15b20c44582256a22e0296b1a5661460a7ffa52 | PASS |
+| System loop interlock | `docs/reviews/evidence/cvf-nis-t1e-local-independent-review-2026-10-05.json` | fixed legacy source -> consumer -> strict validator -> independent probe -> bounded closure | PASS |
+| Session continuity | CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json | generated closed pair and no automatic S2 | PASS |
+
+## Independent Review Probe Admission
+
+independentProbeDisposition: PASS_INDEPENDENT_PROBE
+probeExecutorRole: LOCAL_REVIEWER_NOT_IMPLEMENTATION_WORKER
+implementationWorkerActor: nis-t1e-internal-worker
+probeExecutorActor: nis-t1e-local-reviewer
+workerInvocationId: nis-t1e-worker-20261005
+probeInvocationId: nis-t1e-local-independent-20261005
+workerOracleSha256: ff715b9d26d89bea4e3f3ec8d30ba806dc1f5ee2e460c2b5de9a67df9ed23e4a
+probeOracleSha256: 48d78a0e96e9cb9b4b12beb3f15b20c44582256a22e0296b1a5661460a7ffa52
+workerEvidenceRef: docs/reviews/evidence/cvf-nis-t1e-acceptance-execution-2026-10-05.json
+probeEvidenceRef: docs/reviews/evidence/cvf-nis-t1e-local-independent-review-2026-10-05.json
+probeCommandOrMethod: independently authored scratch Vitest probe; old source extracted via git show at a27c13fa7; fixed dispatch inputs and separate in-memory assertions; actual commands/log hashes in docs/reviews/evidence/cvf-nis-t1e-local-independent-review-2026-10-05.json
+probeObservedResult: 8/8 independent groups PASS, three full legacy controls match old/current producers; malformed sourceFields and raw UI labels corrected; readback and rehashed grant/schema mutations rejected
+oracleSeparationBasis: distinct Local actor/invocation and separately authored assertions; worker code/test/ledger input never its own final proof; raw source/evidence hashes verified
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| Consumer | explicit items and sticky lifecycle | worker evidence, Local malformed refusal and34 affected regressions | PASS |
+| Compatibility | v1 exact and strict v2 | three independently captured old/current full controls, no invented grant | PASS |
+| Readback | exact accepted bytes | saved synthetic API3 and independent in-memory substitution rejection | PASS |
+| Independent probe | separate actor/oracle | Local8/8, raw/source/evidence bindings | PASS |
+| Scope | no UX/live/build-ready claim | declared and retained residual risks | PASS |
+
