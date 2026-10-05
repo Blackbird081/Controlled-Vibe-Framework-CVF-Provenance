@@ -17,6 +17,16 @@ class, status, owner, and base-head fields may appear above it.
 This template describes the rule before its own purpose section so authors see
 the read-first requirement before copying any other section order.
 
+For a worker with canonical workspace access, send only a short transfer
+prompt directly in chat: exact worktree, canonical work-order link/path and
+return status, with essential current-time facts if needed. At most six short
+nonblank lines; no duplicate mission/plan/manifest and no separate relay or
+provider-named work-order file unless the operator explicitly requests it.
+The full envelope remains in the canonical work order. Apply the shared-workspace
+chat transfer rule in
+`docs/reference/CVF_AGENT_DISPATCH_PROMPT_ENVELOPE_STANDARD_2026-06-15.md`;
+in-flight packet presentation is reconciled at authorized review/closure.
+
 ## Purpose
 
 A CVF Agent Work Order is the tactical execution packet given to an

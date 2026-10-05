@@ -4,7 +4,9 @@ Memory class: POINTER_RECORD
 
 Status: ACTIVE STANDARD
 
-Date: 2026-06-15
+Date: 2026-10-05
+
+Established: 2026-06-15; current revision ratifies the shared-workspace chat transfer rule.
 
 Standard ID: CVF-ADPES-2026-06-15
 
@@ -107,6 +109,43 @@ any other `##` section before it, puts it after `## Purpose`, or uses no
 explicit `N/A with reason`, fails the gate and must be kept in `HOLD` or
 `DRAFT` until corrected.
 
+## Shared-Workspace Chat Transfer Rule
+
+Operator ratification: 2026-10-05. Applies to a worker that can open the
+canonical work order in the assigned local/shared workspace.
+
+The dispatcher MUST send the transfer prompt directly in chat, using at most
+six short nonblank lines. Include the exact working directory, a clickable
+link or exact path to the canonical work order, and the required return
+status. Add the execution HEAD, commit mode or a current-time warning only
+when needed to prevent a concrete transfer error. The worker opens the
+canonical packet and follows its read-first envelope and referenced baseline.
+
+The chat prompt MUST NOT repeat the mission, execution plan, artifact
+manifest, acceptance ledger or forbidden-scope list from the work order.
+Those instructions remain in the canonical packet. Do not create a separate
+relay, cover-note or provider-named work-order file, including in ignored
+runtime scratch, merely to transport this prompt. Do not present a chat
+transfer prompt as a second work order or a new source of authority.
+
+A separate transfer artifact is permitted only when the operator explicitly
+requests one. An external agent without access to the canonical workspace
+uses the existing cross-workspace relay method instead:
+`docs/reference/external_agent_review/CVF_CROSS_WORKSPACE_EVIDENCE_RELAY_METHOD.md`.
+This rule does not remove required evidence receipts, canonical work orders,
+worker returns or source-review bundles.
+
+Keep the complete structured Dispatch Prompt Envelope inside the canonical
+work order; the short chat transfer points to it. Do not revise an in-flight
+packet, delete its transfer evidence or invalidate its source pins solely to
+migrate this presentation rule. Apply the rule to new transfers; reconcile
+an already dispatched packet during its authorized review/closure.
+
+Dispatcher review checks the delivery medium and duplicate instructions.
+The existing repository checker validates the canonical envelope; it does
+not inspect chat or ignored files. A checker PASS alone is not evidence
+that this chat-transfer rule was followed.
+
 ## Envelope Template
 
 Copy and complete this block inside the work order's `## Dispatch Prompt Envelope` section:
@@ -169,22 +208,22 @@ Claim Update Requirement: N/A with reason: no claim was predicted; no update is 
 
 | Field | Evidence |
 |---|---|
-| Actor | Codex orchestrator/reviewer |
-| Provider or surface | Codex local workspace |
-| Session or invocation | 2026-06-18 prompt envelope first-section placement hardening |
+| Actor | Local orchestrator/reviewer |
+| Provider or surface | Local workspace |
+| Session or invocation | 2026-10-05 operator-ratified shared-workspace chat transfer rule |
 | Working directory | `d:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
-| Command or tool surface | PowerShell, apply_patch, pytest |
-| Target paths | prompt-envelope standard, work-order template, template family index, checker, tests, finding review |
-| Allowed scope source | operator requested prompt placement finding remediation before Claude worker-return review |
-| Before status evidence | base `8ce54d6b` |
-| After status evidence | first-section placement rule and tests authored; pending material commit |
+| Command or tool surface | PowerShell, apply_patch, repository governance checks |
+| Target paths | prompt-envelope standard, work-order template and existing active-window registry binding |
+| Allowed scope source | operator explicitly requested making the short chat transfer and no relay file rule canonical; T1F return still pending |
+| Before status evidence | clean main at `e06513638a363897190195d1d8caadbd19dd8daf` |
+| After status evidence | two reference files and one active-reference registry binding updated; no T1F packet, worker or checker edit |
 | Diff evidence | `git diff --name-status`; `git status --short` |
-| Approval boundary | authoring-time dispatch prompt envelope placement only; no runtime/provider/live/public scope |
+| Approval boundary | existing dispatch reference owners and their canonical-path retention binding; T1F in-flight authority and all parked lanes retained |
 | Claim boundary | repo-local trace only; no OS/user attribution |
-| Agent type | Codex orchestrator/reviewer |
-| Invocation ID | `prompt-read-first-placement-finding-2026-06-18` |
-| Expected manifest | `docs/reference/CVF_AGENT_DISPATCH_PROMPT_ENVELOPE_STANDARD_2026-06-15.md`; `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md`; `docs/reference/work_order_template/README.md`; `governance/compat/check_dispatch_prompt_envelope.py`; `governance/compat/test_check_dispatch_prompt_envelope.py`; `docs/reviews/CVF_PROMPT_READ_FIRST_PLACEMENT_FINDING_2026-06-18.md` |
-| Actual changed set | `docs/reference/CVF_AGENT_DISPATCH_PROMPT_ENVELOPE_STANDARD_2026-06-15.md`; `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md`; `docs/reference/work_order_template/README.md`; `governance/compat/check_dispatch_prompt_envelope.py`; `governance/compat/test_check_dispatch_prompt_envelope.py`; `docs/reviews/CVF_PROMPT_READ_FIRST_PLACEMENT_FINDING_2026-06-18.md` |
+| Agent type | Local orchestrator/reviewer |
+| Invocation ID | `shared-workspace-chat-transfer-rule-20261005` |
+| Expected manifest | `docs/reference/CVF_AGENT_DISPATCH_PROMPT_ENVELOPE_STANDARD_2026-06-15.md`; `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md`; `governance/compat/CVF_ACTIVE_WINDOW_REGISTRY.json` |
+| Actual changed set | `docs/reference/CVF_AGENT_DISPATCH_PROMPT_ENVELOPE_STANDARD_2026-06-15.md`; `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md`; `governance/compat/CVF_ACTIVE_WINDOW_REGISTRY.json` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
 
