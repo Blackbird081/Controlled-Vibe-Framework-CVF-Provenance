@@ -1,0 +1,264 @@
+{
+  "schemaVersion": "cvf.nisOwnerFixtureSupport.v1",
+  "batchId": "CVF-NIS-T1B-D",
+  "operatorAuthority": "2026-10-05 explicit operator reply: cho phep, toan quyen, to the bounded WRONG_OWNER elevated-helper checkpoint.",
+  "authorityScope": "Pinned helper only: caller-owned, marked direct OS-temp fixture, actual different namespace owner, measured refusal/rollback, restore owner; no other privileged process/account/root/policy effect.",
+  "helperExecutionDisposition": "AVAILABLE_TO_BOUNDED_WORKER_PROBE_AND_SEPARATE_LOCAL_REVIEW",
+  "workerUse": "Materialize exact helper and wrapper bytes into authorized scratch; create the documented private marked owner fixture/job, pin helper/marker, invoke wrapper via Windows Start-Process -Verb RunAs -WindowStyle Hidden for SET_WRONG_OWNER then RESTORE_OWNER. Only helper ownership mutation is elevated; actual production peer and independent assertions stay ordinary token. Restoration is mandatory even if probe fails; retain fixture and report BLOCKED if restoration cannot be verified. No permission re-request for this already-authorized boundary; OS UAC consent is still an execution requirement.",
+  "helperSources": [
+    {
+      "name": "wrong-owner-fixture-helper.PROPOSED.ps1",
+      "sha256": "e206c46b6f00789b9090068230c1d09dde2ed7c2a57d9b197f1ed94e4d80af54",
+      "encoding": "BASE64_EXACT_BYTES",
+      "contentBase64": "IyBQUk9QT1NFRCBPTkxZLiBObyBleGVjdXRpb24gYXV0aG9yaXphdGlvbiBmcm9tIHRoaXMgZmlsZS4KIyBMb2NhbCByZXZpZXdlciBoZWxwZXI7IGNvbnRhaW5zIG5vIGRlbGV0aW9uLCBhY2NvdW50LCBzZXJ2aWNlIG9yIHBvbGljeSBvcGVyYXRpb24uCltDbWRsZXRCaW5kaW5nKCldCnBhcmFtKAogICAgW1BhcmFtZXRlcihNYW5kYXRvcnk9JHRydWUpXVtWYWxpZGF0ZVNldCgnU0VUX1dST05HX09XTkVSJywnUkVTVE9SRV9PV05FUicpXVtzdHJpbmddJEFjdGlvbiwKICAgIFtQYXJhbWV0ZXIoTWFuZGF0b3J5PSR0cnVlKV1bc3RyaW5nXSRGaXh0dXJlUm9vdCwKICAgIFtQYXJhbWV0ZXIoTWFuZGF0b3J5PSR0cnVlKV1bVmFsaWRhdGVQYXR0ZXJuKCdeW2EtZjAtOV17NjR9JCcpXVtzdHJpbmddJE5hbWVzcGFjZSwKICAgIFtQYXJhbWV0ZXIoTWFuZGF0b3J5PSR0cnVlKV1bVmFsaWRhdGVQYXR0ZXJuKCdeW2EtZjAtOV17NjR9JCcpXVtzdHJpbmddJEV4cGVjdGVkTWFya2VyU2hhMjU2LAogICAgW1BhcmFtZXRlcihNYW5kYXRvcnk9JHRydWUpXVtWYWxpZGF0ZVBhdHRlcm4oJ15TLTEtNS0yMS1bMC05LV0rJCcpXVtzdHJpbmddJE9yaWdpbmFsT3duZXJTaWQKKQokRXJyb3JBY3Rpb25QcmVmZXJlbmNlPSdTdG9wJwokaWRlbnRpdHk9W1NlY3VyaXR5LlByaW5jaXBhbC5XaW5kb3dzSWRlbnRpdHldOjpHZXRDdXJyZW50KCkKJHByaW5jaXBhbD1OZXctT2JqZWN0IFNlY3VyaXR5LlByaW5jaXBhbC5XaW5kb3dzUHJpbmNpcGFsKCRpZGVudGl0eSkKaWYoLW5vdCAkcHJpbmNpcGFsLklzSW5Sb2xlKFtTZWN1cml0eS5QcmluY2lwYWwuV2luZG93c0J1aWx0SW5Sb2xlXTo6QWRtaW5pc3RyYXRvcikpe3Rocm93ICdFTEVWQVRFRF9MT0NBTF9GSVhUVVJFX0hFTFBFUl9SRVFVSVJFRCd9CmlmKCRpZGVudGl0eS5Vc2VyLlZhbHVlIC1uZSAkT3JpZ2luYWxPd25lclNpZCl7dGhyb3cgJ1NBTUVfT1BFUkFUT1JfSURFTlRJVFlfUkVRVUlSRUQnfQokdGVtcFJvb3Q9W0lPLlBhdGhdOjpHZXRGdWxsUGF0aChbSU8uUGF0aF06OkdldFRlbXBQYXRoKCkpLlRyaW1FbmQoJ1wnKQokcmVzb2x2ZWRSb290PVtJTy5QYXRoXTo6R2V0RnVsbFBhdGgoJEZpeHR1cmVSb290KS5UcmltRW5kKCdcJykKaWYoW0lPLlBhdGhdOjpHZXREaXJlY3RvcnlOYW1lKCRyZXNvbHZlZFJvb3QpIC1uZSAkdGVtcFJvb3Qpe3Rocm93ICdGSVhUVVJFX05PVF9ESVJFQ1RfT1NfVEVNUF9DSElMRCd9CiRsZWFmPVtJTy5QYXRoXTo6R2V0RmlsZU5hbWUoJHJlc29sdmVkUm9vdCkKaWYoJGxlYWYgLW5vdG1hdGNoICdebmlzLXQxYi1kLW93bmVyLVswLTlhLWZdezh9LVswLTlhLWZdezR9LVswLTlhLWZdezR9LVswLTlhLWZdezR9LVswLTlhLWZdezEyfSQnKXt0aHJvdyAnRklYVFVSRV9SVU5fSURfSU5WQUxJRCd9CiR0YXJnZXQ9Sm9pbi1QYXRoICRyZXNvbHZlZFJvb3QgJE5hbWVzcGFjZQpmb3JlYWNoKCRpbml0aWFsIGluIEAoJHRhcmdldCwkcmVzb2x2ZWRSb290KSl7CiAgICAkY3Vyc29yPSRpbml0aWFsCiAgICB3aGlsZSgkY3Vyc29yKXsKICAgICAgICAkaXRlbT1HZXQtSXRlbSAtTGl0ZXJhbFBhdGggJGN1cnNvciAtRm9yY2UKICAgICAgICBpZigtbm90ICRpdGVtLlBTSXNDb250YWluZXIgLW9yICgkaXRlbS5BdHRyaWJ1dGVzIC1iYW5kIFtJTy5GaWxlQXR0cmlidXRlc106OlJlcGFyc2VQb2ludCkpe3Rocm93ICdVTlNBRkVfRklYVFVSRV9BTkNFU1RPUid9CiAgICAgICAgJHBhcmVudD1bSU8uRGlyZWN0b3J5XTo6R2V0UGFyZW50KCRjdXJzb3IpCiAgICAgICAgaWYoJG51bGwgLWVxICRwYXJlbnQpe2JyZWFrfQogICAgICAgICRjdXJzb3I9JHBhcmVudC5GdWxsTmFtZQogICAgfQp9CiRtYXJrZXJQYXRoPUpvaW4tUGF0aCAkcmVzb2x2ZWRSb290ICcub3duZXItZml4dHVyZS1tYXJrZXIuanNvbicKJG1hcmtlckl0ZW09R2V0LUl0ZW0gLUxpdGVyYWxQYXRoICRtYXJrZXJQYXRoIC1Gb3JjZQppZigkbWFya2VySXRlbS5QU0lzQ29udGFpbmVyIC1vciAoJG1hcmtlckl0ZW0uQXR0cmlidXRlcyAtYmFuZCBbSU8uRmlsZUF0dHJpYnV0ZXNdOjpSZXBhcnNlUG9pbnQpKXt0aHJvdyAnVU5TQUZFX0ZJWFRVUkVfTUFSS0VSJ30KaWYoKEdldC1GaWxlSGFzaCAtTGl0ZXJhbFBhdGggJG1hcmtlclBhdGggLUFsZ29yaXRobSBTSEEyNTYpLkhhc2guVG9Mb3dlcigpIC1uZSAkRXhwZWN0ZWRNYXJrZXJTaGEyNTYpe3Rocm93ICdGSVhUVVJFX01BUktFUl9IQVNIX01JU01BVENIJ30KJG1hcmtlcj1HZXQtQ29udGVudCAtTGl0ZXJhbFBhdGggJG1hcmtlclBhdGggLVJhdyB8IENvbnZlcnRGcm9tLUpzb24KaWYoJG1hcmtlci5zY2hlbWFWZXJzaW9uIC1uZSAnY3ZmLm5pc1dyb25nT3duZXJGaXh0dXJlLnYxJyAtb3IgJG1hcmtlci5ydW5JZCAtbmUgJGxlYWYuU3Vic3RyaW5nKCduaXMtdDFiLWQtb3duZXItJy5MZW5ndGgpIC1vciAkbWFya2VyLm5hbWVzcGFjZSAtbmUgJE5hbWVzcGFjZSAtb3IgJG1hcmtlci5vcmlnaW5hbE93bmVyU2lkIC1uZSAkT3JpZ2luYWxPd25lclNpZCl7dGhyb3cgJ0ZJWFRVUkVfTUFSS0VSX0JJTkRJTkdfTUlTTUFUQ0gnfQokc2lkVHlwZT1bU2VjdXJpdHkuUHJpbmNpcGFsLlNlY3VyaXR5SWRlbnRpZmllcl0KJHJvb3RTZWN1cml0eT1HZXQtQWNsIC1MaXRlcmFsUGF0aCAkcmVzb2x2ZWRSb290CmlmKCRyb290U2VjdXJpdHkuR2V0T3duZXIoJHNpZFR5cGUpLlZhbHVlIC1uZSAkT3JpZ2luYWxPd25lclNpZCAtb3IgLW5vdCAkcm9vdFNlY3VyaXR5LkFyZUFjY2Vzc1J1bGVzUHJvdGVjdGVkKXt0aHJvdyAnUFJJVkFURV9DQUxMRVJfT1dORURfRklYVFVSRV9ST09UX1JFUVVJUkVEJ30KJHRydXN0ZWQ9QCgkT3JpZ2luYWxPd25lclNpZCwnUy0xLTUtMTgnLCdTLTEtNS0zMi01NDQnKQpmb3JlYWNoKCRhY2UgaW4gJHJvb3RTZWN1cml0eS5HZXRBY2Nlc3NSdWxlcygkdHJ1ZSwkdHJ1ZSwkc2lkVHlwZSkpewogICAgaWYoJGFjZS5Jc0luaGVyaXRlZCAtb3IgJGFjZS5BY2Nlc3NDb250cm9sVHlwZSAtbmUgJ0FsbG93JyAtb3IgJGFjZS5JZGVudGl0eVJlZmVyZW5jZS5WYWx1ZSAtbm90aW4gJHRydXN0ZWQpe3Rocm93ICdQUklWQVRFX0ZJWFRVUkVfUk9PVF9BQ0xfUkVRVUlSRUQnfQp9CiRpdGVtPUdldC1JdGVtIC1MaXRlcmFsUGF0aCAkdGFyZ2V0IC1Gb3JjZQokc2VjdXJpdHk9JGl0ZW0uR2V0QWNjZXNzQ29udHJvbChbU2VjdXJpdHkuQWNjZXNzQ29udHJvbC5BY2Nlc3NDb250cm9sU2VjdGlvbnNdOjpPd25lcikKJGJlZm9yZT0kc2VjdXJpdHkuR2V0T3duZXIoJHNpZFR5cGUpLlZhbHVlCiR3cm9uZ1NpZD0nUy0xLTUtMzItNTQ0JwppZigkQWN0aW9uIC1lcSAnU0VUX1dST05HX09XTkVSJyl7CiAgICBpZigkYmVmb3JlIC1uZSAkT3JpZ2luYWxPd25lclNpZCl7dGhyb3cgJ1VORVhQRUNURURfUFJFX0ZJWFRVUkVfT1dORVInfQogICAgJGRlc2lyZWQ9JHdyb25nU2lkCn1lbHNlewogICAgaWYoJGJlZm9yZSAtbmUgJHdyb25nU2lkKXt0aHJvdyAnVU5FWFBFQ1RFRF9QUkVfUkVTVE9SRV9PV05FUid9CiAgICAkZGVzaXJlZD0kT3JpZ2luYWxPd25lclNpZAp9CiRzZWN1cml0eS5TZXRPd25lcigoTmV3LU9iamVjdCBTZWN1cml0eS5QcmluY2lwYWwuU2VjdXJpdHlJZGVudGlmaWVyKCRkZXNpcmVkKSkpCiRpdGVtLlNldEFjY2Vzc0NvbnRyb2woJHNlY3VyaXR5KQokYWZ0ZXI9KEdldC1BY2wgLUxpdGVyYWxQYXRoICR0YXJnZXQpLkdldE93bmVyKCRzaWRUeXBlKS5WYWx1ZQppZigkYWZ0ZXIgLW5lICRkZXNpcmVkKXt0aHJvdyAnT1dORVJfUkVBREJBQ0tfRkFJTEVEX1JFVEFJTl9GSVhUVVJFJ30KW29yZGVyZWRdQHtzY29wZT0nTE9DQUxfVEVTVF9TRVNTSU9OJzthY3Rpb249JEFjdGlvbjt0YXJnZXQ9JHRhcmdldDtiZWZvcmVPd25lclNpZD0kYmVmb3JlO2FmdGVyT3duZXJTaWQ9JGFmdGVyO21hcmtlclNoYTI1Nj0kRXhwZWN0ZWRNYXJrZXJTaGEyNTZ9fENvbnZlcnRUby1Kc29uIC1Db21wcmVzcwo="
+    },
+    {
+      "name": "run-owner-helper-elevated.ps1",
+      "sha256": "e1860bfee9ba5b21f5d1fc988638eb30df48d683318a3ea06bdcbb0fe301d319",
+      "encoding": "BASE64_EXACT_BYTES",
+      "contentBase64": "W0NtZGxldEJpbmRpbmcoKV0KcGFyYW0oW1BhcmFtZXRlcihNYW5kYXRvcnk9JHRydWUpXVtWYWxpZGF0ZVNldCgnU0VUX1dST05HX09XTkVSJywnUkVTVE9SRV9PV05FUicpXVtzdHJpbmddJEFjdGlvbikKJEVycm9yQWN0aW9uUHJlZmVyZW5jZT0nU3RvcCcKJGpvYlBhdGg9Sm9pbi1QYXRoICRQU1NjcmlwdFJvb3QgJ293bmVyLWZpeHR1cmUtam9iLmpzb24nCiRyZWNlaXB0UGF0aD1Kb2luLVBhdGggJFBTU2NyaXB0Um9vdCAoJEFjdGlvbi5Ub0xvd2VyKCkrJy5yZWNlaXB0Lmpzb24nKQokcmVzdWx0PVtvcmRlcmVkXUB7YWN0aW9uPSRBY3Rpb247c3VjY2Vzcz0kZmFsc2U7c2NvcGU9J0xPQ0FMX1RFU1RfU0VTU0lPTic7c3RhcnRlZFV0Yz1bRGF0ZVRpbWVdOjpVdGNOb3cuVG9TdHJpbmcoJ28nKX0KdHJ5ewogJGpvYj1HZXQtQ29udGVudCAtTGl0ZXJhbFBhdGggJGpvYlBhdGggLVJhdyB8IENvbnZlcnRGcm9tLUpzb24KIGlmKCRqb2Iuc2NoZW1hVmVyc2lvbiAtbmUgJ2N2Zi5uaXNPd25lckZpeHR1cmVKb2IudjEnKXt0aHJvdyAnSk9CX1NDSEVNQV9JTlZBTElEJ30KIGlmKChHZXQtRmlsZUhhc2ggLUxpdGVyYWxQYXRoICRqb2IuaGVscGVyUGF0aCAtQWxnb3JpdGhtIFNIQTI1NikuSGFzaC5Ub0xvd2VyKCkgLW5lICRqb2IuaGVscGVyU2hhMjU2KXt0aHJvdyAnRklYVFVSRV9IRUxQRVJfSEFTSF9EUklGVCd9CiAkb3V0cHV0PSYgJGpvYi5oZWxwZXJQYXRoIC1BY3Rpb24gJEFjdGlvbiAtRml4dHVyZVJvb3QgJGpvYi5yb290IC1OYW1lc3BhY2UgJGpvYi5uYW1lc3BhY2UgLUV4cGVjdGVkTWFya2VyU2hhMjU2ICRqb2IuZXhwZWN0ZWRNYXJrZXJTaGEyNTYgLU9yaWdpbmFsT3duZXJTaWQgJGpvYi5vcmlnaW5hbE93bmVyU2lkCiAkcmVzdWx0LmhlbHBlclJlc3VsdD0kb3V0cHV0IHwgQ29udmVydEZyb20tSnNvbgogJHJlc3VsdC5zdWNjZXNzPSR0cnVlCn1jYXRjaHskcmVzdWx0LmVycm9yPSRfLkV4Y2VwdGlvbi5NZXNzYWdlfQokcmVzdWx0LmZpbmlzaGVkVXRjPVtEYXRlVGltZV06OlV0Y05vdy5Ub1N0cmluZygnbycpCiRqc29uPSRyZXN1bHR8Q29udmVydFRvLUpzb24gLURlcHRoIDUKW0lPLkZpbGVdOjpXcml0ZUFsbFRleHQoJHJlY2VpcHRQYXRoLCRqc29uK1tFbnZpcm9ubWVudF06Ok5ld0xpbmUsW1RleHQuVVRGOEVuY29kaW5nXTo6bmV3KCRmYWxzZSkpCmlmKC1ub3QgJHJlc3VsdC5zdWNjZXNzKXtleGl0IDJ9Cg=="
+    },
+    {
+      "name": "owner-independent-probe.mjs",
+      "sha256": "c2425a289a1789186a28f99058981f75803a45a6533da114105c24653178a7a6",
+      "encoding": "BASE64_EXACT_BYTES",
+      "contentBase64": "aW1wb3J0IGZzIGZyb20gJ25vZGU6ZnMvcHJvbWlzZXMnOwppbXBvcnQgb3MgZnJvbSAnbm9kZTpvcyc7CmltcG9ydCBwYXRoIGZyb20gJ25vZGU6cGF0aCc7CmltcG9ydCBjcnlwdG8gZnJvbSAnbm9kZTpjcnlwdG8nOwppbXBvcnQge2V4ZWNGaWxlfSBmcm9tICdub2RlOmNoaWxkX3Byb2Nlc3MnOwppbXBvcnQge3Byb21pc2lmeX0gZnJvbSAnbm9kZTp1dGlsJzsKaW1wb3J0IHtjcmVhdGVSZXF1aXJlfSBmcm9tICdub2RlOm1vZHVsZSc7CmltcG9ydCB7ZmlsZVVSTFRvUGF0aH0gZnJvbSAnbm9kZTp1cmwnOwpjb25zdCBzY3JhdGNoPXBhdGguZGlybmFtZShmaWxlVVJMVG9QYXRoKGltcG9ydC5tZXRhLnVybCkpOwpjb25zdCBhcGk9Y3JlYXRlUmVxdWlyZShpbXBvcnQubWV0YS51cmwpKHBhdGguam9pbihzY3JhdGNoLCdvd25lci1wcm9iZS1wcm9kdWN0aW9uLmNqcycpKTsKY29uc3Qgam9iUGF0aD1wYXRoLmpvaW4oc2NyYXRjaCwnb3duZXItZml4dHVyZS1qb2IuanNvbicpOwpjb25zdCBzaGE9Yj0+Y3J5cHRvLmNyZWF0ZUhhc2goJ3NoYTI1NicpLnVwZGF0ZShiKS5kaWdlc3QoJ2hleCcpOwpjb25zdCBwcz1wYXRoLmpvaW4ocHJvY2Vzcy5lbnYuU3lzdGVtUm9vdD8/J0M6XFxXaW5kb3dzJywnU3lzdGVtMzIvV2luZG93c1Bvd2VyU2hlbGwvdjEuMC9wb3dlcnNoZWxsLmV4ZScpOwovLyBQcm9jZXNzLWxvY2FsIFdpbmRvd3MgUG93ZXJTaGVsbCA1LjEgZW52aXJvbm1lbnQ7IGRvIG5vdCBpbmhlcml0IGluY29tcGF0aWJsZSBQb3dlclNoZWxsIDcgbW9kdWxlcy4KcHJvY2Vzcy5lbnYuUFNNb2R1bGVQYXRoPXBhdGguam9pbihwcm9jZXNzLmVudi5TeXN0ZW1Sb290Pz8nQzpcXFdpbmRvd3MnLCdTeXN0ZW0zMi9XaW5kb3dzUG93ZXJTaGVsbC92MS4wL01vZHVsZXMnKTsKY29uc3QgZXhlY3V0ZT1wcm9taXNpZnkoZXhlY0ZpbGUpOwpjb25zdCBPUkFDTEU9YCRFcnJvckFjdGlvblByZWZlcmVuY2U9J1N0b3AnOyRhPUdldC1BY2wgLUxpdGVyYWxQYXRoICRlbnY6TklTX09SQUNMRV9UQVJHRVQ7JHM9W1NlY3VyaXR5LlByaW5jaXBhbC5TZWN1cml0eUlkZW50aWZpZXJdOyRydWxlcz1AKCk7Zm9yZWFjaCgkciBpbiAkYS5HZXRBY2Nlc3NSdWxlcygkdHJ1ZSwkdHJ1ZSwkcykpeyRydWxlcys9W29yZGVyZWRdQHtzaWQ9JHIuSWRlbnRpdHlSZWZlcmVuY2UuVmFsdWU7cmlnaHRzPVtpbnRdJHIuRmlsZVN5c3RlbVJpZ2h0czthY2Nlc3NUeXBlPVtzdHJpbmddJHIuQWNjZXNzQ29udHJvbFR5cGU7aXNJbmhlcml0ZWQ9W2Jvb2xdJHIuSXNJbmhlcml0ZWQ7aW5oZXJpdGFuY2VGbGFncz1bc3RyaW5nXSRyLkluaGVyaXRhbmNlRmxhZ3M7cHJvcGFnYXRpb25GbGFncz1bc3RyaW5nXSRyLlByb3BhZ2F0aW9uRmxhZ3N9fTtbb3JkZXJlZF1Ae293bmVyU2lkPSRhLkdldE93bmVyKCRzKS5WYWx1ZTtwcm90ZWN0ZWQ9W2Jvb2xdJGEuQXJlQWNjZXNzUnVsZXNQcm90ZWN0ZWQ7YWNlcz0kcnVsZXN9fENvbnZlcnRUby1Kc29uIC1EZXB0aCA1IC1Db21wcmVzc2A7CmFzeW5jIGZ1bmN0aW9uIHR1cGxlKHRhcmdldCl7Y29uc3Qge3N0ZG91dH09YXdhaXQgZXhlY3V0ZShwcyxbJy1Ob1Byb2ZpbGUnLCctTm9uSW50ZXJhY3RpdmUnLCctQ29tbWFuZCcsT1JBQ0xFXSx7ZW52OnsuLi5wcm9jZXNzLmVudixOSVNfT1JBQ0xFX1RBUkdFVDp0YXJnZXR9LHdpbmRvd3NIaWRlOnRydWUsdGltZW91dDoyMDAwMH0pO2NvbnN0IGE9SlNPTi5wYXJzZShzdGRvdXQpO2EuYWNlcz0oQXJyYXkuaXNBcnJheShhLmFjZXMpP2EuYWNlczphLmFjZXM/W2EuYWNlc106W10pLnNvcnQoKHgseSk9PkpTT04uc3RyaW5naWZ5KHgpLmxvY2FsZUNvbXBhcmUoSlNPTi5zdHJpbmdpZnkoeSkpKTthLmluaGVyaXRhbmNlU3RhdGU9YS5hY2VzLnNvbWUoeD0+eC5pc0luaGVyaXRlZCk/J0hBU19JTkhFUklURURfQUNFUyc6J05PX0lOSEVSSVRFRF9BQ0VTJztyZXR1cm4gYTt9CmFzeW5jIGZ1bmN0aW9uIGNvbnRlbnRzKGRpcmVjdG9yeSl7Y29uc3QgcmVzdWx0PVtdO2Zvcihjb25zdCBuYW1lIG9mIChhd2FpdCBmcy5yZWFkZGlyKGRpcmVjdG9yeSkpLnNvcnQoKSl7Y29uc3QgcD1wYXRoLmpvaW4oZGlyZWN0b3J5LG5hbWUpLHM9YXdhaXQgZnMubHN0YXQocCk7aWYoIXMuaXNGaWxlKCl8fHMuaXNTeW1ib2xpY0xpbmsoKSl0aHJvdyBFcnJvcignVU5FWFBFQ1RFRF9GSVhUVVJFX0NPTlRFTlQnKTtyZXN1bHQucHVzaCh7bmFtZSxsZW5ndGg6cy5zaXplLHNoYTI1NjpzaGEoYXdhaXQgZnMucmVhZEZpbGUocCkpfSk7fXJldHVybiByZXN1bHQ7fQphc3luYyBmdW5jdGlvbiBiaW5kKCl7Y29uc3QgYWN0b3I9YXdhaXQgYXBpLnN5bnRoZXRpY0FjdG9yKCduaXMtbG9jYWwtd3Jvbmctb3duZXInKTtpZighYWN0b3IpdGhyb3cgRXJyb3IoJ1NZTlRIRVRJQ19BQ1RPUl9GQUlMRUQnKTtyZXR1cm4gYWN0b3I7fQpjb25zdCBtb2RlPXByb2Nlc3MuYXJndlsyXTsKaWYobW9kZT09PSdwcmVwYXJlJyl7CiBjb25zdCBydW5JZD1jcnlwdG8ucmFuZG9tVVVJRCgpLHJvb3Q9cGF0aC5qb2luKG9zLnRtcGRpcigpLGBuaXMtdDFiLWQtb3duZXItJHtydW5JZH1gKTthd2FpdCBmcy5ta2Rpcihyb290KTthd2FpdCBhcGkuaGFyZGVuUHJpdmF0ZShyb290KTsKIGNvbnN0IGFjdG9yPWF3YWl0IGJpbmQoKSxzdG9yZT1uZXcgYXBpLkZpbGVJbnRlbnRTcGVjQWNjZXB0YW5jZVN0b3JlKHJvb3QsYWN0b3IsKCk9PkRhdGUubm93KCkse3NlY3VyaXR5OmFwaS53aW5kb3dzUHJpdmF0ZVNlY3VyaXR5fSk7CiBjb25zdCBjYW5kaWRhdGU9YXdhaXQgYXBpLnByZXBhcmVTeW50aGV0aWNDYW5kaWRhdGUoYWN0b3IsJ0xvY2FsIGluZGVwZW5kZW50IG93bmVyIHByZWltYWdlJyk7YXdhaXQgYXBpLmNvbW1pdEludGVudFNwZWNBY2NlcHRhbmNlQ2FuZGlkYXRlKGFjdG9yLGNhbmRpZGF0ZSxzdG9yZSk7CiBjb25zdCBuYW1lc3BhY2U9c3RvcmUubmFtZXNwYWNlLHRhcmdldD1wYXRoLmpvaW4ocm9vdCxuYW1lc3BhY2UpLG9yaWdpbmFsPWF3YWl0IHR1cGxlKHRhcmdldCk7CiBjb25zdCBtYXJrZXI9e3NjaGVtYVZlcnNpb246J2N2Zi5uaXNXcm9uZ093bmVyRml4dHVyZS52MScscnVuSWQsbmFtZXNwYWNlLG9yaWdpbmFsT3duZXJTaWQ6b3JpZ2luYWwub3duZXJTaWR9OwogY29uc3QgbWFya2VyUGF0aD1wYXRoLmpvaW4ocm9vdCwnLm93bmVyLWZpeHR1cmUtbWFya2VyLmpzb24nKTthd2FpdCBmcy53cml0ZUZpbGUobWFya2VyUGF0aCxKU09OLnN0cmluZ2lmeShtYXJrZXIpKydcbicpOwogY29uc3Qgam9iPXtzY2hlbWFWZXJzaW9uOidjdmYubmlzT3duZXJGaXh0dXJlSm9iLnYxJyxzY29wZTonTE9DQUxfVEVTVF9TRVNTSU9OJyxhdXRob3JpemF0aW9uOidPcGVyYXRvciAyMDI2LTEwLTA1OiBjaG8gcGhlcCwgdG9hbiBxdXllbjsgYm91bmRlZCBXUk9OR19PV05FUiBPUy10ZW1wIGZpeHR1cmUgY2hlY2twb2ludCcscm9vdCxuYW1lc3BhY2Usb3JpZ2luYWxPd25lclNpZDpvcmlnaW5hbC5vd25lclNpZCxvcmlnaW5hbFR1cGxlOm9yaWdpbmFsLG9yaWdpbmFsQ29udGVudHM6YXdhaXQgY29udGVudHModGFyZ2V0KSxleHBlY3RlZE1hcmtlclNoYTI1NjpzaGEoYXdhaXQgZnMucmVhZEZpbGUobWFya2VyUGF0aCkpLGhlbHBlclBhdGg6cGF0aC5qb2luKHNjcmF0Y2gsJ3dyb25nLW93bmVyLWZpeHR1cmUtaGVscGVyLlBST1BPU0VELnBzMScpLGhlbHBlclNoYTI1NjpzaGEoYXdhaXQgZnMucmVhZEZpbGUocGF0aC5qb2luKHNjcmF0Y2gsJ3dyb25nLW93bmVyLWZpeHR1cmUtaGVscGVyLlBST1BPU0VELnBzMScpKSkscHJvYmVQYXRoOmZpbGVVUkxUb1BhdGgoaW1wb3J0Lm1ldGEudXJsKSxwcm9iZVNoYTI1NjpzaGEoYXdhaXQgZnMucmVhZEZpbGUoZmlsZVVSTFRvUGF0aChpbXBvcnQubWV0YS51cmwpKSkscHJvZHVjdGlvbkJ1bmRsZVNoYTI1NjpzaGEoYXdhaXQgZnMucmVhZEZpbGUocGF0aC5qb2luKHNjcmF0Y2gsJ293bmVyLXByb2JlLXByb2R1Y3Rpb24uY2pzJykpKX07CiBhd2FpdCBmcy53cml0ZUZpbGUoam9iUGF0aCxKU09OLnN0cmluZ2lmeShqb2IsbnVsbCwyKSsnXG4nKTtjb25zb2xlLmxvZyhKU09OLnN0cmluZ2lmeSh7cGhhc2U6J1BSRVBBUkVEJyxyb290LG5hbWVzcGFjZSxzY29wZTpqb2Iuc2NvcGV9KSk7Cn1lbHNlIGlmKG1vZGU9PT0ncHJvYmUnKXsKIGNvbnN0IGpvYj1KU09OLnBhcnNlKGF3YWl0IGZzLnJlYWRGaWxlKGpvYlBhdGgpKTtjb25zdCB0YXJnZXQ9cGF0aC5qb2luKGpvYi5yb290LGpvYi5uYW1lc3BhY2UpLHByZT1hd2FpdCB0dXBsZSh0YXJnZXQpLGJlZm9yZT1hd2FpdCBjb250ZW50cyh0YXJnZXQpOwogaWYocHJlLm93bmVyU2lkIT09J1MtMS01LTMyLTU0NCd8fHByZS5vd25lclNpZD09PWpvYi5vcmlnaW5hbE93bmVyU2lkKXRocm93IEVycm9yKCdBQ1RVQUxfV1JPTkdfT1dORVJfUkVRVUlSRUQnKTsKIGNvbnN0IGFjdG9yPWF3YWl0IGJpbmQoKSxzdG9yZT1uZXcgYXBpLkZpbGVJbnRlbnRTcGVjQWNjZXB0YW5jZVN0b3JlKGpvYi5yb290LGFjdG9yLCgpPT5EYXRlLm5vdygpLHtzZWN1cml0eTphcGkud2luZG93c1ByaXZhdGVTZWN1cml0eX0pOwogY29uc3QgY2FuZGlkYXRlPWF3YWl0IGFwaS5wcmVwYXJlU3ludGhldGljQ2FuZGlkYXRlKGFjdG9yLCdMb2NhbCBpbmRlcGVuZGVudCBvd25lciBhdHRlbXB0ZWQgbXV0YXRpb24nKTtsZXQgZmFpbHVyZT1udWxsOwogbGV0IGRpcmVjdFJlZnVzYWw9bnVsbDt0cnl7YXdhaXQgYXBpLmhhcmRlblByaXZhdGUodGFyZ2V0KTt9Y2F0Y2goZSl7ZGlyZWN0UmVmdXNhbD1lLmNvZGU/P2UubWVzc2FnZTt9CiB0cnl7YXdhaXQgYXBpLmNvbW1pdEludGVudFNwZWNBY2NlcHRhbmNlQ2FuZGlkYXRlKGFjdG9yLGNhbmRpZGF0ZSxzdG9yZSk7fWNhdGNoKGUpe2ZhaWx1cmU9ZS5jb2RlPz9lLm1lc3NhZ2U7fQogY29uc3QgcG9zdD1hd2FpdCB0dXBsZSh0YXJnZXQpLGFmdGVyPWF3YWl0IGNvbnRlbnRzKHRhcmdldCksbG9ja0V4aXN0cz1hd2FpdCBmcy5sc3RhdChwYXRoLmpvaW4oam9iLnJvb3Qsam9iLm5hbWVzcGFjZSsnLmxvY2snKSkudGhlbigoKT0+dHJ1ZSwoKT0+ZmFsc2UpOwogY29uc3QgcmVzdWx0PXtzY2hlbWFWZXJzaW9uOidjdmYubmlzV3JvbmdPd25lckluZGVwZW5kZW50UHJvYmUudjEnLHNjb3BlOidMT0NBTF9URVNUX1NFU1NJT04nLHByb2R1Y3Rpb25QYXRoOidjb21taXRJbnRlbnRTcGVjQWNjZXB0YW5jZUNhbmRpZGF0ZSAtPiBGaWxlSW50ZW50U3BlY0FjY2VwdGFuY2VTdG9yZS5jcmVhdGVJZkFic2VudCAtPiBkaXJlY3RvcnkgLT4gd2luZG93c1ByaXZhdGVTZWN1cml0eS5oYXJkZW4gLT4gaGFyZGVuUHJpdmF0ZScsYXNzZXJ0aW9uUGF0aDonU2VwYXJhdGUgZml4ZWQgR2V0LUFjbCBjb21tYW5kIGFuZCBmdWxsIG5vcm1hbGl6ZWQgQUNFIG11bHRpc2V0IHBsdXMgcmF3IGZpbGVzeXN0ZW0gY29udGVudCBkaWdlc3RzJyxwcmUscG9zdCxjb250ZW50c0JlZm9yZTpiZWZvcmUsY29udGVudHNBZnRlcjphZnRlcixmYWlsdXJlLGRpcmVjdFJlZnVzYWwsc2VtYW50aWNQcmVFcXVhbHNQb3N0OkpTT04uc3RyaW5naWZ5KHByZSk9PT1KU09OLnN0cmluZ2lmeShwb3N0KSxjb250ZW50c1ByZUVxdWFsc1Bvc3Q6SlNPTi5zdHJpbmdpZnkoYmVmb3JlKT09PUpTT04uc3RyaW5naWZ5KGFmdGVyKSxsb2NrUmVtb3ZlZDohbG9ja0V4aXN0cyxvcmlnaW5hbFJlY29yZHNQcmVzZXJ2ZWQ6SlNPTi5zdHJpbmdpZnkoYmVmb3JlKT09PUpTT04uc3RyaW5naWZ5KGpvYi5vcmlnaW5hbENvbnRlbnRzKSxwYXNzOmRpcmVjdFJlZnVzYWw9PT0nUFJPRklMRV9ST09UX0lOU0VDVVJFJyYmZmFpbHVyZT09PSdTVE9SRV9DT01NSVRfVU5DT05GSVJNRUQnJiZKU09OLnN0cmluZ2lmeShwcmUpPT09SlNPTi5zdHJpbmdpZnkocG9zdCkmJkpTT04uc3RyaW5naWZ5KGJlZm9yZSk9PT1KU09OLnN0cmluZ2lmeShhZnRlcikmJiFsb2NrRXhpc3RzLHNvdXJjZUJ1bmRsZVNoYTI1Njpqb2IucHJvZHVjdGlvbkJ1bmRsZVNoYTI1NixoZWxwZXJTaGEyNTY6am9iLmhlbHBlclNoYTI1Nn07CiBhd2FpdCBmcy53cml0ZUZpbGUocGF0aC5qb2luKHNjcmF0Y2gsJ3dyb25nLW93bmVyLWluZGVwZW5kZW50LXJlc3VsdC5qc29uJyksSlNPTi5zdHJpbmdpZnkocmVzdWx0LG51bGwsMikrJ1xuJyk7Y29uc29sZS5sb2coSlNPTi5zdHJpbmdpZnkoe3BoYXNlOidQUk9CRUQnLGZhaWx1cmUscGFzczpyZXN1bHQucGFzcyxzZW1hbnRpY1ByZUVxdWFsc1Bvc3Q6cmVzdWx0LnNlbWFudGljUHJlRXF1YWxzUG9zdCxjb250ZW50c1ByZUVxdWFsc1Bvc3Q6cmVzdWx0LmNvbnRlbnRzUHJlRXF1YWxzUG9zdCxsb2NrUmVtb3ZlZDpyZXN1bHQubG9ja1JlbW92ZWR9KSk7aWYoIXJlc3VsdC5wYXNzKXByb2Nlc3MuZXhpdENvZGU9MTsKfWVsc2UgaWYobW9kZT09PSd2ZXJpZnktcmVzdG9yZWQnKXsKIGNvbnN0IGpvYj1KU09OLnBhcnNlKGF3YWl0IGZzLnJlYWRGaWxlKGpvYlBhdGgpKSx0YXJnZXQ9cGF0aC5qb2luKGpvYi5yb290LGpvYi5uYW1lc3BhY2UpLHJlc3RvcmVkPWF3YWl0IHR1cGxlKHRhcmdldCk7CiBpZihKU09OLnN0cmluZ2lmeShyZXN0b3JlZCkhPT1KU09OLnN0cmluZ2lmeShqb2Iub3JpZ2luYWxUdXBsZSl8fEpTT04uc3RyaW5naWZ5KGF3YWl0IGNvbnRlbnRzKHRhcmdldCkpIT09SlNPTi5zdHJpbmdpZnkoam9iLm9yaWdpbmFsQ29udGVudHMpKXRocm93IEVycm9yKCdSRVNUT1JBVElPTl9OT1RfRVhBQ1RfUkVUQUlOX0ZJWFRVUkUnKTsKIGNvbnN0IGFjdG9yPWF3YWl0IGJpbmQoKSxzdG9yZT1uZXcgYXBpLkZpbGVJbnRlbnRTcGVjQWNjZXB0YW5jZVN0b3JlKGpvYi5yb290LGFjdG9yLCgpPT5EYXRlLm5vdygpLHtzZWN1cml0eTphcGkud2luZG93c1ByaXZhdGVTZWN1cml0eX0pO2NvbnN0IGNhbmRpZGF0ZT1hd2FpdCBhcGkucHJlcGFyZVN5bnRoZXRpY0NhbmRpZGF0ZShhY3RvciwnTG9jYWwgc3Vic2VxdWVudCBhY3F1aXNpdGlvbiBhZnRlciBvd25lciByZXN0b3JhdGlvbicpO2NvbnN0IHJlY2VpcHQ9YXdhaXQgYXBpLmNvbW1pdEludGVudFNwZWNBY2NlcHRhbmNlQ2FuZGlkYXRlKGFjdG9yLGNhbmRpZGF0ZSxzdG9yZSk7aWYocmVjZWlwdC5pZCE9PWNhbmRpZGF0ZS5pZHx8cmVjZWlwdC5zdGF0ZSE9PSdTVE9SRV9QT1JUX1JFQURCQUNLX1ZFUklGSUVEJyl0aHJvdyBFcnJvcignU1VCU0VRVUVOVF9QUk9EVUNUSU9OX1JFQURCQUNLX0ZBSUxFRCcpOwogYXdhaXQgZnMud3JpdGVGaWxlKHBhdGguam9pbihzY3JhdGNoLCd3cm9uZy1vd25lci1yZXN0b3JhdGlvbi1yZXN1bHQuanNvbicpLEpTT04uc3RyaW5naWZ5KHtzY29wZTonTE9DQUxfVEVTVF9TRVNTSU9OJyxzZW1hbnRpY09yaWdpbmFsRXF1YWxzUmVzdG9yZWQ6dHJ1ZSxjb250ZW50c09yaWdpbmFsRXF1YWxzUmVzdG9yZWQ6dHJ1ZSxzdWJzZXF1ZW50UHJvZHVjdGlvbk11dGF0aW9uQW5kUmVhZGJhY2s6dHJ1ZSxyZXN0b3JlZH0sbnVsbCwyKSsnXG4nKTtjb25zb2xlLmxvZyhKU09OLnN0cmluZ2lmeSh7cGhhc2U6J1JFU1RPUkVEX1ZFUklGSUVEJyxzdWJzZXF1ZW50UHJvZHVjdGlvbk11dGF0aW9uQW5kUmVhZGJhY2s6dHJ1ZX0pKTsKfWVsc2UgdGhyb3cgRXJyb3IoJ3ByZXBhcmV8cHJvYmV8dmVyaWZ5LXJlc3RvcmVkIHJlcXVpcmVkJyk7Cg=="
+    }
+  ],
+  "preparedFixture": {
+    "schemaVersion": "cvf.nisOwnerFixtureJob.v1",
+    "scope": "LOCAL_TEST_SESSION",
+    "authorization": "Operator 2026-10-05: cho phep, toan quyen; bounded WRONG_OWNER OS-temp fixture checkpoint",
+    "root": "C:\\Users\\DELL\\AppData\\Local\\Temp\\nis-t1b-d-owner-54cc3a16-65a5-4455-93a9-46fefef968ab",
+    "namespace": "ea4e1d385155462be5e991d9db8b561458e5b1c4a2afe9d6b77274b8498e10f9",
+    "originalOwnerSid": "S-1-5-21-1644666849-912006174-747199667-1001",
+    "originalTuple": {
+      "ownerSid": "S-1-5-21-1644666849-912006174-747199667-1001",
+      "protected": true,
+      "aces": [
+        {
+          "sid": "S-1-5-18",
+          "rights": 2032127,
+          "accessType": "Allow",
+          "isInherited": false,
+          "inheritanceFlags": "ContainerInherit, ObjectInherit",
+          "propagationFlags": "None"
+        },
+        {
+          "sid": "S-1-5-21-1644666849-912006174-747199667-1001",
+          "rights": 2032127,
+          "accessType": "Allow",
+          "isInherited": false,
+          "inheritanceFlags": "ContainerInherit, ObjectInherit",
+          "propagationFlags": "None"
+        }
+      ],
+      "inheritanceState": "NO_INHERITED_ACES"
+    },
+    "originalContents": [
+      {
+        "name": "3ca1001319e3d1cba7193412f0ff10085089e4aff8565ff1d7d0ccfc02ace426.json",
+        "length": 4862,
+        "sha256": "3ca1001319e3d1cba7193412f0ff10085089e4aff8565ff1d7d0ccfc02ace426"
+      }
+    ],
+    "expectedMarkerSha256": "c2ad238ce6bc3ae7acf2fd12a590c91579bec77a2f4d8935cdd9f0f11e86bdd1",
+    "helperPath": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\nis-t1b-d-local-review-20261005\\wrong-owner-fixture-helper.PROPOSED.ps1",
+    "helperSha256": "e206c46b6f00789b9090068230c1d09dde2ed7c2a57d9b197f1ed94e4d80af54",
+    "probePath": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\nis-t1b-d-local-review-20261005\\owner-independent-probe.mjs",
+    "probeSha256": "c2425a289a1789186a28f99058981f75803a45a6533da114105c24653178a7a6",
+    "productionBundleSha256": "e3df7a08c9e291f6dafa5ea4c35b7472a031d700e52b2fb19f9a4eb2c2159b1a"
+  },
+  "setWrongOwnerReceipt": {
+    "action": "SET_WRONG_OWNER",
+    "success": true,
+    "scope": "LOCAL_TEST_SESSION",
+    "startedUtc": "2026-10-05T04:31:23.5723397Z",
+    "helperResult": {
+      "scope": "LOCAL_TEST_SESSION",
+      "action": "SET_WRONG_OWNER",
+      "target": "C:\\Users\\DELL\\AppData\\Local\\Temp\\nis-t1b-d-owner-54cc3a16-65a5-4455-93a9-46fefef968ab\\ea4e1d385155462be5e991d9db8b561458e5b1c4a2afe9d6b77274b8498e10f9",
+      "beforeOwnerSid": "S-1-5-21-1644666849-912006174-747199667-1001",
+      "afterOwnerSid": "S-1-5-32-544",
+      "markerSha256": "c2ad238ce6bc3ae7acf2fd12a590c91579bec77a2f4d8935cdd9f0f11e86bdd1"
+    },
+    "finishedUtc": "2026-10-05T04:31:23.9239457Z"
+  },
+  "wrongOwnerProbe": {
+    "schemaVersion": "cvf.nisWrongOwnerIndependentProbe.v1",
+    "scope": "LOCAL_TEST_SESSION",
+    "productionPath": "commitIntentSpecAcceptanceCandidate -> FileIntentSpecAcceptanceStore.createIfAbsent -> directory -> windowsPrivateSecurity.harden -> hardenPrivate",
+    "assertionPath": "Separate fixed Get-Acl command and full normalized ACE multiset plus raw filesystem content digests",
+    "pre": {
+      "ownerSid": "S-1-5-32-544",
+      "protected": true,
+      "aces": [
+        {
+          "sid": "S-1-5-18",
+          "rights": 2032127,
+          "accessType": "Allow",
+          "isInherited": false,
+          "inheritanceFlags": "ContainerInherit, ObjectInherit",
+          "propagationFlags": "None"
+        },
+        {
+          "sid": "S-1-5-21-1644666849-912006174-747199667-1001",
+          "rights": 2032127,
+          "accessType": "Allow",
+          "isInherited": false,
+          "inheritanceFlags": "ContainerInherit, ObjectInherit",
+          "propagationFlags": "None"
+        }
+      ],
+      "inheritanceState": "NO_INHERITED_ACES"
+    },
+    "post": {
+      "ownerSid": "S-1-5-32-544",
+      "protected": true,
+      "aces": [
+        {
+          "sid": "S-1-5-18",
+          "rights": 2032127,
+          "accessType": "Allow",
+          "isInherited": false,
+          "inheritanceFlags": "ContainerInherit, ObjectInherit",
+          "propagationFlags": "None"
+        },
+        {
+          "sid": "S-1-5-21-1644666849-912006174-747199667-1001",
+          "rights": 2032127,
+          "accessType": "Allow",
+          "isInherited": false,
+          "inheritanceFlags": "ContainerInherit, ObjectInherit",
+          "propagationFlags": "None"
+        }
+      ],
+      "inheritanceState": "NO_INHERITED_ACES"
+    },
+    "contentsBefore": [
+      {
+        "name": "3ca1001319e3d1cba7193412f0ff10085089e4aff8565ff1d7d0ccfc02ace426.json",
+        "length": 4862,
+        "sha256": "3ca1001319e3d1cba7193412f0ff10085089e4aff8565ff1d7d0ccfc02ace426"
+      }
+    ],
+    "contentsAfter": [
+      {
+        "name": "3ca1001319e3d1cba7193412f0ff10085089e4aff8565ff1d7d0ccfc02ace426.json",
+        "length": 4862,
+        "sha256": "3ca1001319e3d1cba7193412f0ff10085089e4aff8565ff1d7d0ccfc02ace426"
+      }
+    ],
+    "failure": "STORE_COMMIT_UNCONFIRMED",
+    "directRefusal": "PROFILE_ROOT_INSECURE",
+    "semanticPreEqualsPost": true,
+    "contentsPreEqualsPost": true,
+    "lockRemoved": true,
+    "originalRecordsPreserved": true,
+    "pass": true,
+    "sourceBundleSha256": "e3df7a08c9e291f6dafa5ea4c35b7472a031d700e52b2fb19f9a4eb2c2159b1a",
+    "helperSha256": "e206c46b6f00789b9090068230c1d09dde2ed7c2a57d9b197f1ed94e4d80af54"
+  },
+  "restoreOwnerReceipt": {
+    "action": "RESTORE_OWNER",
+    "success": true,
+    "scope": "LOCAL_TEST_SESSION",
+    "startedUtc": "2026-10-05T04:31:54.8219968Z",
+    "helperResult": {
+      "scope": "LOCAL_TEST_SESSION",
+      "action": "RESTORE_OWNER",
+      "target": "C:\\Users\\DELL\\AppData\\Local\\Temp\\nis-t1b-d-owner-54cc3a16-65a5-4455-93a9-46fefef968ab\\ea4e1d385155462be5e991d9db8b561458e5b1c4a2afe9d6b77274b8498e10f9",
+      "beforeOwnerSid": "S-1-5-32-544",
+      "afterOwnerSid": "S-1-5-21-1644666849-912006174-747199667-1001",
+      "markerSha256": "c2ad238ce6bc3ae7acf2fd12a590c91579bec77a2f4d8935cdd9f0f11e86bdd1"
+    },
+    "finishedUtc": "2026-10-05T04:31:55.1858764Z"
+  },
+  "restorationProbe": {
+    "scope": "LOCAL_TEST_SESSION",
+    "semanticOriginalEqualsRestored": true,
+    "contentsOriginalEqualsRestored": true,
+    "subsequentProductionMutationAndReadback": true,
+    "restored": {
+      "ownerSid": "S-1-5-21-1644666849-912006174-747199667-1001",
+      "protected": true,
+      "aces": [
+        {
+          "sid": "S-1-5-18",
+          "rights": 2032127,
+          "accessType": "Allow",
+          "isInherited": false,
+          "inheritanceFlags": "ContainerInherit, ObjectInherit",
+          "propagationFlags": "None"
+        },
+        {
+          "sid": "S-1-5-21-1644666849-912006174-747199667-1001",
+          "rights": 2032127,
+          "accessType": "Allow",
+          "isInherited": false,
+          "inheritanceFlags": "ContainerInherit, ObjectInherit",
+          "propagationFlags": "None"
+        }
+      ],
+      "inheritanceState": "NO_INHERITED_ACES"
+    }
+  },
+  "cleanup": {
+    "root": "C:\\Users\\DELL\\AppData\\Local\\Temp\\nis-t1b-d-owner-54cc3a16-65a5-4455-93a9-46fefef968ab",
+    "ownerRestoredBeforeRemoval": true,
+    "removed": true,
+    "method": "Explicit file deletion then empty directories with native PowerShell LiteralPath; recursive deletion rejected by execution policy, narrower cleanup completed."
+  },
+  "coverageProof": {
+    "command": "release-rework.py invokes registry_covers_path on generated aggregate for each exact path, independent of suffix filter",
+    "checks": [
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/scripts/nis-t1b-d-probe-build.mjs",
+        "covered": true,
+        "sha256": "4a14c03a9c49182447bdf283fa5540df5394f43514009dff3587a07b2d903db3"
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/scripts/nis-t1b-d-probe-driver.mjs",
+        "covered": true,
+        "sha256": "9cbe8be7d4420e0ea5d38d6daf95a918920787e36e8178e53040679ea1bfc33b"
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/scripts/nis-t1b-d-probe-entry.mjs",
+        "covered": true,
+        "sha256": "6f401d67765d86a81d1bbcc378c583cc62930266dc25bed1384c86f313c3bc8c"
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/scripts/nis-t1b-d-probe-session-stub.mjs",
+        "covered": true,
+        "sha256": "9330cab47911a9f00e744c4742ed968326f1cbf73bce4ba2ac14b1f1b45871a4"
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/scripts/nis-t1b-d-transaction-probe.ps1",
+        "covered": true,
+        "sha256": "cff7917e091ce0f16b4e9b9f18f52c3a1e1349ddcec6b8cabbdfde730d7c8c83"
+      }
+    ],
+    "pass": true
+  },
+  "retainedDiagnostics": [
+    {
+      "id": "LOCAL-D1",
+      "classification": "HOST_ENVIRONMENT",
+      "detail": "Initial production measure failed before ACL mutation because inherited PowerShell 7 PSModulePath selected an incompatible Security module in Windows PowerShell 5.1. Fixed only the probe-process module path to the built-in Windows PowerShell 5.1 modules; no host/module installation or permanent environment change.",
+      "receipt": {
+        "target": "C:\\Users\\DELL\\AppData\\Local\\Temp\\nis-t1b-d-owner-a03a8a6a-0f96-4c6b-bf00-c51cf1324145",
+        "code": 1,
+        "stdout": "",
+        "stderr": "Get-Acl : The 'Get-Acl' command was found in the module 'Microsoft.PowerShell.Security', but the module could not be \r\nloaded. For more information, run 'Import-Module Microsoft.PowerShell.Security'.\r\nAt line:4 char:6\r\n+ $acl=Get-Acl -LiteralPath $p\r\n+      ~~~~~~~\r\n    + CategoryInfo          : ObjectNotFound: (Get-Acl:String) [], ParentContainsErrorRecordException\r\n    + FullyQualifiedErrorId : CouldNotAutoloadMatchingModule\r\n \r\n"
+      }
+    },
+    {
+      "id": "LOCAL-D2",
+      "classification": "REVIEWER_PROBE_EXECUTION_ERROR",
+      "detail": "Draft probe initially called nonexistent store.create; corrected to commitIntentSpecAcceptanceCandidate -> createIfAbsent; failed empty fixture was verified and removed before the successful run."
+    }
+  ],
+  "hostAdmission": "Real probe uses Windows PowerShell 5.1 executable with process-local PSModulePath restricted to its built-in Modules folder. Worker must record the host envelope and fail closed on module/measurement failure; this fixture receipt is not a guarantee for arbitrary inherited module environments.",
+  "claimBoundary": "Capability and R0 WRONG_OWNER proof only. F1/F2 remain unaccepted; full independent HRLTP on repaired R1 source is still pending. Source changes invalidate proof reuse for runtime acceptance; repeat required bound assertions on changed code.",
+  "publicExportDisposition": "DEFERRED_PRIVATE_ONLY"
+}

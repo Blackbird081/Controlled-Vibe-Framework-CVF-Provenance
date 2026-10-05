@@ -1,0 +1,161 @@
+{
+  "schemaVersion": "cvf.nisReworkInputs.v1",
+  "batchId": "CVF-NIS-T1B-D",
+  "dispatchBaseHead": "858e8875bfc1ccb9ff27852f035dbc197b30be98",
+  "workerWorkspace": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF-NIS-T1B-D-R1",
+  "sourceHashScope": "EXACT_R1_DEFAULT_CRLF_CHECKOUT_PLUS_PINNED_RAW_R0_PREIMAGE",
+  "sourceHashes": {
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-review.ts": "c8746be8645af3d287c084a6338e84bbf502b4ffc3f9f750f58236c0085a34dc",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-confirmation.ts": "05afbe557d905f583221b4a59bfc04fabbd7d9e6b73c4ff0b7b05fab6ba4d067",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-actor.ts": "987c5ab042f68f31d21b0394f039912cc50e6783314a0afe26925e95f8f69ce1",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-acceptance.ts": "1ea88cc17ba9a6086b68da9b6d1de41c711088c1f7a0c0d863502e44391019a3",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-file-store.ts": "3686affcccf45fc01eac4c9fefdea015de1f28021a0af8c2e13a4b1bf038a0fc",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/middleware-auth.ts": "3877b34d112185040a331019e9cd9915c9152059ad42ee2c26e1a9833452b40e",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecReview.tsx": "acc098743cc9b6e2ac66c4c94ace76531924c049fcdfa874e3654c52df7efdb8",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecConfirmation.tsx": "b8806a455f4f9b0a08302d694c0979ab26168aefd028dfc8e7defb9c8b650f56",
+    "governance/compat/check_baseline_update_compat.py": "8b8e7caf91de61e9085194d65f4b15fc708fcd53bd972a2a13bbe8f44ddfa63e",
+    "governance/compat/check_governed_artifact_checker_read_ahead.py": "44f4b67c9441c541a42f91526d8f25c8805efeb1e08e6aed69c60aee6153ef77",
+    "governance/compat/check_work_order_dispatch_quality.py": "a2356b1d86c32ddd3773eb908e13d0ef698d4cbc58500da2bb983a718caa8988",
+    "governance/compat/check_work_order_dispatch_quality_source.py": "f3e1d6230378daf03318cad4746e836cb4601a00f9a5e5250376953b5a01d658",
+    "governance/compat/check_work_order_dispatch_quality_artifacts.py": "ac13ad673db4782e59035c9fde1f985c13b7f6e44861e3de7ad280bece02ac5b",
+    "governance/compat/check_dispatch_scaffold_provenance.py": "9a6106fa251f9ba70137b24553c90f2c75cc14a4e289d8b763ee7e0fecaf2085",
+    "governance/compat/check_gate_to_role_closeability.py": "8f00c6421eebe3c1b237e5307ac6e2b0b0343c9a35cf635bbab17aa886e00e8e",
+    "governance/compat/check_high_risk_local_transaction_proof.py": "027289a7c471bee62d03f499b4f9c1b727afbd92fa373d96b9bae3c24c07fa3d",
+    "governance/compat/check_task_governance_route.py": "e3ed17814c16ff75e864a38f08054ba24fc8b3bd52536aafeda038501d310388",
+    "governance/compat/check_adif_defect_registry_disclosure.py": "7dfe59d3b9ea9d9e8d51384358828ff710be277a88dfa96d7731f0072a386ce3",
+    "governance/compat/check_agent_operation_trace.py": "57aaac11abdca0b7a94998dfb21bc259d8013ce0b9bdc9d53a906202e9fabaaa",
+    "governance/compat/check_agent_packet_authority_and_encoding.py": "5f1ce8f2cde856707e6375ebdc6667f270db411aabb3971c85981e757abb3d78",
+    "governance/compat/check_core_guard_self_protection.py": "fb373c5efa08b6fd6a8a4bfcfa7d58918a102e4d23f6f1b3bb29c3689e800c60",
+    "governance/compat/check_markdown_structural_completeness.py": "a76806333a19814c1cb1fe04f305dec33a9c5572175db728e30441637d2e78c7",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/scripts/nis-t1b-d-probe-build.mjs": "4a14c03a9c49182447bdf283fa5540df5394f43514009dff3587a07b2d903db3",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/scripts/nis-t1b-d-probe-driver.mjs": "9cbe8be7d4420e0ea5d38d6daf95a918920787e36e8178e53040679ea1bfc33b",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/scripts/nis-t1b-d-probe-entry.mjs": "6f401d67765d86a81d1bbcc378c583cc62930266dc25bed1384c86f313c3bc8c",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/scripts/nis-t1b-d-probe-session-stub.mjs": "9330cab47911a9f00e744c4742ed968326f1cbf73bce4ba2ac14b1f1b45871a4",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/scripts/nis-t1b-d-transaction-probe.ps1": "cff7917e091ce0f16b4e9b9f18f52c3a1e1349ddcec6b8cabbdfde730d7c8c83",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/intent-spec/reviews/[id]/route.ts": "c7e9c3d5b504f5071788a4a1004f544a9e04a79ef75adc53fbb1bf8a72dd2fc5",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/intent-spec/reviews/route.ts": "32d6e97ab57d4d5e05a53daaf2128905e2b99a18af5c02d4e9adad62c5a8107a",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecConfirmation.server.test.tsx": "2055a8222c652e481290662a50c15f20dec2e25abb86a669b488a057f7e1251f",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-file-store-profile.test.ts": "20ac75a581fd8252ad676c50089f95b834185085f6cb982b1ba291b8a4ae4964",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-private-profile.test.ts": "d62702cd5a6ba9b93ec29b1de5db07b29a66fcffc11bed377fcf10b461f32ace",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-private-profile.ts": "4d95d3a7665b815f9099b468cb95a5f7d7f93a626c974a4bc3ead715e3f75ccc",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-review-api.test.ts": "fdcd35d852ad6c241af5bff1d0f79b7df31014a5a41c5915d311b4574a8d1ffc",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-review-api.ts": "8b7eecf6b16bf64aef9e50ed88b70f339c41f6c6949ec99fea1b23c455a1c77d",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-review-client.ts": "a6967c65a142c1d1805fbd98548ce326f462f5eefe1609ff70404c89684a472d",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-security-fixture.ts": "c5dddaecf4af62b349d78dfb1b23155be9a8033dd9fd4c67529734e06d09edcd",
+    "docs/reviews/evidence/cvf-nis-t1b-d-owner-fixture-support-2026-10-05.json": "71d5751515a0a58d5196cee8f42c79f11c3ab9eb79d4a1ead44be947aa03b326",
+    "docs/corpus-intelligence/registry/entries/nis-t1b-d-private-profile-probes.json": "0b6171ea85e12fe386e1c10618cb9709a6e773b9143f7cbf05f67bbab542e299",
+    "docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json": "2c9e58fed1ea3949474b4708a5b15872c5df863a6e6477831c8ab76f4838fdc7"
+  },
+  "pendingPreimageManifest": [
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecConfirmation.tsx",
+      "status": " M",
+      "sha256": "b8806a455f4f9b0a08302d694c0979ab26168aefd028dfc8e7defb9c8b650f56"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-file-store.ts",
+      "status": " M",
+      "sha256": "3686affcccf45fc01eac4c9fefdea015de1f28021a0af8c2e13a4b1bf038a0fc"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/scripts/nis-t1b-d-probe-build.mjs",
+      "status": "??",
+      "sha256": "4a14c03a9c49182447bdf283fa5540df5394f43514009dff3587a07b2d903db3"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/scripts/nis-t1b-d-probe-driver.mjs",
+      "status": "??",
+      "sha256": "9cbe8be7d4420e0ea5d38d6daf95a918920787e36e8178e53040679ea1bfc33b"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/scripts/nis-t1b-d-probe-entry.mjs",
+      "status": "??",
+      "sha256": "6f401d67765d86a81d1bbcc378c583cc62930266dc25bed1384c86f313c3bc8c"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/scripts/nis-t1b-d-probe-session-stub.mjs",
+      "status": "??",
+      "sha256": "9330cab47911a9f00e744c4742ed968326f1cbf73bce4ba2ac14b1f1b45871a4"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/scripts/nis-t1b-d-transaction-probe.ps1",
+      "status": "??",
+      "sha256": "cff7917e091ce0f16b4e9b9f18f52c3a1e1349ddcec6b8cabbdfde730d7c8c83"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/intent-spec/reviews/[id]/route.ts",
+      "status": "??",
+      "sha256": "c7e9c3d5b504f5071788a4a1004f544a9e04a79ef75adc53fbb1bf8a72dd2fc5"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/intent-spec/reviews/route.ts",
+      "status": "??",
+      "sha256": "32d6e97ab57d4d5e05a53daaf2128905e2b99a18af5c02d4e9adad62c5a8107a"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecConfirmation.server.test.tsx",
+      "status": "??",
+      "sha256": "2055a8222c652e481290662a50c15f20dec2e25abb86a669b488a057f7e1251f"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-file-store-profile.test.ts",
+      "status": "??",
+      "sha256": "20ac75a581fd8252ad676c50089f95b834185085f6cb982b1ba291b8a4ae4964"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-private-profile.test.ts",
+      "status": "??",
+      "sha256": "d62702cd5a6ba9b93ec29b1de5db07b29a66fcffc11bed377fcf10b461f32ace"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-private-profile.ts",
+      "status": "??",
+      "sha256": "4d95d3a7665b815f9099b468cb95a5f7d7f93a626c974a4bc3ead715e3f75ccc"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-review-api.test.ts",
+      "status": "??",
+      "sha256": "fdcd35d852ad6c241af5bff1d0f79b7df31014a5a41c5915d311b4574a8d1ffc"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-review-api.ts",
+      "status": "??",
+      "sha256": "8b7eecf6b16bf64aef9e50ed88b70f339c41f6c6949ec99fea1b23c455a1c77d"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-review-client.ts",
+      "status": "??",
+      "sha256": "a6967c65a142c1d1805fbd98548ce326f462f5eefe1609ff70404c89684a472d"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-security-fixture.ts",
+      "status": "??",
+      "sha256": "c5dddaecf4af62b349d78dfb1b23155be9a8033dd9fd4c67529734e06d09edcd"
+    }
+  ],
+  "pendingPreimageSourceWorkspace": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF-NIS-T1B-D",
+  "workerStartPolicy": "R1_CHECKOUT_RELEASED_HEAD_THEN_MATERIALIZE_17_PINNED_R0_SOURCE_FILES; KEEP_THREE_R0_RECEIPTS_ONLY_IN_ORIGINAL_R0_WORKSPACE; EXPECT_DECLARED_DIRTY_PREIMAGE",
+  "priorFindingSetDigest": "8cd7769b5b2ed9c2e899ec9b54bce7150f929d74f94954acf29d82991eae62f3",
+  "frozenR0Disposition": "PRESERVE_ORIGINAL_WORKSPACE_AND_THREE_R0_ARTIFACT_BYTES; NOT_ACCEPTED",
+  "fixtureSupportPath": "docs/reviews/evidence/cvf-nis-t1b-d-owner-fixture-support-2026-10-05.json",
+  "fixtureSupportSha256": "71d5751515a0a58d5196cee8f42c79f11c3ab9eb79d4a1ead44be947aa03b326",
+  "providerExecutionAuthority": "FORBIDDEN",
+  "independentProbe": "PENDING_REVIEWER_EXECUTION_ON_REPAIRED_R1_SOURCE",
+  "frozenR0ReceiptManifest": [
+    {
+      "path": "docs/reviews/CVF_NIS_T1B_D_INTEGRATED_REVIEW_PERSISTENCE_WORKER_RETURN_2026-10-05.md",
+      "status": "??",
+      "sha256": "f0f6c55f360295762545ab04b8cec44fc1b52db3666a7f848b71412e34e5f74e"
+    },
+    {
+      "path": "docs/reviews/evidence/cvf-nis-t1b-d-final-return-binding-2026-10-05.json",
+      "status": "??",
+      "sha256": "3d9602756e5b38a8a2830774e7032a7c4013c92217d4930ed9f3b8dbafca032a"
+    },
+    {
+      "path": "docs/reviews/evidence/cvf-nis-t1b-d-integrated-review-persistence-2026-10-05.json",
+      "status": "??",
+      "sha256": "2b88807d27e6301d9e2e35496e88ac888554ba911b9447f740f8bb76883661e8"
+    }
+  ]
+}

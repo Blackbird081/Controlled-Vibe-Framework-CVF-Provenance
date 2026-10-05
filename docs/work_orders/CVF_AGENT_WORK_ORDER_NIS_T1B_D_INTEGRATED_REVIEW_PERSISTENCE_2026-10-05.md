@@ -4,11 +4,11 @@ Memory class: governed-worker-dispatch
 
 docType: work_order
 
-Status: HOLD_OPERATOR_CHECKPOINT
+Status: DISPATCH_READY
 
 Batch ID: CVF-NIS-T1B-D
 
-dispatchBaseHead: 5e42818cb4e88a618b0b612528fc351635ca23ea
+dispatchBaseHead: 858e8875bfc1ccb9ff27852f035dbc197b30be98
 providerExecutionAuthority: FORBIDDEN
 Date: 2026-10-05
 
@@ -26,30 +26,32 @@ Role: INTERNAL_AGENT implementation worker; Local is dispatcher/reviewer/closer.
 Canonical packet: `docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1B_D_INTEGRATED_REVIEW_PERSISTENCE_2026-10-05.md`; paired baseline: `docs/baselines/CVF_GC018_NIS_T1B_D_INTEGRATED_REVIEW_PERSISTENCE_2026-10-05.md`.
 Commit mode: WORKER_MUST_NOT_COMMIT. providerExecutionAuthority: FORBIDDEN.
 executionBaseHead: WORKER_MUST_CAPTURE_AT_START.
-Current-time notes: Local has reviewed the released R0 tree. This round-1 amendment is HOLD_OPERATOR_CHECKPOINT, NOT authorized for relay/execution until its release conditions are met.
-Do-not-misread notes: implementation uses the dedicated clean linked worktree; original main-workspace foreign dirty bytes remain preserved. A/B/C are source preimage, not accepted runtime/profile dependencies. No provider/account/root activation or BUILD.
-Required first actions: stop at HOLD; Local resolves the named fixture checkpoint and coverage route. After governed release, progressive startup, exact pending-preimage preservation and pin verification, capture actual HEAD/status, and full bound pre-implementation PASS before edits.
+Current-time notes: operator 2026-10-05 approved the bounded fixture checkpoint. Local verified real owner/refusal/restoration and exact coverage; R1 is one consolidated repair in a separate prepared linked worktree.
+Do-not-misread notes: R1 uses a new linked worktree with declared pinned dirty R0 preimage; original R0 workspace/return stay frozen. Main old nine changes are already reconciled. A/B/C are source preimage, not accepted runtime/profile dependencies. No provider/account/root activation or BUILD.
+Required first actions: progressive startup/acknowledgment; read current rework input and fixture support; verify final committed pair/currentAuthority and all pending-preimage pins, capture actual HEAD/status; full bound pre-implementation PASS before edits. No prior clean-start assertion or R0 receipt reuse.
 Return contract: `docs/reviews/CVF_NIS_T1B_D_INTEGRATED_REVIEW_PERSISTENCE_R1_WORKER_RETURN_2026-10-05.md` plus evidence and detached hash binding; COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON; PENDING_REVIEWER_EXECUTION; RELEASED_TO_LOCAL_REVIEWER; no staging/commit.
 
 ## Consolidated Rework Admission
 
-reworkAdmissionStatus: HOLD_OPERATOR_CHECKPOINT
+reworkAdmissionStatus: RELEASED_FOR_CONSOLIDATED_REWORK
 priorFindingSetDigest: 8cd7769b5b2ed9c2e899ec9b54bce7150f929d74f94954acf29d82991eae62f3
-Evidence: `docs/reviews/evidence/cvf-nis-t1b-d-rework-admission-2026-10-05.json`. This amendment controls rework round 1 of the same CVF-NIS-T1B-D assignment. The original worker checkout and frozen R0 return remain untouched and unaccepted. Do not execute or redispatch from this held packet.
+Frozen finding/audit source: `docs/reviews/evidence/cvf-nis-t1b-d-rework-admission-2026-10-05.json`. Current preimage pins: `docs/reviews/evidence/cvf-nis-t1b-d-rework-inputs-2026-10-05.json`. Fixture authority/proof/helper bytes: `docs/reviews/evidence/cvf-nis-t1b-d-owner-fixture-support-2026-10-05.json`. Same assignment, round 1; no successor. Original R0 source and return remain unaccepted and frozen.
 
-| Finding | Owner / minimum outcome | Targeted evidence |
+| Finding | Owner / required outcome | Proof boundary |
 |---|---|---|
-| F1 HIGH | Worker makes hardening initialization exception-safe, including ambiguous subprocess failure after ACL mutation and restoration failure | Actual production helper regression before rollback handle return; real semantic rollback/readback and subsequent peer acquisition |
-| F2 HIGH | Worker binds save/reopen display and late receipts to the canonical authenticated session lifecycle, including A-B-A | Session switch/logout/loading/expiry regressions plus existing review/language/reviewer generation checks; no protected auth-owner edits |
-| F3 MEDIUM | Local registry owner registers exactly the five returned probe files by source entry and generator | Direct coverage assertion for every exact path, including mjs and ps1; worker remains forbidden to edit registry/checkers |
-| F4 LOW | Worker binds the actual saved gate-log bytes and freezes a new R1 return around the final required gate | Raw file SHA256; preserve R0 return and receipt as historical evidence |
-| B1 BLOCKER | Local reviewer owns real WRONG_OWNER fixture proof after the named authority checkpoint | Actual differing owner, independent complete semantic PRE/POST plus content/existence; no synthetic security success or waived field |
+| F1 HIGH | Worker repairs ambiguous hardening failure before rollback handle return, exact restoration and truthful restoration-failure reporting | Production-bound targeted regression plus actual semantic rollback/readback and peer recovery |
+| F2 HIGH | Worker binds late save/reopen receipts and displayed results to canonical authenticated session lifecycle, including A-B-A/logout/loading/expiry | Existing session provider read-only reuse; meaningful changed-consumer regressions; no auth-owner edits |
+| F3 MEDIUM | Local completed exact five-file source registry registration and generator | Direct 5/5 coverage assertions in fixture support; status NOT_STARTED is registration only, corpus processing not performed; worker registry/checker edits stay forbidden |
+| F4 LOW | Worker binds saved gate log raw bytes and freezes a new R1 return around the final required gate | Preserve all R0 bytes and use distinct R1 artifacts |
+| B1 BLOCKER | Operator granted bounded helper authority; Local executed actual different-owner refusal, semantic/content PRE=POST, restoration and subsequent production readback | Capability blocker resolved; worker may invoke only pinned helper on marked private OS-temp fixtures for fresh real peer proof; repaired-source independent acceptance remains Local-owned |
 
-Independent structural diagnostic verified 20 numeric pins and reproduced F1; it does not fulfill the real-security independent proof. Original test receipts are consumed, not broadly rerun. Full contract/schema/path/authority/test/range/commit-plan dependency audit is bound in the evidence JSON before any repair. The expected pending worker preimage is pinned there; a dirty tree must not be called clean.
+20 numeric prior pins were verified and the F1 structural failure reproduced; that diagnostic is not real ACL acceptance. The full pre-repair contract/schema/path/authority/test/range/commit-plan matrix is bound in the original finding evidence; current release adds the exact registry and elevated fixture capability without lowering any HRLTP field. Consume valid prior tests, rerun changed contracts and targeted regressions; no broad duplicate suite.
 
-Checkpoint NIS-T1B-D-WRONG-OWNER-FIXTURE requests one Local elevated Windows helper solely on a marked, caller-created, private OS-temp fixture: assign namespace owner to S-1-5-32-544, let the ordinary unprivileged production probe measure/refuse the actual mismatch and compare semantic PRE=POST plus exact content/existence, then restore the captured original owner. Validate containment and every ancestor against reparse points. No account creation or real store/configuration change. Failed restoration retains the isolated fixture and diagnostics. No privileged operation is authorized by this held proposal.
+Worker ordinary process privileges remain unchanged. The sole elevated action is the pinned Local-owned helper in fixture support, invoked through its fixed wrapper with verified helper SHA, marker SHA, current owner SID, exact UUID temp root and namespace. It only assigns/restores fixture owner; it cannot create accounts, change policy, or modify an operator store. An OS UAC prompt may require consent; absence/cancellation is a capability diagnostic, never permission to substitute a mock. Always restore and independently verify owner/security/content before explicit bounded cleanup. Do not edit the helper bytes to bypass its path/owner checks.
 
-After checkpoint resolution, Local materializes `docs/corpus-intelligence/registry/entries/nis-t1b-d-private-profile-probes.json` and regenerates the registry, then updates the role graph and actual evidence/pins before release. Do not remove HRLTP fields, lower the claim contract, or rename files as a coverage workaround. Worker R1 outputs use distinct return/evidence paths; original R0 bytes stay frozen. Rework release requires committed pair, matched continuity, exact source/fixture preimage pins, full pre-dispatch PASS and a new bound pre-implementation PASS. No worker staging/commit; no main/worker implementation merge now.
+R1 runs in `D:/UNG DUNG AI/TOOL AI 2026/Controlled-Vibe-Framework-CVF-NIS-T1B-D-R1` at the final committed dispatch/continuity HEAD, with 17 raw R0 source files copied according to pins. This intentionally dirty preimage must be named in the new pre-implementation receipt; do not call it clean or discard it. R0 remains untouched in its original worktree. Confirm all actual hashes before edits. Local holds the R1 lane only until this preparation finishes, then releases it for manual INTERNAL_AGENT relay. Worker must not stage/commit.
+
+All nine transaction-proof fields and all four security adversaries remain mandatory. Helper capability/R0 proof is not private-profile acceptance, and cannot replace fresh assertions after changed source. Full bound pre-implementation PASS, focused changed tests, complete production-path probe, frozen R1 return and detached raw binding precede Local independent review. SPEC_REVIEW_ONLY_NO_BUILD_AUTHORITY remains the claim ceiling.
 
 ## Purpose
 
@@ -57,7 +59,7 @@ Complete the existing app_builder_complete Intent-to-Spec review consumer with r
 
 ## Scaffold Provenance Block
 
-Initial scaffold retained from committed packet b2016e35a4b11043524ac51c26a49121309391cc; current manual amendment is a held consolidated rework admission, not initial dispatch or completed repair.
+Initial scaffold retained from committed packet b2016e35a4b11043524ac51c26a49121309391cc; current manual amendment releases one consolidated rework with source registry and bounded fixture authority; not initial dispatch or completed repair.
 
 | Field | Value |
 |---|---|
@@ -65,7 +67,7 @@ Initial scaffold retained from committed packet b2016e35a4b11043524ac51c26a49121
 | generatedProfile | web-ui-dashboard plus WORKER_MUST_NOT_COMMIT |
 | generatedSkeletonStatus | USED_AS_STARTING_POINT |
 | manualEditsAfterScaffold | Source-verified consumer scope, checked source checkpoint 5e42818cb4e88a618b0b612528fc351635ca23ea, actor/profile/transaction acceptance, role graph, exact evidence and bounded helper families replaced generated stubs. |
-| checkerReadAheadConfirmation | governance/compat/check_baseline_update_compat.py; governance/compat/check_governed_artifact_checker_read_ahead.py; governance/compat/check_work_order_dispatch_quality.py; governance/compat/check_work_order_dispatch_quality_source.py; governance/compat/check_work_order_dispatch_quality_artifacts.py; governance/compat/check_dispatch_scaffold_provenance.py; governance/compat/check_gate_to_role_closeability.py; governance/compat/check_high_risk_local_transaction_proof.py; governance/compat/check_task_governance_route.py; governance/compat/check_adif_defect_registry_disclosure.py; governance/compat/check_agent_operation_trace.py; governance/compat/check_agent_packet_authority_and_encoding.py; governance/compat/check_core_guard_self_protection.py; governance/compat/check_markdown_structural_completeness.py; governance/compat/check_review_cost_control.py; governance/compat/check_changed_corpus_registry_coverage.py; governance/compat/check_corpus_scan_registry.py |
+| checkerReadAheadConfirmation | governance/compat/check_baseline_update_compat.py; governance/compat/check_governed_artifact_checker_read_ahead.py; governance/compat/check_work_order_dispatch_quality.py; governance/compat/check_work_order_dispatch_quality_source.py; governance/compat/check_work_order_dispatch_quality_artifacts.py; governance/compat/check_dispatch_scaffold_provenance.py; governance/compat/check_gate_to_role_closeability.py; governance/compat/check_high_risk_local_transaction_proof.py; governance/compat/check_task_governance_route.py; governance/compat/check_adif_defect_registry_disclosure.py; governance/compat/check_agent_operation_trace.py; governance/compat/check_agent_packet_authority_and_encoding.py; governance/compat/check_core_guard_self_protection.py; governance/compat/check_markdown_structural_completeness.py; governance/compat/check_review_cost_control.py; governance/compat/check_changed_corpus_registry_coverage.py; governance/compat/check_corpus_scan_registry.py; governance/compat/check_semantic_convergence_control.py |
 | docOnlyNewFields | knownForeignDirtyPaths; seedEvidenceDisposition; profileAdmissionDisposition; no new machine enum or checker rule |
 | claimBoundary | Dispatch admission only; implementation, independent probe and acceptance remain pending. |
 
@@ -97,7 +99,7 @@ preExecutionReviewTrigger: NONE
 nextRoutineReviewBoundary: WORKER_RETURN
 reviewerWorkBoundary: EVALUATE_RETURNED_EVIDENCE_NOT_RECREATE_IMPLEMENTATION
 reviewerLocalRepairBoundary: NEW_EVIDENCE_REQUIRED
-reviewerLocalRepairBasis: F1/F2 require targeted production-bound regressions and B1 requires actual different-owner proof beyond the released non-elevated token; operator delegates implementation to the internal worker, Local owns independent acceptance.
+reviewerLocalRepairBasis: F1/F2 need changed-consumer production regressions and a refreshed real transaction proof after repairs; operator delegates implementation to the internal worker. Local supplied the bounded actual owner fixture capability and retains independent acceptance.
 
 
 ## Semantic Convergence Outcome
@@ -113,35 +115,65 @@ Standard: `docs/reference/semantic_convergence_control/CVF_SEMANTIC_CONVERGENCE_
   "predecessor": null,
   "blockerDelta": {
     "prior": [
-      "B1"
-    ],
-    "resolved": [],
-    "retained": [
-      "B1"
-    ],
-    "new": [
-      "F1",
-      "F2",
-      "F3",
-      "F4"
-    ],
-    "reopened": [],
-    "current": [
       "B1",
       "F1",
       "F2",
       "F3",
       "F4"
+    ],
+    "resolved": [
+      "B1",
+      "F3"
+    ],
+    "retained": [
+      "F1",
+      "F2",
+      "F4"
+    ],
+    "new": [],
+    "reopened": [],
+    "current": [
+      "F1",
+      "F2",
+      "F4"
     ]
   },
-  "resolutionEvidence": {},
+  "resolutionEvidence": {
+    "B1": {
+      "evidenceClass": "EXECUTABLE_PROOF",
+      "evidencePath": "docs/reviews/evidence/cvf-nis-t1b-d-owner-fixture-support-2026-10-05.json",
+      "sha256": "71d5751515a0a58d5196cee8f42c79f11c3ab9eb79d4a1ead44be947aa03b326",
+      "locator": "\"wrongOwnerProbe\"",
+      "claimId": "B1_FIXTURE_CAPABILITY"
+    },
+    "F3": {
+      "evidenceClass": "EXECUTABLE_PROOF",
+      "evidencePath": "docs/reviews/evidence/cvf-nis-t1b-d-owner-fixture-support-2026-10-05.json",
+      "sha256": "71d5751515a0a58d5196cee8f42c79f11c3ab9eb79d4a1ead44be947aa03b326",
+      "locator": "\"coverageProof\"",
+      "claimId": "F3_EXACT_COVERAGE"
+    }
+  },
   "counters": {
     "partialReadyClosures": 0,
     "reviewerScopeExpansions": 0,
     "sameClaimCorrections": 0,
     "nonDecreasingBlockerTransitions": 0
   },
-  "claims": [],
+  "claims": [
+    {
+      "claimId": "B1_FIXTURE_CAPABILITY",
+      "claimClass": "OTHER",
+      "proofClass": "NAMED_OBSERVABLE_PROOF",
+      "evidenceRef": "docs/reviews/evidence/cvf-nis-t1b-d-owner-fixture-support-2026-10-05.json#wrongOwnerProbe"
+    },
+    {
+      "claimId": "F3_EXACT_COVERAGE",
+      "claimClass": "OTHER",
+      "proofClass": "NAMED_OBSERVABLE_PROOF",
+      "evidenceRef": "docs/reviews/evidence/cvf-nis-t1b-d-owner-fixture-support-2026-10-05.json#coverageProof"
+    }
+  ],
   "requiredDisposition": "CONTINUE_BOUNDED",
   "successorScope": "INITIAL_BOUNDED"
 }
@@ -164,7 +196,7 @@ Actual resolver executed on 2026-10-05; totalCandidates=0, truncated=false. Work
 
 | Field | Value |
 |---|---|
-| applicableCheckersRead | governance/compat/check_baseline_update_compat.py; governance/compat/check_governed_artifact_checker_read_ahead.py; governance/compat/check_work_order_dispatch_quality.py; governance/compat/check_work_order_dispatch_quality_source.py; governance/compat/check_work_order_dispatch_quality_artifacts.py; governance/compat/check_dispatch_scaffold_provenance.py; governance/compat/check_gate_to_role_closeability.py; governance/compat/check_high_risk_local_transaction_proof.py; governance/compat/check_task_governance_route.py; governance/compat/check_adif_defect_registry_disclosure.py; governance/compat/check_agent_operation_trace.py; governance/compat/check_agent_packet_authority_and_encoding.py; governance/compat/check_core_guard_self_protection.py; governance/compat/check_markdown_structural_completeness.py; governance/compat/check_review_cost_control.py; governance/compat/check_changed_corpus_registry_coverage.py; governance/compat/check_corpus_scan_registry.py |
+| applicableCheckersRead | governance/compat/check_baseline_update_compat.py; governance/compat/check_governed_artifact_checker_read_ahead.py; governance/compat/check_work_order_dispatch_quality.py; governance/compat/check_work_order_dispatch_quality_source.py; governance/compat/check_work_order_dispatch_quality_artifacts.py; governance/compat/check_dispatch_scaffold_provenance.py; governance/compat/check_gate_to_role_closeability.py; governance/compat/check_high_risk_local_transaction_proof.py; governance/compat/check_task_governance_route.py; governance/compat/check_adif_defect_registry_disclosure.py; governance/compat/check_agent_operation_trace.py; governance/compat/check_agent_packet_authority_and_encoding.py; governance/compat/check_core_guard_self_protection.py; governance/compat/check_markdown_structural_completeness.py; governance/compat/check_review_cost_control.py; governance/compat/check_changed_corpus_registry_coverage.py; governance/compat/check_corpus_scan_registry.py; governance/compat/check_semantic_convergence_control.py |
 | literalTokensReviewed | Dispatch Prompt Envelope; Source Verification Block; DISPATCH_READY; acceptance-ledger-json; Gate-To-Role Closeability Contract; High-Risk Local Transaction Proof Applicability; Returned defects: NONE_RETURNED; rawMemoryReleased=false |
 | gateRunPurpose | Confirm source-verified bounded dispatch and role closeability before release; no implementation proof. |
 | claimBoundary | Read-ahead concerns authoring and evidence shapes; never certifies runtime/security outcomes. |
@@ -181,6 +213,8 @@ Actual resolver executed on 2026-10-05; totalCandidates=0, truncated=false. Work
 | Actual request Auth.js integration | CURRENT_SOURCE | EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/middleware-auth.ts | verifySessionCookie | verifySessionCookie | existing Web consumer | ACCEPT |
 | Existing review consumer | CURRENT_SOURCE | EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecReview.tsx | IntentSpecReview | IntentSpecReview | existing Web consumer | ACCEPT |
 | Existing confirmation consumer | CURRENT_SOURCE | EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecConfirmation.tsx | IntentSpecConfirmation | IntentSpecConfirmation | existing Web consumer | ACCEPT |
+| Approved marked fixture helper and actual owner refusal/restoration | CURRENT_SOURCE | docs/reviews/evidence/cvf-nis-t1b-d-owner-fixture-support-2026-10-05.json | helperSources; wrongOwnerProbe; restorationProbe | helperSources | Local fixture-support evidence | ACCEPT |
+| Exact probe registration scope | CURRENT_SOURCE | docs/corpus-intelligence/registry/entries/nis-t1b-d-private-profile-probes.json | scopePaths | scopePaths | Local corpus registry owner | ACCEPT |
 
 ## Negative Search And Collision Discipline
 
@@ -199,7 +233,7 @@ Contract source archive-qualified exception: docs/reference/CVF_AHB_T2_AGENT_HAN
 | route | MULTI_AGENT_MULTI_ROLE |
 | rolePattern | Local dispatcher -> distinct INTERNAL_AGENT worker -> Local reviewer/closer |
 | phase | dispatch; worker implementation pending full release and startup gate |
-| baseHeadFor(phase) | dispatchBaseHead=5e42818cb4e88a618b0b612528fc351635ca23ea; executionBaseHead=WORKER_MUST_CAPTURE_AT_START; closureBaseHead=REVIEWER_TO_SET |
+| baseHeadFor(phase) | dispatchBaseHead=858e8875bfc1ccb9ff27852f035dbc197b30be98; executionBaseHead=WORKER_MUST_CAPTURE_AT_START; closureBaseHead=REVIEWER_TO_SET |
 | changedSetScope(phase) | bounded Web NIS consumer/probe families plus three worker artifacts |
 | traceScope(phase, actor) | actual actor/base/status/changed artifacts, retained unique receipts |
 | commitOwner(phase) | Local closer only; WORKER_MUST_NOT_COMMIT |
@@ -207,7 +241,7 @@ Contract source archive-qualified exception: docs/reference/CVF_AHB_T2_AGENT_HAN
 | nextMoveSurfaces | active handoff, compact front door, source core/nextAllowedMove and generated bootstrap/state |
 
 sharedWorktreeCoordinationMode: EXPLICIT_LANE_HANDOFF
-activeLaneOwner: LOCAL_REVIEWER_REWORK_ADMISSION_HOLD
+activeLaneOwner: INTERNAL_AGENT_IMPLEMENTATION_WORKER_AFTER_LOCAL_R1_PREPARATION_AND_OPERATOR_RELAY
 laneOwnedPaths: Allowed Scope bounded families and three exact worker artifacts
 dispatcherMutationBoundary: NO_MUTATION_WHILE_LANE_ACTIVE
 laneReleaseEvidence: RELEASED_TO_LOCAL_REVIEWER plus final actual status and frozen return; Local does not mutate worker paths until release.
@@ -284,7 +318,7 @@ contractProfile: WORKER_RETURN_FULL_GATE_V1
 requiredGate: `python governance/compat/run_worker_return_fast_gate.py`
 individualCheckerSubstitution: FORBIDDEN
 workerReturnSkeleton: CHECKER_SAFE_SKELETON_REQUIRED
-workerReturnSkeletonPath: `docs/reviews/evidence/cvf-nis-t1b-d-worker-return-skeleton-2026-10-05.txt`
+workerReturnSkeletonPath: `docs/reviews/evidence/cvf-nis-t1b-d-r1-worker-return-skeleton-2026-10-05.txt`
 
 Required terms: Purpose; Scope / Methodology; Findings / Position; Risk / Corrective Action; Claim Boundary; Agent Operation Trace Block; Delta Execution Claim Boundary Control Block; Public Export Disposition; executionBaseHead; git status --short.
 
@@ -321,7 +355,7 @@ Read DESIGN.md before implementation. Retain the existing bilingual operational 
 | Command or tool surface | actual scaffold, source reads, resolver, normal commit hook, pre-dispatch gate |
 | Target paths | new pair, inputs and return skeleton; separate source continuity |
 | Allowed scope source | operator orchestration authorization 2026-10-05 |
-| Before status evidence | clean worktree: actual empty git status at D:/UNG DUNG AI/TOOL AI 2026/Controlled-Vibe-Framework-CVF-NIS-T1B-D on checkpoint 5e42818cb4e88a618b0b612528fc351635ca23ea; docs/reviews/evidence/cvf-nis-t1b-d-dispatch-inputs-2026-10-05.json retains foreign main-workspace status |
+| Before status evidence | clean worktree: actual empty git status at D:/UNG DUNG AI/TOOL AI 2026/Controlled-Vibe-Framework-CVF-NIS-T1B-D on checkpoint 5e42818cb4e88a618b0b612528fc351635ca23ea; docs/reviews/evidence/cvf-nis-t1b-d-rework-inputs-2026-10-05.json retains foreign main-workspace status |
 | After status evidence | final actual git status, ignored unique dispatch receipts |
 | Diff evidence | git diff --name-status; explicit staged path list |
 | Approval boundary | local dispatch only; no worker commit/provider/public/root activation |
@@ -389,7 +423,7 @@ No edits to authentication/policy/impersonation owners, governance/checkers/hook
 
 ## Execution Plan
 
-1. Capture executionBaseHead and known foreign dirty status, verify `docs/reviews/evidence/cvf-nis-t1b-d-dispatch-inputs-2026-10-05.json` hashes (authority pair via committed currentAuthority). Read source owner boundaries and applicable output checkers. Run bound full pre-implementation autorun, retaining a unique receipt; never overwrite an earlier diagnostic.
+1. Capture executionBaseHead and known foreign dirty status, verify `docs/reviews/evidence/cvf-nis-t1b-d-rework-inputs-2026-10-05.json` hashes (authority pair via committed currentAuthority). Read source owner boundaries and applicable output checkers. Run bound full pre-implementation autorun, retaining a unique receipt; never overwrite an earlier diagnostic.
 2. Implement profile admission and necessary transaction mechanism, actual POST/GET join and UI save/reopen within bounded families. Use test-owned roots only. Diagnose platform inability before pretending a profile is accepted.
 3. Focused UI/API tests cover canonical and adversarial actor/body/hash/source cases, source/language/session drift, exact bytes, cross-actor reads and unavailable/config-error/partial-write/readback failures. Exercise the actual store path with real OS peer and deterministic protocol/security adversaries. Add only meaningful regressions for changed consumer behavior.
 4. Run changed focused tests, TypeScript and focused ESLint, probe driver, full worker-return fast. Consume pinned prior A/B/C results when unchanged; rerun only changed contracts or a named contradiction. No broad duplicate/full provider bundle.
@@ -509,8 +543,8 @@ High-Risk Local Transaction Proof Applicability: REQUIRED
     "docs/reviews/evidence/cvf-nis-t1b-d-final-return-binding-r1-2026-10-05.json",
     "docs/baselines/CVF_GC018_NIS_T1B_D_INTEGRATED_REVIEW_PERSISTENCE_2026-10-05.md",
     "docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1B_D_INTEGRATED_REVIEW_PERSISTENCE_2026-10-05.md",
-    "docs/reviews/evidence/cvf-nis-t1b-d-dispatch-inputs-2026-10-05.json",
-    "docs/reviews/evidence/cvf-nis-t1b-d-worker-return-skeleton-2026-10-05.txt",
+    "docs/reviews/evidence/cvf-nis-t1b-d-rework-inputs-2026-10-05.json",
+    "docs/reviews/evidence/cvf-nis-t1b-d-r1-worker-return-skeleton-2026-10-05.txt",
     "AGENT_HANDOFF_V63_2026-09-18.md",
     "CVF_SESSION_MEMORY.md",
     "CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json",
@@ -524,7 +558,10 @@ High-Risk Local Transaction Proof Applicability: REQUIRED
     "docs/reference/downstream_gate_profile/CVF_PROJECT_LEARNING_OPERATOR_GUIDE.md",
     "docs/reviews/evidence/cvf-project-learning-file-chain-simulation-2026-10-04.json",
     "docs/reviews/evidence/cvf-project-learning-operator-simulation-2026-10-04.json",
-    "docs/reviews/evidence/cvf-project-learning-operator-simulation-first-attempt-2026-10-04.json"
+    "docs/reviews/evidence/cvf-project-learning-operator-simulation-first-attempt-2026-10-04.json",
+    "docs/reviews/evidence/cvf-nis-t1b-d-owner-fixture-support-2026-10-05.json",
+    "docs/corpus-intelligence/registry/entries/nis-t1b-d-private-profile-probes.json",
+    "docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json"
   ],
   "claims": [
     "BOUND_CONTENT_CONFIRMATION_ONLY",
@@ -558,15 +595,16 @@ T0 SHADOW_FULL_GATE_FALLBACK; selectiveExecutionAuthorized=false. Full legacy ga
 ## Gate-To-Role Closeability Contract
 
 closeabilityContractVersion: cvf.gate-role-closeability@1.0.0
-closeabilityDisposition: UNCLOSEABLE_PACKET_CONTRADICTION
+closeabilityDisposition: CLOSEABLE
 implementationTopologyPolicy: BOUNDED_PATH_FAMILIES
 foreseeableFileSplitDisposition: COVERED_BY_BOUNDED_PATH_FAMILY
 returnTimeRecheck: REQUIRED_BEFORE_REPAIR
 
 | gateId | mustPassBy | repairOwner | repairPhase | mutationSurface | topology | commitOwner | commitPhase | dependsOn |
 |---|---|---|---|---|---|---|---|---|
-| authorization_review | PRE_DISPATCH | dispatcher | PRE_DISPATCH | exact four-path admission batch | EXACT_PATHS | closer | DISPATCH_COMMIT | NONE |
-| pre_dispatch_gate | PRE_DISPATCH | dispatcher | PRE_DISPATCH | exact baseline/work order/receipt/skeleton; component admission before commit | EXACT_PATHS | closer | DISPATCH_COMMIT | authorization_review |
+| authorization_review | PRE_DISPATCH | dispatcher | PRE_DISPATCH | exact revised pair, rework inputs, fixture support and two registry paths | EXACT_PATHS | closer | DISPATCH_COMMIT | NONE |
+| fixture_capability_and_coverage | PRE_DISPATCH | reviewer | PRE_DISPATCH | docs/reviews/evidence/cvf-nis-t1b-d-owner-fixture-support-2026-10-05.json; docs/corpus-intelligence/registry/entries/nis-t1b-d-private-profile-probes.json; generated registry; current rework inputs | EXACT_PATHS | closer | DISPATCH_COMMIT | authorization_review |
+| pre_dispatch_gate | PRE_DISPATCH | dispatcher | PRE_DISPATCH | exact revised pair/inputs/support and actual component admission before commit | EXACT_PATHS | closer | DISPATCH_COMMIT | fixture_capability_and_coverage |
 | dispatch_continuity | IMPLEMENTATION | session-sync-steward | IMPLEMENTATION | AGENT_HANDOFF_V63_2026-09-18.md material-SHA marker and six exact continuity paths | EXACT_PATHS | session-sync-steward | DISPATCH_CONTINUITY_COMMIT | pre_dispatch_gate |
 | pre_implementation_autorun | IMPLEMENTATION | worker | IMPLEMENTATION | bounded Web NIS consumer/probe families; final bound release verified before edits | BOUNDED_PATH_FAMILIES | closer | MATERIAL_COMMIT | dispatch_continuity |
 | focused_checker_tests | WORKER_RETURN | worker | IMPLEMENTATION | bounded Web NIS consumer/probe families and exact worker artifacts | BOUNDED_PATH_FAMILIES | closer | MATERIAL_COMMIT | dispatch_continuity, pre_implementation_autorun |
@@ -583,8 +621,8 @@ Bounded helper splits are admitted only inside Allowed Scope. Admission/continui
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: Local creates the admission pair/input/skeleton and dedicated six-path continuity only; no checker/catalog/schema edits.
-Protected paths: admission pair, exact input/skeleton, required review artifacts and six continuity paths.
+Authorized guard-maintenance scope: Local amends the admission pair, current rework inputs/skeleton, exact fixture-support evidence, exact five-file corpus entry and generated registry, plus dedicated six-path continuity; no checker/catalog/schema edits.
+Protected paths: admission pair, exact current input/skeleton/support, docs/corpus-intelligence/registry/entries/nis-t1b-d-private-profile-probes.json, docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json, required review artifacts and six continuity paths.
 Operator authorization: 2026-10-05 orchestration and work-order authoring; internal source implementation under this bounded packet.
 Rollback boundary: preserve seed source, nine foreign dirty paths, frozen histories and parked lanes; no actual root/account/security state mutation by dispatcher.
 
@@ -603,17 +641,20 @@ N/A_WITH_REASON - source-pinned dispatch with synthetic local tests only; no liv
 
 ```json
 {
+  "schemaVersion": "cvf.taskGovernanceRoute.v1",
+  "taskId": "CVF-NIS-T1B-D",
+  "profile": "P3_ELEVATED",
+  "computedMinimumProfile": "P3_ELEVATED",
   "classification": {
+    "taskKind": "STATEFUL_LOCAL_IMPLEMENTATION",
     "authorityImpact": "ENRICHES_EXISTING_OWNER",
-    "dataSensitivity": "PRIVATE_REPO",
-    "delegation": "MULTI_ROLE_NO_COMMIT",
     "externalEffect": "LOCAL_REVERSIBLE",
-    "novelty": "OWNER_COMPOSITION",
+    "dataSensitivity": "PRIVATE_REPO",
     "reversibility": "STATEFUL_REVERSIBLE",
     "sourceScale": "NAMED_FILES",
-    "taskKind": "STATEFUL_LOCAL_IMPLEMENTATION"
+    "delegation": "MULTI_ROLE_NO_COMMIT",
+    "novelty": "OWNER_COMPOSITION"
   },
-  "computedMinimumProfile": "P3_ELEVATED",
   "escalationTriggers": [
     "CANONICAL_STANDARD_SURFACE",
     "CONTINUITY_STATE_SURFACE",
@@ -621,11 +662,6 @@ N/A_WITH_REASON - source-pinned dispatch with synthetic local tests only; no liv
     "REVERSIBILITY_STATEFUL_REVERSIBLE",
     "TASKKIND_STATEFUL_LOCAL_IMPLEMENTATION"
   ],
-  "estimatedCommandCount": 7,
-  "legacyGateDisposition": "RUN_FULL_LEGACY_BUNDLE",
-  "profile": "P3_ELEVATED",
-  "receiptStatus": "ROUTED_SHADOW",
-  "schemaVersion": "cvf.taskGovernanceRoute.v1",
   "selectedBundles": [
     "CORE_INTEGRITY",
     "ARTIFACT_SHAPE",
@@ -635,13 +671,15 @@ N/A_WITH_REASON - source-pinned dispatch with synthetic local tests only; no liv
     "STATE_AND_SECURITY",
     "CONTINUITY"
   ],
-  "selectiveExecutionAuthorized": false,
   "skippedBundles": {
     "CORPUS_ACCOUNTING": "NO_CORPUS_OR_COMPLETENESS_CHANGE",
-    "PUBLIC_RELEASE": "NO_PUBLIC_RELEASE_OR_DESTRUCTIVE_EFFECT",
-    "RUNTIME_LIVE": "NO_RUNTIME_NETWORK_OR_LIVE_EFFECT"
+    "RUNTIME_LIVE": "NO_RUNTIME_NETWORK_OR_LIVE_EFFECT",
+    "PUBLIC_RELEASE": "NO_PUBLIC_RELEASE_OR_DESTRUCTIVE_EFFECT"
   },
-  "taskId": "CVF-NIS-T1B-D",
+  "estimatedCommandCount": 7,
+  "selectiveExecutionAuthorized": false,
+  "legacyGateDisposition": "RUN_FULL_LEGACY_BUNDLE",
+  "receiptStatus": "ROUTED_SHADOW",
   "validationErrors": []
 }
 ```
@@ -665,7 +703,7 @@ Local dispatch/review/closure; distinct INTERNAL_AGENT worker implementation; op
 
 ## Pre-Flight Checks
 
-Capture actual HEAD/status; verify docs/reviews/evidence/cvf-nis-t1b-d-dispatch-inputs-2026-10-05.json; retain known foreign dirty bytes; committed currentAuthority and full bound pre-implementation PASS required.
+Capture actual HEAD/status; verify docs/reviews/evidence/cvf-nis-t1b-d-rework-inputs-2026-10-05.json and 17 declared pending source preimage files; preserve original R0; committed currentAuthority and fresh full bound pre-implementation PASS required.
 
 ## Acceptance Criteria
 
@@ -685,7 +723,7 @@ Consolidated BLOCKED for forbidden scope, contradictory pin/owner or unavailable
 
 ## Operator Checkpoint
 
-Original local implementation authority is retained; no re-dispatch from this held amendment. NIS-T1B-D-WRONG-OWNER-FIXTURE requires explicit bounded elevated-helper authority or an admitted equivalent canonical route before release. Real root/account/provider/public/deploy or BUILD activation stays outside scope.
+Operator 2026-10-05 explicitly grants the bounded NIS-T1B-D-WRONG-OWNER-FIXTURE helper authority. The tested pinned helper may be used for this assignment synthetic fixtures only; actual production peer stays unprivileged. No new checkpoint inside this already-authorized envelope. Real root/account/provider/public/deploy or BUILD activation stays outside scope.
 
 ## Risk / Corrective Action
 
@@ -693,9 +731,9 @@ Never manufacture saved/private/accepted state from field presence, file downloa
 
 ## Required First Reads
 
-Current rework input: docs/reviews/evidence/cvf-nis-t1b-d-rework-admission-2026-10-05.json; its pending-preimage pins control after release. The initial dispatch-input manifest below remains historical seed evidence and must not overwrite the returned source or require a false clean start.
+Current rework input: docs/reviews/evidence/cvf-nis-t1b-d-rework-inputs-2026-10-05.json; its actual pending-preimage pins control execution. Fixture support: docs/reviews/evidence/cvf-nis-t1b-d-owner-fixture-support-2026-10-05.json. Frozen findings/audit: docs/reviews/evidence/cvf-nis-t1b-d-rework-admission-2026-10-05.json. The initial dispatch-input manifest in the original committed packet remains historical only; current R1 pins must not be replaced with that seed manifest or a false clean-start assertion.
 
-AGENTS.md progressive startup; this work order and docs/baselines/CVF_GC018_NIS_T1B_D_INTEGRATED_REVIEW_PERSISTENCE_2026-10-05.md; named inputs/source owners in docs/reviews/evidence/cvf-nis-t1b-d-dispatch-inputs-2026-10-05.json; DESIGN.md; canonical work-order/finality, private transaction and review-cost standards; output checker source before artifact authoring. No full corpus/history scan.
+AGENTS.md progressive startup; this work order and docs/baselines/CVF_GC018_NIS_T1B_D_INTEGRATED_REVIEW_PERSISTENCE_2026-10-05.md; named inputs/source owners in docs/reviews/evidence/cvf-nis-t1b-d-rework-inputs-2026-10-05.json; DESIGN.md; canonical work-order/finality, private transaction and review-cost standards; output checker source before artifact authoring. No full corpus/history scan.
 
 ## Write Ownership
 
@@ -749,7 +787,8 @@ NOT_APPLICABLE_WITH_REASON - named existing NIS consumer composition, no legacy 
 
 ## Execution Workspace Admission
 
-Worker working directory: `D:/UNG DUNG AI/TOOL AI 2026/Controlled-Vibe-Framework-CVF-NIS-T1B-D`; dedicated clean linked worktree created at source checkpoint 5e42818cb4e88a618b0b612528fc351635ca23ea; actual `git status --porcelain` was empty before packet checkout. Local updates this clean worktree to final dispatch/continuity HEAD before relay. Worker re-captures actual clean HEAD/status and verifies checkout-specific source hashes at start.
-Main workspace contains nine known foreign dirty paths retained in input evidence; these are historical preservation evidence, not files expected in the worker tree. Worker must not edit the main workspace or validate its foreign files against this clean checkout. Authored admission/continuity claims refer to final checked-out packet, not stale worktree HEAD. Shared lane remains explicit: Local makes no mutations in this worker worktree while its lane is active.
-Installed dependencies may be reused through a node_modules junction to the existing Web installation; no installation, package mutation or writes through it. Local independent review uses a separately executed assertion path and a clean committed review checkout.
+Worker directory: `D:/UNG DUNG AI/TOOL AI 2026/Controlled-Vibe-Framework-CVF-NIS-T1B-D-R1`. Local creates it at final dispatch/continuity HEAD, then copies exactly 17 raw pinned R0 source preimage files from `D:/UNG DUNG AI/TOOL AI 2026/Controlled-Vibe-Framework-CVF-NIS-T1B-D` and verifies their hashes. This declared pending preimage is intentionally dirty; worker must capture actual HEAD/status and verify `docs/reviews/evidence/cvf-nis-t1b-d-rework-inputs-2026-10-05.json` before a fresh bound pre-implementation gate. The original R0 checkout/return are preserved, never overwritten or represented as accepted. The three R0 return/evidence files stay only in original R0; do not copy them into R1 as pending governed returns against the revised ledger.
 
+Main old nine changes are committed and clean; initial foreign-dirty evidence remains historical. Worker must not edit main, original R0 workspace, admission/continuity, registry/checkers, or pinned fixture helper authority. Only named NIS consumer/probe families and distinct R1 return/evidence belong to the worker. Materialize the pinned helper/wrapper in permitted scratch only and invoke its approved fixture action without modifying its bytes. Local makes no R1 mutations while the worker lane is active.
+
+Installed dependencies may be reused through a node_modules junction to the existing Web installation; no install or dependency/config mutation. Local independent assertions on repaired source remain separate from worker proof, and final clean committed closure remains mandatory.

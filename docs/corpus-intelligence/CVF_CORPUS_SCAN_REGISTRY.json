@@ -8980,6 +8980,39 @@
       "nextScanRecommendation": "Revisit after Local disposition of the same-origin popup finding or an authorized Print architecture correction."
     },
     {
+      "id": "nis-t1b-d-private-profile-probes",
+      "corpusType": "TEST_CORPUS",
+      "displayName": "NIS-T1B-D bounded private-profile transaction probe helpers",
+      "scopePaths": [
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/scripts/nis-t1b-d-probe-build.mjs",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/scripts/nis-t1b-d-probe-driver.mjs",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/scripts/nis-t1b-d-probe-entry.mjs",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/scripts/nis-t1b-d-probe-session-stub.mjs",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/scripts/nis-t1b-d-transaction-probe.ps1"
+      ],
+      "fileCount": 5,
+      "status": "NOT_STARTED",
+      "scanWave": null,
+      "scanDate": null,
+      "manifestHash": null,
+      "hashAlgorithm": null,
+      "hashInput": null,
+      "manifestPath": null,
+      "packetPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1B_D_INTEGRATED_REVIEW_PERSISTENCE_2026-10-05.md",
+      "completionReviewPath": null,
+      "gcBaselineRef": "docs/baselines/CVF_GC018_NIS_T1B_D_INTEGRATED_REVIEW_PERSISTENCE_2026-10-05.md",
+      "verdicts": {
+        "gc047": "NOT_RUN",
+        "gc048": "NOT_RUN",
+        "gc050": "NOT_RUN"
+      },
+      "semanticRegions": [],
+      "priorAbsorption": "Exact known five-file probe family registered by Local for rework admission; no completed corpus scan or profile acceptance.",
+      "findings": [],
+      "negativeSearchTerms": [],
+      "nextScanRecommendation": "Consume this exact scope for NIS-T1B-D R1 worker evidence and Local review; reconcile actual files on return without expanding to a broad corpus scan."
+    },
+    {
       "id": "dsh-wra-r1-whole-repository-absorption",
       "corpusType": "EXTERNAL_SOURCE",
       "displayName": "DeepSeek Harness DSH-WRA-R1 whole-repository absorption and runtime realization",
