@@ -42,7 +42,7 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`; handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=bounded manual planning after T1G; role=Local reviewer; phase=closure; decision owner=Local; parked lanes retained.
+Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`; handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=T1H manual review-only; role=Local dispatcher; phase=dispatch; decision owner=Local; parked lanes retained.
 
 ## Current Mode
 
@@ -51,7 +51,7 @@ Current mode: `cvf_ncr_p10_closed_p11_parked`; previous mode marker: `cvf_ncr_p1
 
 ## Next Allowed Move
 Mode: `cvf_ncr_p10_closed_p11_parked`
-PROGRAM_ID=CVF-NIS; NEXT_ACTION_CLASS=BOUNDED_SELECTION_AND_DISPATCH_PLANNING; BATCH_ID=CVF-NIS-T1G. T1G CLOSED_PASS_BOUNDED preparation with Local MODIFY in docs/reviews/CVF_NIS_T1G_RECEIVER_MANUAL_BASELINE_COMPLETION_2026-10-05.md.149 independent preparation assertions and6 controls. Review-only selected for job A; accepted-file gap/HOLD retained, no candidate minted. Neutral reviewer inputs docs/reviews/evidence/cvf-nis-t1g-reviewer-inputs-review-only-2026-10-05.json prepared without key/placement mapping. Fresh reviewer manual exercise requires separate bounded order and exposure/time/cost/scoring declarations; no reviewer invoked here. BC-V1 and11 current/35 prior cases NOT_EXECUTED; helper deferred, no automatic S2. Original workers retained; chat transfer only, no relay. CCMA parked; S05/C1/send/B2 STOP; Q001/Q004 OPEN/Profile A; P11/deploy/FLAL T4/T5 parked; FR2 historical loss retained; costs UNKNOWN; LHW24 closed; no push. Closure material ea4563c1d; dedicated continuity.
+PROGRAM_ID=CVF-NIS; NEXT_ACTION_CLASS=EXECUTE_BOUNDED_WORK_ORDER; BATCH_ID=CVF-NIS-T1H. One fresh reviewer manual review-only attempt in docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1H_REVIEW_ONLY_MANUAL_ARM_2026-10-05.md. Neutral historical synthetic package only; declare exposure before views, actual preparation/per-case clocks, unedited raw forms; exact3 outputs; no self-score. Prior placement-aware worker/Local cannot supply blind attempt. Local independent integrity/scoring/commit after return; no primary replay. No helper/candidate/product/runtime/provider/network/install/store/UAC/BUILD/general S2/public/deploy. Accepted-source gap remains; comparative cost/UX UNKNOWN. Original workers retained; chat transfer only. CCMA parked; S05/C1/send/B2 STOP; Q001/Q004 OPEN/Profile A; P11/deploy/FLAL T4/T5 parked; FR2 historical loss retained; costs UNKNOWN; LHW24 closed; no push.
 Historical G1-G7 terminal baseline: mode `acel_g1_g7_research_terminally_closed`. G1-G6 terminal review: `docs/reviews/CVF_ACEL_G1_G6_TERMINAL_STOP_CLOSURE_2026-09-24.md`; G7 research closure: `docs/reviews/CVF_ACEL_G7_CROSS_RUN_CAPABILITY_EVOLUTION_RESEARCH_CLOSURE_2026-09-24.md`. The packet-only post-G7 reconciliation review at `docs/reviews/CVF_ACEL_POST_G7_FULL_CORPUS_ABSORPTION_CLOSURE_2026-09-24.md` is superseded for repository absorption by the 2026-09-25 pinned-source audit. G1 is stopped, G2-G6 remain parked, G7 research is closed, and no automatic G1-G7 successor exists.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1

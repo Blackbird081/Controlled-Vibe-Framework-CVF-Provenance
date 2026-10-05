@@ -36,12 +36,12 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_NIS_T1G_RECEIVER_MANUAL_BASELINE_2026-10-05.md",
-    "baselineSha256": "165879c541d67816178cb9b515a24350b636f0cf811fce4d48b327010736b719",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1G_RECEIVER_MANUAL_BASELINE_2026-10-05.md",
-    "workOrderSha256": "adc4827b94b6007dc623a1b26f3a3c4c2caa8f7d3371a6d1bada3a02341df1ca"
+    "baselinePath": "docs/baselines/CVF_GC018_NIS_T1H_REVIEW_ONLY_MANUAL_ARM_2026-10-05.md",
+    "baselineSha256": "0966f9e1a2780410af85088ac010758477a645f63e1ecf04de3759943df0cc48",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1H_REVIEW_ONLY_MANUAL_ARM_2026-10-05.md",
+    "workOrderSha256": "270bdfe7919cc78fbe786d0606a1a0d984bb9baf2dffbe5b79c391e63bdc9267"
   },
-  "currentAuthoritySyncReason": "T1G closure material ea4563c1d: documentary review-only preparation accepted with Local corrections; manual/helper still NOT_EXECUTED.",
+  "currentAuthoritySyncReason": "T1H one review-only manual attempt admitted after T1G; neutral package only, helper and acceptance effects excluded.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",

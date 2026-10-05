@@ -1,0 +1,28 @@
+{
+  "schemaVersion": "cvf.nisT1hDispatchInputs.v1",
+  "baseHead": "3a30c39fc27cd2a0c2891063af145b76abef7a7f",
+  "authority": "Operator continue under delegated Local authority after T1G preparation closure. One fresh placement-blind review-only manual attempt. No helper or accepted-source experiment grant.",
+  "sources": {
+    "docs/reviews/evidence/cvf-nis-t1g-reviewer-inputs-review-only-2026-10-05.json": {
+      "rawSha256": "28ece326b696672153abd88a5c5ef77b1b57bfcd82dbd119f85f2f071c32a869",
+      "gitBlob": "e119adefc29bcfd67d7116bd8506ca909d46c790",
+      "symbols": [
+        "genericChecklist",
+        "blankAnswerForm",
+        "reviewerViews"
+      ]
+    }
+  },
+  "workerArtifacts": [
+    "docs/reviews/CVF_NIS_T1H_REVIEW_ONLY_MANUAL_ARM_WORKER_RETURN_2026-10-05.md",
+    "docs/reviews/evidence/cvf-nis-t1h-manual-raw-responses-2026-10-05.json",
+    "docs/reviews/evidence/cvf-nis-t1h-manual-exposure-timing-2026-10-05.json"
+  ],
+  "newPathsAbsent": [
+    "docs/reviews/CVF_NIS_T1H_REVIEW_ONLY_MANUAL_ARM_WORKER_RETURN_2026-10-05.md",
+    "docs/reviews/evidence/cvf-nis-t1h-manual-raw-responses-2026-10-05.json",
+    "docs/reviews/evidence/cvf-nis-t1h-manual-exposure-timing-2026-10-05.json"
+  ],
+  "sourceReadBudget": "Only this neutral package and generic governance startup/output rules. No prior experiment files, key, original protocol, generator, Local probe/completion or source-diff research.",
+  "claimBoundary": "REVIEW_ONLY_HISTORICAL_SYNTHETIC_BYTES; self-declared exposure; NOT live governance, accepted-packet fidelity, UX, cost winner or helper comparison."
+}
