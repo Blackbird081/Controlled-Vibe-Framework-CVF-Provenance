@@ -1,6 +1,6 @@
 # CVF Agent Handoff V63 - ACEL Applied-Knowledge Owner Enrichment
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `06ddaad0aca6266e000564db34c1b6abe1ba6882`; CVF-NIS-T1B-D accepted source and exact13-path closure authorization; dedicated handoff-only sync.
+Current HEAD recorded for this handoff: `5944658abf723cdcec0b46ce83456b07caa6ef31`; NIS-T1B-D closed; new artifact-only NIS-T1C admission and dedicated handoff sync follow.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -169,7 +169,7 @@ Rollback boundary: revert only this continuity sync; preserve material `5c1ee025
 - ACEL-AKOE-U1 is `CLOSED_PASS_BOUNDED` at `d9132412a`, disposition `SOURCE_RECONCILED_DEFER_WITH_TRIGGER`. Exact pins, 42 claims, byte hash and verification detail remain in its completion review; no import, runtime/provider, public sync or automatic successor opened.
 - CVF-NCR-R0-W01 source/profile return is Local-accepted bounded at material commit `d9b43a6f6deff7fb19710b5a9a4f50bf2a6015b6`; reviewer-fast 69/69 and pre-commit 90/90 passed. P06/P08 and actual destination/retention/cost remain open. One overbroad worker grep exposed a configured URL in tool output; the return does not reproduce it, and Local/operator config handling remains separate. No pilot or UI action was run.
 ## Next Allowed Move
-PROGRAM_ID=CVF-NIS; NEXT_ACTION_CLASS=SELECT_NEXT_AUTHORIZED_VALUE_SLICE; BATCH_ID=CVF-NIS-T1B-D. Source793644f67; bounded closure in docs/reviews/CVF_NIS_T1B_D_INTEGRATED_REVIEW_PERSISTENCE_COMPLETION_2026-10-05.md. Local WRONG_OWNER/restoration and three F1 fault probes PASS; worker exit2/frozen return retained. Ledger8 mandatory+15 companions=23; known R0 B1 recurrence acknowledged. No successor dispatched, no BUILD/real root/provider/public effect; parked lanes unchanged.
+PROGRAM_ID=CVF-NIS; NEXT_ACTION_CLASS=EXECUTE_BOUNDED_WORK_ORDER; BATCH_ID=CVF-NIS-T1C. Artifact-only builder handoff value proof in docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1C_BUILDER_HANDOFF_VALUE_PROOF_2026-10-05.md; isolated INTERNAL_AGENT worker, four evidence paths. Local reviews/commits; no source/store/provider/BUILD/public effects or parked-lane activation. T1B-D closed at793644f67/5944658ab; frozen worker/Local proof preserved.
 ## Parked Checkpoints
 - autorun lane-binding R1 is closed at `ee81deeeb`; HRLTP-T2 remains paused for Local no-subagent route reassessment;
 - T3C-C2 is closed and Local verified at `820aae3ec`;

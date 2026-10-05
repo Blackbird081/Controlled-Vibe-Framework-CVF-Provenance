@@ -1,0 +1,48 @@
+{
+  "schemaVersion": "cvf.nisT1cDispatchInputs.v1",
+  "baseHead": "5944658abf723cdcec0b46ce83456b07caa6ef31",
+  "authority": "Operator next and delegated Local orchestration, dated 2026-10-05",
+  "sources": {
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-review.ts": {
+      "rawSha256": "c8746be8645af3d287c084a6338e84bbf502b4ffc3f9f750f58236c0085a34dc",
+      "symbols": [
+        "createIntentSpecReview",
+        "synchronizeIntentSpecReview",
+        "updateReviewDecision",
+        "buildReviewedDraftPacket"
+      ]
+    },
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/SpecExport.tsx": {
+      "rawSha256": "24617b9ef2f53e6ac5cf5e4907eaa2dea2d0ba8fbe1578714f8cba22338be2a9",
+      "symbols": [
+        "generateSpec",
+        "generateCompleteSpec"
+      ]
+    },
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/templates/development.ts": {
+      "rawSha256": "e17bd23353f95cf0fd62988c8abafecdee65dd99aa0848c890276820bdcd4b7c",
+      "symbols": [
+        "app_builder_complete"
+      ]
+    },
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/spec-export-portable-handoff.ts": {
+      "rawSha256": "8528e8274bb82015398ce7deb10292aff6c7b5a06db83b25c6d8346b7a440795",
+      "symbols": [
+        "buildPortableAgentHandoffReadiness"
+      ]
+    },
+    "docs/reviews/CVF_NIS_T1B_D_INTEGRATED_REVIEW_PERSISTENCE_COMPLETION_2026-10-05.md": {
+      "rawSha256": "40a1b4c57e797b41eb9fa48c4050a0d86815e45d7b775b113c9b733acaa9329c",
+      "symbols": [
+        "Status: CLOSED_PASS_BOUNDED"
+      ]
+    }
+  },
+  "workerArtifacts": [
+    "docs/reviews/CVF_NIS_T1C_BUILDER_HANDOFF_VALUE_PROOF_WORKER_RETURN_2026-10-05.md",
+    "docs/reviews/evidence/cvf-nis-t1c-scenario-2026-10-05.json",
+    "docs/reviews/evidence/cvf-nis-t1c-replay-2026-10-05.json",
+    "docs/reviews/evidence/cvf-nis-t1c-readiness-gap-2026-10-05.json"
+  ],
+  "claimBoundary": "Named-file source comparison and deterministic synthetic artifact replay only; no AI governance, target-user UX, live auth, durable store or build-ready acceptance proof."
+}
