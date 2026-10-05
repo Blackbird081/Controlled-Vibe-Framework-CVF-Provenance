@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1D_SELECTED_CAPABILITY_CONSUMER_CONTRACT_2026-10-05.md",
     "workOrderSha256": "18fd2d017737d8c8e6056b9abc22c969a3a8d06b0e7cb643fc5a1430b878ffd7"
   },
-  "currentAuthoritySyncReason": "T1D selected source/contract admission; T1C closed, build-ready target and parked lanes retained.",
+  "currentAuthoritySyncReason": "T1D material 4d5873832: selected source/contract; T1C closed and parked lanes unchanged.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
