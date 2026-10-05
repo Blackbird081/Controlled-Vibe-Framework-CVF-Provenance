@@ -1,6 +1,6 @@
 # CVF Agent Handoff V63 - ACEL Applied-Knowledge Owner Enrichment
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `a93a2efa248b78ed524a4cc361d7f71ce7d12dcf`; batch CVF-NIS-T1E accepted material; closure and dedicated handoff sync follow.
+Current HEAD recorded for this handoff: `f2e4bd89b4bd62b11c1070a0738e515de5f29627`; batch CVF-NIS-T1E closure material `f2e4bd89b4bd62b11c1070a0738e515de5f29627`; dedicated handoff-only sync.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
