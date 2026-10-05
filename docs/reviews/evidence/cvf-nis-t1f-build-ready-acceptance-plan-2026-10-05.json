@@ -1,0 +1,1060 @@
+{
+  "schemaVersion": "cvf.nisT1fAcceptancePlan.v1",
+  "batchId": "CVF-NIS-T1F",
+  "executionState": "NOT_EXECUTED",
+  "plannedOnly": true,
+  "executionBaseHead": "e06513638a363897190195d1d8caadbd19dd8daf",
+  "statement": "Every case below is a plan. No product test, replay, store call, browser run or provider call was made by the worker. The scratch self-check recorded under contractSelfCheck is not the execution of any case and not the independent Local oracle. A planned case becoming a passing run is evidence only after a later authorized implementation and Local review.",
+  "oracleAuthorship": "Declared by the worker from the contract rules and the pinned fixtures before any implementation exists. The independent Local probe must author separate assertions and may recompute the digest vectors itself; this plan is input, not its oracle.",
+  "inputOrder": "Each case lists inputs before expected results. A requirement with no open item is a complete valid case; no case requires every task or requirement to cite an item id, and no case requires a count of unknowns.",
+  "contractRef": "docs/reviews/CVF_NIS_T1F_BUILD_READY_BRIDGE_CONTRACT_2026-10-05.md",
+  "assessmentRef": "docs/reviews/evidence/cvf-nis-t1f-build-ready-capability-assessment-2026-10-05.json",
+  "proposedEnvelope": {
+    "root": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/",
+    "authorized": false,
+    "newPaths": [
+      "lib/intent-spec-build-bridge.ts",
+      "lib/intent-spec-build-bridge.test.ts",
+      "lib/intent-spec-build-bridge-fixtures.ts"
+    ],
+    "newPathsExistAtBase": false,
+    "mustStayByteIdentical": [
+      {
+        "path": "lib/intent-spec-review.ts",
+        "gitBlob": "f959ecdce5cb608f19a18ed1ac6424a668ab588e"
+      },
+      {
+        "path": "lib/intent-spec-open-items.ts",
+        "gitBlob": "eb26737b9869b096cea342995a3ac1aa8d596cd3"
+      },
+      {
+        "path": "lib/intent-spec-confirmation.ts",
+        "gitBlob": "aceb530c482dc0bd01f30a5d4f4d555141cd4c06"
+      },
+      {
+        "path": "lib/intent-spec-acceptance.ts",
+        "gitBlob": "33be8460e53ed56e4133c05a10bed6a64d4956f3"
+      },
+      {
+        "path": "lib/spec-export-portable-handoff.ts",
+        "gitBlob": "d17f4f6af70dcdfe45e7c9f7254d0a610bc519d9"
+      },
+      {
+        "path": "components/SpecExport.tsx",
+        "gitBlob": "bb550ff43785e62534e8cc8432649c537a84ec6a"
+      },
+      {
+        "path": "lib/templates/development.ts",
+        "gitBlob": "e8993d830cbd07a6aa7b539b34179fdeeed0bc09"
+      },
+      {
+        "path": "lib/intent-spec-review-api.ts",
+        "gitBlob": "461c6b784c70b78d8f49ff4317f033068184f20d"
+      },
+      {
+        "path": "lib/intent-spec-review-client.ts",
+        "gitBlob": "1396a8109175a251e54f069ab82da7c1410860e4"
+      },
+      {
+        "path": "lib/intent-spec-file-store.ts",
+        "gitBlob": "9fadfae654f198d3c6eaf2bb918ef1453cad361c"
+      },
+      {
+        "path": "lib/intent-spec-actor.ts",
+        "gitBlob": "c1239613b539953467917b26106116a8d25f6918"
+      },
+      {
+        "path": "lib/intent-spec-private-profile.ts",
+        "gitBlob": "655a83bca7941e82496b8b8578ac6e96ddf44bde"
+      },
+      {
+        "path": "components/IntentSpecReview.tsx",
+        "gitBlob": "0cb7275470d44c0e331990226203ac7fdd736d85"
+      },
+      {
+        "path": "components/IntentSpecConfirmation.tsx",
+        "gitBlob": "cd4b1c376ded04ec4a97fc81803afc1a406d7902"
+      },
+      {
+        "path": "app/api/intent-spec/reviews/route.ts",
+        "gitBlob": "3e15402bfbcae81a574a2685535ec970dba09ad5"
+      },
+      {
+        "path": "app/api/intent-spec/reviews/[id]/route.ts",
+        "gitBlob": "29f77bb6df72f799e510e448f87652d006fa5ced"
+      },
+      {
+        "path": "lib/intent-spec-legacy-golden.test.ts",
+        "gitBlob": "a474f75ac37564300014590e8ac895409ed507cd"
+      },
+      {
+        "path": "lib/intent-spec-open-items.test.ts",
+        "gitBlob": "a619791ec0ea9c1f7c192be62efbcf8304c38572"
+      },
+      {
+        "path": "lib/intent-spec-review.test.ts",
+        "gitBlob": "2a74ef89a5b8183ccb9b30ca4e84d9b96c73dd2b"
+      },
+      {
+        "path": "lib/intent-spec-confirmation.test.ts",
+        "gitBlob": "3a78fd445538730a9c9e0f966437e622db7f1d6d"
+      },
+      {
+        "path": "lib/intent-spec-acceptance.test.ts",
+        "gitBlob": "5ecb0d9b00d8a719d5ec9f653fd80c41c6b7ea0c"
+      }
+    ],
+    "identityBasis": "git blob equality at the execution base; the first sixteen names are runtime owners, the last five are existing tests; contents of the non-pinned files were hashed, not read",
+    "sizeGuard": "helper below the 700-line general source soft threshold, test below 800 lines, fixtures below 700; if the test would exceed 700 lines move fixture literals into the fixtures module rather than splitting behavior",
+    "rollbackBoundary": "Delete the three new files. Nothing imports them, no store, auth, route or data exists to undo."
+  },
+  "frozenCurrentPacketControls": {
+    "source": "docs/reviews/evidence/cvf-nis-t1e-frozen-legacy-2026-10-05.json (partial read, dependency 3)",
+    "sourceGitBlob": "eef2d5bd870d7a07acc2506e86dee014c9748525",
+    "controls": [
+      {
+        "id": "LG1",
+        "language": "en",
+        "fileSha256": "a062fe6c1d87b5faed429a5108c1578b5702d49b65a56f29d7da3b3b485f4239"
+      },
+      {
+        "id": "LG2",
+        "language": "vi",
+        "fileSha256": "400d076cad8150228054967f9e96129999fb5bada9758b6f2047d2527d48563d"
+      },
+      {
+        "id": "LG3",
+        "language": "en",
+        "fileSha256": "0d4a3dd870fd6f9e85541c8f338cbde2df444db44731c42ed203aeff41b3ac52"
+      }
+    ],
+    "rule": "The slice must not change any of them; because no existing file is edited, equality is expected by construction and is checked by git blob equality plus the unmodified legacy suites (BC-C1, BC-C2). The worker did not re-capture them."
+  },
+  "digestVectors": {
+    "canonicalForm": "BRIEF_FIELD: UTF-8 bytes of the field text; DECISION: compact JSON {answer, disposition} in that key order; ITEM: compact JSON of the nine open-item keys in OPEN_ITEM_KEYS order; SHA-256 lowercase hex; JSON uses no spaces and unescaped non-ASCII",
+    "computedBy": "worker scratch Python, not the product helper",
+    "state": "FX-A S1 baseline (values valuesBaseline, items U1-U4 OPEN, C1 RESOLVED)",
+    "vectors": {
+      "BRIEF_FIELD:coreFeatures": "ef8219c189ca27d93e3e45e102d755d425b096f8449d9bb1aa8c3457237f1e5e",
+      "DECISION:access": "bcfb3342dcb47598c7ea49b6a49441b266aa3bc95e4e5f2e326c15773c81acdf",
+      "ITEM:U4": "7e00adce6472c3d3c64331387aa57ce24192976f8a561c5eecd1a79c24033cfb",
+      "ITEM:C1": "2f2b9677c14711d4b2dc04561e955b785cdde6ce1e3adc49fc7b6326ad4d71a3"
+    },
+    "disposition": "DECISION digests exclude needsReconfirmation by selected default (contract choice C-3); disposition is the existing review disposition value, ANSWERED in these vectors"
+  },
+  "fixtures": {
+    "FX-A": {
+      "name": "Periodic maintenance report compiler (the T1C synthetic job)",
+      "synthetic": "Invented equipment lines; no people data; no real records.",
+      "stateSource": "docs/reviews/evidence/cvf-nis-t1d-acceptance-plan-2026-10-05.json fixtures.FX-A stage S1 (values valuesBaseline of docs/reviews/evidence/cvf-nis-t1c-scenario-2026-10-05.json, decision answers from the T1C P0 and P1 stages), acknowledged",
+      "stateSourceSha256": "6bbd1904a0b1319d345180fb4566d5b473e6b0c232cea5ced134f45096d7706c",
+      "language": "en",
+      "items": {
+        "U1": "data, cites dataNeeds, OPEN",
+        "U2": "exceptions, cites constraints, OPEN (deadline timezone)",
+        "U3": "exceptions, no field, OPEN (public holiday)",
+        "U4": "acceptance, no field, OPEN (export format)",
+        "C1": "boundaries, cites constraints and mustPreserve, RESOLVED"
+      },
+      "ledger": {
+        "requirements": [
+          {
+            "id": "R1",
+            "title": "Compile one weekly report",
+            "statements": [
+              "System compiles all entries into one weekly report"
+            ],
+            "sources": [
+              "BRIEF_FIELD:coreFeatures"
+            ],
+            "effectiveRules": []
+          },
+          {
+            "id": "R2",
+            "title": "Mark late, missing and duplicate entries",
+            "statements": [
+              "Late, missing and duplicate entries are marked in the report"
+            ],
+            "sources": [
+              "BRIEF_FIELD:coreFeatures",
+              "DECISION:exceptions"
+            ],
+            "effectiveRules": []
+          },
+          {
+            "id": "R3",
+            "title": "Department head is the only exporter",
+            "statements": [
+              "The department head views all entries and is the only person who can export."
+            ],
+            "sources": [
+              "DECISION:access",
+              "DECISION:acceptance"
+            ],
+            "effectiveRules": []
+          },
+          {
+            "id": "R4",
+            "title": "Corrections until the Friday deadline",
+            "statements": [
+              "Team leads may correct their entry until the Friday 17:00 deadline",
+              "Submitted entries are immutable once submitted"
+            ],
+            "sources": [
+              "BRIEF_FIELD:constraints",
+              "BRIEF_FIELD:mustPreserve",
+              "ITEM:C1"
+            ],
+            "effectiveRules": [
+              "Corrections before Friday 17:00 create a new entry version; after the deadline entries are immutable."
+            ]
+          },
+          {
+            "id": "R5",
+            "title": "No automatic scoring of people",
+            "statements": [
+              "No automatic scoring or ranking of team leads or people."
+            ],
+            "sources": [
+              "BRIEF_FIELD:outOfScope"
+            ],
+            "effectiveRules": []
+          }
+        ],
+        "designs": [
+          {
+            "id": "D1",
+            "kind": "DATA",
+            "text": "Entry record: equipment line code, status text, submitting team lead, submission time.",
+            "requirementIds": [
+              "R1"
+            ]
+          }
+        ],
+        "tasks": [
+          {
+            "id": "T1",
+            "title": "Define the entry record",
+            "requirementIds": [
+              "R1"
+            ],
+            "designIds": [
+              "D1"
+            ],
+            "dependsOn": [],
+            "validationIds": [
+              "V1"
+            ],
+            "categories": []
+          },
+          {
+            "id": "T2",
+            "title": "Compile the weekly report",
+            "requirementIds": [
+              "R1"
+            ],
+            "designIds": [],
+            "dependsOn": [
+              "T1"
+            ],
+            "validationIds": [
+              "V1"
+            ],
+            "categories": []
+          },
+          {
+            "id": "T3",
+            "title": "Mark missing, late and duplicate entries",
+            "requirementIds": [
+              "R2"
+            ],
+            "designIds": [],
+            "dependsOn": [
+              "T2"
+            ],
+            "validationIds": [
+              "V2"
+            ],
+            "categories": []
+          },
+          {
+            "id": "T4",
+            "title": "Export for the department head",
+            "requirementIds": [
+              "R3"
+            ],
+            "designIds": [],
+            "dependsOn": [
+              "T2"
+            ],
+            "validationIds": [
+              "V3"
+            ],
+            "categories": []
+          },
+          {
+            "id": "T5",
+            "title": "Version corrections before the deadline",
+            "requirementIds": [
+              "R4"
+            ],
+            "designIds": [],
+            "dependsOn": [
+              "T1"
+            ],
+            "validationIds": [
+              "V4"
+            ],
+            "categories": []
+          },
+          {
+            "id": "T6",
+            "title": "Keep scoring and ranking out",
+            "requirementIds": [
+              "R5"
+            ],
+            "designIds": [],
+            "dependsOn": [],
+            "validationIds": [
+              "V5"
+            ],
+            "categories": []
+          }
+        ],
+        "validations": [
+          {
+            "id": "V1",
+            "text": "A fixture CSV with N entries yields a report with the same N entries.",
+            "requirementIds": [
+              "R1"
+            ]
+          },
+          {
+            "id": "V2",
+            "text": "A fixture with a missing, a late and a duplicate entry shows three visible marks.",
+            "requirementIds": [
+              "R2"
+            ]
+          },
+          {
+            "id": "V3",
+            "text": "Only the department head role can export.",
+            "requirementIds": [
+              "R3"
+            ]
+          },
+          {
+            "id": "V4",
+            "text": "A correction before the deadline creates a new entry version.",
+            "requirementIds": [
+              "R4"
+            ]
+          },
+          {
+            "id": "V5",
+            "text": "No ranking or score field exists in the report.",
+            "requirementIds": [
+              "R5"
+            ]
+          }
+        ]
+      },
+      "labelNote": "Contract fixture, not a reviewed build-ready job artifact; ids, titles and validation texts are synthetic and the dependency graph is invented for the plan.",
+      "expectedAtBaselineBound": {
+        "requirements": {
+          "R1": "READY_FOR_TECHNICAL_REVIEW",
+          "R2": "BLOCKED_BY_OPEN_ITEM",
+          "R3": "BLOCKED_BY_OPEN_ITEM",
+          "R4": "BLOCKED_BY_OPEN_ITEM",
+          "R5": "READY_FOR_TECHNICAL_REVIEW"
+        },
+        "tasks": {
+          "T1": "READY_FOR_TECHNICAL_REVIEW",
+          "T2": "READY_FOR_TECHNICAL_REVIEW",
+          "T3": "BLOCKED_BY_OPEN_ITEM",
+          "T4": "BLOCKED_BY_OPEN_ITEM",
+          "T5": "BLOCKED_BY_OPEN_ITEM",
+          "T6": "READY_FOR_TECHNICAL_REVIEW"
+        },
+        "blockers": {
+          "R2": [
+            "U2",
+            "U3"
+          ],
+          "R3": [
+            "U4"
+          ],
+          "R4": [
+            "U2"
+          ]
+        },
+        "resolvedUsed": {
+          "R4": [
+            "C1"
+          ]
+        },
+        "unscopedOpenItems": [
+          "U1"
+        ]
+      },
+      "expectedAfterU2ResolvedBeforeRevision": {
+        "R": {
+          "R1": "REBIND_REQUIRED",
+          "R2": "STALE_SOURCE",
+          "R3": "BLOCKED_BY_OPEN_ITEM",
+          "R4": "STALE_SOURCE",
+          "R5": "REBIND_REQUIRED"
+        },
+        "T": {
+          "T1": "REBIND_REQUIRED",
+          "T2": "REBIND_REQUIRED",
+          "T3": "STALE_SOURCE",
+          "T4": "BLOCKED_BY_OPEN_ITEM",
+          "T5": "STALE_SOURCE",
+          "T6": "REBIND_REQUIRED"
+        }
+      },
+      "expectedAfterRevisionAndRebind": {
+        "R": {
+          "R1": "READY_FOR_TECHNICAL_REVIEW",
+          "R2": "BLOCKED_BY_OPEN_ITEM",
+          "R3": "BLOCKED_BY_OPEN_ITEM",
+          "R4": "READY_FOR_TECHNICAL_REVIEW",
+          "R5": "READY_FOR_TECHNICAL_REVIEW"
+        },
+        "T": {
+          "T1": "READY_FOR_TECHNICAL_REVIEW",
+          "T2": "READY_FOR_TECHNICAL_REVIEW",
+          "T3": "BLOCKED_BY_OPEN_ITEM",
+          "T4": "BLOCKED_BY_OPEN_ITEM",
+          "T5": "READY_FOR_TECHNICAL_REVIEW",
+          "T6": "READY_FOR_TECHNICAL_REVIEW"
+        }
+      },
+      "expectedAfterConstraintsEdit": {
+        "R": {
+          "R1": "REBIND_REQUIRED",
+          "R2": "STALE_SOURCE",
+          "R3": "BLOCKED_BY_OPEN_ITEM",
+          "R4": "STALE_SOURCE",
+          "R5": "REBIND_REQUIRED"
+        },
+        "T": {
+          "T1": "REBIND_REQUIRED",
+          "T2": "REBIND_REQUIRED",
+          "T3": "STALE_SOURCE",
+          "T4": "BLOCKED_BY_OPEN_ITEM",
+          "T5": "STALE_SOURCE",
+          "T6": "REBIND_REQUIRED"
+        }
+      },
+      "expectedRevisionOnly": {
+        "R": {
+          "R1": "REBIND_REQUIRED",
+          "R2": "BLOCKED_BY_OPEN_ITEM",
+          "R3": "BLOCKED_BY_OPEN_ITEM",
+          "R4": "BLOCKED_BY_OPEN_ITEM",
+          "R5": "REBIND_REQUIRED"
+        }
+      }
+    },
+    "FX-B": {
+      "name": "Workshop tool-lending log (a different job, built to falsify generalization)",
+      "synthetic": "Invented tools and roles; first names only as placeholders; no real data.",
+      "stateSource": "docs/reviews/evidence/cvf-nis-t1d-acceptance-plan-2026-10-05.json fixtures.FX-B (values, items U1 DELEGATED, U2 OPEN, C1 OPEN conflict across outOfScope and targetUsers); decisions answered with short synthetic prose",
+      "language": "vi",
+      "ledger": {
+        "requirements": [
+          {
+            "id": "R1",
+            "title": "Record a loan",
+            "statements": [
+              "Record a loan"
+            ],
+            "sources": [
+              "BRIEF_FIELD:coreFeatures",
+              "BRIEF_FIELD:dataNeeds"
+            ],
+            "effectiveRules": []
+          },
+          {
+            "id": "R2",
+            "title": "Record a return",
+            "statements": [
+              "Record a return"
+            ],
+            "sources": [
+              "BRIEF_FIELD:coreFeatures"
+            ],
+            "effectiveRules": []
+          },
+          {
+            "id": "R3",
+            "title": "List overdue loans",
+            "statements": [
+              "List overdue loans",
+              "A loan lasts at most 14 days."
+            ],
+            "sources": [
+              "BRIEF_FIELD:coreFeatures",
+              "BRIEF_FIELD:constraints"
+            ],
+            "effectiveRules": []
+          },
+          {
+            "id": "R4",
+            "title": "Lead can view all loans",
+            "statements": [
+              "workshop lead (view all loans)"
+            ],
+            "sources": [
+              "BRIEF_FIELD:targetUsers"
+            ],
+            "effectiveRules": []
+          }
+        ],
+        "designs": [],
+        "tasks": [
+          {
+            "id": "T1",
+            "title": "Loan entry form",
+            "requirementIds": [
+              "R1"
+            ],
+            "designIds": [],
+            "dependsOn": [],
+            "validationIds": [
+              "V1"
+            ],
+            "categories": []
+          },
+          {
+            "id": "T2",
+            "title": "Return entry form",
+            "requirementIds": [
+              "R2"
+            ],
+            "designIds": [],
+            "dependsOn": [],
+            "validationIds": [
+              "V2"
+            ],
+            "categories": []
+          },
+          {
+            "id": "T3",
+            "title": "Overdue list",
+            "requirementIds": [
+              "R3"
+            ],
+            "designIds": [],
+            "dependsOn": [
+              "T1",
+              "T2"
+            ],
+            "validationIds": [
+              "V3"
+            ],
+            "categories": []
+          },
+          {
+            "id": "T4",
+            "title": "Lead view of all loans",
+            "requirementIds": [
+              "R4"
+            ],
+            "designIds": [],
+            "dependsOn": [
+              "T1"
+            ],
+            "validationIds": [
+              "V4"
+            ],
+            "categories": []
+          }
+        ],
+        "validations": [
+          {
+            "id": "V1",
+            "text": "A loan record appears in the log.",
+            "requirementIds": [
+              "R1"
+            ]
+          },
+          {
+            "id": "V2",
+            "text": "A return closes the matching loan.",
+            "requirementIds": [
+              "R2"
+            ]
+          },
+          {
+            "id": "V3",
+            "text": "A loan older than 14 days is listed as overdue.",
+            "requirementIds": [
+              "R3"
+            ]
+          },
+          {
+            "id": "V4",
+            "text": "The lead sees every unreturned tool.",
+            "requirementIds": [
+              "R4"
+            ]
+          }
+        ]
+      },
+      "labelNote": "Contract fixture, not a reviewed build-ready job artifact; zero designs on purpose because none is needed.",
+      "expectedAtBaselineBound": {
+        "R": {
+          "R1": "READY_WITH_DELEGATION",
+          "R2": "READY_FOR_TECHNICAL_REVIEW",
+          "R3": "READY_FOR_TECHNICAL_REVIEW",
+          "R4": "BLOCKED_BY_OPEN_ITEM"
+        },
+        "T": {
+          "T1": "READY_WITH_DELEGATION",
+          "T2": "READY_FOR_TECHNICAL_REVIEW",
+          "T3": "READY_FOR_TECHNICAL_REVIEW",
+          "T4": "BLOCKED_BY_OPEN_ITEM"
+        },
+        "unscoped": [
+          "U2"
+        ]
+      },
+      "expectedNoItemsState": {
+        "R": {
+          "R1": "READY_FOR_TECHNICAL_REVIEW",
+          "R2": "READY_FOR_TECHNICAL_REVIEW",
+          "R3": "READY_FOR_TECHNICAL_REVIEW",
+          "R4": "READY_FOR_TECHNICAL_REVIEW"
+        }
+      }
+    }
+  },
+  "contractSelfCheck": {
+    "kind": "SCRATCH_CONTRACT_SELF_CHECK",
+    "notAnAcceptanceExecution": true,
+    "notTheIndependentOracle": true,
+    "what": "A worker-authored scratch Python reference of the contract rules asserted that every fixture statement is an exact substring of the pinned source text, that the expected status maps above follow from the stated rules, and that the listed mutations change statuses as planned. It exercised no product code.",
+    "scripts": ".cvf/runtime/nis-t1f-worker-20261005/scratch/ref_check.py, ref_mutations.py, gen_plan.py",
+    "resultLog": ".cvf/runtime/nis-t1f-worker-20261005/scratch/self_check_run.log",
+    "resultLogSha256": "343720f7b9122b46d434f74a8eb0b666ebb3352ee444a8aebfd8b09d4585b9d4",
+    "limit": "The same author wrote rules, fixtures and reference; agreement proves internal consistency only. Independent authorship stays with the Local probe."
+  },
+  "cases": [
+    {
+      "caseId": "BC-P1",
+      "class": "POSITIVE_ZERO_UNKNOWN",
+      "ownerTest": "lib/intent-spec-build-bridge.test.ts",
+      "fixture": "FX-A, FX-B no-item state",
+      "inputs": "FX-A requirements R1 and R5 (cite only coreFeatures and outOfScope, no item cited); FX-B values with an empty item set and a ledger of four requirements",
+      "expected": "R1 and R5 READY_FOR_TECHNICAL_REVIEW with empty reasons and no forced item link; with no items every requirement is READY and unscopedOpenItems is empty",
+      "status": "NOT_EXECUTED"
+    },
+    {
+      "caseId": "BC-P2",
+      "class": "POSITIVE_FOURTH_UNKNOWN_PRESERVED",
+      "ownerTest": "lib/intent-spec-build-bridge.test.ts",
+      "fixture": "FX-A baseline",
+      "inputs": "FX-A S1 acknowledged state with U1..U4 OPEN and C1 RESOLVED, ledger bound to it",
+      "expected": "R2 blockers [U2,U3], R3 blockers [U4], R4 blockers [U2]; the union of blocking ids names U2, U3 and U4 and the readout also lists U1 as an open item attached to no requirement; nothing is cut at three, four or five",
+      "status": "NOT_EXECUTED"
+    },
+    {
+      "caseId": "BC-P3",
+      "class": "POSITIVE_NO_DEMANDED_COUNT",
+      "ownerTest": "lib/intent-spec-build-bridge.test.ts",
+      "fixture": "FX-B baseline",
+      "inputs": "FX-B items U1 DELEGATED, U2 OPEN, C1 OPEN conflict",
+      "expected": "no case or rule demands a fourth item; R1 READY_WITH_DELEGATION naming U1, R2 and R3 READY, R4 BLOCKED_BY_OPEN_ITEM [C1], unscopedOpenItems [U2]",
+      "status": "NOT_EXECUTED"
+    },
+    {
+      "caseId": "BC-P4",
+      "class": "POSITIVE_RESOLUTION_LINEAGE",
+      "ownerTest": "lib/intent-spec-build-bridge.test.ts",
+      "fixture": "FX-A baseline",
+      "inputs": "R4 cites BRIEF_FIELD:constraints, BRIEF_FIELD:mustPreserve and ITEM:C1; statements are the two original sentences; effectiveRules holds the C1 resolution verbatim",
+      "expected": "both original statements verified as exact substrings of the cited fields (source text retained), C1 listed in resolvedUsed, no RESOLUTION_NOT_QUOTED; R4 stays blocked only by U2",
+      "status": "NOT_EXECUTED"
+    },
+    {
+      "caseId": "BC-P5",
+      "class": "POSITIVE_USER_RESOLUTION_CHANGES_DEPENDENT_TASK",
+      "ownerTest": "lib/intent-spec-build-bridge.test.ts",
+      "fixture": "FX-A baseline then U2 resolved",
+      "inputs": "bind to the baseline; the user then resolves U2 with 'The deadline timezone is the department's local office time.' (state revision 4, new file hash); then the author adds that quote to R2 and R4 effectiveRules and rebinds",
+      "expected": "before revision: R2 and R4 STALE_SOURCE, T3, T5, V2, V4 STALE_SOURCE, R1 and R5 and T1, T2, T6 REBIND_REQUIRED, R3 and T4 stay BLOCKED_BY_OPEN_ITEM; U2.text still reads 'The deadline timezone is not decided.' (original statement survives). After revision and rebind: R1, R4, R5 and T5 READY_FOR_TECHNICAL_REVIEW, R2 blocked only by U3, R3 blocked by U4",
+      "status": "NOT_EXECUTED"
+    },
+    {
+      "caseId": "BC-P6",
+      "class": "POSITIVE_DELEGATION_WITHIN_ENVELOPE",
+      "ownerTest": "lib/intent-spec-build-bridge.test.ts",
+      "fixture": "FX-B baseline",
+      "inputs": "R1 cites dataNeeds where U1 is DELEGATED with the boundary 'Any common date format is acceptable; do not convert time zones.'; task T1 has no excluded category",
+      "expected": "R1 and T1 READY_WITH_DELEGATION; the readout quotes the boundary verbatim followed by the sentence that delegation covers no privacy, retention, payment, authentication, deployment or scope decision and chooses no business value",
+      "status": "NOT_EXECUTED"
+    },
+    {
+      "caseId": "BC-N1",
+      "class": "NEGATIVE_DELEGATION_EXCLUDED",
+      "ownerTest": "lib/intent-spec-build-bridge.test.ts",
+      "fixture": "FX-B plus T5",
+      "inputs": "add task T5 'Store borrower first name' for R1 with categories [DATA_PRIVACY]",
+      "expected": "T5 BLOCKED_DELEGATION_EXCLUDED; T1 stays READY_WITH_DELEGATION; R1 itself is unchanged because categories attach to tasks",
+      "status": "NOT_EXECUTED"
+    },
+    {
+      "caseId": "BC-N2",
+      "class": "NEGATIVE_MISSING_REQUIREMENT_LINK",
+      "ownerTest": "lib/intent-spec-build-bridge.test.ts",
+      "fixture": "FX-A",
+      "inputs": "mutation 1 drop task T6 so R5 has no task; mutation 2 set T6.requirementIds to []",
+      "expected": "mutation 1: R5 BLOCKED_BY_MISSING_LINK with MISSING_TASK_LINK, other requirements unaffected; mutation 2: T6 BLOCKED_BY_INVALID_LINEAGE and R5 BLOCKED_BY_MISSING_LINK",
+      "status": "NOT_EXECUTED"
+    },
+    {
+      "caseId": "BC-N3",
+      "class": "NEGATIVE_MISSING_VALIDATION",
+      "ownerTest": "lib/intent-spec-build-bridge.test.ts",
+      "fixture": "FX-A",
+      "inputs": "drop validation V5",
+      "expected": "R5 BLOCKED_BY_MISSING_LINK with MISSING_VALIDATION_LINK; R1 stays READY_FOR_TECHNICAL_REVIEW (scoped)",
+      "status": "NOT_EXECUTED"
+    },
+    {
+      "caseId": "BC-N4",
+      "class": "NEGATIVE_DANGLING_LINK",
+      "ownerTest": "lib/intent-spec-build-bridge.test.ts",
+      "fixture": "FX-A",
+      "inputs": "T4.dependsOn = ['T9']; separately a task naming an unknown requirement, design or validation id",
+      "expected": "danglingTasks lists the offending task; that task BLOCKED_BY_INVALID_LINEAGE; no throw; every other task keeps its computed status",
+      "status": "NOT_EXECUTED"
+    },
+    {
+      "caseId": "BC-N5",
+      "class": "NEGATIVE_CYCLE",
+      "ownerTest": "lib/intent-spec-build-bridge.test.ts",
+      "fixture": "FX-A",
+      "inputs": "T2.dependsOn = ['T3'] while T3.dependsOn = ['T2']",
+      "expected": "cycleMembers exactly [T2,T3]; both BLOCKED_BY_INVALID_LINEAGE; T1 and T6 are not marked; self-dependency is rejected the same way",
+      "status": "NOT_EXECUTED"
+    },
+    {
+      "caseId": "BC-N6",
+      "class": "NEGATIVE_INVENTED_RULE",
+      "ownerTest": "lib/intent-spec-build-bridge.test.ts",
+      "fixture": "FX-B variant",
+      "inputs": "requirement statement 'Volunteers must log in with an account to record loans.' citing coreFeatures",
+      "expected": "STATEMENT_NOT_IN_SOURCE, requirement BLOCKED_BY_INVALID_LINEAGE; source field 'No user accounts or logins.' is untouched",
+      "status": "NOT_EXECUTED"
+    },
+    {
+      "caseId": "BC-N7",
+      "class": "NEGATIVE_RESOLUTION_NOT_QUOTED",
+      "ownerTest": "lib/intent-spec-build-bridge.test.ts",
+      "fixture": "FX-A after U2 resolved",
+      "inputs": "R4 lists only the C1 resolution while applicable U2 is RESOLVED; separately an effectiveRules entry equal to no applicable resolution",
+      "expected": "RESOLUTION_NOT_QUOTED:U2 and EFFECTIVE_RULE_NOT_IN_SOURCE respectively; both BLOCKED_BY_INVALID_LINEAGE",
+      "status": "NOT_EXECUTED"
+    },
+    {
+      "caseId": "BC-N8",
+      "class": "NEGATIVE_OVERLAPPING_RULES",
+      "ownerTest": "lib/intent-spec-build-bridge.test.ts",
+      "fixture": "FX-A after U2 resolved",
+      "inputs": "two applicable resolved items C1 and U2 on R4; one omitted; then try to add a key 'winner' to the ledger",
+      "expected": "omission is blocked as in BC-N7; the extra key is BRIDGE_SHAPE; the schema has no precedence field so no winner can be expressed",
+      "status": "NOT_EXECUTED"
+    },
+    {
+      "caseId": "BC-I1",
+      "class": "INVALIDATION_SOURCE_DRIFT",
+      "ownerTest": "lib/intent-spec-build-bridge.test.ts",
+      "fixture": "FX-A baseline then constraints edited",
+      "inputs": "bind; edit constraints text; U2 and C1 become stale-flagged by the existing consumer; new revision and file hash",
+      "expected": "R2 and R4 STALE_SOURCE (through ITEM:U2, BRIEF_FIELD:constraints and ITEM:C1), T3, T5, V2, V4 STALE_SOURCE, R1 and R5 REBIND_REQUIRED, R3 BLOCKED_BY_OPEN_ITEM unchanged",
+      "status": "NOT_EXECUTED"
+    },
+    {
+      "caseId": "BC-I2",
+      "class": "INVALIDATION_REVISION_ONLY",
+      "ownerTest": "lib/intent-spec-build-bridge.test.ts",
+      "fixture": "FX-A baseline",
+      "inputs": "same cited content, new revision number and file hash",
+      "expected": "no STALE_SOURCE anywhere; bindingState REBIND_REQUIRED; R1 and R5 REBIND_REQUIRED, never READY_FOR_TECHNICAL_REVIEW while the binding is not current; blocked requirements stay blocked",
+      "status": "NOT_EXECUTED"
+    },
+    {
+      "caseId": "BC-I3",
+      "class": "INVALIDATION_UNMAPPED_FIELD",
+      "ownerTest": "lib/intent-spec-build-bridge.test.ts",
+      "fixture": "FX-B",
+      "inputs": "change lookAndFeel after binding (a field no question or requirement cites)",
+      "expected": "no STALE_SOURCE; R1 REBIND_REQUIRED; digest staleness is scoped to cited references even though the existing consumer flags every answered decision",
+      "status": "NOT_EXECUTED"
+    },
+    {
+      "caseId": "BC-I4",
+      "class": "INVALIDATION_UNBOUND",
+      "ownerTest": "lib/intent-spec-build-bridge.test.ts",
+      "fixture": "FX-A",
+      "inputs": "evaluate the ledger before any binding exists",
+      "expected": "bindingState UNBOUND; statuses computed without staleness; readout says later source changes will not be detected until bound",
+      "status": "NOT_EXECUTED"
+    },
+    {
+      "caseId": "BC-I5",
+      "class": "INVALIDATION_BINDING_TAMPER",
+      "ownerTest": "lib/intent-spec-build-bridge.test.ts",
+      "fixture": "FX-A",
+      "inputs": "alter one refDigests value; remove one digest; add a malformed digest string",
+      "expected": "altered digest gives STALE_SOURCE for dependents; missing digest gives BINDING_INCOMPLETE and REBIND_REQUIRED; malformed digest is BRIDGE_SHAPE",
+      "status": "NOT_EXECUTED"
+    },
+    {
+      "caseId": "BC-I6",
+      "class": "INVALIDATION_ACK_NOT_READINESS",
+      "ownerTest": "lib/intent-spec-build-bridge.test.ts",
+      "fixture": "FX-A",
+      "inputs": "add an 'acknowledged: true' or 'viewed' key to the ledger",
+      "expected": "BRIDGE_SHAPE; the ledger has no acknowledgement field so viewing can neither clear a blocker nor imply readiness",
+      "status": "NOT_EXECUTED"
+    },
+    {
+      "caseId": "BC-A1",
+      "class": "AUTHORITY_INVENTED_BUILD_GRANT",
+      "ownerTest": "lib/intent-spec-build-bridge.test.ts",
+      "fixture": "FX-A",
+      "inputs": "add 'buildAuthority':'GRANTED' and separately 'buildReady':true, then recompute a binding that matches the current state",
+      "expected": "BRIDGE_SHAPE for both; recomputing digests cannot make the forged key valid; evaluation never emits any grant",
+      "status": "NOT_EXECUTED"
+    },
+    {
+      "caseId": "BC-A2",
+      "class": "AUTHORITY_SCOPE_LITERAL",
+      "ownerTest": "lib/intent-spec-build-bridge.test.ts",
+      "fixture": "FX-A",
+      "inputs": "scope changed to 'BUILD_AUTHORITY_GRANTED' with a rehashed matching binding",
+      "expected": "BRIDGE_SCOPE; no readiness fields are produced",
+      "status": "NOT_EXECUTED"
+    },
+    {
+      "caseId": "BC-A3",
+      "class": "AUTHORITY_TEXT_CLAIM_IS_DATA",
+      "ownerTest": "lib/intent-spec-build-bridge.test.ts",
+      "fixture": "FX-A",
+      "inputs": "requirement title 'BUILD APPROVED' and statement text containing the same words inside a real quote",
+      "expected": "text is accepted only as quoted data; readout trailer still reads Build readiness: NOT_ASSESSED and Build authority: NOT_GRANTED; evaluation constants unchanged",
+      "status": "NOT_EXECUTED"
+    },
+    {
+      "caseId": "BC-A4",
+      "class": "SHAPE_BOUNDS",
+      "ownerTest": "lib/intent-spec-build-bridge.test.ts",
+      "fixture": "FX-A",
+      "inputs": "101 requirements; duplicate task ids; id 'X1'; placeholder text 'TBD'; text over 2000 characters",
+      "expected": "CAP_EXCEEDED (nothing truncated), ID_DUPLICATE, ID_FORMAT, TEXT_INVALID; shape errors yield valid:false and no readiness table",
+      "status": "NOT_EXECUTED"
+    },
+    {
+      "caseId": "BC-K1",
+      "class": "KNOWN_ANSWER_DIGESTS",
+      "ownerTest": "lib/intent-spec-build-bridge.test.ts",
+      "fixture": "FX-A baseline",
+      "inputs": "digest of BRIEF_FIELD:coreFeatures, DECISION:access, ITEM:U4 and ITEM:C1 from the baseline state",
+      "expected": "equal to the worker-computed vectors in digestVectors (independent Python SHA-256 over the canonical form); Local recomputes them separately",
+      "status": "NOT_EXECUTED"
+    },
+    {
+      "caseId": "BC-C1",
+      "class": "COMPAT_FROZEN_V1_CONTROLS",
+      "ownerTest": "lib/intent-spec-legacy-golden.test.ts (unmodified)",
+      "fixture": "LG1, LG2, LG3",
+      "inputs": "run the existing intent-spec-legacy-golden.test.ts and intent-spec-confirmation.test.ts unmodified; compare git blobs of every file in mustStayByteIdentical",
+      "expected": "all blobs equal the pins; the three frozen v1 fileSha256 values are produced as before; no existing file imports the new module",
+      "status": "NOT_EXECUTED"
+    },
+    {
+      "caseId": "BC-C2",
+      "class": "COMPAT_V2_ITEMS",
+      "ownerTest": "existing suites (unmodified)",
+      "fixture": "T1E suites",
+      "inputs": "run the existing intent-spec-open-items.test.ts, intent-spec-review.test.ts and intent-spec-acceptance.test.ts unmodified",
+      "expected": "pass unchanged; candidate v2 bytes and strict acceptance behave as at the base",
+      "status": "NOT_EXECUTED"
+    },
+    {
+      "caseId": "BC-C3",
+      "class": "COMPAT_TYPE_LINT_SIZE",
+      "ownerTest": "tsc, eslint, governance size guard",
+      "fixture": "new files",
+      "inputs": "run type check and lint for the three new files and the governed size guard",
+      "expected": "no errors; helper under 700 lines; test and fixture files within the test and source thresholds; Vietnamese labels carry the Text Encoding Exception header",
+      "status": "NOT_EXECUTED"
+    },
+    {
+      "caseId": "BC-R1",
+      "class": "READOUT_DETERMINISTIC",
+      "ownerTest": "lib/intent-spec-build-bridge.test.ts",
+      "fixture": "FX-A, FX-B",
+      "inputs": "evaluate each ledger twice in en and in vi",
+      "expected": "identical bytes per language; every requirement named with its status, blockers and delegated ids; unscoped open items listed; user text only inside quoted blocks; no percentage, score or aggregate ready flag",
+      "status": "NOT_EXECUTED"
+    },
+    {
+      "caseId": "BC-R2",
+      "class": "READOUT_COUNT_INDEPENDENCE",
+      "ownerTest": "lib/intent-spec-build-bridge.test.ts",
+      "fixture": "FX-A",
+      "inputs": "add six unrelated OPEN items that no requirement cites, then one item that R1 cites",
+      "expected": "R1 stays READY_FOR_TECHNICAL_REVIEW after the six; the cited one makes R1 BLOCKED_BY_OPEN_ITEM; the unknown count is never a readiness input",
+      "status": "NOT_EXECUTED"
+    },
+    {
+      "caseId": "BC-L1",
+      "class": "LIMIT_STATE_HASH_PAIRING",
+      "ownerTest": "lib/intent-spec-build-bridge.test.ts",
+      "fixture": "FX-A",
+      "inputs": "pass a review state and a file hash that do not belong together",
+      "expected": "helper cannot detect it and says so in its contract comment and readout line 'source pairing is supplied by the caller'; production wiring must derive both from bytes accepted through prepareIntentSpecAcceptance",
+      "status": "NOT_EXECUTED"
+    },
+    {
+      "caseId": "BC-L2",
+      "class": "LIMIT_SEMANTIC_CONTRADICTION",
+      "ownerTest": "lib/intent-spec-build-bridge.test.ts",
+      "fixture": "FX-B without declared C1",
+      "inputs": "two requirements each quoting a source exactly while their meanings conflict (no conflict item declared)",
+      "expected": "both READY_FOR_TECHNICAL_REVIEW; evaluation carries semanticConsistency NOT_ASSESSED and scopeCompleteness NOT_ASSESSED; no consistency claim is made",
+      "status": "NOT_EXECUTED"
+    },
+    {
+      "caseId": "BC-L3",
+      "class": "LIMIT_OMITTED_CITATION",
+      "ownerTest": "lib/intent-spec-build-bridge.test.ts",
+      "fixture": "FX-A",
+      "inputs": "author drops DECISION:exceptions from R2 sources (the statement still quotes coreFeatures)",
+      "expected": "R2 becomes READY_FOR_TECHNICAL_REVIEW by the author's omission; U3 appears in unscopedOpenItems [U1,U3] so the omission is visible to the reviewer; the helper does not claim the citations are complete",
+      "status": "NOT_EXECUTED"
+    },
+    {
+      "caseId": "BC-V1",
+      "class": "VALUE_FALSIFIER",
+      "ownerTest": "Local reviewer exercise before or beside implementation",
+      "fixture": "FX-A seeded defects",
+      "inputs": "see valueFalsifier",
+      "expected": "added value is falsified if the manual arm finds D1-D8 with no false positive at comparable cost, or the helper misses any of D1-D8 or flags the clean control",
+      "status": "NOT_EXECUTED"
+    },
+    {
+      "caseId": "BC-V2",
+      "class": "RUNTIME_FIT_PROBE_CONDITIONAL",
+      "ownerTest": "separate later order; not part of this slice",
+      "fixture": "periodic report packet",
+      "inputs": "a later bounded exercise gives a real builder the exported packet and the ledger format and asks for the ledger",
+      "expected": "validity rate of the returned ledgers is measured; UNPROVEN until then; this slice makes no claim about builder compliance",
+      "status": "NOT_EXECUTED"
+    }
+  ],
+  "valueFalsifier": {
+    "claim": "A deterministic evaluator over the ledger adds review value that a plain Markdown receiver route with manual review does not.",
+    "seededDefects": {
+      "D1": "requirement without task",
+      "D2": "requirement without validation",
+      "D3": "dangling dependency",
+      "D4": "two-task cycle",
+      "D5": "statement not in source",
+      "D6": "stale after a constraints edit",
+      "D7": "applicable resolution not quoted",
+      "D8": "extra BUILD-grant key with a matching binding",
+      "D9": "omitted decision citation (known limitation; the helper must surface the item as unscoped, not hide it)"
+    },
+    "controls": [
+      "CC clean FX-A ledger with no defect",
+      "CB clean FX-B ledger"
+    ],
+    "arms": {
+      "manual": "Local reviewer inspects a Markdown rendering of the same ledgers without the helper, time-boxed",
+      "helper": "evaluator output on the same inputs"
+    },
+    "falsifiedIf": [
+      "manual arm finds all of D1-D8 with no false positive on the controls at comparable effort",
+      "helper misses any of D1-D8",
+      "helper flags a control",
+      "helper hides D9 instead of listing the item as unscoped"
+    ],
+    "ifFalsified": "choose the doc and preset route (receiver template plus manual review) and drop the helper",
+    "status": "NOT_EXECUTED"
+  },
+  "invariants": [
+    {
+      "id": "INV-NO-BUILD",
+      "statement": "No output asserts build readiness or an execution grant; the readout trailer is fixed and the ledger has no grant, acknowledgement or approval field."
+    },
+    {
+      "id": "INV-NO-INFERENCE",
+      "statement": "Requirements, tasks and validations come only from the receiving author; the helper parses no prose and invents nothing; user text is quoted data."
+    },
+    {
+      "id": "INV-FAIL-CLOSED",
+      "statement": "Exact key sets, enums, id formats and bounds; any shape error yields valid:false with no readiness table; bounds never truncate."
+    },
+    {
+      "id": "INV-SCOPED-BLOCK",
+      "statement": "An item blocks only requirements it applies to by citation, shared field or cited decision, and the tasks, designs and validations that depend on them; items attached to no requirement stay visible and block nothing."
+    },
+    {
+      "id": "INV-NO-COUNT-ORACLE",
+      "statement": "Readiness never derives from the number of unknowns, a score or a percentage."
+    },
+    {
+      "id": "INV-SOURCE-RETAINED",
+      "statement": "Original statements and user resolutions are carried as verbatim quotes; no field can express a winner between overlapping rules."
+    },
+    {
+      "id": "INV-OWNERS-UNTOUCHED",
+      "statement": "Candidate v1 and v2, acceptance, store, actor, routes, exporter, readiness builder and the existing review UI stay byte-identical."
+    },
+    {
+      "id": "INV-INPUT-BEFORE-EXPECTATION",
+      "statement": "Inputs precede expectations in every case; later-supplied unknowns are not demanded earlier."
+    }
+  ],
+  "independentProbeMapping": {
+    "probeExecutorRole": "LOCAL_REVIEWER_NOT_IMPLEMENTATION_WORKER",
+    "dispositionAtReturn": "PENDING_REVIEWER_EXECUTION",
+    "positiveControl": "BC-P1 with BC-P5: a requirement with no open item stays ready and a bounded user resolution changes its dependents while the original statement survives",
+    "negativeMutationClasses": [
+      {
+        "class": "altered source pin",
+        "method": "recompute raw SHA-256 and git blob of the 21 CVF pins and 11 mirror files against the assessment ledger and dispatch input; a changed byte must fail the comparison",
+        "bindsTo": "assessment cvfSourcePins and upstreamFileLedger"
+      },
+      {
+        "class": "dropped requirement or validation link",
+        "method": "remove a task or validation link in a scratch ledger",
+        "bindsTo": "BC-N2, BC-N3"
+      },
+      {
+        "class": "stale revision",
+        "method": "apply the constraints edit or a revision-only change to a scratch state",
+        "bindsTo": "BC-I1, BC-I2"
+      },
+      {
+        "class": "dangling or cyclic dependency",
+        "method": "point a dependency at an absent task; create a two-task cycle",
+        "bindsTo": "BC-N4, BC-N5"
+      },
+      {
+        "class": "invented BUILD grant",
+        "method": "add a grant key or change the scope literal and recompute a matching binding",
+        "bindsTo": "BC-A1, BC-A2"
+      }
+    ],
+    "oracleSeparation": "Local assertions are written independently of this plan and run in a separate invocation; plan expectations are inputs to review only."
+  },
+  "claimBoundary": "A plan only. NOT_EXECUTED for every case. No implementation, runtime, provider, store, UI, UX, source fit, builder compliance, build-ready or live-governance claim. The envelope is proposed, not authorized. Fixtures are synthetic contract examples, not reviewed build-ready job artifacts."
+}
