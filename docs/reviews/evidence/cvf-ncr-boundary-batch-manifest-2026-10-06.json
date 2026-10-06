@@ -1,0 +1,43 @@
+{
+  "claimBoundary": "Manifest records file hashes, rerun command, repo commit, and optional HMAC. It does not prove third-party execution unless an external anchor is provided.",
+  "evidence": [
+    {
+      "path": ".cvf/runtime/ncr-boundary-batch-20261006/attempt2/receipt.json",
+      "sha256": "d9a46e6cec9fb4810845c6e5239ac6cd125b824f29288da9c9036adc3653f383",
+      "sizeBytes": 2112
+    },
+    {
+      "path": ".cvf/runtime/ncr-boundary-batch-20261006/attempt2/diagnostic.json",
+      "sha256": "62a574815183d6cc0c2166bcb8a995c52a44de652312a6bbd2a01808ee8edc3e",
+      "sizeBytes": 565
+    }
+  ],
+  "externalAnchor": {
+    "anchorId": "",
+    "anchorUrl": "",
+    "status": "NOT_PROVIDED"
+  },
+  "generatedAt": "2026-10-06T15:46:58.041237+00:00",
+  "repository": {
+    "branch": "main",
+    "commit": "6ade5ef2b1f96047c884e2ef63c66c2bf710fa2e",
+    "dirtyStatus": "M EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.dlp.test.ts\n M EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.request-validation.test.ts\n M EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.sot3-activation.alibaba.live.test.ts\n M EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts\n M EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execute-request-validation.ts",
+    "remoteOrigin": "https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF-Provenance.git"
+  },
+  "rerun": {
+    "acceptedSecretEnv": [
+      "DASHSCOPE_API_KEY",
+      "ALIBABA_API_KEY",
+      "CVF_ALIBABA_API_KEY",
+      "CVF_BENCHMARK_ALIBABA_KEY"
+    ],
+    "command": "python scripts/run_cvf_sot3_a4_failure_recovery_proof.py --live --live-receipt \".cvf\\runtime\\ncr-boundary-batch-20261006\\attempt2\\receipt.json\" --diagnostic \".cvf\\runtime\\ncr-boundary-batch-20261006\\attempt2\\diagnostic.json\" --manifest \".cvf\\runtime\\ncr-boundary-batch-20261006\\attempt2\\manifest.json\"",
+    "requiresLiveProviderKey": true
+  },
+  "schema": "cvf.liveEvidenceManifest.v1",
+  "signature": {
+    "algorithm": "hmac-sha256",
+    "digest": "",
+    "status": "UNSIGNED"
+  }
+}

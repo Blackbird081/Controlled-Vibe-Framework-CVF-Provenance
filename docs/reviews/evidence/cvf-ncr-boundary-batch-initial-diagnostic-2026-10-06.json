@@ -1,0 +1,27 @@
+{
+  "batchId": "SOT3-ACT-A4",
+  "diagnostic": {
+    "class": "post_call_assertion_or_contract_failure",
+    "httpStatus": 200,
+    "latencyMs": 2796,
+    "model": "qwen-flash",
+    "provider": "alibaba",
+    "retryable": false,
+    "safeMessage": "The live proof assertions or governance contract checks failed after the provider call attempt.",
+    "stage": "provider",
+    "userAction": "inspect_receipt"
+  },
+  "executionBaseHead": "6ade5ef2b1f96047c884e2ef63c66c2bf710fa2e",
+  "finishedAtUtc": "2026-10-06T15:41:19.174526+00:00",
+  "keyAliasUsed": "ALIBABA_API_KEY",
+  "localNegativeGatePassed": true,
+  "recoveryProviderCallCount": 1,
+  "schemaVersion": "cvf.sot3ActA4LiveDiagnostic.v1",
+  "secretSafety": {
+    "fullPromptPersisted": false,
+    "rawKeyPersisted": false,
+    "rawOutputPersisted": false,
+    "rawProviderBodyPersisted": false
+  },
+  "startedAtUtc": "2026-10-06T15:39:50.667989+00:00"
+}

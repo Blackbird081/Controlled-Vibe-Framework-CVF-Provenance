@@ -144,6 +144,16 @@ describe('/api/execute', () => {
         { model: {} }, { provider: [] }, { imageBase64: true }, { imageUrl: {} },
         { cvfRiskLevel: 1 }, { skillPreflightPassed: 'true' },
         { skillIds: 'skill-a' }, { skillIds: [42] }, { fileScope: [null] },
+        { aifMemoryReinjection: [] }, { aifMemoryReinjection: { enabled: 'true' } },
+        { aifMemoryReinjection: { policy: [] } }, { aifMemoryReinjection: { memory: {} } },
+        { aifMemoryReinjection: { memory: [null] } }, { aifMemoryReinjection: { memory: [{ summary: 42 }] } },
+        { aifMemoryReinjection: { policy: { actorAuthorized: 'true' } } },
+        { durableMemory: [] }, { durableMemory: { enabled: true, scope: 42 } },
+        { durableMemory: { maxResults: 'three' } }, { durableMemory: { policy: false } },
+        { durableMemoryWrite: { enabled: 'true' } }, { durableMemoryWrite: { maxSummaryLength: [] } },
+        { aiCommit: [] }, { aiCommit: { agentId: 42 } }, { aiCommit: { timestamp: 'now' } },
+        { verticalIntegrationChain: { threadId: [] } }, { verticalIntegrationChain: { turnIndex: 'one' } },
+
     ])('rejects malformed execute shape before downstream processing %#', async patch => {
         process.env.ALIBABA_API_KEY = 'ali-key';
         process.env.CVF_SERVICE_TOKEN = 'svc';

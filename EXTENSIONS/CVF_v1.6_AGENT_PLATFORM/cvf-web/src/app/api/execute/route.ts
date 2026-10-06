@@ -1,3 +1,4 @@
+import { hasBlockedGovernedContext } from './governed-context-egress';
 import { NextRequest, NextResponse } from 'next/server';
 import { readBoundedRequestBody } from '@/lib/bounded-request-body';
 import { validateExecuteRequestShape } from '@/lib/execute-request-validation';
@@ -281,7 +282,7 @@ export async function POST(request: NextRequest) {
         // Build the prompt from template inputs
         const userPrompt = buildExecutionPrompt(body as ExecutionRequest);
         const dlpResult = await applyDLPFilter(userPrompt);
-        const filteredPrompt = dlpResult.redacted;
+        let filteredPrompt = dlpResult.redacted;
         const readoutRequest = await buildDlpRedactedReadoutRequest(body, dlpResult.wasRedacted);
 
         if (dlpResult.wasRedacted) {
@@ -328,6 +329,7 @@ export async function POST(request: NextRequest) {
                 { status: 400 }
             );
         }
+        filteredPrompt = saf1Result.sanitized;
         // Legacy safety filters (preserved for backward compatibility)
         const safety = applySafetyFilters(saf1Result.sanitized);
         if (safety.blocked) {
@@ -758,6 +760,13 @@ export async function POST(request: NextRequest) {
             return buildAifMemoryReinjectionDeniedResponse({ decision: aifMemoryReinjection, envelope: govEnvelope, enforcement, guardResult, provider: routedProvider, routingResult, knowledgeSource, knowledgeInjected, knowledgeCollectionId: requestedKnowledgeCollectionId, knowledgeChunkCount: retrievalResult.allowedChunkCount });
         }
 
+        if (await hasBlockedGovernedContext({
+            contexts: [knowledgeInjected ? finalKnowledgeContext : undefined, durableMemoryRoute.promptBlock, aifMemoryReinjection.promptBlock],
+            actorId: executionActorId, actorRole: session?.role ?? 'service', targetResource: executionTargetResource,
+        })) {
+            return NextResponse.json({ success: false, error: 'Governed context requires correction before provider execution.', provider: routedProvider, model: 'blocked' }, { status: 400 });
+        }
+
         const enrichedSystemPrompt = aifMemoryReinjection.promptBlock ? buildAifMemoryReinjectionSystemPrompt(durableMemorySystemPrompt, aifMemoryReinjection.promptBlock) : knowledgeInjected || durableMemoryRoute.injected ? durableMemorySystemPrompt : undefined;
 
         if (!routedApiKey) {
@@ -862,7 +871,12 @@ export async function POST(request: NextRequest) {
                     ? `${filteredPrompt}\n\n[Improvement note: ${retryDecision.adjustedHint}]`
                     : filteredPrompt;
                 // Validator hints can quote the original intent; filter after composition.
-                const retryPrompt = (await applyDLPFilter(retryPromptDraft)).redacted;
+                const retryDlpPrompt = (await applyDLPFilter(retryPromptDraft)).redacted;
+                const retrySafety = runSafetyWorkflowChain(retryDlpPrompt);
+                if (retrySafety.blocked || applySafetyFilters(retrySafety.sanitized).blocked) {
+                    return NextResponse.json({ success: false, error: 'Safety screening blocked the validation retry.', provider: routedProvider, model: 'blocked' }, { status: 400 });
+                }
+                const retryPrompt = retrySafety.sanitized;
 
                 assertNonVisionExecutionPathIsDirect(); // CSCC-R1-T2: same selected path as initial call
                 const retryOutcome = await admitAndInvokeProvider({

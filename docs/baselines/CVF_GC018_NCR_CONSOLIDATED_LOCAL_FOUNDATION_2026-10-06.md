@@ -557,9 +557,108 @@ Logs: red-reproduction.log, green.log, typecheck.log, lint.log and live.log unde
 recreating provider calls. Existing public disposition DEFERRED_PRIVATE_ONLY and
 all parked checkpoints remain. No formal independent reviewer or release closure.
 
+## Consolidated P04/P06 Provider Boundary Batch - 2026-10-06
+
+Operator asked Local to finish compatible admitted work together rather than
+one tiny tranche per test. Local maintainer/reviewer owns this single batch;
+no delegation. Base:6ade5ef2b1f96047c884e2ef63c66c2bf710fa2e, initially clean.
+Existing P04/W02-A and P06/W02-C owners; synthetic Profile A only. Browser,
+actual-data custody/cutover, effects, CI settings and P11 are separate checkpoints.
+
+Source verification and selected findings:
+- execute route checks SAF1 sanitized text but originally forwarded filteredPrompt
+  before STRIP; retry hint could likewise regain a stripped original intent.
+- Governed knowledge/durable/AIF context joins after initial screening. AIF secret
+  flags are not a content screen. Selected synthetic memory summaries containing
+  email or SAF1 STRIP/BLOCK patterns reached provider options before this repair.
+- execute-request-validation checked scalar text/input fields but left nested
+  aiCommit/AIF/durable-memory/vertical-chain object/field shapes unchecked. Invalid
+  types could reach downstream processing or trigger TypeError.
+
+Local now dispatches the SAF1 sanitized user text in initial and vision branches;
+retry composition passes DLP and SAF1 plus existing legacy safety screening.
+Governed context components are checked separately from trusted base instructions:
+unsafe context is denied before provider invocation, with a secret-safe audit event,
+rather than silently rewriting approved hash/receipt-bound content. Safe context
+passes unchanged. This does not redesign memory authorization, approval or source
+admission owners; all their existing controls remain required.
+Nested request objects now validate declared field types, policy objects, finite
+numbers and memory-item records before downstream auth/enforcement/provider work.
+Nullable optional compatibility and legacy scalar input normalization are retained;
+semantic enums, role authority and value clamping remain downstream-owned.
+
+Expected Result / Prediction: named SAF1 dispatch/context gaps and nested malformed
+payloads fail focused negative tests; corrected route uses accepted filtered text.
+Evidence Comparison: initial boundary red6 failed/26 passed; nested red18 failed/
+23 passed. Consolidated green98/98,20.54s across DLP,request-validation,general-route
+and AIF tests. TypeScript and scoped ESLint exit0. An initial edit used platform
+encoding while reading an existing Vietnamese fixture and failed before editing
+that file; explicit UTF-8 corrected the local command. No source bytes discarded.
+
+One combined live proof used existing A4 permit/grant runner; final live assertion
+checks masked email, absent STRIP phrase and presence of SAF1 replacement at the
+actual user-message fetch boundary, plus approved-context inclusion/correlation.
+Attempt1: local negative gate green,one real Alibaba qwen-flash call HTTP200,
+2796ms; post-call assertion failed. Diagnostic persisted before any repeat, no
+raw provider body/output/key or full prompt stored. Cause is unclassified: do not
+attribute it to egress, model or an output contract without evidence.
+Named diagnostic gap: failure-class-only evidence did not identify assertion state.
+Local added optional closed boolean/status capture in the permitted live harness,
+then one separate diagnostic attempt to distinguish response failure from egress.
+Attempt2: A4 PASS,19 negative/18 zero-provider-call cases,one mocked rollback call
+and exactly one real Alibaba call HTTP200. Boundary flags routeSuccess=true,
+routeStatus=200,userPromptProtected=true,outputValidationBlocked=false. Approved
+context inclusion remains true. Network response latency is 3926ms, not whole-route
+latency/SLA. Total real Alibaba calls this batch=2; no automatic production retry.
+No model ranking/default selection or price/token-budget claim; cost UNKNOWN.
+
+Contradiction Or Gap Disposition: retain first blocked diagnostic beside final
+PASS; successful diagnostic attempt does not explain away the initial failure.
+No further provider repeat. Live auth/enforcement/quota/output-validator helpers
+remain mocked; temporary stores and knowledge are synthetic. Vision/image network
+proof is not claimed. Current SAF1/DLP are deterministic pattern screens, not
+complete adversarial detection. No full P04/release, browser or actual-data claim.
+Claim Update: three compatible repairs and their bounded verification completed
+in one12-path material batch. Full roadmap checkpoints remain separate.
+
+Portable byte-identical runtime proof copies:
+- docs/reviews/evidence/cvf-ncr-boundary-batch-initial-diagnostic-2026-10-06.json
+- docs/reviews/evidence/cvf-ncr-boundary-batch-receipt-2026-10-06.json
+- docs/reviews/evidence/cvf-ncr-boundary-batch-diagnostic-2026-10-06.json
+- docs/reviews/evidence/cvf-ncr-boundary-batch-manifest-2026-10-06.json
+- docs/reviews/evidence/cvf-ncr-boundary-batch-boundary-2026-10-06.json
+
+Final original manifest refers to runtime attempt2 paths and records base plus
+pending source changes. Portable copies retain exact bytes/hashes. It is unsigned
+with no external anchor. Working-byte pins identify the pre-rotation live-tested
+source delta; the later mechanical extraction is verified below:
+
+| Source | SHA-256 working bytes |
+|---|---|
+| EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts | c5c509c2edf9b96960f6898a2f3f7eba0ee259bf5b49922f111248f33bf09172 |
+| EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.dlp.test.ts | 54e10e893efb58fe6d14de85d783692caf9fbdb7c2d5c366f9b25af7b3e16dcf |
+| EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.request-validation.test.ts | 67e2e5e97dbe91eb545fc0da0385ea2981a561a817d8336b87b29dbfe15b258a |
+| EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.sot3-activation.alibaba.live.test.ts | 7d1f2dec54e29e63836c4099bbf38ffd759633970fcf9dae0de0ed3dbd9f5fe7 |
+| EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execute-request-validation.ts | 4b0d23bbc4b95f8ad3feb9952c6baedbab426f6063ff0f103fc589290578c046 |
+
+Maintainability gate first failed on route.ts at996 lines, within25 of the1000
+hard threshold. Local read the size checker and rotated the context screen into
+EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/governed-context-egress.ts
+in the same domain, preserving predicates/audit/denial behavior. Post-rotation
+regression98/98,23.74s; TypeScript/scoped lint exit0. No extra provider call for
+mechanical extraction. Historical pre-rotation source pins above are retained;
+current Git material identifies the extracted source version.
+Exact material scope:six source paths,five JSON copies,this existing baseline.
+No rename/deletion. Historical49-path review manifest remains a snapshot. Review
+consumes scoped evidence without another build/provider campaign. Public Export
+Disposition stays DEFERRED_PRIVATE_ONLY; no independent reviewer/release closure.
+Remaining frontier: browser capability; real-data source/authority and operational
+contract; release/remote CI/public/deploy evidence when those actions are admitted.
+Further source repairs require named gaps, not another proof-only tiny tranche.
+
 ## Claim Boundary
 
-Local foundations only. No release, live AI governance, full repository secret
+Local foundations only. No release or whole-CVF live governance readiness, full repository secret
 clearance, artifact acceptance or rollout completion. Prior checkpoints retained.
 
 ## Public Export Disposition
