@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1J_DOCUMENTARY_WORKSHEET_EXPORT_2026-10-06.md",
     "workOrderSha256": "572fd199b2fd641b4a8eeb6e80006a555951f4ce7a8122801efe775df93e111e"
   },
-  "currentAuthoritySyncReason": "Accepted NIS-T1J authority retained; separate operator-authorized NCR maintenance 01a1024768ad0c53b6c1dad5016f964ccd365768 is LOCAL_IMPLEMENTED_VERIFIED_BOUNDED, not a new NIS work order or formal NCR release closure.",
+  "currentAuthoritySyncReason": "Accepted NIS-T1J authority retained; separate operator-authorized NCR proof 594e2c1b2cbc7171fe77ab849782e5de085b5b8c records bounded approved-context POST/Alibaba evidence only, not a formal NCR release or new NIS order.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",

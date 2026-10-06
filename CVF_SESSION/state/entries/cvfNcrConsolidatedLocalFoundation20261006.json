@@ -8,7 +8,16 @@
     "reviewManifest": "docs/reviews/evidence/cvf-ncr-local-review-manifest-2026-10-06.json",
     "reviewManifestDisposition": "Historical pre-commit 49-path snapshot; committed disposition recorded here.",
     "verification": "Recorded scoped tests, Docker/storage/Web receipts and real Alibaba observations consumed; material helper and repository pre-commit hooks passed. No independent reviewer, browser UX, actual-data cutover or release-quality governance claim.",
-    "nextAction": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=LOCAL_DISPOSITION_ONLY; BATCH_ID=CVF-NCR-CONSOLIDATED-20261006. LOCAL_IMPLEMENTED_VERIFIED_BOUNDED maintenance committed at 01a1024768ad0c53b6c1dad5016f964ccd365768. Evidence: docs/baselines/CVF_GC018_NCR_CONSOLIDATED_LOCAL_FOUNDATION_2026-10-06.md; exact 49-path review manifest retained as pre-commit snapshot. Intake brief guidance, P06/P08/P09 corrections, Alibaba completion handling, synthetic single-host Docker/storage/Web composition and UI label fixes verified within recorded scopes. Continue admitted local backlog using existing owners; no mandatory new spec pilot or duplicate proof campaign. Browser/real noncoder UX blocked by unavailable browser capability; actual-data source/cutover consent absent. Q001/Q004 OPEN/Profile A; P11/deploy/public, CCMA, S05/C1/send/B2 parked; NIS-T1J closed without automatic successor. LHW24 closed; no push or release claim.",
-    "publicExportDisposition": "DEFERRED_PRIVATE_ONLY"
+    "nextAction": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=LOCAL_DISPOSITION_ONLY; BATCH_ID=CVF-NCR-APPROVED-CONTEXT-20261006. Bounded actual POST/Alibaba approved-context proof PASS at 594e2c1b2cbc7171fe77ab849782e5de085b5b8c. Existing A4 runner:19 negative cases,18 zero-call cases,exactly one real Alibaba call HTTP200; mocked auth/enforcement/quota/output validator remain declared. Evidence owner: docs/baselines/CVF_GC018_NCR_CONSOLIDATED_LOCAL_FOUNDATION_2026-10-06.md. Diagnostic pointers and rerun flags corrected;80 hermetic runner tests PASS; do not duplicate this proof without a named contradiction. Continue admitted local backlog through existing owners; P04 full DLP initial/retry/vision and full release remain unproved. Browser/real noncoder UX tool unavailable; actual-data source/cutover consent absent. Q001/Q004 OPEN/Profile A; P11/deploy/public,CCMA,S05/C1/send/B2 parked; NIS-T1J closed without automatic successor; LHW24 closed; no push or release claim.",
+    "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
+    "approvedContextContinuation": {
+      "materialCommit": "594e2c1b2cbc7171fe77ab849782e5de085b5b8c",
+      "status": "BOUNDED_ROUTE_PROVIDER_PROOF_PASS",
+      "receipt": "docs/reviews/evidence/cvf-ncr-approved-context-live-receipt-2026-10-06.json",
+      "realAlibabaCalls": 1,
+      "negativeCases": 19,
+      "zeroProviderCallCases": 18,
+      "claimBoundary": "Route-adjacent approved-context proof with declared helper mocks; no full DLP, browser, real-data, release or deployment claim."
+    }
   }
 }
