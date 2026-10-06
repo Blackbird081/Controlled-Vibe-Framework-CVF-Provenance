@@ -858,9 +858,11 @@ export async function POST(request: NextRequest) {
                 retryState.previousIssues = [...outputValidation.issues];
                 retryState.attempt++;
 
-                const retryPrompt = retryDecision.adjustedHint
+                const retryPromptDraft = retryDecision.adjustedHint
                     ? `${filteredPrompt}\n\n[Improvement note: ${retryDecision.adjustedHint}]`
                     : filteredPrompt;
+                // Validator hints can quote the original intent; filter after composition.
+                const retryPrompt = (await applyDLPFilter(retryPromptDraft)).redacted;
 
                 assertNonVisionExecutionPathIsDirect(); // CSCC-R1-T2: same selected path as initial call
                 const retryOutcome = await admitAndInvokeProvider({

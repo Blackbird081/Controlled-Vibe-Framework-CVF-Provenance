@@ -1,0 +1,43 @@
+{
+  "claimBoundary": "Manifest records file hashes, rerun command, repo commit, and optional HMAC. It does not prove third-party execution unless an external anchor is provided.",
+  "evidence": [
+    {
+      "path": ".cvf/runtime/ncr-dlp-retry-20261006/receipt.json",
+      "sha256": "1d5e8c9cce7679c0511e3b83d44946753e780fcc5d4d7fe6be8468d1bd5b9dbf",
+      "sizeBytes": 2112
+    },
+    {
+      "path": ".cvf/runtime/ncr-dlp-retry-20261006/diagnostic.json",
+      "sha256": "0e627e326db2195dcd013a0e648e9897bbcf50eead48693df5394f0849bfc5e8",
+      "sizeBytes": 565
+    }
+  ],
+  "externalAnchor": {
+    "anchorId": "",
+    "anchorUrl": "",
+    "status": "NOT_PROVIDED"
+  },
+  "generatedAt": "2026-10-06T15:27:47.640942+00:00",
+  "repository": {
+    "branch": "main",
+    "commit": "0459ba08563395a5bba4ef077ed4185e20d17d4a",
+    "dirtyStatus": "M EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.dlp.test.ts\n M EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.sot3-activation.alibaba.live.test.ts\n M EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts",
+    "remoteOrigin": "https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF-Provenance.git"
+  },
+  "rerun": {
+    "acceptedSecretEnv": [
+      "DASHSCOPE_API_KEY",
+      "ALIBABA_API_KEY",
+      "CVF_ALIBABA_API_KEY",
+      "CVF_BENCHMARK_ALIBABA_KEY"
+    ],
+    "command": "python scripts/run_cvf_sot3_a4_failure_recovery_proof.py --live --live-receipt \".cvf\\runtime\\ncr-dlp-retry-20261006\\receipt.json\" --diagnostic \".cvf\\runtime\\ncr-dlp-retry-20261006\\diagnostic.json\" --manifest \".cvf\\runtime\\ncr-dlp-retry-20261006\\manifest.json\"",
+    "requiresLiveProviderKey": true
+  },
+  "schema": "cvf.liveEvidenceManifest.v1",
+  "signature": {
+    "algorithm": "hmac-sha256",
+    "digest": "",
+    "status": "UNSIGNED"
+  }
+}

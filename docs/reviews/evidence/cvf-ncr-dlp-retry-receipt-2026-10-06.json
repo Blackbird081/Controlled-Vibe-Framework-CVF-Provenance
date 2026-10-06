@@ -1,0 +1,60 @@
+{
+  "batchId": "SOT3-ACT-A4",
+  "claim": "SOT3_FAILURE_RECOVERY_PROVEN_BOUNDED",
+  "contextObservation": {
+    "approvedContextHash": "bc835f5934430193afca03fa7c66d6845554c23a37e80c23d258df9c6a6c5d2a",
+    "approvedContextIncluded": true,
+    "providerRequestObserved": true,
+    "providerSystemPromptHash": "be324a60b8f694a87a762459d81893b7950d91e5a741a6319a6f28b81f33b6c1",
+    "rawPromptPersisted": false
+  },
+  "correlation": {
+    "envelopeId": "env-muwu1o0e-gq0m49",
+    "flowPackageIds": [
+      "DPKG-000001"
+    ],
+    "governanceReceiptId": "rcpt-env-muwu1o0e-gq0m49",
+    "kernelDecisionIds": [
+      "KD-000001"
+    ],
+    "packetIds": [
+      "RP-000001"
+    ],
+    "sot3IntegrityHash": "sha256:a027d390937984b0e56e3715cb96576e8cdc8f9411428dab17e9e1aae4f743b4",
+    "sot3RecordId": "SOT3EV-94e89d2585c515b86f4c640cd05785b3",
+    "sot3RequestId": "e6f212bc-6460-494e-a352-67ca54385646",
+    "traceCount": 1,
+    "truthReceiptIds": [
+      "RCPT-000001"
+    ],
+    "truthReferenceIds": [
+      "TREF-000001"
+    ]
+  },
+  "executionBaseHead": "0459ba08563395a5bba4ef077ed4185e20d17d4a",
+  "finishedAtUtc": "2026-10-06T15:27:47.572825+00:00",
+  "localNegativeGatePassed": true,
+  "negativeCaseCount": 19,
+  "note": "Reuses the existing A3 route-adjacent live test implementation unaltered, per the A4 work order's Allowed Scope. This receipt is a fresh A4-scoped artifact; it does not modify or supersede the historical A3 receipt or claim.",
+  "overall": "PASS",
+  "providerProof": {
+    "httpStatus": 200,
+    "keyAliasUsed": "ALIBABA_API_KEY",
+    "latencyMs": 3172,
+    "model": "qwen-flash",
+    "outputLength": 2479,
+    "provider": "alibaba",
+    "success": true
+  },
+  "recoveryProviderCallCount": 1,
+  "rollbackProviderCallCount": 1,
+  "schemaVersion": "cvf.sot3ActA4LiveReceipt.v1",
+  "secretSafety": {
+    "fullPromptPersisted": false,
+    "rawKeyPersisted": false,
+    "rawOutputPersisted": false,
+    "rawProviderBodyPersisted": false
+  },
+  "startedAtUtc": "2026-10-06T15:26:28.585105+00:00",
+  "zeroProviderCallCaseCount": 18
+}

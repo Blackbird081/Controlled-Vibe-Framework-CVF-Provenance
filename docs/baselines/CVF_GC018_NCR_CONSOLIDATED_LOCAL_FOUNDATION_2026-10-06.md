@@ -491,6 +491,72 @@ and complete findings without repeated next; current operator next.
 Rollback boundary: only this pointer correction and its routing-index projection;
 preserve material proofs, standard content, provider controls and parked lanes.
 
+## P04 Retry Prompt DLP Repair And Boundary Proof - 2026-10-06
+
+Local maintainer/reviewer selected a concrete P04 gap under operator next and
+standing complete-batch/Alibaba-only proof authority. Execution base:
+0459ba08563395a5bba4ef077ed4185e20d17d4a. Initial worktree clean; no delegation.
+Source verification: actual execute route composes a retry hint after initial
+DLP. Real output validator buildRetryHint quotes the original input.intent when
+INTENT_MISMATCH accompanies a retry-triggering issue. Thus a redacted initial
+prompt can regain raw sensitive intent on retry. No new runtime owner is needed.
+
+Expected Result / Prediction: repetitive off-topic output longer than 100 chars
+triggers real validator repetition plus intent mismatch and exposes the leak.
+Evidence Comparison: targeted red reproduction 1 failed/1 passed; failure shows
+the synthetic email reintroduced in the Improvement note. A prior short-output
+control passed because alignment is evaluated only beyond 100 chars; it did not
+exercise this gap. Local now filters the entire retry prompt after composing the
+hint, using existing applyDLPFilter before attempt admission/invocation.
+Green route/DLP tests 40/40, 14.48s; TypeScript and scoped ESLint exit 0.
+Three added regressions use real route/DLP/policy/output validation where applicable:
+retry intent remains masked, vision receives masked text through a helper spy,
+and enforcement BLOCK produces zero text or vision invocations. No image bytes
+are inspected or called against a vision provider in these local tests.
+
+One new A4 live run is justified by new DLP boundary assertions, not duplicate
+approved-context verification. Existing SOT3 live test uses a synthetic email in
+intent and asserts inside the pass-through fetch observation that user-message
+text contains REDACTED:Email and excludes that email. The runner/test PASS is
+supporting evidence for this assertion; the existing receipt does not introduce
+a separate DLP boolean field. Only originalFetch executes real network traffic.
+A4 PASS:19 negative cases,18 zero-provider-call cases,one mocked rollback call,
+exactly one real Alibaba qwen-flash recovery call HTTP200; observed network response
+latency 3172 ms, not whole-route latency or SLA. Approved context inclusion remains
+true. No failure, provider retry, model ranking or default-model decision.
+Auth/enforcement/quota/output-validator helpers in the live harness remain mocked;
+synthetic collection plus temporary event/evidence stores remain isolated.
+
+Contradiction Or Gap Disposition: named retry leak repaired; no provider rerun.
+Claim Update: bounded user-prompt DLP initial live observation plus retry/vision
+branch structural controls. Full P04/SAF1/system-context coverage, retry/vision
+real-network proof, browser, actual-data cutover and release remain unclaimed.
+No schema/checker/pilot or broad absorption audit is introduced.
+
+Portable byte-identical original runner outputs:
+- docs/reviews/evidence/cvf-ncr-dlp-retry-receipt-2026-10-06.json
+- docs/reviews/evidence/cvf-ncr-dlp-retry-diagnostic-2026-10-06.json
+- docs/reviews/evidence/cvf-ncr-dlp-retry-manifest-2026-10-06.json
+
+Original manifest references runtime paths under .cvf/runtime/ncr-dlp-retry-20261006
+and records execution base plus the three pending source paths. Portable copies
+have identical bytes and hashes; unsigned/no external anchor. Its source HEAD is
+not a claim that pending source changes were already committed. Exact pre-commit
+working-byte source pins below identify the live-tested version:
+
+| Source | SHA-256 working bytes |
+|---|---|
+| EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts | 95c0924c7760ad86da8895c382288ebcba3aeb65277eb781803452e16826184e |
+| EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.dlp.test.ts | b88c05d313cf7d9d930c0a3cec8108cebe299bc1081dde2166b93cf41576c545 |
+| EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.sot3-activation.alibaba.live.test.ts | afdb7c3af1841dcb56f41ed64491222176bbd18dbf2c69518c4324ce917b1610 |
+
+Seven-path delta: these three source files, three copied JSON outputs and this
+existing baseline. Prior material/evidence remain unchanged; no rename/deletion.
+Logs: red-reproduction.log, green.log, typecheck.log, lint.log and live.log under
+.cvf/runtime/ncr-dlp-retry-20261006. Review consumes valid evidence rather than
+recreating provider calls. Existing public disposition DEFERRED_PRIVATE_ONLY and
+all parked checkpoints remain. No formal independent reviewer or release closure.
+
 ## Claim Boundary
 
 Local foundations only. No release, live AI governance, full repository secret

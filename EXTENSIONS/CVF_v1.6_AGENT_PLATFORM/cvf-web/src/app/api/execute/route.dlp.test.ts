@@ -7,6 +7,7 @@ import { readAuditEvents } from '@/lib/control-plane-events';
 import { appendDLPPolicyEvent } from '@/lib/policy-events';
 
 const executeAIMock = vi.hoisted(() => vi.fn());
+const executeVisionMock = vi.hoisted(() => vi.fn());
 const evaluateEnforcementMock = vi.hoisted(() => vi.fn());
 const verifySessionCookieMock = vi.hoisted(() => vi.fn());
 const checkTeamQuotaMock = vi.hoisted(() => vi.fn());
@@ -43,6 +44,11 @@ vi.mock('@/lib/quota-guard', () => ({
   hasSoftCapAuditEvent: vi.fn().mockResolvedValue(false),
 }));
 
+vi.mock('./vision-route-helper', async () => {
+  const actual = await vi.importActual<typeof import('./vision-route-helper')>('./vision-route-helper');
+  return { ...actual, executeVisionRouteRequest: executeVisionMock };
+});
+
 import { POST } from './route';
 
 describe('/api/execute DLP integration', () => {
@@ -54,8 +60,10 @@ describe('/api/execute DLP integration', () => {
     tempDir = await mkdtemp(path.join(os.tmpdir(), 'cvf-execute-dlp-'));
     process.env.CVF_CONTROL_PLANE_EVENTS_PATH = path.join(tempDir, 'events.json');
     process.env.OPENAI_API_KEY = 'openai-test-key';
+    process.env.ALIBABA_API_KEY = 'alibaba-test-key';
 
     executeAIMock.mockReset();
+    executeVisionMock.mockReset();
     evaluateEnforcementMock.mockReset();
     verifySessionCookieMock.mockReset();
     checkTeamQuotaMock.mockReset();
@@ -143,4 +151,58 @@ describe('/api/execute DLP integration', () => {
     const auditEvents = await readAuditEvents();
     expect(auditEvents.some(event => event.eventType === 'DLP_REDACTION_APPLIED')).toBe(true);
   });
+  it('keeps original sensitive intent redacted when validation adds a retry hint', async () => {
+    executeAIMock.mockImplementation(async (_provider, _key, prompt: string) => ({
+      success: true,
+      output: executeAIMock.mock.calls.length === 1 ? 'A distant mountain receives rainfall during a cold winter evening. '.repeat(5) : `Detailed strategy analysis and launch risk assessment: ${prompt}`,
+      provider: 'openai', model: 'gpt-4o',
+    }));
+    const response = await POST(new Request('http://localhost/api/execute', {
+      method: 'POST',
+      body: JSON.stringify({
+        templateName: 'Strategy',
+        intent: 'Analyze strategic launch risks and market opportunities for alice@example.com',
+        inputs: { customer: 'cust-1234' }, provider: 'openai',
+      }),
+    }) as never);
+    expect(response.status).toBe(200);
+    expect(executeAIMock.mock.calls.length).toBeGreaterThan(1);
+    for (const call of executeAIMock.mock.calls) {
+      expect(call[2]).not.toContain('alice@example.com');
+      expect(call[2]).toContain('[REDACTED:Email]');
+    }
+    expect(executeAIMock.mock.calls[1][2]).toContain('[Improvement note:');
+  });
+
+  it('passes only redacted text to the vision branch', async () => {
+    executeVisionMock.mockResolvedValue({ success: true, output: 'Image description', provider: 'alibaba', model: 'qwen-vl-plus' });
+    const response = await POST(new Request('http://localhost/api/execute', {
+      method: 'POST', body: JSON.stringify({
+        templateName: 'Strategy', intent: 'Describe the launch plan for alice@example.com',
+        inputs: { customer: 'cust-1234' }, provider: 'alibaba', imageBase64: 'c3ludGhldGlj', mimeType: 'image/png',
+      }),
+    }) as never);
+    expect(response.status).toBe(200);
+    expect(executeVisionMock).toHaveBeenCalledTimes(1);
+    expect(executeAIMock).not.toHaveBeenCalled();
+    const prompt = executeVisionMock.mock.calls[0][0].prompt;
+    expect(prompt).toContain('[REDACTED:Email]');
+    expect(prompt).toContain('[REDACTED:Customer ID]');
+    expect(prompt).not.toContain('alice@example.com');
+    expect(prompt).not.toContain('cust-1234');
+  });
+
+  it('makes zero text or vision invocations when enforcement blocks', async () => {
+    evaluateEnforcementMock.mockReturnValue({ status: 'BLOCK', reasons: ['Controlled denial'] });
+    const response = await POST(new Request('http://localhost/api/execute', {
+      method: 'POST', body: JSON.stringify({
+        templateName: 'Strategy', intent: 'Describe the plan for alice@example.com',
+        inputs: { customer: 'cust-1234' }, provider: 'alibaba', imageBase64: 'c3ludGhldGlj',
+      }),
+    }) as never);
+    expect(response.status).toBe(400);
+    expect(executeAIMock).not.toHaveBeenCalled();
+    expect(executeVisionMock).not.toHaveBeenCalled();
+  });
+
 });
