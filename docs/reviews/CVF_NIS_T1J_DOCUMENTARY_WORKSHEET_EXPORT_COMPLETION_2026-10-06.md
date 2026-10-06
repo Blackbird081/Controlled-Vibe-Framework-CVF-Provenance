@@ -5,7 +5,7 @@ Status: CLOSED_PASS_BOUNDED
 Date: 2026-10-06
 Batch ID: CVF-NIS-T1J
 executionBaseHead: 7f3df0c67fb454ea04a703a15a52ea419e5fbe43
-closureBaseHead: 68600cc766589ac2b27e58df019c2bc55d53bfea
+closureBaseHead: 15a3d68187788ebe2190f1ab76d0c937ceaf91fd
 dispatchWorkOrder: docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1J_DOCUMENTARY_WORKSHEET_EXPORT_2026-10-06.md
 providerExecutionAuthority: FORBIDDEN
 rawMemoryReleased=false
@@ -80,9 +80,9 @@ tokenOrQuotaUsage: NOT_AVAILABLE_WITH_REASON: no exposed meter
 valueDelta: native source-bound worksheet accepted after one valid-input repair and independently tested boundary
 stopDisposition: COMPLETE_REVIEW
 preRepairAuditDisposition: COMPLETE_BEFORE_FIRST_REPAIR
-materialCommitCount: 2
-continuityCommitCount: 1
-commitPlanDisposition: EXCEPTION_WITH_REASON: bounded material then one evidence-metadata correction before dedicated continuity; no product rerun
+materialCommitCount: 3
+continuityCommitCount: 2
+commitPlanDisposition: EXCEPTION_WITH_REASON: original mixed material, metadata correction, dedicated continuity, pure completion-only repair and final dedicated continuity; invalid mixed ranges excluded; no product rerun
 latencyDisposition: NOT_MEASURED_WITH_REASON: no continuous task meter
 avoidableDelayClass: MULTIPLE_AVOIDABLE_DELAYS
 
@@ -92,6 +92,11 @@ outsideAuthorityBlockers: NONE
 nextRepairRoute: NO_REPAIR_REQUIRED_FOR_BOUNDED_CLOSURE
 workerRedispatchAllowed: NO
 Reason: one Local renderer/test correction remains inside the original four consumer/test paths; broad helper/BUILD work stays deferred.
+
+## Committed Range Recovery And P4 Safety Adjudication
+
+Initial material68600cc766589ac2b27e58df019c2bc55d53bfea (17 paths) and metadata correction b69a18832 (10 paths) both mixed exact-manifest artifacts with protected continuity. Their90-check pre-commit PASS is valid pre-commit evidence only; neither mixed range is accepted as P2 committed-range closure or P4 evidence. Local erroneously attempted final continuity before this adjudication, and the safety marker correctly blocked it. Preserve all commits, failed gate logs and ignored marker/adjudication receipts; no history rewriting or retrospective PASS.
+Local reviewer adjudicates the generated P4 marker as a rejected receipt for an invalid range, clears only that adjudicated marker and performs bounded recovery: dedicated continuity first, this standalone completion-only range with a one-path trace, then final dedicated continuity. The final P2 pre-closure must bind the exact pure completion parent/head, excluding the invalid mixed ranges. Product evidence remains the independently checked source hashes/native controls; a pure documentary closure receipt does not retroactively certify the mixed material range or prove browser/runtime/UX behavior. Natural P4 collection is observed only; no checkpoint promotion or provider action.
 
 ## Machine Closure Package
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
@@ -123,33 +128,33 @@ Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 Operator authorization: review/probe/Completion Review/commit under delegated Local authority,2026-10-06.
-Rollback boundary: exact10 metadata correction; preserve original7 worker bytes/index and parked lanes.
+Rollback boundary: one completion-range correction; preserve original7 worker bytes/index and parked lanes.
 
 ## Mixed Protected-Path Atomicity Authorization
 Disposition: AUTHORIZED_EXACT_MANIFEST
 Atomicity reason: seven accepted consumer/test/evidence paths plus current pair/completion/proof and six continuity projections bind one bounded closure; dedicated material-SHA continuity follows.
-Rollback boundary: exact10 paths; original worker worktree remains unchanged.
-Exact changed manifest: `docs/reviews/evidence/cvf-nis-t1j-local-independent-review-2026-10-06.json`; `docs/reviews/CVF_NIS_T1J_DOCUMENTARY_WORKSHEET_EXPORT_COMPLETION_2026-10-06.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1J_DOCUMENTARY_WORKSHEET_EXPORT_2026-10-06.md`; `docs/baselines/CVF_GC018_NIS_T1J_DOCUMENTARY_WORKSHEET_EXPORT_2026-10-06.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/entries/nextAllowedMove.json`.
+Rollback boundary: one completion artifact; original worker worktree remains unchanged.
+Exact changed manifest: `docs/reviews/CVF_NIS_T1J_DOCUMENTARY_WORKSHEET_EXPORT_COMPLETION_2026-10-06.md`.
 
 ## Agent Operation Trace Block
 | Field | Evidence |
 |---|---|
 | Actor | Local technical reviewer/closer |
 | Provider or surface | Local private provenance workspace |
-| Session or invocation | nis-t1j-local-review-20261006 |
+| Session or invocation | nis-t1j-final-completion-range-20261006 |
 | Working directory | repository root |
 | Command or tool surface | Python exact artifact/source/log joins; separate native Vitest/jsdom probe; narrow repair and focused/type/lint checks |
-| Target paths | exact10 metadata correction paths |
+| Target paths | docs/reviews/CVF_NIS_T1J_DOCUMENTARY_WORKSHEET_EXPORT_COMPLETION_2026-10-06.md only; product material and continuity are already committed |
 | Allowed scope source | operator continue and delegated Local orchestration |
-| Before status evidence | clean main 7f3df0c67fb454ea04a703a15a52ea419e5fbe43; isolated worker exact7 pending |
-| After status evidence | exact10 metadata correction; original7 worker retained unchanged |
-| Diff evidence | metadata-correction-paths-final.json and cached name-only MATCH |
+| Before status evidence | clean main 15a3d68187788ebe2190f1ab76d0c937ceaf91fd |
+| After status evidence | one completion-only artifact; worker original7 retained unchanged |
+| Diff evidence | completion-only-paths.json and cached name-only MATCH |
 | Approval boundary | render-only native consumer; no helper/general S2/BUILD |
 | Claim boundary | finite source/UI checks only; no browser/UX/live governance proof |
 | Agent type | dispatcher |
-| Invocation ID | nis-t1j-local-review-20261006 |
-| Expected manifest | docs/reviews/evidence/cvf-nis-t1j-local-independent-review-2026-10-06.json; docs/reviews/CVF_NIS_T1J_DOCUMENTARY_WORKSHEET_EXPORT_COMPLETION_2026-10-06.md; docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1J_DOCUMENTARY_WORKSHEET_EXPORT_2026-10-06.md; docs/baselines/CVF_GC018_NIS_T1J_DOCUMENTARY_WORKSHEET_EXPORT_2026-10-06.md; CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json; CVF_SESSION/ACTIVE_SESSION_STATE.json; CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json; AGENT_HANDOFF_V63_2026-09-18.md; CVF_SESSION_MEMORY.md; CVF_SESSION/state/entries/nextAllowedMove.json |
-| Actual changed set | docs/reviews/evidence/cvf-nis-t1j-local-independent-review-2026-10-06.json; docs/reviews/CVF_NIS_T1J_DOCUMENTARY_WORKSHEET_EXPORT_COMPLETION_2026-10-06.md; docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1J_DOCUMENTARY_WORKSHEET_EXPORT_2026-10-06.md; docs/baselines/CVF_GC018_NIS_T1J_DOCUMENTARY_WORKSHEET_EXPORT_2026-10-06.md; CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json; CVF_SESSION/ACTIVE_SESSION_STATE.json; CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json; AGENT_HANDOFF_V63_2026-09-18.md; CVF_SESSION_MEMORY.md; CVF_SESSION/state/entries/nextAllowedMove.json |
+| Invocation ID | nis-t1j-final-completion-range-20261006 |
+| Expected manifest | docs/reviews/CVF_NIS_T1J_DOCUMENTARY_WORKSHEET_EXPORT_COMPLETION_2026-10-06.md |
+| Actual changed set | docs/reviews/CVF_NIS_T1J_DOCUMENTARY_WORKSHEET_EXPORT_COMPLETION_2026-10-06.md |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename authorized |
 
