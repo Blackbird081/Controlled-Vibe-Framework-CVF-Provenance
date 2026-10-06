@@ -8,7 +8,7 @@
     "reviewManifest": "docs/reviews/evidence/cvf-ncr-local-review-manifest-2026-10-06.json",
     "reviewManifestDisposition": "Historical pre-commit 49-path snapshot; committed disposition recorded here.",
     "verification": "Recorded scoped tests, Docker/storage/Web receipts and real Alibaba observations consumed; material helper and repository pre-commit hooks passed. No independent reviewer, browser UX, actual-data cutover or release-quality governance claim.",
-    "nextAction": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=LOCAL_DISPOSITION_ONLY; BATCH_ID=CVF-NCR-LEDGER-APPLICABILITY-20261006. Ledger applicability correction committed at eaedcbc6102333c5dbb7b7f81ebd8f718c89e6e0: source inspection only; default JSON/tracked path is not authoritative live-instance evidence; synthetic Docker proof used temporary stores. Do not request an unexplained ledger copy or treat Q001/Q004 as universal roadmap blockers. Fresh isolated development needs no legacy import; actual migration first establishes instance/source/writer and action authority. Existing boundary batch d967825733df40549ff1baf88166ad696936ef6d evidence retained:98 tests,TypeScript,lint PASS;2 Alibaba calls,first post-call assertion unexplained,second A4 PASS. No repeat proof-only tranche/API run without named gap. Evidence owner: docs/baselines/CVF_GC018_NCR_CONSOLIDATED_LOCAL_FOUNDATION_2026-10-06.md. Browser/UX unavailable; actual-data cutover,vision/full P04/release unproved. Q001/Q004 OPEN/Profile A; P11/deploy/public,CCMA,S05/C1/send/B2 parked; NIS-T1J closed without successor; LHW24 closed; no push.",
+    "nextAction": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=LOCAL_DISPOSITION_ONLY; BATCH_ID=CVF-NCR-WEB-CI-CLOSURE-20261006. Five-path P01/P05 Web CI repair committed at 9fda60050c44fbafa3cebbc2b6e64f43503f55d0: six Web jobs across ci.yml,cvf-ci.yml,cvf-web-ci.yml install all eight file dependencies in predecessor order with npm ci; dedicated Web triggers include dependency directories. Five structural tests and offline Model Gateway install-plan dry-run PASS; material gates PASS. No clean Ubuntu install,remote candidate CI,required-settings or release claim. Evidence owner: docs/baselines/CVF_GC018_NCR_CONSOLIDATED_LOCAL_FOUNDATION_2026-10-06.md. Consume prior bounded98-test/Docker/Alibaba evidence; no API/proof-only rerun without named gap. Ledger-copy correction retained: no unexplained copy request; fresh isolated development needs no legacy import; Q001/Q004 are action-specific,not universal blockers. Browser/UX unavailable; actual-data cutover,vision/full P04/full release unproved. Q001/Q004 OPEN/Profile A; P11/deploy/public,CCMA,S05/C1/send/B2 parked; NIS-T1J closed without successor; LHW24 closed; no push.",
     "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
     "approvedContextContinuation": {
       "materialCommit": "594e2c1b2cbc7171fe77ab849782e5de085b5b8c",
@@ -45,6 +45,19 @@
       "finding": "Default JSON/tracked path is not an authoritative live ledger; prior Docker stores were synthetic. No legacy import prerequisite for fresh isolated development.",
       "verification": "Read-only source and Git path metadata; no ledger contents, server import, provider call, configuration change or migration.",
       "continuationRule": "Q001/Q004 apply to dependent data/effect actions, not all admitted roadmap work; establish actual source/writer before requesting or creating a migration copy."
+    },
+    "webCiDependencyClosure": {
+      "materialCommit": "9fda60050c44fbafa3cebbc2b6e64f43503f55d0",
+      "status": "LOCAL_SOURCE_REPAIRED_STRUCTURALLY_VERIFIED",
+      "workflowPaths": [
+        ".github/workflows/ci.yml",
+        ".github/workflows/cvf-ci.yml",
+        ".github/workflows/cvf-web-ci.yml"
+      ],
+      "webJobs": 6,
+      "localPackageDependencies": 8,
+      "verification": "Five graph/filter/negative-control unittest methods PASS; offline Model Gateway npm ci dry-run PASS; material gates PASS.",
+      "claimBoundary": "No Ubuntu clean install,remote candidate CI,GitHub settings,release or public claim. Other jobs are outside selected source repair."
     }
   }
 }
