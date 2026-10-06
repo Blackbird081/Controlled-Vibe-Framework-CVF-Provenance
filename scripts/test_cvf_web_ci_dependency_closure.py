@@ -1,6 +1,7 @@
 """Workflow dependency closure only; no install, network or release claim."""
 import json
 import re
+import shlex
 import unittest
 from pathlib import Path
 import yaml
@@ -18,23 +19,29 @@ def local_dependencies(directory):
 
 def validate_job(job):
     default = job["defaults"]["run"]["working-directory"]
+    target = Path(default)
     installed = set()
     for step in job["steps"]:
         directory = Path(step.get("working-directory", default))
         for line in step.get("run", "").splitlines():
-            if not re.fullmatch(r"npm (?:ci|install)(?: --no-audit --no-fund)?", line.strip()):
+            args = shlex.split(line.strip())
+            if len(args) < 2 or args[:2] not in (["npm", "ci"], ["npm", "install"]):
                 continue
-            if directory == WEB or directory in local_dependencies(WEB):
-                missing = local_dependencies(directory) - installed
-                if missing:
-                    raise AssertionError(f"{directory}: unresolved predecessors {sorted(map(str, missing))}")
-                if line.strip() != "npm ci":
-                    raise AssertionError(f"{directory}: unlocked install")
-                if not (ROOT / directory / "package-lock.json").is_file():
-                    raise AssertionError(f"{directory}: missing lockfile")
-                installed.add(directory)
-    if WEB not in installed:
-        raise AssertionError("Web install missing")
+            package_dir = directory
+            if "--prefix" in args:
+                package_dir = (ROOT / directory / args[args.index("--prefix") + 1]).resolve().relative_to(ROOT.resolve())
+            if not (ROOT / package_dir / "package.json").is_file():
+                raise AssertionError(f"{package_dir}: missing package at install path")
+            missing = local_dependencies(package_dir) - installed
+            if missing:
+                raise AssertionError(f"{package_dir}: unresolved predecessors {sorted(map(str, missing))}")
+            if args[1] != "ci":
+                raise AssertionError(f"{package_dir}: unlocked install")
+            if not (ROOT / package_dir / "package-lock.json").is_file():
+                raise AssertionError(f"{package_dir}: missing lockfile")
+            installed.add(package_dir)
+    if target not in installed:
+        raise AssertionError(f"{target}: target install missing")
 
 
 class WebCiDependencyClosureTests(unittest.TestCase):
@@ -49,6 +56,26 @@ class WebCiDependencyClosureTests(unittest.TestCase):
                 with self.subTest(workflow=name, job=job_name):
                     validate_job(job)
         self.assertEqual(count, 6)
+
+    def test_related_guard_mcp_execution_jobs(self):
+        selected = {"ci.yml": ["guard-contract-tests"],
+                    "cvf-ci.yml": ["test-guard-contract", "test-mcp-server", "test-epf"]}
+        for name, jobs in selected.items():
+            data = yaml.safe_load((ROOT / ".github/workflows" / name).read_text(encoding="utf-8"))
+            for job_name in jobs:
+                with self.subTest(workflow=name, job=job_name):
+                    validate_job(data["jobs"][job_name])
+
+    def test_invalid_prefix_is_rejected(self):
+        job = {"defaults": {"run": {"working-directory": "EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER"}},
+               "steps": [{"run": "npm ci --prefix ../../CVF_TRUTH_KERNEL"}]}
+        with self.assertRaisesRegex(AssertionError, "missing package"):
+            validate_job(job)
+
+    def test_prefix_resolves_from_step_directory(self):
+        job = {"defaults": {"run": {"working-directory": "EXTENSIONS/CVF_TRUTH_FLOW"}},
+               "steps": [{"run": "npm ci --prefix ../CVF_TRUTH_KERNEL"}, {"run": "npm ci"}]}
+        validate_job(job)
 
     def test_dependency_changes_trigger_dedicated_web_workflow(self):
         # BaseLoader preserves YAML 'on' rather than interpreting it as YAML1.1 bool.

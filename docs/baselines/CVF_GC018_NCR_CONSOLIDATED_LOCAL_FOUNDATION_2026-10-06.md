@@ -731,6 +731,44 @@ coverage, clean build, dependency security audit, remote required checks, branch
 protection, release or public export. Existing results are reused within scope;
 no real-data copy, runtime, API campaign or deployment follows from CI maintenance.
 
+## Related Guard/MCP/Execution CI Dependency Repair - 2026-10-06
+
+Operator continued compatible admitted upgrades. Local maintainer/reviewer found
+four related P01/P05 job defects after the selected Web repair. Execution base:
+9a14ce4208ba079412d2ca8567c22b0a6d433838; worktree clean before this batch.
+Exact material scope: .github/workflows/ci.yml, .github/workflows/cvf-ci.yml,
+scripts/test_cvf_web_ci_dependency_closure.py and this baseline.
+
+Source verification: Model Gateway declares file dependencies on Control Plane
+and Guard Contract. Guard jobs in both workflows and the MCP job installed
+Gateway before Guard; the Execution Plane job omitted both predecessors.
+Intent Validation has an existing lockfile but the selected Guard jobs used an
+unlocked install. MCP defaults to EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER; its three
+SOT3 install prefixes ../../CVF_* resolve outside EXTENSIONS, where the requested
+package manifests do not exist. Actual packages are sibling directories.
+
+Repair all four selected jobs together: install Control Plane and Guard before
+Gateway, use npm ci for Gateway and Intent Validation in these jobs, and move
+rather than duplicate the existing Guard installation. Add the missing Control
+Plane/Guard steps to Execution Plane. MCP SOT3 prefixes are ../CVF_TRUTH_KERNEL,
+../CVF_TRUTH_FLOW and ../CVF_REFINERY. Keep all job names, tests, checkout refs,
+coverage semantics and remote settings. The prior six Web jobs are unchanged.
+
+Extend the existing test file to resolve --prefix from the step working directory,
+check actual package existence and predecessor/lockfile availability, and cover
+the four additional jobs. Four job subcases fail before repair; final eight test
+methods PASS, covering ten selected job graphs plus event filters and negative
+controls. Positive sibling-prefix and invalid parent-prefix controls PASS.
+git diff --check PASS. No package/lockfile changes, dependency installation,
+provider call, repeated build or actual MCP invocation. Reuse the previous
+Model Gateway offline dry-run as historical selected install-plan evidence.
+
+This is local workflow/source verification only. Clean Linux installation,
+native build, remote candidate CI, required checks, full tests/security audit,
+MCP/governance behavior, release and public export remain unproved. No whole-CI
+closure or real-data/deploy authorization. Q001/Q004 remain action-specific;
+consume existing evidence and require a named gap for further source/proof work.
+
 ## Claim Boundary
 
 Local foundations only. No release or whole-CVF live governance readiness, full repository secret
