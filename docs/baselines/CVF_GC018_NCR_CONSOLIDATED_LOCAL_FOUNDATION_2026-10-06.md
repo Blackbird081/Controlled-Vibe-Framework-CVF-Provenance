@@ -690,6 +690,47 @@ call or repeated storage proof. No live-instance absence/presence claim. Existin
 browser/release/public/deploy checkpoints remain; further implementation requires
 a named consumer need or defect rather than another proof-only tranche.
 
+## P01/P05 Web CI Dependency Closure Repair - 2026-10-06
+
+Operator continued the broader upgrade backlog. Local maintainer/reviewer selected
+an existing P01/P05 consumer defect, independent of Q001/Q004 migration.
+Execution base: a8ca7f00d5dac4a772faee30948316075a9be904; worktree was clean.
+Exact material scope: .github/workflows/ci.yml, .github/workflows/cvf-ci.yml,
+.github/workflows/cvf-web-ci.yml, scripts/test_cvf_web_ci_dependency_closure.py,
+and this existing baseline. No new checker, package or settings mutation.
+
+Source verification: the Web package.json declares eight file dependencies;
+Model Gateway depends on Control Plane and Guard Contract, Execution Plane on
+Control Plane, and Truth Flow on Truth Kernel. The six selected Web jobs installed
+only a subset of these packages and installed Model Gateway before Guard Contract.
+The dedicated Web workflow path filters omitted all eight dependency directories.
+This is selected consumer evidence, not a complete audit of other CI jobs.
+
+Repair all six Web jobs in the three workflows together: Control Plane, Guard
+Contract, Model Gateway, Learning Plane, Execution Plane, Truth Kernel, Truth Flow,
+Refinery, then Web. Existing package-lock files exist for these packages. Model
+Gateway now uses npm ci in these selected jobs rather than npm install. Add all
+eight dependency directories to push and pull_request path filters in the
+dedicated Web workflow. Job names, checkout references, build/test/audit gates,
+coverage disposition, GitHub settings and unrelated jobs are preserved.
+
+Verification: initial graph tests rejected six jobs for missing Guard predecessors
+and both event filters for missing dependencies. An initial test-count expectation
+of seven was corrected to the observed six; that harness error is not a source
+finding. Final five unittest methods PASS, covering all six job graphs, both
+filters, missing dependencies, predecessor order and unlocked installs after
+valid predecessors. Tests use the already available PyYAML parser and current
+package manifests; no environment dependency was installed. Model Gateway
+npm ci --dry-run --ignore-scripts --offline --no-audit --no-fund exits zero.
+This validates a local install plan, not a completed clean install. git diff
+--check PASS. No package/lockfile change, provider call or broad test rerun.
+
+P01/P05 remain open for actual candidate CI evidence and any remaining consumer
+gaps. This repair does not prove Ubuntu installation/native modules, full test
+coverage, clean build, dependency security audit, remote required checks, branch
+protection, release or public export. Existing results are reused within scope;
+no real-data copy, runtime, API campaign or deployment follows from CI maintenance.
+
 ## Claim Boundary
 
 Local foundations only. No release or whole-CVF live governance readiness, full repository secret
