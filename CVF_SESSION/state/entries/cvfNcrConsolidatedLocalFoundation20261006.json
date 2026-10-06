@@ -1,0 +1,14 @@
+{
+  "stateOrder": 2997,
+  "stateKey": "cvfNcrConsolidatedLocalFoundation20261006",
+  "value": {
+    "status": "LOCAL_IMPLEMENTED_VERIFIED_BOUNDED",
+    "materialCommit": "01a1024768ad0c53b6c1dad5016f964ccd365768",
+    "baseline": "docs/baselines/CVF_GC018_NCR_CONSOLIDATED_LOCAL_FOUNDATION_2026-10-06.md",
+    "reviewManifest": "docs/reviews/evidence/cvf-ncr-local-review-manifest-2026-10-06.json",
+    "reviewManifestDisposition": "Historical pre-commit 49-path snapshot; committed disposition recorded here.",
+    "verification": "Recorded scoped tests, Docker/storage/Web receipts and real Alibaba observations consumed; material helper and repository pre-commit hooks passed. No independent reviewer, browser UX, actual-data cutover or release-quality governance claim.",
+    "nextAction": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=LOCAL_DISPOSITION_ONLY; BATCH_ID=CVF-NCR-CONSOLIDATED-20261006. LOCAL_IMPLEMENTED_VERIFIED_BOUNDED maintenance committed at 01a1024768ad0c53b6c1dad5016f964ccd365768. Evidence: docs/baselines/CVF_GC018_NCR_CONSOLIDATED_LOCAL_FOUNDATION_2026-10-06.md; exact 49-path review manifest retained as pre-commit snapshot. Intake brief guidance, P06/P08/P09 corrections, Alibaba completion handling, synthetic single-host Docker/storage/Web composition and UI label fixes verified within recorded scopes. Continue admitted local backlog using existing owners; no mandatory new spec pilot or duplicate proof campaign. Browser/real noncoder UX blocked by unavailable browser capability; actual-data source/cutover consent absent. Q001/Q004 OPEN/Profile A; P11/deploy/public, CCMA, S05/C1/send/B2 parked; NIS-T1J closed without automatic successor. LHW24 closed; no push or release claim.",
+    "publicExportDisposition": "DEFERRED_PRIVATE_ONLY"
+  }
+}

@@ -1,6 +1,7 @@
 # CVF Agent Handoff V63 - ACEL Applied-Knowledge Owner Enrichment
+
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: 5a783d5947c04e7927b19ad647dc9d893be4ef42; batch CVF-NIS-T1J bounded closure material; dedicated continuity.
+Current HEAD recorded for this handoff: `01a1024768ad0c53b6c1dad5016f964ccd365768`. Material parent anchor for the dedicated continuity synchronization commit.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -8,9 +9,9 @@ Remote tracking branch: `origin/main`. Exact remote SHA must be derived live fro
 ## Purpose
 Carry CVF-NCR v2.8 and closed AKOE/G1-G7. Applied-knowledge details remain in the governed roadmap.
 ## Scope / Target / Owner Boundary
-Role: Local orchestrator/reviewer; phase: NIS-T1J bounded worksheet closure; decision owner: Local; CCMA/S05/P11 parked.
+Role: Local session-sync steward; phase: NCR maintenance continuity; decision owner: Local; CCMA/S05/P11 parked.
 ## Startup Acknowledgment
-Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`; handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=Local disposition after T1J closure; role=Local reviewer/closer; phase=closure; decision owner=Local; parked lanes retained.
+Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`; handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=Local disposition after NCR maintenance commit; role=Local session-sync steward; phase=continuity; decision owner=Local; browser/Q001/Q004/P11 parked.
 Learning discovery: `docs/reviews/learnings/README.md` before blind/fresh-context dispatch; rule added, machine candidate deferred.
 ## Current Mode
 `cvf_ncr_p10_closed_p11_parked`. CVF-NCR-R1-S11-R1 is closed at `bd15b2600` after material `1a538d10d`. P10 is `ACTIVE_PRODUCTION_RUNTIME`; P11 stays parked. Latest closed learning-history wave: `LHW24`.
@@ -170,7 +171,7 @@ Rollback boundary: revert only this continuity sync; preserve material `5c1ee025
 - ACEL-AKOE-U1 is `CLOSED_PASS_BOUNDED` at `d9132412a`, disposition `SOURCE_RECONCILED_DEFER_WITH_TRIGGER`. Exact pins, 42 claims, byte hash and verification detail remain in its completion review; no import, runtime/provider, public sync or automatic successor opened.
 - CVF-NCR-R0-W01 source/profile return is Local-accepted bounded at material commit `d9b43a6f6deff7fb19710b5a9a4f50bf2a6015b6`; reviewer-fast 69/69 and pre-commit 90/90 passed. P06/P08 and actual destination/retention/cost remain open. One overbroad worker grep exposed a configured URL in tool output; the return does not reproduce it, and Local/operator config handling remains separate. No pilot or UI action was run.
 ## Next Allowed Move
-PROGRAM_ID=CVF-NIS; NEXT_ACTION_CLASS=LOCAL_DISPOSITION_ONLY; BATCH_ID=CVF-NIS-T1J. CLOSED_PASS_BOUNDED native unfinished worksheet; docs/reviews/CVF_NIS_T1J_DOCUMENTARY_WORKSHEET_EXPORT_COMPLETION_2026-10-06.md; no automatic successor; parked lanes retained. Initial material 68600cc76; evidence metadata correction before final sync. Closure material b69a18832; dedicated continuity. Closure material 5a783d594; dedicated continuity.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=LOCAL_DISPOSITION_ONLY; BATCH_ID=CVF-NCR-CONSOLIDATED-20261006. LOCAL_IMPLEMENTED_VERIFIED_BOUNDED maintenance committed at 01a1024768ad0c53b6c1dad5016f964ccd365768. Evidence: docs/baselines/CVF_GC018_NCR_CONSOLIDATED_LOCAL_FOUNDATION_2026-10-06.md; exact 49-path review manifest retained as pre-commit snapshot. Intake brief guidance, P06/P08/P09 corrections, Alibaba completion handling, synthetic single-host Docker/storage/Web composition and UI label fixes verified within recorded scopes. Continue admitted local backlog using existing owners; no mandatory new spec pilot or duplicate proof campaign. Browser/real noncoder UX blocked by unavailable browser capability; actual-data source/cutover consent absent. Q001/Q004 OPEN/Profile A; P11/deploy/public, CCMA, S05/C1/send/B2 parked; NIS-T1J closed without automatic successor. LHW24 closed; no push or release claim.
 ## Parked Checkpoints
 - autorun lane-binding R1 is closed at `ee81deeeb`; HRLTP-T2 remains paused for Local no-subagent route reassessment;
 - T3C-C2 is closed and Local verified at `820aae3ec`;
@@ -189,11 +190,8 @@ PROGRAM_ID=CVF-NIS; NEXT_ACTION_CLASS=LOCAL_DISPOSITION_ONLY; BATCH_ID=CVF-NIS-T
 - every post-AKOE successor without a fresh operator decision;
 - promotion or restoration of the thirteen rejected archived paths without fresh Local review.
 ## Core Guard Self-Protection Authorization
-Authorized guard-maintenance scope: continuity-only binding of independently reviewed Q001 source repair `bc6e8b010` and the operator checkpoint. Protected paths: `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/cvfNcrQ001HtmlIngressRepair20260928.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`. Operator authorization: the operator approved Q001 repair and explicitly allowed single-agent/multi-role execution with one independent reviewer subagent. Rollback boundary: revert only this continuity projection; preserve Q001 material `bc6e8b010`, P10 closure `bd15b2600` and unrelated history.
-Authorized guard-maintenance scope: continuity-only binding of operator-selected Docker Q001 receipt proof `87a3da943`. Protected paths: `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/cvfNcrQ001DockerReceipt20260928.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`. Operator authorization: the operator instructed Local to run the Docker receipt proof with the available Docker Desktop. Rollback boundary: revert only this continuity projection; preserve material `87a3da943`, prior Q001 repair `bc6e8b010`, P10 closure `bd15b2600` and unrelated history.
-
+Authorized guard-maintenance scope: continuity-only binding of NCR maintenance 01a1024768ad0c53b6c1dad5016f964ccd365768. Protected paths: `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/cvfNcrConsolidatedLocalFoundation20261006.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`. Operator authorization: operator requested complete batching and continued execution. Rollback boundary: this continuity projection only; preserve material, accepted NIS authority and unrelated history.
 ## Agent Operation Trace Block
-
 | Field | Evidence |
 |---|---|
 | Actor | Local maintainer/reviewer and session-sync steward |
@@ -214,7 +212,5 @@ Authorized guard-maintenance scope: continuity-only binding of operator-selected
 | Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |
-
 ## Claim Boundary
-
 Public PR9 merged/8a4119e1; hosted preflight PASS. T2 accepted/probe30; mixed range blocked/P4 adjudicated. T3/CCMA/S05/P11 parked; no AI/runtime/deploy proof.
