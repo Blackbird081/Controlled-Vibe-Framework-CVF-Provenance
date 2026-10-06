@@ -1,0 +1,144 @@
+{
+  "schemaVersion": "cvf.nisT1jDispatchInputs.v1",
+  "baseHead": "40b39a2de31bafe394518b4e7c4db20a9d8e3b5e",
+  "authority": "Operator continue under delegated Local orchestration; exact render-only worksheet export consumer implementation. No analysis-helper arm/general S2/BUILD.",
+  "sources": {
+    "docs/reviews/CVF_NIS_T1I_SOURCE_BOUND_DOCUMENTARY_HANDOFF_COMPLETION_2026-10-05.md": {
+      "rawSha256": "6140346a5fc813de921cdc096cc6955348c6c12bccea91c6a2e525bf0c0ea3c8",
+      "gitBlob": "c18d4be93d61e5b5f6765e39c43705fb9ab97010",
+      "symbols": [
+        "Findings / Position"
+      ]
+    },
+    "docs/reviews/CVF_NIS_T1F_BUILD_READY_BRIDGE_CONTRACT_COMPLETION_2026-10-05.md": {
+      "rawSha256": "14b740490b5a3de638fde1155bc1ae7d2d0ffc39865af44ae25e5016b887dae6",
+      "gitBlob": "df672b72c400a8781c8bf04932f6baab98847707",
+      "symbols": [
+        "Local Choices C-1 To C-7"
+      ]
+    },
+    "DESIGN.md": {
+      "rawSha256": "15c1b5061bd2e1f763638beb83a84d06eb8ccbc470747c01f236033a834a987e",
+      "gitBlob": "260703ec89ffd2282c3960a891337d2b970740f5",
+      "symbols": [
+        "Visual Theme"
+      ]
+    },
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-review.ts": {
+      "rawSha256": "43e7a437f6d4695553b396ead83feff15a411b10b3aa37c561ca9da09aa3eefd",
+      "gitBlob": "f959ecdce5cb608f19a18ed1ac6424a668ab588e",
+      "symbols": [
+        "isCurrentReviewAcknowledged"
+      ]
+    },
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-open-items.ts": {
+      "rawSha256": "c909f6f264ae2b2596f12a33692654262fb07ac71e8bc49339483483e9cdab00",
+      "gitBlob": "eb26737b9869b096cea342995a3ac1aa8d596cd3",
+      "symbols": [
+        "ReviewOpenItem"
+      ]
+    },
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-confirmation.ts": {
+      "rawSha256": "c73dcae3d89df3072a92604ed4548b01167974cabdb9245c232516289a35519c",
+      "gitBlob": "aceb530c482dc0bd01f30a5d4f4d555141cd4c06",
+      "symbols": [
+        "createSpecConfirmationCandidate",
+        "reviewBindingKey"
+      ]
+    },
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecConfirmation.tsx": {
+      "rawSha256": "d411429c5eb77821d345959fec27e2c5a88cc26fb2f38f4ae7e24ee7b95ff58e",
+      "gitBlob": "cd4b1c376ded04ec4a97fc81803afc1a406d7902",
+      "symbols": [
+        "IntentSpecConfirmation",
+        "active",
+        "download"
+      ]
+    },
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-confirmation.test.ts": {
+      "rawSha256": "45c8753b771139842eec11dc863539ce3e4868941c4aa94291ae8d7b51d9bcd4",
+      "gitBlob": "3a78fd445538730a9c9e0f966437e622db7f1d6d",
+      "symbols": [
+        "createSpecConfirmationCandidate"
+      ]
+    },
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecConfirmation.test.tsx": {
+      "rawSha256": "d3722a1bc1a9657df6aa97036b54d6fe712eb11a2a8275f4c7331d5d8be03155",
+      "gitBlob": "bdd47a83aee9f732aa71d34b3b46bdb64669f312",
+      "symbols": [
+        "IntentSpecConfirmation"
+      ]
+    },
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecConfirmation.server.test.tsx": {
+      "rawSha256": "d331b89c5535c01b08469f11f1caf7c74789dcf2062c8ec109582f930b570c2a",
+      "gitBlob": "2fd86aee51de6f7fcb1c121ec0efc2bc3dec855b",
+      "symbols": [
+        "IntentSpecConfirmation"
+      ]
+    },
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-review-client.ts": {
+      "rawSha256": "a6967c65a142c1d1805fbd98548ce326f462f5eefe1609ff70404c89684a472d",
+      "gitBlob": "1396a8109175a251e54f069ab82da7c1410860e4",
+      "symbols": [
+        "saveReviewCandidate"
+      ]
+    },
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/package.json": {
+      "rawSha256": "f03fc2c2700e904dc88e10395d0856983b9b0f9e6f27150713fa402f9e9fe24b",
+      "gitBlob": "a2d00af91d642ddb6ddfe4ce4eb3113d79888771",
+      "symbols": [
+        "test:run"
+      ]
+    },
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/vitest.config.ts": {
+      "rawSha256": "9a4a65976b5b7a5d038f9cb412a90d417f804108cf1dd33bae4421989a863420",
+      "gitBlob": "d1488d1e4612af183f0759d4aaf63b9c39ea0032",
+      "symbols": [
+        "defineConfig"
+      ]
+    }
+  },
+  "workerArtifacts": [
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-confirmation.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecConfirmation.tsx",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-confirmation.test.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecConfirmation.test.tsx",
+    "docs/reviews/CVF_NIS_T1J_DOCUMENTARY_WORKSHEET_EXPORT_WORKER_RETURN_2026-10-06.md",
+    "docs/reviews/evidence/cvf-nis-t1j-acceptance-execution-2026-10-06.json",
+    "docs/reviews/evidence/cvf-nis-t1j-implementation-binding-2026-10-06.json"
+  ],
+  "productionArtifacts": [
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-confirmation.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecConfirmation.tsx"
+  ],
+  "testArtifacts": [
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-confirmation.test.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecConfirmation.test.tsx"
+  ],
+  "newPathsAbsent": [
+    "docs/reviews/CVF_NIS_T1J_DOCUMENTARY_WORKSHEET_EXPORT_WORKER_RETURN_2026-10-06.md",
+    "docs/reviews/evidence/cvf-nis-t1j-acceptance-execution-2026-10-06.json",
+    "docs/reviews/evidence/cvf-nis-t1j-implementation-binding-2026-10-06.json"
+  ],
+  "sourceReadBudget": "Named owners; at most four decision-changing direct native dependencies with reason/raw/blob pins. No upstream research.",
+  "sourcePreimages": {
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-confirmation.ts": {
+      "rawSha256": "c73dcae3d89df3072a92604ed4548b01167974cabdb9245c232516289a35519c",
+      "gitBlob": "aceb530c482dc0bd01f30a5d4f4d555141cd4c06"
+    },
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecConfirmation.tsx": {
+      "rawSha256": "d411429c5eb77821d345959fec27e2c5a88cc26fb2f38f4ae7e24ee7b95ff58e",
+      "gitBlob": "cd4b1c376ded04ec4a97fc81803afc1a406d7902"
+    },
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-confirmation.test.ts": {
+      "rawSha256": "45c8753b771139842eec11dc863539ce3e4868941c4aa94291ae8d7b51d9bcd4",
+      "gitBlob": "3a78fd445538730a9c9e0f966437e622db7f1d6d"
+    },
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecConfirmation.test.tsx": {
+      "rawSha256": "d3722a1bc1a9657df6aa97036b54d6fe712eb11a2a8275f4c7331d5d8be03155",
+      "gitBlob": "bdd47a83aee9f732aa71d34b3b46bdb64669f312"
+    }
+  },
+  "fixtureBoundary": "Synthetic report/control fixtures only; requirements/design/tasks remain manual sections, not extracted or generated from prose. No report-specific retention policy in generic renderer.",
+  "claimBoundary": "Render-only export integration on owned current candidate, no automatic completeness/analyzer/helper selection or build-ready authority."
+}

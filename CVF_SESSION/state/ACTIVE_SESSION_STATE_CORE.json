@@ -36,12 +36,12 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_NIS_T1I_SOURCE_BOUND_DOCUMENTARY_HANDOFF_2026-10-05.md",
-    "baselineSha256": "0e3d413c3ae7ffb811a440e520bd660b091e6127fe0bfe513ae98ee852fc521f",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1I_SOURCE_BOUND_DOCUMENTARY_HANDOFF_2026-10-05.md",
-    "workOrderSha256": "b1c15b0865f42fe70fb358bb20049924eceee8bcbb663d6db4ee962233405a3b"
+    "baselinePath": "docs/baselines/CVF_GC018_NIS_T1J_DOCUMENTARY_WORKSHEET_EXPORT_2026-10-06.md",
+    "baselineSha256": "c8a8eaf715c32deeffc54f46998d5f151e6c661cde243c6c977c6ac80db2c9ac",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1J_DOCUMENTARY_WORKSHEET_EXPORT_2026-10-06.md",
+    "workOrderSha256": "881f436a4e693c74db84f3d7c0f3e8b2ada4fdcc6351a09985226dc238e4db21"
   },
-  "currentAuthoritySyncReason": "T1I closure 6d36ed576: current synthetic documentary input accepted with Local digest/scope/policy corrections;57 controls; V6 named counterexample distinguishes; no acceptance/BUILD/runtime successor.",
+  "currentAuthoritySyncReason": "Explicit operator continue selects T1J native render-only export; no analysis helper/general S2/BUILD.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
