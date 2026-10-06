@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1J_DOCUMENTARY_WORKSHEET_EXPORT_2026-10-06.md",
     "workOrderSha256": "572fd199b2fd641b4a8eeb6e80006a555951f4ce7a8122801efe775df93e111e"
   },
-  "currentAuthoritySyncReason": "Accepted NIS-T1J authority retained; separate operator-authorized consolidated NCR boundary batch d967825733df40549ff1baf88166ad696936ef6d is bounded maintenance and proof, not full P04, release or new NIS order.",
+  "currentAuthoritySyncReason": "Accepted NIS-T1J authority retained; separately authorized NCR ledger applicability correction eaedcbc6102333c5dbb7b7f81ebd8f718c89e6e0 is source-only Local disposition, not migration, new NIS work order or release closure.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
