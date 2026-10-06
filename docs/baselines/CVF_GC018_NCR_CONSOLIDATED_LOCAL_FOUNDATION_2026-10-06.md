@@ -656,6 +656,40 @@ Remaining frontier: browser capability; real-data source/authority and operation
 contract; release/remote CI/public/deploy evidence when those actions are admitted.
 Further source repairs require named gaps, not another proof-only tiny tranche.
 
+## Ledger Source Applicability And Continuation Correction - 2026-10-06
+
+Operator questioned the unexplained request for a copied JSON ledger and asked
+Local to continue. Local maintainer/reviewer disposition: the earlier migration
+selection was premature. No operator-supplied ledger copy is a general prerequisite
+for continued development, and no actual source is inferred from synthetic proof.
+
+Source verification at HEAD da8172eea9f7c4b0c6783dfd4e09424b930f36de:
+- EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/api/server.py:
+  CVF_GOVERNANCE_LEDGER_PATH defaults to ledger_layer/ledger_chain.json;
+  the .sqlite suffix selects the existing SqliteLedger owner.
+- EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/ledger_layer/immutable_ledger.py:
+  construction creates an absent JSON ledger and then reads the chain. Do not
+  import the server or instantiate this owner merely to discover a live source.
+- Git tracks the default ledger path; tracked presence is not active-instance,
+  writer, production-data or migration-source evidence. Its contents were not read.
+- scripts/probe_cvf_q001_synthetic_system_chain.py explicitly binds a temporary
+  host store or /data/proof.sqlite in Docker. Reuse the prior synthetic evidence;
+  neither binding identifies a real user ledger or an actual migration copy.
+
+Apply the existing action-specific lifecycle rule: for a fresh isolated development
+instance, no legacy-data import is required. For migration of an existing instance,
+first establish its authoritative binding and writer, then create the needed
+quiescent copy within that action's authority; do not ask the operator for an
+unexplained file or infer consent from a general continuation request. Real-data
+cutover, retention, backup custody and RPO/RTO remain separate decisions when
+applicable. Q001/Q004 remain OPEN, not universal blockers for other admitted work.
+
+Verification was read-only source inspection and Git path metadata. No ledger
+content read, server import, configuration mutation, copy, migration, provider
+call or repeated storage proof. No live-instance absence/presence claim. Existing
+browser/release/public/deploy checkpoints remain; further implementation requires
+a named consumer need or defect rather than another proof-only tranche.
+
 ## Claim Boundary
 
 Local foundations only. No release or whole-CVF live governance readiness, full repository secret
