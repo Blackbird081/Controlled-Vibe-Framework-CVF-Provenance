@@ -885,6 +885,42 @@ remain historical evidence; no whole-P06, full-P04, release or deployment closur
 Retain NIS, actual-data, browser and parked-lane dispositions. Public disposition
 remains DEFERRED_PRIVATE_ONLY under the existing section below.
 
+## P06 QBS And LPCI Intake Shape Repair - 2026-10-07
+
+Operator continuation admits two concrete ingress gaps under the existing owner.
+Local maintainer/reviewer base: 87ef50b8494dfc4315507c9c67e9de2bc95dd772;
+startup worktree clean. No external research or delegated worker.
+QBS String coercion accepted object/array/number prompts and task identifiers,
+then routed the invented text. Optional expectedDecision/repeat values could
+also enter evidence with incorrect types. LPCI destructured null JSON and sent
+non-string path values into node:path, causing unhandled TypeErrors.
+
+Require a non-array JSON object. QBS requires string userPrompt/taskId, optional
+string expectedDecision and optional finite numeric repeat before routeIntent.
+Preserve existing trim, clarification, optional fields and replay authentication;
+do not add enum/range policy or demand complete implementation requirements.
+LPCI requires nonblank string corpusRoot/manifestPath before path resolution or
+filesystem access. Preserve path bytes, authorization, containment and registry
+checks. Wrong types return HTTP400 rather than coercion or unhandled exceptions.
+
+Red evidence: eight QBS malformed-field cases returned200; four LPCI cases threw
+on null/object/array/numeric path data. Initial LPCI suite setup lacked fs default
+export; partial mock then failed to bind the default-import filesystem spy for
+the valid control. Both are harness defects, not product defect proof. Bind
+named/default mock exports to the same methods; no operator files are read.
+Green: two suites23/23 PASS, including overflowing JSON repeat1e309, no-routing
+and no-filesystem spies, valid manifest-lookup control and prior replay case.
+TypeScript --noEmit and scoped ESLint PASS; final test addition lint PASS;
+git diff --check PASS. Resolver query Worker execution/worker/pre-implementation
+rechecked at disposition: zero candidates, no truncation; no chronology claim.
+
+Exact material scope five paths: two existing routes, their two existing test
+files and this baseline. Structural admission evidence with LPCI auth mock
+declared; no live governance, corpus completeness or full-P06 claim. No provider,
+Docker/build repeat, data access/write, schema/checker/pilot or new work order.
+NIS closed authority, prior accepted proof and action-specific parked checkpoints
+remain unchanged. Public disposition remains DEFERRED_PRIVATE_ONLY below.
+
 ## Claim Boundary
 
 Local foundations only. No release or whole-CVF live governance readiness, full repository secret
