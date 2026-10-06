@@ -2,16 +2,16 @@
   "schemaVersion": "0.1.0",
   "currentMode": "cvf_ncr_p10_closed_p11_parked",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=CVF-NIS; NEXT_ACTION_CLASS=LOCAL_DISPOSITION_ONLY; BATCH_ID=CVF-NIS-T1J. CLOSED_PASS_BOUNDED native source-bound unfinished worksheet export in docs/reviews/CVF_NIS_T1J_DOCUMENTARY_WORKSHEET_EXPORT_COMPLETION_2026-10-06.md. Local repaired valid-input backtick-group RangeError;64/64 focused,8/8 Local probe,64 finite joins. Original worker evidence retained; LF renderer lines/verbatim source CR; browser/real noncoder UX not executed. No automatic helper/new worktree/general S2/BUILD/provider/public/deploy successor; docs/manual provisional, costs UNKNOWN. CCMA parked; S05/C1/send/B2 STOP; Q001/Q004 OPEN/Profile A; P11/deploy/FLAL T4/T5 parked; FR2 historical loss; LHW24 closed; no push.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-NIS; NEXT_ACTION_CLASS=LOCAL_DISPOSITION_ONLY; BATCH_ID=CVF-NIS-T1J. CLOSED_PASS_BOUNDED native source-bound unfinished worksheet export in docs/reviews/CVF_NIS_T1J_DOCUMENTARY_WORKSHEET_EXPORT_COMPLETION_2026-10-06.md. Local repaired valid-input backtick-group RangeError;64/64 focused,8/8 Local probe,64 finite joins. Original worker evidence retained; LF renderer lines/verbatim source CR; browser/real noncoder UX not executed. No automatic helper/new worktree/general S2/BUILD/provider/public/deploy successor; docs/manual provisional, costs UNKNOWN. CCMA parked; S05/C1/send/B2 STOP; Q001/Q004 OPEN/Profile A; P11/deploy/FLAL T4/T5 parked; FR2 historical loss; LHW24 closed; no push. Initial material 68600cc76; evidence metadata correction before final sync.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_NIS_T1J_DOCUMENTARY_WORKSHEET_EXPORT_2026-10-06.md",
-    "baselineSha256": "0981692e934f8a5beb52bd5649cf8de67ced880b0ae18a8f407e1db878644d67",
+    "baselineSha256": "8b02a27af730c977729eb62c8da37084929397d2da059ce029dcc595d8029825",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1J_DOCUMENTARY_WORKSHEET_EXPORT_2026-10-06.md",
-    "workOrderSha256": "a57ba058337b88b426486b61688ffaf870f8ae45a0949d72a1dcf8504dd5dadd"
+    "workOrderSha256": "572fd199b2fd641b4a8eeb6e80006a555951f4ce7a8122801efe775df93e111e"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

@@ -185,6 +185,6 @@ CLOSED_PASS_BOUNDED render-only consumer; ACCEPT_WITH_LOCAL_REPAIR in docs/revie
 | Roadmap state | N/A with reason: no roadmap changed | helper/general S2/BUILD deferred | N/A with reason: no roadmap mutation |
 | Registry JSON | docs/reviews/evidence/cvf-nis-t1j-local-independent-review-2026-10-06.json | 64 finite joins; 8 Local probe tests; 64 focused tests | PASS |
 | Registry Markdown | docs/reviews/CVF_NIS_T1J_DOCUMENTARY_WORKSHEET_EXPORT_COMPLETION_2026-10-06.md | actual bounded Local disposition | PASS |
-| External evidence digest | docs/reviews/evidence/cvf-nis-t1j-local-independent-review-2026-10-06.json | SHA256 b407f158b5223bb6f4e0f6cd13f629e724b3c3c33b7e0c25cac42a76dde3fb3a | PASS |
+| External evidence digest | docs/reviews/evidence/cvf-nis-t1j-local-independent-review-2026-10-06.json | SHA256 e45c184daa8089b04f10af9b1fb222fa1364cb9932ece123b1426f2186482a2c | PASS |
 | System loop interlock | N/A with reason: no runtime/catalog promotion | worksheet rendering only | N/A with reason: no runtime activation |
 | Session continuity | CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json | bounded closure; no automatic successor | PASS |

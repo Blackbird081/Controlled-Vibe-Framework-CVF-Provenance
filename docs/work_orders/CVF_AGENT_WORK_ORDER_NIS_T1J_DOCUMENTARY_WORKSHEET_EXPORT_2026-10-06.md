@@ -306,17 +306,17 @@ Installed local Vitest: exact three confirmation/component/server test files; lo
 | Session or invocation | nis-t1j-local-review-20261006 |
 | Working directory | repository root |
 | Command or tool surface | Python exact artifact/source/log joins; separate native Vitest/jsdom probe; narrow repair and focused/type/lint checks |
-| Target paths | exact17 closure paths |
+| Target paths | exact10 metadata correction paths |
 | Allowed scope source | operator continue and delegated Local orchestration |
 | Before status evidence | clean main 7f3df0c67fb454ea04a703a15a52ea419e5fbe43; isolated worker exact7 pending |
-| After status evidence | exact17 Local accepted closure; original7 worker retained unchanged |
-| Diff evidence | closure-paths.json and cached name-only MATCH |
+| After status evidence | exact10 metadata correction; original7 worker retained unchanged |
+| Diff evidence | metadata-correction-paths-final.json and cached name-only MATCH |
 | Approval boundary | render-only native consumer; no helper/general S2/BUILD |
 | Claim boundary | finite source/UI checks only; no browser/UX/live governance proof |
 | Agent type | dispatcher |
 | Invocation ID | nis-t1j-local-review-20261006 |
-| Expected manifest | EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-confirmation.ts; EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecConfirmation.tsx; EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-confirmation.test.ts; EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecConfirmation.test.tsx; docs/reviews/CVF_NIS_T1J_DOCUMENTARY_WORKSHEET_EXPORT_WORKER_RETURN_2026-10-06.md; docs/reviews/evidence/cvf-nis-t1j-acceptance-execution-2026-10-06.json; docs/reviews/evidence/cvf-nis-t1j-implementation-binding-2026-10-06.json; docs/baselines/CVF_GC018_NIS_T1J_DOCUMENTARY_WORKSHEET_EXPORT_2026-10-06.md; docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1J_DOCUMENTARY_WORKSHEET_EXPORT_2026-10-06.md; docs/reviews/CVF_NIS_T1J_DOCUMENTARY_WORKSHEET_EXPORT_COMPLETION_2026-10-06.md; docs/reviews/evidence/cvf-nis-t1j-local-independent-review-2026-10-06.json; AGENT_HANDOFF_V63_2026-09-18.md; CVF_SESSION_MEMORY.md; CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json; CVF_SESSION/state/entries/nextAllowedMove.json; CVF_SESSION/ACTIVE_SESSION_STATE.json; CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json |
-| Actual changed set | EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-confirmation.ts; EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecConfirmation.tsx; EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-confirmation.test.ts; EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecConfirmation.test.tsx; docs/reviews/CVF_NIS_T1J_DOCUMENTARY_WORKSHEET_EXPORT_WORKER_RETURN_2026-10-06.md; docs/reviews/evidence/cvf-nis-t1j-acceptance-execution-2026-10-06.json; docs/reviews/evidence/cvf-nis-t1j-implementation-binding-2026-10-06.json; docs/baselines/CVF_GC018_NIS_T1J_DOCUMENTARY_WORKSHEET_EXPORT_2026-10-06.md; docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1J_DOCUMENTARY_WORKSHEET_EXPORT_2026-10-06.md; docs/reviews/CVF_NIS_T1J_DOCUMENTARY_WORKSHEET_EXPORT_COMPLETION_2026-10-06.md; docs/reviews/evidence/cvf-nis-t1j-local-independent-review-2026-10-06.json; AGENT_HANDOFF_V63_2026-09-18.md; CVF_SESSION_MEMORY.md; CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json; CVF_SESSION/state/entries/nextAllowedMove.json; CVF_SESSION/ACTIVE_SESSION_STATE.json; CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json |
+| Expected manifest | docs/reviews/evidence/cvf-nis-t1j-local-independent-review-2026-10-06.json; docs/reviews/CVF_NIS_T1J_DOCUMENTARY_WORKSHEET_EXPORT_COMPLETION_2026-10-06.md; docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1J_DOCUMENTARY_WORKSHEET_EXPORT_2026-10-06.md; docs/baselines/CVF_GC018_NIS_T1J_DOCUMENTARY_WORKSHEET_EXPORT_2026-10-06.md; CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json; CVF_SESSION/ACTIVE_SESSION_STATE.json; CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json; AGENT_HANDOFF_V63_2026-09-18.md; CVF_SESSION_MEMORY.md; CVF_SESSION/state/entries/nextAllowedMove.json |
+| Actual changed set | docs/reviews/evidence/cvf-nis-t1j-local-independent-review-2026-10-06.json; docs/reviews/CVF_NIS_T1J_DOCUMENTARY_WORKSHEET_EXPORT_COMPLETION_2026-10-06.md; docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1J_DOCUMENTARY_WORKSHEET_EXPORT_2026-10-06.md; docs/baselines/CVF_GC018_NIS_T1J_DOCUMENTARY_WORKSHEET_EXPORT_2026-10-06.md; CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json; CVF_SESSION/ACTIVE_SESSION_STATE.json; CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json; AGENT_HANDOFF_V63_2026-09-18.md; CVF_SESSION_MEMORY.md; CVF_SESSION/state/entries/nextAllowedMove.json |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename authorized |
 
@@ -567,14 +567,14 @@ Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 Operator authorization: review/probe/Completion Review/commit under delegated Local authority,2026-10-06.
-Rollback boundary: exact17 closure; preserve original7 worker bytes/index and parked lanes.
+Rollback boundary: exact10 metadata correction; preserve original7 worker bytes/index and parked lanes.
 
 ## Mixed Protected-Path Atomicity Authorization
 
 Disposition: AUTHORIZED_EXACT_MANIFEST
 Atomicity reason: seven accepted consumer/test/evidence paths plus current pair/completion/proof and six continuity projections bind one bounded closure; dedicated material-SHA continuity follows.
-Rollback boundary: exact17 paths; original worker worktree remains unchanged.
-Exact changed manifest: `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-confirmation.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecConfirmation.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-confirmation.test.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecConfirmation.test.tsx`; `docs/reviews/CVF_NIS_T1J_DOCUMENTARY_WORKSHEET_EXPORT_WORKER_RETURN_2026-10-06.md`; `docs/reviews/evidence/cvf-nis-t1j-acceptance-execution-2026-10-06.json`; `docs/reviews/evidence/cvf-nis-t1j-implementation-binding-2026-10-06.json`; `docs/baselines/CVF_GC018_NIS_T1J_DOCUMENTARY_WORKSHEET_EXPORT_2026-10-06.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1J_DOCUMENTARY_WORKSHEET_EXPORT_2026-10-06.md`; `docs/reviews/CVF_NIS_T1J_DOCUMENTARY_WORKSHEET_EXPORT_COMPLETION_2026-10-06.md`; `docs/reviews/evidence/cvf-nis-t1j-local-independent-review-2026-10-06.json`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`.
+Rollback boundary: exact10 paths; original worker worktree remains unchanged.
+Exact changed manifest: `docs/reviews/evidence/cvf-nis-t1j-local-independent-review-2026-10-06.json`; `docs/reviews/CVF_NIS_T1J_DOCUMENTARY_WORKSHEET_EXPORT_COMPLETION_2026-10-06.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1J_DOCUMENTARY_WORKSHEET_EXPORT_2026-10-06.md`; `docs/baselines/CVF_GC018_NIS_T1J_DOCUMENTARY_WORKSHEET_EXPORT_2026-10-06.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/entries/nextAllowedMove.json`.
 
 ## Task Governance Routing Manifest
 
@@ -700,7 +700,7 @@ CLOSED_PASS_BOUNDED render-only consumer; ACCEPT_WITH_LOCAL_REPAIR in docs/revie
 | Roadmap state | N/A with reason: no roadmap changed | helper/general S2/BUILD deferred | N/A with reason: no roadmap mutation |
 | Registry JSON | docs/reviews/evidence/cvf-nis-t1j-local-independent-review-2026-10-06.json | 64 finite joins; 8 Local probe tests; 64 focused tests | PASS |
 | Registry Markdown | docs/reviews/CVF_NIS_T1J_DOCUMENTARY_WORKSHEET_EXPORT_COMPLETION_2026-10-06.md | actual bounded Local disposition | PASS |
-| External evidence digest | docs/reviews/evidence/cvf-nis-t1j-local-independent-review-2026-10-06.json | SHA256 b407f158b5223bb6f4e0f6cd13f629e724b3c3c33b7e0c25cac42a76dde3fb3a | PASS |
+| External evidence digest | docs/reviews/evidence/cvf-nis-t1j-local-independent-review-2026-10-06.json | SHA256 e45c184daa8089b04f10af9b1fb222fa1364cb9932ece123b1426f2186482a2c | PASS |
 | System loop interlock | N/A with reason: no runtime/catalog promotion | worksheet rendering only | N/A with reason: no runtime activation |
 | Session continuity | CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json | bounded closure; no automatic successor | PASS |
 

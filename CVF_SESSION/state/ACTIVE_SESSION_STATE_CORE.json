@@ -37,9 +37,9 @@
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_NIS_T1J_DOCUMENTARY_WORKSHEET_EXPORT_2026-10-06.md",
-    "baselineSha256": "0981692e934f8a5beb52bd5649cf8de67ced880b0ae18a8f407e1db878644d67",
+    "baselineSha256": "8b02a27af730c977729eb62c8da37084929397d2da059ce029dcc595d8029825",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1J_DOCUMENTARY_WORKSHEET_EXPORT_2026-10-06.md",
-    "workOrderSha256": "a57ba058337b88b426486b61688ffaf870f8ae45a0949d72a1dcf8504dd5dadd"
+    "workOrderSha256": "572fd199b2fd641b4a8eeb6e80006a555951f4ce7a8122801efe775df93e111e"
   },
   "currentAuthoritySyncReason": "T1J bounded native worksheet closure; Local valid-input repair, source-bound unfinished export; no helper/general S2/BUILD successor.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
