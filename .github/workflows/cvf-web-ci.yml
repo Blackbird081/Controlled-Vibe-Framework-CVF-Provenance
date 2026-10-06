@@ -12,6 +12,7 @@ on:
       - "EXTENSIONS/CVF_TRUTH_KERNEL/**"
       - "EXTENSIONS/CVF_TRUTH_FLOW/**"
       - "EXTENSIONS/CVF_REFINERY/**"
+      - "EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/**"
       - ".github/workflows/cvf-web-ci.yml"
   pull_request:
     paths:
@@ -24,6 +25,7 @@ on:
       - "EXTENSIONS/CVF_TRUTH_KERNEL/**"
       - "EXTENSIONS/CVF_TRUTH_FLOW/**"
       - "EXTENSIONS/CVF_REFINERY/**"
+      - "EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/**"
       - ".github/workflows/cvf-web-ci.yml"
 
 jobs:
@@ -73,6 +75,9 @@ jobs:
       - name: Install Refinery dependencies
         working-directory: EXTENSIONS/CVF_REFINERY
         run: npm ci
+      - name: Install MCP Server dependencies
+        working-directory: EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER
+        run: npm ci
       - name: Install Web UI dependencies
         run: npm ci
       - name: Dependency audit
@@ -81,6 +86,15 @@ jobs:
         run: npm run lint -- --max-warnings=0
       - name: Build
         run: npm run build
+        env:
+          NEXTAUTH_SECRET: 'release-gate-structural-build-secret'
+          NEXTAUTH_URL: 'http://localhost:3000'
+          GITHUB_ID: 'release-gate-structural-build-placeholder'
+          GITHUB_SECRET: 'release-gate-structural-build-placeholder'
+          GOOGLE_ID: 'release-gate-structural-build-placeholder'
+          GOOGLE_SECRET: 'release-gate-structural-build-placeholder'
+          CVF_OAUTH_PROVIDER: 'github'
+          CVF_OAUTH_IDENTITY_BINDINGS_JSON: '[{"provider":"github","providerAccountId":"structural-build-subject","userId":"structural-build-user","role":"viewer","orgId":"structural-build-org","teamId":"structural-build-team"}]'
       - name: Unit tests
         run: npm run test:run
       - name: Coverage (threshold gate)

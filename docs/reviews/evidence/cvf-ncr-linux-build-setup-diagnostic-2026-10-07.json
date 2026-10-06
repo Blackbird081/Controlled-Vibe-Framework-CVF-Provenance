@@ -1,0 +1,9 @@
+{
+  "stage": "source_archive",
+  "class": "missing_optional_source_path",
+  "exitCode": 128,
+  "providerCalls": 0,
+  "containerCreated": false,
+  "retryable": false,
+  "action": "verify optional readFile behavior and filter absent Git paths before bounded rerun"
+}

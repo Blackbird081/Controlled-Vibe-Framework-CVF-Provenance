@@ -769,6 +769,82 @@ MCP/governance behavior, release and public export remain unproved. No whole-CI
 closure or real-data/deploy authorization. Q001/Q004 remain action-specific;
 consume existing evidence and require a named gap for further source/proof work.
 
+## Clean Linux Install/Build And CI Closure Repair - 2026-10-07
+
+Operator continued P01/P05. Local maintainer/reviewer verified the selected CI
+closure using an isolated Docker source snapshot. Execution base:
+805d9c6c0dac495137571622f4ba6b5a4a588b70; initial worktree clean.
+This crosses midnight into 2026-10-07; the existing baseline remains the owner.
+
+Named gaps and consolidated repairs:
+1. Truth Kernel, Truth Flow, Refinery and Intent Validation lockfiles existed
+   locally but were excluded by .gitignore and absent from Git. First clean
+   install stopped with npm EUSAGE at Truth Kernel. Add exactly four ignore
+   exceptions and track the existing npm-generated locks without package version
+   changes. The existing graph test now checks Git index tracking, not only local
+   existence. Nine job subcases and a positive prefix control failed before the
+   locks were staged; final graph/profile tests pass.
+2. Web/Control Plane source imports the MCP caller; absent MCP node_modules left
+   cvf-guard-contract unresolved in cold TypeScript. Add MCP npm ci to all six
+   Web jobs and the dedicated workflow's dependency trigger; test requires this
+   named source consumer in addition to manifest-declared dependencies.
+3. Production-like build correctly denied absent OAuth selector/binding. Extend
+   scripts/cvf_release_web_runtime_isolation.py structural-only data with a
+   synthetic GitHub selector and viewer binding; mirror that canonical profile
+   in four CI build steps. Do not weaken auth.ts or use real credentials. Build
+   output is never launched for authentication, live execution or deployment.
+
+All newly admitted lockfile resolved URLs were checked for registry.npmjs.org,
+no URL credentials and no query string. Existing versions/bytes are retained.
+Ten staged source/config/lock paths pass the existing pattern scanner with zero
+findings/unreadable files; this is scoped pattern evidence, not secret clearance.
+Final nine structural tests plus 21 release-runner policy tests PASS (30 methods).
+No broad unit/coverage/release bundle or provider campaign was repeated.
+
+Harness diagnostics are preserved, not source defects hidden by a retry:
+- Setup archive request failed on one optional old override path; the consumer
+  returns empty content when absent. Filter only absent Git paths before retry.
+- Attempt1: missing committed lockfile; five package installs passed, then stop.
+- Attempt2: all selected installs passed; source snapshot omitted eight cross
+  package directories, so TypeScript failed. No product TypeScript repair.
+- Attempt3: MCP dependency install missing plus omitted taxonomy/Safety Runtime
+  source. Correct both the CI consumer and the harness before retry.
+- Attempt4: installs, typecheck and compile passed; page-data collection denied
+  missing structural Auth.js configuration. Repair the existing build profile.
+- Attempt5: all 13 stages PASS: eleven package installs, Web check and Web build.
+  Typecheck 21.69s; build 87.23s. Receipt result, not the wrapper's process exit,
+  controls acceptance. A separate cp1252 log-summary print failure was corrected
+  with ASCII-safe JSON and had no effect on container commands or build bytes.
+
+Evidence copies (raw receipt bytes including named Local diagnostic disposition):
+ docs/reviews/evidence/cvf-ncr-linux-build-setup-diagnostic-2026-10-07.json
+ docs/reviews/evidence/cvf-ncr-linux-build-attempt1-2026-10-07.json
+ docs/reviews/evidence/cvf-ncr-linux-build-attempt2-2026-10-07.json
+ docs/reviews/evidence/cvf-ncr-linux-build-attempt3-2026-10-07.json
+ docs/reviews/evidence/cvf-ncr-linux-build-attempt4-2026-10-07.json
+ docs/reviews/evidence/cvf-ncr-linux-build-pass-2026-10-07.json
+ docs/reviews/evidence/cvf-ncr-linux-build-scoped-secret-scan-2026-10-07.json
+
+Final sourceHead is the execution base plus the receipt's candidateIndexTree;
+archive SHA-256, selected paths, command results, versions and log hashes bind
+that pending candidate snapshot. Source manifests include only selected committed
+Git paths plus staged lock/profile changes. Missing optional override is declared;
+no complete repository corpus claim. Runtime archive/logs are retained privately.
+Node20 Debian image pinned by digest; Node v20.20.2, npm10.8.2, Linux x86_64;
+final limit4CPU/4GiB. No host node_modules, .env, .npmrc, user ledger or provider
+credential passed; structural placeholders apply only to build. Five created
+containers removed; image cache retained. No port published, service started,
+OAuth exchange or provider API call. No authenticated/governance behavior proof.
+
+Exact material scope18 paths: three workflows, .gitignore, four npm lockfiles,
+existing structural-env module and test file, this baseline, seven JSON copies.
+No schema/checker, package version, Auth.js logic or GitHub settings change.
+Local clean-install/typecheck/build PASS is not Ubuntu/GitHub required-check,
+full tests/coverage/security audit, live governance, release, public or deploy
+acceptance. P01/P05 stay bounded/open for dependent claims. Preserve prior
+NIS/ledger/browser/data/effect dispositions; no further install/build rerun without
+a named changed consumer or contradiction.
+
 ## Claim Boundary
 
 Local foundations only. No release or whole-CVF live governance readiness, full repository secret

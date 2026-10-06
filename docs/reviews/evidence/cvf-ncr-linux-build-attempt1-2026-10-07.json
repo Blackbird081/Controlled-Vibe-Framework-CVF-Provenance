@@ -1,0 +1,139 @@
+{
+  "sourceHead": "805d9c6c0dac495137571622f4ba6b5a4a588b70",
+  "sourceSelection": [
+    "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION",
+    "EXTENSIONS/CVF_GUARD_CONTRACT",
+    "EXTENSIONS/CVF_MODEL_GATEWAY",
+    "EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION",
+    "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION",
+    "EXTENSIONS/CVF_TRUTH_KERNEL",
+    "EXTENSIONS/CVF_TRUTH_FLOW",
+    "EXTENSIONS/CVF_REFINERY",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web",
+    "EXTENSIONS/CVF_v1.5.2_SKILL_LIBRARY_FOR_END_USERS",
+    "EXTENSIONS/CVF_v1.7.3_RUNTIME_ADAPTER_HUB/risk_models",
+    "governance/skill-library",
+    "docs/reference/agent_system_skills/generated/skill-index.json",
+    "docs/reference/agent_system_skills/control_plane/generated/skill-inventory.json",
+    "docs/baselines/archive/CVF_CORPUS_RESCREEN_D2_MATRIX_2026-04-15.md",
+    "docs/baselines/archive/CVF_CORPUS_RESCREEN_D3_TRUSTED_SUBSET_2026-04-15.md",
+    "docs/baselines/CVF_FRONT_DOOR_WAVE2_EXECUTION_NOTE_2026-04-21.md"
+  ],
+  "absentOptionalSourcePaths": [
+    "docs/baselines/CVF_FRONT_DOOR_WAVE1_EXECUTION_NOTE_2026-04-21.md"
+  ],
+  "sourceArchiveSha256": "57e635358c95b4142654f830cf2c0776e2552a064efccd39b2c6e8cfcafdf980",
+  "excludedPaths": [
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/.env.example"
+  ],
+  "profile": "isolated Node20 Debian Linux; no keys/env/ledger, no host ports",
+  "steps": [
+    {
+      "stage": "install_CVF_CONTROL_PLANE_FOUNDATION",
+      "command": [
+        "npm",
+        "ci",
+        "--no-audit",
+        "--no-fund"
+      ],
+      "directory": "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION",
+      "exitCode": 0,
+      "seconds": 3.88,
+      "logSha256": "7851c3e64f917a655bb6859abcae3ec8e6ac727eb98f4e018ee12cbc7a1ecff1",
+      "logPath": ".cvf/runtime/ncr-linux-build-20261006/install_CVF_CONTROL_PLANE_FOUNDATION.log"
+    },
+    {
+      "stage": "install_CVF_GUARD_CONTRACT",
+      "command": [
+        "npm",
+        "ci",
+        "--no-audit",
+        "--no-fund"
+      ],
+      "directory": "EXTENSIONS/CVF_GUARD_CONTRACT",
+      "exitCode": 0,
+      "seconds": 4.55,
+      "logSha256": "848241c4a74c5fbb32d7b9ebe54c4d8f4958c3bb388225fd1a6270771c881da6",
+      "logPath": ".cvf/runtime/ncr-linux-build-20261006/install_CVF_GUARD_CONTRACT.log"
+    },
+    {
+      "stage": "install_CVF_MODEL_GATEWAY",
+      "command": [
+        "npm",
+        "ci",
+        "--no-audit",
+        "--no-fund"
+      ],
+      "directory": "EXTENSIONS/CVF_MODEL_GATEWAY",
+      "exitCode": 0,
+      "seconds": 2.27,
+      "logSha256": "4db0f35b869083ce140e8499e1f6b9fbee203290c75e958b222f98ee5163f169",
+      "logPath": ".cvf/runtime/ncr-linux-build-20261006/install_CVF_MODEL_GATEWAY.log"
+    },
+    {
+      "stage": "install_CVF_LEARNING_PLANE_FOUNDATION",
+      "command": [
+        "npm",
+        "ci",
+        "--no-audit",
+        "--no-fund"
+      ],
+      "directory": "EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION",
+      "exitCode": 0,
+      "seconds": 76.14,
+      "logSha256": "79e6ae6f84f03d0ef8c2fd393332aa9aa41c61b41c2b2b1aa9fe55e60dc2b05d",
+      "logPath": ".cvf/runtime/ncr-linux-build-20261006/install_CVF_LEARNING_PLANE_FOUNDATION.log"
+    },
+    {
+      "stage": "install_CVF_EXECUTION_PLANE_FOUNDATION",
+      "command": [
+        "npm",
+        "ci",
+        "--no-audit",
+        "--no-fund"
+      ],
+      "directory": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION",
+      "exitCode": 0,
+      "seconds": 1.52,
+      "logSha256": "571f67c010522994fd3b71646821931812c078ca088cc216cf6c1398e0309398",
+      "logPath": ".cvf/runtime/ncr-linux-build-20261006/install_CVF_EXECUTION_PLANE_FOUNDATION.log"
+    },
+    {
+      "stage": "install_CVF_TRUTH_KERNEL",
+      "command": [
+        "npm",
+        "ci",
+        "--no-audit",
+        "--no-fund"
+      ],
+      "directory": "EXTENSIONS/CVF_TRUTH_KERNEL",
+      "exitCode": 1,
+      "seconds": 0.44,
+      "logSha256": "452aaaa106c4d5784de4f3661b78f8e275a37865ba2ccf69da8d90f45b1aea79",
+      "logPath": ".cvf/runtime/ncr-linux-build-20261006/install_CVF_TRUTH_KERNEL.log"
+    }
+  ],
+  "providerCalls": 0,
+  "result": "BLOCKED",
+  "cleanup": true,
+  "claimBoundary": "Local clean-install/build evidence only; not GitHub CI,Ubuntu,full tests,governance,release or deployment.",
+  "imageDigest": "node@sha256:8f693eaa7e0a8e71560c9a82b55fd54c2ae920a2ba5d2cde28bac7d1c01c9ba5",
+  "imageId": "sha256:8f693eaa7e0a8e71560c9a82b55fd54c2ae920a2ba5d2cde28bac7d1c01c9ba5",
+  "versions": [
+    "v20.20.2",
+    "10.8.2",
+    "x86_64"
+  ],
+  "diagnostic": {
+    "stage": "install_CVF_TRUTH_KERNEL",
+    "class": "install_or_build_failure",
+    "retryable": false,
+    "action": "inspect_owned_log_before_any_rerun"
+  },
+  "localDisposition": {
+    "stage": "install_CVF_TRUTH_KERNEL",
+    "class": "missing_committed_lockfile",
+    "retryable": false,
+    "action": "track four ignored locks and verify candidate index before a bounded clean rerun"
+  }
+}

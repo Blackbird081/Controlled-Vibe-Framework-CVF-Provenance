@@ -2,6 +2,7 @@
 import json
 import re
 import shlex
+import subprocess
 import unittest
 from pathlib import Path
 import yaml
@@ -39,7 +40,14 @@ def validate_job(job):
                 raise AssertionError(f"{package_dir}: unlocked install")
             if not (ROOT / package_dir / "package-lock.json").is_file():
                 raise AssertionError(f"{package_dir}: missing lockfile")
+            lock_path = (package_dir / "package-lock.json").as_posix()
+            tracked = subprocess.run(["git", "ls-files", "--error-unmatch", "--", lock_path],
+                                     cwd=ROOT, capture_output=True, check=False)
+            if tracked.returncode:
+                raise AssertionError(f"{package_dir}: lockfile not tracked in candidate index")
             installed.add(package_dir)
+    if target == WEB and Path("EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER") not in installed:
+        raise AssertionError("Web source consumer MCP dependency install missing")
     if target not in installed:
         raise AssertionError(f"{target}: target install missing")
 
@@ -77,10 +85,28 @@ class WebCiDependencyClosureTests(unittest.TestCase):
                "steps": [{"run": "npm ci --prefix ../CVF_TRUTH_KERNEL"}, {"run": "npm ci"}]}
         validate_job(job)
 
+    def test_build_steps_use_canonical_structural_auth_profile(self):
+        from cvf_release_web_runtime_isolation import WEB_BUILD_STRUCTURAL_ENV
+        count = 0
+        for name in WORKFLOWS:
+            data = yaml.safe_load((ROOT / ".github/workflows" / name).read_text(encoding="utf-8"))
+            for job in data["jobs"].values():
+                if job.get("defaults", {}).get("run", {}).get("working-directory") != WEB.as_posix():
+                    continue
+                for step in job["steps"]:
+                    if step.get("run") == "npm run build":
+                        count += 1
+                        self.assertEqual(step.get("env"), WEB_BUILD_STRUCTURAL_ENV)
+        self.assertEqual(count, 4)
+        bindings = json.loads(WEB_BUILD_STRUCTURAL_ENV["CVF_OAUTH_IDENTITY_BINDINGS_JSON"])
+        self.assertEqual(WEB_BUILD_STRUCTURAL_ENV["CVF_OAUTH_PROVIDER"], "github")
+        self.assertEqual(bindings[0]["provider"], "github")
+        self.assertEqual(bindings[0]["role"], "viewer")
+
     def test_dependency_changes_trigger_dedicated_web_workflow(self):
         # BaseLoader preserves YAML 'on' rather than interpreting it as YAML1.1 bool.
         data = yaml.load((ROOT / ".github/workflows/cvf-web-ci.yml").read_text(encoding="utf-8"), Loader=yaml.BaseLoader)
-        required = {WEB.as_posix() + "/**", *(p.as_posix() + "/**" for p in local_dependencies(WEB))}
+        required = {"EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/**", WEB.as_posix() + "/**", *(p.as_posix() + "/**" for p in local_dependencies(WEB))}
         for event in ("push", "pull_request"):
             with self.subTest(event=event):
                 self.assertTrue(required <= set(data["on"][event]["paths"]))

@@ -1,0 +1,195 @@
+{
+  "sourceHead": "805d9c6c0dac495137571622f4ba6b5a4a588b70",
+  "candidateIndexTree": "c5ba5bdec0d220fff4b341afad4e7e7f7ab02cfb",
+  "sourceSelection": [
+    "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION",
+    "EXTENSIONS/CVF_GUARD_CONTRACT",
+    "EXTENSIONS/CVF_MODEL_GATEWAY",
+    "EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION",
+    "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION",
+    "EXTENSIONS/CVF_TRUTH_KERNEL",
+    "EXTENSIONS/CVF_TRUTH_FLOW",
+    "EXTENSIONS/CVF_REFINERY",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web",
+    "EXTENSIONS/CVF_v1.5.2_SKILL_LIBRARY_FOR_END_USERS",
+    "EXTENSIONS/CVF_v1.7.3_RUNTIME_ADAPTER_HUB/risk_models",
+    "governance/skill-library",
+    "docs/reference/agent_system_skills/generated/skill-index.json",
+    "docs/reference/agent_system_skills/control_plane/generated/skill-inventory.json",
+    "docs/baselines/archive/CVF_CORPUS_RESCREEN_D2_MATRIX_2026-04-15.md",
+    "docs/baselines/archive/CVF_CORPUS_RESCREEN_D3_TRUSTED_SUBSET_2026-04-15.md",
+    "docs/baselines/CVF_FRONT_DOOR_WAVE2_EXECUTION_NOTE_2026-04-21.md"
+  ],
+  "absentOptionalSourcePaths": [
+    "docs/baselines/CVF_FRONT_DOOR_WAVE1_EXECUTION_NOTE_2026-04-21.md"
+  ],
+  "sourceArchiveSha256": "f18e48e1ef9b832af97fb529e6fea4dd4853d253964e0eb6628b19c42a1cae3c",
+  "excludedPaths": [
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/.env.example"
+  ],
+  "profile": "isolated Node20 Debian Linux; no keys/env/ledger, no host ports",
+  "steps": [
+    {
+      "stage": "install_CVF_CONTROL_PLANE_FOUNDATION",
+      "command": [
+        "npm",
+        "ci",
+        "--no-audit",
+        "--no-fund"
+      ],
+      "directory": "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION",
+      "exitCode": 0,
+      "seconds": 3.56,
+      "logSha256": "ea0eaecfa5743ef7e9fbeca93d8ccd22efb49a8f429929e42cb3ed42a0d9cb7d",
+      "logPath": ".cvf/runtime/ncr-linux-build-20261006/attempt2/install_CVF_CONTROL_PLANE_FOUNDATION.log"
+    },
+    {
+      "stage": "install_CVF_GUARD_CONTRACT",
+      "command": [
+        "npm",
+        "ci",
+        "--no-audit",
+        "--no-fund"
+      ],
+      "directory": "EXTENSIONS/CVF_GUARD_CONTRACT",
+      "exitCode": 0,
+      "seconds": 3.48,
+      "logSha256": "37d44db3c7a25d5511b57643b10562413ab65d2f6747dd855eea777607381595",
+      "logPath": ".cvf/runtime/ncr-linux-build-20261006/attempt2/install_CVF_GUARD_CONTRACT.log"
+    },
+    {
+      "stage": "install_CVF_MODEL_GATEWAY",
+      "command": [
+        "npm",
+        "ci",
+        "--no-audit",
+        "--no-fund"
+      ],
+      "directory": "EXTENSIONS/CVF_MODEL_GATEWAY",
+      "exitCode": 0,
+      "seconds": 1.69,
+      "logSha256": "17eddffbc64f4c666e989785e2bc239665a4ac5bc47316d41333d42ea6774a8c",
+      "logPath": ".cvf/runtime/ncr-linux-build-20261006/attempt2/install_CVF_MODEL_GATEWAY.log"
+    },
+    {
+      "stage": "install_CVF_LEARNING_PLANE_FOUNDATION",
+      "command": [
+        "npm",
+        "ci",
+        "--no-audit",
+        "--no-fund"
+      ],
+      "directory": "EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION",
+      "exitCode": 0,
+      "seconds": 78.0,
+      "logSha256": "79e6ae6f84f03d0ef8c2fd393332aa9aa41c61b41c2b2b1aa9fe55e60dc2b05d",
+      "logPath": ".cvf/runtime/ncr-linux-build-20261006/attempt2/install_CVF_LEARNING_PLANE_FOUNDATION.log"
+    },
+    {
+      "stage": "install_CVF_EXECUTION_PLANE_FOUNDATION",
+      "command": [
+        "npm",
+        "ci",
+        "--no-audit",
+        "--no-fund"
+      ],
+      "directory": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION",
+      "exitCode": 0,
+      "seconds": 2.22,
+      "logSha256": "76220257d0e015db359e57d087ea5dd2b915f31ff976cc6aac5d0a093cc818a1",
+      "logPath": ".cvf/runtime/ncr-linux-build-20261006/attempt2/install_CVF_EXECUTION_PLANE_FOUNDATION.log"
+    },
+    {
+      "stage": "install_CVF_TRUTH_KERNEL",
+      "command": [
+        "npm",
+        "ci",
+        "--no-audit",
+        "--no-fund"
+      ],
+      "directory": "EXTENSIONS/CVF_TRUTH_KERNEL",
+      "exitCode": 0,
+      "seconds": 2.06,
+      "logSha256": "fa5e67e1ccc58aa71785c02e1e1cb08ae11cfe1f32fd91f6b745e81ab902bc6d",
+      "logPath": ".cvf/runtime/ncr-linux-build-20261006/attempt2/install_CVF_TRUTH_KERNEL.log"
+    },
+    {
+      "stage": "install_CVF_TRUTH_FLOW",
+      "command": [
+        "npm",
+        "ci",
+        "--no-audit",
+        "--no-fund"
+      ],
+      "directory": "EXTENSIONS/CVF_TRUTH_FLOW",
+      "exitCode": 0,
+      "seconds": 1.75,
+      "logSha256": "451f63e70ce2ff8fbe4f2458064b4cb21fd548597e77252ee14ef252af3f77ed",
+      "logPath": ".cvf/runtime/ncr-linux-build-20261006/attempt2/install_CVF_TRUTH_FLOW.log"
+    },
+    {
+      "stage": "install_CVF_REFINERY",
+      "command": [
+        "npm",
+        "ci",
+        "--no-audit",
+        "--no-fund"
+      ],
+      "directory": "EXTENSIONS/CVF_REFINERY",
+      "exitCode": 0,
+      "seconds": 1.81,
+      "logSha256": "fa5e67e1ccc58aa71785c02e1e1cb08ae11cfe1f32fd91f6b745e81ab902bc6d",
+      "logPath": ".cvf/runtime/ncr-linux-build-20261006/attempt2/install_CVF_REFINERY.log"
+    },
+    {
+      "stage": "install_web",
+      "command": [
+        "npm",
+        "ci",
+        "--no-audit",
+        "--no-fund"
+      ],
+      "directory": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web",
+      "exitCode": 0,
+      "seconds": 34.89,
+      "logSha256": "6898bcf6d411291a5e5a34c910160c120d2957e90f751470c716dd9061bb0ea2",
+      "logPath": ".cvf/runtime/ncr-linux-build-20261006/attempt2/install_web.log"
+    },
+    {
+      "stage": "web_typecheck",
+      "command": [
+        "npm",
+        "run",
+        "check"
+      ],
+      "directory": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web",
+      "exitCode": 2,
+      "seconds": 25.17,
+      "logSha256": "412d718fb842a2b22e0c59c6491eb5cfe35b6f0c72010cde3f50c4f94d01d648",
+      "logPath": ".cvf/runtime/ncr-linux-build-20261006/attempt2/web_typecheck.log"
+    }
+  ],
+  "providerCalls": 0,
+  "result": "BLOCKED",
+  "cleanup": true,
+  "claimBoundary": "Local clean-install/build evidence only; not GitHub CI,Ubuntu,full tests,governance,release or deployment.",
+  "imageDigest": "node@sha256:8f693eaa7e0a8e71560c9a82b55fd54c2ae920a2ba5d2cde28bac7d1c01c9ba5",
+  "imageId": "sha256:8f693eaa7e0a8e71560c9a82b55fd54c2ae920a2ba5d2cde28bac7d1c01c9ba5",
+  "versions": [
+    "v20.20.2",
+    "10.8.2",
+    "x86_64"
+  ],
+  "diagnostic": {
+    "stage": "web_typecheck",
+    "class": "install_or_build_failure",
+    "retryable": false,
+    "action": "inspect_owned_log_before_any_rerun"
+  },
+  "localDisposition": {
+    "stage": "web_typecheck",
+    "class": "incomplete_test_source_snapshot",
+    "retryable": false,
+    "action": "add eight observed cross-package source directories before bounded rerun; no TypeScript product repair inferred"
+  }
+}

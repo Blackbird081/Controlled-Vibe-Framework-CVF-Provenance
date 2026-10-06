@@ -15,6 +15,8 @@ WEB_BUILD_STRUCTURAL_ENV = {
     "GITHUB_SECRET": "release-gate-structural-build-placeholder",
     "GOOGLE_ID": "release-gate-structural-build-placeholder",
     "GOOGLE_SECRET": "release-gate-structural-build-placeholder",
+    "CVF_OAUTH_PROVIDER": "github",
+    "CVF_OAUTH_IDENTITY_BINDINGS_JSON": '[{"provider":"github","providerAccountId":"structural-build-subject","userId":"structural-build-user","role":"viewer","orgId":"structural-build-org","teamId":"structural-build-team"}]',
 }
 
 # Production build, mock dev, and live dev must not share a Next.js distDir.
