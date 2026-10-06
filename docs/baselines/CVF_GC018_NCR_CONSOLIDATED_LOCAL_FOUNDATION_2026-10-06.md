@@ -1,0 +1,438 @@
+# NCR - Consolidated local foundation completion
+
+Memory class: FULL_RECORD
+
+docType: baseline
+
+Status: LOCAL_IMPLEMENTED_VERIFIED_BOUNDED
+
+Date: 2026-10-06
+
+## Purpose
+
+Operator requests continuous authorized execution rather than next per small
+repair. Complete two admitted local groups: P08 scanner defects, then composed
+verification/disposition of prior repairs. No whole-CVF completion is claimed.
+
+## Source Verification Block
+
+| Source | Disposition | Finding |
+|---|---|---|
+| scripts/run_cvf_release_gate_bundle.py, is_allowed_secret_line/check_secrets | ACCEPT | Test-path and placeholder substring blanket exemptions; UTF-8 errors ignored; unreadable files silently skipped; rglob traverses excluded trees before filtering |
+| scripts/scan_cvf_q001_candidate_secrets.py | ACCEPT | Existing exact path/line/hash fixture and strict read_lines owner can be reused; current fixture line positions need byte-preserving refresh after route test movement |
+| scripts/test_run_cvf_release_gate_bundle.py; scripts/test_scan_cvf_q001_candidate_secrets.py | ACCEPT | Existing negative fixture tests; full-tree test can be confined to disposable root without weakening its adversarial assertion |
+| Prior P06/P09/completion baselines dated 2026-10-06 | ACCEPT | Consume scoped PASS evidence; repeat only composed checks with changed shared consumers or final candidate differences |
+| docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md | ACCEPT | P08/W03-B; P04/P03/P07/P10/W05 retain route/data/effect-dependent boundaries |
+
+## Decision / Scope
+
+Fresh operator asks finish permitted work without repeated next requests. Local
+implements/verifies; no delegation. Exact product scope: scripts/run_cvf_release_gate_bundle.py,
+scripts/scan_cvf_q001_candidate_secrets.py, scripts/test_run_cvf_release_gate_bundle.py,
+scripts/test_release_secret_scan_boundaries.py (new hermetic fixture suite).
+This baseline and existing roadmap carry selection/results; preserve prior work.
+
+Reuse finite existing private fixture exceptions and existing nine candidate
+line fingerprints. Remove generic test-directory/placeholder bypasses. Never add
+an exception for a newly detected secret merely to turn a gate green. Refresh
+candidate line numbers only if unchanged whole-line hashes uniquely reconcile
+per expected path/count; hash set stays unchanged. Release scan uses strict
+existing text decoder, fails on unreadable targets, prunes declared skips before
+traversal and reports bounded counts without values. Preserve patterns and
+existing release result/SOT3 policy. No new checker, schema or exemption registry.
+
+Consolidated verification: negative fixtures on disposable trees, current
+Git-visible candidate scan (ignored local credentials excluded), relevant Web
+regressions and isolated structural build if dependencies permit. Consume prior
+live Alibaba observations; no release bundle/live repeat just for status repair.
+No public, deploy, production data, cutover, persistent store choice or new pilot.
+Pending governed authority/data/effect decisions stay parked; source/control
+repairs do not make those decisions on the operator's behalf.
+
+## Evidence / Verification Plan
+
+Red/green adversarial tests: synthetic secret in test/HTML/placeholder text must
+fail, exact fixture unchanged must pass, changed content/location must fail,
+unreadable text must fail, excluded directory must be pruned. Reports omit secret
+values. Actual candidate diagnostic and build are separate from live AI proof.
+At disposition name remaining checkpoints instead of repeatedly selecting tiny
+repairs. This packet does not replace the existing roadmap or its owners.
+
+## Current Runtime Freshness Verification
+
+Local 2026-10-06, HEAD 45b1a48d4 plus disclosed worktree: named runner exemption
+and traversal code and candidate FIXTURE_FINGERPRINTS/read_lines scanned directly.
+Current defect statements apply only to these functions. No upstream claim.
+
+## Verification Results
+
+Preflight PASS 85/85 before product edits, 12.31s (preflight.log); ADIF query zero
+candidates, no truncation (adif.json). New adversarial suite reproduced seven
+subcase failures in four methods against old source (red.log). Initial composed
+suite caught loss of private-prefix binding when tests injected an outside path
+into the private allowlist; restored that explicit prefix condition. Final
+100/100 Python test methods PASS, 0.945s (python-final-tests.log), including the
+entire runner, SOT3, candidate scanner and result suites. Full-tree adversarial
+test now uses a disposable root; no global scan or provider invocation.
+
+Nine candidate fixture line positions were reconciled using unchanged whole-line
+hashes, same path/hash multiplicities and exactly nine entries. No new exception.
+Current Git-visible candidate diagnostic PASS: 1056 scanned, two skipped by
+extension, zero unreadable, nine exact fixture exceptions, zero findings
+(candidate-scan.json). Ignored local credentials excluded; this is not clearance
+of private mirrors, ignored outputs, installed dependencies or operator HTML.
+Existing DLP-route wiring regression PASS 1/1, 24.95s, under the new request
+validator (dlp-route-regression.log); static wiring only, not real governance.
+
+Consume prior accepted local evidence from P06 body/type and P09/completion
+baselines; no sum of overlapping test counts, blanket re-test or new model survey.
+An isolated structural Web build runs through existing check_web_build with
+provider environment keys removed. Result is build-result.json/build.log;
+Auth.js structural placeholders do not establish real OAuth or deployed service.
+git diff --check PASS; final static confirmation is final-static.log.
+Final isolated structural build PASS (build-result.json; existing npm prebuild
+and webpack build, compile, TypeScript and page generation). Next generated two
+isolated-dist include entries and formatting in previously clean tsconfig.json;
+parsed content was verified as exactly that generated delta, then restored to
+its original HEAD bytes. No tsconfig product change retained. No deployment or
+production OAuth proof inferred. Static autorun final-static.log PASS 85/85,
+27.49s before this result-only update; focused final metadata checks follow in
+metadata-gates.log (final focused gates PASS after encoding notes).
+Text Encoding Exception: Vietnamese fixtures remain for UTF-8/input fidelity;
+fixture line positions retain the same nine path/hash entries. Two local groups complete; whole roadmap remains
+open at the existing decision frontier. No repeated next required to complete
+these repairs, no material commit or public sync in this batch.
+
+## Remaining Decision Frontier
+
+Operator continuous-work instruction is retained: complete admitted local work
+and its repairs without another next; a completed small change is not a reason
+to stop. Subsequent jobs still use existing owners and actual action authority.
+The two selected local groups are scanner repair and composed verification;
+they are not a fixed count of the remaining whole CVF roadmap.
+
+| Existing owner/checkpoint | Disposition after this batch | Concrete prerequisite |
+|---|---|---|
+| P06 / request shape and bytes | Selected consumers verified bounded | Other nested contracts/routes need a named gap; no complete P06 claim |
+| P08 / exact exceptions and candidate | Scanner repair and current candidate verified bounded | Full release/artifact profile and any other findings require disposition; no blanket clearance |
+| P09 / result truth | Local result/exit consistency verified | Actual release evidence still required for release claim |
+| P04 / DLP invocation wiring | Current deterministic regression verified | Real provider route/governance proof remains separate from direct adapter observations |
+| P03/P07/P10, Q001/Q004 | Profile A retained; data/effect implementation parked | Authoritative store/instance, writer model, retention/backup/RPO/RTO and cost/retry contract before stateful real-data work |
+| P01/P05, Q006 | Local structural build separate from remote CI | Actual candidate SHA, required CI jobs/settings and remote authority for CI/release claims |
+| W05/W06 / acceptance, live pilot | No automatic effect or acceptance | Scope-specific profile/effect and actor authority, not an ALLOW response |
+| P11 / public/host/deploy | Parked | Operator target/profile/budget/data-region and action authority |
+
+All continued requests must distinguish an actionable source repair from these
+data/effect decisions. No repeated next is needed for work already admitted;
+no new runtime/schema/checker/pilot is inferred merely to fill the roadmap.
+
+## Checker Source Read-Ahead Block
+
+| Field | Value |
+|---|---|
+| applicableCheckersRead | governance/compat/check_markdown_structural_completeness.py; governance/compat/check_governed_artifact_checker_read_ahead.py; governance/compat/check_agent_packet_authority_and_encoding.py; governance/compat/check_agent_operation_trace.py; governance/compat/check_adif_defect_registry_disclosure.py; governance/compat/check_public_export_disposition.py; governance/compat/check_core_guard_self_protection.py |
+| literalTokensReviewed | Source/Decision/Evidence/Claim Boundary; read-ahead fields; complete trace labels; Resolver query; Returned defects; Public Export Disposition |
+| gateRunPurpose | Confirm authored bounded scope/evidence; not first discovery of literals |
+| claimBoundary | Static packet admission, not release/governance proof |
+
+## ADIF Defect Registry Disclosure
+
+Resolver query: taskClass=`Worker execution`, role=`worker`, lifecyclePhase=`pre-implementation`
+
+Returned defects: NONE_RETURNED. Zero candidates and no truncation.
+
+## Agent Operation Trace Block
+
+| Field | Evidence |
+|---|---|
+| Actor | Local maintainer/reviewer |
+| Provider or surface | private workspace, no provider |
+| Session or invocation | NCR-CONSOLIDATED-20261006 |
+| Working directory | repository root |
+| Command or tool surface | Python hermetic tests, dry-run CLI, static autorun |
+| Target paths | named paths above and existing roadmap |
+| Allowed scope source | operator next and existing P09 backlog |
+| Before status evidence | prior worktree delta retained |
+| After status evidence | 100 Python tests, candidate scan, DLP regression and isolated build PASS; static 85/85 PASS |
+| Diff evidence | scoped git diff |
+| Approval boundary | local reversible maintenance only |
+| Claim boundary | runner result truth, not release readiness |
+| Agent type | Local |
+| Invocation ID | NCR-CONSOLIDATED-20261006 |
+| Expected manifest | runner/scanner/tests/baseline/roadmap |
+| Actual changed set | same expected set plus untouched prior delta |
+| Manifest delta | MATCH intended scope |
+
+
+## Single-Host Continuation - 2026-10-06
+
+Operator approved the proposed local single-machine, single-operator direction
+with "already audited and selected, do it". Local owns implementation/disposition.
+This selects the next development profile, not a production data source or
+cutover. Active JSON deployment remains unchanged; use existing SQLite owner.
+
+Source verification: scripts/reconcile_cvf_q001_receipt_attempt.py ACCEPT: JSON-only
+read prevented the existing diagnostic from following the SQLite profile.
+EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/ledger_layer/sqlite_ledger.py
+ACCEPT: existing schema/chain checks and import_json/backup_to/restore_backup.
+Accepted publication correction at
+ docs/reviews/CVF_CVF_NCR_Q001_SQLITE_TARGET_PUBLICATION_COMPLETION_2026-09-30.md
+is reused; no storage rewrite or repeated transaction-proof campaign.
+
+Exact delta: scripts/reconcile_cvf_q001_receipt_attempt.py and its existing
+scripts/test_reconcile_cvf_q001_receipt_attempt.py. SQLite reads mode=ro/query_only
+inside one read transaction, using owner schema and decoded-chain validation.
+Missing files are not initialized. Full-chain verification precedes exact-ID
+classification. snapshotFormat identifies JSON/SQLITE; authoritative=false and
+safeToRetry=false always. SQLite ledgerSha256 stays null because hashing only the
+main file omits WAL commits. Matched blockHash remains the identity evidence.
+No new retry, engine endpoint, acceptance, schema, storage or write capability.
+
+Operational sequence for the selected profile:
+
+1. Continue Profile A for the running instance. Choose an exact quiescent copied
+   JSON source and absent .sqlite destination before any actual migration; no
+   source path is guessed or read from ambient settings.
+2. From the engine directory, use existing SqliteLedger.import_json(source, target).
+   Verify returned count/tip and source_sha256; source must remain unchanged.
+3. Use SqliteLedger(target).backup_to(absent_backup_path), not a plain main-file
+   copy: SQLite backup includes a consistent committed view when WAL is active.
+4. Use SqliteLedger.restore_backup(backup, absent_restore_path). Reconcile all
+   expected request IDs, count/tip and references before replacing any instance.
+   Existing targets must not be overwritten; retain reported staging residue.
+5. Run from repository root:
+   python scripts/reconcile_cvf_q001_receipt_attempt.py --ledger EXACT_RESTORED.sqlite --attempt-id artifact-proof-EXACT_ID --json
+   Exit 0 means FOUND_ONE in that read snapshot; exit 2 includes absence/invalid.
+   Neither is an acceptance decision or automatic retry grant.
+6. Do not enable the running engine's .sqlite binding until the exact source,
+   instance/writer, backup location/access/key custody, retention/deletion and
+   RPO/RTO are resolved for that data. One local backup is not off-machine backup.
+
+Verification: five focused methods PASS, including a real subprocess CLI across
+synthetic migration, consistent backup and clean restore; request/block identity
+and unchanged JSON source confirmed. WAL commit visibility, uncommitted exclusion,
+main-file preservation, absent/corrupt/version/index-content rejection and no raw
+event output covered. Runtime log:
+.cvf/runtime/ncr-single-host-20261006/reconciliation-tests.log.
+No user ledger, credential or provider was accessed. This is storage diagnostic
+and synthetic recovery evidence, not AI-governance proof, rollout or RPO/RTO.
+Final structural, checker read-ahead, authority/encoding, ADIF and dispatch
+quality gates PASS; git diff --check PASS. Logs are in that runtime directory.
+The prior two completed local groups remain completed; this is a new approved
+continuation under existing owners. Q001/Q004 remain open for real-data operation.
+
+## Docker Storage Integration Evidence - 2026-10-06
+
+Operator requested Docker verification and authorized continuation. Local executes
+and evaluates; no worker delegation. Named consumers are api/server.py and the
+existing SQLite ledger plus the updated reconciliation CLI. No product code delta.
+Source is mounted read-only, a new synthetic data volume is named per invocation,
+HTTP binds only to 127.0.0.1 on a Docker-assigned port. No ambient API keys, user
+ledger, Web configuration or provider credentials are passed to the container.
+
+Evidence: docs/reviews/evidence/cvf-ncr-single-host-docker-storage-2026-10-06.json.
+Final probe PASS 9/9: evaluate HTTP 200; validated exact ID; restart HTTP readiness;
+unchanged count/tip/IDs across restart; same-volume container recreation preserves
+state; client response loss after engine HTTP 200; exactly one committed lost-response
+ID with safeToRetry=false; backup/restore into a new clean volume retains all IDs,
+count and tip; restored engine can append a new unique attempt. Reconciliation
+uses the actual container CLI and validates hashes, not merely the HTTP receipt.
+
+Loss injection consumes the upstream response then closes the downstream socket.
+It proves this ordered ambiguity case, not arbitrary transport/power-loss recovery.
+The harness sends no retry. This does not prove a Web consumer universally avoids
+retry. Engine storage is deterministic; no real provider call or AI-governance,
+artifact acceptance, OAuth, browser walkthrough or complete release claim.
+
+Initial run passed eight storage checks but waited on an obsolete dynamic host
+port after restart. Its raw report remains docker-proof-initial.json under the
+ignored runtime directory. Local repaired only the probe port refresh and added
+an explicit HTTP-ready assertion; bounded final confirmation passed all nine.
+This second run is justified by that missing restart HTTP oracle, not a broad
+repeat of accepted storage proof. Final source hashes are unchanged after run.
+
+The test image was built from Python 3.11 slim and existing engine requirements;
+actual image ID and installed FastAPI/Uvicorn/Pydantic versions are in evidence.
+This temporary dependency resolution is not a locked deployment profile. Exact
+probe containers and both named synthetic volumes were removed after each run;
+no broad Docker cleanup. Build/probe logs remain .cvf/runtime/ncr-docker-20261006.
+Final structural, read-ahead, authority/encoding, ADIF and dispatch-quality
+gates PASS; git diff --check PASS. No real-data migration, instance cutover,
+backup custody/retention choice or RPO/RTO claim follows. Profile A remains active and Q001/Q004 operational gates
+stay open; single-host Docker storage integration is now verified bounded.
+
+## Web-To-Docker Engine Composition - 2026-10-06
+
+Operator requested continuation after Docker storage verification. Local selects
+current Web export consumer integration, reusing the accepted system-chain probe
+and prior storage/recovery evidence. Two exact changed paths:
+scripts/probe_cvf_q001_synthetic_system_chain.py and its existing test file.
+No Web/engine product repair, runtime import, new storage or actual-data action.
+
+Source verification ACCEPT: the existing probe staged only git ls-files default
+tracked paths, omitting the new untracked bounded-request-body.ts consumed by the
+current Web export route. Staging now includes Git-visible untracked source,
+excludes ignored/env/current JSON ledger, skips tracked deletions, deduplicates
+paths and rejects symlinks/out-of-root resolution. Existing function basename is
+retained; evidence scope/count labels now identify the actual worktree selection.
+This is a copy inventory, not a source-corpus completeness or all-files-read claim.
+
+The probe strips provider API_KEY variables from Web/engine child environments,
+uses a fresh ephemeral synthetic service token and isolated SQLite data, and adds
+an explicit prebuilt Docker engine mode. Source bind is read-only, data bind is
+a new ignored temporary directory, HTTP ports bind to loopback. Engine recreation
+uses the same disposable data bind; Docker volumes/backup proof is separately in
+the preceding packet. Explicit container removal is tied to each owned process.
+No active user service, config, JSON ledger or provider key is mounted/passed.
+
+Evidence: docs/reviews/evidence/cvf-ncr-web-docker-system-chain-2026-10-06.json.
+Four staging/oracle/proxy fixture tests PASS. Actual host and Docker-engine Web
+HTTP probes both exit 0: unsigned service request 401; signed export receives
+PRESENT with exact request-ID/block/hash linkage; artifact stays DRAFT_UNACCEPTED;
+engine restart/recreation retains count/tip/exact ID; malformed and unavailable
+upstream classify INVALID_RESPONSE/UNAVAILABLE; response held beyond outer timeout
+returns TIMED_OUT while committed ID remains FOUND, with safeToRetry=false.
+Wrong ID/store are absent; exactly two engine forwards per probe, no replay.
+Staged consumer hashes reconcile with unchanged source after both runs.
+
+One real Alibaba call, qwen3.8-flash through the existing Alibaba-compatible
+endpoint, HTTP 200, exact OK and stop, provider-reported usage 91 tokens. Synthetic
+prompt only; no keys, signed headers, raw provider body or private content retained.
+This separate availability receipt does not prove the export invokes a model or
+turn deterministic engine checks into semantic AI-governance/release proof.
+No model ranking/default selection, provider retry or full release gate invoked.
+
+Both runs used disposable copied source with existing installed dependencies;
+1200 Git-visible files staged each. Web/engine/proxy processes stopped and scratch
+contexts exited cleanly; Docker test containers removed. Historical staging
+residue from other runs is not swept. Logs: .cvf/runtime/ncr-web-chain-20261006.
+The old accepted 2026-09-29 proof remains historical; no borrowed freshness.
+Host variant and Docker-engine variant are separate, neither is a Docker-hosted
+Web/OAuth/browser/noncoder UX test or artifact acceptance. Actual-data migration,
+backup/retention custody, RPO/RTO and public/deploy decisions remain separate.
+Final structural, checker read-ahead, authority/encoding, ADIF and dispatch
+quality gates PASS; git diff --check PASS. Logs accompany runtime evidence.
+
+## UI Continuation And Browser Blocker - 2026-10-06
+
+Operator requested the next admitted move after Web HTTP composition. Local
+selected the existing Work Transfer / ArtifactExportPanel browser walkthrough.
+No browser was available to the enabled computer-use surface: inventory returned
+no browsers; createBrowserTab(iab) and getBrowser(chrome) each returned Browser
+is not available. No browser page, server login or UI interaction was performed.
+Browser walkthrough verdict: BLOCKED_TOOL_UNAVAILABLE. Browser/OAuth/noncoder UX
+remains NOT_EVALUATED; existing HTTP receipts do not replace that evidence.
+
+Local continued independent source inspection of the existing panel under
+DESIGN.md accessible-label expectations. Source verification ACCEPT:
+EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.tsx,
+FieldLabel and seven input/select/textarea fields. Visible labels lacked htmlFor
+and controls lacked id, although controls had aria-label names. Therefore the
+visible label had no associated control. Scope is a form-markup repair, not a
+claim that screen-reader naming was absent or a browser focus defect was observed.
+
+Exact product delta: that panel and existing ArtifactExportPanel.test.tsx.
+FieldLabel now requires htmlFor; useId supplies a per-panel prefix; all seven
+controls use matching IDs. Existing aria-label, values, event handlers, preview,
+requests, receipt/copy/download and authority remain unchanged. Two panel instances
+in each language verify 14 associated labels and distinct control IDs. No new
+exporter, schema, checker, acceptance action or provider call is introduced.
+
+Verification: two new English/Vietnamese structural cases first failed with
+label.control=null. An initial implementation command used the wrong working
+path and left source unchanged; its intermediate suite remained two failures
+and 68 passes. Local corrected the command path and applied the intended edit.
+Final component suite PASS 70/70, 17.41s, in
+.cvf/runtime/ncr-ui-labels-20261006/final-green.log. This is jsdom UI structure
+proof only, not native label-click/focus, layout, browser sandbox, accessibility
+certification, semantic governance or real-noncoder completion-rate evidence.
+TypeScript and lint PASS (exit 0); structural/read-ahead/authority-encoding/ADIF/
+dispatch-quality and file-size gates PASS; git diff --check PASS. Logs are in that
+runtime directory. The browser block is an environment capability gap, not an inferred
+permission requirement; no extra user confirmation or duplicate live run fixes it.
+
+Next allowed UI evidence remains an actual browser on the isolated synthetic
+profile. Do not substitute terminal-driven browser automation for an unavailable
+approved UI surface, invent screenshots, or report the blocked walkthrough PASS.
+Prior provider/storage/HTTP evidence stays bounded and is not repeated for this
+markup change. Real-data migration, public/deploy and operational checkpoints stay
+unchanged. The independently actionable markup repair is implemented/verified;
+the selected browser walkthrough is not complete. Automatic approval review rejected
+a shell cleanup of empty app-local scratch directories as blocked by policy; the
+empty directories are left in place, no cleanup success claimed.
+
+## Consolidated Local Review Packet - 2026-10-06
+
+Local reviewed the pending implementation by capability cluster under
+EVALUATE_RETURNED_EVIDENCE_NOT_RECREATE_IMPLEMENTATION. This is single-agent,
+role-declared technical disposition, not a distinct independent reviewer or
+formal whole-roadmap closure. No per-row corpus review or full release claim.
+Current base is 45b1a48d4f97e221adcd3e3bd21610b54d6f5f5a; all earlier changes
+remain pending in the worktree, no staging, commit, push or session sync yet.
+
+| Cluster | Disposition | Evidence consumed and remaining boundary |
+|---|---|---|
+| Agent continuation / audience briefs | LOCAL_REVIEWED_BOUNDED | Existing lifecycle/root/downstream bindings and brief UI/helper receipts; confirmed source and permitted INTAKE preserved; semantic completeness/BUILD authority not inferred |
+| P06 ingress / normalization | LOCAL_REVIEWED_BOUNDED | Prior byte/type/route regressions; shape check precedes normalization and oversized input precedes store/provider; selected consumers only |
+| Alibaba completion / final response | LOCAL_REVIEWED_BOUNDED | Prior adapter/live/final-response evidence; partial or empty output not accepted, usage retained; no provider ranking or total retry-cost/hard-budget claim |
+| P08 / P09 scanner and result truth | LOCAL_REVIEWED_BOUNDED | Exact existing nine fingerprints and strict read/pruned-scope evidence; text/JSON/exit consistency; current candidate scan, not whole private tree clearance |
+| Single-host diagnostics / Docker-Web chain | LOCAL_REVIEWED_BOUNDED | Existing SQLite owner and host/Docker HTTP receipts; backup/restore and ambiguity preserved; real-data operational contract remains open |
+| UI label association | LOCAL_REVIEWED_BOUNDED | 70 component tests, typecheck/lint; linked labels with unique IDs; actual browser walkthrough BLOCKED_TOOL_UNAVAILABLE |
+
+One consolidated finding set: Docker probe help promised prebuilt-only operation
+but run lacked pull suppression; owned cleanup could return early when its client
+had exited. Local repaired only scripts/probe_cvf_q001_synthetic_system_chain.py
+and its existing test. --pull=never now fails missing local images without pull;
+cleanup inspects only cvf-q001-web-* owned names even after client exit, distinguishes
+already-removed from unverifiable daemon state and rejects unrelated names.
+Six probe regressions PASS, 2.76s. Actual missing-image Docker negative exits 125
+with No such image; a real owned running container was removed after simulated
+client exit (real-cleanup.json). These are acquisition/cleanup proofs, not new
+Web/provider evidence. Earlier HTTP/storage receipts remain unchanged and bounded.
+No repeated model call or broad product test campaign for this finding set.
+
+Current candidate scan PASS: 1056 scanned, two extension skips, zero unreadable,
+nine existing exact fixture exceptions, no findings; ignored credentials excluded.
+Implementation commit-shape plan PASS after selecting the CLI's implementation
+mode; no mixed material/session paths. Initial aggregate autorun result 84/85:
+only core large-scope authorization was missing at 48 pending changed files.
+No protected-path authorization failure; existing AGENTS.md authorization remains
+in the roadmap. The explicit operator batch instruction is recorded below and
+the failed gate then passed. Final aggregate preflight PASS 85/85, 14.93s,
+recorded in final-static.log; result-only packet/hash refresh follows.
+
+Packet manifest: docs/reviews/evidence/cvf-ncr-local-review-manifest-2026-10-06.json.
+It names the exact pending paths, SHA-256 file bytes, evidence receipt hashes and
+base. The manifest's own hash is excluded to avoid self-reference. It inventories
+the selected changed set, not the repository corpus or files fully read. Hashes
+must be regenerated after any later source/packet change; this is no immutable
+commit or independent semantic acceptance proof. Logs are under
+.cvf/runtime/ncr-review-packet-20261006; no build/live repeat for status alone.
+Review disposition: LOCAL_REVIEWED_BOUNDED_PENDING_COMMIT, not CLOSED_PASS.
+Actual browser access and actual-data source/backup/custody/RPO/RTO, deployment
+and public actions remain outside this material preparation. No automatic pilot,
+artifact acceptance or upstream absorption successor is opened.
+
+## Large-Scope Change Authorization
+
+Changed-file ceiling: 49 exact manifest paths, including this existing baseline
+and one new review manifest; no extra implementation or governance paths.
+Rename/delete ceiling: 0.
+Operator authorization: 2026-10-06 instruction to handle the admitted work fully
+without repeated next per small repair, followed by approval of single-host
+selection, Docker tests and repeated continuation. This records existing batch
+authority; it grants no data cutover, new runtime, public or deploy effect.
+Rollback boundary: only the manifest-bound local maintenance delta after
+45b1a48d4; preserve prior committed T1J/SQLite work, active continuity, running
+JSON ledger, private credentials and all unrelated or ignored operator material.
+Existing AGENTS.md documentary authorization remains owned by the roadmap's
+Core Guard Self-Protection Authorization - Agent Continuation Guidance.
+
+## Claim Boundary
+
+Local foundations only. No release, live AI governance, full repository secret
+clearance, artifact acceptance or rollout completion. Prior checkpoints retained.
+
+## Public Export Disposition
+
+DEFERRED_PRIVATE_ONLY - consolidated local repair and verification.

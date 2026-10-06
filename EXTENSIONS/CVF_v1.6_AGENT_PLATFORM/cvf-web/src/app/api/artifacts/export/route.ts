@@ -37,6 +37,29 @@ const FIELD_LIMITS = {
 } as const;
 const MAX_BODY_BYTES = 128_000;
 
+async function readBoundedBody(request: NextRequest): Promise<string | null> {
+  if (!request.body) return '';
+  const reader = request.body.getReader();
+  const decoder = new TextDecoder();
+  let byteLength = 0;
+  let bodyText = '';
+  try {
+    while (true) {
+      const { done, value } = await reader.read();
+      if (done) return bodyText + decoder.decode();
+      byteLength += value.byteLength;
+      if (byteLength > MAX_BODY_BYTES) {
+        // Do not wait for producer cleanup before rejecting oversized input.
+        void reader.cancel().catch(() => undefined);
+        return null;
+      }
+      bodyText += decoder.decode(value, { stream: true });
+    }
+  } finally {
+    reader.releaseLock();
+  }
+}
+
 interface ArtifactVerificationItem {
   label: string;
   passed: boolean;
@@ -258,7 +281,10 @@ export async function POST(request: NextRequest) {
   if (Number.isFinite(declaredLength) && declaredLength > MAX_BODY_BYTES) {
     return NextResponse.json({ success: false, error: 'Artifact export body exceeds size limit.' }, { status: 413 });
   }
-  const bodyText = await request.text();
+  const bodyText = await readBoundedBody(request);
+  if (bodyText === null) {
+    return NextResponse.json({ success: false, error: 'Artifact export body exceeds size limit.' }, { status: 413 });
+  }
   const routeAuth = await authorizeRouteGovernanceProof(
     request,
     bodyText,

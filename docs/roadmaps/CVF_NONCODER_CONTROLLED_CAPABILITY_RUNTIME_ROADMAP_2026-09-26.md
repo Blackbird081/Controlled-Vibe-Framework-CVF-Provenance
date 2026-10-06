@@ -34,6 +34,156 @@ Pattern absorption và runtime integration phải được đánh giá độc l�
 
 D100 and section 2.2 of `docs/reference/CVF_KNOWLEDGE_ABSORPTION_AND_EXTENSION_PRIORITY_STANDARD_2026-04-13.md` clarify that one bounded job may use complementary repositories from the outset. Select the smallest sufficient composition and preserve applicable local, self-hosted and hosted/API options for user choice, with readiness, rights, cost and data boundaries. No source alone must meet the whole job; no execution permission follows from optional design.
 
+### Agent Continuation Direction - Operator Decision 2026-10-06
+
+Apply Agent Continuation And Action Readiness in
+`docs/reference/CVF_GOVERNED_WORK_LIFECYCLE_AND_DESIGN_CONTROL_STANDARD_2026-06-11.md`.
+Noncoder/upstream specs are intake inputs, not a demand for complete implementation
+detail. Receiving agents read sources, resolve ordinary authorized details and
+route material unknowns to the right owner; governed SPEC/WORK ORDER and locked
+design/authority remain intact. Outputs support fast agent and human continuation.
+Reuse owners and current slice/evidence for bounded verification, then continue
+the wider upgrade backlog. No new schema, checker, pilot or broad audit follows
+from this direction; no helper/S2/BUILD, P11 or runtime effect is released.
+
+### Spec Kit / NIS Roadmap Disposition After T1J - 2026-10-06
+
+Operator continuation: assess remaining Spec Kit value under the agreed agent
+continuation rule and resume the existing roadmap without an automatic NIS
+successor. This is Local planning disposition, not repository-wide absorption
+closure, source freshness verification or executable-capability acceptance.
+Reuse the selected-source evidence at historical Spec Kit pin
+`ae5ade7234be5cb1d975f736c4e06dd46d1326d6`; do not claim current upstream HEAD.
+
+| Selected contribution | Current disposition | Roadmap treatment |
+|---|---|---|
+| Clarify/checklist: explicit unknowns, conflicts, delegation and effective-rule projection | T1D selected comparison and T1E native consumer accepted bounded | Reuse existing review/export owners; no repeat source survey or requirement to resolve every unknown before intake |
+| Source-bound receiving material | T1I documentary handoff and T1J unfinished worksheet export accepted bounded | Receiving agent continues permitted clarification; no browser/novice UX, durable acceptance or BUILD proof inferred |
+| Clarify/plan/analyze: question filtering, technical research, answer updates and source-to-task consistency | Selected guidance converted into lifecycle/native/portable handoff; no changed-agent-behavior, NIS planning runtime or semantic-sufficiency proof accepted | Existing R0/R1/R2 backlog retains decomposition, dependency and validation links; implementation still needs a named consumer gap and bounded acceptance need |
+| Proposed deterministic bridge/helper and cost comparison | T1F Local DOC_RECEIVER_FIRST_HELPER_DEFERRED; comparative trial not executed, costs UNKNOWN | No product helper merely to complete the pattern; revisit only if the receiving route demonstrates a material gap and comparative value can be measured |
+| Spec Kit command/runtime integration | Rejected for the selected native clarification slice; plan/tasks runtime remains conditional | No import, install or invocation; runtime fit is a separate job/authority/evidence decision, not a repository-wide rejection |
+
+Controlling evidence: `docs/reviews/CVF_NIS_T1D_SELECTED_CAPABILITY_CONSUMER_CONTRACT_COMPLETION_2026-10-05.md` (LD-3/LD-4),
+`docs/reviews/CVF_NIS_T1E_EXPLICIT_OPEN_ITEMS_CONSUMER_COMPLETION_2026-10-05.md`,
+`docs/reviews/CVF_NIS_T1F_BUILD_READY_BRIDGE_CONTRACT_COMPLETION_2026-10-05.md` (Local choices/BC-V1),
+`docs/reviews/CVF_NIS_T1I_SOURCE_BOUND_DOCUMENTARY_HANDOFF_COMPLETION_2026-10-05.md` and
+`docs/reviews/CVF_NIS_T1J_DOCUMENTARY_WORKSHEET_EXPORT_COMPLETION_2026-10-06.md`.
+
+Existing receiving owners include `docs/reference/agent_system_skills/registry/entries/cvf-engineering-spec-driven-development.json`
+and `docs/reference/agent_system_skills/registry/entries/cvf-engineering-planning-task-breakdown.json`.
+Their ACTIVE status carries bounded advisory guidance and receipt-backed package
+execution within existing authority; it does not prove NIS input integration,
+complete plans or task execution. Loading or reading their bodies grants no effects.
+
+Selected conversion evidence and operator scope:
+`docs/baselines/CVF_GC018_INTAKE_WORKING_BRIEF_MODEL_COMPARISON_2026-10-06.md`.
+Reuse observed receiving defects for question filtering, technical ownership and
+answer integration; they do not require richer baseline specs or another model
+probe. Lifecycle now carries permitted planning trace and consistency guidance;
+actual receiving-to-planning integration remains conditional in existing owners.
+
+Receiving-to-planning guidance and bounded draft disposition are recorded in the
+existing INTAKE baseline; stop that sample and return to the wider backlog.
+Operator continuation selected P06 artifact/knowledge and execute ingress repairs:
+bounded body reads (execute/knowledge 16/4 MiB), then pre-normalization payload shape.
+Scope/results: `docs/baselines/CVF_GC018_NCR_P06_BOUNDED_BODY_READ_2026-10-06.md`
+and `docs/baselines/CVF_GC018_NCR_P06_KNOWLEDGE_INGEST_TYPES_2026-10-06.md`.
+Reuse the existing routes/tests/contracts; no new intake schema, helper service
+or NIS successor. These local repairs do not close Q001/Q004, send/B2, P11,
+deployment/profile or live governance checkpoints; return to the wider backlog.
+Completion: `docs/baselines/CVF_GC018_NCR_ALIBABA_TRUNCATED_COMPLETION_2026-10-06.md` (bounded adapter evidence).
+P09: `docs/baselines/CVF_GC018_NCR_P09_RELEASE_RESULT_CONSISTENCY_2026-10-06.md` (result truth only).
+Operator directs continuous admitted work and selects single-host development; P08/composed results, SQLite snapshot reconciliation and real-data checkpoints:
+`docs/baselines/CVF_GC018_NCR_CONSOLIDATED_LOCAL_FOUNDATION_2026-10-06.md`.
+
+
+### Receiving-To-Planning Consumer Repair - 2026-10-06
+
+Operator approval: proceed with the agreed common receiving-to-planning work.
+Local source inspection found an actual conflict in the existing Full Mode
+exporter: unconditional confirmation before Design, blanket technical-choice
+question bans, and unconditional solve-without-asking guidance during Build.
+These contradict action-specific clarification and reuse of existing authority.
+
+Selected repair: rewrite only the bilingual fullModeProtocol constant in
+`EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/SpecExport.tsx` and
+add static export regressions in
+`EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/SpecExport.test.tsx`.
+Keep the existing exporter, modes, five displayed phases and canonical seven
+lifecycle boundaries. No new package, bridge/helper, API, schema, store or provider.
+The receiving output now identifies context/evidence, material versus ordinary
+questions, dependent-action stops, requirement/task/verification links and exact
+SPEC/WORK ORDER authority before BUILD. It does not generate a technical plan.
+
+The packet does not demand complete implementation details at intake, repeated
+approvals for unchanged authority, or silent resolution of consequential choices.
+Review acknowledgement, NOT_ASSESSED and SPEC_REVIEW_ONLY_NO_BUILD_AUTHORITY
+remain distinct from execution permission. New Full Mode packet text and hashes
+intentionally change; historical exported packets and acceptance evidence are not
+rewritten or retrospectively reclassified. The native acceptance logic is unchanged.
+
+Static validation: the two new full-mode cases failed against the old text and
+passed after repair; the two non-full-mode controls passed before and after.
+Existing focused export/confirmation/acceptance suites: 118/118 PASS across three
+collected files. Normalized source outside the protocol constant is identical to
+HEAD. TypeScript, focused lint and final governance checks are recorded below
+when completed. This is output-content evidence, not a live agent/governance,
+novice UX, planning execution or BUILD acceptance claim. Provider calls: zero.
+
+Existing spec/planning package metadata and bodies were read only. Their recorded
+ACTIVE versus historical APPROVED-body discrepancy is not repaired or promoted
+by this output change. Further plan/tasks/analyze adaptation stays demand-gated;
+continue the broader NCR backlog rather than creating an automatic NIS successor.
+
+### Vietnamese Idea Brief And English Working Brief - 2026-10-06
+
+Operator clarification: accurate terminology and INTAKE understanding take priority
+over token savings. Two audience-specific artifacts are governed by Audience-Specific
+Briefs Before Intake in the existing lifecycle owner; discovery routes already apply.
+Flow: describe/edit idea -> review Vietnamese Idea Brief -> confirm this revision ->
+export English Working Brief for INTAKE. English preview is optional. Confirmation
+covers the idea, not unseen English wording, completeness, SPEC acceptance or BUILD.
+Keep original terminology/source references and unresolved questions; do not invent
+requirements or omit uncertain meaning when reorganizing content for the agent.
+
+Pre-implementation inspection: SpecExport.tsx selected a language on one packet and
+bound its review hook to that packet; spec-export-english-working-brief.ts used
+limited phrase normalization, including partial-match handling needing preservation
+repair. These are named consumer findings, not a repository-wide absence claim.
+The following scope and results record the new flow; novice UX remains unproven.
+The earlier design-only checkpoint passed checker-read-ahead/encoding/size checks
+and git diff --check, with no code changes then; prior static evidence stays bounded.
+Reuse existing owners and return to the wider backlog after this consumer change;
+no schema, checker, pilot, provider or broad audit is required by this direction.
+
+### Audience Brief Consumer Implementation Scope - 2026-10-06
+
+Fresh operator approval: implement the five proposed improvements to the existing
+idea/working-brief flow. Local reversible source/UI maintenance only. Preserve the
+previous eight-file worktree delta and parked live/build/public/deploy lanes.
+
+Exact additional source scope:
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/spec-export-english-working-brief.ts`
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/spec-export-portable-handoff.ts`
+
+Reuse SpecExport.tsx, its existing tests and review component. Idea confirmation
+is separate session-local UI state, not a durable review acceptance or BUILD grant.
+Keep existing requirements-review/confirmation semantics intact. Missing review
+answers may be exported for INTAKE; this does not relax a builder/executor gate.
+Produce the English working artifact only on an explicit confirmed export action.
+Preserve original terms/source values and all explicit open items; use bounded
+local normalization with disclosed unresolved language rather than adding a
+provider/helper service or claiming arbitrary semantic translation accuracy.
+
+Acceptance: current-source confirmation; no English-view requirement; source and
+review-edit invalidation; mode/preview changes do not reapprove unchanged ideas;
+copy/download/send consume the same current artifact; error retry retains the
+idea; raw-source/negation/identifier/open-item preservation; no BUILD permission.
+Verify with focused static UI/output and existing review/confirmation regressions,
+TypeScript, scoped lint and applicable existing gates. Browser/noncoder usability
+and real-agent semantic behavior remain unproven until separately evidenced.
+No dependency, schema, checker, endpoint, persistence or authority-owner change.
+
 ### Đọc nhanh cho người dùng
 
 - Bạn nói việc muốn làm; không cần biết lập trình hoặc tự cấu hình hệ thống.
@@ -45,6 +195,14 @@ D100 and section 2.2 of `docs/reference/CVF_KNOWLEDGE_ABSORPTION_AND_EXTENSION_P
 - Có thể bổ sung tính năng, nhưng không đổi mục tiêu phục vụ người không chuyên hoặc ép bạn dùng một nhà cung cấp.
 
 ## Authorization / Decision
+
+Operator decision 2026-10-06: adopt advisory deltas A-C in existing owners and
+make the rule discoverable by future agents without repeated operator prompting.
+Operator continuation also authorizes this bounded Spec Kit/NIS roadmap
+disposition and existing-owner source comparison; it opens no implementation.
+This authorizes the six-file guidance change recorded below, not implementation,
+new dispatch, provider/live, public-sync or deployment. The Web proposal is
+advisory input; this operator decision is the authority for the guidance update.
 
 Operator yêu cầu tổng hợp thảo luận thành một roadmap chi tiết, cho phép bổ sung để hoàn thiện nhưng không làm lệch hướng. Yêu cầu này cho phép tạo tài liệu định hướng; không tự mở implementation, cài dependency, dùng credential, gọi provider, thực thi upstream, deployment hay public sync.
 
@@ -782,6 +940,21 @@ External research stays advisory and ends before internal implementation/review/
 
 ## Checker Source Read-Ahead Block
 
+2026-10-06 guidance read-ahead: `governance/compat/check_agent_instruction_carriers.py`
+(carrier budgets and required literals),
+`governance/compat/check_core_guard_self_protection.py` (authorization fields),
+`governance/compat/check_markdown_structural_completeness.py`,
+`governance/compat/check_governed_artifact_checker_read_ahead.py`,
+`governance/compat/check_agent_operation_trace.py`,
+`governance/compat/check_agent_packet_authority_and_encoding.py`,
+`governance/compat/check_public_export_disposition.py` and
+`governance/compat/check_governed_file_size.py` were inspected before editing.
+Literal tokens reviewed: Agent Continuation And Action Readiness; lifecycle
+phase names; Authorized guard-maintenance scope; Protected paths; Operator
+authorization; Rollback boundary; DEFERRED_PRIVATE_ONLY; trace field labels.
+Gate purpose: confirmation of six-file documentary guidance and carrier budgets;
+no execution-readiness, source-absorption or behavioral proof is asserted.
+
 | Field | Evidence |
 |---|---|
 | applicableCheckersRead | `governance/compat/check_markdown_structural_completeness.py`; `governance/compat/check_governed_artifact_checker_read_ahead.py`; `governance/compat/check_agent_packet_authority_and_encoding.py`; `governance/compat/check_agent_operation_trace.py`; `governance/compat/check_delta_execution_claim_boundary.py`; `governance/compat/check_public_export_disposition.py`; `governance/compat/check_governed_file_size.py`; `governance/compat/check_absorption_blindspot_control_presence.py`; `governance/compat/check_external_knowledge_intake_routing.py`; `governance/compat/check_external_absorption_core.py`; `governance/compat/check_external_absorption_value_conversion.py`; `governance/compat/check_external_absorption_overlap_discipline.py`; `governance/compat/check_corpus_completeness_report_integrity.py`; `governance/compat/check_corpus_to_knowledge_map_reconciliation.py` |
@@ -820,7 +993,7 @@ Repair read-ahead for v2.1: `governance/compat/check_package_skill_productioniza
 
 Repair read-ahead: `governance/compat/check_delta_execution_claim_boundary.py`, REQUIRED_SECTION, REQUIRED_FIELDS and CLAIM_REJECTED markers reviewed before adding this block; this conditional checker was missed in initial read-ahead and discovered by the first validation run.
 
-## Agent Operation Trace Block
+## Historical Agent Operation Trace Block - v2.2
 
 | Field | Evidence |
 |---|---|
@@ -842,6 +1015,153 @@ Repair read-ahead: `governance/compat/check_delta_execution_claim_boundary.py`, 
 | Actual changed set | This roadmap only for the author delta; external advisory files remain outside the repository |
 | Manifest delta | Expected author delta MATCH: roadmap only; confirm from final git status before material commit |
 | Deletion or rename disposition | None; no stash, deletion, rename or unrelated cleanup authorized |
+
+## Core Guard Self-Protection Authorization - Agent Continuation Guidance
+
+Authorized guard-maintenance scope: update existing lifecycle/priority/roadmap
+owners and their root/downstream discovery routes with the agreed A-C direction.
+Protected paths: `AGENTS.md`.
+Operator authorization: 2026-10-06 instruction to make the agreed rule understood
+by future agents without waiting for a reminder; documentary changes only.
+Rollback boundary: revert only this six-file guidance delta; preserve T1J closure,
+current continuity, parked lanes, existing runtime and all prior evidence.
+
+## Historical Agent Operation Trace Block - Six-File Guidance
+
+| Field | Evidence |
+|---|---|
+| Actor | Local documentation maintainer / reviewer |
+| Provider or surface | Local private provenance workspace |
+| Session or invocation | agent-continuation-guidance-20261006 |
+| Working directory | Repository root |
+| Command or tool surface | Read, Git inspection, exact UTF-8 edits, existing local governance gates |
+| Target paths | AGENTS.md; routing index; lifecycle standard; priority standard; downstream AGENTS template; this roadmap |
+| Allowed scope source | Operator 2026-10-06 adopt A-C and make instructions discoverable without reminders |
+| Before status evidence | Clean main at 45b1a48d4f97e221adcd3e3bd21610b54d6f5f5a; ahead 118 against local origin/main tracking ref |
+| After status evidence | Six-file documentation delta; no generated continuity or runtime mutation |
+| Diff evidence | git diff --stat; git diff --check; git status --short |
+| Approval boundary | Existing owner and instruction-route edits only |
+| Claim boundary | Instruction discoverability and static document checks; no agent behavior/enforcement proof |
+| Agent type | INTERNAL_AGENT, documentation maintenance role |
+| Invocation ID | agent-continuation-guidance-20261006 |
+| Expected manifest | Six exact paths listed in the guidance verification below |
+| Actual changed set | Exact six documentation paths listed below; independently reconciled with Git status |
+| Manifest delta | MATCH: six paths, no additions/deletions/renames outside the declared manifest |
+| Deletion or rename disposition | None |
+
+## Agent Continuation Guidance Verification - 2026-10-06
+
+Exact changed manifest:
+
+- `AGENTS.md`
+- `docs/reference/CVF_AGENT_INSTRUCTION_CARRIER_ROUTING_INDEX_2026-08-11.md`
+- `docs/reference/CVF_GOVERNED_WORK_LIFECYCLE_AND_DESIGN_CONTROL_STANDARD_2026-06-11.md`
+- `docs/reference/CVF_KNOWLEDGE_ABSORPTION_AND_EXTENSION_PRIORITY_STANDARD_2026-04-13.md`
+- `governance/toolkit/05_OPERATION/CVF_DOWNSTREAM_AGENTS_TEMPLATE.md`
+- `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`
+
+Pre-implementation: 85/85 existing autorun checks PASS at base/head 45b1a48d4.
+Static validation of the six-file guidance: 85/85 existing autorun checks PASS;
+Entrypoint: `python -B governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation`.
+Base/head both resolve to 45b1a48d4; this bundle includes working-tree changes
+and confirms static guidance only, not committed-range closure. A failed gate
+from documenting the empty range as a full command is retained in
+`.cvf/runtime/agent-continuation-validation-range-diagnostic.log`; wording corrected.
+Receipt: `.cvf/runtime/autorun-receipts/pre-implementation.json` (local ignored).
+Final metadata/line-ending confirmation uses the same static bundle; no behavioral
+or provider proof claimed. Carrier budgets remain 220 root / 180 template lines.
+Discovery changes apply to this Core and newly generated downstream instruction
+carriers when this template is used. Existing downstream workspaces and Web
+orientation packets are not refreshed by this private local edit.
+
+## Agent Operation Trace Block
+
+| Field | Evidence |
+|---|---|
+| Actor | Local source maintainer / reviewer |
+| Provider or surface | Local private provenance workspace |
+| Session or invocation | receiving-to-planning-consumer-repair-20261006; audience-brief-design-20261006 |
+| Working directory | Repository root; package-local test/type/lint commands |
+| Command or tool surface | Named source reads, scoped protocol edit, static Vitest output controls, TypeScript, ESLint and existing governance bundle |
+| Target paths | SpecExport.tsx, SpecExport.test.tsx and the two named export helpers; lifecycle standard carries audience rules; this roadmap records authority, design and results |
+| Allowed scope source | Operator approved receiving-to-planning work and clarified the Vietnamese idea / English INTAKE artifact design on 2026-10-06 |
+| Before status evidence | HEAD 45b1a48d4f97e221adcd3e3bd21610b54d6f5f5a with the previous six-file guidance delta preserved |
+| After status evidence | Prior eight-path delta preserved; fresh audience consumer scope adds two existing exporter helper files, for ten paths total |
+| Diff evidence | git diff --check; git diff --stat; normalized source comparison outside the protocol constant |
+| Approval boundary | Prior protocol repair plus operator-approved audience brief UI/export maintenance; no provider, skill invocation, BUILD effect or public/deploy |
+| Claim boundary | Static protocol repair and session-local audience UI/export implementation; no real-agent semantic accuracy, enforcement, durable idea acceptance or novice UX proof |
+| Agent type | INTERNAL_AGENT, Local source maintenance role |
+| Invocation ID | receiving-to-planning-consumer-repair-20261006 |
+| Expected manifest | Historical six guidance paths; SpecExport.tsx and SpecExport.test.tsx; two exact helper paths in Audience Brief Consumer Implementation Scope |
+| Actual changed set | Ten exact paths: six guidance files and four exporter source/test files; no generated state, package source/registry, endpoint or persistence changes |
+| Manifest delta | MATCH: ten exact paths independently reconciled with Git status |
+| Deletion or rename disposition | None; replacing protocol text does not delete or rename files |
+
+## Historical Receiving-To-Planning Repair Validation
+
+- Baseline static controls: two full-mode failures and two non-full-mode passes; `.cvf/runtime/receiver-guidance-before.log`.
+- Focused output/confirmation/acceptance suites: 118/118 PASS, three collected files; `.cvf/runtime/receiver-guidance-focused.log`.
+- Source scope: content outside fullModeProtocol is normalized-identical to HEAD; only future Full Mode protocol bytes change.
+- TypeScript: PASS (tsc --noEmit --incremental false, exit 0); `.cvf/runtime/receiver-guidance-typecheck.log`.
+- ESLint: PASS (exact two changed source/test files, exit 0); `.cvf/runtime/receiver-guidance-lint.log`.
+- Static governance bundle on the eight-file source/guidance delta: 85/85 PASS; `.cvf/runtime/receiver-guidance-governance.log`.
+- Final result-only roadmap metadata receives focused document checks; product tests are not rerun for metadata. No behavioral/provider proof claimed.
+- Local logs are ignored evidence; no public export or committed-range closure is claimed.
+
+## Audience Brief Consumer Implementation Results
+
+Implemented: Vietnamese summary/download; confirm-and-export creates the English
+working artifact; optional English preview; one current text for file/copy/send;
+source/review-edit invalidation; error retry retains the confirmed idea. Existing
+review/confirmation UI is optional and distinct from idea confirmation. Open/stale
+answers remain INTAKE inputs, not accepted BUILD decisions. Bindings are exact
+session-local content comparisons and increasing revisions (including A-to-B-to-A),
+not durable IDs or actor-authenticated acceptance. Mode/preview changes preserve
+idea confirmation; changed guidance needs regeneration before copy/send. The send
+callback opens the conversation and remains subject to separate risk/authority.
+
+Original input, names/identifiers, review decisions and open-point evidence remain.
+Normalization retains source instead of discarding unmatched qualifiers; it is
+bounded local wording, not general LLM translation or semantic-equivalence proof.
+Consolidated wizard ideas and existing Web design context are retained. No browser,
+noncoder usability, real-agent governance behavior or live accuracy proof is claimed.
+
+Task classification: taskKind=PURE_LOCAL_IMPLEMENTATION; authorityImpact=USES_EXISTING_OWNER;
+externalEffect=LOCAL_REVERSIBLE; dataSensitivity=PRIVATE_REPO; reversibility=GIT_REVERSIBLE;
+sourceScale=NAMED_FILES; delegation=SINGLE_ROLE; novelty=OWNER_COMPOSITION.
+Cumulative canonical guidance keeps P3_ELEVATED and the existing full static bundle.
+Role=Local maintainer/reviewer; phase=implementation/static validation; technical
+owner=Local, scope owner=operator. No dispatch or external research is involved.
+
+- Final static regressions: 212/212 PASS in nine files with one Vitest worker, including review/open-item/confirmation/acceptance and DynamicForm/AppBuilderWizard; .cvf/runtime/audience-brief-regression-serial.log. Earlier 211/211 receipt remains historical.
+- ESLint: PASS, zero warnings/errors on the four changed exporter files; .cvf/runtime/audience-brief-lint-receipt.log.
+- TypeScript: PASS (tsc --noEmit --incremental false, exit 0); .cvf/runtime/audience-brief-typecheck-final.log.
+- Intermediate failures remain in audience-brief-focused.log / audience-brief-regression.log; corrected test argument order, async timing and localized-status expectations. Initial test-edit cwd error changed no file.
+- Governance: existing pre-implementation bundle 85/85 PASS with PYTHONUTF8=1; .cvf/runtime/audience-brief-governance-utf8.log. Prior default-codec failure and near-threshold roadmap finding are retained; current prose was compacted without changing checker policy.
+- Worker-start timeout (nine errors, zero tests executed) remains at .cvf/runtime/audience-brief-regression-receipt.log; subsequent standalone one-worker run passed. Resource contention during concurrent checks is an inference, not a product-defect conclusion.
+- Manifest MATCH: ten exact modified paths, no staged/untracked material, HEAD unchanged at 45b1a48d4; git diff --check PASS. Carrier budgets: root 220 / downstream template 180 lines.
+- Last evidence-only metadata receives focused existing document checks; no duplicate product rerun for prose. All checks remain static, with no semantic/runtime or committed-range closure claim.
+
+## Current Runtime Freshness Verification
+
+2026-10-06 Local inspection at HEAD 45b1a48d4 plus disclosed worktree changes:
+SpecExport.tsx handlers; IntentSpecReview.tsx hook; intent-spec-review.ts synchronization;
+two exporter helpers. Previous packet construction occurred at render, with review
+bound to language/mode; normalization was local. Query: rg -n 'english.*brief|English.*Brief|englishSpec|english.*freeze|freezeEnglish|translate'
+under cvf-web source app/api and components. Execute response readouts use the
+different spec-english-freeze route; that is not this idea-confirmation UI. Scope is
+a named consumer, not whole-repo absence. Diff/static controls verify maintenance;
+no provider execution/live receipt is used. Freshness-rule repair read-ahead followed
+the initial finding; .cvf/runtime/audience-brief-pre-implementation.log retains it.
+
+## Working Brief Workflow Evidence Update - 2026-10-06
+
+Operator clarification: model calls supply workflow evidence, not model evaluation/ranking/default selection. Existing lifecycle owner carries this rule. Bounded sample: three successful direct-provider calls plus one diagnosed authentication failure; `docs/baselines/CVF_GC018_INTAKE_WORKING_BRIEF_MODEL_COMPARISON_2026-10-06.md` and `.cvf/runtime/intake-model-comparison-20261006/REPORT.md`. Extract lost-qualifier, terminology-drift and unsupported-assumption findings for source-preserving handoff and correct INTAKE question ownership. Prior static-only UI evidence remains separate; no Web integration, release-quality governance proof or closure is asserted.
+Quota reference refreshed from operator screenshots received 2026-10-06: 17 distinct visible model rows, absolute expiration dates, console-rounded balances and visible Stop-on-Exhaust state. Capture date unknown; historical snapshot retained. Actual model identities/date in live receipts remain unchanged. No additional API calls, schema, checker, pilot or model-default change follows from this update.
+
+Subsequent operator authorization extended the bounded evidence sample to Kimi K3, GLM 5.3 and Qwen 27B: nine total HTTP attempts including two documented parameter corrections; four complete model outputs / twelve case briefs, one timeout and one token-limited unusable final output. Repeated qualifier/terminology drift informed existing exporter guidance: source/review evidence first, reconcile English candidates, then permitted INTAKE; route material source ambiguity to its owner without mandatory English review. Existing source-preservation matrix now covers automatic/manual export and accounting/allocation, 39/39 PASS. Lifecycle owner distinguishes model-supported invocation, generation completion and semantic fidelity; preserves confirmed idea on timeout/truncation. Same baseline/report retain all receipts. No provider wired into UI, model ranking/default, new schema/checker/pilot or automatic successor tranche.
+
+Latest operator clarification fixes the evaluation boundary: baseline CVF exports structured idea/spec input, not a complete or BUILD-ready LLM Working Brief; receiving agents own INTAKE analysis and dependent BUILD prerequisites. Optional user-selected LLM enrichment is a possible enhancement. Export marker wording now distinguishes local normalization coverage from business ambiguity; exact marker remains compatible. The app_builder_complete description and bilingual intent no longer imply build-ready baseline output. Two actual simple-mode export-builder artifacts received two complete qwen3.8-flash API answers (3209/3241 tokens); both retained main constraints/authority, but receiver introduced unnecessary technical-owner questions and a lock/limit coupling. These are disclosed receiver-analysis defects, not baseline completeness defects; no broad PASS or enforcement claim. Existing three-file regression 68/68 PASS; evidence under receiving-artifacts/ and receiving-regression.log in the same runtime directory. No further calls or automatic successor.
 
 ## Public Export Disposition
 

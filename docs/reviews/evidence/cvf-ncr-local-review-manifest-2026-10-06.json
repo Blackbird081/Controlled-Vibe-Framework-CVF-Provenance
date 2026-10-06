@@ -1,0 +1,310 @@
+{
+  "date": "2026-10-06",
+  "baseHead": "45b1a48d4f97e221adcd3e3bd21610b54d6f5f5a",
+  "disposition": "LOCAL_REVIEWED_BOUNDED_PENDING_COMMIT",
+  "reviewerBoundary": "single Local role; not a distinct independent review",
+  "changedFileCount": 49,
+  "renameDeleteCount": 0,
+  "items": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "7884f9298ee722ba5de64a068577eb12a9a0fe6d36dcb47aa4f1b69a1d2c74b6",
+      "hashDisposition": "EXACT_WORKTREE_BYTES"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/route.test.ts",
+      "sha256": "ca1af073dd6707685f5995d486b22e295250f85ae992ba748da62818211ab4a4",
+      "hashDisposition": "EXACT_WORKTREE_BYTES"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/route.ts",
+      "sha256": "4bb06f86892fd33c9e25d94f29d6256d6ec325a296efffc2d356af2ca3ae1cdb",
+      "hashDisposition": "EXACT_WORKTREE_BYTES"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route-final-response.ts",
+      "sha256": "3262c07e608dee069d351ef52a5b32f21c4c777ef13ecdefc2a71f22cd938acc",
+      "hashDisposition": "EXACT_WORKTREE_BYTES"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.request-validation.test.ts",
+      "sha256": "7255e2fc00f80fc0b7f7f4816fcf505909daeb1413ed24696601c20d3da2863d",
+      "hashDisposition": "EXACT_WORKTREE_BYTES"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.test.ts",
+      "sha256": "2df6d947cf54a3a57596de4fca97048716fd3e0ce5d936d62cf87e822d078cbe",
+      "hashDisposition": "EXACT_WORKTREE_BYTES"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts",
+      "sha256": "09b0760f04d215489b5389c81b2ed4ce7e5318d9de5b0cdc2cada92655170e79",
+      "hashDisposition": "EXACT_WORKTREE_BYTES"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/knowledge/ingest/route.test.ts",
+      "sha256": "29fc283fb80b525b15866d438e72901863d990abd4705382dd95180d686c48c3",
+      "hashDisposition": "EXACT_WORKTREE_BYTES"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/knowledge/ingest/route.ts",
+      "sha256": "51cbed05db6e8e08d20284053ea787629472aea0b39b13f5a1c6961818954602",
+      "hashDisposition": "EXACT_WORKTREE_BYTES"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.test.tsx",
+      "sha256": "be902d5644b4d81ef3156be60cb73888902a54129cc5149fff93b45c8c100633",
+      "hashDisposition": "EXACT_WORKTREE_BYTES"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.tsx",
+      "sha256": "efc5839896236dacc7b37e145fda9904a9513bea434b3ff5c8bcd81652e9ea3e",
+      "hashDisposition": "EXACT_WORKTREE_BYTES"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ProcessingScreen.test.tsx",
+      "sha256": "62bb5e13d29f3e1df5a1ff3018e38c71a52f50b75070fa55171522afe1c5bcd1",
+      "hashDisposition": "EXACT_WORKTREE_BYTES"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/SpecExport.test.tsx",
+      "sha256": "eb7a781a5d01e4e0b96a450778e16505f281dcdbb9a09f2fda18fbce8202e9af",
+      "hashDisposition": "EXACT_WORKTREE_BYTES"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/SpecExport.tsx",
+      "sha256": "8c425b3b0f4d468ee129224c688d30141a8924e01f78dcf0d1d28a4357d9689a",
+      "hashDisposition": "EXACT_WORKTREE_BYTES"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/ai/providers.test.ts",
+      "sha256": "f9f51611fbd5cf692efa259b888406821c507800ac985d53df9a6ea54b7cc93a",
+      "hashDisposition": "EXACT_WORKTREE_BYTES"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/ai/providers.ts",
+      "sha256": "4ace18f9a8520765aa74cde30760a7c4d74f2ff7111f89936647f1d7d72da445",
+      "hashDisposition": "EXACT_WORKTREE_BYTES"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/bounded-request-body.test.ts",
+      "sha256": "970b4dc5e247c5f15233d201df9ad2ebc8c065f19e05cca930d1f9c5ae90a4a7",
+      "hashDisposition": "EXACT_WORKTREE_BYTES"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/bounded-request-body.ts",
+      "sha256": "c4364231a381fdf5e6e987ba00344168f7f523afdda0193cb8f169a6583fef49",
+      "hashDisposition": "EXACT_WORKTREE_BYTES"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execute-request-validation.ts",
+      "sha256": "26babb7391bdb902b9d2d7bbe9d99fa34a6d0c5659a57c2a0f6b80e204dfa44f",
+      "hashDisposition": "EXACT_WORKTREE_BYTES"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/spec-export-english-working-brief.ts",
+      "sha256": "76604b150f0a7f4e5379cf0d6ae5a41d3ab7152b034de940eab6d6515f41fb44",
+      "hashDisposition": "EXACT_WORKTREE_BYTES"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/spec-export-portable-handoff.ts",
+      "sha256": "ad93c588c042bd4556daf82ce6b19448bd2b0fd2ef22048817d4c5e226cdcad1",
+      "hashDisposition": "EXACT_WORKTREE_BYTES"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/template-i18n.ts",
+      "sha256": "96e8a9d5f583816d6f62234ebcc0524a7d369951f70896f0a294fe9a90d74a4b",
+      "hashDisposition": "EXACT_WORKTREE_BYTES"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/templates/development.ts",
+      "sha256": "cfc1a231173efb210ff0a5f28c35858f474ee26be40a0c66bf52853103c041c8",
+      "hashDisposition": "EXACT_WORKTREE_BYTES"
+    },
+    {
+      "path": "docs/baselines/CVF_GC018_INTAKE_WORKING_BRIEF_MODEL_COMPARISON_2026-10-06.md",
+      "sha256": "9919e7a1f167a4e5c3a62073a5727c1398b9f605750128325c77f72a3eb5492c",
+      "hashDisposition": "EXACT_WORKTREE_BYTES"
+    },
+    {
+      "path": "docs/baselines/CVF_GC018_NCR_ALIBABA_TRUNCATED_COMPLETION_2026-10-06.md",
+      "sha256": "a0d041992a6d228ae129f7b59ab5bbc776fff6d8fc50800cb326280984217a7e",
+      "hashDisposition": "EXACT_WORKTREE_BYTES"
+    },
+    {
+      "path": "docs/baselines/CVF_GC018_NCR_CONSOLIDATED_LOCAL_FOUNDATION_2026-10-06.md",
+      "sha256": "1d508abd6003ad53b2e075ebef2e39b7b85ee96c070167a4432c9ab0e9cbc8cf",
+      "hashDisposition": "EXACT_WORKTREE_BYTES"
+    },
+    {
+      "path": "docs/baselines/CVF_GC018_NCR_P06_BOUNDED_BODY_READ_2026-10-06.md",
+      "sha256": "c531dbadb97c49bc7a87dbdf6a19f4fee6caf218917856532ca90e12e02fb721",
+      "hashDisposition": "EXACT_WORKTREE_BYTES"
+    },
+    {
+      "path": "docs/baselines/CVF_GC018_NCR_P06_KNOWLEDGE_INGEST_TYPES_2026-10-06.md",
+      "sha256": "78db558cb3e39fea85f38a9db9bbb9fe6904f9bc11975b976d1a91f477e947e5",
+      "hashDisposition": "EXACT_WORKTREE_BYTES"
+    },
+    {
+      "path": "docs/baselines/CVF_GC018_NCR_P09_RELEASE_RESULT_CONSISTENCY_2026-10-06.md",
+      "sha256": "8572ba588a697797e45efb0138ef498294d8fd3dd524d1d84f043dbcf76b5512",
+      "hashDisposition": "EXACT_WORKTREE_BYTES"
+    },
+    {
+      "path": "docs/reference/CVF_AGENT_INSTRUCTION_CARRIER_ROUTING_INDEX_2026-08-11.md",
+      "sha256": "36291cb3ab3e381e4541decb8c48edea9641c71f3aee6615ee71a2380dca196f",
+      "hashDisposition": "EXACT_WORKTREE_BYTES"
+    },
+    {
+      "path": "docs/reference/CVF_GOVERNED_WORK_LIFECYCLE_AND_DESIGN_CONTROL_STANDARD_2026-06-11.md",
+      "sha256": "41cc3eff474b59e7211e22706cf244eb89fd4b8b273e99b61b7f59af4cef5ea9",
+      "hashDisposition": "EXACT_WORKTREE_BYTES"
+    },
+    {
+      "path": "docs/reference/CVF_KNOWLEDGE_ABSORPTION_AND_EXTENSION_PRIORITY_STANDARD_2026-04-13.md",
+      "sha256": "567c53a24785f86c7d70c2c8936c66d59db0927401f9a9f3fe4464fbc6653676",
+      "hashDisposition": "EXACT_WORKTREE_BYTES"
+    },
+    {
+      "path": "docs/reference/model_gateway/CVF_ALIBABA_FREE_QUOTA_MODEL_LEDGER.json",
+      "sha256": "d99842ef740a64963c58b65fef25b11dc975366db9e9151051503b0eefc9b3a3",
+      "hashDisposition": "EXACT_WORKTREE_BYTES"
+    },
+    {
+      "path": "docs/reference/model_gateway/CVF_ALIBABA_FREE_QUOTA_MODEL_LEDGER.md",
+      "sha256": "c35bbac1cca9231bbb1a9ae0e944fd7e939393c7a107a08c24a3531b6fa82c1a",
+      "hashDisposition": "EXACT_WORKTREE_BYTES"
+    },
+    {
+      "path": "docs/reviews/evidence/cvf-ncr-local-review-manifest-2026-10-06.json",
+      "sha256": null,
+      "hashDisposition": "SELF_REFERENCE_EXCLUDED"
+    },
+    {
+      "path": "docs/reviews/evidence/cvf-ncr-single-host-docker-storage-2026-10-06.json",
+      "sha256": "4e5888d8dbc138097e763afe308582c80abe5f2d9e10dabe6715374699e3149b",
+      "hashDisposition": "EXACT_WORKTREE_BYTES"
+    },
+    {
+      "path": "docs/reviews/evidence/cvf-ncr-web-docker-system-chain-2026-10-06.json",
+      "sha256": "2297cea23f721adee1c36b55cbd5e8ccee6fe19164a268b679176993cb312159",
+      "hashDisposition": "EXACT_WORKTREE_BYTES"
+    },
+    {
+      "path": "docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md",
+      "sha256": "10ee4c86eaf1d5c468250ed569307f5af5ad98dade82400fcffa5ea3fdc7de62",
+      "hashDisposition": "EXACT_WORKTREE_BYTES"
+    },
+    {
+      "path": "governance/toolkit/05_OPERATION/CVF_DOWNSTREAM_AGENTS_TEMPLATE.md",
+      "sha256": "bbb56c8238a489594adf021acfc5fd522b742c7e321af8622d892a0fd40bd70f",
+      "hashDisposition": "EXACT_WORKTREE_BYTES"
+    },
+    {
+      "path": "scripts/probe_cvf_q001_synthetic_system_chain.py",
+      "sha256": "a6098d834e0be48b8f070706753275605c9c4d781035fcd2fb41501e25e0b2bd",
+      "hashDisposition": "EXACT_WORKTREE_BYTES"
+    },
+    {
+      "path": "scripts/reconcile_cvf_q001_receipt_attempt.py",
+      "sha256": "8eaf0cfc46d38dcd8ec42e10b40c14a63d69ee18a4d15e315a2c94c41fab72ef",
+      "hashDisposition": "EXACT_WORKTREE_BYTES"
+    },
+    {
+      "path": "scripts/run_cvf_release_gate_bundle.py",
+      "sha256": "ca5ad6b48e55cc33469e2b02e4fc446ac69e60417c075cf2e5416f12dba06643",
+      "hashDisposition": "EXACT_WORKTREE_BYTES"
+    },
+    {
+      "path": "scripts/scan_cvf_q001_candidate_secrets.py",
+      "sha256": "5e9e6352090a2b195c5419e8b017bd43d897532a59f30935b7a6d4614fcdb86d",
+      "hashDisposition": "EXACT_WORKTREE_BYTES"
+    },
+    {
+      "path": "scripts/test_cvf_release_result_consistency.py",
+      "sha256": "0bd8c06ef83386700376b2fb105a38759ccd7649f1591cffcd36ea90ac8cb7f3",
+      "hashDisposition": "EXACT_WORKTREE_BYTES"
+    },
+    {
+      "path": "scripts/test_probe_cvf_q001_synthetic_system_chain.py",
+      "sha256": "c836986e3cafbfe6c418d1fd3b8b4ba4c68996b8aad2e6c64092116421db4873",
+      "hashDisposition": "EXACT_WORKTREE_BYTES"
+    },
+    {
+      "path": "scripts/test_reconcile_cvf_q001_receipt_attempt.py",
+      "sha256": "8189e9c9d03fc12734943e0c33771e651f2029b72952cf724263ced79ce22daa",
+      "hashDisposition": "EXACT_WORKTREE_BYTES"
+    },
+    {
+      "path": "scripts/test_release_secret_scan_boundaries.py",
+      "sha256": "7047e189118bceaf21a8997d112ac5c00235651983bbf9cb1e3fdbabd1a1b833",
+      "hashDisposition": "EXACT_WORKTREE_BYTES"
+    },
+    {
+      "path": "scripts/test_run_cvf_release_gate_bundle.py",
+      "sha256": "9a6e3c01ccee63914686ee4b953094ab7a60f2ab18b85bdf008800193ad97d57",
+      "hashDisposition": "EXACT_WORKTREE_BYTES"
+    },
+    {
+      "path": "scripts/test_run_cvf_sot3_a5_release_integration.py",
+      "sha256": "4c5aba64dab87998581996f0f2b3bb01e5594baf13ea3366ad6dded0fb8da658",
+      "hashDisposition": "EXACT_WORKTREE_BYTES"
+    }
+  ],
+  "receipts": [
+    {
+      "path": ".cvf/runtime/ncr-review-packet-20261006/probe-review-regressions.log",
+      "sha256": "98e50ba8fae9d057881a678144028b4c8f1449c228a8bf6368b68218a0247719"
+    },
+    {
+      "path": ".cvf/runtime/ncr-review-packet-20261006/no-pull-negative.log",
+      "sha256": "6340ef447f70903d360f9d63d0a69afed5482a1f821ec78345fcd6ec1a9648ec"
+    },
+    {
+      "path": ".cvf/runtime/ncr-review-packet-20261006/real-cleanup.json",
+      "sha256": "67bbfa13bcb3a5974e2528e3a999adf635084726157e3eebcf8040c4e64212be"
+    },
+    {
+      "path": ".cvf/runtime/ncr-review-packet-20261006/candidate-scan.json",
+      "sha256": "46cd7c96fc83cb53df5552aa0e063c218413a82c8b4ea5712e5057d6ae14456f"
+    },
+    {
+      "path": ".cvf/runtime/ncr-ui-labels-20261006/final-green.log",
+      "sha256": "7cdf4e4165294dcd29471183072137f1c316147862d85ae386345795ca17d77d"
+    },
+    {
+      "path": ".cvf/runtime/ncr-ui-labels-20261006/typecheck.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".cvf/runtime/ncr-ui-labels-20261006/lint.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".cvf/runtime/ncr-review-packet-20261006/final-static.log",
+      "sha256": "aed74dd04529cb1a46a392222027f9c2e8313e27bcdae557b592d7045884a592"
+    },
+    {
+      "path": ".cvf/runtime/ncr-review-packet-20261006/core-authorization-final.log",
+      "sha256": "92d9452a1fe9a99aecf98e54e0f91c12f07c97b167cb740dae4a788e89a220e1"
+    },
+    {
+      "path": ".cvf/runtime/ncr-review-packet-20261006/commit-shape-final.log",
+      "sha256": "8e527f3fb57b62db228b4e040885ef0d71934b24a3f188dfbcae94dbb06dece3"
+    }
+  ],
+  "parked": [
+    "BROWSER_TOOL_UNAVAILABLE",
+    "Q001/Q004 actual-data operational profile",
+    "P11/public/deploy"
+  ],
+  "claimBoundary": "Exact selected worktree inventory and evidence pointers; no whole-repository scan, immutable commit, independent closure or release readiness.",
+  "staticPreflight": {
+    "status": "PASS",
+    "checksPassed": 85,
+    "totalChecks": 85,
+    "elapsedSeconds": 14.93,
+    "scope": "current worktree before result-only metadata/hash refresh; not staged hook, independent closure or release proof"
+  }
+}

@@ -1,3 +1,4 @@
+// Text Encoding Exception: Vietnamese data fixtures verify UTF-8 fidelity and accepted user input.
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { NextRequest } from 'next/server';
 
@@ -48,6 +49,26 @@ function makeRequest(body: Record<string, unknown>) {
     },
     body: bodyText,
   });
+}
+
+function makeStreamRequest(bodyText: string, chunks: Uint8Array[], contentLength?: string) {
+  const timestamp = String(Date.now() + requestSequence++);
+  let cursor = 0;
+  const cancel = vi.fn();
+  const pull = vi.fn((controller: ReadableStreamDefaultController<Uint8Array>) => {
+    if (cursor < chunks.length) controller.enqueue(chunks[cursor++]);
+    else controller.close();
+  });
+  const stream = new ReadableStream<Uint8Array>({ pull, cancel }, { highWaterMark: 0 });
+  const headers: Record<string, string> = {
+    'Content-Type': 'application/json',
+    'x-cvf-service-token': SERVICE_TOKEN,
+    'x-cvf-service-timestamp': timestamp,
+    'x-cvf-service-signature': computeServiceRequestSignature(SERVICE_TOKEN, timestamp, bodyText),
+  };
+  if (contentLength !== undefined) headers['content-length'] = contentLength;
+  const init = { method: 'POST', headers, body: stream, duplex: 'half' as const };
+  return { request: new NextRequest('http://localhost/api/artifacts/export', init), cancel, pull };
 }
 
 describe('/api/artifacts/export', () => {
@@ -150,6 +171,87 @@ describe('/api/artifacts/export', () => {
     const response = await POST(makeRequest({ ...BASE_REQUEST, sourceContent: 'x'.repeat(130_000) }));
     expect(response.status).toBe(413);
     expect(fetchMock).not.toHaveBeenCalled();
+  });
+
+  it.each([undefined, '1'])('stops reading an oversized stream with Content-Length %s', async contentLength => {
+    const bodyText = JSON.stringify({ ...BASE_REQUEST, sourceContent: 'x'.repeat(200_000) });
+    const bytes = new TextEncoder().encode(bodyText);
+    const { request, cancel, pull } = makeStreamRequest(bodyText, [
+      bytes.slice(0, 64_000), bytes.slice(64_000, 128_001), bytes.slice(128_001),
+    ], contentLength);
+    const fetchMock = vi.fn();
+    vi.stubGlobal('fetch', fetchMock);
+    process.env.NEXTAUTH_URL = 'http://localhost:3000';
+
+    const response = await POST(request);
+
+    expect(response.status).toBe(413);
+    expect(cancel).toHaveBeenCalledOnce();
+    expect(pull).toHaveBeenCalledTimes(2);
+    expect(verifySessionCookieMock).not.toHaveBeenCalled();
+    expect(fetchMock).not.toHaveBeenCalled();
+  });
+
+  it('counts streamed UTF-8 bytes rather than characters', async () => {
+    const bodyText = JSON.stringify({ ...BASE_REQUEST, sourceContent: 'ế'.repeat(43_000) });
+    const bytes = new TextEncoder().encode(bodyText);
+    expect(bodyText.length).toBeLessThan(128_000);
+    expect(bytes.length).toBeGreaterThan(128_000);
+    const { request, cancel } = makeStreamRequest(bodyText, [bytes]);
+
+    const response = await POST(request);
+
+    expect(response.status).toBe(413);
+    expect(cancel).toHaveBeenCalledOnce();
+  });
+
+  it('preserves signed raw text when a Vietnamese UTF-8 sequence spans chunks', async () => {
+    const sourceContent = '# Tiếng Việt\nLịch hẹn đã chốt, ngày giờ không đổi.';
+    // Leading/trailing JSON whitespace must survive body capture for signing.
+    const bodyText = ` \n${JSON.stringify({ ...BASE_REQUEST, sourceContent })}\n `;
+    const bytes = new TextEncoder().encode(bodyText);
+    const split = bytes.indexOf(0xe1) + 1;
+    expect(split).toBeGreaterThan(1);
+    const { request, cancel } = makeStreamRequest(bodyText, [bytes.slice(0, split), bytes.slice(split)]);
+
+    const response = await POST(request);
+    const payload = await response.json();
+
+    expect(response.status).toBe(200);
+    expect(payload.data.html).toContain('Tiếng Việt');
+    expect(payload.data.html).toContain('Lịch hẹn đã chốt, ngày giờ không đổi.');
+    expect(cancel).not.toHaveBeenCalled();
+  });
+
+  it('accepts a signed body exactly at the 128000-byte boundary', async () => {
+    const raw = JSON.stringify(BASE_REQUEST);
+    const bodyText = raw + ' '.repeat(128_000 - new TextEncoder().encode(raw).length);
+    const bytes = new TextEncoder().encode(bodyText);
+    expect(bytes.length).toBe(128_000);
+    const { request, cancel } = makeStreamRequest(bodyText, [bytes.slice(0, 64_000), bytes.slice(64_000)]);
+
+    expect((await POST(request)).status).toBe(200);
+    expect(cancel).not.toHaveBeenCalled();
+  });
+
+  it('still returns 413 when the oversized producer rejects cancellation', async () => {
+    const bodyText = 'x'.repeat(128_001);
+    const { request, cancel } = makeStreamRequest(bodyText, [new TextEncoder().encode(bodyText)]);
+    cancel.mockRejectedValue(new Error('Producer cancellation failed'));
+
+    expect((await POST(request)).status).toBe(413);
+    expect(cancel).toHaveBeenCalledOnce();
+    expect(request.body?.locked).toBe(false);
+  });
+
+  it('returns 413 without waiting for unfinished producer cancellation', async () => {
+    const bodyText = 'x'.repeat(128_001);
+    const { request, cancel } = makeStreamRequest(bodyText, [new TextEncoder().encode(bodyText)]);
+    cancel.mockImplementation(() => new Promise(() => {}));
+
+    expect((await POST(request)).status).toBe(413);
+    expect(cancel).toHaveBeenCalledOnce();
+    expect(request.body?.locked).toBe(false);
   });
 
   it('does not turn an incomplete evaluate response into an ALLOW receipt', async () => {

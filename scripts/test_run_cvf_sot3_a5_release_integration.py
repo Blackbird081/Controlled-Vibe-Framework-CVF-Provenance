@@ -1066,7 +1066,7 @@ class NoBlindRetryTests(unittest.TestCase):
     def test_check_e2e_calls_run_cmd_exactly_once_on_failure(self):
         call_count = {"n": 0}
 
-        def fake_run_cmd(cmd, cwd=None, timeout=300):
+        def fake_run_cmd(cmd, cwd=None, timeout=300, env=None):
             call_count["n"] += 1
             return 1, "1 failed\n", ""
 

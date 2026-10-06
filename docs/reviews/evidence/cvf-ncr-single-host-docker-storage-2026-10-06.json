@@ -1,0 +1,38 @@
+{
+  "scope": "synthetic Docker engine/storage only; no LLM governance or Web acceptance claim",
+  "checks": {
+    "http_evaluate_200": true,
+    "exact_id_validated": true,
+    "restart_http_ready": true,
+    "restart_same_count_tip_ids": true,
+    "recreate_same_volume_retains_state": true,
+    "response_loss_after_engine_200": true,
+    "lost_response_exactly_one_committed_id_no_retry": true,
+    "clean_volume_restore_all_ids_count_tip": true,
+    "restored_instance_can_append": true
+  },
+  "safeToRetry": false,
+  "dockerVersion": "29.8.2",
+  "imageId": "sha256:a0725d62d5cfa8fc47b5e30be04bc08ea714a9cdd72c259595526f691db95294",
+  "sourceHashes": {
+    "scripts\\reconcile_cvf_q001_receipt_attempt.py": "8eaf0cfc46d38dcd8ec42e10b40c14a63d69ee18a4d15e315a2c94c41fab72ef",
+    "EXTENSIONS\\CVF_v1.6.1_GOVERNANCE_ENGINE\\ai_governance_core\\api\\server.py": "b557d28703c22353c74de170e5eb9151e73fa216a44fb3af39935b92da055bd6",
+    "EXTENSIONS\\CVF_v1.6.1_GOVERNANCE_ENGINE\\ai_governance_core\\ledger_layer\\sqlite_ledger.py": "df353a92b3adead1ed5cf00d7128ba9039c573e0441b819118094ec77c4c4ce5"
+  },
+  "packages": {
+    "fastapi": "0.142.2",
+    "uvicorn": "0.54.0",
+    "pydantic": "2.13.5"
+  },
+  "status": "PASS",
+  "cleanup": {
+    "containersAndVolumesRemoved": true,
+    "errors": []
+  },
+  "sourceHashesUnchangedAfterRun": true,
+  "executionBaseHead": "45b1a48d4f97e221adcd3e3bd21610b54d6f5f5a",
+  "date": "2026-10-06",
+  "harnessSha256": "67a6b93b74a08169a56b202e19f1a8a8de0ea02388b6ad8b39074898f7d782e5",
+  "harnessPath": ".cvf/runtime/ncr-docker-20261006/probe.py",
+  "qualification": "Initial run had stale dynamic host port during restart readiness wait; preserved separately. Final run re-resolves port and explicitly verifies HTTP readiness."
+}

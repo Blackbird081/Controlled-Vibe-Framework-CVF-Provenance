@@ -1,0 +1,263 @@
+{
+  "status": "PASS_BOUNDED",
+  "date": "2026-10-06",
+  "hostChain": {
+    "claimBoundary": "Synthetic process/store proof only; no artifact approval, real GitHub cutover, provider call or Q001/R0 exit.",
+    "deniedAuth": {
+      "decision": "DENY",
+      "httpStatus": 401
+    },
+    "executionBaseHead": "45b1a48d4f97e221adcd3e3bd21610b54d6f5f5a",
+    "malformed": {
+      "httpStatus": 200,
+      "receiptStatus": "INVALID_RESPONSE"
+    },
+    "negativeControls": {
+      "forwardedEngineCalls": 2,
+      "wrongRequestIdAbsent": true,
+      "wrongStoreAbsent": true
+    },
+    "positive": {
+      "artifactState": "DRAFT_UNACCEPTED",
+      "attemptId": "artifact-proof-q001-positive-1791296709288-1791296709311",
+      "authMode": "service_token",
+      "engineReport": {
+        "action": "ALLOW",
+        "artifactId": "q001-positive-1791296709288",
+        "decision": "ALLOW",
+        "ledgerAttached": true,
+        "requestId": "artifact-proof-q001-positive-1791296709288-1791296709311"
+      },
+      "httpStatus": 200,
+      "receiptStatus": "PRESENT",
+      "routeDecision": "ALLOW",
+      "sqlite": {
+        "blockDecision": {
+          "evaluated_at": "2026-10-06T14:25:10.150953",
+          "final_decision": "ALLOW",
+          "risk_score": 0.0,
+          "triggered_rules": []
+        },
+        "blockHash": "8ed58610a5508f2a0eb19c448a9ff8c8729cdc2ae7c3da7a5154fa47d8b4ccbb",
+        "chainValid": true,
+        "count": 1,
+        "exactIdFound": true,
+        "tipHash": "8ed58610a5508f2a0eb19c448a9ff8c8729cdc2ae7c3da7a5154fa47d8b4ccbb"
+      }
+    },
+    "processes": {
+      "enginePidInitial": 10472,
+      "enginePidRestart": 10700,
+      "proxyPort": 50552,
+      "webPid": 3020
+    },
+    "responseLoss": {
+      "artifactState": "DRAFT_UNACCEPTED",
+      "attemptId": "artifact-proof-q001-timeout-1791296710918-1791296710952",
+      "engineReport": {
+        "action": "ALLOW",
+        "artifactId": "q001-timeout-1791296710918",
+        "decision": "ALLOW",
+        "ledgerAttached": true,
+        "requestId": "artifact-proof-q001-timeout-1791296710918-1791296710952"
+      },
+      "exactIdReconciliation": "FOUND",
+      "httpStatus": 200,
+      "receiptStatus": "TIMED_OUT",
+      "safeToRetry": false,
+      "sqlite": {
+        "blockDecision": {
+          "evaluated_at": "2026-10-06T14:25:10.976459",
+          "final_decision": "ALLOW",
+          "risk_score": 0.0,
+          "triggered_rules": []
+        },
+        "blockHash": "d7357ff9923b9e39e208d13dad113167122efe7d1e7d2803c9a21bc9b3fde9d3",
+        "chainValid": true,
+        "count": 2,
+        "exactIdFound": true,
+        "tipHash": "d7357ff9923b9e39e208d13dad113167122efe7d1e7d2803c9a21bc9b3fde9d3"
+      }
+    },
+    "restart": {
+      "sameExactIdCountAndTip": true,
+      "sqlite": {
+        "blockDecision": {
+          "evaluated_at": "2026-10-06T14:25:10.150953",
+          "final_decision": "ALLOW",
+          "risk_score": 0.0,
+          "triggered_rules": []
+        },
+        "blockHash": "8ed58610a5508f2a0eb19c448a9ff8c8729cdc2ae7c3da7a5154fa47d8b4ccbb",
+        "chainValid": true,
+        "count": 1,
+        "exactIdFound": true,
+        "tipHash": "8ed58610a5508f2a0eb19c448a9ff8c8729cdc2ae7c3da7a5154fa47d8b4ccbb"
+      }
+    },
+    "schemaVersion": "cvf.q001SyntheticSystemChainEvidence.v1",
+    "scope": "DISPOSABLE_GIT_VISIBLE_WORKTREE_SOURCE_ONLY",
+    "stageExcludesEnvLocalAndCurrentJsonLedger": true,
+    "stagedGitVisibleFileCount": 1200,
+    "stagedSourceHashes": {
+      "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/api/server.py": "b557d28703c22353c74de170e5eb9151e73fa216a44fb3af39935b92da055bd6",
+      "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/ledger_layer/sqlite_ledger.py": "df353a92b3adead1ed5cf00d7128ba9039c573e0441b819118094ec77c4c4ce5",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/proof.ts": "fbdcc3a434eea13842c9f692d2b54cc9955e80d8c8777d9dfaa14cace9cdfcaf",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/route.ts": "4bb06f86892fd33c9e25d94f29d6256d6ec325a296efffc2d356af2ca3ae1cdb",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/bounded-request-body.ts": "c4364231a381fdf5e6e987ba00344168f7f523afdda0193cb8f169a6583fef49"
+    },
+    "storeIdentityCategory": "fresh-disposable-sqlite-in-ignored-runtime",
+    "timeoutMs": {
+      "innerEngine": 8000,
+      "outerReceipt": 1200
+    },
+    "unavailable": {
+      "httpStatus": 200,
+      "receiptStatus": "UNAVAILABLE"
+    }
+  },
+  "dockerEngineChain": {
+    "claimBoundary": "Synthetic process/store proof only; no artifact approval, real GitHub cutover, provider call or Q001/R0 exit.",
+    "deniedAuth": {
+      "decision": "DENY",
+      "httpStatus": 401
+    },
+    "engineDockerImage": "cvf-ncr-docker-proof:20261006",
+    "engineRuntime": "DOCKER_BIND_SYNTHETIC_STORE",
+    "executionBaseHead": "45b1a48d4f97e221adcd3e3bd21610b54d6f5f5a",
+    "malformed": {
+      "httpStatus": 200,
+      "receiptStatus": "INVALID_RESPONSE"
+    },
+    "negativeControls": {
+      "forwardedEngineCalls": 2,
+      "wrongRequestIdAbsent": true,
+      "wrongStoreAbsent": true
+    },
+    "positive": {
+      "artifactState": "DRAFT_UNACCEPTED",
+      "attemptId": "artifact-proof-q001-positive-1791296839810-1791296839854",
+      "authMode": "service_token",
+      "engineReport": {
+        "action": "ALLOW",
+        "artifactId": "q001-positive-1791296839810",
+        "decision": "ALLOW",
+        "ledgerAttached": true,
+        "requestId": "artifact-proof-q001-positive-1791296839810-1791296839854"
+      },
+      "httpStatus": 200,
+      "receiptStatus": "PRESENT",
+      "routeDecision": "ALLOW",
+      "sqlite": {
+        "blockDecision": {
+          "evaluated_at": "2026-10-06T14:27:20.554794",
+          "final_decision": "ALLOW",
+          "risk_score": 0.0,
+          "triggered_rules": []
+        },
+        "blockHash": "12628daaeaa2ca77c49061f406e3a8e8780decff4a8a67b26c512b9c6085c6d9",
+        "chainValid": true,
+        "count": 1,
+        "exactIdFound": true,
+        "tipHash": "12628daaeaa2ca77c49061f406e3a8e8780decff4a8a67b26c512b9c6085c6d9"
+      }
+    },
+    "processes": {
+      "enginePidInitial": 26768,
+      "enginePidRestart": 15412,
+      "proxyPort": 55578,
+      "webPid": 19480
+    },
+    "responseLoss": {
+      "artifactState": "DRAFT_UNACCEPTED",
+      "attemptId": "artifact-proof-q001-timeout-1791296844590-1791296844637",
+      "engineReport": {
+        "action": "ALLOW",
+        "artifactId": "q001-timeout-1791296844590",
+        "decision": "ALLOW",
+        "ledgerAttached": true,
+        "requestId": "artifact-proof-q001-timeout-1791296844590-1791296844637"
+      },
+      "exactIdReconciliation": "FOUND",
+      "httpStatus": 200,
+      "receiptStatus": "TIMED_OUT",
+      "safeToRetry": false,
+      "sqlite": {
+        "blockDecision": {
+          "evaluated_at": "2026-10-06T14:27:24.729785",
+          "final_decision": "ALLOW",
+          "risk_score": 0.0,
+          "triggered_rules": []
+        },
+        "blockHash": "740620510a4a087f5a741d91b47990b2c80920e179f3caef5e9d2081b9641a16",
+        "chainValid": true,
+        "count": 2,
+        "exactIdFound": true,
+        "tipHash": "740620510a4a087f5a741d91b47990b2c80920e179f3caef5e9d2081b9641a16"
+      }
+    },
+    "restart": {
+      "sameExactIdCountAndTip": true,
+      "sqlite": {
+        "blockDecision": {
+          "evaluated_at": "2026-10-06T14:27:20.554794",
+          "final_decision": "ALLOW",
+          "risk_score": 0.0,
+          "triggered_rules": []
+        },
+        "blockHash": "12628daaeaa2ca77c49061f406e3a8e8780decff4a8a67b26c512b9c6085c6d9",
+        "chainValid": true,
+        "count": 1,
+        "exactIdFound": true,
+        "tipHash": "12628daaeaa2ca77c49061f406e3a8e8780decff4a8a67b26c512b9c6085c6d9"
+      }
+    },
+    "schemaVersion": "cvf.q001SyntheticSystemChainEvidence.v1",
+    "scope": "DISPOSABLE_GIT_VISIBLE_WORKTREE_SOURCE_ONLY",
+    "stageExcludesEnvLocalAndCurrentJsonLedger": true,
+    "stagedGitVisibleFileCount": 1200,
+    "stagedSourceHashes": {
+      "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/api/server.py": "b557d28703c22353c74de170e5eb9151e73fa216a44fb3af39935b92da055bd6",
+      "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/ledger_layer/sqlite_ledger.py": "df353a92b3adead1ed5cf00d7128ba9039c573e0441b819118094ec77c4c4ce5",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/proof.ts": "fbdcc3a434eea13842c9f692d2b54cc9955e80d8c8777d9dfaa14cace9cdfcaf",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/route.ts": "4bb06f86892fd33c9e25d94f29d6256d6ec325a296efffc2d356af2ca3ae1cdb",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/bounded-request-body.ts": "c4364231a381fdf5e6e987ba00344168f7f523afdda0193cb8f169a6583fef49"
+    },
+    "storeIdentityCategory": "fresh-disposable-sqlite-in-ignored-runtime",
+    "timeoutMs": {
+      "innerEngine": 8000,
+      "outerReceipt": 1200
+    },
+    "unavailable": {
+      "httpStatus": 200,
+      "receiptStatus": "UNAVAILABLE"
+    }
+  },
+  "providerAvailability": {
+    "provider": "alibaba",
+    "model": "qwen3.8-flash",
+    "calls": 1,
+    "promptCategory": "synthetic fixed OK smoke",
+    "scope": "real provider availability only; not a release or end-to-end governance receipt",
+    "httpStatus": 200,
+    "finishReason": "stop",
+    "exactOK": true,
+    "usage": {
+      "completion_tokens": 25,
+      "completion_tokens_details": {
+        "reasoning_tokens": 22,
+        "text_tokens": 25
+      },
+      "prompt_tokens": 66,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "text_tokens": 66
+      },
+      "total_tokens": 91
+    },
+    "status": "PASS",
+    "elapsedMs": 2078
+  },
+  "sourceHashesUnchangedAfterRun": true,
+  "claimBoundary": "Real Web HTTP/engine/storage composition plus separate Alibaba availability; no claim that this export invokes an LLM, no UI/user acceptance, real-data cutover or release readiness."
+}

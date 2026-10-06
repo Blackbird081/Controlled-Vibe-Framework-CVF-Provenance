@@ -1,5 +1,5 @@
 import { AIConfig, ExecutionResponse, AIProvider, DEFAULT_MODELS, CVF_SYSTEM_PROMPT } from './types';
-import { buildProviderExecutionDiagnostic } from '@/lib/execution-diagnostics';
+import { buildExecutionDiagnostic, buildProviderExecutionDiagnostic } from '@/lib/execution-diagnostics';
 
 class ProviderHttpStatusError extends Error {
     readonly httpStatus: number;
@@ -37,20 +37,23 @@ async function parseAlibabaStreamingResponse(response: Response): Promise<{
     output: string;
     tokensUsed?: number;
     finishReason?: string;
+    malformed: boolean;
+    usage: ExecutionResponse['usage'];
 }> {
     const raw = await response.text();
     const lines = raw
         .split('\n')
         .map(line => line.trim())
-        .filter(line => line.startsWith('data: '));
+        .filter(line => line.startsWith('data:'));
 
     let output = '';
-    let reasoning = '';
+    let malformed = false;
+    let usage: ExecutionResponse['usage'];
     let tokensUsed: number | undefined;
     let finishReason: string | undefined;
 
     for (const line of lines) {
-        const payload = line.slice(6);
+        const payload = line.slice(5).trimStart();
         if (payload === '[DONE]') continue;
 
         try {
@@ -59,24 +62,27 @@ async function parseAlibabaStreamingResponse(response: Response): Promise<{
             if (typeof delta?.content === 'string') {
                 output += delta.content;
             }
-            if (typeof delta?.reasoning_content === 'string') {
-                reasoning += delta.reasoning_content;
-            }
             if (typeof data.choices?.[0]?.finish_reason === 'string') {
                 finishReason = data.choices[0].finish_reason;
             }
             if (typeof data.usage?.total_tokens === 'number') {
                 tokensUsed = data.usage.total_tokens;
             }
+            if (data.usage) usage = {
+                inputTokens: data.usage.prompt_tokens, outputTokens: data.usage.completion_tokens,
+                totalTokens: data.usage.total_tokens,
+            };
         } catch {
-            // Ignore malformed SSE chunks and preserve the parsable output.
+            malformed = true;
         }
     }
 
     return {
-        output: output || reasoning,
+        output,
         tokensUsed,
         finishReason,
+        malformed,
+        usage,
     };
 }
 
@@ -268,6 +274,28 @@ async function executeGemini(
 }
 
 // Alibaba DashScope Client (OpenAI-compatible)
+function buildAlibabaTruncatedCompletion(
+    config: AIConfig,
+    executionTime: number,
+    usage: ExecutionResponse['usage'],
+    message = 'Alibaba output is incomplete because it reached the output-token limit. Revise the request or review the limit before another call.',
+): ExecutionResponse {
+    return {
+        success: false,
+        error: message,
+        provider: 'alibaba',
+        model: config.model,
+        tokensUsed: usage?.totalTokens,
+        usage,
+        executionTime,
+        diagnostic: buildExecutionDiagnostic({
+            stage: 'output_validation', class: 'output_validation_failed',
+            retryable: false, userAction: 'revise_request', safeMessage: message,
+            provider: 'alibaba', model: config.model, httpStatus: 200, latencyMs: executionTime,
+        }),
+    };
+}
+
 async function executeAlibaba(
     config: AIConfig,
     systemPrompt: string,
@@ -321,23 +349,42 @@ async function executeAlibaba(
 
         if (isStreamingOnly) {
             const data = await parseAlibabaStreamingResponse(response);
+            if (data.finishReason === 'length') {
+                return buildAlibabaTruncatedCompletion(config, Date.now() - startTime, data.usage);
+            }
+            if (data.malformed || data.finishReason !== 'stop' || !data.output.trim()) {
+                return buildAlibabaTruncatedCompletion(config, Date.now() - startTime, data.usage,
+                    'Alibaba did not return a complete usable answer. Review the request and response diagnostic before another call.');
+            }
             return {
                 success: true,
                 output: data.output,
                 provider: 'alibaba',
                 model: config.model,
                 tokensUsed: data.tokensUsed,
-                usage: {
-                    totalTokens: data.tokensUsed,
-                },
+                usage: data.usage,
                 executionTime: Date.now() - startTime,
             };
         }
 
         const data = await response.json();
+        const usage = { inputTokens: data.usage?.prompt_tokens, outputTokens: data.usage?.completion_tokens, totalTokens: data.usage?.total_tokens };
+        if (data.choices?.[0]?.finish_reason === 'length') {
+            return buildAlibabaTruncatedCompletion(config, Date.now() - startTime, {
+                inputTokens: data.usage?.prompt_tokens,
+                outputTokens: data.usage?.completion_tokens,
+                totalTokens: data.usage?.total_tokens,
+            });
+        }
+        const output = data.choices?.[0]?.message?.content;
+        const finishReason = data.choices?.[0]?.finish_reason;
+        if (typeof output !== 'string' || !output.trim() || (finishReason != null && finishReason !== 'stop')) {
+            return buildAlibabaTruncatedCompletion(config, Date.now() - startTime, usage,
+                'Alibaba did not return a complete usable answer. Review the request and response diagnostic before another call.');
+        }
         return {
             success: true,
-            output: data.choices[0].message.content,
+            output,
             provider: 'alibaba',
             model: config.model,
             tokensUsed: data.usage?.total_tokens,

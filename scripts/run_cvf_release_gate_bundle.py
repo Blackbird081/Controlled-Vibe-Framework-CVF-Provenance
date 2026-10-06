@@ -29,6 +29,7 @@ Exit codes:
   1  One or more checks FAIL
 """
 import argparse
+import hashlib
 import json
 import os
 import re
@@ -42,6 +43,7 @@ from types import SimpleNamespace
 
 from build_cvf_live_evidence_manifest import build_manifest as build_live_evidence_manifest
 import cvf_doctor
+from scan_cvf_q001_candidate_secrets import CANDIDATE, FIXTURE_FINGERPRINTS, Q001_EXTRA_PATTERNS, read_lines
 from cvf_release_e2e_diagnostic import (
     SUBPROCESS_TIMEOUT_EXIT_CODE,
     build_e2e_diagnostic,
@@ -130,33 +132,18 @@ def run_cmd(
         return 1, "", str(e)
 
 
-def is_allowed_secret_line(path: Path, line: str) -> bool:
-    lowered = line.lower()
-    rel = path.relative_to(REPO_ROOT)
-    parts = {p.lower() for p in rel.parts}
-
-    if "tests" in parts or ".test." in path.name.lower() or path.name.lower().endswith(".spec.ts"):
+def is_allowed_secret_line(path: Path, line: str, line_no: int | None = None) -> bool:
+    rel = path.relative_to(REPO_ROOT).as_posix()
+    if rel.startswith('.private_reference/') and (rel, line) in PRIVATE_REFERENCE_SECRET_ALLOWLIST:
         return True
-
-    placeholder_markers = [
-        "<your", "your-", "your_", "your_key", "your-key", "xxx", "...",
-        "test-key", "dummy", "placeholder", "secret-123", "ds-key", "claude-key",
-    ]
-    if any(marker in lowered for marker in placeholder_markers):
-        return True
-
-    # Exact-path, exact-line allowlist for known non-live matches inside
-    # pinned, read-only .private_reference/ inputs (negative-test fixtures,
-    # source-mirror smoke-test placeholders). Never applies outside
-    # .private_reference/, and any edited line or genuine key substituted
-    # into these files no longer matches the recorded fingerprint and fails
-    # closed.
-    rel_posix = rel.as_posix()
-    if parts and next(iter(rel.parts)) == ".private_reference":
-        if (rel_posix, line) in PRIVATE_REFERENCE_SECRET_ALLOWLIST:
-            return True
-
-    return False
+    if line_no is None:
+        return False
+    try:
+        fixture_path = path.relative_to(REPO_ROOT / CANDIDATE).as_posix()
+    except ValueError:
+        return False
+    digest = hashlib.sha256(line.encode('utf-8')).hexdigest()
+    return (fixture_path, line_no, digest) in FIXTURE_FINGERPRINTS
 
 
 # ---------------------------------------------------------------------------
@@ -268,35 +255,56 @@ def check_secrets(dry_run: bool) -> CheckResult:
     if dry_run:
         return CheckResult(name, "SKIP", f"dry-run — would scan {REPO_ROOT} for secret patterns")
 
-    compiled = [re.compile(p) for p in SECRET_PATTERNS]
     hits: list[str] = []
+    unreadable: list[str] = []
+    scanned = skipped_files = skipped_dirs = 0
+    stopped = False
+    compiled = [re.compile(p) for p in (*SECRET_PATTERNS, *Q001_EXTRA_PATTERNS)]
+    def on_walk_error(error):
+        path = Path(error.filename) if error.filename else REPO_ROOT
+        unreadable.append(path.relative_to(REPO_ROOT).as_posix())
 
-    for path in REPO_ROOT.rglob("*"):
-        # Skip irrelevant dirs
-        if any(skip in path.parts for skip in SCAN_SKIP):
-            continue
-        if not path.is_file():
-            continue
-        if path.suffix not in SCAN_EXTENSIONS:
-            continue
-        try:
-            text = path.read_text(encoding="utf-8", errors="ignore")
-        except Exception:
-            continue
-        for line_no, line in enumerate(text.splitlines(), 1):
-            for pat in compiled:
-                if pat.search(line):
-                    if is_allowed_secret_line(path, line):
-                        continue
-                    rel = path.relative_to(REPO_ROOT)
-                    hits.append(f"{rel}:{line_no}")
-                    break
-        if len(hits) >= 20:
+    for directory, dirs, files in os.walk(REPO_ROOT, onerror=on_walk_error, followlinks=False):
+        base = Path(directory)
+        kept = []
+        for name in dirs:
+            child = base / name
+            if name in SCAN_SKIP or child.relative_to(REPO_ROOT).as_posix() in SCAN_SKIP:
+                skipped_dirs += 1
+            elif child.is_symlink():
+                unreadable.append(child.relative_to(REPO_ROOT).as_posix())
+            else:
+                kept.append(name)
+        dirs[:] = kept
+        for filename in sorted(files):
+            path = base / filename
+            if path.suffix not in SCAN_EXTENSIONS | {'.html'}:
+                skipped_files += 1
+                continue
+            if path.is_symlink():
+                unreadable.append(path.relative_to(REPO_ROOT).as_posix())
+                continue
+            try:
+                lines = read_lines(path)
+            except (OSError, UnicodeError):
+                unreadable.append(path.relative_to(REPO_ROOT).as_posix())
+                continue
+            scanned += 1
+            for line_no, line in enumerate(lines, 1):
+                if any(pat.search(line) for pat in compiled) and not is_allowed_secret_line(path, line, line_no):
+                    hits.append(f'{path.relative_to(REPO_ROOT)}:{line_no}')
+            if len(hits) >= 20:
+                stopped = True
+                break
+        if stopped:
             break
-
-    if hits:
-        return CheckResult(name, "FAIL", f"Potential secrets found in {len(hits)} location(s)", hits)
-    return CheckResult(name, "PASS", "No secret patterns detected")
+    summary = (f'filesScanned={scanned} filesSkippedExtension={skipped_files} '
+               f'skippedDirectories={skipped_dirs} filesUnreadable={len(unreadable)} '
+               f'stoppedAfterFindingsLimit={str(stopped).lower()}')
+    detail = [*hits, *(f'unreadable:{path}' for path in unreadable), summary]
+    if hits or unreadable:
+        return CheckResult(name, 'FAIL', f'Secret findings={len(hits)} unreadable={len(unreadable)}', detail)
+    return CheckResult(name, 'PASS', 'No secret patterns detected in declared scan scope', detail)
 
 
 _LAST_E2E_DIAGNOSTIC: dict | None = None
@@ -451,13 +459,14 @@ ICONS = {"PASS": "PASS", "WARN": "WARN", "FAIL": "FAIL", "SKIP": "SKIP"}
 BAR = "=" * 68
 
 
-def print_results(results: list[CheckResult], date: str) -> int:
+def print_results(results: list[CheckResult], date: str, *, payload: dict | None = None) -> int:
+    payload = result_payload(results, date) if payload is None else payload
     print(f"\n{BAR}")
     print(f"  CVF RELEASE GATE BUNDLE — {date}")
     print(BAR)
 
     for r in results:
-        icon = ICONS[r.status]
+        icon = ICONS.get(r.status, r.status)
         print(f"  [{icon:<4}] {r.name}")
         print(f"         {r.message}")
         for d in r.detail[:5]:
@@ -469,20 +478,21 @@ def print_results(results: list[CheckResult], date: str) -> int:
     fails = sum(1 for r in results if r.status == "FAIL")
     skips = sum(1 for r in results if r.status == "SKIP")
     print(f"  PASS: {passes}  WARN: {warns}  FAIL: {fails}  SKIP: {skips}")
-    if fails:
-        print(f"\n  GATE RESULT: FAIL ({fails} check(s) failed)")
+    if payload["gate_result"] != "PASS":
+        print(f"\n  GATE RESULT: FAIL (required checks or proof incomplete/failed)")
     elif warns:
         print(f"\n  GATE RESULT: PASS ({warns} warning(s))")
     else:
         print(f"\n  GATE RESULT: PASS")
     print(BAR + "\n")
-    return 1 if fails else 0
+    return 0 if payload["gate_result"] == "PASS" else 1
 
 
 def result_payload(results: list[CheckResult], date: str, sot3: dict | None = None) -> dict:
     """Builds the machine-readable release JSON payload.
 
-    `sot3` is the top-level SOT3 evidence object. A missing, malformed, or
+    Empty results or any status outside PASS/WARN fail closed. `sot3` is
+    the top-level SOT3 evidence object. A missing, malformed, or
     non-PASS SOT3 payload always makes `gate_result` FAIL, independent of
     every other check's status -- including the dry-run case, where SOT3 is
     SKIP and can never support a PASS claim. Callers that omit `sot3`
@@ -491,7 +501,7 @@ def result_payload(results: list[CheckResult], date: str, sot3: dict | None = No
     part of this payload at all (a caller building a non-release, non-SOT3
     payload shape), `sot3` is omitted from gate-result computation.
     """
-    fails = sum(1 for r in results if r.status == "FAIL")
+    checks_block_pass = not results or any(r.status not in {"PASS", "WARN"} for r in results)
     has_sot3_check = any(r.name.startswith("SOT3") for r in results)
 
     sot3_payload = sot3
@@ -502,7 +512,7 @@ def result_payload(results: list[CheckResult], date: str, sot3: dict | None = No
     if has_sot3_check or sot3_payload is not None:
         sot3_blocks_pass = not (isinstance(sot3_payload, dict) and sot3_payload.get("overall") == "PASS")
 
-    gate_result = "FAIL" if (fails or sot3_blocks_pass) else "PASS"
+    gate_result = "FAIL" if (checks_block_pass or sot3_blocks_pass) else "PASS"
 
     payload: dict = {
         "date": date,
@@ -652,7 +662,7 @@ def main() -> None:
         if args.json_out:
             sys.exit(json_output(payload))
         else:
-            sys.exit(print_results(results, today))
+            sys.exit(print_results(results, today, payload=payload))
 
     results.extend([
         check_web_build(args.dry_run),
@@ -701,7 +711,7 @@ def main() -> None:
     if args.json_out:
         sys.exit(json_output(payload))
     else:
-        sys.exit(print_results(results, today))
+        sys.exit(print_results(results, today, payload=payload))
 
 
 if __name__ == "__main__":

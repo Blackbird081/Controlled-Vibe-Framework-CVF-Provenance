@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import hashlib
+import argparse
 import hmac
 import json
 import os
@@ -34,19 +35,27 @@ def free_port() -> int:
 
 
 def stage_tracked_source(target: Path) -> int:
-    """Copy Git-indexed Web/engine files, explicitly excluding env and JSON ledger."""
+    """Copy Git-visible current files, excluding env and the active JSON ledger."""
     proc = subprocess.run(
-        ["git", "ls-files", "-z", "--", WEB.as_posix(), ENGINE.parent.as_posix()],
+        ["git", "ls-files", "-z", "--cached", "--others", "--exclude-standard", "--", WEB.as_posix(), ENGINE.parent.as_posix()],
         cwd=ROOT, check=True, capture_output=True,
     )
     count = 0
+    seen = set()
     for raw in proc.stdout.split(b"\0"):
         if not raw:
             continue
         relative = Path(os.fsdecode(raw))
+        if relative in seen:
+            continue
+        seen.add(relative)
         if any(part.startswith(".env") for part in relative.parts) or relative.name == "ledger_chain.json":
             continue
         source = ROOT / relative
+        if not source.exists():
+            continue  # Tracked deletion in the current worktree.
+        if source.is_symlink() or not source.resolve().is_relative_to(ROOT.resolve()):
+            raise RuntimeError("source staging encountered an unsafe path")
         destination = target / relative
         destination.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(source, destination)
@@ -93,7 +102,21 @@ def wait_ready(url: str, process: subprocess.Popen, deadline: float = 100) -> No
 
 
 def stop(process: subprocess.Popen | None) -> None:
-    if process is None or process.poll() is not None:
+    if process is None:
+        return
+    docker_name = getattr(process, "cvf_docker_name", None)
+    if docker_name:
+        if not docker_name.startswith("cvf-q001-web-"):
+            raise RuntimeError("Refusing cleanup outside the owned Docker namespace")
+        state = subprocess.run(["docker", "container", "inspect", docker_name], capture_output=True, timeout=30)
+        if state.returncode == 0:
+            subprocess.run(["docker", "rm", "-f", docker_name], check=True, capture_output=True, timeout=30)
+        elif b"no such" not in state.stderr.lower():
+            raise RuntimeError("Cannot verify owned Docker container cleanup state")
+        if process.poll() is None:
+            process.wait(timeout=15)
+        return
+    if process.poll() is not None:
         return
     process.terminate()
     try:
@@ -195,7 +218,7 @@ def inspect_store(stage: Path, store: Path, attempt: str) -> dict:
         sys.path.pop(0)
 
 
-def run_probe() -> dict:
+def run_probe(engine_docker_image: str | None = None) -> dict:
     RUNTIME.mkdir(parents=True, exist_ok=True)
     with tempfile.TemporaryDirectory(prefix="q001-system-chain-", dir=RUNTIME) as directory:
         scratch = Path(directory).resolve()
@@ -229,12 +252,32 @@ def run_probe() -> dict:
         proxy_thread = None
         def start_engine() -> subprocess.Popen:
             env = os.environ.copy()
+            for key in list(env):
+                if key.upper().endswith("API_KEY"):
+                    env.pop(key, None)
             env["CVF_GOVERNANCE_LEDGER_PATH"] = str(store)
+            command = [sys.executable, "-m", "uvicorn", "api.server:app", "--host", "127.0.0.1", "--port", str(engine_port)]
+            docker_name = None
+            if engine_docker_image:
+                docker_name = "cvf-q001-web-" + os.urandom(6).hex()
+                command = ["docker", "run", "--rm", "--pull=never", "--name", docker_name,
+                           "-p", f"127.0.0.1:{engine_port}:8100",
+                           "--mount", f"type=bind,src={engine},dst=/engine,readonly",
+                           "--mount", f"type=bind,src={store.parent},dst=/data",
+                           "-w", "/engine", "-e", "CVF_GOVERNANCE_LEDGER_PATH=/data/proof.sqlite",
+                           engine_docker_image, "python", "-m", "uvicorn", "api.server:app",
+                           "--host", "0.0.0.0", "--port", "8100"]
             process = subprocess.Popen(
-                [sys.executable, "-m", "uvicorn", "api.server:app", "--host", "127.0.0.1", "--port", str(engine_port)],
+                command,
                 cwd=engine, env=env, stdout=engine_log, stderr=subprocess.STDOUT,
             )
-            wait_ready(f"http://127.0.0.1:{engine_port}/api/v1/health", process)
+            if docker_name:
+                process.cvf_docker_name = docker_name
+            try:
+                wait_ready(f"http://127.0.0.1:{engine_port}/api/v1/health", process)
+            except BaseException:
+                stop(process)
+                raise
             return process
         try:
             engine_process = start_engine()
@@ -244,7 +287,7 @@ def run_probe() -> dict:
             proxy_thread.start()
             env = os.environ.copy()
             for key in list(env):
-                if key in {"GITHUB_ID", "GITHUB_SECRET", "AUTH_SECRET", "NEXTAUTH_SECRET", "DATABASE_URL"} or key.startswith("CVF_"):
+                if key in {"GITHUB_ID", "GITHUB_SECRET", "AUTH_SECRET", "NEXTAUTH_SECRET", "DATABASE_URL"} or key.startswith("CVF_") or key.upper().endswith("API_KEY"):
                     env.pop(key, None)
             env.update({
                 "CVF_SERVICE_TOKEN": token,
@@ -312,11 +355,23 @@ def run_probe() -> dict:
                 raise AssertionError("unexpected engine forwarding/replay count")
             return {
                 "schemaVersion": "cvf.q001SyntheticSystemChainEvidence.v1",
-                "scope": "DISPOSABLE_TRACKED_SOURCE_ONLY",
+                "scope": "DISPOSABLE_GIT_VISIBLE_WORKTREE_SOURCE_ONLY",
                 "executionBaseHead": subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip(),
-                "stagedTrackedFileCount": staged_count,
+                "stagedGitVisibleFileCount": staged_count,
+                "stagedSourceHashes": {
+                    str(relative).replace("\\", "/"): hashlib.sha256((stage / relative).read_bytes()).hexdigest()
+                    for relative in (
+                        WEB / "src/app/api/artifacts/export/route.ts",
+                        WEB / "src/app/api/artifacts/export/proof.ts",
+                        WEB / "src/lib/bounded-request-body.ts",
+                        ENGINE / "api/server.py",
+                        ENGINE / "ledger_layer/sqlite_ledger.py",
+                    ) if (stage / relative).exists()
+                },
                 "stageExcludesEnvLocalAndCurrentJsonLedger": True,
                 "storeIdentityCategory": "fresh-disposable-sqlite-in-ignored-runtime",
+                "engineRuntime": "DOCKER_BIND_SYNTHETIC_STORE" if engine_docker_image else "HOST_PROCESS",
+                "engineDockerImage": engine_docker_image,
                 "processes": {"webPid": web_process.pid, "enginePidInitial": engine_pid_initial, "enginePidRestart": engine_process.pid if engine_process else None, "proxyPort": proxy_port},
                 "timeoutMs": {"outerReceipt": RECEIPT_TIMEOUT_MS, "innerEngine": ENGINE_TIMEOUT_MS},
                 "deniedAuth": {"httpStatus": denied_status, "decision": "DENY"},
@@ -343,4 +398,7 @@ def run_probe() -> dict:
 
 
 if __name__ == "__main__":
-    print(json.dumps(run_probe(), indent=2, sort_keys=True))
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--engine-docker-image", help="Explicit prebuilt local test image; never builds or pulls it")
+    args = parser.parse_args()
+    print(json.dumps(run_probe(args.engine_docker_image), indent=2, sort_keys=True))

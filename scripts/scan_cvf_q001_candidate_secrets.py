@@ -28,15 +28,15 @@ Q001_EXTRA_PATTERNS = [
 # Existing non-live test fixtures, admitted by exact path, line number and
 # SHA-256 of the entire line. No test directory or placeholder-wide bypass.
 FIXTURE_FINGERPRINTS = {
-    ("src/app/api/artifacts/export/route.test.ts", 118, "e8879763895c762d69e04c653f98f1fc7079ee0556237c6558fcf127ab7ca1d7"),
-    ("src/app/api/execute/route.dlp.live.test.ts", 136, "d89410e88153f2bf32eaa93a9ccd89e7a9fc4b04edeebb3be8bdb63a96831ddc"),
-    ("src/app/api/execute/route.test.ts", 225, "a3c0eab74f14b77ded2eeb0400c2ab7bf72e7b484a3e208dbc6ad666c1a81825"),
-    ("src/app/api/execute/route.test.ts", 406, "c6d8956d73a64b0374cffceec31cbd0b62db8e50cde67bd54abe4eba1853bbf5"),
-    ("src/app/api/providers/route.test.ts", 78, "3715a54fc776e9aa8f819fefb5a11f4a1ad305221cb3fb435e364db1e21c98e0"),
-    ("src/app/api/providers/route.test.ts", 111, "4fece71ea1c5c4dbbf963136222eab099a30149380b42c80da4de54fc71a99e5"),
-    ("src/app/api/providers/route.test.ts", 133, "4fece71ea1c5c4dbbf963136222eab099a30149380b42c80da4de54fc71a99e5"),
-    ("src/app/api/providers/route.test.ts", 135, "c6d8956d73a64b0374cffceec31cbd0b62db8e50cde67bd54abe4eba1853bbf5"),
-    ("src/lib/security.test.ts", 56, "5bd2cbbc6555909747e5653ef6235de7b59962717e7a986cc54e50c17f6b84f2"),
+    ('src/app/api/artifacts/export/route.test.ts', 139, 'e8879763895c762d69e04c653f98f1fc7079ee0556237c6558fcf127ab7ca1d7'),
+    ('src/app/api/execute/route.dlp.live.test.ts', 136, 'd89410e88153f2bf32eaa93a9ccd89e7a9fc4b04edeebb3be8bdb63a96831ddc'),
+    ('src/app/api/execute/route.test.ts', 226, 'a3c0eab74f14b77ded2eeb0400c2ab7bf72e7b484a3e208dbc6ad666c1a81825'),
+    ('src/app/api/execute/route.test.ts', 407, 'c6d8956d73a64b0374cffceec31cbd0b62db8e50cde67bd54abe4eba1853bbf5'),
+    ('src/app/api/providers/route.test.ts', 78, '3715a54fc776e9aa8f819fefb5a11f4a1ad305221cb3fb435e364db1e21c98e0'),
+    ('src/app/api/providers/route.test.ts', 111, '4fece71ea1c5c4dbbf963136222eab099a30149380b42c80da4de54fc71a99e5'),
+    ('src/app/api/providers/route.test.ts', 133, '4fece71ea1c5c4dbbf963136222eab099a30149380b42c80da4de54fc71a99e5'),
+    ('src/app/api/providers/route.test.ts', 135, 'c6d8956d73a64b0374cffceec31cbd0b62db8e50cde67bd54abe4eba1853bbf5'),
+    ('src/lib/security.test.ts', 56, '5bd2cbbc6555909747e5653ef6235de7b59962717e7a986cc54e50c17f6b84f2'),
 }
 
 

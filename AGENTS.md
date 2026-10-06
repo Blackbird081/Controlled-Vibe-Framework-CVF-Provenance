@@ -1,9 +1,7 @@
 # CVF Agent Instructions
 
-Root instruction carrier and canonical CVF authority. This compact router carries the startup contract, authority hierarchy, task routing, and direct machine
-bindings. The full per-rule owner map lives in the routing index
-`docs/reference/CVF_AGENT_INSTRUCTION_CARRIER_ROUTING_INDEX_2026-08-11.md`.
-Compaction moved prose there and repealed no rule; if a rule is not restated here, resolve its canonical owner through that index.
+Root instruction carrier and canonical CVF authority: startup, hierarchy, routing and direct machine bindings. Full rule owners: `docs/reference/CVF_AGENT_INSTRUCTION_CARRIER_ROUTING_INDEX_2026-08-11.md`.
+Compaction repealed no rule; resolve any rule not restated here through that index.
 
 ## Session Memory Front Door
 
@@ -90,6 +88,8 @@ Before authoring any governed CVF artifact, read
 `docs/reference/guard_orientation/README.md` for the applicable role/task
 guards and `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`
 for known gate traps. Canonical standards, work orders and checkers still control.
+Before intake, planning, producing or receiving artifacts, apply Agent Continuation And Action Readiness in
+`docs/reference/CVF_GOVERNED_WORK_LIFECYCLE_AND_DESIGN_CONTROL_STANDARD_2026-06-11.md` without operator reminder; design outputs for agent and human continuation, clarify by action and stay within granted authority.
 
 ## Task Class Routing
 

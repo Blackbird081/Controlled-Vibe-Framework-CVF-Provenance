@@ -19,6 +19,7 @@ from __future__ import annotations
 
 import os
 import sys
+import tempfile
 import unittest
 from pathlib import Path
 from unittest import mock
@@ -136,16 +137,16 @@ class PrivateReferenceSecretAllowlistTests(unittest.TestCase):
             ".private_reference/source_mirrors/deepseek-ai__deepseek-harness/"
             "scripts/REGRESSION_TEST_e2e_adversarial.py"
         )
-        genuine_looking_line = _adversarial_line()
-        self._write_scratch_file(victim_rel_path, genuine_looking_line + "\n")
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            victim = root / victim_rel_path
+            victim.parent.mkdir(parents=True)
+            victim.write_text(_adversarial_line() + '\n', encoding='utf-8')
+            with mock.patch.object(bundle, 'REPO_ROOT', root):
+                result = bundle.check_secrets(False)
+            self.assertEqual(result.status, 'FAIL')
+            self.assertTrue(any('REGRESSION_TEST_e2e_adversarial' in hit for hit in result.detail))
 
-        result = bundle.check_secrets(False)
-
-        self.assertEqual(result.status, "FAIL")
-        self.assertTrue(
-            any("REGRESSION_TEST_e2e_adversarial" in hit for hit in result.detail),
-            f"expected injected adversarial file in hits, got: {result.detail}",
-        )
 
 
 class WebBuildStructuralEnvTests(unittest.TestCase):

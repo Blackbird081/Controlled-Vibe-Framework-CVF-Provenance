@@ -5,6 +5,10 @@ from __future__ import annotations
 import sys
 import tempfile
 import threading
+from unittest.mock import patch
+from unittest.mock import Mock
+import subprocess
+import pytest
 from pathlib import Path
 
 from scripts.probe_cvf_q001_synthetic_system_chain import (
@@ -27,6 +31,54 @@ def test_staging_uses_tracked_source_without_env_or_current_json_ledger():
         assert (stage / ENGINE / "api/server.py").is_file()
         assert not list(stage.rglob(".env.local"))
         assert not list(stage.rglob("ledger_chain.json"))
+        current_helper = ROOT / "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/bounded-request-body.ts"
+        if current_helper.exists():
+            assert (stage / current_helper.relative_to(ROOT)).read_bytes() == current_helper.read_bytes()
+
+
+def test_staging_includes_untracked_and_excludes_credentials_and_deletions():
+    import scripts.probe_cvf_q001_synthetic_system_chain as probe
+    with tempfile.TemporaryDirectory() as directory:
+        root = Path(directory) / 'root'; root.mkdir()
+        stage = Path(directory) / 'stage'
+        files = [probe.WEB / 'src/lib/new-helper.ts', probe.WEB / '.env.local', probe.ENGINE / 'ledger_layer/ledger_chain.json', probe.WEB / 'deleted.ts']
+        for relative in files[:-1]:
+            target = root / relative; target.parent.mkdir(parents=True, exist_ok=True); target.write_text('synthetic', encoding='utf-8')
+        raw = b'\0'.join(str(p).encode() for p in files) + b'\0'
+        with patch.object(probe, 'ROOT', root), patch.object(probe.subprocess, 'run', return_value=subprocess.CompletedProcess([], 0, stdout=raw)) as run:
+            assert probe.stage_tracked_source(stage) == 1
+            assert '--others' in run.call_args.args[0]
+            assert '--exclude-standard' in run.call_args.args[0]
+        assert (stage / files[0]).read_text() == 'synthetic'
+        assert not (stage / files[1]).exists()
+        assert not (stage / files[2]).exists()
+
+
+def test_docker_cleanup_checks_owned_container_even_when_client_already_exited():
+    import scripts.probe_cvf_q001_synthetic_system_chain as probe
+    process = Mock(cvf_docker_name='cvf-q001-web-owned', poll=Mock(return_value=0))
+    with patch.object(probe.subprocess, 'run', return_value=subprocess.CompletedProcess([], 0, stdout=b'', stderr=b'')) as run:
+        probe.stop(process)
+        assert run.call_args_list[0].args[0] == ['docker', 'container', 'inspect', 'cvf-q001-web-owned']
+        assert run.call_args_list[1].args[0] == ['docker', 'rm', '-f', 'cvf-q001-web-owned']
+        process.wait.assert_not_called()
+
+
+def test_docker_cleanup_distinguishes_already_removed_from_unverifiable():
+    import scripts.probe_cvf_q001_synthetic_system_chain as probe
+    process = Mock(cvf_docker_name='cvf-q001-web-owned', poll=Mock(return_value=0))
+    for error, rejected in [(b'Error: No such container', False), (b'Daemon unavailable', True)]:
+        with patch.object(probe.subprocess, 'run', return_value=subprocess.CompletedProcess([], 1, stderr=error)) as run:
+            if rejected:
+                with pytest.raises(RuntimeError, match='Cannot verify'):
+                    probe.stop(process)
+            else:
+                probe.stop(process)
+            assert run.call_count == 1
+    process.cvf_docker_name = 'unrelated-user-container'
+    with patch.object(probe.subprocess, 'run') as run, pytest.raises(RuntimeError, match='Refusing cleanup'):
+        probe.stop(process)
+    run.assert_not_called()
 
 
 def test_exact_id_oracle_rejects_wrong_id_and_wrong_store():

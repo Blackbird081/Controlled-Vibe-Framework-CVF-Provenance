@@ -76,6 +76,7 @@ owner and bindingClass.
 | Session Memory Front Door | `docs/reference/CVF_ACTIVE_CONTINUITY_READ_BUDGET_STANDARD_2026-08-10.md`; `CVF_SESSION_MEMORY.md` | ROUTE_AND_RETAIN_LITERAL |
 | Mandatory Startup Acknowledgment | `CVF_SESSION_MEMORY.md` plus the compact AGENTS startup contract | ROUTE_AND_RETAIN_LITERAL |
 | Guard Orientation Index | `docs/reference/guard_orientation/README.md` | ROUTE |
+| Agent continuation and action readiness (Guard Orientation Index entry) | `docs/reference/CVF_GOVERNED_WORK_LIFECYCLE_AND_DESIGN_CONTROL_STANDARD_2026-06-11.md`, Agent Continuation And Action Readiness | ROUTE |
 | Mandatory Provider-Specific Agent Memory Boundary | `governance/compat/check_agent_packet_authority_and_encoding.py` | ROUTE |
 | Mandatory F-1 Diminishing Returns Stop Rule | `docs/reviews/CVF_F1_DIMINISHING_RETURNS_STOP_RULE_2026-05-15.md` | ROUTE |
 | Mandatory Reviewer Non-Duplication And Active MFRP Measurement | `docs/reference/review_cost_control/CVF_REVIEW_COST_AND_DIMINISHING_RETURN_CONTROL_STANDARD.md`; `docs/roadmaps/CVF_GCLH_MACHINE_FIRST_REVIEW_PREFLIGHT_ROADMAP_2026-09-01.md`; active P4-C1 continuity | ROUTE_AND_RETAIN_LITERAL |

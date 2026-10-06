@@ -1,4 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { readBoundedRequestBody } from '@/lib/bounded-request-body';
+import { validateExecuteRequestShape } from '@/lib/execute-request-validation';
 import { executeAI, type AIProvider, type ExecutionRequest, type ExecutionResponse } from '@/lib/ai';
 import { evaluateEnforcement } from '@/lib/enforcement';
 import { getTemplateById } from '@/lib/templates';
@@ -102,7 +104,8 @@ export async function POST(request: NextRequest) {
     // F01: hoisted so the outer catch can carry reconciliation evidence too.
     let providerAttemptLedgerForCatch: ProviderAttemptLedger | undefined;
     try {
-        const rawBodyText = await request.text();
+        const rawBodyText = await readBoundedRequestBody(request, 16 * 1024 * 1024);
+        if (rawBodyText === null) return NextResponse.json({ success: false, error: 'Execution request body exceeds 16 MiB limit.' }, { status: 413 });
         let rawBody: unknown;
         try {
             rawBody = JSON.parse(rawBodyText);
@@ -130,9 +133,8 @@ export async function POST(request: NextRequest) {
                 { status: 401 }
             );
         }
-        if (!rawBody || typeof rawBody !== 'object') {
-            return NextResponse.json({ success: false, error: 'Invalid input payload.' }, { status: 400 });
-        }
+        const shapeError = validateExecuteRequestShape(rawBody);
+        if (shapeError) return NextResponse.json({ success: false, error: shapeError, diagnostic: buildExecutionDiagnostic({ stage: 'request_validation', class: 'invalid_input', httpStatus: 400 }) }, { status: 400 });
         const body = rawBody as Partial<ExecutionRequest>;
         body.inputs = Object.fromEntries(Object.entries(body.inputs || {}).map(([k, v]) => [k, String(v ?? '').trim()]));
         if (typeof body.model === 'string') body.model = body.model.trim() || undefined;

@@ -1,0 +1,61 @@
+"""Synthetic scanner boundaries in disposable roots; never read local credentials."""
+import json
+import sys
+import tempfile
+import unittest
+from pathlib import Path
+from unittest import mock
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import run_cvf_release_gate_bundle as bundle
+
+
+class ReleaseSecretScanBoundaryTests(unittest.TestCase):
+    def scan(self, root):
+        with mock.patch.object(bundle, 'REPO_ROOT', root):
+            return bundle.check_secrets(False)
+
+    def test_test_paths_and_placeholder_substrings_do_not_hide_secrets(self):
+        synthetic = 'sk-' + 'Z' * 32
+        for name in ['tests/fixture.py', 'src/route.test.ts', 'src/route.spec.ts', 'packet.html']:
+            with self.subTest(name=name), tempfile.TemporaryDirectory() as directory:
+                root = Path(directory)
+                path = root / name
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_text(synthetic + ' # placeholder dummy ...\n', encoding='utf-8')
+                result = self.scan(root)
+                self.assertEqual(result.status, 'FAIL')
+                self.assertNotIn(synthetic, json.dumps(result.__dict__))
+
+    def test_unreadable_target_fails_closed(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / 'invalid.py').write_bytes(b'\xffinvalid-utf8')
+            result = self.scan(root)
+            self.assertEqual(result.status, 'FAIL')
+            self.assertIn('invalid.py', '\n'.join(result.detail))
+
+    def test_skipped_directories_are_pruned_and_counts_reported(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            skip = root / 'node_modules'
+            skip.mkdir()
+            (skip / 'hidden.py').write_text('sk-' + 'Z' * 32, encoding='utf-8')
+            (root / 'clean.py').write_text('print(1)\n', encoding='utf-8')
+            result = self.scan(root)
+            self.assertEqual(result.status, 'PASS')
+            self.assertIn('filesScanned=1', '\n'.join(result.detail))
+            self.assertIn('skippedDirectories=1', '\n'.join(result.detail))
+
+    def test_exact_private_exception_does_not_expand_to_changed_line_or_path(self):
+        rel, line = sorted(bundle.PRIVATE_REFERENCE_SECRET_ALLOWLIST)[0]
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            with mock.patch.object(bundle, 'REPO_ROOT', root):
+                self.assertTrue(bundle.is_allowed_secret_line(root / rel, line))
+                self.assertFalse(bundle.is_allowed_secret_line(root / rel, line + ' changed'))
+                self.assertFalse(bundle.is_allowed_secret_line(root / 'tests/moved.py', line))
+
+
+if __name__ == '__main__':
+    unittest.main()

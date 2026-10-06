@@ -2,7 +2,7 @@
 
 // Text Encoding Exception: localized Vietnamese user-facing copy follows this file's existing convention.
 
-import { useCallback, useMemo, useRef, useState } from 'react';
+import { useCallback, useId, useMemo, useRef, useState } from 'react';
 import type { ReactNode } from 'react';
 import {
   CheckCircle2,
@@ -372,9 +372,9 @@ async function writeText(text: string): Promise<boolean> {
   }
 }
 
-function FieldLabel({ children }: { children: string }) {
+function FieldLabel({ children, htmlFor }: { children: string; htmlFor: string }) {
   return (
-    <label className="text-[11px] font-bold uppercase tracking-wide text-gray-500 dark:text-gray-400">
+    <label htmlFor={htmlFor} className="text-[11px] font-bold uppercase tracking-wide text-gray-500 dark:text-gray-400">
       {children}
     </label>
   );
@@ -415,6 +415,7 @@ export function ArtifactExportPanel({
 }: ArtifactExportPanelProps) {
   const { language } = useLanguage();
   const labels = LABELS[language === 'vi' ? 'vi' : 'en'];
+  const fieldId = useId();
   const [request, setRequest] = useState<ArtifactExportRequest>(() => normalizeRequest(initialRequest));
   const [displayed, setDisplayed] = useState<DisplayedResult | null>(
     () => (initialResult ? { result: initialResult, submitted: null, attempt: null } : null),
@@ -647,8 +648,9 @@ export function ArtifactExportPanel({
 
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="sm:col-span-2">
-              <FieldLabel>{labels.titleLabel}</FieldLabel>
+              <FieldLabel htmlFor={`${fieldId}-title`}>{labels.titleLabel}</FieldLabel>
               <input
+                id={`${fieldId}-title`}
                 aria-label={labels.titleLabel}
                 value={request.title}
                 onChange={event => updateRequest('title', event.target.value)}
@@ -656,8 +658,9 @@ export function ArtifactExportPanel({
               />
             </div>
             <div className="sm:col-span-2">
-              <FieldLabel>{labels.pathLabel}</FieldLabel>
+              <FieldLabel htmlFor={`${fieldId}-path`}>{labels.pathLabel}</FieldLabel>
               <input
+                id={`${fieldId}-path`}
                 aria-label={labels.pathLabel}
                 value={request.sourcePath}
                 onChange={event => updateRequest('sourcePath', event.target.value)}
@@ -665,8 +668,9 @@ export function ArtifactExportPanel({
               />
             </div>
             <div>
-              <FieldLabel>{labels.memoryLabel}</FieldLabel>
+              <FieldLabel htmlFor={`${fieldId}-memory`}>{labels.memoryLabel}</FieldLabel>
               <select
+                id={`${fieldId}-memory`}
                 aria-label={labels.memoryLabel}
                 value={request.memoryClass}
                 onChange={event => updateRequest('memoryClass', event.target.value)}
@@ -677,8 +681,9 @@ export function ArtifactExportPanel({
               </select>
             </div>
             <div>
-              <FieldLabel>{labels.statusLabel}</FieldLabel>
+              <FieldLabel htmlFor={`${fieldId}-status`}>{labels.statusLabel}</FieldLabel>
               <input
+                id={`${fieldId}-status`}
                 aria-label={labels.statusLabel}
                 value={request.status}
                 onChange={event => updateRequest('status', event.target.value)}
@@ -686,8 +691,9 @@ export function ArtifactExportPanel({
               />
             </div>
             <div className="sm:col-span-2">
-              <FieldLabel>{labels.receiptLabel}</FieldLabel>
+              <FieldLabel htmlFor={`${fieldId}-receipt`}>{labels.receiptLabel}</FieldLabel>
               <input
+                id={`${fieldId}-receipt`}
                 aria-label={labels.receiptLabel}
                 value={request.receiptAnchor}
                 onChange={event => updateRequest('receiptAnchor', event.target.value)}
@@ -695,8 +701,9 @@ export function ArtifactExportPanel({
               />
             </div>
             <div className="sm:col-span-2">
-              <FieldLabel>{labels.boundaryLabel}</FieldLabel>
+              <FieldLabel htmlFor={`${fieldId}-boundary`}>{labels.boundaryLabel}</FieldLabel>
               <textarea
+                id={`${fieldId}-boundary`}
                 aria-label={labels.boundaryLabel}
                 value={request.claimBoundary}
                 onChange={event => updateRequest('claimBoundary', event.target.value)}
@@ -706,10 +713,11 @@ export function ArtifactExportPanel({
             </div>
             <div className="sm:col-span-2">
               <div className="flex items-end justify-between gap-3">
-                <FieldLabel>{labels.contentLabel}</FieldLabel>
+                <FieldLabel htmlFor={`${fieldId}-content`}>{labels.contentLabel}</FieldLabel>
                 <span className="text-[11px] text-gray-500 dark:text-gray-500">{labels.sourceHint}</span>
               </div>
               <textarea
+                id={`${fieldId}-content`}
                 aria-label={labels.contentLabel}
                 value={request.sourceContent}
                 onChange={event => updateRequest('sourceContent', event.target.value)}

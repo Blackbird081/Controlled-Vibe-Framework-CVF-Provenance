@@ -6,7 +6,31 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import sqlite3
+import sys
 from pathlib import Path
+
+
+def _sqlite_snapshot(path: Path) -> list:
+    """Read one consistent view without creating or initializing a ledger."""
+    engine = Path(__file__).resolve().parents[1] / "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core"
+    if str(engine) not in sys.path:
+        sys.path.insert(0, str(engine))
+    from ledger_layer.sqlite_ledger import SqliteLedger
+
+    conn = sqlite3.connect(path.resolve().as_uri() + "?mode=ro", uri=True, timeout=5)
+    try:
+        conn.execute("PRAGMA query_only=ON")
+        conn.execute("BEGIN")
+        SqliteLedger._check_schema(conn)
+        if conn.execute("PRAGMA integrity_check").fetchone()[0] != "ok":
+            raise ValueError("Invalid SQLite snapshot")
+        rows = conn.execute(
+            "SELECT ordinal, request_id, block_json, block_hash FROM blocks ORDER BY ordinal"
+        ).fetchall()
+        return SqliteLedger._decode_rows(rows)
+    finally:
+        conn.close()
 
 
 def _block_hash(block: dict) -> str:
@@ -21,11 +45,17 @@ def reconcile(ledger_path: Path, attempt_id: str) -> dict:
         "ledgerBlocks": None,
         "ledgerSha256": None,
         "matches": 0,
+        "snapshotFormat": "SQLITE" if ledger_path.suffix.lower() == ".sqlite" else "JSON",
+        "authoritative": False,
     }
     try:
-        raw = ledger_path.read_bytes()
-        result["ledgerSha256"] = hashlib.sha256(raw).hexdigest()
-        chain = json.loads(raw)
+        if result["snapshotFormat"] == "SQLITE":
+            # A file digest omits active WAL state; use validated block hashes instead.
+            chain = _sqlite_snapshot(ledger_path)
+        else:
+            raw = ledger_path.read_bytes()
+            result["ledgerSha256"] = hashlib.sha256(raw).hexdigest()
+            chain = json.loads(raw)
         if not isinstance(chain, list):
             return result
         result["ledgerBlocks"] = len(chain)
@@ -58,7 +88,7 @@ def reconcile(ledger_path: Path, attempt_id: str) -> dict:
                 "blockHash": block["hash"],
                 "decision": decision["final_decision"],
             })
-    except (OSError, ValueError, KeyError, TypeError, UnicodeError):
+    except (OSError, ValueError, KeyError, TypeError, UnicodeError, sqlite3.DatabaseError):
         pass
     return result
 
