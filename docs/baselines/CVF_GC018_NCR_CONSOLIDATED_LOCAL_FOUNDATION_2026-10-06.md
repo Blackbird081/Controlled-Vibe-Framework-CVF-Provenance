@@ -428,6 +428,69 @@ JSON ledger, private credentials and all unrelated or ignored operator material.
 Existing AGENTS.md documentary authorization remains owned by the roadmap's
 Core Guard Self-Protection Authorization - Agent Continuation Guidance.
 
+## Approved-Context Route Live Continuation - 2026-10-06
+
+Owner/role: Local maintainer/reviewer; current mode and parked checkpoints retained.
+Operator continuation authorizes bounded Alibaba-only proof on synthetic data,
+using the existing A4 runner rather than a new pilot or direct live-test invocation.
+Execution base: 1c7f9bacd6aad5668362a4edf9ea98789e365a0a, clean before run.
+Command: python scripts/run_cvf_sot3_a4_failure_recovery_proof.py --live --json
+with explicit isolated diagnostic, receipt and manifest output paths under
+.cvf/runtime/ncr-route-live-20261006. No repeated provider attempt.
+
+Source verification: scripts/run_cvf_sot3_a4_failure_recovery_proof.py,
+scripts/cvf_provider_execution_grant.py and the existing
+EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.sot3-activation.alibaba.live.test.ts
+bind a one-use permit and one-call Alibaba grant, temporary event/evidence stores,
+synthetic approved knowledge and the actual POST route. Test setup disables ambient
+external-store credentials. Auth/enforcement/quota/output-validator helpers are
+mocked in this route-adjacent harness; provider fetch and approved-context owners
+are real. Forced terminal output validation prevents automatic live retry.
+
+Expected Result / Prediction: all required negative rows pass before one governed
+provider call; approved context is observable in the outbound system message.
+Evidence Comparison: A4 receipt PASS; 19 negative cases, 18 zero-provider-call
+cases, one mocked rollback call and exactly one real recovery call. Alibaba
+qwen-flash HTTP 200, observed network response latency 2114 ms; approved context
+included and durable owner correlation recorded. Latency is this call observation,
+not end-to-end latency or an SLA. Diagnostic is null after successful capture.
+Contradiction Or Gap Disposition: no failure or rerun in this invocation. The root
+instruction carrier's diagnostic owner points at a missing non-archive path; the
+existing runner explicitly routes to the archive-qualified standard, which was
+read. Local corrected both AGENTS.md and the routing index to the archive-qualified
+owner already used by the existing live runner; standard semantics are unchanged.
+Claim Update: fresh bounded approved-context route/provider proof only; not full
+P04 DLP initial/retry/vision coverage, P09 release, browser, real-user UX, actual-data
+cutover, effect/acceptance or deployment. No model ranking/default choice.
+
+Portable byte-identical copies of runner evidence:
+- docs/reviews/evidence/cvf-ncr-approved-context-live-receipt-2026-10-06.json
+- docs/reviews/evidence/cvf-ncr-approved-context-live-diagnostic-2026-10-06.json
+- docs/reviews/evidence/cvf-ncr-approved-context-live-manifest-2026-10-06.json
+
+The unchanged original manifest hashes the original runtime paths; portable copies
+retain those exact bytes and hashes. Its rerun label uses --receipt although live
+A4 output is selected with --live-receipt; the command above plus explicit output
+flags records the actual invocation. It is unsigned without an external anchor.
+Local corrected the runner metadata to --live-receipt plus explicit --diagnostic,
+quoting paths so spaces remain one argument. Original successful evidence remains
+byte-identical; no new provider call is warranted for command metadata alone.
+No release bundle was executed and no release-quality proof is asserted.
+Seven-path delta: this existing baseline, the three JSON copies, the A4 runner
+rerun-command metadata and two instruction pointers; no rename or deletion. Previous review manifest is a historical
+49-path snapshot and is not regenerated for this separate evidence continuation.
+Public Export Disposition remains DEFERRED_PRIVATE_ONLY.
+
+## Core Guard Self-Protection Authorization - Diagnostic Pointer Repair
+
+Authorized guard-maintenance scope: correct missing diagnostic owner pointers;
+no governance weakening or runtime authority change.
+Protected paths: AGENTS.md.
+Operator authorization: standing instruction to continue admitted CVF repairs
+and complete findings without repeated next; current operator next.
+Rollback boundary: only this pointer correction and its routing-index projection;
+preserve material proofs, standard content, provider controls and parked lanes.
+
 ## Claim Boundary
 
 Local foundations only. No release, live AI governance, full repository secret

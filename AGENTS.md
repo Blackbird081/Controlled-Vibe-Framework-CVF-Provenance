@@ -197,7 +197,7 @@ python scripts/run_cvf_release_gate_bundle.py --json
 ```
 
 Before rerunning any failed, partial, timed-out, or ambiguous live proof, follow
-`docs/reference/CVF_LIVE_RUN_DIAGNOSTIC_STANDARD_2026-05-24.md` and record a
+`docs/reference/archive/CVF_LIVE_RUN_DIAGNOSTIC_STANDARD_2026-05-24.md` and record a
 secret-safe diagnostic. Never print raw keys, signed headers, bearer tokens, or
 unredacted provider request bodies.
 

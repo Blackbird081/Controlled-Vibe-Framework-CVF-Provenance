@@ -1,0 +1,17 @@
+{
+  "batchId": "SOT3-ACT-A4",
+  "diagnostic": null,
+  "executionBaseHead": "1c7f9bacd6aad5668362a4edf9ea98789e365a0a",
+  "finishedAtUtc": "2026-10-06T15:15:23.391631+00:00",
+  "keyAliasUsed": "ALIBABA_API_KEY",
+  "localNegativeGatePassed": true,
+  "recoveryProviderCallCount": 1,
+  "schemaVersion": "cvf.sot3ActA4LiveDiagnostic.v1",
+  "secretSafety": {
+    "fullPromptPersisted": false,
+    "rawKeyPersisted": false,
+    "rawOutputPersisted": false,
+    "rawProviderBodyPersisted": false
+  },
+  "startedAtUtc": "2026-10-06T15:13:51.638195+00:00"
+}

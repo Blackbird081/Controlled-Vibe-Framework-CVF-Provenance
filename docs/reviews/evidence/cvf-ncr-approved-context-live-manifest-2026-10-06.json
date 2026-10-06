@@ -1,0 +1,43 @@
+{
+  "claimBoundary": "Manifest records file hashes, rerun command, repo commit, and optional HMAC. It does not prove third-party execution unless an external anchor is provided.",
+  "evidence": [
+    {
+      "path": ".cvf/runtime/ncr-route-live-20261006/receipt.json",
+      "sha256": "fe23de8a96af1d77175095648b2394a4e59e611717bf318aab09a38082b6d4b9",
+      "sizeBytes": 2112
+    },
+    {
+      "path": ".cvf/runtime/ncr-route-live-20261006/diagnostic.json",
+      "sha256": "12b2fa4624b2c18a93eb88d3b89b5d78ff884cfc65df5ff97e1e19a7e72bff14",
+      "sizeBytes": 565
+    }
+  ],
+  "externalAnchor": {
+    "anchorId": "",
+    "anchorUrl": "",
+    "status": "NOT_PROVIDED"
+  },
+  "generatedAt": "2026-10-06T15:15:23.475377+00:00",
+  "repository": {
+    "branch": "main",
+    "commit": "1c7f9bacd6aad5668362a4edf9ea98789e365a0a",
+    "dirtyStatus": "",
+    "remoteOrigin": "https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF-Provenance.git"
+  },
+  "rerun": {
+    "acceptedSecretEnv": [
+      "DASHSCOPE_API_KEY",
+      "ALIBABA_API_KEY",
+      "CVF_ALIBABA_API_KEY",
+      "CVF_BENCHMARK_ALIBABA_KEY"
+    ],
+    "command": "python scripts/run_cvf_sot3_a4_failure_recovery_proof.py --live --receipt .cvf\\runtime\\ncr-route-live-20261006\\receipt.json --manifest .cvf\\runtime\\ncr-route-live-20261006\\manifest.json",
+    "requiresLiveProviderKey": true
+  },
+  "schema": "cvf.liveEvidenceManifest.v1",
+  "signature": {
+    "algorithm": "hmac-sha256",
+    "digest": "",
+    "status": "UNSIGNED"
+  }
+}

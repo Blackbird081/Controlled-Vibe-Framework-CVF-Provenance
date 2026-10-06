@@ -84,7 +84,7 @@ owner and bindingClass.
 | Critical Repository Boundary | `docs/reference/CVF_AGENTS_CRITICAL_REPOSITORY_BOUNDARY_2026-06-23.md` | ROUTE |
 | UI / Web Design Contract | `DESIGN.md` | ROUTE |
 | Mandatory Live Governance Proof | `scripts/run_cvf_release_gate_bundle.py` | ROUTE |
-| Mandatory Live Run Diagnostics | `docs/reference/CVF_LIVE_RUN_DIAGNOSTIC_STANDARD_2026-05-24.md` | ROUTE |
+| Mandatory Live Run Diagnostics | `docs/reference/archive/CVF_LIVE_RUN_DIAGNOSTIC_STANDARD_2026-05-24.md` | ROUTE |
 | Mandatory ADIF Defect Registry Disclosure | `governance/compat/check_adif_defect_registry_disclosure.py` | ROUTE |
 | Mandatory Value-Parked Lane Reopen Discipline | `docs/reference/CVF_VALUE_PARKED_LANE_REOPEN_DISCIPLINE_STANDARD_2026-06-25.md` | ROUTE |
 | Mandatory Work Order Source Verification | `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md` | ROUTE |

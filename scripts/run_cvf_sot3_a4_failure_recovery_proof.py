@@ -620,7 +620,7 @@ def cmd_live(args: argparse.Namespace) -> int:
         str(REPO_ROOT / "scripts" / "build_cvf_live_evidence_manifest.py"),
         "--evidence", str(receipt_path),
         "--evidence", str(diagnostic_path),
-        "--command", f"python scripts/run_cvf_sot3_a4_failure_recovery_proof.py --live --receipt {receipt_path} --manifest {manifest_path}",
+        "--command", f'python scripts/run_cvf_sot3_a4_failure_recovery_proof.py --live --live-receipt "{receipt_path}" --diagnostic "{diagnostic_path}" --manifest "{manifest_path}"',
         "--output", str(manifest_path),
     ]
     manifest_result = subprocess.run(manifest_cmd, cwd=REPO_ROOT, capture_output=True, text=True, encoding="utf-8", errors="replace", check=False)
