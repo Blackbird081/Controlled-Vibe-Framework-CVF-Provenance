@@ -39,7 +39,7 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`; handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=T1J render-only worksheet; role=Local dispatcher; phase=dispatch; decision owner=Local; parked lanes retained.
+Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`; handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=Local disposition after T1J closure; role=Local reviewer/closer; phase=closure; decision owner=Local; parked lanes retained.
 
 ## Current Mode
 
@@ -48,7 +48,7 @@ Current mode: `cvf_ncr_p10_closed_p11_parked`; previous mode marker: `cvf_ncr_p1
 
 ## Next Allowed Move
 Mode: `cvf_ncr_p10_closed_p11_parked`
-PROGRAM_ID=CVF-NIS; NEXT_ACTION_CLASS=EXECUTE_BOUNDED_WORK_ORDER; BATCH_ID=CVF-NIS-T1J. Native render-only documentary worksheet export in docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1J_DOCUMENTARY_WORKSHEET_EXPORT_2026-10-06.md. Exact4 existing confirmation/UI/test mutations plus3 evidence; owned candidate source hash/revision/draft, manual unfinished plan sections, stale/race/vi/en controls. No analyzer/helper arm/new module/schema/store/API/auth/provider/install/server/browser/general S2/BUILD/public/deploy. Local independent review/commit, worker no stage/commit. T1I bounded documentary closure/Local corrections and historical T1H limits retained; docs/manual provisional, costs UNKNOWN. CCMA parked; S05/C1/send/B2 STOP; Q001/Q004 OPEN/Profile A; P11/deploy/FLAL T4/T5 parked; FR2 historical loss; LHW24 closed; no push. Dispatch material a9e259f0c; dedicated continuity.
+PROGRAM_ID=CVF-NIS; NEXT_ACTION_CLASS=LOCAL_DISPOSITION_ONLY; BATCH_ID=CVF-NIS-T1J. CLOSED_PASS_BOUNDED native source-bound unfinished worksheet export in docs/reviews/CVF_NIS_T1J_DOCUMENTARY_WORKSHEET_EXPORT_COMPLETION_2026-10-06.md. Local repaired valid-input backtick-group RangeError;64/64 focused,8/8 Local probe,64 finite joins. Original worker evidence retained; LF renderer lines/verbatim source CR; browser/real noncoder UX not executed. No automatic helper/new worktree/general S2/BUILD/provider/public/deploy successor; docs/manual provisional, costs UNKNOWN. CCMA parked; S05/C1/send/B2 STOP; Q001/Q004 OPEN/Profile A; P11/deploy/FLAL T4/T5 parked; FR2 historical loss; LHW24 closed; no push.
 Historical G1-G7 terminal baseline: mode `acel_g1_g7_research_terminally_closed`. G1-G6 terminal review: `docs/reviews/CVF_ACEL_G1_G6_TERMINAL_STOP_CLOSURE_2026-09-24.md`; G7 research closure: `docs/reviews/CVF_ACEL_G7_CROSS_RUN_CAPABILITY_EVOLUTION_RESEARCH_CLOSURE_2026-09-24.md`. The packet-only post-G7 reconciliation review at `docs/reviews/CVF_ACEL_POST_G7_FULL_CORPUS_ABSORPTION_CLOSURE_2026-09-24.md` is superseded for repository absorption by the 2026-09-25 pinned-source audit. G1 is stopped, G2-G6 remain parked, G7 research is closed, and no automatic G1-G7 successor exists.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1

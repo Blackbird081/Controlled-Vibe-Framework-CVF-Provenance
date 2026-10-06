@@ -1,0 +1,231 @@
+{
+  "schemaVersion": "cvf.nisT1jAcceptanceExecution.v1",
+  "batchId": "CVF-NIS-T1J",
+  "executionBaseHead": "7f3df0c67fb454ea04a703a15a52ea419e5fbe43",
+  "selectionBaseHead": "40b39a2de31bafe394518b4e7c4db20a9d8e3b5e",
+  "statement": "Execution ledger for the T1J render-only worksheet export. Only checks listed under commands and cases were actually run; mutation controls are worker-authored and are not the Local independent probe.",
+  "commands": [
+    {
+      "id": "CMD-PREIMPL",
+      "command": "python -B governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base 7f3df0c67fb454ea04a703a15a52ea419e5fbe43 --head HEAD --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1J_DOCUMENTARY_WORKSHEET_EXPORT_2026-10-06.md --receipt-dir .cvf/runtime/nis-t1j-worker-20261006/pre-implementation",
+      "cwd": "worktree root",
+      "exit": 0,
+      "ranBeforeFirstTrackedEdit": true,
+      "log": {
+        "path": ".cvf/runtime/nis-t1j-worker-20261006/pre-implementation.log",
+        "sha256": "5ba8bcc9abe8153020dcb1ed735a5ed18e27624181564607eb9dc5fed8fa269c"
+      },
+      "receipt": {
+        "path": ".cvf/runtime/nis-t1j-worker-20261006/pre-implementation/pre-implementation.json",
+        "sha256": "5a0bb1efcd80a82f4ce81b6b6c17a91a82dd4ded85c1312a1aef9e327f312147"
+      }
+    },
+    {
+      "id": "CMD-LEGACY-CAPTURE",
+      "command": "cvf-web/node_modules/.bin/vitest run --config .cvf/runtime/nis-t1j-worker-20261006/vitest.scratch.config.js (scratch harness capture-legacy.test.ts against unmodified producers)",
+      "cwd": "worktree root",
+      "exit": 0,
+      "ranBeforeFirstTrackedEdit": true,
+      "output": {
+        "path": ".cvf/runtime/nis-t1j-worker-20261006/legacy-preimage-capture.json",
+        "sha256": "01ded18eb1074dd51bbad68e82162c2d7212634345e691d058f65d3eef411d64"
+      },
+      "harness": {
+        "path": ".cvf/runtime/nis-t1j-worker-20261006/capture-legacy.test.ts.done",
+        "sha256": "8c9613e6033c0efa19c9c1a87a90fea83dc4e8914a0c89b80bad097bc1d71a04"
+      },
+      "config": {
+        "path": ".cvf/runtime/nis-t1j-worker-20261006/vitest.scratch.config.js",
+        "sha256": "852a55dffe6157df33f02ef60c66e43867c0718bb34439c34f16230c662ccef4"
+      }
+    },
+    {
+      "id": "CMD-FOCUSED",
+      "command": "node_modules/.bin/vitest run src/lib/intent-spec-confirmation.test.ts src/components/IntentSpecConfirmation.test.tsx src/components/IntentSpecConfirmation.server.test.tsx --reporter=default --reporter=json",
+      "cwd": "cvf-web package root",
+      "exit": 0,
+      "files": 3,
+      "tests": 63,
+      "passed": 63,
+      "failed": 0,
+      "perFile": {
+        "IntentSpecConfirmation.server.test.tsx": {
+          "tests": 28,
+          "passed": 28
+        },
+        "IntentSpecConfirmation.test.tsx": {
+          "tests": 15,
+          "passed": 15
+        },
+        "intent-spec-confirmation.test.ts": {
+          "tests": 20,
+          "passed": 20
+        }
+      },
+      "log": {
+        "path": ".cvf/runtime/nis-t1j-worker-20261006/final-vitest-focused.log",
+        "sha256": "6873337e113ff064c5d79a16c6a37e41485c2065ebaeff3776cc133399f90a9b"
+      },
+      "jsonReport": {
+        "path": ".cvf/runtime/nis-t1j-worker-20261006/final-vitest-focused.json",
+        "sha256": "54bb1cc941be23457b94810fa3124e5147c45efd41278ab323b8a07699803294"
+      }
+    },
+    {
+      "id": "CMD-TSC",
+      "command": "node_modules/.bin/tsc --noEmit -p tsconfig.json",
+      "cwd": "cvf-web package root",
+      "exit": 0,
+      "scope": "whole project, empty output",
+      "log": {
+        "path": ".cvf/runtime/nis-t1j-worker-20261006/final-tsc.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "id": "CMD-ESLINT",
+      "command": "node_modules/.bin/eslint --max-warnings=0 on the four changed source and test paths",
+      "cwd": "cvf-web package root",
+      "exit": 0,
+      "log": {
+        "path": ".cvf/runtime/nis-t1j-worker-20261006/final-eslint.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "id": "CMD-WORKSHEET-SNAPSHOT",
+      "command": "scratch vitest harness worksheet-snapshot.test.ts rendering the final renderer",
+      "cwd": "worktree root",
+      "exit": 0,
+      "output": {
+        "path": ".cvf/runtime/nis-t1j-worker-20261006/worksheet-snapshots.json",
+        "sha256": "e273b6a1b6202d28256969adfd86ca834285c05c54b04bbec67c64f97f6c1fba"
+      },
+      "harness": {
+        "path": ".cvf/runtime/nis-t1j-worker-20261006/worksheet-snapshot.test.ts",
+        "sha256": "a032e7db7ba48e3c8984035ee819f0a246eb1cc2d11c28842f640474e56984f4"
+      }
+    }
+  ],
+  "toolAccess": "Read-only directory junction cvf-web/node_modules to the main checkout installed dependencies (git-ignored); no install, no network, no npm lifecycle, no build.",
+  "newCasesByFile": {
+    "IntentSpecConfirmation.test.tsx": [
+      "offers the worksheet only for a current candidate and exports the exact bytes beside the JSON file",
+      "leaves the existing JSON download, readback and confirmation behavior unchanged beside the new control",
+      "shows bilingual labels and a Vietnamese worksheet when the language is vi",
+      "cleans up the object URL and reports failure without implying a save",
+      "removes the worksheet when the reviewer, review content or language changes, and never exports an older candidate",
+      "blocks a worksheet from an out-of-order generation after the reviewer changes",
+      "does not offer a worksheet for an unacknowledged review"
+    ],
+    "intent-spec-confirmation.test.ts": [
+      "binds exact source SHA, bytes, revision, language, reviewer and time, and keeps the draft verbatim",
+      "preserves Unicode, multiline and CRLF draft content and survives backtick runs in the draft",
+      "is deterministic, leaves the candidate untouched and uses LF for its own lines",
+      "leaves every manual section UNFILLED and invents no requirement, readiness or policy",
+      "does not extract from the draft: different drafts yield identical instructions and sections",
+      "rejects a candidate whose bytes cannot be read instead of rendering a partial worksheet",
+      "keeps candidate bytes identical to the controls captured from the unmodified preimage"
+    ]
+  },
+  "cases": {
+    "REQ-1-source-binding": {
+      "status": "PASS",
+      "tests": "lib T1J: binds exact source SHA, bytes, revision, language, reviewer and time; Unicode/CRLF/backtick fence",
+      "disclosure": ""
+    },
+    "REQ-1-unfinished-manual": {
+      "status": "PASS",
+      "tests": "lib T1J: six UNFILLED sections, no invented requirement, readiness or policy; different drafts give identical instructions",
+      "disclosure": "Absence checks are literal-pattern checks on the instruction text, not a semantic proof."
+    },
+    "REQ-1-v1-v2-bytes": {
+      "status": "PASS",
+      "tests": "lib T1J: candidate bytes equal the controls captured from the unmodified preimage",
+      "disclosure": "Three controls: v1 en 3980 bytes, v2 en 6136 bytes, v1 vi 4693 bytes."
+    },
+    "REQ-1-unreadable-candidate": {
+      "status": "PASS",
+      "tests": "lib T1J: rejects unreadable candidate bytes",
+      "disclosure": ""
+    },
+    "REQ-2-export-current-bytes": {
+      "status": "PASS",
+      "tests": "component T1J: exports exact bytes beside the JSON file; worksheet SHA equals the SHA of the exported JSON blob",
+      "disclosure": ""
+    },
+    "REQ-2-invalidation-race": {
+      "status": "PASS",
+      "tests": "component T1J: reviewer, review content and language changes remove the worksheet; out-of-order generation blocked; unacknowledged review offers none",
+      "disclosure": ""
+    },
+    "REQ-2-failure-cleanup": {
+      "status": "PASS",
+      "tests": "component T1J: click failure revokes the URL; createObjectURL failure revokes nothing; both report no saved confirmation",
+      "disclosure": ""
+    },
+    "REQ-2-existing-lifecycle": {
+      "status": "PASS",
+      "tests": "component T1J: JSON download and readback unchanged; unchanged server test file 28/28",
+      "disclosure": "Server test file was run, not edited."
+    },
+    "REQ-2-bilingual": {
+      "status": "PASS",
+      "tests": "component T1J: vi labels, vi status text and vi worksheet",
+      "disclosure": "jsdom rendering only; no browser or novice-user evidence."
+    }
+  },
+  "mutationControls": [
+    {
+      "id": "MUT-A",
+      "change": "draft snapshot trimmed (draft.trim())",
+      "exit": 0,
+      "result": "SURVIVED: 20 of 20 passed",
+      "disclosure": "No-op for the fixtures because no fixture draft has edge whitespace, so this was not a discriminating control; no test was added for it.",
+      "log": {
+        "path": ".cvf/runtime/nis-t1j-worker-20261006/logs/mutA.log",
+        "sha256": "f032cccfaba7d9cd64067f596dcde7a2bd12657b59d9ad2e111e8291a3bab5ba"
+      }
+    },
+    {
+      "id": "MUT-A2",
+      "change": "carriage returns stripped from the verbatim draft",
+      "exit": 1,
+      "result": "CAUGHT: 2 failed, 18 passed",
+      "log": {
+        "path": ".cvf/runtime/nis-t1j-worker-20261006/logs/mutA2.log",
+        "sha256": "2b7c35cd58ac6408aa08ef1473347f3409f1f9510e7a04b44dfc5e8c4bd3539c"
+      }
+    },
+    {
+      "id": "MUT-B",
+      "change": "worksheet path no longer revokes its object URL",
+      "exit": 1,
+      "result": "CAUGHT: 2 failed, 13 passed",
+      "log": {
+        "path": ".cvf/runtime/nis-t1j-worker-20261006/logs/mutB.log",
+        "sha256": "3d9c66c5c108581b1dac1eed07ef4de00a5592c902b75a0b357c68a7e3096afe"
+      }
+    },
+    {
+      "id": "MUT-RESTORE",
+      "change": "sources restored byte-identical after each mutation (sha256 compared)",
+      "result": "restored-ok each time"
+    }
+  ],
+  "diagnosticRuns": [
+    {
+      "note": "vite-node and tsx are not installed; replaced with a scratch vitest config",
+      "scratchOnly": true
+    },
+    {
+      "note": "scratch vitest config attempts failed on defineConfig import, relative include glob and an unterminated string in my own scratch harness before the capture ran; no tracked file was affected",
+      "scratchOnly": true
+    },
+    {
+      "note": "first CR-strip mutation attempts used shell-escaped backslashes and produced a syntax error (no tests ran); redone with String.fromCharCode(13)",
+      "scratchOnly": true
+    }
+  ],
+  "notRun": "Full package tests, API route tests, browser or Playwright, npm run build, npm lifecycle scripts, provider or network calls, the Local independent probe (PENDING_REVIEWER_EXECUTION), reviewer-fast and pre-commit gates."
+}

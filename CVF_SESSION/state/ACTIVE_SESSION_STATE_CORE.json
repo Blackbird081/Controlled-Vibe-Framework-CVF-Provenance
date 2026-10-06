@@ -37,11 +37,11 @@
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_NIS_T1J_DOCUMENTARY_WORKSHEET_EXPORT_2026-10-06.md",
-    "baselineSha256": "c8a8eaf715c32deeffc54f46998d5f151e6c661cde243c6c977c6ac80db2c9ac",
+    "baselineSha256": "0981692e934f8a5beb52bd5649cf8de67ced880b0ae18a8f407e1db878644d67",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1J_DOCUMENTARY_WORKSHEET_EXPORT_2026-10-06.md",
-    "workOrderSha256": "881f436a4e693c74db84f3d7c0f3e8b2ada4fdcc6351a09985226dc238e4db21"
+    "workOrderSha256": "a57ba058337b88b426486b61688ffaf870f8ae45a0949d72a1dcf8504dd5dadd"
   },
-  "currentAuthoritySyncReason": "T1J material a9e259f0c: native render-only owned-candidate worksheet export; no helper/general S2/BUILD; parked lanes unchanged.",
+  "currentAuthoritySyncReason": "T1J bounded native worksheet closure; Local valid-input repair, source-bound unfinished export; no helper/general S2/BUILD successor.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",

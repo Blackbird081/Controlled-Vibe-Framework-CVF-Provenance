@@ -4,7 +4,7 @@ Memory class: governed-worker-dispatch
 
 docType: work_order
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: CVF-NIS-T1J
 providerExecutionAuthority: FORBIDDEN
@@ -125,7 +125,7 @@ Returned defects: NONE_RETURNED. Actual resolver output retained in Local ignore
 | Field | Value |
 |---|---|
 | applicableCheckersRead | governance/compat/check_work_order_dispatch_quality.py; governance/compat/check_work_order_dispatch_quality_source.py; governance/compat/check_work_order_dispatch_quality_artifacts.py; governance/compat/check_dispatch_scaffold_provenance.py; governance/compat/check_gate_to_role_closeability.py; governance/compat/check_governed_artifact_checker_read_ahead.py; governance/compat/check_task_governance_route.py; governance/compat/check_baseline_update_compat.py; governance/compat/check_agent_operation_trace.py; governance/compat/check_work_order_acceptance_ledger.py; governance/compat/check_independent_review_probe_admission.py; governance/compat/check_absorption_blindspot_control_presence.py; governance/compat/check_external_knowledge_intake_routing.py; governance/compat/check_high_risk_local_transaction_proof.py; governance/compat/check_adif_defect_registry_disclosure.py; governance/compat/check_agent_packet_authority_and_encoding.py; governance/compat/check_markdown_structural_completeness.py; governance/compat/check_dispatch_prompt_envelope.py; governance/compat/check_corpus_scan_registry.py |
-| literalTokensReviewed | DISPATCH_READY; exact7 worker outputs/exact9 admission; PENDING_REVIEWER_EXECUTION; acceptance-ledger-json |
+| literalTokensReviewed | CLOSED_PASS_BOUNDED; exact7 worker outputs/exact9 admission; PENDING_REVIEWER_EXECUTION; acceptance-ledger-json |
 | gateRunPurpose | confirmation/evidence of render-only consumer dispatch after dependency/contract audit |
 | claimBoundary | no AI/runtime/helper-arm or semantic-readiness proof |
 
@@ -301,23 +301,23 @@ Installed local Vitest: exact three confirmation/component/server test files; lo
 
 | Field | Evidence |
 |---|---|
-| Actor | Local dispatcher |
+| Actor | Local technical reviewer/closer |
 | Provider or surface | Local private provenance workspace |
-| Session or invocation | nis-t1j-dispatch-20261006 |
+| Session or invocation | nis-t1j-local-review-20261006 |
 | Working directory | repository root |
-| Command or tool surface | Bounded source reads, local scaffold and admission gates |
-| Target paths | exact9 Local admission/continuity; worker exact7 pending |
+| Command or tool surface | Python exact artifact/source/log joins; separate native Vitest/jsdom probe; narrow repair and focused/type/lint checks |
+| Target paths | exact17 closure paths |
 | Allowed scope source | operator continue and delegated Local orchestration |
-| Before status evidence | clean worktree main 40b39a2de31bafe394518b4e7c4db20a9d8e3b5e |
-| After status evidence | exact9 admission only; worker exact7 pending |
-| Diff evidence | admission-paths.json exact9; no production edits by dispatcher |
-| Approval boundary | exact4 existing render-only consumer/test changes plus3 evidence |
-| Claim boundary | synthetic source binding, not authenticated acceptance/build readiness |
+| Before status evidence | clean main 7f3df0c67fb454ea04a703a15a52ea419e5fbe43; isolated worker exact7 pending |
+| After status evidence | exact17 Local accepted closure; original7 worker retained unchanged |
+| Diff evidence | closure-paths.json and cached name-only MATCH |
+| Approval boundary | render-only native consumer; no helper/general S2/BUILD |
+| Claim boundary | finite source/UI checks only; no browser/UX/live governance proof |
 | Agent type | dispatcher |
-| Invocation ID | nis-t1j-dispatch-20261006 |
-| Expected manifest | N/A with reason: admission only; future seven worker outputs named |
-| Actual changed set | N/A with reason: exact9 Local admission, no worker execution |
-| Manifest delta | N/A with reason: worker pending |
+| Invocation ID | nis-t1j-local-review-20261006 |
+| Expected manifest | EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-confirmation.ts; EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecConfirmation.tsx; EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-confirmation.test.ts; EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecConfirmation.test.tsx; docs/reviews/CVF_NIS_T1J_DOCUMENTARY_WORKSHEET_EXPORT_WORKER_RETURN_2026-10-06.md; docs/reviews/evidence/cvf-nis-t1j-acceptance-execution-2026-10-06.json; docs/reviews/evidence/cvf-nis-t1j-implementation-binding-2026-10-06.json; docs/baselines/CVF_GC018_NIS_T1J_DOCUMENTARY_WORKSHEET_EXPORT_2026-10-06.md; docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1J_DOCUMENTARY_WORKSHEET_EXPORT_2026-10-06.md; docs/reviews/CVF_NIS_T1J_DOCUMENTARY_WORKSHEET_EXPORT_COMPLETION_2026-10-06.md; docs/reviews/evidence/cvf-nis-t1j-local-independent-review-2026-10-06.json; AGENT_HANDOFF_V63_2026-09-18.md; CVF_SESSION_MEMORY.md; CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json; CVF_SESSION/state/entries/nextAllowedMove.json; CVF_SESSION/ACTIVE_SESSION_STATE.json; CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json |
+| Actual changed set | EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-confirmation.ts; EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecConfirmation.tsx; EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-confirmation.test.ts; EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecConfirmation.test.tsx; docs/reviews/CVF_NIS_T1J_DOCUMENTARY_WORKSHEET_EXPORT_WORKER_RETURN_2026-10-06.md; docs/reviews/evidence/cvf-nis-t1j-acceptance-execution-2026-10-06.json; docs/reviews/evidence/cvf-nis-t1j-implementation-binding-2026-10-06.json; docs/baselines/CVF_GC018_NIS_T1J_DOCUMENTARY_WORKSHEET_EXPORT_2026-10-06.md; docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1J_DOCUMENTARY_WORKSHEET_EXPORT_2026-10-06.md; docs/reviews/CVF_NIS_T1J_DOCUMENTARY_WORKSHEET_EXPORT_COMPLETION_2026-10-06.md; docs/reviews/evidence/cvf-nis-t1j-local-independent-review-2026-10-06.json; AGENT_HANDOFF_V63_2026-09-18.md; CVF_SESSION_MEMORY.md; CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json; CVF_SESSION/state/entries/nextAllowedMove.json; CVF_SESSION/ACTIVE_SESSION_STATE.json; CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json |
+| Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename authorized |
 
 ## Delta Execution Claim Boundary Control Block
@@ -558,7 +558,7 @@ Blind-spot verdict: NOT_APPLICABLE_WITH_REASON - narrow native consumer mutation
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: T1J pair/input admission and six continuity surfaces only. Worker forbidden protected paths.
+Authorized guard-maintenance scope: Local T1J bounded reviewer repair, closure and current-authority/next-move only; worker forbidden protected paths.
 Protected paths:
 - `AGENT_HANDOFF_V63_2026-09-18.md`
 - `CVF_SESSION_MEMORY.md`
@@ -566,17 +566,15 @@ Protected paths:
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-Operator authorization: continue under delegated Local orchestration/work-order/commit authority,2026-10-06.
-Rollback boundary: exact9 admission; preserve original workers and parked lanes.
-
+Operator authorization: review/probe/Completion Review/commit under delegated Local authority,2026-10-06.
+Rollback boundary: exact17 closure; preserve original7 worker bytes/index and parked lanes.
 
 ## Mixed Protected-Path Atomicity Authorization
 
 Disposition: AUTHORIZED_EXACT_MANIFEST
-Atomicity reason: pair/input pins and current-authority release must bind one exact dispatch.
-Rollback boundary: exact9 admission.
-Exact changed manifest: `docs/baselines/CVF_GC018_NIS_T1J_DOCUMENTARY_WORKSHEET_EXPORT_2026-10-06.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1J_DOCUMENTARY_WORKSHEET_EXPORT_2026-10-06.md`; `docs/reviews/evidence/cvf-nis-t1j-dispatch-inputs-2026-10-06.json`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`.
-
+Atomicity reason: seven accepted consumer/test/evidence paths plus current pair/completion/proof and six continuity projections bind one bounded closure; dedicated material-SHA continuity follows.
+Rollback boundary: exact17 paths; original worker worktree remains unchanged.
+Exact changed manifest: `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-confirmation.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecConfirmation.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-confirmation.test.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecConfirmation.test.tsx`; `docs/reviews/CVF_NIS_T1J_DOCUMENTARY_WORKSHEET_EXPORT_WORKER_RETURN_2026-10-06.md`; `docs/reviews/evidence/cvf-nis-t1j-acceptance-execution-2026-10-06.json`; `docs/reviews/evidence/cvf-nis-t1j-implementation-binding-2026-10-06.json`; `docs/baselines/CVF_GC018_NIS_T1J_DOCUMENTARY_WORKSHEET_EXPORT_2026-10-06.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1J_DOCUMENTARY_WORKSHEET_EXPORT_2026-10-06.md`; `docs/reviews/CVF_NIS_T1J_DOCUMENTARY_WORKSHEET_EXPORT_COMPLETION_2026-10-06.md`; `docs/reviews/evidence/cvf-nis-t1j-local-independent-review-2026-10-06.json`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`.
 
 ## Task Governance Routing Manifest
 
@@ -687,3 +685,31 @@ Exact changed manifest: `docs/baselines/CVF_GC018_NIS_T1J_DOCUMENTARY_WORKSHEET_
 }
 ```
 T0 SHADOW_FULL_GATE_FALLBACK; selectiveExecutionAuthorized=false; full legacy bundles mandatory.
+
+## Local Closure Disposition
+
+CLOSED_PASS_BOUNDED render-only consumer; ACCEPT_WITH_LOCAL_REPAIR in docs/reviews/CVF_NIS_T1J_DOCUMENTARY_WORKSHEET_EXPORT_COMPLETION_2026-10-06.md and docs/reviews/evidence/cvf-nis-t1j-local-independent-review-2026-10-06.json. Worker return/evidence remain original; accepted renderer/test hashes differ due to Local valid-input repair.64/64 focused,8/8 Local probe; no automatic helper/general S2/BUILD successor.
+
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1J_DOCUMENTARY_WORKSHEET_EXPORT_2026-10-06.md | CLOSED_PASS_BOUNDED render-only integration | PASS |
+| Completion or reviewer artifact | docs/reviews/CVF_NIS_T1J_DOCUMENTARY_WORKSHEET_EXPORT_COMPLETION_2026-10-06.md | ACCEPT_WITH_LOCAL_REPAIR | PASS |
+| Roadmap state | N/A with reason: no roadmap changed | helper/general S2/BUILD deferred | N/A with reason: no roadmap mutation |
+| Registry JSON | docs/reviews/evidence/cvf-nis-t1j-local-independent-review-2026-10-06.json | 64 finite joins; 8 Local probe tests; 64 focused tests | PASS |
+| Registry Markdown | docs/reviews/CVF_NIS_T1J_DOCUMENTARY_WORKSHEET_EXPORT_COMPLETION_2026-10-06.md | actual bounded Local disposition | PASS |
+| External evidence digest | docs/reviews/evidence/cvf-nis-t1j-local-independent-review-2026-10-06.json | SHA256 b407f158b5223bb6f4e0f6cd13f629e724b3c3c33b7e0c25cac42a76dde3fb3a | PASS |
+| System loop interlock | N/A with reason: no runtime/catalog promotion | worksheet rendering only | N/A with reason: no runtime activation |
+| Session continuity | CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json | bounded closure; no automatic successor | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| REQ-1 | source-bound unfinished worksheet, legacy byte compatibility | own source/fence/identity controls and unchanged native producer; valid large input repaired | PASS |
+| REQ-2 | current bilingual export and lifecycle | worker cases consumed plus separate real digest/invalidation/download controls | PASS |
+| REQ-3 | exact7 outputs and independent Local closure | worker index/HEAD unchanged; explicit original/accepted hashes | PASS |
+| Browser and novice UX | actual user/browser proof | not executed | BLOCKED |
+| Builder readiness | resolved scope and technical admission | unfinished manual sections | BLOCKED |

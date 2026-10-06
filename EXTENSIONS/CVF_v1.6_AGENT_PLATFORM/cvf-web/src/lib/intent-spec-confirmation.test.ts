@@ -1,8 +1,9 @@
+// Text Encoding Exception: Vietnamese worksheet fixtures.
 /** @vitest-environment jsdom */
 import { webcrypto } from 'node:crypto';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { acknowledgeIntentSpecReview, createIntentSpecReview, updateReviewDecision } from './intent-spec-review';
-import { createSpecConfirmationCandidate, MAX_CONFIRMATION_BYTES, reviewBindingKey, verifySpecConfirmationReadback } from './intent-spec-confirmation';
+import { createSpecConfirmationCandidate, MAX_CONFIRMATION_BYTES, renderDocumentaryWorksheet, reviewBindingKey, verifySpecConfirmationReadback, worksheetFileName, type SpecConfirmationCandidate } from './intent-spec-confirmation';
 import { createHash } from 'node:crypto';
 import { buildReviewedDraftPacket, synchronizeIntentSpecReview } from './intent-spec-review';
 import { CANDIDATE_SCHEMA_V1, CANDIDATE_SCHEMA_V2 } from './intent-spec-confirmation';
@@ -170,5 +171,107 @@ describe('NIS T1E candidate schema selection and open-item projection', () => {
         expect(payload.draft).toBe(buildReviewedDraftPacket(state, 'vi'));
         expect(JSON.stringify(payload.review)).toBe(JSON.stringify(JSON.parse(JSON.stringify(state))));
         expect(Object.keys(payload.review.decisions[0])).toEqual(['id', 'answer', 'disposition', 'needsReconfirmation', 'sourceValues']);
+    });
+});
+
+// NIS T1J: render-only documentary worksheet bound to the owned candidate. Synthetic fixtures only.
+const sha256Hex = (value: string) => createHash('sha256').update(value, 'utf8').digest('hex');
+const sourceBlock = (sheet: string) => sheet.slice(sheet.indexOf('## 2.'), sheet.indexOf('## 3.'));
+const afterSource = (sheet: string) => sheet.slice(sheet.indexOf('## 3.'));
+
+describe('NIS T1J documentary worksheet renderer', () => {
+    it('exports an owned candidate with many separate backtick runs within the candidate size cap', async () => {
+        let state = createIntentSpecReview({ problem: 'Large valid draft' }, '` '.repeat(180000));
+        for (const decision of state.decisions) state = updateReviewDecision(state, decision.id, { answer: `Answer ${decision.id}` });
+        const candidate = await createSpecConfirmationCandidate(acknowledgeIntentSpecReview(state), 'en', 'Reviewer', T1E_CLOCK);
+        expect(bytes(candidate.fileContent).length).toBeLessThan(MAX_CONFIRMATION_BYTES);
+        expect(renderDocumentaryWorksheet(candidate)).toContain(JSON.parse(candidate.fileContent).payload.draft);
+    });
+    it('binds exact source SHA, bytes, revision, language, reviewer and time, and keeps the draft verbatim', async () => {
+        const state = itemState();
+        const candidate = await createSpecConfirmationCandidate(state, 'en', 'Self-declared fixture', T1E_CLOCK);
+        const sheet = renderDocumentaryWorksheet(candidate);
+        const draft = JSON.parse(candidate.fileContent).payload.draft as string;
+        expect(sheet).toContain(`| SHA-256 (whole JSON file) | ${candidate.fileSha256} |`);
+        expect(candidate.fileSha256).toBe(sha256Hex(candidate.fileContent));
+        expect(sheet).toContain(`| UTF-8 byte count of the JSON file | ${bytes(candidate.fileContent).length} |`);
+        expect(sheet).toContain(`| Revision | ${state.revision} |`);
+        expect(sheet).toContain('| Language | en |');
+        expect(sheet).toContain('| Reviewer (self-declared, unverified) | Self-declared fixture |');
+        expect(sheet).toContain(`| Candidate timestamp | ${T1E_CLOCK} |`);
+        expect(sheet).toContain(`cvf-spec-review-r${state.revision}.json`);
+        expect(worksheetFileName(state.revision)).toBe(`cvf-spec-review-r${state.revision}-worksheet.md`);
+        expect(sourceBlock(sheet)).toContain(draft);
+        expect(sourceBlock(sheet)).toContain('Retention period is not decided.');
+        expect(sourceBlock(sheet)).toContain('Leads review totals only; no per-person score.');
+    });
+
+    it('preserves Unicode, multiline and CRLF draft content and survives backtick runs in the draft', async () => {
+        const packet = 'Dòng một\r\nDòng hai ``` và ````` kết thúc\n日本語';
+        let state = createIntentSpecReview({ problem: 'Gói tiếng Việt đầy đủ' }, packet);
+        for (const decision of state.decisions) state = updateReviewDecision(state, decision.id, { answer: `Quyết định ${decision.id}` });
+        const candidate = await createSpecConfirmationCandidate(acknowledgeIntentSpecReview(state), 'vi', 'Người review', T1E_CLOCK);
+        const sheet = renderDocumentaryWorksheet(candidate);
+        const draft = JSON.parse(candidate.fileContent).payload.draft as string;
+        expect(draft).toContain(packet);
+        expect(sheet).toContain('``````text\n' + draft + '\n``````\n');
+        expect(sheet).toContain('| Ngôn ngữ | vi |');
+        expect(sheet).toContain('Review kỹ thuật CHƯA được thực hiện');
+    });
+
+    it('is deterministic, leaves the candidate untouched and uses LF for its own lines', async () => {
+        const candidate = await createSpecConfirmationCandidate(itemState(), 'en', 'Self-declared fixture', T1E_CLOCK);
+        const before = JSON.stringify(candidate);
+        const first = renderDocumentaryWorksheet(candidate);
+        expect(renderDocumentaryWorksheet(candidate)).toBe(first);
+        expect(JSON.stringify(candidate)).toBe(before);
+        expect(Object.isFrozen(candidate)).toBe(true);
+        expect(first.replace(sourceBlock(first), '')).not.toContain('\r');
+        expect(first.endsWith('\n')).toBe(true);
+    });
+
+    it('leaves every manual section UNFILLED and invents no requirement, readiness or policy', async () => {
+        const candidate = await createSpecConfirmationCandidate(itemState(), 'en', 'Self-declared fixture', T1E_CLOCK);
+        const sheet = renderDocumentaryWorksheet(candidate);
+        expect(sheet.match(/^UNFILLED - manual entry$/gm)).toHaveLength(6);
+        expect(sheet).toContain('Technical review has NOT been performed.');
+        expect(sheet).toContain('not build readiness');
+        const manual = afterSource(sheet);
+        for (const forbidden of [/twelve/i, /12[- ]month/i, /build[- ]ready\b/i, /\bREADY\b/]) expect(manual).not.toMatch(forbidden);
+        expect(manual).not.toContain('Retention period');
+        expect(manual).toContain('unresolved; do not assume one');
+        expect(manual).toContain('source statements');
+        expect(manual).toContain('raw entry');
+    });
+
+    it('does not extract from the draft: different drafts yield identical instructions and sections', async () => {
+        const a = await createSpecConfirmationCandidate(itemState(), 'en', 'Self-declared fixture', T1E_CLOCK);
+        const b = await createSpecConfirmationCandidate(reviewed(), 'en', 'Self-declared fixture', T1E_CLOCK);
+        expect(a.fileContent).not.toBe(b.fileContent);
+        expect(afterSource(renderDocumentaryWorksheet(a))).toBe(afterSource(renderDocumentaryWorksheet(b)));
+    });
+
+    it('rejects a candidate whose bytes cannot be read instead of rendering a partial worksheet', async () => {
+        const good = await createSpecConfirmationCandidate(reviewed(), 'en', 'Reviewer', T1E_CLOCK);
+        const broken = (fileContent: string): SpecConfirmationCandidate => ({ ...good, fileContent });
+        const payload = JSON.parse(good.fileContent).payload;
+        for (const content of ['{', '{}', JSON.stringify({ payload: { ...payload, draft: 3 } }), JSON.stringify({ payload: { ...payload, language: 'fr' } })]) {
+            expect(() => renderDocumentaryWorksheet(broken(content))).toThrow('CANDIDATE_UNREADABLE');
+        }
+    });
+
+    it('keeps candidate bytes identical to the controls captured from the unmodified preimage', async () => {
+        const v1 = await createSpecConfirmationCandidate(reviewed(), 'en', 'Self-declared fixture', T1E_CLOCK);
+        const v2 = await createSpecConfirmationCandidate(itemState(), 'en', 'Self-declared fixture', T1E_CLOCK);
+        let plain = createIntentSpecReview(T1E_VALUES, 'Gói tiếng Việt\nđầy đủ');
+        for (const decision of plain.decisions) plain = updateReviewDecision(plain, decision.id, { answer: `Decision for ${decision.id}` });
+        const noItems = await createSpecConfirmationCandidate(acknowledgeIntentSpecReview(plain), 'vi', 'Self-declared fixture', T1E_CLOCK);
+        expect(JSON.parse(v1.fileContent).payload.schema).toBe(CANDIDATE_SCHEMA_V1);
+        expect(JSON.parse(v2.fileContent).payload.schema).toBe(CANDIDATE_SCHEMA_V2);
+        expect(JSON.parse(noItems.fileContent).payload.schema).toBe(CANDIDATE_SCHEMA_V1);
+        // Pre-mutation capture at preimage c73dcae3...: .cvf/runtime/nis-t1j-worker-20261006/legacy-preimage-capture.json
+        expect([v1.fileSha256, bytes(v1.fileContent).length]).toEqual(['bcdef4b7c988d01860780178a73a2808755f7f4004e2e5301ed27729b857b0c5', 3980]);
+        expect([v2.fileSha256, bytes(v2.fileContent).length]).toEqual(['77e67c4c4d7b23a2134b12156edac44899e96c7c2a3876296a1c9b27e3cdf4af', 6136]);
+        expect([noItems.fileSha256, bytes(noItems.fileContent).length]).toEqual(['b24473a689abe03783999c6233dc975505231e1817a9ecec793c8a802eefd12e', 4693]);
     });
 });

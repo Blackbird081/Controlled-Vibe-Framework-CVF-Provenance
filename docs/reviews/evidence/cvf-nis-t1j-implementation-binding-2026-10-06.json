@@ -1,0 +1,256 @@
+{
+  "schemaVersion": "cvf.nisT1jImplementationBinding.v1",
+  "batchId": "CVF-NIS-T1J",
+  "executionBaseHead": "7f3df0c67fb454ea04a703a15a52ea419e5fbe43",
+  "selectionBaseHead": "40b39a2de31bafe394518b4e7c4db20a9d8e3b5e",
+  "headAtCapture": "7f3df0c67fb454ea04a703a15a52ea419e5fbe43",
+  "headUnchangedNoCommit": true,
+  "chronology": {
+    "order": [
+      "worktree HEAD, status and index verified clean at executionBaseHead; four source preimage hashes matched the dispatch pins",
+      "worker-owned pre-implementation gate passed (exit 0)",
+      "read-only node_modules junction created (git-ignored)",
+      "legacy v1/v2/vi candidate controls captured from the unmodified producers",
+      "renderer added to intent-spec-confirmation.ts; download control added to IntentSpecConfirmation.tsx",
+      "tests appended to the two existing test files",
+      "focused vitest, tsc and eslint run; two mutation controls run and sources restored",
+      "worksheet snapshots captured from the final renderer; this file and the execution ledger written"
+    ],
+    "note": "The guard cannot prove chronology. The pre-implementation receipt and legacy capture file are the retained scratch evidence."
+  },
+  "ownedPaths": [
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-confirmation.ts",
+      "role": "production",
+      "preimage": {
+        "rawSha256": "c73dcae3d89df3072a92604ed4548b01167974cabdb9245c232516289a35519c",
+        "gitBlob": "aceb530c482dc0bd01f30a5d4f4d555141cd4c06"
+      },
+      "postimage": {
+        "rawSha256": "35214de8c34414c1cdc7558990aa47d9799a7fe5fa47de6cc26bd0c6adf30b76",
+        "gitBlob": "179d9e1603040dff0c8a38c3594f7bc66fe2c0b1",
+        "bytes": 10892
+      },
+      "unchangedFromPreimage": false
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecConfirmation.tsx",
+      "role": "production",
+      "preimage": {
+        "rawSha256": "d411429c5eb77821d345959fec27e2c5a88cc26fb2f38f4ae7e24ee7b95ff58e",
+        "gitBlob": "cd4b1c376ded04ec4a97fc81803afc1a406d7902"
+      },
+      "postimage": {
+        "rawSha256": "d01d8abb7a3885f317a9befb6ebf2548659bfdf2718a1b3c0762d16aa0cb6beb",
+        "gitBlob": "37b092dc45ca24980a22eb7b3365017d711bb553",
+        "bytes": 17764
+      },
+      "unchangedFromPreimage": false
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-confirmation.test.ts",
+      "role": "test",
+      "preimage": {
+        "rawSha256": "45c8753b771139842eec11dc863539ce3e4868941c4aa94291ae8d7b51d9bcd4",
+        "gitBlob": "3a78fd445538730a9c9e0f966437e622db7f1d6d"
+      },
+      "postimage": {
+        "rawSha256": "b42a258287d8c9226bec84c4c2659f2192b02839b88b1239473c8bedbff3f8c2",
+        "gitBlob": "5a0ed6275456479594be26d9f9d4b158b57867a6",
+        "bytes": 20619
+      },
+      "unchangedFromPreimage": false
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecConfirmation.test.tsx",
+      "role": "test",
+      "preimage": {
+        "rawSha256": "d3722a1bc1a9657df6aa97036b54d6fe712eb11a2a8275f4c7331d5d8be03155",
+        "gitBlob": "bdd47a83aee9f732aa71d34b3b46bdb64669f312"
+      },
+      "postimage": {
+        "rawSha256": "43fb16363666b7b9096f251faa5cfb3e5a26daf0a633c3ad6fb3d0456cb8520a",
+        "gitBlob": "394ea77f3f4b36b48a4fe546e6ebdbd63bd0c651",
+        "bytes": 16202
+      },
+      "unchangedFromPreimage": false
+    }
+  ],
+  "sourceChangeSummary": {
+    "candidateSchemaChanged": false,
+    "candidateSerializationChanged": false,
+    "newProductionModule": false,
+    "newExports": [
+      "worksheetFileName",
+      "reviewFileName",
+      "renderDocumentaryWorksheet"
+    ],
+    "rendererClaim": "Render-only from the owned candidate bytes; no extraction, scoring, analysis, authentication or acceptance."
+  },
+  "legacyCandidateControls": {
+    "capture": {
+      "path": ".cvf/runtime/nis-t1j-worker-20261006/legacy-preimage-capture.json",
+      "sha256": "01ded18eb1074dd51bbad68e82162c2d7212634345e691d058f65d3eef411d64"
+    },
+    "preimageProducer": "src/lib/intent-spec-confirmation.ts at rawSha256 c73dcae3d89df3072a92604ed4548b01167974cabdb9245c232516289a35519c",
+    "controls": {
+      "v1-en": {
+        "fileSha256": "bcdef4b7c988d01860780178a73a2808755f7f4004e2e5301ed27729b857b0c5",
+        "bytes": 3980,
+        "bindingKeySha256": "798a8789ea47407b3a3a109e89438153f15c1f0aa9fba5d5f69e41534bdb7552",
+        "schema": "cvf.intentSpecReviewCandidate.v1"
+      },
+      "v2-en-open-items": {
+        "fileSha256": "77e67c4c4d7b23a2134b12156edac44899e96c7c2a3876296a1c9b27e3cdf4af",
+        "bytes": 6136,
+        "bindingKeySha256": "1aaf1e2de1179a1e1534f10661c806defd76e9552a5bfd0d766b529f409d13ca",
+        "schema": "cvf.intentSpecReviewCandidate.v2"
+      },
+      "v1-vi-no-open-items": {
+        "fileSha256": "b24473a689abe03783999c6233dc975505231e1817a9ecec793c8a802eefd12e",
+        "bytes": 4693,
+        "bindingKeySha256": "302af90b1dd983bd1555842c12e2793cb848075caa29c772154382fd531a6d9f",
+        "schema": "cvf.intentSpecReviewCandidate.v1"
+      }
+    },
+    "comparedAfterChange": "The unchanged-bytes test asserts the same fileSha256 and byte counts for v1 en, v2 en and v1 vi; it passed in the final focused run."
+  },
+  "readOnlyPinsRecomputed": {
+    "count": 9,
+    "allUnchanged": true,
+    "pins": [
+      {
+        "path": "docs/reviews/CVF_NIS_T1I_SOURCE_BOUND_DOCUMENTARY_HANDOFF_COMPLETION_2026-10-05.md",
+        "rawSha256": "6140346a5fc813de921cdc096cc6955348c6c12bccea91c6a2e525bf0c0ea3c8",
+        "gitBlob": "c18d4be93d61e5b5f6765e39c43705fb9ab97010",
+        "matchesDispatchPin": true
+      },
+      {
+        "path": "docs/reviews/CVF_NIS_T1F_BUILD_READY_BRIDGE_CONTRACT_COMPLETION_2026-10-05.md",
+        "rawSha256": "14b740490b5a3de638fde1155bc1ae7d2d0ffc39865af44ae25e5016b887dae6",
+        "gitBlob": "df672b72c400a8781c8bf04932f6baab98847707",
+        "matchesDispatchPin": true
+      },
+      {
+        "path": "DESIGN.md",
+        "rawSha256": "15c1b5061bd2e1f763638beb83a84d06eb8ccbc470747c01f236033a834a987e",
+        "gitBlob": "260703ec89ffd2282c3960a891337d2b970740f5",
+        "matchesDispatchPin": true
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-review.ts",
+        "rawSha256": "43e7a437f6d4695553b396ead83feff15a411b10b3aa37c561ca9da09aa3eefd",
+        "gitBlob": "f959ecdce5cb608f19a18ed1ac6424a668ab588e",
+        "matchesDispatchPin": true
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-open-items.ts",
+        "rawSha256": "c909f6f264ae2b2596f12a33692654262fb07ac71e8bc49339483483e9cdab00",
+        "gitBlob": "eb26737b9869b096cea342995a3ac1aa8d596cd3",
+        "matchesDispatchPin": true
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecConfirmation.server.test.tsx",
+        "rawSha256": "d331b89c5535c01b08469f11f1caf7c74789dcf2062c8ec109582f930b570c2a",
+        "gitBlob": "2fd86aee51de6f7fcb1c121ec0efc2bc3dec855b",
+        "matchesDispatchPin": true
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-review-client.ts",
+        "rawSha256": "a6967c65a142c1d1805fbd98548ce326f462f5eefe1609ff70404c89684a472d",
+        "gitBlob": "1396a8109175a251e54f069ab82da7c1410860e4",
+        "matchesDispatchPin": true
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/package.json",
+        "rawSha256": "f03fc2c2700e904dc88e10395d0856983b9b0f9e6f27150713fa402f9e9fe24b",
+        "gitBlob": "a2d00af91d642ddb6ddfe4ce4eb3113d79888771",
+        "matchesDispatchPin": true
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/vitest.config.ts",
+        "rawSha256": "9a4a65976b5b7a5d038f9cb412a90d417f804108cf1dd33bae4421989a863420",
+        "gitBlob": "d1488d1e4612af183f0759d4aaf63b9c39ea0032",
+        "matchesDispatchPin": true
+      }
+    ]
+  },
+  "worksheetSnapshots": {
+    "convention": "Worksheet text is UTF-8 with LF for renderer-authored lines; the reviewed draft block is verbatim, so a source draft that contains CR keeps it. worksheetSha256 is the SHA-256 of the UTF-8 bytes of worksheet; sourceFileSha256 is the SHA-256 of the UTF-8 bytes of the candidate JSON file content.",
+    "note": "Fixtures are the synthetic T1E fixtures, not a live user review. The worksheet is not a record digest and is not self-referential.",
+    "snapshots": {
+      "en-item-bearing-v2": {
+        "sourceFileSha256": "77e67c4c4d7b23a2134b12156edac44899e96c7c2a3876296a1c9b27e3cdf4af",
+        "sourceBytes": 6136,
+        "revision": 9,
+        "worksheetUtf8Bytes": 6019,
+        "worksheetSha256": "5249a26fc92cf5557458b3e805665a83ead80edbb24aae8e5880337bcf54e97d",
+        "convention": "UTF-8, LF for renderer lines; draft block verbatim (source CR kept); hash over UTF-8 bytes of the JS string",
+        "worksheet": "# Technical review worksheet (unfinished)\n\nStatus: UNFINISHED. Technical review has NOT been performed. This worksheet is not an approval, not build readiness, and does not authenticate the reviewer or the source file.\n\n## 1. Bound source\n\n| Field | Value |\n| --- | --- |\n| Source review JSON file | cvf-spec-review-r9.json |\n| SHA-256 (whole JSON file) | 77e67c4c4d7b23a2134b12156edac44899e96c7c2a3876296a1c9b27e3cdf4af |\n| UTF-8 byte count of the JSON file | 6136 |\n| Revision | 9 |\n| Language | en |\n| Reviewer (self-declared, unverified) | Self-declared fixture |\n| Candidate timestamp | 2026-10-05T00:00:00.000Z |\n\nKeep both this worksheet and the source JSON file. Before the manual review, check that the JSON file SHA-256 matches the value above and that the revision is the expected one. This worksheet does not prove the file was saved.\n\n## 2. Reviewed source draft (verbatim)\n\nThe block below is the reviewed draft verbatim, including the user's unresolved items, conflicts and decisions. These are source statements, not technical proposals.\n\n```text\n# Draft for requirements clarification\n\nCurrent scope: specification clarification and review only. Design/build directions below are future steps requiring separate authorization. Viewing this draft does not approve BUILD.\n\nUser-declared open items: 1 open, 0 delegated, 1 resolved. See \"Unresolved items and effective decisions\" at the end. The list holds only items the user declared. Readiness lines in the source packet below route to review only; they do not mean these items are settled.\n\nExact draft\r\nend\n\n---\n\n## Draft requirements review\n\nRevision: 9\n\nViewed this revision: Yes, in the current session\n\nItems still needing a decision: 0\n\nThese are bounded review prompts; answering all of them does not prove completeness or build readiness.\n\nReview is session-only; no actor binding or durable content acceptance is provided.\n\n### workflow: What steps does the user take from start to completion?\n\nStatus: Answered\n\nUser-entered content (data, not execution authority):\n\n> Decision for workflow\n\nSource fields when this decision was recorded:\n\n> problem: Synthetic fixture\n> coreFeatures: (empty)\n> platforms: (empty)\n\n### access: Who may view, edit or export information, and who may not?\n\nStatus: Answered\n\nUser-entered content (data, not execution authority):\n\n> Decision for access\n\nSource fields when this decision was recorded:\n\n> targetUsers: Team leads\n> dataNeeds: (empty)\n> coreFeatures: (empty)\n\n### data: Where does information come from, how long is it kept, and what is sensitive?\n\nStatus: Answered\n\nUser-entered content (data, not execution authority):\n\n> Decision for data\n\nSource fields when this decision was recorded:\n\n> dataNeeds: (empty)\n> constraints: No employee scoring\n> targetUsers: Team leads\n\n### exceptions: What happens when information is missing, incorrect or duplicated?\n\nStatus: Answered\n\nUser-entered content (data, not execution authority):\n\n> Decision for exceptions\n\nSource fields when this decision was recorded:\n\n> coreFeatures: (empty)\n> dataNeeds: (empty)\n> constraints: No employee scoring\n\n### acceptance: Which observable results will you check to accept this version?\n\nStatus: Answered\n\nUser-entered content (data, not execution authority):\n\n> Decision for acceptance\n\nSource fields when this decision was recorded:\n\n> successCriteria: (empty)\n> coreFeatures: (empty)\n> problem: Synthetic fixture\n\n### boundaries: What must stay unchanged, remain out of scope or never happen?\n\nStatus: Answered\n\nUser-entered content (data, not execution authority):\n\n> Decision for boundaries\n\nSource fields when this decision was recorded:\n\n> outOfScope: (empty)\n> mustPreserve: (empty)\n> constraints: No employee scoring\n\n## Unresolved items and effective decisions\n\nOpen: 1 (U1); Delegated: 0; Resolved: 1 (C1)\n\nThese items are user-declared. They do not prove the list is complete, and a resolved item is not a build approval.\n\nWhere user rules overlap, each is shown as the user entered it; no winner is chosen and no consistency is claimed.\n\nAn effective decision applies only to the brief fields it lists; the source text above is retained unchanged.\n\n### U1 [Unknown] Open - decision: data\n\nUser-entered content (data, not execution authority):\n\n> Retention period is not decided.\n\nCited brief fields when recorded:\n\n> constraints: No employee scoring\n\n### C1 [Conflict] Resolved - decision: data\n\nUser-entered content (data, not execution authority):\n\n> Scoring ban versus lead review.\n\nCited brief fields when recorded:\n\n> constraints: No employee scoring\n> targetUsers: Team leads\n\nEffective decision (user-entered):\n\n> Leads review totals only; no per-person score.\n\nViewing or saving this review does not resolve any item and is not build readiness or an execution grant.\n\nBuild readiness: NOT_ASSESSED\n```\n\n## 3. Manual review instructions\n\n- Keep source statements (cited from section 2) separate from technical proposals (the reviewer's own).\n- Keep raw entry separate from report scope where the two differ.\n- If a period needs a calendar, anchor date or timezone the source does not state, record it as unresolved; do not assume one.\n- Do not infer readiness or \"no unknowns\" from this worksheet.\n\n## 4. Requirements (with source citations and applicable user resolutions)\n\nPer requirement: the section 2 citation and the user resolution that applies.\n\nUNFILLED - manual entry\n\n## 5. Proposed design\n\nThe reviewer's technical proposal, labelled as a proposal.\n\nUNFILLED - manual entry\n\n## 6. Tasks and dependencies\n\nTasks, order and dependencies as determined by the reviewer.\n\nUNFILLED - manual entry\n\n## 7. Discriminating validations\n\nValidations that could fail a wrong design.\n\nUNFILLED - manual entry\n\n## 8. Unresolved or delegated policies in the affected scope\n\nList the unresolved or delegated items from section 2 that the design touches.\n\nUNFILLED - manual entry\n\n## 9. Named reviewer disposition\n\nReviewer name, date and disposition. Nobody has filled this in.\n\nUNFILLED - manual entry\n"
+      },
+      "en-item-free-v1": {
+        "sourceFileSha256": "bcdef4b7c988d01860780178a73a2808755f7f4004e2e5301ed27729b857b0c5",
+        "sourceBytes": 3980,
+        "revision": 7,
+        "worksheetUtf8Bytes": 4613,
+        "worksheetSha256": "4c251e05d9d9d5c186bab308901cd1bd955abd0ff1fe933053cb25c99eb8cddf",
+        "convention": "UTF-8, LF for renderer lines; draft block verbatim (source CR kept); hash over UTF-8 bytes of the JS string",
+        "worksheet": "# Technical review worksheet (unfinished)\n\nStatus: UNFINISHED. Technical review has NOT been performed. This worksheet is not an approval, not build readiness, and does not authenticate the reviewer or the source file.\n\n## 1. Bound source\n\n| Field | Value |\n| --- | --- |\n| Source review JSON file | cvf-spec-review-r7.json |\n| SHA-256 (whole JSON file) | bcdef4b7c988d01860780178a73a2808755f7f4004e2e5301ed27729b857b0c5 |\n| UTF-8 byte count of the JSON file | 3980 |\n| Revision | 7 |\n| Language | en |\n| Reviewer (self-declared, unverified) | Self-declared fixture |\n| Candidate timestamp | 2026-10-05T00:00:00.000Z |\n\nKeep both this worksheet and the source JSON file. Before the manual review, check that the JSON file SHA-256 matches the value above and that the revision is the expected one. This worksheet does not prove the file was saved.\n\n## 2. Reviewed source draft (verbatim)\n\nThe block below is the reviewed draft verbatim, including the user's unresolved items, conflicts and decisions. These are source statements, not technical proposals.\n\n```text\n# Draft for requirements clarification\n\nCurrent scope: specification clarification and review only. Design/build directions below are future steps requiring separate authorization. Viewing this draft does not approve BUILD.\n\nExact draft\r\nend\n\n---\n\n## Draft requirements review\n\nRevision: 7\n\nViewed this revision: Yes, in the current session\n\nItems still needing a decision: 0\n\nThese are bounded review prompts; answering all of them does not prove completeness or build readiness.\n\nReview is session-only; no actor binding or durable content acceptance is provided.\n\n### workflow: What steps does the user take from start to completion?\n\nStatus: Answered\n\nUser-entered content (data, not execution authority):\n\n> Decision for workflow\n\nSource fields when this decision was recorded:\n\n> problem: Synthetic fixture\n> coreFeatures: (empty)\n> platforms: (empty)\n\n### access: Who may view, edit or export information, and who may not?\n\nStatus: Answered\n\nUser-entered content (data, not execution authority):\n\n> Decision for access\n\nSource fields when this decision was recorded:\n\n> targetUsers: (empty)\n> dataNeeds: (empty)\n> coreFeatures: (empty)\n\n### data: Where does information come from, how long is it kept, and what is sensitive?\n\nStatus: Answered\n\nUser-entered content (data, not execution authority):\n\n> Decision for data\n\nSource fields when this decision was recorded:\n\n> dataNeeds: (empty)\n> constraints: (empty)\n> targetUsers: (empty)\n\n### exceptions: What happens when information is missing, incorrect or duplicated?\n\nStatus: Answered\n\nUser-entered content (data, not execution authority):\n\n> Decision for exceptions\n\nSource fields when this decision was recorded:\n\n> coreFeatures: (empty)\n> dataNeeds: (empty)\n> constraints: (empty)\n\n### acceptance: Which observable results will you check to accept this version?\n\nStatus: Answered\n\nUser-entered content (data, not execution authority):\n\n> Decision for acceptance\n\nSource fields when this decision was recorded:\n\n> successCriteria: (empty)\n> coreFeatures: (empty)\n> problem: Synthetic fixture\n\n### boundaries: What must stay unchanged, remain out of scope or never happen?\n\nStatus: Answered\n\nUser-entered content (data, not execution authority):\n\n> Decision for boundaries\n\nSource fields when this decision was recorded:\n\n> outOfScope: (empty)\n> mustPreserve: (empty)\n> constraints: (empty)\n```\n\n## 3. Manual review instructions\n\n- Keep source statements (cited from section 2) separate from technical proposals (the reviewer's own).\n- Keep raw entry separate from report scope where the two differ.\n- If a period needs a calendar, anchor date or timezone the source does not state, record it as unresolved; do not assume one.\n- Do not infer readiness or \"no unknowns\" from this worksheet.\n\n## 4. Requirements (with source citations and applicable user resolutions)\n\nPer requirement: the section 2 citation and the user resolution that applies.\n\nUNFILLED - manual entry\n\n## 5. Proposed design\n\nThe reviewer's technical proposal, labelled as a proposal.\n\nUNFILLED - manual entry\n\n## 6. Tasks and dependencies\n\nTasks, order and dependencies as determined by the reviewer.\n\nUNFILLED - manual entry\n\n## 7. Discriminating validations\n\nValidations that could fail a wrong design.\n\nUNFILLED - manual entry\n\n## 8. Unresolved or delegated policies in the affected scope\n\nList the unresolved or delegated items from section 2 that the design touches.\n\nUNFILLED - manual entry\n\n## 9. Named reviewer disposition\n\nReviewer name, date and disposition. Nobody has filled this in.\n\nUNFILLED - manual entry\n"
+      },
+      "vi-item-free-v1": {
+        "sourceFileSha256": "b24473a689abe03783999c6233dc975505231e1817a9ecec793c8a802eefd12e",
+        "sourceBytes": 4693,
+        "revision": 7,
+        "worksheetUtf8Bytes": 5689,
+        "worksheetSha256": "5ae20554f4f2cc8f8ab596761863576abb09dc9abc929c7e1fd70920bdefe02f",
+        "convention": "UTF-8, LF for renderer lines; draft block verbatim (source CR kept); hash over UTF-8 bytes of the JS string",
+        "worksheet": "# Phi\u1ebfu review k\u1ef9 thu\u1eadt (ch\u01b0a ho\u00e0n th\u00e0nh)\n\nTr\u1ea1ng th\u00e1i: CH\u01afA HO\u00c0N TH\u00c0NH. Review k\u1ef9 thu\u1eadt CH\u01afA \u0111\u01b0\u1ee3c th\u1ef1c hi\u1ec7n. Phi\u1ebfu n\u00e0y kh\u00f4ng ph\u1ea3i ph\u00ea duy\u1ec7t, kh\u00f4ng ph\u1ea3i x\u00e1c nh\u1eadn s\u1eb5n s\u00e0ng build, v\u00e0 kh\u00f4ng x\u00e1c th\u1ef1c ng\u01b0\u1eddi review hay file ngu\u1ed3n.\n\n## 1. Ngu\u1ed3n \u0111\u00e3 g\u1eafn\n\n| M\u1ee5c | Gi\u00e1 tr\u1ecb |\n| --- | --- |\n| File review JSON ngu\u1ed3n | cvf-spec-review-r7.json |\n| SHA-256 (to\u00e0n b\u1ed9 file JSON) | b24473a689abe03783999c6233dc975505231e1817a9ecec793c8a802eefd12e |\n| S\u1ed1 byte UTF-8 c\u1ee7a file JSON | 4693 |\n| Phi\u00ean b\u1ea3n | 7 |\n| Ng\u00f4n ng\u1eef | vi |\n| Ng\u01b0\u1eddi review (t\u1ef1 khai b\u00e1o, ch\u01b0a x\u00e1c th\u1ef1c) | Self-declared fixture |\n| Th\u1eddi \u0111i\u1ec3m t\u1ea1o g\u00f3i | 2026-10-05T00:00:00.000Z |\n\nH\u00e3y gi\u1eef c\u1ea3 phi\u1ebfu n\u00e0y v\u00e0 file JSON ngu\u1ed3n. Tr\u01b0\u1edbc khi review th\u1ee7 c\u00f4ng, ki\u1ec3m tra SHA-256 c\u1ee7a file JSON kh\u1edbp gi\u00e1 tr\u1ecb tr\u00ean v\u00e0 phi\u00ean b\u1ea3n \u0111\u00fang. Phi\u1ebfu kh\u00f4ng ch\u1ee9ng minh file \u0111\u00e3 \u0111\u01b0\u1ee3c l\u01b0u.\n\n## 2. B\u1ea3n nh\u00e1p ngu\u1ed3n \u0111\u00e3 review (nguy\u00ean v\u0103n)\n\nPh\u1ea7n d\u01b0\u1edbi l\u00e0 b\u1ea3n nh\u00e1p \u0111\u00e3 review, gi\u1eef nguy\u00ean v\u0103n c\u00f9ng c\u00e1c m\u1ee5c ch\u01b0a gi\u1ea3i quy\u1ebft, xung \u0111\u1ed9t v\u00e0 quy\u1ebft \u0111\u1ecbnh c\u1ee7a ng\u01b0\u1eddi d\u00f9ng. \u0110\u00e2y l\u00e0 ph\u00e1t bi\u1ec3u ngu\u1ed3n, kh\u00f4ng ph\u1ea3i \u0111\u1ec1 xu\u1ea5t k\u1ef9 thu\u1eadt.\n\n```text\n# B\u1ea3n nh\u00e1p \u0111\u1ec3 l\u00e0m r\u00f5 y\u00eau c\u1ea7u\n\nPh\u1ea1m vi hi\u1ec7n t\u1ea1i: ch\u1ec9 l\u00e0m r\u00f5 v\u00e0 review \u0111\u1eb7c t\u1ea3. C\u00e1c h\u01b0\u1edbng d\u1eabn design/build ph\u00eda d\u01b0\u1edbi l\u00e0 b\u01b0\u1edbc t\u01b0\u01a1ng lai, c\u1ea7n quy\u1ec1n ri\u00eang. \u0110\u00e3 xem b\u1ea3n nh\u00e1p kh\u00f4ng \u0111\u1ed3ng ngh\u0129a duy\u1ec7t BUILD.\n\nG\u00f3i ti\u1ebfng Vi\u1ec7t\n\u0111\u1ea7y \u0111\u1ee7\n\n---\n\n## Review y\u00eau c\u1ea7u c\u1ee7a b\u1ea3n nh\u00e1p\n\nPhi\u00ean b\u1ea3n: 7\n\n\u0110\u00e3 xem b\u1ea3n n\u00e0y: C\u00f3, trong phi\u00ean hi\u1ec7n t\u1ea1i\n\nM\u1ee5c c\u00f2n c\u1ea7n quy\u1ebft \u0111\u1ecbnh: 0\n\nC\u00e1c c\u00e2u h\u1ecfi l\u00e0 g\u1ee3i \u00fd review c\u00f3 gi\u1edbi h\u1ea1n; tr\u1ea3 l\u1eddi h\u1ebft kh\u00f4ng ch\u1ee9ng minh spec \u0111\u1ea7y \u0111\u1ee7 ho\u1eb7c build-ready.\n\nReview ch\u1ec9 n\u1eb1m trong phi\u00ean n\u00e0y; ch\u01b0a c\u00f3 actor binding ho\u1eb7c l\u01b0u/x\u00e1c nh\u1eadn b\u1ec1n v\u1eefng.\n\n### workflow: Ng\u01b0\u1eddi d\u00f9ng l\u00e0m nh\u1eefng b\u01b0\u1edbc n\u00e0o t\u1eeb \u0111\u1ea7u \u0111\u1ebfn khi xong?\n\nTr\u1ea1ng th\u00e1i: \u0110\u00e3 tr\u1ea3 l\u1eddi\n\nN\u1ed9i dung ng\u01b0\u1eddi d\u00f9ng nh\u1eadp (d\u1eef li\u1ec7u, kh\u00f4ng ph\u1ea3i quy\u1ec1n th\u1ef1c thi):\n\n> Decision for workflow\n\nC\u00e1c tr\u01b0\u1eddng ngu\u1ed3n t\u1ea1i l\u00fac ghi quy\u1ebft \u0111\u1ecbnh:\n\n> problem: Synthetic fixture\n> coreFeatures: (tr\u1ed1ng)\n> platforms: (tr\u1ed1ng)\n\n### access: Ai \u0111\u01b0\u1ee3c xem, s\u1eeda ho\u1eb7c xu\u1ea5t th\u00f4ng tin? Ai kh\u00f4ng \u0111\u01b0\u1ee3c ph\u00e9p?\n\nTr\u1ea1ng th\u00e1i: \u0110\u00e3 tr\u1ea3 l\u1eddi\n\nN\u1ed9i dung ng\u01b0\u1eddi d\u00f9ng nh\u1eadp (d\u1eef li\u1ec7u, kh\u00f4ng ph\u1ea3i quy\u1ec1n th\u1ef1c thi):\n\n> Decision for access\n\nC\u00e1c tr\u01b0\u1eddng ngu\u1ed3n t\u1ea1i l\u00fac ghi quy\u1ebft \u0111\u1ecbnh:\n\n> targetUsers: Team leads\n> dataNeeds: (tr\u1ed1ng)\n> coreFeatures: (tr\u1ed1ng)\n\n### data: Th\u00f4ng tin \u0111\u1ebfn t\u1eeb \u0111\u00e2u, c\u1ea7n gi\u1eef bao l\u00e2u v\u00e0 c\u00f3 g\u00ec nh\u1ea1y c\u1ea3m?\n\nTr\u1ea1ng th\u00e1i: \u0110\u00e3 tr\u1ea3 l\u1eddi\n\nN\u1ed9i dung ng\u01b0\u1eddi d\u00f9ng nh\u1eadp (d\u1eef li\u1ec7u, kh\u00f4ng ph\u1ea3i quy\u1ec1n th\u1ef1c thi):\n\n> Decision for data\n\nC\u00e1c tr\u01b0\u1eddng ngu\u1ed3n t\u1ea1i l\u00fac ghi quy\u1ebft \u0111\u1ecbnh:\n\n> dataNeeds: (tr\u1ed1ng)\n> constraints: No employee scoring\n> targetUsers: Team leads\n\n### exceptions: Khi thi\u1ebfu, sai ho\u1eb7c tr\u00f9ng th\u00f4ng tin th\u00ec x\u1eed l\u00fd th\u1ebf n\u00e0o?\n\nTr\u1ea1ng th\u00e1i: \u0110\u00e3 tr\u1ea3 l\u1eddi\n\nN\u1ed9i dung ng\u01b0\u1eddi d\u00f9ng nh\u1eadp (d\u1eef li\u1ec7u, kh\u00f4ng ph\u1ea3i quy\u1ec1n th\u1ef1c thi):\n\n> Decision for exceptions\n\nC\u00e1c tr\u01b0\u1eddng ngu\u1ed3n t\u1ea1i l\u00fac ghi quy\u1ebft \u0111\u1ecbnh:\n\n> coreFeatures: (tr\u1ed1ng)\n> dataNeeds: (tr\u1ed1ng)\n> constraints: No employee scoring\n\n### acceptance: B\u1ea1n s\u1ebd ki\u1ec3m tra k\u1ebft qu\u1ea3 n\u00e0o \u0111\u1ec3 bi\u1ebft phi\u00ean b\u1ea3n n\u00e0y \u0111\u1ea1t y\u00eau c\u1ea7u?\n\nTr\u1ea1ng th\u00e1i: \u0110\u00e3 tr\u1ea3 l\u1eddi\n\nN\u1ed9i dung ng\u01b0\u1eddi d\u00f9ng nh\u1eadp (d\u1eef li\u1ec7u, kh\u00f4ng ph\u1ea3i quy\u1ec1n th\u1ef1c thi):\n\n> Decision for acceptance\n\nC\u00e1c tr\u01b0\u1eddng ngu\u1ed3n t\u1ea1i l\u00fac ghi quy\u1ebft \u0111\u1ecbnh:\n\n> successCriteria: (tr\u1ed1ng)\n> coreFeatures: (tr\u1ed1ng)\n> problem: Synthetic fixture\n\n### boundaries: \u0110i\u1ec1u g\u00ec ph\u1ea3i gi\u1eef nguy\u00ean, ch\u01b0a l\u00e0m ho\u1eb7c tuy\u1ec7t \u0111\u1ed1i kh\u00f4ng \u0111\u01b0\u1ee3c l\u00e0m?\n\nTr\u1ea1ng th\u00e1i: \u0110\u00e3 tr\u1ea3 l\u1eddi\n\nN\u1ed9i dung ng\u01b0\u1eddi d\u00f9ng nh\u1eadp (d\u1eef li\u1ec7u, kh\u00f4ng ph\u1ea3i quy\u1ec1n th\u1ef1c thi):\n\n> Decision for boundaries\n\nC\u00e1c tr\u01b0\u1eddng ngu\u1ed3n t\u1ea1i l\u00fac ghi quy\u1ebft \u0111\u1ecbnh:\n\n> outOfScope: (tr\u1ed1ng)\n> mustPreserve: (tr\u1ed1ng)\n> constraints: No employee scoring\n```\n\n## 3. H\u01b0\u1edbng d\u1eabn review th\u1ee7 c\u00f4ng\n\n- T\u00e1ch r\u00f5 ph\u00e1t bi\u1ec3u ngu\u1ed3n (tr\u00edch d\u1eabn t\u1eeb m\u1ee5c 2) v\u1edbi \u0111\u1ec1 xu\u1ea5t k\u1ef9 thu\u1eadt (c\u1ee7a ng\u01b0\u1eddi review).\n- T\u00e1ch r\u00f5 d\u1eef li\u1ec7u \u0111\u1ea7u v\u00e0o th\u00f4 v\u1edbi ph\u1ea1m vi b\u00e1o c\u00e1o khi hai th\u1ee9 n\u00e0y kh\u00e1c nhau.\n- N\u1ebfu m\u1ed9t kho\u1ea3ng th\u1eddi gian c\u1ea7n l\u1ecbch, m\u1ed1c neo ho\u1eb7c m\u00fai gi\u1edd m\u00e0 ngu\u1ed3n kh\u00f4ng n\u00eau, ghi l\u00e0 ch\u01b0a gi\u1ea3i quy\u1ebft; kh\u00f4ng t\u1ef1 gi\u1ea3 \u0111\u1ecbnh.\n- Kh\u00f4ng suy ra s\u1eb5n s\u00e0ng hay \"kh\u00f4ng c\u00f2n \u0111i\u1ec1u ch\u01b0a bi\u1ebft\" t\u1eeb phi\u1ebfu n\u00e0y.\n\n## 4. Y\u00eau c\u1ea7u (k\u00e8m tr\u00edch d\u1eabn ngu\u1ed3n v\u00e0 quy\u1ebft \u0111\u1ecbnh \u00e1p d\u1ee5ng c\u1ee7a ng\u01b0\u1eddi d\u00f9ng)\n\nM\u1ed7i y\u00eau c\u1ea7u: tr\u00edch d\u1eabn m\u1ee5c 2 v\u00e0 quy\u1ebft \u0111\u1ecbnh c\u1ee7a ng\u01b0\u1eddi d\u00f9ng \u00e1p d\u1ee5ng.\n\nUNFILLED - \u0111i\u1ec1n th\u1ee7 c\u00f4ng\n\n## 5. Thi\u1ebft k\u1ebf \u0111\u1ec1 xu\u1ea5t\n\n\u0110\u1ec1 xu\u1ea5t k\u1ef9 thu\u1eadt c\u1ee7a ng\u01b0\u1eddi review, ghi r\u00f5 l\u00e0 \u0111\u1ec1 xu\u1ea5t.\n\nUNFILLED - \u0111i\u1ec1n th\u1ee7 c\u00f4ng\n\n## 6. C\u00f4ng vi\u1ec7c v\u00e0 ph\u1ee5 thu\u1ed9c\n\nC\u00f4ng vi\u1ec7c, th\u1ee9 t\u1ef1 v\u00e0 ph\u1ee5 thu\u1ed9c do ng\u01b0\u1eddi review x\u00e1c \u0111\u1ecbnh.\n\nUNFILLED - \u0111i\u1ec1n th\u1ee7 c\u00f4ng\n\n## 7. Ki\u1ec3m ch\u1ee9ng ph\u00e2n bi\u1ec7t \u0111\u01b0\u1ee3c\n\nKi\u1ec3m ch\u1ee9ng c\u00f3 th\u1ec3 l\u00e0m th\u1ea5t b\u1ea1i m\u1ed9t thi\u1ebft k\u1ebf sai.\n\nUNFILLED - \u0111i\u1ec1n th\u1ee7 c\u00f4ng\n\n## 8. Ch\u00ednh s\u00e1ch ch\u01b0a gi\u1ea3i quy\u1ebft ho\u1eb7c \u1ee7y quy\u1ec1n trong ph\u1ea1m vi b\u1ecb \u1ea3nh h\u01b0\u1edfng\n\nLi\u1ec7t k\u00ea c\u00e1c m\u1ee5c ch\u01b0a gi\u1ea3i quy\u1ebft/\u1ee7y quy\u1ec1n t\u1eeb m\u1ee5c 2 m\u00e0 thi\u1ebft k\u1ebf ch\u1ea1m t\u1edbi.\n\nUNFILLED - \u0111i\u1ec1n th\u1ee7 c\u00f4ng\n\n## 9. K\u1ebft lu\u1eadn c\u1ee7a ng\u01b0\u1eddi review c\u00f3 t\u00ean\n\nT\u00ean ng\u01b0\u1eddi review, ng\u00e0y v\u00e0 k\u1ebft lu\u1eadn. Ch\u01b0a ai \u0111i\u1ec1n.\n\nUNFILLED - \u0111i\u1ec1n th\u1ee7 c\u00f4ng\n"
+      }
+    }
+  },
+  "envelope": {
+    "gitStatusShort": [
+      " M EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecConfirmation.test.tsx",
+      " M EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecConfirmation.tsx",
+      " M EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-confirmation.test.ts",
+      " M EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-confirmation.ts"
+    ],
+    "workerOwnedSetSize": 7,
+    "note": "The worker return and the two evidence files are listed once written; no path outside the seven owned paths may appear."
+  },
+  "evidenceFileHashes": {
+    "workerPreImplementationReceipt": {
+      "path": ".cvf/runtime/nis-t1j-worker-20261006/pre-implementation/pre-implementation.json",
+      "sha256": "5a0bb1efcd80a82f4ce81b6b6c17a91a82dd4ded85c1312a1aef9e327f312147"
+    },
+    "workerPreImplementationLog": {
+      "path": ".cvf/runtime/nis-t1j-worker-20261006/pre-implementation.log",
+      "sha256": "5ba8bcc9abe8153020dcb1ed735a5ed18e27624181564607eb9dc5fed8fa269c"
+    },
+    "legacyCapture": {
+      "path": ".cvf/runtime/nis-t1j-worker-20261006/legacy-preimage-capture.json",
+      "sha256": "01ded18eb1074dd51bbad68e82162c2d7212634345e691d058f65d3eef411d64"
+    },
+    "finalFocusedVitestLog": {
+      "path": ".cvf/runtime/nis-t1j-worker-20261006/final-vitest-focused.log",
+      "sha256": "6873337e113ff064c5d79a16c6a37e41485c2065ebaeff3776cc133399f90a9b"
+    },
+    "finalFocusedVitestJson": {
+      "path": ".cvf/runtime/nis-t1j-worker-20261006/final-vitest-focused.json",
+      "sha256": "54bb1cc941be23457b94810fa3124e5147c45efd41278ab323b8a07699803294"
+    },
+    "finalTscLog": {
+      "path": ".cvf/runtime/nis-t1j-worker-20261006/final-tsc.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "finalEslintLog": {
+      "path": ".cvf/runtime/nis-t1j-worker-20261006/final-eslint.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "worksheetSnapshotCapture": {
+      "path": ".cvf/runtime/nis-t1j-worker-20261006/worksheet-snapshots.json",
+      "sha256": "e273b6a1b6202d28256969adfd86ca834285c05c54b04bbec67c64f97f6c1fba"
+    }
+  },
+  "claimBoundary": "Synthetic render-only worksheet and download-control evidence. No authenticated import, acceptance, helper arm, semantic analysis, UX, AI governance, build-ready or runtime claim. Independent Local probe PENDING_REVIEWER_EXECUTION."
+}

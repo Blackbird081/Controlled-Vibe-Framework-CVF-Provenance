@@ -1,0 +1,514 @@
+{
+  "schemaVersion": "cvf.nisT1jLocalIndependentReview.v1",
+  "closureBaseHead": "7f3df0c67fb454ea04a703a15a52ea419e5fbe43",
+  "disposition": "ACCEPT_WITH_LOCAL_REPAIR",
+  "independentProbeStatus": "PASS_INDEPENDENT_PROBE",
+  "checks": [
+    {
+      "id": "worker-ref:.cvf/runtime/nis-t1j-worker-20261006/pre-implementation.log",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "worker-ref:.cvf/runtime/nis-t1j-worker-20261006/pre-implementation/pre-implementation.json",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "worker-ref:.cvf/runtime/nis-t1j-worker-20261006/legacy-preimage-capture.json",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "worker-ref:.cvf/runtime/nis-t1j-worker-20261006/capture-legacy.test.ts.done",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "worker-ref:.cvf/runtime/nis-t1j-worker-20261006/vitest.scratch.config.js",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "worker-ref:.cvf/runtime/nis-t1j-worker-20261006/final-vitest-focused.log",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "worker-ref:.cvf/runtime/nis-t1j-worker-20261006/final-vitest-focused.json",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "worker-ref:.cvf/runtime/nis-t1j-worker-20261006/final-tsc.log",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "worker-ref:.cvf/runtime/nis-t1j-worker-20261006/final-eslint.log",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "worker-ref:.cvf/runtime/nis-t1j-worker-20261006/worksheet-snapshots.json",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "worker-ref:.cvf/runtime/nis-t1j-worker-20261006/worksheet-snapshot.test.ts",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "worker-ref:.cvf/runtime/nis-t1j-worker-20261006/logs/mutA.log",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "worker-ref:.cvf/runtime/nis-t1j-worker-20261006/logs/mutA2.log",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "worker-ref:.cvf/runtime/nis-t1j-worker-20261006/logs/mutB.log",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "worker-ref:.cvf/runtime/nis-t1j-worker-20261006/legacy-preimage-capture.json",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "worker-ref:.cvf/runtime/nis-t1j-worker-20261006/pre-implementation/pre-implementation.json",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "worker-ref:.cvf/runtime/nis-t1j-worker-20261006/pre-implementation.log",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "worker-ref:.cvf/runtime/nis-t1j-worker-20261006/legacy-preimage-capture.json",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "worker-ref:.cvf/runtime/nis-t1j-worker-20261006/final-vitest-focused.log",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "worker-ref:.cvf/runtime/nis-t1j-worker-20261006/final-vitest-focused.json",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "worker-ref:.cvf/runtime/nis-t1j-worker-20261006/final-tsc.log",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "worker-ref:.cvf/runtime/nis-t1j-worker-20261006/final-eslint.log",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "worker-ref:.cvf/runtime/nis-t1j-worker-20261006/worksheet-snapshots.json",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "original-worker-retained:EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-confirmation.ts",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "original-worker-retained:EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecConfirmation.tsx",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "original-worker-retained:EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-confirmation.test.ts",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "original-worker-retained:EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecConfirmation.test.tsx",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "original-worker-retained:docs/reviews/CVF_NIS_T1J_DOCUMENTARY_WORKSHEET_EXPORT_WORKER_RETURN_2026-10-06.md",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "original-worker-retained:docs/reviews/evidence/cvf-nis-t1j-acceptance-execution-2026-10-06.json",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "original-worker-retained:docs/reviews/evidence/cvf-nis-t1j-implementation-binding-2026-10-06.json",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "worker-postimage:EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-confirmation.ts",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "worker-postimage:EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecConfirmation.tsx",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "worker-postimage:EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-confirmation.test.ts",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "worker-postimage:EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecConfirmation.test.tsx",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "readonly-pin:docs/reviews/CVF_NIS_T1I_SOURCE_BOUND_DOCUMENTARY_HANDOFF_COMPLETION_2026-10-05.md",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "readonly-pin:docs/reviews/CVF_NIS_T1F_BUILD_READY_BRIDGE_CONTRACT_COMPLETION_2026-10-05.md",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "readonly-pin:DESIGN.md",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "readonly-pin:EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-review.ts",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "readonly-pin:EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-open-items.ts",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "readonly-pin:EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecConfirmation.server.test.tsx",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "readonly-pin:EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-review-client.ts",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "readonly-pin:EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/package.json",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "readonly-pin:EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/vitest.config.ts",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "worksheet-sha:5249a26fc92cf5557458b3e805665a83ead80edbb24aae8e5880337bcf54e97d",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "worksheet-length:5249a26fc92cf5557458b3e805665a83ead80edbb24aae8e5880337bcf54e97d",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "source-header:5249a26fc92cf5557458b3e805665a83ead80edbb24aae8e5880337bcf54e97d",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "worksheet-sha:4c251e05d9d9d5c186bab308901cd1bd955abd0ff1fe933053cb25c99eb8cddf",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "worksheet-length:4c251e05d9d9d5c186bab308901cd1bd955abd0ff1fe933053cb25c99eb8cddf",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "source-header:4c251e05d9d9d5c186bab308901cd1bd955abd0ff1fe933053cb25c99eb8cddf",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "worksheet-sha:5ae20554f4f2cc8f8ab596761863576abb09dc9abc929c7e1fd70920bdefe02f",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "worksheet-length:5ae20554f4f2cc8f8ab596761863576abb09dc9abc929c7e1fd70920bdefe02f",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "source-header:5ae20554f4f2cc8f8ab596761863576abb09dc9abc929c7e1fd70920bdefe02f",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "snapshot-count",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "legacy-producer-unchanged",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "worker-focused-result",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "named-defect-reproduced",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "local-probe-final",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "local-focused",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "exit-probe-final",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "exit-focused",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "exit-tsc",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "exit-eslint",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "worker-head-index-retained",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "worker-original-exact7",
+      "status": "PASS",
+      "detail": null
+    }
+  ],
+  "finiteCheckCount": 64,
+  "nativeLocalProbeTests": 8,
+  "focusedTestsAfterRepair": 64,
+  "workerFocusedTests": 63,
+  "snapshotsBound": [
+    "5249a26fc92cf5557458b3e805665a83ead80edbb24aae8e5880337bcf54e97d",
+    "4c251e05d9d9d5c186bab308901cd1bd955abd0ff1fe933053cb25c99eb8cddf",
+    "5ae20554f4f2cc8f8ab596761863576abb09dc9abc929c7e1fd70920bdefe02f"
+  ],
+  "workerReferencesVerified": {
+    ".cvf/runtime/nis-t1j-worker-20261006/pre-implementation.log": "5ba8bcc9abe8153020dcb1ed735a5ed18e27624181564607eb9dc5fed8fa269c",
+    ".cvf/runtime/nis-t1j-worker-20261006/pre-implementation/pre-implementation.json": "5a0bb1efcd80a82f4ce81b6b6c17a91a82dd4ded85c1312a1aef9e327f312147",
+    ".cvf/runtime/nis-t1j-worker-20261006/legacy-preimage-capture.json": "01ded18eb1074dd51bbad68e82162c2d7212634345e691d058f65d3eef411d64",
+    ".cvf/runtime/nis-t1j-worker-20261006/capture-legacy.test.ts.done": "8c9613e6033c0efa19c9c1a87a90fea83dc4e8914a0c89b80bad097bc1d71a04",
+    ".cvf/runtime/nis-t1j-worker-20261006/vitest.scratch.config.js": "852a55dffe6157df33f02ef60c66e43867c0718bb34439c34f16230c662ccef4",
+    ".cvf/runtime/nis-t1j-worker-20261006/final-vitest-focused.log": "6873337e113ff064c5d79a16c6a37e41485c2065ebaeff3776cc133399f90a9b",
+    ".cvf/runtime/nis-t1j-worker-20261006/final-vitest-focused.json": "54bb1cc941be23457b94810fa3124e5147c45efd41278ab323b8a07699803294",
+    ".cvf/runtime/nis-t1j-worker-20261006/final-tsc.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    ".cvf/runtime/nis-t1j-worker-20261006/final-eslint.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    ".cvf/runtime/nis-t1j-worker-20261006/worksheet-snapshots.json": "e273b6a1b6202d28256969adfd86ca834285c05c54b04bbec67c64f97f6c1fba",
+    ".cvf/runtime/nis-t1j-worker-20261006/worksheet-snapshot.test.ts": "a032e7db7ba48e3c8984035ee819f0a246eb1cc2d11c28842f640474e56984f4",
+    ".cvf/runtime/nis-t1j-worker-20261006/logs/mutA.log": "f032cccfaba7d9cd64067f596dcde7a2bd12657b59d9ad2e111e8291a3bab5ba",
+    ".cvf/runtime/nis-t1j-worker-20261006/logs/mutA2.log": "2b7c35cd58ac6408aa08ef1473347f3409f1f9510e7a04b44dfc5e8c4bd3539c",
+    ".cvf/runtime/nis-t1j-worker-20261006/logs/mutB.log": "3d9c66c5c108581b1dac1eed07ef4de00a5592c902b75a0b357c68a7e3096afe"
+  },
+  "artifactIdentities": {
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-confirmation.ts": {
+      "originalWorkerSha256": "35214de8c34414c1cdc7558990aa47d9799a7fe5fa47de6cc26bd0c6adf30b76",
+      "acceptedSha256": "a7214fdcd73abaf601e73d5884c65dcf26e891accbe30f555ddab5e53119692c",
+      "reviewerChanged": true
+    },
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecConfirmation.tsx": {
+      "originalWorkerSha256": "d01d8abb7a3885f317a9befb6ebf2548659bfdf2718a1b3c0762d16aa0cb6beb",
+      "acceptedSha256": "d01d8abb7a3885f317a9befb6ebf2548659bfdf2718a1b3c0762d16aa0cb6beb",
+      "reviewerChanged": false
+    },
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-confirmation.test.ts": {
+      "originalWorkerSha256": "b42a258287d8c9226bec84c4c2659f2192b02839b88b1239473c8bedbff3f8c2",
+      "acceptedSha256": "0cc070a270b367f0454b13eaa33b855d4c8fa8b99f905b813b75b35f01d92f88",
+      "reviewerChanged": true
+    },
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecConfirmation.test.tsx": {
+      "originalWorkerSha256": "43fb16363666b7b9096f251faa5cfb3e5a26daf0a633c3ad6fb3d0456cb8520a",
+      "acceptedSha256": "43fb16363666b7b9096f251faa5cfb3e5a26daf0a633c3ad6fb3d0456cb8520a",
+      "reviewerChanged": false
+    },
+    "docs/reviews/CVF_NIS_T1J_DOCUMENTARY_WORKSHEET_EXPORT_WORKER_RETURN_2026-10-06.md": {
+      "originalWorkerSha256": "f47040672a26bdc3d008b40550cc0ab37cb44ca9404c14ba4818877517a19e58",
+      "acceptedSha256": "f47040672a26bdc3d008b40550cc0ab37cb44ca9404c14ba4818877517a19e58",
+      "reviewerChanged": false
+    },
+    "docs/reviews/evidence/cvf-nis-t1j-acceptance-execution-2026-10-06.json": {
+      "originalWorkerSha256": "ce360941e78dc8468c585178f92bf748f6d6440471ca34018632b2d16087ff94",
+      "acceptedSha256": "ce360941e78dc8468c585178f92bf748f6d6440471ca34018632b2d16087ff94",
+      "reviewerChanged": false
+    },
+    "docs/reviews/evidence/cvf-nis-t1j-implementation-binding-2026-10-06.json": {
+      "originalWorkerSha256": "908e441509e00cb733d18d781ccdad9d02e219e21de30e08176d881d959d9ce6",
+      "acceptedSha256": "908e441509e00cb733d18d781ccdad9d02e219e21de30e08176d881d959d9ce6",
+      "reviewerChanged": false
+    }
+  },
+  "localEvidence": {
+    "adif-resolver.log": {
+      "path": ".cvf\\runtime\\nis-t1j-local-review-20261006\\adif-resolver.log",
+      "sha256": "584da68bec83f76cbd8fd532638ca6e3671278619844691cd9ad91319f47a1f1"
+    },
+    "closure-paths.json": {
+      "path": ".cvf\\runtime\\nis-t1j-local-review-20261006\\closure-paths.json",
+      "sha256": "05f89dddb8e952d04cd853f0e13b39a2496fec46de15fcfe688da616660dd1e5"
+    },
+    "cvf-nis-t1j-acceptance-execution-2026-10-06-structure.json": {
+      "path": ".cvf\\runtime\\nis-t1j-local-review-20261006\\cvf-nis-t1j-acceptance-execution-2026-10-06-structure.json",
+      "sha256": "35510c8e153723f6dbdf4f53574d7352c3d565b05fd6aa0fa38571e2829d9545"
+    },
+    "cvf-nis-t1j-implementation-binding-2026-10-06-structure.json": {
+      "path": ".cvf\\runtime\\nis-t1j-local-review-20261006\\cvf-nis-t1j-implementation-binding-2026-10-06-structure.json",
+      "sha256": "26f2105a8ca99e7dc0d6e9a3392ddf77a51223c853b7ce152ce2a98f8ac13416"
+    },
+    "eslint.exit": {
+      "path": ".cvf\\runtime\\nis-t1j-local-review-20261006\\eslint.exit",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    "eslint.log": {
+      "path": ".cvf\\runtime\\nis-t1j-local-review-20261006\\eslint.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "focused.exit": {
+      "path": ".cvf\\runtime\\nis-t1j-local-review-20261006\\focused.exit",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    "focused.json": {
+      "path": ".cvf\\runtime\\nis-t1j-local-review-20261006\\focused.json",
+      "sha256": "16230045bb1bbe59ac1d8628f3b8daec94b70ea696aee998f135ce6c310580c6"
+    },
+    "focused.log": {
+      "path": ".cvf\\runtime\\nis-t1j-local-review-20261006\\focused.log",
+      "sha256": "cb3ee53b401d8e4c5b1a04b4d039823994310199bf3873224825e8eca1090b20"
+    },
+    "intake.json": {
+      "path": ".cvf\\runtime\\nis-t1j-local-review-20261006\\intake.json",
+      "sha256": "4cff3624365735fe8fcd59f5e33cb18014da42756bb74ba44cd8ea928090f8d3"
+    },
+    "probe-final.exit": {
+      "path": ".cvf\\runtime\\nis-t1j-local-review-20261006\\probe-final.exit",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    "probe-final.json": {
+      "path": ".cvf\\runtime\\nis-t1j-local-review-20261006\\probe-final.json",
+      "sha256": "8903af176a03bb43742725e7f68473e74470b116814c94c095fc66ec684ec725"
+    },
+    "probe-final.log": {
+      "path": ".cvf\\runtime\\nis-t1j-local-review-20261006\\probe-final.log",
+      "sha256": "f926b808c6ec0bf96452153a8ad0dfa84e476cc18f48e610ade02762c76e89c7"
+    },
+    "probe-initial.json": {
+      "path": ".cvf\\runtime\\nis-t1j-local-review-20261006\\probe-initial.json",
+      "sha256": "6c31a24cc8332672f818c1ad6c881fecd6abaa6bc96265d11c3abdf2447163d1"
+    },
+    "probe-initial.log": {
+      "path": ".cvf\\runtime\\nis-t1j-local-review-20261006\\probe-initial.log",
+      "sha256": "8b11dcf77cccc58e02a0f2a40da1c990fc07146c3463f47ce3079585cb5a24a1"
+    },
+    "probe-ui-first.exit": {
+      "path": ".cvf\\runtime\\nis-t1j-local-review-20261006\\probe-ui-first.exit",
+      "sha256": "f1b2f662800122bed0ff255693df89c4487fbdcf453d3524a42d4ec20c3d9c04"
+    },
+    "probe-ui-first.log": {
+      "path": ".cvf\\runtime\\nis-t1j-local-review-20261006\\probe-ui-first.log",
+      "sha256": "a63ae3439c78857e8a8a937876eb164d29493d9da1d5af1f76074462b621a356"
+    },
+    "probe-ui-second.exit": {
+      "path": ".cvf\\runtime\\nis-t1j-local-review-20261006\\probe-ui-second.exit",
+      "sha256": "f1b2f662800122bed0ff255693df89c4487fbdcf453d3524a42d4ec20c3d9c04"
+    },
+    "probe-ui-second.log": {
+      "path": ".cvf\\runtime\\nis-t1j-local-review-20261006\\probe-ui-second.log",
+      "sha256": "ca8a6fef89aece1e99f2a22135be1aa231b4a3f743590df6be8380a79d38290a"
+    },
+    "proof-final.log": {
+      "path": ".cvf\\runtime\\nis-t1j-local-review-20261006\\proof-final.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "reviewer-fast-final.log": {
+      "path": ".cvf\\runtime\\nis-t1j-local-review-20261006\\reviewer-fast-final.log",
+      "sha256": "24dde9197a73f57ecbe927584da6c25a133ae78e51e61efd8638ddafaabd0686"
+    },
+    "reviewer-fast.log": {
+      "path": ".cvf\\runtime\\nis-t1j-local-review-20261006\\reviewer-fast.log",
+      "sha256": "7250f01a9b5020ac3b18427dfa516dbbf00e8b8ad03a713ea9f47912478ae005"
+    },
+    "tsc.exit": {
+      "path": ".cvf\\runtime\\nis-t1j-local-review-20261006\\tsc.exit",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    "tsc.log": {
+      "path": ".cvf\\runtime\\nis-t1j-local-review-20261006\\tsc.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "repair": {
+    "finding": "valid owned candidate below 2MB cap fails renderer with many separate backtick runs; Math.max argument spread raises RangeError",
+    "mutation": "replace spread with iterative matchAll maximum; add focused regression",
+    "sourcePaths": [
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-confirmation.ts",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-confirmation.test.ts"
+    ],
+    "initialProductFailureRetained": true
+  },
+  "independence": {
+    "workerOracle": "original worker tests and binding",
+    "localOracle": "separate whitespace/fence/source identity and delayed real digest controls; SHA/byte/source joins in Python",
+    "scope": "UI/render-only jsdom, not governance/runtime/UX"
+  },
+  "reviewerHarnessDiagnostics": [
+    "UI config next-auth alias initially wrong",
+    "failed-click assertion initially selected multiple status nodes; corrected test selector",
+    "initial reporter wrote into package ignored scratch; relocated exact report bytes",
+    "Python default Windows codepage could not decode Vietnamese source; explicit UTF-8 used"
+  ],
+  "oracleSource": "from pathlib import Path\nimport json,hashlib,subprocess\nr=Path.cwd();w=r.parent/'Controlled-Vibe-Framework-CVF-NIS-T1J';s=r/'.cvf/runtime/nis-t1j-local-review-20261006';sha=lambda b:hashlib.sha256(b).hexdigest()\ngit=lambda a,root=r:subprocess.check_output(['git',*a],cwd=root,text=True,encoding='utf-8').strip()\nintake=json.loads((s/'intake.json').read_text(encoding='utf-8'));inputs=json.loads((r/'docs/reviews/evidence/cvf-nis-t1j-dispatch-inputs-2026-10-06.json').read_text(encoding='utf-8'));checks=[]\ndef check(name,passed,detail=None):\n assert passed,(name,detail)\n checks.append({'id':name,'status':'PASS','detail':detail})\ndef visit(x):\n if isinstance(x,dict):\n  yield x\n  for v in x.values():yield from visit(v)\n elif isinstance(x,list):\n  for v in x:yield from visit(v)\nfor name in ['probe-initial','focused']:\n q=r/'EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/.cvf/runtime/nis-t1j-local-review-20261006'/f'{name}.json'\n if q.exists():q.rename(s/f'{name}.json')\nexecution=json.loads((r/'docs/reviews/evidence/cvf-nis-t1j-acceptance-execution-2026-10-06.json').read_text(encoding='utf-8'));binding=json.loads((r/'docs/reviews/evidence/cvf-nis-t1j-implementation-binding-2026-10-06.json').read_text(encoding='utf-8'))\nrefs={}\nfor x in visit([execution,binding]):\n if 'path' in x and 'sha256' in x:\n  b=(w/x['path']).read_bytes();check('worker-ref:'+x['path'],sha(b)==x['sha256']);q=s/'worker-runtime'/x['path'];q.parent.mkdir(parents=True,exist_ok=True);q.write_bytes(b);refs[x['path']]=x['sha256']\nfor p,v in intake['originalWorkerArtifacts'].items():check('original-worker-retained:'+p,sha((w/p).read_bytes())==v['rawSha256'])\nfor x in binding['ownedPaths']:\n if x.get('postimage'):check('worker-postimage:'+x['path'],sha((w/x['path']).read_bytes())==x['postimage']['rawSha256'])\nfor p,v in inputs['sources'].items():\n if p not in inputs['workerArtifacts']:check('readonly-pin:'+p,sha((w/p).read_bytes())==v['rawSha256'])\nsnapshots=[]\nfor x in visit(binding['worksheetSnapshots']):\n if 'worksheet' in x:\n  b=x['worksheet'].encode();check('worksheet-sha:'+x['worksheetSha256'],sha(b)==x['worksheetSha256']);check('worksheet-length:'+x['worksheetSha256'],len(b)==x['worksheetUtf8Bytes']);check('source-header:'+x['worksheetSha256'],x['sourceFileSha256'] in x['worksheet'] and str(x['sourceBytes']) in x['worksheet']);snapshots.append(x['worksheetSha256'])\ncheck('snapshot-count',len(snapshots)==3)\nold=subprocess.check_output(['git','show','HEAD:EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-confirmation.ts']).decode()\nnew=(r/'EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-confirmation.ts').read_text(encoding='utf-8')\nold_create=old[old.index('export async function createSpecConfirmationCandidate'):old.index('/** Verify selected bytes')].strip()\nnew_create=new[new.index('export async function createSpecConfirmationCandidate'):new.index('export const worksheetFileName')].strip()\ncheck('legacy-producer-unchanged',old_create==new_create)\nworker_report=json.loads((w/'.cvf/runtime/nis-t1j-worker-20261006/final-vitest-focused.json').read_text(encoding='utf-8'));check('worker-focused-result',worker_report['numPassedTests']==63 and worker_report['numFailedTests']==0)\ninitial=json.loads((s/'probe-initial.json').read_text(encoding='utf-8'));check('named-defect-reproduced',initial['numFailedTests']==1 and initial['numPassedTests']==3)\nfor label,expected in [('probe-final',8),('focused',64)]:\n d=json.loads((s/f'{label}.json').read_text(encoding='utf-8'));check('local-'+label,d['numPassedTests']==expected and d['numFailedTests']==0)\nfor label in ['probe-final','focused','tsc','eslint']:check('exit-'+label,(s/f'{label}.exit').read_text(encoding='utf-8').strip()=='0')\ncheck('worker-head-index-retained',git(['rev-parse','HEAD'],w)==intake['head'] and git(['write-tree'],w)==git(['rev-parse','HEAD^{tree}'],w))\ncheck('worker-original-exact7',set(git(['diff','--name-only'],w).splitlines())|set(git(['ls-files','--others','--exclude-standard'],w).splitlines())==set(inputs['workerArtifacts']))\nartifacts={p:{'originalWorkerSha256':v['rawSha256'],'acceptedSha256':sha((r/p).read_bytes()),'reviewerChanged':sha((r/p).read_bytes())!=v['rawSha256']} for p,v in intake['originalWorkerArtifacts'].items()}\nlogs={p.name:{'path':str(p.relative_to(r)),'sha256':sha(p.read_bytes())} for p in s.iterdir() if p.suffix in ['.log','.exit','.json'] and p.name not in ['proof-result.json']}\nout={'schemaVersion':'cvf.nisT1jLocalIndependentReview.v1','closureBaseHead':intake['head'],'disposition':'ACCEPT_WITH_LOCAL_REPAIR','independentProbeStatus':'PASS_INDEPENDENT_PROBE','checks':checks,'finiteCheckCount':len(checks),'nativeLocalProbeTests':8,'focusedTestsAfterRepair':64,'workerFocusedTests':63,'snapshotsBound':snapshots,'workerReferencesVerified':refs,'artifactIdentities':artifacts,'localEvidence':logs,'repair':{'finding':'valid owned candidate below 2MB cap fails renderer with many separate backtick runs; Math.max argument spread raises RangeError','mutation':'replace spread with iterative matchAll maximum; add focused regression','sourcePaths':[p for p,v in artifacts.items() if v['reviewerChanged']],'initialProductFailureRetained':True},'independence':{'workerOracle':'original worker tests and binding','localOracle':'separate whitespace/fence/source identity and delayed real digest controls; SHA/byte/source joins in Python','scope':'UI/render-only jsdom, not governance/runtime/UX'},'reviewerHarnessDiagnostics':['UI config next-auth alias initially wrong','failed-click assertion initially selected multiple status nodes; corrected test selector','initial reporter wrote into package ignored scratch; relocated exact report bytes','Python default Windows codepage could not decode Vietnamese source; explicit UTF-8 used'],'oracleSource':(s/'proof.py').read_text(encoding='utf-8'),'nativeProbeSource':{p.name:p.read_text(encoding='utf-8') for p in s.glob('probe*.test.*')},'claimBoundary':'LF renderer lines, verbatim draft including CR; no blanket LF guarantee, browser/UX/authenticated acceptance/helper/general S2/BUILD/provider claim; ignored junction is dependency access, not dependency immutability enforcement.'}\n(s/'proof-result.json').write_text(json.dumps(out,indent=2)+'\\n');print(json.dumps({'checks':len(checks),'probeTests':8,'focused':64,'reviewerChanged':[p for p,v in artifacts.items() if v['reviewerChanged']]},indent=2))\n",
+  "nativeProbeSource": {
+    "probe-ui.test.tsx": "/** @vitest-environment jsdom */\nimport { it, expect, vi, beforeEach, afterEach } from 'vitest';\nimport { webcrypto, createHash } from 'node:crypto';\nimport { render, screen, fireEvent, cleanup, act } from '@testing-library/react';\nvi.mock('next-auth/react',()=>({useSession:()=>({data:null,status:'unauthenticated'})}));\nimport { IntentSpecConfirmation } from '../../../EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecConfirmation';\nimport { createIntentSpecReview, updateReviewDecision, acknowledgeIntentSpecReview } from '../../../EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-review';\nconst sheetButton='Download technical review worksheet (unfinished)';\nbeforeEach(()=>vi.stubGlobal('crypto',webcrypto));\nafterEach(()=>{cleanup();vi.restoreAllMocks();vi.unstubAllGlobals();});\nfunction state(){let s=createIntentSpecReview({problem:'Independent current source'},'  \\r\\nIndependently bound source\\n```\\n  ');for(const d of s.decisions)s=updateReviewDecision(s,d.id,{answer:'Local answer '+d.id});return acknowledgeIntentSpecReview(s);}\nfunction open(){fireEvent.click(screen.getByRole('button',{name:'Keep a review copy for comparison'}));fireEvent.change(screen.getByLabelText('Reviewer name (self-declared)'),{target:{value:'Local A'}});}\nasync function create(){fireEvent.click(screen.getByRole('button',{name:'Create file for reviewed revision'}));await screen.findByRole('button',{name:sheetButton});}\nasync function text(blob:Blob){return new Promise<string>((resolve,reject)=>{const r=new FileReader();r.onload=()=>resolve(r.result as string);r.onerror=reject;r.readAsText(blob);});}\nfunction downloads(){const blobs:Blob[]=[];vi.spyOn(URL,'createObjectURL').mockImplementation(b=>{blobs.push(b as Blob);return 'blob:local';});const cleanup=vi.spyOn(URL,'revokeObjectURL').mockImplementation(()=>{});vi.spyOn(HTMLAnchorElement.prototype,'click').mockImplementation(()=>{});return {blobs,cleanup};}\nit('independently pairs downloaded exact JSON with worksheet and invalidates language and acknowledgement',async()=>{\n const s=state();const view=render(<IntentSpecConfirmation review={s} language=\"en\"/>);open();await create();const d=downloads();\n fireEvent.click(screen.getByRole('button',{name:'Download review file'}));fireEvent.click(screen.getByRole('button',{name:sheetButton}));\n const json=await text(d.blobs[0]);const sheet=await text(d.blobs[1]);const draft=JSON.parse(json).payload.draft;\n expect(sheet).toContain(createHash('sha256').update(json).digest('hex'));expect(sheet).toContain(draft);expect(d.cleanup).toHaveBeenCalledTimes(2);\n view.rerender(<IntentSpecConfirmation review={s} language=\"vi\"/>);expect(screen.queryByRole('button',{name:sheetButton})).toBeNull();expect(screen.queryByRole('button',{name:'T\u1ea3i phi\u1ebfu review k\u1ef9 thu\u1eadt (ch\u01b0a ho\u00e0n th\u00e0nh)'})).toBeNull();\n view.rerender(<IntentSpecConfirmation review={{...s,acknowledgedRevision:null}} language=\"en\"/>);expect(screen.queryByRole('button',{name:sheetButton})).toBeNull();expect((screen.getByRole('button',{name:'Create file for reviewed revision'}) as HTMLButtonElement).disabled).toBe(true);\n});\nit('a delayed real digest cannot replace a newer reviewer candidate',async()=>{\n const original=webcrypto.subtle.digest.bind(webcrypto.subtle);let release!:()=>void;const pause=new Promise<void>(r=>{release=r;});\n vi.spyOn(webcrypto.subtle,'digest').mockImplementationOnce(async(...args)=>{await pause;return original(...args);});\n render(<IntentSpecConfirmation review={state()} language=\"en\"/>);open();fireEvent.click(screen.getByRole('button',{name:'Create file for reviewed revision'}));\n expect(screen.queryByRole('button',{name:sheetButton})).toBeNull();fireEvent.change(screen.getByLabelText('Reviewer name (self-declared)'),{target:{value:'Local B'}});await create();\n await act(async()=>{release();await new Promise(r=>setTimeout(r,20));});const d=downloads();fireEvent.click(screen.getByRole('button',{name:'Download review file'}));fireEvent.click(screen.getByRole('button',{name:sheetButton}));\n const json=await text(d.blobs[0]);const sheet=await text(d.blobs[1]);expect(JSON.parse(json).payload.reviewer.name).toBe('Local B');expect(sheet).toContain('| Reviewer (self-declared, unverified) | Local B |');expect(sheet).toContain(createHash('sha256').update(json).digest('hex'));\n});\nit('independent failed-click control releases URL and never reports saved content',async()=>{\n render(<IntentSpecConfirmation review={state()} language=\"en\"/>);open();await create();const d=downloads();vi.mocked(HTMLAnchorElement.prototype.click).mockImplementation(()=>{throw Error('Local synthetic failed click');});\n fireEvent.click(screen.getByRole('button',{name:sheetButton}));expect(d.cleanup).toHaveBeenCalledWith('blob:local');expect(screen.getAllByRole('status').some(node=>node.textContent?.includes('No saved-file confirmation'))).toBe(true);\n});\n",
+    "probe.test.ts": "import { describe, it, expect, beforeAll } from 'vitest';\nimport { webcrypto, createHash } from 'node:crypto';\nimport { createSpecConfirmationCandidate, renderDocumentaryWorksheet, MAX_CONFIRMATION_BYTES } from '../../../EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-confirmation';\nimport { createIntentSpecReview, updateReviewDecision, acknowledgeIntentSpecReview } from '../../../EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-spec-review';\nbeforeAll(() => Object.defineProperty(globalThis, 'crypto', { value: webcrypto, configurable: true }));\nconst sha = (s: string) => createHash('sha256').update(s,'utf8').digest('hex');\nasync function candidate(packet: string, lang: 'en'|'vi' = 'en') {\n let state = createIntentSpecReview({problem:'Independent synthetic example'},packet);\n for(const d of state.decisions) state=updateReviewDecision(state,d.id,{answer:'Independent explicit answer '+d.id});\n return createSpecConfirmationCandidate(acknowledgeIntentSpecReview(state),lang,'Local independent test','2026-10-06T00:00:00.000Z');\n}\ndescribe('Local independent T1J renderer boundary',()=>{\n it.each(['en','vi'] as const)('preserves exact whitespace/CR/fence content and source identity in %s',async lang=>{\n  const c=await candidate('  \\r\\nRaw \u65e5\u672c\u8a9e ```\\n## 3. forged heading\\r~~~\\n``````\\n  ',lang);\n  const draft=JSON.parse(c.fileContent).payload.draft; const sheet=renderDocumentaryWorksheet(c);\n  const longest=[...draft.matchAll(/`+/g)].reduce((n,m)=>Math.max(n,m[0].length),0);const fence='`'.repeat(Math.max(3,longest+1));\n  expect(sheet).toContain(fence+'text\\n'+draft+'\\n'+fence+'\\n');\n  expect(sheet).toContain(sha(c.fileContent));expect(sheet).toContain(String(Buffer.byteLength(c.fileContent,'utf8')));\n  expect(sheet.split(fence+'\\n').at(-1)?.match(/^UNFILLED - /gm)).toHaveLength(6);\n  expect(Object.isFrozen(c)).toBe(true);expect(c.fileSha256).toBe(sha(c.fileContent));\n });\n it('exports a valid candidate with many separate backtick runs below the existing file size cap',async()=>{\n  const c=await candidate('` '.repeat(180000));expect(Buffer.byteLength(c.fileContent)).toBeLessThan(MAX_CONFIRMATION_BYTES);\n  const sheet=renderDocumentaryWorksheet(c);expect(sheet).toContain(JSON.parse(c.fileContent).payload.draft);\n });\n it('keeps all six manual review sections identical across unrelated source drafts',async()=>{\n  const a=renderDocumentaryWorksheet(await candidate('Pilot A\\nRaw entries stay unresolved'));\n  const b=renderDocumentaryWorksheet(await candidate('Pilot B\\nAircraft booking with special calendar'));\n  const suffix=(x:string)=>x.slice(x.lastIndexOf('## 3. Manual review instructions'));\n  expect(suffix(a)).toBe(suffix(b));expect(suffix(a).match(/^UNFILLED - manual entry$/gm)).toHaveLength(6);\n });\n it('independent receiver oracle rejects altered SHA, revision, source draft and invented completed sections',async()=>{\n  const c=await candidate('Independent tamper marker');const sheet=renderDocumentaryWorksheet(c);const draft=JSON.parse(c.fileContent).payload.draft;\n  const accepts=(x:string)=>x.includes('| SHA-256 (whole JSON file) | '+sha(c.fileContent)+' |')\n   && x.includes('| Revision | '+c.revision+' |') && x.includes('```text\\n'+draft+'\\n```\\n')\n   && (x.match(/^UNFILLED - manual entry$/gm)??[]).length===6 && x.includes('Technical review has NOT been performed.');\n  expect(accepts(sheet)).toBe(true);\n  for(const altered of [sheet.replace(sha(c.fileContent),'0'.repeat(64)),sheet.replace('| Revision | '+c.revision+' |','| Revision | '+(c.revision+1)+' |'),sheet.replace('Independent tamper marker','Mutated source'),sheet.replace('UNFILLED - manual entry','READY - build approved'),sheet.replace('Technical review has NOT been performed.','Technical review completed.')]) expect(accepts(altered)).toBe(false);\n });\n});\n"
+  },
+  "claimBoundary": "LF renderer lines, verbatim draft including CR; no blanket LF guarantee, browser/UX/authenticated acceptance/helper/general S2/BUILD/provider claim; ignored junction is dependency access, not dependency immutability enforcement."
+}

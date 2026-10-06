@@ -4,8 +4,8 @@
 import { useEffect, useRef, useState } from 'react';
 import { useSession } from 'next-auth/react';
 import {
-    createSpecConfirmationCandidate, MAX_CONFIRMATION_BYTES, reviewBindingKey,
-    verifySpecConfirmationReadback, type SpecConfirmationCandidate,
+    createSpecConfirmationCandidate, MAX_CONFIRMATION_BYTES, renderDocumentaryWorksheet, reviewBindingKey, reviewFileName,
+    verifySpecConfirmationReadback, worksheetFileName, type SpecConfirmationCandidate,
 } from '@/lib/intent-spec-confirmation';
 import {
     readSavedReview, saveReviewCandidate, type ReopenOutcome, type SaveOutcome, type SavedReview,
@@ -101,10 +101,27 @@ export function IntentSpecConfirmation({ review, language }: { review: IntentSpe
         try {
             url = URL.createObjectURL(new Blob([active.fileContent], { type: 'application/json;charset=utf-8' }));
             const link = document.createElement('a');
-            link.href = url; link.download = `cvf-spec-review-r${active.revision}.json`; link.click();
+            link.href = url; link.download = reviewFileName(active.revision); link.click();
             setResult({ key: stateKey, text: vi ? 'Đã yêu cầu tải. Chọn lại file để kiểm tra nội dung đã lưu.' : 'Download requested. Select the saved file to check its content.' });
         } catch {
             setResult({ key: stateKey, text: vi ? 'Không tải được file. Chưa có xác nhận lưu.' : 'Download failed. No saved-file confirmation.' });
+        } finally { if (url) URL.revokeObjectURL(url); }
+    };
+
+    // Render-only worksheet from the current owned candidate; a stale or regenerating candidate is never exportable.
+    const downloadWorksheet = () => {
+        if (!active) return;
+        let url: string | null = null;
+        try {
+            const worksheet = renderDocumentaryWorksheet(active);
+            url = URL.createObjectURL(new Blob([worksheet], { type: 'text/markdown;charset=utf-8' }));
+            const link = document.createElement('a');
+            link.href = url; link.download = worksheetFileName(active.revision); link.click();
+            setResult({ key: stateKey, text: vi
+                ? 'Đã yêu cầu tải phiếu. Hãy giữ cùng file review JSON và kiểm SHA-256 trước khi review thủ công. Phiếu chưa hoàn thành, không phải phê duyệt build.'
+                : 'Worksheet download requested. Keep it with the review JSON file and check the SHA-256 before the manual review. The worksheet is unfinished and not a build approval.' });
+        } catch {
+            setResult({ key: stateKey, text: vi ? 'Không tải được phiếu. Chưa có xác nhận lưu.' : 'Worksheet download failed. No saved-file confirmation.' });
         } finally { if (url) URL.revokeObjectURL(url); }
     };
 
@@ -147,6 +164,9 @@ export function IntentSpecConfirmation({ review, language }: { review: IntentSpe
         </button>
         {active && <div className="mt-2 space-y-2">
             <button type="button" className={control} disabled={busy} onClick={download}>{vi ? 'Tải gói review' : 'Download review file'}</button>
+            <button type="button" className={control} disabled={busy} onClick={downloadWorksheet}>
+                {vi ? 'Tải phiếu review kỹ thuật (chưa hoàn thành)' : 'Download technical review worksheet (unfinished)'}
+            </button>
             <button type="button" className={control} disabled={busy || !sessionActive} onClick={() => void save()}>
                 {vi ? 'Lưu nội dung đã xác nhận lên server' : 'Save confirmed content to server'}
             </button>
