@@ -1,6 +1,6 @@
 # CVF Agent Handoff V63 - ACEL Applied-Knowledge Owner Enrichment
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: b69a188327ab954c8d3b74eb4e35caac84c4ffee; batch CVF-NIS-T1J bounded closure material; dedicated continuity.
+Current HEAD recorded for this handoff: 5a783d5947c04e7927b19ad647dc9d893be4ef42; batch CVF-NIS-T1J bounded closure material; dedicated continuity.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -170,7 +170,7 @@ Rollback boundary: revert only this continuity sync; preserve material `5c1ee025
 - ACEL-AKOE-U1 is `CLOSED_PASS_BOUNDED` at `d9132412a`, disposition `SOURCE_RECONCILED_DEFER_WITH_TRIGGER`. Exact pins, 42 claims, byte hash and verification detail remain in its completion review; no import, runtime/provider, public sync or automatic successor opened.
 - CVF-NCR-R0-W01 source/profile return is Local-accepted bounded at material commit `d9b43a6f6deff7fb19710b5a9a4f50bf2a6015b6`; reviewer-fast 69/69 and pre-commit 90/90 passed. P06/P08 and actual destination/retention/cost remain open. One overbroad worker grep exposed a configured URL in tool output; the return does not reproduce it, and Local/operator config handling remains separate. No pilot or UI action was run.
 ## Next Allowed Move
-PROGRAM_ID=CVF-NIS; NEXT_ACTION_CLASS=LOCAL_DISPOSITION_ONLY; BATCH_ID=CVF-NIS-T1J. CLOSED_PASS_BOUNDED native unfinished worksheet; docs/reviews/CVF_NIS_T1J_DOCUMENTARY_WORKSHEET_EXPORT_COMPLETION_2026-10-06.md; no automatic successor; parked lanes retained. Initial material 68600cc76; evidence metadata correction before final sync. Closure material b69a18832; dedicated continuity.
+PROGRAM_ID=CVF-NIS; NEXT_ACTION_CLASS=LOCAL_DISPOSITION_ONLY; BATCH_ID=CVF-NIS-T1J. CLOSED_PASS_BOUNDED native unfinished worksheet; docs/reviews/CVF_NIS_T1J_DOCUMENTARY_WORKSHEET_EXPORT_COMPLETION_2026-10-06.md; no automatic successor; parked lanes retained. Initial material 68600cc76; evidence metadata correction before final sync. Closure material b69a18832; dedicated continuity. Closure material 5a783d594; dedicated continuity.
 ## Parked Checkpoints
 - autorun lane-binding R1 is closed at `ee81deeeb`; HRLTP-T2 remains paused for Local no-subagent route reassessment;
 - T3C-C2 is closed and Local verified at `820aae3ec`;

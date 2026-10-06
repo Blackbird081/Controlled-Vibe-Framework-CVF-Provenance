@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1J_DOCUMENTARY_WORKSHEET_EXPORT_2026-10-06.md",
     "workOrderSha256": "572fd199b2fd641b4a8eeb6e80006a555951f4ce7a8122801efe775df93e111e"
   },
-  "currentAuthoritySyncReason": "T1J closure b69a18832: native unfinished source-bound worksheet accepted with Local valid-input repair;8 Local probe tests,64 focused and64 finite joins; metadata corrected; no helper/general S2/BUILD successor.",
+  "currentAuthoritySyncReason": "T1J closure 5a783d594: native unfinished source-bound worksheet accepted with Local valid-input repair;8 Local probe tests,64 focused and64 finite joins; metadata corrected; no helper/general S2/BUILD successor.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
