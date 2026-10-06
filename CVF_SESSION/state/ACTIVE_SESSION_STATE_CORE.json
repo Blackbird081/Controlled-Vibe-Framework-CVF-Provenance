@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1J_DOCUMENTARY_WORKSHEET_EXPORT_2026-10-06.md",
     "workOrderSha256": "881f436a4e693c74db84f3d7c0f3e8b2ada4fdcc6351a09985226dc238e4db21"
   },
-  "currentAuthoritySyncReason": "Explicit operator continue selects T1J native render-only export; no analysis helper/general S2/BUILD.",
+  "currentAuthoritySyncReason": "T1J material a9e259f0c: native render-only owned-candidate worksheet export; no helper/general S2/BUILD; parked lanes unchanged.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
