@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - ACEL Applied-Knowledge Owner Enrichment
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `b7306c7ec447feed5a5c83b2d3e9cc9ccdf56ef5`. Material parent anchor for the dedicated continuity synchronization commit.
+Current HEAD recorded for this handoff: `eefca1bd827f6f6f87d94a310ac0a0f2bf73ee15`. Material parent anchor for the dedicated continuity synchronization commit.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -9,9 +9,9 @@ Remote tracking branch: `origin/main`. Exact remote SHA must be derived live fro
 ## Purpose
 Carry CVF-NCR v2.8 and closed AKOE/G1-G7. Applied-knowledge details remain in the governed roadmap.
 ## Scope / Target / Owner Boundary
-Role: Local session-sync steward; phase: NCR P06 UTF-8 continuity; decision owner: Local; CCMA/S05/P11 parked.
+Role: Local session-sync steward; phase: NCR QBS/LPCI shape continuity; decision owner: Local; CCMA/S05/P11 parked.
 ## Startup Acknowledgment
-Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`; handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=Local backlog disposition after P06 UTF-8 repair; role=Local session-sync steward; phase=continuity; decision owner=Local; actual-data/browser/release/P11 parked.
+Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`; handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=Local backlog disposition after QBS/LPCI shape repair; role=Local session-sync steward; phase=continuity; decision owner=Local; actual-data/browser/release/P11 parked.
 Learning discovery: `docs/reviews/learnings/README.md` before blind/fresh-context dispatch; rule added, machine candidate deferred.
 ## Current Mode
 `cvf_ncr_p10_closed_p11_parked`. CVF-NCR-R1-S11-R1 is closed at `bd15b2600` after material `1a538d10d`. P10 is `ACTIVE_PRODUCTION_RUNTIME`; P11 stays parked. Latest closed learning-history wave: `LHW24`.
@@ -171,7 +171,7 @@ Rollback boundary: revert only this continuity sync; preserve material `5c1ee025
 - ACEL-AKOE-U1 is `CLOSED_PASS_BOUNDED` at `d9132412a`, disposition `SOURCE_RECONCILED_DEFER_WITH_TRIGGER`. Exact pins, 42 claims, byte hash and verification detail remain in its completion review; no import, runtime/provider, public sync or automatic successor opened.
 - CVF-NCR-R0-W01 source/profile return is Local-accepted bounded at material commit `d9b43a6f6deff7fb19710b5a9a4f50bf2a6015b6`; reviewer-fast 69/69 and pre-commit 90/90 passed. P06/P08 and actual destination/retention/cost remain open. One overbroad worker grep exposed a configured URL in tool output; the return does not reproduce it, and Local/operator config handling remains separate. No pilot or UI action was run.
 ## Next Allowed Move
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=LOCAL_DISPOSITION_ONLY; BATCH_ID=CVF-NCR-P06-UTF8-20261007. Ten-path malformed UTF-8 repair committed at b7306c7ec447feed5a5c83b2d3e9cc9ccdf56ef5: fatal shared bounded reader; HTTP400 before auth/storage/receipt/provider in execute,knowledge ingest,artifact export; mechanical DLP readout rotation. Six focused suites168/168,TypeScript,scoped lint,diff and material gates PASS. Three red route cases reproduce defect;four initial helper failures were fixture errors,not defect evidence. Evidence owner: docs/baselines/CVF_GC018_NCR_CONSOLIDATED_LOCAL_FOUNDATION_2026-10-06.md. Consume accepted proof;next Local select concrete admitted consumer gap without broad duplicate tests or API/build-only rerun. Prior Node20/Debian13-stage clean build,30 policy tests and bounded Alibaba evidence retained. No live governance/full P06/full P04/remote CI/release/deploy claim. Ledger copy not universal blocker;fresh isolated development needs no legacy import. Browser/UX unavailable;actual-data cutover,vision/full release unproved. Q001/Q004 OPEN/Profile A;P11/deploy/public,CCMA,S05/C1/send/B2 parked;NIS-T1J closed without successor;LHW24 closed;no push.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=LOCAL_DISPOSITION_ONLY; BATCH_ID=CVF-NCR-P06-INTAKE-SHAPE-20261007. Five-path QBS/LPCI shape repair committed at eefca1bd827f6f6f87d94a310ac0a0f2bf73ee15: reject non-array/non-object payloads; QBS string prompt/taskId and typed optional metadata before routing; LPCI nonblank string paths before filesystem. Two suites23/23,TypeScript,scoped lint,diff and material gates PASS. Red eight QBS admissions/four LPCI TypeErrors; filesystem mock setup/control defects separately disclosed. Evidence owner: docs/baselines/CVF_GC018_NCR_CONSOLIDATED_LOCAL_FOUNDATION_2026-10-06.md. Consume accepted proof;next Local select concrete admitted consumer gap,combine compatible work;no broad duplicate proof/API/build rerun. Prior UTF8 repair168tests,Node20/Debian13-stage build,30 policy tests and bounded Alibaba evidence retained. Structural parsing tests not live governance/full P06/full P04/remote CI/release/deploy proof. Ledger copy not universal blocker;fresh isolated development needs no legacy import. Browser/UX unavailable;actual-data cutover,vision/full release unproved. Q001/Q004 OPEN/Profile A;P11/deploy/public,CCMA,S05/C1/send/B2 parked;NIS-T1J closed without successor;LHW24 closed;no push.
 ## Parked Checkpoints
 - autorun lane-binding R1 is closed at `ee81deeeb`; HRLTP-T2 remains paused for Local no-subagent route reassessment;
 - T3C-C2 is closed and Local verified at `820aae3ec`;
@@ -190,7 +190,7 @@ PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=LOCAL_DISPOSITION_ONLY; BATCH_ID=CVF-NCR-P
 - every post-AKOE successor without a fresh operator decision;
 - promotion or restoration of the thirteen rejected archived paths without fresh Local review.
 ## Core Guard Self-Protection Authorization
-Authorized guard-maintenance scope: continuity-only binding of P06 UTF-8 repair b7306c7ec447feed5a5c83b2d3e9cc9ccdf56ef5. Protected paths: `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/cvfNcrConsolidatedLocalFoundation20261006.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`. Operator authorization: continue compatible admitted upgrades and concrete consumer repairs. Rollback boundary: continuity only; preserve accepted material,NIS authority and parked lanes.
+Authorized guard-maintenance scope: continuity-only binding of QBS/LPCI shape repair eefca1bd827f6f6f87d94a310ac0a0f2bf73ee15. Protected paths: `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/cvfNcrConsolidatedLocalFoundation20261006.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`. Operator authorization: continue compatible admitted upgrades and concrete consumer repairs. Rollback boundary: continuity only; preserve accepted material,NIS authority and parked lanes.
 ## Agent Operation Trace Block
 | Field | Evidence |
 |---|---|
