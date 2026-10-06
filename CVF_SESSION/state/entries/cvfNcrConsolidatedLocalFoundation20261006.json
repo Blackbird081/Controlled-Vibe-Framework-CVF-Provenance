@@ -8,7 +8,7 @@
     "reviewManifest": "docs/reviews/evidence/cvf-ncr-local-review-manifest-2026-10-06.json",
     "reviewManifestDisposition": "Historical pre-commit 49-path snapshot; committed disposition recorded here.",
     "verification": "Recorded scoped tests, Docker/storage/Web receipts and real Alibaba observations consumed; material helper and repository pre-commit hooks passed. No independent reviewer, browser UX, actual-data cutover or release-quality governance claim.",
-    "nextAction": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=LOCAL_DISPOSITION_ONLY; BATCH_ID=CVF-NCR-RELATED-CI-20261006. Four-path P01/P05 related CI repair committed at 13e0d660504f5c331d10aba0d227210146cf2744: Guard/MCP/Execution jobs install Gateway predecessors first with npm ci; MCP SOT3 prefixes resolve to sibling EXTENSIONS packages. Eight structural tests PASS covering ten selected job graphs and prefix/filter/negative controls; material gates PASS. Prior Web CI repair 9fda60050c44fbafa3cebbc2b6e64f43503f55d0 retained. No clean Ubuntu install,remote candidate CI,required-settings,MCP behavior or release claim. Evidence owner: docs/baselines/CVF_GC018_NCR_CONSOLIDATED_LOCAL_FOUNDATION_2026-10-06.md. Consume prior bounded98-test/Docker/Alibaba evidence; no API/proof-only rerun without named gap. Ledger-copy correction retained: no unexplained copy request; fresh isolated development needs no legacy import; Q001/Q004 are action-specific,not universal blockers. Browser/UX unavailable; actual-data cutover,vision/full P04/full release unproved. Q001/Q004 OPEN/Profile A; P11/deploy/public,CCMA,S05/C1/send/B2 parked; NIS-T1J closed without successor; LHW24 closed; no push.",
+    "nextAction": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=LOCAL_DISPOSITION_ONLY; BATCH_ID=CVF-NCR-LINUX-CLEAN-BUILD-20261007. Eighteen-path CI clean-build repair committed at 8f189c02aa94746c4ae049f099a1ece9c1ed149d:track four ignored locks;require candidate Git lock tracking;install MCP in six Web jobs;complete existing synthetic structural OAuth profile and four CI build steps. Final Node20/Debian clean proof PASS13 stages:11 installs,typecheck,build;30 policy/structural tests and material gates PASS. Seven evidence JSON copies retain initial diagnostics/four BLOCKED runs/final PASS/scoped scan. Containers cleaned;image cache retained. Evidence owner: docs/baselines/CVF_GC018_NCR_CONSOLIDATED_LOCAL_FOUNDATION_2026-10-06.md. Consume proof; no more install/API/proof-only rerun without named changed consumer/contradiction. No GitHub/Ubuntu required checks,full tests,audit,OAuth/governance,release or deployment claim. Prior98-test/Docker/Alibaba evidence retained. Ledger copy is not a universal blocker;fresh isolated development needs no legacy import. Browser/UX unavailable;actual-data cutover,vision/full P04/full release unproved. Q001/Q004 OPEN/Profile A;P11/deploy/public,CCMA,S05/C1/send/B2 parked;NIS-T1J closed without successor;LHW24 closed;no push.",
     "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
     "approvedContextContinuation": {
       "materialCommit": "594e2c1b2cbc7171fe77ab849782e5de085b5b8c",
@@ -70,6 +70,15 @@
       "totalSelectedJobGraphs": 10,
       "verification": "Eight structural test methods PASS; correct/invalid prefix controls; material gates PASS.",
       "claimBoundary": "No clean Ubuntu install,remote CI,settings,MCP/governance behavior,release or public claim."
+    },
+    "linuxCleanBuild20261007": {
+      "materialCommit": "8f189c02aa94746c4ae049f099a1ece9c1ed149d",
+      "status": "LOCAL_CLEAN_INSTALL_TYPECHECK_BUILD_PASS_BOUNDED",
+      "receipt": "docs/reviews/evidence/cvf-ncr-linux-build-pass-2026-10-07.json",
+      "repair": "Four candidate locks tracked; MCP installed for six Web consumers; canonical synthetic structural Auth profile in four build steps.",
+      "verification": "13 final Linux stages PASS;9 structural+21 release-policy test methods PASS;10 staged-source scoped pattern scan PASS;material gates PASS.",
+      "attemptDisposition": "Setup source archive diagnostic and four BLOCKED receipts retained with named corrections; final fifth container run PASS. All five created containers removed; Node image cache retained.",
+      "claimBoundary": "Node20 Debian build-only; no Ubuntu/GitHub required checks,full test/security campaign,OAuth/governance,release/public/deployment claim."
     }
   }
 }

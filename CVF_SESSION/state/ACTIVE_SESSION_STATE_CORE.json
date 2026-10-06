@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1J_DOCUMENTARY_WORKSHEET_EXPORT_2026-10-06.md",
     "workOrderSha256": "572fd199b2fd641b4a8eeb6e80006a555951f4ce7a8122801efe775df93e111e"
   },
-  "currentAuthoritySyncReason": "Accepted NIS-T1J authority retained; separately authorized related P01/P05 CI repair 13e0d660504f5c331d10aba0d227210146cf2744 is bounded source maintenance, not remote CI/MCP proof, new NIS order or release closure.",
+  "currentAuthoritySyncReason": "Accepted NIS-T1J authority retained; separately authorized CI clean-build repair 8f189c02aa94746c4ae049f099a1ece9c1ed149d and local Node20/Debian structural proof are bounded maintenance, not remote CI/OAuth/governance proof,new NIS order or release closure.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
