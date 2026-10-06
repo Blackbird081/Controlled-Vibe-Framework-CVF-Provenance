@@ -167,6 +167,16 @@ describe('/api/execute', () => {
         expect(appendCostEventMock).not.toHaveBeenCalled();
     });
 
+    it('rejects malformed UTF-8 before auth, enforcement, provider and cost', async () => {
+        const bytes = new TextEncoder().encode(JSON.stringify({ templateName: 'test', inputs: {}, intent: '~' }));
+        bytes[bytes.indexOf(126)] = 255;
+        const request = new Request('http://localhost/api/execute', { method: 'POST', body: bytes });
+        expect((await POST(request as never)).status).toBe(400);
+        expect(verifySessionCookieMock).not.toHaveBeenCalled();
+        expect(evaluateEnforcementMock).not.toHaveBeenCalled();
+        expect(executeAIMock).not.toHaveBeenCalled();
+        expect(appendCostEventMock).not.toHaveBeenCalled();
+    });
     it('retains existing scalar input normalization and Vietnamese text', async () => {
         process.env.ALIBABA_API_KEY = 'ali-key';
         process.env.CVF_SERVICE_TOKEN = 'svc';

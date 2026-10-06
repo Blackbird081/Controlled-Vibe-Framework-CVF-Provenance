@@ -12,6 +12,11 @@ function streamRequest(chunks: Uint8Array[], cancel = vi.fn(), headers?: Headers
 }
 
 describe('bounded request body', () => {
+    it.each([{ bytes: [0xff] }, { bytes: [0xc0, 0xaf] }, { bytes: [0xed, 0xa0, 0x80] }, { bytes: [0xe2, 0x82] }])('rejects malformed UTF-8 without replacement %#', async ({ bytes }) => {
+        const fixture = streamRequest([new Uint8Array(bytes)], vi.fn());
+        await expect(readBoundedRequestBody(fixture.request, 100)).rejects.toThrow('Request body must use valid UTF-8.');
+        expect(fixture.stream.locked).toBe(false);
+    });
     it('preserves exact raw signed text across split UTF-8, BOM and whitespace', async () => {
         const source = '\ufeff  {"idea":"Đặt lịch tiếng Việt"}\r\n';
         const bytes = new TextEncoder().encode(source);

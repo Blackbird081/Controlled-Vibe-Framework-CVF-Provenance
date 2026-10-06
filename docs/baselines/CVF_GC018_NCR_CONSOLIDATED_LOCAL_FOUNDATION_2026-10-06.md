@@ -845,6 +845,46 @@ acceptance. P01/P05 stay bounded/open for dependent claims. Preserve prior
 NIS/ledger/browser/data/effect dispositions; no further install/build rerun without
 a named changed consumer or contradiction.
 
+## P06 Malformed UTF-8 Input Repair - 2026-10-07
+
+Operator continuation admits this concrete consumer gap. Local maintainer/reviewer
+execution base: 404e2cb3b05afc345513db5c07668032587d5818; clean startup worktree.
+The execute, knowledge ingest and artifact export readers used replacement-mode
+UTF-8 decoding. Invalid bytes could therefore become replacement characters in
+accepted JSON, changing input before authentication or subsequent processing.
+
+Use the existing bounded reader with fatal UTF-8 decoding and a typed encoding
+error. Reject malformed chunks and incomplete final sequences with HTTP 400 in
+all three routes, before authentication, storage, receipt lookup or provider
+dispatch. Preserve byte limits, nonblocking cancellation, reader lock release,
+valid streaming UTF-8 and existing BOM handling; no byte-exact BOM claim.
+Artifact export now consumes the shared reader instead of a duplicate decoder.
+Mechanically rotate the existing execute DLP readout helpers into
+src/app/api/execute/route-dlp-readout.ts under the same domain to retain file-size
+headroom. No DLP algorithm, receipt authority or permission expansion.
+
+Red evidence: the three new route cases observed execute 403, ingest 200 and
+export 200 where malformed encoding should have returned 400. Their downstream
+spies identify the admission boundary. Four initial helper failures were fixture
+errors: array rows were spread into scalar arguments by it.each. Correct the
+fixture to named byte arrays; do not count those failures as decoder defect proof.
+An initial invocation from repository root failed to locate Web Vitest; corrected
+only the working directory. Neither harness issue is attributed to product logic.
+
+Green verification: six focused Vitest suites, 168/168 tests PASS; TypeScript
+--noEmit and scoped ESLint for all nine source/test paths PASS; git diff --check
+PASS. Cases include invalid bytes, overlong encoding, surrogate encoding,
+truncated EOF, valid split multibyte input and existing DLP/readout behavior.
+Exact material scope: nine Web source/test paths plus this existing baseline.
+No additional schema, checker, pilot, dependency or broad roadmap audit.
+
+These are structural parsing and zero-invocation boundary tests, not live AI
+governance evidence. No provider call or repeated Docker/build proof: the changed
+consumer is the request reader. Prior bounded Linux and real Alibaba receipts
+remain historical evidence; no whole-P06, full-P04, release or deployment closure.
+Retain NIS, actual-data, browser and parked-lane dispositions. Public disposition
+remains DEFERRED_PRIVATE_ONLY under the existing section below.
+
 ## Claim Boundary
 
 Local foundations only. No release or whole-CVF live governance readiness, full repository secret

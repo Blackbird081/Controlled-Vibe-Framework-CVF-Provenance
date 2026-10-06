@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { readBoundedRequestBody } from '@/lib/bounded-request-body';
+import { InvalidRequestBodyEncodingError, readBoundedRequestBody } from '@/lib/bounded-request-body';
 import { knowledgeStore } from '@/lib/knowledge-store';
 import type { KnowledgeChunk } from '@/lib/knowledge-retrieval';
 import { authorizeRouteGovernanceProof, getRouteGovernanceProofConfig } from '@/lib/route-governance-proof';
@@ -16,7 +16,12 @@ export interface KnowledgeIngestResponse {
 }
 
 export async function POST(req: NextRequest): Promise<NextResponse> {
-  const bodyText = await readBoundedRequestBody(req, 4 * 1024 * 1024);
+  let bodyText: string | null;
+  try { bodyText = await readBoundedRequestBody(req, 4 * 1024 * 1024); }
+  catch (error) {
+    if (error instanceof InvalidRequestBodyEncodingError) return NextResponse.json({ error: error.message }, { status: 400 });
+    throw error;
+  }
   if (bodyText === null) return NextResponse.json({ error: 'Knowledge ingest body exceeds 4 MiB limit.' }, { status: 413 });
   const routeAuth = await authorizeRouteGovernanceProof(
     req,

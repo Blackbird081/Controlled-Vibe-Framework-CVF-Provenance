@@ -42,6 +42,16 @@ describe('POST /api/knowledge/ingest', () => {
     verifySessionCookieMock.mockResolvedValue(null);
   });
 
+  it('rejects malformed UTF-8 before auth or collection registration', async () => {
+    const register = vi.spyOn(knowledgeStore, 'registerEphemeral');
+    const bytes = new TextEncoder().encode(JSON.stringify({ collectionId: 'invalid-utf8', chunks: [{ id: 'c', content: '~', keywords: [] }] }));
+    bytes[bytes.indexOf(126)] = 255;
+    const request = new NextRequest('http://localhost/api/knowledge/ingest', { method: 'POST', body: bytes,
+      headers: signedServiceHeaders(new TextDecoder().decode(bytes)) });
+    expect((await POST(request)).status).toBe(400);
+    expect(verifySessionCookieMock).not.toHaveBeenCalled();
+    expect(register).not.toHaveBeenCalled();
+  });
   it.each([undefined, '1'])('rejects actual oversized stream before auth/store (declared=%s)', async declared => {
     const register = vi.spyOn(knowledgeStore, 'registerEphemeral');
     const cancel = vi.fn();

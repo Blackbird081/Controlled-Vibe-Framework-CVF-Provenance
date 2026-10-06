@@ -81,6 +81,15 @@ describe('/api/artifacts/export', () => {
     verifySessionCookieMock.mockResolvedValue(null);
   });
 
+  it('rejects malformed UTF-8 before auth or receipt fetch', async () => {
+    const bytes = new TextEncoder().encode(JSON.stringify({ ...BASE_REQUEST, title: '~' }));
+    bytes[bytes.indexOf(126)] = 255;
+    const fixture = makeStreamRequest(new TextDecoder().decode(bytes), [bytes]);
+    const fetchMock = vi.fn(); vi.stubGlobal('fetch', fetchMock);
+    expect((await POST(fixture.request)).status).toBe(400);
+    expect(verifySessionCookieMock).not.toHaveBeenCalled();
+    expect(fetchMock).not.toHaveBeenCalled();
+  });
   it('returns a self-contained HTML presentation candidate with visible boundaries', async () => {
     const response = await POST(makeRequest(BASE_REQUEST));
     const payload = await response.json();

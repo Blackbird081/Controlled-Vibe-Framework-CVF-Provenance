@@ -1,3 +1,4 @@
+import { InvalidRequestBodyEncodingError, readBoundedRequestBody } from '@/lib/bounded-request-body';
 import { createHash } from 'node:crypto';
 
 import { NextRequest, NextResponse } from 'next/server';
@@ -36,29 +37,6 @@ const FIELD_LIMITS = {
   receiptAnchor: 150,
 } as const;
 const MAX_BODY_BYTES = 128_000;
-
-async function readBoundedBody(request: NextRequest): Promise<string | null> {
-  if (!request.body) return '';
-  const reader = request.body.getReader();
-  const decoder = new TextDecoder();
-  let byteLength = 0;
-  let bodyText = '';
-  try {
-    while (true) {
-      const { done, value } = await reader.read();
-      if (done) return bodyText + decoder.decode();
-      byteLength += value.byteLength;
-      if (byteLength > MAX_BODY_BYTES) {
-        // Do not wait for producer cleanup before rejecting oversized input.
-        void reader.cancel().catch(() => undefined);
-        return null;
-      }
-      bodyText += decoder.decode(value, { stream: true });
-    }
-  } finally {
-    reader.releaseLock();
-  }
-}
 
 interface ArtifactVerificationItem {
   label: string;
@@ -281,7 +259,12 @@ export async function POST(request: NextRequest) {
   if (Number.isFinite(declaredLength) && declaredLength > MAX_BODY_BYTES) {
     return NextResponse.json({ success: false, error: 'Artifact export body exceeds size limit.' }, { status: 413 });
   }
-  const bodyText = await readBoundedBody(request);
+  let bodyText: string | null;
+  try { bodyText = await readBoundedRequestBody(request, MAX_BODY_BYTES); }
+  catch (error) {
+    if (error instanceof InvalidRequestBodyEncodingError) return NextResponse.json({ success: false, error: error.message }, { status: 400 });
+    throw error;
+  }
   if (bodyText === null) {
     return NextResponse.json({ success: false, error: 'Artifact export body exceeds size limit.' }, { status: 413 });
   }

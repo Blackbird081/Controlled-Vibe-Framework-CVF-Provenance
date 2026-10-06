@@ -1,6 +1,7 @@
+import { buildDlpRedactedReadoutRequest } from './route-dlp-readout';
 import { hasBlockedGovernedContext } from './governed-context-egress';
 import { NextRequest, NextResponse } from 'next/server';
-import { readBoundedRequestBody } from '@/lib/bounded-request-body';
+import { InvalidRequestBodyEncodingError, readBoundedRequestBody } from '@/lib/bounded-request-body';
 import { validateExecuteRequestShape } from '@/lib/execute-request-validation';
 import { executeAI, type AIProvider, type ExecutionRequest, type ExecutionResponse } from '@/lib/ai';
 import { evaluateEnforcement } from '@/lib/enforcement';
@@ -44,61 +45,6 @@ import { executeVisionRouteRequest, prepareVisionRouteRequest } from './vision-r
 import { buildExecuteFinalResponse, buildOutputValidationExhaustedResponse } from './route-final-response';
 import { buildMemoryAdvisoryReadout } from './route-memory-advisory';
 import { buildGovernedStopOutput } from './route-governed-stop-output';
-
-type ExecutionRequestWithSpecFirst = ExecutionRequest & {
-    specFirst?: {
-        originalPrompt?: string;
-        advisory?: {
-            draftSummary?: string;
-            draftText?: string;
-            [key: string]: unknown;
-        };
-        [key: string]: unknown;
-    };
-};
-
-async function redactTextForReadout(value: string | undefined): Promise<string | undefined> {
-    if (typeof value !== 'string') return value;
-    return (await applyDLPFilter(value)).redacted;
-}
-
-async function buildDlpRedactedReadoutRequest(
-    request: Partial<ExecutionRequestWithSpecFirst>,
-    dlpWasRedacted: boolean,
-): Promise<ExecutionRequestWithSpecFirst> {
-    if (!dlpWasRedacted) return request as ExecutionRequestWithSpecFirst;
-
-    const redactedInputs = Object.fromEntries(
-        await Promise.all(
-            Object.entries(request.inputs ?? {}).map(async ([key, value]) => [
-                key,
-                (await redactTextForReadout(value)) ?? '',
-            ]),
-        ),
-    );
-    const specFirst = request.specFirst
-        ? {
-            ...request.specFirst,
-            originalPrompt: await redactTextForReadout(request.specFirst.originalPrompt),
-            advisory: request.specFirst.advisory
-                ? {
-                    ...request.specFirst.advisory,
-                    draftSummary: await redactTextForReadout(request.specFirst.advisory.draftSummary),
-                    draftText: await redactTextForReadout(request.specFirst.advisory.draftText),
-                }
-                : request.specFirst.advisory,
-        }
-        : request.specFirst;
-
-    return {
-        ...request,
-        templateId: request.templateId ?? '',
-        templateName: (await redactTextForReadout(request.templateName)) ?? '',
-        inputs: redactedInputs,
-        intent: (await redactTextForReadout(request.intent)) ?? '',
-        specFirst,
-    } as ExecutionRequestWithSpecFirst;
-}
 
 export async function POST(request: NextRequest) {
     const routeStartedAtMs = Date.now();
@@ -967,6 +913,9 @@ export async function POST(request: NextRequest) {
             providerAttemptReconciliation: buildProviderAttemptReconciliation(providerAttemptLedger, routedProvider, body.model ?? 'default'),
         });
     } catch (error) {
+        if (error instanceof InvalidRequestBodyEncodingError) {
+            return NextResponse.json({ success: false, error: error.message }, { status: 400 });
+        }
         console.error('Execute API error:', error);
         // F01: carry reconciliation evidence here too when admission had
         // already started; omit it when the error predates admission.
