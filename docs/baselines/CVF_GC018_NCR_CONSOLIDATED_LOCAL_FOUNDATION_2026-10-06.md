@@ -921,6 +921,32 @@ Docker/build repeat, data access/write, schema/checker/pilot or new work order.
 NIS closed authority, prior accepted proof and action-specific parked checkpoints
 remain unchanged. Public disposition remains DEFERRED_PRIVATE_ONLY below.
 
+## Active Handoff Headroom Repair - 2026-10-07
+
+Operator continuous admitted work and root startup rules require bounded active
+continuity. Local session-sync steward base32e3a6ea4198e3865e58631a5eb3ed0bec145946,
+clean worktree; no worker dispatch/active execution is opened by this maintenance.
+V63 committed bytes are32393,216 lines:375 bytes/four lines below canonical caps.
+The larger pre-commit Windows working-copy count was32609; use measured committed
+bytes for this snapshot. Closed inline history and stale trace consume headroom.
+
+Preserve exact original bytes at
+CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V63_PRE_NCR_COMPACTION_2026-10-07.md;
+SHA25654801fdcf14e9abe17592352ec3c69a0b0e855632991af0caacac7b65252ccba.
+No archive edits, root rename/deletion, authority switch or new roadmap lane.
+Compact V63 in the dedicated continuity phase: current mode/authority, accepted
+NCR evidence pointers, active/parked boundaries and next move remain front-door
+content. Closed history remains available through the exact archive and existing
+state entries; it is no longer required startup reading. Preserve NIS authority,
+LHW24, MFRP evidence consumption and all current actor/effect checkpoints.
+
+Material scope: this baseline plus the byte-exact snapshot. Continuity scope:
+five existing source paths and two generated views using the existing helper.
+Resolver query Worker execution/worker/pre-implementation returned zero candidates,
+no truncation. Structural hash/budget/state/hook checks govern acceptance; no
+provider/build rerun or runtime/governance/release proof is asserted. No schema,
+checker, pilot or downstream migration. DEFERRED_PRIVATE_ONLY remains below.
+
 ## Claim Boundary
 
 Local foundations only. No release or whole-CVF live governance readiness, full repository secret
