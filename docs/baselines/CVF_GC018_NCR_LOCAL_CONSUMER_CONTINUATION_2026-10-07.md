@@ -16,7 +16,88 @@ it adds no new program, work order, schema, checker or pilot. Predecessor is
 docs/baselines/CVF_GC018_NCR_CONSOLIDATED_LOCAL_FOUNDATION_2026-10-06.md,
 which has957 lines; use a continuation rather than grow it toward the hard limit.
 
-## Current Commit-Steward Explicit Work-Order Binding - 2026-10-07
+## Current Audited Next Outcome Selection - 2026-10-07
+
+Consumer: Local lead selecting the next CVF foundation package. Operator asks
+Audit ky va chon; Local owns internal source review and final priority disposition.
+Clean base 96bd948b641ec132a1a8fbfd7ec21d232b8f4edd. Exact two material paths admitted before writes; pre-implementation
+gate PASS. Required outputs: four-group comparison, existing-control reconciliation,
+selected finite receiving outcome and stop. This is a targeted frontier audit,
+not a whole-roadmap inventory or permission to promote parked effects.
+
+### Source Verification Block / Coverage Reconciliation
+
+Companion docs/reviews/evidence/cvf-next-outcome-selection-audit-2026-10-07.json
+binds the named source owners and accepted evidence to Git bytes at this base,
+with the inspected method/section and claim boundary for each. No product suite,
+provider call, Docker run or browser capability probe repeated.
+
+| Existing control | Verified source / implication |
+|---|---|
+| committed dispatch and authority hashes | check_dispatch_release_readiness.py evaluate and check_active_session_state.py _validate_current_authority already verify active authority; not a missing universal hash-control claim |
+| required-output/Git/terminal join | check_work_order_acceptance_ledger.py already owns structural fulfillment for eligible packets; do not create a second reducer |
+| exact returned packet and receipt | check_worker_return_quality_gate.py diagnose_active_work_order binds exact return/back-reference and detached receipt; not arbitrary return discovery |
+| explicit caller binding | fast gate and steward now accept the selected work order; previous isolated Git/caller proof is consumed, not new tranche work |
+| work-selection/value routing | lifecycle binds finite consumer/outcome; TPGR value remains shadow with valueDispositionAuthoritative=False, not universal task authority |
+| semantic proof and continuing agent behavior | structural ID agreement is insufficient; reviewer checks revision/content; free-form continuous execution and client interception remain unproved |
+
+The repeated stopping/fragmented selection observation remains valid, but does
+not prove a missing generic reducer or failure of every guard. Broad Local task
+coverage is not established by optional forwarding, lexical consistency, two-phase
+commits or four explicit-choice model responses. The earliest decision to bind is
+the selected consumer/outcome and admissible stop, then the actual terminal route.
+No coverage-extension defect or exploit is declared without whole-chain proof.
+
+### Audited Priority Comparison
+
+| Frontier group | Value / current evidence | Priority decision |
+|---|---|---|
+| Local maintenance outcome control | cross-task value for observed fragmented work; owners and component proof exist, application coverage remains unproved | SELECT next existing-owner coverage design, with finite runner/task-class boundary |
+| actual candidate/release | high delivery value; selected dependency/local CI proof does not close actual artifact/profile/live/browser requirements | retain event-specific frontier; do not relabel a source snapshot as release |
+| W05 browser | synthetic chain delivered; last observed browser inventory empty and IAB unavailable | hold that capability-dependent proof; no repeated probe without change |
+| operational data/effects | Q001/Q004 OPEN/Profile A; actual writer/custody/retention/RPO/RTO/cost decision needed | retain action-specific checkpoint; no universal user-ledger-copy prerequisite |
+
+Priority is qualitative Local judgment, not measured ROI/cost or a fixed tranche
+count. The selection prioritizes the recurring foundation workflow problem while
+preserving feasible independent development and the separate product frontier.
+
+### Selected Package / Required Outputs / Stop
+
+Selected consumer: Local lead/runner carrying one admitted maintenance outcome
+and reviewer receiving its terminal return. Next package: scoped application
+design of existing outcome controls from admission through terminal review.
+Use existing lifecycle, acceptance-ledger, dispatch, return and steward owners.
+
+Deliver all four outputs together:
+1. task-class/runner coverage matrix, with actual owner/source and proof level;
+2. existing-field authority/output/terminal binding design, separating structural
+   fulfillment from semantic acceptance and agent behavior;
+3. selected whole-route positive/negative proof plan, including missing output,
+   unrelated patch, partial completion and an independently held effect;
+4. Local go/no-go disposition and, only where supported, one finite existing-format
+   implementation packet with exact ownership/proof/terminal conditions.
+
+Stop when those four design outputs are reviewed together. Do not divide this
+into another series of flag/endpoint patches or activate machine coverage from
+this audit. Small direct chat tasks, runtime daemons, client tool/reply interception,
+global TPGR promotion, new schemas/general reducers and universal obedience claims
+are outside this selection. Core implementation needs accepted design and its
+own admitted packet; audit authorization is not proof that these prerequisites exist.
+No automatic successor for closed NCR alignment, adapter or synthetic W05 proof.
+
+Terminal: CURRENT_FRONTIER_AUDITED_AND_NEXT_DESIGN_SELECTED_BOUNDED.
+Decision: select this existing-owner design, retain other three groups with their
+actual triggers. Current implementation and continuous-agent behavior remain unproved.
+P11/CCMA/public/deploy/send/B2/S05/C1 stay parked; NIS-T1J has no automatic successor.
+
+## Current Runtime Freshness Verification
+
+Named current source methods and owner sections inspected at clean base 96bd948b641ec132a1a8fbfd7ec21d232b8f4edd;
+companion records exact Git-byte identities. Existing proof is consumed with its
+snapshot and structural/live qualifications. No product/runtime result generated
+by this audit; browser capability is the last recorded observation, not a new run.
+
+## Historical Commit-Steward Explicit Work-Order Binding - 2026-10-07
 
 Consumer: Local reviewer using the existing commit-steward reviewer-return CLI.
 Finite outcome: pass the explicitly selected work order to its existing worker
@@ -79,7 +160,7 @@ Rollback boundary: four exact material paths named in the current trace; revert
 this adapter delta only. Existing fast gate, acceptance checker, authority pins,
 statuses, provider execution authority and parked lanes remain unchanged.
 
-## Current Runtime Freshness Verification
+## Historical Steward Runtime Freshness Verification
 
 Source/consumer reads at clean base 0f6be4e6cf19a44ea2e90d0b3315c0e43ae2845c; companion records base Git bytes and
 changed source/test worktree bytes distinctly. Scoped21 tests validate the actual
@@ -367,14 +448,15 @@ send/B2, S05/C1, P11, CCMA, public/deploy remain unchanged/parked.
 
 ## Epistemic Process Block
 
-Expected Result / Prediction: explicit reviewer work-order reaches the existing
-fast gate unchanged; child failure remains failure; default and other modes retained.
-Evidence Comparison: red3/21 failures; green21/21 PASS; real help exit0 and invalid
-mode/option exit2. Child/Git test stubs are declared; no whole acceptance claim.
-Contradiction Or Gap Disposition: adapter gap repaired; existing checker semantics,
-proof content/revision review and unproved general automation remain separate.
-Claim Update: explicit steward binding implemented verified bounded; no actual
-worker lifecycle, live governance, release or universal completion enforcement.
+Expected Result / Prediction: compare four frontier groups against current owners,
+evidence, action authority and finite receiving-work value before selecting.
+Evidence Comparison: authority hash/dispatch/return/ledger controls already exist;
+broader Local application unproved, browser absent at last observation and actual
+release/data effects retain prerequisites. Component proof consumed without rerun.
+Contradiction Or Gap Disposition: no duplicate reducer or claimed universal missing
+guard; select scoped coverage design and defer activation until its own admission.
+Claim Update: source-backed priority selection completed bounded; no implementation,
+continuous agent behavior, whole release or corpus-wide completeness claim.
 
 ## Historical Memory Repair Scope / Target / Owner Boundary
 
@@ -420,7 +502,7 @@ regressions bind the defect/repair to this consumer; no upstream absence claim.
 | Matching local-view guard | N/A with reason: no external input; existing route/test consumer |
 | Owner surface | existing NCR P06 memory readout route and baseline continuation |
 | Disposition | LOCAL_SOURCE_REPAIR_ONLY |
-| Claim boundary | explicit CLI forwarding only; no actual acceptance/live/general automation proof |
+| Claim boundary | targeted frontier selection only; no machine activation or full program/live proof |
 
 Exact material manifest: the two route/source test files named above, this
 continuation and the predecessor's continuation pointer. No other product path.
@@ -473,7 +555,7 @@ The binding preserves the existing method; no remote agent or external intake.
 
 ## ADIF Defect Registry Disclosure
 
-Resolver query: taskClass=`implementation`, role=`worker`, lifecyclePhase=`pre-implementation`
+Resolver query: taskClass=`review`, role=`reviewer`, lifecyclePhase=`review`
 
 Returned defects: NONE_RETURNED. Zero candidates and no truncation.
 
@@ -481,32 +563,32 @@ Returned defects: NONE_RETURNED. Zero candidates and no truncation.
 
 | Field | Evidence |
 |---|---|
-| Actor | Local steward-adapter maintainer and scoped evidence recorder |
-| Provider or surface | private repository and isolated CLI tests; no provider or delegation |
-| Session or invocation | steward-work-order-binding-20261007 |
+| Actor | Local frontier auditor and priority decision owner |
+| Provider or surface | private governed source and accepted evidence; no provider or delegation |
+| Session or invocation | next-outcome-selection-audit-20261007 |
 | Working directory | repository root |
-| Command or tool surface | pytest21 steward tests; two real CLI parser checks; structural governance gates |
-| Target paths | governance/compat/run_agent_commit_steward_preflight.py; governance/compat/test_run_agent_commit_steward_preflight.py; docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md; docs/reviews/evidence/cvf-steward-work-order-binding-2026-10-07.json |
-| Allowed scope source | operator next and standing bounded Local maintenance; small direct-task existing-owner route |
-| Before status evidence | clean 0f6be4e6cf19a44ea2e90d0b3315c0e43ae2845c |
-| After status evidence | exact four material paths; optional caller binding only |
-| Diff evidence | exact staged manifest; source/result hashes in companion |
-| Approval boundary | Local source/isolated tests; no actual dispatch or parked effect |
-| Claim boundary | explicit CLI forwarding only; no actual acceptance/live/general automation proof |
+| Command or tool surface | targeted source/owner/evidence audit; Git-byte bindings; documentation governance checks |
+| Target paths | docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md; docs/reviews/evidence/cvf-next-outcome-selection-audit-2026-10-07.json |
+| Allowed scope source | operator Audit ky va chon; existing-owner review/disposition |
+| Before status evidence | clean 96bd948b641ec132a1a8fbfd7ec21d232b8f4edd |
+| After status evidence | exact two audit/evidence material paths |
+| Diff evidence | exact staged manifest; current source/evidence Git-byte pins |
+| Approval boundary | source audit and selection; parked effects unchanged |
+| Claim boundary | targeted frontier selection only; no machine activation or full program/live proof |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | steward-work-order-binding-20261007 |
-| Expected manifest | governance/compat/run_agent_commit_steward_preflight.py; governance/compat/test_run_agent_commit_steward_preflight.py; docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md; docs/reviews/evidence/cvf-steward-work-order-binding-2026-10-07.json |
-| Actual changed set | governance/compat/run_agent_commit_steward_preflight.py; governance/compat/test_run_agent_commit_steward_preflight.py; docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md; docs/reviews/evidence/cvf-steward-work-order-binding-2026-10-07.json |
+| Invocation ID | next-outcome-selection-audit-20261007 |
+| Expected manifest | docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md; docs/reviews/evidence/cvf-next-outcome-selection-audit-2026-10-07.json |
+| Actual changed set | docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md; docs/reviews/evidence/cvf-next-outcome-selection-audit-2026-10-07.json |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |
 
 ## Next Allowed Move
 
-Consume the adapter proof; eligible multi-step returns can use explicit steward
---active-work-order binding with the existing acceptance route. Bare/direct-task
-checks do not claim ledger fulfillment. No automatic rerun or adapter successor.
-Select a concrete receiving outcome from the current grouped frontier; retain
-action-specific authority, proof-content review and parked-lane boundaries.
+Prepare the selected existing-owner Local-maintenance coverage design as one finite
+package: task/runner matrix, authority/output/terminal bindings, whole-route proof
+plan and Local go/no-go with implementation packet only if supported. Do not ask
+operator to pick the same priority again. No automatic activation or repetition of
+closed adapter/ledger/NCR/W05 component proof; other frontier triggers stay intact.
 
 ## Guard Endpoint Admission Batch - 2026-10-07
 
@@ -667,9 +749,9 @@ fixtures only; no complete inventory,corpus scan or all-files-read claim.
 
 ## Claim Boundary
 
-Selected foundation frontier reconciliation only. Accepted proofs retain their
-original snapshot and bounded claims. Whole P01-P10, W05 pre-live, hosted CI,
-actual candidate release, general automation and operational acceptance unproved.
+Targeted current frontier audit and priority selection only. Existing controls and
+proof keep their bounded claims. No new implementation, autonomous agent control,
+browser/live/release/real-data acceptance or corpus-wide completeness claim.
 
 ## Public Export Disposition
 
