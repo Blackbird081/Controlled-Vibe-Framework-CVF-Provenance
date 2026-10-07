@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_NEXT_MOVE_ALIGNMENT_2026-10-07.md",
     "workOrderSha256": "269615a0dad62a867ac4214c408d8b6e7b845c9429adc38e030321af0d657905"
   },
-  "currentAuthoritySyncReason": "Closed NCR alignment authority/pins unchanged; operator-authorized canary source/model/result control repair material 0d753ea06d4fb0ee59d6dcecdc2704feff901f1e delivered. Structural/transport proof qualified separately from failed route canary; no release or parked-lane promotion.",
+  "currentAuthoritySyncReason": "Closed alignment authority/pins unchanged; operator-authorized canary source diagnosis/repair 7e26053c898b84ed46a25c2e3dd8561fce83e9f3 delivered. Two-case output evidence retains one FAIL and four skipped; no live governance/release or parked-lane promotion.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
