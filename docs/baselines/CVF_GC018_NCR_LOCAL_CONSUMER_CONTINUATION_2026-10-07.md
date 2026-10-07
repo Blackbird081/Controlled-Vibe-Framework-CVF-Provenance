@@ -16,7 +16,63 @@ it adds no new program, work order, schema, checker or pilot. Predecessor is
 docs/baselines/CVF_GC018_NCR_CONSOLIDATED_LOCAL_FOUNDATION_2026-10-06.md,
 which has957 lines; use a continuation rather than grow it toward the hard limit.
 
-## Current P02 Candidate Dependency Repair - 2026-10-07
+## Current Consolidated Foundation Frontier - 2026-10-07
+
+Consumer: Local foundation work selector and resumed agent. Finite outcome:
+reconcile the selected P01-P10/W05 frontier with accepted evidence, group the
+remaining decisions and prevent closed repairs from becoming a fresh patch queue.
+Local owns review/disposition under operator next and standing grouped maintenance.
+Clean base 6a0c5748bb2615083bb8eef7a4f868c26e473126. Exact two material paths admitted before writes;
+pre-implementation gate PASS. No new roadmap, work order, schema, checker or pilot.
+
+### Source Verification Block
+
+The companion docs/reviews/evidence/cvf-ncr-foundation-frontier-2026-10-07.json
+binds six named accepted evidence artifacts to their material commits and current
+base Git bytes. All six identity joins match. These are immutable evidence joins,
+not proof that every current product source equals the historical tested snapshot.
+Parent frontier and prior Operator Review are historical selection snapshots;
+this section supplies the current selected-queue disposition without rewriting them.
+
+| Group | Accepted result to consume | Remaining outcome / trigger |
+|---|---|---|
+| P01/P05 local CI | 13 clean Linux stages PASS at the accepted snapshot | hosted CI, OAuth and deployment require their actual environment; do not rerun a local build merely to restate prior proof |
+| P02/P08/P09 candidate and result truth | selected dependency26 fixtures and prior scanner/result repairs verified bounded | an actual candidate needs existing tree/policy/overlay/artifact/release gates; source repair is not candidate approval |
+| P04/P06 selected consumer boundaries | prior scoped parsing/context/readout repairs and bounded live diagnostics retained | no full P04/P06 coverage claim; any further repair needs a named consumer defect and finite outcome, not endpoint hunting |
+| W05 selected chain | five synthetic Docker/local-Web chain assertions PASS; selected readiness disposition delivered | browser inventory empty, IAB unavailable on this resume; browser/pre-live and real acceptance remain unproved |
+| Live canary | code_review PASS; app45s FAIL with late200; four skipped | further replay requires diagnostic, named information gain and finite cost; no automatic rerun or timeout relaxation |
+| NCR continuation controls | lexical alignment accepted bounded, four decision probes pass in both conditions | F1 LOW envelope limit retained; improvement NOT_DEMONSTRATED; general outcome automation not implemented or verified |
+| P03/P07/P10 operational acceptance | synthetic/control-plane evidence retained | actual writer, custody, retention, RPO/RTO, cost and R2/R3 acceptance are action-specific checkpoints; Q001/Q004 OPEN/Profile A |
+
+### Terminal Decision And Continuation
+
+SELECTED_FOUNDATION_FRONTIER_RECONCILED_BOUNDED. W05 is no longer a pending
+source-only reconciliation package: that finite deliverable and current synthetic
+route proof already exist. Its browser/pre-live gate remains open. Likewise the
+selected P02 dependency repair and NCR alignment are delivered, not new tranches.
+The parent frontier does not imply another automatic P06 gap-search campaign.
+
+Remaining work is grouped by receiving outcome: actual candidate/release,
+browser UI, operational data/effects, and general outcome automation design.
+These groups are not a fixed number of tranches or an exhaustive CVF backlog.
+Source-only design on existing owners can proceed under a separately named finite
+outcome; unavailable browser or operational approval must not park unrelated
+authorized development. Runtime/provider proof needs its own concrete proof gap;
+This source-only reconciliation requires no network execution.
+Do not create a successor merely to keep producing patches. P11/CCMA/public/deploy,
+send/B2 and S05/C1 stay parked; NIS-T1J has no automatic successor; LHW24 is closed.
+Intake specs remain agent-readable inputs, not guaranteed build-ready contracts;
+VI Idea Brief and EN Working Brief serve different audiences, LLM enrichment optional.
+
+## Current Runtime Freshness Verification
+
+This review joins the six accepted evidence Git blobs at clean base 6a0c5748bb2615083bb8eef7a4f868c26e473126.
+No current product runtime or hosted CI was executed. Browser capability observation:
+cua.getState returned no apps/browsers; hidden IAB about:blank creation returned
+Browser is not available: iab. No UI navigation, app/store operation or fallback
+tool installation. Reopen capability only after an observable surface change.
+
+## Historical P02 Candidate Dependency Repair - 2026-10-07
 
 Consumer: existing pending candidate preflight in scripts/check_cvf_public_sync_candidate.py,
 called by scripts/cvf-public-sync.ps1. Finite outcome: relative dependency closure
@@ -65,7 +121,7 @@ committed-tree/policy/mapped-overlay/artifact/profile proof still belongs to its
 existing event-specific gate when an actual candidate is authorized. No public
 approval, W05 pre-live, R2/R3 release or P11 promotion from this Local repair.
 
-## Current Runtime Freshness Verification
+## Historical P02 Runtime Freshness Verification
 
 Local source read at clean base 91c3c5ecbd90ecfb3402c664b77cd3cff077d7f7 and changed checker/test bytes;
 current assertions apply only to the selected functions and observed fixtures.
@@ -205,6 +261,7 @@ send/B2, S05/C1, P11, CCMA, public/deploy remain unchanged/parked.
 
 | Finding | Defect class | Learning lane | Disposition | Control action |
 |---|---|---|---|---|
+| Historical selected frontier requeues delivered work | ORCHESTRATOR_PACKET_GAP | DOCUMENTATION_ONLY_LEARNING | RULE_EXISTS | current existing-owner frontier and source-bound next move; no new guard |
 | Ambient ignored file closes a projected dependency | MACHINE_GATE_GAP | GOVERNANCE_CONTROL_PLANE | RULE_EXISTS | existing checker uses Git-visible membership; no new gate or public authorization |
 | Quoted paths and replacement decoding hide inspection gaps | RUNTIME_SIGNAL_GAP | RUNTIME_BEHAVIOR_LEARNING | RULE_EXISTS | NUL paths, strict bytes and actual decoded count |
 | Candidate observations lack resolved revision/source binding | ORCHESTRATOR_PACKET_GAP | GOVERNANCE_CONTROL_PLANE | RULE_EXISTS | resolve refs and report exact observed source hashes; no atomic snapshot claim |
@@ -217,14 +274,14 @@ send/B2, S05/C1, P11, CCMA, public/deploy remain unchanged/parked.
 
 ## Epistemic Process Block
 
-Expected Result / Prediction: ignored disk modules cannot close candidate imports;
-Unicode paths inspected,invalid source bytes/baseline rejected,proof refs resolved.
-Evidence Comparison: red19 tests with12 failures; final26/26 isolated Git fixtures
-PASS, including prior controls and CLI bad-baseline ERROR/exit1.
-Contradiction Or Gap Disposition: selected source gaps repaired; full artifact,
-committed-tree/policy/mapped-overlay and live/public effect proof remain separate.
-Claim Update: deterministic candidate-dependency/parser repair verified bounded;
-no entire P02, actual public projection, live governance or release claim.
+Expected Result / Prediction: selected frontier distinguishes delivered bounded
+proof from actual candidate, browser, operational and general automation outcomes.
+Evidence Comparison: six accepted evidence Git-byte joins match; current browser
+inventory empty and IAB unavailable; prior live failures remain failures.
+Contradiction Or Gap Disposition: supersede stale W05 selection priority here;
+retain historical snapshots and action-specific checkpoints, no broad rerun.
+Claim Update: selected frontier reconciled bounded; no whole P01-P10, pre-live,
+release, universal control or corpus-wide completeness claim.
 
 ## Historical Memory Repair Scope / Target / Owner Boundary
 
@@ -270,7 +327,7 @@ regressions bind the defect/repair to this consumer; no upstream absence claim.
 | Matching local-view guard | N/A with reason: no external input; existing route/test consumer |
 | Owner surface | existing NCR P06 memory readout route and baseline continuation |
 | Disposition | LOCAL_SOURCE_REPAIR_ONLY |
-| Claim boundary | deterministic dependency/parser/CLI repair only; no full P02 or live/public/release proof |
+| Claim boundary | selected frontier reconciliation only; no whole-program/runtime/release proof |
 
 Exact material manifest: the two route/source test files named above, this
 continuation and the predecessor's continuation pointer. No other product path.
@@ -331,31 +388,33 @@ Returned defects: NONE_RETURNED. Zero candidates and no truncation.
 
 | Field | Evidence |
 |---|---|
-| Actor | Local candidate-dependency maintainer and evidence recorder |
-| Provider or surface | private repository and disposable synthetic Git fixtures; no provider or delegation |
-| Session or invocation | p02-candidate-dependency-20261007 |
+| Actor | Local foundation frontier reviewer and continuity steward |
+| Provider or surface | private repository; read-only browser capability probe; no provider or delegation |
+| Session or invocation | ncr-foundation-frontier-20261007 |
 | Working directory | repository root |
-| Command or tool surface | pytest26 isolated Git fixtures, checker CLI and source verification |
-| Target paths | scripts/check_cvf_public_sync_candidate.py; scripts/test_check_cvf_public_sync_candidate.py; docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md; docs/reviews/evidence/cvf-p02-candidate-dependency-2026-10-07.json |
+| Command or tool surface | accepted-evidence Git-byte joins; read-only capability inventory; structural governance checks |
+| Target paths | docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md; docs/reviews/evidence/cvf-ncr-foundation-frontier-2026-10-07.json |
 | Allowed scope source | operator next and standing grouped Local foundation maintenance; direct-task admission |
-| Before status evidence | clean 91c3c5ecbd90ecfb3402c664b77cd3cff077d7f7 |
-| After status evidence | exact four material paths; no actual public root,policy,core guard,credential or parked-lane change |
+| Before status evidence | clean 6a0c5748bb2615083bb8eef7a4f868c26e473126 |
+| After status evidence | exact two documentation/evidence material paths |
 | Diff evidence | staged manifest and companion source/result hashes |
-| Approval boundary | synthetic fixtures and private Local maintenance only; public effects parked |
-| Claim boundary | deterministic dependency/parser/CLI repair only; no full P02 or live/public/release proof |
+| Approval boundary | private source-only reconciliation; action-specific effects stay parked |
+| Claim boundary | selected frontier reconciliation only; no whole-program/runtime/release proof |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | p02-candidate-dependency-20261007 |
-| Expected manifest | scripts/check_cvf_public_sync_candidate.py; scripts/test_check_cvf_public_sync_candidate.py; docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md; docs/reviews/evidence/cvf-p02-candidate-dependency-2026-10-07.json |
-| Actual changed set | scripts/check_cvf_public_sync_candidate.py; scripts/test_check_cvf_public_sync_candidate.py; docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md; docs/reviews/evidence/cvf-p02-candidate-dependency-2026-10-07.json |
+| Invocation ID | ncr-foundation-frontier-20261007 |
+| Expected manifest | docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md; docs/reviews/evidence/cvf-ncr-foundation-frontier-2026-10-07.json |
+| Actual changed set | docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md; docs/reviews/evidence/cvf-ncr-foundation-frontier-2026-10-07.json |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |
 
 ## Next Allowed Move
 
-Consume accepted evidence; continue named compatible consumer gaps under existing
-NCR authority. Q001/Q004 are action-specific; no prerequisite user ledger copy
-for isolated development. Actual data/browser/full release unproved; P11/public/
-deploy,CCMA,S05/C1/send/B2 stay parked; NIS closed without successor; LHW24 closed.
+Consume the current grouped frontier and accepted proof. Select an actual receiving
+outcome before new material work; do not reopen delivered P02/W05 source reconciliation
+or search endpoints without a named defect. Browser capability is absent. Data/effect
+checkpoints remain action-specific; isolated development needs no user ledger copy.
+General outcome automation requires its own finite existing-owner design admission.
+No full release, public/deploy/P11/send/B2/S05/C1 promotion.
 
 ## Guard Endpoint Admission Batch - 2026-10-07
 
@@ -516,9 +575,9 @@ fixtures only; no complete inventory,corpus scan or all-files-read claim.
 
 ## Claim Boundary
 
-Deterministic candidate dependency/parser/CLI source repair only. Full P02,
-actual public projection, AI/runtime governance, release, W05-prelive,
-acceptance and deployment remain unproved. Prior evidence is unchanged.
+Selected foundation frontier reconciliation only. Accepted proofs retain their
+original snapshot and bounded claims. Whole P01-P10, W05 pre-live, hosted CI,
+actual candidate release, general automation and operational acceptance unproved.
 
 ## Public Export Disposition
 

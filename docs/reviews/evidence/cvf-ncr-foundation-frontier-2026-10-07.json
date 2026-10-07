@@ -1,0 +1,104 @@
+{
+  "schemaVersion": "cvf.localFoundationFrontierReconciliation.v1",
+  "admission": {
+    "baseHead": "6a0c5748bb2615083bb8eef7a4f868c26e473126",
+    "scope": [
+      "docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md",
+      "docs/reviews/evidence/cvf-ncr-foundation-frontier-2026-10-07.json"
+    ],
+    "consumer": "Local foundation work selector and resumed agent",
+    "outcome": "current grouped frontier reconciled with named accepted proof; finite next-work boundaries",
+    "authority": "operator next and standing grouped Local maintenance; existing lifecycle direct-task route",
+    "stop": "two material artifacts, continuity sync and mandatory structural gates; no product replay, new guard or broad roadmap audit"
+  },
+  "acceptedEvidenceBindings": [
+    {
+      "group": "P02 dependency",
+      "acceptedMaterialCommit": "543d45c912f8efe52fb528681f992dbc7fb624f7",
+      "evidencePath": "docs/reviews/evidence/cvf-p02-candidate-dependency-2026-10-07.json",
+      "acceptedGitByteSha256": "dad7456c7b6fd338c18b90c670d4065a868c9387785f4759f01e21e10b865393",
+      "baseGitByteSha256": "dad7456c7b6fd338c18b90c670d4065a868c9387785f4759f01e21e10b865393",
+      "unchangedEvidenceGitBytes": true,
+      "boundedDisposition": "26 isolated Git/parser/CLI fixtures PASS; actual candidate approval remains event-specific"
+    },
+    {
+      "group": "Canary diagnosis",
+      "acceptedMaterialCommit": "7e26053c898b84ed46a25c2e3dd8561fce83e9f3",
+      "evidencePath": "docs/reviews/evidence/cvf-canary-route-diagnosis-2026-10-07.json",
+      "acceptedGitByteSha256": "c41fda59bc9a1c06839c5c2924cf9a4f006edb4024c5ea300bbbbd00487166db",
+      "baseGitByteSha256": "c41fda59bc9a1c06839c5c2924cf9a4f006edb4024c5ea300bbbbd00487166db",
+      "unchangedEvidenceGitBytes": true,
+      "boundedDisposition": "code_review PASS; app timeout FAIL, late 200 not PASS; four skipped; no full live certification"
+    },
+    {
+      "group": "W05 synthetic chain",
+      "acceptedMaterialCommit": "c82b8a9c9486dda77e0d0b279c72fd3690b9d796",
+      "evidencePath": "docs/reviews/evidence/cvf-ncr-w05-chain-reconciliation-2026-10-07.json",
+      "acceptedGitByteSha256": "268a371aedf98eb2376007c508d651db230d808f348678926f989967dec3244a",
+      "baseGitByteSha256": "268a371aedf98eb2376007c508d651db230d808f348678926f989967dec3244a",
+      "unchangedEvidenceGitBytes": true,
+      "boundedDisposition": "five current synthetic chain assertions PASS; browser, pre-live and real-data acceptance unproved"
+    },
+    {
+      "group": "NCR lexical alignment",
+      "acceptedMaterialCommit": "9dd87aa9ae29df4a0691a91e86555a567772889a",
+      "evidencePath": "docs/reviews/evidence/cvf-ncr-next-move-alignment-local-review-2026-10-07.json",
+      "acceptedGitByteSha256": "726977e8cd09e73b343e874169553e202c7e4506640b5c5b87f8f164ee5028ec",
+      "baseGitByteSha256": "726977e8cd09e73b343e874169553e202c7e4506640b5c5b87f8f164ee5028ec",
+      "unchangedEvidenceGitBytes": true,
+      "boundedDisposition": "accepted bounded independent relay; F1 LOW unsupported envelope retained; no general automation proof"
+    },
+    {
+      "group": "Action readiness cue",
+      "acceptedMaterialCommit": "f45beaad3b0c14d641356e681893306e56b4944b",
+      "evidencePath": "docs/reviews/evidence/cvf-action-readiness-quick-read-2026-10-07.json",
+      "acceptedGitByteSha256": "42a89b7f96f0ccc83330c05d97e89f33b62e316afd5d747785cc9ad4a41ebf79",
+      "baseGitByteSha256": "42a89b7f96f0ccc83330c05d97e89f33b62e316afd5d747785cc9ad4a41ebf79",
+      "unchangedEvidenceGitBytes": true,
+      "boundedDisposition": "four bounded live decision probes; both conditions PASS; improvement NOT_DEMONSTRATED"
+    },
+    {
+      "group": "P01/P05 Linux CI",
+      "acceptedMaterialCommit": "8f189c02aa94746c4ae049f099a1ece9c1ed149d",
+      "evidencePath": "docs/reviews/evidence/cvf-ncr-linux-build-pass-2026-10-07.json",
+      "acceptedGitByteSha256": "07b732b38f7c0c12816eb1d2c8f0a2a20212edc778fcfd6a2be4c9e973da1ccd",
+      "baseGitByteSha256": "07b732b38f7c0c12816eb1d2c8f0a2a20212edc778fcfd6a2be4c9e973da1ccd",
+      "unchangedEvidenceGitBytes": true,
+      "boundedDisposition": "13 clean Linux stages PASS; tested snapshot only, no hosted GitHub/OAuth/deploy proof"
+    }
+  ],
+  "browserCapabilityObservation": {
+    "inventory": {
+      "apps": [],
+      "browsers": []
+    },
+    "attempt": "createBrowserTab(iab, about:blank, visible=false)",
+    "result": "Browser is not available: iab",
+    "interpretation": "capability absent; no browser/app operation, UI proof, provider call or tool installation"
+  },
+  "remainingGroups": [
+    {
+      "group": "LOCAL_ACCEPTED_PROOF",
+      "disposition": "consume accepted bounded repairs and structural build results; no automatic replay or endpoint sweep"
+    },
+    {
+      "group": "ACTUAL_CANDIDATE_AND_RELEASE",
+      "disposition": "P02/P08/P09 candidate tree, policy, overlays, artifact and release proof on an actual selected candidate; local results do not close this"
+    },
+    {
+      "group": "BROWSER_W05",
+      "disposition": "capability unavailable; synthetic route proof delivered, pre-live not closed; reopen only with usable browser and finite synthetic UI outcome"
+    },
+    {
+      "group": "OPERATIONAL_DATA_AND_EFFECTS",
+      "disposition": "P03/P07/P10 and Q001/Q004 actual writer/custody/retention/RPO/RTO/cost and R2/R3 acceptance are action-specific; not prerequisites for isolated development"
+    },
+    {
+      "group": "GENERAL_OUTCOME_AUTOMATION",
+      "disposition": "existing design and bounded NCR alignment accepted; universal Local-maintenance automation/agent comprehension not implemented or verified; separate outcome admission needed"
+    }
+  ],
+  "reviewMethod": "consume returned accepted evidence; Git-byte identity joins only; no product/provider/Docker reruns",
+  "terminal": "SELECTED_FOUNDATION_FRONTIER_RECONCILED_BOUNDED",
+  "claimBoundary": "named selected queue only; groups are not tranche counts; no whole-program completion or exhaustive inventory; no public/deploy/P11/send/S05/C1 promotion"
+}
