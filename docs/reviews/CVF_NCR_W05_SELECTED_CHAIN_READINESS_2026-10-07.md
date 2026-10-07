@@ -315,20 +315,20 @@ Returned defects: zero; totalCandidates=0; truncated=false.
 |---|---|
 | Actor | Local direct-task verifier and evidence recorder |
 | Provider or surface | private repository; local Web and Docker engine; Alibaba only |
-| Session or invocation | ncr-consolidated-readiness-20261008 |
+| Session or invocation | cvf-video-storyboard-local-html-20261008 |
 | Working directory | repository root |
-| Command or tool surface | named Git/worktree identity joins; accepted evidence consumption; real-Git encoding red/green; existing governance gates |
-| Target paths | docs/reviews/CVF_NCR_W05_SELECTED_CHAIN_READINESS_2026-10-07.md; docs/reviews/evidence/cvf-ncr-w05-chain-reconciliation-2026-10-07.json; governance/compat/check_governed_file_size.py; governance/compat/test_check_governed_file_size.py |
-| Allowed scope source | operator autonomous grouped audit/repair; existing W05 outcome; same-set necessary checker authorization |
-| Before status evidence | clean 2145d37675577a5b4a5ca567a806221d8dec7ae5 |
-| After status evidence | four exact owner/evidence/checker/test paths; roadmap/product/runtime unchanged |
+| Command or tool surface | existing isolated Next export route; signed local request; current Chromium file view; exact source/output hashes and cleanup |
+| Target paths | docs/reviews/CVF_NCR_W05_SELECTED_CHAIN_READINESS_2026-10-07.md; docs/reviews/evidence/cvf-ncr-w05-chain-reconciliation-2026-10-07.json |
+| Allowed scope source | operator agrees to local HTML and explicitly selects existing video design; private review output only |
+| Before status evidence | ae2a5a1aa69b14509c6209f0e948f3dfb6ff4698 clean |
+| After status evidence | two owner/evidence paths plus ignored local review artifact; accepted design/product source unchanged |
 | Diff evidence | git diff --check and exact manifest; companion source/evidence pins and gate diagnostics |
-| Approval boundary | bounded Local source/readiness and necessary locale checker repair; dependent data/pilot/acceptance/public/deploy parked |
-| Claim boundary | current source qualification and retained synthetic receipts only; no new semantic/live governance or R2/R3 acceptance |
+| Approval boundary | local document output for operator review; audio/video/public/durable acceptance separate |
+| Claim boundary | actual local HTML presentation only; no semantic AI governance, media runtime or final content approval |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-consolidated-readiness-20261008 |
-| Expected manifest | docs/reviews/CVF_NCR_W05_SELECTED_CHAIN_READINESS_2026-10-07.md; docs/reviews/evidence/cvf-ncr-w05-chain-reconciliation-2026-10-07.json; governance/compat/check_governed_file_size.py; governance/compat/test_check_governed_file_size.py |
-| Actual changed set | docs/reviews/CVF_NCR_W05_SELECTED_CHAIN_READINESS_2026-10-07.md; docs/reviews/evidence/cvf-ncr-w05-chain-reconciliation-2026-10-07.json; governance/compat/check_governed_file_size.py; governance/compat/test_check_governed_file_size.py |
+| Invocation ID | cvf-video-storyboard-local-html-20261008 |
+| Expected manifest | docs/reviews/CVF_NCR_W05_SELECTED_CHAIN_READINESS_2026-10-07.md; docs/reviews/evidence/cvf-ncr-w05-chain-reconciliation-2026-10-07.json |
+| Actual changed set | docs/reviews/CVF_NCR_W05_SELECTED_CHAIN_READINESS_2026-10-07.md; docs/reviews/evidence/cvf-ncr-w05-chain-reconciliation-2026-10-07.json |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |
 
@@ -499,3 +499,43 @@ standing autonomous grouped audit/repair, necessary to deliver this admitted
 readiness outcome after the recorded gate crash. Protected paths: those two
 exact files. Rollback boundary: only this helper/regression delta; thresholds,
 registry, frozen doctrine, autorun and closed authority remain unchanged.
+
+## Video Storyboard Local HTML Admission 2026-10-08
+
+Operator approved local HTML for direct review, corrected the input to the
+existing CVF video design, then explicitly instructed to use it. Selected source:
+docs/reference/CVF_NCR_GENERAL_VIDEO_DESIGN_2026-10-02.md; accepted text design
+under docs/reviews/CVF_CVF_NCR_GENERAL_VIDEO_DESIGN_COMPLETION_2026-10-02.md.
+This is a review copy of ten scenes/estimated240 seconds, not audio/MP4 or
+HyperFrames/VieNeu execution. Original design is read-only; no redesign or
+source substitution from the two roadmap tabs. Receiving consumer: operator
+reviewing narration/storyboard. Scope: one private local HTML output from the
+existing renderer, receipt hop unconfigured, no provider/public effects.
+Two material owner/evidence paths in the trace; output/logs in ignored runtime.
+Required outputs: full source-bound HTML, actual browser readability/network
+observation, saved/source identity and cleanup, continuity. Stop after delivery.
+Expected Result: usable local draft retaining source, language and boundaries.
+Evidence Comparison: actual exportHTTP200, source unchanged, browser10 scenes
+and zero observed HTTP requests, saved SHA-256 matched. Contradiction Or Gap Disposition: previous
+roadmap-input proposal was corrected before any artifact/process; no product
+repair or duplicate proof needed. Claim Update: document review only; not
+video-renderer/governance proof, production rights or final content acceptance.
+
+### Local HTML Delivery
+
+LOCAL_HTML_DELIVERED_OPERATOR_CONTENT_REVIEW_PENDING
+Artifact: `.cvf/runtime/cvf-video-storyboard-review-20261008/CVF_VIDEO_STORYBOARD_REVIEW.html`.
+UTF-8 bytes: 19136; SHA-256: ae90fce7387d7da230627055f882d2f580bef9e27c97f11fe704ca19cc073447.
+Actual existing export route returnedHTTP200 with signed ephemeral service-token
+authentication; receiptStatus=NOT_CONFIGURED, no receipt or attempt ID, artifact
+DRAFT_UNACCEPTED. Original source stayed byte-identical; complete source text
+submitted with route end-trimming only, no translation or summary.
+One current Chromium file view observes10 scene headings, narration, production
+checklist and draft boundary; zero observed HTTP requests. Saved file digest
+matches export bytes. First viewport visually inspected, text readable; existing
+Markdown-lite layout is not table/typography/media fidelity proof. Owned local
+server stopped; temporary source/junction removed. Companion videoStoryboardHtml20261008
+retains source/runtime hashes, result and browser evidence. Provider calls0;
+no product source change, paid service, ledger access, audio/video render,
+HyperFrames/VieNeu execution, publishing or durable acceptance. Operator final
+content review remains pending, not inferred from permission to create the file.

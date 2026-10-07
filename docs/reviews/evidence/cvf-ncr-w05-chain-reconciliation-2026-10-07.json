@@ -720,5 +720,73 @@
         "file-size-final.log": "0d4763193c7975bd110494a38ff00b42ef5b18e4f4c049d4f7f4814a57eff5a0"
       }
     }
+  },
+  "videoStoryboardHtml20261008": {
+    "admission": {
+      "baseHead": "ae2a5a1aa69b14509c6209f0e948f3dfb6ff4698",
+      "authority": "operator agrees to local HTML for direct review, corrects source to existing CVF video design and explicitly says use it",
+      "source": "docs/reference/CVF_NCR_GENERAL_VIDEO_DESIGN_2026-10-02.md",
+      "sourceRawSha256": "3ce5e2363c3e29997fcbf42cb4cec59af7447cca38409d4d970e8aa71e5777e0",
+      "role": "INTERNAL_AGENT; Local document exporter/verifier; operator final content reviewer",
+      "consumer": "operator reviewing accepted Vietnamese CVF video narration/storyboard",
+      "scope": "one local HTML draft using existing export route; source-read only, no governance receipt hop or provider; no audio/MP4 or S05/C1 activation",
+      "expectedManifest": [
+        "docs/reviews/CVF_NCR_W05_SELECTED_CHAIN_READINESS_2026-10-07.md",
+        "docs/reviews/evidence/cvf-ncr-w05-chain-reconciliation-2026-10-07.json"
+      ],
+      "requiredOutputs": [
+        "source-bound complete HTML draft",
+        "actual browser readability and passive-network observation",
+        "saved-file identity and source/cleanup reconciliation",
+        "continuity"
+      ],
+      "costReason": "reuse accepted ten-scene240-second design and existing HTML renderer; no new storyboard, product implementation or replay of prior proofs",
+      "stop": "deliver reviewable file and provenance; production/public acceptance remains separate"
+    },
+    "status": "LOCAL_HTML_DELIVERED_OPERATOR_CONTENT_REVIEW_PENDING",
+    "artifact": {
+      "path": ".cvf/runtime/cvf-video-storyboard-review-20261008/CVF_VIDEO_STORYBOARD_REVIEW.html",
+      "bytes": 19136,
+      "sha256": "ae90fce7387d7da230627055f882d2f580bef9e27c97f11fe704ca19cc073447",
+      "sourceContentTrimmedSha256": "5575b2dbbf552411897f6dbad2d8a157721a9aa31bbc85a2bc9acc79018b6b32",
+      "sourceRawSha256": "3ce5e2363c3e29997fcbf42cb4cec59af7447cca38409d4d970e8aa71e5777e0",
+      "httpStatus": 200,
+      "routeAuthMode": "service_token",
+      "artifactState": "DRAFT_UNACCEPTED",
+      "receiptStatus": "NOT_CONFIGURED",
+      "sourceCount": 1,
+      "sourceTransform": "existing Markdown-lite renderer; no summarization/translation; source ends trimmed by route"
+    },
+    "sourceRuntimeIdentity": {
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/route.ts": "a17ddd57882be1e58a86fb1d86bea8a2693f1169f5ba0c8b6da2af75d7f024ae",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/proof.ts": "fbdcc3a434eea13842c9f692d2b54cc9955e80d8c8777d9dfaa14cace9cdfcaf",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/route-governance-proof.ts": "17c19ccc4e31d5e068b728304e4a0970ddc072a9711460dd62b859f3ade15b6e"
+    },
+    "cleanup": "OWNED_SERVER_STOPPED_JUNCTION_AND_DISPOSABLE_STAGE_REMOVED",
+    "elapsedMs": 16266,
+    "providerInvocations": 0,
+    "claimBoundary": "Actual private documentation exported locally; no governance receipt, semantic governance, audio/MP4, renderer admission, rights clearance or final operator acceptance.",
+    "browserReview": {
+      "status": "PASS",
+      "browserVersion": "145.0.7632.6",
+      "scenes": 10,
+      "sourceTextVisible": true,
+      "draftBoundaryVisible": true,
+      "observedHttpRequests": [],
+      "artifactSha256": "ae90fce7387d7da230627055f882d2f580bef9e27c97f11fe704ca19cc073447",
+      "scope": "actual local HTML readability/presence in one Chromium viewport; not human content acceptance or video playback"
+    },
+    "visualReview": {
+      "viewport": "1440x1050 Chromium",
+      "screenshot": "preview.png",
+      "disposition": "READABLE_SOURCE_AND_DRAFT_BOUNDARY_OBSERVED",
+      "limitation": "existing Markdown-lite presentation, not typography/table/animation fidelity or video playback"
+    },
+    "requiredOutputReconciliation": {
+      "sourceBoundHtml": "DELIVERED",
+      "browserReadabilityAndNetwork": "DELIVERED_PASS",
+      "identityAndCleanup": "DELIVERED",
+      "continuity": "PENDING_MATERIAL_COMMIT"
+    }
   }
 }
