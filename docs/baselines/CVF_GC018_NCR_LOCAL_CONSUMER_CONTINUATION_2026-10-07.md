@@ -185,6 +185,50 @@ Initial preflight matched a negated coverage disclaimer as a corpus assertion.
 Remove that broad phrasing; this remains targeted route
 maintenance with no corpus scan assertion. No checker bypass or product rerun.
 
+## Operator Review - Batching And Priority Correction - 2026-10-07
+
+Operator rejects patch-by-patch stopping and requests review. Local reviewer
+base a2fa603b9e7f860a41a72e5f86dbe2132261efca; clean startup worktree.
+Source basis: latest18 Git commits (nine material/continuity pairs), existing
+NCR foundation/continuation evidence, roadmap Foundation Readiness/R0-R4 and
+priority standard section2.1. This is targeted work-selection review,not a
+repository inventory,a new full roadmap audit or an independent technical probe.
+
+Findings: four recent P06 repair batches address real defects but do not establish
+the next NCR milestone. QBS/LPCI,memory and guard endpoints were selected without
+a demonstrated dependency on the chosen work outcome. The generic next action
+select concrete consumer gaps made ad-hoc hardening open-ended. Maintenance of
+handoff headroom was necessary but was not product delivery. Repeated per-patch
+material/continuity cycles and final answers unnecessarily returned orchestration
+to the operator. Two-phase commits do not require a user next per patch: the
+existing49-path foundation and18-path CI batch show compatible work can be grouped.
+No measured cost/time or merged test totals are inferred from this observation.
+
+Apply existing priority/lifecycle rules rather than create a new process:
+
+| Existing cluster | Current disposition | Work-selection correction |
+|---|---|---|
+| P01/P05 local build and P06/P08/P09 selected repairs | LOCAL_VERIFIED_BOUNDED | Consume accepted evidence; end general endpoint hunting. Fix an additional defect only when it blocks the selected deliverable or needs immediate safety containment |
+| W05 selected chain integration/readiness | NEXT_CONSOLIDATED_PACKAGE | One package from input/identity through validation,binding,attempt,output/version,receipt/recovery; reuse existing Profile A evidence and current consumers. Output is a chain disposition and necessary compatible repairs,not another isolated pass badge |
+| P03/P07/P10 and Q001/Q004 | ACTION_SPECIFIC_CHECKPOINTS_RETAINED | Keep dependent real-data/effect work parked; group the actual writer/data/cost/recovery decisions for that action. Do not use them to block unrelated admitted source work or request an unexplained ledger copy |
+| Browser/remote CI/release/P11 | EVIDENCE_OR_AUTHORITY_DEPENDENT | Resolve only for the milestone that needs it; no repeated failed capability probe or public/deploy action from general next |
+| Audience briefs/Spec Kit learning | EXISTING_BOUNDED_RESULTS_CONSUMED | Return to the wider upgrade backlog; no new spec-detail campaign,model ranking or prompt survey without a named receiving-work gap |
+
+Next package must name the user/work outcome, receiving consumer, admitted scope,
+dependent checkpoints and terminal deliverable before edits. Compatibility is
+based on shared outcome/authority,not merely same file type. Finish all authorized
+parts and necessary repairs,then report at the package outcome or a real authority/
+capability boundary. A small defect discovered during that package is internal
+work,not an automatic new tranche/final answer. Do not continuously extend scope
+by finding unrelated routes. Preserve mandatory checks and commit choreography;
+this correction does not grant R3/pilot,B2/send,real-data,public or deployment.
+
+This review consumes accepted proof; no product tests,provider calls or Docker
+builds rerun. Only changed documentation/continuity structural gates apply.
+ADIF Worker execution/worker/pre-implementation query zero candidates,no
+truncation. Exact material scope: this existing continuation. Active next move
+must carry this correction rather than the open-ended P06 gap-search instruction.
+
 ## Claim Boundary
 
 Local consumer source repair only. No full roadmap, live governance, corpus scan,
