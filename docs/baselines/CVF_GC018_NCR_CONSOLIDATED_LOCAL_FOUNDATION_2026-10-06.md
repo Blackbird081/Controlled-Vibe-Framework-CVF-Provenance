@@ -949,6 +949,8 @@ checker, pilot or downstream migration. DEFERRED_PRIVATE_ONLY remains below.
 
 ## Claim Boundary
 
+Further bounded consumer maintenance: `docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md`. Prior evidence here remains unchanged.
+
 Local foundations only. No release or whole-CVF live governance readiness, full repository secret
 clearance, artifact acceptance or rollout completion. Prior checkpoints retained.
 
