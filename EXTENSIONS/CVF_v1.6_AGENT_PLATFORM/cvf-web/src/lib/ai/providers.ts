@@ -16,11 +16,11 @@ function isAlibabaStreamingOnlyModel(model: string): boolean {
 }
 
 function isQwen3Model(model: string): boolean {
-    return /^qwen3-/i.test(model);
+    return /^qwen3(?:\.\d+)?-/i.test(model);
 }
 
 function isQwen3ThinkingModel(model: string): boolean {
-    return /^qwen3-.*thinking/i.test(model);
+    return /^qwen3(?:\.\d+)?-.*thinking/i.test(model);
 }
 
 function usesOpenAICompletionTokenParam(model: string): boolean {

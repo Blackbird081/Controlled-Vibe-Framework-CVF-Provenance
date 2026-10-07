@@ -16,7 +16,62 @@ it adds no new program, work order, schema, checker or pilot. Predecessor is
 docs/baselines/CVF_GC018_NCR_CONSOLIDATED_LOCAL_FOUNDATION_2026-10-06.md,
 which has957 lines; use a continuation rather than grow it toward the hard limit.
 
-## Current Canary Source And Model Controls - 2026-10-07
+## Current Route Canary Diagnosis And Bounded Repair - 2026-10-07
+
+Consumer: Local operator of the existing Alibaba route canary. Finite outcome:
+source diagnosis of saved six failures, concrete scalar/model recognition repair,
+safe timing/status evidence and terminal disposition. Local decision owner under
+operator next and standing grouped Local/Alibaba-only testing; lifecycle direct
+task, not reopened alignment work order. Clean base f1357757bd8852f102f5dec32381778346da2d4b.
+Exact five-path scope and stop recorded before edits; pre-implementation gate PASS.
+
+### Source Verification Block
+
+| Source | Disposition | Verified fact |
+|---|---|---|
+| EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execute-request-validation.ts | ACCEPT | inputs allow scalar values; code_review focus array is rejected before provider execution; validator unchanged |
+| EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/ai/providers.ts | ACCEPT | qwen3- prefix missed qwen3.8-27b and omitted thinking flag; preserve existing mode convention with decimal-version recognition |
+| EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/ai/providers.test.ts | ACCEPT | five red decimal cases; existing legacy/streaming controls retained; final61 tests PASS |
+| EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.front-door-rewrite.alibaba.live.test.ts | ACCEPT | focus scalar fixed; pre-network shape assertion and safe route/fetch timing added; original45s limits and output assertions retained |
+| https://www.alibabacloud.com/help/en/model-studio/batch-inference | EXTERNAL_INPUT | official Qwen3 decimal-series thinking parameter; Local source/evidence controls private disposition |
+
+### Decision / Evidence / Terminal Disposition
+
+Recognize qwen3 numeric decimal versions with the existing non-thinking default,
+preserving explicitly named thinking models, unrelated models and QVQ streaming.
+This fixes parameter recognition, not model selection. The unchanged scalar
+validator requires code_review focus as text; fixture now sends newline text.
+Live fixture records only route status, stable diagnostic stage/class and fetch
+state/status/latency; no prompt, output, credential, header or provider error body.
+Fetch wrapper calls the existing guarded fetch and restores it after each case.
+
+Red61 tests:5 fail/56 pass. Green61 adapter tests PASS; tsc and scoped ESLint PASS.
+These use fake fetch and verify request construction, not AI governance.
+Diagnostic before distinct live probe names information gain/cost: two existing
+app_builder_complete/code_review cases instead of six-case replay; maxCalls4,
+Alibaba only, explicit local key and qwen3.8-27b, one-use invocation, isolated
+control-plane event file. Call ceiling is not an observed network count.
+Live process exit=1; selectedPassed=False.
+Historical six-row report (four skipped are not selected): /api/execute front-door rewrite live - Alibaba governed path turns app_builder_complete into a builder-ready non-coder app brief: failed; /api/execute front-door rewrite live - Alibaba governed path turns api_design into an integration handoff packet instead of a style-selection form: skipped; /api/execute front-door rewrite live - Alibaba governed path turns code_review into a plain-language build review packet with a builder handoff brief: passed; /api/execute front-door rewrite live - Alibaba governed path turns documentation into a structured operational doc packet with a handoff checklist: skipped; /api/execute front-door rewrite live - Alibaba governed path turns web_ux_redesign_system into a guarded UX packet with a visible review gate: skipped; /api/execute front-door rewrite live - Alibaba governed path turns data_analysis into a decision-focused insight packet with prioritised action recommendations: skipped.
+code_review passed: route200 at38.120s, fetch200 at37.951s. App case failed
+45s while fetch remained pending; late route200 at50.282s is not test PASS.
+Its late log appears under the next Vitest context; sequential invocation/timing
+identify the earlier request. After proof, templateId-only log correlation was
+added for future runs; executed-source pins retained, final typecheck/lint run,
+no provider rerun or final-source live certification.
+Four unselected scenarios are not passed. Safe trace and exact source/result
+hashes are retained at docs/reviews/evidence/cvf-canary-route-diagnosis-2026-10-07.json.
+
+The array rejection is source-determined; old five timeouts had no wait trace.
+Thinking omission and45s test versus60s provider deadline are observed source
+gaps, not proof of historical timeout causality. Original evidence remains FAIL.
+No timeout relaxation, changed output criteria, automatic retry or further
+endpoint campaign. Enforcement/session/quota remain mocked. No full live
+governance, canary certification, release, model ranking or W05 pre-live claim.
+Selected source diagnosis/repair/evidence outcome delivered with failed or
+partial live results retained. Data/effect/browser/P11/public/deploy remain parked.
+
+## Historical Canary Source And Model Controls - 2026-10-07
 
 Status: SOURCE_CONTROLS_VERIFIED_TRANSPORT_PASS_ROUTE_CANARY_FAIL.
 Consumer: Local operator/agent running the existing provider canary. Finite
@@ -93,6 +148,8 @@ send/B2, S05/C1, P11, CCMA, public/deploy remain unchanged/parked.
 
 | Finding | Defect class | Learning lane | Disposition | Control action |
 |---|---|---|---|---|
+| Decimal Qwen3 model misses thinking control | RUNTIME_SIGNAL_GAP | RUNTIME_BEHAVIOR_LEARNING | RULE_EXISTS | repair existing adapter recognition, preserve model mode intent; no historical timeout causality claim |
+| Array-valued live fixture violates scalar contract | WORKER_EXECUTION_ERROR | RUNTIME_BEHAVIOR_LEARNING | RULE_EXISTS | fix fixture and assert shape before network; retain API validator |
 | Stale process key hides the intended local source | RUNTIME_SIGNAL_GAP | RUNTIME_BEHAVIOR_LEARNING | RULE_EXISTS | explicit source selector and secret-safe comparison; no precedence/config rewrite |
 | Override label can differ from actual Alibaba fixture request | ORCHESTRATOR_PACKET_GAP | GOVERNANCE_CONTROL_PLANE | RULE_EXISTS | child model binding and per-case model assertion |
 | Collection/process failure can become all-SKIP | RUNTIME_SIGNAL_GAP | GOVERNANCE_CONTROL_PLANE | RULE_EXISTS | explicit collection, existing grant retained, nonzero process forces FAIL |
@@ -100,14 +157,14 @@ send/B2, S05/C1, P11, CCMA, public/deploy remain unchanged/parked.
 
 ## Epistemic Process Block
 
-Expected Result / Prediction: source/model controls pass regressions; live
-canary result must match subprocess evidence without inflated claims.
-Evidence Comparison: fifteen structural tests, typecheck and lint PASS; direct
-transport200/model match; corrected route canary six FAIL/exit1.
-Contradiction Or Gap Disposition: collection failure repaired; unrelated route
-timeouts/400 retained, not attributed to credentials or hidden by changing tests.
-Claim Update: bounded source/transport controls verified; current live canary
-NOT_PASSED and full governance/release readiness remain unproved.
+Expected Result / Prediction: scalar fixture passes shape validation and decimal
+model request receives intended thinking flag; targeted live results remain honest.
+Evidence Comparison: red5 failures; green61 adapter tests, typecheck and lint PASS;
+two-case live process exit1, selectedPassed=False.
+Contradiction Or Gap Disposition: old timeout cause remains unproved; retain safe
+current wait evidence without relabeling historical FAIL or relaxing deadlines.
+Claim Update: concrete source repairs verified; only selected observed live
+results are supported. Full governance/release/W05 pre-live remain unproved.
 
 ## Historical Memory Repair Scope / Target / Owner Boundary
 
@@ -153,7 +210,7 @@ regressions bind the defect/repair to this consumer; no upstream absence claim.
 | Matching local-view guard | N/A with reason: no external input; existing route/test consumer |
 | Owner surface | existing NCR P06 memory readout route and baseline continuation |
 | Disposition | LOCAL_SOURCE_REPAIR_ONLY |
-| Claim boundary | source controls verified; live canary FAIL retained, no certification or release proof |
+| Claim boundary | source repairs and two selected output results only; no full canary or live governance/release proof |
 
 Exact material manifest: the two route/source test files named above, this
 continuation and the predecessor's continuation pointer. No other product path.
@@ -214,22 +271,22 @@ Returned defects: NONE_RETURNED. Zero candidates and no truncation.
 
 | Field | Evidence |
 |---|---|
-| Actor | Local canary-control maintainer and evidence recorder |
+| Actor | Local canary source-diagnosis maintainer and evidence recorder |
 | Provider or surface | private repository and Alibaba only; no delegation |
-| Session or invocation | canary-source-model-20261007 |
+| Session or invocation | canary-route-diagnosis-20261007 |
 | Working directory | repository root |
-| Command or tool surface | scoped source repair; 14 unit tests; tsc/lint; bounded canary with injected grant; separate transport diagnostic |
-| Target paths | scripts/run_cvf_provider_live_canary.py; scripts/test_run_cvf_provider_live_canary.py; EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.front-door-rewrite.alibaba.live.test.ts; docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md; docs/reviews/evidence/cvf-canary-source-model-binding-2026-10-07.json |
+| Command or tool surface | 61 adapter tests; tsc/lint; two selected Alibaba route cases with caller grant and safe timing |
+| Target paths | EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/ai/providers.ts; EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/ai/providers.test.ts; EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.front-door-rewrite.alibaba.live.test.ts; docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md; docs/reviews/evidence/cvf-canary-route-diagnosis-2026-10-07.json |
 | Allowed scope source | operator next and standing grouped Local/Alibaba-only test authority; direct-task admission |
-| Before status evidence | clean 4cbaf3f6e1c4ace076223cf9264ed9b2367ac455 |
-| After status evidence | exact five material paths; no route/policy/credential file or closed authority change |
+| Before status evidence | clean f1357757bd8852f102f5dec32381778346da2d4b |
+| After status evidence | exact five material paths; no validator,timeout,policy,credential file or closed authority change |
 | Diff evidence | staged manifest and companion source/result hashes |
 | Approval boundary | synthetic test/tool repair only; no live pilot/real-data/public/deploy |
-| Claim boundary | source controls verified; live canary FAIL retained, no certification or release proof |
+| Claim boundary | source repairs and two selected output results only; no full canary or live governance/release proof |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | canary-source-model-20261007 |
-| Expected manifest | scripts/run_cvf_provider_live_canary.py; scripts/test_run_cvf_provider_live_canary.py; EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.front-door-rewrite.alibaba.live.test.ts; docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md; docs/reviews/evidence/cvf-canary-source-model-binding-2026-10-07.json |
-| Actual changed set | scripts/run_cvf_provider_live_canary.py; scripts/test_run_cvf_provider_live_canary.py; EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.front-door-rewrite.alibaba.live.test.ts; docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md; docs/reviews/evidence/cvf-canary-source-model-binding-2026-10-07.json |
+| Invocation ID | canary-route-diagnosis-20261007 |
+| Expected manifest | EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/ai/providers.ts; EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/ai/providers.test.ts; EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.front-door-rewrite.alibaba.live.test.ts; docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md; docs/reviews/evidence/cvf-canary-route-diagnosis-2026-10-07.json |
+| Actual changed set | EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/ai/providers.ts; EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/ai/providers.test.ts; EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.front-door-rewrite.alibaba.live.test.ts; docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md; docs/reviews/evidence/cvf-canary-route-diagnosis-2026-10-07.json |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |
 

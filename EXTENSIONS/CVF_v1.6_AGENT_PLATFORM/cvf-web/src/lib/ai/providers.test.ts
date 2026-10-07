@@ -275,6 +275,26 @@ describe('ai/providers', () => {
 
     describe('executeAI — Alibaba DashScope', () => {
         it.each([
+            ['qwen3.8-27b', false],
+            ['qwen3.8-flash', false],
+            ['qwen3.5-plus', false],
+            ['QWEN3.8-27B', false],
+            ['qwen3.8-27b-thinking', true],
+            ['qwen3-next-80b-a3b-thinking', true],
+            ['qwen30-example', undefined],
+            ['qwen3.invalid-example', undefined],
+        ])('preserves thinking-mode intent for %s', async (model, thinking) => {
+            fetchMock.mockResolvedValueOnce({ ok: true, json: async () => ({
+                choices: [{ finish_reason: 'stop', message: { content: 'Synthetic response' } }],
+            }) });
+            const result = await executeAI('alibaba', 'synthetic-key', 'Synthetic input', { model });
+            expect(result.success).toBe(true);
+            const body = JSON.parse(fetchMock.mock.calls[0][1].body);
+            expect(body.model).toBe(model);
+            expect(body.enable_thinking).toBe(thinking);
+            expect(body.stream).toBeUndefined();
+        });
+        it.each([
             { choices: [{ finish_reason: 'stop', message: { content: '  ', reasoning_content: 'private thinking' } }] },
             { choices: [{ finish_reason: 'tool_calls', message: { content: 'partial answer' } }] },
             { choices: [{ finish_reason: 'content_filter', message: { content: 'partial answer' } }] },

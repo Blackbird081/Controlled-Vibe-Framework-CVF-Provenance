@@ -1,0 +1,323 @@
+{
+  "schemaVersion": "cvf.localCanaryRouteDiagnosis.v1",
+  "admission": {
+    "baseHead": "f1357757bd8852f102f5dec32381778346da2d4b",
+    "authority": "operator next and standing grouped Local repair/Alibaba-only test authority; lifecycle direct-task route",
+    "consumer": "existing Alibaba canary operator",
+    "outcome": "diagnose saved 400/timeouts, repair concrete input/model recognition gaps, retain safe stage timing evidence and honest bounded result",
+    "scope": [
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/ai/providers.ts",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/ai/providers.test.ts",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.front-door-rewrite.alibaba.live.test.ts",
+      "docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md",
+      "docs/reviews/evidence/cvf-canary-route-diagnosis-2026-10-07.json"
+    ],
+    "requiredOutputs": [
+      "scalar fixture compatible with unchanged validator",
+      "Qwen3 decimal-version recognition, preserving explicit thinking models and unrelated models",
+      "regressions and safe targeted live diagnostics",
+      "terminal disposition with no unsupported timeout causality"
+    ],
+    "sourceFindings": {
+      "400": "code_review focus is an array; validator rejects non-scalar input before execution",
+      "thinking": "adapter regex qwen3- misses qwen3.8-27b; omitted enable_thinking differs from successful saved direct diagnostic",
+      "deadline": "case45s expires before default provider60s; does not identify original wait boundary"
+    },
+    "liveScope": "two existing scenarios app_builder_complete and code_review only; Alibaba local credential/qwen3.8-27b; maxCalls4, one use, no automatic retry; timeouts/assertions unchanged",
+    "stop": "deliver this bounded repair and evidence, no six-case replay or endpoint/spec/timeout campaign",
+    "beforeGitBlobSha256": {
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/ai/providers.ts": "4ace18f9a8520765aa74cde30760a7c4d74f2ff7111f89936647f1d7d72da445",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/ai/providers.test.ts": "f9f51611fbd5cf692efa259b888406821c507800ac985d53df9a6ea54b7cc93a",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.front-door-rewrite.alibaba.live.test.ts": "52fee3b01ab5b0ff3f4e6bd1ed8db2f2127cbd54fff88302e554937433fd5bbb"
+    }
+  },
+  "diagnosticBeforeRerun": {
+    "stage": "request_validation",
+    "class": "invalid_input",
+    "retryable": false,
+    "userAction": "correct scalar fixture; retain original failures and deadlines; capture provider wait boundary on two selected scenarios only",
+    "provider": "alibaba",
+    "model": "qwen3.8-27b",
+    "httpStatus": 400,
+    "safeMessage": "Source validator rejects code_review focus array. Qwen3 decimal model omission and 45s test versus60s provider timeout are source gaps, not proven causes of original five timeouts. Saved diagnostic precedes this distinct repair probe.",
+    "informationGain": "verify corrected scalar/model path and distinguish pending provider fetch from pre-provider wait",
+    "costReason": "two selected cases, max four requests, instead of six-case replay"
+  },
+  "liveAdmission": {
+    "authority": "operator next and standing grouped Local repair/Alibaba-only test authority; lifecycle direct-task route",
+    "selectedScenarios": [
+      "app_builder_complete",
+      "code_review"
+    ],
+    "provider": "alibaba",
+    "model": "qwen3.8-27b",
+    "source": {
+      "requestedSource": "local",
+      "selectedSource": "local",
+      "selectedAlias": "ALIBABA_API_KEY",
+      "sourcesDiffer": true,
+      "environmentAliasesAgree": true,
+      "localAliasesAgree": true
+    },
+    "maxProviderCalls": 4,
+    "oneUse": "canary-diagnosis-live.used",
+    "mocks": [
+      "enforcement",
+      "session",
+      "quota"
+    ],
+    "sourceWorktreeSha256": {
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/ai/providers.ts": "bca40aab2d66df9ee5f7060b0d7558d6e499cca1b5a118ed367e546ca04d94aa",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/ai/providers.test.ts": "7832a46a86ea3159f659680131f260df5ee1bf1607f2ae7cb1030c64721ef4f8",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.front-door-rewrite.alibaba.live.test.ts": "88ce23d64a55f9055d9aea27386139898459902018e004320cdc731084bd8e09"
+    },
+    "claimBoundary": "targeted real-provider output only, no full governance/canary/release proof"
+  },
+  "liveResult": {
+    "processExit": 1,
+    "assertions": [
+      {
+        "name": "/api/execute front-door rewrite live \u2014 Alibaba governed path turns app_builder_complete into a builder-ready non-coder app brief",
+        "status": "failed",
+        "duration": 45025.208399999996
+      },
+      {
+        "name": "/api/execute front-door rewrite live \u2014 Alibaba governed path turns api_design into an integration handoff packet instead of a style-selection form",
+        "status": "skipped",
+        "duration": null
+      },
+      {
+        "name": "/api/execute front-door rewrite live \u2014 Alibaba governed path turns code_review into a plain-language build review packet with a builder handoff brief",
+        "status": "passed",
+        "duration": 38121.63619999999
+      },
+      {
+        "name": "/api/execute front-door rewrite live \u2014 Alibaba governed path turns documentation into a structured operational doc packet with a handoff checklist",
+        "status": "skipped",
+        "duration": null
+      },
+      {
+        "name": "/api/execute front-door rewrite live \u2014 Alibaba governed path turns web_ux_redesign_system into a guarded UX packet with a visible review gate",
+        "status": "skipped",
+        "duration": null
+      },
+      {
+        "name": "/api/execute front-door rewrite live \u2014 Alibaba governed path turns data_analysis into a decision-focused insight packet with prioritised action recommendations",
+        "status": "skipped",
+        "duration": null
+      }
+    ],
+    "selectedPassed": false,
+    "claimBoundary": "two selected output cases only; skipped cases not passed; mocks declared, no full live governance proof"
+  },
+  "safeEvents": [
+    {
+      "kind": "CVF_CANARY_FETCH",
+      "value": [
+        {
+          "state": "pending"
+        }
+      ]
+    },
+    {
+      "kind": "CVF_CANARY_ROUTE",
+      "value": {
+        "status": 200,
+        "latencyMs": 50282,
+        "stage": null,
+        "class": null
+      }
+    },
+    {
+      "kind": "CVF_CANARY_ROUTE",
+      "value": {
+        "status": 200,
+        "latencyMs": 38120,
+        "stage": null,
+        "class": null
+      }
+    },
+    {
+      "kind": "CVF_CANARY_FETCH",
+      "value": [
+        {
+          "state": "response",
+          "status": 200,
+          "latencyMs": 37951
+        }
+      ]
+    }
+  ],
+  "tests": {
+    "red": "61 total:5 fail/56 pass; decimal Qwen3 recognition missing",
+    "green": "61 adapter tests pass; fake fetch, no live governance claim",
+    "typecheck": "PASS",
+    "scopedLint": "PASS"
+  },
+  "officialInput": {
+    "url": "https://www.alibabacloud.com/help/en/model-studio/batch-inference",
+    "retrievedDate": "2026-10-07",
+    "claim": "Qwen3 decimal-version series support enable_thinking, true/false; supplied quota model and Local payload are separately verified",
+    "authority": "external provider parameter documentation only, not private CVF or route proof"
+  },
+  "sourceWorktreeSha256": {
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/ai/providers.ts": "bca40aab2d66df9ee5f7060b0d7558d6e499cca1b5a118ed367e546ca04d94aa",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/ai/providers.test.ts": "7832a46a86ea3159f659680131f260df5ee1bf1607f2ae7cb1030c64721ef4f8",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.front-door-rewrite.alibaba.live.test.ts": "bb92c174439695d249cc9b69851adf460511cc41a9836b930a35f8b9e7bd373c"
+  },
+  "runtimeEvidence": {
+    "canary-diagnosis-admission.json": {
+      "sha256": "cf519e81784ea8ab9284fd201c26a3bc6f08b5a8687b1144446b6844fb81c1a8",
+      "content": {
+        "baseHead": "f1357757bd8852f102f5dec32381778346da2d4b",
+        "authority": "operator next and standing grouped Local repair/Alibaba-only test authority; lifecycle direct-task route",
+        "consumer": "existing Alibaba canary operator",
+        "outcome": "diagnose saved 400/timeouts, repair concrete input/model recognition gaps, retain safe stage timing evidence and honest bounded result",
+        "scope": [
+          "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/ai/providers.ts",
+          "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/ai/providers.test.ts",
+          "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.front-door-rewrite.alibaba.live.test.ts",
+          "docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md",
+          "docs/reviews/evidence/cvf-canary-route-diagnosis-2026-10-07.json"
+        ],
+        "requiredOutputs": [
+          "scalar fixture compatible with unchanged validator",
+          "Qwen3 decimal-version recognition, preserving explicit thinking models and unrelated models",
+          "regressions and safe targeted live diagnostics",
+          "terminal disposition with no unsupported timeout causality"
+        ],
+        "sourceFindings": {
+          "400": "code_review focus is an array; validator rejects non-scalar input before execution",
+          "thinking": "adapter regex qwen3- misses qwen3.8-27b; omitted enable_thinking differs from successful saved direct diagnostic",
+          "deadline": "case45s expires before default provider60s; does not identify original wait boundary"
+        },
+        "liveScope": "two existing scenarios app_builder_complete and code_review only; Alibaba local credential/qwen3.8-27b; maxCalls4, one use, no automatic retry; timeouts/assertions unchanged",
+        "stop": "deliver this bounded repair and evidence, no six-case replay or endpoint/spec/timeout campaign",
+        "beforeGitBlobSha256": {
+          "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/ai/providers.ts": "4ace18f9a8520765aa74cde30760a7c4d74f2ff7111f89936647f1d7d72da445",
+          "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/ai/providers.test.ts": "f9f51611fbd5cf692efa259b888406821c507800ac985d53df9a6ea54b7cc93a",
+          "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.front-door-rewrite.alibaba.live.test.ts": "52fee3b01ab5b0ff3f4e6bd1ed8db2f2127cbd54fff88302e554937433fd5bbb"
+        }
+      }
+    },
+    "canary-diagnosis-before-rerun.json": {
+      "sha256": "e23a976159fb52a772a0c562c2f1bdeacd7be9d41ba5a0dbe59ddc753cef4f43",
+      "content": {
+        "stage": "request_validation",
+        "class": "invalid_input",
+        "retryable": false,
+        "userAction": "correct scalar fixture; retain original failures and deadlines; capture provider wait boundary on two selected scenarios only",
+        "provider": "alibaba",
+        "model": "qwen3.8-27b",
+        "httpStatus": 400,
+        "safeMessage": "Source validator rejects code_review focus array. Qwen3 decimal model omission and 45s test versus60s provider timeout are source gaps, not proven causes of original five timeouts. Saved diagnostic precedes this distinct repair probe.",
+        "informationGain": "verify corrected scalar/model path and distinguish pending provider fetch from pre-provider wait",
+        "costReason": "two selected cases, max four requests, instead of six-case replay"
+      }
+    },
+    "canary-diagnosis-live-admission.json": {
+      "sha256": "81fc98d09e2adf6c168841355a77b8df77afad7268a1a0fcf5cad8ff93ac4ba2",
+      "content": {
+        "authority": "operator next and standing grouped Local repair/Alibaba-only test authority; lifecycle direct-task route",
+        "selectedScenarios": [
+          "app_builder_complete",
+          "code_review"
+        ],
+        "provider": "alibaba",
+        "model": "qwen3.8-27b",
+        "source": {
+          "requestedSource": "local",
+          "selectedSource": "local",
+          "selectedAlias": "ALIBABA_API_KEY",
+          "sourcesDiffer": true,
+          "environmentAliasesAgree": true,
+          "localAliasesAgree": true
+        },
+        "maxProviderCalls": 4,
+        "oneUse": "canary-diagnosis-live.used",
+        "mocks": [
+          "enforcement",
+          "session",
+          "quota"
+        ],
+        "sourceWorktreeSha256": {
+          "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/ai/providers.ts": "bca40aab2d66df9ee5f7060b0d7558d6e499cca1b5a118ed367e546ca04d94aa",
+          "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/ai/providers.test.ts": "7832a46a86ea3159f659680131f260df5ee1bf1607f2ae7cb1030c64721ef4f8",
+          "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.front-door-rewrite.alibaba.live.test.ts": "88ce23d64a55f9055d9aea27386139898459902018e004320cdc731084bd8e09"
+        },
+        "claimBoundary": "targeted real-provider output only, no full governance/canary/release proof"
+      }
+    },
+    "canary-diagnosis-live-result.json": {
+      "sha256": "9421cb81b057bc3d6bf139b14f0316e3f32896ab77ca623c7d242c6340712b8b",
+      "content": {
+        "processExit": 1,
+        "assertions": [
+          {
+            "name": "/api/execute front-door rewrite live \u2014 Alibaba governed path turns app_builder_complete into a builder-ready non-coder app brief",
+            "status": "failed",
+            "duration": 45025.208399999996
+          },
+          {
+            "name": "/api/execute front-door rewrite live \u2014 Alibaba governed path turns api_design into an integration handoff packet instead of a style-selection form",
+            "status": "skipped",
+            "duration": null
+          },
+          {
+            "name": "/api/execute front-door rewrite live \u2014 Alibaba governed path turns code_review into a plain-language build review packet with a builder handoff brief",
+            "status": "passed",
+            "duration": 38121.63619999999
+          },
+          {
+            "name": "/api/execute front-door rewrite live \u2014 Alibaba governed path turns documentation into a structured operational doc packet with a handoff checklist",
+            "status": "skipped",
+            "duration": null
+          },
+          {
+            "name": "/api/execute front-door rewrite live \u2014 Alibaba governed path turns web_ux_redesign_system into a guarded UX packet with a visible review gate",
+            "status": "skipped",
+            "duration": null
+          },
+          {
+            "name": "/api/execute front-door rewrite live \u2014 Alibaba governed path turns data_analysis into a decision-focused insight packet with prioritised action recommendations",
+            "status": "skipped",
+            "duration": null
+          }
+        ],
+        "selectedPassed": false,
+        "claimBoundary": "two selected output cases only; skipped cases not passed; mocks declared, no full live governance proof"
+      }
+    },
+    "canary-diagnosis-red.log": {
+      "sha256": "9506e433b9dcc46236ac643becbbb3c3d7ee43171ad903abc365f05b16fc39d9"
+    },
+    "canary-diagnosis-green.log": {
+      "sha256": "b6960c98d5b9a921a158abadb3ef565a57bd51f4f3503350fbc40d140f409f9f"
+    },
+    "canary-diagnosis-typecheck.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "canary-diagnosis-lint.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "canary-diagnosis-live.log": {
+      "sha256": "354731a85eda9f2988b1523fab8b9bd6a2f8d531d43f843e08d81d2a04a6abc5"
+    }
+  },
+  "causality": "Scalar input explains validation rejection. Source omission of thinking control is repaired, but old timeout boundary was not instrumented and no historical causality is certified. Current safe trace records actual waits/status.",
+  "claimBoundary": "Same Local actor; two selected cases only, enforcement/session/quota mocks retained; no model ranking/default selection, full canary PASS, governance/release/W05-prelive closure.",
+  "liveInterpretation": {
+    "selectedCases": 2,
+    "passed": 1,
+    "failed": 1,
+    "unselected": 4,
+    "code_review": "200,38.120s route,37.951s fetch; assertions passed",
+    "app_builder_complete": "45s timeout with fetch pending; late route200 at50.282s; remainsFAIL",
+    "attributionLimit": "Late route log appears under next Vitest test context; by sequential invocation and latency it belongs to earlier request. Final telemetry adds explicit templateId for future correlation, no API rerun.",
+    "historicalTimeoutCause": "NOT_PROVEN"
+  },
+  "postProofSourceQualification": {
+    "change": "local payload variable and templateId-only route log correlation added after live run; equivalent Vietnamese fixture string encoded with Unicode escapes for encoding gate",
+    "claim": "No request/provider/deadline/output assertion changes; live admission pins executed bytes; final typecheck/lint required, no final-source live certification"
+  }
+}
