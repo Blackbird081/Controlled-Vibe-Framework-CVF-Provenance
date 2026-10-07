@@ -16,7 +16,77 @@ it adds no new program, work order, schema, checker or pilot. Predecessor is
 docs/baselines/CVF_GC018_NCR_CONSOLIDATED_LOCAL_FOUNDATION_2026-10-06.md,
 which has957 lines; use a continuation rather than grow it toward the hard limit.
 
-## Current Local Fulfillment Route Decision - 2026-10-07
+## Current Commit-Steward Explicit Work-Order Binding - 2026-10-07
+
+Consumer: Local reviewer using the existing commit-steward reviewer-return CLI.
+Finite outcome: pass the explicitly selected work order to its existing worker
+return fast gate and preserve failure. Operator next and standing bounded Local
+maintenance admit this small direct-task adapter repair; no delegated/multi-step
+work order or new contract is introduced merely to repeat this task's scope.
+Clean base 0f6be4e6cf19a44ea2e90d0b3315c0e43ae2845c. Four material paths admitted before source/test effects;
+pre-implementation gate PASS. Required outputs: optional forwarding, meaningful
+CLI/default/failure regressions and source-bound terminal evidence. All delivered.
+
+### Source Verification Block
+
+| Source | Disposition | Verified gap / boundary |
+|---|---|---|
+| governance/compat/run_agent_commit_steward_preflight.py | ACCEPT | reviewer-return built a bare fast-gate command; CLI had no explicit work-order option |
+| governance/compat/run_worker_return_fast_gate.py | ACCEPT | existing active-work-order path binds acceptance and existing packet/return checks; no code change |
+| docs/reference/work_order_template/CVF_WORK_ORDER_ACCEPTANCE_LEDGER_ADDENDUM.md | ACCEPT | existing structural acceptance contract; proof content remains reviewer responsibility |
+| docs/reference/CVF_GOVERNED_WORK_LIFECYCLE_AND_DESIGN_CONTROL_STANDARD_2026-06-11.md | ACCEPT | small direct-task owner/output route; finite outcome, compatible repairs and terminal review |
+
+### Implementation / Evidence / Terminal Disposition
+
+The steward CLI now accepts optional --active-work-order only with --mode
+reviewer-return. It forwards the exact value as one subprocess argument to the
+existing fast gate; paths containing spaces stay intact. A blank value or any
+of the other six modes is rejected by argparse before executing gates. The
+legacy command without this option is unchanged. Plan-only prints the selected
+binding and executes no gate. A child failure remains preflight exit1; diff
+hygiene still runs. No implicit active-session/closed-order selection is added.
+
+Usage for an eligible executable return:
+`python governance/compat/run_agent_commit_steward_preflight.py --mode reviewer-return --active-work-order <committed-owned-work-order> --base <execution-base> --enforce`.
+The downstream gate still owns packet path/return validation. Supplying this
+option is not dispatch authority, semantic acceptance or proof of a committed
+work order. Existing eligibility and proof-content/revision review remain required.
+
+Red21 tests:3 failed/18 passed. Green21/21 PASS in0.33s, including prior steward
+shape/range/receipt tests. New tests call the actual CLI main and command builder;
+Git path observation and child runner are stubbed. Real-process help exits0 and
+unsupported mode/option combination exits2. These are structural argument/caller
+tests, not an actual acceptance run, provider or live AI governance proof.
+Companion: docs/reviews/evidence/cvf-steward-work-order-binding-2026-10-07.json.
+The prior five real-Git ledger cases are consumed, not rerun. No browser, Docker,
+provider, actual dispatch or public effect from this adapter repair.
+
+Terminal: STEWARD_EXPLICIT_WORK_ORDER_BINDING_IMPLEMENTED_VERIFIED_BOUNDED.
+Selected adapter gap closed; no new checker/schema or semantic proof reader.
+General automatic Local-maintenance coverage and continuous agent behavior
+remain unproved. Continue only by a concrete receiving outcome; do not reopen
+this adapter or the accepted design/fixtures as another automatic tranche.
+
+## Core Guard Self-Protection Authorization
+
+Authorized guard-maintenance scope: optional explicit work-order plumbing in the
+existing reviewer-return steward CLI with compatible default and child-failure
+behavior. Protected paths: governance/compat/run_agent_commit_steward_preflight.py;
+governance/compat/test_run_agent_commit_steward_preflight.py.
+Operator authorization: next on2026-10-07 and standing instruction to complete
+bounded compatible Local foundation upgrades; no closed alignment packet reopening.
+Rollback boundary: four exact material paths named in the current trace; revert
+this adapter delta only. Existing fast gate, acceptance checker, authority pins,
+statuses, provider execution authority and parked lanes remain unchanged.
+
+## Current Runtime Freshness Verification
+
+Source/consumer reads at clean base 0f6be4e6cf19a44ea2e90d0b3315c0e43ae2845c; companion records base Git bytes and
+changed source/test worktree bytes distinctly. Scoped21 tests validate the actual
+main-to-command assembly; two process-level parser checks recorded. No actual
+worker/acceptance invocation or product/provider/browser runtime executed.
+
+## Historical Local Fulfillment Route Decision - 2026-10-07
 
 Consumer: next Local lead/reviewer of eligible multi-step implementation.
 Required outputs: source-bound real-Git entrypoint observations, explicit gate
@@ -86,7 +156,7 @@ send/B2 and S05/C1 stay parked; NIS-T1J has no automatic successor; LHW24 is clo
 Intake specs remain agent-readable inputs, not guaranteed build-ready contracts;
 VI Idea Brief and EN Working Brief serve different audiences, LLM enrichment optional.
 
-## Current Runtime Freshness Verification
+## Historical Frontier Runtime Freshness Verification
 
 This review joins the six accepted evidence Git blobs at clean base 6a0c5748bb2615083bb8eef7a4f868c26e473126.
 No current product runtime or hosted CI was executed. Browser capability observation:
@@ -283,6 +353,7 @@ send/B2, S05/C1, P11, CCMA, public/deploy remain unchanged/parked.
 
 | Finding | Defect class | Learning lane | Disposition | Control action |
 |---|---|---|---|---|
+| Steward caller cannot pass explicit work-order binding | ORCHESTRATOR_PACKET_GAP | GOVERNANCE_CONTROL_PLANE | RULE_EXISTS | optional forwarding to existing fast gate; unchanged checker/default |
 | Historical selected frontier requeues delivered work | ORCHESTRATOR_PACKET_GAP | DOCUMENTATION_ONLY_LEARNING | RULE_EXISTS | current existing-owner frontier and source-bound next move; no new guard |
 | Ambient ignored file closes a projected dependency | MACHINE_GATE_GAP | GOVERNANCE_CONTROL_PLANE | RULE_EXISTS | existing checker uses Git-visible membership; no new gate or public authorization |
 | Quoted paths and replacement decoding hide inspection gaps | RUNTIME_SIGNAL_GAP | RUNTIME_BEHAVIOR_LEARNING | RULE_EXISTS | NUL paths, strict bytes and actual decoded count |
@@ -296,14 +367,14 @@ send/B2, S05/C1, P11, CCMA, public/deploy remain unchanged/parked.
 
 ## Epistemic Process Block
 
-Expected Result / Prediction: selected frontier distinguishes delivered bounded
-proof from actual candidate, browser, operational and general automation outcomes.
-Evidence Comparison: six accepted evidence Git-byte joins match; current browser
-inventory empty and IAB unavailable; prior live failures remain failures.
-Contradiction Or Gap Disposition: supersede stale W05 selection priority here;
-retain historical snapshots and action-specific checkpoints, no broad rerun.
-Claim Update: selected frontier reconciled bounded; no whole P01-P10, pre-live,
-release, universal control or corpus-wide completeness claim.
+Expected Result / Prediction: explicit reviewer work-order reaches the existing
+fast gate unchanged; child failure remains failure; default and other modes retained.
+Evidence Comparison: red3/21 failures; green21/21 PASS; real help exit0 and invalid
+mode/option exit2. Child/Git test stubs are declared; no whole acceptance claim.
+Contradiction Or Gap Disposition: adapter gap repaired; existing checker semantics,
+proof content/revision review and unproved general automation remain separate.
+Claim Update: explicit steward binding implemented verified bounded; no actual
+worker lifecycle, live governance, release or universal completion enforcement.
 
 ## Historical Memory Repair Scope / Target / Owner Boundary
 
@@ -349,7 +420,7 @@ regressions bind the defect/repair to this consumer; no upstream absence claim.
 | Matching local-view guard | N/A with reason: no external input; existing route/test consumer |
 | Owner surface | existing NCR P06 memory readout route and baseline continuation |
 | Disposition | LOCAL_SOURCE_REPAIR_ONLY |
-| Claim boundary | existing route verified structurally only; no semantic/live/full lifecycle or universal automation proof |
+| Claim boundary | explicit CLI forwarding only; no actual acceptance/live/general automation proof |
 
 Exact material manifest: the two route/source test files named above, this
 continuation and the predecessor's continuation pointer. No other product path.
@@ -402,7 +473,7 @@ The binding preserves the existing method; no remote agent or external intake.
 
 ## ADIF Defect Registry Disclosure
 
-Resolver query: taskClass=`review`, role=`reviewer`, lifecyclePhase=`review`
+Resolver query: taskClass=`implementation`, role=`worker`, lifecyclePhase=`pre-implementation`
 
 Returned defects: NONE_RETURNED. Zero candidates and no truncation.
 
@@ -410,33 +481,32 @@ Returned defects: NONE_RETURNED. Zero candidates and no truncation.
 
 | Field | Evidence |
 |---|---|
-| Actor | Local fulfillment-route designer and structural probe recorder |
-| Provider or surface | private repository and disposable Git fixtures; no provider or delegation |
-| Session or invocation | local-outcome-route-20261007 |
+| Actor | Local steward-adapter maintainer and scoped evidence recorder |
+| Provider or surface | private repository and isolated CLI tests; no provider or delegation |
+| Session or invocation | steward-work-order-binding-20261007 |
 | Working directory | repository root |
-| Command or tool surface | five isolated real-Git checker entrypoint cases; bound/unbound command assembly; structural governance gates |
-| Target paths | docs/reviews/learnings/CVF_OUTCOME_BOUND_CONTINUATION_LEARNING_2026-10-07.md; docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md; docs/reviews/evidence/cvf-local-outcome-route-2026-10-07.json |
-| Allowed scope source | operator next; finite existing-owner source-only design and structural proof |
-| Before status evidence | clean 4455b25c51693ef4c03df70110843522a8f445e1 |
-| After status evidence | exact three documentation/evidence paths; no checker/product/authority activation |
-| Diff evidence | exact staged manifest; source Git-byte pins and embedded reproducible probe |
-| Approval boundary | isolated structural proof and source-only design; no actual dispatch or parked effect |
-| Claim boundary | existing route verified structurally only; no semantic/live/full lifecycle or universal automation proof |
+| Command or tool surface | pytest21 steward tests; two real CLI parser checks; structural governance gates |
+| Target paths | governance/compat/run_agent_commit_steward_preflight.py; governance/compat/test_run_agent_commit_steward_preflight.py; docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md; docs/reviews/evidence/cvf-steward-work-order-binding-2026-10-07.json |
+| Allowed scope source | operator next and standing bounded Local maintenance; small direct-task existing-owner route |
+| Before status evidence | clean 0f6be4e6cf19a44ea2e90d0b3315c0e43ae2845c |
+| After status evidence | exact four material paths; optional caller binding only |
+| Diff evidence | exact staged manifest; source/result hashes in companion |
+| Approval boundary | Local source/isolated tests; no actual dispatch or parked effect |
+| Claim boundary | explicit CLI forwarding only; no actual acceptance/live/general automation proof |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | local-outcome-route-20261007 |
-| Expected manifest | docs/reviews/learnings/CVF_OUTCOME_BOUND_CONTINUATION_LEARNING_2026-10-07.md; docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md; docs/reviews/evidence/cvf-local-outcome-route-2026-10-07.json |
-| Actual changed set | docs/reviews/learnings/CVF_OUTCOME_BOUND_CONTINUATION_LEARNING_2026-10-07.md; docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md; docs/reviews/evidence/cvf-local-outcome-route-2026-10-07.json |
+| Invocation ID | steward-work-order-binding-20261007 |
+| Expected manifest | governance/compat/run_agent_commit_steward_preflight.py; governance/compat/test_run_agent_commit_steward_preflight.py; docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md; docs/reviews/evidence/cvf-steward-work-order-binding-2026-10-07.json |
+| Actual changed set | governance/compat/run_agent_commit_steward_preflight.py; governance/compat/test_run_agent_commit_steward_preflight.py; docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md; docs/reviews/evidence/cvf-steward-work-order-binding-2026-10-07.json |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |
 
 ## Next Allowed Move
 
-Consume the current grouped frontier and accepted proof. Select an actual receiving
-outcome before new material work; do not reopen delivered P02/W05 source reconciliation
-or search endpoints without a named defect. Browser capability is absent. Data/effect
-checkpoints remain action-specific; isolated development needs no user ledger copy.
-General outcome automation requires its own finite existing-owner design admission.
-No full release, public/deploy/P11/send/B2/S05/C1 promotion.
+Consume the adapter proof; eligible multi-step returns can use explicit steward
+--active-work-order binding with the existing acceptance route. Bare/direct-task
+checks do not claim ledger fulfillment. No automatic rerun or adapter successor.
+Select a concrete receiving outcome from the current grouped frontier; retain
+action-specific authority, proof-content review and parked-lane boundaries.
 
 ## Guard Endpoint Admission Batch - 2026-10-07
 

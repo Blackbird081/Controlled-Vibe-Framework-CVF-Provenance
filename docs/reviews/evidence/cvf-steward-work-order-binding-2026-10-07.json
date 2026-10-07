@@ -1,0 +1,81 @@
+{
+  "admission": {
+    "baseHead": "0f6be4e6cf19a44ea2e90d0b3315c0e43ae2845c",
+    "scope": [
+      "governance/compat/run_agent_commit_steward_preflight.py",
+      "governance/compat/test_run_agent_commit_steward_preflight.py",
+      "docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md",
+      "docs/reviews/evidence/cvf-steward-work-order-binding-2026-10-07.json"
+    ],
+    "consumer": "Local reviewer using commit-steward reviewer-return preflight",
+    "outcome": "optional explicit active work-order forwarded to existing fast gate with child failure retained",
+    "authority": "operator next and standing bounded Local maintenance; small direct-task existing-owner route",
+    "requiredOutputs": [
+      "optional CLI forwarding limited to reviewer-return",
+      "regressions for forwarding/failure/default/invalid combinations",
+      "source/result identity and terminal disposition"
+    ],
+    "stop": "four material paths then mandatory checks and continuity; no checker semantics/auto-selection/new schema/provider/browser/public effect"
+  },
+  "sourceBinding": {
+    "governance/compat/run_agent_commit_steward_preflight.py": {
+      "baseGitByteSha256": "a79b0d937245cffb68fb65fb8adb77417910459d7181c5b1e192e856ab0d6541",
+      "changedWorktreeByteSha256": "235834162c57aec66b461cc341321b34a1d72427c70cc4b458428a5f5d32c8b9"
+    },
+    "governance/compat/test_run_agent_commit_steward_preflight.py": {
+      "baseGitByteSha256": "b9d1bc57d16fade27f4a9c1d0c5d2a9cb0d65462fb968f283e564d185c92fd95",
+      "changedWorktreeByteSha256": "08f9eb7114992209d49f53d3d754612ed44c89a44259e793403cad5944b9df5b"
+    }
+  },
+  "regressions": {
+    "red": {
+      "failed": 3,
+      "passed": 18,
+      "seconds": 0.53
+    },
+    "green": {
+      "passed": 21,
+      "seconds": 0.33
+    },
+    "command": "python -B -m pytest governance/compat/test_run_agent_commit_steward_preflight.py -q",
+    "assertionBoundary": "main CLI parsing and actual command assembly; child execution and Git path observation stubbed, not real worker lifecycle",
+    "coverage": [
+      "exact explicit work-order argument including spaces",
+      "child fast-gate failure propagates to preflight exit1",
+      "bound success and legacy default unchanged",
+      "all six other modes reject work-order before gate execution",
+      "blank work-order rejected",
+      "plan-only displays binding and executes no gates"
+    ]
+  },
+  "realCliChecks": [
+    {
+      "arguments": [
+        "--help"
+      ],
+      "expectedExit": 0,
+      "actualExit": 0,
+      "outputSha256": "c146fad7aa39b8b528e6c6d0ad68cb0c5ceca65398ae6bc7110a3b0b407c9174"
+    },
+    {
+      "arguments": [
+        "--mode",
+        "closure",
+        "--active-work-order",
+        "owned.md",
+        "--plan-only"
+      ],
+      "expectedExit": 2,
+      "actualExit": 2,
+      "outputSha256": "476965b0778271bc55b77713e19ae61fa95fc9a172333231824e4ff2aa7605f6"
+    }
+  ],
+  "runtimeLogSha256": {
+    "steward-binding-red.log": "b7bfc39942a5b36595ca0724f4d7c1dc8edea6827810e2f79ddf88ebcb4dbb15",
+    "steward-binding-green.log": "3f39b1be4ccf1708a7e04671f192095fcd4a0e4d59e0548674d659c6fe7fd2e6"
+  },
+  "implementation": "Optional --active-work-order only for reviewer-return; forward unchanged to existing fast gate; no inferred work order or auto-selection; existing checker semantics unchanged",
+  "consumerUsage": "python governance/compat/run_agent_commit_steward_preflight.py --mode reviewer-return --active-work-order <committed-owned-work-order> --base <execution-base> --enforce",
+  "claimBoundary": "explicit caller plumbing only; no independent reviewer, actual acceptance execution, semantic proof validation, universal task coverage, AI/live governance, provider, browser, public or release proof",
+  "terminal": "STEWARD_EXPLICIT_WORK_ORDER_BINDING_IMPLEMENTED_VERIFIED_BOUNDED"
+}
