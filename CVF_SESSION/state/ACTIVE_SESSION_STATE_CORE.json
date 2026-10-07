@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1J_DOCUMENTARY_WORKSHEET_EXPORT_2026-10-06.md",
     "workOrderSha256": "572fd199b2fd641b4a8eeb6e80006a555951f4ce7a8122801efe775df93e111e"
   },
-  "currentAuthoritySyncReason": "Accepted NIS-T1J authority retained; separately operator-authorized NCR W05 readiness disposition 0c96a2ad61de54246099b68844820bedc5820057 changes continuation,not substantive NIS authority,live/runtime permissions or pre-live/release closure.",
+  "currentAuthoritySyncReason": "Accepted NIS-T1J authority retained; operator-admitted existing-owner outcome design e5dc51ef27ef5ddbc176e1e00b3ba7d5eeb4534e adds written lifecycle routing and corrects learning coverage,not checker activation,NIS authority or runtime/release permission.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
