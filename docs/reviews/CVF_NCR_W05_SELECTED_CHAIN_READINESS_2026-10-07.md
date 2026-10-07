@@ -1,7 +1,7 @@
 # NCR W05 Selected HTML Chain Readiness
 
 Memory class: FULL_RECORD
-Status: LOCAL_CURRENT_ROUTE_PROOF_RECORDED_BOUNDED
+Status: LOCAL_BROWSER_CONSUMER_PROOF_RECORDED_BOUNDED
 docType: review
 Date: 2026-10-07
 rawMemoryReleased=false
@@ -196,7 +196,7 @@ NCR lexical alignment alone was accepted bounded with the recorded F1 limit.
 
 ## Current Bounded Route Execution - 2026-10-07
 
-Status: LOCAL_CURRENT_ROUTE_PROOF_RECORDED_BOUNDED. Consumer: receiving Local
+Status: LOCAL_BROWSER_CONSUMER_PROOF_RECORDED_BOUNDED. Consumer: receiving Local
 developer/operator. This is the terminal result of the prepared five-case proof,
 not another planning-only step. Earlier source-only and NOT_RELEASED descriptions
 are preserved as snapshots; the current execution disposition is this section.
@@ -321,14 +321,14 @@ Returned defects: zero; totalCandidates=0; truncated=false.
 | Target paths | docs/reviews/CVF_NCR_W05_SELECTED_CHAIN_READINESS_2026-10-07.md; docs/reviews/evidence/cvf-ncr-w05-chain-reconciliation-2026-10-07.json |
 | Allowed scope source | operator next, standing grouped isolated testing and Alibaba authorization; lifecycle small-direct-task route |
 | Before status evidence | clean 0d92eb76cbb708f4aa37a01343573a3b8468a06b |
-| After status evidence | two evidence/documentation paths; product source and closed alignment authority unchanged |
+| After status evidence | four-path browser proof/helper and evidence manifest; product source and closed alignment authority retained |
 | Diff evidence | companion embeds admission/results/diagnostics and raw hashes; exact staged manifest |
-| Approval boundary | bounded synthetic/local proof only; no real data/pilot/browser/public/deploy |
+| Approval boundary | bounded synthetic/local browser proof only; real data/pilot/durable acceptance/public/deploy parked |
 | Claim boundary | five current synthetic assertions and two provider Boolean observations; no independent reviewer or release-quality proof |
 | Agent type | INTERNAL_AGENT |
 | Invocation ID | ncr-w05-current-route-20261007 |
-| Expected manifest | docs/reviews/CVF_NCR_W05_SELECTED_CHAIN_READINESS_2026-10-07.md; docs/reviews/evidence/cvf-ncr-w05-chain-reconciliation-2026-10-07.json |
-| Actual changed set | docs/reviews/CVF_NCR_W05_SELECTED_CHAIN_READINESS_2026-10-07.md; docs/reviews/evidence/cvf-ncr-w05-chain-reconciliation-2026-10-07.json |
+| Expected manifest | scripts/probe_cvf_q001_synthetic_system_chain.py; `scripts/probe_cvf_w05_browser_chain.cjs`; docs/reviews/CVF_NCR_W05_SELECTED_CHAIN_READINESS_2026-10-07.md; docs/reviews/evidence/cvf-ncr-w05-chain-reconciliation-2026-10-07.json |
+| Actual changed set | scripts/probe_cvf_q001_synthetic_system_chain.py; `scripts/probe_cvf_w05_browser_chain.cjs`; docs/reviews/CVF_NCR_W05_SELECTED_CHAIN_READINESS_2026-10-07.md; docs/reviews/evidence/cvf-ncr-w05-chain-reconciliation-2026-10-07.json |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |
 
@@ -371,7 +371,56 @@ no public export, push or deploy; public changes use the separate public-sync cl
 
 ## Claim Boundary
 
-Current synthetic export/receipt/SQLite evidence only; no full Work Transfer
-browser interaction, live end-to-end AI governance, independent review, final
+Current synthetic export/receipt/SQLite and selected browser consumer evidence;
+no full browser UX, live end-to-end AI governance, independent review, final
 acceptance, release-quality, pilot, real-data cutover, public or deployment claim.
 Historical receipts remain bounded; closed authority and parked lanes unchanged.
+
+## Browser Consumer Admission 2026-10-08
+
+Small direct task under operator next and grouped autonomous isolated testing.
+Receiving consumer: Work Transfer HTML browser export and download. Finite
+outcome: one synthetic browser build joins the unmocked Web response to a
+real engine and fresh SQLite exact request ID; saved bytes and stale-form
+download stay bound to that build. Existing W05 owner, no new tranche.
+Required outputs and exact four-path material manifest are in companion
+browserConsumer20261008.admission and the trace above. Scope is probe/helper
+and evidence only; no product source mutation. Stop after these outputs and
+continuity, or a consequential capability/authority boundary.
+
+Expected Result: one browser export/engine forward, PRESENT receipt and
+DRAFT_UNACCEPTED retained; saved bytes equal returned HTML before and after
+an unsent form edit. Evidence Comparison: selected consumer result and source reconciliation below.
+Contradiction Or Gap Disposition: consume prior five synthetic HTTP/store cases
+and canonical9/9; their browser composition gap justifies this distinct test,
+not duplicate replay. Claim Update: pending; browser transport/persistence and
+presentation only, no live AI governance or acceptance certification.
+Existing Docker image is pinned, pull forbidden, engine source read-only;
+shared installed dependencies disclosed, fresh ignored SQLite, owned loopback
+processes and no credential inheritance into the staged application.
+Real data/pilot, durable acceptance, P11, send/B2, S05/C1, CCMA, public/deploy
+remain parked. No provider invocation. Terminal browser evidence: BROWSER_CONSUMER_PASS_BOUNDED.
+One current Playwright Chromium Work Transfer interaction issued one real
+export request, authenticated through the existing synthetic admin session.
+The response observed PRESENT/ALLOW and retained DRAFT_UNACCEPTED; its exact
+attempt ID equals receipt ID and the real engine/store request ID. Fresh
+SQLite holds one block; proxy observed one engine forward. Two browser saves,
+before and after an unsent title edit, equal the returned HTML bytes (2703
+UTF-8 bytes, SHA-256 6107039f5e5c4e415516368a6d967b11c59c4cda95a912743e027c1223d86085).
+The UI shows the earlier-version notice after that edit and retains the
+draft/non-approval note. No second export or observed browser AI POST.
+
+Expected Result: delivered. Evidence Comparison: named staged/worktree hashes
+match, one engine/store join, both saved-file comparisons PASS; runner exit0
+in 72438ms. Six existing runner safety tests and Node syntax PASS.
+Contradiction Or Gap Disposition: no product defect identified; prior five
+HTTP/store cases and canonical9/9 are retained without replay. Claim Update:
+current browser transport/persistence/presentation gap covered within this
+synthetic profile; no semantic governance, live AI or acceptance certification.
+Owned container and scratch absent after successful runner cleanup; process
+cleanup follows existing runner finally logic, not an independent reviewer.
+The companion embeds raw result, source/backend/dependency pins and digests.
+Required outputs delivered except post-material continuity. Stop selected
+proof here; wider roadmap continuation returns to an existing admitted outcome.
+Full browser UX, print, live AI composition, durable artifact approval,
+real-data R2/R3, P11, send/B2, S05/C1, CCMA, public/deploy remain unproved/parked.

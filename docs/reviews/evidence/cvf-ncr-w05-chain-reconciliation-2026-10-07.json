@@ -377,5 +377,174 @@
     "reviewIndependence": "same Local actor consumes existing runner assertions; not an independent probe or release-quality acceptance",
     "terminalStop": "bounded synthetic route evidence delivered; no new endpoint repair, broad suite replay or pilot selected",
     "claimBoundary": "current synthetic export/receipt/SQLite seam only, not Work Transfer browser interaction or live end-to-end AI governance, durable artifact approval, real-data cutover, W05 pre-live/R2/R3/public/deploy"
+  },
+  "browserConsumer20261008": {
+    "admission": {
+      "baseHead": "5540847da5bfa95e6c08ace69e4cbdf95154e392",
+      "role": "INTERNAL_AGENT; Local direct-task verifier; decision owner Local",
+      "authority": "operator next and standing grouped autonomous isolated testing; existing W05 owner, small direct task",
+      "consumer": "Work Transfer HTML browser export/download receiving consumer",
+      "expectedManifest": [
+        "scripts/probe_cvf_q001_synthetic_system_chain.py",
+        "scripts/probe_cvf_w05_browser_chain.cjs",
+        "docs/reviews/CVF_NCR_W05_SELECTED_CHAIN_READINESS_2026-10-07.md",
+        "docs/reviews/evidence/cvf-ncr-w05-chain-reconciliation-2026-10-07.json"
+      ],
+      "requiredOutputs": [
+        "current source/backend/dependency identities",
+        "one real browser export with exact receipt/store ID join",
+        "saved-file equality and stale-form version binding",
+        "owned-process/store cleanup and bounded terminal disposition",
+        "continuity"
+      ],
+      "informationGain": "prior five HTTP/store cases and separate mocked/no-hop browser cases did not observe this browser-to-engine-to-download composition",
+      "costReason": "one synthetic browser build; consume prior five cases and 9/9 canonical evidence without replay; no product source change or provider execution",
+      "engineImage": "sha256:a0725d62d5cfa8fc47b5e30be04bc08ea714a9cdd72c259595526f691db95294",
+      "dependencyBoundary": "installed Web node_modules junction; staged Git-visible source excluding env/active ledger; fresh ignored SQLite; loopback owned processes; Docker pull never/read-only source",
+      "stop": "deliver these outputs or record consequential capability/authority boundary; no new roadmap tranche",
+      "parked": "real data/pilot, durable artifact approval, live AI, P11, send/B2, S05/C1, CCMA, public/deploy",
+      "worktreeSourceSha256": {
+        "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/api/server.py": "b557d28703c22353c74de170e5eb9151e73fa216a44fb3af39935b92da055bd6",
+        "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/ledger_layer/sqlite_ledger.py": "df353a92b3adead1ed5cf00d7128ba9039c573e0441b819118094ec77c4c4ce5",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/page.tsx": "0ed365b59324bb836d8ec56cba143df941e7a7f8dfa11b841b28a68212f1b35d",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/proof.ts": "fbdcc3a434eea13842c9f692d2b54cc9955e80d8c8777d9dfaa14cace9cdfcaf",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/route.ts": "a17ddd57882be1e58a86fb1d86bea8a2693f1169f5ba0c8b6da2af75d7f024ae",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/governance/evaluate/route.ts": "b232dcbdfb1a5ec7982e2ed35caf1e9313dec553a3dcf5752576cc110955c1cb",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.tsx": "efc5839896236dacc7b37e145fda9904a9513bea434b3ff5c8bcd81652e9ea3e",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/bounded-request-body.ts": "5986f11e0b78403d9c3175f4ae11a861a4937f5358f2f24a28aff67a1697461f",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/governance-engine.ts": "48d3252df6614866b3fe84904a0c0f4bd6528d42f1da76543a0db76947494dde",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/route-governance-proof.ts": "17c19ccc4e31d5e068b728304e4a0970ddc072a9711460dd62b859f3ade15b6e",
+        "scripts/probe_cvf_q001_synthetic_system_chain.py": "db683256d74474d6d55d1c2e6d93e5a03c7c87d0317e677e7d41523177334b6c",
+        "scripts/probe_cvf_w05_browser_chain.cjs": "c46edd6a1bbd07feb0beeb87c691a46e4ae32c2a69329253373cb08bc4630a93"
+      },
+      "dependencyIdentity": {
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/package-lock.json": "d23ae4aa094b97a2c9149ed84227e9ddd3255db9df67efba8218e7c61e5c4d8b"
+      },
+      "dependencyVersions": {
+        "next": "16.2.7",
+        "@playwright/test": "1.58.2"
+      }
+    },
+    "status": "BROWSER_CONSUMER_PASS_BOUNDED",
+    "claimBoundary": "Browser transport/persistence/presentation proof only; engine decision is observed, not semantic governance or artifact acceptance certification.",
+    "firstAttempt": {
+      "commandResult": {
+        "command": [
+          "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+          "-B",
+          "scripts/probe_cvf_q001_synthetic_system_chain.py",
+          "--engine-docker-image",
+          "sha256:a0725d62d5cfa8fc47b5e30be04bc08ea714a9cdd72c259595526f691db95294",
+          "--browser-export-only"
+        ],
+        "exitCode": 1,
+        "elapsedMs": 58406,
+        "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderrSha256": "e40b579911b3bccaf96a53d40a08b0f8f0d8b74375603a16c84ec4ebc434e6e7"
+      },
+      "diagnostic": "Traceback (most recent call last):\n  File \"D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\scripts\\probe_cvf_q001_synthetic_system_chain.py\", line 445, in <module>\n    print(json.dumps(run_probe(args.engine_docker_image, browser_export_only=args.browser_export_only), indent=2, sort_keys=True))\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\scripts\\probe_cvf_q001_synthetic_system_chain.py\", line 322, in run_probe\n    raise RuntimeError(\"Synthetic browser consumer failed: \" + browser_process.stderr[-4000:])\nRuntimeError: Synthetic browser consumer failed: locator.fill: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByLabel('Title', { exact: true })\u001b[22m\n\n\n"
+    },
+    "retryDiagnostic": {
+      "cause": "Work Transfer mounts export panel only after selecting an audit event; fixture tried Title before selecting one. No export request reached this wait.",
+      "correction": "seed one synthetic audit event via real authenticated admin route in explicit disposable file store; select its exact event ID, then build once",
+      "informationGain": "complete admitted browser consumer path; no product or timeout changes",
+      "cost": "one targeted corrected synthetic invocation, no provider call or prior HTTP-case replay"
+    },
+    "commandResult": {
+      "command": [
+        "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "-B",
+        "scripts/probe_cvf_q001_synthetic_system_chain.py",
+        "--engine-docker-image",
+        "sha256:a0725d62d5cfa8fc47b5e30be04bc08ea714a9cdd72c259595526f691db95294",
+        "--browser-export-only"
+      ],
+      "exitCode": 0,
+      "elapsedMs": 72438,
+      "stdoutSha256": "3e85e4380016d8e9f3bd2230e8ad08e97442d68dded918ab39567cd6890c06ba",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "result": {
+      "browser": {
+        "artifactState": "DRAFT_UNACCEPTED",
+        "attemptId": "artifact-proof-w05-synthetic-browser-1791393346739",
+        "authMode": "session",
+        "browserVersion": "145.0.7632.6",
+        "bytes": 2703,
+        "claimBoundary": "Synthetic browser transport/presentation; no semantic governance or artifact acceptance proof.",
+        "exportRequests": 1,
+        "httpStatus": 200,
+        "observedBrowserAiPosts": [],
+        "receiptDecision": "ALLOW",
+        "receiptId": "artifact-proof-w05-synthetic-browser-1791393346739",
+        "receiptStatus": "PRESENT",
+        "routeDecision": "ALLOW",
+        "savedSha256": [
+          "6107039f5e5c4e415516368a6d967b11c59c4cda95a912743e027c1223d86085",
+          "6107039f5e5c4e415516368a6d967b11c59c4cda95a912743e027c1223d86085"
+        ],
+        "sourceAuditEventId": "20d57b28-1ae3-41c2-96c0-074d0dcfe74c",
+        "staleFormDownloadMatchesSubmittedVersion": true,
+        "syntheticAuditSeedRequests": 1
+      },
+      "claimBoundary": "No live AI governance, artifact approval, independent review or real-data R2/R3 proof.",
+      "engineDockerImage": "sha256:a0725d62d5cfa8fc47b5e30be04bc08ea714a9cdd72c259595526f691db95294",
+      "engineReport": {
+        "action": "ALLOW",
+        "artifactId": "w05-synthetic-browser",
+        "decision": "ALLOW",
+        "ledgerAttached": true,
+        "requestId": "artifact-proof-w05-synthetic-browser-1791393346739"
+      },
+      "executionBaseHead": "5540847da5bfa95e6c08ace69e4cbdf95154e392",
+      "forwardedEngineCalls": 1,
+      "schemaVersion": "cvf.w05BrowserConsumerEvidence.v1",
+      "scope": "SYNTHETIC_BROWSER_TRANSPORT_PERSISTENCE_PRESENTATION",
+      "sqlite": {
+        "blockDecision": {
+          "evaluated_at": "2026-10-07T17:15:47.067662",
+          "final_decision": "ALLOW",
+          "risk_score": 0.0,
+          "triggered_rules": []
+        },
+        "blockHash": "0c2e3dd10e9e8167423c1be154b138fe6a71ce95acc6eccb0f0eb880b02b70f7",
+        "chainValid": true,
+        "count": 1,
+        "exactIdFound": true,
+        "tipHash": "0c2e3dd10e9e8167423c1be154b138fe6a71ce95acc6eccb0f0eb880b02b70f7"
+      },
+      "stagedHelperSha256": "c46edd6a1bbd07feb0beeb87c691a46e4ae32c2a69329253373cb08bc4630a93",
+      "stagedSourceHashes": {
+        "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/api/server.py": "b557d28703c22353c74de170e5eb9151e73fa216a44fb3af39935b92da055bd6",
+        "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/ledger_layer/sqlite_ledger.py": "df353a92b3adead1ed5cf00d7128ba9039c573e0441b819118094ec77c4c4ce5",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/page.tsx": "0ed365b59324bb836d8ec56cba143df941e7a7f8dfa11b841b28a68212f1b35d",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/proof.ts": "fbdcc3a434eea13842c9f692d2b54cc9955e80d8c8777d9dfaa14cace9cdfcaf",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/route.ts": "a17ddd57882be1e58a86fb1d86bea8a2693f1169f5ba0c8b6da2af75d7f024ae",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/governance/evaluate/route.ts": "b232dcbdfb1a5ec7982e2ed35caf1e9313dec553a3dcf5752576cc110955c1cb",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.tsx": "efc5839896236dacc7b37e145fda9904a9513bea434b3ff5c8bcd81652e9ea3e",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/bounded-request-body.ts": "5986f11e0b78403d9c3175f4ae11a861a4937f5358f2f24a28aff67a1697461f",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/governance-engine.ts": "48d3252df6614866b3fe84904a0c0f4bd6528d42f1da76543a0db76947494dde",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/route-governance-proof.ts": "17c19ccc4e31d5e068b728304e4a0970ddc072a9711460dd62b859f3ade15b6e"
+      }
+    },
+    "reconciliation": {
+      "sourceStatus": "NAMED_WORKTREE_AND_STAGED_BYTES_MATCH",
+      "savedFileEquality": "PASS",
+      "exportToEngineStoreExactId": "PASS",
+      "containerAndScratchCleanup": "PASS_NO_OWNED_PREFIX_CONTAINER_OR_SCRATCH_REMAINS",
+      "dependencyBoundary": "installed modules shared through disclosed junction; no install/build/pull",
+      "processCleanup": "runner returned exit0 after finally owned-process cleanup; same-actor observation, no independent process oracle",
+      "productSourceChanges": 0,
+      "providerInvocations": 0,
+      "priorCasesReplayed": 0,
+      "priorCanonicalBundleReplayed": false
+    },
+    "requiredOutputReconciliation": {
+      "identities": "DELIVERED",
+      "browserExportReceiptStoreJoin": "DELIVERED",
+      "savedBytesAndStaleForm": "DELIVERED",
+      "cleanupAndTerminal": "DELIVERED",
+      "continuity": "PENDING_MATERIAL_COMMIT"
+    }
   }
 }

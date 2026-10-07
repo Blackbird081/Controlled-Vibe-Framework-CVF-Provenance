@@ -218,7 +218,7 @@ def inspect_store(stage: Path, store: Path, attempt: str) -> dict:
         sys.path.pop(0)
 
 
-def run_probe(engine_docker_image: str | None = None) -> dict:
+def run_probe(engine_docker_image: str | None = None, *, browser_export_only: bool = False) -> dict:
     RUNTIME.mkdir(parents=True, exist_ok=True)
     with tempfile.TemporaryDirectory(prefix="q001-system-chain-", dir=RUNTIME) as directory:
         scratch = Path(directory).resolve()
@@ -298,11 +298,54 @@ def run_probe(engine_docker_image: str | None = None) -> dict:
                 "CVF_GOVERNANCE_RECEIPT_TIMEOUT_MS": str(RECEIPT_TIMEOUT_MS),
                 "NEXT_TELEMETRY_DISABLED": "1",
             })
+            if browser_export_only:
+                env.update({"CVF_STORAGE_ADAPTER_TYPE": "file",
+                            "CVF_CONTROL_PLANE_EVENTS_PATH": str(scratch / "browser-events.json")})
             web_process = subprocess.Popen(
                 ["node", str(original_modules / "next/dist/bin/next"), "dev", "--webpack", "-p", str(web_port), "-H", "127.0.0.1"],
                 cwd=web, env=env, stdout=web_log, stderr=subprocess.STDOUT,
             )
             wait_ready(f"http://127.0.0.1:{web_port}/login", web_process)
+            if browser_export_only:
+                # Compile the nested proxy without invoking the engine, so the
+                # measured receipt timeout is not spent on Next dev compilation.
+                warm_status, _ = request_json(f"http://127.0.0.1:{web_port}/api/governance/evaluate", {})
+                if warm_status != 401 or proxy.forwarded != 0:
+                    raise AssertionError("unauthenticated proxy warmup must not invoke engine")
+                helper = ROOT / "scripts/probe_cvf_w05_browser_chain.cjs"
+                staged_helper = scratch / helper.name
+                shutil.copy2(helper, staged_helper)
+                browser_output = scratch / "browser.json"
+                browser_process = subprocess.run(
+                    ["node", str(staged_helper), str(original_modules), f"http://127.0.0.1:{web_port}",
+                     str(browser_output), str(scratch)],
+                    cwd=web, env=env, timeout=150, capture_output=True, text=True,
+                )
+                if browser_process.returncode:
+                    raise RuntimeError("Synthetic browser consumer failed: " + browser_process.stderr[-4000:])
+                browser = json.loads(browser_output.read_text(encoding="utf-8"))
+                attempt = browser["attemptId"]
+                sqlite = inspect_store(stage, store, attempt)
+                engine = proxy.engine_observations.get(attempt, {})
+                if (proxy.forwarded != 1 or sqlite["count"] != 1 or not sqlite["exactIdFound"]
+                        or engine.get("requestId") != attempt or engine.get("ledgerAttached") is not True):
+                    raise AssertionError("browser receipt did not join single engine/store request")
+                identities = [WEB / "src/app/(dashboard)/work-transfer/page.tsx",
+                    WEB / "src/components/ArtifactExportPanel.tsx", WEB / "src/app/api/artifacts/export/route.ts",
+                    WEB / "src/app/api/artifacts/export/proof.ts", WEB / "src/app/api/governance/evaluate/route.ts",
+                    WEB / "src/lib/governance-engine.ts", WEB / "src/lib/route-governance-proof.ts",
+                    WEB / "src/lib/bounded-request-body.ts",
+                    ENGINE / "api/server.py", ENGINE / "ledger_layer/sqlite_ledger.py"]
+                return {
+                    "schemaVersion": "cvf.w05BrowserConsumerEvidence.v1", "browser": browser,
+                    "sqlite": sqlite, "engineReport": engine, "forwardedEngineCalls": proxy.forwarded,
+                    "executionBaseHead": subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip(),
+                    "stagedSourceHashes": {p.as_posix(): hashlib.sha256((stage / p).read_bytes()).hexdigest() for p in identities},
+                    "stagedHelperSha256": hashlib.sha256(staged_helper.read_bytes()).hexdigest(),
+                    "engineDockerImage": engine_docker_image,
+                    "scope": "SYNTHETIC_BROWSER_TRANSPORT_PERSISTENCE_PRESENTATION",
+                    "claimBoundary": "No live AI governance, artifact approval, independent review or real-data R2/R3 proof.",
+                }
             export_url = f"http://127.0.0.1:{web_port}/api/artifacts/export"
             denied_status, denied = request_json(export_url, make_export_body("denied"), token=token)
             if denied_status != 401 or denied.get("routeGovernanceProof", {}).get("decision") != "DENY":
@@ -400,5 +443,6 @@ def run_probe(engine_docker_image: str | None = None) -> dict:
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--engine-docker-image", help="Explicit prebuilt local test image; never builds or pulls it")
+    parser.add_argument("--browser-export-only", action="store_true", help="One browser export/download; do not replay five HTTP cases")
     args = parser.parse_args()
-    print(json.dumps(run_probe(args.engine_docker_image), indent=2, sort_keys=True))
+    print(json.dumps(run_probe(args.engine_docker_image, browser_export_only=args.browser_export_only), indent=2, sort_keys=True))
