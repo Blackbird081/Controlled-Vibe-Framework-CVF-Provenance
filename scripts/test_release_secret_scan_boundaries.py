@@ -1,5 +1,6 @@
 """Synthetic scanner boundaries in disposable roots; never read local credentials."""
 import json
+import hashlib
 import sys
 import tempfile
 import unittest
@@ -11,6 +12,32 @@ import run_cvf_release_gate_bundle as bundle
 
 
 class ReleaseSecretScanBoundaryTests(unittest.TestCase):
+    def test_pinned_fixture_requires_path_file_line_and_number(self):
+        synthetic = 'sk-' + 'Z' * 32
+        content = synthetic + '\nclean\n'
+        rel = '.private_reference/mirror/test.yaml'
+        pin = (rel, hashlib.sha256(content.encode()).hexdigest(), 1,
+               hashlib.sha256(synthetic.encode()).hexdigest())
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            path = root / rel
+            path.parent.mkdir(parents=True)
+            path.write_bytes(content.encode())
+            with mock.patch.object(bundle, 'REPO_ROOT', root), mock.patch.object(
+                bundle, 'RELEASE_SECRET_FIXTURE_FINGERPRINTS', {pin}
+            ):
+                self.assertEqual(bundle.check_secrets(False).status, 'PASS')
+                self.assertFalse(bundle.is_allowed_secret_line(path, synthetic, 2))
+                self.assertFalse(bundle.is_allowed_secret_line(path, synthetic + 'x', 1))
+                self.assertFalse(bundle.is_allowed_secret_line(path, synthetic))
+                # PEM bodies and every other byte are bound, not just the header.
+                path.write_bytes((content + 'changed body\n').encode())
+                self.assertEqual(bundle.check_secrets(False).status, 'FAIL')
+                path.write_bytes(content.encode())
+                moved = path.with_name('moved.yaml')
+                path.rename(moved)
+                self.assertEqual(bundle.check_secrets(False).status, 'FAIL')
+
     def scan(self, root):
         with mock.patch.object(bundle, 'REPO_ROOT', root):
             return bundle.check_secrets(False)

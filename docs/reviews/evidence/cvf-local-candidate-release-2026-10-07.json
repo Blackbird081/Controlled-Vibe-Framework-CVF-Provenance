@@ -735,5 +735,734 @@
       "admission.json": "50dd10a904aeb593ab7bb72c5d1259615e871a5770b92d10f8e631917a64c26d",
       "fixture-lint.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     }
+  },
+  "secretFindingDisposition20261007": {
+    "admission": {
+      "baseHead": "7ed3512e161546638c7bec7ee07ae5e14bdf13ad",
+      "scope": [
+        "scripts/cvf_release_secret_scan_policy.py",
+        "scripts/run_cvf_release_gate_bundle.py",
+        "scripts/test_release_secret_scan_boundaries.py",
+        "docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md",
+        "docs/reviews/evidence/cvf-local-candidate-release-2026-10-07.json"
+      ],
+      "role": "Local maintainer/reviewer",
+      "decisionOwner": "Local",
+      "authority": "operator next;existing Local synthetic candidate maintenance",
+      "consumer": "release secret-scan reviewer",
+      "requiredOutputs": [
+        "21 finding classifications with source fingerprints",
+        "strict existing-policy fixture exceptions with changed-content/path negatives",
+        "one selected scan result and finite terminal disposition"
+      ],
+      "diagnosedCause": "copied detection-test strings,TLS test keys and placeholder in pinned private mirrors trigger existing scanner",
+      "constraints": "do not edit mirrors,exclude directories/tests globally,relax secret patterns,rotate keys or make provider calls",
+      "budget": "focused hermetic regressions;one selected actual scan after repair;consume existing live/build/SOT3 proof",
+      "stop": "record remaining findings if any;do not broaden exceptions to unreviewed content or claim full release PASS"
+    },
+    "classifiedFindingCount": 77,
+    "reviewedSourceFileCount": 44,
+    "classifications": {
+      "SECRET_DETECTOR_NEGATIVE_FIXTURE": 18,
+      "TLS_TEST_KEY": 2,
+      "DOCUMENTED_PLACEHOLDER": 5,
+      "SYNTHETIC_TEST_INPUT": 48,
+      "PARSER_STRING_LITERAL": 1,
+      "COMMENT_DETECTOR_EXAMPLE": 2,
+      "REGEX_ASSERTION_LITERAL": 1
+    },
+    "findings": [
+      {
+        "path": ".private_reference/source_mirrors/affaan-m__ECC/tests/hooks/governance-capture.test.js",
+        "line": 36,
+        "lineSha256": "139d5d89baaefbf6f5997a12c72c049d67ee9d7e0d346f9cd8d88ae6ea79fb1d",
+        "fileSha256": "44b364d5a58288b3d04d5f301abf14c1b4c181a743ab5b59ecc49265f9dfe082",
+        "classification": "SECRET_DETECTOR_NEGATIVE_FIXTURE"
+      },
+      {
+        "path": ".private_reference/source_mirrors/affaan-m__ECC/tests/hooks/governance-capture.test.js",
+        "line": 42,
+        "lineSha256": "4d592275b0855f2250b73a230bfc3e04e1c2a0626a81610d606a993c29e64f15",
+        "fileSha256": "44b364d5a58288b3d04d5f301abf14c1b4c181a743ab5b59ecc49265f9dfe082",
+        "classification": "SECRET_DETECTOR_NEGATIVE_FIXTURE"
+      },
+      {
+        "path": ".private_reference/source_mirrors/affaan-m__ECC/tests/hooks/governance-capture.test.js",
+        "line": 48,
+        "lineSha256": "67e868fc49790f5dad6dc21aa360f990e757a87b9ca2f81c7a72c33a884d1c14",
+        "fileSha256": "44b364d5a58288b3d04d5f301abf14c1b4c181a743ab5b59ecc49265f9dfe082",
+        "classification": "SECRET_DETECTOR_NEGATIVE_FIXTURE"
+      },
+      {
+        "path": ".private_reference/source_mirrors/affaan-m__ECC/tests/hooks/governance-capture.test.js",
+        "line": 54,
+        "lineSha256": "4a58a514731c7a1e72dd9d79be6449c59a4a5e2446c6f7535c9c4553dfe763be",
+        "fileSha256": "44b364d5a58288b3d04d5f301abf14c1b4c181a743ab5b59ecc49265f9dfe082",
+        "classification": "SECRET_DETECTOR_NEGATIVE_FIXTURE"
+      },
+      {
+        "path": ".private_reference/source_mirrors/affaan-m__ECC/tests/hooks/governance-capture.test.js",
+        "line": 135,
+        "lineSha256": "680ac6a60a7333b78eaf0e9d745a45eb3dab78002b7ee3339bd9260c4b67bef0",
+        "fileSha256": "44b364d5a58288b3d04d5f301abf14c1b4c181a743ab5b59ecc49265f9dfe082",
+        "classification": "SECRET_DETECTOR_NEGATIVE_FIXTURE"
+      },
+      {
+        "path": ".private_reference/source_mirrors/affaan-m__ECC/tests/hooks/governance-capture.test.js",
+        "line": 642,
+        "lineSha256": "a89480b26e165623d06cefefbdfcfd41170697457011e69825e463f1f19084a5",
+        "fileSha256": "44b364d5a58288b3d04d5f301abf14c1b4c181a743ab5b59ecc49265f9dfe082",
+        "classification": "SECRET_DETECTOR_NEGATIVE_FIXTURE"
+      },
+      {
+        "path": ".private_reference/source_mirrors/affaan-m__ECC/tests/hooks/pre-bash-commit-quality.test.js",
+        "line": 215,
+        "lineSha256": "9b0ed5aa7b0e02aeb71fad8b489db511fac1e603c377075feadb37f52b746bfd",
+        "fileSha256": "a7b4ef3b6a0f4ad38c60dd8f350efcfd10490426f7e1d0bb2b3ca31ab0bbaa59",
+        "classification": "SECRET_DETECTOR_NEGATIVE_FIXTURE"
+      },
+      {
+        "path": ".private_reference/source_mirrors/affaan-m__ECC/tests/hooks/pre-bash-commit-quality.test.js",
+        "line": 217,
+        "lineSha256": "c87024337b2b781c13873791a7085b624f4b2cf55946be1b8f261b1507ccd250",
+        "fileSha256": "a7b4ef3b6a0f4ad38c60dd8f350efcfd10490426f7e1d0bb2b3ca31ab0bbaa59",
+        "classification": "SECRET_DETECTOR_NEGATIVE_FIXTURE"
+      },
+      {
+        "path": ".private_reference/source_mirrors/affaan-m__ECC/tests/hooks/pre-bash-commit-quality.test.js",
+        "line": 221,
+        "lineSha256": "2a6d5e043ba8641fc7d48cce0a952cf6890662525081a913a90a2d868cae8f14",
+        "fileSha256": "a7b4ef3b6a0f4ad38c60dd8f350efcfd10490426f7e1d0bb2b3ca31ab0bbaa59",
+        "classification": "SECRET_DETECTOR_NEGATIVE_FIXTURE"
+      },
+      {
+        "path": ".private_reference/source_mirrors/agentgateway__agentgateway/controller/test/e2e/testdata/dynamic-ca-cert/dynamic-ca-cert-invalid-ca.yaml",
+        "line": 37,
+        "lineSha256": "486820a239f22c0eb427596ad5a98bf88c3d46c021d692bdae992924f6dea304",
+        "fileSha256": "22a5811f94aa31bed1c2aa96c3a47d6681c1f12c1d9ad5da63f13fc6dec07f4f",
+        "classification": "TLS_TEST_KEY"
+      },
+      {
+        "path": ".private_reference/source_mirrors/agentgateway__agentgateway/controller/test/e2e/testdata/dynamic-ca-cert/dynamic-ca-cert.yaml",
+        "line": 27,
+        "lineSha256": "486820a239f22c0eb427596ad5a98bf88c3d46c021d692bdae992924f6dea304",
+        "fileSha256": "54cf1cbd89427e755cc742c7581ae1b4ad447a949931348a175566f83b7688da",
+        "classification": "TLS_TEST_KEY"
+      },
+      {
+        "path": ".private_reference/source_mirrors/agentgateway__agentgateway/examples/netbird-agent-network/kubernetes/README.md",
+        "line": 131,
+        "lineSha256": "c6ee6ebed3b210de6e799c64ac30539c19f5a8b7f44e2a575f69c3cac9d3975d",
+        "fileSha256": "86cc8270e50f849f4328e4558cf4e13b9b48b05be1fbceb29b4bdc677e4154d6",
+        "classification": "DOCUMENTED_PLACEHOLDER"
+      },
+      {
+        "path": ".private_reference/source_mirrors/Blackbird081__everything-claude-code/tests/hooks/governance-capture.test.js",
+        "line": 36,
+        "lineSha256": "139d5d89baaefbf6f5997a12c72c049d67ee9d7e0d346f9cd8d88ae6ea79fb1d",
+        "fileSha256": "44b364d5a58288b3d04d5f301abf14c1b4c181a743ab5b59ecc49265f9dfe082",
+        "classification": "SECRET_DETECTOR_NEGATIVE_FIXTURE"
+      },
+      {
+        "path": ".private_reference/source_mirrors/Blackbird081__everything-claude-code/tests/hooks/governance-capture.test.js",
+        "line": 42,
+        "lineSha256": "4d592275b0855f2250b73a230bfc3e04e1c2a0626a81610d606a993c29e64f15",
+        "fileSha256": "44b364d5a58288b3d04d5f301abf14c1b4c181a743ab5b59ecc49265f9dfe082",
+        "classification": "SECRET_DETECTOR_NEGATIVE_FIXTURE"
+      },
+      {
+        "path": ".private_reference/source_mirrors/Blackbird081__everything-claude-code/tests/hooks/governance-capture.test.js",
+        "line": 48,
+        "lineSha256": "67e868fc49790f5dad6dc21aa360f990e757a87b9ca2f81c7a72c33a884d1c14",
+        "fileSha256": "44b364d5a58288b3d04d5f301abf14c1b4c181a743ab5b59ecc49265f9dfe082",
+        "classification": "SECRET_DETECTOR_NEGATIVE_FIXTURE"
+      },
+      {
+        "path": ".private_reference/source_mirrors/Blackbird081__everything-claude-code/tests/hooks/governance-capture.test.js",
+        "line": 54,
+        "lineSha256": "4a58a514731c7a1e72dd9d79be6449c59a4a5e2446c6f7535c9c4553dfe763be",
+        "fileSha256": "44b364d5a58288b3d04d5f301abf14c1b4c181a743ab5b59ecc49265f9dfe082",
+        "classification": "SECRET_DETECTOR_NEGATIVE_FIXTURE"
+      },
+      {
+        "path": ".private_reference/source_mirrors/Blackbird081__everything-claude-code/tests/hooks/governance-capture.test.js",
+        "line": 135,
+        "lineSha256": "680ac6a60a7333b78eaf0e9d745a45eb3dab78002b7ee3339bd9260c4b67bef0",
+        "fileSha256": "44b364d5a58288b3d04d5f301abf14c1b4c181a743ab5b59ecc49265f9dfe082",
+        "classification": "SECRET_DETECTOR_NEGATIVE_FIXTURE"
+      },
+      {
+        "path": ".private_reference/source_mirrors/Blackbird081__everything-claude-code/tests/hooks/governance-capture.test.js",
+        "line": 642,
+        "lineSha256": "a89480b26e165623d06cefefbdfcfd41170697457011e69825e463f1f19084a5",
+        "fileSha256": "44b364d5a58288b3d04d5f301abf14c1b4c181a743ab5b59ecc49265f9dfe082",
+        "classification": "SECRET_DETECTOR_NEGATIVE_FIXTURE"
+      },
+      {
+        "path": ".private_reference/source_mirrors/Blackbird081__everything-claude-code/tests/hooks/pre-bash-commit-quality.test.js",
+        "line": 214,
+        "lineSha256": "9b0ed5aa7b0e02aeb71fad8b489db511fac1e603c377075feadb37f52b746bfd",
+        "fileSha256": "f1bcbd7b3f32bdd44bb8fc4fda583e58d3779737a925af51f8e1d519b006000c",
+        "classification": "SECRET_DETECTOR_NEGATIVE_FIXTURE"
+      },
+      {
+        "path": ".private_reference/source_mirrors/Blackbird081__everything-claude-code/tests/hooks/pre-bash-commit-quality.test.js",
+        "line": 216,
+        "lineSha256": "c87024337b2b781c13873791a7085b624f4b2cf55946be1b8f261b1507ccd250",
+        "fileSha256": "f1bcbd7b3f32bdd44bb8fc4fda583e58d3779737a925af51f8e1d519b006000c",
+        "classification": "SECRET_DETECTOR_NEGATIVE_FIXTURE"
+      },
+      {
+        "path": ".private_reference/source_mirrors/Blackbird081__everything-claude-code/tests/hooks/pre-bash-commit-quality.test.js",
+        "line": 220,
+        "lineSha256": "2a6d5e043ba8641fc7d48cce0a952cf6890662525081a913a90a2d868cae8f14",
+        "fileSha256": "f1bcbd7b3f32bdd44bb8fc4fda583e58d3779737a925af51f8e1d519b006000c",
+        "classification": "SECRET_DETECTOR_NEGATIVE_FIXTURE"
+      },
+      {
+        "path": ".private_reference/source_mirrors/can1357__oh-my-pi/packages/ai/test/bedrock-mantle-auth.test.ts",
+        "line": 142,
+        "lineSha256": "c34506ab92ae36ebef1d6bb7117e216fa26048b9bb2c7f6ece448dfdb023de57",
+        "fileSha256": "f3e4f6b998318b19b5d2dc41830981de7ee2d0c8e0448a8be3faf4636f62fdda",
+        "classification": "SYNTHETIC_TEST_INPUT"
+      },
+      {
+        "path": ".private_reference/source_mirrors/can1357__oh-my-pi/packages/ai/test/bedrock-mantle-auth.test.ts",
+        "line": 211,
+        "lineSha256": "19d76df61979cbde23c28b8f0b0830c60d67b4d02b8f2d1e2c373e3da635d3cc",
+        "fileSha256": "f3e4f6b998318b19b5d2dc41830981de7ee2d0c8e0448a8be3faf4636f62fdda",
+        "classification": "SYNTHETIC_TEST_INPUT"
+      },
+      {
+        "path": ".private_reference/source_mirrors/can1357__oh-my-pi/packages/ai/test/openai-codex-responses-lite.test.ts",
+        "line": 1242,
+        "lineSha256": "943c329cd075dfab971fcc5baea93b75bf9f6c345aaaa8438efcadc862f5e259",
+        "fileSha256": "bd0fc20171f76091487932aaadc2af3c7daa743e12bae9f0bd7f01ba111d12a8",
+        "classification": "SYNTHETIC_TEST_INPUT"
+      },
+      {
+        "path": ".private_reference/source_mirrors/can1357__oh-my-pi/packages/ai/test/transform-messages-redact-sensitive.test.ts",
+        "line": 28,
+        "lineSha256": "a86745371023ecc9061c2f423d0df427b47e4c628b4ffa5a305495625e452032",
+        "fileSha256": "51b95fee99c48ce00b3e688a65cf723d49f5f635a8946e51882ccaf7af4e4743",
+        "classification": "SYNTHETIC_TEST_INPUT"
+      },
+      {
+        "path": ".private_reference/source_mirrors/can1357__oh-my-pi/packages/ai/test/transform-messages-redact-sensitive.test.ts",
+        "line": 144,
+        "lineSha256": "9a64bc22029b2e2a3d1b624e156616ffa925bd14b042684a9abb85c9a399e973",
+        "fileSha256": "51b95fee99c48ce00b3e688a65cf723d49f5f635a8946e51882ccaf7af4e4743",
+        "classification": "SYNTHETIC_TEST_INPUT"
+      },
+      {
+        "path": ".private_reference/source_mirrors/can1357__oh-my-pi/packages/ai/test/transform-messages-redact-sensitive.test.ts",
+        "line": 178,
+        "lineSha256": "bcc865cf351c2ddf7b10307ee89eb0cb328896880ab1420b36f5bd88c7824e47",
+        "fileSha256": "51b95fee99c48ce00b3e688a65cf723d49f5f635a8946e51882ccaf7af4e4743",
+        "classification": "SYNTHETIC_TEST_INPUT"
+      },
+      {
+        "path": ".private_reference/source_mirrors/can1357__oh-my-pi/packages/ai/test/transform-messages-redact-sensitive.test.ts",
+        "line": 211,
+        "lineSha256": "0a701b9233056c41f89d4096ad998fdaf31aaac455f54fb61416142767f3ba1c",
+        "fileSha256": "51b95fee99c48ce00b3e688a65cf723d49f5f635a8946e51882ccaf7af4e4743",
+        "classification": "SYNTHETIC_TEST_INPUT"
+      },
+      {
+        "path": ".private_reference/source_mirrors/can1357__oh-my-pi/packages/catalog/test/issue-830-repro.test.ts",
+        "line": 14,
+        "lineSha256": "0f291f1b9b89feb19166771593123a84064ba32798e9d8d5f06fc715685e2c6b",
+        "fileSha256": "67eedc70ce0e68cd440b6352f3a22c44ae01f860676a06bd5a5a185d60305388",
+        "classification": "SYNTHETIC_TEST_INPUT"
+      },
+      {
+        "path": ".private_reference/source_mirrors/can1357__oh-my-pi/packages/coding-agent/test/acp-session-effects.test.ts",
+        "line": 19,
+        "lineSha256": "4c194200de7d94dec45f9718e200ee7ac0647045bd4338031655ec004c3a74f9",
+        "fileSha256": "026c5557df075a4835088d32199bbd0feb9e22fff481bf7101b019ef72514221",
+        "classification": "SYNTHETIC_TEST_INPUT"
+      },
+      {
+        "path": ".private_reference/source_mirrors/can1357__oh-my-pi/packages/coding-agent/test/default-model-ambient-bedrock.test.ts",
+        "line": 70,
+        "lineSha256": "a528a4ee58c7e926bf62ce11d6af0b243e24bd5eb8e2a6587b5e90ae196c9bf1",
+        "fileSha256": "4fba6d302fc44dc0fee7448a6225b0679be9db57e354089e110f05cfb416133d",
+        "classification": "SYNTHETIC_TEST_INPUT"
+      },
+      {
+        "path": ".private_reference/source_mirrors/can1357__oh-my-pi/packages/coding-agent/test/memory-redaction.test.ts",
+        "line": 13,
+        "lineSha256": "154c9febac6d93e2d75bf4eb8abadeb8d52e1a7e4eb94d3acf3f2fd9dcdfee2a",
+        "fileSha256": "001ed5b3903009151bf9815368d9e5e477f430d6d9300aab3b9673a7e5369a8d",
+        "classification": "SYNTHETIC_TEST_INPUT"
+      },
+      {
+        "path": ".private_reference/source_mirrors/can1357__oh-my-pi/packages/coding-agent/test/secrets-obfuscator.test.ts",
+        "line": 636,
+        "lineSha256": "faa2dfb3b3dc776144ff5e0f0764e4fac3616f5c3b40e8e83a6ab73d1f2657ef",
+        "fileSha256": "0cbe1a46d592d4ac9f9920820d11f8ccff82749c89cdb65153bb09bce8415a45",
+        "classification": "SYNTHETIC_TEST_INPUT"
+      },
+      {
+        "path": ".private_reference/source_mirrors/can1357__oh-my-pi/packages/coding-agent/test/secrets-obfuscator.test.ts",
+        "line": 655,
+        "lineSha256": "faa2dfb3b3dc776144ff5e0f0764e4fac3616f5c3b40e8e83a6ab73d1f2657ef",
+        "fileSha256": "0cbe1a46d592d4ac9f9920820d11f8ccff82749c89cdb65153bb09bce8415a45",
+        "classification": "SYNTHETIC_TEST_INPUT"
+      },
+      {
+        "path": ".private_reference/source_mirrors/can1357__oh-my-pi/packages/coding-agent/test/skillshare/pack.test.ts",
+        "line": 138,
+        "lineSha256": "7344d09c8b91d5e514c48a3c692e130c9e77f812f089aa172dadde814ff1c5f6",
+        "fileSha256": "b07c3ca63be564c4d6deba85c92bbb9c3aaa882e008005d42358efa3ec5e1e66",
+        "classification": "SYNTHETIC_TEST_INPUT"
+      },
+      {
+        "path": ".private_reference/source_mirrors/can1357__oh-my-pi/packages/coding-agent/test/skillshare/pack.test.ts",
+        "line": 140,
+        "lineSha256": "e6b8c187a64426afdbc3845fcfb552a220f6a06e5c81d8c96a33849ee00558a7",
+        "fileSha256": "b07c3ca63be564c4d6deba85c92bbb9c3aaa882e008005d42358efa3ec5e1e66",
+        "classification": "SYNTHETIC_TEST_INPUT"
+      },
+      {
+        "path": ".private_reference/source_mirrors/can1357__oh-my-pi/packages/snapcompact/research/anthropic_api.py",
+        "line": 21,
+        "lineSha256": "2fca14961906782dc97d7cbb74e3c42d9ab8d162986c8e52594975c5b4f29eba",
+        "fileSha256": "92b8c1aff0d3d14e7fe5b2ff29dd13bb0b4f557ede0f34a6f933f5d4caeeb72e",
+        "classification": "PARSER_STRING_LITERAL"
+      },
+      {
+        "path": ".private_reference/source_mirrors/deepseek-ai__deepseek-harness/docs/user/guide/python-sdk.md",
+        "line": 53,
+        "lineSha256": "1c0a6d8c76a1800e1f1b4869a0d144dd365b6a7643955857b2d94d7acf080932",
+        "fileSha256": "704942a7125ca0897929c0a39353763492910cd52ceed94b6dc13f3cba6374fc",
+        "classification": "DOCUMENTED_PLACEHOLDER"
+      },
+      {
+        "path": ".private_reference/source_mirrors/deepseek-ai__deepseek-harness/docs/user/guide/python-sdk.zh.md",
+        "line": 53,
+        "lineSha256": "1c0a6d8c76a1800e1f1b4869a0d144dd365b6a7643955857b2d94d7acf080932",
+        "fileSha256": "18206141255c55c0fe0eb657d9824a20b63e70313210e9e8c6be76f328202637",
+        "classification": "DOCUMENTED_PLACEHOLDER"
+      },
+      {
+        "path": ".private_reference/source_mirrors/deepseek-ai__deepseek-harness/packages/session/session-telemetry-otel/tests/loader-composition.e2e.ts",
+        "line": 26,
+        "lineSha256": "e15344a52b4b903ee0a17cb2ef1b818451aed8c14c4a2f0b24f072e744136b43",
+        "fileSha256": "562d82395b7c72e463cdb7b472a1a508a8a6ace0d9e38d9ae792317b586260aa",
+        "classification": "SYNTHETIC_TEST_INPUT"
+      },
+      {
+        "path": ".private_reference/source_mirrors/deepseek-ai__deepseek-harness/packages/session/session-telemetry-otel/tests/fixtures/driver.ts",
+        "line": 38,
+        "lineSha256": "015f9082dc7c51f577ca3d459d23cba6680599f6f3dc544119cd1952bcc6a83f",
+        "fileSha256": "a824de1b4c3e4f2628aead157ee483a3e0a288a4a56bf1cb246cb7413fea1a59",
+        "classification": "SYNTHETIC_TEST_INPUT"
+      },
+      {
+        "path": ".private_reference/source_mirrors/deepseek-ai__deepseek-harness/packages/web/web-search-deepseek/tests/deepseek.spec.ts",
+        "line": 464,
+        "lineSha256": "40100fd94a02db827e0502bc36ed011e70352edad5b2029088986257fdc46b76",
+        "fileSha256": "e88e37c017f0bbd4c7fe96460f32ff200b2553c0cdbf03a4d29c1a14b0e15da9",
+        "classification": "SYNTHETIC_TEST_INPUT"
+      },
+      {
+        "path": ".private_reference/source_mirrors/deepseek-ai__deepseek-harness/python/sdk/tests/test_bundled_runtime.py",
+        "line": 80,
+        "lineSha256": "e9aa4df0d7e3539b6dad9fcb9b67370c5d3b3825b5fc1cadde91e4f02df31f88",
+        "fileSha256": "a73ae288f6b39e74777ccdb35b93a087455c5fbe57fe061dc145495c8b27cc8d",
+        "classification": "SYNTHETIC_TEST_INPUT"
+      },
+      {
+        "path": ".private_reference/source_mirrors/heygen-com__hyperframes/packages/cli/src/telemetry/agent_runtime.test.ts",
+        "line": 435,
+        "lineSha256": "1cd659a43f8e5320725f86d834953801d418ca6cfe5635aa75c358dee0e912a4",
+        "fileSha256": "bd66157746d2ea78a021b4d5a898a723c51556006ad21d8af3758f923162b5e1",
+        "classification": "SYNTHETIC_TEST_INPUT"
+      },
+      {
+        "path": ".private_reference/source_mirrors/heygen-com__hyperframes/packages/cli/src/telemetry/agent_runtime.ts",
+        "line": 315,
+        "lineSha256": "59ff0c165a30c2fd013f825549cb59000780be312b8cb994ca757cd13da2bba6",
+        "fileSha256": "73f10e69ff7f8a4cc004046c2efa320e69e2770bf6c18443c5c7d004c2b8f04e",
+        "classification": "COMMENT_DETECTOR_EXAMPLE"
+      },
+      {
+        "path": ".private_reference/source_mirrors/heygen-com__hyperframes__f16e509832d4/packages/cli/src/telemetry/agent_runtime.test.ts",
+        "line": 435,
+        "lineSha256": "1cd659a43f8e5320725f86d834953801d418ca6cfe5635aa75c358dee0e912a4",
+        "fileSha256": "bd66157746d2ea78a021b4d5a898a723c51556006ad21d8af3758f923162b5e1",
+        "classification": "SYNTHETIC_TEST_INPUT"
+      },
+      {
+        "path": ".private_reference/source_mirrors/heygen-com__hyperframes__f16e509832d4/packages/cli/src/telemetry/agent_runtime.ts",
+        "line": 315,
+        "lineSha256": "59ff0c165a30c2fd013f825549cb59000780be312b8cb994ca757cd13da2bba6",
+        "fileSha256": "73f10e69ff7f8a4cc004046c2efa320e69e2770bf6c18443c5c7d004c2b8f04e",
+        "classification": "COMMENT_DETECTOR_EXAMPLE"
+      },
+      {
+        "path": ".private_reference/source_mirrors/spinabot__brigade/src/agents/auth-env-fallback.test.ts",
+        "line": 34,
+        "lineSha256": "21c648f584c5cb51c80acab2f7ba678bc4dacb9b99479dcfcb82d43e9819015b",
+        "fileSha256": "8fc847b2482848d0c63aadf3770b9c4d42a55e0d83cec1652a8534e21f26ed29",
+        "classification": "SYNTHETIC_TEST_INPUT"
+      },
+      {
+        "path": ".private_reference/source_mirrors/spinabot__brigade/src/providers/catalog.test.ts",
+        "line": 94,
+        "lineSha256": "a945040098db78cf4ff8f009c3ae9634c0c44f6a60542a2d138bd293cedb6c63",
+        "fileSha256": "3e9483cb1770992f5e9ace868319eccf5c72c17911b6db3984e03d3c88305477",
+        "classification": "SYNTHETIC_TEST_INPUT"
+      },
+      {
+        "path": ".private_reference/source_mirrors/yc-software__qm/cli/test/docker-secrets.test.ts",
+        "line": 125,
+        "lineSha256": "c7a2b7af129013909660d095df0d3a0ef4121ec61bedcfefb088bf146e527c40",
+        "fileSha256": "e7823ed9fec9efe1e65aef379c49c57ffcabf74b72612a9f9a962529cf832862",
+        "classification": "SYNTHETIC_TEST_INPUT"
+      },
+      {
+        "path": ".private_reference/source_mirrors/yc-software__qm/cli/test/fly-sandbox.test.ts",
+        "line": 296,
+        "lineSha256": "a47d28a21d359785ace044ae2696f066510393dd304a346636b7a71cc02261ad",
+        "fileSha256": "e24384d811c8e052c0a20c95e2507e2dd83d11104bc31cf7ad326c73217fbc78",
+        "classification": "SYNTHETIC_TEST_INPUT"
+      },
+      {
+        "path": ".private_reference/source_mirrors/yc-software__qm/cli/test/init.test.ts",
+        "line": 67,
+        "lineSha256": "593584b615f42498c22cb4bffcbc6155d3e9f78f3a90a425462d2172ad769335",
+        "fileSha256": "1bfc1adfa583591f94f7e28bd66e2bce6e2be131eb391547087573fe7002f505",
+        "classification": "SYNTHETIC_TEST_INPUT"
+      },
+      {
+        "path": ".private_reference/source_mirrors/yc-software__qm/cli/test/init.test.ts",
+        "line": 159,
+        "lineSha256": "3f1d29d87048b6a8d0ce1eeae97c14bd7667ea5e7edf1213ecd66847efad3e28",
+        "fileSha256": "1bfc1adfa583591f94f7e28bd66e2bce6e2be131eb391547087573fe7002f505",
+        "classification": "SYNTHETIC_TEST_INPUT"
+      },
+      {
+        "path": ".private_reference/source_mirrors/yc-software__qm/cli/test/init.test.ts",
+        "line": 263,
+        "lineSha256": "c9cff197a30414e68603ec797a5bd7b3482d6fe33f9ad94f5d47e2871b245d0c",
+        "fileSha256": "1bfc1adfa583591f94f7e28bd66e2bce6e2be131eb391547087573fe7002f505",
+        "classification": "SYNTHETIC_TEST_INPUT"
+      },
+      {
+        "path": ".private_reference/source_mirrors/yc-software__qm/cli/test/setup.test.ts",
+        "line": 84,
+        "lineSha256": "e6d3641d44caaf02c25ef00759e6e99fe3a09219058f63f06ad3c1006a08c892",
+        "fileSha256": "02bf1bb87797c465658f6844b2c67667d474d55a224a7cb65719815d71dc3051",
+        "classification": "SYNTHETIC_TEST_INPUT"
+      },
+      {
+        "path": ".private_reference/source_mirrors/yc-software__qm/skills-seed/browse/SKILL.md",
+        "line": 250,
+        "lineSha256": "6ae987f7ae51a6985cd76ff7acda9661e2a2d1f20fd3caca563401fee36e847a",
+        "fileSha256": "b994e3f2a53279712d0be1f8873664d4a1df96b5f2d392519b7c507223c4e37b",
+        "classification": "DOCUMENTED_PLACEHOLDER"
+      },
+      {
+        "path": ".private_reference/source_mirrors/yc-software__qm/skills-seed/browse/SKILL.md",
+        "line": 285,
+        "lineSha256": "e0d259e668ea545b5d9864bcba965e9cfa83d832c6d89134694a645ce6b2c943",
+        "fileSha256": "b994e3f2a53279712d0be1f8873664d4a1df96b5f2d392519b7c507223c4e37b",
+        "classification": "DOCUMENTED_PLACEHOLDER"
+      },
+      {
+        "path": ".private_reference/source_mirrors/Yeachan-Heo__oh-my-claudecode/src/cli/__tests__/launch-secure-transport.test.ts",
+        "line": 47,
+        "lineSha256": "b61914a7c82e74a6c8cc00f14ceb061b0444ae7e58a12c95ecf9745e668af466",
+        "fileSha256": "4c66c686e9fc2a718f7414bab82ef89c0a8af3e7b8fcc1c6bb098a9a0b9dc89a",
+        "classification": "SYNTHETIC_TEST_INPUT"
+      },
+      {
+        "path": ".private_reference/source_mirrors/Yeachan-Heo__oh-my-claudecode/src/cli/__tests__/launch.test.ts",
+        "line": 373,
+        "lineSha256": "c0bf6c881a33168d258f6aa13fe237a900a4face0823847699aaf100b952fdb0",
+        "fileSha256": "f61746c63cf44226736e8013d7d8c6f0a59ab6025a476bf3c8039feda1c687e5",
+        "classification": "REGEX_ASSERTION_LITERAL"
+      },
+      {
+        "path": ".private_reference/source_mirrors/Yeachan-Heo__oh-my-claudecode/src/cli/__tests__/launch.test.ts",
+        "line": 2243,
+        "lineSha256": "daab0d07ca670b0caf38e13bd611f01f65eff7ccbf424f942cbcc822ea9e609f",
+        "fileSha256": "f61746c63cf44226736e8013d7d8c6f0a59ab6025a476bf3c8039feda1c687e5",
+        "classification": "SYNTHETIC_TEST_INPUT"
+      },
+      {
+        "path": ".private_reference/source_mirrors/Yeachan-Heo__oh-my-claudecode/src/cli/__tests__/launch.test.ts",
+        "line": 2376,
+        "lineSha256": "d80d8ba84949103c8dbe2558907333aa8e03313beba1128fc2f02a85db066a33",
+        "fileSha256": "f61746c63cf44226736e8013d7d8c6f0a59ab6025a476bf3c8039feda1c687e5",
+        "classification": "SYNTHETIC_TEST_INPUT"
+      },
+      {
+        "path": ".private_reference/source_mirrors/Yeachan-Heo__oh-my-claudecode/src/__tests__/hud-api-key-source.test.ts",
+        "line": 68,
+        "lineSha256": "687f2befb5b8ae8d09b18012d6a3c0023773708fca4179797e22e90017f22753",
+        "fileSha256": "85fe2f67098b7c2aef603c2d0adb641269b8403f3dfc29810ab682445cb2c049",
+        "classification": "SYNTHETIC_TEST_INPUT"
+      },
+      {
+        "path": ".private_reference/source_mirrors/Yeachan-Heo__oh-my-claudecode/src/__tests__/hud-api-key-source.test.ts",
+        "line": 89,
+        "lineSha256": "687f2befb5b8ae8d09b18012d6a3c0023773708fca4179797e22e90017f22753",
+        "fileSha256": "85fe2f67098b7c2aef603c2d0adb641269b8403f3dfc29810ab682445cb2c049",
+        "classification": "SYNTHETIC_TEST_INPUT"
+      },
+      {
+        "path": ".private_reference/source_mirrors/Yeachan-Heo__oh-my-claudecode/src/__tests__/hud-api-key-source.test.ts",
+        "line": 103,
+        "lineSha256": "687f2befb5b8ae8d09b18012d6a3c0023773708fca4179797e22e90017f22753",
+        "fileSha256": "85fe2f67098b7c2aef603c2d0adb641269b8403f3dfc29810ab682445cb2c049",
+        "classification": "SYNTHETIC_TEST_INPUT"
+      },
+      {
+        "path": ".private_reference/source_mirrors/Yeachan-Heo__oh-my-claudecode/src/__tests__/hud/usage-api.test.ts",
+        "line": 2503,
+        "lineSha256": "058239b2262788927772e378d1983691dddc4d32b396c4e662affcc9857373da",
+        "fileSha256": "a6d096d37e367c4955385a3fbbe52a44b82ce6ba6ed65943d42334612c5d723e",
+        "classification": "SYNTHETIC_TEST_INPUT"
+      },
+      {
+        "path": ".private_reference/source_mirrors/Yeachan-Heo__oh-my-claudecode/src/__tests__/hud/usage-api.test.ts",
+        "line": 2530,
+        "lineSha256": "49cb1fff4c8f4943c2914e20ebc1db1bc5857e1564d4c5aa6c6d26893b69c8f0",
+        "fileSha256": "a6d096d37e367c4955385a3fbbe52a44b82ce6ba6ed65943d42334612c5d723e",
+        "classification": "SYNTHETIC_TEST_INPUT"
+      },
+      {
+        "path": ".private_reference/source_mirrors/Yeachan-Heo__oh-my-claudecode/src/__tests__/hud/usage-api.test.ts",
+        "line": 2556,
+        "lineSha256": "1a68a8e18a1222b68b976dd4403604e39b4e637bc205fed9ca57852d43590933",
+        "fileSha256": "a6d096d37e367c4955385a3fbbe52a44b82ce6ba6ed65943d42334612c5d723e",
+        "classification": "SYNTHETIC_TEST_INPUT"
+      },
+      {
+        "path": ".private_reference/source_mirrors/Yeachan-Heo__oh-my-claudecode/src/__tests__/rate-limit-wait/daemon-bootstrap.test.ts",
+        "line": 66,
+        "lineSha256": "c9ff5a9f42643a2d96efd66a7c6bc23bfddbb3c32c09d5069a5888de1bda7750",
+        "fileSha256": "3f2ed09c235eaffe52b5ec7175bd0beb7f0c4be8b2e3d267daad12c29d7270f3",
+        "classification": "SYNTHETIC_TEST_INPUT"
+      },
+      {
+        "path": "EXTENSIONS/CVF_PLANE_FACADES/src/index.test.ts",
+        "line": 214,
+        "lineSha256": "160dcc51f5518252640320e81878b6bb6e7d03f7d19c0851cd27cc577fafe5c6",
+        "fileSha256": "29ecd221cd233bcb08203cd10a1bc1d208d0961e54ce465f60a63448c8875b19",
+        "classification": "SYNTHETIC_TEST_INPUT"
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/route.test.ts",
+        "line": 148,
+        "lineSha256": "e8879763895c762d69e04c653f98f1fc7079ee0556237c6558fcf127ab7ca1d7",
+        "fileSha256": "f65705564060daa9d913d3afd38237eaf6d6b408939f59605ea5053b52b7d47f",
+        "classification": "SYNTHETIC_TEST_INPUT"
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.7.3_RUNTIME_ADAPTER_HUB/tests/edge-security.test.ts",
+        "line": 19,
+        "lineSha256": "a9a4746b3cf2c1268cce209ba9001ee0293eecdf57589a6febc18812dcaf8a3e",
+        "fileSha256": "f4b47ef58cd8267297493ea514e18b591a03ea8dc447d11c6eb1c0636eb55fcf",
+        "classification": "SYNTHETIC_TEST_INPUT"
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.7.3_RUNTIME_ADAPTER_HUB/tests/edge-security.test.ts",
+        "line": 20,
+        "lineSha256": "1d7de50566b406287153a1321519aa4bfeeb4fca8011b5f2f9de5ee9825a46c8",
+        "fileSha256": "f4b47ef58cd8267297493ea514e18b591a03ea8dc447d11c6eb1c0636eb55fcf",
+        "classification": "SYNTHETIC_TEST_INPUT"
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.7.3_RUNTIME_ADAPTER_HUB/tests/edge-security.test.ts",
+        "line": 40,
+        "lineSha256": "8fb842178a1cc08ddb85cc1e6004cf776dcdc77ed209a29068b7fa0060da3f6b",
+        "fileSha256": "f4b47ef58cd8267297493ea514e18b591a03ea8dc447d11c6eb1c0636eb55fcf",
+        "classification": "SYNTHETIC_TEST_INPUT"
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.7.3_RUNTIME_ADAPTER_HUB/tests/edge-security.test.ts",
+        "line": 44,
+        "lineSha256": "77ff0ec4df0ab0c5171346ff6e4481c6c575445f9d5df0e5797626bb603ad8d2",
+        "fileSha256": "f4b47ef58cd8267297493ea514e18b591a03ea8dc447d11c6eb1c0636eb55fcf",
+        "classification": "SYNTHETIC_TEST_INPUT"
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.7.3_RUNTIME_ADAPTER_HUB/tests/edge-security.test.ts",
+        "line": 51,
+        "lineSha256": "655d7f33c89582cf1d04b618f836ef13f2e23815e0fcc547c631a84d1fc6ffc1",
+        "fileSha256": "f4b47ef58cd8267297493ea514e18b591a03ea8dc447d11c6eb1c0636eb55fcf",
+        "classification": "SYNTHETIC_TEST_INPUT"
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.8.1_ADAPTIVE_OBSERVABILITY_RUNTIME/tests/v1.8.1.test.ts",
+        "line": 27,
+        "lineSha256": "fb00c5f883574b5826ba5c4a52f61072788ab209e0784471be564b2e3d52a78e",
+        "fileSha256": "7dd99ba695d324e9b25366890922f83f24d8cb29a2dd79f1b506493f776cf71c",
+        "classification": "SYNTHETIC_TEST_INPUT"
+      },
+      {
+        "path": "governance/compat/test_downstream_gate_profile.py",
+        "line": 476,
+        "lineSha256": "03102b6951b078f994e43dff3a617e90ff922fd4d8ca2413a63231af25064112",
+        "fileSha256": "2a42e6d66f39511349999fc44bc2b66e65a2e21945d1dd20569e8e99773bc740",
+        "classification": "SYNTHETIC_TEST_INPUT"
+      }
+    ],
+    "tlsConsumer": {
+      "path": ".private_reference/source_mirrors/agentgateway__agentgateway/controller/test/e2e/dynamic_ca_cert_test.go",
+      "fileSha256": "5bb7216d8dc2d853e19195c0e06f44374b820ff55ca6489ac3e12728bf9855af",
+      "sourceObservation": "manifest references to both yaml fixtures in dynamic CA e2e tests"
+    },
+    "remainingDiagnostic": {
+      "result": {
+        "name": "Secrets scan",
+        "status": "FAIL",
+        "message": "Secret findings=56 unreadable=0",
+        "detail": [
+          ".private_reference\\source_mirrors\\can1357__oh-my-pi\\packages\\ai\\test\\bedrock-mantle-auth.test.ts:142",
+          ".private_reference\\source_mirrors\\can1357__oh-my-pi\\packages\\ai\\test\\bedrock-mantle-auth.test.ts:211",
+          ".private_reference\\source_mirrors\\can1357__oh-my-pi\\packages\\ai\\test\\openai-codex-responses-lite.test.ts:1242",
+          ".private_reference\\source_mirrors\\can1357__oh-my-pi\\packages\\ai\\test\\transform-messages-redact-sensitive.test.ts:28",
+          ".private_reference\\source_mirrors\\can1357__oh-my-pi\\packages\\ai\\test\\transform-messages-redact-sensitive.test.ts:144",
+          ".private_reference\\source_mirrors\\can1357__oh-my-pi\\packages\\ai\\test\\transform-messages-redact-sensitive.test.ts:178",
+          ".private_reference\\source_mirrors\\can1357__oh-my-pi\\packages\\ai\\test\\transform-messages-redact-sensitive.test.ts:211",
+          ".private_reference\\source_mirrors\\can1357__oh-my-pi\\packages\\catalog\\test\\issue-830-repro.test.ts:14",
+          ".private_reference\\source_mirrors\\can1357__oh-my-pi\\packages\\coding-agent\\test\\acp-session-effects.test.ts:19",
+          ".private_reference\\source_mirrors\\can1357__oh-my-pi\\packages\\coding-agent\\test\\default-model-ambient-bedrock.test.ts:70",
+          ".private_reference\\source_mirrors\\can1357__oh-my-pi\\packages\\coding-agent\\test\\memory-redaction.test.ts:13",
+          ".private_reference\\source_mirrors\\can1357__oh-my-pi\\packages\\coding-agent\\test\\secrets-obfuscator.test.ts:636",
+          ".private_reference\\source_mirrors\\can1357__oh-my-pi\\packages\\coding-agent\\test\\secrets-obfuscator.test.ts:655",
+          ".private_reference\\source_mirrors\\can1357__oh-my-pi\\packages\\coding-agent\\test\\skillshare\\pack.test.ts:138",
+          ".private_reference\\source_mirrors\\can1357__oh-my-pi\\packages\\coding-agent\\test\\skillshare\\pack.test.ts:140",
+          ".private_reference\\source_mirrors\\can1357__oh-my-pi\\packages\\snapcompact\\research\\anthropic_api.py:21",
+          ".private_reference\\source_mirrors\\deepseek-ai__deepseek-harness\\docs\\user\\guide\\python-sdk.md:53",
+          ".private_reference\\source_mirrors\\deepseek-ai__deepseek-harness\\docs\\user\\guide\\python-sdk.zh.md:53",
+          ".private_reference\\source_mirrors\\deepseek-ai__deepseek-harness\\packages\\session\\session-telemetry-otel\\tests\\loader-composition.e2e.ts:26",
+          ".private_reference\\source_mirrors\\deepseek-ai__deepseek-harness\\packages\\session\\session-telemetry-otel\\tests\\fixtures\\driver.ts:38",
+          ".private_reference\\source_mirrors\\deepseek-ai__deepseek-harness\\packages\\web\\web-search-deepseek\\tests\\deepseek.spec.ts:464",
+          ".private_reference\\source_mirrors\\deepseek-ai__deepseek-harness\\python\\sdk\\tests\\test_bundled_runtime.py:80",
+          ".private_reference\\source_mirrors\\heygen-com__hyperframes\\packages\\cli\\src\\telemetry\\agent_runtime.test.ts:435",
+          ".private_reference\\source_mirrors\\heygen-com__hyperframes\\packages\\cli\\src\\telemetry\\agent_runtime.ts:315",
+          ".private_reference\\source_mirrors\\heygen-com__hyperframes__f16e509832d4\\packages\\cli\\src\\telemetry\\agent_runtime.test.ts:435",
+          ".private_reference\\source_mirrors\\heygen-com__hyperframes__f16e509832d4\\packages\\cli\\src\\telemetry\\agent_runtime.ts:315",
+          ".private_reference\\source_mirrors\\spinabot__brigade\\src\\agents\\auth-env-fallback.test.ts:34",
+          ".private_reference\\source_mirrors\\spinabot__brigade\\src\\providers\\catalog.test.ts:94",
+          ".private_reference\\source_mirrors\\yc-software__qm\\cli\\test\\docker-secrets.test.ts:125",
+          ".private_reference\\source_mirrors\\yc-software__qm\\cli\\test\\fly-sandbox.test.ts:296",
+          ".private_reference\\source_mirrors\\yc-software__qm\\cli\\test\\init.test.ts:67",
+          ".private_reference\\source_mirrors\\yc-software__qm\\cli\\test\\init.test.ts:159",
+          ".private_reference\\source_mirrors\\yc-software__qm\\cli\\test\\init.test.ts:263",
+          ".private_reference\\source_mirrors\\yc-software__qm\\cli\\test\\setup.test.ts:84",
+          ".private_reference\\source_mirrors\\yc-software__qm\\skills-seed\\browse\\SKILL.md:250",
+          ".private_reference\\source_mirrors\\yc-software__qm\\skills-seed\\browse\\SKILL.md:285",
+          ".private_reference\\source_mirrors\\Yeachan-Heo__oh-my-claudecode\\src\\cli\\__tests__\\launch-secure-transport.test.ts:47",
+          ".private_reference\\source_mirrors\\Yeachan-Heo__oh-my-claudecode\\src\\cli\\__tests__\\launch.test.ts:373",
+          ".private_reference\\source_mirrors\\Yeachan-Heo__oh-my-claudecode\\src\\cli\\__tests__\\launch.test.ts:2243",
+          ".private_reference\\source_mirrors\\Yeachan-Heo__oh-my-claudecode\\src\\cli\\__tests__\\launch.test.ts:2376",
+          ".private_reference\\source_mirrors\\Yeachan-Heo__oh-my-claudecode\\src\\__tests__\\hud-api-key-source.test.ts:68",
+          ".private_reference\\source_mirrors\\Yeachan-Heo__oh-my-claudecode\\src\\__tests__\\hud-api-key-source.test.ts:89",
+          ".private_reference\\source_mirrors\\Yeachan-Heo__oh-my-claudecode\\src\\__tests__\\hud-api-key-source.test.ts:103",
+          ".private_reference\\source_mirrors\\Yeachan-Heo__oh-my-claudecode\\src\\__tests__\\hud\\usage-api.test.ts:2503",
+          ".private_reference\\source_mirrors\\Yeachan-Heo__oh-my-claudecode\\src\\__tests__\\hud\\usage-api.test.ts:2530",
+          ".private_reference\\source_mirrors\\Yeachan-Heo__oh-my-claudecode\\src\\__tests__\\hud\\usage-api.test.ts:2556",
+          ".private_reference\\source_mirrors\\Yeachan-Heo__oh-my-claudecode\\src\\__tests__\\rate-limit-wait\\daemon-bootstrap.test.ts:66",
+          "EXTENSIONS\\CVF_PLANE_FACADES\\src\\index.test.ts:214",
+          "EXTENSIONS\\CVF_v1.6_AGENT_PLATFORM\\cvf-web\\src\\app\\api\\artifacts\\export\\route.test.ts:148",
+          "EXTENSIONS\\CVF_v1.7.3_RUNTIME_ADAPTER_HUB\\tests\\edge-security.test.ts:19",
+          "EXTENSIONS\\CVF_v1.7.3_RUNTIME_ADAPTER_HUB\\tests\\edge-security.test.ts:20",
+          "EXTENSIONS\\CVF_v1.7.3_RUNTIME_ADAPTER_HUB\\tests\\edge-security.test.ts:40",
+          "EXTENSIONS\\CVF_v1.7.3_RUNTIME_ADAPTER_HUB\\tests\\edge-security.test.ts:44",
+          "EXTENSIONS\\CVF_v1.7.3_RUNTIME_ADAPTER_HUB\\tests\\edge-security.test.ts:51",
+          "EXTENSIONS\\CVF_v1.8.1_ADAPTIVE_OBSERVABILITY_RUNTIME\\tests\\v1.8.1.test.ts:27",
+          "governance\\compat\\test_downstream_gate_profile.py:476",
+          "filesScanned=67309 filesSkippedExtension=11138 skippedDirectories=177 filesUnreadable=0 stoppedAfterFindingsLimit=false"
+        ]
+      },
+      "elapsedMs": 238812,
+      "diagnosticOnly": true,
+      "findingLimit": 1000,
+      "baseWalkerSha256": "1d126b7a4c1d0d403b933f5eb25a42f18c05ff2bb306c191cb877d450d7cd9cd"
+    },
+    "intermediateSelectedScan": {
+      "result": {
+        "name": "Secrets scan",
+        "status": "FAIL",
+        "message": "Secret findings=20 unreadable=0",
+        "detail": [
+          ".private_reference\\source_mirrors\\can1357__oh-my-pi\\packages\\ai\\test\\bedrock-mantle-auth.test.ts:142",
+          ".private_reference\\source_mirrors\\can1357__oh-my-pi\\packages\\ai\\test\\bedrock-mantle-auth.test.ts:211",
+          ".private_reference\\source_mirrors\\can1357__oh-my-pi\\packages\\ai\\test\\openai-codex-responses-lite.test.ts:1242",
+          ".private_reference\\source_mirrors\\can1357__oh-my-pi\\packages\\ai\\test\\transform-messages-redact-sensitive.test.ts:28",
+          ".private_reference\\source_mirrors\\can1357__oh-my-pi\\packages\\ai\\test\\transform-messages-redact-sensitive.test.ts:144",
+          ".private_reference\\source_mirrors\\can1357__oh-my-pi\\packages\\ai\\test\\transform-messages-redact-sensitive.test.ts:178",
+          ".private_reference\\source_mirrors\\can1357__oh-my-pi\\packages\\ai\\test\\transform-messages-redact-sensitive.test.ts:211",
+          ".private_reference\\source_mirrors\\can1357__oh-my-pi\\packages\\catalog\\test\\issue-830-repro.test.ts:14",
+          ".private_reference\\source_mirrors\\can1357__oh-my-pi\\packages\\coding-agent\\test\\acp-session-effects.test.ts:19",
+          ".private_reference\\source_mirrors\\can1357__oh-my-pi\\packages\\coding-agent\\test\\default-model-ambient-bedrock.test.ts:70",
+          ".private_reference\\source_mirrors\\can1357__oh-my-pi\\packages\\coding-agent\\test\\memory-redaction.test.ts:13",
+          ".private_reference\\source_mirrors\\can1357__oh-my-pi\\packages\\coding-agent\\test\\secrets-obfuscator.test.ts:636",
+          ".private_reference\\source_mirrors\\can1357__oh-my-pi\\packages\\coding-agent\\test\\secrets-obfuscator.test.ts:655",
+          ".private_reference\\source_mirrors\\can1357__oh-my-pi\\packages\\coding-agent\\test\\skillshare\\pack.test.ts:138",
+          ".private_reference\\source_mirrors\\can1357__oh-my-pi\\packages\\coding-agent\\test\\skillshare\\pack.test.ts:140",
+          ".private_reference\\source_mirrors\\can1357__oh-my-pi\\packages\\snapcompact\\research\\anthropic_api.py:21",
+          ".private_reference\\source_mirrors\\deepseek-ai__deepseek-harness\\docs\\user\\guide\\python-sdk.md:53",
+          ".private_reference\\source_mirrors\\deepseek-ai__deepseek-harness\\docs\\user\\guide\\python-sdk.zh.md:53",
+          ".private_reference\\source_mirrors\\deepseek-ai__deepseek-harness\\packages\\session\\session-telemetry-otel\\tests\\loader-composition.e2e.ts:26",
+          ".private_reference\\source_mirrors\\deepseek-ai__deepseek-harness\\packages\\session\\session-telemetry-otel\\tests\\fixtures\\driver.ts:38",
+          "filesScanned=24850 filesSkippedExtension=3978 skippedDirectories=26 filesUnreadable=0 stoppedAfterFindingsLimit=true"
+        ]
+      },
+      "elapsedMs": 79656
+    },
+    "expandedAdmission": {
+      "authority": "operator grouped next;related source-scan fixture repair",
+      "changedManifest": "same five paths",
+      "diagnosis": "remaining56 collected once with limit1000;diagnostic stoppedAfterFindingsLimit=false",
+      "inputBoundary": "77 exact path/file/line fingerprints across reviewed mirror and CVF tests/examples;not a test-directory exemption",
+      "budget": "one final canonical selected scan;fresh29 regressions after pin additions;no provider/build/live replay",
+      "scopeQualification": "classification of observed scanner matches only;not all-files-read or all-byte inventory"
+    },
+    "scopePolicy": "exact relative path + whole-file raw SHA256 + line number + UTF8 line SHA256; no directory/test exemption or mirror modification",
+    "regressions": {
+      "command": "python -B -m unittest scripts/test_release_secret_scan_boundaries.py scripts/test_run_cvf_release_gate_bundle.py",
+      "distinctTests": 29,
+      "status": "PASS",
+      "elapsedSeconds": 0.1,
+      "logSha256": "5c38bbaa88fdf1153fd1576e54adbe26a101397907e124fb5a8ada1ffe5c97af"
+    },
+    "selectedScan": {
+      "result": {
+        "name": "Secrets scan",
+        "status": "PASS",
+        "message": "No secret patterns detected in declared scan scope",
+        "detail": [
+          "filesScanned=67309 filesSkippedExtension=11138 skippedDirectories=177 filesUnreadable=0 stoppedAfterFindingsLimit=false"
+        ]
+      },
+      "elapsedMs": 243906
+    },
+    "scanSourceWhileInFlightSha256": {
+      "scripts/run_cvf_release_gate_bundle.py": "04a11bbf01f40a3f1937e11b60c3c5f5c3bcedd42cdf402baeab79d60aef27c5",
+      "scripts/cvf_release_secret_scan_policy.py": "21623fef0c4d5f5cb9915e4a36ca79b5b90e9c76ab8dbe99de5545beeea495e8",
+      "scripts/test_release_secret_scan_boundaries.py": "70a4a7cbfa3c2b9b7de0832b63303d3625df79b649934d72bafe35dc7ad688fa"
+    },
+    "displayEncodingRestoration": {
+      "cause": "explicit UTF8 required;one cp1252 default read introduced mojibake in nine existing display literals",
+      "beforeSha256": "04a11bbf01f40a3f1937e11b60c3c5f5c3bcedd42cdf402baeab79d60aef27c5",
+      "afterSha256": "8630c24ef14f3f2839b1f81ac9976ff998525f2a8c48fd873bc5f1afe27ff160",
+      "restoration": "original UTF8 em-dash bytes restored;no algorithm changes",
+      "scanExecutedNonDryBranchAstEqual": true,
+      "method": "AST check_secrets with dry_run-only branch removed equal before/after"
+    },
+    "sourceLfNormalizedSha256": {
+      "scripts/cvf_release_secret_scan_policy.py": "21623fef0c4d5f5cb9915e4a36ca79b5b90e9c76ab8dbe99de5545beeea495e8",
+      "scripts/run_cvf_release_gate_bundle.py": "8630c24ef14f3f2839b1f81ac9976ff998525f2a8c48fd873bc5f1afe27ff160",
+      "scripts/test_release_secret_scan_boundaries.py": "70a4a7cbfa3c2b9b7de0832b63303d3625df79b649934d72bafe35dc7ad688fa"
+    },
+    "claimBoundary": "Classified77 observed fixture/parser/example inputs in44 source files. Scan result applies to existing declared file-extension/pruning policy at this worktree;not all-byte inventory or complete corpus proof. TLS fixture identity is not production suitability or proof of non-reuse. Initial bundle FAIL preserved;existing live/build/SOT3 consumed without replay. No provider invocation,key rotation,public/deploy action."
   }
 }

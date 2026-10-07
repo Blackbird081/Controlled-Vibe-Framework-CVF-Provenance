@@ -50,6 +50,7 @@ from cvf_release_e2e_diagnostic import (
 )
 from cvf_release_runtime_support import bootstrap_live_provider_env, platform_cmd
 from cvf_release_secret_scan_policy import (
+    RELEASE_SECRET_FIXTURE_FINGERPRINTS,
     PRIVATE_REFERENCE_SECRET_ALLOWLIST,
     SCAN_EXTENSIONS,
     SCAN_SKIP,
@@ -138,6 +139,16 @@ def is_allowed_secret_line(path: Path, line: str, line_no: int | None = None) ->
         return True
     if line_no is None:
         return False
+    line_digest = hashlib.sha256(line.encode('utf-8')).hexdigest()
+    candidates = [pin for pin in RELEASE_SECRET_FIXTURE_FINGERPRINTS
+                  if pin[0] == rel and pin[2:] == (line_no, line_digest)]
+    if candidates:
+        try:
+            file_digest = hashlib.sha256(path.read_bytes()).hexdigest()
+        except OSError:
+            return False
+        if any(pin[1] == file_digest for pin in candidates):
+            return True
     try:
         fixture_path = path.relative_to(REPO_ROOT / CANDIDATE).as_posix()
     except ValueError:

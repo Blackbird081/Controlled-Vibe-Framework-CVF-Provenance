@@ -16,6 +16,34 @@ it adds no new program, work order, schema, checker or pilot. Predecessor is
 docs/baselines/CVF_GC018_NCR_CONSOLIDATED_LOCAL_FOUNDATION_2026-10-06.md,
 which has957 lines; use a continuation rather than grow it toward the hard limit.
 
+## Pinned Fixture Secret Disposition - 2026-10-07
+
+Operator next admits this finite Local maintainer/reviewer package at 7ed3512e161546638c7bec7ee07ae5e14bdf13ad.
+Consumer release secret-scan reviewer;required outputs classify observed findings,
+source-bound exceptions,negative mutation proof and one selected scan result.
+Original21 matches classified in seven mirror files;intermediate scan reached20
+new findings. One read-only diagnostic clone with finding limit1000 observed56
+remaining matches,stoppedAfterFindingsLimit=false. Related scoped admission expands
+to77 reviewed test/parser/example lines in44 files,including CVF test inputs.
+Classification counts and source fingerprints retained;no repeated20-item patch cycle.
+Dynamic CA e2e source references both TLS manifests.
+Test origin does not establish production key suitability or absence of reuse.
+
+Existing policy now pins exact path,whole-file raw SHA256,line number and line
+SHA256. Whole-file binding covers TLS key bodies and other surrounding bytes.
+Mirrors and test inputs remain unedited;directory/test exclusions and regexes unchanged.
+29 final-source hermetic regressions PASS;changed content,line number or path fails.
+Nine existing display literals restored after a cp1252-default read;executed
+non-dry scanner AST equality verified. In-flight and final source identities
+qualified separately;no atomic tree observation claim.
+One selected actual scan PASS: No secret patterns detected in declared scan scope. Counter: filesScanned=67309 filesSkippedExtension=11138 skippedDirectories=177 filesUnreadable=0 stoppedAfterFindingsLimit=false.
+Secret-free fingerprints and classification in companion secretFindingDisposition20261007.
+Local disposition REVIEWED77_FIXTURES_PINNED_BOUNDED;consume any remaining scan
+findings as recorded,without broad exemptions or automatic replay. Initial canonical
+bundle FAIL remains historical;selected stage cannot certify full release.
+Existing Alibaba live PASS,build and SOT3 evidence consumed;no new provider call,
+key rotation,public/export/deploy,data or P11 change. Existing private disposition applies.
+
 ## Finite Live Fixture Output Revalidation - 2026-10-07
 
 Operator continuation admits this direct Local fixture package at 2b41a0e6feeca2033bbe620d5bb9ec346ce24a0d.
@@ -742,22 +770,22 @@ Returned defects: NONE_RETURNED. Zero candidates and no truncation.
 
 | Field | Evidence |
 |---|---|
-| Actor | Local fixture maintainer/reviewer |
+| Actor | Local secret-scan maintainer/reviewer |
 | Provider or surface | Local canonical bundle; Alibaba-only synthetic live lane |
-| Session or invocation | live-fixture-output-20261007 |
+| Session or invocation | secret-finding-disposition-20261007 |
 | Working directory | repository root |
-| Command or tool surface | diagnostic/source review;fixture lint;one selected canonical live E2E stage;governance gates |
-| Target paths | EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/utils.ts; docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md; docs/reviews/evidence/cvf-local-candidate-release-2026-10-07.json |
+| Command or tool surface | safe source classification;29 regressions;one selected secret scan;governance gates |
+| Target paths | scripts/cvf_release_secret_scan_policy.py; scripts/run_cvf_release_gate_bundle.py; scripts/test_release_secret_scan_boundaries.py; docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md; docs/reviews/evidence/cvf-local-candidate-release-2026-10-07.json |
 | Allowed scope source | operator next,continuous Local work and Alibaba test authorization |
-| Before status evidence | clean 2b41a0e6feeca2033bbe620d5bb9ec346ce24a0d |
-| After status evidence | three material paths; selected live PASS; initial bundle FAIL retained |
+| Before status evidence | clean 7ed3512e161546638c7bec7ee07ae5e14bdf13ad |
+| After status evidence | five material paths;77 reviewed inputs classified;selected scan PASS;initial bundle FAIL preserved |
 | Diff evidence | exact staged manifest;source Git hashes and runtime artifact hashes |
 | Approval boundary | synthetic Local candidate proof; data/public/deploy effects parked |
 | Claim boundary | current canonical Local observation;not remote CI,whole NCR or production acceptance |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | live-fixture-output-20261007 |
-| Expected manifest | EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/utils.ts; docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md; docs/reviews/evidence/cvf-local-candidate-release-2026-10-07.json |
-| Actual changed set | EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/utils.ts; docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md; docs/reviews/evidence/cvf-local-candidate-release-2026-10-07.json |
+| Invocation ID | secret-finding-disposition-20261007 |
+| Expected manifest | scripts/cvf_release_secret_scan_policy.py; scripts/run_cvf_release_gate_bundle.py; scripts/test_release_secret_scan_boundaries.py; docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md; docs/reviews/evidence/cvf-local-candidate-release-2026-10-07.json |
+| Actual changed set | scripts/cvf_release_secret_scan_policy.py; scripts/run_cvf_release_gate_bundle.py; scripts/test_release_secret_scan_boundaries.py; docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md; docs/reviews/evidence/cvf-local-candidate-release-2026-10-07.json |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |
 
