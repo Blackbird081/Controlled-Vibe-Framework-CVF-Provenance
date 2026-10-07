@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_NEXT_MOVE_ALIGNMENT_2026-10-07.md",
     "workOrderSha256": "269615a0dad62a867ac4214c408d8b6e7b845c9429adc38e030321af0d657905"
   },
-  "currentAuthoritySyncReason": "Closed alignment pins unchanged;reviewed77 fixture material 98661aa28567e995dd628400bacc2ece7ed1f930 and selected scan PASS retained with strict identities. Previous live PASS consumed;no new full-bundle or production acceptance.",
+  "currentAuthoritySyncReason": "Closed alignment pins unchanged;full-mode evidence material 3025d52372cd38330429988f2063be7727776d46 retains local API429 and actual client INTAKE with duplicate-post FAIL. Prior scan/live proof consumed;no new full-bundle acceptance.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
