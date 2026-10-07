@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_NEXT_MOVE_ALIGNMENT_2026-10-07.md",
     "workOrderSha256": "269615a0dad62a867ac4214c408d8b6e7b845c9429adc38e030321af0d657905"
   },
-  "currentAuthoritySyncReason": "Closed alignment authority pins unchanged;finite synthetic fixture material c86e21c72297b367117061758090ef89a67f0993 and selected live PASS recorded. Initial full-bundle FAIL and scan debt retained;no whole-release or production acceptance.",
+  "currentAuthoritySyncReason": "Closed alignment pins unchanged;reviewed77 fixture material 98661aa28567e995dd628400bacc2ece7ed1f930 and selected scan PASS retained with strict identities. Previous live PASS consumed;no new full-bundle or production acceptance.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
