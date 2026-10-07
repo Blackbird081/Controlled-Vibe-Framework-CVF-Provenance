@@ -241,6 +241,18 @@ candidates NOT_IMPLEMENTED; no new schema/checker/pilot or product rerun. Consum
 this learning before work selection/terminal review; retain the finite W05
 package rather than start another open-ended hardening sweep.
 
+## W05 Selected Chain Package - 2026-10-07
+
+Finite readiness disposition delivered in
+docs/reviews/CVF_NCR_W05_SELECTED_CHAIN_READINESS_2026-10-07.md and its pinned
+JSON companion. Selected consumer: Work Transfer HTML review packet. Required
+outputs: source/evidence binding,stage matrix,dependent checkpoint groups and
+terminal decision. LOCAL_CHAIN_RECONCILED_BOUNDED; no product repair needed for
+this disposition. Historical synthetic engine/store and component proofs remain
+separate; changed source bytes are explicitly qualified. Current whole-route,
+browser,real-data/effect and R2 exit/R3 proof are not supplied. W05 pre-live is
+NOT_CLOSED. No general P06 sweep or duplicate product/provider/Docker rerun.
+
 ## Claim Boundary
 
 Local consumer source repair only. No full roadmap, live governance, corpus scan,
