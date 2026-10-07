@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_NEXT_MOVE_ALIGNMENT_2026-10-07.md",
     "workOrderSha256": "656a24515a8464acb55802117ba838dff1ae3a0e6e3c421cfe0ce147a20b54d6"
   },
-  "currentAuthoritySyncReason": "Operator-admitted bounded NCR maintenance execution packet 3813c7e3b57a085444c0c39a149984166ec4a8bc; current execution authority switched to exact packet pins. NIS-T1J remains closed historical authority, not reopened. Independent reviewer manually relayed; final closure pending actual proof.",
+  "currentAuthoritySyncReason": "Operator-admitted bounded NCR maintenance execution packet 3813c7e3b57a085444c0c39a149984166ec4a8bc; current execution authority switched to exact packet pins. NIS-T1J remains closed historical authority, not reopened. Independent reviewer manually relayed; final closure pending actual proof. Release continuity reconciles all four committed views after handoff ordering repair ff97a779a9c08dd604d6a1b04ee840c2774a3347; packet bytes and pins retained.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",

@@ -8,7 +8,7 @@
     "reviewManifest": "docs/reviews/evidence/cvf-ncr-local-review-manifest-2026-10-06.json",
     "reviewManifestDisposition": "Historical pre-commit 49-path snapshot; committed disposition recorded here.",
     "verification": "Recorded scoped tests, Docker/storage/Web receipts and real Alibaba observations consumed; material helper and repository pre-commit hooks passed. No independent reviewer, browser UX, actual-data cutover or release-quality governance claim.",
-    "nextAction": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_BOUNDED_LOCAL; BATCH_ID=CVF-NCR-NEXT-MOVE-ALIGNMENT-EXECUTION-20261007. Operator-admitted six-path repair under docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_NEXT_MOVE_ALIGNMENT_2026-10-07.md; packet 3813c7e3b57a085444c0c39a149984166ec4a8bc. Verify committed currentAuthority pins and final release gate before any source writes; capture clean executionBaseHead. Fix NCR full declaration drift rejection and preserve legacy behavior; extract related owners to satisfy reviewed headroom in one grouped outcome. Return exact worker evidence COMPLETE_PENDING_REVIEW;worker must not commit or change packet/continuity. Independent Local reviewer LOCAL_CLAUDE_OPERATOR_RELAY selected by operator;operator forwards task;do not auto-call Claude or spawn agents. Actual distinct actor/invocation/oracle/evidence bindings and probe required before final closure;assignment is not PASS. No new checker/schema/hook or broad workflow rollout. W05 LOCAL_CHAIN_RECONCILED_BOUNDED;pre-live NOT_CLOSED;no automatic whole-route rerun. Group compatible admitted work and finish worker return once. Q001/Q004 OPEN/Profile A;real-data/writer/custody/retention/RPO/RTO/cost/effect action-specific;no ledger-copy prerequisite for fresh isolated development. Browser unavailable unless capability changes;send/B2 and S05/C1 STOP/parked;P11,CCMA,public/deploy parked;NIS-T1J closed no successor;LHW24 closed;no push,R3/live pilot or real-data authority inferred.",
+    "nextAction": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_BOUNDED_LOCAL; BATCH_ID=CVF-NCR-NEXT-MOVE-ALIGNMENT-EXECUTION-20261007. Operator-admitted six-path repair under docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_NEXT_MOVE_ALIGNMENT_2026-10-07.md; packet 3813c7e3b57a085444c0c39a149984166ec4a8bc. Verify committed currentAuthority pins and final release gate before any source writes; capture clean executionBaseHead. Current phase gates use clean released HEAD as base; source continuity ordering repair ff97a779a9c08dd604d6a1b04ee840c2774a3347 preserves historical closures. Fix NCR full declaration drift rejection and preserve legacy behavior; extract related owners to satisfy reviewed headroom in one grouped outcome. Return exact worker evidence COMPLETE_PENDING_REVIEW;worker must not commit or change packet/continuity. Independent Local reviewer LOCAL_CLAUDE_OPERATOR_RELAY selected by operator;operator forwards task;do not auto-call Claude or spawn agents. Actual distinct actor/invocation/oracle/evidence bindings and probe required before final closure;assignment is not PASS. No new checker/schema/hook or broad workflow rollout. W05 LOCAL_CHAIN_RECONCILED_BOUNDED;pre-live NOT_CLOSED;no automatic whole-route rerun. Group compatible admitted work and finish worker return once. Q001/Q004 OPEN/Profile A;real-data/writer/custody/retention/RPO/RTO/cost/effect action-specific;no ledger-copy prerequisite for fresh isolated development. Browser unavailable unless capability changes;send/B2 and S05/C1 STOP/parked;P11,CCMA,public/deploy parked;NIS-T1J closed no successor;LHW24 closed;no push,R3/live pilot or real-data authority inferred.",
     "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
     "approvedContextContinuation": {
       "materialCommit": "594e2c1b2cbc7171fe77ab849782e5de085b5b8c",
@@ -200,7 +200,13 @@
       "reviewerDispatch": "OPERATOR_MANUAL_RELAY_NO_AUTOMATIC_INVOCATION",
       "independentProbe": "PENDING_REVIEWER_EXECUTION",
       "implementation": "NOT_EXECUTED_AT_DISPATCH_SYNC",
-      "publicExportDisposition": "DEFERRED_PRIVATE_ONLY"
+      "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
+      "continuityRepair": {
+        "handoffOrderingCommit": "ff97a779a9c08dd604d6a1b04ee840c2774a3347",
+        "reason": "current action before historic AKOE closure; synchronize all four view commits for DR-04",
+        "phaseBase": "CURRENT_CLEAN_RELEASED_HEAD",
+        "status": "PENDING_BOUND_RELEASE_RECHECK"
+      }
     }
   }
 }
