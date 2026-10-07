@@ -298,12 +298,66 @@ Q001/Q004, send/B2, S05/C1, P11, CCMA and public/deploy stay parked. Subsequent
 Local selection must name a receiving-work outcome and source-specific proof
 before admitting execution; a general next request is not a stopped-lane reset.
 
+## Action-Specific Continuation Reading Aid - 2026-10-07
+
+Status: BOUNDED_DECISION_PROBE_RECORDED. Consumer: the Local receiving agent
+deciding which next action may proceed when another effect is parked. Base:
+d51eae22502a4bb865c036a5b750dbb93e72f214; clean startup. Local decision owner; phase: bounded
+instruction-access improvement and evidence disposition. Operator next and
+standing Alibaba-only testing authorize this finite direct task; the closed
+alignment work order is unchanged. Required outputs: startup orientation cue,
+fixed-case/provider evidence, semantic disposition and unchanged checkpoints.
+All four outputs are delivered together; no new checker/schema/work order.
+
+Named source signal: the separate provider observation in
+docs/reviews/CVF_NCR_W05_SELECTED_CHAIN_READINESS_2026-10-07.md retained Boolean
+limits but blanket user-approval wording over-parked continuation. This does not
+reopen or repeat the completed W05 process/store proof. The existing lifecycle
+Agent Continuation And Action Readiness and Outcome-Bound Work Selection owners
+already require action-specific readiness, dependent-action holds and finite
+outcome completion. Their Git hash and exact supplied source excerpts are pinned
+in docs/reviews/evidence/cvf-action-readiness-quick-read-2026-10-07.json; no doctrine gap is inferred.
+
+Reuse the mandatory orientation entry at docs/reference/guard_orientation/README.md:
+its Action-Specific Continuation Quick Read names the next action, existing
+grant, material unknown, independent permitted work and finite terminal stop.
+Root AGENTS.md already requires reading that orientation before governed work.
+No new carrier or automatic read/comprehension claim is introduced. The cue
+preserves holds for public effects, dependent BUILD, real-data writes and scope
+extensions; a brief need not become build-ready merely to support INTAKE.
+
+Four real Alibaba calls used two conditions on each of qwen3.8-27b and
+qwen3.8-flash: canonical owner only versus owner plus quick read. The fixed
+four cases cover pending public approval, incomplete intake brief, unresolved
+real-data writer and completed outcome with an unrelated defect. Every response
+matched the predeclared next-action/held-action/no-whole-project-approval oracle.
+Pre-implementation autorun PASS preceded effects. Verified matching existing
+local credential aliases were used; no key or credential configuration change.
+Prompt/output hashes, raw synthetic prompts/results, usage, latency and quota
+expiry are retained in the companion. No retries or broad suite replay occurred.
+
+Both conditions passed, so improvement is NOT_DEMONSTRATED. This is a small
+explicit-choice synthetic probe, not free-form agent robustness, actual tool
+behavior or universal outcome enforcement. It supports retaining the existing
+rule and its more accessible reading aid; it does not select a default model,
+certify a provider or prove live end-to-end AI governance/release readiness.
+Same Local actor supplied the fixed oracle; no independent reviewer claim.
+
+Finding disposition: ORCHESTRATOR_PACKET_GAP / GOVERNANCE_CONTROL_PLANE /
+RULE_EXISTS for access to already-owned rules; PROVIDER_OUTPUT_LEARNING /
+RULE_EXISTS for the bounded decision observation. No added exporter fields,
+new parser guard or automatic enforcement is justified by these samples.
+Terminal stop: this aid/evidence package is delivered; do not start an iterative
+prompt survey. Wider upgrades require another distinct admitted outcome.
+W05 pre-live, real-data/browser, send/B2, S05/C1, P11, CCMA, public/deploy remain
+unchanged and parked where already declared.
+
 ## Current Runtime Freshness Verification
 
 N/A_WITH_REASON - targeted control-source assessment at the recorded revision,
 not runtime absence or provider governance proof. Probe hashes bind exact bytes.
 
-## Epistemic Process Block
+## Historical Foundation Epistemic Process Block
 
 Expected Result / Prediction: existing consolidation rules would produce finite
 outcome-oriented work without repeated operator next.
@@ -314,18 +368,30 @@ parser gap is narrower supporting evidence, not sole causal explanation.
 Claim Update: foundation learning recorded; machine enforcement and behavioral
 closure remain unproved.
 
+## Epistemic Process Block
+
+Expected Result / Prediction: both policy conditions preserve the allowed next
+action and the separate held effect without whole-project approval.
+Evidence Comparison: four provider calls matched all four fixed case rows;
+canonical-only and quick-read conditions both passed.
+Contradiction Or Gap Disposition: no measured improvement or new rule gap;
+retain the orientation access aid, explicit-choice probe limits and unproved
+real tool/agent behavior rather than creating another enforcement mechanism.
+Claim Update: reusable reading cue and bounded decision evidence delivered;
+universal application, free-form robustness and machine enforcement unproved.
+
 ## Checker Source Read-Ahead Block
 
 | Field | Value |
 |---|---|
-| applicableCheckersRead | governance/compat/check_finding_to_governance_learning.py; governance/compat/check_markdown_structural_completeness.py; governance/compat/check_governed_artifact_checker_read_ahead.py; governance/compat/check_agent_operation_trace.py; governance/compat/check_core_guard_self_protection.py; governance/compat/check_external_knowledge_intake_routing.py; governance/compat/check_active_session_state.py; governance/compat/check_continuation_chain.py; governance/compat/check_task_governance_route.py; governance/compat/route_task_governance.py; governance/compat/check_work_order_acceptance_ledger.py; governance/compat/check_work_order_dispatch_quality.py; governance/compat/check_dispatch_release_readiness.py; governance/compat/check_gate_to_role_closeability.py |
+| applicableCheckersRead | governance/compat/check_epistemic_process_packet.py; governance/compat/check_finding_to_governance_learning.py; governance/compat/check_markdown_structural_completeness.py; governance/compat/check_governed_artifact_checker_read_ahead.py; governance/compat/check_agent_operation_trace.py; governance/compat/check_core_guard_self_protection.py; governance/compat/check_external_knowledge_intake_routing.py; governance/compat/check_active_session_state.py; governance/compat/check_continuation_chain.py; governance/compat/check_task_governance_route.py; governance/compat/route_task_governance.py; governance/compat/check_work_order_acceptance_ledger.py; governance/compat/check_work_order_dispatch_quality.py; governance/compat/check_dispatch_release_readiness.py; governance/compat/check_gate_to_role_closeability.py |
 | literalTokensReviewed | RULE_EXISTS; DESIGN_REVIEW_REQUIRED; MACHINE_CHECK_CANDIDATE; GOVERNANCE_CONTROL_PLANE; rawMemoryReleased=false; trace labels; coordination binding |
 | gateRunPurpose | confirm changed learning/discovery structure and continuity, not product or agent-behavior proof |
 | claimBoundary | structural helper probe and changed-document gates cannot establish universal outcome enforcement |
 
 ## ADIF Query
 
-Resolver query: Worker execution / worker / pre-implementation on 2026-10-07.
+Resolver query: review / reviewer / review on 2026-10-07 (reading-aid package).
 Returned defects: zero; totalCandidates=0; truncated=false. No ADIF defect waiver.
 
 ## Agent Operation Trace Block
@@ -333,22 +399,22 @@ Returned defects: zero; totalCandidates=0; truncated=false. No ADIF defect waive
 
 | Field | Evidence |
 |---|---|
-| Actor | Local learning-loop maintainer/reviewer |
-| Provider or surface | private repository, no provider or delegation |
-| Session or invocation | ncr-learning-loopback-20261007 |
+| Actor | Local maintainer and bounded decision-probe recorder |
+| Provider or surface | private repository and Alibaba only; no delegation |
+| Session or invocation | action-readiness-quick-read-20261007 |
 | Working directory | repository root |
-| Command or tool surface | targeted owner reads, sealed Git/receipt/oracle joins, exact documentation writes |
-| Target paths | docs/reviews/learnings/CVF_OUTCOME_BOUND_CONTINUATION_LEARNING_2026-10-07.md; docs/reviews/learnings/README.md; docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md |
-| Allowed scope source | operator next, existing lifecycle Outcome-Bound Work Selection And Terminal Review and project learning-loop owner |
-| Before status evidence | clean a0ead33b9b2383c51b8ff892971308b19e3cdcc7 |
-| After status evidence | three documentation owners; product and current execution packet unchanged |
-| Diff evidence | exact staged three-path manifest and whitespace check |
-| Approval boundary | Local source-only disposition, no new worker/provider/runtime/pilot/public action |
-| Claim boundary | bounded learning reconciliation, not general enforcement or W05 readiness |
+| Command or tool surface | targeted canonical owner reads; pre-implementation gate; four fixed provider probes; three-path writes |
+| Target paths | docs/reference/guard_orientation/README.md; docs/reviews/learnings/CVF_OUTCOME_BOUND_CONTINUATION_LEARNING_2026-10-07.md; docs/reviews/evidence/cvf-action-readiness-quick-read-2026-10-07.json |
+| Allowed scope source | operator next and standing grouped Alibaba-only test authority; existing lifecycle small-direct-task route |
+| Before status evidence | clean d51eae22502a4bb865c036a5b750dbb93e72f214 |
+| After status evidence | three reading-aid/learning/evidence paths; product code and closed authority unchanged |
+| Diff evidence | exact staged manifest, source/prompt/script hashes and durable synthetic results |
+| Approval boundary | finite instruction-access aid/probe only; no public/deploy/real-data/pilot effects |
+| Claim boundary | small explicit-choice decision evidence; no improvement, universal behavior or enforcement claim |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-learning-loopback-20261007 |
-| Expected manifest | docs/reviews/learnings/CVF_OUTCOME_BOUND_CONTINUATION_LEARNING_2026-10-07.md; docs/reviews/learnings/README.md; docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md |
-| Actual changed set | docs/reviews/learnings/CVF_OUTCOME_BOUND_CONTINUATION_LEARNING_2026-10-07.md; docs/reviews/learnings/README.md; docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md |
+| Invocation ID | action-readiness-quick-read-20261007 |
+| Expected manifest | docs/reference/guard_orientation/README.md; docs/reviews/learnings/CVF_OUTCOME_BOUND_CONTINUATION_LEARNING_2026-10-07.md; docs/reviews/evidence/cvf-action-readiness-quick-read-2026-10-07.json |
+| Actual changed set | docs/reference/guard_orientation/README.md; docs/reviews/learnings/CVF_OUTCOME_BOUND_CONTINUATION_LEARNING_2026-10-07.md; docs/reviews/evidence/cvf-action-readiness-quick-read-2026-10-07.json |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |
 
@@ -363,7 +429,7 @@ Returned defects: zero; totalCandidates=0; truncated=false. No ADIF defect waive
 | Matching local-view guard | N/A with reason: internal assessment only |
 | Owner surface | docs/reference/CVF_GOVERNED_WORK_LIFECYCLE_AND_DESIGN_CONTROL_STANDARD_2026-06-11.md; docs/reference/CVF_TASK_PROPORTIONAL_GOVERNANCE_ROUTING_STANDARD_2026-08-17.md |
 | Disposition | RULE_EXISTS; machine/design candidates, not implemented |
-| Claim boundary | no external repository absorption or public absence claim |
+| Claim boundary | small explicit-choice decision evidence; no improvement, universal behavior or enforcement claim |
 
 ## External/Local Coordination Binding
 
@@ -405,7 +471,8 @@ no corpus scan or inventory assertion.
 
 ## Claim Boundary
 
-Written correction and shared discovery are present; machine enforcement,
-continuous agent execution and package outcome are not proven by this record.
+Written correction, reading aid and bounded explicit-choice provider evidence
+are present; machine enforcement and continuous agent execution are not proven.
+The finite reading-aid package is delivered; no universal outcome-compliance claim.
 Current NIS authority and parked lanes stay unchanged. Do not cite this assessment
 as a new schema/checker requirement already implemented or an autonomous runtime.

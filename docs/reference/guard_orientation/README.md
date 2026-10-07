@@ -39,6 +39,37 @@ checker semantics, runtime behavior, provider behavior, or public-sync state.
    `docs/baselines`, `docs/work_orders`, `docs/reviews`, or `docs/roadmaps`.
 6. Read the guard surfaces named in the "Read first" column before editing.
 
+### Action-Specific Continuation Quick Read
+
+Owner: docs/reference/CVF_GOVERNED_WORK_LIFECYCLE_AND_DESIGN_CONTROL_STANDARD_2026-06-11.md,
+Agent Continuation And Action Readiness and Outcome-Bound Work Selection And
+Terminal Review. Apply those rules before asking or stopping; this is a reading
+aid for the existing contract, not another execution grant or gate.
+
+1. Name the next action and its actual scope/authority. Separate source facts,
+   locked decisions, assumptions and unresolved choices.
+2. If that action is already admitted and sufficiently clear, continue it without
+   asking for the same authorization again. A pending approval for another
+   effect does not pause independent admitted work.
+3. If a material condition or authority for an effect is missing, hold that
+   effect and route the specific question to its owner. Do not turn that hold
+   into a demand for approval of the entire project; continue independent work.
+4. Intake may read and clarify an incomplete brief without claiming BUILD
+   readiness. Resolve ordinary details within scope; do not invent locked facts,
+   consent, acceptance or execution authority.
+5. At the finite outcome, verify required outputs and stop. An unrelated new
+   defect is not permission to expand the selected package indefinitely.
+
+| Situation | Continue | Hold / terminal boundary |
+|---|---|---|
+| Public approval pending; isolated local verification admitted | named local verification | public effect |
+| Brief incomplete; intake read/clarification admitted | intake and material questions | dependent BUILD without its contract/authority |
+| Real-data writer decision unresolved; source analysis admitted | independent source analysis | real-data write/migration |
+| All selected outputs delivered; unrelated endpoint gap found | terminal disposition of the selected outcome | no automatic endpoint campaign |
+
+Actual grants, locked decisions, required gates and parked checkpoints control.
+This cue does not prove auto-load, comprehension, enforcement or acceptance.
+
 ## Role-Neutrality Rule
 
 Normative instructions in CVF governed artifacts must name roles and required
@@ -167,6 +198,30 @@ still control.
 | forbiddenExpansion | enforcement wrapper, proxy enforcement, interception, arbitrary-command execution, EDIT/COMMIT execution, provider/live, public-sync, queue/daemon, watcher, readiness claims, full-hook equivalence, and universal control remain out of scope |
 
 ## Agent Operation Trace Block
+
+
+| Field | Evidence |
+|---|---|
+| Actor | Local maintainer and bounded decision-probe recorder |
+| Provider or surface | private repository and Alibaba only; no delegation |
+| Session or invocation | action-readiness-quick-read-20261007 |
+| Working directory | repository root |
+| Command or tool surface | targeted canonical owner reads; pre-implementation gate; four fixed provider probes; three-path writes |
+| Target paths | docs/reference/guard_orientation/README.md; docs/reviews/learnings/CVF_OUTCOME_BOUND_CONTINUATION_LEARNING_2026-10-07.md; docs/reviews/evidence/cvf-action-readiness-quick-read-2026-10-07.json |
+| Allowed scope source | operator next and standing grouped Alibaba-only test authority; existing lifecycle small-direct-task route |
+| Before status evidence | clean d51eae22502a4bb865c036a5b750dbb93e72f214 |
+| After status evidence | three reading-aid/learning/evidence paths; product code and closed authority unchanged |
+| Diff evidence | exact staged manifest, source/prompt/script hashes and durable synthetic results |
+| Approval boundary | finite instruction-access aid/probe only; no public/deploy/real-data/pilot effects |
+| Claim boundary | small explicit-choice decision evidence; no improvement, universal behavior or enforcement claim |
+| Agent type | INTERNAL_AGENT |
+| Invocation ID | action-readiness-quick-read-20261007 |
+| Expected manifest | docs/reference/guard_orientation/README.md; docs/reviews/learnings/CVF_OUTCOME_BOUND_CONTINUATION_LEARNING_2026-10-07.md; docs/reviews/evidence/cvf-action-readiness-quick-read-2026-10-07.json |
+| Actual changed set | docs/reference/guard_orientation/README.md; docs/reviews/learnings/CVF_OUTCOME_BOUND_CONTINUATION_LEARNING_2026-10-07.md; docs/reviews/evidence/cvf-action-readiness-quick-read-2026-10-07.json |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: none |
+
+## Historical Carrier Routing Trace Snapshot
 
 | Field | Evidence |
 |---|---|
