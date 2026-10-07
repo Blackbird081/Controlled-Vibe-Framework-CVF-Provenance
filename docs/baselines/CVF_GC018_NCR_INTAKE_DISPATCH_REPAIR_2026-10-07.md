@@ -17,11 +17,22 @@ not a new program,work order,checker or pilot. Decision owner Local.
 
 Operator next and standing Alibaba-only test authority; Local maintainer/reviewer,
 no delegation or independent-oracle claim. Clean base 41e0d9f67f414a22cdbc5e24f275d09e053ba3b4.
-Exact nine material paths fixed in the operation trace. Compatible scope extension
+Original implementation has nine material paths bound in the companion admission.
+The operation trace below now records its closure-only packet correction. Compatible scope extension
 adds existing history initializer before edit to eliminate transient session mounts.
 Outputs: session-bound dispatch,timer cleanup,Next env parity,focused regressions,
 selected real-provider result and continuity. Stop at those outputs.
 No guard bypass,credential edit,cap increase,model/default selection or phase approval.
+
+## Provider Delegation Boundary
+
+Worker/subagent providerExecutionAuthority: FORBIDDEN.
+No worker or subagent is dispatched by this baseline. Existing live results are
+Local root tests under the operator's explicit Alibaba authorization, not a
+worker grant, credential inheritance authority or permission to repeat calls.
+Owner: docs/reference/CVF_AGENT_DELEGATION_AND_SUBAGENT_BOUNDARY_STANDARD_2026-05-19.md.
+Initial pre-closure rejected this missing literal field; this document-only
+correction changes no source,fixture,provider effect or acceptance assertion.
 
 ## Source Verification Block
 
@@ -99,7 +110,7 @@ and general worker/reviewer lifecycle remain unproved.
 |---|---|
 | applicableCheckersRead | governance/compat/check_epistemic_process_packet.py; governance/compat/check_finding_to_governance_learning.py; governance/compat/check_markdown_structural_completeness.py; governance/compat/check_governed_artifact_checker_read_ahead.py; governance/compat/check_agent_packet_authority_and_encoding.py; governance/compat/check_agent_operation_trace.py; governance/compat/check_adif_defect_registry_disclosure.py; governance/compat/check_public_export_disposition.py; governance/compat/check_core_guard_self_protection.py; governance/compat/check_corpus_completeness_report_integrity.py |
 | literalTokensReviewed | Source/Decision/Evidence/Claim Boundary; read-ahead fields; trace labels; Resolver query; Returned defects; Public Export Disposition |
-| additionalCheckersRead | governance/compat/check_work_order_dispatch_quality.py; governance/compat/check_external_knowledge_intake_routing.py; governance/compat/check_raw_memory_release_invariant.py |
+| additionalCheckersRead | governance/compat/check_subagent_provider_execution_authority.py; governance/compat/check_work_order_dispatch_quality.py; governance/compat/check_external_knowledge_intake_routing.py; governance/compat/check_raw_memory_release_invariant.py |
 | gateRunPurpose | Confirm authored bounded scope and evidence; not first discovery of literals |
 | claimBoundary | Structural packet admission only |
 
@@ -113,22 +124,22 @@ Returned defects: NONE_RETURNED. Zero candidates and no truncation.
 
 | Field | Evidence |
 |---|---|
-| Actor | Local intake dispatch maintainer/reviewer |
+| Actor | Local closure packet maintainer/reviewer |
 | Provider or surface | Local canonical bundle; Alibaba-only synthetic live lane |
-| Session or invocation | intake-dispatch-repair-20261007 |
+| Session or invocation | intake-dispatch-repair-packet-20261007 |
 | Working directory | repository root |
-| Command or tool surface | original-source negatives;45 hermetic tests;typecheck/lint;two selected Alibaba live cases;governance gates |
-| Target paths | EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/AgentChatWithHistory.tsx; EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/AgentChatWithHistory.test.tsx; EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/hooks/useAgentChat.ts; EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/hooks/useAgentChat.test.ts; EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/playwright.config.ts; EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/chat-history.tsx; docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md; docs/baselines/CVF_GC018_NCR_INTAKE_DISPATCH_REPAIR_2026-10-07.md; docs/reviews/evidence/cvf-local-candidate-release-2026-10-07.json |
+| Command or tool surface | provider-delegation literal correction;targeted authority check;governance gates;no provider replay |
+| Target paths | docs/baselines/CVF_GC018_NCR_INTAKE_DISPATCH_REPAIR_2026-10-07.md |
 | Allowed scope source | operator next,continuous Local work and Alibaba test authorization |
-| Before status evidence | clean 41e0d9f67f414a22cdbc5e24f275d09e053ba3b4 |
-| After status evidence | nine material paths;selected full-mode PASS;initial bundle FAIL preserved |
+| Before status evidence | clean 6652198a9edf235c9dffb254a66a5b0cc26eb6ab |
+| After status evidence | one baseline path;worker execution forbidden;existing two-case live PASS retained |
 | Diff evidence | exact staged manifest;source Git hashes and runtime artifact hashes |
 | Approval boundary | synthetic Local candidate proof; data/public/deploy effects parked |
 | Claim boundary | current canonical Local observation;not remote CI,whole NCR or production acceptance |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | intake-dispatch-repair-20261007 |
-| Expected manifest | EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/AgentChatWithHistory.tsx; EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/AgentChatWithHistory.test.tsx; EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/hooks/useAgentChat.ts; EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/hooks/useAgentChat.test.ts; EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/playwright.config.ts; EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/chat-history.tsx; docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md; docs/baselines/CVF_GC018_NCR_INTAKE_DISPATCH_REPAIR_2026-10-07.md; docs/reviews/evidence/cvf-local-candidate-release-2026-10-07.json |
-| Actual changed set | EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/AgentChatWithHistory.tsx; EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/AgentChatWithHistory.test.tsx; EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/hooks/useAgentChat.ts; EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/hooks/useAgentChat.test.ts; EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/playwright.config.ts; EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/chat-history.tsx; docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md; docs/baselines/CVF_GC018_NCR_INTAKE_DISPATCH_REPAIR_2026-10-07.md; docs/reviews/evidence/cvf-local-candidate-release-2026-10-07.json |
+| Invocation ID | intake-dispatch-repair-packet-20261007 |
+| Expected manifest | docs/baselines/CVF_GC018_NCR_INTAKE_DISPATCH_REPAIR_2026-10-07.md |
+| Actual changed set | docs/baselines/CVF_GC018_NCR_INTAKE_DISPATCH_REPAIR_2026-10-07.md |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |
 
