@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1J_DOCUMENTARY_WORKSHEET_EXPORT_2026-10-06.md",
     "workOrderSha256": "572fd199b2fd641b4a8eeb6e80006a555951f4ce7a8122801efe775df93e111e"
   },
-  "currentAuthoritySyncReason": "Accepted NIS-T1J authority retained; separately authorized QBS/LPCI input shape repair eefca1bd827f6f6f87d94a310ac0a0f2bf73ee15 and structural tests are bounded maintenance,not live governance,new NIS order or release closure.",
+  "currentAuthoritySyncReason": "Accepted NIS-T1J authority retained; separately authorized active handoff compaction after exact snapshot 8074e2f001e3d6c2d51fc3ec89520da448cf57eb is bounded continuity maintenance,not new NIS order,provider/runtime activation or release closure.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
