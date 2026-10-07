@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_NEXT_MOVE_ALIGNMENT_2026-10-07.md",
     "workOrderSha256": "269615a0dad62a867ac4214c408d8b6e7b845c9429adc38e030321af0d657905"
   },
-  "currentAuthoritySyncReason": "Local NCR closure dispositions F1-F3 with unchanged independent-probed source bytes; closed work-order raw-byte pin refreshed. Material parent 9f624ecbc8274907d004a2e86ae4b807d85e21f2. NIS and parked lanes preserved.",
+  "currentAuthoritySyncReason": "Local NCR closure dispositions F1-F3 with unchanged independent-probed source bytes; closed work-order raw-byte pin refreshed. Material parent 9dd87aa9ae29df4a0691a91e86555a567772889a. NIS and parked lanes preserved.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",

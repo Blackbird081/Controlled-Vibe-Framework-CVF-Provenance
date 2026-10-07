@@ -8,7 +8,7 @@
     "reviewManifest": "docs/reviews/evidence/cvf-ncr-local-review-manifest-2026-10-06.json",
     "reviewManifestDisposition": "Historical pre-commit 49-path snapshot; committed disposition recorded here.",
     "verification": "Recorded scoped tests, Docker/storage/Web receipts and real Alibaba observations consumed; material helper and repository pre-commit hooks passed. No independent reviewer, browser UX, actual-data cutover or release-quality governance claim.",
-    "nextAction": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=LOCAL_DISPOSITION_ONLY; BATCH_ID=CVF-NCR-NEXT-MOVE-ALIGNMENT-CLOSED-20261007. Accepted material parent 9f624ecbc8274907d004a2e86ae4b807d85e21f2. NCR lexical alignment and owner extraction CLOSED_PASS_BOUNDED under docs/reviews/CVF_NCR_NEXT_MOVE_ALIGNMENT_COMPLETION_2026-10-07.md. Separate Local probe accepted:245 assertions,4000 NCR samples,4000 legacy samples; no provider call. F1 LOW known limit: state backticks around the whole Next allowed move prefix may skip NCR; keep current generated bare state format; no universal envelope guarantee. F2 Git blob byte identities and F3 distinct executable-oracle/evidence digests recorded. No worker redispatch or automatic successor. Group compatible already-admitted CVF backlog through its existing owners; no new checker/schema/pilot or roadmap audit from this maintenance. W05 LOCAL_CHAIN_RECONCILED_BOUNDED;pre-live NOT_CLOSED;no automatic whole-route rerun. Q001/Q004 OPEN/Profile A;real-data/writer/custody/retention/RPO/RTO/cost action-specific;no ledger-copy prerequisite for isolated development. Browser unavailable unless capability changes;send/B2 and S05/C1 STOP/parked;P11,CCMA,public/deploy parked;NIS-T1J closed no successor;LHW24 closed;no push,provider/live pilot or real-data authority inferred.",
+    "nextAction": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=LOCAL_DISPOSITION_ONLY; BATCH_ID=CVF-NCR-NEXT-MOVE-ALIGNMENT-CLOSED-20261007. Accepted material parent 9dd87aa9ae29df4a0691a91e86555a567772889a. NCR lexical alignment and owner extraction CLOSED_PASS_BOUNDED under docs/reviews/CVF_NCR_NEXT_MOVE_ALIGNMENT_COMPLETION_2026-10-07.md. Separate Local probe accepted:245 assertions,4000 NCR samples,4000 legacy samples; no provider call. F1 LOW known limit: state backticks around the whole Next allowed move prefix may skip NCR; keep current generated bare state format; no universal envelope guarantee. F2 Git blob byte identities and F3 distinct executable-oracle/evidence digests recorded. No worker redispatch or automatic successor. Group compatible already-admitted CVF backlog through its existing owners; no new checker/schema/pilot or roadmap audit from this maintenance. W05 LOCAL_CHAIN_RECONCILED_BOUNDED;pre-live NOT_CLOSED;no automatic whole-route rerun. Q001/Q004 OPEN/Profile A;real-data/writer/custody/retention/RPO/RTO/cost action-specific;no ledger-copy prerequisite for isolated development. Browser unavailable unless capability changes;send/B2 and S05/C1 STOP/parked;P11,CCMA,public/deploy parked;NIS-T1J closed no successor;LHW24 closed;no push,provider/live pilot or real-data authority inferred.",
     "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
     "approvedContextContinuation": {
       "materialCommit": "594e2c1b2cbc7171fe77ab849782e5de085b5b8c",
@@ -199,7 +199,7 @@
       "independentReviewerActor": "LOCAL_CLAUDE_OPERATOR_RELAY",
       "reviewerDispatch": "OPERATOR_MANUAL_RELAY_NO_AUTOMATIC_INVOCATION",
       "independentProbe": "PASS_INDEPENDENT_PROBE",
-      "implementation": "ACCEPTED_UNCHANGED_SOURCE",
+      "implementation": "ACCEPTED_LOGIC_AST_IDENTICAL_TERMINAL_BLANKS_REMOVED",
       "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
       "continuityRepair": {
         "handoffOrderingCommit": "ff97a779a9c08dd604d6a1b04ee840c2774a3347",
@@ -207,7 +207,7 @@
         "phaseBase": "CURRENT_CLEAN_RELEASED_HEAD",
         "status": "BOUND_RELEASE_PASS_AT_EXECUTION_BASE_9F624ECB"
       },
-      "closureMaterialCommit": "9f624ecbc8274907d004a2e86ae4b807d85e21f2",
+      "closureMaterialCommit": "9dd87aa9ae29df4a0691a91e86555a567772889a",
       "completionReview": "docs/reviews/CVF_NCR_NEXT_MOVE_ALIGNMENT_COMPLETION_2026-10-07.md",
       "localEvidence": "docs/reviews/evidence/cvf-ncr-next-move-alignment-local-review-2026-10-07.json",
       "findings": {
