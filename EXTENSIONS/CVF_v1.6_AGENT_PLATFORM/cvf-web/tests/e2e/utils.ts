@@ -210,7 +210,13 @@ Ngân sách tối đa 300 triệu VND, cần kết quả trong 6 tháng.
 SUCCESS CRITERIA:
 - Phân tích rõ ưu/nhược điểm
 - Xác định rủi ro chính
-- Đưa ra khuyến nghị có căn cứ`,
+- Đưa ra khuyến nghị có căn cứ
+
+DELIVERABLE SCOPE:
+This synthetic governance fixture needs a concise Vietnamese decision brief,
+at most 180 words. Give one advantage and one risk for each of the three
+options, then one recommendation grounded in the budget and six-month limit.
+Label any material assumption. Do not expand into a full strategy report.`,
         inputs: {
             topic: 'Mở rộng thị trường miền Trung',
             context: 'Công ty bán phần mềm quản lý kho cho SME Việt Nam.',

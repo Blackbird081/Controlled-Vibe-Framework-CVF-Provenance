@@ -667,5 +667,73 @@
       "repair": "ASCII summary separator and explicit stopped-at-limit/unprocessed wording",
       "scope": "documents only;checkers,source,tests and prior failure verdicts unchanged"
     }
+  },
+  "finiteLiveFixture20261007": {
+    "result": {
+      "name": "E2E Playwright Governance (live)",
+      "status": "PASS",
+      "message": "Playwright live governance suite passed",
+      "detail": [
+        "\u001b[2m[WebServer] \u001b[22m(Use `node --trace-warnings ...` to show where the warning was created)"
+      ]
+    },
+    "latencyMs": 146609,
+    "diagnostic": null,
+    "fixtureWorktreeSha256": "8757d3b456fdca47f5758858b28cec94111728fffee8f5d99c1b3ea0c786d971",
+    "generatedCleanup": {
+      "restoredOnlyVerifiedGeneratedTsconfig": true,
+      "addedIncludes": [
+        ".next-cvf-release-gate-e2e-live/types/**/*.ts",
+        ".next-cvf-release-gate-e2e-live/dev/types/**/*.ts"
+      ],
+      "beforeSha256": "d4af4823c8a2919796c5faa29805cd152217fbc25d6021c2da57541a685ea0f6",
+      "generatedSha256": "8edcad40e819418b5a50a00ef8903a79f20a7096ecc4f891aae456aaab27baac"
+    },
+    "sourceLfNormalizedSha256": {
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/utils.ts": "8757d3b456fdca47f5758858b28cec94111728fffee8f5d99c1b3ea0c786d971",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execute-route-budget.ts": "256868a42135c19f457d373eb09c3dafb224376cd04fa6e20d75672ce3e38d1a",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/ai/providers.ts": "bca40aab2d66df9ee5f7060b0d7558d6e499cca1b5a118ed367e546ca04d94aa"
+    },
+    "claimBoundary": "One revised-fixture live suite;not original failure sole-cause proof,model selection or full-bundle release acceptance. Assertions unchanged;prior output-limit FAIL preserved. Five explicit route submissions;total provider-attempt count not inferred from test count.",
+    "admission": {
+      "baseHead": "2b41a0e6feeca2033bbe620d5bb9ec346ce24a0d",
+      "role": "Local implementer/reviewer",
+      "decisionOwner": "Local",
+      "authority": "operator ok continue plus standing Alibaba-only meaningful bounded tests",
+      "consumer": "release live-governance fixture reviewer",
+      "outcome": "diagnose output-budget mismatch,finite synthetic deliverable,one selected live suite and truthful terminal result",
+      "scope": [
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/utils.ts",
+        "docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md",
+        "docs/reviews/evidence/cvf-local-candidate-release-2026-10-07.json"
+      ],
+      "sourceGitSha256": "1b097396336b69f81e9db6ec05db6f365ff9c22b598a8f4468d1aebfb4eb98e2",
+      "diagnostic": {
+        "stage": "output_validation",
+        "class": "output_validation_failed",
+        "retryable": false,
+        "provider": "alibaba",
+        "model": "qwen-flash",
+        "httpStatus": 200,
+        "safeMessage": "Four prior observed failed-case responses were truncated. Trusted strategy_analysis budget is 2048,fixture lacks a finite output requirement.",
+        "userAction": "bound synthetic deliverable length,retain existing success assertions and token/model configuration"
+      },
+      "budget": "one live suite;five explicit route submissions,no automatic replay;route admitted provider-attempt/retry bounds remain authoritative",
+      "stop": "record final live status even FAIL;do not increase cap,change keys/model,weaken validator or replay full bundle/build/mock/SOT3/scan",
+      "claimBoundary": "hypothesized workload mismatch tested by finite fixture;not original failure sole-cause proof or whole-release PASS"
+    },
+    "lastRunReport": {
+      "path": ".cvf\\runtime\\release-gate-e2e\\live-16w4h_xh\\.last-run.json",
+      "sha256": "91d1c43004802cd49950d78eb11c8fa7d05da8ffffe219a8b13b2f561bc00903",
+      "value": {
+        "status": "passed",
+        "failedTests": []
+      }
+    },
+    "runtimeArtifactSha256": {
+      "result.json": "fcbed2d965dd156c39c7b1bc8fc52a2212e4504800c6cd3f0397b19a19651dd1",
+      "admission.json": "50dd10a904aeb593ab7bb72c5d1259615e871a5770b92d10f8e631917a64c26d",
+      "fixture-lint.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
   }
 }

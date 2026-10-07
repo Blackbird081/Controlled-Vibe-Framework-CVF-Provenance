@@ -16,6 +16,30 @@ it adds no new program, work order, schema, checker or pilot. Predecessor is
 docs/baselines/CVF_GC018_NCR_CONSOLIDATED_LOCAL_FOUNDATION_2026-10-06.md,
 which has957 lines; use a continuation rather than grow it toward the hard limit.
 
+## Finite Live Fixture Output Revalidation - 2026-10-07
+
+Operator continuation admits this direct Local fixture package at 2b41a0e6feeca2033bbe620d5bb9ec346ce24a0d.
+Consumer: release live-governance reviewer; output: diagnosed workload, bounded
+fixture, one live-suite observation and terminal evidence. No worker delegation.
+Prior four observed output-limit FAIL responses remain in the companion. Source
+inspection finds strategy_analysis capped at2048 and fixture analysis unbounded.
+That mismatch is a hypothesis, not proven exclusive cause of earlier failures.
+
+Only shared synthetic intent adds at-most180-word Vietnamese decision brief,
+three option advantages/risks, one grounded recommendation and labeled assumptions.
+Model qwen-flash, existing2048 cap, validator and success/routing/receipt/output
+assertions stay as configured; product prompts and credential configuration untouched.
+One selected actual Alibaba live suite: PASS; unique last-run report passed,
+failedTests empty; observed elapsed146609ms. Scoped fixture ESLint exit0. No duplicate build, mock, SOT3 or scan execution.
+Required full-mode case remains skipped; result does not prove that branch.
+Five explicit route submissions do not establish total provider-attempt count.
+Source Git-normalized identities and safe runtime artifact hashes in companion
+finiteLiveFixture20261007; verified generated Next include additions restored.
+Local disposition: FINITE_LIVE_FIXTURE_RESULT_RECORDED_BOUNDED.
+Initial canonical bundle FAIL remains;selected status does not replace it.
+Private-mirror21 scan findings and unprocessed remainder remain separate debt.
+No API-key rotation, cap increase, model ranking/default selection or automatic replay.
+
 ## Current Local Candidate Release-Bundle Observation - 2026-10-07
 
 Operator next and standing Alibaba-only test authority admit this finite Local
@@ -718,22 +742,22 @@ Returned defects: NONE_RETURNED. Zero candidates and no truncation.
 
 | Field | Evidence |
 |---|---|
-| Actor | Local candidate-proof tester and reviewer |
+| Actor | Local fixture maintainer/reviewer |
 | Provider or surface | Local canonical bundle; Alibaba-only synthetic live lane |
-| Session or invocation | local-candidate-release-20261007 |
+| Session or invocation | live-fixture-output-20261007 |
 | Working directory | repository root |
-| Command or tool surface | canonical bundle JSON/output/manifest/diagnostics; stage/result review; governance gates |
-| Target paths | scripts/run_cvf_release_gate_bundle.py; scripts/cvf_release_secret_scan_policy.py; scripts/cvf_release_web_runtime_isolation.py; scripts/test_run_cvf_release_gate_bundle.py; scripts/test_release_secret_scan_boundaries.py; docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md; docs/reviews/evidence/cvf-local-candidate-release-2026-10-07.json |
+| Command or tool surface | diagnostic/source review;fixture lint;one selected canonical live E2E stage;governance gates |
+| Target paths | EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/utils.ts; docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md; docs/reviews/evidence/cvf-local-candidate-release-2026-10-07.json |
 | Allowed scope source | operator next,continuous Local work and Alibaba test authorization |
-| Before status evidence | clean ceb4eab735a49c1e0b6363e63b62432543b84931 |
-| After status evidence | seven material paths; initial bundle FAIL,28 regressions,mock PASS and resumed live FAIL retained |
+| Before status evidence | clean 2b41a0e6feeca2033bbe620d5bb9ec346ce24a0d |
+| After status evidence | three material paths; selected live PASS; initial bundle FAIL retained |
 | Diff evidence | exact staged manifest;source Git hashes and runtime artifact hashes |
 | Approval boundary | synthetic Local candidate proof; data/public/deploy effects parked |
 | Claim boundary | current canonical Local observation;not remote CI,whole NCR or production acceptance |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | local-candidate-release-20261007 |
-| Expected manifest | scripts/run_cvf_release_gate_bundle.py; scripts/cvf_release_secret_scan_policy.py; scripts/cvf_release_web_runtime_isolation.py; scripts/test_run_cvf_release_gate_bundle.py; scripts/test_release_secret_scan_boundaries.py; docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md; docs/reviews/evidence/cvf-local-candidate-release-2026-10-07.json |
-| Actual changed set | scripts/run_cvf_release_gate_bundle.py; scripts/cvf_release_secret_scan_policy.py; scripts/cvf_release_web_runtime_isolation.py; scripts/test_run_cvf_release_gate_bundle.py; scripts/test_release_secret_scan_boundaries.py; docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md; docs/reviews/evidence/cvf-local-candidate-release-2026-10-07.json |
+| Invocation ID | live-fixture-output-20261007 |
+| Expected manifest | EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/utils.ts; docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md; docs/reviews/evidence/cvf-local-candidate-release-2026-10-07.json |
+| Actual changed set | EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/utils.ts; docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md; docs/reviews/evidence/cvf-local-candidate-release-2026-10-07.json |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |
 
