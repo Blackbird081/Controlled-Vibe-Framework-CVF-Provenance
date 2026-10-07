@@ -1,0 +1,158 @@
+{
+  "schemaVersion": "cvf.localVideoReadinessObservation.v1",
+  "observedUtc": "2026-10-07T22:58:29.918332+00:00",
+  "baseHead": "c9dd293ceb31d7276bec14072313eb99aadd3228",
+  "role": "LOCAL_INTERNAL_AGENT",
+  "phase": "READ_ONLY_DISPOSITION",
+  "decisionOwner": "OPERATOR_FOR_RUNTIME_ENVELOPE",
+  "coverage": "PARTIAL_TARGETED_EXISTING_PINNED_SOURCE; no current-upstream freshness or complete dependency closure claim",
+  "inputs": [
+    {
+      "mirror": ".private_reference/source_mirrors/pnnbao97__VieNeu-TTS__85344322b725.git",
+      "pin": "85344322b7258b4e25479b692e8e3396baf9db34",
+      "path": "pyproject.toml",
+      "sha256": "b36fc3303dceff0dddbe9f49067d0c82f3c11802e0dd82a2b58208f375d8df63",
+      "bytes": 5991
+    },
+    {
+      "mirror": ".private_reference/source_mirrors/pnnbao97__VieNeu-TTS__85344322b725.git",
+      "pin": "85344322b7258b4e25479b692e8e3396baf9db34",
+      "path": "uv.lock",
+      "sha256": "0921052a578f63d82305eb4a19be2579751edfb579eab0c9d65d977652481e2e",
+      "bytes": 998772
+    },
+    {
+      "mirror": ".private_reference/source_mirrors/pnnbao97__VieNeu-TTS__85344322b725.git",
+      "pin": "85344322b7258b4e25479b692e8e3396baf9db34",
+      "path": "LICENSE",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "bytes": 11357
+    },
+    {
+      "mirror": ".private_reference/source_mirrors/pnnbao97__VieNeu-TTS__85344322b725.git",
+      "pin": "85344322b7258b4e25479b692e8e3396baf9db34",
+      "path": "src/vieneu/_v3_turbo_engine/onnx_runtime_lite.py",
+      "sha256": "7747ac18fb5b660a810a434461bd8386ba40b0b46d559c07907db0c19414084e",
+      "bytes": 32607
+    },
+    {
+      "mirror": ".private_reference/source_mirrors/pnnbao97__VieNeu-TTS__85344322b725.git",
+      "pin": "85344322b7258b4e25479b692e8e3396baf9db34",
+      "path": "src/vieneu/v3turbo.py",
+      "sha256": "10757905d3f6454e17c834ec32c73d33b5b9d322d05397295c0bbeb5f3ffb3ad",
+      "bytes": 38604
+    },
+    {
+      "mirror": ".private_reference/source_mirrors/heygen-com__hyperframes__f16e509832d4",
+      "pin": "5c52f72399e21f8dcf3ede2bf2d24978c6522a94",
+      "path": "packages/cli/package.json",
+      "sha256": "cb61f0ce2902e34791583d6eb5c80e70f6910e8663c1dc3f802c6409bbaef7b2",
+      "bytes": 2467
+    },
+    {
+      "mirror": ".private_reference/source_mirrors/heygen-com__hyperframes__f16e509832d4",
+      "pin": "5c52f72399e21f8dcf3ede2bf2d24978c6522a94",
+      "path": "packages/engine/package.json",
+      "sha256": "5d3aa6d8381c547fa93ddd57ca201857e62c54ed6e69771fb9a460cb8f508be7",
+      "bytes": 2361
+    },
+    {
+      "mirror": ".private_reference/source_mirrors/heygen-com__hyperframes__f16e509832d4",
+      "pin": "5c52f72399e21f8dcf3ede2bf2d24978c6522a94",
+      "path": "bun.lock",
+      "sha256": "5993fbbfd6a3affcc0e07f8789711fb69ddb36e7bf8cf716f9383c87b10b067e",
+      "bytes": 264395
+    },
+    {
+      "mirror": ".private_reference/source_mirrors/heygen-com__hyperframes__f16e509832d4",
+      "pin": "5c52f72399e21f8dcf3ede2bf2d24978c6522a94",
+      "path": "LICENSE",
+      "sha256": "4259155fb06f127687ee7b0a8a3682d45132db0f2da26cbc0b7a2d1e796436b8",
+      "bytes": 10763
+    }
+  ],
+  "coreVieneuDependencies": [
+    "sea-g2p>=0.9.1",
+    "onnxruntime>=1.20.0",
+    "numpy",
+    "soundfile",
+    "soxr",
+    "kaldi-native-fbank>=1.20",
+    "tokenizers>=0.20",
+    "huggingface_hub",
+    "PyYAML",
+    "gradio>=5.49.1",
+    "librosa>=0.11.0"
+  ],
+  "localTools": {
+    "nodeVersion": "v22.17.0",
+    "ffmpegOnPath": false,
+    "uvOnPath": true
+  },
+  "findings": [
+    {
+      "id": "VR01",
+      "finding": "The prior 0.527 GiB estimate covers 13 selected model/codec entries, not installation/cache/peak RAM.",
+      "source": "docs/reviews/evidence/cvf-ncr-s05-assessment-lane-selection-2026-10-03.json metadataSizeQualification",
+      "disposition": "OPEN; do not promote to total budget"
+    },
+    {
+      "id": "VR02",
+      "finding": "ONNX/codec local directories bypass their fetch; denoiser initialization still calls root-file resolution. Remote fallback has no explicit revision/cache_dir/local_files_only arguments.",
+      "source": "src/vieneu/_v3_turbo_engine/onnx_runtime_lite.py:88-100,178-213",
+      "disposition": "OPEN; require complete local root artifacts plus fail-closed egress control before inference"
+    },
+    {
+      "id": "VR03",
+      "finding": "Preset lookup can download voices_v3_turbo.json when backbone is remote; no explicit immutable revision/cache_dir/local_files_only in this call.",
+      "source": "src/vieneu/v3turbo.py:259-279",
+      "disposition": "OPEN; choose a fixed preset and verify local content digest and voice rights"
+    },
+    {
+      "id": "VR04",
+      "finding": "Core Python dependency list includes gradio and librosa; a CPU/file-first lane is not equivalent to installing only onnxruntime and numpy. Lock files exist but Windows wheel closure and actual size were not resolved.",
+      "source": "pyproject.toml:69-84; uv.lock",
+      "disposition": "OPEN; resolve exact Windows dependency artifacts together with cache/disk ceilings"
+    },
+    {
+      "id": "VR05",
+      "finding": "HyperFrames CLI and engine require Node >=22; observed Node is v22.17.0. FFmpeg is not on PATH. Browser compatibility and packaged binary provenance remain unverified.",
+      "source": "packages/cli/package.json:77-79; packages/engine/package.json:69-85; local executable lookup",
+      "disposition": "PARTIAL; Node version condition satisfied only"
+    },
+    {
+      "id": "VR06",
+      "finding": "Existing source/relay STOP and runtime admission boundaries remain unresolved. Model/codec/preset/font rights and enforced memory/disk/time/egress envelope were not proved by this source read.",
+      "source": "docs/reviews/CVF_CVF_NCR_S05_S1_R1_EVIDENCE_RELAY_LOCAL_REVIEW_2026-10-03.md",
+      "disposition": "STOP retained; no retry or new successor"
+    }
+  ],
+  "singleOutcomeRequired": "One complete C1 preparation/admission package joining exact dependency/model/browser/font/FFmpeg artifacts, immutable digests, rights, cache placement, disk/RAM/time/egress/cleanup limits, then one narrated S05 proof only if admitted. Do not split into repeated source-relay rounds or silently switch lanes.",
+  "effects": {
+    "upstreamFetch": 0,
+    "install": 0,
+    "modelDownload": 0,
+    "providerCalls": 0,
+    "voiceGeneration": 0,
+    "videoRender": 0,
+    "trackedEdits": 0
+  },
+  "verdict": "NOT_READY_FOR_RUNTIME; targeted audit complete, old STOP unchanged",
+  "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
+  "sourceObservationDisposition": "Read-only observation; not admission, complete dependency closure, rights clearance or runtime proof.",
+  "governedSourcePins": {
+    "docs/reference/CVF_NCR_GENERAL_VIDEO_DESIGN_2026-10-02.md": "3ce5e2363c3e29997fcbf42cb4cec59af7447cca38409d4d970e8aa71e5777e0",
+    "docs/reference/CVF_NCR_VIDEO_COMPOSITION_READINESS_DESIGN_2026-10-03.md": "de3673a2f41695bfa83692095fd0d67f96cea924d48809aefd8b14266c8e6d87",
+    "docs/reviews/CVF_NCR_S05_ASSESSMENT_LANE_SELECTION_2026-10-03.md": "6d95fc56401aee6de3eed37d082c15b6cd70ed40600e813b95721065aea71a62",
+    "docs/reviews/CVF_CVF_NCR_S05_S1_R1_EVIDENCE_RELAY_LOCAL_REVIEW_2026-10-03.md": "54630fcaace2eca4f1ed5d136e8d69a3846484f306929628221c0361656526de",
+    "docs/reviews/evidence/cvf-ncr-s05-assessment-lane-selection-2026-10-03.json": "1bff8bd9149b2418a4c266b35106555fa69e047bde75d742a261fdf4e3ae5748"
+  },
+  "packetAuthoringVerification": {
+    "command": "python -B governance/compat/run_agent_autorun_workflow_gate.py --phase pre-dispatch --base c9dd293ceb31d7276bec14072313eb99aadd3228 --head HEAD",
+    "exitCode": 0,
+    "disposition": "PASS_AUTHORING_ONLY_NOT_COMMITTED_RELEASE",
+    "logSha256": "df6a9242a9695a37c2ba179da872ce75db8cf1b2690cfa706b7f1ddccfedafd6",
+    "elapsedSeconds": 14.02,
+    "priorAuthoringFailures": "Retained local logs; packet declarations corrected, no worker execution."
+  }
+}
