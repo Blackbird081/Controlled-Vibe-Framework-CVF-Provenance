@@ -16,7 +16,54 @@ it adds no new program, work order, schema, checker or pilot. Predecessor is
 docs/baselines/CVF_GC018_NCR_CONSOLIDATED_LOCAL_FOUNDATION_2026-10-06.md,
 which has957 lines; use a continuation rather than grow it toward the hard limit.
 
-## Current Local Outcome Coverage Design Disposition - 2026-10-07
+## Current Alibaba Semantic Review Observation - 2026-10-07
+
+Operator next explicitly authorizes Alibaba live testing where needed. Local
+direct-task tester/reviewer owns the finite probe and final disposition; provider
+responses have no workspace tools or execution authority. Clean base aa5deca0fb4d22a625ef9a885b81c2af52062a6d;
+two-path manifest and six-case oracle fixed before effects; pre-implementation
+gate PASS. Existing selected phase design consumed, not repeated or activated.
+
+Companion docs/reviews/evidence/cvf-semantic-review-live-2026-10-07.json contains
+admission, exact synthetic prompt/output, script/source hashes, usage, latency,
+HTTP/model bindings, mechanical checks and separate semantic Local evaluation.
+Two real calls: qwen3.8-27b and qwen3.8-flash, both HTTP200, no retries. Models are
+test inputs, no ranking or default selection. Only synthetic cases and the current
+binding-design excerpt were sent; no credentials/private data/tool access supplied.
+
+| Case | Required decision | Both observed |
+|---|---|---|
+| all admitted outputs/current proof delivered; public effect outside set parked | ACCEPT_BOUNDED | yes |
+| proof PASS on stale revision, relevant source changed | REJECT_EVIDENCE | yes |
+| required proof FAIL/timeout, late200 outside assertion window | REJECT_EVIDENCE | yes |
+| missing required proof; unrelated parser fix substituted | BLOCKED_REQUIRED_OUTPUT | yes |
+| source outcome delivered; independent data effect parked | ACCEPT_BOUNDED | yes |
+| data effect mandatory but lacks writer grant | BLOCKED_REQUIRED_OUTPUT | yes |
+
+Twelve fixed classifications matched; neither response changed the mandatory set
+or claimed whole lifecycle proof. Local content review confirms correct reasons
+and separation of admitted outcome from unrelated held effects. This is a bounded
+model response observation, not actual worker dispatch, independent review, tool
+execution, free-form robustness, live product governance or release certification.
+The release-quality bundle was not run; no release claim is made.
+
+Operational limits retained: both models recommend fresh tests for stale proof
+without explicitly qualifying rerun diagnostic/admission. The supplied excerpt
+did not include the live diagnostic contract, so this is incomplete operational
+advice, not evidence of a violated supplied rule. Flash also emits empty heldEffects
+for the valid case although its reason keeps public publish parked. No effect was
+executed from either response. Provider nextAction/heldEffects are advisory input;
+existing Local authority and diagnostic owners still decide actions. No new schema,
+checker or prompt iteration is justified. Disposition RULE_EXISTS; evidence must
+not be reduced to a blanket workflow PASS.
+
+Terminal SEMANTIC_CLASSIFICATION_OBSERVED_BOUNDED; automatic execution NOT_VALIDATED.
+Whole lifecycle remains PLANNED_NOT_EXECUTED_AS_A_SINGLE_LIFECYCLE. Stop this fixed
+probe; no rerun or prompt survey. Next actual receiving-work outcome uses existing
+committed finite order, explicit return binding, semantic review and phase closure.
+Data/public/browser/P11/send/B2/S05/C1 and other parked boundaries remain unchanged.
+
+## Historical Local Outcome Coverage Design Disposition - 2026-10-07
 
 Selected four-output package completed in the existing learning owner:
 docs/reviews/learnings/CVF_OUTCOME_BOUND_CONTINUATION_LEARNING_2026-10-07.md,
@@ -470,15 +517,14 @@ send/B2, S05/C1, P11, CCMA, public/deploy remain unchanged/parked.
 
 ## Epistemic Process Block
 
-Expected Result / Prediction: compare four frontier groups against current owners,
-evidence, action authority and finite receiving-work value before selecting.
-Evidence Comparison: authority hash/dispatch/return/ledger controls already exist;
-broader Local application unproved, browser absent at last observation and actual
-release/data effects retain prerequisites. Component proof consumed without rerun.
-Contradiction Or Gap Disposition: no duplicate reducer or claimed universal missing
-guard; select scoped coverage design and defer activation until its own admission.
-Claim Update: source-backed priority selection completed bounded; no implementation,
-continuous agent behavior, whole release or corpus-wide completeness claim.
+Expected Result / Prediction: current binding policy supports semantic rejection
+of stale/failed proof and retains mandatory versus independent-held boundaries.
+Evidence Comparison: two Alibaba HTTP200 responses match all six fixed decisions;
+Local reasons reviewed, retry qualification and one heldEffects omission retained.
+Contradiction Or Gap Disposition: classification success is not automatic action
+safety; apply existing diagnostic/authority owners, no new controller or rerun.
+Claim Update: bounded provider decision observation only; actual full lifecycle,
+general behavior, live product governance and release remain unproved.
 
 ## Historical Memory Repair Scope / Target / Owner Boundary
 
@@ -524,7 +570,7 @@ regressions bind the defect/repair to this consumer; no upstream absence claim.
 | Matching local-view guard | N/A with reason: no external input; existing route/test consumer |
 | Owner surface | existing NCR P06 memory readout route and baseline continuation |
 | Disposition | LOCAL_SOURCE_REPAIR_ONLY |
-| Claim boundary | application design and structural composition only; no actual whole lifecycle/live/general automation proof |
+| Claim boundary | model classification observation; automatic execution and whole lifecycle unproved |
 
 Exact material manifest: the two route/source test files named above, this
 continuation and the predecessor's continuation pointer. No other product path.
@@ -585,32 +631,32 @@ Returned defects: NONE_RETURNED. Zero candidates and no truncation.
 
 | Field | Evidence |
 |---|---|
-| Actor | Local coverage designer and composition-probe recorder |
-| Provider or surface | private repository and temporary Git fixtures; no provider or delegation |
-| Session or invocation | local-outcome-coverage-design-20261007 |
+| Actor | Local bounded provider tester and semantic reviewer |
+| Provider or surface | Alibaba API; two synthetic response calls; no workspace delegation |
+| Session or invocation | semantic-review-live-20261007 |
 | Working directory | repository root |
-| Command or tool surface | selected owner/phase reads; three Git composition cases; one actual phase rejection; governance gates |
-| Target paths | docs/reviews/learnings/CVF_OUTCOME_BOUND_CONTINUATION_LEARNING_2026-10-07.md; docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md; docs/reviews/evidence/cvf-local-outcome-coverage-design-2026-10-07.json |
-| Allowed scope source | operator next and selected finite four-output coverage design |
-| Before status evidence | clean 52a1e12d1e59a68627edbb34e0e2d6df370dfdef |
-| After status evidence | three design/evidence material paths; no machine activation |
-| Diff evidence | exact staged manifest; source Git hashes and embedded diagnostic |
-| Approval boundary | source-only design and isolated fixtures; effects stay parked |
-| Claim boundary | application design and structural composition only; no actual whole lifecycle/live/general automation proof |
+| Command or tool surface | current policy read; two fixed provider calls; Local semantic review; governance gates |
+| Target paths | docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md; docs/reviews/evidence/cvf-semantic-review-live-2026-10-07.json |
+| Allowed scope source | operator next and explicit Alibaba API authorization |
+| Before status evidence | clean aa5deca0fb4d22a625ef9a885b81c2af52062a6d |
+| After status evidence | two material paths; no product/checker change |
+| Diff evidence | exact staged manifest and source/prompt/output hashes in companion |
+| Approval boundary | bounded synthetic provider observation only; action effects stay parked |
+| Claim boundary | model classification observation; automatic execution and whole lifecycle unproved |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | local-outcome-coverage-design-20261007 |
-| Expected manifest | docs/reviews/learnings/CVF_OUTCOME_BOUND_CONTINUATION_LEARNING_2026-10-07.md; docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md; docs/reviews/evidence/cvf-local-outcome-coverage-design-2026-10-07.json |
-| Actual changed set | docs/reviews/learnings/CVF_OUTCOME_BOUND_CONTINUATION_LEARNING_2026-10-07.md; docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md; docs/reviews/evidence/cvf-local-outcome-coverage-design-2026-10-07.json |
+| Invocation ID | semantic-review-live-20261007 |
+| Expected manifest | docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md; docs/reviews/evidence/cvf-semantic-review-live-2026-10-07.json |
+| Actual changed set | docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md; docs/reviews/evidence/cvf-semantic-review-live-2026-10-07.json |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |
 
 ## Next Allowed Move
 
-Consume the delivered phase design. No justified blanket machine extension or new
-implementation packet selected. Next actual eligible receiving-work package uses
-existing phase-specific authority, exact worker return proof, semantic review and
-separate closure/continuity ranges. Do not replay the design or add flag successors.
-General automation unproved; other product frontier and parked triggers intact.
+Consume the bounded Alibaba semantic review observation and delivered phase design.
+No prompt survey/replay or generic machine extension selected. Next actual eligible
+receiving-work outcome uses committed finite authority, exact current worker proof,
+semantic review and separate phase ranges; do not execute provider advice as grants.
+Actual whole lifecycle/general automation unproved; parked triggers unchanged.
 
 ## Guard Endpoint Admission Batch - 2026-10-07
 
@@ -771,10 +817,9 @@ fixtures only; no complete inventory,corpus scan or all-files-read claim.
 
 ## Claim Boundary
 
-Four-output phase-scoped application design and bounded structural composition
-observations only. Whole admission-to-terminal execution, live governance and
-general continuous-agent behavior unproved. No machine activation or corpus-wide
-completeness claim.
+Phase design and bounded real Alibaba semantic classification evidence. No actual
+single worker/reviewer lifecycle, automatic effect execution, general agent behavior,
+live product governance or release certification. No corpus completeness claim.
 
 ## Public Export Disposition
 
