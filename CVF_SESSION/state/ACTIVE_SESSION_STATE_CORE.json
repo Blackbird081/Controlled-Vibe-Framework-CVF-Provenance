@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_NEXT_MOVE_ALIGNMENT_2026-10-07.md",
     "workOrderSha256": "269615a0dad62a867ac4214c408d8b6e7b845c9429adc38e030321af0d657905"
   },
-  "currentAuthoritySyncReason": "Closed alignment pins unchanged;browser readiness repair/serial live stage PASS at 8c66986726d72cdd5be99bdefc6ddd2e5cc8c6ff;whole canonical and parallel cold FAIL retained;no fresh whole-bundle/production/remote/P11/public/deploy acceptance.",
+  "currentAuthoritySyncReason": "Closed alignment pins unchanged;final-source candidate c5fc8ef74ad83cdca7fac42671eb92a2ff7115ea FAIL8PASS/liveFAIL;provider401 and delayed-JS assertion retained;source-only diagnosis next,no replay or effect activation.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
