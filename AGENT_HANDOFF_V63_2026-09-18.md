@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Current NCR Continuation
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `a4ba7b2617bb79819d42da3076917a7b86ed04b7`. Material parent anchor for the dedicated continuity synchronization commit.
+Current HEAD recorded for this handoff: `e331c45ef344140363f36998bbf63ae590962eff`. Material parent anchor for the dedicated continuity synchronization commit.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -9,9 +9,9 @@ Status: ACTIVE
 Current continuation only. Root AGENTS.md and canonical routing owners retain full rules.
 Closed history is preserved byte-for-byte at `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V63_PRE_NCR_COMPACTION_2026-10-07.md` (SHA256 `54801fdcf14e9abe17592352ec3c69a0b0e855632991af0caacac7b65252ccba`); it is NOT_ACTIVE_AUTHORITY and not default startup reading.
 ## Scope / Target / Owner Boundary
-Role: Local session-sync steward; phase: NCR priority/batching correction; decision owner: Local. No worker dispatch or external research.
+Role: Local session-sync steward; phase: outcome-bound foundation learning; decision owner: Local. No worker dispatch or external research.
 ## Startup Acknowledgment
-Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`; handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=one outcome-based selected-chain package,stop ad-hoc patch loops; role=Local reviewer/session-sync steward; phase=internal disposition; decision owner=Local; actual-data/browser/release/P11 parked.
+Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`; handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=consume outcome-bound learning and execute finite W05 package; role=Local reviewer/session-sync steward; phase=internal learning/continuation; decision owner=Local; actual-data/browser/release/P11 parked.
 ## Current Mode
 `cvf_ncr_p10_closed_p11_parked`. P10 package remains `ACTIVE_PRODUCTION_RUNTIME`; P11 parked. Latest closed learning-history wave: `LHW24`.
 Current NIS-T1J is CLOSED_PASS_BOUNDED with no automatic successor; NCR consumer maintenance is separately operator-authorized.
@@ -19,6 +19,7 @@ Current NIS-T1J is CLOSED_PASS_BOUNDED with no automatic successor; NCR consumer
 Baseline: `docs/baselines/CVF_GC018_NIS_T1J_DOCUMENTARY_WORKSHEET_EXPORT_2026-10-06.md`; SHA256 `8b02a27af730c977729eb62c8da37084929397d2da059ce029dcc595d8029825`.
 Work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1J_DOCUMENTARY_WORKSHEET_EXPORT_2026-10-06.md`; SHA256 `572fd199b2fd641b4a8eeb6e80006a555951f4ce7a8122801efe775df93e111e`.
 ## Accepted NCR Evidence And Continuation
+Foundation learning `e331c45ef344140363f36998bbf63ae590962eff`: `docs/reviews/learnings/CVF_OUTCOME_BOUND_CONTINUATION_LEARNING_2026-10-07.md`. Read before selection/terminal review; existing rules alone do not prove application. Conditional shadow value coverage and next-token helper gap retained; machine candidates NOT_IMPLEMENTED; W05 outcome/behavior NOT_VERIFIED.
 Operator correction at `a4ba7b2617bb79819d42da3076917a7b86ed04b7`: end open-ended endpoint hunting and patch-by-patch final answers. Use one selected-work outcome with finite scope/terminal deliverable;batch compatible fixes and finish authorized work without another next. See current continuation Operator Review section;prior repair proof remains valid.
 - Guard endpoint admission: `c0e9bfb4ec62c3a488a766c37f4ee842e49edbe6`,39/39 structural tests; guard/rate-limit stubs declared,no live governance decision proof.
 Current consumer continuation: `docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md`; memory optional-type/finite-number repair35/35 focused tests at `28ad4166de7cdad94b24d8ce9ffb7569e60bc129`; structural parsing/projection only.
@@ -35,7 +36,7 @@ T3B has a Local-verified active v1 specification. Party B is verified and T3C-C1
 Post-G7 Local source intake and Jev P0 are closed at material commit `9ac0ee8e59fa041ddaa93d725796c509400f257a`. The audit records 32 READ plus 8,093 DEFERRED paths. Jev adds fail-closed decision-context binding, incomplete candidate-space escape, and `EVIDENCE_ONLY` judgment authority to the existing ASSF owner. Proof: TypeScript 84/84, Python 61/61, compile PASS, governance 90/90. G1-G7 remain closed.
 AKOE current roadmap `docs/roadmaps/CVF_ACEL_APPLIED_KNOWLEDGE_OWNER_ENRICHMENT_ROADMAP_2026-09-25.md` is CLOSED_PASS_BOUNDED; prior blockers are historical.
 ## Next Allowed Move
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=LOCAL_DISPOSITION_ONLY; BATCH_ID=CVF-NCR-BATCHING-CORRECTION-20261007. Operator rejects patch-by-patch stopping. Local priority review committed at a4ba7b2617bb79819d42da3076917a7b86ed04b7; owner docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md,Operator Review section. END_OPEN_ENDED_P06_ENDPOINT_HUNTING. Next one consolidated W05 selected-chain integration/readiness package: name work outcome,consumer,admitted scope and terminal deliverable;consume existing Profile A chain evidence;reconcile validation/binding/attempt/output-version/receipt/recovery;group compatible necessary repairs within authority. Finish authorized package parts without another user next;report at package outcome or real authority/capability boundary,not each patch. No unrelated route sweep,new schema/checker/pilot or blanket code hardening. Prior local build,ingress,brief,scanner,result,Docker and bounded Alibaba proofs retained,not rerun for status. Data/effect and release are action-specific separate groups,not universal blockers. Ledger copy not required for fresh isolated development. Browser/UX remains unproved unless capability changes;no full P06/P04,remote CI,release/deploy claim. Q001/Q004 OPEN/Profile A;P11/deploy/public,CCMA,S05/C1/send/B2 parked;NIS-T1J closed without successor;LHW24 closed;no push. No R3/live pilot or real-data authority inferred.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=LOCAL_DISPOSITION_ONLY; BATCH_ID=CVF-NCR-BATCHING-CORRECTION-20261007. Operator rejects patch-by-patch stopping. Local priority review committed at a4ba7b2617bb79819d42da3076917a7b86ed04b7; owner docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md,Operator Review section. END_OPEN_ENDED_P06_ENDPOINT_HUNTING. Next one consolidated W05 selected-chain integration/readiness package: name work outcome,consumer,admitted scope and terminal deliverable;consume existing Profile A chain evidence;reconcile validation/binding/attempt/output-version/receipt/recovery;group compatible necessary repairs within authority. Finish authorized package parts without another user next;report at package outcome or real authority/capability boundary,not each patch. No unrelated route sweep,new schema/checker/pilot or blanket code hardening. Prior local build,ingress,brief,scanner,result,Docker and bounded Alibaba proofs retained,not rerun for status. Data/effect and release are action-specific separate groups,not universal blockers. Ledger copy not required for fresh isolated development. Browser/UX remains unproved unless capability changes;no full P06/P04,remote CI,release/deploy claim. Q001/Q004 OPEN/Profile A;P11/deploy/public,CCMA,S05/C1/send/B2 parked;NIS-T1J closed without successor;LHW24 closed;no push. No R3/live pilot or real-data authority inferred. Foundation learning e331c45ef344140363f36998bbf63ae590962eff at docs/reviews/learnings/CVF_OUTCOME_BOUND_CONTINUATION_LEARNING_2026-10-07.md: RULE_EXISTS; work-selection/terminal-proof joins need existing-owner design; machine candidates NOT_IMPLEMENTED. Read matched learning before selection/terminal review; do not relabel patch/commit PASS as package completion or restart an open-ended hardening campaign.
 ## Parked Checkpoints
 - autorun lane-binding R1 is closed at `ee81deeeb`; HRLTP-T2 remains paused for Local no-subagent route reassessment;
 - T3C-C2 is closed and Local verified at `820aae3ec`;
@@ -57,27 +58,27 @@ The historic provider/live parked line applies to those stopped lanes; it does n
 Q001/Q004 actual-data source/writer,custody,retention/RPO/RTO/cost checkpoints are action-specific; do not require a user-supplied ledger copy for unrelated fresh isolated development.
 NCR send/B2 STOP and S05/C1 remain; browser capability unavailable; vision/full P04/full release remain unproved. No autonomous P11/public/deploy activation.
 ## Core Guard Self-Protection Authorization
-Authorized guard-maintenance scope: bind operator-requested priority/batching correction a4ba7b2617bb79819d42da3076917a7b86ed04b7. Protected paths: `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/cvfNcrConsolidatedLocalFoundation20261006.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`. Operator authorization: review and correct fragmented continuation under standing admitted-work scope. Rollback boundary: continuity only; preserve accepted proof,NIS authority,immutable archive and parked lanes.
+Authorized guard-maintenance scope: bind operator-requested foundation learning e331c45ef344140363f36998bbf63ae590962eff. Protected paths: `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/cvfNcrConsolidatedLocalFoundation20261006.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`. Operator authorization: assess foundation learning under standing Local continuation authority. Rollback boundary: continuity only; preserve accepted proof,NIS authority,immutable archive and parked lanes.
 ## Agent Operation Trace Block
 | Field | Evidence |
 |---|---|
 | Actor | Local maintainer and session-sync steward |
 | Provider or surface | private CVF workspace |
-| Session or invocation | NCR batching correction20261007 |
+| Session or invocation | NCR outcome learning20261007 |
 | Working directory | repository root |
 | Command or tool surface | targeted source reads,byte/hash verification,state generator,Git helper |
 | Target paths | five source continuity paths,two generated views |
 | Allowed scope source | operator next/continuous admitted work;root startup and read-budget rules |
-| Before status evidence | clean a2fa603b9e7f860a41a72e5f86dbe2132261efca before disposition |
-| After status evidence | review a4ba7b2617bb79819d42da3076917a7b86ed04b7;changed documentation gates PASS,no product rerun |
+| Before status evidence | clean e1bd6eebff8e8ac10eb6b681a0ee96cb25e4b1aa before assessment |
+| After status evidence | learning e331c45ef344140363f36998bbf63ae590962eff;structural material gates PASS;no product/provider rerun |
 | Diff evidence | SHA-keyed continuity manifest; closed history retained in archive |
 | Approval boundary | Local continuation maintenance; parked actions retained |
 | Claim boundary | structural continuity only,no runtime/provider/public/deploy proof |
 | Agent type | Local session-sync steward |
-| Invocation ID | ncr-batching-correction-20261007 |
+| Invocation ID | ncr-outcome-learning-20261007 |
 | Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/cvfNcrConsolidatedLocalFoundation20261006.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/cvfNcrConsolidatedLocalFoundation20261006.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Manifest delta | MATCH |
-| Deletion or rename disposition | N/A with reason: no root rename/deletion; exact snapshot copied |
+| Deletion or rename disposition | N/A with reason: no deletion or rename in this learning sync |
 ## Claim Boundary
 Current facts,pointers and granted next actions only. Archive preserves history,not active authority. No full-roadmap,live governance,release,public or deployment claim.
