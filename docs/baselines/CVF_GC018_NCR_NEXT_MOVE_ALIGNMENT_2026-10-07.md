@@ -1,39 +1,39 @@
 # CVF GC-018 - NCR Next-Move Alignment
 Memory class: governed-dispatch-baseline
-Status: DRAFT
+Status: DISPATCH_READY
 docType: baseline
 Date: 2026-10-07
-Batch ID: CVF-NCR-NEXT-MOVE-ALIGNMENT
+Batch ID: CVF-NCR-NEXT-MOVE-ALIGNMENT-EXECUTION-20261007
 providerExecutionAuthority: FORBIDDEN
 rawMemoryReleased=false
 
 ## Purpose
 
-Prepare a complete bounded repair packet for NCR next-move textual consistency,
+Authorize the complete bounded repair packet for NCR next-move textual consistency,
 including owner headroom, legacy compatibility and existing acceptance-ledger
-proof. This artifact records design, not permission to edit protected checkers.
+proof. Protected edits are limited to the named four code/test paths after committed release.
 
 ## Scope / Target / Owner Boundary
 
-Local dispatcher/reviewer; internal planning at 35c7f8f1cf054f6d23f0cffd22c9a2103fe0cd1e. No worker transfer.
-Later executable release needs explicit implementation disposition, protected
-scope authorization, committed baseline/order pins and dispatch continuity.
-NIS-T1J remains closed current authority; no automatic authority-pair replacement.
+Local dispatcher owns release; Local worker owns bounded implementation;
+operator-relayed Local reviewer owns independent probe. NIS-T1J stays closed.
+This separately admitted maintenance packet becomes current execution authority
+only through committed pins, continuity and the bound release gate.
 
 ## Decision / Baseline / Proposed Tranche
 
-DRAFT_PACKET_PREPARED_NOT_RELEASED. The work order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_NEXT_MOVE_ALIGNMENT_2026-10-07.md owns the proposed exact
+LOCAL_SCOPE_ACCEPTED_RELEASE_GATE_REQUIRED. The work order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_NEXT_MOVE_ALIGNMENT_2026-10-07.md owns the proposed exact
 six-path implementation scope. One package covers drift rejection, compatibility,
 size headroom and proof; no per-case tranche or new checker/schema/hook binding.
 
 ## Source Verification Block
 
-| Source fact | Source type | Source path | Exact locator | Symbol | Consumer owner | Disposition |
-|---|---|---|---|---|---|---|
-| NCR declaration has no recognized legacy signature; helper returns no violation | SOURCE_BEHAVIOR | governance/compat/check_active_session_state.py | next-move helpers | _check_next_allowed_move_alignment | active continuity | ACCEPT |
-| Existing full-classifier fixtures cover legacy front-door/handoff drift | SOURCE_CONTRACT | governance/compat/test_check_active_session_state.py | primary-token cases | ActiveSessionStateTests | checker regression | ACCEPT |
-| Dispatcher/Git/proof joins already owned | GOVERNED_RULE | docs/reference/work_order_template/CVF_WORK_ORDER_ACCEPTANCE_LEDGER_ADDENDUM.md | Oracle And Reducer Rules | N/A | return admission | ACCEPT |
-| Outcome design selects reuse; parser candidate remains unimplemented | GOVERNED_DECISION | docs/reviews/learnings/CVF_OUTCOME_BOUND_CONTINUATION_LEARNING_2026-10-07.md | Existing-Owner Design Disposition | N/A | Local design | ACCEPT |
+| Claimed item | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Disposition |
+|---|---|---|---|---|---|
+| NCR declaration has no recognized legacy signature; helper returns no violation | governance/compat/check_active_session_state.py | next-move helpers | _check_next_allowed_move_alignment | active continuity | ACCEPT |
+| Existing full-classifier fixtures cover legacy front-door/handoff drift | governance/compat/test_check_active_session_state.py | primary-token cases | ActiveSessionStateTests | checker regression | ACCEPT |
+| Dispatcher/Git/proof joins already owned | docs/reference/work_order_template/CVF_WORK_ORDER_ACCEPTANCE_LEDGER_ADDENDUM.md | Oracle And Reducer Rules | N/A | return admission | ACCEPT |
+| Outcome design selects reuse; parser candidate remains unimplemented | docs/reviews/learnings/CVF_OUTCOME_BOUND_CONTINUATION_LEARNING_2026-10-07.md | Existing-Owner Design Disposition | N/A | Local design | ACCEPT |
 
 Exact source Git-byte pins at 35c7f8f1cf054f6d23f0cffd22c9a2103fe0cd1e:
 - `governance/compat/check_active_session_state.py` SHA256 `5b8a085f847622d6d772e66be74e31bed4472e3d42d9f2d815c24d65e7c1eca5`.
@@ -43,7 +43,7 @@ Exact source Git-byte pins at 35c7f8f1cf054f6d23f0cffd22c9a2103fe0cd1e:
 
 Resolver query: taskClass=`Work-order authoring / dispatch`, role=`dispatcher`, lifecyclePhase=`pre-dispatch`
 Returned defects: ADIF-0001, ADIF-0002, ADIF-0014, ADIF-0015, ADIF-0020, ADIF-0021, ADIF-0028, ADIF-0029, ADIF-0033, ADIF-0044, ADIF-0045, ADIF-0051, ADIF-0052, ADIF-0056, ADIF-0057, ADIF-0058, ADIF-0061, ADIF-0062, ADIF-0007, ADIF-0016, ADIF-0017, ADIF-0024, ADIF-0031, ADIF-0039, ADIF-0043, ADIF-0049, ADIF-0006
-Full query used --max-results100: totalCandidates=27;truncated=false. All returned
+Full query used --max-results 100: totalCandidates=27;truncated=false. All returned
 IDs disclosed; no claim that this proves understanding. Applicable precautions:
 source/authority fidelity, read-ahead, protected-scope admission, transitive
 continuity pins, execution-base freshness, closeability, authoring-vs-release,
@@ -56,8 +56,8 @@ claim, provider memory authority, detached launch or live/runtime execution.
 |---|---|
 | applicableCheckersRead | governance/compat/check_active_session_state.py; governance/compat/check_work_order_acceptance_ledger.py; governance/compat/check_gate_to_role_closeability.py; governance/compat/check_work_order_dispatch_quality.py; governance/compat/check_dispatch_release_readiness.py; governance/compat/check_adif_defect_registry_disclosure.py; governance/compat/check_core_guard_self_protection.py; governance/compat/check_markdown_structural_completeness.py; governance/compat/check_governed_artifact_checker_read_ahead.py |
 | literalTokensReviewed | DRAFT; WORKER_MUST_NOT_COMMIT; acceptance-ledger-json; requirementId; requiredProofIds; exact graph fields; Source Verification; trace labels |
-| gateRunPurpose | confirmation/evidence of a prepared packet, not first discovery or implementation release |
-| claimBoundary | draft structure and explicit validator probe only; no dispatch or machine correction activated |
+| gateRunPurpose | confirm admitted packet before committed release |
+| claimBoundary | admitted packet structure only; corrected behavior and independent proof not yet supplied |
 
 ## Negative Search And Collision Discipline
 
@@ -100,8 +100,9 @@ with changed authority/stop guidance must reject. Missing, duplicate, malformed,
 wrong-program or different declaration on either Markdown surface must reject.
 Do not consume adjacent historical prose/Mode lines or scan the whole document
 for an incidental PROGRAM_ID. Multiple declaration lines fail even if identical.
-A physically wrapped declaration is not supported by this scope; reject rather
-than silently compare only its header. Existing generated declarations are one
+Multiline state strings and incomplete physical-line headers must reject.
+Unmarked prose on subsequent Markdown lines is outside the declaration: do not
+claim to detect arbitrary prose wrapping while also ignoring historical prose. Existing generated declarations are one
 physical line. This is textual consistency, not semantic authority validation.
 
 State declarations outside this NCR format retain legacy token behavior and the
@@ -172,7 +173,7 @@ data, public/deploy and stopped send/B2 lanes remain outside this packet.
 | Chain map route | Local existing-owner control repair planning |
 | Matching local-view guard | N/A with reason: internal sources only |
 | Owner surface | governance/compat/check_active_session_state.py |
-| Disposition | DRAFT preparation, not executable release |
+| Disposition | Local scope admitted; committed release gate required |
 | Claim boundary | no external repository absorption or public absence claim |
 
 ## External/Local Coordination Binding
@@ -195,7 +196,7 @@ NOT_APPLICABLE_WITH_REASON - no absorption corpus processed.
 
 ## Public Export Disposition
 
-DEFERRED_PRIVATE_ONLY - local planning.
+DEFERRED_PRIVATE_ONLY - private maintenance packet.
 ## Agent Operation Trace Block
 
 | Field | Evidence |
@@ -204,23 +205,44 @@ DEFERRED_PRIVATE_ONLY - local planning.
 | Provider or surface | private repository tools, no delegation/provider call |
 | Session or invocation | ncr-next-move-alignment-packet-20261007 |
 | Working directory | repository root |
-| Command or tool surface | source reads, scaffold, ADIF query, draft contract preparation, exact-path staging/helper |
-| Target paths | docs/baselines/CVF_GC018_NCR_NEXT_MOVE_ALIGNMENT_2026-10-07.md; docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_NEXT_MOVE_ALIGNMENT_2026-10-07.md; docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md |
-| Allowed scope source | operator next; current implementation-planning instruction, no activation |
-| Before status evidence | clean 35c7f8f1cf054f6d23f0cffd22c9a2103fe0cd1e |
-| After status evidence | exact three planning material paths |
-| Diff evidence | staged Git path set; source pins; explicit draft validators |
-| Approval boundary | packet preparation only; later authorization/committed release required |
+| Command or tool surface | source/pin review, admitted contract revision, exact-path staging and commit helper |
+| Target paths | `docs/baselines/CVF_GC018_NCR_NEXT_MOVE_ALIGNMENT_2026-10-07.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_NEXT_MOVE_ALIGNMENT_2026-10-07.md` |
+| Allowed scope source | operator continuation and explicit Local reviewer relay selection on 2026-10-07 |
+| Before status evidence | clean worktree at e1a39623d2da54c0a5523bbec0d3574ff8d06b1e before Local disposition |
+| After status evidence | exact two admitted packet paths; implementation not started |
+| Diff evidence | Git diff of the two packet artifacts; unchanged source pins; active-state validators |
+| Approval boundary | admitted six-path implementation; committed release required before execution; final independent review pending |
 | Claim boundary | no implementation/dispatch/provider or runtime control proof |
 | Agent type | INTERNAL_AGENT |
 | Invocation ID | ncr-next-move-alignment-packet-20261007 |
-| Expected manifest | baseline; work order; existing continuation |
-| Actual changed set | same three paths |
+| Expected manifest | `docs/baselines/CVF_GC018_NCR_NEXT_MOVE_ALIGNMENT_2026-10-07.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_NEXT_MOVE_ALIGNMENT_2026-10-07.md` |
+| Actual changed set | `docs/baselines/CVF_GC018_NCR_NEXT_MOVE_ALIGNMENT_2026-10-07.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_NEXT_MOVE_ALIGNMENT_2026-10-07.md` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |
 
 ## Evidence / Verification
 
-Prepared ledger validator COMPLIANT; candidate-only closeability graph zero
-violations with DISPATCH_READY substituted only in memory. Actual order remains
-DRAFT. No checker/test implementation or worker execution proof supplied.
+Ledger validator COMPLIANT; active-state closeability graph zero violations.
+Source pins and line counts reverified. No checker/test implementation or worker
+execution proof supplied by this dispatch-time packet.
+
+## Local Technical Disposition
+
+ACCEPT_SCOPE_FOR_BOUNDED_IMPLEMENTATION. Operator continuation on 2026-10-07
+admits the named repair; operator selected Claude running Local as independent
+reviewer and will relay the task. No automatic Claude invocation or subagent.
+Implementation actor: LOCAL_CODEX_ROOT; probe actor: LOCAL_CLAUDE_OPERATOR_RELAY.
+Actual invocation IDs, distinct oracle/evidence bytes and probe result must
+be recorded at review; assignment is not executed independent proof.
+Source Git-byte hashes and 951/1172 line counts reverified at e1a39623d2da54c0a5523bbec0d3574ff8d06b1e;
+no source diff. Existing source handles legacy primary tokens and skips NCR;
+three legacy full-classifier fixtures establish the preserved oracle group.
+Ledger validation COMPLIANT. Full comparison remains textual consistency.
+Prose-wrap claim narrowed to observable single-line boundaries; no arbitrary
+history/prose discrimination or general semantic authorization is promised.
+Packet commit plus current-authority pins, EXECUTE continuity and release gate
+must precede worker edits. Worker returns once; independent proof and final
+closure remain pending the operator-relayed Local reviewer.
+
+Execution batch separates the newly admitted implementation from the earlier
+planning/disposition batch; scope and source pins remain those reviewed above.

@@ -1,21 +1,30 @@
 # CVF Agent Work Order - NCR Next-Move Alignment
 Memory class: governed-worker-dispatch
 docType: work_order
-Status: DRAFT
+Status: DISPATCH_READY
 Date: 2026-10-07
-Batch ID: CVF-NCR-NEXT-MOVE-ALIGNMENT
-Dispatch base head: `35c7f8f1cf054f6d23f0cffd22c9a2103fe0cd1e`
+Batch ID: CVF-NCR-NEXT-MOVE-ALIGNMENT-EXECUTION-20261007
+Dispatch base head: `e1a39623d2da54c0a5523bbec0d3574ff8d06b1e`
 Commit mode: `WORKER_MUST_NOT_COMMIT`
 providerExecutionAuthority: FORBIDDEN
 rawMemoryReleased=false
 
 ## Dispatch Prompt Envelope
 
+Role: INTERNAL_AGENT implementation worker LOCAL_CODEX_ROOT.
+Canonical packet: this work order and its named baseline, committed and pinned.
+Commit mode: WORKER_MUST_NOT_COMMIT.
+executionBaseHead: capture actual clean released HEAD before source writes.
+Current-time notes: bounded implementation admitted; separate Local reviewer is operator-relayed.
+Do-not-misread notes: earlier DRAFT preparation PASS was not release or implementation proof.
+Required first actions: startup, packet pins, clean worktree, release gate and unchanged source pins.
+Return contract: exact six-path return with consolidated evidence and COMPLETE_PENDING_REVIEW.
+
 Exact workspace: private CVF repository root. Read this order and baseline
 `docs/baselines/CVF_GC018_NCR_NEXT_MOVE_ALIGNMENT_2026-10-07.md`. Return at `docs/reviews/CVF_NCR_NEXT_MOVE_ALIGNMENT_WORKER_RETURN_2026-10-07.md` with COMPLETE_PENDING_REVIEW or one consolidated
-BLOCKED_WITH_REASON after authorized execution. Current-time note: DRAFT only;
-no transfer or checker edit authorized by this planning artifact. Later release
-must bind committed packet and explicit implementation authority. No subagent,
+BLOCKED_WITH_REASON after authorized execution. Execute only after the committed packet and continuity pass the release gate.
+Operator continuation admits this scope; independent review is relayed by the
+operator to a separate Local actor after worker return. No subagent,
 provider, public/deploy or live data use. No parallel provider-named relay.
 
 ## Purpose
@@ -67,8 +76,9 @@ with changed authority/stop guidance must reject. Missing, duplicate, malformed,
 wrong-program or different declaration on either Markdown surface must reject.
 Do not consume adjacent historical prose/Mode lines or scan the whole document
 for an incidental PROGRAM_ID. Multiple declaration lines fail even if identical.
-A physically wrapped declaration is not supported by this scope; reject rather
-than silently compare only its header. Existing generated declarations are one
+Multiline state strings and incomplete physical-line headers must reject.
+Unmarked prose on subsequent Markdown lines is outside the declaration: do not
+claim to detect arbitrary prose wrapping while also ignoring historical prose. Existing generated declarations are one
 physical line. This is textual consistency, not semantic authority validation.
 
 State declarations outside this NCR format retain legacy token behavior and the
@@ -119,12 +129,12 @@ writable, not forbidden. Count command: Python len(Path(path).read_text().splitl
 for the four named code/test paths. All extraction writes are worker-owned.
 ## Source Verification Block
 
-| Source fact | Source type | Source path | Exact locator | Symbol | Consumer owner | Disposition |
-|---|---|---|---|---|---|---|
-| NCR declaration has no recognized legacy signature; helper returns no violation | SOURCE_BEHAVIOR | governance/compat/check_active_session_state.py | next-move helpers | _check_next_allowed_move_alignment | active continuity | ACCEPT |
-| Existing full-classifier fixtures cover legacy front-door/handoff drift | SOURCE_CONTRACT | governance/compat/test_check_active_session_state.py | primary-token cases | ActiveSessionStateTests | checker regression | ACCEPT |
-| Dispatcher/Git/proof joins already owned | GOVERNED_RULE | docs/reference/work_order_template/CVF_WORK_ORDER_ACCEPTANCE_LEDGER_ADDENDUM.md | Oracle And Reducer Rules | N/A | return admission | ACCEPT |
-| Outcome design selects reuse; parser candidate remains unimplemented | GOVERNED_DECISION | docs/reviews/learnings/CVF_OUTCOME_BOUND_CONTINUATION_LEARNING_2026-10-07.md | Existing-Owner Design Disposition | N/A | Local design | ACCEPT |
+| Claimed item | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Disposition |
+|---|---|---|---|---|---|
+| NCR declaration has no recognized legacy signature; helper returns no violation | governance/compat/check_active_session_state.py | next-move helpers | _check_next_allowed_move_alignment | active continuity | ACCEPT |
+| Existing full-classifier fixtures cover legacy front-door/handoff drift | governance/compat/test_check_active_session_state.py | primary-token cases | ActiveSessionStateTests | checker regression | ACCEPT |
+| Dispatcher/Git/proof joins already owned | docs/reference/work_order_template/CVF_WORK_ORDER_ACCEPTANCE_LEDGER_ADDENDUM.md | Oracle And Reducer Rules | N/A | return admission | ACCEPT |
+| Outcome design selects reuse; parser candidate remains unimplemented | docs/reviews/learnings/CVF_OUTCOME_BOUND_CONTINUATION_LEARNING_2026-10-07.md | Existing-Owner Design Disposition | N/A | Local design | ACCEPT |
 
 Exact source Git-byte pins at 35c7f8f1cf054f6d23f0cffd22c9a2103fe0cd1e:
 - `governance/compat/check_active_session_state.py` SHA256 `5b8a085f847622d6d772e66be74e31bed4472e3d42d9f2d815c24d65e7c1eca5`.
@@ -134,7 +144,7 @@ Exact source Git-byte pins at 35c7f8f1cf054f6d23f0cffd22c9a2103fe0cd1e:
 
 Resolver query: taskClass=`Work-order authoring / dispatch`, role=`dispatcher`, lifecyclePhase=`pre-dispatch`
 Returned defects: ADIF-0001, ADIF-0002, ADIF-0014, ADIF-0015, ADIF-0020, ADIF-0021, ADIF-0028, ADIF-0029, ADIF-0033, ADIF-0044, ADIF-0045, ADIF-0051, ADIF-0052, ADIF-0056, ADIF-0057, ADIF-0058, ADIF-0061, ADIF-0062, ADIF-0007, ADIF-0016, ADIF-0017, ADIF-0024, ADIF-0031, ADIF-0039, ADIF-0043, ADIF-0049, ADIF-0006
-Full query used --max-results100: totalCandidates=27;truncated=false. All returned
+Full query used --max-results 100: totalCandidates=27;truncated=false. All returned
 IDs disclosed; no claim that this proves understanding. Applicable precautions:
 source/authority fidelity, read-ahead, protected-scope admission, transitive
 continuity pins, execution-base freshness, closeability, authoring-vs-release,
@@ -147,8 +157,8 @@ claim, provider memory authority, detached launch or live/runtime execution.
 |---|---|
 | applicableCheckersRead | governance/compat/check_active_session_state.py; governance/compat/check_work_order_acceptance_ledger.py; governance/compat/check_gate_to_role_closeability.py; governance/compat/check_work_order_dispatch_quality.py; governance/compat/check_dispatch_release_readiness.py; governance/compat/check_adif_defect_registry_disclosure.py; governance/compat/check_core_guard_self_protection.py; governance/compat/check_markdown_structural_completeness.py; governance/compat/check_governed_artifact_checker_read_ahead.py; governance/compat/check_agent_handoff_boundary.py; governance/compat/check_delta_execution_claim_boundary.py; governance/compat/check_foundation_storage_layout.py; governance/compat/check_independent_review_probe_admission.py |
 | literalTokensReviewed | DRAFT; WORKER_MUST_NOT_COMMIT; acceptance-ledger-json; requirementId; requiredProofIds; exact graph fields; Source Verification; trace labels |
-| gateRunPurpose | confirmation/evidence of a prepared packet, not first discovery or implementation release |
-| claimBoundary | draft structure and explicit validator probe only; no dispatch or machine correction activated |
+| gateRunPurpose | confirm admitted packet before committed release |
+| claimBoundary | admitted packet structure only; corrected behavior and independent proof not yet supplied |
 
 ## Negative Search And Collision Discipline
 
@@ -232,8 +242,7 @@ Author reminder: fill `blockerDelta`, `counters`, and `claims` with real evidenc
 
 After lawful release, resolve normal implementation choices and compatible
 repairs within this outcome. Report one consolidated blocker only for authority,
-scope or capability contradiction; do not ask per test or patch. This DRAFT does
-not authorize an implementation worker invocation.
+scope or capability contradiction; do not ask per test or patch. Committed release must precede implementation worker execution.
 
 ## Work-Order Fulfillment Manifest
 
@@ -352,8 +361,7 @@ foreseeableFileSplitDisposition: NOT_REQUIRED_UNDER_SIZE_BUDGET
 | continuity | CONTINUITY_COMMIT | session-sync-steward | CONTINUITY_COMMIT | source continuity and generated views | EXACT_PATHS | session-sync-steward | CONTINUITY_COMMIT | terminal_completion_review |
 | committed_range_closure | POST_MATERIAL_CLOSURE | reviewer | POST_MATERIAL_CLOSURE | reviewed material/continuity ranges | EXACT_PATHS | Local-closer | CORRECTIVE_MATERIAL_COMMIT | continuity |
 
-Graph is a design-time topology, not passed execution gates. Current DRAFT is
-not an active dispatch state. Explicit candidate-only validation may substitute
+Graph is a design-time topology, not passed execution gates. The graph must pass for the admitted dispatch state. Explicit candidate-only validation may substitute
 DISPATCH_READY in memory to inspect the graph without changing repository status.
 
 ## Verification Commands
@@ -375,12 +383,12 @@ reviewerOwnedClosurePaths: Local completion and separately authorized source/gen
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: preparation only, no protected checker edit.
-Protected paths proposed for later explicit admission: four named code/test paths.
-Operator authorization: next permits complete implementation-planning packet;
-implementation and dispatch release are NOT granted by this DRAFT.
-Rollback boundary: three planning material artifacts only; preserve NIS authority,
-current checker behavior, state, archive and parked lanes.
+Authorized guard-maintenance scope: bounded NCR comparison and related owner extraction.
+Protected paths: `governance/compat/check_active_session_state.py`; `governance/compat/test_check_active_session_state.py`; `governance/compat/active_session_next_move_alignment.py`; `governance/compat/test_active_session_next_move_alignment.py`.
+Operator authorization: continuation on 2026-10-07 under the prepared scope;
+operator explicitly selected a separate Claude Local reviewer via manual relay.
+Rollback boundary: named implementation paths only; preserve legacy behavior,
+NIS closure, immutable archive, current unrelated rules and parked lanes.
 
 ## Claim Boundary
 
@@ -397,7 +405,7 @@ No corrected checker, worker transfer, agent comprehension or runtime proof.
 | Chain map route | Local existing-owner control repair planning |
 | Matching local-view guard | N/A with reason: internal sources only |
 | Owner surface | governance/compat/check_active_session_state.py |
-| Disposition | DRAFT preparation, not executable release |
+| Disposition | Local scope admitted; committed release gate required |
 | Claim boundary | no external repository absorption or public absence claim |
 
 ## External/Local Coordination Binding
@@ -420,7 +428,7 @@ NOT_APPLICABLE_WITH_REASON - no absorption corpus processed.
 
 ## Public Export Disposition
 
-DEFERRED_PRIVATE_ONLY - local planning.
+DEFERRED_PRIVATE_ONLY - private maintenance packet.
 ## Agent Operation Trace Block
 
 | Field | Evidence |
@@ -429,26 +437,27 @@ DEFERRED_PRIVATE_ONLY - local planning.
 | Provider or surface | private repository tools, no delegation/provider call |
 | Session or invocation | ncr-next-move-alignment-packet-20261007 |
 | Working directory | repository root |
-| Command or tool surface | source reads, scaffold, ADIF query, draft contract preparation, exact-path staging/helper |
-| Target paths | docs/baselines/CVF_GC018_NCR_NEXT_MOVE_ALIGNMENT_2026-10-07.md; docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_NEXT_MOVE_ALIGNMENT_2026-10-07.md; docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md |
-| Allowed scope source | operator next; current implementation-planning instruction, no activation |
-| Before status evidence | clean 35c7f8f1cf054f6d23f0cffd22c9a2103fe0cd1e |
-| After status evidence | exact three planning material paths |
-| Diff evidence | staged Git path set; source pins; explicit draft validators |
-| Approval boundary | packet preparation only; later authorization/committed release required |
+| Command or tool surface | source/pin review, admitted contract revision, exact-path staging and commit helper |
+| Target paths | `docs/baselines/CVF_GC018_NCR_NEXT_MOVE_ALIGNMENT_2026-10-07.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_NEXT_MOVE_ALIGNMENT_2026-10-07.md` |
+| Allowed scope source | operator continuation and explicit Local reviewer relay selection on 2026-10-07 |
+| Before status evidence | clean worktree at e1a39623d2da54c0a5523bbec0d3574ff8d06b1e before Local disposition |
+| After status evidence | exact two admitted packet paths; implementation not started |
+| Diff evidence | Git diff of the two packet artifacts; unchanged source pins; active-state validators |
+| Approval boundary | admitted six-path implementation; committed release required before execution; final independent review pending |
 | Claim boundary | no implementation/dispatch/provider or runtime control proof |
 | Agent type | INTERNAL_AGENT |
 | Invocation ID | ncr-next-move-alignment-packet-20261007 |
-| Expected manifest | `docs/baselines/CVF_GC018_NCR_NEXT_MOVE_ALIGNMENT_2026-10-07.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_NEXT_MOVE_ALIGNMENT_2026-10-07.md`; `docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md` |
-| Actual changed set | `docs/baselines/CVF_GC018_NCR_NEXT_MOVE_ALIGNMENT_2026-10-07.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_NEXT_MOVE_ALIGNMENT_2026-10-07.md`; `docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md` |
+| Expected manifest | `docs/baselines/CVF_GC018_NCR_NEXT_MOVE_ALIGNMENT_2026-10-07.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_NEXT_MOVE_ALIGNMENT_2026-10-07.md` |
+| Actual changed set | `docs/baselines/CVF_GC018_NCR_NEXT_MOVE_ALIGNMENT_2026-10-07.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_NEXT_MOVE_ALIGNMENT_2026-10-07.md` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |
 
 ## Authority Chain
 
 Root AGENTS.md and canonical lifecycle/acceptance-ledger owners govern. Active
-next move permits this planning packet only. Proposed baseline is the named
-GC-018 companion; no implementation authority or currentAuthority replacement.
+Operator continuation admits the named GC-018 maintenance scope; committed
+packet pins and release continuity bind current execution authority. Historical
+NIS-T1J closure remains separate and gains no successor work.
 
 ## Agent Roles
 
@@ -464,8 +473,8 @@ listed in read-ahead; governed file-size guard and handoff contract below.
 
 ## Pre-Flight Checks
 
-DRAFT is not executable. Before release: explicit protected-scope implementation
-disposition, committed baseline/order pins, no source drift, clean execution
+Before execution: committed baseline/order pins, bound release gate, no source
+drift, clean execution
 worktree, outputs absent, pre-dispatch and bound release gates, source continuity.
 Fresh executionBaseHead is captured only after these requirements are satisfied.
 
@@ -473,7 +482,7 @@ Fresh executionBaseHead is captured only after these requirements are satisfied.
 
 Worker owns proposed six-path implementation manifest; dispatcher alone owns
 packet. Reviewer owns completion; session-sync steward owns protected continuity.
-No writes happen under this planning document's DRAFT status.
+Execution writes require the committed release gate; reviewer writes require lane handoff.
 
 ## Execution Plan
 
@@ -516,9 +525,8 @@ No commit, per-case operator question or self-expanded scope.
 
 ## Operator Checkpoint
 
-Existing planning instruction ends at prepared packet. Implementation disposition
-and protected path authority must exist before activation/release; this packet
-records no such authority. Provider/live/effect/public/deploy remain excluded.
+Operator continuation admits the bounded implementation and selected a separate
+Local reviewer via manual relay. Final closure requires that actual review. Provider/live/effect/public/deploy remain excluded.
 
 ## Independent Review Probe Admission Contract
 
@@ -546,10 +554,10 @@ Contract source archive-qualified exception: docs/reference/CVF_AHB_T2_AGENT_HAN
 
 | Field | Value |
 |---|---|
-| route | SINGLE_AGENT_MULTI_ROLE |
+| route | MULTI_AGENT_MULTI_ROLE |
 | rolePattern | implementation worker then Local review/commit |
-| phase | draft planning now; bound release before implementation |
-| baseHeadFor(phase) | dispatchBaseHead=35c7f8f1cf054f6d23f0cffd22c9a2103fe0cd1e;executionBaseHead=fresh clean released HEAD;closureBaseHead=Local review head |
+| phase | admitted dispatch; bound release before implementation |
+| baseHeadFor(phase) | dispatchBaseHead=e1a39623d2da54c0a5523bbec0d3574ff8d06b1e;executionBaseHead=fresh clean released HEAD;closureBaseHead=Local review head |
 | changedSetScope(phase) | exact six-path worker ledger;packet dispatcher-owned |
 | traceScope(phase, actor) | source pins,actual assertions/exit and exact Git diff |
 | commitOwner(phase) | Local closer,worker forbidden |
@@ -557,7 +565,7 @@ Contract source archive-qualified exception: docs/reference/CVF_AHB_T2_AGENT_HAN
 | nextMoveSurfaces | committed packet,source continuity and bound release |
 
 sharedWorktreeCoordinationMode: EXPLICIT_LANE_HANDOFF
-activeLaneOwner: unassigned while DRAFT
+activeLaneOwner: LOCAL_CODEX_ROOT implementation worker after committed release; LOCAL_CLAUDE_OPERATOR_RELAY reviewer only after worker lane release
 laneOwnedPaths: exact six-path acceptance ledger
 dispatcherMutationBoundary: NO_MUTATION_WHILE_LANE_ACTIVE
 laneReleaseEvidence: returned exact diff/evidence and full return gate before Local review
@@ -574,3 +582,124 @@ laneReleaseEvidence: returned exact diff/evidence and full return gate before Lo
 | interceptionBoundary | cooperative repository path only,no arbitrary client interception |
 | claimLanguage | prepared contract,not released or corrected |
 | forbiddenExpansion | no runtime authority,provider/pilot,actual-data/public/deploy effect |
+
+## Local Technical Disposition
+
+ACCEPT_SCOPE_FOR_BOUNDED_IMPLEMENTATION. Operator continuation on 2026-10-07
+admits the named repair; operator selected Claude running Local as independent
+reviewer and will relay the task. No automatic Claude invocation or subagent.
+Implementation actor: LOCAL_CODEX_ROOT; probe actor: LOCAL_CLAUDE_OPERATOR_RELAY.
+Actual invocation IDs, distinct oracle/evidence bytes and probe result must
+be recorded at review; assignment is not executed independent proof.
+Source Git-byte hashes and 951/1172 line counts reverified at e1a39623d2da54c0a5523bbec0d3574ff8d06b1e;
+no source diff. Existing source handles legacy primary tokens and skips NCR;
+three legacy full-classifier fixtures establish the preserved oracle group.
+Ledger validation COMPLIANT. Full comparison remains textual consistency.
+Prose-wrap claim narrowed to observable single-line boundaries; no arbitrary
+history/prose discrimination or general semantic authorization is promised.
+Packet commit plus current-authority pins, EXECUTE continuity and release gate
+must precede worker edits. Worker returns once; independent proof and final
+closure remain pending the operator-relayed Local reviewer.
+
+## Required Artifact Manifest
+
+| Path | Required at handoff |
+|---|---|
+| governance/compat/check_active_session_state.py | YES |
+| governance/compat/test_check_active_session_state.py | YES |
+| governance/compat/active_session_next_move_alignment.py | YES |
+| governance/compat/test_active_session_next_move_alignment.py | YES |
+| docs/reviews/evidence/cvf-ncr-next-move-alignment-worker-2026-10-07.json | YES |
+| docs/reviews/CVF_NCR_NEXT_MOVE_ALIGNMENT_WORKER_RETURN_2026-10-07.md | YES |
+
+Worker return path: docs/reviews/CVF_NCR_NEXT_MOVE_ALIGNMENT_WORKER_RETURN_2026-10-07.md
+
+## Intake Role Routing Decision
+
+Operator request: continue the bounded NCR repair and relay review to Claude Local.
+Selected role route: MULTI_AGENT_MULTI_ROLE. Protected scope is four code/test
+paths and two worker evidence paths. Provider/live risk is excluded. Worker
+LOCAL_CODEX_ROOT and reviewer LOCAL_CLAUDE_OPERATOR_RELAY are separate actors.
+Escalation: consolidate scope/source drift findings; stop closure if actual
+independent reviewer evidence is absent or shares the worker oracle.
+
+## Single-Agent Multi-Role Control Block
+
+Local root role separation ledger: dispatcher releases; worker implements;
+steward prepares evidence and continuity. Evidence basis is source, Git diff and
+actual gate/test results. Root self-review is not independent. Gate sequence:
+pre-dispatch, committed release, pre-implementation, worker-return, independent
+reviewer probe and Local closure. Operator relays the separate reviewer task.
+
+## Legacy Absorption Coverage Index Disposition
+
+NOT_APPLICABLE_WITH_REASON: bounded existing continuity parser maintenance;
+no new repository absorption, coverage-index capability or legacy corpus claim.
+
+Execution batch separates the newly admitted implementation from the earlier
+planning/disposition batch; scope and source pins remain those reviewed above.
+
+## Task Governance Routing Manifest
+
+```json
+{
+  "schemaVersion": "cvf.taskGovernanceManifest.v1",
+  "taskId": "CVF-NCR-NEXT-MOVE-ALIGNMENT-EXECUTION-20261007",
+  "requestedProfile": "P3_ELEVATED",
+  "classification": {
+    "taskKind": "STATEFUL_LOCAL_IMPLEMENTATION",
+    "authorityImpact": "USES_EXISTING_OWNER",
+    "externalEffect": "LOCAL_REVERSIBLE",
+    "dataSensitivity": "PRIVATE_REPO",
+    "reversibility": "GIT_REVERSIBLE",
+    "sourceScale": "NAMED_FILES",
+    "delegation": "MULTI_ROLE_NO_COMMIT",
+    "novelty": "KNOWN_PATTERN"
+  },
+  "pathFamilies": [
+    "docs/baselines/CVF_GC018_NCR_NEXT_MOVE_ALIGNMENT_2026-10-07.md",
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_NEXT_MOVE_ALIGNMENT_2026-10-07.md",
+    "governance/compat/check_active_session_state.py",
+    "governance/compat/test_check_active_session_state.py",
+    "governance/compat/active_session_next_move_alignment.py",
+    "governance/compat/test_active_session_next_move_alignment.py",
+    "docs/reviews/evidence/cvf-ncr-next-move-alignment-worker-2026-10-07.json",
+    "docs/reviews/CVF_NCR_NEXT_MOVE_ALIGNMENT_WORKER_RETURN_2026-10-07.md",
+    "AGENT_HANDOFF_V63_2026-09-18.md",
+    "CVF_SESSION_MEMORY.md",
+    "CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json",
+    "CVF_SESSION/state/entries/nextAllowedMove.json",
+    "CVF_SESSION/ACTIVE_SESSION_STATE.json",
+    "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json"
+  ],
+  "claims": [
+    "BOUNDED_TEXT_ALIGNMENT_NOT_RUNTIME_GOVERNANCE",
+    "INDEPENDENT_PROBE_PENDING_REVIEWER_EXECUTION"
+  ],
+  "requiredProof": [
+    "NCR_RED_GREEN",
+    "LEGACY_CLASSIFIER",
+    "OWNER_BUDGET",
+    "FULL_LEGACY_GATES",
+    "INDEPENDENT_REVIEWER_PROBE"
+  ],
+  "operatorCheckpoints": [
+    "OPERATOR_RELAY_LOCAL_REVIEWER_BEFORE_CLOSURE"
+  ],
+  "forbiddenEffects": [
+    "PROVIDER_CALL",
+    "NETWORK_ACCESS",
+    "INSTALL",
+    "PUBLIC_WRITE",
+    "DEPLOYMENT",
+    "REAL_DATA_MUTATION"
+  ],
+  "sourceEvidence": {
+    "selectedFilesFullyRead": false,
+    "corpusReceiptRef": null,
+    "completenessClaimChanged": false
+  }
+}
+```
+
+SHADOW_FULL_GATE_FALLBACK; full legacy bundles remain mandatory.
