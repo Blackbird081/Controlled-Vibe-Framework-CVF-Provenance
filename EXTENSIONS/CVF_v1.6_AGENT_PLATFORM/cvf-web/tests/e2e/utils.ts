@@ -141,12 +141,12 @@ export async function sendSpecToAgent(page: Page, mode: 'simple' | 'governance' 
     await page.getByRole('heading', { name: 'CVF Agent' }).waitFor();
 }
 
-export async function seedStorageWithAlibaba(page: Page) {
+export async function seedStorageWithAlibaba(page: Page, model = 'qwen-plus') {
     const key = process.env.DASHSCOPE_API_KEY ?? '';
-    await page.addInitScript((k) => {
+    await page.addInitScript(({ key: k, model: selectedModel }) => {
         localStorage.setItem('cvf_settings', JSON.stringify({
             providers: {
-                alibaba: { apiKey: k, enabled: true, selectedModel: 'qwen-plus' },
+                alibaba: { apiKey: k, enabled: true, selectedModel },
             },
             preferences: {
                 defaultProvider: 'alibaba',
@@ -158,7 +158,7 @@ export async function seedStorageWithAlibaba(page: Page) {
         localStorage.setItem('cvf_onboarding_complete', 'true');
         localStorage.setItem('cvf_onboarding_seen', '1');
         localStorage.setItem('cvf_setup_banner_dismissed', 'true');
-    }, key);
+    }, { key, model });
 }
 
 export async function seedStorageWithDeepSeek(page: Page) {

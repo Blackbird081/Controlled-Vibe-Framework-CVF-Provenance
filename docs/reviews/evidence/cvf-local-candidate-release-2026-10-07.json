@@ -1464,5 +1464,230 @@
       "scripts/test_release_secret_scan_boundaries.py": "70a4a7cbfa3c2b9b7de0832b63303d3625df79b649934d72bafe35dc7ad688fa"
     },
     "claimBoundary": "Classified77 observed fixture/parser/example inputs in44 source files. Scan result applies to existing declared file-extension/pruning policy at this worktree;not all-byte inventory or complete corpus proof. TLS fixture identity is not production suitability or proof of non-reuse. Initial bundle FAIL preserved;existing live/build/SOT3 consumed without replay. No provider invocation,key rotation,public/deploy action."
+  },
+  "fullModeProof20261007": {
+    "admission": {
+      "baseHead": "d9de6b8730eef4ee69432b9923b55dd32216ded3",
+      "role": "Local fixture maintainer/reviewer",
+      "decisionOwner": "Local",
+      "authority": "operator next plus standing Alibaba-only meaningful tests",
+      "consumer": "candidate live coverage reviewer",
+      "gap": "skipped API-only case mislabeled phase-gate modal;no actual UI observation",
+      "scope": [
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/noncoder-governance-live.spec.ts",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/utils.ts",
+        "docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md",
+        "docs/reviews/evidence/cvf-local-candidate-release-2026-10-07.json"
+      ],
+      "outputs": [
+        "active correctly named full-mode API proof",
+        "actual Idea Brief confirmation/export/client INTAKE gate proof",
+        "two selected live cases with safe observations and truthful independent statuses"
+      ],
+      "budget": "one selected Playwright invocation,two explicit submissions;API existing admitted attempt bounds preserved;client one direct request;no automatic replay",
+      "constraints": "do not change runtime,API keys,provider defaults,token cap,acceptance validators or approve BUILD/DESIGN;client path is not server governance-envelope proof",
+      "stop": "record PASS/FAIL/blocked stage;diagnose before any further live replay;reuse prior simple/live,scan,build,SOT3 results rather than rerun unrelated stages",
+      "sourceGitSha256": {
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/noncoder-governance-live.spec.ts": "f7f649e0453c55a2c8258735b31616027caf6e4ad7ed8bb0c2e1130aedeed44a",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/utils.ts": "8757d3b456fdca47f5758858b28cec94111728fffee8f5d99c1b3ea0c786d971"
+      }
+    },
+    "replayAdmission": {
+      "reason": "Current DynamicForm button is Create Agent Spec, not legacy Submit; first client case observed zero direct Alibaba POSTs. API429 local limiter observation retained without replay.",
+      "informationGain": "Exercise confirmation/export and actual client INTAKE gate after correcting selector.",
+      "budget": "One UI-only invocation;one explicit direct Alibaba submission;no API replay or guard/key/model/cap change.",
+      "firstResult": {
+        "exitCode": 1,
+        "elapsedMs": 226828,
+        "output": ".cvf\\runtime\\release-gate-e2e\\full-p6i63heq",
+        "sourceWorktreeSha256": {
+          "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/noncoder-governance-live.spec.ts": "6f9885fa0886408f5bbc32a3d05c8bdb9f5937a56a89563a1f1333d19cce2850",
+          "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/utils.ts": "6ac5d6f2c8d29f09a59ebe8259becabccca6a28dd238e4e7aec7a31588476236"
+        },
+        "command": "npx playwright test --config playwright.config.ts tests/e2e/noncoder-governance-live.spec.ts --grep full-mode --reporter=json --output <unique ignored output>",
+        "diagnostic": {
+          "stage": "e2e_execution",
+          "class": "e2e_failed",
+          "retryable": false,
+          "userAction": "inspect_secret_safe_test_artifacts_before_retry",
+          "safeMessage": "The two selected full-mode cases E2E suite failed; inspect the retained test artifacts before retrying.",
+          "provider": null,
+          "model": null,
+          "httpStatus": null,
+          "latencyMs": 226828,
+          "traceOrReceipt": null
+        }
+      },
+      "localRateLimit": true,
+      "redisUrlPresent": true,
+      "redisTokenPresent": true
+    },
+    "firstRun": {
+      "exitCode": 1,
+      "elapsedMs": 226828,
+      "output": ".cvf\\runtime\\release-gate-e2e\\full-p6i63heq",
+      "sourceWorktreeSha256": {
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/noncoder-governance-live.spec.ts": "6f9885fa0886408f5bbc32a3d05c8bdb9f5937a56a89563a1f1333d19cce2850",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/utils.ts": "6ac5d6f2c8d29f09a59ebe8259becabccca6a28dd238e4e7aec7a31588476236"
+      },
+      "command": "npx playwright test --config playwright.config.ts tests/e2e/noncoder-governance-live.spec.ts --grep full-mode --reporter=json --output <unique ignored output>",
+      "diagnostic": {
+        "stage": "e2e_execution",
+        "class": "e2e_failed",
+        "retryable": false,
+        "userAction": "inspect_secret_safe_test_artifacts_before_retry",
+        "safeMessage": "The two selected full-mode cases E2E suite failed; inspect the retained test artifacts before retrying.",
+        "provider": null,
+        "model": null,
+        "httpStatus": null,
+        "latencyMs": 226828,
+        "traceOrReceipt": null
+      }
+    },
+    "uiReplay": {
+      "exitCode": 1,
+      "elapsedMs": 34844,
+      "output": ".cvf\\runtime\\release-gate-e2e\\full-xzz3j8gl",
+      "sourceWorktreeSha256": {
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/noncoder-governance-live.spec.ts": "fd18e2106925e65d74c82d4d49e75018ad87decbf8efba7fb2806b0b94e9702b",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/utils.ts": "6ac5d6f2c8d29f09a59ebe8259becabccca6a28dd238e4e7aec7a31588476236"
+      },
+      "command": "npx playwright test --config playwright.config.ts tests/e2e/noncoder-governance-live.spec.ts --grep full-mode Idea Brief --reporter=json --output <unique ignored output>",
+      "diagnostic": {
+        "stage": "e2e_execution",
+        "class": "e2e_failed",
+        "retryable": false,
+        "userAction": "inspect_secret_safe_test_artifacts_before_retry",
+        "safeMessage": "The two selected full-mode cases E2E suite failed; inspect the retained test artifacts before retrying.",
+        "provider": null,
+        "model": null,
+        "httpStatus": null,
+        "latencyMs": 34844,
+        "traceOrReceipt": null
+      }
+    },
+    "safeDiagnostic": {
+      "firstRun": [
+        {
+          "title": "full-mode API returns a governed live result and receipt",
+          "status": "failed",
+          "durationMs": 31118,
+          "safeAttachments": [
+            {
+              "name": "full-api-safe-status",
+              "data": {
+                "httpStatus": 429,
+                "success": false,
+                "diagnostic": null
+              }
+            }
+          ],
+          "failureLocation": {
+            "file": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\EXTENSIONS\\CVF_v1.6_AGENT_PLATFORM\\cvf-web\\tests\\e2e\\noncoder-governance-live.spec.ts",
+            "column": 31,
+            "line": 74
+          }
+        },
+        {
+          "title": "full-mode Idea Brief export reaches the client INTAKE gate on real Alibaba output",
+          "status": "timedOut",
+          "durationMs": 182172,
+          "safeAttachments": [
+            {
+              "name": "full-client-request-count",
+              "data": {
+                "directRequests": 0,
+                "scope": "observed_direct_alibaba_posts_only",
+                "phaseApproved": false
+              }
+            }
+          ],
+          "failureLocation": null
+        }
+      ],
+      "uiReplay": [
+        {
+          "title": "full-mode Idea Brief export reaches the client INTAKE gate on real Alibaba output",
+          "status": "failed",
+          "durationMs": 26382,
+          "safeAttachments": [
+            {
+              "name": "full-client-request-count",
+              "data": {
+                "directRequests": 2,
+                "scope": "observed_direct_alibaba_posts_only",
+                "phaseApproved": false
+              }
+            }
+          ],
+          "failureLocation": {
+            "file": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\EXTENSIONS\\CVF_v1.6_AGENT_PLATFORM\\cvf-web\\tests\\e2e\\noncoder-governance-live.spec.ts",
+            "column": 28,
+            "line": 137
+          }
+        }
+      ],
+      "apiObservation": {
+        "localRateLimitBlocked": true,
+        "httpStatus": 429,
+        "source": "execute route early rate limiter return; response error classified in ignored trace",
+        "providerAttemptCount": "NOT_OBSERVED; early route return is not provider receipt"
+      },
+      "clientObservation": {
+        "confirmationExportAndIntakeModalAssertionsReached": true,
+        "phaseApproved": false,
+        "expectedPosts": 1,
+        "observedPosts": 2,
+        "network": [
+          {
+            "httpStatus": 200,
+            "model": "qwen-flash",
+            "requestBodySha256": "842ace3d68db2ea0c51bc03fd600228a3d5888d80d547a168ada99f34667a057",
+            "finishReason": "stop",
+            "outputLength": 1169,
+            "startedDateTime": "2026-10-07T14:00:39.559Z"
+          },
+          {
+            "httpStatus": 200,
+            "model": "qwen-flash",
+            "requestBodySha256": "842ace3d68db2ea0c51bc03fd600228a3d5888d80d547a168ada99f34667a057",
+            "finishReason": "stop",
+            "outputLength": 1280,
+            "startedDateTime": "2026-10-07T14:00:39.691Z"
+          }
+        ],
+        "sameRequestBody": true,
+        "disposition": "FAIL_DUPLICATE_DIRECT_POSTS;not server envelope or phase progression proof"
+      },
+      "causeBoundary": "Two identical direct posts observed after one UI send; duplicate effect cause not proven. Local Redis configured and credential fields present; exact limiter backend failure reason not returned. No key rotation or guard override."
+    },
+    "disposition": "API_BLOCKED_LOCAL_RATE_LIMIT;CLIENT_FAIL_DUPLICATE_POSTS",
+    "lint": {
+      "status": "PASS",
+      "logSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "collection": {
+      "selectedCases": 2,
+      "logSha256": "07dd48883e6aef7fdb1f69e7019ed8fee7446b12e49502100c23c25b6dbfdb0b"
+    },
+    "sourceLfNormalizedSha256": {
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/noncoder-governance-live.spec.ts": "fd18e2106925e65d74c82d4d49e75018ad87decbf8efba7fb2806b0b94e9702b",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/utils.ts": "6ac5d6f2c8d29f09a59ebe8259becabccca6a28dd238e4e7aec7a31588476236"
+    },
+    "generatedConfigRestoration": {
+      "verifiedParsedOnlyAddedIncludes": [
+        ".next-cvf-release-gate-e2e-live/types/**/*.ts",
+        ".next-cvf-release-gate-e2e-live/dev/types/**/*.ts"
+      ],
+      "beforeSha256": "d4af4823c8a2919796c5faa29805cd152217fbc25d6021c2da57541a685ea0f6",
+      "generatedSha256": "8edcad40e819418b5a50a00ef8903a79f20a7096ecc4f891aae456aaab27baac"
+    },
+    "runtimeArtifactSha256": {
+      "safe-diagnostic.json": "9d15ac171b289756e6795d0f9091f4f4a86eda35b0c54ae768daf877e71ab911",
+      "stdout.json": "c8c5b2bac0546e07394d0478b4e6036b1c0f9a94a2c2dbac72dc0244f9a25630",
+      "ui-replay\\stdout.json": "a71b5311995be40908f2c96509b8c4f9483e3d34e1ca7322f99c529c876e936b",
+      "preimplementation.log": "ea1d3f7d6274a7ab7a7db448b99b5c4de52422bcbc6040079fa8d2859320bd0d"
+    },
+    "claimBoundary": "Two selected cases,not canonical whole release bundle. Client assertions reached confirmed VI idea/export EN Working Brief,real Alibaba HTTP200 complete streams and INTAKE modal;two identical observed requests violate single-send expectation. No phase approval or DESIGN/BUILD effects. Client proof is separate from server envelope/receipt;server full case429 occurred before provider dispatch. Backend denial exact cause and duplicate dispatch root cause unproven. Old scan/build/SOT3/live proofs consumed without replay. No key rotation,model ranking/default change,product runtime repair,public or P11 action."
   }
 }

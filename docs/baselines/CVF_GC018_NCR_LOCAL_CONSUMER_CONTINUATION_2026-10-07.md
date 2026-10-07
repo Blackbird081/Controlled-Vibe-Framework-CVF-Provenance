@@ -16,6 +16,27 @@ it adds no new program, work order, schema, checker or pilot. Predecessor is
 docs/baselines/CVF_GC018_NCR_CONSOLIDATED_LOCAL_FOUNDATION_2026-10-06.md,
 which has957 lines; use a continuation rather than grow it toward the hard limit.
 
+## Full Mode Proof Separation - 2026-10-07
+
+Operator next admits Local fixture/reviewer scope at d9de6b8730eef4ee69432b9923b55dd32216ded3.
+Consumer candidate reviewer; outputs correctly named API proof and actual client
+confirmation/export/INTAKE proof, with secret-safe terminal observations.
+Skipped API-only case now enabled and accurately named; separate UI live case added.
+Initial selected run226828ms: API429 from Local rate limiter before provider
+dispatch; UI legacy selector timeout,zero direct posts. Backend reason unproven.
+Named selector contradiction repaired; one admitted UI-only replay34844ms.
+Confirmed VI Idea Brief,EN Working Brief export and INTAKE modal assertions reached.
+Two identical qwen-flash POSTs observed132ms apart,both HTTP200/finish_reason stop;
+output lengths1169/1280. Expected one: CLIENT_FAIL_DUPLICATE_POSTS,not a suite PASS.
+API_BLOCKED_LOCAL_RATE_LIMIT retained;no API replay or guard override/key rotation.
+Final scoped lint PASS;source execution/final identities and safe diagnostics in
+companion fullModeProof20261007. Verified generated Next config additions restored.
+Receiving-agent next: diagnose duplicate send and limiter backend separately under
+existing owners before a finite replay;do not weaken single-send assertion.
+Duplicate root cause unproven;client UI is not server envelope/receipt proof.
+No phase approval,DESIGN/BUILD,data/P11/public/deploy effect or new whole-bundle PASS.
+Initial bundle FAIL and earlier selected scan/live/build/SOT3 evidence preserved.
+
 ## Pinned Fixture Secret Disposition - 2026-10-07
 
 Operator next admits this finite Local maintainer/reviewer package at 7ed3512e161546638c7bec7ee07ae5e14bdf13ad.
@@ -770,22 +791,22 @@ Returned defects: NONE_RETURNED. Zero candidates and no truncation.
 
 | Field | Evidence |
 |---|---|
-| Actor | Local secret-scan maintainer/reviewer |
+| Actor | Local full-mode fixture maintainer/reviewer |
 | Provider or surface | Local canonical bundle; Alibaba-only synthetic live lane |
-| Session or invocation | secret-finding-disposition-20261007 |
+| Session or invocation | full-mode-proof-20261007 |
 | Working directory | repository root |
-| Command or tool surface | safe source classification;29 regressions;one selected secret scan;governance gates |
-| Target paths | scripts/cvf_release_secret_scan_policy.py; scripts/run_cvf_release_gate_bundle.py; scripts/test_release_secret_scan_boundaries.py; docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md; docs/reviews/evidence/cvf-local-candidate-release-2026-10-07.json |
+| Command or tool surface | two selected cases;diagnosed UI-only replay;final scoped lint;governance gates |
+| Target paths | EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/noncoder-governance-live.spec.ts; EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/utils.ts; docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md; docs/reviews/evidence/cvf-local-candidate-release-2026-10-07.json |
 | Allowed scope source | operator next,continuous Local work and Alibaba test authorization |
-| Before status evidence | clean 7ed3512e161546638c7bec7ee07ae5e14bdf13ad |
-| After status evidence | five material paths;77 reviewed inputs classified;selected scan PASS;initial bundle FAIL preserved |
+| Before status evidence | clean d9de6b8730eef4ee69432b9923b55dd32216ded3 |
+| After status evidence | four material paths;API local429;UI actual INTAKE reached but two identical POSTs;FAIL preserved |
 | Diff evidence | exact staged manifest;source Git hashes and runtime artifact hashes |
 | Approval boundary | synthetic Local candidate proof; data/public/deploy effects parked |
 | Claim boundary | current canonical Local observation;not remote CI,whole NCR or production acceptance |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | secret-finding-disposition-20261007 |
-| Expected manifest | scripts/cvf_release_secret_scan_policy.py; scripts/run_cvf_release_gate_bundle.py; scripts/test_release_secret_scan_boundaries.py; docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md; docs/reviews/evidence/cvf-local-candidate-release-2026-10-07.json |
-| Actual changed set | scripts/cvf_release_secret_scan_policy.py; scripts/run_cvf_release_gate_bundle.py; scripts/test_release_secret_scan_boundaries.py; docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md; docs/reviews/evidence/cvf-local-candidate-release-2026-10-07.json |
+| Invocation ID | full-mode-proof-20261007 |
+| Expected manifest | EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/noncoder-governance-live.spec.ts; EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/utils.ts; docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md; docs/reviews/evidence/cvf-local-candidate-release-2026-10-07.json |
+| Actual changed set | EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/noncoder-governance-live.spec.ts; EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/utils.ts; docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md; docs/reviews/evidence/cvf-local-candidate-release-2026-10-07.json |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |
 
