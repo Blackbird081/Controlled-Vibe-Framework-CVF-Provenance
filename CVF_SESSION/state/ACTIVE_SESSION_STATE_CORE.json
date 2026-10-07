@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_NEXT_MOVE_ALIGNMENT_2026-10-07.md",
     "workOrderSha256": "269615a0dad62a867ac4214c408d8b6e7b845c9429adc38e030321af0d657905"
   },
-  "currentAuthoritySyncReason": "Closed alignment pins unchanged;intake implementation/live proof6435e0dae preserved;closure packet 8beb7dc86af409034b088cdebe95063727d12075 explicitly forbids worker provider delegation. No provider/source replay or fresh whole-release acceptance.",
+  "currentAuthoritySyncReason": "Closed alignment pins unchanged;fresh canonical Local candidate bundle FAIL recorded at 6bf611954fe05fb62e57cc1c78dff6b7217c7600;prior FAIL retained;no production/remote/P11/public/deploy acceptance.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
