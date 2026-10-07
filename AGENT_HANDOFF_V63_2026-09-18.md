@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Current NCR Continuation
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `7d4a67f95976ab14444df08882e98bec492454ef`. Material parent anchor for the dedicated continuity synchronization commit.
+Current HEAD recorded for this handoff: `3813c7e3b57a085444c0c39a149984166ec4a8bc`. Material parent anchor. Batch ID: CVF-NCR-NEXT-MOVE-ALIGNMENT-EXECUTION-20261007.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -9,16 +9,18 @@ Status: ACTIVE
 Current continuation only. Root AGENTS.md and canonical routing owners retain full rules.
 Closed history is preserved byte-for-byte at `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V63_PRE_NCR_COMPACTION_2026-10-07.md` (SHA256 `54801fdcf14e9abe17592352ec3c69a0b0e855632991af0caacac7b65252ccba`); it is NOT_ACTIVE_AUTHORITY and not default startup reading.
 ## Scope / Target / Owner Boundary
-Role: Local session-sync steward; phase: NCR alignment packet preparation; decision owner: Local. No worker dispatch or external research.
+Role: Local session-sync steward; phase: NCR bounded execution admission; decision owner: Local. No worker dispatch or external research.
 ## Startup Acknowledgment
-Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`; handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=Local review/implementation disposition of committed NCR alignment packet; role=Local dispatcher/reviewer/session-sync steward; phase=internal packet preparation/continuation; decision owner=Local; actual-data/browser/release/P11 parked.
+Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`; handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=bounded NCR implementation after committed release; role=Local dispatcher/worker, then separate operator-relayed Local reviewer; phase=internal execution; decision owner=Local; independent final review,actual-data/browser/release/P11 parked.
 ## Current Mode
 `cvf_ncr_p10_closed_p11_parked`. P10 package remains `ACTIVE_PRODUCTION_RUNTIME`; P11 parked. Latest closed learning-history wave: `LHW24`.
 Current NIS-T1J is CLOSED_PASS_BOUNDED with no automatic successor; NCR consumer maintenance is separately operator-authorized.
 ## Current Authority
-Baseline: `docs/baselines/CVF_GC018_NIS_T1J_DOCUMENTARY_WORKSHEET_EXPORT_2026-10-06.md`; SHA256 `8b02a27af730c977729eb62c8da37084929397d2da059ce029dcc595d8029825`.
-Work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1J_DOCUMENTARY_WORKSHEET_EXPORT_2026-10-06.md`; SHA256 `572fd199b2fd641b4a8eeb6e80006a555951f4ce7a8122801efe775df93e111e`.
+Baseline: `docs/baselines/CVF_GC018_NCR_NEXT_MOVE_ALIGNMENT_2026-10-07.md`; SHA256 `936b9f4c0483b59f202df24e8033d450a018fb652d4a9d421b1e10728fd2a155`.
+Work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_NEXT_MOVE_ALIGNMENT_2026-10-07.md`; SHA256 `656a24515a8464acb55802117ba838dff1ae3a0e6e3c421cfe0ce147a20b54d6`.
+NIS-T1J remains closed, no successor; current pair is separately admitted maintenance.
 ## Accepted NCR Evidence And Continuation
+Execution admission `3813c7e3b57a085444c0c39a149984166ec4a8bc`: exact six-path NCR repair, committed pins and release gate required. Worker LOCAL_CODEX_ROOT; independent reviewer LOCAL_CLAUDE_OPERATOR_RELAY via operator relay. No independent proof or final closure yet.
 Packet `7d4a67f95976ab14444df08882e98bec492454ef`: `docs/baselines/CVF_GC018_NCR_NEXT_MOVE_ALIGNMENT_2026-10-07.md` and named work order. Six proposed paths, NCR/legacy comparison semantics, file-size extraction, required proof IDs and reviewer plan bound. DRAFT; ledger/candidate graph and planning gates PASS, checker unchanged; implementation/release NOT_EXECUTED.
 Design `e5dc51ef27ef5ddbc176e1e00b3ba7d5eeb4534e`: existing acceptance-ledger addendum/checker already owns eligible requirement/Git/proof/terminal joins. Lifecycle outcome routing added;shared learning coverage corrected. Six structural fixtures PASS;universal maintenance and NCR next-token candidates NOT_IMPLEMENTED. Full admission-to-terminal application not proven.
 W05 finite source/evidence package `0c96a2ad61de54246099b68844820bedc5820057`: `docs/reviews/CVF_NCR_W05_SELECTED_CHAIN_READINESS_2026-10-07.md`. Source/evidence pins,stage matrix,checkpoint groups and terminal disposition delivered together. LOCAL_CHAIN_RECONCILED_BOUNDED;historical proofs remain separate;W05 pre-live NOT_CLOSED;no product/provider rerun.
@@ -39,7 +41,7 @@ T3B has a Local-verified active v1 specification. Party B is verified and T3C-C1
 Post-G7 Local source intake and Jev P0 are closed at material commit `9ac0ee8e59fa041ddaa93d725796c509400f257a`. The audit records 32 READ plus 8,093 DEFERRED paths. Jev adds fail-closed decision-context binding, incomplete candidate-space escape, and `EVIDENCE_ONLY` judgment authority to the existing ASSF owner. Proof: TypeScript 84/84, Python 61/61, compile PASS, governance 90/90. G1-G7 remain closed.
 AKOE current roadmap `docs/roadmaps/CVF_ACEL_APPLIED_KNOWLEDGE_OWNER_ENRICHMENT_ROADMAP_2026-09-25.md` is CLOSED_PASS_BOUNDED; prior blockers are historical.
 ## Next Allowed Move
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=LOCAL_DISPOSITION_ONLY; BATCH_ID=CVF-NCR-NEXT-MOVE-ALIGNMENT-DISPOSITION-20261007. Finite scope/spec/proof packet prepared at 7d4a67f95976ab14444df08882e98bec492454ef; baseline docs/baselines/CVF_GC018_NCR_NEXT_MOVE_ALIGNMENT_2026-10-07.md; work order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_NEXT_MOVE_ALIGNMENT_2026-10-07.md. DRAFT_PACKET_PREPARED_NOT_RELEASED;checker/test unchanged. Existing acceptance-ledger validator and candidate-only closeability graph PASS;not dispatch readiness or implementation proof. Next finite Local technical review/implementation disposition of this committed packet: verify source pins,comparison semantics,legacy compatibility,owner headroom and independent reviewer plan;resolve protected-scope authority and committed release before execution. Six proposed worker paths cover one grouped repair and return;no new checker/schema/hook or universal rollout. Do not restart broad audits or stop per patch. Reuse existing acceptance ledger/Git join/terminal reducer;trancheValue remains non-authoritative. W05 LOCAL_CHAIN_RECONCILED_BOUNDED;pre-live NOT_CLOSED;no automatic whole-route rerun. Q001/Q004 OPEN/Profile A;real-data/writer/custody/retention/RPO/RTO/cost/effect action-specific;no ledger-copy prerequisite for fresh isolated development. Browser unavailable unless capability changes;send/B2 and S05/C1 STOP/parked;P11,CCMA,public/deploy parked;NIS-T1J closed no successor;LHW24 closed;no push,R3/live pilot or real-data authority inferred.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_BOUNDED_LOCAL; BATCH_ID=CVF-NCR-NEXT-MOVE-ALIGNMENT-EXECUTION-20261007. Operator-admitted six-path repair under docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_NEXT_MOVE_ALIGNMENT_2026-10-07.md; packet 3813c7e3b57a085444c0c39a149984166ec4a8bc. Verify committed currentAuthority pins and final release gate before any source writes; capture clean executionBaseHead. Fix NCR full declaration drift rejection and preserve legacy behavior; extract related owners to satisfy reviewed headroom in one grouped outcome. Return exact worker evidence COMPLETE_PENDING_REVIEW;worker must not commit or change packet/continuity. Independent Local reviewer LOCAL_CLAUDE_OPERATOR_RELAY selected by operator;operator forwards task;do not auto-call Claude or spawn agents. Actual distinct actor/invocation/oracle/evidence bindings and probe required before final closure;assignment is not PASS. No new checker/schema/hook or broad workflow rollout. W05 LOCAL_CHAIN_RECONCILED_BOUNDED;pre-live NOT_CLOSED;no automatic whole-route rerun. Group compatible admitted work and finish worker return once. Q001/Q004 OPEN/Profile A;real-data/writer/custody/retention/RPO/RTO/cost/effect action-specific;no ledger-copy prerequisite for fresh isolated development. Browser unavailable unless capability changes;send/B2 and S05/C1 STOP/parked;P11,CCMA,public/deploy parked;NIS-T1J closed no successor;LHW24 closed;no push,R3/live pilot or real-data authority inferred.
 ## Parked Checkpoints
 - autorun lane-binding R1 is closed at `ee81deeeb`; HRLTP-T2 remains paused for Local no-subagent route reassessment;
 - T3C-C2 is closed and Local verified at `820aae3ec`;
@@ -61,24 +63,24 @@ The historic provider/live parked line applies to those stopped lanes; it does n
 Q001/Q004 actual-data source/writer,custody,retention/RPO/RTO/cost checkpoints are action-specific; do not require a user-supplied ledger copy for unrelated fresh isolated development.
 NCR send/B2 STOP and S05/C1 remain; browser capability unavailable; vision/full P04/full release remain unproved. No autonomous P11/public/deploy activation.
 ## Core Guard Self-Protection Authorization
-Authorized guard-maintenance scope: synchronize prepared NCR alignment packet 7d4a67f95976ab14444df08882e98bec492454ef. Protected paths: `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/cvfNcrConsolidatedLocalFoundation20261006.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`. Operator authorization: next under standing Local planning/continuation authority. Rollback boundary: continuity only; preserve accepted proof,NIS authority,immutable archive and parked lanes; no implementation authority from DRAFT.
+Authorized guard-maintenance scope: synchronize operator-admitted NCR execution 3813c7e3b57a085444c0c39a149984166ec4a8bc. Protected paths: `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/cvfNcrConsolidatedLocalFoundation20261006.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`. Operator authorization: continuation and explicit separate Local reviewer relay on 2026-10-07. Rollback boundary: this continuity only; preserve NIS closure,archive,accepted proof and parked lanes.
 ## Agent Operation Trace Block
 | Field | Evidence |
 |---|---|
 | Actor | Local maintainer and session-sync steward |
 | Provider or surface | private CVF workspace |
-| Session or invocation | NCR alignment packet20261007 |
+| Session or invocation | NCR execution admission20261007 |
 | Working directory | repository root |
 | Command or tool surface | targeted source reads,byte/hash verification,state generator,Git helper |
 | Target paths | five source continuity paths,two generated views |
 | Allowed scope source | operator next/continuous admitted work;root startup and read-budget rules |
-| Before status evidence | clean 35c7f8f1cf054f6d23f0cffd22c9a2103fe0cd1e before packet preparation |
-| After status evidence | packet 7d4a67f95976ab14444df08882e98bec492454ef; planning gates PASS; DRAFT, no implementation/dispatch/runtime proof |
+| Before status evidence | clean e1a39623d2da54c0a5523bbec0d3574ff8d06b1e before admission |
+| After status evidence | admitted packet 3813c7e3b57a085444c0c39a149984166ec4a8bc; no source implementation or final independent proof at dispatch sync |
 | Diff evidence | SHA-keyed continuity manifest; closed history retained in archive |
 | Approval boundary | Local continuation maintenance; parked actions retained |
 | Claim boundary | structural continuity only,no runtime/provider/public/deploy proof |
 | Agent type | Local session-sync steward |
-| Invocation ID | ncr-alignment-packet-20261007 |
+| Invocation ID | ncr-execution-admission-20261007 |
 | Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/cvfNcrConsolidatedLocalFoundation20261006.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/cvfNcrConsolidatedLocalFoundation20261006.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Manifest delta | MATCH |

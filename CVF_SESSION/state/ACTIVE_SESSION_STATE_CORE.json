@@ -36,12 +36,12 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_NIS_T1J_DOCUMENTARY_WORKSHEET_EXPORT_2026-10-06.md",
-    "baselineSha256": "8b02a27af730c977729eb62c8da37084929397d2da059ce029dcc595d8029825",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1J_DOCUMENTARY_WORKSHEET_EXPORT_2026-10-06.md",
-    "workOrderSha256": "572fd199b2fd641b4a8eeb6e80006a555951f4ce7a8122801efe775df93e111e"
+    "baselinePath": "docs/baselines/CVF_GC018_NCR_NEXT_MOVE_ALIGNMENT_2026-10-07.md",
+    "baselineSha256": "936b9f4c0483b59f202df24e8033d450a018fb652d4a9d421b1e10728fd2a155",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_NEXT_MOVE_ALIGNMENT_2026-10-07.md",
+    "workOrderSha256": "656a24515a8464acb55802117ba838dff1ae3a0e6e3c421cfe0ce147a20b54d6"
   },
-  "currentAuthoritySyncReason": "Closed NIS-T1J authority retained; operator-admitted NCR finite alignment planning packet 7d4a67f95976ab14444df08882e98bec492454ef is DRAFT, not released and does not activate protected checker edits, runtime or a NIS successor.",
+  "currentAuthoritySyncReason": "Operator-admitted bounded NCR maintenance execution packet 3813c7e3b57a085444c0c39a149984166ec4a8bc; current execution authority switched to exact packet pins. NIS-T1J remains closed historical authority, not reopened. Independent reviewer manually relayed; final closure pending actual proof.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
