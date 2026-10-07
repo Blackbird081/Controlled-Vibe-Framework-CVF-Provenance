@@ -2832,5 +2832,756 @@
       "command": "npx tsc --noEmit",
       "artifactSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     }
+  },
+  "finalSourceCandidateMilestone20261007": {
+    "admission": {
+      "baseHead": "f2b08643782cc232a45c17a640f61cf0c7da340d",
+      "authority": "operator continue roadmap; standing grouped Local maintenance and Alibaba-only meaningful test authority",
+      "role": "Local tester/reviewer; INTERNAL_AGENT; decision owner Local",
+      "phase": "final-source integrated Local candidate milestone",
+      "consumer": "existing NCR Local candidate readiness reviewer",
+      "requiredOutputs": [
+        "one canonical bundle",
+        "nine stage/exit reconciliation",
+        "source and artifact hashes",
+        "safe diagnostics",
+        "terminal Local disposition"
+      ],
+      "scope": [
+        "docs/baselines/CVF_GC018_NCR_INTAKE_DISPATCH_REPAIR_2026-10-07.md",
+        "docs/reviews/evidence/cvf-local-candidate-release-2026-10-07.json"
+      ],
+      "priorFailure": "canonical live browser readiness failure; whole bundle retained FAIL",
+      "resultChangingAction": "committed login readiness and navigation repairs plus workers1; final-source complete serial live stage PASS",
+      "informationGain": "combined final-source canonical candidate, unavailable from selected live-stage evidence",
+      "costReason": "one required integrated command only; no isolated component replay; unchanged models, caps, timeouts and criteria",
+      "stop": "first terminal bundle result; no automatic retry, source repair, public, deploy, actual-data or P11 activation",
+      "preImplementationGate": {
+        "status": "PASS",
+        "commandsPassed": 85,
+        "elapsedSeconds": 66.32
+      },
+      "sourceGitByteSha256": {
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/playwright.config.mock.ts": "704c9b4fcfa8a248a9e4fb82b49af184ee6840ccf60b44909d142fc7f61ff712",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/playwright.config.ts": "9ff2949abff54f6e8543d6030206138c90abee70e2ef59c6ab6c378cb9199f43",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/TemplateCard.tsx": "441ffd21a0320d3e3a55ba3bf5fe88e14f1d6bbf4801d6eac3fdaf8bc0dde236",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/governance-gate-live.spec.ts": "cf46665c78709e24460ecbd3a220ba669f2d28c403b675d2e8e3467e5f1cf8ad",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/noncoder-governance-live.spec.ts": "0bb714f163786f3a8467f7c70f4509c07115fba52821dfcbd36fd2a4eb6c85e9",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/utils.ts": "6a27d4aa18f22a4c869189caaf32925121ebf77282629b8e374f3762ca77a6fb",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/w113-workspace-web-live-proof.spec.ts": "a5c1d155fc163a38f11ecbbff745c6cb5a538266050909e25d364eda839d099d",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tsconfig.json": "d4af4823c8a2919796c5faa29805cd152217fbc25d6021c2da57541a685ea0f6",
+        "scripts/cvf_release_runtime_support.py": "a84ae736ccf9cac16894a472484d81dddbe38efb330e8d26ca89b136437119c1",
+        "scripts/cvf_release_web_runtime_isolation.py": "622bf6e9eef789419b7088092af986e7d82f05f6ce160ca2479d0b00a00235f8",
+        "scripts/run_cvf_release_gate_bundle.py": "8630c24ef14f3f2839b1f81ac9976ff998525f2a8c48fd873bc5f1afe27ff160",
+        "scripts/run_cvf_sot3_a4_failure_recovery_proof.py": "7a8915f1c0e1048992a23f692d2c14b0bb27173046e93124218eed2b2a103a6c",
+        "scripts/run_cvf_sot3_a5_release_proof.py": "e0187349ef24c6635bb0a1a1c32c47985271f602005a0a1ad9456fee90129c82"
+      }
+    },
+    "commandResult": {
+      "state": "RETURNED",
+      "command": [
+        "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "-B",
+        "scripts/run_cvf_release_gate_bundle.py",
+        "--json",
+        "--output",
+        "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\final-source-candidate-20261007\\bundle.json",
+        "--manifest-output",
+        "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\final-source-candidate-20261007\\manifest.json",
+        "--sot3-diagnostic-output",
+        "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\final-source-candidate-20261007\\sot3-diagnostic.json",
+        "--e2e-diagnostic-output",
+        "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\final-source-candidate-20261007\\e2e-diagnostic.json"
+      ],
+      "retries": 0,
+      "provider": "alibaba",
+      "exitCode": 1,
+      "latencyMs": 617671
+    },
+    "claimBoundary": "Local synthetic candidate only; saved provider receipt evaluation, structural UI mock, real SOT3 recovery with spy rollback negatives; no business, remote CI, actual-data, P11, public or deploy acceptance",
+    "bundle": {
+      "date": "2026-10-07",
+      "gate_result": "FAIL",
+      "checks": [
+        {
+          "name": "Capability environment preflight",
+          "status": "PASS",
+          "message": "Capability environment preflight PASS",
+          "detail": [
+            "git:AVAILABLE",
+            "python:AVAILABLE",
+            "node:AVAILABLE",
+            "npm:AVAILABLE",
+            "npx:AVAILABLE"
+          ]
+        },
+        {
+          "name": "Web build (npm run build)",
+          "status": "PASS",
+          "message": "Build succeeded",
+          "detail": []
+        },
+        {
+          "name": "TypeScript check (guard contract)",
+          "status": "PASS",
+          "message": "TypeScript check clean",
+          "detail": []
+        },
+        {
+          "name": "Provider readiness",
+          "status": "PASS",
+          "message": "CERTIFIED lanes: 3 \u2014 status: CERTIFIED",
+          "detail": []
+        },
+        {
+          "name": "Secrets scan",
+          "status": "PASS",
+          "message": "No secret patterns detected in declared scan scope",
+          "detail": [
+            "filesScanned=67366 filesSkippedExtension=11162 skippedDirectories=177 filesUnreadable=0 stoppedAfterFindingsLimit=false"
+          ]
+        },
+        {
+          "name": "Docs governance (RC docs present)",
+          "status": "PASS",
+          "message": "All 3 required RC docs present",
+          "detail": []
+        },
+        {
+          "name": "E2E Playwright UI (mock)",
+          "status": "PASS",
+          "message": "Playwright UI mock suite passed",
+          "detail": [
+            "\u001b[2m[WebServer] \u001b[22m(Use `node --trace-warnings ...` to show where the warning was created)"
+          ]
+        },
+        {
+          "name": "E2E Playwright Governance (live)",
+          "status": "FAIL",
+          "message": "Playwright live governance suite failed",
+          "detail": [
+            "    Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m",
+            "    ..\\..\\..\\.cvf\\runtime\\release-gate-e2e\\live-4hnnlf1_\\governance-gate-live-norma-298ad-est-completes-without-block\\test-failed-1.png",
+            "    Error Context: ..\\..\\..\\.cvf\\runtime\\release-gate-e2e\\live-4hnnlf1_\\governance-gate-live-norma-298ad-est-completes-without-block\\error-context.md",
+            "    Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m",
+            "    ..\\..\\..\\.cvf\\runtime\\release-gate-e2e\\live-4hnnlf1_\\governance-gate-live-bypas-fd025--high-risk-output-correctly\\test-failed-1.png",
+            "    Error Context: ..\\..\\..\\.cvf\\runtime\\release-gate-e2e\\live-4hnnlf1_\\governance-gate-live-bypas-fd025--high-risk-output-correctly\\error-context.md",
+            "    Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m",
+            "    ..\\..\\..\\.cvf\\runtime\\release-gate-e2e\\live-4hnnlf1_\\governance-gate-live-gover-e040a--updated-after-real-AI-call\\test-failed-1.png"
+          ]
+        },
+        {
+          "name": "SOT3 canonical release proof (A5)",
+          "status": "PASS",
+          "message": "SOT3 canonical release proof PASS with full owner correlation",
+          "detail": []
+        }
+      ],
+      "sot3": {
+        "admissionFailures": [],
+        "approvedContextIncluded": true,
+        "claim": "SOT3_FAILURE_RECOVERY_PROVEN_BOUNDED",
+        "durableOwnerCorrelationComplete": true,
+        "httpStatus": 200,
+        "localNegativeGatePassed": true,
+        "negativeCaseCount": 19,
+        "overall": "PASS",
+        "providerSuccess": true,
+        "recoveryProviderCallCount": 1,
+        "rollbackProviderCallCount": 1,
+        "traceCount": 1,
+        "zeroProviderCallCaseCount": 18
+      }
+    },
+    "sot3Diagnostic": {
+      "a4LocalNegativeGatePassed": true,
+      "a4RecoveryProviderCallCount": 1,
+      "a4ReturnCode": 0,
+      "admissionFailures": [],
+      "batchId": "SOT3-ACT-A5",
+      "diagnostic": null,
+      "finishedAtUtc": "2026-10-07T16:19:00.535754+00:00",
+      "schemaVersion": "cvf.sot3ActA5Diagnostic.v1",
+      "secretSafety": {
+        "fullPromptPersisted": false,
+        "rawKeyPersisted": false,
+        "rawOutputPersisted": false,
+        "rawProviderBodyPersisted": false
+      },
+      "startedAtUtc": "2026-10-07T16:17:15.194588+00:00",
+      "underlyingA4Diagnostic": null
+    },
+    "e2eDiagnostic": {
+      "stage": "e2e_execution",
+      "class": "e2e_failed",
+      "retryable": false,
+      "userAction": "inspect_secret_safe_test_artifacts_before_retry",
+      "safeMessage": "The live governance E2E suite failed; inspect the retained test artifacts before retrying.",
+      "provider": "alibaba",
+      "model": null,
+      "httpStatus": null,
+      "latencyMs": 132515,
+      "traceOrReceipt": null
+    },
+    "manifest": {
+      "claimBoundary": "Manifest records file hashes, rerun command, repo commit, and optional HMAC. It does not prove third-party execution unless an external anchor is provided.",
+      "evidence": [
+        {
+          "path": ".cvf/runtime/final-source-candidate-20261007/bundle.json",
+          "sha256": "2884189dc19115a44f02ac59fd121ca318f4eeff74ea0e4ed668c1c1b4484bd0",
+          "sizeBytes": 3817
+        },
+        {
+          "path": ".cvf/runtime/final-source-candidate-20261007/sot3-diagnostic.json",
+          "sha256": "78684a234a3af5628b7b4f7069d0634ed5ba1c92623b867b2474916e70d633b6",
+          "sizeBytes": 544
+        },
+        {
+          "path": ".cvf/runtime/final-source-candidate-20261007/e2e-diagnostic.json",
+          "sha256": "28bd667bc2620e34d647cf0ae0b02a46223213a199d0ec2bd841bc8b0ac460c1",
+          "sizeBytes": 381
+        }
+      ],
+      "externalAnchor": {
+        "anchorId": "",
+        "anchorUrl": "",
+        "status": "NOT_PROVIDED"
+      },
+      "generatedAt": "2026-10-07T16:19:00.545378+00:00",
+      "repository": {
+        "branch": "main",
+        "commit": "f2b08643782cc232a45c17a640f61cf0c7da340d",
+        "dirtyStatus": "M EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tsconfig.json\n M docs/baselines/CVF_GC018_NCR_INTAKE_DISPATCH_REPAIR_2026-10-07.md\n M docs/reviews/evidence/cvf-local-candidate-release-2026-10-07.json",
+        "remoteOrigin": "https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF-Provenance.git"
+      },
+      "rerun": {
+        "acceptedSecretEnv": [
+          "DASHSCOPE_API_KEY",
+          "ALIBABA_API_KEY",
+          "CVF_ALIBABA_API_KEY",
+          "CVF_BENCHMARK_ALIBABA_KEY"
+        ],
+        "command": "python scripts/run_cvf_release_gate_bundle.py --sot3-diagnostic-output <path> --e2e-diagnostic-output <path> --json",
+        "requiresLiveProviderKey": true
+      },
+      "schema": "cvf.liveEvidenceManifest.v1",
+      "signature": {
+        "algorithm": "hmac-sha256",
+        "digest": "",
+        "status": "UNSIGNED"
+      }
+    },
+    "runtimeArtifactSha256": {
+      ".cvf/runtime/final-source-candidate-20261007/bundle.json": "2884189dc19115a44f02ac59fd121ca318f4eeff74ea0e4ed668c1c1b4484bd0",
+      ".cvf/runtime/final-source-candidate-20261007/e2e-diagnostic.json": "28bd667bc2620e34d647cf0ae0b02a46223213a199d0ec2bd841bc8b0ac460c1",
+      ".cvf/runtime/final-source-candidate-20261007/manifest.json": "ae4a5230419c47301e37e73fd590b99cbad957605d4c02806f3b52ecabfbc963",
+      ".cvf/runtime/final-source-candidate-20261007/sot3-diagnostic.json": "78684a234a3af5628b7b4f7069d0634ed5ba1c92623b867b2474916e70d633b6",
+      ".cvf/runtime/final-source-candidate-20261007/stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      ".cvf/runtime/final-source-candidate-20261007/stdout.log": "2884189dc19115a44f02ac59fd121ca318f4eeff74ea0e4ed668c1c1b4484bd0"
+    },
+    "generatedConfigDisposition": {
+      "status": "VERIFIED_GENERATED_ADDITIONS_RESTORED",
+      "removedIncludes": [
+        ".next-cvf-release-gate-build/types/**/*.ts",
+        ".next-cvf-release-gate-build/dev/types/**/*.ts",
+        ".next-cvf-release-gate-e2e-mock/types/**/*.ts",
+        ".next-cvf-release-gate-e2e-mock/dev/types/**/*.ts",
+        ".next-cvf-release-gate-e2e-live/types/**/*.ts",
+        ".next-cvf-release-gate-e2e-live/dev/types/**/*.ts"
+      ],
+      "rawBeforeSha256": "d4af4823c8a2919796c5faa29805cd152217fbc25d6021c2da57541a685ea0f6"
+    },
+    "sourceReconciliation": {
+      "status": "MATCH_FINAL_RELEVANT_GIT_BYTES",
+      "sourceGitByteSha256": {
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/playwright.config.mock.ts": "704c9b4fcfa8a248a9e4fb82b49af184ee6840ccf60b44909d142fc7f61ff712",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/playwright.config.ts": "9ff2949abff54f6e8543d6030206138c90abee70e2ef59c6ab6c378cb9199f43",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/TemplateCard.tsx": "441ffd21a0320d3e3a55ba3bf5fe88e14f1d6bbf4801d6eac3fdaf8bc0dde236",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/governance-gate-live.spec.ts": "cf46665c78709e24460ecbd3a220ba669f2d28c403b675d2e8e3467e5f1cf8ad",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/noncoder-governance-live.spec.ts": "0bb714f163786f3a8467f7c70f4509c07115fba52821dfcbd36fd2a4eb6c85e9",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/utils.ts": "6a27d4aa18f22a4c869189caaf32925121ebf77282629b8e374f3762ca77a6fb",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/w113-workspace-web-live-proof.spec.ts": "a5c1d155fc163a38f11ecbbff745c6cb5a538266050909e25d364eda839d099d",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tsconfig.json": "d4af4823c8a2919796c5faa29805cd152217fbc25d6021c2da57541a685ea0f6",
+        "scripts/cvf_release_runtime_support.py": "a84ae736ccf9cac16894a472484d81dddbe38efb330e8d26ca89b136437119c1",
+        "scripts/cvf_release_web_runtime_isolation.py": "622bf6e9eef789419b7088092af986e7d82f05f6ce160ca2479d0b00a00235f8",
+        "scripts/run_cvf_release_gate_bundle.py": "8630c24ef14f3f2839b1f81ac9976ff998525f2a8c48fd873bc5f1afe27ff160",
+        "scripts/run_cvf_sot3_a4_failure_recovery_proof.py": "7a8915f1c0e1048992a23f692d2c14b0bb27173046e93124218eed2b2a103a6c",
+        "scripts/run_cvf_sot3_a5_release_proof.py": "e0187349ef24c6635bb0a1a1c32c47985271f602005a0a1ad9456fee90129c82"
+      },
+      "boundary": "named source set only; no atomic entire-tree or exhaustive corpus claim"
+    },
+    "terminalDisposition": "CANONICAL_FINAL_SOURCE_LOCAL_CANDIDATE_FAIL_RECORDED_BOUNDED",
+    "requiredOutputReconciliation": {
+      "canonicalCommand": "DELIVERED",
+      "nineStagesAndExit": "DELIVERED",
+      "sourceAndArtifactIdentity": "DELIVERED",
+      "safeDiagnostics": "DELIVERED",
+      "terminalDisposition": "DELIVERED",
+      "priorFailuresRetained": true,
+      "retries": 0
+    },
+    "failedCaseSafeProjection": [
+      {
+        "case": "governance-gate-live-bypas-fd025--high-risk-output-correctly",
+        "traceSha256": "9dcde9bcda3a509dc9f59a6b26fe794afc5ac4dcd4518ad4523cc24bf246a288",
+        "executeResponses": [
+          {
+            "httpStatus": 200,
+            "success": false,
+            "errorType": null,
+            "errorCode": null,
+            "outputValidation": null,
+            "diagnostic": {
+              "stage": "provider",
+              "class": "provider_http_error",
+              "retryable": true,
+              "userAction": "wait_and_retry",
+              "httpStatus": 401
+            },
+            "bodyKeys": [
+              "aifMemoryReinjection",
+              "auditFeedbackValidationReadout",
+              "auditMemoryReceipt",
+              "contextBudgetReadout",
+              "contextBundleReadout",
+              "diagnostic",
+              "enforcement",
+              "englishSpecFreeze",
+              "error",
+              "evidenceToLearningReadout",
+              "executionContinuityHandoffReadout",
+              "executionIdentity",
+              "executionTime",
+              "findingToLearningReadout",
+              "governanceEnvelope",
+              "governanceEvidenceReceipt",
+              "guardResult",
+              "guidedStepState",
+              "knowledgeInjection",
+              "languageState",
+              "learningPlaneReadout",
+              "memoryAdvisoryReadout",
+              "mlwNextRuntimeDecisionReadout",
+              "model",
+              "orchestratorFeedback",
+              "pipelineChainReadout",
+              "policySnapshotId",
+              "provider",
+              "providerAttemptReconciliation",
+              "providerRouting",
+              "requestContextReadout",
+              "reviewerDeadlockReadout",
+              "rolePermission",
+              "simulationFailureGateReadout",
+              "specBoundary",
+              "specFirstMediation",
+              "success",
+              "verticalIntegrationReadout",
+              "workerTimeoutReadout"
+            ]
+          }
+        ],
+        "assertionErrors": [
+          {
+            "assertion": "Error: expect(received).toBe(expected) // Object.is equality",
+            "expectedReceived": [
+              "Expected: true",
+              "Received: false"
+            ]
+          }
+        ]
+      },
+      {
+        "case": "governance-gate-live-gover-e040a--updated-after-real-AI-call",
+        "traceSha256": "a53c012419abfde74c865b0f56db517cf2b18db9045cab1ee5010a573c3da819",
+        "executeResponses": [
+          {
+            "httpStatus": 200,
+            "success": false,
+            "errorType": null,
+            "errorCode": null,
+            "outputValidation": null,
+            "diagnostic": {
+              "stage": "provider",
+              "class": "provider_http_error",
+              "retryable": true,
+              "userAction": "wait_and_retry",
+              "httpStatus": 401
+            },
+            "bodyKeys": [
+              "aifMemoryReinjection",
+              "auditFeedbackValidationReadout",
+              "auditMemoryReceipt",
+              "contextBudgetReadout",
+              "contextBundleReadout",
+              "diagnostic",
+              "enforcement",
+              "englishSpecFreeze",
+              "error",
+              "evidenceToLearningReadout",
+              "executionContinuityHandoffReadout",
+              "executionIdentity",
+              "executionTime",
+              "findingToLearningReadout",
+              "governanceEnvelope",
+              "governanceEvidenceReceipt",
+              "guardResult",
+              "guidedStepState",
+              "knowledgeInjection",
+              "languageState",
+              "learningPlaneReadout",
+              "memoryAdvisoryReadout",
+              "mlwNextRuntimeDecisionReadout",
+              "model",
+              "orchestratorFeedback",
+              "pipelineChainReadout",
+              "policySnapshotId",
+              "provider",
+              "providerAttemptReconciliation",
+              "providerRouting",
+              "requestContextReadout",
+              "reviewerDeadlockReadout",
+              "rolePermission",
+              "simulationFailureGateReadout",
+              "specBoundary",
+              "specFirstMediation",
+              "success",
+              "verticalIntegrationReadout",
+              "workerTimeoutReadout"
+            ]
+          }
+        ],
+        "assertionErrors": [
+          {
+            "assertion": "Error: expect(received).toBe(expected) // Object.is equality",
+            "expectedReceived": [
+              "Expected: true",
+              "Received: false"
+            ]
+          }
+        ]
+      },
+      {
+        "case": "governance-gate-live-norma-298ad-est-completes-without-block",
+        "traceSha256": "aabd9bec76278c3d6ca1e2af8843599040a4471154a65cabfb29764f03204290",
+        "executeResponses": [
+          {
+            "httpStatus": 200,
+            "success": false,
+            "errorType": null,
+            "errorCode": null,
+            "outputValidation": null,
+            "diagnostic": {
+              "stage": "provider",
+              "class": "provider_http_error",
+              "retryable": true,
+              "userAction": "wait_and_retry",
+              "httpStatus": 401
+            },
+            "bodyKeys": [
+              "aifMemoryReinjection",
+              "auditFeedbackValidationReadout",
+              "auditMemoryReceipt",
+              "contextBudgetReadout",
+              "contextBundleReadout",
+              "diagnostic",
+              "enforcement",
+              "englishSpecFreeze",
+              "error",
+              "evidenceToLearningReadout",
+              "executionContinuityHandoffReadout",
+              "executionIdentity",
+              "executionTime",
+              "findingToLearningReadout",
+              "governanceEnvelope",
+              "governanceEvidenceReceipt",
+              "guardResult",
+              "guidedStepState",
+              "knowledgeInjection",
+              "languageState",
+              "learningPlaneReadout",
+              "memoryAdvisoryReadout",
+              "mlwNextRuntimeDecisionReadout",
+              "model",
+              "orchestratorFeedback",
+              "pipelineChainReadout",
+              "policySnapshotId",
+              "provider",
+              "providerAttemptReconciliation",
+              "providerRouting",
+              "requestContextReadout",
+              "reviewerDeadlockReadout",
+              "rolePermission",
+              "simulationFailureGateReadout",
+              "specBoundary",
+              "specFirstMediation",
+              "success",
+              "verticalIntegrationReadout",
+              "workerTimeoutReadout"
+            ]
+          }
+        ],
+        "assertionErrors": [
+          {
+            "assertion": "Error: expect(received).toBe(expected) // Object.is equality",
+            "expectedReceived": [
+              "Expected: true",
+              "Received: false"
+            ]
+          }
+        ]
+      },
+      {
+        "case": "noncoder-governance-live-c-58151-efore-opening-the-idea-form",
+        "traceSha256": "5582c443924b1d627db5b9f9f542bd6bc618e1520f359e9144ce1b18a950ffa3",
+        "executeResponses": [],
+        "assertionErrors": [
+          {
+            "assertion": "Error: expect(locator).toBeDisabled() failed",
+            "expectedReceived": [
+              "Expected: disabled",
+              "Timeout: 30000ms"
+            ]
+          },
+          {
+            "assertion": "Expect failed",
+            "expectedReceived": []
+          }
+        ]
+      },
+      {
+        "case": "noncoder-governance-live-f-becff-ned-live-result-and-receipt",
+        "traceSha256": "c543ab96496b83b0806f400f46543c5552671ed819fa85a3fa1a62aa34492d6d",
+        "executeResponses": [
+          {
+            "httpStatus": 200,
+            "success": false,
+            "errorType": null,
+            "errorCode": null,
+            "outputValidation": null,
+            "diagnostic": {
+              "stage": "provider",
+              "class": "provider_http_error",
+              "retryable": true,
+              "userAction": "wait_and_retry",
+              "httpStatus": 401
+            },
+            "bodyKeys": [
+              "aifMemoryReinjection",
+              "auditFeedbackValidationReadout",
+              "auditMemoryReceipt",
+              "contextBudgetReadout",
+              "contextBundleReadout",
+              "diagnostic",
+              "enforcement",
+              "englishSpecFreeze",
+              "error",
+              "evidenceToLearningReadout",
+              "executionContinuityHandoffReadout",
+              "executionIdentity",
+              "executionTime",
+              "findingToLearningReadout",
+              "governanceEnvelope",
+              "governanceEvidenceReceipt",
+              "guardResult",
+              "guidedStepState",
+              "knowledgeInjection",
+              "languageState",
+              "learningPlaneReadout",
+              "memoryAdvisoryReadout",
+              "mlwNextRuntimeDecisionReadout",
+              "model",
+              "orchestratorFeedback",
+              "pipelineChainReadout",
+              "policySnapshotId",
+              "provider",
+              "providerAttemptReconciliation",
+              "providerRouting",
+              "requestContextReadout",
+              "reviewerDeadlockReadout",
+              "rolePermission",
+              "simulationFailureGateReadout",
+              "specBoundary",
+              "specFirstMediation",
+              "success",
+              "verticalIntegrationReadout",
+              "workerTimeoutReadout"
+            ]
+          }
+        ],
+        "assertionErrors": [
+          {
+            "assertion": "Error: expect(received).toBe(expected) // Object.is equality",
+            "expectedReceived": [
+              "Expected: true",
+              "Received: false"
+            ]
+          }
+        ]
+      },
+      {
+        "case": "noncoder-governance-live-g-f0c7d-Alibaba-AI-response-\u2014-L-008",
+        "traceSha256": "c791312b62a63878865b6056a81b5bc2918b7facfe35324b33cca812b555df15",
+        "executeResponses": [
+          {
+            "httpStatus": 200,
+            "success": false,
+            "errorType": null,
+            "errorCode": null,
+            "outputValidation": null,
+            "diagnostic": {
+              "stage": "provider",
+              "class": "provider_http_error",
+              "retryable": true,
+              "userAction": "wait_and_retry",
+              "httpStatus": 401
+            },
+            "bodyKeys": [
+              "aifMemoryReinjection",
+              "auditFeedbackValidationReadout",
+              "auditMemoryReceipt",
+              "contextBudgetReadout",
+              "contextBundleReadout",
+              "diagnostic",
+              "enforcement",
+              "englishSpecFreeze",
+              "error",
+              "evidenceToLearningReadout",
+              "executionContinuityHandoffReadout",
+              "executionIdentity",
+              "executionTime",
+              "findingToLearningReadout",
+              "governanceEnvelope",
+              "governanceEvidenceReceipt",
+              "guardResult",
+              "guidedStepState",
+              "knowledgeInjection",
+              "languageState",
+              "learningPlaneReadout",
+              "memoryAdvisoryReadout",
+              "mlwNextRuntimeDecisionReadout",
+              "model",
+              "orchestratorFeedback",
+              "pipelineChainReadout",
+              "policySnapshotId",
+              "provider",
+              "providerAttemptReconciliation",
+              "providerRouting",
+              "requestContextReadout",
+              "reviewerDeadlockReadout",
+              "rolePermission",
+              "simulationFailureGateReadout",
+              "specBoundary",
+              "specFirstMediation",
+              "success",
+              "verticalIntegrationReadout",
+              "workerTimeoutReadout"
+            ]
+          }
+        ],
+        "assertionErrors": [
+          {
+            "assertion": "Error: expect(received).toBe(expected) // Object.is equality",
+            "expectedReceived": [
+              "Expected: true",
+              "Received: false"
+            ]
+          }
+        ]
+      },
+      {
+        "case": "w113-workspace-web-live-pr-575fb-elope-and-provider-metadata",
+        "traceSha256": "d5be5a5592652235d9f67844eaa84ffe9d90bd25b01ef65fc3db3051ee53040a",
+        "executeResponses": [
+          {
+            "httpStatus": 200,
+            "success": false,
+            "errorType": null,
+            "errorCode": null,
+            "outputValidation": null,
+            "diagnostic": {
+              "stage": "provider",
+              "class": "provider_http_error",
+              "retryable": true,
+              "userAction": "wait_and_retry",
+              "httpStatus": 401
+            },
+            "bodyKeys": [
+              "aifMemoryReinjection",
+              "auditFeedbackValidationReadout",
+              "auditMemoryReceipt",
+              "contextBudgetReadout",
+              "contextBundleReadout",
+              "diagnostic",
+              "enforcement",
+              "englishSpecFreeze",
+              "error",
+              "evidenceToLearningReadout",
+              "executionContinuityHandoffReadout",
+              "executionIdentity",
+              "executionTime",
+              "findingToLearningReadout",
+              "governanceEnvelope",
+              "governanceEvidenceReceipt",
+              "guardResult",
+              "guidedStepState",
+              "knowledgeInjection",
+              "languageState",
+              "learningPlaneReadout",
+              "memoryAdvisoryReadout",
+              "mlwNextRuntimeDecisionReadout",
+              "model",
+              "orchestratorFeedback",
+              "pipelineChainReadout",
+              "policySnapshotId",
+              "provider",
+              "providerAttemptReconciliation",
+              "providerRouting",
+              "requestContextReadout",
+              "reviewerDeadlockReadout",
+              "rolePermission",
+              "simulationFailureGateReadout",
+              "specBoundary",
+              "specFirstMediation",
+              "success",
+              "verticalIntegrationReadout",
+              "workerTimeoutReadout"
+            ]
+          }
+        ],
+        "assertionErrors": [
+          {
+            "assertion": "Error: expect(received).toBe(expected) // Object.is equality",
+            "expectedReceived": [
+              "Expected: true",
+              "Received: false"
+            ]
+          }
+        ]
+      }
+    ],
+    "manifestReconciliation": {
+      "status": "PASS",
+      "entriesVerified": 3
+    },
+    "lastRun": {
+      "status": "failed",
+      "failedTests": [
+        "ada44ade3b1292741939-8447bf62bd1ad8b617d6",
+        "ada44ade3b1292741939-720e28a656d1ee8624b1",
+        "ada44ade3b1292741939-f46a2360a980b4acada7",
+        "d0e9bf1c5db9491e3fb1-abf80c4ab01225618b9f",
+        "d0e9bf1c5db9491e3fb1-db4e4c0ac12d2df016e4",
+        "d0e9bf1c5db9491e3fb1-50a450b9ba6f49f2b249",
+        "9242cceac92cc1d8b2b5-15eb81cefad0067f68ee"
+      ]
+    },
+    "failureSummary": {
+      "routeResponsesObserved": 6,
+      "provider401Responses": 6,
+      "providerAttemptCount": "UNKNOWN_NOT_TOTAL_FROM_ROUTE_RESPONSE_COUNT",
+      "credentialAliasObservation": "read-only current bootstrap has DASHSCOPE_API_KEY and ALIBABA_API_KEY present but unequal; SOT3 and Playwright have distinct alias consumers; alias difference does not alone prove which key is valid",
+      "localRetryDisposition": "DO_NOT_RETRY_WITHOUT_NEW_EVIDENCE; captured provider diagnostic retryable=true is not Local rerun authority"
+    }
   }
 }

@@ -5,6 +5,107 @@ docType: baseline
 Status: LOCAL_CANDIDATE_BUNDLE_EVIDENCE_BOUNDED
 Date: 2026-10-07
 
+## Final-Source Integrated Local Candidate Milestone - 2026-10-07
+
+Operator request: continue roadmap. Local lead selects the existing candidate
+consumer under the standing grouped Local and Alibaba-only test authority.
+Role: Local tester/reviewer, INTERNAL_AGENT; phase: candidate verification;
+decision owner: Local. Admission base f2b08643782cc232a45c17a640f61cf0c7da340d,
+clean worktree. Material scope: this owner and
+docs/reviews/evidence/cvf-local-candidate-release-2026-10-07.json only.
+
+Finite outcome: one final-source canonical bundle observation, all nine stage
+statuses and exit reconciled, source/artifact hashes, safe diagnostics, and
+terminal Local disposition. Existing runner/test/config bytes are consumed;
+no implementation change or delegated worker. Stop on the first terminal
+bundle result; no automatic retry or unrelated endpoint work.
+
+Rerun diagnostic: prior whole bundle failed in browser readiness. Login-before-
+fill, redundant home navigation and live workers1 were repaired afterward;
+the complete final-source serial live stage passed. Prior whole bundle remains
+FAIL. This milestone tests the combined current candidate rather than substituting
+that selected PASS for a whole-bundle receipt. Expected information gain:
+whether all canonical stages pass together on the final committed source.
+Cost reason: one required integrated release command, no repeated component
+suites, unchanged timeouts/models/caps/criteria. Prior cold parallel failure
+and all historical diagnostics remain retained in the companion.
+
+Command: python -B scripts/run_cvf_release_gate_bundle.py --json with unique
+ignored output, manifest, SOT3 and E2E diagnostic paths. Credentials remain
+in-process only; no key values or raw browser/provider bodies are reported.
+Saved readiness is receipt evaluation; mock UI is structural; SOT3 recovery
+uses a real Alibaba call while rollback negatives use spies. Synthetic Local
+candidate acceptance cannot establish business/actual-data/remote CI,
+P11/public/deploy or concurrent-startup acceptance.
+
+Admission and source identities: companion finalSourceCandidateMilestone20261007.
+Terminal result: FAIL; exit 1;
+elapsed 617671ms. One invocation; zero automatic replay.
+
+| Required stage | Final-source status |
+|---|---|
+| Capability environment preflight | PASS |
+| Web build (npm run build) | PASS |
+| TypeScript check (guard contract) | PASS |
+| Provider readiness | PASS |
+| Secrets scan | PASS |
+| Docs governance (RC docs present) | PASS |
+| E2E Playwright UI (mock) | PASS |
+| E2E Playwright Governance (live) | FAIL |
+| SOT3 canonical release proof (A5) | PASS |
+
+Disposition: CANONICAL_FINAL_SOURCE_LOCAL_CANDIDATE_FAIL_RECORDED_BOUNDED.
+All five required outputs delivered in companion finalSourceCandidateMilestone20261007.
+Prior canonical FAIL and parallel cold FAIL retained as historical observations.
+Relevant Git-byte hashes match admission after verified generated Next include
+restoration. Runtime bundle/manifest/diagnostic hashes retained in the companion.
+Expected Result: repaired final-source combined candidate evaluated by unchanged
+canonical criteria. Evidence Comparison: all nine stage statuses and actual exit
+above; no selected-stage substitution. Contradiction Or Gap Disposition: retain
+every failure and diagnostic; no automatic replay. Claim Update: this exact Local
+synthetic candidate only; whole NCR, business acceptance, remote CI, real-data,
+concurrent startup, P11/public/deploy and universal lifecycle remain unproved.
+Next: consume this terminal candidate receipt and select a finite existing-owner
+outcome; no provider repetition merely to refresh an already terminal receipt.
+
+Safe diagnostic projection: six observed /api/execute responses had route HTTP200,
+success=false, provider-stage provider_http_error with upstream HTTP401. This is
+not six proven total provider attempts. A seventh failed case is delayed-JS
+toBeDisabled at30000ms; zero /api/execute response in its trace. Its exact cause
+remains unproved; retain this structural assertion failure separately.
+Current read-only bootstrap: DASHSCOPE_API_KEY and ALIBABA_API_KEY are present
+but unequal. Playwright seeds DASHSCOPE; SOT3 has separate alias selection.
+This observation explains a possible consumer-binding difference, not credential
+validity or the exclusive cause of401. No key values, hashes or rotation recorded.
+The provider diagnostic retryable=true is advisory; Local disposition remains
+do_not_retry_without_new_evidence. Next permitted work is source-only binding
+and delayed-JS fixture diagnosis before any separately admitted live revalidation.
+Manifest entries3 independently hash/size-verified; relevant source pins match.
+
+
+## Agent Operation Trace Block
+
+| Field | Evidence |
+|---|---|
+| Actor | Local candidate tester/reviewer |
+| Provider or surface | private workspace; canonical Alibaba synthetic proof |
+| Session or invocation | final-source-candidate-20261007 |
+| Working directory | repository root |
+| Command or tool surface | targeted source/hash reads; pre-implementation gate; one canonical bundle; terminal reconciliation |
+| Target paths | docs/baselines/CVF_GC018_NCR_INTAKE_DISPATCH_REPAIR_2026-10-07.md; docs/reviews/evidence/cvf-local-candidate-release-2026-10-07.json |
+| Allowed scope source | operator continue roadmap and standing grouped Local/Alibaba test authority |
+| Before status evidence | clean f2b08643782cc232a45c17a640f61cf0c7da340d; relevant source Git hashes pinned before invocation |
+| After status evidence | companion terminal command result and source reconciliation; two material artifact paths |
+| Diff evidence | git diff --stat; exact two-path staged material set |
+| Approval boundary | Local synthetic candidate receipt; actual-data/P11/public/deploy parked |
+| Claim boundary | one current Local candidate observation; no whole-program or external acceptance |
+| Agent type | INTERNAL_AGENT |
+| Invocation ID | final-source-candidate-20261007 |
+| Expected manifest | docs/baselines/CVF_GC018_NCR_INTAKE_DISPATCH_REPAIR_2026-10-07.md; docs/reviews/evidence/cvf-local-candidate-release-2026-10-07.json |
+| Actual changed set | docs/baselines/CVF_GC018_NCR_INTAKE_DISPATCH_REPAIR_2026-10-07.md; docs/reviews/evidence/cvf-local-candidate-release-2026-10-07.json |
+| Manifest delta | MATCH; generated Next config restored before staging |
+| Deletion or rename disposition | N/A with reason: none |
+
 ## Template Hydration Repair And Candidate Proof - 2026-10-07
 
 Consumer: Local integrated candidate UI reviewer;admission base 46bfd55e4c6ef59ce92e40382dfcf113e57741de.
@@ -242,7 +343,7 @@ Resolver query: taskClass=`review`, role=`reviewer`, lifecyclePhase=`review`
 
 Returned defects: NONE_RETURNED. Zero candidates and no truncation.
 
-## Agent Operation Trace Block
+## Historical Template Hydration Operation Trace
 
 | Field | Evidence |
 |---|---|
