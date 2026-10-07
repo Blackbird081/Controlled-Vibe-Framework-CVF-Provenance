@@ -546,5 +546,179 @@
       "cleanupAndTerminal": "DELIVERED",
       "continuity": "PENDING_MATERIAL_COMMIT"
     }
+  },
+  "consolidatedReadiness20261008": {
+    "admission": {
+      "baseHead": "2145d37675577a5b4a5ca567a806221d8dec7ae5",
+      "role": "INTERNAL_AGENT; Local maintainer/reviewer; final decision owner Local",
+      "consumer": "operator and next Local agent selecting the next NCR milestone",
+      "authority": "operator next plus autonomous grouped audit; source/evidence disposition only",
+      "expectedManifest": [
+        "docs/reviews/CVF_NCR_W05_SELECTED_CHAIN_READINESS_2026-10-07.md",
+        "docs/reviews/evidence/cvf-ncr-w05-chain-reconciliation-2026-10-07.json",
+        "governance/compat/check_governed_file_size.py",
+        "governance/compat/test_check_governed_file_size.py"
+      ],
+      "requiredOutputs": [
+        "current named-source/evidence identity reconciliation",
+        "one grouped milestone frontier in existing W05 owner",
+        "concrete action-specific operational decision packet",
+        "terminal continuity"
+      ],
+      "costReason": "consume candidate/browser/print proof; no product test, provider, endpoint or runtime replay",
+      "stop": "deliver grouped disposition and continuity; consequential pilot/data/effect choices remain operator-owned",
+      "originalManifest": [
+        "docs/reviews/CVF_NCR_W05_SELECTED_CHAIN_READINESS_2026-10-07.md",
+        "docs/reviews/evidence/cvf-ncr-w05-chain-reconciliation-2026-10-07.json",
+        "docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md"
+      ],
+      "manifestDeltaReason": "Roadmap1174 lines is within25 of1200 hard limit; keep its authoritative requirements and reuse existing W05 owner instead of growth/rotation. Actual admission gate exposed locale-dependent Git-blob crash; checker/test are necessary compatible repair within this outcome.",
+      "scopeExtension": "explicit _head_line_count raw-byte newline counting and real-Git encoding regression only; thresholds/registry/autorun wiring retained"
+    },
+    "candidate": {
+      "status": "GROUPED_LOCAL_CANDIDATE_REPAIR_PASS_BOUNDED",
+      "gateResult": "PASS",
+      "namedGitBytePinsMatched": 14,
+      "sourceGitByteSha256": {
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/playwright.config.mock.ts": "704c9b4fcfa8a248a9e4fb82b49af184ee6840ccf60b44909d142fc7f61ff712",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/playwright.config.ts": "9ff2949abff54f6e8543d6030206138c90abee70e2ef59c6ab6c378cb9199f43",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/TemplateCard.tsx": "441ffd21a0320d3e3a55ba3bf5fe88e14f1d6bbf4801d6eac3fdaf8bc0dde236",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/governance-gate-live.spec.ts": "cf46665c78709e24460ecbd3a220ba669f2d28c403b675d2e8e3467e5f1cf8ad",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/noncoder-governance-live.spec.ts": "4da2516c1a54b479fbdcb46e496beed033ec51612462af4cfb2b6f33c46248a0",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/utils.ts": "6a27d4aa18f22a4c869189caaf32925121ebf77282629b8e374f3762ca77a6fb",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/w113-workspace-web-live-proof.spec.ts": "a5c1d155fc163a38f11ecbbff745c6cb5a538266050909e25d364eda839d099d",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tsconfig.json": "d4af4823c8a2919796c5faa29805cd152217fbc25d6021c2da57541a685ea0f6",
+        "scripts/cvf_release_runtime_support.py": "a84ae736ccf9cac16894a472484d81dddbe38efb330e8d26ca89b136437119c1",
+        "scripts/cvf_release_web_runtime_isolation.py": "622bf6e9eef789419b7088092af986e7d82f05f6ce160ca2479d0b00a00235f8",
+        "scripts/run_cvf_release_gate_bundle.py": "8e9fe468f894c778ed3bb89d730728afd6c0d43d13717b95018a8bf4a6a7723d",
+        "scripts/run_cvf_sot3_a4_failure_recovery_proof.py": "7a8915f1c0e1048992a23f692d2c14b0bb27173046e93124218eed2b2a103a6c",
+        "scripts/run_cvf_sot3_a5_release_proof.py": "e0187349ef24c6635bb0a1a1c32c47985271f602005a0a1ad9456fee90129c82",
+        "scripts/test_run_cvf_release_gate_bundle.py": "37157d238612a03a59397ea1246986a5930c787185b55dddf84d50c77cee11cb"
+      },
+      "claimBoundary": "Local synthetic candidate only; UI structural, saved readiness receipt evaluation, SOT3 real recovery/negative spy; no actual-data/business/remote CI/P11/public/deploy or universal lifecycle proof"
+    },
+    "browser": {
+      "status": "BROWSER_CONSUMER_PASS_BOUNDED",
+      "namedWorktreePinsMatched": 12,
+      "sourceWorktreeSha256": {
+        "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/api/server.py": "b557d28703c22353c74de170e5eb9151e73fa216a44fb3af39935b92da055bd6",
+        "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/ledger_layer/sqlite_ledger.py": "df353a92b3adead1ed5cf00d7128ba9039c573e0441b819118094ec77c4c4ce5",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/page.tsx": "0ed365b59324bb836d8ec56cba143df941e7a7f8dfa11b841b28a68212f1b35d",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/proof.ts": "fbdcc3a434eea13842c9f692d2b54cc9955e80d8c8777d9dfaa14cace9cdfcaf",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/route.ts": "a17ddd57882be1e58a86fb1d86bea8a2693f1169f5ba0c8b6da2af75d7f024ae",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/governance/evaluate/route.ts": "b232dcbdfb1a5ec7982e2ed35caf1e9313dec553a3dcf5752576cc110955c1cb",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.tsx": "efc5839896236dacc7b37e145fda9904a9513bea434b3ff5c8bcd81652e9ea3e",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/bounded-request-body.ts": "5986f11e0b78403d9c3175f4ae11a861a4937f5358f2f24a28aff67a1697461f",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/governance-engine.ts": "48d3252df6614866b3fe84904a0c0f4bd6528d42f1da76543a0db76947494dde",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/route-governance-proof.ts": "17c19ccc4e31d5e068b728304e4a0970ddc072a9711460dd62b859f3ade15b6e",
+        "scripts/probe_cvf_q001_synthetic_system_chain.py": "db683256d74474d6d55d1c2e6d93e5a03c7c87d0317e677e7d41523177334b6c",
+        "scripts/probe_cvf_w05_browser_chain.cjs": "c46edd6a1bbd07feb0beeb87c691a46e4ae32c2a69329253373cb08bc4630a93"
+      },
+      "claimBoundary": "Browser transport/persistence/presentation proof only; engine decision is observed, not semantic governance or artifact acceptance certification."
+    },
+    "retainedPreviewPrint": {
+      "review": "docs/reviews/CVF_CVF_NCR_HTML_B1_PREVIEW_PASSIVE_RESOURCE_COMPLETION_2026-10-01.md",
+      "proof": "docs/reviews/evidence/cvf-ncr-html-b1-preview-passive-resource-worker-proof-2026-10-01.json",
+      "acceptedPrintCases": 5,
+      "identity": {
+        "acceptedCommit": "f00658021db8b9cf83607cb7dae905de8270ff95",
+        "acceptedSections": {
+          "handler": "8a345eeaa60c5e1c2239f77ad6ae743278944fdca9531bc13aeba5355329b46b",
+          "policies": "5da40ae23ff4a087db94c8743ac19e83ffa0d5b92c9faf136a4d3b43cc72f562"
+        },
+        "currentSections": {
+          "handler": "8a345eeaa60c5e1c2239f77ad6ae743278944fdca9531bc13aeba5355329b46b",
+          "policies": "5da40ae23ff4a087db94c8743ac19e83ffa0d5b92c9faf136a4d3b43cc72f562"
+        },
+        "handlerAndPolicyMatch": true,
+        "acceptedTestGitBytesSha256": "2a1f1b3dae56ff6a5537bf1b4eadaa4daffd62edce4b69f3083c7f7da6155675",
+        "currentTestGitBytesSha256": "9cb38451964a6fe2362eb003a48698470909c0dff95d10d25f5b707d59212059",
+        "testMatches": false,
+        "scope": "selected handler/policies/test Git bytes only; whole panel changed; historical Print source qualification, not a new runtime or integrated browser Print proof"
+      },
+      "boundary": "synthetic initial Preview/Print fixtures; explicit navigation, other browsers, paper/dialog/accessibility and durable acceptance limits retained; no fresh W05 Print composition",
+      "laterAcceptedDelta": {
+        "review": "docs/reviews/CVF_CVF_NCR_HTML_B1_PREVIEW_NAVIGATION_COMPLETION_2026-10-02.md",
+        "proof": "docs/reviews/evidence/cvf-ncr-html-b1-preview-navigation-worker-proof-2026-10-02.json",
+        "commit": "8f64ef6964ad2e1f8cf6ed8a54d5338e1f10e550",
+        "handlerSha256": "8a345eeaa60c5e1c2239f77ad6ae743278944fdca9531bc13aeba5355329b46b",
+        "currentPrintTestGitBytesSha256": "9cb38451964a6fe2362eb003a48698470909c0dff95d10d25f5b707d59212059",
+        "handlerAndTestCurrentMatch": true,
+        "sourceDeltaDisposition": "link-preservation fixture/assertions added after20261001; separately accepted20261002; no new Print replay",
+        "boundary": "current selected handler/test identity qualification only; no full panel/runtime freshness or paper/dialog/accessibility/real-data proof"
+      }
+    },
+    "evidenceGitByteSha256": {
+      "docs/reviews/evidence/cvf-local-candidate-release-2026-10-07.json": "8cc5f0293f62d1db408be6da16eab02f9bff14424b02eefe6678aa15fdd0797c",
+      "docs/reviews/CVF_CVF_NCR_HTML_B1_PREVIEW_PASSIVE_RESOURCE_COMPLETION_2026-10-01.md": "343816e00921e304726de9606ef0fa3f47813dfc392ff7f81d169aef70857f35",
+      "docs/reviews/evidence/cvf-ncr-html-b1-preview-passive-resource-worker-proof-2026-10-01.json": "159323578959fd4ba1ac779bfb2a23525280432e8751c9323f18090b84dda0f3",
+      "docs/reviews/CVF_CVF_NCR_HTML_B1_PREVIEW_NAVIGATION_COMPLETION_2026-10-02.md": "95ad7e7fa2df097146525dbd501c24ef5e806e5884e978fa5aaba7a49a9094c5",
+      "docs/reviews/evidence/cvf-ncr-html-b1-preview-navigation-worker-proof-2026-10-02.json": "d5716920ead049146a9c651a2b077a4065e967f521266e0503ec0774d99b5766"
+    },
+    "decisionPacket": {
+      "existingOwners": [
+        "Q001",
+        "Q004",
+        "Q005"
+      ],
+      "currentDefault": "Profile A isolated synthetic development; active user ledger unchanged; no durable approval/cutover/pilot effects",
+      "recommendedNextOperatorChoice": "To advance beyond the current isolated synthetic profile, bind the selected HTML packet to its actual source and acceptance/effect/operations contract. No approval requested for existing admitted independent source work.",
+      "requiredForThatAction": {
+        "jobAndData": "Existing HTML review-packet job selected; exact source instance/classification and permission to use it remain action-specific. No user-ledger copy prerequisite for isolated synthetic work.",
+        "effectAndAcceptance": "permitted read/write/send behavior and who may accept the exact artifact/version; engine ALLOW is not approval",
+        "operations": "single/multi-writer if persistence applies, storage/custody/retention/backup and RPO/RTO requirements or justified inapplicability",
+        "providerAndCost": "actual chosen provider/model/auth, call/cost limit, retry/cancel/unknown-outcome/stop; existing test authority does not authorize unrestricted pilot expenses"
+      },
+      "notRequiredNow": [
+        "real ledger copy",
+        "second provider",
+        "remote CI/public push/deploy",
+        "replay existing passing suites"
+      ],
+      "status": "PREPARED_NOT_APPROVED_NO_EFFECT",
+      "selectedJob": "Existing HTML review packet from Work Transfer (D015); no new job-selection request"
+    },
+    "terminalDisposition": "CONSOLIDATED_LOCAL_READINESS_RECONCILED_BOUNDED",
+    "requiredOutputReconciliation": {
+      "identities": "DELIVERED",
+      "frontier": "DELIVERED",
+      "operationalDecisionPacket": "DELIVERED_NOT_APPROVED",
+      "continuity": "PENDING_MATERIAL_COMMIT",
+      "compatibleGateRepair": "DELIVERED_RED_GREEN_AND_CURRENT_GATE"
+    },
+    "claimBoundary": "Named local proof/current-source reconciliation only; not all P01-P10, W05 pre-live, R2/R3, semantic governance, real-data, public or production acceptance.",
+    "necessaryGateRepair": {
+      "diagnostic": "changed UTF-8 roadmap causes subprocess Git HEAD blob decode under cp1252 to raise UnicodeDecodeError byte0x81 then stdout NoneType in _head_line_count; gate fails rather than reporting size",
+      "originalGate": "FAILED_FILE_SIZE_LOCALE_DECODE",
+      "redRegression": {
+        "status": "1FAILED_9PASS",
+        "oracle": "temporary real Git repository, UTF-8 Vietnamese codepointU+1EC1 includes byte0x81; cp1252 text decode forced only if consumer requests text; LF/CRLF/unterminated/empty/missing cases"
+      },
+      "initialFixtureCalibration": "first U+1ED9 example was cp1252-decodable and10 passed; retained log; refined fixture to actual undefined byte, observed red",
+      "scope": "count raw Git blob newline bytes; no size threshold or activation change",
+      "green": {
+        "status": "10PASS",
+        "realGitCases": [
+          "UTF-8 byte0x81",
+          "LF",
+          "CRLF",
+          "loneCR",
+          "unterminated",
+          "empty",
+          "missing"
+        ],
+        "directRepositoryRoadmapHeadCount": 1174,
+        "fileSizeGate": "PASS_CURRENT_POLICY",
+        "thresholdsAndAutorunChanged": false
+      },
+      "rawEvidenceSha256": {
+        "material-gate.log": "32ab8ece554478d5bcc60f4d8cf2ac5522aba73905a23ef3ab94c43769947eee",
+        "encoding-red.log": "c2099c79b77a4a1fe8616f1dcbb2697f6c3b6e3fba2e17e61a98ea1a1703d033",
+        "encoding-red-specific.log": "ef7443c9c1c61345310c19115a04b00802e19a12ec51b2ce8519202dd78200eb",
+        "amended-admission-gate.log": "606e2470fa7698787c4ecf9a5d7576376ea7e6cdbb8ddb23fe187be57c36180d",
+        "encoding-green.log": "0968adcf7b5534a35ce63b3c27153b3465dc57d63c360e848414188d3ede05ac",
+        "file-size-final.log": "0d4763193c7975bd110494a38ff00b42ef5b18e4f4c049d4f7f4814a57eff5a0"
+      }
+    }
   }
 }

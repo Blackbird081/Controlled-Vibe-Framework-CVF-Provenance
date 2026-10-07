@@ -1,7 +1,7 @@
 # NCR W05 Selected HTML Chain Readiness
 
 Memory class: FULL_RECORD
-Status: LOCAL_BROWSER_CONSUMER_PROOF_RECORDED_BOUNDED
+Status: CONSOLIDATED_LOCAL_READINESS_RECONCILED_BOUNDED
 docType: review
 Date: 2026-10-07
 rawMemoryReleased=false
@@ -196,7 +196,7 @@ NCR lexical alignment alone was accepted bounded with the recorded F1 limit.
 
 ## Current Bounded Route Execution - 2026-10-07
 
-Status: LOCAL_BROWSER_CONSUMER_PROOF_RECORDED_BOUNDED. Consumer: receiving Local
+Status: CONSOLIDATED_LOCAL_READINESS_RECONCILED_BOUNDED. Consumer: receiving Local
 developer/operator. This is the terminal result of the prepared five-case proof,
 not another planning-only step. Earlier source-only and NOT_RELEASED descriptions
 are preserved as snapshots; the current execution disposition is this section.
@@ -315,20 +315,20 @@ Returned defects: zero; totalCandidates=0; truncated=false.
 |---|---|
 | Actor | Local direct-task verifier and evidence recorder |
 | Provider or surface | private repository; local Web and Docker engine; Alibaba only |
-| Session or invocation | ncr-w05-current-route-20261007 |
+| Session or invocation | ncr-consolidated-readiness-20261008 |
 | Working directory | repository root |
-| Command or tool surface | source/dependency pins; pre-implementation gate; existing Docker runner; bounded real Alibaba probe; exact evidence writes |
-| Target paths | docs/reviews/CVF_NCR_W05_SELECTED_CHAIN_READINESS_2026-10-07.md; docs/reviews/evidence/cvf-ncr-w05-chain-reconciliation-2026-10-07.json |
-| Allowed scope source | operator next, standing grouped isolated testing and Alibaba authorization; lifecycle small-direct-task route |
-| Before status evidence | clean 0d92eb76cbb708f4aa37a01343573a3b8468a06b |
-| After status evidence | four-path browser proof/helper and evidence manifest; product source and closed alignment authority retained |
-| Diff evidence | companion embeds admission/results/diagnostics and raw hashes; exact staged manifest |
-| Approval boundary | bounded synthetic/local browser proof only; real data/pilot/durable acceptance/public/deploy parked |
-| Claim boundary | five current synthetic assertions and two provider Boolean observations; no independent reviewer or release-quality proof |
+| Command or tool surface | named Git/worktree identity joins; accepted evidence consumption; real-Git encoding red/green; existing governance gates |
+| Target paths | docs/reviews/CVF_NCR_W05_SELECTED_CHAIN_READINESS_2026-10-07.md; docs/reviews/evidence/cvf-ncr-w05-chain-reconciliation-2026-10-07.json; governance/compat/check_governed_file_size.py; governance/compat/test_check_governed_file_size.py |
+| Allowed scope source | operator autonomous grouped audit/repair; existing W05 outcome; same-set necessary checker authorization |
+| Before status evidence | clean 2145d37675577a5b4a5ca567a806221d8dec7ae5 |
+| After status evidence | four exact owner/evidence/checker/test paths; roadmap/product/runtime unchanged |
+| Diff evidence | git diff --check and exact manifest; companion source/evidence pins and gate diagnostics |
+| Approval boundary | bounded Local source/readiness and necessary locale checker repair; dependent data/pilot/acceptance/public/deploy parked |
+| Claim boundary | current source qualification and retained synthetic receipts only; no new semantic/live governance or R2/R3 acceptance |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-w05-current-route-20261007 |
-| Expected manifest | scripts/probe_cvf_q001_synthetic_system_chain.py; `scripts/probe_cvf_w05_browser_chain.cjs`; docs/reviews/CVF_NCR_W05_SELECTED_CHAIN_READINESS_2026-10-07.md; docs/reviews/evidence/cvf-ncr-w05-chain-reconciliation-2026-10-07.json |
-| Actual changed set | scripts/probe_cvf_q001_synthetic_system_chain.py; `scripts/probe_cvf_w05_browser_chain.cjs`; docs/reviews/CVF_NCR_W05_SELECTED_CHAIN_READINESS_2026-10-07.md; docs/reviews/evidence/cvf-ncr-w05-chain-reconciliation-2026-10-07.json |
+| Invocation ID | ncr-consolidated-readiness-20261008 |
+| Expected manifest | docs/reviews/CVF_NCR_W05_SELECTED_CHAIN_READINESS_2026-10-07.md; docs/reviews/evidence/cvf-ncr-w05-chain-reconciliation-2026-10-07.json; governance/compat/check_governed_file_size.py; governance/compat/test_check_governed_file_size.py |
+| Actual changed set | docs/reviews/CVF_NCR_W05_SELECTED_CHAIN_READINESS_2026-10-07.md; docs/reviews/evidence/cvf-ncr-w05-chain-reconciliation-2026-10-07.json; governance/compat/check_governed_file_size.py; governance/compat/test_check_governed_file_size.py |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |
 
@@ -424,3 +424,78 @@ Required outputs delivered except post-material continuity. Stop selected
 proof here; wider roadmap continuation returns to an existing admitted outcome.
 Full browser UX, print, live AI composition, durable artifact approval,
 real-data R2/R3, P11, send/B2, S05/C1, CCMA, public/deploy remain unproved/parked.
+
+## Consolidated Milestone Disposition 2026-10-08
+
+Receiving consumer: operator and next Local agent selecting the next NCR
+milestone. Scope: current source/evidence disposition, this owner/companion
+and necessary file-size checker/test repair; no product source edit, runtime or new tranche.
+Required outputs: identity joins, grouped frontier, operational decision packet
+and continuity. Stop after these outputs; do not make a fresh patch queue.
+
+| Existing outcome | Evidence consumed | Current disposition / remaining trigger |
+|---|---|---|
+| Local candidate | grouped nine-stage canonical PASS;14 current Git-byte pins match | consume within Local synthetic scope; actual remote CI/business/production remains separate |
+| Work Transfer export/receipt/store/download | one current browser build,12 named worktree pins match, exact-ID join and two saved-file comparisons | selected browser consumer delivered; no whole UX or durable acceptance claim |
+| Preview/Print | accepted passive-resource review retains five Print regressions; companion compares current selected handler/policies/test with accepted commit | historical synthetic proof retained with explicit source qualification; no fresh W05 Print composition, paper/dialog or navigation-isolation claim |
+| Operational pilot | Q001/Q004/Q005 contracts | PREPARED_NOT_APPROVED_NO_EFFECT; one concrete job/data/effect/acceptance/cost contract needed before its dependent pilot action |
+
+Operator decision packet, reused from Q001/Q004/Q005 rather than a new ledger:
+1. Existing HTML review-packet job (D015) is already selected. Bind its exact
+   input source/classification and permission for the next operational action.
+2. Specify permitted effects and who accepts which artifact/version.
+3. Specify writer/storage/custody/retention/backup/RPO/RTO only where that job
+   requires persistence; record justified inapplicability elsewhere.
+4. Bind provider/model/auth and call/cost/retry/cancel/unknown/stop limits for
+   that action. Standing tests do not authorize unlimited pilot expenditure.
+Profile A remains the development default; no real ledger copy, second provider,
+remote/public or deploy request is needed for isolated source work. Recommended
+next operator choice is the selected HTML source/acceptance contract if advancing beyond these local
+proofs; synthetic-only continuation needs a distinct evidenced value gap.
+
+Expected Result: next milestone is selectable without reconstructing patch
+history or replaying accepted tests. Evidence Comparison: companion records
+14 candidate Git-byte and12 browser worktree matches; Preview/Print selected
+source identity comparison and accepted review remain qualified separately.
+Contradiction Or Gap Disposition: generic Print/browser-unproved wording was
+too broad relative to accepted synthetic cases; current whole UX and pilot
+proof are still absent. Claim Update: grouped Local readiness disposition only,
+W05 pre-live/R2/R3 remain NOT_CLOSED. No new empirical governance assertion.
+Rule lane: RULE_EXISTS / DOCUMENTATION_ONLY_LEARNING; apply existing MFRP and
+outcome selection, no new checker. Public disposition DEFERRED_PRIVATE_ONLY
+in the existing section. All selected outputs delivered except continuity.
+
+### Accepted Preview/Print Delta And Necessary Gate Repair
+
+The20261001 test identity differs because canonical-link preservation assertions
+were later added and separately accepted by
+docs/reviews/CVF_CVF_NCR_HTML_B1_PREVIEW_NAVIGATION_COMPLETION_2026-10-02.md.
+Companion retains that later review/proof and exact accepted/current handler
+and test Git-byte matches. No initial-document navigation escape is projected
+as a current defect; accepted bounded containment and residual contexts apply.
+No new Print/browser/provider rerun is justified by this source reconciliation.
+
+Admission gate exposed a real locale defect in _head_line_count: Git show of
+the existing UTF-8 roadmap was decoded using Windows cp1252 and crashed on
+byte0x81. Real-Git regression refined to U+1EC1 reproduces1 FAILED/9 PASS;
+an earlier decodable calibration fixture passed and its log is retained.
+Selected correction counts raw newline bytes, preserving empty/missing and
+unterminated-line semantics; no size thresholds/registry/autorun changes.
+Final10/10 PASS, direct UTF-8 roadmap HEAD count1174, file-size gate PASS.
+Raw Git blob newline normalization preserves LF/CRLF/lone-CR counts without
+locale decoding; malformed/missing and empty behavior remains tested. Finding class RUNTIME_SIGNAL_GAP;
+learning lane GOVERNANCE_CONTROL_PLANE; disposition RULE_EXISTS with regression
+in existing checker/test owner, no new gate. ADIF review/reviewer/review:
+zero candidates, truncated=false. Roadmap stays untouched at1174 lines:
+within25 of1200 requires rotation or50-line shrink; W05 owner is sufficient
+for this readiness outcome, so no needless roadmap rotation is selected.
+
+## Core Guard Self-Protection Authorization
+
+Authorized guard-maintenance scope: necessary locale-safe HEAD blob line count
+in governance/compat/check_governed_file_size.py and its existing test owner
+governance/compat/test_check_governed_file_size.py. Operator authorization:
+standing autonomous grouped audit/repair, necessary to deliver this admitted
+readiness outcome after the recorded gate crash. Protected paths: those two
+exact files. Rollback boundary: only this helper/regression delta; thresholds,
+registry, frozen doctrine, autorun and closed authority remain unchanged.
