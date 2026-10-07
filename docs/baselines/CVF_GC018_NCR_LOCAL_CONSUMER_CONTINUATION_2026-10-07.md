@@ -147,6 +147,44 @@ NCR authority. Q001/Q004 are action-specific; no prerequisite user ledger copy
 for isolated development. Actual data/browser/full release unproved; P11/public/
 deploy,CCMA,S05/C1/send/B2 stay parked; NIS closed without successor; LHW24 closed.
 
+## Guard Endpoint Admission Batch - 2026-10-07
+
+Operator next continues compatible P06 consumer fixes. Local maintainer/reviewer
+base dc507f4d77ac69e8765bd367c78ab0a7bd6b9177; clean startup worktree.
+Current source reads verify guards/evaluate and guards/phase-gate use unchecked
+request.json and truthy defaults. Null/malformed JSON becomes500; phase-gate
+accepts non-object payloads; supplied false/zero/empty enums become defaults.
+Evaluate forwards malformed IDs/actions,lists,counters and metadata to engine.
+Canonical field types verified at EXTENSIONS/CVF_GUARD_CONTRACT/src/types.ts
+GuardRequestContext. Source assertions apply only to these route functions.
+
+Both routes now reject malformed JSON/non-object payloads with400. Defaults
+apply only to omitted phase/role/risk fields. Evaluate requires nonblank string
+requestId/action and checks supplied optional text,string lists,finite counters
+and object metadata before engine acquisition/evaluation. Keep existing enums,
+numeric domains,rate-limit ordering,DISCOVERY alias and selected context fields.
+Do not add authority fields,alter guard decisions,audit persistence or auth.
+
+Red39 tests:34 fail/five pass; invalid input returns200 or500 instead of400.
+Green39/39 PASS; TypeScript --noEmit, scoped ESLint and git diff --check PASS.
+The singleton engine,phase guard evaluation and rate limiter are test doubles;
+assert only parsing/type admission and absence of evaluation on rejected input.
+Valid controls inspect forwarded context with stubbed BLOCK results,not genuine
+governance decisions. No provider call or live governance/release claim; no
+full P06 closure,auth or DoS proof,build or Docker rerun.
+
+Exact material scope four paths under Web: src/app/api/guards/evaluate/route.ts,
+src/app/api/guards/phase-gate/route.ts,new shared structural request test
+src/app/api/guards/route.request-validation.test.ts,and this continuation.
+This section records latest source/operation/manifest evidence; earlier memory
+repair trace/results remain historical unchanged. No schema/checker/pilot/new
+work order. ADIF query Worker execution/worker/pre-implementation again returns
+zero candidates,no truncation. Current NIS and parked/data/effect boundaries
+remain unchanged. Existing private-only export disposition applies below.
+Initial preflight matched a negated coverage disclaimer as a corpus assertion.
+Remove that broad phrasing; this remains targeted route
+maintenance with no corpus scan assertion. No checker bypass or product rerun.
+
 ## Claim Boundary
 
 Local consumer source repair only. No full roadmap, live governance, corpus scan,
