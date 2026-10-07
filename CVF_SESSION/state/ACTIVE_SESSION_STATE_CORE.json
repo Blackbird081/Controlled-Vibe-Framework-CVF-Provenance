@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_NEXT_MOVE_ALIGNMENT_2026-10-07.md",
     "workOrderSha256": "269615a0dad62a867ac4214c408d8b6e7b845c9429adc38e030321af0d657905"
   },
-  "currentAuthoritySyncReason": "Closed NCR alignment execution authority and exact pins unchanged; separately operator-authorized bounded W05 direct-task proof material c82b8a9c9486dda77e0d0b279c72fd3690b9d796 delivered with diagnostic/provider boundaries. No parked-lane or release promotion.",
+  "currentAuthoritySyncReason": "Closed NCR alignment authority/pins unchanged; separately operator-authorized instruction-access aid and bounded Alibaba decision evidence delivered at f45beaad3b0c14d641356e681893306e56b4944b. No new executable packet,universal enforcement or parked-lane promotion.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
