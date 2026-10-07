@@ -130,7 +130,128 @@ upgrade package; do not replace it with an open-ended governance-hardening campa
 | Return delivery | Git discovery available after commit; independent receiving-agent receipt NOT_RETURNED |
 | Source-project application | written next move applied in prior continuity; actual outcome-bound execution NOT_APPLIED_WITH_PROOF |
 
-## Current Local Maintenance Fulfillment Route - 2026-10-07
+## Current Local Outcome Coverage Design - 2026-10-07
+
+Consumer: Local maintenance lead/runner and reviewer receiving its terminal return.
+Authority: operator next and the selected four-output package in the continuation.
+Clean base 52a1e12d1e59a68627edbb34e0e2d6df370dfdef. Three exact learning/continuation/evidence material paths and
+the finite composition probe admitted before effects; pre-implementation gate PASS.
+No source/checker activation, new schema or parallel reducer is authorized here.
+
+### 1. Task-Class And Phase Coverage Matrix
+
+| Task / phase | Existing owner and entrypoint | Actual coverage / proof level |
+|---|---|---|
+| eligible declared executable maintenance, dispatch | dispatch-release evaluate; autorun pre-dispatch --active-work-order | committed clean authority, hashes, material/continuity and EXECUTE binding; current source coverage |
+| same packet, implementation admission | autorun pre-implementation --active-work-order | dispatch readiness and early diagnostics/probe admission; not delivered-output acceptance |
+| same packet, worker return | fast gate --active-work-order; steward reviewer-return explicit option | exact return/back-binding, detached receipt and ledger/Git/terminal join; previous scoped structural proof consumed |
+| semantic reviewer disposition | lifecycle terminal review; review-cost/MFRP owners | verify required output, proof contents/revision and independent-role requirements; not supplied by ID matching |
+| material closure | autorun pre-closure on exact committed material range | mandatory governance, committed evidence and clean worktree; active-work-order is explicitly unsupported here |
+| continuity closure | generated state, session-sync steward and choreography | synchronize source items/views and handoff; not worker ledger fulfillment |
+| small source-only direct disposition | lifecycle existing-owner output/evidence route | human-reviewed required outputs and finite stop; no automatic ledger coverage claim |
+| arbitrary direct chat, client reply/tools, daemon/effects | outside selected declared lifecycle | no interception or universal continuous-agent control; no activation inferred |
+
+Source owners and Git-byte pins are in
+docs/reviews/evidence/cvf-local-outcome-coverage-design-2026-10-07.json.
+Source verification: agent_autorun_command_catalog._active_work_order_binding_error
+permits binding only at pre-dispatch/pre-implementation; autorun._run_phase validates
+that first. fast gate/steward have the separate reviewer-return binding.
+check_work_order_acceptance_ledger.git_observed_paths observes diff from
+executionBaseHead plus untracked files in the current tree. The choreography
+assigns later completion review to reviewer and continuity to its own source items.
+
+### 2. Existing-Field Binding Design
+
+Reuse the existing sequence and fields, with phase-specific observation:
+
+1. Dispatcher fixes receiving consumer, whole finite outcome, authority/scope,
+   requirements, mandatory flags, expectedArtifacts and requiredProofIds in one
+   committed existing-format order. Active authority hash/dispatch readiness is
+   the grant; optional CLI forwarding is not a grant or closed-order selection.
+2. Worker records executionBaseHead before edits, owns only the granted manifest
+   and returns exact results/actualArtifacts/proofRefs/PASS or BLOCKED rows. The
+   mandatory-row reducer controls COMPLETE_PENDING_REVIEW/BLOCKED_WITH_REASON.
+3. Evaluate the exact bound worker return against the actual worker-tree delta
+   before adding later-role review/continuity artifacts. Preserve that observed
+   range/result, source identities and exact detached return-byte binding in the
+   existing evidence/return/review surfaces. No renamed or retitled substitute.
+4. Local reviewer consumes that evidence; checks content/revision and output
+   adequacy once, with rerun only for a named contradiction/information gain.
+   Source/Git-byte versus worktree-byte qualifications remain explicit. Changed
+   return/source bytes invalidate reuse; an unverified reference cannot close it.
+5. Material and continuity close in their own exact ranges under existing gates.
+   Commit/helper success is not parent outcome completion. Do not re-observe an
+   expanded mixed-role tree and describe that as the earlier worker-only delta.
+
+This is an application design, not a new machine receipt format, signature or
+automatic replay validator. Existing signed/sealed/detached evidence rules still
+control where applicable. A reviewer-owned receipt is not an independent oracle
+if the same agent produced both; actual independence is recorded honestly.
+
+Independent held effect outside the admitted mandatory set remains held while
+permitted outputs finish; parent pre-live/effect acceptance is separate. A held
+mandatory output inside that set keeps the package BLOCKED_WITH_REASON. Do not
+change mandatory flags, requirements or expected sets after execution to obtain
+PASS. Do not add reviewer/continuity files to worker ownership to hide a mismatch.
+
+### 3. Whole-Route Proof Plan And Composition Diagnostic
+
+Plan one eligible declared packet from committed authority through return, Local
+semantic disposition and the separate material/continuity ranges. The companion
+records cases for missing/drifted authority, missing required output, unrelated
+patch, absent proof ID, contradictory mandatory status, stale/failed proof content,
+exact-return substitution and independently held versus mandatory held effects.
+Component evidence is consumed; it is not one executed admission-to-terminal run.
+
+One new bounded probe resolves the named phase-composition uncertainty: a disposable
+real Git repository invokes the existing acceptance main/enforce entrypoint.
+Worker-only delta exits0. Adding a later reviewer artifact exits1; adding continuity
+also exits1 for unclaimed paths. Three expectations match. Actual autorun CLI
+pre-closure with active-work-order exits1 before running gates, as its existing
+phase contract requires. No worker/order is dispatched, no source changed.
+These are structural artifact/phase observations, not live governance or an
+independent reviewer, semantic acceptance or continuous-agent behavior test.
+
+Expected terminal decisions: missing mandatory output or inadequate proof cannot
+close the admitted outcome; unrelated parked effects cannot stop permitted work;
+valid later-role artifacts must not be silently merged into worker-only ownership.
+Whole-route execution remains PLANNED_NOT_EXECUTED_AS_A_SINGLE_LIFECYCLE. Any future
+claim of live AI governance still requires real Alibaba proof and existing release
+quality gates where that claim applies; no provider call needed for this design.
+
+### 4. Local Go/No-Go And Finite Terminal
+
+GO_REUSE_EXISTING_PHASE_OWNERS. Apply the existing dispatcher/return/reviewer/closure
+route to the next actual eligible receiving-work package; preserve exact phase,
+actor and range identities. The design does not promise that arbitrary Local chat
+or tools are automatically controlled or that agent comprehension is enforced.
+
+NO_GO_BLIND_CROSS_PHASE_OR_UNIVERSAL_EXTENSION. Blindly forwarding worker acceptance
+into material/continuity closure would reject legitimate later-role additions or
+force forbidden expected-set changes. Do not fix that by weakening artifact union,
+adding arbitrary ignored-path exceptions, merging actors or promoting TPGR shadow.
+
+Implementation packet: NOT_CREATED_WITH_REASON. After existing-owner and role/range
+reconciliation, this design supports application of the current contract, not a
+justified compatible new machine delta. Creating a speculative core work order
+would not satisfy the conditional fourth output. No execution grant or automatic
+schema/checker/controller successor is issued. Broader automated coverage needs
+its own specific admitted design and proof, not a declaration of universal scope.
+
+All four required outputs are delivered above and in the companion. Terminal:
+LOCAL_OUTCOME_COVERAGE_DESIGN_DELIVERED_BOUNDED. Do not replay this design or split
+it into flag patches; the next material package must serve an actual receiving
+outcome under the existing route. General automatic Local behavior stays unproved.
+Browser/data/public/P11/send/B2/S05/C1 and all other parked lanes are unchanged.
+
+## Current Runtime Freshness Verification
+
+Current phase catalog/runner and ledger Git observation inspected at 52a1e12d1e59a68627edbb34e0e2d6df370dfdef;
+companion pins named source Git bytes. Three temporary real-Git main-entrypoint
+observations and an actual parser-level phase rejection recorded. No product,
+provider, browser or actual worker/reviewer lifecycle run; earlier proof consumed.
+
+## Historical Local Maintenance Fulfillment Route - 2026-10-07
 
 Consumer: Local lead selecting multi-step maintenance and reviewer receiving the
 return. Outcome: an explicit reusable admission-to-terminal route, its source-bound
@@ -201,7 +322,7 @@ This closes this design/proof package only. Do not replay it or invent a success
 to keep patching. Actual implementation must be selected by a concrete receiving
 outcome, not an open-ended endpoint scan. Browser/data/public/P11/send stay gated.
 
-## Current Runtime Freshness Verification
+## Historical Route Runtime Freshness Verification
 
 Selected source Git-byte identities at 4455b25c51693ef4c03df70110843522a8f445e1 are recorded in the companion.
 Five isolated Git cases call the existing main entrypoint; command assembly is
@@ -448,15 +569,14 @@ closure remain unproved.
 
 ## Epistemic Process Block
 
-Expected Result / Prediction: real Git artifacts feed the existing join; missing
-rows/proofs, unclaimed artifacts and contradictory mandatory status fail closed.
-Evidence Comparison: five entrypoint cases match expectations; explicit gate
-assembly binds acceptance, bare invocation does not; stale failed proof accepts
-structurally because proof content is outside the declared checker contract.
-Contradiction Or Gap Disposition: fixture-only missing path corrected; reuse
-explicit binding and semantic review, no new gate or automatic coverage claim.
-Claim Update: existing Local fulfillment route verified structurally bounded;
-full worker lifecycle, live agent behavior and general automation remain unproved.
+Expected Result / Prediction: map actual phase coverage before proposing extension;
+worker delta plus later-role files must not be mistaken for worker-only fulfillment.
+Evidence Comparison: three real-Git expectations match, actual closure binding
+rejects before execution; existing dispatcher/return/semantic/closure roles retained.
+Contradiction Or Gap Disposition: no blanket closure forwarding or altered expected
+set; reuse phase-specific proof and roles; no justified machine packet created.
+Claim Update: four-output application design delivered bounded, whole lifecycle
+and continuous behavior unproved; no new machine activation or universal controller.
 
 ## Checker Source Read-Ahead Block
 
@@ -469,7 +589,7 @@ full worker lifecycle, live agent behavior and general automation remain unprove
 
 ## ADIF Query
 
-Resolver query: review / reviewer / review on 2026-10-07 (Local fulfillment route).
+Resolver query: review / reviewer / review on 2026-10-07 (selected coverage design).
 Returned defects: zero; totalCandidates=0; truncated=false. No ADIF defect waiver.
 
 ## Agent Operation Trace Block
@@ -477,22 +597,22 @@ Returned defects: zero; totalCandidates=0; truncated=false. No ADIF defect waive
 
 | Field | Evidence |
 |---|---|
-| Actor | Local fulfillment-route designer and structural probe recorder |
-| Provider or surface | private repository and disposable Git fixtures; no provider or delegation |
-| Session or invocation | local-outcome-route-20261007 |
+| Actor | Local coverage designer and composition-probe recorder |
+| Provider or surface | private repository and temporary Git fixtures; no provider or delegation |
+| Session or invocation | local-outcome-coverage-design-20261007 |
 | Working directory | repository root |
-| Command or tool surface | five isolated real-Git checker entrypoint cases; bound/unbound command assembly; structural governance gates |
-| Target paths | docs/reviews/learnings/CVF_OUTCOME_BOUND_CONTINUATION_LEARNING_2026-10-07.md; docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md; docs/reviews/evidence/cvf-local-outcome-route-2026-10-07.json |
-| Allowed scope source | operator next; finite existing-owner source-only design and structural proof |
-| Before status evidence | clean 4455b25c51693ef4c03df70110843522a8f445e1 |
-| After status evidence | exact three documentation/evidence paths; no checker/product/authority activation |
-| Diff evidence | exact staged manifest; source Git-byte pins and embedded reproducible probe |
-| Approval boundary | isolated structural proof and source-only design; no actual dispatch or parked effect |
-| Claim boundary | existing route verified structurally only; no semantic/live/full lifecycle or universal automation proof |
+| Command or tool surface | selected owner/phase reads; three Git composition cases; one actual phase rejection; governance gates |
+| Target paths | docs/reviews/learnings/CVF_OUTCOME_BOUND_CONTINUATION_LEARNING_2026-10-07.md; docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md; docs/reviews/evidence/cvf-local-outcome-coverage-design-2026-10-07.json |
+| Allowed scope source | operator next and selected finite four-output coverage design |
+| Before status evidence | clean 52a1e12d1e59a68627edbb34e0e2d6df370dfdef |
+| After status evidence | three design/evidence material paths; no machine activation |
+| Diff evidence | exact staged manifest; source Git hashes and embedded diagnostic |
+| Approval boundary | source-only design and isolated fixtures; effects stay parked |
+| Claim boundary | application design and structural composition only; no actual whole lifecycle/live/general automation proof |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | local-outcome-route-20261007 |
-| Expected manifest | docs/reviews/learnings/CVF_OUTCOME_BOUND_CONTINUATION_LEARNING_2026-10-07.md; docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md; docs/reviews/evidence/cvf-local-outcome-route-2026-10-07.json |
-| Actual changed set | docs/reviews/learnings/CVF_OUTCOME_BOUND_CONTINUATION_LEARNING_2026-10-07.md; docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md; docs/reviews/evidence/cvf-local-outcome-route-2026-10-07.json |
+| Invocation ID | local-outcome-coverage-design-20261007 |
+| Expected manifest | docs/reviews/learnings/CVF_OUTCOME_BOUND_CONTINUATION_LEARNING_2026-10-07.md; docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md; docs/reviews/evidence/cvf-local-outcome-coverage-design-2026-10-07.json |
+| Actual changed set | docs/reviews/learnings/CVF_OUTCOME_BOUND_CONTINUATION_LEARNING_2026-10-07.md; docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md; docs/reviews/evidence/cvf-local-outcome-coverage-design-2026-10-07.json |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |
 
@@ -507,7 +627,7 @@ Returned defects: zero; totalCandidates=0; truncated=false. No ADIF defect waive
 | Matching local-view guard | N/A with reason: internal assessment only |
 | Owner surface | docs/reference/CVF_GOVERNED_WORK_LIFECYCLE_AND_DESIGN_CONTROL_STANDARD_2026-06-11.md; docs/reference/CVF_TASK_PROPORTIONAL_GOVERNANCE_ROUTING_STANDARD_2026-08-17.md |
 | Disposition | RULE_EXISTS; machine/design candidates, not implemented |
-| Claim boundary | existing route verified structurally only; no semantic/live/full lifecycle or universal automation proof |
+| Claim boundary | application design and structural composition only; no actual whole lifecycle/live/general automation proof |
 
 ## External/Local Coordination Binding
 

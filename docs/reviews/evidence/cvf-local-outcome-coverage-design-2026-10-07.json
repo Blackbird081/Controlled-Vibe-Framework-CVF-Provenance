@@ -1,0 +1,128 @@
+{
+  "admission": {
+    "baseHead": "52a1e12d1e59a68627edbb34e0e2d6df370dfdef",
+    "scope": [
+      "docs/reviews/learnings/CVF_OUTCOME_BOUND_CONTINUATION_LEARNING_2026-10-07.md",
+      "docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md",
+      "docs/reviews/evidence/cvf-local-outcome-coverage-design-2026-10-07.json"
+    ],
+    "consumer": "Local maintenance lead/runner and terminal reviewer",
+    "authority": "operator next; selected four-output existing-owner coverage design; no machine activation",
+    "requiredOutputs": [
+      "task-class/phase coverage matrix",
+      "authority/output/terminal binding design",
+      "selected whole-route proof plan",
+      "Local go/no-go and implementation packet only if supported"
+    ],
+    "diagnosticReason": "current acceptance observes all Git delta while reviewer owns later separate artifacts; test composition boundary before proposing blind closure binding",
+    "stop": "three disposable real-Git boundary observations and one parser rejection, four reviewed design outputs, governance/continuity; no broad historical rerun, provider or new reducer"
+  },
+  "boundaryObservations": [
+    {
+      "case": "worker delta only",
+      "expectedExit": 0,
+      "actualExit": 0,
+      "gitObservedPaths": [
+        "product.txt"
+      ],
+      "output": "=== CVF Work Order Acceptance Ledger Gate ===\nCOMPLIANT\n",
+      "matched": true
+    },
+    {
+      "case": "later reviewer artifact added",
+      "expectedExit": 1,
+      "actualExit": 1,
+      "gitObservedPaths": [
+        "local-review.md",
+        "product.txt"
+      ],
+      "output": "=== CVF Work Order Acceptance Ledger Gate ===\n- Git observed unclaimed artifact(s): local-review.md\nVIOLATION\n",
+      "matched": true
+    },
+    {
+      "case": "later continuity artifact also added",
+      "expectedExit": 1,
+      "actualExit": 1,
+      "gitObservedPaths": [
+        "continuity.json",
+        "local-review.md",
+        "product.txt"
+      ],
+      "output": "=== CVF Work Order Acceptance Ledger Gate ===\n- Git observed unclaimed artifact(s): continuity.json, local-review.md\nVIOLATION\n",
+      "matched": true
+    }
+  ],
+  "actualPhaseBindingRejection": {
+    "exit": 1,
+    "stdout": "FAIL: --active-work-order requires a nonempty binding at pre-dispatch or pre-implementation only.\n",
+    "stderr": "",
+    "interpretation": "existing pre-closure explicitly does not accept active-work-order; rejected before gate execution; closed order not reopened"
+  },
+  "probeSource": "from pathlib import Path\nimport contextlib,hashlib,importlib.util,io,json,subprocess,sys,tempfile\nroot=Path.cwd();base=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip()\nassert not subprocess.check_output(['git','status','--porcelain'],text=True).strip()\nscope=['docs/reviews/learnings/CVF_OUTCOME_BOUND_CONTINUATION_LEARNING_2026-10-07.md','docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md','docs/reviews/evidence/cvf-local-outcome-coverage-design-2026-10-07.json']\nadmission={'baseHead':base,'scope':scope,'consumer':'Local maintenance lead/runner and terminal reviewer','authority':'operator next; selected four-output existing-owner coverage design; no machine activation','requiredOutputs':['task-class/phase coverage matrix','authority/output/terminal binding design','selected whole-route proof plan','Local go/no-go and implementation packet only if supported'],'diagnosticReason':'current acceptance observes all Git delta while reviewer owns later separate artifacts; test composition boundary before proposing blind closure binding','stop':'three disposable real-Git boundary observations and one parser rejection, four reviewed design outputs, governance/continuity; no broad historical rerun, provider or new reducer'}\nPath('.cvf/runtime/outcome-coverage-admission.json').write_bytes((json.dumps(admission,indent=2)+'\\n').encode())\nsrc=root/'governance/compat/check_work_order_acceptance_ledger.py';spec=importlib.util.spec_from_file_location('coverage_boundary',src);m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)\nrows=[]\nwith tempfile.TemporaryDirectory(prefix='cvf-role-delta-') as td:\n d=Path(td)\n def git(*args):return subprocess.check_output(['git',*args],cwd=d,stderr=subprocess.STDOUT,text=True).strip()\n git('init','-q');git('config','user.name','CVF Fixture');git('config','user.email','fixture@example.invalid')\n (d/'product.txt').write_text('before\\n',encoding='utf-8')\n ledger={'schemaVersion':m.LEDGER_SCHEMA,'requirements':[{'requirementId':'OUTPUT','mandatory':True,'expectedArtifacts':['product.txt'],'requiredProofIds':['PROOF']}],'proofCatalog':[{'proofId':'PROOF','kind':'synthetic','locator':'not-executed'}]}\n (d/'order.md').write_text('```acceptance-ledger-json\\n'+json.dumps(ledger)+'\\n```\\n',encoding='utf-8')\n (d/'.gitignore').write_text('return.md\\n',encoding='utf-8');git('add','.');git('commit','-qm','authority base');fb=git('rev-parse','HEAD')\n (d/'product.txt').write_text('after\\n',encoding='utf-8')\n ev={'schemaVersion':m.EVIDENCE_SCHEMA,'executionBaseHead':fb,'results':[{'requirementId':'OUTPUT','actualArtifacts':['product.txt'],'proofRefs':['PROOF'],'status':'PASS'}]}\n (d/'return.md').write_text('Status: COMPLETE_PENDING_REVIEW\\n```acceptance-evidence-json\\n'+json.dumps(ev)+'\\n```\\n',encoding='utf-8')\n orig=m.ROOT;m.ROOT=d\n for name,expected in [('worker delta only',0),('later reviewer artifact added',1),('later continuity artifact also added',1)]:\n  if 'reviewer' in name:(d/'local-review.md').write_text('reviewer-owned evidence\\n',encoding='utf-8')\n  if 'continuity' in name:(d/'continuity.json').write_text('{}\\n',encoding='utf-8')\n  oldargv=sys.argv;sys.argv=['ledger','--work-order','order.md','--return','return.md','--enforce'];out=io.StringIO()\n  try:\n   with contextlib.redirect_stdout(out):code=m.main()\n  finally:sys.argv=oldargv\n  rows.append({'case':name,'expectedExit':expected,'actualExit':code,'gitObservedPaths':sorted(m.git_observed_paths(fb)),'output':out.getvalue(),'matched':code==expected})\n  assert code==expected\n m.ROOT=orig\np=subprocess.run(['python','-B','governance/compat/run_agent_autorun_workflow_gate.py','--phase','pre-closure','--active-work-order','docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_NEXT_MOVE_ALIGNMENT_2026-10-07.md'],capture_output=True,text=True,encoding='utf-8')\nassert p.returncode==1 and 'pre-dispatch or pre-implementation only' in p.stdout\nrecord={'admission':admission,'boundaryObservations':rows,'actualPhaseBindingRejection':{'exit':p.returncode,'stdout':p.stdout,'stderr':p.stderr,'interpretation':'existing pre-closure explicitly does not accept active-work-order; rejected before gate execution; closed order not reopened'},'probeSource':Path(__file__).read_text(encoding='utf-8'),'probeScriptSha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),'claimBoundary':'structural Git artifact/phase-binding composition only; not live governance, actual dispatch/worker/reviewer lifecycle or proof content; later role additions are deliberately outside worker ledger'}\nPath(scope[2]).write_bytes((json.dumps(record,ensure_ascii=True,indent=2)+'\\n').encode())\nprint('Three real-Git role-delta expectations matched; actual closure binding rejection confirmed. No implementation activated.')\n",
+  "probeScriptSha256": "a4929fbec342ee7dbd96f169f39005ab473e9c1ba1bd611b12fa390261a2c49e",
+  "claimBoundary": "structural Git artifact/phase-binding composition only; not live governance, actual dispatch/worker/reviewer lifecycle or proof content; later role additions are deliberately outside worker ledger",
+  "sourceGitByteSha256": {
+    "governance/compat/agent_autorun_command_catalog.py": "942909f493e7b08ed72ce8cf5c554b9a441917e3728d080a42cb6198d3811e60",
+    "governance/compat/run_agent_autorun_workflow_gate.py": "8d28ac306eb2d7569571b53a833478b59708e89860ef11ff06115ba8a8ea6a1e",
+    "governance/compat/run_worker_return_fast_gate.py": "3e88a3e1f2873f1b724e1c296fd1628dc44ec48220f779674827ea2a51a92cd2",
+    "governance/compat/run_agent_commit_steward_preflight.py": "fa069ae193a1a56758f39ea1d29512919b277ba145c7fb865e9eb795bc6f4ee0",
+    "governance/compat/check_work_order_acceptance_ledger.py": "4d839dce2cfed5fbacff228b1bee36be31cefbe8595be4dbdbed2ae652e519cc",
+    "governance/compat/check_worker_return_quality_gate.py": "e43f2098912ebe3dddb627a4d296cbebc735297b54aa3780ba4ec60d11a45487",
+    "governance/compat/check_dispatch_release_readiness.py": "4c4247343d406af9ec06d54913c75f573adf9c4b26f080af355d0888dc8caed5",
+    "docs/reference/work_order_template/CVF_WORK_ORDER_ACCEPTANCE_LEDGER_ADDENDUM.md": "1a907efe91b22e70b040fb8e13b8fc5537ee718ffe6e8389969556d0ca9ccc74",
+    "docs/reference/CVF_TRANCHE_COMMIT_CHOREOGRAPHY_STANDARD_2026-06-03.md": "c66543cc606b12b82a2e043ea7718a0d48472b8b41379a7488aacecdf2b586c4",
+    "docs/reference/CVF_GOVERNED_WORK_LIFECYCLE_AND_DESIGN_CONTROL_STANDARD_2026-06-11.md": "c93b1fad55c4b09442add3135590bd148fd86b3e718ab1367dd95c218be14747"
+  },
+  "designDecision": {
+    "application": "GO_REUSE_EXISTING_PHASE_OWNERS",
+    "machineExtension": "NO_GO_BLIND_CROSS_PHASE_OR_UNIVERSAL_EXTENSION",
+    "implementationPacket": "NOT_CREATED_WITH_REASON: no justified compatible machine delta after source/role-range reconciliation; not a missing required deliverable",
+    "coverage": "eligible declared executable Local maintenance uses existing dispatch/return/role closure; source-only direct tasks stay human-reviewed existing-owner dispositions; arbitrary direct chat/tool interception excluded",
+    "binding": "committed dispatcher authority -> executionBaseHead and fixed requirement/proof catalog -> actual worker delta and sealed exact return -> semantic Local review -> distinct material/continuity closure range",
+    "stop": "four design outputs delivered; do not repeat design, flag series or closed alignment/adapter proofs; use existing route for next actual eligible receiving-work package"
+  },
+  "wholeRouteProofPlan": [
+    {
+      "case": "positive eligible declared packet through committed dispatch, exact return, semantic review and distinct closure",
+      "owner": "dispatch readiness; acceptance/worker-return; Local review; autorun/choreography",
+      "status": "PLANNED_NOT_EXECUTED_AS_A_SINGLE_LIFECYCLE"
+    },
+    {
+      "case": "missing or drifted authority at dispatch",
+      "owner": "dispatch readiness and active authority hash guard",
+      "status": "SOURCE_COVERAGE; accepted earlier proof not rerun"
+    },
+    {
+      "case": "mandatory output missing, unrelated patch substituted, missing proof ID or BLOCKED disguised as complete",
+      "owner": "acceptance ledger and semantic reviewer",
+      "status": "existing structural evidence consumed; whole-route semantic case PLANNED"
+    },
+    {
+      "case": "correct proof IDs with wrong revision or failed proof content",
+      "owner": "Local semantic review",
+      "status": "existing five-case structural boundary consumed; semantic acceptance must reject; no automated semantic claim"
+    },
+    {
+      "case": "independent held effect outside admitted mandatory set while all independent outputs complete",
+      "owner": "dispatcher scope plus lifecycle/Local reviewer",
+      "status": "PLANNED; preserve bounded delivery and separate parent pre-live/effect state"
+    },
+    {
+      "case": "held mandatory effect inside admitted outcome",
+      "owner": "mandatory-row reducer and lifecycle",
+      "status": "PLANNED; retain BLOCKED_WITH_REASON, do not silently demote mandatory row"
+    },
+    {
+      "case": "later reviewer/continuity artifacts mixed into worker executionBaseHead delta",
+      "owner": "acceptance checker; choreography; Local proof consumption",
+      "status": "three real-Git observations recorded; deliberate blind replay rejects"
+    },
+    {
+      "case": "unchanged/unrelated return used instead of exact bound return",
+      "owner": "worker-return quality active binding and detached return receipt",
+      "status": "SOURCE_COVERAGE; actual whole-route case PLANNED"
+    }
+  ],
+  "terminal": "LOCAL_OUTCOME_COVERAGE_DESIGN_DELIVERED_BOUNDED",
+  "documentationGateCorrection": "First material commit blocked by corpus literal guard interpreting completed coverage design as a corpus completeness claim. Corrected wording to delivered phase design; no checker change or structural-probe replay."
+}
