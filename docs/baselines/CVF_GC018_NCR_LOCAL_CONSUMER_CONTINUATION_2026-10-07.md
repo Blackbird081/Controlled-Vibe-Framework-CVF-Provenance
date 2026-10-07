@@ -229,6 +229,18 @@ ADIF Worker execution/worker/pre-implementation query zero candidates,no
 truncation. Exact material scope: this existing continuation. Active next move
 must carry this correction rather than the open-ended P06 gap-search instruction.
 
+## Foundation Learning Follow-Up - 2026-10-07
+
+Operator asks to assess the foundation control gap exposed by fragmented work.
+Shared learning: docs/reviews/learnings/CVF_OUTCOME_BOUND_CONTINUATION_LEARNING_2026-10-07.md.
+Existing rules remain; optional/shadow value admission and patch/commit proof
+do not demonstrate outcome-bound continuation. Targeted structural probe also
+shows the NCR token family is skipped by the inspected next-alignment helper.
+This is a subsidiary consistency finding,not sole causal proof. Machine/design
+candidates NOT_IMPLEMENTED; no new schema/checker/pilot or product rerun. Consume
+this learning before work selection/terminal review; retain the finite W05
+package rather than start another open-ended hardening sweep.
+
 ## Claim Boundary
 
 Local consumer source repair only. No full roadmap, live governance, corpus scan,

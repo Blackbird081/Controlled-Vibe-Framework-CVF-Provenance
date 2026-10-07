@@ -16,6 +16,7 @@ Local owns verification and disposition. This index does not authorize runtime, 
 | Read trigger | Record | Owner / current boundary |
 |---|---|---|
 | fresh context, blind reviewer, seed/key exposure, actor eligibility or preparation PASS claim | [Dispatch context eligibility](CVF_DISPATCH_CONTEXT_ELIGIBILITY_LEARNING_2026-10-05.md) | existing dispatch envelope owner; written rule added, machine candidate not implemented |
+| repeated next, per-patch stopping, maintenance work selection, batching or package-completion claim | [Outcome-bound continuation](CVF_OUTCOME_BOUND_CONTINUATION_LEARNING_2026-10-07.md) | existing lifecycle/TPGR owners; written correction exists, machine/design candidates not implemented |
 
 ## Contract
 Use `scripts/lib/downstream_governance/project_learning_record.template.md` and `docs/reference/downstream_gate_profile/CVF_PROJECT_LEARNING_LOOP_STANDARD.md`. Keep source confidence, mechanism/dedup/value/proof and independent parent/delivery/application states. F2G controls promotion; do not create duplicate intake or treat provider memory as authority.
