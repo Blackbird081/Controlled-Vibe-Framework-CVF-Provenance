@@ -1689,5 +1689,217 @@
       "preimplementation.log": "ea1d3f7d6274a7ab7a7db448b99b5c4de52422bcbc6040079fa8d2859320bd0d"
     },
     "claimBoundary": "Two selected cases,not canonical whole release bundle. Client assertions reached confirmed VI idea/export EN Working Brief,real Alibaba HTTP200 complete streams and INTAKE modal;two identical observed requests violate single-send expectation. No phase approval or DESIGN/BUILD effects. Client proof is separate from server envelope/receipt;server full case429 occurred before provider dispatch. Backend denial exact cause and duplicate dispatch root cause unproven. Old scan/build/SOT3/live proofs consumed without replay. No key rotation,model ranking/default change,product runtime repair,public or P11 action."
+  },
+  "intakeDispatchRepair20261007": {
+    "admission": {
+      "baseHead": "41e0d9f67f414a22cdbc5e24f275d09e053ba3b4",
+      "role": "Local maintainer/reviewer",
+      "decisionOwner": "Local",
+      "authority": "operator next and standing Alibaba-only meaningful testing",
+      "consumer": "full-mode intake candidate reviewer",
+      "scope": [
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/AgentChatWithHistory.tsx",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/AgentChatWithHistory.test.tsx",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/hooks/useAgentChat.ts",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/hooks/useAgentChat.test.ts",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/playwright.config.ts",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/chat-history.tsx",
+        "docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md",
+        "docs/baselines/CVF_GC018_NCR_INTAKE_DISPATCH_REPAIR_2026-10-07.md",
+        "docs/reviews/evidence/cvf-local-candidate-release-2026-10-07.json"
+      ],
+      "outputs": [
+        "session-bound one-time initial dispatch with owned timer cleanup",
+        "Next env-loading parity for quoted Redis URL/token without guard weakening",
+        "focused regressions and one selected two-case Alibaba live observation",
+        "qualified source-bound disposition and continuity"
+      ],
+      "budget": "One selected two-case invocation;one explicit API submission and one client send;existing provider attempt policy unchanged. No blind replay.",
+      "stop": "Deliver admitted compatible repairs and truthful verification;no unrelated endpoint expansion,full-release claim or phase approval.",
+      "sourceGitSha256": {
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/AgentChatWithHistory.tsx": "e66891fb76236f91fa33e529def20b9888ea259668dbc6872f8f4c27107a13ae",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/hooks/useAgentChat.ts": "2c3ad6e68179e07ee5ab851f764ef463d8303c865bb6fb456c097f542ac29133",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/hooks/useAgentChat.test.ts": "f11b942034f8dc4317b5795419117a04002ba74c02a2dcf58f42fb0edac1bb99",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/playwright.config.ts": "e827bbac9aa9975fac7afa6834fdae899c6ebfd76e346874a0ce06445f832932",
+        "docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md": "fa350d5ca2a845e5a273d8c286818672c732aca9806fcd552cf80777313991ce",
+        "docs/reviews/evidence/cvf-local-candidate-release-2026-10-07.json": "e0661f43900ef76f33db13cb1b742cca1905033e967bcd94820e2cd92ac5fe99",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/chat-history.tsx": "ed67467a0dbc790bc8cbc05f489e912ae2ba4921aca95c3a098e2b8bd9ef2ac0"
+      },
+      "diagnosticBeforeReplay": {
+        "stage": "rate_limit",
+        "class": "invalid_input",
+        "retryable": false,
+        "userAction": "repair Playwright env parsing parity before replay",
+        "safeMessage": "Playwright copies quoted Redis URL/token literally; parsed Next dotenv URL is valid while raw quoted URL is invalid. Previous local429 and duplicate-post FAIL retained.",
+        "duplicateCause": "Transient AgentChat new-key mounts before history session creation; keyed remount loses handled ref; old500ms timer lacks cleanup."
+      },
+      "compatibleExtension": "Initialize incoming history session atomically in its existing store initializer, avoiding an extra synchronous effect/state update and phantom chat mount. Same one-send consumer/outcome;retain ordinary empty-history recovery."
+    },
+    "envDiagnostic": {
+      "rawRedisUrlValid": false,
+      "nextParsedRedisUrlValid": true,
+      "nextParsedTokenHasOuterQuotes": false,
+      "configuredStore": "redis",
+      "injectedPortPreserved": true,
+      "secretValuesPrinted": false
+    },
+    "redOriginal": {
+      "status": "3_FAILED_17_PASSED",
+      "sourceBase": "41e0d9f67f414a22cdbc5e24f275d09e053ba3b4",
+      "initialRedWorkerFailure": "NO_TESTS_STARTED;fork startup timed out;not a defect red proof",
+      "sourceRestoration": {
+        "exitCode": 1,
+        "sourceBase": "41e0d9f67f414a22cdbc5e24f275d09e053ba3b4",
+        "fixtureSource": "current new regressions against original runtime source",
+        "restoredSourceHashes": {
+          "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/AgentChatWithHistory.tsx": "20d74655258b5c9033f7a42d6821c07cc5c23d857abf3faf057e16bb78f949bf",
+          "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/hooks/useAgentChat.ts": "49e2e1563e37f04f7f6372a2f668cc60ea0e90292860a4f285ea472900b7a5bb",
+          "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/chat-history.tsx": "dc4a450b97cd74dea6f67c23b253e06726622382c055c4cc48c1be8849803d0b"
+        }
+      },
+      "boundary": "mocked dispatch/provider and real disposable history;hermetic regressions,not live governance"
+    },
+    "regressions": {
+      "distinctTests": 45,
+      "status": "PASS",
+      "command": "npx vitest run src/components/AgentChatWithHistory.test.tsx src/lib/hooks/useAgentChat.test.ts src/lib/chat-history.test.tsx --pool=threads --maxWorkers=1"
+    },
+    "lint": "PASS",
+    "typecheck": "PASS",
+    "live": {
+      "exitCode": 0,
+      "elapsedMs": 74875,
+      "output": ".cvf\\runtime\\release-gate-e2e\\full-hqie4tq4",
+      "sourceWorktreeSha256": {
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/AgentChatWithHistory.tsx": "20d74655258b5c9033f7a42d6821c07cc5c23d857abf3faf057e16bb78f949bf",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/AgentChatWithHistory.test.tsx": "278becb72892428deb1aa1341c077f9989e814102de7d6a1b87009b6312154cd",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/hooks/useAgentChat.ts": "49e2e1563e37f04f7f6372a2f668cc60ea0e90292860a4f285ea472900b7a5bb",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/hooks/useAgentChat.test.ts": "09ecf7a2c9d63ed6ecd7b188a6a56d3cb4e37d0f4b55231916b6ce67cae30494",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/playwright.config.ts": "6e177cc6bc4c78d5c06f6a1ff889ec200b03b284ab684a4be71a87eb683538d7",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/chat-history.tsx": "dc4a450b97cd74dea6f67c23b253e06726622382c055c4cc48c1be8849803d0b"
+      },
+      "command": "npx playwright test --config playwright.config.ts tests/e2e/noncoder-governance-live.spec.ts --grep full-mode --reporter=json --output <unique ignored output>",
+      "diagnostic": null
+    },
+    "liveCases": [
+      {
+        "title": "full-mode API returns a governed live result and receipt",
+        "status": "passed",
+        "durationMs": 50753,
+        "safeAttachments": [
+          {
+            "name": "full-api-safe-status",
+            "data": {
+              "httpStatus": 200,
+              "success": true,
+              "diagnostic": null
+            }
+          },
+          {
+            "name": "full-api-safe-observation",
+            "data": {
+              "surface": "server_execute_full",
+              "httpStatus": 200,
+              "success": true,
+              "specGate": "PASS",
+              "provider": "alibaba",
+              "outputLength": 3136,
+              "receiptId": "rcpt-env-muy77st4-4t4jby",
+              "providerAttemptReconciliation": {
+                "schemaVersion": "cvf.providerAttemptReconciliation.v1",
+                "inboundRequestCount": 1,
+                "providerCallCount": 1,
+                "retryCount": 0,
+                "admittedAttemptCount": 1,
+                "deniedAttemptCount": 0,
+                "provider": "alibaba",
+                "model": "qwen-flash",
+                "reconciles": true,
+                "claimBoundary": "summary_counts_only_no_secret_provider_payload_or_raw_body"
+              }
+            }
+          }
+        ],
+        "failureLocation": null
+      },
+      {
+        "title": "full-mode Idea Brief export reaches the client INTAKE gate on real Alibaba output",
+        "status": "passed",
+        "durationMs": 12298,
+        "safeAttachments": [
+          {
+            "name": "full-client-safe-observation",
+            "data": {
+              "surface": "direct_client_intake_modal",
+              "directRequests": 1,
+              "provider": "alibaba",
+              "model": "qwen-flash",
+              "httpStatus": 200,
+              "finishReason": "stop",
+              "outputLength": 1159,
+              "ideaConfirmedBeforeSend": true,
+              "modalPhase": "INTAKE",
+              "phaseApproved": false,
+              "claimBoundary": "client_ui_only_not_server_receipt_or_phase_progression"
+            }
+          },
+          {
+            "name": "full-client-request-count",
+            "data": {
+              "directRequests": 1,
+              "scope": "observed_direct_alibaba_posts_only",
+              "phaseApproved": false
+            }
+          }
+        ],
+        "failureLocation": null
+      }
+    ],
+    "disposition": "PASS",
+    "sourceLfNormalizedSha256": {
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/AgentChatWithHistory.tsx": "20d74655258b5c9033f7a42d6821c07cc5c23d857abf3faf057e16bb78f949bf",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/AgentChatWithHistory.test.tsx": "278becb72892428deb1aa1341c077f9989e814102de7d6a1b87009b6312154cd",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/hooks/useAgentChat.ts": "5f60cb289473b21e0d3c017992478cfa9bb062b7c891c7ba1479d854ad0b5192",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/hooks/useAgentChat.test.ts": "09ecf7a2c9d63ed6ecd7b188a6a56d3cb4e37d0f4b55231916b6ce67cae30494",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/playwright.config.ts": "6e177cc6bc4c78d5c06f6a1ff889ec200b03b284ab684a4be71a87eb683538d7",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/chat-history.tsx": "dc4a450b97cd74dea6f67c23b253e06726622382c055c4cc48c1be8849803d0b"
+    },
+    "runtimeArtifactSha256": {
+      "admission.json": "49d1065f81bf461867364930b0839594b8fc9901fe0abf741c25f660cadee5b6",
+      "preimplementation.log": "659ec229945611583cd2005b7ec7f75ffd5d9ad67bd050473aa617d52c592448",
+      "env-diagnostic.json": "ab303e29748ba555e6c6b3950aba8e918341bf428ce263cdf5fd19ed95eadcff",
+      "red-original.json": "dd19049e652106e441b44a4703e05831a7773838b51407ad22c4e8a458122d70",
+      "red-original.log": "1b3bede17fd0882d9825b784fc86da48b376e9fa3e6ca600bdc93097ff3cba3c",
+      "final-tests.log": "fbd88d1d9a3e94e36e3d85da18360689923aa0dc0cd544dbc07bb0c93d03c404",
+      "final-typecheck.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "final-lint.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout.json": "637c06629eecd2d01cce73dde9bf464e9c2dfb6fb69b6166e4d40bf3dcf98452",
+      "material-commit-initial.log": "6811f9b928243d635efa70120b4e5885ff763d62afc95c06373e1fe789b0f972"
+    },
+    "generatedRestoration": {
+      "addedIncludes": [
+        ".next-cvf-release-gate-e2e-live/types/**/*.ts",
+        ".next-cvf-release-gate-e2e-live/dev/types/**/*.ts"
+      ],
+      "beforeSha256": "d4af4823c8a2919796c5faa29805cd152217fbc25d6021c2da57541a685ea0f6",
+      "generatedSha256": "8edcad40e819418b5a50a00ef8903a79f20a7096ecc4f891aae456aaab27baac"
+    },
+    "adifQuery": {
+      "items": [],
+      "truncated": false,
+      "totalCandidates": 0,
+      "claimBoundary": "Returning this packet is not evidence that any caller read or understood it."
+    },
+    "claimBoundary": "Selected API/client full-mode proof,not fresh canonical full release bundle or independent reviewer proof. Existing guards,caps,models,credentials and phase approvals unchanged. Previous FAIL retained. Old scan/build/SOT3/simple proofs consumed;no real data,public,P11 or deployment acceptance.",
+    "postLivePacketRepair": {
+      "firstCommitGate": "encoding exception missing for moved bilingual literals;corpus N/A verdict needed bullet syntax",
+      "noProviderReplay": true,
+      "compiledHookEquality": {
+        "compiledIdentitySha256": "3562de2d274bd699b7109db997b551fbd7ee0c456dfcba8a7e9bb6067cbe1bc1",
+        "equal": true,
+        "change": "encoding exception comment only after live run;execution source retained"
+      },
+      "commentLint": "PASS"
+    }
   }
 }

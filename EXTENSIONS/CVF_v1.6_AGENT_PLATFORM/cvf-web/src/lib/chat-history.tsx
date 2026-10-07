@@ -76,8 +76,21 @@ function generateTitle(messages: ChatMessage[]): string {
 }
 
 // Hook for managing chat history
-export function useChatHistory() {
-    const [state, setState] = useState<ChatHistoryState>(() => loadHistory());
+function emptySession(provider: ProviderKey): ChatSession {
+    return {
+        id: `session_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`,
+        title: 'New Chat', messages: [], createdAt: new Date(), updatedAt: new Date(),
+        provider, metadata: { messageCount: 0 },
+    };
+}
+
+export function useChatHistory(initialProvider?: ProviderKey) {
+    const [state, setState] = useState<ChatHistoryState>(() => {
+        const history = loadHistory();
+        if (!initialProvider) return history;
+        const session = emptySession(initialProvider);
+        return { sessions: [session, ...history.sessions].slice(0, MAX_SESSIONS), activeSessionId: session.id };
+    });
     const [isLoaded] = useState(true);
 
     useEffect(() => {
@@ -85,15 +98,7 @@ export function useChatHistory() {
     }, [state]);
 
     const createSession = useCallback((provider: ProviderKey): string => {
-        const newSession: ChatSession = {
-            id: `session_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`,
-            title: 'New Chat',
-            messages: [],
-            createdAt: new Date(),
-            updatedAt: new Date(),
-            provider,
-            metadata: { messageCount: 0 },
-        };
+        const newSession = emptySession(provider);
 
         setState(prev => ({
             sessions: [newSession, ...prev.sessions].slice(0, MAX_SESSIONS),

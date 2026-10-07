@@ -16,6 +16,8 @@ it adds no new program, work order, schema, checker or pilot. Predecessor is
 docs/baselines/CVF_GC018_NCR_CONSOLIDATED_LOCAL_FOUNDATION_2026-10-06.md,
 which has957 lines; use a continuation rather than grow it toward the hard limit.
 
+Current follow-up: docs/baselines/CVF_GC018_NCR_INTAKE_DISPATCH_REPAIR_2026-10-07.md; session/timer and env-parity repairs with qualified proof.
+
 ## Full Mode Proof Separation - 2026-10-07
 
 Operator next admits Local fixture/reviewer scope at d9de6b8730eef4ee69432b9923b55dd32216ded3.
@@ -791,22 +793,22 @@ Returned defects: NONE_RETURNED. Zero candidates and no truncation.
 
 | Field | Evidence |
 |---|---|
-| Actor | Local full-mode fixture maintainer/reviewer |
+| Actor | Local intake dispatch maintainer/reviewer |
 | Provider or surface | Local canonical bundle; Alibaba-only synthetic live lane |
-| Session or invocation | full-mode-proof-20261007 |
+| Session or invocation | intake-dispatch-repair-20261007 |
 | Working directory | repository root |
-| Command or tool surface | two selected cases;diagnosed UI-only replay;final scoped lint;governance gates |
-| Target paths | EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/noncoder-governance-live.spec.ts; EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/utils.ts; docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md; docs/reviews/evidence/cvf-local-candidate-release-2026-10-07.json |
+| Command or tool surface | original-source negatives;45 hermetic tests;typecheck/lint;two selected Alibaba live cases;governance gates |
+| Target paths | EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/AgentChatWithHistory.tsx; EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/AgentChatWithHistory.test.tsx; EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/hooks/useAgentChat.ts; EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/hooks/useAgentChat.test.ts; EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/playwright.config.ts; EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/chat-history.tsx; docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md; docs/baselines/CVF_GC018_NCR_INTAKE_DISPATCH_REPAIR_2026-10-07.md; docs/reviews/evidence/cvf-local-candidate-release-2026-10-07.json |
 | Allowed scope source | operator next,continuous Local work and Alibaba test authorization |
-| Before status evidence | clean d9de6b8730eef4ee69432b9923b55dd32216ded3 |
-| After status evidence | four material paths;API local429;UI actual INTAKE reached but two identical POSTs;FAIL preserved |
+| Before status evidence | clean 41e0d9f67f414a22cdbc5e24f275d09e053ba3b4 |
+| After status evidence | nine material paths;selected full-mode PASS;initial bundle FAIL preserved |
 | Diff evidence | exact staged manifest;source Git hashes and runtime artifact hashes |
 | Approval boundary | synthetic Local candidate proof; data/public/deploy effects parked |
 | Claim boundary | current canonical Local observation;not remote CI,whole NCR or production acceptance |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | full-mode-proof-20261007 |
-| Expected manifest | EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/noncoder-governance-live.spec.ts; EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/utils.ts; docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md; docs/reviews/evidence/cvf-local-candidate-release-2026-10-07.json |
-| Actual changed set | EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/noncoder-governance-live.spec.ts; EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/utils.ts; docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md; docs/reviews/evidence/cvf-local-candidate-release-2026-10-07.json |
+| Invocation ID | intake-dispatch-repair-20261007 |
+| Expected manifest | EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/AgentChatWithHistory.tsx; EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/AgentChatWithHistory.test.tsx; EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/hooks/useAgentChat.ts; EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/hooks/useAgentChat.test.ts; EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/playwright.config.ts; EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/chat-history.tsx; docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md; docs/baselines/CVF_GC018_NCR_INTAKE_DISPATCH_REPAIR_2026-10-07.md; docs/reviews/evidence/cvf-local-candidate-release-2026-10-07.json |
+| Actual changed set | EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/AgentChatWithHistory.tsx; EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/AgentChatWithHistory.test.tsx; EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/hooks/useAgentChat.ts; EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/hooks/useAgentChat.test.ts; EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/playwright.config.ts; EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/chat-history.tsx; docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md; docs/baselines/CVF_GC018_NCR_INTAKE_DISPATCH_REPAIR_2026-10-07.md; docs/reviews/evidence/cvf-local-candidate-release-2026-10-07.json |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |
 
