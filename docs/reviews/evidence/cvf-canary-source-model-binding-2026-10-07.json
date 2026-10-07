@@ -1,0 +1,316 @@
+{
+  "status": "SOURCE_CONTROLS_VERIFIED_TRANSPORT_PASS_ROUTE_CANARY_FAIL",
+  "baseHead": "4cbaf3f6e1c4ace076223cf9264ed9b2367ac455",
+  "requiredOutputs": [
+    "key-source selection and safe diagnostics",
+    "request/model receipt binding for Alibaba",
+    "meaningful mocked process-boundary regressions",
+    "one existing six-case Alibaba live canary, mocks explicitly disclosed",
+    "terminal evidence and retained checkpoints"
+  ],
+  "sourceBeforeGitBlobSha256": {
+    "scripts/run_cvf_provider_live_canary.py": "6c37c02efbdc387c04944afcc69db0bd75617035bab4cecc17491e88b22dedca",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.front-door-rewrite.alibaba.live.test.ts": "20ad9fdfea2079b7d0d538db6c16bcd45ed00e2e1a0e9cc4d1dc238c04cc3dd9"
+  },
+  "sourceAfterWorktreeSha256": {
+    "scripts/run_cvf_provider_live_canary.py": "1dd2779a0c0d5a1d1c4d90cd4fee9483199533eaaa826f10dd891a90430cca89",
+    "scripts/test_run_cvf_provider_live_canary.py": "ca45aa231af5c3ffa7c10e84ee6f02c5538f420330782a38bee8e1bc03b8ef27",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.front-door-rewrite.alibaba.live.test.ts": "52fee3b01ab5b0ff3f4e6bd1ed8db2f2127cbd54fff88302e554937433fd5bbb"
+  },
+  "preImplementationStatus": "PASS",
+  "preImplementationReceiptSha256": "50ca092ecc7b40fea251363c2e582962df77a24addc92456a369f8c17b30348f",
+  "regression": {
+    "initialTests": 11,
+    "initialFailures": 2,
+    "initialErrors": 8,
+    "initialPassed": 1,
+    "finalTests": 15,
+    "finalStatus": "PASS",
+    "claimBoundary": "new-control boundary tests with fake credentials/mocked subprocess, no provider calls"
+  },
+  "typecheck": "PASS",
+  "scopedESLint": "PASS",
+  "evidence": {
+    "canary-source-admission.json": {
+      "rawSha256": "8c8cb65fd15c5206cee9bf54b908c3b4c4636c90cab1bf1a00553194d23178c2",
+      "content": {
+        "baseHead": "4cbaf3f6e1c4ace076223cf9264ed9b2367ac455",
+        "authority": "operator next and standing grouped Local repair/Alibaba-only tests; lifecycle direct-task route",
+        "consumer": "Local operator/agent running Alibaba canary with known credential source and model",
+        "outcome": "explicit source selection and secret-safe ambiguity report; Alibaba request model matches receipt; regression and bounded real-provider proof",
+        "scope": [
+          "scripts/run_cvf_provider_live_canary.py",
+          "scripts/test_run_cvf_provider_live_canary.py",
+          "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.front-door-rewrite.alibaba.live.test.ts",
+          "docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md",
+          "docs/reviews/evidence/cvf-canary-source-model-binding-2026-10-07.json"
+        ],
+        "beforeGitBlobSha256": {
+          "scripts/run_cvf_provider_live_canary.py": "6c37c02efbdc387c04944afcc69db0bd75617035bab4cecc17491e88b22dedca",
+          "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.front-door-rewrite.alibaba.live.test.ts": "20ad9fdfea2079b7d0d538db6c16bcd45ed00e2e1a0e9cc4d1dc238c04cc3dd9"
+        },
+        "requiredOutputs": [
+          "key-source selection and safe diagnostics",
+          "request/model receipt binding for Alibaba",
+          "meaningful mocked process-boundary regressions",
+          "one existing six-case Alibaba live canary, mocks explicitly disclosed",
+          "terminal evidence and retained checkpoints"
+        ],
+        "liveAuthority": "Alibaba only; explicit local key source; qwen3.8-27b current quota expiry2026-11-16; one six-case existing canary; no automatic retry or model selection",
+        "terminalStop": "complete this canary-control repair and evidence; no template/spec/policy overhaul,other-provider call,pilot,public,deploy,real-data or closed-guard successor"
+      }
+    },
+    "canary-source-live-diagnostic.json": {
+      "rawSha256": "0c8488632a70cdb12acb9351f8196e03fca25fd037251153761a6261216d02da",
+      "content": {
+        "stage": "test_collection",
+        "class": "default_config_excludes_live_tests",
+        "retryable": true,
+        "userAction": "Local repair explicit live collection invocation; keep independent provider authority guard",
+        "provider": "alibaba",
+        "model": "qwen3.8-27b",
+        "httpStatus": null,
+        "safeMessage": "First invocation found no test files (Vitest exit 1) and runner downgraded to all-SKIP/exit2; no provider test executed. Diagnostic recorded before rerun. --mode live fixes collection only; existing orchestrator grant remains required."
+      }
+    },
+    "canary-source-live-corrected-admission.json": {
+      "rawSha256": "050aa3e7e6b673bd82c6162dff50be5aa4258a429430e054ed04371e980fa436",
+      "content": {
+        "authority": "operator next and standing grouped Local repair/Alibaba-only tests; lifecycle direct-task route",
+        "provider": "alibaba",
+        "model": "qwen3.8-27b",
+        "testCases": 6,
+        "maxProviderCalls": 12,
+        "reason": "existing per-case output retry may consume calls; guard enforces ceiling, no automatic batch rerun",
+        "orchestrator": "LOCAL_CODEX_ROOT",
+        "grantHelper": "scripts/cvf_provider_execution_grant.py",
+        "oneUseInvocation": "canary-source-live-corrected.used",
+        "scope": [
+          "scripts/run_cvf_provider_live_canary.py",
+          "scripts/test_run_cvf_provider_live_canary.py",
+          "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.front-door-rewrite.alibaba.live.test.ts",
+          "docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md",
+          "docs/reviews/evidence/cvf-canary-source-model-binding-2026-10-07.json"
+        ],
+        "changedSourceWorktreeSha256": {
+          "scripts/run_cvf_provider_live_canary.py": "992d7832e1c64db36ecb94dffe47e3d2c2356a5501de27ec705a3ae8d37b0d90",
+          "scripts/test_run_cvf_provider_live_canary.py": "8751ec60d12cd0c73b63758d58db6f1a6ea4c08a9521439e7f8d8eaba9cca3ce",
+          "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.front-door-rewrite.alibaba.live.test.ts": "52fee3b01ab5b0ff3f4e6bd1ed8db2f2127cbd54fff88302e554937433fd5bbb"
+        },
+        "claimBoundary": "real-provider transport/model binding with existing enforcement/session/quota mocks; not full live governance or release-quality proof"
+      }
+    },
+    "canary-source-live-receipt.json": {
+      "rawSha256": "f5ab633ae281c810c258e6df39c29008b1c0e4c8a56ceb508608757f5cf964ce",
+      "content": {
+        "receipt": {
+          "run_id": "20261007-083158-a00b83",
+          "timestamp": "2026-10-07T08:31:58.929861+00:00",
+          "provider": "alibaba",
+          "model": "qwen3.8-27b",
+          "credential_source": {
+            "requestedSource": "local",
+            "selectedSource": "local",
+            "selectedAlias": "ALIBABA_API_KEY",
+            "sourcesDiffer": true,
+            "environmentAliasesAgree": true,
+            "localAliasesAgree": true
+          },
+          "process_exit_code": 1,
+          "triggered_by": "cli",
+          "scenarios": [
+            {
+              "id": "S1",
+              "template_id": "app_builder_complete",
+              "status": "FAIL",
+              "duration_ms": 45029,
+              "quality_signals": {
+                "min_output_met": false,
+                "keyword_matches": [],
+                "antipattern_clean": false,
+                "validated_by_vitest": true
+              }
+            },
+            {
+              "id": "S2",
+              "template_id": "api_design",
+              "status": "FAIL",
+              "duration_ms": 45018,
+              "quality_signals": {
+                "min_output_met": false,
+                "keyword_matches": [],
+                "antipattern_clean": false,
+                "validated_by_vitest": true
+              }
+            },
+            {
+              "id": "S3",
+              "template_id": "code_review",
+              "status": "FAIL",
+              "duration_ms": 15,
+              "quality_signals": {
+                "min_output_met": false,
+                "keyword_matches": [],
+                "antipattern_clean": false,
+                "validated_by_vitest": true
+              }
+            },
+            {
+              "id": "S4",
+              "template_id": "documentation",
+              "status": "FAIL",
+              "duration_ms": 45005,
+              "quality_signals": {
+                "min_output_met": false,
+                "keyword_matches": [],
+                "antipattern_clean": false,
+                "validated_by_vitest": true
+              }
+            },
+            {
+              "id": "S5",
+              "template_id": "web_ux_redesign_system",
+              "status": "FAIL",
+              "duration_ms": 45008,
+              "quality_signals": {
+                "min_output_met": false,
+                "keyword_matches": [],
+                "antipattern_clean": false,
+                "validated_by_vitest": true
+              }
+            },
+            {
+              "id": "S6",
+              "template_id": "data_analysis",
+              "status": "FAIL",
+              "duration_ms": 45009,
+              "quality_signals": {
+                "min_output_met": false,
+                "keyword_matches": [],
+                "antipattern_clean": false,
+                "validated_by_vitest": true
+              }
+            }
+          ],
+          "overall_status": "FAIL",
+          "pass_count": 0,
+          "fail_count": 6,
+          "skip_count": 0
+        },
+        "assertions": [
+          {
+            "name": "/api/execute front-door rewrite live \u2014 Alibaba governed path turns app_builder_complete into a builder-ready non-coder app brief",
+            "status": "failed",
+            "duration": 45029.7286
+          },
+          {
+            "name": "/api/execute front-door rewrite live \u2014 Alibaba governed path turns api_design into an integration handoff packet instead of a style-selection form",
+            "status": "failed",
+            "duration": 45018.272899999996
+          },
+          {
+            "name": "/api/execute front-door rewrite live \u2014 Alibaba governed path turns code_review into a plain-language build review packet with a builder handoff brief",
+            "status": "failed",
+            "duration": 15.095600000000559
+          },
+          {
+            "name": "/api/execute front-door rewrite live \u2014 Alibaba governed path turns documentation into a structured operational doc packet with a handoff checklist",
+            "status": "failed",
+            "duration": 45005.5992
+          },
+          {
+            "name": "/api/execute front-door rewrite live \u2014 Alibaba governed path turns web_ux_redesign_system into a guarded UX packet with a visible review gate",
+            "status": "failed",
+            "duration": 45008.096099999995
+          },
+          {
+            "name": "/api/execute front-door rewrite live \u2014 Alibaba governed path turns data_analysis into a decision-focused insight packet with prioritised action recommendations",
+            "status": "failed",
+            "duration": 45009.56760000001
+          }
+        ],
+        "claimBoundary": "synthetic template cases, real Alibaba requests; enforcement/session/quota mocked; requested model asserted in response; no release-certification or build-readiness claim"
+      }
+    },
+    "canary-source-route-diagnostic.json": {
+      "rawSha256": "bc64f26b5f408b8fe35db1f4db99151cc83b17adb01cdc01d336e41592360424",
+      "content": {
+        "stage": "live_route_harness",
+        "class": "route_validation_and_timeouts",
+        "retryable": false,
+        "userAction": "keep live canary not passed; no batch retry,template repair or timeout relaxation in this package",
+        "provider": "alibaba",
+        "model": "qwen3.8-27b",
+        "httpStatus": null,
+        "safeMessage": "Existing route suite has observed 45s case timeouts and a 400 response. These do not identify credential/model transport as cause. One separately scoped direct transport diagnostic will use the repaired selector; no full-route PASS inferred."
+      }
+    },
+    "canary-source-transport-admission.json": {
+      "rawSha256": "9a1db6044ed45f31cb5870421c91990f4f41e89d644a6ba7255daaab6b1277ff",
+      "content": {
+        "authority": "operator standing Alibaba test authorization; Local diagnostic extension within selected credential/model tool outcome",
+        "scope": "one direct real Alibaba transport request through repaired credential selector, synthetic CANARY_OK prompt, max_tokens32, timeout60s; no automatic retry",
+        "informationGain": "separate credential/model transport from failures of the existing mocked route harness",
+        "costReason": "one tiny request instead of replaying six slow route cases",
+        "claimBoundary": "credential/request model transport only, no route/governance proof"
+      }
+    },
+    "canary-source-transport-result.json": {
+      "rawSha256": "27fc0089a45545b699a6cc97d898b36f73a15c62e8926e69bb61e90cf6457fbb",
+      "content": {
+        "status": "PASS_TRANSPORT_BOUNDED",
+        "httpStatus": 200,
+        "requestedModel": "qwen3.8-27b",
+        "returnedModel": "qwen3.8-27b",
+        "credential_source": {
+          "requestedSource": "local",
+          "selectedSource": "local",
+          "selectedAlias": "ALIBABA_API_KEY",
+          "sourcesDiffer": true,
+          "environmentAliasesAgree": true,
+          "localAliasesAgree": true
+        },
+        "checks": {
+          "modelMatched": true,
+          "textReturned": true
+        },
+        "usage": {
+          "completion_tokens": 4,
+          "completion_tokens_details": {},
+          "prompt_tokens": 18,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "text_tokens": 18
+          },
+          "total_tokens": 22
+        },
+        "latencyMs": 641,
+        "claimBoundary": "selected local credential and model accepted by real provider; no mocked route PASS,live governance or release claim"
+      }
+    }
+  },
+  "liveDisposition": "Initial collection failure: no provider test collected, legacy summary all SKIP. Corrected six-case invocation: five 45s timeouts and one 400; FAIL/exit1 retained, no template/timeout repair or batch rerun. Separately admitted one tiny real Alibaba transport request returned200 and matching model.",
+  "providerBudget": "corrected suite used existing caller-issued Alibaba-only grant maxCalls12; observed API call count not instrumented/claimed; separate direct diagnostic one request",
+  "mocks": "live route suite mocks enforcement, session and quota; real provider transport does not prove those controls",
+  "reviewIndependence": "same Local actor; no independent review claim",
+  "claimBoundary": "credential-source and Alibaba model-request/receipt wiring verified structurally; real transport accepted requested model; current route live canary NOT_PASSED, no model/default selection, full governance/release/W05/pre-live/pilot/public/deploy claim",
+  "postProofSourceQualification": {
+    "path": "scripts/run_cvf_provider_live_canary.py",
+    "changes": "module docstring and stricter missing-required-scenario reduction after live run; source selector/model request wiring unchanged",
+    "executedRawSha256": "992d7832e1c64db36ecb94dffe47e3d2c2356a5501de27ec705a3ae8d37b0d90",
+    "finalRawSha256": "1dd2779a0c0d5a1d1c4d90cd4fee9483199533eaaa826f10dd891a90430cca89",
+    "recordedLiveReceiptReReducedWithFinalOwner": "PASS_IDENTICAL_SEMANTIC_FIELDS",
+    "comparedFields": [
+      "provider",
+      "model",
+      "credential_source",
+      "process_exit_code",
+      "scenarios",
+      "overall_status",
+      "pass_count",
+      "fail_count",
+      "skip_count"
+    ],
+    "claimBoundary": "final reducer consumes recorded results, no provider replay; not executable AST equivalence or current full-route PASS"
+  }
+}

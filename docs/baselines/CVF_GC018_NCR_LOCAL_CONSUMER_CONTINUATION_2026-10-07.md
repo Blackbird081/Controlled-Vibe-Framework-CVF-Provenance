@@ -16,14 +16,107 @@ it adds no new program, work order, schema, checker or pilot. Predecessor is
 docs/baselines/CVF_GC018_NCR_CONSOLIDATED_LOCAL_FOUNDATION_2026-10-06.md,
 which has957 lines; use a continuation rather than grow it toward the hard limit.
 
-## Scope / Target / Owner Boundary
+## Current Canary Source And Model Controls - 2026-10-07
+
+Status: SOURCE_CONTROLS_VERIFIED_TRANSPORT_PASS_ROUTE_CANARY_FAIL.
+Consumer: Local operator/agent running the existing provider canary. Finite
+outcome: explicit credential source, secret-safe ambiguity report, Alibaba
+request/receipt model binding and meaningful boundary/runtime evidence.
+Local owns implementation and disposition under operator next and standing
+grouped Local/Alibaba-only test authority. Existing lifecycle small-direct-task
+route applies; closed alignment packet pins are unchanged. Required outputs
+and exact five material paths were recorded before effects at clean base
+4cbaf3f6e1c4ace076223cf9264ed9b2367ac455; pre-implementation autorun PASS.
+
+### Source Verification Block
+
+| Source | Disposition | Named gap / verified boundary |
+|---|---|---|
+| scripts/run_cvf_provider_live_canary.py | ACCEPT | process key silently wins; model override previously only labels receipt; default Vitest invocation excludes live tests; process failure ignored by receipt reduction |
+| scripts/test_run_cvf_provider_live_canary.py | ACCEPT | source selection, no silent fallback, secret-free report, subprocess key/model/collection and exit-to-receipt regressions |
+| EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.front-door-rewrite.alibaba.live.test.ts | ACCEPT | six qwen-flash literals replaced by explicit canary model with old default retained; response model assertion added |
+| scripts/_local_env.py; scripts/cvf_provider_execution_grant.py | ACCEPT | reuse parser and caller-issued bounded grant; no credential/config/guard rewrite |
+
+### Implementation and observed evidence
+
+--key-source auto preserves environment-before-local precedence; environment
+and local select only that source, with no silent fallback. Source/alias names,
+agreement flags and source comparison are reported without credential values.
+The canary warns on differences and retains selected-source metadata in receipt.
+Existing .env parser handles BOM/export/quoted values; environment files remain
+unchanged. Alibaba model override is now exported to the child fixture and
+used by all six request bodies; default model remains unchanged.
+
+Eleven initial boundary tests produced two failures/eight errors/one pass,
+including newly absent API behavior; fifteen final tests PASS. Tests use fake
+credentials and mocked subprocess, not AI-governance proof. TypeScript --noEmit,
+scoped ESLint and diff hygiene PASS. After the live invocation the module docstring and missing-required-scenario
+reducer were tightened. Reconstructed executed bytes match the live admission
+pin; the final reducer consumes the saved six-case result and reproduces all
+semantic receipt fields exactly, without provider replay. Source snapshots and result identities are
+retained in docs/reviews/evidence/cvf-canary-source-model-binding-2026-10-07.json.
+
+Initial CLI attempt found no tests because the default configuration excludes
+live fixtures. It made no provider test call and exposed a second canary truth
+gap: subprocess exit1 became all-SKIP/exit2. Diagnostic preceded rerun. The
+invocation now uses --mode live for collection only; the existing execution
+guard remains. Nonzero subprocess result forces receipt FAIL, preventing a
+missing/partial JSON report from creating SKIP or PASS over process failure.
+Missing required scenarios also prevent PASS when a subprocess returns zero.
+
+The corrected invocation used a caller-issued grant from the existing helper:
+Alibaba only, maxCalls12 and a finite expiry for one six-case batch, with a
+one-use invocation marker and admission record. This is a guard ceiling, not
+an observed provider-call count. Five cases timed out at their unchanged45s
+limit and code_review returned400. All six remain FAIL, CLI/receipt exit1;
+no batch rerun, template repair or timeout relaxation follows this package.
+The route suite mocks enforcement/session/quota, so even passing provider
+output would not establish full live governance or release-quality proof.
+
+A separately admitted one-request diagnostic through the repaired local-key
+selector returned HTTP200, matching qwen3.8-27b and nonempty text. Its purpose
+and cost were recorded before the call: distinguish credential/model transport
+from route-harness failure without replaying six slow scenarios. The actual
+transport succeeds; cause of the route timeouts/400 remains undetermined.
+No model ranking/default decision, other-provider call or production effect.
+
+### Terminal disposition
+
+Selected source controls and evidence are delivered; live route canary is
+NOT_PASSED. Same Local actor, no independent-oracle claim. Do not certify a lane
+or call the repair a release PASS. Any route-harness repair requires a distinct
+source-bound outcome and diagnostic before rerun; do not expand into unrelated
+endpoints. W05 pre-live, real-data writer/retention/RPO/RTO/cost, browser,
+send/B2, S05/C1, P11, CCMA, public/deploy remain unchanged/parked.
+
+## Finding-To-Governance Learning Disposition
+
+| Finding | Defect class | Learning lane | Disposition | Control action |
+|---|---|---|---|---|
+| Stale process key hides the intended local source | RUNTIME_SIGNAL_GAP | RUNTIME_BEHAVIOR_LEARNING | RULE_EXISTS | explicit source selector and secret-safe comparison; no precedence/config rewrite |
+| Override label can differ from actual Alibaba fixture request | ORCHESTRATOR_PACKET_GAP | GOVERNANCE_CONTROL_PLANE | RULE_EXISTS | child model binding and per-case model assertion |
+| Collection/process failure can become all-SKIP | RUNTIME_SIGNAL_GAP | GOVERNANCE_CONTROL_PLANE | RULE_EXISTS | explicit collection, existing grant retained, nonzero process forces FAIL |
+| Current six-case live route fails despite transport success | RUNTIME_SIGNAL_GAP | PROVIDER_OUTPUT_LEARNING | RULE_EXISTS | retain diagnostics and NOT_PASSED; separate future scope, no automatic retry |
+
+## Epistemic Process Block
+
+Expected Result / Prediction: source/model controls pass regressions; live
+canary result must match subprocess evidence without inflated claims.
+Evidence Comparison: fifteen structural tests, typecheck and lint PASS; direct
+transport200/model match; corrected route canary six FAIL/exit1.
+Contradiction Or Gap Disposition: collection failure repaired; unrelated route
+timeouts/400 retained, not attributed to credentials or hidden by changing tests.
+Claim Update: bounded source/transport controls verified; current live canary
+NOT_PASSED and full governance/release readiness remain unproved.
+
+## Historical Memory Repair Scope / Target / Owner Boundary
 
 Local maintainer/reviewer owns the selected P06 memory readout input repair.
 Operator next and standing continuous-work instruction authorize bounded fixes.
 Base affb57de037c1737f5ce042e6cf37f25219f1f9e; startup worktree clean.
 NIS-T1J closed authority is unchanged. No worker delegation or external research.
 
-## Source Verification Block
+## Historical Memory Repair Source Verification Block
 
 | Source | Disposition | Finding |
 |---|---|---|
@@ -60,12 +153,12 @@ regressions bind the defect/repair to this consumer; no upstream absence claim.
 | Matching local-view guard | N/A with reason: no external input; existing route/test consumer |
 | Owner surface | existing NCR P06 memory readout route and baseline continuation |
 | Disposition | LOCAL_SOURCE_REPAIR_ONLY |
-| Claim boundary | bounded learning reconciliation, not general enforcement or W05 readiness |
+| Claim boundary | source controls verified; live canary FAIL retained, no certification or release proof |
 
 Exact material manifest: the two route/source test files named above, this
 continuation and the predecessor's continuation pointer. No other product path.
 
-## Evidence / Verification
+## Historical Memory Repair Evidence / Verification
 
 Red:33 tests,14 failures/19 passes. Eleven malformed optional-field requests and
 three raw JSON1e309 cases returned200 instead of400. No fixture/setup failures.
@@ -105,7 +198,7 @@ The binding preserves the existing method; no remote agent or external intake.
 
 | Field | Value |
 |---|---|
-| applicableCheckersRead | governance/compat/check_markdown_structural_completeness.py; governance/compat/check_governed_artifact_checker_read_ahead.py; governance/compat/check_agent_packet_authority_and_encoding.py; governance/compat/check_agent_operation_trace.py; governance/compat/check_adif_defect_registry_disclosure.py; governance/compat/check_public_export_disposition.py; governance/compat/check_core_guard_self_protection.py |
+| applicableCheckersRead | governance/compat/check_epistemic_process_packet.py; governance/compat/check_finding_to_governance_learning.py; governance/compat/check_markdown_structural_completeness.py; governance/compat/check_governed_artifact_checker_read_ahead.py; governance/compat/check_agent_packet_authority_and_encoding.py; governance/compat/check_agent_operation_trace.py; governance/compat/check_adif_defect_registry_disclosure.py; governance/compat/check_public_export_disposition.py; governance/compat/check_core_guard_self_protection.py |
 | literalTokensReviewed | Source/Decision/Evidence/Claim Boundary; read-ahead fields; trace labels; Resolver query; Returned defects; Public Export Disposition |
 | additionalCheckersRead | governance/compat/check_work_order_dispatch_quality.py; governance/compat/check_external_knowledge_intake_routing.py; governance/compat/check_raw_memory_release_invariant.py |
 | gateRunPurpose | Confirm authored bounded scope and evidence; not first discovery of literals |
@@ -113,7 +206,7 @@ The binding preserves the existing method; no remote agent or external intake.
 
 ## ADIF Defect Registry Disclosure
 
-Resolver query: taskClass=`Worker execution`, role=`worker`, lifecyclePhase=`pre-implementation`
+Resolver query: taskClass=`review`, role=`reviewer`, lifecyclePhase=`review`
 
 Returned defects: NONE_RETURNED. Zero candidates and no truncation.
 
@@ -121,22 +214,22 @@ Returned defects: NONE_RETURNED. Zero candidates and no truncation.
 
 | Field | Evidence |
 |---|---|
-| Actor | Local learning-loop maintainer/reviewer |
-| Provider or surface | private repository, no provider or delegation |
-| Session or invocation | ncr-learning-loopback-20261007 |
+| Actor | Local canary-control maintainer and evidence recorder |
+| Provider or surface | private repository and Alibaba only; no delegation |
+| Session or invocation | canary-source-model-20261007 |
 | Working directory | repository root |
-| Command or tool surface | targeted owner reads, sealed Git/receipt/oracle joins, exact documentation writes |
-| Target paths | docs/reviews/learnings/CVF_OUTCOME_BOUND_CONTINUATION_LEARNING_2026-10-07.md; docs/reviews/learnings/README.md; docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md |
-| Allowed scope source | operator next, existing lifecycle Outcome-Bound Work Selection And Terminal Review and project learning-loop owner |
-| Before status evidence | clean a0ead33b9b2383c51b8ff892971308b19e3cdcc7 |
-| After status evidence | three documentation owners; product and current execution packet unchanged |
-| Diff evidence | exact staged three-path manifest and whitespace check |
-| Approval boundary | Local source-only disposition, no new worker/provider/runtime/pilot/public action |
-| Claim boundary | bounded learning reconciliation, not general enforcement or W05 readiness |
+| Command or tool surface | scoped source repair; 14 unit tests; tsc/lint; bounded canary with injected grant; separate transport diagnostic |
+| Target paths | scripts/run_cvf_provider_live_canary.py; scripts/test_run_cvf_provider_live_canary.py; EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.front-door-rewrite.alibaba.live.test.ts; docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md; docs/reviews/evidence/cvf-canary-source-model-binding-2026-10-07.json |
+| Allowed scope source | operator next and standing grouped Local/Alibaba-only test authority; direct-task admission |
+| Before status evidence | clean 4cbaf3f6e1c4ace076223cf9264ed9b2367ac455 |
+| After status evidence | exact five material paths; no route/policy/credential file or closed authority change |
+| Diff evidence | staged manifest and companion source/result hashes |
+| Approval boundary | synthetic test/tool repair only; no live pilot/real-data/public/deploy |
+| Claim boundary | source controls verified; live canary FAIL retained, no certification or release proof |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-learning-loopback-20261007 |
-| Expected manifest | docs/reviews/learnings/CVF_OUTCOME_BOUND_CONTINUATION_LEARNING_2026-10-07.md; docs/reviews/learnings/README.md; docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md |
-| Actual changed set | docs/reviews/learnings/CVF_OUTCOME_BOUND_CONTINUATION_LEARNING_2026-10-07.md; docs/reviews/learnings/README.md; docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md |
+| Invocation ID | canary-source-model-20261007 |
+| Expected manifest | scripts/run_cvf_provider_live_canary.py; scripts/test_run_cvf_provider_live_canary.py; EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.front-door-rewrite.alibaba.live.test.ts; docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md; docs/reviews/evidence/cvf-canary-source-model-binding-2026-10-07.json |
+| Actual changed set | scripts/run_cvf_provider_live_canary.py; scripts/test_run_cvf_provider_live_canary.py; EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.front-door-rewrite.alibaba.live.test.ts; docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md; docs/reviews/evidence/cvf-canary-source-model-binding-2026-10-07.json |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |
 
@@ -301,7 +394,8 @@ and proof gap; data/effect/browser/P11/public decisions remain separate.
 
 ## Claim Boundary
 
-Local consumer source repair only. No full roadmap, live governance, corpus scan,
+Local consumer/tool source controls and bounded Alibaba transport only. Live
+route canary NOT_PASSED; no full roadmap, live governance, corpus scan,
 release, acceptance, public or deployment claim. Predecessor evidence unchanged.
 
 ## Public Export Disposition

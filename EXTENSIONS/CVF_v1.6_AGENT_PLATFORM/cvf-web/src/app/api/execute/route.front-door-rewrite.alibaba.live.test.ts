@@ -42,6 +42,7 @@ vi.mock('@/lib/quota-guard', () => ({
 import { POST } from './route';
 
 const ALIBABA_API_KEY = resolveAlibabaApiKey();
+const ALIBABA_CANARY_MODEL = process.env.CVF_CANARY_ALIBABA_MODEL?.trim() || 'qwen-flash';
 
 describe.skipIf(!ALIBABA_API_KEY)(
   '/api/execute front-door rewrite live — Alibaba governed path',
@@ -108,7 +109,7 @@ describe.skipIf(!ALIBABA_API_KEY)(
               intent: generateIntent(template!, inputs),
               inputs,
               provider: 'alibaba',
-              model: 'qwen-flash',
+              model: ALIBABA_CANARY_MODEL,
               mode: 'simple',
               aiCommit: {
                 commitId: 'live-front-door-app-brief',
@@ -125,6 +126,7 @@ describe.skipIf(!ALIBABA_API_KEY)(
 
         expect(response.status).toBe(200);
         expect(body.success).toBe(true);
+        expect(body.model).toBe(ALIBABA_CANARY_MODEL);
         expect(output.length).toBeGreaterThan(500);
         expect(output).toMatch(/TaskFlow/i);
         expect(output).toMatch(/Requirements Overview|Specification|Complete App Brief/i);
@@ -161,7 +163,7 @@ describe.skipIf(!ALIBABA_API_KEY)(
               intent: generateIntent(template!, inputs),
               inputs,
               provider: 'alibaba',
-              model: 'qwen-flash',
+              model: ALIBABA_CANARY_MODEL,
               mode: 'simple',
               aiCommit: {
                 commitId: 'live-front-door-integration',
@@ -178,6 +180,7 @@ describe.skipIf(!ALIBABA_API_KEY)(
 
         expect(response.status).toBe(200);
         expect(body.success).toBe(true);
+        expect(body.model).toBe(ALIBABA_CANARY_MODEL);
         expect(output.length).toBeGreaterThan(450);
         expect(output).toMatch(/LeadSync|tích hợp/i);
         expect(output).toMatch(/Operations|Payloads|Giao thức|Hoạt động|Dữ liệu|Thông tin trao đổi/i);
@@ -211,7 +214,7 @@ describe.skipIf(!ALIBABA_API_KEY)(
               intent: generateIntent(template!, inputs),
               inputs,
               provider: 'alibaba',
-              model: 'qwen-flash',
+              model: ALIBABA_CANARY_MODEL,
               mode: 'simple',
               aiCommit: {
                 commitId: 'live-front-door-code-review',
@@ -228,6 +231,7 @@ describe.skipIf(!ALIBABA_API_KEY)(
 
         expect(response.status).toBe(200);
         expect(body.success).toBe(true);
+        expect(body.model).toBe(ALIBABA_CANARY_MODEL);
         expect(output.length).toBeGreaterThan(400);
         expect(output).toMatch(/Intended Outcome|What This Part|Mục tiêu/i);
         expect(output).toMatch(/Main Risks|Risk|Rủi ro/i);
@@ -261,7 +265,7 @@ describe.skipIf(!ALIBABA_API_KEY)(
               intent: generateIntent(template!, inputs),
               inputs,
               provider: 'alibaba',
-              model: 'qwen-flash',
+              model: ALIBABA_CANARY_MODEL,
               mode: 'simple',
               aiCommit: {
                 commitId: 'live-front-door-documentation',
@@ -278,6 +282,7 @@ describe.skipIf(!ALIBABA_API_KEY)(
 
         expect(response.status).toBe(200);
         expect(body.success).toBe(true);
+        expect(body.model).toBe(ALIBABA_CANARY_MODEL);
         expect(output.length).toBeGreaterThan(400);
         expect(output).toMatch(/What This Document Is For|Mục tiêu|For/i);
         expect(output).toMatch(/Main Flow|Steps|Bước/i);
@@ -316,7 +321,7 @@ describe.skipIf(!ALIBABA_API_KEY)(
               intent: generateIntent(template!, inputs),
               inputs,
               provider: 'alibaba',
-              model: 'qwen-flash',
+              model: ALIBABA_CANARY_MODEL,
               mode: 'simple',
               aiCommit: {
                 commitId: 'live-front-door-ux-packet',
@@ -333,6 +338,7 @@ describe.skipIf(!ALIBABA_API_KEY)(
 
         expect(response.status).toBe(200);
         expect(body.success).toBe(true);
+        expect(body.model).toBe(ALIBABA_CANARY_MODEL);
         expect(output.length).toBeGreaterThan(600);
         expect(output).toMatch(/Review Gate/i);
         expect(output).toMatch(/QA Rules|QA checklist|Pre-Build Approval|Post-Build Validation|Release Process/i);
@@ -365,7 +371,7 @@ describe.skipIf(!ALIBABA_API_KEY)(
               intent: generateIntent(template!, inputs),
               inputs,
               provider: 'alibaba',
-              model: 'qwen-flash',
+              model: ALIBABA_CANARY_MODEL,
               mode: 'simple',
               aiCommit: {
                 commitId: 'live-front-door-data-analysis',
@@ -382,6 +388,7 @@ describe.skipIf(!ALIBABA_API_KEY)(
 
         expect(response.status).toBe(200);
         expect(body.success).toBe(true);
+        expect(body.model).toBe(ALIBABA_CANARY_MODEL);
         expect(output.length).toBeGreaterThan(450);
         expect(output).toMatch(/What Data We Looked At|Data We|Nguồn Dữ Liệu/i);
         expect(output).toMatch(/Suggests|Clearly Suggests|Insight|Kết Luận/i);

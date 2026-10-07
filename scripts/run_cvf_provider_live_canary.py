@@ -9,6 +9,9 @@ Usage:
   python scripts/run_cvf_provider_live_canary.py --provider openai [--save-receipt]
 
 Exit codes: 0=all pass, 1=one or more fail, 2=API key absent, 3=provider unsupported
+Live collection does not authorize provider traffic: the caller must inject an
+existing bounded provider-execution grant. --key-source selects credentials,
+not execution authority. Alibaba --model is bound to the live fixture requests.
 """
 import argparse
 import hashlib
@@ -19,6 +22,11 @@ import sys
 import tempfile
 from datetime import datetime, timezone
 from pathlib import Path
+
+try:
+    from _local_env import _parse_env_line
+except ModuleNotFoundError:
+    from scripts._local_env import _parse_env_line
 
 REPO_ROOT = Path(__file__).parent.parent
 CVF_WEB = REPO_ROOT / "EXTENSIONS" / "CVF_v1.6_AGENT_PLATFORM" / "cvf-web"
@@ -79,30 +87,50 @@ SCENARIOS = [
 def read_env_file(path: Path, key: str) -> str | None:
     if not path.exists():
         return None
-    for raw in path.read_text(encoding="utf-8").splitlines():
-        line = raw.strip()
-        if not line or line.startswith("#") or "=" not in line:
-            continue
-        name, value = line.split("=", 1)
-        if name.strip() == key:
-            return value.strip().strip('"').strip("'")
+    for raw in path.read_text(encoding="utf-8-sig").splitlines():
+        parsed = _parse_env_line(raw)
+        if parsed and parsed[0] == key:
+            return parsed[1]
     return None
 
 
-def resolve_api_key(cfg: dict) -> str | None:
-    for name in cfg["key_env_names"]:
-        if v := os.environ.get(name):
-            return v
-    for name in cfg["key_env_names"]:
-        if v := read_env_file(CVF_WEB / ".env.local", name):
-            return v
-    return None
+def resolve_credentials(cfg: dict, key_source: str = "auto") -> tuple[str | None, dict]:
+    """Select without silent fallback from an explicitly chosen source.
+
+    The report contains source/alias identities and comparisons, never keys.
+    Auto retains the existing environment-before-local precedence.
+    """
+    if key_source not in {"auto", "environment", "local"}:
+        raise ValueError("Unsupported credential source")
+    sources = {
+        "environment": [(name, os.environ.get(name, "").strip()) for name in cfg["key_env_names"]],
+        "local": [(name, (read_env_file(CVF_WEB / ".env.local", name) or "").strip()) for name in cfg["key_env_names"]],
+    }
+    order = ["environment", "local"] if key_source == "auto" else [key_source]
+    selected = next(((source, name, value) for source in order for name, value in sources[source] if value), None)
+    env_values = {value for _, value in sources["environment"] if value}
+    local_values = {value for _, value in sources["local"] if value}
+    report = {
+        "requestedSource": key_source,
+        "selectedSource": selected[0] if selected else None,
+        "selectedAlias": selected[1] if selected else None,
+        "sourcesDiffer": bool(env_values and local_values and env_values != local_values),
+        "environmentAliasesAgree": len(env_values) <= 1,
+        "localAliasesAgree": len(local_values) <= 1,
+    }
+    return (selected[2] if selected else None), report
+
+
+def resolve_api_key(cfg: dict, key_source: str = "auto") -> str | None:
+    return resolve_credentials(cfg, key_source)[0]
 
 
 def run_tests(cfg: dict, api_key: str, json_out: Path) -> int:
     env = {**os.environ, cfg["key_export_env"]: api_key}
+    if cfg["key_export_env"] == "ALIBABA_API_KEY":
+        env["CVF_CANARY_ALIBABA_MODEL"] = cfg["model"]
     cmd = (
-        f'npx vitest run "{cfg["test_pattern"]}"'
+        f'npx vitest run --mode live "{cfg["test_pattern"]}"'
         f" --reporter=verbose --reporter=json"
         f' --outputFile="{json_out}"'
         f' --testTimeout={cfg["timeout_ms"]}'
@@ -117,7 +145,7 @@ def load_json(path: Path) -> dict:
     return {}
 
 
-def build_receipt(vitest: dict, cfg: dict) -> dict:
+def build_receipt(vitest: dict, cfg: dict, process_exit_code: int | None = None) -> dict:
     now = datetime.now(timezone.utc)
     run_id = (
         f"{now.strftime('%Y%m%d-%H%M%S')}-"
@@ -154,12 +182,16 @@ def build_receipt(vitest: dict, cfg: dict) -> dict:
     pass_n = sum(1 for r in rows if r["status"] == "PASS")
     fail_n = sum(1 for r in rows if r["status"] == "FAIL")
     skip_n = sum(1 for r in rows if r["status"] == "SKIP")
-    overall = "SKIP" if skip_n == len(SCENARIOS) else ("FAIL" if fail_n else "PASS")
+    overall = "SKIP" if skip_n == len(SCENARIOS) else ("FAIL" if fail_n or skip_n else "PASS")
+    if process_exit_code not in {None, 0}:
+        overall = "FAIL"
     return {
         "run_id": run_id,
         "timestamp": now.isoformat(),
         "provider": cfg["key_export_env"].split("_")[0].lower(),
         "model": cfg["model"],
+        "credential_source": cfg.get("credential_source"),
+        "process_exit_code": process_exit_code,
         "triggered_by": "cli",
         "scenarios": rows,
         "overall_status": overall,
@@ -230,6 +262,8 @@ def main() -> None:
                         help="Provider lane to run (alibaba | deepseek | openai)")
     parser.add_argument("--model", default=None,
                         help="Override model name (optional)")
+    parser.add_argument("--key-source", choices=["auto", "environment", "local"], default="auto",
+                        help="Credential source; auto keeps environment-before-local precedence")
     parser.add_argument("--save-receipt", action="store_true",
                         help="Write evidence receipt to docs/audits/<provider>-canary/")
     args = parser.parse_args()
@@ -242,7 +276,12 @@ def main() -> None:
     if args.model:
         cfg["model"] = args.model
 
-    api_key = resolve_api_key(cfg)
+    api_key, source_report = resolve_credentials(cfg, args.key_source)
+    cfg["credential_source"] = source_report
+    if source_report["sourcesDiffer"] or not source_report["environmentAliasesAgree"] or not source_report["localAliasesAgree"]:
+        print("WARNING: credential sources/aliases differ; selected source="
+              f"{source_report['selectedSource']}. Use --key-source environment or local "
+              "to select explicitly; credential values withheld.", file=sys.stderr)
     if not api_key:
         env_hint = " or ".join(cfg["key_env_names"][:2])
         print(f"ERROR: No API key found for provider '{args.provider}'. "
@@ -253,12 +292,12 @@ def main() -> None:
         json_out = Path(tmp.name)
 
     try:
-        run_tests(cfg, api_key, json_out)
+        process_exit_code = run_tests(cfg, api_key, json_out)
         vitest_data = load_json(json_out)
     finally:
         json_out.unlink(missing_ok=True)
 
-    receipt = build_receipt(vitest_data, cfg)
+    receipt = build_receipt(vitest_data, cfg, process_exit_code)
     print_summary(receipt)
 
     if args.save_receipt:
