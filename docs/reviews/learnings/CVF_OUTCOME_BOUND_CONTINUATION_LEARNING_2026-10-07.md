@@ -9,6 +9,11 @@ rootCauseClusterId: NCR-PATCH-BY-PATCH-CONTINUATION
 rawMemoryReleased=false
 providerExecutionAuthority: FORBIDDEN
 
+Current disposition: NCR lexical alignment ACCEPTED_BOUNDED with F1 known limit;
+general maintenance outcome automation and agent behavior remain unproved.
+Read Current Local Loopback After NCR Closure first for current decisions;
+earlier assessment and design observations bind their historical revisions.
+
 ## Purpose
 
 Assess the operator-reported fragmented continuation as a CVF foundation
@@ -35,7 +40,7 @@ The probe does not run the whole autorun pipeline or intercept assistant replies
 | docs/reference/CVF_TASK_PROPORTIONAL_GOVERNANCE_ROUTING_STANDARD_2026-08-17.md, Tranche Admission And Continuation Value | existing optional fourteen-field trancheValue; repair-class scope; future consumers need accepted design; value receipt is shadow, not execution authority |
 | governance/compat/check_task_governance_route.py, evaluate; governance/compat/route_task_governance.py, evaluate_tranche_value | checker scans changed active work orders; value record evaluated only when declared; valueDispositionAuthoritative remains false |
 | governance/compat/check_continuation_chain.py, _check_work_orders and _check_handoff_head | checks GC-018 reference, matching completion review and HEAD/parent continuity; not a reducer of receiving-work outcome results |
-| governance/compat/check_active_session_state.py, _next_allowed_move_signature and _check_next_allowed_move_alignment | family-token comparison; no recognized state token returns no alignment violations |
+| governance/compat/check_active_session_state.py and governance/compat/active_session_next_move_alignment.py | initial source probe is historical; current bounded NCR comparison disposition and F1 limit are in the Local loopback below |
 | docs/reviews/evidence/cvf-outcome-continuation-probe-2026-10-07.json | exact source-byte hashes and negative/control helper observations; structural evidence only |
 | docs/reference/downstream_gate_profile/CVF_PROJECT_LEARNING_LOOP_STANDARD.md; docs/reviews/learnings/README.md | existing value/dedup and shared discovery owners; discovery does not prove adoption |
 
@@ -86,7 +91,7 @@ design. Do not mistake next-token consistency repair for outcome enforcement.
 | Work selected and stopped per patch despite consolidation instruction | ORCHESTRATOR_PACKET_GAP | GOVERNANCE_CONTROL_PLANE | RULE_EXISTS | apply committed Operator Review and finite W05 package; no unrelated endpoint hunting |
 | Existing value controls optional, work-order-scoped and shadow; no shown binding to this maintenance continuation | MACHINE_GATE_GAP | GOVERNANCE_CONTROL_PLANE | DESIGN_REVIEW_REQUIRED | assess existing TPGR/lifecycle admission-to-terminal seam with task-class coverage before any enforcement extension |
 | Package completion not derived from all required outcome results | PHASE_GATE_PLACEMENT_GAP | GOVERNANCE_CONTROL_PLANE | MACHINE_CHECK_CANDIDATE | bind existing admission and closure proof to finite package; NOT_IMPLEMENTED, acceptance cases below |
-| Current NCR next-move consistency helper skips unknown token family | MACHINE_GATE_GAP | GOVERNANCE_CONTROL_PLANE | MACHINE_CHECK_CANDIDATE | existing active-state owner candidate; test drift and legacy compatibility; NOT_IMPLEMENTED, separate from semantic progress |
+| Initial NCR next-move consistency gap | MACHINE_GATE_GAP | GOVERNANCE_CONTROL_PLANE | MACHINE_CHECK_ADDED | existing active-state owner extension accepted bounded at 9dd87aa9a; full current NCR declaration comparison, legacy compatibility and F1 known limit; not outcome enforcement |
 
 Runtime/provider/cost lanes: N/A_WITH_REASON - no new behavior or economics
 measurement. Unknown opportunity cost remains UNKNOWN, not zero or estimated.
@@ -115,7 +120,7 @@ Machine promotion acceptance cases in existing owners, before claiming enforceme
 These are design/proof requirements, not completed tests. Keep W05 as the selected
 upgrade package; do not replace it with an open-ended governance-hardening campaign.
 
-## Resolution And Loopback States
+## Historical Resolution And Loopback States
 
 | Independent state | Current disposition |
 |---|---|
@@ -125,7 +130,7 @@ upgrade package; do not replace it with an open-ended governance-hardening campa
 | Return delivery | Git discovery available after commit; independent receiving-agent receipt NOT_RETURNED |
 | Source-project application | written next move applied in prior continuity; actual outcome-bound execution NOT_APPLIED_WITH_PROOF |
 
-## Existing-Owner Design Disposition - 2026-10-07
+## Historical Existing-Owner Design Disposition - 2026-10-07
 
 Design base e5cb97872e0e5305b25fb99bf0a9c13d83b27a45, clean worktree. Operator
 next admits this finite design assessment, not new checker/schema activation.
@@ -214,6 +219,85 @@ Source-project application: written lifecycle routing present; full executable
 admission-to-terminal application NOT_APPLIED_WITH_PROOF. Earlier observation
 and independent state rows remain historical and are qualified by this follow-up.
 
+## Current Local Loopback After NCR Closure - 2026-10-07
+
+Consumer: the next Local agent selecting CVF work after NCR closure. Required
+outcome: one consistent current disposition in this learning, its discovery
+index and the existing consumer continuation. Exact scope is these three
+documentation owners; no product repair, new work order or new control activation.
+
+Named contradiction: earlier design-time rows say the NCR parser candidate is
+NOT_IMPLEMENTED, while the later accepted packet is closed. Information gain:
+separate resolved parser consistency from the still-open outcome-control issue.
+Cost reason: consume sealed proof and verify Git/embedded evidence identities;
+no duplicate tests, provider call, Docker run or whole-route W05 replay.
+Earlier assessment/design paragraphs describe their recorded revisions, not
+current absence. This section governs the current disposition.
+
+| Existing owner / required output | Current evidence | Disposition |
+|---|---|---|
+| NCR lexical comparison | docs/reviews/CVF_NCR_NEXT_MOVE_ALIGNMENT_COMPLETION_2026-10-07.md; material 9dd87aa9ae29df4a0691a91e86555a567772889a; continuity a0ead33b9b2383c51b8ff892971308b19e3cdcc7 | ACCEPTED_BOUNDED; existing owner updated, not a new checker |
+| Eligible packet / return route | docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_NEXT_MOVE_ALIGNMENT_2026-10-07.md; sealed original worker evidence and accepted Local proof | bounded admission/return/review/closure evidence consumed; no universal maintenance coverage claim |
+| Independent probe | docs/reviews/evidence/cvf-ncr-next-move-alignment-local-review-2026-10-07.json; original receipt/oracle preserved, source Git pins matched | 245 assertions, zero mismatches in 4000 NCR and 4000 legacy samples; finite lexical fixtures only |
+| F1 supported-input limit | current generated bare state; unsupported backticks around the whole prefix can skip NCR | ACCEPT_KNOWN_LIMIT_LOW; do not promote to all-envelope fail-closed behavior |
+| F2/F3 provenance | Git blob byte identities and executable-oracle digests distinct from evidence-file binding | corrected metadata consumed; original worker bytes preserved |
+| W05 receiving-work disposition | docs/reviews/CVF_NCR_W05_SELECTED_CHAIN_READINESS_2026-10-07.md | LOCAL_CHAIN_RECONCILED_BOUNDED; current integrated runtime, pre-live/R2 exit and R3 remain unproved |
+| General user orientation | docs/reviews/CVF_CVF_NCR_GENERAL_USER_GUIDE_REFRESH_COMPLETION_2026-10-02.md | ACCEPTED_BOUNDED documentation already exists; reuse, do not rewrite as a new deliverable; video not admitted |
+
+### Current Independent States
+
+| Independent state | Current disposition |
+|---|---|
+| Project resolution | NCR parser subfinding resolved bounded; fragmented selection/stopping root issue is not universally proven resolved |
+| Parent decision | MERGE_INTO_EXISTING_OWNER / REUSE_EXISTING_FIRST retained |
+| Parent implementation | lifecycle written routing retained; NCR comparison extended in existing owner; general Local-maintenance automation NOT_IMPLEMENTED |
+| Return delivery | existing Git-backed shared discovery updated; separate receiving-agent acknowledgment of this learning NOT_RETURNED |
+| Source-project application | bounded NCR packet application evidenced; W05 current runtime and general agent behavior NOT_VERIFIED |
+
+### Source Identity Verification
+
+Local verified accepted Git blob byte SHA-256 values for all four named source
+paths and the embedded original receipt/oracle bytes. The post-probe terminal
+test blank-spacing correction has identical AST and separately named accepted
+source identities. Current source and probe observations do not require a rerun.
+The retained committed-range receipt is a deterministic gate envelope; it
+explicitly excludes a complete seven-phase phase-return envelope. Do not turn
+its PASS into proof of all semantic fulfillment obligations or agent behavior.
+
+```json
+{
+  "sourceClosureMaterialCommit": "9dd87aa9ae29df4a0691a91e86555a567772889a",
+  "sourceClosureContinuityCommit": "a0ead33b9b2383c51b8ff892971308b19e3cdcc7",
+  "completion": "docs/reviews/CVF_NCR_NEXT_MOVE_ALIGNMENT_COMPLETION_2026-10-07.md",
+  "acceptedProof": "docs/reviews/evidence/cvf-ncr-next-move-alignment-local-review-2026-10-07.json",
+  "acceptedProofWorktreeSha256": "ee3b50fbda5c672f0985f589afc12871b4814b83ee9aee7ea9e73369d1f53a6c",
+  "acceptedGitSourcePinsMatch": true,
+  "embeddedReceiptAndOraclePinsMatch": true,
+  "committedClosureReceiptDigest": "0fd0cfa53dc7d79b595dc492bc954cdacd2fc9fff7b8ee90501c6e54215845ed",
+  "committedEvidenceFingerprint": "432eff84b97daf437f9a70e9498fa0a794cd36d5c587f63c0f2a0120c24cbcd7",
+  "verificationBoundary": [
+    "this is a local deterministic gate envelope, not a complete seven-phase phase-return envelope"
+  ],
+  "newProductRuns": 0,
+  "providerCalls": 0,
+  "scope": [
+    "docs/reviews/learnings/CVF_OUTCOME_BOUND_CONTINUATION_LEARNING_2026-10-07.md",
+    "docs/reviews/learnings/README.md",
+    "docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md"
+  ]
+}
+```
+
+### Terminal Disposition And Remaining Frontier
+
+LOCAL_LEARNING_LOOPBACK_RECONCILED_BOUNDED. Required learning/discovery/project
+documentation is reconciled as one package. No new parser repair is selected
+from this loopback. General outcome-control automation, W05 current-route proof,
+browser acceptance and real-data/effect work retain their own admission needs.
+Q001/Q004, send/B2, S05/C1, P11, CCMA and public/deploy stay parked. Subsequent
+Local selection must name a receiving-work outcome and source-specific proof
+before admitting execution; a general next request is not a stopped-lane reset.
+
 ## Current Runtime Freshness Verification
 
 N/A_WITH_REASON - targeted control-source assessment at the recorded revision,
@@ -246,24 +330,25 @@ Returned defects: zero; totalCandidates=0; truncated=false. No ADIF defect waive
 
 ## Agent Operation Trace Block
 
+
 | Field | Evidence |
 |---|---|
-| Actor | Local governance reviewer and closer |
-| Provider or surface | private repository tools; no provider call or delegation |
-| Session or invocation | ncr-outcome-learning-20261007 |
-| Working directory | D:/UNG DUNG AI/TOOL AI 2026/Controlled-Vibe-Framework-CVF |
-| Command or tool surface | targeted owner reads, isolated helper probe, exact-path writes and commit helper |
-| Target paths | this record; docs/reviews/learnings/README.md; docs/reference/CVF_GOVERNED_WORK_LIFECYCLE_AND_DESIGN_CONTROL_STANDARD_2026-06-11.md; docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md |
-| Allowed scope source | operator next and active finite existing-owner design assessment |
-| Before status evidence | clean e5cb97872e0e5305b25fb99bf0a9c13d83b27a45 for this design follow-up |
-| After status evidence | four material paths; dedicated continuity follows |
-| Diff evidence | exact-path Git staged set and source hashes in probe receipt |
-| Approval boundary | learning assessment/discovery only; no gate activation, successor or effect authority |
-| Claim boundary | no completed enforcement or receiving-agent adoption proof |
+| Actor | Local learning-loop maintainer/reviewer |
+| Provider or surface | private repository, no provider or delegation |
+| Session or invocation | ncr-learning-loopback-20261007 |
+| Working directory | repository root |
+| Command or tool surface | targeted owner reads, sealed Git/receipt/oracle joins, exact documentation writes |
+| Target paths | docs/reviews/learnings/CVF_OUTCOME_BOUND_CONTINUATION_LEARNING_2026-10-07.md; docs/reviews/learnings/README.md; docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md |
+| Allowed scope source | operator next, existing lifecycle Outcome-Bound Work Selection And Terminal Review and project learning-loop owner |
+| Before status evidence | clean a0ead33b9b2383c51b8ff892971308b19e3cdcc7 |
+| After status evidence | three documentation owners; product and current execution packet unchanged |
+| Diff evidence | exact staged three-path manifest and whitespace check |
+| Approval boundary | Local source-only disposition, no new worker/provider/runtime/pilot/public action |
+| Claim boundary | bounded learning reconciliation, not general enforcement or W05 readiness |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-outcome-learning-20261007 |
-| Expected manifest | this record; docs/reviews/learnings/README.md; docs/reference/CVF_GOVERNED_WORK_LIFECYCLE_AND_DESIGN_CONTROL_STANDARD_2026-06-11.md; docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md |
-| Actual changed set | same four material paths |
+| Invocation ID | ncr-learning-loopback-20261007 |
+| Expected manifest | docs/reviews/learnings/CVF_OUTCOME_BOUND_CONTINUATION_LEARNING_2026-10-07.md; docs/reviews/learnings/README.md; docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md |
+| Actual changed set | docs/reviews/learnings/CVF_OUTCOME_BOUND_CONTINUATION_LEARNING_2026-10-07.md; docs/reviews/learnings/README.md; docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |
 

@@ -60,7 +60,7 @@ regressions bind the defect/repair to this consumer; no upstream absence claim.
 | Matching local-view guard | N/A with reason: no external input; existing route/test consumer |
 | Owner surface | existing NCR P06 memory readout route and baseline continuation |
 | Disposition | LOCAL_SOURCE_REPAIR_ONLY |
-| Claim boundary | no external research, repository absorption or provider/runtime readiness claim |
+| Claim boundary | bounded learning reconciliation, not general enforcement or W05 readiness |
 
 Exact material manifest: the two route/source test files named above, this
 continuation and the predecessor's continuation pointer. No other product path.
@@ -121,22 +121,22 @@ Returned defects: NONE_RETURNED. Zero candidates and no truncation.
 
 | Field | Evidence |
 |---|---|
-| Actor | Local maintainer/reviewer |
-| Provider or surface | private CVF workspace |
-| Session or invocation | NCR memory-readout input20261007 |
-| Working directory | repository root; Web directory for Node checks |
-| Command or tool surface | targeted reads,apply_patch,Vitest,TypeScript,ESLint,Git helper |
-| Target paths | exact four-path material manifest above |
-| Allowed scope source | operator next and continuous admitted consumer maintenance |
-| Before status evidence | clean affb57de037c1737f5ce042e6cf37f25219f1f9e |
-| After status evidence | 35/35 focused tests; TypeScript/lint/diff PASS |
-| Diff evidence | exact staged four-path manifest; no unrelated product changes |
-| Approval boundary | admitted source repair; actual-data/browser/P11 checkpoints retained |
-| Claim boundary | structural parsing/projection only; no live governance/release proof |
-| Agent type | Local maintainer/reviewer |
-| Invocation ID | ncr-memory-readout-input-20261007 |
-| Expected manifest | two memory readout files,this continuation,predecessor pointer |
-| Actual changed set | two memory readout files,this continuation,predecessor pointer |
+| Actor | Local learning-loop maintainer/reviewer |
+| Provider or surface | private repository, no provider or delegation |
+| Session or invocation | ncr-learning-loopback-20261007 |
+| Working directory | repository root |
+| Command or tool surface | targeted owner reads, sealed Git/receipt/oracle joins, exact documentation writes |
+| Target paths | docs/reviews/learnings/CVF_OUTCOME_BOUND_CONTINUATION_LEARNING_2026-10-07.md; docs/reviews/learnings/README.md; docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md |
+| Allowed scope source | operator next, existing lifecycle Outcome-Bound Work Selection And Terminal Review and project learning-loop owner |
+| Before status evidence | clean a0ead33b9b2383c51b8ff892971308b19e3cdcc7 |
+| After status evidence | three documentation owners; product and current execution packet unchanged |
+| Diff evidence | exact staged three-path manifest and whitespace check |
+| Approval boundary | Local source-only disposition, no new worker/provider/runtime/pilot/public action |
+| Claim boundary | bounded learning reconciliation, not general enforcement or W05 readiness |
+| Agent type | INTERNAL_AGENT |
+| Invocation ID | ncr-learning-loopback-20261007 |
+| Expected manifest | docs/reviews/learnings/CVF_OUTCOME_BOUND_CONTINUATION_LEARNING_2026-10-07.md; docs/reviews/learnings/README.md; docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md |
+| Actual changed set | docs/reviews/learnings/CVF_OUTCOME_BOUND_CONTINUATION_LEARNING_2026-10-07.md; docs/reviews/learnings/README.md; docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |
 
@@ -229,7 +229,7 @@ ADIF Worker execution/worker/pre-implementation query zero candidates,no
 truncation. Exact material scope: this existing continuation. Active next move
 must carry this correction rather than the open-ended P06 gap-search instruction.
 
-## Foundation Learning Follow-Up - 2026-10-07
+## Historical Foundation Learning Follow-Up - 2026-10-07
 
 Operator asks to assess the foundation control gap exposed by fragmented work.
 Shared learning: docs/reviews/learnings/CVF_OUTCOME_BOUND_CONTINUATION_LEARNING_2026-10-07.md.
@@ -253,7 +253,7 @@ separate; changed source bytes are explicitly qualified. Current whole-route,
 browser,real-data/effect and R2 exit/R3 proof are not supplied. W05 pre-live is
 NOT_CLOSED. No general P06 sweep or duplicate product/provider/Docker rerun.
 
-## Outcome-Control Design Package - 2026-10-07
+## Historical Outcome-Control Design Package - 2026-10-07
 
 Existing-Owner Design Disposition in the shared outcome-bound learning completes
 owner/coverage mapping,requirement-to-terminal route,negative/positive proof
@@ -265,7 +265,7 @@ to the lifecycle owner. Six focused structural fixtures PASS;no agent/runtime
 or whole-route governance proof. General Local-maintenance coverage and NCR
 next-token correction remain NOT_IMPLEMENTED. No schema/checker activation.
 
-## NCR Next-Move Alignment Packet - 2026-10-07
+## Historical NCR Next-Move Alignment Packet - 2026-10-07
 
 One complete scope/spec/proof package prepared in
 docs/baselines/CVF_GC018_NCR_NEXT_MOVE_ALIGNMENT_2026-10-07.md and
@@ -279,6 +279,26 @@ candidate-only closeability graph check zero violations,repository status kept
 DRAFT. Full dispatcher ADIF query27 IDs disclosed without truncation. No code
 edit,worker transfer,provider test,new schema/checker binding or gate bypass.
 
+## Current Learning Loopback And Backlog Boundary - 2026-10-07
+
+Current learning: docs/reviews/learnings/CVF_OUTCOME_BOUND_CONTINUATION_LEARNING_2026-10-07.md, Current Local Loopback After NCR Closure.
+Discovery: docs/reviews/learnings/README.md. The three owners are reconciled together; prior design
+NOT_IMPLEMENTED and packet DRAFT descriptions above are historical snapshots.
+NCR lexical comparison is now accepted bounded under docs/reviews/CVF_NCR_NEXT_MOVE_ALIGNMENT_COMPLETION_2026-10-07.md at
+material 9dd87aa9ae29df4a0691a91e86555a567772889a and continuity a0ead33b9b2383c51b8ff892971308b19e3cdcc7.
+F1 unsupported whole-prefix backtick envelope remains LOW known debt; F2/F3
+Git-byte/oracle provenance is qualified in the accepted proof. Finite source
+identity joins PASS; no product/provider/Docker rerun.
+
+The eligible NCR packet supplies bounded admission/return/review/closure evidence;
+it does not prove universal Local-maintenance automation or agent comprehension.
+W05 readiness disposition already delivered, but current integrated runtime and
+pre-live remain unproved. General user orientation was already accepted on
+2026-10-02; reuse that guide, no new guide/video tranche from this update.
+No endpoint-hardening or reopened alignment successor is selected. Next Local
+work selection must identify its consumer, required outputs, admitted authority
+and proof gap; data/effect/browser/P11/public decisions remain separate.
+
 ## Claim Boundary
 
 Local consumer source repair only. No full roadmap, live governance, corpus scan,
@@ -286,4 +306,5 @@ release, acceptance, public or deployment claim. Predecessor evidence unchanged.
 
 ## Public Export Disposition
 
-DEFERRED_PRIVATE_ONLY - bounded local consumer continuation.
+DEFERRED_PRIVATE_ONLY
+Reason: private local consumer learning and documentation. Public-sync boundary: no public export, push or deploy; any public disposition uses the separate public-sync clone.
