@@ -1901,5 +1901,270 @@
       },
       "commentLint": "PASS"
     }
+  },
+  "canonicalBundleRefresh20261007": {
+    "admission": {
+      "baseHead": "b5c1d88938b199151558eef40725308878cbb338",
+      "role": "Local candidate tester/reviewer",
+      "decisionOwner": "Local",
+      "authority": "operator next plus standing Alibaba-only meaningful tests",
+      "consumer": "Local integrated candidate release reviewer",
+      "scope": [
+        "docs/baselines/CVF_GC018_NCR_INTAKE_DISPATCH_REPAIR_2026-10-07.md",
+        "docs/reviews/evidence/cvf-local-candidate-release-2026-10-07.json"
+      ],
+      "outputs": [
+        "one fresh canonical full-bundle result with stage status/diagnostics",
+        "source-bound candidate disposition preserving previous FAIL and selected proofs",
+        "continuity for next existing-owner roadmap outcome"
+      ],
+      "informationGain": "Initial canonical bundle failed before scanner,origin,brief-size,full-mode and quote/session repairs;selected stage PASS cannot certify their current combined result. Current full command is needed for candidate milestone.",
+      "budget": "One canonical bundle invocation only;existing fixed Alibaba E2E cases/attempt policy and SOT3 one-real-call permit;UI mock performs no provider proof. No blind replay or ranking/default/key/cap change.",
+      "stop": "Terminal stage reconciliation;diagnose any FAIL before compatible repair;no unrelated sweep,production/remote/public/P11 or real-data acceptance.",
+      "sourceGitSha256": {
+        "scripts/run_cvf_release_gate_bundle.py": "8630c24ef14f3f2839b1f81ac9976ff998525f2a8c48fd873bc5f1afe27ff160",
+        "scripts/cvf_release_web_runtime_isolation.py": "622bf6e9eef789419b7088092af986e7d82f05f6ce160ca2479d0b00a00235f8",
+        "scripts/run_cvf_sot3_a5_release_proof.py": "e0187349ef24c6635bb0a1a1c32c47985271f602005a0a1ad9456fee90129c82",
+        "scripts/run_cvf_sot3_a4_failure_recovery_proof.py": "7a8915f1c0e1048992a23f692d2c14b0bb27173046e93124218eed2b2a103a6c",
+        "scripts/cvf_release_secret_scan_policy.py": "21623fef0c4d5f5cb9915e4a36ca79b5b90e9c76ab8dbe99de5545beeea495e8",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/playwright.config.ts": "6e177cc6bc4c78d5c06f6a1ff889ec200b03b284ab684a4be71a87eb683538d7",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/utils.ts": "6ac5d6f2c8d29f09a59ebe8259becabccca6a28dd238e4e7aec7a31588476236",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/noncoder-governance-live.spec.ts": "fd18e2106925e65d74c82d4d49e75018ad87decbf8efba7fb2806b0b94e9702b",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/governance-gate-live.spec.ts": "cf46665c78709e24460ecbd3a220ba669f2d28c403b675d2e8e3467e5f1cf8ad",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/w113-workspace-web-live-proof.spec.ts": "a5c1d155fc163a38f11ecbbff745c6cb5a538266050909e25d364eda839d099d",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/AgentChatWithHistory.tsx": "20d74655258b5c9033f7a42d6821c07cc5c23d857abf3faf057e16bb78f949bf",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/hooks/useAgentChat.ts": "5f60cb289473b21e0d3c017992478cfa9bb062b7c891c7ba1479d854ad0b5192",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/chat-history.tsx": "dc4a450b97cd74dea6f67c23b253e06726622382c055c4cc48c1be8849803d0b"
+      }
+    },
+    "execution": {
+      "exitCode": 1,
+      "elapsedMs": 1002547,
+      "command": "python -B scripts/run_cvf_release_gate_bundle.py --json --output <ignored bundle> --manifest-output <ignored manifest> --sot3-diagnostic-output <ignored diagnostic> --e2e-diagnostic-output <ignored diagnostic>",
+      "provider": "Alibaba-only fixed live cases;readiness stage evaluates saved receipts",
+      "automaticReplay": false
+    },
+    "bundle": {
+      "date": "2026-10-07",
+      "gate_result": "FAIL",
+      "checks": [
+        {
+          "name": "Capability environment preflight",
+          "status": "PASS",
+          "message": "Capability environment preflight PASS",
+          "detail": [
+            "git:AVAILABLE",
+            "python:AVAILABLE",
+            "node:AVAILABLE",
+            "npm:AVAILABLE",
+            "npx:AVAILABLE"
+          ]
+        },
+        {
+          "name": "Web build (npm run build)",
+          "status": "PASS",
+          "message": "Build succeeded",
+          "detail": []
+        },
+        {
+          "name": "TypeScript check (guard contract)",
+          "status": "PASS",
+          "message": "TypeScript check clean",
+          "detail": []
+        },
+        {
+          "name": "Provider readiness",
+          "status": "PASS",
+          "message": "CERTIFIED lanes: 3 \u2014 status: CERTIFIED",
+          "detail": []
+        },
+        {
+          "name": "Secrets scan",
+          "status": "PASS",
+          "message": "No secret patterns detected in declared scan scope",
+          "detail": [
+            "filesScanned=67254 filesSkippedExtension=11147 skippedDirectories=177 filesUnreadable=0 stoppedAfterFindingsLimit=false"
+          ]
+        },
+        {
+          "name": "Docs governance (RC docs present)",
+          "status": "PASS",
+          "message": "All 3 required RC docs present",
+          "detail": []
+        },
+        {
+          "name": "E2E Playwright UI (mock)",
+          "status": "PASS",
+          "message": "Playwright UI mock suite passed",
+          "detail": [
+            "\u001b[2m[WebServer] \u001b[22m(Use `node --trace-warnings ...` to show where the warning was created)"
+          ]
+        },
+        {
+          "name": "E2E Playwright Governance (live)",
+          "status": "FAIL",
+          "message": "Playwright live governance suite failed",
+          "detail": [
+            "    Error: locator.fill: Test timeout of 180000ms exceeded.",
+            "    ..\\..\\..\\.cvf\\runtime\\release-gate-e2e\\live-5qn7i8yr\\noncoder-governance-live-f-2b243-gate-on-real-Alibaba-output\\test-failed-1.png",
+            "    Error Context: ..\\..\\..\\.cvf\\runtime\\release-gate-e2e\\live-5qn7i8yr\\noncoder-governance-live-f-2b243-gate-on-real-Alibaba-output\\error-context.md",
+            "\u001b[1A\u001b[2K  1 failed",
+            "\u001b[1A\u001b[2K\u001b[2m[WebServer] \u001b[22m\u2a2f SyntaxError: Unexpected end of JSON input",
+            "\u001b[1A\u001b[2K\u001b[2m[WebServer] \u001b[22m\u2a2f Failed to generate static paths for /api/auth/[...nextauth]:",
+            "\u001b[1A\u001b[2K\u001b[2m[WebServer] \u001b[22mSyntaxError: Unexpected end of JSON input",
+            "\u001b[2m[WebServer] \u001b[22m  type: \u001b[32m'SyntaxError'\u001b[39m"
+          ]
+        },
+        {
+          "name": "SOT3 canonical release proof (A5)",
+          "status": "PASS",
+          "message": "SOT3 canonical release proof PASS with full owner correlation",
+          "detail": []
+        }
+      ],
+      "sot3": {
+        "admissionFailures": [],
+        "approvedContextIncluded": true,
+        "claim": "SOT3_FAILURE_RECOVERY_PROVEN_BOUNDED",
+        "durableOwnerCorrelationComplete": true,
+        "httpStatus": 200,
+        "localNegativeGatePassed": true,
+        "negativeCaseCount": 19,
+        "overall": "PASS",
+        "providerSuccess": true,
+        "recoveryProviderCallCount": 1,
+        "rollbackProviderCallCount": 1,
+        "traceCount": 1,
+        "zeroProviderCallCaseCount": 18
+      }
+    },
+    "sot3Diagnostic": {
+      "a4LocalNegativeGatePassed": true,
+      "a4RecoveryProviderCallCount": 1,
+      "a4ReturnCode": 0,
+      "admissionFailures": [],
+      "batchId": "SOT3-ACT-A5",
+      "diagnostic": null,
+      "finishedAtUtc": "2026-10-07T15:11:27.494497+00:00",
+      "schemaVersion": "cvf.sot3ActA5Diagnostic.v1",
+      "secretSafety": {
+        "fullPromptPersisted": false,
+        "rawKeyPersisted": false,
+        "rawOutputPersisted": false,
+        "rawProviderBodyPersisted": false
+      },
+      "startedAtUtc": "2026-10-07T15:09:10.479464+00:00",
+      "underlyingA4Diagnostic": null
+    },
+    "e2eDiagnostic": {
+      "stage": "e2e_execution",
+      "class": "e2e_failed",
+      "retryable": false,
+      "userAction": "inspect_secret_safe_test_artifacts_before_retry",
+      "safeMessage": "The live governance E2E suite failed; inspect the retained test artifacts before retrying.",
+      "provider": "alibaba",
+      "model": null,
+      "httpStatus": null,
+      "latencyMs": 305187,
+      "traceOrReceipt": null
+    },
+    "manifest": {
+      "claimBoundary": "Manifest records file hashes, rerun command, repo commit, and optional HMAC. It does not prove third-party execution unless an external anchor is provided.",
+      "evidence": [
+        {
+          "path": ".cvf/runtime/candidate-bundle-refresh-20261007/bundle.json",
+          "sha256": "d14497159c42a01420a07e90d1ad2980b04d0874a4388645a78d56462462a6aa",
+          "sizeBytes": 3296
+        },
+        {
+          "path": ".cvf/runtime/candidate-bundle-refresh-20261007/sot3-diagnostic.json",
+          "sha256": "41dc4478214c622ab0d769738fcdeca02681414d6f57e166c0a33a63b18d3725",
+          "sizeBytes": 544
+        },
+        {
+          "path": ".cvf/runtime/candidate-bundle-refresh-20261007/e2e-diagnostic.json",
+          "sha256": "7862e97f638b22a2d8e58b03909cb2791bbad18b0a834029ebb9fe3135fe6299",
+          "sizeBytes": 381
+        }
+      ],
+      "externalAnchor": {
+        "anchorId": "",
+        "anchorUrl": "",
+        "status": "NOT_PROVIDED"
+      },
+      "generatedAt": "2026-10-07T15:11:27.520872+00:00",
+      "repository": {
+        "branch": "main",
+        "commit": "b5c1d88938b199151558eef40725308878cbb338",
+        "dirtyStatus": "M EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tsconfig.json",
+        "remoteOrigin": "https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF-Provenance.git"
+      },
+      "rerun": {
+        "acceptedSecretEnv": [
+          "DASHSCOPE_API_KEY",
+          "ALIBABA_API_KEY",
+          "CVF_ALIBABA_API_KEY",
+          "CVF_BENCHMARK_ALIBABA_KEY"
+        ],
+        "command": "python scripts/run_cvf_release_gate_bundle.py --sot3-diagnostic-output <path> --e2e-diagnostic-output <path> --json",
+        "requiresLiveProviderKey": true
+      },
+      "schema": "cvf.liveEvidenceManifest.v1",
+      "signature": {
+        "algorithm": "hmac-sha256",
+        "digest": "",
+        "status": "UNSIGNED"
+      }
+    },
+    "runtimeArtifactSha256": {
+      "bundle.json": "d14497159c42a01420a07e90d1ad2980b04d0874a4388645a78d56462462a6aa",
+      "manifest.json": "82ce6d33aec3debd6fb2df975730b34dcb5239747f0c797051bc11b9da01c51e",
+      "command-result.json": "6ff537a3f5258b8a8178f1d7349698766a2fb7af71b30967dac3c35bf01d540e",
+      "stdout.json": "d14497159c42a01420a07e90d1ad2980b04d0874a4388645a78d56462462a6aa",
+      "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "preimplementation.log": "3870d4d44d1f91274e27d78a2bd7a94adbcb56cbe05ef2a0cb1f2c3103b3e8d2"
+    },
+    "generatedRestoration": {
+      "addedIncludes": [
+        ".next-cvf-release-gate-build/types/**/*.ts",
+        ".next-cvf-release-gate-build/dev/types/**/*.ts",
+        ".next-cvf-release-gate-e2e-mock/types/**/*.ts",
+        ".next-cvf-release-gate-e2e-mock/dev/types/**/*.ts",
+        ".next-cvf-release-gate-e2e-live/types/**/*.ts",
+        ".next-cvf-release-gate-e2e-live/dev/types/**/*.ts"
+      ],
+      "beforeSha256": "d4af4823c8a2919796c5faa29805cd152217fbc25d6021c2da57541a685ea0f6",
+      "generatedSha256": "15051df2155d261499d92c8f0c13ff839680190442e5169530e78507aad16b9d"
+    },
+    "claimBoundary": "Fresh canonical full Local candidate bundle only. Saved provider readiness receipts do not certify models anew. SOT3 negative rollback provider spy is not real rollback;live recovery/context/correlation limited to its accepted adapter. UI mock asserts structure only;client modal is separate from server receipt/phase progression. Synthetic fixtures,not operator business acceptance,remote CI,real-data,P11,public or deployment.",
+    "clientFailureDiagnostic": {
+      "stage": "client_template_open_before_intake",
+      "class": "FORM_NOT_OBSERVED_AFTER_CLICK",
+      "failingCase": "full-mode Idea Brief export reaches client INTAKE gate",
+      "testTimeoutMs": 180000,
+      "observedDirectAlibabaPosts": 0,
+      "observations": [
+        {
+          "directRequests": 0,
+          "scope": "observed_direct_alibaba_posts_only",
+          "phaseApproved": false
+        }
+      ],
+      "facts": [
+        "locator.fill awaited first idea field and timed out",
+        "terminal snapshot remained gallery,not idea form",
+        "runner also recorded Next/auth Unexpected end of JSON input"
+      ],
+      "rootCause": "NOT_ESTABLISHED;co-occurrence does not prove JSON error caused missing form",
+      "keyDisposition": "NO_KEY_CHANGE;failed step preceded direct client provider dispatch",
+      "replayDisposition": "NO_REPLAY;canonical FAIL retained;future repair needs finite source/trace diagnosis",
+      "artifacts": {
+        ".cvf\\runtime\\release-gate-e2e\\live-5qn7i8yr\\.last-run.json": "34ab7624e51a87f1c7ac2f828d06a964c77ff2a4c8b959aa4b371ad7fa4cf6a1",
+        ".cvf\\runtime\\release-gate-e2e\\live-5qn7i8yr\\noncoder-governance-live-f-2b243-gate-on-real-Alibaba-output\\error-context.md": "b3ab599ceba5ba62458151d536d9f543125b06f71ae903563d48f3fcf761881c",
+        ".cvf\\runtime\\release-gate-e2e\\live-5qn7i8yr\\noncoder-governance-live-f-2b243-gate-on-real-Alibaba-output\\test-failed-1.png": "98e431a3f63145717cf0a09db4598dcbdfd987505527ce6e210e914470c92619",
+        ".cvf\\runtime\\release-gate-e2e\\live-5qn7i8yr\\noncoder-governance-live-f-2b243-gate-on-real-Alibaba-output\\trace.zip": "ae3b33c94df65874e55d013d598902b54815ec4ce3ffc15eed84feebaf0671e8",
+        ".cvf\\runtime\\release-gate-e2e\\live-5qn7i8yr\\noncoder-governance-live-f-2b243-gate-on-real-Alibaba-output\\video.webm": "6a82c6fc622eaec87da0029bd34e828c3c09bf62a20563c3f6066b56b5d82b9e"
+      }
+    }
   }
 }

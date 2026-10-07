@@ -2,8 +2,52 @@
 
 Memory class: FULL_RECORD
 docType: baseline
-Status: LOCAL_REPAIR_EVIDENCE_BOUNDED
+Status: LOCAL_CANDIDATE_BUNDLE_EVIDENCE_BOUNDED
 Date: 2026-10-07
+
+## Canonical Candidate Bundle Refresh - 2026-10-07
+
+Operator next admits one Local integrated candidate milestone at b5c1d88938b199151558eef40725308878cbb338.
+Consumer: Local candidate reviewer;required outputs fresh complete command,
+stage reconciliation,diagnostics,source bindings and terminal disposition.
+Earlier full bundle failed before source/fixture repairs;selected stage PASS
+cannot resolve its current combined outcome. This is the named information gain
+and rerun cost reason;one full invocation,no blind replay or new runtime repair.
+Command: python -B scripts/run_cvf_release_gate_bundle.py --json,with separate
+ignored result/manifest/SOT3/E2E diagnostic outputs. Exit1,
+elapsed1002547ms;gate_result=FAIL.
+
+| Required stage | Current status | Runner summary |
+|---|---|---|
+| Capability environment preflight | PASS | Capability environment preflight PASS |
+| Web build (npm run build) | PASS | Build succeeded |
+| TypeScript check (guard contract) | PASS | TypeScript check clean |
+| Provider readiness | PASS | CERTIFIED lanes: 3 - status: CERTIFIED |
+| Secrets scan | PASS | No secret patterns detected in declared scan scope |
+| Docs governance (RC docs present) | PASS | All 3 required RC docs present |
+| E2E Playwright UI (mock) | PASS | Playwright UI mock suite passed |
+| E2E Playwright Governance (live) | FAIL | Playwright live governance suite failed |
+| SOT3 canonical release proof (A5) | PASS | SOT3 canonical release proof PASS with full owner correlation |
+
+Disposition: CANONICAL_LOCAL_CANDIDATE_FAIL_RECORDED_BOUNDED.
+Companion canonicalBundleRefresh20261007 retains exact source Git-byte identities,
+command,result,manifest,diagnostics and artifact hashes. Prior FAIL and selected
+repairs remain historical evidence;no model ranking,credential or cap change.
+Generated Next additions verified/restored;tracked historical reports untouched.
+Readiness stage evaluates saved receipts,not new model certification.
+SOT3 recovery is its real Alibaba path;negative rollback count is a provider spy,
+not real rollback or a universal worker/reviewer lifecycle proof.
+UI mock covers structure;client INTAKE modal does not prove server phase progression.
+No actual-data,business/remote CI/production/P11/public/deploy acceptance.
+At terminal PASS consume this candidate evidence and return to existing-owner
+roadmap selection;at FAIL diagnose required stage before a finite scoped repair.
+No repeated spec-detail campaign or unrelated endpoint hardening is selected.
+
+Named live FAIL: client template click completed but first idea-field fill
+timed out at180000ms;snapshot remained gallery. Retained attachment observes
+zero direct Alibaba POSTs for this case. Next/auth JSON errors co-occurred;
+causation NOT_ESTABLISHED. Secret-safe clientFailureDiagnostic binds trace,
+snapshot and counts. No key change or provider replay follows from this failure.
 
 ## Purpose
 
@@ -124,22 +168,22 @@ Returned defects: NONE_RETURNED. Zero candidates and no truncation.
 
 | Field | Evidence |
 |---|---|
-| Actor | Local closure packet maintainer/reviewer |
+| Actor | Local integrated candidate tester/reviewer |
 | Provider or surface | Local canonical bundle; Alibaba-only synthetic live lane |
-| Session or invocation | intake-dispatch-repair-packet-20261007 |
+| Session or invocation | candidate-bundle-refresh-20261007 |
 | Working directory | repository root |
-| Command or tool surface | provider-delegation literal correction;targeted authority check;governance gates;no provider replay |
-| Target paths | docs/baselines/CVF_GC018_NCR_INTAKE_DISPATCH_REPAIR_2026-10-07.md |
+| Command or tool surface | one canonical full release bundle;source/status/diagnostic reconciliation;governance gates |
+| Target paths | docs/baselines/CVF_GC018_NCR_INTAKE_DISPATCH_REPAIR_2026-10-07.md; docs/reviews/evidence/cvf-local-candidate-release-2026-10-07.json |
 | Allowed scope source | operator next,continuous Local work and Alibaba test authorization |
-| Before status evidence | clean 6652198a9edf235c9dffb254a66a5b0cc26eb6ab |
-| After status evidence | one baseline path;worker execution forbidden;existing two-case live PASS retained |
+| Before status evidence | clean b5c1d88938b199151558eef40725308878cbb338 |
+| After status evidence | two evidence paths;fresh canonical bundle FAIL;prior FAIL preserved |
 | Diff evidence | exact staged manifest;source Git hashes and runtime artifact hashes |
 | Approval boundary | synthetic Local candidate proof; data/public/deploy effects parked |
 | Claim boundary | current canonical Local observation;not remote CI,whole NCR or production acceptance |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | intake-dispatch-repair-packet-20261007 |
-| Expected manifest | docs/baselines/CVF_GC018_NCR_INTAKE_DISPATCH_REPAIR_2026-10-07.md |
-| Actual changed set | docs/baselines/CVF_GC018_NCR_INTAKE_DISPATCH_REPAIR_2026-10-07.md |
+| Invocation ID | candidate-bundle-refresh-20261007 |
+| Expected manifest | docs/baselines/CVF_GC018_NCR_INTAKE_DISPATCH_REPAIR_2026-10-07.md; docs/reviews/evidence/cvf-local-candidate-release-2026-10-07.json |
+| Actual changed set | docs/baselines/CVF_GC018_NCR_INTAKE_DISPATCH_REPAIR_2026-10-07.md; docs/reviews/evidence/cvf-local-candidate-release-2026-10-07.json |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |
 
