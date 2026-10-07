@@ -265,6 +265,20 @@ to the lifecycle owner. Six focused structural fixtures PASS;no agent/runtime
 or whole-route governance proof. General Local-maintenance coverage and NCR
 next-token correction remain NOT_IMPLEMENTED. No schema/checker activation.
 
+## NCR Next-Move Alignment Packet - 2026-10-07
+
+One complete scope/spec/proof package prepared in
+docs/baselines/CVF_GC018_NCR_NEXT_MOVE_ALIGNMENT_2026-10-07.md and
+docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_NEXT_MOVE_ALIGNMENT_2026-10-07.md.
+Both remain DRAFT,not execution authority or dispatch release. Exact six-path
+proposed worker manifest includes existing checker/test,comparison/test helper
+owners and two proof outputs. Single-line NCR header/guidance semantics,drift
+negatives,legacy controls,real classifier entrypoint and minimum50-line shrink
+per near-hard owner are bound together. Acceptance-ledger validator PASS;
+candidate-only closeability graph check zero violations,repository status kept
+DRAFT. Full dispatcher ADIF query27 IDs disclosed without truncation. No code
+edit,worker transfer,provider test,new schema/checker binding or gate bypass.
+
 ## Claim Boundary
 
 Local consumer source repair only. No full roadmap, live governance, corpus scan,
