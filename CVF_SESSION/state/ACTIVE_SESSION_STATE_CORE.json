@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_NEXT_MOVE_ALIGNMENT_2026-10-07.md",
     "workOrderSha256": "269615a0dad62a867ac4214c408d8b6e7b845c9429adc38e030321af0d657905"
   },
-  "currentAuthoritySyncReason": "Closed alignment authority/pins unchanged; operator-authorized canary source diagnosis/repair 7e26053c898b84ed46a25c2e3dd8561fce83e9f3 delivered. Two-case output evidence retains one FAIL and four skipped; no live governance/release or parked-lane promotion.",
+  "currentAuthoritySyncReason": "Closed alignment authority/pins unchanged; operator-authorized P02 candidate dependency repair 543d45c912f8efe52fb528681f992dbc7fb624f7 delivered with26 isolated Git/parser/CLI fixtures PASS. No actual public projection,full P02,live governance/release or parked-lane promotion.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
