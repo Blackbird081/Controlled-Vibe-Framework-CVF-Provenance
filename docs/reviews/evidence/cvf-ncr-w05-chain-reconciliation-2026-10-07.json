@@ -43,5 +43,72 @@
     "R2 exit/R3 live pilot",
     "release/public/deployment"
   ],
-  "claimBoundary": "Historical synthetic proofs retained by exact evidence hashes; component and route evidence are not composed into a new end-to-end PASS. No live governance behavior asserted by this reconciliation."
+  "claimBoundary": "Historical synthetic proofs retained by exact evidence hashes; component and route evidence are not composed into a new end-to-end PASS. No live governance behavior asserted by this reconciliation.",
+  "currentRouteProofPlan20261007": {
+    "status": "SOURCE_BOUND_PROOF_PLAN_PREPARED_NOT_RELEASED",
+    "baseHead": "5fc724c8a659f9da483ad250690faa86c921057b",
+    "consumer": "Local developer/operator receiving the current HTML review-packet chain",
+    "profile": "isolated synthetic process/store; no user ledger or real-data cutover",
+    "currentSourceBlobSha256": {
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/page.tsx": "0ed365b59324bb836d8ec56cba143df941e7a7f8dfa11b841b28a68212f1b35d",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.tsx": "0b1005a456c2e400d0f9ae1323351716bf877ca4ff83ca1941e6f786356c27d8",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/route.ts": "22f08a7ed8a4a4eb06c63bde244c0e2e9f752758bb6f48acbfb12bf57a2862f1",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/proof.ts": "fbdcc3a434eea13842c9f692d2b54cc9955e80d8c8777d9dfaa14cace9cdfcaf",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/governance/evaluate/route.ts": "b232dcbdfb1a5ec7982e2ed35caf1e9313dec553a3dcf5752576cc110955c1cb",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/governance-engine.ts": "48d3252df6614866b3fe84904a0c0f4bd6528d42f1da76543a0db76947494dde",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/route-governance-proof.ts": "17c19ccc4e31d5e068b728304e4a0970ddc072a9711460dd62b859f3ade15b6e",
+      "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/ledger_layer/sqlite_ledger.py": "df353a92b3adead1ed5cf00d7128ba9039c573e0441b819118094ec77c4c4ce5"
+    },
+    "acceptedEvidenceBlobSha256": {
+      "docs/reviews/CVF_CVF_NCR_Q001_SYNTHETIC_SYSTEM_CHAIN_COMPLETION_2026-09-29.md": "f3550c17367b41be3bbc06b3404c63586f6c5f9f8b7200876bce6f93da60de91",
+      "docs/reviews/evidence/cvf-ncr-q001-synthetic-system-chain-independent-2026-09-29.json": "2671dda8697050f6ba2f215a45822a8672128548c7f2521dd67324b87e598c0c",
+      "docs/reviews/CVF_CVF_NCR_HTML_B1_VERSION_BINDING_COMPLETION_2026-09-30.md": "6a2c93ad1e43cb7ed6da6b14f6ad485dc52c4478cfbb84390f0bfa51c474f69d",
+      "docs/reviews/CVF_CVF_NCR_HTML_SECRET_REFUSAL_RECOVERY_COMPLETION_2026-10-02.md": "86f8a56a93e6d632f87fd6ecd7b21e6fac8adb35b99ae1f34523b518545ea782",
+      "docs/reviews/CVF_CVF_NCR_Q001_SQLITE_TARGET_PUBLICATION_COMPLETION_2026-09-30.md": "68a9643f506f129f788a2b578f1c00e39e8954e4cc1cd5b9d450b2f81486bbf8"
+    },
+    "runnerBlobSha256": {
+      "scripts/probe_cvf_q001_synthetic_system_chain.py": "a6098d834e0be48b8f070706753275605c9c4d781035fcd2fb41501e25e0b2bd",
+      "scripts/test_probe_cvf_q001_synthetic_system_chain.py": "c836986e3cafbfe6c418d1fd3b8b4ba4c68996b8aad2e6c64092116421db4873"
+    },
+    "sourceComparison": "8/8 source and 5/5 evidence pins unchanged versus the prior readiness snapshot; four sources still differ from the historical integrated run",
+    "requiredOutputs": [
+      "execution-base and staged-source identities",
+      "case assertions joined to raw result and exact store/request IDs",
+      "owned process cleanup and dependency/backend identity",
+      "bounded reviewer disposition with retained checkpoints"
+    ],
+    "cases": [
+      {
+        "id": "W05-P1",
+        "seam": "signed export -> governance receipt -> fresh SQLite exact-ID",
+        "expected": "PRESENT joins the engine request ID and committed block; artifact remains DRAFT_UNACCEPTED"
+      },
+      {
+        "id": "W05-P2",
+        "seam": "engine restart on the same disposable store",
+        "expected": "same exact-ID result, count and tip; no replay"
+      },
+      {
+        "id": "W05-P3",
+        "seam": "malformed response and unavailable engine",
+        "expected": "INVALID_RESPONSE and UNAVAILABLE remain distinguishable; no automatic retry"
+      },
+      {
+        "id": "W05-P4",
+        "seam": "response lost after commit",
+        "expected": "Web TIMED_OUT retains attempt ID; exact-ID lookup finds the committed record; safeToRetry=false"
+      },
+      {
+        "id": "W05-P5",
+        "seam": "wrong request ID / wrong store",
+        "expected": "both lookups absent; absence does not authorize retry on the original store"
+      }
+    ],
+    "execution": "NOT_EXECUTED",
+    "providerCalls": 0,
+    "runnerConstraint": "Existing runner executes its fixed bounded case set; no case-selection flag. Do not claim an end-to-end browser test or replay all historical suites.",
+    "admission": "Local must resolve applicable execution authority and current dependencies before running; this source-only plan grants no provider/process/store execution authority.",
+    "providerBoundary": "Synthetic transport/persistence result cannot close live AI governance or release-quality behavior. Such a claim requires separately admitted real Alibaba provider proof and the canonical release bundle.",
+    "terminalRule": "Stop at the bounded case result and disposition; name any failed seam before repair, with no automatic endpoint campaign or live-pilot promotion."
+  }
 }

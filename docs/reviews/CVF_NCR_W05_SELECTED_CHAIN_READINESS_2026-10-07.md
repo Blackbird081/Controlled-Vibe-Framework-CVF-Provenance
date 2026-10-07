@@ -105,8 +105,100 @@ W05 pre-live readiness is NOT_CLOSED: current whole-route proof and the applicab
 data/effect/UX authority remain unprovided. Do not reopen general P06 endpoint
 hunting or repeat the historical suites. Continue the wider admitted upgrade
 backlog through a named independent consumer/outcome; preserve stopped lanes.
-Machine candidates in the shared learning remain NOT_IMPLEMENTED. This package
+General outcome automation in the shared learning remains NOT_IMPLEMENTED; NCR
+lexical alignment is accepted bounded with its recorded F1 known limit. This package
 shows application of finite outcome selection, not machine-enforced agent behavior.
+
+## Current Route Proof Plan - 2026-10-07
+
+Status: SOURCE_BOUND_PROOF_PLAN_PREPARED_NOT_RELEASED.
+Local role: source verifier/planner; phase: internal source-only admission planning;
+decision owner: Local. This supplement preserves the earlier readiness snapshot.
+Its consumer is the Local developer/operator receiving the HTML review packet.
+Outcome: a finite, source-bound proof recipe for the still-unproved current route,
+with assertions, evidence outputs and stop conditions before execution.
+
+### Source freshness and evidence reuse
+
+Current planning base: 5fc724c8a659f9da483ad250690faa86c921057b. Git blob bytes, not CRLF worktree bytes,
+match all eight source and five accepted-evidence pins in the JSON companion.
+No new source contradiction was found in that comparison. The four changes
+relative to the historical integrated run remain page, panel, export route and
+SQLite owner; the receipt helper, proxy, client and route-auth helper are unchanged.
+Those older results remain historical evidence, not a current integrated PASS.
+Existing B1 version binding, secret-refusal recovery and SQLite publication proofs
+are reused within their recorded scope; no duplicate component-suite rerun is
+selected without a named contradiction, information gain and cost reason.
+
+### Bounded proof cases and required outputs
+
+| Case | Current seam | Required assertion |
+|---|---|---|
+| W05-P1 | signed export, engine receipt and fresh SQLite | PRESENT joins request ID and committed block; artifact stays DRAFT_UNACCEPTED |
+| W05-P2 | restart on the same disposable store | same exact ID, count and tip; no replay |
+| W05-P3 | malformed response / unavailable engine | INVALID_RESPONSE / UNAVAILABLE remain distinct; no automatic retry |
+| W05-P4 | response lost after commit | Web TIMED_OUT retains attempt ID; lookup finds committed record; safeToRetry=false |
+| W05-P5 | wrong ID / wrong store | both absent; original-store retry authority is not inferred |
+
+Required outputs: (1) execution base, Git/staged source hashes and backend/dependency
+identity; (2) assertion results joined to raw bounded runner output, exact attempt
+IDs and disposable store identity; (3) owned process cleanup evidence; (4) a Local
+review disposition stating what passed, what remains unproved and why work stops.
+They are not a new schema, checker, pilot or full-roadmap audit requirement.
+
+Existing runner: scripts/probe_cvf_q001_synthetic_system_chain.py; existing runner
+tests: scripts/test_probe_cvf_q001_synthetic_system_chain.py. Both Git-byte hashes
+are pinned in the companion. The runner has a fixed case set, not a selective-case
+flag; the intended future run is that one bounded synthetic route proof, not the
+historical suite collection. Its Web harness does not prove browser UX or the
+real Work Transfer interaction. Preserve the separate B1 component proof boundary.
+Source validity of rejected input does not require a new ingress campaign here.
+
+### Execution prerequisites and checkpoints
+
+This supplement authorizes planning only. Before running, resolve the applicable
+Local execution/admission route and pin the actual current execution base and
+support dependencies; stop on source drift or unresolved dependency authority.
+Use a fresh disposable ignored-runtime SQLite store and synthetic data, owned
+localhost ports/processes and an ephemeral service token. Do not use the user's
+ledger or request a copy. The existing runner stages Git-visible files and uses
+installed Web dependencies through a junction; record their identity and resolve
+that shared dependency boundary before execution, rather than claiming full
+filesystem isolation. No install, pull or build is implied by this plan.
+
+If Docker is selected later, identify an existing local image explicitly: the
+runner uses --pull=never, mounts current staged engine source read-only and mounts
+only the disposable store writable. Record image identity, backend and owned
+cleanup; an old Docker receipt alone is not current mounted-source evidence.
+This plan starts neither native nor Docker processes.
+
+The synthetic runner has no provider call. Its result can support transport and
+persistence assertions only; it cannot close live AI governance behavior, R2/R3
+or a release-quality claim. A claim at that boundary requires separately admitted
+real Alibaba provider proof and python scripts/run_cvf_release_gate_bundle.py
+--json, with the existing secret-safe diagnostic rule for any failed/partial rerun.
+Do not silently enlarge this synthetic proof into that release exercise.
+
+### Terminal disposition
+
+Planning outputs are present in this owner and its companion; execution is
+NOT_EXECUTED, admission NOT_RELEASED and W05 pre-live remains NOT_CLOSED.
+After an admitted bounded run, stop at its case evidence and Local disposition.
+Any failure must name the affected seam before a bounded repair; no automatic
+endpoint sweep, broad duplicate test replay or promotion to pilot follows.
+Browser capability, real-data writer/custody/retention/RPO/RTO/cost and durable
+artifact acceptance remain separate checkpoints. Send/B2, S05/C1, P11, CCMA,
+public and deployment lanes remain parked. Full outcome automation is unproved;
+NCR lexical alignment alone was accepted bounded with the recorded F1 limit.
+
+## Epistemic Process Block
+
+| Field | Current planning evidence |
+|---|---|
+| Expected Result | unchanged pins since the prior readiness snapshot; integrated current-route proof still absent |
+| Evidence Comparison | Git-byte comparison matched eight source and five accepted-evidence pins; existing runner and test pinned separately |
+| Contradiction Or Gap Disposition | no new byte contradiction; four historical-run source changes retain delta qualification; current execution gap is not closed by planning |
+| Claim Update | finite source-bound proof plan prepared; NOT_EXECUTED and NOT_RELEASED; no runtime or W05 pre-live PASS |
 
 ## Finding-To-Governance Learning Disposition
 
@@ -122,36 +214,36 @@ no new runtime/provider/cost learning or measurement in this reconciliation.
 
 | Field | Value |
 |---|---|
-| applicableCheckersRead | governance/compat/check_markdown_structural_completeness.py; governance/compat/check_finding_to_governance_learning.py; governance/compat/check_agent_operation_trace.py; governance/compat/check_governed_artifact_checker_read_ahead.py; governance/compat/check_core_guard_self_protection.py; governance/compat/check_external_knowledge_intake_routing.py; governance/compat/check_corpus_completeness_report_integrity.py |
+| applicableCheckersRead | governance/compat/check_markdown_structural_completeness.py; governance/compat/check_finding_to_governance_learning.py; governance/compat/check_agent_operation_trace.py; governance/compat/check_governed_artifact_checker_read_ahead.py; governance/compat/check_core_guard_self_protection.py; governance/compat/check_external_knowledge_intake_routing.py; governance/compat/check_corpus_completeness_report_integrity.py; governance/compat/check_epistemic_process_packet.py |
 | literalTokensReviewed | RULE_EXISTS; GOVERNANCE_CONTROL_PLANE; rawMemoryReleased=false; trace fields; NOT_APPLICABLE_WITH_REASON; coordination binding |
 | gateRunPurpose | confirmation/evidence of changed-document structure and continuity, not first discovery; no runtime behavior proof |
 | claimBoundary | no new integrated runtime or universal completion enforcement |
 
 ## ADIF Query
 
-Resolver query: Worker execution / worker / pre-implementation, 2026-10-07.
+Resolver query: review / reviewer / review, 2026-10-07 (current planning supplement).
 Returned defects: zero; totalCandidates=0; truncated=false.
 
 ## Agent Operation Trace Block
 
 | Field | Evidence |
 |---|---|
-| Actor | Local maintainer/reviewer and closer |
+| Actor | Local source verifier/planner |
 | Provider or surface | private repository tools; no provider call or delegation |
-| Session or invocation | ncr-w05-readiness-20261007 |
+| Session or invocation | ncr-w05-proof-plan-20261007 |
 | Working directory | repository root |
-| Command or tool surface | targeted source/review reads; Git-byte hashes/delta comparison; exact-path writes and commit helper |
-| Target paths | this review; docs/reviews/evidence/cvf-ncr-w05-chain-reconciliation-2026-10-07.json; docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md |
-| Allowed scope source | operator next and active finite W05 disposition instruction |
-| Before status evidence | clean 9ca7c04827bcee6aa907cdf8efff417932771ffd |
-| After status evidence | exact three material paths; dedicated continuity follows |
-| Diff evidence | JSON pins committed source/evidence; exact staged path set |
-| Approval boundary | local readiness disposition; no real-data/effect/pilot/public/deploy authority |
-| Claim boundary | historical bounded proof consumed, not current whole-route execution |
+| Command or tool surface | targeted source and owner reads; exact Git-byte comparisons; two-path documentation writes |
+| Target paths | docs/reviews/CVF_NCR_W05_SELECTED_CHAIN_READINESS_2026-10-07.md; docs/reviews/evidence/cvf-ncr-w05-chain-reconciliation-2026-10-07.json |
+| Allowed scope source | operator next and active source-bound receiving-work preparation instruction |
+| Before status evidence | clean 5fc724c8a659f9da483ad250690faa86c921057b |
+| After status evidence | exact two material paths; dedicated continuity follows |
+| Diff evidence | companion current pins and exact staged manifest |
+| Approval boundary | source-only plan; no execution/provider/real-data/pilot/public/deploy admission |
+| Claim boundary | proof recipe prepared, no current runtime PASS or W05 closure |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-w05-readiness-20261007 |
-| Expected manifest | this review; JSON companion; existing continuation |
-| Actual changed set | same three paths |
+| Invocation ID | ncr-w05-proof-plan-20261007 |
+| Expected manifest | docs/reviews/CVF_NCR_W05_SELECTED_CHAIN_READINESS_2026-10-07.md; docs/reviews/evidence/cvf-ncr-w05-chain-reconciliation-2026-10-07.json |
+| Actual changed set | docs/reviews/CVF_NCR_W05_SELECTED_CHAIN_READINESS_2026-10-07.md; docs/reviews/evidence/cvf-ncr-w05-chain-reconciliation-2026-10-07.json |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |
 
@@ -166,7 +258,7 @@ Returned defects: zero; totalCandidates=0; truncated=false.
 | Matching local-view guard | N/A with reason: internal source and evidence only |
 | Owner surface | existing NCR continuation and W05 roadmap row |
 | Disposition | bounded Local readiness disposition |
-| Claim boundary | no external repository absorption or public-source absence claim |
+| Claim boundary | proof recipe prepared, no current runtime PASS or W05 closure |
 
 ## External/Local Coordination Binding
 
@@ -188,7 +280,9 @@ NOT_APPLICABLE_WITH_REASON - no absorption corpus is processed.
 
 ## Public Export Disposition
 
-DEFERRED_PRIVATE_ONLY - local readiness record.
+DEFERRED_PRIVATE_ONLY
+Reason: private Local readiness and source-bound planning. Public-sync boundary:
+no public export, push or deploy; public changes use the separate public-sync clone.
 
 ## Claim Boundary
 
