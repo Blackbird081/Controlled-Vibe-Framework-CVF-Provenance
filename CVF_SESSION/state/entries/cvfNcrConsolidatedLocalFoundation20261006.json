@@ -8,7 +8,7 @@
     "reviewManifest": "docs/reviews/evidence/cvf-ncr-local-review-manifest-2026-10-06.json",
     "reviewManifestDisposition": "Historical pre-commit 49-path snapshot; committed disposition recorded here.",
     "verification": "Recorded scoped tests, Docker/storage/Web receipts and real Alibaba observations consumed; material helper and repository pre-commit hooks passed. No independent reviewer, browser UX, actual-data cutover or release-quality governance claim.",
-    "nextAction": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=LOCAL_DISPOSITION_ONLY; BATCH_ID=CVF-NCR-MEMORY-READOUT-INPUT-20261007. Four-path memory input repair committed at 28ad4166de7cdad94b24d8ce9ffb7569e60bc129: reject malformed optional policy/sensitivity/secret/content and nonfinite budget/time/results before projection; preserve auth,valid false/optional fields and existing numeric domains. Red14 malformed admissions;green35/35 focused tests,TypeScript,lint,diff and material gates PASS. New evidence continuation: docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md; predecessor evidence unchanged. Initial packet field/binding failures repaired without bypass. Continue named compatible consumer gaps;consume accepted evidence,no broad duplicate API/build-proof rerun. Prior QBS/LPCI23tests,UTF8 168tests,Node20/Debian13-stage build,30 policy tests,bounded Alibaba proof and compact V63 retained. No full P06/P04,live governance,remote CI,release/deploy claim. Ledger copy not universal blocker;fresh isolated development needs no legacy import. Browser/UX unavailable;actual-data cutover,vision/full release unproved. Q001/Q004 OPEN/Profile A;P11/deploy/public,CCMA,S05/C1/send/B2 parked;NIS-T1J closed without successor;LHW24 closed;no push.",
+    "nextAction": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=LOCAL_DISPOSITION_ONLY; BATCH_ID=CVF-NCR-GUARD-INPUT-20261007. Four-path guard endpoint admission repair committed at c0e9bfb4ec62c3a488a766c37f4ee842e49edbe6: malformed JSON/nonobjects HTTP400; supplied falsy enums not defaulted; typed IDs/actions,optional text/lists/finite counters/object metadata before engine. Red34 failures;green39/39 structural tests,TypeScript,lint,diff and material gates PASS. Guard evaluation/rate limiter stubbed;no live governance decision proof. Evidence owner: docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md. Negated coverage disclaimer initially triggered corpus guard;scope wording repaired,no bypass. Continue named compatible consumer gaps;consume prior memory35,QBS/LPCI23,UTF8 168 tests,Node20/Debian13-stage build,30 policy tests and bounded Alibaba evidence;no broad duplicate API/build-proof rerun. No full P06/P04,live governance,remote CI,release/deploy claim. Ledger copy not universal blocker;fresh isolated development needs no legacy import. Browser/UX unavailable;actual-data cutover,vision/full release unproved. Q001/Q004 OPEN/Profile A;P11/deploy/public,CCMA,S05/C1/send/B2 parked;NIS-T1J closed without successor;LHW24 closed;no push.",
     "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
     "approvedContextContinuation": {
       "materialCommit": "594e2c1b2cbc7171fe77ab849782e5de085b5b8c",
@@ -121,6 +121,16 @@
       "repair": "Optional policy/sensitivity/secret/content types and finite budget/time/results checked before projection;auth,numeric domains and valid false/omitted fields preserved.",
       "packetDiagnostic": "Initial freshness/routing/raw-memory fields and then internal-source/coordination binding omitted;canonical fields repaired,no bypass.",
       "claimBoundary": "Structural tests with existing auth mocks;rawMemoryReleased=false;canReinject=false;no provider/build repeat,real data,full P06/P04,live governance or release/public/deploy claim."
+    },
+    "guardEndpointInputRepair20261007": {
+      "materialCommit": "c0e9bfb4ec62c3a488a766c37f4ee842e49edbe6",
+      "status": "LOCAL_REPAIRED_STRUCTURALLY_VERIFIED_BOUNDED",
+      "baseline": "docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md",
+      "materialPaths": 4,
+      "verification": "Red34 wrong admissions/statuses;39/39 structural tests,TypeScript,lint,diff and material gates PASS.",
+      "repair": "Two guard endpoints reject malformed payload/enum/context types before evaluation;preserve omitted defaults,DISCOVERY alias and existing guard semantics.",
+      "packetDiagnostic": "Corpus guard matched negated coverage disclaimer;corrected scope wording,no bypass.",
+      "claimBoundary": "Engine,phase evaluation and rate limit stubs;parsing/type/zero-evaluation assertions only;no live governance/auth/DoS/full P06/P04/remote CI/release/public/deploy proof."
     }
   }
 }

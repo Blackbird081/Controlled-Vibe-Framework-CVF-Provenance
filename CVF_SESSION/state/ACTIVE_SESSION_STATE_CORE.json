@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NIS_T1J_DOCUMENTARY_WORKSHEET_EXPORT_2026-10-06.md",
     "workOrderSha256": "572fd199b2fd641b4a8eeb6e80006a555951f4ce7a8122801efe775df93e111e"
   },
-  "currentAuthoritySyncReason": "Accepted NIS-T1J authority retained; separately authorized memory input repair 28ad4166de7cdad94b24d8ce9ffb7569e60bc129 with bounded structural tests and NCR continuation evidence is maintenance,not new NIS order,live governance or release closure.",
+  "currentAuthoritySyncReason": "Accepted NIS-T1J authority retained; separately authorized guard endpoint input repair c0e9bfb4ec62c3a488a766c37f4ee842e49edbe6 and structural tests in NCR continuation are maintenance,not new NIS order,live governance or release closure.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
