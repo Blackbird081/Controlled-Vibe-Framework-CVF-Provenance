@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_NEXT_MOVE_ALIGNMENT_2026-10-07.md",
     "workOrderSha256": "269615a0dad62a867ac4214c408d8b6e7b845c9429adc38e030321af0d657905"
   },
-  "currentAuthoritySyncReason": "Closed alignment authority/pins unchanged; bounded Alibaba semantic observation a8d6d9da15e34bd93947bc0d0502f9d424d0973c has two real responses and12/12 fixed classifications. Local review retains incomplete retry guidance and empty heldEffects omission. No actual whole lifecycle,automatic effects or release claim;existing phase design consumed.",
+  "currentAuthoritySyncReason": "Closed alignment pins unchanged;current candidate canonical bundle be361a8b5bf7cd962f5d53ea7ff5e28410d6ea68 result FAIL exit 1 retained with stage/source/diagnostic evidence. No remote/public/production or whole NCR acceptance.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
