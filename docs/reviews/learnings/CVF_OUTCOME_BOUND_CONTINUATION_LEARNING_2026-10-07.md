@@ -125,6 +125,95 @@ upgrade package; do not replace it with an open-ended governance-hardening campa
 | Return delivery | Git discovery available after commit; independent receiving-agent receipt NOT_RETURNED |
 | Source-project application | written next move applied in prior continuity; actual outcome-bound execution NOT_APPLIED_WITH_PROOF |
 
+## Existing-Owner Design Disposition - 2026-10-07
+
+Design base e5cb97872e0e5305b25fb99bf0a9c13d83b27a45, clean worktree. Operator
+next admits this finite design assessment, not new checker/schema activation.
+Required design outputs: owner/coverage mapping, requirement-to-terminal route,
+negative/positive proof plan and Local disposition. All are recorded here.
+
+Coverage correction to the initial assessment: CVF already has the machine join
+in docs/reference/work_order_template/CVF_WORK_ORDER_ACCEPTANCE_LEDGER_ADDENDUM.md
+and governance/compat/check_work_order_acceptance_ledger.py. It covers changed
+executable implementation work orders and worker returns, not every Local
+maintenance continuation. The machine candidate for package fulfillment is
+therefore REUSE_EXISTING_FIRST, not evidence that CVF has no fulfillment reducer.
+The observed loose maintenance route still lacked this binding; semantic outcome
+selection and proof adequacy remain reviewer responsibilities. The separate NCR
+next-token parser candidate is unchanged and NOT_IMPLEMENTED.
+
+| Owner / task class | Existing coverage | Design disposition |
+|---|---|---|
+| Lifecycle standard / admitted package selection | scope, consumer, authority, evidence and next action | written Outcome-Bound Work Selection And Terminal Review added in the existing owner; no new mandatory fields |
+| Work-order template section6F-6G and acceptance-ledger addendum / executable implementation | dispatcher requirements, artifact/proof IDs, Git-observed join and mandatory-row terminal reducer | REUSE_EXISTING; route eligible multi-step implementation through this committed authority and existing return gate |
+| Dispatch quality and release readiness / fast-gate-bound packet | validate_dispatch_ledger requires ledger at admission | REUSE_EXISTING before dispatch; a worker return must not discover a missing expected set |
+| Worker-return fast gate / bound worker result | invokes acceptance checker with work order and return | REUSE_EXISTING; structural fixture checks below are not semantic proof or live agent execution |
+| Gate-to-role closeability / changed active orders and returns | role/repair/dependency topology and declared consistency | KEEP_EXISTING; topology feasibility is not output fulfillment |
+| TPGR / declared trancheValue | optional repair-class value/consolidation and trusted successor binding; shadow receipt | KEEP_SHADOW; do not broaden task classes or make authoritative from this design |
+| Local source-only disposition / no executable order | existing owner output/evidence matrix and Local terminal review | written routing applies; no claim of acceptance-checker automatic coverage |
+| Commit helper / material and continuity | commit transaction state and required synchronization | KEEP_EXISTING; helper success is not package/business completion |
+
+### Requirement-To-Terminal Route
+
+Before eligible implementation, the Local lead/dispatcher names a finite
+receiving-work outcome and commits its requirements/proof catalog in the
+existing work order. Requirements cover the package, not only a convenient
+patch. Preserve the exact authority revision and allowed paths. At return,
+the existing acceptance evidence binds every requirement to actual artifacts
+and required proof IDs; the checker obtains paths from Git at executionBaseHead.
+The worker status is reduced by the existing mandatory-row rule. The reviewer
+then verifies proof content/revision and accepts or returns one consolidated
+repair. Commit/continuity follows existing choreography; it cannot substitute
+for that acceptance or change the original required set after the fact.
+
+A required unresolved output keeps its parent package unresolved. Separately
+gated work outside the admitted package is not silently made mandatory, nor
+used to block permitted independent work. If a gate requires authority not
+granted to the actor, reuse the closeability repair route. No new statuses,
+schemas, sidecars, dispatcher daemon or mandatory LLM call are introduced.
+
+### Negative / Positive Proof Design
+
+| Case | Expected result / responsible layer | Current proof status |
+|---|---|---|
+| fast-gate-bound dispatch without ledger | deny before transfer; existing admission validator | existing focused fixture PASS |
+| missing, unknown or malformed result row | checker rejects; worker cannot claim completion | existing focused fixture PASS |
+| unrelated artifact substituted; required proof ID absent | existing artifact/proof join rejects | existing focused fixture PASS |
+| extra artifact observed by Git but unclaimed | existing union reconciliation rejects | existing focused fixture PASS, supplied Git-path set in unit fixture |
+| mandatory row BLOCKED with COMPLETE_PENDING_REVIEW | existing reducer rejects contradictory terminal status | existing focused fixture PASS |
+| exact requirement/artifact/proof rows with mandatory PASS | existing structural join accepts | existing focused fixture PASS, not proof that referenced command succeeded |
+| proof ID exists but refers to wrong revision or fails semantic criterion | reviewer rejects inadequate proof; reference matching alone insufficient | design case NOT_EXECUTED; do not claim existing checker validates proof contents |
+| unrelated repairs selected instead of required user outcome | dispatcher/reviewer rejects scope substitution before completion | design case NOT_EXECUTED; cannot be proven by filename matching alone |
+| admitted independent outputs complete while effect awaits authority | bounded output disposition retained; no effect or parent pre-live closure | W05 source/evidence disposition is an application example, not machine/agent end-to-end test |
+| next-move family unknown or text drifts | existing-state consistency candidate needs compatibility design | earlier isolated parser observation retained; correction NOT_IMPLEMENTED |
+
+One targeted run justified by the named initial coverage omission:
+`python -m pytest governance/compat/test_check_work_order_acceptance_ledger.py -q`,
+6/6 PASS in0.26s. Expected information gain: verify existing structural join
+and reducer before proposing duplication. Existing fixture paths/observed sets
+are synthetic; no real Git mutation or provider/agent governance behavior is
+asserted. This does not execute an eligible work-order admission/return route.
+No broad product, Docker, provider or historical W05 suite rerun.
+
+### Local Decision And Independent States
+
+Design disposition: ACCEPT_EXISTING_OWNER_DESIGN_BOUNDED. The four required
+design outputs are present. Written selection/terminal routing is added to
+docs/reference/CVF_GOVERNED_WORK_LIFECYCLE_AND_DESIGN_CONTROL_STANDARD_2026-06-11.md.
+No missing generic reducer is implemented because one already exists.
+Next eligible implementation must use its existing packet/return route rather
+than create a parallel mechanism. Universal Local-maintenance coverage and
+NCR next-token repair remain candidates, with no activation in this batch.
+
+Parent decision: MERGE_INTO_EXISTING_OWNER / REUSE_EXISTING_FIRST.
+Parent implementation: WRITTEN_RULE_ADDED; existing acceptance checker retained;
+new machine candidates NOT_IMPLEMENTED.
+Project resolution: design completed; corrected runtime/agent behavior NOT_VERIFIED.
+Return delivery: Git discovery only; receiving-agent acknowledgment NOT_RETURNED.
+Source-project application: written lifecycle routing present; full executable
+admission-to-terminal application NOT_APPLIED_WITH_PROOF. Earlier observation
+and independent state rows remain historical and are qualified by this follow-up.
+
 ## Current Runtime Freshness Verification
 
 N/A_WITH_REASON - targeted control-source assessment at the recorded revision,
@@ -145,7 +234,7 @@ closure remain unproved.
 
 | Field | Value |
 |---|---|
-| applicableCheckersRead | governance/compat/check_finding_to_governance_learning.py; governance/compat/check_markdown_structural_completeness.py; governance/compat/check_governed_artifact_checker_read_ahead.py; governance/compat/check_agent_operation_trace.py; governance/compat/check_core_guard_self_protection.py; governance/compat/check_external_knowledge_intake_routing.py; governance/compat/check_active_session_state.py; governance/compat/check_continuation_chain.py; governance/compat/check_task_governance_route.py; governance/compat/route_task_governance.py |
+| applicableCheckersRead | governance/compat/check_finding_to_governance_learning.py; governance/compat/check_markdown_structural_completeness.py; governance/compat/check_governed_artifact_checker_read_ahead.py; governance/compat/check_agent_operation_trace.py; governance/compat/check_core_guard_self_protection.py; governance/compat/check_external_knowledge_intake_routing.py; governance/compat/check_active_session_state.py; governance/compat/check_continuation_chain.py; governance/compat/check_task_governance_route.py; governance/compat/route_task_governance.py; governance/compat/check_work_order_acceptance_ledger.py; governance/compat/check_work_order_dispatch_quality.py; governance/compat/check_dispatch_release_readiness.py; governance/compat/check_gate_to_role_closeability.py |
 | literalTokensReviewed | RULE_EXISTS; DESIGN_REVIEW_REQUIRED; MACHINE_CHECK_CANDIDATE; GOVERNANCE_CONTROL_PLANE; rawMemoryReleased=false; trace labels; coordination binding |
 | gateRunPurpose | confirm changed learning/discovery structure and continuity, not product or agent-behavior proof |
 | claimBoundary | structural helper probe and changed-document gates cannot establish universal outcome enforcement |
@@ -164,16 +253,16 @@ Returned defects: zero; totalCandidates=0; truncated=false. No ADIF defect waive
 | Session or invocation | ncr-outcome-learning-20261007 |
 | Working directory | D:/UNG DUNG AI/TOOL AI 2026/Controlled-Vibe-Framework-CVF |
 | Command or tool surface | targeted owner reads, isolated helper probe, exact-path writes and commit helper |
-| Target paths | this record; docs/reviews/learnings/README.md; docs/reviews/evidence/cvf-outcome-continuation-probe-2026-10-07.json; docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md |
-| Allowed scope source | operator asks to assess foundation learning after agreeing batching correction |
-| Before status evidence | clean e1bd6eebff8e8ac10eb6b681a0ee96cb25e4b1aa |
+| Target paths | this record; docs/reviews/learnings/README.md; docs/reference/CVF_GOVERNED_WORK_LIFECYCLE_AND_DESIGN_CONTROL_STANDARD_2026-06-11.md; docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md |
+| Allowed scope source | operator next and active finite existing-owner design assessment |
+| Before status evidence | clean e5cb97872e0e5305b25fb99bf0a9c13d83b27a45 for this design follow-up |
 | After status evidence | four material paths; dedicated continuity follows |
 | Diff evidence | exact-path Git staged set and source hashes in probe receipt |
 | Approval boundary | learning assessment/discovery only; no gate activation, successor or effect authority |
 | Claim boundary | no completed enforcement or receiving-agent adoption proof |
 | Agent type | INTERNAL_AGENT |
 | Invocation ID | ncr-outcome-learning-20261007 |
-| Expected manifest | this record; docs/reviews/learnings/README.md; docs/reviews/evidence/cvf-outcome-continuation-probe-2026-10-07.json; docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md |
+| Expected manifest | this record; docs/reviews/learnings/README.md; docs/reference/CVF_GOVERNED_WORK_LIFECYCLE_AND_DESIGN_CONTROL_STANDARD_2026-06-11.md; docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md |
 | Actual changed set | same four material paths |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |

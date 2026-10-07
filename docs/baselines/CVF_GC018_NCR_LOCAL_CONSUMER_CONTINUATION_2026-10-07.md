@@ -253,6 +253,18 @@ separate; changed source bytes are explicitly qualified. Current whole-route,
 browser,real-data/effect and R2 exit/R3 proof are not supplied. W05 pre-live is
 NOT_CLOSED. No general P06 sweep or duplicate product/provider/Docker rerun.
 
+## Outcome-Control Design Package - 2026-10-07
+
+Existing-Owner Design Disposition in the shared outcome-bound learning completes
+owner/coverage mapping,requirement-to-terminal route,negative/positive proof
+design and Local decision. ACCEPT_EXISTING_OWNER_DESIGN_BOUNDED. Coverage
+correction: acceptance-ledger addendum/checker already owns dispatcher/Git/proof
+joins and mandatory-row reduction for eligible executable orders. Reuse that
+route;do not invent a second reducer. Written selection/terminal routing added
+to the lifecycle owner. Six focused structural fixtures PASS;no agent/runtime
+or whole-route governance proof. General Local-maintenance coverage and NCR
+next-token correction remain NOT_IMPLEMENTED. No schema/checker activation.
+
 ## Claim Boundary
 
 Local consumer source repair only. No full roadmap, live governance, corpus scan,
