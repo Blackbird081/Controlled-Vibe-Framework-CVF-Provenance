@@ -2166,5 +2166,671 @@
         ".cvf\\runtime\\release-gate-e2e\\live-5qn7i8yr\\noncoder-governance-live-f-2b243-gate-on-real-Alibaba-output\\video.webm": "6a82c6fc622eaec87da0029bd34e828c3c09bf62a20563c3f6066b56b5d82b9e"
       }
     }
+  },
+  "templateHydrationRepair20261007": {
+    "admission": {
+      "baseHead": "46bfd55e4c6ef59ce92e40382dfcf113e57741de",
+      "scope": [
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/TemplateCard.tsx",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/TemplateCard.test.tsx",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/noncoder-governance-live.spec.ts",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/utils.ts",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/playwright.config.ts",
+        "docs/baselines/CVF_GC018_NCR_INTAKE_DISPATCH_REPAIR_2026-10-07.md",
+        "docs/reviews/evidence/cvf-local-candidate-release-2026-10-07.json"
+      ],
+      "consumer": "Local candidate live UI reviewer",
+      "outcome": "Cold HTML card exposes disabled semantics until hydration;one selected real Alibaba client INTAKE proof plus deterministic delayed-JS zero-provider regression",
+      "authority": "operator next and standing Alibaba-only scoped testing;Local root only;no delegation",
+      "diagnosis": "trace click111448.549 precedes page.js completion111952.849 and React console113226.47;HTML visible is not client readiness",
+      "budget": "focused unit/type/lint;one selected Playwright invocation for cold HTML and full-mode Idea Brief;no retries/new model/key/cap/guard changes;one canonical full-bundle invocation after selected proof,needed to close current integrated candidate blocker;no blind retries;one selected login-readiness/gallery/audit invocation after repair;no unclassified rerun. Consume8 valid canonical stages;record failing-stage reconciliation without labeling original whole-bundle PASS.",
+      "stop": "finite repair/evidence/continuity;previous whole-bundle FAIL retained unless fresh canonical whole command passes",
+      "sourceGitSha256": {
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/TemplateCard.tsx": "fb94d6c911b72a3121015bdc01d74e48b50dba2c34a68cffae78f5d3f9e342a1",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/noncoder-governance-live.spec.ts": "fd18e2106925e65d74c82d4d49e75018ad87decbf8efba7fb2806b0b94e9702b",
+        "docs/baselines/CVF_GC018_NCR_INTAKE_DISPATCH_REPAIR_2026-10-07.md": "220591b1eebc873a2e000e2b2ffb5c05a1201bbdcf7431cf9394de59052b22f6",
+        "docs/reviews/evidence/cvf-local-candidate-release-2026-10-07.json": "c6e206ecc921c978084705b9b2ae2ac1847047464dbe9ef102c2eec1ef162150",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/utils.ts": "6ac5d6f2c8d29f09a59ebe8259becabccca6a28dd238e4e7aec7a31588476236",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/playwright.config.ts": "6e177cc6bc4c78d5c06f6a1ff889ec200b03b284ab684a4be71a87eb683538d7"
+      },
+      "bundleExecutionSourceLfSha256": {
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/TemplateCard.tsx": "441ffd21a0320d3e3a55ba3bf5fe88e14f1d6bbf4801d6eac3fdaf8bc0dde236",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/TemplateCard.test.tsx": "fcc61cee8cd09066b84c3d1b529383eec0b03db82f9c32d1e13da5fc56b5ceea",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/noncoder-governance-live.spec.ts": "12ab6fed34f2bcd1b8996174df7d998982e302953fd47eb234b17478b89fd74f"
+      },
+      "compatibleExtension": "same candidate/browser-readiness outcome:wait login readiness before fills;wait hydrated home card;remove redundant gallery/wizard goto. Prior diagnostic confirms actual blank credentials and duplicate goto,not provider/key cause.",
+      "finalStageExecutionSourceLfSha256": {
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/TemplateCard.tsx": "441ffd21a0320d3e3a55ba3bf5fe88e14f1d6bbf4801d6eac3fdaf8bc0dde236",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/TemplateCard.test.tsx": "fcc61cee8cd09066b84c3d1b529383eec0b03db82f9c32d1e13da5fc56b5ceea",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/noncoder-governance-live.spec.ts": "0bb714f163786f3a8467f7c70f4509c07115fba52821dfcbd36fd2a4eb6c85e9",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/utils.ts": "6a27d4aa18f22a4c869189caaf32925121ebf77282629b8e374f3762ca77a6fb",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/playwright.config.ts": "9ff2949abff54f6e8543d6030206138c90abee70e2ef59c6ab6c378cb9199f43"
+      },
+      "finalStageBudget": "one canonical check_e2e(False,True) after classified login/navigation failure;all existing live specs plus cold readiness/fallback control;consume8 valid prior bundle stages,do not relabel prior whole bundle PASS",
+      "serialProofAdmission": "one controlled serial live-stage invocation after cold diagnostic:dev JS took13s of15s readiness budget;single server compile/resource contention hypothesis,not proved. Workers1 declares sequential local governance proof;timeouts/assertions unchanged. Parallel cold failure retained,not universal throughput proof."
+    },
+    "diagnosis": {
+      "priorBundleMaterial": "6bf611954fe05fb62e57cc1c78dff6b7217c7600",
+      "clickEndMs": 111448.549,
+      "homeChunkCompleteMs": 111952.849,
+      "reactDevtoolsMs": 113226.47,
+      "finding": "SERVER_HTML_CARD_ACTION_BEFORE_CLIENT_HANDLER_READY",
+      "boundary": "trace timing plus SSR regression and deliberately held home JavaScript reproduce readiness gap;Next/auth JSON co-occurrence not assigned as cause"
+    },
+    "regressions": {
+      "originalSourceFailures": 2,
+      "currentPassed": 5,
+      "typecheck": "PASS",
+      "lint": "PASS",
+      "claim": "structural SSR/hydration and gallery tests;not provider governance"
+    },
+    "selectedExecution": {
+      "exitCode": 0,
+      "elapsedMs": 76484,
+      "output": ".cvf\\runtime\\release-gate-e2e\\full-65_5a8hw",
+      "sourceWorktreeSha256": {
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/TemplateCard.tsx": "441ffd21a0320d3e3a55ba3bf5fe88e14f1d6bbf4801d6eac3fdaf8bc0dde236",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/TemplateCard.test.tsx": "fcc61cee8cd09066b84c3d1b529383eec0b03db82f9c32d1e13da5fc56b5ceea",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/noncoder-governance-live.spec.ts": "12ab6fed34f2bcd1b8996174df7d998982e302953fd47eb234b17478b89fd74f",
+        "docs/baselines/CVF_GC018_NCR_INTAKE_DISPATCH_REPAIR_2026-10-07.md": "220591b1eebc873a2e000e2b2ffb5c05a1201bbdcf7431cf9394de59052b22f6",
+        "docs/reviews/evidence/cvf-local-candidate-release-2026-10-07.json": "c6e206ecc921c978084705b9b2ae2ac1847047464dbe9ef102c2eec1ef162150"
+      },
+      "command": "npx playwright test --config playwright.config.ts tests/e2e/noncoder-governance-live.spec.ts --grep <cold HTML or full-mode Idea Brief> --reporter=json --output <unique ignored output>",
+      "diagnostic": null
+    },
+    "selectedCases": [
+      {
+        "title": "cold HTML template waits for hydration before opening the idea form",
+        "status": "passed",
+        "durationMs": 55249,
+        "safeAttachments": []
+      },
+      {
+        "title": "full-mode Idea Brief export reaches the client INTAKE gate on real Alibaba output",
+        "status": "passed",
+        "durationMs": 8209,
+        "safeAttachments": [
+          {
+            "name": "full-client-safe-observation",
+            "data": {
+              "surface": "direct_client_intake_modal",
+              "directRequests": 1,
+              "provider": "alibaba",
+              "model": "qwen-flash",
+              "httpStatus": 200,
+              "finishReason": "stop",
+              "outputLength": 1210,
+              "ideaConfirmedBeforeSend": true,
+              "modalPhase": "INTAKE",
+              "phaseApproved": false,
+              "claimBoundary": "client_ui_only_not_server_receipt_or_phase_progression"
+            }
+          },
+          {
+            "name": "full-client-request-count",
+            "data": {
+              "directRequests": 1,
+              "scope": "observed_direct_alibaba_posts_only",
+              "phaseApproved": false
+            }
+          }
+        ]
+      }
+    ],
+    "clientObservation": {
+      "surface": "direct_client_intake_modal",
+      "directRequests": 1,
+      "provider": "alibaba",
+      "model": "qwen-flash",
+      "httpStatus": 200,
+      "finishReason": "stop",
+      "outputLength": 1210,
+      "ideaConfirmedBeforeSend": true,
+      "modalPhase": "INTAKE",
+      "phaseApproved": false,
+      "claimBoundary": "client_ui_only_not_server_receipt_or_phase_progression"
+    },
+    "canonicalExecution": {
+      "exitCode": 1,
+      "elapsedMs": 811953,
+      "command": "python -B scripts/run_cvf_release_gate_bundle.py --json --output <ignored bundle> --manifest-output <ignored manifest> --sot3-diagnostic-output <ignored diagnostic> --e2e-diagnostic-output <ignored diagnostic>",
+      "provider": "Alibaba-only fixed live cases;readiness stage evaluates saved receipts",
+      "automaticReplay": false
+    },
+    "canonicalBundle": {
+      "date": "2026-10-07",
+      "gate_result": "FAIL",
+      "checks": [
+        {
+          "name": "Capability environment preflight",
+          "status": "PASS",
+          "message": "Capability environment preflight PASS",
+          "detail": [
+            "git:AVAILABLE",
+            "python:AVAILABLE",
+            "node:AVAILABLE",
+            "npm:AVAILABLE",
+            "npx:AVAILABLE"
+          ]
+        },
+        {
+          "name": "Web build (npm run build)",
+          "status": "PASS",
+          "message": "Build succeeded",
+          "detail": []
+        },
+        {
+          "name": "TypeScript check (guard contract)",
+          "status": "PASS",
+          "message": "TypeScript check clean",
+          "detail": []
+        },
+        {
+          "name": "Provider readiness",
+          "status": "PASS",
+          "message": "CERTIFIED lanes: 3 \u2014 status: CERTIFIED",
+          "detail": []
+        },
+        {
+          "name": "Secrets scan",
+          "status": "PASS",
+          "message": "No secret patterns detected in declared scan scope",
+          "detail": [
+            "filesScanned=67222 filesSkippedExtension=11153 skippedDirectories=177 filesUnreadable=0 stoppedAfterFindingsLimit=false"
+          ]
+        },
+        {
+          "name": "Docs governance (RC docs present)",
+          "status": "PASS",
+          "message": "All 3 required RC docs present",
+          "detail": []
+        },
+        {
+          "name": "E2E Playwright UI (mock)",
+          "status": "PASS",
+          "message": "Playwright UI mock suite passed",
+          "detail": [
+            "\u001b[2m[WebServer] \u001b[22m(Use `node --trace-warnings ...` to show where the warning was created)"
+          ]
+        },
+        {
+          "name": "E2E Playwright Governance (live)",
+          "status": "FAIL",
+          "message": "Playwright live governance suite failed",
+          "detail": [
+            "    Error: page.goto: net::ERR_ABORTED at http://localhost:3012/home",
+            "    ..\\..\\..\\.cvf\\runtime\\release-gate-e2e\\live-6ymtwfkn\\noncoder-governance-live-t-a0f42-ned-templates-for-non-coder\\test-failed-1.png",
+            "    Error Context: ..\\..\\..\\.cvf\\runtime\\release-gate-e2e\\live-6ymtwfkn\\noncoder-governance-live-t-a0f42-ned-templates-for-non-coder\\error-context.md",
+            "    Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed",
+            "    Error: element(s) not found",
+            "    ..\\..\\..\\.cvf\\runtime\\release-gate-e2e\\live-6ymtwfkn\\governance-gate-live-gover-e040a--updated-after-real-AI-call\\test-failed-1.png",
+            "    Error Context: ..\\..\\..\\.cvf\\runtime\\release-gate-e2e\\live-6ymtwfkn\\governance-gate-live-gover-e040a--updated-after-real-AI-call\\error-context.md",
+            "\u001b[1A\u001b[2K  2 failed"
+          ]
+        },
+        {
+          "name": "SOT3 canonical release proof (A5)",
+          "status": "PASS",
+          "message": "SOT3 canonical release proof PASS with full owner correlation",
+          "detail": []
+        }
+      ],
+      "sot3": {
+        "admissionFailures": [],
+        "approvedContextIncluded": true,
+        "claim": "SOT3_FAILURE_RECOVERY_PROVEN_BOUNDED",
+        "durableOwnerCorrelationComplete": true,
+        "httpStatus": 200,
+        "localNegativeGatePassed": true,
+        "negativeCaseCount": 19,
+        "overall": "PASS",
+        "providerSuccess": true,
+        "recoveryProviderCallCount": 1,
+        "rollbackProviderCallCount": 1,
+        "traceCount": 1,
+        "zeroProviderCallCaseCount": 18
+      }
+    },
+    "canonicalManifest": {
+      "claimBoundary": "Manifest records file hashes, rerun command, repo commit, and optional HMAC. It does not prove third-party execution unless an external anchor is provided.",
+      "evidence": [
+        {
+          "path": ".cvf/runtime/template-hydration-repair-20261007/bundle.json",
+          "sha256": "46145ca2bf3bdabf8bb527269ea6c03962d67a4a38ff8d2fb1c88eb2a10df0da",
+          "sizeBytes": 3404
+        },
+        {
+          "path": ".cvf/runtime/template-hydration-repair-20261007/sot3-diagnostic.json",
+          "sha256": "b78bac022b39105fefa0a7e1c0eee458f512d8cb06775103a79c179a4cbb8d0a",
+          "sizeBytes": 544
+        },
+        {
+          "path": ".cvf/runtime/template-hydration-repair-20261007/e2e-diagnostic.json",
+          "sha256": "1bb484630d739579c554cd04a8e6a99c34e755a4f698ee2fb9de09b1edf5b9a1",
+          "sizeBytes": 381
+        }
+      ],
+      "externalAnchor": {
+        "anchorId": "",
+        "anchorUrl": "",
+        "status": "NOT_PROVIDED"
+      },
+      "generatedAt": "2026-10-07T15:39:04.034598+00:00",
+      "repository": {
+        "branch": "main",
+        "commit": "46bfd55e4c6ef59ce92e40382dfcf113e57741de",
+        "dirtyStatus": "M EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/TemplateCard.tsx\n M EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/noncoder-governance-live.spec.ts\n M EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tsconfig.json\n?? EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/TemplateCard.test.tsx",
+        "remoteOrigin": "https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF-Provenance.git"
+      },
+      "rerun": {
+        "acceptedSecretEnv": [
+          "DASHSCOPE_API_KEY",
+          "ALIBABA_API_KEY",
+          "CVF_ALIBABA_API_KEY",
+          "CVF_BENCHMARK_ALIBABA_KEY"
+        ],
+        "command": "python scripts/run_cvf_release_gate_bundle.py --sot3-diagnostic-output <path> --e2e-diagnostic-output <path> --json",
+        "requiresLiveProviderKey": true
+      },
+      "schema": "cvf.liveEvidenceManifest.v1",
+      "signature": {
+        "algorithm": "hmac-sha256",
+        "digest": "",
+        "status": "UNSIGNED"
+      }
+    },
+    "sot3Diagnostic": {
+      "a4LocalNegativeGatePassed": true,
+      "a4RecoveryProviderCallCount": 1,
+      "a4ReturnCode": 0,
+      "admissionFailures": [],
+      "batchId": "SOT3-ACT-A5",
+      "diagnostic": null,
+      "finishedAtUtc": "2026-10-07T15:39:04.004930+00:00",
+      "schemaVersion": "cvf.sot3ActA5Diagnostic.v1",
+      "secretSafety": {
+        "fullPromptPersisted": false,
+        "rawKeyPersisted": false,
+        "rawOutputPersisted": false,
+        "rawProviderBodyPersisted": false
+      },
+      "startedAtUtc": "2026-10-07T15:37:09.555498+00:00",
+      "underlyingA4Diagnostic": null
+    },
+    "e2eDiagnostic": {
+      "stage": "e2e_execution",
+      "class": "e2e_failed",
+      "retryable": false,
+      "userAction": "inspect_secret_safe_test_artifacts_before_retry",
+      "safeMessage": "The live governance E2E suite failed; inspect the retained test artifacts before retrying.",
+      "provider": "alibaba",
+      "model": null,
+      "httpStatus": null,
+      "latencyMs": 102547,
+      "traceOrReceipt": null
+    },
+    "sourceLfNormalizedSha256": {
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/TemplateCard.tsx": "441ffd21a0320d3e3a55ba3bf5fe88e14f1d6bbf4801d6eac3fdaf8bc0dde236",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/TemplateCard.test.tsx": "fcc61cee8cd09066b84c3d1b529383eec0b03db82f9c32d1e13da5fc56b5ceea",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/noncoder-governance-live.spec.ts": "0bb714f163786f3a8467f7c70f4509c07115fba52821dfcbd36fd2a4eb6c85e9",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/utils.ts": "6a27d4aa18f22a4c869189caaf32925121ebf77282629b8e374f3762ca77a6fb",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/playwright.config.ts": "9ff2949abff54f6e8543d6030206138c90abee70e2ef59c6ab6c378cb9199f43"
+    },
+    "runtimeArtifactSha256": {
+      "admission.json": "f0a5d4e39f79a893287e22beab8c8778c00adf83dce07e1828fdf08fac52a97b",
+      "preimplementation.log": "db7476eef98fe1108d5b3a305fb76099a1eb9243440f0370bf8ad284088e5e6d",
+      "red.log": "1d37d55da9a1137fdd749a2b4a4f147a44fbdc0a6e0cfa2207b2876fd63e5f66",
+      "green.log": "a710bf477a1e94c85d7eaad28b65ba3e25830ca23428967c1207e735c60d372a",
+      "final-typecheck.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "final-lint.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "selected-stdout.json": "f80528582ef910d2c3723c24c1e828a85c6ba998dd61027603472bf853ba0ac3",
+      "selected-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "result.json": "f2e3039dfc12fdb9fd91033f841021583a05f6483f27bbecf6f4f279370a6d35",
+      "bundle.json": "46145ca2bf3bdabf8bb527269ea6c03962d67a4a38ff8d2fb1c88eb2a10df0da",
+      "manifest.json": "6bc8991f2bbf4895e2cc081f029b52a42b851a6d0e4353846d92ac519a6abaeb",
+      "command-result.json": "7b8bd8be217b73aeda8f75548132ec1433769d72322286c4664c91683d8502a6",
+      "e2e-diagnostic.json": "1bb484630d739579c554cd04a8e6a99c34e755a4f698ee2fb9de09b1edf5b9a1",
+      "sot3-diagnostic.json": "b78bac022b39105fefa0a7e1c0eee458f512d8cb06775103a79c179a4cbb8d0a",
+      "adif.json": "ffa99c6e1bacb3065ac7f2b481c15f0e9fd04516fe5867cea28646cd16e13c34",
+      "stage-result.json": "989c727989cc76deaae00140be1bf088b28e2426b429f2a12e03296dc39bb616",
+      "stage-stdout.log": "ec368ddb0f63347462379dd020d44b4669e32a23aa05db21f852e30e6f889caa",
+      "stage-stderr.log": "a7e553aa175e4aa95b390d6358221f2f33d8cd5dba16c217995362cac7a2906a",
+      "bundle-failure-diagnostic.json": "23dacdfa36bee71960c826a684c4553547fd9f09f3ce6e35f27e87896a71cf8f",
+      "config-lint.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "parallel-stage-result.json": "bebe3f205aad53954a2c130b3fea1d91053fb506e5968b68989a2b91a4066768",
+      "parallel-stage-stdout.log": "b8245e481840ee0e6dc95386fc10d0a5fa7c7a0f7b10c9f2447af6566a38c9ea",
+      "parallel-stage-stderr.log": "03e6153b0a1187d994a06b5e7bd19d5a23acb723638ea867c8ff71a09d66228b",
+      "cold-stage-diagnostic.json": "951dd949d098d4adf3195446f224cd3d5549b7e9e5305ba704e47f18bb34ff0e"
+    },
+    "generatedRestoration": {
+      "beforeSha256": "d4af4823c8a2919796c5faa29805cd152217fbc25d6021c2da57541a685ea0f6",
+      "generatedSha256": "8edcad40e819418b5a50a00ef8903a79f20a7096ecc4f891aae456aaab27baac",
+      "stageAddedIncludes": [
+        ".next-cvf-release-gate-e2e-live/types/**/*.ts",
+        ".next-cvf-release-gate-e2e-live/dev/types/**/*.ts"
+      ]
+    },
+    "adifQuery": {
+      "items": [],
+      "truncated": false,
+      "totalCandidates": 0,
+      "claimBoundary": "Returning this packet is not evidence that any caller read or understood it."
+    },
+    "claimBoundary": "Local synthetic candidate at these source bytes. UI mock and delayed-JS test structural only;real Alibaba client modal not server phase acceptance;SOT3 rollback negatives use spy/recovery uses real Alibaba. Saved provider readiness not recertification. No remote CI,actual data,business acceptance,P11,production/public/deploy or universal lifecycle guarantee.",
+    "disposition": "SERIAL_LIVE_STAGE_REPAIRED_PASS_BOUNDED",
+    "finalStageExecution": {
+      "status": "PASS",
+      "message": "Playwright live governance suite passed",
+      "elapsedMs": 159094,
+      "diagnostic": null,
+      "sourceLfSha256": {
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/TemplateCard.tsx": "441ffd21a0320d3e3a55ba3bf5fe88e14f1d6bbf4801d6eac3fdaf8bc0dde236",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/TemplateCard.test.tsx": "fcc61cee8cd09066b84c3d1b529383eec0b03db82f9c32d1e13da5fc56b5ceea",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/noncoder-governance-live.spec.ts": "0bb714f163786f3a8467f7c70f4509c07115fba52821dfcbd36fd2a4eb6c85e9",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/utils.ts": "6a27d4aa18f22a4c869189caaf32925121ebf77282629b8e374f3762ca77a6fb",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/playwright.config.ts": "9ff2949abff54f6e8543d6030206138c90abee70e2ef59c6ab6c378cb9199f43"
+      },
+      "command": "canonical release runner check_e2e(False,True);three existing specs,real Alibaba,isolated live runtime;no retries added",
+      "detail": [
+        "\u001b[2m[WebServer] \u001b[22m(Use `node --trace-warnings ...` to show where the warning was created)"
+      ],
+      "passedCases": 12
+    },
+    "classifiedBundleFailure": [
+      {
+        "case": "governance-gate-live-gover-e040a--updated-after-real-AI-call",
+        "calls": [
+          {
+            "type": "after",
+            "time": 97539.987,
+            "method": null,
+            "selector": null,
+            "url": null,
+            "error": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('button', { name: /Ph\u00e2n t\u00edch Chi\u1ebfn l\u01b0\u1ee3c|Strategy Analysis/i }).first()\nExpected: visible\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('button', { name: /Ph\u00e2n t\u00edch Chi\u1ebfn l\u01b0\u1ee3c|Strategy Analysis/i }).first()\u001b[22m\n"
+          },
+          {
+            "type": "before",
+            "time": 66464.986,
+            "method": "goto",
+            "selector": null,
+            "url": "/login",
+            "error": null
+          },
+          {
+            "type": "before",
+            "time": 72345.035,
+            "method": "fill",
+            "selector": "input[type=\"text\"][placeholder=\"admin\"]",
+            "url": null,
+            "error": null
+          },
+          {
+            "type": "before",
+            "time": 72424.048,
+            "method": "fill",
+            "selector": "input[type=\"password\"][placeholder=\"admin123\"]",
+            "url": null,
+            "error": null
+          },
+          {
+            "type": "before",
+            "time": 72455.171,
+            "method": "fill",
+            "selector": "input[type=\"text\"][placeholder=\"admin\"]",
+            "url": null,
+            "error": null
+          },
+          {
+            "type": "before",
+            "time": 72487.869,
+            "method": "fill",
+            "selector": "input[type=\"password\"][placeholder=\"admin123\"]",
+            "url": null,
+            "error": null
+          },
+          {
+            "type": "before",
+            "time": 82404.478,
+            "method": "click",
+            "selector": "internal:role=button[name=/\u0110\u0103ng nh\u1eadp|Dang nhap|Sign in/i] >> nth=0",
+            "url": null,
+            "error": null
+          },
+          {
+            "type": "after",
+            "time": 97521.256,
+            "method": null,
+            "selector": null,
+            "url": null,
+            "error": "Expect failed"
+          }
+        ],
+        "network": [
+          {
+            "path": "/api/auth/csrf",
+            "status": 500,
+            "time": 60646.339,
+            "duration": 5812.703000000009
+          },
+          {
+            "path": "/api/auth/session",
+            "status": 500,
+            "time": 76653.954,
+            "duration": 5372.811000000001
+          },
+          {
+            "path": "/api/auth/session",
+            "status": 200,
+            "time": 82007.024,
+            "duration": 66.025
+          },
+          {
+            "path": "/api/auth/providers",
+            "status": 200,
+            "time": 82475.701,
+            "duration": 46.174
+          },
+          {
+            "path": "/api/auth/csrf",
+            "status": 200,
+            "time": 82515.721,
+            "duration": 39.953
+          },
+          {
+            "path": "/api/auth/callback/credentials",
+            "status": 200,
+            "time": 82557.07,
+            "duration": 33.636
+          },
+          {
+            "path": "/api/auth/session",
+            "status": 200,
+            "time": 82592.93,
+            "duration": 23.759
+          },
+          {
+            "path": "/api/auth/session",
+            "status": 200,
+            "time": 90754.402,
+            "duration": 89.232
+          },
+          {
+            "path": "/api/auth/session",
+            "status": 200,
+            "time": 90767.834,
+            "duration": 152.249
+          }
+        ]
+      },
+      {
+        "case": "noncoder-governance-live-t-a0f42-ned-templates-for-non-coder",
+        "calls": [
+          {
+            "type": "after",
+            "time": 32492.508,
+            "method": null,
+            "selector": null,
+            "url": null,
+            "error": "Error: page.goto: net::ERR_ABORTED at http://localhost:3012/home\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3012/home\", waiting until \"load\"\u001b[22m\n"
+          },
+          {
+            "type": "before",
+            "time": 27736.447,
+            "method": "goto",
+            "selector": null,
+            "url": "/home",
+            "error": null
+          },
+          {
+            "type": "before",
+            "time": 28802.423,
+            "method": "goto",
+            "selector": null,
+            "url": "/home",
+            "error": null
+          },
+          {
+            "type": "after",
+            "time": 32488.637,
+            "method": null,
+            "selector": null,
+            "url": null,
+            "error": "net::ERR_ABORTED at http://localhost:3012/home"
+          }
+        ],
+        "network": [
+          {
+            "path": "/api/auth/csrf",
+            "status": 200,
+            "time": 23867.096,
+            "duration": 3001.4349999999977
+          },
+          {
+            "path": "/api/auth/callback/credentials",
+            "status": 302,
+            "time": 26870.485,
+            "duration": 88.9880000000012
+          },
+          {
+            "path": "/api/auth/session",
+            "status": 200,
+            "time": 27348.68,
+            "duration": 383.1840000000011
+          },
+          {
+            "path": "/api/auth/me",
+            "status": -1,
+            "time": 32436.436,
+            "duration": -1
+          },
+          {
+            "path": "/api/auth/session",
+            "status": -1,
+            "time": 32435.324,
+            "duration": -1
+          }
+        ]
+      },
+      {
+        "case": "governance-gate-live-gover-e040a--updated-after-real-AI-call",
+        "credentialValuesWithheld": true,
+        "usernameEmpty": true,
+        "passwordEmpty": true
+      },
+      {
+        "case": "noncoder-governance-live-t-a0f42-ned-templates-for-non-coder",
+        "credentialValuesWithheld": true,
+        "usernameEmpty": false,
+        "passwordEmpty": false
+      }
+    ],
+    "parallelStageFailure": {
+      "status": "FAIL",
+      "message": "Playwright live governance suite failed",
+      "elapsedMs": 146531,
+      "diagnostic": {
+        "stage": "e2e_execution",
+        "class": "e2e_failed",
+        "retryable": false,
+        "userAction": "inspect_secret_safe_test_artifacts_before_retry",
+        "safeMessage": "The live governance E2E suite failed; inspect the retained test artifacts before retrying.",
+        "provider": "alibaba",
+        "model": null,
+        "httpStatus": null,
+        "latencyMs": 146531,
+        "traceOrReceipt": null
+      },
+      "sourceLfSha256": {
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/TemplateCard.tsx": "441ffd21a0320d3e3a55ba3bf5fe88e14f1d6bbf4801d6eac3fdaf8bc0dde236",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/TemplateCard.test.tsx": "fcc61cee8cd09066b84c3d1b529383eec0b03db82f9c32d1e13da5fc56b5ceea",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/noncoder-governance-live.spec.ts": "0bb714f163786f3a8467f7c70f4509c07115fba52821dfcbd36fd2a4eb6c85e9",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/utils.ts": "6a27d4aa18f22a4c869189caaf32925121ebf77282629b8e374f3762ca77a6fb"
+      },
+      "command": "canonical release runner check_e2e(False,True);three existing specs,real Alibaba,isolated live runtime;no retries added",
+      "detail": [
+        "    Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeEnabled\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed",
+        "    ..\\..\\..\\.cvf\\runtime\\release-gate-e2e\\live-vi8e05a7\\noncoder-governance-live-i-64068-tails-\u2014-no-AI-call-required\\test-failed-1.png",
+        "    Error Context: ..\\..\\..\\.cvf\\runtime\\release-gate-e2e\\live-vi8e05a7\\noncoder-governance-live-i-64068-tails-\u2014-no-AI-call-required\\error-context.md",
+        "\u001b[1A\u001b[2K  1 failed"
+      ]
+    },
+    "coldStartupDiagnostic": {
+      "case": "noncoder-governance-live-i-64068-tails-\u2014-no-AI-call-required",
+      "errors": [
+        "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeEnabled\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('button', { name: /Ph\u00e2n t\u00edch Chi\u1ebfn l\u01b0\u1ee3c|Strategy Analysis/i }).first()\nExpected: enabled\nReceived: disabled\nTimeout:  15000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeEnabled\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('button', { name: /Ph\u00e2n t\u00edch Chi\u1ebfn l\u01b0\u1ee3c|Strategy Analysis/i }).first()\u001b[22m\n\u001b[2m    16 \u00d7 locator resolved to <div role=\"button\" tabindex=\"-1\" aria-disabled=\"true\" title=\"Click \u0111\u1ec3 s\u1eed d\u1ee5ng template n\u00e0y\" class=\"group relative cvf-surface cursor-pointer rounded-[28px] border border-slate-200/80 bg-white p-7 shadow-[0_2px_10px_rgba(15,23,42,0.05)] transition-all duration-200 hover:-translate-y-1 hover:border-slate-300 hover:shadow-[0_18px_34px_-24px_rgba(79,70,229,0.55)] dark:border-white/[0.07] dark:bg-[#171b29] dark:shadow-none dark:hover:border-indigo-400/35 dark:hover:shadow-[0_18px_40px_-30px_rgba(99,102,\u2026>\u2026</div>\u001b[22m\n\u001b[2m       - unexpected value \"disabled\"\u001b[22m\n",
+        "Expect failed"
+      ],
+      "clientBootConsole": [
+        {
+          "time": 66904.248,
+          "messageClass": "REACT_STARTUP"
+        }
+      ],
+      "scripts": [
+        {
+          "path": "/_next/static/chunks/webpack.js",
+          "startMs": 52428.788,
+          "durationMs": 453.071,
+          "status": 200
+        },
+        {
+          "path": "/_next/static/chunks/app-pages-internals.js",
+          "startMs": 52429.109,
+          "durationMs": 807.863,
+          "status": 200
+        },
+        {
+          "path": "/_next/static/chunks/app/layout.js",
+          "startMs": 52429.272,
+          "durationMs": 1227.52,
+          "status": 200
+        },
+        {
+          "path": "/_next/static/chunks/app/(dashboard)/home/page.js",
+          "startMs": 52429.972,
+          "durationMs": 12957.883,
+          "status": 200
+        },
+        {
+          "path": "/_next/static/chunks/app/(dashboard)/layout.js",
+          "startMs": 52429.818,
+          "durationMs": 12941.552,
+          "status": 200
+        },
+        {
+          "path": "/_next/static/chunks/main-app.js",
+          "startMs": 52428.969,
+          "durationMs": 13074.101,
+          "status": 200
+        }
+      ],
+      "claim": "cold hydration readiness deadline failure;parallel contention suspected,not proved;no provider request in this failed pre-action case"
+    },
+    "sourceRevisionQualification": "Canonical bundle before login helper repair remains FAIL;final source5 bound to later complete serial live stage PASS;product TemplateCard bytes unchanged between the two. Parallel cold startup FAIL retained;no concurrent throughput or fresh final-source whole-bundle PASS claimed.",
+    "finalConfigTypecheck": {
+      "status": "PASS",
+      "command": "npx tsc --noEmit",
+      "artifactSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
   }
 }

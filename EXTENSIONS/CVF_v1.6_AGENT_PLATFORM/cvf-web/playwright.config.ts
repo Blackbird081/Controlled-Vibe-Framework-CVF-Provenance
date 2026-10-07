@@ -15,6 +15,10 @@ const PLAYWRIGHT_PORT = Number(process.env.CVF_PLAYWRIGHT_PORT ?? 3001);
 // For mock/CI-safe runs use: playwright.config.mock.ts
 export default defineConfig({
     testDir: './tests/e2e',
+    // Local live proof uses one Next dev compiler and controlled provider flow.
+    // Parallel cold compilation can consume the readiness budget before handlers
+    // exist; this is a sequential proof, not a concurrent-load certification.
+    workers: 1,
     timeout: 180_000,
     expect: {
         timeout: 30_000,

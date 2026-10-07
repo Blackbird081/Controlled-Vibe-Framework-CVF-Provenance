@@ -26,7 +26,6 @@ test('landing page renders CVF value props and non-coder CTA', async ({ page }) 
 
 test('template gallery shows governed templates for non-coder', async ({ page }) => {
     await login(page);
-    await page.goto('/home');
 
     await expect(
         page.getByRole('button', { name: /Phân tích Chiến lược|Strategy Analysis/i }).first()
@@ -38,7 +37,6 @@ test('template gallery shows governed templates for non-coder', async ({ page })
 
 test('intake wizard advances after project details — no AI call required', async ({ page }) => {
     await login(page);
-    await page.goto('/home');
     const strategyButton = page.getByRole('button', { name: /Phân tích Chiến lược|Strategy Analysis/i }).first();
     await strategyButton.click();
 
@@ -89,6 +87,60 @@ test('full-mode API returns a governed live result and receipt', async ({ page }
             receiptId: body.governanceEvidenceReceipt.receiptId,
             providerAttemptReconciliation: body.providerAttemptReconciliation ?? null }),
     });
+});
+
+test('cold HTML template waits for hydration before opening the idea form', async ({ page }) => {
+    await login(page);
+    let release!: () => void;
+    const held = new Promise<void>(resolve => { release = resolve; });
+    await page.route(/\/_next\/static\/chunks\/app\/.*\/home\/page\.js/, async route => {
+        await held;
+        await route.continue();
+    });
+    let directRequests = 0;
+    page.on('request', request => {
+        if (request.url().startsWith('https://dashscope-intl.aliyuncs.com/')
+            && request.method() === 'POST') directRequests++;
+    });
+    const card = page.getByRole('button', { name: /Phân tích Chiến lược|Strategy Analysis/i }).first();
+    try {
+        await page.goto('/home', { waitUntil: 'commit' });
+        await expect(card).toBeVisible();
+        await expect(card).toBeDisabled();
+    } finally {
+        release();
+    }
+    await expect(card).toBeEnabled();
+    await card.click();
+    await expect(page.getByPlaceholder('VD: Mở rộng thị trường miền Trung')).toBeVisible();
+    expect(directRequests).toBe(0);
+});
+
+test('fallback login waits for session readiness before filling credentials', async ({ page }) => {
+    // page.request is not intercepted by page routes; force only the helper's
+    // first server-auth probe to use its normal browser fallback.
+    const originalGet = page.request.get.bind(page.request);
+    let probe = true;
+    page.request.get = async (...args) => {
+        if (probe && String(args[0]).endsWith('/api/auth/csrf')) {
+            probe = false;
+            return { ok: () => false } as Awaited<ReturnType<typeof originalGet>>;
+        }
+        return originalGet(...args);
+    };
+    let release!: () => void;
+    const held = new Promise<void>(resolve => { release = resolve; });
+    await page.route('**/api/auth/session', async route => { await held; await route.continue(); });
+    const pending = login(page);
+    try {
+        await expect(page.getByRole('button', { name: /Checking session|Đang kiểm tra phiên/i })).toBeDisabled();
+        await expect(page.locator('input[type="text"][placeholder="admin"]')).toHaveValue('');
+        await expect(page.locator('input[type="password"][placeholder="admin123"]')).toHaveValue('');
+    } finally {
+        release();
+        await pending;
+        page.request.get = originalGet;
+    }
 });
 
 test('full-mode Idea Brief export reaches the client INTAKE gate on real Alibaba output', async ({ page }, testInfo) => {

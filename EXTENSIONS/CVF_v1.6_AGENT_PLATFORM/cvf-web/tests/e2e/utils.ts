@@ -87,13 +87,14 @@ export async function loginAs(page: Page, username: string, password: string) {
     const signedIn = await signInViaNextAuth(page, username, password);
     if (signedIn) {
         await page.goto('/home', { waitUntil: 'domcontentloaded', timeout: 15_000 });
-        await expect(page.getByRole('button', { name: /Phân tích Chiến lược|Strategy Analysis/i }).first()).toBeVisible({ timeout: 15_000 });
+        await expect(page.getByRole('button', { name: /Phân tích Chiến lược|Strategy Analysis/i }).first()).toBeEnabled({ timeout: 15_000 });
         return;
     }
 
     await page.goto('/login', { waitUntil: 'domcontentloaded', timeout: 15_000 });
-    await page.locator('input[type="text"][placeholder="admin"]').fill('admin');
-    await page.locator('input[type="password"][placeholder="admin123"]').fill('admin123');
+    // Inputs in server HTML can be visible before React owns their values.
+    // Wait for the existing client session gate before filling, not only clicking.
+    const loginButton = await waitForLoginButtonReady(page, 10_000);
     await page.locator('input[type="text"][placeholder="admin"]').fill(username);
     await page.locator('input[type="password"][placeholder="admin123"]').fill(password);
 
@@ -107,9 +108,8 @@ export async function loginAs(page: Page, username: string, password: string) {
     // Wait for the session-bootstrap-gated button to reach a terminal,
     // enabled state before clicking. Never press Enter against a
     // still-disabled/checking form as a fallback.
-    const loginButton = await waitForLoginButtonReady(page, 10_000);
     await loginButton.click({ timeout: 10_000 });
-    await expect(page.getByRole('button', { name: /Phân tích Chiến lược|Strategy Analysis/i }).first()).toBeVisible({ timeout: 15_000 });
+    await expect(page.getByRole('button', { name: /Phân tích Chiến lược|Strategy Analysis/i }).first()).toBeEnabled({ timeout: 15_000 });
 }
 
 export async function login(page: Page) {

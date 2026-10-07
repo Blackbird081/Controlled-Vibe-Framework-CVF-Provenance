@@ -5,6 +5,79 @@ docType: baseline
 Status: LOCAL_CANDIDATE_BUNDLE_EVIDENCE_BOUNDED
 Date: 2026-10-07
 
+## Template Hydration Repair And Candidate Proof - 2026-10-07
+
+Consumer: Local integrated candidate UI reviewer;admission base 46bfd55e4c6ef59ce92e40382dfcf113e57741de.
+Seven exact material paths in the trace;no worker delegation or new program.
+Required outputs: hydration-ready card/actions,SSR/delayed-JS regressions,
+one selected Alibaba client proof,one current canonical bundle and continuity.
+Prior live failure click completed at111448.549ms;home JavaScript completed
+at111952.849ms;React startup console113226.47ms. Visible HTML did not prove
+handlers ready. Retained zero-POST failure remains historical. JSON errors
+co-occurred,but are not treated as the proven cause of this missing form.
+
+TemplateCard uses React server/client snapshot readiness. Server HTML exposes
+aria-disabled=true,tabIndex=-1,and disabled child actions;hydrated snapshots
+enable the handlers and keyboard focus. No sleep,repeated click,timeout increase,
+key/model/cap change or guard bypass. Server snapshot matches initial hydration.
+Original source fails2 SSR/ready assertions;final5 focused tests,typecheck and
+scoped lint PASS. Browser holds home page JavaScript:card disabled,then enabled,
+click opens the idea field;zero direct Alibaba calls in this structural case.
+Selected client confirms VI idea,exports EN Working Brief,receives Alibaba200,
+finish stop,exactly1 POST and INTAKE modal;no phase approval. Both selected cases
+PASS in 76484ms;source identities and safe observations bound.
+
+Current canonical command:python -B scripts/run_cvf_release_gate_bundle.py --json,
+with isolated outputs/manifest/diagnostics. One invocation on repaired bytes;
+expected information gain resolves the original combined candidate blocker,
+which selected proof alone cannot close. Exit1,
+elapsed811953ms;gate_result=FAIL. No blind retry.
+
+| Required stage | Current status |
+|---|---|
+| Capability environment preflight | PASS |
+| Web build (npm run build) | PASS |
+| TypeScript check (guard contract) | PASS |
+| Provider readiness | PASS |
+| Secrets scan | PASS |
+| Docs governance (RC docs present) | PASS |
+| E2E Playwright UI (mock) | PASS |
+| E2E Playwright Governance (live) | FAIL |
+| SOT3 canonical release proof (A5) | PASS |
+
+Disposition: CANONICAL_LOCAL_CANDIDATE_FAIL_RECORDED_BOUNDED.
+Companion templateHydrationRepair20261007 binds source hashes,raw artifact
+hashes,manifest,stage reconciliation and diagnostics. Previous bundle FAIL
+and all selected repair histories retained. Generated Next additions verified
+and restored;no tracked report replacement. Consume terminal candidate proof
+and existing phase owners;do not restart a spec-detail or endpoint campaign.
+Saved provider readiness evaluates receipts,not new model certification;
+UI mock structural;SOT3 real recovery and negative spy counts stay distinct.
+No actual-data,business/remote CI/production/P11/public/deploy acceptance.
+
+Compatible login/navigation repair after this bundle:gallery issued two home
+navigations;fallback login filled before client readiness and trace records
+actual empty username/password on its credential POST(values withheld).
+Helper now waits existing session/button readiness before filling,and waits
+hydrated home card enabled afterward;gallery/wizard redundant goto removed.
+Deterministic fallback test holds browser session bootstrap while a mocked
+failed server probe routes normal fallback:fields stay empty while loading,
+then real local auth/home succeeds. This is structural auth proof,no AI claim.
+Latest typecheck/scoped lint PASS. One complete canonical live-stage invocation
+on final5 source/test/config bytes PASS in 159094ms;
+all three existing specs plus cold/fallback readiness cases retained. No new
+retry,guard/key/model/cap change. Diagnostic captured before this invocation.
+Parallel stage11 PASS/1 FAIL retained:home/layout/main JS took about13s before
+React startup,card remained disabled at15s. Contention hypothesis is not proved.
+Live Playwright config now declares workers1 for one local Next dev compiler
+and controlled governance flow. One diagnosed serial stage revalidation;
+timeouts/criteria unchanged. No concurrent startup/throughput certification.
+Terminal disposition SERIAL_LIVE_STAGE_REPAIRED_PASS_BOUNDED;consume the8 unchanged
+non-live stages above and final repaired live-stage evidence. Original full
+bundle stays FAIL;there is no fresh final-source whole-bundle PASS claim.
+Stop at this finite browser-readiness repair outcome;future release milestone
+uses its admitted canonical command,not repeated unrelated tests by default.
+
 ## Canonical Candidate Bundle Refresh - 2026-10-07
 
 Operator next admits one Local integrated candidate milestone at b5c1d88938b199151558eef40725308878cbb338.
@@ -88,6 +161,11 @@ correction changes no source,fixture,provider effect or acceptance assertion.
 | EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/hooks/useAgentChat.test.ts | ACCEPT | Current source at admission and final repaired bytes bound in companion |
 | EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/playwright.config.ts | ACCEPT | Current source at admission and final repaired bytes bound in companion |
 | EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/chat-history.tsx | ACCEPT | Current source at admission and final repaired bytes bound in companion |
+| EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/TemplateCard.tsx | ACCEPT | Admission/final source bytes bound in templateHydrationRepair20261007 |
+| EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/TemplateCard.test.tsx | ACCEPT | Admission/final source bytes bound in templateHydrationRepair20261007 |
+| EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/noncoder-governance-live.spec.ts | ACCEPT | Admission/final source bytes bound in templateHydrationRepair20261007 |
+| EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/utils.ts | ACCEPT | Admission/final source bytes bound in templateHydrationRepair20261007 |
+| EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/playwright.config.ts | ACCEPT | Admission/final source bytes bound in templateHydrationRepair20261007 |
 
 ## Source Runtime Freshness Verification
 
@@ -168,22 +246,22 @@ Returned defects: NONE_RETURNED. Zero candidates and no truncation.
 
 | Field | Evidence |
 |---|---|
-| Actor | Local integrated candidate tester/reviewer |
+| Actor | Local template hydration maintainer/reviewer |
 | Provider or surface | Local canonical bundle; Alibaba-only synthetic live lane |
-| Session or invocation | candidate-bundle-refresh-20261007 |
+| Session or invocation | template-hydration-repair-20261007 |
 | Working directory | repository root |
-| Command or tool surface | one canonical full release bundle;source/status/diagnostic reconciliation;governance gates |
-| Target paths | docs/baselines/CVF_GC018_NCR_INTAKE_DISPATCH_REPAIR_2026-10-07.md; docs/reviews/evidence/cvf-local-candidate-release-2026-10-07.json |
+| Command or tool surface | SSR red/green;delayed-JS browser;selected Alibaba client;canonical bundle;diagnosed helper/parallel-cold failure/serial live stage;governance gates |
+| Target paths | EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/TemplateCard.tsx; EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/TemplateCard.test.tsx; EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/noncoder-governance-live.spec.ts; EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/utils.ts; EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/playwright.config.ts; docs/baselines/CVF_GC018_NCR_INTAKE_DISPATCH_REPAIR_2026-10-07.md; docs/reviews/evidence/cvf-local-candidate-release-2026-10-07.json |
 | Allowed scope source | operator next,continuous Local work and Alibaba test authorization |
-| Before status evidence | clean b5c1d88938b199151558eef40725308878cbb338 |
-| After status evidence | two evidence paths;fresh canonical bundle FAIL;prior FAIL preserved |
+| Before status evidence | clean 46bfd55e4c6ef59ce92e40382dfcf113e57741de |
+| After status evidence | seven material paths;selected2 PASS;canonical/parallel FAIL retained;final complete serial live-stage PASS |
 | Diff evidence | exact staged manifest;source Git hashes and runtime artifact hashes |
 | Approval boundary | synthetic Local candidate proof; data/public/deploy effects parked |
 | Claim boundary | current canonical Local observation;not remote CI,whole NCR or production acceptance |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | candidate-bundle-refresh-20261007 |
-| Expected manifest | docs/baselines/CVF_GC018_NCR_INTAKE_DISPATCH_REPAIR_2026-10-07.md; docs/reviews/evidence/cvf-local-candidate-release-2026-10-07.json |
-| Actual changed set | docs/baselines/CVF_GC018_NCR_INTAKE_DISPATCH_REPAIR_2026-10-07.md; docs/reviews/evidence/cvf-local-candidate-release-2026-10-07.json |
+| Invocation ID | template-hydration-repair-20261007 |
+| Expected manifest | EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/TemplateCard.tsx; EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/TemplateCard.test.tsx; EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/noncoder-governance-live.spec.ts; EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/utils.ts; EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/playwright.config.ts; docs/baselines/CVF_GC018_NCR_INTAKE_DISPATCH_REPAIR_2026-10-07.md; docs/reviews/evidence/cvf-local-candidate-release-2026-10-07.json |
+| Actual changed set | EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/TemplateCard.tsx; EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/TemplateCard.test.tsx; EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/noncoder-governance-live.spec.ts; EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/utils.ts; EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/playwright.config.ts; docs/baselines/CVF_GC018_NCR_INTAKE_DISPATCH_REPAIR_2026-10-07.md; docs/reviews/evidence/cvf-local-candidate-release-2026-10-07.json |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |
 
