@@ -36,12 +36,12 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_NCR_NEXT_MOVE_ALIGNMENT_2026-10-07.md",
-    "baselineSha256": "936b9f4c0483b59f202df24e8033d450a018fb652d4a9d421b1e10728fd2a155",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_NEXT_MOVE_ALIGNMENT_2026-10-07.md",
-    "workOrderSha256": "269615a0dad62a867ac4214c408d8b6e7b845c9429adc38e030321af0d657905"
+    "baselinePath": "docs/baselines/CVF_GC018_NCR_VIDEO_PRODUCTION_PREPARATION_2026-10-08.md",
+    "baselineSha256": "cfa582108cf3159dc04c3593e7c08ef8b1f3a8307f1f1277ff5a6244083ea8e7",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_VIDEO_PRODUCTION_PREPARATION_2026-10-08.md",
+    "workOrderSha256": "41d33a4d5bdaedbf281b7051c85dbb40518e342aeef8a6c4df16d01a74334da4"
   },
-  "currentAuthoritySyncReason": "Closed alignment pins retained;storyboard HTML 15569c6b1ecc4f58d985b837f268b0dd68734db7 delivered under operator selected-source/local-output scope;content/media acceptance separate,S05/C1/data/P11/public/deploy parked.",
+  "currentAuthoritySyncReason": "Operator preparation dispatch 3a8298cf3cf01537f6abcb970ad504d4de138f2f;pure-local kit only,C1/media STOP retained.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
