@@ -1,0 +1,127 @@
+{
+  "executionBaseHead": "9f624ecbc8274907d004a2e86ae4b807d85e21f2",
+  "workerActor": "LOCAL_CODEX_ROOT",
+  "workerInvocationId": "ncr-alignment-worker-20261007",
+  "before": {
+    "governance/compat/check_active_session_state.py": {
+      "gitSha256": "5b8a085f847622d6d772e66be74e31bed4472e3d42d9f2d815c24d65e7c1eca5",
+      "workingSha256": "7ef59d567124ce99b993d2f67e123cd458f0244797ffe8a87cbd152c6c514834",
+      "lineCount": 951
+    },
+    "governance/compat/test_check_active_session_state.py": {
+      "gitSha256": "cb6d2ee61a57a71b7561620be0f0f1d84d21593ff8c01648a626837c18955b6f",
+      "workingSha256": "cb6d2ee61a57a71b7561620be0f0f1d84d21593ff8c01648a626837c18955b6f",
+      "lineCount": 1172
+    }
+  },
+  "after": {
+    "governance/compat/check_active_session_state.py": {
+      "sha256": "d8530595346ead44f67cb18b32b6ebcf287c2b460ac68fbf16034f72034f2097",
+      "lineCount": 884
+    },
+    "governance/compat/test_check_active_session_state.py": {
+      "sha256": "4659a6e2137830216b25c45d72f69ef52db72546bd5c5ab9dd78ade11f459bc7",
+      "lineCount": 1085
+    },
+    "governance/compat/active_session_next_move_alignment.py": {
+      "sha256": "e1f576b2dc4b99bfb946c2d29fde7200b4eee85e9969f77f1cee169036686fe4",
+      "lineCount": 107
+    },
+    "governance/compat/test_active_session_next_move_alignment.py": {
+      "sha256": "d95a8af2d099a54b1866f8d3d78d10de1964d1f8b9c041a46e696eeedbbbf5f3",
+      "lineCount": 187
+    }
+  },
+  "changedPaths": [
+    "governance/compat/check_active_session_state.py",
+    "governance/compat/test_check_active_session_state.py",
+    "governance/compat/active_session_next_move_alignment.py",
+    "governance/compat/test_active_session_next_move_alignment.py",
+    "docs/reviews/evidence/cvf-ncr-next-move-alignment-worker-2026-10-07.json",
+    "docs/reviews/CVF_NCR_NEXT_MOVE_ALIGNMENT_WORKER_RETURN_2026-10-07.md"
+  ],
+  "proofs": {
+    "NCR-RED-GREEN": {
+      "preRepairCommand": "python -m pytest .cvf/runtime/test_ncr_alignment_candidate.py -q",
+      "preRepairResult": "8 failed, 4 passed in 1.13s",
+      "preRepairExit": 1,
+      "preRepairOracleSha256": "1f2d9f97313e7cd1f9af26c84648b91cc458e16a863c0e7a8c9ebc78de3b2c5a",
+      "preRepairOutput": "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\pytest_asyncio\\plugin.py:247: PytestDeprecationWarning: The configuration option \"asyncio_default_fixture_loop_scope\" is unset.\nThe event loop scope for asynchronous fixtures will default to the fixture caching scope. Future versions of pytest-asyncio will default the loop scope for asynchronous fixtures to function scope. Set the default fixture loop scope explicitly in order to avoid unexpected behavior in the future. Valid fixture loop scopes are: \"function\", \"class\", \"module\", \"package\", \"session\"\n\n  warnings.warn(PytestDeprecationWarning(_DEFAULT_FIXTURE_LOOP_SCOPE_UNSET))\nFFFFFFFF....                                                             [100%]\n================================== FAILURES ===================================\n________________ NCRAlignmentTests.test_bad_front_declarations ________________\n\nself = <test_ncr_alignment_candidate.NCRAlignmentTests testMethod=test_bad_front_declarations>\n\n    def test_bad_front_declarations(self):\n        mutations=['', DECL+'\\n'+DECL, DECL.replace('CVF-NCR;', 'CVF-OTHER;'), DECL.replace('NEXT_ACTION_CLASS=LOCAL_DISPOSITION_ONLY;', ''), DECL.replace('BATCH_ID=CVF-NCR-ONE', 'BATCH_ID='), DECL.replace('; BATCH_ID', '; EXTRA=NO; BATCH_ID'), DECL.replace('CVF-NCR-ONE', 'invalid')]\n        for value in mutations:\n            with self.subTest(value=value):\n>               self.assertTrue(self.alignment(front=value))\nE               AssertionError: [] is not true\n\n.cvf\\runtime\\test_ncr_alignment_candidate.py:46: AssertionError\n_______________ NCRAlignmentTests.test_bad_handoff_declarations _______________\n\nself = <test_ncr_alignment_candidate.NCRAlignmentTests testMethod=test_bad_handoff_declarations>\n\n    def test_bad_handoff_declarations(self):\n        for value in ['',DECL+'\\n'+DECL,DECL.replace('CVF-NCR;', 'CVF-OTHER;')]:\n            with self.subTest(value=value):\n>               self.assertTrue(self.alignment(handoff=value))\nE               AssertionError: [] is not true\n\n.cvf\\runtime\\test_ncr_alignment_candidate.py:51: AssertionError\n__________________ NCRAlignmentTests.test_bad_state_headers ___________________\n\nself = <test_ncr_alignment_candidate.NCRAlignmentTests testMethod=test_bad_state_headers>\n\n    def test_bad_state_headers(self):\n        for value in [DECL.replace('NEXT_ACTION_CLASS=LOCAL_DISPOSITION_ONLY;', ''),DECL.replace('BATCH_ID=CVF-NCR-ONE','BATCH_ID='),DECL.replace('; BATCH_ID','; EXTRA=NO; BATCH_ID'),DECL.replace('Stop before','Stop\\nbefore')]:\n            with self.subTest(value=value):\n>               self.assertTrue(self.alignment(state=value,front=value,handoff=value))\nE               AssertionError: [] is not true\n\n.cvf\\runtime\\test_ncr_alignment_candidate.py:56: AssertionError\n______________ NCRAlignmentTests.test_classifier_current_format _______________\n\nself = <test_ncr_alignment_candidate.NCRAlignmentTests testMethod=test_classifier_current_format>\n\n    def test_classifier_current_format(self):\n        path=self.repo_root/'CVF_SESSION/ACTIVE_SESSION_STATE.json'\n        state=json.loads(path.read_text(encoding='utf-8'))\n        state['nextAllowedMove']=DECL\n        path.write_text(json.dumps(state),encoding='utf-8')\n        front=self.repo_root/'CVF_SESSION_MEMORY.md'\n        original=front.read_text(encoding='utf-8')\n        front.write_text(original+'## Next Allowed Move\\n'+DECL+'\\n',encoding='utf-8')\n        (self.repo_root/self.handoff).write_text('Status: ACTIVE - current\\n## Next Allowed Move\\n'+DECL+'\\n',encoding='utf-8')\n        with patch.object(MODULE,'REPO_ROOT',self.repo_root):\n            report=MODULE._classify()\n        self.assertTrue(report['compliant'],report['continuityViolations'])\n        front.write_text(original+'## Next Allowed Move\\n'+DECL.replace('Stop before deployment','Deploy now')+'\\n',encoding='utf-8')\n        with patch.object(MODULE,'REPO_ROOT',self.repo_root):\n            report=MODULE._classify()\n>       self.assertFalse(report['compliant'])\nE       AssertionError: True is not false\n\n.cvf\\runtime\\test_ncr_alignment_candidate.py:86: AssertionError\n_________________ NCRAlignmentTests.test_guidance_drift_front _________________\n\nself = <test_ncr_alignment_candidate.NCRAlignmentTests testMethod=test_guidance_drift_front>\n\n    def test_guidance_drift_front(self):\n>       self.assertTrue(self.alignment(front=DECL.replace('Stop before deployment', 'Deploy now')))\nE       AssertionError: [] is not true\n\n.cvf\\runtime\\test_ncr_alignment_candidate.py:34: AssertionError\n________________ NCRAlignmentTests.test_guidance_drift_handoff ________________\n\nself = <test_ncr_alignment_candidate.NCRAlignmentTests testMethod=test_guidance_drift_handoff>\n\n    def test_guidance_drift_handoff(self):\n>       self.assertTrue(self.alignment(handoff=DECL.replace('Stop before deployment', 'Deploy now')))\nE       AssertionError: [] is not true\n\n.cvf\\runtime\\test_ncr_alignment_candidate.py:37: AssertionError\n___________________ NCRAlignmentTests.test_header_id_drift ____________________\n\nself = <test_ncr_alignment_candidate.NCRAlignmentTests testMethod=test_header_id_drift>\n\n    def test_header_id_drift(self):\n>       self.assertTrue(self.alignment(front=DECL.replace('CVF-NCR-ONE', 'CVF-NCR-TWO')))\nE       AssertionError: [] is not true\n\n.cvf\\runtime\\test_ncr_alignment_candidate.py:40: AssertionError\n_________________ NCRAlignmentTests.test_history_not_primary __________________\n\nself = <test_ncr_alignment_candidate.NCRAlignmentTests testMethod=test_history_not_primary>\n\n    def test_history_not_primary(self):\n        self.assertEqual([],self.alignment(front='Mode: current\\n'+DECL+'\\nHistorical: DIR-T1 was closed.'))\n>       self.assertTrue(self.alignment(front='Historical: '+DECL))\nE       AssertionError: [] is not true\n\n.cvf\\runtime\\test_ncr_alignment_candidate.py:60: AssertionError\n=========================== short test summary info ===========================\nFAILED .cvf/runtime/test_ncr_alignment_candidate.py::NCRAlignmentTests::test_bad_front_declarations\nFAILED .cvf/runtime/test_ncr_alignment_candidate.py::NCRAlignmentTests::test_bad_handoff_declarations\nFAILED .cvf/runtime/test_ncr_alignment_candidate.py::NCRAlignmentTests::test_bad_state_headers\nFAILED .cvf/runtime/test_ncr_alignment_candidate.py::NCRAlignmentTests::test_classifier_current_format\nFAILED .cvf/runtime/test_ncr_alignment_candidate.py::NCRAlignmentTests::test_guidance_drift_front\nFAILED .cvf/runtime/test_ncr_alignment_candidate.py::NCRAlignmentTests::test_guidance_drift_handoff\nFAILED .cvf/runtime/test_ncr_alignment_candidate.py::NCRAlignmentTests::test_header_id_drift\nFAILED .cvf/runtime/test_ncr_alignment_candidate.py::NCRAlignmentTests::test_history_not_primary\n8 failed, 4 passed in 1.13s\n",
+      "greenCommand": "python -m pytest governance/compat/test_active_session_next_move_alignment.py -q",
+      "greenResult": "17 passed in 1.39s",
+      "greenExit": 0
+    },
+    "LEGACY-CLASSIFIER": {
+      "command": "python -m pytest governance/compat/test_check_active_session_state.py governance/compat/test_active_session_next_move_alignment.py -q",
+      "initialPostRepairResult": "1 failed, 68 passed in 40.62s",
+      "initialFailureDisposition": "Formatting control mistakenly added a space before guidance punctuation; corrected fixture to modify only header delimiters. Additional unmatched suffix test excluded: arbitrary guidance Markdown syntax is outside this comparison contract. No production parser change to satisfy those overclaims.",
+      "finalResult": "71 passed in 32.46s",
+      "finalExit": 0,
+      "reuseDisposition": "Final artifact-only gates reuse this fixture proof; four source/test hashes unchanged after that run."
+    },
+    "OWNER-BUDGET": {
+      "before": [
+        951,
+        1172
+      ],
+      "after": [
+        884,
+        1085
+      ],
+      "minimumShrink": 50,
+      "targets": [
+        901,
+        1122
+      ],
+      "entrypointCommand": "python governance/compat/check_active_session_state.py --enforce",
+      "entrypointExit": 0,
+      "entrypointResult": "COMPLIANT; existing full-state-size advisory retained",
+      "diffCheck": "PASS"
+    },
+    "SEALED-EVIDENCE": {
+      "sourceHashes": {
+        "governance/compat/check_active_session_state.py": {
+          "sha256": "d8530595346ead44f67cb18b32b6ebcf287c2b460ac68fbf16034f72034f2097",
+          "lineCount": 884
+        },
+        "governance/compat/test_check_active_session_state.py": {
+          "sha256": "4659a6e2137830216b25c45d72f69ef52db72546bd5c5ab9dd78ade11f459bc7",
+          "lineCount": 1085
+        },
+        "governance/compat/active_session_next_move_alignment.py": {
+          "sha256": "e1f576b2dc4b99bfb946c2d29fde7200b4eee85e9969f77f1cee169036686fe4",
+          "lineCount": 107
+        },
+        "governance/compat/test_active_session_next_move_alignment.py": {
+          "sha256": "d95a8af2d099a54b1866f8d3d78d10de1964d1f8b9c041a46e696eeedbbbf5f3",
+          "lineCount": 187
+        }
+      },
+      "scope": [
+        "governance/compat/check_active_session_state.py",
+        "governance/compat/test_check_active_session_state.py",
+        "governance/compat/active_session_next_move_alignment.py",
+        "governance/compat/test_active_session_next_move_alignment.py",
+        "docs/reviews/evidence/cvf-ncr-next-move-alignment-worker-2026-10-07.json",
+        "docs/reviews/CVF_NCR_NEXT_MOVE_ALIGNMENT_WORKER_RETURN_2026-10-07.md"
+      ],
+      "claimBoundary": "source/fixture text consistency only; no receiving-agent, provider/runtime, release-quality or universal governance proof"
+    },
+    "RETURN-GATE": {
+      "command": "python governance/compat/run_worker_return_fast_gate.py --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_NEXT_MOVE_ALIGNMENT_2026-10-07.md",
+      "result": "PASS",
+      "fixtureProofReuse": "71 composed tests and 17 focused tests at unchanged current source hashes; final gate validates completed artifacts without duplicate fixture rerun",
+      "output": "=== CVF Worker Return Fast Gate ===\nPurpose: fail early on worker-return defects before full closure gates.\n\n=== corpus scan registry aggregate drift ===\npython governance/compat/generate_corpus_scan_registry.py --check\nGC-051 registry aggregate matches per-entry sources.\nPASS: corpus scan registry aggregate drift (0.07s)\n\n=== epistemic process packet ===\npython governance/compat/check_epistemic_process_packet.py --enforce\n=== CVF Epistemic Process Packet Gate (FPC-T3-C01) ===\nStandard: docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md\nChanged paths observed: 6\nEvidence-heavy packets checked: 1\nViolations: 0\n\nCOMPLIANT - epistemic process packet evidence structure is aligned.\nPASS: epistemic process packet (0.19s)\n\n=== work-order acceptance ledger ===\npython governance/compat/check_work_order_acceptance_ledger.py --work-order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_NEXT_MOVE_ALIGNMENT_2026-10-07.md --return docs/reviews/CVF_NCR_NEXT_MOVE_ALIGNMENT_WORKER_RETURN_2026-10-07.md --enforce\n=== CVF Work Order Acceptance Ledger Gate ===\nCOMPLIANT\nPASS: work-order acceptance ledger (0.16s)\n\n=== worker-return quality gate ===\npython governance/compat/check_worker_return_quality_gate.py --enforce --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_NEXT_MOVE_ALIGNMENT_2026-10-07.md\n=== CVF Worker Return Quality Gate ===\nStandard: docs/reference/work_order_authoring/CVF_WORKER_RETURN_QUALITY_GATE_STANDARD.md\nActive work order: docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_NEXT_MOVE_ALIGNMENT_2026-10-07.md\nEligible worker-return artifacts checked: 1\nViolations: 0\nCOMPLIANT - worker-return packets are review-ready.\nPASS: worker-return quality gate (0.32s)\n\n=== independent review probe admission ===\npython governance/compat/check_independent_review_probe_admission.py --enforce --changed-lane-only --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_NEXT_MOVE_ALIGNMENT_2026-10-07.md\n=== CVF Independent Review Probe Admission Gate ===\nApplicable artifacts checked: 1\nPASS: all applicable artifacts satisfy the independent-probe admission contract.\nPASS: independent review probe admission (0.43s)\n\n=== reviewer-fast governance gate ===\npython governance/compat/run_local_governance_hook_chain.py --hook reviewer-fast\n[CVF hook] Parallel preflight enabled: 69 checks, max_workers=6.\n[CVF hook] START [1/69] closure packaging preflight\n[CVF hook] START [2/69] agent packet authority and encoding\n[CVF hook] START [3/69] core guard self-protection\n[CVF hook] START [4/69] high-risk local transaction proof\n[CVF hook] START [5/69] semantic convergence and escalation control\n[CVF hook] START [6/69] subagent provider execution authority\n[CVF hook] START [7/69] task-proportional governance shadow route\n[CVF hook] PASS [1/69] subagent provider execution authority (0.34s)\n[CVF hook] START [8/69] docs governance compatibility\n[CVF hook] PASS [2/69] high-risk local transaction proof (0.40s)\n[CVF hook] START [9/69] markdown structural completeness\n[CVF hook] PASS [3/69] closure packaging preflight (0.40s)\n[CVF hook] START [10/69] governed artifact checker read-ahead\n[CVF hook] PASS [4/69] core guard self-protection (0.41s)\n[CVF hook] START [11/69] work-order dispatch quality\n[CVF hook] PASS [5/69] agent packet authority and encoding (0.56s)\n[CVF hook] START [12/69] worker experience retrospective\n[CVF hook] PASS [6/69] governed artifact checker read-ahead (0.28s)\n[CVF hook] START [13/69] review cost control\n[CVF hook] PASS [7/69] semantic convergence and escalation control (0.72s)\n[CVF hook] START [14/69] gate-to-role closeability\n[CVF hook] PASS [8/69] task-proportional governance shadow route (0.47s)\n[CVF hook] START [15/69] worker-return quality gate\n[CVF hook] PASS [9/69] markdown structural completeness (0.41s)\n[CVF hook] START [16/69] dispatch prompt envelope\n[CVF hook] PASS [10/69] docs governance compatibility (0.48s)\n[CVF hook] START [17/69] dispatch packet lifecycle hygiene\n[CVF hook] PASS [11/69] worker experience retrospective (0.26s)\n[CVF hook] START [18/69] source intake decision packet preflight\n[CVF hook] PASS [12/69] review cost control (0.47s)\n[CVF hook] START [19/69] PLCS companion routing block\n[CVF hook] PASS [13/69] dispatch packet lifecycle hygiene (0.26s)\n[CVF hook] START [20/69] agent operation trace integrity\n[CVF hook] PASS [14/69] dispatch prompt envelope (0.37s)\n[CVF hook] START [21/69] agent handoff boundary\n[CVF hook] PASS [15/69] worker-return quality gate (0.44s)\n[CVF hook] START [22/69] agent workspace design boundary\n[CVF hook] PASS [16/69] gate-to-role closeability (0.46s)\n[CVF hook] START [23/69] agent workspace state\n[CVF hook] PASS [17/69] work-order dispatch quality (0.80s)\n[CVF hook] START [24/69] agent workspace skeleton\n[CVF hook] PASS [18/69] source intake decision packet preflight (0.28s)\n[CVF hook] START [25/69] agent workspace runtime boundary\n[CVF hook] PASS [19/69] agent workspace state (0.21s)\n[CVF hook] START [26/69] machine closure package\n[CVF hook] PASS [20/69] PLCS companion routing block (0.41s)\n[CVF hook] START [27/69] roadmap closure freshness\n[CVF hook] PASS [21/69] agent operation trace integrity (0.41s)\n[CVF hook] START [28/69] finding-to-governance learning quality\n[CVF hook] PASS [22/69] agent workspace skeleton (0.21s)\n[CVF hook] START [29/69] external-agent absorption table\n[CVF hook] PASS [23/69] agent workspace design boundary (0.54s)\n[CVF hook] START [30/69] external knowledge intake routing\n[CVF hook] PASS [24/69] agent workspace runtime boundary (0.24s)\n[CVF hook] START [31/69] external absorption core\n[CVF hook] PASS [25/69] agent handoff boundary (0.57s)\n[CVF hook] START [32/69] external absorption value conversion\n[CVF hook] PASS [26/69] machine closure package (0.54s)\n[CVF hook] START [33/69] mixed-origin derived synthesis absorption\n[CVF hook] PASS [27/69] roadmap closure freshness (0.52s)\n[CVF hook] START [34/69] external absorption overlap discipline\n[CVF hook] PASS [28/69] external-agent absorption table (0.41s)\n[CVF hook] START [35/69] source mirror migration\n[CVF hook] PASS [29/69] external knowledge intake routing (0.46s)\n[CVF hook] START [36/69] Delta mutating profile boundary\n[CVF hook] PASS [30/69] external absorption core (0.48s)\n[CVF hook] START [37/69] Delta execution claim boundary\n[CVF hook] PASS [31/69] external absorption value conversion (0.46s)\n[CVF hook] START [38/69] foundation storage layout\n[CVF hook] PASS [32/69] mixed-origin derived synthesis absorption (0.49s)\n[CVF hook] START [39/69] public export disposition quality\n[CVF hook] PASS [33/69] external absorption overlap discipline (0.46s)\n[CVF hook] START [40/69] rescan intelligence hardening\n[CVF hook] PASS [34/69] Delta mutating profile boundary (0.40s)\n[CVF hook] START [41/69] index classification\n[CVF hook] PASS [35/69] source mirror migration (0.45s)\n[CVF hook] START [42/69] memory access claim\n[CVF hook] PASS [36/69] finding-to-governance learning quality (1.31s)\n[CVF hook] START [43/69] external provider skill usage trace\n[CVF hook] PASS [37/69] Delta execution claim boundary (0.42s)\n[CVF hook] START [44/69] CVF skill usage receipt trace\n[CVF hook] PASS [38/69] rescan intelligence hardening (0.33s)\n[CVF hook] START [45/69] skill truth packets\n[CVF hook] PASS [39/69] foundation storage layout (0.48s)\n[CVF hook] START [46/69] package skill productionization pipeline\n[CVF hook] PASS [40/69] public export disposition quality (0.49s)\n[CVF hook] START [47/69] skill control plane inventory\n[CVF hook] PASS [41/69] index classification (0.49s)\n[CVF hook] START [48/69] CVF Web skill control plane projection\n[CVF hook] START [49/69] truth foundation claim guard\n[CVF hook] PASS [42/69] CVF skill usage receipt trace (0.21s)\n[CVF hook] PASS [43/69] external provider skill usage trace (0.21s)\n[CVF hook] START [50/69] raw memory release invariant\n[CVF hook] PASS [44/69] skill control plane inventory (0.14s)\n[CVF hook] START [51/69] DICE machine-candidate coverage\n[CVF hook] PASS [45/69] skill truth packets (0.25s)\n[CVF hook] START [52/69] FPC system-chain acceptance ledger\n[CVF hook] PASS [46/69] CVF Web skill control plane projection (0.13s)\n[CVF hook] START [53/69] FPC parked reopen inventory\n[CVF hook] PASS [47/69] memory access claim (0.51s)\n[CVF hook] START [54/69] KIOD runtime candidate reopen inventory\n[CVF hook] PASS [48/69] truth foundation claim guard (0.32s)\n[CVF hook] START [55/69] corpus scan registry\n[CVF hook] PASS [49/69] FPC system-chain acceptance ledger (0.28s)\n[CVF hook] START [56/69] ASSF certified metadata admission\n[CVF hook] PASS [50/69] package skill productionization pipeline (0.53s)\n[CVF hook] START [57/69] ASSF package candidate anatomy\n[CVF hook] PASS [51/69] FPC parked reopen inventory (0.32s)\n[CVF hook] START [58/69] ASSF external-agent metadata readout\n[CVF hook] PASS [52/69] ASSF certified metadata admission (0.17s)\n[CVF hook] START [59/69] changed corpus registry coverage\n[CVF hook] PASS [53/69] raw memory release invariant (0.54s)\n[CVF hook] START [60/69] active session state compatibility\n[CVF hook] PASS [54/69] DICE machine-candidate coverage (0.54s)\n[CVF hook] START [61/69] session mode consistency\n[CVF hook] PASS [55/69] ASSF package candidate anatomy (0.18s)\n[CVF hook] START [62/69] next-move freshness\n[CVF hook] PASS [56/69] corpus scan registry (0.35s)\n[CVF hook] START [63/69] system chain map freshness\n[CVF hook] PASS [57/69] KIOD runtime candidate reopen inventory (0.46s)\n[CVF hook] START [64/69] as-built system catalog drift\n[CVF hook] PASS [58/69] ASSF external-agent metadata readout (0.16s)\n[CVF hook] START [65/69] memory consolidation artifact quality\n[CVF hook] PASS [59/69] session mode consistency (0.15s)\n[CVF hook] START [66/69] epistemic process packet\n[CVF hook] PASS [60/69] system chain map freshness (0.14s)\n[CVF hook] START [67/69] equivalence claim evidence\n[CVF hook] PASS [61/69] changed corpus registry coverage (0.39s)\n[CVF hook] START [68/69] dispatch scaffold provenance\n[CVF hook] PASS [62/69] next-move freshness (0.40s)\n[CVF hook] START [69/69] agent instruction carrier compaction\n[CVF hook] PASS [63/69] as-built system catalog drift (0.40s)\n[CVF hook] PASS [64/69] memory consolidation artifact quality (0.32s)\n[CVF hook] PASS [65/69] agent instruction carrier compaction (0.16s)\n[CVF hook] PASS [66/69] epistemic process packet (0.44s)\n[CVF hook] PASS [67/69] equivalence claim evidence (0.32s)\n[CVF hook] PASS [68/69] dispatch scaffold provenance (0.28s)\n[CVF hook] PASS [69/69] active session state compatibility (0.91s)\n[CVF hook] All reviewer-fast governance checks passed.\nPASS: reviewer-fast governance gate (4.93s)\n\n=== git diff whitespace check ===\ngit diff --check\nPASS: git diff whitespace check (0.06s)\n\nCOMPLIANT: worker-return fast gate passed in 6.17s.\n"
+    }
+  },
+  "admission": {
+    "packetMaterialCommit": "3813c7e3b57a085444c0c39a149984166ec4a8bc",
+    "releaseContinuityCommit": "9f624ecbc8274907d004a2e86ae4b807d85e21f2",
+    "boundPreDispatch": "PASS",
+    "boundPreImplementation": "PASS",
+    "phaseBase": "current clean released HEAD",
+    "diagnostics": "Earlier broad-range checks conflated dispatcher and continuity paths; current phase uses explicit active packet. Handoff ordering corrected unrelated historic AKOE closure proximity. Independent review not performed by worker."
+  },
+  "independentProbeDisposition": "PENDING_REVIEWER_EXECUTION",
+  "publicExportDisposition": "DEFERRED_PRIVATE_ONLY"
+}

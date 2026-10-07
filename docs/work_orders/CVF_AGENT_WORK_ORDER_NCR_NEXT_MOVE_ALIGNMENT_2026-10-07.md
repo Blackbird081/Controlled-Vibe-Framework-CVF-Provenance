@@ -1,7 +1,7 @@
 # CVF Agent Work Order - NCR Next-Move Alignment
 Memory class: governed-worker-dispatch
 docType: work_order
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 Date: 2026-10-07
 Batch ID: CVF-NCR-NEXT-MOVE-ALIGNMENT-EXECUTION-20261007
 Dispatch base head: `e1a39623d2da54c0a5523bbec0d3574ff8d06b1e`
@@ -362,7 +362,7 @@ foreseeableFileSplitDisposition: NOT_REQUIRED_UNDER_SIZE_BUDGET
 | committed_range_closure | POST_MATERIAL_CLOSURE | reviewer | POST_MATERIAL_CLOSURE | reviewed material/continuity ranges | EXACT_PATHS | Local-closer | CORRECTIVE_MATERIAL_COMMIT | continuity |
 
 Graph is a design-time topology, not passed execution gates. The graph must pass for the admitted dispatch state. Explicit candidate-only validation may substitute
-DISPATCH_READY in memory to inspect the graph without changing repository status.
+The dispatch-ready snapshot in memory inspected the graph without changing repository status.
 
 ## Verification Commands
 
@@ -703,3 +703,45 @@ planning/disposition batch; scope and source pins remain those reviewed above.
 ```
 
 SHADOW_FULL_GATE_FALLBACK; full legacy bundles remain mandatory.
+
+## Final Local Closure Disposition
+
+CLOSED_PASS_BOUNDED. Original dispatch-time declarations above are historical admission and do not authorize another worker run. Local completion: docs/reviews/CVF_NCR_NEXT_MOVE_ALIGNMENT_COMPLETION_2026-10-07.md. F1 accepted LOW unsupported envelope limit; F2 Git-byte provenance corrected; F3 evidence-binding labels clarified. Current bare state form only; no universal grammar or runtime agent claim. No successor admitted.
+
+## Independent Review Probe Admission
+
+independentProbeDisposition: PASS_INDEPENDENT_PROBE
+reviewerDecisionOwner: LOCAL
+implementationWorkerActor: LOCAL_CODEX_ROOT
+probeExecutorActor: LOCAL_CLAUDE_OPERATOR_RELAY
+workerInvocationId: ncr-alignment-worker-20261007
+probeInvocationId: 9074535b-39c4-444a-aca9-bd2cf9a72f09
+workerOracleSha256: cf7cd098141aa4ae04a9c30e7f9ab27632d3cc55bcc0df52660b43d7115fbe13
+probeOracleSha256: ee3b50fbda5c672f0985f589afc12871b4814b83ee9aee7ea9e73369d1f53a6c
+workerEvidenceRef: docs/reviews/evidence/cvf-ncr-next-move-alignment-worker-2026-10-07.json
+probeEvidenceRef: docs/reviews/evidence/cvf-ncr-next-move-alignment-local-review-2026-10-07.json
+probeCommandOrMethod: python -B .cvf/runtime/claude-ncr-alignment-probe/ncr_alignment_probe.py; independent reference model and disposable classifier/CLI fixtures
+probeObservedResult: 245/245 assertions; zero mismatches in 4000 NCR and 4000 legacy samples; 57 original legacy tests pass; F1 observation explicitly accepted as a limit
+oracleSeparationBasis: distinct actual actor/invocation; reviewer-authored reference model, explicit cases and fuzz; implementation-source read and earlier output exposure disclosed, worker tests not imported
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| NCR-ALIGNMENT | current bare NCR declaration drift rejected, legacy retained, owner budgets | worker 71/17 and separate 245 assertions; original57 preserved; owner884/1085 | PASS |
+| NCR-RETURN | sealed six-path worker evidence and full return gate | hash joins and bound return-fast exit0 | PASS |
+| Independent review | separate actor/invocation/oracle | embedded original receipt/oracle, separate actor and digests | PASS |
+| F1 envelope | no unsupported-envelope universal claim | known LOW limitation explicitly retained | PASS |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_NEXT_MOVE_ALIGNMENT_2026-10-07.md | this final Local completion dispositions the execution; original dispatch packet remains pinned historical admission | PASS |
+| Completion or reviewer artifact | docs/reviews/CVF_NCR_NEXT_MOVE_ALIGNMENT_COMPLETION_2026-10-07.md | CLOSED_PASS_BOUNDED with F1 limit | PASS |
+| Roadmap state | no dedicated roadmap for standalone maintenance | no successor tranche admitted | N/A with reason: standalone work order |
+| Registry JSON | docs/reviews/evidence/cvf-ncr-next-move-alignment-local-review-2026-10-07.json | durable exact probe/source identities | PASS |
+| Registry Markdown | this completion | three finding dispositions | PASS |
+| External evidence digest | docs/reviews/evidence/cvf-ncr-next-move-alignment-local-review-2026-10-07.json | internal reviewer receipt/oracle only | N/A with reason: no external research |
+| System loop interlock | current parked boundaries | no runtime/provider/public transition | PASS |
+| Session continuity | current active handoff and generated views | separately committed real material SHA by steward | PASS |

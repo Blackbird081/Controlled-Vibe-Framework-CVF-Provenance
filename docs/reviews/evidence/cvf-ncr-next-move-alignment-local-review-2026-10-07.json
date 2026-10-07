@@ -1,0 +1,833 @@
+{
+  "closureBaseHead": "9f624ecbc8274907d004a2e86ae4b807d85e21f2",
+  "decisionOwner": "LOCAL",
+  "decisions": {
+    "F1": {
+      "severity": "LOW",
+      "disposition": "ACCEPT_KNOWN_LIMIT",
+      "reason": "Current generated state is a bare declaration; prefix inside outer backticks is not an accepted state envelope in this closure. It may skip NCR and miss drift. No claim of fail-closed behavior for that shape; symmetrical unwrap is deferred, not silently certified."
+    },
+    "F2": {
+      "severity": "LOW",
+      "disposition": "ACCEPT_WITH_PROVENANCE_CORRECTION",
+      "reason": "Worker after hashes are raw worktree bytes, not Git blob bytes. Both are recorded separately; staged/committed blobs must match these Git identities."
+    },
+    "F3": {
+      "severity": "LOW",
+      "disposition": "ACCEPT_WITH_LABEL_CLARIFICATION",
+      "reason": "Existing checker workerOracleSha256/probeOracleSha256 bindings hash referenced evidence files. Actual executable oracle digests are recorded separately, without changing that machine contract."
+    }
+  },
+  "sourceIdentities": {
+    "governance/compat/check_active_session_state.py": {
+      "worktreeSha256": "d8530595346ead44f67cb18b32b6ebcf287c2b460ac68fbf16034f72034f2097",
+      "gitBlobOid": "f12c406fcd1d835fe3e5742978a6fe5bdb8bd080",
+      "gitBlobByteSha256": "92977ccf6c35e21255b18770926903f5e5a4c329a6c1bf1edec8f97481c2f36f",
+      "lineCount": 884
+    },
+    "governance/compat/test_check_active_session_state.py": {
+      "worktreeSha256": "4659a6e2137830216b25c45d72f69ef52db72546bd5c5ab9dd78ade11f459bc7",
+      "gitBlobOid": "a6942fa7e42927d604d506f2890ddcc2c49bf4d9",
+      "gitBlobByteSha256": "327eae2458d11ffe89b995d2f4b1973f91a8d3e034879fe920fd4913e1175cea",
+      "lineCount": 1085
+    },
+    "governance/compat/active_session_next_move_alignment.py": {
+      "worktreeSha256": "e1f576b2dc4b99bfb946c2d29fde7200b4eee85e9969f77f1cee169036686fe4",
+      "gitBlobOid": "f5776f7ce8f141560774f00daf4f4ac36ede2a7a",
+      "gitBlobByteSha256": "e1f576b2dc4b99bfb946c2d29fde7200b4eee85e9969f77f1cee169036686fe4",
+      "lineCount": 107
+    },
+    "governance/compat/test_active_session_next_move_alignment.py": {
+      "worktreeSha256": "d95a8af2d099a54b1866f8d3d78d10de1964d1f8b9c041a46e696eeedbbbf5f3",
+      "gitBlobOid": "8e215accdb0a505f5c87688989d4e8d75d178f66",
+      "gitBlobByteSha256": "77415f9472789d96f02c42f7be576198a9c5e2086c24ff801d200f4ce6818df3",
+      "lineCount": 187
+    }
+  },
+  "probeReceiptSha256": "02db89108e1bfeca6fa4af89895e001f78018b866be20a2d308b745d5e7c7c85",
+  "probeOracleSourceSha256": "34a6e5dd9cd4d0cb5fe47e799c3124fbcea5d811b60bc2c3c5b4ad70222f0a56",
+  "probeReceipt": {
+    "schema": "cvf.claude-ncr-alignment-probe-receipt@1",
+    "startedUtc": "2026-10-07T03:50:23.007899+00:00",
+    "finishedUtc": "2026-10-07T03:54:10.291987+00:00",
+    "actor": "LOCAL_CLAUDE_OPERATOR_RELAY",
+    "invocation": {
+      "harness": "Claude Code (VS Code extension)",
+      "model": "claude-sonnet-5-5",
+      "sessionScratchpadId": "af973f46-37d5-4c20-9b85-1182f219a6d3",
+      "probeRunId": "9074535b-39c4-444a-aca9-bd2cf9a72f09",
+      "relay": "operator pasted reviewer task; no subagent, no provider/API call"
+    },
+    "implementationWorker": {
+      "actor": "LOCAL_CODEX_ROOT",
+      "invocation": "ncr-alignment-worker-20261007"
+    },
+    "actorDistinctFromWorker": true,
+    "independenceDisclosure": [
+      "Reviewer read the worker helper source and the checker diff BEFORE writing the oracle (needed to find entrypoints).",
+      "Reviewer did NOT open or import governance/compat/test_active_session_next_move_alignment.py or the worker pre-repair candidate test.",
+      "Reviewer saw fragments of worker pre-repair test output inside the worker evidence JSON (mutation snippets such as EXTRA=NO, 'Deploy now').",
+      "Expectations come from the work order Implementation Contract and Required Proof Cases; reference model and fuzz are original code in this file.",
+      "Original (HEAD) checker and the HEAD legacy test file are used only as a pre-worker differential baseline."
+    ],
+    "python": "3.11.9",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "repo": {
+      "headAtProbe": "9f624ecbc8274907d004a2e86ae4b807d85e21f2",
+      "statusPorcelain": [
+        " M governance/compat/check_active_session_state.py",
+        " M governance/compat/test_check_active_session_state.py",
+        "?? docs/reviews/CVF_NCR_NEXT_MOVE_ALIGNMENT_WORKER_RETURN_2026-10-07.md",
+        "?? docs/reviews/evidence/cvf-ncr-next-move-alignment-worker-2026-10-07.json",
+        "?? governance/compat/active_session_next_move_alignment.py",
+        "?? governance/compat/test_active_session_next_move_alignment.py"
+      ]
+    },
+    "oracleFile": ".cvf/runtime/claude-ncr-alignment-probe/ncr_alignment_probe.py",
+    "oracleSha256": "34a6e5dd9cd4d0cb5fe47e799c3124fbcea5d811b60bc2c3c5b4ad70222f0a56",
+    "oracleCaseSetSha256": "50709dbe418cae0dea5b8d94faf917756f7bf96ac531c6546addc6505a81a999",
+    "counts": {
+      "assertions": 245,
+      "passed": 245,
+      "failed": 0,
+      "explicitCases": 100,
+      "layers": [
+        "A-wrapper",
+        "B-classify"
+      ],
+      "fuzz": {
+        "n": 4000,
+        "expect_pass": 808,
+        "expect_fail": 3192,
+        "orig_would_pass_expected_fail": 2902
+      },
+      "fuzzMismatches": 0,
+      "legacyDifferentialSamples": 4000,
+      "legacyDifferentialDiffs": 0,
+      "discriminatingNcrFailCases": 45,
+      "originalMissedOfThose": 37
+    },
+    "failedAssertions": [],
+    "fuzzMismatchSamples": [],
+    "legacyDifferentialSamples_diffs": [],
+    "static": {
+      "headNow": "9f624ecbc8274907d004a2e86ae4b807d85e21f2",
+      "statusPorcelain": [
+        " M governance/compat/check_active_session_state.py",
+        " M governance/compat/test_check_active_session_state.py",
+        "?? docs/reviews/CVF_NCR_NEXT_MOVE_ALIGNMENT_WORKER_RETURN_2026-10-07.md",
+        "?? docs/reviews/evidence/cvf-ncr-next-move-alignment-worker-2026-10-07.json",
+        "?? governance/compat/active_session_next_move_alignment.py",
+        "?? governance/compat/test_active_session_next_move_alignment.py"
+      ],
+      "gitDiffCheck": {
+        "exit": 0
+      },
+      "headBlobSha256": {
+        "governance/compat/check_active_session_state.py": "5b8a085f847622d6d772e66be74e31bed4472e3d42d9f2d815c24d65e7c1eca5",
+        "governance/compat/test_check_active_session_state.py": "cb6d2ee61a57a71b7561620be0f0f1d84d21593ff8c01648a626837c18955b6f"
+      },
+      "workOrderPinSha256": {
+        "governance/compat/check_active_session_state.py": "5b8a085f847622d6d772e66be74e31bed4472e3d42d9f2d815c24d65e7c1eca5",
+        "governance/compat/test_check_active_session_state.py": "cb6d2ee61a57a71b7561620be0f0f1d84d21593ff8c01648a626837c18955b6f"
+      },
+      "currentSha256": {
+        "governance/compat/check_active_session_state.py": {
+          "sha256": "d8530595346ead44f67cb18b32b6ebcf287c2b460ac68fbf16034f72034f2097",
+          "lineCount": 884
+        },
+        "governance/compat/test_check_active_session_state.py": {
+          "sha256": "4659a6e2137830216b25c45d72f69ef52db72546bd5c5ab9dd78ade11f459bc7",
+          "lineCount": 1085
+        },
+        "governance/compat/active_session_next_move_alignment.py": {
+          "sha256": "e1f576b2dc4b99bfb946c2d29fde7200b4eee85e9969f77f1cee169036686fe4",
+          "lineCount": 107
+        },
+        "governance/compat/test_active_session_next_move_alignment.py": {
+          "sha256": "d95a8af2d099a54b1866f8d3d78d10de1964d1f8b9c041a46e696eeedbbbf5f3",
+          "lineCount": 187
+        }
+      },
+      "currentLfNormalizedSha256": {
+        "governance/compat/check_active_session_state.py": "92977ccf6c35e21255b18770926903f5e5a4c329a6c1bf1edec8f97481c2f36f",
+        "governance/compat/test_check_active_session_state.py": "327eae2458d11ffe89b995d2f4b1973f91a8d3e034879fe920fd4913e1175cea",
+        "governance/compat/active_session_next_move_alignment.py": "e1f576b2dc4b99bfb946c2d29fde7200b4eee85e9969f77f1cee169036686fe4",
+        "governance/compat/test_active_session_next_move_alignment.py": "77415f9472789d96f02c42f7be576198a9c5e2086c24ff801d200f4ce6818df3"
+      },
+      "worktreeEol": {
+        "governance/compat/check_active_session_state.py": "crlf",
+        "governance/compat/test_check_active_session_state.py": "crlf",
+        "governance/compat/active_session_next_move_alignment.py": "lf",
+        "governance/compat/test_active_session_next_move_alignment.py": "crlf",
+        "docs/reviews/evidence/cvf-ncr-next-move-alignment-worker-2026-10-07.json": "crlf",
+        "docs/reviews/CVF_NCR_NEXT_MOVE_ALIGNMENT_WORKER_RETURN_2026-10-07.md": "crlf"
+      },
+      "sizeGuard_python-automation-size": {
+        "exit": 0,
+        "tail": [
+          "  - scripts/test_run_cvf_sot3_a5_release_integration.py (soft_threshold_exceeded): File has 1084 lines, exceeding advisory threshold 900 for class `python_test`.",
+          "",
+          "COMPLIANT \ufffd Governed Python automation is within the active size policy."
+        ],
+        "err": ""
+      },
+      "sizeGuard_governed-file-size": {
+        "exit": 0,
+        "tail": [
+          "  - EXTENSIONS/CVF_v1.5_UX_PLATFORM/cvf-web/src/components/SpecExport.tsx (soft_threshold_exceeded): File has 985 lines, exceeding advisory threshold 700 for class `frontend_component`.",
+          "",
+          "COMPLIANT \ufffd Governed file size is within the active policy."
+        ],
+        "err": ""
+      },
+      "evidenceJsonSha256": "cf7cd098141aa4ae04a9c30e7f9ab27632d3cc55bcc0df52660b43d7115fbe13",
+      "returnMdSha256": "e0e2121d863c675bcfea8df2bcbeb2e17100680a1ea024fef3199b211cfc406e",
+      "workerOracleClaim": {
+        "claimedInReturn": "cf7cd098141aa4ae04a9c30e7f9ab27632d3cc55bcc0df52660b43d7115fbe13",
+        "candidateDigests": {
+          "evidence_json": "cf7cd098141aa4ae04a9c30e7f9ab27632d3cc55bcc0df52660b43d7115fbe13",
+          "return_md": "e0e2121d863c675bcfea8df2bcbeb2e17100680a1ea024fef3199b211cfc406e",
+          "worker_new_test": "d95a8af2d099a54b1866f8d3d78d10de1964d1f8b9c041a46e696eeedbbbf5f3",
+          "worker_pre_repair_oracle_field": "1f2d9f97313e7cd1f9af26c84648b91cc458e16a863c0e7a8c9ebc78de3b2c5a",
+          "worker_candidate_file_if_present": "1f2d9f97313e7cd1f9af26c84648b91cc458e16a863c0e7a8c9ebc78de3b2c5a"
+        },
+        "claimMatchesAnyCandidate": true
+      },
+      "lineCounts": {
+        "governance/compat/check_active_session_state.py": 884,
+        "governance/compat/test_check_active_session_state.py": 1085,
+        "governance/compat/active_session_next_move_alignment.py": 107,
+        "governance/compat/test_active_session_next_move_alignment.py": 187
+      },
+      "headLineCounts": {
+        "governance/compat/check_active_session_state.py": 951,
+        "governance/compat/test_check_active_session_state.py": 1172
+      },
+      "testInventory": {
+        "headCount": 57,
+        "curExistingCount": 54,
+        "newFileCount": 17,
+        "removedFromExisting": [
+          "ActiveSessionStateTests.test_front_door_next_allowed_primary_token_must_match_state",
+          "ActiveSessionStateTests.test_handoff_next_allowed_primary_token_must_match_state",
+          "ActiveSessionStateTests.test_next_allowed_primary_token_alignment_passes_when_synced"
+        ],
+        "newFileClasses": {
+          "NCRAlignmentTests": [
+            "unittest.TestCase"
+          ]
+        },
+        "newFileNames": [
+          "NCRAlignmentTests.test_synchronized",
+          "NCRAlignmentTests.test_spacing_and_wrappers",
+          "NCRAlignmentTests.test_guidance_case_and_punctuation_preserved",
+          "NCRAlignmentTests.test_malformed_ncr_envelopes",
+          "NCRAlignmentTests.test_guidance_drift_front",
+          "NCRAlignmentTests.test_guidance_drift_handoff",
+          "NCRAlignmentTests.test_header_id_drift",
+          "NCRAlignmentTests.test_bad_front_declarations",
+          "NCRAlignmentTests.test_bad_handoff_declarations",
+          "NCRAlignmentTests.test_bad_state_headers",
+          "NCRAlignmentTests.test_history_not_primary",
+          "NCRAlignmentTests.test_legacy_families",
+          "NCRAlignmentTests.test_unknown_legacy_unchanged",
+          "NCRAlignmentTests.test_classifier_current_format",
+          "NCRAlignmentTests.test_front_door_next_allowed_primary_token_must_match_state",
+          "NCRAlignmentTests.test_handoff_next_allowed_primary_token_must_match_state",
+          "NCRAlignmentTests.test_next_allowed_primary_token_alignment_passes_when_synced"
+        ]
+      }
+    },
+    "importModes": {
+      "packageImport": {
+        "exit": 0,
+        "out": "True dir-t2",
+        "err": ""
+      },
+      "scriptDirImport": {
+        "exit": 0,
+        "out": "True",
+        "err": ""
+      },
+      "bareSpec_current": {
+        "exit": 1,
+        "tail": "ModuleNotFoundError: No module named 'generate_active_session_state'",
+        "out": ""
+      },
+      "bareSpec_head": {
+        "exit": 1,
+        "tail": "ModuleNotFoundError: No module named 'generate_active_session_state'",
+        "out": ""
+      },
+      "realRepoCli": {
+        "exit": 0,
+        "tail": [
+          "  - ADVISORY: CVF_SESSION/ACTIVE_SESSION_STATE.json aggregate is 2108391 bytes, exceeding the 131072-byte full-state advisory threshold; T2 owns aggregate schema/content migration, this is advisory only",
+          "",
+          "COMPLIANT - active session front door, registry, handoff pointer, and startup routing are aligned."
+        ],
+        "err": ""
+      }
+    },
+    "realStateProbe": {
+      "stateStartsNcr": true,
+      "liveNarrativeLegacyTokens": [],
+      "liveCurrent": [],
+      "liveOriginal": [],
+      "liveFrontDeclLineIndices": [
+        50
+      ],
+      "liveGuidanceMutation": {
+        "changed": true,
+        "current": [
+          "CVF_SESSION_MEMORY.md Next Allowed Move NCR declaration does not match state nextAllowedMove"
+        ],
+        "original": []
+      }
+    },
+    "cliTree": {
+      "current/cli-sync": {
+        "exit": 0,
+        "continuityViolations": [],
+        "stderrTail": ""
+      },
+      "current/cli-front-guidance-drift": {
+        "exit": 0,
+        "continuityViolations": [
+          "CVF_SESSION_MEMORY.md Next Allowed Move NCR declaration does not match state nextAllowedMove"
+        ],
+        "stderrTail": ""
+      },
+      "current/cli-handoff-guidance-drift": {
+        "exit": 0,
+        "continuityViolations": [
+          "active handoff Next Allowed Move NCR declaration does not match state nextAllowedMove"
+        ],
+        "stderrTail": ""
+      },
+      "current/cli-duplicate-front": {
+        "exit": 0,
+        "continuityViolations": [
+          "CVF_SESSION_MEMORY.md Next Allowed Move requires exactly one valid NCR declaration"
+        ],
+        "stderrTail": ""
+      },
+      "current/cli-malformed-state": {
+        "exit": 0,
+        "continuityViolations": [
+          "state nextAllowedMove NCR declaration is malformed or multiline"
+        ],
+        "stderrTail": ""
+      },
+      "current/cli-legacy-dir-t-drift": {
+        "exit": 0,
+        "continuityViolations": [
+          "CVF_SESSION_MEMORY.md Next Allowed Move primary token `dir-t1` does not match state nextAllowedMove primary token `dir-t2`"
+        ],
+        "stderrTail": ""
+      },
+      "current/cli-legacy-dir-t-sync": {
+        "exit": 0,
+        "continuityViolations": [],
+        "stderrTail": ""
+      },
+      "orig/cli-sync": {
+        "exit": 0,
+        "continuityViolations": [],
+        "stderrTail": ""
+      },
+      "orig/cli-front-guidance-drift": {
+        "exit": 0,
+        "continuityViolations": [],
+        "stderrTail": ""
+      },
+      "orig/cli-handoff-guidance-drift": {
+        "exit": 0,
+        "continuityViolations": [],
+        "stderrTail": ""
+      },
+      "orig/cli-duplicate-front": {
+        "exit": 0,
+        "continuityViolations": [],
+        "stderrTail": ""
+      },
+      "orig/cli-malformed-state": {
+        "exit": 0,
+        "continuityViolations": [],
+        "stderrTail": ""
+      },
+      "orig/cli-legacy-dir-t-drift": {
+        "exit": 0,
+        "continuityViolations": [
+          "CVF_SESSION_MEMORY.md Next Allowed Move primary token `dir-t1` does not match state nextAllowedMove primary token `dir-t2`"
+        ],
+        "stderrTail": ""
+      },
+      "orig/cli-legacy-dir-t-sync": {
+        "exit": 0,
+        "continuityViolations": [],
+        "stderrTail": ""
+      }
+    },
+    "headLegacySuiteOnCurrentCode": {
+      "current": {
+        "exit": 0,
+        "tail": [
+          ".........................................................                [100%]"
+        ]
+      },
+      "head": {
+        "exit": 0,
+        "tail": [
+          ".........................................................                [100%]"
+        ]
+      }
+    },
+    "observations": [
+      {
+        "id": "OBS-worker-oracle-digest-binding",
+        "claimedInReturn": "cf7cd098141aa4ae04a9c30e7f9ab27632d3cc55bcc0df52660b43d7115fbe13",
+        "candidateDigests": {
+          "evidence_json": "cf7cd098141aa4ae04a9c30e7f9ab27632d3cc55bcc0df52660b43d7115fbe13",
+          "return_md": "e0e2121d863c675bcfea8df2bcbeb2e17100680a1ea024fef3199b211cfc406e",
+          "worker_new_test": "d95a8af2d099a54b1866f8d3d78d10de1964d1f8b9c041a46e696eeedbbbf5f3",
+          "worker_pre_repair_oracle_field": "1f2d9f97313e7cd1f9af26c84648b91cc458e16a863c0e7a8c9ebc78de3b2c5a",
+          "worker_candidate_file_if_present": "1f2d9f97313e7cd1f9af26c84648b91cc458e16a863c0e7a8c9ebc78de3b2c5a"
+        },
+        "claimMatchesAnyCandidate": true
+      },
+      {
+        "id": "obs-bulleted-declaration-surface",
+        "current": [
+          "CVF_SESSION_MEMORY.md Next Allowed Move requires exactly one valid NCR declaration"
+        ],
+        "original": []
+      },
+      {
+        "id": "obs-backticks-around-prefix-surface",
+        "current": [
+          "CVF_SESSION_MEMORY.md Next Allowed Move requires exactly one valid NCR declaration"
+        ],
+        "original": []
+      },
+      {
+        "id": "obs-state-backticks-around-prefix",
+        "current": [],
+        "original": []
+      },
+      {
+        "id": "obs-lowercase-prefix-surface",
+        "current": [],
+        "original": []
+      },
+      {
+        "id": "obs-nbsp-in-guidance",
+        "current": [],
+        "original": []
+      },
+      {
+        "id": "obs-heading-trailing-space-front",
+        "current": [
+          "CVF_SESSION_MEMORY.md Next Allowed Move requires exactly one valid NCR declaration"
+        ],
+        "original": [
+          "CVF_SESSION_MEMORY.md Next Allowed Move is missing a parser-visible primary next-move token"
+        ]
+      },
+      {
+        "id": "obs-declaration-inside-code-fence",
+        "current": [],
+        "original": []
+      },
+      {
+        "id": "obs-unicode-dash-in-id",
+        "current": [
+          "CVF_SESSION_MEMORY.md Next Allowed Move requires exactly one valid NCR declaration"
+        ],
+        "original": []
+      },
+      {
+        "id": "obs-state-declaration-with-trailing-newline",
+        "current": [],
+        "original": []
+      },
+      {
+        "id": "obs-state-leading-newline",
+        "current": [],
+        "original": []
+      },
+      {
+        "id": "obs-double-space-after-prefix",
+        "current": [],
+        "original": []
+      },
+      {
+        "id": "obs-state-backtick-around-prefix-with-surface-guidance-drift",
+        "current": [],
+        "original": []
+      },
+      {
+        "id": "obs-state-backtick-around-prefix-with-surface-batch-drift",
+        "current": [],
+        "original": []
+      },
+      {
+        "id": "obs-front-heading-trailing-spaces",
+        "current": []
+      },
+      {
+        "id": "obs-front-heading-double-space",
+        "current": [
+          "CVF_SESSION_MEMORY.md Next Allowed Move requires exactly one valid NCR declaration"
+        ]
+      }
+    ],
+    "originalCodeAlreadyCaught": [
+      "02-both-drift",
+      "02-token-only-drift",
+      "02-removed-guidance",
+      "03-front-section-without-decl",
+      "03-front-no-section",
+      "03-handoff-no-section",
+      "03-handoff-empty-section",
+      "03-front-decl-under-other-heading"
+    ],
+    "commands": [
+      {
+        "label": "size guard: check_python_automation_size.py",
+        "argv": [
+          "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+          "-B",
+          "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\governance\\compat\\check_python_automation_size.py",
+          "--enforce"
+        ],
+        "cwd": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF",
+        "exit": 0
+      },
+      {
+        "label": "size guard: check_governed_file_size.py",
+        "argv": [
+          "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+          "-B",
+          "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\governance\\compat\\check_governed_file_size.py",
+          "--enforce"
+        ],
+        "cwd": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF",
+        "exit": 0
+      },
+      {
+        "label": "import-mode: package from repo root",
+        "argv": [
+          "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+          "-I",
+          "-c",
+          "import sys;sys.dont_write_bytecode=True;sys.path.insert(0,'D:\\\\UNG DUNG AI\\\\TOOL AI 2026\\\\Controlled-Vibe-Framework-CVF');import governance.compat.check_active_session_state as m;print(m._check_next_allowed_move_alignment is not None, m._next_allowed_move_signature('Next allowed move: DIR-T2'))"
+        ],
+        "cwd": "C:\\Users\\DELL\\AppData\\Local\\Temp\\probe_cwd_rp1lq01i",
+        "exit": 0
+      },
+      {
+        "label": "import-mode: script-dir",
+        "argv": [
+          "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+          "-I",
+          "-c",
+          "import sys;sys.dont_write_bytecode=True;sys.path.insert(0,'D:\\\\UNG DUNG AI\\\\TOOL AI 2026\\\\Controlled-Vibe-Framework-CVF\\\\governance\\\\compat');import check_active_session_state as m;print(m._check_next_allowed_move_alignment is not None)"
+        ],
+        "cwd": "C:\\Users\\DELL\\AppData\\Local\\Temp\\probe_cwd_rp1lq01i",
+        "exit": 0
+      },
+      {
+        "label": "import-mode: bare spec (current)",
+        "argv": [
+          "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+          "-I",
+          "-c",
+          "import sys;sys.dont_write_bytecode=True;import importlib.util as u;s=u.spec_from_file_location('x','D:\\\\UNG DUNG AI\\\\TOOL AI 2026\\\\Controlled-Vibe-Framework-CVF\\\\governance\\\\compat\\\\check_active_session_state.py');m=u.module_from_spec(s);s.loader.exec_module(m);print('LOADED')"
+        ],
+        "cwd": "C:\\Users\\DELL\\AppData\\Local\\Temp\\probe_cwd_rp1lq01i",
+        "exit": 1
+      },
+      {
+        "label": "import-mode: bare spec (head)",
+        "argv": [
+          "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+          "-I",
+          "-c",
+          "import sys;sys.dont_write_bytecode=True;import importlib.util as u;s=u.spec_from_file_location('x','D:\\\\UNG DUNG AI\\\\TOOL AI 2026\\\\Controlled-Vibe-Framework-CVF\\\\.cvf\\\\runtime\\\\claude-ncr-alignment-probe\\\\orig_head_copy\\\\check_active_session_state_head.py');m=u.module_from_spec(s);s.loader.exec_module(m);print('LOADED')"
+        ],
+        "cwd": "C:\\Users\\DELL\\AppData\\Local\\Temp\\probe_cwd_rp1lq01i",
+        "exit": 1
+      },
+      {
+        "label": "real repo direct CLI --enforce",
+        "argv": [
+          "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+          "-B",
+          "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\governance\\compat\\check_active_session_state.py",
+          "--enforce"
+        ],
+        "cwd": "C:\\Users\\DELL\\AppData\\Local\\Temp\\probe_cwd_rp1lq01i",
+        "exit": 0
+      },
+      {
+        "label": "fixture CLI current cli-sync",
+        "argv": [
+          "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+          "-B",
+          "C:\\Users\\DELL\\AppData\\Local\\Temp\\cli_current_d0ecplqc\\governance\\compat\\check_active_session_state.py",
+          "--json"
+        ],
+        "cwd": "C:\\Users\\DELL\\AppData\\Local\\Temp\\cli_cwd_tyls5ndr",
+        "exit": 0
+      },
+      {
+        "label": "fixture CLI current cli-front-guidance-drift",
+        "argv": [
+          "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+          "-B",
+          "C:\\Users\\DELL\\AppData\\Local\\Temp\\cli_current_qat2_x5p\\governance\\compat\\check_active_session_state.py",
+          "--json"
+        ],
+        "cwd": "C:\\Users\\DELL\\AppData\\Local\\Temp\\cli_cwd_iz3thw6_",
+        "exit": 0
+      },
+      {
+        "label": "fixture CLI current cli-handoff-guidance-drift",
+        "argv": [
+          "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+          "-B",
+          "C:\\Users\\DELL\\AppData\\Local\\Temp\\cli_current_scq9vn29\\governance\\compat\\check_active_session_state.py",
+          "--json"
+        ],
+        "cwd": "C:\\Users\\DELL\\AppData\\Local\\Temp\\cli_cwd_gfaqwa7k",
+        "exit": 0
+      },
+      {
+        "label": "fixture CLI current cli-duplicate-front",
+        "argv": [
+          "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+          "-B",
+          "C:\\Users\\DELL\\AppData\\Local\\Temp\\cli_current_oqh1ezyx\\governance\\compat\\check_active_session_state.py",
+          "--json"
+        ],
+        "cwd": "C:\\Users\\DELL\\AppData\\Local\\Temp\\cli_cwd_cifgq8dd",
+        "exit": 0
+      },
+      {
+        "label": "fixture CLI current cli-malformed-state",
+        "argv": [
+          "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+          "-B",
+          "C:\\Users\\DELL\\AppData\\Local\\Temp\\cli_current_vycm96ig\\governance\\compat\\check_active_session_state.py",
+          "--json"
+        ],
+        "cwd": "C:\\Users\\DELL\\AppData\\Local\\Temp\\cli_cwd_t7cyci51",
+        "exit": 0
+      },
+      {
+        "label": "fixture CLI current cli-legacy-dir-t-drift",
+        "argv": [
+          "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+          "-B",
+          "C:\\Users\\DELL\\AppData\\Local\\Temp\\cli_current_lus3dhr9\\governance\\compat\\check_active_session_state.py",
+          "--json"
+        ],
+        "cwd": "C:\\Users\\DELL\\AppData\\Local\\Temp\\cli_cwd_a1l5qw8w",
+        "exit": 0
+      },
+      {
+        "label": "fixture CLI current cli-legacy-dir-t-sync",
+        "argv": [
+          "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+          "-B",
+          "C:\\Users\\DELL\\AppData\\Local\\Temp\\cli_current_l34i0zdd\\governance\\compat\\check_active_session_state.py",
+          "--json"
+        ],
+        "cwd": "C:\\Users\\DELL\\AppData\\Local\\Temp\\cli_cwd_5tcmen1d",
+        "exit": 0
+      },
+      {
+        "label": "fixture CLI orig cli-sync",
+        "argv": [
+          "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+          "-B",
+          "C:\\Users\\DELL\\AppData\\Local\\Temp\\cli_orig_6j5sxar6\\governance\\compat\\check_active_session_state.py",
+          "--json"
+        ],
+        "cwd": "C:\\Users\\DELL\\AppData\\Local\\Temp\\cli_cwd_n7zftry1",
+        "exit": 0
+      },
+      {
+        "label": "fixture CLI orig cli-front-guidance-drift",
+        "argv": [
+          "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+          "-B",
+          "C:\\Users\\DELL\\AppData\\Local\\Temp\\cli_orig_160d2z68\\governance\\compat\\check_active_session_state.py",
+          "--json"
+        ],
+        "cwd": "C:\\Users\\DELL\\AppData\\Local\\Temp\\cli_cwd_5g7z0cbh",
+        "exit": 0
+      },
+      {
+        "label": "fixture CLI orig cli-handoff-guidance-drift",
+        "argv": [
+          "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+          "-B",
+          "C:\\Users\\DELL\\AppData\\Local\\Temp\\cli_orig_60k0zns0\\governance\\compat\\check_active_session_state.py",
+          "--json"
+        ],
+        "cwd": "C:\\Users\\DELL\\AppData\\Local\\Temp\\cli_cwd_qy6eishc",
+        "exit": 0
+      },
+      {
+        "label": "fixture CLI orig cli-duplicate-front",
+        "argv": [
+          "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+          "-B",
+          "C:\\Users\\DELL\\AppData\\Local\\Temp\\cli_orig_zii5zx7z\\governance\\compat\\check_active_session_state.py",
+          "--json"
+        ],
+        "cwd": "C:\\Users\\DELL\\AppData\\Local\\Temp\\cli_cwd_z7cgy1qb",
+        "exit": 0
+      },
+      {
+        "label": "fixture CLI orig cli-malformed-state",
+        "argv": [
+          "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+          "-B",
+          "C:\\Users\\DELL\\AppData\\Local\\Temp\\cli_orig_v9d6srsr\\governance\\compat\\check_active_session_state.py",
+          "--json"
+        ],
+        "cwd": "C:\\Users\\DELL\\AppData\\Local\\Temp\\cli_cwd_2puft5rx",
+        "exit": 0
+      },
+      {
+        "label": "fixture CLI orig cli-legacy-dir-t-drift",
+        "argv": [
+          "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+          "-B",
+          "C:\\Users\\DELL\\AppData\\Local\\Temp\\cli_orig_ov2hb9t_\\governance\\compat\\check_active_session_state.py",
+          "--json"
+        ],
+        "cwd": "C:\\Users\\DELL\\AppData\\Local\\Temp\\cli_cwd_wttmhymh",
+        "exit": 0
+      },
+      {
+        "label": "fixture CLI orig cli-legacy-dir-t-sync",
+        "argv": [
+          "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+          "-B",
+          "C:\\Users\\DELL\\AppData\\Local\\Temp\\cli_orig_k3zl2b33\\governance\\compat\\check_active_session_state.py",
+          "--json"
+        ],
+        "cwd": "C:\\Users\\DELL\\AppData\\Local\\Temp\\cli_cwd_7a9738d6",
+        "exit": 0
+      },
+      {
+        "label": "HEAD legacy suite vs current code",
+        "argv": [
+          "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+          "-m",
+          "pytest",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "-q",
+          "C:\\Users\\DELL\\AppData\\Local\\Temp\\legacy_current_6sh9qj8q\\governance\\compat\\test_check_active_session_state.py"
+        ],
+        "cwd": "C:\\Users\\DELL\\AppData\\Local\\Temp\\legacy_current_6sh9qj8q",
+        "exit": 0
+      },
+      {
+        "label": "HEAD legacy suite vs head code",
+        "argv": [
+          "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+          "-m",
+          "pytest",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "-q",
+          "C:\\Users\\DELL\\AppData\\Local\\Temp\\legacy_head_9ynsje5z\\governance\\compat\\test_check_active_session_state.py"
+        ],
+        "cwd": "C:\\Users\\DELL\\AppData\\Local\\Temp\\legacy_head_9ynsje5z",
+        "exit": 0
+      }
+    ],
+    "claimBoundary": "Textual-consistency probe of the declared checker entrypoints with disposable fixtures; no provider/API call, no repository mutation, no semantic-authority or agent-comprehension claim; does not close the tranche."
+  },
+  "probeReceiptRawBase64": "ew0KICAic2NoZW1hIjogImN2Zi5jbGF1ZGUtbmNyLWFsaWdubWVudC1wcm9iZS1yZWNlaXB0QDEiLA0KICAic3RhcnRlZFV0YyI6ICIyMDI2LTEwLTA3VDAzOjUwOjIzLjAwNzg5OSswMDowMCIsDQogICJmaW5pc2hlZFV0YyI6ICIyMDI2LTEwLTA3VDAzOjU0OjEwLjI5MTk4NyswMDowMCIsDQogICJhY3RvciI6ICJMT0NBTF9DTEFVREVfT1BFUkFUT1JfUkVMQVkiLA0KICAiaW52b2NhdGlvbiI6IHsNCiAgICAiaGFybmVzcyI6ICJDbGF1ZGUgQ29kZSAoVlMgQ29kZSBleHRlbnNpb24pIiwNCiAgICAibW9kZWwiOiAiY2xhdWRlLXNvbm5ldC01LTUiLA0KICAgICJzZXNzaW9uU2NyYXRjaHBhZElkIjogImFmOTczZjQ2LTM3ZDUtNGMyMC05Yjg1LTExODJmMjE5YTZkMyIsDQogICAgInByb2JlUnVuSWQiOiAiOTA3NDUzNWItMzljNC00NDRhLWFjYTktYmQyY2Y5YTcyZjA5IiwNCiAgICAicmVsYXkiOiAib3BlcmF0b3IgcGFzdGVkIHJldmlld2VyIHRhc2s7IG5vIHN1YmFnZW50LCBubyBwcm92aWRlci9BUEkgY2FsbCINCiAgfSwNCiAgImltcGxlbWVudGF0aW9uV29ya2VyIjogew0KICAgICJhY3RvciI6ICJMT0NBTF9DT0RFWF9ST09UIiwNCiAgICAiaW52b2NhdGlvbiI6ICJuY3ItYWxpZ25tZW50LXdvcmtlci0yMDI2MTAwNyINCiAgfSwNCiAgImFjdG9yRGlzdGluY3RGcm9tV29ya2VyIjogdHJ1ZSwNCiAgImluZGVwZW5kZW5jZURpc2Nsb3N1cmUiOiBbDQogICAgIlJldmlld2VyIHJlYWQgdGhlIHdvcmtlciBoZWxwZXIgc291cmNlIGFuZCB0aGUgY2hlY2tlciBkaWZmIEJFRk9SRSB3cml0aW5nIHRoZSBvcmFjbGUgKG5lZWRlZCB0byBmaW5kIGVudHJ5cG9pbnRzKS4iLA0KICAgICJSZXZpZXdlciBkaWQgTk9UIG9wZW4gb3IgaW1wb3J0IGdvdmVybmFuY2UvY29tcGF0L3Rlc3RfYWN0aXZlX3Nlc3Npb25fbmV4dF9tb3ZlX2FsaWdubWVudC5weSBvciB0aGUgd29ya2VyIHByZS1yZXBhaXIgY2FuZGlkYXRlIHRlc3QuIiwNCiAgICAiUmV2aWV3ZXIgc2F3IGZyYWdtZW50cyBvZiB3b3JrZXIgcHJlLXJlcGFpciB0ZXN0IG91dHB1dCBpbnNpZGUgdGhlIHdvcmtlciBldmlkZW5jZSBKU09OIChtdXRhdGlvbiBzbmlwcGV0cyBzdWNoIGFzIEVYVFJBPU5PLCAnRGVwbG95IG5vdycpLiIsDQogICAgIkV4cGVjdGF0aW9ucyBjb21lIGZyb20gdGhlIHdvcmsgb3JkZXIgSW1wbGVtZW50YXRpb24gQ29udHJhY3QgYW5kIFJlcXVpcmVkIFByb29mIENhc2VzOyByZWZlcmVuY2UgbW9kZWwgYW5kIGZ1enogYXJlIG9yaWdpbmFsIGNvZGUgaW4gdGhpcyBmaWxlLiIsDQogICAgIk9yaWdpbmFsIChIRUFEKSBjaGVja2VyIGFuZCB0aGUgSEVBRCBsZWdhY3kgdGVzdCBmaWxlIGFyZSB1c2VkIG9ubHkgYXMgYSBwcmUtd29ya2VyIGRpZmZlcmVudGlhbCBiYXNlbGluZS4iDQogIF0sDQogICJweXRob24iOiAiMy4xMS45IiwNCiAgInBsYXRmb3JtIjogIldpbmRvd3MtMTAtMTAuMC4yNjIwMC1TUDAiLA0KICAicmVwbyI6IHsNCiAgICAiaGVhZEF0UHJvYmUiOiAiOWY2MjRlY2JjODI3NDkwN2QwMDRhMmU4NmFlNGI4MDdkODVlMjFmMiIsDQogICAgInN0YXR1c1BvcmNlbGFpbiI6IFsNCiAgICAgICIgTSBnb3Zlcm5hbmNlL2NvbXBhdC9jaGVja19hY3RpdmVfc2Vzc2lvbl9zdGF0ZS5weSIsDQogICAgICAiIE0gZ292ZXJuYW5jZS9jb21wYXQvdGVzdF9jaGVja19hY3RpdmVfc2Vzc2lvbl9zdGF0ZS5weSIsDQogICAgICAiPz8gZG9jcy9yZXZpZXdzL0NWRl9OQ1JfTkVYVF9NT1ZFX0FMSUdOTUVOVF9XT1JLRVJfUkVUVVJOXzIwMjYtMTAtMDcubWQiLA0KICAgICAgIj8/IGRvY3MvcmV2aWV3cy9ldmlkZW5jZS9jdmYtbmNyLW5leHQtbW92ZS1hbGlnbm1lbnQtd29ya2VyLTIwMjYtMTAtMDcuanNvbiIsDQogICAgICAiPz8gZ292ZXJuYW5jZS9jb21wYXQvYWN0aXZlX3Nlc3Npb25fbmV4dF9tb3ZlX2FsaWdubWVudC5weSIsDQogICAgICAiPz8gZ292ZXJuYW5jZS9jb21wYXQvdGVzdF9hY3RpdmVfc2Vzc2lvbl9uZXh0X21vdmVfYWxpZ25tZW50LnB5Ig0KICAgIF0NCiAgfSwNCiAgIm9yYWNsZUZpbGUiOiAiLmN2Zi9ydW50aW1lL2NsYXVkZS1uY3ItYWxpZ25tZW50LXByb2JlL25jcl9hbGlnbm1lbnRfcHJvYmUucHkiLA0KICAib3JhY2xlU2hhMjU2IjogIjM0YTZlNWRkOWNkNGQwY2I1ZmU0N2U3OTljMzEyNGZiY2VhNWQ4MTFiNjBiYzJjM2M1YjRhZDcwMjIyZjBhNTYiLA0KICAib3JhY2xlQ2FzZVNldFNoYTI1NiI6ICI1MDcwOWRiZTQxOGNhZTBkZWE1YjhkOTRmYWY5MTc3NTZmN2JmOTZhYzUzMWM2NTQ2YWRkYzY1MDVhODFhOTk5IiwNCiAgImNvdW50cyI6IHsNCiAgICAiYXNzZXJ0aW9ucyI6IDI0NSwNCiAgICAicGFzc2VkIjogMjQ1LA0KICAgICJmYWlsZWQiOiAwLA0KICAgICJleHBsaWNpdENhc2VzIjogMTAwLA0KICAgICJsYXllcnMiOiBbDQogICAgICAiQS13cmFwcGVyIiwNCiAgICAgICJCLWNsYXNzaWZ5Ig0KICAgIF0sDQogICAgImZ1enoiOiB7DQogICAgICAibiI6IDQwMDAsDQogICAgICAiZXhwZWN0X3Bhc3MiOiA4MDgsDQogICAgICAiZXhwZWN0X2ZhaWwiOiAzMTkyLA0KICAgICAgIm9yaWdfd291bGRfcGFzc19leHBlY3RlZF9mYWlsIjogMjkwMg0KICAgIH0sDQogICAgImZ1enpNaXNtYXRjaGVzIjogMCwNCiAgICAibGVnYWN5RGlmZmVyZW50aWFsU2FtcGxlcyI6IDQwMDAsDQogICAgImxlZ2FjeURpZmZlcmVudGlhbERpZmZzIjogMCwNCiAgICAiZGlzY3JpbWluYXRpbmdOY3JGYWlsQ2FzZXMiOiA0NSwNCiAgICAib3JpZ2luYWxNaXNzZWRPZlRob3NlIjogMzcNCiAgfSwNCiAgImZhaWxlZEFzc2VydGlvbnMiOiBbXSwNCiAgImZ1enpNaXNtYXRjaFNhbXBsZXMiOiBbXSwNCiAgImxlZ2FjeURpZmZlcmVudGlhbFNhbXBsZXNfZGlmZnMiOiBbXSwNCiAgInN0YXRpYyI6IHsNCiAgICAiaGVhZE5vdyI6ICI5ZjYyNGVjYmM4Mjc0OTA3ZDAwNGEyZTg2YWU0YjgwN2Q4NWUyMWYyIiwNCiAgICAic3RhdHVzUG9yY2VsYWluIjogWw0KICAgICAgIiBNIGdvdmVybmFuY2UvY29tcGF0L2NoZWNrX2FjdGl2ZV9zZXNzaW9uX3N0YXRlLnB5IiwNCiAgICAgICIgTSBnb3Zlcm5hbmNlL2NvbXBhdC90ZXN0X2NoZWNrX2FjdGl2ZV9zZXNzaW9uX3N0YXRlLnB5IiwNCiAgICAgICI/PyBkb2NzL3Jldmlld3MvQ1ZGX05DUl9ORVhUX01PVkVfQUxJR05NRU5UX1dPUktFUl9SRVRVUk5fMjAyNi0xMC0wNy5tZCIsDQogICAgICAiPz8gZG9jcy9yZXZpZXdzL2V2aWRlbmNlL2N2Zi1uY3ItbmV4dC1tb3ZlLWFsaWdubWVudC13b3JrZXItMjAyNi0xMC0wNy5qc29uIiwNCiAgICAgICI/PyBnb3Zlcm5hbmNlL2NvbXBhdC9hY3RpdmVfc2Vzc2lvbl9uZXh0X21vdmVfYWxpZ25tZW50LnB5IiwNCiAgICAgICI/PyBnb3Zlcm5hbmNlL2NvbXBhdC90ZXN0X2FjdGl2ZV9zZXNzaW9uX25leHRfbW92ZV9hbGlnbm1lbnQucHkiDQogICAgXSwNCiAgICAiZ2l0RGlmZkNoZWNrIjogew0KICAgICAgImV4aXQiOiAwDQogICAgfSwNCiAgICAiaGVhZEJsb2JTaGEyNTYiOiB7DQogICAgICAiZ292ZXJuYW5jZS9jb21wYXQvY2hlY2tfYWN0aXZlX3Nlc3Npb25fc3RhdGUucHkiOiAiNWI4YTA4NWY4NDc2MjJkNmQ3NzJlNjZiZTc0ZTMxYmVkNDQ3MmUzZDQyZDlmMmQ4MTVjMjRkNjVlN2MxZWNhNSIsDQogICAgICAiZ292ZXJuYW5jZS9jb21wYXQvdGVzdF9jaGVja19hY3RpdmVfc2Vzc2lvbl9zdGF0ZS5weSI6ICJjYjZkMmVlNjFhNTdhNzFiNzU2MTYyMGJlMGYwZjFkODRkMjE1OTNmZjhjMDE2NDhhNjI2ODM3YzE4OTU1YjZmIg0KICAgIH0sDQogICAgIndvcmtPcmRlclBpblNoYTI1NiI6IHsNCiAgICAgICJnb3Zlcm5hbmNlL2NvbXBhdC9jaGVja19hY3RpdmVfc2Vzc2lvbl9zdGF0ZS5weSI6ICI1YjhhMDg1Zjg0NzYyMmQ2ZDc3MmU2NmJlNzRlMzFiZWQ0NDcyZTNkNDJkOWYyZDgxNWMyNGQ2NWU3YzFlY2E1IiwNCiAgICAgICJnb3Zlcm5hbmNlL2NvbXBhdC90ZXN0X2NoZWNrX2FjdGl2ZV9zZXNzaW9uX3N0YXRlLnB5IjogImNiNmQyZWU2MWE1N2E3MWI3NTYxNjIwYmUwZjBmMWQ4NGQyMTU5M2ZmOGMwMTY0OGE2MjY4MzdjMTg5NTViNmYiDQogICAgfSwNCiAgICAiY3VycmVudFNoYTI1NiI6IHsNCiAgICAgICJnb3Zlcm5hbmNlL2NvbXBhdC9jaGVja19hY3RpdmVfc2Vzc2lvbl9zdGF0ZS5weSI6IHsNCiAgICAgICAgInNoYTI1NiI6ICJkODUzMDU5NTM0NmVhZDQ0ZjY3Y2IxOGIzMmI2ZWJjZjI4N2MyYjQ2MGFjNjhmYmYxNjAzNGY3MjAzNGYyMDk3IiwNCiAgICAgICAgImxpbmVDb3VudCI6IDg4NA0KICAgICAgfSwNCiAgICAgICJnb3Zlcm5hbmNlL2NvbXBhdC90ZXN0X2NoZWNrX2FjdGl2ZV9zZXNzaW9uX3N0YXRlLnB5Ijogew0KICAgICAgICAic2hhMjU2IjogIjQ2NTlhNmUyMTM3ODMwMjE2YjI1YzQ1ZDcyZjY5ZWY1MmRiNzI1NDZiZDVjNWFiOWRkNzhhZGUxMWY0NTliYzciLA0KICAgICAgICAibGluZUNvdW50IjogMTA4NQ0KICAgICAgfSwNCiAgICAgICJnb3Zlcm5hbmNlL2NvbXBhdC9hY3RpdmVfc2Vzc2lvbl9uZXh0X21vdmVfYWxpZ25tZW50LnB5Ijogew0KICAgICAgICAic2hhMjU2IjogImUxZjU3NmIyZGM0Yjk5YmZiOTQ2YzJkMjlmZGU3MjAwYjRlZWU4NWU5OTY5Zjc3ZjFjZWUxNjkwMzY2ODZmZTQiLA0KICAgICAgICAibGluZUNvdW50IjogMTA3DQogICAgICB9LA0KICAgICAgImdvdmVybmFuY2UvY29tcGF0L3Rlc3RfYWN0aXZlX3Nlc3Npb25fbmV4dF9tb3ZlX2FsaWdubWVudC5weSI6IHsNCiAgICAgICAgInNoYTI1NiI6ICJkOTVhOGFmMmQwOTlhNTRiMTg2NmY4ZDNkNzhkMTBkZTE5NjRkMWY4YjljMDQxYTQ2ZTY5NmVlZWRiYmJmNWYzIiwNCiAgICAgICAgImxpbmVDb3VudCI6IDE4Nw0KICAgICAgfQ0KICAgIH0sDQogICAgImN1cnJlbnRMZk5vcm1hbGl6ZWRTaGEyNTYiOiB7DQogICAgICAiZ292ZXJuYW5jZS9jb21wYXQvY2hlY2tfYWN0aXZlX3Nlc3Npb25fc3RhdGUucHkiOiAiOTI5NzdjY2Y2YzM1ZTIxMjU1YjE4NzcwOTI2OTAzZjVlNWE0YzMyOWE2YzFiZjFlZGVjOGY5NzQ4MWMyZjM2ZiIsDQogICAgICAiZ292ZXJuYW5jZS9jb21wYXQvdGVzdF9jaGVja19hY3RpdmVfc2Vzc2lvbl9zdGF0ZS5weSI6ICIzMjdlYWUyNDU4ZDExZmZlODliOTk1ZDJmNGIxOTczZjkxYThkM2UwMzQ4NzlmZTkyMGZkNDkxM2UxMTc1Y2VhIiwNCiAgICAgICJnb3Zlcm5hbmNlL2NvbXBhdC9hY3RpdmVfc2Vzc2lvbl9uZXh0X21vdmVfYWxpZ25tZW50LnB5IjogImUxZjU3NmIyZGM0Yjk5YmZiOTQ2YzJkMjlmZGU3MjAwYjRlZWU4NWU5OTY5Zjc3ZjFjZWUxNjkwMzY2ODZmZTQiLA0KICAgICAgImdvdmVybmFuY2UvY29tcGF0L3Rlc3RfYWN0aXZlX3Nlc3Npb25fbmV4dF9tb3ZlX2FsaWdubWVudC5weSI6ICI3NzQxNWY5NDcyNzg5ZDk2ZjAyYzQyZjdiZTU3NjE5OGE5YzVlMjA4NmMyNGZmODAxZDIwMGY0Y2U2ODE4ZGYzIg0KICAgIH0sDQogICAgIndvcmt0cmVlRW9sIjogew0KICAgICAgImdvdmVybmFuY2UvY29tcGF0L2NoZWNrX2FjdGl2ZV9zZXNzaW9uX3N0YXRlLnB5IjogImNybGYiLA0KICAgICAgImdvdmVybmFuY2UvY29tcGF0L3Rlc3RfY2hlY2tfYWN0aXZlX3Nlc3Npb25fc3RhdGUucHkiOiAiY3JsZiIsDQogICAgICAiZ292ZXJuYW5jZS9jb21wYXQvYWN0aXZlX3Nlc3Npb25fbmV4dF9tb3ZlX2FsaWdubWVudC5weSI6ICJsZiIsDQogICAgICAiZ292ZXJuYW5jZS9jb21wYXQvdGVzdF9hY3RpdmVfc2Vzc2lvbl9uZXh0X21vdmVfYWxpZ25tZW50LnB5IjogImNybGYiLA0KICAgICAgImRvY3MvcmV2aWV3cy9ldmlkZW5jZS9jdmYtbmNyLW5leHQtbW92ZS1hbGlnbm1lbnQtd29ya2VyLTIwMjYtMTAtMDcuanNvbiI6ICJjcmxmIiwNCiAgICAgICJkb2NzL3Jldmlld3MvQ1ZGX05DUl9ORVhUX01PVkVfQUxJR05NRU5UX1dPUktFUl9SRVRVUk5fMjAyNi0xMC0wNy5tZCI6ICJjcmxmIg0KICAgIH0sDQogICAgInNpemVHdWFyZF9weXRob24tYXV0b21hdGlvbi1zaXplIjogew0KICAgICAgImV4aXQiOiAwLA0KICAgICAgInRhaWwiOiBbDQogICAgICAgICIgIC0gc2NyaXB0cy90ZXN0X3J1bl9jdmZfc290M19hNV9yZWxlYXNlX2ludGVncmF0aW9uLnB5IChzb2Z0X3RocmVzaG9sZF9leGNlZWRlZCk6IEZpbGUgaGFzIDEwODQgbGluZXMsIGV4Y2VlZGluZyBhZHZpc29yeSB0aHJlc2hvbGQgOTAwIGZvciBjbGFzcyBgcHl0aG9uX3Rlc3RgLiIsDQogICAgICAgICIiLA0KICAgICAgICAiQ09NUExJQU5UIO+/vSBHb3Zlcm5lZCBQeXRob24gYXV0b21hdGlvbiBpcyB3aXRoaW4gdGhlIGFjdGl2ZSBzaXplIHBvbGljeS4iDQogICAgICBdLA0KICAgICAgImVyciI6ICIiDQogICAgfSwNCiAgICAic2l6ZUd1YXJkX2dvdmVybmVkLWZpbGUtc2l6ZSI6IHsNCiAgICAgICJleGl0IjogMCwNCiAgICAgICJ0YWlsIjogWw0KICAgICAgICAiICAtIEVYVEVOU0lPTlMvQ1ZGX3YxLjVfVVhfUExBVEZPUk0vY3ZmLXdlYi9zcmMvY29tcG9uZW50cy9TcGVjRXhwb3J0LnRzeCAoc29mdF90aHJlc2hvbGRfZXhjZWVkZWQpOiBGaWxlIGhhcyA5ODUgbGluZXMsIGV4Y2VlZGluZyBhZHZpc29yeSB0aHJlc2hvbGQgNzAwIGZvciBjbGFzcyBgZnJvbnRlbmRfY29tcG9uZW50YC4iLA0KICAgICAgICAiIiwNCiAgICAgICAgIkNPTVBMSUFOVCDvv70gR292ZXJuZWQgZmlsZSBzaXplIGlzIHdpdGhpbiB0aGUgYWN0aXZlIHBvbGljeS4iDQogICAgICBdLA0KICAgICAgImVyciI6ICIiDQogICAgfSwNCiAgICAiZXZpZGVuY2VKc29uU2hhMjU2IjogImNmN2NkMDk4MTQxYWE0YWUwNGE5YzMwZTdmOWFiMjc2MzJkM2NjNTViY2MwZGY1MjY2MGI0M2Q3MTE1ZmJlMTMiLA0KICAgICJyZXR1cm5NZFNoYTI1NiI6ICJlMGUyMTIxZDg2M2M2NzViY2ZlYThkZjJiY2JlYjJlMTcxMDA2ODBhMWVhMDI0ZmVmMzE5OWIyMTFjZmM0MDZlIiwNCiAgICAid29ya2VyT3JhY2xlQ2xhaW0iOiB7DQogICAgICAiY2xhaW1lZEluUmV0dXJuIjogImNmN2NkMDk4MTQxYWE0YWUwNGE5YzMwZTdmOWFiMjc2MzJkM2NjNTViY2MwZGY1MjY2MGI0M2Q3MTE1ZmJlMTMiLA0KICAgICAgImNhbmRpZGF0ZURpZ2VzdHMiOiB7DQogICAgICAgICJldmlkZW5jZV9qc29uIjogImNmN2NkMDk4MTQxYWE0YWUwNGE5YzMwZTdmOWFiMjc2MzJkM2NjNTViY2MwZGY1MjY2MGI0M2Q3MTE1ZmJlMTMiLA0KICAgICAgICAicmV0dXJuX21kIjogImUwZTIxMjFkODYzYzY3NWJjZmVhOGRmMmJjYmViMmUxNzEwMDY4MGExZWEwMjRmZWYzMTk5YjIxMWNmYzQwNmUiLA0KICAgICAgICAid29ya2VyX25ld190ZXN0IjogImQ5NWE4YWYyZDA5OWE1NGIxODY2ZjhkM2Q3OGQxMGRlMTk2NGQxZjhiOWMwNDFhNDZlNjk2ZWVlZGJiYmY1ZjMiLA0KICAgICAgICAid29ya2VyX3ByZV9yZXBhaXJfb3JhY2xlX2ZpZWxkIjogIjFmMmQ5Zjk3MzEzZTdjZDFmOWFmMjZjODQ2NDhiOTFjYzQ1OGUxNmE4NjNjMGU3YThjOWViYzc4ZGUzYjJjNWEiLA0KICAgICAgICAid29ya2VyX2NhbmRpZGF0ZV9maWxlX2lmX3ByZXNlbnQiOiAiMWYyZDlmOTczMTNlN2NkMWY5YWYyNmM4NDY0OGI5MWNjNDU4ZTE2YTg2M2MwZTdhOGM5ZWJjNzhkZTNiMmM1YSINCiAgICAgIH0sDQogICAgICAiY2xhaW1NYXRjaGVzQW55Q2FuZGlkYXRlIjogdHJ1ZQ0KICAgIH0sDQogICAgImxpbmVDb3VudHMiOiB7DQogICAgICAiZ292ZXJuYW5jZS9jb21wYXQvY2hlY2tfYWN0aXZlX3Nlc3Npb25fc3RhdGUucHkiOiA4ODQsDQogICAgICAiZ292ZXJuYW5jZS9jb21wYXQvdGVzdF9jaGVja19hY3RpdmVfc2Vzc2lvbl9zdGF0ZS5weSI6IDEwODUsDQogICAgICAiZ292ZXJuYW5jZS9jb21wYXQvYWN0aXZlX3Nlc3Npb25fbmV4dF9tb3ZlX2FsaWdubWVudC5weSI6IDEwNywNCiAgICAgICJnb3Zlcm5hbmNlL2NvbXBhdC90ZXN0X2FjdGl2ZV9zZXNzaW9uX25leHRfbW92ZV9hbGlnbm1lbnQucHkiOiAxODcNCiAgICB9LA0KICAgICJoZWFkTGluZUNvdW50cyI6IHsNCiAgICAgICJnb3Zlcm5hbmNlL2NvbXBhdC9jaGVja19hY3RpdmVfc2Vzc2lvbl9zdGF0ZS5weSI6IDk1MSwNCiAgICAgICJnb3Zlcm5hbmNlL2NvbXBhdC90ZXN0X2NoZWNrX2FjdGl2ZV9zZXNzaW9uX3N0YXRlLnB5IjogMTE3Mg0KICAgIH0sDQogICAgInRlc3RJbnZlbnRvcnkiOiB7DQogICAgICAiaGVhZENvdW50IjogNTcsDQogICAgICAiY3VyRXhpc3RpbmdDb3VudCI6IDU0LA0KICAgICAgIm5ld0ZpbGVDb3VudCI6IDE3LA0KICAgICAgInJlbW92ZWRGcm9tRXhpc3RpbmciOiBbDQogICAgICAgICJBY3RpdmVTZXNzaW9uU3RhdGVUZXN0cy50ZXN0X2Zyb250X2Rvb3JfbmV4dF9hbGxvd2VkX3ByaW1hcnlfdG9rZW5fbXVzdF9tYXRjaF9zdGF0ZSIsDQogICAgICAgICJBY3RpdmVTZXNzaW9uU3RhdGVUZXN0cy50ZXN0X2hhbmRvZmZfbmV4dF9hbGxvd2VkX3ByaW1hcnlfdG9rZW5fbXVzdF9tYXRjaF9zdGF0ZSIsDQogICAgICAgICJBY3RpdmVTZXNzaW9uU3RhdGVUZXN0cy50ZXN0X25leHRfYWxsb3dlZF9wcmltYXJ5X3Rva2VuX2FsaWdubWVudF9wYXNzZXNfd2hlbl9zeW5jZWQiDQogICAgICBdLA0KICAgICAgIm5ld0ZpbGVDbGFzc2VzIjogew0KICAgICAgICAiTkNSQWxpZ25tZW50VGVzdHMiOiBbDQogICAgICAgICAgInVuaXR0ZXN0LlRlc3RDYXNlIg0KICAgICAgICBdDQogICAgICB9LA0KICAgICAgIm5ld0ZpbGVOYW1lcyI6IFsNCiAgICAgICAgIk5DUkFsaWdubWVudFRlc3RzLnRlc3Rfc3luY2hyb25pemVkIiwNCiAgICAgICAgIk5DUkFsaWdubWVudFRlc3RzLnRlc3Rfc3BhY2luZ19hbmRfd3JhcHBlcnMiLA0KICAgICAgICAiTkNSQWxpZ25tZW50VGVzdHMudGVzdF9ndWlkYW5jZV9jYXNlX2FuZF9wdW5jdHVhdGlvbl9wcmVzZXJ2ZWQiLA0KICAgICAgICAiTkNSQWxpZ25tZW50VGVzdHMudGVzdF9tYWxmb3JtZWRfbmNyX2VudmVsb3BlcyIsDQogICAgICAgICJOQ1JBbGlnbm1lbnRUZXN0cy50ZXN0X2d1aWRhbmNlX2RyaWZ0X2Zyb250IiwNCiAgICAgICAgIk5DUkFsaWdubWVudFRlc3RzLnRlc3RfZ3VpZGFuY2VfZHJpZnRfaGFuZG9mZiIsDQogICAgICAgICJOQ1JBbGlnbm1lbnRUZXN0cy50ZXN0X2hlYWRlcl9pZF9kcmlmdCIsDQogICAgICAgICJOQ1JBbGlnbm1lbnRUZXN0cy50ZXN0X2JhZF9mcm9udF9kZWNsYXJhdGlvbnMiLA0KICAgICAgICAiTkNSQWxpZ25tZW50VGVzdHMudGVzdF9iYWRfaGFuZG9mZl9kZWNsYXJhdGlvbnMiLA0KICAgICAgICAiTkNSQWxpZ25tZW50VGVzdHMudGVzdF9iYWRfc3RhdGVfaGVhZGVycyIsDQogICAgICAgICJOQ1JBbGlnbm1lbnRUZXN0cy50ZXN0X2hpc3Rvcnlfbm90X3ByaW1hcnkiLA0KICAgICAgICAiTkNSQWxpZ25tZW50VGVzdHMudGVzdF9sZWdhY3lfZmFtaWxpZXMiLA0KICAgICAgICAiTkNSQWxpZ25tZW50VGVzdHMudGVzdF91bmtub3duX2xlZ2FjeV91bmNoYW5nZWQiLA0KICAgICAgICAiTkNSQWxpZ25tZW50VGVzdHMudGVzdF9jbGFzc2lmaWVyX2N1cnJlbnRfZm9ybWF0IiwNCiAgICAgICAgIk5DUkFsaWdubWVudFRlc3RzLnRlc3RfZnJvbnRfZG9vcl9uZXh0X2FsbG93ZWRfcHJpbWFyeV90b2tlbl9tdXN0X21hdGNoX3N0YXRlIiwNCiAgICAgICAgIk5DUkFsaWdubWVudFRlc3RzLnRlc3RfaGFuZG9mZl9uZXh0X2FsbG93ZWRfcHJpbWFyeV90b2tlbl9tdXN0X21hdGNoX3N0YXRlIiwNCiAgICAgICAgIk5DUkFsaWdubWVudFRlc3RzLnRlc3RfbmV4dF9hbGxvd2VkX3ByaW1hcnlfdG9rZW5fYWxpZ25tZW50X3Bhc3Nlc193aGVuX3N5bmNlZCINCiAgICAgIF0NCiAgICB9DQogIH0sDQogICJpbXBvcnRNb2RlcyI6IHsNCiAgICAicGFja2FnZUltcG9ydCI6IHsNCiAgICAgICJleGl0IjogMCwNCiAgICAgICJvdXQiOiAiVHJ1ZSBkaXItdDIiLA0KICAgICAgImVyciI6ICIiDQogICAgfSwNCiAgICAic2NyaXB0RGlySW1wb3J0Ijogew0KICAgICAgImV4aXQiOiAwLA0KICAgICAgIm91dCI6ICJUcnVlIiwNCiAgICAgICJlcnIiOiAiIg0KICAgIH0sDQogICAgImJhcmVTcGVjX2N1cnJlbnQiOiB7DQogICAgICAiZXhpdCI6IDEsDQogICAgICAidGFpbCI6ICJNb2R1bGVOb3RGb3VuZEVycm9yOiBObyBtb2R1bGUgbmFtZWQgJ2dlbmVyYXRlX2FjdGl2ZV9zZXNzaW9uX3N0YXRlJyIsDQogICAgICAib3V0IjogIiINCiAgICB9LA0KICAgICJiYXJlU3BlY19oZWFkIjogew0KICAgICAgImV4aXQiOiAxLA0KICAgICAgInRhaWwiOiAiTW9kdWxlTm90Rm91bmRFcnJvcjogTm8gbW9kdWxlIG5hbWVkICdnZW5lcmF0ZV9hY3RpdmVfc2Vzc2lvbl9zdGF0ZSciLA0KICAgICAgIm91dCI6ICIiDQogICAgfSwNCiAgICAicmVhbFJlcG9DbGkiOiB7DQogICAgICAiZXhpdCI6IDAsDQogICAgICAidGFpbCI6IFsNCiAgICAgICAgIiAgLSBBRFZJU09SWTogQ1ZGX1NFU1NJT04vQUNUSVZFX1NFU1NJT05fU1RBVEUuanNvbiBhZ2dyZWdhdGUgaXMgMjEwODM5MSBieXRlcywgZXhjZWVkaW5nIHRoZSAxMzEwNzItYnl0ZSBmdWxsLXN0YXRlIGFkdmlzb3J5IHRocmVzaG9sZDsgVDIgb3ducyBhZ2dyZWdhdGUgc2NoZW1hL2NvbnRlbnQgbWlncmF0aW9uLCB0aGlzIGlzIGFkdmlzb3J5IG9ubHkiLA0KICAgICAgICAiIiwNCiAgICAgICAgIkNPTVBMSUFOVCAtIGFjdGl2ZSBzZXNzaW9uIGZyb250IGRvb3IsIHJlZ2lzdHJ5LCBoYW5kb2ZmIHBvaW50ZXIsIGFuZCBzdGFydHVwIHJvdXRpbmcgYXJlIGFsaWduZWQuIg0KICAgICAgXSwNCiAgICAgICJlcnIiOiAiIg0KICAgIH0NCiAgfSwNCiAgInJlYWxTdGF0ZVByb2JlIjogew0KICAgICJzdGF0ZVN0YXJ0c05jciI6IHRydWUsDQogICAgImxpdmVOYXJyYXRpdmVMZWdhY3lUb2tlbnMiOiBbXSwNCiAgICAibGl2ZUN1cnJlbnQiOiBbXSwNCiAgICAibGl2ZU9yaWdpbmFsIjogW10sDQogICAgImxpdmVGcm9udERlY2xMaW5lSW5kaWNlcyI6IFsNCiAgICAgIDUwDQogICAgXSwNCiAgICAibGl2ZUd1aWRhbmNlTXV0YXRpb24iOiB7DQogICAgICAiY2hhbmdlZCI6IHRydWUsDQogICAgICAiY3VycmVudCI6IFsNCiAgICAgICAgIkNWRl9TRVNTSU9OX01FTU9SWS5tZCBOZXh0IEFsbG93ZWQgTW92ZSBOQ1IgZGVjbGFyYXRpb24gZG9lcyBub3QgbWF0Y2ggc3RhdGUgbmV4dEFsbG93ZWRNb3ZlIg0KICAgICAgXSwNCiAgICAgICJvcmlnaW5hbCI6IFtdDQogICAgfQ0KICB9LA0KICAiY2xpVHJlZSI6IHsNCiAgICAiY3VycmVudC9jbGktc3luYyI6IHsNCiAgICAgICJleGl0IjogMCwNCiAgICAgICJjb250aW51aXR5VmlvbGF0aW9ucyI6IFtdLA0KICAgICAgInN0ZGVyclRhaWwiOiAiIg0KICAgIH0sDQogICAgImN1cnJlbnQvY2xpLWZyb250LWd1aWRhbmNlLWRyaWZ0Ijogew0KICAgICAgImV4aXQiOiAwLA0KICAgICAgImNvbnRpbnVpdHlWaW9sYXRpb25zIjogWw0KICAgICAgICAiQ1ZGX1NFU1NJT05fTUVNT1JZLm1kIE5leHQgQWxsb3dlZCBNb3ZlIE5DUiBkZWNsYXJhdGlvbiBkb2VzIG5vdCBtYXRjaCBzdGF0ZSBuZXh0QWxsb3dlZE1vdmUiDQogICAgICBdLA0KICAgICAgInN0ZGVyclRhaWwiOiAiIg0KICAgIH0sDQogICAgImN1cnJlbnQvY2xpLWhhbmRvZmYtZ3VpZGFuY2UtZHJpZnQiOiB7DQogICAgICAiZXhpdCI6IDAsDQogICAgICAiY29udGludWl0eVZpb2xhdGlvbnMiOiBbDQogICAgICAgICJhY3RpdmUgaGFuZG9mZiBOZXh0IEFsbG93ZWQgTW92ZSBOQ1IgZGVjbGFyYXRpb24gZG9lcyBub3QgbWF0Y2ggc3RhdGUgbmV4dEFsbG93ZWRNb3ZlIg0KICAgICAgXSwNCiAgICAgICJzdGRlcnJUYWlsIjogIiINCiAgICB9LA0KICAgICJjdXJyZW50L2NsaS1kdXBsaWNhdGUtZnJvbnQiOiB7DQogICAgICAiZXhpdCI6IDAsDQogICAgICAiY29udGludWl0eVZpb2xhdGlvbnMiOiBbDQogICAgICAgICJDVkZfU0VTU0lPTl9NRU1PUlkubWQgTmV4dCBBbGxvd2VkIE1vdmUgcmVxdWlyZXMgZXhhY3RseSBvbmUgdmFsaWQgTkNSIGRlY2xhcmF0aW9uIg0KICAgICAgXSwNCiAgICAgICJzdGRlcnJUYWlsIjogIiINCiAgICB9LA0KICAgICJjdXJyZW50L2NsaS1tYWxmb3JtZWQtc3RhdGUiOiB7DQogICAgICAiZXhpdCI6IDAsDQogICAgICAiY29udGludWl0eVZpb2xhdGlvbnMiOiBbDQogICAgICAgICJzdGF0ZSBuZXh0QWxsb3dlZE1vdmUgTkNSIGRlY2xhcmF0aW9uIGlzIG1hbGZvcm1lZCBvciBtdWx0aWxpbmUiDQogICAgICBdLA0KICAgICAgInN0ZGVyclRhaWwiOiAiIg0KICAgIH0sDQogICAgImN1cnJlbnQvY2xpLWxlZ2FjeS1kaXItdC1kcmlmdCI6IHsNCiAgICAgICJleGl0IjogMCwNCiAgICAgICJjb250aW51aXR5VmlvbGF0aW9ucyI6IFsNCiAgICAgICAgIkNWRl9TRVNTSU9OX01FTU9SWS5tZCBOZXh0IEFsbG93ZWQgTW92ZSBwcmltYXJ5IHRva2VuIGBkaXItdDFgIGRvZXMgbm90IG1hdGNoIHN0YXRlIG5leHRBbGxvd2VkTW92ZSBwcmltYXJ5IHRva2VuIGBkaXItdDJgIg0KICAgICAgXSwNCiAgICAgICJzdGRlcnJUYWlsIjogIiINCiAgICB9LA0KICAgICJjdXJyZW50L2NsaS1sZWdhY3ktZGlyLXQtc3luYyI6IHsNCiAgICAgICJleGl0IjogMCwNCiAgICAgICJjb250aW51aXR5VmlvbGF0aW9ucyI6IFtdLA0KICAgICAgInN0ZGVyclRhaWwiOiAiIg0KICAgIH0sDQogICAgIm9yaWcvY2xpLXN5bmMiOiB7DQogICAgICAiZXhpdCI6IDAsDQogICAgICAiY29udGludWl0eVZpb2xhdGlvbnMiOiBbXSwNCiAgICAgICJzdGRlcnJUYWlsIjogIiINCiAgICB9LA0KICAgICJvcmlnL2NsaS1mcm9udC1ndWlkYW5jZS1kcmlmdCI6IHsNCiAgICAgICJleGl0IjogMCwNCiAgICAgICJjb250aW51aXR5VmlvbGF0aW9ucyI6IFtdLA0KICAgICAgInN0ZGVyclRhaWwiOiAiIg0KICAgIH0sDQogICAgIm9yaWcvY2xpLWhhbmRvZmYtZ3VpZGFuY2UtZHJpZnQiOiB7DQogICAgICAiZXhpdCI6IDAsDQogICAgICAiY29udGludWl0eVZpb2xhdGlvbnMiOiBbXSwNCiAgICAgICJzdGRlcnJUYWlsIjogIiINCiAgICB9LA0KICAgICJvcmlnL2NsaS1kdXBsaWNhdGUtZnJvbnQiOiB7DQogICAgICAiZXhpdCI6IDAsDQogICAgICAiY29udGludWl0eVZpb2xhdGlvbnMiOiBbXSwNCiAgICAgICJzdGRlcnJUYWlsIjogIiINCiAgICB9LA0KICAgICJvcmlnL2NsaS1tYWxmb3JtZWQtc3RhdGUiOiB7DQogICAgICAiZXhpdCI6IDAsDQogICAgICAiY29udGludWl0eVZpb2xhdGlvbnMiOiBbXSwNCiAgICAgICJzdGRlcnJUYWlsIjogIiINCiAgICB9LA0KICAgICJvcmlnL2NsaS1sZWdhY3ktZGlyLXQtZHJpZnQiOiB7DQogICAgICAiZXhpdCI6IDAsDQogICAgICAiY29udGludWl0eVZpb2xhdGlvbnMiOiBbDQogICAgICAgICJDVkZfU0VTU0lPTl9NRU1PUlkubWQgTmV4dCBBbGxvd2VkIE1vdmUgcHJpbWFyeSB0b2tlbiBgZGlyLXQxYCBkb2VzIG5vdCBtYXRjaCBzdGF0ZSBuZXh0QWxsb3dlZE1vdmUgcHJpbWFyeSB0b2tlbiBgZGlyLXQyYCINCiAgICAgIF0sDQogICAgICAic3RkZXJyVGFpbCI6ICIiDQogICAgfSwNCiAgICAib3JpZy9jbGktbGVnYWN5LWRpci10LXN5bmMiOiB7DQogICAgICAiZXhpdCI6IDAsDQogICAgICAiY29udGludWl0eVZpb2xhdGlvbnMiOiBbXSwNCiAgICAgICJzdGRlcnJUYWlsIjogIiINCiAgICB9DQogIH0sDQogICJoZWFkTGVnYWN5U3VpdGVPbkN1cnJlbnRDb2RlIjogew0KICAgICJjdXJyZW50Ijogew0KICAgICAgImV4aXQiOiAwLA0KICAgICAgInRhaWwiOiBbDQogICAgICAgICIuLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4gICAgICAgICAgICAgICAgWzEwMCVdIg0KICAgICAgXQ0KICAgIH0sDQogICAgImhlYWQiOiB7DQogICAgICAiZXhpdCI6IDAsDQogICAgICAidGFpbCI6IFsNCiAgICAgICAgIi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLiAgICAgICAgICAgICAgICBbMTAwJV0iDQogICAgICBdDQogICAgfQ0KICB9LA0KICAib2JzZXJ2YXRpb25zIjogWw0KICAgIHsNCiAgICAgICJpZCI6ICJPQlMtd29ya2VyLW9yYWNsZS1kaWdlc3QtYmluZGluZyIsDQogICAgICAiY2xhaW1lZEluUmV0dXJuIjogImNmN2NkMDk4MTQxYWE0YWUwNGE5YzMwZTdmOWFiMjc2MzJkM2NjNTViY2MwZGY1MjY2MGI0M2Q3MTE1ZmJlMTMiLA0KICAgICAgImNhbmRpZGF0ZURpZ2VzdHMiOiB7DQogICAgICAgICJldmlkZW5jZV9qc29uIjogImNmN2NkMDk4MTQxYWE0YWUwNGE5YzMwZTdmOWFiMjc2MzJkM2NjNTViY2MwZGY1MjY2MGI0M2Q3MTE1ZmJlMTMiLA0KICAgICAgICAicmV0dXJuX21kIjogImUwZTIxMjFkODYzYzY3NWJjZmVhOGRmMmJjYmViMmUxNzEwMDY4MGExZWEwMjRmZWYzMTk5YjIxMWNmYzQwNmUiLA0KICAgICAgICAid29ya2VyX25ld190ZXN0IjogImQ5NWE4YWYyZDA5OWE1NGIxODY2ZjhkM2Q3OGQxMGRlMTk2NGQxZjhiOWMwNDFhNDZlNjk2ZWVlZGJiYmY1ZjMiLA0KICAgICAgICAid29ya2VyX3ByZV9yZXBhaXJfb3JhY2xlX2ZpZWxkIjogIjFmMmQ5Zjk3MzEzZTdjZDFmOWFmMjZjODQ2NDhiOTFjYzQ1OGUxNmE4NjNjMGU3YThjOWViYzc4ZGUzYjJjNWEiLA0KICAgICAgICAid29ya2VyX2NhbmRpZGF0ZV9maWxlX2lmX3ByZXNlbnQiOiAiMWYyZDlmOTczMTNlN2NkMWY5YWYyNmM4NDY0OGI5MWNjNDU4ZTE2YTg2M2MwZTdhOGM5ZWJjNzhkZTNiMmM1YSINCiAgICAgIH0sDQogICAgICAiY2xhaW1NYXRjaGVzQW55Q2FuZGlkYXRlIjogdHJ1ZQ0KICAgIH0sDQogICAgew0KICAgICAgImlkIjogIm9icy1idWxsZXRlZC1kZWNsYXJhdGlvbi1zdXJmYWNlIiwNCiAgICAgICJjdXJyZW50IjogWw0KICAgICAgICAiQ1ZGX1NFU1NJT05fTUVNT1JZLm1kIE5leHQgQWxsb3dlZCBNb3ZlIHJlcXVpcmVzIGV4YWN0bHkgb25lIHZhbGlkIE5DUiBkZWNsYXJhdGlvbiINCiAgICAgIF0sDQogICAgICAib3JpZ2luYWwiOiBbXQ0KICAgIH0sDQogICAgew0KICAgICAgImlkIjogIm9icy1iYWNrdGlja3MtYXJvdW5kLXByZWZpeC1zdXJmYWNlIiwNCiAgICAgICJjdXJyZW50IjogWw0KICAgICAgICAiQ1ZGX1NFU1NJT05fTUVNT1JZLm1kIE5leHQgQWxsb3dlZCBNb3ZlIHJlcXVpcmVzIGV4YWN0bHkgb25lIHZhbGlkIE5DUiBkZWNsYXJhdGlvbiINCiAgICAgIF0sDQogICAgICAib3JpZ2luYWwiOiBbXQ0KICAgIH0sDQogICAgew0KICAgICAgImlkIjogIm9icy1zdGF0ZS1iYWNrdGlja3MtYXJvdW5kLXByZWZpeCIsDQogICAgICAiY3VycmVudCI6IFtdLA0KICAgICAgIm9yaWdpbmFsIjogW10NCiAgICB9LA0KICAgIHsNCiAgICAgICJpZCI6ICJvYnMtbG93ZXJjYXNlLXByZWZpeC1zdXJmYWNlIiwNCiAgICAgICJjdXJyZW50IjogW10sDQogICAgICAib3JpZ2luYWwiOiBbXQ0KICAgIH0sDQogICAgew0KICAgICAgImlkIjogIm9icy1uYnNwLWluLWd1aWRhbmNlIiwNCiAgICAgICJjdXJyZW50IjogW10sDQogICAgICAib3JpZ2luYWwiOiBbXQ0KICAgIH0sDQogICAgew0KICAgICAgImlkIjogIm9icy1oZWFkaW5nLXRyYWlsaW5nLXNwYWNlLWZyb250IiwNCiAgICAgICJjdXJyZW50IjogWw0KICAgICAgICAiQ1ZGX1NFU1NJT05fTUVNT1JZLm1kIE5leHQgQWxsb3dlZCBNb3ZlIHJlcXVpcmVzIGV4YWN0bHkgb25lIHZhbGlkIE5DUiBkZWNsYXJhdGlvbiINCiAgICAgIF0sDQogICAgICAib3JpZ2luYWwiOiBbDQogICAgICAgICJDVkZfU0VTU0lPTl9NRU1PUlkubWQgTmV4dCBBbGxvd2VkIE1vdmUgaXMgbWlzc2luZyBhIHBhcnNlci12aXNpYmxlIHByaW1hcnkgbmV4dC1tb3ZlIHRva2VuIg0KICAgICAgXQ0KICAgIH0sDQogICAgew0KICAgICAgImlkIjogIm9icy1kZWNsYXJhdGlvbi1pbnNpZGUtY29kZS1mZW5jZSIsDQogICAgICAiY3VycmVudCI6IFtdLA0KICAgICAgIm9yaWdpbmFsIjogW10NCiAgICB9LA0KICAgIHsNCiAgICAgICJpZCI6ICJvYnMtdW5pY29kZS1kYXNoLWluLWlkIiwNCiAgICAgICJjdXJyZW50IjogWw0KICAgICAgICAiQ1ZGX1NFU1NJT05fTUVNT1JZLm1kIE5leHQgQWxsb3dlZCBNb3ZlIHJlcXVpcmVzIGV4YWN0bHkgb25lIHZhbGlkIE5DUiBkZWNsYXJhdGlvbiINCiAgICAgIF0sDQogICAgICAib3JpZ2luYWwiOiBbXQ0KICAgIH0sDQogICAgew0KICAgICAgImlkIjogIm9icy1zdGF0ZS1kZWNsYXJhdGlvbi13aXRoLXRyYWlsaW5nLW5ld2xpbmUiLA0KICAgICAgImN1cnJlbnQiOiBbXSwNCiAgICAgICJvcmlnaW5hbCI6IFtdDQogICAgfSwNCiAgICB7DQogICAgICAiaWQiOiAib2JzLXN0YXRlLWxlYWRpbmctbmV3bGluZSIsDQogICAgICAiY3VycmVudCI6IFtdLA0KICAgICAgIm9yaWdpbmFsIjogW10NCiAgICB9LA0KICAgIHsNCiAgICAgICJpZCI6ICJvYnMtZG91YmxlLXNwYWNlLWFmdGVyLXByZWZpeCIsDQogICAgICAiY3VycmVudCI6IFtdLA0KICAgICAgIm9yaWdpbmFsIjogW10NCiAgICB9LA0KICAgIHsNCiAgICAgICJpZCI6ICJvYnMtc3RhdGUtYmFja3RpY2stYXJvdW5kLXByZWZpeC13aXRoLXN1cmZhY2UtZ3VpZGFuY2UtZHJpZnQiLA0KICAgICAgImN1cnJlbnQiOiBbXSwNCiAgICAgICJvcmlnaW5hbCI6IFtdDQogICAgfSwNCiAgICB7DQogICAgICAiaWQiOiAib2JzLXN0YXRlLWJhY2t0aWNrLWFyb3VuZC1wcmVmaXgtd2l0aC1zdXJmYWNlLWJhdGNoLWRyaWZ0IiwNCiAgICAgICJjdXJyZW50IjogW10sDQogICAgICAib3JpZ2luYWwiOiBbXQ0KICAgIH0sDQogICAgew0KICAgICAgImlkIjogIm9icy1mcm9udC1oZWFkaW5nLXRyYWlsaW5nLXNwYWNlcyIsDQogICAgICAiY3VycmVudCI6IFtdDQogICAgfSwNCiAgICB7DQogICAgICAiaWQiOiAib2JzLWZyb250LWhlYWRpbmctZG91YmxlLXNwYWNlIiwNCiAgICAgICJjdXJyZW50IjogWw0KICAgICAgICAiQ1ZGX1NFU1NJT05fTUVNT1JZLm1kIE5leHQgQWxsb3dlZCBNb3ZlIHJlcXVpcmVzIGV4YWN0bHkgb25lIHZhbGlkIE5DUiBkZWNsYXJhdGlvbiINCiAgICAgIF0NCiAgICB9DQogIF0sDQogICJvcmlnaW5hbENvZGVBbHJlYWR5Q2F1Z2h0IjogWw0KICAgICIwMi1ib3RoLWRyaWZ0IiwNCiAgICAiMDItdG9rZW4tb25seS1kcmlmdCIsDQogICAgIjAyLXJlbW92ZWQtZ3VpZGFuY2UiLA0KICAgICIwMy1mcm9udC1zZWN0aW9uLXdpdGhvdXQtZGVjbCIsDQogICAgIjAzLWZyb250LW5vLXNlY3Rpb24iLA0KICAgICIwMy1oYW5kb2ZmLW5vLXNlY3Rpb24iLA0KICAgICIwMy1oYW5kb2ZmLWVtcHR5LXNlY3Rpb24iLA0KICAgICIwMy1mcm9udC1kZWNsLXVuZGVyLW90aGVyLWhlYWRpbmciDQogIF0sDQogICJjb21tYW5kcyI6IFsNCiAgICB7DQogICAgICAibGFiZWwiOiAic2l6ZSBndWFyZDogY2hlY2tfcHl0aG9uX2F1dG9tYXRpb25fc2l6ZS5weSIsDQogICAgICAiYXJndiI6IFsNCiAgICAgICAgIkM6XFxVc2Vyc1xcREVMTFxcQXBwRGF0YVxcTG9jYWxcXFByb2dyYW1zXFxQeXRob25cXFB5dGhvbjMxMVxccHl0aG9uLmV4ZSIsDQogICAgICAgICItQiIsDQogICAgICAgICJEOlxcVU5HIERVTkcgQUlcXFRPT0wgQUkgMjAyNlxcQ29udHJvbGxlZC1WaWJlLUZyYW1ld29yay1DVkZcXGdvdmVybmFuY2VcXGNvbXBhdFxcY2hlY2tfcHl0aG9uX2F1dG9tYXRpb25fc2l6ZS5weSIsDQogICAgICAgICItLWVuZm9yY2UiDQogICAgICBdLA0KICAgICAgImN3ZCI6ICJEOlxcVU5HIERVTkcgQUlcXFRPT0wgQUkgMjAyNlxcQ29udHJvbGxlZC1WaWJlLUZyYW1ld29yay1DVkYiLA0KICAgICAgImV4aXQiOiAwDQogICAgfSwNCiAgICB7DQogICAgICAibGFiZWwiOiAic2l6ZSBndWFyZDogY2hlY2tfZ292ZXJuZWRfZmlsZV9zaXplLnB5IiwNCiAgICAgICJhcmd2IjogWw0KICAgICAgICAiQzpcXFVzZXJzXFxERUxMXFxBcHBEYXRhXFxMb2NhbFxcUHJvZ3JhbXNcXFB5dGhvblxcUHl0aG9uMzExXFxweXRob24uZXhlIiwNCiAgICAgICAgIi1CIiwNCiAgICAgICAgIkQ6XFxVTkcgRFVORyBBSVxcVE9PTCBBSSAyMDI2XFxDb250cm9sbGVkLVZpYmUtRnJhbWV3b3JrLUNWRlxcZ292ZXJuYW5jZVxcY29tcGF0XFxjaGVja19nb3Zlcm5lZF9maWxlX3NpemUucHkiLA0KICAgICAgICAiLS1lbmZvcmNlIg0KICAgICAgXSwNCiAgICAgICJjd2QiOiAiRDpcXFVORyBEVU5HIEFJXFxUT09MIEFJIDIwMjZcXENvbnRyb2xsZWQtVmliZS1GcmFtZXdvcmstQ1ZGIiwNCiAgICAgICJleGl0IjogMA0KICAgIH0sDQogICAgew0KICAgICAgImxhYmVsIjogImltcG9ydC1tb2RlOiBwYWNrYWdlIGZyb20gcmVwbyByb290IiwNCiAgICAgICJhcmd2IjogWw0KICAgICAgICAiQzpcXFVzZXJzXFxERUxMXFxBcHBEYXRhXFxMb2NhbFxcUHJvZ3JhbXNcXFB5dGhvblxcUHl0aG9uMzExXFxweXRob24uZXhlIiwNCiAgICAgICAgIi1JIiwNCiAgICAgICAgIi1jIiwNCiAgICAgICAgImltcG9ydCBzeXM7c3lzLmRvbnRfd3JpdGVfYnl0ZWNvZGU9VHJ1ZTtzeXMucGF0aC5pbnNlcnQoMCwnRDpcXFxcVU5HIERVTkcgQUlcXFxcVE9PTCBBSSAyMDI2XFxcXENvbnRyb2xsZWQtVmliZS1GcmFtZXdvcmstQ1ZGJyk7aW1wb3J0IGdvdmVybmFuY2UuY29tcGF0LmNoZWNrX2FjdGl2ZV9zZXNzaW9uX3N0YXRlIGFzIG07cHJpbnQobS5fY2hlY2tfbmV4dF9hbGxvd2VkX21vdmVfYWxpZ25tZW50IGlzIG5vdCBOb25lLCBtLl9uZXh0X2FsbG93ZWRfbW92ZV9zaWduYXR1cmUoJ05leHQgYWxsb3dlZCBtb3ZlOiBESVItVDInKSkiDQogICAgICBdLA0KICAgICAgImN3ZCI6ICJDOlxcVXNlcnNcXERFTExcXEFwcERhdGFcXExvY2FsXFxUZW1wXFxwcm9iZV9jd2RfcnAxbHEwMWkiLA0KICAgICAgImV4aXQiOiAwDQogICAgfSwNCiAgICB7DQogICAgICAibGFiZWwiOiAiaW1wb3J0LW1vZGU6IHNjcmlwdC1kaXIiLA0KICAgICAgImFyZ3YiOiBbDQogICAgICAgICJDOlxcVXNlcnNcXERFTExcXEFwcERhdGFcXExvY2FsXFxQcm9ncmFtc1xcUHl0aG9uXFxQeXRob24zMTFcXHB5dGhvbi5leGUiLA0KICAgICAgICAiLUkiLA0KICAgICAgICAiLWMiLA0KICAgICAgICAiaW1wb3J0IHN5cztzeXMuZG9udF93cml0ZV9ieXRlY29kZT1UcnVlO3N5cy5wYXRoLmluc2VydCgwLCdEOlxcXFxVTkcgRFVORyBBSVxcXFxUT09MIEFJIDIwMjZcXFxcQ29udHJvbGxlZC1WaWJlLUZyYW1ld29yay1DVkZcXFxcZ292ZXJuYW5jZVxcXFxjb21wYXQnKTtpbXBvcnQgY2hlY2tfYWN0aXZlX3Nlc3Npb25fc3RhdGUgYXMgbTtwcmludChtLl9jaGVja19uZXh0X2FsbG93ZWRfbW92ZV9hbGlnbm1lbnQgaXMgbm90IE5vbmUpIg0KICAgICAgXSwNCiAgICAgICJjd2QiOiAiQzpcXFVzZXJzXFxERUxMXFxBcHBEYXRhXFxMb2NhbFxcVGVtcFxccHJvYmVfY3dkX3JwMWxxMDFpIiwNCiAgICAgICJleGl0IjogMA0KICAgIH0sDQogICAgew0KICAgICAgImxhYmVsIjogImltcG9ydC1tb2RlOiBiYXJlIHNwZWMgKGN1cnJlbnQpIiwNCiAgICAgICJhcmd2IjogWw0KICAgICAgICAiQzpcXFVzZXJzXFxERUxMXFxBcHBEYXRhXFxMb2NhbFxcUHJvZ3JhbXNcXFB5dGhvblxcUHl0aG9uMzExXFxweXRob24uZXhlIiwNCiAgICAgICAgIi1JIiwNCiAgICAgICAgIi1jIiwNCiAgICAgICAgImltcG9ydCBzeXM7c3lzLmRvbnRfd3JpdGVfYnl0ZWNvZGU9VHJ1ZTtpbXBvcnQgaW1wb3J0bGliLnV0aWwgYXMgdTtzPXUuc3BlY19mcm9tX2ZpbGVfbG9jYXRpb24oJ3gnLCdEOlxcXFxVTkcgRFVORyBBSVxcXFxUT09MIEFJIDIwMjZcXFxcQ29udHJvbGxlZC1WaWJlLUZyYW1ld29yay1DVkZcXFxcZ292ZXJuYW5jZVxcXFxjb21wYXRcXFxcY2hlY2tfYWN0aXZlX3Nlc3Npb25fc3RhdGUucHknKTttPXUubW9kdWxlX2Zyb21fc3BlYyhzKTtzLmxvYWRlci5leGVjX21vZHVsZShtKTtwcmludCgnTE9BREVEJykiDQogICAgICBdLA0KICAgICAgImN3ZCI6ICJDOlxcVXNlcnNcXERFTExcXEFwcERhdGFcXExvY2FsXFxUZW1wXFxwcm9iZV9jd2RfcnAxbHEwMWkiLA0KICAgICAgImV4aXQiOiAxDQogICAgfSwNCiAgICB7DQogICAgICAibGFiZWwiOiAiaW1wb3J0LW1vZGU6IGJhcmUgc3BlYyAoaGVhZCkiLA0KICAgICAgImFyZ3YiOiBbDQogICAgICAgICJDOlxcVXNlcnNcXERFTExcXEFwcERhdGFcXExvY2FsXFxQcm9ncmFtc1xcUHl0aG9uXFxQeXRob24zMTFcXHB5dGhvbi5leGUiLA0KICAgICAgICAiLUkiLA0KICAgICAgICAiLWMiLA0KICAgICAgICAiaW1wb3J0IHN5cztzeXMuZG9udF93cml0ZV9ieXRlY29kZT1UcnVlO2ltcG9ydCBpbXBvcnRsaWIudXRpbCBhcyB1O3M9dS5zcGVjX2Zyb21fZmlsZV9sb2NhdGlvbigneCcsJ0Q6XFxcXFVORyBEVU5HIEFJXFxcXFRPT0wgQUkgMjAyNlxcXFxDb250cm9sbGVkLVZpYmUtRnJhbWV3b3JrLUNWRlxcXFwuY3ZmXFxcXHJ1bnRpbWVcXFxcY2xhdWRlLW5jci1hbGlnbm1lbnQtcHJvYmVcXFxcb3JpZ19oZWFkX2NvcHlcXFxcY2hlY2tfYWN0aXZlX3Nlc3Npb25fc3RhdGVfaGVhZC5weScpO209dS5tb2R1bGVfZnJvbV9zcGVjKHMpO3MubG9hZGVyLmV4ZWNfbW9kdWxlKG0pO3ByaW50KCdMT0FERUQnKSINCiAgICAgIF0sDQogICAgICAiY3dkIjogIkM6XFxVc2Vyc1xcREVMTFxcQXBwRGF0YVxcTG9jYWxcXFRlbXBcXHByb2JlX2N3ZF9ycDFscTAxaSIsDQogICAgICAiZXhpdCI6IDENCiAgICB9LA0KICAgIHsNCiAgICAgICJsYWJlbCI6ICJyZWFsIHJlcG8gZGlyZWN0IENMSSAtLWVuZm9yY2UiLA0KICAgICAgImFyZ3YiOiBbDQogICAgICAgICJDOlxcVXNlcnNcXERFTExcXEFwcERhdGFcXExvY2FsXFxQcm9ncmFtc1xcUHl0aG9uXFxQeXRob24zMTFcXHB5dGhvbi5leGUiLA0KICAgICAgICAiLUIiLA0KICAgICAgICAiRDpcXFVORyBEVU5HIEFJXFxUT09MIEFJIDIwMjZcXENvbnRyb2xsZWQtVmliZS1GcmFtZXdvcmstQ1ZGXFxnb3Zlcm5hbmNlXFxjb21wYXRcXGNoZWNrX2FjdGl2ZV9zZXNzaW9uX3N0YXRlLnB5IiwNCiAgICAgICAgIi0tZW5mb3JjZSINCiAgICAgIF0sDQogICAgICAiY3dkIjogIkM6XFxVc2Vyc1xcREVMTFxcQXBwRGF0YVxcTG9jYWxcXFRlbXBcXHByb2JlX2N3ZF9ycDFscTAxaSIsDQogICAgICAiZXhpdCI6IDANCiAgICB9LA0KICAgIHsNCiAgICAgICJsYWJlbCI6ICJmaXh0dXJlIENMSSBjdXJyZW50IGNsaS1zeW5jIiwNCiAgICAgICJhcmd2IjogWw0KICAgICAgICAiQzpcXFVzZXJzXFxERUxMXFxBcHBEYXRhXFxMb2NhbFxcUHJvZ3JhbXNcXFB5dGhvblxcUHl0aG9uMzExXFxweXRob24uZXhlIiwNCiAgICAgICAgIi1CIiwNCiAgICAgICAgIkM6XFxVc2Vyc1xcREVMTFxcQXBwRGF0YVxcTG9jYWxcXFRlbXBcXGNsaV9jdXJyZW50X2QwZWNwbHFjXFxnb3Zlcm5hbmNlXFxjb21wYXRcXGNoZWNrX2FjdGl2ZV9zZXNzaW9uX3N0YXRlLnB5IiwNCiAgICAgICAgIi0tanNvbiINCiAgICAgIF0sDQogICAgICAiY3dkIjogIkM6XFxVc2Vyc1xcREVMTFxcQXBwRGF0YVxcTG9jYWxcXFRlbXBcXGNsaV9jd2RfdHlsczVuZHIiLA0KICAgICAgImV4aXQiOiAwDQogICAgfSwNCiAgICB7DQogICAgICAibGFiZWwiOiAiZml4dHVyZSBDTEkgY3VycmVudCBjbGktZnJvbnQtZ3VpZGFuY2UtZHJpZnQiLA0KICAgICAgImFyZ3YiOiBbDQogICAgICAgICJDOlxcVXNlcnNcXERFTExcXEFwcERhdGFcXExvY2FsXFxQcm9ncmFtc1xcUHl0aG9uXFxQeXRob24zMTFcXHB5dGhvbi5leGUiLA0KICAgICAgICAiLUIiLA0KICAgICAgICAiQzpcXFVzZXJzXFxERUxMXFxBcHBEYXRhXFxMb2NhbFxcVGVtcFxcY2xpX2N1cnJlbnRfcWF0Ml94NXBcXGdvdmVybmFuY2VcXGNvbXBhdFxcY2hlY2tfYWN0aXZlX3Nlc3Npb25fc3RhdGUucHkiLA0KICAgICAgICAiLS1qc29uIg0KICAgICAgXSwNCiAgICAgICJjd2QiOiAiQzpcXFVzZXJzXFxERUxMXFxBcHBEYXRhXFxMb2NhbFxcVGVtcFxcY2xpX2N3ZF9pejN0aHc2XyIsDQogICAgICAiZXhpdCI6IDANCiAgICB9LA0KICAgIHsNCiAgICAgICJsYWJlbCI6ICJmaXh0dXJlIENMSSBjdXJyZW50IGNsaS1oYW5kb2ZmLWd1aWRhbmNlLWRyaWZ0IiwNCiAgICAgICJhcmd2IjogWw0KICAgICAgICAiQzpcXFVzZXJzXFxERUxMXFxBcHBEYXRhXFxMb2NhbFxcUHJvZ3JhbXNcXFB5dGhvblxcUHl0aG9uMzExXFxweXRob24uZXhlIiwNCiAgICAgICAgIi1CIiwNCiAgICAgICAgIkM6XFxVc2Vyc1xcREVMTFxcQXBwRGF0YVxcTG9jYWxcXFRlbXBcXGNsaV9jdXJyZW50X3NjcTl2bjI5XFxnb3Zlcm5hbmNlXFxjb21wYXRcXGNoZWNrX2FjdGl2ZV9zZXNzaW9uX3N0YXRlLnB5IiwNCiAgICAgICAgIi0tanNvbiINCiAgICAgIF0sDQogICAgICAiY3dkIjogIkM6XFxVc2Vyc1xcREVMTFxcQXBwRGF0YVxcTG9jYWxcXFRlbXBcXGNsaV9jd2RfZ2ZhcXdhN2siLA0KICAgICAgImV4aXQiOiAwDQogICAgfSwNCiAgICB7DQogICAgICAibGFiZWwiOiAiZml4dHVyZSBDTEkgY3VycmVudCBjbGktZHVwbGljYXRlLWZyb250IiwNCiAgICAgICJhcmd2IjogWw0KICAgICAgICAiQzpcXFVzZXJzXFxERUxMXFxBcHBEYXRhXFxMb2NhbFxcUHJvZ3JhbXNcXFB5dGhvblxcUHl0aG9uMzExXFxweXRob24uZXhlIiwNCiAgICAgICAgIi1CIiwNCiAgICAgICAgIkM6XFxVc2Vyc1xcREVMTFxcQXBwRGF0YVxcTG9jYWxcXFRlbXBcXGNsaV9jdXJyZW50X29xaDFlenl4XFxnb3Zlcm5hbmNlXFxjb21wYXRcXGNoZWNrX2FjdGl2ZV9zZXNzaW9uX3N0YXRlLnB5IiwNCiAgICAgICAgIi0tanNvbiINCiAgICAgIF0sDQogICAgICAiY3dkIjogIkM6XFxVc2Vyc1xcREVMTFxcQXBwRGF0YVxcTG9jYWxcXFRlbXBcXGNsaV9jd2RfY2lmZ3E4ZGQiLA0KICAgICAgImV4aXQiOiAwDQogICAgfSwNCiAgICB7DQogICAgICAibGFiZWwiOiAiZml4dHVyZSBDTEkgY3VycmVudCBjbGktbWFsZm9ybWVkLXN0YXRlIiwNCiAgICAgICJhcmd2IjogWw0KICAgICAgICAiQzpcXFVzZXJzXFxERUxMXFxBcHBEYXRhXFxMb2NhbFxcUHJvZ3JhbXNcXFB5dGhvblxcUHl0aG9uMzExXFxweXRob24uZXhlIiwNCiAgICAgICAgIi1CIiwNCiAgICAgICAgIkM6XFxVc2Vyc1xcREVMTFxcQXBwRGF0YVxcTG9jYWxcXFRlbXBcXGNsaV9jdXJyZW50X3Z5Y205NmlnXFxnb3Zlcm5hbmNlXFxjb21wYXRcXGNoZWNrX2FjdGl2ZV9zZXNzaW9uX3N0YXRlLnB5IiwNCiAgICAgICAgIi0tanNvbiINCiAgICAgIF0sDQogICAgICAiY3dkIjogIkM6XFxVc2Vyc1xcREVMTFxcQXBwRGF0YVxcTG9jYWxcXFRlbXBcXGNsaV9jd2RfdDdjeWNpNTEiLA0KICAgICAgImV4aXQiOiAwDQogICAgfSwNCiAgICB7DQogICAgICAibGFiZWwiOiAiZml4dHVyZSBDTEkgY3VycmVudCBjbGktbGVnYWN5LWRpci10LWRyaWZ0IiwNCiAgICAgICJhcmd2IjogWw0KICAgICAgICAiQzpcXFVzZXJzXFxERUxMXFxBcHBEYXRhXFxMb2NhbFxcUHJvZ3JhbXNcXFB5dGhvblxcUHl0aG9uMzExXFxweXRob24uZXhlIiwNCiAgICAgICAgIi1CIiwNCiAgICAgICAgIkM6XFxVc2Vyc1xcREVMTFxcQXBwRGF0YVxcTG9jYWxcXFRlbXBcXGNsaV9jdXJyZW50X2x1czNkaHI5XFxnb3Zlcm5hbmNlXFxjb21wYXRcXGNoZWNrX2FjdGl2ZV9zZXNzaW9uX3N0YXRlLnB5IiwNCiAgICAgICAgIi0tanNvbiINCiAgICAgIF0sDQogICAgICAiY3dkIjogIkM6XFxVc2Vyc1xcREVMTFxcQXBwRGF0YVxcTG9jYWxcXFRlbXBcXGNsaV9jd2RfYTFsNXF3OHciLA0KICAgICAgImV4aXQiOiAwDQogICAgfSwNCiAgICB7DQogICAgICAibGFiZWwiOiAiZml4dHVyZSBDTEkgY3VycmVudCBjbGktbGVnYWN5LWRpci10LXN5bmMiLA0KICAgICAgImFyZ3YiOiBbDQogICAgICAgICJDOlxcVXNlcnNcXERFTExcXEFwcERhdGFcXExvY2FsXFxQcm9ncmFtc1xcUHl0aG9uXFxQeXRob24zMTFcXHB5dGhvbi5leGUiLA0KICAgICAgICAiLUIiLA0KICAgICAgICAiQzpcXFVzZXJzXFxERUxMXFxBcHBEYXRhXFxMb2NhbFxcVGVtcFxcY2xpX2N1cnJlbnRfbDM0aTB6ZGRcXGdvdmVybmFuY2VcXGNvbXBhdFxcY2hlY2tfYWN0aXZlX3Nlc3Npb25fc3RhdGUucHkiLA0KICAgICAgICAiLS1qc29uIg0KICAgICAgXSwNCiAgICAgICJjd2QiOiAiQzpcXFVzZXJzXFxERUxMXFxBcHBEYXRhXFxMb2NhbFxcVGVtcFxcY2xpX2N3ZF81dGNtZW4xZCIsDQogICAgICAiZXhpdCI6IDANCiAgICB9LA0KICAgIHsNCiAgICAgICJsYWJlbCI6ICJmaXh0dXJlIENMSSBvcmlnIGNsaS1zeW5jIiwNCiAgICAgICJhcmd2IjogWw0KICAgICAgICAiQzpcXFVzZXJzXFxERUxMXFxBcHBEYXRhXFxMb2NhbFxcUHJvZ3JhbXNcXFB5dGhvblxcUHl0aG9uMzExXFxweXRob24uZXhlIiwNCiAgICAgICAgIi1CIiwNCiAgICAgICAgIkM6XFxVc2Vyc1xcREVMTFxcQXBwRGF0YVxcTG9jYWxcXFRlbXBcXGNsaV9vcmlnXzZqNXN4YXI2XFxnb3Zlcm5hbmNlXFxjb21wYXRcXGNoZWNrX2FjdGl2ZV9zZXNzaW9uX3N0YXRlLnB5IiwNCiAgICAgICAgIi0tanNvbiINCiAgICAgIF0sDQogICAgICAiY3dkIjogIkM6XFxVc2Vyc1xcREVMTFxcQXBwRGF0YVxcTG9jYWxcXFRlbXBcXGNsaV9jd2Rfbjd6ZnRyeTEiLA0KICAgICAgImV4aXQiOiAwDQogICAgfSwNCiAgICB7DQogICAgICAibGFiZWwiOiAiZml4dHVyZSBDTEkgb3JpZyBjbGktZnJvbnQtZ3VpZGFuY2UtZHJpZnQiLA0KICAgICAgImFyZ3YiOiBbDQogICAgICAgICJDOlxcVXNlcnNcXERFTExcXEFwcERhdGFcXExvY2FsXFxQcm9ncmFtc1xcUHl0aG9uXFxQeXRob24zMTFcXHB5dGhvbi5leGUiLA0KICAgICAgICAiLUIiLA0KICAgICAgICAiQzpcXFVzZXJzXFxERUxMXFxBcHBEYXRhXFxMb2NhbFxcVGVtcFxcY2xpX29yaWdfMTYwZDJ6NjhcXGdvdmVybmFuY2VcXGNvbXBhdFxcY2hlY2tfYWN0aXZlX3Nlc3Npb25fc3RhdGUucHkiLA0KICAgICAgICAiLS1qc29uIg0KICAgICAgXSwNCiAgICAgICJjd2QiOiAiQzpcXFVzZXJzXFxERUxMXFxBcHBEYXRhXFxMb2NhbFxcVGVtcFxcY2xpX2N3ZF81Zzd6MGNiaCIsDQogICAgICAiZXhpdCI6IDANCiAgICB9LA0KICAgIHsNCiAgICAgICJsYWJlbCI6ICJmaXh0dXJlIENMSSBvcmlnIGNsaS1oYW5kb2ZmLWd1aWRhbmNlLWRyaWZ0IiwNCiAgICAgICJhcmd2IjogWw0KICAgICAgICAiQzpcXFVzZXJzXFxERUxMXFxBcHBEYXRhXFxMb2NhbFxcUHJvZ3JhbXNcXFB5dGhvblxcUHl0aG9uMzExXFxweXRob24uZXhlIiwNCiAgICAgICAgIi1CIiwNCiAgICAgICAgIkM6XFxVc2Vyc1xcREVMTFxcQXBwRGF0YVxcTG9jYWxcXFRlbXBcXGNsaV9vcmlnXzYwazB6bnMwXFxnb3Zlcm5hbmNlXFxjb21wYXRcXGNoZWNrX2FjdGl2ZV9zZXNzaW9uX3N0YXRlLnB5IiwNCiAgICAgICAgIi0tanNvbiINCiAgICAgIF0sDQogICAgICAiY3dkIjogIkM6XFxVc2Vyc1xcREVMTFxcQXBwRGF0YVxcTG9jYWxcXFRlbXBcXGNsaV9jd2RfcXk2ZWlzaGMiLA0KICAgICAgImV4aXQiOiAwDQogICAgfSwNCiAgICB7DQogICAgICAibGFiZWwiOiAiZml4dHVyZSBDTEkgb3JpZyBjbGktZHVwbGljYXRlLWZyb250IiwNCiAgICAgICJhcmd2IjogWw0KICAgICAgICAiQzpcXFVzZXJzXFxERUxMXFxBcHBEYXRhXFxMb2NhbFxcUHJvZ3JhbXNcXFB5dGhvblxcUHl0aG9uMzExXFxweXRob24uZXhlIiwNCiAgICAgICAgIi1CIiwNCiAgICAgICAgIkM6XFxVc2Vyc1xcREVMTFxcQXBwRGF0YVxcTG9jYWxcXFRlbXBcXGNsaV9vcmlnX3ppaTV6eDd6XFxnb3Zlcm5hbmNlXFxjb21wYXRcXGNoZWNrX2FjdGl2ZV9zZXNzaW9uX3N0YXRlLnB5IiwNCiAgICAgICAgIi0tanNvbiINCiAgICAgIF0sDQogICAgICAiY3dkIjogIkM6XFxVc2Vyc1xcREVMTFxcQXBwRGF0YVxcTG9jYWxcXFRlbXBcXGNsaV9jd2RfejdjZ3kxcWIiLA0KICAgICAgImV4aXQiOiAwDQogICAgfSwNCiAgICB7DQogICAgICAibGFiZWwiOiAiZml4dHVyZSBDTEkgb3JpZyBjbGktbWFsZm9ybWVkLXN0YXRlIiwNCiAgICAgICJhcmd2IjogWw0KICAgICAgICAiQzpcXFVzZXJzXFxERUxMXFxBcHBEYXRhXFxMb2NhbFxcUHJvZ3JhbXNcXFB5dGhvblxcUHl0aG9uMzExXFxweXRob24uZXhlIiwNCiAgICAgICAgIi1CIiwNCiAgICAgICAgIkM6XFxVc2Vyc1xcREVMTFxcQXBwRGF0YVxcTG9jYWxcXFRlbXBcXGNsaV9vcmlnX3Y5ZDZzcnNyXFxnb3Zlcm5hbmNlXFxjb21wYXRcXGNoZWNrX2FjdGl2ZV9zZXNzaW9uX3N0YXRlLnB5IiwNCiAgICAgICAgIi0tanNvbiINCiAgICAgIF0sDQogICAgICAiY3dkIjogIkM6XFxVc2Vyc1xcREVMTFxcQXBwRGF0YVxcTG9jYWxcXFRlbXBcXGNsaV9jd2RfMnB1ZnQ1cngiLA0KICAgICAgImV4aXQiOiAwDQogICAgfSwNCiAgICB7DQogICAgICAibGFiZWwiOiAiZml4dHVyZSBDTEkgb3JpZyBjbGktbGVnYWN5LWRpci10LWRyaWZ0IiwNCiAgICAgICJhcmd2IjogWw0KICAgICAgICAiQzpcXFVzZXJzXFxERUxMXFxBcHBEYXRhXFxMb2NhbFxcUHJvZ3JhbXNcXFB5dGhvblxcUHl0aG9uMzExXFxweXRob24uZXhlIiwNCiAgICAgICAgIi1CIiwNCiAgICAgICAgIkM6XFxVc2Vyc1xcREVMTFxcQXBwRGF0YVxcTG9jYWxcXFRlbXBcXGNsaV9vcmlnX292MmhiOXRfXFxnb3Zlcm5hbmNlXFxjb21wYXRcXGNoZWNrX2FjdGl2ZV9zZXNzaW9uX3N0YXRlLnB5IiwNCiAgICAgICAgIi0tanNvbiINCiAgICAgIF0sDQogICAgICAiY3dkIjogIkM6XFxVc2Vyc1xcREVMTFxcQXBwRGF0YVxcTG9jYWxcXFRlbXBcXGNsaV9jd2Rfd3R0bWh5bWgiLA0KICAgICAgImV4aXQiOiAwDQogICAgfSwNCiAgICB7DQogICAgICAibGFiZWwiOiAiZml4dHVyZSBDTEkgb3JpZyBjbGktbGVnYWN5LWRpci10LXN5bmMiLA0KICAgICAgImFyZ3YiOiBbDQogICAgICAgICJDOlxcVXNlcnNcXERFTExcXEFwcERhdGFcXExvY2FsXFxQcm9ncmFtc1xcUHl0aG9uXFxQeXRob24zMTFcXHB5dGhvbi5leGUiLA0KICAgICAgICAiLUIiLA0KICAgICAgICAiQzpcXFVzZXJzXFxERUxMXFxBcHBEYXRhXFxMb2NhbFxcVGVtcFxcY2xpX29yaWdfazN6bDJiMzNcXGdvdmVybmFuY2VcXGNvbXBhdFxcY2hlY2tfYWN0aXZlX3Nlc3Npb25fc3RhdGUucHkiLA0KICAgICAgICAiLS1qc29uIg0KICAgICAgXSwNCiAgICAgICJjd2QiOiAiQzpcXFVzZXJzXFxERUxMXFxBcHBEYXRhXFxMb2NhbFxcVGVtcFxcY2xpX2N3ZF83YTk3MzhkNiIsDQogICAgICAiZXhpdCI6IDANCiAgICB9LA0KICAgIHsNCiAgICAgICJsYWJlbCI6ICJIRUFEIGxlZ2FjeSBzdWl0ZSB2cyBjdXJyZW50IGNvZGUiLA0KICAgICAgImFyZ3YiOiBbDQogICAgICAgICJDOlxcVXNlcnNcXERFTExcXEFwcERhdGFcXExvY2FsXFxQcm9ncmFtc1xcUHl0aG9uXFxQeXRob24zMTFcXHB5dGhvbi5leGUiLA0KICAgICAgICAiLW0iLA0KICAgICAgICAicHl0ZXN0IiwNCiAgICAgICAgIi1xIiwNCiAgICAgICAgIi1wIiwNCiAgICAgICAgIm5vOmNhY2hlcHJvdmlkZXIiLA0KICAgICAgICAiLXEiLA0KICAgICAgICAiQzpcXFVzZXJzXFxERUxMXFxBcHBEYXRhXFxMb2NhbFxcVGVtcFxcbGVnYWN5X2N1cnJlbnRfNnNoOXFqOHFcXGdvdmVybmFuY2VcXGNvbXBhdFxcdGVzdF9jaGVja19hY3RpdmVfc2Vzc2lvbl9zdGF0ZS5weSINCiAgICAgIF0sDQogICAgICAiY3dkIjogIkM6XFxVc2Vyc1xcREVMTFxcQXBwRGF0YVxcTG9jYWxcXFRlbXBcXGxlZ2FjeV9jdXJyZW50XzZzaDlxajhxIiwNCiAgICAgICJleGl0IjogMA0KICAgIH0sDQogICAgew0KICAgICAgImxhYmVsIjogIkhFQUQgbGVnYWN5IHN1aXRlIHZzIGhlYWQgY29kZSIsDQogICAgICAiYXJndiI6IFsNCiAgICAgICAgIkM6XFxVc2Vyc1xcREVMTFxcQXBwRGF0YVxcTG9jYWxcXFByb2dyYW1zXFxQeXRob25cXFB5dGhvbjMxMVxccHl0aG9uLmV4ZSIsDQogICAgICAgICItbSIsDQogICAgICAgICJweXRlc3QiLA0KICAgICAgICAiLXEiLA0KICAgICAgICAiLXAiLA0KICAgICAgICAibm86Y2FjaGVwcm92aWRlciIsDQogICAgICAgICItcSIsDQogICAgICAgICJDOlxcVXNlcnNcXERFTExcXEFwcERhdGFcXExvY2FsXFxUZW1wXFxsZWdhY3lfaGVhZF85eW5zamU1elxcZ292ZXJuYW5jZVxcY29tcGF0XFx0ZXN0X2NoZWNrX2FjdGl2ZV9zZXNzaW9uX3N0YXRlLnB5Ig0KICAgICAgXSwNCiAgICAgICJjd2QiOiAiQzpcXFVzZXJzXFxERUxMXFxBcHBEYXRhXFxMb2NhbFxcVGVtcFxcbGVnYWN5X2hlYWRfOXluc2plNXoiLA0KICAgICAgImV4aXQiOiAwDQogICAgfQ0KICBdLA0KICAiY2xhaW1Cb3VuZGFyeSI6ICJUZXh0dWFsLWNvbnNpc3RlbmN5IHByb2JlIG9mIHRoZSBkZWNsYXJlZCBjaGVja2VyIGVudHJ5cG9pbnRzIHdpdGggZGlzcG9zYWJsZSBmaXh0dXJlczsgbm8gcHJvdmlkZXIvQVBJIGNhbGwsIG5vIHJlcG9zaXRvcnkgbXV0YXRpb24sIG5vIHNlbWFudGljLWF1dGhvcml0eSBvciBhZ2VudC1jb21wcmVoZW5zaW9uIGNsYWltOyBkb2VzIG5vdCBjbG9zZSB0aGUgdHJhbmNoZS4iDQp9",
+  "probeOracleSourceUtf8": "#!/usr/bin/env python3\r\n\"\"\"Independent Local reviewer probe: NCR next-move alignment (2026-10-07).\r\n\r\nActor: LOCAL_CLAUDE_OPERATOR_RELAY (reviewer), not the implementation worker.\r\nOracle source: docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_NEXT_MOVE_ALIGNMENT_2026-10-07.md\r\n(Implementation Contract + Required Proof Cases NCR-01..NCR-07 +\r\nIndependent Review Probe Admission Contract). Worker tests are NOT imported.\r\n\r\nReference model, explicit cases, fuzz expectations and the legacy differential\r\nare written here from the contract. The ORIGINAL (HEAD) checker is extracted\r\nfrom git and used only as a differential baseline for legacy behavior.\r\n\r\nRead-only against the repository. Writes only inside this probe directory and\r\nOS temp directories.\r\n\"\"\"\r\nfrom __future__ import annotations\r\n\r\nimport ast\r\nimport datetime as dt\r\nimport hashlib\r\nimport importlib.util\r\nimport json\r\nimport platform\r\nimport random\r\nimport re\r\nimport shutil\r\nimport subprocess\r\nimport sys\r\nimport tempfile\r\nimport uuid\r\nfrom pathlib import Path\r\nfrom unittest import mock\r\n\r\nsys.dont_write_bytecode = True\r\n\r\nPROBE_DIR = Path(__file__).resolve().parent\r\nREPO = PROBE_DIR.parents[2]\r\nCOMPAT = REPO / \"governance\" / \"compat\"\r\nsys.path.insert(0, str(COMPAT))\r\n\r\nCHECKER_REL = \"governance/compat/check_active_session_state.py\"\r\nHELPER_REL = \"governance/compat/active_session_next_move_alignment.py\"\r\nTEST_REL = \"governance/compat/test_check_active_session_state.py\"\r\nNEWTEST_REL = \"governance/compat/test_active_session_next_move_alignment.py\"\r\nEVID_REL = \"docs/reviews/evidence/cvf-ncr-next-move-alignment-worker-2026-10-07.json\"\r\nRET_REL = \"docs/reviews/CVF_NCR_NEXT_MOVE_ALIGNMENT_WORKER_RETURN_2026-10-07.md\"\r\nSIX = [CHECKER_REL, TEST_REL, HELPER_REL, NEWTEST_REL, EVID_REL, RET_REL]\r\nHANDOFF = \"AGENT_HANDOFF_V8_2026-05-17.md\"\r\n\r\nRESULTS: list[dict] = []\r\nORIG_CAUGHT: list[str] = []\r\nOBSERVATIONS: list[dict] = []\r\nCOMMANDS: list[dict] = []\r\n\r\n\r\ndef sha256_bytes(b: bytes) -> str:\r\n    return hashlib.sha256(b).hexdigest()\r\n\r\n\r\ndef sha256_file(p: Path) -> str:\r\n    return sha256_bytes(p.read_bytes())\r\n\r\n\r\ndef git(*args: str, text: bool = True):\r\n    return subprocess.run([\"git\", *args], cwd=REPO, capture_output=True, text=text)\r\n\r\n\r\ndef git_blob(rev_path: str) -> bytes:\r\n    r = subprocess.run([\"git\", \"show\", rev_path], cwd=REPO, capture_output=True)\r\n    if r.returncode != 0:\r\n        raise RuntimeError(r.stderr.decode(\"utf-8\", \"replace\"))\r\n    return r.stdout\r\n\r\n\r\ndef assert_(case_id: str, group: str, cond: bool, detail: str = \"\") -> bool:\r\n    RESULTS.append({\"id\": case_id, \"group\": group, \"pass\": bool(cond), \"detail\": detail})\r\n    return bool(cond)\r\n\r\n\r\ndef run_cmd(label: str, argv: list[str], cwd: Path, timeout: int = 600, env_extra: dict | None = None):\r\n    import os\r\n    env = dict(os.environ)\r\n    env[\"PYTHONDONTWRITEBYTECODE\"] = \"1\"\r\n    if env_extra:\r\n        env.update(env_extra)\r\n    p = subprocess.run(argv, cwd=cwd, capture_output=True, text=True, timeout=timeout, env=env,\r\n                       encoding=\"utf-8\", errors=\"replace\")\r\n    COMMANDS.append({\"label\": label, \"argv\": argv, \"cwd\": str(cwd), \"exit\": p.returncode})\r\n    return p\r\n\r\n\r\ndef load_module(name: str, path: Path):\r\n    spec = importlib.util.spec_from_file_location(name, path)\r\n    mod = importlib.util.module_from_spec(spec)\r\n    sys.modules[name] = mod\r\n    spec.loader.exec_module(mod)\r\n    return mod\r\n\r\n\r\n# ---------------------------------------------------------------------------\r\n# Modules under test: current working tree vs ORIGINAL (HEAD) differential base\r\n# ---------------------------------------------------------------------------\r\nHEAD_SHA = git(\"rev-parse\", \"HEAD\").stdout.strip()\r\nORIG_DIR = PROBE_DIR / \"orig_head_copy\"\r\nORIG_DIR.mkdir(exist_ok=True)\r\nORIG_PATH = ORIG_DIR / \"check_active_session_state_head.py\"\r\nORIG_PATH.write_bytes(git_blob(f\"HEAD:{CHECKER_REL}\"))\r\nCUR = load_module(\"probe_cur_checker\", COMPAT / \"check_active_session_state.py\")\r\nORIG = load_module(\"probe_orig_checker\", ORIG_PATH)\r\n\r\n\r\n# ---------------------------------------------------------------------------\r\n# Contract-derived reference model (independent of worker implementation)\r\n# ---------------------------------------------------------------------------\r\nNAMES = [\"PROGRAM_ID\", \"NEXT_ACTION_CLASS\", \"BATCH_ID\"]\r\nVALUE = re.compile(r\"[A-Z][A-Z0-9_\\-]*\")\r\n\r\n\r\ndef ref_unwrap(s: str) -> str:\r\n    s = s.strip()\r\n    m = re.match(r\"(?i)next allowed move:\", s)\r\n    if m:\r\n        s = s[m.end():].strip()\r\n    if len(s) >= 2 and s[0] == \"`\" and s[-1] == \"`\":\r\n        s = s[1:-1].strip()\r\n    return s\r\n\r\n\r\ndef ref_parse(line: str):\r\n    \"\"\"Header up to the first '.'; three ';'-separated assignments in order.\"\"\"\r\n    t = ref_unwrap(line)\r\n    if \"\\n\" in t or \"\\r\" in t or \".\" not in t:\r\n        return None\r\n    head, _, guid = t.partition(\".\")\r\n    parts = head.split(\";\")\r\n    if len(parts) != 3:\r\n        return None\r\n    vals = []\r\n    for want, part in zip(NAMES, parts):\r\n        key, eq, val = part.partition(\"=\")\r\n        if not eq or key.strip() != want:\r\n            return None\r\n        val = val.strip()\r\n        if not VALUE.fullmatch(val):\r\n            return None\r\n        vals.append(val)\r\n    if vals[0] != \"CVF-NCR\":\r\n        return None\r\n    return (vals[0], vals[1], vals[2], \" \".join(guid.split()))\r\n\r\n\r\n# ---------------------------------------------------------------------------\r\n# Fixture builders (disposable)\r\n# ---------------------------------------------------------------------------\r\nFRONT_MARKERS = (\r\n    \"ACTIVE SESSION FRONT DOOR\\nCVF_SESSION/ACTIVE_SESSION_STATE.json\\n\"\r\n    \"CVF_SESSION/ACTIVE_REVIEW_QUEUE.json\\n\"\r\n    \"docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md\\n\"\r\n    \"system_reconvergence_stop\\ngovernance_kernel_freeze_recommended\\n\"\r\n    f\"{HANDOFF}\\n\"\r\n)\r\nHEADING = \"## Next Allowed Move\\n\"\r\n\r\n\r\ndef block(sec: str | None) -> str:\r\n    return \"\" if sec is None else HEADING + sec\r\n\r\n\r\ndef write_raw(path: Path, text: str) -> None:\r\n    path.parent.mkdir(parents=True, exist_ok=True)\r\n    with open(path, \"w\", encoding=\"utf-8\", newline=\"\") as fh:\r\n        fh.write(text)\r\n\r\n\r\ndef build_repo(root: Path, state_next, front_sec, hand_sec, front_pre: str = \"\", hand_pre: str = \"\",\r\n               front_post: str = \"\", with_state_key: bool = True) -> None:\r\n    for rel in (\"CVF_SESSION/READ_FIRST.md\", \"CVF_SESSION/REQUIRED_STARTUP_GUARDS.md\", \"AGENTS.md\", \"CLAUDE.md\"):\r\n        write_raw(root / rel, \"CVF_SESSION_MEMORY.md\\nCVF_SESSION/ACTIVE_SESSION_STATE.json\\n\")\r\n    write_raw(root / \"governance/compat/run_local_governance_hook_chain.py\",\r\n              \"governance/compat/check_active_session_state.py\\n\")\r\n    write_raw(root / \"CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md\", \"Status: ARCHIVED\\n\")\r\n    write_raw(root / \"reviews/current.md\", \"Memory class: POINTER_RECORD\\n\")\r\n    write_raw(root / \"guards/current.md\", \"Memory class: POINTER_RECORD\\n\")\r\n    write_raw(root / \"docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md\",\r\n              \"Status: ACTIVE_DIRECTION_RECORD\\n\")\r\n    write_raw(root / \"reviews/closed.md\", \"Status: REBUTTAL_FILED\\n\")\r\n    write_raw(root / \"reviews/closed-rebuttal.md\", \"Status: REBUTTAL_FILED\\n\")\r\n    write_raw(root / \"docs/reference/CVF_ACTIVE_CONTINUITY_READ_BUDGET_STANDARD_2026-08-10.md\",\r\n              \"# CVF Active Continuity Read-Budget Standard\\n\")\r\n    write_raw(root / \"governance/compat/CVF_ACTIVE_CONTINUITY_READ_BUDGET_MIGRATION.json\",\r\n              json.dumps({\"schemaVersion\": \"1.0\", \"status\": \"ACTIVE_MIGRATION_DEBT\", \"expiresOn\": \"2099-01-01\",\r\n                          \"removalAction\": \"REMOVE_ROW_IN_T2_AFTER_SURFACE_COMPACTION\", \"entries\": []}))\r\n    bl, wo = \"docs/baselines/FIXTURE_BASELINE.md\", \"docs/work_orders/FIXTURE_WORK_ORDER.md\"\r\n    write_raw(root / bl, \"fixture baseline\\n\")\r\n    write_raw(root / wo, \"fixture work order\\n\")\r\n    state = {\r\n        \"activeSessionFrontDoor\": \"CVF_SESSION_MEMORY.md\",\r\n        \"activeStateRegistry\": \"CVF_SESSION/ACTIVE_SESSION_STATE.json\",\r\n        \"activeReviewQueue\": \"CVF_SESSION/ACTIVE_REVIEW_QUEUE.json\",\r\n        \"painPointClosureDirection\": \"docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md\",\r\n        \"activeHandoff\": HANDOFF,\r\n        \"historicalHandoffArchive\": \"CVF_SESSION/handoffs/archive\",\r\n        \"supersededHandoffs\": [\"CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md\"],\r\n        \"relatedHandoffs\": [],\r\n        \"currentMode\": \"system_reconvergence_stop\",\r\n        \"freezePosture\": \"governance_kernel_freeze_recommended\",\r\n        \"requiredFirstReads\": [\"reviews/current.md\"],\r\n        \"requiredStartupGuards\": [\"guards/current.md\"],\r\n        \"blockedWorkClasses\": [\"broad_external_knowledge_absorption\",\r\n                               \"public_claims_of_coherent_governed_capability_runtime\"],\r\n        \"currentAuthority\": {\r\n            \"baselinePath\": bl, \"baselineSha256\": sha256_file(root / bl),\r\n            \"workOrderPath\": wo, \"workOrderSha256\": sha256_file(root / wo),\r\n        },\r\n    }\r\n    if with_state_key:\r\n        state[\"nextAllowedMove\"] = state_next\r\n    write_raw(root / \"CVF_SESSION/ACTIVE_SESSION_STATE.json\", json.dumps(state))\r\n    write_raw(root / \"CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json\",\r\n              json.dumps({\"bootstrapReadModelVersion\": \"0.1.0\",\r\n                          \"activeStateRegistry\": \"CVF_SESSION/ACTIVE_SESSION_STATE.json\",\r\n                          \"activeHandoff\": HANDOFF}))\r\n    write_raw(root / \"CVF_SESSION/ACTIVE_REVIEW_QUEUE.json\", json.dumps({\r\n        \"schemaVersion\": \"0.1.0\", \"status\": \"ACTIVE_REVIEW_QUEUE\",\r\n        \"items\": [\r\n            {\"id\": \"current-roadmap\", \"artifactType\": \"roadmap\", \"path\": \"reviews/current.md\",\r\n             \"status\": \"READY_FOR_REBUTTAL\", \"expectedResponsePath\": \"reviews/current-rebuttal.md\", \"priority\": 1},\r\n            {\"id\": \"closed-roadmap\", \"artifactType\": \"roadmap\", \"path\": \"reviews/closed.md\",\r\n             \"status\": \"REBUTTAL_FILED_BLOCKING\", \"responsePath\": \"reviews/closed-rebuttal.md\", \"priority\": 2}]}))\r\n    write_raw(root / \"CVF_SESSION_MEMORY.md\", FRONT_MARKERS + front_pre + block(front_sec) + front_post)\r\n    write_raw(root / HANDOFF, \"Status: ACTIVE - current\\n\" + hand_pre + block(hand_sec))\r\n\r\n\r\ndef front_text(front_sec, front_pre=\"\", front_post=\"\"):\r\n    return FRONT_MARKERS + front_pre + block(front_sec) + front_post\r\n\r\n\r\ndef run_A(mod, state_next, front_sec, hand_sec, front_pre=\"\", hand_pre=\"\", front_post=\"\", with_state_key=True):\r\n    \"\"\"Real wrapper `_check_next_allowed_move_alignment` with disposable repo root.\"\"\"\r\n    with tempfile.TemporaryDirectory() as td:\r\n        root = Path(td)\r\n        write_raw(root / HANDOFF, \"Status: ACTIVE - current\\n\" + hand_pre + block(hand_sec))\r\n        state = {\"nextAllowedMove\": state_next} if with_state_key else {\"other\": 1}\r\n        with mock.patch.object(mod, \"REPO_ROOT\", root):\r\n            return mod._check_next_allowed_move_alignment(\r\n                state, front_text(front_sec, front_pre, front_post), HANDOFF)\r\n\r\n\r\ndef run_B(mod, state_next, front_sec, hand_sec, front_pre=\"\", hand_pre=\"\", front_post=\"\", with_state_key=True):\r\n    \"\"\"Real full classifier `_classify` over a disposable repository tree.\"\"\"\r\n    with tempfile.TemporaryDirectory() as td:\r\n        root = Path(td)\r\n        build_repo(root, state_next, front_sec, hand_sec, front_pre, hand_pre, front_post, with_state_key)\r\n        with mock.patch.object(mod, \"REPO_ROOT\", root):\r\n            return mod._classify()[\"continuityViolations\"]\r\n\r\n\r\n# ---------------------------------------------------------------------------\r\n# Explicit contract cases\r\n# ---------------------------------------------------------------------------\r\nG = \"Stop before deployment; no push. DIR-T2, EC-1, DEP3 and Policy_Local are narrative only.\"\r\n\r\n\r\ndef D(prog=\"CVF-NCR\", cls=\"LOCAL_DISPOSITION_ONLY\", batch=\"CVF-NCR-PROBE-ONE\", g=G, period=\". \"):\r\n    return (f\"PROGRAM_ID={prog}; NEXT_ACTION_CLASS={cls}; BATCH_ID={batch}{period}{g}\")\r\n\r\n\r\ndef S(*lines: str) -> str:\r\n    return \"\\n\".join(lines) + \"\\n\"\r\n\r\n\r\nSYNC = dict(state=D(), front=S(D()), hand=S(D()))\r\n\r\n\r\ndef C(cid, req, state, front, hand, expect, contains=None, **kw):\r\n    return dict(id=cid, req=req, state=state, front=front, hand=hand, expect=expect, contains=contains, **kw)\r\n\r\n\r\nCASES: list[dict] = []\r\nA = CASES.append\r\n\r\n# NCR-01 -------------------------------------------------------------------\r\nA(C(\"01-sync-bare\", \"NCR-01\", D(), S(D()), S(D()), \"PASS\"))\r\nA(C(\"01-state-prefix\", \"NCR-01\", \"Next allowed move: \" + D(), S(D()), S(D()), \"PASS\"))\r\nA(C(\"01-surface-prefix\", \"NCR-01\", D(), S(\"Next allowed move: \" + D()), S(\"Next allowed move: \" + D()), \"PASS\"))\r\nA(C(\"01-backticks\", \"NCR-01\", \"`\" + D() + \"`\", S(\"`\" + D() + \"`\"), S(D()), \"PASS\"))\r\nA(C(\"01-prefix-then-backticks\", \"NCR-01\", D(), S(\"Next allowed move: `\" + D() + \"`\"), S(\"Next allowed move: \" + D()), \"PASS\"))\r\nA(C(\"01-outer-whitespace\", \"NCR-01\", \"  \" + D() + \"  \", S(\"   \" + D() + \"   \"), S(\"\\t\" + D()), \"PASS\"))\r\nA(C(\"01-assignment-spacing\", \"NCR-01\", D(),\r\n    S(\"PROGRAM_ID = CVF-NCR ;  NEXT_ACTION_CLASS =LOCAL_DISPOSITION_ONLY ;BATCH_ID= CVF-NCR-PROBE-ONE . \" + G),\r\n    S(\"PROGRAM_ID=CVF-NCR;NEXT_ACTION_CLASS=LOCAL_DISPOSITION_ONLY;BATCH_ID=CVF-NCR-PROBE-ONE.\" + G), \"PASS\"))\r\nA(C(\"01-guidance-whitespace-runs\", \"NCR-01\", D(), S(D(g=G.replace(\" \", \"   \"))), S(D(g=G.replace(\" \", \"\\t \"))), \"PASS\"))\r\nA(C(\"01-mode-line-before-and-history-after\", \"NCR-01\", D(),\r\n    S(\"Mode: current\", D(), \"Historical: DIR-T1 was closed; EC-9 parked.\"), S(\"Status line\", D(), \"history DEP1\"), \"PASS\"))\r\nA(C(\"01-crlf-surfaces\", \"NCR-01\", D(), \"\\r\\n\".join([D(), \"\"]), \"\\r\\n\".join([D(), \"\"]), \"PASS\"))\r\nA(C(\"01-incidental-program-id-after-section\", \"NCR-01\", D(),\r\n    S(D()) + \"## Historical\\nPROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=OLD; BATCH_ID=OLD-ONE. old\\n\",\r\n    S(D()) + \"## Archive\\nPROGRAM_ID=CVF-OTHER; NEXT_ACTION_CLASS=OLD; BATCH_ID=OLD-TWO. old\\n\", \"PASS\"))\r\nA(C(\"01-incidental-program-id-before-section\", \"NCR-01\", D(), S(D()), S(D()), \"PASS\",\r\n    front_pre=\"Earlier prose PROGRAM_ID=CVF-OTHER; NEXT_ACTION_CLASS=OLD; BATCH_ID=OLD-ONE. history\\n\"\r\n              \"PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=OLD; BATCH_ID=OLD-ONE. old line\\n## Pointers\\n\",\r\n    hand_pre=\"PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=OLD; BATCH_ID=OLD-TWO. older\\n## Notes\\n\"))\r\n\r\n# NCR-02 -------------------------------------------------------------------\r\nA(C(\"02-front-guidance-drift-same-ids\", \"NCR-02\", D(), S(D(g=G.replace(\"Stop before deployment\", \"Deploy now\"))), S(D()), \"FAIL\", \"CVF_SESSION_MEMORY.md\"))\r\nA(C(\"02-handoff-guidance-drift-same-ids\", \"NCR-02\", D(), S(D()), S(D(g=G.replace(\"Stop before deployment\", \"Deploy now\"))), \"FAIL\", \"active handoff\"))\r\nA(C(\"02-both-drift\", \"NCR-02\", D(), S(D(g=\"Go.\")), S(D(g=\"Go again.\")), \"FAIL\"))\r\nA(C(\"02-case-drift\", \"NCR-02\", D(), S(D(g=G.replace(\"Stop\", \"stop\"))), S(D()), \"FAIL\"))\r\nA(C(\"02-punctuation-drift\", \"NCR-02\", D(), S(D()), S(D(g=G.rstrip(\".\"))), \"FAIL\"))\r\nA(C(\"02-token-only-drift\", \"NCR-02\", D(), S(D(g=G.replace(\"DIR-T2\", \"DIR-T1\"))), S(D()), \"FAIL\"))\r\nA(C(\"02-appended-guidance\", \"NCR-02\", D(), S(D(g=G + \" Also push.\")), S(D()), \"FAIL\"))\r\nA(C(\"02-removed-guidance\", \"NCR-02\", D(), S(D(g=\"\")), S(D()), \"FAIL\"))\r\nA(C(\"02-class-drift\", \"NCR-02\", D(), S(D(cls=\"EXECUTE_BOUNDED_LOCAL\")), S(D()), \"FAIL\"))\r\nA(C(\"02-batch-drift\", \"NCR-02\", D(), S(D()), S(D(batch=\"CVF-NCR-PROBE-TWO\")), \"FAIL\"))\r\nA(C(\"02-state-guidance-newer-than-surfaces\", \"NCR-02\", D(g=G + \" Extra.\"), S(D()), S(D()), \"FAIL\"))\r\n\r\n# NCR-03 -------------------------------------------------------------------\r\nA(C(\"03-front-section-without-decl\", \"NCR-03\", D(), S(\"Nothing declared here.\"), S(D()), \"FAIL\", \"CVF_SESSION_MEMORY.md\"))\r\nA(C(\"03-front-no-section\", \"NCR-03\", D(), None, S(D()), \"FAIL\", \"CVF_SESSION_MEMORY.md\"))\r\nA(C(\"03-handoff-no-section\", \"NCR-03\", D(), S(D()), None, \"FAIL\", \"active handoff\"))\r\nA(C(\"03-handoff-empty-section\", \"NCR-03\", D(), S(D()), \"\", \"FAIL\", \"active handoff\"))\r\nA(C(\"03-front-duplicate-different\", \"NCR-03\", D(), S(D(), D(batch=\"CVF-NCR-PROBE-TWO\")), S(D()), \"FAIL\"))\r\nA(C(\"03-front-duplicate-identical\", \"NCR-03\", D(), S(D(), D()), S(D()), \"FAIL\"))\r\nA(C(\"03-handoff-duplicate-identical\", \"NCR-03\", D(), S(D()), S(D(), D()), \"FAIL\"))\r\nA(C(\"03-front-empty-batch\", \"NCR-03\", D(), S(D(batch=\"\")), S(D()), \"FAIL\"))\r\nA(C(\"03-front-wrong-program\", \"NCR-03\", D(), S(D(prog=\"CVF-OTHER\")), S(D()), \"FAIL\"))\r\nA(C(\"03-handoff-wrong-program\", \"NCR-03\", D(), S(D()), S(D(prog=\"CVF-OTHER\")), \"FAIL\"))\r\nA(C(\"03-front-missing-class\", \"NCR-03\", D(), S(\"PROGRAM_ID=CVF-NCR; BATCH_ID=CVF-NCR-PROBE-ONE. \" + G), S(D()), \"FAIL\"))\r\nA(C(\"03-front-extra-assignment\", \"NCR-03\", D(), S(\"PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=LOCAL_DISPOSITION_ONLY; EXTRA=NO; BATCH_ID=CVF-NCR-PROBE-ONE. \" + G), S(D()), \"FAIL\"))\r\nA(C(\"03-front-extra-assignment-after-batch\", \"NCR-03\", D(), S(\"PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=LOCAL_DISPOSITION_ONLY; BATCH_ID=CVF-NCR-PROBE-ONE; EXTRA=NO. \" + G), S(D()), \"FAIL\"))\r\nA(C(\"03-front-duplicate-assignment\", \"NCR-03\", D(), S(\"PROGRAM_ID=CVF-NCR; PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=LOCAL_DISPOSITION_ONLY; BATCH_ID=CVF-NCR-PROBE-ONE. \" + G), S(D()), \"FAIL\"))\r\nA(C(\"03-front-lowercase-value\", \"NCR-03\", D(), S(D(batch=\"cvf-ncr-probe-one\")), S(D()), \"FAIL\"))\r\nA(C(\"03-front-digit-first-value\", \"NCR-03\", D(), S(D(cls=\"1LOCAL\")), S(D()), \"FAIL\"))\r\nA(C(\"03-front-reordered\", \"NCR-03\", D(), S(\"PROGRAM_ID=CVF-NCR; BATCH_ID=CVF-NCR-PROBE-ONE; NEXT_ACTION_CLASS=LOCAL_DISPOSITION_ONLY. \" + G), S(D()), \"FAIL\"))\r\nA(C(\"03-front-no-header-period\", \"NCR-03\", D(), S(\"PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=LOCAL_DISPOSITION_ONLY; BATCH_ID=CVF-NCR-PROBE-ONE \" + G), S(D()), \"FAIL\"))\r\nA(C(\"03-front-decl-under-other-heading\", \"NCR-03\", D(), S(\"Prose only.\"), S(D()), \"FAIL\", front_post=\"## Elsewhere\\n\" + D() + \"\\n\"))\r\nA(C(\"03-front-historical-only-prefix\", \"NCR-03\", D(), S(\"Historical: \" + D()), S(D()), \"FAIL\"))\r\nA(C(\"03-state-missing-class-malformed\", \"NCR-03\", \"PROGRAM_ID=CVF-NCR; BATCH_ID=CVF-NCR-PROBE-ONE. \" + G,\r\n    S(\"PROGRAM_ID=CVF-NCR; BATCH_ID=CVF-NCR-PROBE-ONE. \" + G), S(\"PROGRAM_ID=CVF-NCR; BATCH_ID=CVF-NCR-PROBE-ONE. \" + G), \"FAIL\"))\r\nA(C(\"03-state-empty-batch-malformed\", \"NCR-03\", D(batch=\"\"), S(D(batch=\"\")), S(D(batch=\"\")), \"FAIL\"))\r\nA(C(\"03-state-extra-assignment-malformed\", \"NCR-03\", \"PROGRAM_ID=CVF-NCR; EXTRA=NO; NEXT_ACTION_CLASS=LOCAL_DISPOSITION_ONLY; BATCH_ID=CVF-NCR-PROBE-ONE. \" + G,\r\n    S(D()), S(D()), \"FAIL\"))\r\nA(C(\"03-state-duplicate-class-malformed\", \"NCR-03\", \"PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=A; NEXT_ACTION_CLASS=LOCAL_DISPOSITION_ONLY; BATCH_ID=CVF-NCR-PROBE-ONE. \" + G,\r\n    S(D()), S(D()), \"FAIL\"))\r\nA(C(\"03-state-no-period-malformed\", \"NCR-03\", \"PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=LOCAL_DISPOSITION_ONLY; BATCH_ID=CVF-NCR-PROBE-ONE \" + G,\r\n    S(D()), S(D()), \"FAIL\"))\r\nA(C(\"03-state-lowercase-malformed\", \"NCR-03\", D(batch=\"cvf-ncr-probe-one\"), S(D()), S(D()), \"FAIL\"))\r\nA(C(\"03-state-multiline-guidance\", \"NCR-03\", D().replace(\"Stop before\", \"Stop\\nbefore\"),\r\n    S(D().replace(\"Stop before\", \"Stop before\")), S(D()), \"FAIL\"))\r\nA(C(\"03-state-multiline-header\", \"NCR-03\", D().replace(\"; NEXT_ACTION_CLASS\", \";\\nNEXT_ACTION_CLASS\"), S(D()), S(D()), \"FAIL\"))\r\nA(C(\"03-state-crlf-multiline\", \"NCR-03\", D().replace(\"; BATCH_ID\", \";\\r\\nBATCH_ID\"), S(D()), S(D()), \"FAIL\"))\r\n\r\n# NCR-04 -------------------------------------------------------------------\r\nA(C(\"04-positive-control-narrative-tokens\", \"NCR-04\", D(), S(D()), S(D()), \"PASS\"))\r\nA(C(\"04-batch-drift-same-legacy-token\", \"NCR-04\", D(), S(D(batch=\"CVF-NCR-PROBE-TWO\")), S(D()), \"FAIL\"))\r\nA(C(\"04-class-drift-same-legacy-token\", \"NCR-04\", D(), S(D()), S(D(cls=\"STOP\")), \"FAIL\"))\r\nA(C(\"04-legacy-token-line-cannot-mask-missing-decl\", \"NCR-04\", D(), S(\"Next allowed move: DIR-T2 only through fresh GC-018.\"), S(D()), \"FAIL\"))\r\nA(C(\"04-legacy-token-line-cannot-mask-batch-drift\", \"NCR-04\", D(),\r\n    S(\"Next allowed move: DIR-T2 legacy.\", D(batch=\"CVF-NCR-PROBE-TWO\")), S(D()), \"FAIL\"))\r\nA(C(\"04-historical-prose-tokens-do-not-break-sync\", \"NCR-04\", D(),\r\n    S(\"Previously DIR-T1 and MEMCON-T3 closed.\", D(), \"Historical: PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=OLD; BATCH_ID=OLD. old\"),\r\n    S(D()), \"PASS\"))\r\nA(C(\"04-state-guidance-without-any-legacy-token\", \"NCR-04\", D(g=\"Pure sentence.\"), S(D(g=\"Pure sentence.\")), S(D(g=\"Pure sentence.\")), \"PASS\"))\r\nA(C(\"04-state-guidance-without-token-surface-drift\", \"NCR-04\", D(g=\"Pure sentence.\"), S(D(g=\"Other sentence.\")), S(D(g=\"Pure sentence.\")), \"FAIL\"))\r\n\r\n# NCR-05 legacy ------------------------------------------------------------\r\nFAMILIES = [(\"DIR-T2\", \"DIR-T1\"), (\"MEMCON-T3\", \"MEMCON-T4\"), (\"LPCI2-AAA\", \"LPCI2-BBB\"), (\"DT-CVF-T1\", \"DT-CVF-T2\"),\r\n            (\"PL-S2\", \"PL-S3\"), (\"Policy_Local\", \"EC-1\"), (\"EC-1\", \"EC-2\"), (\"DEP3\", \"DEP4\")]\r\nfor a, b in FAMILIES:\r\n    st = f\"Next allowed move: {a} only through fresh GC-018.\"\r\n    A(C(f\"05-legacy-{a}-synced\", \"NCR-05\", st, S(f\"Next allowed move: {a} only.\"), S(f\"{a} may be opened.\"), \"PASS\"))\r\n    A(C(f\"05-legacy-{a}-front-drift\", \"NCR-05\", st, S(f\"Next allowed move: {b} only.\"), S(f\"{a} ok.\"), \"FAIL\", \"primary token\"))\r\n    A(C(f\"05-legacy-{a}-handoff-drift\", \"NCR-05\", st, S(f\"{a} ok.\"), S(f\"{b} may be opened.\"), \"FAIL\", \"primary token\"))\r\n    A(C(f\"05-legacy-{a}-front-missing-token\", \"NCR-05\", st, S(\"Nothing relevant.\"), S(f\"{a} ok.\"), \"FAIL\", \"missing a parser-visible\"))\r\nA(C(\"05-unknown-family-state-skips\", \"NCR-05\", \"Next allowed move: await operator decision.\", S(\"Anything\"), None, \"PASS\"))\r\nA(C(\"05-unknown-family-empty-string\", \"NCR-05\", \"\", None, None, \"PASS\"))\r\nA(C(\"05-no-state-key\", \"NCR-05\", None, None, None, \"PASS\", with_state_key=False))\r\nA(C(\"05-non-string-state\", \"NCR-05\", 42, S(\"DIR-T2\"), S(\"DIR-T9\"), \"PASS\"))\r\nA(C(\"05-other-program-state-is-legacy-token-pass\", \"NCR-05\",\r\n    \"PROGRAM_ID=CVF-OTHER; NEXT_ACTION_CLASS=X; BATCH_ID=Y. Then DIR-T2 later.\", S(\"DIR-T2 may be opened.\"), S(\"DIR-T2 ok\"), \"PASS\"))\r\nA(C(\"05-other-program-state-is-legacy-token-fail\", \"NCR-05\",\r\n    \"PROGRAM_ID=CVF-OTHER; NEXT_ACTION_CLASS=X; BATCH_ID=Y. Then DIR-T2 later.\", S(\"DIR-T1 may be opened.\"), S(\"DIR-T2 ok\"), \"FAIL\", \"primary token\"))\r\nA(C(\"05-ncr-lookalike-prefix-is-legacy\", \"NCR-05\",\r\n    \"PROGRAM_ID=CVF-NCRX; NEXT_ACTION_CLASS=X; BATCH_ID=Y. DIR-T2.\", S(D(g=\"No legacy token here.\")), S(\"DIR-T2 ok\"), \"FAIL\", \"missing a parser-visible\"))\r\nA(C(\"05-ncr-lookalike-prefix-narrative-token-legacy-pass\", \"NCR-05\",\r\n    \"PROGRAM_ID=CVF-NCRX; NEXT_ACTION_CLASS=X; BATCH_ID=Y. DIR-T2.\", S(D()), S(\"DIR-T2 ok\"), \"PASS\"))\r\n\r\n# Observations (contract is silent -> recorded, never pass/fail) ------------\r\nOBS_CASES = [\r\n    (\"obs-bulleted-declaration-surface\", D(), S(\"- \" + D()), S(D())),\r\n    (\"obs-backticks-around-prefix-surface\", D(), S(\"`Next allowed move: \" + D() + \"`\"), S(D())),\r\n    (\"obs-state-backticks-around-prefix\", \"`Next allowed move: \" + D() + \"`\", S(D()), S(D())),\r\n    (\"obs-lowercase-prefix-surface\", D(), S(\"next allowed move: \" + D()), S(D())),\r\n    (\"obs-nbsp-in-guidance\", D(), S(D(g=G.replace(\" \", \"\u00a0\", 1))), S(D())),\r\n    (\"obs-heading-trailing-space-front\", D(), None, S(D())),\r\n    (\"obs-declaration-inside-code-fence\", D(), S(\"```\", D(), \"```\"), S(D())),\r\n    (\"obs-unicode-dash-in-id\", D(), S(D(batch=\"CVF\u2011NCR-PROBE-ONE\")), S(D())),\r\n    (\"obs-state-declaration-with-trailing-newline\", D() + \"\\n\", S(D()), S(D())),\r\n    (\"obs-state-leading-newline\", \"\\n\" + D(), S(D()), S(D())),\r\n    (\"obs-double-space-after-prefix\", \"Next allowed move:   \" + D(), S(D()), S(D())),\r\n    (\"obs-state-backtick-around-prefix-with-surface-guidance-drift\", \"`Next allowed move: \" + D() + \"`\",\r\n     S(D(g=G.replace(\"Stop before deployment\", \"Deploy now\"))), S(D())),\r\n    (\"obs-state-backtick-around-prefix-with-surface-batch-drift\", \"`Next allowed move: \" + D() + \"`\",\r\n     S(D(batch=\"CVF-NCR-PROBE-TWO\")), S(D())),\r\n]\r\n\r\n\r\ndef evaluate_cases():\r\n    disc_orig_miss = 0\r\n    disc_total = 0\r\n    orig_caught: list[str] = []\r\n    for c in CASES:\r\n        kw = dict(front_pre=c.get(\"front_pre\", \"\"), hand_pre=c.get(\"hand_pre\", \"\"),\r\n                  front_post=c.get(\"front_post\", \"\"), with_state_key=c.get(\"with_state_key\", True))\r\n        for layer, runner in ((\"A-wrapper\", run_A), (\"B-classify\", run_B)):\r\n            try:\r\n                v = runner(CUR, c[\"state\"], c[\"front\"], c[\"hand\"], **kw)\r\n            except Exception as exc:  # noqa: BLE001\r\n                assert_(f\"{c['req']}/{c['id']}/{layer}\", c[\"req\"], False, f\"EXC {exc!r}\")\r\n                continue\r\n            ok = (not v) if c[\"expect\"] == \"PASS\" else bool(v)\r\n            detail = json.dumps(v, ensure_ascii=False)[:400]\r\n            if ok and c[\"expect\"] == \"FAIL\" and c[\"contains\"]:\r\n                ok = any(c[\"contains\"] in x for x in v)\r\n                if not ok:\r\n                    detail = f\"expected substring {c['contains']!r}; got {detail}\"\r\n            assert_(f\"{c['req']}/{c['id']}/{layer}\", c[\"req\"], ok, detail)\r\n        # discrimination vs ORIGINAL (HEAD) checker, NCR-state FAIL cases only\r\n        if c[\"expect\"] == \"FAIL\" and c[\"req\"] in (\"NCR-02\", \"NCR-03\", \"NCR-04\") and \\\r\n                isinstance(c[\"state\"], str) and \"PROGRAM_ID\" in c[\"state\"]:\r\n            disc_total += 1\r\n            vo = run_A(ORIG, c[\"state\"], c[\"front\"], c[\"hand\"], **kw)\r\n            if not vo:\r\n                disc_orig_miss += 1\r\n            else:\r\n                orig_caught.append(c[\"id\"])\r\n    ORIG_CAUGHT.extend(orig_caught)\r\n    return disc_total, disc_orig_miss\r\n\r\n\r\n# ---------------------------------------------------------------------------\r\n# Reference-model fuzz (independent expectation for NCR states)\r\n# ---------------------------------------------------------------------------\r\nCLASSES = [\"LOCAL_DISPOSITION_ONLY\", \"EXECUTE_BOUNDED_LOCAL\", \"STOP\", \"PLAN-ONLY\"]\r\nBATCHES = [\"CVF-NCR-PROBE-ONE\", \"CVF-NCR-PROBE-TWO\", \"B2\", \"CVF-NCR-X-20261007\"]\r\nGUIDS = [G, \"No push. EC-1 and DEP3 parked; Policy_Local only!\", \"Stop (DIR-T2). Q001/Q004 open.\", \"\",\r\n         \"Single sentence without token\", \"Mixed Case; Punct,  Matters?\", \"Version 1.2 stays. Next. Then end.\"]\r\n\r\n\r\ndef fuzz_decl(rng, f, noisy=True):\r\n    sp = lambda: rng.choice([\"\", \" \", \"  \"]) if noisy else \"\"\r\n    g = f[\"g\"]\r\n    if noisy and rng.random() < 0.4:\r\n        g = re.sub(r\" \", lambda m: rng.choice([\" \", \"  \", \"\\t\", \"   \"]), g)\r\n    return (f\"PROGRAM_ID{sp()}={sp()}{f['prog']}{sp()};{sp()}NEXT_ACTION_CLASS{sp()}={sp()}{f['cls']}{sp()};\"\r\n            f\"{sp()}BATCH_ID{sp()}={sp()}{f['batch']}{sp()}.{rng.choice(['', ' ', '  '])}{g}\")\r\n\r\n\r\ndef fuzz_wrap(rng, line):\r\n    k = rng.choice([\"bare\", \"prefix\", \"bt\", \"prefix-bt\", \"ws\", \"bare\"])\r\n    if k == \"prefix\":\r\n        return \"Next allowed move: \" + line\r\n    if k == \"bt\":\r\n        return \"`\" + line + \"`\"\r\n    if k == \"prefix-bt\":\r\n        return \"Next allowed move: `\" + line + \"`\"\r\n    if k == \"ws\":\r\n        return rng.choice([\"  \", \"\\t\"]) + line + rng.choice([\"\", \"  \"])\r\n    return line\r\n\r\n\r\ndef header_break(rng, f, allow_prog_change):\r\n    kinds = [\"drop_class\", \"drop_batch\", \"empty_batch\", \"dup_class\", \"extra\", \"lower\", \"digit\", \"reorder\",\r\n             \"no_period\", \"dup_prog\"]\r\n    if allow_prog_change:\r\n        kinds += [\"wrong_prog\", \"drop_prog\", \"empty_prog\"]\r\n    k = rng.choice(kinds)\r\n    p, c, b, g = f[\"prog\"], f[\"cls\"], f[\"batch\"], f[\"g\"]\r\n    P, Cc, Bb = f\"PROGRAM_ID={p}\", f\"NEXT_ACTION_CLASS={c}\", f\"BATCH_ID={b}\"\r\n    if k == \"drop_class\":\r\n        return f\"{P}; {Bb}. {g}\", k\r\n    if k == \"drop_batch\":\r\n        return f\"{P}; {Cc}. {g}\", k\r\n    if k == \"empty_batch\":\r\n        return f\"{P}; {Cc}; BATCH_ID=. {g}\", k\r\n    if k == \"dup_class\":\r\n        return f\"{P}; {Cc}; {Cc}; {Bb}. {g}\", k\r\n    if k == \"extra\":\r\n        return f\"{P}; {Cc}; EXTRA=NO; {Bb}. {g}\", k\r\n    if k == \"lower\":\r\n        return f\"{P}; NEXT_ACTION_CLASS={c.lower()}; {Bb}. {g}\", k\r\n    if k == \"digit\":\r\n        return f\"{P}; NEXT_ACTION_CLASS=9{c}; {Bb}. {g}\", k\r\n    if k == \"reorder\":\r\n        return f\"{P}; {Bb}; {Cc}. {g}\", k\r\n    if k == \"no_period\":\r\n        return f\"{P}; {Cc}; {Bb} {g}\", k\r\n    if k == \"dup_prog\":\r\n        return f\"{P}; {P}; {Cc}; {Bb}. {g}\", k\r\n    if k == \"wrong_prog\":\r\n        return f\"PROGRAM_ID=CVF-OTHER; {Cc}; {Bb}. {g}\", k\r\n    if k == \"drop_prog\":\r\n        return f\"{Cc}; {Bb}. {g}\", k\r\n    return f\"PROGRAM_ID=; {Cc}; {Bb}. {g}\", k\r\n\r\n\r\ndef guidance_mutate(rng, g):\r\n    ops = [lambda s: s + \" Extra.\", lambda s: s.rstrip(\".\") if s.endswith(\".\") else s + \".\",\r\n           lambda s: s.swapcase() if s else \"X\", lambda s: s.replace(\"Stop\", \"Go\") if \"Stop\" in s else s + \"!\",\r\n           lambda s: s.replace(\"DIR-T2\", \"DIR-T1\") if \"DIR-T2\" in s else s + \" DIR-T1\",\r\n           lambda s: s.replace(\";\", \",\") if \";\" in s else s + \";\"]\r\n    return rng.choice(ops)(g)\r\n\r\n\r\ndef fuzz_run(n=4000, seed=20261007):\r\n    rng = random.Random(seed)\r\n    mismatches: list[dict] = []\r\n    stats = {\"n\": 0, \"expect_pass\": 0, \"expect_fail\": 0, \"orig_would_pass_expected_fail\": 0}\r\n    for i in range(n):\r\n        base = dict(prog=\"CVF-NCR\", cls=rng.choice(CLASSES), batch=rng.choice(BATCHES), g=rng.choice(GUIDS))\r\n        malformed_state = rng.random() < 0.22\r\n        if malformed_state:\r\n            line, _ = header_break(rng, base, allow_prog_change=False)\r\n            if rng.random() < 0.3:\r\n                line = line.replace(\"; \", \";\\n\", 1)  # multiline header\r\n            state = fuzz_wrap(rng, line) if rng.random() < 0.5 else line\r\n        else:\r\n            state = fuzz_wrap(rng, fuzz_decl(rng, base))\r\n            if rng.random() < 0.06:\r\n                state = state.replace(\"Stop\", \"Stop\\nstop\", 1) if \"Stop\" in state else state + \"\\nwrapped\"\r\n        state_ref = ref_parse(state)\r\n        surf_defs = []\r\n        for _ in range(2):\r\n            op = rng.choices([\"same\", \"gmut\", \"idmut\", \"hbreak\", \"zero\", \"dup\", \"prose\"],\r\n                             weights=[38, 12, 12, 12, 6, 6, 14])[0]\r\n            f = dict(base)\r\n            decls: list[str] = []\r\n            pre, post = [], []\r\n            has_section = True\r\n            if op == \"same\":\r\n                decls = [fuzz_wrap(rng, fuzz_decl(rng, f))]\r\n            elif op == \"gmut\":\r\n                f[\"g\"] = guidance_mutate(rng, f[\"g\"])\r\n                decls = [fuzz_wrap(rng, fuzz_decl(rng, f))]\r\n            elif op == \"idmut\":\r\n                which = rng.choice([\"cls\", \"batch\"])\r\n                f[which] = rng.choice([x for x in (CLASSES if which == \"cls\" else BATCHES) if x != f[which]])\r\n                decls = [fuzz_wrap(rng, fuzz_decl(rng, f))]\r\n            elif op == \"hbreak\":\r\n                line, _ = header_break(rng, f, allow_prog_change=True)\r\n                decls = [fuzz_wrap(rng, line)]\r\n            elif op == \"zero\":\r\n                if rng.random() < 0.5:\r\n                    has_section = False\r\n                else:\r\n                    pre = [\"Only prose with DIR-T2 and EC-1.\", \"Historical: \" + fuzz_decl(rng, f, noisy=False)]\r\n            elif op == \"dup\":\r\n                d1 = fuzz_wrap(rng, fuzz_decl(rng, f))\r\n                d2 = d1 if rng.random() < 0.5 else fuzz_wrap(rng, fuzz_decl(rng, dict(f, batch=\"B-DUP\")))\r\n                decls = [d1, d2]\r\n            else:\r\n                decls = [fuzz_wrap(rng, fuzz_decl(rng, f))]\r\n                pre = rng.sample([\"Mode: current DIR-T2\", \"Status: ACTIVE\", \"Next allowed move discussion DEP3.\", \"\"], k=rng.randint(0, 2))\r\n                post = rng.sample([\"Historical: DIR-T1 closed.\", \"Note EC-9 and MEMCON-T3.\",\r\n                                   \"Quoted: \" + fuzz_decl(rng, base, noisy=False), \"- bullet LPCI2-X\"], k=rng.randint(0, 3))\r\n            ok = has_section and len(decls) == 1 and state_ref is not None and ref_parse(decls[0]) == state_ref\r\n            sec = None\r\n            if has_section:\r\n                sec = \"\\n\".join(pre + decls + post) + \"\\n\"\r\n            surf_defs.append((sec, ok, op))\r\n        expect_pass = state_ref is not None and all(x[1] for x in surf_defs)\r\n        front, hand = surf_defs[0][0], surf_defs[1][0]\r\n        v = run_A(CUR, state, front, hand)\r\n        stats[\"n\"] += 1\r\n        stats[\"expect_pass\" if expect_pass else \"expect_fail\"] += 1\r\n        got_pass = not v\r\n        if got_pass != expect_pass:\r\n            mismatches.append({\"i\": i, \"state\": state, \"front\": front, \"hand\": hand, \"expect_pass\": expect_pass,\r\n                               \"got\": v, \"ops\": [surf_defs[0][2], surf_defs[1][2]]})\r\n        if not expect_pass:\r\n            if not run_A(ORIG, state, front, hand):\r\n                stats[\"orig_would_pass_expected_fail\"] += 1\r\n    return stats, mismatches\r\n\r\n\r\n# ---------------------------------------------------------------------------\r\n# Legacy differential: ORIGINAL (HEAD) vs CURRENT for non-NCR states\r\n# ---------------------------------------------------------------------------\r\ndef legacy_differential(n=4000, seed=7102026):\r\n    rng = random.Random(seed)\r\n    toks = [\"DIR-T2\", \"DIR-T1\", \"MEMCON-T3\", \"LPCI2-X\", \"DT-CVF-T1\", \"PL-S2\", \"Policy_Local\", \"EC\", \"EC-4\", \"DEP3\", \"none\"]\r\n    words = [\"only\", \"through\", \"fresh\", \"GC-018\", \"wait\", \"parked\", \"Stop\", \"operator\"]\r\n    state_shapes = [\r\n        lambda t: f\"Next allowed move: {t} \" + \" \".join(rng.sample(words, 3)),\r\n        lambda t: \" \".join(rng.sample(words, 3)) + f\" {t}\",\r\n        lambda t: f\"PROGRAM_ID=CVF-OTHER; NEXT_ACTION_CLASS=X; BATCH_ID=Y. {t} later\",\r\n        lambda t: f\"PROGRAM_ID=CVF-NCRX; NEXT_ACTION_CLASS=X; BATCH_ID=Y. {t} later\",\r\n        lambda t: f\"program_id=cvf-ncr; next_action_class=x; batch_id=y. {t}\",\r\n        lambda t: f\"Mode foo\\nNext allowed move: {t}\\nmore\",\r\n        lambda t: f\"Wait for operator. {t}\",\r\n        lambda t: \"Wait for operator decision only.\",\r\n        lambda t: \"\",\r\n    ]\r\n    surface_shapes = [\r\n        lambda t: f\"Next allowed move: {t} only.\", lambda t: f\"{t} may be opened.\", lambda t: \"Nothing here.\",\r\n        lambda t: f\"PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=X; BATCH_ID=Y. {t} narrative\",\r\n        lambda t: f\"Mode: foo\\n{t}\\nHistorical DIR-T1\",\r\n        lambda t: f\"Historical: {t}\\nNext allowed move: {rng.choice(toks)} now\", lambda t: \"\",\r\n    ]\r\n    diffs = []\r\n    for i in range(n):\r\n        st = rng.choice(state_shapes)(rng.choice(toks))\r\n        if rng.random() < 0.04:\r\n            st = rng.choice([None, 7, [\"x\"], {\"a\": 1}])\r\n        use_key = rng.random() > 0.03\r\n        def surf():\r\n            r = rng.random()\r\n            if r < 0.08:\r\n                return None\r\n            return rng.choice(surface_shapes)(rng.choice(toks)) + \"\\n\"\r\n        f, h = surf(), surf()\r\n        if rng.random() < 0.02:\r\n            h = None\r\n        a = run_A(ORIG, st, f, h, with_state_key=use_key)\r\n        b = run_A(CUR, st, f, h, with_state_key=use_key)\r\n        if a != b:\r\n            diffs.append({\"i\": i, \"state\": st, \"front\": f, \"hand\": h, \"orig\": a, \"cur\": b})\r\n    return n, diffs\r\n\r\n\r\n# ---------------------------------------------------------------------------\r\n# Static / provenance / budget / import checks\r\n# ---------------------------------------------------------------------------\r\ndef static_checks():\r\n    out = {}\r\n    head_now = git(\"rev-parse\", \"HEAD\").stdout.strip()\r\n    out[\"headNow\"] = head_now\r\n    assert_(\"PROV-head-unchanged\", \"PROV\", head_now == \"9f624ecbc8274907d004a2e86ae4b807d85e21f2\", head_now)\r\n    st = git(\"status\", \"--porcelain=v1\", \"-uall\").stdout\r\n    paths = sorted(l[3:].strip() for l in st.splitlines() if l.strip())\r\n    # probe dir is git-ignored, so the set must equal the six worker paths exactly\r\n    assert_(\"PROV-dirty-set-equals-six-paths\", \"PROV\", paths == sorted(SIX), json.dumps(paths))\r\n    out[\"statusPorcelain\"] = st.splitlines()\r\n    out[\"gitDiffCheck\"] = {\"exit\": git(\"diff\", \"--check\").returncode}\r\n    assert_(\"PROV-git-diff-check\", \"NCR-07\", out[\"gitDiffCheck\"][\"exit\"] == 0, \"\")\r\n    # pins at source (git bytes)\r\n    wo = (REPO / \"docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_NEXT_MOVE_ALIGNMENT_2026-10-07.md\").read_text(encoding=\"utf-8\")\r\n    pins = dict(re.findall(r\"- `(governance/compat/[a-z_]+\\.py)` SHA256 `([0-9a-f]{64})`\", wo))\r\n    head_hashes = {p: sha256_bytes(git_blob(f\"HEAD:{p}\")) for p in (CHECKER_REL, TEST_REL)}\r\n    out[\"headBlobSha256\"] = head_hashes\r\n    out[\"workOrderPinSha256\"] = pins\r\n    for p in (CHECKER_REL, TEST_REL):\r\n        assert_(f\"PROV-head-blob-matches-workorder-pin/{p}\", \"PROV\", pins.get(p) == head_hashes[p],\r\n                f\"pin={pins.get(p)} head={head_hashes[p]}\")\r\n    # current hashes vs worker evidence\r\n    ev = json.loads((REPO / EVID_REL).read_text(encoding=\"utf-8\"))\r\n    cur_hashes = {}\r\n    for p in (CHECKER_REL, TEST_REL, HELPER_REL, NEWTEST_REL):\r\n        b = (REPO / p).read_bytes()\r\n        cur_hashes[p] = {\"sha256\": sha256_bytes(b), \"lineCount\": len(b.decode(\"utf-8\").splitlines())}\r\n        claimed = ev[\"after\"][p]\r\n        assert_(f\"PROV-evidence-hash-matches-working/{p}\", \"PROV\", claimed[\"sha256\"] == cur_hashes[p][\"sha256\"],\r\n                f\"claimed={claimed['sha256']} actual={cur_hashes[p]['sha256']}\")\r\n        assert_(f\"PROV-evidence-linecount-matches/{p}\", \"PROV\", claimed[\"lineCount\"] == cur_hashes[p][\"lineCount\"],\r\n                f\"claimed={claimed['lineCount']} actual={cur_hashes[p]['lineCount']}\")\r\n    out[\"currentSha256\"] = cur_hashes\r\n    CRLF, LF = b\"\\r\\n\", b\"\\n\"\n    out[\"currentLfNormalizedSha256\"] = {p: sha256_bytes((REPO / p).read_bytes().replace(CRLF, LF))\n                                        for p in (CHECKER_REL, TEST_REL, HELPER_REL, NEWTEST_REL)}\n    out[\"worktreeEol\"] = {p: (\"crlf\" if CRLF in (REPO / p).read_bytes() else \"lf\") for p in SIX}\n    for label, script in ((\"python-automation-size\", \"check_python_automation_size.py\"),\r\n                          (\"governed-file-size\", \"check_governed_file_size.py\")):\r\n        pp = run_cmd(f\"size guard: {script}\", [sys.executable, \"-B\", str(COMPAT / script), \"--enforce\"], REPO)\r\n        out[f\"sizeGuard_{label}\"] = {\"exit\": pp.returncode, \"tail\": pp.stdout.strip().splitlines()[-3:], \"err\": pp.stderr[-200:]}\r\n        assert_(f\"NCR-07/size-guard/{label}\", \"NCR-07\", pp.returncode == 0, \"\\n\".join(pp.stdout.strip().splitlines()[-3:]))\n    out[\"evidenceJsonSha256\"] = sha256_file(REPO / EVID_REL)\r\n    out[\"returnMdSha256\"] = sha256_file(REPO / RET_REL)\r\n    ret = (REPO / RET_REL).read_text(encoding=\"utf-8\")\r\n    m = re.search(r\"workerOracleSha256: ([0-9a-f]{64})\", ret)\r\n    claimed_oracle = m.group(1) if m else None\r\n    cand = {\"evidence_json\": out[\"evidenceJsonSha256\"], \"return_md\": out[\"returnMdSha256\"],\r\n            \"worker_new_test\": cur_hashes[NEWTEST_REL][\"sha256\"], \"worker_pre_repair_oracle_field\":\r\n            ev[\"proofs\"][\"NCR-RED-GREEN\"][\"preRepairOracleSha256\"]}\r\n    wcand = REPO / \".cvf/runtime/test_ncr_alignment_candidate.py\"\r\n    cand[\"worker_candidate_file_if_present\"] = sha256_file(wcand) if wcand.exists() else None\r\n    out[\"workerOracleClaim\"] = {\"claimedInReturn\": claimed_oracle, \"candidateDigests\": cand,\r\n                                \"claimMatchesAnyCandidate\": claimed_oracle in cand.values()}\r\n    OBSERVATIONS.append({\"id\": \"OBS-worker-oracle-digest-binding\", **out[\"workerOracleClaim\"]})\r\n    # line budgets\r\n    lc = {p: cur_hashes[p][\"lineCount\"] for p in cur_hashes}\r\n    out[\"lineCounts\"] = lc\r\n    assert_(\"NCR-07/budget-checker<=901\", \"NCR-07\", lc[CHECKER_REL] <= 901, str(lc[CHECKER_REL]))\r\n    assert_(\"NCR-07/budget-test<=1122\", \"NCR-07\", lc[TEST_REL] <= 1122, str(lc[TEST_REL]))\r\n    assert_(\"NCR-07/hard-limit-checker<1000\", \"NCR-07\", lc[CHECKER_REL] < 1000, \"\")\r\n    assert_(\"NCR-07/hard-limit-test<1200\", \"NCR-07\", lc[TEST_REL] < 1200, \"\")\r\n    assert_(\"NCR-07/hard-limit-new-files<1000\", \"NCR-07\", lc[HELPER_REL] < 1000 and lc[NEWTEST_REL] < 1200, \"\")\r\n    head_lc = {p: len(git_blob(f\"HEAD:{p}\").decode(\"utf-8\").splitlines()) for p in (CHECKER_REL, TEST_REL)}\r\n    out[\"headLineCounts\"] = head_lc\r\n    assert_(\"NCR-07/shrink>=50-checker\", \"NCR-07\", head_lc[CHECKER_REL] - lc[CHECKER_REL] >= 50,\r\n            f\"{head_lc[CHECKER_REL]}->{lc[CHECKER_REL]}\")\r\n    assert_(\"NCR-07/shrink>=50-test\", \"NCR-07\", head_lc[TEST_REL] - lc[TEST_REL] >= 50,\r\n            f\"{head_lc[TEST_REL]}->{lc[TEST_REL]}\")\r\n    # no dropped tests / no inherited duplicate suite (AST)\r\n    def tests_in(src: str):\r\n        tree = ast.parse(src)\r\n        names, classes = [], {}\r\n        for n in ast.walk(tree):\r\n            if isinstance(n, ast.ClassDef):\r\n                classes[n.name] = [ast.unparse(b) for b in n.bases]\r\n                for f in n.body:\r\n                    if isinstance(f, ast.FunctionDef) and f.name.startswith(\"test\"):\r\n                        names.append(f\"{n.name}.{f.name}\")\r\n        return names, classes\r\n    head_names, _ = tests_in(git_blob(f\"HEAD:{TEST_REL}\").decode(\"utf-8\"))\r\n    cur_names, cur_classes = tests_in((REPO / TEST_REL).read_text(encoding=\"utf-8\"))\r\n    new_names, new_classes = tests_in((REPO / NEWTEST_REL).read_text(encoding=\"utf-8\"))\r\n    removed = sorted(set(head_names) - set(cur_names))\r\n    out[\"testInventory\"] = {\"headCount\": len(head_names), \"curExistingCount\": len(cur_names),\r\n                            \"newFileCount\": len(new_names), \"removedFromExisting\": removed,\r\n                            \"newFileClasses\": new_classes, \"newFileNames\": new_names}\r\n    assert_(\"NCR-07/no-inherited-duplicate-suite\", \"NCR-07\",\r\n            not any(any(\"ActiveSessionStateTests\" in b for b in bases) for bases in new_classes.values()),\r\n            json.dumps(new_classes))\r\n    assert_(\"NCR-07/existing-tests-removed-count-equals-moved-3\", \"NCR-07\", len(removed) == len(head_names) - len(cur_names),\r\n            f\"removed={removed}\")\r\n    return out\r\n\r\n\r\ndef import_mode_checks():\r\n    res = {}\r\n    cwd = Path(tempfile.mkdtemp(prefix=\"probe_cwd_\"))\r\n    try:\r\n        # (1) package-style import from repo root on sys.path\r\n        code1 = (\"import sys;sys.dont_write_bytecode=True;sys.path.insert(0,%r);\"\r\n                 \"import governance.compat.check_active_session_state as m;\"\r\n                 \"print(m._check_next_allowed_move_alignment is not None, m._next_allowed_move_signature('Next allowed move: DIR-T2'))\") % str(REPO)\r\n        p = run_cmd(\"import-mode: package from repo root\", [sys.executable, \"-I\", \"-c\", code1], cwd)\r\n        res[\"packageImport\"] = {\"exit\": p.returncode, \"out\": p.stdout.strip(), \"err\": p.stderr.strip()[-300:]}\r\n        assert_(\"NCR-07/import-package\", \"NCR-07\", p.returncode == 0 and p.stdout.strip().startswith(\"True dir-t2\"), p.stdout + p.stderr[-200:])\r\n        # (2) script-dir style import (sys.path[0]=governance/compat)\r\n        code2 = (\"import sys;sys.dont_write_bytecode=True;sys.path.insert(0,%r);\"\r\n                 \"import check_active_session_state as m;print(m._check_next_allowed_move_alignment is not None)\") % str(COMPAT)\r\n        p = run_cmd(\"import-mode: script-dir\", [sys.executable, \"-I\", \"-c\", code2], cwd)\r\n        res[\"scriptDirImport\"] = {\"exit\": p.returncode, \"out\": p.stdout.strip(), \"err\": p.stderr.strip()[-300:]}\r\n        assert_(\"NCR-07/import-script-dir\", \"NCR-07\", p.returncode == 0 and \"True\" in p.stdout, p.stderr[-200:])\r\n        # (3) spec_from_file_location with NO sys.path help (informational parity with HEAD)\r\n        for label, path in ((\"current\", COMPAT / \"check_active_session_state.py\"), (\"head\", ORIG_PATH)):\r\n            code3 = (\"import sys;sys.dont_write_bytecode=True;import importlib.util as u;\"\r\n                     \"s=u.spec_from_file_location('x',%r);m=u.module_from_spec(s);s.loader.exec_module(m);print('LOADED')\") % str(path)\r\n            p = run_cmd(f\"import-mode: bare spec ({label})\", [sys.executable, \"-I\", \"-c\", code3], cwd)\r\n            res[f\"bareSpec_{label}\"] = {\"exit\": p.returncode, \"tail\": (p.stderr.strip().splitlines() or [\"\"])[-1][:200], \"out\": p.stdout.strip()}\r\n        assert_(\"NCR-07/bare-spec-parity-with-head\", \"NCR-07\", res[\"bareSpec_current\"][\"exit\"] == res[\"bareSpec_head\"][\"exit\"],\r\n                json.dumps({k: v for k, v in res.items() if k.startswith(\"bareSpec\")}))\r\n        # (4) direct CLI on the real repo (read-only)\r\n        p = run_cmd(\"real repo direct CLI --enforce\", [sys.executable, \"-B\", str(COMPAT / \"check_active_session_state.py\"), \"--enforce\"], cwd)\r\n        res[\"realRepoCli\"] = {\"exit\": p.returncode, \"tail\": p.stdout.strip().splitlines()[-3:], \"err\": p.stderr.strip()[-300:]}\r\n        assert_(\"NCR-07/real-cli-compliant\", \"NCR-07\", p.returncode == 0 and \"COMPLIANT\" in p.stdout, \"\\n\".join(p.stdout.strip().splitlines()[-4:]))\r\n    finally:\r\n        shutil.rmtree(cwd, ignore_errors=True)\r\n    return res\r\n\r\n\r\ndef real_state_probe():\r\n    \"\"\"Read-only: live state + live front door + live handoff, mutated in memory only.\"\"\"\r\n    out = {}\r\n    state = json.loads((REPO / \"CVF_SESSION/ACTIVE_SESSION_STATE.json\").read_text(encoding=\"utf-8\"))\r\n    nxt = state.get(\"nextAllowedMove\")\r\n    handoff = state.get(\"activeHandoff\")\r\n    front = (REPO / \"CVF_SESSION_MEMORY.md\").read_text(encoding=\"utf-8\")\r\n    hand = (REPO / handoff).read_text(encoding=\"utf-8\")\r\n    out[\"stateStartsNcr\"] = isinstance(nxt, str) and nxt.lstrip().startswith(\"PROGRAM_ID=CVF-NCR\")\r\n    out[\"liveNarrativeLegacyTokens\"] = sorted(set(CUR.NEXT_ALLOWED_MOVE_TOKEN_PATTERN.findall(nxt or \"\")))\r\n    with mock.patch.object(CUR, \"REPO_ROOT\", REPO):\r\n        live = CUR._check_next_allowed_move_alignment(state, front, handoff)\r\n    with mock.patch.object(ORIG, \"REPO_ROOT\", REPO):\r\n        live_orig = ORIG._check_next_allowed_move_alignment(state, front, handoff)\r\n    assert_(\"REAL/live-surfaces-synced-pass\", \"NCR-06\", live == [], json.dumps(live))\r\n    out[\"liveCurrent\"], out[\"liveOriginal\"] = live, live_orig\r\n    lines = front.splitlines()\r\n    idx = [i for i, l in enumerate(lines) if l.startswith(\"PROGRAM_ID=CVF-NCR\")]\r\n    out[\"liveFrontDeclLineIndices\"] = idx\r\n    if len(idx) == 1:\r\n        mutated = list(lines)\r\n        mutated[idx[0]] = mutated[idx[0]].replace(\"STOP/parked\", \"GO/open\", 1)\r\n        changed = mutated[idx[0]] != lines[idx[0]]\r\n        with mock.patch.object(CUR, \"REPO_ROOT\", REPO):\r\n            v = CUR._check_next_allowed_move_alignment(state, \"\\n\".join(mutated) + \"\\n\", handoff)\r\n        with mock.patch.object(ORIG, \"REPO_ROOT\", REPO):\r\n            vo = ORIG._check_next_allowed_move_alignment(state, \"\\n\".join(mutated) + \"\\n\", handoff)\r\n        out[\"liveGuidanceMutation\"] = {\"changed\": changed, \"current\": v, \"original\": vo}\r\n        assert_(\"REAL/live-front-guidance-mutation-detected\", \"NCR-06\", changed and bool(v), json.dumps(v))\r\n        assert_(\"REAL/live-front-guidance-mutation-original-missed\", \"NCR-06\", changed and vo == [], json.dumps(vo))\r\n    return out\r\n\r\n\r\ndef cli_tree_probe():\r\n    \"\"\"Direct CLI inside disposable tree built from CURRENT vs ORIGINAL module copies.\"\"\"\r\n    out = {}\r\n    need = [\"generate_active_session_state.py\", \"guard_binding_catalog.py\", \"active_continuity_read_budget.py\"]\r\n    scenarios = [\r\n        (\"cli-sync\", D(), S(D()), S(D()), \"PASS\"),\r\n        (\"cli-front-guidance-drift\", D(), S(D(g=G.replace(\"Stop before\", \"Go before\"))), S(D()), \"FAIL\"),\r\n        (\"cli-handoff-guidance-drift\", D(), S(D()), S(D(g=G.replace(\"Stop before\", \"Go before\"))), \"FAIL\"),\r\n        (\"cli-duplicate-front\", D(), S(D(), D()), S(D()), \"FAIL\"),\r\n        (\"cli-malformed-state\", D(batch=\"\"), S(D(batch=\"\")), S(D(batch=\"\")), \"FAIL\"),\r\n        (\"cli-legacy-dir-t-drift\", \"Next allowed move: DIR-T2 only.\", S(\"DIR-T1 stale.\"), S(\"DIR-T2 ok.\"), \"FAIL\"),\r\n        (\"cli-legacy-dir-t-sync\", \"Next allowed move: DIR-T2 only.\", S(\"DIR-T2 ok.\"), S(\"DIR-T2 ok.\"), \"PASS\"),\r\n    ]\r\n    for variant in (\"current\", \"orig\"):\r\n        for sid, state, fsec, hsec, expect in scenarios:\r\n            with tempfile.TemporaryDirectory(prefix=f\"cli_{variant}_\") as td:\r\n                root = Path(td)\r\n                build_repo(root, state, fsec, hsec)\r\n                comp = root / \"governance\" / \"compat\"\r\n                comp.mkdir(parents=True, exist_ok=True)\r\n                if variant == \"current\":\r\n                    shutil.copy(COMPAT / \"check_active_session_state.py\", comp / \"check_active_session_state.py\")\r\n                    shutil.copy(COMPAT / \"active_session_next_move_alignment.py\", comp / \"active_session_next_move_alignment.py\")\r\n                else:\r\n                    shutil.copy(ORIG_PATH, comp / \"check_active_session_state.py\")\r\n                for f in need:\r\n                    shutil.copy(COMPAT / f, comp / f)\r\n                other = Path(tempfile.mkdtemp(prefix=\"cli_cwd_\"))\r\n                try:\r\n                    p = run_cmd(f\"fixture CLI {variant} {sid}\", [sys.executable, \"-B\", str(comp / \"check_active_session_state.py\"), \"--json\"], other)\r\n                finally:\r\n                    shutil.rmtree(other, ignore_errors=True)\r\n                try:\r\n                    rep = json.loads(p.stdout)\r\n                    cv = rep[\"continuityViolations\"]\r\n                except Exception:  # noqa: BLE001\r\n                    cv, rep = None, None\r\n                out[f\"{variant}/{sid}\"] = {\"exit\": p.returncode, \"continuityViolations\": cv, \"stderrTail\": p.stderr[-200:]}\r\n                if variant == \"current\":\r\n                    ok = cv is not None and ((not cv) if expect == \"PASS\" else bool(cv))\r\n                    assert_(f\"NCR-06/{sid}/direct-cli-current\", \"NCR-06\", ok, json.dumps(cv)[:300])\r\n    # discriminating: original CLI misses the guidance drift, catches legacy drift\r\n    o = out.get(\"orig/cli-front-guidance-drift\", {})\r\n    assert_(\"NCR-06/original-cli-misses-ncr-guidance-drift\", \"NCR-06\", o.get(\"continuityViolations\") == [], json.dumps(o)[:300])\r\n    o2 = out.get(\"orig/cli-legacy-dir-t-drift\", {})\r\n    assert_(\"NCR-05/original-cli-catches-legacy-drift\", \"NCR-05\", bool(o2.get(\"continuityViolations\")), json.dumps(o2)[:300])\r\n    return out\r\n\r\n\r\ndef head_legacy_suite_against_current():\r\n    \"\"\"Pre-worker (HEAD) legacy test file run against CURRENT code; baseline vs HEAD code.\"\"\"\r\n    out = {}\r\n    need = [\"generate_active_session_state.py\", \"guard_binding_catalog.py\", \"active_continuity_read_budget.py\"]\r\n    head_test = git_blob(f\"HEAD:{TEST_REL}\")\r\n    for variant in (\"current\", \"head\"):\r\n        with tempfile.TemporaryDirectory(prefix=f\"legacy_{variant}_\") as td:\r\n            comp = Path(td) / \"governance\" / \"compat\"\r\n            comp.mkdir(parents=True)\r\n            if variant == \"current\":\r\n                shutil.copy(COMPAT / \"check_active_session_state.py\", comp / \"check_active_session_state.py\")\r\n                shutil.copy(COMPAT / \"active_session_next_move_alignment.py\", comp / \"active_session_next_move_alignment.py\")\r\n            else:\r\n                shutil.copy(ORIG_PATH, comp / \"check_active_session_state.py\")\r\n            for f in need:\r\n                shutil.copy(COMPAT / f, comp / f)\r\n            (comp / \"test_check_active_session_state.py\").write_bytes(head_test)\r\n            # generate_active_session_state resolves CVF_SESSION relative to its own location\r\n            shutil.copytree(REPO / \"CVF_SESSION\" / \"state\", Path(td) / \"CVF_SESSION\" / \"state\")\r\n            for f in (\"ACTIVE_SESSION_STATE.json\", \"ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json\"):\r\n                shutil.copy(REPO / \"CVF_SESSION\" / f, Path(td) / \"CVF_SESSION\" / f)\r\n            p = run_cmd(f\"HEAD legacy suite vs {variant} code\", [sys.executable, \"-m\", \"pytest\", \"-q\", \"-p\", \"no:cacheprovider\",\r\n                                                                 \"-x\" if False else \"-q\", str(comp / \"test_check_active_session_state.py\")],\r\n                        Path(td), timeout=900)\r\n            tail = p.stdout.strip().splitlines()[-6:]\r\n            out[variant] = {\"exit\": p.returncode, \"tail\": tail}\r\n    ok = out[\"current\"][\"exit\"] == 0 or out[\"current\"][\"tail\"][-1:] == out[\"head\"][\"tail\"][-1:]\r\n    # require identical outcome line (counts) between HEAD code and CURRENT code\r\n    summ = lambda d: re.sub(r\" in [0-9.]+s.*\", \"\", d[\"tail\"][-1]) if d[\"tail\"] else \"\"\r\n    assert_(\"NCR-05/HEAD-legacy-suite-identical-outcome-on-current-code\", \"NCR-05\",\r\n            summ(out[\"current\"]) == summ(out[\"head\"]) and out[\"current\"][\"exit\"] == out[\"head\"][\"exit\"],\r\n            json.dumps(out)[:600])\r\n    assert_(\"NCR-05/HEAD-legacy-suite-green-on-current-code\", \"NCR-05\", out[\"current\"][\"exit\"] == 0, json.dumps(out[\"current\"])[:400])\r\n    return out\r\n\r\n\r\ndef observations():\r\n    out = []\r\n    for oid, state, f, h in OBS_CASES:\r\n        r = {\"id\": oid}\r\n        for lbl, mod in ((\"current\", CUR), (\"original\", ORIG)):\r\n            try:\r\n                v = run_A(mod, state, f, h)\r\n                r[lbl] = v\r\n            except Exception as exc:  # noqa: BLE001\r\n                r[lbl] = f\"EXC {exc!r}\"\r\n        out.append(r)\r\n    # OBS heading trailing space (front)\r\n    v = run_A(CUR, D(), None, S(D()), front_post=\"## Next Allowed Move  \\n\" + D() + \"\\n\")\r\n    out.append({\"id\": \"obs-front-heading-trailing-spaces\", \"current\": v})\r\n    v = run_A(CUR, D(), None, S(D()), front_post=\"##  Next Allowed Move\\n\" + D() + \"\\n\")\r\n    out.append({\"id\": \"obs-front-heading-double-space\", \"current\": v})\r\n    OBSERVATIONS.extend(out)\r\n    return out\r\n\r\n\r\ndef main() -> int:\r\n    started = dt.datetime.now(dt.timezone.utc).isoformat()\r\n    disc_total, disc_orig_miss = evaluate_cases()\r\n    fuzz_stats, fuzz_mis = fuzz_run()\r\n    assert_(\"FUZZ/reference-model-agrees-with-current\", \"NCR-01..04\", not fuzz_mis,\r\n            f\"n={fuzz_stats['n']} mismatches={len(fuzz_mis)}\")\r\n    leg_n, leg_diffs = legacy_differential()\r\n    assert_(\"NCR-05/legacy-differential-orig-vs-current-identical\", \"NCR-05\", not leg_diffs,\r\n            f\"n={leg_n} diffs={len(leg_diffs)}\")\r\n    assert_(\"DISC/original-code-misses-most-ncr-fail-cases\", \"NCR-02/03\", disc_total > 0 and disc_orig_miss >= 30,\r\n            f\"origMissed={disc_orig_miss}/{disc_total}; origAlreadyCaught={ORIG_CAUGHT}\")\r\n    stat = static_checks()\r\n    imp = import_mode_checks()\r\n    real = real_state_probe()\r\n    cli = cli_tree_probe()\r\n    leg = head_legacy_suite_against_current()\r\n    obs = observations()\r\n\r\n    passed = sum(1 for r in RESULTS if r[\"pass\"])\r\n    failed = [r for r in RESULTS if not r[\"pass\"]]\r\n    oracle_bytes = Path(__file__).read_bytes()\r\n    case_set = json.dumps([{k: v for k, v in c.items()} for c in CASES], sort_keys=True, ensure_ascii=False).encode()\r\n    receipt = {\r\n        \"schema\": \"cvf.claude-ncr-alignment-probe-receipt@1\",\r\n        \"startedUtc\": started, \"finishedUtc\": dt.datetime.now(dt.timezone.utc).isoformat(),\r\n        \"actor\": \"LOCAL_CLAUDE_OPERATOR_RELAY\",\r\n        \"invocation\": {\"harness\": \"Claude Code (VS Code extension)\", \"model\": \"claude-sonnet-5-5\",\r\n                       \"sessionScratchpadId\": \"af973f46-37d5-4c20-9b85-1182f219a6d3\",\r\n                       \"probeRunId\": str(uuid.uuid4()),\r\n                       \"relay\": \"operator pasted reviewer task; no subagent, no provider/API call\"},\r\n        \"implementationWorker\": {\"actor\": \"LOCAL_CODEX_ROOT\", \"invocation\": \"ncr-alignment-worker-20261007\"},\r\n        \"actorDistinctFromWorker\": True,\r\n        \"independenceDisclosure\": [\r\n            \"Reviewer read the worker helper source and the checker diff BEFORE writing the oracle (needed to find entrypoints).\",\r\n            \"Reviewer did NOT open or import governance/compat/test_active_session_next_move_alignment.py or the worker pre-repair candidate test.\",\r\n            \"Reviewer saw fragments of worker pre-repair test output inside the worker evidence JSON (mutation snippets such as EXTRA=NO, 'Deploy now').\",\r\n            \"Expectations come from the work order Implementation Contract and Required Proof Cases; reference model and fuzz are original code in this file.\",\r\n            \"Original (HEAD) checker and the HEAD legacy test file are used only as a pre-worker differential baseline.\"],\r\n        \"python\": sys.version.split()[0], \"platform\": platform.platform(),\r\n        \"repo\": {\"headAtProbe\": stat[\"headNow\"], \"statusPorcelain\": stat[\"statusPorcelain\"]},\r\n        \"oracleFile\": str(Path(__file__).relative_to(REPO)).replace(\"\\\\\", \"/\"),\r\n        \"oracleSha256\": sha256_bytes(oracle_bytes),\r\n        \"oracleCaseSetSha256\": sha256_bytes(case_set),\r\n        \"counts\": {\"assertions\": len(RESULTS), \"passed\": passed, \"failed\": len(failed),\r\n                   \"explicitCases\": len(CASES), \"layers\": [\"A-wrapper\", \"B-classify\"],\r\n                   \"fuzz\": fuzz_stats, \"fuzzMismatches\": len(fuzz_mis),\r\n                   \"legacyDifferentialSamples\": leg_n, \"legacyDifferentialDiffs\": len(leg_diffs),\r\n                   \"discriminatingNcrFailCases\": disc_total, \"originalMissedOfThose\": disc_orig_miss},\r\n        \"failedAssertions\": failed,\r\n        \"fuzzMismatchSamples\": fuzz_mis[:15],\r\n        \"legacyDifferentialSamples_diffs\": leg_diffs[:15],\r\n        \"static\": stat, \"importModes\": imp, \"realStateProbe\": real, \"cliTree\": cli,\r\n        \"headLegacySuiteOnCurrentCode\": leg,\r\n        \"observations\": OBSERVATIONS,\r\n        \"originalCodeAlreadyCaught\": ORIG_CAUGHT,\r\n        \"commands\": COMMANDS,\r\n        \"claimBoundary\": \"Textual-consistency probe of the declared checker entrypoints with disposable fixtures; \"\r\n                         \"no provider/API call, no repository mutation, no semantic-authority or agent-comprehension claim; \"\r\n                         \"does not close the tranche.\",\r\n    }\r\n    rp = PROBE_DIR / \"receipt.json\"\r\n    rp.write_text(json.dumps(receipt, indent=2, ensure_ascii=False), encoding=\"utf-8\")\r\n    (PROBE_DIR / \"receipt.sha256.txt\").write_text(f\"{sha256_file(rp)}  receipt.json\\n{sha256_bytes(oracle_bytes)}  ncr_alignment_probe.py\\n\", encoding=\"utf-8\")\r\n    print(f\"assertions={len(RESULTS)} passed={passed} failed={len(failed)}\")\r\n    for r in failed[:40]:\r\n        print(\"FAIL\", r[\"id\"], \"::\", r[\"detail\"][:300])\r\n    print(\"fuzz\", fuzz_stats, \"mismatches\", len(fuzz_mis))\r\n    print(\"legacy-diff\", leg_n, \"diffs\", len(leg_diffs))\r\n    print(\"discriminating\", disc_orig_miss, \"/\", disc_total)\r\n    return 0 if not failed else 1\r\n\r\n\r\nif __name__ == \"__main__\":\r\n    raise SystemExit(main())\r\n",
+  "workerEvidenceSha256": "cf7cd098141aa4ae04a9c30e7f9ab27632d3cc55bcc0df52660b43d7115fbe13",
+  "workerReturnSha256": "e0e2121d863c675bcfea8df2bcbeb2e17100680a1ea024fef3199b211cfc406e",
+  "workerPreRepairOracleSourceSha256": "1f2d9f97313e7cd1f9af26c84648b91cc458e16a863c0e7a8c9ebc78de3b2c5a",
+  "workerFinalOracleWorktreeSha256": "d95a8af2d099a54b1866f8d3d78d10de1964d1f8b9c041a46e696eeedbbbf5f3",
+  "localVerification": {
+    "checks": {
+      "receipt.json": true,
+      "ncr_alignment_probe.py": true,
+      "governance/compat/check_active_session_state.py": true,
+      "governance/compat/test_check_active_session_state.py": true,
+      "governance/compat/active_session_next_move_alignment.py": true,
+      "governance/compat/test_active_session_next_move_alignment.py": true,
+      "repoHEAD": true
+    },
+    "allPinsMatch": true,
+    "observations": {
+      "wrapped_prefix_state_guidance_drift": [],
+      "canonical_state_guidance_drift_control": [
+        "CVF_SESSION_MEMORY.md Next Allowed Move NCR declaration does not match state nextAllowedMove"
+      ],
+      "wrapped_prefix_front": [
+        "CVF_SESSION_MEMORY.md Next Allowed Move requires exactly one valid NCR declaration"
+      ]
+    },
+    "disposition": "REVIEW_PENDING_EXACT_F1_F3_TEXT; no closure or source mutation",
+    "probeReceiptSha256": "02db89108e1bfeca6fa4af89895e001f78018b866be20a2d308b745d5e7c7c85"
+  },
+  "workerFastGate": {
+    "exit": 0,
+    "logSha256": "5b872fb15dcf2d60450f57743865149b040c80c948c991ff9e537b36e9f7eab5"
+  },
+  "claimBoundary": "Finite textual-consistency proof only; F1 is a known limit; no provider, runtime agent understanding, public or release-quality claim.",
+  "acceptedSourceIdentities": {
+    "governance/compat/check_active_session_state.py": {
+      "gitBlobOid": "f12c406fcd1d835fe3e5742978a6fe5bdb8bd080",
+      "gitBlobByteSha256": "92977ccf6c35e21255b18770926903f5e5a4c329a6c1bf1edec8f97481c2f36f",
+      "worktreeSha256": "d8530595346ead44f67cb18b32b6ebcf287c2b460ac68fbf16034f72034f2097",
+      "lineCount": 884
+    },
+    "governance/compat/test_check_active_session_state.py": {
+      "gitBlobOid": "a6942fa7e42927d604d506f2890ddcc2c49bf4d9",
+      "gitBlobByteSha256": "327eae2458d11ffe89b995d2f4b1973f91a8d3e034879fe920fd4913e1175cea",
+      "worktreeSha256": "4659a6e2137830216b25c45d72f69ef52db72546bd5c5ab9dd78ade11f459bc7",
+      "lineCount": 1085
+    },
+    "governance/compat/active_session_next_move_alignment.py": {
+      "gitBlobOid": "f5776f7ce8f141560774f00daf4f4ac36ede2a7a",
+      "gitBlobByteSha256": "e1f576b2dc4b99bfb946c2d29fde7200b4eee85e9969f77f1cee169036686fe4",
+      "worktreeSha256": "e1f576b2dc4b99bfb946c2d29fde7200b4eee85e9969f77f1cee169036686fe4",
+      "lineCount": 107
+    },
+    "governance/compat/test_active_session_next_move_alignment.py": {
+      "gitBlobOid": "e57d947032827e39daef185cb960348f5814becb",
+      "gitBlobByteSha256": "971cf843c3744b668212db23e80b9125c61bb3bc579438d6100c994df9439cbc",
+      "worktreeSha256": "094963b1a6f00cba0c71b7aef11564a399d928b74d4352997031ff291fe3fbc6",
+      "lineCount": 185
+    }
+  },
+  "postProbeFormattingDisposition": {
+    "path": "governance/compat/test_active_session_next_move_alignment.py",
+    "change": "remove terminal blank lines caught only after staging; 187 to 185 lines; AST identical",
+    "astComparison": "PASS",
+    "independentProbeAppliesTo": "original probed logical implementation; final file differs only by terminal blank-line removal"
+  },
+  "preCommitGate": {
+    "exit": 0,
+    "checks": 90,
+    "logSha256": "8819706ccdb649baad33ed8922fe690f7005bcde25ed2ca4fd47e2dcbb8498b2",
+    "scope": "final staged code; before terminal-blank-line wording/count metadata correction"
+  }
+}

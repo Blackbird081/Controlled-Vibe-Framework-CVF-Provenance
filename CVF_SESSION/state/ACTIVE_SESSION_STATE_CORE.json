@@ -39,9 +39,9 @@
     "baselinePath": "docs/baselines/CVF_GC018_NCR_NEXT_MOVE_ALIGNMENT_2026-10-07.md",
     "baselineSha256": "936b9f4c0483b59f202df24e8033d450a018fb652d4a9d421b1e10728fd2a155",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_NEXT_MOVE_ALIGNMENT_2026-10-07.md",
-    "workOrderSha256": "656a24515a8464acb55802117ba838dff1ae3a0e6e3c421cfe0ce147a20b54d6"
+    "workOrderSha256": "269615a0dad62a867ac4214c408d8b6e7b845c9429adc38e030321af0d657905"
   },
-  "currentAuthoritySyncReason": "Operator-admitted bounded NCR maintenance execution packet 3813c7e3b57a085444c0c39a149984166ec4a8bc; current execution authority switched to exact packet pins. NIS-T1J remains closed historical authority, not reopened. Independent reviewer manually relayed; final closure pending actual proof. Release continuity reconciles all four committed views after handoff ordering repair ff97a779a9c08dd604d6a1b04ee840c2774a3347; packet bytes and pins retained.",
+  "currentAuthoritySyncReason": "Local NCR closure dispositions F1-F3 with unchanged independent-probed source bytes; closed work-order raw-byte pin refreshed. Material parent 9f624ecbc8274907d004a2e86ae4b807d85e21f2. NIS and parked lanes preserved.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
