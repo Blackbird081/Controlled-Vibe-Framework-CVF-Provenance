@@ -1,0 +1,84 @@
+{
+  "schemaVersion": "cvf.localCandidateDependencyRepair.v1",
+  "admission": {
+    "baseHead": "91c3c5ecbd90ecfb3402c664b77cd3cff077d7f7",
+    "authority": "operator next; standing grouped Local foundation maintenance; lifecycle small-direct-task route",
+    "consumer": "existing pending public candidate preflight, called by scripts/cvf-public-sync.ps1",
+    "outcome": "relative dependency closure uses projected Git-visible candidate files, not ambient ignored files; source inspection cannot silently skip Unicode names or replace invalid bytes; proof identifies resolved revisions",
+    "scope": [
+      "scripts/check_cvf_public_sync_candidate.py",
+      "scripts/test_check_cvf_public_sync_candidate.py",
+      "docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md",
+      "docs/reviews/evidence/cvf-p02-candidate-dependency-2026-10-07.json"
+    ],
+    "requiredOutputs": [
+      "negative fixtures for ignored dependency and Unicode/source-read gaps",
+      "repair existing checker with candidate membership and strict reads",
+      "resolved HEAD/baseline identities and source-file hashes, with honest applicability",
+      "composed hermetic CLI/positive/legacy regressions and terminal evidence"
+    ],
+    "stop": "selected P02 dependency preflight repair/evidence complete; do not execute public-sync,real public clone checks,push,deployment,provider calls,policy rewrite,whole P02 closure or new gate",
+    "beforeGitBlobSha256": {
+      "scripts/check_cvf_public_sync_candidate.py": "ce6f4b16d178b4f461edd5875097adacdf112cd54a629b0ff40921cedc798c53",
+      "scripts/test_check_cvf_public_sync_candidate.py": "b2773a4552236a399627e584fb26f017cecb49177c4d20684733a2ab25f305c4"
+    }
+  },
+  "sourceWorktreeSha256": {
+    "scripts/check_cvf_public_sync_candidate.py": "a392aa61b68addc370c4f1233a4a4ef609417a6ba60071686b7c68ac62578f60",
+    "scripts/test_check_cvf_public_sync_candidate.py": "3e460bc6b01d11e5a6bce9aedac67e7d3185f61dc3fbfce101ea12917aaf7333"
+  },
+  "regressions": {
+    "red": {
+      "total": 19,
+      "failed": 12,
+      "passed": 7
+    },
+    "green": {
+      "total": 26,
+      "passed": 26,
+      "durationSeconds": 21.15
+    },
+    "surface": "real Git repositories in temporary test fixtures; no real public/provenance candidate evaluation or push",
+    "coverage": [
+      "ignored disk files cannot satisfy direct,emitted-js or directory-index import",
+      "committed Unicode importer checked against explicit earlier baseline",
+      "owned Unicode pending path preserved",
+      "invalid source UTF8 rejected",
+      "bad baseline rejected through check and CLI/exit1",
+      "resolved HEAD/baseline SHA and exact observed source-byte hashes",
+      "manifest shape rejected",
+      "seven existing ownership/residue/dependency/baseline-debt/remote tests preserved",
+      "valid direct,dotted,index and emitted-js import forms",
+      "tracked dependency remains included despite new ignore rule",
+      "real CLI PASS/exit0 versus REJECT/exit1 matches JSON"
+    ]
+  },
+  "behavior": {
+    "candidateSet": "tracked plus pending Git-visible paths, followed by existence check; ignored files alone cannot satisfy imports",
+    "gitPaths": "NUL-delimited paths, strict UTF8 decoding; no strip/quoted-name ambiguity",
+    "sourceRead": "strict UTF8; violation INVALID_SOURCE_ENCODING instead of replacing malformed bytes",
+    "baseline": "resolve once to commit SHA; use that fixed commit for debt comparison",
+    "identity": "headSha,baselineSha,sourceFileSha256; changed HEAD during inspection fails; sourceFilesChecked counts successfully decoded source files",
+    "claimLimit": "Observed source hashes and resolved refs are not an atomic snapshot,full-tree content hash,compiler/package resolution proof,or frozen candidate approval"
+  },
+  "consumerBinding": {
+    "caller": "scripts/cvf-public-sync.ps1",
+    "call": "existing checker CLI with public-root,authorized-paths-json,expected-remote,expected-branch,json; unchanged interface and exit convention",
+    "actualCallerExecution": "NOT_EXECUTED; public-sync remains parked"
+  },
+  "claimBoundary": "deterministic file-set/parser/CLI repair only; no AI/runtime governance,actual public candidate,whole P02,W05-prelive,release or deployment proof; same Local actor, no independent reviewer claim",
+  "runtimeEvidence": {
+    "p02-dependency-admission.json": {
+      "sha256": "726878453b3c44bb3433ba557132c6f4a76887c6b9336d0154b79cd1836a2b3f"
+    },
+    "p02-dependency-red.log": {
+      "sha256": "a8f8da06443ca984ae8105568032f573bfc0b342c5fd842307d553f3a523efa9"
+    },
+    "p02-dependency-green.log": {
+      "sha256": "22fa24cbef27cf8543abc6cee7b9a30407db5c2a47ef224e0cee88abec250067"
+    },
+    "p02-dependency-final-tests.log": {
+      "sha256": "39e98ef8775553378524190ae215105a2f8653706a30e34ead793bebe49a0f98"
+    }
+  }
+}

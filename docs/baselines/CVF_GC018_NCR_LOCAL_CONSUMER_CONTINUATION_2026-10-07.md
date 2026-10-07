@@ -16,7 +16,64 @@ it adds no new program, work order, schema, checker or pilot. Predecessor is
 docs/baselines/CVF_GC018_NCR_CONSOLIDATED_LOCAL_FOUNDATION_2026-10-06.md,
 which has957 lines; use a continuation rather than grow it toward the hard limit.
 
-## Current Route Canary Diagnosis And Bounded Repair - 2026-10-07
+## Current P02 Candidate Dependency Repair - 2026-10-07
+
+Consumer: existing pending candidate preflight in scripts/check_cvf_public_sync_candidate.py,
+called by scripts/cvf-public-sync.ps1. Finite outcome: relative dependency closure
+against Git-visible candidate membership, strict source inspection and revision-bound
+observations. Local owns implementation/review/disposition under operator next and
+standing grouped Local foundation maintenance; lifecycle direct-task route.
+Clean base 91c3c5ecbd90ecfb3402c664b77cd3cff077d7f7. Exact four paths and terminal outputs recorded before edits;
+pre-implementation gate PASS. No actual public clone or public-sync invocation.
+
+### Source Verification Block
+
+| Source | Disposition | Verified gap / boundary |
+|---|---|---|
+| scripts/check_cvf_public_sync_candidate.py | ACCEPT | ambient ignored file can close relative dependency; Git quoted names skipped; malformed UTF8 replaced; baseline/HEAD identities absent |
+| scripts/test_check_cvf_public_sync_candidate.py | ACCEPT | isolated real-Git negative/positive fixtures bind file-set,source-read,metadata and CLI behavior |
+| scripts/cvf-public-sync.ps1 | ACCEPT | existing CLI caller, authorized-path manifest and nonzero-exit stop; read only, not executed |
+| docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md | ACCEPT | existing P02/W03-A candidate/projection proof owner; this repair is one dependency slice, not whole P02 closure |
+
+### Decision / Evidence / Terminal Disposition
+
+Relative import candidates must be both present on disk and members of the
+Git-visible set (tracked plus pending paths). Ignored local files cannot supply
+missing projected modules. Preserve direct-extension,dotted basename,index and
+emitted-js TypeScript resolution plus inherited-debt classification.
+NUL-delimited Git output preserves Unicode and whitespace in names; source bytes
+decode strictly. Malformed source returns INVALID_SOURCE_ENCODING, not replacement
+text. Authorized manifest must be a string array; bad baseline cannot silently PASS.
+Resolve HEAD and baseline commit SHA, use fixed baseline SHA for debt comparison,
+emit headSha/baselineSha and observed sourceFileSha256. Changed HEAD fails closed.
+sourceFilesChecked counts decoded source files; considered/deleted paths remain
+separate. These are source observations, not an atomic frozen candidate or full
+artifact content hash, package/compiler proof, permission or approval.
+
+Red19 fixtures:12 failed/seven passed. Failures cover missing behaviors, not12
+independent causal defects. Green26/26 PASS in disposable Git repos, including
+the seven existing controls,valid import forms,tracked-under-ignore case and
+actual CLI PASS/exit0,REJECT/exit1,ERROR/exit1 checks.
+No provider call, Docker rebuild, public root operation, push or release bundle.
+Deterministic path/parser/CLI tests assert no AI or live-governance behavior.
+Durable proof: docs/reviews/evidence/cvf-p02-candidate-dependency-2026-10-07.json.
+Existing CLI arguments/status/exit semantics and public-sync wiring are retained.
+
+Terminal: P02_SELECTED_DEPENDENCY_REPAIR_VERIFIED_BOUNDED. Required outputs
+delivered together; no successor inferred from unrelated endpoints. Full P02
+committed-tree/policy/mapped-overlay/artifact/profile proof still belongs to its
+existing event-specific gate when an actual candidate is authorized. No public
+approval, W05 pre-live, R2/R3 release or P11 promotion from this Local repair.
+
+## Current Runtime Freshness Verification
+
+Local source read at clean base 91c3c5ecbd90ecfb3402c664b77cd3cff077d7f7 and changed checker/test bytes;
+current assertions apply only to the selected functions and observed fixtures.
+Companion records before Git-blob and after worktree hashes separately.
+Existing public-sync caller reviewed for unchanged CLI binding; no executed
+public projection or corpus-wide completeness claim. Prior bounded evidence is consumed.
+
+## Historical Route Canary Diagnosis And Bounded Repair - 2026-10-07
 
 Consumer: Local operator of the existing Alibaba route canary. Finite outcome:
 source diagnosis of saved six failures, concrete scalar/model recognition repair,
@@ -148,6 +205,9 @@ send/B2, S05/C1, P11, CCMA, public/deploy remain unchanged/parked.
 
 | Finding | Defect class | Learning lane | Disposition | Control action |
 |---|---|---|---|---|
+| Ambient ignored file closes a projected dependency | MACHINE_GATE_GAP | GOVERNANCE_CONTROL_PLANE | RULE_EXISTS | existing checker uses Git-visible membership; no new gate or public authorization |
+| Quoted paths and replacement decoding hide inspection gaps | RUNTIME_SIGNAL_GAP | RUNTIME_BEHAVIOR_LEARNING | RULE_EXISTS | NUL paths, strict bytes and actual decoded count |
+| Candidate observations lack resolved revision/source binding | ORCHESTRATOR_PACKET_GAP | GOVERNANCE_CONTROL_PLANE | RULE_EXISTS | resolve refs and report exact observed source hashes; no atomic snapshot claim |
 | Decimal Qwen3 model misses thinking control | RUNTIME_SIGNAL_GAP | RUNTIME_BEHAVIOR_LEARNING | RULE_EXISTS | repair existing adapter recognition, preserve model mode intent; no historical timeout causality claim |
 | Array-valued live fixture violates scalar contract | WORKER_EXECUTION_ERROR | RUNTIME_BEHAVIOR_LEARNING | RULE_EXISTS | fix fixture and assert shape before network; retain API validator |
 | Stale process key hides the intended local source | RUNTIME_SIGNAL_GAP | RUNTIME_BEHAVIOR_LEARNING | RULE_EXISTS | explicit source selector and secret-safe comparison; no precedence/config rewrite |
@@ -157,14 +217,14 @@ send/B2, S05/C1, P11, CCMA, public/deploy remain unchanged/parked.
 
 ## Epistemic Process Block
 
-Expected Result / Prediction: scalar fixture passes shape validation and decimal
-model request receives intended thinking flag; targeted live results remain honest.
-Evidence Comparison: red5 failures; green61 adapter tests, typecheck and lint PASS;
-two-case live process exit1, selectedPassed=False.
-Contradiction Or Gap Disposition: old timeout cause remains unproved; retain safe
-current wait evidence without relabeling historical FAIL or relaxing deadlines.
-Claim Update: concrete source repairs verified; only selected observed live
-results are supported. Full governance/release/W05 pre-live remain unproved.
+Expected Result / Prediction: ignored disk modules cannot close candidate imports;
+Unicode paths inspected,invalid source bytes/baseline rejected,proof refs resolved.
+Evidence Comparison: red19 tests with12 failures; final26/26 isolated Git fixtures
+PASS, including prior controls and CLI bad-baseline ERROR/exit1.
+Contradiction Or Gap Disposition: selected source gaps repaired; full artifact,
+committed-tree/policy/mapped-overlay and live/public effect proof remain separate.
+Claim Update: deterministic candidate-dependency/parser repair verified bounded;
+no entire P02, actual public projection, live governance or release claim.
 
 ## Historical Memory Repair Scope / Target / Owner Boundary
 
@@ -193,7 +253,7 @@ valid text/content sanitization, numeric domains and downstream policy behavior.
 No new numeric ranges, store access, raw-memory release or reinjection authority.
 Invariants retained: rawMemoryReleased=false; canReinject=false.
 
-## Current Runtime Freshness Verification
+## Historical Memory Runtime Freshness Verification
 
 On2026-10-07 Local read validateBody and buildMemoryRuntimeReadout at the stated
 base plus the exact changed source. Fourteen red requests and final scoped
@@ -210,7 +270,7 @@ regressions bind the defect/repair to this consumer; no upstream absence claim.
 | Matching local-view guard | N/A with reason: no external input; existing route/test consumer |
 | Owner surface | existing NCR P06 memory readout route and baseline continuation |
 | Disposition | LOCAL_SOURCE_REPAIR_ONLY |
-| Claim boundary | source repairs and two selected output results only; no full canary or live governance/release proof |
+| Claim boundary | deterministic dependency/parser/CLI repair only; no full P02 or live/public/release proof |
 
 Exact material manifest: the two route/source test files named above, this
 continuation and the predecessor's continuation pointer. No other product path.
@@ -255,7 +315,7 @@ The binding preserves the existing method; no remote agent or external intake.
 
 | Field | Value |
 |---|---|
-| applicableCheckersRead | governance/compat/check_epistemic_process_packet.py; governance/compat/check_finding_to_governance_learning.py; governance/compat/check_markdown_structural_completeness.py; governance/compat/check_governed_artifact_checker_read_ahead.py; governance/compat/check_agent_packet_authority_and_encoding.py; governance/compat/check_agent_operation_trace.py; governance/compat/check_adif_defect_registry_disclosure.py; governance/compat/check_public_export_disposition.py; governance/compat/check_core_guard_self_protection.py |
+| applicableCheckersRead | governance/compat/check_epistemic_process_packet.py; governance/compat/check_finding_to_governance_learning.py; governance/compat/check_markdown_structural_completeness.py; governance/compat/check_governed_artifact_checker_read_ahead.py; governance/compat/check_agent_packet_authority_and_encoding.py; governance/compat/check_agent_operation_trace.py; governance/compat/check_adif_defect_registry_disclosure.py; governance/compat/check_public_export_disposition.py; governance/compat/check_core_guard_self_protection.py; governance/compat/check_corpus_completeness_report_integrity.py |
 | literalTokensReviewed | Source/Decision/Evidence/Claim Boundary; read-ahead fields; trace labels; Resolver query; Returned defects; Public Export Disposition |
 | additionalCheckersRead | governance/compat/check_work_order_dispatch_quality.py; governance/compat/check_external_knowledge_intake_routing.py; governance/compat/check_raw_memory_release_invariant.py |
 | gateRunPurpose | Confirm authored bounded scope and evidence; not first discovery of literals |
@@ -271,22 +331,22 @@ Returned defects: NONE_RETURNED. Zero candidates and no truncation.
 
 | Field | Evidence |
 |---|---|
-| Actor | Local canary source-diagnosis maintainer and evidence recorder |
-| Provider or surface | private repository and Alibaba only; no delegation |
-| Session or invocation | canary-route-diagnosis-20261007 |
+| Actor | Local candidate-dependency maintainer and evidence recorder |
+| Provider or surface | private repository and disposable synthetic Git fixtures; no provider or delegation |
+| Session or invocation | p02-candidate-dependency-20261007 |
 | Working directory | repository root |
-| Command or tool surface | 61 adapter tests; tsc/lint; two selected Alibaba route cases with caller grant and safe timing |
-| Target paths | EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/ai/providers.ts; EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/ai/providers.test.ts; EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.front-door-rewrite.alibaba.live.test.ts; docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md; docs/reviews/evidence/cvf-canary-route-diagnosis-2026-10-07.json |
-| Allowed scope source | operator next and standing grouped Local/Alibaba-only test authority; direct-task admission |
-| Before status evidence | clean f1357757bd8852f102f5dec32381778346da2d4b |
-| After status evidence | exact five material paths; no validator,timeout,policy,credential file or closed authority change |
+| Command or tool surface | pytest26 isolated Git fixtures, checker CLI and source verification |
+| Target paths | scripts/check_cvf_public_sync_candidate.py; scripts/test_check_cvf_public_sync_candidate.py; docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md; docs/reviews/evidence/cvf-p02-candidate-dependency-2026-10-07.json |
+| Allowed scope source | operator next and standing grouped Local foundation maintenance; direct-task admission |
+| Before status evidence | clean 91c3c5ecbd90ecfb3402c664b77cd3cff077d7f7 |
+| After status evidence | exact four material paths; no actual public root,policy,core guard,credential or parked-lane change |
 | Diff evidence | staged manifest and companion source/result hashes |
-| Approval boundary | synthetic test/tool repair only; no live pilot/real-data/public/deploy |
-| Claim boundary | source repairs and two selected output results only; no full canary or live governance/release proof |
+| Approval boundary | synthetic fixtures and private Local maintenance only; public effects parked |
+| Claim boundary | deterministic dependency/parser/CLI repair only; no full P02 or live/public/release proof |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | canary-route-diagnosis-20261007 |
-| Expected manifest | EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/ai/providers.ts; EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/ai/providers.test.ts; EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.front-door-rewrite.alibaba.live.test.ts; docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md; docs/reviews/evidence/cvf-canary-route-diagnosis-2026-10-07.json |
-| Actual changed set | EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/ai/providers.ts; EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/ai/providers.test.ts; EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.front-door-rewrite.alibaba.live.test.ts; docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md; docs/reviews/evidence/cvf-canary-route-diagnosis-2026-10-07.json |
+| Invocation ID | p02-candidate-dependency-20261007 |
+| Expected manifest | scripts/check_cvf_public_sync_candidate.py; scripts/test_check_cvf_public_sync_candidate.py; docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md; docs/reviews/evidence/cvf-p02-candidate-dependency-2026-10-07.json |
+| Actual changed set | scripts/check_cvf_public_sync_candidate.py; scripts/test_check_cvf_public_sync_candidate.py; docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md; docs/reviews/evidence/cvf-p02-candidate-dependency-2026-10-07.json |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |
 
@@ -449,11 +509,16 @@ No endpoint-hardening or reopened alignment successor is selected. Next Local
 work selection must identify its consumer, required outputs, admitted authority
 and proof gap; data/effect/browser/P11/public decisions remain separate.
 
+## Corpus Completeness And Report Integrity
+
+- Corpus verdict: NOT_APPLICABLE_WITH_REASON - targeted checker/caller/test inspection and temporary
+fixtures only; no complete inventory,corpus scan or all-files-read claim.
+
 ## Claim Boundary
 
-Local consumer/tool source controls and bounded Alibaba transport only. Live
-route canary NOT_PASSED; no full roadmap, live governance, corpus scan,
-release, acceptance, public or deployment claim. Predecessor evidence unchanged.
+Deterministic candidate dependency/parser/CLI source repair only. Full P02,
+actual public projection, AI/runtime governance, release, W05-prelive,
+acceptance and deployment remain unproved. Prior evidence is unchanged.
 
 ## Public Export Disposition
 
