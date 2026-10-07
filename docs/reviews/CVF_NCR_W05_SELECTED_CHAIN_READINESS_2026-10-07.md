@@ -1,21 +1,24 @@
 # NCR W05 Selected HTML Chain Readiness
 
 Memory class: FULL_RECORD
-Status: LOCAL_CHAIN_RECONCILED_BOUNDED
+Status: LOCAL_CURRENT_ROUTE_PROOF_RECORDED_BOUNDED
 docType: review
 Date: 2026-10-07
 rawMemoryReleased=false
 providerExecutionAuthority: FORBIDDEN
+Current boundary: no further provider execution from this completed record; the
+bounded direct-task Alibaba calls below used the operator standing authorization.
 
 ## Purpose
 
-Deliver one finite readiness disposition for the selected HTML review-packet
+Deliver one finite readiness disposition and its later bounded synthetic proof
+for the selected HTML review-packet
 chain. Receiving consumer: Local developer/operator continuing NCR from Work
 Transfer, not a general endpoint-hardening campaign. Required outputs are the
 source/evidence binding, stage disposition, dependent checkpoint grouping and
 terminal decision in this record plus its JSON companion.
 
-## Scope / Methodology
+## Historical Source-Only Scope / Methodology
 
 Base 9ca7c04827bcee6aa907cdf8efff417932771ffd; clean startup. Local owns this
 internal source/evidence reconciliation. Apply the committed batching correction
@@ -109,7 +112,7 @@ General outcome automation in the shared learning remains NOT_IMPLEMENTED; NCR
 lexical alignment is accepted bounded with its recorded F1 known limit. This package
 shows application of finite outcome selection, not machine-enforced agent behavior.
 
-## Current Route Proof Plan - 2026-10-07
+## Historical Route Proof Plan Snapshot - 2026-10-07
 
 Status: SOURCE_BOUND_PROOF_PLAN_PREPARED_NOT_RELEASED.
 Local role: source verifier/planner; phase: internal source-only admission planning;
@@ -191,24 +194,106 @@ artifact acceptance remain separate checkpoints. Send/B2, S05/C1, P11, CCMA,
 public and deployment lanes remain parked. Full outcome automation is unproved;
 NCR lexical alignment alone was accepted bounded with the recorded F1 limit.
 
+## Current Bounded Route Execution - 2026-10-07
+
+Status: LOCAL_CURRENT_ROUTE_PROOF_RECORDED_BOUNDED. Consumer: receiving Local
+developer/operator. This is the terminal result of the prepared five-case proof,
+not another planning-only step. Earlier source-only and NOT_RELEASED descriptions
+are preserved as snapshots; the current execution disposition is this section.
+
+### Admission, scope and source identity
+
+Operator next and standing grouped isolated-test/Alibaba authorization were
+resolved under the lifecycle small-direct-task route, using this existing owner
+rather than reopening the closed NCR alignment work order. That work order and
+its provider prohibition remain unchanged. Pre-execution admission was recorded
+in the ignored runtime receipt before effects, with source pins, dependency/image
+identity, required outputs, exact two material paths and terminal stop. The
+pre-implementation autorun gate passed at execution base 0d92eb76cbb708f4aa37a01343573a3b8468a06b.
+The admission, raw result, provider evidence and diagnostics are embedded with
+their original-byte SHA-256 identities in the existing JSON companion.
+
+One existing scripts/probe_cvf_q001_synthetic_system_chain.py run used Docker
+image sha256:a0725d62d5cfa8fc47b5e30be04bc08ea714a9cdd72c259595526f691db95294,
+with current staged engine source read-only and a fresh disposable SQLite store.
+Installed Web dependencies were shared through the existing junction; package
+lock and installed Next/dependency lock identities were recorded. No install,
+build or pull occurred. The Web harness ran locally; this was not a fully
+containerized Web/browser test. Source staging copies Git-visible worktree bytes,
+not Git blob bytes: route.ts CRLF differs from its LF blob. The staged hashes were
+joined to actual worktree bytes, retaining both identities rather than hiding
+the difference. The runner's file count is staging metadata, not a corpus scan.
+
+### Results and required outputs
+
+| Case | Observed result | Scope |
+|---|---|---|
+| W05-P1 | PRESENT receipt matched exact request ID and SQLite block; DRAFT_UNACCEPTED retained | current synthetic signed export seam |
+| W05-P2 | same exact-ID/count/tip across engine restart | same disposable single-host store |
+| W05-P3 | INVALID_RESPONSE and UNAVAILABLE distinct | no automatic retry or browser claim |
+| W05-P4 | Web TIMED_OUT but exact-ID lookup FOUND the committed request; safeToRetry=false | loss after commit, not backup/restore proof |
+| W05-P5 | wrong ID and wrong store absent; forwarded engine calls exactly two | no inference that original request did not execute |
+
+Runner exit: 0, including its owned shutdown/junction/temp cleanup. Follow-up
+observation found none of the recorded process IDs or their children alive and
+no running container using the proof image. This is owned cleanup evidence,
+not an assertion about historical ignored runtime residues. The required source,
+dependency/backend identities, joined case evidence, cleanup and terminal Local
+disposition are all present in the companion. Existing B1 and recovery evidence
+remain separate; no product edits or duplicate historical suites were selected.
+
+### Separate real-provider observation
+
+One receiving-agent ambiguity scenario used Alibaba qwen3.8-27b. The first
+request returned HTTP 401. Secret-safe diagnostic preceded the single rerun:
+the process key differed from the matching ALIBABA_API_KEY/DASHSCOPE_API_KEY
+aliases in existing Web .env.local. The corrected invocation used those aliases
+without changing environment files or the tracked resolver; HTTP 200 followed
+on the same canonical international endpoint. Quota ledger records the model
+expiry as 2026-11-16; this is not a model selection or default recommendation.
+
+The agent returned retryAuthorized=false and artifactApproved=false, retaining
+the two tested Boolean limits. Its nextAction said no further action without
+explicit user approval, which is broader than the evidence warrants. Preserve
+this observation: no universal action-readiness or agent-comprehension PASS.
+This real-provider sample is distinct from the process/store runner. Neither
+their combination nor the API success proves live end-to-end AI governance.
+No release-quality claim is made; the canonical release bundle was not run.
+
+### Terminal disposition and retained checkpoints
+
+The bounded current synthetic export/receipt/SQLite proof is delivered, with all
+five runner assertions passing. Same Local actor consumed the runner results;
+there is no independent-oracle/reviewer claim. W05 pre-live remains NOT_CLOSED:
+Work Transfer browser interaction, live AI governance, durable artifact approval,
+real-data operational acceptance and R2/R3 proof are separate unmet boundaries.
+No new product defect was identified by these five cases. The credential-source
+diagnostic and overbroad agent wording are retained within existing owners; no
+new checker, schema, endpoint campaign or pilot follows. Stop this selected
+proof package here and continue the wider backlog by a distinct admitted
+consumer/outcome. Send/B2, S05/C1, P11, CCMA, public/deploy remain parked.
+
 ## Epistemic Process Block
 
 | Field | Current planning evidence |
 |---|---|
-| Expected Result | unchanged pins since the prior readiness snapshot; integrated current-route proof still absent |
-| Evidence Comparison | Git-byte comparison matched eight source and five accepted-evidence pins; existing runner and test pinned separately |
-| Contradiction Or Gap Disposition | no new byte contradiction; four historical-run source changes retain delta qualification; current execution gap is not closed by planning |
-| Claim Update | finite source-bound proof plan prepared; NOT_EXECUTED and NOT_RELEASED; no runtime or W05 pre-live PASS |
+| Expected Result | five current synthetic route assertions pass; receipts remain draft-only and response loss cannot authorize retry |
+| Evidence Comparison | unchanged Git pins; staged worktree identities qualified; Docker runner exit 0; corrected Alibaba HTTP 200 retains two tested limits |
+| Contradiction Or Gap Disposition | initial provider 401 diagnosed before rerun; overbroad approval wording retained; current synthetic seam proved, full browser/live AI and operational acceptance still absent |
+| Claim Update | bounded current synthetic seam recorded; no independent review, full-route live AI, release-quality or W05 pre-live PASS |
 
 ## Finding-To-Governance Learning Disposition
 
 | Finding | Defect class | Learning lane | Disposition | Next control action |
 |---|---|---|---|---|
 | Component and historic chain proof could be over-composed into current pre-live readiness | RUNTIME_SIGNAL_GAP | GOVERNANCE_CONTROL_PLANE | RULE_EXISTS | preserve independent evidence classes and current-byte qualification; no new gate |
+| Credential resolution can select a stale process key | RUNTIME_SIGNAL_GAP | RUNTIME_BEHAVIOR_LEARNING | RULE_EXISTS | use existing secret-safe diagnostic and verified source for this bounded invocation; no tracked resolver change |
+| Agent can retain Boolean limits while over-parking allowed continuation | RUNTIME_SIGNAL_GAP | PROVIDER_OUTPUT_LEARNING | RULE_EXISTS | preserve action-readiness claim boundary; no exporter expansion or new checker |
 | Patch/commit completion could replace the selected work outcome | ORCHESTRATOR_PACKET_GAP | GOVERNANCE_CONTROL_PLANE | RULE_EXISTS | required outputs joined above; shared learning candidates stay unimplemented |
 
-Runtime/provider/cost lane: N/A_WITH_REASON - historical observations consumed;
-no new runtime/provider/cost learning or measurement in this reconciliation.
+Runtime/provider/cost lane: current bounded synthetic and Alibaba observations
+recorded in the companion, including usage/latency and credential-source diagnostic.
+No release certification, quota benchmark or model ranking claim.
 
 ## Checker Source Read-Ahead Block
 
@@ -228,20 +313,20 @@ Returned defects: zero; totalCandidates=0; truncated=false.
 
 | Field | Evidence |
 |---|---|
-| Actor | Local source verifier/planner |
-| Provider or surface | private repository tools; no provider call or delegation |
-| Session or invocation | ncr-w05-proof-plan-20261007 |
+| Actor | Local direct-task verifier and evidence recorder |
+| Provider or surface | private repository; local Web and Docker engine; Alibaba only |
+| Session or invocation | ncr-w05-current-route-20261007 |
 | Working directory | repository root |
-| Command or tool surface | targeted source and owner reads; exact Git-byte comparisons; two-path documentation writes |
+| Command or tool surface | source/dependency pins; pre-implementation gate; existing Docker runner; bounded real Alibaba probe; exact evidence writes |
 | Target paths | docs/reviews/CVF_NCR_W05_SELECTED_CHAIN_READINESS_2026-10-07.md; docs/reviews/evidence/cvf-ncr-w05-chain-reconciliation-2026-10-07.json |
-| Allowed scope source | operator next and active source-bound receiving-work preparation instruction |
-| Before status evidence | clean 5fc724c8a659f9da483ad250690faa86c921057b |
-| After status evidence | exact two material paths; dedicated continuity follows |
-| Diff evidence | companion current pins and exact staged manifest |
-| Approval boundary | source-only plan; no execution/provider/real-data/pilot/public/deploy admission |
-| Claim boundary | proof recipe prepared, no current runtime PASS or W05 closure |
+| Allowed scope source | operator next, standing grouped isolated testing and Alibaba authorization; lifecycle small-direct-task route |
+| Before status evidence | clean 0d92eb76cbb708f4aa37a01343573a3b8468a06b |
+| After status evidence | two evidence/documentation paths; product source and closed alignment authority unchanged |
+| Diff evidence | companion embeds admission/results/diagnostics and raw hashes; exact staged manifest |
+| Approval boundary | bounded synthetic/local proof only; no real data/pilot/browser/public/deploy |
+| Claim boundary | five current synthetic assertions and two provider Boolean observations; no independent reviewer or release-quality proof |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-w05-proof-plan-20261007 |
+| Invocation ID | ncr-w05-current-route-20261007 |
 | Expected manifest | docs/reviews/CVF_NCR_W05_SELECTED_CHAIN_READINESS_2026-10-07.md; docs/reviews/evidence/cvf-ncr-w05-chain-reconciliation-2026-10-07.json |
 | Actual changed set | docs/reviews/CVF_NCR_W05_SELECTED_CHAIN_READINESS_2026-10-07.md; docs/reviews/evidence/cvf-ncr-w05-chain-reconciliation-2026-10-07.json |
 | Manifest delta | MATCH |
@@ -258,7 +343,7 @@ Returned defects: zero; totalCandidates=0; truncated=false.
 | Matching local-view guard | N/A with reason: internal source and evidence only |
 | Owner surface | existing NCR continuation and W05 roadmap row |
 | Disposition | bounded Local readiness disposition |
-| Claim boundary | proof recipe prepared, no current runtime PASS or W05 closure |
+| Claim boundary | five current synthetic assertions and two provider Boolean observations; no independent reviewer or release-quality proof |
 
 ## External/Local Coordination Binding
 
@@ -286,6 +371,7 @@ no public export, push or deploy; public changes use the separate public-sync cl
 
 ## Claim Boundary
 
-No current integrated runtime, final acceptance, release-quality governance,
-browser, live pilot, real-data cutover, public or deployment claim. Historical
-receipts remain bounded; current NIS authority and parked checkpoints unchanged.
+Current synthetic export/receipt/SQLite evidence only; no full Work Transfer
+browser interaction, live end-to-end AI governance, independent review, final
+acceptance, release-quality, pilot, real-data cutover, public or deployment claim.
+Historical receipts remain bounded; closed authority and parked lanes unchanged.
