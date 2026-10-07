@@ -130,6 +130,84 @@ upgrade package; do not replace it with an open-ended governance-hardening campa
 | Return delivery | Git discovery available after commit; independent receiving-agent receipt NOT_RETURNED |
 | Source-project application | written next move applied in prior continuity; actual outcome-bound execution NOT_APPLIED_WITH_PROOF |
 
+## Current Local Maintenance Fulfillment Route - 2026-10-07
+
+Consumer: Local lead selecting multi-step maintenance and reviewer receiving the
+return. Outcome: an explicit reusable admission-to-terminal route, its source-bound
+proof limits and a practical routing decision. Operator next admits existing-owner
+source-only design and five synthetic structural cases, not a Core gate activation.
+Clean base 4455b25c51693ef4c03df70110843522a8f445e1; exact learning/continuation/evidence three-path manifest fixed
+before effects. Pre-implementation gate PASS. No new schema, checker or pilot.
+
+### Source Verification Block
+
+| Source | Disposition | Current inspected binding |
+|---|---|---|
+| docs/reference/work_order_template/CVF_WORK_ORDER_ACCEPTANCE_LEDGER_ADDENDUM.md | ACCEPT | committed dispatcher requirements, returned IDs, Git artifact join and mandatory-row reducer; semantic correctness excluded |
+| governance/compat/check_work_order_acceptance_ledger.py | ACCEPT | main reads packet, observes Git diff/untracked paths and calls validate_return; proofCatalog locators are not read as test results |
+| governance/compat/run_worker_return_fast_gate.py | ACCEPT | build_commands adds acceptance only with active_work_order; bare invocation has no acceptance command |
+| docs/reference/CVF_GOVERNED_WORK_LIFECYCLE_AND_DESIGN_CONTROL_STANDARD_2026-06-11.md | ACCEPT | executable order uses existing ledger; small direct-task disposition records required outputs in existing owner |
+
+### Bounded Structural Proof And Information Gain
+
+Durable proof: docs/reviews/evidence/cvf-local-outcome-route-2026-10-07.json.
+Five fixed cases use a disposable real Git repository, a committed dispatcher
+ledger, one changed product artifact and the actual checker main/enforce entrypoint.
+Only module ROOT is redirected to the isolated repo; Git observation is not mocked
+or replaced with a supplied path set. No actual CVF order is dispatched or reopened.
+
+| Case | Expected / observed checker result | Review consequence |
+|---|---|---|
+| exact IDs and Git artifact, proof file says FAIL at unrelated revision | structural exit0 / exit0 | reviewer must reject completion evidence; checker does not read proof contents |
+| missing required result row | exit1 / exit1 | cannot complete |
+| extra Git artifact unclaimed | exit1 / exit1 | reconcile exact artifact union |
+| mandatory BLOCKED with COMPLETE_PENDING_REVIEW | exit1 / exit1 | terminal contradiction rejected |
+| required proof ID missing | exit1 / exit1 | bind required proof IDs |
+
+Actual command assembly is also inspected: explicit active-work-order has one
+acceptance command; bare fast gate has none. The existing closed NCR work order
+is read only to assemble that command; no command in the assembled list executes.
+The initial fixture assembly failed on an invented nonexistent path. Corrected
+the fixture binding, retained that qualification and reran the five disposable
+cases once; final5/5 expectations matched. This was a harness defect, not a
+product regression. No old six-unit suite or broad product test was repeated.
+
+Information gain beyond the earlier injected-path fixtures: real Git artifact
+observation reaches the actual entrypoint, and the explicit/bare gate binding is
+confirmed. This is structural packet proof, not live AI governance or evidence
+that an agent will continue without prompts. It does not execute a full worker
+admission/return route, prove semantic acceptance or universal maintenance coverage.
+
+### Local Decision / Required Output Disposition
+
+REUSE_EXPLICIT_EXISTING_ROUTE. For the next eligible multi-step implementation,
+use one committed existing-format work order covering the receiving outcome,
+finite manifest, proof catalog, return path and required terminal outputs together.
+Invoke the existing fast gate with --active-work-order, then verify actual proof
+content, execution revision, results and claim scope before Local acceptance.
+A bare fast gate or successful commit must not be described as ledger fulfillment.
+Do not create a new ledger, general-purpose reducer or tool/reply interceptor.
+
+Small source-only direct tasks retain the lifecycle's existing owner/output route;
+they are not falsely classified as machine-reduced executable returns. Broadening
+automatic coverage to them remains NOT_IMPLEMENTED and is not activated here.
+There is no defect requiring this checker to read arbitrary proof locators: the
+addendum explicitly assigns semantic correctness outside its structural claim.
+
+Required outputs delivered: source/entrypoint observations in the companion;
+bound/unbound route and proof-content limits above; Local disposition and bounded
+continuation here. Terminal: EXISTING_LOCAL_OUTCOME_ROUTE_VERIFIED_STRUCTURALLY_BOUNDED.
+This closes this design/proof package only. Do not replay it or invent a successor
+to keep patching. Actual implementation must be selected by a concrete receiving
+outcome, not an open-ended endpoint scan. Browser/data/public/P11/send stay gated.
+
+## Current Runtime Freshness Verification
+
+Selected source Git-byte identities at 4455b25c51693ef4c03df70110843522a8f445e1 are recorded in the companion.
+Five isolated Git cases call the existing main entrypoint; command assembly is
+inspected without executing a real order. Product/provider/browser runtime is not
+executed. Current findings concern these packet entrypoints only.
+
 ## Historical Existing-Owner Design Disposition - 2026-10-07
 
 Design base e5cb97872e0e5305b25fb99bf0a9c13d83b27a45, clean worktree. Operator
@@ -352,7 +430,7 @@ prompt survey. Wider upgrades require another distinct admitted outcome.
 W05 pre-live, real-data/browser, send/B2, S05/C1, P11, CCMA, public/deploy remain
 unchanged and parked where already declared.
 
-## Current Runtime Freshness Verification
+## Historical Runtime Freshness Verification
 
 N/A_WITH_REASON - targeted control-source assessment at the recorded revision,
 not runtime absence or provider governance proof. Probe hashes bind exact bytes.
@@ -370,15 +448,15 @@ closure remain unproved.
 
 ## Epistemic Process Block
 
-Expected Result / Prediction: both policy conditions preserve the allowed next
-action and the separate held effect without whole-project approval.
-Evidence Comparison: four provider calls matched all four fixed case rows;
-canonical-only and quick-read conditions both passed.
-Contradiction Or Gap Disposition: no measured improvement or new rule gap;
-retain the orientation access aid, explicit-choice probe limits and unproved
-real tool/agent behavior rather than creating another enforcement mechanism.
-Claim Update: reusable reading cue and bounded decision evidence delivered;
-universal application, free-form robustness and machine enforcement unproved.
+Expected Result / Prediction: real Git artifacts feed the existing join; missing
+rows/proofs, unclaimed artifacts and contradictory mandatory status fail closed.
+Evidence Comparison: five entrypoint cases match expectations; explicit gate
+assembly binds acceptance, bare invocation does not; stale failed proof accepts
+structurally because proof content is outside the declared checker contract.
+Contradiction Or Gap Disposition: fixture-only missing path corrected; reuse
+explicit binding and semantic review, no new gate or automatic coverage claim.
+Claim Update: existing Local fulfillment route verified structurally bounded;
+full worker lifecycle, live agent behavior and general automation remain unproved.
 
 ## Checker Source Read-Ahead Block
 
@@ -391,7 +469,7 @@ universal application, free-form robustness and machine enforcement unproved.
 
 ## ADIF Query
 
-Resolver query: review / reviewer / review on 2026-10-07 (reading-aid package).
+Resolver query: review / reviewer / review on 2026-10-07 (Local fulfillment route).
 Returned defects: zero; totalCandidates=0; truncated=false. No ADIF defect waiver.
 
 ## Agent Operation Trace Block
@@ -399,22 +477,22 @@ Returned defects: zero; totalCandidates=0; truncated=false. No ADIF defect waive
 
 | Field | Evidence |
 |---|---|
-| Actor | Local maintainer and bounded decision-probe recorder |
-| Provider or surface | private repository and Alibaba only; no delegation |
-| Session or invocation | action-readiness-quick-read-20261007 |
+| Actor | Local fulfillment-route designer and structural probe recorder |
+| Provider or surface | private repository and disposable Git fixtures; no provider or delegation |
+| Session or invocation | local-outcome-route-20261007 |
 | Working directory | repository root |
-| Command or tool surface | targeted canonical owner reads; pre-implementation gate; four fixed provider probes; three-path writes |
-| Target paths | docs/reference/guard_orientation/README.md; docs/reviews/learnings/CVF_OUTCOME_BOUND_CONTINUATION_LEARNING_2026-10-07.md; docs/reviews/evidence/cvf-action-readiness-quick-read-2026-10-07.json |
-| Allowed scope source | operator next and standing grouped Alibaba-only test authority; existing lifecycle small-direct-task route |
-| Before status evidence | clean d51eae22502a4bb865c036a5b750dbb93e72f214 |
-| After status evidence | three reading-aid/learning/evidence paths; product code and closed authority unchanged |
-| Diff evidence | exact staged manifest, source/prompt/script hashes and durable synthetic results |
-| Approval boundary | finite instruction-access aid/probe only; no public/deploy/real-data/pilot effects |
-| Claim boundary | small explicit-choice decision evidence; no improvement, universal behavior or enforcement claim |
+| Command or tool surface | five isolated real-Git checker entrypoint cases; bound/unbound command assembly; structural governance gates |
+| Target paths | docs/reviews/learnings/CVF_OUTCOME_BOUND_CONTINUATION_LEARNING_2026-10-07.md; docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md; docs/reviews/evidence/cvf-local-outcome-route-2026-10-07.json |
+| Allowed scope source | operator next; finite existing-owner source-only design and structural proof |
+| Before status evidence | clean 4455b25c51693ef4c03df70110843522a8f445e1 |
+| After status evidence | exact three documentation/evidence paths; no checker/product/authority activation |
+| Diff evidence | exact staged manifest; source Git-byte pins and embedded reproducible probe |
+| Approval boundary | isolated structural proof and source-only design; no actual dispatch or parked effect |
+| Claim boundary | existing route verified structurally only; no semantic/live/full lifecycle or universal automation proof |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | action-readiness-quick-read-20261007 |
-| Expected manifest | docs/reference/guard_orientation/README.md; docs/reviews/learnings/CVF_OUTCOME_BOUND_CONTINUATION_LEARNING_2026-10-07.md; docs/reviews/evidence/cvf-action-readiness-quick-read-2026-10-07.json |
-| Actual changed set | docs/reference/guard_orientation/README.md; docs/reviews/learnings/CVF_OUTCOME_BOUND_CONTINUATION_LEARNING_2026-10-07.md; docs/reviews/evidence/cvf-action-readiness-quick-read-2026-10-07.json |
+| Invocation ID | local-outcome-route-20261007 |
+| Expected manifest | docs/reviews/learnings/CVF_OUTCOME_BOUND_CONTINUATION_LEARNING_2026-10-07.md; docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md; docs/reviews/evidence/cvf-local-outcome-route-2026-10-07.json |
+| Actual changed set | docs/reviews/learnings/CVF_OUTCOME_BOUND_CONTINUATION_LEARNING_2026-10-07.md; docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md; docs/reviews/evidence/cvf-local-outcome-route-2026-10-07.json |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |
 
@@ -429,7 +507,7 @@ Returned defects: zero; totalCandidates=0; truncated=false. No ADIF defect waive
 | Matching local-view guard | N/A with reason: internal assessment only |
 | Owner surface | docs/reference/CVF_GOVERNED_WORK_LIFECYCLE_AND_DESIGN_CONTROL_STANDARD_2026-06-11.md; docs/reference/CVF_TASK_PROPORTIONAL_GOVERNANCE_ROUTING_STANDARD_2026-08-17.md |
 | Disposition | RULE_EXISTS; machine/design candidates, not implemented |
-| Claim boundary | small explicit-choice decision evidence; no improvement, universal behavior or enforcement claim |
+| Claim boundary | existing route verified structurally only; no semantic/live/full lifecycle or universal automation proof |
 
 ## External/Local Coordination Binding
 
@@ -450,6 +528,13 @@ Role=Local; phase=internal governance learning assessment; decision owner=Local.
   "parentArtifact": null
 }
 ```
+
+## Current Route Learning Disposition
+
+The explicit gate binding and semantic proof-review responsibilities already exist.
+Disposition RULE_EXISTS; lane GOVERNANCE_CONTROL_PLANE; class ORCHESTRATOR_PACKET_GAP.
+Apply them to the next eligible package rather than broaden the structural checker
+or infer general Local-maintenance automation from a bare gate.
 
 ## Public Export Disposition
 

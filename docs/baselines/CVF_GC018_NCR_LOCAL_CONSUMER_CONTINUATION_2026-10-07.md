@@ -16,7 +16,29 @@ it adds no new program, work order, schema, checker or pilot. Predecessor is
 docs/baselines/CVF_GC018_NCR_CONSOLIDATED_LOCAL_FOUNDATION_2026-10-06.md,
 which has957 lines; use a continuation rather than grow it toward the hard limit.
 
-## Current Consolidated Foundation Frontier - 2026-10-07
+## Current Local Fulfillment Route Decision - 2026-10-07
+
+Consumer: next Local lead/reviewer of eligible multi-step implementation.
+Required outputs: source-bound real-Git entrypoint observations, explicit gate
+binding and proof-content responsibility, Local routing/terminal disposition.
+All delivered together in docs/reviews/learnings/CVF_OUTCOME_BOUND_CONTINUATION_LEARNING_2026-10-07.md,
+Current Local Maintenance Fulfillment Route, and
+docs/reviews/evidence/cvf-local-outcome-route-2026-10-07.json.
+Five disposable real-Git expectations match; explicit active-work-order binds
+acceptance while bare fast gate does not. Exact proof IDs with stale FAIL content
+accept structurally; semantic review must reject completion. This is a documented
+claim boundary, not a new checker defect. No product/API/browser/Docker replay.
+
+Decision: REUSE_EXPLICIT_EXISTING_ROUTE for next eligible multi-step work with a
+committed finite work order and --active-work-order fast gate. Small direct tasks
+retain existing owner/output review. General coverage remains NOT_IMPLEMENTED;
+this source-only package activates no checker/schema or autonomous runtime.
+Do not label a commit or bare gate as outcome fulfillment. Route implementation
+by named receiving outcome, not another endpoint-hardening campaign. Closed NCR
+alignment, current grouped frontier and action-specific parked lanes stay intact.
+Terminal: EXISTING_LOCAL_OUTCOME_ROUTE_VERIFIED_STRUCTURALLY_BOUNDED.
+
+## Historical Consolidated Foundation Frontier - 2026-10-07
 
 Consumer: Local foundation work selector and resumed agent. Finite outcome:
 reconcile the selected P01-P10/W05 frontier with accepted evidence, group the
@@ -327,7 +349,7 @@ regressions bind the defect/repair to this consumer; no upstream absence claim.
 | Matching local-view guard | N/A with reason: no external input; existing route/test consumer |
 | Owner surface | existing NCR P06 memory readout route and baseline continuation |
 | Disposition | LOCAL_SOURCE_REPAIR_ONLY |
-| Claim boundary | selected frontier reconciliation only; no whole-program/runtime/release proof |
+| Claim boundary | existing route verified structurally only; no semantic/live/full lifecycle or universal automation proof |
 
 Exact material manifest: the two route/source test files named above, this
 continuation and the predecessor's continuation pointer. No other product path.
@@ -388,22 +410,22 @@ Returned defects: NONE_RETURNED. Zero candidates and no truncation.
 
 | Field | Evidence |
 |---|---|
-| Actor | Local foundation frontier reviewer and continuity steward |
-| Provider or surface | private repository; read-only browser capability probe; no provider or delegation |
-| Session or invocation | ncr-foundation-frontier-20261007 |
+| Actor | Local fulfillment-route designer and structural probe recorder |
+| Provider or surface | private repository and disposable Git fixtures; no provider or delegation |
+| Session or invocation | local-outcome-route-20261007 |
 | Working directory | repository root |
-| Command or tool surface | accepted-evidence Git-byte joins; read-only capability inventory; structural governance checks |
-| Target paths | docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md; docs/reviews/evidence/cvf-ncr-foundation-frontier-2026-10-07.json |
-| Allowed scope source | operator next and standing grouped Local foundation maintenance; direct-task admission |
-| Before status evidence | clean 6a0c5748bb2615083bb8eef7a4f868c26e473126 |
-| After status evidence | exact two documentation/evidence material paths |
-| Diff evidence | staged manifest and companion source/result hashes |
-| Approval boundary | private source-only reconciliation; action-specific effects stay parked |
-| Claim boundary | selected frontier reconciliation only; no whole-program/runtime/release proof |
+| Command or tool surface | five isolated real-Git checker entrypoint cases; bound/unbound command assembly; structural governance gates |
+| Target paths | docs/reviews/learnings/CVF_OUTCOME_BOUND_CONTINUATION_LEARNING_2026-10-07.md; docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md; docs/reviews/evidence/cvf-local-outcome-route-2026-10-07.json |
+| Allowed scope source | operator next; finite existing-owner source-only design and structural proof |
+| Before status evidence | clean 4455b25c51693ef4c03df70110843522a8f445e1 |
+| After status evidence | exact three documentation/evidence paths; no checker/product/authority activation |
+| Diff evidence | exact staged manifest; source Git-byte pins and embedded reproducible probe |
+| Approval boundary | isolated structural proof and source-only design; no actual dispatch or parked effect |
+| Claim boundary | existing route verified structurally only; no semantic/live/full lifecycle or universal automation proof |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-foundation-frontier-20261007 |
-| Expected manifest | docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md; docs/reviews/evidence/cvf-ncr-foundation-frontier-2026-10-07.json |
-| Actual changed set | docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md; docs/reviews/evidence/cvf-ncr-foundation-frontier-2026-10-07.json |
+| Invocation ID | local-outcome-route-20261007 |
+| Expected manifest | docs/reviews/learnings/CVF_OUTCOME_BOUND_CONTINUATION_LEARNING_2026-10-07.md; docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md; docs/reviews/evidence/cvf-local-outcome-route-2026-10-07.json |
+| Actual changed set | docs/reviews/learnings/CVF_OUTCOME_BOUND_CONTINUATION_LEARNING_2026-10-07.md; docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md; docs/reviews/evidence/cvf-local-outcome-route-2026-10-07.json |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |
 

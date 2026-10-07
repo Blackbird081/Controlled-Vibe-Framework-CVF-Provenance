@@ -1,0 +1,97 @@
+{
+  "admission": {
+    "baseHead": "4455b25c51693ef4c03df70110843522a8f445e1",
+    "consumer": "Local lead selecting multi-step maintenance and reviewer receiving its return",
+    "scope": [
+      "docs/reviews/learnings/CVF_OUTCOME_BOUND_CONTINUATION_LEARNING_2026-10-07.md",
+      "docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md",
+      "docs/reviews/evidence/cvf-local-outcome-route-2026-10-07.json"
+    ],
+    "requiredOutputs": [
+      "real-Git acceptance entrypoint observations",
+      "explicit bound/unbound route decision",
+      "proof-content responsibility and finite next boundary"
+    ],
+    "authority": "operator next; existing-owner source-only design and synthetic structural proof; no machine activation",
+    "stop": "five fixed structural cases, existing-owner disposition, material/continuity commits and mandatory gates; no product/API/Docker rerun"
+  },
+  "sourceGitByteSha256": {
+    "governance/compat/check_work_order_acceptance_ledger.py": "4d839dce2cfed5fbacff228b1bee36be31cefbe8595be4dbdbed2ae652e519cc",
+    "governance/compat/run_worker_return_fast_gate.py": "3e88a3e1f2873f1b724e1c296fd1628dc44ec48220f779674827ea2a51a92cd2",
+    "docs/reference/work_order_template/CVF_WORK_ORDER_ACCEPTANCE_LEDGER_ADDENDUM.md": "1a907efe91b22e70b040fb8e13b8fc5537ee718ffe6e8389969556d0ca9ccc74"
+  },
+  "probeScriptSha256": "2092b465c7d0d8ac097941d6cd57fc8cf4a4044e4aee8400cd7577d43ae96cdf",
+  "probeSource": "from pathlib import Path\nimport contextlib,hashlib,importlib.util,io,json,subprocess,sys,tempfile\nroot=Path.cwd()\nbase=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip()\nassert not subprocess.check_output(['git','status','--porcelain'],text=True).strip()\nscope=['docs/reviews/learnings/CVF_OUTCOME_BOUND_CONTINUATION_LEARNING_2026-10-07.md','docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md','docs/reviews/evidence/cvf-local-outcome-route-2026-10-07.json']\nadmission={'baseHead':base,'consumer':'Local lead selecting multi-step maintenance and reviewer receiving its return','scope':scope,'requiredOutputs':['real-Git acceptance entrypoint observations','explicit bound/unbound route decision','proof-content responsibility and finite next boundary'],'authority':'operator next; existing-owner source-only design and synthetic structural proof; no machine activation','stop':'five fixed structural cases, existing-owner disposition, material/continuity commits and mandatory gates; no product/API/Docker rerun'}\ndef dump(p,v):Path(p).write_bytes((json.dumps(v,ensure_ascii=True,indent=2)+'\\n').encode())\ndump('.cvf/runtime/local-outcome-route-admission.json',admission)\nsource=root/'governance/compat/check_work_order_acceptance_ledger.py'\nspec=importlib.util.spec_from_file_location('ledger_probe',source);m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)\nrows=[]\nwith tempfile.TemporaryDirectory(prefix='cvf-outcome-route-') as td:\n d=Path(td)\n def git(*args):return subprocess.check_output(['git',*args],cwd=d,stderr=subprocess.STDOUT,text=True).strip()\n git('init','-q');git('config','user.name','Synthetic CVF');git('config','user.email','fixture@example.invalid')\n (d/'product.txt').write_text('before\\n',encoding='utf-8')\n ledger={'schemaVersion':m.LEDGER_SCHEMA,'requirements':[{'requirementId':'OUTCOME','mandatory':True,'expectedArtifacts':['product.txt'],'requiredProofIds':['PROOF']}],'proofCatalog':[{'proofId':'PROOF','kind':'structural-test','locator':'proof.json'}]}\n wo='requiredGate: python governance/compat/run_worker_return_fast_gate.py\\n```acceptance-ledger-json\\n'+json.dumps(ledger)+'\\n```\\n'\n (d/'work-order.md').write_text(wo,encoding='utf-8')\n (d/'proof.json').write_text(json.dumps({'testedRevision':'unrelated-old-revision','result':'FAIL'}),encoding='utf-8')\n (d/'.gitignore').write_text('return.md\\n',encoding='utf-8')\n git('add','.');git('commit','-qm','fixture base');fixture_base=git('rev-parse','HEAD')\n (d/'product.txt').write_text('after\\n',encoding='utf-8')\n oldroot=m.ROOT;m.ROOT=d\n def run(name,status='COMPLETE_PENDING_REVIEW',result='PASS',proofs=None,extra=False,missing=False,expected=0):\n  if extra:(d/'unclaimed.txt').write_text('extra\\n',encoding='utf-8')\n  ev={'schemaVersion':m.EVIDENCE_SCHEMA,'executionBaseHead':fixture_base,'results':[] if missing else [{'requirementId':'OUTCOME','actualArtifacts':['product.txt'],'proofRefs':['PROOF'] if proofs is None else proofs,'status':result}]}\n  (d/'return.md').write_text('Status: '+status+'\\n```acceptance-evidence-json\\n'+json.dumps(ev)+'\\n```\\n',encoding='utf-8')\n  oldargv=sys.argv;sys.argv=['ledger','--work-order','work-order.md','--return','return.md','--enforce'];out=io.StringIO()\n  try:\n   with contextlib.redirect_stdout(out):code=m.main()\n  finally:sys.argv=oldargv\n  rows.append({'case':name,'expectedCheckerExit':expected,'actualCheckerExit':code,'gitObservedPaths':sorted(m.git_observed_paths(fixture_base)),'output':out.getvalue(),'assertionPassed':code==expected})\n  if extra:(d/'unclaimed.txt').unlink()\n  assert code==expected,name\n run('matching IDs and real Git artifact with failed stale proof content accepted structurally',expected=0)\n run('missing required row rejected',missing=True,expected=1)\n run('real Git unclaimed artifact rejected',extra=True,expected=1)\n run('mandatory BLOCKED contradicts COMPLETE_PENDING_REVIEW',result='BLOCKED',expected=1)\n run('required proof ID missing rejected',proofs=[],expected=1)\n m.ROOT=oldroot\n# Inspect the actual command assembly, not an invented direct-task fulfillment route.\nsys.path.insert(0,str(root/'governance/compat'))\nimport run_worker_return_fast_gate as fast\nbound=fast.build_commands(active_work_order='docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_NEXT_MOVE_ALIGNMENT_2026-10-07.md')\nunbound=fast.build_commands()\nis_acceptance=lambda x:'governance/compat/check_work_order_acceptance_ledger.py' in x.command\n# FastGateCommand uses argv/command field according to its actual definition.\ndef argv(x):return getattr(x,'command',getattr(x,'argv',()))\nbound_accept=[list(argv(x)) for x in bound if 'governance/compat/check_work_order_acceptance_ledger.py' in argv(x)]\nunbound_accept=[list(argv(x)) for x in unbound if 'governance/compat/check_work_order_acceptance_ledger.py' in argv(x)]\nassert len(bound_accept)==1 and not unbound_accept\nrecord={'admission':admission,'sourceGitByteSha256':{p:hashlib.sha256(subprocess.check_output(['git','show',base+':'+p])).hexdigest() for p in ['governance/compat/check_work_order_acceptance_ledger.py','governance/compat/run_worker_return_fast_gate.py','docs/reference/work_order_template/CVF_WORK_ORDER_ACCEPTANCE_LEDGER_ADDENDUM.md']},'probeScriptSha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),'probeSource':Path(__file__).read_text(encoding='utf-8'),'structuralCases':rows,'routeBinding':{'boundAcceptanceCommands':bound_accept,'unboundAcceptanceCommands':unbound_accept,'interpretation':'explicit active-work-order binds existing acceptance; bare fast gate does not'},'proofContentBoundary':'The structurally accepted first case intentionally refers to existing proof.json with FAIL and unrelated revision. Acceptance checker validates IDs/artifact join/status, not proof contents. Reviewer must reject this as insufficient completion evidence. This is documented behavior, not a new checker defect.','terminal':'EXISTING_LOCAL_OUTCOME_ROUTE_VERIFIED_STRUCTURALLY_BOUNDED','claimBoundary':'temporary real Git fixture and command assembly only; no live AI governance, actual worker dispatch, independent reviewer, runtime interception or universal Local-maintenance automation'}\ndump(scope[2],record)\nprint('Five real-Git entrypoint cases matched; bound/unbound command assembly confirmed. Stale failed proof accepts structurally only.')\n",
+  "structuralCases": [
+    {
+      "case": "matching IDs and real Git artifact with failed stale proof content accepted structurally",
+      "expectedCheckerExit": 0,
+      "actualCheckerExit": 0,
+      "gitObservedPaths": [
+        "product.txt"
+      ],
+      "output": "=== CVF Work Order Acceptance Ledger Gate ===\nCOMPLIANT\n",
+      "assertionPassed": true
+    },
+    {
+      "case": "missing required row rejected",
+      "expectedCheckerExit": 1,
+      "actualCheckerExit": 1,
+      "gitObservedPaths": [
+        "product.txt"
+      ],
+      "output": "=== CVF Work Order Acceptance Ledger Gate ===\n- missing evidence row(s): OUTCOME\n- Git observed unclaimed artifact(s): product.txt\n- terminal status COMPLETE_PENDING_REVIEW contradicts deterministic reducer BLOCKED_WITH_REASON\nVIOLATION\n",
+      "assertionPassed": true
+    },
+    {
+      "case": "real Git unclaimed artifact rejected",
+      "expectedCheckerExit": 1,
+      "actualCheckerExit": 1,
+      "gitObservedPaths": [
+        "product.txt",
+        "unclaimed.txt"
+      ],
+      "output": "=== CVF Work Order Acceptance Ledger Gate ===\n- Git observed unclaimed artifact(s): unclaimed.txt\nVIOLATION\n",
+      "assertionPassed": true
+    },
+    {
+      "case": "mandatory BLOCKED contradicts COMPLETE_PENDING_REVIEW",
+      "expectedCheckerExit": 1,
+      "actualCheckerExit": 1,
+      "gitObservedPaths": [
+        "product.txt"
+      ],
+      "output": "=== CVF Work Order Acceptance Ledger Gate ===\n- terminal status COMPLETE_PENDING_REVIEW contradicts deterministic reducer BLOCKED_WITH_REASON\nVIOLATION\n",
+      "assertionPassed": true
+    },
+    {
+      "case": "required proof ID missing rejected",
+      "expectedCheckerExit": 1,
+      "actualCheckerExit": 1,
+      "gitObservedPaths": [
+        "product.txt"
+      ],
+      "output": "=== CVF Work Order Acceptance Ledger Gate ===\n- requirement OUTCOME does not bind every required proof ID\nVIOLATION\n",
+      "assertionPassed": true
+    }
+  ],
+  "routeBinding": {
+    "boundAcceptanceCommands": [
+      [
+        "python",
+        "governance/compat/check_work_order_acceptance_ledger.py",
+        "--work-order",
+        "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_NEXT_MOVE_ALIGNMENT_2026-10-07.md",
+        "--return",
+        "docs/reviews/CVF_NCR_NEXT_MOVE_ALIGNMENT_WORKER_RETURN_2026-10-07.md",
+        "--enforce"
+      ]
+    ],
+    "unboundAcceptanceCommands": [],
+    "interpretation": "explicit active-work-order binds existing acceptance; bare fast gate does not"
+  },
+  "proofContentBoundary": "The structurally accepted first case intentionally refers to existing proof.json with FAIL and unrelated revision. Acceptance checker validates IDs/artifact join/status, not proof contents. Reviewer must reject this as insufficient completion evidence. This is documented behavior, not a new checker defect.",
+  "terminal": "EXISTING_LOCAL_OUTCOME_ROUTE_VERIFIED_STRUCTURALLY_BOUNDED",
+  "claimBoundary": "temporary real Git fixture and command assembly only; no live AI governance, actual worker dispatch, independent reviewer, runtime interception or universal Local-maintenance automation",
+  "fixtureCorrection": "First attempt completed five Git cases, then command assembly failed because an invented work-order path did not exist. Corrected assembly to read an existing closed work order without executing it; repeated five disposable cases and assembly passed. No product fix, dispatch or authority reopening."
+}
