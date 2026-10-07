@@ -44,6 +44,7 @@ class ReleaseSecretScanBoundaryTests(unittest.TestCase):
             (root / 'clean.py').write_text('print(1)\n', encoding='utf-8')
             result = self.scan(root)
             self.assertEqual(result.status, 'PASS')
+            self.assertEqual(result.name, 'Secrets scan')
             self.assertIn('filesScanned=1', '\n'.join(result.detail))
             self.assertIn('skippedDirectories=1', '\n'.join(result.detail))
 
@@ -55,6 +56,26 @@ class ReleaseSecretScanBoundaryTests(unittest.TestCase):
                 self.assertTrue(bundle.is_allowed_secret_line(root / rel, line))
                 self.assertFalse(bundle.is_allowed_secret_line(root / rel, line + ' changed'))
                 self.assertFalse(bundle.is_allowed_secret_line(root / 'tests/moved.py', line))
+
+    def test_root_runtime_archive_is_pruned_without_exempting_other_cvf_paths(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            archived = root / '.cvf/runtime/archive/fixture.ts'
+            archived.parent.mkdir(parents=True)
+            archived.write_text('sk-' + 'Z' * 32, encoding='utf-8')
+            (root / 'clean.py').write_text('print(1)\n', encoding='utf-8')
+            result = self.scan(root)
+            self.assertEqual(result.status, 'PASS')
+            self.assertIn('filesScanned=1', '\n'.join(result.detail))
+            for rel in ['.cvf/authority.ts', 'src/runtime/fixture.ts', 'src/.cvf/runtime/fixture.ts']:
+                with self.subTest(rel=rel):
+                    path = root / rel
+                    path.parent.mkdir(parents=True, exist_ok=True)
+                    path.write_text('sk-' + 'Z' * 32, encoding='utf-8')
+                    result = self.scan(root)
+                    self.assertEqual(result.status, 'FAIL')
+                    self.assertNotIn('sk-' + 'Z' * 32, json.dumps(result.__dict__))
+                    path.unlink()
 
 
 if __name__ == '__main__':

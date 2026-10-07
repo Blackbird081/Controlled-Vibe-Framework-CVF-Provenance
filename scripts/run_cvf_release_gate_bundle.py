@@ -267,14 +267,14 @@ def check_secrets(dry_run: bool) -> CheckResult:
     for directory, dirs, files in os.walk(REPO_ROOT, onerror=on_walk_error, followlinks=False):
         base = Path(directory)
         kept = []
-        for name in dirs:
-            child = base / name
-            if name in SCAN_SKIP or child.relative_to(REPO_ROOT).as_posix() in SCAN_SKIP:
+        for dir_name in dirs:
+            child = base / dir_name
+            if dir_name in SCAN_SKIP or child.relative_to(REPO_ROOT).as_posix() in SCAN_SKIP:
                 skipped_dirs += 1
             elif child.is_symlink():
                 unreadable.append(child.relative_to(REPO_ROOT).as_posix())
             else:
-                kept.append(name)
+                kept.append(dir_name)
         dirs[:] = kept
         for filename in sorted(files):
             path = base / filename
@@ -340,7 +340,12 @@ def check_e2e(dry_run: bool, live: bool) -> CheckResult:
             name, "FAIL",
             message
         )
-    cmd = ["npx", "playwright", "test", "--config", config, *specs, "--reporter=line"]
+    # Retained browser artifacts belong to this invocation, not the tracked
+    # historic test-results report or another concurrently running lane.
+    output_root = REPO_ROOT / ".cvf" / "runtime" / "release-gate-e2e"
+    output_root.mkdir(parents=True, exist_ok=True)
+    output_dir = tempfile.mkdtemp(prefix="live-" if live else "mock-", dir=output_root)
+    cmd = ["npx", "playwright", "test", "--config", config, *specs, "--reporter=line", "--output", output_dir]
     started = time.monotonic()
     e2e_env = {**os.environ, **E2E_RUNTIME_ENV[live]}
     code, stdout, stderr = run_cmd(cmd, cwd=CVF_WEB, timeout=600, env=e2e_env)

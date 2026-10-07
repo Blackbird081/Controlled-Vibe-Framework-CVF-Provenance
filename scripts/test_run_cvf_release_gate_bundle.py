@@ -282,6 +282,29 @@ class E2eRuntimeIsolationTests(unittest.TestCase):
         self.assertEqual(mock_env["CVF_PLAYWRIGHT_PORT"], "3011")
         self.assertEqual(live_env["CVF_PLAYWRIGHT_PORT"], "3012")
 
+    def test_auth_callback_urls_override_stale_parent_origin_in_both_lanes(self):
+        with mock.patch.dict(os.environ, {"AUTH_URL": "http://localhost:3000", "NEXTAUTH_URL": "http://localhost:3000"}):
+            for live, origin in [(False, "http://localhost:3011"), (True, "http://localhost:3012")]:
+                with self.subTest(live=live):
+                    env = self._captured_env_for(live)
+                    self.assertEqual(env['AUTH_URL'], origin)
+                    self.assertEqual(env['NEXTAUTH_URL'], origin)
+                    self.assertEqual(env['PLAYWRIGHT_BASE_URL'], origin)
+
+    def test_browser_output_uses_unique_runtime_directory_per_invocation(self):
+        commands = []
+        def fake_run(cmd, **kwargs):
+            commands.append(cmd)
+            return 0, '1 passed', ''
+        with tempfile.TemporaryDirectory() as directory, mock.patch.object(bundle, 'REPO_ROOT', Path(directory)), mock.patch.object(bundle, 'run_cmd', side_effect=fake_run):
+            bundle.check_e2e(False, False)
+            bundle.check_e2e(False, False)
+            outputs = [Path(cmd[cmd.index('--output') + 1]) for cmd in commands]
+            self.assertNotEqual(outputs[0], outputs[1])
+            for output in outputs:
+                self.assertTrue(output.is_relative_to(Path(directory) / '.cvf/runtime/release-gate-e2e'))
+                self.assertTrue(output.is_dir())
+
 
 class E2eTimeoutClassificationTests(unittest.TestCase):
     """`build_e2e_diagnostic` must classify `timeout` only from the

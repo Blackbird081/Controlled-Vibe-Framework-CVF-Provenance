@@ -16,7 +16,94 @@ it adds no new program, work order, schema, checker or pilot. Predecessor is
 docs/baselines/CVF_GC018_NCR_CONSOLIDATED_LOCAL_FOUNDATION_2026-10-06.md,
 which has957 lines; use a continuation rather than grow it toward the hard limit.
 
-## Current Alibaba Semantic Review Observation - 2026-10-07
+## Current Local Candidate Release-Bundle Observation - 2026-10-07
+
+Operator next and standing Alibaba-only test authority admit this finite Local
+candidate-proof run. Consumer: NCR foundation/candidate readiness reviewer.
+Required outputs: source/candidate identity, actual canonical bundle stages,
+secret-safe diagnostics, Local result/exit reconciliation and terminal disposition.
+Role Local tester/reviewer; decision owner Local; no worker delegation. Clean
+base ceb4eab735a49c1e0b6363e63b62432543b84931; two-path manifest fixed before effects; pre-implementation gate PASS.
+
+Existing Playwright Chromium executable observed available; no browser install
+or IAB recovery claimed. One actual scripts/run_cvf_release_gate_bundle.py --json
+invocation, with output/manifest/diagnostics under an ignored runtime directory.
+Existing isolated Next distDirs/ports, synthetic test cases, fixed Alibaba E2E
+requests and SOT3 one-call permit reused. Local credential aliases explicitly
+bound in subprocess, no credential configuration or model default change.
+
+Durable companion docs/reviews/evidence/cvf-local-candidate-release-2026-10-07.json
+contains source Git-byte hashes, command/result, sanitized bundle JSON and
+diagnostics plus hashes of runtime artifacts. No raw key or signed header is
+quoted. Current command result: FAIL; exit 1. Prior component/Linux/model
+proof is consumed; this command observes the current bundle, not a duplicate
+isolated regression suite or prompt survey.
+
+| Required stage | Observed status | Runner summary |
+|---|---|---|
+| Capability environment preflight | PASS | Capability environment preflight PASS |
+| Web build (npm run build) | PASS | Build succeeded |
+| TypeScript check (guard contract) | PASS | TypeScript check clean |
+| Provider readiness | PASS | CERTIFIED lanes: 3 - status: CERTIFIED |
+| edge_security | FAIL | Secret findings=20 unreadable=0 |
+| Docs governance (RC docs present) | PASS | All 3 required RC docs present |
+| E2E Playwright UI (mock) | FAIL | Playwright UI mock suite failed |
+| E2E Playwright Governance (live) | FAIL | Playwright live governance suite failed |
+| SOT3 canonical release proof (A5) | PASS | SOT3 canonical release proof PASS with full owner correlation |
+
+Local disposition: CANONICAL_LOCAL_CANDIDATE_FAIL_RECORDED_BOUNDED. Required
+stage FAIL/SKIP cannot be promoted to PASS by provider HTTP200 or earlier component
+proof. Saved provider readiness is receipt evaluation, not new certification of
+the model used today. Test authentication, synthetic records and each fixture's
+mock/spy boundaries stay qualified in the source and companion. A stage success
+does not prove all governance branches, actual user/data acceptance or deployment.
+No remote GitHub required-check/settings evidence, public projection, push,
+hosted deployment, P11 promotion or R2/R3 acceptance is supplied by this package.
+
+One invocation only; failures retain diagnostics before any future admitted
+result-changing repair/rerun. No timeout weakening or default/model selection.
+Terminal result recorded; next work must consume diagnosed candidate facts and
+the existing phase owners, not blindly replay this bundle or start endpoint hunting.
+
+### Diagnosed Runner Repair And Selected Revalidation
+
+This same outcome includes five existing script/test repairs under the operator's
+standing grouped Local authority. Repair extension is recorded in the companion;
+the first policy/test edits preceded its durable extension record, while scope
+was stated to the operator before edits. No false pre-edit timestamp is claimed.
+
+Root ignored .cvf/runtime is pruned explicitly; other .cvf paths,nested runtime,
+test files and build artifacts stay scanned. Mock/live AUTH_URL and NEXTAUTH_URL
+now match the existing lane origin. Browser artifacts get a unique ignored output
+directory per invocation instead of overwriting a tracked historical report.
+Scanner directory iteration also preserves the stable Secrets scan stage name.
+No credential/provider/model default or production auth change.
+
+Focused final regressions:23 runner tests and5 scan-boundary tests PASS. These
+are hermetic environment/command and real disposable-file checks,not live proof.
+Selected UI mock stage PASS after origin repair. The interrupted live wrapper has
+no terminal receipt and call count UNKNOWN; partial output is not promoted to PASS.
+Operator resume admitted one live-suite continuation after diagnostic/port and
+ownership checks; unrelated IDE E2E process left untouched. Resumed live stage: FAIL.
+Exact result/diagnostic and repair source hashes are retained in the companion.
+Four retained failed-case traces now show route HTTP200 but success=false,with
+output_validation_failed due to output-token limit. Origin/auth connection failure
+is resolved;incomplete output correctly remains failure. No cap increase,model
+switch or another live replay. Four response observations are not a total provider
+call count;interrupted-suite calls remain UNKNOWN. No raw trace headers exported.
+
+Selected scan remains FAIL:21 findings in private source mirrors,zero unreadable
+in the observed prefix,stopped at the findings limit. Their fixture/leak disposition
+is unresolved; the scan stopped at its findings limit and the remainder is unprocessed. No mirror/test-tree
+blanket exemption or expanded fingerprint list added. Initial full-bundle FAIL
+remains;selected revalidation is not a fresh full-bundle PASS. Existing build,
+typecheck and bounded SOT3 PASS consumed without rerun.
+
+Terminal SELECTED_RUNNER_REPAIR_DEFAILRED_BOUNDED. Consume residual findings and
+the live result for the next event-specific package. No blind suite replay or
+unrelated endpoint campaign. Full release and parked effect acceptance remain open.
+
+## Historical Alibaba Semantic Review Observation - 2026-10-07
 
 Operator next explicitly authorizes Alibaba live testing where needed. Local
 direct-task tester/reviewer owns the finite probe and final disposition; provider
@@ -517,14 +604,14 @@ send/B2, S05/C1, P11, CCMA, public/deploy remain unchanged/parked.
 
 ## Epistemic Process Block
 
-Expected Result / Prediction: current binding policy supports semantic rejection
-of stale/failed proof and retains mandatory versus independent-held boundaries.
-Evidence Comparison: two Alibaba HTTP200 responses match all six fixed decisions;
-Local reasons reviewed, retry qualification and one heldEffects omission retained.
-Contradiction Or Gap Disposition: classification success is not automatic action
-safety; apply existing diagnostic/authority owners, no new controller or rerun.
-Claim Update: bounded provider decision observation only; actual full lifecycle,
-general behavior, live product governance and release remain unproved.
+Expected Result / Prediction: current canonical bundle provides source-bound
+candidate stage evidence beyond earlier component and direct model probes.
+Evidence Comparison: actual command/stage/result/exit and selected repair results retained in companion;
+failed or skipped required stages remain failures, separate from component PASS.
+Contradiction Or Gap Disposition: consume diagnosed actual candidate facts; no
+blind retry, timeout weakening or inferred public/production acceptance.
+Claim Update: one canonical Local candidate observation only; branch coverage,
+remote CI,actual-data/hosted acceptance and whole NCR closure remain unproved.
 
 ## Historical Memory Repair Scope / Target / Owner Boundary
 
@@ -570,7 +657,7 @@ regressions bind the defect/repair to this consumer; no upstream absence claim.
 | Matching local-view guard | N/A with reason: no external input; existing route/test consumer |
 | Owner surface | existing NCR P06 memory readout route and baseline continuation |
 | Disposition | LOCAL_SOURCE_REPAIR_ONLY |
-| Claim boundary | model classification observation; automatic execution and whole lifecycle unproved |
+| Claim boundary | current canonical Local observation;not remote CI,whole NCR or production acceptance |
 
 Exact material manifest: the two route/source test files named above, this
 continuation and the predecessor's continuation pointer. No other product path.
@@ -631,32 +718,31 @@ Returned defects: NONE_RETURNED. Zero candidates and no truncation.
 
 | Field | Evidence |
 |---|---|
-| Actor | Local bounded provider tester and semantic reviewer |
-| Provider or surface | Alibaba API; two synthetic response calls; no workspace delegation |
-| Session or invocation | semantic-review-live-20261007 |
+| Actor | Local candidate-proof tester and reviewer |
+| Provider or surface | Local canonical bundle; Alibaba-only synthetic live lane |
+| Session or invocation | local-candidate-release-20261007 |
 | Working directory | repository root |
-| Command or tool surface | current policy read; two fixed provider calls; Local semantic review; governance gates |
-| Target paths | docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md; docs/reviews/evidence/cvf-semantic-review-live-2026-10-07.json |
-| Allowed scope source | operator next and explicit Alibaba API authorization |
-| Before status evidence | clean aa5deca0fb4d22a625ef9a885b81c2af52062a6d |
-| After status evidence | two material paths; no product/checker change |
-| Diff evidence | exact staged manifest and source/prompt/output hashes in companion |
-| Approval boundary | bounded synthetic provider observation only; action effects stay parked |
-| Claim boundary | model classification observation; automatic execution and whole lifecycle unproved |
+| Command or tool surface | canonical bundle JSON/output/manifest/diagnostics; stage/result review; governance gates |
+| Target paths | scripts/run_cvf_release_gate_bundle.py; scripts/cvf_release_secret_scan_policy.py; scripts/cvf_release_web_runtime_isolation.py; scripts/test_run_cvf_release_gate_bundle.py; scripts/test_release_secret_scan_boundaries.py; docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md; docs/reviews/evidence/cvf-local-candidate-release-2026-10-07.json |
+| Allowed scope source | operator next,continuous Local work and Alibaba test authorization |
+| Before status evidence | clean ceb4eab735a49c1e0b6363e63b62432543b84931 |
+| After status evidence | seven material paths; initial bundle FAIL,28 regressions,mock PASS and resumed live FAIL retained |
+| Diff evidence | exact staged manifest;source Git hashes and runtime artifact hashes |
+| Approval boundary | synthetic Local candidate proof; data/public/deploy effects parked |
+| Claim boundary | current canonical Local observation;not remote CI,whole NCR or production acceptance |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | semantic-review-live-20261007 |
-| Expected manifest | docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md; docs/reviews/evidence/cvf-semantic-review-live-2026-10-07.json |
-| Actual changed set | docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md; docs/reviews/evidence/cvf-semantic-review-live-2026-10-07.json |
+| Invocation ID | local-candidate-release-20261007 |
+| Expected manifest | scripts/run_cvf_release_gate_bundle.py; scripts/cvf_release_secret_scan_policy.py; scripts/cvf_release_web_runtime_isolation.py; scripts/test_run_cvf_release_gate_bundle.py; scripts/test_release_secret_scan_boundaries.py; docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md; docs/reviews/evidence/cvf-local-candidate-release-2026-10-07.json |
+| Actual changed set | scripts/run_cvf_release_gate_bundle.py; scripts/cvf_release_secret_scan_policy.py; scripts/cvf_release_web_runtime_isolation.py; scripts/test_run_cvf_release_gate_bundle.py; scripts/test_release_secret_scan_boundaries.py; docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md; docs/reviews/evidence/cvf-local-candidate-release-2026-10-07.json |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |
 
 ## Next Allowed Move
 
-Consume the bounded Alibaba semantic review observation and delivered phase design.
-No prompt survey/replay or generic machine extension selected. Next actual eligible
-receiving-work outcome uses committed finite authority, exact current worker proof,
-semantic review and separate phase ranges; do not execute provider advice as grants.
-Actual whole lifecycle/general automation unproved; parked triggers unchanged.
+Consume the initial canonical bundle FAIL, selected runner repairs and exact source
+identity. No blind replay, prompt survey or generic machine controller selected.
+Any result-changing repair must resolve the diagnosed stage within its existing
+owner/profile authority; real-data/public/deploy and parked checkpoints stay separate.
 
 ## Guard Endpoint Admission Batch - 2026-10-07
 
@@ -817,9 +903,9 @@ fixtures only; no complete inventory,corpus scan or all-files-read claim.
 
 ## Claim Boundary
 
-Phase design and bounded real Alibaba semantic classification evidence. No actual
-single worker/reviewer lifecycle, automatic effect execution, general agent behavior,
-live product governance or release certification. No corpus completeness claim.
+Current candidate canonical bundle stage evidence and qualified component/model
+observations. No automatic execution,independent worker/reviewer lifecycle,remote CI,
+actual-data or production/public/deploy acceptance or whole-program closure claim.
 
 ## Public Export Disposition
 

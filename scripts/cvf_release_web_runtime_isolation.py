@@ -32,10 +32,14 @@ E2E_RUNTIME_ENV = {
         "NEXT_DIST_DIR": ".next-cvf-release-gate-e2e-mock",
         "CVF_PLAYWRIGHT_PORT": "3011",
         "PLAYWRIGHT_BASE_URL": "http://localhost:3011",
+        "AUTH_URL": "http://localhost:3011",
+        "NEXTAUTH_URL": "http://localhost:3011",
     },
     True: {
         "NEXT_DIST_DIR": ".next-cvf-release-gate-e2e-live",
         "CVF_PLAYWRIGHT_PORT": "3012",
         "PLAYWRIGHT_BASE_URL": "http://localhost:3012",
+        "AUTH_URL": "http://localhost:3012",
+        "NEXTAUTH_URL": "http://localhost:3012",
     },
 }

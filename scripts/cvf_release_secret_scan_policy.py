@@ -14,6 +14,9 @@ SECRET_PATTERNS = [
 SCAN_SKIP = {
     ".git", "node_modules", "__pycache__", ".next", "dist", "build",
     "coverage", ".nyc_output", "docs/audits", ".claude",
+    # Ignored execution scratch/archive is outside the source candidate.
+    # Keep other .cvf paths and candidate/build artifacts in scan scope.
+    ".cvf/runtime",
 }
 
 SCAN_EXTENSIONS = {
