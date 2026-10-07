@@ -359,6 +359,12 @@ def check_e2e(dry_run: bool, live: bool) -> CheckResult:
     cmd = ["npx", "playwright", "test", "--config", config, *specs, "--reporter=line", "--output", output_dir]
     started = time.monotonic()
     e2e_env = {**os.environ, **E2E_RUNTIME_ENV[live]}
+    if live:
+        # Browser settings use DASHSCOPE, while the server resolver prefers
+        # ALIBABA. Pin both consumers to the selected live authority in this
+        # child only; deleting ALIBABA would let Next reload a conflicting
+        # value from .env.local. Never change the operator's environment.
+        e2e_env["ALIBABA_API_KEY"] = e2e_env["DASHSCOPE_API_KEY"]
     code, stdout, stderr = run_cmd(cmd, cwd=CVF_WEB, timeout=600, env=e2e_env)
     latency_ms = round((time.monotonic() - started) * 1000)
     output = (stdout + stderr).strip()

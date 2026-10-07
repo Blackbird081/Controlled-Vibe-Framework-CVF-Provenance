@@ -89,31 +89,46 @@ test('full-mode API returns a governed live result and receipt', async ({ page }
     });
 });
 
-test('cold HTML template waits for hydration before opening the idea form', async ({ page }) => {
+test('cold HTML template waits for hydration before opening the idea form', async ({ page, context }) => {
     await login(page);
+    // Keep authentication cookies, but never assert against the warmed login
+    // page while a second navigation is replacing its document. Hold all Next
+    // script chunks so shared/layout modules cannot hydrate the card early.
+    const coldPage = await context.newPage();
+    await seedStorageWithAlibaba(coldPage);
     let release!: () => void;
     const held = new Promise<void>(resolve => { release = resolve; });
-    await page.route(/\/_next\/static\/chunks\/app\/.*\/home\/page\.js/, async route => {
-        await held;
+    let heldScripts = 0;
+    await coldPage.route('**/_next/static/**', async route => {
+        if (route.request().resourceType() === 'script') {
+            heldScripts++;
+            await held;
+        }
         await route.continue();
     });
     let directRequests = 0;
-    page.on('request', request => {
+    coldPage.on('request', request => {
         if (request.url().startsWith('https://dashscope-intl.aliyuncs.com/')
             && request.method() === 'POST') directRequests++;
     });
-    const card = page.getByRole('button', { name: /Phân tích Chiến lược|Strategy Analysis/i }).first();
+    const card = coldPage.getByRole('button', { name: /Phân tích Chiến lược|Strategy Analysis/i }).first();
     try {
-        await page.goto('/home', { waitUntil: 'commit' });
-        await expect(card).toBeVisible();
-        await expect(card).toBeDisabled();
+        try {
+            await coldPage.goto('/home', { waitUntil: 'commit' });
+            await expect(card).toBeVisible();
+            await expect(card).toBeDisabled();
+            expect(heldScripts).toBeGreaterThan(0);
+        } finally {
+            release();
+        }
+        await expect(card).toBeEnabled();
+        await card.click();
+        await expect(coldPage.getByPlaceholder('VD: Mở rộng thị trường miền Trung')).toBeVisible();
+        expect(directRequests).toBe(0);
     } finally {
         release();
+        await coldPage.close();
     }
-    await expect(card).toBeEnabled();
-    await card.click();
-    await expect(page.getByPlaceholder('VD: Mở rộng thị trường miền Trung')).toBeVisible();
-    expect(directRequests).toBe(0);
 });
 
 test('fallback login waits for session readiness before filling credentials', async ({ page }) => {

@@ -305,6 +305,24 @@ class E2eRuntimeIsolationTests(unittest.TestCase):
                 self.assertTrue(output.is_relative_to(Path(directory) / '.cvf/runtime/release-gate-e2e'))
                 self.assertTrue(output.is_dir())
 
+    def test_live_server_and_browser_share_selected_key_without_parent_mutation(self):
+        with mock.patch.dict(os.environ, {
+            'DASHSCOPE_API_KEY': 'selected-browser-key',
+            'ALIBABA_API_KEY': 'different-server-key',
+        }):
+            env = self._captured_env_for(True)
+            self.assertEqual(env['ALIBABA_API_KEY'], env['DASHSCOPE_API_KEY'])
+            self.assertEqual(os.environ['ALIBABA_API_KEY'], 'different-server-key')
+
+    def test_mock_lane_preserves_distinct_provider_bindings(self):
+        with mock.patch.dict(os.environ, {
+            'DASHSCOPE_API_KEY': 'browser-key',
+            'ALIBABA_API_KEY': 'server-key',
+        }):
+            env = self._captured_env_for(False)
+            self.assertEqual(env['ALIBABA_API_KEY'], 'server-key')
+            self.assertEqual(env['DASHSCOPE_API_KEY'], 'browser-key')
+
 
 class E2eTimeoutClassificationTests(unittest.TestCase):
     """`build_e2e_diagnostic` must classify `timeout` only from the

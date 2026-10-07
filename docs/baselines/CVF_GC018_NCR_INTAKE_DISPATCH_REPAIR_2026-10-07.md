@@ -5,6 +5,88 @@ docType: baseline
 Status: LOCAL_CANDIDATE_BUNDLE_EVIDENCE_BOUNDED
 Date: 2026-10-07
 
+## Grouped Candidate Consumer Repair - 2026-10-07
+
+Operator decision: group common defects, audit first, act autonomously within CVF,
+prioritize value over cost, and pause only for consequential operator choices.
+Local maintainer/reviewer, INTERNAL_AGENT; decision owner Local; no delegation.
+Base1486288a8cb253580705491d91fe5cfde24f3f8c, initially clean.
+Consumer: existing NCR integrated candidate reviewer. Finite outcome: both
+diagnosed consumer defects repaired together, negative/regression evidence,
+one changed-source canonical bundle, safe terminal disposition and continuity.
+No new roadmap, tranche, checker, schema or work order.
+
+Exact material scope: scripts/run_cvf_release_gate_bundle.py;
+scripts/test_run_cvf_release_gate_bundle.py;
+EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/noncoder-governance-live.spec.ts;
+this owner; docs/reviews/evidence/cvf-local-candidate-release-2026-10-07.json.
+Initial25 hermetic tests include one original-source binding failure; zero calls.
+Pre-implementation gate85/85 PASS. The original live FAIL/diagnostics are consumed,
+not recreated; all prior receipts remain historical.
+
+Audit: postLiveGovernedExecution sends no credential; route resolves ALIBABA
+before DASHSCOPE, whereas browser fixture seeds DASHSCOPE. Six server responses
+were provider401; direct-client case has no failed trace. Credential validity
+is not inferred solely from absence of a trace. SOT3 child already enforces
+DASHSCOPE authority; the release browser child needs the same authority in its
+canonical server alias. Repair only the child environment, overriding ALIBABA
+with the already selected DASHSCOPE value; no key rotation/configuration edit.
+Mock lane and parent environment retain their bindings. A missing selected key
+continues failing closed, without a fallback live request.
+
+Cold fixture trace: toBeVisible completed on the previously loaded document;
+the subsequent toBeDisabled had no matching element, not an enabled
+card observation. Authenticated home was loaded before the script interception.
+Use a fresh page in the authenticated context, block its external Next scripts,
+observe actual SSR card disabled, then release and require ready/click/form.
+Keep zero direct provider requests and original timeouts; no product UI change.
+
+Value/cost: shared child-env fix covers all six affected server cases; isolated
+fixture removes dependence on warmed navigation. Two bounded source repairs
+plus one integrated proof cost less than per-case endpoint/model/key probes.
+Compatible residual diagnosis/repair remains within this same outcome; no
+automatic replay, cap/timeout weakening or new micro-tranche. Stop when the
+required outputs are delivered or a consequential authority/capability blocks
+them. Prior business/data/P11/public/deploy checkpoints remain parked.
+
+Rerun admission: recorded provider401 and stale-document fixture failure have
+named result-changing repairs. One canonical command is admitted after focused
+checks; information gain is final combined candidate behavior. Diagnostics
+precede any further live decision; advisory retryable=true alone is insufficient.
+Evidence/result: companion groupedCandidateConsumerRepair20261007.
+Focused final25/25 tests,typecheck and scoped lint PASS. One fresh-page delayed-JS
+browser case PASS,zero direct AI requests under its asserted boundary. The
+original source binding regression failed1/25; prior cold element-not-found
+trace consumed. Canonical result: PASS,exit0,
+elapsed505671ms. One canonical invocation,no automatic retry.
+
+| Required stage | Grouped repaired-source status |
+|---|---|
+| Capability environment preflight | PASS |
+| Web build (npm run build) | PASS |
+| TypeScript check (guard contract) | PASS |
+| Provider readiness | PASS |
+| Secrets scan | PASS |
+| Docs governance (RC docs present) | PASS |
+| E2E Playwright UI (mock) | PASS |
+| E2E Playwright Governance (live) | PASS |
+| SOT3 canonical release proof (A5) | PASS |
+
+Terminal disposition: GROUPED_LOCAL_CANDIDATE_REPAIR_PASS_BOUNDED.
+Companion groupedCandidateConsumerRepair20261007 records the command, sanitized
+bundle and diagnostics,3 verified manifest entries and matched source Git bytes.
+Verified generated Next includes restored; historical tracked reports untouched.
+Expected Result: both diagnosed consumer defects corrected under existing
+authority. Evidence Comparison:25 hermetic PASS, structural browser PASS and
+canonical nine-stage result above. Contradiction Or Gap Disposition: prior401,
+cold element-not-found and earlier canonical/parallel FAIL receipts retained;
+current result applies only to this revised Local synthetic candidate.
+Claim Update: current canonical Local candidate disposition only; saved provider
+readiness evaluates receipts, UI mock is structural, SOT3 recovery is real while
+rollback negatives are spies. No business/actual-data/remote CI/P11/public/deploy,
+concurrency or universal lifecycle acceptance.
+
+
 ## Final-Source Integrated Local Candidate Milestone - 2026-10-07
 
 Operator request: continue roadmap. Local lead selects the existing candidate
@@ -87,22 +169,22 @@ Manifest entries3 independently hash/size-verified; relevant source pins match.
 
 | Field | Evidence |
 |---|---|
-| Actor | Local candidate tester/reviewer |
+| Actor | Local grouped candidate maintainer/reviewer |
 | Provider or surface | private workspace; canonical Alibaba synthetic proof |
-| Session or invocation | final-source-candidate-20261007 |
+| Session or invocation | grouped-candidate-consumer-20261007 |
 | Working directory | repository root |
-| Command or tool surface | targeted source/hash reads; pre-implementation gate; one canonical bundle; terminal reconciliation |
-| Target paths | docs/baselines/CVF_GC018_NCR_INTAKE_DISPATCH_REPAIR_2026-10-07.md; docs/reviews/evidence/cvf-local-candidate-release-2026-10-07.json |
-| Allowed scope source | operator continue roadmap and standing grouped Local/Alibaba test authority |
-| Before status evidence | clean f2b08643782cc232a45c17a640f61cf0c7da340d; relevant source Git hashes pinned before invocation |
-| After status evidence | companion terminal command result and source reconciliation; two material artifact paths |
-| Diff evidence | git diff --stat; exact two-path staged material set |
+| Command or tool surface | bounded source/trace audit; red/green25 tests; typecheck/lint; one structural browser case; one canonical bundle; terminal reconciliation |
+| Target paths | scripts/run_cvf_release_gate_bundle.py; scripts/test_run_cvf_release_gate_bundle.py; EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/noncoder-governance-live.spec.ts; docs/baselines/CVF_GC018_NCR_INTAKE_DISPATCH_REPAIR_2026-10-07.md; docs/reviews/evidence/cvf-local-candidate-release-2026-10-07.json |
+| Allowed scope source | operator grouped autonomous audit/repair, value over cost and standing Alibaba-only test authority |
+| Before status evidence | clean1486288a8cb253580705491d91fe5cfde24f3f8c; original source binding1/25FAIL and prior live/cold diagnostics |
+| After status evidence | grouped companion terminal command/source reconciliation; five material paths |
+| Diff evidence | git diff --stat; exact five-path staged material set |
 | Approval boundary | Local synthetic candidate receipt; actual-data/P11/public/deploy parked |
 | Claim boundary | one current Local candidate observation; no whole-program or external acceptance |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | final-source-candidate-20261007 |
-| Expected manifest | docs/baselines/CVF_GC018_NCR_INTAKE_DISPATCH_REPAIR_2026-10-07.md; docs/reviews/evidence/cvf-local-candidate-release-2026-10-07.json |
-| Actual changed set | docs/baselines/CVF_GC018_NCR_INTAKE_DISPATCH_REPAIR_2026-10-07.md; docs/reviews/evidence/cvf-local-candidate-release-2026-10-07.json |
+| Invocation ID | grouped-candidate-consumer-20261007 |
+| Expected manifest | scripts/run_cvf_release_gate_bundle.py; scripts/test_run_cvf_release_gate_bundle.py; EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/noncoder-governance-live.spec.ts; docs/baselines/CVF_GC018_NCR_INTAKE_DISPATCH_REPAIR_2026-10-07.md; docs/reviews/evidence/cvf-local-candidate-release-2026-10-07.json |
+| Actual changed set | scripts/run_cvf_release_gate_bundle.py; scripts/test_run_cvf_release_gate_bundle.py; EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/noncoder-governance-live.spec.ts; docs/baselines/CVF_GC018_NCR_INTAKE_DISPATCH_REPAIR_2026-10-07.md; docs/reviews/evidence/cvf-local-candidate-release-2026-10-07.json |
 | Manifest delta | MATCH; generated Next config restored before staging |
 | Deletion or rename disposition | N/A with reason: none |
 
