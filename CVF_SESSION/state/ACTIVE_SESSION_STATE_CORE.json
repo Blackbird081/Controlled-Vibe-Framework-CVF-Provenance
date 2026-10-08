@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_C1_OFFLINE_PRODUCTION_READINESS_S0_2026-10-08.md",
     "workOrderSha256": "212adb5ebf3c0eb82bf9862effc3880d897fbfaf342655cc533a36a2872f4b79"
   },
-  "currentAuthoritySyncReason": "S0 closed authority retained; grouped effect proposal d41de95e54fad1e31780317e9797825cd7c46d0b awaits operator E1 decision; no stage admitted.",
+  "currentAuthoritySyncReason": "S0 closed authority retained; E1 approval/contract/partial result c3ad9502e06827b736214fcf60a01627b9650e8b bound in foundation entry; no other stage admitted.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
