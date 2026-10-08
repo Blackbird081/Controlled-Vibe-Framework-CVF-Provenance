@@ -773,6 +773,28 @@
       "S2toS9": "HELD_NOT_RELEASED",
       "obligationsOpen": 29,
       "publicExportDisposition": "DEFERRED_PRIVATE_ONLY"
+    },
+    "orchestratorPreapprovalLearningAudit20261008": {
+      "learningPath": "docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md",
+      "evidencePath": "docs/reviews/evidence/cvf-orchestrator-preapproval-learning-audit-2026-10-08.json",
+      "materialSha": "1b97c9ced37056f6ba9764547e2e03e1aff725d7",
+      "status": "AUDIT_AND_WRITTEN_LEARNING_COMPLETE_BOUNDED",
+      "selectedInputPaths": 29,
+      "sourcePaths": 20,
+      "runtimeLogSnapshots": 9,
+      "rootCauseClusterId": "NCR-ORCHESTRATOR-PHASE-IDENTITY-FEASIBILITY",
+      "parentDecision": "MERGE_INTO_EXISTING_OWNER",
+      "ownerPath": "docs/reference/CVF_GOVERNED_WORK_LIFECYCLE_AND_DESIGN_CONTROL_STANDARD_2026-06-11.md",
+      "ownerSection": "Technical Feasibility Before Operator Approval",
+      "writtenRuleAdded": true,
+      "proposalMachineGuard": "CANDIDATE_NOT_IMPLEMENTED",
+      "agentApplication": "NOT_APPLIED_WITH_PROOF",
+      "independentDeliveryReceipt": "NOT_RETURNED",
+      "S1ApprovalRetained": true,
+      "sourceDispatchReleased": false,
+      "runtimeAdmission": "NO_GO",
+      "effectsPerformed": 0,
+      "publicExportDisposition": "DEFERRED_PRIVATE_ONLY"
     }
   }
 }
