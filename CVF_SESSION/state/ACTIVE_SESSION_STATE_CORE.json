@@ -36,12 +36,12 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_NCR_C1_OFFLINE_PRODUCTION_READINESS_S0_2026-10-08.md",
-    "baselineSha256": "dcffa646e1052d90cb0293fa879bda8ecb8048b7cf7e6265dba7ea55c1a670df",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_C1_OFFLINE_PRODUCTION_READINESS_S0_2026-10-08.md",
-    "workOrderSha256": "212adb5ebf3c0eb82bf9862effc3880d897fbfaf342655cc533a36a2872f4b79"
+    "baselinePath": "docs/baselines/CVF_GC018_PREFEAS_C1_2026-10-08.md",
+    "baselineSha256": "75ec83ce9b4528477f6ca2b82dfc52b913a9ab9e11ec1dd9bc444935b5fbb8a3",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_PREFEAS_C1_2026-10-08.md",
+    "workOrderSha256": "9510f4846a8cb22605fb21537ee1ad0c56560e9dea69d9dab0c70bb7db4d2f95"
   },
-  "currentAuthoritySyncReason": "Closed S0 pair retained;orchestrator audit/lifecycle preapproval written learning at 1b97c9ced37056f6ba9764547e2e03e1aff725d7 bound;S1 approval remains valid but technical dispatch hold persists;no SCEC/source effects.",
+  "currentAuthoritySyncReason": "Operator-selected consolidated preapproval guard dispatch and accepted stable design at material 33309dfa065a46a853d81b4ed9112810f9277166;current pair switched for manual no-commit implementation;S1 held chains/approval and all parked effects unchanged.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
