@@ -1,0 +1,1346 @@
+{
+  "schemaVersion": "cvf.prefeasC1LocalReview.v1",
+  "status": "ACCEPTED_BOUNDED_WITH_GROUPED_LOCAL_REPAIR",
+  "executionBaseHead": "9b778dc1d9240d3584d60ffbf8ff474f3d70127f",
+  "workerEvidencePath": "docs/reviews/evidence/cvf-prefeas-c1-worker-2026-10-08.json",
+  "workerEvidenceSha256": "542a45b20dc0c212fc7a6d2d30d82783bfa94b9db25caf312c78b90b43025d25",
+  "workerReturnPath": "docs/reviews/CVF_PREFEAS_C1_WORKER_RETURN_2026-10-08.md",
+  "workerReturnSha256": "7a3b4962a4b7eb38afe3c91fbb0bfbc52974e86129a6f277706148cd4646d7d6",
+  "originalWorkerEvidencePreserved": true,
+  "preRepairAuditMatrix": {
+    "contractSchema": "COMPLETE:explicit opt-in and canonical schemas inspected",
+    "authoritySource": "COMPLETE:exact12 allowlist and all10 worker hashes match;no worker commit;old source/metadata chains untouched",
+    "pathBoundary": "COMPLETE:range discovery quoted UTF8 and unsafe unreadable paths reproduced as silent zero coverage",
+    "negativeCases": "COMPLETE:15 independently authored actual-CLI cases;3 failures",
+    "testAdequacy": "COMPLETE:consume original290 tests;new whitespace/discovery regressions needed within500-line test budget",
+    "closureRange": "COMPLETE:implementation material checked against executionBaseHead;continuity checked separately;no combined trace range",
+    "commitChoreography": "COMPLETE:atomic closed-order/currentAuthority hash join in material,then one real-SHA continuity;no push"
+  },
+  "originalWorkerCodePins": {
+    "governance/compat/preapproval_feasibility_contract.py": "dc5055af6b236a2863f835e485ba07628bc3d33539f78ad22eb75375cf5d0dcf",
+    "governance/compat/check_preapproval_feasibility.py": "ac8b7d2201809b3b148bc03840b50ab8872d46ea63c7f7698e82489e7a1e234f",
+    "governance/compat/run_preapproval_feasibility_gate.py": "c7b958dc5436671cda5d66e67068a26ba81dd50765da3b1b8da7425fff42b50c",
+    "governance/compat/test_check_preapproval_feasibility.py": "1f01107db57c548542c19044a412f11376f92f42099e7d1b8ec3fbb92cfd04a0",
+    "governance/compat/agent_autorun_command_catalog.py": "dcac9e4b8fb5c8bffa6193b84b9b598219f966581974c068e0af82a0b893cae4",
+    "governance/compat/local_governance_hook_catalog_pre_commit.py": "c0f0269f8726a25d944a2c1b9b13977fa296b1128c4104d0cf4a0daec4341b4b",
+    "governance/compat/local_governance_hook_catalog_reviewer_fast.py": "d77cfa858af7e43452fe6379d65ba02421eb91d6e7d98fbe8594c759b7e18893",
+    "governance/compat/test_run_agent_autorun_workflow_gate.py": "37ac5b1df154d360a30811e6383f1af3fcb38bb3d13eff6863b6cf16de42be33",
+    "docs/reference/CVF_GOVERNED_WORK_LIFECYCLE_AND_DESIGN_CONTROL_STANDARD_2026-06-11.md": "d74096044253ba8a3a0aedeebb93f7112160098444c94dba5d5fad308c1cd135",
+    "docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md": "6b50caf118fe12b9bcf9e6136ee9e17986aa0cf2e0aa1388e2cc96580fd9030e"
+  },
+  "reviewerRepairedPaths": [
+    "governance/compat/preapproval_feasibility_contract.py",
+    "governance/compat/check_preapproval_feasibility.py",
+    "governance/compat/test_check_preapproval_feasibility.py"
+  ],
+  "finalWorkerArtifactPins": {
+    "governance/compat/preapproval_feasibility_contract.py": "9c39a0815cc26492d1b2a31146f77cb20a2151189b2beca7b06ee3642c06e970",
+    "governance/compat/check_preapproval_feasibility.py": "f9eba51905101423a61eded8a5283e11559b7f10aa49ab248ef202119af5bc69",
+    "governance/compat/run_preapproval_feasibility_gate.py": "c7b958dc5436671cda5d66e67068a26ba81dd50765da3b1b8da7425fff42b50c",
+    "governance/compat/test_check_preapproval_feasibility.py": "dddcea9bab81d627efae83631f3f8fd50249775449d589c66441661e7775cdaa",
+    "governance/compat/agent_autorun_command_catalog.py": "dcac9e4b8fb5c8bffa6193b84b9b598219f966581974c068e0af82a0b893cae4",
+    "governance/compat/local_governance_hook_catalog_pre_commit.py": "c0f0269f8726a25d944a2c1b9b13977fa296b1128c4104d0cf4a0daec4341b4b",
+    "governance/compat/local_governance_hook_catalog_reviewer_fast.py": "d77cfa858af7e43452fe6379d65ba02421eb91d6e7d98fbe8594c759b7e18893",
+    "governance/compat/test_run_agent_autorun_workflow_gate.py": "37ac5b1df154d360a30811e6383f1af3fcb38bb3d13eff6863b6cf16de42be33",
+    "docs/reference/CVF_GOVERNED_WORK_LIFECYCLE_AND_DESIGN_CONTROL_STANDARD_2026-06-11.md": "d74096044253ba8a3a0aedeebb93f7112160098444c94dba5d5fad308c1cd135",
+    "docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md": "5dff76c6a1e4d9f11ff0d32fd9f935f04dc48d63e74226d2eb15b57d758920ca",
+    "docs/reviews/CVF_PREFEAS_C1_WORKER_RETURN_2026-10-08.md": "7a3b4962a4b7eb38afe3c91fbb0bfbc52974e86129a6f277706148cd4646d7d6",
+    "docs/reviews/evidence/cvf-prefeas-c1-worker-2026-10-08.json": "542a45b20dc0c212fc7a6d2d30d82783bfa94b9db25caf312c78b90b43025d25"
+  },
+  "probeBefore": {
+    "schemaVersion": "cvf.prefeasLocalProbe.v1",
+    "reviewerActor": "LOCAL_REVIEWER_CODEX_ROOT",
+    "invocationId": "prefeas-c1-local-review-20261008",
+    "method": "independently authored synthetic bytes/expectations;actual CLIs;no worker test/evaluator imports",
+    "root": "C:\\Users\\DELL\\AppData\\Local\\Temp\\cvf-pf-local-mhb_axem",
+    "oracleSha256": "dffba71c473124ed3b7bd8df9da381b8fd5038f0bb9b887cb44b4381394c53d7",
+    "cases": [
+      {
+        "caseId": "positive-explicit-feasible",
+        "exit": 0,
+        "receipt": {
+          "approvalTarget": {
+            "path": "docs/reference/proposal.md",
+            "sha256": "421b02c7fd76d7ffae7cb076b9af3fb83a6659c16a8d701f00fc95f163cce4e4"
+          },
+          "canonicalBlockCount": 1,
+          "canonicalViolations": [],
+          "companion": {
+            "path": "docs/reviews/evidence/proposal.json",
+            "sha256": "21bfc90bb60a542b41057618381a9b01f12270b9611db761cdb9c552d3101039"
+          },
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnostics": [],
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "prerequisites": {
+            "deferred": 0,
+            "examined": 0
+          },
+          "proposal": {
+            "path": "docs/reference/proposal.md",
+            "sha256": "421b02c7fd76d7ffae7cb076b9af3fb83a6659c16a8d701f00fc95f163cce4e4"
+          },
+          "prospectiveOutcomeSha256": "992dacc789da4db2ffbc283ac25048f2731784e2473f833f92737b2de6486ce7",
+          "queue": null,
+          "schemaVersion": "cvf.preapprovalFeasibilityReceipt.v1",
+          "technicalDisposition": "FEASIBLE"
+        },
+        "expectedObserved": true
+      },
+      {
+        "caseId": "stale-target",
+        "exit": 1,
+        "receipt": {
+          "approvalTarget": {
+            "path": "docs/reference/proposal.md",
+            "sha256": null
+          },
+          "canonicalBlockCount": 1,
+          "canonicalViolations": [],
+          "companion": {
+            "path": "docs/reviews/evidence/proposal.json",
+            "sha256": "7b6c1d564ebca8faa7d43ce80221b4d1b9329ceda74c5e0fd6f0ce39eec8eed2"
+          },
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnostics": [
+            {
+              "code": "TARGET_HASH_DRIFT",
+              "message": "approvalTarget.sha256 does not match the current proposal bytes"
+            }
+          ],
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "prerequisites": {
+            "deferred": 0,
+            "examined": 0
+          },
+          "proposal": {
+            "path": "docs/reference/proposal.md",
+            "sha256": "421b02c7fd76d7ffae7cb076b9af3fb83a6659c16a8d701f00fc95f163cce4e4"
+          },
+          "prospectiveOutcomeSha256": "992dacc789da4db2ffbc283ac25048f2731784e2473f833f92737b2de6486ce7",
+          "queue": null,
+          "schemaVersion": "cvf.preapprovalFeasibilityReceipt.v1",
+          "technicalDisposition": "INVALID"
+        },
+        "expectedObserved": true
+      },
+      {
+        "caseId": "positive-hash-bound-successor",
+        "exit": 0,
+        "receipt": {
+          "approvalTarget": {
+            "path": "docs/reference/successor.md",
+            "sha256": "38a1273887058664c54613a0230b1fc9b057636e577d9994d4f07ee51e229f93"
+          },
+          "canonicalBlockCount": 1,
+          "canonicalViolations": [],
+          "companion": {
+            "path": "docs/reviews/evidence/successor.json",
+            "sha256": "6dc0c487638d88d9f17a6c5470702ad7ea51f2870c04ab45fc3ca3f2d2555faf"
+          },
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnostics": [],
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "prerequisites": {
+            "deferred": 0,
+            "examined": 0
+          },
+          "proposal": {
+            "path": "docs/reference/successor.md",
+            "sha256": "38a1273887058664c54613a0230b1fc9b057636e577d9994d4f07ee51e229f93"
+          },
+          "prospectiveOutcomeSha256": "3785787c684494b531cea3db8a4bdf767d15714330fef59e889e76c6da2cd0fa",
+          "queue": null,
+          "schemaVersion": "cvf.preapprovalFeasibilityReceipt.v1",
+          "technicalDisposition": "FEASIBLE"
+        },
+        "expectedObserved": true
+      },
+      {
+        "caseId": "positive-legitimate-reduction",
+        "exit": 0,
+        "receipt": {
+          "approvalTarget": {
+            "path": "docs/reference/reducing.md",
+            "sha256": "6c7d9894b12b42c34d3743f7eae6aee52b75f3f5bc8a2a362dbe4e788970110b"
+          },
+          "canonicalBlockCount": 1,
+          "canonicalViolations": [],
+          "companion": {
+            "path": "docs/reviews/evidence/reducing.json",
+            "sha256": "c836a9233e87ddddb6aeded13a8f7c7326d8b580e73342d1c55d5ad16b6f5ec8"
+          },
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnostics": [],
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "prerequisites": {
+            "deferred": 0,
+            "examined": 0
+          },
+          "proposal": {
+            "path": "docs/reference/reducing.md",
+            "sha256": "6c7d9894b12b42c34d3743f7eae6aee52b75f3f5bc8a2a362dbe4e788970110b"
+          },
+          "prospectiveOutcomeSha256": "23f89ff5661dd4905b99f3a8e62d6b731957ff512a98e1364071c324a824d5b6",
+          "queue": null,
+          "schemaVersion": "cvf.preapprovalFeasibilityReceipt.v1",
+          "technicalDisposition": "FEASIBLE"
+        },
+        "expectedObserved": true
+      },
+      {
+        "caseId": "resolution-source-hash-drift",
+        "exit": 1,
+        "receipt": {
+          "approvalTarget": {
+            "path": "docs/reference/reducing.md",
+            "sha256": "6c7d9894b12b42c34d3743f7eae6aee52b75f3f5bc8a2a362dbe4e788970110b"
+          },
+          "canonicalBlockCount": 1,
+          "canonicalViolations": [
+            {
+              "code": "RESOLUTION_EVIDENCE_HASH_MISMATCH",
+              "message": "declared sha256 `e146d457531e321af0af7295d7cb636d1f10db90d3f6d001d0ea2ae833cb0f97` for `LOCAL_ONLY_BLOCKER` does not match recomputed hash `8f1fc06fa0f873c7bbc97e80d3297660c2e8df3512d4173ddac757c74db97a32`"
+            }
+          ],
+          "companion": {
+            "path": "docs/reviews/evidence/reducing.json",
+            "sha256": "c836a9233e87ddddb6aeded13a8f7c7326d8b580e73342d1c55d5ad16b6f5ec8"
+          },
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnostics": [],
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "prerequisites": {
+            "deferred": 0,
+            "examined": 0
+          },
+          "proposal": {
+            "path": "docs/reference/reducing.md",
+            "sha256": "6c7d9894b12b42c34d3743f7eae6aee52b75f3f5bc8a2a362dbe4e788970110b"
+          },
+          "prospectiveOutcomeSha256": "23f89ff5661dd4905b99f3a8e62d6b731957ff512a98e1364071c324a824d5b6",
+          "queue": null,
+          "schemaVersion": "cvf.preapprovalFeasibilityReceipt.v1",
+          "technicalDisposition": "INVALID"
+        },
+        "expectedObserved": true
+      },
+      {
+        "caseId": "problem-key-substitution",
+        "exit": 1,
+        "receipt": {
+          "approvalTarget": {
+            "path": "docs/reference/rename.md",
+            "sha256": "47bf13bc4ac7e14a91ef3058c3df41f2641763152131e6eb79cce1bd01622bf1"
+          },
+          "canonicalBlockCount": 1,
+          "canonicalViolations": [
+            {
+              "code": "PREDECESSOR_PROBLEM_KEY_MISMATCH",
+              "message": "successor `problemKey` must equal the predecessor block's `problemKey`"
+            }
+          ],
+          "companion": {
+            "path": "docs/reviews/evidence/rename.json",
+            "sha256": "15d0448a970c1996223103c1c7e41f1bc9a939076140774ead39803217a2697f"
+          },
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnostics": [],
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "prerequisites": {
+            "deferred": 0,
+            "examined": 0
+          },
+          "proposal": {
+            "path": "docs/reference/rename.md",
+            "sha256": "47bf13bc4ac7e14a91ef3058c3df41f2641763152131e6eb79cce1bd01622bf1"
+          },
+          "prospectiveOutcomeSha256": "84ecbc66afa7ec376338de8c4eb3dd2c00bffdd774893df90dc4ab7626eab8e7",
+          "queue": null,
+          "schemaVersion": "cvf.preapprovalFeasibilityReceipt.v1",
+          "technicalDisposition": "INVALID"
+        },
+        "expectedObserved": true
+      },
+      {
+        "caseId": "counter-substitution",
+        "exit": 1,
+        "receipt": {
+          "approvalTarget": {
+            "path": "docs/reference/counter.md",
+            "sha256": "ad2ae73aa6abc272ee8f946eaade8dd847bb5028071faf41b3bb84276a9fe1c5"
+          },
+          "canonicalBlockCount": 1,
+          "canonicalViolations": [
+            {
+              "code": "NON_DECREASING_STREAK_MISMATCH",
+              "message": "`counters.nonDecreasingBlockerTransitions` must equal the consecutive streak implied by predecessor/current blocker counts (1)"
+            }
+          ],
+          "companion": {
+            "path": "docs/reviews/evidence/counter.json",
+            "sha256": "afecf50f1faacb8cbf9321db1068c5fe1aacc84cf6c8b40fab74f9409f44c09c"
+          },
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnostics": [],
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "prerequisites": {
+            "deferred": 0,
+            "examined": 0
+          },
+          "proposal": {
+            "path": "docs/reference/counter.md",
+            "sha256": "ad2ae73aa6abc272ee8f946eaade8dd847bb5028071faf41b3bb84276a9fe1c5"
+          },
+          "prospectiveOutcomeSha256": "6b458a4b3c0751acff89a37c47b4a167555baaea520eecf0523643fded54cd3f",
+          "queue": null,
+          "schemaVersion": "cvf.preapprovalFeasibilityReceipt.v1",
+          "technicalDisposition": "INVALID"
+        },
+        "expectedObserved": true
+      },
+      {
+        "caseId": "valid-stop-not-release",
+        "exit": 2,
+        "receipt": {
+          "approvalTarget": {
+            "path": "docs/reference/stop.md",
+            "sha256": "9967dfc1bda883b2636cf1c199a81af0c74e9c11582278a2eca6883de3cd08b0"
+          },
+          "canonicalBlockCount": 1,
+          "canonicalViolations": [],
+          "companion": {
+            "path": "docs/reviews/evidence/stop.json",
+            "sha256": "ddbc6926f3cee56bdec6074e7b0f956a2ce8c8e41b096f60d451c4b32c1360fa"
+          },
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnostics": [],
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "prerequisites": {
+            "deferred": 0,
+            "examined": 0
+          },
+          "proposal": {
+            "path": "docs/reference/stop.md",
+            "sha256": "9967dfc1bda883b2636cf1c199a81af0c74e9c11582278a2eca6883de3cd08b0"
+          },
+          "prospectiveOutcomeSha256": "193601cdfdec73100a2c00e219dc3ff3bc0e048761f18ec2db01f32d33e6f2b0",
+          "queue": null,
+          "schemaVersion": "cvf.preapprovalFeasibilityReceipt.v1",
+          "technicalDisposition": "HOLD"
+        },
+        "expectedObserved": true
+      },
+      {
+        "caseId": "missing-companion",
+        "exit": 1,
+        "receipt": {
+          "approvalTarget": {
+            "path": null,
+            "sha256": null
+          },
+          "canonicalBlockCount": 0,
+          "canonicalViolations": [],
+          "companion": {
+            "path": "docs/reviews/evidence/missing.json",
+            "sha256": null
+          },
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnostics": [
+            {
+              "code": "COMPANION_UNREADABLE",
+              "message": "companion is missing, unsafe or unreadable"
+            }
+          ],
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "prerequisites": {
+            "deferred": 0,
+            "examined": 0
+          },
+          "proposal": {
+            "path": "docs/reference/missing.md",
+            "sha256": "2b5d40bcd37cc729ff18238c456788af1b1433709d29523684b87c5f5d0567a1"
+          },
+          "prospectiveOutcomeSha256": null,
+          "queue": null,
+          "schemaVersion": "cvf.preapprovalFeasibilityReceipt.v1",
+          "technicalDisposition": "INVALID"
+        },
+        "expectedObserved": true
+      },
+      {
+        "caseId": "explicit-zero-coverage-not-feasible",
+        "exit": 1,
+        "receipt": {
+          "approvalTarget": {
+            "path": null,
+            "sha256": null
+          },
+          "canonicalBlockCount": 0,
+          "canonicalViolations": [],
+          "companion": {
+            "path": null,
+            "sha256": null
+          },
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnostics": [
+            {
+              "code": "PROPOSAL_UNMARKED",
+              "message": "explicit caller requires a marked proposal; zero objects is never feasibility"
+            }
+          ],
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "prerequisites": {
+            "deferred": 0,
+            "examined": 0
+          },
+          "proposal": {
+            "path": "docs/reference/unmarked.md",
+            "sha256": "e5498597cc413097745debb2827bb5d7443aae53e7c7ca3146dbb7054e40ad55"
+          },
+          "prospectiveOutcomeSha256": null,
+          "queue": null,
+          "schemaVersion": "cvf.preapprovalFeasibilityReceipt.v1",
+          "technicalDisposition": "INVALID"
+        },
+        "expectedObserved": true
+      },
+      {
+        "caseId": "nested-locator-not-package",
+        "exit": 1,
+        "receipt": {
+          "approvalTarget": {
+            "path": "docs/reference/nested.md",
+            "sha256": "f908ed8787139d721dbc542844f83d4a74b7cdbb3fc2afa7a8d4ff96400fc223"
+          },
+          "canonicalBlockCount": 1,
+          "canonicalViolations": [],
+          "companion": {
+            "path": "docs/reviews/evidence/nested.json",
+            "sha256": "d0bf6d384ad85af083739b63b172be88d9de071d74f0f254c45b67417d701da5"
+          },
+          "coverageDisposition": "COMPLETE",
+          "diagnostics": [
+            {
+              "code": "QUEUE_EXACT_IDENTITY_INVALID",
+              "message": "requestQueue.rows[0] needs one publisher identity (name or @scope/name) and discoveryLocator null"
+            }
+          ],
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "prerequisites": {
+            "deferred": 0,
+            "examined": 0
+          },
+          "proposal": {
+            "path": "docs/reference/nested.md",
+            "sha256": "f908ed8787139d721dbc542844f83d4a74b7cdbb3fc2afa7a8d4ff96400fc223"
+          },
+          "prospectiveOutcomeSha256": "992dacc789da4db2ffbc283ac25048f2731784e2473f833f92737b2de6486ce7",
+          "queue": {
+            "cap": 1,
+            "discovery": 0,
+            "exact": 1,
+            "total": 1,
+            "unrequested": 0
+          },
+          "schemaVersion": "cvf.preapprovalFeasibilityReceipt.v1",
+          "technicalDisposition": "INVALID"
+        },
+        "expectedObserved": true
+      },
+      {
+        "caseId": "false-full-coverage",
+        "exit": 1,
+        "receipt": {
+          "approvalTarget": {
+            "path": "docs/reference/overcap.md",
+            "sha256": "14afa736350e26b48072d8f7984d2bfce5a7438e77be2553db75689b85f6fc57"
+          },
+          "canonicalBlockCount": 1,
+          "canonicalViolations": [],
+          "companion": {
+            "path": "docs/reviews/evidence/overcap.json",
+            "sha256": "5e6c787b0335dffec43c510a3ae948a6703ae98e66dee5fcc9ac32efbb81a89b"
+          },
+          "coverageDisposition": "PARTIAL",
+          "diagnostics": [
+            {
+              "code": "QUEUE_COVERAGE_FALSE",
+              "message": "declared coverage COMPLETE but 1 potential requests against ceiling 0 is PARTIAL"
+            },
+            {
+              "code": "QUEUE_FULL_COVERAGE_PROMISED",
+              "message": "an over-ceiling queue must not promise full coverage"
+            }
+          ],
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "prerequisites": {
+            "deferred": 0,
+            "examined": 0
+          },
+          "proposal": {
+            "path": "docs/reference/overcap.md",
+            "sha256": "14afa736350e26b48072d8f7984d2bfce5a7438e77be2553db75689b85f6fc57"
+          },
+          "prospectiveOutcomeSha256": "992dacc789da4db2ffbc283ac25048f2731784e2473f833f92737b2de6486ce7",
+          "queue": {
+            "cap": 0,
+            "discovery": 0,
+            "exact": 1,
+            "total": 1,
+            "unrequested": 1
+          },
+          "schemaVersion": "cvf.preapprovalFeasibilityReceipt.v1",
+          "technicalDisposition": "INVALID"
+        },
+        "expectedObserved": true
+      },
+      {
+        "caseId": "newline-package-rejected",
+        "exit": 0,
+        "receipt": {
+          "approvalTarget": {
+            "path": "docs/reference/newline.md",
+            "sha256": "504ee8bc00a7b576bbd155aeddbd20eeb4664f0f8138dd636f1c1cf17ef5cdb6"
+          },
+          "canonicalBlockCount": 1,
+          "canonicalViolations": [],
+          "companion": {
+            "path": "docs/reviews/evidence/newline.json",
+            "sha256": "8ea79743ca5a64e3241551c73cfdd70a6933357b68ce4b797b89c18a7eb02a83"
+          },
+          "coverageDisposition": "COMPLETE",
+          "diagnostics": [],
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "prerequisites": {
+            "deferred": 0,
+            "examined": 0
+          },
+          "proposal": {
+            "path": "docs/reference/newline.md",
+            "sha256": "504ee8bc00a7b576bbd155aeddbd20eeb4664f0f8138dd636f1c1cf17ef5cdb6"
+          },
+          "prospectiveOutcomeSha256": "992dacc789da4db2ffbc283ac25048f2731784e2473f833f92737b2de6486ce7",
+          "queue": {
+            "cap": 1,
+            "discovery": 0,
+            "exact": 1,
+            "total": 1,
+            "unrequested": 0
+          },
+          "schemaVersion": "cvf.preapprovalFeasibilityReceipt.v1",
+          "technicalDisposition": "FEASIBLE"
+        },
+        "expectedObserved": false
+      },
+      {
+        "caseId": "unicode-proposal-not-skipped",
+        "exit": 0,
+        "receipt": {
+          "counts": {
+            "FEASIBLE": 0,
+            "HOLD": 0,
+            "INVALID": 0
+          },
+          "coverage": {
+            "candidates": 0,
+            "changedEligibleMarkdown": 0,
+            "changedJson": 0,
+            "companionReferencingProposals": 0,
+            "evaluatedMarked": 0,
+            "notApplicableUnmarked": 0
+          },
+          "receipts": [],
+          "schemaVersion": "cvf.preapprovalFeasibilityRangeReport.v1"
+        },
+        "expectedObserved": false
+      },
+      {
+        "caseId": "unsafe-unreadable-proposal-not-skipped",
+        "exit": 0,
+        "receipt": {
+          "counts": {
+            "FEASIBLE": 0,
+            "HOLD": 0,
+            "INVALID": 0
+          },
+          "coverage": {
+            "candidates": 0,
+            "changedEligibleMarkdown": 0,
+            "changedJson": 0,
+            "companionReferencingProposals": 0,
+            "evaluatedMarked": 0,
+            "notApplicableUnmarked": 0
+          },
+          "receipts": [],
+          "schemaVersion": "cvf.preapprovalFeasibilityRangeReport.v1"
+        },
+        "expectedObserved": false
+      }
+    ],
+    "allExpectedObserved": false,
+    "effectAdmission": false
+  },
+  "probeAfter": {
+    "schemaVersion": "cvf.prefeasLocalProbe.v1",
+    "reviewerActor": "LOCAL_REVIEWER_CODEX_ROOT",
+    "invocationId": "prefeas-c1-local-review-20261008",
+    "method": "independently authored synthetic bytes/expectations;actual CLIs;no worker test/evaluator imports",
+    "root": "C:\\Users\\DELL\\AppData\\Local\\Temp\\cvf-pf-local-sm6lgm2r",
+    "oracleSha256": "dffba71c473124ed3b7bd8df9da381b8fd5038f0bb9b887cb44b4381394c53d7",
+    "cases": [
+      {
+        "caseId": "positive-explicit-feasible",
+        "exit": 0,
+        "receipt": {
+          "approvalTarget": {
+            "path": "docs/reference/proposal.md",
+            "sha256": "421b02c7fd76d7ffae7cb076b9af3fb83a6659c16a8d701f00fc95f163cce4e4"
+          },
+          "canonicalBlockCount": 1,
+          "canonicalViolations": [],
+          "companion": {
+            "path": "docs/reviews/evidence/proposal.json",
+            "sha256": "21bfc90bb60a542b41057618381a9b01f12270b9611db761cdb9c552d3101039"
+          },
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnostics": [],
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "prerequisites": {
+            "deferred": 0,
+            "examined": 0
+          },
+          "proposal": {
+            "path": "docs/reference/proposal.md",
+            "sha256": "421b02c7fd76d7ffae7cb076b9af3fb83a6659c16a8d701f00fc95f163cce4e4"
+          },
+          "prospectiveOutcomeSha256": "992dacc789da4db2ffbc283ac25048f2731784e2473f833f92737b2de6486ce7",
+          "queue": null,
+          "schemaVersion": "cvf.preapprovalFeasibilityReceipt.v1",
+          "technicalDisposition": "FEASIBLE"
+        },
+        "expectedObserved": true
+      },
+      {
+        "caseId": "stale-target",
+        "exit": 1,
+        "receipt": {
+          "approvalTarget": {
+            "path": "docs/reference/proposal.md",
+            "sha256": null
+          },
+          "canonicalBlockCount": 1,
+          "canonicalViolations": [],
+          "companion": {
+            "path": "docs/reviews/evidence/proposal.json",
+            "sha256": "7b6c1d564ebca8faa7d43ce80221b4d1b9329ceda74c5e0fd6f0ce39eec8eed2"
+          },
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnostics": [
+            {
+              "code": "TARGET_HASH_DRIFT",
+              "message": "approvalTarget.sha256 does not match the current proposal bytes"
+            }
+          ],
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "prerequisites": {
+            "deferred": 0,
+            "examined": 0
+          },
+          "proposal": {
+            "path": "docs/reference/proposal.md",
+            "sha256": "421b02c7fd76d7ffae7cb076b9af3fb83a6659c16a8d701f00fc95f163cce4e4"
+          },
+          "prospectiveOutcomeSha256": "992dacc789da4db2ffbc283ac25048f2731784e2473f833f92737b2de6486ce7",
+          "queue": null,
+          "schemaVersion": "cvf.preapprovalFeasibilityReceipt.v1",
+          "technicalDisposition": "INVALID"
+        },
+        "expectedObserved": true
+      },
+      {
+        "caseId": "positive-hash-bound-successor",
+        "exit": 0,
+        "receipt": {
+          "approvalTarget": {
+            "path": "docs/reference/successor.md",
+            "sha256": "38a1273887058664c54613a0230b1fc9b057636e577d9994d4f07ee51e229f93"
+          },
+          "canonicalBlockCount": 1,
+          "canonicalViolations": [],
+          "companion": {
+            "path": "docs/reviews/evidence/successor.json",
+            "sha256": "6dc0c487638d88d9f17a6c5470702ad7ea51f2870c04ab45fc3ca3f2d2555faf"
+          },
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnostics": [],
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "prerequisites": {
+            "deferred": 0,
+            "examined": 0
+          },
+          "proposal": {
+            "path": "docs/reference/successor.md",
+            "sha256": "38a1273887058664c54613a0230b1fc9b057636e577d9994d4f07ee51e229f93"
+          },
+          "prospectiveOutcomeSha256": "3785787c684494b531cea3db8a4bdf767d15714330fef59e889e76c6da2cd0fa",
+          "queue": null,
+          "schemaVersion": "cvf.preapprovalFeasibilityReceipt.v1",
+          "technicalDisposition": "FEASIBLE"
+        },
+        "expectedObserved": true
+      },
+      {
+        "caseId": "positive-legitimate-reduction",
+        "exit": 0,
+        "receipt": {
+          "approvalTarget": {
+            "path": "docs/reference/reducing.md",
+            "sha256": "6c7d9894b12b42c34d3743f7eae6aee52b75f3f5bc8a2a362dbe4e788970110b"
+          },
+          "canonicalBlockCount": 1,
+          "canonicalViolations": [],
+          "companion": {
+            "path": "docs/reviews/evidence/reducing.json",
+            "sha256": "c836a9233e87ddddb6aeded13a8f7c7326d8b580e73342d1c55d5ad16b6f5ec8"
+          },
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnostics": [],
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "prerequisites": {
+            "deferred": 0,
+            "examined": 0
+          },
+          "proposal": {
+            "path": "docs/reference/reducing.md",
+            "sha256": "6c7d9894b12b42c34d3743f7eae6aee52b75f3f5bc8a2a362dbe4e788970110b"
+          },
+          "prospectiveOutcomeSha256": "23f89ff5661dd4905b99f3a8e62d6b731957ff512a98e1364071c324a824d5b6",
+          "queue": null,
+          "schemaVersion": "cvf.preapprovalFeasibilityReceipt.v1",
+          "technicalDisposition": "FEASIBLE"
+        },
+        "expectedObserved": true
+      },
+      {
+        "caseId": "resolution-source-hash-drift",
+        "exit": 1,
+        "receipt": {
+          "approvalTarget": {
+            "path": "docs/reference/reducing.md",
+            "sha256": "6c7d9894b12b42c34d3743f7eae6aee52b75f3f5bc8a2a362dbe4e788970110b"
+          },
+          "canonicalBlockCount": 1,
+          "canonicalViolations": [
+            {
+              "code": "RESOLUTION_EVIDENCE_HASH_MISMATCH",
+              "message": "declared sha256 `e146d457531e321af0af7295d7cb636d1f10db90d3f6d001d0ea2ae833cb0f97` for `LOCAL_ONLY_BLOCKER` does not match recomputed hash `8f1fc06fa0f873c7bbc97e80d3297660c2e8df3512d4173ddac757c74db97a32`"
+            }
+          ],
+          "companion": {
+            "path": "docs/reviews/evidence/reducing.json",
+            "sha256": "c836a9233e87ddddb6aeded13a8f7c7326d8b580e73342d1c55d5ad16b6f5ec8"
+          },
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnostics": [],
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "prerequisites": {
+            "deferred": 0,
+            "examined": 0
+          },
+          "proposal": {
+            "path": "docs/reference/reducing.md",
+            "sha256": "6c7d9894b12b42c34d3743f7eae6aee52b75f3f5bc8a2a362dbe4e788970110b"
+          },
+          "prospectiveOutcomeSha256": "23f89ff5661dd4905b99f3a8e62d6b731957ff512a98e1364071c324a824d5b6",
+          "queue": null,
+          "schemaVersion": "cvf.preapprovalFeasibilityReceipt.v1",
+          "technicalDisposition": "INVALID"
+        },
+        "expectedObserved": true
+      },
+      {
+        "caseId": "problem-key-substitution",
+        "exit": 1,
+        "receipt": {
+          "approvalTarget": {
+            "path": "docs/reference/rename.md",
+            "sha256": "47bf13bc4ac7e14a91ef3058c3df41f2641763152131e6eb79cce1bd01622bf1"
+          },
+          "canonicalBlockCount": 1,
+          "canonicalViolations": [
+            {
+              "code": "PREDECESSOR_PROBLEM_KEY_MISMATCH",
+              "message": "successor `problemKey` must equal the predecessor block's `problemKey`"
+            }
+          ],
+          "companion": {
+            "path": "docs/reviews/evidence/rename.json",
+            "sha256": "15d0448a970c1996223103c1c7e41f1bc9a939076140774ead39803217a2697f"
+          },
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnostics": [],
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "prerequisites": {
+            "deferred": 0,
+            "examined": 0
+          },
+          "proposal": {
+            "path": "docs/reference/rename.md",
+            "sha256": "47bf13bc4ac7e14a91ef3058c3df41f2641763152131e6eb79cce1bd01622bf1"
+          },
+          "prospectiveOutcomeSha256": "84ecbc66afa7ec376338de8c4eb3dd2c00bffdd774893df90dc4ab7626eab8e7",
+          "queue": null,
+          "schemaVersion": "cvf.preapprovalFeasibilityReceipt.v1",
+          "technicalDisposition": "INVALID"
+        },
+        "expectedObserved": true
+      },
+      {
+        "caseId": "counter-substitution",
+        "exit": 1,
+        "receipt": {
+          "approvalTarget": {
+            "path": "docs/reference/counter.md",
+            "sha256": "ad2ae73aa6abc272ee8f946eaade8dd847bb5028071faf41b3bb84276a9fe1c5"
+          },
+          "canonicalBlockCount": 1,
+          "canonicalViolations": [
+            {
+              "code": "NON_DECREASING_STREAK_MISMATCH",
+              "message": "`counters.nonDecreasingBlockerTransitions` must equal the consecutive streak implied by predecessor/current blocker counts (1)"
+            }
+          ],
+          "companion": {
+            "path": "docs/reviews/evidence/counter.json",
+            "sha256": "afecf50f1faacb8cbf9321db1068c5fe1aacc84cf6c8b40fab74f9409f44c09c"
+          },
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnostics": [],
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "prerequisites": {
+            "deferred": 0,
+            "examined": 0
+          },
+          "proposal": {
+            "path": "docs/reference/counter.md",
+            "sha256": "ad2ae73aa6abc272ee8f946eaade8dd847bb5028071faf41b3bb84276a9fe1c5"
+          },
+          "prospectiveOutcomeSha256": "6b458a4b3c0751acff89a37c47b4a167555baaea520eecf0523643fded54cd3f",
+          "queue": null,
+          "schemaVersion": "cvf.preapprovalFeasibilityReceipt.v1",
+          "technicalDisposition": "INVALID"
+        },
+        "expectedObserved": true
+      },
+      {
+        "caseId": "valid-stop-not-release",
+        "exit": 2,
+        "receipt": {
+          "approvalTarget": {
+            "path": "docs/reference/stop.md",
+            "sha256": "9967dfc1bda883b2636cf1c199a81af0c74e9c11582278a2eca6883de3cd08b0"
+          },
+          "canonicalBlockCount": 1,
+          "canonicalViolations": [],
+          "companion": {
+            "path": "docs/reviews/evidence/stop.json",
+            "sha256": "ddbc6926f3cee56bdec6074e7b0f956a2ce8c8e41b096f60d451c4b32c1360fa"
+          },
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnostics": [],
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "prerequisites": {
+            "deferred": 0,
+            "examined": 0
+          },
+          "proposal": {
+            "path": "docs/reference/stop.md",
+            "sha256": "9967dfc1bda883b2636cf1c199a81af0c74e9c11582278a2eca6883de3cd08b0"
+          },
+          "prospectiveOutcomeSha256": "193601cdfdec73100a2c00e219dc3ff3bc0e048761f18ec2db01f32d33e6f2b0",
+          "queue": null,
+          "schemaVersion": "cvf.preapprovalFeasibilityReceipt.v1",
+          "technicalDisposition": "HOLD"
+        },
+        "expectedObserved": true
+      },
+      {
+        "caseId": "missing-companion",
+        "exit": 1,
+        "receipt": {
+          "approvalTarget": {
+            "path": null,
+            "sha256": null
+          },
+          "canonicalBlockCount": 0,
+          "canonicalViolations": [],
+          "companion": {
+            "path": "docs/reviews/evidence/missing.json",
+            "sha256": null
+          },
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnostics": [
+            {
+              "code": "COMPANION_UNREADABLE",
+              "message": "companion is missing, unsafe or unreadable"
+            }
+          ],
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "prerequisites": {
+            "deferred": 0,
+            "examined": 0
+          },
+          "proposal": {
+            "path": "docs/reference/missing.md",
+            "sha256": "2b5d40bcd37cc729ff18238c456788af1b1433709d29523684b87c5f5d0567a1"
+          },
+          "prospectiveOutcomeSha256": null,
+          "queue": null,
+          "schemaVersion": "cvf.preapprovalFeasibilityReceipt.v1",
+          "technicalDisposition": "INVALID"
+        },
+        "expectedObserved": true
+      },
+      {
+        "caseId": "explicit-zero-coverage-not-feasible",
+        "exit": 1,
+        "receipt": {
+          "approvalTarget": {
+            "path": null,
+            "sha256": null
+          },
+          "canonicalBlockCount": 0,
+          "canonicalViolations": [],
+          "companion": {
+            "path": null,
+            "sha256": null
+          },
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnostics": [
+            {
+              "code": "PROPOSAL_UNMARKED",
+              "message": "explicit caller requires a marked proposal; zero objects is never feasibility"
+            }
+          ],
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "prerequisites": {
+            "deferred": 0,
+            "examined": 0
+          },
+          "proposal": {
+            "path": "docs/reference/unmarked.md",
+            "sha256": "e5498597cc413097745debb2827bb5d7443aae53e7c7ca3146dbb7054e40ad55"
+          },
+          "prospectiveOutcomeSha256": null,
+          "queue": null,
+          "schemaVersion": "cvf.preapprovalFeasibilityReceipt.v1",
+          "technicalDisposition": "INVALID"
+        },
+        "expectedObserved": true
+      },
+      {
+        "caseId": "nested-locator-not-package",
+        "exit": 1,
+        "receipt": {
+          "approvalTarget": {
+            "path": "docs/reference/nested.md",
+            "sha256": "f908ed8787139d721dbc542844f83d4a74b7cdbb3fc2afa7a8d4ff96400fc223"
+          },
+          "canonicalBlockCount": 1,
+          "canonicalViolations": [],
+          "companion": {
+            "path": "docs/reviews/evidence/nested.json",
+            "sha256": "d0bf6d384ad85af083739b63b172be88d9de071d74f0f254c45b67417d701da5"
+          },
+          "coverageDisposition": "COMPLETE",
+          "diagnostics": [
+            {
+              "code": "QUEUE_EXACT_IDENTITY_INVALID",
+              "message": "requestQueue.rows[0] needs one publisher identity (name or @scope/name) and discoveryLocator null"
+            }
+          ],
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "prerequisites": {
+            "deferred": 0,
+            "examined": 0
+          },
+          "proposal": {
+            "path": "docs/reference/nested.md",
+            "sha256": "f908ed8787139d721dbc542844f83d4a74b7cdbb3fc2afa7a8d4ff96400fc223"
+          },
+          "prospectiveOutcomeSha256": "992dacc789da4db2ffbc283ac25048f2731784e2473f833f92737b2de6486ce7",
+          "queue": {
+            "cap": 1,
+            "discovery": 0,
+            "exact": 1,
+            "total": 1,
+            "unrequested": 0
+          },
+          "schemaVersion": "cvf.preapprovalFeasibilityReceipt.v1",
+          "technicalDisposition": "INVALID"
+        },
+        "expectedObserved": true
+      },
+      {
+        "caseId": "false-full-coverage",
+        "exit": 1,
+        "receipt": {
+          "approvalTarget": {
+            "path": "docs/reference/overcap.md",
+            "sha256": "14afa736350e26b48072d8f7984d2bfce5a7438e77be2553db75689b85f6fc57"
+          },
+          "canonicalBlockCount": 1,
+          "canonicalViolations": [],
+          "companion": {
+            "path": "docs/reviews/evidence/overcap.json",
+            "sha256": "5e6c787b0335dffec43c510a3ae948a6703ae98e66dee5fcc9ac32efbb81a89b"
+          },
+          "coverageDisposition": "PARTIAL",
+          "diagnostics": [
+            {
+              "code": "QUEUE_COVERAGE_FALSE",
+              "message": "declared coverage COMPLETE but 1 potential requests against ceiling 0 is PARTIAL"
+            },
+            {
+              "code": "QUEUE_FULL_COVERAGE_PROMISED",
+              "message": "an over-ceiling queue must not promise full coverage"
+            }
+          ],
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "prerequisites": {
+            "deferred": 0,
+            "examined": 0
+          },
+          "proposal": {
+            "path": "docs/reference/overcap.md",
+            "sha256": "14afa736350e26b48072d8f7984d2bfce5a7438e77be2553db75689b85f6fc57"
+          },
+          "prospectiveOutcomeSha256": "992dacc789da4db2ffbc283ac25048f2731784e2473f833f92737b2de6486ce7",
+          "queue": {
+            "cap": 0,
+            "discovery": 0,
+            "exact": 1,
+            "total": 1,
+            "unrequested": 1
+          },
+          "schemaVersion": "cvf.preapprovalFeasibilityReceipt.v1",
+          "technicalDisposition": "INVALID"
+        },
+        "expectedObserved": true
+      },
+      {
+        "caseId": "newline-package-rejected",
+        "exit": 1,
+        "receipt": {
+          "approvalTarget": {
+            "path": "docs/reference/newline.md",
+            "sha256": "504ee8bc00a7b576bbd155aeddbd20eeb4664f0f8138dd636f1c1cf17ef5cdb6"
+          },
+          "canonicalBlockCount": 1,
+          "canonicalViolations": [],
+          "companion": {
+            "path": "docs/reviews/evidence/newline.json",
+            "sha256": "8ea79743ca5a64e3241551c73cfdd70a6933357b68ce4b797b89c18a7eb02a83"
+          },
+          "coverageDisposition": "COMPLETE",
+          "diagnostics": [
+            {
+              "code": "QUEUE_EXACT_IDENTITY_INVALID",
+              "message": "requestQueue.rows[0] needs one publisher identity (name or @scope/name) and discoveryLocator null"
+            }
+          ],
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "prerequisites": {
+            "deferred": 0,
+            "examined": 0
+          },
+          "proposal": {
+            "path": "docs/reference/newline.md",
+            "sha256": "504ee8bc00a7b576bbd155aeddbd20eeb4664f0f8138dd636f1c1cf17ef5cdb6"
+          },
+          "prospectiveOutcomeSha256": "992dacc789da4db2ffbc283ac25048f2731784e2473f833f92737b2de6486ce7",
+          "queue": {
+            "cap": 1,
+            "discovery": 0,
+            "exact": 1,
+            "total": 1,
+            "unrequested": 0
+          },
+          "schemaVersion": "cvf.preapprovalFeasibilityReceipt.v1",
+          "technicalDisposition": "INVALID"
+        },
+        "expectedObserved": true
+      },
+      {
+        "caseId": "unicode-proposal-not-skipped",
+        "exit": 1,
+        "receipt": {
+          "counts": {
+            "FEASIBLE": 0,
+            "HOLD": 0,
+            "INVALID": 1
+          },
+          "coverage": {
+            "candidates": 1,
+            "changedEligibleMarkdown": 1,
+            "changedJson": 1,
+            "companionReferencingProposals": 1,
+            "evaluatedMarked": 1,
+            "notApplicableUnmarked": 0
+          },
+          "receipts": [
+            {
+              "approvalTarget": {
+                "path": "docs/reference/\u0111\u1ec1-xu\u1ea5t.md",
+                "sha256": null
+              },
+              "canonicalBlockCount": 1,
+              "canonicalViolations": [],
+              "companion": {
+                "path": "docs/reviews/evidence/\u0111\u1ec1-xu\u1ea5t.json",
+                "sha256": "40ad7e604fe7481206a497fda75ae200819d96725c2853062567d669fec32b16"
+              },
+              "coverageDisposition": "NOT_APPLICABLE",
+              "diagnostics": [
+                {
+                  "code": "TARGET_HASH_DRIFT",
+                  "message": "approvalTarget.sha256 does not match the current proposal bytes"
+                }
+              ],
+              "effectAdmission": false,
+              "operatorApprovalRequired": true,
+              "prerequisites": {
+                "deferred": 0,
+                "examined": 0
+              },
+              "proposal": {
+                "path": "docs/reference/\u0111\u1ec1-xu\u1ea5t.md",
+                "sha256": "382e3a6969e5c66f5b6e37142ccac906adc590426d0ad5281d42c86f94a935e8"
+              },
+              "prospectiveOutcomeSha256": "992dacc789da4db2ffbc283ac25048f2731784e2473f833f92737b2de6486ce7",
+              "queue": null,
+              "schemaVersion": "cvf.preapprovalFeasibilityReceipt.v1",
+              "technicalDisposition": "INVALID"
+            }
+          ],
+          "schemaVersion": "cvf.preapprovalFeasibilityRangeReport.v1"
+        },
+        "expectedObserved": true
+      },
+      {
+        "caseId": "unsafe-unreadable-proposal-not-skipped",
+        "exit": 1,
+        "receipt": {
+          "counts": {
+            "FEASIBLE": 0,
+            "HOLD": 0,
+            "INVALID": 1
+          },
+          "coverage": {
+            "candidates": 1,
+            "changedEligibleMarkdown": 1,
+            "changedJson": 0,
+            "companionReferencingProposals": 0,
+            "evaluatedMarked": 1,
+            "notApplicableUnmarked": 0
+          },
+          "receipts": [
+            {
+              "approvalTarget": {
+                "path": null,
+                "sha256": null
+              },
+              "canonicalBlockCount": 0,
+              "canonicalViolations": [],
+              "companion": {
+                "path": null,
+                "sha256": null
+              },
+              "coverageDisposition": "NOT_APPLICABLE",
+              "diagnostics": [
+                {
+                  "code": "PROPOSAL_UNREADABLE",
+                  "message": "proposal is missing, unsafe or unreadable"
+                }
+              ],
+              "effectAdmission": false,
+              "operatorApprovalRequired": true,
+              "prerequisites": {
+                "deferred": 0,
+                "examined": 0
+              },
+              "proposal": {
+                "path": "docs/reference/escape/unsafe.md",
+                "sha256": null
+              },
+              "prospectiveOutcomeSha256": null,
+              "queue": null,
+              "schemaVersion": "cvf.preapprovalFeasibilityReceipt.v1",
+              "technicalDisposition": "INVALID"
+            }
+          ],
+          "schemaVersion": "cvf.preapprovalFeasibilityRangeReport.v1"
+        },
+        "expectedObserved": true
+      }
+    ],
+    "allExpectedObserved": true,
+    "effectAdmission": false
+  },
+  "probeOracleSource": "import copy,hashlib,json,subprocess,sys,tempfile,time\nfrom pathlib import Path\nR=Path.cwd();ROOT=Path(tempfile.mkdtemp(prefix='cvf-pf-local-'));CASES=[]\nOUT=R/'.cvf/runtime/prefeas-local-probe-result.json'\ndef sha(b):return hashlib.sha256(b).hexdigest()\ndef put(root,p,b):q=root/p;q.parent.mkdir(parents=True,exist_ok=True);q.write_bytes(b if isinstance(b,bytes) else b.encode());return q\ndef git(root,*args):return subprocess.run(['git','-c','user.name=CVF Local probe','-c','user.email=cvf-probe@example.invalid','-c','commit.gpgsign=false',*args],cwd=root,capture_output=True,check=True)\ndef init(root):root.mkdir(parents=True,exist_ok=True);git(root,'init','-q');put(root,'seed.txt','seed');git(root,'add','-A');git(root,'commit','-qm','seed')\ndef block():return {'schemaVersion':'cvf.semanticConvergenceControl.v1','problemKey':'local-review-isolated','chainMode':'INITIAL','chainOrdinal':0,'predecessor':None,'blockerDelta':{k:[] for k in ['prior','resolved','retained','new','reopened','current']},'resolutionEvidence':{},'counters':{k:0 for k in ['partialReadyClosures','reviewerScopeExpansions','sameClaimCorrections','nonDecreasingBlockerTransitions']},'claims':[],'requiredDisposition':'CONTINUE_BOUNDED','successorScope':'INITIAL_BOUNDED'}\ndef packet(root,name='proposal',outcome=None,queue=None):\n p=f'docs/reference/{name}.md';c=f'docs/reviews/evidence/{name}.json';o=outcome or block()\n raw=f'# Independent proposal\\nPreapproval-Feasibility: REQUIRED\\nPreapproval-Feasibility-Companion: {c}\\n'.encode()\n put(root,p,raw);d={'schemaVersion':'cvf.preapprovalFeasibility.v1','proposal':{'path':p,'sha256':sha(raw)},'approvalTarget':{'path':p,'sha256':sha(raw),'prospectiveOutcomeSha256':sha(json.dumps(o,sort_keys=True,ensure_ascii=True,separators=(',',':')).encode())},'prospectiveOutcome':o,'phasePrerequisites':{'phase':'independent-probe','rows':[]},'requestQueue':queue};put(root,c,json.dumps(d));return p,c,d\ndef call(root,p,target=None):\n a=[sys.executable,'-B',str(R/'governance/compat/run_preapproval_feasibility_gate.py'),'--repo-root',str(root),'--proposal',p,'--approval-target',target or p,'--json'];s=subprocess.run(a,cwd=R,capture_output=True,text=True,encoding='utf-8');return s.returncode,json.loads(s.stdout)\ndef runrange(root):\n a=[sys.executable,'-B',str(R/'governance/compat/check_preapproval_feasibility.py'),'--repo-root',str(root),'--base','HEAD','--head','HEAD','--enforce','--json'];s=subprocess.run(a,cwd=R,capture_output=True,text=True,encoding='utf-8');return s.returncode,json.loads(s.stdout)\ndef record(name,root,p,expected,range_mode=False):\n ec,r=runrange(root) if range_mode else call(root,p);ok=expected(ec,r);CASES.append({'caseId':name,'exit':ec,'receipt':r,'expectedObserved':ok});return ok\nroot=ROOT/'main';init(root);p,c,d=packet(root)\nrecord('positive-explicit-feasible',root,p,lambda e,r:e==0 and r['technicalDisposition']=='FEASIBLE' and r['effectAdmission'] is False)\nchanged=copy.deepcopy(d);changed['approvalTarget']['sha256']='0'*64;put(root,c,json.dumps(changed));record('stale-target',root,p,lambda e,r:e!=0 and r['technicalDisposition']=='INVALID');put(root,c,json.dumps(d))\npred=block();pred['blockerDelta']['new']=pred['blockerDelta']['current']=['LOCAL_ONLY_BLOCKER'];pb=('# Predecessor\\n## Semantic Convergence Outcome\\n```json\\n'+json.dumps(pred)+'\\n```\\n').encode();predpath='docs/reviews/isolated-predecessor.md';put(root,predpath,pb)\nsuccessor=copy.deepcopy(pred);successor.update(chainMode='SUCCESSOR',chainOrdinal=1,predecessor={'path':predpath,'sha256':sha(pb)});successor['blockerDelta']={'prior':['LOCAL_ONLY_BLOCKER'],'resolved':[],'retained':['LOCAL_ONLY_BLOCKER'],'new':[],'reopened':[],'current':['LOCAL_ONLY_BLOCKER']};successor['counters']['nonDecreasingBlockerTransitions']=1\np,c,d=packet(root,'successor',successor);record('positive-hash-bound-successor',root,p,lambda e,r:e==0 and r['canonicalBlockCount']==1)\nevpath='docs/reviews/evidence/local-accepted.md';evbytes=b'# Synthetic accepted review\\nlocal-resolution-locator\\n';put(root,evpath,evbytes)\nreduction=copy.deepcopy(successor);reduction['blockerDelta']={'prior':['LOCAL_ONLY_BLOCKER'],'resolved':['LOCAL_ONLY_BLOCKER'],'retained':[],'new':[],'reopened':[],'current':[]};reduction['counters']['nonDecreasingBlockerTransitions']=0;reduction['resolutionEvidence']={'LOCAL_ONLY_BLOCKER':{'evidenceClass':'ACCEPTED_REVIEW','evidencePath':evpath,'sha256':sha(evbytes),'locator':'local-resolution-locator'}}\np,c,d=packet(root,'reducing',reduction);record('positive-legitimate-reduction',root,p,lambda e,r:e==0 and r['technicalDisposition']=='FEASIBLE' and not r['canonicalViolations'] and r['effectAdmission'] is False)\nput(root,evpath,evbytes+b'changed');record('resolution-source-hash-drift',root,p,lambda e,r:e!=0 and any(v['code']=='RESOLUTION_EVIDENCE_HASH_MISMATCH' for v in r['canonicalViolations']))\nrenamed=copy.deepcopy(successor);renamed['problemKey']='renamed';p,c,d=packet(root,'rename',renamed);record('problem-key-substitution',root,p,lambda e,r:e!=0 and any(v['code']=='PREDECESSOR_PROBLEM_KEY_MISMATCH' for v in r['canonicalViolations']))\ncounter=copy.deepcopy(successor);counter['counters']['nonDecreasingBlockerTransitions']=0;p,c,d=packet(root,'counter',counter);record('counter-substitution',root,p,lambda e,r:e!=0 and any(v['code']=='NON_DECREASING_STREAK_MISMATCH' for v in r['canonicalViolations']))\nstop=copy.deepcopy(successor);stop.update(requiredDisposition='STOP_REASSESS_ARCHITECTURE',successorScope='NO_SUCCESSOR');p,c,d=packet(root,'stop',stop);record('valid-stop-not-release',root,p,lambda e,r:e!=0 and r['technicalDisposition']=='HOLD' and not r['canonicalViolations'] and r['effectAdmission'] is False)\np,c,d=packet(root,'missing');(root/c).unlink();record('missing-companion',root,p,lambda e,r:e!=0 and r['technicalDisposition']=='INVALID')\nput(root,'docs/reference/unmarked.md','# Ordinary\\n');record('explicit-zero-coverage-not-feasible',root,'docs/reference/unmarked.md',lambda e,r:e!=0 and r['canonicalBlockCount']==0)\ndef queue(name,cap=1,coverage='COMPLETE',promise=True):return {'rows':[{'rowId':'q1','kind':'EXACT_NPM_METADATA','packageName':name,'discoveryLocator':None}],'requestCeiling':cap,'promisedFullCoverage':promise,'coverageDisposition':coverage}\np,c,d=packet(root,'nested',queue=queue('@scope/name/nested'));record('nested-locator-not-package',root,p,lambda e,r:e!=0 and r['technicalDisposition']=='INVALID')\np,c,d=packet(root,'overcap',queue=queue('cliui',0));record('false-full-coverage',root,p,lambda e,r:e!=0 and r['technicalDisposition']=='INVALID')\np,c,d=packet(root,'newline',queue=queue('cliui\\n'));record('newline-package-rejected',root,p,lambda e,r:e!=0 and r['technicalDisposition']=='INVALID')\nu=ROOT/'unicode';init(u);p,c,d=packet(u,'\\u0111\\u1ec1-xu\\u1ea5t');d['approvalTarget']['sha256']='0'*64;put(u,c,json.dumps(d));record('unicode-proposal-not-skipped',u,p,lambda e,r:e!=0 and r['counts']['INVALID']==1,True)\nlinkroot=ROOT/'link';init(linkroot);outside=ROOT/'outside';outside.mkdir();put(outside,'unsafe.md','# Proposal\\nPreapproval-Feasibility: REQUIRED\\n');link=linkroot/'docs/reference/escape';link.parent.mkdir(parents=True,exist_ok=True)\nj=subprocess.run(['cmd','/c','mklink','/J',str(link),str(outside)],capture_output=True)\nassert j.returncode==0,'junction unavailable'\np='docs/reference/escape/unsafe.md';(linkroot/'seed.txt').write_text('changed');\n# Stage a named path before replacing its parent with an escaping junction so Git reports it reliably.\ngit(linkroot,'add','-N','--',p)\nrecord('unsafe-unreadable-proposal-not-skipped',linkroot,p,lambda e,r:e!=0 and r['counts']['INVALID']==1,True)\nresult={'schemaVersion':'cvf.prefeasLocalProbe.v1','reviewerActor':'LOCAL_REVIEWER_CODEX_ROOT','invocationId':'prefeas-c1-local-review-20261008','method':'independently authored synthetic bytes/expectations;actual CLIs;no worker test/evaluator imports','root':str(ROOT),'oracleSha256':sha(Path(__file__).read_bytes()),'cases':CASES,'allExpectedObserved':all(x['expectedObserved'] for x in CASES),'effectAdmission':False}\nOUT.write_text(json.dumps(result,indent=2,ensure_ascii=True)+'\\n');print(json.dumps({'cases':len(CASES),'failures':[x['caseId'] for x in CASES if not x['expectedObserved']],'receipt':str(OUT)}))\n",
+  "probeOracleSourceSha256": "dffba71c473124ed3b7bd8df9da381b8fd5038f0bb9b887cb44b4381394c53d7",
+  "focusedRegression": {
+    "command": "python -B -m pytest governance/compat/test_check_preapproval_feasibility.py -q",
+    "exit": 0,
+    "summary": "103 passed in 10.78s",
+    "logSha256": "16687ecfc45b58aa3defbe949a7a9a9b499c07f9672407b3caff12c2592f49b9"
+  },
+  "consumedWorkerTests": "290 PASS for original worker bytes;not rerun or misattributed to final repaired bytes",
+  "consumedWorkerGate": "final bound worker-return fast gate PASS declared/log-hashed in original evidence;receipt cannot authenticate every prior tool event",
+  "selectedManifest": [
+    {
+      "path": "governance/compat/preapproval_feasibility_contract.py",
+      "sha256": "9c39a0815cc26492d1b2a31146f77cb20a2151189b2beca7b06ee3642c06e970",
+      "processing": "TARGETED_SOURCE_OR_CURRENT_ARTIFACT_IDENTITY",
+      "mapDisposition": "DEFERRED_OUTSIDE_REVIEW_OUTCOME"
+    },
+    {
+      "path": "governance/compat/check_preapproval_feasibility.py",
+      "sha256": "f9eba51905101423a61eded8a5283e11559b7f10aa49ab248ef202119af5bc69",
+      "processing": "TARGETED_SOURCE_OR_CURRENT_ARTIFACT_IDENTITY",
+      "mapDisposition": "DEFERRED_OUTSIDE_REVIEW_OUTCOME"
+    },
+    {
+      "path": "governance/compat/run_preapproval_feasibility_gate.py",
+      "sha256": "c7b958dc5436671cda5d66e67068a26ba81dd50765da3b1b8da7425fff42b50c",
+      "processing": "TARGETED_SOURCE_OR_CURRENT_ARTIFACT_IDENTITY",
+      "mapDisposition": "DEFERRED_OUTSIDE_REVIEW_OUTCOME"
+    },
+    {
+      "path": "governance/compat/test_check_preapproval_feasibility.py",
+      "sha256": "dddcea9bab81d627efae83631f3f8fd50249775449d589c66441661e7775cdaa",
+      "processing": "TARGETED_SOURCE_OR_CURRENT_ARTIFACT_IDENTITY",
+      "mapDisposition": "DEFERRED_OUTSIDE_REVIEW_OUTCOME"
+    },
+    {
+      "path": "governance/compat/agent_autorun_command_catalog.py",
+      "sha256": "dcac9e4b8fb5c8bffa6193b84b9b598219f966581974c068e0af82a0b893cae4",
+      "processing": "TARGETED_SOURCE_OR_CURRENT_ARTIFACT_IDENTITY",
+      "mapDisposition": "DEFERRED_OUTSIDE_REVIEW_OUTCOME"
+    },
+    {
+      "path": "governance/compat/local_governance_hook_catalog_pre_commit.py",
+      "sha256": "c0f0269f8726a25d944a2c1b9b13977fa296b1128c4104d0cf4a0daec4341b4b",
+      "processing": "TARGETED_SOURCE_OR_CURRENT_ARTIFACT_IDENTITY",
+      "mapDisposition": "DEFERRED_OUTSIDE_REVIEW_OUTCOME"
+    },
+    {
+      "path": "governance/compat/local_governance_hook_catalog_reviewer_fast.py",
+      "sha256": "d77cfa858af7e43452fe6379d65ba02421eb91d6e7d98fbe8594c759b7e18893",
+      "processing": "TARGETED_SOURCE_OR_CURRENT_ARTIFACT_IDENTITY",
+      "mapDisposition": "DEFERRED_OUTSIDE_REVIEW_OUTCOME"
+    },
+    {
+      "path": "governance/compat/test_run_agent_autorun_workflow_gate.py",
+      "sha256": "37ac5b1df154d360a30811e6383f1af3fcb38bb3d13eff6863b6cf16de42be33",
+      "processing": "TARGETED_SOURCE_OR_CURRENT_ARTIFACT_IDENTITY",
+      "mapDisposition": "DEFERRED_OUTSIDE_REVIEW_OUTCOME"
+    },
+    {
+      "path": "docs/reference/CVF_GOVERNED_WORK_LIFECYCLE_AND_DESIGN_CONTROL_STANDARD_2026-06-11.md",
+      "sha256": "d74096044253ba8a3a0aedeebb93f7112160098444c94dba5d5fad308c1cd135",
+      "processing": "TARGETED_SOURCE_OR_CURRENT_ARTIFACT_IDENTITY",
+      "mapDisposition": "DEFERRED_OUTSIDE_REVIEW_OUTCOME"
+    },
+    {
+      "path": "docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md",
+      "sha256": "5dff76c6a1e4d9f11ff0d32fd9f935f04dc48d63e74226d2eb15b57d758920ca",
+      "processing": "TARGETED_SOURCE_OR_CURRENT_ARTIFACT_IDENTITY",
+      "mapDisposition": "DEFERRED_OUTSIDE_REVIEW_OUTCOME"
+    },
+    {
+      "path": "docs/reviews/CVF_PREFEAS_C1_WORKER_RETURN_2026-10-08.md",
+      "sha256": "7a3b4962a4b7eb38afe3c91fbb0bfbc52974e86129a6f277706148cd4646d7d6",
+      "processing": "TARGETED_SOURCE_OR_CURRENT_ARTIFACT_IDENTITY",
+      "mapDisposition": "DEFERRED_OUTSIDE_REVIEW_OUTCOME"
+    },
+    {
+      "path": "docs/reviews/evidence/cvf-prefeas-c1-worker-2026-10-08.json",
+      "sha256": "542a45b20dc0c212fc7a6d2d30d82783bfa94b9db25caf312c78b90b43025d25",
+      "processing": "TARGETED_SOURCE_OR_CURRENT_ARTIFACT_IDENTITY",
+      "mapDisposition": "DEFERRED_OUTSIDE_REVIEW_OUTCOME"
+    },
+    {
+      "path": "docs/reference/preapproval_feasibility/README.md",
+      "sha256": "6a581e3cd5a50932cd6edb5bfa1ae547b7b8443c5d5471a2a776f1505247fa2a",
+      "processing": "TARGETED_SOURCE_OR_CURRENT_ARTIFACT_IDENTITY",
+      "mapDisposition": "DEFERRED_OUTSIDE_REVIEW_OUTCOME"
+    },
+    {
+      "path": "governance/compat/check_semantic_convergence_control.py",
+      "sha256": "94d4a26f130f5fd20eefa54871e3533e9755164dfc8204864e7f555f211352e9",
+      "processing": "TARGETED_SOURCE_OR_CURRENT_ARTIFACT_IDENTITY",
+      "mapDisposition": "DEFERRED_OUTSIDE_REVIEW_OUTCOME"
+    },
+    {
+      "path": "docs/reference/review_cost_control/CVF_REVIEW_COST_AND_DIMINISHING_RETURN_CONTROL_STANDARD.md",
+      "sha256": "17d27144c7db34b717633c14428a778b2b00949f62d71e6a1d8f4f9a2bbe8700",
+      "processing": "TARGETED_SOURCE_OR_CURRENT_ARTIFACT_IDENTITY",
+      "mapDisposition": "DEFERRED_OUTSIDE_REVIEW_OUTCOME"
+    }
+  ],
+  "selectedManifestSha256": "9d722a3044acf661faa57b1c37a1ce209e78de2abc49fad4f37848fc2b206ee4",
+  "knowledgeReconciliation": {
+    "mapped": 0,
+    "deferred": 15,
+    "unmapped": 0,
+    "verdict": "PARTIAL"
+  },
+  "effectAdmission": false,
+  "sourceS1Released": false,
+  "sourceChainsUnchanged": true,
+  "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
+  "closureAuthoringCorrections": {
+    "initialResult": "FAIL",
+    "log": ".cvf/runtime/prefeas-closure-authoring.log",
+    "logSha256": "09131fe55fa731d23649f185238c38638c16eb3b4f98c6704ca30f765bd2e694",
+    "defects": [
+      "closed prose substring trap",
+      "completion target/source heading",
+      "order assertion matrix",
+      "explicit runtime-learning N/A enum",
+      "filesystem enumeration literal/numeric asset labels"
+    ],
+    "owner": "Local reviewer packet,not worker implementation",
+    "repair": "packet literals/projections only;no checker weakening",
+    "secondResult": "FAIL: count labels corrected but separators differed from required semicolon parser; now exact literal fixed",
+    "secondLogSha256": "dd15ac64871e472004b7ff23f1656387b7552bea51b083eeefde3fcbb9336bd3"
+  }
+}

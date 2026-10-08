@@ -1,0 +1,2247 @@
+{
+  "schemaVersion": "cvf.prefeasC1WorkerEvidence.v1",
+  "batchId": "CVF-PREFEAS-C1-20261008",
+  "executionBaseHead": "9b778dc1d9240d3584d60ffbf8ff474f3d70127f",
+  "headUnchangedNoCommit": true,
+  "role": "INTERNAL_AGENT shared-workspace implementation worker",
+  "status": "COMPLETE_PENDING_REVIEW",
+  "guardStatus": "IMPLEMENTED_PENDING_LOCAL_REVIEW",
+  "agentApplication": "NOT_PROVEN",
+  "effectAdmission": false,
+  "dispatcherReadOnlyInputsUnchanged": {
+    "docs/reference/preapproval_feasibility/README.md": {
+      "sha256": "6a581e3cd5a50932cd6edb5bfa1ae547b7b8443c5d5471a2a776f1505247fa2a",
+      "pinMatch": true,
+      "gitDiffAgainstHeadEmpty": true
+    },
+    "docs/baselines/CVF_GC018_PREFEAS_C1_2026-10-08.md": {
+      "sha256": "75ec83ce9b4528477f6ca2b82dfc52b913a9ab9e11ec1dd9bc444935b5fbb8a3",
+      "pinMatch": true,
+      "gitDiffAgainstHeadEmpty": true
+    },
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_PREFEAS_C1_2026-10-08.md": {
+      "sha256": "9510f4846a8cb22605fb21537ee1ad0c56560e9dea69d9dab0c70bb7db4d2f95",
+      "pinMatch": true,
+      "gitDiffAgainstHeadEmpty": true
+    },
+    "docs/reviews/evidence/cvf-prefeas-c1-dispatch-design-2026-10-08.json": {
+      "sha256": "4322a691e28bb1de6e783e3924b20a0f9301f1faa874ab4b2e05054ccb6ff88d",
+      "pinMatch": null,
+      "gitDiffAgainstHeadEmpty": true
+    }
+  },
+  "artifactHashes": {
+    "governance/compat/preapproval_feasibility_contract.py": "dc5055af6b236a2863f835e485ba07628bc3d33539f78ad22eb75375cf5d0dcf",
+    "governance/compat/check_preapproval_feasibility.py": "ac8b7d2201809b3b148bc03840b50ab8872d46ea63c7f7698e82489e7a1e234f",
+    "governance/compat/run_preapproval_feasibility_gate.py": "c7b958dc5436671cda5d66e67068a26ba81dd50765da3b1b8da7425fff42b50c",
+    "governance/compat/test_check_preapproval_feasibility.py": "1f01107db57c548542c19044a412f11376f92f42099e7d1b8ec3fbb92cfd04a0",
+    "governance/compat/agent_autorun_command_catalog.py": "dcac9e4b8fb5c8bffa6193b84b9b598219f966581974c068e0af82a0b893cae4",
+    "governance/compat/local_governance_hook_catalog_pre_commit.py": "c0f0269f8726a25d944a2c1b9b13977fa296b1128c4104d0cf4a0daec4341b4b",
+    "governance/compat/local_governance_hook_catalog_reviewer_fast.py": "d77cfa858af7e43452fe6379d65ba02421eb91d6e7d98fbe8594c759b7e18893",
+    "governance/compat/test_run_agent_autorun_workflow_gate.py": "37ac5b1df154d360a30811e6383f1af3fcb38bb3d13eff6863b6cf16de42be33",
+    "docs/reference/CVF_GOVERNED_WORK_LIFECYCLE_AND_DESIGN_CONTROL_STANDARD_2026-06-11.md": "d74096044253ba8a3a0aedeebb93f7112160098444c94dba5d5fad308c1cd135",
+    "docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md": "6b50caf118fe12b9bcf9e6136ee9e17986aa0cf2e0aa1388e2cc96580fd9030e"
+  },
+  "artifactHashNote": "ten worker artifacts hashed at evidence build; this receipt and the worker return are excluded to avoid cyclic self-hash and are hashed separately in reviewer custody",
+  "lineCounts": {
+    "governance/compat/preapproval_feasibility_contract.py": 422,
+    "governance/compat/check_preapproval_feasibility.py": 148,
+    "governance/compat/run_preapproval_feasibility_gate.py": 42,
+    "governance/compat/test_check_preapproval_feasibility.py": 500,
+    "governance/compat/agent_autorun_command_catalog.py": 614,
+    "governance/compat/local_governance_hook_catalog_pre_commit.py": 382,
+    "governance/compat/local_governance_hook_catalog_reviewer_fast.py": 292,
+    "governance/compat/test_run_agent_autorun_workflow_gate.py": 774
+  },
+  "preImplementationGate": {
+    "command": "python -B governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base 9b778dc1d9240d3584d60ffbf8ff474f3d70127f --head HEAD --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_PREFEAS_C1_2026-10-08.md",
+    "exit": 0,
+    "result": "COMPLIANT",
+    "note": "run on the clean tree before any retained write (one early-created file was moved aside and restored byte-identically)"
+  },
+  "proofs": {
+    "PF-SCEC": {
+      "frozenPredecessor": {
+        "path": "docs/reviews/CVF_CVF_NCR_S05_S1_SUPERVISOR_SOURCE_R1_WORKER_RETURN_2026-10-03.md",
+        "sha256": "12116c9c696752b487b74de9d6ec75bd3e53e90efad92b8f6a6f7f72512bd6ce",
+        "chainOrdinal": 1,
+        "currentBlockers": [
+          "SOURCE_CONTRACT_NOT_IMPLEMENTED",
+          "SOURCE_STATIC_REVIEW_PENDING",
+          "SOURCE_CONTRACT_STATIC_DEFECTS",
+          "SOURCE_CREATION_EVIDENCE_DEVIATIONS"
+        ],
+        "counters": {
+          "partialReadyClosures": 0,
+          "reviewerScopeExpansions": 0,
+          "sameClaimCorrections": 1,
+          "nonDecreasingBlockerTransitions": 1
+        },
+        "readOnlyCopiedIntoDisposableRoots": true
+      },
+      "canonicalReuse": "validate_block called with real predecessor hash, predecessor block and evidence bytes resolvers over one byte snapshot; canonical violations preserved verbatim",
+      "cases": [
+        {
+          "caseId": "class1-copied-streak1-continue",
+          "command": "python -B governance/compat/run_preapproval_feasibility_gate.py --repo-root <DISPOSABLE_ROOT> --json --proposal docs/reference/p.md --approval-target docs/reference/p.md",
+          "exit": 1,
+          "technicalDisposition": "INVALID",
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnosticCodes": [],
+          "canonicalViolationCodes": [
+            "NON_DECREASING_STREAK_MISMATCH"
+          ],
+          "canonicalBlockCount": 1,
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "proposalSha256": "a746a8387145ea90f27a505c22bab827522ce77f7f9a14ca390fbfeeb089f304",
+          "companionSha256": "5a2076874a44a833447cd06a579cba62b225898bd2c1d28cd28477518bcd62d5",
+          "prospectiveOutcomeSha256": "d3858698b9e4eed41f3651e017b90ec85d883cb3cbb614e01314c30447b77ce9",
+          "stdoutSha256": "10938ffb1bae281a86fa917927e7b11e8ea044c06b4223c94d40575b17696bec",
+          "expectedCode": "NON_DECREASING_STREAK_MISMATCH",
+          "observedExpectedCode": true,
+          "directCanonicalValidateBlockCodes": [
+            "NON_DECREASING_STREAK_MISMATCH"
+          ],
+          "guardMatchesDirectCanonical": true
+        },
+        {
+          "caseId": "class1-corrected-streak2-continue",
+          "command": "python -B governance/compat/run_preapproval_feasibility_gate.py --repo-root <DISPOSABLE_ROOT> --json --proposal docs/reference/p.md --approval-target docs/reference/p.md",
+          "exit": 1,
+          "technicalDisposition": "INVALID",
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnosticCodes": [],
+          "canonicalViolationCodes": [
+            "MISSING_STOP_REASSESS_ESCALATION"
+          ],
+          "canonicalBlockCount": 1,
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "proposalSha256": "a746a8387145ea90f27a505c22bab827522ce77f7f9a14ca390fbfeeb089f304",
+          "companionSha256": "71dae3f192fb4c7042fdb257e03927a8b69c1c252290d6c1ae1a2d1b4538639f",
+          "prospectiveOutcomeSha256": "b27a7d0fd7331affb48a57f42b0f32b4ee65d39658f297ce76ce5a6290f5e316",
+          "stdoutSha256": "5ca05e8b8b53bd22ee699eb1e8c47d1fec6bc59d37b2ad156f8c4fb8ee404a2e",
+          "expectedCode": "MISSING_STOP_REASSESS_ESCALATION",
+          "observedExpectedCode": true,
+          "directCanonicalValidateBlockCodes": [
+            "MISSING_STOP_REASSESS_ESCALATION"
+          ],
+          "guardMatchesDirectCanonical": true
+        },
+        {
+          "caseId": "class2-corrected-stop-shape",
+          "command": "python -B governance/compat/run_preapproval_feasibility_gate.py --repo-root <DISPOSABLE_ROOT> --json --proposal docs/reference/p.md --approval-target docs/reference/p.md",
+          "exit": 2,
+          "technicalDisposition": "HOLD",
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnosticCodes": [],
+          "canonicalViolationCodes": [],
+          "canonicalBlockCount": 1,
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "proposalSha256": "a746a8387145ea90f27a505c22bab827522ce77f7f9a14ca390fbfeeb089f304",
+          "companionSha256": "5f8c7c4e27d8a62c73dce9c21b6c3d7e0d646f78500cb236a42e4238f3c41e45",
+          "prospectiveOutcomeSha256": "cb2572de13de01ae813ed1a4652068c149762d9c5ef82bcab3670008d273357e",
+          "stdoutSha256": "9a481e22e5ca2a0c9730ea4391dcd361616ba36d91797b17e465ed6b6c032a5a",
+          "directCanonicalValidateBlockCodes": [],
+          "guardMatchesDirectCanonical": true
+        },
+        {
+          "caseId": "class4-legitimate-reduction",
+          "command": "python -B governance/compat/run_preapproval_feasibility_gate.py --repo-root <DISPOSABLE_ROOT> --json --proposal docs/reference/p.md --approval-target docs/reference/p.md",
+          "exit": 0,
+          "technicalDisposition": "FEASIBLE",
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnosticCodes": [],
+          "canonicalViolationCodes": [],
+          "canonicalBlockCount": 1,
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "proposalSha256": "a746a8387145ea90f27a505c22bab827522ce77f7f9a14ca390fbfeeb089f304",
+          "companionSha256": "da0818b8335588bb560458cc747e7d271651333ebfa3b3a143c1c121be668026",
+          "prospectiveOutcomeSha256": "4af7bb30a625d2d280e0b59b6aa69e1758ec9b760f42305ca7e7dfa420479ec5",
+          "stdoutSha256": "1c47ef5b43a533053fccb9865e124f4e264485c0228127a99c640121f9968706"
+        },
+        {
+          "caseId": "class4-evidence-bytes-mutated",
+          "command": "python -B governance/compat/run_preapproval_feasibility_gate.py --repo-root <DISPOSABLE_ROOT> --json --proposal docs/reference/p.md --approval-target docs/reference/p.md",
+          "exit": 1,
+          "technicalDisposition": "INVALID",
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnosticCodes": [],
+          "canonicalViolationCodes": [
+            "RESOLUTION_EVIDENCE_HASH_MISMATCH"
+          ],
+          "canonicalBlockCount": 1,
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "proposalSha256": "a746a8387145ea90f27a505c22bab827522ce77f7f9a14ca390fbfeeb089f304",
+          "companionSha256": "da0818b8335588bb560458cc747e7d271651333ebfa3b3a143c1c121be668026",
+          "prospectiveOutcomeSha256": "4af7bb30a625d2d280e0b59b6aa69e1758ec9b760f42305ca7e7dfa420479ec5",
+          "stdoutSha256": "88175627093e8a2551be77b8834fae32fbde12da6798bb02aad28626d65b9be2",
+          "expectedCode": "RESOLUTION_EVIDENCE_HASH_MISMATCH",
+          "observedExpectedCode": true
+        },
+        {
+          "caseId": "class4-locator-absent",
+          "command": "python -B governance/compat/run_preapproval_feasibility_gate.py --repo-root <DISPOSABLE_ROOT> --json --proposal docs/reference/p.md --approval-target docs/reference/p.md",
+          "exit": 1,
+          "technicalDisposition": "INVALID",
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnosticCodes": [],
+          "canonicalViolationCodes": [
+            "RESOLUTION_EVIDENCE_LOCATOR_NOT_FOUND"
+          ],
+          "canonicalBlockCount": 1,
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "proposalSha256": "a746a8387145ea90f27a505c22bab827522ce77f7f9a14ca390fbfeeb089f304",
+          "companionSha256": "3b6ca0143314d758918e8ba1067a01d44bc26eb00729206167711a5fbc0679f4",
+          "prospectiveOutcomeSha256": "91785f441fb7483943b3d2b8d8fc1aef4d4a195956c879a5acc3df68ad59cb68",
+          "stdoutSha256": "35b6b7448e13090a52bfa8a759eb712e17d15d2bc51919bc4897a560c5baf6b8",
+          "expectedCode": "RESOLUTION_EVIDENCE_LOCATOR_NOT_FOUND",
+          "observedExpectedCode": true
+        },
+        {
+          "caseId": "class4-locator-ambiguous",
+          "command": "python -B governance/compat/run_preapproval_feasibility_gate.py --repo-root <DISPOSABLE_ROOT> --json --proposal docs/reference/p.md --approval-target docs/reference/p.md",
+          "exit": 1,
+          "technicalDisposition": "INVALID",
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnosticCodes": [],
+          "canonicalViolationCodes": [
+            "RESOLUTION_EVIDENCE_LOCATOR_AMBIGUOUS"
+          ],
+          "canonicalBlockCount": 1,
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "proposalSha256": "a746a8387145ea90f27a505c22bab827522ce77f7f9a14ca390fbfeeb089f304",
+          "companionSha256": "21046a0458ffca313f93e21bd1966ac5050089f1b27ab998c8e0c6fccc6f0fc0",
+          "prospectiveOutcomeSha256": "99a8bc9ab78b4ef42134dad2407bb9a02b2f44cab02c48d90ef88af362b566ad",
+          "stdoutSha256": "8bdb2ce77d0c26b77d9d49cb769ff287be5cfc16a15b7bd82b69ce2a62a01b1d",
+          "expectedCode": "RESOLUTION_EVIDENCE_LOCATOR_AMBIGUOUS",
+          "observedExpectedCode": true
+        },
+        {
+          "caseId": "class4-evidence-class-invalid",
+          "command": "python -B governance/compat/run_preapproval_feasibility_gate.py --repo-root <DISPOSABLE_ROOT> --json --proposal docs/reference/p.md --approval-target docs/reference/p.md",
+          "exit": 1,
+          "technicalDisposition": "INVALID",
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnosticCodes": [],
+          "canonicalViolationCodes": [
+            "RESOLUTION_EVIDENCE_INVALID_EVIDENCE_CLASS"
+          ],
+          "canonicalBlockCount": 1,
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "proposalSha256": "a746a8387145ea90f27a505c22bab827522ce77f7f9a14ca390fbfeeb089f304",
+          "companionSha256": "1b9a05bde9685e16c9d2915316801a8bd236b1dcb25cf945f903e7de90f7e319",
+          "prospectiveOutcomeSha256": "ad51112d7d724f28c17f95001862f9ac2dbaf90267ee8efdf41958c4329a6fa6",
+          "stdoutSha256": "1cb4130e34845749c553441d8fa456296e758cb1d4a684c682ea4af29980111d",
+          "expectedCode": "RESOLUTION_EVIDENCE_INVALID_EVIDENCE_CLASS",
+          "observedExpectedCode": true
+        },
+        {
+          "caseId": "class4-evidence-path-unsafe",
+          "command": "python -B governance/compat/run_preapproval_feasibility_gate.py --repo-root <DISPOSABLE_ROOT> --json --proposal docs/reference/p.md --approval-target docs/reference/p.md",
+          "exit": 1,
+          "technicalDisposition": "INVALID",
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnosticCodes": [],
+          "canonicalViolationCodes": [
+            "RESOLUTION_EVIDENCE_PATH_UNSAFE"
+          ],
+          "canonicalBlockCount": 1,
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "proposalSha256": "a746a8387145ea90f27a505c22bab827522ce77f7f9a14ca390fbfeeb089f304",
+          "companionSha256": "6c3b9e350bdf0bf900ab79f8d9c20660596bc0bd0229273324a5f4b0d393ffa4",
+          "prospectiveOutcomeSha256": "eb5dcb7264064e647a3585df4e526e507705d4e6fe4e1ecd68615df6d4fba667",
+          "stdoutSha256": "5b5c6a395183656b608b12def91a02c742c6bbae38f67cd12fa77dda10cb9578",
+          "expectedCode": "RESOLUTION_EVIDENCE_PATH_UNSAFE",
+          "observedExpectedCode": true
+        },
+        {
+          "caseId": "class4-label-only-resolution",
+          "command": "python -B governance/compat/run_preapproval_feasibility_gate.py --repo-root <DISPOSABLE_ROOT> --json --proposal docs/reference/p.md --approval-target docs/reference/p.md",
+          "exit": 1,
+          "technicalDisposition": "INVALID",
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnosticCodes": [],
+          "canonicalViolationCodes": [
+            "RESOLUTION_EVIDENCE_MISSING_BINDING"
+          ],
+          "canonicalBlockCount": 1,
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "proposalSha256": "a746a8387145ea90f27a505c22bab827522ce77f7f9a14ca390fbfeeb089f304",
+          "companionSha256": "3c61f8a6df7685c468573ae3f8257f4bab8e2157570a7e1d5b5abc78c5f0a4ff",
+          "prospectiveOutcomeSha256": "9a5176d29332e77b9d724c6fddf856e8d8343c81b17091df8b60891246b909f1",
+          "stdoutSha256": "f8fe9802599b2e517f7a4116b03269dd707ca3aa7a75fa8095370294953a6551",
+          "expectedCode": "RESOLUTION_EVIDENCE_MISSING_BINDING",
+          "observedExpectedCode": true
+        }
+      ],
+      "allExpectedCodesObserved": true,
+      "allMatchDirectCanonical": true,
+      "shapeOnlySensitivityProbe": {
+        "method": "scec.validate_block monkeypatched to drop predecessor and evidence resolvers, then the new suite re-run",
+        "failedTestCount": 9,
+        "summary": "9 failed, 82 passed, 7 deselected in 1.47s",
+        "meaning": "tests detect a shape-only regression; probe is not part of the shipped suite"
+      }
+    },
+    "PF-JOINS": {
+      "cases": [
+        {
+          "caseId": "class3-companion-absolute",
+          "command": "python -B governance/compat/run_preapproval_feasibility_gate.py --repo-root <DISPOSABLE_ROOT> --json --proposal docs/reference/p.md --approval-target docs/reference/p.md",
+          "exit": 1,
+          "technicalDisposition": "INVALID",
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnosticCodes": [
+            "COMPANION_PATH_INVALID"
+          ],
+          "canonicalViolationCodes": [],
+          "canonicalBlockCount": 0,
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "proposalSha256": "fa34ed041372784589b9e9293ff0295dfc84b8bb4c472eb59fdf90aaef180563",
+          "companionSha256": null,
+          "prospectiveOutcomeSha256": null,
+          "stdoutSha256": "3297424711fc6ecebc148a37837a1f3cb8f937b4c363b71e4b07082851d36d3a",
+          "expectedCode": "COMPANION_PATH_INVALID",
+          "observedExpectedCode": true
+        },
+        {
+          "caseId": "class3-companion-backslash",
+          "command": "python -B governance/compat/run_preapproval_feasibility_gate.py --repo-root <DISPOSABLE_ROOT> --json --proposal docs/reference/p.md --approval-target docs/reference/p.md",
+          "exit": 1,
+          "technicalDisposition": "INVALID",
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnosticCodes": [
+            "COMPANION_PATH_INVALID"
+          ],
+          "canonicalViolationCodes": [],
+          "canonicalBlockCount": 0,
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "proposalSha256": "9d37b13b3197b2cb37e1859c5fbb41e86c9846dba9f6a5d52afaaf358bd58765",
+          "companionSha256": null,
+          "prospectiveOutcomeSha256": null,
+          "stdoutSha256": "bbf5c2b8830ad865368fee4256c04e9a1d4ee136eade77fa91334b721dcb347b",
+          "expectedCode": "COMPANION_PATH_INVALID",
+          "observedExpectedCode": true
+        },
+        {
+          "caseId": "class3-companion-duplicate",
+          "command": "python -B governance/compat/run_preapproval_feasibility_gate.py --repo-root <DISPOSABLE_ROOT> --json --proposal docs/reference/p.md --approval-target docs/reference/p.md",
+          "exit": 1,
+          "technicalDisposition": "INVALID",
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnosticCodes": [
+            "COMPANION_DUPLICATE"
+          ],
+          "canonicalViolationCodes": [],
+          "canonicalBlockCount": 0,
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "proposalSha256": "4e2f72d5445f0ad7055f6daf046a6640c601d37fe070c84610075ee5f9b8cdf2",
+          "companionSha256": null,
+          "prospectiveOutcomeSha256": null,
+          "stdoutSha256": "efa831b2208bb745d7b24a0769deb00fd3b25a82d81af420d3dee80e937a0aec",
+          "expectedCode": "COMPANION_DUPLICATE",
+          "observedExpectedCode": true
+        },
+        {
+          "caseId": "class3-companion-duplicate-key",
+          "command": "python -B governance/compat/run_preapproval_feasibility_gate.py --repo-root <DISPOSABLE_ROOT> --json --proposal docs/reference/p.md --approval-target docs/reference/p.md",
+          "exit": 1,
+          "technicalDisposition": "INVALID",
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnosticCodes": [
+            "COMPANION_MALFORMED_JSON"
+          ],
+          "canonicalViolationCodes": [],
+          "canonicalBlockCount": 0,
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "proposalSha256": "a746a8387145ea90f27a505c22bab827522ce77f7f9a14ca390fbfeeb089f304",
+          "companionSha256": "594b697732b87500c0f03b29f69436b57c1f8e59c741b40151f0bff63045d9df",
+          "prospectiveOutcomeSha256": null,
+          "stdoutSha256": "1f2347494b1955ccc5e1be71f282b95958f9e40d793f2a92ef6ee6246119a405",
+          "expectedCode": "COMPANION_MALFORMED_JSON",
+          "observedExpectedCode": true
+        },
+        {
+          "caseId": "class3-companion-file-missing",
+          "command": "python -B governance/compat/run_preapproval_feasibility_gate.py --repo-root <DISPOSABLE_ROOT> --json --proposal docs/reference/p.md --approval-target docs/reference/p.md",
+          "exit": 1,
+          "technicalDisposition": "INVALID",
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnosticCodes": [
+            "COMPANION_UNREADABLE"
+          ],
+          "canonicalViolationCodes": [],
+          "canonicalBlockCount": 0,
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "proposalSha256": "a746a8387145ea90f27a505c22bab827522ce77f7f9a14ca390fbfeeb089f304",
+          "companionSha256": null,
+          "prospectiveOutcomeSha256": null,
+          "stdoutSha256": "4387008d664959933f6382713303004b338a5ac19a69d012f13cf14c6201ccb2",
+          "expectedCode": "COMPANION_UNREADABLE",
+          "observedExpectedCode": true
+        },
+        {
+          "caseId": "class3-companion-invalid-utf8",
+          "command": "python -B governance/compat/run_preapproval_feasibility_gate.py --repo-root <DISPOSABLE_ROOT> --json --proposal docs/reference/p.md --approval-target docs/reference/p.md",
+          "exit": 1,
+          "technicalDisposition": "INVALID",
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnosticCodes": [
+            "COMPANION_MALFORMED_JSON"
+          ],
+          "canonicalViolationCodes": [],
+          "canonicalBlockCount": 0,
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "proposalSha256": "a746a8387145ea90f27a505c22bab827522ce77f7f9a14ca390fbfeeb089f304",
+          "companionSha256": "604ee178ad94b07584aa5c3cd91a5b0b1444bfb7040eedcea14179d377282647",
+          "prospectiveOutcomeSha256": null,
+          "stdoutSha256": "eef6d85a07a946784b5fe25a35ab395a5d5c1fafd9faa71739dee0f3229f34a6",
+          "expectedCode": "COMPANION_MALFORMED_JSON",
+          "observedExpectedCode": true
+        },
+        {
+          "caseId": "class3-companion-line-missing",
+          "command": "python -B governance/compat/run_preapproval_feasibility_gate.py --repo-root <DISPOSABLE_ROOT> --json --proposal docs/reference/p.md --approval-target docs/reference/p.md",
+          "exit": 1,
+          "technicalDisposition": "INVALID",
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnosticCodes": [
+            "COMPANION_MISSING"
+          ],
+          "canonicalViolationCodes": [],
+          "canonicalBlockCount": 0,
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "proposalSha256": "82606d1746fe6825cf21859aa29887c4ede2361fbcae2e3f1a86b3fd6ba696ea",
+          "companionSha256": null,
+          "prospectiveOutcomeSha256": null,
+          "stdoutSha256": "d61cb059c06c4182707f1ac4f31561ad2c2426d62111c7058e14e6d9b8e9e1e0",
+          "expectedCode": "COMPANION_MISSING",
+          "observedExpectedCode": true
+        },
+        {
+          "caseId": "class3-companion-malformed-json",
+          "command": "python -B governance/compat/run_preapproval_feasibility_gate.py --repo-root <DISPOSABLE_ROOT> --json --proposal docs/reference/p.md --approval-target docs/reference/p.md",
+          "exit": 1,
+          "technicalDisposition": "INVALID",
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnosticCodes": [
+            "COMPANION_MALFORMED_JSON"
+          ],
+          "canonicalViolationCodes": [],
+          "canonicalBlockCount": 0,
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "proposalSha256": "a746a8387145ea90f27a505c22bab827522ce77f7f9a14ca390fbfeeb089f304",
+          "companionSha256": "92072df399cb74703f8e86f450d552bc0bb01eeeb98a90985a1b7772c8fd0016",
+          "prospectiveOutcomeSha256": null,
+          "stdoutSha256": "a0dcf9966b36330364a9fcfefa55e085d77791f13c08b3392169f5d888d8d91c",
+          "expectedCode": "COMPANION_MALFORMED_JSON",
+          "observedExpectedCode": true
+        },
+        {
+          "caseId": "class3-companion-traversal",
+          "command": "python -B governance/compat/run_preapproval_feasibility_gate.py --repo-root <DISPOSABLE_ROOT> --json --proposal docs/reference/p.md --approval-target docs/reference/p.md",
+          "exit": 1,
+          "technicalDisposition": "INVALID",
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnosticCodes": [
+            "COMPANION_PATH_INVALID"
+          ],
+          "canonicalViolationCodes": [],
+          "canonicalBlockCount": 0,
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "proposalSha256": "ce20bcd59c0d74077dc67e99906c3cc32e2d033485d9b932a785ba140b7abe84",
+          "companionSha256": null,
+          "prospectiveOutcomeSha256": null,
+          "stdoutSha256": "de7510b9c668f120fe99b04667e8b024c87270b1375a93bcd7245ae48c5e1174",
+          "expectedCode": "COMPANION_PATH_INVALID",
+          "observedExpectedCode": true
+        },
+        {
+          "caseId": "class3-companion-without-marker",
+          "command": "python -B governance/compat/run_preapproval_feasibility_gate.py --repo-root <DISPOSABLE_ROOT> --json --proposal docs/reference/p.md --approval-target docs/reference/p.md",
+          "exit": 1,
+          "technicalDisposition": "INVALID",
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnosticCodes": [
+            "MARKER_MISSING"
+          ],
+          "canonicalViolationCodes": [],
+          "canonicalBlockCount": 1,
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "proposalSha256": "2593ebd1f26821713b6e6e575ab171d66bb162a7cd080ab885a84546482bbcec",
+          "companionSha256": "b0afc1cbbb98ae06ad62fc3503f4513a9418be57418bdb0e75c3a08e10594691",
+          "prospectiveOutcomeSha256": "51b12c5ea952cfa268613511db95a2412f5a71aeaef884b3d4cd5bf67e2d4b1c",
+          "stdoutSha256": "5a1ee04656123ec4dc59380f894111c0ecb3caeec6a48af3266ae1c7f27ed6ca",
+          "expectedCode": "MARKER_MISSING",
+          "observedExpectedCode": true
+        },
+        {
+          "caseId": "class3-marker-duplicate",
+          "command": "python -B governance/compat/run_preapproval_feasibility_gate.py --repo-root <DISPOSABLE_ROOT> --json --proposal docs/reference/p.md --approval-target docs/reference/p.md",
+          "exit": 1,
+          "technicalDisposition": "INVALID",
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnosticCodes": [
+            "MARKER_DUPLICATE"
+          ],
+          "canonicalViolationCodes": [],
+          "canonicalBlockCount": 1,
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "proposalSha256": "b5272266f896206978e3d1c7c0d47065e5a4692e03a0f707bea3efaa9a176c17",
+          "companionSha256": "148b1d3eda8d9770b7103784921d603ea3ea5918e8984f1396185baa3ab8022b",
+          "prospectiveOutcomeSha256": "51b12c5ea952cfa268613511db95a2412f5a71aeaef884b3d4cd5bf67e2d4b1c",
+          "stdoutSha256": "a215ffecda5be63e244e783d8e8bc9badfb54b7d02afacba0e462917979e4ae7",
+          "expectedCode": "MARKER_DUPLICATE",
+          "observedExpectedCode": true
+        },
+        {
+          "caseId": "class3-marker-malformed",
+          "command": "python -B governance/compat/run_preapproval_feasibility_gate.py --repo-root <DISPOSABLE_ROOT> --json --proposal docs/reference/p.md --approval-target docs/reference/p.md",
+          "exit": 1,
+          "technicalDisposition": "INVALID",
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnosticCodes": [
+            "MARKER_MALFORMED"
+          ],
+          "canonicalViolationCodes": [],
+          "canonicalBlockCount": 1,
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "proposalSha256": "d2da35240053cc406afda492b23f49d671e3b309ca1df457f5716152f490d478",
+          "companionSha256": "de4aa0ed13c47d952ec6cc6331f27605d34a9a0ed4c76cd9e1500ffc6303d00e",
+          "prospectiveOutcomeSha256": "51b12c5ea952cfa268613511db95a2412f5a71aeaef884b3d4cd5bf67e2d4b1c",
+          "stdoutSha256": "fd4d318597daa47e2f42ffdc0ce963aa44473cd774a0843c0fb1dbf7e417bc30",
+          "expectedCode": "MARKER_MALFORMED",
+          "observedExpectedCode": true
+        },
+        {
+          "caseId": "class3-outcome-digest-drift",
+          "command": "python -B governance/compat/run_preapproval_feasibility_gate.py --repo-root <DISPOSABLE_ROOT> --json --proposal docs/reference/p.md --approval-target docs/reference/p.md",
+          "exit": 1,
+          "technicalDisposition": "INVALID",
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnosticCodes": [
+            "OUTCOME_DIGEST_DRIFT"
+          ],
+          "canonicalViolationCodes": [],
+          "canonicalBlockCount": 1,
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "proposalSha256": "a746a8387145ea90f27a505c22bab827522ce77f7f9a14ca390fbfeeb089f304",
+          "companionSha256": "bfdb0c0acf3c82e4d6eccf7df8c0d99f71c4233722692a53c9c39dd335c3cc97",
+          "prospectiveOutcomeSha256": "f7a761b746f890b2ba3fb2b9dee74a2e232a794a5c58b667101ff62b3d5767ff",
+          "stdoutSha256": "db3be889d8e71a4d8697b4d870844c821973f09d1ad044909193008bfc219b13",
+          "expectedCode": "OUTCOME_DIGEST_DRIFT",
+          "observedExpectedCode": true
+        },
+        {
+          "caseId": "class3-outcome-not-active-scec",
+          "command": "python -B governance/compat/run_preapproval_feasibility_gate.py --repo-root <DISPOSABLE_ROOT> --json --proposal docs/reference/p.md --approval-target docs/reference/p.md",
+          "exit": 1,
+          "technicalDisposition": "INVALID",
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnosticCodes": [
+            "OUTCOME_NOT_ACTIVE_SCEC"
+          ],
+          "canonicalViolationCodes": [],
+          "canonicalBlockCount": 0,
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "proposalSha256": "a746a8387145ea90f27a505c22bab827522ce77f7f9a14ca390fbfeeb089f304",
+          "companionSha256": "651f8af42372f3b7d84efad71978bf1c91f1fb2c518005c0820b36b16335d464",
+          "prospectiveOutcomeSha256": "58d76298f99693509506d9a8e9f44071087edb49043b08b32b2ca210e123ac65",
+          "stdoutSha256": "54099746ab9792836f422f67a2f6abba0a600a78d6caf3aa8061a8694ca3696b",
+          "expectedCode": "OUTCOME_NOT_ACTIVE_SCEC",
+          "observedExpectedCode": true
+        },
+        {
+          "caseId": "class3-predecessor-bytes-drift",
+          "command": "python -B governance/compat/run_preapproval_feasibility_gate.py --repo-root <DISPOSABLE_ROOT> --json --proposal docs/reference/p.md --approval-target docs/reference/p.md",
+          "exit": 1,
+          "technicalDisposition": "INVALID",
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnosticCodes": [],
+          "canonicalViolationCodes": [
+            "PREDECESSOR_HASH_MISMATCH"
+          ],
+          "canonicalBlockCount": 1,
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "proposalSha256": "a746a8387145ea90f27a505c22bab827522ce77f7f9a14ca390fbfeeb089f304",
+          "companionSha256": "5f8c7c4e27d8a62c73dce9c21b6c3d7e0d646f78500cb236a42e4238f3c41e45",
+          "prospectiveOutcomeSha256": "cb2572de13de01ae813ed1a4652068c149762d9c5ef82bcab3670008d273357e",
+          "stdoutSha256": "fa9d8c012561ef9bd5e38497b6c0206bbf940358e6604a2b0524b12f311a0c77",
+          "expectedCode": "PREDECESSOR_HASH_MISMATCH",
+          "observedExpectedCode": true
+        },
+        {
+          "caseId": "class3-predecessor-missing",
+          "command": "python -B governance/compat/run_preapproval_feasibility_gate.py --repo-root <DISPOSABLE_ROOT> --json --proposal docs/reference/p.md --approval-target docs/reference/p.md",
+          "exit": 1,
+          "technicalDisposition": "INVALID",
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnosticCodes": [],
+          "canonicalViolationCodes": [
+            "PREDECESSOR_BLOCK_UNREADABLE",
+            "PREDECESSOR_PATH_UNREADABLE"
+          ],
+          "canonicalBlockCount": 1,
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "proposalSha256": "a746a8387145ea90f27a505c22bab827522ce77f7f9a14ca390fbfeeb089f304",
+          "companionSha256": "5f8c7c4e27d8a62c73dce9c21b6c3d7e0d646f78500cb236a42e4238f3c41e45",
+          "prospectiveOutcomeSha256": "cb2572de13de01ae813ed1a4652068c149762d9c5ef82bcab3670008d273357e",
+          "stdoutSha256": "e22599975672b29dbf57a71c92483df9819c5869b3e834321e4a46d1f9a76400",
+          "expectedCode": "PREDECESSOR_PATH_UNREADABLE",
+          "observedExpectedCode": true
+        },
+        {
+          "caseId": "class3-problem-key-rename",
+          "command": "python -B governance/compat/run_preapproval_feasibility_gate.py --repo-root <DISPOSABLE_ROOT> --json --proposal docs/reference/p.md --approval-target docs/reference/p.md",
+          "exit": 1,
+          "technicalDisposition": "INVALID",
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnosticCodes": [],
+          "canonicalViolationCodes": [
+            "PREDECESSOR_PROBLEM_KEY_MISMATCH"
+          ],
+          "canonicalBlockCount": 1,
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "proposalSha256": "a746a8387145ea90f27a505c22bab827522ce77f7f9a14ca390fbfeeb089f304",
+          "companionSha256": "3672676a087d706ba1e1e8f2a927fa29d445ee34e40f101457f5a66150f5325f",
+          "prospectiveOutcomeSha256": "fd95d00c2f0c8589db8a2c543e6b4ed98d4e2b6c1a060ae8d5b074da59cdaec2",
+          "stdoutSha256": "0de2160fee18ad184ce8bfd8d830e7865d520886872d9bab6657d2e6450071fc",
+          "expectedCode": "PREDECESSOR_PROBLEM_KEY_MISMATCH",
+          "observedExpectedCode": true
+        },
+        {
+          "caseId": "class3-proposal-hash-drift",
+          "command": "python -B governance/compat/run_preapproval_feasibility_gate.py --repo-root <DISPOSABLE_ROOT> --json --proposal docs/reference/p.md --approval-target docs/reference/p.md",
+          "exit": 1,
+          "technicalDisposition": "INVALID",
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnosticCodes": [
+            "PROPOSAL_HASH_DRIFT"
+          ],
+          "canonicalViolationCodes": [],
+          "canonicalBlockCount": 1,
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "proposalSha256": "a746a8387145ea90f27a505c22bab827522ce77f7f9a14ca390fbfeeb089f304",
+          "companionSha256": "af2dafa077194680a8215180d26d9c7b0744992f52e1627576acb66f228962ee",
+          "prospectiveOutcomeSha256": "51b12c5ea952cfa268613511db95a2412f5a71aeaef884b3d4cd5bf67e2d4b1c",
+          "stdoutSha256": "f6bcae3562a3206e0e053d6ad892ecb546a22df84757345409a213bd6dd1d3b2",
+          "expectedCode": "PROPOSAL_HASH_DRIFT",
+          "observedExpectedCode": true
+        },
+        {
+          "caseId": "class3-proposal-invalid-utf8",
+          "command": "python -B governance/compat/run_preapproval_feasibility_gate.py --repo-root <DISPOSABLE_ROOT> --json --proposal docs/reference/p.md --approval-target docs/reference/p.md",
+          "exit": 1,
+          "technicalDisposition": "INVALID",
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnosticCodes": [
+            "PROPOSAL_NOT_UTF8"
+          ],
+          "canonicalViolationCodes": [],
+          "canonicalBlockCount": 0,
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "proposalSha256": "1dc7c5eb2a5f0b9ca208cd12d67aa7d32606c24f5decf13abba0c67bb5b90a92",
+          "companionSha256": null,
+          "prospectiveOutcomeSha256": null,
+          "stdoutSha256": "9c599dd00f67ed9356890df21f1a6713ffdee140a23686db68533657965fb8a8",
+          "expectedCode": "PROPOSAL_NOT_UTF8",
+          "observedExpectedCode": true
+        },
+        {
+          "caseId": "class3-proposal-path-mismatch",
+          "command": "python -B governance/compat/run_preapproval_feasibility_gate.py --repo-root <DISPOSABLE_ROOT> --json --proposal docs/reference/p.md --approval-target docs/reference/p.md",
+          "exit": 1,
+          "technicalDisposition": "INVALID",
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnosticCodes": [
+            "PROPOSAL_PATH_MISMATCH",
+            "TARGET_PATH_MISMATCH"
+          ],
+          "canonicalViolationCodes": [],
+          "canonicalBlockCount": 1,
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "proposalSha256": "a746a8387145ea90f27a505c22bab827522ce77f7f9a14ca390fbfeeb089f304",
+          "companionSha256": "6a5fa24de090c24ff8c293741e37db2000a3269493c5ca14d47e1a28df3ef5d0",
+          "prospectiveOutcomeSha256": "51b12c5ea952cfa268613511db95a2412f5a71aeaef884b3d4cd5bf67e2d4b1c",
+          "stdoutSha256": "5b31be3d2869c55224d2590223182ce487890d2c9a60aa5a9a8fb4bd55be3b56",
+          "expectedCode": "PROPOSAL_PATH_MISMATCH",
+          "observedExpectedCode": true
+        },
+        {
+          "caseId": "class3-stale-predecessor-digest",
+          "command": "python -B governance/compat/run_preapproval_feasibility_gate.py --repo-root <DISPOSABLE_ROOT> --json --proposal docs/reference/p.md --approval-target docs/reference/p.md",
+          "exit": 1,
+          "technicalDisposition": "INVALID",
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnosticCodes": [],
+          "canonicalViolationCodes": [
+            "PREDECESSOR_HASH_MISMATCH"
+          ],
+          "canonicalBlockCount": 1,
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "proposalSha256": "a746a8387145ea90f27a505c22bab827522ce77f7f9a14ca390fbfeeb089f304",
+          "companionSha256": "69e3404da7c804e5880197643580235ff2aba0e755287b53181ff0e8857ff475",
+          "prospectiveOutcomeSha256": "bd651c4ba1b0940c55679487cbca01f3551bc5e2fa4535951d1c3f436fa612c8",
+          "stdoutSha256": "7b2b9d2ea639bf1adfd2784fbbf3d75cc8ead7554bdf5c8c773428dc8e09ae92",
+          "expectedCode": "PREDECESSOR_HASH_MISMATCH",
+          "observedExpectedCode": true
+        },
+        {
+          "caseId": "class3-target-hash-drift",
+          "command": "python -B governance/compat/run_preapproval_feasibility_gate.py --repo-root <DISPOSABLE_ROOT> --json --proposal docs/reference/p.md --approval-target docs/reference/p.md",
+          "exit": 1,
+          "technicalDisposition": "INVALID",
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnosticCodes": [
+            "TARGET_HASH_DRIFT"
+          ],
+          "canonicalViolationCodes": [],
+          "canonicalBlockCount": 1,
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "proposalSha256": "a746a8387145ea90f27a505c22bab827522ce77f7f9a14ca390fbfeeb089f304",
+          "companionSha256": "5b50c6f61fd7e35da31ee382ea07c58cc626101eb8b9bd90fd679e9dcd665433",
+          "prospectiveOutcomeSha256": "51b12c5ea952cfa268613511db95a2412f5a71aeaef884b3d4cd5bf67e2d4b1c",
+          "stdoutSha256": "d3f08f0739d8858f9f78b2186c39273b4e94335f04f438a0377cb285b1cc35bf",
+          "expectedCode": "TARGET_HASH_DRIFT",
+          "observedExpectedCode": true
+        },
+        {
+          "caseId": "class3-target-path-mismatch",
+          "command": "python -B governance/compat/run_preapproval_feasibility_gate.py --repo-root <DISPOSABLE_ROOT> --json --proposal docs/reference/p.md --approval-target docs/reference/p.md",
+          "exit": 1,
+          "technicalDisposition": "INVALID",
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnosticCodes": [
+            "TARGET_PATH_MISMATCH"
+          ],
+          "canonicalViolationCodes": [],
+          "canonicalBlockCount": 1,
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "proposalSha256": "a746a8387145ea90f27a505c22bab827522ce77f7f9a14ca390fbfeeb089f304",
+          "companionSha256": "36697fa709da88d1902a8af0ad0d7100ed27e2399655c1c3805adf6049a966c9",
+          "prospectiveOutcomeSha256": "51b12c5ea952cfa268613511db95a2412f5a71aeaef884b3d4cd5bf67e2d4b1c",
+          "stdoutSha256": "b0b8e0cfbd4c65e1d51554493fa7831858d2bbecc631b7f1d5ab7c399658d168",
+          "expectedCode": "TARGET_PATH_MISMATCH",
+          "observedExpectedCode": true
+        },
+        {
+          "caseId": "class3-unknown-top-field",
+          "command": "python -B governance/compat/run_preapproval_feasibility_gate.py --repo-root <DISPOSABLE_ROOT> --json --proposal docs/reference/p.md --approval-target docs/reference/p.md",
+          "exit": 1,
+          "technicalDisposition": "INVALID",
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnosticCodes": [
+            "COMPANION_SHAPE"
+          ],
+          "canonicalViolationCodes": [],
+          "canonicalBlockCount": 0,
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "proposalSha256": "a746a8387145ea90f27a505c22bab827522ce77f7f9a14ca390fbfeeb089f304",
+          "companionSha256": "5309e784cc09788a6dc26c0286e8c4d32dbdfc6fddf8f0067156a9b664d6aef7",
+          "prospectiveOutcomeSha256": null,
+          "stdoutSha256": "f89f7aa49cc9dfa1df3764c11e1b540d20b9b62ce1aab93be3dfbccf7c9793af",
+          "expectedCode": "COMPANION_SHAPE",
+          "observedExpectedCode": true
+        },
+        {
+          "caseId": "class3-wrong-schema-version",
+          "command": "python -B governance/compat/run_preapproval_feasibility_gate.py --repo-root <DISPOSABLE_ROOT> --json --proposal docs/reference/p.md --approval-target docs/reference/p.md",
+          "exit": 1,
+          "technicalDisposition": "INVALID",
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnosticCodes": [
+            "COMPANION_SCHEMA_INVALID"
+          ],
+          "canonicalViolationCodes": [],
+          "canonicalBlockCount": 1,
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "proposalSha256": "a746a8387145ea90f27a505c22bab827522ce77f7f9a14ca390fbfeeb089f304",
+          "companionSha256": "bf0574b5aa4f9c1457175178f01ae374994ba5b24e1be0c99f9f44cb123dbd3a",
+          "prospectiveOutcomeSha256": "51b12c5ea952cfa268613511db95a2412f5a71aeaef884b3d4cd5bf67e2d4b1c",
+          "stdoutSha256": "8e4ad9099588881fd8e7d1071765a38033ea8793d65fef3337fb5affcb6f6ef5",
+          "expectedCode": "COMPANION_SCHEMA_INVALID",
+          "observedExpectedCode": true
+        },
+        {
+          "caseId": "class3-target-argument-other-path",
+          "command": "python -B governance/compat/run_preapproval_feasibility_gate.py --repo-root <DISPOSABLE_ROOT> --json --proposal docs/reference/p.md --approval-target docs/reference/other.md",
+          "exit": 1,
+          "technicalDisposition": "INVALID",
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnosticCodes": [
+            "APPROVAL_TARGET_MISMATCH"
+          ],
+          "canonicalViolationCodes": [],
+          "canonicalBlockCount": 0,
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "proposalSha256": null,
+          "companionSha256": null,
+          "prospectiveOutcomeSha256": null,
+          "stdoutSha256": "99491b58d143f807ab1001cdd29e321da2c8b811ec5bd7bb2b12fc42d4a3d75a",
+          "expectedCode": "APPROVAL_TARGET_MISMATCH",
+          "observedExpectedCode": true
+        },
+        {
+          "caseId": "class3-directory-link-escape-outside-root",
+          "command": "python -B governance/compat/run_preapproval_feasibility_gate.py --repo-root <DISPOSABLE_ROOT> --json --proposal docs/reference/p.md --approval-target docs/reference/p.md",
+          "exit": 1,
+          "technicalDisposition": "INVALID",
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnosticCodes": [
+            "PREREQ_EVIDENCE_UNREADABLE"
+          ],
+          "canonicalViolationCodes": [],
+          "canonicalBlockCount": 1,
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "proposalSha256": "a746a8387145ea90f27a505c22bab827522ce77f7f9a14ca390fbfeeb089f304",
+          "companionSha256": "dffbfb3f50c33b5ba53c32764cac0a8b825f2aa04989c442603d3b37d065354a",
+          "prospectiveOutcomeSha256": "51b12c5ea952cfa268613511db95a2412f5a71aeaef884b3d4cd5bf67e2d4b1c",
+          "stdoutSha256": "185c939455d83af1b4ed980eaa47441e1e4bcbfd6acb6de785c9e5cb5f95494b",
+          "prerequisites": {
+            "deferred": 0,
+            "examined": 1
+          },
+          "expectedCode": "PREREQ_EVIDENCE_UNREADABLE",
+          "observedExpectedCode": true
+        },
+        {
+          "caseId": "class6-prereq-required-and-deferred-valid",
+          "command": "python -B governance/compat/run_preapproval_feasibility_gate.py --repo-root <DISPOSABLE_ROOT> --json --proposal docs/reference/p.md --approval-target docs/reference/p.md",
+          "exit": 0,
+          "technicalDisposition": "FEASIBLE",
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnosticCodes": [],
+          "canonicalViolationCodes": [],
+          "canonicalBlockCount": 1,
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "proposalSha256": "a746a8387145ea90f27a505c22bab827522ce77f7f9a14ca390fbfeeb089f304",
+          "companionSha256": "cd7e1448c84ad88f71f88092cc226ae5bb44affd90ac9f1a3aea8e0de0ac94b0",
+          "prospectiveOutcomeSha256": "51b12c5ea952cfa268613511db95a2412f5a71aeaef884b3d4cd5bf67e2d4b1c",
+          "stdoutSha256": "e39c4276de4135e7c6ab25ee5af0357e1a99d132929df992547fb9a2f710684f",
+          "prerequisites": {
+            "deferred": 1,
+            "examined": 1
+          }
+        },
+        {
+          "caseId": "class6-prereq-evidence-hash-mismatch",
+          "command": "python -B governance/compat/run_preapproval_feasibility_gate.py --repo-root <DISPOSABLE_ROOT> --json --proposal docs/reference/p.md --approval-target docs/reference/p.md",
+          "exit": 1,
+          "technicalDisposition": "INVALID",
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnosticCodes": [
+            "PREREQ_EVIDENCE_HASH_MISMATCH"
+          ],
+          "canonicalViolationCodes": [],
+          "canonicalBlockCount": 1,
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "proposalSha256": "a746a8387145ea90f27a505c22bab827522ce77f7f9a14ca390fbfeeb089f304",
+          "companionSha256": "d1dccdc26e3044453d752479a72576117b5e0c433d1b715f9e7bc618f45e4752",
+          "prospectiveOutcomeSha256": "51b12c5ea952cfa268613511db95a2412f5a71aeaef884b3d4cd5bf67e2d4b1c",
+          "stdoutSha256": "383b3321df982ace76ae5aef0029f3b700040cc37bf51208cccc58d1a140ae22",
+          "prerequisites": {
+            "deferred": 0,
+            "examined": 1
+          },
+          "expectedCode": "PREREQ_EVIDENCE_HASH_MISMATCH",
+          "observedExpectedCode": true
+        },
+        {
+          "caseId": "class6-prereq-locator-absent",
+          "command": "python -B governance/compat/run_preapproval_feasibility_gate.py --repo-root <DISPOSABLE_ROOT> --json --proposal docs/reference/p.md --approval-target docs/reference/p.md",
+          "exit": 1,
+          "technicalDisposition": "INVALID",
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnosticCodes": [
+            "PREREQ_LOCATOR_NOT_FOUND"
+          ],
+          "canonicalViolationCodes": [],
+          "canonicalBlockCount": 1,
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "proposalSha256": "a746a8387145ea90f27a505c22bab827522ce77f7f9a14ca390fbfeeb089f304",
+          "companionSha256": "817ffc604f7c75722b7b38529840417565061b4266d5e869fc82c28d843675fc",
+          "prospectiveOutcomeSha256": "51b12c5ea952cfa268613511db95a2412f5a71aeaef884b3d4cd5bf67e2d4b1c",
+          "stdoutSha256": "3263daa0a68f198b4630739b7ca1b22163fdfad61c4bf736fdf55ece614e77dd",
+          "prerequisites": {
+            "deferred": 0,
+            "examined": 1
+          },
+          "expectedCode": "PREREQ_LOCATOR_NOT_FOUND",
+          "observedExpectedCode": true
+        },
+        {
+          "caseId": "class6-prereq-evidence-path-unsafe",
+          "command": "python -B governance/compat/run_preapproval_feasibility_gate.py --repo-root <DISPOSABLE_ROOT> --json --proposal docs/reference/p.md --approval-target docs/reference/p.md",
+          "exit": 1,
+          "technicalDisposition": "INVALID",
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnosticCodes": [
+            "PREREQ_EVIDENCE_UNREADABLE"
+          ],
+          "canonicalViolationCodes": [],
+          "canonicalBlockCount": 1,
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "proposalSha256": "a746a8387145ea90f27a505c22bab827522ce77f7f9a14ca390fbfeeb089f304",
+          "companionSha256": "3d632893476b3460a55386dc8080eb1d7d2b58cdddff950171d1ced1d79db5f9",
+          "prospectiveOutcomeSha256": "51b12c5ea952cfa268613511db95a2412f5a71aeaef884b3d4cd5bf67e2d4b1c",
+          "stdoutSha256": "fc8fee5039f3fa3a728ca82c6000b1af79d8447e992c9b022ff43684485b7a3c",
+          "prerequisites": {
+            "deferred": 0,
+            "examined": 1
+          },
+          "expectedCode": "PREREQ_EVIDENCE_UNREADABLE",
+          "observedExpectedCode": true
+        },
+        {
+          "caseId": "class6-prereq-required-without-evidence",
+          "command": "python -B governance/compat/run_preapproval_feasibility_gate.py --repo-root <DISPOSABLE_ROOT> --json --proposal docs/reference/p.md --approval-target docs/reference/p.md",
+          "exit": 1,
+          "technicalDisposition": "INVALID",
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnosticCodes": [
+            "PREREQ_EVIDENCE_SHAPE"
+          ],
+          "canonicalViolationCodes": [],
+          "canonicalBlockCount": 1,
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "proposalSha256": "a746a8387145ea90f27a505c22bab827522ce77f7f9a14ca390fbfeeb089f304",
+          "companionSha256": "afcfdbdc1deadb505e0b7b6f2f80ef32f2bf07d679d96ea52f2397abe9725f33",
+          "prospectiveOutcomeSha256": "51b12c5ea952cfa268613511db95a2412f5a71aeaef884b3d4cd5bf67e2d4b1c",
+          "stdoutSha256": "d1626071598015f1ff77763075b58c646311894240e96f74d593a28d67463b1b",
+          "prerequisites": {
+            "deferred": 0,
+            "examined": 1
+          },
+          "expectedCode": "PREREQ_EVIDENCE_SHAPE",
+          "observedExpectedCode": true
+        },
+        {
+          "caseId": "class6-prereq-required-with-deferral",
+          "command": "python -B governance/compat/run_preapproval_feasibility_gate.py --repo-root <DISPOSABLE_ROOT> --json --proposal docs/reference/p.md --approval-target docs/reference/p.md",
+          "exit": 1,
+          "technicalDisposition": "INVALID",
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnosticCodes": [
+            "PREREQ_REQUIRED_HAS_DEFERRAL"
+          ],
+          "canonicalViolationCodes": [],
+          "canonicalBlockCount": 1,
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "proposalSha256": "a746a8387145ea90f27a505c22bab827522ce77f7f9a14ca390fbfeeb089f304",
+          "companionSha256": "8bcf2bbf7531b93c34e8404b2b2fbf2a4e2be213eb7ad24305e741e17c1c4526",
+          "prospectiveOutcomeSha256": "51b12c5ea952cfa268613511db95a2412f5a71aeaef884b3d4cd5bf67e2d4b1c",
+          "stdoutSha256": "54c275c5e6e8054d52840a90420cb759c9e5f3b9b02d124a8201c93ad4376e97",
+          "prerequisites": {
+            "deferred": 0,
+            "examined": 1
+          },
+          "expectedCode": "PREREQ_REQUIRED_HAS_DEFERRAL",
+          "observedExpectedCode": true
+        },
+        {
+          "caseId": "class6-prereq-deferred-to-same-phase",
+          "command": "python -B governance/compat/run_preapproval_feasibility_gate.py --repo-root <DISPOSABLE_ROOT> --json --proposal docs/reference/p.md --approval-target docs/reference/p.md",
+          "exit": 1,
+          "technicalDisposition": "INVALID",
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnosticCodes": [
+            "PREREQ_DEFERRAL_INVALID"
+          ],
+          "canonicalViolationCodes": [],
+          "canonicalBlockCount": 1,
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "proposalSha256": "a746a8387145ea90f27a505c22bab827522ce77f7f9a14ca390fbfeeb089f304",
+          "companionSha256": "b3ff9ffddc6a48529f603ab13649f300821b847501ca69dd37849c73ffd94a29",
+          "prospectiveOutcomeSha256": "51b12c5ea952cfa268613511db95a2412f5a71aeaef884b3d4cd5bf67e2d4b1c",
+          "stdoutSha256": "33e8ffc88cdd8336832998832e5a902404237fdff65a29e7b132cbdce38efaee",
+          "prerequisites": {
+            "deferred": 1,
+            "examined": 0
+          },
+          "expectedCode": "PREREQ_DEFERRAL_INVALID",
+          "observedExpectedCode": true
+        },
+        {
+          "caseId": "class6-prereq-deferred-without-target",
+          "command": "python -B governance/compat/run_preapproval_feasibility_gate.py --repo-root <DISPOSABLE_ROOT> --json --proposal docs/reference/p.md --approval-target docs/reference/p.md",
+          "exit": 1,
+          "technicalDisposition": "INVALID",
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnosticCodes": [
+            "PREREQ_DEFERRAL_INVALID"
+          ],
+          "canonicalViolationCodes": [],
+          "canonicalBlockCount": 1,
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "proposalSha256": "a746a8387145ea90f27a505c22bab827522ce77f7f9a14ca390fbfeeb089f304",
+          "companionSha256": "e744b38916ecbf21b544d1cc41c437ffb8ef765b85e47c4a4bfd8b878bac9b83",
+          "prospectiveOutcomeSha256": "51b12c5ea952cfa268613511db95a2412f5a71aeaef884b3d4cd5bf67e2d4b1c",
+          "stdoutSha256": "3dc90aa3ca48759b3425401608af3eb27dd18bfd38298447aef14f649718cfe1",
+          "prerequisites": {
+            "deferred": 1,
+            "examined": 0
+          },
+          "expectedCode": "PREREQ_DEFERRAL_INVALID",
+          "observedExpectedCode": true
+        },
+        {
+          "caseId": "class6-prereq-deferred-with-evidence",
+          "command": "python -B governance/compat/run_preapproval_feasibility_gate.py --repo-root <DISPOSABLE_ROOT> --json --proposal docs/reference/p.md --approval-target docs/reference/p.md",
+          "exit": 1,
+          "technicalDisposition": "INVALID",
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnosticCodes": [
+            "PREREQ_DEFERRED_HAS_EVIDENCE"
+          ],
+          "canonicalViolationCodes": [],
+          "canonicalBlockCount": 1,
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "proposalSha256": "a746a8387145ea90f27a505c22bab827522ce77f7f9a14ca390fbfeeb089f304",
+          "companionSha256": "76a676c399282e563b57491ebb83dff053d77d58a04279c7f1725127dad09350",
+          "prospectiveOutcomeSha256": "51b12c5ea952cfa268613511db95a2412f5a71aeaef884b3d4cd5bf67e2d4b1c",
+          "stdoutSha256": "4f15c27c1c6d5befdf0cefbf40846b9bf3434ab33ef5bb8b173a73355ce0bffe",
+          "prerequisites": {
+            "deferred": 1,
+            "examined": 0
+          },
+          "expectedCode": "PREREQ_DEFERRED_HAS_EVIDENCE",
+          "observedExpectedCode": true
+        },
+        {
+          "caseId": "class6-prereq-duplicate-id",
+          "command": "python -B governance/compat/run_preapproval_feasibility_gate.py --repo-root <DISPOSABLE_ROOT> --json --proposal docs/reference/p.md --approval-target docs/reference/p.md",
+          "exit": 1,
+          "technicalDisposition": "INVALID",
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnosticCodes": [
+            "PREREQ_ID_DUPLICATE"
+          ],
+          "canonicalViolationCodes": [],
+          "canonicalBlockCount": 1,
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "proposalSha256": "a746a8387145ea90f27a505c22bab827522ce77f7f9a14ca390fbfeeb089f304",
+          "companionSha256": "8b37c255d0a218d1ec16892236869c0b97c6b32040675e3088ef65ec75ce2b02",
+          "prospectiveOutcomeSha256": "51b12c5ea952cfa268613511db95a2412f5a71aeaef884b3d4cd5bf67e2d4b1c",
+          "stdoutSha256": "152ea1cc379a1f591bd7dbb91eab2363cc33e3aa04afb2e76a5564194a72ad43",
+          "prerequisites": {
+            "deferred": 2,
+            "examined": 0
+          },
+          "expectedCode": "PREREQ_ID_DUPLICATE",
+          "observedExpectedCode": true
+        },
+        {
+          "caseId": "class6-prereq-flag-not-boolean",
+          "command": "python -B governance/compat/run_preapproval_feasibility_gate.py --repo-root <DISPOSABLE_ROOT> --json --proposal docs/reference/p.md --approval-target docs/reference/p.md",
+          "exit": 1,
+          "technicalDisposition": "INVALID",
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnosticCodes": [
+            "PREREQ_REQUIRED_FLAG_INVALID"
+          ],
+          "canonicalViolationCodes": [],
+          "canonicalBlockCount": 1,
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "proposalSha256": "a746a8387145ea90f27a505c22bab827522ce77f7f9a14ca390fbfeeb089f304",
+          "companionSha256": "50bf287bcdda7ae1055fe3dfccf9d16c10b1d465fcc1b5e1da23ff817e151cd8",
+          "prospectiveOutcomeSha256": "51b12c5ea952cfa268613511db95a2412f5a71aeaef884b3d4cd5bf67e2d4b1c",
+          "stdoutSha256": "5b607e9bcbe7667a30341d619970282e1a29648cfc9813f3a2653520eddbfebd",
+          "expectedCode": "PREREQ_REQUIRED_FLAG_INVALID",
+          "observedExpectedCode": true
+        }
+      ],
+      "allExpectedCodesObserved": true,
+      "mutationCount": 25
+    },
+    "PF-QUEUE": {
+      "cases": [
+        {
+          "caseId": "class6-queue-unscoped-identity",
+          "command": "python -B governance/compat/run_preapproval_feasibility_gate.py --repo-root <DISPOSABLE_ROOT> --json --proposal docs/reference/p.md --approval-target docs/reference/p.md",
+          "exit": 0,
+          "technicalDisposition": "FEASIBLE",
+          "coverageDisposition": "COMPLETE",
+          "diagnosticCodes": [],
+          "canonicalViolationCodes": [],
+          "canonicalBlockCount": 1,
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "proposalSha256": "a746a8387145ea90f27a505c22bab827522ce77f7f9a14ca390fbfeeb089f304",
+          "companionSha256": "d4a5cfc109015b3ccdf8e5cafd82b51006a4cdc3d29bc5ffcbdaed492c0a34ec",
+          "prospectiveOutcomeSha256": "51b12c5ea952cfa268613511db95a2412f5a71aeaef884b3d4cd5bf67e2d4b1c",
+          "stdoutSha256": "2e630b28d140857108723d281d79f6dc37fa757b1db1fc5c38ec9d25194765ba",
+          "queue": {
+            "cap": 10,
+            "discovery": 0,
+            "exact": 1,
+            "total": 1,
+            "unrequested": 0
+          }
+        },
+        {
+          "caseId": "class6-queue-scoped-identity",
+          "command": "python -B governance/compat/run_preapproval_feasibility_gate.py --repo-root <DISPOSABLE_ROOT> --json --proposal docs/reference/p.md --approval-target docs/reference/p.md",
+          "exit": 0,
+          "technicalDisposition": "FEASIBLE",
+          "coverageDisposition": "COMPLETE",
+          "diagnosticCodes": [],
+          "canonicalViolationCodes": [],
+          "canonicalBlockCount": 1,
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "proposalSha256": "a746a8387145ea90f27a505c22bab827522ce77f7f9a14ca390fbfeeb089f304",
+          "companionSha256": "71dd2ffdb4ca2d86321c72401a55b48cc00c831b80736bf5de4817d5279c1846",
+          "prospectiveOutcomeSha256": "51b12c5ea952cfa268613511db95a2412f5a71aeaef884b3d4cd5bf67e2d4b1c",
+          "stdoutSha256": "f21b92921203772eaff1e43a77671752a6bd9dc26b5a823671c5abe0bf07b833",
+          "queue": {
+            "cap": 10,
+            "discovery": 0,
+            "exact": 1,
+            "total": 1,
+            "unrequested": 0
+          }
+        },
+        {
+          "caseId": "class6-queue-reject-@puppeteer_browsers_yargs",
+          "command": "python -B governance/compat/run_preapproval_feasibility_gate.py --repo-root <DISPOSABLE_ROOT> --json --proposal docs/reference/p.md --approval-target docs/reference/p.md",
+          "exit": 1,
+          "technicalDisposition": "INVALID",
+          "coverageDisposition": "COMPLETE",
+          "diagnosticCodes": [
+            "QUEUE_EXACT_IDENTITY_INVALID"
+          ],
+          "canonicalViolationCodes": [],
+          "canonicalBlockCount": 1,
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "proposalSha256": "a746a8387145ea90f27a505c22bab827522ce77f7f9a14ca390fbfeeb089f304",
+          "companionSha256": "92e0aba8bb6680240b220f2d31cfe81bccc31b1bfe7dbb88ff9b473001d0dfe3",
+          "prospectiveOutcomeSha256": "51b12c5ea952cfa268613511db95a2412f5a71aeaef884b3d4cd5bf67e2d4b1c",
+          "stdoutSha256": "a1cf7dfce26d0700e49c7ad708eb881ae059395c118e2d0fd5583bb6f307ef10",
+          "queue": {
+            "cap": 10,
+            "discovery": 0,
+            "exact": 1,
+            "total": 1,
+            "unrequested": 0
+          },
+          "expectedCode": "QUEUE_EXACT_IDENTITY_INVALID",
+          "observedExpectedCode": true
+        },
+        {
+          "caseId": "class6-queue-reject-@puppeteer_browsers_yargs_cliui",
+          "command": "python -B governance/compat/run_preapproval_feasibility_gate.py --repo-root <DISPOSABLE_ROOT> --json --proposal docs/reference/p.md --approval-target docs/reference/p.md",
+          "exit": 1,
+          "technicalDisposition": "INVALID",
+          "coverageDisposition": "COMPLETE",
+          "diagnosticCodes": [
+            "QUEUE_EXACT_IDENTITY_INVALID"
+          ],
+          "canonicalViolationCodes": [],
+          "canonicalBlockCount": 1,
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "proposalSha256": "a746a8387145ea90f27a505c22bab827522ce77f7f9a14ca390fbfeeb089f304",
+          "companionSha256": "435fc75cbb9839bf0b17af656ff3a6747ee5102a8178255dbf98f12e6622b7c1",
+          "prospectiveOutcomeSha256": "51b12c5ea952cfa268613511db95a2412f5a71aeaef884b3d4cd5bf67e2d4b1c",
+          "stdoutSha256": "c53d70483f9b7df80f0e0e4f8207d377c315d8589502852d4b7f47575e443e85",
+          "queue": {
+            "cap": 10,
+            "discovery": 0,
+            "exact": 1,
+            "total": 1,
+            "unrequested": 0
+          },
+          "expectedCode": "QUEUE_EXACT_IDENTITY_INVALID",
+          "observedExpectedCode": true
+        },
+        {
+          "caseId": "class6-queue-reject-yargs_cliui",
+          "command": "python -B governance/compat/run_preapproval_feasibility_gate.py --repo-root <DISPOSABLE_ROOT> --json --proposal docs/reference/p.md --approval-target docs/reference/p.md",
+          "exit": 1,
+          "technicalDisposition": "INVALID",
+          "coverageDisposition": "COMPLETE",
+          "diagnosticCodes": [
+            "QUEUE_EXACT_IDENTITY_INVALID"
+          ],
+          "canonicalViolationCodes": [],
+          "canonicalBlockCount": 1,
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "proposalSha256": "a746a8387145ea90f27a505c22bab827522ce77f7f9a14ca390fbfeeb089f304",
+          "companionSha256": "5bb614714a3da791497c4662f67ce595007ae2622f98798a172ef8c79d803846",
+          "prospectiveOutcomeSha256": "51b12c5ea952cfa268613511db95a2412f5a71aeaef884b3d4cd5bf67e2d4b1c",
+          "stdoutSha256": "4e914e4996e7cdc502db4e3600130d124123e6b8349d9243bb05dfeae92c4f9f",
+          "queue": {
+            "cap": 10,
+            "discovery": 0,
+            "exact": 1,
+            "total": 1,
+            "unrequested": 0
+          },
+          "expectedCode": "QUEUE_EXACT_IDENTITY_INVALID",
+          "observedExpectedCode": true
+        },
+        {
+          "caseId": "class6-queue-reject-@scope",
+          "command": "python -B governance/compat/run_preapproval_feasibility_gate.py --repo-root <DISPOSABLE_ROOT> --json --proposal docs/reference/p.md --approval-target docs/reference/p.md",
+          "exit": 1,
+          "technicalDisposition": "INVALID",
+          "coverageDisposition": "COMPLETE",
+          "diagnosticCodes": [
+            "QUEUE_EXACT_IDENTITY_INVALID"
+          ],
+          "canonicalViolationCodes": [],
+          "canonicalBlockCount": 1,
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "proposalSha256": "a746a8387145ea90f27a505c22bab827522ce77f7f9a14ca390fbfeeb089f304",
+          "companionSha256": "ea906c36a969768421414d1f831093c98be86fbadadfbe9c3c4a316369e19b97",
+          "prospectiveOutcomeSha256": "51b12c5ea952cfa268613511db95a2412f5a71aeaef884b3d4cd5bf67e2d4b1c",
+          "stdoutSha256": "95066aa5a42d5d19153e7159e68bc1452571a0e481f0f315c92113b4fd1ac916",
+          "queue": {
+            "cap": 10,
+            "discovery": 0,
+            "exact": 1,
+            "total": 1,
+            "unrequested": 0
+          },
+          "expectedCode": "QUEUE_EXACT_IDENTITY_INVALID",
+          "observedExpectedCode": true
+        },
+        {
+          "caseId": "class6-queue-reject-pkg name",
+          "command": "python -B governance/compat/run_preapproval_feasibility_gate.py --repo-root <DISPOSABLE_ROOT> --json --proposal docs/reference/p.md --approval-target docs/reference/p.md",
+          "exit": 1,
+          "technicalDisposition": "INVALID",
+          "coverageDisposition": "COMPLETE",
+          "diagnosticCodes": [
+            "QUEUE_EXACT_IDENTITY_INVALID"
+          ],
+          "canonicalViolationCodes": [],
+          "canonicalBlockCount": 1,
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "proposalSha256": "a746a8387145ea90f27a505c22bab827522ce77f7f9a14ca390fbfeeb089f304",
+          "companionSha256": "81c8697ab67408353756f86fca397d0507b9557d9cfaf1fcf69797396c50dfa4",
+          "prospectiveOutcomeSha256": "51b12c5ea952cfa268613511db95a2412f5a71aeaef884b3d4cd5bf67e2d4b1c",
+          "stdoutSha256": "22c54658b993afd88e310f211eaf156cd90b0d099786ee2fd7cc5631cf337b5d",
+          "queue": {
+            "cap": 10,
+            "discovery": 0,
+            "exact": 1,
+            "total": 1,
+            "unrequested": 0
+          },
+          "expectedCode": "QUEUE_EXACT_IDENTITY_INVALID",
+          "observedExpectedCode": true
+        },
+        {
+          "caseId": "class6-queue-reject-aP2Fb",
+          "command": "python -B governance/compat/run_preapproval_feasibility_gate.py --repo-root <DISPOSABLE_ROOT> --json --proposal docs/reference/p.md --approval-target docs/reference/p.md",
+          "exit": 1,
+          "technicalDisposition": "INVALID",
+          "coverageDisposition": "COMPLETE",
+          "diagnosticCodes": [
+            "QUEUE_EXACT_IDENTITY_INVALID"
+          ],
+          "canonicalViolationCodes": [],
+          "canonicalBlockCount": 1,
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "proposalSha256": "a746a8387145ea90f27a505c22bab827522ce77f7f9a14ca390fbfeeb089f304",
+          "companionSha256": "45ee7715849556cce40214685d987c14d668eb883cc50737fc0e4fa8153b873d",
+          "prospectiveOutcomeSha256": "51b12c5ea952cfa268613511db95a2412f5a71aeaef884b3d4cd5bf67e2d4b1c",
+          "stdoutSha256": "9bb68a98e7d7269df3e1560e08d8119a7ebed07e68db166d6e27ad260c166bed",
+          "queue": {
+            "cap": 10,
+            "discovery": 0,
+            "exact": 1,
+            "total": 1,
+            "unrequested": 0
+          },
+          "expectedCode": "QUEUE_EXACT_IDENTITY_INVALID",
+          "observedExpectedCode": true
+        },
+        {
+          "caseId": "class6-queue-reject-aQb",
+          "command": "python -B governance/compat/run_preapproval_feasibility_gate.py --repo-root <DISPOSABLE_ROOT> --json --proposal docs/reference/p.md --approval-target docs/reference/p.md",
+          "exit": 1,
+          "technicalDisposition": "INVALID",
+          "coverageDisposition": "COMPLETE",
+          "diagnosticCodes": [
+            "QUEUE_EXACT_IDENTITY_INVALID"
+          ],
+          "canonicalViolationCodes": [],
+          "canonicalBlockCount": 1,
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "proposalSha256": "a746a8387145ea90f27a505c22bab827522ce77f7f9a14ca390fbfeeb089f304",
+          "companionSha256": "46a293505e5e906d16249cfe149206aa2e01ef35e916b264a3a5c08514d05c5a",
+          "prospectiveOutcomeSha256": "51b12c5ea952cfa268613511db95a2412f5a71aeaef884b3d4cd5bf67e2d4b1c",
+          "stdoutSha256": "07db89a6e53f40003ae6bfd59dd0070884c0ae3b43decb87adaae60afc6020fe",
+          "queue": {
+            "cap": 10,
+            "discovery": 0,
+            "exact": 1,
+            "total": 1,
+            "unrequested": 0
+          },
+          "expectedCode": "QUEUE_EXACT_IDENTITY_INVALID",
+          "observedExpectedCode": true
+        },
+        {
+          "caseId": "class6-queue-reject-aHb",
+          "command": "python -B governance/compat/run_preapproval_feasibility_gate.py --repo-root <DISPOSABLE_ROOT> --json --proposal docs/reference/p.md --approval-target docs/reference/p.md",
+          "exit": 1,
+          "technicalDisposition": "INVALID",
+          "coverageDisposition": "COMPLETE",
+          "diagnosticCodes": [
+            "QUEUE_EXACT_IDENTITY_INVALID"
+          ],
+          "canonicalViolationCodes": [],
+          "canonicalBlockCount": 1,
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "proposalSha256": "a746a8387145ea90f27a505c22bab827522ce77f7f9a14ca390fbfeeb089f304",
+          "companionSha256": "702c77821f804980344a3feaf6f2f2d99d098beadc5ff22b8c914d7e3d428f66",
+          "prospectiveOutcomeSha256": "51b12c5ea952cfa268613511db95a2412f5a71aeaef884b3d4cd5bf67e2d4b1c",
+          "stdoutSha256": "b351d6c1c2eeddfe9b2a0d08829c36169a34fe692aa053dfb0e1120ee2f01c10",
+          "queue": {
+            "cap": 10,
+            "discovery": 0,
+            "exact": 1,
+            "total": 1,
+            "unrequested": 0
+          },
+          "expectedCode": "QUEUE_EXACT_IDENTITY_INVALID",
+          "observedExpectedCode": true
+        },
+        {
+          "caseId": "class6-queue-reject-a_b",
+          "command": "python -B governance/compat/run_preapproval_feasibility_gate.py --repo-root <DISPOSABLE_ROOT> --json --proposal docs/reference/p.md --approval-target docs/reference/p.md",
+          "exit": 1,
+          "technicalDisposition": "INVALID",
+          "coverageDisposition": "COMPLETE",
+          "diagnosticCodes": [
+            "QUEUE_EXACT_IDENTITY_INVALID"
+          ],
+          "canonicalViolationCodes": [],
+          "canonicalBlockCount": 1,
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "proposalSha256": "a746a8387145ea90f27a505c22bab827522ce77f7f9a14ca390fbfeeb089f304",
+          "companionSha256": "c4fe1e8d9caa2cc671d19d388dafb730fff06d7b06299aadd6189a4ea756f507",
+          "prospectiveOutcomeSha256": "51b12c5ea952cfa268613511db95a2412f5a71aeaef884b3d4cd5bf67e2d4b1c",
+          "stdoutSha256": "b28865be973d90e4cf89eb506f39e5423d3187b2c6870405fc89abf24af11f0a",
+          "queue": {
+            "cap": 10,
+            "discovery": 0,
+            "exact": 1,
+            "total": 1,
+            "unrequested": 0
+          },
+          "expectedCode": "QUEUE_EXACT_IDENTITY_INVALID",
+          "observedExpectedCode": true
+        },
+        {
+          "caseId": "class6-queue-reject-.._x",
+          "command": "python -B governance/compat/run_preapproval_feasibility_gate.py --repo-root <DISPOSABLE_ROOT> --json --proposal docs/reference/p.md --approval-target docs/reference/p.md",
+          "exit": 1,
+          "technicalDisposition": "INVALID",
+          "coverageDisposition": "COMPLETE",
+          "diagnosticCodes": [
+            "QUEUE_EXACT_IDENTITY_INVALID"
+          ],
+          "canonicalViolationCodes": [],
+          "canonicalBlockCount": 1,
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "proposalSha256": "a746a8387145ea90f27a505c22bab827522ce77f7f9a14ca390fbfeeb089f304",
+          "companionSha256": "efddff920c331f76f000a54f4e87c941a47856b6919f5b2f990807be4d05bd47",
+          "prospectiveOutcomeSha256": "51b12c5ea952cfa268613511db95a2412f5a71aeaef884b3d4cd5bf67e2d4b1c",
+          "stdoutSha256": "4a2932b70cd1c27777f908f0be4d124a5623318a7f6e49a81517eb12fc54cbf6",
+          "queue": {
+            "cap": 10,
+            "discovery": 0,
+            "exact": 1,
+            "total": 1,
+            "unrequested": 0
+          },
+          "expectedCode": "QUEUE_EXACT_IDENTITY_INVALID",
+          "observedExpectedCode": true
+        },
+        {
+          "caseId": "class6-queue-reject-empty",
+          "command": "python -B governance/compat/run_preapproval_feasibility_gate.py --repo-root <DISPOSABLE_ROOT> --json --proposal docs/reference/p.md --approval-target docs/reference/p.md",
+          "exit": 1,
+          "technicalDisposition": "INVALID",
+          "coverageDisposition": "COMPLETE",
+          "diagnosticCodes": [
+            "QUEUE_EXACT_IDENTITY_INVALID"
+          ],
+          "canonicalViolationCodes": [],
+          "canonicalBlockCount": 1,
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "proposalSha256": "a746a8387145ea90f27a505c22bab827522ce77f7f9a14ca390fbfeeb089f304",
+          "companionSha256": "4b43a0ae7d26e282789982b73490839a0bb8f7abfad1010cacba350fe0fc0c56",
+          "prospectiveOutcomeSha256": "51b12c5ea952cfa268613511db95a2412f5a71aeaef884b3d4cd5bf67e2d4b1c",
+          "stdoutSha256": "5463fec6fce18e4427e1c8a37c21cf15b3883111933c5d6bc180db4b22f4dceb",
+          "queue": {
+            "cap": 10,
+            "discovery": 0,
+            "exact": 1,
+            "total": 1,
+            "unrequested": 0
+          },
+          "expectedCode": "QUEUE_EXACT_IDENTITY_INVALID",
+          "observedExpectedCode": true
+        },
+        {
+          "caseId": "class6-queue-discovery-is-not-exact",
+          "command": "python -B governance/compat/run_preapproval_feasibility_gate.py --repo-root <DISPOSABLE_ROOT> --json --proposal docs/reference/p.md --approval-target docs/reference/p.md",
+          "exit": 0,
+          "technicalDisposition": "FEASIBLE",
+          "coverageDisposition": "COMPLETE",
+          "diagnosticCodes": [],
+          "canonicalViolationCodes": [],
+          "canonicalBlockCount": 1,
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "proposalSha256": "a746a8387145ea90f27a505c22bab827522ce77f7f9a14ca390fbfeeb089f304",
+          "companionSha256": "8da210e2fb88435144add7a99098bae2ccfe81ff139dd8da1b39f2140df19a28",
+          "prospectiveOutcomeSha256": "51b12c5ea952cfa268613511db95a2412f5a71aeaef884b3d4cd5bf67e2d4b1c",
+          "stdoutSha256": "158c836ab05de77fef20fcf6f895ad13033d6cd71d5557867a53c5e9ac3a9141",
+          "queue": {
+            "cap": 10,
+            "discovery": 1,
+            "exact": 1,
+            "total": 2,
+            "unrequested": 0
+          }
+        },
+        {
+          "caseId": "class6-queue-discovery-with-package-name",
+          "command": "python -B governance/compat/run_preapproval_feasibility_gate.py --repo-root <DISPOSABLE_ROOT> --json --proposal docs/reference/p.md --approval-target docs/reference/p.md",
+          "exit": 1,
+          "technicalDisposition": "INVALID",
+          "coverageDisposition": "COMPLETE",
+          "diagnosticCodes": [
+            "QUEUE_DISCOVERY_INVALID"
+          ],
+          "canonicalViolationCodes": [],
+          "canonicalBlockCount": 1,
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "proposalSha256": "a746a8387145ea90f27a505c22bab827522ce77f7f9a14ca390fbfeeb089f304",
+          "companionSha256": "218712b6d45c38c8b312d0d13e16fb7a83fc7cedf3d2af1cf259ceec8abbb7e6",
+          "prospectiveOutcomeSha256": "51b12c5ea952cfa268613511db95a2412f5a71aeaef884b3d4cd5bf67e2d4b1c",
+          "stdoutSha256": "42aa7c035f4fa7e5346b2ae2d7dd7097af56dc39a1e89bd1ea5123a018e87258",
+          "queue": {
+            "cap": 10,
+            "discovery": 1,
+            "exact": 0,
+            "total": 1,
+            "unrequested": 0
+          },
+          "expectedCode": "QUEUE_DISCOVERY_INVALID",
+          "observedExpectedCode": true
+        },
+        {
+          "caseId": "class6-queue-over-cap-partial-truthful",
+          "command": "python -B governance/compat/run_preapproval_feasibility_gate.py --repo-root <DISPOSABLE_ROOT> --json --proposal docs/reference/p.md --approval-target docs/reference/p.md",
+          "exit": 0,
+          "technicalDisposition": "FEASIBLE",
+          "coverageDisposition": "PARTIAL",
+          "diagnosticCodes": [],
+          "canonicalViolationCodes": [],
+          "canonicalBlockCount": 1,
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "proposalSha256": "a746a8387145ea90f27a505c22bab827522ce77f7f9a14ca390fbfeeb089f304",
+          "companionSha256": "65bcd491e8ea51725a31deecc8033e45291a339b93db052d4089cdef4a903fcc",
+          "prospectiveOutcomeSha256": "51b12c5ea952cfa268613511db95a2412f5a71aeaef884b3d4cd5bf67e2d4b1c",
+          "stdoutSha256": "f698ce8fa8f9858c26cd2ac3b8754d1cf55265074ebb76134741a1deebff9532",
+          "queue": {
+            "cap": 3,
+            "discovery": 0,
+            "exact": 5,
+            "total": 5,
+            "unrequested": 2
+          }
+        },
+        {
+          "caseId": "class6-queue-over-cap-declared-complete",
+          "command": "python -B governance/compat/run_preapproval_feasibility_gate.py --repo-root <DISPOSABLE_ROOT> --json --proposal docs/reference/p.md --approval-target docs/reference/p.md",
+          "exit": 1,
+          "technicalDisposition": "INVALID",
+          "coverageDisposition": "PARTIAL",
+          "diagnosticCodes": [
+            "QUEUE_COVERAGE_FALSE"
+          ],
+          "canonicalViolationCodes": [],
+          "canonicalBlockCount": 1,
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "proposalSha256": "a746a8387145ea90f27a505c22bab827522ce77f7f9a14ca390fbfeeb089f304",
+          "companionSha256": "9b75a23bf43b4e66c64debcf382db4409ad0cbc721165c7588480fbff591df02",
+          "prospectiveOutcomeSha256": "51b12c5ea952cfa268613511db95a2412f5a71aeaef884b3d4cd5bf67e2d4b1c",
+          "stdoutSha256": "0522d1149b669281c4fd0c2f424b599b3cf01da29e54a9a12cb780c0d3c4a9d3",
+          "queue": {
+            "cap": 1,
+            "discovery": 0,
+            "exact": 2,
+            "total": 2,
+            "unrequested": 1
+          },
+          "expectedCode": "QUEUE_COVERAGE_FALSE",
+          "observedExpectedCode": true
+        },
+        {
+          "caseId": "class6-queue-over-cap-full-promise",
+          "command": "python -B governance/compat/run_preapproval_feasibility_gate.py --repo-root <DISPOSABLE_ROOT> --json --proposal docs/reference/p.md --approval-target docs/reference/p.md",
+          "exit": 1,
+          "technicalDisposition": "INVALID",
+          "coverageDisposition": "PARTIAL",
+          "diagnosticCodes": [
+            "QUEUE_FULL_COVERAGE_PROMISED"
+          ],
+          "canonicalViolationCodes": [],
+          "canonicalBlockCount": 1,
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "proposalSha256": "a746a8387145ea90f27a505c22bab827522ce77f7f9a14ca390fbfeeb089f304",
+          "companionSha256": "cade07695dcbd91fa05af242a788da2b1a5e61617450e7af6425c6cb4224280a",
+          "prospectiveOutcomeSha256": "51b12c5ea952cfa268613511db95a2412f5a71aeaef884b3d4cd5bf67e2d4b1c",
+          "stdoutSha256": "888137e128ae225fe7703df4630c4564a30b612b71ce06416b5fa66052b5a0b6",
+          "queue": {
+            "cap": 1,
+            "discovery": 0,
+            "exact": 2,
+            "total": 2,
+            "unrequested": 1
+          },
+          "expectedCode": "QUEUE_FULL_COVERAGE_PROMISED",
+          "observedExpectedCode": true
+        },
+        {
+          "caseId": "class6-queue-within-cap-declared-partial",
+          "command": "python -B governance/compat/run_preapproval_feasibility_gate.py --repo-root <DISPOSABLE_ROOT> --json --proposal docs/reference/p.md --approval-target docs/reference/p.md",
+          "exit": 1,
+          "technicalDisposition": "INVALID",
+          "coverageDisposition": "COMPLETE",
+          "diagnosticCodes": [
+            "QUEUE_COVERAGE_FALSE"
+          ],
+          "canonicalViolationCodes": [],
+          "canonicalBlockCount": 1,
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "proposalSha256": "a746a8387145ea90f27a505c22bab827522ce77f7f9a14ca390fbfeeb089f304",
+          "companionSha256": "0cf5593f6ca79781ac30feea326dc0283cc94d28617ac2a77ca50e0e088f334c",
+          "prospectiveOutcomeSha256": "51b12c5ea952cfa268613511db95a2412f5a71aeaef884b3d4cd5bf67e2d4b1c",
+          "stdoutSha256": "1184aad64fd7f4c86ce82fe070e1b65a37a4060790c660400c708deebc7d04ea",
+          "queue": {
+            "cap": 5,
+            "discovery": 0,
+            "exact": 1,
+            "total": 1,
+            "unrequested": 0
+          },
+          "expectedCode": "QUEUE_COVERAGE_FALSE",
+          "observedExpectedCode": true
+        },
+        {
+          "caseId": "class6-queue-duplicate-row-id",
+          "command": "python -B governance/compat/run_preapproval_feasibility_gate.py --repo-root <DISPOSABLE_ROOT> --json --proposal docs/reference/p.md --approval-target docs/reference/p.md",
+          "exit": 1,
+          "technicalDisposition": "INVALID",
+          "coverageDisposition": "COMPLETE",
+          "diagnosticCodes": [
+            "QUEUE_ROW_ID_DUPLICATE"
+          ],
+          "canonicalViolationCodes": [],
+          "canonicalBlockCount": 1,
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "proposalSha256": "a746a8387145ea90f27a505c22bab827522ce77f7f9a14ca390fbfeeb089f304",
+          "companionSha256": "c04044e3845831972eaf7b6dc293ff2f8f76f030fc710d16aebf47123fc31fff",
+          "prospectiveOutcomeSha256": "51b12c5ea952cfa268613511db95a2412f5a71aeaef884b3d4cd5bf67e2d4b1c",
+          "stdoutSha256": "554dead8f5ab32628874f34a3a97af6bc0af4b66dd441fb380f392b83ae80d3a",
+          "queue": {
+            "cap": 10,
+            "discovery": 0,
+            "exact": 2,
+            "total": 2,
+            "unrequested": 0
+          },
+          "expectedCode": "QUEUE_ROW_ID_DUPLICATE",
+          "observedExpectedCode": true
+        },
+        {
+          "caseId": "class6-queue-boolean-ceiling",
+          "command": "python -B governance/compat/run_preapproval_feasibility_gate.py --repo-root <DISPOSABLE_ROOT> --json --proposal docs/reference/p.md --approval-target docs/reference/p.md",
+          "exit": 1,
+          "technicalDisposition": "INVALID",
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnosticCodes": [
+            "QUEUE_CEILING_INVALID"
+          ],
+          "canonicalViolationCodes": [],
+          "canonicalBlockCount": 1,
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "proposalSha256": "a746a8387145ea90f27a505c22bab827522ce77f7f9a14ca390fbfeeb089f304",
+          "companionSha256": "bfe86fac516ef4386dce648eb0136c2d7adb3ee7bc26b5963117e676e521840c",
+          "prospectiveOutcomeSha256": "51b12c5ea952cfa268613511db95a2412f5a71aeaef884b3d4cd5bf67e2d4b1c",
+          "stdoutSha256": "cf227922cfb99b6200356b556b6361017d9d2f1231236a31668e9d619d39e223",
+          "queue": {
+            "cap": null,
+            "discovery": 0,
+            "exact": 1,
+            "total": 1,
+            "unrequested": 0
+          },
+          "expectedCode": "QUEUE_CEILING_INVALID",
+          "observedExpectedCode": true
+        },
+        {
+          "caseId": "class6-queue-negative-ceiling",
+          "command": "python -B governance/compat/run_preapproval_feasibility_gate.py --repo-root <DISPOSABLE_ROOT> --json --proposal docs/reference/p.md --approval-target docs/reference/p.md",
+          "exit": 1,
+          "technicalDisposition": "INVALID",
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnosticCodes": [
+            "QUEUE_CEILING_INVALID"
+          ],
+          "canonicalViolationCodes": [],
+          "canonicalBlockCount": 1,
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "proposalSha256": "a746a8387145ea90f27a505c22bab827522ce77f7f9a14ca390fbfeeb089f304",
+          "companionSha256": "ff82e2ca6ef73246999b273e98b48470eb1f71ac08f809a4e1bdb26298d8187f",
+          "prospectiveOutcomeSha256": "51b12c5ea952cfa268613511db95a2412f5a71aeaef884b3d4cd5bf67e2d4b1c",
+          "stdoutSha256": "30dcdac8ed1113bce657d95c32f53ce162f5f0c55a133b75e3b1a2d95c1b6996",
+          "queue": {
+            "cap": -1,
+            "discovery": 0,
+            "exact": 1,
+            "total": 1,
+            "unrequested": 0
+          },
+          "expectedCode": "QUEUE_CEILING_INVALID",
+          "observedExpectedCode": true
+        }
+      ],
+      "allExpectedCodesObserved": true,
+      "boundary": "name-shape grammar only; no URI construction, fetch or registry resolution; no request was made"
+    },
+    "PF-CALLER": {
+      "cases": [
+        {
+          "caseId": "caller-feasible-legitimate-reduction",
+          "command": "python -B governance/compat/run_preapproval_feasibility_gate.py --repo-root <DISPOSABLE_ROOT> --json --proposal docs/reference/p.md --approval-target docs/reference/p.md",
+          "exit": 0,
+          "technicalDisposition": "FEASIBLE",
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnosticCodes": [],
+          "canonicalViolationCodes": [],
+          "canonicalBlockCount": 1,
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "proposalSha256": "a746a8387145ea90f27a505c22bab827522ce77f7f9a14ca390fbfeeb089f304",
+          "companionSha256": "da0818b8335588bb560458cc747e7d271651333ebfa3b3a143c1c121be668026",
+          "prospectiveOutcomeSha256": "4af7bb30a625d2d280e0b59b6aa69e1758ec9b760f42305ca7e7dfa420479ec5",
+          "stdoutSha256": "1c47ef5b43a533053fccb9865e124f4e264485c0228127a99c640121f9968706",
+          "filesystemUnchangedByCaller": true,
+          "receiptBindsFinalBytes": true
+        },
+        {
+          "caseId": "caller-drift-rerun-after-proposal-edit",
+          "command": "python -B governance/compat/run_preapproval_feasibility_gate.py --repo-root <DISPOSABLE_ROOT> --json --proposal docs/reference/p.md --approval-target docs/reference/p.md",
+          "exit": 1,
+          "technicalDisposition": "INVALID",
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnosticCodes": [
+            "PROPOSAL_HASH_DRIFT",
+            "TARGET_HASH_DRIFT"
+          ],
+          "canonicalViolationCodes": [],
+          "canonicalBlockCount": 1,
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "proposalSha256": "d5a4822c47d3ea165025a8364cc9c24bf8d8baa47270a651c3ae00a8cb74bb0b",
+          "companionSha256": "da0818b8335588bb560458cc747e7d271651333ebfa3b3a143c1c121be668026",
+          "prospectiveOutcomeSha256": "4af7bb30a625d2d280e0b59b6aa69e1758ec9b760f42305ca7e7dfa420479ec5",
+          "stdoutSha256": "ee5e2510dbcb635f702dca5b8e6f38288206ea92291e5f4fc791959997eee5c3",
+          "expectedCode": "PROPOSAL_HASH_DRIFT",
+          "observedExpectedCode": true
+        },
+        {
+          "caseId": "caller-drift-rerun-after-evidence-edit",
+          "command": "python -B governance/compat/run_preapproval_feasibility_gate.py --repo-root <DISPOSABLE_ROOT> --json --proposal docs/reference/p.md --approval-target docs/reference/p.md",
+          "exit": 1,
+          "technicalDisposition": "INVALID",
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnosticCodes": [],
+          "canonicalViolationCodes": [
+            "RESOLUTION_EVIDENCE_HASH_MISMATCH"
+          ],
+          "canonicalBlockCount": 1,
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "proposalSha256": "a746a8387145ea90f27a505c22bab827522ce77f7f9a14ca390fbfeeb089f304",
+          "companionSha256": "da0818b8335588bb560458cc747e7d271651333ebfa3b3a143c1c121be668026",
+          "prospectiveOutcomeSha256": "4af7bb30a625d2d280e0b59b6aa69e1758ec9b760f42305ca7e7dfa420479ec5",
+          "stdoutSha256": "54814e70508c3f0ac42d31acdad24effecb186e1eb37f22c974d920da202b591",
+          "expectedCode": "RESOLUTION_EVIDENCE_HASH_MISMATCH",
+          "observedExpectedCode": true
+        },
+        {
+          "caseId": "caller-hold-valid-stop",
+          "command": "python -B governance/compat/run_preapproval_feasibility_gate.py --repo-root <DISPOSABLE_ROOT> --json --proposal docs/reference/p.md --approval-target docs/reference/p.md",
+          "exit": 2,
+          "technicalDisposition": "HOLD",
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnosticCodes": [],
+          "canonicalViolationCodes": [],
+          "canonicalBlockCount": 1,
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "proposalSha256": "a746a8387145ea90f27a505c22bab827522ce77f7f9a14ca390fbfeeb089f304",
+          "companionSha256": "5f8c7c4e27d8a62c73dce9c21b6c3d7e0d646f78500cb236a42e4238f3c41e45",
+          "prospectiveOutcomeSha256": "cb2572de13de01ae813ed1a4652068c149762d9c5ef82bcab3670008d273357e",
+          "stdoutSha256": "9a481e22e5ca2a0c9730ea4391dcd361616ba36d91797b17e465ed6b6c032a5a"
+        },
+        {
+          "caseId": "caller-hold-root-contract",
+          "command": "python -B governance/compat/run_preapproval_feasibility_gate.py --repo-root <DISPOSABLE_ROOT> --json --proposal docs/reference/p.md --approval-target docs/reference/p.md",
+          "exit": 2,
+          "technicalDisposition": "HOLD",
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnosticCodes": [],
+          "canonicalViolationCodes": [],
+          "canonicalBlockCount": 1,
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "proposalSha256": "a746a8387145ea90f27a505c22bab827522ce77f7f9a14ca390fbfeeb089f304",
+          "companionSha256": "a67bb7de3220adaa8c5f0f876e871bca41ad310512b5fd802dca8aebaee43814",
+          "prospectiveOutcomeSha256": "e230f70c858009e3542f66a1a7805e6c0f92b9e5e13b5fe5b4b2915529e53b19",
+          "stdoutSha256": "5e9ffaf9da46293e129b28fd1d00bd677572a83fe1edbb9c0404be71afe07a99"
+        },
+        {
+          "caseId": "caller-invalid-copied-streak",
+          "command": "python -B governance/compat/run_preapproval_feasibility_gate.py --repo-root <DISPOSABLE_ROOT> --json --proposal docs/reference/p.md --approval-target docs/reference/p.md",
+          "exit": 1,
+          "technicalDisposition": "INVALID",
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnosticCodes": [],
+          "canonicalViolationCodes": [
+            "NON_DECREASING_STREAK_MISMATCH"
+          ],
+          "canonicalBlockCount": 1,
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "proposalSha256": "a746a8387145ea90f27a505c22bab827522ce77f7f9a14ca390fbfeeb089f304",
+          "companionSha256": "5a2076874a44a833447cd06a579cba62b225898bd2c1d28cd28477518bcd62d5",
+          "prospectiveOutcomeSha256": "d3858698b9e4eed41f3651e017b90ec85d883cb3cbb614e01314c30447b77ce9",
+          "stdoutSha256": "10938ffb1bae281a86fa917927e7b11e8ea044c06b4223c94d40575b17696bec",
+          "expectedCode": "NON_DECREASING_STREAK_MISMATCH",
+          "observedExpectedCode": true
+        },
+        {
+          "caseId": "caller-unmarked-input-rejected",
+          "command": "python -B governance/compat/run_preapproval_feasibility_gate.py --repo-root <DISPOSABLE_ROOT> --json --proposal docs/reference/ordinary.md --approval-target docs/reference/ordinary.md",
+          "exit": 1,
+          "technicalDisposition": "INVALID",
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnosticCodes": [
+            "PROPOSAL_UNMARKED"
+          ],
+          "canonicalViolationCodes": [],
+          "canonicalBlockCount": 0,
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "proposalSha256": "7cd4d66cc064c8607dce543612e74333c8406ba02842b815fa5baa5d6f3644fb",
+          "companionSha256": null,
+          "prospectiveOutcomeSha256": null,
+          "stdoutSha256": "552f48e23f95412ceb9855cb7a7fdb730869ac984f5ce3384434dc8fe9a463fb",
+          "expectedCode": "PROPOSAL_UNMARKED",
+          "observedExpectedCode": true
+        },
+        {
+          "caseId": "caller-missing-arguments",
+          "command": "python -B governance/compat/run_preapproval_feasibility_gate.py --repo-root <DISPOSABLE_ROOT> --json",
+          "exit": 1,
+          "technicalDisposition": "INVALID",
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnosticCodes": [
+            "PROPOSAL_NOT_ELIGIBLE"
+          ],
+          "canonicalViolationCodes": [],
+          "canonicalBlockCount": 0,
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "proposalSha256": null,
+          "companionSha256": null,
+          "prospectiveOutcomeSha256": null,
+          "stdoutSha256": "cb7dace5d1ba9934ab498e984e9d1e94873c733311177f10a578f4cce3dcee49",
+          "expectedCode": "PROPOSAL_NOT_ELIGIBLE",
+          "observedExpectedCode": true
+        }
+      ],
+      "allExpectedCodesObserved": true,
+      "exitCodeMap": {
+        "FEASIBLE": 0,
+        "INVALID": 1,
+        "HOLD": 2
+      }
+    },
+    "PF-LEGACY": {
+      "cases": [
+        {
+          "caseId": "class5-range-unrelated-legacy-changes-not-applicable",
+          "command": "python -B governance/compat/check_preapproval_feasibility.py --base HEAD --head HEAD --enforce --repo-root <DISPOSABLE_GIT_ROOT>",
+          "exit": 0,
+          "coverageLine": "changedEligibleMarkdown=1, changedJson=1, companionReferencingProposals=0, candidates=1, evaluatedMarked=0, notApplicableUnmarked=1",
+          "stdoutSha256": "e34dbcf39101fb3ed9ad230c405f9c919d59f589968523d8a67416255036c2b0",
+          "notApplicableStatement": true,
+          "holdStatement": false,
+          "outputCodes": []
+        },
+        {
+          "caseId": "class3-range-marked-without-companion",
+          "command": "python -B governance/compat/check_preapproval_feasibility.py --base HEAD --head HEAD --enforce --repo-root <DISPOSABLE_GIT_ROOT>",
+          "exit": 1,
+          "coverageLine": "changedEligibleMarkdown=2, changedJson=1, companionReferencingProposals=0, candidates=2, evaluatedMarked=1, notApplicableUnmarked=1",
+          "stdoutSha256": "e27ef75d2de66c72bf52440051aac63d30570b73d1ca2e897c5367a6a7fbb243",
+          "notApplicableStatement": true,
+          "holdStatement": false,
+          "outputCodes": [
+            "COMPANION_MISSING"
+          ]
+        },
+        {
+          "caseId": "class7-range-committed-valid-no-change",
+          "command": "python -B governance/compat/check_preapproval_feasibility.py --base HEAD --head HEAD --enforce --repo-root <DISPOSABLE_GIT_ROOT>",
+          "exit": 0,
+          "coverageLine": "changedEligibleMarkdown=0, changedJson=0, companionReferencingProposals=0, candidates=0, evaluatedMarked=0, notApplicableUnmarked=0",
+          "stdoutSha256": "98e9fe9ec665039a712631f9d4cfb7a6e8d12050790b567b6c279dd2aeeec5e1",
+          "notApplicableStatement": true,
+          "holdStatement": false,
+          "outputCodes": []
+        },
+        {
+          "caseId": "class7-range-companion-only-edit-reevaluates-unchanged-proposal",
+          "command": "python -B governance/compat/check_preapproval_feasibility.py --base HEAD --head HEAD --enforce --repo-root <DISPOSABLE_GIT_ROOT>",
+          "exit": 1,
+          "coverageLine": "changedEligibleMarkdown=0, changedJson=1, companionReferencingProposals=1, candidates=1, evaluatedMarked=1, notApplicableUnmarked=0",
+          "stdoutSha256": "a9b0984ebf3cca7065e9525faee71f9504e1c3fd567191345e3180b6d2d3deec",
+          "notApplicableStatement": true,
+          "holdStatement": false,
+          "outputCodes": [
+            "OUTCOME_DIGEST_DRIFT"
+          ]
+        },
+        {
+          "caseId": "class2-range-hold-reported-not-failed",
+          "command": "python -B governance/compat/check_preapproval_feasibility.py --base HEAD --head HEAD --enforce --repo-root <DISPOSABLE_GIT_ROOT>",
+          "exit": 0,
+          "coverageLine": "changedEligibleMarkdown=2, changedJson=1, companionReferencingProposals=1, candidates=2, evaluatedMarked=1, notApplicableUnmarked=1",
+          "stdoutSha256": "f5fcfa465543974df5a917f481952b8a2d1639f4b0b6154c6daf863bb48b138f",
+          "notApplicableStatement": true,
+          "holdStatement": true,
+          "outputCodes": []
+        },
+        {
+          "caseId": "range-unresolvable-ref-fails-closed",
+          "exit": 1,
+          "failClosedStatement": true
+        },
+        {
+          "caseId": "real-repository-range-executionBaseHead-to-HEAD",
+          "command": "python -B governance/compat/check_preapproval_feasibility.py --base 9b778dc1d9240d3584d60ffbf8ff474f3d70127f --head HEAD --enforce",
+          "exit": 0,
+          "coverageLine": "changedEligibleMarkdown=3, changedJson=1, companionReferencingProposals=0, candidates=3, evaluatedMarked=0, notApplicableUnmarked=3",
+          "notApplicableStatement": true,
+          "stdoutSha256": "928c7dada51fb9b261c202a0b8e04c23f5674552fa4250d81732caf9176cef69",
+          "note": "zero marked proposals exist in the repository; this is NOT_APPLICABLE coverage, never approval feasibility"
+        }
+      ],
+      "unmarkedParsing": {
+        "inlineExample": "UNMARKED",
+        "fencedExample": "UNMARKED"
+      },
+      "historicalRecordsEdited": false
+    },
+    "PF-INTEGRATION": {
+      "surfaces": {
+        "autorun _common_commands": {
+          "totalCommands": 84,
+          "guardCommandCount": 1,
+          "guardIndex": [
+            3
+          ],
+          "scecIndex": [
+            2
+          ],
+          "adjacentAfterScec": true,
+          "guardCommand": [
+            "python",
+            "governance/compat/check_preapproval_feasibility.py",
+            "--base",
+            "HEAD",
+            "--head",
+            "HEAD",
+            "--enforce"
+          ],
+          "unrelatedRepresentativeGatesPresent": {
+            "check_core_guard_self_protection.py": true,
+            "check_work_order_dispatch_quality.py": true,
+            "check_review_cost_control.py": true
+          }
+        },
+        "pre-commit catalog": {
+          "totalCommands": 91,
+          "guardCommandCount": 1,
+          "guardIndex": [
+            5
+          ],
+          "scecIndex": [
+            4
+          ],
+          "adjacentAfterScec": true,
+          "guardCommand": [
+            "python",
+            "governance/compat/check_preapproval_feasibility.py",
+            "--base",
+            "HEAD",
+            "--head",
+            "HEAD",
+            "--enforce"
+          ],
+          "unrelatedRepresentativeGatesPresent": {
+            "check_core_guard_self_protection.py": true,
+            "check_work_order_dispatch_quality.py": true,
+            "check_review_cost_control.py": true
+          }
+        },
+        "reviewer-fast catalog": {
+          "totalCommands": 70,
+          "guardCommandCount": 1,
+          "guardIndex": [
+            5
+          ],
+          "scecIndex": [
+            4
+          ],
+          "adjacentAfterScec": true,
+          "guardCommand": [
+            "python",
+            "governance/compat/check_preapproval_feasibility.py",
+            "--base",
+            "HEAD",
+            "--head",
+            "HEAD",
+            "--enforce"
+          ],
+          "unrelatedRepresentativeGatesPresent": {
+            "check_core_guard_self_protection.py": true,
+            "check_work_order_dispatch_quality.py": true,
+            "check_review_cost_control.py": true
+          }
+        }
+      },
+      "routeExecutions": [
+        {
+          "surface": "autorun _common_commands",
+          "phase": "valid-feasible-companion",
+          "command": "python -B governance/compat/check_preapproval_feasibility.py --base HEAD --head HEAD --enforce --repo-root <DISPOSABLE_GIT_ROOT>",
+          "exit": 0,
+          "coverageLine": "changedEligibleMarkdown=2, changedJson=1, companionReferencingProposals=1, candidates=2, evaluatedMarked=1, notApplicableUnmarked=1",
+          "digestDriftReported": false
+        },
+        {
+          "surface": "pre-commit catalog",
+          "phase": "valid-feasible-companion",
+          "command": "python -B governance/compat/check_preapproval_feasibility.py --base HEAD --head HEAD --enforce --repo-root <DISPOSABLE_GIT_ROOT>",
+          "exit": 0,
+          "coverageLine": "changedEligibleMarkdown=2, changedJson=1, companionReferencingProposals=1, candidates=2, evaluatedMarked=1, notApplicableUnmarked=1",
+          "digestDriftReported": false
+        },
+        {
+          "surface": "reviewer-fast catalog",
+          "phase": "valid-feasible-companion",
+          "command": "python -B governance/compat/check_preapproval_feasibility.py --base HEAD --head HEAD --enforce --repo-root <DISPOSABLE_GIT_ROOT>",
+          "exit": 0,
+          "coverageLine": "changedEligibleMarkdown=2, changedJson=1, companionReferencingProposals=1, candidates=2, evaluatedMarked=1, notApplicableUnmarked=1",
+          "digestDriftReported": false
+        },
+        {
+          "surface": "autorun _common_commands",
+          "phase": "stop-after-companion-edit",
+          "command": "python -B governance/compat/check_preapproval_feasibility.py --base HEAD --head HEAD --enforce --repo-root <DISPOSABLE_GIT_ROOT>",
+          "exit": 1,
+          "coverageLine": "changedEligibleMarkdown=2, changedJson=1, companionReferencingProposals=1, candidates=2, evaluatedMarked=1, notApplicableUnmarked=1",
+          "digestDriftReported": true
+        },
+        {
+          "surface": "pre-commit catalog",
+          "phase": "stop-after-companion-edit",
+          "command": "python -B governance/compat/check_preapproval_feasibility.py --base HEAD --head HEAD --enforce --repo-root <DISPOSABLE_GIT_ROOT>",
+          "exit": 1,
+          "coverageLine": "changedEligibleMarkdown=2, changedJson=1, companionReferencingProposals=1, candidates=2, evaluatedMarked=1, notApplicableUnmarked=1",
+          "digestDriftReported": true
+        },
+        {
+          "surface": "reviewer-fast catalog",
+          "phase": "stop-after-companion-edit",
+          "command": "python -B governance/compat/check_preapproval_feasibility.py --base HEAD --head HEAD --enforce --repo-root <DISPOSABLE_GIT_ROOT>",
+          "exit": 1,
+          "coverageLine": "changedEligibleMarkdown=2, changedJson=1, companionReferencingProposals=1, candidates=2, evaluatedMarked=1, notApplicableUnmarked=1",
+          "digestDriftReported": true
+        }
+      ],
+      "testsRun": [
+        {
+          "caseId": "autorun-integration-suite",
+          "command": "python -B -m pytest governance/compat/test_run_agent_autorun_workflow_gate.py -q",
+          "exit": 0,
+          "summary": "73 passed in 17.99s"
+        },
+        {
+          "caseId": "canonical-scec-regression",
+          "command": "python -B -m pytest governance/compat/test_check_semantic_convergence_control.py -q",
+          "exit": 0,
+          "summary": "119 passed in 0.59s"
+        }
+      ],
+      "deliberateAssertionUpdates": [
+        {
+          "file": "governance/compat/test_run_agent_autorun_workflow_gate.py",
+          "from": 83,
+          "to": 84,
+          "test": "test_active_binding_changes_only_unique_probe_command"
+        },
+        {
+          "file": "governance/compat/test_run_agent_autorun_workflow_gate.py",
+          "from": 87,
+          "to": 88,
+          "test": "test_phase_forwards_bound_plan_and_preserves_other_commands",
+          "note": "second command-count assertion surfaced by the first focused run; initial failure retained"
+        }
+      ]
+    },
+    "PF-APPLICATION": {
+      "lifecyclePointerPresent": true,
+      "learningApplicationSectionPresent": true,
+      "auditTimeDeferralRetained": true,
+      "agentApplicationStatus": "NOT_PROVEN",
+      "operatorReceipt": "NOT_RETURNED_NOT_FABRICATED",
+      "guardStatus": "IMPLEMENTED_PENDING_LOCAL_REVIEW",
+      "limit": "application evidence is limited to the tested explicit CLI/range/catalog route; no arbitrary-agent behavior, UI interception or operator receipt is claimed"
+    },
+    "PF-RETURN": {
+      "gitObservedPathsEqualExactTwelve": true,
+      "gitObservedPathCount": 12,
+      "unexpectedPaths": [],
+      "missingPaths": [],
+      "headUnchangedNoCommit": true,
+      "gateRuns": [
+        {
+          "run": 1,
+          "command": "python -B governance/compat/run_worker_return_fast_gate.py --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_PREFEAS_C1_2026-10-08.md",
+          "exit": 1,
+          "elapsedSeconds": 5.8,
+          "result": "FAIL",
+          "failedSteps": [
+            "worker-return quality gate",
+            "reviewer-fast governance gate"
+          ],
+          "passedStepCount": 5,
+          "finalLine": "VIOLATION: worker-return fast gate blocked by 2 failure(s) in 5.73s.",
+          "logSha256": "f422655052ae163fe89b42935483a94e36415f6e1e81255cda835fea47f9eda2",
+          "note": "first run on initial draft"
+        },
+        {
+          "run": 2,
+          "command": "python -B governance/compat/run_worker_return_fast_gate.py --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_PREFEAS_C1_2026-10-08.md",
+          "exit": 1,
+          "elapsedSeconds": 5.79,
+          "result": "FAIL",
+          "failedSteps": [
+            "worker-return quality gate",
+            "reviewer-fast governance gate"
+          ],
+          "passedStepCount": 5,
+          "finalLine": "VIOLATION: worker-return fast gate blocked by 2 failure(s) in 5.72s.",
+          "logSha256": "0753f10223efde4fd46ffb6209b0acbed7d8a00f037269f4e846b14eaacb77a5",
+          "note": "after literal repairs: consolidated sweep token, rescan trigger phrase, equivalence wording"
+        },
+        {
+          "run": 3,
+          "command": "python -B governance/compat/run_worker_return_fast_gate.py --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_PREFEAS_C1_2026-10-08.md",
+          "exit": 0,
+          "elapsedSeconds": 5.98,
+          "result": "PASS",
+          "failedSteps": [],
+          "passedStepCount": 7,
+          "finalLine": "COMPLIANT: worker-return fast gate passed in 5.90s.",
+          "logSha256": "121565abde7c193c933dad14e8192ad5dbc5077248d8949473f9f1df44a21627",
+          "note": "forward-composed PASS row; only remaining defect was the circular gate-evidence line"
+        }
+      ],
+      "acceptanceLedgerCheck": "run inside the bound fast gate as the work-order acceptance ledger step (COMPLIANT in the recorded passing run)",
+      "note": "a last confirmation run on the final bytes is reported in the worker message; it cannot be recorded here without a self-referential rewrite"
+    }
+  },
+  "testRuns": [
+    {
+      "caseId": "new-guard-suite",
+      "command": "python -B -m pytest governance/compat/test_check_preapproval_feasibility.py -q",
+      "exit": 0,
+      "summary": "98 passed in 4.78s"
+    },
+    {
+      "caseId": "order-focused-three-suite-command",
+      "command": "python -B -m pytest governance/compat/test_check_preapproval_feasibility.py governance/compat/test_run_agent_autorun_workflow_gate.py governance/compat/test_check_semantic_convergence_control.py -q",
+      "exit": 0,
+      "summary": "290 passed in 23.45s"
+    }
+  ],
+  "retainedFailures": [
+    {
+      "id": "F1",
+      "what": "first order-focused three-suite run: 288 passed, 1 failed (test_phase_forwards_bound_plan_and_preserves_other_commands expected 87 commands, observed 88)",
+      "disposition": "deliberate assertion update 87 to 88 inside the allowlisted test; no gate or threshold changed"
+    },
+    {
+      "id": "F2",
+      "what": "first link-escape test used os.symlink and was skipped on this Windows host",
+      "disposition": "replaced by a directory-junction/symlink helper; the escape rejection now runs and passes; no skip remains in the new suite"
+    },
+    {
+      "id": "F3",
+      "what": "a test-file rewrite helper expanded a backslash-n escape into a literal newline, causing a collection SyntaxError",
+      "disposition": "corrected in place; suite rerun 98 passed"
+    }
+  ],
+  "gateRuns": [
+    {
+      "run": 1,
+      "command": "python -B governance/compat/run_worker_return_fast_gate.py --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_PREFEAS_C1_2026-10-08.md",
+      "exit": 1,
+      "elapsedSeconds": 5.8,
+      "result": "FAIL",
+      "failedSteps": [
+        "worker-return quality gate",
+        "reviewer-fast governance gate"
+      ],
+      "passedStepCount": 5,
+      "finalLine": "VIOLATION: worker-return fast gate blocked by 2 failure(s) in 5.73s.",
+      "logSha256": "f422655052ae163fe89b42935483a94e36415f6e1e81255cda835fea47f9eda2",
+      "note": "first run on initial draft"
+    },
+    {
+      "run": 2,
+      "command": "python -B governance/compat/run_worker_return_fast_gate.py --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_PREFEAS_C1_2026-10-08.md",
+      "exit": 1,
+      "elapsedSeconds": 5.79,
+      "result": "FAIL",
+      "failedSteps": [
+        "worker-return quality gate",
+        "reviewer-fast governance gate"
+      ],
+      "passedStepCount": 5,
+      "finalLine": "VIOLATION: worker-return fast gate blocked by 2 failure(s) in 5.72s.",
+      "logSha256": "0753f10223efde4fd46ffb6209b0acbed7d8a00f037269f4e846b14eaacb77a5",
+      "note": "after literal repairs: consolidated sweep token, rescan trigger phrase, equivalence wording"
+    },
+    {
+      "run": 3,
+      "command": "python -B governance/compat/run_worker_return_fast_gate.py --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_PREFEAS_C1_2026-10-08.md",
+      "exit": 0,
+      "elapsedSeconds": 5.98,
+      "result": "PASS",
+      "failedSteps": [],
+      "passedStepCount": 7,
+      "finalLine": "COMPLIANT: worker-return fast gate passed in 5.90s.",
+      "logSha256": "121565abde7c193c933dad14e8192ad5dbc5077248d8949473f9f1df44a21627",
+      "note": "forward-composed PASS row; only remaining defect was the circular gate-evidence line"
+    }
+  ],
+  "additionalDiagnostics": [
+    {
+      "command": "python -B governance/compat/run_local_governance_hook_chain.py --hook pre-commit",
+      "exit": 0,
+      "result": "All pre-commit governance checks passed (91 checks, including the new preapproval feasibility range command)",
+      "ownerNote": "reviewer-owned gate; run once as an early informational diagnostic before the final evidence rebuild, not as acceptance"
+    }
+  ],
+  "limitations": [
+    "declared-state joins only; whether a planner classified real-world prerequisites correctly is a reviewer boundary",
+    "package identity is a conservative name-shape grammar, not registry resolution or a full npm naming validator",
+    "explicit cooperative CLI/range/catalog route only; no interception of assistant text or UI, no daemon",
+    "agent application of the learning and any operator receipt are NOT_PROVEN and not fabricated",
+    "range PASS with zero marked proposals is NOT_APPLICABLE and never approval feasibility; valid STOP/ROOT_CONTRACT is HOLD, never release",
+    "S1 source hold, retained counters 0/0/1/1, metadata STOP ordinal 2 and E1 consumed evidence were not touched"
+  ],
+  "noEffects": {
+    "network": false,
+    "provider": false,
+    "install": false,
+    "media": false,
+    "publicOrDeploy": false,
+    "subagents": false,
+    "commit": false
+  }
+}

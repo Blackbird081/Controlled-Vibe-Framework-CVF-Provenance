@@ -1,7 +1,7 @@
 # CVF Agent Work Order - Preapproval Feasibility Guard C1
 Memory class: governed-worker-dispatch
 docType: work_order
-Status: READY
+Status: CLOSED_PASS_BOUNDED
 Date: 2026-10-08
 Batch ID: CVF-PREFEAS-C1-20261008
 Dispatch base head: c7ab6149d339157678bfac6a87864772ba026b12
@@ -245,24 +245,24 @@ Actual command: python -B governance/compat/run_adif_defect_resolver.py --task-c
 
 | Field | Value |
 | --- | --- |
-| Actor | Local INTERNAL_AGENT dispatcher |
+| Actor | Local INTERNAL_AGENT reviewer/closer |
 | Provider or surface | private shared CVF workspace |
-| Session or invocation | prefeas-c1-dispatch-20261008 |
-| Working directory | D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF |
-| Command or tool surface | targeted source reads;scaffold;ADIF resolver;exact semantic-object validation;packet writes and required gates |
-| Target paths | `docs/baselines/CVF_GC018_PREFEAS_C1_2026-10-08.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_PREFEAS_C1_2026-10-08.md`; `docs/reference/preapproval_feasibility/README.md`; `docs/reviews/evidence/cvf-prefeas-c1-dispatch-design-2026-10-08.json` |
-| Allowed scope source | operator requests guard preapproval according to completed learning and work order for manual worker transfer |
-| Before status evidence | clean at c7ab6149d339157678bfac6a87864772ba026b12 |
-| After status evidence | four material design/dispatch artifacts;implementation not performed |
-| Diff evidence | git diff --name-status and exact four-path manifest |
-| Approval boundary | operator selected guard work order;no source/media/network/public authorization |
-| Claim boundary | packet readiness only;future guard application unproved |
-| Agent type | INTERNAL_AGENT |
-| Invocation ID | prefeas-c1-dispatch-20261008 |
-| Expected manifest | `docs/baselines/CVF_GC018_PREFEAS_C1_2026-10-08.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_PREFEAS_C1_2026-10-08.md`; `docs/reference/preapproval_feasibility/README.md`; `docs/reviews/evidence/cvf-prefeas-c1-dispatch-design-2026-10-08.json` |
-| Actual changed set | `docs/baselines/CVF_GC018_PREFEAS_C1_2026-10-08.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_PREFEAS_C1_2026-10-08.md`; `docs/reference/preapproval_feasibility/README.md`; `docs/reviews/evidence/cvf-prefeas-c1-dispatch-design-2026-10-08.json` |
+| Session or invocation | prefeas-c1-local-review-20261008 |
+| Working directory | repository root |
+| Command or tool surface | named source/hash joins;independent actual CLI/Git probes;three grouped repairs;103 focused tests;gates and split closure |
+| Target paths | `governance/compat/preapproval_feasibility_contract.py`; `governance/compat/check_preapproval_feasibility.py`; `governance/compat/run_preapproval_feasibility_gate.py`; `governance/compat/test_check_preapproval_feasibility.py`; `governance/compat/agent_autorun_command_catalog.py`; `governance/compat/local_governance_hook_catalog_pre_commit.py`; `governance/compat/local_governance_hook_catalog_reviewer_fast.py`; `governance/compat/test_run_agent_autorun_workflow_gate.py`; `docs/reference/CVF_GOVERNED_WORK_LIFECYCLE_AND_DESIGN_CONTROL_STANDARD_2026-06-11.md`; `docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md`; `docs/reviews/CVF_PREFEAS_C1_WORKER_RETURN_2026-10-08.md`; `docs/reviews/evidence/cvf-prefeas-c1-worker-2026-10-08.json`; `docs/reviews/CVF_PREFEAS_C1_COMPLETION_2026-10-08.md`; `docs/reviews/evidence/cvf-prefeas-c1-local-review-2026-10-08.json`; `docs/work_orders/CVF_AGENT_WORK_ORDER_PREFEAS_C1_2026-10-08.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/cvfNcrConsolidatedLocalFoundation20261006.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Allowed scope source | docs/work_orders/CVF_AGENT_WORK_ORDER_PREFEAS_C1_2026-10-08.md reviewer closure conversion |
+| Before status evidence | exact12 worker paths/uncommitted;HEAD 9b778dc1d9240d3584d60ffbf8ff474f3d70127f |
+| After status evidence | exact22 atomic closure paths;original worker receipt/return preserved |
+| Diff evidence | git diff --name-status,local custody hashes and exact staged set |
+| Approval boundary | bounded guard review/repair/commit;source/runtime/network/public effects held |
+| Claim boundary | offline declared-state route only |
+| Agent type | INTERNAL_AGENT reviewer/closer |
+| Invocation ID | prefeas-c1-local-review-20261008 |
+| Expected manifest | `governance/compat/preapproval_feasibility_contract.py`; `governance/compat/check_preapproval_feasibility.py`; `governance/compat/run_preapproval_feasibility_gate.py`; `governance/compat/test_check_preapproval_feasibility.py`; `governance/compat/agent_autorun_command_catalog.py`; `governance/compat/local_governance_hook_catalog_pre_commit.py`; `governance/compat/local_governance_hook_catalog_reviewer_fast.py`; `governance/compat/test_run_agent_autorun_workflow_gate.py`; `docs/reference/CVF_GOVERNED_WORK_LIFECYCLE_AND_DESIGN_CONTROL_STANDARD_2026-06-11.md`; `docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md`; `docs/reviews/CVF_PREFEAS_C1_WORKER_RETURN_2026-10-08.md`; `docs/reviews/evidence/cvf-prefeas-c1-worker-2026-10-08.json`; `docs/reviews/CVF_PREFEAS_C1_COMPLETION_2026-10-08.md`; `docs/reviews/evidence/cvf-prefeas-c1-local-review-2026-10-08.json`; `docs/work_orders/CVF_AGENT_WORK_ORDER_PREFEAS_C1_2026-10-08.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/cvfNcrConsolidatedLocalFoundation20261006.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Actual changed set | `governance/compat/preapproval_feasibility_contract.py`; `governance/compat/check_preapproval_feasibility.py`; `governance/compat/run_preapproval_feasibility_gate.py`; `governance/compat/test_check_preapproval_feasibility.py`; `governance/compat/agent_autorun_command_catalog.py`; `governance/compat/local_governance_hook_catalog_pre_commit.py`; `governance/compat/local_governance_hook_catalog_reviewer_fast.py`; `governance/compat/test_run_agent_autorun_workflow_gate.py`; `docs/reference/CVF_GOVERNED_WORK_LIFECYCLE_AND_DESIGN_CONTROL_STANDARD_2026-06-11.md`; `docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md`; `docs/reviews/CVF_PREFEAS_C1_WORKER_RETURN_2026-10-08.md`; `docs/reviews/evidence/cvf-prefeas-c1-worker-2026-10-08.json`; `docs/reviews/CVF_PREFEAS_C1_COMPLETION_2026-10-08.md`; `docs/reviews/evidence/cvf-prefeas-c1-local-review-2026-10-08.json`; `docs/work_orders/CVF_AGENT_WORK_ORDER_PREFEAS_C1_2026-10-08.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/cvfNcrConsolidatedLocalFoundation20261006.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Manifest delta | MATCH |
-| Deletion or rename disposition | N/A with reason: four new files |
+| Deletion or rename disposition | N/A with reason: none |
 
 ## External/Local Coordination Binding
 
@@ -445,7 +445,7 @@ Actual rg search for preapproval/PREFEAS-C1 in docs,CVF_SESSION and governance/c
 }
 ```
 
-Required proof IDs are atomic literals;expected artifact union equals exact12 worker paths. WORK_ORDER itself is dispatcher read-only,not a worker deliverable. Completion review is Local-only future closure evidence,not dispatch authority.
+Required proof IDs are atomic literals;expected artifact union equals exact12 worker paths. WORK_ORDER itself is dispatcher read-only,not a worker deliverable. Completion review is Local-owned closure evidence;original dispatch authority remains recoverable at execution base.
 
 ## Semantic Convergence Outcome
 
@@ -632,3 +632,33 @@ None for exact reversible guard implementation;consequential source/runtime/prov
 }
 ```
 SHADOW_FULL_GATE_FALLBACK;full existing bundles required.
+
+## Local Closure Disposition
+
+CLOSED_PASS_BOUNDED per docs/reviews/CVF_PREFEAS_C1_COMPLETION_2026-10-08.md. Original dispatch at 9b778dc1d9240d3584d60ffbf8ff474f3d70127f;worker lane released,no redispatch. Original worker evidence/return unchanged;Local final receipt docs/reviews/evidence/cvf-prefeas-c1-local-review-2026-10-08.json owns three repairs and bounded acceptance. No source/runtime successor.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | docs/work_orders/CVF_AGENT_WORK_ORDER_PREFEAS_C1_2026-10-08.md | bounded closed status,completion binding and original dispatch recoverable at execution base | PASS |
+| Completion or reviewer artifact | docs/reviews/CVF_PREFEAS_C1_COMPLETION_2026-10-08.md | independent15 cases and grouped Local repairs | PASS |
+| Roadmap state | no dedicated roadmap for this operator-selected remediation | no new source/program successor | N/A with reason:existing owners unchanged |
+| Registry JSON | docs/reviews/evidence/cvf-prefeas-c1-local-review-2026-10-08.json | original/final hashes and independently authored probe source/receipts | PASS |
+| Registry Markdown | docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md | Local acceptance appended,original audit/worker notes retained | PASS |
+| External evidence digest | docs/reviews/evidence/cvf-prefeas-c1-worker-2026-10-08.json | same-workspace worker evidence retained | N/A with reason:no external research |
+| System loop interlock | docs/work_orders/CVF_AGENT_WORK_ORDER_PREFEAS_C1_2026-10-08.md | old source/metadata STOP/approvals unchanged;no successor | PASS |
+| Session continuity | active handoff,core/source entries and generated projections | atomic closed-order/currentAuthority join;dedicated real-material-SHA continuity follows | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required | Observed | Status |
+| --- | --- | --- | --- |
+| PF-SCEC | required contract/source/route obligation | original worker receipt plus Local15-case probe/final artifact joins | PASS |
+| PF-JOINS | required contract/source/route obligation | original worker receipt plus Local15-case probe/final artifact joins | PASS |
+| PF-QUEUE | required contract/source/route obligation | original worker receipt plus Local15-case probe/final artifact joins | PASS |
+| PF-CALLER | required contract/source/route obligation | original worker receipt plus Local15-case probe/final artifact joins | PASS |
+| PF-LEGACY | required contract/source/route obligation | original worker receipt plus Local15-case probe/final artifact joins | PASS |
+| PF-INTEGRATION | required contract/source/route obligation | original worker receipt plus Local15-case probe/final artifact joins | PASS |
+| PF-APPLICATION | required contract/source/route obligation | original worker receipt plus Local15-case probe/final artifact joins | PASS |
+| PF-RETURN | required contract/source/route obligation | original worker receipt plus Local15-case probe/final artifact joins | PASS |

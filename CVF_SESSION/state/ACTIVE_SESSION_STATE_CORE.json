@@ -39,9 +39,9 @@
     "baselinePath": "docs/baselines/CVF_GC018_PREFEAS_C1_2026-10-08.md",
     "baselineSha256": "75ec83ce9b4528477f6ca2b82dfc52b913a9ab9e11ec1dd9bc444935b5fbb8a3",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_PREFEAS_C1_2026-10-08.md",
-    "workOrderSha256": "9510f4846a8cb22605fb21537ee1ad0c56560e9dea69d9dab0c70bb7db4d2f95"
+    "workOrderSha256": "ca249aebfb157b6f7e8bcaf3834b3202710b6486869d122f1bff6268d1f35c52"
   },
-  "currentAuthoritySyncReason": "Operator-selected consolidated preapproval guard dispatch and accepted stable design at material 33309dfa065a46a853d81b4ed9112810f9277166;current pair switched for manual no-commit implementation;S1 held chains/approval and all parked effects unchanged. Corrective release continuity binds batch in material marker and exact EXECUTE next-action enum;initial failed bound receipt retained;packet unchanged.",
+  "currentAuthoritySyncReason": "PREFEAS-C1 closed bounded after Local independent15 cases and three grouped repairs;current closed-order raw hash atomically synchronized;guard declared-state only,S1 source held;dedicated real-SHA continuity follows.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",

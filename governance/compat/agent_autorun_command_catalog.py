@@ -117,6 +117,12 @@ def _common_commands(base: str, head: str, active_work_order: str | None = None)
             base,
             head,
         ),
+        _range_command(
+            "preapproval feasibility",
+            "governance/compat/check_preapproval_feasibility.py",
+            base,
+            head,
+        ),
         GateCommand(
             "subagent provider execution authority",
             ("python", "governance/compat/check_subagent_provider_execution_authority.py", "--base", base, "--head", head, "--enforce"),

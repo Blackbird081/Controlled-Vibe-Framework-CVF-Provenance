@@ -25,6 +25,10 @@ REVIEWER_FAST_CHECKS: list[tuple[str, list[str]]] = [
         ["python", "governance/compat/check_semantic_convergence_control.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
     ),
     (
+        "preapproval feasibility",
+        ["python", "governance/compat/check_preapproval_feasibility.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+    ),
+    (
         "subagent provider execution authority",
         ["python", "governance/compat/check_subagent_provider_execution_authority.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
     ),

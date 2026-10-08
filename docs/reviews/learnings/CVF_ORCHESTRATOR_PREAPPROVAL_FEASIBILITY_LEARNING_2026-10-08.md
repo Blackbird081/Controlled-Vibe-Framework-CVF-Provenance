@@ -108,6 +108,22 @@ Required positive/negative cases,NOT_RUN for a new guard:
 
 Implementation is deferred because present proposal schema is task-specific,existing guard scope is deliberately narrow,and no general preapproval client binding is admitted or verified. Writing an ad hoc regex for one NCR filename would hide the chain gap and add maintenance cost. The written rule is useful now;machine candidate needs one consolidated design,not per-label guards.
 
+## Application Update - PREFEAS-C1 Worker Evidence (2026-10-08)
+
+The deferral above is retained as the audit-time position and is not rewritten. The operator later selected one consolidated guard (batch CVF-PREFEAS-C1-20261008, stable contract docs/reference/preapproval_feasibility/README.md). A shared-workspace INTERNAL_AGENT worker built it from executionBaseHead 9b778dc1d9240d3584d60ffbf8ff474f3d70127f and returned it uncommitted for Local review.
+
+| Candidate case | Worker-built control and observed result | Limit |
+|---|---|---|
+| 1 copied streak and corrected CONTINUE | real hash-bound frozen S1 predecessor copied byte-identically into a disposable root; canonical validate_block reports NON_DECREASING_STREAK_MISMATCH and MISSING_STOP_REASSESS_ESCALATION; receipt INVALID, caller exit 1 | canonical arithmetic reused, not changed |
+| 2 valid STOP | canonical violations empty, receipt HOLD, caller exit 2, effectAdmission false; ROOT_CONTRACT_REQUIRED also HOLD | HOLD is a truthful technical state, never release |
+| 3 identity and declaration drift | 25 named mutations plus a directory-link escape rejected with specific codes | conservative grammar, not a registry or full naming validator |
+| 4 legitimate reduction | bound resolution evidence follows canonical progression and is FEASIBLE with effectAdmission false; hash, locator and class mutations fail | evidence bytes are checked, not whether a reviewer accepted them |
+| 5 legacy immunity | unmarked, inline-example, fenced-example and ineligible-path inputs stay NOT_APPLICABLE or INVALID; explicit caller never accepts zero objects | range coverage 0 is reported as NOT_APPLICABLE |
+| 6 queue and prerequisites | publisher identity, DISCOVERY separation, over-cap PARTIAL and phase required/deferred joins | no URI construction, fetch or registry resolution |
+| 7 actual caller and early gates | real subprocess caller and the three catalog routes executed against disposable Git fixtures; drift rerun fails | cooperative explicit route only |
+
+Status after this update: guard IMPLEMENTED_PENDING_LOCAL_REVIEW, not accepted. Agent application of the written rule remains NOT_PROVEN: no operator receipt was returned, no arbitrary-agent or UI interception exists, and the S1 source hold, retained counters and E1 consumed evidence are unchanged. Worker evidence: docs/reviews/evidence/cvf-prefeas-c1-worker-2026-10-08.json; return docs/reviews/CVF_PREFEAS_C1_WORKER_RETURN_2026-10-08.md.
+
 ## Feedback State And Links
 
 | Boundary | State | Evidence / next move |
@@ -235,3 +251,7 @@ Private parent learning,not public rollout/export.
 ## Claim Boundary
 
 Finite selected audit and written preapproval rule/discovery only. All original S0/E1/S1 evidence/counters/approval retained;no new source order or source acceptance. Machine candidate NOT_IMPLEMENTED;independent delivery/adoption/future behavior NOT_PROVEN. No provider/network/native/host/public/deploy operation.
+
+## Local Acceptance Update - PREFEAS-C1 (2026-10-08)
+
+Local reviewer found and repaired three bounded implementation defects together:trailing newline in publisher name,quoted UTF-8 Git paths skipped by discovery,and unreadable/escaping proposal omitted from the range. Existing complete identity and fail-closed source rules control;no new SCEC semantics or separate learning lane. Full-match identity,NUL-delimited Git paths and fail-closed current-file admission implemented. Original worker evidence/return retained. Independently authored actual CLI probe15/15 PASS and focused guard103 tests PASS. Local completion docs/reviews/CVF_PREFEAS_C1_COMPLETION_2026-10-08.md;receipt docs/reviews/evidence/cvf-prefeas-c1-local-review-2026-10-08.json. Accepted bounded declared-state route only;arbitrary-agent adoption/operator receipt remain NOT_PROVEN;source STOP/approval unchanged.

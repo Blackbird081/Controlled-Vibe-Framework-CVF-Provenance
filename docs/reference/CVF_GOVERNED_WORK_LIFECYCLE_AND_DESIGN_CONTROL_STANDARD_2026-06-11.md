@@ -158,6 +158,16 @@ through repeated full gates. Preserve failed outcomes and approved authority.
 These checks add no effect grant, counter-reset exception or new lifecycle phase;
 undeclared machine coverage remains a candidate, not automatic enforcement.
 
+Opt-in declared-state route: a proposal that carries the standalone
+`Preapproval-Feasibility: REQUIRED` marker line and its companion line is
+evaluated before approval presentation by
+`python -B governance/compat/run_preapproval_feasibility_gate.py --proposal <path> --approval-target <same-path> --json`.
+Only FEASIBLE exits zero; HOLD and INVALID exit nonzero, and no result is consent
+or an effect grant. The range checker is NOT_APPLICABLE when zero marked
+proposals are evaluated, which is never approval feasibility. Contract, limits
+and the cooperative-caller boundary: `docs/reference/preapproval_feasibility/README.md`.
+Unmarked and historical proposals are unaffected, so a proposer must opt in.
+
 ### Receiving Analysis And Question Discipline
 
 Apply before asking, revising intake analysis or preparing an authorized plan:
