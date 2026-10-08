@@ -1,0 +1,24 @@
+{
+  "schemaVersion": "cvf.learningLoopReceipt@1.0.0",
+  "kind": "APPLICATION",
+  "findingId": "NCR-LEARNING-APPLICATION-OBSERVABILITY",
+  "sourceProject": "CVF-CORE",
+  "control": {
+    "path": "governance/compat/learning_application_binding.py",
+    "sha256": "84068b6f197c19404a23daa643266d7f9ed334f313cd2d8bbe2f2e6d37d7b7b8"
+  },
+  "actor": "LOCAL_INTERNAL_AGENT_DOCUMENT_MAINTAINER",
+  "authorization": {
+    "path": "docs/reviews/evidence/cvf-video-storyboard-reconciliation-2026-10-09-authorization.json",
+    "sha256": "621469eb350190969b110615dc1785fc72c0f95fefc6a892efca55190b99787f",
+    "fragment": "roleDelegation",
+    "evidenceClass": "OBSERVED_LOCAL"
+  },
+  "verification": {
+    "path": "docs/reviews/evidence/cvf-video-storyboard-reconciliation-2026-10-09.json",
+    "sha256": "32e106f79b87a7d9f6a4b7b0c4531d97b19f6d6c3dea5535a9bf3ebdade8ef03",
+    "fragment": "learningApplicationObservation",
+    "evidenceClass": "OBSERVED_LOCAL"
+  },
+  "claimLimits": "Same Local actor in operator-delegated private document maintenance. Reception/application observed for this one task only; no independent actor, actual work-order dispatch enforcement, universal adherence, outcome improvement or live governance claim. Source-record reception occurred before final qualification, not before all initial writes. APPLICATION receipt is candidate evidence for a Local document task only; no positive parent dispatch-application promotion."
+}

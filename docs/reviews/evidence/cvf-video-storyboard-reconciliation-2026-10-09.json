@@ -1,0 +1,168 @@
+{
+  "schemaVersion": "cvf.localHtmlReconciliationEvidence@1",
+  "date": "2026-10-09",
+  "executionBaseHead": "3cfc3208ea8bfd7f7ceb6f0ad69478a4d95c6897",
+  "status": "VERIFIED_LOCAL_HTML_READY_FOR_OPERATOR_CONTENT_REVIEW",
+  "authorization": "docs/reviews/evidence/cvf-video-storyboard-reconciliation-2026-10-09-authorization.json",
+  "materialManifest": [
+    "docs/reviews/CVF_NCR_W05_SELECTED_CHAIN_READINESS_2026-10-07.md",
+    "docs/reviews/evidence/cvf-video-storyboard-reconciliation-2026-10-09-authorization.json",
+    "docs/reviews/evidence/cvf-video-storyboard-reconciliation-2026-10-09.json",
+    "docs/reviews/evidence/cvf-video-storyboard-reconciliation-2026-10-09-original.html",
+    "docs/reviews/evidence/cvf-video-storyboard-reconciliation-2026-10-09-before.html",
+    "docs/reviews/evidence/cvf-video-storyboard-reconciliation-2026-10-09.html",
+    "docs/reviews/evidence/cvf-video-storyboard-reconciliation-2026-10-09-delivery.json",
+    "docs/reviews/evidence/cvf-video-storyboard-reconciliation-2026-10-09-application.json",
+    "docs/reference/downstream_gate_profile/downstream_finding_intake_registry.json"
+  ],
+  "sourcePins": {
+    "docs/reference/CVF_NCR_GENERAL_VIDEO_DESIGN_2026-10-02.md": "3ce5e2363c3e29997fcbf42cb4cec59af7447cca38409d4d970e8aa71e5777e0",
+    "governance/compat/learning_application_binding.py": "84068b6f197c19404a23daa643266d7f9ed334f313cd2d8bbe2f2e6d37d7b7b8",
+    "docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md": "0e4975f437b0676d42adfceb681474fba98e278466a61aa41adc6783224aa69b",
+    "docs/reviews/CVF_NCR_C1_S1_CONSOLIDATED_REPAIR_COMPLETION_2026-10-09.md": "fcfb34f6569856fe10b7f0b106dd5c81068eabc1fbff1a44efcf22ec50f27336",
+    "docs/reviews/CVF_CVF_NCR_GENERAL_VIDEO_DESIGN_COMPLETION_2026-10-02.md": "bf6eb5b7671aaa18e020dba876dec45f73e4ea7f8d9e50f4714cba709ec8e161",
+    "docs/reviews/CVF_NCR_C1_OFFLINE_PRODUCTION_READINESS_COMPLETION_2026-10-08.md": "68044f414a25ab827161730d241f3c4fac24d60b35df3d774c0bd83d42b050ee"
+  },
+  "versions": {
+    "original": {
+      "path": "docs/reviews/evidence/cvf-video-storyboard-reconciliation-2026-10-09-original.html",
+      "bytes": 19136,
+      "sha256": "ae90fce7387d7da230627055f882d2f580bef9e27c97f11fe704ca19cc073447"
+    },
+    "before": {
+      "path": "docs/reviews/evidence/cvf-video-storyboard-reconciliation-2026-10-09-before.html",
+      "bytes": 26084,
+      "sha256": "de56e4a7207446eade1571d4cc3d8741b1802e58e9db0377e59bd3ef78405037"
+    },
+    "html": {
+      "path": "docs/reviews/evidence/cvf-video-storyboard-reconciliation-2026-10-09.html",
+      "bytes": 24571,
+      "sha256": "af6a983729afd1f0fac7d80e3d154ec7ee91cc9addf5034df0e1ae3a0de39502"
+    }
+  },
+  "sourceStoryHtmlSha256": "6d67ec466848a08005ed8644f202248b05e7af8886ff0afd21fdc40a1a64ae4a",
+  "storyboardInnerHtmlExactMatchAllThree": true,
+  "changeAttribution": {
+    "originalToBefore": "Dark/responsive presentation and production-decision aid added after original browser receipt; retained local script/build observations, not a new governed authority.",
+    "beforeToCurrent": "Replace old production-decision aid with current S0/R2 disposition and four content-review questions; clarify source hash scope and revision date. Ten-scene inner HTML is byte-identical to the original reviewed export."
+  },
+  "historicalReceiptRetained": "docs/reviews/evidence/cvf-ncr-w05-chain-reconciliation-2026-10-07.json",
+  "learningDeliveryObservation": {
+    "actor": "LOCAL_INTERNAL_AGENT_DOCUMENT_MAINTAINER",
+    "sourceProject": "CVF-CORE",
+    "learningRecordRead": "0e4975f437b0676d42adfceb681474fba98e278466a61aa41adc6783224aa69b",
+    "controlRead": "84068b6f197c19404a23daa643266d7f9ed334f313cd2d8bbe2f2e6d37d7b7b8",
+    "scope": "Actual Local receiving actor in this session; no fresh-context or independent-agent claim.",
+    "receptionTiming": "Canonical lifecycle, learning contract and control were read before initial writes. The specific source learning record was explicitly read after initial HTML/receipt authoring and before final semantic qualification. No claim that every learning-record line was read before initial writes."
+  },
+  "learningApplicationObservation": {
+    "findingId": "NCR-LEARNING-APPLICATION-OBSERVABILITY",
+    "route": "Local direct task; no actual work-order dispatch or installed dispatch-gate interception claimed",
+    "actualActions": [
+      "Read canonical feasibility/scope/learning-contract owners and implemented control before initial writes; specific learning record read before final qualification, not before all writes.",
+      "fix finite outcome/manifest before implementation",
+      "preserve original receipt and failed acceptance instead of repeating spent R2 attempt",
+      "precheck finalized HTML in memory for exact scene-body retention before writing both copies",
+      "verify changed presentation and links only; consume prior bounded candidate/route evidence"
+    ],
+    "verificationPending": false,
+    "observedResult": "Original/before/current exact scene-body match; latest blocked R2 wrapper; two viewport PASS; five local links resolve; old proof retained; no forbidden effect.",
+    "scopeDecision": "Local document application is observed, but the selected finding names first real work-order dispatch/result review as its measurement boundary. This direct task does not fulfill that boundary; application receipt is retained as bounded candidate evidence, not admitted as project APPLIED.",
+    "projectApplicationAdmitted": false
+  },
+  "browser": {
+    "status": "PASS",
+    "browserVersion": "145.0.7632.6",
+    "htmlSha256": "af6a983729afd1f0fac7d80e3d154ec7ee91cc9addf5034df0e1ae3a0de39502",
+    "htmlBytes": 24571,
+    "runtimeCopyMatches": true,
+    "observations": [
+      {
+        "viewport": "desktop",
+        "width": 1440,
+        "height": 1050,
+        "scenes": 10,
+        "reviewQuestions": 4,
+        "statusGroups": 4,
+        "localLinksResolved": 5,
+        "horizontalOverflowPx": 0,
+        "keyboardLinkFocus": true,
+        "screenshot": ".cvf/runtime/cvf-video-storyboard-review-20261008/reconciliation-desktop-20261009.png",
+        "screenshotSha256": "2dd588b9735f23040ae68ba693ceafd02883f857b32a0622ba42608951edb288"
+      },
+      {
+        "viewport": "mobile",
+        "width": 390,
+        "height": 844,
+        "scenes": 10,
+        "reviewQuestions": 4,
+        "statusGroups": 4,
+        "localLinksResolved": 5,
+        "horizontalOverflowPx": 0,
+        "keyboardLinkFocus": true,
+        "screenshot": ".cvf/runtime/cvf-video-storyboard-review-20261008/reconciliation-mobile-20261009.png",
+        "screenshotSha256": "ac07b48d6642a6b68ec34db8e3f9785981b4c54c45613ebd855268716dee938d"
+      }
+    ],
+    "observedHttpRequests": [],
+    "pageErrors": [],
+    "elapsedMs": 1682,
+    "scope": "Changed static HTML presentation in two Chromium viewports; no AI governance or user content acceptance; browser process closes in finally."
+  },
+  "providerCalls": 0,
+  "productSourceChanges": 0,
+  "finalContentAcceptance": "PENDING_OPERATOR",
+  "runtimeAdmission": "NO_GO",
+  "claimLimits": "Real Local document-maintenance application only. No universal adherence, automated shell interception, independent actor review, measured effectiveness improvement, live AI governance, whole W05 closure or media readiness.",
+  "visualInspection": {
+    "status": "PASS_BOUNDED",
+    "actor": "LOCAL_INTERNAL_AGENT_DOCUMENT_MAINTAINER",
+    "scope": "Actual desktop/mobile screenshot inspection of status cards, links and beginning of the retained storyboard; no full accessibility or content acceptance claim."
+  },
+  "verificationScript": {
+    "path": ".cvf/runtime/cvf-video-storyboard-review-20261008/verify_20261009.cjs",
+    "sha256": "754cb7b3ad7faa62d42522dfb0d3d177088405163cc89e91f72725f0c81738bd",
+    "fragment": "local-browser-assertions",
+    "evidenceClass": "OBSERVED_LOCAL"
+  },
+  "learningControlObservation": {
+    "activeObligationsRead": [
+      {
+        "id": "NCR-LEARNING-APPLICATION-OBSERVABILITY",
+        "record": "docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md",
+        "control": {
+          "path": "governance/compat/learning_application_binding.py",
+          "sha256": "84068b6f197c19404a23daa643266d7f9ed334f313cd2d8bbe2f2e6d37d7b7b8"
+        }
+      }
+    ],
+    "registryIssues": [],
+    "projectedPlanValidation": [],
+    "negativeMissingPlan": [
+      {
+        "path": "docs/work_orders/LOCAL_DIRECT_TASK_PLAN_PROJECTION.md",
+        "type": "learning_plan_missing",
+        "message": "dispatch needs exactly one learning-application-plan-json block"
+      }
+    ],
+    "negativeDriftedControl": [
+      {
+        "path": "docs/work_orders/LOCAL_DIRECT_TASK_PLAN_PROJECTION.md",
+        "type": "learning_control_drift",
+        "message": "NCR-LEARNING-APPLICATION-OBSERVABILITY control path/hash differs from registry"
+      }
+    ],
+    "projectionOnly": true,
+    "actualWorkOrderDispatch": false,
+    "scope": "Real helper reads actual registry/control and declared Local plan. Negative mutations are in-memory structural probes, not actual worker behavior or live AI governance."
+  },
+  "timing": {
+    "implementationAndVerificationMinutes": 1.48,
+    "scope": "From first reconciliation-builder write; prior reading/audit and subsequent gates/commits excluded. Billing/token cost unavailable; no savings comparison."
+  },
+  "cleanup": "Chromium closed in finally; no server started; no source root/native runtime touched.",
+  "gateDiagnostics": {
+    "prematureClosureAttempt": "84 component checks PASS; wrapper rejected HEAD..HEAD empty committed range and uncommitted worktree. This is not a closure PASS. Correct route: material commit then range-bound pre-closure; no guard bypass.",
+    "claimCorrection": "Initial provisional registry APPLIED_local-direct-task label was narrowed before commit after reading the source record measurement boundary. Final project state NOT_APPLIED; original source record remains pinned."
+  }
+}

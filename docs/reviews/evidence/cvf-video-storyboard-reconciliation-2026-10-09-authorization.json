@@ -1,0 +1,50 @@
+{
+  "schemaVersion": "cvf.localTaskAuthorizationEvidence@1",
+  "date": "2026-10-09",
+  "executionBaseHead": "3cfc3208ea8bfd7f7ceb6f0ad69478a4d95c6897",
+  "operatorMessage": "\u0110\u1ed3ng \u00fd",
+  "approvedProposal": "Reconcile the existing HTML review packet, verify changed presentation, capture bounded real learning application, and synchronize continuity. Deliver operator-reviewable content; production stays parked.",
+  "actor": "LOCAL_INTERNAL_AGENT_DOCUMENT_MAINTAINER",
+  "roleDelegation": "Operator approval delegates local document maintenance, learning receipt recording and Local verification; final content acceptance remains operator-owned.",
+  "route": "Existing W05 owner; lifecycle Outcome-Bound Work Selection permits a small direct Local task without a new work order. No worker dispatch or independent actor is represented.",
+  "materialManifest": [
+    "docs/reviews/CVF_NCR_W05_SELECTED_CHAIN_READINESS_2026-10-07.md",
+    "docs/reviews/evidence/cvf-video-storyboard-reconciliation-2026-10-09-authorization.json",
+    "docs/reviews/evidence/cvf-video-storyboard-reconciliation-2026-10-09.json",
+    "docs/reviews/evidence/cvf-video-storyboard-reconciliation-2026-10-09-original.html",
+    "docs/reviews/evidence/cvf-video-storyboard-reconciliation-2026-10-09-before.html",
+    "docs/reviews/evidence/cvf-video-storyboard-reconciliation-2026-10-09.html",
+    "docs/reviews/evidence/cvf-video-storyboard-reconciliation-2026-10-09-delivery.json",
+    "docs/reviews/evidence/cvf-video-storyboard-reconciliation-2026-10-09-application.json",
+    "docs/reference/downstream_gate_profile/downstream_finding_intake_registry.json"
+  ],
+  "runtimeScope": [
+    "CVF_VIDEO_STORYBOARD_REVIEW.html",
+    "reconcile_20261009.py",
+    "verify_20261009.cjs",
+    "reconciliation-browser-20261009.json",
+    "reconciliation-desktop-20261009.png",
+    "reconciliation-mobile-20261009.png",
+    "local gate logs and receipts"
+  ],
+  "allowed": [
+    "document wrapper/status/link edits",
+    "source and artifact identity reads",
+    "local Chromium structural presentation verification",
+    "bounded typed DELIVERY/APPLICATION evidence",
+    "selected parent finding update",
+    "seven-path continuity synchronization",
+    "one material plus one continuity commit"
+  ],
+  "forbidden": [
+    "source/native/fixture execution",
+    "downloads or dependency installation",
+    "provider calls",
+    "audio/MP4",
+    "R2 successor or counter reset",
+    "public sync/push/deployment",
+    "operator content acceptance"
+  ],
+  "startMonotonic": 467970.156,
+  "claimBoundary": "Operator text transcribed from this session; not authenticated third-party telemetry or a governance release grant."
+}

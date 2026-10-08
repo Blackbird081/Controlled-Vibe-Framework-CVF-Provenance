@@ -299,7 +299,7 @@ No release certification, quota benchmark or model ranking claim.
 
 | Field | Value |
 |---|---|
-| applicableCheckersRead | governance/compat/check_markdown_structural_completeness.py; governance/compat/check_finding_to_governance_learning.py; governance/compat/check_agent_operation_trace.py; governance/compat/check_governed_artifact_checker_read_ahead.py; governance/compat/check_core_guard_self_protection.py; governance/compat/check_external_knowledge_intake_routing.py; governance/compat/check_corpus_completeness_report_integrity.py; governance/compat/check_epistemic_process_packet.py |
+| applicableCheckersRead | governance/compat/check_markdown_structural_completeness.py; governance/compat/check_finding_to_governance_learning.py; governance/compat/check_agent_operation_trace.py; governance/compat/check_governed_artifact_checker_read_ahead.py; governance/compat/check_core_guard_self_protection.py; governance/compat/check_external_knowledge_intake_routing.py; governance/compat/check_corpus_completeness_report_integrity.py; governance/compat/check_epistemic_process_packet.py; governance/compat/check_review_cost_control.py; governance/compat/check_agent_packet_authority_and_encoding.py |
 | literalTokensReviewed | RULE_EXISTS; GOVERNANCE_CONTROL_PLANE; rawMemoryReleased=false; trace fields; NOT_APPLICABLE_WITH_REASON; coordination binding |
 | gateRunPurpose | confirmation/evidence of changed-document structure and continuity, not first discovery; no runtime behavior proof |
 | claimBoundary | no new integrated runtime or universal completion enforcement |
@@ -318,7 +318,7 @@ Returned defects: zero; totalCandidates=0; truncated=false.
 | Session or invocation | cvf-video-storyboard-local-html-20261008 |
 | Working directory | repository root |
 | Command or tool surface | existing isolated Next export route; signed local request; current Chromium file view; exact source/output hashes and cleanup |
-| Target paths | docs/reviews/CVF_NCR_W05_SELECTED_CHAIN_READINESS_2026-10-07.md; docs/reviews/evidence/cvf-ncr-w05-chain-reconciliation-2026-10-07.json |
+| Target paths | docs/reviews/CVF_NCR_W05_SELECTED_CHAIN_READINESS_2026-10-07.md; docs/reviews/evidence/cvf-video-storyboard-reconciliation-2026-10-09-authorization.json; docs/reviews/evidence/cvf-video-storyboard-reconciliation-2026-10-09.json; docs/reviews/evidence/cvf-video-storyboard-reconciliation-2026-10-09-original.html; docs/reviews/evidence/cvf-video-storyboard-reconciliation-2026-10-09-before.html; docs/reviews/evidence/cvf-video-storyboard-reconciliation-2026-10-09.html; docs/reviews/evidence/cvf-video-storyboard-reconciliation-2026-10-09-delivery.json; docs/reviews/evidence/cvf-video-storyboard-reconciliation-2026-10-09-application.json; docs/reference/downstream_gate_profile/downstream_finding_intake_registry.json |
 | Allowed scope source | operator agrees to local HTML and explicitly selects existing video design; private review output only |
 | Before status evidence | ae2a5a1aa69b14509c6209f0e948f3dfb6ff4698 clean |
 | After status evidence | two owner/evidence paths plus ignored local review artifact; accepted design/product source unchanged |
@@ -327,8 +327,8 @@ Returned defects: zero; totalCandidates=0; truncated=false.
 | Claim boundary | actual local HTML presentation only; no semantic AI governance, media runtime or final content approval |
 | Agent type | INTERNAL_AGENT |
 | Invocation ID | cvf-video-storyboard-local-html-20261008 |
-| Expected manifest | docs/reviews/CVF_NCR_W05_SELECTED_CHAIN_READINESS_2026-10-07.md; docs/reviews/evidence/cvf-ncr-w05-chain-reconciliation-2026-10-07.json |
-| Actual changed set | docs/reviews/CVF_NCR_W05_SELECTED_CHAIN_READINESS_2026-10-07.md; docs/reviews/evidence/cvf-ncr-w05-chain-reconciliation-2026-10-07.json |
+| Expected manifest | docs/reviews/CVF_NCR_W05_SELECTED_CHAIN_READINESS_2026-10-07.md; docs/reviews/evidence/cvf-video-storyboard-reconciliation-2026-10-09-authorization.json; docs/reviews/evidence/cvf-video-storyboard-reconciliation-2026-10-09.json; docs/reviews/evidence/cvf-video-storyboard-reconciliation-2026-10-09-original.html; docs/reviews/evidence/cvf-video-storyboard-reconciliation-2026-10-09-before.html; docs/reviews/evidence/cvf-video-storyboard-reconciliation-2026-10-09.html; docs/reviews/evidence/cvf-video-storyboard-reconciliation-2026-10-09-delivery.json; docs/reviews/evidence/cvf-video-storyboard-reconciliation-2026-10-09-application.json; docs/reference/downstream_gate_profile/downstream_finding_intake_registry.json |
+| Actual changed set | docs/reviews/CVF_NCR_W05_SELECTED_CHAIN_READINESS_2026-10-07.md; docs/reviews/evidence/cvf-video-storyboard-reconciliation-2026-10-09-authorization.json; docs/reviews/evidence/cvf-video-storyboard-reconciliation-2026-10-09.json; docs/reviews/evidence/cvf-video-storyboard-reconciliation-2026-10-09-original.html; docs/reviews/evidence/cvf-video-storyboard-reconciliation-2026-10-09-before.html; docs/reviews/evidence/cvf-video-storyboard-reconciliation-2026-10-09.html; docs/reviews/evidence/cvf-video-storyboard-reconciliation-2026-10-09-delivery.json; docs/reviews/evidence/cvf-video-storyboard-reconciliation-2026-10-09-application.json; docs/reference/downstream_gate_profile/downstream_finding_intake_registry.json |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |
 
@@ -539,3 +539,97 @@ retains source/runtime hashes, result and browser evidence. Provider calls0;
 no product source change, paid service, ledger access, audio/video render,
 HyperFrames/VieNeu execution, publishing or durable acceptance. Operator final
 content review remains pending, not inferred from permission to create the file.
+
+## HTML Version Reconciliation Admission 2026-10-09
+
+Operator accepted the Local audit proposal; exact message is retained in authorization JSON. Receiving consumer:
+operator reviewing the existing private Vietnamese ten-scene storyboard.
+Local INTERNAL_AGENT maintains and verifies the document in the same invocation;
+no worker dispatch, distinct reviewer or source successor is represented.
+Scope: version reconciliation, wrapper/status/link updates, changed-presentation
+verification, bounded learning receipt recording and continuity synchronization.
+Outcome-Bound Work Selection permits this small direct task in the existing owner;
+no new work order is required merely to repeat the outcome/scope fields.
+Authorization evidence: docs/reviews/evidence/cvf-video-storyboard-reconciliation-2026-10-09-authorization.json.
+Required outputs: current source-bound HTML; original/before/current identities;
+local links and desktop/mobile observation; typed bounded learning result;
+continuity and a concrete operator content-review checkpoint. Stop at those outputs.
+Source/native/S2-S9/provider/deploy/P11 and original R2 counters remain parked.
+Final content acceptance is PENDING_OPERATOR; runtime admission remains NO_GO.
+
+### Local Learning Application Plan
+
+This is voluntary reuse on the direct-task route, not an actual work-order dispatch.
+Its action and verification are consumed by the Local reviewer against actual work.
+
+```learning-application-plan-json
+{
+  "schemaVersion": "cvf.learningApplicationPlan@1.0.0",
+  "bindings": [
+    {
+      "findingId": "NCR-LEARNING-APPLICATION-OBSERVABILITY",
+      "control": {
+        "path": "governance/compat/learning_application_binding.py",
+        "sha256": "84068b6f197c19404a23daa643266d7f9ed334f313cd2d8bbe2f2e6d37d7b7b8"
+      },
+      "action": "Before document writes, read pinned learning/control, fix a finite outcome and manifest, preserve spent R2/original receipt, precheck scene-body bytes and verify only changed presentation.",
+      "verificationPlan": "Observe source/control reception and actual document delta, check exact original/before/current scene-body identity, local links and desktop/mobile Chromium, then join separate typed receipts; no real dispatch enforcement or universal effectiveness claim."
+    }
+  ]
+}
+```
+
+### Version And Application Results
+
+VERIFIED_LOCAL_HTML_READY_FOR_OPERATOR_CONTENT_REVIEW; durable results: docs/reviews/evidence/cvf-video-storyboard-reconciliation-2026-10-09.json.
+The original 19136-byte export/receipt stays historical; no old browser receipt
+is silently rebound to the later 26084-byte operator decision aid or this revision.
+No new learning rule/checker; existing RULE_EXISTS / ORCHESTRATOR_PACKET_GAP /
+GOVERNANCE_CONTROL_PLANE disposition applies to version and scope discipline.
+
+### Bounded Review Cost
+
+Local same-actor authoring/verification only; zero provider calls and no worker
+redispatch. Elapsed time and structural results are in the companion. No cost
+saving, independent review, live AI behavior or universal compliance claim.
+
+### Final Bounded Result 2026-10-09
+
+Original 19136 B / before 26084 B / current 24571 B are retained as separate
+durable HTML snapshots in the companion. The full scene-section bytes match
+the original export (MATCH; exact SHA comparison, not narration sampling).
+Only the wrapper/status/link aid changes; latest R2 full-fulfillment block and
+operator content-review checkpoint are explicit. Current runtime/durable copies
+match SHA256 af6a983729afd1f0fac7d80e3d154ec7ee91cc9addf5034df0e1ae3a0de39502.
+Chromium145 desktop1440/mobile390: ten scenes, four questions/status groups,
+five resolved local links, zero horizontal overflow, keyboard link focus,
+zero observed HTTP requests or page errors. Screenshots inspected boundedly;
+browser closed. Historic browser proof is not rebound to the new wrapper.
+Distinct DELIVERY and candidate APPLICATION receipts join pinned control,
+authorization and CVF-CORE recipient. RETURNED records actual reception;
+projectApplication remains NOT_APPLIED because the source record names first
+real work-order dispatch/result review as its measurement boundary. The Local
+document application observation does not fulfill that boundary; resolution OPEN.
+The installed dispatch helper evaluated one projected plan and two in-memory
+negative variants; there was no actual dispatch and no live governance claim.
+Required outputs: HTML/version proof PASS; changed presentation PASS;
+bounded learning evidence PASS; continuity follows as a separate SHA-bound commit.
+Final content acceptance PENDING_OPERATOR; source/native/media effects stay held.
+ADIF resolver query: taskClass=html-review-packet,role=reviewer,lifecyclePhase=review.
+Returned defects: NONE_RETURNED;0 candidates,truncated=false.
+Public Export Disposition for this addition: DEFERRED_PRIVATE_ONLY.
+
+### Semantic Qualification Before Commit
+
+Canonical lifecycle/learning-contract/control reads preceded initial writes.
+The specific learning record was read before final qualification, not before all
+initial writes; receipt text records that timing rather than inventing earlier
+reception. An initial provisional Local APPLIED declaration was narrowed before
+commit to NOT_APPLIED for the finding's real-dispatch scope. Projected helper
+PASS is structural evidence only. Local document actions/candidate receipt remain
+useful evidence without completing that independent measurement boundary.
+The first pre-closure wrapper attempt was premature: component84 PASS, but
+empty committed range and pending worktree rejected closure. No CLOSED claim;
+material commit precedes the actual range-bound closure check.
+
+Commit-hook encoding diagnostic: quoted operator text in new metadata required ASCII encoding; authorization JSON now uses Unicode escapes preserving decoded text. No source/HTML language normalization. Focused authority/encoding recheck precedes the commit retry.

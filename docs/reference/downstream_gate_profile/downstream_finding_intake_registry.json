@@ -366,20 +366,27 @@
             },
             "projectResolution": {
               "state": "OPEN",
-              "reason": "Real next dispatch behavior/effectiveness is unverified",
+              "reason": "Local reception and bounded document actions recorded; first real work-order dispatch, independent returned-result behavior and effectiveness remain unverified.",
               "evidence": []
             },
             "returnDelivery": {
-              "state": "NOT_RETURNED",
-              "reason": "No distinct receiving-agent DELIVERY receipt exists",
-              "evidence": []
+              "state": "RETURNED",
+              "reason": "Observed Local reception of the pinned source/control before final qualification; a distinct typed DELIVERY receipt records timing and same-actor scope. No pre-initial-write full-record-reading claim.",
+              "evidence": [
+                {
+                  "path": "docs/reviews/evidence/cvf-video-storyboard-reconciliation-2026-10-09-delivery.json",
+                  "sha256": "3ade0d62e6887e4c5ef1d30570480b7d8c5a49c5624598b710d9534e39941e9e",
+                  "fragment": "delivery-receipt",
+                  "evidenceClass": "OBSERVED_LOCAL"
+                }
+              ]
             },
             "projectApplication": {
               "state": "NOT_APPLIED",
-              "reason": "No real dispatch APPLICATION receipt exists;synthetic tests do not prove adoption",
+              "reason": "Observed Local document actions and a candidate APPLICATION receipt do not fulfill the finding source record first-real-work-order-dispatch/result-review measurement boundary. No actual dispatch occurred; do not promote a projected plan PASS.",
               "evidence": []
             },
-            "claimLimits": "Local structural enforcement;not real project application,semantic acceptance or universal all-agent adherence."
+            "claimLimits": "Local structural enforcement;not real project application,semantic acceptance or universal all-agent adherence. Local reception is recorded with explicit timing. A separate Local document APPLICATION receipt is retained as unadmitted candidate evidence; parent projectApplication stays NOT_APPLIED because no real work-order dispatch/result review occurred."
           }
         }
       ]
