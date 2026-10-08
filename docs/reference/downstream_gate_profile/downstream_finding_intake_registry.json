@@ -236,6 +236,153 @@
         "Linux",
         "runtime/provider/public effects"
       ]
+    },
+    {
+      "intakeId": "CVF-CORE-LEARNING-APPLICATION-20261009",
+      "authority": "LOCAL_VERIFIED_STRUCTURAL_CONTROL",
+      "findings": [
+        {
+          "id": "NCR-LEARNING-APPLICATION-OBSERVABILITY",
+          "defectClass": "MACHINE_GATE_GAP",
+          "learningRecordPath": "docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md",
+          "dispatchBindingRequired": true,
+          "parentEvidence": {
+            "schemaVersion": "cvf.parentLearningEvidence@1.0.0",
+            "findingId": "NCR-LEARNING-APPLICATION-OBSERVABILITY",
+            "source": {
+              "sourceProject": "CVF-CORE",
+              "evidence": {
+                "path": "docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md",
+                "sha256": "0e4975f437b0676d42adfceb681474fba98e278466a61aa41adc6783224aa69b",
+                "fragment": "Forward Application Control",
+                "evidenceClass": "OBSERVED_LOCAL"
+              }
+            },
+            "valueChecks": {
+              "sourceConfidence": {
+                "status": "SUPPORTED",
+                "reason": "Current Local record and R2 failure attribution are observed and hash-bound",
+                "evidence": [
+                  {
+                    "path": "docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md",
+                    "sha256": "0e4975f437b0676d42adfceb681474fba98e278466a61aa41adc6783224aa69b",
+                    "fragment": "R2 Result And Cost-Aware Dispatcher Learning",
+                    "evidenceClass": "OBSERVED_LOCAL"
+                  }
+                ],
+                "limits": "Selected structural/local-owner evidence only;no universal agent or behavioral outcome"
+              },
+              "reusableMechanism": {
+                "status": "SUPPORTED",
+                "reason": "Recorded learning without application proof can recur across agents",
+                "evidence": [
+                  {
+                    "path": "docs/baselines/CVF_GC018_LEARNING_APPLICATION_BINDING_2026-10-09.md",
+                    "sha256": "f3ea36af70a235ebde9caa0d1dfbe307ca838f5146a96657b64f43d4bc9f5b43",
+                    "fragment": "Decision / Baseline",
+                    "evidenceClass": "OBSERVED_LOCAL"
+                  }
+                ],
+                "limits": "Selected structural/local-owner evidence only;no universal agent or behavioral outcome"
+              },
+              "existingCoverage": {
+                "status": "SUPPORTED",
+                "reason": "Reuse PLL,F2G and existing receipt validator;no competing ledger",
+                "evidence": [
+                  {
+                    "path": "docs/reference/downstream_gate_profile/CVF_PROJECT_LEARNING_LOOP_STANDARD.md",
+                    "sha256": "61124b8674f2323be6f71746312cd47fbb2b49b550eedf863ff79d5aaef8b878",
+                    "fragment": "Forward Application Binding",
+                    "evidenceClass": "OBSERVED_LOCAL"
+                  }
+                ],
+                "limits": "Selected structural/local-owner evidence only;no universal agent or behavioral outcome"
+              },
+              "incrementalValue": {
+                "status": "SUPPORTED",
+                "reason": "Mandatory forward binding and separate lifecycle counts change early declaration control",
+                "evidence": [
+                  {
+                    "path": "docs/reviews/CVF_LEARNING_APPLICATION_BINDING_COMPLETION_2026-10-09.md",
+                    "sha256": "f798dfd4eda51cf1f8e6606a7968dcb5f16dda417b792a9752073ef13ed2ee96",
+                    "fragment": "Findings / Position",
+                    "evidenceClass": "OBSERVED_LOCAL"
+                  }
+                ],
+                "limits": "Selected structural/local-owner evidence only;no universal agent or behavioral outcome"
+              },
+              "boundedProof": {
+                "status": "SUPPORTED",
+                "reason": "Synthetic positive and negative structural tests support the selected guard",
+                "evidence": [
+                  {
+                    "path": "docs/reviews/evidence/cvf-learning-application-binding-2026-10-09.json",
+                    "sha256": "709372cc41b8c143cde3234f5c52c18b7ea9782f758c1dc7bccbd7644127cc6a",
+                    "fragment": "observedCases",
+                    "evidenceClass": "SYNTHETIC_OFFLINE"
+                  }
+                ],
+                "limits": "Selected structural/local-owner evidence only;no universal agent or behavioral outcome"
+              }
+            },
+            "decision": {
+              "state": "MERGE",
+              "reason": "Extend existing F2G/PLL;close enrollment/plan observability gap,not semantic agent compliance",
+              "reviewer": "LOCAL_MAINTAINER_REVIEWER",
+              "owner": "docs/reference/downstream_gate_profile/CVF_PROJECT_LEARNING_LOOP_STANDARD.md",
+              "f2gDisposition": "MACHINE_CHECK_ADDED",
+              "evidence": [
+                {
+                  "path": "docs/reviews/CVF_LEARNING_APPLICATION_BINDING_COMPLETION_2026-10-09.md",
+                  "sha256": "f798dfd4eda51cf1f8e6606a7968dcb5f16dda417b792a9752073ef13ed2ee96",
+                  "fragment": "Decision / Disposition",
+                  "evidenceClass": "OBSERVED_LOCAL"
+                }
+              ]
+            },
+            "implementation": {
+              "state": "IMPLEMENTED_BOUNDED",
+              "reason": "Structural learning enrollment,dispatch plan validation and lifecycle readout",
+              "evidence": [
+                {
+                  "path": "governance/compat/learning_application_binding.py",
+                  "sha256": "84068b6f197c19404a23daa643266d7f9ed334f313cd2d8bbe2f2e6d37d7b7b8",
+                  "fragment": "control:forward-binding",
+                  "evidenceClass": "OBSERVED_LOCAL"
+                },
+                {
+                  "path": "docs/reviews/evidence/cvf-learning-application-binding-2026-10-09.json",
+                  "sha256": "709372cc41b8c143cde3234f5c52c18b7ea9782f758c1dc7bccbd7644127cc6a",
+                  "fragment": "proof-positive:valid-chain",
+                  "evidenceClass": "SYNTHETIC_OFFLINE"
+                },
+                {
+                  "path": "docs/reviews/evidence/cvf-learning-application-binding-2026-10-09.json",
+                  "sha256": "709372cc41b8c143cde3234f5c52c18b7ea9782f758c1dc7bccbd7644127cc6a",
+                  "fragment": "proof-negative:missing-drifted-unsupported-claims",
+                  "evidenceClass": "SYNTHETIC_OFFLINE"
+                }
+              ]
+            },
+            "projectResolution": {
+              "state": "OPEN",
+              "reason": "Real next dispatch behavior/effectiveness is unverified",
+              "evidence": []
+            },
+            "returnDelivery": {
+              "state": "NOT_RETURNED",
+              "reason": "No distinct receiving-agent DELIVERY receipt exists",
+              "evidence": []
+            },
+            "projectApplication": {
+              "state": "NOT_APPLIED",
+              "reason": "No real dispatch APPLICATION receipt exists;synthetic tests do not prove adoption",
+              "evidence": []
+            },
+            "claimLimits": "Local structural enforcement;not real project application,semantic acceptance or universal all-agent adherence."
+          }
+        }
+      ]
     }
   ]
 }

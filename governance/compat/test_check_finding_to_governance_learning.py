@@ -534,9 +534,9 @@ class ParentEvidenceBindingTests(unittest.TestCase):
         issues = MODULE._validate_finding_doc("docs/reviews/CVF_TEST.md", invalid)
         self.assertTrue(any("Finding-To-Governance" in message for message in _messages(issues)))
 
-    def test_committed_registry_reports_legacy_only(self) -> None:
+    def test_committed_registry_keeps_legacy_separate_from_typed(self) -> None:
         report = MODULE._parent_evidence_report()
-        self.assertEqual((report["typedValid"], report["invalid"], report["issues"]), (0, 0, []))
+        self.assertEqual((report["invalid"], report["issues"]), (0, []))
         self.assertGreater(report["legacyUntyped"], 0)
 
     def test_invalid_typed_evidence_blocks_but_legacy_does_not(self) -> None:

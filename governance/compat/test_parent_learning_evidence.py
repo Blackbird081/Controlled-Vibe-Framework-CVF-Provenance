@@ -260,12 +260,16 @@ class LegacyCompatibilityTests(unittest.TestCase):
         self.assertEqual((report["typedValid"], report["legacyUntyped"], report["invalid"]), (1, 1, 1))
         self.assertTrue(all(i["path"].startswith("entries[0].findings[1]") for i in report["issues"]))
 
-    def test_committed_registry_is_unchanged_and_all_legacy(self) -> None:
+    def test_historical_registry_entries_preserved_and_not_reclassified(self) -> None:
         raw = (REPO_ROOT / REGISTRY).read_bytes()
-        self.assertEqual(sha(raw), "0077d4ba82bfb0c07d404784461f8fbd2f835678a8c4de5a2b2515c3072c2827")
+        historical = subprocess.check_output(['git','show',
+            '80ca1a7a9fc88d312bc05b496c4904de95f3aa34:'+REGISTRY], cwd=REPO_ROOT)
+        self.assertEqual(sha(historical), "0077d4ba82bfb0c07d404784461f8fbd2f835678a8c4de5a2b2515c3072c2827")
+        old_entries=json.loads(historical)['entries']
+        self.assertEqual(json.loads(raw)['entries'][:len(old_entries)],old_entries)
         report = MODULE.classify_registry(REPO_ROOT, REGISTRY, DISPOSITIONS)
-        self.assertEqual((report["typedValid"], report["invalid"], report["issues"]), (0, 0, []))
-        self.assertEqual(report["legacyUntyped"], len(report["findings"]))
+        self.assertEqual((report["invalid"], report["issues"]), (0, []))
+        self.assertEqual(report['legacyUntyped'],sum(len(e['findings']) for e in old_entries))
         self.assertEqual((REPO_ROOT / REGISTRY).read_bytes(), raw)
 
     def test_missing_registry_is_empty_report(self) -> None:

@@ -333,7 +333,7 @@ def validate_parent_evidence(evidence: Any, finding_id: str, root: Path, locator
 
 def classify_registry(root: Path, registry_rel: str, dispositions: Iterable[str] | None = None) -> dict[str, Any]:
     """Read-only mixed-registry report: typed, legacy and invalid findings counted separately."""
-    report: dict[str, Any] = {"registry": registry_rel, "typedValid": 0, "legacyUntyped": 0, "invalid": 0, "issues": [], "findings": []}
+    report: dict[str, Any] = {"registry": registry_rel, "typedValid": 0, "legacyUntyped": 0, "invalid": 0, "issues": [], "findings": [], "lifecycleCounts": {name: {state: 0 for state in states} for name, states in LIFE_STATES.items()}}
     if not os.path.lexists(root / registry_rel):
         return report
     target, err = _safe_file(root, registry_rel)
@@ -380,5 +380,11 @@ def classify_registry(root: Path, registry_rel: str, dispositions: Iterable[str]
             issues = validate_parent_evidence(finding["parentEvidence"], str(fid), root, f"{loc}.parentEvidence", dispositions)
             report["issues"].extend(issues)
             report["invalid" if issues else "typedValid"] += 1
-            report["findings"].append({"id": fid, "outcome": INVALID if issues else TYPED_VALID})
+            states = ({name: finding['parentEvidence'][name]['state'] for name in LIFE_STATES}
+                      if not issues else {})
+            report["findings"].append({"id": fid, "outcome": INVALID if issues else TYPED_VALID, "states": states})
+            # Invalid declarations never contribute to positive lifecycle counts.
+            if not issues:
+                for name, state in states.items():
+                    report['lifecycleCounts'][name][state] += 1
     return report

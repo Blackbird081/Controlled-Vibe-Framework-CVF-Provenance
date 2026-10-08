@@ -1,0 +1,53 @@
+{
+  "schemaVersion": "cvf.learningApplicationBindingProof.v1",
+  "scope": "SYNTHETIC_OFFLINE_STRUCTURAL_CONTROL_ONLY",
+  "tests": "67 PASS,1 platform-dependent skip; final run retained",
+  "observedCases": [
+    "real changed-artifact classifier rejects missing plan",
+    "valid plan cannot create application receipt",
+    "wrong hash rejected",
+    "omitted obligation rejected",
+    "duplicate/unknown/placeholder malformed plans rejected",
+    "new learning without typed join rejected",
+    "quoted/fenced example is not enrollment",
+    "missing/invalid registry rejected",
+    "legacy unchanged artifacts/archives/templates unaffected",
+    "invalid APPLIED evidence excluded from lifecycle counts",
+    "modified and renamed order cannot bypass required binding"
+  ],
+  "providerCalls": 0,
+  "realProjectApplication": "NOT_APPLIED",
+  "cost": "UNKNOWN",
+  "sourceEffects": 0,
+  "claimLimits": "No live governance,AI behavior,agent comprehension,semantic feasibility,universal interception or measured savings.",
+  "diagnostics": [
+    "Initial 66 PASS/1 skip before enrollment. After enrollment the old all-legacy-only registry assertion correctly required updating for one new typed entry. Updated test proves frozen historical snapshot hash and unchanged historical entry values. Draft packet edits then made new entry pins stale;explicitly re-admitted only this uncommitted new finding.",
+    "PowerShell backticks in one manifest edit joined two paths into one span;corrected with trusted file script. Historical records and source untouched."
+  ],
+  "finalTests": {
+    "command": "python -B -m pytest governance/compat/test_learning_application_binding.py governance/compat/test_parent_learning_evidence.py governance/compat/test_check_finding_to_governance_learning.py governance/compat/test_flal_offline_learning_composition.py -q",
+    "passed": 67,
+    "skipped": 1,
+    "log": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-learning-application-20261009\\tests-final-v4.log",
+    "sha256": "636c3b21a0ce514894be851d819f9251b9033366094ca768c7e829bb88695d92",
+    "boundary": "Synthetic structural fixtures and actual local F2G caller;no real AI application"
+  },
+  "sourcePins": [
+    {
+      "path": "governance/compat/learning_application_binding.py",
+      "sha256": "84068b6f197c19404a23daa643266d7f9ed334f313cd2d8bbe2f2e6d37d7b7b8"
+    },
+    {
+      "path": "governance/compat/check_finding_to_governance_learning.py",
+      "sha256": "338a3d7492ad6fd6b962157a668c3d13a47b286580c36a26f1acf897a50049ea"
+    },
+    {
+      "path": "governance/compat/parent_learning_evidence.py",
+      "sha256": "c7669c3be58b82c9a53c6600995550738f429fadbdb61460d47980127ab33b47"
+    },
+    {
+      "path": "governance/compat/test_learning_application_binding.py",
+      "sha256": "f52d722cd2cbc9b078e2db16f6bf76008667272342ddb312b8cf96b3ed0f37e6"
+    }
+  ]
+}

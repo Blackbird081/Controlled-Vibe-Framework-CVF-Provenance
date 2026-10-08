@@ -22,9 +22,11 @@ from typing import Any
 try:
     from guard_binding_catalog import has_binding_marker
     from parent_learning_evidence import classify_registry
+    from learning_application_binding import validate_changed as validate_learning_application
 except ModuleNotFoundError:
     from governance.compat.guard_binding_catalog import has_binding_marker
     from governance.compat.parent_learning_evidence import classify_registry
+    from governance.compat.learning_application_binding import validate_changed as validate_learning_application
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
@@ -646,6 +648,14 @@ def _classify(changed_paths: dict[str, list[str]]) -> dict[str, Any]:
                 if (v["type"], v["message"]) not in head_violations
             ]
         violations.extend(new_violations)
+    # Application contracts are forward-only on actual content changes. They are
+    # not suppressed against HEAD: omitting a newly required plan is precisely
+    # what the dispatch boundary must reject, even on a modified old order.
+    for path, statuses in changed_paths.items():
+        if all(s.startswith('D') for s in statuses) or not path.endswith('.md'):
+            continue
+        if (REPO_ROOT / path).is_file():
+            violations.extend(validate_learning_application(REPO_ROOT, path, _read_rel(path)))
     return {
         "filesChecked": scoped_paths,
         "fileCount": len(scoped_paths),
@@ -681,6 +691,8 @@ def _print_report(report: dict[str, Any], base: str, head: str, base_source: str
     if parent:
         print(f"\nParent evidence (typed/legacy/invalid): "
               f"{parent['typedValid']}/{parent['legacyUntyped']}/{parent['invalid']}")
+        print("Learning lifecycle counts (valid typed declarations only): " +
+              json.dumps(parent.get('lifecycleCounts', {}), sort_keys=True))
     if report["violations"]:
         print("\nViolations:")
         for violation in report["violations"]:

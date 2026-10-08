@@ -11,6 +11,8 @@ Source project: private CVF NCR C1
 Source revision: c67e9a7b1f02b99cf14565c527a63ad830bc2e46
 Updated: 2026-10-08
 
+parentFindingId: NCR-LEARNING-APPLICATION-OBSERVABILITY
+
 ## Purpose
 
 Audit the operator-observed recent orchestrator mistakes and decide which need reusable CVF learning. Local owns these packet/approval/queue defects; do not transfer their remediation to the noncoder or implementation worker. One grouped selected-record audit with existing-owner written promotion. No new source tranche or general guard-hardening campaign.
@@ -341,7 +343,7 @@ order is immutable and the attempt spent. Native/S2-S9/metadata STOP/E1 and
 historical custody obligations remain held. Do not turn source syntax or a
 structural gate PASS into source acceptance,consent or a cleared successor.
 
-## Agent Operation Trace Block
+## Historical R2 Disposition Operation Trace
 
 | Field | Evidence |
 |---|---|
@@ -361,5 +363,49 @@ structural gate PASS into source acceptance,consent or a cleared successor.
 | Invocation ID | ncr-s1-r2-local-disposition-20261009 |
 | Expected manifest | `docs/reviews/CVF_NCR_C1_S1_CONSOLIDATED_REPAIR_WORKER_RETURN_2026-10-08.md`; `docs/reviews/evidence/cvf-ncr-c1-s1-consolidated-repair-worker-2026-10-08.json`; `docs/reviews/CVF_NCR_C1_S1_CONSOLIDATED_REPAIR_COMPLETION_2026-10-09.md`; `docs/reviews/evidence/cvf-ncr-c1-s1-r2-local-disposition-2026-10-09.json`; `docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md`; `docs/reference/CVF_GOVERNED_WORK_LIFECYCLE_AND_DESIGN_CONTROL_STANDARD_2026-06-11.md` |
 | Actual changed set | `docs/reviews/CVF_NCR_C1_S1_CONSOLIDATED_REPAIR_WORKER_RETURN_2026-10-08.md`; `docs/reviews/evidence/cvf-ncr-c1-s1-consolidated-repair-worker-2026-10-08.json`; `docs/reviews/CVF_NCR_C1_S1_CONSOLIDATED_REPAIR_COMPLETION_2026-10-09.md`; `docs/reviews/evidence/cvf-ncr-c1-s1-r2-local-disposition-2026-10-09.json`; `docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md`; `docs/reference/CVF_GOVERNED_WORK_LIFECYCLE_AND_DESIGN_CONTROL_STANDARD_2026-06-11.md` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: none |
+
+## Forward Application Control - 2026-10-09
+
+Existing parent registry finding `NCR-LEARNING-APPLICATION-OBSERVABILITY` now binds this record through typed
+parentEvidence. Control: `governance/compat/learning_application_binding.py` through existing F2G pre-dispatch/authoring
+gates. New/content-changed learning records cannot remain unregistered;new or
+content-changed work orders must bind every active parent dispatch obligation,
+including its exact control hash,concrete action and verification plan.
+
+Current independent states: parent decision MERGE;implementation
+IMPLEMENTED_BOUNDED at structural scope;returnDelivery NOT_RETURNED;projectApplication
+NOT_APPLIED;projectResolution OPEN. No real next dispatch has yet shown the
+corrected orchestrator behavior. A plan,synthetic test or gate PASS cannot turn
+NOT_APPLIED into APPLIED. That needs separate DELIVERY/APPLICATION receipts
+under the existing parent-evidence contract,with authorization and observed
+project verification. Old prose states above remain historical,not current proof.
+
+Next measurement boundary: first eligible real dispatch and its returned-result
+review. Capture actual work-order binding plus positive/negative verification
+against the canonical control;record success or a renewed finding,without
+opening native/source effects or inventing a zero-cost claim.
+
+## Agent Operation Trace Block
+
+| Field | Evidence |
+|---|---|
+| Actor | Local INTERNAL_AGENT maintainer/reviewer |
+| Provider or surface | private shared CVF workspace |
+| Session or invocation | learning-application-binding-20261009 |
+| Working directory | repository root |
+| Command or tool surface | targeted owner reads;F2G helper/validator extension;synthetic pytest;typed registry join;canonical gates |
+| Target paths | `governance/compat/learning_application_binding.py`; `governance/compat/check_finding_to_governance_learning.py`; `governance/compat/parent_learning_evidence.py`; `governance/compat/test_learning_application_binding.py`; `governance/compat/test_check_finding_to_governance_learning.py`; `governance/compat/test_parent_learning_evidence.py`; `docs/reference/downstream_gate_profile/CVF_PROJECT_LEARNING_LOOP_STANDARD.md`; `docs/reference/downstream_gate_profile/downstream_finding_intake_registry.json`; `docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md`; `docs/reviews/learnings/README.md`; `docs/baselines/CVF_GC018_LEARNING_APPLICATION_BINDING_2026-10-09.md`; `docs/reviews/CVF_LEARNING_APPLICATION_BINDING_COMPLETION_2026-10-09.md`; `docs/reviews/evidence/cvf-learning-application-binding-2026-10-09.json` |
+| Allowed scope source | operator requested closing the learning-application observability/control gap;existing PLL/F2G owners |
+| Before status evidence | clean HEAD 80ca1a7a9fc88d312bc05b496c4904de95f3aa34;recent learning written in prose;registry legacy entries unchanged |
+| After status evidence | exact thirteen material paths;new parent-owned typed finding;no source-project/runtime effects |
+| Diff evidence | git diff --check;git status --short;exact material manifest |
+| Approval boundary | Local learning evidence/control maintenance only;R2/source/native/provider/public effects held |
+| Claim boundary | structural learning enrollment/plans/receipts;no semantic or universal agent enforcement |
+| Agent type | INTERNAL_AGENT |
+| Invocation ID | learning-application-binding-20261009 |
+| Expected manifest | `governance/compat/learning_application_binding.py`; `governance/compat/check_finding_to_governance_learning.py`; `governance/compat/parent_learning_evidence.py`; `governance/compat/test_learning_application_binding.py`; `governance/compat/test_check_finding_to_governance_learning.py`; `governance/compat/test_parent_learning_evidence.py`; `docs/reference/downstream_gate_profile/CVF_PROJECT_LEARNING_LOOP_STANDARD.md`; `docs/reference/downstream_gate_profile/downstream_finding_intake_registry.json`; `docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md`; `docs/reviews/learnings/README.md`; `docs/baselines/CVF_GC018_LEARNING_APPLICATION_BINDING_2026-10-09.md`; `docs/reviews/CVF_LEARNING_APPLICATION_BINDING_COMPLETION_2026-10-09.md`; `docs/reviews/evidence/cvf-learning-application-binding-2026-10-09.json` |
+| Actual changed set | `governance/compat/learning_application_binding.py`; `governance/compat/check_finding_to_governance_learning.py`; `governance/compat/parent_learning_evidence.py`; `governance/compat/test_learning_application_binding.py`; `governance/compat/test_check_finding_to_governance_learning.py`; `governance/compat/test_parent_learning_evidence.py`; `docs/reference/downstream_gate_profile/CVF_PROJECT_LEARNING_LOOP_STANDARD.md`; `docs/reference/downstream_gate_profile/downstream_finding_intake_registry.json`; `docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md`; `docs/reviews/learnings/README.md`; `docs/baselines/CVF_GC018_LEARNING_APPLICATION_BINDING_2026-10-09.md`; `docs/reviews/CVF_LEARNING_APPLICATION_BINDING_COMPLETION_2026-10-09.md`; `docs/reviews/evidence/cvf-learning-application-binding-2026-10-09.json` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |

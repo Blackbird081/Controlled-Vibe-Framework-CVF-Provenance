@@ -78,6 +78,38 @@ not semantic acceptance, delivery or project application.
 
 ## Machine Binding
 
+### Forward Application Binding (2026-10-09)
+
+New or content-changed Core records under `docs/reviews/learnings/` must declare
+exactly one `parentFindingId` joined to typed `parentEvidence.source.evidence`
+in the existing parent registry. README/templates/archives are excluded;
+unchanged history is not silently backfilled or claimed APPLIED.
+
+An accepted/merged typed finding may declare `learningRecordPath` and
+`dispatchBindingRequired: true` as a parent-owned obligation. Its implemented
+control must have exactly one `control:` reference. New/content-changed work
+orders must bind every active obligation using one fenced
+`learning-application-plan-json` block, schemaVersion
+`cvf.learningApplicationPlan@1.0.0`, and `bindings` array. Each binding is exactly
+`{findingId, control: {path, sha256}, action, verificationPlan}`. Exact registry
+control identity and concrete action/verification text are required. A question
+about delegation does not expand the invocation scope.
+
+The existing F2G checker invokes `learning_application_binding.validate_changed`
+at its already installed pre-dispatch/authoring gates. Missing, malformed,
+duplicate, stale or incomplete bindings fail closed. Parent obligations are
+governed decisions, not worker-selected requirements. Legacy unchanged orders
+remain evidence, not permission to re-execute a spent attempt.
+
+A valid plan is only a declared execution/verification contract. It never creates
+an APPLICATION receipt or proves compliance, read comprehension or effectiveness.
+The existing typed DELIVERY/APPLICATION receipt contracts still govern lifecycle
+claims. F2G reports implementation, resolution, delivery and application counts
+separately for valid typed records; invalid/legacy entries cannot inflate them.
+Reviewer checks the concrete action and its actual result against the canonical
+control, rather than trusting nonempty text. No arbitrary IDE/shell interception
+or guarantee about agents outside these gates follows from this mechanism.
+
 `cvf_dg_install.install_learning_home` validates all target boundaries and sources
 before creating missing scaffolds. Missing, empty or conflicting existing content
 refuses; no silent repair. `CVF-DG-INST-01` checks nonempty discovery/template files
