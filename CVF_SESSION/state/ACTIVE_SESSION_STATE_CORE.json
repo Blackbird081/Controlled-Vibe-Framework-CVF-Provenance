@@ -36,12 +36,12 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_PREFEAS_C1_2026-10-08.md",
-    "baselineSha256": "75ec83ce9b4528477f6ca2b82dfc52b913a9ab9e11ec1dd9bc444935b5fbb8a3",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_PREFEAS_C1_2026-10-08.md",
-    "workOrderSha256": "ca249aebfb157b6f7e8bcaf3834b3202710b6486869d122f1bff6268d1f35c52"
+    "baselinePath": "docs/baselines/CVF_GC018_NCR_C1_S1_INTEGRATED_SOURCE_2026-10-08.md",
+    "baselineSha256": "dbddfc4bb992394fd80541e40420e3340bece3ad9399224c310263a78fdaf8b2",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_C1_S1_INTEGRATED_SOURCE_2026-10-08.md",
+    "workOrderSha256": "62f7f7f6d6450363871f47e73b10fb9bf27c9c0069c927def5d8da70d6d2ad9b"
   },
-  "currentAuthoritySyncReason": "PREFEAS-C1 accepted bounded guard closure at material 51cc377340e48701fb2d19659e36824b46c491a0;original worker evidence preserved,three Local repairs,15 independent actual CLI probes/103 focused tests PASS;closed-order current authority synchronized;source chains/approvals/effect holds unchanged. Final nonmixed closure packet material 8f0590337ee652f7fd1cae649037008ff84cf748 binds primary accepted implementation51cc377340e48701fb2d19659e36824b46c491a0;separate exact packet/continuity pre-closure ranges;initial mixed rejection retained. Bounded S1 architecture reassessment 4cc47d786f4f1f5c3791d015f7dab2d17c6f0217;current closed guard authority pair retained,no source work order release;present review-completion acceptance and exact prospective FEASIBLE recorded.",
+  "currentAuthoritySyncReason": "Integrated S1 source-only dispatch materialb1d44462ff2bfbe9c583e7fe5d127652e22c049d;retained source approval and present Local review-completion acceptance,20 bounded documentation responses and exact native contract;current source pair bound,actual worker release conditional on committed bound pre-dispatch. Guard closure/history/source/metadata holds retained.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
