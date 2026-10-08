@@ -135,6 +135,29 @@ Readiness belongs to the next action, not to template completeness:
 | Execution | Conditions, scope, contract and authority for that specific action satisfied | No authority for every remaining action |
 | Verification / acceptance | Exact artifact/version, applicable criteria and evidence with limits disclosed | Completion is not proof or required human acceptance |
 
+### Technical Feasibility Before Operator Approval
+
+Before asking approval for an execution or continuation proposal, the dispatcher
+must verify that the proposed next action is technically admissible under its
+current owners. Draft planning remains allowed; operator consent cannot repair
+an impossible prerequisite, invalid progression or uncloseable role boundary.
+
+Bind each prerequisite to the action/phase that actually needs it. Documentary
+planning must not require later payload, host or production proof. Derive any
+prospective successor state from its hash-bound predecessor and exact blocker
+delta; validate it with the canonical checker before presenting approval.
+Record which artifact/object the checker actually evaluated. A PASS with zero
+eligible semantic objects does not establish the proposal's feasibility.
+
+Before a finite external-read proposal, distinguish publisher identity from
+local dependency nesting or a discovery hypothesis; validate derived request
+locators against that distinction. If the queue exceeds its envelope, disclose
+partial coverage or consolidate it before promising required-result coverage.
+Reuse valid disclosure/scaffold fields instead of rediscovering their literals
+through repeated full gates. Preserve failed outcomes and approved authority.
+These checks add no effect grant, counter-reset exception or new lifecycle phase;
+undeclared machine coverage remains a candidate, not automatic enforcement.
+
 ### Receiving Analysis And Question Discipline
 
 Apply before asking, revising intake analysis or preparing an authorized plan:

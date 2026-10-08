@@ -1,0 +1,1046 @@
+{
+  "schemaVersion": "cvf.orchestratorPreapprovalLearningAudit.v1",
+  "baseHead": "c67e9a7b1f02b99cf14565c527a63ad830bc2e46",
+  "scope": "bounded selected C1 S0/E1/S1 records and nine retained logs,not whole repository or all recent tranches",
+  "sources": [
+    {
+      "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_C1_OFFLINE_PRODUCTION_READINESS_2026-10-08.md",
+      "sha256": "87404a4231ae119dd07618afe0600a5c8d49e27a28829e1a0bcd2775fe9d4e80",
+      "bytes": 34653,
+      "status": "READ",
+      "readScope": "raw identity and targeted fields/sections; no all-lines-read claim",
+      "authority": "CVF_GOVERNED",
+      "sourceRevision": "c67e9a7b1f02b99cf14565c527a63ad830bc2e46",
+      "gitBlobContentSha256": "87404a4231ae119dd07618afe0600a5c8d49e27a28829e1a0bcd2775fe9d4e80",
+      "rawByteIdentityAtIntake": true
+    },
+    {
+      "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_C1_OFFLINE_PRODUCTION_READINESS_S0_2026-10-08.md",
+      "sha256": "212adb5ebf3c0eb82bf9862effc3880d897fbfaf342655cc533a36a2872f4b79",
+      "bytes": 47114,
+      "status": "READ",
+      "readScope": "raw identity and targeted fields/sections; no all-lines-read claim",
+      "authority": "CVF_GOVERNED",
+      "sourceRevision": "c67e9a7b1f02b99cf14565c527a63ad830bc2e46",
+      "gitBlobContentSha256": "212adb5ebf3c0eb82bf9862effc3880d897fbfaf342655cc533a36a2872f4b79",
+      "rawByteIdentityAtIntake": true
+    },
+    {
+      "path": "docs/reviews/evidence/cvf-ncr-c1-offline-production-amendment-intake-2026-10-08.json",
+      "sha256": "6438118f3eef3c2b0fc7b4ebf0d90c3b15deecff7831141c8ac8f39a6a563c20",
+      "bytes": 28632,
+      "status": "READ",
+      "readScope": "raw identity and targeted fields/sections; no all-lines-read claim",
+      "authority": "CVF_GOVERNED",
+      "sourceRevision": "c67e9a7b1f02b99cf14565c527a63ad830bc2e46",
+      "gitBlobContentSha256": "6438118f3eef3c2b0fc7b4ebf0d90c3b15deecff7831141c8ac8f39a6a563c20",
+      "rawByteIdentityAtIntake": true
+    },
+    {
+      "path": "docs/reviews/CVF_NCR_C1_OFFLINE_PRODUCTION_READINESS_COMPLETION_2026-10-08.md",
+      "sha256": "68044f414a25ab827161730d241f3c4fac24d60b35df3d774c0bd83d42b050ee",
+      "bytes": 21575,
+      "status": "READ",
+      "readScope": "raw identity and targeted fields/sections; no all-lines-read claim",
+      "authority": "CVF_GOVERNED",
+      "sourceRevision": "c67e9a7b1f02b99cf14565c527a63ad830bc2e46",
+      "gitBlobContentSha256": "68044f414a25ab827161730d241f3c4fac24d60b35df3d774c0bd83d42b050ee",
+      "rawByteIdentityAtIntake": true
+    },
+    {
+      "path": "docs/reference/CVF_NCR_C1_E1_EXECUTION_CONTRACT_2026-10-08.json",
+      "sha256": "6e10351e5dac793abbcdb0624c84705436fb1adc1ad976ea2841bc47b1ba15bc",
+      "bytes": 48096,
+      "status": "READ",
+      "readScope": "raw identity and targeted fields/sections; no all-lines-read claim",
+      "authority": "CVF_GOVERNED",
+      "sourceRevision": "c67e9a7b1f02b99cf14565c527a63ad830bc2e46",
+      "gitBlobContentSha256": "6e10351e5dac793abbcdb0624c84705436fb1adc1ad976ea2841bc47b1ba15bc",
+      "rawByteIdentityAtIntake": true
+    },
+    {
+      "path": "docs/reference/CVF_NCR_C1_E1_METADATA_RESULT_2026-10-08.md",
+      "sha256": "34288f32b31eb73bc53a971e0ae93daeb44d1e3a983a0764202c4f430317b26a",
+      "bytes": 12586,
+      "status": "READ",
+      "readScope": "raw identity and targeted fields/sections; no all-lines-read claim",
+      "authority": "CVF_GOVERNED",
+      "sourceRevision": "c67e9a7b1f02b99cf14565c527a63ad830bc2e46",
+      "gitBlobContentSha256": "34288f32b31eb73bc53a971e0ae93daeb44d1e3a983a0764202c4f430317b26a",
+      "rawByteIdentityAtIntake": true
+    },
+    {
+      "path": "docs/reference/CVF_NCR_C1_MANIFEST_CONTROL_SOURCE_PROPOSAL_2026-10-08.json",
+      "sha256": "f69ab3a33b556409b3d5a63ce92f1d8d1d7ac0256eb4cf3e473468fafb2141e8",
+      "bytes": 44716,
+      "status": "READ",
+      "readScope": "raw identity and targeted fields/sections; no all-lines-read claim",
+      "authority": "CVF_GOVERNED",
+      "sourceRevision": "c67e9a7b1f02b99cf14565c527a63ad830bc2e46",
+      "gitBlobContentSha256": "f69ab3a33b556409b3d5a63ce92f1d8d1d7ac0256eb4cf3e473468fafb2141e8",
+      "rawByteIdentityAtIntake": true
+    },
+    {
+      "path": "docs/reference/CVF_NCR_C1_S1_APPROVAL_DISPATCH_DISPOSITION_2026-10-08.json",
+      "sha256": "25e7d4149f6ce97b94317aaf34400adcf451dac838d1f01522d38b1b5e2a4b4b",
+      "bytes": 59517,
+      "status": "READ",
+      "readScope": "raw identity and targeted fields/sections; no all-lines-read claim",
+      "authority": "CVF_GOVERNED",
+      "sourceRevision": "c67e9a7b1f02b99cf14565c527a63ad830bc2e46",
+      "gitBlobContentSha256": "0352787af62d321e2a71a05b658a1fb751c1ade5ec4f8735fdb2e6b0d4b6639b",
+      "rawByteIdentityAtIntake": true
+    },
+    {
+      "path": "docs/reviews/CVF_CVF_NCR_S05_S1_SUPERVISOR_SOURCE_R1_LOCAL_REVIEW_2026-10-03.md",
+      "sha256": "eb3ab6d3be5e69654e2854dcefa316472ed4010827a394cce375efd26db0d0bd",
+      "bytes": 16513,
+      "status": "READ",
+      "readScope": "raw identity and targeted fields/sections; no all-lines-read claim",
+      "authority": "CVF_GOVERNED",
+      "sourceRevision": "c67e9a7b1f02b99cf14565c527a63ad830bc2e46",
+      "gitBlobContentSha256": "eb3ab6d3be5e69654e2854dcefa316472ed4010827a394cce375efd26db0d0bd",
+      "rawByteIdentityAtIntake": true
+    },
+    {
+      "path": "docs/reviews/CVF_CVF_NCR_S05_S1_R1_EVIDENCE_RELAY_LOCAL_REVIEW_2026-10-03.md",
+      "sha256": "54630fcaace2eca4f1ed5d136e8d69a3846484f306929628221c0361656526de",
+      "bytes": 16266,
+      "status": "READ",
+      "readScope": "raw identity and targeted fields/sections; no all-lines-read claim",
+      "authority": "CVF_GOVERNED",
+      "sourceRevision": "c67e9a7b1f02b99cf14565c527a63ad830bc2e46",
+      "gitBlobContentSha256": "54630fcaace2eca4f1ed5d136e8d69a3846484f306929628221c0361656526de",
+      "rawByteIdentityAtIntake": true
+    },
+    {
+      "path": "docs/reference/CVF_AGENT_ERROR_TO_GOVERNANCE_LEARNING_PHILOSOPHY_2026-05-28.md",
+      "sha256": "43cf43c03420693ffad5a098c65a8cd4a7c4035f03abbdaa8aba12eac81f6a38",
+      "bytes": 11042,
+      "status": "READ",
+      "readScope": "raw identity and targeted fields/sections; no all-lines-read claim",
+      "authority": "CVF_GOVERNED",
+      "sourceRevision": "c67e9a7b1f02b99cf14565c527a63ad830bc2e46",
+      "gitBlobContentSha256": "4137ae5ea278828514ee10c8f31411aa9525963a40274f709aece004391eb953",
+      "rawByteIdentityAtIntake": true
+    },
+    {
+      "path": "docs/reference/CVF_GOVERNED_WORK_LIFECYCLE_AND_DESIGN_CONTROL_STANDARD_2026-06-11.md",
+      "sha256": "290ffced022824621b3c6ac62738fee1db1af93f142cbee54ab3278e2ac883bd",
+      "bytes": 19962,
+      "status": "READ",
+      "readScope": "raw identity and targeted fields/sections; no all-lines-read claim",
+      "authority": "CVF_GOVERNED",
+      "sourceRevision": "c67e9a7b1f02b99cf14565c527a63ad830bc2e46",
+      "gitBlobContentSha256": "c93b1fad55c4b09442add3135590bd148fd86b3e718ab1367dd95c218be14747",
+      "rawByteIdentityAtIntake": true,
+      "currentMaterialDisposition": "SOURCE_OWNER_UPDATED_IN_THIS_BATCH;intake raw hash is historical,not final hash"
+    },
+    {
+      "path": "docs/reference/CVF_FINDING_TO_GOVERNANCE_LEARNING_TRIGGER_STANDARD.md",
+      "sha256": "f9f70fa4af76588b92ad3e65c784789ca896c7634cedc9cbfd073ce0d7a26f76",
+      "bytes": 11481,
+      "status": "READ",
+      "readScope": "raw identity and targeted fields/sections; no all-lines-read claim",
+      "authority": "CVF_GOVERNED",
+      "sourceRevision": "c67e9a7b1f02b99cf14565c527a63ad830bc2e46",
+      "gitBlobContentSha256": "7e50aec670c647ebbac1fadbabcecaabac4425e31ac5f4ebae1a49604d7a96dd",
+      "rawByteIdentityAtIntake": true
+    },
+    {
+      "path": "docs/reference/downstream_gate_profile/CVF_PROJECT_LEARNING_LOOP_STANDARD.md",
+      "sha256": "7823ef18bd387c0a66e66ad929bf35579f6253fbe69c0225076918fad415cdf9",
+      "bytes": 5237,
+      "status": "READ",
+      "readScope": "raw identity and targeted fields/sections; no all-lines-read claim",
+      "authority": "CVF_GOVERNED",
+      "sourceRevision": "c67e9a7b1f02b99cf14565c527a63ad830bc2e46",
+      "gitBlobContentSha256": "78b399c8e497efb3e85253d98b3bb60b0988bf2c37628b07e3f8bef4ace08d99",
+      "rawByteIdentityAtIntake": true
+    },
+    {
+      "path": "docs/reviews/learnings/README.md",
+      "sha256": "fffa5ea81e7dc10e450334610676d4c4198091418e7ea8229a95a61d21ebc7b2",
+      "bytes": 2806,
+      "status": "READ",
+      "readScope": "raw identity and targeted fields/sections; no all-lines-read claim",
+      "authority": "CVF_GOVERNED",
+      "sourceRevision": "c67e9a7b1f02b99cf14565c527a63ad830bc2e46",
+      "gitBlobContentSha256": "de19205c01eae895aa2981db6035df94a371dd76a2c7f3a8d91058db487b2c05",
+      "rawByteIdentityAtIntake": true,
+      "currentMaterialDisposition": "SOURCE_OWNER_UPDATED_IN_THIS_BATCH;intake raw hash is historical,not final hash"
+    },
+    {
+      "path": "docs/reviews/learnings/CVF_OUTCOME_BOUND_CONTINUATION_LEARNING_2026-10-07.md",
+      "sha256": "126009dc8561406d0e95b4614c545ed174a3f9d130f0439a8cd1715fc72fbe94",
+      "bytes": 49826,
+      "status": "READ",
+      "readScope": "raw identity and targeted fields/sections; no all-lines-read claim",
+      "authority": "CVF_GOVERNED",
+      "sourceRevision": "c67e9a7b1f02b99cf14565c527a63ad830bc2e46",
+      "gitBlobContentSha256": "126009dc8561406d0e95b4614c545ed174a3f9d130f0439a8cd1715fc72fbe94",
+      "rawByteIdentityAtIntake": true
+    },
+    {
+      "path": "docs/reviews/learnings/CVF_DISPATCH_CONTEXT_ELIGIBILITY_LEARNING_2026-10-05.md",
+      "sha256": "53e0e25bab5ce0e6f22a46d493724932d04f6b0d334293f305164de10c8a65a1",
+      "bytes": 14620,
+      "status": "READ",
+      "readScope": "raw identity and targeted fields/sections; no all-lines-read claim",
+      "authority": "CVF_GOVERNED",
+      "sourceRevision": "c67e9a7b1f02b99cf14565c527a63ad830bc2e46",
+      "gitBlobContentSha256": "53e0e25bab5ce0e6f22a46d493724932d04f6b0d334293f305164de10c8a65a1",
+      "rawByteIdentityAtIntake": true
+    },
+    {
+      "path": "docs/reference/semantic_convergence_control/CVF_SEMANTIC_CONVERGENCE_AND_ESCALATION_CONTROL_STANDARD.md",
+      "sha256": "1d2753fd56108eb8a0ed5cc5f03ab85ee67e9c18ff4d1390ef55c45473cc0196",
+      "bytes": 20864,
+      "status": "READ",
+      "readScope": "raw identity and targeted fields/sections; no all-lines-read claim",
+      "authority": "CVF_GOVERNED",
+      "sourceRevision": "c67e9a7b1f02b99cf14565c527a63ad830bc2e46",
+      "gitBlobContentSha256": "1d2753fd56108eb8a0ed5cc5f03ab85ee67e9c18ff4d1390ef55c45473cc0196",
+      "rawByteIdentityAtIntake": true
+    },
+    {
+      "path": "governance/compat/check_semantic_convergence_control.py",
+      "sha256": "94d4a26f130f5fd20eefa54871e3533e9755164dfc8204864e7f555f211352e9",
+      "bytes": 49040,
+      "status": "READ",
+      "readScope": "raw identity and targeted fields/sections; no all-lines-read claim",
+      "authority": "CVF_GOVERNED",
+      "sourceRevision": "c67e9a7b1f02b99cf14565c527a63ad830bc2e46",
+      "gitBlobContentSha256": "6a080dd30ef603ef6a5b75f33546b74f99a9f1d4884e8b426aca56ce0dba0356",
+      "rawByteIdentityAtIntake": true
+    },
+    {
+      "path": "governance/compat/check_governed_artifact_checker_read_ahead.py",
+      "sha256": "44f4b67c9441c541a42f91526d8f25c8805efeb1e08e6aed69c60aee6153ef77",
+      "bytes": 8808,
+      "status": "READ",
+      "readScope": "raw identity and targeted fields/sections; no all-lines-read claim",
+      "authority": "CVF_GOVERNED",
+      "sourceRevision": "c67e9a7b1f02b99cf14565c527a63ad830bc2e46",
+      "gitBlobContentSha256": "bd83ef0b119c6190cf2d4e5f3fa44a7e45254d5fcca34137a2df48ad4a207275",
+      "rawByteIdentityAtIntake": true
+    }
+  ],
+  "runtimeLogSnapshots": [
+    {
+      "path": ".cvf/runtime/cvf-video-storyboard-review-20261008/c1-authoring-gate.log",
+      "sha256": "fa296cb3819a6556651e9aca725e78afddfb54fb5ada2df870043cc1b7452d51",
+      "bytes": 9839,
+      "status": "READ",
+      "authority": "LOCAL_RUNTIME_OBSERVATION_SNAPSHOT",
+      "excerpts": [
+        {
+          "line": 14,
+          "text": "[FAIL] semantic convergence and escalation control (0.77s)"
+        },
+        {
+          "line": 24,
+          "text": "[FAIL] markdown structural completeness (0.54s)"
+        },
+        {
+          "line": 56,
+          "text": "[FAIL] ADIF defect registry disclosure (0.52s)"
+        },
+        {
+          "line": 64,
+          "text": "  - docs/baselines/CVF_GC018_NCR_C1_OFFLINE_PRODUCTION_READINESS_2026-10-08.md: missing `Resolver query: taskClass=`...`, role=`...`, lifecyclePhase=`...`` line in the ADIF Defect Registry Disclosure section"
+        },
+        {
+          "line": 65,
+          "text": "  - docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_C1_OFFLINE_PRODUCTION_READINESS_2026-10-08.md: missing `Resolver query: taskClass=`...`, role=`...`, lifecyclePhase=`...`` line in the ADIF Defect Registry Disclosure section"
+        },
+        {
+          "line": 70,
+          "text": "[FAIL] work-order dispatch quality (1.02s)"
+        },
+        {
+          "line": 96,
+          "text": "[FAIL] machine closure package (0.59s)"
+        },
+        {
+          "line": 124,
+          "text": "[FAIL] Delta execution claim boundary (0.57s)"
+        },
+        {
+          "line": 128,
+          "text": "[FAIL] foundation storage layout (0.59s)"
+        },
+        {
+          "line": 180,
+          "text": "[FAIL] independent review probe admission (0.55s)"
+        }
+      ]
+    },
+    {
+      "path": ".cvf/runtime/cvf-video-storyboard-review-20261008/c1-authoring-final.log",
+      "sha256": "3099e6307f2e5c1158c6b77d21b9fa772e4c491155aacda5646aea987bd280cf",
+      "bytes": 6533,
+      "status": "READ",
+      "authority": "LOCAL_RUNTIME_OBSERVATION_SNAPSHOT",
+      "excerpts": [
+        {
+          "line": 15,
+          "text": "[FAIL] markdown structural completeness (0.45s)"
+        },
+        {
+          "line": 39,
+          "text": "[FAIL] work-order dispatch quality (1.03s)"
+        },
+        {
+          "line": 92,
+          "text": "[FAIL] truth foundation claim guard (0.31s)"
+        }
+      ]
+    },
+    {
+      "path": ".cvf/runtime/cvf-video-storyboard-review-20261008/c1-authoring-pass.log",
+      "sha256": "987299ef3f0024e4b1a708a7ba16ec4ab8c2dd8c659c37054a1d66b70f8e31a6",
+      "bytes": 4524,
+      "status": "READ",
+      "authority": "LOCAL_RUNTIME_OBSERVATION_SNAPSHOT",
+      "excerpts": [
+        {
+          "line": 94,
+          "text": "COMPLIANT: pre-dispatch autorun gate passed in 9.88s."
+        }
+      ]
+    },
+    {
+      "path": ".cvf/runtime/cvf-video-storyboard-review-20261008/e1-contract-preimplementation.log",
+      "sha256": "1df8365702dcb858e0cd42e20ffeb6bbacef1dc3c326f01e24c6169946772c7a",
+      "bytes": 5059,
+      "status": "READ",
+      "authority": "LOCAL_RUNTIME_OBSERVATION_SNAPSHOT",
+      "excerpts": [
+        {
+          "line": 24,
+          "text": "[FAIL] ADIF defect registry disclosure (0.55s)"
+        },
+        {
+          "line": 31,
+          "text": "  - docs/baselines/CVF_GC018_NCR_C1_E1_METADATA_ADMISSION_2026-10-08.md: missing `Resolver query: taskClass=`...`, role=`...`, lifecyclePhase=`...`` line in the ADIF Defect Registry Disclosure section"
+        }
+      ]
+    },
+    {
+      "path": ".cvf/runtime/cvf-video-storyboard-review-20261008/e1-contract-preimplementation-final.log",
+      "sha256": "5638992653c01053915d8b8569b697fd86184f979691dc877690488f55aa11ee",
+      "bytes": 5033,
+      "status": "READ",
+      "authority": "LOCAL_RUNTIME_OBSERVATION_SNAPSHOT",
+      "excerpts": [
+        {
+          "line": 24,
+          "text": "[FAIL] ADIF defect registry disclosure (0.54s)"
+        },
+        {
+          "line": 31,
+          "text": "  - docs/baselines/CVF_GC018_NCR_C1_E1_METADATA_ADMISSION_2026-10-08.md: resolver query returned zero entries; disclosure section must state `Returned defects: NONE_RETURNED`"
+        }
+      ]
+    },
+    {
+      "path": ".cvf/runtime/cvf-video-storyboard-review-20261008/e1-contract-preimplementation-pass.log",
+      "sha256": "98594ddd7aa8590e4372e6f7bb6bf8b6a003b3ec59ff4fb8e23a000aac51cee3",
+      "bytes": 4660,
+      "status": "READ",
+      "authority": "LOCAL_RUNTIME_OBSERVATION_SNAPSHOT",
+      "excerpts": [
+        {
+          "line": 96,
+          "text": "COMPLIANT: pre-implementation autorun gate passed in 10.03s."
+        }
+      ]
+    },
+    {
+      "path": ".cvf/runtime/cvf-video-storyboard-review-20261008/manifest-control-proposal-gate.log",
+      "sha256": "46907d2fa608c15e1858d9248c98c7225676a66aad977bbb26ee8bd39a7fd4a8",
+      "bytes": 4659,
+      "status": "READ",
+      "authority": "LOCAL_RUNTIME_OBSERVATION_SNAPSHOT",
+      "excerpts": [
+        {
+          "line": 96,
+          "text": "COMPLIANT: pre-implementation autorun gate passed in 9.50s."
+        }
+      ]
+    },
+    {
+      "path": ".cvf/runtime/cvf-video-storyboard-review-20261008/s1-approval-disposition-gate.log",
+      "sha256": "a0574acf0d34480b45434a230be2294bc09306a2d16a4302575709623253f2b2",
+      "bytes": 4730,
+      "status": "READ",
+      "authority": "LOCAL_RUNTIME_OBSERVATION_SNAPSHOT",
+      "excerpts": [
+        {
+          "line": 10,
+          "text": "[FAIL] subagent provider execution authority (0.65s)"
+        },
+        {
+          "line": 12,
+          "text": "- docs/reference/CVF_NCR_C1_S1_APPROVAL_DISPATCH_DISPOSITION_2026-10-08.md: missing providerExecutionAuthority"
+        }
+      ]
+    },
+    {
+      "path": ".cvf/runtime/cvf-video-storyboard-review-20261008/s1-approval-disposition-gate-final.log",
+      "sha256": "152663334be95684bcaf60ae493fd389315502309ca709306d898db27fdc79ba",
+      "bytes": 4660,
+      "status": "READ",
+      "authority": "LOCAL_RUNTIME_OBSERVATION_SNAPSHOT",
+      "excerpts": [
+        {
+          "line": 96,
+          "text": "COMPLIANT: pre-implementation autorun gate passed in 30.85s."
+        }
+      ]
+    }
+  ],
+  "manifest": [
+    {
+      "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_C1_OFFLINE_PRODUCTION_READINESS_2026-10-08.md",
+      "sha256": "87404a4231ae119dd07618afe0600a5c8d49e27a28829e1a0bcd2775fe9d4e80",
+      "bytes": 34653
+    },
+    {
+      "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_C1_OFFLINE_PRODUCTION_READINESS_S0_2026-10-08.md",
+      "sha256": "212adb5ebf3c0eb82bf9862effc3880d897fbfaf342655cc533a36a2872f4b79",
+      "bytes": 47114
+    },
+    {
+      "path": "docs/reviews/evidence/cvf-ncr-c1-offline-production-amendment-intake-2026-10-08.json",
+      "sha256": "6438118f3eef3c2b0fc7b4ebf0d90c3b15deecff7831141c8ac8f39a6a563c20",
+      "bytes": 28632
+    },
+    {
+      "path": "docs/reviews/CVF_NCR_C1_OFFLINE_PRODUCTION_READINESS_COMPLETION_2026-10-08.md",
+      "sha256": "68044f414a25ab827161730d241f3c4fac24d60b35df3d774c0bd83d42b050ee",
+      "bytes": 21575
+    },
+    {
+      "path": "docs/reference/CVF_NCR_C1_E1_EXECUTION_CONTRACT_2026-10-08.json",
+      "sha256": "6e10351e5dac793abbcdb0624c84705436fb1adc1ad976ea2841bc47b1ba15bc",
+      "bytes": 48096
+    },
+    {
+      "path": "docs/reference/CVF_NCR_C1_E1_METADATA_RESULT_2026-10-08.md",
+      "sha256": "34288f32b31eb73bc53a971e0ae93daeb44d1e3a983a0764202c4f430317b26a",
+      "bytes": 12586
+    },
+    {
+      "path": "docs/reference/CVF_NCR_C1_MANIFEST_CONTROL_SOURCE_PROPOSAL_2026-10-08.json",
+      "sha256": "f69ab3a33b556409b3d5a63ce92f1d8d1d7ac0256eb4cf3e473468fafb2141e8",
+      "bytes": 44716
+    },
+    {
+      "path": "docs/reference/CVF_NCR_C1_S1_APPROVAL_DISPATCH_DISPOSITION_2026-10-08.json",
+      "sha256": "25e7d4149f6ce97b94317aaf34400adcf451dac838d1f01522d38b1b5e2a4b4b",
+      "bytes": 59517
+    },
+    {
+      "path": "docs/reviews/CVF_CVF_NCR_S05_S1_SUPERVISOR_SOURCE_R1_LOCAL_REVIEW_2026-10-03.md",
+      "sha256": "eb3ab6d3be5e69654e2854dcefa316472ed4010827a394cce375efd26db0d0bd",
+      "bytes": 16513
+    },
+    {
+      "path": "docs/reviews/CVF_CVF_NCR_S05_S1_R1_EVIDENCE_RELAY_LOCAL_REVIEW_2026-10-03.md",
+      "sha256": "54630fcaace2eca4f1ed5d136e8d69a3846484f306929628221c0361656526de",
+      "bytes": 16266
+    },
+    {
+      "path": "docs/reference/CVF_AGENT_ERROR_TO_GOVERNANCE_LEARNING_PHILOSOPHY_2026-05-28.md",
+      "sha256": "43cf43c03420693ffad5a098c65a8cd4a7c4035f03abbdaa8aba12eac81f6a38",
+      "bytes": 11042
+    },
+    {
+      "path": "docs/reference/CVF_GOVERNED_WORK_LIFECYCLE_AND_DESIGN_CONTROL_STANDARD_2026-06-11.md",
+      "sha256": "290ffced022824621b3c6ac62738fee1db1af93f142cbee54ab3278e2ac883bd",
+      "bytes": 19962
+    },
+    {
+      "path": "docs/reference/CVF_FINDING_TO_GOVERNANCE_LEARNING_TRIGGER_STANDARD.md",
+      "sha256": "f9f70fa4af76588b92ad3e65c784789ca896c7634cedc9cbfd073ce0d7a26f76",
+      "bytes": 11481
+    },
+    {
+      "path": "docs/reference/downstream_gate_profile/CVF_PROJECT_LEARNING_LOOP_STANDARD.md",
+      "sha256": "7823ef18bd387c0a66e66ad929bf35579f6253fbe69c0225076918fad415cdf9",
+      "bytes": 5237
+    },
+    {
+      "path": "docs/reviews/learnings/README.md",
+      "sha256": "fffa5ea81e7dc10e450334610676d4c4198091418e7ea8229a95a61d21ebc7b2",
+      "bytes": 2806
+    },
+    {
+      "path": "docs/reviews/learnings/CVF_OUTCOME_BOUND_CONTINUATION_LEARNING_2026-10-07.md",
+      "sha256": "126009dc8561406d0e95b4614c545ed174a3f9d130f0439a8cd1715fc72fbe94",
+      "bytes": 49826
+    },
+    {
+      "path": "docs/reviews/learnings/CVF_DISPATCH_CONTEXT_ELIGIBILITY_LEARNING_2026-10-05.md",
+      "sha256": "53e0e25bab5ce0e6f22a46d493724932d04f6b0d334293f305164de10c8a65a1",
+      "bytes": 14620
+    },
+    {
+      "path": "docs/reference/semantic_convergence_control/CVF_SEMANTIC_CONVERGENCE_AND_ESCALATION_CONTROL_STANDARD.md",
+      "sha256": "1d2753fd56108eb8a0ed5cc5f03ab85ee67e9c18ff4d1390ef55c45473cc0196",
+      "bytes": 20864
+    },
+    {
+      "path": "governance/compat/check_semantic_convergence_control.py",
+      "sha256": "94d4a26f130f5fd20eefa54871e3533e9755164dfc8204864e7f555f211352e9",
+      "bytes": 49040
+    },
+    {
+      "path": "governance/compat/check_governed_artifact_checker_read_ahead.py",
+      "sha256": "44f4b67c9441c541a42f91526d8f25c8805efeb1e08e6aed69c60aee6153ef77",
+      "bytes": 8808
+    },
+    {
+      "path": ".cvf/runtime/cvf-video-storyboard-review-20261008/c1-authoring-gate.log",
+      "sha256": "fa296cb3819a6556651e9aca725e78afddfb54fb5ada2df870043cc1b7452d51",
+      "bytes": 9839
+    },
+    {
+      "path": ".cvf/runtime/cvf-video-storyboard-review-20261008/c1-authoring-final.log",
+      "sha256": "3099e6307f2e5c1158c6b77d21b9fa772e4c491155aacda5646aea987bd280cf",
+      "bytes": 6533
+    },
+    {
+      "path": ".cvf/runtime/cvf-video-storyboard-review-20261008/c1-authoring-pass.log",
+      "sha256": "987299ef3f0024e4b1a708a7ba16ec4ab8c2dd8c659c37054a1d66b70f8e31a6",
+      "bytes": 4524
+    },
+    {
+      "path": ".cvf/runtime/cvf-video-storyboard-review-20261008/e1-contract-preimplementation.log",
+      "sha256": "1df8365702dcb858e0cd42e20ffeb6bbacef1dc3c326f01e24c6169946772c7a",
+      "bytes": 5059
+    },
+    {
+      "path": ".cvf/runtime/cvf-video-storyboard-review-20261008/e1-contract-preimplementation-final.log",
+      "sha256": "5638992653c01053915d8b8569b697fd86184f979691dc877690488f55aa11ee",
+      "bytes": 5033
+    },
+    {
+      "path": ".cvf/runtime/cvf-video-storyboard-review-20261008/e1-contract-preimplementation-pass.log",
+      "sha256": "98594ddd7aa8590e4372e6f7bb6bf8b6a003b3ec59ff4fb8e23a000aac51cee3",
+      "bytes": 4660
+    },
+    {
+      "path": ".cvf/runtime/cvf-video-storyboard-review-20261008/manifest-control-proposal-gate.log",
+      "sha256": "46907d2fa608c15e1858d9248c98c7225676a66aad977bbb26ee8bd39a7fd4a8",
+      "bytes": 4659
+    },
+    {
+      "path": ".cvf/runtime/cvf-video-storyboard-review-20261008/s1-approval-disposition-gate.log",
+      "sha256": "a0574acf0d34480b45434a230be2294bc09306a2d16a4302575709623253f2b2",
+      "bytes": 4730
+    },
+    {
+      "path": ".cvf/runtime/cvf-video-storyboard-review-20261008/s1-approval-disposition-gate-final.log",
+      "sha256": "152663334be95684bcaf60ae493fd389315502309ca709306d898db27fdc79ba",
+      "bytes": 4660
+    }
+  ],
+  "manifestSha256": "06f45e47cdc00e367ab944be9dcb8784f0d2ccf7ed214e1bc36ffd56d977d4c7",
+  "reconciliation": {
+    "selectedPaths": 29,
+    "processedSelectedPaths": 29,
+    "unreadableSelectedPaths": 0,
+    "excluded": "all unlisted repositories,provider memory,upstream payloads,product/runtime suites and unrelated historical tranches"
+  },
+  "coverageProbe": {
+    "command": "python -B governance/compat/check_semantic_convergence_control.py --base 522877c9008491f3d2f4de8aa80e62a4acad65ee --head a3eae872ce3859d14f870da0078485f98e4f8e37 --enforce",
+    "sourceDiagnosticCount": 0,
+    "activeScecBlocks": 0,
+    "result": "PASS_NO_ELIGIBLE_ARTIFACTS",
+    "proposedJsonPath": "docs/reference/CVF_NCR_C1_MANIFEST_CONTROL_SOURCE_PROPOSAL_2026-10-08.json",
+    "referencePathEligible": false,
+    "interpretation": "range gate did not evaluate prospective custom JSON state;not proof that continuation was feasible"
+  },
+  "consumedProspectiveDiagnostics": [
+    {
+      "candidateId": "retained_counter_candidate",
+      "block": {
+        "schemaVersion": "cvf.semanticConvergenceControl.v1",
+        "problemKey": "local-supervisor-source-contract",
+        "chainMode": "SUCCESSOR",
+        "chainOrdinal": 2,
+        "predecessor": {
+          "path": "docs/reviews/CVF_CVF_NCR_S05_S1_SUPERVISOR_SOURCE_R1_WORKER_RETURN_2026-10-03.md",
+          "sha256": "12116c9c696752b487b74de9d6ec75bd3e53e90efad92b8f6a6f7f72512bd6ce"
+        },
+        "blockerDelta": {
+          "prior": [
+            "SOURCE_CONTRACT_NOT_IMPLEMENTED",
+            "SOURCE_STATIC_REVIEW_PENDING",
+            "SOURCE_CONTRACT_STATIC_DEFECTS",
+            "SOURCE_CREATION_EVIDENCE_DEVIATIONS"
+          ],
+          "resolved": [],
+          "retained": [
+            "SOURCE_CONTRACT_NOT_IMPLEMENTED",
+            "SOURCE_STATIC_REVIEW_PENDING",
+            "SOURCE_CONTRACT_STATIC_DEFECTS",
+            "SOURCE_CREATION_EVIDENCE_DEVIATIONS"
+          ],
+          "new": [],
+          "reopened": [],
+          "current": [
+            "SOURCE_CONTRACT_NOT_IMPLEMENTED",
+            "SOURCE_STATIC_REVIEW_PENDING",
+            "SOURCE_CONTRACT_STATIC_DEFECTS",
+            "SOURCE_CREATION_EVIDENCE_DEVIATIONS"
+          ]
+        },
+        "resolutionEvidence": {},
+        "counters": {
+          "partialReadyClosures": 0,
+          "reviewerScopeExpansions": 0,
+          "sameClaimCorrections": 1,
+          "nonDecreasingBlockerTransitions": 1
+        },
+        "claims": [
+          {
+            "claimId": "SOURCE_PLAN_ONLY_R1",
+            "claimClass": "DOCUMENTATION_ONLY",
+            "proofClass": "PROPOSAL_ONLY_NO_RUNTIME_READINESS",
+            "evidenceRef": "docs/reference/CVF_NCR_S05_SUPERVISOR_SOURCE_CONTRACT_R1_2026-10-03.md"
+          }
+        ],
+        "requiredDisposition": "CONTINUE_BOUNDED",
+        "successorScope": "INTEGRATED_ROOT_CONTRACT"
+      },
+      "pass": false,
+      "violations": [
+        {
+          "code": "NON_DECREASING_STREAK_MISMATCH",
+          "message": "`counters.nonDecreasingBlockerTransitions` must equal the consecutive streak implied by predecessor/current blocker counts (2)"
+        }
+      ]
+    },
+    {
+      "candidateId": "correct_counter_continue_candidate",
+      "block": {
+        "schemaVersion": "cvf.semanticConvergenceControl.v1",
+        "problemKey": "local-supervisor-source-contract",
+        "chainMode": "SUCCESSOR",
+        "chainOrdinal": 2,
+        "predecessor": {
+          "path": "docs/reviews/CVF_CVF_NCR_S05_S1_SUPERVISOR_SOURCE_R1_WORKER_RETURN_2026-10-03.md",
+          "sha256": "12116c9c696752b487b74de9d6ec75bd3e53e90efad92b8f6a6f7f72512bd6ce"
+        },
+        "blockerDelta": {
+          "prior": [
+            "SOURCE_CONTRACT_NOT_IMPLEMENTED",
+            "SOURCE_STATIC_REVIEW_PENDING",
+            "SOURCE_CONTRACT_STATIC_DEFECTS",
+            "SOURCE_CREATION_EVIDENCE_DEVIATIONS"
+          ],
+          "resolved": [],
+          "retained": [
+            "SOURCE_CONTRACT_NOT_IMPLEMENTED",
+            "SOURCE_STATIC_REVIEW_PENDING",
+            "SOURCE_CONTRACT_STATIC_DEFECTS",
+            "SOURCE_CREATION_EVIDENCE_DEVIATIONS"
+          ],
+          "new": [],
+          "reopened": [],
+          "current": [
+            "SOURCE_CONTRACT_NOT_IMPLEMENTED",
+            "SOURCE_STATIC_REVIEW_PENDING",
+            "SOURCE_CONTRACT_STATIC_DEFECTS",
+            "SOURCE_CREATION_EVIDENCE_DEVIATIONS"
+          ]
+        },
+        "resolutionEvidence": {},
+        "counters": {
+          "partialReadyClosures": 0,
+          "reviewerScopeExpansions": 0,
+          "sameClaimCorrections": 1,
+          "nonDecreasingBlockerTransitions": 2
+        },
+        "claims": [
+          {
+            "claimId": "SOURCE_PLAN_ONLY_R1",
+            "claimClass": "DOCUMENTATION_ONLY",
+            "proofClass": "PROPOSAL_ONLY_NO_RUNTIME_READINESS",
+            "evidenceRef": "docs/reference/CVF_NCR_S05_SUPERVISOR_SOURCE_CONTRACT_R1_2026-10-03.md"
+          }
+        ],
+        "requiredDisposition": "CONTINUE_BOUNDED",
+        "successorScope": "INTEGRATED_ROOT_CONTRACT"
+      },
+      "pass": false,
+      "violations": [
+        {
+          "code": "MISSING_STOP_REASSESS_ESCALATION",
+          "message": "two or more consecutive non-decreasing blocker transitions require `requiredDisposition: STOP_REASSESS_ARCHITECTURE`"
+        }
+      ]
+    },
+    {
+      "candidateId": "correct_counter_stop_candidate",
+      "block": {
+        "schemaVersion": "cvf.semanticConvergenceControl.v1",
+        "problemKey": "local-supervisor-source-contract",
+        "chainMode": "SUCCESSOR",
+        "chainOrdinal": 2,
+        "predecessor": {
+          "path": "docs/reviews/CVF_CVF_NCR_S05_S1_SUPERVISOR_SOURCE_R1_WORKER_RETURN_2026-10-03.md",
+          "sha256": "12116c9c696752b487b74de9d6ec75bd3e53e90efad92b8f6a6f7f72512bd6ce"
+        },
+        "blockerDelta": {
+          "prior": [
+            "SOURCE_CONTRACT_NOT_IMPLEMENTED",
+            "SOURCE_STATIC_REVIEW_PENDING",
+            "SOURCE_CONTRACT_STATIC_DEFECTS",
+            "SOURCE_CREATION_EVIDENCE_DEVIATIONS"
+          ],
+          "resolved": [],
+          "retained": [
+            "SOURCE_CONTRACT_NOT_IMPLEMENTED",
+            "SOURCE_STATIC_REVIEW_PENDING",
+            "SOURCE_CONTRACT_STATIC_DEFECTS",
+            "SOURCE_CREATION_EVIDENCE_DEVIATIONS"
+          ],
+          "new": [],
+          "reopened": [],
+          "current": [
+            "SOURCE_CONTRACT_NOT_IMPLEMENTED",
+            "SOURCE_STATIC_REVIEW_PENDING",
+            "SOURCE_CONTRACT_STATIC_DEFECTS",
+            "SOURCE_CREATION_EVIDENCE_DEVIATIONS"
+          ]
+        },
+        "resolutionEvidence": {},
+        "counters": {
+          "partialReadyClosures": 0,
+          "reviewerScopeExpansions": 0,
+          "sameClaimCorrections": 1,
+          "nonDecreasingBlockerTransitions": 2
+        },
+        "claims": [
+          {
+            "claimId": "SOURCE_PLAN_ONLY_R1",
+            "claimClass": "DOCUMENTATION_ONLY",
+            "proofClass": "PROPOSAL_ONLY_NO_RUNTIME_READINESS",
+            "evidenceRef": "docs/reference/CVF_NCR_S05_SUPERVISOR_SOURCE_CONTRACT_R1_2026-10-03.md"
+          }
+        ],
+        "requiredDisposition": "STOP_REASSESS_ARCHITECTURE",
+        "successorScope": "INTEGRATED_ROOT_CONTRACT"
+      },
+      "pass": true,
+      "violations": []
+    }
+  ],
+  "requestQueueProbe": {
+    "method": "offline exact declared package-name grammar and typed queue fields,no request or registry freshness proof",
+    "npmRows": 71,
+    "noncanonicalNestingLocators": [
+      {
+        "ordinal": 19,
+        "package": "@puppeteer/browsers/yargs",
+        "url": "https://registry.npmjs.org/@puppeteer%2Fbrowsers%2Fyargs/18.0.0",
+        "version": "18.0.0"
+      },
+      {
+        "ordinal": 20,
+        "package": "@puppeteer/browsers/yargs/cliui",
+        "url": "https://registry.npmjs.org/@puppeteer%2Fbrowsers%2Fyargs%2Fcliui/9.0.1",
+        "version": "9.0.1"
+      },
+      {
+        "ordinal": 21,
+        "package": "@puppeteer/browsers/yargs/cliui/strip-ansi",
+        "url": "https://registry.npmjs.org/@puppeteer%2Fbrowsers%2Fyargs%2Fcliui%2Fstrip-ansi/7.2.0",
+        "version": "7.2.0"
+      },
+      {
+        "ordinal": 22,
+        "package": "@puppeteer/browsers/yargs/cliui/strip-ansi/ansi-regex",
+        "url": "https://registry.npmjs.org/@puppeteer%2Fbrowsers%2Fyargs%2Fcliui%2Fstrip-ansi%2Fansi-regex/6.2.2",
+        "version": "6.2.2"
+      },
+      {
+        "ordinal": 23,
+        "package": "@puppeteer/browsers/yargs/cliui/wrap-ansi",
+        "url": "https://registry.npmjs.org/@puppeteer%2Fbrowsers%2Fyargs%2Fcliui%2Fwrap-ansi/9.0.2",
+        "version": "9.0.2"
+      },
+      {
+        "ordinal": 24,
+        "package": "@puppeteer/browsers/yargs/cliui/wrap-ansi/ansi-styles",
+        "url": "https://registry.npmjs.org/@puppeteer%2Fbrowsers%2Fyargs%2Fcliui%2Fwrap-ansi%2Fansi-styles/6.2.3",
+        "version": "6.2.3"
+      },
+      {
+        "ordinal": 25,
+        "package": "@puppeteer/browsers/yargs/string-width",
+        "url": "https://registry.npmjs.org/@puppeteer%2Fbrowsers%2Fyargs%2Fstring-width/7.2.0",
+        "version": "7.2.0"
+      },
+      {
+        "ordinal": 26,
+        "package": "@puppeteer/browsers/yargs/string-width/emoji-regex",
+        "url": "https://registry.npmjs.org/@puppeteer%2Fbrowsers%2Fyargs%2Fstring-width%2Femoji-regex/10.6.0",
+        "version": "10.6.0"
+      },
+      {
+        "ordinal": 27,
+        "package": "@puppeteer/browsers/yargs/string-width/strip-ansi",
+        "url": "https://registry.npmjs.org/@puppeteer%2Fbrowsers%2Fyargs%2Fstring-width%2Fstrip-ansi/7.2.0",
+        "version": "7.2.0"
+      },
+      {
+        "ordinal": 28,
+        "package": "@puppeteer/browsers/yargs/string-width/strip-ansi/ansi-regex",
+        "url": "https://registry.npmjs.org/@puppeteer%2Fbrowsers%2Fyargs%2Fstring-width%2Fstrip-ansi%2Fansi-regex/6.2.2",
+        "version": "6.2.2"
+      },
+      {
+        "ordinal": 29,
+        "package": "@puppeteer/browsers/yargs/yargs-parser",
+        "url": "https://registry.npmjs.org/@puppeteer%2Fbrowsers%2Fyargs%2Fyargs-parser/22.0.0",
+        "version": "22.0.0"
+      },
+      {
+        "ordinal": 36,
+        "package": "chromium-bidi/zod",
+        "url": "https://registry.npmjs.org/chromium-bidi%2Fzod/3.25.76",
+        "version": "3.25.76"
+      },
+      {
+        "ordinal": 69,
+        "package": "puppeteer-core/ws",
+        "url": "https://registry.npmjs.org/puppeteer-core%2Fws/8.21.3",
+        "version": "8.21.3"
+      },
+      {
+        "ordinal": 73,
+        "package": "sharp/semver",
+        "url": "https://registry.npmjs.org/sharp%2Fsemver/7.8.5",
+        "version": "7.8.5"
+      }
+    ],
+    "queueRows": 164,
+    "requestCeiling": 160,
+    "minimumUnrequestedIfNoDedup": 4,
+    "expectation": "partial by queue design;wrong names and unrequested tail are distinct issues"
+  },
+  "observedRootCauses": [
+    {
+      "id": "O1",
+      "cause": "current-phase deliverable depends on later-phase effects",
+      "attribution": "ORCHESTRATOR_PACKET_GAP",
+      "evidence": "original order C1-INVENTORY/C1-CONTROLS and amendment A05/A10",
+      "handledBeforeAudit": "S0 amendment and bounded acceptance"
+    },
+    {
+      "id": "O2",
+      "cause": "technical continuation feasibility tested after asking for approval;source predecessor counters copied instead of derived",
+      "attribution": "ORCHESTRATOR_PACKET_GAP / PHASE_GATE_PLACEMENT_GAP",
+      "evidence": "preapproval zero-block range versus actual candidate diagnostics",
+      "handledBeforeAudit": "approval retained,dependent source dispatch held"
+    },
+    {
+      "id": "O3",
+      "cause": "lock nesting locator promoted to publisher identity in bound request queue",
+      "attribution": "ORCHESTRATOR_PACKET_GAP",
+      "evidence": "71 typed queue rows,14 noncanonical names and retained405 outcomes",
+      "handledBeforeAudit": "finite partial result/no retry;normalization candidates still unverified"
+    },
+    {
+      "id": "O4",
+      "cause": "repeated omission of required literal packet fields",
+      "attribution": "ORCHESTRATOR_PACKET_GAP",
+      "evidence": "C1/E1 ADIF failures,S1 provider declaration failure",
+      "handledBeforeAudit": "existing gates blocked effects;later corrected passes retained"
+    },
+    {
+      "id": "O5",
+      "cause": "PASS with no eligible semantic object treated as sufficient proposal preparation",
+      "attribution": "MACHINE_GATE_GAP / PHASE_GATE_PLACEMENT_GAP",
+      "evidence": "existing checker deliberately covers work orders/baselines/reviews,not reference companion proposal",
+      "handledBeforeAudit": "late canonical diagnostic exposed scope gap"
+    }
+  ],
+  "claimsNotEstablished": [
+    "hidden reasoning or memory cause",
+    "model/provider quality comparison",
+    "universal guard failure",
+    "all recent tranches reviewed",
+    "runtime governance or OS containment",
+    "machine proposal guard implemented",
+    "future agent behavior improved"
+  ],
+  "parentDecision": "MERGE_INTO_EXISTING_OWNER",
+  "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
+  "knowledgeReconciliationLedger": [
+    {
+      "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_C1_OFFLINE_PRODUCTION_READINESS_2026-10-08.md",
+      "state": "DEFERRED",
+      "reason": "knowledge-map conversion outside selected incident/owner audit outcome"
+    },
+    {
+      "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_C1_OFFLINE_PRODUCTION_READINESS_S0_2026-10-08.md",
+      "state": "DEFERRED",
+      "reason": "knowledge-map conversion outside selected incident/owner audit outcome"
+    },
+    {
+      "path": "docs/reviews/evidence/cvf-ncr-c1-offline-production-amendment-intake-2026-10-08.json",
+      "state": "DEFERRED",
+      "reason": "knowledge-map conversion outside selected incident/owner audit outcome"
+    },
+    {
+      "path": "docs/reviews/CVF_NCR_C1_OFFLINE_PRODUCTION_READINESS_COMPLETION_2026-10-08.md",
+      "state": "DEFERRED",
+      "reason": "knowledge-map conversion outside selected incident/owner audit outcome"
+    },
+    {
+      "path": "docs/reference/CVF_NCR_C1_E1_EXECUTION_CONTRACT_2026-10-08.json",
+      "state": "DEFERRED",
+      "reason": "knowledge-map conversion outside selected incident/owner audit outcome"
+    },
+    {
+      "path": "docs/reference/CVF_NCR_C1_E1_METADATA_RESULT_2026-10-08.md",
+      "state": "DEFERRED",
+      "reason": "knowledge-map conversion outside selected incident/owner audit outcome"
+    },
+    {
+      "path": "docs/reference/CVF_NCR_C1_MANIFEST_CONTROL_SOURCE_PROPOSAL_2026-10-08.json",
+      "state": "DEFERRED",
+      "reason": "knowledge-map conversion outside selected incident/owner audit outcome"
+    },
+    {
+      "path": "docs/reference/CVF_NCR_C1_S1_APPROVAL_DISPATCH_DISPOSITION_2026-10-08.json",
+      "state": "DEFERRED",
+      "reason": "knowledge-map conversion outside selected incident/owner audit outcome"
+    },
+    {
+      "path": "docs/reviews/CVF_CVF_NCR_S05_S1_SUPERVISOR_SOURCE_R1_LOCAL_REVIEW_2026-10-03.md",
+      "state": "DEFERRED",
+      "reason": "knowledge-map conversion outside selected incident/owner audit outcome"
+    },
+    {
+      "path": "docs/reviews/CVF_CVF_NCR_S05_S1_R1_EVIDENCE_RELAY_LOCAL_REVIEW_2026-10-03.md",
+      "state": "DEFERRED",
+      "reason": "knowledge-map conversion outside selected incident/owner audit outcome"
+    },
+    {
+      "path": "docs/reference/CVF_AGENT_ERROR_TO_GOVERNANCE_LEARNING_PHILOSOPHY_2026-05-28.md",
+      "state": "DEFERRED",
+      "reason": "knowledge-map conversion outside selected incident/owner audit outcome"
+    },
+    {
+      "path": "docs/reference/CVF_GOVERNED_WORK_LIFECYCLE_AND_DESIGN_CONTROL_STANDARD_2026-06-11.md",
+      "state": "DEFERRED",
+      "reason": "knowledge-map conversion outside selected incident/owner audit outcome"
+    },
+    {
+      "path": "docs/reference/CVF_FINDING_TO_GOVERNANCE_LEARNING_TRIGGER_STANDARD.md",
+      "state": "DEFERRED",
+      "reason": "knowledge-map conversion outside selected incident/owner audit outcome"
+    },
+    {
+      "path": "docs/reference/downstream_gate_profile/CVF_PROJECT_LEARNING_LOOP_STANDARD.md",
+      "state": "DEFERRED",
+      "reason": "knowledge-map conversion outside selected incident/owner audit outcome"
+    },
+    {
+      "path": "docs/reviews/learnings/README.md",
+      "state": "DEFERRED",
+      "reason": "knowledge-map conversion outside selected incident/owner audit outcome"
+    },
+    {
+      "path": "docs/reviews/learnings/CVF_OUTCOME_BOUND_CONTINUATION_LEARNING_2026-10-07.md",
+      "state": "DEFERRED",
+      "reason": "knowledge-map conversion outside selected incident/owner audit outcome"
+    },
+    {
+      "path": "docs/reviews/learnings/CVF_DISPATCH_CONTEXT_ELIGIBILITY_LEARNING_2026-10-05.md",
+      "state": "DEFERRED",
+      "reason": "knowledge-map conversion outside selected incident/owner audit outcome"
+    },
+    {
+      "path": "docs/reference/semantic_convergence_control/CVF_SEMANTIC_CONVERGENCE_AND_ESCALATION_CONTROL_STANDARD.md",
+      "state": "DEFERRED",
+      "reason": "knowledge-map conversion outside selected incident/owner audit outcome"
+    },
+    {
+      "path": "governance/compat/check_semantic_convergence_control.py",
+      "state": "DEFERRED",
+      "reason": "knowledge-map conversion outside selected incident/owner audit outcome"
+    },
+    {
+      "path": "governance/compat/check_governed_artifact_checker_read_ahead.py",
+      "state": "DEFERRED",
+      "reason": "knowledge-map conversion outside selected incident/owner audit outcome"
+    },
+    {
+      "path": ".cvf/runtime/cvf-video-storyboard-review-20261008/c1-authoring-gate.log",
+      "state": "DEFERRED",
+      "reason": "knowledge-map conversion outside selected incident/owner audit outcome"
+    },
+    {
+      "path": ".cvf/runtime/cvf-video-storyboard-review-20261008/c1-authoring-final.log",
+      "state": "DEFERRED",
+      "reason": "knowledge-map conversion outside selected incident/owner audit outcome"
+    },
+    {
+      "path": ".cvf/runtime/cvf-video-storyboard-review-20261008/c1-authoring-pass.log",
+      "state": "DEFERRED",
+      "reason": "knowledge-map conversion outside selected incident/owner audit outcome"
+    },
+    {
+      "path": ".cvf/runtime/cvf-video-storyboard-review-20261008/e1-contract-preimplementation.log",
+      "state": "DEFERRED",
+      "reason": "knowledge-map conversion outside selected incident/owner audit outcome"
+    },
+    {
+      "path": ".cvf/runtime/cvf-video-storyboard-review-20261008/e1-contract-preimplementation-final.log",
+      "state": "DEFERRED",
+      "reason": "knowledge-map conversion outside selected incident/owner audit outcome"
+    },
+    {
+      "path": ".cvf/runtime/cvf-video-storyboard-review-20261008/e1-contract-preimplementation-pass.log",
+      "state": "DEFERRED",
+      "reason": "knowledge-map conversion outside selected incident/owner audit outcome"
+    },
+    {
+      "path": ".cvf/runtime/cvf-video-storyboard-review-20261008/manifest-control-proposal-gate.log",
+      "state": "DEFERRED",
+      "reason": "knowledge-map conversion outside selected incident/owner audit outcome"
+    },
+    {
+      "path": ".cvf/runtime/cvf-video-storyboard-review-20261008/s1-approval-disposition-gate.log",
+      "state": "DEFERRED",
+      "reason": "knowledge-map conversion outside selected incident/owner audit outcome"
+    },
+    {
+      "path": ".cvf/runtime/cvf-video-storyboard-review-20261008/s1-approval-disposition-gate-final.log",
+      "state": "DEFERRED",
+      "reason": "knowledge-map conversion outside selected incident/owner audit outcome"
+    }
+  ],
+  "thisBatchInitialGate": {
+    "path": ".cvf/runtime/cvf-video-storyboard-review-20261008/orchestrator-learning-audit-gate.log",
+    "sha256": "a7875b3ea9a54f3d0b67ebbf51c79cc92d9a3c070950066695456ae9bc01518a",
+    "status": "FAIL",
+    "failedControls": [
+      "agent automation assist early diagnostics",
+      "external knowledge intake routing",
+      "corpus completeness and report integrity",
+      "corpus-to-knowledge-map reconciliation"
+    ],
+    "correction": "packet disclosure/literals only;no checker semantics changed",
+    "independentCauseClaim": "early diagnostics repeats corpus failure;four failed controls are not four distinct causal defects"
+  }
+}
