@@ -1,0 +1,169 @@
+{
+  "schemaVersion": "cvf.prefeasDispatchDesign.v1",
+  "status": "DESIGN_ACCEPTED_IMPLEMENTATION_NOT_RUN",
+  "planningHead": "c7ab6149d339157678bfac6a87864772ba026b12",
+  "operatorScopeSelection": "Guard preapproval theo learning vua audit",
+  "role": "LOCAL_INTERNAL_AGENT_DISPATCHER",
+  "workerRole": "INTERNAL_AGENT",
+  "decisionOwner": "LOCAL",
+  "materialPaths": [
+    "docs/baselines/CVF_GC018_PREFEAS_C1_2026-10-08.md",
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_PREFEAS_C1_2026-10-08.md",
+    "docs/reference/preapproval_feasibility/README.md",
+    "docs/reviews/evidence/cvf-prefeas-c1-dispatch-design-2026-10-08.json"
+  ],
+  "workerAllowedPaths": [
+    "governance/compat/preapproval_feasibility_contract.py",
+    "governance/compat/check_preapproval_feasibility.py",
+    "governance/compat/run_preapproval_feasibility_gate.py",
+    "governance/compat/test_check_preapproval_feasibility.py",
+    "governance/compat/agent_autorun_command_catalog.py",
+    "governance/compat/local_governance_hook_catalog_pre_commit.py",
+    "governance/compat/local_governance_hook_catalog_reviewer_fast.py",
+    "governance/compat/test_run_agent_autorun_workflow_gate.py",
+    "docs/reference/CVF_GOVERNED_WORK_LIFECYCLE_AND_DESIGN_CONTROL_STANDARD_2026-06-11.md",
+    "docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md",
+    "docs/reviews/CVF_PREFEAS_C1_WORKER_RETURN_2026-10-08.md",
+    "docs/reviews/evidence/cvf-prefeas-c1-worker-2026-10-08.json"
+  ],
+  "sourcePins": [
+    {
+      "path": "docs/reference/CVF_GOVERNED_WORK_LIFECYCLE_AND_DESIGN_CONTROL_STANDARD_2026-06-11.md",
+      "sha256": "0ade81390e905a5bc581296b99ba9a9728b6042f45c660224e325b197b83e283",
+      "readDisposition": "TARGETED_NAMED_SECTIONS"
+    },
+    {
+      "path": "docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md",
+      "sha256": "359af842b69a9059ae94e5fb311c08c1f98f1a5df62e2a3d350d9b8b2ff61b19",
+      "readDisposition": "TARGETED_NAMED_SECTIONS"
+    },
+    {
+      "path": "governance/compat/check_semantic_convergence_control.py",
+      "sha256": "94d4a26f130f5fd20eefa54871e3533e9755164dfc8204864e7f555f211352e9",
+      "readDisposition": "TARGETED_NAMED_SECTIONS"
+    },
+    {
+      "path": "governance/compat/agent_autorun_command_catalog.py",
+      "sha256": "8ed0633e021e2035157745dacfb82449873a9a99ae7456becf74bdac7e74c0ab",
+      "readDisposition": "TARGETED_NAMED_SECTIONS"
+    },
+    {
+      "path": "governance/compat/local_governance_hook_catalog_pre_commit.py",
+      "sha256": "8f425ebf483ebd26a2979e32524bc92b1a798ab52e7123f50b9711300cecbf24",
+      "readDisposition": "TARGETED_NAMED_SECTIONS"
+    },
+    {
+      "path": "governance/compat/local_governance_hook_catalog_reviewer_fast.py",
+      "sha256": "464df55fd17f5a18063fdf8c2dae3ae20c9a91ff26ae1c5a023cc410ee1cad31",
+      "readDisposition": "TARGETED_NAMED_SECTIONS"
+    },
+    {
+      "path": "governance/compat/test_run_agent_autorun_workflow_gate.py",
+      "sha256": "ab3f4f01edf198f0a263cdee27967ca6c4a5c03c6b0bc19e77ab98e2487a2d32",
+      "readDisposition": "TARGETED_NAMED_SECTIONS"
+    },
+    {
+      "path": "docs/reference/CVF_NCR_C1_S1_APPROVAL_DISPATCH_DISPOSITION_2026-10-08.md",
+      "sha256": "d998ca001303859f1e694c23451b7fa473b145e198e7bba045fac593288e3f01",
+      "readDisposition": "TARGETED_NAMED_SECTIONS"
+    }
+  ],
+  "packetPins": [
+    {
+      "path": "docs/baselines/CVF_GC018_PREFEAS_C1_2026-10-08.md",
+      "sha256": "75ec83ce9b4528477f6ca2b82dfc52b913a9ab9e11ec1dd9bc444935b5fbb8a3"
+    },
+    {
+      "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_PREFEAS_C1_2026-10-08.md",
+      "sha256": "9510f4846a8cb22605fb21537ee1ad0c56560e9dea69d9dab0c70bb7db4d2f95"
+    },
+    {
+      "path": "docs/reference/preapproval_feasibility/README.md",
+      "sha256": "6a581e3cd5a50932cd6edb5bfa1ae547b7b8443c5d5471a2a776f1505247fa2a"
+    }
+  ],
+  "semanticObjectProbe": {
+    "entrypoint": "check_semantic_convergence_control.diagnose_file",
+    "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_PREFEAS_C1_2026-10-08.md",
+    "requireBlock": true,
+    "blockCount": 1,
+    "isClean": true,
+    "violations": [],
+    "object": {
+      "schemaVersion": "cvf.semanticConvergenceControl.v1",
+      "problemKey": "preapproval-feasibility-control",
+      "chainMode": "INITIAL",
+      "chainOrdinal": 0,
+      "predecessor": null,
+      "blockerDelta": {
+        "prior": [],
+        "resolved": [],
+        "retained": [],
+        "new": [],
+        "reopened": [],
+        "current": []
+      },
+      "resolutionEvidence": {},
+      "counters": {
+        "partialReadyClosures": 0,
+        "reviewerScopeExpansions": 0,
+        "sameClaimCorrections": 0,
+        "nonDecreasingBlockerTransitions": 0
+      },
+      "claims": [],
+      "requiredDisposition": "CONTINUE_BOUNDED",
+      "successorScope": "INITIAL_BOUNDED"
+    },
+    "claimBoundary": "actual initial governance packet validation;not video successor or new guard proof"
+  },
+  "authoringCorrections": [
+    {
+      "log": ".cvf/runtime/prefeas-c1-authoring-gate.log",
+      "result": "FAIL",
+      "defects": [
+        "baseline evidence heading",
+        "reference Purpose heading",
+        "dated owner classification row",
+        "Worker return path literal",
+        "delta receipt/action enum literals"
+      ],
+      "repair": "packet-only corrections;no checker modification",
+      "sha256": "f84f12f0dd526b9b821e5a31d64bb16f1d6e3c5dc2ea5895bd04635a8c705aaa"
+    },
+    {
+      "log": ".cvf/runtime/prefeas-c1-authoring-fixed.log",
+      "result": "FAIL",
+      "defects": [
+        "baseline decision heading lost during evidence-heading correction"
+      ],
+      "repair": "restored explicit baseline decision section;focused structural check PASS",
+      "sha256": "b171520f7d2221671b4806206a0f4daf5488a92e011818f6b3053ee516e0337a"
+    }
+  ],
+  "collision": {
+    "dispatcherPathsAbsentBeforeWrite": [
+      "docs/baselines/CVF_GC018_PREFEAS_C1_2026-10-08.md",
+      "docs/work_orders/CVF_AGENT_WORK_ORDER_PREFEAS_C1_2026-10-08.md",
+      "docs/reference/preapproval_feasibility/README.md",
+      "docs/reviews/evidence/cvf-prefeas-c1-dispatch-design-2026-10-08.json"
+    ],
+    "newPythonPathsAbsentBeforeWrite": [
+      "governance/compat/preapproval_feasibility_contract.py",
+      "governance/compat/check_preapproval_feasibility.py",
+      "governance/compat/run_preapproval_feasibility_gate.py",
+      "governance/compat/test_check_preapproval_feasibility.py"
+    ],
+    "existingCodeInputsPresent": [
+      "governance/compat/agent_autorun_command_catalog.py",
+      "governance/compat/local_governance_hook_catalog_pre_commit.py",
+      "governance/compat/local_governance_hook_catalog_reviewer_fast.py",
+      "governance/compat/test_run_agent_autorun_workflow_gate.py"
+    ],
+    "search": "rg preapproval/PREFEAS-C1 docs CVF_SESSION governance/compat;existing learning only,no equivalent guard"
+  },
+  "machineImplementation": "NOT_IMPLEMENTED",
+  "actualPreapprovalCallerProof": "NOT_RUN_WORKER_REQUIRED",
+  "effectAdmission": false,
+  "sourceS1Held": true,
+  "publicExportDisposition": "DEFERRED_PRIVATE_ONLY"
+}
