@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Current NCR Continuation
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `15b0cf6a8fd5ff4efc8c546126aa1797488a7565`. Material parent anchor for the dedicated continuity synchronization commit.
+Current HEAD recorded for this handoff: `48600e77f648ef452d39f512bc825c7918fb24b7`. Material parent anchor for the dedicated continuity synchronization commit.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -9,11 +9,11 @@ Status: ACTIVE
 Current continuation only. Root AGENTS.md and canonical routing owners retain full rules.
 Closed history is preserved byte-for-byte at `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V63_PRE_NCR_COMPACTION_2026-10-07.md` (SHA256 `54801fdcf14e9abe17592352ec3c69a0b0e855632991af0caacac7b65252ccba`); it is NOT_ACTIVE_AUTHORITY and not default startup reading.
 ## Scope / Target / Owner Boundary
-Role: Local maintainer/reviewer/publisher/session-sync;phase:public-safe external-agent protocol projection and packet refresh;decision owner=operator for publication;private implementation remains local.
-Operator request (2026-10-09): push provenance and public-safe CVF guidance, then refresh the operator External Agent packet; keep private provenance evidence out of public sync.
+Role: Local INTERNAL_AGENT document maintainer/verifier/session-sync;phase:bounded HTML delivery;decision owner=operator for final content acceptance;private implementation remains local.
+Operator request (2026-10-09): accepted the audit proposal to reconcile the current HTML, verify changes, record bounded learning evidence and synchronize continuity. Earlier publication completed at 3cfc3208e; no new push/public action.
 Remote tracking branch: `origin/main`. Exact remote SHA must be derived live from git when needed; this handoff records no assumed current remote SHA. External agent memory files: non-canonical convenience only.
 ## Startup Acknowledgment
-Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`;handoff=`AGENT_HANDOFF_V63_2026-09-18.md`;next=finish canonical provenance push, then review learning application evidence from the next eligible dispatch;role=Local maintainer/reviewer/publisher/session-sync;decision owner=operator for publication;parked checkpoint=R2 source/native/S2-S9/provider/deploy/P11;no automatic source successor.
+Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`;handoff=`AGENT_HANDOFF_V63_2026-09-18.md`;next=operator content review of reconciled HTML;role=Local INTERNAL_AGENT document maintainer/verifier/session-sync;phase=bounded Local delivery;decision owner=operator for final content acceptance;parked checkpoint=R2 source/native/S2-S9/provider/deploy/P11;no automatic successor.
 ## Current Mode
 `cvf_ncr_p10_closed_p11_parked`. P10 package remains `ACTIVE_PRODUCTION_RUNTIME`; P11 parked. Latest closed learning-history wave: `LHW24`.
 Current NIS-T1J is CLOSED_PASS_BOUNDED with no automatic successor; NCR consumer maintenance is separately operator-authorized.
@@ -25,7 +25,8 @@ PREFEAS-C1 CLOSED_PASS_BOUNDED per docs/reviews/CVF_PREFEAS_C1_COMPLETION_2026-1
 Public guidance `docs/guides/CVF_EXTERNAL_AGENT_ROUND_TRIP_KIT.md` is live at `ab714ed7f20a224c6022cf133b26750347a2fc9e`; the operator packet snapshot was refreshed from verified live public main. Only process guidance was exported; private enforcement remains local and learning application remains `NOT_APPLIED`.
 
 ## Accepted NCR Evidence And Continuation
-Forward learning application maintenance 7c708d6acae554f757b0f028e27e48cae9ab34a0:docs/reviews/CVF_LEARNING_APPLICATION_BINDING_COMPLETION_2026-10-09.md;docs/reviews/evidence/cvf-learning-application-binding-2026-10-09.json;existing F2G/PLL owners enforce forward enrollment and dispatch binding,67 PASS/1 skip. NCR-LEARNING-APPLICATION-OBSERVABILITY remains OPEN/NOT_RETURNED/NOT_APPLIED;no semantic or universal compliance claim,no source acceptance or successor. Maintenance authority:docs/baselines/CVF_GC018_LEARNING_APPLICATION_BINDING_2026-10-09.md.
+HTML reconciliation 48600e77f: docs/reviews/CVF_NCR_W05_SELECTED_CHAIN_READINESS_2026-10-07.md;docs/reviews/evidence/cvf-video-storyboard-reconciliation-2026-10-09.json;current24571B/original19136B/before26084B separately retained;scene body exact MATCH;desktop/mobile PASS;same Local actor,zero provider calls. Final content PENDING_OPERATOR;learning RETURNED/NOT_APPLIED,Local application candidate only;actual dispatch measurement remains pending. R2/source/native/production checkpoints unchanged.
+Forward learning application maintenance 7c708d6acae554f757b0f028e27e48cae9ab34a0:docs/reviews/CVF_LEARNING_APPLICATION_BINDING_COMPLETION_2026-10-09.md;docs/reviews/evidence/cvf-learning-application-binding-2026-10-09.json;existing F2G/PLL owners enforce forward enrollment and dispatch binding,67 PASS/1 skip. NCR-LEARNING-APPLICATION-OBSERVABILITY now OPEN/RETURNED/NOT_APPLIED via the newer Local HTML reception receipt;no semantic or universal compliance claim,no source acceptance or successor. Maintenance authority:docs/baselines/CVF_GC018_LEARNING_APPLICATION_BINDING_2026-10-09.md.
 R2 finalized Local result 5c1c5bf30525c091deda533b92608fe76a13ad21:docs/reviews/CVF_NCR_C1_S1_CONSOLIDATED_REPAIR_COMPLETION_2026-10-09.md;original COMPLETE_PENDING_REVIEW worker bytes retained;technical10/12/13 checks positive;full fulfillment blocked on historical preparation/receipt-read deviations. Gate receipt allowlist attributed to dispatcher. Existing lifecycle/learning updated for feasible transport,total cost and scope discipline. Active workerordinal5/current6/streak1/cumulative0/0/1 preserved,no resolution or successor. Root created and attempt spent;older release notes below are historical,not next-execution authority.
 Approved R2 dispatch d9cf106be755b5a312cb751d257b666e8924a8c4:docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_C1_S1_CONSOLIDATED_REPAIR_2026-10-08.md;operator exact root/16-source/two-return approval recorded in paired baseline;READY/currentAuthority bound. Corrected18-path allowlist/manifest;final exact FEASIBLE and70 reviewer-fast PASS. Manual worker only after actual committed bound pre-dispatch PASS;worker/root not started. Ordinal4 retains4/derived streak0/cumulative0/0/1,old failed source/custody preserved;new worker independent review/custody pending.
 Consolidated S1 repair proposal f1859537d62c2023a4728cd4450ebf05f3d2a529:docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_C1_S1_CONSOLIDATED_REPAIR_2026-10-08.md;exact caller FEASIBLE/70 reviewer-fast PASS,not source release. Current Local accepts only completed integrated static-review task;prospective ordinal4 retains4/derived streak0,cumulative0/0/1 unchanged;active ordinal3 unchanged. Operator exact new root/16-source-path attempt approval pending;old roots/blocked attempt preserved. MFRP old machine-clean/trusted-block marker adjudicated with written reviewer evidence;old row/blocked outcome retained.
@@ -90,7 +91,7 @@ Receiving agents clarify incomplete ideas according to the existing lifecycle st
 Consume returned evidence under MFRP P4-C1: EVALUATE_RETURNED_EVIDENCE_NOT_RECREATE_IMPLEMENTATION. A rerun needs a named contradiction/changed consumer,information gain and cost reason.
 Alibaba calls are authorized for meaningful scoped tests; no other provider call,Claude dispatch,public push,deployment or actual-data cutover is inferred.
 ## Next Allowed Move
-PROGRAM_ID=CVF-CORE; NEXT_ACTION_CLASS=LEARNING_APPLICATION; BATCH_ID=CVF-LEARNING-APPLICATION-20261009. Public guidance is live at ab714ed7; the external packet is refreshed against live public main. Finish the canonical provenance push for this HEAD. Then the next eligible work order binds the active learning control and returns application evidence for Local review. Private enforcement remains provenance-only; no universal adherence claim or NCR successor. Source/native/S2-S9/provider/deploy/P11 stay parked; LHW24 retained.
+PROGRAM_ID=CVF-CORE; NEXT_ACTION_CLASS=OPERATOR_CONTENT_REVIEW; BATCH_ID=CVF-HTML-REVIEW-PACKET-20261009. The reconciled 2026-10-09 private HTML is ready for operator content review; exact scene body retained and desktop/mobile presentation verified. Learning reception RETURNED; project application NOT_APPLIED pending the first eligible real work-order dispatch/result review. Provenance was synchronized at 3cfc3208e before this local package; no repeat push or new public action inferred. Source/native/S2-S9/provider/deploy/P11 and R2 counters remain parked; LHW24 retained. No automatic successor.
 ## Active Boundary
 T3B has a Local-verified active v1 specification. Party B is verified and T3C-C1 tooling accepted at `db78c87df`; T3C-C2 and Party C are verified. T3D-C1 tooling is accepted at `9ed844c2a` without source. T3D-C0-R1 closed at `2fffa1ef7`. T3D-C3 was accepted bounded at `88137e9a2`, but actual-mode prepare attempts failed before Party B/C execution; authorized cleanup removed the failed root and discarded unaccepted worker changes. G1 stopped, G2-G6 parked, and G7 research closed at `660601f0e` with `ADAPT_EXISTING_HANDOFF_ONLY`. Evidence-join sufficiency stays WATCH; no implementation successor exists. Rejected T2 paths remain archived; HRLTP-T2 paused.
 Post-G7 Local source intake and Jev P0 are closed at material commit `9ac0ee8e59fa041ddaa93d725796c509400f257a`. The audit records 32 READ plus 8,093 DEFERRED paths. Jev adds fail-closed decision-context binding, incomplete candidate-space escape, and `EVIDENCE_ONLY` judgment authority to the existing ASSF owner. Proof: TypeScript 84/84, Python 61/61, compile PASS, governance 90/90. G1-G7 remain closed.
@@ -116,25 +117,25 @@ The historic provider/live parked line applies to those stopped lanes; it does n
 Q001/Q004 actual-data source/writer,custody,retention/RPO/RTO/cost checkpoints are action-specific; do not require a user-supplied ledger copy for unrelated fresh isolated development.
 NCR send/B2 STOP and S05/C1 remain; IAB unavailable; repo Playwright Chromium present; vision/full P04/full release remain unproved. No autonomous P11/public/deploy activation.
 ## Core Guard Self-Protection Authorization
-Authorized guard-maintenance scope: record the operator-authorized public/provenance publication and refresh the External Agent packet; protect only the seven continuity paths below. Protected paths: `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/cvfNcrConsolidatedLocalFoundation20261006.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`. Operator authorization: operator requested measurable learning application controls;standing dedicated continuity maintenance. Rollback boundary:seven continuity paths,original worker return/evidence and old source chains/approvals preserved.
+Authorized guard-maintenance scope: seven-path dedicated continuity for operator-approved HTML reconciliation and truthful learning receipt states. Protected paths: `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/cvfNcrConsolidatedLocalFoundation20261006.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`. Operator authorization: accepted audit proposal explicitly includes continuity synchronization. Rollback boundary: seven continuity paths only; original R2 source/returns/counters and historical HTML receipts preserved. No new source,provider,public or production effect.
 ## Agent Operation Trace Block
 
 | Field | Value |
-| --- | --- |
-| Actor | Local INTERNAL_AGENT reviewer/closer |
+|---|---|
+| Actor | Local INTERNAL_AGENT document maintainer/verifier/session-sync |
 | Provider or surface | private shared CVF workspace |
-| Session or invocation | learning-application-publication-continuity-20261009 |
+| Session or invocation | html-version-reconciliation-continuity-20261009 |
 | Working directory | repository root |
-| Command or tool surface | source continuity,actual material SHA marker,canonical generator and two-phase helper |
+| Command or tool surface | source continuity, actual material SHA, canonical generator and two-phase helper |
 | Target paths | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/cvfNcrConsolidatedLocalFoundation20261006.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Allowed scope source | operator explicitly requested provenance/public push and External Agent folder refresh; standing continuity maintenance |
-| Before status evidence | material 15b0cf6a8fd5ff4efc8c546126aa1797488a7565; public main ab714ed7f20a224c6022cf133b26750347a2fc9e; packet refresh receipt verified; seven continuity paths only |
-| After status evidence | public-safe guide merged at ab714ed7f20a224c6022cf133b26750347a2fc9e; current external packet refreshed against live public main; provenance push remains in current authorized route |
-| Diff evidence | git diff --name-status,local custody hashes and exact staged set |
-| Approval boundary | public-safe protocol guidance only; private checker/registry/evidence stays provenance-only; R2 source/native/runtime/provider/deploy effects held |
-| Claim boundary | offline declared-state route only |
-| Agent type | INTERNAL_AGENT reviewer/closer |
-| Invocation ID | learning-application-publication-continuity-20261009 |
+| Allowed scope source | operator accepted HTML audit/reconciliation/continuity proposal |
+| Before status evidence | material 48600e77f648ef452d39f512bc825c7918fb24b7; prior upstream synchronized at 3cfc3208e; worktree clean |
+| After status evidence | current HTML content-review checkpoint; learning RETURNED/NOT_APPLIED; source/native/media held |
+| Diff evidence | exact seven-path Git diff and generated aggregate checks |
+| Approval boundary | Local document continuity; final operator content acceptance remains pending |
+| Claim boundary | one versioned Local HTML result; no independent review, real dispatch application, media readiness or new push |
+| Agent type | INTERNAL_AGENT |
+| Invocation ID | html-version-reconciliation-continuity-20261009 |
 | Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/cvfNcrConsolidatedLocalFoundation20261006.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/cvfNcrConsolidatedLocalFoundation20261006.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Manifest delta | MATCH |

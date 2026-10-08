@@ -994,7 +994,7 @@
       ],
       "oldRootsFrozen": true
     },
-    "nextAllowedMove": "PROGRAM_ID=CVF-CORE; NEXT_ACTION_CLASS=LEARNING_APPLICATION; BATCH_ID=CVF-LEARNING-APPLICATION-20261009. Public guidance is live at ab714ed7; the external packet is refreshed against live public main. Finish the canonical provenance push for this HEAD. Then the next eligible work order binds the active learning control and returns application evidence for Local review. Private enforcement remains provenance-only; no universal adherence claim or NCR successor. Source/native/S2-S9/provider/deploy/P11 stay parked; LHW24 retained.",
+    "nextAllowedMove": "PROGRAM_ID=CVF-CORE; NEXT_ACTION_CLASS=OPERATOR_CONTENT_REVIEW; BATCH_ID=CVF-HTML-REVIEW-PACKET-20261009. The reconciled 2026-10-09 private HTML is ready for operator content review; exact scene body retained and desktop/mobile presentation verified. Learning reception RETURNED; project application NOT_APPLIED pending the first eligible real work-order dispatch/result review. Provenance was synchronized at 3cfc3208e before this local package; no repeat push or new public action inferred. Source/native/S2-S9/provider/deploy/P11 and R2 counters remain parked; LHW24 retained. No automatic successor.",
     "s1R2LocalDisposition20261009": {
       "materialCommit": "5c1c5bf30525c091deda533b92608fe76a13ad21",
       "review": "docs/reviews/CVF_NCR_C1_S1_CONSOLIDATED_REPAIR_COMPLETION_2026-10-09.md",
@@ -1039,11 +1039,11 @@
       "status": "ACCEPTED_BOUNDED_STRUCTURAL",
       "implementationState": "IMPLEMENTED_BOUNDED",
       "projectResolutionState": "OPEN",
-      "returnDeliveryState": "NOT_RETURNED",
+      "returnDeliveryState": "RETURNED",
       "projectApplicationState": "NOT_APPLIED",
       "focusedTestsPassed": 67,
       "platformDependentTestsSkipped": 1,
-      "nextApplicationEvidence": "First eligible changed work order must carry pinned action and verification plan; separate valid delivery/application receipts and Local review remain required.",
+      "nextApplicationEvidence": "Local reception documented; bounded Local document APPLICATION receipt retained as candidate only. First eligible actual work-order dispatch and returned-result review remains required; no projected-plan or document-only promotion.",
       "allHistoricalLearningsEnrolled": false,
       "universalAgentComplianceProven": false,
       "semanticApplicationProven": false,
@@ -1061,6 +1061,31 @@
       "publicClaimBoundary": "Process guidance only; no claim that agents universally receive, understand or follow learning rules.",
       "privateCheckerExported": false,
       "learningApplication": "NOT_APPLIED"
+    },
+    "htmlVersionReconciliation20261009": {
+      "materialCommit": "48600e77f648ef452d39f512bc825c7918fb24b7",
+      "owner": "docs/reviews/CVF_NCR_W05_SELECTED_CHAIN_READINESS_2026-10-07.md",
+      "evidence": "docs/reviews/evidence/cvf-video-storyboard-reconciliation-2026-10-09.json",
+      "authorization": "docs/reviews/evidence/cvf-video-storyboard-reconciliation-2026-10-09-authorization.json",
+      "artifact": "docs/reviews/evidence/cvf-video-storyboard-reconciliation-2026-10-09.html",
+      "runtimeCopy": ".cvf/runtime/cvf-video-storyboard-review-20261008/CVF_VIDEO_STORYBOARD_REVIEW.html",
+      "status": "VERIFIED_LOCAL_HTML_READY_FOR_OPERATOR_CONTENT_REVIEW",
+      "sha256": "af6a983729afd1f0fac7d80e3d154ec7ee91cc9addf5034df0e1ae3a0de39502",
+      "bytes": 24571,
+      "originalAndBeforeSnapshotsRetained": true,
+      "sceneBodyExactMatch": true,
+      "desktopMobilePresentation": "PASS_BOUNDED",
+      "learningDelivery": "RETURNED",
+      "projectApplication": "NOT_APPLIED",
+      "applicationReceiptDisposition": "LOCAL_DOCUMENT_CANDIDATE_NOT_REAL_DISPATCH_ACCEPTANCE",
+      "sameActorVerification": true,
+      "independentAgentReview": false,
+      "finalContentAcceptance": "PENDING_OPERATOR",
+      "providerCalls": 0,
+      "runtimeAdmission": "NO_GO",
+      "successorAdmitted": false,
+      "priorProvenanceSynchronizedHead": "3cfc3208ea8bfd7f7ceb6f0ad69478a4d95c6897",
+      "publicExportDisposition": "DEFERRED_PRIVATE_ONLY"
     }
   }
 }

@@ -1,5 +1,5 @@
 {
   "stateOrder": 2980,
   "stateKey": "nextAllowedMove",
-  "value": "PROGRAM_ID=CVF-CORE; NEXT_ACTION_CLASS=LEARNING_APPLICATION; BATCH_ID=CVF-LEARNING-APPLICATION-20261009. Public guidance is live at ab714ed7; the external packet is refreshed against live public main. Finish the canonical provenance push for this HEAD. Then the next eligible work order binds the active learning control and returns application evidence for Local review. Private enforcement remains provenance-only; no universal adherence claim or NCR successor. Source/native/S2-S9/provider/deploy/P11 stay parked; LHW24 retained."
+  "value": "PROGRAM_ID=CVF-CORE; NEXT_ACTION_CLASS=OPERATOR_CONTENT_REVIEW; BATCH_ID=CVF-HTML-REVIEW-PACKET-20261009. The reconciled 2026-10-09 private HTML is ready for operator content review; exact scene body retained and desktop/mobile presentation verified. Learning reception RETURNED; project application NOT_APPLIED pending the first eligible real work-order dispatch/result review. Provenance was synchronized at 3cfc3208e before this local package; no repeat push or new public action inferred. Source/native/S2-S9/provider/deploy/P11 and R2 counters remain parked; LHW24 retained. No automatic successor."
 }
