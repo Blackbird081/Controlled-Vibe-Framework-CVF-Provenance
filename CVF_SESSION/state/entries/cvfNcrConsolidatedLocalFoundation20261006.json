@@ -8,7 +8,7 @@
     "reviewManifest": "docs/reviews/evidence/cvf-ncr-local-review-manifest-2026-10-06.json",
     "reviewManifestDisposition": "Historical pre-commit 49-path snapshot; committed disposition recorded here.",
     "verification": "Recorded scoped tests, Docker/storage/Web receipts and real Alibaba observations consumed; material helper and repository pre-commit hooks passed. No independent reviewer, browser UX, actual-data cutover or release-quality governance claim.",
-    "nextAction": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=REVIEW; BATCH_ID=CVF-NCR-VIDEO-PRODUCTION-PREPARATION-20261008. Preparation CLOSED_PASS_BOUNDED by docs/reviews/CVF_NCR_VIDEO_PRODUCTION_PREPARATION_COMPLETION_2026-10-08.md; kit docs/reference/CVF_NCR_VIDEO_PRODUCTION_PREPARATION_KIT_2026-10-08.md; durable Local evidence docs/reviews/evidence/cvf-ncr-video-production-preparation-local-review-2026-10-08.json. Worker return consumed once; no redispatch or automatic successor. Required independent positive/three negatives pass; grouped malformed-input correction,37 tests/eight CLI cases pass. Complete manifest remains runtime NO_GO. Existing accepted ten-scene storyboard reused;S05 exact source bytes retained. Operator final storyboard/media review pending;production needs separately admitted rights,artifact inventory,offline/native/resource controls and executable prerequisites. No TTS/render/install/network/provider/media effects authorized by preparation closure. Old C1 metadata/source-relay STOP identities,counters and no-retry boundary unchanged. Prior HTML19136 bytes,DRAFT_UNACCEPTED. Existing candidate9/9,W05 HTTP/browser receipts consumed,no replay/full UX or production claim. Q001/Q004 actual-data source/writer,custody,retention/RPO/RTO/cost stay action-specific;no user-ledger-copy prerequisite for isolated development. Alibaba meaningful test authority retained but not invoked here. Other providers,live pilot,actual-data,push/deploy/P11/CCMA/public remain parked. IAB unavailable;repo Playwright observed separately. NCR alignment closed with F1 LOW;NIS-T1J closed no successor;LHW24 closed. Group/audit/value autonomy;hold consequential choices only.",
+    "nextAction": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=REVIEW; BATCH_ID=CVF-NCR-VIDEO-PRODUCTION-PREPARATION-20261008. Material a50514d45f07d2658c2834ac9b5d789521db149b;preparation CLOSED_PASS_BOUNDED by docs/reviews/CVF_NCR_VIDEO_PRODUCTION_PREPARATION_COMPLETION_2026-10-08.md; kit docs/reference/CVF_NCR_VIDEO_PRODUCTION_PREPARATION_KIT_2026-10-08.md; durable Local evidence docs/reviews/evidence/cvf-ncr-video-production-preparation-local-review-2026-10-08.json. Worker return consumed once; no redispatch or automatic successor. Required independent positive/three negatives pass; grouped malformed-input correction,37 tests/eight CLI cases pass. Complete manifest remains runtime NO_GO. Existing accepted ten-scene storyboard reused;S05 exact source bytes retained. Operator final storyboard/media review pending;production needs separately admitted rights,artifact inventory,offline/native/resource controls and executable prerequisites. No TTS/render/install/network/provider/media effects authorized by preparation closure. Old C1 metadata/source-relay STOP identities,counters and no-retry boundary unchanged. Prior HTML19136 bytes,DRAFT_UNACCEPTED. Existing candidate9/9,W05 HTTP/browser receipts consumed,no replay/full UX or production claim. Q001/Q004 actual-data source/writer,custody,retention/RPO/RTO/cost stay action-specific;no user-ledger-copy prerequisite for isolated development. Alibaba meaningful test authority retained but not invoked here. Other providers,live pilot,actual-data,push/deploy/P11/CCMA/public remain parked. IAB unavailable;repo Playwright observed separately. NCR alignment closed with F1 LOW;NIS-T1J closed no successor;LHW24 closed. Group/audit/value autonomy;hold consequential choices only.",
     "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
     "approvedContextContinuation": {
       "materialCommit": "594e2c1b2cbc7171fe77ab849782e5de085b5b8c",
@@ -629,7 +629,7 @@
       "claimBoundary": "Actual private documentation exported locally; no governance receipt, semantic governance, audio/MP4, renderer admission, rights clearance or final operator acceptance."
     },
     "videoProductionPreparation20261008": {
-      "materialCommit": "3a8298cf3cf01537f6abcb970ad504d4de138f2f",
+      "materialCommit": "a50514d45f07d2658c2834ac9b5d789521db149b",
       "baseline": "docs/baselines/CVF_GC018_NCR_VIDEO_PRODUCTION_PREPARATION_2026-10-08.md",
       "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_VIDEO_PRODUCTION_PREPARATION_2026-10-08.md",
       "inputs": "docs/reviews/evidence/cvf-ncr-video-production-preparation-inputs-2026-10-08.json",
@@ -641,7 +641,8 @@
       "completionReview": "docs/reviews/CVF_NCR_VIDEO_PRODUCTION_PREPARATION_COMPLETION_2026-10-08.md",
       "localReviewEvidence": "docs/reviews/evidence/cvf-ncr-video-production-preparation-local-review-2026-10-08.json",
       "verification": "37 tests and eight CLI cases PASS;required independent four cases PASS;malformed input cluster repaired",
-      "dispatchMaterialCommit": "3a8298cf3cf01537f6abcb970ad504d4de138f2f"
+      "dispatchMaterialCommit": "3a8298cf3cf01537f6abcb970ad504d4de138f2f",
+      "continuityDisposition": "Dedicated real-material-SHA steward synchronization"
     }
   }
 }
