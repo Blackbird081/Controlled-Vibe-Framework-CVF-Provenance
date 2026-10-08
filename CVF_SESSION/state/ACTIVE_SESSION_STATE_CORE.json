@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_C1_S1_CONSOLIDATED_REPAIR_2026-10-08.md",
     "workOrderSha256": "53dea51ad767583b303861f08a07ecda31a0270308ccaa616e00d4c625d0dd64"
   },
-  "currentAuthoritySyncReason": "R2 result and orchestrator learning material5c1c5bf30525c091deda533b92608fe76a13ad21;exact released pair retained as immutable spent-attempt evidence,not repeat execution authority;active next move holds source/runtime.",
+  "currentAuthoritySyncReason": "Local learning application maintenance material 7c708d6acae554f757b0f028e27e48cae9ab34a0;existing NCR released pair retained as immutable spent-attempt evidence,not repeat execution authority;new maintenance authority docs/baselines/CVF_GC018_LEARNING_APPLICATION_BINDING_2026-10-09.md;docs/reviews/CVF_LEARNING_APPLICATION_BINDING_COMPLETION_2026-10-09.md;structural binding accepted,actual application NOT_APPLIED;source/runtime held.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
