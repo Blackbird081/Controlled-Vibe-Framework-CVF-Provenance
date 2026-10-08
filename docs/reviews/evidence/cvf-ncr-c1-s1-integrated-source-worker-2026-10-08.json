@@ -1,0 +1,937 @@
+{
+  "schemaVersion": "cvf.ncrC1S1.integratedSourceWorkerEvidence.v1",
+  "batchId": "CVF-NCR-C1-OFFLINE-PRODUCTION-READINESS-20261008",
+  "executionBaseHead": "4eb79b34ca4422f598cd2a052ca2698283b71230",
+  "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_C1_S1_INTEGRATED_SOURCE_2026-10-08.md",
+  "interfaceVersion": "local-supervisor-source@0.3.0",
+  "envelopeVersion": "local-supervisor-envelope@2",
+  "status": "SOURCE_CANDIDATE_ONLY",
+  "claimLevel": "PASS_STATIC_ONLY",
+  "workerMode": "WORKER_MUST_NOT_COMMIT",
+  "sourceRoot": "D:\\UNG DUNG AI\\TOOL AI 2026\\CVF-NCR-C1-CONTROL-SOURCE-S1-20261008",
+  "releaseIdentityChecks": {
+    "head": "4eb79b34ca4422f598cd2a052ca2698283b71230",
+    "statusShort": "",
+    "authority": {
+      "docs/baselines/CVF_GC018_NCR_C1_S1_INTEGRATED_SOURCE_2026-10-08.md": {
+        "sha256": "dbddfc4bb992394fd80541e40420e3340bece3ad9399224c310263a78fdaf8b2",
+        "bootstrapSha256": "dbddfc4bb992394fd80541e40420e3340bece3ad9399224c310263a78fdaf8b2",
+        "match": true
+      },
+      "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_C1_S1_INTEGRATED_SOURCE_2026-10-08.md": {
+        "sha256": "62f7f7f6d6450363871f47e73b10fb9bf27c9c0069c927def5d8da70d6d2ad9b",
+        "bootstrapSha256": "62f7f7f6d6450363871f47e73b10fb9bf27c9c0069c927def5d8da70d6d2ad9b",
+        "match": true
+      }
+    },
+    "preDispatchReceipt": {
+      "path": ".cvf/runtime/ncr-s1-final-release-receipts/pre-dispatch.json",
+      "sha256": "938969c29d127ef8a437d62e87846f8cbf324a726f1849685b10b5834a68313e",
+      "status": "PASS",
+      "phase": "pre-dispatch",
+      "base": "4eb79b34ca4422f598cd2a052ca2698283b71230",
+      "head": "4eb79b34ca4422f598cd2a052ca2698283b71230",
+      "receiptDigest": "52c2b3e524248de6157c83ec4be14aefb6d797da5ce6d5b90ab1d59a06ec0735"
+    },
+    "pinnedInputs": [
+      {
+        "path": "docs/reference/CVF_NCR_C1_S1_ARCHITECTURAL_REASSESSMENT_2026-10-08.md",
+        "sha256": "e9ff0616c1c4a2e0ba65157c444589661c07787cbb2de15a4fa57159b30da335",
+        "match": true
+      },
+      {
+        "path": "docs/reference/CVF_NCR_C1_S1_APPROVAL_DISPATCH_DISPOSITION_2026-10-08.md",
+        "sha256": "d998ca001303859f1e694c23451b7fa473b145e198e7bba045fac593288e3f01",
+        "match": true
+      },
+      {
+        "path": "docs/reference/CVF_NCR_S05_SUPERVISOR_SOURCE_CONTRACT_R1_2026-10-03.md",
+        "sha256": "23a041243cdf87a4a4cf8aaecd5313d0d3cf70900359b26996bfe4c7a4270f98",
+        "match": true
+      },
+      {
+        "path": "docs/reference/CVF_NCR_C1_MANIFEST_CONTROL_SOURCE_PROPOSAL_2026-10-08.json",
+        "sha256": "f69ab3a33b556409b3d5a63ce92f1d8d1d7ac0256eb4cf3e473468fafb2141e8",
+        "match": true
+      },
+      {
+        "path": "docs/reference/CVF_NCR_C1_S1_MICROSOFT_DOCS_EXECUTION_CONTRACT_2026-10-08.json",
+        "sha256": "966729278464f0928f9ff4924a4fdd7b12595daf61cbae98a623da6272a4ea63",
+        "match": true
+      },
+      {
+        "path": "docs/reference/CVF_NCR_C1_S1_MICROSOFT_DOCS_READ_RESULT_2026-10-08.json",
+        "sha256": "46ed356ebb2a77864aac46572a9e0fdd5050a86bc0066e9a8e8afc3d07e23bfd",
+        "match": true
+      },
+      {
+        "path": "docs/reference/CVF_NCR_C1_S1_MICROSOFT_DOCS_ABI_QUEUE_2026-10-08.json",
+        "sha256": "fd43ea669e04081e9aaed85daf22fd74c65cbabcc6042ec4b59d39d96e03afbd",
+        "match": true
+      },
+      {
+        "path": "docs/reference/CVF_NCR_C1_S1_MICROSOFT_DOCS_ABI_RESULT_2026-10-08.json",
+        "sha256": "b044270bfb42bc20150c5bff4e0a3c78001c33db99f7fd8708e7c3be3fccf131",
+        "match": true
+      },
+      {
+        "path": "docs/reference/CVF_NCR_C1_S1_NATIVE_ABI_SOURCE_BINDINGS_2026-10-08.json",
+        "sha256": "91b0721af4081a7cd9439172fdbd087bb43a679622df2a3b82dd8a01d3f01d49",
+        "match": true
+      },
+      {
+        "path": "docs/baselines/CVF_GC018_NCR_C1_S1_INTEGRATED_SOURCE_2026-10-08.md",
+        "sha256": "dbddfc4bb992394fd80541e40420e3340bece3ad9399224c310263a78fdaf8b2",
+        "match": true
+      },
+      {
+        "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_C1_S1_INTEGRATED_SOURCE_2026-10-08.md",
+        "sha256": "62f7f7f6d6450363871f47e73b10fb9bf27c9c0069c927def5d8da70d6d2ad9b",
+        "match": true
+      },
+      {
+        "path": "docs/reference/CVF_NCR_C1_S1_NATIVE_SOURCE_CONTRACT_2026-10-08.md",
+        "sha256": "d7259c027f85fc7ef40ac673cbdb3718ac47e23e5e26fd78f9e60c7d110fb1d8",
+        "match": true
+      },
+      {
+        "path": "docs/reference/CVF_NCR_C1_S1_NATIVE_ABI_SOURCE_BINDINGS_2026-10-08.json",
+        "sha256": "91b0721af4081a7cd9439172fdbd087bb43a679622df2a3b82dd8a01d3f01d49",
+        "match": true
+      },
+      {
+        "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_C1_S1_INTEGRATED_SOURCE_2026-10-08.json",
+        "sha256": "203da5ab59b7ac5d59182bdb6cd133584bf5d8bac16d2702453fcafd9515ed83",
+        "match": true
+      }
+    ],
+    "seedMatches": 14,
+    "snapshotMatches": 20
+  },
+  "preImplementationGate": {
+    "command": "python -B governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base 4eb79b34ca4422f598cd2a052ca2698283b71230 --head HEAD --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_C1_S1_INTEGRATED_SOURCE_2026-10-08.md --receipt-dir .cvf/runtime/ncr-c1-s1-worker/preimpl-receipts",
+    "startUtc": "2026-10-08T13:45:31Z",
+    "endUtc": "2026-10-08T13:45:48Z",
+    "exit": 0,
+    "result": "COMPLIANT",
+    "seconds": "12.63s",
+    "log": ".cvf/runtime/ncr-c1-s1-worker/pre-implementation-gate.log",
+    "logSha256": "3d79fad6f5c0e637f44aad495e0514ff3758ca984ec49c20c63059b687e00f3f",
+    "receipt": ".cvf/runtime/ncr-c1-s1-worker/preimpl-receipts/pre-implementation.json"
+  },
+  "seedCustody": [
+    {
+      "relativePath": "README.md",
+      "sha256": "6425bfca1d9213b819c9e30dd7f8f557dab677073e999649d7c3288a5a7e681a",
+      "match": true
+    },
+    {
+      "relativePath": "src/supervisor.py",
+      "sha256": "6c81e5dd4f16089a245859eddc816a48e5bba7fb97b025e9a3cdc43da8d668f3",
+      "match": true
+    },
+    {
+      "relativePath": "src/envelope_contract.py",
+      "sha256": "995faa63e9ad88b718f6a09650ce13ba7db35fc6301af855c40273b9505b8841",
+      "match": true
+    },
+    {
+      "relativePath": "src/windows_job.py",
+      "sha256": "d96fe1f9ebd7cb67f0c7c62f7415ca31d627d2be3b8c452a4945777ab0c615bd",
+      "match": true
+    },
+    {
+      "relativePath": "src/boundary_admission.py",
+      "sha256": "4694079dc067db5facbbbc36c7d1f025447205a9d06cbc5b0fba92f3a7cbdb03",
+      "match": true
+    },
+    {
+      "relativePath": "fixtures/fx_d1.py",
+      "sha256": "4b9ca0e851a80c41cb012b518a110c99afbf2aa1f86233d37e91d1c15e25158a",
+      "match": true
+    },
+    {
+      "relativePath": "fixtures/fx_m1.py",
+      "sha256": "2b4014a34f42cbab2c35a265387fc39be60e29e51cc3f0acc4d1a6e6823b1cdd",
+      "match": true
+    },
+    {
+      "relativePath": "fixtures/fx_t1.py",
+      "sha256": "80ed447868bbb9a43e74a3c7e3ce6828a931d45358b39b342c804bfbbc8214b3",
+      "match": true
+    },
+    {
+      "relativePath": "fixtures/fx_b1.py",
+      "sha256": "66769fcfef428d055241c0f3c47c32ff2698428a2ecf14afcb68cc3eb9a2f5ca",
+      "match": true
+    },
+    {
+      "relativePath": "fixtures/fx_n1.py",
+      "sha256": "5f6ca9ffe3b96033d5c35798b72bb75d944c43a7720a6d1115452d2cf12e36e3",
+      "match": true
+    },
+    {
+      "relativePath": "fixtures/fx_l1.py",
+      "sha256": "d4839a1233fbdaa0850a2e4fbf30c248589488e57d0428a0c3451fef37143b2f",
+      "match": true
+    },
+    {
+      "relativePath": "evidence/source-manifest.json",
+      "sha256": "8a1efd8a72511469752b88daff8c2ca54a9f60ae83725e569c5ff82ae6780b58",
+      "match": true
+    },
+    {
+      "relativePath": "evidence/requirement-map.json",
+      "sha256": "1e024ce7c14ef643b61cbd4c2fbdfe62a29f6bb9c4dc68f8f77849fd3c99647f",
+      "match": true
+    },
+    {
+      "relativePath": "WORKER_RETURN.md",
+      "sha256": "3d3001978772a9cdbee251902e91efec92f1f6b19c1fc769837b05220b6f3fa7",
+      "match": true
+    }
+  ],
+  "snapshotCustody": [
+    {
+      "docId": "MS-01",
+      "sha256": "7af288ed752f20281460066dc1160f0437203e94071776a4721fc8390ed53d0f",
+      "match": true
+    },
+    {
+      "docId": "MS-02",
+      "sha256": "91d5d84c894a57093a7b55a35f21488c5abf6037398a3e51e6148fce53786390",
+      "match": true
+    },
+    {
+      "docId": "MS-03",
+      "sha256": "fb817f85433434c6be901f1fb0b72b1e838c43484d98542b15bea1dfb9c00f58",
+      "match": true
+    },
+    {
+      "docId": "MS-04",
+      "sha256": "e9ba24d0d0c6ff0980cd81878221530ea8afdb08b12259486a868d4bc233e6cf",
+      "match": true
+    },
+    {
+      "docId": "MS-05",
+      "sha256": "56319d48e12c8c752e99a8d64f053c8590dc6f50bdd6568bfb11089293cad8ec",
+      "match": true
+    },
+    {
+      "docId": "MS-06",
+      "sha256": "060f1bc2c1b3f5e27913a511106b4cfb49501de4020c6295b4fedd3e49aaa64c",
+      "match": true
+    },
+    {
+      "docId": "MS-07",
+      "sha256": "490f0b520a8cc83adab65934cda96fc724eefbff9cd1a2b9d8ea2ba2cecfb3d3",
+      "match": true
+    },
+    {
+      "docId": "MS-08",
+      "sha256": "4a986295ed81c688a82e5dc3db784b78e93bd6d61248204392f402d7f2493bdc",
+      "match": true
+    },
+    {
+      "docId": "MS-09",
+      "sha256": "73de589caccfc13de6f68d6322542b7e0de7464d650be165e02ef4c784f75ced",
+      "match": true
+    },
+    {
+      "docId": "MS-10",
+      "sha256": "00cf35225b08394d968fd20f2432b5c28b2b5a5d8764e58392e348132176491e",
+      "match": true
+    },
+    {
+      "docId": "MS-11",
+      "sha256": "382b76bdc433fda8f99431d1b2733eec111a1307db3834dc55050fb6a4ae91c3",
+      "match": true
+    },
+    {
+      "docId": "MS-12",
+      "sha256": "3f96064b21895406c6d94df4ed55ec3097d415a1d433429dbc9476410b399868",
+      "match": true
+    },
+    {
+      "docId": "MS-13",
+      "sha256": "80f14988240942cd7e72359a21b70de328f5e2d86ae460e4f33fd5f30e90cd40",
+      "match": true
+    },
+    {
+      "docId": "MS-14",
+      "sha256": "1b5353e26d87a2da038db77e34c2318b3eb5527c893747fb21cdc5e144ee6879",
+      "match": true
+    },
+    {
+      "docId": "MS-15",
+      "sha256": "26a81257575f40c1fb4ab2396747fd3d85ec4ec4d09ec9f343c6a0078900969f",
+      "match": true
+    },
+    {
+      "docId": "MS-16",
+      "sha256": "2ca3157c7548954f0676b0ad73e81e3282cb0b17ba3eb8986730791524db30b3",
+      "match": true
+    },
+    {
+      "docId": "MS-17",
+      "sha256": "6fc260fae512530908555ceeb1a86d6ea3624983304a5150a466a2168cffc93e",
+      "match": true
+    },
+    {
+      "docId": "MS-18",
+      "sha256": "98ca85fc84591efdb450bb6953920b579fced6422b19a5412fccc30921a1fff6",
+      "match": true
+    },
+    {
+      "docId": "MS-19",
+      "sha256": "f504e7ec9b9ae35d859e41f3b41787609a5e6d9afaa3615975fd1affcc7bc8b9",
+      "match": true
+    },
+    {
+      "docId": "MS-20",
+      "sha256": "28ba6d32d5086e1e018013b368f7272a8bf2767fee27c1aa003b9ea3b21b59fb",
+      "match": true
+    }
+  ],
+  "rootSafetyRecord": {
+    "checkedAtUtc": "2026-10-08T14:22:29Z",
+    "targetExisted": false,
+    "ancestorsChecked": [
+      "D:\\",
+      "D:\\UNG DUNG AI",
+      "D:\\UNG DUNG AI\\TOOL AI 2026"
+    ],
+    "ancestorsAreDirectories": true,
+    "anyAncestorReparsePoint": false,
+    "resolvedParentEqualsLiteral": true,
+    "parentOwner": "LAM-RUBY\\DELL",
+    "cvfOutputsAbsent": true,
+    "runtimeOutputsAbsent": true,
+    "limitation": "check instant only; no ACL, capacity or ownership certification"
+  },
+  "writeLedger": [
+    {
+      "id": "D1",
+      "primitive": "os.mkdir no exist_ok",
+      "rel": "(root)",
+      "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\CVF-NCR-C1-CONTROL-SOURCE-S1-20261008",
+      "beforeExists": false,
+      "result": "CREATED",
+      "utc": "2026-10-08T14:22:29Z",
+      "actor": "worker"
+    },
+    {
+      "id": "D2",
+      "primitive": "os.mkdir no exist_ok",
+      "rel": "src",
+      "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\CVF-NCR-C1-CONTROL-SOURCE-S1-20261008\\src",
+      "beforeExists": false,
+      "result": "CREATED",
+      "utc": "2026-10-08T14:22:29Z",
+      "actor": "worker"
+    },
+    {
+      "id": "D3",
+      "primitive": "os.mkdir no exist_ok",
+      "rel": "fixtures",
+      "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\CVF-NCR-C1-CONTROL-SOURCE-S1-20261008\\fixtures",
+      "beforeExists": false,
+      "result": "CREATED",
+      "utc": "2026-10-08T14:22:29Z",
+      "actor": "worker"
+    },
+    {
+      "id": "D4",
+      "primitive": "os.mkdir no exist_ok",
+      "rel": "evidence",
+      "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\CVF-NCR-C1-CONTROL-SOURCE-S1-20261008\\evidence",
+      "beforeExists": false,
+      "result": "CREATED",
+      "utc": "2026-10-08T14:22:29Z",
+      "actor": "worker"
+    },
+    {
+      "id": "F1",
+      "primitive": "open(path,'xb')",
+      "rel": "src/envelope_contract.py",
+      "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\CVF-NCR-C1-CONTROL-SOURCE-S1-20261008\\src\\envelope_contract.py",
+      "beforeExists": false,
+      "result": "CREATED, disk equals payload",
+      "bytes": 13703,
+      "sha256": "2a518244a551b3112199a99ffa63948f488a56a625d8fdcab360dda82af04bda",
+      "lines": 403,
+      "utc": "2026-10-08T14:22:29Z",
+      "actor": "worker"
+    },
+    {
+      "id": "F2",
+      "primitive": "open(path,'xb')",
+      "rel": "src/boundary_admission.py",
+      "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\CVF-NCR-C1-CONTROL-SOURCE-S1-20261008\\src\\boundary_admission.py",
+      "beforeExists": false,
+      "result": "CREATED, disk equals payload",
+      "bytes": 6269,
+      "sha256": "ad936a71f6d86b4795e16465263119754eab8b6492988b19fdcd141415a65226",
+      "lines": 183,
+      "utc": "2026-10-08T14:22:29Z",
+      "actor": "worker"
+    },
+    {
+      "id": "F3",
+      "primitive": "open(path,'xb')",
+      "rel": "src/windows_job.py",
+      "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\CVF-NCR-C1-CONTROL-SOURCE-S1-20261008\\src\\windows_job.py",
+      "beforeExists": false,
+      "result": "CREATED, disk equals payload",
+      "bytes": 28609,
+      "sha256": "4ba0b1974fe0305aa83577cb5453a2d95d862da9b4f19bc0138367d3efc500b7",
+      "lines": 497,
+      "utc": "2026-10-08T14:22:29Z",
+      "actor": "worker"
+    },
+    {
+      "id": "F4",
+      "primitive": "open(path,'xb')",
+      "rel": "src/supervisor.py",
+      "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\CVF-NCR-C1-CONTROL-SOURCE-S1-20261008\\src\\supervisor.py",
+      "beforeExists": false,
+      "result": "CREATED, disk equals payload",
+      "bytes": 12568,
+      "sha256": "27033b25bcde6e70123f53c6b50dd7861a92d12747844a56571a5d975055137e",
+      "lines": 323,
+      "utc": "2026-10-08T14:22:29Z",
+      "actor": "worker"
+    },
+    {
+      "id": "F5",
+      "primitive": "open(path,'xb')",
+      "rel": "fixtures/fx_d1.py",
+      "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\CVF-NCR-C1-CONTROL-SOURCE-S1-20261008\\fixtures\\fx_d1.py",
+      "beforeExists": false,
+      "result": "CREATED, disk equals payload",
+      "bytes": 1860,
+      "sha256": "08c6d31ad81ba0f175e6726290993a7e9bb6fccb4050eea250e74e4718efe581",
+      "lines": 55,
+      "utc": "2026-10-08T14:22:29Z",
+      "actor": "worker"
+    },
+    {
+      "id": "F6",
+      "primitive": "open(path,'xb')",
+      "rel": "fixtures/fx_m1.py",
+      "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\CVF-NCR-C1-CONTROL-SOURCE-S1-20261008\\fixtures\\fx_m1.py",
+      "beforeExists": false,
+      "result": "CREATED, disk equals payload",
+      "bytes": 2408,
+      "sha256": "d36dfec284f819317c7da182b157835cf1fd2b3438d93bfa749c4d27db0d8871",
+      "lines": 63,
+      "utc": "2026-10-08T14:22:29Z",
+      "actor": "worker"
+    },
+    {
+      "id": "F7",
+      "primitive": "open(path,'xb')",
+      "rel": "fixtures/fx_t1.py",
+      "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\CVF-NCR-C1-CONTROL-SOURCE-S1-20261008\\fixtures\\fx_t1.py",
+      "beforeExists": false,
+      "result": "CREATED, disk equals payload",
+      "bytes": 2029,
+      "sha256": "5da31d9fdb9f0d0b3013321c2e77ec3a9dd89ca41ca18f32a262db9e1b29f28e",
+      "lines": 55,
+      "utc": "2026-10-08T14:22:29Z",
+      "actor": "worker"
+    },
+    {
+      "id": "F8",
+      "primitive": "open(path,'xb')",
+      "rel": "fixtures/fx_b1.py",
+      "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\CVF-NCR-C1-CONTROL-SOURCE-S1-20261008\\fixtures\\fx_b1.py",
+      "beforeExists": false,
+      "result": "CREATED, disk equals payload",
+      "bytes": 1906,
+      "sha256": "8ed3ff9120a69ad5f927d035163a286ffff759bcbf7020d76294103e2e3a286a",
+      "lines": 53,
+      "utc": "2026-10-08T14:22:29Z",
+      "actor": "worker"
+    },
+    {
+      "id": "F9",
+      "primitive": "open(path,'xb')",
+      "rel": "fixtures/fx_n1.py",
+      "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\CVF-NCR-C1-CONTROL-SOURCE-S1-20261008\\fixtures\\fx_n1.py",
+      "beforeExists": false,
+      "result": "CREATED, disk equals payload",
+      "bytes": 2001,
+      "sha256": "593dbe9e86c5df3fbc1531a4df95cc7058a9c783650dd4290ba62e7e05d885cc",
+      "lines": 58,
+      "utc": "2026-10-08T14:22:29Z",
+      "actor": "worker"
+    },
+    {
+      "id": "F10",
+      "primitive": "open(path,'xb')",
+      "rel": "fixtures/fx_l1.py",
+      "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\CVF-NCR-C1-CONTROL-SOURCE-S1-20261008\\fixtures\\fx_l1.py",
+      "beforeExists": false,
+      "result": "CREATED, disk equals payload",
+      "bytes": 2168,
+      "sha256": "e7727b5c08f1e7693f79fff4ac821c61c2b3bba5c5ae8b61ab3b4226537257d7",
+      "lines": 60,
+      "utc": "2026-10-08T14:22:29Z",
+      "actor": "worker"
+    },
+    {
+      "id": "F11",
+      "primitive": "open(path,'xb')",
+      "rel": "README.md",
+      "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\CVF-NCR-C1-CONTROL-SOURCE-S1-20261008\\README.md",
+      "beforeExists": false,
+      "result": "CREATED, disk equals payload",
+      "bytes": 9663,
+      "sha256": "cf32b027bae96ff8f099cced28d7d1a52b0addbb887dad192d6ca651dc7701ad",
+      "lines": 152,
+      "utc": "2026-10-08T14:22:29Z",
+      "actor": "worker"
+    },
+    {
+      "id": "F12",
+      "primitive": "open(path,'xb')",
+      "rel": "evidence/requirement-map.json",
+      "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\CVF-NCR-C1-CONTROL-SOURCE-S1-20261008\\evidence\\requirement-map.json",
+      "beforeExists": false,
+      "result": "CREATED, disk equals payload",
+      "bytes": 13285,
+      "sha256": "15fbe071176f74976d6f941c3f3d1f75c692b3e5c78858cc9118395009f210a0",
+      "lines": 315,
+      "utc": "2026-10-08T14:22:29Z",
+      "actor": "worker"
+    },
+    {
+      "id": "F13",
+      "primitive": "open(path,'xb')",
+      "rel": "WORKER_RETURN.md",
+      "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\CVF-NCR-C1-CONTROL-SOURCE-S1-20261008\\WORKER_RETURN.md",
+      "beforeExists": false,
+      "result": "CREATED, disk equals payload",
+      "bytes": 4222,
+      "sha256": "692cbcf85296fbe2d155864f7bcca0b28ee2852f813f10458ac38cf15e26cd28",
+      "lines": 68,
+      "utc": "2026-10-08T14:22:29Z",
+      "actor": "worker"
+    },
+    {
+      "id": "F14",
+      "primitive": "open(path,'xb')",
+      "rel": "evidence/source-manifest.json",
+      "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\CVF-NCR-C1-CONTROL-SOURCE-S1-20261008\\evidence\\source-manifest.json",
+      "beforeExists": false,
+      "result": "CREATED, disk equals payload",
+      "bytes": 2775,
+      "sha256": "419e491c36ed7829b13b84af5ef395354b44b3de2deeaa93996a864858ff8715",
+      "lines": 80,
+      "utc": "2026-10-08T14:22:29Z",
+      "actor": "worker"
+    },
+    {
+      "mode": "open(path,'xb')",
+      "path": "docs/reviews/CVF_NCR_C1_S1_INTEGRATED_SOURCE_WORKER_RETURN_2026-10-08.md",
+      "beforeExists": false,
+      "result": "CREATED, disk equals payload",
+      "bytes": 40146,
+      "sha256": "725e4360a646a847f08c04a7acae793c23315187d6990fc85dcb27e8e7c1faec",
+      "utc": "2026-10-08T14:23:01Z",
+      "id": "R1",
+      "actor": "worker"
+    },
+    {
+      "id": "R2",
+      "actor": "worker",
+      "mode": "open(path,'xb')",
+      "path": "docs/reviews/evidence/cvf-ncr-c1-s1-integrated-source-worker-2026-10-08.json",
+      "beforeExists": "planned: false",
+      "result": "PLANNED_UNTIL_POST_WRITE_TOOL_EVENT",
+      "note": "the final JSON creation and the full gate run are recorded only by the post-write receipt, never by this file"
+    }
+  ],
+  "sourceLedger": [
+    {
+      "path": "src/envelope_contract.py",
+      "fullPath": "D:\\UNG DUNG AI\\TOOL AI 2026\\CVF-NCR-C1-CONTROL-SOURCE-S1-20261008\\src\\envelope_contract.py",
+      "bytes": 13703,
+      "sha256": "2a518244a551b3112199a99ffa63948f488a56a625d8fdcab360dda82af04bda",
+      "lines": 403,
+      "actor": "worker",
+      "status": "CREATED, disk equals payload",
+      "mode": "open(path,'xb')",
+      "createdUtc": "2026-10-08T14:22:29Z"
+    },
+    {
+      "path": "src/boundary_admission.py",
+      "fullPath": "D:\\UNG DUNG AI\\TOOL AI 2026\\CVF-NCR-C1-CONTROL-SOURCE-S1-20261008\\src\\boundary_admission.py",
+      "bytes": 6269,
+      "sha256": "ad936a71f6d86b4795e16465263119754eab8b6492988b19fdcd141415a65226",
+      "lines": 183,
+      "actor": "worker",
+      "status": "CREATED, disk equals payload",
+      "mode": "open(path,'xb')",
+      "createdUtc": "2026-10-08T14:22:29Z"
+    },
+    {
+      "path": "src/windows_job.py",
+      "fullPath": "D:\\UNG DUNG AI\\TOOL AI 2026\\CVF-NCR-C1-CONTROL-SOURCE-S1-20261008\\src\\windows_job.py",
+      "bytes": 28609,
+      "sha256": "4ba0b1974fe0305aa83577cb5453a2d95d862da9b4f19bc0138367d3efc500b7",
+      "lines": 497,
+      "actor": "worker",
+      "status": "CREATED, disk equals payload",
+      "mode": "open(path,'xb')",
+      "createdUtc": "2026-10-08T14:22:29Z"
+    },
+    {
+      "path": "src/supervisor.py",
+      "fullPath": "D:\\UNG DUNG AI\\TOOL AI 2026\\CVF-NCR-C1-CONTROL-SOURCE-S1-20261008\\src\\supervisor.py",
+      "bytes": 12568,
+      "sha256": "27033b25bcde6e70123f53c6b50dd7861a92d12747844a56571a5d975055137e",
+      "lines": 323,
+      "actor": "worker",
+      "status": "CREATED, disk equals payload",
+      "mode": "open(path,'xb')",
+      "createdUtc": "2026-10-08T14:22:29Z"
+    },
+    {
+      "path": "fixtures/fx_d1.py",
+      "fullPath": "D:\\UNG DUNG AI\\TOOL AI 2026\\CVF-NCR-C1-CONTROL-SOURCE-S1-20261008\\fixtures\\fx_d1.py",
+      "bytes": 1860,
+      "sha256": "08c6d31ad81ba0f175e6726290993a7e9bb6fccb4050eea250e74e4718efe581",
+      "lines": 55,
+      "actor": "worker",
+      "status": "CREATED, disk equals payload",
+      "mode": "open(path,'xb')",
+      "createdUtc": "2026-10-08T14:22:29Z"
+    },
+    {
+      "path": "fixtures/fx_m1.py",
+      "fullPath": "D:\\UNG DUNG AI\\TOOL AI 2026\\CVF-NCR-C1-CONTROL-SOURCE-S1-20261008\\fixtures\\fx_m1.py",
+      "bytes": 2408,
+      "sha256": "d36dfec284f819317c7da182b157835cf1fd2b3438d93bfa749c4d27db0d8871",
+      "lines": 63,
+      "actor": "worker",
+      "status": "CREATED, disk equals payload",
+      "mode": "open(path,'xb')",
+      "createdUtc": "2026-10-08T14:22:29Z"
+    },
+    {
+      "path": "fixtures/fx_t1.py",
+      "fullPath": "D:\\UNG DUNG AI\\TOOL AI 2026\\CVF-NCR-C1-CONTROL-SOURCE-S1-20261008\\fixtures\\fx_t1.py",
+      "bytes": 2029,
+      "sha256": "5da31d9fdb9f0d0b3013321c2e77ec3a9dd89ca41ca18f32a262db9e1b29f28e",
+      "lines": 55,
+      "actor": "worker",
+      "status": "CREATED, disk equals payload",
+      "mode": "open(path,'xb')",
+      "createdUtc": "2026-10-08T14:22:29Z"
+    },
+    {
+      "path": "fixtures/fx_b1.py",
+      "fullPath": "D:\\UNG DUNG AI\\TOOL AI 2026\\CVF-NCR-C1-CONTROL-SOURCE-S1-20261008\\fixtures\\fx_b1.py",
+      "bytes": 1906,
+      "sha256": "8ed3ff9120a69ad5f927d035163a286ffff759bcbf7020d76294103e2e3a286a",
+      "lines": 53,
+      "actor": "worker",
+      "status": "CREATED, disk equals payload",
+      "mode": "open(path,'xb')",
+      "createdUtc": "2026-10-08T14:22:29Z"
+    },
+    {
+      "path": "fixtures/fx_n1.py",
+      "fullPath": "D:\\UNG DUNG AI\\TOOL AI 2026\\CVF-NCR-C1-CONTROL-SOURCE-S1-20261008\\fixtures\\fx_n1.py",
+      "bytes": 2001,
+      "sha256": "593dbe9e86c5df3fbc1531a4df95cc7058a9c783650dd4290ba62e7e05d885cc",
+      "lines": 58,
+      "actor": "worker",
+      "status": "CREATED, disk equals payload",
+      "mode": "open(path,'xb')",
+      "createdUtc": "2026-10-08T14:22:29Z"
+    },
+    {
+      "path": "fixtures/fx_l1.py",
+      "fullPath": "D:\\UNG DUNG AI\\TOOL AI 2026\\CVF-NCR-C1-CONTROL-SOURCE-S1-20261008\\fixtures\\fx_l1.py",
+      "bytes": 2168,
+      "sha256": "e7727b5c08f1e7693f79fff4ac821c61c2b3bba5c5ae8b61ab3b4226537257d7",
+      "lines": 60,
+      "actor": "worker",
+      "status": "CREATED, disk equals payload",
+      "mode": "open(path,'xb')",
+      "createdUtc": "2026-10-08T14:22:29Z"
+    },
+    {
+      "path": "README.md",
+      "fullPath": "D:\\UNG DUNG AI\\TOOL AI 2026\\CVF-NCR-C1-CONTROL-SOURCE-S1-20261008\\README.md",
+      "bytes": 9663,
+      "sha256": "cf32b027bae96ff8f099cced28d7d1a52b0addbb887dad192d6ca651dc7701ad",
+      "lines": 152,
+      "actor": "worker",
+      "status": "CREATED, disk equals payload",
+      "mode": "open(path,'xb')",
+      "createdUtc": "2026-10-08T14:22:29Z"
+    },
+    {
+      "path": "evidence/requirement-map.json",
+      "fullPath": "D:\\UNG DUNG AI\\TOOL AI 2026\\CVF-NCR-C1-CONTROL-SOURCE-S1-20261008\\evidence\\requirement-map.json",
+      "bytes": 13285,
+      "sha256": "15fbe071176f74976d6f941c3f3d1f75c692b3e5c78858cc9118395009f210a0",
+      "lines": 315,
+      "actor": "worker",
+      "status": "CREATED, disk equals payload",
+      "mode": "open(path,'xb')",
+      "createdUtc": "2026-10-08T14:22:29Z"
+    },
+    {
+      "path": "WORKER_RETURN.md",
+      "fullPath": "D:\\UNG DUNG AI\\TOOL AI 2026\\CVF-NCR-C1-CONTROL-SOURCE-S1-20261008\\WORKER_RETURN.md",
+      "bytes": 4222,
+      "sha256": "692cbcf85296fbe2d155864f7bcca0b28ee2852f813f10458ac38cf15e26cd28",
+      "lines": 68,
+      "actor": "worker",
+      "status": "CREATED, disk equals payload",
+      "mode": "open(path,'xb')",
+      "createdUtc": "2026-10-08T14:22:29Z"
+    },
+    {
+      "path": "evidence/source-manifest.json",
+      "fullPath": "D:\\UNG DUNG AI\\TOOL AI 2026\\CVF-NCR-C1-CONTROL-SOURCE-S1-20261008\\evidence\\source-manifest.json",
+      "bytes": 2775,
+      "sha256": "419e491c36ed7829b13b84af5ef395354b44b3de2deeaa93996a864858ff8715",
+      "lines": 80,
+      "actor": "worker",
+      "status": "CREATED, disk equals payload",
+      "mode": "open(path,'xb')",
+      "createdUtc": "2026-10-08T14:22:29Z"
+    }
+  ],
+  "ledgerTotals": {
+    "fileCount": 14,
+    "totalBytes": 103466,
+    "byteCeiling": 200000,
+    "pythonLineCeiling": 500,
+    "extraFiles": 0,
+    "bytecodeOrCacheFiles": 0,
+    "directories": [
+      "(root)",
+      "src",
+      "fixtures",
+      "evidence"
+    ]
+  },
+  "manifestDigest": {
+    "path": "evidence/source-manifest.json",
+    "sha256": "419e491c36ed7829b13b84af5ef395354b44b3de2deeaa93996a864858ff8715"
+  },
+  "requirementMapDigest": {
+    "path": "evidence/requirement-map.json",
+    "sha256": "15fbe071176f74976d6f941c3f3d1f75c692b3e5c78858cc9118395009f210a0"
+  },
+  "staticScan": [
+    {
+      "path": "fixtures/fx_b1.py",
+      "astParse": "OK",
+      "imports": [],
+      "tryNodes": 0,
+      "forbiddenBuiltinCalls": [],
+      "topLevelCallStatements": 0
+    },
+    {
+      "path": "fixtures/fx_d1.py",
+      "astParse": "OK",
+      "imports": [],
+      "tryNodes": 0,
+      "forbiddenBuiltinCalls": [],
+      "topLevelCallStatements": 0
+    },
+    {
+      "path": "fixtures/fx_l1.py",
+      "astParse": "OK",
+      "imports": [],
+      "tryNodes": 0,
+      "forbiddenBuiltinCalls": [],
+      "topLevelCallStatements": 0
+    },
+    {
+      "path": "fixtures/fx_m1.py",
+      "astParse": "OK",
+      "imports": [],
+      "tryNodes": 0,
+      "forbiddenBuiltinCalls": [],
+      "topLevelCallStatements": 0
+    },
+    {
+      "path": "fixtures/fx_n1.py",
+      "astParse": "OK",
+      "imports": [],
+      "tryNodes": 0,
+      "forbiddenBuiltinCalls": [],
+      "topLevelCallStatements": 0
+    },
+    {
+      "path": "fixtures/fx_t1.py",
+      "astParse": "OK",
+      "imports": [],
+      "tryNodes": 0,
+      "forbiddenBuiltinCalls": [],
+      "topLevelCallStatements": 0
+    },
+    {
+      "path": "src/boundary_admission.py",
+      "astParse": "OK",
+      "imports": [
+        "math@module",
+        "re@module"
+      ],
+      "tryNodes": 0,
+      "forbiddenBuiltinCalls": [],
+      "topLevelCallStatements": 0
+    },
+    {
+      "path": "src/envelope_contract.py",
+      "astParse": "OK",
+      "imports": [
+        "math@module",
+        "re@module"
+      ],
+      "tryNodes": 0,
+      "forbiddenBuiltinCalls": [],
+      "topLevelCallStatements": 0
+    },
+    {
+      "path": "src/supervisor.py",
+      "astParse": "OK",
+      "imports": [
+        "from . import boundary_admission@module",
+        "from . import envelope_contract@module",
+        "from . import windows_job@module"
+      ],
+      "tryNodes": 0,
+      "forbiddenBuiltinCalls": [],
+      "topLevelCallStatements": 0
+    },
+    {
+      "path": "src/windows_job.py",
+      "astParse": "OK",
+      "imports": [
+        "collections@module",
+        "ctypes@guarded-nested",
+        "sys@guarded-nested",
+        "time@module"
+      ],
+      "tryNodes": 1,
+      "forbiddenBuiltinCalls": [],
+      "topLevelCallStatements": 0
+    }
+  ],
+  "proofs": {
+    "S1-ABI": {
+      "claim": "documentary ABI, layout, restype and argtypes, guarded loader",
+      "sourceLocators": [
+        "src/windows_job.py"
+      ],
+      "observedHashes": {
+        "src/windows_job.py": "4ba0b1974fe0305aa83577cb5453a2d95d862da9b4f19bc0138367d3efc500b7"
+      },
+      "requirementMapRef": "evidence/requirement-map.json#S1-N1-BINDING-ABI",
+      "limitations": [
+        "no execution",
+        "no layout measurement",
+        "no host compatibility measurement"
+      ]
+    },
+    "S1-CORE": {
+      "claim": "ordered lifecycle, memory seams, cancellation, cleanup and per-instance custody; supervisor and envelope data and state",
+      "sourceLocators": [
+        "src/windows_job.py",
+        "src/supervisor.py",
+        "src/envelope_contract.py"
+      ],
+      "observedHashes": {
+        "src/windows_job.py": "4ba0b1974fe0305aa83577cb5453a2d95d862da9b4f19bc0138367d3efc500b7",
+        "src/supervisor.py": "27033b25bcde6e70123f53c6b50dd7861a92d12747844a56571a5d975055137e",
+        "src/envelope_contract.py": "2a518244a551b3112199a99ffa63948f488a56a625d8fdcab360dda82af04bda"
+      },
+      "requirementMapRef": "evidence/requirement-map.json#S1-N2-LIFECYCLE-ORDER,S1-N3-MEMORY-MEMBERSHIP,S1-N4-CANCEL-CLEANUP-CUSTODY,S1-N6-DATA-STATE-FIXTURES",
+      "limitations": [
+        "static source correspondence only",
+        "native behaviour unverified"
+      ]
+    },
+    "S1-FIXTURES": {
+      "claim": "six inert fixture builders, all cases NOT_EXECUTED_PLANNED",
+      "observedHashes": {
+        "fixtures/fx_d1.py": "08c6d31ad81ba0f175e6726290993a7e9bb6fccb4050eea250e74e4718efe581",
+        "fixtures/fx_m1.py": "d36dfec284f819317c7da182b157835cf1fd2b3438d93bfa749c4d27db0d8871",
+        "fixtures/fx_t1.py": "5da31d9fdb9f0d0b3013321c2e77ec3a9dd89ca41ca18f32a262db9e1b29f28e",
+        "fixtures/fx_b1.py": "8ed3ff9120a69ad5f927d035163a286ffff759bcbf7020d76294103e2e3a286a",
+        "fixtures/fx_n1.py": "593dbe9e86c5df3fbc1531a4df95cc7058a9c783650dd4290ba62e7e05d885cc",
+        "fixtures/fx_l1.py": "e7727b5c08f1e7693f79fff4ac821c61c2b3bba5c5ae8b61ab3b4226537257d7"
+      },
+      "limitations": [
+        "no fixture executed"
+      ]
+    },
+    "S1-BOUNDARY": {
+      "claim": "disk, egress, privilege and custody boundaries remain unimplemented and fail closed",
+      "observedHashes": {
+        "src/boundary_admission.py": "ad936a71f6d86b4795e16465263119754eab8b6492988b19fdcd141415a65226"
+      },
+      "requirementMapRef": "evidence/requirement-map.json#S1-N5-PRODUCTION-BOUNDARIES",
+      "limitations": [
+        "no mechanism proof",
+        "10 GiB and 8 GiB selections not hardcoded"
+      ]
+    },
+    "S1-CUSTODY": {
+      "claim": "fourteen exclusive creates with actual events, manifest last, no cyclic hashes",
+      "writeLedgerRows": "D1-D4,F1-F14",
+      "manifestSha256": "419e491c36ed7829b13b84af5ef395354b44b3de2deeaa93996a864858ff8715",
+      "limitations": [
+        "reported tool evidence, not independent OS attestation",
+        "historical R1 deviations unchanged"
+      ]
+    },
+    "PROOF-RETURN": {
+      "path": "docs/reviews/CVF_NCR_C1_S1_INTEGRATED_SOURCE_WORKER_RETURN_2026-10-08.md",
+      "bytes": 40146,
+      "sha256": "725e4360a646a847f08c04a7acae793c23315187d6990fc85dcb27e8e7c1faec",
+      "binding": "raw bytes of the Markdown return created before this file"
+    },
+    "S1-RETURN-GATE": {
+      "status": "PLANNED_UNTIL_POST_WRITE_TOOL_EVENT",
+      "postWriteReceipt": ".cvf/runtime/ncr-c1-s1-worker/post-write-custody.json",
+      "gateLog": ".cvf/runtime/ncr-c1-s1-worker/final-worker-return-gate.log",
+      "note": "bound only by the external receipt created after this file and the full gate run; Local accepts completion only when receipt and log bytes join"
+    }
+  },
+  "semanticConvergence": {
+    "chainOrdinal": 3,
+    "predecessor": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_C1_S1_INTEGRATED_SOURCE_2026-10-08.md",
+    "predecessorSha256": "62f7f7f6d6450363871f47e73b10fb9bf27c9c0069c927def5d8da70d6d2ad9b",
+    "retained": 3,
+    "new": [
+      "NEW_SOURCE_STATIC_REVIEW_PENDING",
+      "NEW_SOURCE_CREATION_CUSTODY_PENDING"
+    ],
+    "resolved": [],
+    "streak": 1,
+    "disposition": "CONTINUE_BOUNDED"
+  },
+  "independentProbeDisposition": "PENDING_REVIEWER_EXECUTION",
+  "deviationsAndLimits": [
+    "READ_AHEAD_PARTIAL: five output checkers read in full and three in part; the remaining dispatcher-listed checkers were not read by this worker and their literals came from the accepted 2026-10-07 return shape plus a scratch full-gate run",
+    "SCRATCH_STAGING: draft source and return text was authored as plain files in the session scratch area outside the repository and outside the source root; never imported, compiled or run; read as bytes and created with exclusive create; readback equality verified per file",
+    "SCRATCH_CLONE_PREFLIGHT: a shared scratch clone at the execution base was used to run the full worker-return fast gate on draft return text before creation; no candidate source was placed in it",
+    "RUNTIME_RECEIPT_EXTRA: besides the pre-implementation log and receipt directory, one writer receipt (source-write-events.json) was created exclusively in the allowed runtime work area",
+    "TIMEBOX: no worker start timestamp was machine-recorded; the first recorded timestamp is the pre-implementation gate start; elapsed time against the 3600 s cooperative cap is UNKNOWN and probably exceeded",
+    "OPTIONAL_METHODS_OMITTED: no peak-observation method and no normal-exit wait method were included because the 500-line ceiling left no room",
+    "TOOL_LAYER: the dedicated scratch scripts were run through the shell tool; no tool classifier block occurred"
+  ],
+  "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
+  "claimBoundary": "Static source correspondence and write custody only. Not behavioural, native, layout, containment, rights or runtime proof. Self-hash and the final write and gate events are outside this file."
+}
