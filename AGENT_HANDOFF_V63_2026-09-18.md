@@ -10,6 +10,8 @@ Current continuation only. Root AGENTS.md and canonical routing owners retain fu
 Closed history is preserved byte-for-byte at `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V63_PRE_NCR_COMPACTION_2026-10-07.md` (SHA256 `54801fdcf14e9abe17592352ec3c69a0b0e855632991af0caacac7b65252ccba`); it is NOT_ACTIVE_AUTHORITY and not default startup reading.
 ## Scope / Target / Owner Boundary
 Role: Local maintainer/reviewer/closer/session-sync;phase:structural forward learning binding closure;Local technical/operator effect owner;R2 source/native/runtime held.
+Operator request (2026-10-09): push the current branch to the locked provenance route, prepare/push the public-safe projection from the sibling public-sync clone, then refresh `D:\UNG DUNG AI\EXTERNAL_AGENT_READ` from the resulting live public main. Public projection must exclude private continuity, findings, registries, and provenance-only evidence.
+Remote tracking branch: `origin/main`. Exact remote SHA must be derived live from git when needed; this handoff records no assumed current remote SHA. External agent memory files: non-canonical convenience only.
 ## Startup Acknowledgment
 Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`;handoff=`AGENT_HANDOFF_V63_2026-09-18.md`;next=forward learning binding accepted structurally,first eligible dispatch/application evidence still pending;role=Local maintainer/reviewer/closer/session-sync;decision owner=Local technical/operator effects;parked checkpoint=R2 source/native/S2-S9/provider/public/deploy/P11;no automatic source successor.
 ## Current Mode
