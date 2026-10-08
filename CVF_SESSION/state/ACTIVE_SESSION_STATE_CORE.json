@@ -36,12 +36,12 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_NCR_C1_S1_INTEGRATED_SOURCE_2026-10-08.md",
-    "baselineSha256": "dbddfc4bb992394fd80541e40420e3340bece3ad9399224c310263a78fdaf8b2",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_C1_S1_INTEGRATED_SOURCE_2026-10-08.md",
-    "workOrderSha256": "62f7f7f6d6450363871f47e73b10fb9bf27c9c0069c927def5d8da70d6d2ad9b"
+    "baselinePath": "docs/baselines/CVF_GC018_NCR_C1_S1_CONSOLIDATED_REPAIR_2026-10-08.md",
+    "baselineSha256": "fd170e094abba0a264f28a04626d9d9a1b02c75f7160c25ae13b34f1506debf9",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_C1_S1_CONSOLIDATED_REPAIR_2026-10-08.md",
+    "workOrderSha256": "53dea51ad767583b303861f08a07ecda31a0270308ccaa616e00d4c625d0dd64"
   },
-  "currentAuthoritySyncReason": "Technically feasible consolidated S1 repair proposal committed;operator exact new-root/topology attempt checkpoint pending. Current authority remains immutable spent integrated order;new held pair is not source release.",
+  "currentAuthoritySyncReason": "Operator approved exact R2 source-only root/16-path/two-return scope;READY pair committed and synchronized. Actual bound pre-dispatch release still required before any worker effect;old source history preserved.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
