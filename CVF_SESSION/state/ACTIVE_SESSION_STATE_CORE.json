@@ -36,12 +36,12 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_NCR_VIDEO_PRODUCTION_PREPARATION_2026-10-08.md",
-    "baselineSha256": "cfa582108cf3159dc04c3593e7c08ef8b1f3a8307f1f1277ff5a6244083ea8e7",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_VIDEO_PRODUCTION_PREPARATION_2026-10-08.md",
-    "workOrderSha256": "5f33aec19e85e5bdbea6207fcae70d138ac5ab3cdbf3a0cb537c93aab16d5b14"
+    "baselinePath": "docs/baselines/CVF_GC018_NCR_C1_OFFLINE_PRODUCTION_READINESS_2026-10-08.md",
+    "baselineSha256": "43a94438af1b04f013b1b00d9d031276c0416d278d7b0524cf7a6c748dd4eb4f",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_C1_OFFLINE_PRODUCTION_READINESS_2026-10-08.md",
+    "workOrderSha256": "87404a4231ae119dd07618afe0600a5c8d49e27a28829e1a0bcd2775fe9d4e80"
   },
-  "currentAuthoritySyncReason": "Accepted preparation material a50514d45f07d2658c2834ac9b5d789521db149b;production NO_GO,old C1 STOP retained.",
+  "currentAuthoritySyncReason": "Operator-selected C1 offline;10GiB/8GiB;effects held.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
