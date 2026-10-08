@@ -8,7 +8,7 @@
     "reviewManifest": "docs/reviews/evidence/cvf-ncr-local-review-manifest-2026-10-06.json",
     "reviewManifestDisposition": "Historical pre-commit 49-path snapshot; committed disposition recorded here.",
     "verification": "Recorded scoped tests, Docker/storage/Web receipts and real Alibaba observations consumed; material helper and repository pre-commit hooks passed. No independent reviewer, browser UX, actual-data cutover or release-quality governance claim.",
-    "nextAction": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=REVIEW; BATCH_ID=CVF-NCR-C1-OFFLINE-PRODUCTION-READINESS-20261008. Integrated S1 Local disposition docs/reviews/CVF_NCR_C1_S1_INTEGRATED_SOURCE_COMPLETION_2026-10-08.md materialc9a5de25effd081657f49f9ebcfe0a007673a2ad: BLOCKED_WITH_REASON,sourceAcceptancefalse,no worker redispatch. One14-file exclusive-create attempt spent;root CREATED103466B,all existing source roots preserved,no rewrite/retry/delete. Frozen order/baseline hashes retained;historical READY is not repeat authority. Guard at008e37a63873153a58ac635c333edb2618a37aaa rejects bare bound return path;117 focused tests/70 reviewer-fast consumed. Local consumed AST probe8 witness groups/10 mutants across8 classes and14-source/16-custody/20-snapshot joins;no candidate/native/fixture execution or probe rerun. Source failures: PID listed/assigned reconciliation,shared monotonic deadline;partial checker read-ahead/scratch deviations and total worker time UNKNOWN retained. All5 source-chain blockers remain unresolved;active ordinal3/counters0/0/1/streak1 unchanged. Companion real-resolver diagnostic: prospective ordinal4 retaining5 blockers gives streak2;CONTINUE_BOUNDED rejected,STOP_REASSESS_ARCHITECTURE/NO_SUCCESSOR validates declaration only. No actual successor/blocker resolution/effect admission. Next Local action: one grouped technical architectural reassessment and feasible repair contract before any concrete new source effect approval;do not reset counters,rename problem or request approval for an infeasible route.20/20 docs spent,no network replay. S2-S9/runtime NO_GO/29 obligations OPEN;metadata STOPordinal2/counters0/0/1/2 unchanged;E1 spent160 partial.10GiB disk8GiB RAM selected,P1/HaiDang assumptions,host/Docker REPORTED_UNBOUND;payload/install/host/voice/render/provider/public/deploy require separate admission;P11/CCMA/unrelated parked,NIS-T1J no successor,LHW24 retained.",
+    "nextAction": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=REVIEW; BATCH_ID=CVF-NCR-C1-OFFLINE-PRODUCTION-READINESS-20261008. Consolidated S1 repair proposal docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_C1_S1_CONSOLIDATED_REPAIR_2026-10-08.md materialf1859537d62c2023a4728cd4450ebf05f3d2a529 HOLD_PENDING_OPERATOR_DECISION;preapproval exact final caller FEASIBLE/no canonical violations/actual runner route buildable/effectAdmissionfalse. Operator checkpoint: approve one new exclusive-create root D:/UNG DUNG AI/TOOL AI 2026/CVF-NCR-C1-CONTROL-SOURCE-S1-R2-20261008,16 source paths(two planned ABI/deadline modules) plus2 new repo returns,200000 sourceB/2MiB evidence/3600s worker all startup/read/draft/write/gate time/1200s Local review;0 native/fixtures/network/provider. Old integrated14-file attempt spent,all old roots/inputs/returns preserved,no rewrite/retry/delete. Local present decision docs/reference/CVF_NCR_C1_S1_CONSOLIDATED_REPAIR_REASSESSMENT_2026-10-08.md accepts ONLY completion of already performed bounded integrated static-review task;prior blocked disposition remains historical,source/custody not accepted. Active ordinal3/counters0/0/1/streak1 unchanged while held;prospective ordinal4 resolves NEW_SOURCE_STATIC_REVIEW_PENDING through new raw review hash/unique locator,retains4,derived streak0,cumulative unchanged. Prior unchanged5-blocker candidate stillSTOP;no actual STOP predecessor,no arithmetic override. Repair grouped PID listed/assigned counts,shared monotonic remaining deadline,maintainability split,full output-checker reads,start/elapsed checkpoints,memory-only drafts and real bound return gate/final custody. Future source requires exact approval,READY pair/new companion hashes,material+continuity currentAuthority update and bound pre-dispatch release before manual worker. Do not send current HOLD packet for implementation or activate it as source authority. MFRP observation OBS-60cb3e20d9cb88cc machine-clean/trusted-block reviewed,source block retained,ignored marker explicitly adjudicated/cleared;old observation preserved,not counted as machine success.20/20 docs spent/no refetch;S2-S9/runtime NO_GO/29 obligations OPEN;metadata STOPordinal2/counters0/0/1/2 unchanged;E1 spent160 partial;10GiB disk8GiB RAM selected,P1/HaiDang assumptions,host/Docker REPORTED_UNBOUND. Payload/install/host/voice/render/provider/public/deploy separately admitted;P11/CCMA/unrelated parked,NIS-T1J no successor,LHW24 retained.",
     "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
     "approvedContextContinuation": {
       "materialCommit": "594e2c1b2cbc7171fe77ab849782e5de085b5b8c",
@@ -927,6 +927,34 @@
       "prospectiveContinuation": "REJECTED_MISSING_STOP_REASSESS_ESCALATION",
       "nextWorkerDispatch": false,
       "nextAction": "GROUPED_TECHNICAL_ARCHITECTURAL_REASSESSMENT_BEFORE_EFFECT_APPROVAL"
+    },
+    "s1ConsolidatedRepairProposal20261008": {
+      "materialCommit": "f1859537d62c2023a4728cd4450ebf05f3d2a529",
+      "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_C1_S1_CONSOLIDATED_REPAIR_2026-10-08.md",
+      "workOrderSha256": "ee730b47f5d45bd63b863e356245a4af55052c9d742e3ac6ffc80ffc20d22515",
+      "baseline": "docs/baselines/CVF_GC018_NCR_C1_S1_CONSOLIDATED_REPAIR_2026-10-08.md",
+      "baselineSha256": "8e289cbbcdd88b99d40c2db081941592cd0ddc313b0d8368dd24b7d54d82bdce",
+      "reassessment": "docs/reference/CVF_NCR_C1_S1_CONSOLIDATED_REPAIR_REASSESSMENT_2026-10-08.md",
+      "reassessmentSha256": "0f2461277e33d518d578bf9b48492d98be96ab3ce8fac907540c18c6fbf63cfa",
+      "status": "HOLD_PENDING_OPERATOR_DECISION",
+      "technicalDisposition": "FEASIBLE",
+      "effectAdmission": false,
+      "operatorApprovalRecorded": false,
+      "proposedRoot": "D:/UNG DUNG AI/TOOL AI 2026/CVF-NCR-C1-CONTROL-SOURCE-S1-R2-20261008",
+      "sourcePathCount": 16,
+      "returnPathCount": 2,
+      "sourceBytesCeiling": 200000,
+      "evidenceBytesCeiling": 2097152,
+      "workerSecondsCeiling": 3600,
+      "reviewSecondsCeiling": 1200,
+      "sourceRootCreated": false,
+      "actualSourceChainOrdinal": 3,
+      "prospectiveOrdinal": 4,
+      "prospectiveResolved": [
+        "NEW_SOURCE_STATIC_REVIEW_PENDING"
+      ],
+      "prospectiveRetainedCount": 4,
+      "mfrpSafetyMarkerDisposition": "ADJUDICATED_TRUSTED_BLOCK_PRESERVED_DOCUMENTARY_COMMIT_ALLOWED"
     }
   }
 }
