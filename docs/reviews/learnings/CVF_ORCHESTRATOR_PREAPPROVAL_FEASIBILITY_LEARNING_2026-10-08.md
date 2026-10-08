@@ -282,7 +282,7 @@ Rollback boundary: these three Python files and the two existing learning/owner 
 
 The actual released S1 proposal returns INVALID with WORKER_RETURN_ROUTE_UNBUILDABLE and effectAdmission=false. Focused evaluator/runner suites117/117 PASS; the pinned historical-packet test passed again after making its Git source binding immutable. Packet authority/encoding, Python size, core protection and whitespace checks pass. The first workspace reviewer-fast run failed on a citation-format defect and a scope collision with the two pre-existing uncommitted worker outputs. The citation was corrected and its checker rerun passed. Local then recorded the original BLOCKED worker return and evidence separately at e33cda04abdc8b4e53ee5798e11121e49cf0c278, preserving their exact working-tree bytes. The learning batch is now five paths only; this resolves the cross-batch manifest collision without changing the checker or worker return. This is provenance retention, not S1 source acceptance. Full five-path reviewer-fast preflight70/70 PASS after the separate blocked-return provenance and continuity commits. Material commit and dedicated learning continuity remain the final steps; no S1 acceptance follows.
 
-## Agent Operation Trace Block
+## Historical Bound-Return Guard Operation Trace
 
 | Field | Evidence |
 |---|---|
@@ -302,5 +302,64 @@ The actual released S1 proposal returns INVALID with WORKER_RETURN_ROUTE_UNBUILD
 | Invocation ID | ncr-preapproval-bound-return-learning-20261008 |
 | Expected manifest | `docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md`; `docs/reference/preapproval_feasibility/README.md`; `governance/compat/preapproval_feasibility_contract.py`; `governance/compat/run_worker_return_fast_gate.py`; `governance/compat/test_check_preapproval_feasibility.py` |
 | Actual changed set | `docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md`; `docs/reference/preapproval_feasibility/README.md`; `governance/compat/preapproval_feasibility_contract.py`; `governance/compat/run_worker_return_fast_gate.py`; `governance/compat/test_check_preapproval_feasibility.py` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: none |
+
+## R2 Result And Cost-Aware Dispatcher Learning - 2026-10-09
+
+Operator requested the R2 result and orchestrator learning together. Source
+evidence and disposition: `docs/reviews/CVF_NCR_C1_S1_CONSOLIDATED_REPAIR_COMPLETION_2026-10-09.md` and
+`docs/reviews/evidence/cvf-ncr-c1-s1-r2-local-disposition-2026-10-09.json`. Original worker return hashes are preserved
+in the companion;the 9/10 complexity assessment is worker judgment,not a cost
+measurement. Technical10/10,mutation12/12 and custody13/13 checks pass within
+bounded static coverage;full fulfillment remains blocked on historical procedure.
+
+The operator clarifies that a cheaper worker may rationally carry many tasks
+when upstream control is effective. This replaces any inference that large
+read/task count alone is waste;no measured model price or saving is claimed.
+Worker completion within the recorded3600s cap is evidence of this attempt's
+timing,not proof that every required preparation step was feasible or performed.
+
+| Finding | Defect class | Learning lane | Disposition | Next control action | Handled or deferred |
+|---|---|---|---|---|---|
+| Required gate receipt omitted from exact runtime allowlist | ORCHESTRATOR_PACKET_GAP | GOVERNANCE_CONTROL_PLANE | RULE_ADDED | declare gate-owned runtime outputs and budgets before dispatch | existing lifecycle Execution-Surface And Total-Cost Feasibility |
+| All-payload preparation versus limited transfer surface | ORCHESTRATOR_PACKET_GAP | GOVERNANCE_CONTROL_PLANE | RULE_ADDED | verify an admitted sequence before approval;no ad hoc persistent receiver or silent per-batch substitution | written control;all-payload feasibility NOT_PROVEN |
+| High worker workload interpreted as waste | ORCHESTRATOR_PACKET_GAP | COST_ECONOMICS_LEARNING | RULE_ADDED | evaluate total orchestrator/worker/review/rework cost;retain high-value guards | operator planning premise;session cost UNKNOWN |
+| Worker respects scope and does not self-authorize subagents when asked | WORKER_EXECUTION_ERROR | GOVERNANCE_CONTROL_PLANE | RULE_EXISTS | recognize positive boundary behavior;questions do not expand invocation ceiling | positive operator feedback;no new defect or hidden-call proof |
+| Per-batch precheck and skipped release-receipt read | WORKER_EXECUTION_ERROR | GOVERNANCE_CONTROL_PLANE | RULE_EXISTS | preserve history and separate output value from full fulfillment | blocked process/custody disposition;no automatic rework |
+
+Parent decision: MERGE_INTO_EXISTING_OWNER. Three related design/cost clauses
+were added to the lifecycle's preapproval section;this existing record retains
+the case. No new roadmap,tranche,ADIF ID,provider memory owner or permissive
+checker exception. Automatic inspection of command transport and every trusted
+gate output is a MACHINE_CHECK_CANDIDATE,not implemented here:semantic tool
+capability needs a bounded contract before a useful guard can be designed.
+
+Application state: WRITTEN_RULE_ADDED;Local attribution and scope preservation
+applied in this result;future dispatcher prevention NOT_PROVEN. Original R2
+order is immutable and the attempt spent. Native/S2-S9/metadata STOP/E1 and
+historical custody obligations remain held. Do not turn source syntax or a
+structural gate PASS into source acceptance,consent or a cleared successor.
+
+## Agent Operation Trace Block
+
+| Field | Evidence |
+|---|---|
+| Actor | Local INTERNAL_AGENT reviewer/closer |
+| Provider or surface | private shared CVF workspace |
+| Session or invocation | ncr-s1-r2-local-disposition-20261009 |
+| Working directory | repository root |
+| Command or tool surface | consumed independent AST/custody receipts;documentary disposition and learning;canonical structural gates |
+| Target paths | `docs/reviews/CVF_NCR_C1_S1_CONSOLIDATED_REPAIR_WORKER_RETURN_2026-10-08.md`; `docs/reviews/evidence/cvf-ncr-c1-s1-consolidated-repair-worker-2026-10-08.json`; `docs/reviews/CVF_NCR_C1_S1_CONSOLIDATED_REPAIR_COMPLETION_2026-10-09.md`; `docs/reviews/evidence/cvf-ncr-c1-s1-r2-local-disposition-2026-10-09.json`; `docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md`; `docs/reference/CVF_GOVERNED_WORK_LIFECYCLE_AND_DESIGN_CONTROL_STANDARD_2026-06-11.md` |
+| Allowed scope source | operator: process R2 result and orchestrator learning;governing order Reviewer Closure Conversion |
+| Before status evidence | HEAD c1f3f1c5f423b0540c7bb13a7cd32ee1eaf70753;two untracked worker returns;created source root;full acceptance withheld |
+| After status evidence | six material paths;original worker bytes retained;source root untouched;no successor |
+| Diff evidence | git status --short;git diff --check;exact six-path manifest |
+| Approval boundary | Local technical disposition/written governance learning;no new source/runtime/effect admission |
+| Claim boundary | bounded static review and documentary correction only |
+| Agent type | INTERNAL_AGENT |
+| Invocation ID | ncr-s1-r2-local-disposition-20261009 |
+| Expected manifest | `docs/reviews/CVF_NCR_C1_S1_CONSOLIDATED_REPAIR_WORKER_RETURN_2026-10-08.md`; `docs/reviews/evidence/cvf-ncr-c1-s1-consolidated-repair-worker-2026-10-08.json`; `docs/reviews/CVF_NCR_C1_S1_CONSOLIDATED_REPAIR_COMPLETION_2026-10-09.md`; `docs/reviews/evidence/cvf-ncr-c1-s1-r2-local-disposition-2026-10-09.json`; `docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md`; `docs/reference/CVF_GOVERNED_WORK_LIFECYCLE_AND_DESIGN_CONTROL_STANDARD_2026-06-11.md` |
+| Actual changed set | `docs/reviews/CVF_NCR_C1_S1_CONSOLIDATED_REPAIR_WORKER_RETURN_2026-10-08.md`; `docs/reviews/evidence/cvf-ncr-c1-s1-consolidated-repair-worker-2026-10-08.json`; `docs/reviews/CVF_NCR_C1_S1_CONSOLIDATED_REPAIR_COMPLETION_2026-10-09.md`; `docs/reviews/evidence/cvf-ncr-c1-s1-r2-local-disposition-2026-10-09.json`; `docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md`; `docs/reference/CVF_GOVERNED_WORK_LIFECYCLE_AND_DESIGN_CONTROL_STANDARD_2026-06-11.md` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |

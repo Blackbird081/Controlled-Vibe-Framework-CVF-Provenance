@@ -1,0 +1,243 @@
+{
+  "schemaVersion": "cvf.ncrC1S1R2.localDisposition.v1",
+  "closureBaseHead": "c1f3f1c5f423b0540c7bb13a7cd32ee1eaf70753",
+  "disposition": "BLOCKED_WITH_REASON_PACKET_FULFILLMENT_NOT_ACCEPTED",
+  "technicalResult": "PASS_BOUNDED_STATIC_ONLY",
+  "localAssessment": {
+    "schemaVersion": "cvf.ncrC1S1R2.localAssessment.v1",
+    "date": "2026-10-09",
+    "role": "LOCAL_REVIEWER",
+    "decisionOwner": "LOCAL",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_C1_S1_CONSOLIDATED_REPAIR_2026-10-08.md",
+    "workOrderSha256": "53dea51ad767583b303861f08a07ecda31a0270308ccaa616e00d4c625d0dd64",
+    "workerReturnSha256": "f12eaee97896a2498f12bf6556eac55463e5e94491f8faa6b66daeff8954a936",
+    "workerEvidenceSha256": "b1fc9d520a507151e6daa5ff66afece2c5ed27f9db37edcefadd2759f15401d9",
+    "technicalVerdict": "PASS_BOUNDED_STATIC_CORRESPONDENCE",
+    "fullPacketAcceptance": "WITHHELD_PROCEDURAL_DEVIATIONS",
+    "probe": {
+      "path": ".cvf/runtime/ncr-c1-s1-r2-local-review-20261009/probe-result-v3.json",
+      "sha256": "52e46cc38616a2fde69ba6d0e5f465c02a4318d05ebb5e6bfb1caf9d61fd6bed",
+      "positiveGroups": "10/10",
+      "mutationsRejected": "12/12",
+      "custodyRawJoinChecks": "13/13"
+    },
+    "requiredReviewerFast": {
+      "command": "python -B governance/compat/run_agent_commit_steward_preflight.py --mode reviewer-return --base c1f3f1c5f423b0540c7bb13a7cd32ee1eaf70753 --head HEAD --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_C1_S1_CONSOLIDATED_REPAIR_2026-10-08.md --enforce",
+      "log": ".cvf/runtime/ncr-c1-s1-r2-local-review-20261009/reviewer-fast.log",
+      "observedFinalLine": "COMPLIANT: commit steward preflight passed.",
+      "disposition": "PASS"
+    },
+    "findings": [
+      {
+        "id": "R2-LOCAL-01",
+        "class": "PREPARATION_ORDER_DEVIATION",
+        "evidence": "Worker evidence deviationsAndLimits SOURCE_PRECHECK_SPLIT; writer.py separate modes A/B/MD/JS perform batch/return checks before their own writes.",
+        "decision": "Not equivalent to the work order's all-finalized-payload precheck before first create. Actual order cannot be retroactively repaired by rerunning gates. Withhold full custody/process acceptance; preserve source and original disclosure. No automatic source recreation."
+      },
+      {
+        "id": "R2-LOCAL-02",
+        "class": "RELEASE_RECEIPT_VERIFICATION_OMITTED",
+        "evidence": "releaseIdentityChecks.boundPreDispatchReceipt explicitly NOT_SEPARATELY_READ_BY_WORKER.",
+        "decision": "Actual dispatcher pre-dispatch PASS exists at the released HEAD, so this is not evidence of missing approval or missing release. Worker skipped the required receipt verification; pre-implementation PASS does not prove that read occurred."
+      },
+      {
+        "id": "R2-LOCAL-03",
+        "class": "DISPATCHER_RUNTIME_ALLOWLIST_CONTRADICTION",
+        "evidence": "Required pre-implementation gate generates .cvf/runtime/autorun-receipts/pre-implementation.json outside the stated eight-file allowlist; disclosed by worker.",
+        "decision": "Dispatcher contract defect. Do not attribute the mandatory gate's own receipt to unauthorized candidate execution or require deletion. Future contracts should explicitly cover trusted gate-owned receipts."
+      }
+    ],
+    "reviewToolCorrections": [
+      "Initial Local script selected abstract backend methods; corrected selector to the concrete implementation before successful probe execution.",
+      "Initial probe-result.json ABI predicate incorrectly required AST identity with a seed generator expression. Retained failed result; changed to independently declared data field/type expectations without executing expressions.",
+      "probe-result-v2.json missed a loader-map PBOOL mutation. Added pointer-map checks; final v3 detects all 12. Earlier results remain diagnostic evidence, not successful acceptance proof."
+    ],
+    "consumedEvidenceBoundary": "Nine unchanged source files and their prior bounded review are consumed by exact identity rather than recreated. Worker static probe and writer were read as text, never imported or executed. Independent mutations existed only as AST objects in Local trusted tooling.",
+    "costDisposition": "One bounded independent AST/custody pass with two named oracle corrections and one required reviewer-fast invocation. No broad duplicate source suite, host or provider run.",
+    "nextAllowedAssessmentAction": "Consolidated Local disposition of the disclosed procedural deviations and dispatcher contradiction using existing evidence. Do not issue a new source attempt or alter released inputs automatically.",
+    "claimBoundary": "Read-only technical assessment plus ignored Local receipts; not a canonical completion review, blocker resolution, closure commit, source runtime acceptance, S2 admission, production readiness, or successor dispatch. Candidate/native/fixture execution and provider calls: zero. Worker returns and candidate root remain unchanged and uncommitted."
+  },
+  "independentProbe": {
+    "schemaVersion": "cvf.ncrC1S1R2.localStaticReview.v1",
+    "createdUtc": "2026-10-08T17:50:05.442789+00:00",
+    "role": "LOCAL_REVIEWER",
+    "sourceExecutionCount": 0,
+    "fixtureExecutionCount": 0,
+    "providerCallCount": 0,
+    "positiveGroups": {
+      "ABI": true,
+      "LIMITS": true,
+      "MEMBERSHIP": true,
+      "UNBOUND": true,
+      "METRICS": true,
+      "DEFERRED_NATIVE": true,
+      "FINITE_WAIT": true,
+      "CLEANUP": true,
+      "COUNTS": true,
+      "DEADLINE": true
+    },
+    "mutations": [
+      {
+        "id": "ABI_POINTER",
+        "expectedRejectedGroup": "ABI",
+        "rejected": true
+      },
+      {
+        "id": "ABI_FIELD_ORDER",
+        "expectedRejectedGroup": "ABI",
+        "rejected": true
+      },
+      {
+        "id": "MEMBERSHIP_BEFORE_RESUME",
+        "expectedRejectedGroup": "MEMBERSHIP",
+        "rejected": true
+      },
+      {
+        "id": "MISSING_MEMORY_LIMIT",
+        "expectedRejectedGroup": "LIMITS",
+        "rejected": true
+      },
+      {
+        "id": "MISSING_UNBOUND_TERMINATION",
+        "expectedRejectedGroup": "UNBOUND",
+        "rejected": true
+      },
+      {
+        "id": "PEAK_AS_CURRENT",
+        "expectedRejectedGroup": "METRICS",
+        "rejected": true
+      },
+      {
+        "id": "EAGER_DLL",
+        "expectedRejectedGroup": "DEFERRED_NATIVE",
+        "rejected": true
+      },
+      {
+        "id": "INFINITE_WAIT",
+        "expectedRejectedGroup": "FINITE_WAIT",
+        "rejected": true
+      },
+      {
+        "id": "FALSE_CLEANUP_SUCCESS",
+        "expectedRejectedGroup": "CLEANUP",
+        "rejected": true
+      },
+      {
+        "id": "REMOVE_COUNT_RECONCILIATION",
+        "expectedRejectedGroup": "COUNTS",
+        "rejected": true
+      },
+      {
+        "id": "RESET_FULL_WAIT_BUDGET",
+        "expectedRejectedGroup": "FINITE_WAIT",
+        "rejected": true
+      },
+      {
+        "id": "IGNORE_EXPIRY",
+        "expectedRejectedGroup": "DEADLINE",
+        "rejected": true
+      }
+    ],
+    "custodyChecks": {
+      "exact16Paths": true,
+      "sourceAndManifestRawJoins": true,
+      "repoRawJoins": true,
+      "18UniqueWriteEventsMatch": true,
+      "seed14RawJoins": true,
+      "readAhead96CurrentPins": true,
+      "preImplementationLogJoin": true,
+      "finalGateLogJoin": true,
+      "clockWithin3600": true,
+      "moduleSizeBudgets": true,
+      "sourceBytesBudget": true,
+      "noBytecode": true,
+      "eightRuntimeFiles": true
+    },
+    "moduleLines": {
+      "windows_job": 394,
+      "native_abi": 139,
+      "deadline_budget": 49
+    },
+    "sourceBytes": 94049,
+    "workerElapsedSeconds": 2216.2,
+    "evidenceSha256": "b1fc9d520a507151e6daa5ff66afece2c5ed27f9db37edcefadd2759f15401d9",
+    "postWriteReceiptSha256": "0b589afa5287d8332b10eff9dae72010fce1989d628c23d7d50be65b022591eb",
+    "reviewToolSeconds": 0.6570000000065193,
+    "limitations": [
+      "Syntactic AST correspondence, not exhaustive control-flow or runtime proof.",
+      "Read-ahead FULL_READ and exclusive creation are worker-reported; current raw bytes can be independently joined, historical reading/writes cannot be reconstructed.",
+      "All returned original claims and files preserved."
+    ],
+    "proceduralFindings": [
+      "Worker explicitly did not separately read bound pre-dispatch receipt.",
+      "Worker prechecked split source/return batches immediately before their writes, not all finalized payloads before first write.",
+      "Mandatory gate emitted receipt outside dispatcher eight-file runtime allowlist; dispatcher contract defect, not unauthorized candidate code."
+    ]
+  },
+  "reviewOracleSha256": "ec2176de6d6e2b13242d4a602a125426b8ea09914f424e86e134d5eaf4ab37d2",
+  "workerOracleSha256": "761922a1dfbe12efbee4e41109547ee2b769478cbe57ea9649c5386259b3d50f",
+  "pins": [
+    {
+      "path": "docs/reviews/CVF_NCR_C1_S1_CONSOLIDATED_REPAIR_WORKER_RETURN_2026-10-08.md",
+      "sha256": "f12eaee97896a2498f12bf6556eac55463e5e94491f8faa6b66daeff8954a936"
+    },
+    {
+      "path": "docs/reviews/evidence/cvf-ncr-c1-s1-consolidated-repair-worker-2026-10-08.json",
+      "sha256": "b1fc9d520a507151e6daa5ff66afece2c5ed27f9db37edcefadd2759f15401d9"
+    },
+    {
+      "path": "docs\\reviews\\CVF_NCR_C1_S1_INTEGRATED_SOURCE_COMPLETION_2026-10-08.md",
+      "sha256": "110063e20ad55041663770984907909201ac264c99dc4bbbdc2c0c0a03da691b"
+    },
+    {
+      "path": ".cvf/runtime/ncr-c1-s1-consolidated-repair-worker/post-write-custody.json",
+      "sha256": "0b589afa5287d8332b10eff9dae72010fce1989d628c23d7d50be65b022591eb"
+    },
+    {
+      "path": ".cvf/runtime/autorun-receipts/pre-dispatch.json",
+      "sha256": "03f0732bbb00ab3b45736aebc3b25d6917949518370bcbbb0c7833957416f883"
+    },
+    {
+      "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-c1-s1-r2-local-review-20261009\\reviewer-fast.log",
+      "sha256": "d4619bae7effdeda281de17149214b3b975df9bd1aa7ad48bfdcb622d42ff93c"
+    },
+    {
+      "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-c1-s1-r2-local-review-20261009\\probe-result.json",
+      "sha256": "d762913b1ea4e0edb3d029572eaf488f0e0d61516996a0e22b315bb7afcc3cba"
+    },
+    {
+      "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-c1-s1-r2-local-review-20261009\\probe-result-v2.json",
+      "sha256": "4c015689f1a1a48a064a3b8c9f03479ff125cac8208df8d41ccf351593233e14"
+    },
+    {
+      "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-c1-s1-r2-local-review-20261009\\probe-result-v3.json",
+      "sha256": "52e46cc38616a2fde69ba6d0e5f465c02a4318d05ebb5e6bfb1caf9d61fd6bed"
+    }
+  ],
+  "sourceContractChain": {
+    "activeWorkerOrdinal": 5,
+    "retained": 4,
+    "new": 2,
+    "resolved": 0,
+    "current": 6,
+    "nonDecreasingBlockerTransitions": 1,
+    "cumulativeCounters": [
+      0,
+      0,
+      1
+    ]
+  },
+  "policyOutcome": "No retroactive precheck/read attestation; no new source attempt; no counter reset; no active successor.",
+  "costOutcome": "Worker cheaper than orchestrator is operator-selected planning premise, not measured provider pricing or this session cost. Large worker workload is not itself waste; total delivery/review/rework cost controls.",
+  "evidenceLimits": "Review start across prior turns was not retained; total elapsed Local review UNKNOWN. Probe tool time is not total review time. Exclusive writes and historical reads remain tool-reported.",
+  "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
+  "localAuthoringGateDiagnostic": {
+    "initialMixedBoundRun": ".cvf/runtime/ncr-c1-s1-r2-local-review-20261009/disposition-fast.log",
+    "cause": "Worker-bound ledger correctly rejected four additional Local-owned disposition/learning paths; whitespace trailing blank corrected. Prior exact two-path bound reviewer fast remains valid and worker bytes unchanged.",
+    "scopeCorrection": "Local-owned six-path batch uses canonical reviewer-return preflight without active-work-order; no ledger/checker bypass or worker claim changes.",
+    "finalLocalPreflight": ".cvf/runtime/ncr-c1-s1-r2-local-review-20261009/local-disposition-fast.log",
+    "finalLogSha256": "d255e8e6a1f9285f1ec41b7bf79cace725364b66e9645a8c54d28225817fd24d",
+    "result": "COMPLIANT",
+    "additionalDiagnostic": "Material pre-implementation rejected PASS_INDEPENDENT_PROBE with BLOCKED status and tool hashes bound to evidence files. Changed declaration to BLOCKED_INDEPENDENT_PROBE_WITH_REASON; kept positive technical witnesses and actual tool identities. Failed diagnostic retained in material-diagnostic-gate.log; no source/checker change."
+  }
+}

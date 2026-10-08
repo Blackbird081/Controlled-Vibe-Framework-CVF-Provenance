@@ -1,0 +1,580 @@
+{
+  "schemaVersion": "cvf.ncrC1S1R2.consolidatedRepairWorkerEvidence.v1",
+  "batchId": "CVF-NCR-C1-OFFLINE-PRODUCTION-READINESS-20261008",
+  "executionBaseHead": "c1f3f1c5f423b0540c7bb13a7cd32ee1eaf70753",
+  "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_C1_S1_CONSOLIDATED_REPAIR_2026-10-08.md",
+  "workOrderSha256": "53dea51ad767583b303861f08a07ecda31a0270308ccaa616e00d4c625d0dd64",
+  "baselineSha256": "fd170e094abba0a264f28a04626d9d9a1b02c75f7160c25ae13b34f1506debf9",
+  "interfaceVersion": "local-supervisor-source@0.3.0",
+  "envelopeVersion": "local-supervisor-envelope@2",
+  "status": "SOURCE_CANDIDATE_ONLY",
+  "claimLevel": "PASS_STATIC_ONLY",
+  "workerMode": "WORKER_MUST_NOT_COMMIT",
+  "sourceRoot": "D:/UNG DUNG AI/TOOL AI 2026/CVF-NCR-C1-CONTROL-SOURCE-S1-R2-20261008",
+  "releaseIdentityChecks": {
+    "head": "c1f3f1c5f423b0540c7bb13a7cd32ee1eaf70753",
+    "statusShort": "",
+    "authority": {
+      "workOrder": "53dea51ad767583b303861f08a07ecda31a0270308ccaa616e00d4c625d0dd64",
+      "baseline": "fd170e094abba0a264f28a04626d9d9a1b02c75f7160c25ae13b34f1506debf9",
+      "match": true
+    },
+    "boundPreDispatchReceipt": "NOT_SEPARATELY_READ_BY_WORKER; clean committed HEAD, pair hashes and the bound pre-implementation gate were checked"
+  },
+  "preImplementationGate": {
+    "command": "python -B governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base c1f3f1c5f423b0540c7bb13a7cd32ee1eaf70753 --head HEAD --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_C1_S1_CONSOLIDATED_REPAIR_2026-10-08.md",
+    "ranBeforeAnyWrite": true,
+    "exit": 0,
+    "result": "COMPLIANT",
+    "log": ".cvf/runtime/ncr-c1-s1-consolidated-repair-worker/pre-implementation-gate.log",
+    "logSha256": "6605b955331e7bb2fedc44a3851e820a275b92a039485295db496d5f43b4171e",
+    "extraReceipt": ".cvf/runtime/autorun-receipts/pre-implementation.json written by the gate itself, not on the eight-file allowlist"
+  },
+  "seedCustody": [
+    {"path": "README.md", "sha256": "cf32b027bae96ff8f099cced28d7d1a52b0addbb887dad192d6ca651dc7701ad", "match": true},
+    {"path": "WORKER_RETURN.md", "sha256": "692cbcf85296fbe2d155864f7bcca0b28ee2852f813f10458ac38cf15e26cd28", "match": true},
+    {"path": "evidence/requirement-map.json", "sha256": "15fbe071176f74976d6f941c3f3d1f75c692b3e5c78858cc9118395009f210a0", "match": true},
+    {"path": "evidence/source-manifest.json", "sha256": "419e491c36ed7829b13b84af5ef395354b44b3de2deeaa93996a864858ff8715", "match": true},
+    {"path": "fixtures/fx_b1.py", "sha256": "8ed3ff9120a69ad5f927d035163a286ffff759bcbf7020d76294103e2e3a286a", "match": true},
+    {"path": "fixtures/fx_d1.py", "sha256": "08c6d31ad81ba0f175e6726290993a7e9bb6fccb4050eea250e74e4718efe581", "match": true},
+    {"path": "fixtures/fx_l1.py", "sha256": "e7727b5c08f1e7693f79fff4ac821c61c2b3bba5c5ae8b61ab3b4226537257d7", "match": true},
+    {"path": "fixtures/fx_m1.py", "sha256": "d36dfec284f819317c7da182b157835cf1fd2b3438d93bfa749c4d27db0d8871", "match": true},
+    {"path": "fixtures/fx_n1.py", "sha256": "593dbe9e86c5df3fbc1531a4df95cc7058a9c783650dd4290ba62e7e05d885cc", "match": true},
+    {"path": "fixtures/fx_t1.py", "sha256": "5da31d9fdb9f0d0b3013321c2e77ec3a9dd89ca41ca18f32a262db9e1b29f28e", "match": true},
+    {"path": "src/boundary_admission.py", "sha256": "ad936a71f6d86b4795e16465263119754eab8b6492988b19fdcd141415a65226", "match": true},
+    {"path": "src/envelope_contract.py", "sha256": "2a518244a551b3112199a99ffa63948f488a56a625d8fdcab360dda82af04bda", "match": true},
+    {"path": "src/supervisor.py", "sha256": "27033b25bcde6e70123f53c6b50dd7861a92d12747844a56571a5d975055137e", "match": true},
+    {"path": "src/windows_job.py", "sha256": "4ba0b1974fe0305aa83577cb5453a2d95d862da9b4f19bc0138367d3efc500b7", "match": true}
+  ],
+  "snapshotCustody": {
+    "matches": 20,
+    "of": 20,
+    "mode": "HASH_ONLY_NOT_READ",
+    "bindingsFile": "docs/reference/CVF_NCR_C1_S1_NATIVE_ABI_SOURCE_BINDINGS_2026-10-08.json",
+    "bindingsSha256": "91b0721af4081a7cd9439172fdbd087bb43a679622df2a3b82dd8a01d3f01d49"
+  },
+  "rootSafetyRecord": {
+    "checkedAtUtc": "2026-10-08T17:32:14Z",
+    "targetExisted": false,
+    "ancestorsChecked": ["D:/", "D:/UNG DUNG AI", "D:/UNG DUNG AI/TOOL AI 2026"],
+    "anyAncestorReparsePoint": false,
+    "resolvedParentEqualsLiteral": true,
+    "cvfOutputsAbsent": true,
+    "runtimeOutputsAbsent": true,
+    "limitation": "check instant only; no ACL, capacity or ownership certification"
+  },
+  "writeLedger": [
+    {"id": "D1", "mode": "os.mkdir no exist_ok", "path": "(root)", "result": "CREATED", "utc": "2026-10-08T17:32:14Z"},
+    {"id": "D2", "mode": "os.mkdir no exist_ok", "path": "src", "result": "CREATED", "utc": "2026-10-08T17:32:14Z"},
+    {"id": "D3", "mode": "os.mkdir no exist_ok", "path": "fixtures", "result": "CREATED", "utc": "2026-10-08T17:32:14Z"},
+    {"id": "D4", "mode": "os.mkdir no exist_ok", "path": "evidence", "result": "CREATED", "utc": "2026-10-08T17:32:14Z"},
+    {
+      "id": "F1",
+      "mode": "open(path,'xb') copy of hash-verified seed bytes",
+      "path": "src/envelope_contract.py",
+      "result": "CREATED, disk equals payload",
+      "utc": "2026-10-08T17:32:14Z",
+      "bytes": 13703,
+      "sha256": "2a518244a551b3112199a99ffa63948f488a56a625d8fdcab360dda82af04bda",
+      "lines": 403
+    },
+    {
+      "id": "F2",
+      "mode": "open(path,'xb') copy of hash-verified seed bytes",
+      "path": "src/boundary_admission.py",
+      "result": "CREATED, disk equals payload",
+      "utc": "2026-10-08T17:32:14Z",
+      "bytes": 6269,
+      "sha256": "ad936a71f6d86b4795e16465263119754eab8b6492988b19fdcd141415a65226",
+      "lines": 183
+    },
+    {
+      "id": "F3",
+      "mode": "open(path,'xb')",
+      "path": "src/native_abi.py",
+      "result": "CREATED, disk equals payload",
+      "utc": "2026-10-08T17:32:14Z",
+      "bytes": 9099,
+      "sha256": "ef4f8f6c3f77d0bdb86b9ec6ff0885e8850fa978f440460e4e4acbadffa7d581",
+      "lines": 139
+    },
+    {
+      "id": "F4",
+      "mode": "open(path,'xb')",
+      "path": "src/deadline_budget.py",
+      "result": "CREATED, disk equals payload",
+      "utc": "2026-10-08T17:32:14Z",
+      "bytes": 1879,
+      "sha256": "f94f14bfbbb1148742f457c24236a38123a6216cf3813581cb5a19776b7b5760",
+      "lines": 49
+    },
+    {
+      "id": "F5",
+      "mode": "open(path,'xb') assembled in memory from seed plus edits",
+      "path": "src/windows_job.py",
+      "result": "CREATED, disk equals payload",
+      "utc": "2026-10-08T17:32:14Z",
+      "bytes": 21716,
+      "sha256": "f0e733970463051ee6b82a3de4a3e5b59d2229e9ae9096e27d0fe16e5d8f12ee",
+      "lines": 394
+    },
+    {
+      "id": "F6",
+      "mode": "open(path,'xb') copy of hash-verified seed bytes",
+      "path": "src/supervisor.py",
+      "result": "CREATED, disk equals payload",
+      "utc": "2026-10-08T17:32:14Z",
+      "bytes": 12568,
+      "sha256": "27033b25bcde6e70123f53c6b50dd7861a92d12747844a56571a5d975055137e",
+      "lines": 323
+    },
+    {
+      "id": "F7",
+      "mode": "open(path,'xb') copy of hash-verified seed bytes",
+      "path": "fixtures/fx_d1.py",
+      "result": "CREATED, disk equals payload",
+      "utc": "2026-10-08T17:32:14Z",
+      "bytes": 1860,
+      "sha256": "08c6d31ad81ba0f175e6726290993a7e9bb6fccb4050eea250e74e4718efe581",
+      "lines": 55
+    },
+    {
+      "id": "F8",
+      "mode": "open(path,'xb') copy of hash-verified seed bytes",
+      "path": "fixtures/fx_m1.py",
+      "result": "CREATED, disk equals payload",
+      "utc": "2026-10-08T17:32:14Z",
+      "bytes": 2408,
+      "sha256": "d36dfec284f819317c7da182b157835cf1fd2b3438d93bfa749c4d27db0d8871",
+      "lines": 63
+    },
+    {
+      "id": "F9",
+      "mode": "open(path,'xb') copy of hash-verified seed bytes",
+      "path": "fixtures/fx_t1.py",
+      "result": "CREATED, disk equals payload",
+      "utc": "2026-10-08T17:32:14Z",
+      "bytes": 2029,
+      "sha256": "5da31d9fdb9f0d0b3013321c2e77ec3a9dd89ca41ca18f32a262db9e1b29f28e",
+      "lines": 55
+    },
+    {
+      "id": "F10",
+      "mode": "open(path,'xb') copy of hash-verified seed bytes",
+      "path": "fixtures/fx_b1.py",
+      "result": "CREATED, disk equals payload",
+      "utc": "2026-10-08T17:32:14Z",
+      "bytes": 1906,
+      "sha256": "8ed3ff9120a69ad5f927d035163a286ffff759bcbf7020d76294103e2e3a286a",
+      "lines": 53
+    },
+    {
+      "id": "F11",
+      "mode": "open(path,'xb') copy of hash-verified seed bytes",
+      "path": "fixtures/fx_n1.py",
+      "result": "CREATED, disk equals payload",
+      "utc": "2026-10-08T17:32:14Z",
+      "bytes": 2001,
+      "sha256": "593dbe9e86c5df3fbc1531a4df95cc7058a9c783650dd4290ba62e7e05d885cc",
+      "lines": 58
+    },
+    {
+      "id": "F12",
+      "mode": "open(path,'xb') copy of hash-verified seed bytes",
+      "path": "fixtures/fx_l1.py",
+      "result": "CREATED, disk equals payload",
+      "utc": "2026-10-08T17:32:14Z",
+      "bytes": 2168,
+      "sha256": "e7727b5c08f1e7693f79fff4ac821c61c2b3bba5c5ae8b61ab3b4226537257d7",
+      "lines": 60
+    },
+    {
+      "id": "F13",
+      "mode": "open(path,'xb')",
+      "path": "evidence/requirement-map.json",
+      "result": "CREATED, disk equals payload",
+      "utc": "2026-10-08T17:33:51Z",
+      "bytes": 9193,
+      "sha256": "755af18d069e0ecf6aea16f463d4642294a3e515b6fce3eeef3c8f113506b597",
+      "lines": 165
+    },
+    {
+      "id": "F14",
+      "mode": "open(path,'xb')",
+      "path": "README.md",
+      "result": "CREATED, disk equals payload",
+      "utc": "2026-10-08T17:33:51Z",
+      "bytes": 3320,
+      "sha256": "aeb033b7f34b7bcbd28cbf167c00e15366d36886a76758c57d05a4219e237dab",
+      "lines": 44
+    },
+    {
+      "id": "F15",
+      "mode": "open(path,'xb')",
+      "path": "WORKER_RETURN.md",
+      "result": "CREATED, disk equals payload",
+      "utc": "2026-10-08T17:33:51Z",
+      "bytes": 1413,
+      "sha256": "a93c051906806e94d84e332f6c96db0a2d1b9ac7ade0d15fcdab232c7d3b3ca6",
+      "lines": 24
+    },
+    {
+      "id": "F16",
+      "mode": "open(path,'xb') written last",
+      "path": "evidence/source-manifest.json",
+      "result": "CREATED, disk equals payload",
+      "utc": "2026-10-08T17:33:51Z",
+      "bytes": 2517,
+      "sha256": "8a430a6215400eb90b06bf61c0f8d8bd39fb7dfed4f3ad443c92161a139de23a",
+      "lines": 24
+    },
+    {
+      "id": "R1",
+      "mode": "open(path,'xb')",
+      "path": "docs/reviews/CVF_NCR_C1_S1_CONSOLIDATED_REPAIR_WORKER_RETURN_2026-10-08.md",
+      "result": "CREATED, disk equals payload",
+      "utc": "2026-10-08T17:37:45Z",
+      "bytes": 31314,
+      "sha256": "f12eaee97896a2498f12bf6556eac55463e5e94491f8faa6b66daeff8954a936",
+      "lines": 428
+    },
+    {
+      "id": "R2",
+      "mode": "open(path,'xb')",
+      "path": "docs/reviews/evidence/cvf-ncr-c1-s1-consolidated-repair-worker-2026-10-08.json",
+      "result": "PLANNED_UNTIL_POST_WRITE_TOOL_EVENT"
+    }
+  ],
+  "sourceLedger": [
+    {"path": "README.md", "bytes": 3320, "sha256": "aeb033b7f34b7bcbd28cbf167c00e15366d36886a76758c57d05a4219e237dab", "lines": 44},
+    {"path": "WORKER_RETURN.md", "bytes": 1413, "sha256": "a93c051906806e94d84e332f6c96db0a2d1b9ac7ade0d15fcdab232c7d3b3ca6", "lines": 24},
+    {"path": "evidence/requirement-map.json", "bytes": 9193, "sha256": "755af18d069e0ecf6aea16f463d4642294a3e515b6fce3eeef3c8f113506b597", "lines": 165},
+    {"path": "evidence/source-manifest.json", "bytes": 2517, "sha256": "8a430a6215400eb90b06bf61c0f8d8bd39fb7dfed4f3ad443c92161a139de23a", "lines": 24},
+    {"path": "fixtures/fx_b1.py", "bytes": 1906, "sha256": "8ed3ff9120a69ad5f927d035163a286ffff759bcbf7020d76294103e2e3a286a", "lines": 53},
+    {"path": "fixtures/fx_d1.py", "bytes": 1860, "sha256": "08c6d31ad81ba0f175e6726290993a7e9bb6fccb4050eea250e74e4718efe581", "lines": 55},
+    {"path": "fixtures/fx_l1.py", "bytes": 2168, "sha256": "e7727b5c08f1e7693f79fff4ac821c61c2b3bba5c5ae8b61ab3b4226537257d7", "lines": 60},
+    {"path": "fixtures/fx_m1.py", "bytes": 2408, "sha256": "d36dfec284f819317c7da182b157835cf1fd2b3438d93bfa749c4d27db0d8871", "lines": 63},
+    {"path": "fixtures/fx_n1.py", "bytes": 2001, "sha256": "593dbe9e86c5df3fbc1531a4df95cc7058a9c783650dd4290ba62e7e05d885cc", "lines": 58},
+    {"path": "fixtures/fx_t1.py", "bytes": 2029, "sha256": "5da31d9fdb9f0d0b3013321c2e77ec3a9dd89ca41ca18f32a262db9e1b29f28e", "lines": 55},
+    {"path": "src/boundary_admission.py", "bytes": 6269, "sha256": "ad936a71f6d86b4795e16465263119754eab8b6492988b19fdcd141415a65226", "lines": 183},
+    {"path": "src/deadline_budget.py", "bytes": 1879, "sha256": "f94f14bfbbb1148742f457c24236a38123a6216cf3813581cb5a19776b7b5760", "lines": 49},
+    {"path": "src/envelope_contract.py", "bytes": 13703, "sha256": "2a518244a551b3112199a99ffa63948f488a56a625d8fdcab360dda82af04bda", "lines": 403},
+    {"path": "src/native_abi.py", "bytes": 9099, "sha256": "ef4f8f6c3f77d0bdb86b9ec6ff0885e8850fa978f440460e4e4acbadffa7d581", "lines": 139},
+    {"path": "src/supervisor.py", "bytes": 12568, "sha256": "27033b25bcde6e70123f53c6b50dd7861a92d12747844a56571a5d975055137e", "lines": 323},
+    {"path": "src/windows_job.py", "bytes": 21716, "sha256": "f0e733970463051ee6b82a3de4a3e5b59d2229e9ae9096e27d0fe16e5d8f12ee", "lines": 394}
+  ],
+  "ledgerTotals": {
+    "fileCount": 16,
+    "totalBytes": 94049,
+    "byteCeiling": 200000,
+    "reusedByteCopies": 9,
+    "newFiles": 7,
+    "directories": ["(root)", "src", "fixtures", "evidence"]
+  },
+  "staticScan": [
+    {
+      "path": "fixtures/fx_b1.py",
+      "astParse": "OK",
+      "bytes": 1906,
+      "lines": 53,
+      "sha256": "8ed3ff9120a69ad5f927d035163a286ffff759bcbf7020d76294103e2e3a286a",
+      "imports": [],
+      "tryNodes": 0,
+      "forbiddenBuiltinCalls": [],
+      "topLevelCallStatements": 0,
+      "ascii": true
+    },
+    {
+      "path": "fixtures/fx_d1.py",
+      "astParse": "OK",
+      "bytes": 1860,
+      "lines": 55,
+      "sha256": "08c6d31ad81ba0f175e6726290993a7e9bb6fccb4050eea250e74e4718efe581",
+      "imports": [],
+      "tryNodes": 0,
+      "forbiddenBuiltinCalls": [],
+      "topLevelCallStatements": 0,
+      "ascii": true
+    },
+    {
+      "path": "fixtures/fx_l1.py",
+      "astParse": "OK",
+      "bytes": 2168,
+      "lines": 60,
+      "sha256": "e7727b5c08f1e7693f79fff4ac821c61c2b3bba5c5ae8b61ab3b4226537257d7",
+      "imports": [],
+      "tryNodes": 0,
+      "forbiddenBuiltinCalls": [],
+      "topLevelCallStatements": 0,
+      "ascii": true
+    },
+    {
+      "path": "fixtures/fx_m1.py",
+      "astParse": "OK",
+      "bytes": 2408,
+      "lines": 63,
+      "sha256": "d36dfec284f819317c7da182b157835cf1fd2b3438d93bfa749c4d27db0d8871",
+      "imports": [],
+      "tryNodes": 0,
+      "forbiddenBuiltinCalls": [],
+      "topLevelCallStatements": 0,
+      "ascii": true
+    },
+    {
+      "path": "fixtures/fx_n1.py",
+      "astParse": "OK",
+      "bytes": 2001,
+      "lines": 58,
+      "sha256": "593dbe9e86c5df3fbc1531a4df95cc7058a9c783650dd4290ba62e7e05d885cc",
+      "imports": [],
+      "tryNodes": 0,
+      "forbiddenBuiltinCalls": [],
+      "topLevelCallStatements": 0,
+      "ascii": true
+    },
+    {
+      "path": "fixtures/fx_t1.py",
+      "astParse": "OK",
+      "bytes": 2029,
+      "lines": 55,
+      "sha256": "5da31d9fdb9f0d0b3013321c2e77ec3a9dd89ca41ca18f32a262db9e1b29f28e",
+      "imports": [],
+      "tryNodes": 0,
+      "forbiddenBuiltinCalls": [],
+      "topLevelCallStatements": 0,
+      "ascii": true
+    },
+    {
+      "path": "src/boundary_admission.py",
+      "astParse": "OK",
+      "bytes": 6269,
+      "lines": 183,
+      "sha256": "ad936a71f6d86b4795e16465263119754eab8b6492988b19fdcd141415a65226",
+      "imports": ["math@module", "re@module"],
+      "tryNodes": 0,
+      "forbiddenBuiltinCalls": [],
+      "topLevelCallStatements": 0,
+      "ascii": true
+    },
+    {
+      "path": "src/deadline_budget.py",
+      "astParse": "OK",
+      "bytes": 1879,
+      "lines": 49,
+      "sha256": "f94f14bfbbb1148742f457c24236a38123a6216cf3813581cb5a19776b7b5760",
+      "imports": ["time@module"],
+      "tryNodes": 0,
+      "forbiddenBuiltinCalls": [],
+      "topLevelCallStatements": 0,
+      "ascii": true
+    },
+    {
+      "path": "src/envelope_contract.py",
+      "astParse": "OK",
+      "bytes": 13703,
+      "lines": 403,
+      "sha256": "2a518244a551b3112199a99ffa63948f488a56a625d8fdcab360dda82af04bda",
+      "imports": ["math@module", "re@module"],
+      "tryNodes": 0,
+      "forbiddenBuiltinCalls": [],
+      "topLevelCallStatements": 0,
+      "ascii": true
+    },
+    {
+      "path": "src/native_abi.py",
+      "astParse": "OK",
+      "bytes": 9099,
+      "lines": 139,
+      "sha256": "ef4f8f6c3f77d0bdb86b9ec6ff0885e8850fa978f440460e4e4acbadffa7d581",
+      "imports": ["collections@module", "sys@guarded-nested", "ctypes@guarded-nested"],
+      "tryNodes": 0,
+      "forbiddenBuiltinCalls": [],
+      "topLevelCallStatements": 0,
+      "ascii": true
+    },
+    {
+      "path": "src/supervisor.py",
+      "astParse": "OK",
+      "bytes": 12568,
+      "lines": 323,
+      "sha256": "27033b25bcde6e70123f53c6b50dd7861a92d12747844a56571a5d975055137e",
+      "imports": ["from . import boundary_admission@module", "from . import envelope_contract@module", "from . import windows_job@module"],
+      "tryNodes": 0,
+      "forbiddenBuiltinCalls": [],
+      "topLevelCallStatements": 0,
+      "ascii": true
+    },
+    {
+      "path": "src/windows_job.py",
+      "astParse": "OK",
+      "bytes": 21716,
+      "lines": 394,
+      "sha256": "f0e733970463051ee6b82a3de4a3e5b59d2229e9ae9096e27d0fe16e5d8f12ee",
+      "imports": [
+        "collections@module",
+        "time@module",
+        "from . import deadline_budget@module",
+        "from .native_abi import CREATE_SUSPENDED,CREATE_UNICODE_ENVIRONMENT,INFO_CLASS_BASIC_ACCOUNTING,INFO_CLASS_BASIC_PROCESS_ID_LIST,INFO_CLASS_EXTENDED_LIMIT,JOB_OBJECT_LIMIT_ACTIVE_PROCESS,JOB_OBJECT_LIMIT_JOB_MEMORY,JOB_OBJECT_LIMIT_KILL_ON_JOB_CLOSE,MAX_PID_SAMPLE_CAPACITY,NATIVE_STEP_ORDER,PID_LIST_HEADER_BYTES,PLANNED_JOB_STATES,UNRESOLVED_NATIVE_EVIDENCE,WAIT_OBJECT_0,_CANCELLABLE,_CLOSABLE,_FORBIDDEN_LIMIT_FLAGS,_JOB_OPEN,_bool_ok,_handle_ok,_resume_ok,_wait_ok,load_native,pid_list_class,S_BOUND_VERIFIED,S_CLEANUP_INCOMPLETE,S_CLOSE_INCOMPLETE,S_CLOSED,S_NEW,S_NO_PROCESS_FAILED,S_PRE_RESUME_FAILURE,S_RESUMED,S_SUSPENDED_UNBOUND,S_TERMINATED,S_UNSAFE_RESUME@module"
+      ],
+      "tryNodes": 1,
+      "forbiddenBuiltinCalls": [],
+      "topLevelCallStatements": 0,
+      "ascii": true
+    }
+  ],
+  "staticPredicates": {
+    "ABI_NO_EAGER_NATIVE": true,
+    "ABI_ENTRY_CLOSED": true,
+    "ABI_SIGNATURES": true,
+    "ABI_LAYOUT_DATA": true,
+    "LIFECYCLE_ORDER": true,
+    "RESUME_AFTER_MEMBERSHIP": true,
+    "LIMITS_AND_BREAKAWAY": true,
+    "CLEANUP_UNBOUND_CHILD": true,
+    "NO_INFINITE_WAIT": true,
+    "PEAK_NOT_CURRENT": true,
+    "ATTEMPT_COUNTED_BEFORE_CALL": true,
+    "R2_COUNTS": true,
+    "R2_DEADLINE_ONE": true,
+    "R2_DEADLINE_WAIT_FROM_BUDGET": true,
+    "R2_DEADLINE_PHASES": true,
+    "R2_NO_FALSE_CONFIRM": true,
+    "DEADLINE_MODULE": true,
+    "MODULE_SPLIT_PRESENT": true
+  },
+  "mutationEdits": {
+    "MUT_COUNT_GUARD_REMOVED": {"predicate": "R2_COUNTS", "killed": true},
+    "MUT_DEADLINE_RESET_AFTER_TERMINATE": {"predicate": "R2_DEADLINE_ONE", "killed": true},
+    "MUT_DEADLINE_RESET_PER_STEP": {"predicate": "R2_DEADLINE_ONE", "killed": true},
+    "MUT_FULL_PER_WAIT_BUDGET": {"predicate": "R2_DEADLINE_WAIT_FROM_BUDGET", "killed": true},
+    "MUT_EXPIRY_IGNORED": {"predicate": "R2_DEADLINE_PHASES", "killed": true},
+    "MUT_INFINITE_WAIT": {"predicate": "R2_DEADLINE_WAIT_FROM_BUDGET", "killed": true},
+    "MUT_EAGER_NATIVE_IMPORT": {"predicate": "ABI_NO_EAGER_NATIVE", "killed": true},
+    "MUT_RESUME_BEFORE_MEMBERSHIP": {"predicate": "RESUME_AFTER_MEMBERSHIP", "killed": true},
+    "MUT_UNBOUND_CLEANUP_DROPPED": {"predicate": "CLEANUP_UNBOUND_CHILD", "killed": true},
+    "MUT_CLEANUP_SUCCESS_AFTER_FAILURE": {"predicate": "R2_NO_FALSE_CONFIRM", "killed": true},
+    "MUT_PEAK_PROMOTED_CURRENT": {"predicate": "PEAK_NOT_CURRENT", "killed": true},
+    "MUT_LIMIT_DROPPED": {"predicate": "LIMITS_AND_BREAKAWAY", "killed": true}
+  },
+  "checkerReadAhead": {
+    "path": ".cvf/runtime/ncr-c1-s1-consolidated-repair-worker/checker-read-ahead.json",
+    "sha256": "22840e904af0af6bc9ed35f864a2219608daa905469c3d4ad5a0ac9ba278a457",
+    "fullReadEntries": 96,
+    "notReadEntries": 2,
+    "other": [
+      {
+        "path": "docs/reference/CVF_NCR_S05_SUPERVISOR_SOURCE_CONTRACT_R1_2026-10-03.md",
+        "disposition": "NOT_REREAD_IN_THIS_INVOCATION",
+        "reason": "pure data and state baseline is carried by byte-identical reused seed sources; the native contract and reassessment were read in full"
+      }
+    ]
+  },
+  "proofs": {
+    "S1-ABI": {
+      "claim": "documentary ABI tables, layout data, restype and argtypes and the guarded deferred loader",
+      "sourceLocators": ["src/native_abi.py", "src/windows_job.py"],
+      "requirementMapRef": "evidence/requirement-map.json#S1-N1-BINDING-ABI",
+      "limitations": ["no execution", "no layout measurement", "no host compatibility measurement"]
+    },
+    "S1-CORE": {
+      "claim": "ordered lifecycle, memory seams, cancellation, cleanup and per-instance custody",
+      "sourceLocators": ["src/windows_job.py", "src/supervisor.py", "src/envelope_contract.py"],
+      "requirementMapRef": "evidence/requirement-map.json#S1-N2-LIFECYCLE-ORDER,S1-N3-MEMORY-MEMBERSHIP,S1-N4-CANCEL-CLEANUP-CUSTODY",
+      "limitations": ["static source correspondence only", "native behaviour unverified"]
+    },
+    "S1-FIXTURES": {
+      "claim": "six inert fixture builders reused byte for byte, all cases NOT_EXECUTED_PLANNED",
+      "sourceLocators": ["fixtures/fx_d1.py", "fixtures/fx_m1.py", "fixtures/fx_t1.py", "fixtures/fx_b1.py", "fixtures/fx_n1.py", "fixtures/fx_l1.py"],
+      "limitations": ["no fixture executed", "reuse is identity evidence, not a fresh review"]
+    },
+    "S1-BOUNDARY": {
+      "claim": "disk, egress, privilege and custody boundaries remain unimplemented and fail closed",
+      "sourceLocators": ["src/boundary_admission.py"],
+      "requirementMapRef": "evidence/requirement-map.json#S1-N5-PRODUCTION-BOUNDARIES",
+      "limitations": ["no mechanism proof", "10 GiB and 8 GiB selections not hardcoded"]
+    },
+    "S1-CUSTODY": {
+      "claim": "sixteen create-exclusive writes with actual events, manifest last, no cyclic hashes",
+      "writeLedgerRows": "D1-D4,F1-F16",
+      "limitations": ["reported tool evidence, not independent OS attestation", "source prechecks ran once per call, not once for all payloads"]
+    },
+    "PROOF-RETURN": {
+      "path": "docs/reviews/CVF_NCR_C1_S1_CONSOLIDATED_REPAIR_WORKER_RETURN_2026-10-08.md",
+      "bytes": 31314,
+      "sha256": "f12eaee97896a2498f12bf6556eac55463e5e94491f8faa6b66daeff8954a936",
+      "binding": "raw bytes of the Markdown return created before this file"
+    },
+    "S1-RETURN-GATE": {
+      "status": "PLANNED_UNTIL_POST_WRITE_TOOL_EVENT",
+      "postWriteReceipt": ".cvf/runtime/ncr-c1-s1-consolidated-repair-worker/post-write-custody.json",
+      "gateLog": ".cvf/runtime/ncr-c1-s1-consolidated-repair-worker/final-worker-return-gate.log",
+      "note": "bound only by the receipt created after this file and the full gate run; Local accepts completion only when receipt and log bytes join"
+    },
+    "R2-COUNTS": {
+      "repair": "listed greater than assigned rejected before any id is read; incomplete reporting for listed below assigned",
+      "sourceLocators": ["src/windows_job.py"],
+      "predicate": "R2_COUNTS",
+      "mutationEdit": "MUT_COUNT_GUARD_REMOVED",
+      "limitations": ["static AST only", "no native execution"]
+    },
+    "R2-DEADLINE": {
+      "repair": "one monotonic deadline, remaining milliseconds recomputed per phase, never infinite, late observation cannot confirm",
+      "sourceLocators": ["src/windows_job.py", "src/deadline_budget.py"],
+      "predicates": ["R2_DEADLINE_ONE", "R2_DEADLINE_WAIT_FROM_BUDGET", "R2_DEADLINE_PHASES", "R2_NO_FALSE_CONFIRM", "DEADLINE_MODULE", "NO_INFINITE_WAIT"],
+      "mutationEdits": [
+        "MUT_DEADLINE_RESET_AFTER_TERMINATE",
+        "MUT_DEADLINE_RESET_PER_STEP",
+        "MUT_FULL_PER_WAIT_BUDGET",
+        "MUT_EXPIRY_IGNORED",
+        "MUT_INFINITE_WAIT",
+        "MUT_CLEANUP_SUCCESS_AFTER_FAILURE"
+      ],
+      "limitations": ["soft deadline is bookkeeping and cannot interrupt a native call", "static AST only"]
+    },
+    "R2-READAHEAD": {
+      "manifest": "checker-read-ahead.json",
+      "note": "path, raw hash, worker-asserted full-read disposition and timings; two catalogs recorded NOT_READ_WITH_REASON",
+      "limitations": ["dispositions are worker assertions from tool results, not derived from hashing"]
+    },
+    "R2-TIMING": {
+      "startUtc": "2026-10-08T17:02:23Z",
+      "budgetSeconds": 3600,
+      "timing": {
+        "firstWriteElapsedS": 1791.6,
+        "firstWriteUtc": "2026-10-08T17:32:14Z",
+        "sourcesDoneElapsedS": 1888.3,
+        "sourcesDoneUtc": "2026-10-08T17:33:51Z",
+        "mdWriteElapsedS": 2122.5,
+        "mdWriteUtc": "2026-10-08T17:37:45Z",
+        "startUtc": "2026-10-08T17:02:23.193264+00:00",
+        "startMonotonicNs": 445854453000000,
+        "budgetSeconds": 3600,
+        "jsonWriteElapsedS": 2201.2,
+        "jsonWriteUtc": "2026-10-08T17:39:04Z"
+      },
+      "limitations": ["final elapsed including the bound gate is bound only by the post-write receipt"]
+    }
+  },
+  "semanticConvergence": {
+    "chainOrdinal": 5,
+    "predecessor": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_C1_S1_CONSOLIDATED_REPAIR_2026-10-08.md",
+    "predecessorSha256": "53dea51ad767583b303861f08a07ecda31a0270308ccaa616e00d4c625d0dd64",
+    "retained": 4,
+    "new": ["C1_R2_STATIC_REVIEW_PENDING", "C1_R2_CREATION_CUSTODY_PENDING"],
+    "resolved": [],
+    "streak": 1,
+    "disposition": "CONTINUE_BOUNDED"
+  },
+  "independentProbeDisposition": "PENDING_REVIEWER_EXECUTION",
+  "deviationsAndLimits": [
+    "SOURCE_PRECHECK_SPLIT: the shell limits one command to about 32 KB and rewrites backslashes, so payloads were sent in several one-shot standard-input calls; source prechecks ran once per call and each return was prechecked just before its own creation",
+    "REUSE_BY_COPY: nine files are byte copies of hash-verified seed sources and src/windows_job.py was assembled in memory by the writer from the seed plus line-range edits; no draft was saved to disk",
+    "TOPOLOGY_SCOPE: lifecycle state tables and return-code predicates were also moved to src/native_abi.py to meet the 400-line adapter ceiling",
+    "CLASSIFIER_EVENT: a persistent local receiver was denied by the tool classifier and abandoned",
+    "RUNTIME_EXTRA: the bound pre-implementation gate created its own receipt under .cvf/runtime/autorun-receipts, outside the eight-file allowlist",
+    "READ_AHEAD_ASSERTED: full-read dispositions for 96 files are worker assertions; the S05 supervisor contract was not re-read and the 20 snapshots were hash-matched only",
+    "TIMEBOX: elapsed seconds at each checkpoint are recorded; the final value including the bound gate is bound only by the post-write receipt"
+  ],
+  "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
+  "claimBoundary": "Static source correspondence and write custody only. Not behavioural, native, layout, containment, rights or runtime proof. Self-hash and the final write and gate events are outside this file."
+}

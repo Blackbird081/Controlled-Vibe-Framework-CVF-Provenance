@@ -168,6 +168,36 @@ proposals are evaluated, which is never approval feasibility. Contract, limits
 and the cooperative-caller boundary: `docs/reference/preapproval_feasibility/README.md`.
 Unmarked and historical proposals are unaffected, so a proposer must opt in.
 
+### Execution-Surface And Total-Cost Feasibility
+
+Operator clarification: 2026-10-09. Apply within Technical Feasibility Before
+Operator Approval and the existing work-order/closeability rules.
+
+Before dispatch, check that required payload preparation, transfer, exclusive
+creation, and gate order can be performed through the admitted worker tools
+within the full read/draft/write/gate budget. Account for actual transport limits.
+If all finalized payloads must be prechecked before the first effect, design a
+feasible admitted transfer/precheck sequence; do not silently substitute checks
+per batch or ask the worker to invent an out-of-scope receiver. Declare trusted
+gate-owned receipts/caches alongside worker-authored runtime paths and their
+budget/ownership boundaries, so mandatory gates do not violate the allowlist.
+
+Compare total delivery cost: orchestration, worker preparation/execution, review,
+and probable rework. Many worker tasks or a high difficulty rating are not by
+themselves waste when a lower-cost worker can perform them with effective
+upstream control. Record model-cost assumptions as assumptions until measured;
+do not weaken identity, safety, custody or effect admission to reduce task count.
+
+A question about delegation is not invocation authority. Preserve explicit
+worker/subagent/provider ceilings and acknowledge compliance with that boundary.
+On return, separate useful verified output, worker procedure deviations and
+dispatcher contradictions. Current hash/gate PASS cannot repair historical
+preparation order or prove a skipped read. Preserve disclosed deviations and
+avoid recreating useful source solely to manufacture a compliant history.
+
+These are dispatcher/reviewer judgment rules, not new effect grants, universal
+tool interception or proof of automatic semantic feasibility enforcement.
+
 ### Receiving Analysis And Question Discipline
 
 Apply before asking, revising intake analysis or preparing an authorized plan:
