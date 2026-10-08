@@ -1,7 +1,7 @@
 # NCR C1 Offline Production Readiness Work Order
 Memory class: governed-worker-dispatch
 docType: work_order
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 Date: 2026-10-08
 Batch ID: CVF-NCR-C1-OFFLINE-PRODUCTION-READINESS-20261008
 Dispatch base head: 6f409ea6587de0b6470149699002486f896878de
@@ -251,7 +251,7 @@ rerunCostReason: one bounded reviewer probe after lawful release; no duplicate s
 | Field | Value |
 |---|---|
 | applicableCheckersRead | governance/compat/check_work_order_dispatch_quality.py; governance/compat/check_gate_to_role_closeability.py; governance/compat/check_governed_artifact_checker_read_ahead.py; governance/compat/check_review_cost_control.py; governance/compat/check_agent_operation_trace.py; governance/compat/check_core_guard_self_protection.py |
-| literalTokensReviewed | DISPATCH_READY; CLOSEABLE; S0 documentary completion; WORKER_MUST_NOT_COMMIT; exact held-versus-ready grammar; COMPLETE_PENDING_REVIEW; BLOCKED_WITH_REASON; no closed-equivalent claims |
+| literalTokensReviewed | original dispatch readiness; CLOSEABLE; S0 documentary completion; WORKER_MUST_NOT_COMMIT; exact held-versus-ready grammar; COMPLETE_PENDING_REVIEW; BLOCKED_WITH_REASON; no closed-equivalent claims |
 | gateRunPurpose | confirmation and evidence of S0 packet structure and stage-specific holds |
 | claimBoundary | S0 authoring/release only; no runtime verification |
 
@@ -265,24 +265,25 @@ Returned defects: NONE_RETURNED; totalCandidates=0; truncated=false.
 
 | Field | Evidence |
 |---|---|
-| Actor | Local dispatcher amendment author |
-| Provider or surface | private shared workspace |
-| Session or invocation | c1-s0-amendment-authoring-20261008 |
+| Actor | Local reviewer/closer |
+| Provider or surface | private Local workspace |
+| Session or invocation | cvf-ncr-c1-s0-local-review-20261008 |
 | Working directory | repository root |
-| Command or tool surface | named source/review/evidence reads; raw attachment hash; authoring and release gates |
-| Target paths | `docs/baselines/CVF_GC018_NCR_C1_OFFLINE_PRODUCTION_READINESS_S0_2026-10-08.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_C1_OFFLINE_PRODUCTION_READINESS_S0_2026-10-08.md`; `docs/reviews/evidence/cvf-ncr-c1-offline-production-amendment-intake-2026-10-08.json` |
-| Allowed scope source | operator grouped authoring autonomy and orchestrator correction; S0 documentary scope only |
-| Before status evidence | git status --short empty; clean worktree at 6f409ea6587de0b6470149699002486f896878de; proposal received in operator attachment |
-| After status evidence | three amended authoring paths; worker outputs still absent |
-| Diff evidence | exact three-path staged manifest and git diff --check |
-| Approval boundary | documentary S0 only; all production effects held |
-| Claim boundary | reconciled documentary release contract; no production acceptance |
-| Agent type | dispatcher |
-| Invocation ID | c1-s0-amendment-authoring-20261008 |
-| Expected manifest | `docs/baselines/CVF_GC018_NCR_C1_OFFLINE_PRODUCTION_READINESS_S0_2026-10-08.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_C1_OFFLINE_PRODUCTION_READINESS_S0_2026-10-08.md`; `docs/reviews/evidence/cvf-ncr-c1-offline-production-amendment-intake-2026-10-08.json` |
-| Actual changed set | `docs/baselines/CVF_GC018_NCR_C1_OFFLINE_PRODUCTION_READINESS_S0_2026-10-08.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_C1_OFFLINE_PRODUCTION_READINESS_S0_2026-10-08.md`; `docs/reviews/evidence/cvf-ncr-c1-offline-production-amendment-intake-2026-10-08.json` |
+| Command or tool surface | named source/hash joins, independent JSON detector, two documentary repairs, Local gates and split commit/continuity |
+| Target paths | `docs/reference/CVF_NCR_C1_OFFLINE_PRODUCTION_READINESS_SPEC_2026-10-08.md`; `docs/reviews/evidence/cvf-ncr-c1-offline-production-readiness-worker-2026-10-08.json`; `docs/reviews/CVF_NCR_C1_OFFLINE_PRODUCTION_READINESS_WORKER_RETURN_2026-10-08.md`; `docs/reviews/CVF_NCR_C1_OFFLINE_PRODUCTION_READINESS_COMPLETION_2026-10-08.md`; `docs/reviews/evidence/cvf-ncr-c1-offline-production-readiness-local-review-2026-10-08.json`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_C1_OFFLINE_PRODUCTION_READINESS_S0_2026-10-08.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/cvfNcrConsolidatedLocalFoundation20261006.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Allowed scope source | docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_C1_OFFLINE_PRODUCTION_READINESS_S0_2026-10-08.md reviewer conversion and returned S0 |
+| Before status evidence | three untracked worker outputs at 726af3dabeb49213367d5c200e98fd194b0abc95; no worker commit |
+| After status evidence | exact thirteen-path atomic closure set; original return untouched |
+| Diff evidence | exact staged set and git diff --cached --check |
+| Approval boundary | S0 acceptance/commit/continuity; later effects held |
+| Claim boundary | documentary output only, no runtime/host/media/provider proof |
+| Agent type | reviewer/closer |
+| Invocation ID | cvf-ncr-c1-s0-local-review-20261008 |
+| Expected manifest | `docs/reference/CVF_NCR_C1_OFFLINE_PRODUCTION_READINESS_SPEC_2026-10-08.md`; `docs/reviews/evidence/cvf-ncr-c1-offline-production-readiness-worker-2026-10-08.json`; `docs/reviews/CVF_NCR_C1_OFFLINE_PRODUCTION_READINESS_WORKER_RETURN_2026-10-08.md`; `docs/reviews/CVF_NCR_C1_OFFLINE_PRODUCTION_READINESS_COMPLETION_2026-10-08.md`; `docs/reviews/evidence/cvf-ncr-c1-offline-production-readiness-local-review-2026-10-08.json`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_C1_OFFLINE_PRODUCTION_READINESS_S0_2026-10-08.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/cvfNcrConsolidatedLocalFoundation20261006.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Actual changed set | `docs/reference/CVF_NCR_C1_OFFLINE_PRODUCTION_READINESS_SPEC_2026-10-08.md`; `docs/reviews/evidence/cvf-ncr-c1-offline-production-readiness-worker-2026-10-08.json`; `docs/reviews/CVF_NCR_C1_OFFLINE_PRODUCTION_READINESS_WORKER_RETURN_2026-10-08.md`; `docs/reviews/CVF_NCR_C1_OFFLINE_PRODUCTION_READINESS_COMPLETION_2026-10-08.md`; `docs/reviews/evidence/cvf-ncr-c1-offline-production-readiness-local-review-2026-10-08.json`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_C1_OFFLINE_PRODUCTION_READINESS_S0_2026-10-08.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/cvfNcrConsolidatedLocalFoundation20261006.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |
+
 
 ## Scaffold Provenance Block
 
@@ -336,7 +337,7 @@ NOT_APPLICABLE_WITH_REASON: selected operator proposal, not corpus mapping.
 
 ## Claim Boundary
 
-DISPATCH_READY for S0 three-document scope only, subject to committed release and final bound gate. No worker invoked here. Production runtime remains NO_GO; no source-supervisor acceptance/retry, downloads/installations, host mutations, rights/consent clearance, media/provider/public effects or changed historical counters. Other numerical runtime limits remain proposals.
+S0 three-document scope completed and accepted bounded by Local review. Original dispatch conditions are historical; worker lane released. Production runtime remains NO_GO; no source-supervisor acceptance/retry, downloads/installations, host mutations, rights/consent clearance, media/provider/public effects or changed historical counters. Other numerical runtime limits remain proposals.
 
 ## Public Export Disposition
 
@@ -579,3 +580,47 @@ NOT_APPLICABLE_WITH_REASON - no new repository absorption, corpus coverage or ru
 ```
 
 SHADOW_FULL_GATE_FALLBACK; full legacy bundles remain mandatory.
+
+## Local Closure Disposition
+
+Documentary S0 accepted by `docs/reviews/CVF_NCR_C1_OFFLINE_PRODUCTION_READINESS_COMPLETION_2026-10-08.md`; original dispatch bytes retained at `726af3dabeb49213367d5c200e98fd194b0abc95`. Original return stays historical pending evidence. This closed status authorizes no source/runtime/host/media successor.
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_C1_OFFLINE_PRODUCTION_READINESS_S0_2026-10-08.md | S0 terminal acceptance owned by this completion; current closed status and completion binding; original dispatch at execution base, no redispatch | PASS |
+| Completion or reviewer artifact | docs/reviews/CVF_NCR_C1_OFFLINE_PRODUCTION_READINESS_COMPLETION_2026-10-08.md | bounded documentary review and grouped repairs | PASS |
+| Roadmap state | no dedicated roadmap for standalone S0 work order | no new tranche/runtime successor | N/A with reason: existing NCR/video owners retained |
+| Registry JSON | docs/reviews/evidence/cvf-ncr-c1-offline-production-readiness-local-review-2026-10-08.json | original/final identities, detector bytes and six cases | PASS |
+| Registry Markdown | docs/reference/CVF_NCR_C1_OFFLINE_PRODUCTION_READINESS_SPEC_2026-10-08.md | reviewed spec qualified by this completion | PASS |
+| External evidence digest | docs/reviews/evidence/cvf-ncr-c1-offline-production-readiness-worker-2026-10-08.json | same-workspace documentary evidence | N/A with reason: no external research |
+| System loop interlock | docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_C1_OFFLINE_PRODUCTION_READINESS_S0_2026-10-08.md and original STOP owner | no stopped-chain resolution/reset/retry | PASS |
+| Session continuity | active handoff, core/source entries and generated projections | closed-status/pin projections synchronized atomically; dedicated real material-SHA synchronization follows | PASS |
+
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required | Observed | Status |
+|---|---|---|---|
+| C1-OFFLINE | source facts versus runtime distinction | pin-bound O1, no runtime observation | PASS |
+| C1-RIGHTS | declarations versus consent | zero verified rows, design assumptions only | PASS |
+| C1-INVENTORY | declared/payload distinction | Windows82 reused, npm approximate, zero payload verified | PASS |
+| C1-CONTROLS | envelope/control plan | selected10GiB/8GiB, render workdir included, zero enforced controls | PASS |
+| C1-BOUNDARY | original STOP/effects | counters retained, all ten stages held,29 routed obligations | PASS |
+
+
+## Independent Review Probe Admission
+
+independentProbeDisposition: PASS_INDEPENDENT_PROBE
+reviewerDecisionOwner: LOCAL
+implementationWorkerActor: INTERNAL_AGENT shared-workspace documentary worker
+probeExecutorActor: LOCAL_REVIEWER_CODEX_ROOT
+workerInvocationId: cvf-ncr-c1-offline-s0-worker-20261008
+probeInvocationId: cvf-ncr-c1-s0-local-review-20261008
+workerOracleSha256: fa24126d13a743f5e8edf72e4257d158029bc3f1f5592a6a06e39bc62c80d6f8
+probeOracleSha256: fb0332928fb70a138377c1261bf56fceb8f420b67d7a21d293e7e1617c4bc707
+workerEvidenceRef: docs/reviews/evidence/cvf-ncr-c1-offline-production-readiness-worker-2026-10-08.json
+probeEvidenceRef: docs/reviews/evidence/cvf-ncr-c1-offline-production-readiness-local-review-2026-10-08.json
+probeCommandOrMethod: python -B .cvf/runtime/cvf-video-storyboard-review-20261008/review_s0_probe.py; actual JSON/source bytes plus altered in-memory copies
+probeObservedResult: original positive/five mutations PASS; final six cases PASS after documentary repairs, production NO_GO retained
+oracleSeparationBasis: distinct actor/invocation; reviewer detector imports no worker logic; actual source/return exposure disclosed; post-repair checks are reviewer regressions, not another independent actor

@@ -1,0 +1,1397 @@
+{
+  "schemaVersion": "cvf.ncrC1OfflineReadinessWorkerEvidence.v1",
+  "batchId": "CVF-NCR-C1-OFFLINE-PRODUCTION-READINESS-20261008",
+  "executionBaseHead": "726af3dabeb49213367d5c200e98fd194b0abc95",
+  "dispatchBaseHead": "6f409ea6587de0b6470149699002486f896878de",
+  "status": "COMPLETE_PENDING_REVIEW",
+  "claimLevel": "DOCUMENTARY_S0_ONLY",
+  "runtimeAdmission": "NO_GO",
+  "outputPaths": [
+    "docs/reference/CVF_NCR_C1_OFFLINE_PRODUCTION_READINESS_SPEC_2026-10-08.md",
+    "docs/reviews/evidence/cvf-ncr-c1-offline-production-readiness-worker-2026-10-08.json",
+    "docs/reviews/CVF_NCR_C1_OFFLINE_PRODUCTION_READINESS_WORKER_RETURN_2026-10-08.md"
+  ],
+  "preflight": {
+    "cleanWorktreeAtStart": true,
+    "threeOutputsAbsentAtStart": true,
+    "packetHashesMatchBootstrap": true,
+    "intakeBoundHashesMatch": [
+      "composition",
+      "controlDesign",
+      "footprint",
+      "kitCompletion",
+      "metaCompletion",
+      "metaEvidence",
+      "metaRef",
+      "relayReview",
+      "selection"
+    ],
+    "preImplementationGate": "PASS 87/87 COMPLIANT exit 0, base executionBaseHead; a first run with the dispatch base failed on the range containing the continuity commit and was repaired by using the executionBaseHead the order prescribes"
+  },
+  "sources": {
+    "workOrderS0": {
+      "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_C1_OFFLINE_PRODUCTION_READINESS_S0_2026-10-08.md",
+      "role": "governing S0 order",
+      "sha256": "1d46745dd7f0db94d960897b79dfa888bfd7a8ce62137a096d77162e41397351",
+      "bytes": 41409,
+      "lines": 581
+    },
+    "baselineS0": {
+      "path": "docs/baselines/CVF_GC018_NCR_C1_OFFLINE_PRODUCTION_READINESS_S0_2026-10-08.md",
+      "role": "governing S0 baseline",
+      "sha256": "dcffa646e1052d90cb0293fa879bda8ecb8048b7cf7e6265dba7ea55c1a670df",
+      "bytes": 8420,
+      "lines": 94
+    },
+    "intake": {
+      "path": "docs/reviews/evidence/cvf-ncr-c1-offline-production-amendment-intake-2026-10-08.json",
+      "role": "amendment intake A01..A10",
+      "sha256": "6438118f3eef3c2b0fc7b4ebf0d90c3b15deecff7831141c8ac8f39a6a563c20",
+      "bytes": 28632,
+      "lines": 131
+    },
+    "selection": {
+      "path": "docs/reviews/evidence/cvf-ncr-c1-offline-production-selection-2026-10-08.json",
+      "role": "operator selection and historicalStop",
+      "sha256": "95d32b48ef418c5e107c7b4857f30107235f24c448b773de3e0935a29bd8b49d",
+      "bytes": 8442,
+      "lines": 233
+    },
+    "kit": {
+      "path": "docs/reference/CVF_NCR_VIDEO_PRODUCTION_PREPARATION_KIT_2026-10-08.md",
+      "role": "accepted preparation kit",
+      "sha256": "a4bd94eff05b5a3d7d3c33367cd4f036ba99540bd24f381c1381afb3f0759697",
+      "bytes": 31089,
+      "lines": 254
+    },
+    "kitCompletion": {
+      "path": "docs/reviews/CVF_NCR_VIDEO_PRODUCTION_PREPARATION_COMPLETION_2026-10-08.md",
+      "role": "accepted preparation completion",
+      "sha256": "66c39f7d2e29afd9820b9e85f963354fc183c9e159da7803469aedde6b62c583",
+      "bytes": 21004,
+      "lines": 222
+    },
+    "metaRef": {
+      "path": "docs/reference/CVF_NCR_C1_METADATA_COMPLETION_SOURCE_DELTA_2026-10-03.md",
+      "role": "10-03 metadata completion reference",
+      "sha256": "e94ea7abb7879be6cfb0a72a5a830a0a0ae6dff5fab8fe4565f0d116ab819269",
+      "bytes": 65031,
+      "lines": 511
+    },
+    "metaCompletion": {
+      "path": "docs/reviews/CVF_CVF_NCR_C1_METADATA_COMPLETION_SOURCE_DELTA_COMPLETION_2026-10-03.md",
+      "role": "10-03 metadata completion review",
+      "sha256": "d7eb78ff39301218cf5fe07a2e556905ca8069d92bb5dd1168589b1f1f4c14cf",
+      "bytes": 19073,
+      "lines": 234
+    },
+    "metaEvidence": {
+      "path": "docs/reviews/evidence/cvf-ncr-c1-metadata-completion-source-delta-2026-10-03.json",
+      "role": "10-03 metadata evidence",
+      "sha256": "01282c741e247fc7aea350399038dcb5b493caf6d19e145e5f7d8edc46047aa1",
+      "bytes": 148041,
+      "lines": 947
+    },
+    "footprint": {
+      "path": "docs/reference/CVF_NCR_C1_METADATA_FOOTPRINT_ANALYSIS_2026-10-03.md",
+      "role": "10-03 footprint and O1 analysis",
+      "sha256": "2111d3b6efb7a64d4dd23dc6914cd60bd40243c7510230771bff06cb83375dbf",
+      "bytes": 36978,
+      "lines": 296
+    },
+    "controlDesign": {
+      "path": "docs/reference/CVF_NCR_S05_CONTROL_FIXTURE_DESIGN_2026-10-03.md",
+      "role": "10-03 control design",
+      "sha256": "7bc7a09bb5e4f67a25e8d3f92e156fbb9a8671b118408629af7acb2dc0538b52",
+      "bytes": 37531,
+      "lines": 361
+    },
+    "boundedRef": {
+      "path": "docs/reference/CVF_NCR_C1_BOUNDED_READINESS_ASSESSMENT_2026-10-03.md",
+      "role": "D105 bounded readiness reference",
+      "sha256": "1ea8f416c00ba64d414d192f10b389180ce3423044a7a8f4c231efea911898a9",
+      "bytes": 37200,
+      "lines": 268
+    },
+    "boundedEvidence": {
+      "path": "docs/reviews/evidence/cvf-ncr-c1-bounded-readiness-assessment-2026-10-03.json",
+      "role": "D105 bounded readiness evidence",
+      "sha256": "68a496a583f99a44d0e923f363528401905cfc982f1daef6dbafded2aeb27c6f",
+      "bytes": 67250,
+      "lines": 552
+    },
+    "relayReview": {
+      "path": "docs/reviews/CVF_CVF_NCR_S05_S1_R1_EVIDENCE_RELAY_LOCAL_REVIEW_2026-10-03.md",
+      "role": "historical relay STOP",
+      "sha256": "54630fcaace2eca4f1ed5d136e8d69a3846484f306929628221c0361656526de",
+      "bytes": 16266,
+      "lines": 173
+    },
+    "composition": {
+      "path": "docs/reference/CVF_NCR_VIDEO_COMPOSITION_READINESS_DESIGN_2026-10-03.md",
+      "role": "composition design",
+      "sha256": "de3673a2f41695bfa83692095fd0d67f96cea924d48809aefd8b14266c8e6d87",
+      "bytes": 30615,
+      "lines": 300
+    },
+    "storyboard": {
+      "path": "docs/reference/CVF_NCR_GENERAL_VIDEO_DESIGN_2026-10-02.md",
+      "role": "accepted storyboard",
+      "sha256": "3ce5e2363c3e29997fcbf42cb4cec59af7447cca38409d4d970e8aa71e5777e0",
+      "bytes": 15049,
+      "lines": 159
+    },
+    "predecessorBaseline": {
+      "path": "docs/baselines/CVF_GC018_NCR_C1_OFFLINE_PRODUCTION_READINESS_2026-10-08.md",
+      "role": "predecessor held baseline",
+      "sha256": "43a94438af1b04f013b1b00d9d031276c0416d278d7b0524cf7a6c748dd4eb4f",
+      "bytes": 6943,
+      "lines": 88
+    },
+    "predecessorOrder": {
+      "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_C1_OFFLINE_PRODUCTION_READINESS_2026-10-08.md",
+      "role": "predecessor held order",
+      "sha256": "87404a4231ae119dd07618afe0600a5c8d49e27a28829e1a0bcd2775fe9d4e80",
+      "bytes": 34653,
+      "lines": 499
+    },
+    "historicalHelperReview": {
+      "path": "docs/reviews/CVF_CVF_NCR_S05_S1_SUPERVISOR_SOURCE_R1_LOCAL_REVIEW_2026-10-03.md",
+      "sha256": "eb3ab6d3be5e69654e2854dcefa316472ed4010827a394cce375efd26db0d0bd",
+      "bytes": 16513,
+      "lines": 169,
+      "role": "Local static source correspondence; acceptance withheld; not a source/runtime grant"
+    }
+  },
+  "selected": {
+    "aggregateDiskBytes": 10737418240,
+    "peakCommittedRamBytes": 8589934592,
+    "otherCeilings": "PROPOSED_NOT_SELECTED",
+    "direction": "C1 CPU/ONNX fp32 fixed preset, conditional owned offline cache"
+  },
+  "proofs": {
+    "C1-OFFLINE": {
+      "proofId": "C1-OFFLINE",
+      "status": "PASS_DOCUMENTARY_S0",
+      "claim": "O1 source facts H01-H12 retained as DECLARED_PINNED; staged tree, pre-import environment, retrieval sites, failure cases and attempt-policy record joined; runtime NOT_OBSERVED",
+      "sources": [
+        "docs/reference/CVF_NCR_C1_METADATA_FOOTPRINT_ANALYSIS_2026-10-03.md",
+        "docs/reviews/evidence/cvf-ncr-c1-bounded-readiness-assessment-2026-10-03.json",
+        "docs/reference/CVF_NCR_VIDEO_PRODUCTION_PREPARATION_KIT_2026-10-08.md",
+        "docs/reference/CVF_NCR_S05_CONTROL_FIXTURE_DESIGN_2026-10-03.md"
+      ],
+      "command": "python -B build_s0.py (live hash, arithmetic and join builder over the cited sources; zero external requests)",
+      "observedResult": {
+        "o1Position": "SOURCE_SUPPORTED_MECHANISM_RUNTIME_UNVERIFIED",
+        "hubLockVersion": "1.13.0",
+        "hubLockTagCommit": "3790483f3c04f4e36b9ff27ab324fb43c08c5059",
+        "hubObservedHead": "d711944ddf94abe9ef2a34f80d41007968ff9c30",
+        "retrievalSites": [
+          "S1",
+          "S2",
+          "S3",
+          "S4",
+          "S5",
+          "phonemizer"
+        ],
+        "attemptPolicy": "NOT_SELECTED_FOR_PRODUCTION",
+        "plannedCases": [
+          "DC-01",
+          "DC-02",
+          "DC-03",
+          "DM-04",
+          "RC-06"
+        ]
+      },
+      "notObserved": [
+        "loaded-byte hashes",
+        "refs/main equality",
+        "Windows link layout",
+        "attempt and success logs",
+        "sea-g2p package data"
+      ]
+    },
+    "C1-RIGHTS": {
+      "proofId": "C1-RIGHTS",
+      "status": "PASS_DOCUMENTARY_S0",
+      "claim": "component rows separate declaration from verified rights and consent; preset identity and selection ambiguity recorded without selecting",
+      "sources": [
+        "docs/reviews/evidence/cvf-ncr-c1-bounded-readiness-assessment-2026-10-03.json",
+        "docs/reviews/evidence/cvf-ncr-c1-metadata-completion-source-delta-2026-10-03.json",
+        "docs/reference/CVF_NCR_S05_CONTROL_FIXTURE_DESIGN_2026-10-03.md"
+      ],
+      "command": "python -B build_s0.py (live hash, arithmetic and join builder over the cited sources; zero external requests)",
+      "observedResult": {
+        "verifiedRightsRows": 0,
+        "declarationRows": 9,
+        "preset": {
+          "blob": "3e07d6dd0bf594c04b873f4ddf578cb8090a04da",
+          "sha256": "e1f13cd2c2e0d29fdab5e15bfd7a30f3d7b768e6132bb43dd2b853f8efefdce9",
+          "bytes": 180332,
+          "presets": 25,
+          "defaultAtPin": "Hai Dang",
+          "consentFieldInEntries": false
+        },
+        "selectionAmbiguity": [
+          "D105 XE-03 not selected",
+          "D109 OD-01 open and no policy chosen",
+          "D110 G2 P1 and Hai Dang kept for design"
+        ],
+        "disposition": "DESIGN_ASSUMPTIONS_ONLY"
+      },
+      "notObserved": [
+        "pinned licence texts",
+        "preset consent evidence",
+        "operator selection",
+        "binary terms",
+        "font rights"
+      ]
+    },
+    "C1-INVENTORY": {
+      "proofId": "C1-INVENTORY",
+      "status": "PASS_DOCUMENTARY_S0",
+      "claim": "accepted Windows82 rows joined and re-added; model and codec rows joined; npm approximate; no complete installed inventory claimed",
+      "sources": [
+        "docs/reference/CVF_NCR_C1_METADATA_COMPLETION_SOURCE_DELTA_2026-10-03.md",
+        "docs/reviews/evidence/cvf-ncr-c1-metadata-completion-source-delta-2026-10-03.json",
+        "docs/reviews/evidence/cvf-ncr-c1-bounded-readiness-assessment-2026-10-03.json"
+      ],
+      "command": "python -B build_s0.py (live hash, arithmetic and join builder over the cited sources; zero external requests)",
+      "observedResult": {
+        "wheels": {
+          "rows": 82,
+          "bytes": 262308771,
+          "rowDigestSha256": "7611a30687fed16ac6b0f90475f0240bf4e2224ae3e61f8e05d1bbabd6cf962a",
+          "digestMatchesAccepted": true,
+          "winAmd64": 25,
+          "noneAny": 57,
+          "v2Packages": 35,
+          "v2Bytes": 71956507,
+          "selectorChecksConsumed": 20
+        },
+        "wheelRows": [
+          {
+            "name": "gradio==5.49.1",
+            "filename": "gradio-5.49.1-py3-none-any.whl",
+            "bytes": 63523840,
+            "sha256": "1b19369387801a26a6ba7fd2f74d46c5b0e2ac9ddef14f24ddc0d11fb19421b7"
+          },
+          {
+            "name": "aiofiles==24.1.0",
+            "filename": "aiofiles-24.1.0-py3-none-any.whl",
+            "bytes": 15896,
+            "sha256": "b4ec55f4195e3eb5d7abd1bf7e061763e864dd4954231fb8539a0ef8bb8260e5"
+          },
+          {
+            "name": "anyio==4.11.0",
+            "filename": "anyio-4.11.0-py3-none-any.whl",
+            "bytes": 109097,
+            "sha256": "0287e96f4d26d4149305414d4e3bc32f0dcd0862365a4bddea19d7a1ec38c4fc"
+          },
+          {
+            "name": "idna==3.11",
+            "filename": "idna-3.11-py3-none-any.whl",
+            "bytes": 71008,
+            "sha256": "771a87f49d9defaf64091e6e6fe9c18d4833f140bd19464795bc32d966ca37ea"
+          },
+          {
+            "name": "sniffio==1.3.1",
+            "filename": "sniffio-1.3.1-py3-none-any.whl",
+            "bytes": 10235,
+            "sha256": "2f6da418d1f1e0fddd844478f41680e794e6051915791a034ff65e5f100525a2"
+          },
+          {
+            "name": "typing-extensions==4.15.0",
+            "filename": "typing_extensions-4.15.0-py3-none-any.whl",
+            "bytes": 44614,
+            "sha256": "f0fa19c6845758ab08074a0cfa8b7aecb71c999ca73d62883bc25cc018c4e548"
+          },
+          {
+            "name": "brotli==1.1.0",
+            "filename": "Brotli-1.1.0-cp311-cp311-win_amd64.whl",
+            "bytes": 357253,
+            "sha256": "aac0411d20e345dc0920bdec5548e438e999ff68d77564d5e9463a7ca9d3e7b1"
+          },
+          {
+            "name": "fastapi==0.120.2",
+            "filename": "fastapi-0.120.2-py3-none-any.whl",
+            "bytes": 108383,
+            "sha256": "bedcf2c14240e43d56cb9a339b32bcf15104fe6b5897c0222603cb7ec416c8eb"
+          },
+          {
+            "name": "annotated-doc==0.0.3",
+            "filename": "annotated_doc-0.0.3-py3-none-any.whl",
+            "bytes": 5488,
+            "sha256": "348ec6664a76f1fd3be81f43dffbee4c7e8ce931ba71ec67cc7f4ade7fbbb580"
+          },
+          {
+            "name": "pydantic==2.11.10",
+            "filename": "pydantic-2.11.10-py3-none-any.whl",
+            "bytes": 444823,
+            "sha256": "802a655709d49bd004c31e865ef37da30b540786a46bfce02333e0e24b5fe29a"
+          },
+          {
+            "name": "annotated-types==0.7.0",
+            "filename": "annotated_types-0.7.0-py3-none-any.whl",
+            "bytes": 13643,
+            "sha256": "1f02e8b43a8fbbc3f3e0d4f0f4bfc8131bcb4eebe8849b8e5c773f3a1c582a53"
+          },
+          {
+            "name": "pydantic-core==2.33.2",
+            "filename": "pydantic_core-2.33.2-cp311-cp311-win_amd64.whl",
+            "bytes": 1952909,
+            "sha256": "1e063337ef9e9820c77acc768546325ebe04ee38b08703244c1309cccc4f1bab"
+          },
+          {
+            "name": "typing-inspection==0.4.2",
+            "filename": "typing_inspection-0.4.2-py3-none-any.whl",
+            "bytes": 14611,
+            "sha256": "4ed1cacbdc298c220f1bd249ed5287caa16f34d44ef4e9c3d0cbad5b521545e7"
+          },
+          {
+            "name": "starlette==0.49.1",
+            "filename": "starlette-0.49.1-py3-none-any.whl",
+            "bytes": 74175,
+            "sha256": "d92ce9f07e4a3caa3ac13a79523bd18e3bc0042bb8ff2d759a8e7dd0e1859875"
+          },
+          {
+            "name": "ffmpy==0.6.4",
+            "filename": "ffmpy-0.6.4-py3-none-any.whl",
+            "bytes": 5596,
+            "sha256": "21fbf9cd3116279e0629e0f2bf5892306b3336d588165c8db1b5f6361118d811"
+          },
+          {
+            "name": "gradio-client==1.13.3",
+            "filename": "gradio_client-1.13.3-py3-none-any.whl",
+            "bytes": 325350,
+            "sha256": "3f63e4d33a2899c1a12b10fe3cf77b82a6919ff1a1fb6391f6aa225811aa390c"
+          },
+          {
+            "name": "fsspec==2025.9.0",
+            "filename": "fsspec-2025.9.0-py3-none-any.whl",
+            "bytes": 199289,
+            "sha256": "530dc2a2af60a414a832059574df4a6e10cce927f6f4a78209390fe38955cfb7"
+          },
+          {
+            "name": "httpx==0.28.1",
+            "filename": "httpx-0.28.1-py3-none-any.whl",
+            "bytes": 73517,
+            "sha256": "d909fcccc110f8c7faf814ca82a9a4d816bc5a6dbfea25d6591d6985b8ba59ad"
+          },
+          {
+            "name": "certifi==2025.10.5",
+            "filename": "certifi-2025.10.5-py3-none-any.whl",
+            "bytes": 163286,
+            "sha256": "0f212c2744a9bb6de0c56639a6f68afe01ecd92d91f14ae897c4fe7bbeeef0de"
+          },
+          {
+            "name": "httpcore==1.0.9",
+            "filename": "httpcore-1.0.9-py3-none-any.whl",
+            "bytes": 78784,
+            "sha256": "2d400746a40668fc9dec9810239072b40b4484b640a8c38fd654a024c7a1bf55"
+          },
+          {
+            "name": "h11==0.16.0",
+            "filename": "h11-0.16.0-py3-none-any.whl",
+            "bytes": 37515,
+            "sha256": "63cf8bbe7522de3bf65932fda1d9c2772064ffb3dae62d55932da54b31cb6c86"
+          },
+          {
+            "name": "huggingface-hub==1.13.0",
+            "filename": "huggingface_hub-1.13.0-py3-none-any.whl",
+            "bytes": 660643,
+            "sha256": "e942cb50d6a08dd5306688b1ac05bda157fd2fcc88b63dae405f7bd0d3234005"
+          },
+          {
+            "name": "filelock==3.20.0",
+            "filename": "filelock-3.20.0-py3-none-any.whl",
+            "bytes": 16054,
+            "sha256": "339b4732ffda5cd79b13f4e2711a31b0365ce445d95d243bb996273d072546a2"
+          },
+          {
+            "name": "hf-xet==1.4.3",
+            "filename": "hf_xet-1.4.3-cp37-abi3-win_amd64.whl",
+            "bytes": 3677359,
+            "sha256": "6b591fcad34e272a5b02607485e4f2a1334aebf1bc6d16ce8eb1eb8978ac2021"
+          },
+          {
+            "name": "packaging==25.0",
+            "filename": "packaging-25.0-py3-none-any.whl",
+            "bytes": 66469,
+            "sha256": "29572ef2b1f17581046b3a2227d5c611fb25ec70ca1ba8554b24b0e69331a484"
+          },
+          {
+            "name": "pyyaml==6.0.3",
+            "filename": "pyyaml-6.0.3-cp311-cp311-win_amd64.whl",
+            "bytes": 158763,
+            "sha256": "9f3bfb4965eb874431221a3ff3fdcddc7e74e3b07799e0e84ca4a0f867d449bf"
+          },
+          {
+            "name": "tqdm==4.67.1",
+            "filename": "tqdm-4.67.1-py3-none-any.whl",
+            "bytes": 78540,
+            "sha256": "26445eca388f82e72884e0d580d5464cd801a3ea01e63e5601bdff9ba6a48de2"
+          },
+          {
+            "name": "colorama==0.4.6",
+            "filename": "colorama-0.4.6-py2.py3-none-any.whl",
+            "bytes": 25335,
+            "sha256": "4f1d9991f5acc0ca119f9d443620b77f9d6b33703e51011c16baf57afb285fc6"
+          },
+          {
+            "name": "typer==0.20.0",
+            "filename": "typer-0.20.0-py3-none-any.whl",
+            "bytes": 47028,
+            "sha256": "5b463df6793ec1dca6213a3cf4c0f03bc6e322ac5e16e13ddd622a889489784a"
+          },
+          {
+            "name": "click==8.2.1",
+            "filename": "click-8.2.1-py3-none-any.whl",
+            "bytes": 102215,
+            "sha256": "61a3265b914e850b85317d0b3109c7f8cd35a670f963866005d6ef1d5175a12b"
+          },
+          {
+            "name": "rich==14.2.0",
+            "filename": "rich-14.2.0-py3-none-any.whl",
+            "bytes": 243393,
+            "sha256": "76bc51fe2e57d2b1be1f96c524b890b816e334ab4c1e45888799bfaab0021edd"
+          },
+          {
+            "name": "markdown-it-py==4.0.0",
+            "filename": "markdown_it_py-4.0.0-py3-none-any.whl",
+            "bytes": 87321,
+            "sha256": "87327c59b172c5011896038353a81343b6754500a08cd7a4973bb48c6d578147"
+          },
+          {
+            "name": "mdurl==0.1.2",
+            "filename": "mdurl-0.1.2-py3-none-any.whl",
+            "bytes": 9979,
+            "sha256": "84008a41e51615a49fc9966191ff91509e3c40b939176e643fd50a5c2196b8f8"
+          },
+          {
+            "name": "pygments==2.19.2",
+            "filename": "pygments-2.19.2-py3-none-any.whl",
+            "bytes": 1225217,
+            "sha256": "86540386c03d588bb81d44bc3928634ff26449851e99741617ecb9037ee5ec0b"
+          },
+          {
+            "name": "shellingham==1.5.4",
+            "filename": "shellingham-1.5.4-py2.py3-none-any.whl",
+            "bytes": 9755,
+            "sha256": "7ecfff8f2fd72616f7481040475a65b2bf8af90a56c89140852d1120324e8686"
+          },
+          {
+            "name": "websockets==15.0.1",
+            "filename": "websockets-15.0.1-cp311-cp311-win_amd64.whl",
+            "bytes": 176828,
+            "sha256": "27ccee0071a0e75d22cb35849b1db43f2ecd3e161041ac1ee9d2352ddf72f065"
+          },
+          {
+            "name": "groovy==0.1.2",
+            "filename": "groovy-0.1.2-py3-none-any.whl",
+            "bytes": 14090,
+            "sha256": "7f7975bab18c729a257a8b1ae9dcd70b7cafb1720481beae47719af57c35fa64"
+          },
+          {
+            "name": "jinja2==3.1.6",
+            "filename": "jinja2-3.1.6-py3-none-any.whl",
+            "bytes": 134899,
+            "sha256": "85ece4451f492d0c13c5dd7c13a64681a86afae63a5f347908daf103ce6d2f67"
+          },
+          {
+            "name": "markupsafe==3.0.3",
+            "filename": "markupsafe-3.0.3-cp311-cp311-win_amd64.whl",
+            "bytes": 15077,
+            "sha256": "de8a88e63464af587c950061a5e6a67d3632e36df62b986892331d4620a35c01"
+          },
+          {
+            "name": "numpy==2.3.4",
+            "filename": "numpy-2.3.4-cp311-cp311-win_amd64.whl",
+            "bytes": 13089358,
+            "sha256": "faba246fb30ea2a526c2e9645f61612341de1a83fb1e0c5edf4ddda5a9c10996"
+          },
+          {
+            "name": "orjson==3.11.4",
+            "filename": "orjson-3.11.4-cp311-cp311-win_amd64.whl",
+            "bytes": 131391,
+            "sha256": "e2d5d5d798aba9a0e1fede8d853fa899ce2cb930ec0857365f700dffc2c7af6a"
+          },
+          {
+            "name": "pandas==2.3.3",
+            "filename": "pandas-2.3.3-cp311-cp311-win_amd64.whl",
+            "bytes": 11348702,
+            "sha256": "f086f6fe114e19d92014a1966f43a3e62285109afe874f067f5abbdcbb10e59c"
+          },
+          {
+            "name": "python-dateutil==2.9.0.post0",
+            "filename": "python_dateutil-2.9.0.post0-py2.py3-none-any.whl",
+            "bytes": 229892,
+            "sha256": "a8b2bc7bffae282281c8140a97d3aa9c14da0b136dfe83f850eea9a5f7470427"
+          },
+          {
+            "name": "six==1.17.0",
+            "filename": "six-1.17.0-py2.py3-none-any.whl",
+            "bytes": 11050,
+            "sha256": "4721f391ed90541fddacab5acf947aa0d3dc7d27b2e1e8eda2be8970586c3274"
+          },
+          {
+            "name": "pytz==2025.2",
+            "filename": "pytz-2025.2-py2.py3-none-any.whl",
+            "bytes": 509225,
+            "sha256": "5ddf76296dd8c44c26eb8f4b6f35488f3ccbf6fbbd7adee0b7262d43f0ec2f00"
+          },
+          {
+            "name": "tzdata==2025.2",
+            "filename": "tzdata-2025.2-py2.py3-none-any.whl",
+            "bytes": 347839,
+            "sha256": "1a403fada01ff9221ca8044d701868fa132215d84beb92242d9acd2147f667a8"
+          },
+          {
+            "name": "pillow==11.3.0",
+            "filename": "pillow-11.3.0-cp311-cp311-win_amd64.whl",
+            "bytes": 6986055,
+            "sha256": "1a992e86b0dd7aeb1f053cd506508c0999d710a8f07b4c791c63843fc6a807ac"
+          },
+          {
+            "name": "pydub==0.25.1",
+            "filename": "pydub-0.25.1-py2.py3-none-any.whl",
+            "bytes": 32327,
+            "sha256": "65617e33033874b59d87db603aa1ed450633288aefead953b30bded59cb599a6"
+          },
+          {
+            "name": "python-multipart==0.0.20",
+            "filename": "python_multipart-0.0.20-py3-none-any.whl",
+            "bytes": 24546,
+            "sha256": "8a62d3a8335e06589fe01f2a3e178cdcc632f3fbe0d492ad9ee0ec35aab1f104"
+          },
+          {
+            "name": "ruff==0.14.2",
+            "filename": "ruff-0.14.2-py3-none-win_amd64.whl",
+            "bytes": 13565279,
+            "sha256": "0df3424aa5c3c08b34ed8ce099df1021e3adaca6e90229273496b839e5a7e1af"
+          },
+          {
+            "name": "safehttpx==0.1.7",
+            "filename": "safehttpx-0.1.7-py3-none-any.whl",
+            "bytes": 8959,
+            "sha256": "c4f4a162db6993464d7ca3d7cc4af0ffc6515a606dfd220b9f82c6945d869cde"
+          },
+          {
+            "name": "semantic-version==2.10.0",
+            "filename": "semantic_version-2.10.0-py2.py3-none-any.whl",
+            "bytes": 15552,
+            "sha256": "de78a3b8e0feda74cabc54aab2da702113e33ac9d9eb9d2389bcf1f58b7d9177"
+          },
+          {
+            "name": "tomlkit==0.13.3",
+            "filename": "tomlkit-0.13.3-py3-none-any.whl",
+            "bytes": 38901,
+            "sha256": "c89c649d79ee40629a9fda55f8ace8c6a1b42deb912b2a8fd8d942ddadb606b0"
+          },
+          {
+            "name": "uvicorn==0.38.0",
+            "filename": "uvicorn-0.38.0-py3-none-any.whl",
+            "bytes": 68109,
+            "sha256": "48c0afd214ceb59340075b4a052ea1ee91c16fbc2a9b1469cca0e54566977b02"
+          },
+          {
+            "name": "kaldi-native-fbank==1.22.3",
+            "filename": "kaldi_native_fbank-1.22.3-cp311-cp311-win_amd64.whl",
+            "bytes": 303342,
+            "sha256": "bd225d0624d45b533c1780094b3c59666276a6e9f20222943441212cdf301c9e"
+          },
+          {
+            "name": "librosa==0.11.0",
+            "filename": "librosa-0.11.0-py3-none-any.whl",
+            "bytes": 260749,
+            "sha256": "0b6415c4fd68bff4c29288abe67c6d80b587e0e1e2cfb0aad23e4559504a7fa1"
+          },
+          {
+            "name": "audioread==3.1.0",
+            "filename": "audioread-3.1.0-py3-none-any.whl",
+            "bytes": 23143,
+            "sha256": "b30d1df6c5d3de5dcef0fb0e256f6ea17bdcf5f979408df0297d8a408e2971b4"
+          },
+          {
+            "name": "decorator==5.2.1",
+            "filename": "decorator-5.2.1-py3-none-any.whl",
+            "bytes": 9190,
+            "sha256": "d316bb415a2d9e2d2b3abcc4084c6502fc09240e292cd76a76afc106a1c8e04a"
+          },
+          {
+            "name": "joblib==1.5.2",
+            "filename": "joblib-1.5.2-py3-none-any.whl",
+            "bytes": 308396,
+            "sha256": "4e1f0bdbb987e6d843c70cf43714cb276623def372df3c22fe5266b2670bc241"
+          },
+          {
+            "name": "lazy-loader==0.4",
+            "filename": "lazy_loader-0.4-py3-none-any.whl",
+            "bytes": 12097,
+            "sha256": "342aa8e14d543a154047afb4ba8ef17f5563baad3fc610d7b15b213b0f119efc"
+          },
+          {
+            "name": "msgpack==1.1.2",
+            "filename": "msgpack-1.1.2-cp311-cp311-win_amd64.whl",
+            "bytes": 71633,
+            "sha256": "d198d275222dc54244bf3327eb8cbe00307d220241d9cec4d306d49a44e85f68"
+          },
+          {
+            "name": "numba==0.62.1",
+            "filename": "numba-0.62.1-cp311-cp311-win_amd64.whl",
+            "bytes": 2745550,
+            "sha256": "03de6d691d6b6e2b76660ba0f38f37b81ece8b2cc524a62f2a0cfae2bfb6f9da"
+          },
+          {
+            "name": "llvmlite==0.45.1",
+            "filename": "llvmlite-0.45.1-cp311-cp311-win_amd64.whl",
+            "bytes": 38132232,
+            "sha256": "f9c272682d91e0d57f2a76c6d9ebdfccc603a01828cdbe3d15273bdca0c3363a"
+          },
+          {
+            "name": "pooch==1.8.2",
+            "filename": "pooch-1.8.2-py3-none-any.whl",
+            "bytes": 64574,
+            "sha256": "3529a57096f7198778a5ceefd5ac3ef0e4d06a6ddaf9fc2d609b806f25302c47"
+          },
+          {
+            "name": "platformdirs==4.5.0",
+            "filename": "platformdirs-4.5.0-py3-none-any.whl",
+            "bytes": 18651,
+            "sha256": "e578a81bb873cbb89a41fcc904c7ef523cc18284b7e3b3ccf06aca1403b7ebd3"
+          },
+          {
+            "name": "requests==2.32.5",
+            "filename": "requests-2.32.5-py3-none-any.whl",
+            "bytes": 64738,
+            "sha256": "2462f94637a34fd532264295e186976db0f5d453d1cdd31473c85a6a161affb6"
+          },
+          {
+            "name": "charset-normalizer==3.4.4",
+            "filename": "charset_normalizer-3.4.4-cp311-cp311-win_amd64.whl",
+            "bytes": 106978,
+            "sha256": "5ae497466c7901d54b639cf42d5b8c1b6a4fead55215500d2f486d34db48d016"
+          },
+          {
+            "name": "urllib3==2.5.0",
+            "filename": "urllib3-2.5.0-py3-none-any.whl",
+            "bytes": 129795,
+            "sha256": "e6b01673c0fa6a13e374b50871808eb3bf7046c4b125b216f6bf1cc604cff0dc"
+          },
+          {
+            "name": "scikit-learn==1.7.2",
+            "filename": "scikit_learn-1.7.2-cp311-cp311-win_amd64.whl",
+            "bytes": 8894244,
+            "sha256": "9b7ed8d58725030568523e937c43e56bc01cadb478fc43c042a9aca1dacb3ba1"
+          },
+          {
+            "name": "scipy==1.16.2",
+            "filename": "scipy-1.16.2-cp311-cp311-win_amd64.whl",
+            "bytes": 38687626,
+            "sha256": "91e9e8a37befa5a69e9cacbe0bcb79ae5afb4a0b130fd6db6ee6cc0d491695fa"
+          },
+          {
+            "name": "threadpoolctl==3.6.0",
+            "filename": "threadpoolctl-3.6.0-py3-none-any.whl",
+            "bytes": 18638,
+            "sha256": "43a0b8fd5a2928500110039e43a5eed8480b918967083ea48dc3ab9f13c4a7fb"
+          },
+          {
+            "name": "soundfile==0.13.1",
+            "filename": "soundfile-0.13.1-py2.py3-none-win_amd64.whl",
+            "bytes": 1019162,
+            "sha256": "1e70a05a0626524a69e9f0f4dd2ec174b4e9567f4d8b6c11d38b5c289be36ee9"
+          },
+          {
+            "name": "cffi==2.0.0",
+            "filename": "cffi-2.0.0-cp311-cp311-win_amd64.whl",
+            "bytes": 182820,
+            "sha256": "66f011380d0e49ed280c789fbd08ff0d40968ee7b665575489afa95c98196ab5"
+          },
+          {
+            "name": "pycparser==2.23",
+            "filename": "pycparser-2.23-py3-none-any.whl",
+            "bytes": 118140,
+            "sha256": "e5c6e8d3fbad53479cab09ac03729e0a9faf2bee3db8208a550daf5af81a5934"
+          },
+          {
+            "name": "soxr==1.0.0",
+            "filename": "soxr-1.0.0-cp311-cp311-win_amd64.whl",
+            "bytes": 173814,
+            "sha256": "9f417c3d69236051cf5a1a7bad7c4bff04eb3d8fcaa24ac1cb06e26c8d48d8dc"
+          },
+          {
+            "name": "onnxruntime==1.24.4",
+            "filename": "onnxruntime-1.24.4-cp311-cp311-win_amd64.whl",
+            "bytes": 12594863,
+            "sha256": "b43b63eb24a2bc8fc77a09be67587a570967a412cccb837b6245ccb546691153"
+          },
+          {
+            "name": "flatbuffers==25.9.23",
+            "filename": "flatbuffers-25.9.23-py2.py3-none-any.whl",
+            "bytes": 30869,
+            "sha256": "255538574d6cb6d0a79a17ec8bc0d30985913b87513a01cce8bcdb6b4c44d0e2"
+          },
+          {
+            "name": "protobuf==6.33.2",
+            "filename": "protobuf-6.33.2-cp310-abi3-win_amd64.whl",
+            "bytes": 436930,
+            "sha256": "fc2a0e8b05b180e5fc0dd1559fe8ebdae21a27e81ac77728fb6c42b12c7419b4"
+          },
+          {
+            "name": "sympy==1.14.0",
+            "filename": "sympy-1.14.0-py3-none-any.whl",
+            "bytes": 6299353,
+            "sha256": "e091cc3e99d2141a0ba2847328f5479b05d94a6635cb96148ccb3f34671bd8f5"
+          },
+          {
+            "name": "mpmath==1.3.0",
+            "filename": "mpmath-1.3.0-py3-none-any.whl",
+            "bytes": 536198,
+            "sha256": "a0b2b9fe80bbcd81a6647ff13108738cfb482d481d826cc0e02f5b35e5c88d2c"
+          },
+          {
+            "name": "sea-g2p==0.9.1",
+            "filename": "sea_g2p-0.9.1-cp310-abi3-win_amd64.whl",
+            "bytes": 27531798,
+            "sha256": "b6d7c09afb83750abe61735ad2e60f5c20b4cdfac30b1b9b1904de9f64f10c32"
+          },
+          {
+            "name": "tokenizers==0.22.2",
+            "filename": "tokenizers-0.22.2-cp39-abi3-win_amd64.whl",
+            "bytes": 2747786,
+            "sha256": "c9ea31edff2968b44a88f97d784c2f16dc0729b8b143ed004699ebca91f05c48"
+          }
+        ],
+        "modelCodec": {
+          "filesInRequiredSet": 13,
+          "graphBytes": 475400990,
+          "codecBytes": 90572161,
+          "rootConfigBytes": 1553,
+          "requiredKnownBytes": 565974704,
+          "denoiserBytes": 42661414,
+          "withDenoiserBytes": 608636118,
+          "largeFileHashesRecorded": 10,
+          "filesWithoutPayloadHash": [
+            "onnx_update/config.json",
+            "onnx_update/tokenizer.json",
+            "codec_browser_onnx_meta.json",
+            "config.json"
+          ],
+          "rows": [
+            {
+              "file": "onnx_update/vieneu_prefill.onnx",
+              "bytes": 324499,
+              "lfsSha256": "27f8b064f6b57b5448e95d095f1959588c005d614678045c2b97ecccf3b7a0f7"
+            },
+            {
+              "file": "onnx_update/vieneu_decode_step.onnx",
+              "bytes": 306134,
+              "lfsSha256": "bedc379cea61ea5d616312750d95ad3924e055856662d19187a889a5edc24ceb"
+            },
+            {
+              "file": "onnx_update/vieneu_acoustic_cached.onnx",
+              "bytes": 7207223,
+              "lfsSha256": "f631e3387c788c3d8b9a5ac5df94952af5bc4c4d1049ff8a751e76a246fff2d4"
+            },
+            {
+              "file": "onnx_update/vieneu_backbone_shared.data",
+              "bytes": 415319040,
+              "lfsSha256": "c7c072193db33d0542457e2612c7272c44c4279d1cafaf0aa4c379964911db2f"
+            },
+            {
+              "file": "onnx_update/vieneu_v3_heads.npz",
+              "bytes": 52219622,
+              "lfsSha256": "fb22484baa424bbb775133a6e5f0d00d6299b2b256fbe3312a864b85b9aed01e"
+            },
+            {
+              "file": "onnx_update/config.json",
+              "bytes": 2152,
+              "lfsSha256": null
+            },
+            {
+              "file": "onnx_update/tokenizer.json",
+              "bytes": 22320,
+              "lfsSha256": null
+            },
+            {
+              "file": "moss_audio_tokenizer_decode_full.onnx",
+              "bytes": 681902,
+              "lfsSha256": "0fbbafe3fd4afa2a019af5c5ced204af6e2d1db044fa40f021525d2aee95b4ac"
+            },
+            {
+              "file": "moss_audio_tokenizer_decode_shared.data",
+              "bytes": 44198912,
+              "lfsSha256": "e69d52e0f4e84ca27850557ee54face46632d3a5a16c89bd246c7c408466dcad"
+            },
+            {
+              "file": "moss_audio_tokenizer_decode_step.onnx",
+              "bytes": 351400,
+              "lfsSha256": "9527c86a29e1837edec1f74db57d5eeaadb3a715af3382703566460afed25855"
+            },
+            {
+              "file": "codec_browser_onnx_meta.json",
+              "bytes": 17036,
+              "lfsSha256": null
+            },
+            {
+              "file": "moss_audio_tokenizer_encode.onnx",
+              "bytes": 815775,
+              "lfsSha256": "eadea4a645abdcf98714c7aead122ee2ce7da6e080f9f80b977cd1ca8e19473a"
+            },
+            {
+              "file": "moss_audio_tokenizer_encode.data",
+              "bytes": 44507136,
+              "lfsSha256": "aa751265b2bab2887eac224484546b194875aa7494b607115439b3dc6b228a2c"
+            }
+          ]
+        },
+        "npm": {
+          "rows": 71,
+          "rowDigestSha256": "c03624809ce9383eee6dc3bff4e7af1108f26635c28bee1c301280cb9f11d949",
+          "unpackedSumBytes": 76676928,
+          "approximate": true,
+          "hook": "esbuild postinstall"
+        },
+        "declaredTransferConditionalSumBytes": 1184526483,
+        "payloadVerifiedRows": 0
+      },
+      "notObserved": [
+        "acquired-byte hashes",
+        "installed closure",
+        "unpacked sizes",
+        "npm tarballs",
+        "browser and FFmpeg identity",
+        "font files"
+      ]
+    },
+    "C1-CONTROLS": {
+      "proofId": "C1-CONTROLS",
+      "status": "PASS_DOCUMENTARY_S0",
+      "claim": "selected 10 GiB and 8 GiB bound; render workdir accounted in the shared aggregate; candidate controls and fixtures listed unexecuted; no enforced-control claim",
+      "sources": [
+        "docs/reviews/evidence/cvf-ncr-c1-offline-production-selection-2026-10-08.json",
+        "docs/reference/CVF_NCR_VIDEO_PRODUCTION_PREPARATION_KIT_2026-10-08.md",
+        "docs/reference/CVF_NCR_S05_CONTROL_FIXTURE_DESIGN_2026-10-03.md",
+        "docs/reviews/evidence/cvf-ncr-c1-bounded-readiness-assessment-2026-10-03.json"
+      ],
+      "command": "python -B build_s0.py (live hash, arithmetic and join builder over the cited sources; zero external requests)",
+      "observedResult": {
+        "selectedDiskBytes": 10737418240,
+        "selectedRamBytes": 8589934592,
+        "r1ToR4Bytes": 9730785280,
+        "headroomBytes": 1006632960,
+        "pngScenarioBytes": 4982880000,
+        "overSelectedWhenBothFullBytes": 3976247040,
+        "r11CeilingIfR1PurgedBytes": 6375342080,
+        "hubDuplicateScenarioBytes": 1217272236,
+        "candidates": [
+          "Job Object helper",
+          "program-scoped outbound rule",
+          "AppContainer without network capability",
+          "container with no network",
+          "fixed container or quota",
+          "bounded overshoot"
+        ],
+        "profiles": {
+          "W-A": "candidate",
+          "W-B": "candidate, changes platform pins"
+        },
+        "fixtures": [
+          "FX-D1",
+          "FX-M1",
+          "FX-T1",
+          "FX-B1",
+          "FX-N1",
+          "FX-L1"
+        ],
+        "fixturesExecuted": 0,
+        "enforcedControls": 0
+      },
+      "notObserved": [
+        "helper source",
+        "fixture results",
+        "egress proof",
+        "disk bound proof",
+        "measured peaks"
+      ]
+    },
+    "C1-BOUNDARY": {
+      "proofId": "C1-BOUNDARY",
+      "status": "PASS_DOCUMENTARY_S0",
+      "claim": "exact scope, historical STOP retained, S05 text identity matched, zero production effects, all four groups carried in one obligation ledger",
+      "sources": [
+        "docs/reviews/evidence/cvf-ncr-c1-offline-production-selection-2026-10-08.json",
+        "docs/reviews/CVF_CVF_NCR_S05_S1_R1_EVIDENCE_RELAY_LOCAL_REVIEW_2026-10-03.md",
+        "docs/reference/CVF_NCR_GENERAL_VIDEO_DESIGN_2026-10-02.md",
+        "docs/reviews/evidence/cvf-ncr-c1-offline-production-amendment-intake-2026-10-08.json"
+      ],
+      "command": "python -B build_s0.py (live hash, arithmetic and join builder over the cited sources; zero external requests)",
+      "observedResult": {
+        "historicalStop": {
+          "problemKey": "cvf-ncr-c1-metadata-footprint",
+          "ordinal": 2,
+          "counters": [
+            0,
+            0,
+            1,
+            2
+          ],
+          "blocker": "C1_DEPENDENCY_FOOTPRINT_CACHE_SEMANTICS_UNSPECIFIED",
+          "sourceContractChain": "SUCCESSOR 1, FEATURE_SUCCESSORS_FROZEN, workerRedispatchAllowed NO"
+        },
+        "s05": {
+          "designRawSha256": "3ce5e2363c3e29997fcbf42cb4cec59af7447cca38409d4d970e8aa71e5777e0",
+          "narrationSha256": "f6c1cd46a00b535e07dc634bcb53d75dc80ed521a58432de8c5b449cf4017fb8",
+          "onScreenSha256": "0846e61c1a38e8468152a6df998e58b07e143a91f5d8d821ffb5c1ba77c2eede",
+          "statusCardSha256": "ec3a424cb9b37d3ba630771347c60547b95275ce50900ab73bd8bb17463d3c25",
+          "claimIds": [
+            "C09",
+            "C10"
+          ],
+          "segments": 4,
+          "match": "MATCH kit and design"
+        },
+        "obligations": 29,
+        "stagesProposed": 10,
+        "stagesReleased": 0
+      },
+      "notObserved": [
+        "runtime admission",
+        "rights clearance",
+        "operator effect authority"
+      ]
+    }
+  },
+  "obligationLedger": [
+    {
+      "id": "OB-01",
+      "group": "G1",
+      "obligation": "O1 runtime proof: loaded-byte sha256, refs/main equal to the pinned commit, Windows link-or-copy layout, attempt log kept apart from success log",
+      "owner": "Local reviewer (probe); operator (effect admission)",
+      "missingSource": "no staged cache and no runtime observation (TG-07, DC-01..DC-03, DM-04)",
+      "dependentAction": "S3 cache staging; S6 voice",
+      "releaseCondition": "S2 control proof passed, then a staged tree exists under an admitted stage",
+      "state": "OPEN"
+    },
+    {
+      "id": "OB-02",
+      "group": "G1",
+      "obligation": "Attempt policy: P1 (blocked attempts logged, zero socket egress) versus P0 (strict zero attempts, needs source patch O3)",
+      "owner": "operator",
+      "missingSource": "explicit selection; the control design keeps P1 as design policy while the metadata completion records no policy chosen",
+      "dependentAction": "any offline wording; S6",
+      "releaseCondition": "operator selection line; O3 only after a failed O1 proof and its own admission",
+      "state": "OPEN"
+    },
+    {
+      "id": "OB-03",
+      "group": "G1",
+      "obligation": "Denoiser disposition: staged in the snapshot (42,661,414 B declared) versus recorded egress and stop",
+      "owner": "operator; Local",
+      "missingSource": "decision (kit VR02, G-07)",
+      "dependentAction": "S3 manifest; S6",
+      "releaseCondition": "decision row inside the admission",
+      "state": "OPEN"
+    },
+    {
+      "id": "OB-04",
+      "group": "G1",
+      "obligation": "Phonemizer data: sea-g2p wheel package data and any runtime retrieval",
+      "owner": "Local",
+      "missingSource": "wheel content listing (kit U3; source reading shows import only)",
+      "dependentAction": "S4; S6",
+      "releaseCondition": "S4 archive listing admitted, then reviewed",
+      "state": "OPEN"
+    },
+    {
+      "id": "OB-05",
+      "group": "G1",
+      "obligation": "Pre-use freshness: HyperFrames head 835e0c16 (0.8.114) versus pin 5c52f723 (0.8.113); hub head d711944d versus lock 1.13.0; npm tarball and hub wheel artifact identity (TG-08, TG-09, G-18)",
+      "owner": "Local",
+      "missingSource": "admitted refresh read and artifact identity",
+      "dependentAction": "S3",
+      "releaseCondition": "E1 metadata admission; no silent repin",
+      "state": "OPEN"
+    },
+    {
+      "id": "OB-06",
+      "group": "G1",
+      "obligation": "Model and codec payload identity: four small files lack a recorded payload hash (onnx_update/config.json, onnx_update/tokenizer.json, codec_browser_onnx_meta.json, root config.json); redirect and CDN host scope (IR-G13)",
+      "owner": "Local",
+      "missingSource": "registry tree metadata or acquired bytes",
+      "dependentAction": "S3",
+      "releaseCondition": "E1 metadata read or S3 acquired bytes",
+      "state": "OPEN"
+    },
+    {
+      "id": "OB-07",
+      "group": "G2",
+      "obligation": "Fixed preset selection and entry-hash binding (OD-01): Hai Dang is a retained design assumption; conflicting historical statements are recorded",
+      "owner": "operator",
+      "missingSource": "operator selection line",
+      "dependentAction": "S6",
+      "releaseCondition": "operator names one preset; Local binds the entry hash actually loaded",
+      "state": "OPEN"
+    },
+    {
+      "id": "OB-08",
+      "group": "G2",
+      "obligation": "Preset consent evidence and risk disposition (OD-02): entries carry no consent field; the model card statement is a publisher declaration",
+      "owner": "operator (risk); Local (match check)",
+      "missingSource": "pinned consent evidence applicable to the preset and intended use; risk language cannot supply it",
+      "dependentAction": "S6",
+      "releaseCondition": "evidence plus disposition",
+      "state": "OPEN"
+    },
+    {
+      "id": "OB-09",
+      "group": "G2",
+      "obligation": "Weights and codec rights: pinned licence or notice scope; retention of model card bytes is UNKNOWN",
+      "owner": "Local",
+      "missingSource": "pinned card text or licence artifacts at model rev 61b85e3d and codec rev ceff0d07",
+      "dependentAction": "S3 use",
+      "releaseCondition": "E1 text read admitted and reviewed",
+      "state": "OPEN"
+    },
+    {
+      "id": "OB-10",
+      "group": "G2",
+      "obligation": "LGPL notices (soxr, sharp win32 binary) and per-package licences for 74 of 82 wheels (TG-04)",
+      "owner": "Local",
+      "missingSource": "notice texts and package licence reads",
+      "dependentAction": "S4",
+      "releaseCondition": "E1 or S4 metadata read",
+      "state": "OPEN"
+    },
+    {
+      "id": "OB-11",
+      "group": "G2",
+      "obligation": "FFmpeg build identity (immutable asset, not rolling latest), libx264 presence, GPL acceptance (OD-04)",
+      "owner": "operator; Local",
+      "missingSource": "immutable asset identity and encoder list (TG-05)",
+      "dependentAction": "S3; S5; S7",
+      "releaseCondition": "operator disposition; S5 identity inspection",
+      "state": "OPEN"
+    },
+    {
+      "id": "OB-12",
+      "group": "G2",
+      "obligation": "Browser pin choice (.30 versus .82), archive availability and binary terms (OD-05, TG-06)",
+      "owner": "operator; Local",
+      "missingSource": "terms text and immutable asset identity",
+      "dependentAction": "S3; S7",
+      "releaseCondition": "operator choice; E1 read",
+      "state": "OPEN"
+    },
+    {
+      "id": "OB-13",
+      "group": "G2",
+      "obligation": "Fonts: selection, per-file rights, Vietnamese glyph coverage (OD-06, DM-09)",
+      "owner": "operator (choice); Local",
+      "missingSource": "font file hash, OFL text, rendered coverage",
+      "dependentAction": "S7",
+      "releaseCondition": "operator choice; E1 read; S7 render check",
+      "state": "OPEN"
+    },
+    {
+      "id": "OB-14",
+      "group": "G2",
+      "obligation": "Vietnamese listener and retiming authority (OD-08, CF-63)",
+      "owner": "operator",
+      "missingSource": "nominee and decision",
+      "dependentAction": "S6; S7; S8",
+      "releaseCondition": "operator input at the voice stage",
+      "state": "OPEN"
+    },
+    {
+      "id": "OB-15",
+      "group": "G3",
+      "obligation": "PAYLOAD_VERIFIED for the 82 wheels: acquired-byte sha256 against the retained rows",
+      "owner": "Local",
+      "missingSource": "acquisition",
+      "dependentAction": "S4",
+      "releaseCondition": "S3 acquisition admitted and completed",
+      "state": "OPEN"
+    },
+    {
+      "id": "OB-16",
+      "group": "G3",
+      "obligation": "Installed closure and unpacked size for Python, browser, FFmpeg; published-package versus lock difference (TG-01, DM-01, DM-02)",
+      "owner": "Local",
+      "missingSource": "archive listing or install",
+      "dependentAction": "aggregate accounting; S6",
+      "releaseCondition": "S4 admitted",
+      "state": "OPEN"
+    },
+    {
+      "id": "OB-17",
+      "group": "G3",
+      "obligation": "npm closure: 71 rows are approximate; tarball URLs and bytes, CLI package row, esbuild hook text, resolver-validated graph, CLI-to-source join (TG-02, TG-03, IR-G11, IR-G12)",
+      "owner": "Local",
+      "missingSource": "registry metadata and archive listing",
+      "dependentAction": "S4; S7",
+      "releaseCondition": "E1, S3, S4",
+      "state": "OPEN"
+    },
+    {
+      "id": "OB-18",
+      "group": "G3",
+      "obligation": "SDK deployment through a pinned source-tree allowlist export (branch R-S3) and its import proof (DS-12)",
+      "owner": "Local",
+      "missingSource": "export effect admission and proof",
+      "dependentAction": "S6",
+      "releaseCondition": "S3 or S4 admitted",
+      "state": "OPEN"
+    },
+    {
+      "id": "OB-19",
+      "group": "G3",
+      "obligation": "Base Node and Python executables: path, version and hash are unpinned",
+      "owner": "Local",
+      "missingSource": "host-read of the exact executables",
+      "dependentAction": "S2; S4",
+      "releaseCondition": "S2 precondition snapshot",
+      "state": "OPEN"
+    },
+    {
+      "id": "OB-20",
+      "group": "G4",
+      "obligation": "Enforced egress control including DNS and child processes (FX-N1); mechanism and privilege unselected",
+      "owner": "Local (design); operator (host change, privilege)",
+      "missingSource": "mechanism, privilege, proof",
+      "dependentAction": "S3 onward",
+      "releaseCondition": "S2 proof passed",
+      "state": "OPEN"
+    },
+    {
+      "id": "OB-21",
+      "group": "G4",
+      "obligation": "Disk bound: OS allocation bound versus bounded overshoot; overshoot is unmeasured (IR-G03, DM-06)",
+      "owner": "operator (privilege); Local",
+      "missingSource": "mechanism and measurement",
+      "dependentAction": "S3 onward",
+      "releaseCondition": "S2 proof passed",
+      "state": "OPEN"
+    },
+    {
+      "id": "OB-22",
+      "group": "G4",
+      "obligation": "Memory, process-count, deadline, cancel and cleanup controls: historical helper source and inert fixture builders exist, but acceptance and executable OS proof remain withheld (IR-G02, IR-G04, IR-G05); the frozen successor boundary of the stopped supervisor-source chain needs an explicit disposition before any helper path is admitted",
+      "owner": "operator (boundary disposition); Local (review)",
+      "missingSource": "source path admission, review, fixtures",
+      "dependentAction": "S2",
+      "releaseCondition": "S1 admission carrying the boundary disposition",
+      "state": "OPEN"
+    },
+    {
+      "id": "OB-23",
+      "group": "G4",
+      "obligation": "Ceilings R1-R4 and R7-R10 remain proposals; render workdir R11 is new and unselected",
+      "owner": "operator",
+      "missingSource": "selection or delegation",
+      "dependentAction": "S2 onward",
+      "releaseCondition": "admission row",
+      "state": "OPEN"
+    },
+    {
+      "id": "OB-24",
+      "group": "G4",
+      "obligation": "Owned root, volume, cache root, evidence custody and retention (IR-D06)",
+      "owner": "operator",
+      "missingSource": "paths and retention",
+      "dependentAction": "S2",
+      "releaseCondition": "admission row",
+      "state": "OPEN"
+    },
+    {
+      "id": "OB-25",
+      "group": "G4",
+      "obligation": "Measured RAM, disk, process and time peaks; frame, audio, MP4 and log bounds (TG-10)",
+      "owner": "Local",
+      "missingSource": "bounded measurement",
+      "dependentAction": "S6; S7",
+      "releaseCondition": "after S2 controls",
+      "state": "OPEN"
+    },
+    {
+      "id": "OB-26",
+      "group": "G4",
+      "obligation": "Host precondition re-observation (free RAM, free disk, privileges, installed tools); forwarded host values are reported and unbound",
+      "owner": "Local",
+      "missingSource": "bound receipts",
+      "dependentAction": "S2",
+      "releaseCondition": "host-read inside the S2 preflight",
+      "state": "OPEN"
+    },
+    {
+      "id": "OB-27",
+      "group": "G4",
+      "obligation": "Money and time ceilings: zero paid spend and per-stage time confirmation (OI-10)",
+      "owner": "operator",
+      "missingSource": "confirmation",
+      "dependentAction": "S3 onward",
+      "releaseCondition": "admission row",
+      "state": "OPEN"
+    },
+    {
+      "id": "OB-28",
+      "group": "X",
+      "obligation": "Historical STOP: metadata chain ordinal 2 counters 0/0/1/2; source-contract chain successor 1; no reset, no successor",
+      "owner": "Local",
+      "missingSource": "nothing to supply; retained",
+      "dependentAction": "any successor",
+      "releaseCondition": "only an explicit new Local and operator disposition; outside S0",
+      "state": "OPEN"
+    },
+    {
+      "id": "OB-29",
+      "group": "X",
+      "obligation": "Final storyboard and media acceptance is a separate operator checkpoint",
+      "owner": "operator",
+      "missingSource": "acceptance",
+      "dependentAction": "S8; S9",
+      "releaseCondition": "operator acceptance after S7",
+      "state": "OPEN"
+    }
+  ],
+  "stageProposal": [
+    {
+      "stage": "S1",
+      "effect": "control helper source authoring and independent review",
+      "scope": "source files only, no host effect, no execution; exact new paths to be named by the admission",
+      "owner": "operator (admission, boundary disposition); Local reviewer",
+      "releaseCondition": "OB-22 boundary disposition",
+      "state": "HELD_NOT_RELEASED"
+    },
+    {
+      "stage": "E1",
+      "effect": "public metadata and text reads (GET or HEAD)",
+      "scope": "candidate hosts huggingface.co, files.pythonhosted.org, registry.npmjs.org, storage.googleapis.com, api.github.com, raw.githubusercontent.com; proposed caps 160 requests and 16 MiB decoded, no credentials, no redirect following; closes OB-05, 06, 09, 10, 11, 12, 13, 17",
+      "owner": "operator (admission); Local",
+      "releaseCondition": "exact host list and caps in an admission",
+      "state": "HELD_NOT_RELEASED"
+    },
+    {
+      "stage": "S2",
+      "effect": "owned root, control fixtures, optional outbound rule",
+      "scope": "creates the owned root, runs fixtures FX-D1, FX-M1, FX-T1, FX-B1, FX-N1, FX-L1; may change security or network state; privileges unknown; rollback from a verified before-state",
+      "owner": "operator (effects, privileges, root path); Local",
+      "releaseCondition": "OB-19, OB-20, OB-21, OB-22, OB-24, OB-26",
+      "state": "HELD_NOT_RELEASED"
+    },
+    {
+      "stage": "S3",
+      "effect": "acquisition of exact manifest artifacts",
+      "scope": "URLs, revisions, byte ceilings, hashes and redirect map per artifact; ingress ceiling proposal 2 GiB; zero paid spend; staged cache tree for O1",
+      "owner": "operator (admission); Local",
+      "releaseCondition": "S2 proof, E1 result, OB-02, OB-03, OB-07, OB-08 dispositions",
+      "state": "HELD_NOT_RELEASED"
+    },
+    {
+      "stage": "S4",
+      "effect": "offline setup and archive listing",
+      "scope": "extraction-only into the owned root, lifecycle scripts disabled, venv from the existing interpreter, hash-pinned offline wheel install",
+      "owner": "operator; Local",
+      "releaseCondition": "S3 completed; OB-10, OB-17 reviewed",
+      "state": "HELD_NOT_RELEASED"
+    },
+    {
+      "stage": "S5",
+      "effect": "binary identity inspection",
+      "scope": "FFmpeg encoder list and browser version run under the S2 controls",
+      "owner": "operator; Local",
+      "releaseCondition": "S4 completed; OB-11, OB-12 dispositions",
+      "state": "HELD_NOT_RELEASED"
+    },
+    {
+      "stage": "S6",
+      "effect": "one fixed-preset WAV",
+      "scope": "one sequential voice attempt; needs preset consent disposition and a nominated Vietnamese listener",
+      "owner": "operator",
+      "releaseCondition": "OB-07, OB-08, OB-14; O1 proof OB-01",
+      "state": "HELD_NOT_RELEASED"
+    },
+    {
+      "stage": "S7",
+      "effect": "one S05 render",
+      "scope": "one attempt after the voice process tree has exited; retiming approval if narration exceeds 19.5 s",
+      "owner": "operator",
+      "releaseCondition": "S6 accepted; OB-13, OB-14",
+      "state": "HELD_NOT_RELEASED"
+    },
+    {
+      "stage": "S8",
+      "effect": "joined human acceptance (CF-63)",
+      "scope": "human review of the joined MP4",
+      "owner": "operator",
+      "releaseCondition": "S7 completed",
+      "state": "HELD_NOT_RELEASED"
+    },
+    {
+      "stage": "S9",
+      "effect": "publication",
+      "scope": "not admitted; separate rights and public-export review",
+      "owner": "operator",
+      "releaseCondition": "not applicable now",
+      "state": "HELD_NOT_RELEASED"
+    }
+  ],
+  "intakeDispositionsApplied": {
+    "A01": "wheel rows reused, closure unproven",
+    "A02": "O1 source-supported, runtime unproven",
+    "A03": "npm approximate",
+    "A04": "host Docker mirror statements recorded as REPORTED_UNBOUND",
+    "A05": "two evidence levels",
+    "A06": "no STOP reset",
+    "A07": "P1 and Hai Dang as design assumptions",
+    "A08": "render workdir in aggregate",
+    "A09": "locator corrected",
+    "A10": "effects deferred"
+  },
+  "effects": {
+    "thisExecution": {
+      "externalRequests": 0,
+      "providerCalls": 0,
+      "dockerCommands": 0,
+      "downloadInstall": false,
+      "hostControlMutation": false,
+      "mediaExecution": false,
+      "modelOrBinaryWrite": false,
+      "localReadOnlyCommands": [
+        "git rev-parse",
+        "git status",
+        "sha256 reads",
+        "run_agent_autorun_workflow_gate pre-implementation",
+        "scripts/cvf_video_preflight.py --extract-s05",
+        "run_adif_defect_resolver"
+      ],
+      "tempWrites": "gate log files in the user temp area (two, created and deleted) and builder files in the session scratchpad outside the repository; gate-owned receipt in the ignored runtime receipts file"
+    },
+    "priorProposalDisclosures": "per intake A04 the forwarded proposal reported read-only Docker engine queries (version, info, images) and one temporary read of a source file removed immediately; reported, not counted as S0 execution"
+  },
+  "specIdentityAtBuild": {
+    "path": "docs/reference/CVF_NCR_C1_OFFLINE_PRODUCTION_READINESS_SPEC_2026-10-08.md",
+    "sha256": "ef7f433489e1da22135ed0d0f8130f3798e765418afa47e6933d7ab636747636",
+    "bytes": 38963,
+    "lines": 337
+  },
+  "scec": {
+    "problemKey": "cvf-ncr-c1-operator-selected-readiness-contract",
+    "chainMode": "INITIAL",
+    "chainOrdinal": 0,
+    "current": [
+      "C1_EFFECT_ADMISSION_MISSING"
+    ],
+    "note": "production hold, not an S0 blocker"
+  },
+  "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
+  "localReviewQualification": {
+    "completionPath": "docs/reviews/CVF_NCR_C1_OFFLINE_PRODUCTION_READINESS_COMPLETION_2026-10-08.md",
+    "originalWorkerEvidenceSha256": "64b8ca9c323601c2db62391b5279e432c922310bf4dd910e8c43a8efdb747c8a",
+    "repair": "Two documentary joins: historical unaccepted helper/source existence, fourth small file without payload hash",
+    "workerReturnPreserved": true,
+    "allDownstreamStagesHeld": true,
+    "sourceRuntimeSuccessor": "NOT_ADMITTED"
+  }
+}

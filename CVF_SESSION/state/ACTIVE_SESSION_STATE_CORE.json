@@ -39,9 +39,9 @@
     "baselinePath": "docs/baselines/CVF_GC018_NCR_C1_OFFLINE_PRODUCTION_READINESS_S0_2026-10-08.md",
     "baselineSha256": "dcffa646e1052d90cb0293fa879bda8ecb8048b7cf7e6265dba7ea55c1a670df",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_C1_OFFLINE_PRODUCTION_READINESS_S0_2026-10-08.md",
-    "workOrderSha256": "1d46745dd7f0db94d960897b79dfa888bfd7a8ce62137a096d77162e41397351"
+    "workOrderSha256": "212adb5ebf3c0eb82bf9862effc3880d897fbfaf342655cc533a36a2872f4b79"
   },
-  "currentAuthoritySyncReason": "S0 documentary amendment; production effects remain held.",
+  "currentAuthoritySyncReason": "S0 closed; raw status pin updated atomically.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
