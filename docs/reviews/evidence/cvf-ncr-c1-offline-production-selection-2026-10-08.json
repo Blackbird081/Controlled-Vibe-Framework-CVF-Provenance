@@ -1,0 +1,233 @@
+{
+  "schemaVersion": "cvf.ncrC1OfflineProductionSelection@1",
+  "batchId": "CVF-NCR-C1-OFFLINE-PRODUCTION-READINESS-20261008",
+  "baseHead": "072442e277412002ad8d2e89fda1d64e0760ccd6",
+  "operatorAuthority": {
+    "date": "2026-10-08",
+    "decision": "AGREED_TO_CONDITIONAL_C1_OFFLINE_DIRECTION_AND_ENVELOPE",
+    "question": "B\u1ea1n \u0111\u1ed3ng \u00fd m\u1edf l\u1ea1i C1 theo h\u01b0\u1edbng cache offline, v\u1edbi h\u1ea1n m\u1ee9c \u0111\u1ec1 xu\u1ea5t 10 GiB \u0111\u0129a, 8 GiB RAM, \u0111\u1ec3 x\u1eed l\u00fd c\u00e1c \u0111i\u1ec1u ki\u1ec7n production trong m\u1ed9t work order t\u1ed5ng h\u1ee3p?",
+    "reply": "\u0111\u1ed3ng \u00fd",
+    "qualificationPresentedBeforeReply": "C1 \u0111ang STOP; l\u1ef1a ch\u1ecdn n\u00e0y ch\u01b0a c\u1ea5p quy\u1ec1n t\u1ea3i/c\u00e0i ho\u1eb7c TTS/render."
+  },
+  "approved": {
+    "lane": "C1 CPU/ONNX fp32 fixed preset",
+    "codecDirection": "HF_CACHE_PREPOPULATED_OFFLINE_CONDITIONAL_ON_VERIFIED_SEMANTICS",
+    "aggregateDiskBytes": 10737418240,
+    "peakCommittedRamBytes": 8589934592,
+    "groupedEvidenceOutcome": true
+  },
+  "otherKitCeilings": {
+    "disposition": "PROPOSED_NOT_SELECTED",
+    "rows": [
+      [
+        "R1",
+        "download_install_cache_bytes",
+        "bytes",
+        "5368709120 (5 GiB)",
+        "wheels, onnx_update, codec, browser, FFmpeg; footprint UNKNOWN"
+      ],
+      [
+        "R2",
+        "final_artifact_bytes",
+        "bytes",
+        "3221225472 (3 GiB)",
+        "extracted models and tools in the owned root"
+      ],
+      [
+        "R3",
+        "duplicated_storage_bytes",
+        "bytes",
+        "1073741824 (1 GiB)",
+        "cache plus local-directory copies"
+      ],
+      [
+        "R4",
+        "log_evidence_bytes",
+        "bytes",
+        "67108864 (64 MiB)",
+        "attempt logs and evidence"
+      ],
+      [
+        "R5",
+        "aggregate_disk_bytes",
+        "bytes",
+        "10737418240 (10 GiB)",
+        "R1+R2+R3+R4 is 9.0625 GiB; below observed free space"
+      ],
+      [
+        "R6",
+        "peak_committed_ram_bytes",
+        "bytes",
+        "8589934592 (8 GiB)",
+        "about half of observed RAM; single sequential job"
+      ],
+      [
+        "R7",
+        "process_count",
+        "count",
+        "24",
+        "node, browser children, FFmpeg, Python; unmeasured"
+      ],
+      [
+        "R8",
+        "walltime_seconds",
+        "seconds",
+        "1800 per admitted stage",
+        "acquisition, voice and render each"
+      ],
+      [
+        "R9",
+        "cancellation_grace_seconds",
+        "seconds",
+        "30",
+        "process-tree end after cancel"
+      ],
+      [
+        "R10",
+        "retries",
+        "attempts_per_stage",
+        "1",
+        "one attempt, no retry (design SEL-08)"
+      ]
+    ]
+  },
+  "notGranted": [
+    "download/install/model acquisition",
+    "TTS/WAV/render/MP4",
+    "paid/hosted voice, cloning or upload",
+    "provider calls",
+    "public push/deploy",
+    "unbounded source-relay retries"
+  ],
+  "sources": {
+    "docs/reference/CVF_NCR_VIDEO_PRODUCTION_PREPARATION_KIT_2026-10-08.md": "a4bd94eff05b5a3d7d3c33367cd4f036ba99540bd24f381c1381afb3f0759697",
+    "docs/reviews/CVF_NCR_VIDEO_PRODUCTION_PREPARATION_COMPLETION_2026-10-08.md": "66c39f7d2e29afd9820b9e85f963354fc183c9e159da7803469aedde6b62c583",
+    "docs/reference/CVF_NCR_GENERAL_VIDEO_DESIGN_2026-10-02.md": "3ce5e2363c3e29997fcbf42cb4cec59af7447cca38409d4d970e8aa71e5777e0",
+    "docs/reference/CVF_NCR_VIDEO_COMPOSITION_READINESS_DESIGN_2026-10-03.md": "de3673a2f41695bfa83692095fd0d67f96cea924d48809aefd8b14266c8e6d87",
+    "docs/reviews/CVF_CVF_NCR_S05_S1_R1_EVIDENCE_RELAY_LOCAL_REVIEW_2026-10-03.md": "54630fcaace2eca4f1ed5d136e8d69a3846484f306929628221c0361656526de"
+  },
+  "proposalRawSha256": "d84f75119926340ea9db482ea3b176464290dc1f49a60ac84cab91a896cfa9d5",
+  "proposalSnapshot": {
+    "artifactType": "LOCAL_OPERATOR_REVIEW_PROPOSAL_NOT_EXECUTION_CONTRACT",
+    "status": "DRAFT_UNACCEPTED",
+    "runtimeAdmission": "NO_GO",
+    "operatorDecision": "NOT_RECEIVED",
+    "baseHead": "072442e277412002ad8d2e89fda1d64e0760ccd6",
+    "sources": {
+      "docs/reference/CVF_NCR_VIDEO_PRODUCTION_PREPARATION_KIT_2026-10-08.md": "a4bd94eff05b5a3d7d3c33367cd4f036ba99540bd24f381c1381afb3f0759697",
+      "docs/reviews/CVF_NCR_VIDEO_PRODUCTION_PREPARATION_COMPLETION_2026-10-08.md": "66c39f7d2e29afd9820b9e85f963354fc183c9e159da7803469aedde6b62c583",
+      "docs/reference/CVF_NCR_GENERAL_VIDEO_DESIGN_2026-10-02.md": "3ce5e2363c3e29997fcbf42cb4cec59af7447cca38409d4d970e8aa71e5777e0"
+    },
+    "existingStopDisposition": "UNCHANGED; no retry, counter reset or successor dispatched",
+    "proposedDecision": "Operator selects conditional C1 reopening with owned offline/cache approach and proposed envelope; one grouped work order must bind STOP disposition and all four evidence groups before any dependent production effects. No download/runtime authority granted by this proposal.",
+    "codecPreferenceProposal": "HF_CACHE_PREPOPULATED_OFFLINE only if pinned cache/offline semantics and enforced no-egress can be verified; otherwise stop, no silent switch to engine-direct implementation",
+    "ceilings": {
+      "status": "PROPOSED_NOT_ENFORCED",
+      "rowsFromAcceptedKit": [
+        [
+          "R1",
+          "download_install_cache_bytes",
+          "bytes",
+          "5368709120 (5 GiB)",
+          "wheels, onnx_update, codec, browser, FFmpeg; footprint UNKNOWN"
+        ],
+        [
+          "R2",
+          "final_artifact_bytes",
+          "bytes",
+          "3221225472 (3 GiB)",
+          "extracted models and tools in the owned root"
+        ],
+        [
+          "R3",
+          "duplicated_storage_bytes",
+          "bytes",
+          "1073741824 (1 GiB)",
+          "cache plus local-directory copies"
+        ],
+        [
+          "R4",
+          "log_evidence_bytes",
+          "bytes",
+          "67108864 (64 MiB)",
+          "attempt logs and evidence"
+        ],
+        [
+          "R5",
+          "aggregate_disk_bytes",
+          "bytes",
+          "10737418240 (10 GiB)",
+          "R1+R2+R3+R4 is 9.0625 GiB; below observed free space"
+        ],
+        [
+          "R6",
+          "peak_committed_ram_bytes",
+          "bytes",
+          "8589934592 (8 GiB)",
+          "about half of observed RAM; single sequential job"
+        ],
+        [
+          "R7",
+          "process_count",
+          "count",
+          "24",
+          "node, browser children, FFmpeg, Python; unmeasured"
+        ],
+        [
+          "R8",
+          "walltime_seconds",
+          "seconds",
+          "1800 per admitted stage",
+          "acquisition, voice and render each"
+        ],
+        [
+          "R9",
+          "cancellation_grace_seconds",
+          "seconds",
+          "30",
+          "process-tree end after cancel"
+        ],
+        [
+          "R10",
+          "retries",
+          "attempts_per_stage",
+          "1",
+          "one attempt, no retry (design SEL-08)"
+        ]
+      ]
+    },
+    "requiredEvidenceGroups": [
+      "source and offline/cache/codec",
+      "per-component rights and fixed preset consent",
+      "pinned Windows dependency/binary closure",
+      "OS enforcement and measured resource envelope"
+    ],
+    "separateOperatorCheckpoints": [
+      "Storyboard final content acceptance",
+      "Download/install admission after rights and inventory",
+      "TTS/render admission after enforced controls and manifest review"
+    ],
+    "nonEffects": [
+      "no network/install/model acquisition",
+      "no provider/paid/hosted voice or cloning",
+      "no WAV/MP4",
+      "no public push/deploy"
+    ],
+    "claimBoundary": "Human review aid only; no new binding schema, authorization, source audit, rights clearance, executable policy or governance proof"
+  },
+  "historicalStop": {
+    "problemKey": "cvf-ncr-c1-metadata-footprint",
+    "chainOrdinal": 2,
+    "disposition": "STOP",
+    "blocker": "C1_DEPENDENCY_FOOTPRINT_CACHE_SEMANTICS_UNSPECIFIED",
+    "counters": [
+      0,
+      0,
+      1,
+      2
+    ],
+    "preservation": "historical terminal record and counters retained; conditional operator-selected direction is not resolution evidence or runtime retry"
+  },
+  "dispatchDisposition": "HOLD_PENDING_EFFECT_ADMISSION",
+  "claimBoundary": "Operator direction and two budget selections only; no rights clearance, enforced envelope, runtime admission, worker release or media acceptance."
+}
