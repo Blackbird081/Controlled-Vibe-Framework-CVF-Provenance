@@ -8,7 +8,7 @@
     "reviewManifest": "docs/reviews/evidence/cvf-ncr-local-review-manifest-2026-10-06.json",
     "reviewManifestDisposition": "Historical pre-commit 49-path snapshot; committed disposition recorded here.",
     "verification": "Recorded scoped tests, Docker/storage/Web receipts and real Alibaba observations consumed; material helper and repository pre-commit hooks passed. No independent reviewer, browser UX, actual-data cutover or release-quality governance claim.",
-    "nextAction": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=DESIGN; BATCH_ID=CVF-NCR-C1-OFFLINE-PRODUCTION-READINESS-20261008. S0 documentary closed by docs/reviews/CVF_NCR_C1_OFFLINE_PRODUCTION_READINESS_COMPLETION_2026-10-08.md;proof docs/reviews/evidence/cvf-ncr-c1-offline-production-readiness-local-review-2026-10-08.json;order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_C1_OFFLINE_PRODUCTION_READINESS_S0_2026-10-08.md. Original return preserved;positive/five independent mutation classes PASS;two documentary joins repaired,helper source exists but acceptance withheld,and OB-06 includes fourth small file.29 obligations and10 downstream stages held. Worker lane released,no redispatch. Offline/cache and10GiB disk/8GiB RAM selected,do not ask again. Local may prepare one concrete grouped effect proposal from reviewed S0;no worker/source/runtime or recursive relay successor. Preset/P1 remain design assumptions with no production grant;OB-22 requires explicit freeze-boundary disposition before helper paths. Host/Docker REPORTED_UNBOUND;fresh host proof belongs to admitted S2. Historical STOP,counters,custody/source acceptance unchanged;no retry/reset. Production NO_GO:network/download/install,helper source,host controls,TTS/WAV/render/MP4,rights/consent,paid/cloud/cloning/upload/provider/public/deploy separately admitted. Other limits proposed;human storyboard/media acceptance separate. Accepted Windows82/20 selector,preparation37/eight and9/9/W05 receipts consumed,no replay/full production claim. Q001/Q004 checkpoints action-specific;Alibaba scoped-test grant unused. P11/CCMA/public and unrelated parked lanes unchanged;NCR F1 LOW,NIS-T1J no successor,LHW24 retained. Grouped/value-over-cost autonomy;hold dependent effects only. Accepted S0 materialCommit=5a944c7df5159533e8aa7856e51daf25876d8629.",
+    "nextAction": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=DESIGN; BATCH_ID=CVF-NCR-C1-OFFLINE-PRODUCTION-READINESS-20261008. S0 CLOSED_PASS_BOUNDED at 5a944c7df; grouped effect proposal docs/reference/CVF_NCR_C1_GROUPED_EFFECT_PROPOSAL_2026-10-08.md with companion docs/reference/CVF_NCR_C1_GROUPED_EFFECT_PROPOSAL_2026-10-08.json committed d41de95e54fad1e31780317e9797825cd7c46d0b. Operator E1 decision pending:public metadata/text GET/HEAD,six exact hosts,160 requests,16MiB body/retained text,1200s,no credentials/redirects/retries. No E1 execution until explicit admission and bound execution contract;no worker dispatch now. Continue independent admitted design only.29 obligations OPEN,ten stages HELD_NOT_RELEASED. Offline/cache10GiB disk/8GiB RAM selected,do not re-ask. Supervisor FEATURE_SUCCESSORS_FROZEN,zero helper paths requested,source acceptance withheld;OB-22 requires concrete exact source/OS scope and explicit boundary decision before S1. Historical STOP ordinal2/counters0/0/1/2/source successor1 and custody gap unchanged;no reset/retry/recursive relay. Preset/P1 design assumptions;selection not consent. Host/Docker REPORTED_UNBOUND,measure only admitted S2. Production NO_GO:acquisition/install/host changes,TTS/WAV/render/MP4,rights/consent,paid/cloud/cloning/upload/public/deploy separately admitted. Original worker return preserved,positive/five mutation classes accepted,no replay of82/20selector or37/eight kit. Q001/Q004 action-specific;Alibaba scoped-test grant unused;P11/CCMA/public/unrelated parked,NIS-T1J no successor,LHW24 retained. Grouped/value-over-cost autonomy,hold dependent effects only.",
     "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
     "approvedContextContinuation": {
       "materialCommit": "594e2c1b2cbc7171fe77ab849782e5de085b5b8c",
@@ -684,6 +684,19 @@
       "workerLane": "RELEASED",
       "historicalStop": "UNCHANGED",
       "materialCommit": "5a944c7df5159533e8aa7856e51daf25876d8629",
+      "publicExportDisposition": "DEFERRED_PRIVATE_ONLY"
+    },
+    "videoC1GroupedEffectProposal20261008": {
+      "status": "PROPOSED_PENDING_OPERATOR",
+      "proposal": "docs/reference/CVF_NCR_C1_GROUPED_EFFECT_PROPOSAL_2026-10-08.md",
+      "companion": "docs/reference/CVF_NCR_C1_GROUPED_EFFECT_PROPOSAL_2026-10-08.json",
+      "materialCommit": "d41de95e54fad1e31780317e9797825cd7c46d0b",
+      "requestedStage": "E1",
+      "approvalRecorded": false,
+      "helperPathsRequested": [],
+      "obligationsOpen": 29,
+      "downstreamStagesHeld": 10,
+      "runtimeAdmission": "NO_GO",
       "publicExportDisposition": "DEFERRED_PRIVATE_ONLY"
     }
   }
