@@ -721,6 +721,34 @@
       "helperPathsRequested": [],
       "autoRetryOrCapIncrease": false,
       "publicExportDisposition": "DEFERRED_PRIVATE_ONLY"
+    },
+    "videoC1ManifestControlSourceProposal20261008": {
+      "proposalPath": "docs/reference/CVF_NCR_C1_MANIFEST_CONTROL_SOURCE_PROPOSAL_2026-10-08.md",
+      "companionPath": "docs/reference/CVF_NCR_C1_MANIFEST_CONTROL_SOURCE_PROPOSAL_2026-10-08.json",
+      "materialSha": "a3eae872ce3859d14f870da0078485f98e4f8e37",
+      "status": "PROPOSED_PENDING_OPERATOR_FREEZE_DISPOSITION",
+      "approvalRecorded": false,
+      "requestedStage": "S1_SOURCE_ONLY_STATIC_REVIEW_AND_BOUNDED_MICROSOFT_DOCS",
+      "sourceRootProposed": "D:/UNG DUNG AI/TOOL AI 2026/CVF-NCR-C1-CONTROL-SOURCE-S1-20261008",
+      "maxSourcePaths": 14,
+      "npmMetadataJoinedRows": 57,
+      "npmUnverifiedLocatorRows": 14,
+      "sourceProblemKey": "local-supervisor-source-contract",
+      "currentOrdinal": 1,
+      "prospectiveOrdinal": 2,
+      "priorCounters": {
+        "partialReadyClosures": 0,
+        "reviewerScopeExpansions": 0,
+        "sameClaimCorrections": 1,
+        "nonDecreasingBlockerTransitions": 1
+      },
+      "resolvedNow": [],
+      "historicalSourceAcceptance": "WITHHELD_FEATURE_SUCCESSORS_FROZEN",
+      "sourceGatePolicy": "integrated root contract and canonical gates before dispatch; no bypass",
+      "S2Admission": "NOT_REQUESTED_NOT_RELEASED",
+      "obligationsOpen": 29,
+      "effectsPerformed": 0,
+      "publicExportDisposition": "DEFERRED_PRIVATE_ONLY"
     }
   }
 }
