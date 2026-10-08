@@ -2,11 +2,11 @@
   "schemaVersion": "cvf.preapprovalFeasibility.v1",
   "proposal": {
     "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_C1_S1_CONSOLIDATED_REPAIR_2026-10-08.md",
-    "sha256": "ee730b47f5d45bd63b863e356245a4af55052c9d742e3ac6ffc80ffc20d22515"
+    "sha256": "53dea51ad767583b303861f08a07ecda31a0270308ccaa616e00d4c625d0dd64"
   },
   "approvalTarget": {
     "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_C1_S1_CONSOLIDATED_REPAIR_2026-10-08.md",
-    "sha256": "ee730b47f5d45bd63b863e356245a4af55052c9d742e3ac6ffc80ffc20d22515",
+    "sha256": "53dea51ad767583b303861f08a07ecda31a0270308ccaa616e00d4c625d0dd64",
     "prospectiveOutcomeSha256": "bfa2137c5024f774c725d73ba0b560d415521b3e80c48b6f7e95d694fc4c06cb"
   },
   "prospectiveOutcome": {
@@ -70,7 +70,7 @@
     "successorScope": "INTEGRATED_ROOT_CONTRACT"
   },
   "phasePrerequisites": {
-    "phase": "S1_REPAIR_CONTRACT_APPROVAL",
+    "phase": "S1_REPAIR_SOURCE_AUTHORING",
     "rows": [
       {
         "requirementId": "COMPLETED_PRIOR_STATIC_REVIEW",
@@ -114,9 +114,13 @@
       },
       {
         "requirementId": "EXACT_NEW_ROOT_ATTEMPT_OPERATOR_APPROVAL",
-        "requiredForPhase": false,
-        "evidence": null,
-        "deferredToPhase": "S1_REPAIR_SOURCE_AUTHORING"
+        "requiredForPhase": true,
+        "evidence": {
+          "path": "docs/baselines/CVF_GC018_NCR_C1_S1_CONSOLIDATED_REPAIR_2026-10-08.md",
+          "sha256": "fd170e094abba0a264f28a04626d9d9a1b02c75f7160c25ae13b34f1506debf9",
+          "locator": "## Approval Record"
+        },
+        "deferredToPhase": null
       },
       {
         "requirementId": "NEW_SOURCE_STATIC_REVIEW",

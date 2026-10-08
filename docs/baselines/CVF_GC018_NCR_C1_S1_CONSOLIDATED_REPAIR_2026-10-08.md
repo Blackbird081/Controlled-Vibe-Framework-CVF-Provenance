@@ -1,17 +1,18 @@
 # CVF GC-018 Baseline - NCR C1 S1 Consolidated Repair
 Memory class: governed-dispatch-baseline
 docType: baseline
-Status: HOLD_PENDING_OPERATOR_DECISION
+Status: AUTHORIZED_BOUNDED_SOURCE_ONLY
 Date: 2026-10-08
 Batch ID: CVF-NCR-C1-OFFLINE-PRODUCTION-READINESS-20261008
-Dispatch base head: 6b0625d9ebf70baa2ee6553a26d433c8a653ecf9
+Dispatch base head: de329309842cce129c7e286a4765fadb1c5686e7
 Commit mode: WORKER_MUST_NOT_COMMIT
 providerExecutionAuthority: FORBIDDEN
+Text Encoding Exception: quoted Vietnamese operator approval word retained as exact session evidence;remaining governance symbols ASCII.
 rawMemoryReleased=false
 
 ## Purpose
 
-Prepare one new consolidated source-only repair scope for operator decision;old exclusive-create attempt spent. No source effect authorized by this proposed baseline.
+Authorize operator-approved one R2 source-only repair attempt after committed bound release. Old source roots/failed integrated attempt preserved;no native/fixture execution or further attempt.
 
 ## Scope / Target / Owner Boundary
 
@@ -19,11 +20,15 @@ Paired docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_C1_S1_CONSOLIDATED_REPAIR_2026-
 
 ## Evidence / Verification
 
-Planning HEAD `6b0625d9ebf70baa2ee6553a26d433c8a653ecf9`. Final Local review `docs/reviews/CVF_NCR_C1_S1_INTEGRATED_SOURCE_COMPLETION_2026-10-08.md`;bounded review-task acceptance `docs/reference/CVF_NCR_C1_S1_CONSOLIDATED_REPAIR_REASSESSMENT_2026-10-08.md`;retained native ABI inputs remain pinned. No new network reads or candidate execution. Actual final companion/canonical route validation required before presenting approval;committed release required after exact operator approval.
+Release preparation HEAD `de329309842cce129c7e286a4765fadb1c5686e7`. Final Local review `docs/reviews/CVF_NCR_C1_S1_INTEGRATED_SOURCE_COMPLETION_2026-10-08.md`;bounded review-task acceptance `docs/reference/CVF_NCR_C1_S1_CONSOLIDATED_REPAIR_REASSESSMENT_2026-10-08.md`;retained native ABI inputs remain pinned. No new network reads or candidate execution. Exact approval recorded;final updated companion/canonical validation and committed bound release required.
 
 ## Baseline Decision / Authorized Change / Acceptance
 
-PROPOSED_ONLY: one new exclusive-create root `D:/UNG DUNG AI/TOOL AI 2026/CVF-NCR-C1-CONTROL-SOURCE-S1-R2-20261008`;exact16 source files and two new repo returns listed by paired order `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_C1_S1_CONSOLIDATED_REPAIR_2026-10-08.md`. Adds native_abi.py and deadline_budget.py to split near-threshold adapter. Source<=200000 B,evidence<=2097152 B,worker<=3600s including all reads/gates,review<=1200s. No rewrite/retry/delete of any old root. Approval must explicitly cover fresh root/16-path attempt;old approval is spent. All4 unresolved source/custody blockers retained;only completed prior static-review task resolved prospectively. Runtime S2-S9 NO_GO,29 obligations OPEN;all parked checkpoints preserved.
+APPROVED_EXACT_R2_SCOPE: one fresh root `D:/UNG DUNG AI/TOOL AI 2026/CVF-NCR-C1-CONTROL-SOURCE-S1-R2-20261008`,16 exclusive-create source paths and2 new governed returns;200000 source B/2097152 evidence B/3600s worker including all startup,reads,drafting,writes,gates/1200s Local review;0 native/fixture/network/provider execution;exact paths in paired order `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_C1_S1_CONSOLIDATED_REPAIR_2026-10-08.md`. Adds native_abi.py/deadline_budget.py for near-threshold responsibility split. No old-root rewrite/retry/delete. All4 engineering/custody blockers retained;only completed prior static-review task resolved by immutable accepted-review evidence. S2-S9 NO_GO/29 obligations OPEN;parked checkpoints retained. Actual write effects require committed pair/continuity/bound release PASS.
+
+## Approval Record
+
+Date:2026-10-08;operatorAuthority: direct operator reply "duyệt" to the concrete R2 scope presented after final proposal feasibility/reviewer/committed-range checks. Approved one fresh root `D:/UNG DUNG AI/TOOL AI 2026/CVF-NCR-C1-CONTROL-SOURCE-S1-R2-20261008`,16 exclusive-create source paths and2 new governed returns;200000 source B/2097152 evidence B/3600s worker including all startup,reads,drafting,writes,gates/1200s Local review;0 native/fixture/network/provider execution. This is new R2 attempt authority,not repeated use of the spent integrated approval. Old roots/history/failures retained;no additional effect or future successor.
 
 ## Source Verification Block
 
@@ -57,22 +62,22 @@ Actual resolver returned0 of0 candidates,truncatedfalse.
 | --- | --- |
 | Actor | Local INTERNAL_AGENT dispatcher |
 | Provider or surface | private shared workspace |
-| Session or invocation | ncr-s1-consolidated-repair-order-20261008 |
+| Session or invocation | ncr-s1-r2-approved-release-20261008 |
 | Working directory | D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF |
 | Command or tool surface | targeted reads/raw hashes; trusted scaffold; canonical byte/hash/block resolvers; documentary packet writes; static packet gates |
-| Target paths | `docs/reference/CVF_NCR_C1_S1_CONSOLIDATED_REPAIR_REASSESSMENT_2026-10-08.md`; `docs/baselines/CVF_GC018_NCR_C1_S1_CONSOLIDATED_REPAIR_2026-10-08.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_C1_S1_CONSOLIDATED_REPAIR_2026-10-08.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_C1_S1_CONSOLIDATED_REPAIR_2026-10-08.json` |
-| Allowed scope source | operator request to prepare grouped repair work order; Local review/architecture mandate |
-| Before status evidence | clean at 6b0625d9ebf70baa2ee6553a26d433c8a653ecf9; four new packet files and prospective source root absent |
-| After status evidence | four documentary packet files only; source roots untouched |
-| Diff evidence | git status --short --untracked-files=all;git diff --check;hash-bound queue/results |
-| Approval boundary | new source attempt requires exact operator scope approval and later committed release; no source effect here |
+| Target paths | `docs/baselines/CVF_GC018_NCR_C1_S1_CONSOLIDATED_REPAIR_2026-10-08.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_C1_S1_CONSOLIDATED_REPAIR_2026-10-08.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_C1_S1_CONSOLIDATED_REPAIR_2026-10-08.json` |
+| Allowed scope source | operator reply duyệt to exact R2 scope;Approval Record in paired baseline;standing dispatch authority |
+| Before status evidence | clean at de329309842cce129c7e286a4765fadb1c5686e7;held packet committed,operator now approved exact R2 scope |
+| After status evidence | three dispatcher packet files updated;accepted-review reference frozen;no source writes |
+| Diff evidence | git diff --check;exact three-path dispatcher manifest;source root/return paths absent |
+| Approval boundary | one approved R2 source-only attempt;actual source writes require committed pair/continuity/bound release |
 | Claim boundary | completed bounded static-review task and prospective repair feasibility only; source/custody/runtime not accepted |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-s1-consolidated-repair-order-20261008 |
-| Expected manifest | `docs/reference/CVF_NCR_C1_S1_CONSOLIDATED_REPAIR_REASSESSMENT_2026-10-08.md`; `docs/baselines/CVF_GC018_NCR_C1_S1_CONSOLIDATED_REPAIR_2026-10-08.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_C1_S1_CONSOLIDATED_REPAIR_2026-10-08.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_C1_S1_CONSOLIDATED_REPAIR_2026-10-08.json` |
-| Actual changed set | `docs/reference/CVF_NCR_C1_S1_CONSOLIDATED_REPAIR_REASSESSMENT_2026-10-08.md`; `docs/baselines/CVF_GC018_NCR_C1_S1_CONSOLIDATED_REPAIR_2026-10-08.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_C1_S1_CONSOLIDATED_REPAIR_2026-10-08.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_C1_S1_CONSOLIDATED_REPAIR_2026-10-08.json` |
+| Invocation ID | ncr-s1-r2-approved-release-20261008 |
+| Expected manifest | `docs/baselines/CVF_GC018_NCR_C1_S1_CONSOLIDATED_REPAIR_2026-10-08.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_C1_S1_CONSOLIDATED_REPAIR_2026-10-08.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_C1_S1_CONSOLIDATED_REPAIR_2026-10-08.json` |
+| Actual changed set | `docs/baselines/CVF_GC018_NCR_C1_S1_CONSOLIDATED_REPAIR_2026-10-08.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_C1_S1_CONSOLIDATED_REPAIR_2026-10-08.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_C1_S1_CONSOLIDATED_REPAIR_2026-10-08.json` |
 | Manifest delta | MATCH |
-| Deletion or rename disposition | N/A with reason: four new documentary files; no deletion or rename |
+| Deletion or rename disposition | N/A with reason: no deletion or rename;three existing dispatcher paths updated |
 
 ## External/Local Coordination Binding
 
@@ -99,10 +104,10 @@ Actual resolver returned0 of0 candidates,truncatedfalse.
 
 ## Epistemic Process Block
 
-Expected Result / Prediction: source-only repair packet can be technically feasible while effect approval is held.
-Evidence Comparison: completed bounded review and grouped defect/split contract are explicit.
-Contradiction Or Gap Disposition: keep new root attempt unadmitted until exact scope approval and release.
-Claim Update: proposed baseline only,no new source/runtime effect.
+Expected Result / Prediction: exact R2 approval removes held authority without admitting production stages.
+Evidence Comparison: direct operator duyệt to concrete scope;immutable review-task evidence and four blockers retained.
+Contradiction Or Gap Disposition: effects await committed bound release;old failed attempt not retroactively accepted.
+Claim Update: authorized bounded source-only baseline,not runtime acceptance.
 
 ## Public Export Disposition
 
