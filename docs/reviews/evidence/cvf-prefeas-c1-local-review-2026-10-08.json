@@ -1342,5 +1342,21 @@
     "repair": "packet literals/projections only;no checker weakening",
     "secondResult": "FAIL: count labels corrected but separators differed from required semicolon parser; now exact literal fixed",
     "secondLogSha256": "dd15ac64871e472004b7ff23f1656387b7552bea51b083eeefde3fcbb9336bd3"
+  },
+  "committedClosureRangeCorrection": {
+    "primaryImplementationMaterial": "51cc377340e48701fb2d19659e36824b46c491a0",
+    "primaryContinuity": "c80a7c3df16ae70f192b509777595fd39e2cdab6",
+    "rejectedMixedPreclosureLogSha256": "b6fbf0e97ff8c0e6dffa2adc4113c8b8218fc4cc99886bdeefbb2e87cde962ad",
+    "rejectedMixedPreclosureResult": "FAIL_BEFORE_BUNDLE:22-path atomic work-order/currentAuthority closure material mixed exact trace artifacts and seven protected session paths",
+    "primaryMaterialFullBundle": {
+      "phase": "pre-implementation",
+      "base": "9b778dc1d9240d3584d60ffbf8ff474f3d70127f",
+      "head": "51cc377340e48701fb2d19659e36824b46c491a0",
+      "result": "PASS",
+      "logSha256": "55c4f7be129c3004734120c51b0f9e1c0e5dd15ae07250c71f18b893afa82130"
+    },
+    "correction": "two-path same-batch closure packet material,then dedicated source continuity;pre-closure exact nonmixed packet and continuity ranges;no history rewrite or guard exception",
+    "owner": "LOCAL_REVIEWER_COMMIT_CHOREOGRAPHY",
+    "claimBoundary": "primary implementation full-bundle validation is not represented as material pre-closure PASS"
   }
 }

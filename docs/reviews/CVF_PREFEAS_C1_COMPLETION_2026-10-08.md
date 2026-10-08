@@ -58,7 +58,7 @@ probeExecutorActor: LOCAL_REVIEWER_CODEX_ROOT
 workerInvocationId: prefeas-c1-worker-20261008
 probeInvocationId: prefeas-c1-local-review-20261008
 workerOracleSha256: 542a45b20dc0c212fc7a6d2d30d82783bfa94b9db25caf312c78b90b43025d25
-probeOracleSha256: 57083fa141664c95a1357399856685e7058c5ccfa491d7e1638414799f2ad12c
+probeOracleSha256: ff38184fe66ffc359a96235a5086b6d13ec2107d27acb5c59951452409e77084
 workerEvidenceRef: docs/reviews/evidence/cvf-prefeas-c1-worker-2026-10-08.json
 probeEvidenceRef: docs/reviews/evidence/cvf-prefeas-c1-local-review-2026-10-08.json
 probeCommandOrMethod: python -B .cvf/runtime/prefeas_local_probe.py;independently authored synthetic source bytes and expected exits/receipts;actual production CLIs;no worker-test imports
@@ -100,16 +100,16 @@ workerRepairTurnCount: 0
 newRootCauseCountThisRound: 2
 dependentFindingCountThisRound: 3
 providerCallCount: 0
-materialCommitCount: 1
-continuityCommitCount: 1
+materialCommitCount: 2
+continuityCommitCount: 2
 elapsedReviewMinutes: NOT_AVAILABLE_WITH_REASON: no whole-turn wall-clock meter
 tokenOrQuotaUsage: NOT_AVAILABLE_WITH_REASON: no provider-neutral usage receipt
 valueDelta: three reproduced false admissions/zero-coverage omissions fixed together,one independent oracle and focused impacted regressions;no broad worker-suite replay
 stopDisposition: COMPLETE_REVIEW
 preRepairAuditDisposition: COMPLETE_BEFORE_FIRST_REPAIR
-commitPlanDisposition: EXCEPTION_WITH_REASON: changed closed-order hash and currentAuthority/source projections synchronized atomically in material;one dedicated real-SHA continuity follows
+commitPlanDisposition: EXCEPTION_WITH_REASON: primary atomic status/currentAuthority material and continuity complete;range preflight rejected mixed primary material;one same-batch two-path closure packet correction plus dedicated continuity supplies nonmixed closure ranges;no history rewrite or new successor
 latencyDisposition: NOT_MEASURED_WITH_REASON: command durations only
-avoidableDelayClass: GATE_DISCOVERY_LOOP
+avoidableDelayClass: MULTIPLE_AVOIDABLE_DELAYS
 
 ## Checker Source Read-Ahead Block
 
@@ -136,17 +136,17 @@ Rollback boundary: exact22 material and seven continuity paths;original worker e
 | Session or invocation | prefeas-c1-local-review-20261008 |
 | Working directory | repository root |
 | Command or tool surface | named source/hash joins;independent actual CLI/Git probes;three grouped repairs;103 focused tests;gates and split closure |
-| Target paths | `governance/compat/preapproval_feasibility_contract.py`; `governance/compat/check_preapproval_feasibility.py`; `governance/compat/run_preapproval_feasibility_gate.py`; `governance/compat/test_check_preapproval_feasibility.py`; `governance/compat/agent_autorun_command_catalog.py`; `governance/compat/local_governance_hook_catalog_pre_commit.py`; `governance/compat/local_governance_hook_catalog_reviewer_fast.py`; `governance/compat/test_run_agent_autorun_workflow_gate.py`; `docs/reference/CVF_GOVERNED_WORK_LIFECYCLE_AND_DESIGN_CONTROL_STANDARD_2026-06-11.md`; `docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md`; `docs/reviews/CVF_PREFEAS_C1_WORKER_RETURN_2026-10-08.md`; `docs/reviews/evidence/cvf-prefeas-c1-worker-2026-10-08.json`; `docs/reviews/CVF_PREFEAS_C1_COMPLETION_2026-10-08.md`; `docs/reviews/evidence/cvf-prefeas-c1-local-review-2026-10-08.json`; `docs/work_orders/CVF_AGENT_WORK_ORDER_PREFEAS_C1_2026-10-08.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/cvfNcrConsolidatedLocalFoundation20261006.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Target paths | `docs/reviews/CVF_PREFEAS_C1_COMPLETION_2026-10-08.md`; `docs/reviews/evidence/cvf-prefeas-c1-local-review-2026-10-08.json` |
 | Allowed scope source | docs/work_orders/CVF_AGENT_WORK_ORDER_PREFEAS_C1_2026-10-08.md reviewer closure conversion |
-| Before status evidence | exact12 worker paths/uncommitted;HEAD 9b778dc1d9240d3584d60ffbf8ff474f3d70127f |
-| After status evidence | exact22 atomic closure paths;original worker receipt/return preserved |
+| Before status evidence | clean c80a7c3df16ae70f192b509777595fd39e2cdab6;primary implementation and continuity committed |
+| After status evidence | two same-batch closure packet paths;primary implementation/worker return unchanged |
 | Diff evidence | git diff --name-status,local custody hashes and exact staged set |
 | Approval boundary | bounded guard review/repair/commit;source/runtime/network/public effects held |
 | Claim boundary | offline declared-state route only |
 | Agent type | INTERNAL_AGENT reviewer/closer |
 | Invocation ID | prefeas-c1-local-review-20261008 |
-| Expected manifest | `governance/compat/preapproval_feasibility_contract.py`; `governance/compat/check_preapproval_feasibility.py`; `governance/compat/run_preapproval_feasibility_gate.py`; `governance/compat/test_check_preapproval_feasibility.py`; `governance/compat/agent_autorun_command_catalog.py`; `governance/compat/local_governance_hook_catalog_pre_commit.py`; `governance/compat/local_governance_hook_catalog_reviewer_fast.py`; `governance/compat/test_run_agent_autorun_workflow_gate.py`; `docs/reference/CVF_GOVERNED_WORK_LIFECYCLE_AND_DESIGN_CONTROL_STANDARD_2026-06-11.md`; `docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md`; `docs/reviews/CVF_PREFEAS_C1_WORKER_RETURN_2026-10-08.md`; `docs/reviews/evidence/cvf-prefeas-c1-worker-2026-10-08.json`; `docs/reviews/CVF_PREFEAS_C1_COMPLETION_2026-10-08.md`; `docs/reviews/evidence/cvf-prefeas-c1-local-review-2026-10-08.json`; `docs/work_orders/CVF_AGENT_WORK_ORDER_PREFEAS_C1_2026-10-08.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/cvfNcrConsolidatedLocalFoundation20261006.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Actual changed set | `governance/compat/preapproval_feasibility_contract.py`; `governance/compat/check_preapproval_feasibility.py`; `governance/compat/run_preapproval_feasibility_gate.py`; `governance/compat/test_check_preapproval_feasibility.py`; `governance/compat/agent_autorun_command_catalog.py`; `governance/compat/local_governance_hook_catalog_pre_commit.py`; `governance/compat/local_governance_hook_catalog_reviewer_fast.py`; `governance/compat/test_run_agent_autorun_workflow_gate.py`; `docs/reference/CVF_GOVERNED_WORK_LIFECYCLE_AND_DESIGN_CONTROL_STANDARD_2026-06-11.md`; `docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md`; `docs/reviews/CVF_PREFEAS_C1_WORKER_RETURN_2026-10-08.md`; `docs/reviews/evidence/cvf-prefeas-c1-worker-2026-10-08.json`; `docs/reviews/CVF_PREFEAS_C1_COMPLETION_2026-10-08.md`; `docs/reviews/evidence/cvf-prefeas-c1-local-review-2026-10-08.json`; `docs/work_orders/CVF_AGENT_WORK_ORDER_PREFEAS_C1_2026-10-08.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/cvfNcrConsolidatedLocalFoundation20261006.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Expected manifest | `docs/reviews/CVF_PREFEAS_C1_COMPLETION_2026-10-08.md`; `docs/reviews/evidence/cvf-prefeas-c1-local-review-2026-10-08.json` |
+| Actual changed set | `docs/reviews/CVF_PREFEAS_C1_COMPLETION_2026-10-08.md`; `docs/reviews/evidence/cvf-prefeas-c1-local-review-2026-10-08.json` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |
 
@@ -231,3 +231,7 @@ Private guard review;no public rollout/export.
 ## Claim Boundary
 
 Offline declared-state guard accepted with Local repairs and bounded actual CLI/range/catalog evidence. FEASIBLE is presentation eligibility,not consent or effect admission;HOLD is non-release;zero range coverage is NOT_APPLICABLE. Source/metadata chains,existing S1 approval and dependent effects unchanged. No product/live/provider/media/host/public/deploy behavior proof.
+
+## Committed Range Closure Correction
+
+Primary material51cc377340e48701fb2d19659e36824b46c491a0 contains the atomic closed-order/currentAuthority join. Its actual full pre-implementation bundle PASS is retained. Its pre-closure range-shape rejection is also retained;it is not claimed as a pre-closure PASS. Local correction records this in two packet paths,then synchronizes real correction SHA separately;final pre-closure uses exact nonmixed packet and continuity ranges. Original three repairs and15/103 proof unchanged. This is a reviewer choreography defect,not worker fault;existing split-range rule controls,no checker weakening or successor.
