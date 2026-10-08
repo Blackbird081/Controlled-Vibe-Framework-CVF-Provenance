@@ -1,0 +1,368 @@
+{
+  "schemaVersion": "cvf.ncrC1S1IntegratedDispatchDesign.v1",
+  "planningHead": "a134e4d14d817a20bd1f5f9637ce6c77d8b0b490",
+  "materialPaths": [
+    "docs/baselines/CVF_GC018_NCR_C1_S1_INTEGRATED_SOURCE_2026-10-08.md",
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_C1_S1_INTEGRATED_SOURCE_2026-10-08.md",
+    "docs/reference/CVF_NCR_C1_S1_NATIVE_SOURCE_CONTRACT_2026-10-08.md",
+    "docs/reference/CVF_NCR_C1_S1_NATIVE_ABI_SOURCE_BINDINGS_2026-10-08.json",
+    "docs/reviews/evidence/cvf-ncr-c1-s1-dispatch-design-2026-10-08.json",
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_C1_S1_INTEGRATED_SOURCE_2026-10-08.json",
+    "docs/reference/CVF_NCR_C1_S1_MICROSOFT_DOCS_EXECUTION_CONTRACT_2026-10-08.json",
+    "docs/reference/CVF_NCR_C1_S1_MICROSOFT_DOCS_READ_RESULT_2026-10-08.json",
+    "docs/reference/CVF_NCR_C1_S1_MICROSOFT_DOCS_ABI_QUEUE_2026-10-08.json",
+    "docs/reference/CVF_NCR_C1_S1_MICROSOFT_DOCS_ABI_RESULT_2026-10-08.json"
+  ],
+  "workerRepoPaths": [
+    "docs/reviews/CVF_NCR_C1_S1_INTEGRATED_SOURCE_WORKER_RETURN_2026-10-08.md",
+    "docs/reviews/evidence/cvf-ncr-c1-s1-integrated-source-worker-2026-10-08.json"
+  ],
+  "workerSourceRoot": "D:/UNG DUNG AI/TOOL AI 2026/CVF-NCR-C1-CONTROL-SOURCE-S1-20261008",
+  "workerExternalPaths": [
+    "D:/UNG DUNG AI/TOOL AI 2026/CVF-NCR-C1-CONTROL-SOURCE-S1-20261008/README.md",
+    "D:/UNG DUNG AI/TOOL AI 2026/CVF-NCR-C1-CONTROL-SOURCE-S1-20261008/src/supervisor.py",
+    "D:/UNG DUNG AI/TOOL AI 2026/CVF-NCR-C1-CONTROL-SOURCE-S1-20261008/src/envelope_contract.py",
+    "D:/UNG DUNG AI/TOOL AI 2026/CVF-NCR-C1-CONTROL-SOURCE-S1-20261008/src/windows_job.py",
+    "D:/UNG DUNG AI/TOOL AI 2026/CVF-NCR-C1-CONTROL-SOURCE-S1-20261008/src/boundary_admission.py",
+    "D:/UNG DUNG AI/TOOL AI 2026/CVF-NCR-C1-CONTROL-SOURCE-S1-20261008/fixtures/fx_d1.py",
+    "D:/UNG DUNG AI/TOOL AI 2026/CVF-NCR-C1-CONTROL-SOURCE-S1-20261008/fixtures/fx_m1.py",
+    "D:/UNG DUNG AI/TOOL AI 2026/CVF-NCR-C1-CONTROL-SOURCE-S1-20261008/fixtures/fx_t1.py",
+    "D:/UNG DUNG AI/TOOL AI 2026/CVF-NCR-C1-CONTROL-SOURCE-S1-20261008/fixtures/fx_b1.py",
+    "D:/UNG DUNG AI/TOOL AI 2026/CVF-NCR-C1-CONTROL-SOURCE-S1-20261008/fixtures/fx_n1.py",
+    "D:/UNG DUNG AI/TOOL AI 2026/CVF-NCR-C1-CONTROL-SOURCE-S1-20261008/fixtures/fx_l1.py",
+    "D:/UNG DUNG AI/TOOL AI 2026/CVF-NCR-C1-CONTROL-SOURCE-S1-20261008/evidence/source-manifest.json",
+    "D:/UNG DUNG AI/TOOL AI 2026/CVF-NCR-C1-CONTROL-SOURCE-S1-20261008/evidence/requirement-map.json",
+    "D:/UNG DUNG AI/TOOL AI 2026/CVF-NCR-C1-CONTROL-SOURCE-S1-20261008/WORKER_RETURN.md"
+  ],
+  "sourceRootCreated": false,
+  "sourceSeedPins": [
+    {
+      "relativePath": "README.md",
+      "historicalReadPath": "D:/UNG DUNG AI/TOOL AI 2026/CVF-NCR-S05-S1-SOURCE-R1-20261003/README.md",
+      "historicalSha256": "6425bfca1d9213b819c9e30dd7f8f557dab677073e999649d7c3288a5a7e681a",
+      "proposedWritePath": "D:/UNG DUNG AI/TOOL AI 2026/CVF-NCR-C1-CONTROL-SOURCE-S1-20261008/README.md",
+      "proposedAction": "EXCLUSIVE_CREATE_NEW_VERSION",
+      "role": "new prospective evidence/custody documentation",
+      "executionInS1": false,
+      "historicalRootMutation": false
+    },
+    {
+      "relativePath": "src/supervisor.py",
+      "historicalReadPath": "D:/UNG DUNG AI/TOOL AI 2026/CVF-NCR-S05-S1-SOURCE-R1-20261003/src/supervisor.py",
+      "historicalSha256": "6c81e5dd4f16089a245859eddc816a48e5bba7fb97b025e9a3cdc43da8d668f3",
+      "proposedWritePath": "D:/UNG DUNG AI/TOOL AI 2026/CVF-NCR-C1-CONTROL-SOURCE-S1-20261008/src/supervisor.py",
+      "proposedAction": "EXCLUSIVE_CREATE_NEW_VERSION",
+      "role": "supervisor and admission composition",
+      "executionInS1": false,
+      "historicalRootMutation": false
+    },
+    {
+      "relativePath": "src/envelope_contract.py",
+      "historicalReadPath": "D:/UNG DUNG AI/TOOL AI 2026/CVF-NCR-S05-S1-SOURCE-R1-20261003/src/envelope_contract.py",
+      "historicalSha256": "995faa63e9ad88b718f6a09650ce13ba7db35fc6301af855c40273b9505b8841",
+      "proposedWritePath": "D:/UNG DUNG AI/TOOL AI 2026/CVF-NCR-C1-CONTROL-SOURCE-S1-20261008/src/envelope_contract.py",
+      "proposedAction": "EXCLUSIVE_CREATE_NEW_VERSION",
+      "role": "supervisor and admission composition",
+      "executionInS1": false,
+      "historicalRootMutation": false
+    },
+    {
+      "relativePath": "src/windows_job.py",
+      "historicalReadPath": "D:/UNG DUNG AI/TOOL AI 2026/CVF-NCR-S05-S1-SOURCE-R1-20261003/src/windows_job.py",
+      "historicalSha256": "d96fe1f9ebd7cb67f0c7c62f7415ca31d627d2be3b8c452a4945777ab0c615bd",
+      "proposedWritePath": "D:/UNG DUNG AI/TOOL AI 2026/CVF-NCR-C1-CONTROL-SOURCE-S1-20261008/src/windows_job.py",
+      "proposedAction": "EXCLUSIVE_CREATE_NEW_VERSION",
+      "role": "guarded backend source",
+      "executionInS1": false,
+      "historicalRootMutation": false
+    },
+    {
+      "relativePath": "src/boundary_admission.py",
+      "historicalReadPath": "D:/UNG DUNG AI/TOOL AI 2026/CVF-NCR-S05-S1-SOURCE-R1-20261003/src/boundary_admission.py",
+      "historicalSha256": "4694079dc067db5facbbbc36c7d1f025447205a9d06cbc5b0fba92f3a7cbdb03",
+      "proposedWritePath": "D:/UNG DUNG AI/TOOL AI 2026/CVF-NCR-C1-CONTROL-SOURCE-S1-20261008/src/boundary_admission.py",
+      "proposedAction": "EXCLUSIVE_CREATE_NEW_VERSION",
+      "role": "supervisor and admission composition",
+      "executionInS1": false,
+      "historicalRootMutation": false
+    },
+    {
+      "relativePath": "fixtures/fx_d1.py",
+      "historicalReadPath": "D:/UNG DUNG AI/TOOL AI 2026/CVF-NCR-S05-S1-SOURCE-R1-20261003/fixtures/fx_d1.py",
+      "historicalSha256": "4b9ca0e851a80c41cb012b518a110c99afbf2aa1f86233d37e91d1c15e25158a",
+      "proposedWritePath": "D:/UNG DUNG AI/TOOL AI 2026/CVF-NCR-C1-CONTROL-SOURCE-S1-20261008/fixtures/fx_d1.py",
+      "proposedAction": "EXCLUSIVE_CREATE_NEW_VERSION",
+      "role": "S2 fixture source only, not executed",
+      "executionInS1": false,
+      "historicalRootMutation": false
+    },
+    {
+      "relativePath": "fixtures/fx_m1.py",
+      "historicalReadPath": "D:/UNG DUNG AI/TOOL AI 2026/CVF-NCR-S05-S1-SOURCE-R1-20261003/fixtures/fx_m1.py",
+      "historicalSha256": "2b4014a34f42cbab2c35a265387fc39be60e29e51cc3f0acc4d1a6e6823b1cdd",
+      "proposedWritePath": "D:/UNG DUNG AI/TOOL AI 2026/CVF-NCR-C1-CONTROL-SOURCE-S1-20261008/fixtures/fx_m1.py",
+      "proposedAction": "EXCLUSIVE_CREATE_NEW_VERSION",
+      "role": "S2 fixture source only, not executed",
+      "executionInS1": false,
+      "historicalRootMutation": false
+    },
+    {
+      "relativePath": "fixtures/fx_t1.py",
+      "historicalReadPath": "D:/UNG DUNG AI/TOOL AI 2026/CVF-NCR-S05-S1-SOURCE-R1-20261003/fixtures/fx_t1.py",
+      "historicalSha256": "80ed447868bbb9a43e74a3c7e3ce6828a931d45358b39b342c804bfbbc8214b3",
+      "proposedWritePath": "D:/UNG DUNG AI/TOOL AI 2026/CVF-NCR-C1-CONTROL-SOURCE-S1-20261008/fixtures/fx_t1.py",
+      "proposedAction": "EXCLUSIVE_CREATE_NEW_VERSION",
+      "role": "S2 fixture source only, not executed",
+      "executionInS1": false,
+      "historicalRootMutation": false
+    },
+    {
+      "relativePath": "fixtures/fx_b1.py",
+      "historicalReadPath": "D:/UNG DUNG AI/TOOL AI 2026/CVF-NCR-S05-S1-SOURCE-R1-20261003/fixtures/fx_b1.py",
+      "historicalSha256": "66769fcfef428d055241c0f3c47c32ff2698428a2ecf14afcb68cc3eb9a2f5ca",
+      "proposedWritePath": "D:/UNG DUNG AI/TOOL AI 2026/CVF-NCR-C1-CONTROL-SOURCE-S1-20261008/fixtures/fx_b1.py",
+      "proposedAction": "EXCLUSIVE_CREATE_NEW_VERSION",
+      "role": "S2 fixture source only, not executed",
+      "executionInS1": false,
+      "historicalRootMutation": false
+    },
+    {
+      "relativePath": "fixtures/fx_n1.py",
+      "historicalReadPath": "D:/UNG DUNG AI/TOOL AI 2026/CVF-NCR-S05-S1-SOURCE-R1-20261003/fixtures/fx_n1.py",
+      "historicalSha256": "5f6ca9ffe3b96033d5c35798b72bb75d944c43a7720a6d1115452d2cf12e36e3",
+      "proposedWritePath": "D:/UNG DUNG AI/TOOL AI 2026/CVF-NCR-C1-CONTROL-SOURCE-S1-20261008/fixtures/fx_n1.py",
+      "proposedAction": "EXCLUSIVE_CREATE_NEW_VERSION",
+      "role": "S2 fixture source only, not executed",
+      "executionInS1": false,
+      "historicalRootMutation": false
+    },
+    {
+      "relativePath": "fixtures/fx_l1.py",
+      "historicalReadPath": "D:/UNG DUNG AI/TOOL AI 2026/CVF-NCR-S05-S1-SOURCE-R1-20261003/fixtures/fx_l1.py",
+      "historicalSha256": "d4839a1233fbdaa0850a2e4fbf30c248589488e57d0428a0c3451fef37143b2f",
+      "proposedWritePath": "D:/UNG DUNG AI/TOOL AI 2026/CVF-NCR-C1-CONTROL-SOURCE-S1-20261008/fixtures/fx_l1.py",
+      "proposedAction": "EXCLUSIVE_CREATE_NEW_VERSION",
+      "role": "S2 fixture source only, not executed",
+      "executionInS1": false,
+      "historicalRootMutation": false
+    },
+    {
+      "relativePath": "evidence/source-manifest.json",
+      "historicalReadPath": "D:/UNG DUNG AI/TOOL AI 2026/CVF-NCR-S05-S1-SOURCE-R1-20261003/evidence/source-manifest.json",
+      "historicalSha256": "8a1efd8a72511469752b88daff8c2ca54a9f60ae83725e569c5ff82ae6780b58",
+      "proposedWritePath": "D:/UNG DUNG AI/TOOL AI 2026/CVF-NCR-C1-CONTROL-SOURCE-S1-20261008/evidence/source-manifest.json",
+      "proposedAction": "EXCLUSIVE_CREATE_NEW_VERSION",
+      "role": "new prospective evidence/custody documentation",
+      "executionInS1": false,
+      "historicalRootMutation": false
+    },
+    {
+      "relativePath": "evidence/requirement-map.json",
+      "historicalReadPath": "D:/UNG DUNG AI/TOOL AI 2026/CVF-NCR-S05-S1-SOURCE-R1-20261003/evidence/requirement-map.json",
+      "historicalSha256": "1e024ce7c14ef643b61cbd4c2fbdfe62a29f6bb9c4dc68f8f77849fd3c99647f",
+      "proposedWritePath": "D:/UNG DUNG AI/TOOL AI 2026/CVF-NCR-C1-CONTROL-SOURCE-S1-20261008/evidence/requirement-map.json",
+      "proposedAction": "EXCLUSIVE_CREATE_NEW_VERSION",
+      "role": "new prospective evidence/custody documentation",
+      "executionInS1": false,
+      "historicalRootMutation": false
+    },
+    {
+      "relativePath": "WORKER_RETURN.md",
+      "historicalReadPath": "D:/UNG DUNG AI/TOOL AI 2026/CVF-NCR-S05-S1-SOURCE-R1-20261003/WORKER_RETURN.md",
+      "historicalSha256": "3d3001978772a9cdbee251902e91efec92f1f6b19c1fc769837b05220b6f3fa7",
+      "proposedWritePath": "D:/UNG DUNG AI/TOOL AI 2026/CVF-NCR-C1-CONTROL-SOURCE-S1-20261008/WORKER_RETURN.md",
+      "proposedAction": "EXCLUSIVE_CREATE_NEW_VERSION",
+      "role": "new prospective evidence/custody documentation",
+      "executionInS1": false,
+      "historicalRootMutation": false
+    }
+  ],
+  "sourcePins": [
+    {
+      "path": "docs/reference/CVF_NCR_C1_S1_ARCHITECTURAL_REASSESSMENT_2026-10-08.md",
+      "sha256": "e9ff0616c1c4a2e0ba65157c444589661c07787cbb2de15a4fa57159b30da335"
+    },
+    {
+      "path": "docs/reference/CVF_NCR_C1_S1_APPROVAL_DISPATCH_DISPOSITION_2026-10-08.md",
+      "sha256": "d998ca001303859f1e694c23451b7fa473b145e198e7bba045fac593288e3f01"
+    },
+    {
+      "path": "docs/reference/CVF_NCR_S05_SUPERVISOR_SOURCE_CONTRACT_R1_2026-10-03.md",
+      "sha256": "23a041243cdf87a4a4cf8aaecd5313d0d3cf70900359b26996bfe4c7a4270f98"
+    },
+    {
+      "path": "docs/reference/CVF_NCR_C1_MANIFEST_CONTROL_SOURCE_PROPOSAL_2026-10-08.json",
+      "sha256": "f69ab3a33b556409b3d5a63ce92f1d8d1d7ac0256eb4cf3e473468fafb2141e8"
+    },
+    {
+      "path": "docs/reference/CVF_NCR_C1_S1_MICROSOFT_DOCS_EXECUTION_CONTRACT_2026-10-08.json",
+      "sha256": "966729278464f0928f9ff4924a4fdd7b12595daf61cbae98a623da6272a4ea63"
+    },
+    {
+      "path": "docs/reference/CVF_NCR_C1_S1_MICROSOFT_DOCS_READ_RESULT_2026-10-08.json",
+      "sha256": "46ed356ebb2a77864aac46572a9e0fdd5050a86bc0066e9a8e8afc3d07e23bfd"
+    },
+    {
+      "path": "docs/reference/CVF_NCR_C1_S1_MICROSOFT_DOCS_ABI_QUEUE_2026-10-08.json",
+      "sha256": "fd43ea669e04081e9aaed85daf22fd74c65cbabcc6042ec4b59d39d96e03afbd"
+    },
+    {
+      "path": "docs/reference/CVF_NCR_C1_S1_MICROSOFT_DOCS_ABI_RESULT_2026-10-08.json",
+      "sha256": "b044270bfb42bc20150c5bff4e0a3c78001c33db99f7fd8708e7c3be3fccf131"
+    },
+    {
+      "path": "docs/reference/CVF_NCR_C1_S1_NATIVE_ABI_SOURCE_BINDINGS_2026-10-08.json",
+      "sha256": "91b0721af4081a7cd9439172fdbd087bb43a679622df2a3b82dd8a01d3f01d49"
+    }
+  ],
+  "packetPins": [
+    {
+      "path": "docs/baselines/CVF_GC018_NCR_C1_S1_INTEGRATED_SOURCE_2026-10-08.md",
+      "sha256": "dbddfc4bb992394fd80541e40420e3340bece3ad9399224c310263a78fdaf8b2"
+    },
+    {
+      "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_C1_S1_INTEGRATED_SOURCE_2026-10-08.md",
+      "sha256": "62f7f7f6d6450363871f47e73b10fb9bf27c9c0069c927def5d8da70d6d2ad9b"
+    },
+    {
+      "path": "docs/reference/CVF_NCR_C1_S1_NATIVE_SOURCE_CONTRACT_2026-10-08.md",
+      "sha256": "d7259c027f85fc7ef40ac673cbdb3718ac47e23e5e26fd78f9e60c7d110fb1d8"
+    },
+    {
+      "path": "docs/reference/CVF_NCR_C1_S1_NATIVE_ABI_SOURCE_BINDINGS_2026-10-08.json",
+      "sha256": "91b0721af4081a7cd9439172fdbd087bb43a679622df2a3b82dd8a01d3f01d49"
+    },
+    {
+      "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_C1_S1_INTEGRATED_SOURCE_2026-10-08.json",
+      "sha256": "203da5ab59b7ac5d59182bdb6cd133584bf5d8bac16d2702453fcafd9515ed83"
+    }
+  ],
+  "documentationConsumed": {
+    "requests": 20,
+    "decodedBytes": 1170342,
+    "wallSeconds": 12.781
+  },
+  "documentationRemainingRequests": 0,
+  "actualWorkerInvocation": false,
+  "canonicalDiagnostic": {
+    "blockCount": 1,
+    "isClean": true,
+    "violations": [],
+    "object": {
+      "schemaVersion": "cvf.semanticConvergenceControl.v1",
+      "problemKey": "local-supervisor-source-contract",
+      "chainMode": "SUCCESSOR",
+      "chainOrdinal": 2,
+      "predecessor": {
+        "path": "docs/reviews/CVF_CVF_NCR_S05_S1_SUPERVISOR_SOURCE_R1_WORKER_RETURN_2026-10-03.md",
+        "sha256": "12116c9c696752b487b74de9d6ec75bd3e53e90efad92b8f6a6f7f72512bd6ce"
+      },
+      "blockerDelta": {
+        "prior": [
+          "SOURCE_CONTRACT_NOT_IMPLEMENTED",
+          "SOURCE_STATIC_REVIEW_PENDING",
+          "SOURCE_CONTRACT_STATIC_DEFECTS",
+          "SOURCE_CREATION_EVIDENCE_DEVIATIONS"
+        ],
+        "resolved": [
+          "SOURCE_STATIC_REVIEW_PENDING"
+        ],
+        "retained": [
+          "SOURCE_CONTRACT_NOT_IMPLEMENTED",
+          "SOURCE_CONTRACT_STATIC_DEFECTS",
+          "SOURCE_CREATION_EVIDENCE_DEVIATIONS"
+        ],
+        "new": [],
+        "reopened": [],
+        "current": [
+          "SOURCE_CONTRACT_NOT_IMPLEMENTED",
+          "SOURCE_CONTRACT_STATIC_DEFECTS",
+          "SOURCE_CREATION_EVIDENCE_DEVIATIONS"
+        ]
+      },
+      "resolutionEvidence": {
+        "SOURCE_STATIC_REVIEW_PENDING": {
+          "evidenceClass": "ACCEPTED_REVIEW",
+          "evidencePath": "docs/reference/CVF_NCR_C1_S1_ARCHITECTURAL_REASSESSMENT_2026-10-08.md",
+          "sha256": "e9ff0616c1c4a2e0ba65157c444589661c07787cbb2de15a4fa57159b30da335",
+          "locator": "S1-R1-STATIC-REVIEW-COMPLETION-ACCEPTED-20261008"
+        }
+      },
+      "counters": {
+        "partialReadyClosures": 0,
+        "reviewerScopeExpansions": 0,
+        "sameClaimCorrections": 1,
+        "nonDecreasingBlockerTransitions": 0
+      },
+      "claims": [
+        {
+          "claimId": "S1_INTEGRATED_NATIVE_SOURCE_PLAN",
+          "claimClass": "DOCUMENTATION_ONLY",
+          "proofClass": "PROPOSAL_ONLY_NO_RUNTIME_READINESS",
+          "evidenceRef": "docs/reference/CVF_NCR_C1_S1_NATIVE_SOURCE_CONTRACT_2026-10-08.md"
+        }
+      ],
+      "requiredDisposition": "CONTINUE_BOUNDED",
+      "successorScope": "INTEGRATED_ROOT_CONTRACT"
+    }
+  },
+  "workerAcceptance": "PENDING_DISTINCT_LOCAL_SOURCE_AND_CUSTODY_REVIEW",
+  "effectAdmission": false,
+  "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
+  "authoringFailures": [
+    {
+      "step": "scratch producer",
+      "status": "FAIL",
+      "reason": "closed guard template did not retain optional Dual Agent Surface Matrix heading;two producer runs stopped before new order creation",
+      "correction": "explicit source-role matrix emitted;no source/root/network effect"
+    },
+    {
+      "step": "explicit caller before order existed",
+      "status": "INVALID",
+      "reason": "PROPOSAL_UNREADABLE,0 objects;not feasibility",
+      "correction": "producer completed and actual final object evaluated"
+    },
+    {
+      "step": "pre-dispatch without active-work-order",
+      "status": "FAIL",
+      "reason": "current nextAllowedMove is work-order based,explicit active binding required",
+      "correction": "use pre-implementation for planning bundle;only final committed pre-dispatch with exact active work order releases worker"
+    },
+    {
+      "step": "full planning pre-implementation",
+      "status": "FAIL",
+      "log": ".cvf/runtime/ncr-s1-packet-authoring-gate.log",
+      "reasons": [
+        "three structural work-order sections",
+        "INITIAL rootCauseClusterId token",
+        "mandatory focused_checker_tests gate ID",
+        "duplicate return-path bindings",
+        "intake routing/multi-agent route",
+        "Source Verification assignment token",
+        "canonical external-intake type"
+      ],
+      "correction": "one packet-only literal/role/custody sweep;checker rules unchanged"
+    },
+    {
+      "step": "planning recheck",
+      "status": "FAIL",
+      "log": ".cvf/runtime/ncr-s1-packet-final-planning-gate.log",
+      "reason": "return conditions requires exact Return-To-Orchestrator Conditions heading",
+      "correction": "exact checker literal corrected;no checker change"
+    },
+    {
+      "step": "material pre-commit and diagnostic hook",
+      "status": "FAIL",
+      "log": ".cvf/runtime/ncr-s1-material-hook-diagnostic.log",
+      "reason": "ownership/pre-resume with working-set falsely matched ownership/DACL mutation;only process-handle custody intended",
+      "correction": "name per-instance handle custody explicitly;no filesystem owner/DACL/ACL operation admitted,guard unchanged"
+    }
+  ],
+  "planningGateBeforeFinalCustodyClarification": {
+    "status": "PASS",
+    "seconds": 13.92,
+    "commands": 86,
+    "log": ".cvf/runtime/ncr-s1-packet-planning-pass-gate.log"
+  },
+  "finalCustodyClarification": "external exact post-write receipt binds final JSON/gate actuals;immutable pre-event records are planned,not actual"
+}

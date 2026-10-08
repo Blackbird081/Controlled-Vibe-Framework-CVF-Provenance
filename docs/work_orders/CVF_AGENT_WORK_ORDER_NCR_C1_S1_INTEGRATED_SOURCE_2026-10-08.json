@@ -1,0 +1,133 @@
+{
+  "schemaVersion": "cvf.preapprovalFeasibility.v1",
+  "proposal": {
+    "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_C1_S1_INTEGRATED_SOURCE_2026-10-08.md",
+    "sha256": "62f7f7f6d6450363871f47e73b10fb9bf27c9c0069c927def5d8da70d6d2ad9b"
+  },
+  "approvalTarget": {
+    "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_C1_S1_INTEGRATED_SOURCE_2026-10-08.md",
+    "sha256": "62f7f7f6d6450363871f47e73b10fb9bf27c9c0069c927def5d8da70d6d2ad9b",
+    "prospectiveOutcomeSha256": "cbe74d9b617736e7804be810bfc7597403aca15c73223436c6f67aa410f6c2ca"
+  },
+  "prospectiveOutcome": {
+    "schemaVersion": "cvf.semanticConvergenceControl.v1",
+    "problemKey": "local-supervisor-source-contract",
+    "chainMode": "SUCCESSOR",
+    "chainOrdinal": 2,
+    "predecessor": {
+      "path": "docs/reviews/CVF_CVF_NCR_S05_S1_SUPERVISOR_SOURCE_R1_WORKER_RETURN_2026-10-03.md",
+      "sha256": "12116c9c696752b487b74de9d6ec75bd3e53e90efad92b8f6a6f7f72512bd6ce"
+    },
+    "blockerDelta": {
+      "prior": [
+        "SOURCE_CONTRACT_NOT_IMPLEMENTED",
+        "SOURCE_STATIC_REVIEW_PENDING",
+        "SOURCE_CONTRACT_STATIC_DEFECTS",
+        "SOURCE_CREATION_EVIDENCE_DEVIATIONS"
+      ],
+      "resolved": [
+        "SOURCE_STATIC_REVIEW_PENDING"
+      ],
+      "retained": [
+        "SOURCE_CONTRACT_NOT_IMPLEMENTED",
+        "SOURCE_CONTRACT_STATIC_DEFECTS",
+        "SOURCE_CREATION_EVIDENCE_DEVIATIONS"
+      ],
+      "new": [],
+      "reopened": [],
+      "current": [
+        "SOURCE_CONTRACT_NOT_IMPLEMENTED",
+        "SOURCE_CONTRACT_STATIC_DEFECTS",
+        "SOURCE_CREATION_EVIDENCE_DEVIATIONS"
+      ]
+    },
+    "resolutionEvidence": {
+      "SOURCE_STATIC_REVIEW_PENDING": {
+        "evidenceClass": "ACCEPTED_REVIEW",
+        "evidencePath": "docs/reference/CVF_NCR_C1_S1_ARCHITECTURAL_REASSESSMENT_2026-10-08.md",
+        "sha256": "e9ff0616c1c4a2e0ba65157c444589661c07787cbb2de15a4fa57159b30da335",
+        "locator": "S1-R1-STATIC-REVIEW-COMPLETION-ACCEPTED-20261008"
+      }
+    },
+    "counters": {
+      "partialReadyClosures": 0,
+      "reviewerScopeExpansions": 0,
+      "sameClaimCorrections": 1,
+      "nonDecreasingBlockerTransitions": 0
+    },
+    "claims": [
+      {
+        "claimId": "S1_INTEGRATED_NATIVE_SOURCE_PLAN",
+        "claimClass": "DOCUMENTATION_ONLY",
+        "proofClass": "PROPOSAL_ONLY_NO_RUNTIME_READINESS",
+        "evidenceRef": "docs/reference/CVF_NCR_C1_S1_NATIVE_SOURCE_CONTRACT_2026-10-08.md"
+      }
+    ],
+    "requiredDisposition": "CONTINUE_BOUNDED",
+    "successorScope": "INTEGRATED_ROOT_CONTRACT"
+  },
+  "phasePrerequisites": {
+    "phase": "S1_SOURCE_ONLY_AUTHORING",
+    "rows": [
+      {
+        "requirementId": "LOCAL_REVIEW_COMPLETION",
+        "requiredForPhase": true,
+        "evidence": {
+          "path": "docs/reference/CVF_NCR_C1_S1_ARCHITECTURAL_REASSESSMENT_2026-10-08.md",
+          "sha256": "e9ff0616c1c4a2e0ba65157c444589661c07787cbb2de15a4fa57159b30da335",
+          "locator": "S1-R1-STATIC-REVIEW-COMPLETION-ACCEPTED-20261008"
+        },
+        "deferredToPhase": null
+      },
+      {
+        "requirementId": "RETAINED_SOURCE_APPROVAL",
+        "requiredForPhase": true,
+        "evidence": {
+          "path": "docs/reference/CVF_NCR_C1_S1_APPROVAL_DISPATCH_DISPOSITION_2026-10-08.md",
+          "sha256": "d998ca001303859f1e694c23451b7fa473b145e198e7bba045fac593288e3f01",
+          "locator": "## Approval Record"
+        },
+        "deferredToPhase": null
+      },
+      {
+        "requirementId": "NATIVE_SOURCE_CONTRACT",
+        "requiredForPhase": true,
+        "evidence": {
+          "path": "docs/reference/CVF_NCR_C1_S1_NATIVE_SOURCE_CONTRACT_2026-10-08.md",
+          "sha256": "d7259c027f85fc7ef40ac673cbdb3718ac47e23e5e26fd78f9e60c7d110fb1d8",
+          "locator": "## Native ABI And Lifecycle Contract"
+        },
+        "deferredToPhase": null
+      },
+      {
+        "requirementId": "ABI_SOURCE_BINDINGS",
+        "requiredForPhase": true,
+        "evidence": {
+          "path": "docs/reference/CVF_NCR_C1_S1_NATIVE_ABI_SOURCE_BINDINGS_2026-10-08.json",
+          "sha256": "91b0721af4081a7cd9439172fdbd087bb43a679622df2a3b82dd8a01d3f01d49",
+          "locator": "\"remainingRequests\": 0"
+        },
+        "deferredToPhase": null
+      },
+      {
+        "requirementId": "NEW_SOURCE_STATIC_REVIEW",
+        "requiredForPhase": false,
+        "evidence": null,
+        "deferredToPhase": "S1_RETURN_REVIEW"
+      },
+      {
+        "requirementId": "NATIVE_ABI_EXECUTABLE_LAYOUT_PROOF",
+        "requiredForPhase": false,
+        "evidence": null,
+        "deferredToPhase": "S2_OWNED_NATIVE_PROBE"
+      },
+      {
+        "requirementId": "HOST_DISK_EGRESS_PROOF",
+        "requiredForPhase": false,
+        "evidence": null,
+        "deferredToPhase": "S2_HOST_READINESS"
+      }
+    ]
+  },
+  "requestQueue": null
+}
