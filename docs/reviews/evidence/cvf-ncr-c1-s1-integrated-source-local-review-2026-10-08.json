@@ -1,0 +1,373 @@
+{
+  "schemaVersion": "cvf.ncrC1S1.localReviewDisposition.v1",
+  "closureBaseHead": "bc838a5035b691c256c4c8ade2de4626e0b1335c",
+  "status": "BLOCKED_WITH_REASON_SOURCE_NOT_ACCEPTED",
+  "sourceAcceptance": false,
+  "effectAdmission": false,
+  "sourceProbeRerun": false,
+  "sourcePins": [
+    {
+      "path": "docs/reviews/CVF_NCR_C1_S1_INTEGRATED_SOURCE_WORKER_RETURN_2026-10-08.md",
+      "bytes": 40146,
+      "sha256": "725e4360a646a847f08c04a7acae793c23315187d6990fc85dcb27e8e7c1faec"
+    },
+    {
+      "path": "docs/reviews/evidence/cvf-ncr-c1-s1-integrated-source-worker-2026-10-08.json",
+      "bytes": 34983,
+      "sha256": "ff4089297472152db1588fb060b7ddf6673ebeeaec09eddc3b6c471b8d1663c3"
+    },
+    {
+      "path": ".cvf/runtime/ncr-c1-s1-local-review-20261008/probe-result.json",
+      "bytes": 7081,
+      "sha256": "bf71b9ba04798dcd705b5e925ebb528bacfdc7be87f865fa6af60718f4463445"
+    },
+    {
+      "path": ".cvf/runtime/ncr-c1-s1-local-review-20261008/probe.py",
+      "bytes": 11916,
+      "sha256": "1f0398f08c9286c98b0aa3d1e6e223a5608e04b5f074b4edf95ba9ff8dfa2507"
+    },
+    {
+      "path": ".cvf/runtime/ncr-c1-s1-worker/post-write-custody.json",
+      "bytes": 18808,
+      "sha256": "79798cfbc474fc5cf12a7f7bf9cbabf1a81648204b053ad00ccdcf42c396de8e"
+    },
+    {
+      "path": ".cvf/runtime/ncr-c1-s1-worker/final-worker-return-gate.log",
+      "bytes": 1161,
+      "sha256": "7c9e0953f84b04aae3a5218795847ff445120ef64033538eeb793b903ba05c85"
+    },
+    {
+      "path": "docs/reference/CVF_NCR_C1_S1_NATIVE_SOURCE_CONTRACT_2026-10-08.md",
+      "bytes": 22510,
+      "sha256": "d7259c027f85fc7ef40ac673cbdb3718ac47e23e5e26fd78f9e60c7d110fb1d8"
+    },
+    {
+      "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_C1_S1_INTEGRATED_SOURCE_2026-10-08.md",
+      "bytes": 52281,
+      "sha256": "62f7f7f6d6450363871f47e73b10fb9bf27c9c0069c927def5d8da70d6d2ad9b"
+    }
+  ],
+  "consumedLocalProbe": {
+    "schema": "cvf.ncrC1S1.localStaticProbe.v1",
+    "role": "LOCAL_INTERNAL_AGENT_REVIEWER",
+    "startUtc": "2026-10-08T14:34:06.901188+00:00",
+    "endUtc": "2026-10-08T14:34:07.022589+00:00",
+    "candidateExecution": false,
+    "oracleLimit": "AST syntactic witnesses and deliberately bounded mutants; not exhaustive CFG, runtime, layout or containment proof",
+    "oracleSha256": "1f0398f08c9286c98b0aa3d1e6e223a5608e04b5f074b4edf95ba9ff8dfa2507",
+    "workerEvidenceSha256": "ff4089297472152db1588fb060b7ddf6673ebeeaec09eddc3b6c471b8d1663c3",
+    "postWriteReceiptSha256": "79798cfbc474fc5cf12a7f7bf9cbabf1a81648204b053ad00ccdcf42c396de8e",
+    "sourceIdentity": [
+      {
+        "path": "src/envelope_contract.py",
+        "hashMatch": true,
+        "bytesMatch": true,
+        "linesMatch": true
+      },
+      {
+        "path": "src/boundary_admission.py",
+        "hashMatch": true,
+        "bytesMatch": true,
+        "linesMatch": true
+      },
+      {
+        "path": "src/windows_job.py",
+        "hashMatch": true,
+        "bytesMatch": true,
+        "linesMatch": true
+      },
+      {
+        "path": "src/supervisor.py",
+        "hashMatch": true,
+        "bytesMatch": true,
+        "linesMatch": true
+      },
+      {
+        "path": "fixtures/fx_d1.py",
+        "hashMatch": true,
+        "bytesMatch": true,
+        "linesMatch": true
+      },
+      {
+        "path": "fixtures/fx_m1.py",
+        "hashMatch": true,
+        "bytesMatch": true,
+        "linesMatch": true
+      },
+      {
+        "path": "fixtures/fx_t1.py",
+        "hashMatch": true,
+        "bytesMatch": true,
+        "linesMatch": true
+      },
+      {
+        "path": "fixtures/fx_b1.py",
+        "hashMatch": true,
+        "bytesMatch": true,
+        "linesMatch": true
+      },
+      {
+        "path": "fixtures/fx_n1.py",
+        "hashMatch": true,
+        "bytesMatch": true,
+        "linesMatch": true
+      },
+      {
+        "path": "fixtures/fx_l1.py",
+        "hashMatch": true,
+        "bytesMatch": true,
+        "linesMatch": true
+      },
+      {
+        "path": "README.md",
+        "hashMatch": true,
+        "bytesMatch": true,
+        "linesMatch": true
+      },
+      {
+        "path": "evidence/requirement-map.json",
+        "hashMatch": true,
+        "bytesMatch": true,
+        "linesMatch": true
+      },
+      {
+        "path": "WORKER_RETURN.md",
+        "hashMatch": true,
+        "bytesMatch": true,
+        "linesMatch": true
+      },
+      {
+        "path": "evidence/source-manifest.json",
+        "hashMatch": true,
+        "bytesMatch": true,
+        "linesMatch": true
+      }
+    ],
+    "sourceBytes": 103466,
+    "pythonAstParsed": 10,
+    "manifest13HashJoin": true,
+    "postWrite16HashJoin": true,
+    "snapshot20HashJoin": true,
+    "returnProofHashJoin": true,
+    "gateLogHashJoin": true,
+    "writerReceiptHashJoin": true,
+    "positiveWitnesses": {
+      "ABI_POINTER_AND_FIELD_ORDER": true,
+      "ASSIGNMENT_MEMBERSHIP_BEFORE_RESUME": true,
+      "LIMITS_BEFORE_LAUNCH": true,
+      "UNBOUND_CHILD_TERMINATION": true,
+      "CURRENT_MEMORY_UNAVAILABLE": true,
+      "NO_EAGER_NATIVE_LOAD": true,
+      "FINITE_WAIT_INPUT": true,
+      "NO_FALSE_CLEANUP_SUCCESS": true
+    },
+    "mutations": [
+      {
+        "id": 1,
+        "class": "ABI_POINTER_AND_FIELD_ORDER",
+        "rejected": true,
+        "edit": {
+          "old": "\"HANDLE\": ctypes.c_void_p",
+          "new": "\"HANDLE\": ctypes.c_uint32"
+        }
+      },
+      {
+        "id": 2,
+        "class": "ABI_POINTER_AND_FIELD_ORDER",
+        "rejected": true,
+        "edit": {
+          "old": "(\"hProcess\", \"HANDLE\"), (\"hThread\", \"HANDLE\")",
+          "new": "(\"hThread\", \"HANDLE\"), (\"hProcess\", \"HANDLE\")"
+        }
+      },
+      {
+        "id": 3,
+        "class": "ASSIGNMENT_MEMBERSHIP_BEFORE_RESUME",
+        "rejected": true,
+        "edit": {
+          "old": "if not (rec.assign_ok and rec.membership_ok):",
+          "new": "if False:"
+        }
+      },
+      {
+        "id": 4,
+        "class": "ASSIGNMENT_MEMBERSHIP_BEFORE_RESUME",
+        "rejected": true,
+        "edit": {
+          "old": "if not ok or inside.value == 0:",
+          "new": "if not ok:"
+        }
+      },
+      {
+        "id": 5,
+        "class": "LIMITS_BEFORE_LAUNCH",
+        "rejected": true,
+        "edit": {
+          "old": "flags = JOB_OBJECT_LIMIT_KILL_ON_JOB_CLOSE | JOB_OBJECT_LIMIT_JOB_MEMORY",
+          "new": "flags = JOB_OBJECT_LIMIT_KILL_ON_JOB_CLOSE"
+        }
+      },
+      {
+        "id": 6,
+        "class": "UNBOUND_CHILD_TERMINATION",
+        "rejected": true,
+        "edit": {
+          "old": "(\"TerminateProcess\", rec.process)",
+          "new": "(\"TerminateJobObject\", rec.job)"
+        }
+      },
+      {
+        "id": 7,
+        "class": "CURRENT_MEMORY_UNAVAILABLE",
+        "rejected": true,
+        "edit": {
+          "old": "raise NotAdmitted(\"query_committed_bytes\", \"CURRENT_COMMITTED_SAMPLE_UNAVAILABLE_UNKNOWN\")",
+          "new": "return self._peak_job_memory"
+        }
+      },
+      {
+        "id": 8,
+        "class": "NO_EAGER_NATIVE_LOAD",
+        "rejected": true,
+        "edit": {
+          "old": "import collections\n",
+          "new": "import collections\nimport ctypes\nctypes.WinDLL(\"kernel32\")\n"
+        }
+      },
+      {
+        "id": 9,
+        "class": "FINITE_WAIT_INPUT",
+        "rejected": true,
+        "edit": {
+          "old": "(self._h(rec.process), rec.spec.finite_wait_ms)",
+          "new": "(self._h(rec.process), 0xFFFFFFFF)"
+        }
+      },
+      {
+        "id": 10,
+        "class": "NO_FALSE_CLEANUP_SUCCESS",
+        "rejected": true,
+        "edit": {
+          "old": "if confirmed:\n",
+          "new": "if True:\n"
+        }
+      }
+    ],
+    "mutationClasses": 8,
+    "minimumRecordedWorkerSeconds": 2422.0,
+    "workerTotalSeconds": "UNKNOWN_NO_START_EVENT",
+    "worker3600sAdmission": "UNPROVEN",
+    "boundGateExit": 1,
+    "disposition": "BLOCKED_SOURCE_ACCEPTANCE_WITHHELD",
+    "findings": [
+      {
+        "id": "LOCAL-S1-01",
+        "owner": "DISPATCHER",
+        "fact": "Bound gate parser requires backticked workerReturnPath; released order lacks backticks; actual gate exit1 before checks."
+      },
+      {
+        "id": "LOCAL-S1-02",
+        "owner": "WORKER_PROCEDURE",
+        "fact": "Partial checker read-ahead and disk scratch staging conflict with mandatory full read-ahead/in-memory preparation; reported deviations, not independently authenticated history."
+      },
+      {
+        "id": "LOCAL-S1-03",
+        "owner": "WORKER_SOURCE",
+        "path": "src/windows_job.py",
+        "method": "sample_process_ids",
+        "fact": "Checks listed>capacity and byte length but never rejects listed>assigned. Contradictory count pairs can reach SAMPLE_ONLY return; S1-N3 count reconciliation incomplete."
+      },
+      {
+        "id": "LOCAL-S1-04",
+        "owner": "WORKER_SOURCE",
+        "path": "src/windows_job.py",
+        "method": "cancel",
+        "fact": "Only finite_wait_ms per wait. monotonic is used for ledger timestamps, no shared monotonic deadline or remaining-budget computation exists; S1-N4 finite monotonic deadline not implemented."
+      },
+      {
+        "id": "LOCAL-S1-05",
+        "owner": "WORKER_EVIDENCE",
+        "fact": "Total invocation elapsed unknown. Recorded lower bound does not prove or refute 3600s cap."
+      }
+    ],
+    "sourceRepair": "FORBIDDEN_UNDER_CURRENT_EXCLUSIVE_CREATE_ORDER",
+    "successorOpened": false,
+    "runtime": "NO_GO_S2_S9_HELD",
+    "historicalBlockersResolved": []
+  },
+  "diagnosticContinue": {
+    "valid": false,
+    "violations": [
+      {
+        "code": "MISSING_STOP_REASSESS_ESCALATION",
+        "message": "two or more consecutive non-decreasing blocker transitions require `requiredDisposition: STOP_REASSESS_ARCHITECTURE`"
+      }
+    ]
+  },
+  "prospectiveStop": {
+    "object": {
+      "schemaVersion": "cvf.semanticConvergenceControl.v1",
+      "problemKey": "local-supervisor-source-contract",
+      "chainMode": "SUCCESSOR",
+      "chainOrdinal": 4,
+      "predecessor": {
+        "path": "docs/reviews/CVF_NCR_C1_S1_INTEGRATED_SOURCE_WORKER_RETURN_2026-10-08.md",
+        "sha256": "725e4360a646a847f08c04a7acae793c23315187d6990fc85dcb27e8e7c1faec"
+      },
+      "blockerDelta": {
+        "prior": [
+          "SOURCE_CONTRACT_NOT_IMPLEMENTED",
+          "SOURCE_CONTRACT_STATIC_DEFECTS",
+          "SOURCE_CREATION_EVIDENCE_DEVIATIONS",
+          "NEW_SOURCE_STATIC_REVIEW_PENDING",
+          "NEW_SOURCE_CREATION_CUSTODY_PENDING"
+        ],
+        "resolved": [],
+        "retained": [
+          "SOURCE_CONTRACT_NOT_IMPLEMENTED",
+          "SOURCE_CONTRACT_STATIC_DEFECTS",
+          "SOURCE_CREATION_EVIDENCE_DEVIATIONS",
+          "NEW_SOURCE_STATIC_REVIEW_PENDING",
+          "NEW_SOURCE_CREATION_CUSTODY_PENDING"
+        ],
+        "new": [],
+        "reopened": [],
+        "current": [
+          "SOURCE_CONTRACT_NOT_IMPLEMENTED",
+          "SOURCE_CONTRACT_STATIC_DEFECTS",
+          "SOURCE_CREATION_EVIDENCE_DEVIATIONS",
+          "NEW_SOURCE_STATIC_REVIEW_PENDING",
+          "NEW_SOURCE_CREATION_CUSTODY_PENDING"
+        ]
+      },
+      "resolutionEvidence": {},
+      "counters": {
+        "partialReadyClosures": 0,
+        "reviewerScopeExpansions": 0,
+        "sameClaimCorrections": 1,
+        "nonDecreasingBlockerTransitions": 2
+      },
+      "claims": [],
+      "requiredDisposition": "STOP_REASSESS_ARCHITECTURE",
+      "successorScope": "NO_SUCCESSOR"
+    },
+    "validation": {
+      "valid": true,
+      "violations": []
+    },
+    "classification": "PROSPECTIVE_DIAGNOSTIC_ONLY_NOT_ACTIVE_SUCCESSOR"
+  },
+  "activeSourceChainOrdinal": 3,
+  "resolvedBlockers": [],
+  "retainedBlockers": [
+    "SOURCE_CONTRACT_NOT_IMPLEMENTED",
+    "SOURCE_CONTRACT_STATIC_DEFECTS",
+    "SOURCE_CREATION_EVIDENCE_DEVIATIONS",
+    "NEW_SOURCE_STATIC_REVIEW_PENDING",
+    "NEW_SOURCE_CREATION_CUSTODY_PENDING"
+  ],
+  "nextWorkerDispatch": false,
+  "authorityDisposition": "SPENT_EXCLUSIVE_CREATE_ATTEMPT_NO_OVERWRITE_NO_RETRY",
+  "learningCommit": "008e37a63873153a58ac635c333edb2618a37aaa",
+  "publicExportDisposition": "DEFERRED_PRIVATE_ONLY"
+}
