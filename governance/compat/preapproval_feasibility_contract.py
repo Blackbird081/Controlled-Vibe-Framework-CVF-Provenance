@@ -19,6 +19,7 @@ if str(COMPAT_DIR) not in sys.path:
     sys.path.insert(0, str(COMPAT_DIR))
 
 import check_semantic_convergence_control as scec  # noqa: E402
+import run_worker_return_fast_gate as worker_return_gate  # noqa: E402
 
 COMPANION_SCHEMA = "cvf.preapprovalFeasibility.v1"
 RECEIPT_SCHEMA = "cvf.preapprovalFeasibilityReceipt.v1"
@@ -410,6 +411,31 @@ def evaluate(root: Path | str, proposal_path: Any, approval_target: Any = None, 
     if diags or receipt["canonicalViolations"] or receipt["canonicalBlockCount"] != 1:
         return finish()
     if disposition in FEASIBLE_DISPOSITIONS:
+        if proposal_path.startswith("docs/work_orders/"):
+            try:
+                # Compose the production runner's bound commands on these exact
+                # snapshotted bytes; no gate, test or candidate code is executed.
+                commands = worker_return_gate.build_commands(
+                    (), proposal_path, repo_root=snap.root, work_order_text=text,
+                )
+                return_path = worker_return_gate._worker_return_path(
+                    proposal_path, repo_root=snap.root, work_order_text=text,
+                )
+                required_bindings = {
+                    "work-order acceptance ledger": (("--work-order", proposal_path), ("--return", return_path)),
+                    "worker-return quality gate": (("--active-work-order", proposal_path),),
+                    "independent review probe admission": (("--active-work-order", proposal_path),),
+                }
+                for label, pairs in required_bindings.items():
+                    matching = [c.command for c in commands if c.name == label]
+                    if len(matching) != 1 or not all(
+                        any(tuple(matching[0][i:i + 2]) == pair for i in range(len(matching[0]) - 1))
+                        for pair in pairs
+                    ):
+                        raise ValueError(f"{label} lacks the exact work-order/return binding")
+            except (OSError, ValueError, RuntimeError) as exc:
+                diags.append(diag("WORKER_RETURN_ROUTE_UNBUILDABLE", f"bound worker-return command construction failed: {exc}"))
+                return finish()
         receipt["technicalDisposition"] = "FEASIBLE"
     elif disposition in HOLD_DISPOSITIONS:
         receipt["technicalDisposition"] = "HOLD"

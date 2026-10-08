@@ -1,7 +1,7 @@
 # CVF Preapproval Feasibility Contract And Folder Index
 Memory class: governed-reference
 docType: reference
-Status: ACCEPTED_DESIGN_IMPLEMENTATION_PENDING
+Status: ACTIVE_REFERENCE
 Date: 2026-10-08
 rawMemoryReleased=false
 providerExecutionAuthority: FORBIDDEN
@@ -20,7 +20,7 @@ New or changed explicitly opted-in governed Markdown proposals in docs/reference
 
 ## Target / Source
 
-Implementation targets are `governance/compat/preapproval_feasibility_contract.py`; `governance/compat/check_preapproval_feasibility.py`; `governance/compat/run_preapproval_feasibility_gate.py`; `governance/compat/test_check_preapproval_feasibility.py`; `governance/compat/agent_autorun_command_catalog.py`; `governance/compat/local_governance_hook_catalog_pre_commit.py`; `governance/compat/local_governance_hook_catalog_reviewer_fast.py`; `governance/compat/test_run_agent_autorun_workflow_gate.py`. Requirement source: docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md;existing lifecycle Technical Feasibility Before Operator Approval;canonical SCEC standard and checker. Baseline/order pair: docs/baselines/CVF_GC018_PREFEAS_C1_2026-10-08.md;docs/work_orders/CVF_AGENT_WORK_ORDER_PREFEAS_C1_2026-10-08.md. No implementation exists yet.
+Implementation targets are `governance/compat/preapproval_feasibility_contract.py`; `governance/compat/check_preapproval_feasibility.py`; `governance/compat/run_preapproval_feasibility_gate.py`; `governance/compat/test_check_preapproval_feasibility.py`; `governance/compat/agent_autorun_command_catalog.py`; `governance/compat/local_governance_hook_catalog_pre_commit.py`; `governance/compat/local_governance_hook_catalog_reviewer_fast.py`; `governance/compat/test_run_agent_autorun_workflow_gate.py`. Requirement source: docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md;existing lifecycle Technical Feasibility Before Operator Approval;canonical SCEC standard and checker. Baseline/order pair: docs/baselines/CVF_GC018_PREFEAS_C1_2026-10-08.md;docs/work_orders/CVF_AGENT_WORK_ORDER_PREFEAS_C1_2026-10-08.md. Base implementation accepted in docs/reviews/CVF_PREFEAS_C1_COMPLETION_2026-10-08.md; the bound-return extension below is local maintenance.
 
 ## Protocol / Exact Producer Consumer Join
 
@@ -60,7 +60,7 @@ Use isolated Git/temporary file fixtures for adversarial mutations,never edit hi
 
 ## Risk / Corrective Action
 
-Future guard remains NOT_IMPLEMENTED. Missing protocol producer/caller or unforeseen outside-authority dependency returns BLOCKED_WITH_REASON with completed evidence. Do not add daemon/dispatch runtime,global approval policy,mandatory universal proposal schema or historical migration. One consolidated implementation;no automatic successor. Written learning and video source holds remain recorded.
+Guard validates declared-state joins only. Missing protocol producer/caller or unforeseen outside-authority dependency returns BLOCKED_WITH_REASON with completed evidence. Do not add daemon/dispatch runtime,global approval policy,mandatory universal proposal schema or historical migration. One consolidated implementation;no automatic successor. Written learning and video source holds remain recorded.
 
 ## Source Verification Block
 
@@ -78,7 +78,7 @@ Future guard remains NOT_IMPLEMENTED. Missing protocol producer/caller or unfore
 | Field | Value |
 | --- | --- |
 | applicableCheckersRead | governance/compat/check_work_order_dispatch_quality.py;governance/compat/check_gate_to_role_closeability.py;governance/compat/check_governed_artifact_checker_read_ahead.py;governance/compat/check_review_cost_control.py;governance/compat/check_agent_operation_trace.py;governance/compat/check_core_guard_self_protection.py;governance/compat/check_semantic_convergence_control.py;governance/compat/check_work_order_acceptance_ledger.py;governance/compat/check_markdown_structural_completeness.py;governance/compat/check_dispatch_prompt_envelope.py |
-| literalTokensReviewed | READY;CLOSEABLE;WORKER_MUST_NOT_COMMIT;COMPLETE_PENDING_REVIEW;acceptance-ledger-json;canonical SCEC block and counter continuity;all trace labels |
+| literalTokensReviewed | WORKER_RETURN_ROUTE_UNBUILDABLE; shared parser exact single backticked field;  READY;CLOSEABLE;WORKER_MUST_NOT_COMMIT;COMPLETE_PENDING_REVIEW;acceptance-ledger-json;canonical SCEC block and counter continuity;all trace labels |
 | gateRunPurpose | confirm source-derived design and packet before committed release;not worker implementation proof |
 | claimBoundary | declared-state offline design/dispatch only |
 
@@ -90,7 +90,7 @@ Returned defects: NONE_RETURNED
 
 Actual command: python -B governance/compat/run_adif_defect_resolver.py --task-class orchestrator-packet-design --role dispatcher --lifecycle-phase design. Total candidates0;returned0;truncatedfalse.
 
-## Agent Operation Trace Block
+## Historical Dispatch Operation Trace
 
 | Field | Value |
 | --- | --- |
@@ -151,3 +151,38 @@ Private governance packet;no public rollout or export.
 ## Claim Boundary
 
 Accepted declared-state protocol design only. No new effect admission,source acceptance,operator approval receipt,production/runtime/AI governance behavior or automatic agent adoption proof. Future machine implementation must satisfy the order and independent Local review.
+
+## Bound Worker-Return Command Feasibility
+
+For explicitly marked proposals in the work-orders family with otherwise valid FEASIBLE canonical outcome, the evaluator must compose the production return runner's command set using the same proposal byte snapshot and explicit repository root. Construction runs no downstream command. One standalone backticked workerReturnPath is required by the shared parser; bare, missing or duplicate declarations fail. Acceptance-ledger must bind the exact order and parsed return; quality/probe commands must bind the same active order. Missing/unbound route returns INVALID and WORKER_RETURN_ROUTE_UNBUILDABLE before approval presentation. FEASIBLE proves construction/bindings only, not execution or downstream PASS.
+
+This uses run_worker_return_fast_gate.build_commands and its shared parser rather than a copied format regex in the feasibility evaluator. Existing companion/receipt schemas and catalogs are retained. Unmarked legacy input is unaffected; canonical HOLD proposals are not executable releases and do not require this route. Range coverage0 remains NOT_APPLICABLE and releases nothing. A supplementary unbound gate PASS is not the required bound gate result.
+
+Learning owner: docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md O6. Regression uses the actual pinned released S1 order at 4eb79b34ca4422f598cd2a052ca2698283b71230, then a corrected copy only inside a disposable fixture. Focused evaluator/runner suites117/117 PASS. S1 packet/source remain blocked; this guard change does not repair or reopen their exclusive-create attempt.
+
+## Current Validation Boundary
+
+The actual released S1 proposal returns INVALID with WORKER_RETURN_ROUTE_UNBUILDABLE and effectAdmission=false. Focused evaluator/runner suites117/117 PASS; the pinned historical-packet test passed again after making its Git source binding immutable. Packet authority/encoding, Python size, core protection and whitespace checks pass. The first workspace reviewer-fast run failed on a citation-format defect and a scope collision with the two pre-existing uncommitted worker outputs. The citation was corrected and its checker rerun passed. Local then recorded the original BLOCKED worker return and evidence separately at e33cda04abdc8b4e53ee5798e11121e49cf0c278, preserving their exact working-tree bytes. The learning batch is now five paths only; this resolves the cross-batch manifest collision without changing the checker or worker return. This is provenance retention, not S1 source acceptance. Full five-path reviewer-fast preflight70/70 PASS after the separate blocked-return provenance and continuity commits. Material commit and dedicated learning continuity remain the final steps; no S1 acceptance follows.
+
+## Agent Operation Trace Block
+
+| Field | Evidence |
+|---|---|
+| Actor | Local INTERNAL_AGENT maintainer |
+| Provider or surface | private shared CVF workspace |
+| Session or invocation | ncr-preapproval-bound-return-learning-20261008 |
+| Working directory | repository root |
+| Command or tool surface | selected source/receipt reads; shared production command construction; pytest; structural gates |
+| Target paths | `docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md`; `docs/reference/preapproval_feasibility/README.md`; `governance/compat/preapproval_feasibility_contract.py`; `governance/compat/run_worker_return_fast_gate.py`; `governance/compat/test_check_preapproval_feasibility.py` |
+| Allowed scope source | operator requested addition of the reviewed learning and existing preapproval guard/regression; no new source attempt |
+| Before status evidence | original input HEAD4eb79b34; closureBaseHead 8d62bbc04ced7ec89255a14b7b36ff853c2df843; blocked worker bytes retained at e33cda04; five learning paths only |
+| After status evidence | five learning/owner/guard/test paths changed; frozen worker outputs preserved |
+| Diff evidence | git diff --name-only; git diff --check |
+| Approval boundary | deterministic declared-state guard maintenance only; S1 acceptance and native effects remain held |
+| Claim boundary | production command construction and exact binding, not downstream gate PASS or source correctness |
+| Agent type | INTERNAL_AGENT |
+| Invocation ID | ncr-preapproval-bound-return-learning-20261008 |
+| Expected manifest | `docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md`; `docs/reference/preapproval_feasibility/README.md`; `governance/compat/preapproval_feasibility_contract.py`; `governance/compat/run_worker_return_fast_gate.py`; `governance/compat/test_check_preapproval_feasibility.py` |
+| Actual changed set | `docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md`; `docs/reference/preapproval_feasibility/README.md`; `governance/compat/preapproval_feasibility_contract.py`; `governance/compat/run_worker_return_fast_gate.py`; `governance/compat/test_check_preapproval_feasibility.py` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: none |

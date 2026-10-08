@@ -470,3 +470,89 @@ def test_range_does_not_skip_escaping_unreadable_proposal(tmp_path, tmp_path_fac
     git(tmp_path, "add", "-N", "--", prop)
     code, out = range_cli(tmp_path)
     assert code == 1 and "PROPOSAL_UNREADABLE" in out and "evaluatedMarked=1" in out
+
+
+# Released S1 packet regression: preapproval must compose the bound production
+# return route before FEASIBLE, without running its downstream commands.
+def work_order_fixture(root, body, outcome=None):
+    prop, comp_path = make(root, outcome, prop_bytes=body)
+    work_order = "docs/work_orders/bound-source.md"
+    write(root, work_order, body)
+    comp = json.loads((root / comp_path).read_bytes())
+    comp["proposal"]["path"] = comp["approvalTarget"]["path"] = work_order
+    write(root, comp_path, json.dumps(comp))
+    return work_order
+
+
+@pytest.mark.parametrize("field", [
+    "workerReturnPath: docs/reviews/return.md\n",
+    "", "workerReturnPath: `docs/reviews/return.md`\nworkerReturnPath: `docs/reviews/other.md`\n",
+])
+def test_bound_return_parser_rejects_before_feasible(root, field):
+    body = ("# Work order\nPreapproval-Feasibility: REQUIRED\n"
+            "Preapproval-Feasibility-Companion: docs/reviews/evidence/p.json\n" + field).encode()
+    prop = work_order_fixture(root, body)
+    code, receipt = cli(root, prop)
+    assert code == 1 and receipt["technicalDisposition"] == "INVALID"
+    assert "WORKER_RETURN_ROUTE_UNBUILDABLE" in codes(receipt)
+    assert receipt["effectAdmission"] is False
+
+
+def test_actual_released_s1_order_fails_route_and_corrected_copy_passes(root):
+    rel = "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_C1_S1_INTEGRATED_SOURCE_2026-10-08.md"
+    raw = subprocess.run(
+        ["git", "show", f"4eb79b34ca4422f598cd2a052ca2698283b71230:{rel}"],
+        cwd=REPO, capture_output=True, check=True,
+    ).stdout
+    assert sha(raw) == "62f7f7f6d6450363871f47e73b10fb9bf27c9c0069c927def5d8da70d6d2ad9b"
+    # Copy exact real packet text; rebind only the disposable fixture companion.
+    body = raw.replace(b"Preapproval-Feasibility-Companion: docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_C1_S1_INTEGRATED_SOURCE_2026-10-08.json", b"Preapproval-Feasibility-Companion: docs/reviews/evidence/p.json")
+    prop = work_order_fixture(root, body)
+    assert "WORKER_RETURN_ROUTE_UNBUILDABLE" in codes(cli(root, prop)[1])
+    old = b"workerReturnPath: docs/reviews/CVF_NCR_C1_S1_INTEGRATED_SOURCE_WORKER_RETURN_2026-10-08.md"
+    fixed = body.replace(old, old.replace(b": ", b": `") + b"`")
+    prop = work_order_fixture(root, fixed)
+    code, receipt = cli(root, prop)
+    assert code == 0 and receipt["technicalDisposition"] == "FEASIBLE"
+    assert receipt["effectAdmission"] is False
+
+
+def test_bound_builder_uses_snapshot_and_does_not_run_commands(root, monkeypatch):
+    body = ("Preapproval-Feasibility: REQUIRED\nPreapproval-Feasibility-Companion: docs/reviews/evidence/p.json\n"
+            "workerReturnPath: `docs/reviews/return.md`\n").encode()
+    prop = work_order_fixture(root, body)
+    original = pf.worker_return_gate.build_commands
+    observed = []
+    def spy(*args, **kwargs):
+        # Simulate a later on-disk mutation: construction must consume the
+        # proposal snapshot whose hash was joined, not re-read changed bytes.
+        write(root, prop, "workerReturnPath: malformed\n")
+        result = original(*args, **kwargs)
+        observed.extend(result)
+        return result
+    monkeypatch.setattr(pf.worker_return_gate, "build_commands", spy)
+    def forbidden(*args, **kwargs): raise AssertionError("preapproval executed a downstream command")
+    monkeypatch.setattr(pf.worker_return_gate.subprocess, "run", forbidden)
+    receipt = run_eval(root, prop)
+    assert receipt["technicalDisposition"] == "FEASIBLE"
+    ledger = next(c.command for c in observed if c.name == "work-order acceptance ledger")
+    assert ledger[-5:] == ("--work-order", prop, "--return", "docs/reviews/return.md", "--enforce")
+    assert receipt["proposal"]["sha256"] == sha(body)
+
+
+def test_unbound_command_composition_is_not_feasibility(root, monkeypatch):
+    body = ("Preapproval-Feasibility: REQUIRED\nPreapproval-Feasibility-Companion: docs/reviews/evidence/p.json\n"
+            "workerReturnPath: `docs/reviews/return.md`\n").encode()
+    prop = work_order_fixture(root, body)
+    original = pf.worker_return_gate.build_commands
+    monkeypatch.setattr(pf.worker_return_gate, "build_commands", lambda *a, **kw: original())
+    receipt = run_eval(root, prop)
+    assert receipt["technicalDisposition"] == "INVALID"
+    assert "WORKER_RETURN_ROUTE_UNBUILDABLE" in codes(receipt)
+
+
+def test_held_work_order_does_not_require_execution_route(root):
+    body = b"Preapproval-Feasibility: REQUIRED\nPreapproval-Feasibility-Companion: docs/reviews/evidence/p.json\n"
+    prop = work_order_fixture(root, body, root_contract())
+    code, receipt = cli(root, prop)
+    assert code == 2 and receipt["technicalDisposition"] == "HOLD"

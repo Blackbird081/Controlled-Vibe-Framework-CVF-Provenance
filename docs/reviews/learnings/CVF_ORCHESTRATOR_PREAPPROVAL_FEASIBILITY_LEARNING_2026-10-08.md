@@ -80,6 +80,7 @@ Related records: Outcome-Bound Continuation already owns fragment selection/prem
 | O3 nested locator becomes package identity | ORCHESTRATOR_PACKET_GAP | GOVERNANCE_CONTROL_PLANE | RULE_ADDED | same lifecycle preapproval rule distinguishes publisher identity/discovery hypothesis and predicts cap coverage | handled written control;E1 payload/metadata gaps remain open |
 | O4 repeated literal omissions | ORCHESTRATOR_PACKET_GAP | GOVERNANCE_CONTROL_PLANE | RULE_EXISTS | reuse verified scaffold/literal owners;run narrow authoring checks before full gate;do not create another rule for each omitted label | handled classification;agent application unproved |
 | O5 reference proposal has no automatic prospective-state join | MACHINE_GATE_GAP | GOVERNANCE_CONTROL_PLANE | MACHINE_CHECK_CANDIDATE | design opt-in proposal binding to existing canonical validator and preapproval caller;cases below | deferred,not implemented |
+| O6 released packet cannot compose its bound return route | MACHINE_GATE_GAP | GOVERNANCE_CONTROL_PLANE | MACHINE_CHECK_ADDED | existing preapproval evaluator uses production return parser/command builder before FEASIBLE; exact bindings required | implemented; deterministic route tests, no source release |
 | prior fragmented continuation or worker/source incidents | ORCHESTRATOR_PACKET_GAP | GOVERNANCE_CONTROL_PLANE | RULE_EXISTS | existing outcome/context records and original worker classifications;no new endpoint/worker rerun | handled dedup/attribution |
 
 Runtime/provider/cost learning: N/A_WITH_REASON - this audit makes no AI-governance runtime claim or cost measurement. No live/API/network/source/native fixture proof required or performed.
@@ -154,11 +155,11 @@ Claim Update: bounded audit/written learning completed;automated preapproval enf
 | Field | Evidence |
 |---|---|
 | applicableCheckersRead | governance/compat/check_finding_to_governance_learning.py;governance/compat/check_semantic_convergence_control.py;governance/compat/check_governed_artifact_checker_read_ahead.py;governance/compat/check_core_guard_self_protection.py;governance/compat/check_markdown_structural_completeness.py;governance/compat/check_review_cost_control.py;governance/compat/check_corpus_completeness_report_integrity.py;governance/compat/check_agent_operation_trace.py |
-| literalTokensReviewed | RULE_EXISTS;RULE_ADDED;MACHINE_CHECK_CANDIDATE;GOVERNANCE_CONTROL_PLANE;review/audit;trace17labels;historical source hash versus material final identity;NO_GO |
+| literalTokensReviewed | WORKER_RETURN_ROUTE_UNBUILDABLE; shared parser exact single backticked field;  RULE_EXISTS;RULE_ADDED;MACHINE_CHECK_CANDIDATE;GOVERNANCE_CONTROL_PLANE;review/audit;trace17labels;historical source hash versus material final identity;NO_GO |
 | gateRunPurpose | confirmation of bounded learning promotion and written owner changes,not first discovery or new guard activation |
 | claimBoundary | documentary/static declared-evidence shape only |
 
-## Agent Operation Trace Block
+## Historical Audit Operation Trace
 
 | Field | Evidence |
 |---|---|
@@ -255,3 +256,51 @@ Finite selected audit and written preapproval rule/discovery only. All original 
 ## Local Acceptance Update - PREFEAS-C1 (2026-10-08)
 
 Local reviewer found and repaired three bounded implementation defects together:trailing newline in publisher name,quoted UTF-8 Git paths skipped by discovery,and unreadable/escaping proposal omitted from the range. Existing complete identity and fail-closed source rules control;no new SCEC semantics or separate learning lane. Full-match identity,NUL-delimited Git paths and fail-closed current-file admission implemented. Original worker evidence/return retained. Independently authored actual CLI probe15/15 PASS and focused guard103 tests PASS. Local completion docs/reviews/CVF_PREFEAS_C1_COMPLETION_2026-10-08.md;receipt docs/reviews/evidence/cvf-prefeas-c1-local-review-2026-10-08.json. Accepted bounded declared-state route only;arbitrary-agent adoption/operator receipt remain NOT_PROVEN;source STOP/approval unchanged.
+
+## Bound Worker-Return Route Learning Update (2026-10-08)
+
+Operator requested this extension after Local review of the actual integrated S1 return. Retain the prior audit and acceptance updates as historical states. MERGE_INTO_EXISTING_OWNER: no separate learning record, roadmap or implementation tranche.
+
+Observation O6: the released S1 order contains a bare workerReturnPath. Its required runner accepts a single backticked field; the actual bound run exited1 before any checker. The worker correctly returned BLOCKED_WITH_REASON. Evidence: `docs/reviews/CVF_NCR_C1_S1_INTEGRATED_SOURCE_WORKER_RETURN_2026-10-08.md` Command Evidence and Return-Time Closeability Recheck; paired `docs/reviews/evidence/cvf-ncr-c1-s1-integrated-source-worker-2026-10-08.json` deviationsAndLimits and S1-RETURN-GATE. Current ignored receipt `.cvf/runtime/ncr-c1-s1-worker/post-write-custody.json` binds the actual raw gate log and exit. Local diagnostic `.cvf/runtime/ncr-c1-s1-local-review-20261008/LOCAL_REVIEW.md` records the separate source/procedure findings; it is not a governed completion receipt.
+
+Root cause: predecessor/phase/hash validity and structural dispatch PASS were treated as sufficient feasibility without constructing the mandatory downstream command on the released packet. This is a missing dispatch-to-return-route join owned by the orchestrator, not a new exception to SCEC or worker permission to repair authority.
+
+Written rule: for opted-in work-order proposals otherwise eligible for FEASIBLE, construct the production worker-return runner's commands on the exact hash-joined proposal snapshot before approval presentation. Require one exact workerReturnPath accepted by that parser, and acceptance-ledger/quality/probe commands bound to the same order and its parsed return. Missing, bare or duplicate fields and unbound command sets return INVALID with WORKER_RETURN_ROUTE_UNBUILDABLE. Existing HOLD remains HOLD and unmarked legacy artifacts retain their scope immunity. Construction performs no downstream execution and cannot prove downstream PASS.
+
+Machine application: governance/compat/preapproval_feasibility_contract.py calls governance/compat/run_worker_return_fast_gate.py build_commands and its shared parser. Explicit caller and the already-wired early autorun/pre-commit/reviewer-fast range route consume this evaluator; no new phase or duplicate catalog entry. The runner accepts explicit repository root/snapshot parameters without global mutation. Tests use the pinned released order from Git, never rewrite historical or working S1 authority; the corrected packet exists only in a disposable fixture.
+
+Validation: focused preapproval and worker-return-runner suites117/117 PASS. New cases cover bare/missing/duplicate fields, the actual released packet and corrected fixture, exact snapshot use with no subprocess execution, refusal of unbound command composition, and HOLD preservation. These are deterministic declared-state checks. S1 source acceptance, current packet repair, native/layout/containment proof and arbitrary-agent adoption remain unproved. No approval/effect grant is emitted. N/A_WITH_REASON: no provider behavior or cost claim.
+
+## Core Guard Self-Protection Authorization
+
+Authorized guard-maintenance scope: add the bound worker-return command-construction check to the existing opt-in preapproval route and its regression tests.
+Protected paths: `governance/compat/preapproval_feasibility_contract.py`; `governance/compat/run_worker_return_fast_gate.py`; `governance/compat/test_check_preapproval_feasibility.py`.
+Operator authorization: operator explicitly requested addition of this learning after approving the proposal to extend the existing preapproval guard and regression.
+Rollback boundary: these three Python files and the two existing learning/owner documents only; do not change original source roots, work order, companion, worker returns, receipts, session state, counters or production admission.
+
+## Current Validation Boundary
+
+The actual released S1 proposal returns INVALID with WORKER_RETURN_ROUTE_UNBUILDABLE and effectAdmission=false. Focused evaluator/runner suites117/117 PASS; the pinned historical-packet test passed again after making its Git source binding immutable. Packet authority/encoding, Python size, core protection and whitespace checks pass. The first workspace reviewer-fast run failed on a citation-format defect and a scope collision with the two pre-existing uncommitted worker outputs. The citation was corrected and its checker rerun passed. Local then recorded the original BLOCKED worker return and evidence separately at e33cda04abdc8b4e53ee5798e11121e49cf0c278, preserving their exact working-tree bytes. The learning batch is now five paths only; this resolves the cross-batch manifest collision without changing the checker or worker return. This is provenance retention, not S1 source acceptance. Full five-path reviewer-fast preflight70/70 PASS after the separate blocked-return provenance and continuity commits. Material commit and dedicated learning continuity remain the final steps; no S1 acceptance follows.
+
+## Agent Operation Trace Block
+
+| Field | Evidence |
+|---|---|
+| Actor | Local INTERNAL_AGENT maintainer |
+| Provider or surface | private shared CVF workspace |
+| Session or invocation | ncr-preapproval-bound-return-learning-20261008 |
+| Working directory | repository root |
+| Command or tool surface | selected source/receipt reads; shared production command construction; pytest; structural gates |
+| Target paths | `docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md`; `docs/reference/preapproval_feasibility/README.md`; `governance/compat/preapproval_feasibility_contract.py`; `governance/compat/run_worker_return_fast_gate.py`; `governance/compat/test_check_preapproval_feasibility.py` |
+| Allowed scope source | operator requested addition of the reviewed learning and existing preapproval guard/regression; no new source attempt |
+| Before status evidence | original input HEAD4eb79b34; closureBaseHead 8d62bbc04ced7ec89255a14b7b36ff853c2df843; blocked worker bytes retained at e33cda04; five learning paths only |
+| After status evidence | five learning/owner/guard/test paths changed; frozen worker outputs preserved |
+| Diff evidence | git diff --name-only; git diff --check |
+| Approval boundary | deterministic declared-state guard maintenance only; S1 acceptance and native effects remain held |
+| Claim boundary | production command construction and exact binding, not downstream gate PASS or source correctness |
+| Agent type | INTERNAL_AGENT |
+| Invocation ID | ncr-preapproval-bound-return-learning-20261008 |
+| Expected manifest | `docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md`; `docs/reference/preapproval_feasibility/README.md`; `governance/compat/preapproval_feasibility_contract.py`; `governance/compat/run_worker_return_fast_gate.py`; `governance/compat/test_check_preapproval_feasibility.py` |
+| Actual changed set | `docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md`; `docs/reference/preapproval_feasibility/README.md`; `governance/compat/preapproval_feasibility_contract.py`; `governance/compat/run_worker_return_fast_gate.py`; `governance/compat/test_check_preapproval_feasibility.py` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: none |

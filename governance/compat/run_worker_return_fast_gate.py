@@ -23,15 +23,20 @@ from pathlib import Path
 REPO_ROOT = Path(__file__).resolve().parents[2]
 
 
-def _worker_return_path(active_work_order: str) -> str:
-    work_order_path = (REPO_ROOT / active_work_order).resolve()
+def _worker_return_path(
+    active_work_order: str, *, repo_root: Path | None = None,
+    work_order_text: str | None = None,
+) -> str:
+    root = REPO_ROOT if repo_root is None else repo_root
+    work_order_path = (root / active_work_order).resolve()
     try:
-        work_order_path.relative_to(REPO_ROOT.resolve())
+        work_order_path.relative_to(root.resolve())
     except ValueError as exc:
         raise ValueError("active work order escapes the repository") from exc
-    text = work_order_path.read_text(encoding="utf-8")
-    match = re.search(r"(?m)^workerReturnPath:\s*`([^`]+)`\s*$", text)
-    if not match:
+    text = work_order_path.read_text(encoding="utf-8") if work_order_text is None else work_order_text
+    fields = [line for line in text.splitlines() if line.startswith("workerReturnPath:")]
+    match = re.fullmatch(r"workerReturnPath:[ \t]*`([^`]+)`[ \t]*", fields[0]) if len(fields) == 1 else None
+    if match is None:
         raise ValueError("active work order lacks an exact workerReturnPath")
     return match.group(1)
 
@@ -101,7 +106,8 @@ def _focused_test_commands(targets: tuple[str, ...]) -> list[FastGateCommand]:
 
 
 def build_commands(
-    pytest_targets: tuple[str, ...] = (), active_work_order: str | None = None
+    pytest_targets: tuple[str, ...] = (), active_work_order: str | None = None,
+    *, repo_root: Path | None = None, work_order_text: str | None = None,
 ) -> tuple[FastGateCommand, ...]:
     commands: list[FastGateCommand] = _focused_test_commands(pytest_targets)
     probe_admission_command = [
@@ -126,7 +132,7 @@ def build_commands(
                 "--work-order",
                 active_work_order,
                 "--return",
-                _worker_return_path(active_work_order),
+                _worker_return_path(active_work_order, repo_root=repo_root, work_order_text=work_order_text),
                 "--enforce",
             ),
         )
