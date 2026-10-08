@@ -1,7 +1,7 @@
 # CVF Agent Work Order - NCR Video Production Preparation
 Memory class: governed-worker-dispatch
 docType: work_order
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 Date: 2026-10-08
 Batch ID: CVF-NCR-VIDEO-PRODUCTION-PREPARATION-20261008
 Dispatch base head: c9dd293ceb31d7276bec14072313eb99aadd3228
@@ -443,15 +443,15 @@ Use the existing scripts and reference/review/evidence roots; create no folder, 
 ## Independent Review Probe Admission Contract
 
 independentProbeRequired: YES
+probeExecutorRole: LOCAL_REVIEWER_NOT_IMPLEMENTATION_WORKER
+reviewerDecisionOwner: LOCAL
 independentProbeRiskClass: BOUNDED_LOCAL_VALIDATOR
 independentProbeDispositionAtDispatch: PENDING_REVIEWER_EXECUTION
-probeExecutorRole: LOCAL_REVIEWER_NOT_IMPLEMENTATION_WORKER
 implementationOracleSeparation: separate Local reviewer authors its own small fixture and expectations; no copying worker oracle
 positiveControl: complete synthetic manifest passes structural validation and still reports runtimeAdmission NO_GO
 negativeMutationClasses: altered digest, path escape and absent enforcement evidence
 expectedInformationGain: distinguish preparation validity from accidental runtime authorization
 rerunCostReason: one bounded independent invocation, no duplicate dependency audit or media execution
-reviewerDecisionOwner: LOCAL
 
 ## Agent Operation Trace Block
 
@@ -584,3 +584,45 @@ Operator requested manual transfer to a shared-workspace implementation worker. 
 | Owner path | Classification | Reason |
 |---|---|---|
 | docs/reference/CVF_NCR_VIDEO_PRODUCTION_PREPARATION_KIT_2026-10-08.md | NOT_BINDING_REFERENCE_WITH_REASON: task-specific preparation kit | no recurring active-window owner or canonical rule created |
+
+## Local Closure Disposition
+
+Preparation accepted by docs/reviews/CVF_NCR_VIDEO_PRODUCTION_PREPARATION_COMPLETION_2026-10-08.md; original dispatch bytes remain reproducible at fce3cf9c75b338acc7cad9c966fcf9fca62dc8cf. Original worker submission remains historical pending-review evidence; this Local completion owns final status. No runtime admission or automatic successor.
+
+## Independent Review Probe Admission
+
+independentProbeDisposition: PASS_INDEPENDENT_PROBE
+implementationWorkerActor: INTERNAL_AGENT shared-workspace implementation worker
+probeExecutorActor: LOCAL_REVIEWER_CODEX_ROOT
+workerInvocationId: cvf-ncr-video-preparation-worker-20261008
+probeInvocationId: cvf-video-preparation-local-review-20261008
+workerOracleSha256: 7b52f23448937878a9217eb01dee801fd385a5fc6aabd4f4dd804c974c7366a5
+probeOracleSha256: f17f5a2a5266da1b3d5c3bcc2876f51dfbb3b3a9498a0cf9795e0f3214e07549
+workerEvidenceRef: docs/reviews/evidence/cvf-ncr-video-production-preparation-worker-2026-10-08.json
+probeEvidenceRef: docs/reviews/evidence/cvf-ncr-video-production-preparation-local-review-2026-10-08.json
+probeCommandOrMethod: python -B .cvf/runtime/cvf-video-preparation-review-20261008/independent_probe.py; separate fixture and actual CLI subprocess
+probeObservedResult: required complete fixture remains STRUCTURALLY_COMPLETE_NO_GO; altered digest, path escape and absent enforcement all rejected before and after repair; eight final cases pass
+oracleSeparationBasis: distinct implementation worker and reviewer actor/invocation; work-order-derived oracle does not import worker tests; source and return exposure disclosed; expanded cases after reviewer repair are regression evidence, not a second independent actor
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_VIDEO_PRODUCTION_PREPARATION_2026-10-08.md | CLOSED_PASS_BOUNDED; execution consumed once | PASS |
+| Completion or reviewer artifact | docs/reviews/CVF_NCR_VIDEO_PRODUCTION_PREPARATION_COMPLETION_2026-10-08.md | bounded preparation acceptance and grouped repair | PASS |
+| Roadmap state | no dedicated roadmap for standalone preparation work order | no successor or production admission | N/A with reason: existing NCR/video owners retained |
+| Registry JSON | docs/reviews/evidence/cvf-ncr-video-production-preparation-local-review-2026-10-08.json | exact original/final hashes and durable probe bytes | PASS |
+| Registry Markdown | docs/reviews/CVF_NCR_VIDEO_PRODUCTION_PREPARATION_COMPLETION_2026-10-08.md | F1 handled and U1-U11 retained | PASS |
+| External evidence digest | docs/reviews/evidence/cvf-ncr-video-production-preparation-local-review-2026-10-08.json | Local evidence only | N/A with reason: no external research |
+| System loop interlock | existing C1/source-relay STOP owners | no reset, retry or effect | PASS |
+| Session continuity | AGENT_HANDOFF_V63_2026-09-18.md; generated bootstrap/state | atomic closed-status pins then real material SHA in dedicated steward commit | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| PREFLIGHT-NEGATIVE-CONTROLS | required CLI positive/three negatives | four required cases pass on original and final code; malformed cluster repaired | PASS |
+| PREFLIGHT-NO-EFFECTS | stdlib, no production effects | worker effect tests consumed; final 37 tests pass; independent subprocess invokes CLI only | PASS |
+| PREPARATION-TRACE | source-backed kit and exact S05 | governed joins match; real pinned locks used; unresolved codec/cache/offline gaps explicit | PASS |
+| STOP-PRESERVED | old STOP and no runtime GO | complete fixture remains NO_GO; no reset/retry/media effect | PASS |
+| SCOPE-AND-RETURN-GATE | five original worker paths and full return | original return/evidence retained; closure paths reviewer-owned | PASS |

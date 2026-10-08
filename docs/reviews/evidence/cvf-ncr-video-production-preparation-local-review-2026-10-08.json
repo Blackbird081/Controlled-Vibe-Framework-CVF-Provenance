@@ -1,0 +1,350 @@
+{
+  "schemaVersion": "cvf.ncrVideoPreparationLocalReview@1",
+  "batchId": "CVF-NCR-VIDEO-PRODUCTION-PREPARATION-20261008",
+  "executionBaseHead": "fce3cf9c75b338acc7cad9c966fcf9fca62dc8cf",
+  "reviewerActor": "LOCAL_REVIEWER_CODEX_ROOT",
+  "workerActor": "INTERNAL_AGENT shared-workspace implementation worker",
+  "probeExecutorRole": "LOCAL_REVIEWER_NOT_IMPLEMENTATION_WORKER",
+  "probeInvocationId": "cvf-video-preparation-local-review-20261008",
+  "workerInvocationId": "cvf-ncr-video-preparation-worker-20261008",
+  "originalWorkerRawSha256": {
+    "scripts/cvf_video_preflight.py": "7d1f5f43351ce083b2f96498f7f62ca29b61f2cbed4d418d5dea173de3d4852b",
+    "scripts/test_cvf_video_preflight.py": "b793a241dbc0939b7d2d680e6951a866fb4de74c7332c47a6f103ff93297cc0f",
+    "docs/reference/CVF_NCR_VIDEO_PRODUCTION_PREPARATION_KIT_2026-10-08.md": "a4bd94eff05b5a3d7d3c33367cd4f036ba99540bd24f381c1381afb3f0759697",
+    "docs/reviews/evidence/cvf-ncr-video-production-preparation-worker-2026-10-08.json": "7b52f23448937878a9217eb01dee801fd385a5fc6aabd4f4dd804c974c7366a5",
+    "docs/reviews/CVF_NCR_VIDEO_PRODUCTION_PREPARATION_WORKER_RETURN_2026-10-08.md": "a7ffc44ede4a3710bfde41137b4c9ba5645ad0ec0224136833ec311b89728289"
+  },
+  "finalRawSha256": {
+    "scripts/cvf_video_preflight.py": "461a752f23e13649b5b51f0bd627fb0c9fac94a6d6d3995d5976edee98e91d6e",
+    "scripts/test_cvf_video_preflight.py": "549519d40fd2f50f8d50d36f4fa03a9a2ec0dd2c74d769141e27df5eb2b0f0d2",
+    "docs/reference/CVF_NCR_VIDEO_PRODUCTION_PREPARATION_KIT_2026-10-08.md": "a4bd94eff05b5a3d7d3c33367cd4f036ba99540bd24f381c1381afb3f0759697",
+    "docs/reviews/evidence/cvf-ncr-video-production-preparation-worker-2026-10-08.json": "7b52f23448937878a9217eb01dee801fd385a5fc6aabd4f4dd804c974c7366a5",
+    "docs/reviews/CVF_NCR_VIDEO_PRODUCTION_PREPARATION_WORKER_RETURN_2026-10-08.md": "a7ffc44ede4a3710bfde41137b4c9ba5645ad0ec0224136833ec311b89728289"
+  },
+  "governedInputHashJoins": {
+    "docs/reference/CVF_NCR_GENERAL_VIDEO_DESIGN_2026-10-02.md": true,
+    "docs/reference/CVF_NCR_VIDEO_COMPOSITION_READINESS_DESIGN_2026-10-03.md": true,
+    "docs/reviews/CVF_NCR_S05_ASSESSMENT_LANE_SELECTION_2026-10-03.md": true,
+    "docs/reviews/CVF_CVF_NCR_S05_S1_R1_EVIDENCE_RELAY_LOCAL_REVIEW_2026-10-03.md": true,
+    "docs/reviews/evidence/cvf-ncr-s05-assessment-lane-selection-2026-10-03.json": true
+  },
+  "workerEvidenceDisposition": "Original submission retained unchanged; historical source/test hashes and 35 tests are not final reviewer-repaired identities.",
+  "independentOracle": {
+    "sourceSha256": "69476d87f3e86e5ed3b6ded5a5de9d6a88e75f5d0cedd24a3f0b7fd564aa321c",
+    "sourceUtf8Base64": "aW1wb3J0IGNvcHksaGFzaGxpYixqc29uLHBhdGhsaWIsc3VicHJvY2VzcyxzeXMsdGVtcGZpbGUNClA9cGF0aGxpYi5QYXRoOyByZXBvPVAuY3dkKCk7IG91dD1yZXBvLycuY3ZmL3J1bnRpbWUvY3ZmLXZpZGVvLXByZXBhcmF0aW9uLXJldmlldy0yMDI2MTAwOCcNCmRlZiBkaWdlc3QoYik6IHJldHVybiBoYXNobGliLnNoYTI1NihiKS5oZXhkaWdlc3QoKQ0KaW5wdXRzPWpzb24ubG9hZHMoKHJlcG8vJ2RvY3MvcmV2aWV3cy9ldmlkZW5jZS9jdmYtbmNyLXZpZGVvLXByb2R1Y3Rpb24tcHJlcGFyYXRpb24taW5wdXRzLTIwMjYtMTAtMDguanNvbicpLnJlYWRfdGV4dChlbmNvZGluZz0ndXRmLTgnKSkNCnNvdXJjZT1yZXBvLydkb2NzL3JlZmVyZW5jZS9DVkZfTkNSX0dFTkVSQUxfVklERU9fREVTSUdOXzIwMjYtMTAtMDIubWQnOyB0ZXh0PXNvdXJjZS5yZWFkX2J5dGVzKCkuZGVjb2RlKCkucmVwbGFjZSgnXHJcbicsJ1xuJyk7IHNjZW5lPXRleHQuc3BsaXQoJyMjIyBTMDUgfCcsMSlbMV0uc3BsaXQoJyMjIyBTMDYgfCcsMSlbMF0NCmRlZiB2YWx1ZShsYWJlbCk6cmV0dXJuIG5leHQobFtsZW4oJy0gJytsYWJlbCsnOiAnKTpdIGZvciBsIGluIHNjZW5lLnNwbGl0bGluZXMoKSBpZiBsLnN0YXJ0c3dpdGgoJy0gJytsYWJlbCsnOiAnKSkNCm5hcnIsb249dmFsdWUoJ05hcnJhdGlvbicpLHZhbHVlKCdPbi1zY3JlZW4nKTsgY2FyZD1vbi5zcGxpdCgnLiAnKVswXQ0Kd2l0aCB0ZW1wZmlsZS5UZW1wb3JhcnlEaXJlY3RvcnkocHJlZml4PSdpbmRlcGVuZGVudC0nLGRpcj1vdXQpIGFzIHQ6DQogYmFzZT1QKHQpO3Jvb3Q9YmFzZS8ncmVzJztyb290Lm1rZGlyKCk7IGFydGlmYWN0cz1bXQ0KIGRlZiBhc3NldChhaWQsY2F0LHBhdGgsY29udGVudD1Ob25lLCoqZXh0cmEpOg0KICBiPShiJ2luZGVwZW5kZW50IHN5bnRoZXRpYyBmaXh0dXJlICcrYWlkLmVuY29kZSgpKSBpZiBjb250ZW50IGlzIE5vbmUgZWxzZSBjb250ZW50DQogIHA9cm9vdC9wYXRoO3AucGFyZW50Lm1rZGlyKHBhcmVudHM9VHJ1ZSxleGlzdF9vaz1UcnVlKTtwLndyaXRlX2J5dGVzKGIpDQogIGE9eydpZCc6YWlkLCdjYXRlZ29yeSc6Y2F0LCdwbGFjZW1lbnQnOidGSU5BTCcsJ3BhdGgnOnBhdGgsJ3NoYTI1Nic6ZGlnZXN0KGIpLCdieXRlcyc6bGVuKGIpLCdvcmlnaW4nOnsna2luZCc6J29wZXJhdG9yX3N1cHBsaWVkJywnaWRlbnRpdHknOidpbmRlcGVuZGVudC1maXh0dXJlOicrYWlkLCdpbW11dGFibGUnOlRydWV9LCdyaWdodHMnOnsnZGlzcG9zaXRpb24nOidDTEVBUkVEX1BJTk5FRF9FVklERU5DRScsJ2V2aWRlbmNlQXJ0aWZhY3RJZCc6J25vdGljZSd9fTthLnVwZGF0ZShleHRyYSk7YXJ0aWZhY3RzLmFwcGVuZChhKQ0KIHNjb3Blcz1bJ1NPVVJDRV9DT0RFJywnV0VJR0hUUycsJ0NPREVDJywnVk9JQ0UnLCdGT05UJywnQklOQVJZJ107IGFzc2V0KCdub3RpY2UnLCdyaWdodHNfYXR0cmlidXRpb24nLCdub3RpY2UudHh0JyxyaWdodHNTY29wZXM9c2NvcGVzKTthc3NldCgnY29udHJvbHMnLCdlbmZvcmNlbWVudF9ldmlkZW5jZScsJ2NvbnRyb2xzLnR4dCcpDQogZm9yIGRpc3QgaW4gWyd2aWVuZXUnLCdzZWEtZzJwJywnb25ueHJ1bnRpbWUnLCdudW1weScsJ3NvdW5kZmlsZScsJ3NveHInLCdrYWxkaS1uYXRpdmUtZmJhbmsnLCd0b2tlbml6ZXJzJywnaHVnZ2luZ2ZhY2UtaHViJywncHl5YW1sJywnZ3JhZGlvJywnbGlicm9zYSddOg0KICBhc3NldCgnd2hlZWwtJytkaXN0LCdweXRob25fd2hlZWwnLCd3aGVlbHMvJytkaXN0LnJlcGxhY2UoJy0nLCdfJykrJy0xLjAtcHkzLW5vbmUtYW55LndobCcsZGlzdHJpYnV0aW9uPWRpc3QpDQogcGlucz1bXQ0KIGZvciBlbnRyeSBpbiBpbnB1dHNbJ2lucHV0cyddOg0KICBjb21wPSd2aWVuZXUnIGlmICdWaWVOZXUnIGluIGVudHJ5WydtaXJyb3InXSBlbHNlICdoeXBlcmZyYW1lcycNCiAgcGlucy5hcHBlbmQoeydjb21wb25lbnQnOmNvbXAsJ3Bpbic6ZW50cnlbJ3BpbiddLCdwYXRoJzplbnRyeVsncGF0aCddLCdzaGEyNTYnOmVudHJ5WydzaGEyNTYnXSwnYnl0ZXMnOmVudHJ5WydieXRlcyddLCdmcmVzaG5lc3MnOidEQVRFRF9ISVNUT1JJQ0FMX05PVF9DVVJSRU5UX1VQU1RSRUFNJ30pDQogIGlmIGVudHJ5WydwYXRoJ10gaW4gWyd1di5sb2NrJywnYnVuLmxvY2snXToNCiAgIHJhdz1zdWJwcm9jZXNzLmNoZWNrX291dHB1dChbJ2dpdCcsJy1DJyxlbnRyeVsnbWlycm9yJ10sJ3Nob3cnLGVudHJ5WydwaW4nXSsnOicrZW50cnlbJ3BhdGgnXV0pO2Fzc2VydCBkaWdlc3QocmF3KT09ZW50cnlbJ3NoYTI1NiddO2Fzc2V0KCdsb2NrLScrY29tcCwnc291cmNlX2xvY2snLCdsb2Nrcy8nK2VudHJ5WydwYXRoJ10scmF3KQ0KIHNldHM9eydtb2RlbF9ncmFwaCc6Wyd2aWVuZXVfcHJlZmlsbC5vbm54JywndmllbmV1X2RlY29kZV9zdGVwLm9ubngnLCd2aWVuZXVfYWNvdXN0aWNfY2FjaGVkLm9ubngnLCd2aWVuZXVfYmFja2JvbmVfc2hhcmVkLmRhdGEnLCd2aWVuZXVfdjNfaGVhZHMubnB6J10sJ21vZGVsX2NvbmZpZyc6Wydjb25maWcuanNvbiddLCd0b2tlbml6ZXInOlsndG9rZW5pemVyLmpzb24nXSwnY29kZWMnOlsnbW9zc19hdWRpb190b2tlbml6ZXJfZGVjb2RlX2Z1bGwub25ueCcsJ21vc3NfYXVkaW9fdG9rZW5pemVyX2RlY29kZV9zaGFyZWQuZGF0YScsJ21vc3NfYXVkaW9fdG9rZW5pemVyX2RlY29kZV9zdGVwLm9ubngnLCdjb2RlY19icm93c2VyX29ubnhfbWV0YS5qc29uJywnbW9zc19hdWRpb190b2tlbml6ZXJfZW5jb2RlLm9ubngnLCdtb3NzX2F1ZGlvX3Rva2VuaXplcl9lbmNvZGUuZGF0YSddLCdwcmVzZXQnOlsndm9pY2VzX3YzX3R1cmJvLmpzb24nXX0NCiBmb3IgY2F0LG5hbWVzIGluIHNldHMuaXRlbXMoKToNCiAgZm9yIGksbmFtZSBpbiBlbnVtZXJhdGUobmFtZXMpOmFzc2V0KGNhdCtzdHIoaSksY2F0LGNhdCsnLycrbmFtZSkNCiBmb3IgY2F0LG5hbWUgaW4gWygncGhvbmVtaXplcicsJ3Bob24uYmluJyksKCdicm93c2VyJywnYnJvd3Nlci5iaW4nKSwoJ2ZmbXBlZycsJ2ZmbXBlZy5iaW4nKSwoJ2ZvbnQnLCdmb250LmJpbicpXTphc3NldChjYXQsY2F0LG5hbWUpDQogY2VpbGluZ3M9e2s6eyd2YWx1ZSc6MTAwMDAwMDAwLCd1bml0JzonYnl0ZXMnLCdzdGF0dXMnOidQUk9QT1NFRF9OT1RfRU5GT1JDRUQnfSBmb3IgayBpbiBbJ2Rvd25sb2FkX2luc3RhbGxfY2FjaGVfYnl0ZXMnLCdmaW5hbF9hcnRpZmFjdF9ieXRlcycsJ2R1cGxpY2F0ZWRfc3RvcmFnZV9ieXRlcycsJ2xvZ19ldmlkZW5jZV9ieXRlcycsJ2FnZ3JlZ2F0ZV9kaXNrX2J5dGVzJywncGVha19jb21taXR0ZWRfcmFtX2J5dGVzJ119DQogY2VpbGluZ3NbJ2FnZ3JlZ2F0ZV9kaXNrX2J5dGVzJ11bJ3ZhbHVlJ109MTAwMDAwMDAwMA0KIGZvciBrLHYsdSBpbiBbKCdwcm9jZXNzX2NvdW50JywyLCdjb3VudCcpLCgnd2FsbHRpbWVfc2Vjb25kcycsNjAsJ3NlY29uZHMnKSwoJ2NhbmNlbGxhdGlvbl9ncmFjZV9zZWNvbmRzJyw1LCdzZWNvbmRzJyksKCdyZXRyaWVzJywxLCdhdHRlbXB0c19wZXJfc3RhZ2UnKV06Y2VpbGluZ3Nba109eyd2YWx1ZSc6diwndW5pdCc6dSwnc3RhdHVzJzonUFJPUE9TRURfTk9UX0VORk9SQ0VEJ30NCiBtYW5pZmVzdD17J3NjaGVtYVZlcnNpb24nOidjdmYudmlkZW9QcmVwYXJhdGlvbk1hbmlmZXN0QDEnLCdhcnRpZmFjdHMnOmFydGlmYWN0cywnc291cmNlUGlucyc6cGlucywnY2VpbGluZ3MnOmNlaWxpbmdzLCdlbmZvcmNlbWVudCc6e2M6eydldmlkZW5jZUFydGlmYWN0SWQnOidjb250cm9scyd9IGZvciBjIGluIFsnZWdyZXNzX2Jsb2NrJywnZmlsZXN5c3RlbV9xdW90YScsJ21lbW9yeV9jYXAnLCdwcm9jZXNzX2NhcCcsJ3dhbGx0aW1lX2NhcCddfSwndm9pY2UnOnsnYmFja2VuZCc6J29ubngnLCdkZXZpY2UnOidjcHUnLCdwcmVjaXNpb24nOidmcDMyJywnY2xvbmluZyc6RmFsc2UsJ3BhaWRPckhvc3RlZFZvaWNlJzpGYWxzZSwncHJlc2V0SWQnOidpbmRlcGVuZGVudC1maXh0dXJlJywncHJlc2V0QXJ0aWZhY3RJZCc6J3ByZXNldDAnLCdwcmVzZXRTb3VyY2UnOidNT0RFTF9ST09UX09WRVJSSURFX0ZJTEUnLCdjb25zZW50QXJ0aWZhY3RJZCc6J25vdGljZScsJ2NvZGVjJzp7J3Jlc29sdXRpb24nOidFTkdJTkVfRElSRUNUX0NPREVDX0RJUicsJ2RlY2lzaW9uUmVmJzonZml4dHVyZS1vbmx5J30sJ2Rlbm9pc2VyJzp7J2Rpc3Bvc2l0aW9uJzonQUJTRU5UX0FDQ0VQVEVEX1BSRVNFVF9PTkxZJywnZGVjaXNpb25SZWYnOidmaXh0dXJlLW9ubHknfX0sJ3MwNSc6eydkZXNpZ25SYXdTaGEyNTYnOmRpZ2VzdChzb3VyY2UucmVhZF9ieXRlcygpKSwnbmFycmF0aW9uU2hhMjU2JzpkaWdlc3QobmFyci5lbmNvZGUoKSksJ29uU2NyZWVuU2hhMjU2JzpkaWdlc3Qob24uZW5jb2RlKCkpLCdzdGF0dXNDYXJkU2hhMjU2JzpkaWdlc3QoY2FyZC5lbmNvZGUoKSksJ2NsYWltSWRzJzpbJ0MwOScsJ0MxMCddLCdvcmlnaW5hbEVzdGltYXRlU2Vjb25kcyc6MjAsJ21lYXN1cmVkTmFycmF0aW9uU2Vjb25kcyc6Tm9uZSwncmV0aW1pbmcnOnsnZGlzcG9zaXRpb24nOidOT05FX05PVF9NRUFTVVJFRCd9LCdwbGFubmVkRnJhbWVzJzpbeydmcmFtZUlkJzonaW5kZXBlbmRlbnQwMScsJ3N0YXR1c0NhcmRUZXh0JzpjYXJkLCdzdGF0dXNDYXJkU2hhMjU2JzpkaWdlc3QoY2FyZC5lbmNvZGUoKSksJ2NsYWltSWRzJzpbJ0MwOScsJ0MxMCddfV19fQ0KIGNhc2VzPVsoJ3Bvc2l0aXZlJyxOb25lLE5vbmUpLCgnYWx0ZXJlZC1kaWdlc3QnLGxhbWJkYSBtOm1bJ2FydGlmYWN0cyddWy0xXS51cGRhdGUoc2hhMjU2PScwJyo2NCksJ0hBU0hfTUlTTUFUQ0gnKSwoJ3BhdGgtZXNjYXBlJyxsYW1iZGEgbTptWydhcnRpZmFjdHMnXVstMV0udXBkYXRlKHBhdGg9Jy4uL291dHNpZGUudHh0JyksJ1BBVEhfUkVKRUNURUQnKSwoJ2Fic2VudC1lbmZvcmNlbWVudCcsbGFtYmRhIG06bS51cGRhdGUoZW5mb3JjZW1lbnQ9e30pLCAnRU5GT1JDRU1FTlRfRVZJREVOQ0VfTUlTU0lORycpLCgnbGlzdC1jYXRlZ29yeScsbGFtYmRhIG06bVsnYXJ0aWZhY3RzJ11bMF0udXBkYXRlKGNhdGVnb3J5PVtdKSwnTUFOSUZFU1RfU0hBUEVfSU5WQUxJRCcpLCgnbGlzdC1yZWZlcmVuY2UnLGxhbWJkYSBtOm1bJ3ZvaWNlJ10udXBkYXRlKHByZXNldEFydGlmYWN0SWQ9W10pLCdNQU5JRkVTVF9TSEFQRV9JTlZBTElEJyksKCdsaXN0LXBpbi1rZXknLGxhbWJkYSBtOm1bJ3NvdXJjZVBpbnMnXVswXS51cGRhdGUoY29tcG9uZW50PVtdKSwnTUFOSUZFU1RfU0hBUEVfSU5WQUxJRCcpLCgnb3ZlcnNpemUtaW50ZWdlcicsbGFtYmRhIG06bVsnY2VpbGluZ3MnXVsncHJvY2Vzc19jb3VudCddLnVwZGF0ZSh2YWx1ZT0xMCoqNDAwKSwnQ0VJTElOR19JTlZBTElEJyldDQogcmVzdWx0cz1bXQ0KIGZvciBuYW1lLG11dCxyZWFzb24gaW4gY2FzZXM6DQogIG09Y29weS5kZWVwY29weShtYW5pZmVzdCkNCiAgaWYgbXV0Om11dChtKQ0KICBwYXRoPWJhc2UvJ21hbmlmZXN0Lmpzb24nO3BhdGgud3JpdGVfdGV4dChqc29uLmR1bXBzKG0pKQ0KICByPXN1YnByb2Nlc3MucnVuKFtzeXMuZXhlY3V0YWJsZSwnLUInLHN0cihyZXBvLydzY3JpcHRzL2N2Zl92aWRlb19wcmVmbGlnaHQucHknKSwnLS1tYW5pZmVzdCcsc3RyKHBhdGgpLCctLXJvb3QnLHN0cihyb290KSwnLS1kZXNpZ24nLHN0cihzb3VyY2UpXSxjYXB0dXJlX291dHB1dD1UcnVlLHRpbWVvdXQ9MTApDQogIHRyeTpyZXBvcnQ9anNvbi5sb2FkcyhyLnN0ZG91dCkNCiAgZXhjZXB0IFZhbHVlRXJyb3I6cmVwb3J0PXt9DQogIG9rPXJlcG9ydC5nZXQoJ3J1bnRpbWVBZG1pc3Npb24nKT09J05PX0dPJyBhbmQgKChyLnJldHVybmNvZGU9PTAgYW5kIHJlcG9ydC5nZXQoJ3ZhbGlkYXRpb25TdGF0dXMnKT09J1NUUlVDVFVSQUxMWV9DT01QTEVURV9OT19HTycpIGlmIG5hbWU9PSdwb3NpdGl2ZScgZWxzZSByLnJldHVybmNvZGU9PTEgYW5kIHJlYXNvbiBpbiByZXBvcnQuZ2V0KCdyZWFzb25Db2RlcycsW10pKQ0KICByZXN1bHRzLmFwcGVuZCh7J2Nhc2UnOm5hbWUsJ3Bhc3MnOm9rLCdleGl0JzpyLnJldHVybmNvZGUsJ3N0YXR1cyc6cmVwb3J0LmdldCgndmFsaWRhdGlvblN0YXR1cycpLCdyZWFzb25Db2Rlcyc6cmVwb3J0LmdldCgncmVhc29uQ29kZXMnKSwnc3RkZXJyVGFpbCc6ci5zdGRlcnIuZGVjb2RlKCd1dGYtOCcsZXJyb3JzPSdyZXBsYWNlJylbLTUwMDpdfSkNCiBkYXRhPXsnc2NyaXB0U2hhMjU2JzpkaWdlc3QoUChfX2ZpbGVfXykucmVhZF9ieXRlcygpKSwnaW1wbGVtZW50YXRpb25TaGEyNTYnOmRpZ2VzdCgocmVwby8nc2NyaXB0cy9jdmZfdmlkZW9fcHJlZmxpZ2h0LnB5JykucmVhZF9ieXRlcygpKSwnaW5kZXBlbmRlbnRPcmFjbGUnOid3b3JrLW9yZGVyLWRlcml2ZWQgZml4dHVyZTsgd29ya2VyIHRlc3RzIG5vdCBpbXBvcnRlZDsgc291cmNlIGlkZW50aXR5IGluZGVwZW5kZW50bHkgZXh0cmFjdGVkOyByZWFsIHBpbm5lZCBsb2NrIGJsb2JzOyBhbGwgb3RoZXIgYnl0ZXMgc3ludGhldGljJywncmVzdWx0cyc6cmVzdWx0cywncGFzcyc6YWxsKHhbJ3Bhc3MnXSBmb3IgeCBpbiByZXN1bHRzKSwncnVudGltZUVmZmVjdHMnOidubyBtb2RlbC9pbnN0YWxsL25ldHdvcmsvcHJvdmlkZXIvbWVkaWEnfQ0KIChvdXQvJ2xhdGVzdC1wcm9iZS5qc29uJykud3JpdGVfdGV4dChqc29uLmR1bXBzKGRhdGEsaW5kZW50PTIpKydcbicpO3ByaW50KGpzb24uZHVtcHMoZGF0YSxpbmRlbnQ9MikpO3N5cy5leGl0KDAgaWYgZGF0YVsncGFzcyddIGVsc2UgMSkNCg==",
+    "basis": "Work-order-derived complete local fixture; real pinned lock bytes; independently extracted S05 source; no import of worker tests. Implementation and return read before authoring disclosed. Reviewer subsequently repaired code, so the required original four cases remain distinct-actor acceptance; expanded four cases document reviewer regression, not a second independent review of reviewer edits."
+  },
+  "independentBeforeRepair": {
+    "scriptSha256": "69476d87f3e86e5ed3b6ded5a5de9d6a88e75f5d0cedd24a3f0b7fd564aa321c",
+    "implementationSha256": "7d1f5f43351ce083b2f96498f7f62ca29b61f2cbed4d418d5dea173de3d4852b",
+    "independentOracle": "work-order-derived fixture; worker tests not imported; source identity independently extracted; real pinned lock blobs; all other bytes synthetic",
+    "results": [
+      {
+        "case": "positive",
+        "pass": true,
+        "exit": 0,
+        "status": "STRUCTURALLY_COMPLETE_NO_GO",
+        "reasonCodes": [
+          "C1_STOP_RETAINED",
+          "FONT_VIETNAMESE_GLYPH_COVERAGE_NOT_VERIFIED_BY_VALIDATOR",
+          "OFFLINE_OPERATION_NOT_PROVEN",
+          "OPERATOR_RUNTIME_ENVELOPE_NOT_ADMITTED",
+          "OS_CONTAINMENT_NOT_ESTABLISHED_BY_VALIDATOR",
+          "RIGHTS_ASSERTIONS_UNREVIEWED_BY_VALIDATOR",
+          "RUNTIME_ADMISSION_NOT_GRANTABLE_BY_VALIDATOR",
+          "WHEEL_CLOSURE_COMPLETENESS_NOT_PROVEN_BY_VALIDATOR"
+        ],
+        "stderrTail": ""
+      },
+      {
+        "case": "altered-digest",
+        "pass": true,
+        "exit": 1,
+        "status": "INVALID_NO_GO",
+        "reasonCodes": [
+          "C1_STOP_RETAINED",
+          "FONT_VIETNAMESE_GLYPH_COVERAGE_NOT_VERIFIED_BY_VALIDATOR",
+          "HASH_MISMATCH",
+          "OFFLINE_OPERATION_NOT_PROVEN",
+          "OPERATOR_RUNTIME_ENVELOPE_NOT_ADMITTED",
+          "OS_CONTAINMENT_NOT_ESTABLISHED_BY_VALIDATOR",
+          "RIGHTS_ASSERTIONS_UNREVIEWED_BY_VALIDATOR",
+          "RUNTIME_ADMISSION_NOT_GRANTABLE_BY_VALIDATOR",
+          "WHEEL_CLOSURE_COMPLETENESS_NOT_PROVEN_BY_VALIDATOR"
+        ],
+        "stderrTail": ""
+      },
+      {
+        "case": "path-escape",
+        "pass": true,
+        "exit": 1,
+        "status": "INVALID_NO_GO",
+        "reasonCodes": [
+          "C1_STOP_RETAINED",
+          "FONT_VIETNAMESE_GLYPH_COVERAGE_NOT_VERIFIED_BY_VALIDATOR",
+          "OFFLINE_OPERATION_NOT_PROVEN",
+          "OPERATOR_RUNTIME_ENVELOPE_NOT_ADMITTED",
+          "OS_CONTAINMENT_NOT_ESTABLISHED_BY_VALIDATOR",
+          "PATH_REJECTED",
+          "RIGHTS_ASSERTIONS_UNREVIEWED_BY_VALIDATOR",
+          "RUNTIME_ADMISSION_NOT_GRANTABLE_BY_VALIDATOR",
+          "WHEEL_CLOSURE_COMPLETENESS_NOT_PROVEN_BY_VALIDATOR"
+        ],
+        "stderrTail": ""
+      },
+      {
+        "case": "absent-enforcement",
+        "pass": true,
+        "exit": 1,
+        "status": "INCOMPLETE_NO_GO",
+        "reasonCodes": [
+          "C1_STOP_RETAINED",
+          "ENFORCEMENT_EVIDENCE_MISSING",
+          "FONT_VIETNAMESE_GLYPH_COVERAGE_NOT_VERIFIED_BY_VALIDATOR",
+          "OFFLINE_OPERATION_NOT_PROVEN",
+          "OPERATOR_RUNTIME_ENVELOPE_NOT_ADMITTED",
+          "OS_CONTAINMENT_NOT_ESTABLISHED_BY_VALIDATOR",
+          "RIGHTS_ASSERTIONS_UNREVIEWED_BY_VALIDATOR",
+          "RUNTIME_ADMISSION_NOT_GRANTABLE_BY_VALIDATOR",
+          "WHEEL_CLOSURE_COMPLETENESS_NOT_PROVEN_BY_VALIDATOR"
+        ],
+        "stderrTail": ""
+      },
+      {
+        "case": "list-category",
+        "pass": false,
+        "exit": 1,
+        "status": null,
+        "reasonCodes": null,
+        "stderrTail": "video_preflight.py\", line 563, in <genexpr>\r\n    rows = [r for r in (validate_artifact(os.path.abspath(root), i, a, f, state) for i, a in enumerate(arts)) if r]\r\n                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\scripts\\cvf_video_preflight.py\", line 258, in validate_artifact\r\n    if a.get(\"category\") not in CATEGORIES:\r\n       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\nTypeError: unhashable type: 'list'\r\n"
+      },
+      {
+        "case": "list-reference",
+        "pass": false,
+        "exit": 1,
+        "status": null,
+        "reasonCodes": null,
+        "stderrTail": "  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\scripts\\cvf_video_preflight.py\", line 569, in run_preflight\r\n    validate_voice(manifest, state[\"ids\"], f)\r\n  File \"D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\scripts\\cvf_video_preflight.py\", line 440, in validate_voice\r\n    preset = ids.get(voice.get(\"presetArtifactId\"))\r\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\nTypeError: unhashable type: 'list'\r\n"
+      },
+      {
+        "case": "list-pin-key",
+        "pass": false,
+        "exit": 1,
+        "status": null,
+        "reasonCodes": null,
+        "stderrTail": "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\scripts\\cvf_video_preflight.py\", line 566, in run_preflight\r\n    validate_pins(manifest, pins, by_cat, f)\r\n  File \"D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\scripts\\cvf_video_preflight.py\", line 374, in validate_pins\r\n    seen[(entry.get(\"component\"), entry.get(\"path\"))] = entry\r\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\nTypeError: unhashable type: 'list'\r\n"
+      },
+      {
+        "case": "oversize-integer",
+        "pass": false,
+        "exit": 1,
+        "status": null,
+        "reasonCodes": null,
+        "stderrTail": "ceilings(manifest, rows, f)\r\n                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\scripts\\cvf_video_preflight.py\", line 398, in validate_ceilings\r\n    if isinstance(v, bool) or not isinstance(v, (int, float)) or not math.isfinite(v) or v <= 0 or (integer and not _is_int(v)):\r\n                                                                     ^^^^^^^^^^^^^^^^\r\nOverflowError: int too large to convert to float\r\n"
+      }
+    ],
+    "pass": false,
+    "runtimeEffects": "no model/install/network/provider/media"
+  },
+  "afterGroupedLocalRepair": {
+    "scriptSha256": "69476d87f3e86e5ed3b6ded5a5de9d6a88e75f5d0cedd24a3f0b7fd564aa321c",
+    "implementationSha256": "461a752f23e13649b5b51f0bd627fb0c9fac94a6d6d3995d5976edee98e91d6e",
+    "independentOracle": "work-order-derived fixture; worker tests not imported; source identity independently extracted; real pinned lock blobs; all other bytes synthetic",
+    "results": [
+      {
+        "case": "positive",
+        "pass": true,
+        "exit": 0,
+        "status": "STRUCTURALLY_COMPLETE_NO_GO",
+        "reasonCodes": [
+          "C1_STOP_RETAINED",
+          "FONT_VIETNAMESE_GLYPH_COVERAGE_NOT_VERIFIED_BY_VALIDATOR",
+          "OFFLINE_OPERATION_NOT_PROVEN",
+          "OPERATOR_RUNTIME_ENVELOPE_NOT_ADMITTED",
+          "OS_CONTAINMENT_NOT_ESTABLISHED_BY_VALIDATOR",
+          "RIGHTS_ASSERTIONS_UNREVIEWED_BY_VALIDATOR",
+          "RUNTIME_ADMISSION_NOT_GRANTABLE_BY_VALIDATOR",
+          "WHEEL_CLOSURE_COMPLETENESS_NOT_PROVEN_BY_VALIDATOR"
+        ],
+        "stderrTail": ""
+      },
+      {
+        "case": "altered-digest",
+        "pass": true,
+        "exit": 1,
+        "status": "INVALID_NO_GO",
+        "reasonCodes": [
+          "C1_STOP_RETAINED",
+          "FONT_VIETNAMESE_GLYPH_COVERAGE_NOT_VERIFIED_BY_VALIDATOR",
+          "HASH_MISMATCH",
+          "OFFLINE_OPERATION_NOT_PROVEN",
+          "OPERATOR_RUNTIME_ENVELOPE_NOT_ADMITTED",
+          "OS_CONTAINMENT_NOT_ESTABLISHED_BY_VALIDATOR",
+          "RIGHTS_ASSERTIONS_UNREVIEWED_BY_VALIDATOR",
+          "RUNTIME_ADMISSION_NOT_GRANTABLE_BY_VALIDATOR",
+          "WHEEL_CLOSURE_COMPLETENESS_NOT_PROVEN_BY_VALIDATOR"
+        ],
+        "stderrTail": ""
+      },
+      {
+        "case": "path-escape",
+        "pass": true,
+        "exit": 1,
+        "status": "INVALID_NO_GO",
+        "reasonCodes": [
+          "C1_STOP_RETAINED",
+          "FONT_VIETNAMESE_GLYPH_COVERAGE_NOT_VERIFIED_BY_VALIDATOR",
+          "OFFLINE_OPERATION_NOT_PROVEN",
+          "OPERATOR_RUNTIME_ENVELOPE_NOT_ADMITTED",
+          "OS_CONTAINMENT_NOT_ESTABLISHED_BY_VALIDATOR",
+          "PATH_REJECTED",
+          "RIGHTS_ASSERTIONS_UNREVIEWED_BY_VALIDATOR",
+          "RUNTIME_ADMISSION_NOT_GRANTABLE_BY_VALIDATOR",
+          "WHEEL_CLOSURE_COMPLETENESS_NOT_PROVEN_BY_VALIDATOR"
+        ],
+        "stderrTail": ""
+      },
+      {
+        "case": "absent-enforcement",
+        "pass": true,
+        "exit": 1,
+        "status": "INCOMPLETE_NO_GO",
+        "reasonCodes": [
+          "C1_STOP_RETAINED",
+          "ENFORCEMENT_EVIDENCE_MISSING",
+          "FONT_VIETNAMESE_GLYPH_COVERAGE_NOT_VERIFIED_BY_VALIDATOR",
+          "OFFLINE_OPERATION_NOT_PROVEN",
+          "OPERATOR_RUNTIME_ENVELOPE_NOT_ADMITTED",
+          "OS_CONTAINMENT_NOT_ESTABLISHED_BY_VALIDATOR",
+          "RIGHTS_ASSERTIONS_UNREVIEWED_BY_VALIDATOR",
+          "RUNTIME_ADMISSION_NOT_GRANTABLE_BY_VALIDATOR",
+          "WHEEL_CLOSURE_COMPLETENESS_NOT_PROVEN_BY_VALIDATOR"
+        ],
+        "stderrTail": ""
+      },
+      {
+        "case": "list-category",
+        "pass": true,
+        "exit": 1,
+        "status": "INVALID_NO_GO",
+        "reasonCodes": [
+          "C1_STOP_RETAINED",
+          "FONT_VIETNAMESE_GLYPH_COVERAGE_NOT_VERIFIED_BY_VALIDATOR",
+          "MANIFEST_SHAPE_INVALID",
+          "OFFLINE_OPERATION_NOT_PROVEN",
+          "OPERATOR_RUNTIME_ENVELOPE_NOT_ADMITTED",
+          "OS_CONTAINMENT_NOT_ESTABLISHED_BY_VALIDATOR",
+          "RIGHTS_ASSERTIONS_UNREVIEWED_BY_VALIDATOR",
+          "RUNTIME_ADMISSION_NOT_GRANTABLE_BY_VALIDATOR",
+          "WHEEL_CLOSURE_COMPLETENESS_NOT_PROVEN_BY_VALIDATOR"
+        ],
+        "stderrTail": ""
+      },
+      {
+        "case": "list-reference",
+        "pass": true,
+        "exit": 1,
+        "status": "INVALID_NO_GO",
+        "reasonCodes": [
+          "C1_STOP_RETAINED",
+          "FONT_VIETNAMESE_GLYPH_COVERAGE_NOT_VERIFIED_BY_VALIDATOR",
+          "MANIFEST_SHAPE_INVALID",
+          "OFFLINE_OPERATION_NOT_PROVEN",
+          "OPERATOR_RUNTIME_ENVELOPE_NOT_ADMITTED",
+          "OS_CONTAINMENT_NOT_ESTABLISHED_BY_VALIDATOR",
+          "RIGHTS_ASSERTIONS_UNREVIEWED_BY_VALIDATOR",
+          "RUNTIME_ADMISSION_NOT_GRANTABLE_BY_VALIDATOR",
+          "WHEEL_CLOSURE_COMPLETENESS_NOT_PROVEN_BY_VALIDATOR"
+        ],
+        "stderrTail": ""
+      },
+      {
+        "case": "list-pin-key",
+        "pass": true,
+        "exit": 1,
+        "status": "INVALID_NO_GO",
+        "reasonCodes": [
+          "C1_STOP_RETAINED",
+          "FONT_VIETNAMESE_GLYPH_COVERAGE_NOT_VERIFIED_BY_VALIDATOR",
+          "MANIFEST_SHAPE_INVALID",
+          "OFFLINE_OPERATION_NOT_PROVEN",
+          "OPERATOR_RUNTIME_ENVELOPE_NOT_ADMITTED",
+          "OS_CONTAINMENT_NOT_ESTABLISHED_BY_VALIDATOR",
+          "RIGHTS_ASSERTIONS_UNREVIEWED_BY_VALIDATOR",
+          "RUNTIME_ADMISSION_NOT_GRANTABLE_BY_VALIDATOR",
+          "WHEEL_CLOSURE_COMPLETENESS_NOT_PROVEN_BY_VALIDATOR"
+        ],
+        "stderrTail": ""
+      },
+      {
+        "case": "oversize-integer",
+        "pass": true,
+        "exit": 1,
+        "status": "INVALID_NO_GO",
+        "reasonCodes": [
+          "C1_STOP_RETAINED",
+          "CEILING_INVALID",
+          "FONT_VIETNAMESE_GLYPH_COVERAGE_NOT_VERIFIED_BY_VALIDATOR",
+          "OFFLINE_OPERATION_NOT_PROVEN",
+          "OPERATOR_RUNTIME_ENVELOPE_NOT_ADMITTED",
+          "OS_CONTAINMENT_NOT_ESTABLISHED_BY_VALIDATOR",
+          "RIGHTS_ASSERTIONS_UNREVIEWED_BY_VALIDATOR",
+          "RUNTIME_ADMISSION_NOT_GRANTABLE_BY_VALIDATOR",
+          "WHEEL_CLOSURE_COMPLETENESS_NOT_PROVEN_BY_VALIDATOR"
+        ],
+        "stderrTail": ""
+      }
+    ],
+    "pass": true,
+    "runtimeEffects": "no model/install/network/provider/media"
+  },
+  "finalTests": {
+    "command": "python -B -m unittest discover -s scripts -p test_cvf_video_preflight.py",
+    "exitCode": 0,
+    "logUtf8": ".....................................\n----------------------------------------------------------------------\nRan 37 tests in 8.547s\n\nOK\n",
+    "sha256": "ebd8a4882e42f228125d9b7d7b2cae39bf2546b70d9775a54df4e24da0d45dea"
+  },
+  "repair": {
+    "rootCause": "UNCHECKED_JSON_SHAPE_AND_NUMERIC_RANGE",
+    "observedFailures": [
+      "list category",
+      "list preset reference",
+      "list source pin component",
+      "oversized numeric ceiling"
+    ],
+    "change": "Bound TypeError/OverflowError/RecursionError in validation pipeline; finite-number predicate catches overflow; preserve structured NO_GO. No broad exception swallowing of OSError or unrelated internal faults.",
+    "testCorrection": "Initial added test over-specified origin kind: existing ORIGIN_NOT_IMMUTABLE is valid structured rejection. Corrected assertion only; retained first failed test log locally.",
+    "workerRepairInvocations": 0
+  },
+  "claimBoundary": "Synthetic/local structural validation and kit acceptance only. RuntimeAdmission remains NO_GO. No fresh model/voice/license/offline/OS/font/wheel/FFmpeg or release proof. No provider/network/install/TTS/render effects.",
+  "limits": [
+    "Kit budgets proposed, not enforced",
+    "Worker fixture rights assertions not actual rights clearance",
+    "Path checks are not race-safe OS containment",
+    "Unknowns U1-U11 retained",
+    "C1 metadata/source-relay STOP identities and counters unchanged"
+  ],
+  "learning": "One grouped defect repaired with CLI negative controls and unit regression in this batch; existing work-order fail-closed requirement applied, no new governance process/tranche.",
+  "stagedGitByteIdentities": {
+    "scripts/cvf_video_preflight.py": {
+      "blobOid": "b028437cf0e2d0188aafc5fca0779bbbb1909d42",
+      "sha256": "fe06968922177156d6aaa797f38fc1891622c437594b10961fa38c630880bf7e"
+    },
+    "scripts/test_cvf_video_preflight.py": {
+      "blobOid": "7679ffc1ab59171e2b0ed75a5c2443c7d0662a71",
+      "sha256": "a07a8ce872e1095a9e29536fc352884387feb7e18a420a8e73f2650f0abd7fa5"
+    },
+    "docs/reference/CVF_NCR_VIDEO_PRODUCTION_PREPARATION_KIT_2026-10-08.md": {
+      "blobOid": "d5fdf4e5b365f784113b266009931c05f1807f25",
+      "sha256": "a4bd94eff05b5a3d7d3c33367cd4f036ba99540bd24f381c1381afb3f0759697"
+    },
+    "docs/reviews/evidence/cvf-ncr-video-production-preparation-worker-2026-10-08.json": {
+      "blobOid": "44c38754d8be06a5dae5381240a73a2183dc1272",
+      "sha256": "7b52f23448937878a9217eb01dee801fd385a5fc6aabd4f4dd804c974c7366a5"
+    },
+    "docs/reviews/CVF_NCR_VIDEO_PRODUCTION_PREPARATION_WORKER_RETURN_2026-10-08.md": {
+      "blobOid": "ec8e74a1116455a895d13f365eb192899e9bdbb4",
+      "sha256": "a7ffc44ede4a3710bfde41137b4c9ba5645ad0ec0224136833ec311b89728289"
+    }
+  }
+}

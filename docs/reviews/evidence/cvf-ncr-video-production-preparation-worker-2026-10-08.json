@@ -1,0 +1,1416 @@
+{
+  "schemaVersion": "cvf.ncrVideoPreparationWorkerEvidence@1",
+  "batchId": "CVF-NCR-VIDEO-PRODUCTION-PREPARATION-20261008",
+  "claimLevel": "PURE_LOCAL_PREFLIGHT_AND_KIT_CONSTRUCTION; no runtime, rights, containment, provider or governance-engine claim",
+  "executionBaseHead": "fce3cf9c75b338acc7cad9c966fcf9fca62dc8cf",
+  "headAtEvidenceBuild": "fce3cf9c75b338acc7cad9c966fcf9fca62dc8cf",
+  "headUnchanged": true,
+  "workerCommitted": false,
+  "releaseChecks": {
+    "cleanStatusAtStart": true,
+    "authorityPins": {
+      "baselineSha256": "cfa582108cf3159dc04c3593e7c08ef8b1f3a8307f1f1277ff5a6244083ea8e7",
+      "workOrderSha256": "41d33a4d5bdaedbf281b7051c85dbb40518e342aeef8a6c4df16d01a74334da4",
+      "matchBootstrapCurrentAuthority": true
+    },
+    "preImplementationGate": {
+      "command": "python -B governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base fce3cf9c75b338acc7cad9c966fcf9fca62dc8cf --head HEAD --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_VIDEO_PRODUCTION_PREPARATION_2026-10-08.md",
+      "exitCode": 0,
+      "gateReportedSeconds": 30.0,
+      "wallSeconds": 36.2,
+      "disposition": "COMPLIANT before any write",
+      "receiptPath": ".cvf/runtime/autorun-receipts/pre-implementation.json (ignored)",
+      "receiptSha256": "02f8803d9f8dcd2d449cc6178f25a45fafe8255b05011c40bb62a593ac8c06df"
+    }
+  },
+  "inputVerification": {
+    "governedSources": {
+      "matchesFrozen": true,
+      "digests": {
+        "docs/reference/CVF_NCR_GENERAL_VIDEO_DESIGN_2026-10-02.md": "3ce5e2363c3e29997fcbf42cb4cec59af7447cca38409d4d970e8aa71e5777e0",
+        "docs/reference/CVF_NCR_VIDEO_COMPOSITION_READINESS_DESIGN_2026-10-03.md": "de3673a2f41695bfa83692095fd0d67f96cea924d48809aefd8b14266c8e6d87",
+        "docs/reviews/CVF_NCR_S05_ASSESSMENT_LANE_SELECTION_2026-10-03.md": "6d95fc56401aee6de3eed37d082c15b6cd70ed40600e813b95721065aea71a62",
+        "docs/reviews/CVF_CVF_NCR_S05_S1_R1_EVIDENCE_RELAY_LOCAL_REVIEW_2026-10-03.md": "54630fcaace2eca4f1ed5d136e8d69a3846484f306929628221c0361656526de",
+        "docs/reviews/evidence/cvf-ncr-s05-assessment-lane-selection-2026-10-03.json": "1bff8bd9149b2418a4c266b35106555fa69e047bde75d742a261fdf4e3ae5748"
+      }
+    },
+    "pinnedBlobs": [
+      {
+        "pin": "85344322b7258b4e25479b692e8e3396baf9db34",
+        "path": "pyproject.toml",
+        "sha256": "b36fc3303dceff0dddbe9f49067d0c82f3c11802e0dd82a2b58208f375d8df63",
+        "bytes": 5991,
+        "matchesFrozen": true
+      },
+      {
+        "pin": "85344322b7258b4e25479b692e8e3396baf9db34",
+        "path": "uv.lock",
+        "sha256": "0921052a578f63d82305eb4a19be2579751edfb579eab0c9d65d977652481e2e",
+        "bytes": 998772,
+        "matchesFrozen": true
+      },
+      {
+        "pin": "85344322b7258b4e25479b692e8e3396baf9db34",
+        "path": "LICENSE",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+        "bytes": 11357,
+        "matchesFrozen": true
+      },
+      {
+        "pin": "85344322b7258b4e25479b692e8e3396baf9db34",
+        "path": "src/vieneu/_v3_turbo_engine/onnx_runtime_lite.py",
+        "sha256": "7747ac18fb5b660a810a434461bd8386ba40b0b46d559c07907db0c19414084e",
+        "bytes": 32607,
+        "matchesFrozen": true
+      },
+      {
+        "pin": "85344322b7258b4e25479b692e8e3396baf9db34",
+        "path": "src/vieneu/v3turbo.py",
+        "sha256": "10757905d3f6454e17c834ec32c73d33b5b9d322d05397295c0bbeb5f3ffb3ad",
+        "bytes": 38604,
+        "matchesFrozen": true
+      },
+      {
+        "pin": "5c52f72399e21f8dcf3ede2bf2d24978c6522a94",
+        "path": "packages/cli/package.json",
+        "sha256": "cb61f0ce2902e34791583d6eb5c80e70f6910e8663c1dc3f802c6409bbaef7b2",
+        "bytes": 2467,
+        "matchesFrozen": true
+      },
+      {
+        "pin": "5c52f72399e21f8dcf3ede2bf2d24978c6522a94",
+        "path": "packages/engine/package.json",
+        "sha256": "5d3aa6d8381c547fa93ddd57ca201857e62c54ed6e69771fb9a460cb8f508be7",
+        "bytes": 2361,
+        "matchesFrozen": true
+      },
+      {
+        "pin": "5c52f72399e21f8dcf3ede2bf2d24978c6522a94",
+        "path": "bun.lock",
+        "sha256": "5993fbbfd6a3affcc0e07f8789711fb69ddb36e7bf8cf716f9383c87b10b067e",
+        "bytes": 264395,
+        "matchesFrozen": true
+      },
+      {
+        "pin": "5c52f72399e21f8dcf3ede2bf2d24978c6522a94",
+        "path": "LICENSE",
+        "sha256": "4259155fb06f127687ee7b0a8a3682d45132db0f2da26cbc0b7a2d1e796436b8",
+        "bytes": 10763,
+        "matchesFrozen": true
+      }
+    ],
+    "pinnedBlobsAllMatch": true,
+    "additionalBlobsReadAsData": [
+      {
+        "pin": "85344322b7258b4e25479b692e8e3396baf9db34",
+        "path": "src/vieneu/factory.py",
+        "sha256": "0cd4631298d4da9de59471c3f3371a8c894b2b9019e40f584373e2c1a3ca3265",
+        "bytes": 2065,
+        "readDisposition": "fully read"
+      },
+      {
+        "pin": "85344322b7258b4e25479b692e8e3396baf9db34",
+        "path": "src/vieneu/base.py",
+        "sha256": "48cc3f8b809a6bfd06e6fea6344673541e547068fb310caaef0dbc1099af6ac5",
+        "bytes": 19719,
+        "readDisposition": "lines 36-66, 118-145, 290-298 read"
+      },
+      {
+        "pin": "85344322b7258b4e25479b692e8e3396baf9db34",
+        "path": "src/vieneu/_v3_turbo_engine/onnx_denoiser.py",
+        "sha256": "a0923ad09075a1285e09133f65401251cac39915b710c24357c9d9e721b1ffe3",
+        "bytes": 5419,
+        "readDisposition": "header read"
+      },
+      {
+        "pin": "5c52f72399e21f8dcf3ede2bf2d24978c6522a94",
+        "path": "packages/cli/src/commands/render.ts",
+        "sha256": "75751e0dc06b58334c4a9b358b3218d24ff57cf91de2d73270551a1f1ea4dcd1",
+        "bytes": 81918,
+        "readDisposition": "NOT READ; existence and digest only"
+      }
+    ],
+    "freshness": "DATED_HISTORICAL_NOT_CURRENT_UPSTREAM; no upstream refresh, clone, package fetch or binary download occurred"
+  },
+  "results": [
+    {
+      "requirementId": "VIDEO-PREFLIGHT",
+      "actualArtifacts": [
+        "scripts/cvf_video_preflight.py",
+        "scripts/test_cvf_video_preflight.py"
+      ],
+      "proofRefs": [
+        "PREFLIGHT-NEGATIVE-CONTROLS",
+        "PREFLIGHT-NO-EFFECTS"
+      ],
+      "status": "PASS"
+    },
+    {
+      "requirementId": "VIDEO-KIT",
+      "actualArtifacts": [
+        "docs/reference/CVF_NCR_VIDEO_PRODUCTION_PREPARATION_KIT_2026-10-08.md"
+      ],
+      "proofRefs": [
+        "PREPARATION-TRACE",
+        "STOP-PRESERVED"
+      ],
+      "status": "PASS"
+    },
+    {
+      "requirementId": "VIDEO-RETURN",
+      "actualArtifacts": [
+        "docs/reviews/evidence/cvf-ncr-video-production-preparation-worker-2026-10-08.json",
+        "docs/reviews/CVF_NCR_VIDEO_PRODUCTION_PREPARATION_WORKER_RETURN_2026-10-08.md"
+      ],
+      "proofRefs": [
+        "SCOPE-AND-RETURN-GATE"
+      ],
+      "status": "PASS"
+    }
+  ],
+  "proofContents": {
+    "PREFLIGHT-NEGATIVE-CONTROLS": {
+      "locator": "python -B -m unittest discover -s scripts -p test_cvf_video_preflight.py",
+      "testsRan": 35,
+      "result": "OK",
+      "controlClasses": [
+        "missing artifact",
+        "hash mismatch",
+        "size mismatch",
+        "traversal and absolute external path",
+        "symlink/reparse link (mocked lstat and real NTFS junction probe)",
+        "duplicate target and id",
+        "unknown/unverified rights and scope-insufficient source license",
+        "missing preset/codec/denoiser disposition",
+        "invalid and nonfinite ceilings (1e999, NaN literal)",
+        "aggregate disk overflow",
+        "missing enforcement evidence",
+        "source pin drift",
+        "S05 source and manifest digest drift",
+        "retiming/estimate controls",
+        "lane substitution",
+        "wheel platform and closure"
+      ],
+      "positiveControl": "valid synthetic fixture -> STRUCTURALLY_COMPLETE_NO_GO with runtimeAdmission NO_GO and osContainment NOT_ESTABLISHED",
+      "mutationControls": {
+        "mutants": 15,
+        "killed": 15
+      }
+    },
+    "PREFLIGHT-NO-EFFECTS": {
+      "locator": "same focused tests assert effects are not invoked",
+      "tests": [
+        "test_static_imports_and_write_modes",
+        "test_runtime_effect_entry_points_are_never_called"
+      ],
+      "assertions": "AST import scan has no subprocess/socket/urllib/importlib/shutil/tempfile/ctypes/vieneu/onnxruntime/huggingface_hub; open() modes are rb and x only; Popen, run, system, popen, socket, create_connection, getaddrinfo, urlopen and putenv trapped and never called across valid and invalid runs; owned root listing and os.environ unchanged; no inference module newly imported"
+    },
+    "PREPARATION-TRACE": {
+      "locator": "preparationTrace",
+      "findingsJoined": [
+        "VR01",
+        "VR02",
+        "VR03",
+        "VR04",
+        "VR05",
+        "VR06"
+      ]
+    },
+    "STOP-PRESERVED": {
+      "locator": "stoppedChainDisposition"
+    },
+    "SCOPE-AND-RETURN-GATE": {
+      "locator": "python -B governance/compat/run_worker_return_fast_gate.py",
+      "recordedIn": "worker return Gate Evidence",
+      "runs": 3
+    }
+  },
+  "commands": [
+    {
+      "command": "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe -B -m unittest discover -s scripts -p test_cvf_video_preflight.py",
+      "exitCode": 0,
+      "elapsedSeconds": 5.52,
+      "outputSha256": "d8dd2f32575670295481be874c6635b9a8452f2d5d49274b0c93bc055fccd505",
+      "outputBytes": 139,
+      "testsRan": 35,
+      "result": "OK"
+    },
+    {
+      "command": "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe -B -m unittest discover -s scripts -p test_cvf_video_preflight.py -v",
+      "exitCode": 0,
+      "elapsedSeconds": 4.23,
+      "outputSha256": "1958e79876a09083496e35d902699b216347e99c345720971405757730a634ab",
+      "outputBytes": 5218,
+      "testNames": [
+        "test_directory_and_non_regular_targets_rejected",
+        "test_duplicate_targets_and_ids",
+        "test_hash_and_size_mismatch_are_invalid",
+        "test_malformed_hash_bytes_origin_and_floating_revision",
+        "test_missing_artifact_is_incomplete",
+        "test_root_must_be_plain_owned_directory",
+        "test_size_bound_applies_before_hashing",
+        "test_symlink_and_reparse_links_rejected",
+        "test_traversal_absolute_and_unsafe_paths_rejected",
+        "test_category_and_file_set_gaps_remain_no_go",
+        "test_malformed_manifests",
+        "test_wheel_closure_platform_and_filename",
+        "test_runtime_effect_entry_points_are_never_called",
+        "test_static_imports_and_write_modes",
+        "test_cli_exit_codes_and_exclusive_report",
+        "test_extract_s05_matches_accepted_identity",
+        "test_report_is_deterministic_and_free_of_timestamps",
+        "test_valid_fixture_is_structurally_complete_but_never_runtime_go",
+        "test_enforced_status_and_units_are_rejected",
+        "test_invalid_and_nonfinite_ceilings",
+        "test_missing_enforcement_evidence_and_presence_changes_nothing_about_no_go",
+        "test_per_placement_and_aggregate_disk_overflow",
+        "test_lane_substitution_rejected",
+        "test_present_denoiser_artifact_is_accepted",
+        "test_preset_codec_and_denoiser_dispositions",
+        "test_source_license_alone_does_not_clear_weights_codec_voice_or_fonts",
+        "test_unknown_missing_and_unverified_rights_are_not_cleared",
+        "test_crlf_normalisation_keeps_text_identity_but_not_raw_identity",
+        "test_frames_claims_and_estimate",
+        "test_frozen_pin_table_matches_input_evidence",
+        "test_manifest_binding_drift_and_absent_source",
+        "test_retiming_keeps_estimate_distinct_from_measurement",
+        "test_s05_source_byte_drift_detected",
+        "test_source_pin_drift_missing_and_freshness_label",
+        "test_synthetic_lock_bytes_do_not_satisfy_frozen_pins"
+      ]
+    },
+    {
+      "command": "mutation controls: 15 single-point mutations of cvf_video_preflight.py, each followed by the focused suite",
+      "exitCode": 0,
+      "results": [
+        {
+          "mutation": "skip hash compare",
+          "exitCode": 1,
+          "killed": true
+        },
+        {
+          "mutation": "skip size compare",
+          "exitCode": 1,
+          "killed": true
+        },
+        {
+          "mutation": "allow traversal",
+          "exitCode": 1,
+          "killed": true
+        },
+        {
+          "mutation": "allow links",
+          "exitCode": 1,
+          "killed": true
+        },
+        {
+          "mutation": "no duplicate-target check",
+          "exitCode": 1,
+          "killed": true
+        },
+        {
+          "mutation": "unknown rights accepted",
+          "exitCode": 1,
+          "killed": true
+        },
+        {
+          "mutation": "rights scope ignored",
+          "exitCode": 1,
+          "killed": true
+        },
+        {
+          "mutation": "nonfinite ceiling accepted",
+          "exitCode": 1,
+          "killed": true
+        },
+        {
+          "mutation": "aggregate disk overflow ignored",
+          "exitCode": 1,
+          "killed": true
+        },
+        {
+          "mutation": "enforcement evidence ignored",
+          "exitCode": 1,
+          "killed": true
+        },
+        {
+          "mutation": "source pin drift ignored",
+          "exitCode": 1,
+          "killed": true
+        },
+        {
+          "mutation": "S05 source drift ignored",
+          "exitCode": 1,
+          "killed": true
+        },
+        {
+          "mutation": "runtime admission GO",
+          "exitCode": 1,
+          "killed": true
+        },
+        {
+          "mutation": "denoiser disposition ignored",
+          "exitCode": 1,
+          "killed": true
+        },
+        {
+          "mutation": "codec disposition ignored",
+          "exitCode": 1,
+          "killed": true
+        }
+      ],
+      "scriptRestoredSha256": "7d1f5f43351ce083b2f96498f7f62ca29b61f2cbed4d418d5dea173de3d4852b",
+      "note": "all mutants killed; script restored byte-identically"
+    },
+    {
+      "command": "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe -B scripts/cvf_video_preflight.py --extract-s05 --design docs/reference/CVF_NCR_GENERAL_VIDEO_DESIGN_2026-10-02.md",
+      "exitCode": 0,
+      "elapsedSeconds": 0.11,
+      "outputSha256": "73949e977e502ebdc69bc9a22202de9275ffbdb5a1053f11fd1d81e99f59ebd8",
+      "outputBytes": 1290,
+      "assertion": "exit 0; identity equals accepted narration/on-screen/status-card digests",
+      "matchesAccepted": true
+    },
+    {
+      "command": "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe -B scripts/cvf_video_preflight.py --manifest .cvf/runtime/cvf-video-preparation-worker-20261008/cli-probe/incomplete.json --root .cvf/runtime/cvf-video-preparation-worker-20261008/cli-probe/res --design docs/reference/CVF_NCR_GENERAL_VIDEO_DESIGN_2026-10-02.md",
+      "exitCode": 1,
+      "elapsedSeconds": 0.1,
+      "outputSha256": "1d4ba3063617b1f01df57131f67f26f235edad0cb420d0575ec2a1411dfde6bc",
+      "outputBytes": 10077,
+      "assertion": "exit 1; INVALID_NO_GO; runtimeAdmission NO_GO",
+      "validationStatus": "INVALID_NO_GO",
+      "runtimeAdmission": "NO_GO"
+    },
+    {
+      "command": "git diff --check",
+      "exitCode": 0,
+      "elapsedSeconds": 0.08,
+      "outputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "outputBytes": 0
+    }
+  ],
+  "preparationTrace": {
+    "findings": [
+      {
+        "id": "VR01",
+        "finding": "0.527 GiB covers 13 selected model/codec entries only",
+        "rowIds": [
+          "R1",
+          "R2",
+          "R3",
+          "R4",
+          "R5",
+          "R6"
+        ],
+        "reasonCodes": [
+          "CEILING_EXCEEDED",
+          "AGGREGATE_DISK_OVERFLOW",
+          "CEILING_MISSING",
+          "CEILING_INVALID"
+        ],
+        "sourceEvidence": [
+          "docs/reviews/evidence/cvf-ncr-s05-assessment-lane-selection-2026-10-03.json metadataSizeQualification",
+          "docs/reviews/CVF_NCR_S05_ASSESSMENT_LANE_SELECTION_2026-10-03.md Findings Size/Hardware"
+        ],
+        "owner": "operator selects values; Local reviewer judges measured use",
+        "terminalDisposition": "OPEN_PROPOSED_NOT_ENFORCED",
+        "reasonCodesEmittedBySource": true
+      },
+      {
+        "id": "VR02",
+        "finding": "local dirs bypass fetch; denoiser still resolves root file; remote fallback unpinned; codec_dir not forwardable",
+        "rowIds": [
+          "C1",
+          "C2",
+          "V2",
+          "V3"
+        ],
+        "reasonCodes": [
+          "ENFORCEMENT_EVIDENCE_MISSING",
+          "CODEC_DISPOSITION_MISSING",
+          "DENOISER_DISPOSITION_MISSING",
+          "SOURCE_FILE_SET_INCOMPLETE",
+          "ARTIFACT_MISSING"
+        ],
+        "sourceEvidence": [
+          {
+            "path": "src/vieneu/_v3_turbo_engine/onnx_runtime_lite.py",
+            "lines": [
+              88,
+              100
+            ]
+          },
+          {
+            "path": "src/vieneu/_v3_turbo_engine/onnx_runtime_lite.py",
+            "lines": [
+              181,
+              214
+            ]
+          },
+          {
+            "path": "src/vieneu/v3turbo.py",
+            "lines": [
+              134,
+              150
+            ]
+          },
+          {
+            "path": "src/vieneu/v3turbo.py",
+            "lines": [
+              171,
+              182
+            ]
+          }
+        ],
+        "owner": "operator and Local reviewer",
+        "terminalDisposition": "OPEN_NO_GO",
+        "reasonCodesEmittedBySource": true
+      },
+      {
+        "id": "VR03",
+        "finding": "preset lookup can download voices_v3_turbo.json; no pin/cache/local-only arguments",
+        "rowIds": [
+          "V1",
+          "V4",
+          "G3"
+        ],
+        "reasonCodes": [
+          "PRESET_MISSING",
+          "PRESET_SOURCE_MISSING",
+          "VOICE_CONSENT_MISSING",
+          "RIGHTS_SCOPE_INSUFFICIENT"
+        ],
+        "sourceEvidence": [
+          {
+            "path": "src/vieneu/v3turbo.py",
+            "lines": [
+              229,
+              253
+            ]
+          },
+          {
+            "path": "src/vieneu/v3turbo.py",
+            "lines": [
+              255,
+              300
+            ]
+          },
+          {
+            "path": "src/vieneu/v3turbo.py",
+            "lines": [
+              468,
+              488
+            ]
+          }
+        ],
+        "owner": "operator and Local reviewer",
+        "terminalDisposition": "OPEN_NO_GO",
+        "reasonCodesEmittedBySource": true
+      },
+      {
+        "id": "VR04",
+        "finding": "core deps include gradio and librosa; Windows wheel closure/size unresolved",
+        "rowIds": [
+          "R1",
+          "R2",
+          "R3"
+        ],
+        "reasonCodes": [
+          "PYTHON_CLOSURE_INCOMPLETE",
+          "WHEEL_PLATFORM_MISMATCH",
+          "WHEEL_FILENAME_INVALID",
+          "SOURCE_LOCK_DRIFT",
+          "WHEEL_CLOSURE_COMPLETENESS_NOT_PROVEN_BY_VALIDATOR"
+        ],
+        "sourceEvidence": [
+          {
+            "path": "pyproject.toml",
+            "lines": [
+              69,
+              84
+            ]
+          },
+          {
+            "path": "pyproject.toml",
+            "lines": [
+              7,
+              11
+            ]
+          },
+          {
+            "path": "pyproject.toml",
+            "lines": [
+              15,
+              17
+            ]
+          },
+          "uv.lock digest pin only"
+        ],
+        "owner": "Local acquisition worker under separate admission",
+        "terminalDisposition": "OPEN_NO_GO",
+        "reasonCodesEmittedBySource": true
+      },
+      {
+        "id": "VR05",
+        "finding": "Node >=22 satisfied; FFmpeg absent on PATH; browser/binary provenance unverified",
+        "rowIds": [
+          "CAT-browser",
+          "CAT-ffmpeg",
+          "CAT-font"
+        ],
+        "reasonCodes": [
+          "CATEGORY_MISSING",
+          "RIGHTS_UNKNOWN",
+          "FONT_VIETNAMESE_GLYPH_COVERAGE_NOT_VERIFIED_BY_VALIDATOR"
+        ],
+        "sourceEvidence": [
+          {
+            "path": "packages/cli/package.json",
+            "lines": [
+              77,
+              79
+            ]
+          },
+          {
+            "path": "packages/engine/package.json",
+            "lines": [
+              69,
+              77
+            ]
+          },
+          {
+            "path": "packages/engine/package.json",
+            "lines": [
+              84,
+              86
+            ]
+          },
+          "frozen input localTools"
+        ],
+        "owner": "Local acquisition worker; operator for fonts",
+        "terminalDisposition": "PARTIAL_NODE_VERSION_ONLY",
+        "reasonCodesEmittedBySource": true
+      },
+      {
+        "id": "VR06",
+        "finding": "source/relay STOP, rights and enforced envelope not proved",
+        "rowIds": [
+          "G1",
+          "G2",
+          "G3",
+          "G4",
+          "G5",
+          "C1",
+          "C2",
+          "C3",
+          "C4",
+          "C5"
+        ],
+        "reasonCodes": [
+          "RIGHTS_UNKNOWN",
+          "RIGHTS_NOT_CLEARED",
+          "ENFORCEMENT_EVIDENCE_MISSING",
+          "C1_STOP_RETAINED",
+          "OPERATOR_RUNTIME_ENVELOPE_NOT_ADMITTED"
+        ],
+        "sourceEvidence": [
+          "docs/reviews/CVF_CVF_NCR_S05_S1_R1_EVIDENCE_RELAY_LOCAL_REVIEW_2026-10-03.md Decision; Claim Boundary",
+          "composition design G-16, G-17"
+        ],
+        "owner": "Local terminal disposition; operator",
+        "terminalDisposition": "STOP_RETAINED_NO_RETRY_NO_SUCCESSOR",
+        "reasonCodesEmittedBySource": true
+      }
+    ],
+    "citationsVerifiedAgainstPinnedBlobs": [
+      {
+        "pin": "85344322b7258b4e25479b692e8e3396baf9db34",
+        "path": "src/vieneu/_v3_turbo_engine/onnx_runtime_lite.py",
+        "lines": [
+          41,
+          41
+        ],
+        "expect": "_CODEC_REPO",
+        "note": "codec remote repo constant",
+        "verified": true
+      },
+      {
+        "pin": "85344322b7258b4e25479b692e8e3396baf9db34",
+        "path": "src/vieneu/_v3_turbo_engine/onnx_runtime_lite.py",
+        "lines": [
+          47,
+          51
+        ],
+        "expect": "moss_audio_tokenizer_decode_full.onnx",
+        "note": "codec file set",
+        "verified": true
+      },
+      {
+        "pin": "85344322b7258b4e25479b692e8e3396baf9db34",
+        "path": "src/vieneu/_v3_turbo_engine/onnx_runtime_lite.py",
+        "lines": [
+          42,
+          46
+        ],
+        "expect": "vieneu_v3_heads.npz",
+        "note": "graph file set",
+        "verified": true
+      },
+      {
+        "pin": "85344322b7258b4e25479b692e8e3396baf9db34",
+        "path": "src/vieneu/_v3_turbo_engine/onnx_runtime_lite.py",
+        "lines": [
+          77,
+          77
+        ],
+        "expect": "codec_dir",
+        "note": "engine accepts codec_dir",
+        "verified": true
+      },
+      {
+        "pin": "85344322b7258b4e25479b692e8e3396baf9db34",
+        "path": "src/vieneu/_v3_turbo_engine/onnx_runtime_lite.py",
+        "lines": [
+          88,
+          93
+        ],
+        "expect": "hf_hub_download(checkpoint_path, \"config.json\")",
+        "note": "remote config probe when onnx_dir unset",
+        "verified": true
+      },
+      {
+        "pin": "85344322b7258b4e25479b692e8e3396baf9db34",
+        "path": "src/vieneu/_v3_turbo_engine/onnx_runtime_lite.py",
+        "lines": [
+          96,
+          100
+        ],
+        "expect": "Path(codec_dir) if codec_dir else self._fetch(",
+        "note": "local dirs bypass fetch",
+        "verified": true
+      },
+      {
+        "pin": "85344322b7258b4e25479b692e8e3396baf9db34",
+        "path": "src/vieneu/_v3_turbo_engine/onnx_runtime_lite.py",
+        "lines": [
+          181,
+          181
+        ],
+        "expect": "self._load_denoiser()",
+        "note": "denoiser always initialised",
+        "verified": true
+      },
+      {
+        "pin": "85344322b7258b4e25479b692e8e3396baf9db34",
+        "path": "src/vieneu/_v3_turbo_engine/onnx_runtime_lite.py",
+        "lines": [
+          184,
+          195
+        ],
+        "expect": "def _fetch",
+        "note": "unpinned hub fetch",
+        "verified": true
+      },
+      {
+        "pin": "85344322b7258b4e25479b692e8e3396baf9db34",
+        "path": "src/vieneu/_v3_turbo_engine/onnx_runtime_lite.py",
+        "lines": [
+          190,
+          190
+        ],
+        "expect": "hf_hub_download(repo, fn, repo_type=\"model\", subfolder=subfolder or None)",
+        "note": "no revision/cache_dir/local_files_only",
+        "verified": true
+      },
+      {
+        "pin": "85344322b7258b4e25479b692e8e3396baf9db34",
+        "path": "src/vieneu/_v3_turbo_engine/onnx_runtime_lite.py",
+        "lines": [
+          197,
+          203
+        ],
+        "expect": "except Exception",
+        "note": "denoiser load swallows errors",
+        "verified": true
+      },
+      {
+        "pin": "85344322b7258b4e25479b692e8e3396baf9db34",
+        "path": "src/vieneu/_v3_turbo_engine/onnx_runtime_lite.py",
+        "lines": [
+          205,
+          214
+        ],
+        "expect": "_resolve_root_file",
+        "note": "root file resolution",
+        "verified": true
+      },
+      {
+        "pin": "85344322b7258b4e25479b692e8e3396baf9db34",
+        "path": "src/vieneu/_v3_turbo_engine/onnx_runtime_lite.py",
+        "lines": [
+          211,
+          212
+        ],
+        "expect": "hf_hub_download(self.checkpoint_path, filename)",
+        "note": "denoiser remote fallback",
+        "verified": true
+      },
+      {
+        "pin": "85344322b7258b4e25479b692e8e3396baf9db34",
+        "path": "src/vieneu/_v3_turbo_engine/onnx_runtime_lite.py",
+        "lines": [
+          216,
+          222
+        ],
+        "expect": "_ensure_speaker_encoder",
+        "note": "cloning-only speaker encoder",
+        "verified": true
+      },
+      {
+        "pin": "85344322b7258b4e25479b692e8e3396baf9db34",
+        "path": "src/vieneu/v3turbo.py",
+        "lines": [
+          134,
+          150
+        ],
+        "expect": "onnx_dir: Optional[str] = None",
+        "note": "constructor onnx_dir parameter",
+        "verified": true
+      },
+      {
+        "pin": "85344322b7258b4e25479b692e8e3396baf9db34",
+        "path": "src/vieneu/v3turbo.py",
+        "lines": [
+          150,
+          150
+        ],
+        "expect": "**kwargs",
+        "note": "extra keywords swallowed",
+        "verified": true
+      },
+      {
+        "pin": "85344322b7258b4e25479b692e8e3396baf9db34",
+        "path": "src/vieneu/v3turbo.py",
+        "lines": [
+          158,
+          159
+        ],
+        "expect": "onnx_update",
+        "note": "fp32 subfolder mapping",
+        "verified": true
+      },
+      {
+        "pin": "85344322b7258b4e25479b692e8e3396baf9db34",
+        "path": "src/vieneu/v3turbo.py",
+        "lines": [
+          161,
+          169
+        ],
+        "expect": "import torch",
+        "note": "device auto imports torch",
+        "verified": true
+      },
+      {
+        "pin": "85344322b7258b4e25479b692e8e3396baf9db34",
+        "path": "src/vieneu/v3turbo.py",
+        "lines": [
+          176,
+          182
+        ],
+        "expect": "OnnxV3LiteEngine(",
+        "note": "engine construction",
+        "verified": true
+      },
+      {
+        "pin": "85344322b7258b4e25479b692e8e3396baf9db34",
+        "path": "src/vieneu/v3turbo.py",
+        "lines": [
+          176,
+          182
+        ],
+        "expect": "ABSENT:codec_dir",
+        "note": "no codec_dir forwarded",
+        "verified": true
+      },
+      {
+        "pin": "85344322b7258b4e25479b692e8e3396baf9db34",
+        "path": "src/vieneu/v3turbo.py",
+        "lines": [
+          229,
+          253
+        ],
+        "expect": "_load_v3_voices",
+        "note": "packaged presets",
+        "verified": true
+      },
+      {
+        "pin": "85344322b7258b4e25479b692e8e3396baf9db34",
+        "path": "src/vieneu/v3turbo.py",
+        "lines": [
+          255,
+          300
+        ],
+        "expect": "_load_repo_voices",
+        "note": "model-root presets",
+        "verified": true
+      },
+      {
+        "pin": "85344322b7258b4e25479b692e8e3396baf9db34",
+        "path": "src/vieneu/v3turbo.py",
+        "lines": [
+          269,
+          273
+        ],
+        "expect": "hf_hub_download(backbone_repo, \"voices_v3_turbo.json\")",
+        "note": "remote preset fallback",
+        "verified": true
+      },
+      {
+        "pin": "85344322b7258b4e25479b692e8e3396baf9db34",
+        "path": "src/vieneu/v3turbo.py",
+        "lines": [
+          297,
+          298
+        ],
+        "expect": "default_voice",
+        "note": "file default voice wins",
+        "verified": true
+      },
+      {
+        "pin": "85344322b7258b4e25479b692e8e3396baf9db34",
+        "path": "src/vieneu/v3turbo.py",
+        "lines": [
+          468,
+          488
+        ],
+        "expect": "_resolve_ref",
+        "note": "preset resolution",
+        "verified": true
+      },
+      {
+        "pin": "85344322b7258b4e25479b692e8e3396baf9db34",
+        "path": "src/vieneu/v3turbo.py",
+        "lines": [
+          111,
+          121
+        ],
+        "expect": "\".cache\"",
+        "note": "cloning temp under home cache",
+        "verified": true
+      },
+      {
+        "pin": "85344322b7258b4e25479b692e8e3396baf9db34",
+        "path": "src/vieneu/v3turbo.py",
+        "lines": [
+          441,
+          466
+        ],
+        "expect": "def save_voices",
+        "note": "writes packaged assets path",
+        "verified": true
+      },
+      {
+        "pin": "85344322b7258b4e25479b692e8e3396baf9db34",
+        "path": "src/vieneu/v3turbo.py",
+        "lines": [
+          153,
+          153
+        ],
+        "expect": "48_000",
+        "note": "sample rate",
+        "verified": true
+      },
+      {
+        "pin": "85344322b7258b4e25479b692e8e3396baf9db34",
+        "path": "src/vieneu/base.py",
+        "lines": [
+          7,
+          7
+        ],
+        "expect": "from huggingface_hub import hf_hub_download",
+        "note": "hub import at module top",
+        "verified": true
+      },
+      {
+        "pin": "85344322b7258b4e25479b692e8e3396baf9db34",
+        "path": "src/vieneu/base.py",
+        "lines": [
+          118,
+          144
+        ],
+        "expect": "perth",
+        "note": "optional watermark",
+        "verified": true
+      },
+      {
+        "pin": "85344322b7258b4e25479b692e8e3396baf9db34",
+        "path": "src/vieneu/base.py",
+        "lines": [
+          293,
+          296
+        ],
+        "expect": "sf.write",
+        "note": "WAV write",
+        "verified": true
+      },
+      {
+        "pin": "85344322b7258b4e25479b692e8e3396baf9db34",
+        "path": "src/vieneu/base.py",
+        "lines": [
+          393,
+          398
+        ],
+        "expect": "_apply_watermark",
+        "note": "watermark no-op",
+        "verified": true
+      },
+      {
+        "pin": "85344322b7258b4e25479b692e8e3396baf9db34",
+        "path": "src/vieneu/factory.py",
+        "lines": [
+          22,
+          25
+        ],
+        "expect": "V3TurboVieNeuTTS(**kwargs)",
+        "note": "factory forwarding",
+        "verified": true
+      },
+      {
+        "pin": "85344322b7258b4e25479b692e8e3396baf9db34",
+        "path": "pyproject.toml",
+        "lines": [
+          69,
+          84
+        ],
+        "expect": "gradio",
+        "note": "core deps include gradio",
+        "verified": true
+      },
+      {
+        "pin": "85344322b7258b4e25479b692e8e3396baf9db34",
+        "path": "pyproject.toml",
+        "lines": [
+          69,
+          84
+        ],
+        "expect": "librosa",
+        "note": "core deps include librosa",
+        "verified": true
+      },
+      {
+        "pin": "85344322b7258b4e25479b692e8e3396baf9db34",
+        "path": "pyproject.toml",
+        "lines": [
+          7,
+          11
+        ],
+        "expect": "win32",
+        "note": "required environments",
+        "verified": true
+      },
+      {
+        "pin": "85344322b7258b4e25479b692e8e3396baf9db34",
+        "path": "pyproject.toml",
+        "lines": [
+          17,
+          17
+        ],
+        "expect": "default-groups",
+        "note": "uv default groups",
+        "verified": true
+      },
+      {
+        "pin": "85344322b7258b4e25479b692e8e3396baf9db34",
+        "path": "pyproject.toml",
+        "lines": [
+          77,
+          77
+        ],
+        "expect": "huggingface_hub",
+        "note": "hub dependency",
+        "verified": true
+      },
+      {
+        "pin": "5c52f72399e21f8dcf3ede2bf2d24978c6522a94",
+        "path": "packages/cli/package.json",
+        "lines": [
+          11,
+          14
+        ],
+        "expect": "hyperframes.mjs",
+        "note": "cli bin",
+        "verified": true
+      },
+      {
+        "pin": "5c52f72399e21f8dcf3ede2bf2d24978c6522a94",
+        "path": "packages/cli/package.json",
+        "lines": [
+          77,
+          79
+        ],
+        "expect": "\"node\": \">=22\"",
+        "note": "node floor",
+        "verified": true
+      },
+      {
+        "pin": "5c52f72399e21f8dcf3ede2bf2d24978c6522a94",
+        "path": "packages/engine/package.json",
+        "lines": [
+          69,
+          77
+        ],
+        "expect": "puppeteer",
+        "note": "engine browser dependency",
+        "verified": true
+      },
+      {
+        "pin": "5c52f72399e21f8dcf3ede2bf2d24978c6522a94",
+        "path": "packages/engine/package.json",
+        "lines": [
+          84,
+          86
+        ],
+        "expect": "\">=22\"",
+        "note": "engine node floor",
+        "verified": true
+      }
+    ],
+    "proposedEnvelope": [
+      {
+        "row": "R1",
+        "key": "download_install_cache_bytes",
+        "value": 5368709120,
+        "unit": "bytes",
+        "status": "PROPOSED_NOT_ENFORCED"
+      },
+      {
+        "row": "R2",
+        "key": "final_artifact_bytes",
+        "value": 3221225472,
+        "unit": "bytes",
+        "status": "PROPOSED_NOT_ENFORCED"
+      },
+      {
+        "row": "R3",
+        "key": "duplicated_storage_bytes",
+        "value": 1073741824,
+        "unit": "bytes",
+        "status": "PROPOSED_NOT_ENFORCED"
+      },
+      {
+        "row": "R4",
+        "key": "log_evidence_bytes",
+        "value": 67108864,
+        "unit": "bytes",
+        "status": "PROPOSED_NOT_ENFORCED"
+      },
+      {
+        "row": "R5",
+        "key": "aggregate_disk_bytes",
+        "value": 10737418240,
+        "unit": "bytes",
+        "status": "PROPOSED_NOT_ENFORCED"
+      },
+      {
+        "row": "R6",
+        "key": "peak_committed_ram_bytes",
+        "value": 8589934592,
+        "unit": "bytes",
+        "status": "PROPOSED_NOT_ENFORCED"
+      },
+      {
+        "row": "R7",
+        "key": "process_count",
+        "value": 24,
+        "unit": "count",
+        "status": "PROPOSED_NOT_ENFORCED"
+      },
+      {
+        "row": "R8",
+        "key": "walltime_seconds",
+        "value": 1800,
+        "unit": "seconds",
+        "status": "PROPOSED_NOT_ENFORCED"
+      },
+      {
+        "row": "R9",
+        "key": "cancellation_grace_seconds",
+        "value": 30,
+        "unit": "seconds",
+        "status": "PROPOSED_NOT_ENFORCED"
+      },
+      {
+        "row": "R10",
+        "key": "retries",
+        "value": 1,
+        "unit": "attempts_per_stage",
+        "status": "PROPOSED_NOT_ENFORCED"
+      }
+    ],
+    "controlRows": [
+      {
+        "row": "C1",
+        "control": "egress_block",
+        "evidence": "MISSING",
+        "status": "NOT_ENFORCED_NO_EVIDENCE"
+      },
+      {
+        "row": "C2",
+        "control": "filesystem_quota",
+        "evidence": "MISSING",
+        "status": "NOT_ENFORCED_NO_EVIDENCE"
+      },
+      {
+        "row": "C3",
+        "control": "memory_cap",
+        "evidence": "MISSING",
+        "status": "NOT_ENFORCED_NO_EVIDENCE"
+      },
+      {
+        "row": "C4",
+        "control": "process_cap",
+        "evidence": "MISSING",
+        "status": "NOT_ENFORCED_NO_EVIDENCE"
+      },
+      {
+        "row": "C5",
+        "control": "walltime_cap",
+        "evidence": "MISSING",
+        "status": "NOT_ENFORCED_NO_EVIDENCE"
+      }
+    ],
+    "rightsRows": [
+      {
+        "row": "G1",
+        "component": "VieNeu code",
+        "status": "SOURCE_CODE_LICENSE_ONLY"
+      },
+      {
+        "row": "G2",
+        "component": "HyperFrames code",
+        "status": "SOURCE_CODE_LICENSE_ONLY"
+      },
+      {
+        "row": "G3",
+        "component": "VieNeu weights and presets",
+        "status": "PUBLISHER_DECLARED_UNVERIFIED"
+      },
+      {
+        "row": "G4",
+        "component": "MOSS codec",
+        "status": "PUBLISHER_DECLARED_UNVERIFIED"
+      },
+      {
+        "row": "G5",
+        "component": "fonts, browser, FFmpeg build, sea-g2p, wheels",
+        "status": "RIGHTS_UNKNOWN"
+      }
+    ],
+    "unknowns": [
+      "U1 huggingface_hub offline/cache semantics",
+      "U2 hf_hub_download on local path string",
+      "U3 sea-g2p/phonemize_text data and retrieval",
+      "U4 packaged voices_v3_turbo.json content/consent",
+      "U5 HyperFrames render.ts flags/browser/FFmpeg/telemetry/0.8.113 delta",
+      "U6 Windows wheel closure/sizes",
+      "U7 measured RAM/disk/process/time",
+      "U8 OS enforcement mechanism and evidence",
+      "U9 pinned licence texts",
+      "U10 fonts and glyph coverage",
+      "U11 npm-to-pin provenance"
+    ]
+  },
+  "stoppedChainDisposition": {
+    "disposition": "PRESERVED_UNCHANGED",
+    "source": "docs/reviews/CVF_CVF_NCR_S05_S1_R1_EVIDENCE_RELAY_LOCAL_REVIEW_2026-10-03.md Claim Boundary",
+    "cvf-ncr-c1-metadata-footprint": {
+      "state": "STOP",
+      "ordinal": 2,
+      "code": "C1_DEPENDENCY_FOOTPRINT_CACHE_SEMANTICS_UNSPECIFIED",
+      "counters": "0/0/1/2",
+      "changed": false
+    },
+    "local-supervisor-source-contract": {
+      "state": "SUCCESSOR",
+      "ordinal": 1,
+      "counters": "unchanged",
+      "changed": false
+    },
+    "relayReview": {
+      "reviewDisposition": "REVIEW_COMPLETE_RELAY_STOP_SOURCE_CLOSURE_WITHHELD",
+      "workerRedispatchAllowed": "NO",
+      "successors": "FEATURE_SUCCESSORS_FROZEN"
+    },
+    "thisOrderIdentity": {
+      "problemKey": "cvf-ncr-video-preflight-kit-construction",
+      "chainMode": "INITIAL",
+      "chainOrdinal": 0,
+      "resetsOrResolvesOldBlockers": false
+    },
+    "historicalEvidenceRewritten": false,
+    "retryOrSuccessorOpened": false
+  },
+  "s05": {
+    "recipe": "design bytes UTF-8, CRLF->LF, S05 section, value after '- <Label>: ', UTF-8, no newline; status card = On-screen value up to first '. '",
+    "designRawSha256": "3ce5e2363c3e29997fcbf42cb4cec59af7447cca38409d4d970e8aa71e5777e0",
+    "narration": {
+      "sha256": "f6c1cd46a00b535e07dc634bcb53d75dc80ed521a58432de8c5b449cf4017fb8",
+      "utf8Bytes": 314,
+      "nfc": true
+    },
+    "onScreen": {
+      "sha256": "0846e61c1a38e8468152a6df998e58b07e143a91f5d8d821ffb5c1ba77c2eede",
+      "utf8Bytes": 345,
+      "nfc": true
+    },
+    "statusCard": {
+      "sha256": "ec3a424cb9b37d3ba630771347c60547b95275ce50900ab73bd8bb17463d3c25",
+      "utf8Bytes": 61,
+      "nfc": true
+    },
+    "claimIds": [
+      "C09",
+      "C10"
+    ],
+    "plannedFrameStates": [
+      {
+        "frameId": "S05-F01",
+        "segmentSha256": "4944d2a1eea3007c8511ff86960cb9ff217aa2e2d07bac890b85fc41e017f1ff",
+        "segmentUtf8Bytes": 40,
+        "statusCardSha256": "ec3a424cb9b37d3ba630771347c60547b95275ce50900ab73bd8bb17463d3c25",
+        "claimIds": [
+          "C09",
+          "C10"
+        ]
+      },
+      {
+        "frameId": "S05-F02",
+        "segmentSha256": "34272820afcdc19d96f2fc119ef54006ab18594b3c24fa901738387bb764f58f",
+        "segmentUtf8Bytes": 82,
+        "statusCardSha256": "ec3a424cb9b37d3ba630771347c60547b95275ce50900ab73bd8bb17463d3c25",
+        "claimIds": [
+          "C09",
+          "C10"
+        ]
+      },
+      {
+        "frameId": "S05-F03",
+        "segmentSha256": "6c94bb1ea30091d0eaf53ae45ddc0e10bce9d80499cd4e2e7959e532dca773b5",
+        "segmentUtf8Bytes": 61,
+        "statusCardSha256": "ec3a424cb9b37d3ba630771347c60547b95275ce50900ab73bd8bb17463d3c25",
+        "claimIds": [
+          "C09",
+          "C10"
+        ]
+      },
+      {
+        "frameId": "S05-F04",
+        "segmentSha256": "87274bae99734a84ca1854b9b79d124790c06e2dd01838019584a1d97a06b541",
+        "segmentUtf8Bytes": 93,
+        "statusCardSha256": "ec3a424cb9b37d3ba630771347c60547b95275ce50900ab73bd8bb17463d3c25",
+        "claimIds": [
+          "C09",
+          "C10"
+        ]
+      }
+    ],
+    "matchesAcceptedIdentity": true,
+    "originalEstimateSeconds": 20,
+    "measuredNarrationSeconds": null,
+    "retiming": "NONE_NOT_MEASURED; no audio exists; any >19.5 s measurement needs operator disposition"
+  },
+  "outputHashes": {
+    "scripts/cvf_video_preflight.py": {
+      "sha256": "7d1f5f43351ce083b2f96498f7f62ca29b61f2cbed4d418d5dea173de3d4852b",
+      "lines": 620
+    },
+    "scripts/test_cvf_video_preflight.py": {
+      "sha256": "b793a241dbc0939b7d2d680e6951a866fb4de74c7332c47a6f103ff93297cc0f",
+      "lines": 512
+    },
+    "docs/reference/CVF_NCR_VIDEO_PRODUCTION_PREPARATION_KIT_2026-10-08.md": {
+      "sha256": "a4bd94eff05b5a3d7d3c33367cd4f036ba99540bd24f381c1381afb3f0759697",
+      "lines": 254
+    },
+    "note": "the evidence JSON and the return cannot hash themselves; the reviewer recomputes them"
+  },
+  "gitChangedUnion": {
+    "statusShortFinal": [
+      "?? docs/reference/CVF_NCR_VIDEO_PRODUCTION_PREPARATION_KIT_2026-10-08.md",
+      "?? docs/reviews/CVF_NCR_VIDEO_PRODUCTION_PREPARATION_WORKER_RETURN_2026-10-08.md",
+      "?? docs/reviews/evidence/cvf-ncr-video-production-preparation-worker-2026-10-08.json",
+      "?? scripts/cvf_video_preflight.py",
+      "?? scripts/test_cvf_video_preflight.py"
+    ],
+    "trackedModifications": [],
+    "union": [
+      "docs/reference/CVF_NCR_VIDEO_PRODUCTION_PREPARATION_KIT_2026-10-08.md",
+      "docs/reviews/CVF_NCR_VIDEO_PRODUCTION_PREPARATION_WORKER_RETURN_2026-10-08.md",
+      "docs/reviews/evidence/cvf-ncr-video-production-preparation-worker-2026-10-08.json",
+      "scripts/cvf_video_preflight.py",
+      "scripts/test_cvf_video_preflight.py"
+    ],
+    "unionEqualsAllowedFivePaths": true
+  },
+  "effects": {
+    "networkAccess": 0,
+    "install": 0,
+    "modelDownload": 0,
+    "providerCalls": 0,
+    "mediaExecution": 0,
+    "voiceGeneration": 0,
+    "videoRender": 0,
+    "upstreamFetch": 0,
+    "subprocessesStartedByPreflightCode": 0,
+    "workerSubprocessesOutsidePreflight": "git, python test runner and gate commands run by the worker shell; one PowerShell junction probe in the owned ignored root"
+  },
+  "limitations": [
+    "no aggregate all-repository scan claim",
+    "synthetic fixture digests are invented test data, not production pins",
+    "symlink creation is unavailable on this host (OSError); symlink detection is covered by mocked lstat and one real NTFS junction probe (attributes 0x410 rejected as LINK)",
+    "validator checks local metadata and file digests only: no offline, containment, rights-clearance or runtime-readiness proof",
+    "huggingface_hub, sea-g2p, HyperFrames render command and packaged preset content were not read (U1-U5)",
+    "no live Governance Engine, provider or CVF governance proof",
+    "tool wall clock only; token cost UNKNOWN"
+  ],
+  "cleanup": {
+    "ownedRoot": ".cvf/runtime/cvf-video-preparation-worker-20261008",
+    "syntheticFixturesDeleted": true,
+    "junctionProbeLinkRemovedBeforeDirectoryDelete": true,
+    "residualOwnedRootEntries": [],
+    "ignoredReceiptsLeft": ".cvf/runtime/autorun-receipts/*.json written by gate runs (ignored runtime state)"
+  },
+  "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
+  "gateRuns": [
+    {
+      "command": "python -B governance/compat/run_worker_return_fast_gate.py",
+      "exitCode": 1,
+      "gateReportedSeconds": 7.26,
+      "logSha256": "1b9764d25c78b2f35435503a18629622f39074b86daab7b26151fd88d068373d",
+      "note": "initial draft: 3 defects (read-ahead wording; non-ASCII literal at test line 430 without Text Encoding Exception; missing PASS line for the gate in Command Evidence); then repaired"
+    },
+    {
+      "command": "python -B governance/compat/run_worker_return_fast_gate.py",
+      "exitCode": 0,
+      "gateReportedSeconds": 6.88,
+      "logSha256": "101cc67538efd434d25307863edf55b1561dbef3bc1c2a7e291f70467745b109",
+      "note": "after repairs; literal order command"
+    },
+    {
+      "command": "python -B governance/compat/run_worker_return_fast_gate.py --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_VIDEO_PRODUCTION_PREPARATION_2026-10-08.md",
+      "exitCode": 0,
+      "gateReportedSeconds": 7.15,
+      "logSha256": "0613fed7119974e3a23cef3842295c1661f2de86dd797b6857cefb9211730090",
+      "note": "after repairs; includes work-order acceptance ledger and independent-probe admission with the order bound"
+    }
+  ],
+  "gateRunNote": "A last confirmation run on the final return bytes is reported in the worker message; recording it in a hashed file would change the bytes it checks.",
+  "timing": {
+    "startObservedLocalClock": "2026-10-08T08:18:33",
+    "lastObservedLocalClock": "2026-10-08T08:47",
+    "approxMinutes": 29,
+    "ceilingMinutes": 90,
+    "tokenCost": "UNKNOWN",
+    "basis": "shell date output; not a metered measurement"
+  }
+}

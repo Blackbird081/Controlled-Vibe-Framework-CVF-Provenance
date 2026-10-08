@@ -39,9 +39,9 @@
     "baselinePath": "docs/baselines/CVF_GC018_NCR_VIDEO_PRODUCTION_PREPARATION_2026-10-08.md",
     "baselineSha256": "cfa582108cf3159dc04c3593e7c08ef8b1f3a8307f1f1277ff5a6244083ea8e7",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_VIDEO_PRODUCTION_PREPARATION_2026-10-08.md",
-    "workOrderSha256": "41d33a4d5bdaedbf281b7051c85dbb40518e342aeef8a6c4df16d01a74334da4"
+    "workOrderSha256": "5f33aec19e85e5bdbea6207fcae70d138ac5ab3cdbf3a0cb537c93aab16d5b14"
   },
-  "currentAuthoritySyncReason": "Operator preparation dispatch 3a8298cf3cf01537f6abcb970ad504d4de138f2f;pure-local kit only,C1/media STOP retained.",
+  "currentAuthoritySyncReason": "Preparation Local closure;structured NO_GO repair;C1/media STOP retained.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
