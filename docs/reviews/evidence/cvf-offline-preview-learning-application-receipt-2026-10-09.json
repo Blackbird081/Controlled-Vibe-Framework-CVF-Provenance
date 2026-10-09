@@ -1,0 +1,24 @@
+{
+  "schemaVersion": "cvf.learningLoopReceipt@1.0.0",
+  "kind": "APPLICATION",
+  "findingId": "NCR-LEARNING-APPLICATION-OBSERVABILITY",
+  "sourceProject": "CVF-CORE",
+  "control": {
+    "path": "governance/compat/learning_application_binding.py",
+    "sha256": "84068b6f197c19404a23daa643266d7f9ed334f313cd2d8bbe2f2e6d37d7b7b8"
+  },
+  "actor": "LOCAL_INTERNAL_AGENT_ORCHESTRATOR_REVIEWER",
+  "authorization": {
+    "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_OFFLINE_PREVIEW_DELIVERY_2026-10-09.md",
+    "sha256": "13244fc94f1f7c2fcc711c428027e1faf1bd7f677817c9ab797ec905ccd92257",
+    "fragment": "Reviewer Closure Conversion",
+    "evidenceClass": "OBSERVED_LOCAL"
+  },
+  "verification": {
+    "path": "docs/reviews/evidence/cvf-offline-preview-learning-application-2026-10-09.json",
+    "sha256": "cf1f0cfc56a26559e3d8b619cdd08e735d19695e4e5e26c742bd0e7c88d50fb6",
+    "fragment": "observedDispatchAndResult",
+    "evidenceClass": "OBSERVED_LOCAL"
+  },
+  "claimLimits": "APPLIED for one Local offline UI dispatch and returned-result review only. Same Local actor authored dispatch and adjudicated learning; implementation worker was distinct. Positive/negative control observations are structural. No attestation of every preparation read, zero defects, universal compliance, source R2 resolution, AI runtime governance, production readiness, cost savings or provider capability. Original worker and prior learning receipt bytes retained; parent projectResolution remains OPEN."
+}

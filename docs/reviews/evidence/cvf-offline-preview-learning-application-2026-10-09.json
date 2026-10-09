@@ -1,0 +1,156 @@
+{
+  "schemaVersion": "cvf.learningActualApplicationObservation@1.0.0",
+  "date": "2026-10-09",
+  "baseHead": "f4e5c9037c4163b80a9dc90f4e2a01f913d48e71",
+  "findingId": "NCR-LEARNING-APPLICATION-OBSERVABILITY",
+  "control": {
+    "path": "governance/compat/learning_application_binding.py",
+    "sha256": "84068b6f197c19404a23daa643266d7f9ed334f313cd2d8bbe2f2e6d37d7b7b8"
+  },
+  "sourceProject": "CVF-CORE",
+  "authorization": {
+    "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_OFFLINE_PREVIEW_DELIVERY_2026-10-09.md",
+    "sha256": "13244fc94f1f7c2fcc711c428027e1faf1bd7f677817c9ab797ec905ccd92257",
+    "fragment": "Reviewer Closure Conversion",
+    "evidenceClass": "OBSERVED_LOCAL"
+  },
+  "observedDispatchAndResult": {
+    "dispatchedWorkOrderRawSha256": "39d43ebb1b49a8c885860f4902ebb3363e209b3f1c5cec8ea6146c63863c378d",
+    "workerExecutionBaseHead": "583d871afe66647d1d9760cb436ad95b7f946f61",
+    "acceptedMaterialCommit": "cbd7b49705e1cc88745d85a09d680fda3df0b433",
+    "continuityCommit": "f4e5c9037c4163b80a9dc90f4e2a01f913d48e71",
+    "actualWorkerReturnReceived": true,
+    "localIndependentProbe": [
+      {
+        "id": "POSITIVE_PINNED_PROJECTION",
+        "status": "PASS",
+        "htmlSha256": "483e1d109196700cee0099d51d843b17374f5340f059cd76b045c263ea0f69c6",
+        "matchesWorkerHtml": true
+      },
+      {
+        "id": "DIGEST_DRIFT",
+        "status": "REJECTED",
+        "outputSentinelPreserved": true
+      },
+      {
+        "id": "HTML_SCRIPT_EVENT_ESCAPING",
+        "status": "PASS",
+        "scripts": 1,
+        "injectedImages": 0,
+        "eventAttributes": [],
+        "payloadExactTextOccurrences": 3
+      }
+    ],
+    "selectedOutcome": "CLOSED_PASS_BOUNDED",
+    "packetDefects": "Two worker self-repair passes and four reviewer packaging corrections retained; no claim of error-free execution",
+    "effectHoldsRetained": true
+  },
+  "canonicalBindingObservation": {
+    "commandOrMethod": "learning_application_binding.validate_changed(root, actual closed work order text); remove only plan in memory for negative",
+    "positiveIssues": [],
+    "negativeIssues": [
+      {
+        "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_OFFLINE_PREVIEW_DELIVERY_2026-10-09.md",
+        "type": "learning_plan_missing",
+        "message": "dispatch needs exactly one learning-application-plan-json block"
+      }
+    ],
+    "dispatchAuthoringObservation": {
+      "actualWorkOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_OFFLINE_PREVIEW_DELIVERY_2026-10-09.md",
+      "positive": "PASS",
+      "negativeMissingPlan": "REJECTED_learning_plan_missing",
+      "projectApplication": "NOT_APPLIED_PENDING_REAL_DISPATCH_AND_RETURN_REVIEW"
+    }
+  },
+  "sourcePins": [
+    {
+      "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_OFFLINE_PREVIEW_DELIVERY_2026-10-09.md",
+      "sha256": "13244fc94f1f7c2fcc711c428027e1faf1bd7f677817c9ab797ec905ccd92257",
+      "fragment": "Learning Application Plan",
+      "evidenceClass": "OBSERVED_LOCAL"
+    },
+    {
+      "path": "docs/reviews/evidence/cvf-storyboard-preview-local-review-2026-10-09.json",
+      "sha256": "73ff81d6d5b12ea805b45957d55aa0f578882a4efc6aa29a07fdbf57dc4acf11",
+      "fragment": "learningObservation",
+      "evidenceClass": "OBSERVED_LOCAL"
+    },
+    {
+      "path": "docs/reviews/evidence/cvf-storyboard-preview-worker-2026-10-09.json",
+      "sha256": "30d159ab8ef8e1cbbf63815146c699903dc7e187995bccdb29f82fc8603508ee",
+      "fragment": "workerReturnGate",
+      "evidenceClass": "OBSERVED_LOCAL"
+    },
+    {
+      "path": "docs/reviews/CVF_NCR_OFFLINE_PREVIEW_DELIVERY_COMPLETION_2026-10-09.md",
+      "sha256": "14757c09d5b0e71e095a5f91d43708663b793697dd66be25df3803d2d29578e0",
+      "fragment": "Scope / Methodology",
+      "evidenceClass": "OBSERVED_LOCAL"
+    },
+    {
+      "path": "docs/reviews/evidence/cvf-offline-preview-dispatch-inputs-2026-10-09.json",
+      "sha256": "de009024ef9499ed6b817ebac969f89c5d3bbd545b602938199d83dc609926f8",
+      "fragment": "authoringLearningCheck",
+      "evidenceClass": "OBSERVED_LOCAL"
+    }
+  ],
+  "consumedReceipts": [
+    {
+      "label": "released-dispatch",
+      "path": ".cvf/runtime/cvf-video-storyboard-review-20261008/offline-dispatch-release-final-gates/pre-dispatch.json",
+      "sha256": "a99c311e968e03b88fd47dcb1a74f287774348af45d70135bc024f9201204919",
+      "receipt": {
+        "status": "PASS",
+        "phase": "pre-dispatch",
+        "baseSha": "6ccf87ff5",
+        "headSha": "583d871af",
+        "commandManifestHash": "3eaad6c6f7d32681f29d00cdaa1861903ae2d1ff778ba43adaf84e3070fbf97b",
+        "receiptDigest": "419e984b47b179121d5667b74fe4867d60729a8bd94823a1a328679444173cda"
+      },
+      "checksConsumed": 86
+    },
+    {
+      "label": "worker-preimplementation",
+      "path": ".cvf/runtime/cvf-offline-preview-worker-20261009/gates/pre-implementation.json",
+      "sha256": "673d307f82629148677b07e7d284f1d301e0da760f05dd2435aa04ea79476f43",
+      "receipt": {
+        "status": "PASS",
+        "phase": "pre-implementation",
+        "baseSha": "583d871af",
+        "headSha": "583d871af",
+        "commandManifestHash": "4985f2fcbeccdb252c638b437b79fcedf55ef1f4e0829e601425a40bd8167b1d",
+        "receiptDigest": "73cfc08b9f0da0c4bac0aefea4f62c9409d21f315dc2e7a4937adf9bfee2bdf6"
+      },
+      "checksConsumed": 88
+    },
+    {
+      "label": "final-local-continuity",
+      "path": ".cvf/runtime/cvf-offline-preview-local-review-20261009/continuity-closure/pre-closure.json",
+      "sha256": "3e01545056575a209c74262b48a43b253929f75d1dff45c7c97bab9d92f23273",
+      "receipt": {
+        "status": "PASS",
+        "phase": "pre-closure",
+        "baseSha": "cbd7b4970",
+        "headSha": "f4e5c9037",
+        "commandManifestHash": "49070f271bdf3d6b8045f67f5d5b9abc481a3b75b2f47ba061ead6fb377b1e72",
+        "receiptDigest": "b15022eb9fb1f56467d537072fc4b02cbbb093711a89cf46c9e8643461b14948"
+      },
+      "checksConsumed": 84
+    }
+  ],
+  "receiptQualification": "Historical dispatch/material receipts may carry raw fingerprints without committedEvidence; they are recorded observations, not immutable historical-worktree certification. Final current continuity receipt has committedEvidence. No broad suite/provider rerun.",
+  "adif": {
+    "query": "taskClass=learning-application-review;role=reviewer;lifecyclePhase=review",
+    "returned": "NONE_RETURNED",
+    "totalCandidates": 0,
+    "truncated": false
+  },
+  "manifest": [
+    "docs/reference/downstream_gate_profile/downstream_finding_intake_registry.json",
+    "docs/reviews/evidence/cvf-offline-preview-learning-application-2026-10-09.json",
+    "docs/reviews/evidence/cvf-offline-preview-learning-application-receipt-2026-10-09.json",
+    "docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md",
+    "docs/reviews/learnings/README.md"
+  ],
+  "claimLimits": "APPLIED for one Local offline UI dispatch and returned-result review only. Same Local actor authored dispatch and adjudicated learning; implementation worker was distinct. Positive/negative control observations are structural. No attestation of every preparation read, zero defects, universal compliance, source R2 resolution, AI runtime governance, production readiness, cost savings or provider capability. Original worker and prior learning receipt bytes retained; parent projectResolution remains OPEN."
+}

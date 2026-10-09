@@ -156,7 +156,7 @@ Claim Update: bounded audit/written learning completed;automated preapproval enf
 
 | Field | Evidence |
 |---|---|
-| applicableCheckersRead | governance/compat/check_finding_to_governance_learning.py;governance/compat/check_semantic_convergence_control.py;governance/compat/check_governed_artifact_checker_read_ahead.py;governance/compat/check_core_guard_self_protection.py;governance/compat/check_markdown_structural_completeness.py;governance/compat/check_review_cost_control.py;governance/compat/check_corpus_completeness_report_integrity.py;governance/compat/check_agent_operation_trace.py |
+| applicableCheckersRead | governance/compat/parent_learning_evidence.py;governance/compat/learning_application_binding.py; governance/compat/check_finding_to_governance_learning.py;governance/compat/check_semantic_convergence_control.py;governance/compat/check_governed_artifact_checker_read_ahead.py;governance/compat/check_core_guard_self_protection.py;governance/compat/check_markdown_structural_completeness.py;governance/compat/check_review_cost_control.py;governance/compat/check_corpus_completeness_report_integrity.py;governance/compat/check_agent_operation_trace.py |
 | literalTokensReviewed | WORKER_RETURN_ROUTE_UNBUILDABLE; shared parser exact single backticked field;  RULE_EXISTS;RULE_ADDED;MACHINE_CHECK_CANDIDATE;GOVERNANCE_CONTROL_PLANE;review/audit;trace17labels;historical source hash versus material final identity;NO_GO |
 | gateRunPurpose | confirmation of bounded learning promotion and written owner changes,not first discovery or new guard activation |
 | claimBoundary | documentary/static declared-evidence shape only |
@@ -387,7 +387,7 @@ review. Capture actual work-order binding plus positive/negative verification
 against the canonical control;record success or a renewed finding,without
 opening native/source effects or inventing a zero-cost claim.
 
-## Agent Operation Trace Block
+## Historical Forward Control Operation Trace
 
 | Field | Evidence |
 |---|---|
@@ -407,5 +407,55 @@ opening native/source effects or inventing a zero-cost claim.
 | Invocation ID | learning-application-binding-20261009 |
 | Expected manifest | `governance/compat/learning_application_binding.py`; `governance/compat/check_finding_to_governance_learning.py`; `governance/compat/parent_learning_evidence.py`; `governance/compat/test_learning_application_binding.py`; `governance/compat/test_check_finding_to_governance_learning.py`; `governance/compat/test_parent_learning_evidence.py`; `docs/reference/downstream_gate_profile/CVF_PROJECT_LEARNING_LOOP_STANDARD.md`; `docs/reference/downstream_gate_profile/downstream_finding_intake_registry.json`; `docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md`; `docs/reviews/learnings/README.md`; `docs/baselines/CVF_GC018_LEARNING_APPLICATION_BINDING_2026-10-09.md`; `docs/reviews/CVF_LEARNING_APPLICATION_BINDING_COMPLETION_2026-10-09.md`; `docs/reviews/evidence/cvf-learning-application-binding-2026-10-09.json` |
 | Actual changed set | `governance/compat/learning_application_binding.py`; `governance/compat/check_finding_to_governance_learning.py`; `governance/compat/parent_learning_evidence.py`; `governance/compat/test_learning_application_binding.py`; `governance/compat/test_check_finding_to_governance_learning.py`; `governance/compat/test_parent_learning_evidence.py`; `docs/reference/downstream_gate_profile/CVF_PROJECT_LEARNING_LOOP_STANDARD.md`; `docs/reference/downstream_gate_profile/downstream_finding_intake_registry.json`; `docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md`; `docs/reviews/learnings/README.md`; `docs/baselines/CVF_GC018_LEARNING_APPLICATION_BINDING_2026-10-09.md`; `docs/reviews/CVF_LEARNING_APPLICATION_BINDING_COMPLETION_2026-10-09.md`; `docs/reviews/evidence/cvf-learning-application-binding-2026-10-09.json` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: none |
+
+## Actual Dispatch Application Observation - 2026-10-09
+
+Current parent lifecycle: MERGE / IMPLEMENTED_BOUNDED / RETURNED / APPLIED / OPEN. APPLIED is limited to the Local offline UI dispatch and returned-result review; OPEN retains broader effectiveness and original source-project gaps. Prior NOT_APPLIED statements above describe earlier observations, not this new receipt.
+
+The real worker started at released HEAD 583d871afe66647d1d9760cb436ad95b7f946f61 and returned seven artifacts; Local accepted unchanged bytes at cbd7b49705e1cc88745d85a09d680fda3df0b433 with a separate three-case probe. Phase-correct documentary inputs, exact bound feasibility and full return route preceded delivery; original source R2 STOP/effect boundaries were preserved. Actual plan passes the canonical binding validator; removing it in memory fails learning_plan_missing. Existing observed DELIVERY stays pinned; the new APPLICATION receipt binds governing authorization and Local observed project verification.
+
+Application evidence: docs/reviews/evidence/cvf-offline-preview-learning-application-2026-10-09.json; typed receipt: docs/reviews/evidence/cvf-offline-preview-learning-application-receipt-2026-10-09.json. Worker self-repair and reviewer packaging errors remain disclosed. No model capability, cost-saving, every-read, universal agent compliance or live governance assertion follows from this bounded observation. Parent application is a Local adjudication, not acceptance inferred from structural PASS. No new standard, checker or worker task.
+
+## Current Application Review Cost
+
+Review-Cost Telemetry: REQUIRED
+reviewRoundCount: 1
+workerRepairTurnCount: 0
+newRootCauseCountThisRound: 0
+dependentFindingCountThisRound: 0
+providerCallCount: 0
+materialCommitCount: 1
+continuityCommitCount: 1
+elapsedReviewMinutes: NOT_AVAILABLE_WITH_REASON: no full intake start timing captured
+tokenOrQuotaUsage: NOT_AVAILABLE_WITH_REASON: no usage meter
+valueDelta: fulfill first actual dispatch/result observation boundary through existing typed receipt and owner; no duplicate product tests
+stopDisposition: COMPLETE_REVIEW
+preRepairAuditDisposition: NO_REPAIR_REQUIRED
+commitPlanDisposition: DEFAULT_ONE_MATERIAL_ONE_CONTINUITY
+latencyDisposition: NOT_MEASURED_WITH_REASON: intake timing unavailable
+avoidableDelayClass: NONE
+
+## Agent Operation Trace Block
+
+| Field | Evidence |
+|---|---|
+| Actor | Local INTERNAL_AGENT reviewer/maintainer |
+| Provider or surface | private CVF workspace |
+| Session or invocation | offline-ui-learning-application-20261009 |
+| Working directory | repository root |
+| Command or tool surface | consumed dispatch/worker/Local receipts; canonical plan positive and in-memory negative; typed parent validation |
+| Target paths | `docs/reference/downstream_gate_profile/downstream_finding_intake_registry.json`; `docs/reviews/evidence/cvf-offline-preview-learning-application-2026-10-09.json`; `docs/reviews/evidence/cvf-offline-preview-learning-application-receipt-2026-10-09.json`; `docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md`; `docs/reviews/learnings/README.md` |
+| Allowed scope source | operator continue; existing orchestrator learning closure and autonomous maintenance authority |
+| Before status evidence | clean HEAD f4e5c9037c4163b80a9dc90f4e2a01f913d48e71; parent RETURNED/NOT_APPLIED, actual UI acceptance already exists |
+| After status evidence | five material paths; one bounded APPLICATION receipt admitted, parent OPEN retained |
+| Diff evidence | exact staged five-path manifest; git diff --check |
+| Approval boundary | Local learning evidence adjudication only |
+| Claim boundary | APPLIED for one Local offline UI dispatch and returned-result review only. Same Local actor authored dispatch and adjudicated learning; implementation worker was distinct. Positive/negative control observations are structural. No attestation of every preparation read, zero defects, universal compliance, source R2 resolution, AI runtime governance, production readiness, cost savings or provider capability. Original worker and prior learning receipt bytes retained; parent projectResolution remains OPEN. |
+| Agent type | INTERNAL_AGENT |
+| Invocation ID | offline-ui-learning-application-20261009 |
+| Expected manifest | `docs/reference/downstream_gate_profile/downstream_finding_intake_registry.json`; `docs/reviews/evidence/cvf-offline-preview-learning-application-2026-10-09.json`; `docs/reviews/evidence/cvf-offline-preview-learning-application-receipt-2026-10-09.json`; `docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md`; `docs/reviews/learnings/README.md` |
+| Actual changed set | `docs/reference/downstream_gate_profile/downstream_finding_intake_registry.json`; `docs/reviews/evidence/cvf-offline-preview-learning-application-2026-10-09.json`; `docs/reviews/evidence/cvf-offline-preview-learning-application-receipt-2026-10-09.json`; `docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md`; `docs/reviews/learnings/README.md` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |

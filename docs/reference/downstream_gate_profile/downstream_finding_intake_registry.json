@@ -253,7 +253,7 @@
               "sourceProject": "CVF-CORE",
               "evidence": {
                 "path": "docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md",
-                "sha256": "0e4975f437b0676d42adfceb681474fba98e278466a61aa41adc6783224aa69b",
+                "sha256": "1609cc9d955bc88b2e09179331d7828406114d98b23c81cfb3f2992afa3920f6",
                 "fragment": "Forward Application Control",
                 "evidenceClass": "OBSERVED_LOCAL"
               }
@@ -265,7 +265,7 @@
                 "evidence": [
                   {
                     "path": "docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md",
-                    "sha256": "0e4975f437b0676d42adfceb681474fba98e278466a61aa41adc6783224aa69b",
+                    "sha256": "1609cc9d955bc88b2e09179331d7828406114d98b23c81cfb3f2992afa3920f6",
                     "fragment": "R2 Result And Cost-Aware Dispatcher Learning",
                     "evidenceClass": "OBSERVED_LOCAL"
                   }
@@ -366,7 +366,7 @@
             },
             "projectResolution": {
               "state": "OPEN",
-              "reason": "Local reception and bounded document actions recorded; first real work-order dispatch, independent returned-result behavior and effectiveness remain unverified.",
+              "reason": "OPEN: one Local dispatch/result application observed, but universal adherence, original source R2 gaps and broader outcome effectiveness remain unresolved.",
               "evidence": []
             },
             "returnDelivery": {
@@ -382,11 +382,18 @@
               ]
             },
             "projectApplication": {
-              "state": "NOT_APPLIED",
-              "reason": "Observed Local document actions and a candidate APPLICATION receipt do not fulfill the finding source record first-real-work-order-dispatch/result-review measurement boundary. No actual dispatch occurred; do not promote a projected plan PASS.",
-              "evidence": []
+              "state": "APPLIED",
+              "reason": "Local adjudicated the first real offline UI work-order dispatch and returned-result review; observed authorization, control identity and delivery proof are bound by the new typed receipt. One task only; broader effectiveness and source R2 remain open.",
+              "evidence": [
+                {
+                  "path": "docs/reviews/evidence/cvf-offline-preview-learning-application-receipt-2026-10-09.json",
+                  "sha256": "6278930304dcbb8af58a30dd9b76bfda793dd6d0602efcb63b6c20556f5bec06",
+                  "fragment": "application-receipt",
+                  "evidenceClass": "OBSERVED_LOCAL"
+                }
+              ]
             },
-            "claimLimits": "Local structural enforcement;not real project application,semantic acceptance or universal all-agent adherence. Local reception is recorded with explicit timing. A separate Local document APPLICATION receipt is retained as unadmitted candidate evidence; parent projectApplication stays NOT_APPLIED because no real work-order dispatch/result review occurred."
+            "claimLimits": "APPLIED for one Local offline UI dispatch and returned-result review only. Same Local actor authored dispatch and adjudicated learning; implementation worker was distinct. Positive/negative control observations are structural. No attestation of every preparation read, zero defects, universal compliance, source R2 resolution, AI runtime governance, production readiness, cost savings or provider capability. Original worker and prior learning receipt bytes retained; parent projectResolution remains OPEN."
           }
         }
       ]
