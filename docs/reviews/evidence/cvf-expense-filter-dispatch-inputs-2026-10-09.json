@@ -1,0 +1,78 @@
+{
+  "schemaVersion": "cvf.expenseFixtureDispatchInputs.v1",
+  "batchId": "CVF-NCR-EXPENSE-FIXTURE-20261009",
+  "planningBase": "d46cd676a367666bfe3abffbf25c54e327522fc0",
+  "authority": "Operator repeated continue plus standing isolated test scope; Local orchestrator/reviewer, manual worker transfer. No app integration/media/provider effect.",
+  "sources": [
+    {
+      "path": "docs/reference/CVF_NCR_GENERAL_VIDEO_DESIGN_2026-10-02.md",
+      "rawSha256": "3ce5e2363c3e29997fcbf42cb4cec59af7447cca38409d4d970e8aa71e5777e0",
+      "role": "named-governed-input"
+    },
+    {
+      "path": "docs/reviews/CVF_NCR_OFFLINE_PREVIEW_DELIVERY_COMPLETION_2026-10-09.md",
+      "rawSha256": "14757c09d5b0e71e095a5f91d43708663b793697dd66be25df3803d2d29578e0",
+      "role": "named-governed-input"
+    },
+    {
+      "path": "docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md",
+      "rawSha256": "1609cc9d955bc88b2e09179331d7828406114d98b23c81cfb3f2992afa3920f6",
+      "role": "named-governed-input"
+    },
+    {
+      "path": "DESIGN.md",
+      "rawSha256": "15c1b5061bd2e1f763638beb83a84d06eb8ccbc470747c01f236033a834a987e",
+      "role": "named-governed-input"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/vitest.config.ts",
+      "rawSha256": "9a4a65976b5b7a5d038f9cb412a90d417f804108cf1dd33bae4421989a863420",
+      "role": "named-governed-input"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/test/setup.ts",
+      "rawSha256": "bc573b2a6133b07404c42f797bce43fe73464711e0281f29da8234bf2fed6b27",
+      "role": "named-governed-input"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/package.json",
+      "rawSha256": "f03fc2c2700e904dc88e10395d0856983b9b0f9e6f27150713fa402f9e9fe24b",
+      "role": "named-governed-input"
+    }
+  ],
+  "workerPaths": [
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/expenses/ExpenseList.tsx",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/expenses/ExpenseList.test.tsx",
+    "docs/guides/CVF_EXPENSE_FILTER_FIXTURE_README_2026-10-09.md",
+    "docs/reviews/evidence/cvf-expense-filter-worker-2026-10-09.json",
+    "docs/reviews/CVF_NCR_EXPENSE_FILTER_FIXTURE_WORKER_RETURN_2026-10-09.md"
+  ],
+  "materialPaths": [
+    "docs/baselines/CVF_GC018_NCR_EXPENSE_FILTER_FIXTURE_2026-10-09.md",
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_FILTER_FIXTURE_2026-10-09.md",
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_FILTER_FIXTURE_2026-10-09.json",
+    "docs/reviews/evidence/cvf-expense-filter-dispatch-inputs-2026-10-09.json"
+  ],
+  "unitTooling": {
+    "webRoot": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web",
+    "command": "node node_modules/vitest/vitest.mjs run src/expenses/ExpenseList.test.tsx --reporter=verbose",
+    "installAuthority": false
+  },
+  "claimBoundary": "Pure unit UI fixture; unchanged storyboard and source STOP; no accepted model/cost comparison",
+  "authoringDiagnostic": {
+    "owner": "LOCAL_DISPATCHER",
+    "firstFeasibility": "INVALID: three descriptive locators did not occur literally in pinned files; replaced by exact source substrings",
+    "packetCorrections": [
+      "Use canonical six-column Source Verification table and DESIGN.md canonical-contract marker",
+      "Replace clean split-range phrase to avoid remediation/preference proximity false positive; required finality unchanged",
+      "ADIF query and Browser UI disposition aligned to actual unit-only scope"
+    ],
+    "shellDiagnostic": "One inline Python attempt failed from PowerShell quoting; replaced with file-based script. No worker execution or source changes."
+  },
+  "modelPreferenceObservation": {
+    "model": "Haiku 5.5",
+    "effort": "Max",
+    "authority": "operator-selected preference, not normative provider requirement",
+    "comparisonLimit": "This smaller two-file unit fixture differs from Sonnet prior seven-artifact offline UI package; normalize complexity/reuse, report total effort and bill only if observed."
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "schemaVersion": "cvf.preapprovalFeasibility.v1",
+  "proposal": {
+    "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_FILTER_FIXTURE_2026-10-09.md",
+    "sha256": "bea54141aa72ec32502878f2129efb684190d551a098440cd008a65301ed61f2"
+  },
+  "approvalTarget": {
+    "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_FILTER_FIXTURE_2026-10-09.md",
+    "sha256": "bea54141aa72ec32502878f2129efb684190d551a098440cd008a65301ed61f2",
+    "prospectiveOutcomeSha256": "e09a404df1fd999adc0d84d2065227085b238ec7fee9251f21758c0b774439bc"
+  },
+  "prospectiveOutcome": {
+    "schemaVersion": "cvf.semanticConvergenceControl.v1",
+    "problemKey": "cvf-storyboard-expense-filter-unit-fixture",
+    "chainMode": "INITIAL",
+    "chainOrdinal": 0,
+    "predecessor": null,
+    "blockerDelta": {
+      "prior": [],
+      "resolved": [],
+      "retained": [],
+      "new": [],
+      "reopened": [],
+      "current": []
+    },
+    "resolutionEvidence": {},
+    "counters": {
+      "partialReadyClosures": 0,
+      "reviewerScopeExpansions": 0,
+      "sameClaimCorrections": 0,
+      "nonDecreasingBlockerTransitions": 0
+    },
+    "claims": [],
+    "requiredDisposition": "CONTINUE_BOUNDED",
+    "successorScope": "INITIAL_BOUNDED"
+  },
+  "phasePrerequisites": {
+    "phase": "STANDALONE_UNIT_UI_FIXTURE",
+    "rows": [
+      {
+        "requirementId": "BEHAVIOR_SOURCE",
+        "requiredForPhase": true,
+        "evidence": {
+          "path": "docs/reference/CVF_NCR_GENERAL_VIDEO_DESIGN_2026-10-02.md",
+          "sha256": "3ce5e2363c3e29997fcbf42cb4cec59af7447cca38409d4d970e8aa71e5777e0",
+          "locator": "S05"
+        },
+        "deferredToPhase": null
+      },
+      {
+        "requirementId": "UNIT_CONFIG",
+        "requiredForPhase": true,
+        "evidence": {
+          "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/vitest.config.ts",
+          "sha256": "9a4a65976b5b7a5d038f9cb412a90d417f804108cf1dd33bae4421989a863420",
+          "locator": "environment: 'jsdom'"
+        },
+        "deferredToPhase": null
+      },
+      {
+        "requirementId": "UNIT_SETUP",
+        "requiredForPhase": true,
+        "evidence": {
+          "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/test/setup.ts",
+          "sha256": "bc573b2a6133b07404c42f797bce43fe73464711e0281f29da8234bf2fed6b27",
+          "locator": "createProviderExecutionFetchGuard"
+        },
+        "deferredToPhase": null
+      },
+      {
+        "requirementId": "APP_RUNTIME_AND_MEDIA",
+        "requiredForPhase": false,
+        "evidence": null,
+        "deferredToPhase": "SEPARATE_ADMISSION_NOT_REQUIRED_FOR_UNIT_FIXTURE"
+      }
+    ]
+  },
+  "requestQueue": null
+}
