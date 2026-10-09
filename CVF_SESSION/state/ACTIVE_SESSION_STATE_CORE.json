@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_OFFLINE_PREVIEW_DELIVERY_2026-10-09.md",
     "workOrderSha256": "13244fc94f1f7c2fcc711c428027e1faf1bd7f677817c9ab797ec905ccd92257"
   },
-  "currentAuthoritySyncReason": "Local accepted returned seven-file offline UI package with independent probe; exact closed-status raw digest bound. Parent application and source/media/effect holds retained; no push grant.",
+  "currentAuthoritySyncReason": "Local accepted returned seven-file offline UI package with independent probe; exact closed-status raw digest bound. Parent application and source/media/effect holds retained; no push grant. Accepted material commit cbd7b49705e1cc88745d85a09d680fda3df0b433; dedicated real-SHA continuity.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
