@@ -1,0 +1,192 @@
+{
+  "schemaVersion": "cvf.offlinePreviewLocalReview@1.0.0",
+  "status": "CLOSED_PASS_BOUNDED",
+  "date": "2026-10-09",
+  "reviewBaseHead": "583d871afe66647d1d9760cb436ad95b7f946f61",
+  "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_OFFLINE_PREVIEW_DELIVERY_2026-10-09.md",
+  "dispatchedWorkOrderSha256": "39d43ebb1b49a8c885860f4902ebb3363e209b3f1c5cec8ea6146c63863c378d",
+  "workerOriginalPins": {
+    "docs/guides/CVF_STORYBOARD_PREVIEW_README_2026-10-09.md": "1bb859f72a40b45a64dc3820a7b3037936f081441b4a36f8fb9a982ec0aa31a7",
+    "docs/reviews/CVF_NCR_OFFLINE_PREVIEW_DELIVERY_WORKER_RETURN_2026-10-09.md": "6ac32c384cefc5ffb6054d94e570016ece9efe202fb7428e130b1ba9cb753cbf",
+    "docs/reviews/evidence/cvf-storyboard-preview-2026-10-09.html": "483e1d109196700cee0099d51d843b17374f5340f059cd76b045c263ea0f69c6",
+    "docs/reviews/evidence/cvf-storyboard-preview-worker-2026-10-09.json": "30d159ab8ef8e1cbbf63815146c699903dc7e187995bccdb29f82fc8603508ee",
+    "scripts/cvf_storyboard_preview.py": "6820306c1d8f162d74a01bde9b8583b0298846b4e7fa7d2a07055dd2549f7771",
+    "scripts/test_cvf_storyboard_preview.py": "c31a89a59e307438684d363d15785a346185345ebb3fc9d48b4a30cd15cbccfd",
+    "scripts/test_cvf_storyboard_preview_browser.cjs": "5a12fe49ae6c3c00460d01514114069e26b1c95cd205340958d6069a8cd63496"
+  },
+  "originalSubmissionPreserved": true,
+  "implementationRepairsByReviewer": 0,
+  "independentProbe": {
+    "status": "PASS_INDEPENDENT_PROBE",
+    "role": "LOCAL_REVIEWER_NOT_IMPLEMENTATION_WORKER",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_OFFLINE_PREVIEW_DELIVERY_2026-10-09.md",
+    "reviewBaseHead": "583d871afe66647d1d9760cb436ad95b7f946f61",
+    "workerOriginalPins": {
+      "docs/guides/CVF_STORYBOARD_PREVIEW_README_2026-10-09.md": "1bb859f72a40b45a64dc3820a7b3037936f081441b4a36f8fb9a982ec0aa31a7",
+      "docs/reviews/CVF_NCR_OFFLINE_PREVIEW_DELIVERY_WORKER_RETURN_2026-10-09.md": "6ac32c384cefc5ffb6054d94e570016ece9efe202fb7428e130b1ba9cb753cbf",
+      "docs/reviews/evidence/cvf-storyboard-preview-2026-10-09.html": "483e1d109196700cee0099d51d843b17374f5340f059cd76b045c263ea0f69c6",
+      "docs/reviews/evidence/cvf-storyboard-preview-worker-2026-10-09.json": "30d159ab8ef8e1cbbf63815146c699903dc7e187995bccdb29f82fc8603508ee",
+      "scripts/cvf_storyboard_preview.py": "6820306c1d8f162d74a01bde9b8583b0298846b4e7fa7d2a07055dd2549f7771",
+      "scripts/test_cvf_storyboard_preview.py": "c31a89a59e307438684d363d15785a346185345ebb3fc9d48b4a30cd15cbccfd",
+      "scripts/test_cvf_storyboard_preview_browser.cjs": "5a12fe49ae6c3c00460d01514114069e26b1c95cd205340958d6069a8cd63496"
+    },
+    "sourceInputPinsVerified": 8,
+    "cases": [
+      {
+        "id": "POSITIVE_PINNED_PROJECTION",
+        "status": "PASS",
+        "htmlSha256": "483e1d109196700cee0099d51d843b17374f5340f059cd76b045c263ea0f69c6",
+        "matchesWorkerHtml": true
+      },
+      {
+        "id": "DIGEST_DRIFT",
+        "status": "REJECTED",
+        "outputSentinelPreserved": true
+      },
+      {
+        "id": "HTML_SCRIPT_EVENT_ESCAPING",
+        "status": "PASS",
+        "scripts": 1,
+        "injectedImages": 0,
+        "eventAttributes": [],
+        "payloadExactTextOccurrences": 3
+      }
+    ],
+    "elapsedSeconds": 0.109,
+    "oracleSeparation": "Fresh local fixture and output-sentinel/HTMLParser assertions; no worker test helper/oracle reused. Reviewed builder is the system under test.",
+    "reviewerDiagnostic": "Initial reviewer harness used platform-default read_text for synthetic HTML and hit cp1252 decode failure; fixed harness to UTF-8. No worker failure or source repair.",
+    "claimBoundary": "Pure source projection/UI safety only; no AI governance or audio/video proof",
+    "sourceMutations": false,
+    "workerArtifactMutations": false,
+    "publicExportDisposition": "DEFERRED_PRIVATE_ONLY"
+  },
+  "probeSourceSha256": "3f1d7ce3af3910e678e756ebd7d1ef6abec260e97aaf07e124888e2a2098f962",
+  "probeSourceText": "from pathlib import Path\nimport hashlib, importlib.util, json, re, subprocess, time\nfrom html.parser import HTMLParser\n\nroot = Path.cwd()\nout = root / '.cvf/runtime/cvf-offline-preview-local-review-20261009'\nout.mkdir(exist_ok=True)\nsha = lambda data: hashlib.sha256(data).hexdigest()\nworker = json.loads(Path('docs/reviews/evidence/cvf-storyboard-preview-worker-2026-10-09.json').read_text(encoding='utf-8'))\nmanifest = json.loads(Path('docs/reviews/evidence/cvf-offline-preview-dispatch-inputs-2026-10-09.json').read_text(encoding='utf-8'))\npins = {p: sha(Path(p).read_bytes()) for p in worker['gitChangedUnion']}\nfor p in pins:\n    snapshot = out / ('original-' + Path(p).name)\n    if snapshot.exists():\n        assert snapshot.read_bytes() == Path(p).read_bytes()\n    else:\n        snapshot.write_bytes(Path(p).read_bytes())\nfor row in manifest['sources']:\n    assert sha(Path(row['path']).read_bytes()) == row['rawSha256']\nspec = importlib.util.spec_from_file_location('reviewed_builder', root / 'scripts/cvf_storyboard_preview.py')\nbuilder = importlib.util.module_from_spec(spec)\nspec.loader.exec_module(builder)\nt = time.monotonic()\npositive = out / 'positive.html'\nh = builder.build(root, builder.D_MANIFEST, builder.D_SRC, builder.D_CLAIMS, builder.D_PROTO, positive)\nassert h == pins[builder.D_OUT]\nfixture = out / 'fixture'\nfixture.mkdir(exist_ok=True)\nmapping = {}\nfor label, path in [('design.md', builder.D_SRC), ('claims.json', builder.D_CLAIMS), ('prototype.html', builder.D_PROTO)]:\n    data = Path(path).read_bytes()\n    (fixture / label).write_bytes(data)\n    mapping[label] = sha(data)\ndef write_pins():\n    (fixture / 'manifest.json').write_text(json.dumps({'sources': [{'path': k, 'rawSha256': v} for k, v in mapping.items()]}), encoding='utf-8')\nwrite_pins()\ntarget = fixture / 'output.html'\ntarget.write_bytes(b'REVIEW_SENTINEL')\n(fixture / 'design.md').write_bytes((fixture / 'design.md').read_bytes() + b'\\nDRIFT')\ntry:\n    builder.build(fixture, 'manifest.json', 'design.md', 'claims.json', 'prototype.html', target)\n    raise AssertionError('drift accepted')\nexcept builder.BuildError as exc:\n    assert 'digest drift' in str(exc)\nassert target.read_bytes() == b'REVIEW_SENTINEL'\npayload = '</script><script>globalThis.BAD=1</script><img src=x onerror=globalThis.BAD=2>&amp; \"'\ndesign = Path(builder.D_SRC).read_text(encoding='utf-8')\ndesign = re.sub(r'^- Narration: .*$', lambda _: '- Narration: ' + payload, design, count=1, flags=re.M)\nproto = Path(builder.D_PROTO).read_text(encoding='utf-8')\nm = re.search(r'^const scenes=(\\[.*\\]);$', proto, re.M)\nscenes = json.loads(m[1])\nscenes[0]['narration'] = payload\nscenes[0]['title'] = payload\nscenes[0]['cards'] = [payload]\nproto = proto[:m.start(1)] + json.dumps(scenes, ensure_ascii=True) + proto[m.end(1):]\nfor key, data in [('design.md', design.encode()), ('prototype.html', proto.encode())]:\n    (fixture / key).write_bytes(data)\n    mapping[key] = sha(data)\nwrite_pins()\nbuilder.build(fixture, 'manifest.json', 'design.md', 'claims.json', 'prototype.html', target)\nclass Check(HTMLParser):\n    def __init__(self):\n        super().__init__(convert_charrefs=True)\n        self.scripts, self.img, self.event_attrs, self.text = 0, 0, [], []\n    def handle_starttag(self, tag, attrs):\n        self.scripts += tag == 'script'\n        self.img += tag == 'img'\n        self.event_attrs.extend(k for k, v in attrs if k.startswith('on'))\n    def handle_data(self, data):\n        self.text.append(data)\ncheck = Check()\ncheck.feed(target.read_text(encoding='utf-8'))\nassert check.scripts == 1 and check.img == 0 and not check.event_attrs\nassert check.text.count(payload) >= 3\nreport = dict(status='PASS_INDEPENDENT_PROBE', role='LOCAL_REVIEWER_NOT_IMPLEMENTATION_WORKER', workOrder=worker['workOrder'], reviewBaseHead=subprocess.check_output(['git', 'rev-parse', 'HEAD'], text=True).strip(), workerOriginalPins=pins, sourceInputPinsVerified=len(manifest['sources']), cases=[dict(id='POSITIVE_PINNED_PROJECTION', status='PASS', htmlSha256=h, matchesWorkerHtml=True), dict(id='DIGEST_DRIFT', status='REJECTED', outputSentinelPreserved=True), dict(id='HTML_SCRIPT_EVENT_ESCAPING', status='PASS', scripts=check.scripts, injectedImages=check.img, eventAttributes=check.event_attrs, payloadExactTextOccurrences=check.text.count(payload))], elapsedSeconds=round(time.monotonic()-t, 3), oracleSeparation='Fresh local fixture and output-sentinel/HTMLParser assertions; no worker test helper/oracle reused. Reviewed builder is the system under test.', reviewerDiagnostic='Initial reviewer harness used platform-default read_text for synthetic HTML and hit cp1252 decode failure; fixed harness to UTF-8. No worker failure or source repair.', claimBoundary='Pure source projection/UI safety only; no AI governance or audio/video proof', sourceMutations=False, workerArtifactMutations=False, publicExportDisposition='DEFERRED_PRIVATE_ONLY')\n(out / 'independent-probe.json').write_text(json.dumps(report, ensure_ascii=True, indent=2) + '\\n', encoding='utf-8')\nprint(json.dumps(dict(status=report['status'], cases=3, sourceInputPinsVerified=8, workerPins=len(pins))))\n",
+  "probeReproduction": "Extract probeSourceText to the recorded ignored runtime path; execute python -B there from repository root. Source drift and injection fixtures are synthetic, with separate reviewer oracle.",
+  "consumedWorkerEvidence": {
+    "workerEvidenceSha256": "30d159ab8ef8e1cbbf63815146c699903dc7e187995bccdb29f82fc8603508ee",
+    "staticTests": 10,
+    "browserTests": 8,
+    "staticMutationKills": "15/15",
+    "browserMutationKills": "8/8",
+    "rerunDisposition": "NO_BROAD_DUPLICATE_RERUN: source/test/HTML hashes unchanged"
+  },
+  "screenshots": [
+    {
+      "path": ".cvf/runtime/cvf-offline-preview-worker-20261009/preview-1440x1050-S05.png",
+      "sha256": "39e936cbd31d0f8945fc665c61b4c074621b4610f1d4cd3950616487a798da8d",
+      "localVisualReview": "PASS: S05/S10 desktop and mobile readable; no clipping or overlap observed"
+    },
+    {
+      "path": ".cvf/runtime/cvf-offline-preview-worker-20261009/preview-1440x1050-S10.png",
+      "sha256": "111384c8c1313d6b7ee8a03a03de7439659bd69ddf5c291d238fb731bfa965b5",
+      "localVisualReview": "PASS: S05/S10 desktop and mobile readable; no clipping or overlap observed"
+    },
+    {
+      "path": ".cvf/runtime/cvf-offline-preview-worker-20261009/preview-390x844-S05.png",
+      "sha256": "87bbfb5df5dc7f65f55c2f14517f2d9ccb73ba6da0ed2143fbe5bd8a5311e98b",
+      "localVisualReview": "PASS: S05/S10 desktop and mobile readable; no clipping or overlap observed"
+    },
+    {
+      "path": ".cvf/runtime/cvf-offline-preview-worker-20261009/preview-390x844-S10.png",
+      "sha256": "af26262ecad11189e64825b7fccefa1372d4379fdf348b7195720dad1dad81ea",
+      "localVisualReview": "PASS: S05/S10 desktop and mobile readable; no clipping or overlap observed"
+    }
+  ],
+  "gateLogs": [
+    {
+      "path": ".cvf/runtime/cvf-offline-preview-worker-20261009/gate-run4.log",
+      "sha256": "bae0414304158f10846e52e5c217513293e549a8887791b3502cbfbcf9efd196",
+      "observed": "COMPLIANT",
+      "logText": "=== CVF Worker Return Fast Gate ===\nPurpose: fail early on worker-return defects before full closure gates.\n\n=== corpus scan registry aggregate drift ===\npython governance/compat/generate_corpus_scan_registry.py --check\nGC-051 registry aggregate matches per-entry sources.\nPASS: corpus scan registry aggregate drift (0.07s)\n\n=== epistemic process packet ===\npython governance/compat/check_epistemic_process_packet.py --enforce\n=== CVF Epistemic Process Packet Gate (FPC-T3-C01) ===\nStandard: docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md\nChanged paths observed: 7\nEvidence-heavy packets checked: 1\nViolations: 0\n\nCOMPLIANT - epistemic process packet evidence structure is aligned.\nPASS: epistemic process packet (0.16s)\n\n=== work-order acceptance ledger ===\npython governance/compat/check_work_order_acceptance_ledger.py --work-order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_OFFLINE_PREVIEW_DELIVERY_2026-10-09.md --return docs/reviews/CVF_NCR_OFFLINE_PREVIEW_DELIVERY_WORKER_RETURN_2026-10-09.md --enforce\n=== CVF Work Order Acceptance Ledger Gate ===\nCOMPLIANT\nPASS: work-order acceptance ledger (0.14s)\n\n=== worker-return quality gate ===\npython governance/compat/check_worker_return_quality_gate.py --enforce --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_OFFLINE_PREVIEW_DELIVERY_2026-10-09.md\n=== CVF Worker Return Quality Gate ===\nStandard: docs/reference/work_order_authoring/CVF_WORKER_RETURN_QUALITY_GATE_STANDARD.md\nActive work order: docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_OFFLINE_PREVIEW_DELIVERY_2026-10-09.md\nEligible worker-return artifacts checked: 1\nViolations: 0\nCOMPLIANT - worker-return packets are review-ready.\nPASS: worker-return quality gate (0.30s)\n\n=== independent review probe admission ===\npython governance/compat/check_independent_review_probe_admission.py --enforce --changed-lane-only --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_OFFLINE_PREVIEW_DELIVERY_2026-10-09.md\n=== CVF Independent Review Probe Admission Gate ===\nApplicable artifacts checked: 1\nPASS: all applicable artifacts satisfy the independent-probe admission contract.\nPASS: independent review probe admission (0.35s)\n\n=== reviewer-fast governance gate ===\npython governance/compat/run_local_governance_hook_chain.py --hook reviewer-fast\n[CVF hook] Parallel preflight enabled: 70 checks, max_workers=6.\n[CVF hook] START [1/70] closure packaging preflight\n[CVF hook] START [2/70] agent packet authority and encoding\n[CVF hook] START [3/70] core guard self-protection\n[CVF hook] START [4/70] high-risk local transaction proof\n[CVF hook] START [5/70] semantic convergence and escalation control\n[CVF hook] START [6/70] preapproval feasibility\n[CVF hook] START [7/70] subagent provider execution authority\n[CVF hook] PASS [1/70] core guard self-protection (0.36s)\n[CVF hook] START [8/70] task-proportional governance shadow route\n[CVF hook] PASS [2/70] high-risk local transaction proof (0.36s)\n[CVF hook] START [9/70] docs governance compatibility\n[CVF hook] PASS [3/70] closure packaging preflight (0.37s)\n[CVF hook] START [10/70] markdown structural completeness\n[CVF hook] PASS [4/70] agent packet authority and encoding (0.38s)\n[CVF hook] START [11/70] governed artifact checker read-ahead\n[CVF hook] PASS [5/70] preapproval feasibility (0.58s)\n[CVF hook] START [12/70] work-order dispatch quality\n[CVF hook] PASS [6/70] semantic convergence and escalation control (0.78s)\n[CVF hook] START [13/70] worker experience retrospective\n[CVF hook] PASS [7/70] subagent provider execution authority (0.56s)\n[CVF hook] START [14/70] review cost control\n[CVF hook] PASS [8/70] task-proportional governance shadow route (1.53s)\n[CVF hook] START [15/70] gate-to-role closeability\n[CVF hook] PASS [9/70] governed artifact checker read-ahead (1.41s)\n[CVF hook] START [16/70] worker-return quality gate\n[CVF hook] PASS [10/70] docs governance compatibility (4.13s)\n[CVF hook] START [17/70] dispatch prompt envelope\n[CVF hook] PASS [11/70] markdown structural completeness (5.04s)\n[CVF hook] START [18/70] dispatch packet lifecycle hygiene\n[CVF hook] PASS [12/70] worker experience retrospective (6.23s)\n[CVF hook] START [19/70] source intake decision packet preflight\n[CVF hook] PASS [13/70] review cost control (9.11s)\n[CVF hook] START [20/70] PLCS companion routing block\n[CVF hook] PASS [14/70] gate-to-role closeability (9.04s)\n[CVF hook] START [21/70] agent operation trace integrity\n[CVF hook] PASS [15/70] dispatch packet lifecycle hygiene (3.94s)\n[CVF hook] START [22/70] agent handoff boundary\n[CVF hook] PASS [16/70] dispatch prompt envelope (5.69s)\n[CVF hook] START [23/70] agent workspace design boundary\n[CVF hook] PASS [17/70] worker-return quality gate (6.63s)\n[CVF hook] START [24/70] agent workspace state\n[CVF hook] PASS [18/70] source intake decision packet preflight (0.33s)\n[CVF hook] START [25/70] agent workspace skeleton\n[CVF hook] PASS [19/70] work-order dispatch quality (10.60s)\n[CVF hook] START [26/70] agent workspace runtime boundary\n[CVF hook] PASS [20/70] PLCS companion routing block (0.46s)\n[CVF hook] START [27/70] machine closure package\n[CVF hook] PASS [21/70] agent workspace state (0.20s)\n[CVF hook] START [28/70] roadmap closure freshness\n[CVF hook] PASS [22/70] agent operation trace integrity (0.45s)\n[CVF hook] START [29/70] finding-to-governance learning quality\n[CVF hook] PASS [23/70] agent workspace skeleton (0.18s)\n[CVF hook] START [30/70] external-agent absorption table\n[CVF hook] PASS [24/70] agent handoff boundary (0.51s)\n[CVF hook] START [31/70] external knowledge intake routing\n[CVF hook] PASS [25/70] agent workspace design boundary (0.49s)\n[CVF hook] START [32/70] external absorption core\n[CVF hook] PASS [26/70] agent workspace runtime boundary (0.17s)\n[CVF hook] START [33/70] external absorption value conversion\n[CVF hook] PASS [27/70] machine closure package (0.50s)\n[CVF hook] START [34/70] mixed-origin derived synthesis absorption\n[CVF hook] PASS [28/70] roadmap closure freshness (0.53s)\n[CVF hook] START [35/70] external absorption overlap discipline\n[CVF hook] PASS [29/70] external-agent absorption table (0.48s)\n[CVF hook] START [36/70] source mirror migration\n[CVF hook] PASS [30/70] external knowledge intake routing (0.50s)\n[CVF hook] START [37/70] Delta mutating profile boundary\n[CVF hook] PASS [31/70] finding-to-governance learning quality (0.60s)\n[CVF hook] START [38/70] Delta execution claim boundary\n[CVF hook] PASS [32/70] external absorption core (0.54s)\n[CVF hook] START [39/70] foundation storage layout\n[CVF hook] PASS [33/70] external absorption value conversion (0.53s)\n[CVF hook] START [40/70] public export disposition quality\n[CVF hook] PASS [34/70] mixed-origin derived synthesis absorption (0.54s)\n[CVF hook] START [41/70] rescan intelligence hardening\n[CVF hook] PASS [35/70] Delta mutating profile boundary (0.46s)\n[CVF hook] START [42/70] index classification\n[CVF hook] PASS [36/70] source mirror migration (0.53s)\n[CVF hook] START [43/70] memory access claim\n[CVF hook] PASS [37/70] external absorption overlap discipline (0.56s)\n[CVF hook] START [44/70] external provider skill usage trace\n[CVF hook] PASS [38/70] Delta execution claim boundary (0.47s)\n[CVF hook] START [45/70] CVF skill usage receipt trace\n[CVF hook] PASS [39/70] external provider skill usage trace (0.24s)\n[CVF hook] START [46/70] skill truth packets\n[CVF hook] PASS [40/70] rescan intelligence hardening (0.42s)\n[CVF hook] START [47/70] package skill productionization pipeline\n[CVF hook] PASS [41/70] foundation storage layout (0.53s)\n[CVF hook] START [48/70] skill control plane inventory\n[CVF hook] PASS [42/70] CVF skill usage receipt trace (0.27s)\n[CVF hook] START [49/70] CVF Web skill control plane projection\n[CVF hook] PASS [43/70] public export disposition quality (0.58s)\n[CVF hook] START [50/70] truth foundation claim guard\n[CVF hook] PASS [44/70] index classification (0.55s)\n[CVF hook] START [51/70] raw memory release invariant\n[CVF hook] PASS [45/70] memory access claim (0.58s)\n[CVF hook] START [52/70] DICE machine-candidate coverage\n[CVF hook] PASS [46/70] skill truth packets (0.27s)\n[CVF hook] START [53/70] FPC system-chain acceptance ledger\n[CVF hook] PASS [47/70] CVF Web skill control plane projection (0.19s)\n[CVF hook] START [54/70] FPC parked reopen inventory\n[CVF hook] PASS [48/70] skill control plane inventory (0.22s)\n[CVF hook] START [55/70] KIOD runtime candidate reopen inventory\n[CVF hook] PASS [49/70] truth foundation claim guard (0.43s)\n[CVF hook] START [56/70] corpus scan registry\n[CVF hook] PASS [50/70] FPC system-chain acceptance ledger (0.33s)\n[CVF hook] START [57/70] ASSF certified metadata admission\n[CVF hook] PASS [51/70] FPC parked reopen inventory (0.34s)\n[CVF hook] START [58/70] ASSF package candidate anatomy\n[CVF hook] PASS [52/70] package skill productionization pipeline (0.66s)\n[CVF hook] START [59/70] ASSF external-agent metadata readout\n[CVF hook] PASS [53/70] raw memory release invariant (0.57s)\n[CVF hook] START [60/70] changed corpus registry coverage\n[CVF hook] PASS [54/70] DICE machine-candidate coverage (0.54s)\n[CVF hook] START [61/70] active session state compatibility\n[CVF hook] PASS [55/70] ASSF certified metadata admission (0.17s)\n[CVF hook] START [62/70] session mode consistency\n[CVF hook] PASS [56/70] ASSF package candidate anatomy (0.15s)\n[CVF hook] START [63/70] next-move freshness\n[CVF hook] PASS [57/70] ASSF external-agent metadata readout (0.17s)\n[CVF hook] START [64/70] system chain map freshness\n[CVF hook] PASS [58/70] corpus scan registry (0.33s)\n[CVF hook] START [65/70] as-built system catalog drift\n[CVF hook] PASS [59/70] KIOD runtime candidate reopen inventory (0.45s)\n[CVF hook] START [66/70] memory consolidation artifact quality\n[CVF hook] PASS [60/70] session mode consistency (0.19s)\n[CVF hook] START [67/70] epistemic process packet\n[CVF hook] PASS [61/70] system chain map freshness (0.15s)\n[CVF hook] START [68/70] equivalence claim evidence\n[CVF hook] PASS [62/70] changed corpus registry coverage (0.45s)\n[CVF hook] START [69/70] dispatch scaffold provenance\n[CVF hook] PASS [63/70] next-move freshness (0.45s)\n[CVF hook] START [70/70] agent instruction carrier compaction\n[CVF hook] PASS [64/70] memory consolidation artifact quality (0.34s)\n[CVF hook] PASS [65/70] as-built system catalog drift (0.44s)\n[CVF hook] PASS [66/70] epistemic process packet (0.42s)\n[CVF hook] PASS [67/70] equivalence claim evidence (0.33s)\n[CVF hook] PASS [68/70] agent instruction carrier compaction (0.22s)\n[CVF hook] PASS [69/70] dispatch scaffold provenance (0.31s)\n[CVF hook] PASS [70/70] active session state compatibility (0.87s)\n[CVF hook] All reviewer-fast governance checks passed.\nPASS: reviewer-fast governance gate (14.88s)\n\n=== git diff whitespace check ===\ngit diff --check\nPASS: git diff whitespace check (0.06s)\n\nCOMPLIANT: worker-return fast gate passed in 15.96s.\n\nreal\t0m16.063s\nuser\t0m0.000s\nsys\t0m0.000s\n"
+    },
+    {
+      "path": ".cvf/runtime/cvf-offline-preview-worker-20261009/gate-run5-postrecord.log",
+      "sha256": "50f91fc4a5007ad801356b24f379e0e8cde9bd8cb716b47ce27e749c060257c8",
+      "observed": "COMPLIANT",
+      "logText": "=== CVF Worker Return Fast Gate ===\nPurpose: fail early on worker-return defects before full closure gates.\n\n=== corpus scan registry aggregate drift ===\npython governance/compat/generate_corpus_scan_registry.py --check\nGC-051 registry aggregate matches per-entry sources.\nPASS: corpus scan registry aggregate drift (0.07s)\n\n=== epistemic process packet ===\npython governance/compat/check_epistemic_process_packet.py --enforce\n=== CVF Epistemic Process Packet Gate (FPC-T3-C01) ===\nStandard: docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md\nChanged paths observed: 7\nEvidence-heavy packets checked: 1\nViolations: 0\n\nCOMPLIANT - epistemic process packet evidence structure is aligned.\nPASS: epistemic process packet (0.16s)\n\n=== work-order acceptance ledger ===\npython governance/compat/check_work_order_acceptance_ledger.py --work-order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_OFFLINE_PREVIEW_DELIVERY_2026-10-09.md --return docs/reviews/CVF_NCR_OFFLINE_PREVIEW_DELIVERY_WORKER_RETURN_2026-10-09.md --enforce\n=== CVF Work Order Acceptance Ledger Gate ===\nCOMPLIANT\nPASS: work-order acceptance ledger (0.15s)\n\n=== worker-return quality gate ===\npython governance/compat/check_worker_return_quality_gate.py --enforce --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_OFFLINE_PREVIEW_DELIVERY_2026-10-09.md\n=== CVF Worker Return Quality Gate ===\nStandard: docs/reference/work_order_authoring/CVF_WORKER_RETURN_QUALITY_GATE_STANDARD.md\nActive work order: docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_OFFLINE_PREVIEW_DELIVERY_2026-10-09.md\nEligible worker-return artifacts checked: 1\nViolations: 0\nCOMPLIANT - worker-return packets are review-ready.\nPASS: worker-return quality gate (0.28s)\n\n=== independent review probe admission ===\npython governance/compat/check_independent_review_probe_admission.py --enforce --changed-lane-only --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_OFFLINE_PREVIEW_DELIVERY_2026-10-09.md\n=== CVF Independent Review Probe Admission Gate ===\nApplicable artifacts checked: 1\nPASS: all applicable artifacts satisfy the independent-probe admission contract.\nPASS: independent review probe admission (0.37s)\n\n=== reviewer-fast governance gate ===\npython governance/compat/run_local_governance_hook_chain.py --hook reviewer-fast\n[CVF hook] Parallel preflight enabled: 70 checks, max_workers=6.\n[CVF hook] START [1/70] closure packaging preflight\n[CVF hook] START [2/70] agent packet authority and encoding\n[CVF hook] START [3/70] core guard self-protection\n[CVF hook] START [4/70] high-risk local transaction proof\n[CVF hook] START [5/70] semantic convergence and escalation control\n[CVF hook] START [6/70] preapproval feasibility\n[CVF hook] START [7/70] subagent provider execution authority\n[CVF hook] PASS [1/70] core guard self-protection (0.35s)\n[CVF hook] START [8/70] task-proportional governance shadow route\n[CVF hook] PASS [2/70] high-risk local transaction proof (0.35s)\n[CVF hook] START [9/70] docs governance compatibility\n[CVF hook] PASS [3/70] closure packaging preflight (0.37s)\n[CVF hook] START [10/70] markdown structural completeness\n[CVF hook] PASS [4/70] agent packet authority and encoding (0.41s)\n[CVF hook] START [11/70] governed artifact checker read-ahead\n[CVF hook] PASS [5/70] preapproval feasibility (0.61s)\n[CVF hook] START [12/70] work-order dispatch quality\n[CVF hook] PASS [6/70] semantic convergence and escalation control (0.67s)\n[CVF hook] START [13/70] worker experience retrospective\n[CVF hook] PASS [7/70] subagent provider execution authority (0.39s)\n[CVF hook] START [14/70] review cost control\n[CVF hook] PASS [8/70] docs governance compatibility (0.46s)\n[CVF hook] START [15/70] gate-to-role closeability\n[CVF hook] PASS [9/70] task-proportional governance shadow route (0.48s)\n[CVF hook] START [16/70] worker-return quality gate\n[CVF hook] PASS [10/70] governed artifact checker read-ahead (0.24s)\n[CVF hook] START [17/70] dispatch prompt envelope\n[CVF hook] PASS [11/70] markdown structural completeness (0.44s)\n[CVF hook] START [18/70] dispatch packet lifecycle hygiene\n[CVF hook] PASS [12/70] worker experience retrospective (0.26s)\n[CVF hook] START [19/70] source intake decision packet preflight\n[CVF hook] PASS [13/70] review cost control (0.41s)\n[CVF hook] START [20/70] PLCS companion routing block\n[CVF hook] PASS [14/70] dispatch prompt envelope (0.39s)\n[CVF hook] START [21/70] agent operation trace integrity\n[CVF hook] PASS [15/70] dispatch packet lifecycle hygiene (0.25s)\n[CVF hook] START [22/70] agent handoff boundary\n[CVF hook] PASS [16/70] gate-to-role closeability (0.42s)\n[CVF hook] START [23/70] agent workspace design boundary\n[CVF hook] PASS [17/70] worker-return quality gate (0.42s)\n[CVF hook] START [24/70] agent workspace state\n[CVF hook] PASS [18/70] work-order dispatch quality (0.65s)\n[CVF hook] START [25/70] agent workspace skeleton\n[CVF hook] PASS [19/70] source intake decision packet preflight (0.24s)\n[CVF hook] START [26/70] agent workspace runtime boundary\n[CVF hook] PASS [20/70] agent workspace state (0.17s)\n[CVF hook] START [27/70] machine closure package\n[CVF hook] PASS [21/70] PLCS companion routing block (0.31s)\n[CVF hook] START [28/70] roadmap closure freshness\n[CVF hook] PASS [22/70] agent operation trace integrity (0.31s)\n[CVF hook] START [29/70] finding-to-governance learning quality\n[CVF hook] PASS [23/70] agent workspace skeleton (0.12s)\n[CVF hook] START [30/70] external-agent absorption table\n[CVF hook] PASS [24/70] agent handoff boundary (0.34s)\n[CVF hook] START [31/70] external knowledge intake routing\n[CVF hook] PASS [25/70] agent workspace runtime boundary (0.11s)\n[CVF hook] START [32/70] external absorption core\n[CVF hook] PASS [26/70] agent workspace design boundary (0.35s)\n[CVF hook] START [33/70] external absorption value conversion\n[CVF hook] PASS [27/70] machine closure package (0.38s)\n[CVF hook] START [34/70] mixed-origin derived synthesis absorption\n[CVF hook] PASS [28/70] external-agent absorption table (0.34s)\n[CVF hook] START [35/70] external absorption overlap discipline\n[CVF hook] PASS [29/70] roadmap closure freshness (0.38s)\n[CVF hook] START [36/70] source mirror migration\n[CVF hook] PASS [30/70] external knowledge intake routing (0.39s)\n[CVF hook] START [37/70] Delta mutating profile boundary\n[CVF hook] PASS [31/70] external absorption core (0.39s)\n[CVF hook] START [38/70] Delta execution claim boundary\n[CVF hook] PASS [32/70] finding-to-governance learning quality (0.42s)\n[CVF hook] START [39/70] foundation storage layout\n[CVF hook] PASS [33/70] external absorption value conversion (1.05s)\n[CVF hook] START [40/70] public export disposition quality\n[CVF hook] PASS [34/70] Delta mutating profile boundary (1.01s)\n[CVF hook] START [41/70] rescan intelligence hardening\n[CVF hook] PASS [35/70] external absorption overlap discipline (1.14s)\n[CVF hook] START [42/70] index classification\n[CVF hook] PASS [36/70] Delta execution claim boundary (1.07s)\n[CVF hook] START [43/70] memory access claim\n[CVF hook] PASS [37/70] mixed-origin derived synthesis absorption (1.23s)\n[CVF hook] START [44/70] external provider skill usage trace\n[CVF hook] PASS [38/70] source mirror migration (1.18s)\n[CVF hook] START [45/70] CVF skill usage receipt trace\n[CVF hook] PASS [39/70] external provider skill usage trace (0.53s)\n[CVF hook] START [46/70] skill truth packets\n[CVF hook] PASS [40/70] rescan intelligence hardening (1.14s)\n[CVF hook] START [47/70] package skill productionization pipeline\n[CVF hook] PASS [41/70] CVF skill usage receipt trace (0.93s)\n[CVF hook] START [48/70] skill control plane inventory\n[CVF hook] PASS [42/70] foundation storage layout (1.70s)\n[CVF hook] START [49/70] CVF Web skill control plane projection\n[CVF hook] PASS [43/70] public export disposition quality (1.73s)\n[CVF hook] START [50/70] truth foundation claim guard\n[CVF hook] PASS [44/70] index classification (1.76s)\n[CVF hook] START [51/70] raw memory release invariant\n[CVF hook] PASS [45/70] memory access claim (1.79s)\n[CVF hook] START [52/70] DICE machine-candidate coverage\n[CVF hook] PASS [46/70] CVF Web skill control plane projection (0.26s)\n[CVF hook] START [53/70] FPC system-chain acceptance ledger\n[CVF hook] PASS [47/70] skill control plane inventory (0.33s)\n[CVF hook] START [54/70] FPC parked reopen inventory\n[CVF hook] PASS [48/70] skill truth packets (0.81s)\n[CVF hook] START [55/70] KIOD runtime candidate reopen inventory\n[CVF hook] PASS [49/70] truth foundation claim guard (0.89s)\n[CVF hook] START [56/70] corpus scan registry\n[CVF hook] PASS [50/70] FPC parked reopen inventory (0.92s)\n[CVF hook] START [57/70] ASSF certified metadata admission\n[CVF hook] PASS [51/70] FPC system-chain acceptance ledger (0.97s)\n[CVF hook] START [58/70] ASSF package candidate anatomy\n[CVF hook] PASS [52/70] package skill productionization pipeline (1.58s)\n[CVF hook] START [59/70] ASSF external-agent metadata readout\n[CVF hook] PASS [53/70] raw memory release invariant (1.30s)\n[CVF hook] START [60/70] changed corpus registry coverage\n[CVF hook] PASS [54/70] DICE machine-candidate coverage (1.36s)\n[CVF hook] START [61/70] active session state compatibility\n[CVF hook] PASS [55/70] ASSF certified metadata admission (0.40s)\n[CVF hook] START [62/70] session mode consistency\n[CVF hook] PASS [56/70] ASSF package candidate anatomy (0.31s)\n[CVF hook] START [63/70] next-move freshness\n[CVF hook] PASS [57/70] ASSF external-agent metadata readout (0.30s)\n[CVF hook] START [64/70] system chain map freshness\n[CVF hook] PASS [58/70] corpus scan registry (0.66s)\n[CVF hook] START [65/70] as-built system catalog drift\n[CVF hook] PASS [59/70] session mode consistency (0.18s)\n[CVF hook] START [66/70] memory consolidation artifact quality\n[CVF hook] PASS [60/70] KIOD runtime candidate reopen inventory (0.98s)\n[CVF hook] START [67/70] epistemic process packet\n[CVF hook] PASS [61/70] system chain map freshness (0.17s)\n[CVF hook] START [68/70] equivalence claim evidence\n[CVF hook] PASS [62/70] changed corpus registry coverage (0.51s)\n[CVF hook] START [69/70] dispatch scaffold provenance\n[CVF hook] PASS [63/70] memory consolidation artifact quality (0.30s)\n[CVF hook] START [70/70] agent instruction carrier compaction\n[CVF hook] PASS [64/70] next-move freshness (0.49s)\n[CVF hook] PASS [65/70] as-built system catalog drift (0.43s)\n[CVF hook] PASS [66/70] epistemic process packet (0.36s)\n[CVF hook] PASS [67/70] equivalence claim evidence (0.29s)\n[CVF hook] PASS [68/70] agent instruction carrier compaction (0.16s)\n[CVF hook] PASS [69/70] dispatch scaffold provenance (0.25s)\n[CVF hook] PASS [70/70] active session state compatibility (0.91s)\n[CVF hook] All reviewer-fast governance checks passed.\nPASS: reviewer-fast governance gate (7.40s)\n\n=== git diff whitespace check ===\ngit diff --check\nPASS: git diff whitespace check (0.06s)\n\nCOMPLIANT: worker-return fast gate passed in 8.49s.\n"
+    }
+  ],
+  "modelAssessment": {
+    "model": "Sonnet 5.5",
+    "effort": "High",
+    "identityBasis": "OPERATOR_REPORTED_NOT_INDEPENDENTLY_VERIFIED",
+    "workerElapsedMinutes": 27.6,
+    "elapsedBasis": "WORKER_REPORTED_STARTED_TO_FINALIZED_BEFORE_POSTRECORD_CONFIRMATION",
+    "budgetMinutes": 90,
+    "implementationAssignments": 1,
+    "toolDelegatedSubagents": 0,
+    "workerSelfRepairPasses": 2,
+    "firstReturnGateClean": false,
+    "qualityDisposition": "GOOD_BOUNDED_UI_OUTPUT; FIRST_GATE_NOT_CLEAN",
+    "costDisposition": "NOT_AVAILABLE_WITH_REASON: no tokens, billed amount or comparable Haiku delivery",
+    "nextComparisonPreference": {
+      "model": "Haiku 5.5",
+      "effort": "Max",
+      "basis": "OPERATOR_SELECTED; cheaper assumption not independently verified"
+    },
+    "comparisonMethod": "Compare a next useful bounded work order by difficulty/reuse, first gate cleanliness, accepted correctness, worker and reviewer repair effort, elapsed time and actual bill; do not repeat accepted work just to benchmark."
+  },
+  "findings": [
+    {
+      "id": "F1",
+      "severity": "LOW",
+      "disposition": "ACCEPT_WITH_PROVENANCE_QUALIFICATION",
+      "finding": "Worker report calls generated HTML/builder committed while Git showed seven untracked files and unchanged HEAD. Hashes match actual generated submission; no worker commit occurred. Original wording retained and corrected by Local review."
+    },
+    {
+      "id": "F2",
+      "severity": "KNOWN_LIMIT",
+      "disposition": "ACCEPT_BOUNDED",
+      "finding": "Hidden-page test uses synthetic visibilitychange; virtual clock proves pure UI timing only. No actual hidden-tab, narration/audio/video timing or live governance claim."
+    },
+    {
+      "id": "F3",
+      "severity": "LOW",
+      "disposition": "HANDLED_BY_WORKER_BEFORE_RETURN",
+      "finding": "Two failed return gate runs repaired packet/probe-admission and telemetry literals; final frozen return gate and postrecord confirmation pass. Attribute output quality separately from process friction; helper skeleton also omitted required closeability fields."
+    },
+    {
+      "id": "F4",
+      "severity": "MAINTAINABILITY_NOTE",
+      "disposition": "ACCEPT_CURRENT_SCOPE",
+      "finding": "Builder 249/250 and static test 250/250 lines meet fixed scope caps with little expansion headroom. Future extension requires an admitted split/amendment."
+    }
+  ],
+  "learningObservation": {
+    "findingId": "NCR-LEARNING-APPLICATION-OBSERVABILITY",
+    "actualDispatchAndReturnedReviewObserved": true,
+    "selectedUiResult": "ACCEPTED_BOUNDED",
+    "parentProjectApplicationState": "NOT_APPLIED",
+    "reason": "Review observations are recorded; no typed parent application receipt admitted in this bounded UI closure. Do not promote from gate success alone."
+  },
+  "adif": {
+    "taskClass": "offline-preview-delivery",
+    "role": "reviewer",
+    "lifecyclePhase": "review",
+    "returned": "NONE_RETURNED",
+    "totalCandidates": 0,
+    "truncated": false
+  },
+  "closureManifest": [
+    "AGENT_HANDOFF_V63_2026-09-18.md",
+    "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json",
+    "CVF_SESSION/ACTIVE_SESSION_STATE.json",
+    "CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json",
+    "CVF_SESSION/state/entries/cvfNcrConsolidatedLocalFoundation20261006.json",
+    "CVF_SESSION/state/entries/nextAllowedMove.json",
+    "CVF_SESSION_MEMORY.md",
+    "docs/guides/CVF_STORYBOARD_PREVIEW_README_2026-10-09.md",
+    "docs/reviews/CVF_NCR_OFFLINE_PREVIEW_DELIVERY_COMPLETION_2026-10-09.md",
+    "docs/reviews/CVF_NCR_OFFLINE_PREVIEW_DELIVERY_WORKER_RETURN_2026-10-09.md",
+    "docs/reviews/evidence/cvf-storyboard-preview-2026-10-09.html",
+    "docs/reviews/evidence/cvf-storyboard-preview-local-review-2026-10-09.json",
+    "docs/reviews/evidence/cvf-storyboard-preview-worker-2026-10-09.json",
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_OFFLINE_PREVIEW_DELIVERY_2026-10-09.json",
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_OFFLINE_PREVIEW_DELIVERY_2026-10-09.md",
+    "scripts/cvf_storyboard_preview.py",
+    "scripts/test_cvf_storyboard_preview.py",
+    "scripts/test_cvf_storyboard_preview_browser.cjs"
+  ],
+  "claimBoundary": "Private pure offline UI projection only; source R2/native/media/provider/public/deploy/P11 remain parked. No live governance or production proof."
+}

@@ -1,0 +1,142 @@
+{
+  "schemaVersion": "cvf.ncrOfflinePreviewWorkerEvidence.v1",
+  "batchId": "CVF-NCR-OFFLINE-PREVIEW-20261009",
+  "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_OFFLINE_PREVIEW_DELIVERY_2026-10-09.md",
+  "executionBaseHead": "583d871afe66647d1d9760cb436ad95b7f946f61",
+  "headAtFinalization": "583d871afe66647d1d9760cb436ad95b7f946f61",
+  "cleanReleasedHeadAtStart": true,
+  "releaseReceipt": ".cvf/runtime/cvf-video-storyboard-review-20261008/offline-dispatch-release-final-gates/pre-dispatch.json",
+  "startedUtc": "2026-10-09T02:20:54Z",
+  "finalizedUtc": "2026-10-09T02:48:30Z",
+  "elapsedMinutes": 27.6,
+  "ceilingMinutes": 90,
+  "preImplementationGate": {
+    "command": "python -B governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base 583d871afe66647d1d9760cb436ad95b7f946f61 --head HEAD --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_OFFLINE_PREVIEW_DELIVERY_2026-10-09.md --receipt-dir .cvf/runtime/cvf-offline-preview-worker-20261009/gates",
+    "exit": 0,
+    "elapsedSeconds": 53.5,
+    "receipt": ".cvf/runtime/cvf-offline-preview-worker-20261009/gates/pre-implementation.json"
+  },
+  "sourceIntegrity": {
+    "verifiedBeforeWrites": true,
+    "inputs": [{"path": "docs/reference/CVF_NCR_GENERAL_VIDEO_DESIGN_2026-10-02.md", "pinnedSha256": "3ce5e2363c3e29997fcbf42cb4cec59af7447cca38409d4d970e8aa71e5777e0", "currentSha256": "3ce5e2363c3e29997fcbf42cb4cec59af7447cca38409d4d970e8aa71e5777e0", "match": true}, {"path": "docs/reviews/evidence/cvf-ncr-general-video-design-2026-10-02.json", "pinnedSha256": "a1b3829bef1826652eac33e44f3c89a7c1715addb619e93419676a4e86c8ac91", "currentSha256": "a1b3829bef1826652eac33e44f3c89a7c1715addb619e93419676a4e86c8ac91", "match": true}, {"path": "docs/reviews/evidence/cvf-offline-preview-prototype-2026-10-09.html", "pinnedSha256": "38e94802e5ee29d7a9d3cab3ccd26ecff62af8813c180ba6e06daccf86b496d9", "currentSha256": "38e94802e5ee29d7a9d3cab3ccd26ecff62af8813c180ba6e06daccf86b496d9", "match": true}, {"path": "docs/reviews/evidence/cvf-offline-preview-content-test-2026-10-09.json", "pinnedSha256": "c8f25b1f9e09ca7101b2d1de33b7d5c58c880630bda9048f166798c089723edf", "currentSha256": "c8f25b1f9e09ca7101b2d1de33b7d5c58c880630bda9048f166798c089723edf", "match": true}, {"path": "docs/reviews/evidence/cvf-offline-preview-ui-test-2026-10-09.json", "pinnedSha256": "e60896f4886be3a091893efd3b574f2cea843496a2f54c03a17d43de70c1c15d", "currentSha256": "e60896f4886be3a091893efd3b574f2cea843496a2f54c03a17d43de70c1c15d", "match": true}, {"path": "DESIGN.md", "pinnedSha256": "15c1b5061bd2e1f763638beb83a84d06eb8ccbc470747c01f236033a834a987e", "currentSha256": "15c1b5061bd2e1f763638beb83a84d06eb8ccbc470747c01f236033a834a987e", "match": true}, {"path": "docs/reviews/CVF_NCR_C1_S1_CONSOLIDATED_REPAIR_COMPLETION_2026-10-09.md", "pinnedSha256": "fcfb34f6569856fe10b7f0b106dd5c81068eabc1fbff1a44efcf22ec50f27336", "currentSha256": "fcfb34f6569856fe10b7f0b106dd5c81068eabc1fbff1a44efcf22ec50f27336", "match": true}, {"path": "docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md", "pinnedSha256": "0e4975f437b0676d42adfceb681474fba98e278466a61aa41adc6783224aa69b", "currentSha256": "0e4975f437b0676d42adfceb681474fba98e278466a61aa41adc6783224aa69b", "match": true}],
+    "pairedBaselineSha256": "f552b7467ff7e23fe91b2a66f7fa6c78272bf85d860aeececf7cee072a7e6cd1",
+    "workOrderSha256": "39d43ebb1b49a8c885860f4902ebb3363e209b3f1c5cec8ea6146c63863c378d"
+  },
+  "artifacts": {
+    "builder": {"path": "scripts/cvf_storyboard_preview.py", "sha256": "6820306c1d8f162d74a01bde9b8583b0298846b4e7fa7d2a07055dd2549f7771", "lines": 249, "lineCap": 250},
+    "staticTest": {"path": "scripts/test_cvf_storyboard_preview.py", "sha256": "c31a89a59e307438684d363d15785a346185345ebb3fc9d48b4a30cd15cbccfd", "lines": 250, "lineCap": 250},
+    "browserTest": {"path": "scripts/test_cvf_storyboard_preview_browser.cjs", "sha256": "5a12fe49ae6c3c00460d01514114069e26b1c95cd205340958d6069a8cd63496", "lines": 115, "lineCap": 250},
+    "html": {"path": "docs/reviews/evidence/cvf-storyboard-preview-2026-10-09.html", "sha256": "483e1d109196700cee0099d51d843b17374f5340f059cd76b045c263ea0f69c6", "lines": 44, "lineCap": 300},
+    "guide": {"path": "docs/guides/CVF_STORYBOARD_PREVIEW_README_2026-10-09.md", "sha256": "1bb859f72a40b45a64dc3820a7b3037936f081441b4a36f8fb9a982ec0aa31a7", "lines": 74, "lineCap": 120},
+    "evidence": {"path": "docs/reviews/evidence/cvf-storyboard-preview-worker-2026-10-09.json", "sha256": "RECORDED_IN_DETACHED_FINAL_GATE_ROW", "lines": "CAP_CHECKED_AT_FINALIZATION", "lineCap": 350},
+    "return": {"path": "docs/reviews/CVF_NCR_OFFLINE_PREVIEW_DELIVERY_WORKER_RETURN_2026-10-09.md", "sha256": "RECORDED_IN_DETACHED_FINAL_GATE_ROW", "lines": "CAP_CHECKED_AT_FINALIZATION", "lineCap": 450}
+  },
+  "builderValidation": {
+    "defaultCommand": "python -B scripts/cvf_storyboard_preview.py",
+    "defaultExit": 0,
+    "defaultStdout": "BUILD_OK output=docs/reviews/evidence/cvf-storyboard-preview-2026-10-09.html sha256=483e1d109196700cee0099d51d843b17374f5340f059cd76b045c263ea0f69c6",
+    "explicitBuildSha256": ["483e1d109196700cee0099d51d843b17374f5340f059cd76b045c263ea0f69c6", "483e1d109196700cee0099d51d843b17374f5340f059cd76b045c263ea0f69c6"],
+    "repeatedBytesIdentical": true,
+    "equalsCommittedHtml": true,
+    "htmlSha256": "483e1d109196700cee0099d51d843b17374f5340f059cd76b045c263ea0f69c6",
+    "outputBytes": 27908,
+    "sourceShaDisplayedInPage": true,
+    "noTimestampOrEnvBytes": "builder has no clock, locale, path or environment read; two builds and the committed file are identical",
+    "scenes": 10,
+    "scheduleSeconds": 240
+  },
+  "staticTestResults": {
+    "command": "python -B -m unittest discover -s scripts -p test_cvf_storyboard_preview.py",
+    "exit": 0,
+    "tests": [{"name": "test_claim_join_and_illustration_set_are_enforced", "outcome": "ok"}, {"name": "test_crlf_source_builds_same_projection_as_lf", "outcome": "ok"}, {"name": "test_field_omission_reorder_and_unknown_are_rejected", "outcome": "ok"}, {"name": "test_real_pinned_source_projection_is_deterministic_and_matches_committed_html", "outcome": "ok"}, {"name": "test_scene_set_and_order_violations_are_rejected", "outcome": "ok"}, {"name": "test_source_drift_unpinned_and_prototype_drift_are_rejected", "outcome": "ok"}, {"name": "test_timeline_gap_overlap_duration_and_end_are_rejected", "outcome": "ok"}, {"name": "test_undecodable_missing_section_and_paths_are_rejected", "outcome": "ok"}, {"name": "test_unsafe_text_cannot_create_executable_dom", "outcome": "ok"}, {"name": "test_valid_source_is_exact_and_repeatable", "outcome": "ok"}],
+    "summary": "OK",
+    "negativeClasses": ["missing scene", "duplicate scene", "reordered scenes", "extra scene", "field omitted", "field reordered", "unknown field", "malformed field line", "timeline gap", "timeline overlap", "bad duration", "zero-length scene", "end not 240", "start not 0", "undeclared claim id", "illustration set mismatch (declared and inferred)", "source digest drift", "claims digest drift", "unpinned input", "invalid manifest", "unreadable input", "prototype drift", "invalid prototype summary", "undecodable source", "missing Scene Handoff section", "input outside root", "unwritable output dir", "HTML/script-close/onerror/onclick/U+2028 injection"],
+    "existingOutputPreservedOnEveryRejection": true,
+    "syntheticFixturesOnly": true,
+    "fixtureRoot": ".cvf/runtime/cvf-offline-preview-worker-20261009/static-tests (removed by the test after verifying the resolved owned path)"
+  },
+  "browserTestResults": {
+    "command": "node scripts/test_cvf_storyboard_preview_browser.cjs",
+    "exit": 0,
+    "status": "PASS",
+    "browserVersion": "145.0.7632.6",
+    "viewports": ["desktop1440x1050", "mobile390x844"],
+    "tests": [{"name": "all ten scenes: exact narration, source screen, badges, selection, layout", "viewport": "desktop1440x1050", "status": "PASS", "assertions": 121, "ms": 2252, "error": null}, {"name": "timer, pause, resume, seek boundaries, reset, prev/next", "viewport": "desktop1440x1050", "status": "PASS", "assertions": 22, "ms": 1593, "error": null}, {"name": "keyboard navigation, focus order, accessible names, hidden-page pause", "viewport": "desktop1440x1050", "status": "PASS", "assertions": 129, "ms": 832, "error": null}, {"name": "end-stop and replay across 240 seconds", "viewport": "desktop1440x1050", "status": "PASS", "assertions": 4, "ms": 23147, "error": null}, {"name": "all ten scenes: exact narration, source screen, badges, selection, layout", "viewport": "mobile390x844", "status": "PASS", "assertions": 111, "ms": 1157, "error": null}, {"name": "timer, pause, resume, seek boundaries, reset, prev/next", "viewport": "mobile390x844", "status": "PASS", "assertions": 22, "ms": 1585, "error": null}, {"name": "keyboard navigation, focus order, accessible names, hidden-page pause", "viewport": "mobile390x844", "status": "PASS", "assertions": 129, "ms": 746, "error": null}, {"name": "end-stop and replay across 240 seconds", "viewport": "mobile390x844", "status": "PASS", "assertions": 4, "ms": 23140, "error": null}],
+    "assertions": 543,
+    "httpRequests": 0,
+    "totalRequests": 8,
+    "requestNote": "every request was the file:// document itself",
+    "pageErrors": 0,
+    "elapsedMs": 57369,
+    "screenshots": [{"path": ".cvf/runtime/cvf-offline-preview-worker-20261009/preview-1440x1050-S05.png", "sha256": "39e936cbd31d0f8945fc665c61b4c074621b4610f1d4cd3950616487a798da8d"}, {"path": ".cvf/runtime/cvf-offline-preview-worker-20261009/preview-1440x1050-S10.png", "sha256": "111384c8c1313d6b7ee8a03a03de7439659bd69ddf5c291d238fb731bfa965b5"}, {"path": ".cvf/runtime/cvf-offline-preview-worker-20261009/preview-390x844-S05.png", "sha256": "87bbfb5df5dc7f65f55c2f14517f2d9ccb73ba6da0ed2143fbe5bd8a5311e98b"}, {"path": ".cvf/runtime/cvf-offline-preview-worker-20261009/preview-390x844-S10.png", "sha256": "af26262ecad11189e64825b7fccefa1372d4379fdf348b7195720dad1dad81ea"}],
+    "visualInspection": "S05 and S10 screenshots at 1440x1050 and 390x844 inspected by the worker: text, badge, controls, slider and notes readable, no clipped or overlapping content",
+    "timerMethod": "Playwright virtual clock for pure UI timer behavior only; not measured narration, audio or video duration",
+    "hiddenPageMethod": "document.hidden overridden plus a synthetic visibilitychange event; a real hidden tab was not exercised"
+  },
+  "negativeClassSweep": {
+    "staticMutations": {"count": 15, "killed": 15, "baselineFailures": 0, "rows": [{"mutation": "escape-disabled", "failingTests": 3, "killed": true}, {"mutation": "digest-check-removed", "failingTests": 1, "killed": true}, {"mutation": "schedule-check-removed", "failingTests": 1, "killed": true}, {"mutation": "claim-check-removed", "failingTests": 1, "killed": true}, {"mutation": "field-order-check-removed", "failingTests": 1, "killed": true}, {"mutation": "scene-set-check-removed", "failingTests": 1, "killed": true}, {"mutation": "end-240-check-removed", "failingTests": 1, "killed": true}, {"mutation": "illustration-set-check-removed", "failingTests": 1, "killed": true}, {"mutation": "prototype-cross-check-removed", "failingTests": 1, "killed": true}, {"mutation": "crlf-normalisation-removed", "failingTests": 2, "killed": true}, {"mutation": "unpinned-check-removed", "failingTests": 1, "killed": true}, {"mutation": "timestamp-added", "failingTests": 2, "killed": true}, {"mutation": "badge-removed", "failingTests": 2, "killed": true}, {"mutation": "stale-source-sha", "failingTests": 2, "killed": true}, {"mutation": "script-escape-lost", "failingTests": 2, "killed": true}]},
+    "browserMutations": {"count": 8, "killed": 8, "rows": [{"mutation": "visibility-listener-removed", "killed": true, "failingTests": ["keyboard navigation, focus order, accessible names, hidden-page pause"]}, {"mutation": "seek-clamp-broken", "killed": true, "failingTests": ["timer, pause, resume, seek boundaries, reset, prev/next"]}, {"mutation": "end-stop-removed", "killed": true, "failingTests": ["end-stop and replay across 240 seconds"]}, {"mutation": "badge-hidden", "killed": true, "failingTests": ["all ten scenes: exact narration, source screen, badges, selection, layout"]}, {"mutation": "card-overflow", "killed": true, "failingTests": ["all ten scenes: exact narration, source screen, badges, selection, layout"]}, {"mutation": "active-selection-lost", "killed": true, "failingTests": ["all ten scenes: exact narration, source screen, badges, selection, layout"]}, {"mutation": "pause-not-stable", "killed": true, "failingTests": ["keyboard navigation, focus order, accessible names, hidden-page pause", "timer, pause, resume, seek boundaries, reset, prev/next"]}, {"mutation": "keyboard-removed", "killed": true, "failingTests": ["keyboard navigation, focus order, accessible names, hidden-page pause"]}]},
+    "note": "seek-clamp-broken initially survived because the range input self-clamps; direct seek() boundary assertions were added and it is now killed. Mutations are in-memory or temp copies; worker artifacts were never edited to create negatives."
+  },
+  "guideVerification": {
+    "path": "docs/guides/CVF_STORYBOARD_PREVIEW_README_2026-10-09.md",
+    "lines": 74,
+    "requiredStatements": {"buildCommand": true, "staticTestCommand": true, "browserTestCommand": true, "openInstruction": true, "sourceHash": true, "layoutAdaptation": true, "estimatedTiming": true, "privateUiOnly": true, "excludedMediaLanes": true},
+    "noStaleTestStatusEmbedded": true
+  },
+  "workerReturnGate": {
+    "status": "COMPLIANT",
+    "command": "python governance/compat/run_worker_return_fast_gate.py --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_OFFLINE_PREVIEW_DELIVERY_2026-10-09.md",
+    "activeWorkOrderBound": true,
+    "finalExit": 0,
+    "finalElapsedSeconds": 15.96,
+    "finalRunLog": ".cvf/runtime/cvf-offline-preview-worker-20261009/gate-run4.log",
+    "returnSha256AtFinalRun": "6ac32c384cefc5ffb6054d94e570016ece9efe202fb7428e130b1ba9cb753cbf",
+    "returnLines": 391,
+    "returnLineCap": 450,
+    "runs": [{"run": 1, "result": "FAIL", "exit": 1, "elapsedSeconds": 8.1, "failingGates": ["independent review probe admission", "reviewer-fast governance gate"], "repair": "nine defect groups, one pass"}, {"run": 2, "result": "FAIL", "exit": 1, "elapsedSeconds": 18.7, "failingGates": ["reviewer-fast governance gate (review cost control)"], "repair": "two ready-state telemetry literals"}, {"run": 3, "result": "COMPLIANT", "exit": 0, "elapsedSeconds": 13.0, "note": "before the disclosure amendment to the return"}, {"run": 4, "result": "COMPLIANT", "exit": 0, "elapsedSeconds": 15.96, "note": "final run on the frozen return bytes; passing gates: corpus registry drift, epistemic packet, acceptance ledger, worker-return quality, probe admission, reviewer-fast (70 checks), git diff check"}],
+    "individualCheckerSubstitution": "NOT_USED",
+    "note": "This JSON was updated after the final run solely to record it; the return bytes were not changed after the final run."
+  },
+  "gitStatusShort": [
+    "?? docs/guides/CVF_STORYBOARD_PREVIEW_README_2026-10-09.md",
+    "?? docs/reviews/CVF_NCR_OFFLINE_PREVIEW_DELIVERY_WORKER_RETURN_2026-10-09.md",
+    "?? docs/reviews/evidence/cvf-storyboard-preview-2026-10-09.html",
+    "?? docs/reviews/evidence/cvf-storyboard-preview-worker-2026-10-09.json",
+    "?? scripts/cvf_storyboard_preview.py",
+    "?? scripts/test_cvf_storyboard_preview.py",
+    "?? scripts/test_cvf_storyboard_preview_browser.cjs"
+  ],
+  "gitChangedUnion": [
+    "docs/guides/CVF_STORYBOARD_PREVIEW_README_2026-10-09.md",
+    "docs/reviews/CVF_NCR_OFFLINE_PREVIEW_DELIVERY_WORKER_RETURN_2026-10-09.md",
+    "docs/reviews/evidence/cvf-storyboard-preview-2026-10-09.html",
+    "docs/reviews/evidence/cvf-storyboard-preview-worker-2026-10-09.json",
+    "scripts/cvf_storyboard_preview.py",
+    "scripts/test_cvf_storyboard_preview.py",
+    "scripts/test_cvf_storyboard_preview_browser.cjs"
+  ],
+  "costAndInvocation": {
+    "internalAgentInvocationCount": 0,
+    "externalAgentInvocationCount": 0,
+    "providerCallCount": 0,
+    "subagentCount": 0,
+    "tokenOrQuotaUsage": "NOT_AVAILABLE_WITH_REASON: no usage meter exposed to the worker; not a zero-cost claim"
+  },
+  "limits": [
+    "UI-only private offline preview; no audio, TTS, MP4, FFmpeg, provider, network, server or public effect",
+    "browser timers verified on a virtual clock, not measured narration or video duration",
+    "hidden-page pause verified through a synthetic visibilitychange event",
+    "source pin is a raw-byte digest; a checkout with different line endings fails closed by design",
+    "presentation cards come from the frozen prototype and are cross-checked, not independently authored",
+    "expense example is not executed; no test result for it exists"
+  ],
+  "cleanup": {
+    "ownedRuntimeRoot": ".cvf/runtime/cvf-offline-preview-worker-20261009/",
+    "removedAfterUse": ["static-tests fixtures", "mut/ temp HTML copies", "det1.html/det2.html"],
+    "retainedIgnored": ["gates/", "screenshots", "browser-results.json", "mutation-*.json", "logs", "sweep.py", "finalize.py"],
+    "ownedBrowserClosed": "every context and the browser were closed in finally blocks",
+    "noInstallNoDownloadNoSharedCacheCleanup": true
+  },
+  "claimBoundary": "Private source-pinned offline UI package only. Not media, not live governance proof, not source R2 or custody disposition, not production or public readiness."
+}

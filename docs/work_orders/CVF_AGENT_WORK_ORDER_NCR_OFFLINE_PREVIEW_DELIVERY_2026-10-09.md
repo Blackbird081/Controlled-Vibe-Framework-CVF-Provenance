@@ -1,7 +1,7 @@
 # CVF Agent Work Order - NCR Offline Preview Delivery
 Memory class: governed-worker-dispatch
 docType: work_order
-Status: READY
+Status: CLOSED_PASS_BOUNDED
 Date: 2026-10-09
 Batch ID: CVF-NCR-OFFLINE-PREVIEW-20261009
 Dispatch base head: e93ad0075c2868ebc476c43a0324256fb6c6d4a0
@@ -616,3 +616,31 @@ Frozen sources in dispatch input JSON bind exact paths/raw hashes and observatio
 ```
 
 Plan is a dispatch obligation, not APPLIED project evidence. First real worker dispatch plus returned-result review is the required observation boundary.
+
+
+## Local Closure Receipt
+
+Closure decision: CLOSED_PASS_BOUNDED; consumed once; no redispatch.
+Completion evidence: docs/reviews/CVF_NCR_OFFLINE_PREVIEW_DELIVERY_COMPLETION_2026-10-09.md; docs/reviews/evidence/cvf-storyboard-preview-local-review-2026-10-09.json.
+Original worker return remains COMPLETE_PENDING_REVIEW as submitted evidence; Local alone closes.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_OFFLINE_PREVIEW_DELIVERY_2026-10-09.md | CLOSED_PASS_BOUNDED; no redispatch | PASS |
+| Completion or reviewer artifact | docs/reviews/CVF_NCR_OFFLINE_PREVIEW_DELIVERY_COMPLETION_2026-10-09.md | seven files accepted; separate probe passes | PASS |
+| Roadmap state | existing NCR/video owners | no new successor or production admission | N/A with reason: standalone bounded order |
+| Registry JSON | docs/reviews/evidence/cvf-storyboard-preview-local-review-2026-10-09.json | original pins; embedded probe and gate logs; model assessment | PASS |
+| Registry Markdown | docs/reviews/CVF_NCR_OFFLINE_PREVIEW_DELIVERY_COMPLETION_2026-10-09.md | known limits and four findings disclosed | PASS |
+| External evidence digest | docs/reviews/evidence/cvf-storyboard-preview-local-review-2026-10-09.json | no external research | N/A with reason: internal result only |
+| System loop interlock | existing source R2 and C1 STOP owners | no retry/reset or effect | PASS |
+| Session continuity | AGENT_HANDOFF_V63_2026-09-18.md; generated bootstrap/state | atomic closed-status pins, followed by real material SHA stewardship | PASS |
+## Acceptance Receipt Assertion Matrix
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| BUILD | deterministic exact source projection | reviewer positive hash equals worker HTML; eight input pins match | PASS |
+| STATIC | parser and injection negatives | 10 tests and 15/15 mutation kills consumed; two independent negatives pass | PASS |
+| BROWSER | controls and responsive UI | 8 tests, 8/8 mutation kills, four screenshots consumed | PASS |
+| GUIDE | usage and limits | 74-line guide contains build/test/open commands and scope limits | PASS |
+| RETURN | bound full gate and exact seven-path scope | frozen return log and postrecord log COMPLIANT; no worker commit | PASS |

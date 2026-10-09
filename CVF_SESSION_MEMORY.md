@@ -39,7 +39,7 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`;handoff=`AGENT_HANDOFF_V63_2026-09-18.md`;next=operator manual transfer of offline preview work order after bound release;role=Local INTERNAL_AGENT orchestrator/reviewer;phase=internal dispatch;decision owner=Local for technical review;parked checkpoint=source R2/native/TTS/media/provider/public/deploy/P11;no automatic successor.
+Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`;handoff=`AGENT_HANDOFF_V63_2026-09-18.md`;next=bounded Local review/planning after offline UI acceptance;role=Local INTERNAL_AGENT orchestrator/reviewer;phase=internal review/closure;decision owner=Local;parked checkpoint=source R2/native/TTS/media/provider/public/deploy/P11;no automatic successor.
 
 ## Current Mode
 
@@ -48,7 +48,7 @@ Current mode: `cvf_ncr_p10_closed_p11_parked`; previous mode marker: `cvf_ncr_p1
 
 ## Next Allowed Move
 Mode: `cvf_ncr_p10_closed_p11_parked`
-PROGRAM_ID=CVF-CORE; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-OFFLINE-PREVIEW-20261009. Operator manually transfers docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_OFFLINE_PREVIEW_DELIVERY_2026-10-09.md to shared-workspace INTERNAL_AGENT worker after actual clean committed bound pre-dispatch PASS. Local is orchestrator/reviewer; seven exact UI/test/guide/return paths, WORKER_MUST_NOT_COMMIT, one90-minute total worker ceiling; no tool-delegated subagent/provider calls. Use pinned design/prototype evidence; first eligible actual learning dispatch/result review remains pending, RETURNED/NOT_APPLIED. Source R2 attempt/counters and source-supervisor/native/TTS/audio/MP4/S2-S9/provider/public/deploy/P11 stay parked; LHW24 retained. Private local packet only; no push grant, ahead-of-origin debt retained with this scope blocker. No automatic media/source successor.
+PROGRAM_ID=CVF-CORE; NEXT_ACTION_CLASS=REVIEW; BATCH_ID=CVF-NCR-OFFLINE-PREVIEW-20261009. Offline preview CLOSED_PASS_BOUNDED; seven unchanged worker artifacts accepted by Local independent review. No execution of the consumed work order. Local may plan the next useful bounded task under existing roadmap authority; next implementation preference Haiku5.5/Max is operator-reported, not an invocation or price claim. Actual dispatch/result observation recorded; parent learning RETURNED/NOT_APPLIED pending typed admission. Source R2/native/TTS/audio/MP4/S2-S9/provider/public/deploy/P11 stay parked; LHW24 retained. Private local scope has no push grant; upstream synchronization debt retained. No automatic media/source successor.
 Historical G1-G7 terminal baseline: mode `acel_g1_g7_research_terminally_closed`. G1-G6 terminal review: `docs/reviews/CVF_ACEL_G1_G6_TERMINAL_STOP_CLOSURE_2026-09-24.md`; G7 research closure: `docs/reviews/CVF_ACEL_G7_CROSS_RUN_CAPABILITY_EVOLUTION_RESEARCH_CLOSURE_2026-09-24.md`. The packet-only post-G7 reconciliation review at `docs/reviews/CVF_ACEL_POST_G7_FULL_CORPUS_ABSORPTION_CLOSURE_2026-09-24.md` is superseded for repository absorption by the 2026-09-25 pinned-source audit. G1 is stopped, G2-G6 remain parked, G7 research is closed, and no automatic G1-G7 successor exists.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1

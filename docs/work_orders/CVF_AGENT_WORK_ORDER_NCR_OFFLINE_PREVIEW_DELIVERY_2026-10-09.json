@@ -2,11 +2,11 @@
   "schemaVersion": "cvf.preapprovalFeasibility.v1",
   "proposal": {
     "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_OFFLINE_PREVIEW_DELIVERY_2026-10-09.md",
-    "sha256": "39d43ebb1b49a8c885860f4902ebb3363e209b3f1c5cec8ea6146c63863c378d"
+    "sha256": "13244fc94f1f7c2fcc711c428027e1faf1bd7f677817c9ab797ec905ccd92257"
   },
   "approvalTarget": {
     "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_OFFLINE_PREVIEW_DELIVERY_2026-10-09.md",
-    "sha256": "39d43ebb1b49a8c885860f4902ebb3363e209b3f1c5cec8ea6146c63863c378d",
+    "sha256": "13244fc94f1f7c2fcc711c428027e1faf1bd7f677817c9ab797ec905ccd92257",
     "prospectiveOutcomeSha256": "275af18dbe1f1b673d655d81d19af10411fea196b4f41b27f8fdb88ef9c43d0b"
   },
   "prospectiveOutcome": {
