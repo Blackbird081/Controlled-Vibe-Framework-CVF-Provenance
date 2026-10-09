@@ -1,0 +1,89 @@
+{
+  "schemaVersion": "cvf.preapprovalFeasibility.v1",
+  "proposal": {
+    "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_OFFLINE_PREVIEW_DELIVERY_2026-10-09.md",
+    "sha256": "39d43ebb1b49a8c885860f4902ebb3363e209b3f1c5cec8ea6146c63863c378d"
+  },
+  "approvalTarget": {
+    "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_OFFLINE_PREVIEW_DELIVERY_2026-10-09.md",
+    "sha256": "39d43ebb1b49a8c885860f4902ebb3363e209b3f1c5cec8ea6146c63863c378d",
+    "prospectiveOutcomeSha256": "275af18dbe1f1b673d655d81d19af10411fea196b4f41b27f8fdb88ef9c43d0b"
+  },
+  "prospectiveOutcome": {
+    "schemaVersion": "cvf.semanticConvergenceControl.v1",
+    "problemKey": "cvf-offline-storyboard-durable-ui-package",
+    "chainMode": "INITIAL",
+    "chainOrdinal": 0,
+    "predecessor": null,
+    "blockerDelta": {
+      "prior": [],
+      "resolved": [],
+      "retained": [],
+      "new": [],
+      "reopened": [],
+      "current": []
+    },
+    "resolutionEvidence": {},
+    "counters": {
+      "partialReadyClosures": 0,
+      "reviewerScopeExpansions": 0,
+      "sameClaimCorrections": 0,
+      "nonDecreasingBlockerTransitions": 0
+    },
+    "claims": [],
+    "requiredDisposition": "CONTINUE_BOUNDED",
+    "successorScope": "INITIAL_BOUNDED"
+  },
+  "phasePrerequisites": {
+    "phase": "OFFLINE_UI_PACKAGE",
+    "rows": [
+      {
+        "requirementId": "TEXT_DESIGN",
+        "requiredForPhase": true,
+        "evidence": {
+          "path": "docs/reference/CVF_NCR_GENERAL_VIDEO_DESIGN_2026-10-02.md",
+          "sha256": "3ce5e2363c3e29997fcbf42cb4cec59af7447cca38409d4d970e8aa71e5777e0",
+          "locator": "LOCAL_ACCEPTED_DESIGN_ONLY"
+        },
+        "deferredToPhase": null
+      },
+      {
+        "requirementId": "UI_PROTOTYPE",
+        "requiredForPhase": true,
+        "evidence": {
+          "path": "docs/reviews/evidence/cvf-offline-preview-prototype-2026-10-09.html",
+          "sha256": "38e94802e5ee29d7a9d3cab3ccd26ecff62af8813c180ba6e06daccf86b496d9",
+          "locator": "Preview storyboard"
+        },
+        "deferredToPhase": null
+      },
+      {
+        "requirementId": "CONTENT_REVIEW",
+        "requiredForPhase": true,
+        "evidence": {
+          "path": "docs/reviews/evidence/cvf-offline-preview-content-test-2026-10-09.json",
+          "sha256": "c8f25b1f9e09ca7101b2d1de33b7d5c58c880630bda9048f166798c089723edf",
+          "locator": "PASS_LOCAL_STORYBOARD_TEST"
+        },
+        "deferredToPhase": null
+      },
+      {
+        "requirementId": "UI_REVIEW",
+        "requiredForPhase": true,
+        "evidence": {
+          "path": "docs/reviews/evidence/cvf-offline-preview-ui-test-2026-10-09.json",
+          "sha256": "e60896f4886be3a091893efd3b574f2cea843496a2f54c03a17d43de70c1c15d",
+          "locator": "PASS_OFFLINE_UI_PREVIEW"
+        },
+        "deferredToPhase": null
+      },
+      {
+        "requirementId": "MEDIA_PRODUCTION_ADMISSION",
+        "requiredForPhase": false,
+        "evidence": null,
+        "deferredToPhase": "SEPARATELY_AUTHORIZED_AUDIO_VIDEO_PRODUCTION"
+      }
+    ]
+  },
+  "requestQueue": null
+}

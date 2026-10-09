@@ -1,0 +1,328 @@
+{
+  "status": "PASS_LOCAL_STORYBOARD_TEST",
+  "role": "LOCAL",
+  "phase": "LOCAL_CONTENT_AUDIT_TEST",
+  "decisionOwner": "Local under operator delegated test selection",
+  "authorization": "Audit va chon di, test thoi, ko can toi can thiep",
+  "candidate": ".cvf/runtime/cvf-video-storyboard-review-20261008/CVF_VIDEO_STORYBOARD_TEST_SELECTED.html",
+  "candidateSha256": "858a996f908f3f5ef11c906f5904c7d5c50d4ca2e7d98fb8bf2ff5e9c36bd317",
+  "baseSha256": "af6a983729afd1f0fac7d80e3d154ec7ee91cc9addf5034df0e1ae3a0de39502",
+  "sourceSha256": "3ce5e2363c3e29997fcbf42cb4cec59af7447cca38409d4d970e8aa71e5777e0",
+  "findingsBeforeRepair": [
+    {
+      "id": "ISOLATED_SCENE_DISCLAIMER",
+      "affectedScenes": [
+        "S06",
+        "S07",
+        "S08"
+      ],
+      "scope": "HTML presentation: persistent global disclaimer not repeated within detached scene"
+    },
+    {
+      "id": "SOURCE_HASH_METADATA",
+      "displayed": "5575b2dbbf552411897f6dbad2d8a157721a9aa31bbc85a2bc9acc79018b6b32",
+      "currentRawSha256": "3ce5e2363c3e29997fcbf42cb4cec59af7447cca38409d4d970e8aa71e5777e0",
+      "currentLfSha256": "e9d6d2cec39496fbf508e7134b3c23276af8e98814397776a82293adfb3999d6",
+      "scope": "Displayed hash does not match current source bytes or LF-normalized source"
+    }
+  ],
+  "timelineSeconds": 240,
+  "narrationPreserved": true,
+  "storyboardDelta": "four explicit per-scene badges only; source design unchanged",
+  "scenes": [
+    {
+      "scene": "S01",
+      "duration": 15,
+      "narrationTokens": 38,
+      "tokensPerSecond": 2.533,
+      "narrationExactSourceMatch": true,
+      "claims": [
+        "C01"
+      ]
+    },
+    {
+      "scene": "S02",
+      "duration": 25,
+      "narrationTokens": 51,
+      "tokensPerSecond": 2.04,
+      "narrationExactSourceMatch": true,
+      "claims": [
+        "C02",
+        "C03"
+      ]
+    },
+    {
+      "scene": "S03",
+      "duration": 25,
+      "narrationTokens": 62,
+      "tokensPerSecond": 2.48,
+      "narrationExactSourceMatch": true,
+      "claims": [
+        "C04",
+        "C05"
+      ]
+    },
+    {
+      "scene": "S04",
+      "duration": 30,
+      "narrationTokens": 61,
+      "tokensPerSecond": 2.033,
+      "narrationExactSourceMatch": true,
+      "claims": [
+        "C06",
+        "C07"
+      ]
+    },
+    {
+      "scene": "S05",
+      "duration": 20,
+      "narrationTokens": 52,
+      "tokensPerSecond": 2.6,
+      "narrationExactSourceMatch": true,
+      "claims": [
+        "C09",
+        "C10"
+      ]
+    },
+    {
+      "scene": "S06",
+      "duration": 20,
+      "narrationTokens": 54,
+      "tokensPerSecond": 2.7,
+      "narrationExactSourceMatch": true,
+      "claims": [
+        "C09",
+        "C11"
+      ]
+    },
+    {
+      "scene": "S07",
+      "duration": 25,
+      "narrationTokens": 59,
+      "tokensPerSecond": 2.36,
+      "narrationExactSourceMatch": true,
+      "claims": [
+        "C09",
+        "C12",
+        "C13"
+      ]
+    },
+    {
+      "scene": "S08",
+      "duration": 30,
+      "narrationTokens": 66,
+      "tokensPerSecond": 2.2,
+      "narrationExactSourceMatch": true,
+      "claims": [
+        "C09",
+        "C13",
+        "C14",
+        "C08"
+      ]
+    },
+    {
+      "scene": "S09",
+      "duration": 25,
+      "narrationTokens": 52,
+      "tokensPerSecond": 2.08,
+      "narrationExactSourceMatch": true,
+      "claims": [
+        "C15",
+        "C16",
+        "C08"
+      ]
+    },
+    {
+      "scene": "S10",
+      "duration": 25,
+      "narrationTokens": 64,
+      "tokensPerSecond": 2.56,
+      "narrationExactSourceMatch": true,
+      "claims": [
+        "C17",
+        "C18",
+        "C19"
+      ]
+    }
+  ],
+  "claimCount": 19,
+  "sourcePins": [
+    {
+      "path": "ECOSYSTEM/doctrine/CVF_PRODUCT_POSITIONING.md",
+      "sha256": "fc006001e9a25ed00a40392499cb7e58ff814d8522f30db60e12e63c198ce945",
+      "originalInputHashMatch": true,
+      "disposition": "CURRENT_DOCUMENTARY_SOURCE_READ_TARGETED; no runtime proof"
+    },
+    {
+      "path": "docs/guides/CVF_QUICK_ORIENTATION.md",
+      "sha256": "ff75a3a51457778e896178f917fecc274b29f29b1be2775ec15b3c736735e35d",
+      "originalInputHashMatch": true,
+      "disposition": "CURRENT_DOCUMENTARY_SOURCE_READ_TARGETED; no runtime proof"
+    },
+    {
+      "path": "docs/reference/CVF_GOVERNED_WORK_LIFECYCLE_AND_DESIGN_CONTROL_STANDARD_2026-06-11.md",
+      "sha256": "b48f11363ee62a2ec4c85c6f9fba4540b90eb74475c31aeab18cfe4492a536de",
+      "originalInputHashMatch": false,
+      "disposition": "CURRENT_DOCUMENTARY_SOURCE_READ_TARGETED; no runtime proof"
+    },
+    {
+      "path": "docs/reviews/CVF_CVF_NCR_VOM_QUICK_START_CLAIM_ALIGNMENT_COMPLETION_2026-10-02.md",
+      "sha256": "3e6a65ef3692102a8bd8eca587944954e570f95aa286ab48e85823a93c106a43",
+      "originalInputHashMatch": true,
+      "disposition": "CURRENT_DOCUMENTARY_SOURCE_READ_TARGETED; no runtime proof"
+    },
+    {
+      "path": "governance/toolkit/05_OPERATION/CVF_DOWNSTREAM_AGENTS_TEMPLATE.md",
+      "sha256": "bbb56c8238a489594adf021acfc5fd522b742c7e321af8622d892a0fd40bd70f",
+      "originalInputHashMatch": false,
+      "disposition": "CURRENT_DOCUMENTARY_SOURCE_READ_TARGETED; no runtime proof"
+    }
+  ],
+  "corpusVerdict": "BOUNDED_TARGETED_AUDIT_ONLY",
+  "excluded": "repository-wide inventory, actual illustrative code execution, voice duration, rendered audio/video, live provider/governance behavior, source R2 redispatch, production/release/public sync",
+  "learningApplication": "NOT_APPLIED: no eligible work-order dispatch",
+  "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
+  "browserTest": {
+    "status": "PASS",
+    "browserVersion": "145.0.7632.6",
+    "observations": [
+      {
+        "viewport": "desktop",
+        "width": 1440,
+        "height": 1050,
+        "isolated": [
+          {
+            "scene": "S05",
+            "fullDisclaimerVisibleInDetachedExcerpt": true
+          },
+          {
+            "scene": "S06",
+            "fullDisclaimerVisibleInDetachedExcerpt": true
+          },
+          {
+            "scene": "S07",
+            "fullDisclaimerVisibleInDetachedExcerpt": true
+          },
+          {
+            "scene": "S08",
+            "fullDisclaimerVisibleInDetachedExcerpt": true
+          }
+        ],
+        "horizontalOverflowPx": 0,
+        "screenshot": ".cvf/runtime/cvf-video-storyboard-review-20261008/test-selected-desktop-20261009.png",
+        "screenshotSha256": "27d2bacb0757900d9d189e5b7a6e771008366358b20699e810874950d55b8e70"
+      },
+      {
+        "viewport": "mobile",
+        "width": 390,
+        "height": 844,
+        "isolated": [
+          {
+            "scene": "S05",
+            "fullDisclaimerVisibleInDetachedExcerpt": true
+          },
+          {
+            "scene": "S06",
+            "fullDisclaimerVisibleInDetachedExcerpt": true
+          },
+          {
+            "scene": "S07",
+            "fullDisclaimerVisibleInDetachedExcerpt": true
+          },
+          {
+            "scene": "S08",
+            "fullDisclaimerVisibleInDetachedExcerpt": true
+          }
+        ],
+        "horizontalOverflowPx": 0,
+        "screenshot": ".cvf/runtime/cvf-video-storyboard-review-20261008/test-selected-mobile-20261009.png",
+        "screenshotSha256": "de489d5ec4a5345b03f8b2eeab2a704c31320d05a03bcd7fe04d03491542342e"
+      }
+    ],
+    "observedHttpRequests": 0,
+    "pageErrors": 0,
+    "scope": "Changed candidate metadata and per-scene badges only; previous broader browser proof reused."
+  },
+  "continuation": "Use this candidate for private static storyboard tests; source/runtime and production checkpoints remain parked. No operator intervention needed for this bounded test.",
+  "reproducibility": {
+    "commands": [
+      "python .cvf/runtime/cvf-video-storyboard-review-20261008/audit_content_20261009.py",
+      "node .cvf/runtime/cvf-video-storyboard-review-20261008/test_selected_20261009.cjs"
+    ],
+    "scriptSha256": [
+      "b8788b6af6ee2616e9c25e40073e774efce67dca0d0310c333ba05011886cbcb",
+      "764280f61519be10e08ca67d2f5cb205d0f66535b700eed39a87876113927886"
+    ]
+  },
+  "semanticAudit": [
+    {
+      "claims": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05"
+      ],
+      "judgment": "SUPPORTED_DOCUMENTARY_ONLY",
+      "basis": "Quick Orientation purpose and sections 1-3 plus frozen Product Positioning sections 2-3; no universal control claim."
+    },
+    {
+      "claims": [
+        "C06",
+        "C07"
+      ],
+      "judgment": "SUPPORTED_DOCUMENTARY_ONLY",
+      "basis": "Current lifecycle Purpose retains seven decisions; Outputs Designed For The Receiving Agent and Outcome-Bound Work Selection permit existing owners for a small direct task. No seven-approval claim."
+    },
+    {
+      "claims": [
+        "C08",
+        "C16"
+      ],
+      "judgment": "SUPPORTED_DOCUMENTARY_ONLY",
+      "basis": "Current downstream carrier Risk Classification and Governance Latency and Approval Continuity retain environment/effect risk and continuation within same authority; new effects need separate authority."
+    },
+    {
+      "claims": [
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15"
+      ],
+      "judgment": "SUPPORTED_AS_NOT_EXECUTED_ILLUSTRATIVE",
+      "basis": "Quick Orientation sections 4-6 and four explicit scene badges distinguish intended example behavior from actual execution. Expense application or example tests were not run."
+    },
+    {
+      "claims": [
+        "C17",
+        "C18",
+        "C19"
+      ],
+      "judgment": "SUPPORTED_DOCUMENTARY_ONLY",
+      "basis": "Quick Orientation section 7 and VOM claim alignment Findings retain provider/setup/production limits; S10 discloses documentary boundary."
+    }
+  ],
+  "sourceDriftDisposition": "Two current owners differ from old intake hashes; relevant current lifecycle and carrier sections read. C06/C07/C08/C16 remain supported at documentary scope. Old snapshot hashes were not treated as fresh proof.",
+  "reusedEvidence": {
+    "path": ".cvf/runtime/cvf-video-storyboard-review-20261008/reconciliation-browser-20261009.json",
+    "sha256": "b4eb06f206994c31ed94fac7ad2b85dd30455a813cb0a833d19641359d580b41",
+    "scope": "Original immutable base broader browser checks; new candidate metadata and badges tested separately."
+  },
+  "terminalReview": {
+    "selection": "Keep existing ten-scene narration; apply only presentation badges and current-source hash in separate local test candidate",
+    "requiredOutputs": {
+      "candidate": "PASS",
+      "staticContent": "PASS",
+      "changedPresentationDesktopMobile": "PASS",
+      "detachedSceneDisclaimer": "PASS_8_CASES",
+      "visualScreenshotInspection": "PASS_2_VIEWPORTS"
+    },
+    "result": "LOCAL_TEST_COMPLETE",
+    "trackedArtifactChanges": false,
+    "commitOrPublicSync": false,
+    "nextMove": "Private static test candidate ready; no operator checkpoint is required to repeat this same bounded test. Audio/video and source runtime are outside this result."
+  }
+}

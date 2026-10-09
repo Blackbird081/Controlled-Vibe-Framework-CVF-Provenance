@@ -1,0 +1,79 @@
+{
+  "schemaVersion": "cvf.offlinePreviewDispatchInputs.v1",
+  "batchId": "CVF-NCR-OFFLINE-PREVIEW-20261009",
+  "planningBase": "e93ad0075c2868ebc476c43a0324256fb6c6d4a0",
+  "authority": "Operator 2026-10-09: continue; operator transfers work order to Claude; Local acts as orchestrator/reviewer. Prior autonomous test scope retained.",
+  "sources": [
+    {
+      "path": "docs/reference/CVF_NCR_GENERAL_VIDEO_DESIGN_2026-10-02.md",
+      "rawSha256": "3ce5e2363c3e29997fcbf42cb4cec59af7447cca38409d4d970e8aa71e5777e0",
+      "role": "governed-source"
+    },
+    {
+      "path": "docs/reviews/evidence/cvf-ncr-general-video-design-2026-10-02.json",
+      "rawSha256": "a1b3829bef1826652eac33e44f3c89a7c1715addb619e93419676a4e86c8ac91",
+      "role": "governed-source"
+    },
+    {
+      "path": "docs/reviews/evidence/cvf-offline-preview-prototype-2026-10-09.html",
+      "rawSha256": "38e94802e5ee29d7a9d3cab3ccd26ecff62af8813c180ba6e06daccf86b496d9",
+      "role": "bounded-local-prototype-evidence"
+    },
+    {
+      "path": "docs/reviews/evidence/cvf-offline-preview-content-test-2026-10-09.json",
+      "rawSha256": "c8f25b1f9e09ca7101b2d1de33b7d5c58c880630bda9048f166798c089723edf",
+      "role": "bounded-local-prototype-evidence"
+    },
+    {
+      "path": "docs/reviews/evidence/cvf-offline-preview-ui-test-2026-10-09.json",
+      "rawSha256": "e60896f4886be3a091893efd3b574f2cea843496a2f54c03a17d43de70c1c15d",
+      "role": "bounded-local-prototype-evidence"
+    },
+    {
+      "path": "DESIGN.md",
+      "rawSha256": "15c1b5061bd2e1f763638beb83a84d06eb8ccbc470747c01f236033a834a987e",
+      "role": "governed-source"
+    },
+    {
+      "path": "docs/reviews/CVF_NCR_C1_S1_CONSOLIDATED_REPAIR_COMPLETION_2026-10-09.md",
+      "rawSha256": "fcfb34f6569856fe10b7f0b106dd5c81068eabc1fbff1a44efcf22ec50f27336",
+      "role": "governed-source"
+    },
+    {
+      "path": "docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md",
+      "rawSha256": "0e4975f437b0676d42adfceb681474fba98e278466a61aa41adc6783224aa69b",
+      "role": "governed-source"
+    }
+  ],
+  "prototypeDisposition": "Reuse UI evidence as a starting point; make deterministic maintained artifact, not duplicate narrative or source R2 attempt",
+  "browser": {
+    "packagePath": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/node_modules/@playwright/test",
+    "version": "145.0.7632.6",
+    "disposition": "existing installation; worker rechecks availability without install"
+  },
+  "materialPaths": [
+    "docs/baselines/CVF_GC018_NCR_OFFLINE_PREVIEW_DELIVERY_2026-10-09.md",
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_OFFLINE_PREVIEW_DELIVERY_2026-10-09.md",
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_OFFLINE_PREVIEW_DELIVERY_2026-10-09.json",
+    "docs/reviews/evidence/cvf-offline-preview-dispatch-inputs-2026-10-09.json",
+    "docs/reviews/evidence/cvf-offline-preview-prototype-2026-10-09.html",
+    "docs/reviews/evidence/cvf-offline-preview-content-test-2026-10-09.json",
+    "docs/reviews/evidence/cvf-offline-preview-ui-test-2026-10-09.json"
+  ],
+  "workerPaths": [
+    "scripts/cvf_storyboard_preview.py",
+    "scripts/test_cvf_storyboard_preview.py",
+    "scripts/test_cvf_storyboard_preview_browser.cjs",
+    "docs/reviews/evidence/cvf-storyboard-preview-2026-10-09.html",
+    "docs/guides/CVF_STORYBOARD_PREVIEW_README_2026-10-09.md",
+    "docs/reviews/evidence/cvf-storyboard-preview-worker-2026-10-09.json",
+    "docs/reviews/CVF_NCR_OFFLINE_PREVIEW_DELIVERY_WORKER_RETURN_2026-10-09.md"
+  ],
+  "claimBoundary": "Pinned documentary sources and prior pure UI proof only; no voice/video/live governance behavior.",
+  "authoringLearningCheck": {
+    "actualWorkOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_OFFLINE_PREVIEW_DELIVERY_2026-10-09.md",
+    "positive": "PASS",
+    "negativeMissingPlan": "REJECTED_learning_plan_missing",
+    "projectApplication": "NOT_APPLIED_PENDING_REAL_DISPATCH_AND_RETURN_REVIEW"
+  }
+}

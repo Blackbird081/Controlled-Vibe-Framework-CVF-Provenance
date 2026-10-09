@@ -1,0 +1,86 @@
+{
+  "status": "PASS_OFFLINE_UI_PREVIEW",
+  "role": "LOCAL_INTERNAL_AGENT",
+  "phase": "OFFLINE_UI_PREVIEW",
+  "decisionOwner": "Local under delegated test selection; operator owns source/runtime release",
+  "authority": "Prior autonomous storyboard test scope plus operator next; pure local UI continuation only",
+  "artifact": ".cvf/runtime/cvf-video-storyboard-review-20261008/CVF_VIDEO_STORYBOARD_PREVIEW.html",
+  "sha256": "38e94802e5ee29d7a9d3cab3ccd26ecff62af8813c180ba6e06daccf86b496d9",
+  "sourcePath": "docs/reference/CVF_NCR_GENERAL_VIDEO_DESIGN_2026-10-02.md",
+  "sourceSha256": "3ce5e2363c3e29997fcbf42cb4cec59af7447cca38409d4d970e8aa71e5777e0",
+  "reusedContentReceiptSha256": "c8f25b1f9e09ca7101b2d1de33b7d5c58c880630bda9048f166798c089723edf",
+  "scenes": 10,
+  "totalSeconds": 240,
+  "narrationPreserved": true,
+  "slideCards": "Local preview summaries, not a replacement canonical design",
+  "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
+  "claimBoundary": "Pure UI structure and browser timer behavior; no live AI governance behavior, audio, MP4, native/source successor, provider or production readiness",
+  "nextMove": "Private offline UI prototype ready; no operator intervention required for this test. Source/native/audio/video production gates remain parked.",
+  "browser": {
+    "version": "145.0.7632.6",
+    "observations": [
+      {
+        "viewport": "desktop",
+        "width": 1440,
+        "height": 1050,
+        "scenesChecked": 10,
+        "exactNarrationMatches": 10,
+        "illustrativeBadgeChecks": 10,
+        "navigation": true,
+        "keyboard": true,
+        "pauseStable": true,
+        "seek": true,
+        "endAndReplay": true,
+        "timerMethod": "Playwright virtual clock for pure UI timer only; not real playback-duration proof",
+        "layout": {
+          "width": 1070,
+          "height": 601,
+          "overflow": 0
+        },
+        "horizontalOverflowPx": 0,
+        "screenshot": ".cvf/runtime/cvf-video-storyboard-review-20261008/preview-desktop-20261009.png",
+        "screenshotSha256": "0d04ee20c055254939856e781898543280afc33c5ead43ee975a18052306454c"
+      },
+      {
+        "viewport": "mobile",
+        "width": 390,
+        "height": 844,
+        "scenesChecked": 10,
+        "exactNarrationMatches": 10,
+        "illustrativeBadgeChecks": 10,
+        "navigation": true,
+        "keyboard": true,
+        "pauseStable": true,
+        "seek": true,
+        "endAndReplay": true,
+        "timerMethod": "Playwright virtual clock for pure UI timer only; not real playback-duration proof",
+        "layout": {
+          "width": 368,
+          "height": 498,
+          "overflow": 0
+        },
+        "horizontalOverflowPx": 0,
+        "screenshot": ".cvf/runtime/cvf-video-storyboard-review-20261008/preview-mobile-20261009.png",
+        "screenshotSha256": "f3164d649879f37d78cbb6c5b7b4a13230e587a1b0457e21d96ef2b1d0964eae"
+      }
+    ],
+    "httpRequests": 0,
+    "pageErrors": 0
+  },
+  "reproduce": [
+    "python .cvf/runtime/cvf-video-storyboard-review-20261008/build_preview_20261009.py",
+    "node .cvf/runtime/cvf-video-storyboard-review-20261008/test_preview_20261009.cjs"
+  ],
+  "visualInspection": "PASS: desktop and mobile S05 full-page screenshots inspected; text, badge, controls and narration readable.",
+  "scripts": [
+    {
+      "path": ".cvf/runtime/cvf-video-storyboard-review-20261008/build_preview_20261009.py",
+      "sha256": "34bd8061b98e76e1dfcf9387132ab8092b80c44795ac239fefc94bcc378af291"
+    },
+    {
+      "path": ".cvf/runtime/cvf-video-storyboard-review-20261008/test_preview_20261009.cjs",
+      "sha256": "7e2435116b6aee06aedb08e88f832f07f1866fc5bbea82c7c3efe058840f95ef"
+    }
+  ],
+  "terminalReview": "LOCAL_UI_TEST_COMPLETE; standalone ignored runtime artifacts only; canonical design, active reconciliation page and tracked session source unchanged."
+}
