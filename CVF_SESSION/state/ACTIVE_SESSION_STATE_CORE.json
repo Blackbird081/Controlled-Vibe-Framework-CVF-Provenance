@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_FILTER_FIXTURE_2026-10-09.md",
     "workOrderSha256": "f155ed392b9da540543ca2087cc1421220a52ed161edcd1f0391b2a802579944"
   },
-  "currentAuthoritySyncReason": "Local bounded technical expense fixture acceptance with timer/confirmation deviations retained; exact closed raw pin; no effect/public grant.",
+  "currentAuthoritySyncReason": "Local bounded technical expense fixture acceptance with timer/confirmation deviations retained; exact closed raw pin; no effect/public grant. Accepted material commit ecd02cca1792da83adb107d85e986f2598be42ff; dedicated actual-SHA continuity.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
