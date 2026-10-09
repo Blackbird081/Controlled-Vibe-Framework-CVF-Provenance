@@ -36,12 +36,12 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_NCR_OFFLINE_PREVIEW_DELIVERY_2026-10-09.md",
-    "baselineSha256": "f552b7467ff7e23fe91b2a66f7fa6c78272bf85d860aeececf7cee072a7e6cd1",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_OFFLINE_PREVIEW_DELIVERY_2026-10-09.md",
-    "workOrderSha256": "13244fc94f1f7c2fcc711c428027e1faf1bd7f677817c9ab797ec905ccd92257"
+    "baselinePath": "docs/baselines/CVF_GC018_NCR_EXPENSE_FILTER_FIXTURE_2026-10-09.md",
+    "baselineSha256": "08e5f5c5d4af9eed94dd1ca1718873bb980c1f2199088e745cf5a5ec0b7b5f85",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_FILTER_FIXTURE_2026-10-09.md",
+    "workOrderSha256": "bea54141aa72ec32502878f2129efb684190d551a098440cd008a65301ed61f2"
   },
-  "currentAuthoritySyncReason": "Closed offline UI authority retained; bounded Local learning application admitted at edd93cc1df345f0dbf3e43451d36a594115e3b16; typed parent APPLIED for one dispatch/result workflow, projectResolution OPEN and all source/effect holds retained. No new work order or push grant.",
+  "currentAuthoritySyncReason": "Operator continued isolated local testing and manual worker transfer; new unit expense fixture realizes S05-S06 requirements without changing storyboard or stopped source chain. Local owns review; current packet pins exact. No push/effect grant.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
