@@ -2,7 +2,7 @@
   "schemaVersion": "0.1.0",
   "currentMode": "cvf_ncr_p10_closed_p11_parked",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=CVF-CORE; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-EXPENSE-FIXTURE-20261009. Operator manually transfers docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_FILTER_FIXTURE_2026-10-09.md after actual clean committed bound pre-dispatch PASS. INTERNAL_AGENT worker owns two ExpenseList implementation paths plus three guide/proof/return paths, no commit, one60-minute total ceiling and no tool-delegated subagent/provider invocation. Standalone unit UI only; no app wiring, storyboard revision or media demo. Local is orchestrator/reviewer; Haiku5.5/Max preference is operator-reported, not normative or a price claim. Prior learning APPLIED is one Local workflow only, projectResolution OPEN. Source R2/native/TTS/audio/MP4/S2-S9/provider/public/deploy/P11 parked; no push grant or automatic source successor. LHW24 retained.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-CORE; NEXT_ACTION_CLASS=REVIEW; BATCH_ID=CVF-NCR-EXPENSE-FIXTURE-20261009. Expense fixture CLOSED_PASS_BOUNDED: five unchanged worker artifacts accepted by Local; independent four-case oracle and scoped type/lint PASS. Historical timer and final confirmation deviations retained, not full procedure compliance. Work order consumed; no redispatch. Local may select the next useful bounded roadmap task; Haiku5.5/Max recommended for finite isolated UI/test scopes, operator-reported identity, no price claim. Prior learning APPLIED_ONE_LOCAL_WORKFLOW, projectResolution OPEN. Source R2/native/TTS/audio/MP4/S2-S9/provider/public/deploy/P11 parked; no automatic source successor or push grant; upstream debt retained. LHW24 retained.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
@@ -11,7 +11,7 @@
     "baselinePath": "docs/baselines/CVF_GC018_NCR_EXPENSE_FILTER_FIXTURE_2026-10-09.md",
     "baselineSha256": "08e5f5c5d4af9eed94dd1ca1718873bb980c1f2199088e745cf5a5ec0b7b5f85",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_FILTER_FIXTURE_2026-10-09.md",
-    "workOrderSha256": "bea54141aa72ec32502878f2129efb684190d551a098440cd008a65301ed61f2"
+    "workOrderSha256": "f155ed392b9da540543ca2087cc1421220a52ed161edcd1f0391b2a802579944"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

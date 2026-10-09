@@ -1,0 +1,242 @@
+{
+  "schemaVersion": "cvf.expenseFilterFixtureWorkerEvidence@1.0.0",
+  "batchId": "CVF-NCR-EXPENSE-FIXTURE-20261009",
+  "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_FILTER_FIXTURE_2026-10-09.md",
+  "workerReturnPath": "docs/reviews/CVF_NCR_EXPENSE_FILTER_FIXTURE_WORKER_RETURN_2026-10-09.md",
+  "textEncodingException": "Text Encoding Exception: Vietnamese letters with diacritics appear in UI labels, the synthetic notice, the guide and test fixture labels; no other non-ASCII symbol class is added.",
+  "workerRole": "INTERNAL_AGENT shared-workspace implementation worker",
+  "commitMode": "WORKER_MUST_NOT_COMMIT",
+  "committedByWorker": false,
+  "dispatchBaseHead": "d46cd676a367666bfe3abffbf25c54e327522fc0",
+  "executionBaseHead": "e1a22b077f11ec57012a6b45d8205391b5becfd9",
+  "executionBaseHeadNote": "HEAD captured at worker start; clean tree; later than the packet planning base because the packet was committed in 43ba011fd and synchronized in e1a22b077. HEAD is unchanged at the end of execution.",
+  "timing": {
+    "timerStartUtc": "2026-10-09T15:11:33Z",
+    "timerStartNote": "Captured after the first read of the work order; that read preceded the timer.",
+    "ceilingMinutes": 60,
+    "preImplementationGateStartUtc": "2026-10-09T15:12:01Z",
+    "preImplementationGateEndUtc": "2026-10-09T15:12:52Z",
+    "finalBaselineVitestStartUtc": "2026-10-09T15:29:20Z",
+    "finalBaselineVitestEndUtc": "2026-10-09T15:29:32Z",
+    "finalMutationSweepStartUtc": "2026-10-09T15:29:33Z",
+    "finalMutationSweepEndUtc": "2026-10-09T15:29:54Z",
+    "returnGateRun1StartUtc": "2026-10-09T15:24:51Z",
+    "returnGateRun2StartUtc": "2026-10-09T15:28:36Z"
+  },
+  "invocationAndCost": {
+    "internalAgentInvocationCount": 1,
+    "externalAgentInvocationCount": 0,
+    "providerCallCount": 0,
+    "toolDelegatedSubagentCount": 0,
+    "tokenOrQuotaUsage": "NOT_AVAILABLE_WITH_REASON: no usage meter is exposed to this worker session",
+    "installCount": 0,
+    "networkAccessCount": 0
+  },
+  "preImplementationGate": {
+    "command": "python -B governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base e1a22b077f11ec57012a6b45d8205391b5becfd9 --head HEAD --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_FILTER_FIXTURE_2026-10-09.md --receipt-dir .cvf/runtime/cvf-expense-filter-worker-20261009/gates",
+    "workingDirectory": "repository root",
+    "exitCode": 0,
+    "result": "COMPLIANT: pre-implementation autorun gate passed in 35.47s",
+    "receipt": ".cvf/runtime/cvf-expense-filter-worker-20261009/gates/pre-implementation.json",
+    "failLinesInLog": 0
+  },
+  "frozenInputs": [
+    {"path": "docs/baselines/CVF_GC018_NCR_EXPENSE_FILTER_FIXTURE_2026-10-09.md", "expectedSha256": "08e5f5c5d4af9eed94dd1ca1718873bb980c1f2199088e745cf5a5ec0b7b5f85", "observedSha256": "08e5f5c5d4af9eed94dd1ca1718873bb980c1f2199088e745cf5a5ec0b7b5f85", "match": true},
+    {"path": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_FILTER_FIXTURE_2026-10-09.md", "expectedSha256": "bea54141aa72ec32502878f2129efb684190d551a098440cd008a65301ed61f2", "observedSha256": "bea54141aa72ec32502878f2129efb684190d551a098440cd008a65301ed61f2", "match": true},
+    {"path": "docs/reference/CVF_NCR_GENERAL_VIDEO_DESIGN_2026-10-02.md", "expectedSha256": "3ce5e2363c3e29997fcbf42cb4cec59af7447cca38409d4d970e8aa71e5777e0", "observedSha256": "3ce5e2363c3e29997fcbf42cb4cec59af7447cca38409d4d970e8aa71e5777e0", "match": true},
+    {"path": "docs/reviews/CVF_NCR_OFFLINE_PREVIEW_DELIVERY_COMPLETION_2026-10-09.md", "expectedSha256": "14757c09d5b0e71e095a5f91d43708663b793697dd66be25df3803d2d29578e0", "observedSha256": "14757c09d5b0e71e095a5f91d43708663b793697dd66be25df3803d2d29578e0", "match": true},
+    {"path": "docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md", "expectedSha256": "1609cc9d955bc88b2e09179331d7828406114d98b23c81cfb3f2992afa3920f6", "observedSha256": "1609cc9d955bc88b2e09179331d7828406114d98b23c81cfb3f2992afa3920f6", "match": true},
+    {"path": "DESIGN.md", "expectedSha256": "15c1b5061bd2e1f763638beb83a84d06eb8ccbc470747c01f236033a834a987e", "observedSha256": "15c1b5061bd2e1f763638beb83a84d06eb8ccbc470747c01f236033a834a987e", "match": true},
+    {"path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/vitest.config.ts", "expectedSha256": "9a4a65976b5b7a5d038f9cb412a90d417f804108cf1dd33bae4421989a863420", "observedSha256": "9a4a65976b5b7a5d038f9cb412a90d417f804108cf1dd33bae4421989a863420", "match": true},
+    {"path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/test/setup.ts", "expectedSha256": "bc573b2a6133b07404c42f797bce43fe73464711e0281f29da8234bf2fed6b27", "observedSha256": "bc573b2a6133b07404c42f797bce43fe73464711e0281f29da8234bf2fed6b27", "match": true},
+    {"path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/package.json", "expectedSha256": "f03fc2c2700e904dc88e10395d0856983b9b0f9e6f27150713fa402f9e9fe24b", "observedSha256": "f03fc2c2700e904dc88e10395d0856983b9b0f9e6f27150713fa402f9e9fe24b", "match": true},
+    {"path": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_FILTER_FIXTURE_2026-10-09.json", "expectedSha256": "NOT_PINNED", "observedSha256": "f2af1a6bb191d4d64569d58d32ac77fd60efd2c055d609ff1ba408d451b5d953", "match": null},
+    {"path": "docs/reviews/evidence/cvf-expense-filter-dispatch-inputs-2026-10-09.json", "expectedSha256": "NOT_PINNED", "observedSha256": "ab8b7b709b92544622a8e74fa1dc22172a51ef09359c4bc4b240ba4133dd7b28", "match": null}
+  ],
+  "outputOutcome": {
+    "preWriteAbsence": "all five output paths absent before writes",
+    "ledgerPaths": {
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/expenses/ExpenseList.tsx": {"sha256": "801f305238f2512db663fee7ada837a7bf53a84036ea6efcd305d29985339f19", "bytes": 5241, "lines": 141, "cap": 200},
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/expenses/ExpenseList.test.tsx": {"sha256": "051eda76113aed59aa59ffb4a57739468f50944dbfdfb77d905dba9ba983da8b", "bytes": 6722, "lines": 162, "cap": 350},
+      "docs/guides/CVF_EXPENSE_FILTER_FIXTURE_README_2026-10-09.md": {"sha256": "d2a4414677cd63cf293d1002882283ca851d78758ad2cb1c385c596f55a06466", "bytes": 4011, "lines": 84, "cap": 100}
+    },
+    "returnAndReturnEvidenceNote": "The return and this evidence file are measured by the bound return gate. The return does not self-declare its own final hash; its Command Evidence records each gate run and its log."
+  },
+  "componentContract": {
+    "artifact": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/expenses/ExpenseList.tsx",
+    "proofId": "COMPONENT_CONTRACT",
+    "namedExport": "ExpenseList",
+    "helperExports": ["filterExpensesByMonth"],
+    "typeExports": ["ExpenseRecord"],
+    "propsContract": "expenses: ReadonlyArray<ExpenseRecord>; ExpenseRecord = {id: string, date: string, label: string, amount: number}, readonly",
+    "monthInput": "native input type=month with label 'Lọc theo tháng' via htmlFor and useId",
+    "emptyMonthBehavior": "month '' keeps every row whose date is a valid calendar date",
+    "exactMonthBehavior": "month YYYY-MM keeps rows where date.slice(0, 7) equals the month",
+    "malformedMonthBehavior": "any non-empty month that is not an exact YYYY-MM match returns no rows (fail closed)",
+    "dateRule": "regex ^(\\d{4})-(\\d{2})-(\\d{2})$, month 1-12, day 1..daysInMonth; leap year = divisible by 400 or by 4 and not by 100; no Date parsing, no locale, no timezone",
+    "orderAndIds": "filter preserves supplied order; rows keyed by id; data-expense-id attribute emitted",
+    "mutation": "none; filter is non-mutating (Array.prototype.filter)",
+    "persistence": "none",
+    "network": "none",
+    "dependencies": "none added",
+    "tokenDiscipline": "inline styles reference var(--cvf-*) only; grep for raw hex or rgba literals found none",
+    "syntheticNotice": "'VÍ DỤ MINH HỌA - CHƯA CHẠY THẬT - DỮ LIỆU GIẢ' in role=note",
+    "productionImportsElsewhere": "none; repository grep for expenses/ExpenseList importers outside src/expenses found none"
+  },
+  "unitTestResults": {
+    "artifact": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/expenses/ExpenseList.test.tsx",
+    "proofId": "FOUR_CASES_AND_MUTATIONS",
+    "command": "node node_modules/vitest/vitest.mjs run src/expenses/ExpenseList.test.tsx --reporter=verbose",
+    "workingDirectory": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web",
+    "toolVersions": {"vitest": "4.1.8", "node": "v22.17.0", "testingLibrary": "@testing-library/react installed in the workspace; not installed by this worker"},
+    "finalBaselineRun": {
+      "exitCode": 0,
+      "testFiles": "1 passed (1)",
+      "tests": "12 passed (12)",
+      "wallSeconds": 12,
+      "log": ".cvf/runtime/cvf-expense-filter-worker-20261009/logs/baseline-focused.txt",
+      "note": "run on the final source bytes, after the Text Encoding Exception comment lines were added"
+    },
+    "preEncodingCommentBaselineRun": {
+      "exitCode": 0,
+      "tests": "12 passed (12)",
+      "wallSeconds": 49,
+      "log": ".cvf/runtime/cvf-expense-filter-worker-20261009/logs/pre-encoding-comment/baseline-focused.txt",
+      "sourceSha256": "e0fc1913e089511407c5a130b766a3b9afee8edf252c5c4ca01961527d93975a"
+    },
+    "caseCounts": {
+      "renderCases": 4,
+      "accessibilityAndImmutability": 2,
+      "sameFixtureNegativeTransforms": 3,
+      "dateAndMonthRuleCases": 3,
+      "total": 12
+    },
+    "renderCases": {
+      "R1_march_2026_selected": "shows only the two March 2026 rows when 2026-03 is selected (exp-mar-late, exp-mar-early, in supplied order)",
+      "R2_empty_month_april_2026": "shows the no-expenses message for an empty month (2026-04); table absent",
+      "R3_cleared_filter_four_valid_rows": "restores all four valid rows after the month filter is cleared",
+      "R4_wrong_format_row_skipped_without_crash": "shows all four valid rows in supplied order and skips the wrong-format row 05/03/2026"
+    },
+    "negativeCases": {
+      "wrongYearSameMonth": "keeps a same-month row from another year out of 2026-03 (2025-03-21 excluded)",
+      "realLeapDayInLeapMonth": "shows a real leap day only in its own leap month (2024-02-29 under 2024-02)",
+      "nonexistentLeapDayInNonLeapYear": "drops Feb 29 in a non-leap year without crashing or moving the row into February (2026-02-29)"
+    },
+    "dateRuleCases": {
+      "accepted": ["2026-01-01", "2026-03-05", "2026-03-31", "2026-04-30", "2026-12-31", "2024-02-29", "2000-02-29"],
+      "rejected": ["05/03/2026", "03-05-2026", "2026/03/05", "20260305", "2026-3-05", "2026-03-5", "2026-3-5", "2026-03-05T00:00:00Z", " 2026-03-05", "2026-03-05 ", "", "2026-00-10", "2026-13-01", "2026-03-00", "2026-02-30", "2026-04-31", "2026-02-29", "2025-02-29", "1900-02-29", "2100-02-29"],
+      "monthExactness": "2026-03-31 kept and 2025-03-15 dropped for 2026-03; 2026-3 and 2026-13 match nothing"
+    },
+    "immutability": "FIXTURE is Object.freeze'd; a mutating filter would throw under strict ES module semantics; JSON.stringify before and after equal; id order unchanged",
+    "accessibility": "getByLabelText('Lọc theo tháng') resolves a type=month input; role=note carries the synthetic notice; role=status carries the empty-state message",
+    "firstFailuresInBaseline": "NONE"
+  },
+  "mutationSweep": {
+    "mutationClasses": [
+      {"mutantId": "M1-removed-month-filtering", "mutationClass": "removed month filtering", "mutation": "replace '(month === \\'\\' || expense.date.slice(0, 7) === month),' with 'true,'"},
+      {"mutantId": "M2-accepting-invalid-calendar-dates", "mutationClass": "accepting invalid dates", "mutation": "replace '    return day >= 1 && day <= daysInMonth(year, month);' with '    return day >= 1;' (calendar-day check removed)"}
+    ],
+    "method": "exact single-occurrence replacement on the real source file; focused Vitest run; original bytes restored and SHA-256 verified after each run; mutated copies kept under the runtime mutants directory",
+    "attempt1": {
+      "script": ".cvf/runtime/cvf-expense-filter-worker-20261009/mutants/run_mutants_attempt1.py",
+      "status": "HARNESS_INVALID_NOT_A_RESULT",
+      "cause": "cwd passed with a lowercase drive letter; Vitest loaded src/test/setup.ts through a second module instance and failed with 'Vitest failed to find the current suite'; zero tests collected in both runs",
+      "logs": ".cvf/runtime/cvf-expense-filter-worker-20261009/logs/attempt-1-invalid-lowercase-cwd/",
+      "sourceRestoredAfterAttempt": true
+    },
+    "attempt2": {
+      "script": ".cvf/runtime/cvf-expense-filter-worker-20261009/mutants/run_mutants_attempt2.py",
+      "cwdNote": "uses the same uppercase drive-letter cwd string as the passing baseline",
+      "finalRunStartUtc": "2026-10-09T15:29:33Z",
+      "finalRunEndUtc": "2026-10-09T15:29:54Z",
+      "summary": ".cvf/runtime/cvf-expense-filter-worker-20261009/logs/mutation-summary.json",
+      "results": [
+        {
+          "mutantId": "M1-removed-month-filtering",
+          "exitCode": 1,
+          "harnessValid": true,
+          "result": "KILLED",
+          "testsSummary": "Tests  6 failed | 6 passed (12)",
+          "failedTests": [
+            "shows only the two March 2026 rows when 2026-03 is selected",
+            "shows the no-expenses message for an empty month (2026-04)",
+            "keeps a same-month row from another year out of 2026-03",
+            "shows a real leap day only in its own leap month",
+            "drops Feb 29 in a non-leap year without crashing or moving the row into February",
+            "matches only the exact YYYY-MM month and fails closed on malformed month text"
+          ],
+          "restoredMatchesOriginal": true,
+          "log": ".cvf/runtime/cvf-expense-filter-worker-20261009/logs/M1-removed-month-filtering.txt"
+        },
+        {
+          "mutantId": "M2-accepting-invalid-calendar-dates",
+          "exitCode": 1,
+          "harnessValid": true,
+          "result": "KILLED",
+          "testsSummary": "Tests  2 failed | 10 passed (12)",
+          "failedTests": [
+            "drops Feb 29 in a non-leap year without crashing or moving the row into February",
+            "rejects malformed, unpadded, locale-style and nonexistent dates"
+          ],
+          "firstAssertion": "2026-02-30: expected true to be false",
+          "restoredMatchesOriginal": true,
+          "log": ".cvf/runtime/cvf-expense-filter-worker-20261009/logs/M2-accepting-invalid-calendar-dates.txt"
+        }
+      ]
+    },
+    "sourceHashAfterFinalSweep": "801f305238f2512db663fee7ada837a7bf53a84036ea6efcd305d29985339f19",
+    "sourceHashMatchesFinalBytes": true,
+    "preEncodingCommentSweep": {
+      "sourceSha256": "e0fc1913e089511407c5a130b766a3b9afee8edf252c5c4ca01961527d93975a",
+      "results": "M1 6 failed / 6 passed (12); M2 2 failed / 10 passed (12); both killed; same failing test names",
+      "logs": ".cvf/runtime/cvf-expense-filter-worker-20261009/logs/pre-encoding-comment/"
+    },
+    "discriminationNote": "M1 fails only the month-selection, year, leap-month and exact-month assertions; M2 fails only the calendar-validity assertions. The primary-fixture wrong-format row is not the M2 discriminator because its format is already rejected by the regex."
+  },
+  "guideVerification": {
+    "artifact": "docs/guides/CVF_EXPENSE_FILTER_FIXTURE_README_2026-10-09.md",
+    "proofId": "USAGE_LIMITS",
+    "lines": 84,
+    "cap": 100,
+    "bytes": 4011,
+    "sha256": "d2a4414677cd63cf293d1002882283ca851d78758ad2cb1c385c596f55a06466",
+    "language": "Vietnamese prose with English identifiers",
+    "statesNoRunResult": true,
+    "statesNoIntegration": true,
+    "statesNoBrowserE2EOrAiGovernanceClaim": true,
+    "statesNoTokenOrCostClaim": true,
+    "claimsChecked": "guide contains no PASS badge, no integration claim and no storyboard change; results point to this evidence file"
+  },
+  "workerReturnGate": {
+    "proofId": "BOUND_FULL_RETURN_GATE",
+    "command": "python governance/compat/run_worker_return_fast_gate.py --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_FILTER_FIXTURE_2026-10-09.md",
+    "runs": [
+      {"run": 1, "returnDraft": "v1", "exitCode": 1, "result": "FAIL", "failures": "worker-return quality gate; independent review probe admission; reviewer-fast governance gate", "log": ".cvf/runtime/cvf-expense-filter-worker-20261009/logs/return-gate-run1.txt"},
+      {"run": 2, "returnDraft": "v2", "exitCode": 1, "result": "FAIL", "failures": "reviewer-fast governance gate (review cost control: ready-return fields only)", "log": ".cvf/runtime/cvf-expense-filter-worker-20261009/logs/return-gate-run2.txt"},
+      {"run": 3, "returnDraft": "v3 (final)", "result": "recorded in the return Command Evidence section, with its log path", "log": ".cvf/runtime/cvf-expense-filter-worker-20261009/logs/return-gate-run3.txt"}
+    ],
+    "recordedIn": "docs/reviews/CVF_NCR_EXPENSE_FILTER_FIXTURE_WORKER_RETURN_2026-10-09.md Command Evidence"
+  },
+  "changedUnion": {
+    "trackedChanged": [],
+    "untrackedNotIgnored": [
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/expenses/ExpenseList.tsx",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/expenses/ExpenseList.test.tsx",
+      "docs/guides/CVF_EXPENSE_FILTER_FIXTURE_README_2026-10-09.md",
+      "docs/reviews/evidence/cvf-expense-filter-worker-2026-10-09.json",
+      "docs/reviews/CVF_NCR_EXPENSE_FILTER_FIXTURE_WORKER_RETURN_2026-10-09.md"
+    ],
+    "ignoredRuntimeOutputs": ".cvf/runtime/cvf-expense-filter-worker-20261009/ (gate receipts, logs, mutant copies; gitignored under **/.cvf/runtime/)",
+    "commitStatement": "No commit created; HEAD remains e1a22b077f11ec57012a6b45d8205391b5becfd9 at the end of worker execution."
+  },
+  "deviationsAndSelfRepairs": [
+    "Timer capture followed the first read of the work order by a few seconds; the order's 60-minute ceiling is measured from 15:11:33Z.",
+    "First mutation sweep (attempt 1) was invalid: harness cwd used a lowercase drive letter; Vitest failed before collecting tests. Logs preserved; attempt 2 reran with the baseline's cwd string. No attempt-1 result is counted.",
+    "The first guide draft was 91 lines, then 104 after header and heading repairs, which exceeded the 100-line cap; it was tightened to 84 lines before the final gate run.",
+    "The first bound return-gate run (draft v1) failed on checker-literal and structure items: placeholder-token mention, probe disposition field, Text Encoding Exception markers, guide classification, retrospective vocabulary, review-cost readiness fields, closeability redispatch field, external-intake internal source and coordination binding, learning vocabulary, and trace manifest paths. Each was repaired against the checker's own vocabulary; no check was disabled.",
+    "Adding Text Encoding Exception comment lines changed the source bytes (comments only). The baseline and both mutants were therefore rerun on the final bytes; the pre-comment runs are kept as history.",
+    "TypeScript type-check (tsc) and ESLint were not run: the order authorizes only the focused Vitest file, the two mutation classes, and the bound gates. Local decides whether to run them.",
+    "The independent year/month/calendar boundary probe is Local-reviewer owned and was not executed by the worker, per the order's Independent Review Probe Admission Contract."
+  ],
+  "claimBoundary": "Private standalone unit UI fixture only. No app integration, route mount, E2E, browser, responsive, CVF AI-governance behavior, real data, provider call, media, public export, deployment or production claim. Source R2 and native/provider/media holds unchanged. Token usage and cost are NOT_AVAILABLE_WITH_REASON; no Haiku-versus-other-model claim."
+}

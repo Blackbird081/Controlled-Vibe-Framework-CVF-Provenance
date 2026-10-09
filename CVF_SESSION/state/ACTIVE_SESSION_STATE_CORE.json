@@ -39,9 +39,9 @@
     "baselinePath": "docs/baselines/CVF_GC018_NCR_EXPENSE_FILTER_FIXTURE_2026-10-09.md",
     "baselineSha256": "08e5f5c5d4af9eed94dd1ca1718873bb980c1f2199088e745cf5a5ec0b7b5f85",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_FILTER_FIXTURE_2026-10-09.md",
-    "workOrderSha256": "bea54141aa72ec32502878f2129efb684190d551a098440cd008a65301ed61f2"
+    "workOrderSha256": "f155ed392b9da540543ca2087cc1421220a52ed161edcd1f0391b2a802579944"
   },
-  "currentAuthoritySyncReason": "Operator continued isolated local testing and manual worker transfer; new unit expense fixture realizes S05-S06 requirements without changing storyboard or stopped source chain. Local owns review; current packet pins exact. No push/effect grant.",
+  "currentAuthoritySyncReason": "Local bounded technical expense fixture acceptance with timer/confirmation deviations retained; exact closed raw pin; no effect/public grant.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",

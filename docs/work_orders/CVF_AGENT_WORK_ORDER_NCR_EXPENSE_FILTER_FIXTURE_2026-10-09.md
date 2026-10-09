@@ -1,7 +1,7 @@
 # CVF Agent Work Order - NCR Expense Filter Fixture
 Memory class: governed-worker-dispatch
 docType: work_order
-Status: READY
+Status: CLOSED_PASS_BOUNDED
 Date: 2026-10-09
 Batch ID: CVF-NCR-EXPENSE-FIXTURE-20261009
 Dispatch base head: d46cd676a367666bfe3abffbf25c54e327522fc0
@@ -578,3 +578,32 @@ Frozen source input rows bind exact raw hashes observed2026-10-09. No external d
 ```
 
 Prior bounded application remains recorded; this is a new task plan, not proof of its application.
+
+
+## Local Closure Receipt
+
+CLOSED_PASS_BOUNDED: five original unit artifacts accepted; historical timer and confirmation deviations disclosed, not full procedure compliance.
+Completion evidence: docs/reviews/CVF_NCR_EXPENSE_FILTER_FIXTURE_COMPLETION_2026-10-09.md; docs/reviews/evidence/cvf-expense-filter-local-review-2026-10-09.json.
+No redispatch; original worker return preserved.
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| COMPONENT | exact month, invalid dates, immutable IDs/order | source read plus four independent cases PASS | PASS |
+| UNIT_TESTS | real render and two killed mutants | 12/12 tests, 2/2 valid kills consumed | PASS |
+| GUIDE | usage and bounded claims | 84 lines; private synthetic unit scope | PASS |
+| RETURN | full bound gate, five paths, no commit | worker final log and separate Local confirmation COMPLIANT | PASS |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_FILTER_FIXTURE_2026-10-09.md | CLOSED_PASS_BOUNDED; no redispatch | PASS |
+| Completion or reviewer artifact | docs/reviews/CVF_NCR_EXPENSE_FILTER_FIXTURE_COMPLETION_2026-10-09.md | five original outputs accepted with procedure deviations | PASS |
+| Roadmap state | existing NCR/video owners | no new successor or production admission | N/A with reason: standalone work order |
+| Registry JSON | docs/reviews/evidence/cvf-expense-filter-local-review-2026-10-09.json | hashes; executable independent oracle; logs; model assessment | PASS |
+| Registry Markdown | docs/reviews/CVF_NCR_EXPENSE_FILTER_FIXTURE_COMPLETION_2026-10-09.md | four disclosed findings | PASS |
+| External evidence digest | docs/reviews/evidence/cvf-expense-filter-local-review-2026-10-09.json | internal result only | N/A with reason: no external research |
+| System loop interlock | source R2 and C1 STOP owners retained | no retry/reset/effect | PASS |
+| Session continuity | AGENT_HANDOFF_V63_2026-09-18.md; generated bootstrap/state | atomic closed raw pin, then real material SHA | PASS |
