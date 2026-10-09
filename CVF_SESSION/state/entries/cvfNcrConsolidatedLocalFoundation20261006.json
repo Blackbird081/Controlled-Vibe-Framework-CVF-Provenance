@@ -994,7 +994,7 @@
       ],
       "oldRootsFrozen": true
     },
-    "nextAllowedMove": "PROGRAM_ID=CVF-CORE; NEXT_ACTION_CLASS=OPERATOR_CONTENT_REVIEW; BATCH_ID=CVF-HTML-REVIEW-PACKET-20261009. The reconciled 2026-10-09 private HTML is ready for operator content review; exact scene body retained and desktop/mobile presentation verified. Learning reception RETURNED; project application NOT_APPLIED pending the first eligible real work-order dispatch/result review. Provenance was synchronized at 3cfc3208e before this local package; no repeat push or new public action inferred. Source/native/S2-S9/provider/deploy/P11 and R2 counters remain parked; LHW24 retained. No automatic successor.",
+    "nextAllowedMove": "PROGRAM_ID=CVF-CORE; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-OFFLINE-PREVIEW-20261009. Operator manually transfers docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_OFFLINE_PREVIEW_DELIVERY_2026-10-09.md to shared-workspace INTERNAL_AGENT worker after actual clean committed bound pre-dispatch PASS. Local is orchestrator/reviewer; seven exact UI/test/guide/return paths, WORKER_MUST_NOT_COMMIT, one90-minute total worker ceiling; no tool-delegated subagent/provider calls. Use pinned design/prototype evidence; first eligible actual learning dispatch/result review remains pending, RETURNED/NOT_APPLIED. Source R2 attempt/counters and source-supervisor/native/TTS/audio/MP4/S2-S9/provider/public/deploy/P11 stay parked; LHW24 retained. Private local packet only; no push grant, ahead-of-origin debt retained with this scope blocker. No automatic media/source successor.",
     "s1R2LocalDisposition20261009": {
       "materialCommit": "5c1c5bf30525c091deda533b92608fe76a13ad21",
       "review": "docs/reviews/CVF_NCR_C1_S1_CONSOLIDATED_REPAIR_COMPLETION_2026-10-09.md",
@@ -1085,6 +1085,19 @@
       "runtimeAdmission": "NO_GO",
       "successorAdmitted": false,
       "priorProvenanceSynchronizedHead": "3cfc3208ea8bfd7f7ceb6f0ad69478a4d95c6897",
+      "publicExportDisposition": "DEFERRED_PRIVATE_ONLY"
+    },
+    "offlinePreviewDeliveryDispatch20261009": {
+      "materialCommit": "6ccf87ff52086aeca95a9bb1f9d94b52dd584782",
+      "status": "READY_PENDING_ACTUAL_BOUND_PRE_DISPATCH_GATE",
+      "baseline": "docs/baselines/CVF_GC018_NCR_OFFLINE_PREVIEW_DELIVERY_2026-10-09.md",
+      "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_OFFLINE_PREVIEW_DELIVERY_2026-10-09.md",
+      "inputs": "docs/reviews/evidence/cvf-offline-preview-dispatch-inputs-2026-10-09.json",
+      "workerScope": "seven exact durable offline UI/test/guide/return artifacts; no commit",
+      "prototypeTests": "PASS_LOCAL_STORYBOARD_TEST and PASS_OFFLINE_UI_PREVIEW reused; not media proof",
+      "learning": "RETURNED_NOT_APPLIED_PENDING_REAL_DISPATCH_AND_RESULT_REVIEW",
+      "operatorRole": "manual transfer only; Local owns technical review",
+      "sourceR2Successor": false,
       "publicExportDisposition": "DEFERRED_PRIVATE_ONLY"
     }
   }

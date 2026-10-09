@@ -34,12 +34,12 @@ artifact.
 | Prior handoff (archive-qualified) | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V62_2026-09-17.md` |
 | Latest front-door archive | `CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_COMPACTION_ARCHIVE_2026-08-11.md` |
 | Current authority evidence | `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` `currentAuthority` |
-| Parent maintenance | `docs/baselines/CVF_GC018_LEARNING_APPLICATION_BINDING_2026-10-09.md`; `docs/reviews/CVF_LEARNING_APPLICATION_BINDING_COMPLETION_2026-10-09.md`; existing PLL-T1 owner retained; HTML reconciliation result in docs/reviews/CVF_NCR_W05_SELECTED_CHAIN_READINESS_2026-10-07.md |
+| Parent maintenance | `docs/baselines/CVF_GC018_LEARNING_APPLICATION_BINDING_2026-10-09.md`; `docs/reviews/CVF_LEARNING_APPLICATION_BINDING_COMPLETION_2026-10-09.md`; existing PLL-T1 owner retained; current offline UI order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_OFFLINE_PREVIEW_DELIVERY_2026-10-09.md |
 | Freeze posture | `governance_kernel_freeze_recommended` |
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`;handoff=`AGENT_HANDOFF_V63_2026-09-18.md`;next=operator content review of reconciled HTML;role=Local INTERNAL_AGENT document maintainer/verifier/session-sync;phase=bounded Local delivery;decision owner=operator for final content acceptance;parked checkpoint=R2 source/native/S2-S9/provider/deploy/P11;no automatic successor.
+Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`;handoff=`AGENT_HANDOFF_V63_2026-09-18.md`;next=operator manual transfer of offline preview work order after bound release;role=Local INTERNAL_AGENT orchestrator/reviewer;phase=internal dispatch;decision owner=Local for technical review;parked checkpoint=source R2/native/TTS/media/provider/public/deploy/P11;no automatic successor.
 
 ## Current Mode
 
@@ -48,7 +48,7 @@ Current mode: `cvf_ncr_p10_closed_p11_parked`; previous mode marker: `cvf_ncr_p1
 
 ## Next Allowed Move
 Mode: `cvf_ncr_p10_closed_p11_parked`
-PROGRAM_ID=CVF-CORE; NEXT_ACTION_CLASS=OPERATOR_CONTENT_REVIEW; BATCH_ID=CVF-HTML-REVIEW-PACKET-20261009. The reconciled 2026-10-09 private HTML is ready for operator content review; exact scene body retained and desktop/mobile presentation verified. Learning reception RETURNED; project application NOT_APPLIED pending the first eligible real work-order dispatch/result review. Provenance was synchronized at 3cfc3208e before this local package; no repeat push or new public action inferred. Source/native/S2-S9/provider/deploy/P11 and R2 counters remain parked; LHW24 retained. No automatic successor.
+PROGRAM_ID=CVF-CORE; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-OFFLINE-PREVIEW-20261009. Operator manually transfers docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_OFFLINE_PREVIEW_DELIVERY_2026-10-09.md to shared-workspace INTERNAL_AGENT worker after actual clean committed bound pre-dispatch PASS. Local is orchestrator/reviewer; seven exact UI/test/guide/return paths, WORKER_MUST_NOT_COMMIT, one90-minute total worker ceiling; no tool-delegated subagent/provider calls. Use pinned design/prototype evidence; first eligible actual learning dispatch/result review remains pending, RETURNED/NOT_APPLIED. Source R2 attempt/counters and source-supervisor/native/TTS/audio/MP4/S2-S9/provider/public/deploy/P11 stay parked; LHW24 retained. Private local packet only; no push grant, ahead-of-origin debt retained with this scope blocker. No automatic media/source successor.
 Historical G1-G7 terminal baseline: mode `acel_g1_g7_research_terminally_closed`. G1-G6 terminal review: `docs/reviews/CVF_ACEL_G1_G6_TERMINAL_STOP_CLOSURE_2026-09-24.md`; G7 research closure: `docs/reviews/CVF_ACEL_G7_CROSS_RUN_CAPABILITY_EVOLUTION_RESEARCH_CLOSURE_2026-09-24.md`. The packet-only post-G7 reconciliation review at `docs/reviews/CVF_ACEL_POST_G7_FULL_CORPUS_ABSORPTION_CLOSURE_2026-09-24.md` is superseded for repository absorption by the 2026-09-25 pinned-source audit. G1 is stopped, G2-G6 remain parked, G7 research is closed, and no automatic G1-G7 successor exists.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1

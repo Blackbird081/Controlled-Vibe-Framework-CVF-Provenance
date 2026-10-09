@@ -2,16 +2,16 @@
   "schemaVersion": "0.1.0",
   "currentMode": "cvf_ncr_p10_closed_p11_parked",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=CVF-CORE; NEXT_ACTION_CLASS=OPERATOR_CONTENT_REVIEW; BATCH_ID=CVF-HTML-REVIEW-PACKET-20261009. The reconciled 2026-10-09 private HTML is ready for operator content review; exact scene body retained and desktop/mobile presentation verified. Learning reception RETURNED; project application NOT_APPLIED pending the first eligible real work-order dispatch/result review. Provenance was synchronized at 3cfc3208e before this local package; no repeat push or new public action inferred. Source/native/S2-S9/provider/deploy/P11 and R2 counters remain parked; LHW24 retained. No automatic successor.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-CORE; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-OFFLINE-PREVIEW-20261009. Operator manually transfers docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_OFFLINE_PREVIEW_DELIVERY_2026-10-09.md to shared-workspace INTERNAL_AGENT worker after actual clean committed bound pre-dispatch PASS. Local is orchestrator/reviewer; seven exact UI/test/guide/return paths, WORKER_MUST_NOT_COMMIT, one90-minute total worker ceiling; no tool-delegated subagent/provider calls. Use pinned design/prototype evidence; first eligible actual learning dispatch/result review remains pending, RETURNED/NOT_APPLIED. Source R2 attempt/counters and source-supervisor/native/TTS/audio/MP4/S2-S9/provider/public/deploy/P11 stay parked; LHW24 retained. Private local packet only; no push grant, ahead-of-origin debt retained with this scope blocker. No automatic media/source successor.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_NCR_C1_S1_CONSOLIDATED_REPAIR_2026-10-08.md",
-    "baselineSha256": "fd170e094abba0a264f28a04626d9d9a1b02c75f7160c25ae13b34f1506debf9",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_C1_S1_CONSOLIDATED_REPAIR_2026-10-08.md",
-    "workOrderSha256": "53dea51ad767583b303861f08a07ecda31a0270308ccaa616e00d4c625d0dd64"
+    "baselinePath": "docs/baselines/CVF_GC018_NCR_OFFLINE_PREVIEW_DELIVERY_2026-10-09.md",
+    "baselineSha256": "f552b7467ff7e23fe91b2a66f7fa6c78272bf85d860aeececf7cee072a7e6cd1",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_OFFLINE_PREVIEW_DELIVERY_2026-10-09.md",
+    "workOrderSha256": "39d43ebb1b49a8c885860f4902ebb3363e209b3f1c5cec8ea6146c63863c378d"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

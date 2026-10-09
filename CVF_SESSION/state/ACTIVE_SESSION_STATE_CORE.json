@@ -36,12 +36,12 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_NCR_C1_S1_CONSOLIDATED_REPAIR_2026-10-08.md",
-    "baselineSha256": "fd170e094abba0a264f28a04626d9d9a1b02c75f7160c25ae13b34f1506debf9",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_C1_S1_CONSOLIDATED_REPAIR_2026-10-08.md",
-    "workOrderSha256": "53dea51ad767583b303861f08a07ecda31a0270308ccaa616e00d4c625d0dd64"
+    "baselinePath": "docs/baselines/CVF_GC018_NCR_OFFLINE_PREVIEW_DELIVERY_2026-10-09.md",
+    "baselineSha256": "f552b7467ff7e23fe91b2a66f7fa6c78272bf85d860aeececf7cee072a7e6cd1",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_OFFLINE_PREVIEW_DELIVERY_2026-10-09.md",
+    "workOrderSha256": "39d43ebb1b49a8c885860f4902ebb3363e209b3f1c5cec8ea6146c63863c378d"
   },
-  "currentAuthoritySyncReason": "Last NCR R2 source-order pins retained as historical boundary, not redispatch authority. Operator-approved Local HTML reconciliation uses existing W05 direct-task owner; next is exact-version operator content review. Prior provenance sync verified at 3cfc3208e; new Local package has no push grant.",
+  "currentAuthoritySyncReason": "Operator requested manual transfer to Claude for durable offline UI packaging with Local orchestrator/reviewer. New exact pair replaces historical R2 authority as current dispatch only; R2 remains spent/blocked. Private local scope has no push grant; upstream synchronization debt retained, no remote/public effect.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
