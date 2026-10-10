@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_TOUCH_TARGET_2026-10-10.md",
     "workOrderSha256": "6073cf4b078de8557bcf64dc8d266d1661811c2e9dd56281ce760eec44812365"
   },
-  "currentAuthoritySyncReason": "Operator next; bounded inherited input44 correction packet material 7d8322b884a6b342caba74df55106d547d5bf440; current authority pins synchronized. Final bound release required; no worker invoked or effect grant.",
+  "currentAuthoritySyncReason": "Operator next; bounded inherited input44 correction packet material 7d8322b884a6b342caba74df55106d547d5bf440; current authority pins synchronized. Final bound release required; no worker invoked or effect grant. DR-06 release repair: add exact active work-order path to nextAllowedMove; packet bytes unchanged, no worker effect.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
