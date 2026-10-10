@@ -1,0 +1,217 @@
+{
+  "schemaVersion": "cvf.expenseLayoutWorkerEvidence.v1",
+  "batchId": "CVF-NCR-EXPENSE-LAYOUT-20261010",
+  "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_NARROW_LAYOUT_2026-10-10.md",
+  "status": "COMPLETE_PENDING_REVIEW",
+  "commitMode": "WORKER_MUST_NOT_COMMIT",
+  "textEncodingException": "Text Encoding Exception: Vietnamese synthetic labels, the synthetic notice, row text and the oracle rows use Vietnamese letters with diacritics; no other non-ASCII class is added.",
+  "dispatchBaseHead": "c202cc73ff97cdeb1fe57358d1438afbc623b566",
+  "executionBaseHead": "1f16dd48f6bc416da8920072f2ec18200c9fa07a",
+  "executionBaseNote": "Clean HEAD at worker start (git status empty). The dispatch base c202cc73f and the packet commit d918e3d18 are ancestors of it.",
+  "timer": {
+    "budgetMinutes": 90,
+    "captureOrder": "UTC and monotonic start captured in one separate awaited command before any CVF read",
+    "startUtc": "2026-10-10T07:35:24.558Z",
+    "monotonicStartTicks": 5846870593380,
+    "monotonicFrequencyHz": 10000000,
+    "startStore": ".cvf/runtime/cvf-expense-layout-worker-20261010/timer.json",
+    "persistenceDeviation": "NONCOMPLIANT_PERSISTENCE_AFTER_FIRST_READS: the start values were captured first, but timer.json was written after the work order was read and after git status and git log ran. Recorded here; the start time is not backdated.",
+    "readsBeforePersistence": [
+      "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_NARROW_LAYOUT_2026-10-10.md",
+      "git rev-parse HEAD; git log --oneline -5; git status --short"
+    ],
+    "endStore": ".cvf/runtime/cvf-expense-layout-worker-20261010/final-confirmation.json",
+    "endRecordedAfter": "distinct frozen full bound confirmation B and raw hash verification; values are not written into this tracked file"
+  },
+  "readCoverage": [
+    {"item": "CVF_SESSION_MEMORY.md (front door)", "coverage": "READ_FULL", "note": "read after the timer persistence"},
+    {"item": "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json", "coverage": "READ_FULL", "note": "read after the timer persistence"},
+    {"item": "AGENT_HANDOFF_V63_2026-09-18.md", "coverage": "READ_PARTIAL", "note": "lines 1-40 (current authority and accepted NCR evidence); later sections not read"},
+    {"item": "docs/baselines/CVF_GC018_NCR_EXPENSE_NARROW_LAYOUT_2026-10-10.md", "coverage": "READ_FULL", "note": ""},
+    {"item": "docs/reviews/evidence/cvf-expense-layout-dispatch-inputs-2026-10-10.json", "coverage": "READ_FULL", "note": "all source and tool pins checked"},
+    {"item": "ExpenseList.tsx (actual component)", "coverage": "READ_FULL", "note": "read before the edit and again after the edit"},
+    {"item": "ExpenseList.test.tsx (whole)", "coverage": "READ_FULL_EARLIER_IN_SESSION", "note": "read in full earlier in this session; SHA-256 051eda76 re-verified unchanged; a repeat Read was refused as unchanged"},
+    {"item": "docs/reviews/CVF_NCR_EXPENSE_TOUCH_TARGET_COMPLETION_2026-10-10.md", "coverage": "READ_FULL", "note": "F5 and the accepted limits"},
+    {"item": "docs/reviews/evidence/cvf-expense-touch-local-review-2026-10-10.json", "coverage": "READ_FULL", "note": "independent 320px measurement and retained overflow"},
+    {"item": "DESIGN.md sections 2, 6, 7 and 8", "coverage": "READ_FULL", "note": "lines 28-62 and 180-219"},
+    {"item": "docs/reference/CVF_NCR_GENERAL_VIDEO_DESIGN_2026-10-02.md S05 and S06", "coverage": "READ_FULL", "note": "lines 84-130 (S05 and S06 sections)"},
+    {"item": "scripts/test_cvf_expense_touch_target_browser.cjs (method reference)", "coverage": "READ_FULL", "note": "read-only; method reused, not rerun or edited"},
+    {"item": "governance/compat/check_worker_return_quality_gate.py literals", "coverage": "READ_PARTIAL", "note": "heading list, field lists, PASS/COMPLIANT line rule and diagnose() branches were read in the touch lane of this session; not re-read in this lane"},
+    {"item": "governance/compat/check_work_order_acceptance_ledger.py literals", "coverage": "READ_PARTIAL", "note": "lines 100-208 read in this lane (ledger row keys, evidence keys, PASS artifact equality, proof-ref binding); lines 1-99 not read"},
+    {"item": "governance/compat/check_gate_to_role_closeability.py literals", "coverage": "READ_PARTIAL", "note": "recheck branches lines 360-410 read in this lane; contract validator not read"},
+    {"item": "governance/compat/learning_application_binding.py (named in the learning plan)", "coverage": "NOT_READ", "note": "omission recorded; gate outcomes only"},
+    {"item": "governance/compat/build_dispatch_packet_scaffold.py and run_worker_return_scaffold.py", "coverage": "NOT_READ", "note": "no scaffold was generated; the return followed the accepted prior shape"},
+    {"item": "scripts/cvf_expense_fixture_preview.cjs (historical builder)", "coverage": "PIN_CHECK_ONLY", "note": "SHA-256 ff7ce594 matched; source not read in this lane"}
+  ],
+  "pinCheck": {
+    "result": "PASS",
+    "preimageSha256": "628862816a8dd77c78fab1dc1e2c94d55e3f29e78b8068878d22a236fd5f85b7",
+    "preimageSavedToRuntimeBeforeEdit": ".cvf/runtime/cvf-expense-layout-worker-20261010/preimage/ExpenseList.preimage.tsx",
+    "preimageSavedBeforeEdit": true,
+    "readOnlyMatches": {
+      "ExpenseList.test.tsx": "051eda76113aed59aa59ffb4a57739468f50944dbfdfb77d905dba9ba983da8b",
+      "DESIGN.md": "15c1b5061bd2e1f763638beb83a84d06eb8ccbc470747c01f236033a834a987e",
+      "docs/reference/CVF_NCR_GENERAL_VIDEO_DESIGN_2026-10-02.md": "3ce5e2363c3e29997fcbf42cb4cec59af7447cca38409d4d970e8aa71e5777e0",
+      "docs/reviews/CVF_NCR_EXPENSE_TOUCH_TARGET_COMPLETION_2026-10-10.md": "283fa7e8bc143421ce6bb4d13f19eaae45e213cbf0ec593a9cfb66c8be134f6d",
+      "docs/reviews/evidence/cvf-expense-touch-local-review-2026-10-10.json": "ea1f27d0649da4f1e31d0584beb92891279dbc40064a064931b9f8d5f71f0f99",
+      "scripts/test_cvf_expense_touch_target_browser.cjs": "39e5b62f716525388404980a052987212046a4f7f130aad5f64968c30dff07c0",
+      "scripts/cvf_expense_fixture_preview.cjs": "ff7ce594c0af6d8d853b00b72ec71975a73750a1f0b52f512a86a01ecac8a166",
+      "scripts/test_cvf_expense_fixture_preview_browser.cjs": "32d802b027a4eef4ef0c8d10ebaa1f9fd9520a6ba023be8c9fd35acfd4001ac6",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/package.json": "f03fc2c2700e904dc88e10395d0856983b9b0f9e6f27150713fa402f9e9fe24b",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/vitest.config.ts": "9a4a65976b5b7a5d038f9cb412a90d417f804108cf1dd33bae4421989a863420"
+    },
+    "toolPackageJsonMatches": {"vite": "8.0.16", "react": "19.2.3", "react-dom": "19.2.3", "playwright": "1.58.2", "typescript": "installed, SHA-256 822ef7ca matched"},
+    "outputsAbsentBeforeWork": true
+  },
+  "preImplementationGate": {
+    "command": "python -B governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base 1f16dd48f6bc416da8920072f2ec18200c9fa07a --head HEAD --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_NARROW_LAYOUT_2026-10-10.md --receipt-dir .cvf/runtime/cvf-expense-layout-worker-20261010/gates",
+    "exit": 0,
+    "result": "COMPLIANT",
+    "log": ".cvf/runtime/cvf-expense-layout-worker-20261010/gates/pre-implementation.log"
+  },
+  "componentAndUnit": {
+    "sourcePath": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/expenses/ExpenseList.tsx",
+    "postChangeSha256": "447463e1c1330d3152eba91401a68fc8a13320c29d24fb233ccd8830a62b26e3",
+    "change": "presentation only: the label cell gets overflowWrap 'anywhere'; the amount cell gets whiteSpace 'nowrap'. The month input (height 44, border-box), filter, date rules, props, row order, labels and notice are unchanged.",
+    "gitDiffStat": "1 file changed, 2 insertions(+), 2 deletions(-) relative to HEAD",
+    "physicalLines": 142,
+    "lineCap": 250,
+    "unitCommand": "node node_modules/vitest/vitest.mjs run src/expenses/ExpenseList.test.tsx --reporter=verbose",
+    "unitCwd": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\EXTENSIONS\\CVF_v1.6_AGENT_PLATFORM\\cvf-web (uppercase drive letter)",
+    "unitExit": 0,
+    "testFiles": 1,
+    "testsTotal": 12,
+    "testsPassed": 12,
+    "testsFailed": 0,
+    "unitDurationSeconds": 13.92,
+    "unitTestFileModified": false,
+    "unitResult": "PASS",
+    "duplicateBroadTestRerun": false
+  },
+  "browserTestResults": {
+    "command": "node scripts/test_cvf_expense_narrow_layout_browser.cjs",
+    "syntaxCheck": "node --check scripts/test_cvf_expense_narrow_layout_browser.cjs: exit 0",
+    "exit": 0,
+    "status": "PASS",
+    "browserVersion": "145.0.7632.6",
+    "browserBinary": "installed Playwright Chromium; file:// page; no HTTP listener; no install",
+    "reportFile": ".cvf/runtime/cvf-expense-layout-worker-20261010/browser-results.json",
+    "sourceSha256": {
+      "start": "447463e1c1330d3152eba91401a68fc8a13320c29d24fb233ccd8830a62b26e3",
+      "afterBuild": "447463e1c1330d3152eba91401a68fc8a13320c29d24fb233ccd8830a62b26e3",
+      "end": "447463e1c1330d3152eba91401a68fc8a13320c29d24fb233ccd8830a62b26e3"
+    },
+    "oracle": "five literal rows authored in the script: NL-001 2026-02-11 'Chi phí A'; NL-002 2026-02-24 'Chi phí B'; NL-003 2026-03-02 'Independent row' 130000; NL-004 2026-03-19 an 80-character unbroken alphanumeric label 260000; NL-005 05/03/2026 invalid",
+    "testRecords": [
+      {"label": "baseline", "profile": "dark-320x844", "status": "PASS", "assertions": 162},
+      {"label": "baseline", "profile": "dark-390x844", "status": "PASS", "assertions": 96},
+      {"label": "baseline", "profile": "dark-1280x800", "status": "PASS", "assertions": 81},
+      {"label": "mutant-preimage", "profile": "dark-320x844", "status": "FAIL (expected)", "failureKind": "ASSERTION", "assertions": 4},
+      {"label": "restored", "profile": "dark-320x844", "status": "PASS", "assertions": 39}
+    ],
+    "totalAssertions": 386,
+    "externalRequests": 0,
+    "pageErrors": 0,
+    "consoleErrorsCountedAsPageErrors": true,
+    "profileMeasurements": [
+      {"profile": "dark-320x844", "viewport": "320x844", "contentBoxPx": {"left": 33, "right": 287}, "tableBoxPx": {"left": 33, "right": 287}, "tableSlackPx": {"left": 0, "right": 0}, "longLabelLines": 8, "inputOuterHeightPx": 44, "inputOuterWidthPx": 161.328125, "focusOutline": "2px solid rgb(91, 92, 246)", "rowTextContrastMin": 15.58, "noticeContrast": 7.79},
+      {"profile": "dark-390x844", "viewport": "390x844", "contentBoxPx": {"left": 33, "right": 357}, "tableBoxPx": {"left": 33, "right": 357}, "tableSlackPx": {"left": 0, "right": 0}, "longLabelLines": 5, "inputOuterHeightPx": 44, "inputOuterWidthPx": 161.328125, "focusOutline": "2px solid rgb(91, 92, 246)", "rowTextContrastMin": 15.58, "noticeContrast": 7.79},
+      {"profile": "dark-1280x800", "viewport": "1280x800", "contentBoxPx": {"left": 33, "right": 1247}, "tableBoxPx": {"left": 33, "right": 1247}, "tableSlackPx": {"left": 0, "right": 0}, "longLabelLines": 1, "inputOuterHeightPx": 44, "inputOuterWidthPx": 161.328125, "focusOutline": "2px solid rgb(91, 92, 246)", "rowTextContrastMin": 15.58, "noticeContrast": 7.79}
+    ],
+    "containmentChecks": "table rectangle, every cell rectangle, every text line of every cell (Range.getClientRects per text node) against the cell inner box, notice rectangle and each notice text line, input rectangle, document and section horizontal overflow; all within 1px tolerance against the section content box computed from the real rectangle minus border and padding",
+    "textEquality": "header text and every March cell text equal the literal oracle; the 80-character label equals its literal text with no lost characters",
+    "ordinaryFlow320": {"clearIds": ["NL-001", "NL-002", "NL-003", "NL-004"], "marchIds": ["NL-003", "NL-004"], "aprilEmptyStateAndNoTable": true, "clearedRestoresFourRows": true, "invalidRowAbsent": true, "restoredClearContainment": "PASS"},
+    "mutants": [
+      {
+        "id": "mutant-preimage-320",
+        "change": "the admitted preimage (628862...) bundled from the ignored runtime copy; tracked source never mutated; input 44 intact",
+        "sourceSha256": "628862816a8dd77c78fab1dc1e2c94d55e3f29e78b8068878d22a236fd5f85b7",
+        "collected": 1,
+        "completed": 1,
+        "killed": true,
+        "failureKind": "ASSERTION",
+        "firstFailure": "dark-320x844 March table rectangle outside content box: x 33.0-906.5 vs 33.0-287.0"
+      }
+    ],
+    "mutantCounts": {"collected": 1, "completed": 1, "killed": 1, "harnessInvalidRuns": 0},
+    "existingDateCalendarAndInput44MutationsRerun": false,
+    "restoration": {"restoredPass": true, "trackedSourceSha256AfterRun": "447463e1c1330d3152eba91401a68fc8a13320c29d24fb233ccd8830a62b26e3"},
+    "screenshots": [
+      {"profile": "dark-320x844", "path": ".cvf/runtime/cvf-expense-layout-worker-20261010/march-dark-320x844.png", "bytes": 20531, "sha256": "c5ded8dd3572b4b03991d55ea0899c131b1dbf437622f7f8d083e40dcac150a4", "capBytes": 3145728, "visuallyInspected": true},
+      {"profile": "dark-390x844", "path": ".cvf/runtime/cvf-expense-layout-worker-20261010/march-dark-390x844.png", "bytes": 20737, "sha256": "be3a7b4f9a27fa24068f97777d112c8e346266735e507c80ec93991231b9e6b2", "capBytes": 3145728, "visuallyInspected": true}
+    ],
+    "screenshotDeterminism": "The two hashes above were equal across the last two runs of the same bytes.",
+    "draftRepairs": [
+      "First attempt: overflow-wrap 'anywhere' on every cell style. Containment passed, but the date column broke inside the words, the header 'Ngày' and 'Số tiền' broke letter by letter, and each amount digit sat on its own line. Repaired by a presentation-only grouping: break-anywhere only on the label cell and no-wrap only on the amount cell. No assertion was weakened.",
+      "After the first passing run, the notice rectangle, notice text lines and the input rectangle checks were added to the containment oracle. Rerun passed.",
+      "Draft line-cap failure: the browser script was 307 physical lines against the 300-line cap. Grouped declaration merges brought it to 300. Assertions and oracle rows did not change."
+    ],
+    "runsOfTheProof": {"count": 4, "allExit": 0, "note": "Runs with the earlier CSS and the earlier checks are superseded and are not claimed as final evidence."}
+  },
+  "guideVerification": {
+    "file": "docs/guides/CVF_EXPENSE_NARROW_LAYOUT_README_2026-10-10.md",
+    "physicalLines": 70,
+    "lineCap": 100,
+    "claimsCheckedAgainstRuns": [
+      "the command and syntax check match the executed script",
+      "the three widths and the dark theme match the browser report",
+      "the preimage is kept in the ignored runtime and matches 628862...",
+      "the historical touch proof and builder refuse or do not claim the corrected source"
+    ],
+    "result": "PASS_BY_READ",
+    "draftFailures": []
+  },
+  "workerReturnGate": {
+    "command": "python governance/compat/run_worker_return_fast_gate.py --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_NARROW_LAYOUT_2026-10-10.md",
+    "fullBoundRunRecord": "Command Evidence in the worker return; logs in the ignored runtime gates folder",
+    "frozenConfirmationRecord": ".cvf/runtime/cvf-expense-layout-worker-20261010/final-confirmation.json",
+    "frozenFileSet": [
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/expenses/ExpenseList.tsx",
+      "scripts/test_cvf_expense_narrow_layout_browser.cjs",
+      "docs/guides/CVF_EXPENSE_NARROW_LAYOUT_README_2026-10-10.md",
+      "docs/reviews/evidence/cvf-expense-layout-worker-2026-10-10.json",
+      "docs/reviews/CVF_NCR_EXPENSE_NARROW_LAYOUT_WORKER_RETURN_2026-10-10.md"
+    ],
+    "rawHashesRecordedIn": ".cvf/runtime/cvf-expense-layout-worker-20261010/final-confirmation.json",
+    "draftAttempts": [
+      {"attempt": "A", "exit": 1, "result": "FAIL", "cause": "reviewer-fast, agent packet authority and encoding: the evidence JSON lacked the Text Encoding Exception marker for its Vietnamese oracle text", "repair": "one grouped metadata edit adding textEncodingException to the evidence", "log": "gates/full-bound-run-a.log"},
+      {"attempt": "A2", "exit": 0, "result": "PASS", "log": "gates/full-bound-run-a2.log"}
+    ]
+  },
+  "outputCaps": {
+    "componentLines": {"value": 142, "cap": 250},
+    "browserScriptLines": {"value": 300, "cap": 300},
+    "guideLines": {"value": 70, "cap": 100},
+    "evidenceLines": {"value": 212, "cap": 350},
+    "returnLines": {"value": 355, "cap": 450},
+    "htmlCapBytes": 2097152,
+    "screenshotCapBytes": 3145728,
+    "runtimeCapBytes": 31457280,
+    "runtimeMeasurement": "485855 bytes measured at freeze under .cvf/runtime/cvf-expense-layout-worker-20261010/ (cap 31457280)"
+  },
+  "invocationCounts": {
+    "internalAgentInvocationCount": 0,
+    "externalAgentInvocationCount": 0,
+    "providerCallCount": 0,
+    "subagentCount": 0
+  },
+  "usage": {
+    "modelIdentity": "Claude Haiku 5.5, operator-reported; worker-only observation; not normative",
+    "tokens": null,
+    "tokensReason": "NOT_AVAILABLE_WITH_REASON: no token meter is exposed to this worker",
+    "billAmount": null,
+    "billCurrency": null,
+    "billReason": "NOT_AVAILABLE_WITH_REASON: no bill is exposed to this worker; no effort-based price is inferred"
+  },
+  "gitUnion": {
+    "basis": "git status --short at evidence write time; runtime outputs are ignored by .gitignore",
+    "paths": [
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/expenses/ExpenseList.tsx",
+      "scripts/test_cvf_expense_narrow_layout_browser.cjs",
+      "docs/guides/CVF_EXPENSE_NARROW_LAYOUT_README_2026-10-10.md",
+      "docs/reviews/evidence/cvf-expense-layout-worker-2026-10-10.json",
+      "docs/reviews/CVF_NCR_EXPENSE_NARROW_LAYOUT_WORKER_RETURN_2026-10-10.md"
+    ]
+  },
+  "claimBoundary": "Private synthetic responsive table correction in the dark theme at 320, 390 and 1280 pixels, in installed Chromium only. Input 44 and the filter are unchanged. Not a light or accent claim for this source version, not full WCAG, not a production layout, not AI governance, and not media, provider, public, deploy or P11. Earlier touch-target proofs apply to the admitted preimage only."
+}

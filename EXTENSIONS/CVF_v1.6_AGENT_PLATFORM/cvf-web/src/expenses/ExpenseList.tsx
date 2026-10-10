@@ -128,8 +128,8 @@ export function ExpenseList({ expenses }: Readonly<{ expenses: ReadonlyArray<Exp
                         {rows.map((expense) => (
                             <tr key={expense.id} data-expense-id={expense.id}>
                                 <td style={cellStyle}>{expense.date}</td>
-                                <td style={cellStyle}>{expense.label}</td>
-                                <td style={{ ...cellStyle, textAlign: 'right', fontVariantNumeric: 'tabular-nums' }}>
+                                <td style={{ ...cellStyle, overflowWrap: 'anywhere' }}>{expense.label}</td>
+                                <td style={{ ...cellStyle, textAlign: 'right', fontVariantNumeric: 'tabular-nums', whiteSpace: 'nowrap' }}>
                                     {expense.amount}
                                 </td>
                             </tr>

@@ -2,11 +2,11 @@
   "schemaVersion": "cvf.preapprovalFeasibility.v1",
   "proposal": {
     "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_NARROW_LAYOUT_2026-10-10.md",
-    "sha256": "22743fe969975a23752ef1d0eb1fec8ddb051cc9af8988cb43e7a0d3e2ea33e9"
+    "sha256": "71f80267f230bdad84f9a9c0c51281a564d877784f9551597aa74bfb5600ef44"
   },
   "approvalTarget": {
     "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_NARROW_LAYOUT_2026-10-10.md",
-    "sha256": "22743fe969975a23752ef1d0eb1fec8ddb051cc9af8988cb43e7a0d3e2ea33e9",
+    "sha256": "71f80267f230bdad84f9a9c0c51281a564d877784f9551597aa74bfb5600ef44",
     "prospectiveOutcomeSha256": "ea2553d1854b77bc384bd97eb15559cc6cd4572b9ba73cb0bf78cd3113963e55"
   },
   "prospectiveOutcome": {
@@ -35,7 +35,7 @@
     "successorScope": "INITIAL_BOUNDED"
   },
   "phasePrerequisites": {
-    "phase": "STANDALONE_UI_NARROW_LAYOUT",
+    "phase": "REVIEWED_UI_NARROW_LAYOUT_CLOSURE",
     "rows": [
       {
         "requirementId": "REVIEWED_RETAINED_LAYOUT_DEFECT",
@@ -48,12 +48,12 @@
         "deferredToPhase": null
       },
       {
-        "requirementId": "ADMITTED_COMPONENT_PREIMAGE",
+        "requirementId": "REVIEWED_COMPONENT_POSTIMAGE",
         "requiredForPhase": true,
         "evidence": {
           "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/expenses/ExpenseList.tsx",
-          "sha256": "628862816a8dd77c78fab1dc1e2c94d55e3f29e78b8068878d22a236fd5f85b7",
-          "locator": "height: 44"
+          "sha256": "447463e1c1330d3152eba91401a68fc8a13320c29d24fb233ccd8830a62b26e3",
+          "locator": "overflowWrap: 'anywhere'"
         },
         "deferredToPhase": null
       },

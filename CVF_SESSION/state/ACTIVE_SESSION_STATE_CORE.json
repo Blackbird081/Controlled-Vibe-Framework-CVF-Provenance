@@ -39,9 +39,9 @@
     "baselinePath": "docs/baselines/CVF_GC018_NCR_EXPENSE_NARROW_LAYOUT_2026-10-10.md",
     "baselineSha256": "785f07bb6b7b03643886cbfae3952d591ed275c85c51ba02ee4c7b84e0ec1b84",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_NARROW_LAYOUT_2026-10-10.md",
-    "workOrderSha256": "22743fe969975a23752ef1d0eb1fec8ddb051cc9af8988cb43e7a0d3e2ea33e9"
+    "workOrderSha256": "71f80267f230bdad84f9a9c0c51281a564d877784f9551597aa74bfb5600ef44"
   },
-  "currentAuthoritySyncReason": "Operator worker-only collection/configuration evidence and continue; bounded narrow-layout packet material d918e3d186959af21ec4243b3b06906ce6366d45; exact six committed contents verified; no worker execution or router effect.",
+  "currentAuthoritySyncReason": "Layout accepted bounded, Local guide path corrected/worker guide erratum, timer/read/scaffold history retained; fourth Haiku worker-only observation, no effect grant.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",

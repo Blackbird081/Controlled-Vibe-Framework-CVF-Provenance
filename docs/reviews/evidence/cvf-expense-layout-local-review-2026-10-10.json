@@ -1,0 +1,929 @@
+{
+  "schemaVersion": "cvf.expenseLayoutLocalReview.v1",
+  "status": "CLOSED_PASS_BOUNDED",
+  "batchId": "CVF-NCR-EXPENSE-LAYOUT-20261010",
+  "closureBaseHead": "1f16dd48f6bc416da8920072f2ec18200c9fa07a",
+  "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_NARROW_LAYOUT_2026-10-10.md",
+  "workerOriginalPins": {
+    "scripts/test_cvf_expense_narrow_layout_browser.cjs": "8c3b28ac10a9b28b3143c2db75137129b9ab55306f51e309ec95752817a23041",
+    "docs/reviews/evidence/cvf-expense-layout-worker-2026-10-10.json": "3134f2eb4bb5beab6534a010edd64b684d807a430578a56e8c9611636684e58e",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/expenses/ExpenseList.tsx": "447463e1c1330d3152eba91401a68fc8a13320c29d24fb233ccd8830a62b26e3",
+    "docs/reviews/CVF_NCR_EXPENSE_NARROW_LAYOUT_WORKER_RETURN_2026-10-10.md": "d6116fad81b20033150556fc3668e99c8f0a8187afe379be5159f77db98dea3b",
+    "docs/guides/CVF_EXPENSE_NARROW_LAYOUT_README_2026-10-10.md": "663c09c94047deb6d3a2a3675a44b441bea59c94c4cc00f4e0cf82c8314e2705"
+  },
+  "frozenInputPins": [
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/expenses/ExpenseList.tsx",
+      "rawSha256": "628862816a8dd77c78fab1dc1e2c94d55e3f29e78b8068878d22a236fd5f85b7",
+      "role": "ADMITTED_MUTABLE_PREIMAGE",
+      "observedSha256": "447463e1c1330d3152eba91401a68fc8a13320c29d24fb233ccd8830a62b26e3",
+      "disposition": "ADMITTED_TWO_STYLE_DIFF"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/expenses/ExpenseList.test.tsx",
+      "rawSha256": "051eda76113aed59aa59ffb4a57739468f50944dbfdfb77d905dba9ba983da8b",
+      "role": "READ_ONLY_GOVERNED_INPUT",
+      "observedSha256": "051eda76113aed59aa59ffb4a57739468f50944dbfdfb77d905dba9ba983da8b",
+      "disposition": "MATCH"
+    },
+    {
+      "path": "DESIGN.md",
+      "rawSha256": "15c1b5061bd2e1f763638beb83a84d06eb8ccbc470747c01f236033a834a987e",
+      "role": "READ_ONLY_GOVERNED_INPUT",
+      "observedSha256": "15c1b5061bd2e1f763638beb83a84d06eb8ccbc470747c01f236033a834a987e",
+      "disposition": "MATCH"
+    },
+    {
+      "path": "docs/reference/CVF_NCR_GENERAL_VIDEO_DESIGN_2026-10-02.md",
+      "rawSha256": "3ce5e2363c3e29997fcbf42cb4cec59af7447cca38409d4d970e8aa71e5777e0",
+      "role": "READ_ONLY_GOVERNED_INPUT",
+      "observedSha256": "3ce5e2363c3e29997fcbf42cb4cec59af7447cca38409d4d970e8aa71e5777e0",
+      "disposition": "MATCH"
+    },
+    {
+      "path": "docs/reviews/CVF_NCR_EXPENSE_TOUCH_TARGET_COMPLETION_2026-10-10.md",
+      "rawSha256": "283fa7e8bc143421ce6bb4d13f19eaae45e213cbf0ec593a9cfb66c8be134f6d",
+      "role": "READ_ONLY_GOVERNED_INPUT",
+      "observedSha256": "283fa7e8bc143421ce6bb4d13f19eaae45e213cbf0ec593a9cfb66c8be134f6d",
+      "disposition": "MATCH"
+    },
+    {
+      "path": "docs/reviews/evidence/cvf-expense-touch-local-review-2026-10-10.json",
+      "rawSha256": "ea1f27d0649da4f1e31d0584beb92891279dbc40064a064931b9f8d5f71f0f99",
+      "role": "READ_ONLY_GOVERNED_INPUT",
+      "observedSha256": "ea1f27d0649da4f1e31d0584beb92891279dbc40064a064931b9f8d5f71f0f99",
+      "disposition": "MATCH"
+    },
+    {
+      "path": "scripts/test_cvf_expense_touch_target_browser.cjs",
+      "rawSha256": "39e5b62f716525388404980a052987212046a4f7f130aad5f64968c30dff07c0",
+      "role": "READ_ONLY_GOVERNED_INPUT",
+      "observedSha256": "39e5b62f716525388404980a052987212046a4f7f130aad5f64968c30dff07c0",
+      "disposition": "MATCH"
+    },
+    {
+      "path": "scripts/cvf_expense_fixture_preview.cjs",
+      "rawSha256": "ff7ce594c0af6d8d853b00b72ec71975a73750a1f0b52f512a86a01ecac8a166",
+      "role": "READ_ONLY_GOVERNED_INPUT",
+      "observedSha256": "ff7ce594c0af6d8d853b00b72ec71975a73750a1f0b52f512a86a01ecac8a166",
+      "disposition": "MATCH"
+    },
+    {
+      "path": "docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json",
+      "rawSha256": "63d758d6c2debb37cf1ea15c27eb36e0112a86b5292a631513692818a9e7dbb6",
+      "role": "READ_ONLY_GOVERNED_INPUT",
+      "observedSha256": "63d758d6c2debb37cf1ea15c27eb36e0112a86b5292a631513692818a9e7dbb6",
+      "disposition": "MATCH"
+    },
+    {
+      "path": "docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md",
+      "rawSha256": "1609cc9d955bc88b2e09179331d7828406114d98b23c81cfb3f2992afa3920f6",
+      "role": "READ_ONLY_GOVERNED_INPUT",
+      "observedSha256": "1609cc9d955bc88b2e09179331d7828406114d98b23c81cfb3f2992afa3920f6",
+      "disposition": "MATCH"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/package.json",
+      "rawSha256": "f03fc2c2700e904dc88e10395d0856983b9b0f9e6f27150713fa402f9e9fe24b",
+      "role": "READ_ONLY_GOVERNED_INPUT",
+      "observedSha256": "f03fc2c2700e904dc88e10395d0856983b9b0f9e6f27150713fa402f9e9fe24b",
+      "disposition": "MATCH"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/vitest.config.ts",
+      "rawSha256": "9a4a65976b5b7a5d038f9cb412a90d417f804108cf1dd33bae4421989a863420",
+      "role": "READ_ONLY_GOVERNED_INPUT",
+      "observedSha256": "9a4a65976b5b7a5d038f9cb412a90d417f804108cf1dd33bae4421989a863420",
+      "disposition": "MATCH"
+    },
+    {
+      "path": "docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md",
+      "rawSha256": "d88c4db52bb359e39845ee475d24446df2abc5f3893ada1a99e8771bed6aa4e8",
+      "role": "READ_ONLY_GOVERNED_INPUT",
+      "observedSha256": "d88c4db52bb359e39845ee475d24446df2abc5f3893ada1a99e8771bed6aa4e8",
+      "disposition": "MATCH"
+    }
+  ],
+  "physicalLineCounts": {
+    "scripts/test_cvf_expense_narrow_layout_browser.cjs": 300,
+    "docs/reviews/evidence/cvf-expense-layout-worker-2026-10-10.json": 217,
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/expenses/ExpenseList.tsx": 142,
+    "docs/reviews/CVF_NCR_EXPENSE_NARROW_LAYOUT_WORKER_RETURN_2026-10-10.md": 357,
+    "docs/guides/CVF_EXPENSE_NARROW_LAYOUT_README_2026-10-10.md": 70
+  },
+  "workerRuntimeBytesObserved": 532496,
+  "implementationRepairsByReviewer": 0,
+  "reviewerDocumentationErratumGroups": 1,
+  "guidePathAdjudication": {
+    "originalWoRawSha256": "22743fe969975a23752ef1d0eb1fec8ddb051cc9af8988cb43e7a0d3e2ea33e9",
+    "wrongProseGuide": "docs/guides/CVF_EXPENSE_TOUCH_TARGET_README_2026-10-10.md",
+    "admittedLedgerGuide": "docs/guides/CVF_EXPENSE_NARROW_LAYOUT_README_2026-10-10.md",
+    "touchGuideRawSha256Unchanged": "00afbb832dc840b55a0ba47a73c1de4b4ad97ca8f7ac2766ddbd51c024df6f12",
+    "owner": "LOCAL_DISPATCHER",
+    "closureCorrection": "Two copied prose entries corrected; original release remains historical. No worker extra sixth path or accepted-guide edit."
+  },
+  "independentProbe": {
+    "status": "PASS",
+    "viewport": {
+      "width": 330,
+      "height": 844
+    },
+    "sourceSha256": "447463e1c1330d3152eba91401a68fc8a13320c29d24fb233ccd8830a62b26e3",
+    "oracle": "Own literal fixture/IDs/complete cell text and inner-box bounds; no worker test import; source exposure disclosed",
+    "positive": {
+      "section": {
+        "left": 33,
+        "right": 297,
+        "top": 33,
+        "bottom": 536
+      },
+      "table": {
+        "left": 33,
+        "right": 297,
+        "top": 197,
+        "bottom": 536
+      },
+      "docOverflow": 0,
+      "sectionOverflow": 0,
+      "ids": [
+        "L-M2",
+        "L-M1"
+      ],
+      "inputHeight": 44,
+      "cells": [
+        {
+          "text": "Ng\u00e0y",
+          "rect": {
+            "left": 33,
+            "right": 97.171875,
+            "top": 197,
+            "bottom": 229.5
+          },
+          "inner": {
+            "left": 43,
+            "right": 87.171875,
+            "top": 205,
+            "bottom": 221.5
+          },
+          "lines": [
+            {
+              "left": 43,
+              "right": 71.8125,
+              "top": 205,
+              "bottom": 221
+            }
+          ]
+        },
+        {
+          "text": "N\u1ed9i dung",
+          "rect": {
+            "left": 97.171875,
+            "right": 225.234375,
+            "top": 197,
+            "bottom": 229.5
+          },
+          "inner": {
+            "left": 107.171875,
+            "right": 215.234375,
+            "top": 205,
+            "bottom": 221.5
+          },
+          "lines": [
+            {
+              "left": 107.171875,
+              "right": 158.453125,
+              "top": 205,
+              "bottom": 221
+            }
+          ]
+        },
+        {
+          "text": "S\u1ed1 ti\u1ec1n",
+          "rect": {
+            "left": 225.234375,
+            "right": 297,
+            "top": 197,
+            "bottom": 229.5
+          },
+          "inner": {
+            "left": 235.234375,
+            "right": 287,
+            "top": 205,
+            "bottom": 221.5
+          },
+          "lines": [
+            {
+              "left": 249.140625,
+              "right": 287,
+              "top": 205,
+              "bottom": 221
+            }
+          ]
+        },
+        {
+          "text": "2026-03-30",
+          "rect": {
+            "left": 33,
+            "right": 97.171875,
+            "top": 229.5,
+            "bottom": 456.5
+          },
+          "inner": {
+            "left": 43,
+            "right": 87.171875,
+            "top": 238.5,
+            "bottom": 448.5
+          },
+          "lines": [
+            {
+              "left": 43,
+              "right": 83.90625,
+              "top": 322,
+              "bottom": 343
+            },
+            {
+              "left": 43,
+              "right": 83.90625,
+              "top": 343,
+              "bottom": 364
+            }
+          ]
+        },
+        {
+          "text": "LocalChoice0123456789LocalChoice0123456789LocalChoice0123456789LocalChoice0123456789LocalChoice0123456789LocalChoice0123456789",
+          "rect": {
+            "left": 97.171875,
+            "right": 225.234375,
+            "top": 229.5,
+            "bottom": 456.5
+          },
+          "inner": {
+            "left": 107.171875,
+            "right": 215.234375,
+            "top": 238.5,
+            "bottom": 448.5
+          },
+          "lines": [
+            {
+              "left": 107.171875,
+              "right": 208.703125,
+              "top": 238,
+              "bottom": 259
+            },
+            {
+              "left": 107.171875,
+              "right": 212.484375,
+              "top": 259,
+              "bottom": 280
+            },
+            {
+              "left": 107.171875,
+              "right": 206.890625,
+              "top": 280,
+              "bottom": 301
+            },
+            {
+              "left": 107.171875,
+              "right": 210.203125,
+              "top": 301,
+              "bottom": 322
+            },
+            {
+              "left": 107.171875,
+              "right": 209.1875,
+              "top": 322,
+              "bottom": 343
+            },
+            {
+              "left": 107.171875,
+              "right": 208.703125,
+              "top": 343,
+              "bottom": 364
+            },
+            {
+              "left": 107.171875,
+              "right": 212.484375,
+              "top": 364,
+              "bottom": 385
+            },
+            {
+              "left": 107.171875,
+              "right": 206.890625,
+              "top": 385,
+              "bottom": 406
+            },
+            {
+              "left": 107.171875,
+              "right": 210.203125,
+              "top": 406,
+              "bottom": 427
+            },
+            {
+              "left": 107.171875,
+              "right": 209.1875,
+              "top": 427,
+              "bottom": 448
+            }
+          ]
+        },
+        {
+          "text": "246810",
+          "rect": {
+            "left": 225.234375,
+            "right": 297,
+            "top": 229.5,
+            "bottom": 456.5
+          },
+          "inner": {
+            "left": 235.234375,
+            "right": 287,
+            "top": 238.5,
+            "bottom": 448.5
+          },
+          "lines": [
+            {
+              "left": 235.25,
+              "right": 287,
+              "top": 332.5,
+              "bottom": 353.5
+            }
+          ]
+        },
+        {
+          "text": "2026-03-01",
+          "rect": {
+            "left": 33,
+            "right": 97.171875,
+            "top": 456.5,
+            "bottom": 536
+          },
+          "inner": {
+            "left": 43,
+            "right": 87.171875,
+            "top": 465.5,
+            "bottom": 528
+          },
+          "lines": [
+            {
+              "left": 43,
+              "right": 83.90625,
+              "top": 475.5,
+              "bottom": 496.5
+            },
+            {
+              "left": 43,
+              "right": 83.90625,
+              "top": 496.5,
+              "bottom": 517.5
+            }
+          ]
+        },
+        {
+          "text": "Own independent review",
+          "rect": {
+            "left": 97.171875,
+            "right": 225.234375,
+            "top": 456.5,
+            "bottom": 536
+          },
+          "inner": {
+            "left": 107.171875,
+            "right": 215.234375,
+            "top": 465.5,
+            "bottom": 528
+          },
+          "lines": [
+            {
+              "left": 107.171875,
+              "right": 139.859375,
+              "top": 465,
+              "bottom": 486
+            },
+            {
+              "left": 107.171875,
+              "right": 196.984375,
+              "top": 486,
+              "bottom": 507
+            },
+            {
+              "left": 107.171875,
+              "right": 152.578125,
+              "top": 507,
+              "bottom": 528
+            }
+          ]
+        },
+        {
+          "text": "135790",
+          "rect": {
+            "left": 225.234375,
+            "right": 297,
+            "top": 456.5,
+            "bottom": 536
+          },
+          "inner": {
+            "left": 235.234375,
+            "right": 287,
+            "top": 465.5,
+            "bottom": 528
+          },
+          "lines": [
+            {
+              "left": 235.25,
+              "right": 287,
+              "top": 486,
+              "bottom": 507
+            }
+          ]
+        }
+      ]
+    },
+    "negative": {
+      "control": "DOM-only label white-space nowrap; no source mutation",
+      "rejectedByAssertion": true,
+      "reason": "table outside section inner bounds",
+      "table": {
+        "left": 33,
+        "right": 1208.84375,
+        "top": 197,
+        "bottom": 347
+      },
+      "section": {
+        "left": 33,
+        "right": 297,
+        "top": 33,
+        "bottom": 347
+      }
+    },
+    "restored": "PASS",
+    "externalRequests": 0,
+    "pageErrors": 0,
+    "browserVersion": "145.0.7632.6"
+  },
+  "probeSourceText": "'use strict';\nconst fs=require('fs'),path=require('path'),crypto=require('crypto'),assert=require('assert');const {pathToFileURL}=require('url');\nconst root=process.cwd(),out=path.join(root,'.cvf/runtime/cvf-expense-layout-local-review-20261010'),web=path.join(root,'EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web'),source=path.join(web,'src/expenses/ExpenseList.tsx');\nconst digest=()=>crypto.createHash('sha256').update(fs.readFileSync(source)).digest('hex'),start=digest();\nconst longLabel='LocalChoice0123456789'.repeat(6);const fixture=[{id:'L-FEB',date:'2026-02-28',label:'Other month',amount:70000},{id:'L-M2',date:'2026-03-30',label:longLabel,amount:246810},{id:'L-M1',date:'2026-03-01',label:'Own independent review',amount:135790},{id:'L-BAD',date:'05/03/2026',label:'Invalid',amount:99999}];\nconst fits=(b,a)=>b.left>=a.left-1&&b.right<=a.right+1&&b.top>=a.top-1&&b.bottom<=a.bottom+1;\nconst requireContained=s=>{assert(fits(s.table,s.section),'table outside section inner bounds');for(const c of s.cells){assert(fits(c.rect,s.section),'cell outside section inner bounds');for(const line of c.lines)assert(fits(line,c.inner),'text outside cell inner bounds')}assert(s.docOverflow<=0&&s.sectionOverflow<=1,'horizontal overflow');};\n(async()=>{\n fs.mkdirSync(out,{recursive:true});const entry=path.join(out,'own-entry.tsx');fs.writeFileSync(entry,`import React from 'react';import {createRoot} from 'react-dom/client';import {ExpenseList} from ${JSON.stringify(path.relative(out,source).replace(/\\\\/g,'/'))};createRoot(document.getElementById('root')).render(React.createElement(ExpenseList,{expenses:${JSON.stringify(fixture)}}));`);\n const vite=await import(pathToFileURL(path.join(web,'node_modules/vite/dist/node/index.js')).href);\n const build=await vite.build({configFile:false,envFile:false,root:out,mode:'production',logLevel:'silent',define:{'process.env.NODE_ENV':'\"production\"'},resolve:{alias:[{find:'react-dom',replacement:path.join(web,'node_modules/react-dom').replace(/\\\\/g,'/')},{find:'react',replacement:path.join(web,'node_modules/react').replace(/\\\\/g,'/')}]},oxc:{jsx:{runtime:'automatic'}},build:{write:false,minify:true,sourcemap:false,emptyOutDir:false,lib:{entry,formats:['iife'],name:'LocalLayout'}}});\n const chunks=(Array.isArray(build)?build:[build]).flatMap(x=>x.output);assert.equal(chunks.length,1);const file=path.join(out,'own-330.html');fs.writeFileSync(file,`<!doctype html><meta charset=\"utf-8\"><style>:root{color-scheme:dark;--cvf-bg-page:#111218;--cvf-surface:#1c1d27;--cvf-text-primary:#f4f7fb;--cvf-text-secondary:#a3adc2;--cvf-text-muted:#6f7890;--cvf-border:rgba(255,255,255,.08);--cvf-border-strong:rgba(255,255,255,.14);--cvf-warning:#f59e0b;--cvf-accent:#5b5cf6}body{margin:0;padding:16px;font:16px system-ui;background:var(--cvf-bg-page)}</style><div id=\"root\"></div><script>${chunks[0].code.replace(/<\\/script/gi,'<\\\\/script')}</script>`);\n const {chromium}=require(path.join(web,'node_modules/@playwright/test'));const browser=await chromium.launch({headless:true});let report;\n try{const ctx=await browser.newContext({viewport:{width:330,height:844}}),page=await ctx.newPage();page.setDefaultTimeout(15000);const external=[],errors=[];await ctx.route('**/*',r=>r.request().url().startsWith('file:')?r.continue():r.abort());page.on('request',r=>{if(!r.url().startsWith('file:'))external.push(r.url())});page.on('pageerror',e=>errors.push(e.message));page.on('console',m=>{if(m.type()==='error')errors.push(m.text())});await page.goto(pathToFileURL(file).href);await page.waitForSelector('[data-expense-id=\"L-M2\"]');await page.locator('input[type=month]').fill('2026-03');await page.waitForFunction(()=>document.querySelectorAll('[data-expense-id]').length===2);\n const measure=()=>page.evaluate(()=>{const rect=el=>{const r=el.getBoundingClientRect();return {left:r.left,right:r.right,top:r.top,bottom:r.bottom}};const inner=el=>{const r=rect(el),c=getComputedStyle(el);return {left:r.left+parseFloat(c.borderLeftWidth||0)+parseFloat(c.paddingLeft||0),right:r.right-parseFloat(c.borderRightWidth||0)-parseFloat(c.paddingRight||0),top:r.top+parseFloat(c.borderTopWidth||0)+parseFloat(c.paddingTop||0),bottom:r.bottom-parseFloat(c.borderBottomWidth||0)-parseFloat(c.paddingBottom||0)}};const section=document.querySelector('section'),table=document.querySelector('table');return {section:inner(section),table:rect(table),docOverflow:document.documentElement.scrollWidth-innerWidth,sectionOverflow:section.scrollWidth-section.clientWidth,ids:[...document.querySelectorAll('[data-expense-id]')].map(x=>x.dataset.expenseId),inputHeight:document.querySelector('input').getBoundingClientRect().height,cells:[...table.querySelectorAll('th,td')].map(c=>{const range=document.createRange();range.selectNodeContents(c);return {text:c.textContent,rect:rect(c),inner:inner(c),lines:[...range.getClientRects()].map(r=>({left:r.left,right:r.right,top:r.top,bottom:r.bottom}))}})}});\n const positive=await measure();requireContained(positive);assert.deepEqual(positive.ids,['L-M2','L-M1']);assert.equal(positive.inputHeight,44);assert.deepEqual(positive.cells.map(c=>c.text),['Ng\u00e0y','N\u1ed9i dung','S\u1ed1 ti\u1ec1n','2026-03-30',longLabel,'246810','2026-03-01','Own independent review','135790']);await page.screenshot({path:path.join(out,'own-330.png'),fullPage:true});\n await page.evaluate(()=>{document.querySelector('[data-expense-id=\"L-M2\"] td:nth-child(2)').style.whiteSpace='nowrap'});const negative=await measure();let rejected=false,reason=null;try{requireContained(negative)}catch(e){assert.equal(e.name,'AssertionError');rejected=true;reason=e.message}assert(rejected,'negative must be rejected');await page.evaluate(()=>{document.querySelector('[data-expense-id=\"L-M2\"] td:nth-child(2)').style.removeProperty('white-space')});const restored=await measure();requireContained(restored);assert.deepEqual(restored.ids,['L-M2','L-M1']);assert.equal(digest(),start);assert.equal(external.length,0);assert.equal(errors.length,0);\n report={status:'PASS',viewport:{width:330,height:844},sourceSha256:start,oracle:'Own literal fixture/IDs/complete cell text and inner-box bounds; no worker test import; source exposure disclosed',positive,negative:{control:'DOM-only label white-space nowrap; no source mutation',rejectedByAssertion:rejected,reason,table:negative.table,section:negative.section},restored:'PASS',externalRequests:external.length,pageErrors:errors.length,browserVersion:browser.version()};await ctx.close();\n }finally{await browser.close()}\n fs.writeFileSync(path.join(out,'probe-results.json'),JSON.stringify(report,null,2)+'\\n');process.stdout.write(JSON.stringify({status:report.status,ids:report.positive.ids,inputHeight:report.positive.inputHeight,negative:report.negative})+'\\n');\n})().catch(e=>{process.stderr.write(e.stack+'\\n');process.exitCode=1});\n",
+  "probeReproduction": "Extract probeSourceText to .cvf/runtime/cvf-expense-layout-local-review-20261010/probe.cjs and node from repo root. Own330 fixture/literal120-char text/source direct bundle; DOM-only nowrap negative; worker test not imported; exposure to worker source/evidence disclosed. No broad duplicate suite.",
+  "consumedWorkerEvidence": {
+    "browserReport": {
+      "status": "PASS",
+      "browserVersion": "145.0.7632.6",
+      "sourceSha256": {
+        "start": "447463e1c1330d3152eba91401a68fc8a13320c29d24fb233ccd8830a62b26e3",
+        "afterBuild": "447463e1c1330d3152eba91401a68fc8a13320c29d24fb233ccd8830a62b26e3",
+        "end": "447463e1c1330d3152eba91401a68fc8a13320c29d24fb233ccd8830a62b26e3"
+      },
+      "mutantSourceSha256": "628862816a8dd77c78fab1dc1e2c94d55e3f29e78b8068878d22a236fd5f85b7",
+      "restoredPass": true,
+      "tests": [
+        {
+          "label": "baseline",
+          "profile": "dark-320x844",
+          "status": "PASS",
+          "failureKind": null,
+          "assertions": 162,
+          "ms": 1673,
+          "error": null,
+          "externalRequests": 0,
+          "pageErrors": 0
+        },
+        {
+          "label": "baseline",
+          "profile": "dark-390x844",
+          "status": "PASS",
+          "failureKind": null,
+          "assertions": 96,
+          "ms": 325,
+          "error": null,
+          "externalRequests": 0,
+          "pageErrors": 0
+        },
+        {
+          "label": "baseline",
+          "profile": "dark-1280x800",
+          "status": "PASS",
+          "failureKind": null,
+          "assertions": 81,
+          "ms": 228,
+          "error": null,
+          "externalRequests": 0,
+          "pageErrors": 0
+        },
+        {
+          "label": "mutant-preimage",
+          "profile": "dark-320x844",
+          "status": "FAIL",
+          "failureKind": "ASSERTION",
+          "assertions": 4,
+          "ms": 595,
+          "error": "dark-320x844 March table rectangle outside content box: x 33.0-906.5 vs 33.0-287.0",
+          "externalRequests": 0,
+          "pageErrors": 0
+        },
+        {
+          "label": "restored",
+          "profile": "dark-320x844",
+          "status": "PASS",
+          "failureKind": null,
+          "assertions": 39,
+          "ms": 164,
+          "error": null,
+          "externalRequests": 0,
+          "pageErrors": 0
+        }
+      ],
+      "mutants": [
+        {
+          "id": "mutant-preimage-320",
+          "collected": 1,
+          "completed": 1,
+          "killed": true,
+          "failureKind": "ASSERTION",
+          "firstFailure": "dark-320x844 March table rectangle outside content box: x 33.0-906.5 vs 33.0-287.0",
+          "sourceSha256": "628862816a8dd77c78fab1dc1e2c94d55e3f29e78b8068878d22a236fd5f85b7"
+        }
+      ],
+      "screenshots": [
+        {
+          "profile": "dark-320x844",
+          "path": ".cvf/runtime/cvf-expense-layout-worker-20261010/march-dark-320x844.png",
+          "bytes": 20531,
+          "sha256": "c5ded8dd3572b4b03991d55ea0899c131b1dbf437622f7f8d083e40dcac150a4"
+        },
+        {
+          "profile": "dark-390x844",
+          "path": ".cvf/runtime/cvf-expense-layout-worker-20261010/march-dark-390x844.png",
+          "bytes": 20737,
+          "sha256": "be3a7b4f9a27fa24068f97777d112c8e346266735e507c80ec93991231b9e6b2"
+        }
+      ],
+      "metrics": [
+        {
+          "profile": "dark-320x844",
+          "rowTextContrastMin": 15.58,
+          "noticeContrast": 7.79,
+          "inputOuterWidth": 161.328125,
+          "inputOuterHeight": 44,
+          "contentBox": {
+            "l": 33,
+            "r": 287,
+            "t": 33,
+            "b": 473
+          },
+          "tableBox": {
+            "l": 33,
+            "r": 287,
+            "t": 197,
+            "b": 473,
+            "w": 254,
+            "h": 276
+          },
+          "tableSlackLeft": 0,
+          "tableSlackRight": 0,
+          "longLabelLines": 8
+        },
+        {
+          "profile": "dark-390x844",
+          "rowTextContrastMin": 15.58,
+          "noticeContrast": 7.79,
+          "inputOuterWidth": 161.328125,
+          "inputOuterHeight": 44,
+          "contentBox": {
+            "l": 33,
+            "r": 357,
+            "t": 33,
+            "b": 394
+          },
+          "tableBox": {
+            "l": 33,
+            "r": 357,
+            "t": 181,
+            "b": 394,
+            "w": 324,
+            "h": 213
+          },
+          "tableSlackLeft": 0,
+          "tableSlackRight": 0,
+          "longLabelLines": 5
+        },
+        {
+          "profile": "dark-1280x800",
+          "rowTextContrastMin": 15.58,
+          "noticeContrast": 7.79,
+          "inputOuterWidth": 161.328125,
+          "inputOuterHeight": 44,
+          "contentBox": {
+            "l": 33,
+            "r": 1247,
+            "t": 33,
+            "b": 289
+          },
+          "tableBox": {
+            "l": 33,
+            "r": 1247,
+            "t": 181,
+            "b": 289,
+            "w": 1214,
+            "h": 108
+          },
+          "tableSlackLeft": 0,
+          "tableSlackRight": 0,
+          "longLabelLines": 1
+        }
+      ],
+      "assertions": 386,
+      "externalRequests": 0,
+      "pageErrors": 0,
+      "elapsedMs": 4002
+    },
+    "unit": {
+      "sourcePath": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/expenses/ExpenseList.tsx",
+      "postChangeSha256": "447463e1c1330d3152eba91401a68fc8a13320c29d24fb233ccd8830a62b26e3",
+      "change": "presentation only: the label cell gets overflowWrap 'anywhere'; the amount cell gets whiteSpace 'nowrap'. The month input (height 44, border-box), filter, date rules, props, row order, labels and notice are unchanged.",
+      "gitDiffStat": "1 file changed, 2 insertions(+), 2 deletions(-) relative to HEAD",
+      "physicalLines": 142,
+      "lineCap": 250,
+      "unitCommand": "node node_modules/vitest/vitest.mjs run src/expenses/ExpenseList.test.tsx --reporter=verbose",
+      "unitCwd": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\EXTENSIONS\\CVF_v1.6_AGENT_PLATFORM\\cvf-web (uppercase drive letter)",
+      "unitExit": 0,
+      "testFiles": 1,
+      "testsTotal": 12,
+      "testsPassed": 12,
+      "testsFailed": 0,
+      "unitDurationSeconds": 13.92,
+      "unitTestFileModified": false,
+      "unitResult": "PASS",
+      "duplicateBroadTestRerun": false
+    },
+    "readCoverage": [
+      {
+        "item": "CVF_SESSION_MEMORY.md (front door)",
+        "coverage": "READ_FULL",
+        "note": "read after the timer persistence"
+      },
+      {
+        "item": "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json",
+        "coverage": "READ_FULL",
+        "note": "read after the timer persistence"
+      },
+      {
+        "item": "AGENT_HANDOFF_V63_2026-09-18.md",
+        "coverage": "READ_PARTIAL",
+        "note": "lines 1-40 (current authority and accepted NCR evidence); later sections not read"
+      },
+      {
+        "item": "docs/baselines/CVF_GC018_NCR_EXPENSE_NARROW_LAYOUT_2026-10-10.md",
+        "coverage": "READ_FULL",
+        "note": ""
+      },
+      {
+        "item": "docs/reviews/evidence/cvf-expense-layout-dispatch-inputs-2026-10-10.json",
+        "coverage": "READ_FULL",
+        "note": "all source and tool pins checked"
+      },
+      {
+        "item": "ExpenseList.tsx (actual component)",
+        "coverage": "READ_FULL",
+        "note": "read before the edit and again after the edit"
+      },
+      {
+        "item": "ExpenseList.test.tsx (whole)",
+        "coverage": "READ_FULL_EARLIER_IN_SESSION",
+        "note": "read in full earlier in this session; SHA-256 051eda76 re-verified unchanged; a repeat Read was refused as unchanged"
+      },
+      {
+        "item": "docs/reviews/CVF_NCR_EXPENSE_TOUCH_TARGET_COMPLETION_2026-10-10.md",
+        "coverage": "READ_FULL",
+        "note": "F5 and the accepted limits"
+      },
+      {
+        "item": "docs/reviews/evidence/cvf-expense-touch-local-review-2026-10-10.json",
+        "coverage": "READ_FULL",
+        "note": "independent 320px measurement and retained overflow"
+      },
+      {
+        "item": "DESIGN.md sections 2, 6, 7 and 8",
+        "coverage": "READ_FULL",
+        "note": "lines 28-62 and 180-219"
+      },
+      {
+        "item": "docs/reference/CVF_NCR_GENERAL_VIDEO_DESIGN_2026-10-02.md S05 and S06",
+        "coverage": "READ_FULL",
+        "note": "lines 84-130 (S05 and S06 sections)"
+      },
+      {
+        "item": "scripts/test_cvf_expense_touch_target_browser.cjs (method reference)",
+        "coverage": "READ_FULL",
+        "note": "read-only; method reused, not rerun or edited"
+      },
+      {
+        "item": "governance/compat/check_worker_return_quality_gate.py literals",
+        "coverage": "READ_PARTIAL",
+        "note": "heading list, field lists, PASS/COMPLIANT line rule and diagnose() branches were read in the touch lane of this session; not re-read in this lane"
+      },
+      {
+        "item": "governance/compat/check_work_order_acceptance_ledger.py literals",
+        "coverage": "READ_PARTIAL",
+        "note": "lines 100-208 read in this lane (ledger row keys, evidence keys, PASS artifact equality, proof-ref binding); lines 1-99 not read"
+      },
+      {
+        "item": "governance/compat/check_gate_to_role_closeability.py literals",
+        "coverage": "READ_PARTIAL",
+        "note": "recheck branches lines 360-410 read in this lane; contract validator not read"
+      },
+      {
+        "item": "governance/compat/learning_application_binding.py (named in the learning plan)",
+        "coverage": "NOT_READ",
+        "note": "omission recorded; gate outcomes only"
+      },
+      {
+        "item": "governance/compat/build_dispatch_packet_scaffold.py and run_worker_return_scaffold.py",
+        "coverage": "NOT_READ",
+        "note": "no scaffold was generated; the return followed the accepted prior shape"
+      },
+      {
+        "item": "scripts/cvf_expense_fixture_preview.cjs (historical builder)",
+        "coverage": "PIN_CHECK_ONLY",
+        "note": "SHA-256 ff7ce594 matched; source not read in this lane"
+      }
+    ],
+    "duplicateBroadTestRerun": false,
+    "screenshotsVisuallyInspected": true,
+    "mutantInterpretation": "Exact admitted628 preimage with input44 unchanged; meaningful table rectangle ASSERTION at320, corrected baseline/restoration PASS; no invalid harness kill."
+  },
+  "guideErratum": {
+    "oldTouchScript": "scripts/test_cvf_expense_touch_target_browser.cjs",
+    "rawSha256": "39e5b62f716525388404980a052987212046a4f7f130aad5f64968c30dff07c0",
+    "sourcePredicate": "check(shaStart !== PREIMAGE_SHA), where PREIMAGE_SHA=801f3052..., not an exact628 postimage admission pin",
+    "correctClaim": "Historical touch receipts cover the source hashes they record. Script can bundle later source if invoked; doing so would overwrite its ignored historical runtime. No current-source light/accent proof claimed; did not rerun old script. Reviewer independent width330, not320."
+  },
+  "workerGateLogs": [
+    {
+      "path": ".cvf/runtime/cvf-expense-layout-worker-20261010/gates/full-bound-confirmation-b.log",
+      "rawSha256": "ae24eb81408c0ffdb1b9d54bef2f35b5c09f3554135e51871ba2f9ce5b020183",
+      "status": "COMPLIANT",
+      "lastLine": "COMPLIANT: worker-return fast gate passed in 7.14s."
+    },
+    {
+      "path": ".cvf/runtime/cvf-expense-layout-worker-20261010/gates/full-bound-run-a.log",
+      "rawSha256": "42066484f50a265451dfe595543164fee03fa58b3915065e28f9ca80bacda7bc",
+      "status": "FAIL",
+      "lastLine": "VIOLATION: worker-return fast gate blocked by 1 failure(s) in 6.39s."
+    },
+    {
+      "path": ".cvf/runtime/cvf-expense-layout-worker-20261010/gates/full-bound-run-a2.log",
+      "rawSha256": "5bde51867b3867cb47edee80ba6a0a87a4fffc8dc230b59514b9d42b2ae098b0",
+      "status": "COMPLIANT",
+      "lastLine": "COMPLIANT: worker-return fast gate passed in 6.69s."
+    },
+    {
+      "path": ".cvf/runtime/cvf-expense-layout-worker-20261010/gates/full-bound-run-a3.log",
+      "rawSha256": "f285d0faa2cddb0760b203d33ccc482f0b27cf251c635c63b97ff70bf0ad8512",
+      "status": "COMPLIANT",
+      "lastLine": "COMPLIANT: worker-return fast gate passed in 6.55s."
+    }
+  ],
+  "historicalDispatchRelease": {
+    "path": ".cvf/runtime/cvf-expense-layout-dispatch-20261010/release/pre-dispatch.json",
+    "rawSha256": "cb04f424dfb35e3bdf8e57baf4656c3f048d85f403dca18ab36350f6ab0704fe",
+    "headSha": "1f16dd48f6bc416da8920072f2ec18200c9fa07a",
+    "checksPassed": 86,
+    "activeWorkOrderBound": true,
+    "claimBoundary": "Local86 declaration independently reconciled to existing receipt; not worker fresh86 assertion nor proof of absence of semantic packet defect."
+  },
+  "timerReceipt": {
+    "timerPath": ".cvf/runtime/cvf-expense-layout-worker-20261010/timer.json",
+    "timerRawSha256": "f27baaeadb6495334ad97e7739bcd9c0e4ccfb34b4f5a1fae4283feeb47951c9",
+    "finalConfirmation": {
+      "schemaVersion": "cvf.expenseLayoutFinalConfirmation.v1",
+      "batchId": "CVF-NCR-EXPENSE-LAYOUT-20261010",
+      "utcStart": "2026-10-10T07:35:24.558Z",
+      "monotonicStartTicks": 5846870593380,
+      "monotonicFrequencyHz": 10000000,
+      "utcEnd": "2026-10-10T07:45:27.472Z",
+      "monotonicEndTicks": 5852899720323,
+      "elapsedSeconds": 602.9,
+      "elapsedMinutes": 10.05,
+      "budgetMinutes": 90,
+      "withinBudget": true,
+      "persistenceDeviation": "NONCOMPLIANT_PERSISTENCE_AFTER_FIRST_READS (see evidence timer)",
+      "elapsedIncludesFirstReadAndPostrecordConfirmation": true,
+      "frozenBeforeRunB": true,
+      "frozenFileSha256": {
+        "scripts/test_cvf_expense_narrow_layout_browser.cjs": "8c3b28ac10a9b28b3143c2db75137129b9ab55306f51e309ec95752817a23041",
+        "docs/reviews/evidence/cvf-expense-layout-worker-2026-10-10.json": "3134f2eb4bb5beab6534a010edd64b684d807a430578a56e8c9611636684e58e",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/expenses/ExpenseList.tsx": "447463e1c1330d3152eba91401a68fc8a13320c29d24fb233ccd8830a62b26e3",
+        "docs/reviews/CVF_NCR_EXPENSE_NARROW_LAYOUT_WORKER_RETURN_2026-10-10.md": "d6116fad81b20033150556fc3668e99c8f0a8187afe379be5159f77db98dea3b",
+        "docs/guides/CVF_EXPENSE_NARROW_LAYOUT_README_2026-10-10.md": "663c09c94047deb6d3a2a3675a44b441bea59c94c4cc00f4e0cf82c8314e2705"
+      },
+      "runBExitCode": 0,
+      "runBLog": ".cvf/runtime/cvf-expense-layout-worker-20261010/gates/full-bound-confirmation-b.log",
+      "hashVerification": "MATCH_BEFORE_AND_AFTER_RUN_B",
+      "trackedFilesChangedAfterFreeze": false,
+      "usage": {
+        "tokens": null,
+        "tokensReason": "NOT_AVAILABLE_WITH_REASON: no token meter exposed to this worker",
+        "billAmount": null,
+        "billCurrency": null,
+        "billReason": "NOT_AVAILABLE_WITH_REASON: no bill exposed; no effort-based price inferred"
+      }
+    },
+    "finalConfirmationRawSha256": "9e96d708c2ea268a1a9180f50e78f80a04ced29b8d60400402bb10e0f33eba1d",
+    "elapsedCalculatedSeconds": 602.9126943,
+    "historicalTotalBudgetCompliance": "NOT_CERTIFIABLE_LATE_PERSISTENCE_REPORTED_START_PROVENANCE"
+  },
+  "findings": [
+    {
+      "id": "F1",
+      "owner": "LOCAL_DISPATCHER",
+      "disposition": "ADJUDICATED_ACCEPT_LEDGER_GUIDE_AND_CORRECT_CLOSURE_PROSE",
+      "finding": "Allowed Paths and Required Artifact Manifest erroneously copied accepted touch guide. Acceptance ledger, routing and frozen inputs consistently require new narrow guide; existing touch guide must remain read-only. Local accepts worker choice as intended five-path artifact; fixes two prose paths in closed order, preserving original dispatch at execution base. This is Local packet defect, not worker product fault, and original guide unchanged."
+    },
+    {
+      "id": "F2",
+      "owner": "WORKER",
+      "disposition": "NONCOMPLIANT_HISTORY_RETAINED",
+      "finding": "UTC/monotonic capture before reads is worker-reported; timer persisted after work-order read and git status/log. Explicit persistence-before-read rule not met. End arithmetic602.91s matches recorded10.05min and frozen B/raw pins; full historical90min/start provenance not independently certified. No backdate."
+    },
+    {
+      "id": "F3",
+      "owner": "WORKER",
+      "disposition": "READ_AND_SCAFFOLD_GAPS_RETAINED",
+      "finding": "S05-S06 and DESIGN required sections now declared read, whole unchanged unit read reused from same session with pin. Progressive handoff40-line read is not by itself a full-history violation. Required relevant ledger/closeability literal coverage partial; learning binding owner not read; required return scaffold not generated. Preserve exact readCoverage and gaps, no gate-attested understanding or retroactive compliance."
+    },
+    {
+      "id": "F4",
+      "owner": "WORKER",
+      "disposition": "ACCEPT_TECHNICAL_WITH_DOCUMENTATION_ERRATUM",
+      "finding": "Two style lines implement wrap-anywhere label and nowrap amount; own330 literal120-character label/full text/geometry passes and nowrap negative rejects. Worker self-corrected all-cell word fragmentation after visual inspection despite passing geometric assertions. Guide incorrectly asserts old touch script refuses new source: source only checks current hash differs from original801 preimage and does not pin accepted628 postimage. Static source contradiction, no destructive runtime rerun. Guide also says independent probe320, governing contract330; reviewer330 executed. Completion provides erratum; original five bytes preserved, one reviewer documentation erratum group, zero reviewer product-code repair."
+    },
+    {
+      "id": "F5",
+      "owner": "WORKER",
+      "disposition": "LIMITS_AND_COUNTS_RETAINED",
+      "finding": "Current proof dark-only at320/390/1280 and own330; no current-source light/accent certification or full WCAG. Browser script exactly300 lines, no spare cap headroom. One presentation repair group, one harness/report/cap group, one return encoding metadata group; four browser runs not four repair turns. A draft FAIL then A2/A3/B PASS; zero worker redispatch. Worker evidence reports212/355 evidence/return lines, actual217/357; both remain under caps but stale counts retained as metadata quality issue."
+    }
+  ],
+  "technicalDisposition": "ACCEPT_BOUNDED_WITH_REVIEWER_GUIDE_ERRATUM",
+  "proceduralDisposition": "DEVIATIONS_DISCLOSED_NOT_FULL_PROCEDURAL_COMPLIANCE",
+  "modelAssessment": {
+    "model": "Haiku 5.5",
+    "effort": "Max",
+    "role": "INTERNAL_AGENT_WORKER_ONLY",
+    "identityBasis": "OPERATOR_REPORTED_NOT_INDEPENDENTLY_VERIFIED",
+    "firstReturnGateClean": false,
+    "workerProductRepairGroups": 1,
+    "workerHarnessReportRepairGroups": 1,
+    "workerImplementationRepairGroups": 2,
+    "workerReturnMetadataRepairGroups": 1,
+    "workerReturnDraftGateAttempts": 2,
+    "failedReturnDraftGateAttempts": 1,
+    "frozenPreConfirmationGateAttempts": 1,
+    "separateFrozenConfirmation": "PASS_ORIGINAL_FIVE_RAW_PINS_MATCH",
+    "reviewerRequestedWorkerRepairTurns": 0,
+    "reviewerProductCodeRepairs": 0,
+    "reviewerDocumentationErratumGroups": 1,
+    "dispatcherPacketDefects": 1,
+    "technicalOutput": "ACCEPTED_BOUNDED_RESPONSIVE_TABLE_DARK_WITH_GUIDE_ERRATUM",
+    "process": "DEVIATIONS_DISCLOSED_NOT_FULL_PROCEDURAL_COMPLIANCE",
+    "reportedElapsedMinutes": 10.05,
+    "fullDeliveryElapsedMinutes": null,
+    "elapsedBasis": "REPORTED_CAPTURED_START_TO_FROZEN_CONFIRMATION_LATE_PERSISTENCE_START_PROVENANCE_UNVERIFIED",
+    "bill": {
+      "amount": null,
+      "currency": null,
+      "tokens": null,
+      "reason": "NO_EXPOSED_WORKER_REVIEWER_REWORK_METER"
+    },
+    "recommendation": "Provisional worker-only finite UI tasks with separate Local acceptance; repeated timer/read/scaffold defects preclude trusting unattended evidence discipline. No pricing/speed ranking."
+  },
+  "adif": {
+    "taskClass": "expense-narrow-layout",
+    "role": "reviewer",
+    "lifecyclePhase": "review",
+    "returned": "NONE_RETURNED",
+    "totalCandidates": 0,
+    "truncated": false
+  },
+  "closureManifest": [
+    "scripts/test_cvf_expense_narrow_layout_browser.cjs",
+    "docs/reviews/evidence/cvf-expense-layout-worker-2026-10-10.json",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/expenses/ExpenseList.tsx",
+    "docs/reviews/CVF_NCR_EXPENSE_NARROW_LAYOUT_WORKER_RETURN_2026-10-10.md",
+    "docs/guides/CVF_EXPENSE_NARROW_LAYOUT_README_2026-10-10.md",
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_NARROW_LAYOUT_2026-10-10.md",
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_NARROW_LAYOUT_2026-10-10.json",
+    "docs/reviews/CVF_NCR_EXPENSE_NARROW_LAYOUT_COMPLETION_2026-10-10.md",
+    "docs/reviews/evidence/cvf-expense-layout-local-review-2026-10-10.json",
+    "docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json",
+    "docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md",
+    "AGENT_HANDOFF_V63_2026-09-18.md",
+    "CVF_SESSION_MEMORY.md",
+    "CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json",
+    "CVF_SESSION/state/entries/nextAllowedMove.json",
+    "CVF_SESSION/state/entries/cvfNcrConsolidatedLocalFoundation20261006.json",
+    "CVF_SESSION/ACTIVE_SESSION_STATE.json",
+    "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json"
+  ],
+  "modelTracking": "docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json",
+  "preliminaryReport": "docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md",
+  "claimBoundary": "Private synthetic dark table layout/Chromium selected widths, complete literal cell-text containment and input44. Not current light/accent/full WCAG/production/provider/public/deploy/P11. Models worker-only, bill unknown; technical acceptance and metadata erratum do not certify historical procedure."
+}

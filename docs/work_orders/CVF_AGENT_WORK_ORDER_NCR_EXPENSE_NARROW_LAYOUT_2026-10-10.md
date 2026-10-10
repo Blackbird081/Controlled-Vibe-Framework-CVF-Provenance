@@ -1,7 +1,7 @@
 # CVF Agent Work Order - NCR Expense Narrow Layout
 Memory class: governed-worker-dispatch
 docType: work_order
-Status: READY
+Status: CLOSED_PASS_BOUNDED
 Date: 2026-10-10
 Batch ID: CVF-NCR-EXPENSE-LAYOUT-20261010
 Dispatch base head: c202cc73ff97cdeb1fe57358d1438afbc623b566
@@ -34,7 +34,7 @@ Standing autonomous isolated UI/test authority covers bounded existing table/cel
 
 - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/expenses/ExpenseList.tsx`
 - `scripts/test_cvf_expense_narrow_layout_browser.cjs`
-- `docs/guides/CVF_EXPENSE_TOUCH_TARGET_README_2026-10-10.md`
+- `docs/guides/CVF_EXPENSE_NARROW_LAYOUT_README_2026-10-10.md`
 - `docs/reviews/evidence/cvf-expense-layout-worker-2026-10-10.json`
 - `docs/reviews/CVF_NCR_EXPENSE_NARROW_LAYOUT_WORKER_RETURN_2026-10-10.md`
 
@@ -551,7 +551,7 @@ toolClassifierBlockRecoveryApplicability: NOT_APPLICABLE_WITH_REASON - local off
 |---|---|---|
 | EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/expenses/ExpenseList.tsx | worker | 250 lines |
 | scripts/test_cvf_expense_narrow_layout_browser.cjs | worker | 300 lines |
-| docs/guides/CVF_EXPENSE_TOUCH_TARGET_README_2026-10-10.md | worker | 100 lines |
+| docs/guides/CVF_EXPENSE_NARROW_LAYOUT_README_2026-10-10.md | worker | 100 lines |
 | docs/reviews/evidence/cvf-expense-layout-worker-2026-10-10.json | worker | 350 lines |
 | docs/reviews/CVF_NCR_EXPENSE_NARROW_LAYOUT_WORKER_RETURN_2026-10-10.md | worker | 450 lines |
 
@@ -588,3 +588,31 @@ Owner: canonical UI contract DESIGN.md mobile/readability; Local touch completio
 ```
 
 Existing prior application retained; plan is not proof of future application.
+
+
+## Local Closure Receipt
+
+CLOSED_PASS_BOUNDED: original five accepted with reviewer guide erratum; own330 full-text containment/nowrap negative PASS; timer/read/scaffold deviations retained. Two copied touch-guide prose paths corrected to admitted ledger narrow guide; original dispatch at execution base preserved; Local packet error, no accepted-guide edit.
+Completion: docs/reviews/CVF_NCR_EXPENSE_NARROW_LAYOUT_COMPLETION_2026-10-10.md; docs/reviews/evidence/cvf-expense-layout-local-review-2026-10-10.json. No redispatch.
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| COMPONENT | presentation-only diff, preserve44/semantics, unit | two style lines/pins MATCH; unit12/12 consumed | PASS |
+| BROWSER | three width containment, preimage mutant, own proof | worker baseline/restoration PASS and meaningful preimage kill; own330 full-text containment/nowrap negative PASS | PASS |
+| GUIDE | usage and source-version limits | admitted new guide usage valid; Local erratum rejects guaranteed old-touch refusal and corrects reviewer330; original preserved | PASS |
+| RETURN | frozen bound B, honest timer/read record | A3/B COMPLIANT; five raw pins MATCH; timer/read/scaffold noncompliance retained, not full certification | PASS |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_NARROW_LAYOUT_2026-10-10.md | CLOSED_PASS_BOUNDED; two guide prose rows reconciled; no redispatch | PASS |
+| Completion or reviewer artifact | docs/reviews/CVF_NCR_EXPENSE_NARROW_LAYOUT_COMPLETION_2026-10-10.md | originals accepted bounded with guide erratum/process limits | PASS |
+| Roadmap state | existing NCR/video owners | no source successor or effect grant | N/A with reason: standalone work order |
+| Registry JSON | docs/reviews/evidence/cvf-expense-layout-local-review-2026-10-10.json; docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json | frozen pins/own executable probe/five worker observations | PASS |
+| Registry Markdown | docs/reviews/CVF_NCR_EXPENSE_NARROW_LAYOUT_COMPLETION_2026-10-10.md; docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md | fourth-Haiku assessment and guide erratum | PASS |
+| External evidence digest | docs/reviews/evidence/cvf-expense-layout-local-review-2026-10-10.json | internal shared-workspace result only | N/A with reason: no external research |
+| System loop interlock | sourceR2/C1 STOP retained | no retry/reset/effect | PASS |
+| Session continuity | AGENT_HANDOFF_V63_2026-09-18.md; generated state/bootstrap | closed pin, actual material SHA in dedicated sync | PASS |
