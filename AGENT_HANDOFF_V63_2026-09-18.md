@@ -22,8 +22,8 @@ Current NIS-T1J is CLOSED_PASS_BOUNDED with no automatic successor; NCR consumer
 Baseline: `docs/baselines/CVF_GC018_NCR_EXPENSE_TEXT_LEGIBILITY_2026-10-10.md`; SHA256 `6e19991d0b780c5748cf71b7624b79fd102146b830d115fb4cb3954eb0ae14c4`.
 Work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_TEXT_LEGIBILITY_2026-10-10.md`; SHA256 `198d1b64bdf3fd895e269fc9a350ea549cb647e23fbeed337eff48f33d202c21`.
 PREFEAS-C1 CLOSED_PASS_BOUNDED per docs/reviews/CVF_PREFEAS_C1_COMPLETION_2026-10-08.md;three Local repairs,independent15/15 and focused103 tests;declared-state guard accepted,no worker redispatch/effect grant. Prior S0 and all source/production holds retained.
-## Publication And Packet Update (2026-10-09)
-Public guidance `docs/guides/CVF_EXTERNAL_AGENT_ROUND_TRIP_KIT.md` is live at `ab714ed7f20a224c6022cf133b26750347a2fc9e`; the operator packet snapshot was refreshed from verified live public main. Only process guidance was exported; private enforcement remains local and learning application remains `NOT_APPLIED`.
+## Publication And Packet Update (2026-10-10)
+Model-selection R2 governance material is committed at `bf1b573f7b1dbc72de48fc4d1f204d4ba58c54b4`; public derived context is live at `e9ddcbcdcac2a9df520f5eb0761dbdb609b9deba`. `EXTERNAL_AGENT_READ/CURRENT.zip` is refreshed for operator relay. Web critique pending; Local owns private disposition. Expense and implementation remain parked. Prior round-trip guidance at `ab714ed7f20a224c6022cf133b26750347a2fc9e` remains historical.
 
 ## Accepted NCR Evidence And Continuation
 Narrow layout accepted: docs/reviews/CVF_NCR_EXPENSE_NARROW_LAYOUT_COMPLETION_2026-10-10.md;original5;own330 literal-text containment/nowrap negative PASS;guide erratum and Local path defect;timer/read/scaffold limits. Worker ledger fourHaiku plus Sonnet,5families,bill unknown.
