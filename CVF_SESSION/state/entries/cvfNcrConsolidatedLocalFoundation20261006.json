@@ -994,7 +994,7 @@
       ],
       "oldRootsFrozen": true
     },
-    "nextAllowedMove": "PROGRAM_ID=CVF-CORE; NEXT_ACTION_CLASS=REVIEW; BATCH_ID=CVF-NCR-EXPENSE-BROWSER-20261010. Expense browser preview CLOSED_PASS_BOUNDED: five original worker artifacts accepted; independent alternate browser fixture and drift sentinel PASS; frozen bound confirmation consumed. Timer/required-read deviations and inherited touch target limitation retained; dark only. Work order consumed, no redispatch. Local may select next useful bounded roadmap task; governed worker model ledger now two Haiku5.5/Max reviewed plus Sonnet5.5/High reference, operator-reported identities, bill unknown; preliminary report after third Haiku review. Source R2/native/TTS/audio/MP4/S2-S9/provider/public/deploy/P11 parked; no automatic source successor or push grant; upstream debt retained. LHW24 retained.",
+    "nextAllowedMove": "PROGRAM_ID=CVF-CORE; NEXT_ACTION_CLASS=REVIEW; BATCH_ID=CVF-NCR-EXPENSE-BROWSER-20261010. Expense browser preview CLOSED_PASS_BOUNDED: five original worker artifacts accepted; independent alternate browser fixture and drift sentinel PASS; frozen bound confirmation consumed. Timer/required-read deviations and inherited touch target limitation retained; dark only. Work order consumed, no redispatch. Local may select next useful bounded roadmap task; governed worker model ledger now two Haiku5.5/Max reviewed plus Sonnet5.5/High reference, operator-reported identities, bill unknown; preliminary report after third Haiku review. Source R2/native/TTS/audio/MP4/S2-S9/provider/public/deploy/P11 parked; no automatic source successor or push grant; upstream debt retained. LHW24 retained. Accepted material=a9783c5b797374706490fd44094322a274ffb8a0.",
     "s1R2LocalDisposition20261009": {
       "materialCommit": "5c1c5bf30525c091deda533b92608fe76a13ad21",
       "review": "docs/reviews/CVF_NCR_C1_S1_CONSOLIDATED_REPAIR_COMPLETION_2026-10-09.md",
@@ -1182,9 +1182,11 @@
       "independentBrowserCases": 3,
       "independentDriftSentinel": "PASS",
       "historicalProcedureCompliance": "DEVIATIONS_DISCLOSED_NOT_CERTIFIED",
-      "materialCommit": "PENDING_ACTUAL_COMMIT_STEWARD",
+      "materialCommit": "a9783c5b797374706490fd44094322a274ffb8a0",
       "inheritedMobileInputOuterHeightPx": 38,
-      "themes": "DEFAULT_DARK_ONLY"
+      "themes": "DEFAULT_DARK_ONLY",
+      "continuity": "DEDICATED_REAL_SHA_SYNC",
+      "localClosureDiagnostic": "Material committed-content proof exact17 PASS; full material-head pre-closure failed active-handoff HEAD synchronization. Local-owned choreography issue; full closure after sync, no historical P4 fingerprint promotion."
     },
     "workerModelEvaluation20261010": {
       "ledger": "docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json",

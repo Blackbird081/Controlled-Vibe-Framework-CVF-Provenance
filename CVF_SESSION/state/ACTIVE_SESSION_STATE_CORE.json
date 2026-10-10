@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_BROWSER_PREVIEW_2026-10-10.md",
     "workOrderSha256": "ed2fd53828507dbbe6db3ba472f6ffd6592a61e235aa3def4c71830e64477ff4"
   },
-  "currentAuthoritySyncReason": "Bounded technical browser preview acceptance; timer/read limitations preserved; exact closed raw pin; no effect/public grant.",
+  "currentAuthoritySyncReason": "Bounded technical browser preview acceptance; timer/read limitations preserved; exact closed raw pin; no effect/public grant. Accepted material commit a9783c5b797374706490fd44094322a274ffb8a0; exact17 committed-content proof PASS before real-SHA continuity. Full material pre-closure failed pending HEAD synchronization; no successful historical autorun fingerprint promotion.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
