@@ -1,0 +1,123 @@
+{
+  "schemaVersion": "cvf.expenseBrowserDispatchInputs.v1",
+  "date": "2026-10-10",
+  "batchId": "CVF-NCR-EXPENSE-BROWSER-20261010",
+  "planningBase": "665da5b2df3e1d2b81553a5c9567c7babb364459",
+  "authority": "Standing autonomous isolated tests and manual worker transfer; Local technical decision owner; no source/media/provider/app effect.",
+  "sources": [
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/expenses/ExpenseList.tsx",
+      "rawSha256": "801f305238f2512db663fee7ada837a7bf53a84036ea6efcd305d29985339f19",
+      "role": "named-governed-input"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/expenses/ExpenseList.test.tsx",
+      "rawSha256": "051eda76113aed59aa59ffb4a57739468f50944dbfdfb77d905dba9ba983da8b",
+      "role": "named-governed-input"
+    },
+    {
+      "path": "docs/reviews/CVF_NCR_EXPENSE_FILTER_FIXTURE_COMPLETION_2026-10-09.md",
+      "rawSha256": "3c36d923d861e5ecce7f096aed268057d581fcb003e50d862124fab7ee62d9c6",
+      "role": "named-governed-input"
+    },
+    {
+      "path": "docs/reference/CVF_NCR_GENERAL_VIDEO_DESIGN_2026-10-02.md",
+      "rawSha256": "3ce5e2363c3e29997fcbf42cb4cec59af7447cca38409d4d970e8aa71e5777e0",
+      "role": "named-governed-input"
+    },
+    {
+      "path": "DESIGN.md",
+      "rawSha256": "15c1b5061bd2e1f763638beb83a84d06eb8ccbc470747c01f236033a834a987e",
+      "role": "named-governed-input"
+    },
+    {
+      "path": "scripts/test_cvf_storyboard_preview_browser.cjs",
+      "rawSha256": "5a12fe49ae6c3c00460d01514114069e26b1c95cd205340958d6069a8cd63496",
+      "role": "named-governed-input"
+    },
+    {
+      "path": "docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md",
+      "rawSha256": "1609cc9d955bc88b2e09179331d7828406114d98b23c81cfb3f2992afa3920f6",
+      "role": "named-governed-input"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/package.json",
+      "rawSha256": "f03fc2c2700e904dc88e10395d0856983b9b0f9e6f27150713fa402f9e9fe24b",
+      "role": "named-governed-input"
+    }
+  ],
+  "toolMetadata": [
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/node_modules/vite/package.json",
+      "sha256": "a2b943431b51bfcc2e9386eecf8b4b3f6e4bf443e56d17b1f4c8495a61b4050c",
+      "role": "LOCAL_INSTALLED_EXECUTION_AID_NOT_CANONICAL_SOURCE"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/node_modules/react/package.json",
+      "sha256": "c383aced6a67c8d06f02996015c0a163e78532a330a96dff1ccfd107b00ab326",
+      "role": "LOCAL_INSTALLED_EXECUTION_AID_NOT_CANONICAL_SOURCE"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/node_modules/react-dom/package.json",
+      "sha256": "d926f158e1be15885aaeac259c39567a46f6525fbdd14c380528486c31459996",
+      "role": "LOCAL_INSTALLED_EXECUTION_AID_NOT_CANONICAL_SOURCE"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/node_modules/playwright/package.json",
+      "sha256": "718c91812946dcfbb4b724cfa0084ee3be205c571df09094f218bc4571f43c2b",
+      "role": "LOCAL_INSTALLED_EXECUTION_AID_NOT_CANONICAL_SOURCE"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/node_modules/typescript/package.json",
+      "sha256": "822ef7ca6452205657b6288b066481ecf508bfbf43455d715cf7d3ec457561e6",
+      "role": "LOCAL_INSTALLED_EXECUTION_AID_NOT_CANONICAL_SOURCE"
+    }
+  ],
+  "capability": {
+    "status": "PASS",
+    "date": "2026-10-10",
+    "browserExecutableExists": true,
+    "executable": "C:\\Users\\DELL\\AppData\\Local\\ms-playwright\\chromium-1208\\chrome-win64\\chrome.exe",
+    "buildChunks": 1,
+    "buildBytes": 189372,
+    "capabilityOnly": true,
+    "importedExpenseList": false,
+    "browserLaunched": false,
+    "externalRequests": 0,
+    "installs": 0,
+    "configuredViteEnvDisabled": true,
+    "viteEntry": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\EXTENSIONS\\CVF_v1.6_AGENT_PLATFORM\\cvf-web\\node_modules\\vite\\dist\\node\\index.js",
+    "viteEntrySha256": "9b3e72282cfda2f0e60ad5b123e2c8a89e27b9b7cc7c892ae7b34036db5f92ef"
+  },
+  "workerPaths": [
+    "scripts/cvf_expense_fixture_preview.cjs",
+    "scripts/test_cvf_expense_fixture_preview_browser.cjs",
+    "docs/guides/CVF_EXPENSE_BROWSER_PREVIEW_README_2026-10-10.md",
+    "docs/reviews/evidence/cvf-expense-browser-worker-2026-10-10.json",
+    "docs/reviews/CVF_NCR_EXPENSE_BROWSER_PREVIEW_WORKER_RETURN_2026-10-10.md"
+  ],
+  "materialPaths": [
+    "docs/baselines/CVF_GC018_NCR_EXPENSE_BROWSER_PREVIEW_2026-10-10.md",
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_BROWSER_PREVIEW_2026-10-10.md",
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_BROWSER_PREVIEW_2026-10-10.json",
+    "docs/reviews/evidence/cvf-expense-browser-dispatch-inputs-2026-10-10.json"
+  ],
+  "commands": {
+    "build": "node scripts/cvf_expense_fixture_preview.cjs --output .cvf/runtime/cvf-expense-browser-worker-20261010/expense-preview.html",
+    "test": "node scripts/test_cvf_expense_fixture_preview_browser.cjs"
+  },
+  "authoringDiagnostic": {
+    "owner": "LOCAL_DISPATCHER",
+    "genericCapability": "Virtual lib entry failed to resolve; absolute ignored generic entry and explicit production/envFile:false configuration succeeded; no actual component import/browser launch.",
+    "bindingHelper": "Initial Local authoring used registry raw-field names against the helper normalized id/control projection; corrected before packet write.",
+    "firstAuthoringGate": "68/70 PASS; exact Required first actions label missing, inherited workerReturnPath wrong, and clean/gate/Operator Checkpoint proximity falsely read as optional remediation. Grouped corrections preserve semantics and no worker ran."
+  },
+  "modelPreferenceObservation": {
+    "model": "Haiku 5.5",
+    "effort": "Max",
+    "basis": "OPERATOR_REPORTED_PREFERENCE_NOT_NORMATIVE",
+    "cost": "UNKNOWN_NO_TOKENS_OR_BILL",
+    "comparison": "Browser packaging raises integration complexity versus prior unit task; not equal difficulty to prior Sonnet full storyboard package."
+  },
+  "claimBoundary": "Packet readiness only; worker execution pending."
+}

@@ -1,0 +1,79 @@
+{
+  "schemaVersion": "cvf.preapprovalFeasibility.v1",
+  "proposal": {
+    "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_BROWSER_PREVIEW_2026-10-10.md",
+    "sha256": "7913adcf69a70fb641bcca33500c3def91c1060d6bd4ba2c59b2e5072ec04d0e"
+  },
+  "approvalTarget": {
+    "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_BROWSER_PREVIEW_2026-10-10.md",
+    "sha256": "7913adcf69a70fb641bcca33500c3def91c1060d6bd4ba2c59b2e5072ec04d0e",
+    "prospectiveOutcomeSha256": "2c6242695cca750eae878dfb2ad264becb147d97679ff2415e792446b96304c5"
+  },
+  "prospectiveOutcome": {
+    "schemaVersion": "cvf.semanticConvergenceControl.v1",
+    "problemKey": "cvf-expense-actual-component-browser-preview",
+    "chainMode": "INITIAL",
+    "chainOrdinal": 0,
+    "predecessor": null,
+    "blockerDelta": {
+      "prior": [],
+      "resolved": [],
+      "retained": [],
+      "new": [],
+      "reopened": [],
+      "current": []
+    },
+    "resolutionEvidence": {},
+    "counters": {
+      "partialReadyClosures": 0,
+      "reviewerScopeExpansions": 0,
+      "sameClaimCorrections": 0,
+      "nonDecreasingBlockerTransitions": 0
+    },
+    "claims": [],
+    "requiredDisposition": "CONTINUE_BOUNDED",
+    "successorScope": "INITIAL_BOUNDED"
+  },
+  "phasePrerequisites": {
+    "phase": "STANDALONE_BROWSER_UI_PREVIEW",
+    "rows": [
+      {
+        "requirementId": "ACCEPTED_COMPONENT",
+        "requiredForPhase": true,
+        "evidence": {
+          "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/expenses/ExpenseList.tsx",
+          "sha256": "801f305238f2512db663fee7ada837a7bf53a84036ea6efcd305d29985339f19",
+          "locator": "export function ExpenseList"
+        },
+        "deferredToPhase": null
+      },
+      {
+        "requirementId": "ACCEPTED_UNIT_REVIEW",
+        "requiredForPhase": true,
+        "evidence": {
+          "path": "docs/reviews/CVF_NCR_EXPENSE_FILTER_FIXTURE_COMPLETION_2026-10-09.md",
+          "sha256": "3c36d923d861e5ecce7f096aed268057d581fcb003e50d862124fab7ee62d9c6",
+          "locator": "Status: CLOSED_PASS_BOUNDED"
+        },
+        "deferredToPhase": null
+      },
+      {
+        "requirementId": "LOCAL_TOOL_CAPABILITY",
+        "requiredForPhase": true,
+        "evidence": {
+          "path": "docs/reviews/evidence/cvf-expense-browser-dispatch-inputs-2026-10-10.json",
+          "sha256": "a20822eb8da92a3b2d90e275a0f4eaf8f5f75c4b9ada01f59d5b0b39d2c062c2",
+          "locator": "\"browserExecutableExists\": true"
+        },
+        "deferredToPhase": null
+      },
+      {
+        "requirementId": "APP_PROVIDER_MEDIA",
+        "requiredForPhase": false,
+        "evidence": null,
+        "deferredToPhase": "SEPARATE_ADMISSION_NOT_REQUIRED_FOR_BROWSER_UI"
+      }
+    ]
+  },
+  "requestQueue": null
+}
