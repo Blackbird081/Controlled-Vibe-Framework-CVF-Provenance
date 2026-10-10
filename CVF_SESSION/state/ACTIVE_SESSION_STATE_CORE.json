@@ -36,12 +36,12 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_NCR_EXPENSE_TOUCH_TARGET_2026-10-10.md",
-    "baselineSha256": "9ae3b2d32c6fc8ac7af9c11a536460873cf4adf8c9e0e1f60d75020889915575",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_TOUCH_TARGET_2026-10-10.md",
-    "workOrderSha256": "29e2f26950a474cb6e90718ca9d66dffc8e9d453f9b4e760bbbe5d9ad22909c0"
+    "baselinePath": "docs/baselines/CVF_GC018_NCR_EXPENSE_NARROW_LAYOUT_2026-10-10.md",
+    "baselineSha256": "785f07bb6b7b03643886cbfae3952d591ed275c85c51ba02ee4c7b84e0ec1b84",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_NARROW_LAYOUT_2026-10-10.md",
+    "workOrderSha256": "22743fe969975a23752ef1d0eb1fec8ddb051cc9af8988cb43e7a0d3e2ea33e9"
   },
-  "currentAuthoritySyncReason": "Bounded touch correction accepted; timer/read and320 limits retained; original worker bytes preserved; third-Haiku report, no effect grant. Accepted material b6f85d621487286a6c0a5f873cdf81045410a506; exact18 committed-content proof PASS before actual-SHA continuity; synchronized separate-range closure follows, historical material fingerprint withheld if current worktree differs.",
+  "currentAuthoritySyncReason": "Operator worker-only collection/configuration evidence and continue; bounded narrow-layout packet material d918e3d186959af21ec4243b3b06906ce6366d45; exact six committed contents verified; no worker execution or router effect.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
