@@ -1,0 +1,33 @@
+{
+  "schemaVersion": "cvf.modelSelectionDesignReviewIntake@1",
+  "status": "RECEIVED_FOR_LOCAL_RECONCILIATION",
+  "sourceHead": "807db7d4816878df0b6ea1dd50732e1716ccc615",
+  "transportIdentity": "LOCAL_OBSERVED_BYTES_NO_SENDER_DIGEST_SUPPLIED",
+  "reviewerIdentity": "SELF_REPORTED_MIXED_MODEL_CONTEXT_NOT_PROVIDER_VERIFIED",
+  "records": [
+    {
+      "source": ".cvf/runtime/cvf-model-selection-design-review-20261010/CLAUDE_REVIEW_RETURN.md",
+      "preservedPath": "docs/reviews/evidence/model-selection-design-review-20261010/claude-review-original.txt",
+      "sha256": "930fbc21efcbf5a7c573a92bf504fa1849367202b1b831524e19c2c7c2f61f74",
+      "bytes": 24241
+    },
+    {
+      "source": "docs/reference/CVF_ORCHESTRATOR_MODEL_SELECTION_DOCTRINE_DESIGN_2026-10-10.md",
+      "preservedPath": "docs/reviews/evidence/model-selection-design-review-20261010/doctrine-r0.txt",
+      "sha256": "2d0c5f142f21a98c1b150369190a98ff4427e6d674102cf11e345e6b6c8d5fdd",
+      "bytes": 10094
+    },
+    {
+      "source": "docs/reference/CVF_ORCHESTRATOR_MODEL_SELECTION_CONTRACT_DESIGN_2026-10-10.md",
+      "preservedPath": "docs/reviews/evidence/model-selection-design-review-20261010/contract-r0.txt",
+      "sha256": "c51f25a5121eb4920871163b641dd5be7f800e801e841901fefb6759aaa6af72",
+      "bytes": 9639
+    },
+    {
+      "source": "docs/roadmaps/CVF_ORCHESTRATOR_MODEL_SELECTION_SYSTEM_CHAIN_ROADMAP_2026-10-10.md",
+      "preservedPath": "docs/reviews/evidence/model-selection-design-review-20261010/roadmap-r0.txt",
+      "sha256": "b9fb2e8d1223fe02e81ea28a08fde2b15d1fc74d6332ead7651a646fca360615",
+      "bytes": 14548
+    }
+  ]
+}

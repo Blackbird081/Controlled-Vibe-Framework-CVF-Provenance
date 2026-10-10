@@ -1,0 +1,90 @@
+# CVF Model Selection Design - Reviewer Confirmation Of R1
+
+Memory class: FULL_RECORD
+docType: review-return (transport file, git-ignored under .cvf/runtime/)
+Request ID: CVF-MODEL-SELECTION-DESIGN-REVIEW-20261010
+Parent batch: CVF-WORKER-SELECTION-FOUNDATION-20261010
+Date: 2026-10-10
+Result: REMAINING_BLOCKERS (one, small; see R1-B1)
+
+## 1. Identity / scope
+
+- **Reviewer:** Claude, current model claude-opus-5-5. This is the same conversation context that produced the original return (`CLAUDE_REVIEW_RETURN.md`, SHA256 `930fbc21efcbf5a7c573a92bf504fa1849367202b1b831524e19c2c7c2f61f74`). It is the existing reviewer confirming the author's response to its own findings, not a second independent review. Self-consistency bias toward the original findings is possible.
+- **Role:** INTERNAL_AGENT reviewer. Phase: R1 delta confirmation. Final decision owner: Local. Recommendation only.
+- **Repository state:** HEAD `807db7d4816878df0b6ea1dd50732e1716ccc615`. No commits since the original review; worktree untracked set as described in the reconciliation trace.
+- **Inputs read:**
+  - Local response `docs/reviews/CVF_MODEL_SELECTION_DESIGN_RECONCILIATION_2026-10-10.md`, read in full. SHA256 `c7d4f07ab3921c039439791c97e8050850de37fe4e25e5690da2be8dc6b1d6f3`.
+  - `docs/reviews/evidence/model-selection-design-review-20261010/reconciliation-evidence.json`. SHA256 `df28c5f7c3e2310268e02e8311b3a369193412d4df81cc4a119adab03f667f63`.
+  - The three R1 targets, read in full.
+- **Observed R1 hashes (all MATCH `reconciliation-evidence.json` r1Targets):**
+
+  | Artifact | SHA256 |
+  |---|---|
+  | docs/reference/CVF_ORCHESTRATOR_MODEL_SELECTION_DOCTRINE_DESIGN_2026-10-10.md | 37423117174d68e5326be06bf0b253f3156506fa57a8191d73972eb66d74f5a7 |
+  | docs/reference/CVF_ORCHESTRATOR_MODEL_SELECTION_CONTRACT_DESIGN_2026-10-10.md | 6c312ed649cc65eea9eae6d2a74564061a5e4f049fa3a386b7b4da791f2a83b9 |
+  | docs/roadmaps/CVF_ORCHESTRATOR_MODEL_SELECTION_SYSTEM_CHAIN_ROADMAP_2026-10-10.md | e21981805702bd47a8652fc07014acff83cf3ecfb69d69a8d4d528ccb7059f75 |
+
+- **Preserved original:** `docs/reviews/evidence/model-selection-design-review-20261010/claude-review-original.txt` hashes to `930fbc21...1f74`, identical to the transport return. The transport return itself is unchanged.
+- **Targeted owner checks (named contradictions only):**
+  - Owner pins in `reconciliation-evidence.json` for the role matrix (`544ef26c...`), the dispatch envelope (`f72cea93...`) and the PLL parent-evidence contract (`88aa56b6...`) match current bytes.
+  - `CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md` exists.
+  - Dispatch envelope section "Context Eligibility Before Transfer" exists. It states that a different model/provider does not create a fresh context, which supports F9.
+  - PLL parent-evidence contract: `projectApplication` APPLIED requires RETURNED plus project-owner authorization and a verification receipt. This is consistent with R1's PARENT_CONTROL branch.
+  - This partly closes the original return's disclosed read gaps for the dispatch envelope and the PLL parent contract (targeted sections only). Guard orientation and the review-cost body remain unread.
+- **Not done:** no gates rerun (the Local 70/70 is consumed as structural evidence only); no implementation; no provider calls. Time and tokens are unknown.
+
+## 2. Result: REMAINING_BLOCKERS
+
+R1 resolves F1 and F4 through F11, and resolves F3 for delegated (orchestrator-chosen) selections. All six focus areas named in the confirmation request were checked:
+- B/A ownership.
+- Bounded choice and provisional authority.
+- Claim-relative identity.
+- Separate PLL and local consumption, with zero, one or many links.
+- Future evidence home.
+- Manual-first order.
+
+One residual defect sits at the F2/F3 boundary: what happens when the **operator explicitly assigns** a model for which evidence is absent. It reopens the authority question F2 was about. The fix is one clause.
+
+## 3. Per-finding confirmation
+
+| ID | Local disposition | Confirmation | Basis in R1 |
+|---|---|---|---|
+| F1 | ACCEPT | CONCUR | Doctrine "Selection Surfaces And Delegated Choice": B is first, A deferred, no gateway prerequisite. Contract Purpose and "B surfaceAdmissionRefs" paragraph. Roadmap chain row "Task -> B seat configurations" and the deferred-A paragraph. A seat cannot fabricate isRoutable or GatewayReceipt. |
+| F2 | ACCEPT_WITH_QUALIFICATION | CONCUR with the qualification, except R1-B1 | The qualification is correct: the matrix limits claims made from its own rules; it does not prohibit operator-delegated bounded choice. Choice authority is recorded before SELECT. No delegation means recommendation only. Selection authority is not invocation authority. Self-seat selection is excluded. The residual is R1-B1. |
+| F3 | ACCEPT_WITH_QUALIFICATION | CONCUR for delegated selections | Doctrine "Decision Procedure And Uncertainty": SUPPORTED is concrete (observable floor, EXACT or justified PARTIAL, no unresolved material conflict). The PROVISIONAL envelope is bounded (reversible local work, no protected-control/auth/credential/external effects, observable independent acceptance, admitted budgets, relevant positive evidence). The qualification "reviewer presence alone is insufficient" is better than the original proposal. |
+| F4 | ACCEPT_WITH_QUALIFICATION | CONCUR | Contract identity table: EXACT requires the same immutable snapshot and all material conditions; alias-only is at most PARTIAL with observedFrom/observedThrough/reassessAt; B identity is normally OPERATOR_REPORTED. The qualification (catalog identity plus snapshot still does not prove executed identity) correctly strengthens the original. |
+| F5 | ACCEPT | CONCUR | Contract states end at LEARNING_DISPOSITIONED, transitions are appended events referencing the frozen hash, later decisions own zero, one or many links. The PARENT_CONTROL branch uses typed PLL receipts (verified against the parent-evidence contract). LOCAL_OBSERVATION uses CITED / ACTION_VERIFIED / NO_CHANGE_REASONED, labelled as not PLL states. Negative matrix rows cover NOT_APPLIED and zero/one/many links. |
+| F6 | ACCEPT_HOME_GAP; ROUTING_CLAIM_ALREADY_BOUNDED | CONCUR, including the qualification | The original framed the routing concern as "could be read as"; the ledger already disclaims routing, so no defect is established there. Legacy ledger is read-only with no fabricated joins. Future outcomes have one home, the task's own review/evidence record. No duplicate append. |
+| F7 | ACCEPT | CONCUR | Contract CostBasis: capacity units with denominator and reset window; no summing of unlike units; a quota-only cap is not blocked by unknown currency; a monetary cap still requires a supported bound; zero incremental charge must be explicit. |
+| F8 | ACCEPT_WITH_QUALIFICATION | CONCUR | Doctrine paragraph after the owner table: adaptive weights and automatic rollback are not adopted; LHW23 specs preserved. `resolveProviderForRole` is identified as a map/fallback resolver with its source path; A integration must trace its caller. |
+| F9 | ACCEPT | CONCUR | Contract Decision Semantics cites Context Eligibility Before Transfer; negative row "qualified reviewer model in a prohibited author context: hold before transfer". Doctrine excludes the orchestrator's own seat. |
+| F10 | ACCEPT_WITH_QUALIFICATION | CONCUR, including the qualification | The original overstated the point: a hash remains useful for retained bytes after a page changes. R1 keeps a bounded excerpt or summary plus its hash, and full content only where permitted. |
+| F11 | ACCEPT | CONCUR | "at least one eligible candidate and exactly one selected"; negative row "Two candidates pass". |
+| Manual-first order | Adopted with qualification | CONCUR | Roadmap: S1, then S3, then S4, then S2 on demonstrated need, then S5 on separate demand. The qualification (next actual admitted task, no arbitrary two-or-three-task quota) is better than the original suggestion. One loop establishes bounded use only. |
+
+## 4. Remaining blocker
+
+| ID | Severity | Source / section | Evidence | Failure scenario | Smallest correction |
+|---|---|---|---|---|---|
+| R1-B1 | BLOCKER (design, one clause) | Doctrine "Selection Surfaces And Delegated Choice" (honor an explicit assignment "when it meets constraints"); Contract "Decision And Cost Semantics" ("A supplied assignment must pass hard constraints including quality"; "zero evidence ... holds"); Contract negative row "assigned model fails floor -> HOLD_OPERATOR_CONSTRAINT" | R1 treats quality as a pre-dispatch hard constraint for an explicit operator assignment. It also says zero evidence holds. "Explicit allowance" is defined only for PROVISIONAL outside the envelope, not for INSUFFICIENT. The role matrix (Topology Invariance Rule) states that the operator may assign a model. | The operator explicitly assigns a newly released model version, for which no Local outcome and no usable published evidence yet exists. The disposition is INSUFFICIENT, which causes HOLD_OPERATOR_CONSTRAINT, and no path lets the operator proceed. The orchestrator would effectively veto an operator assignment for lack of evidence. This would have blocked the very tasks that produced the six current observations, each of which started with no Local evidence for its configuration. | Distinguish **absent** evidence from a **known failed** requirement for explicit assignments. Add to the doctrine's Delegated Choice paragraph and the contract's Decision Semantics: "For an explicit operator assignment, absence of quality evidence does not hold. SELECT records `operatorAssignmentDisposition=HONORED_WITH_EVIDENCE_GAP` with the confidence limit, and independent acceptance remains required. HOLD applies to unavailability, authority/policy/method/context conflicts, or a known failed hard floor. The INSUFFICIENT and zero-evidence holds apply to delegated selections." Replace the negative row "assigned model fails floor" with two rows: "assigned model with a known failed hard floor -> HOLD_OPERATOR_CONSTRAINT" and "assigned model with no evidence -> SELECT honoring the assignment, evidence gap recorded, acceptance unchanged". |
+
+R1-B1 needs no owner edit and no new evidence. After the correction, a hash check of the changed paragraphs against this row is enough; no further review round is needed for it.
+
+## 5. Non-blocking notes (optional)
+
+- **N1 (wording):** Doctrine Purpose still says "Technical model choice is the orchestrator's responsibility", and the roadmap Purpose says "orchestrator-owned model selection", without qualification. Both now conflict in tone with the delegated-choice rule. Suggest "where assigned or delegated by the operator".
+- **N2 (optional):** HOLD_OPERATOR_CONSTRAINT now covers two different conditions: "no choice authority recorded" and "assignment conflicts with a hard constraint". A reason field (or two reason codes) would make holds easier to route. Implementation-owned; not needed for design acceptance.
+
+## 6. Next move
+
+- **Local:** apply the R1-B1 clause, and N1 if accepted, as one small R2 delta. Record the R2 hashes.
+- **Reviewer:** no new round is needed. If Local applies R1-B1 as worded (or with equivalent semantics), this reviewer's position is CONCUR_WITH_R2 on F1 through F11 and R1-B1. Local can verify that with a hash-and-paragraph check rather than another transfer.
+- **Still held:** any S2 schema or validator; any GatewayReceipt companion (fresh GC-018 under PINT-T2); any live delegation or standing-delegation grant; any S3 task (demand-gated; Expense parked). The operator-sequenced public-safe Web refresh comes after agreement and is outside this confirmation.
+
+## 7. Claim boundary
+
+This is a static design confirmation by the same reviewer context that produced the original findings. It is not a second independent review and makes no hidden-context attestation. No runtime, provider or live proof. No model ranking, measured savings or learning APPLIED claim. Author gate results are consumed as structural evidence only. The three R1 targets, the reconciliation review, the evidence folder, session state, Expense and learning records were not modified. Nothing was committed or pushed.
+
+## Public Export Disposition
+
+DEFERRED_PRIVATE_ONLY

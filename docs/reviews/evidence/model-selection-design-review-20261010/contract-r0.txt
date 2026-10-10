@@ -1,0 +1,135 @@
+# CVF Orchestrator Model Selection Contract Design
+
+Memory class: FULL_RECORD
+docType: reference
+Status: DESIGN_DRAFT
+Date: 2026-10-10
+Batch ID: CVF-WORKER-SELECTION-FOUNDATION-20261010
+Proposed contract ID: cvf.orchestrator-model-selection-advisory@0.1.0
+
+## Purpose
+
+Specify a prospective evidence companion owned by GatewayReceipt and composed
+with existing dispatch/review/learning owners. This is a field and join design;
+no executable schema, GatewayReceipt extension or new persistence owner is installed.
+
+## Scope / Applies To
+
+Optional orchestrator selection for an admitted task. Normative wording below is
+proposed contract semantics, pending review and a fresh implementation work order.
+Authority: docs/reference/CVF_PINT_T2_PROVIDER_INTELLIGENCE_CLAIM_BOUNDARY_AND_RECEIPT_ADVISORY_2026-06-28.md,
+Receipt Advisory requires fresh GC-018 for a companion; this design does not grant it.
+Doctrine proposal: docs/reference/CVF_ORCHESTRATOR_MODEL_SELECTION_DOCTRINE_DESIGN_2026-10-10.md.
+
+## Record Families And Required Joins
+
+| Record | Proposed required fields | Producer -> verifier -> consumer |
+|---|---|---|
+| TaskProfile | taskId, taskArtifactRef, role, outcome, acceptanceCriteriaRefs, requiredMethods/tools, integration/proofNovelty, risk/dataClassification, hardConstraints, budgetUnits, authorityRefs, operatorAssignment or null | intake/dispatcher -> existing task/authority owners -> orchestrator |
+| CandidateConfiguration | candidateId, providerId, modelId, snapshot or null, identityBasis, aliasResolution, channel, effort, harnessRef/hash, toolProfileRef/hash, role, capabilityRefs, registry/policy/health evidenceRefs | current registry/configuration -> existing admission owners -> orchestrator |
+| VersionEvidence | evidenceId, candidateId, evidenceClass, claim, locator/section, sourceRevision or capturedHash, retrievedAt, sourceAsOf, methodologyRef, configurationMatch, taskApplicability, limitations, freshnessDisposition | source intake -> Local applicability review -> orchestrator |
+| SelectionDecision | decisionId, contractVersion, taskProfileRef/hash, candidateSnapshotRef/hash, evidenceSnapshotRef/hash, decisionOwner, decidedAt, candidateDispositions, selectedCandidateId or null, rationale, qualityDisposition, confidenceReason, costBasis, learningInputs, operatorAssignmentDisposition, predecessorDecisionRef or null, executionAuthorized=false | orchestrator -> existing dispatcher/admission review -> future dispatch |
+| ReviewedOutcomeLink | outcomeId, decisionRef/hash, executionAttemptRef, observedConfiguration, identityEvidence, returnRef/hash, independentReviewRef/hash, technicalDisposition, procedureDisposition, repairAttribution, telemetry, deviations | execution/reviewer -> existing review and custody owners -> learning intake |
+| LearningConsumptionLink | priorOutcomeRef/hash, parentFindingId/controlRef or localObservationRef, laterDecisionRef/hash, applicabilityReason, actionOrNoChangeReason, verificationRef/hash or null, applicationState | existing F2G/PLL and later orchestrator -> later reviewer -> existing learning lifecycle |
+
+All references are explicit locator plus revision/hash and read scope. Evidence-only
+web sources never become authorityRefs. Required nulls have reasons; no unknown values
+default to zero, SUPPORTED or SELECT. Final implementation must define strict types,
+required/optional fields, enums and cross-record validation under existing owners.
+
+## Identity And Evidence Semantics
+
+Candidate identity is the tuple provider/model/snapshot/channel/effort/harness/tools/role.
+Identity basis: VERIFIED_RUNTIME, OFFICIAL_CATALOG, OPERATOR_REPORTED or UNRESOLVED.
+Catalog evidence identifies a published option; only execution telemetry can verify
+the actual invoked configuration. Keep requested and observed identities separate.
+Matching operator labels never upgrades an execution identity to VERIFIED_RUNTIME.
+
+Evidence classes: OFFICIAL_TECHNICAL_REPORT, OFFICIAL_MODEL_OR_SYSTEM_CARD,
+ORIGINAL_BENCHMARK_METHOD, PROVIDER_REPORTED_EVALUATION, INDEPENDENT_PUBLISHER_EVALUATION,
+LOCAL_REVIEWED_OUTCOME, OFFICIAL_TARIFF and MEASURED_BILLING. Classification records
+who measured the result; hosting on a benchmark site does not imply independence.
+Paper publication does not imply peer review. Scores require metric, dataset/version,
+sampling/scaffold, effort/tools, evaluation date and tested version; unknowns disclosed.
+
+Freshness dispositions: CURRENT_FOR_DECISION, STALE, CONFLICTING or UNRESOLVED.
+Compatibility: EXACT, PARTIAL or NONTRANSFERABLE with reason. An old version may
+inform a hypothesis via PARTIAL; it cannot supply a new version's Local pass or score.
+Absence of official technical papers is a recorded limitation, not invented evidence.
+
+## Decision And Cost Semantics
+
+Decision outcomes: SELECT, HOLD_NO_ELIGIBLE_CANDIDATE, HOLD_EVIDENCE or
+HOLD_OPERATOR_CONSTRAINT. Each candidate has a separate admission disposition,
+quality disposition and preference explanation. SELECT requires one eligible candidate
+and an explicit applicable acceptance floor; a hold has selectedCandidateId=null.
+No candidate set or null quality evidence can pass vacuously.
+
+CostBasis separates measured amounts, estimates and unknowns. For each stage
+(orchestration, preparation, execution, review, rework), record amount or null,
+currency/unit, telemetry/sourceRef, time boundary and confidence. Provider request
+cost uses a dated tariff with its actual channel, prompt thresholds and modifiers.
+Total estimates are valid only with disclosed missing stages and assumptions;
+measured total requires complete comparable stage receipts. Hard spend limits need
+a defensible upper bound or hold. Subscription allocation needs an explicit method.
+Never compare estimatedTokens directly to a monetary costBudget.
+
+## Freeze, Drift And Transition Contract
+
+Proposed decision states: DRAFT -> FROZEN -> BOUND_TO_DISPATCH -> OUTCOME_LINKED
+-> LEARNING_DISPOSITIONED -> LATER_CONSUMPTION_VERIFIED. A hold may terminate a
+decision without execution. These are selection record states, not replacement CVF
+lifecycle phases, dispatch authority or parent learning states.
+
+FROZEN pins source bytes and task/configuration/evidence identity before execution.
+Binding requires an independently admitted work order and its actual authority.
+Store append-only successors on material drift; do not rewrite a historical receipt.
+Fallback may use only an admitted alternative and retry/attempt budget; otherwise hold.
+Reassess data/role/method/version/effort/harness changes before dispatch. Returned
+identity mismatch is reviewed as a deviation; an outcome cannot silently validate
+the originally selected configuration.
+
+ApplicationState reuses existing PLL typed DELIVERY/APPLICATION semantics. A later
+decision citing a lesson is declared consumption until the reviewer verifies the
+concrete action and result. A reasoned no-change records applicability but does not
+claim improved quality or savings. Receipt structure does not prove agent understanding.
+
+## Prospective Acceptance And Negative Matrix
+
+| Scenario | Required disposition | Proof boundary |
+|---|---|---|
+| Exact version/task evidence, admitted candidate, frozen rationale | SELECT and explicit dispatch binding only when separate grant exists | static contract plus future actual use |
+| Non coder supplies outcome without model | orchestrator derives candidates; no required technical picker | actual intake/decision use |
+| Cheap candidate violates policy or method | reject before cost comparison | existing authority plus future composed negative |
+| Empty candidate/evidence set | hold; no vacuous eligibility | future strict validator negative |
+| New snapshot reuses old score as exact | reject transfer; preserve old record | identity/applicability negative |
+| Operator assignment conflicts with authority | hold and name constraint; no silent override | admission and operator boundary |
+| Worker qualified, reviewer role requested | require reviewer evidence/authority or hold | cross-role negative |
+| Token count used as money, missing bill set to zero | reject units/default; preserve null | cost-dimensional negative |
+| Task/harness changes after freeze | successor decision and revalidation before effect | drift negative |
+| Selected/observed model mismatch | outcome deviation; no original-configuration promotion | execution identity join |
+| Retry without remaining grant | hold; preserve prior failed attempt | existing attempt authority |
+| Learning plan with no actual result | NOT_APPLIED; no verified consumption | existing PLL typed receipt rules |
+| Expense parked | no project edit/test/benchmark for learning | operator scope boundary |
+
+This matrix specifies future checks; none are reported as executed behavior here.
+
+## Epistemic Process Block
+
+Expected Result / Prediction: explicit identities and joins should prevent stale
+evidence transfer and unsupported learning-use claims.
+Evidence Comparison: existing registry, receipt and PLL owners supply boundaries;
+this artifact supplies proposed fields and negative obligations only.
+Contradiction Or Gap Disposition: machine validation, persistence, exact runtime
+identity capture and composed use remain unimplemented by this design.
+Claim Update: DESIGN_DRAFT; no executed contract acceptance or runtime receipt.
+
+## Public Export Disposition
+
+DEFERRED_PRIVATE_ONLY
+
+## Claim Boundary
+
+Local INTERNAL_AGENT; internal design; final technical decision owner=Local.
+No new schema authority, independent reviewer acceptance, dispatch, router,
+provider/live proof, public export, production or universal compliance claim.

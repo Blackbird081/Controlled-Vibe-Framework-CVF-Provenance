@@ -1,0 +1,158 @@
+{
+  "schemaVersion": "cvf.modelSelectionDesignReconciliation@1",
+  "revision": "R2",
+  "status": "R2_DESIGN_CONCURRENCE_RECORDED",
+  "sourceHead": "807db7d4816878df0b6ea1dd50732e1716ccc615",
+  "preservedInputs": [
+    {
+      "path": "docs/reviews/evidence/model-selection-design-review-20261010/claude-confirmation-r1-original.txt",
+      "sha256": "e7095f740cfc88c50926b416c15559e43882e76ad9570956259d27ea1bd7b5ab",
+      "bytes": 12233
+    },
+    {
+      "path": "docs/reviews/evidence/model-selection-design-review-20261010/claude-review-original.txt",
+      "sha256": "930fbc21efcbf5a7c573a92bf504fa1849367202b1b831524e19c2c7c2f61f74",
+      "bytes": 24241
+    },
+    {
+      "path": "docs/reviews/evidence/model-selection-design-review-20261010/doctrine-r1.txt",
+      "sha256": "37423117174d68e5326be06bf0b253f3156506fa57a8191d73972eb66d74f5a7",
+      "bytes": 15586
+    },
+    {
+      "path": "docs/reviews/evidence/model-selection-design-review-20261010/contract-r1.txt",
+      "sha256": "6c312ed649cc65eea9eae6d2a74564061a5e4f049fa3a386b7b4da791f2a83b9",
+      "bytes": 17071
+    },
+    {
+      "path": "docs/reviews/evidence/model-selection-design-review-20261010/roadmap-r1.txt",
+      "sha256": "e21981805702bd47a8652fc07014acff83cf3ecfb69d69a8d4d528ccb7059f75",
+      "bytes": 19108
+    },
+    {
+      "path": "docs/reviews/evidence/model-selection-design-review-20261010/local-reconciliation-r1.txt",
+      "sha256": "c7d4f07ab3921c039439791c97e8050850de37fe4e25e5690da2be8dc6b1d6f3",
+      "bytes": 19353
+    },
+    {
+      "path": "docs/reviews/evidence/model-selection-design-review-20261010/reconciliation-evidence.json",
+      "sha256": "df28c5f7c3e2310268e02e8311b3a369193412d4df81cc4a119adab03f667f63",
+      "bytes": 5495
+    }
+  ],
+  "r2Targets": [
+    {
+      "path": "docs/reference/CVF_ORCHESTRATOR_MODEL_SELECTION_DOCTRINE_DESIGN_2026-10-10.md",
+      "sha256": "10f93ae2c7716e9e96529f6886996918acd6acb4e630b47719a0543d68422ff9",
+      "bytes": 16421
+    },
+    {
+      "path": "docs/reference/CVF_ORCHESTRATOR_MODEL_SELECTION_CONTRACT_DESIGN_2026-10-10.md",
+      "sha256": "dcdc1a0e87348b5300efecb0f96490140d965957fa0b6743761f813be3a5faa0",
+      "bytes": 18521
+    },
+    {
+      "path": "docs/roadmaps/CVF_ORCHESTRATOR_MODEL_SELECTION_SYSTEM_CHAIN_ROADMAP_2026-10-10.md",
+      "sha256": "fd276a3d6ecdf2497b9340d4c1bf023ecab2218f531fda463dabf6b96a0e0a6b",
+      "bytes": 20367
+    },
+    {
+      "path": "docs/guides/CVF_ORCHESTRATOR_MODEL_SELECTION_INDEPENDENT_REVIEW_REQUEST_2026-10-10.md",
+      "sha256": "ca5161deeb6a24a68286b3e7374072122ef348a0b2c5118ce175417219bbe57f",
+      "bytes": 14643
+    },
+    {
+      "path": "docs/reviews/CVF_MODEL_SELECTION_DESIGN_RECONCILIATION_2026-10-10.md",
+      "sha256": "f0c011e90d799a6c03c57a95c2973f645fd5caa255034f932fbaa96527bccd3c",
+      "bytes": 24977
+    }
+  ],
+  "changedPaths": [
+    "docs/guides/CVF_ORCHESTRATOR_MODEL_SELECTION_INDEPENDENT_REVIEW_REQUEST_2026-10-10.md",
+    "docs/reference/CVF_ORCHESTRATOR_MODEL_SELECTION_CONTRACT_DESIGN_2026-10-10.md",
+    "docs/reference/CVF_ORCHESTRATOR_MODEL_SELECTION_DOCTRINE_DESIGN_2026-10-10.md",
+    "docs/reviews/CVF_MODEL_SELECTION_DESIGN_RECONCILIATION_2026-10-10.md",
+    "docs/reviews/evidence/model-selection-design-review-20261010/claude-confirmation-r1-original.txt",
+    "docs/reviews/evidence/model-selection-design-review-20261010/claude-review-original.txt",
+    "docs/reviews/evidence/model-selection-design-review-20261010/contract-r0.txt",
+    "docs/reviews/evidence/model-selection-design-review-20261010/contract-r1.txt",
+    "docs/reviews/evidence/model-selection-design-review-20261010/doctrine-r0.txt",
+    "docs/reviews/evidence/model-selection-design-review-20261010/doctrine-r1.txt",
+    "docs/reviews/evidence/model-selection-design-review-20261010/intake-manifest.json",
+    "docs/reviews/evidence/model-selection-design-review-20261010/local-reconciliation-r1.txt",
+    "docs/reviews/evidence/model-selection-design-review-20261010/r2-evidence.json",
+    "docs/reviews/evidence/model-selection-design-review-20261010/reconciliation-evidence.json",
+    "docs/reviews/evidence/model-selection-design-review-20261010/reviewer-fast-r1-final-pass.txt",
+    "docs/reviews/evidence/model-selection-design-review-20261010/reviewer-fast-r1-initial-fail.txt",
+    "docs/reviews/evidence/model-selection-design-review-20261010/reviewer-fast-r2-final-pass.txt",
+    "docs/reviews/evidence/model-selection-design-review-20261010/reviewer-fast-r2-initial-fail.txt",
+    "docs/reviews/evidence/model-selection-design-review-20261010/reviewer-fast-r2-second-fail.txt",
+    "docs/reviews/evidence/model-selection-design-review-20261010/roadmap-r0.txt",
+    "docs/reviews/evidence/model-selection-design-review-20261010/roadmap-r1.txt",
+    "docs/roadmaps/CVF_ORCHESTRATOR_MODEL_SELECTION_SYSTEM_CHAIN_ROADMAP_2026-10-10.md"
+  ],
+  "verification": {
+    "senderDigestAndBytes": "MATCH",
+    "runtimeOriginalsAndPreservedCopies": "MATCH",
+    "r1TargetsAndReconciliationReceipt": "MATCH_BEFORE_REVISION_AND_PRESERVED",
+    "paragraphComparison": "PASS_LOCAL_STATIC_REVIEW",
+    "cases": [
+      {
+        "case": "Explicit assignment; absent quality evidence; no hard conflict",
+        "result": "SELECT; HONORED_WITH_EVIDENCE_GAP; mandatory independent acceptance"
+      },
+      {
+        "case": "Delegated selection; absent or INSUFFICIENT quality evidence",
+        "result": "HOLD_EVIDENCE"
+      },
+      {
+        "case": "Explicit assignment; unavailable or authority/policy/method/context conflict or known failed hard requirement",
+        "result": "HOLD with reason; no silent substitution"
+      },
+      {
+        "case": "Empty candidate set",
+        "result": "HOLD_NO_ELIGIBLE_CANDIDATE"
+      },
+      {
+        "case": "Selected assignment with evidence gap",
+        "result": "Keep INSUFFICIENT and confidence limits; no quality upgrade or invocation grant"
+      }
+    ],
+    "reviewerConcurrence": "CONDITIONAL_CONCURRENCE_SATISFIED_BY_LOCAL_VERIFICATION",
+    "reviewIndependence": "Same original reviewer context; no second independent review or fresh R2 inspection",
+    "governanceGates": {
+      "status": "PASS",
+      "checks": 70,
+      "exitCode": 0,
+      "base": "HEAD",
+      "path": "docs/reviews/evidence/model-selection-design-review-20261010/reviewer-fast-r2-final-pass.txt",
+      "sha256": "0bf0f3535019eb4dbdfdf8318bd9d401eccc5c9992dfb780e3891d7df3a53d75",
+      "bytes": 8544,
+      "scope": "R2 documentation worktree; log/result enrollment after run; static claims only"
+    },
+    "providerCalls": 0,
+    "publicOrExternalFolderRefresh": "NOT_PERFORMED",
+    "commitOrPush": "NOT_PERFORMED",
+    "priorR2GateRuns": [
+      {
+        "status": "FAIL",
+        "passed": 69,
+        "failed": 1,
+        "reason": "Roadmap lacked Delta execution claim boundary declaration",
+        "path": "docs/reviews/evidence/model-selection-design-review-20261010/reviewer-fast-r2-initial-fail.txt",
+        "sha256": "b2f2ae8ce4ec2de2a218b52f882529b82b371e79e579d5eb49e7679066e00f9e",
+        "bytes": 8770
+      },
+      {
+        "status": "FAIL",
+        "passed": 69,
+        "failed": 1,
+        "reason": "Review diagnostic prose triggered same declaration requirement",
+        "path": "docs/reviews/evidence/model-selection-design-review-20261010/reviewer-fast-r2-second-fail.txt",
+        "sha256": "fe2363140ebd1e22966cb24b3c702c74935e374144a92f7e5c7aac7fa0e3cfdb",
+        "bytes": 8757
+      }
+    ]
+  },
+  "claimBoundary": "Design-only R1-B1 correction and conditional concurrence; no runtime proof or historical task replay"
+}

@@ -1,0 +1,151 @@
+# CVF Orchestrator Model Selection - Independent Design Review Return
+
+Memory class: FULL_RECORD
+docType: review-return (transport file, git-ignored under .cvf/runtime/)
+Request ID: CVF-MODEL-SELECTION-DESIGN-REVIEW-20261010
+Parent batch: CVF-WORKER-SELECTION-FOUNDATION-20261010
+Return author: Claude (Opus 5.5 session, transcribed; reviewer model now set to claude-haiku-5-5 via /model)
+Date: 2026-10-10
+
+## 1. Identity / scope
+
+- **Role and context:** INTERNAL_AGENT independent design reviewer in the same private workspace. Phase: independent design review. Final technical disposition: Local orchestrator. Operator scope and assignment authority retained. These are recommendations, not ratification.
+- **Prior exposure (disclosed):** This review was produced in the same conversation that received the operator's transfer brief. The reviewer did not author the three drafts. The reviewer had visibility of the author's disclosed results (70/70 reviewer-fast PASS, the first structural FAIL, and the read-ahead omission) and of session-level memory summaries. No earlier independent review findings on this package were visible. This is not a blind or hidden-context-proof review. Note: this return is a fresh pass written inside the earlier review context, not a separate new session.
+- **Startup acknowledgment (as observed at review time):** mode `cvf_ncr_p10_closed_p11_parked`; handoff `AGENT_HANDOFF_V63_2026-09-18.md`; next move CVF-CORE DESIGN, batch CVF-WORKER-SELECTION-FOUNDATION-20261010; parked: expense, sourceR2, media, provider, public, deploy, P11.
+- **Target hashes observed at start and at end of review (all MATCH):**
+
+  | Artifact | SHA256 |
+  |---|---|
+  | docs/reference/CVF_ORCHESTRATOR_MODEL_SELECTION_DOCTRINE_DESIGN_2026-10-10.md | 2d0c5f142f21a98c1b150369190a98ff4427e6d674102cf11e345e6b6c8d5fdd |
+  | docs/reference/CVF_ORCHESTRATOR_MODEL_SELECTION_CONTRACT_DESIGN_2026-10-10.md | c51f25a5121eb4920871163b641dd5be7f800e801e841901fefb6759aaa6af72 |
+  | docs/roadmaps/CVF_ORCHESTRATOR_MODEL_SELECTION_SYSTEM_CHAIN_ROADMAP_2026-10-10.md | b9fb2e8d1223fe02e81ea28a08fde2b15d1fc74d6332ead7651a646fca360615 |
+
+- **Repository state:** HEAD `807db7d4816878df0b6ea1dd50732e1716ccc615`. Worktree: the three targets plus the brief, all untracked. No files were modified by this review.
+- **Sources read in full:** the three targets; PINT-T2 provider-intelligence claim boundary; C02-P2 dynamic model registry boundary; LHW23-T1 and LHW23-T2 specs (the S2 to S4 sections); the preliminary report; the context-eligibility learning record.
+- **Sources read selectively (decision-changing gaps only):**
+  - Bootstrap and front-door files (startup).
+  - Handoff: grep only.
+  - Lifecycle standard: receiving responsibility, total-cost feasibility, question discipline, Design Control Gate, Spec/WO separation.
+  - PLL standard: Value Admission, Loopback and Independent States, Forward Application Binding.
+  - System-chain standard: Orthogonal Proof Model, proof classes, bounded live use-case ladder.
+  - Review-cost standard: headings only.
+  - Role Assignment Matrix: Topology Invariance Rule.
+  - Delegation and subagent boundary standard: worker definition and Provider Execution Authority.
+  - Tranche-evaluation JSON: selected keys (rubric, provisionalRoleRouting, comparisonLimits, workerTaskClassification, futureConfigurationEvidenceContract, selectionFoundation).
+  - Expense-legibility JSON: selectionFoundationAudit and selectionDesignClarification excerpts.
+  - Code: `EXTENSIONS/CVF_MODEL_GATEWAY/src/gateway-receipt.ts`; `provider-capability-registry.ts` (provider IDs only); `dynamic-model-registry-contract.ts`; `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/execute.client.ts` (`resolveProviderForRole`).
+- **Not read:** `guard_orientation/README.md` (beyond existence); review-cost standard body; `CVF_AGENT_DISPATCH_PROMPT_ENVELOPE_STANDARD_2026-06-15.md`; PLL parent-evidence contract; any repository-wide scan.
+- **Time / usage / bill:** not observable. Unknown.
+
+## 2. Verdict: REVISE_BEFORE_ACCEPTANCE
+
+The principles are sound and well bounded: authority, method support and quality are kept separate; no score inheritance across versions; unknowns are null, not zero; tokens are not money; history is append-only; the Non coder is not asked for model choice; proof classes are separated; Expense stays parked.
+
+Two owner-composition blockers prevent design acceptance:
+- **F1:** selection is bound to Model Gateway owners that do not cover the real use case (operator-started worker seats).
+- **F2:** orchestrator model choice is not reconciled with the Role Assignment Matrix rule that the operator chooses topology and model assignment.
+
+Three contract defects (F3, F4, F5) would stall the first real loop or produce misleading states.
+
+- **Design-readiness:** reachable with one grouped revision. No new evidence is needed.
+- **Build-readiness (S2):** not ready. F1 must be resolved, and an executable owner for the decision record must be named.
+
+## 3. Consolidated findings
+
+| ID | Severity | Target path / section | Concrete evidence | Failure scenario | Consequence | Smallest correction | Existing owner affected | Required validation |
+|---|---|---|---|---|---|---|---|---|
+| F1 | BLOCKER (design) | Contract "Record Families" table, CandidateConfiguration and GatewayReceipt ownership statement; Roadmap "System Chain Design" rows 2 and 4, and "Work Plan" S3 manual use case; Doctrine "Source Authority" rows 2-3 | `provider-capability-registry.ts` registers only `alibaba`, `deepseek`, `openai`. GatewayReceipt fields are API-route fields (providerId, selectedModelId, credentialKeyId, quota, etc.) with no harness, effort or tool profile. All six observations and the S3 manual use case are operator-started worker seats (Haiku 5.5/Max, Sonnet 5.5/High), which never cross the Model Gateway. | S3 runs: the orchestrator picks a worker seat for a real task. There is no ProviderRegistry entry, no isRoutable call, no health reading and no GatewayReceipt for that seat. | The "task to candidates" and "evidence to frozen decision" links have no real producer or verifier for the only planned use case. A GatewayReceipt companion would be designed for a surface that does not emit receipts. | Name two selection surfaces. (A) Gateway route selection: in-runtime API calls; GatewayReceipt companion per PINT-T2 Receipt Advisory. (B) Agent-seat / worker delegation selection: owned by the work order or dispatch envelope and the delegation standard; decision recorded in the work order (for example a fenced machine block, by analogy with `learning-application-plan-json`). Declare S1-S4 to target B. Keep A as a deferred option. | PINT-T2 Receipt Advisory (scope narrowed); dispatch envelope; work-order owner | Owner read of dispatch envelope and work-order binding; confirm that no gateway call is in the S3 path |
+| F2 | BLOCKER (design) | Doctrine "Scope" and principle 2 and "Decision Procedure" (orchestrator selects; no operator picker); Roadmap "Acceptance Criteria" wording on operator assignment precedence | Role Assignment Matrix, Topology Invariance Rule: "The operator chooses execution topology... A role may carry an operator-selected model assignment, but model identity is execution metadata"; it forbids claims of automatic role routing or model selection. The preliminary report states that the operator fixed Haiku and Sonnet to worker roles only. Neither the doctrine nor the contract cites the matrix. | The orchestrator chooses Sonnet for a seat the operator expected to be Haiku, or chooses a model for a role the operator never delegated. | Competes with an active owner on who decides. "Operator assignment precedence" appears only as roadmap acceptance wording, not as an enforced rule. | Add a delegation clause: orchestrator selection applies only to seats where the operator has delegated the choice (standing or per task), recorded in `TaskProfile.authorityRefs`. An explicit operator assignment always binds unless a hard constraint fails, which yields HOLD_OPERATOR_CONSTRAINT. Cite the matrix in the owner table. Whether the matrix needs an additive note is a Local/operator decision. | Role Assignment Matrix | Static owner reconciliation; negative case "no delegation recorded, so orchestrator cannot SELECT" |
+| F3 | MAJOR | Doctrine "Decision Procedure" quality dispositions; Contract "Decision And Cost Semantics" | PROVISIONAL is allowed "only when the task owner explicitly allows uncertainty". All current observations are operator-reported and related, without snapshots (preliminary report). New versions start without exact evidence (contract "Identity And Evidence Semantics"). | The next real task has no EXACT Local evidence. Either HOLD_EVIDENCE results, or the system asks the "task owner" (in practice the Non coder) to accept uncertainty. | Most decisions stall, or push a technical question to the Non coder. This contradicts the doctrine purpose (Non coder not asked for model choice). | Define a default admission: the orchestrator may admit PROVISIONAL for tasks whose acceptance already requires independent review against an observable floor, within declared risk classes. Explicit owner allowance applies only above that risk, or where acceptance is not independently reviewed. Make SUPPORTED concrete: compatibility EXACT or PARTIAL, a relevant task family, and no unresolved CONFLICTING evidence. | Lifecycle question discipline; review-cost standard (independent review as compensating control) | Thought case table: low-risk reviewed task yields PROVISIONAL SELECT without a question; high-risk task yields owner allowance or HOLD |
+| F4 | MAJOR | Contract "Identity And Evidence Semantics" (identity tuple, EXACT/PARTIAL/NONTRANSFERABLE); Doctrine principle 5 and "Decision Procedure" (unresolved aliases) | The identity tuple includes snapshot and harness/tool hashes. Agent-harness seats expose an alias and an effort label, not a snapshot or harness hash. "Limit eligibility accordingly" is undefined; no rule states when EXACT is achievable. | "Haiku 5.5 / Max" today versus next month after a silent alias move or harness update: the contract cannot say whether prior outcomes are EXACT or PARTIAL. | Two failure modes: everything becomes NONTRANSFERABLE (SUPPORTED becomes unreachable), or reviewers ignore the fields (silent inheritance). Under surface B, identity can never reach VERIFIED_RUNTIME, so a mismatch is detectable only by self-report. | Rule: EXACT requires both sides at identity basis of at least OFFICIAL_CATALOG and the same immutable snapshot. Alias-only identity yields at most PARTIAL, bounded by an evidence window. Define a practical harness identity (product, version string, relevant settings), with a hash only where one exists. State that surface-B identity is capped at OPERATOR_REPORTED unless the harness exposes telemetry. | Contract only | Decision table across identity basis and compatibility |
+| F5 | MAJOR | Contract "Freeze, Drift And Transition Contract" (decision states ending in LATER_CONSUMPTION_VERIFIED) and "LearningConsumptionLink"; Doctrine "Evidence Refresh And Learning" | One state machine runs DRAFT to LATER_CONSUMPTION_VERIFIED on the decision record. PLL APPLICATION receipts concern a project applying a parent-returned control under Forward Application Binding (`parentFindingId` plus registry control). LearningConsumptionLink allows `localObservationRef`, for which PLL has no semantics. | (a) One outcome is consumed by three later decisions, or by none. A single terminal state on the earlier decision cannot represent one-to-many or zero, and leaves frozen records "open" indefinitely. (b) A per-model observation (not a parent finding) is marked APPLIED with no PLL owner. | Possible mutation of frozen decisions. The claim to reuse PLL semantics is false for the local-observation branch, which risks an implicit parallel learning state. | Remove LATER_CONSUMPTION_VERIFIED from the decision lifecycle and end at LEARNING_DISPOSITIONED. Make consumption a record owned by the later decision. Use PLL DELIVERY and APPLICATION only for the `parentFindingId` branch. For `localObservationRef`, use a minimal local enum (CITED, ACTION_VERIFIED, NO_CHANGE_REASONED), labelled as not PLL state. State that transitions are appended events, not edits to frozen bytes. | PLL standard (narrowed reuse) | Join walk-through for consumption counts of 0, 1 and N |
+| F6 | MAJOR (unresolved question) | Doctrine "Evidence Refresh And Learning" ("no parallel learning ledger"); Roadmap "System Chain Design" row 3 ("existing Local ledger") | `docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json` already has `futureConfigurationEvidenceContract`, `provisionalRoleRouting` (task family to candidate rows) and a rubric that overlaps ReviewedOutcomeLink. The drafts do not say what this ledger becomes. | S3 produces an outcome. Two plausible homes exist (append to the ledger, or create a ReviewedOutcomeLink). Neither is designated. | Two outcome stores, or orphaned legacy rows. `provisionalRoleRouting` could be read as a de facto task-to-model map. | Declare the tranche ledger the legacy LOCAL_REVIEWED_OUTCOME evidence source (read-only, not backfilled into decision joins). Name one home for future outcome records. Mark `provisionalRoleRouting` as historical eligibility, superseded by per-decision admission. Per-tranche model performance is evidence, not a PLL lesson. | Tranche ledger; PLL | Static disposition row |
+| F7 | MINOR | Contract "Decision And Cost Semantics" (CostBasis, subscription allocation); Doctrine principle 6 | Surface-B seats are typically subscription or quota-metered. The dominant cost is usage-window or rate-limit consumption plus reviewer time, not currency. The draft says only "subscription allocation needs an explicit method". | A task states a hard spend limit for a subscription seat, so there is no monetary upper bound and the decision holds. Or a reviewer converts quota share into money ad hoc. | Systematic HOLDs, or fabricated monetary figures. | Add a non-monetary capacity unit class (quota or usage-window share, rate limit, wall-clock) that is not convertible to currency without a declared method. A hard-cap HOLD applies only to the units the cap is expressed in. | Contract | Units negative case: quota cap versus monetary cap |
+| F8 | MINOR | Doctrine "Source Authority" and principles 3, 7, 8 | LHW23-T2 S2 specifies weighted scoring and "Adaptive Scoring ... from the Learning Plane". LHW23-T1 S2 specifies automatic rollback to fallback models. `resolveProviderForRole` in `execute.client.ts` is an existing static role-to-provider map (surface A). | A future implementer cites LHW23 as authority for weights or automatic fallback. | Silent contradiction between documentation-only owners and the doctrine. | Add one row: narrows LHW23-T1/T2 to hard-filter-then-reasoned comparison; adaptive weights and automatic rollback rejected. Note `resolveProviderForRole` as an undispositioned surface-A producer. | LHW23 specs (documentation-only) | Static |
+| F9 | MINOR | Contract "Prospective Acceptance And Negative Matrix" (reviewer row); Doctrine principle 2 | Reviewer eligibility depends mainly on context and actor exposure (Context Eligibility Before Transfer, dispatch envelope), not model quality. The orchestrator seat is operator-selected (F2); the doctrine does not say who selects the orchestrator. | The model selector chooses a "qualified" reviewer model that runs in the authoring context. | The independence violation recurs (CVF-NIS-T1H precedent). | Add a matrix row: reviewer selection must also pass the context-eligibility owner. State that the orchestrator seat is out of self-selection scope. | Dispatch envelope | Negative case: qualified model in an ineligible context yields HOLD |
+| F10 | MINOR | Doctrine "Evidence Refresh and Learning"; Contract "Identity and Evidence Semantics" (captured bytes or hash) | The draft asks to capture bytes or hash of external papers and model cards. | Full third-party pages stored in the repository. | Size and redistribution risk. The hash is meaningless once the page changes. | Store a cited excerpt, its hash and a locator; store full bytes only where licensing allows. | Contract | Static |
+| F11 | MINOR (wording) | Contract "Decision And Cost Semantics" (SELECT requires one eligible candidate) | The wording can be read as "exactly one eligible candidate". | Read as exactly one, this forbids SELECT when two candidates qualify. | Ambiguity. | "at least one eligible candidate; exactly one selected". | Contract | Static |
+
+**Classification:**
+- Source-backed defects: F1, F2, F5, F8.
+- Design gaps shown by thought experiment: F3, F4, F7.
+- Unresolved question needing Local disposition: F6.
+- Optional improvements: F9, F10, F11.
+
+## 4. Rebuttal
+
+**Strongest alternative: manual prototype first, schema later.** The package proposes six record families, a six-state lifecycle and a strict validator (S2) before any real loop (S3). For a process that produces about one decision per tranche, made manually by one orchestrator and one operator, that order risks building the wrong schema.
+
+The alternative:
+1. Add a short selection-rationale block to the next real work order: delegation source, candidate dispositions, evidence cited with its compatibility, chosen seat and known unknowns.
+2. Append the reviewed outcome to the existing tranche ledger.
+3. In a later work order, write a consumption line.
+
+Run two or three real demand-driven tasks this way, then decide whether S2 is worth building, and against which fields. This reuses existing work-order and ledger owners, needs no GatewayReceipt companion or fresh GC-018 for a companion, and still produces actual-use evidence. **Recommended order: S1 review, then S3 manual on surface B, then S2 only if the manual loop shows the fields are needed.** The Spec/WO separation rule does not block this, because the work order records a decision in prose and does not build against an unratified contract.
+
+**Remove:**
+- LATER_CONSUMPTION_VERIFIED from the decision lifecycle (F5).
+- The GatewayReceipt ownership claim for surface-B decisions (F1).
+- Any implication that `provisionalRoleRouting` routes anything (F6).
+
+**Add:**
+- The two-surface split (F1).
+- The delegation clause (F2).
+- The default PROVISIONAL admission rule (F3).
+- The EXACT/PARTIAL identity rule (F4).
+
+**Author assumptions rejected:**
+- That the Model Gateway admission chain (policy, then isRoutable, then health) is the right gate for worker-seat selection. It is the right gate for API routes only.
+- That PLL typed APPLICATION semantics cover model-performance learning. They cover only parent-finding controls.
+
+**Accepted:** hard-filter-first with no weighted compensation; tokens are not money; no score inheritance; null, not zero; reasoned no-change is legitimate; proof-class separation in the roadmap.
+
+## 5. Coverage
+
+| Dimension | Assessment |
+|---|---|
+| Outcome and Non coder flow | Good principle, consistent with lifecycle question discipline. At risk from F3 (PROVISIONAL allowance leaks to the Non coder). Human-owned questions: outcome, budget ceiling, data and rights, scope, and delegating model choice at all (F2). |
+| Doctrine and owner overlap | Mostly justified composition. Defects: F1 (wrong owner surface), F2 (Role Matrix not reconciled), F6 (ledger overlap), F8 (LHW23 divergence unstated). No frozen-doctrine contradiction found. |
+| Role and admission | Dimensions correctly separated. A cheap model cannot bypass a hard constraint (doctrine principles 3; contract negative matrix row 3). An operator-denied route yields HOLD_OPERATOR_CONSTRAINT. Gaps: a permitted but weak operator assignment is unspecified (fold into F2); reviewer context eligibility is missing (F9). |
+| Version evidence | Evidence-class separation is strong. No rule for when EXACT is achievable (F4). Missing papers handled correctly (recorded limitation, no ban). |
+| Quality uncertainty | Labels become actionable only once F3 defines SUPPORTED and the default admission. |
+| Cost and latency | Unit discipline is coherent. Subscription and quota channel not modelled (F7). Sparse-telemetry choice without fabricated optimality is correctly allowed (principle 7). |
+| Contract completeness | Joins adequate for design. Must fix before build: F1 record home, F4 identity rule, F5 state ownership. May stay implementation-owned: strict types, required and optional field lists, hash algorithm details. |
+| Freeze, drift and fallback | Append-only successors and fallback as a new decision within grant are feasible. Under surface B the freeze is enforced only by operator compliance; this must be disclosed (F4). |
+| Learning effectiveness | Citation versus application is correctly distinguished; a reasoned no-change is legitimate. The state conflict with PLL is F5. |
+| Practical system chain | Every link names a producer, verifier and consumer, but under F1 two links have no real producer for surface B. One loop is enough for a bounded "chain operated once" claim, not for effectiveness. The plan is over-engineered in order (see Rebuttal). |
+| Proof and scope | Well separated (roadmap proof table). Expense and all parked effects preserved. |
+
+**Adversarial cases traced:**
+
+| Case | Expected decision under draft | Forced by contract? | Smallest change needed |
+|---|---|---|---|
+| No eligible candidate; empty evidence | HOLD_NO_ELIGIBLE_CANDIDATE or HOLD_EVIDENCE; no vacuous pass | Yes (contract decision semantics) | None |
+| Moving alias, no snapshot | Unresolved identity; eligibility limited accordingly | No | F4 rule |
+| Cheapest model fails a method constraint | Rejected before cost comparison | Yes | None |
+| Operator assigns a denied route | HOLD_OPERATOR_CONSTRAINT | Yes | None |
+| Operator assigns a permitted but weak model | Unspecified | No | F2 |
+| Strong benchmark versus conflicting Local outcomes | CONFLICTING retained, confidence lowered (six related tasks are not independent) | Partly | F3: SUPPORTED definition must exclude unresolved CONFLICTING |
+| Tokens as money; missing bill set to zero | Rejected | Yes (contract cost semantics) | None |
+| Spend cap with no upper bound | HOLD | Yes, but over-broad for subscription seats | F7 |
+| Permissions change after freeze | Successor decision required | Yes | None |
+| Observed model differs from requested | Recorded as deviation | Yes, but undetectable under surface B except by self-report | F4 disclosure |
+| Fallback after grant exhausted | HOLD | Yes | None |
+| Worker evidence used to qualify a reviewer | HOLD | Yes, but context eligibility missing | F9 |
+| Lesson cited with no action | Declared consumption only | Yes | F5 for branch semantics |
+| Learning requires touching Expense | Blocked (PLL PARKED_BY_OPERATOR; contract matrix last row) | Yes | None |
+
+## 6. Next move
+
+- **One grouped correction package:** F1 to F6 required; F7 to F11 recommended. Doctrine and contract need edits; roadmap needs the surface split and a recommended S3-before-S2 order (Local decides).
+- **Can proceed under existing design authority:** Local revision of the three drafts, then one confirmation check of the revised hashes against this finding list. No full re-review loop.
+- **Held before implementation:** any S2 schema or validator; any GatewayReceipt companion (still needs fresh GC-018 per PINT-T2); any operator-level delegation decision under F2; any S3 task (demand-gated; Expense stays parked).
+- No automatic implementation order and no redispatch.
+
+## 7. Claim boundary
+
+Read-only design critique by one INTERNAL_AGENT review context, with prior exposure as disclosed in section 1. No runtime, provider or live-proof claim. No model ranking. No measured-savings claim. No hidden-context attestation. No learning-APPLIED claim. Author gate results (70/70) taken as structural evidence only and not rerun. Repository completeness is not claimed; only the sources listed in section 1 were read. The three targets, implementation, registries, session state, Expense and learning records were not modified. Nothing was committed or pushed.
+
+## Public Export Disposition
+
+DEFERRED_PRIVATE_ONLY

@@ -1,0 +1,126 @@
+{
+  "schemaVersion": "cvf.modelSelectionDesignReconciliation@1",
+  "status": "LOCAL_REVISED_PENDING_CONFIRMATION",
+  "sourceHead": "807db7d4816878df0b6ea1dd50732e1716ccc615",
+  "reviewRequestId": "CVF-MODEL-SELECTION-DESIGN-REVIEW-20261010",
+  "originalIntake": {
+    "path": "docs/reviews/evidence/model-selection-design-review-20261010/intake-manifest.json",
+    "sha256": "dd75d65851da94fc0eec08c1cf825a05aa212e096b838e7a017042a98880423b",
+    "bytes": 1666
+  },
+  "r1Targets": [
+    {
+      "path": "docs/reference/CVF_ORCHESTRATOR_MODEL_SELECTION_DOCTRINE_DESIGN_2026-10-10.md",
+      "sha256": "37423117174d68e5326be06bf0b253f3156506fa57a8191d73972eb66d74f5a7",
+      "bytes": 15586
+    },
+    {
+      "path": "docs/reference/CVF_ORCHESTRATOR_MODEL_SELECTION_CONTRACT_DESIGN_2026-10-10.md",
+      "sha256": "6c312ed649cc65eea9eae6d2a74564061a5e4f049fa3a386b7b4da791f2a83b9",
+      "bytes": 17071
+    },
+    {
+      "path": "docs/roadmaps/CVF_ORCHESTRATOR_MODEL_SELECTION_SYSTEM_CHAIN_ROADMAP_2026-10-10.md",
+      "sha256": "e21981805702bd47a8652fc07014acff83cf3ecfb69d69a8d4d528ccb7059f75",
+      "bytes": 19108
+    }
+  ],
+  "ownerPins": [
+    {
+      "path": "docs/reference/CVF_AGENT_ROLE_ASSIGNMENT_MATRIX_2026-05-19.md",
+      "sha256": "544ef26cc66b119de6d8c83b1b2591bfd55c2abd1c38798cd0e6404a0f90a4f2",
+      "bytes": 19082
+    },
+    {
+      "path": "docs/reference/CVF_AGENT_DISPATCH_PROMPT_ENVELOPE_STANDARD_2026-06-15.md",
+      "sha256": "f72cea93d7cc1271db859d8ae30372fbd8dc30e13ecf9c6146e15ed9cacd2ae1",
+      "bytes": 14609
+    },
+    {
+      "path": "docs/reference/CVF_AGENT_DELEGATION_AND_SUBAGENT_BOUNDARY_STANDARD_2026-05-19.md",
+      "sha256": "5a5356b1afe32dbd1ce1c109ad0fc04bbc9c54cafd8f05a3f081d0c5dcb07f52",
+      "bytes": 15190
+    },
+    {
+      "path": "docs/reference/downstream_gate_profile/CVF_PROJECT_LEARNING_PARENT_EVIDENCE_CONTRACT.md",
+      "sha256": "88aa56b6f9205c66f7af49a0d02c164232d1c627d3167ac8ef263c67178d57e0",
+      "bytes": 16050
+    },
+    {
+      "path": "EXTENSIONS/CVF_MODEL_GATEWAY/src/gateway-receipt.ts",
+      "sha256": "76d7408db481f5a37339ebb348cd4b7f78ccd42962bc7279b37a9e1399cc18af",
+      "bytes": 5151
+    },
+    {
+      "path": "EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-capability-registry.ts",
+      "sha256": "ca49188c98d1b824b3fd1fa7388a489f47e72bc4b1c4334d50e91613215b7c74",
+      "bytes": 3816
+    },
+    {
+      "path": "EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/execute.client.ts",
+      "sha256": "75e17ab2bb00b4fc1e5b1989d4253d2d3fd16c044baed870d3a1d4953120c46e",
+      "bytes": 9397
+    },
+    {
+      "path": "docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json",
+      "sha256": "59c7651cdf60e1d923eb67bcba0395202acbe07c589c2cfbbf8bee6c905d12cb",
+      "bytes": 22836
+    }
+  ],
+  "readScope": "Targeted sections/symbols listed in Local reconciliation O1-O6; hashes identify full source bytes, not full-read claims",
+  "changedPaths": [
+    "docs/guides/CVF_ORCHESTRATOR_MODEL_SELECTION_INDEPENDENT_REVIEW_REQUEST_2026-10-10.md",
+    "docs/reference/CVF_ORCHESTRATOR_MODEL_SELECTION_CONTRACT_DESIGN_2026-10-10.md",
+    "docs/reference/CVF_ORCHESTRATOR_MODEL_SELECTION_DOCTRINE_DESIGN_2026-10-10.md",
+    "docs/reviews/CVF_MODEL_SELECTION_DESIGN_RECONCILIATION_2026-10-10.md",
+    "docs/reviews/evidence/model-selection-design-review-20261010/claude-review-original.txt",
+    "docs/reviews/evidence/model-selection-design-review-20261010/contract-r0.txt",
+    "docs/reviews/evidence/model-selection-design-review-20261010/doctrine-r0.txt",
+    "docs/reviews/evidence/model-selection-design-review-20261010/intake-manifest.json",
+    "docs/reviews/evidence/model-selection-design-review-20261010/reconciliation-evidence.json",
+    "docs/reviews/evidence/model-selection-design-review-20261010/reviewer-fast-r1-final-pass.txt",
+    "docs/reviews/evidence/model-selection-design-review-20261010/reviewer-fast-r1-initial-fail.txt",
+    "docs/reviews/evidence/model-selection-design-review-20261010/roadmap-r0.txt",
+    "docs/roadmaps/CVF_ORCHESTRATOR_MODEL_SELECTION_SYSTEM_CHAIN_ROADMAP_2026-10-10.md"
+  ],
+  "allFindingsDispositioned": [
+    "F1",
+    "F2",
+    "F3",
+    "F4",
+    "F5",
+    "F6",
+    "F7",
+    "F8",
+    "F9",
+    "F10",
+    "F11"
+  ],
+  "verification": {
+    "intakePreservedBytes": "PASS_4_OF_4",
+    "reviewedR0Pins": "MATCH_3_OF_3_BEFORE_REVISION",
+    "governanceGates": {
+      "status": "PASS",
+      "checks": 70,
+      "exitCode": 0,
+      "base": "HEAD",
+      "path": "docs/reviews/evidence/model-selection-design-review-20261010/reviewer-fast-r1-final-pass.txt",
+      "sha256": "b54893e57c903310cb6e4dc7e5958ab77790003ad5796a53696519d7e59e2b76",
+      "scope": "corrected R1 documentation worktree; result/log enrollment follows the run; no independent design acceptance"
+    },
+    "providerCalls": 0,
+    "reviewerConfirmation": "PENDING",
+    "publicOrExternalFolderRefresh": "NOT_PERFORMED",
+    "initialR1Gate": {
+      "status": "FAIL",
+      "passed": 68,
+      "failed": 2,
+      "path": "docs/reviews/evidence/model-selection-design-review-20261010/reviewer-fast-r1-initial-fail.txt",
+      "sha256": "e4833fe57c43d06ab198f411250beb83135543c4c08a317e86857c9d5f03fc29",
+      "reasons": [
+        "CLI resolver source citation missing in roadmap",
+        "Internal intake/coordination declarations missing"
+      ]
+    }
+  }
+}

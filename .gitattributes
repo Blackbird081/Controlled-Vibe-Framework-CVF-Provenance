@@ -1,0 +1,6 @@
+# Preserve exact review and design evidence bytes for SHA-256 reconciliation.
+docs/guides/CVF_ORCHESTRATOR_MODEL_SELECTION_*_2026-10-10.md -text whitespace=cr-at-eol
+docs/reference/CVF_ORCHESTRATOR_MODEL_SELECTION_*_2026-10-10.md -text whitespace=cr-at-eol
+docs/roadmaps/CVF_ORCHESTRATOR_MODEL_SELECTION_SYSTEM_CHAIN_ROADMAP_2026-10-10.md -text whitespace=cr-at-eol
+docs/reviews/CVF_MODEL_SELECTION_DESIGN_RECONCILIATION_2026-10-10.md -text whitespace=cr-at-eol
+docs/reviews/evidence/model-selection-design-review-20261010/* -text whitespace=cr-at-eol

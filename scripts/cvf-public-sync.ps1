@@ -183,6 +183,8 @@ $DENY_PATTERNS = @(
     '^docs[/\\]roadmaps[/\\]',
     '^docs[/\\]reference[/\\]archive[/\\]',
     '^docs[/\\]reference[/\\]CVF_EXTERNAL_AGENT_ROUND_TRIP_PUBLIC_SYNC_RECORD_',
+    '^docs[/\\]reference[/\\]CVF_ORCHESTRATOR_MODEL_SELECTION_(?:DOCTRINE|CONTRACT)_DESIGN_2026-10-10\.md$',
+    '^docs[/\\]guides[/\\]CVF_ORCHESTRATOR_MODEL_SELECTION_INDEPENDENT_REVIEW_REQUEST_2026-10-10\.md$',
     '^docs[/\\]reference[/\\]external_agent_invocation_control[/\\]',
     '^docs[/\\]reference[/\\]CVF_MSEA_R72_R84_T0_GOVERNANCE_LOAD_EFFECTIVENESS_EVIDENCE_LEDGER_2026-07-22\.md$',
     '^docs[/\\]reference[/\\]agent_workspace[/\\]CVF_WORKSPACE_LAYER_V041_SEMANTIC_ABSORPTION_LEDGER\.md$',

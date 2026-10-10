@@ -1,0 +1,328 @@
+# CVF Model Selection Design - Local Reconciliation Of Independent Review
+
+Memory class: FULL_RECORD
+docType: review
+Status: R2_DESIGN_CONCURRENCE_RECORDED
+Date: 2026-10-10
+Batch ID: CVF-WORKER-SELECTION-FOUNDATION-20261010
+
+## Purpose
+
+Receive the operator-transferred independent design critique, adjudicate F1-F11
+against current owners, and return one revised package with explicit agreements and
+qualified disagreements. This is a design response, not independent acceptance of
+the author's changes or implementation closure. R1 history below is preserved;
+the current R2 disposition follows.
+
+## Current R2 Decision And Conditional Concurrence
+
+Received same-reviewer R1 confirmation, raw SHA256
+`e7095f740cfc88c50926b416c15559e43882e76ad9570956259d27ea1bd7b5ab`,
+12233 bytes, UTF-8. Sender digest, three R1 targets, R1 response and R1 evidence
+hashes all matched Local bytes. Original review hash remains
+`930fbc21efcbf5a7c573a92bf504fa1849367202b1b831524e19c2c7c2f61f74`.
+Preserved the confirmation as `claude-confirmation-r1-original.txt`, the three R1
+targets as `doctrine-r1.txt`, `contract-r1.txt`, `roadmap-r1.txt`, and this review's
+R1 preimage as `local-reconciliation-r1.txt` in the existing evidence folder.
+The original R1 `reconciliation-evidence.json` remains byte-unchanged.
+
+Reviewer confirmed F1 and F4-F11, F3 for delegated choice, and the qualifications
+on F2/F4/F6/F10. R1-B1 alone remained: missing quality evidence incorrectly blocked
+an explicit assignment. The reviewer granted CONCUR_WITH_R2 conditional on this
+exact semantic correction and requested hash/paragraph verification only, without
+another review round. The operator relayed and endorsed that direction.
+
+R1-B1 is accepted and corrected in doctrine/contract and their decision matrix:
+explicit assignment plus absent quality evidence yields SELECT with
+`operatorAssignmentDisposition=HONORED_WITH_EVIDENCE_GAP`, disclosed confidence
+limits and mandatory independent acceptance. INSUFFICIENT remains the evidence label
+where warranted; it is not converted into SUPPORTED. Lack-of-quality-evidence holds
+apply to delegated choice. Unavailability, authority/policy/method/context conflicts
+or a known failed hard requirement still hold explicit assignments. Existing task,
+budget and effect admission remains in force. A recorded gap is not a fabricated PASS.
+
+N1 wording is incorporated in both purposes: orchestrator responsibility applies
+where assigned or delegated by the operator. N2 already has a concrete reason and
+authority owner for each hold; enum-level reason-code design remains implementation-owned.
+
+Local paragraph/hash verification is recorded in `r2-evidence.json`. Conditional
+CONCUR_WITH_R2 is therefore recorded for F1-F11/R1-B1 at design scope. This is the
+same review context confirming its findings, not a second independent review or a
+fresh reviewer inspection of R2 bytes. No historical six-task admission is replayed
+or inferred: those observations alone do not establish whether every task originally
+lacked usable published evidence. Missing evidence and known failure are distinguished
+prospectively without rewriting prior acceptance.
+
+| Static paragraph case | R2 required disposition |
+|---|---|
+| Explicit assigned available model; zero quality evidence; no other hard conflict | SELECT, HONORED_WITH_EVIDENCE_GAP, unchanged floor and independent acceptance |
+| Delegated choice; zero quality evidence | HOLD_EVIDENCE |
+| Explicit assignment; known failed hard floor or authority/policy/method/context conflict | HOLD_OPERATOR_CONSTRAINT with reason; no silent substitution |
+| Empty candidate set or assigned model unavailable | hold; the evidence-gap clause cannot invent an available candidate |
+| Assignment selected with INSUFFICIENT evidence | retain gap/unknowns; selection does not assert quality, invocation or acceptance |
+
+Next separate action is the operator-sequenced public-safe Web context preparation
+using agreed R2. No further review round is required for R1-B1. S2 implementation,
+live/standing delegation, S3 execution and Expense remain unopened by this agreement.
+
+## Scope / Methodology
+
+Startup acknowledged: mode=cvf_ncr_p10_closed_p11_parked;
+active handoff=AGENT_HANDOFF_V63_2026-09-18.md; next=Local design reconciliation;
+parked=Expense/sourceR2/media/provider/public/deploy/P11; role=INTERNAL_AGENT;
+phase=internal design review/revision; decision owner=Local with operator scope authority.
+Operator selected convergence with the current reviewer before one later Web/public
+context refresh. This response performs no public or External Agent Read update.
+
+EVALUATE_RETURNED_EVIDENCE_NOT_RECREATE_IMPLEMENTATION. Consumed the critique,
+original R0 gate evidence and six prior observations; no implementation or benchmark
+rerun. Targeted owner reads resolve the named seat/gateway, delegation, identity and
+PLL contradictions. New gates concern the changed documentation only. One Local
+author produced R1 and the bounded R2 correction; no fresh independent reviewer or
+hidden-context proof is claimed.
+Elapsed review/rework time, model billing and tokens: UNKNOWN; no efficiency claim.
+
+## Target / Source
+
+Transport input:
+`.cvf/runtime/cvf-model-selection-design-review-20261010/CLAUDE_REVIEW_RETURN.md`.
+Local observed raw SHA256:
+`930fbc21efcbf5a7c573a92bf504fa1849367202b1b831524e19c2c7c2f61f74`.
+No separate sender digest was supplied; this pins received bytes, not sender custody.
+The three R0 target hashes in the return matched the Local files before any revision.
+
+Original return and all three R0 files are byte-preserved in
+`docs/reviews/evidence/model-selection-design-review-20261010/`; exact paths, hashes
+and byte counts are in its `intake-manifest.json`. The original return is
+`claude-review-original.txt`, kept as received without adding governed prose to it.
+R1 targets and targeted owner hashes are in `reconciliation-evidence.json` in the
+same folder. Source text is attributed review input until verified against owners.
+
+Reviewer identity is self-reported: initial Opus session, later model switch during
+transcription/fresh pass. Treat this as one reviewer context, not two independent
+reviews or verified model-performance evidence. The reviewer discloses not reading
+guard orientation, the review-cost body, dispatch-envelope owner and PLL parent
+contract. These procedure limits remain recorded. Local read the decision-changing
+owners below; useful source-backed findings remain usable without claiming complete
+reviewer procedure compliance or retroactively repairing skipped reads.
+
+| Source ID | Current source and read scope | Local conclusion |
+|---|---|---|
+| O1 | docs/reference/CVF_AGENT_ROLE_ASSIGNMENT_MATRIX_2026-05-19.md, Core Assignment and Topology Invariance | Operator chooses topology and may assign model; role rules alone do not prove automated model selection |
+| O2 | docs/reference/CVF_AGENT_DISPATCH_PROMPT_ENVELOPE_STANDARD_2026-06-15.md, Context Eligibility Before Transfer; docs/reference/CVF_AGENT_DELEGATION_AND_SUBAGENT_BOUNDARY_STANDARD_2026-05-19.md, Core Principle and Provider Execution Authority | Seat task, tools, exposure and separate invocation grants belong to dispatch/delegation owners |
+| O3 | EXTENSIONS/CVF_MODEL_GATEWAY/src/gateway-receipt.ts; EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-capability-registry.ts, provider entries; EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/execute.client.ts, resolveProviderForRole | API receipt/registry and simple CLI role-provider resolution do not admit operator-started worker seats |
+| O4 | docs/reference/downstream_gate_profile/CVF_PROJECT_LEARNING_PARENT_EVIDENCE_CONTRACT.md, Evidence Reference and Independent Lifecycle Objects; existing PLL standard | Typed parent control DELIVERY/APPLICATION has stronger semantics than citing a model outcome |
+| O5 | docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json, futureConfigurationEvidenceContract/provisionalRoleRouting/comparisonLimits | Legacy rows already explicitly describe historical eligibility, not fixed routing; future evidence home needed a decision |
+| O6 | docs/reference/CVF_LHW23_T1_MODEL_REGISTRY_SERVICE_ADVISORY_CONNECTOR_SPEC_2026-05-31.md; docs/reference/CVF_LHW23_T2_MULTIFACTOR_ROUTING_POLICY_ADVISORY_CONNECTOR_SPEC_2026-05-31.md, S2-S4; PINT-T2 Receipt Advisory cited by doctrine | Documentation-only scoring/fallback patterns are not active authorization; receipt companion boundary remains surface A |
+
+## Findings / Position
+
+The review's main objection is accepted: R0 assigned an API gateway receipt owner
+to the actual manual worker-seat use case. R1 selects AGENT_SEAT (B) first and
+defers GATEWAY_API (A). Selection, outcome and later-consumption sections use existing
+work-order/review evidence; no new record store or validator is required for manual
+proof. Reusable control learning alone uses the typed PLL branch.
+
+| ID | Local disposition | Reason and R1 change | Verification anchor |
+|---|---|---|---|
+| F1 | ACCEPT | Split B dispatch/work-order ownership from A GatewayReceipt. B requires no gateway entry/health/receipt; named its real manual consumer | doctrine Selection Surfaces; contract Minimum Manual Record; roadmap System Chain |
+| F2 | ACCEPT_WITH_QUALIFICATION | Explicit assignment/delegated-choice authority now required; constrained assignment holds rather than silently substitutes. The role matrix limits claims from its rules alone; it does not prohibit an operator delegating bounded model choice. No canonical owner edit or new live delegation is needed for this proposal | doctrine Delegated Choice; contract Decision Semantics; O1/O2 |
+| F3 | ACCEPT_WITH_QUALIFICATION | Proposed low-risk local reviewed-task envelope permits provisional choice within recorded delegation; requires relevant positive evidence, no material conflict or known failed hard floor. Review presence alone is insufficient, so no universal provisional default or new live allowance | doctrine Decision Procedure; contract quality/admission rows |
+| F4 | ACCEPT_WITH_QUALIFICATION | Alias-only evidence is at most PARTIAL; practical harness metadata and explicit unknowns replace fictitious hashes. EXACT also needs all material conditions to match; official catalog plus snapshot alone cannot prove executed identity | contract Identity table and alias window; O3 |
+| F5 | ACCEPT | Prior decision ends at LEARNING_DISPOSITIONED; state transitions are appended events. Later decisions own zero/one/many consumption links. PLL parent-control and local-observation use are distinct | contract Freeze/Transition and two consumption branches; O4 |
+| F6 | ACCEPT_HOME_GAP; ROUTING_CLAIM_ALREADY_BOUNDED | Preserve legacy ledger read-only with no invented joins; future task review/evidence is the single outcome home. O5 already says provisionalRoleRouting is historical eligibility, so no silent-routing defect is established in those rows | doctrine Evidence Refresh; contract Minimum Manual Record; O5 |
+| F7 | ACCEPT | Capacity has explicit units/window; a quota-only cap does not require a currency estimate. A monetary cap still requires supported monetary bounds; subscription does not imply zero marginal cost | contract CostBasis; doctrine Cost Discipline |
+| F8 | ACCEPT_WITH_QUALIFICATION | Explicitly exclude adaptive weights and automatic rollback from B design while retaining historical specs. CLI resolver is a supplied map/fallback, not evidence of a Gateway invocation; future A caller/consumer requires tracing | doctrine owner narrowing; roadmap deferred A; O3/O6 |
+| F9 | ACCEPT | Reviewer actor/context must be eligible; a different model cannot erase exposure. Active orchestrator seat is excluded from self-selection | contract negative matrix; doctrine learning/context paragraph; O1/O2 |
+| F10 | ACCEPT_WITH_QUALIFICATION | Prefer locator, revision, short retained excerpt/summary and hash; full copying only where permitted. Hash remains useful for retained bytes after a web change, but cannot reconstruct uncaptured content | doctrine Evidence Refresh; contract Identity evidence retention |
+| F11 | ACCEPT | Require at least one eligible candidate and exactly one selected; multiple valid candidates are allowed | contract Decision Semantics and final negative row |
+
+## Historical R1 Decision / Disposition
+
+LOCAL_REVISED_PENDING_CONFIRMATION. The three R1 artifacts remain DESIGN_DRAFT;
+the contract proposal is now 0.2.0. The original REVISE_BEFORE_ACCEPTANCE verdict is
+preserved. No reviewer agreement with these R1 changes has yet been received.
+
+Adopt the manual-first alternative with a qualification: use the next actual admitted
+task and a later useful decision, not an arbitrary two/three-task benchmark quota.
+Proposed order is S1 -> S3 -> S4 -> optional S2 -> optional S5, retaining phase IDs.
+Manual operation still needs a governed task, explicit selection-choice authority,
+admission, source pins, observable floor and independent acceptance. Omitting a new
+schema does not omit these existing controls. Fresh GC-018 still applies to an A
+companion or later schema/runtime implementation.
+
+## Risk / Corrective Action
+
+Model choice delegation and task invocation remain future task-bound facts; this
+design cannot infer them from an operator asking for a selection capability.
+The provisional envelope was confirmed for delegated selections; explicit assignments
+use the R2 evidence-gap clause above.
+Manual B cannot intercept hidden host/model changes. Unknowns remain disclosed.
+No selected configuration or bill is certified. Closed Expense work supplies historical
+evidence only and remains parked. No canonical matrix/PLL/gateway source was edited.
+
+## Historical R1 Confirmation Request - Consumed
+
+The request below was fulfilled by the preserved R1 confirmation. Do not redispatch
+it; the current R2 conditional concurrence above controls the next move.
+
+Read this response and the three R1 targets using `reconciliation-evidence.json`
+for exact pins. Compare only the changed design against F1-F11 and the qualifications
+above; expand a source read only for a named contradiction. Check particularly:
+B/A ownership; bounded choice/provisional authority; claim-relative identity; separate
+PLL/local consumption with zero/one/many links; future evidence home; manual-first order.
+Return one consolidated result: CONCUR_WITH_R1 or REMAINING_BLOCKERS with finding ID,
+source/section and smallest correction. This is an operator-relayed request only;
+no reviewer/tool invocation is performed by this artifact.
+
+Use a new transport file in the same ignored folder, named
+`CLAUDE_REVIEW_CONFIRMATION_R1.md`, with its hash and observed R1 hashes. Preserve
+the original return. R1 is changed by the original author, so a Local static PASS
+cannot stand in for this confirmation. Once agreement is recorded, prepare the
+single public-safe Web review refresh selected by the operator under its existing
+export boundaries; no automatic implementation is opened.
+
+## Verification / Evidence
+
+Intake: four preserved byte copies match their Local source hashes; three reviewed
+R0 pins match the received return. These establish file identity, not hidden context,
+reviewer understanding or authenticated provider identity. Original returns/runs are
+consumed, not repeated. Verification results and R1 pins are recorded in
+`docs/reviews/evidence/model-selection-design-review-20261010/reconciliation-evidence.json`.
+Manual contract walkthroughs are static reasoning, not executed behavioral tests.
+Gate logs verify applicable documentation declarations only; zero provider calls.
+First R1 reviewer-fast run failed two of 70 checks: roadmap named the CLI resolver
+without its source path, and review/roadmap lacked the required intake/coordination
+declarations for their future external-review references. Added the exact source
+path and existing internal-only routing/coordination blocks; no checker semantics
+or authority changed. The failed log is preserved; the corrected run is separate.
+
+R2 initial reviewer-fast passed 69 of 70 checks. The roadmap's explicit denial of
+runtime enforcement triggered the Delta execution claim guard, requiring its
+declaration block. Read `governance/compat/check_delta_execution_claim_boundary.py`
+and added the block rejecting execution claims; no design semantics or checker was
+changed. Preserve the initial result and the corrected run in `r2-evidence.json`.
+Rerun purpose: verify that named documentation gap is resolved; the short static
+chain checks consistency of the added declaration, without repeating live evidence.
+The second run resolved the roadmap declaration but the diagnostic paragraph here
+triggered the same guard on this review. Added the same explicit claim rejection
+here and retained both failed logs before the final verification.
+
+## Checker Source Read-Ahead Block
+
+| Field | Value |
+|---|---|
+| applicableCheckersRead | governance/compat/check_markdown_structural_completeness.py; governance/compat/check_agent_operation_trace.py; governance/compat/check_agent_packet_authority_and_encoding.py; governance/compat/check_governed_artifact_checker_read_ahead.py; governance/compat/check_epistemic_process_packet.py; governance/compat/check_finding_to_governance_learning.py; governance/compat/check_external_knowledge_intake_routing.py |
+| literalTokensReviewed | Purpose; Target / Source; Scope / Methodology; Findings / Position; Decision / Disposition; Risk / Corrective Action; Finding-To-Governance Learning Disposition; ORCHESTRATOR_PACKET_GAP; RULE_EXISTS; DESIGN_REVIEW_REQUIRED; RUNTIME_SIGNAL_GAP; Agent Operation Trace Block; Expected Result / Prediction; Evidence Comparison; Contradiction; Claim Update; DEFERRED_PRIVATE_ONLY |
+| gateRunPurpose | confirmation/evidence of scoped review/revision declarations, not first discovery or live proof |
+| claimBoundary | same-reviewer R1 confirmation and Local conditional R2 paragraph verification; no second independent review |
+
+## Finding-To-Governance Learning Disposition
+
+| Finding | Defect class | Learning lane | Disposition | Next control action | Handled or deferred |
+|---|---|---|---|---|---|
+| F1/F2/F5/F6/F8 and R1-B1 owner and authority composition | ORCHESTRATOR_PACKET_GAP | GOVERNANCE_CONTROL_PLANE | DESIGN_REVIEW_REQUIRED | R1 confirmed subject to explicit-assignment correction; R2 fixes evidence absence versus known failure; no new registry/control | conditional R2 concurrence verified; design only |
+| F3/F4/F7 confidence, identity and cost | RUNTIME_SIGNAL_GAP | COST_ECONOMICS_LEARNING | DESIGN_REVIEW_REQUIRED | bound provisional evidence, distinguish observed identity and units; keep actual use/cost unknown | design revised; use proof deferred |
+| F9-F11 context, source retention and wording | ORCHESTRATOR_PACKET_GAP | DOCUMENTATION_ONLY_LEARNING | RULE_EXISTS | reuse context eligibility/source limits; remove selection cardinality ambiguity | bounded draft repair |
+| Author and reviewer read-ahead/procedure limitations | ORCHESTRATOR_PACKET_GAP | GOVERNANCE_CONTROL_PLANE | RULE_EXISTS | retain omissions and apply existing orientation/read obligations; no retroactive compliance claim | disclosed; no new lesson registry |
+
+## Corpus Completeness And Report Integrity
+
+- Corpus verdict: NOT_APPLICABLE_WITH_REASON - three pinned drafts, one critique and named owner fragments; no corpus scan or complete repository claim.
+
+## Knowledge System Reconciliation
+
+NOT_APPLICABLE_WITH_REASON: internal design reconciliation only; no external repository
+absorption or corpus-to-knowledge mapping. F1-F11 all have a Local disposition above.
+
+## Epistemic Process Block
+
+Expected Result / Prediction: owner separation and manual-first use should make the
+proposed chain feasible for operator-started seats without fictional gateway receipts.
+Evidence Comparison: current owner/source reads support F1/F5 and qualified fixes
+to F2-F11; original review and R0 preserved, no runtime experiment occurred.
+Contradiction Or Gap Disposition: topology is not a blanket ban on delegated choice;
+catalog identity is not executed identity; ledger already limits routing claims.
+Claim Update: same-reviewer conditional R2 design concurrence recorded after Local
+verification; no second independent review or live value claim.
+
+
+## External Knowledge Intake Routing
+
+| Field | Value |
+|---|---|
+| Chain map | docs/reference/external_agent_review/CVF_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP.md |
+| Input type | internal governed input (no external intake) |
+| Internal source | docs/reference/CVF_ORCHESTRATOR_MODEL_SELECTION_DOCTRINE_DESIGN_2026-10-10.md |
+| Chain map route | shared-workspace critique -> Local source reconciliation -> same-reviewer R1 confirmation -> bounded R2 correction/concurrence |
+| Matching local-view guard | governance/compat/check_external_knowledge_intake_routing.py |
+| Owner surface | existing role/dispatch/learning owners named in the design |
+| Disposition | internal design revision; a later Web context refresh is separately sequenced by the operator |
+| Claim boundary | no external research, repository absorption, publication or runtime effect occurred |
+
+## External/Local Coordination Binding
+
+```json
+{
+  "contractId": "cvf.external-local-absorption-coordination@1",
+  "invariants": {
+    "externalRole": "ADVISORY_RESEARCH_AND_PATTERN_MAPPING",
+    "externalContext": "PUBLIC_GITHUB_AND_REFRESHED_EXTERNAL_AGENT_READ",
+    "localRole": "SOURCE_RUNTIME_VALUE_AND_PRIVATE_CVF_VERIFICATION",
+    "finalDecisionOwner": "LOCAL",
+    "localCoverageBasis": "SOURCE_DERIVED_NOT_EXTERNAL_SHORTLIST",
+    "externalEvidenceAuthority": "INPUT_NOT_PRIVATE_CVF_PROOF"
+  },
+  "contractSha256": "92df8a7c9492e8c3cedf624cfaa79b8185ca31442ecaf96107fd88dfcb81800c",
+  "parentArtifact": null
+}
+```
+
+## Public Export Disposition
+
+DEFERRED_PRIVATE_ONLY
+
+Reason: operator selected Local convergence before one later Web/public refresh.
+
+## Agent Operation Trace Block
+
+| Field | Evidence |
+|---|---|
+| Actor | Local orchestrator and original design author |
+| Provider or surface | private shared workspace; returned critique identity is self-reported |
+| Session or invocation | cvf-model-selection-design-reconciliation-20261010 |
+| Working directory | repository root |
+| Command or tool surface | raw-byte preservation/hashing, named owner reads, apply_patch, static governance gates |
+| Target paths | three design drafts; review brief; this review; evidence folder named in Target / Source |
+| Allowed scope source | operator design/review continuation and received review; no implementation grant |
+| Before status evidence | HEAD 807db7d4816878df0b6ea1dd50732e1716ccc615; four untracked design/brief files; received ignored review |
+| After status evidence | three R2 designs and concurrence pointer; R0/R1 and confirmation bytes retained; r2-evidence.json records current manifest |
+| Diff evidence | git status --short; preserved R1-to-R2 paragraph comparison; evidence manifests |
+| Approval boundary | design-only reconciliation and reviewer-response preparation |
+| Claim boundary | Local revision is not independent acceptance; no provider, Web refresh, public or deployment action |
+| Agent type | INTERNAL_AGENT |
+| Invocation ID | cvf-model-selection-design-reconciliation-20261010 |
+| Expected manifest | current exact paths in r2-evidence.json changedPaths; R1 manifest remains historical and byte-preserved |
+| Actual changed set | same exact paths, verified by final Git status and evidence manifest |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: none |
+
+## Delta Execution Claim Boundary Control Block
+
+| Field | Value |
+|---|---|
+| claimScope | Design/source reconciliation and conditional concurrence only |
+| claimDisposition | CLAIM_REJECTED for runtime enforcement or interception |
+| receiptEvidence | CLAIM_REJECTED_NO_RECEIPT; no execution receipt in this correction |
+| actionEvidence | CLAIM_REJECTED_NO_ACTION; paragraph/hash checks only |
+| invocationBoundary | No provider or worker invocation occurred |
+| interceptionBoundary | No host or model-switch interception is demonstrated |
+| claimLanguage | Static design concurrence does not establish operational behavior |
+| forbiddenExpansion | No automatic routing, execution control or production readiness claim |
+
+## Claim Boundary
+
+Static internal review/revision only; same-reviewer conditional R2 concurrence is
+recorded after Local paragraph/hash verification. No second independent review.
+No authenticated model identity, full procedure compliance, automatic selection,
+fresh independent R2 review, invocation, quality/cost improvement or PLL application.

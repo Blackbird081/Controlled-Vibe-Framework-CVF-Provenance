@@ -1,0 +1,145 @@
+[CVF hook] Parallel preflight enabled: 70 checks, max_workers=6.
+[CVF hook] START [1/70] closure packaging preflight
+[CVF hook] START [2/70] agent packet authority and encoding
+[CVF hook] START [3/70] core guard self-protection
+[CVF hook] START [4/70] high-risk local transaction proof
+[CVF hook] START [5/70] semantic convergence and escalation control
+[CVF hook] START [6/70] preapproval feasibility
+[CVF hook] START [7/70] subagent provider execution authority
+[CVF hook] PASS [1/70] closure packaging preflight (0.38s)
+[CVF hook] START [8/70] task-proportional governance shadow route
+[CVF hook] PASS [2/70] core guard self-protection (0.38s)
+[CVF hook] START [9/70] docs governance compatibility
+[CVF hook] PASS [3/70] high-risk local transaction proof (0.40s)
+[CVF hook] START [10/70] markdown structural completeness
+[CVF hook] PASS [4/70] agent packet authority and encoding (0.45s)
+[CVF hook] START [11/70] governed artifact checker read-ahead
+[CVF hook] PASS [5/70] preapproval feasibility (0.84s)
+[CVF hook] START [12/70] work-order dispatch quality
+[CVF hook] PASS [6/70] semantic convergence and escalation control (0.89s)
+[CVF hook] START [13/70] worker experience retrospective
+[CVF hook] PASS [7/70] subagent provider execution authority (0.55s)
+[CVF hook] START [14/70] review cost control
+[CVF hook] PASS [8/70] markdown structural completeness (0.59s)
+[CVF hook] START [15/70] gate-to-role closeability
+[CVF hook] PASS [9/70] task-proportional governance shadow route (0.71s)
+[CVF hook] START [16/70] worker-return quality gate
+[CVF hook] PASS [10/70] docs governance compatibility (0.70s)
+[CVF hook] START [17/70] dispatch prompt envelope
+[CVF hook] PASS [11/70] governed artifact checker read-ahead (0.30s)
+[CVF hook] START [18/70] dispatch packet lifecycle hygiene
+[CVF hook] PASS [12/70] worker experience retrospective (0.29s)
+[CVF hook] START [19/70] source intake decision packet preflight
+[CVF hook] PASS [13/70] dispatch packet lifecycle hygiene (0.29s)
+[CVF hook] START [20/70] PLCS companion routing block
+[CVF hook] PASS [14/70] review cost control (0.48s)
+[CVF hook] START [21/70] agent operation trace integrity
+[CVF hook] PASS [15/70] dispatch prompt envelope (0.40s)
+[CVF hook] START [22/70] agent handoff boundary
+[CVF hook] PASS [16/70] worker-return quality gate (0.45s)
+[CVF hook] START [23/70] agent workspace design boundary
+[CVF hook] PASS [17/70] gate-to-role closeability (0.50s)
+[CVF hook] START [24/70] agent workspace state
+[CVF hook] PASS [18/70] work-order dispatch quality (0.85s)
+[CVF hook] START [25/70] agent workspace skeleton
+[CVF hook] PASS [19/70] source intake decision packet preflight (0.27s)
+[CVF hook] START [26/70] agent workspace runtime boundary
+[CVF hook] PASS [20/70] PLCS companion routing block (0.38s)
+[CVF hook] START [27/70] machine closure package
+[CVF hook] PASS [21/70] agent operation trace integrity (0.37s)
+[CVF hook] START [28/70] roadmap closure freshness
+[CVF hook] PASS [22/70] agent workspace state (0.20s)
+[CVF hook] START [29/70] finding-to-governance learning quality
+[CVF hook] PASS [23/70] agent workspace skeleton (0.16s)
+[CVF hook] START [30/70] external-agent absorption table
+[CVF hook] PASS [24/70] agent handoff boundary (0.45s)
+[CVF hook] START [31/70] external knowledge intake routing
+[CVF hook] PASS [25/70] agent workspace runtime boundary (0.15s)
+[CVF hook] START [32/70] external absorption core
+[CVF hook] PASS [26/70] agent workspace design boundary (0.46s)
+[CVF hook] START [33/70] external absorption value conversion
+[CVF hook] PASS [27/70] machine closure package (0.43s)
+[CVF hook] START [34/70] mixed-origin derived synthesis absorption
+[CVF hook] PASS [28/70] roadmap closure freshness (0.40s)
+[CVF hook] START [35/70] external absorption overlap discipline
+[CVF hook] PASS [29/70] external-agent absorption table (0.38s)
+[CVF hook] START [36/70] source mirror migration
+[CVF hook] PASS [30/70] finding-to-governance learning quality (0.46s)
+[CVF hook] START [37/70] Delta mutating profile boundary
+[CVF hook] PASS [31/70] external knowledge intake routing (0.39s)
+[CVF hook] START [38/70] Delta execution claim boundary
+[CVF hook] PASS [32/70] external absorption core (0.42s)
+[CVF hook] START [39/70] foundation storage layout
+[CVF hook] PASS [33/70] external absorption value conversion (0.46s)
+[CVF hook] START [40/70] public export disposition quality
+[CVF hook] PASS [34/70] mixed-origin derived synthesis absorption (0.47s)
+[CVF hook] START [41/70] rescan intelligence hardening
+[CVF hook] PASS [35/70] external absorption overlap discipline (0.44s)
+[CVF hook] START [42/70] index classification
+[CVF hook] PASS [36/70] source mirror migration (0.43s)
+[CVF hook] START [43/70] memory access claim
+[CVF hook] PASS [37/70] Delta mutating profile boundary (0.44s)
+[CVF hook] START [44/70] external provider skill usage trace
+[CVF hook] FAIL [38/70] Delta execution claim boundary (0.41s)
+FAIL: Delta execution claim boundary guard
+- docs/roadmaps/CVF_ORCHESTRATOR_MODEL_SELECTION_SYSTEM_CHAIN_ROADMAP_2026-10-10.md: missing `## Delta Execution Claim Boundary Control Block`
+[CVF hook] START [45/70] CVF skill usage receipt trace
+[CVF hook] PASS [39/70] external provider skill usage trace (0.20s)
+[CVF hook] START [46/70] skill truth packets
+[CVF hook] PASS [40/70] rescan intelligence hardening (0.31s)
+[CVF hook] START [47/70] package skill productionization pipeline
+[CVF hook] PASS [41/70] foundation storage layout (0.44s)
+[CVF hook] START [48/70] skill control plane inventory
+[CVF hook] PASS [42/70] public export disposition quality (0.43s)
+[CVF hook] START [49/70] CVF Web skill control plane projection
+[CVF hook] PASS [43/70] CVF skill usage receipt trace (0.17s)
+[CVF hook] START [50/70] truth foundation claim guard
+[CVF hook] PASS [44/70] index classification (0.45s)
+[CVF hook] START [51/70] raw memory release invariant
+[CVF hook] PASS [45/70] skill truth packets (0.19s)
+[CVF hook] START [52/70] DICE machine-candidate coverage
+[CVF hook] PASS [46/70] CVF Web skill control plane projection (0.10s)
+[CVF hook] START [53/70] FPC system-chain acceptance ledger
+[CVF hook] PASS [47/70] skill control plane inventory (0.13s)
+[CVF hook] START [54/70] FPC parked reopen inventory
+[CVF hook] PASS [48/70] memory access claim (0.49s)
+[CVF hook] START [55/70] KIOD runtime candidate reopen inventory
+[CVF hook] PASS [49/70] truth foundation claim guard (0.31s)
+[CVF hook] START [56/70] corpus scan registry
+[CVF hook] PASS [50/70] FPC system-chain acceptance ledger (0.29s)
+[CVF hook] START [57/70] ASSF certified metadata admission
+[CVF hook] PASS [51/70] FPC parked reopen inventory (0.32s)
+[CVF hook] START [58/70] ASSF package candidate anatomy
+[CVF hook] PASS [52/70] package skill productionization pipeline (0.52s)
+[CVF hook] START [59/70] ASSF external-agent metadata readout
+[CVF hook] PASS [53/70] ASSF certified metadata admission (0.14s)
+[CVF hook] START [60/70] changed corpus registry coverage
+[CVF hook] PASS [54/70] raw memory release invariant (0.51s)
+[CVF hook] START [61/70] active session state compatibility
+[CVF hook] PASS [55/70] ASSF package candidate anatomy (0.12s)
+[CVF hook] START [62/70] session mode consistency
+[CVF hook] PASS [56/70] DICE machine-candidate coverage (0.53s)
+[CVF hook] START [63/70] next-move freshness
+[CVF hook] PASS [57/70] ASSF external-agent metadata readout (0.13s)
+[CVF hook] START [64/70] system chain map freshness
+[CVF hook] PASS [58/70] corpus scan registry (0.34s)
+[CVF hook] START [65/70] as-built system catalog drift
+[CVF hook] PASS [59/70] KIOD runtime candidate reopen inventory (0.42s)
+[CVF hook] START [66/70] memory consolidation artifact quality
+[CVF hook] PASS [60/70] session mode consistency (0.15s)
+[CVF hook] START [67/70] epistemic process packet
+[CVF hook] PASS [61/70] system chain map freshness (0.14s)
+[CVF hook] START [68/70] equivalence claim evidence
+[CVF hook] PASS [62/70] changed corpus registry coverage (0.36s)
+[CVF hook] START [69/70] dispatch scaffold provenance
+[CVF hook] PASS [63/70] next-move freshness (0.33s)
+[CVF hook] START [70/70] agent instruction carrier compaction
+[CVF hook] PASS [64/70] memory consolidation artifact quality (0.27s)
+[CVF hook] PASS [65/70] as-built system catalog drift (0.34s)
+[CVF hook] PASS [66/70] agent instruction carrier compaction (0.14s)
+[CVF hook] PASS [67/70] equivalence claim evidence (0.27s)
+[CVF hook] PASS [68/70] epistemic process packet (0.35s)
+[CVF hook] PASS [69/70] dispatch scaffold provenance (0.26s)
+[CVF hook] PASS [70/70] active session state compatibility (1.16s)
+[CVF hook] Parallel preflight failures:
+  - [38/70] Delta execution claim boundary exited 1

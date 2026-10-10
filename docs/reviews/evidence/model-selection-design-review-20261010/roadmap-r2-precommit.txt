@@ -1,0 +1,291 @@
+# CVF Orchestrator Model Selection System Chain Roadmap
+
+Memory class: FULL_RECORD
+docType: roadmap
+Status: DESIGN_DRAFT
+Date: 2026-10-10
+Batch ID: CVF-WORKER-SELECTION-FOUNDATION-20261010
+Revision: R2 - R1-B1 corrected; conditional reviewer concurrence recorded by Local
+
+## Purpose
+
+Deliver a reviewable doctrine/contract/system-chain design for model selection by
+the orchestrator where assigned or delegated by the operator, with version evidence
+and verified learning consumption. Non coder
+model choice is optional. Expense remains PARKED_BY_OPERATOR; no comparison task
+or repeat of accepted Expense work is opened.
+
+## Authorization And Decision
+
+Operator2026-10-10 authorizes foundation design. Startup mode=cvf_ncr_p10_closed_p11_parked;
+active handoff=AGENT_HANDOFF_V63_2026-09-18.md; role=Local INTERNAL_AGENT;
+phase=internal design; final technical decision owner=Local. SourceR2, media,
+provider/runtime effects, public-sync, deploy and P11 remain parked.
+Existing Haiku/Sonnet observations remain worker-only under the operator assignment.
+
+## Scope / Applies To
+
+Three private design outputs plus the retained review and Local reconciliation.
+Design sources and owner mapping:
+docs/reference/CVF_ORCHESTRATOR_MODEL_SELECTION_DOCTRINE_DESIGN_2026-10-10.md.
+Proposed joins and negative obligations:
+docs/reference/CVF_ORCHESTRATOR_MODEL_SELECTION_CONTRACT_DESIGN_2026-10-10.md.
+Empirical input: docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md
+and docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json.
+Six accepted related worker observations are retained; identity is operator-reported,
+bills unknown, comparisons confounded. No fresh price, score or model-card assertion.
+
+## Non-Goals
+
+No Expense edits/trials, fixed model/task mapping, automatic dispatch, registry/runtime
+implementation, new learning store, provider use, public-sync, deployment or frozen
+doctrine mutation. Candidate version evidence is designed here, not freshly collected.
+
+## Design Control Gate
+
+Authority is the operator's design instruction and current bootstrap DESIGN move.
+The scope is doctrine/contract/chain composition under existing owners. Evidence
+intake, selection, execution, review and learning are separate because their authority
+and proof differ. Before any dispatch, verify exact current owners, selected contract
+version, grants, configuration identity, required learning bindings and feasible tools.
+S1 design disposition must resolve ambiguity before an admitted manual S3 task.
+S2 schema/validator work is optional and follows useful S3/S4 evidence, with fresh
+baseline/order and exact owner paths. Selection-choice authority is recorded separately
+from invocation authority. Existing explicit model assignments retain precedence;
+the orchestrator cannot replace its own seat or create a standing delegation here.
+No runtime, effectiveness, ranking or cost-saving claim is allowed from design alone.
+Observable acceptance and required evidence are specified below. This roadmap grants
+no child execution lane; S2-S5 need separate authority.
+
+## System Chain Design
+
+| Link | Producer | Verifier / owner | Consumer | Missing proof / failure behavior |
+|---|---|---|---|---|
+| Outcome -> task/quality profile | existing intake/dispatcher | lifecycle and acceptance/authority owner | orchestrator | insufficient outcome constraints hold only dependent decision |
+| Task -> B seat configurations | operator-authorized available seat/settings and tool evidence | role matrix, work order, dispatch envelope and delegation owners | orchestrator | missing choice authority/context/tool evidence holds; no GatewayReceipt required |
+| Candidate -> version evidence | bounded source intake and existing Local ledger | Local methodology/applicability review | decision reasoning | stale/conflicting/mismatched sources retained; refresh or narrow |
+| Evidence -> frozen B decision | orchestrator | existing task/release admission and explicit manual review of rationale | admitted work-order selection section | no authority inferred from SELECT; material drift invalidates binding |
+| Decision -> execution/return | separately authorized worker/runtime | existing grant, custody and return gates | independent reviewer | identity drift/failed/stopped outcome retained; no silent fallback |
+| Review -> outcome and learning disposition | reviewer records one canonical task outcome | existing review owner; F2G/PLL only for reusable control admission | later decision or parent-control owners | ordinary performance evidence is not automatically a PLL lesson |
+| Evidence/control -> later decision | later orchestrator | later reviewer; typed PLL receipts only on PARENT_CONTROL branch | later task decision/review record | local observation use has its own evidence label; citations do not prove action |
+
+S1-S4 target AGENT_SEAT (B). Its existing work-order selection section is the
+first consumer and record home; manual operator/dispatcher actions and reviewed
+evidence provide cooperative control. Hidden host configuration is not intercepted.
+Legacy six-row tranche evidence stays read-only. Future task review/evidence owns
+outcomes once; later decisions reference them rather than duplicating the ledger.
+
+GATEWAY_API (A) is deferred. It requires policy/routability/capability/health checks
+and GatewayReceipt under PINT-T2. A companion needs fresh GC-018. The existing CLI
+resolveProviderForRole symbol in
+`EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/execute.client.ts`
+is a map/fallback resolver, not an established S3
+producer. Trace its actual API caller/consumer before any future A integration.
+No Model Gateway call is part of the B manual selection path. This does not grant
+any separate provider calls a worker might request during its task.
+
+## Work Plan And Exit Criteria
+
+| Phase | Current state | Finite outcome | Exit evidence / next boundary |
+|---|---|---|---|
+| S0 Foundation design | DRAFT_AUTHORED | doctrine proposal, field/join contract, chain and negative matrix | source/shape gates plus design review; no runtime completion |
+| S1 Design review and owner disposition | R2_DESIGN_CONCURRENCE_RECORDED | F1-F11 confirmed with R1-B1 corrected in one R2 delta | same reviewer granted conditional CONCUR_WITH_R2; Local hash/paragraph verification satisfies that condition; no second review |
+| S3 One bounded real task loop | PARKED_DEMAND_GATED | manual B work-order rationale -> admitted execution -> independent review -> evidence disposition | disclosed actual identity/authority and task outcome; no extra task solely for benchmarking |
+| S4 Later decision consumption | PARKED_DEMAND_GATED | later B task consumes observation or admitted control; reviewer checks action/result | local evidence-use label or applicable typed PLL proof; reasoned no-change allowed |
+| S2 Contract implementation if selected | NOT_AUTHORIZED | strict schema/validator only if S3/S4 reveal value beyond manual records | fresh baseline/order; exact owner/fields; no arbitrary minimum task count or automatic activation |
+| S5 Optional runtime automation | PARKED_DEMAND_GATED | integrate only if bounded loop shows value and demand exists | separate authority and current real runtime/provider proof, rollback and holds |
+
+S0 authorship is not independent acceptance. This roadmap remains open at design
+scope. S2-S5 are proposals, not automatic successors or authority to dispatch agents.
+Phase IDs stay stable for review traceability; proposed order is S1 -> S3 -> S4 ->
+S2 only on demonstrated need -> S5 only on separate demand/authority. One actual
+loop can establish bounded use, never comparative quality or cost effectiveness.
+
+## Acceptance Criteria
+
+Design acceptance requires all three artifacts to agree on optional Non coder model
+choice, operator assignment precedence within authority, capability/quality admission,
+version/effort/harness identity, source methodology/freshness, null-safe total cost,
+freeze/drift/fallback behavior, actor/context eligibility, and separate local-observation
+consumption versus existing PLL control application. B owner/path must work without
+a Gateway receipt. PARTIAL evidence can support a bounded provisional choice under
+delegated authority and the defined reviewed local-task envelope; no fabricated snapshot.
+Every chain link names its producer/verifier/consumer and missing proof. Holds name
+the blocked decision and its owner. Runtime and future phases cannot pass by prose.
+The same reviewer's R1 confirmation accepted F1-F11 subject only to R1-B1. R2
+honors explicit assignments with missing quality evidence as HONORED_WITH_EVIDENCE_GAP
+and mandatory independent acceptance; actual hard conflicts/known failures still hold.
+Local verified the exact conditional correction and recorded CONCUR_WITH_R2 on that
+basis. No new reviewer round or second independent review is claimed. Implementation
+and operational proof remain separate from this bounded design agreement.
+
+## Verification / Evidence And Cost Plan
+
+Authoring diagnostics retained: pre-dispatch autorun rejected the unbound design
+because current continuity still names a work order; no old order was rebound or
+re-executed. First reviewer-fast run had 69 PASS / 1 FAIL: roadmap structural
+headings were missing. Local omitted the structural checker's source read before
+that first run; the existing read-ahead rule applies (RULE_EXISTS). Read its exact
+roadmap SECTION_GROUPS, added the six required section families, and retained this
+failure rather than representing the first run as clean. Final static result follows
+from the corrected package; it cannot establish dispatch or independent review.
+
+Historical R0 corrected reviewer-fast result: 70/70 PASS, exit0, with CVF_COMPAT_BASE=HEAD and
+three uncommitted design files. Individual docs governance, encoding/authority,
+checker read-ahead, epistemic and public-disposition guards also passed. Trace guard
+checked zero applicable trace artifacts; it is not actor-authentication evidence.
+The source-read omission and first structural failure above remain disclosed.
+R1 and R2 intake/dispositions and verification are recorded in
+docs/reviews/CVF_MODEL_SELECTION_DESIGN_RECONCILIATION_2026-10-10.md.
+Original reviewer return and exact R0 bytes are preserved under
+docs/reviews/evidence/model-selection-design-review-20261010/ with intake hashes.
+
+| Claim | Required proof | Current evidence | Status |
+|---|---|---|---|
+| Proposed responsibilities map to existing owners | STATIC_SOURCE_VERIFIED | original review, same-reviewer confirmation and Local R1-B1 paragraph check | PROVEN at bounded design/source level only; no runtime enforcement |
+| Strict record joins reject bad identity/units/drift | LOCAL_DETERMINISTIC_EXECUTION | proposed negative matrix only | MISSING |
+| Orchestrator selects and actual worker executes selected configuration | CURRENT_RUNTIME_INVOCATION; REAL_PROVIDER_BOUNDED where provider is in chain | six prior worker outcomes without this decision chain | MISSING |
+| Evidence/control is used in a later selection | actual later decision/action/review; typed application only for parent controls | existing PLL control; no selection-loop receipt | MISSING |
+| Lower accepted-delivery cost | comparable complete measured stage receipts | bills/reviewer cost unknown | MISSING |
+
+Proof owner: docs/reference/system_chain/CVF_SYSTEM_CHAIN_LIVE_PROOF_AND_LEARNING_LOOP_STANDARD.md.
+Provider-governance claims require an admitted real call; release-quality claims
+require python scripts/run_cvf_release_gate_bundle.py --json. No call or release
+gate is warranted by this design. Before any failed/partial live rerun, use the
+existing secret-safe diagnostic standard. Consume prior valid proof; a rerun needs
+a named contradiction, expected information gain and cost reason.
+
+Future admitted tasks capture complete worker/reviewer/rework timing and exposed
+usage/bills. Unknown fields stay null. Record failed/blocked/stopped outcomes and
+configuration confounds. Published API tariffs are dated estimates, not subscription
+invoices. Do not infer superiority from assertion counts or these six acceptances.
+
+## Receiving-Agent Continuation
+
+Design agreement is recorded through the reviewer's conditional R2 concurrence.
+No further review round is needed for R1-B1. The next separately scoped action is
+the operator-sequenced public-safe Web context preparation using agreed R2 and the
+existing export boundaries. Read preserved returns only for a named gap; do not
+repeat valid source/gate evidence without expected information gain. Do not ask the Non coder to
+pick a technical model. Do not open Expense or a model trial. A later implementation
+proposal must specify exact owner paths, fresh baseline/order, tool/transfer feasibility,
+negative proof and learning obligations before asking for any required effect approval.
+Operator sequencing: converge with the current independent reviewer first, then
+prepare one public-safe GitHub/External Agent Read refresh for Web review. Neither
+publication nor Web packet refresh has occurred in this reconciliation.
+
+## Checker Source Read-Ahead Block
+
+| Field | Value |
+|---|---|
+| applicableCheckersRead | governance/compat/check_governed_artifact_checker_read_ahead.py; governance/compat/check_agent_operation_trace.py; governance/compat/check_agent_packet_authority_and_encoding.py; governance/compat/check_epistemic_process_packet.py; governance/compat/check_public_export_disposition.py; governance/compat/check_markdown_structural_completeness.py |
+| literalTokensReviewed | DESIGN_DRAFT; Purpose; Scope / Applies To; Authorization; Non-Goals; Design Control Gate; Work Plan; Acceptance Criteria; Verification; Checker Source Read-Ahead Block; applicableCheckersRead; literalTokensReviewed; gateRunPurpose; claimBoundary; DEFERRED_PRIVATE_ONLY; Expected Result / Prediction; Evidence Comparison; Contradiction; Claim Update |
+| gateRunPurpose | confirmation/evidence of private design shape and current owner references, not first discovery or operational proof |
+| claimBoundary | same-reviewer conditional R2 concurrence recorded; implementation and real-loop proof remain pending |
+
+## Corpus Completeness And Report Integrity
+
+- Corpus verdict: NOT_APPLICABLE_WITH_REASON - selected existing owners and six named observations; no repository-wide scan or external repository absorption.
+
+## Knowledge System Reconciliation
+
+NOT_APPLICABLE_WITH_REASON: prospective owner composition only; no corpus-to-knowledge
+map or complete coverage claim. Named responsibilities and unresolved proof are above.
+
+## Epistemic Process Block
+
+Expected Result / Prediction: a bounded evidence chain can support orchestrator-owned
+choice and observable learning while keeping technical choices away from the Non coder.
+Evidence Comparison: existing owners and preliminary observations support a design;
+no prospective selection-to-later-consumption invocation has occurred.
+Contradiction Or Gap Disposition: runtime admission, identity capture, measured cost
+and learning effectiveness remain unproven and require separate scoped work.
+Claim Update: DESIGN_DRAFT; no accepted implementation, operating selector or savings.
+
+## Dual Agent Surface Matrix
+
+| Consumer class | Owner surface | Authority / risk boundary | Evidence | Adapter boundary | Disposition |
+|---|---|---|---|---|---|
+| INTERNAL_AGENT | B task/dispatch/review owners; PLL for admitted parent controls; A GatewayReceipt deferred | design reconciliation only; no new agent invocation | three R2 outputs and Local response | no new adapter | CONTRACT_ONLY |
+| EXTERNAL_AGENT_CLI_MCP | existing external review/relay owners if later selected | advisory research only; no private implementation or closure | no external dispatch in this batch | deferred; no ingress/runtime change | DEFERRED_WITH_REASON |
+
+
+## External Knowledge Intake Routing
+
+| Field | Value |
+|---|---|
+| Chain map | docs/reference/external_agent_review/CVF_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP.md |
+| Input type | internal governed input (no external intake) |
+| Internal source | docs/reference/CVF_ORCHESTRATOR_MODEL_SELECTION_DOCTRINE_DESIGN_2026-10-10.md |
+| Chain map route | shared-workspace critique -> Local source reconciliation -> R1 confirmation -> bounded R2 correction/concurrence |
+| Matching local-view guard | governance/compat/check_external_knowledge_intake_routing.py |
+| Owner surface | existing role/dispatch/learning owners named in the design |
+| Disposition | internal design revision; a later Web context refresh is separately sequenced by the operator |
+| Claim boundary | no external research, repository absorption, publication or runtime effect occurred |
+
+## External/Local Coordination Binding
+
+```json
+{
+  "contractId": "cvf.external-local-absorption-coordination@1",
+  "invariants": {
+    "externalRole": "ADVISORY_RESEARCH_AND_PATTERN_MAPPING",
+    "externalContext": "PUBLIC_GITHUB_AND_REFRESHED_EXTERNAL_AGENT_READ",
+    "localRole": "SOURCE_RUNTIME_VALUE_AND_PRIVATE_CVF_VERIFICATION",
+    "finalDecisionOwner": "LOCAL",
+    "localCoverageBasis": "SOURCE_DERIVED_NOT_EXTERNAL_SHORTLIST",
+    "externalEvidenceAuthority": "INPUT_NOT_PRIVATE_CVF_PROOF"
+  },
+  "contractSha256": "92df8a7c9492e8c3cedf624cfaa79b8185ca31442ecaf96107fd88dfcb81800c",
+  "parentArtifact": null
+}
+```
+
+## Public Export Disposition
+
+DEFERRED_PRIVATE_ONLY
+
+Reason: private design; no public-sync authorization, remote/commit/path export evidence.
+
+## Historical Agent Operation Trace Block - R0
+
+| Field | Evidence |
+|---|---|
+| Actor | Local orchestrator/design author |
+| Provider or surface | private shared CVF workspace |
+| Session or invocation | cvf-worker-selection-foundation-design-20261010 |
+| Working directory | repository root |
+| Command or tool surface | progressive continuity reads, selected owner/checker reads, apply_patch, static gates |
+| Target paths | doctrine design; contract design; this roadmap |
+| Allowed scope source | operator2026-10-10 continuation request; bootstrap nextAllowedMove DESIGN |
+| Before status evidence | HEAD 807db7d4816878df0b6ea1dd50732e1716ccc615; git status --short empty |
+| After status evidence | three uncommitted DESIGN_DRAFT artifacts; no runtime changes |
+| Diff evidence | git status --short and git diff --check at end of authoring |
+| Approval boundary | existing-authority documentation design only |
+| Claim boundary | authorship and static checks only; no independent acceptance or execution grant |
+| Agent type | INTERNAL_AGENT |
+| Invocation ID | cvf-worker-selection-foundation-design-20261010 |
+| Expected manifest | docs/reference/CVF_ORCHESTRATOR_MODEL_SELECTION_DOCTRINE_DESIGN_2026-10-10.md; docs/reference/CVF_ORCHESTRATOR_MODEL_SELECTION_CONTRACT_DESIGN_2026-10-10.md; docs/roadmaps/CVF_ORCHESTRATOR_MODEL_SELECTION_SYSTEM_CHAIN_ROADMAP_2026-10-10.md |
+| Actual changed set | same three design paths |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: none |
+
+## Delta Execution Claim Boundary Control Block
+
+| Field | Value |
+|---|---|
+| claimScope | Design/source mapping and same-reviewer conditional concurrence only |
+| claimDisposition | CLAIM_REJECTED for runtime enforcement or interception |
+| receiptEvidence | CLAIM_REJECTED_NO_RECEIPT; no execution receipt in this design correction |
+| actionEvidence | CLAIM_REJECTED_NO_ACTION; paragraph/hash checks only |
+| invocationBoundary | No provider or worker invocation occurred |
+| interceptionBoundary | No host or model-switch interception is demonstrated |
+| claimLanguage | Static design concurrence does not establish operational behavior |
+| forbiddenExpansion | No automatic routing, execution control or production readiness claim |
+
+## Claim Boundary
+
+Design package only. Conditional R2 concurrence from the existing reviewer is recorded.
+Current operation trace is in the Local reconciliation review. No commit,
+worker dispatch, provider call, runtime selection, measured quality
+uplift, cost saving, public publication, deployment or production readiness claim.

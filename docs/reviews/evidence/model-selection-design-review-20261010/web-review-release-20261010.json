@@ -1,0 +1,79 @@
+{
+  "schema": "cvf.modelSelectionWebReviewRelease@1",
+  "date": "2026-10-10",
+  "taskId": "CVF-MODEL-SELECTION-WEB-REVIEW-20261010",
+  "role": "EXTERNAL_ADVISORY_REVIEWER",
+  "phase": "ADVISORY_CRITIQUE",
+  "finalPrivateDecisionOwner": "LOCAL_CVF",
+  "privateR2Evidence": {
+    "path": "docs/reviews/evidence/model-selection-design-review-20261010/r2-evidence.json",
+    "sha256": "e52f16adff8c5b6409dec5f134982a7b58f623936044d044f418cb2a8d207ff9",
+    "semanticDesignTargets": [
+      {
+        "path": "docs/reference/CVF_ORCHESTRATOR_MODEL_SELECTION_DOCTRINE_DESIGN_2026-10-10.md",
+        "sha256": "10f93ae2c7716e9e96529f6886996918acd6acb4e630b47719a0543d68422ff9",
+        "bytes": 16421
+      },
+      {
+        "path": "docs/reference/CVF_ORCHESTRATOR_MODEL_SELECTION_CONTRACT_DESIGN_2026-10-10.md",
+        "sha256": "dcdc1a0e87348b5300efecb0f96490140d965957fa0b6743761f813be3a5faa0",
+        "bytes": 18521
+      },
+      {
+        "path": "docs/roadmaps/CVF_ORCHESTRATOR_MODEL_SELECTION_SYSTEM_CHAIN_ROADMAP_2026-10-10.md",
+        "sha256": "bced7606fd3fa7772255b16a7cc022b8b01fd7ee8fb4982d1327782b369270e9",
+        "bytes": 20291
+      }
+    ],
+    "preCommitFormatCorrection": {
+      "reason": "Pre-commit corpus/knowledge-map N/A lexical gate correction only; selection semantics and conditional reviewer concurrence unchanged",
+      "priorR2Manifest": {
+        "path": "docs/reviews/evidence/model-selection-design-review-20261010/r2-evidence-precommit.json",
+        "sha256": "b39c1a84ba1723cee17e11688525fbc8ad6a6e3277a6ba5a10be036858ff811f",
+        "bytes": 7775
+      },
+      "priorR2DocumentSnapshots": [
+        {
+          "path": "docs/reviews/evidence/model-selection-design-review-20261010/roadmap-r2-precommit.txt",
+          "sha256": "fd276a3d6ecdf2497b9340d4c1bf023ecab2218f531fda463dabf6b96a0e0a6b",
+          "bytes": 20367
+        },
+        {
+          "path": "docs/reviews/evidence/model-selection-design-review-20261010/local-reconciliation-r2-precommit.txt",
+          "sha256": "f0c011e90d799a6c03c57a95c2973f645fd5caa255034f932fbaa96527bccd3c",
+          "bytes": 24977
+        }
+      ],
+      "targetChangeScope": "Only non-applicable knowledge-map/source-intake declaration wording in roadmap and Local reconciliation",
+      "targetedGates": "PASS: corpus completeness, corpus-to-knowledge-map, absorption blind-spot control presence"
+    }
+  },
+  "publicExportDisposition": "EXPORTED_DERIVED_PROJECTION_ONLY",
+  "publicRepository": "https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git",
+  "publicCommit": "e9ddcbcdcac2a9df520f5eb0761dbdb609b9deba",
+  "publicPath": "docs/guides/CVF_ORCHESTRATOR_MODEL_SELECTION_WEB_REVIEW_CONTEXT_2026-10-10.md",
+  "publicFileSha256": "3ef2ace8770d66dbee5ec9850a4692fa724eaa36043530049aa60181192d881d",
+  "serverPreflight": {
+    "runId": 38044411773,
+    "result": "SUCCESS",
+    "url": "https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF/actions/runs/38044411773"
+  },
+  "externalFolder": {
+    "path": "D:\\UNG DUNG AI\\EXTERNAL_AGENT_READ\\CURRENT",
+    "snapshotReceiptSha256": "19d7d35ded454d7756e98a924dfe299b6613c9c58ecc42b749b9769b73e3c9e2",
+    "relayManifestSha256": "3bd51ae58b8f97ce65481ede34bc01c96979e4620d1c86bb4e91464b2f02b966",
+    "startHereSha256": "3dc9e3799f1db4af209d3641f667dce019879d1667c29c8a2d4e31d5a0ce624f",
+    "zipSha256": "efed0d1c64b48c53785b0781530469b7dc4714f7852cdab6090b3a0c463f050d",
+    "manifestFiles": 17
+  },
+  "verification": {
+    "publicMainMatchesLocalCommit": true,
+    "publicProjectionMatchesPrivateAuthoredProjection": true,
+    "privateR2DesignPinsMatch": true,
+    "externalManifestAndZip": "VERIFIED",
+    "webAgentRead": "NOT_OBSERVED",
+    "webReturn": "PENDING_OPERATOR_RELAY",
+    "providerCalls": 0
+  },
+  "claimBoundary": "Only derived projection published. Private drafts/review/ledger not exported. Web advisory review and Local reconciliation pending."
+}
