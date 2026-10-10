@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_TEXT_LEGIBILITY_2026-10-10.md",
     "workOrderSha256": "198d1b64bdf3fd895e269fc9a350ea549cb647e23fbeed337eff48f33d202c21"
   },
-  "currentAuthoritySyncReason": "Sonnet legibility accepted bounded; expense parked by operator; model-selection foundation design next. Worker originals retained, no router or provider effect.",
+  "currentAuthoritySyncReason": "Legibility accepted bounded at 4309e609d72b34f1692d655c3a46d7e446a7c7bf; exact18 content proof PASS. Expense PARKED_BY_OPERATOR; model-selection foundation DESIGN next; no router/provider effect.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
