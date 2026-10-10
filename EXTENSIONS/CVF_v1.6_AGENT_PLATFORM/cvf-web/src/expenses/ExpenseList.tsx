@@ -102,7 +102,8 @@ export function ExpenseList({ expenses }: Readonly<{ expenses: ReadonlyArray<Exp
                 value={month}
                 onChange={(event) => setMonth(event.target.value)}
                 style={{
-                    height: 36,
+                    height: 44,
+                    boxSizing: 'border-box',
                     borderRadius: 9,
                     padding: '0 10px',
                     background: 'var(--cvf-bg-page)',

@@ -1,0 +1,187 @@
+{
+  "schemaVersion": "cvf.expenseTouchWorkerEvidence.v1",
+  "batchId": "CVF-NCR-EXPENSE-TOUCH-20261010",
+  "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_TOUCH_TARGET_2026-10-10.md",
+  "status": "COMPLETE_PENDING_REVIEW",
+  "commitMode": "WORKER_MUST_NOT_COMMIT",
+  "dispatchBaseHead": "638aae00c3615aff772ef0702e943fbc51ea3a9e",
+  "executionBaseHead": "a83a87e5437fbdf4891347af0a6f32c7def82be4",
+  "executionBaseNote": "Clean HEAD captured at worker start (git status empty). The dispatch base 638aae00c precedes it in history.",
+  "timer": {
+    "budgetMinutes": 90,
+    "captureOrder": "UTC and monotonic start captured in one separate awaited command before any CVF file read",
+    "startUtc": "2026-10-10T06:23:24.341Z",
+    "monotonicStartTicks": 5803668426790,
+    "monotonicFrequencyHz": 10000000,
+    "startStore": ".cvf/runtime/cvf-expense-touch-worker-20261010/timer.json",
+    "startDeviation": "The start values were captured before any CVF file read, but timer.json was written after the first reads of the work order. The file records persistedAfterCapture: true. Session context (CLAUDE.md and memory index) was loaded before the timer; the worker read no CVF file before the timer.",
+    "endStore": ".cvf/runtime/cvf-expense-touch-worker-20261010/final-confirmation.json",
+    "endRecordedAfter": "separate frozen full bound confirmation and raw hash verification; values are not written into this tracked file"
+  },
+  "pinCheck": {
+    "result": "PASS",
+    "ExpenseListPreimageSha256": "801f305238f2512db663fee7ada837a7bf53a84036ea6efcd305d29985339f19",
+    "ExpenseListPreimageMatchedAtStart": true,
+    "ExpenseListPostChangeSha256": "628862816a8dd77c78fab1dc1e2c94d55e3f29e78b8068878d22a236fd5f85b7",
+    "ExpenseListTestSha256": "051eda76113aed59aa59ffb4a57739468f50944dbfdfb77d905dba9ba983da8b",
+    "ExpenseListTestUnchanged": true,
+    "outputsAbsentBeforeWork": true,
+    "toolMetadataInstalledVersions": {"vite": "8.0.16", "react": "19.2.3", "react-dom": "19.2.3", "playwright": "1.58.2", "vitest": "4.1.8"},
+    "noInstallRun": true
+  },
+  "preImplementationGate": {
+    "command": "python -B governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base a83a87e5437fbdf4891347af0a6f32c7def82be4 --head HEAD --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_TOUCH_TARGET_2026-10-10.md --receipt-dir .cvf/runtime/cvf-expense-touch-worker-20261010/gates",
+    "exit": 0,
+    "result": "COMPLIANT",
+    "receipt": ".cvf/runtime/cvf-expense-touch-worker-20261010/gates/pre-implementation.json"
+  },
+  "componentAndUnit": {
+    "sourcePath": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/expenses/ExpenseList.tsx",
+    "change": "month input style: height 36 -> 44 and boxSizing 'border-box' added; no other line changed",
+    "gitDiffStat": "1 file changed, 2 insertions(+), 1 deletion(-)",
+    "physicalLines": 142,
+    "lineCap": 250,
+    "unitCommand": "node node_modules/vitest/vitest.mjs run src/expenses/ExpenseList.test.tsx --reporter=verbose",
+    "unitCwd": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\EXTENSIONS\\CVF_v1.6_AGENT_PLATFORM\\cvf-web (uppercase drive letter, as in the prior passing run)",
+    "unitExit": 0,
+    "testFiles": 1,
+    "testsTotal": 12,
+    "testsPassed": 12,
+    "testsFailed": 0,
+    "unitDurationSeconds": 55.83,
+    "unitTestFileModified": false,
+    "unitResult": "PASS",
+    "draftFailures": []
+  },
+  "browserTestResults": {
+    "command": "node scripts/test_cvf_expense_touch_target_browser.cjs",
+    "syntaxCheck": "node --check scripts/test_cvf_expense_touch_target_browser.cjs: exit 0",
+    "exit": 0,
+    "status": "PASS",
+    "browserVersion": "145.0.7632.6",
+    "browserBinary": "installed Playwright Chromium; file:// pages; no HTTP listener; no install",
+    "reportFile": ".cvf/runtime/cvf-expense-touch-worker-20261010/browser-results.json",
+    "sourceSha256": {
+      "start": "628862816a8dd77c78fab1dc1e2c94d55e3f29e78b8068878d22a236fd5f85b7",
+      "afterBuild": "628862816a8dd77c78fab1dc1e2c94d55e3f29e78b8068878d22a236fd5f85b7",
+      "end": "628862816a8dd77c78fab1dc1e2c94d55e3f29e78b8068878d22a236fd5f85b7"
+    },
+    "testRecords": [
+      {"label": "baseline", "profile": "dark-desktop-1280x800", "status": "PASS", "assertions": 34},
+      {"label": "baseline", "profile": "dark-mobile-390x844", "status": "PASS", "assertions": 38},
+      {"label": "baseline", "profile": "light-mobile-390x844", "status": "PASS", "assertions": 35},
+      {"label": "baseline", "profile": "light-alt-mobile-390x844", "status": "PASS", "assertions": 35},
+      {"label": "mutant-36px", "profile": "dark-mobile-390x844", "status": "FAIL (expected)", "failureKind": "ASSERTION", "assertions": 1},
+      {"label": "restored", "profile": "dark-mobile-390x844", "status": "PASS", "assertions": 2}
+    ],
+    "totalAssertions": 150,
+    "externalRequests": 0,
+    "pageErrors": 0,
+    "consoleErrorsCountedAsPageErrors": true,
+    "profileMeasurements": [
+      {"profile": "dark-desktop-1280x800", "colorScheme": "dark", "accent": "#5b5cf6", "inputOuterHeightPx": 44, "inputOuterWidthPx": 161.328125, "focusOutline": "2px solid rgb(91, 92, 246)", "rowTextContrastMin": 15.58, "noticeContrast": 7.79},
+      {"profile": "dark-mobile-390x844", "colorScheme": "dark", "accent": "#5b5cf6", "inputOuterHeightPx": 44, "inputOuterWidthPx": 161.328125, "focusOutline": "2px solid rgb(91, 92, 246)", "rowTextContrastMin": 15.58, "noticeContrast": 7.79},
+      {"profile": "light-mobile-390x844", "colorScheme": "light", "accent": "#5b5cf6", "inputOuterHeightPx": 44, "inputOuterWidthPx": 161.328125, "focusOutline": "2px solid rgb(91, 92, 246)", "rowTextContrastMin": 17.85, "noticeContrast": 7.09},
+      {"profile": "light-alt-mobile-390x844", "colorScheme": "light", "accent": "#0f766e", "inputOuterHeightPx": 44, "inputOuterWidthPx": 161.328125, "focusOutline": "2px solid rgb(15, 118, 110)", "rowTextContrastMin": 17.85, "noticeContrast": 7.09}
+    ],
+    "ordinaryFlow": {
+      "profile": "dark-mobile-390x844",
+      "clearIds": ["TT-001", "TT-002", "TT-003", "TT-004"],
+      "marchIds": ["TT-003", "TT-004"],
+      "aprilEmptyStateAndNoTable": true,
+      "invalidRowAbsent": true
+    },
+    "mutants": [
+      {
+        "id": "mutant-36px",
+        "change": "height 44 -> 36 in an ignored copy under .cvf/runtime; boxSizing kept",
+        "sourceSha256": "59ee490be5a92dbc27faa41cadb52823131ab3fe9968f52a3fc0c0980b3e6b31",
+        "collected": 1,
+        "completed": 1,
+        "killed": true,
+        "failureKind": "ASSERTION",
+        "firstFailure": "touch target<44: geometry input outer height 36"
+      }
+    ],
+    "mutantCounts": {"collected": 1, "completed": 1, "killed": 1, "harnessInvalidRuns": 0},
+    "existingDateCalendarMutantsRerun": false,
+    "existingDateCalendarMutantsNote": "Consumed from accepted evidence (cvf-expense-browser-worker-2026-10-10.json); not rerun.",
+    "restoration": {"restoredPass": true, "trackedSourceSha256AfterRun": "628862816a8dd77c78fab1dc1e2c94d55e3f29e78b8068878d22a236fd5f85b7"},
+    "screenshots": [
+      {"profile": "dark-mobile-390x844", "path": ".cvf/runtime/cvf-expense-touch-worker-20261010/march-dark-mobile-390x844.png", "bytes": 15927, "sha256": "738f2f5fe168bc439204c80263573f4a339f101203cfba7e0f927f74f9844065", "capBytes": 3145728},
+      {"profile": "light-mobile-390x844", "path": ".cvf/runtime/cvf-expense-touch-worker-20261010/march-light-mobile-390x844.png", "bytes": 15807, "sha256": "f5658a78d48dc351ec8399b144b2ff26a27149659ffd3af0496d6982a5634ca2", "capBytes": 3145728},
+      {"profile": "light-alt-mobile-390x844", "path": ".cvf/runtime/cvf-expense-touch-worker-20261010/march-light-alt-mobile-390x844.png", "bytes": 15831, "sha256": "e56b90e57be3fcce2d400a3d01f8dfa496383841dcfc046b67f3297f2b174895", "capBytes": 3145728}
+    ],
+    "runsOfTheProof": {
+      "count": 5,
+      "allExit": 0,
+      "note": "Five runs of the same command with the same tracked component bytes. Between runs the proof report gained measured geometry and focus fields, the page template and declarations were compacted for the line cap. Each change is a report or harness change; no assertion threshold changed. Screenshot SHA-256 values were the same in every run that printed them."
+    },
+    "draftRepairs": [
+      "Report-only: measured input geometry and focus outline fields were added to the proof report after run 1 (run 1 had PASS with only pass/fail records).",
+      "Line-cap draft failure: the first script was 316 physical lines against the 300-line cap (a Measure-Object count of 305 had undercounted blank lines). Grouped compaction of the page template and declarations brought it to 297 physical lines. Assertions and oracle rows are unchanged."
+    ]
+  },
+  "guideVerification": {
+    "file": "docs/guides/CVF_EXPENSE_TOUCH_TARGET_README_2026-10-10.md",
+    "physicalLines": 75,
+    "lineCap": 100,
+    "claimsCheckedAgainstRuns": [
+      "command and syntax check match the executed script",
+      "four profiles and their viewports match the browser report",
+      "the historical builder refuses changed source: node scripts/cvf_expense_fixture_preview.cjs --output <runtime sentinel> exited 1 with SOURCE_PIN_DRIFT and wrote no file (verified by the worker)",
+      "limits: synthetic rows, explicit light and alternate fixtures, contrast is targeted, Chromium only"
+    ],
+    "result": "PASS_BY_READ",
+    "draftFailures": []
+  },
+  "workerReturnGate": {
+    "command": "python governance/compat/run_worker_return_fast_gate.py --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_TOUCH_TARGET_2026-10-10.md",
+    "fullBoundRunRecord": "Command Evidence in the worker return; logs in the ignored runtime gates folder",
+    "frozenConfirmationRecord": ".cvf/runtime/cvf-expense-touch-worker-20261010/final-confirmation.json",
+    "frozenFileSet": [
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/expenses/ExpenseList.tsx",
+      "scripts/test_cvf_expense_touch_target_browser.cjs",
+      "docs/guides/CVF_EXPENSE_TOUCH_TARGET_README_2026-10-10.md",
+      "docs/reviews/evidence/cvf-expense-touch-worker-2026-10-10.json",
+      "docs/reviews/CVF_NCR_EXPENSE_TOUCH_TARGET_WORKER_RETURN_2026-10-10.md"
+    ],
+    "rawHashesRecordedIn": ".cvf/runtime/cvf-expense-touch-worker-20261010/final-confirmation.json"
+  },
+  "outputCaps": {
+    "componentLines": {"value": 142, "cap": 250},
+    "browserScriptLines": {"value": 297, "cap": 300},
+    "guideLines": {"value": 75, "cap": 100},
+    "evidenceLines": {"cap": 350},
+    "returnLines": {"cap": 450},
+    "runtimeTotalBytes": 1647239,
+    "runtimeTotalCapBytes": 31457280,
+    "htmlCapBytes": 2097152,
+    "screenshotCapBytes": 3145728
+  },
+  "invocationCounts": {
+    "internalAgentInvocationCount": 0,
+    "externalAgentInvocationCount": 0,
+    "providerCallCount": 0,
+    "subagentCount": 0
+  },
+  "usage": {
+    "modelIdentity": "Claude Haiku 5.5, operator-reported; not normative",
+    "tokens": null,
+    "tokensReason": "NOT_AVAILABLE_WITH_REASON: no token meter is exposed to this worker",
+    "billAmount": null,
+    "billCurrency": null,
+    "billReason": "NOT_AVAILABLE_WITH_REASON: no bill is exposed to this worker; no effort-based price is inferred"
+  },
+  "gitUnion": {
+    "basis": "git status --short at evidence write time; runtime outputs are ignored by .gitignore",
+    "paths": [
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/expenses/ExpenseList.tsx",
+      "scripts/test_cvf_expense_touch_target_browser.cjs",
+      "docs/guides/CVF_EXPENSE_TOUCH_TARGET_README_2026-10-10.md",
+      "docs/reviews/evidence/cvf-expense-touch-worker-2026-10-10.json",
+      "docs/reviews/CVF_NCR_EXPENSE_TOUCH_TARGET_WORKER_RETURN_2026-10-10.md"
+    ]
+  },
+  "claimBoundary": "Private synthetic component touch correction and controlled fixture theme checks only. Not an application route, not real data, not a production light or accent palette, not complete WCAG, not media, public, deploy or P11. The accepted unit suite was rerun because the component changed; the accepted calendar and date mutants were consumed from accepted evidence."
+}

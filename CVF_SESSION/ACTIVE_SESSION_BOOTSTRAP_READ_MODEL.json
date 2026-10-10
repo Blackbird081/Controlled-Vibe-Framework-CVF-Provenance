@@ -2,7 +2,7 @@
   "schemaVersion": "0.1.0",
   "currentMode": "cvf_ncr_p10_closed_p11_parked",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=CVF-CORE; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-EXPENSE-TOUCH-20261010. Active work order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_TOUCH_TARGET_2026-10-10.md READY; manual INTERNAL_AGENT worker only after clean committed bound release PASS. One existing input sizing correction, one new direct-source browser proof and three metadata outputs; four token profiles, one sizing mutant, exact read-only unit regression; one90-minute total timer before reads in sequential awaited command and final after frozen confirmation. Local orchestrator/reviewer owns acceptance; third Haiku review triggers preliminary model report, identities operator-reported and bill unknown. Prior technical acceptances/process gaps retained. Source R2/native/TTS/audio/MP4/S2-S9/provider/public/deploy/P11 parked; no push or automatic source successor. LHW24 retained.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-CORE; NEXT_ACTION_CLASS=REVIEW; BATCH_ID=CVF-NCR-EXPENSE-TOUCH-20261010. Touch target accepted bounded; original five files, own32044/contrast/36 negative PASS; historical timer/read and320 long-label limits retained. Consumed work order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_TOUCH_TARGET_2026-10-10.md; no redispatch. Three Haiku reviews plus Sonnet reference in governed ledger; preliminary report docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md ready, model labels operator-reported and bill unknown. Local may select next useful bounded roadmap task, no automatic router or benchmark-only repeat. SourceR2/native/TTS/audio/MP4/S2-S9/provider/public/deploy/P11 parked; no push/automatic successor, upstream debt and LHW24 retained.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
@@ -11,7 +11,7 @@
     "baselinePath": "docs/baselines/CVF_GC018_NCR_EXPENSE_TOUCH_TARGET_2026-10-10.md",
     "baselineSha256": "9ae3b2d32c6fc8ac7af9c11a536460873cf4adf8c9e0e1f60d75020889915575",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_TOUCH_TARGET_2026-10-10.md",
-    "workOrderSha256": "6073cf4b078de8557bcf64dc8d266d1661811c2e9dd56281ce760eec44812365"
+    "workOrderSha256": "29e2f26950a474cb6e90718ca9d66dffc8e9d453f9b4e760bbbe5d9ad22909c0"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

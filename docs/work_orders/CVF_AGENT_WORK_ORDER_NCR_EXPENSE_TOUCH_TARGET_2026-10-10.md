@@ -1,7 +1,7 @@
 # CVF Agent Work Order - NCR Expense Touch Target
 Memory class: governed-worker-dispatch
 docType: work_order
-Status: READY
+Status: CLOSED_PASS_BOUNDED
 Date: 2026-10-10
 Batch ID: CVF-NCR-EXPENSE-TOUCH-20261010
 Dispatch base head: 638aae00c3615aff772ef0702e943fbc51ea3a9e
@@ -585,3 +585,32 @@ Owner: DESIGN.md mobile44px and readable theme requirements; accepted browser co
 ```
 
 Existing prior application retained; this plan is not proof of application.
+
+
+## Local Closure Receipt
+
+CLOSED_PASS_BOUNDED: original five worker files accepted; own320 target44/contrast and36 discrimination PASS; late timer persistence/required-read deviations retained, no historical procedural certification.
+Completion: docs/reviews/CVF_NCR_EXPENSE_TOUCH_TARGET_COMPLETION_2026-10-10.md; docs/reviews/evidence/cvf-expense-touch-local-review-2026-10-10.json.
+Third Haiku report: docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md. No redispatch.
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| COMPONENT | exact44 border-box style diff, unit regression | raw pins MATCH; only two style lines; unit12/12 consumed | PASS |
+| BROWSER | four profiles, source36 mutant and focused proof | original profiles PASS, assertion kill/restoration; Local32044/contrast/36 discrimination PASS | PASS |
+| GUIDE | usage/source-drift and bounded themes | guide inspected; historic builder refused changed source; explicit fixture only | PASS |
+| RETURN | frozen bound confirmation, timing and read history | A3/B COMPLIANT, five pins MATCH; persistence and read deviations retained, not full procedural certification | PASS |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_TOUCH_TARGET_2026-10-10.md | CLOSED_PASS_BOUNDED; no redispatch | PASS |
+| Completion or reviewer artifact | docs/reviews/CVF_NCR_EXPENSE_TOUCH_TARGET_COMPLETION_2026-10-10.md | five original bytes accepted, limitations retained | PASS |
+| Roadmap state | existing NCR/video owners | no automatic successor or production admission | N/A with reason: standalone work order |
+| Registry JSON | docs/reviews/evidence/cvf-expense-touch-local-review-2026-10-10.json; docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json | frozen pins, executable own probe, four observation rows | PASS |
+| Registry Markdown | docs/reviews/CVF_NCR_EXPENSE_TOUCH_TARGET_COMPLETION_2026-10-10.md; docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md | bounded acceptance and provisional model report | PASS |
+| External evidence digest | docs/reviews/evidence/cvf-expense-touch-local-review-2026-10-10.json | internal shared-workspace result | N/A with reason: no external research |
+| System loop interlock | sourceR2 and C1 STOP retained | no retry/reset/effect | PASS |
+| Session continuity | AGENT_HANDOFF_V63_2026-09-18.md; generated bootstrap/state | closed raw pin, actual material SHA in later sync | PASS |

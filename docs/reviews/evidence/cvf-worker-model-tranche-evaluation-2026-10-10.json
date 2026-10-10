@@ -5,7 +5,7 @@
   "decisionOwner": "LOCAL_REVIEWER",
   "purpose": "Longitudinal worker evidence for model selection by role and task family in a future multi-agent use case. No agent invocation or automatic routing.",
   "identityBasis": "ALL_MODEL_LABELS_OPERATOR_REPORTED_NOT_INDEPENDENTLY_VERIFIED",
-  "sourceHead": "57716929c8e0552a2fb1f774562c55924cce315d",
+  "sourceHead": "a83a87e5437fbdf4891347af0a6f32c7def82be4",
   "rows": [
     {
       "trancheId": "CVF-NCR-OFFLINE-PREVIEW-20261009",
@@ -105,6 +105,49 @@
         "Input outer height38 below44, frozen accepted component",
         "Default dark theme only"
       ]
+    },
+    {
+      "trancheId": "CVF-NCR-EXPENSE-TOUCH-20261010",
+      "taskFamily": "EXISTING_COMPONENT_TOUCH_CORRECTION_AND_FOUR_BROWSER_FIXTURES",
+      "implementationPaths": 2,
+      "deliveredPaths": 5,
+      "model": "Haiku 5.5",
+      "effort": "Max",
+      "role": "INTERNAL_AGENT_WORKER",
+      "status": "CLOSED_PASS_BOUNDED",
+      "evidence": "docs/reviews/evidence/cvf-expense-touch-local-review-2026-10-10.json",
+      "evidenceSha256": "ea1f27d0649da4f1e31d0584beb92891279dbc40064a064931b9f8d5f71f0f99",
+      "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_TOUCH_TARGET_2026-10-10.md",
+      "technicalOutput": "ACCEPTED_BOUNDED_TOUCH_CORRECTION_AND_FOUR_FIXTURE_PROFILES",
+      "procedure": "DEVIATIONS_DISCLOSED_NOT_FULL_PROCEDURAL_COMPLIANCE",
+      "firstReturnGateClean": false,
+      "workerSelfRepairRounds": null,
+      "workerImplementationRepairGroups": 1,
+      "workerReturnMetadataRepairGroups": 1,
+      "workerReturnDraftGateAttempts": 3,
+      "failedReturnDraftGateAttempts": 1,
+      "reviewerRequestedWorkerRepairTurns": 0,
+      "reviewerProductCodeRepairs": 0,
+      "elapsed": {
+        "minutes": 13.62,
+        "basis": "CAPTURED_START_TO_FINAL_CONFIRMATION_REPORTED_START_PROVENANCE_LATE_PERSISTENCE",
+        "fullDeliveryMinutes": null
+      },
+      "bill": {
+        "amount": null,
+        "currency": null,
+        "tokens": null,
+        "reason": "NO_EXPOSED_BILL_OR_TOKEN_METER"
+      },
+      "processFindings": [
+        "Start capture reported before reads; timer persisted after first reads, contrary to admitted procedure",
+        "Required S05-S06 and acceptance-ledger/closeability source reads omitted"
+      ],
+      "independentProof": "320px actual target44, contrast>=4.5, DOM36 threshold rejection, restored44",
+      "additionalLimitations": [
+        "Long-label row exceeds inner section box at320; no page horizontal overflow",
+        "Light/accent are controlled fixtures, not production theme proof"
+      ]
     }
   ],
   "rubric": [
@@ -177,7 +220,7 @@
   ],
   "reporting": {
     "afterEachTranche": "Append accepted, rejected and blocked outcomes; retain corrections/history and raw evidence links. Update provisional task-family routing with confidence and limitations.",
-    "firstConsolidatedReport": "After three Local-reviewed Haiku tranches: preliminary report, not statistical sufficiency. Two reviewed now; do not create another task solely to manufacture a benchmark.",
+    "firstConsolidatedReport": "docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md",
     "earlyReportTrigger": "Material quality regression, authority breach or measured cost reversal: disclose promptly without waiting for three samples.",
     "reportSections": [
       "evidence ledger",
@@ -188,7 +231,7 @@
       "role/task-family selection matrix",
       "next useful comparison task"
     ],
-    "reviewedHaikuCount": 2
+    "reviewedHaikuCount": 3
   },
   "provisionalRoleRouting": [
     {
@@ -203,7 +246,7 @@
       "taskFamily": "BROWSER_PACKAGING_OR_MULTIFILE_INTEGRATION",
       "candidate": "Haiku 5.5 / Max",
       "disposition": "PROVISIONAL_BOUNDED",
-      "basis": "One accepted browser packaging tranche, independent alternate fixture and drift sentinel PASS; zero Local product repairs; process limitations retained."
+      "basis": "Two accepted browser-family tranches including focused existing component44 correction/four controlled profiles; independent Local probes; zero Local product repairs; procedural limits retained."
     },
     {
       "role": "ORCHESTRATOR_OR_REVIEWER",
@@ -222,10 +265,10 @@
   "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
   "laneProtection": "Reviewer-owned governed evidence promotion authorized by operator longitudinal tracking request. No worker file edit, new dispatch, provider effect or public export.",
   "observations": {
-    "technical": "Two Haiku tranches accepted in different finite UI/test families; no Local product repairs. Prior larger Sonnet package is contextual reference, not matched head-to-head benchmark.",
-    "process": "Timer-before-read weakness repeated in both Haiku samples; browser adds missing monotonic/end-order and required-read limitations. First return gate not clean in all three samples. Worker honest disclosures count positively but do not cure deviations.",
-    "reportStatus": "PRELIMINARY_OBSERVATIONS_ONLY_TWO_HAIKU_SAMPLES",
+    "technical": "Three Haiku finite UI/unit/browser tranches accepted bounded, zero Local product repairs/worker redispatches. One larger Sonnet accepted package is contextual reference, not matched comparison.",
+    "process": "All four samples first return gate not clean. Haiku timer weakness recurs with improved monotonic/end recording in third but persistence late; required source-read gaps in browser/touch remain. Honest disclosures do not cure deviations.",
+    "reportStatus": "PRELIMINARY_THREE_HAIKU_PLUS_ONE_SONNET_REFERENCE",
     "measuredBillComparison": null,
-    "nextControl": "Use existing mandatory first-action/read/frozen-confirmation rules at next dispatch; seek actual billing receipts if exposed. No new checker or automatic routing implementation in this closure."
+    "nextControl": "Use existing read/timer/frozen-return rules; next genuine roadmap task may supply useful comparable evidence. No benchmark-only repeat or automatic routing implementation."
   }
 }

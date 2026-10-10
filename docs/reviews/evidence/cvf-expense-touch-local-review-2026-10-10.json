@@ -1,0 +1,489 @@
+{
+  "schemaVersion": "cvf.expenseTouchLocalReview.v1",
+  "status": "CLOSED_PASS_BOUNDED",
+  "batchId": "CVF-NCR-EXPENSE-TOUCH-20261010",
+  "closureBaseHead": "a83a87e5437fbdf4891347af0a6f32c7def82be4",
+  "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_TOUCH_TARGET_2026-10-10.md",
+  "workerOriginalPins": {
+    "docs/reviews/CVF_NCR_EXPENSE_TOUCH_TARGET_WORKER_RETURN_2026-10-10.md": "66bad2157aad0efec2ed77f6e0312ec0632990399cf2d7c344c7418e55f2ff2f",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/expenses/ExpenseList.tsx": "628862816a8dd77c78fab1dc1e2c94d55e3f29e78b8068878d22a236fd5f85b7",
+    "docs/reviews/evidence/cvf-expense-touch-worker-2026-10-10.json": "bd994ee40ce4ec5d49b5538c98c2e3aa254648b05f86da7a3c2b1faf3c28b50a",
+    "docs/guides/CVF_EXPENSE_TOUCH_TARGET_README_2026-10-10.md": "00afbb832dc840b55a0ba47a73c1de4b4ad97ca8f7ac2766ddbd51c024df6f12",
+    "scripts/test_cvf_expense_touch_target_browser.cjs": "39e5b62f716525388404980a052987212046a4f7f130aad5f64968c30dff07c0"
+  },
+  "frozenInputPins": [
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/expenses/ExpenseList.tsx",
+      "rawSha256": "801f305238f2512db663fee7ada837a7bf53a84036ea6efcd305d29985339f19",
+      "role": "ADMITTED_MUTABLE_PREIMAGE",
+      "observedSha256": "628862816a8dd77c78fab1dc1e2c94d55e3f29e78b8068878d22a236fd5f85b7",
+      "disposition": "ADMITTED_STYLE_DIFF"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/expenses/ExpenseList.test.tsx",
+      "rawSha256": "051eda76113aed59aa59ffb4a57739468f50944dbfdfb77d905dba9ba983da8b",
+      "role": "READ_ONLY_GOVERNED_INPUT",
+      "observedSha256": "051eda76113aed59aa59ffb4a57739468f50944dbfdfb77d905dba9ba983da8b",
+      "disposition": "MATCH"
+    },
+    {
+      "path": "DESIGN.md",
+      "rawSha256": "15c1b5061bd2e1f763638beb83a84d06eb8ccbc470747c01f236033a834a987e",
+      "role": "READ_ONLY_GOVERNED_INPUT",
+      "observedSha256": "15c1b5061bd2e1f763638beb83a84d06eb8ccbc470747c01f236033a834a987e",
+      "disposition": "MATCH"
+    },
+    {
+      "path": "docs/reference/CVF_NCR_GENERAL_VIDEO_DESIGN_2026-10-02.md",
+      "rawSha256": "3ce5e2363c3e29997fcbf42cb4cec59af7447cca38409d4d970e8aa71e5777e0",
+      "role": "READ_ONLY_GOVERNED_INPUT",
+      "observedSha256": "3ce5e2363c3e29997fcbf42cb4cec59af7447cca38409d4d970e8aa71e5777e0",
+      "disposition": "MATCH"
+    },
+    {
+      "path": "docs/reviews/CVF_NCR_EXPENSE_BROWSER_PREVIEW_COMPLETION_2026-10-10.md",
+      "rawSha256": "aeb56179d887f4a2027b9e2168c0bd8a284f46be85a861a134cdc217d6a7671f",
+      "role": "READ_ONLY_GOVERNED_INPUT",
+      "observedSha256": "aeb56179d887f4a2027b9e2168c0bd8a284f46be85a861a134cdc217d6a7671f",
+      "disposition": "MATCH"
+    },
+    {
+      "path": "docs/reviews/evidence/cvf-expense-browser-local-review-2026-10-10.json",
+      "rawSha256": "7f3e32f655817ae653c91d2e9173c1560418807a51b653d89fcb97673eb24d72",
+      "role": "READ_ONLY_GOVERNED_INPUT",
+      "observedSha256": "7f3e32f655817ae653c91d2e9173c1560418807a51b653d89fcb97673eb24d72",
+      "disposition": "MATCH"
+    },
+    {
+      "path": "scripts/cvf_expense_fixture_preview.cjs",
+      "rawSha256": "ff7ce594c0af6d8d853b00b72ec71975a73750a1f0b52f512a86a01ecac8a166",
+      "role": "READ_ONLY_GOVERNED_INPUT",
+      "observedSha256": "ff7ce594c0af6d8d853b00b72ec71975a73750a1f0b52f512a86a01ecac8a166",
+      "disposition": "MATCH"
+    },
+    {
+      "path": "scripts/test_cvf_expense_fixture_preview_browser.cjs",
+      "rawSha256": "32d802b027a4eef4ef0c8d10ebaa1f9fd9520a6ba023be8c9fd35acfd4001ac6",
+      "role": "READ_ONLY_GOVERNED_INPUT",
+      "observedSha256": "32d802b027a4eef4ef0c8d10ebaa1f9fd9520a6ba023be8c9fd35acfd4001ac6",
+      "disposition": "MATCH"
+    },
+    {
+      "path": "docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json",
+      "rawSha256": "71cafa3657e7039e3c27e6483ca4b3a0405acb0089384aaeee35e5c5b8de5975",
+      "role": "READ_ONLY_GOVERNED_INPUT",
+      "observedSha256": "71cafa3657e7039e3c27e6483ca4b3a0405acb0089384aaeee35e5c5b8de5975",
+      "disposition": "MATCH"
+    },
+    {
+      "path": "docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md",
+      "rawSha256": "1609cc9d955bc88b2e09179331d7828406114d98b23c81cfb3f2992afa3920f6",
+      "role": "READ_ONLY_GOVERNED_INPUT",
+      "observedSha256": "1609cc9d955bc88b2e09179331d7828406114d98b23c81cfb3f2992afa3920f6",
+      "disposition": "MATCH"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/package.json",
+      "rawSha256": "f03fc2c2700e904dc88e10395d0856983b9b0f9e6f27150713fa402f9e9fe24b",
+      "role": "READ_ONLY_GOVERNED_INPUT",
+      "observedSha256": "f03fc2c2700e904dc88e10395d0856983b9b0f9e6f27150713fa402f9e9fe24b",
+      "disposition": "MATCH"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/vitest.config.ts",
+      "rawSha256": "9a4a65976b5b7a5d038f9cb412a90d417f804108cf1dd33bae4421989a863420",
+      "role": "READ_ONLY_GOVERNED_INPUT",
+      "observedSha256": "9a4a65976b5b7a5d038f9cb412a90d417f804108cf1dd33bae4421989a863420",
+      "disposition": "MATCH"
+    }
+  ],
+  "physicalLineCounts": {
+    "docs/reviews/CVF_NCR_EXPENSE_TOUCH_TARGET_WORKER_RETURN_2026-10-10.md": 347,
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/expenses/ExpenseList.tsx": 142,
+    "docs/reviews/evidence/cvf-expense-touch-worker-2026-10-10.json": 187,
+    "docs/guides/CVF_EXPENSE_TOUCH_TARGET_README_2026-10-10.md": 75,
+    "scripts/test_cvf_expense_touch_target_browser.cjs": 297
+  },
+  "workerRuntimeBytesObserved": 1697580,
+  "implementationRepairsByReviewer": 0,
+  "independentProbe": {
+    "status": "PASS",
+    "viewport": {
+      "width": 320,
+      "height": 844
+    },
+    "sourceSha256": "628862816a8dd77c78fab1dc1e2c94d55e3f29e78b8068878d22a236fd5f85b7",
+    "actual": {
+      "input": {
+        "height": 44,
+        "width": 161.328125,
+        "left": 33,
+        "right": 194.328125
+      },
+      "note": {
+        "height": 32,
+        "width": 254,
+        "left": 33,
+        "right": 287
+      },
+      "table": {
+        "height": 91,
+        "width": 275.125,
+        "left": 33,
+        "right": 308.125
+      },
+      "overflow": 0,
+      "clipped": true,
+      "surface": "rgb(28, 29, 39)",
+      "noticeColor": "rgb(245, 158, 11)",
+      "rowColors": [
+        "rgb(244, 247, 251)",
+        "rgb(244, 247, 251)",
+        "rgb(244, 247, 251)"
+      ],
+      "ids": [
+        "LOCAL-MARCH"
+      ]
+    },
+    "rowContrast": 15.580080824304575,
+    "noticeContrast": 7.794907858812737,
+    "negative": {
+      "control": "DOM-only height override; no source mutation",
+      "height": 36,
+      "threshold": 44,
+      "rejectedByAssertion": true
+    },
+    "restoredHeight": 44,
+    "externalRequests": 0,
+    "pageErrors": 0,
+    "oracle": "Reviewer own fixture and literal 44/4.5; worker test not imported",
+    "browserVersion": "145.0.7632.6"
+  },
+  "probeSourceText": "'use strict';\nconst fs=require('fs'),path=require('path'),crypto=require('crypto'),assert=require('assert');\nconst {pathToFileURL}=require('url');\nconst root=process.cwd(),out=path.join(root,'.cvf/runtime/cvf-expense-touch-local-review-20261010');\nconst web=path.join(root,'EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web');\nconst source=path.join(web,'src/expenses/ExpenseList.tsx');\nconst digest=()=>crypto.createHash('sha256').update(fs.readFileSync(source)).digest('hex');\nconst start=digest();\nconst rgb=s=>s.match(/[\\d.]+/g).slice(0,3).map(Number);\nconst luminance=s=>rgb(s).map(x=>x/255).map(x=>x<=0.04045?x/12.92:((x+0.055)/1.055)**2.4).reduce((sum,x,i)=>sum+x*[0.2126,0.7152,0.0722][i],0);\nconst contrast=(a,b)=>(Math.max(luminance(a),luminance(b))+0.05)/(Math.min(luminance(a),luminance(b))+0.05);\n(async()=>{\n fs.mkdirSync(out,{recursive:true});\n const entry=path.join(out,'review-entry.tsx');\n const spec=path.relative(out,source).replace(/\\\\/g,'/');\n fs.writeFileSync(entry,`import React from 'react';import {createRoot} from 'react-dom/client';import {ExpenseList} from ${JSON.stringify(spec)};createRoot(document.getElementById('root')).render(React.createElement(ExpenseList,{expenses:[{id:'LOCAL-MARCH',date:'2026-03-31',label:'Independent row',amount:12000},{id:'LOCAL-OTHER',date:'2027-03-01',label:'Another year',amount:14000}]}));`);\n const vite=await import(pathToFileURL(path.join(web,'node_modules/vite/dist/node/index.js')).href);\n const build=await vite.build({configFile:false,envFile:false,root:out,logLevel:'silent',mode:'production',define:{'process.env.NODE_ENV':'\"production\"'},resolve:{alias:[{find:'react-dom',replacement:path.join(web,'node_modules/react-dom').replace(/\\\\/g,'/')},{find:'react',replacement:path.join(web,'node_modules/react').replace(/\\\\/g,'/')}]},oxc:{jsx:{runtime:'automatic'}},build:{write:false,minify:true,sourcemap:false,emptyOutDir:false,lib:{entry,formats:['iife'],name:'IndependentExpense'}}});\n const chunks=(Array.isArray(build)?build:[build]).flatMap(x=>x.output);assert.equal(chunks.length,1);\n const code=chunks[0].code.replace(/<\\/script/gi,'<\\\\/script');\n const html=path.join(out,'independent-320.html');\n fs.writeFileSync(html,`<!doctype html><meta charset=\"utf-8\"><style>:root{color-scheme:dark;--cvf-bg-page:#111218;--cvf-surface:#1c1d27;--cvf-text-primary:#f4f7fb;--cvf-text-secondary:#a3adc2;--cvf-text-muted:#6f7890;--cvf-border:rgba(255,255,255,.08);--cvf-border-strong:rgba(255,255,255,.14);--cvf-warning:#f59e0b;--cvf-accent:#5b5cf6}body{margin:0;background:var(--cvf-bg-page);font-family:system-ui}main{padding:16px}td:first-child{white-space:nowrap}:focus-visible{outline:2px solid var(--cvf-accent);outline-offset:2px}</style><main id=\"root\"></main><script>${code}</script>`);\n const {chromium}=require(path.join(web,'node_modules/@playwright/test'));const browser=await chromium.launch({headless:true});let report;\n try {\n  const ctx=await browser.newContext({viewport:{width:320,height:844}});const page=await ctx.newPage();page.setDefaultTimeout(15000);\n  const external=[],errors=[];await ctx.route('**/*',r=>r.request().url().startsWith('file:')?r.continue():r.abort());\n  page.on('request',r=>{if(!r.url().startsWith('file:'))external.push(r.url())});page.on('pageerror',e=>errors.push(e.message));page.on('console',m=>{if(m.type()==='error')errors.push(m.text())});\n  await page.goto(pathToFileURL(html).href);await page.waitForSelector('[data-expense-id=\"LOCAL-MARCH\"]');\n  await page.locator('input[type=month]').fill('2026-03');await page.waitForFunction(()=>document.querySelectorAll('[data-expense-id]').length===1);\n  const measure=()=>page.evaluate(()=>{const input=document.querySelector('input'),section=document.querySelector('section'),note=document.querySelector('[role=note]'),tds=[...document.querySelectorAll('tbody td')];const rect=el=>{const r=el.getBoundingClientRect();return {height:r.height,width:r.width,left:r.left,right:r.right}};return {input:rect(input),note:rect(note),table:rect(document.querySelector('table')),overflow:document.documentElement.scrollWidth-innerWidth,clipped:section.scrollWidth>section.clientWidth,surface:getComputedStyle(section).backgroundColor,noticeColor:getComputedStyle(note).color,rowColors:tds.map(td=>getComputedStyle(td).color),ids:[...document.querySelectorAll('[data-expense-id]')].map(el=>el.dataset.expenseId)}});\n  const actual=await measure();fs.writeFileSync(path.join(out,'measurement-diagnostic.json'),JSON.stringify(actual,null,2));assert.deepEqual(actual.ids,['LOCAL-MARCH']);assert(actual.input.height>=44&&actual.input.width>=44);assert.equal(actual.overflow,0);\n  for(const b of [actual.input,actual.note,actual.table])assert(b.left>=0&&b.right<=320);\n  const rowContrast=Math.min(...actual.rowColors.map(x=>contrast(x,actual.surface))),noticeContrast=contrast(actual.noticeColor,actual.surface);assert(rowContrast>=4.5&&noticeContrast>=4.5);\n  await page.evaluate(()=>{document.querySelector('input').style.height='36px'});const negative=await measure();assert.equal(negative.input.height,36);let rejected=false;try{assert(negative.input.height>=44)}catch(e){assert.equal(e.name,'AssertionError');rejected=true}assert(rejected);\n  await page.evaluate(()=>{document.querySelector('input').style.height='44px'});assert.equal((await measure()).input.height,44);\n  assert.equal(external.length,0);assert.equal(errors.length,0);assert.equal(digest(),start);\n  report={status:'PASS',viewport:{width:320,height:844},sourceSha256:start,actual,rowContrast,noticeContrast,negative:{control:'DOM-only height override; no source mutation',height:negative.input.height,threshold:44,rejectedByAssertion:rejected},restoredHeight:44,externalRequests:external.length,pageErrors:errors.length,oracle:'Reviewer own fixture and literal 44/4.5; worker test not imported',browserVersion:browser.version()};\n  await page.screenshot({path:path.join(out,'independent-320.png'),fullPage:true});await ctx.close();\n }finally{await browser.close()}\n fs.writeFileSync(path.join(out,'probe-results.json'),JSON.stringify(report,null,2)+'\\n');process.stdout.write(JSON.stringify(report)+'\\n');\n})().catch(e=>{process.stderr.write(e.stack+'\\n');process.exitCode=1});\n",
+  "probeReproduction": "Extract probeSourceText to .cvf/runtime/cvf-expense-touch-local-review-20261010/probe.cjs and node it from repo root. Bundles actual component directly with installed compiler; own fixture/literal44 and4.5, no worker-test import. Negative is explicit DOM-only36 override/restored44; worker source mutant independently consumed, not rerun. Exposure to worker code/evidence disclosed. Two Local diagnostic attempts overreached inner-section overflow contract; observation retained, mandatory geometry/contrast checks unchanged.",
+  "consumedWorkerEvidence": {
+    "browserReport": {
+      "status": "PASS",
+      "browserVersion": "145.0.7632.6",
+      "sourceSha256": {
+        "start": "628862816a8dd77c78fab1dc1e2c94d55e3f29e78b8068878d22a236fd5f85b7",
+        "afterBuild": "628862816a8dd77c78fab1dc1e2c94d55e3f29e78b8068878d22a236fd5f85b7",
+        "end": "628862816a8dd77c78fab1dc1e2c94d55e3f29e78b8068878d22a236fd5f85b7"
+      },
+      "mutantSourceSha256": "59ee490be5a92dbc27faa41cadb52823131ab3fe9968f52a3fc0c0980b3e6b31",
+      "restoredPass": true,
+      "tests": [
+        {
+          "label": "baseline",
+          "profile": "dark-desktop-1280x800",
+          "status": "PASS",
+          "failureKind": null,
+          "assertions": 34,
+          "ms": 583,
+          "error": null,
+          "externalRequests": 0,
+          "pageErrors": 0
+        },
+        {
+          "label": "baseline",
+          "profile": "dark-mobile-390x844",
+          "status": "PASS",
+          "failureKind": null,
+          "assertions": 38,
+          "ms": 969,
+          "error": null,
+          "externalRequests": 0,
+          "pageErrors": 0
+        },
+        {
+          "label": "baseline",
+          "profile": "light-mobile-390x844",
+          "status": "PASS",
+          "failureKind": null,
+          "assertions": 35,
+          "ms": 241,
+          "error": null,
+          "externalRequests": 0,
+          "pageErrors": 0
+        },
+        {
+          "label": "baseline",
+          "profile": "light-alt-mobile-390x844",
+          "status": "PASS",
+          "failureKind": null,
+          "assertions": 35,
+          "ms": 218,
+          "error": null,
+          "externalRequests": 0,
+          "pageErrors": 0
+        },
+        {
+          "label": "mutant-36px",
+          "profile": "dark-mobile-390x844",
+          "status": "FAIL",
+          "failureKind": "ASSERTION",
+          "assertions": 1,
+          "ms": 627,
+          "error": "touch target<44: geometry input outer height 36",
+          "externalRequests": 0,
+          "pageErrors": 0
+        },
+        {
+          "label": "restored",
+          "profile": "dark-mobile-390x844",
+          "status": "PASS",
+          "failureKind": null,
+          "assertions": 2,
+          "ms": 160,
+          "error": null,
+          "externalRequests": 0,
+          "pageErrors": 0
+        }
+      ],
+      "mutants": [
+        {
+          "id": "mutant-36px",
+          "collected": 1,
+          "completed": 1,
+          "killed": true,
+          "failureKind": "ASSERTION",
+          "firstFailure": "touch target<44: geometry input outer height 36"
+        }
+      ],
+      "screenshots": [
+        {
+          "profile": "dark-mobile-390x844",
+          "path": ".cvf/runtime/cvf-expense-touch-worker-20261010/march-dark-mobile-390x844.png",
+          "bytes": 15927,
+          "sha256": "738f2f5fe168bc439204c80263573f4a339f101203cfba7e0f927f74f9844065"
+        },
+        {
+          "profile": "light-mobile-390x844",
+          "path": ".cvf/runtime/cvf-expense-touch-worker-20261010/march-light-mobile-390x844.png",
+          "bytes": 15807,
+          "sha256": "f5658a78d48dc351ec8399b144b2ff26a27149659ffd3af0496d6982a5634ca2"
+        },
+        {
+          "profile": "light-alt-mobile-390x844",
+          "path": ".cvf/runtime/cvf-expense-touch-worker-20261010/march-light-alt-mobile-390x844.png",
+          "bytes": 15831,
+          "sha256": "e56b90e57be3fcce2d400a3d01f8dfa496383841dcfc046b67f3297f2b174895"
+        }
+      ],
+      "metrics": [
+        {
+          "profile": "dark-desktop-1280x800",
+          "rowTextContrastMin": 15.58,
+          "noticeContrast": 7.79,
+          "inputOuterWidth": 161.328125,
+          "inputOuterHeight": 44,
+          "focusOutlineWidth": "2px",
+          "focusOutlineColor": "rgb(91, 92, 246)"
+        },
+        {
+          "profile": "dark-mobile-390x844",
+          "rowTextContrastMin": 15.58,
+          "noticeContrast": 7.79,
+          "inputOuterWidth": 161.328125,
+          "inputOuterHeight": 44,
+          "focusOutlineWidth": "2px",
+          "focusOutlineColor": "rgb(91, 92, 246)"
+        },
+        {
+          "profile": "light-mobile-390x844",
+          "rowTextContrastMin": 17.85,
+          "noticeContrast": 7.09,
+          "inputOuterWidth": 161.328125,
+          "inputOuterHeight": 44,
+          "focusOutlineWidth": "2px",
+          "focusOutlineColor": "rgb(91, 92, 246)"
+        },
+        {
+          "profile": "light-alt-mobile-390x844",
+          "rowTextContrastMin": 17.85,
+          "noticeContrast": 7.09,
+          "inputOuterWidth": 161.328125,
+          "inputOuterHeight": 44,
+          "focusOutlineWidth": "2px",
+          "focusOutlineColor": "rgb(15, 118, 110)"
+        }
+      ],
+      "assertions": 150,
+      "externalRequests": 0,
+      "pageErrors": 0,
+      "elapsedMs": 3884
+    },
+    "unit": {
+      "sourcePath": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/expenses/ExpenseList.tsx",
+      "change": "month input style: height 36 -> 44 and boxSizing 'border-box' added; no other line changed",
+      "gitDiffStat": "1 file changed, 2 insertions(+), 1 deletion(-)",
+      "physicalLines": 142,
+      "lineCap": 250,
+      "unitCommand": "node node_modules/vitest/vitest.mjs run src/expenses/ExpenseList.test.tsx --reporter=verbose",
+      "unitCwd": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\EXTENSIONS\\CVF_v1.6_AGENT_PLATFORM\\cvf-web (uppercase drive letter, as in the prior passing run)",
+      "unitExit": 0,
+      "testFiles": 1,
+      "testsTotal": 12,
+      "testsPassed": 12,
+      "testsFailed": 0,
+      "unitDurationSeconds": 55.83,
+      "unitTestFileModified": false,
+      "unitResult": "PASS",
+      "draftFailures": []
+    },
+    "duplicateBroadTestRerun": false,
+    "screenshotsVisuallyInspected": true,
+    "historicalBuilderDrift": "Worker negative exit1/no-write consumed; old builder/input pins independently MATCH; prior HTML unchanged historical receipts not transferred to new source."
+  },
+  "workerGateLogs": [
+    {
+      "path": ".cvf/runtime/cvf-expense-touch-worker-20261010/gates/full-bound-confirmation-b.log",
+      "rawSha256": "78cee59c6d6cccf4eacaaa181686dfc0fd24ad3cfde430b35c821386eab62740",
+      "status": "COMPLIANT",
+      "tail": "COMPLIANT: worker-return fast gate passed in 6.87s."
+    },
+    {
+      "path": ".cvf/runtime/cvf-expense-touch-worker-20261010/gates/full-bound-run-a.log",
+      "rawSha256": "320db20273a61f39b4a9f4917625465af20a633d913b7005b625319bc667c9ea",
+      "status": "FAIL",
+      "tail": "VIOLATION: worker-return fast gate blocked by 1 failure(s) in 6.98s."
+    },
+    {
+      "path": ".cvf/runtime/cvf-expense-touch-worker-20261010/gates/full-bound-run-a2.log",
+      "rawSha256": "93d3af10075fedda03330cbd7d2f3465a23554e55d7eb24ef61982a5976625e4",
+      "status": "COMPLIANT",
+      "tail": "COMPLIANT: worker-return fast gate passed in 9.27s."
+    },
+    {
+      "path": ".cvf/runtime/cvf-expense-touch-worker-20261010/gates/full-bound-run-a3.log",
+      "rawSha256": "56acddf75de6a0855fc7360d3c446b733e52f3699f2887bb05e6e4cb884c46c3",
+      "status": "COMPLIANT",
+      "tail": "COMPLIANT: worker-return fast gate passed in 6.66s."
+    }
+  ],
+  "timerReceipt": {
+    "timerPath": ".cvf/runtime/cvf-expense-touch-worker-20261010/timer.json",
+    "timerRawSha256": "71733e337751b45e57045690fc806db6a2151f7844dc328fdd968d3e49436259",
+    "finalConfirmation": {
+      "schemaVersion": "cvf.expenseTouchFinalConfirmation.v1",
+      "batchId": "CVF-NCR-EXPENSE-TOUCH-20261010",
+      "utcStart": "2026-10-10T06:23:24.341Z",
+      "monotonicStartTicks": 5803668426790,
+      "monotonicFrequencyHz": 10000000,
+      "utcEnd": "2026-10-10T06:37:01.559Z",
+      "monotonicEndTicks": 5811840702439,
+      "elapsedSeconds": 817.2,
+      "elapsedMinutes": 13.62,
+      "budgetMinutes": 90,
+      "withinBudget": true,
+      "elapsedIncludesFirstReadAndPostrecordConfirmation": true,
+      "frozenBeforeRunB": true,
+      "frozenFileSha256": {
+        "docs/reviews/CVF_NCR_EXPENSE_TOUCH_TARGET_WORKER_RETURN_2026-10-10.md": "66bad2157aad0efec2ed77f6e0312ec0632990399cf2d7c344c7418e55f2ff2f",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/expenses/ExpenseList.tsx": "628862816a8dd77c78fab1dc1e2c94d55e3f29e78b8068878d22a236fd5f85b7",
+        "docs/reviews/evidence/cvf-expense-touch-worker-2026-10-10.json": "bd994ee40ce4ec5d49b5538c98c2e3aa254648b05f86da7a3c2b1faf3c28b50a",
+        "docs/guides/CVF_EXPENSE_TOUCH_TARGET_README_2026-10-10.md": "00afbb832dc840b55a0ba47a73c1de4b4ad97ca8f7ac2766ddbd51c024df6f12",
+        "scripts/test_cvf_expense_touch_target_browser.cjs": "39e5b62f716525388404980a052987212046a4f7f130aad5f64968c30dff07c0"
+      },
+      "runBExitCode": 0,
+      "runBLog": ".cvf/runtime/cvf-expense-touch-worker-20261010/gates/full-bound-confirmation-b.log",
+      "hashVerification": "MATCH_BEFORE_AND_AFTER_RUN_B",
+      "trackedFilesChangedAfterFreeze": false,
+      "usage": {
+        "tokens": null,
+        "tokensReason": "NOT_AVAILABLE_WITH_REASON: no token meter exposed to this worker",
+        "billAmount": null,
+        "billCurrency": null,
+        "billReason": "NOT_AVAILABLE_WITH_REASON: no bill exposed; no effort-based price inferred"
+      }
+    },
+    "finalConfirmationRawSha256": "ee5422eeff439ae8906b8b53b77878eff603a5a885010797b52ac19719a178ce",
+    "elapsedCalculatedSeconds": 817.2275649,
+    "historicalTotalBudgetCompliance": "NOT_CERTIFIABLE_PERSISTENCE_BEFORE_READ_DEVIATION_START_PROVENANCE_REPORTED"
+  },
+  "findings": [
+    {
+      "id": "F1",
+      "disposition": "TECHNICAL_PASS_PROCESS_DEVIATION_RETAINED",
+      "finding": "Start UTC/monotonic captured before reads according to worker, but timer.json persisted after first work-order reads. Strict sequential persistence-before-read contract not met. Start provenance remains worker-reported; end clock arithmetic is consistent and frozen B/raw pins match. 13.62 minutes is reported captured-start-to-confirmation interval, not independently certified complete 90-minute compliance. No backdating."
+    },
+    {
+      "id": "F2",
+      "disposition": "REQUIRED_READ_COVERAGE_INCOMPLETE",
+      "finding": "Worker explicitly omitted full S05-S06 source and acceptance-ledger/closeability checker reads required by order; unit fixture and DESIGN required sections are now declared read. Declaration gates cannot certify understanding or read history. No retrospective procedural certification."
+    },
+    {
+      "id": "F3",
+      "disposition": "WORKER_REPAIRS_DISCLOSED",
+      "finding": "Product sizing diff is exact. Browser script reporting/cap compaction are one grouped harness-report repair class; five browser executions are not five worker repair turns. First full return gate failed; grouped metadata repair followed by A2/A3 PASS and distinct frozen B PASS. Zero Local product repairs or worker redispatches."
+    },
+    {
+      "id": "F4",
+      "disposition": "PROJECT_REGRESSION_IMPLEMENTED_GENERAL_GUARD_DEFERRED",
+      "finding": "Existing DESIGN44 rule enforced by new actual-component regression and meaningful source36 mutant. MACHINE_CHECK_CANDIDATE remains candidate for a broader UI guard; no new global checker, earliest autorun integration or promotion claimed. One input/fixture/Chromium is insufficient generalized coverage."
+    },
+    {
+      "id": "F5",
+      "disposition": "ADDITIONAL_320_CONTENT_LIMITATION_RETAINED",
+      "finding": "Own 320px fixture with long English row label has table content exceeding section content box; table remains within viewport and page has no horizontal overflow. Target44 and text contrast PASS. Initial Local probe incorrectly demanded broader inner-section nonoverflow beyond the admitted geometry/contrast contract; two diagnostic failures, requirement narrowed with observation preserved. No worker correctness failure assigned. Not full 320px layout/WCAG certification."
+    }
+  ],
+  "technicalDisposition": "ACCEPT_BOUNDED",
+  "proceduralDisposition": "DEVIATIONS_DISCLOSED_NOT_FULL_PROCEDURAL_COMPLIANCE",
+  "modelAssessment": {
+    "model": "Haiku 5.5",
+    "effort": "Max",
+    "identityBasis": "OPERATOR_REPORTED_NOT_INDEPENDENTLY_VERIFIED",
+    "firstReturnGateClean": false,
+    "workerImplementationRepairGroups": 1,
+    "workerReturnMetadataRepairGroups": 1,
+    "workerReturnDraftGateAttempts": 3,
+    "failedReturnDraftGateAttempts": 1,
+    "separateFrozenConfirmation": "PASS_CURRENT_FIVE_RAW_PINS_MATCH",
+    "reviewerRequestedWorkerRepairTurns": 0,
+    "reviewerProductCodeRepairs": 0,
+    "technicalOutput": "ACCEPTED_BOUNDED_TOUCH_CORRECTION_AND_FOUR_FIXTURE_PROFILES",
+    "process": "DEVIATIONS_DISCLOSED_NOT_FULL_PROCEDURAL_COMPLIANCE",
+    "reportedElapsedMinutes": 13.62,
+    "fullDeliveryElapsedMinutes": null,
+    "elapsedBasis": "CAPTURED_START_TO_FINAL_CONFIRMATION_REPORTED_START_PROVENANCE_LATE_PERSISTENCE",
+    "bill": {
+      "amount": null,
+      "currency": null,
+      "tokens": null,
+      "reason": "NO_EXPOSED_BILL_OR_TOKEN_METER"
+    },
+    "recommendation": "Provisional finite UI/unit/browser worker use with independent Local acceptance; evidence discipline repeated gaps, no unattended authority or measured price advantage."
+  },
+  "adif": {
+    "taskClass": "expense-touch-target",
+    "role": "reviewer",
+    "lifecyclePhase": "review",
+    "returned": "NONE_RETURNED",
+    "totalCandidates": 0,
+    "truncated": false
+  },
+  "closureManifest": [
+    "docs/reviews/CVF_NCR_EXPENSE_TOUCH_TARGET_WORKER_RETURN_2026-10-10.md",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/expenses/ExpenseList.tsx",
+    "docs/reviews/evidence/cvf-expense-touch-worker-2026-10-10.json",
+    "docs/guides/CVF_EXPENSE_TOUCH_TARGET_README_2026-10-10.md",
+    "scripts/test_cvf_expense_touch_target_browser.cjs",
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_TOUCH_TARGET_2026-10-10.md",
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_TOUCH_TARGET_2026-10-10.json",
+    "docs/reviews/CVF_NCR_EXPENSE_TOUCH_TARGET_COMPLETION_2026-10-10.md",
+    "docs/reviews/evidence/cvf-expense-touch-local-review-2026-10-10.json",
+    "docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json",
+    "docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md",
+    "AGENT_HANDOFF_V63_2026-09-18.md",
+    "CVF_SESSION_MEMORY.md",
+    "CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json",
+    "CVF_SESSION/state/entries/nextAllowedMove.json",
+    "CVF_SESSION/state/entries/cvfNcrConsolidatedLocalFoundation20261006.json",
+    "CVF_SESSION/ACTIVE_SESSION_STATE.json",
+    "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json"
+  ],
+  "modelTracking": "docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json",
+  "preliminaryReport": "docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md",
+  "claimBoundary": "Private synthetic UI correction, installed Chromium and explicit fixture profiles; not production light palette, full accessibility, AI governance, sourceR2, provider/public/deploy/P11 or cost superiority. Technical acceptance does not certify historical procedure."
+}
