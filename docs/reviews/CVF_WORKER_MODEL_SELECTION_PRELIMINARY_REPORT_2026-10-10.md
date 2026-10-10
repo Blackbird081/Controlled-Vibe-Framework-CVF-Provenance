@@ -7,11 +7,11 @@ Date: 2026-10-10
 
 ## Purpose
 
-Recommend provisional worker selection from three reviewed Haiku tranches and one Sonnet reference. Operator-reported identities: Haiku 5.5 / Max and Sonnet 5.5 / High. No provider/model identity verification or billing inference. This is evidence for future multi-agent selection, not a deployed router or parallel-agent experiment.
+Recommend provisional worker selection from three reviewed Haiku tranches and one Sonnet reference. Operator instruction2026-10-10 fixes Haiku and Sonnet to worker roles only; Local remains orchestrator/reviewer. Operator-reported identities: Haiku 5.5 / Max and Sonnet 5.5 / High. No provider/model identity verification or billing inference. This is evidence for future multi-agent selection, not a deployed router or parallel-agent experiment.
 
 ## Scope / Methodology
 
-Finite private UI/unit/browser work only. Consume original reviewed evidence, independent probes and longitudinal ledger docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json; raw SHA-256 5f7beb027aec8852d4f6c8b555a0aa07ed3e69322e1045b3a867ac690453ec5e. Prior rows retained, including limitations; no accepted work rerun for benchmarking. Four technical acceptances, no rejected/blocked worker returns in this observed set; this does not cover unobserved failures or establish statistical sufficiency. Three related Haiku tasks share component/tools/prior evidence, so they are not independent or matched samples.
+Finite private UI/unit/browser work only. Consume original reviewed evidence, independent probes and longitudinal ledger docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json; raw SHA-256 63d758d6c2debb37cf1ea15c27eb36e0112a86b5292a631513692818a9e7dbb6. Prior rows retained, including limitations; no accepted work rerun for benchmarking. Four technical acceptances, no rejected/blocked worker returns in this observed set; this does not cover unobserved failures or establish statistical sufficiency. Three related Haiku tasks share component/tools/prior evidence, so they are not independent or matched samples.
 
 ## Target / Source
 
@@ -47,7 +47,7 @@ Local review/packaging errors belong to Local: prior browser closure sequencing/
 | Worker: finite isolated UI/unit fixture | Haiku 5.5 / Max is an eligible candidate under operator preference | bounded evidence; literal acceptance, negatives, independent Local review; escalate unresolved correctness/authority conflict |
 | Worker: focused component/browser fixture work | Haiku 5.5 / Max is an eligible candidate under operator preference | two related observations, substantial reuse; cannot generalize to broad application integration |
 | Worker: new multifile architecture or broad integration | no comparative winner; Sonnet reference only | larger reference package accepted, no matched Haiku sample; choose by scope/risk and new evidence |
-| Orchestrator / authority-bearing reviewer | retain existing Local role; no model winner from these data | implementation samples do not evaluate architecture decisions, source coverage or independent-review quality |
+| Orchestrator / reviewer / closer / session steward | outside this model evaluation; Local retains these roles | operator explicitly limits Haiku and Sonnet to workers; no role promotion |
 | Automatic multi-agent routing / parallel coordination | deferred, not evaluated | no actual router/coordination experiment or authority grant |
 
 These are reviewer recommendations, not model-specific normative work-order requirements. Roles, authority, finite acceptance and independent proof remain the execution contract.
@@ -56,7 +56,7 @@ These are reviewer recommendations, not model-specific normative work-order requ
 
 No actual bill, token meter or comparable complete delivery duration is available for any sample. Keep monetary/token fields null, including reviewer and rework costs. Operator's belief that Haiku Max is cheaper is a selection hypothesis; observed savings are not established. Do not rank speed from27.6/18.35/12.77/13.62 because task difficulty, reused tools and timing boundaries differ.
 
-Next useful comparison is the next real admitted roadmap task of similar family and integration complexity, using the existing exact read/timer/freeze rules and actual worker/reviewer/rework bill receipts if exposed. Capture all future accepted/rejected/blocked outcomes; do not manufacture benchmark tasks or repeat delivered work merely to compare models. A new role-specific evaluation is required before changing orchestrator/reviewer assignment.
+Next useful comparison is the next real admitted roadmap task of similar family and integration complexity, using the existing exact read/timer/freeze rules and actual worker/reviewer/rework bill receipts if exposed. Capture all future accepted/rejected/blocked outcomes; do not manufacture benchmark tasks or repeat delivered work merely to compare models. This collection does not seek an orchestrator/reviewer model assignment; Haiku and Sonnet remain worker-only under the operator instruction.
 
 ## Checker Source Read-Ahead Block
 
@@ -105,19 +105,27 @@ Operator-reported identities only; bounded UI worker observations. No universal 
 |---|---|
 | Actor | Local orchestrator/reviewer/closer |
 | Provider or surface | private shared CVF workspace |
-| Session or invocation | cvf-expense-touch-local-review-20261010 |
+| Session or invocation | cvf-expense-layout-dispatch-20261010 |
 | Working directory | repository root |
-| Command or tool surface | frozen raw pin join, own320 direct-source Chromium probe, consumed worker receipts, ledger reconciliation |
-| Target paths | `docs/reviews/CVF_NCR_EXPENSE_TOUCH_TARGET_WORKER_RETURN_2026-10-10.md`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/expenses/ExpenseList.tsx`; `docs/reviews/evidence/cvf-expense-touch-worker-2026-10-10.json`; `docs/guides/CVF_EXPENSE_TOUCH_TARGET_README_2026-10-10.md`; `scripts/test_cvf_expense_touch_target_browser.cjs`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_TOUCH_TARGET_2026-10-10.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_TOUCH_TARGET_2026-10-10.json`; `docs/reviews/CVF_NCR_EXPENSE_TOUCH_TARGET_COMPLETION_2026-10-10.md`; `docs/reviews/evidence/cvf-expense-touch-local-review-2026-10-10.json`; `docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json`; `docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/cvfNcrConsolidatedLocalFoundation20261006.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Allowed scope source | touch-target Reviewer Closure Conversion and operator longitudinal model tracking request |
-| Before status evidence | HEAD a83a87e5437fbdf4891347af0a6f32c7def82be4; component modified, four new worker files |
-| After status evidence | exact eighteen-path conversion; original five worker bytes preserved; actual-SHA continuity follows |
+| Command or tool surface | consumed prior own320 proof/receipts; preserved source-pin joins; worker-only classification, scoped packet and feasibility gates |
+| Target paths | `docs/baselines/CVF_GC018_NCR_EXPENSE_NARROW_LAYOUT_2026-10-10.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_NARROW_LAYOUT_2026-10-10.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_NARROW_LAYOUT_2026-10-10.json`; `docs/reviews/evidence/cvf-expense-layout-dispatch-inputs-2026-10-10.json`; `docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json`; `docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md` |
+| Allowed scope source | operator collect/classify for later worker configuration, continue bounded roadmap; Local dispatch authority |
+| Before status evidence | clean HEAD c202cc73ff97cdeb1fe57358d1438afbc623b566; four packet paths and four new worker outputs absent |
+| After status evidence | exact six material paths; observation rows/evidence pins preserved; worker not invoked |
 | Diff evidence | exact staged manifest and git diff --check |
-| Approval boundary | private Local closure/report only |
+| Approval boundary | private classification report and bounded UI dispatch only |
 | Claim boundary | bounded worker observations; bill unknown; no authority widening |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | cvf-expense-touch-local-review-20261010 |
-| Expected manifest | `docs/reviews/CVF_NCR_EXPENSE_TOUCH_TARGET_WORKER_RETURN_2026-10-10.md`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/expenses/ExpenseList.tsx`; `docs/reviews/evidence/cvf-expense-touch-worker-2026-10-10.json`; `docs/guides/CVF_EXPENSE_TOUCH_TARGET_README_2026-10-10.md`; `scripts/test_cvf_expense_touch_target_browser.cjs`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_TOUCH_TARGET_2026-10-10.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_TOUCH_TARGET_2026-10-10.json`; `docs/reviews/CVF_NCR_EXPENSE_TOUCH_TARGET_COMPLETION_2026-10-10.md`; `docs/reviews/evidence/cvf-expense-touch-local-review-2026-10-10.json`; `docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json`; `docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/cvfNcrConsolidatedLocalFoundation20261006.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Actual changed set | `docs/reviews/CVF_NCR_EXPENSE_TOUCH_TARGET_WORKER_RETURN_2026-10-10.md`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/expenses/ExpenseList.tsx`; `docs/reviews/evidence/cvf-expense-touch-worker-2026-10-10.json`; `docs/guides/CVF_EXPENSE_TOUCH_TARGET_README_2026-10-10.md`; `scripts/test_cvf_expense_touch_target_browser.cjs`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_TOUCH_TARGET_2026-10-10.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_TOUCH_TARGET_2026-10-10.json`; `docs/reviews/CVF_NCR_EXPENSE_TOUCH_TARGET_COMPLETION_2026-10-10.md`; `docs/reviews/evidence/cvf-expense-touch-local-review-2026-10-10.json`; `docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json`; `docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/cvfNcrConsolidatedLocalFoundation20261006.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Invocation ID | cvf-expense-layout-dispatch-20261010 |
+| Expected manifest | `docs/baselines/CVF_GC018_NCR_EXPENSE_NARROW_LAYOUT_2026-10-10.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_NARROW_LAYOUT_2026-10-10.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_NARROW_LAYOUT_2026-10-10.json`; `docs/reviews/evidence/cvf-expense-layout-dispatch-inputs-2026-10-10.json`; `docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json`; `docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md` |
+| Actual changed set | `docs/baselines/CVF_GC018_NCR_EXPENSE_NARROW_LAYOUT_2026-10-10.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_NARROW_LAYOUT_2026-10-10.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_NARROW_LAYOUT_2026-10-10.json`; `docs/reviews/evidence/cvf-expense-layout-dispatch-inputs-2026-10-10.json`; `docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json`; `docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |
+
+## Worker-Only Classification For Later Configuration
+
+The governed ledger now separates four observed task families: isolated unit fixture; direct-component browser fixture; focused component style/browser regression; larger multifile offline builder/static/browser delivery. Each family records scope difficulty and reuse, bounded technical result, procedural quality and cost availability. Historical observation rows and Local source hashes are unchanged.
+
+Configuration should admit a worker by task family and evidence confidence, then retain Local independent acceptance. Compare accepted-delivery cost only when worker, review and rework bills are exposed on comparable basis. Preserve rejected/blocked results and Local-owned errors. No aggregate numeric quality score or model-wide speed ranking is supported by these related samples.
+
+Next useful tranche is narrow320 layout correction from the retained touch review finding, not a benchmark repeat. Haiku/Max remains the operator's worker preference observation; Sonnet/High remains a worker reference. No model is assigned or invoked here, and no operational configuration is activated.

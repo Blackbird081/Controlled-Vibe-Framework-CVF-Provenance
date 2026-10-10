@@ -1,0 +1,79 @@
+{
+  "schemaVersion": "cvf.preapprovalFeasibility.v1",
+  "proposal": {
+    "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_NARROW_LAYOUT_2026-10-10.md",
+    "sha256": "22743fe969975a23752ef1d0eb1fec8ddb051cc9af8988cb43e7a0d3e2ea33e9"
+  },
+  "approvalTarget": {
+    "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_NARROW_LAYOUT_2026-10-10.md",
+    "sha256": "22743fe969975a23752ef1d0eb1fec8ddb051cc9af8988cb43e7a0d3e2ea33e9",
+    "prospectiveOutcomeSha256": "ea2553d1854b77bc384bd97eb15559cc6cd4572b9ba73cb0bf78cd3113963e55"
+  },
+  "prospectiveOutcome": {
+    "schemaVersion": "cvf.semanticConvergenceControl.v1",
+    "problemKey": "cvf-expense-narrow-table-content",
+    "chainMode": "INITIAL",
+    "chainOrdinal": 0,
+    "predecessor": null,
+    "blockerDelta": {
+      "prior": [],
+      "resolved": [],
+      "retained": [],
+      "new": [],
+      "reopened": [],
+      "current": []
+    },
+    "resolutionEvidence": {},
+    "counters": {
+      "partialReadyClosures": 0,
+      "reviewerScopeExpansions": 0,
+      "sameClaimCorrections": 0,
+      "nonDecreasingBlockerTransitions": 0
+    },
+    "claims": [],
+    "requiredDisposition": "CONTINUE_BOUNDED",
+    "successorScope": "INITIAL_BOUNDED"
+  },
+  "phasePrerequisites": {
+    "phase": "STANDALONE_UI_NARROW_LAYOUT",
+    "rows": [
+      {
+        "requirementId": "REVIEWED_RETAINED_LAYOUT_DEFECT",
+        "requiredForPhase": true,
+        "evidence": {
+          "path": "docs/reviews/CVF_NCR_EXPENSE_TOUCH_TARGET_COMPLETION_2026-10-10.md",
+          "sha256": "283fa7e8bc143421ce6bb4d13f19eaae45e213cbf0ec593a9cfb66c8be134f6d",
+          "locator": "F5 ADDITIONAL_320_CONTENT_LIMITATION_RETAINED"
+        },
+        "deferredToPhase": null
+      },
+      {
+        "requirementId": "ADMITTED_COMPONENT_PREIMAGE",
+        "requiredForPhase": true,
+        "evidence": {
+          "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/expenses/ExpenseList.tsx",
+          "sha256": "628862816a8dd77c78fab1dc1e2c94d55e3f29e78b8068878d22a236fd5f85b7",
+          "locator": "height: 44"
+        },
+        "deferredToPhase": null
+      },
+      {
+        "requirementId": "CURRENT_TOOL_CAPABILITY",
+        "requiredForPhase": true,
+        "evidence": {
+          "path": "docs/reviews/evidence/cvf-expense-layout-dispatch-inputs-2026-10-10.json",
+          "sha256": "b91ca78b070398f6ebe7066aacb6180251ee50a09e9b846f4a66c195e325e813",
+          "locator": "\"currentToolPinsMatch\": true"
+        },
+        "deferredToPhase": null
+      },
+      {
+        "requirementId": "APP_PROVIDER_MEDIA",
+        "requiredForPhase": false,
+        "evidence": null,
+        "deferredToPhase": "SEPARATE_ADMISSION_NOT_REQUIRED_FOR_UI_LAYOUT"
+      }
+    ]
+  },
+  "requestQueue": null
+}

@@ -5,7 +5,7 @@
   "decisionOwner": "LOCAL_REVIEWER",
   "purpose": "Longitudinal worker evidence for model selection by role and task family in a future multi-agent use case. No agent invocation or automatic routing.",
   "identityBasis": "ALL_MODEL_LABELS_OPERATOR_REPORTED_NOT_INDEPENDENTLY_VERIFIED",
-  "sourceHead": "a83a87e5437fbdf4891347af0a6f32c7def82be4",
+  "sourceHead": "c202cc73ff97cdeb1fe57358d1438afbc623b566",
   "rows": [
     {
       "trancheId": "CVF-NCR-OFFLINE-PREVIEW-20261009",
@@ -247,13 +247,6 @@
       "candidate": "Haiku 5.5 / Max",
       "disposition": "PROVISIONAL_BOUNDED",
       "basis": "Two accepted browser-family tranches including focused existing component44 correction/four controlled profiles; independent Local probes; zero Local product repairs; procedural limits retained."
-    },
-    {
-      "role": "ORCHESTRATOR_OR_REVIEWER",
-      "taskFamily": "ARCHITECTURE_AUTHORITY_AND_INDEPENDENT_REVIEW",
-      "candidate": null,
-      "disposition": "NOT_EVALUATED_BY_WORKER_SAMPLES",
-      "basis": "Local retains existing role; assigning a model requires separate role-specific evidence."
     }
   ],
   "comparisonLimits": [
@@ -270,5 +263,87 @@
     "reportStatus": "PRELIMINARY_THREE_HAIKU_PLUS_ONE_SONNET_REFERENCE",
     "measuredBillComparison": null,
     "nextControl": "Use existing read/timer/frozen-return rules; next genuine roadmap task may supply useful comparable evidence. No benchmark-only repeat or automatic routing implementation."
+  },
+  "evaluationScope": {
+    "role": "INTERNAL_AGENT_WORKER_ONLY",
+    "modelsObserved": [
+      "Haiku 5.5 / Max",
+      "Sonnet 5.5 / High"
+    ],
+    "operatorInstruction": "2026-10-10: collect/classify/evaluate for later operational configuration; Haiku and Sonnet used as workers only.",
+    "excludedRoles": [
+      "ORCHESTRATOR",
+      "REVIEWER",
+      "CLOSER",
+      "SESSION_SYNC_STEWARD"
+    ],
+    "decisionOwner": "LOCAL_ORCHESTRATOR_REVIEWER",
+    "configurationDisposition": "EVIDENCE_COLLECTION_ONLY_NO_RUNTIME_CONFIG_MUTATION"
+  },
+  "workerTaskClassification": [
+    {
+      "family": "ISOLATED_REACT_UNIT_FIXTURE",
+      "observedTranches": [
+        "CVF-NCR-EXPENSE-FIXTURE-20261009"
+      ],
+      "complexity": "BOUNDED_ISOLATED_COMPONENT_AND_TEST",
+      "reuse": "Existing installed framework/tooling; synthetic contract",
+      "quality": "ACCEPTED_BOUNDED_WITH_INDEPENDENT_PROBE",
+      "process": "DISCLOSED_TIMER_AND_CONFIRMATION_DEVIATIONS",
+      "configurationUse": "PROVISIONAL_WORKER_CANDIDATE_WITH_LOCAL_ACCEPTANCE",
+      "costVerdict": "UNMEASURED"
+    },
+    {
+      "family": "DIRECT_COMPONENT_BROWSER_FIXTURE",
+      "observedTranches": [
+        "CVF-NCR-EXPENSE-BROWSER-20261010"
+      ],
+      "complexity": "COMPILER_BROWSER_TRANSPORT_AND_LITERAL_ORACLE",
+      "reuse": "Accepted component/unit; installed compiler/browser; prior builder method",
+      "quality": "ACCEPTED_BOUNDED_WITH_INDEPENDENT_PROBE",
+      "process": "DISCLOSED_TIMER_READ_GAPS_AND_DRAFT_REPAIRS",
+      "configurationUse": "PROVISIONAL_WORKER_CANDIDATE_WITH_LOCAL_ACCEPTANCE",
+      "costVerdict": "UNMEASURED"
+    },
+    {
+      "family": "FOCUSED_COMPONENT_STYLE_AND_BROWSER_REGRESSION",
+      "observedTranches": [
+        "CVF-NCR-EXPENSE-TOUCH-20261010"
+      ],
+      "complexity": "SMALL_PRODUCT_DIFF_PLUS_NEW_FOUR_PROFILE_PROOF",
+      "reuse": "Same component and installed UI/compiler/browser; substantial prior evidence",
+      "quality": "ACCEPTED_BOUNDED_WITH_INDEPENDENT_PROBE",
+      "process": "DISCLOSED_LATE_TIMER_PERSISTENCE_AND_REQUIRED_READ_GAPS",
+      "configurationUse": "PROVISIONAL_WORKER_CANDIDATE_WITH_LOCAL_ACCEPTANCE",
+      "costVerdict": "UNMEASURED"
+    },
+    {
+      "family": "MULTIFILE_OFFLINE_BUILDER_STATIC_BROWSER",
+      "observedTranches": [
+        "CVF-NCR-OFFLINE-PREVIEW-20261009"
+      ],
+      "complexity": "LARGER_SEVEN_ARTIFACT_BUILDER_TEST_DELIVERY",
+      "reuse": "Established synthetic storyboard inputs/tooling",
+      "quality": "ACCEPTED_BOUNDED_WITH_INDEPENDENT_PROBE",
+      "process": "FIRST_GATE_FAILED_TWO_SELF_REPAIR_ROUNDS",
+      "configurationUse": "SONNET_WORKER_REFERENCE_ONLY_NO_MATCHED_MODEL_WINNER",
+      "costVerdict": "UNMEASURED"
+    }
+  ],
+  "futureConfigurationEvidenceContract": {
+    "role": "WORKER_ONLY",
+    "recordPerTranche": [
+      "operator-reported model/provider/effort and identity basis",
+      "task family, complexity, integration breadth, reused inputs/tools",
+      "accepted/rejected/blocked result, mandatory and independent proof",
+      "first gate result, grouped product versus metadata repairs, invalid harness attempts",
+      "scope/authority and named read/timer/frozen-confirmation compliance",
+      "worker redispatches, reviewer product repairs and Local-owned diagnostic overhead",
+      "observed worker/reviewer/rework duration, tokens and bill/currency/basis; null with reason if unavailable"
+    ],
+    "qualityAdmission": "Independent Local technical acceptance required; gate PASS alone insufficient. Process deviations retained; no unattended expansion.",
+    "costComparison": "Observed comparable total accepted-delivery bills only; null is unavailable, never zero; no effort-label inference.",
+    "sampleHandling": "Retain all outcomes and historical corrections; related/reused tasks not independent samples; no benchmark-only repeats.",
+    "configurationRule": "Use family-specific confidence/limits as future configuration input; no automatic model selector or orchestrator/reviewer recommendation for these models."
   }
 }
