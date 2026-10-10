@@ -2,16 +2,16 @@
   "schemaVersion": "0.1.0",
   "currentMode": "cvf_ncr_p10_closed_p11_parked",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=CVF-CORE; NEXT_ACTION_CLASS=REVIEW; BATCH_ID=CVF-NCR-EXPENSE-BROWSER-20261010. Expense browser preview CLOSED_PASS_BOUNDED: five original worker artifacts accepted; independent alternate browser fixture and drift sentinel PASS; frozen bound confirmation consumed. Timer/required-read deviations and inherited touch target limitation retained; dark only. Work order consumed, no redispatch. Local may select next useful bounded roadmap task; governed worker model ledger now two Haiku5.5/Max reviewed plus Sonnet5.5/High reference, operator-reported identities, bill unknown; preliminary report after third Haiku review. Source R2/native/TTS/audio/MP4/S2-S9/provider/public/deploy/P11 parked; no automatic source successor or push grant; upstream debt retained. LHW24 retained. Accepted material=a9783c5b797374706490fd44094322a274ffb8a0.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-CORE; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-EXPENSE-TOUCH-20261010. New Expense touch-target order READY; manual INTERNAL_AGENT worker only after clean committed bound release PASS. One existing input sizing correction, one new direct-source browser proof and three metadata outputs; four token profiles, one sizing mutant, exact read-only unit regression; one90-minute total timer before reads in sequential awaited command and final after frozen confirmation. Local orchestrator/reviewer owns acceptance; third Haiku review triggers preliminary model report, identities operator-reported and bill unknown. Prior technical acceptances/process gaps retained. Source R2/native/TTS/audio/MP4/S2-S9/provider/public/deploy/P11 parked; no push or automatic source successor. LHW24 retained.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_NCR_EXPENSE_BROWSER_PREVIEW_2026-10-10.md",
-    "baselineSha256": "28e64b10512aa32f741d236da867d35072865e235c14eb2d537cf5bc02df1f2a",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_BROWSER_PREVIEW_2026-10-10.md",
-    "workOrderSha256": "ed2fd53828507dbbe6db3ba472f6ffd6592a61e235aa3def4c71830e64477ff4"
+    "baselinePath": "docs/baselines/CVF_GC018_NCR_EXPENSE_TOUCH_TARGET_2026-10-10.md",
+    "baselineSha256": "9ae3b2d32c6fc8ac7af9c11a536460873cf4adf8c9e0e1f60d75020889915575",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_TOUCH_TARGET_2026-10-10.md",
+    "workOrderSha256": "6073cf4b078de8557bcf64dc8d266d1661811c2e9dd56281ce760eec44812365"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }
