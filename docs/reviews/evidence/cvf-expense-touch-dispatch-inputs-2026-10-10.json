@@ -1,0 +1,144 @@
+{
+  "schemaVersion": "cvf.expenseTouchDispatchInputs.v1",
+  "batchId": "CVF-NCR-EXPENSE-TOUCH-20261010",
+  "date": "2026-10-10",
+  "planningBase": "638aae00c3615aff772ef0702e943fbc51ea3a9e",
+  "sources": [
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/expenses/ExpenseList.tsx",
+      "rawSha256": "801f305238f2512db663fee7ada837a7bf53a84036ea6efcd305d29985339f19",
+      "role": "ADMITTED_MUTABLE_PREIMAGE"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/expenses/ExpenseList.test.tsx",
+      "rawSha256": "051eda76113aed59aa59ffb4a57739468f50944dbfdfb77d905dba9ba983da8b",
+      "role": "READ_ONLY_GOVERNED_INPUT"
+    },
+    {
+      "path": "DESIGN.md",
+      "rawSha256": "15c1b5061bd2e1f763638beb83a84d06eb8ccbc470747c01f236033a834a987e",
+      "role": "READ_ONLY_GOVERNED_INPUT"
+    },
+    {
+      "path": "docs/reference/CVF_NCR_GENERAL_VIDEO_DESIGN_2026-10-02.md",
+      "rawSha256": "3ce5e2363c3e29997fcbf42cb4cec59af7447cca38409d4d970e8aa71e5777e0",
+      "role": "READ_ONLY_GOVERNED_INPUT"
+    },
+    {
+      "path": "docs/reviews/CVF_NCR_EXPENSE_BROWSER_PREVIEW_COMPLETION_2026-10-10.md",
+      "rawSha256": "aeb56179d887f4a2027b9e2168c0bd8a284f46be85a861a134cdc217d6a7671f",
+      "role": "READ_ONLY_GOVERNED_INPUT"
+    },
+    {
+      "path": "docs/reviews/evidence/cvf-expense-browser-local-review-2026-10-10.json",
+      "rawSha256": "7f3e32f655817ae653c91d2e9173c1560418807a51b653d89fcb97673eb24d72",
+      "role": "READ_ONLY_GOVERNED_INPUT"
+    },
+    {
+      "path": "scripts/cvf_expense_fixture_preview.cjs",
+      "rawSha256": "ff7ce594c0af6d8d853b00b72ec71975a73750a1f0b52f512a86a01ecac8a166",
+      "role": "READ_ONLY_GOVERNED_INPUT"
+    },
+    {
+      "path": "scripts/test_cvf_expense_fixture_preview_browser.cjs",
+      "rawSha256": "32d802b027a4eef4ef0c8d10ebaa1f9fd9520a6ba023be8c9fd35acfd4001ac6",
+      "role": "READ_ONLY_GOVERNED_INPUT"
+    },
+    {
+      "path": "docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json",
+      "rawSha256": "71cafa3657e7039e3c27e6483ca4b3a0405acb0089384aaeee35e5c5b8de5975",
+      "role": "READ_ONLY_GOVERNED_INPUT"
+    },
+    {
+      "path": "docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md",
+      "rawSha256": "1609cc9d955bc88b2e09179331d7828406114d98b23c81cfb3f2992afa3920f6",
+      "role": "READ_ONLY_GOVERNED_INPUT"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/package.json",
+      "rawSha256": "f03fc2c2700e904dc88e10395d0856983b9b0f9e6f27150713fa402f9e9fe24b",
+      "role": "READ_ONLY_GOVERNED_INPUT"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/vitest.config.ts",
+      "rawSha256": "9a4a65976b5b7a5d038f9cb412a90d417f804108cf1dd33bae4421989a863420",
+      "role": "READ_ONLY_GOVERNED_INPUT"
+    }
+  ],
+  "toolMetadata": [
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/node_modules/vite/package.json",
+      "sha256": "a2b943431b51bfcc2e9386eecf8b4b3f6e4bf443e56d17b1f4c8495a61b4050c",
+      "role": "LOCAL_INSTALLED_EXECUTION_AID_NOT_CANONICAL_SOURCE"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/node_modules/react/package.json",
+      "sha256": "c383aced6a67c8d06f02996015c0a163e78532a330a96dff1ccfd107b00ab326",
+      "role": "LOCAL_INSTALLED_EXECUTION_AID_NOT_CANONICAL_SOURCE"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/node_modules/react-dom/package.json",
+      "sha256": "d926f158e1be15885aaeac259c39567a46f6525fbdd14c380528486c31459996",
+      "role": "LOCAL_INSTALLED_EXECUTION_AID_NOT_CANONICAL_SOURCE"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/node_modules/playwright/package.json",
+      "sha256": "718c91812946dcfbb4b724cfa0084ee3be205c571df09094f218bc4571f43c2b",
+      "role": "LOCAL_INSTALLED_EXECUTION_AID_NOT_CANONICAL_SOURCE"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/node_modules/typescript/package.json",
+      "sha256": "822ef7ca6452205657b6288b066481ecf508bfbf43455d715cf7d3ec457561e6",
+      "role": "LOCAL_INSTALLED_EXECUTION_AID_NOT_CANONICAL_SOURCE"
+    }
+  ],
+  "capability": {
+    "status": "PASS_REUSED_WITH_CURRENT_PINS",
+    "currentToolPinsMatch": true,
+    "browserExecutableExists": true,
+    "genericBuildPreviouslyPassed": true,
+    "previousGenericCapability": ".cvf/runtime/cvf-expense-browser-dispatch-20261010/capability.json",
+    "previousGenericCapabilityRawSha256": "23a6d3367b2916be73dcd23ea8d4a6732e256dc60359369c1ead90989eb9e196",
+    "browserProofConsumed": "docs/reviews/evidence/cvf-expense-browser-local-review-2026-10-10.json",
+    "freshTaskExecutionByDispatcher": false,
+    "scope": "Installed compiler/browser capability reused with current hashes; no new component build or task browser proof."
+  },
+  "workerPaths": [
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/expenses/ExpenseList.tsx",
+    "scripts/test_cvf_expense_touch_target_browser.cjs",
+    "docs/guides/CVF_EXPENSE_TOUCH_TARGET_README_2026-10-10.md",
+    "docs/reviews/evidence/cvf-expense-touch-worker-2026-10-10.json",
+    "docs/reviews/CVF_NCR_EXPENSE_TOUCH_TARGET_WORKER_RETURN_2026-10-10.md"
+  ],
+  "newWorkerPaths": [
+    "scripts/test_cvf_expense_touch_target_browser.cjs",
+    "docs/guides/CVF_EXPENSE_TOUCH_TARGET_README_2026-10-10.md",
+    "docs/reviews/evidence/cvf-expense-touch-worker-2026-10-10.json",
+    "docs/reviews/CVF_NCR_EXPENSE_TOUCH_TARGET_WORKER_RETURN_2026-10-10.md"
+  ],
+  "materialPaths": [
+    "docs/baselines/CVF_GC018_NCR_EXPENSE_TOUCH_TARGET_2026-10-10.md",
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_TOUCH_TARGET_2026-10-10.md",
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_TOUCH_TARGET_2026-10-10.json",
+    "docs/reviews/evidence/cvf-expense-touch-dispatch-inputs-2026-10-10.json"
+  ],
+  "commands": {
+    "browser": "node scripts/test_cvf_expense_touch_target_browser.cjs",
+    "unit": "node node_modules/vitest/vitest.mjs run src/expenses/ExpenseList.test.tsx --reporter=verbose"
+  },
+  "fixtureThemeAuthority": "Explicit bounded synthetic light/accent values in work order; DESIGN dark roles and contrast/touch requirements canonical. No production light theme claim.",
+  "modelPreferenceObservation": {
+    "model": "Haiku 5.5",
+    "effort": "Max",
+    "identityBasis": "OPERATOR_REPORTED_NOT_NORMATIVE",
+    "reviewedHaikuTranchesBeforeDispatch": 2,
+    "actualBillComparison": null,
+    "reportAfterThirdReview": true
+  },
+  "dispatchDiagnostic": {
+    "owner": "LOCAL_DISPATCHER",
+    "closurePhaseCorrection": "Earlier Local material-head full pre-closure failed SHA sync; this order separates exact committed-content proof from post-sync full active-handoff finality. No worker attribution.",
+    "authoring": "Local first authoring gate found missing exact envelope/return/scaffold labels and canonical DESIGN source marker; grouped metadata repair, worker not invoked. Initial explicit feasibility invocation used wrong CLI flag; corrected to canonical caller."
+  },
+  "claimBoundary": "Packet/tool readiness only; actual44px and theme/mutant proof awaits worker."
+}

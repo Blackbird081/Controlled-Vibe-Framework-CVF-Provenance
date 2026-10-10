@@ -1,0 +1,79 @@
+{
+  "schemaVersion": "cvf.preapprovalFeasibility.v1",
+  "proposal": {
+    "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_TOUCH_TARGET_2026-10-10.md",
+    "sha256": "6073cf4b078de8557bcf64dc8d266d1661811c2e9dd56281ce760eec44812365"
+  },
+  "approvalTarget": {
+    "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_TOUCH_TARGET_2026-10-10.md",
+    "sha256": "6073cf4b078de8557bcf64dc8d266d1661811c2e9dd56281ce760eec44812365",
+    "prospectiveOutcomeSha256": "877f0812b6fb2d1e6f9d209517a6984b754106d201c87c4543e38a337650c8fb"
+  },
+  "prospectiveOutcome": {
+    "schemaVersion": "cvf.semanticConvergenceControl.v1",
+    "problemKey": "cvf-expense-mobile-touch-target",
+    "chainMode": "INITIAL",
+    "chainOrdinal": 0,
+    "predecessor": null,
+    "blockerDelta": {
+      "prior": [],
+      "resolved": [],
+      "retained": [],
+      "new": [],
+      "reopened": [],
+      "current": []
+    },
+    "resolutionEvidence": {},
+    "counters": {
+      "partialReadyClosures": 0,
+      "reviewerScopeExpansions": 0,
+      "sameClaimCorrections": 0,
+      "nonDecreasingBlockerTransitions": 0
+    },
+    "claims": [],
+    "requiredDisposition": "CONTINUE_BOUNDED",
+    "successorScope": "INITIAL_BOUNDED"
+  },
+  "phasePrerequisites": {
+    "phase": "STANDALONE_UI_TOUCH_CORRECTION",
+    "rows": [
+      {
+        "requirementId": "REVIEWED_INHERITED_DEFECT",
+        "requiredForPhase": true,
+        "evidence": {
+          "path": "docs/reviews/CVF_NCR_EXPENSE_BROWSER_PREVIEW_COMPLETION_2026-10-10.md",
+          "sha256": "aeb56179d887f4a2027b9e2168c0bd8a284f46be85a861a134cdc217d6a7671f",
+          "locator": "F4 DEFERRED_INHERITED_COMPONENT_DEFECT"
+        },
+        "deferredToPhase": null
+      },
+      {
+        "requirementId": "ADMITTED_COMPONENT_PREIMAGE",
+        "requiredForPhase": true,
+        "evidence": {
+          "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/expenses/ExpenseList.tsx",
+          "sha256": "801f305238f2512db663fee7ada837a7bf53a84036ea6efcd305d29985339f19",
+          "locator": "height: 36"
+        },
+        "deferredToPhase": null
+      },
+      {
+        "requirementId": "CURRENT_TOOL_CAPABILITY",
+        "requiredForPhase": true,
+        "evidence": {
+          "path": "docs/reviews/evidence/cvf-expense-touch-dispatch-inputs-2026-10-10.json",
+          "sha256": "a0c8f47915255852e47349e7b4e6357ac6a7105607f2d32dc20db62b7e0426a7",
+          "locator": "\"currentToolPinsMatch\": true"
+        },
+        "deferredToPhase": null
+      },
+      {
+        "requirementId": "APP_PROVIDER_MEDIA",
+        "requiredForPhase": false,
+        "evidence": null,
+        "deferredToPhase": "SEPARATE_ADMISSION_NOT_REQUIRED_FOR_UI_CORRECTION"
+      }
+    ]
+  },
+  "requestQueue": null
+}
