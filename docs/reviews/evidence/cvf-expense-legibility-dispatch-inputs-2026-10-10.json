@@ -1,0 +1,206 @@
+{
+  "schemaVersion": "cvf.expenseLegibilityDispatchInputs.v1",
+  "batchId": "CVF-NCR-EXPENSE-LEGIBILITY-20261010",
+  "date": "2026-10-10",
+  "planningBase": "d68715e97c080c8d9974f99f8294adb9c2bd9b2f",
+  "sources": [
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/expenses/ExpenseList.tsx",
+      "rawSha256": "447463e1c1330d3152eba91401a68fc8a13320c29d24fb233ccd8830a62b26e3",
+      "role": "ADMITTED_MUTABLE_PREIMAGE"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/expenses/ExpenseList.test.tsx",
+      "rawSha256": "051eda76113aed59aa59ffb4a57739468f50944dbfdfb77d905dba9ba983da8b",
+      "role": "READ_ONLY_GOVERNED_INPUT"
+    },
+    {
+      "path": "DESIGN.md",
+      "rawSha256": "15c1b5061bd2e1f763638beb83a84d06eb8ccbc470747c01f236033a834a987e",
+      "role": "READ_ONLY_GOVERNED_INPUT"
+    },
+    {
+      "path": "docs/reference/CVF_NCR_GENERAL_VIDEO_DESIGN_2026-10-02.md",
+      "rawSha256": "3ce5e2363c3e29997fcbf42cb4cec59af7447cca38409d4d970e8aa71e5777e0",
+      "role": "READ_ONLY_GOVERNED_INPUT"
+    },
+    {
+      "path": "docs/reviews/CVF_NCR_EXPENSE_NARROW_LAYOUT_COMPLETION_2026-10-10.md",
+      "rawSha256": "e32ba23b5da248c9a48bb749264cb7d30a6083f099b24c3853082c61ba2ccbde",
+      "role": "READ_ONLY_GOVERNED_INPUT"
+    },
+    {
+      "path": "docs/reviews/evidence/cvf-expense-layout-local-review-2026-10-10.json",
+      "rawSha256": "ddeef22f9f18d12ca55cf04a667e6986df946ad75ed681afdad745e39b872f80",
+      "role": "READ_ONLY_GOVERNED_INPUT"
+    },
+    {
+      "path": "scripts/test_cvf_expense_narrow_layout_browser.cjs",
+      "rawSha256": "8c3b28ac10a9b28b3143c2db75137129b9ab55306f51e309ec95752817a23041",
+      "role": "READ_ONLY_GOVERNED_INPUT"
+    },
+    {
+      "path": "scripts/test_cvf_expense_touch_target_browser.cjs",
+      "rawSha256": "39e5b62f716525388404980a052987212046a4f7f130aad5f64968c30dff07c0",
+      "role": "READ_ONLY_GOVERNED_INPUT"
+    },
+    {
+      "path": "docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json",
+      "rawSha256": "074df0db983e95c44dd4c7c27fd812e5f715f76549178e21f6b85ac05f497364",
+      "role": "READ_ONLY_GOVERNED_INPUT"
+    },
+    {
+      "path": "docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md",
+      "rawSha256": "1609cc9d955bc88b2e09179331d7828406114d98b23c81cfb3f2992afa3920f6",
+      "role": "READ_ONLY_GOVERNED_INPUT"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/package.json",
+      "rawSha256": "f03fc2c2700e904dc88e10395d0856983b9b0f9e6f27150713fa402f9e9fe24b",
+      "role": "READ_ONLY_GOVERNED_INPUT"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/vitest.config.ts",
+      "rawSha256": "9a4a65976b5b7a5d038f9cb412a90d417f804108cf1dd33bae4421989a863420",
+      "role": "READ_ONLY_GOVERNED_INPUT"
+    },
+    {
+      "path": "docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md",
+      "rawSha256": "aeec1bf5f3d720896612f5cee3460e99e99622b7092dc71afd9aa59534edc8d5",
+      "role": "READ_ONLY_GOVERNED_INPUT"
+    }
+  ],
+  "toolMetadata": [
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/node_modules/vite/package.json",
+      "sha256": "a2b943431b51bfcc2e9386eecf8b4b3f6e4bf443e56d17b1f4c8495a61b4050c",
+      "role": "LOCAL_INSTALLED_EXECUTION_AID_NOT_CANONICAL_SOURCE"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/node_modules/react/package.json",
+      "sha256": "c383aced6a67c8d06f02996015c0a163e78532a330a96dff1ccfd107b00ab326",
+      "role": "LOCAL_INSTALLED_EXECUTION_AID_NOT_CANONICAL_SOURCE"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/node_modules/react-dom/package.json",
+      "sha256": "d926f158e1be15885aaeac259c39567a46f6525fbdd14c380528486c31459996",
+      "role": "LOCAL_INSTALLED_EXECUTION_AID_NOT_CANONICAL_SOURCE"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/node_modules/playwright/package.json",
+      "sha256": "718c91812946dcfbb4b724cfa0084ee3be205c571df09094f218bc4571f43c2b",
+      "role": "LOCAL_INSTALLED_EXECUTION_AID_NOT_CANONICAL_SOURCE"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/node_modules/typescript/package.json",
+      "sha256": "822ef7ca6452205657b6288b066481ecf508bfbf43455d715cf7d3ec457561e6",
+      "role": "LOCAL_INSTALLED_EXECUTION_AID_NOT_CANONICAL_SOURCE"
+    }
+  ],
+  "capability": {
+    "status": "PASS_REUSED_WITH_CURRENT_PINS",
+    "currentToolPinsMatch": true,
+    "browserExecutableExists": true,
+    "genericBuildPreviouslyPassed": true,
+    "previousGenericCapability": ".cvf/runtime/cvf-expense-browser-dispatch-20261010/capability.json",
+    "previousGenericCapabilityRawSha256": "23a6d3367b2916be73dcd23ea8d4a6732e256dc60359369c1ead90989eb9e196",
+    "freshTaskExecutionByDispatcher": false,
+    "scope": "Compiler/browser transport reused; targeted current header observation only, not repair/worker proof."
+  },
+  "headerObservation": {
+    "status": "OBSERVED_READABILITY_DEFECT",
+    "sourceSha256": "447463e1c1330d3152eba91401a68fc8a13320c29d24fb233ccd8830a62b26e3",
+    "htmlSha256": "19f85236cc6ecc2f9ef2dc74abe9f2021a45c50774e3617232a07822b3aa26c8",
+    "method": "Reused exact-source own330 HTML; new computed header-only observation, no accepted suite replay",
+    "rows": [
+      {
+        "text": "Ng\u00e0y",
+        "color": "rgb(111, 120, 144)",
+        "background": "rgb(28, 29, 39)",
+        "fontSize": "12px",
+        "fontWeight": "600",
+        "contrast": 3.7987445700877784,
+        "minimum": 4.5,
+        "pass": false
+      },
+      {
+        "text": "N\u1ed9i dung",
+        "color": "rgb(111, 120, 144)",
+        "background": "rgb(28, 29, 39)",
+        "fontSize": "12px",
+        "fontWeight": "600",
+        "contrast": 3.7987445700877784,
+        "minimum": 4.5,
+        "pass": false
+      },
+      {
+        "text": "S\u1ed1 ti\u1ec1n",
+        "color": "rgb(111, 120, 144)",
+        "background": "rgb(28, 29, 39)",
+        "fontSize": "12px",
+        "fontWeight": "600",
+        "contrast": 3.7987445700877784,
+        "minimum": 4.5,
+        "pass": false
+      }
+    ],
+    "nonFileRequests": 0,
+    "errors": [],
+    "reusedHtmlLineage": {
+      "previousProbeReceipt": ".cvf/runtime/cvf-expense-layout-local-review-20261010/probe-results.json",
+      "previousProbeReceiptRawSha256": "7b7fffb098f7f9ecc3ccf2bce8df29a1d6fbcc6a4050d6046feb3c7723e5ed73",
+      "previousActualSourceSha256": "447463e1c1330d3152eba91401a68fc8a13320c29d24fb233ccd8830a62b26e3",
+      "ownHeaderObservationScriptRawSha256": "e27cb7de64e086f7a61fe65ec7aa62d258fc45d300ddaa668859c6ee706afd5e",
+      "scope": "Same retained own330 actual-source HTML used by earlier independent source447 receipt; new computed header-only measurement. No full suite or repair proof."
+    }
+  },
+  "headerObservationRawSha256": "ae627848bcac2f7235beda7cf0c42d3895410b24e039ee4dd9da53b6c050f7a5",
+  "workerPaths": [
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/expenses/ExpenseList.tsx",
+    "scripts/test_cvf_expense_text_legibility_browser.cjs",
+    "docs/guides/CVF_EXPENSE_TEXT_LEGIBILITY_README_2026-10-10.md",
+    "docs/reviews/evidence/cvf-expense-legibility-worker-2026-10-10.json",
+    "docs/reviews/CVF_NCR_EXPENSE_TEXT_LEGIBILITY_WORKER_RETURN_2026-10-10.md"
+  ],
+  "newWorkerPaths": [
+    "scripts/test_cvf_expense_text_legibility_browser.cjs",
+    "docs/guides/CVF_EXPENSE_TEXT_LEGIBILITY_README_2026-10-10.md",
+    "docs/reviews/evidence/cvf-expense-legibility-worker-2026-10-10.json",
+    "docs/reviews/CVF_NCR_EXPENSE_TEXT_LEGIBILITY_WORKER_RETURN_2026-10-10.md"
+  ],
+  "materialPaths": [
+    "docs/baselines/CVF_GC018_NCR_EXPENSE_TEXT_LEGIBILITY_2026-10-10.md",
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_TEXT_LEGIBILITY_2026-10-10.md",
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_TEXT_LEGIBILITY_2026-10-10.json",
+    "docs/reviews/evidence/cvf-expense-legibility-dispatch-inputs-2026-10-10.json"
+  ],
+  "commands": {
+    "browser": "node scripts/test_cvf_expense_text_legibility_browser.cjs",
+    "unit": "node node_modules/vitest/vitest.mjs run src/expenses/ExpenseList.test.tsx --reporter=verbose"
+  },
+  "modelPreferenceObservation": {
+    "model": "Haiku 5.5",
+    "effort": "Max",
+    "role": "WORKER_ONLY",
+    "identityBasis": "OPERATOR_REPORTED_NOT_NORMATIVE",
+    "reviewedHaikuTranchesBeforeDispatch": 4,
+    "actualBillComparison": null,
+    "automaticConfigurationMutation": false
+  },
+  "processLearning": "Persist first timer before any file read; digest-bound justified read reuse allowed, relevant checker/learning/scaffold required; preserve all deviations and source custody.",
+  "claimBoundary": "Measured header readability defect and packet/tool readiness only; no corrected source, app-wide theme, measured savings or model router claim.",
+  "dispatchDiagnostic": {
+    "owner": "LOCAL_DISPATCHER",
+    "workerAttribution": false,
+    "events": [
+      "Unbound pre-dispatch attempt refused before checks because current nextAllowedMove names a work order; final release will bind new order after committed continuity.",
+      "Initial standalone ledger command used range flags; corrected to required --work-order, COMPLIANT.",
+      "One ignored prior-receipt read omitted UTF8; Windows decode failed before observation; repeated with explicit UTF8 and source447 join resolved."
+    ],
+    "authoringChecks": "dispatch-quality, exact acceptance ledger, closeability and independent-probe admission COMPLIANT; learning positive/missing-plan negative PASS; technical feasibility FEASIBLE before commit.",
+    "sourceTableRefinement": "Learning locator now exact Project Action / Verification heading; no source or worker output mutation.",
+    "firstMaterialPrecommit": "FAIL_TWO_LOCAL_PACKET_FINDINGS",
+    "groupedAuthoringCorrection": "Restored exact envelope field labels/current-time notes; replaced theme-ownership wording with theme-contract scope to avoid security ownership mutation trigger. No task authority/source/worker output change.",
+    "firstMaterialPrecommitRawSha256": "388f6a5d4fb5fcf7abc92bb5737df28ae0f5daf85d568a6ddb1cbcee1fa425ec"
+  }
+}
