@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Current NCR Continuation
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `9c6186c5f5e6b144f6cba0d82dbfedcedbafb47f`. Accepted material parent anchor for dedicated continuity. Batch ID: CVF-MODEL-SELECTION-WEB-REVIEW-20261010.
+Current HEAD recorded for this handoff: `28b71634c8f0efdb87f043085039e1479d2c4f5b`. Accepted material parent anchor for dedicated continuity. Batch ID: CVF-MODEL-SELECTION-S3-R1-20261010.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -97,7 +97,7 @@ Receiving agents clarify incomplete ideas according to the existing lifecycle st
 Consume returned evidence under MFRP P4-C1: EVALUATE_RETURNED_EVIDENCE_NOT_RECREATE_IMPLEMENTATION. A rerun needs a named contradiction/changed consumer,information gain and cost reason.
 Alibaba calls are authorized for meaningful scoped tests; no other provider call,Claude dispatch,public push,deployment or actual-data cutover is inferred.
 ## Next Allowed Move
-PROGRAM_ID=CVF-CORE; NEXT_ACTION_CLASS=DESIGN; BATCH_ID=CVF-WORKER-SELECTION-FOUNDATION-20261010. Legibility CLOSED_PASS_BOUNDED; order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_TEXT_LEGIBILITY_2026-10-10.md consumed, original5/own340 light positive-negative PASS. Further expense PARKED_BY_OPERATOR; no successor/redispatch. Next Local designs optional orchestrator model-selection doctrine/contract/system chain using existing Provider Intelligence/registry/learning owners; Non coder model choice not required. Version-specific official papers/model cards/original benchmark methods; quality floor and total delivery cost, evidence unknowns retained. Six worker observations4HaikuMax/2SonnetHigh, identity operator-reported/bill unknown; no fixed model-task mapping or router/subagent activation. SourceR2/media/provider/public/deploy/P11 parked; upstream debt/LHW24 retained. Material=4309e609d72b34f1692d655c3a46d7e446a7c7bf.
+PROGRAM_ID=CVF-CORE; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-MODEL-SELECTION-S3-R1-20261010; ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_SELECTION_S3_R1_MANUAL_DESIGN_TASK_2026-10-10.md; Material=28b71634c8f0efdb87f043085039e1479d2c4f5b. First manual AGENT_SEAT R3 doctrine/contract task, only after clean committed pre-dispatch PASS and current worker seat/context/authority/budget admission. Local chooses and independently reviews; Non coder does not choose a model. Expense PARKED_BY_OPERATOR; S2/S4/S5, SourceR2/media/provider/public/deploy/P11 parked; LHW24 retained. No worker invocation yet.
 ## Active Boundary
 T3B has a Local-verified active v1 specification. Party B is verified and T3C-C1 tooling accepted at `db78c87df`; T3C-C2 and Party C are verified. T3D-C1 tooling is accepted at `9ed844c2a` without source. T3D-C0-R1 closed at `2fffa1ef7`. T3D-C3 was accepted bounded at `88137e9a2`, but actual-mode prepare attempts failed before Party B/C execution; authorized cleanup removed the failed root and discarded unaccepted worker changes. G1 stopped, G2-G6 parked, and G7 research closed at `660601f0e` with `ADAPT_EXISTING_HANDOFF_ONLY`. Evidence-join sufficiency stays WATCH; no implementation successor exists. Rejected T2 paths remain archived; HRLTP-T2 paused.
 Post-G7 Local source intake and Jev P0 are closed at material commit `9ac0ee8e59fa041ddaa93d725796c509400f257a`. The audit records 32 READ plus 8,093 DEFERRED paths. Jev adds fail-closed decision-context binding, incomplete candidate-space escape, and `EVIDENCE_ONLY` judgment authority to the existing ASSF owner. Proof: TypeScript 84/84, Python 61/61, compile PASS, governance 90/90. G1-G7 remain closed.
@@ -123,27 +123,27 @@ The historic provider/live parked line applies to those stopped lanes; it does n
 Q001/Q004 actual-data source/writer,custody,retention/RPO/RTO/cost checkpoints are action-specific; do not require a user-supplied ledger copy for unrelated fresh isolated development.
 NCR send/B2 STOP and S05/C1 remain; IAB unavailable; repo Playwright Chromium present; vision/full P04/full release remain unproved. No autonomous P11/public/deploy activation.
 ## Core Guard Self-Protection Authorization
-Authorized guard-maintenance scope: exact seven-path continuity for text-legibility dispatch and worker-only evaluation. Protected paths: `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/cvfNcrConsolidatedLocalFoundation20261006.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`. Operator authorization: collect/classify/evaluate for later worker configuration and continue; standing isolated-test/manual-transfer authority. Rollback boundary: these continuity paths only; prior worker originals/counters and parked effects preserved.
+Authorized guard-maintenance scope: exact six-path S3-R1 first-work-order dispatch sync after material packet commit. Protected paths: `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`. Operator authorization: Local makes the final model-selection design decision and proceeds with the first work order; worker transfer remains conditional on bound admission. Rollback boundary: these continuity paths only; prior worker originals/counters and parked effects preserved.
 ## Agent Operation Trace Block
 
 | Field | Evidence |
 |---|---|
 | Actor | Local continuity steward |
 | Provider or surface | private shared CVF workspace |
-| Session or invocation | expense-legibility-review-continuity-20261010 |
+| Session or invocation | model-selection-s3-r1-dispatch-continuity-20261010 |
 | Working directory | repository root |
-| Command or tool surface | actual material SHA/exact18 content proof, source continuity and canonical generator |
-| Target paths | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/cvfNcrConsolidatedLocalFoundation20261006.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Allowed scope source | work-order closure conversion and operator park-expense/foundation direction |
-| Before status evidence | accepted material 4309e609d72b34f1692d655c3a46d7e446a7c7bf; clean worktree; exact18 content proof PASS |
-| After status evidence | actual SHA; expense parked, foundation DESIGN next; original5 preserved with limits |
-| Diff evidence | exact seven-path continuity and generated projections |
-| Approval boundary | private closure continuity only |
-| Claim boundary | bounded UI/worker observations, no router/provider or bill claim |
+| Command or tool surface | S3-R1 material SHA, source continuity and canonical state generator |
+| Target paths | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Allowed scope source | operator instruction for Local final decision and first work order; S3 roadmap; committed packet |
+| Before status evidence | committed packet 28b71634c8f0efdb87f043085039e1479d2c4f5b; clean worktree; authoring and pre-commit gates PASS |
+| After status evidence | actual packet SHA; S3-R1 EXECUTE after bound admission; Expense remains parked |
+| Diff evidence | exact six-path continuity and generated projections |
+| Approval boundary | private dispatch continuity only |
+| Claim boundary | packet readiness only; no worker invocation, router/provider or bill claim |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | expense-legibility-review-continuity-20261010 |
-| Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/cvfNcrConsolidatedLocalFoundation20261006.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/cvfNcrConsolidatedLocalFoundation20261006.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Invocation ID | model-selection-s3-r1-dispatch-continuity-20261010 |
+| Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |
 

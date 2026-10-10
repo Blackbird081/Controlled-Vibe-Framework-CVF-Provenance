@@ -36,12 +36,12 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_NCR_EXPENSE_TEXT_LEGIBILITY_2026-10-10.md",
-    "baselineSha256": "6e19991d0b780c5748cf71b7624b79fd102146b830d115fb4cb3954eb0ae14c4",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_TEXT_LEGIBILITY_2026-10-10.md",
-    "workOrderSha256": "198d1b64bdf3fd895e269fc9a350ea549cb647e23fbeed337eff48f33d202c21"
+    "baselinePath": "docs/baselines/CVF_GC018_MODEL_SELECTION_S3_R1_MANUAL_DESIGN_TASK_2026-10-10.md",
+    "baselineSha256": "59d87ed086d4da8397d5757b21e897a1136bdc34b252374a249d399b9d7b0c2e",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_SELECTION_S3_R1_MANUAL_DESIGN_TASK_2026-10-10.md",
+    "workOrderSha256": "014cf9d1f6b76a9bf8c78adfbe70f03fdd8b5f4ad84c30ece087e8d408a4116f"
   },
-  "currentAuthoritySyncReason": "Legibility accepted bounded at 4309e609d72b34f1692d655c3a46d7e446a7c7bf; exact18 content proof PASS. Expense PARKED_BY_OPERATOR; model-selection foundation DESIGN next; no router/provider effect.",
+  "currentAuthoritySyncReason": "First manual S3-R1 dispatch packet committed at 28b71634c8f0efdb87f043085039e1479d2c4f5b; release needs bound pre-dispatch PASS and actual worker seat/context/authority/budget admission. Expense remains parked; no worker outcome.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
