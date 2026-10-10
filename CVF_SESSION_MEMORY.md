@@ -39,7 +39,7 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`;handoff=`AGENT_HANDOFF_V63_2026-09-18.md`;next=manual expense browser worker transfer after committed bound release;role=Local INTERNAL_AGENT orchestrator/reviewer;phase=internal dispatch;decision owner=Local;parked checkpoint=source R2/native/TTS/media/provider/public/deploy/P11;no automatic successor.
+Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`;handoff=`AGENT_HANDOFF_V63_2026-09-18.md`;next=bounded roadmap selection after browser review;role=Local INTERNAL_AGENT reviewer/closer;phase=internal review/closure;decision owner=Local;parked checkpoint=source R2/native/TTS/media/provider/public/deploy/P11;no automatic successor.
 
 ## Current Mode
 
@@ -48,7 +48,7 @@ Current mode: `cvf_ncr_p10_closed_p11_parked`; previous mode marker: `cvf_ncr_p1
 
 ## Next Allowed Move
 Mode: `cvf_ncr_p10_closed_p11_parked`
-PROGRAM_ID=CVF-CORE; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-EXPENSE-BROWSER-20261010. Operator manually transfers docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_BROWSER_PREVIEW_2026-10-10.md only after actual clean committed bound pre-dispatch PASS. Worker first action captures UTC/monotonic before ANY reads in authorized timer file; one90-minute total ceiling, five exact new script/guide/proof/return paths, no commit or tool-delegated subagents. Build actual accepted read-only ExpenseList into standalone offline HTML; Chromium interactions/calendar negatives/two mutants and screenshots only, no server/network/provider/app integration/storyboard/media. Separate frozen confirmation log/final elapsed required. Local is orchestrator/reviewer; Haiku5.5/Max operator preference, no normative model or price claim. Prior unit accepted with historical deviations retained; parent learning APPLIED_ONE_PRIOR_LOCAL_WORKFLOW, projectResolution OPEN. Source R2/native/TTS/audio/MP4/S2-S9/provider/public/deploy/P11 parked; no push grant or automatic source successor. LHW24 retained.
+PROGRAM_ID=CVF-CORE; NEXT_ACTION_CLASS=REVIEW; BATCH_ID=CVF-NCR-EXPENSE-BROWSER-20261010. Expense browser preview CLOSED_PASS_BOUNDED: five original worker artifacts accepted; independent alternate browser fixture and drift sentinel PASS; frozen bound confirmation consumed. Timer/required-read deviations and inherited touch target limitation retained; dark only. Work order consumed, no redispatch. Local may select next useful bounded roadmap task; governed worker model ledger now two Haiku5.5/Max reviewed plus Sonnet5.5/High reference, operator-reported identities, bill unknown; preliminary report after third Haiku review. Source R2/native/TTS/audio/MP4/S2-S9/provider/public/deploy/P11 parked; no automatic source successor or push grant; upstream debt retained. LHW24 retained.
 Historical G1-G7 terminal baseline: mode `acel_g1_g7_research_terminally_closed`. G1-G6 terminal review: `docs/reviews/CVF_ACEL_G1_G6_TERMINAL_STOP_CLOSURE_2026-09-24.md`; G7 research closure: `docs/reviews/CVF_ACEL_G7_CROSS_RUN_CAPABILITY_EVOLUTION_RESEARCH_CLOSURE_2026-09-24.md`. The packet-only post-G7 reconciliation review at `docs/reviews/CVF_ACEL_POST_G7_FULL_CORPUS_ABSORPTION_CLOSURE_2026-09-24.md` is superseded for repository absorption by the 2026-09-25 pinned-source audit. G1 is stopped, G2-G6 remain parked, G7 research is closed, and no automatic G1-G7 successor exists.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1

@@ -39,9 +39,9 @@
     "baselinePath": "docs/baselines/CVF_GC018_NCR_EXPENSE_BROWSER_PREVIEW_2026-10-10.md",
     "baselineSha256": "28e64b10512aa32f741d236da867d35072865e235c14eb2d537cf5bc02df1f2a",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_BROWSER_PREVIEW_2026-10-10.md",
-    "workOrderSha256": "7913adcf69a70fb641bcca33500c3def91c1060d6bd4ba2c59b2e5072ec04d0e"
+    "workOrderSha256": "ed2fd53828507dbbe6db3ba472f6ffd6592a61e235aa3def4c71830e64477ff4"
   },
-  "currentAuthoritySyncReason": "Operator continued isolated local testing/manual transfer; browser UI proof packet committed at 4cb8ee92ec454a321692f4e6fe15afdee93e49a2. Actual component read-only, no media/source/provider effect admission; final bound clean release required.",
+  "currentAuthoritySyncReason": "Bounded technical browser preview acceptance; timer/read limitations preserved; exact closed raw pin; no effect/public grant.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",

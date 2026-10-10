@@ -1,0 +1,162 @@
+{
+  "schemaVersion": "cvf.expenseBrowserWorkerEvidence.v1",
+  "batchId": "CVF-NCR-EXPENSE-BROWSER-20261010",
+  "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_BROWSER_PREVIEW_2026-10-10.md",
+  "status": "COMPLETE_PENDING_REVIEW",
+  "commitMode": "WORKER_MUST_NOT_COMMIT",
+  "dispatchBaseHead": "665da5b2df3e1d2b81553a5c9567c7babb364459",
+  "executionBaseHead": "57716929c8e0552a2fb1f774562c55924cce315d",
+  "executionBaseNote": "Clean committed HEAD captured at worker start; packet commit 4cb8ee92e and sync commit 57716929c are ancestors of it.",
+  "timer": {
+    "budgetMinutes": 90,
+    "startUtc": "2026-10-10T01:56:13Z",
+    "startStore": "ignored runtime timer.txt (.cvf/runtime/cvf-expense-browser-worker-20261010/)",
+    "startDeviation": "Timer was written in the same parallel tool batch as the first read of the work order, so strict capture-before-read ordering is not proven.",
+    "endStore": "ignored runtime timer.txt, written after the separate frozen confirmation run",
+    "finalElapsedRecordedIn": "ignored runtime manifest"
+  },
+  "pinCheck": {
+    "result": "PASS",
+    "ExpenseList.tsx": "801f305238f2512db663fee7ada837a7bf53a84036ea6efcd305d29985339f19",
+    "ExpenseList.test.tsx": "051eda76113aed59aa59ffb4a57739468f50944dbfdfb77d905dba9ba983da8b",
+    "toolMetadataCheckedLocally": ["vite 8.0.16", "react 19.2.3", "react-dom 19.2.3", "playwright 1.58.2", "typescript"],
+    "outputsAbsentBeforeWork": true
+  },
+  "preImplementationGate": {
+    "command": "python -B governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base 57716929c8e0552a2fb1f774562c55924cce315d --head HEAD --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_BROWSER_PREVIEW_2026-10-10.md --receipt-dir .cvf/runtime/cvf-expense-browser-worker-20261010/gates",
+    "exit": 0,
+    "result": "COMPLIANT",
+    "elapsedSeconds": 71.9,
+    "receipt": ".cvf/runtime/cvf-expense-browser-worker-20261010/gates/pre-implementation.json"
+  },
+  "previewBuild": {
+    "command": "node scripts/cvf_expense_fixture_preview.cjs --output .cvf/runtime/cvf-expense-browser-worker-20261010/expense-preview.html",
+    "exit": 0,
+    "variant": "primary",
+    "sourceSha256": "801f305238f2512db663fee7ada837a7bf53a84036ea6efcd305d29985339f19",
+    "htmlSha256": "f709836a5b41d425ffa854a8764068d9c99805a623fd77b5126f4589ccc535c4",
+    "htmlBytes": 193669,
+    "htmlCapBytes": 2097152,
+    "bundleChunks": 1,
+    "externalReferences": 0,
+    "inlineScriptTags": 1,
+    "inlineScriptNote": "Two literal '<script' strings appear; one is the wrapper open tag and one is a React DOM string literal inside the bundle. Only one executable script element exists.",
+    "linkTags": 0,
+    "imageTags": 0,
+    "rowsRendered": ["EXP-001", "EXP-002", "EXP-003", "EXP-004"],
+    "malformedRowRendered": false,
+    "sourceDriftNegative": {
+      "command": "node scripts/cvf_expense_fixture_preview.cjs --source <runtime copy with one appended byte> --output <runtime sentinel>",
+      "exit": 1,
+      "refusal": "SOURCE_PIN_DRIFT",
+      "sentinelPreserved": true
+    },
+    "unchangedCopyControl": {
+      "command": "same CLI with an unchanged runtime copy of ExpenseList.tsx",
+      "exit": 0,
+      "sourceSha256": "801f305238f2512db663fee7ada837a7bf53a84036ea6efcd305d29985339f19"
+    },
+    "calendarVariantCli": {
+      "command": "node scripts/cvf_expense_fixture_preview.cjs --variant calendar --output .cvf/runtime/cvf-expense-browser-worker-20261010/expense-preview-calendar.html",
+      "exit": 0,
+      "htmlSha256": "4527af41a0925131a73ca6d9e991d42ee5d9701e01c6a4866f419c7760b4815c",
+      "htmlBytes": 193660
+    },
+    "syntaxChecks": ["node --check scripts/cvf_expense_fixture_preview.cjs: exit 0", "node --check scripts/test_cvf_expense_fixture_preview_browser.cjs: exit 0"]
+  },
+  "browserTestResults": {
+    "command": "node scripts/test_cvf_expense_fixture_preview_browser.cjs",
+    "exit": 0,
+    "status": "PASS",
+    "browserVersion": "145.0.7632.6",
+    "browserBinary": "installed Playwright Chromium (no install, no HTTP listener)",
+    "profiles": ["desktop1280x800", "mobile390x844"],
+    "testRecords": [
+      { "name": "primary march/april/clear flow", "profile": "desktop1280x800", "status": "PASS", "assertions": 8 },
+      { "name": "calendar negatives", "profile": "desktop1280x800", "status": "PASS", "assertions": 3 },
+      { "name": "primary march/april/clear flow", "profile": "mobile390x844", "status": "PASS", "assertions": 8 },
+      { "name": "calendar negatives", "profile": "mobile390x844", "status": "PASS", "assertions": 3 },
+      { "name": "restored calendar negatives after mutants", "profile": "desktop1280x800", "status": "PASS", "assertions": 3 }
+    ],
+    "totalAssertions": 29,
+    "externalRequests": 0,
+    "pageErrors": 0,
+    "pageErrorsIncludeConsoleErrors": true,
+    "mutants": [
+      {
+        "id": "M1-month-predicate",
+        "change": "exact year-month predicate replaced by month-only slice comparison",
+        "htmlSha256": "93c40feac48f71e22f5f06912c18f17a2785302ba65c9d51210d41052d35a30a",
+        "collected": 1,
+        "completed": 1,
+        "killed": true,
+        "failureKind": "ASSERTION",
+        "firstFailure": "March 2026 excludes wrong-year 2025-03-15 and impossible 2026-03-32: actual EXP-003, EXP-004, EXP-005"
+      },
+      {
+        "id": "M2-calendar-day-validity",
+        "change": "calendar-day upper bound check removed",
+        "htmlSha256": "70837fabe57bb9e650affe0cbd0db77f8d9a465d9af98143a887554451ece7ba",
+        "collected": 1,
+        "completed": 1,
+        "killed": true,
+        "failureKind": "ASSERTION",
+        "firstFailure": "clear view drops impossible 2026-03-32: actual EXP-001, EXP-002, EXP-003, EXP-004, EXP-005"
+      }
+    ],
+    "restoration": {
+      "restoredCalendarHtmlSha256": "4527af41a0925131a73ca6d9e991d42ee5d9701e01c6a4866f419c7760b4815c",
+      "restoredPass": true,
+      "primaryHtmlUnchangedAfterMutants": true,
+      "acceptedSourceSha256AfterRun": "801f305238f2512db663fee7ada837a7bf53a84036ea6efcd305d29985339f19"
+    },
+    "screenshots": [
+      { "path": ".cvf/runtime/cvf-expense-browser-worker-20261010/preview-desktop1280x800-march.png", "bytes": 24797, "sha256": "e8822a250dc6504815fc1baf6e0f5b0b0813b74a956c5a18fb23885b03250f26", "capBytes": 3145728 },
+      { "path": ".cvf/runtime/cvf-expense-browser-worker-20261010/preview-mobile390x844-march.png", "bytes": 22191, "sha256": "9217c44f1c35bc35934b1882a88a5759c30b55bc3aca5274a21e167d0f688471", "capBytes": 3145728 }
+    ],
+    "firstFailuresAndGroupedRepairs": [
+      "Visual review of the first mobile screenshot showed the ISO date splitting at its hyphen (2026-03- / 03). Repair: wrapper CSS nowrap on the first column, plus a one-line-date layout assertion. Rerun passed; no assertion was added to the mutant set.",
+      "Mutant harness first run reported both mutants as FAIL at the aggregate level because mutant records were included in the normal-case check; repaired by excluding mutant records from that check. Per-mutant assertion kills were already recorded as ASSERTION."
+    ]
+  },
+  "guideVerification": {
+    "file": "docs/guides/CVF_EXPENSE_BROWSER_PREVIEW_README_2026-10-10.md",
+    "lines": 58,
+    "lineCap": 100,
+    "claimsCheckedAgainstRuns": ["commands match the executed CLI and test commands", "viewports 1280x800 and 390x844", "limits: dark tokens only, 36px input, no media, unit suite not rerun"],
+    "result": "PASS_BY_READ"
+  },
+  "workerReturnGate": {
+    "command": "python governance/compat/run_worker_return_fast_gate.py --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_BROWSER_PREVIEW_2026-10-10.md",
+    "runs": "first-run and final-run results are recorded in the return's Command Evidence; the separate frozen confirmation log is in the ignored runtime gates folder"
+  },
+  "outputCaps": {
+    "builderLines": { "value": 162, "cap": 250 },
+    "testLines": { "value": 167, "cap": 350 },
+    "guideLines": { "value": 58, "cap": 100 },
+    "evidenceLines": { "cap": 350 },
+    "returnLines": { "cap": 450 },
+    "runtimeTotalBytes": 1278923,
+    "runtimeTotalCapBytes": 31457280,
+    "htmlCapBytes": 2097152,
+    "screenshotCapBytes": 3145728
+  },
+  "invocationCounts": {
+    "internalAgentInvocationCount": 0,
+    "externalAgentInvocationCount": 0,
+    "providerCallCount": 0,
+    "subagentCount": 0
+  },
+  "usage": "NOT_AVAILABLE_WITH_REASON: no token or billing meter is exposed to this worker; operator-reported model preference is not normative.",
+  "gitUnion": {
+    "basis": "git status --short at return time; runtime outputs are ignored by .gitignore",
+    "paths": [
+      "scripts/cvf_expense_fixture_preview.cjs",
+      "scripts/test_cvf_expense_fixture_preview_browser.cjs",
+      "docs/guides/CVF_EXPENSE_BROWSER_PREVIEW_README_2026-10-10.md",
+      "docs/reviews/evidence/cvf-expense-browser-worker-2026-10-10.json",
+      "docs/reviews/CVF_NCR_EXPENSE_BROWSER_PREVIEW_WORKER_RETURN_2026-10-10.md"
+    ]
+  },
+  "claimBoundary": "Private actual-component browser UI preview with synthetic rows only. Not application-route integration, not AI-governance behavior, not media, not source-R2 recovery, not public/deploy/P11. Accepted unit evidence is consumed, not rerun."
+}

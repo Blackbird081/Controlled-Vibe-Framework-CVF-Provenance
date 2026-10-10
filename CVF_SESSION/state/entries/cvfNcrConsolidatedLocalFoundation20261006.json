@@ -994,7 +994,7 @@
       ],
       "oldRootsFrozen": true
     },
-    "nextAllowedMove": "PROGRAM_ID=CVF-CORE; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-EXPENSE-BROWSER-20261010. Operator manually transfers docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_BROWSER_PREVIEW_2026-10-10.md only after actual clean committed bound pre-dispatch PASS. Worker first action captures UTC/monotonic before ANY reads in authorized timer file; one90-minute total ceiling, five exact new script/guide/proof/return paths, no commit or tool-delegated subagents. Build actual accepted read-only ExpenseList into standalone offline HTML; Chromium interactions/calendar negatives/two mutants and screenshots only, no server/network/provider/app integration/storyboard/media. Separate frozen confirmation log/final elapsed required. Local is orchestrator/reviewer; Haiku5.5/Max operator preference, no normative model or price claim. Prior unit accepted with historical deviations retained; parent learning APPLIED_ONE_PRIOR_LOCAL_WORKFLOW, projectResolution OPEN. Source R2/native/TTS/audio/MP4/S2-S9/provider/public/deploy/P11 parked; no push grant or automatic source successor. LHW24 retained.",
+    "nextAllowedMove": "PROGRAM_ID=CVF-CORE; NEXT_ACTION_CLASS=REVIEW; BATCH_ID=CVF-NCR-EXPENSE-BROWSER-20261010. Expense browser preview CLOSED_PASS_BOUNDED: five original worker artifacts accepted; independent alternate browser fixture and drift sentinel PASS; frozen bound confirmation consumed. Timer/required-read deviations and inherited touch target limitation retained; dark only. Work order consumed, no redispatch. Local may select next useful bounded roadmap task; governed worker model ledger now two Haiku5.5/Max reviewed plus Sonnet5.5/High reference, operator-reported identities, bill unknown; preliminary report after third Haiku review. Source R2/native/TTS/audio/MP4/S2-S9/provider/public/deploy/P11 parked; no automatic source successor or push grant; upstream debt retained. LHW24 retained.",
     "s1R2LocalDisposition20261009": {
       "materialCommit": "5c1c5bf30525c091deda533b92608fe76a13ad21",
       "review": "docs/reviews/CVF_NCR_C1_S1_CONSOLIDATED_REPAIR_COMPLETION_2026-10-09.md",
@@ -1173,6 +1173,25 @@
       "operatorWorkerPreference": "Haiku5.5/Max OPERATOR_REPORTED_NOT_NORMATIVE",
       "priorUnitProcessDeviationsRetained": true,
       "sourceR2Successor": false
+    },
+    "expenseBrowserPreviewAcceptance20261010": {
+      "status": "CLOSED_PASS_BOUNDED",
+      "completion": "docs/reviews/CVF_NCR_EXPENSE_BROWSER_PREVIEW_COMPLETION_2026-10-10.md",
+      "localEvidence": "docs/reviews/evidence/cvf-expense-browser-local-review-2026-10-10.json",
+      "originalWorkerBytesPreserved": true,
+      "independentBrowserCases": 3,
+      "independentDriftSentinel": "PASS",
+      "historicalProcedureCompliance": "DEVIATIONS_DISCLOSED_NOT_CERTIFIED",
+      "materialCommit": "PENDING_ACTUAL_COMMIT_STEWARD",
+      "inheritedMobileInputOuterHeightPx": 38,
+      "themes": "DEFAULT_DARK_ONLY"
+    },
+    "workerModelEvaluation20261010": {
+      "ledger": "docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json",
+      "reviewedHaikuTranches": 2,
+      "sonnetReferenceTranches": 1,
+      "billing": "UNKNOWN",
+      "preliminaryReportAfterReviewedHaikuCount": 3
     }
   }
 }

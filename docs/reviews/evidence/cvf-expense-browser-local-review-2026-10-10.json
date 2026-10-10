@@ -1,0 +1,407 @@
+{
+  "schemaVersion": "cvf.expenseBrowserLocalReview.v1",
+  "status": "CLOSED_PASS_BOUNDED",
+  "batchId": "CVF-NCR-EXPENSE-BROWSER-20261010",
+  "closureBaseHead": "57716929c8e0552a2fb1f774562c55924cce315d",
+  "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_BROWSER_PREVIEW_2026-10-10.md",
+  "workerOriginalPins": {
+    "scripts/cvf_expense_fixture_preview.cjs": "ff7ce594c0af6d8d853b00b72ec71975a73750a1f0b52f512a86a01ecac8a166",
+    "scripts/test_cvf_expense_fixture_preview_browser.cjs": "32d802b027a4eef4ef0c8d10ebaa1f9fd9520a6ba023be8c9fd35acfd4001ac6",
+    "docs/guides/CVF_EXPENSE_BROWSER_PREVIEW_README_2026-10-10.md": "316459b3e0e5ba714a04fcb31ddaa15555211d337a04f7d3ceb7331f41dd82ff",
+    "docs/reviews/evidence/cvf-expense-browser-worker-2026-10-10.json": "fdd3212614e6a10dcc6aa58972ea044aeafb95a4fbb7e182174597d2dac3184a",
+    "docs/reviews/CVF_NCR_EXPENSE_BROWSER_PREVIEW_WORKER_RETURN_2026-10-10.md": "7540ff9e2964735540ee5dcd732f0c5fb04b1f30e0bd4d00b8853e2759c4274c"
+  },
+  "frozenInputPins": [
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/expenses/ExpenseList.tsx",
+      "rawSha256": "801f305238f2512db663fee7ada837a7bf53a84036ea6efcd305d29985339f19",
+      "role": "named-governed-input",
+      "observedSha256": "801f305238f2512db663fee7ada837a7bf53a84036ea6efcd305d29985339f19",
+      "match": true
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/expenses/ExpenseList.test.tsx",
+      "rawSha256": "051eda76113aed59aa59ffb4a57739468f50944dbfdfb77d905dba9ba983da8b",
+      "role": "named-governed-input",
+      "observedSha256": "051eda76113aed59aa59ffb4a57739468f50944dbfdfb77d905dba9ba983da8b",
+      "match": true
+    },
+    {
+      "path": "docs/reviews/CVF_NCR_EXPENSE_FILTER_FIXTURE_COMPLETION_2026-10-09.md",
+      "rawSha256": "3c36d923d861e5ecce7f096aed268057d581fcb003e50d862124fab7ee62d9c6",
+      "role": "named-governed-input",
+      "observedSha256": "3c36d923d861e5ecce7f096aed268057d581fcb003e50d862124fab7ee62d9c6",
+      "match": true
+    },
+    {
+      "path": "docs/reference/CVF_NCR_GENERAL_VIDEO_DESIGN_2026-10-02.md",
+      "rawSha256": "3ce5e2363c3e29997fcbf42cb4cec59af7447cca38409d4d970e8aa71e5777e0",
+      "role": "named-governed-input",
+      "observedSha256": "3ce5e2363c3e29997fcbf42cb4cec59af7447cca38409d4d970e8aa71e5777e0",
+      "match": true
+    },
+    {
+      "path": "DESIGN.md",
+      "rawSha256": "15c1b5061bd2e1f763638beb83a84d06eb8ccbc470747c01f236033a834a987e",
+      "role": "named-governed-input",
+      "observedSha256": "15c1b5061bd2e1f763638beb83a84d06eb8ccbc470747c01f236033a834a987e",
+      "match": true
+    },
+    {
+      "path": "scripts/test_cvf_storyboard_preview_browser.cjs",
+      "rawSha256": "5a12fe49ae6c3c00460d01514114069e26b1c95cd205340958d6069a8cd63496",
+      "role": "named-governed-input",
+      "observedSha256": "5a12fe49ae6c3c00460d01514114069e26b1c95cd205340958d6069a8cd63496",
+      "match": true
+    },
+    {
+      "path": "docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md",
+      "rawSha256": "1609cc9d955bc88b2e09179331d7828406114d98b23c81cfb3f2992afa3920f6",
+      "role": "named-governed-input",
+      "observedSha256": "1609cc9d955bc88b2e09179331d7828406114d98b23c81cfb3f2992afa3920f6",
+      "match": true
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/package.json",
+      "rawSha256": "f03fc2c2700e904dc88e10395d0856983b9b0f9e6f27150713fa402f9e9fe24b",
+      "role": "named-governed-input",
+      "observedSha256": "f03fc2c2700e904dc88e10395d0856983b9b0f9e6f27150713fa402f9e9fe24b",
+      "match": true
+    }
+  ],
+  "implementationRepairsByReviewer": 0,
+  "independentProbe": {
+    "status": "PASS",
+    "cases": [
+      "clear excludes impossible date, preserves supplied order",
+      "March2026 excludes wrong year, impossible date and other month",
+      "March2027 positive control",
+      "source drift refused before sentinel overwrite"
+    ],
+    "fixture": [
+      {
+        "id": "LOCAL-LATE",
+        "date": "2026-03-29",
+        "label": "Local late",
+        "amount": 3
+      },
+      {
+        "id": "LOCAL-YEAR",
+        "date": "2027-03-29",
+        "label": "Local wrong year",
+        "amount": 4
+      },
+      {
+        "id": "LOCAL-INVALID",
+        "date": "2026-03-32",
+        "label": "Local impossible",
+        "amount": 5
+      },
+      {
+        "id": "LOCAL-EARLY",
+        "date": "2026-03-01",
+        "label": "Local early",
+        "amount": 6
+      },
+      {
+        "id": "LOCAL-FEB",
+        "date": "2026-02-28",
+        "label": "Local other month",
+        "amount": 7
+      }
+    ],
+    "expectedMarch": [
+      "LOCAL-LATE",
+      "LOCAL-EARLY"
+    ],
+    "sourceSha256": "801f305238f2512db663fee7ada837a7bf53a84036ea6efcd305d29985339f19",
+    "htmlSha256": "95b262e186c329a3a8a7c164b8a7cb1295c3e080904e0f8495b343d2d4f4a03a",
+    "browserVersion": "145.0.7632.6",
+    "monthInputHeightPx": 38,
+    "externalRequests": 0,
+    "pageErrors": 0,
+    "sentinelPreserved": true,
+    "method": "Exported ROWS.primary replaced in isolated Node process; actual pinned component unmodified; no worker-test imports."
+  },
+  "probeSourceText": "'use strict';\n// Reviewer-owned alternate fixture and literal oracle. No worker-test import.\nconst fs=require('fs'),path=require('path'),assert=require('assert');\nconst root=process.cwd(),out=path.join(root,'.cvf/runtime/cvf-expense-browser-local-review-20261010');\nconst builder=require(path.join(root,'scripts/cvf_expense_fixture_preview.cjs'));\nconst {chromium}=require(path.join(root,'EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/node_modules/@playwright/test'));\nconst rows=[\n {id:'LOCAL-LATE',date:'2026-03-29',label:'Local late',amount:3},\n {id:'LOCAL-YEAR',date:'2027-03-29',label:'Local wrong year',amount:4},\n {id:'LOCAL-INVALID',date:'2026-03-32',label:'Local impossible',amount:5},\n {id:'LOCAL-EARLY',date:'2026-03-01',label:'Local early',amount:6},\n {id:'LOCAL-FEB',date:'2026-02-28',label:'Local other month',amount:7}\n];\n(async()=>{\n fs.mkdirSync(out,{recursive:true});const saved=builder.ROWS.primary.slice();let browser;\n const errors=[],external=[],cases=[];\n const before=builder.sha256(fs.readFileSync(builder.SOURCE));\n try{\n  // ROWS is an exported helper input; replace only the runtime fixture, never source/filter or tracked bytes.\n  builder.ROWS.primary.splice(0,builder.ROWS.primary.length,...rows);\n  const built=await builder.buildPreview();fs.writeFileSync(path.join(out,'alternate.html'),built.html);\n  browser=await chromium.launch();const context=await browser.newContext({viewport:{width:390,height:844}});\n  await context.route('**/*',route=>{external.push(route.request().url());return route.abort();});\n  const page=await context.newPage();page.setDefaultTimeout(15000);\n  page.on('pageerror',e=>errors.push(e.message));page.on('console',m=>{if(m.type()==='error')errors.push(m.text());});\n  await page.setContent(built.html);await page.waitForSelector('[data-expense-id]');\n  const ids=()=>page.locator('[data-expense-id]').evaluateAll(es=>es.map(e=>e.dataset.expenseId));\n  assert.deepStrictEqual(await ids(),['LOCAL-LATE','LOCAL-YEAR','LOCAL-EARLY','LOCAL-FEB']);cases.push('clear excludes impossible date, preserves supplied order');\n  await page.locator('input[type=month]').fill('2026-03');\n  assert.deepStrictEqual(await ids(),['LOCAL-LATE','LOCAL-EARLY']);cases.push('March2026 excludes wrong year, impossible date and other month');\n  await page.locator('input[type=month]').fill('2027-03');\n  assert.deepStrictEqual(await ids(),['LOCAL-YEAR']);cases.push('March2027 positive control');\n  const height=await page.locator('input[type=month]').evaluate(e=>e.getBoundingClientRect().height);\n  const changed=path.join(out,'drift.tsx'),sentinel=path.join(out,'sentinel.html');\n  fs.writeFileSync(changed,Buffer.concat([fs.readFileSync(builder.SOURCE),Buffer.from('\\n// local drift sentinel\\n')]));\n  fs.writeFileSync(sentinel,'LOCAL_SENTINEL_KEEP');const sentinelBefore=builder.sha256(fs.readFileSync(sentinel));\n  let refused=false;try{await builder.writePreview({sourcePath:changed,output:sentinel});}catch(e){assert.match(e.message,/SOURCE_PIN_DRIFT/);refused=true;}\n  assert.strictEqual(refused,true);assert.strictEqual(builder.sha256(fs.readFileSync(sentinel)),sentinelBefore);cases.push('source drift refused before sentinel overwrite');\n  assert.deepStrictEqual(errors,[]);assert.deepStrictEqual(external,[]);assert.strictEqual(builder.sha256(fs.readFileSync(builder.SOURCE)),before);\n  fs.writeFileSync(path.join(out,'probe-results.json'),JSON.stringify({status:'PASS',cases,fixture:rows,expectedMarch:['LOCAL-LATE','LOCAL-EARLY'],sourceSha256:before,htmlSha256:built.htmlSha256,browserVersion:browser.version(),monthInputHeightPx:height,externalRequests:external.length,pageErrors:errors.length,sentinelPreserved:true,method:'Exported ROWS.primary replaced in isolated Node process; actual pinned component unmodified; no worker-test imports.'},null,2));\n  console.log('PASS independent fixture 3 cases + drift sentinel; month height='+height);\n }finally{builder.ROWS.primary.splice(0,builder.ROWS.primary.length,...saved);if(browser)await browser.close();}\n})().catch(e=>{console.error(e);process.exitCode=1;});\n",
+  "probeReproduction": "Extract probeSourceText into .cvf/runtime/cvf-expense-browser-local-review-20261010/probe.cjs; node from repo root. Exported builder ROWS input replaced in isolated process; actual pinned ExpenseList and production filter untouched. Worker test not imported. Reviewer had exposure to worker sources/evidence; fixture and literal oracle distinct.",
+  "consumedWorkerEvidence": {
+    "browserReport": {
+      "status": "PASS",
+      "browserVersion": "145.0.7632.6",
+      "primaryHtmlSha256": "f709836a5b41d425ffa854a8764068d9c99805a623fd77b5126f4589ccc535c4",
+      "calendarHtmlSha256": "4527af41a0925131a73ca6d9e991d42ee5d9701e01c6a4866f419c7760b4815c",
+      "restoredCalendarHtmlSha256": "4527af41a0925131a73ca6d9e991d42ee5d9701e01c6a4866f419c7760b4815c",
+      "restoredPass": true,
+      "primaryHtmlUnchanged": true,
+      "sourceSha256": "801f305238f2512db663fee7ada837a7bf53a84036ea6efcd305d29985339f19",
+      "tests": [
+        {
+          "name": "primary march/april/clear flow",
+          "profile": "desktop1280x800",
+          "status": "PASS",
+          "failureKind": null,
+          "assertions": 8,
+          "ms": 1624,
+          "error": null,
+          "externalRequests": 0,
+          "pageErrors": 0
+        },
+        {
+          "name": "calendar negatives",
+          "profile": "desktop1280x800",
+          "status": "PASS",
+          "failureKind": null,
+          "assertions": 3,
+          "ms": 206,
+          "error": null,
+          "externalRequests": 0,
+          "pageErrors": 0
+        },
+        {
+          "name": "primary march/april/clear flow",
+          "profile": "mobile390x844",
+          "status": "PASS",
+          "failureKind": null,
+          "assertions": 8,
+          "ms": 270,
+          "error": null,
+          "externalRequests": 0,
+          "pageErrors": 0
+        },
+        {
+          "name": "calendar negatives",
+          "profile": "mobile390x844",
+          "status": "PASS",
+          "failureKind": null,
+          "assertions": 3,
+          "ms": 223,
+          "error": null,
+          "externalRequests": 0,
+          "pageErrors": 0
+        },
+        {
+          "name": "mutant M1-month-predicate calendar negatives",
+          "profile": "desktop1280x800",
+          "status": "FAIL",
+          "failureKind": "ASSERTION",
+          "assertions": 2,
+          "ms": 418,
+          "error": "March 2026 excludes wrong-year 2025-03-15 and impossible 2026-03-32\n+ actual - expected\n\n  [\n    'EXP-003',\n    'EXP-004',\n+   'EXP-005'\n  ]\n",
+          "externalRequests": 0,
+          "pageErrors": 0
+        },
+        {
+          "name": "mutant M2-calendar-day-validity calendar negatives",
+          "profile": "desktop1280x800",
+          "status": "FAIL",
+          "failureKind": "ASSERTION",
+          "assertions": 1,
+          "ms": 445,
+          "error": "clear view drops impossible 2026-03-32 and keeps valid rows in order\n+ actual - expected\n\n  [\n    'EXP-001',\n+   'EXP-002',\n    'EXP-003',\n    'EXP-004',\n    'EXP-005'\n  ]\n",
+          "externalRequests": 0,
+          "pageErrors": 0
+        },
+        {
+          "name": "restored calendar negatives after mutants",
+          "profile": "desktop1280x800",
+          "status": "PASS",
+          "failureKind": null,
+          "assertions": 3,
+          "ms": 470,
+          "error": null,
+          "externalRequests": 0,
+          "pageErrors": 0
+        }
+      ],
+      "mutants": [
+        {
+          "id": "M1-month-predicate",
+          "collected": 1,
+          "completed": 1,
+          "killed": true,
+          "failureKind": "ASSERTION",
+          "firstFailure": "March 2026 excludes wrong-year 2025-03-15 and impossible 2026-03-32\n+ actual - expected\n\n  [\n    'EXP-003',\n    'EXP-004',\n+   'EXP-005'\n  ]\n"
+        },
+        {
+          "id": "M2-calendar-day-validity",
+          "collected": 1,
+          "completed": 1,
+          "killed": true,
+          "failureKind": "ASSERTION",
+          "firstFailure": "clear view drops impossible 2026-03-32 and keeps valid rows in order\n+ actual - expected\n\n  [\n    'EXP-001',\n+   'EXP-002',\n    'EXP-003',\n    'EXP-004',\n    'EXP-005'\n  ]\n"
+        }
+      ],
+      "screenshots": [
+        {
+          "path": ".cvf/runtime/cvf-expense-browser-worker-20261010/preview-desktop1280x800-march.png",
+          "bytes": 24797,
+          "sha256": "e8822a250dc6504815fc1baf6e0f5b0b0813b74a956c5a18fb23885b03250f26"
+        },
+        {
+          "path": ".cvf/runtime/cvf-expense-browser-worker-20261010/preview-mobile390x844-march.png",
+          "bytes": 22191,
+          "sha256": "9217c44f1c35bc35934b1882a88a5759c30b55bc3aca5274a21e167d0f688471"
+        }
+      ],
+      "assertions": 29,
+      "externalRequests": 0,
+      "pageErrors": 0,
+      "elapsedMs": 5222
+    },
+    "duplicateBroadTestRerun": false,
+    "unitSuiteRerun": false,
+    "typescriptOrEslintRerun": false,
+    "screenshotsVisuallyInspected": true,
+    "M1Interpretation": "Exact year-month predicate replaced by month-only comparison; meaningful wrong-year assertion kill accepted for removal of exact matching. Not mislabeled as removal of all filtering.",
+    "mutantBaseline": "Unchanged source/calendar baseline PASS before mutants; separate sourceTextOverride from baseline per mutation; restoration PASS."
+  },
+  "workerGateLogs": [
+    {
+      "path": ".cvf/runtime/cvf-expense-browser-worker-20261010/gates/pre-implementation.log",
+      "rawSha256": "c5654830c1de2a1cf6d5b6d9e2b8e6f5fc18ef7e07545241f6c019c5024fdce9",
+      "status": "COMPLIANT",
+      "tail": "COMPLIANT: pre-implementation autorun gate passed in 71.90s."
+    },
+    {
+      "path": ".cvf/runtime/cvf-expense-browser-worker-20261010/gates/worker-return-fast-run1.log",
+      "rawSha256": "8cecb6fa052e0691a7a4852b81a7e0ab6ab8bab9264cf2952b14b346f88dd28d",
+      "status": "FAIL",
+      "tail": "VIOLATION: worker-return fast gate blocked by 3 failure(s) in 7.56s."
+    },
+    {
+      "path": ".cvf/runtime/cvf-expense-browser-worker-20261010/gates/worker-return-fast-run2.log",
+      "rawSha256": "be1f9a2823735004afa9cd345cda8ff9fcba3159387af518d1a9f37ef1b8eac2",
+      "status": "FAIL",
+      "tail": "VIOLATION: worker-return fast gate blocked by 3 failure(s) in 6.50s."
+    },
+    {
+      "path": ".cvf/runtime/cvf-expense-browser-worker-20261010/gates/worker-return-fast-run3.log",
+      "rawSha256": "3905b801e556e6930aee38da820e05da98e7b6b0ed1e149e203d8e98234e2bc9",
+      "status": "FAIL",
+      "tail": "VIOLATION: worker-return fast gate blocked by 1 failure(s) in 6.17s."
+    },
+    {
+      "path": ".cvf/runtime/cvf-expense-browser-worker-20261010/gates/worker-return-final-run4.log",
+      "rawSha256": "62709e058f1c43208ce71b0c5308e2401c143333ca06ffbbcd5a7e7999c36ca8",
+      "status": "COMPLIANT",
+      "tail": "COMPLIANT: worker-return fast gate passed in 5.43s."
+    },
+    {
+      "path": ".cvf/runtime/cvf-expense-browser-worker-20261010/gates/worker-return-frozen-confirmation.log",
+      "rawSha256": "a22bec2d9b33c6a29563e209c859989fcd95c9eae2934f962fd316347f85b895",
+      "status": "COMPLIANT",
+      "tail": "COMPLIANT: worker-return fast gate passed in 6.03s."
+    }
+  ],
+  "timerReceipt": {
+    "path": ".cvf/runtime/cvf-expense-browser-worker-20261010/timer.txt",
+    "rawSha256": "87fc55e167850be6f6ea092f113e50d861b86bf17a304d88e042f8cb870b4ea0",
+    "text": "timerStartUtc=2026-10-10T01:56:13Z\ntimerStartEpoch=1791597373\ntimerNote=captured in same parallel batch as first order read; strict pre-read ordering not guaranteed (disclosed deviation)\nread_batch_1_utc=2026-10-10T01:56:32Z\nexecutionBaseHead=57716929c8e0552a2fb1f774562c55924cce315d (clean HEAD at worker start; dispatch base 665da5b2d)\npin_check_utc=2026-10-10T01:56:37Z\ngate_pre_impl_start_utc=2026-10-10T01:56:41Z\ngate_pre_impl_end_utc=2026-10-10T01:58:02Z\nread_batch_2_utc=2026-10-10T01:58:06Z\nread_batch_3_utc=2026-10-10T01:58:26Z\nread_batch_4_utc=2026-10-10T01:59:17Z\nbuild_write_utc=2026-10-10T02:00:54Z\nbuild_run1_utc=2026-10-10T02:01:27Z\nbuild_run1_end_utc=2026-10-10T02:01:29Z\ntest_run1_utc=2026-10-10T02:02:24Z\ntest_run1_end_utc=2026-10-10T02:02:31Z\ntest_run2_utc=2026-10-10T02:02:39Z\ntest_run2_end_utc=2026-10-10T02:02:46Z\nneg_utc=2026-10-10T02:02:54Z\npng_read_utc=2026-10-10T02:03:02Z\nrerun_build_utc=2026-10-10T02:03:19Z\nrerun_test_utc=2026-10-10T02:03:20Z\nrerun_end_utc=2026-10-10T02:03:26Z\nevidence_read_utc=2026-10-10T02:03:44Z\nscaffold_utc=2026-10-10T02:03:52Z\nscaffold_done_utc=2026-10-10T02:03:56Z\nchecker_read_utc=2026-10-10T02:04:02Z\nfacts_utc=2026-10-10T02:04:23Z\nfix_utc=2026-10-10T02:05:07Z\ngate_run1_utc=2026-10-10T02:06:19Z\ngate_run1_end_utc=2026-10-10T02:06:27Z\nfix_run1_utc=2026-10-10T02:06:30Z\nfix_read_utc=2026-10-10T02:06:47Z\ngate_run2_utc=2026-10-10T02:07:51Z\ngate_run2_end_utc=2026-10-10T02:07:57Z\ngate_run3_utc=2026-10-10T02:08:17Z\ngate_run3_end_utc=2026-10-10T02:08:23Z\ngate_run4_utc=2026-10-10T02:08:41Z\ngate_run4_end_utc=2026-10-10T02:08:47Z\nfreeze_utc=2026-10-10T02:08:52Z\nconfirm_utc=2026-10-10T02:08:59Z\nend_utc=2026-10-10T02:08:59Z\n",
+    "totalBudgetCompliance": "NOT_CERTIFIABLE_FIRST_READ_MONOTONIC_AND_END_ORDER_GAPS"
+  },
+  "findings": [
+    {
+      "id": "F1",
+      "disposition": "PRESERVED_NOT_RETROSPECTIVELY_REPAIRED",
+      "finding": "Repeated timer sequencing defect: first-read ordering not proven; UTC/epoch recorded but required monotonic start/end absent. confirm_utc and end_utc are both 02:08:59 despite a 6.03-second confirmation, so final completion ordering is not certified. Recorded UTC interval 12m46s is not full-delivery or 90-minute compliance proof. No backdating."
+    },
+    {
+      "id": "F2",
+      "disposition": "TECHNICAL_ACCEPTANCE_WITH_PROCESS_LIMITS",
+      "finding": "Worker explicitly did not fully read required unit fixture/S05-S06 and relevant checker owners. Full gates verify declarations, not reading. Local source/design inspection and independent probe support bounded technical acceptance; historical read compliance remains incomplete."
+    },
+    {
+      "id": "F3",
+      "disposition": "HANDLED_BY_WORKER",
+      "finding": "Two grouped product/harness repairs disclosed (mobile date wrapping and mutant aggregation). Gate logs show three failed drafts then fourth PASS plus distinct frozen confirmation PASS. Count gate attempts separately from two implementation repair groups; zero reviewer product repairs. Guide actually92 physical lines versus worker-reported58, still below100; stale metadata corrected only in Local evidence, original return retained."
+    },
+    {
+      "id": "F4",
+      "disposition": "DEFERRED_INHERITED_COMPONENT_DEFECT",
+      "finding": "Pinned read-only component sets input height36; independent mobile DOM outer height38 including borders, below DESIGN44 touch target. Existing component defect, not a newly introduced worker regression. Accept offline preview only; do not claim complete mobile design compliance. A later bounded component correction needs new admitted scope."
+    },
+    {
+      "id": "F5",
+      "disposition": "OUTSIDE_SELECTED_SCOPE_NOT_FAILURE",
+      "finding": "Only DESIGN default dark tokens measured. Light/alternate accent absent from selected contract; keep unverified, not universal theme readiness."
+    }
+  ],
+  "technicalDisposition": "ACCEPT_ACTUAL_COMPONENT_OFFLINE_BROWSER_PREVIEW",
+  "proceduralDisposition": "DEVIATIONS_DISCLOSED_NOT_FULL_PROCEDURAL_COMPLIANCE",
+  "modelAssessment": {
+    "model": "Haiku 5.5",
+    "effort": "Max",
+    "identityBasis": "OPERATOR_REPORTED_NOT_INDEPENDENTLY_VERIFIED",
+    "firstReturnGateClean": false,
+    "workerImplementationRepairGroups": 2,
+    "workerReturnDraftGateAttempts": 4,
+    "failedReturnDraftGateAttempts": 3,
+    "separateFrozenConfirmation": "PASS_DISTINCT_LOG_CURRENT_FIVE_RAW_PINS_MATCH",
+    "reviewerRequestedWorkerRepairTurns": 0,
+    "reviewerProductCodeRepairs": 0,
+    "technicalOutput": "ACCEPTED_BOUNDED_OFFLINE_BROWSER",
+    "process": "DEVIATIONS_DISCLOSED_NOT_FULL_PROCEDURAL_COMPLIANCE",
+    "qualityDisposition": "GOOD_BOUNDED_BROWSER_OUTPUT_REPEATED_PROCESS_WEAKNESS",
+    "fullDeliveryElapsedMinutes": null,
+    "reportedUtcIntervalMinutes": 12.766666666666667,
+    "elapsedBasis": "REPORTED_UTC_START_TO_END_ONLY_MONOTONIC_AND_FINAL_END_ORDER_UNPROVEN",
+    "bill": {
+      "amount": null,
+      "currency": null,
+      "reason": "NO_OBSERVED_TOKEN_OR_BILL_RECEIPT"
+    },
+    "recommendation": "Continue provisional worker use for finite isolated UI/unit/browser tasks with independent Local review. Repeated timer/read discipline limits unattended authority-bearing work; no model ranking or cost saving established."
+  },
+  "adif": {
+    "taskClass": "expense-browser-preview",
+    "role": "reviewer",
+    "lifecyclePhase": "review",
+    "returned": "NONE_RETURNED",
+    "totalCandidates": 0,
+    "truncated": false
+  },
+  "closureManifest": [
+    "scripts/cvf_expense_fixture_preview.cjs",
+    "scripts/test_cvf_expense_fixture_preview_browser.cjs",
+    "docs/guides/CVF_EXPENSE_BROWSER_PREVIEW_README_2026-10-10.md",
+    "docs/reviews/evidence/cvf-expense-browser-worker-2026-10-10.json",
+    "docs/reviews/CVF_NCR_EXPENSE_BROWSER_PREVIEW_WORKER_RETURN_2026-10-10.md",
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_BROWSER_PREVIEW_2026-10-10.md",
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_BROWSER_PREVIEW_2026-10-10.json",
+    "docs/reviews/CVF_NCR_EXPENSE_BROWSER_PREVIEW_COMPLETION_2026-10-10.md",
+    "docs/reviews/evidence/cvf-expense-browser-local-review-2026-10-10.json",
+    "docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json",
+    "AGENT_HANDOFF_V63_2026-09-18.md",
+    "CVF_SESSION_MEMORY.md",
+    "CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json",
+    "CVF_SESSION/state/entries/nextAllowedMove.json",
+    "CVF_SESSION/state/entries/cvfNcrConsolidatedLocalFoundation20261006.json",
+    "CVF_SESSION/ACTIVE_SESSION_STATE.json",
+    "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json"
+  ],
+  "modelTracking": "docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json",
+  "claimBoundary": "Private synthetic browser UI only, installed Chromium/default dark theme. Inherited touch target limitation retained; no app/real-data/media/AI-governance/provider/public/deploy/P11 readiness. Technical acceptance is not certification of complete historical procedure or pricing.",
+  "observedOutputCaps": {
+    "scripts/cvf_expense_fixture_preview.cjs": {
+      "lines": 162,
+      "cap": 250
+    },
+    "scripts/test_cvf_expense_fixture_preview_browser.cjs": {
+      "lines": 167,
+      "cap": 350
+    },
+    "docs/guides/CVF_EXPENSE_BROWSER_PREVIEW_README_2026-10-10.md": {
+      "lines": 92,
+      "cap": 100
+    },
+    "docs/reviews/evidence/cvf-expense-browser-worker-2026-10-10.json": {
+      "lines": 162,
+      "cap": 350
+    },
+    "docs/reviews/CVF_NCR_EXPENSE_BROWSER_PREVIEW_WORKER_RETURN_2026-10-10.md": {
+      "lines": 334,
+      "cap": 450
+    }
+  }
+}

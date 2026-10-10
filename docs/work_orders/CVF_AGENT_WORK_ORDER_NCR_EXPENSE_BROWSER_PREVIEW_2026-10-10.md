@@ -1,7 +1,7 @@
 # CVF Agent Work Order - NCR Expense Browser Preview
 Memory class: governed-worker-dispatch
 docType: work_order
-Status: READY
+Status: CLOSED_PASS_BOUNDED
 Date: 2026-10-10
 Batch ID: CVF-NCR-EXPENSE-BROWSER-20261010
 Dispatch base head: 665da5b2df3e1d2b81553a5c9567c7babb364459
@@ -583,3 +583,32 @@ Named component/design/tool inputs frozen2026-10-10; read-only accepted fixture 
 ```
 
 Prior bounded application preserved; new plan is not application evidence.
+
+
+## Local Closure Receipt
+
+CLOSED_PASS_BOUNDED: five original browser-preview artifacts accepted; independent alternate fixture/sentinel PASS; historical timer/read deviations and inherited touch target limitation retained.
+Completion evidence: docs/reviews/CVF_NCR_EXPENSE_BROWSER_PREVIEW_COMPLETION_2026-10-10.md; docs/reviews/evidence/cvf-expense-browser-local-review-2026-10-10.json.
+No redispatch; original return preserved.
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| BUILD | actual pinned component, standalone offline HTML | pins and primary/calendar hashes MATCH; independent builder transport PASS | PASS |
+| BROWSER | profiles, calendar negatives, meaningful mutants | worker 5 ordinary records PASS; 2 assertion kills; Local alternate fixture PASS | PASS |
+| GUIDE | usage and limits | commands/source binding inspected; dark-only and touch-target limitation explicit | PASS |
+| RETURN | full bound gate, frozen bytes, no commit | three draft failures then PASS; separate frozen confirmation COMPLIANT; five raw hashes MATCH | PASS |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_BROWSER_PREVIEW_2026-10-10.md | CLOSED_PASS_BOUNDED; no redispatch | PASS |
+| Completion or reviewer artifact | docs/reviews/CVF_NCR_EXPENSE_BROWSER_PREVIEW_COMPLETION_2026-10-10.md | five frozen worker outputs accepted, limitations retained | PASS |
+| Roadmap state | existing NCR/video owners | no new successor or production admission | N/A with reason: standalone work order |
+| Registry JSON | docs/reviews/evidence/cvf-expense-browser-local-review-2026-10-10.json; docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json | hashes; independent executable probe; model ledger | PASS |
+| Registry Markdown | docs/reviews/CVF_NCR_EXPENSE_BROWSER_PREVIEW_COMPLETION_2026-10-10.md | five disclosed findings and model observations | PASS |
+| External evidence digest | docs/reviews/evidence/cvf-expense-browser-local-review-2026-10-10.json | internal worker result only | N/A with reason: no external research |
+| System loop interlock | source R2 and C1 STOP owners retained | no retry/reset/effect | PASS |
+| Session continuity | AGENT_HANDOFF_V63_2026-09-18.md; generated bootstrap/state | closed raw pin, then actual material SHA | PASS |
