@@ -994,7 +994,7 @@
       ],
       "oldRootsFrozen": true
     },
-    "nextAllowedMove": "PROGRAM_ID=CVF-CORE; NEXT_ACTION_CLASS=REVIEW; BATCH_ID=CVF-NCR-EXPENSE-LAYOUT-20261010. Narrow layout CLOSED_PASS_BOUNDED; own330 text/inner-box containment and nowrap negative PASS; original five unchanged, guide erratum/Local packet path correction recorded; timer/read/scaffold limits retained. Consumed work order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_NARROW_LAYOUT_2026-10-10.md; no redispatch. Haiku/Sonnet WORKER_ONLY ledger now four Haiku plus Sonnet reference, five task families; bill unknown, no automatic router or benchmark repeat. Local may select next useful bounded roadmap task. SourceR2/native/TTS/audio/MP4/S2-S9/provider/public/deploy/P11 parked; no push/automatic successor; upstream debt and LHW24 retained.",
+    "nextAllowedMove": "PROGRAM_ID=CVF-CORE; NEXT_ACTION_CLASS=REVIEW; BATCH_ID=CVF-NCR-EXPENSE-LAYOUT-20261010. Narrow layout CLOSED_PASS_BOUNDED; own330 text/inner-box containment and nowrap negative PASS; original five unchanged, guide erratum/Local packet path correction recorded; timer/read/scaffold limits retained. Consumed work order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_NARROW_LAYOUT_2026-10-10.md; no redispatch. Haiku/Sonnet WORKER_ONLY ledger now four Haiku plus Sonnet reference, five task families; bill unknown, no automatic router or benchmark repeat. Local may select next useful bounded roadmap task. SourceR2/native/TTS/audio/MP4/S2-S9/provider/public/deploy/P11 parked; no push/automatic successor; upstream debt and LHW24 retained. Accepted material=4d005cd9eb807f6ce9d64545fa1090e0b4e858b4.",
     "s1R2LocalDisposition20261009": {
       "materialCommit": "5c1c5bf30525c091deda533b92608fe76a13ad21",
       "review": "docs/reviews/CVF_NCR_C1_S1_CONSOLIDATED_REPAIR_COMPLETION_2026-10-09.md",
@@ -1269,10 +1269,12 @@
       "historicalProcedureCompliance": "DEVIATIONS_DISCLOSED_NOT_CERTIFIED",
       "reviewerDocumentationErratumGroups": 1,
       "dispatcherGuidePathDefect": "CORRECTED_AT_CLOSURE",
-      "materialCommit": "PENDING_ACTUAL_COMMIT_STEWARD",
+      "materialCommit": "4d005cd9eb807f6ce9d64545fa1090e0b4e858b4",
       "sourceSha256": "447463e1c1330d3152eba91401a68fc8a13320c29d24fb233ccd8830a62b26e3",
       "themes": "DARK_ONLY_CURRENT_SOURCE",
-      "supersedesHistorical320LongLabelOverflowForNewSourceOnly": true
+      "supersedesHistorical320LongLabelOverflowForNewSourceOnly": true,
+      "continuity": "DEDICATED_ACTUAL_SHA_SYNC",
+      "committedContentProof": "EXACT18_PASS_AT_MATERIAL_HEAD_NOT_GLOBAL_FINALITY"
     }
   }
 }

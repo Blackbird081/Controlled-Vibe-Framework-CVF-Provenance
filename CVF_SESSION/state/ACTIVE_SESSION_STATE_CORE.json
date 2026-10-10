@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_NARROW_LAYOUT_2026-10-10.md",
     "workOrderSha256": "71f80267f230bdad84f9a9c0c51281a564d877784f9551597aa74bfb5600ef44"
   },
-  "currentAuthoritySyncReason": "Layout accepted bounded, Local guide path corrected/worker guide erratum, timer/read/scaffold history retained; fourth Haiku worker-only observation, no effect grant.",
+  "currentAuthoritySyncReason": "Layout accepted bounded, Local guide path corrected/worker guide erratum, timer/read/scaffold history retained; fourth Haiku worker-only observation, no effect grant. Accepted material 4d005cd9eb807f6ce9d64545fa1090e0b4e858b4; exact18 committed-content proof PASS before actual-SHA continuity; synchronized separate-range closure follows, historical material fingerprint withheld if current worktree differs.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
