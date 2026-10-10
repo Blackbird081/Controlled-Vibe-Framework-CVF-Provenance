@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Current NCR Continuation
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `4309e609d72b34f1692d655c3a46d7e446a7c7bf`. Accepted material parent anchor for dedicated continuity. Batch ID: CVF-NCR-EXPENSE-LEGIBILITY-20261010.
+Current HEAD recorded for this handoff: `9c6186c5f5e6b144f6cba0d82dbfedcedbafb47f`. Accepted material parent anchor for dedicated continuity. Batch ID: CVF-MODEL-SELECTION-WEB-REVIEW-20261010.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -23,7 +23,7 @@ Baseline: `docs/baselines/CVF_GC018_NCR_EXPENSE_TEXT_LEGIBILITY_2026-10-10.md`; 
 Work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_TEXT_LEGIBILITY_2026-10-10.md`; SHA256 `198d1b64bdf3fd895e269fc9a350ea549cb647e23fbeed337eff48f33d202c21`.
 PREFEAS-C1 CLOSED_PASS_BOUNDED per docs/reviews/CVF_PREFEAS_C1_COMPLETION_2026-10-08.md;three Local repairs,independent15/15 and focused103 tests;declared-state guard accepted,no worker redispatch/effect grant. Prior S0 and all source/production holds retained.
 ## Publication And Packet Update (2026-10-10)
-Model-selection R2 governance head: `ec05650e3`; public derived context is live at `e9ddcbcdcac2a9df520f5eb0761dbdb609b9deba`. `EXTERNAL_AGENT_READ/CURRENT.zip` is refreshed for operator relay. Web critique pending; Local owns private disposition. Expense and implementation remain parked. Prior round-trip guidance at `ab714ed7f20a224c6022cf133b26750347a2fc9e` remains historical.
+Web review reconciled at `9c6186c5f`: NO_MATERIAL_BLOCKER for R2; 01/04/06 enrich first manual task, 02/03/07 owner pointers, 05 deferred API cash condition. Local disposition: `docs/reviews/CVF_MODEL_SELECTION_WEB_REVIEW_LOCAL_DISPOSITION_2026-10-10.md`; raw return in its evidence folder. Public context pin `e9ddcbcdcac2a9df520f5eb0761dbdb609b9deba`. S3/S4, Expense and provider effects remain parked.
 
 ## Accepted NCR Evidence And Continuation
 Narrow layout accepted: docs/reviews/CVF_NCR_EXPENSE_NARROW_LAYOUT_COMPLETION_2026-10-10.md;original5;own330 literal-text containment/nowrap negative PASS;guide erratum and Local path defect;timer/read/scaffold limits. Worker ledger fourHaiku plus Sonnet,5families,bill unknown.
