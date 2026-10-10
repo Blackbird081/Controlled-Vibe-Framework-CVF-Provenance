@@ -2,16 +2,16 @@
   "schemaVersion": "0.1.0",
   "currentMode": "cvf_ncr_p10_closed_p11_parked",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=CVF-CORE; NEXT_ACTION_CLASS=REVIEW; BATCH_ID=CVF-NCR-EXPENSE-FIXTURE-20261009. Expense fixture CLOSED_PASS_BOUNDED: five unchanged worker artifacts accepted by Local; independent four-case oracle and scoped type/lint PASS. Historical timer and final confirmation deviations retained, not full procedure compliance. Work order consumed; no redispatch. Local may select the next useful bounded roadmap task; Haiku5.5/Max recommended for finite isolated UI/test scopes, operator-reported identity, no price claim. Prior learning APPLIED_ONE_LOCAL_WORKFLOW, projectResolution OPEN. Source R2/native/TTS/audio/MP4/S2-S9/provider/public/deploy/P11 parked; no automatic source successor or push grant; upstream debt retained. LHW24 retained. Accepted material=ecd02cca1792da83adb107d85e986f2598be42ff.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-CORE; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-EXPENSE-BROWSER-20261010. Operator manually transfers docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_BROWSER_PREVIEW_2026-10-10.md only after actual clean committed bound pre-dispatch PASS. Worker first action captures UTC/monotonic before ANY reads in authorized timer file; one90-minute total ceiling, five exact new script/guide/proof/return paths, no commit or tool-delegated subagents. Build actual accepted read-only ExpenseList into standalone offline HTML; Chromium interactions/calendar negatives/two mutants and screenshots only, no server/network/provider/app integration/storyboard/media. Separate frozen confirmation log/final elapsed required. Local is orchestrator/reviewer; Haiku5.5/Max operator preference, no normative model or price claim. Prior unit accepted with historical deviations retained; parent learning APPLIED_ONE_PRIOR_LOCAL_WORKFLOW, projectResolution OPEN. Source R2/native/TTS/audio/MP4/S2-S9/provider/public/deploy/P11 parked; no push grant or automatic source successor. LHW24 retained.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_NCR_EXPENSE_FILTER_FIXTURE_2026-10-09.md",
-    "baselineSha256": "08e5f5c5d4af9eed94dd1ca1718873bb980c1f2199088e745cf5a5ec0b7b5f85",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_FILTER_FIXTURE_2026-10-09.md",
-    "workOrderSha256": "f155ed392b9da540543ca2087cc1421220a52ed161edcd1f0391b2a802579944"
+    "baselinePath": "docs/baselines/CVF_GC018_NCR_EXPENSE_BROWSER_PREVIEW_2026-10-10.md",
+    "baselineSha256": "28e64b10512aa32f741d236da867d35072865e235c14eb2d537cf5bc02df1f2a",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_BROWSER_PREVIEW_2026-10-10.md",
+    "workOrderSha256": "7913adcf69a70fb641bcca33500c3def91c1060d6bd4ba2c59b2e5072ec04d0e"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Current NCR Continuation
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `ecd02cca1792da83adb107d85e986f2598be42ff`. Accepted material parent anchor for dedicated continuity. Batch ID: CVF-NCR-EXPENSE-FIXTURE-20261009.
+Current HEAD recorded for this handoff: `4cb8ee92ec454a321692f4e6fe15afdee93e49a2`. Material parent anchor for dedicated dispatch continuity. Batch ID: CVF-NCR-EXPENSE-BROWSER-20261010.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -9,22 +9,23 @@ Status: ACTIVE
 Current continuation only. Root AGENTS.md and canonical routing owners retain full rules.
 Closed history is preserved byte-for-byte at `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V63_PRE_NCR_COMPACTION_2026-10-07.md` (SHA256 `54801fdcf14e9abe17592352ec3c69a0b0e855632991af0caacac7b65252ccba`); it is NOT_ACTIVE_AUTHORITY and not default startup reading.
 ## Scope / Target / Owner Boundary
-Role: Local INTERNAL_AGENT orchestrator/reviewer; phase: internal expense unit review/closure; decision owner=Local for technical review; operator manually transfers the work order to the shared-workspace worker.
-Operator request (2026-10-09): continue; transfer work order to Claude for implementation; Local remains orchestrator/reviewer. Earlier autonomous content and offline preview tests consumed. Private local packet only; no new push or media/source-runtime action.
+Role: Local INTERNAL_AGENT orchestrator/reviewer; phase: internal expense browser dispatch; decision owner=Local for technical review; operator manually transfers the work order to the shared-workspace worker.
+Operator request (2026-10-10): continue; transfer work order to Claude for implementation; Local remains orchestrator/reviewer. Earlier autonomous content and offline preview tests consumed. Private local packet only; no new push or media/source-runtime action.
 Remote tracking branch: `origin/main`. Exact remote SHA must be derived live from git when needed; this handoff records no assumed current remote SHA. External agent memory files: non-canonical convenience only.
 ## Startup Acknowledgment
-Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`;handoff=`AGENT_HANDOFF_V63_2026-09-18.md`;next=bounded roadmap selection after expense unit review;role=Local INTERNAL_AGENT orchestrator/reviewer;phase=internal review/closure;decision owner=Local;parked checkpoint=source R2/native/TTS/media/provider/public/deploy/P11;no automatic successor.
+Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`;handoff=`AGENT_HANDOFF_V63_2026-09-18.md`;next=manual expense browser worker transfer after committed bound release;role=Local INTERNAL_AGENT orchestrator/reviewer;phase=internal dispatch;decision owner=Local;parked checkpoint=source R2/native/TTS/media/provider/public/deploy/P11;no automatic successor.
 ## Current Mode
 `cvf_ncr_p10_closed_p11_parked`. P10 package remains `ACTIVE_PRODUCTION_RUNTIME`; P11 parked. Latest closed learning-history wave: `LHW24`.
 Current NIS-T1J is CLOSED_PASS_BOUNDED with no automatic successor; NCR consumer maintenance is separately operator-authorized.
 ## Current Authority
-Baseline: `docs/baselines/CVF_GC018_NCR_EXPENSE_FILTER_FIXTURE_2026-10-09.md`; SHA256 `08e5f5c5d4af9eed94dd1ca1718873bb980c1f2199088e745cf5a5ec0b7b5f85`.
-Work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_FILTER_FIXTURE_2026-10-09.md`; SHA256 `f155ed392b9da540543ca2087cc1421220a52ed161edcd1f0391b2a802579944`.
+Baseline: `docs/baselines/CVF_GC018_NCR_EXPENSE_BROWSER_PREVIEW_2026-10-10.md`; SHA256 `28e64b10512aa32f741d236da867d35072865e235c14eb2d537cf5bc02df1f2a`.
+Work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_BROWSER_PREVIEW_2026-10-10.md`; SHA256 `7913adcf69a70fb641bcca33500c3def91c1060d6bd4ba2c59b2e5072ec04d0e`.
 PREFEAS-C1 CLOSED_PASS_BOUNDED per docs/reviews/CVF_PREFEAS_C1_COMPLETION_2026-10-08.md;three Local repairs,independent15/15 and focused103 tests;declared-state guard accepted,no worker redispatch/effect grant. Prior S0 and all source/production holds retained.
 ## Publication And Packet Update (2026-10-09)
 Public guidance `docs/guides/CVF_EXTERNAL_AGENT_ROUND_TRIP_KIT.md` is live at `ab714ed7f20a224c6022cf133b26750347a2fc9e`; the operator packet snapshot was refreshed from verified live public main. Only process guidance was exported; private enforcement remains local and learning application remains `NOT_APPLIED`.
 
 ## Accepted NCR Evidence And Continuation
+Expense browser dispatch 4cb8ee92e: docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_BROWSER_PREVIEW_2026-10-10.md;actual accepted component read-only;offline Chromium proof;five new outputs,one90-minute ceiling,timer before reads,separate frozen confirmation. No worker execution/source/media grant;Haiku5.5/Max preference only.
 Expense fixture accepted: docs/reviews/CVF_NCR_EXPENSE_FILTER_FIXTURE_COMPLETION_2026-10-09.md;docs/reviews/evidence/cvf-expense-filter-local-review-2026-10-09.json;five original bytes;probe4/4,type/lint PASS;Haiku5.5/Max operator-reported;timer/confirmation deviations retained;no effect grant.
 Offline UI accepted: docs/reviews/CVF_NCR_OFFLINE_PREVIEW_DELIVERY_COMPLETION_2026-10-09.md;docs/reviews/evidence/cvf-storyboard-preview-local-review-2026-10-09.json;seven original worker bytes retained;independent3/3;Sonnet5.5/High operator-reported,self-repair2passes,27.6min reported,cost unknown;Haiku5.5/Max next preference only. Parent RETURNED/APPLIED for one Local dispatch/result workflow;projectResolution OPEN;typed receipt docs/reviews/evidence/cvf-offline-preview-learning-application-receipt-2026-10-09.json;source/media/public holds retained.
 HTML reconciliation 48600e77f: docs/reviews/CVF_NCR_W05_SELECTED_CHAIN_READINESS_2026-10-07.md;docs/reviews/evidence/cvf-video-storyboard-reconciliation-2026-10-09.json;current24571B/original19136B/before26084B separately retained;scene body exact MATCH;desktop/mobile PASS;same Local actor,zero provider calls. Final content PENDING_OPERATOR;learning RETURNED/NOT_APPLIED,Local application candidate only;actual dispatch measurement remains pending. R2/source/native/production checkpoints unchanged.
@@ -93,7 +94,7 @@ Receiving agents clarify incomplete ideas according to the existing lifecycle st
 Consume returned evidence under MFRP P4-C1: EVALUATE_RETURNED_EVIDENCE_NOT_RECREATE_IMPLEMENTATION. A rerun needs a named contradiction/changed consumer,information gain and cost reason.
 Alibaba calls are authorized for meaningful scoped tests; no other provider call,Claude dispatch,public push,deployment or actual-data cutover is inferred.
 ## Next Allowed Move
-PROGRAM_ID=CVF-CORE; NEXT_ACTION_CLASS=REVIEW; BATCH_ID=CVF-NCR-EXPENSE-FIXTURE-20261009. Expense fixture CLOSED_PASS_BOUNDED: five unchanged worker artifacts accepted by Local; independent four-case oracle and scoped type/lint PASS. Historical timer and final confirmation deviations retained, not full procedure compliance. Work order consumed; no redispatch. Local may select the next useful bounded roadmap task; Haiku5.5/Max recommended for finite isolated UI/test scopes, operator-reported identity, no price claim. Prior learning APPLIED_ONE_LOCAL_WORKFLOW, projectResolution OPEN. Source R2/native/TTS/audio/MP4/S2-S9/provider/public/deploy/P11 parked; no automatic source successor or push grant; upstream debt retained. LHW24 retained. Accepted material=ecd02cca1792da83adb107d85e986f2598be42ff.
+PROGRAM_ID=CVF-CORE; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-EXPENSE-BROWSER-20261010. Operator manually transfers docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_BROWSER_PREVIEW_2026-10-10.md only after actual clean committed bound pre-dispatch PASS. Worker first action captures UTC/monotonic before ANY reads in authorized timer file; one90-minute total ceiling, five exact new script/guide/proof/return paths, no commit or tool-delegated subagents. Build actual accepted read-only ExpenseList into standalone offline HTML; Chromium interactions/calendar negatives/two mutants and screenshots only, no server/network/provider/app integration/storyboard/media. Separate frozen confirmation log/final elapsed required. Local is orchestrator/reviewer; Haiku5.5/Max operator preference, no normative model or price claim. Prior unit accepted with historical deviations retained; parent learning APPLIED_ONE_PRIOR_LOCAL_WORKFLOW, projectResolution OPEN. Source R2/native/TTS/audio/MP4/S2-S9/provider/public/deploy/P11 parked; no push grant or automatic source successor. LHW24 retained.
 ## Active Boundary
 T3B has a Local-verified active v1 specification. Party B is verified and T3C-C1 tooling accepted at `db78c87df`; T3C-C2 and Party C are verified. T3D-C1 tooling is accepted at `9ed844c2a` without source. T3D-C0-R1 closed at `2fffa1ef7`. T3D-C3 was accepted bounded at `88137e9a2`, but actual-mode prepare attempts failed before Party B/C execution; authorized cleanup removed the failed root and discarded unaccepted worker changes. G1 stopped, G2-G6 parked, and G7 research closed at `660601f0e` with `ADAPT_EXISTING_HANDOFF_ONLY`. Evidence-join sufficiency stays WATCH; no implementation successor exists. Rejected T2 paths remain archived; HRLTP-T2 paused.
 Post-G7 Local source intake and Jev P0 are closed at material commit `9ac0ee8e59fa041ddaa93d725796c509400f257a`. The audit records 32 READ plus 8,093 DEFERRED paths. Jev adds fail-closed decision-context binding, incomplete candidate-space escape, and `EVIDENCE_ONLY` judgment authority to the existing ASSF owner. Proof: TypeScript 84/84, Python 61/61, compile PASS, governance 90/90. G1-G7 remain closed.
@@ -119,25 +120,25 @@ The historic provider/live parked line applies to those stopped lanes; it does n
 Q001/Q004 actual-data source/writer,custody,retention/RPO/RTO/cost checkpoints are action-specific; do not require a user-supplied ledger copy for unrelated fresh isolated development.
 NCR send/B2 STOP and S05/C1 remain; IAB unavailable; repo Playwright Chromium present; vision/full P04/full release remain unproved. No autonomous P11/public/deploy activation.
 ## Core Guard Self-Protection Authorization
-Authorized guard-maintenance scope: exact seven-path continuity for Local expense fixture technical acceptance. Protected paths: `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/cvfNcrConsolidatedLocalFoundation20261006.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`. Operator authorization: continue and manually transfer worker order; Local orchestrator/reviewer owns release. Rollback boundary: these continuity paths only; no original source-return/counter change, public or media effect.
+Authorized guard-maintenance scope: exact seven-path continuity for operator-requested expense browser dispatch. Protected paths: `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/cvfNcrConsolidatedLocalFoundation20261006.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`. Operator authorization: continue and manually transfer worker order; Local orchestrator/reviewer owns release. Rollback boundary: these continuity paths only; no original source-return/counter change, public or media effect.
 ## Agent Operation Trace Block
 
 | Field | Evidence |
 |---|---|
-| Actor | Local review continuity steward |
-| Provider or surface | private shared CVF workspace |
-| Session or invocation | expense-fixture-review-continuity-20261009 |
+| Actor | Local dispatch continuity steward |
+| Provider or surface | private shared workspace |
+| Session or invocation | expense-browser-dispatch-continuity-20261010 |
 | Working directory | repository root |
-| Command or tool surface | actual material SHA; source continuity; canonical generator |
+| Command or tool surface | actual material SHA; exact source authority pins; canonical generator |
 | Target paths | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/cvfNcrConsolidatedLocalFoundation20261006.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Allowed scope source | work-order Reviewer Closure Conversion and operator returned result |
-| Before status evidence | accepted material ecd02cca1792da83adb107d85e986f2598be42ff; clean worktree |
-| After status evidence | actual SHA retained; five original bytes accepted with historical procedure deviations; parked effects unchanged |
+| Allowed scope source | operator continue and manual worker transfer; standing isolated local tests |
+| Before status evidence | material 4cb8ee92ec454a321692f4e6fe15afdee93e49a2; clean worktree; worker not invoked |
+| After status evidence | new browser packet current; prior unit acceptance/deviations retained; all effect holds unchanged |
 | Diff evidence | exact seven-path diff and generated projections |
-| Approval boundary | private technical closure continuity only |
-| Claim boundary | standalone unit UI; no total budget or full procedure compliance claim |
+| Approval boundary | browser UI dispatch continuity only |
+| Claim boundary | packet readiness, not worker implementation or media proof |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | expense-fixture-review-continuity-20261009 |
+| Invocation ID | expense-browser-dispatch-continuity-20261010 |
 | Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/cvfNcrConsolidatedLocalFoundation20261006.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/cvfNcrConsolidatedLocalFoundation20261006.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Manifest delta | MATCH |

@@ -994,7 +994,7 @@
       ],
       "oldRootsFrozen": true
     },
-    "nextAllowedMove": "PROGRAM_ID=CVF-CORE; NEXT_ACTION_CLASS=REVIEW; BATCH_ID=CVF-NCR-EXPENSE-FIXTURE-20261009. Expense fixture CLOSED_PASS_BOUNDED: five unchanged worker artifacts accepted by Local; independent four-case oracle and scoped type/lint PASS. Historical timer and final confirmation deviations retained, not full procedure compliance. Work order consumed; no redispatch. Local may select the next useful bounded roadmap task; Haiku5.5/Max recommended for finite isolated UI/test scopes, operator-reported identity, no price claim. Prior learning APPLIED_ONE_LOCAL_WORKFLOW, projectResolution OPEN. Source R2/native/TTS/audio/MP4/S2-S9/provider/public/deploy/P11 parked; no automatic source successor or push grant; upstream debt retained. LHW24 retained. Accepted material=ecd02cca1792da83adb107d85e986f2598be42ff.",
+    "nextAllowedMove": "PROGRAM_ID=CVF-CORE; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-EXPENSE-BROWSER-20261010. Operator manually transfers docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_BROWSER_PREVIEW_2026-10-10.md only after actual clean committed bound pre-dispatch PASS. Worker first action captures UTC/monotonic before ANY reads in authorized timer file; one90-minute total ceiling, five exact new script/guide/proof/return paths, no commit or tool-delegated subagents. Build actual accepted read-only ExpenseList into standalone offline HTML; Chromium interactions/calendar negatives/two mutants and screenshots only, no server/network/provider/app integration/storyboard/media. Separate frozen confirmation log/final elapsed required. Local is orchestrator/reviewer; Haiku5.5/Max operator preference, no normative model or price claim. Prior unit accepted with historical deviations retained; parent learning APPLIED_ONE_PRIOR_LOCAL_WORKFLOW, projectResolution OPEN. Source R2/native/TTS/audio/MP4/S2-S9/provider/public/deploy/P11 parked; no push grant or automatic source successor. LHW24 retained.",
     "s1R2LocalDisposition20261009": {
       "materialCommit": "5c1c5bf30525c091deda533b92608fe76a13ad21",
       "review": "docs/reviews/CVF_NCR_C1_S1_CONSOLIDATED_REPAIR_COMPLETION_2026-10-09.md",
@@ -1154,6 +1154,25 @@
       "materialCommit": "ecd02cca1792da83adb107d85e986f2598be42ff",
       "parentApplication": "APPLIED_ONE_PRIOR_LOCAL_WORKFLOW_PROJECT_RESOLUTION_OPEN",
       "continuity": "DEDICATED_REAL_SHA_SYNC"
+    },
+    "expenseBrowserPreviewDispatch20261010": {
+      "status": "READY",
+      "materialCommit": "4cb8ee92ec454a321692f4e6fe15afdee93e49a2",
+      "baseline": "docs/baselines/CVF_GC018_NCR_EXPENSE_BROWSER_PREVIEW_2026-10-10.md",
+      "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_BROWSER_PREVIEW_2026-10-10.md",
+      "workerPaths": [
+        "scripts/cvf_expense_fixture_preview.cjs",
+        "scripts/test_cvf_expense_fixture_preview_browser.cjs",
+        "docs/guides/CVF_EXPENSE_BROWSER_PREVIEW_README_2026-10-10.md",
+        "docs/reviews/evidence/cvf-expense-browser-worker-2026-10-10.json",
+        "docs/reviews/CVF_NCR_EXPENSE_BROWSER_PREVIEW_WORKER_RETURN_2026-10-10.md"
+      ],
+      "scope": "Actual read-only component bundled into offline preview; desktop/mobile Chromium cases and two mutants; no app/server/network/media",
+      "boundReleaseReceipt": ".cvf/runtime/cvf-expense-browser-dispatch-20261010/release/pre-dispatch.json",
+      "releaseRule": "Actual PASS at clean released HEAD required before worker effects; READY is not proof",
+      "operatorWorkerPreference": "Haiku5.5/Max OPERATOR_REPORTED_NOT_NORMATIVE",
+      "priorUnitProcessDeviationsRetained": true,
+      "sourceR2Successor": false
     }
   }
 }

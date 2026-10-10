@@ -36,12 +36,12 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_NCR_EXPENSE_FILTER_FIXTURE_2026-10-09.md",
-    "baselineSha256": "08e5f5c5d4af9eed94dd1ca1718873bb980c1f2199088e745cf5a5ec0b7b5f85",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_FILTER_FIXTURE_2026-10-09.md",
-    "workOrderSha256": "f155ed392b9da540543ca2087cc1421220a52ed161edcd1f0391b2a802579944"
+    "baselinePath": "docs/baselines/CVF_GC018_NCR_EXPENSE_BROWSER_PREVIEW_2026-10-10.md",
+    "baselineSha256": "28e64b10512aa32f741d236da867d35072865e235c14eb2d537cf5bc02df1f2a",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_BROWSER_PREVIEW_2026-10-10.md",
+    "workOrderSha256": "7913adcf69a70fb641bcca33500c3def91c1060d6bd4ba2c59b2e5072ec04d0e"
   },
-  "currentAuthoritySyncReason": "Local bounded technical expense fixture acceptance with timer/confirmation deviations retained; exact closed raw pin; no effect/public grant. Accepted material commit ecd02cca1792da83adb107d85e986f2598be42ff; dedicated actual-SHA continuity.",
+  "currentAuthoritySyncReason": "Operator continued isolated local testing/manual transfer; browser UI proof packet committed at 4cb8ee92ec454a321692f4e6fe15afdee93e49a2. Actual component read-only, no media/source/provider effect admission; final bound clean release required.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
