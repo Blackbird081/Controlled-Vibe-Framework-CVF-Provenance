@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_TOUCH_TARGET_2026-10-10.md",
     "workOrderSha256": "29e2f26950a474cb6e90718ca9d66dffc8e9d453f9b4e760bbbe5d9ad22909c0"
   },
-  "currentAuthoritySyncReason": "Bounded touch correction accepted; timer/read and320 limits retained; original worker bytes preserved; third-Haiku report, no effect grant.",
+  "currentAuthoritySyncReason": "Bounded touch correction accepted; timer/read and320 limits retained; original worker bytes preserved; third-Haiku report, no effect grant. Accepted material b6f85d621487286a6c0a5f873cdf81045410a506; exact18 committed-content proof PASS before actual-SHA continuity; synchronized separate-range closure follows, historical material fingerprint withheld if current worktree differs.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
