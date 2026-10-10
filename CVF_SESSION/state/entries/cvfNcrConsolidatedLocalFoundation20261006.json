@@ -994,7 +994,7 @@
       ],
       "oldRootsFrozen": true
     },
-    "nextAllowedMove": "PROGRAM_ID=CVF-CORE; NEXT_ACTION_CLASS=REVIEW; BATCH_ID=CVF-NCR-EXPENSE-LAYOUT-20261010. Narrow layout CLOSED_PASS_BOUNDED; own330 text/inner-box containment and nowrap negative PASS; original five unchanged, guide erratum/Local packet path correction recorded; timer/read/scaffold limits retained. Consumed work order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_NARROW_LAYOUT_2026-10-10.md; no redispatch. Haiku/Sonnet WORKER_ONLY ledger now four Haiku plus Sonnet reference, five task families; bill unknown, no automatic router or benchmark repeat. Local may select next useful bounded roadmap task. SourceR2/native/TTS/audio/MP4/S2-S9/provider/public/deploy/P11 parked; no push/automatic successor; upstream debt and LHW24 retained. Accepted material=4d005cd9eb807f6ce9d64545fa1090e0b4e858b4.",
+    "nextAllowedMove": "PROGRAM_ID=CVF-CORE; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-EXPENSE-LEGIBILITY-20261010. Active work order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_TEXT_LEGIBILITY_2026-10-10.md READY; manual INTERNAL_AGENT worker only after clean committed bound release PASS. HeaderStyle color-token correction for measured3.7987 header contrast defect; three dark/light/teal text-focus profiles, one preimage contrast mutant and pin sentinel, exact unit regression, three inspected screenshots. First timer capture AND file persistence before reads; frozen B/end receipt. Haiku/Sonnet WORKER_ONLY collection for later configuration; Local orchestrator/reviewer retains decision. Four Haiku plus Sonnet reference, bill unknown; no automatic router or benchmark repeat. SourceR2/native/TTS/audio/MP4/S2-S9/provider/public/deploy/P11 parked; no push/automatic source successor; upstream debt and LHW24 retained.",
     "s1R2LocalDisposition20261009": {
       "materialCommit": "5c1c5bf30525c091deda533b92608fe76a13ad21",
       "review": "docs/reviews/CVF_NCR_C1_S1_CONSOLIDATED_REPAIR_COMPLETION_2026-10-09.md",
@@ -1275,6 +1275,31 @@
       "supersedesHistorical320LongLabelOverflowForNewSourceOnly": true,
       "continuity": "DEDICATED_ACTUAL_SHA_SYNC",
       "committedContentProof": "EXACT18_PASS_AT_MATERIAL_HEAD_NOT_GLOBAL_FINALITY"
+    },
+    "expenseTextLegibilityDispatch20261010": {
+      "status": "READY",
+      "materialCommit": "be4c71807d74f81910dbf7cb585f361443520ccf",
+      "baseline": "docs/baselines/CVF_GC018_NCR_EXPENSE_TEXT_LEGIBILITY_2026-10-10.md",
+      "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_TEXT_LEGIBILITY_2026-10-10.md",
+      "workerPaths": [
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/expenses/ExpenseList.tsx",
+        "scripts/test_cvf_expense_text_legibility_browser.cjs",
+        "docs/guides/CVF_EXPENSE_TEXT_LEGIBILITY_README_2026-10-10.md",
+        "docs/reviews/evidence/cvf-expense-legibility-worker-2026-10-10.json",
+        "docs/reviews/CVF_NCR_EXPENSE_TEXT_LEGIBILITY_WORKER_RETURN_2026-10-10.md"
+      ],
+      "scope": "HeaderStyle color only; three current-source text/focus profiles, preimage contrast mutant and no-write source-pin sentinel; readonly unit regression",
+      "boundReleaseReceipt": ".cvf/runtime/cvf-expense-legibility-dispatch-20261010/release/pre-dispatch.json",
+      "releaseRule": "Clean committed bound PASS required before worker edits; READY alone is not execution evidence",
+      "operatorWorkerPreference": "Haiku5.5/Max OPERATOR_REPORTED_NOT_NORMATIVE",
+      "workerOnlyModels": [
+        "Haiku5.5/Max",
+        "Sonnet5.5/High"
+      ],
+      "modelScope": "WORKER_ONLY_COLLECTION_NO_OPERATIONAL_CONFIG_MUTATION",
+      "reviewedHaikuBeforeDispatch": 4,
+      "sourceR2Successor": false,
+      "workerInvoked": false
     }
   }
 }

@@ -34,12 +34,12 @@ artifact.
 | Prior handoff (archive-qualified) | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V62_2026-09-17.md` |
 | Latest front-door archive | `CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_COMPACTION_ARCHIVE_2026-08-11.md` |
 | Current authority evidence | `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` `currentAuthority` |
-| Parent maintenance | `docs/baselines/CVF_GC018_LEARNING_APPLICATION_BINDING_2026-10-09.md`; `docs/reviews/CVF_LEARNING_APPLICATION_BINDING_COMPLETION_2026-10-09.md`; existing PLL-T1 owner retained; current expense narrow-layout order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_NARROW_LAYOUT_2026-10-10.md |
+| Parent maintenance | `docs/baselines/CVF_GC018_LEARNING_APPLICATION_BINDING_2026-10-09.md`; `docs/reviews/CVF_LEARNING_APPLICATION_BINDING_COMPLETION_2026-10-09.md`; existing PLL-T1 owner retained; current expense text-legibility order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_TEXT_LEGIBILITY_2026-10-10.md |
 | Freeze posture | `governance_kernel_freeze_recommended` |
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`;handoff=`AGENT_HANDOFF_V63_2026-09-18.md`;next=bounded roadmap selection after layout review;role=Local INTERNAL_AGENT reviewer/closer;phase=internal review/closure;decision owner=Local;parked checkpoint=sourceR2/native/TTS/media/provider/public/deploy/P11;no automatic successor.
+Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`;handoff=`AGENT_HANDOFF_V63_2026-09-18.md`;next=manual header-legibility worker transfer after bound release;role=Local INTERNAL_AGENT orchestrator/reviewer;phase=internal dispatch;decision owner=Local;parked checkpoint=sourceR2/native/TTS/media/provider/public/deploy/P11;no automatic successor.
 
 ## Current Mode
 
@@ -48,7 +48,7 @@ Current mode: `cvf_ncr_p10_closed_p11_parked`; previous mode marker: `cvf_ncr_p1
 
 ## Next Allowed Move
 Mode: `cvf_ncr_p10_closed_p11_parked`
-PROGRAM_ID=CVF-CORE; NEXT_ACTION_CLASS=REVIEW; BATCH_ID=CVF-NCR-EXPENSE-LAYOUT-20261010. Narrow layout CLOSED_PASS_BOUNDED; own330 text/inner-box containment and nowrap negative PASS; original five unchanged, guide erratum/Local packet path correction recorded; timer/read/scaffold limits retained. Consumed work order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_NARROW_LAYOUT_2026-10-10.md; no redispatch. Haiku/Sonnet WORKER_ONLY ledger now four Haiku plus Sonnet reference, five task families; bill unknown, no automatic router or benchmark repeat. Local may select next useful bounded roadmap task. SourceR2/native/TTS/audio/MP4/S2-S9/provider/public/deploy/P11 parked; no push/automatic successor; upstream debt and LHW24 retained. Accepted material=4d005cd9eb807f6ce9d64545fa1090e0b4e858b4.
+PROGRAM_ID=CVF-CORE; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-EXPENSE-LEGIBILITY-20261010. Active work order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_TEXT_LEGIBILITY_2026-10-10.md READY; manual INTERNAL_AGENT worker only after clean committed bound release PASS. HeaderStyle color-token correction for measured3.7987 header contrast defect; three dark/light/teal text-focus profiles, one preimage contrast mutant and pin sentinel, exact unit regression, three inspected screenshots. First timer capture AND file persistence before reads; frozen B/end receipt. Haiku/Sonnet WORKER_ONLY collection for later configuration; Local orchestrator/reviewer retains decision. Four Haiku plus Sonnet reference, bill unknown; no automatic router or benchmark repeat. SourceR2/native/TTS/audio/MP4/S2-S9/provider/public/deploy/P11 parked; no push/automatic source successor; upstream debt and LHW24 retained.
 Historical G1-G7 terminal baseline: mode `acel_g1_g7_research_terminally_closed`. G1-G6 terminal review: `docs/reviews/CVF_ACEL_G1_G6_TERMINAL_STOP_CLOSURE_2026-09-24.md`; G7 research closure: `docs/reviews/CVF_ACEL_G7_CROSS_RUN_CAPABILITY_EVOLUTION_RESEARCH_CLOSURE_2026-09-24.md`. The packet-only post-G7 reconciliation review at `docs/reviews/CVF_ACEL_POST_G7_FULL_CORPUS_ABSORPTION_CLOSURE_2026-09-24.md` is superseded for repository absorption by the 2026-09-25 pinned-source audit. G1 is stopped, G2-G6 remain parked, G7 research is closed, and no automatic G1-G7 successor exists.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
