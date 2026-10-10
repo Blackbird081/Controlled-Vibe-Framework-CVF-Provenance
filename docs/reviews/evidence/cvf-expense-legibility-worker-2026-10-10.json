@@ -1,0 +1,262 @@
+{
+  "schemaVersion": "cvf.expenseLegibilityWorkerEvidence.v1",
+  "batchId": "CVF-NCR-EXPENSE-LEGIBILITY-20261010",
+  "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_TEXT_LEGIBILITY_2026-10-10.md",
+  "status": "COMPLETE_PENDING_REVIEW",
+  "commitMode": "WORKER_MUST_NOT_COMMIT",
+  "textEncodingException": "Text Encoding Exception: Vietnamese synthetic labels, the synthetic notice, row text and the oracle rows use Vietnamese letters with diacritics; no other non-ASCII class is added.",
+  "dispatchBaseHead": "d68715e97c080c8d9974f99f8294adb9c2bd9b2f",
+  "executionBaseHead": "b83556dbfc6236556b15a252f09d5688361d1a03",
+  "executionBaseNote": "Clean HEAD at worker start (git status empty). The dispatch base d68715e97 and the packet commit be4c71807 are ancestors of it.",
+  "timer": {
+    "budgetMinutes": 90,
+    "captureOrder": "one awaited command captured and persisted UTC, monotonic ticks and frequency to timer.json before any CVF file read",
+    "startUtc": "2026-10-10T08:22:36.067Z",
+    "monotonicStartTicks": 5875185679056,
+    "monotonicFrequencyHz": 10000000,
+    "startStore": ".cvf/runtime/cvf-expense-legibility-worker-20261010/timer.json",
+    "persistenceCompliance": "COMPLIANT_PERSISTED_BEFORE_FIRST_CVF_READ: the work order was read after the timer command returned. Session context (CLAUDE.md and the memory index) was loaded before the timer; no CVF file was read by the worker before it.",
+    "endStore": ".cvf/runtime/cvf-expense-legibility-worker-20261010/final-confirmation.json",
+    "endRecordedAfter": "distinct frozen full bound confirmation B and raw hash verification; values are not written into this tracked file"
+  },
+  "readCoverage": [
+    {"item": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_TEXT_LEGIBILITY_2026-10-10.md", "coverage": "READ_FULL", "note": "first CVF read, after the timer persisted"},
+    {"item": "docs/baselines/CVF_GC018_NCR_EXPENSE_TEXT_LEGIBILITY_2026-10-10.md", "coverage": "READ_FULL", "note": ""},
+    {"item": "docs/reviews/evidence/cvf-expense-legibility-dispatch-inputs-2026-10-10.json", "coverage": "READ_FULL", "note": "all source and tool pins checked"},
+    {"item": "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json", "coverage": "READ_FULL", "note": "current authority names this order"},
+    {"item": "CVF_SESSION_MEMORY.md (front door)", "coverage": "READ_PARTIAL", "note": "lines 1-60 (startup order, active pointers, acknowledgment, next move); later lines are history and were not read"},
+    {"item": "AGENT_HANDOFF_V63_2026-09-18.md", "coverage": "READ_PARTIAL", "note": "lines 1-30 (current authority and mode); later sections not read"},
+    {"item": "ExpenseList.tsx (whole component)", "coverage": "READ_FULL", "note": "lines 1-56 and 56-142 read in this lane before the edit"},
+    {"item": "ExpenseList.test.tsx (whole)", "coverage": "READ_FULL_EARLIER_IN_SESSION_DIGEST_BOUND", "note": "read in full earlier in this session; SHA-256 051eda76 re-verified unchanged in this lane"},
+    {"item": "DESIGN.md sections 2, 7 and 8", "coverage": "READ_EARLIER_IN_SESSION_DIGEST_BOUND", "note": "read earlier in this session; SHA-256 15c1b506 re-verified unchanged"},
+    {"item": "DESIGN.md section 14 (14.6 pre-ship verification)", "coverage": "READ_FULL", "note": "lines 441-523 read in this lane"},
+    {"item": "docs/reference/CVF_NCR_GENERAL_VIDEO_DESIGN_2026-10-02.md S05 and S06", "coverage": "READ_EARLIER_IN_SESSION_DIGEST_BOUND", "note": "S05 and S06 sections read earlier in this session; SHA-256 3ce5e236 re-verified unchanged"},
+    {"item": "docs/reviews/CVF_NCR_EXPENSE_NARROW_LAYOUT_COMPLETION_2026-10-10.md", "coverage": "READ_FULL", "note": "including the Reviewer Guide Erratum"},
+    {"item": "docs/reviews/evidence/cvf-expense-layout-local-review-2026-10-10.json", "coverage": "PIN_CHECK_ONLY", "note": "SHA-256 ddeef22f matched; content not read in this lane"},
+    {"item": "scripts/test_cvf_expense_narrow_layout_browser.cjs and scripts/test_cvf_expense_touch_target_browser.cjs", "coverage": "READ_EARLIER_IN_SESSION_DIGEST_BOUND", "note": "both were authored or read in full earlier in this session; SHA-256 8c3b28ac and 39e5b62f re-verified unchanged; used as transport and token-profile method only"},
+    {"item": "governance/compat/learning_application_binding.py", "coverage": "READ_FULL", "note": "SHA-256 84068b6f matches the pin in the learning plan"},
+    {"item": "governance/compat/run_worker_return_scaffold.py", "coverage": "READ_FULL", "note": "scaffold actually generated, see scaffold"},
+    {"item": "governance/compat/check_worker_return_quality_gate.py literals", "coverage": "READ_PARTIAL", "note": "lines 56-180 in this lane (headings, field lists, tokens) and lines 286-485 in the touch lane of this session"},
+    {"item": "governance/compat/check_work_order_acceptance_ledger.py", "coverage": "READ_PARTIAL", "note": "lines 1-100 in this lane and 100-208 in the layout lane; lines 209-250 not read"},
+    {"item": "governance/compat/check_gate_to_role_closeability.py", "coverage": "READ_PARTIAL", "note": "lines 200-430 in this lane; lines 1-199 and 431-495 not read"},
+    {"item": "governance/compat/check_independent_review_probe_admission.py", "coverage": "READ_PARTIAL", "note": "lines 1-120 plus a grep of the disposition constants (PENDING_REVIEWER_EXECUTION, PASS_INDEPENDENT_PROBE); the rest not read"}
+  ],
+  "scaffold": {
+    "command": "python -B governance/compat/run_worker_return_scaffold.py --emit --profile WORKER_RETURN_FULL_GATE_V1 --title \"NCR Expense Text Legibility Worker Return\"",
+    "generatedBeforeFilling": true,
+    "retainedIgnoredAt": ".cvf/runtime/cvf-expense-legibility-worker-20261010/scaffold/worker-return-skeleton.md",
+    "skeletonSha256": "6ef9c0b094ec3e8ea14cc7b64051d9830ba512e12e18df26006259658aa852db",
+    "skeletonPhysicalLines": 309,
+    "usage": "every scaffold section heading is present in the filled return; placeholder lines were replaced with real content"
+  },
+  "pinCheck": {
+    "result": "PASS",
+    "preimageSha256": "447463e1c1330d3152eba91401a68fc8a13320c29d24fb233ccd8830a62b26e3",
+    "preimageSavedToRuntimeBeforeEdit": ".cvf/runtime/cvf-expense-legibility-worker-20261010/preimage/ExpenseList.preimage.tsx",
+    "preimageSavedBeforeEdit": true,
+    "correctedSha256": "a53662b79cf56a1c85b219da5487271f3e9f9ef13077df3578a626b86f3a2afc",
+    "defaultScriptPin": "the browser script pins correctedSha256 and refuses SOURCE_PIN_DRIFT before any output write or browser launch",
+    "readOnlyMatches": {
+      "ExpenseList.test.tsx": "051eda76113aed59aa59ffb4a57739468f50944dbfdfb77d905dba9ba983da8b",
+      "DESIGN.md": "15c1b5061bd2e1f763638beb83a84d06eb8ccbc470747c01f236033a834a987e",
+      "docs/reference/CVF_NCR_GENERAL_VIDEO_DESIGN_2026-10-02.md": "3ce5e2363c3e29997fcbf42cb4cec59af7447cca38409d4d970e8aa71e5777e0",
+      "docs/reviews/CVF_NCR_EXPENSE_NARROW_LAYOUT_COMPLETION_2026-10-10.md": "e32ba23b5da248c9a48bb749264cb7d30a6083f099b24c3853082c61ba2ccbde",
+      "docs/reviews/evidence/cvf-expense-layout-local-review-2026-10-10.json": "ddeef22f9f18d12ca55cf04a667e6986df946ad75ed681afdad745e39b872f80",
+      "scripts/test_cvf_expense_narrow_layout_browser.cjs": "8c3b28ac10a9b28b3143c2db75137129b9ab55306f51e309ec95752817a23041",
+      "scripts/test_cvf_expense_touch_target_browser.cjs": "39e5b62f716525388404980a052987212046a4f7f130aad5f64968c30dff07c0",
+      "docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json": "074df0db983e95c44dd4c7c27fd812e5f715f76549178e21f6b85ac05f497364",
+      "docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md": "1609cc9d955bc88b2e09179331d7828406114d98b23c81cfb3f2992afa3920f6",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/package.json": "f03fc2c2700e904dc88e10395d0856983b9b0f9e6f27150713fa402f9e9fe24b",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/vitest.config.ts": "9a4a65976b5b7a5d038f9cb412a90d417f804108cf1dd33bae4421989a863420",
+      "docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md": "aeec1bf5f3d720896612f5cee3460e99e99622b7092dc71afd9aa59534edc8d5"
+    },
+    "toolPackageJsonMatches": {"vite": "a2b94343", "react": "c383aced", "react-dom": "d926f158", "playwright": "718c9181", "typescript": "822ef7ca"},
+    "outputsAbsentBeforeWork": true
+  },
+  "preImplementationGate": {
+    "command": "python -B governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base b83556dbfc6236556b15a252f09d5688361d1a03 --head HEAD --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_TEXT_LEGIBILITY_2026-10-10.md --receipt-dir .cvf/runtime/cvf-expense-legibility-worker-20261010/gates",
+    "exit": 0,
+    "result": "COMPLIANT",
+    "log": ".cvf/runtime/cvf-expense-legibility-worker-20261010/gates/pre-implementation.log"
+  },
+  "componentAndUnit": {
+    "sourcePath": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/expenses/ExpenseList.tsx",
+    "preimageSha256": "447463e1c1330d3152eba91401a68fc8a13320c29d24fb233ccd8830a62b26e3",
+    "postChangeSha256": "a53662b79cf56a1c85b219da5487271f3e9f9ef13077df3578a626b86f3a2afc",
+    "change": "headerStyle.color only: var(--cvf-text-muted) -> var(--cvf-text-secondary), an existing semantic text token; no other byte changed and line endings are unchanged (LF)",
+    "gitDiffStat": "1 file changed, 1 insertion(+), 1 deletion(-) relative to HEAD",
+    "physicalLines": 142,
+    "lineCap": 250,
+    "unitCommand": "node node_modules/vitest/vitest.mjs run src/expenses/ExpenseList.test.tsx --reporter=verbose",
+    "unitCwd": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\EXTENSIONS\\CVF_v1.6_AGENT_PLATFORM\\cvf-web (uppercase drive letter)",
+    "unitExit": 0,
+    "testFiles": 1,
+    "testsTotal": 12,
+    "testsPassed": 12,
+    "testsFailed": 0,
+    "unitDurationSeconds": 44.54,
+    "unitRunCount": 1,
+    "unitTestFileModified": false,
+    "unitResult": "PASS"
+  },
+  "browserTestResults": {
+    "command": "node scripts/test_cvf_expense_text_legibility_browser.cjs",
+    "syntaxCheck": "node --check scripts/test_cvf_expense_text_legibility_browser.cjs: exit 0",
+    "exit": 0,
+    "status": "PASS",
+    "browserVersion": "145.0.7632.6",
+    "browserBinary": "installed Playwright Chromium; file:// pages; no HTTP listener; no install",
+    "reportFile": ".cvf/runtime/cvf-expense-legibility-worker-20261010/browser-results.json",
+    "sourceSha256": {
+      "start": "a53662b79cf56a1c85b219da5487271f3e9f9ef13077df3578a626b86f3a2afc",
+      "afterBuild": "a53662b79cf56a1c85b219da5487271f3e9f9ef13077df3578a626b86f3a2afc",
+      "end": "a53662b79cf56a1c85b219da5487271f3e9f9ef13077df3578a626b86f3a2afc"
+    },
+    "oracle": "five literal rows authored in the script: LG-001 and LG-002 in February 2026 with short labels; LG-003 2026-03-04 'Readable independent row' 120000; LG-004 2026-03-18 an 80-character unbroken alphanumeric label 345678; LG-005 05/03/2026 invalid",
+    "profiles": [
+      {"name": "dark-320x844-default", "scheme": "dark", "accent": "#5b5cf6", "tokens": "DESIGN.md section 2"},
+      {"name": "light-320x844-default", "scheme": "light", "accent": "#5b5cf6", "tokens": "explicit synthetic light fixture overrides"},
+      {"name": "light-390x844-teal", "scheme": "light", "accent": "#0f766e", "tokens": "explicit synthetic light fixture overrides"}
+    ],
+    "testRecords": [
+      {"label": "baseline", "profile": "dark-320x844-default", "status": "PASS"},
+      {"label": "baseline", "profile": "light-320x844-default", "status": "PASS"},
+      {"label": "baseline", "profile": "light-390x844-teal", "status": "PASS"},
+      {"label": "mutant-preimage", "profile": "dark-320x844-default", "status": "FAIL (expected)", "failureKind": "ASSERTION"},
+      {"label": "restored", "profile": "dark-320x844-default", "status": "PASS"}
+    ],
+    "totalAssertions": 693,
+    "externalRequests": 0,
+    "pageErrors": 0,
+    "consoleErrorsCountedAsPageErrors": true,
+    "textContrast": {
+      "method": "computed color against the effective opaque background (ancestor chain composited), unrounded ratio, threshold 4.5; then exact expected role token and background token",
+      "rolesChecked": ["HEADER_TEXT_CONTRAST", "ROW_TEXT_CONTRAST", "TITLE_TEXT_CONTRAST", "LABEL_TEXT_CONTRAST", "NOTICE_TEXT_CONTRAST", "EMPTY_MESSAGE_CONTRAST", "MONTH_TEXT_CONTRAST"],
+      "statesChecked": ["March", "April (empty)", "cleared"],
+      "minimumRatios": {
+        "dark-320x844-default": {"header": 7.4248, "row": 15.5801, "title": 15.5801, "label": 7.4248, "notice": 7.7949, "emptyMessage": 7.4248, "monthText": 17.3949},
+        "light-320x844-default": {"header": 10.3547, "row": 17.8525, "title": 17.8525, "label": 10.3547, "notice": 7.09, "emptyMessage": 10.3547, "monthText": 17.0629},
+        "light-390x844-teal": {"header": 10.3547, "row": 17.8525, "title": 17.8525, "label": 10.3547, "notice": 7.09, "emptyMessage": 10.3547, "monthText": 17.0629}
+      },
+      "roleTokens": {"header": "--cvf-text-secondary", "row": "--cvf-text-primary", "title": "--cvf-text-primary", "label": "--cvf-text-secondary", "notice": "--cvf-warning", "emptyMessage": "--cvf-text-secondary", "monthText": "--cvf-text-primary on --cvf-bg-page"},
+      "perRoleColorsAndBackgrounds": "logged per profile, state and role in browser-results.json roles[]"
+    },
+    "focusAndTarget": {
+      "inputOuterHeightMin": 44,
+      "boxSizing": "border-box",
+      "keyboard": "Tab from a blurred page focuses the month input; computed outline 2px solid, offset 2px, accent color; checked in the initial and April (empty) states",
+      "indicatorContrast": [
+        {"profile": "dark-320x844-default", "accent": "rgb(91, 92, 246)", "vsSurface": 3.433, "vsPage": 3.8329},
+        {"profile": "light-320x844-default", "accent": "rgb(91, 92, 246)", "vsSurface": 4.8764, "vsPage": 4.6607},
+        {"profile": "light-390x844-teal", "accent": "rgb(15, 118, 110)", "vsSurface": 5.4733, "vsPage": 5.2312}
+      ],
+      "threshold": 3
+    },
+    "semantics": "native month input with linked label (label.control is the input, text 'Lọc theo tháng'); section and table aria-labelledby the title id; th scope=col x3; checked in March, April and cleared states",
+    "layout": "table, every cell, every text line (Range.getClientRects per text node), notice and input inside the section content box / cell inner boxes at 1px tolerance; amounts on a single line; no document or section horizontal overflow; exact text equality including the full 80-character label",
+    "flows": "each profile: initial, March (exact IDs LG-003, LG-004), April (exact empty message, no table, no rows), cleared (four valid rows restored); invalid row absent",
+    "mutants": [
+      {
+        "id": "mutant-preimage-header-contrast",
+        "change": "the saved admitted preimage (447463...) bundled independently from the ignored runtime copy; tracked source never mutated",
+        "sourceSha256": "447463e1c1330d3152eba91401a68fc8a13320c29d24fb233ccd8830a62b26e3",
+        "collected": 1,
+        "completed": 1,
+        "killed": true,
+        "failureKind": "ASSERTION",
+        "firstFailure": "HEADER_TEXT_CONTRAST ratio 3.7987445700877784 < 4.5 (dark-320x844-default March \"Ngày\" rgb(111, 120, 144) on rgb(28, 29, 39))",
+        "layoutAndTouchPassedFirst": true
+      }
+    ],
+    "mutantCounts": {"collected": 1, "completed": 1, "killed": 1, "harnessInvalidRuns": 0},
+    "restoration": {"restoredPass": true, "trackedSourceSha256AfterRun": "a53662b79cf56a1c85b219da5487271f3e9f9ef13077df3578a626b86f3a2afc"},
+    "sourcePinSentinel": {
+      "method": "the same script runs as a child process on an ignored copy with one appended line; admitSource is the same function used by the default run",
+      "copySha256": "a79a10d898f018de771733f1ded3bfd5f381e9b53fe87fd04f9144fd48c765dc",
+      "childExit": 3,
+      "childStderr": "REFUSED: SOURCE_PIN_DRIFT: a79a10d8... != pinned a53662b7...",
+      "childStdoutBytes": 0,
+      "refused": true,
+      "noWrites": true,
+      "artifactsBeforeAndAfter": 16,
+      "snapshotMethod": "SHA-256 of every file under the ignored output folder (sentinel copy excluded) before and after the child run; maps are equal"
+    },
+    "screenshots": [
+      {"profile": "dark-320x844-default", "path": ".cvf/runtime/cvf-expense-legibility-worker-20261010/march-dark-320x844-default.png", "bytes": 21173, "sha256": "2319506b86556a6b56e5b5ed3d5bdf7fae62859b69c675f7dce74b9c22c51484", "capBytes": 3145728},
+      {"profile": "light-320x844-default", "path": ".cvf/runtime/cvf-expense-legibility-worker-20261010/march-light-320x844-default.png", "bytes": 20997, "sha256": "8a549fab48acc9a8c0e64693a617e05c7ace673cd4b2d4fdd813c26005db5adb", "capBytes": 3145728},
+      {"profile": "light-390x844-teal", "path": ".cvf/runtime/cvf-expense-legibility-worker-20261010/march-light-390x844-teal.png", "bytes": 21024, "sha256": "1299cbb459efb2ac9e19ce36de045dd6057ef34a8802148c66c078b7855ceb98", "capBytes": 3145728}
+    ],
+    "screenshotInspection": [
+      "dark 320: headers Ngày, Nội dung and Số tiền are readable in light blue-grey on the dark surface; the orange notice, title, label and rows are visible; the 80-character label wraps across eight lines without clipping; the accent focus ring around the month input is visible",
+      "light 320: headers are readable dark slate; notice brown-orange, title and rows are clear; same wrapped label; indigo focus ring visible against the white surface",
+      "light 390: same content at the wider width, the long label wraps across five lines; teal focus ring is visible; nothing is clipped or hidden"
+    ],
+    "screenshotDeterminism": "the three SHA-256 values were equal across the last two runs of the same bytes",
+    "runsOfTheProof": {"count": 2, "allExit": 0, "note": "run 1 on the 316-line script before blank-line trimming; run 2 on the final 299-line script. Run 1 is superseded and not claimed as final evidence."}
+  },
+  "repairGroups": {
+    "productRepairGroups": 0,
+    "harnessRepairGroups": 1,
+    "harnessRepairNote": "line-cap compaction of the browser script: the first complete draft was 369 physical lines against the 300 cap, then 356, then 316, then 299 after blank-line and import grouping. Assertions and oracle rows did not change. Some declarations are grouped on one line, a compaction the work order warns about; no statement-level obfuscation was added and no extra tracked helper was needed.",
+    "metadataRepairGroups": 0,
+    "invalidProofAttempts": 0
+  },
+  "guideVerification": {
+    "file": "docs/guides/CVF_EXPENSE_TEXT_LEGIBILITY_README_2026-10-10.md",
+    "physicalLines": 69,
+    "lineCap": 100,
+    "claimsCheckedAgainstRuns": [
+      "the command, the syntax check and the exit-3 pin refusal match the executed script",
+      "the three profiles, the states and the mutant match the browser report",
+      "no claim is made about how older scripts behave on the current source (Local erratum in the narrow layout completion)"
+    ],
+    "result": "PASS_BY_READ",
+    "draftFailures": []
+  },
+  "workerReturnGate": {
+    "command": "python governance/compat/run_worker_return_fast_gate.py --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_TEXT_LEGIBILITY_2026-10-10.md",
+    "fullBoundRunRecord": "Command Evidence in the worker return; logs in the ignored runtime gates folder",
+    "frozenConfirmationRecord": ".cvf/runtime/cvf-expense-legibility-worker-20261010/final-confirmation.json",
+    "frozenFileSet": [
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/expenses/ExpenseList.tsx",
+      "scripts/test_cvf_expense_text_legibility_browser.cjs",
+      "docs/guides/CVF_EXPENSE_TEXT_LEGIBILITY_README_2026-10-10.md",
+      "docs/reviews/evidence/cvf-expense-legibility-worker-2026-10-10.json",
+      "docs/reviews/CVF_NCR_EXPENSE_TEXT_LEGIBILITY_WORKER_RETURN_2026-10-10.md"
+    ],
+    "rawHashesRecordedIn": ".cvf/runtime/cvf-expense-legibility-worker-20261010/final-confirmation.json",
+    "draftAttempts": [{"attempt": "A", "exit": 0, "result": "PASS", "note": "first full bound draft attempt passed with no return repair", "log": "gates/full-bound-run-a.log"}, {"attempt": "A2", "exit": 0, "result": "PASS", "note": "full bound run on the bytes frozen for confirmation", "log": "gates/full-bound-run-a2.log"}]
+  },
+  "outputCaps": {
+    "componentLines": {"value": 142, "cap": 250},
+    "browserScriptLines": {"value": 299, "cap": 300},
+    "guideLines": {"value": 69, "cap": 100},
+    "evidenceLines": {"value": 262, "cap": 350},
+    "returnLines": {"value": 389, "cap": 450},
+    "htmlCapBytes": 2097152,
+    "screenshotCapBytes": 3145728,
+    "runtimeCapBytes": 31457280,
+    "runtimeMeasurement": "1342998 bytes measured before the gate runs under .cvf/runtime/cvf-expense-legibility-worker-20261010/ (cap 31457280)",
+    "lineCountMethod": "[System.IO.File]::ReadAllLines(...).Length, which counts blank lines"
+  },
+  "invocationCounts": {"internalAgentInvocationCount": 0, "externalAgentInvocationCount": 0, "providerCallCount": 0, "subagentCount": 0},
+  "usage": {
+    "modelIdentity": "Claude Sonnet 5.5 as reported by the session for this lane; the dispatch records Haiku 5.5/Max as operator-reported worker-only preference; neither is normative",
+    "tokens": null,
+    "tokensReason": "NOT_AVAILABLE_WITH_REASON: no token meter is exposed to this worker",
+    "billAmount": null,
+    "billCurrency": null,
+    "billReason": "NOT_AVAILABLE_WITH_REASON: no bill is exposed to this worker; no effort-based price is inferred"
+  },
+  "gitUnion": {
+    "basis": "git status --short at evidence write time; runtime outputs are ignored by .gitignore",
+    "paths": [
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/expenses/ExpenseList.tsx",
+      "scripts/test_cvf_expense_text_legibility_browser.cjs",
+      "docs/guides/CVF_EXPENSE_TEXT_LEGIBILITY_README_2026-10-10.md",
+      "docs/reviews/evidence/cvf-expense-legibility-worker-2026-10-10.json",
+      "docs/reviews/CVF_NCR_EXPENSE_TEXT_LEGIBILITY_WORKER_RETURN_2026-10-10.md"
+    ]
+  },
+  "claimBoundary": "Private synthetic header-readable-text correction and selected dark, light and teal fixture proof in installed Chromium only. Targeted contrast and focus checks, not full WCAG, screen-reader or all-browser certification; the light and teal values are synthetic fixtures, not the app theme contract. Earlier touch, layout and preview proofs apply to their own source versions only."
+}

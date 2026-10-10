@@ -5,7 +5,7 @@
   "decisionOwner": "LOCAL_REVIEWER",
   "purpose": "Longitudinal worker evidence for model selection by role and task family in a future multi-agent use case. No agent invocation or automatic routing.",
   "identityBasis": "ALL_MODEL_LABELS_OPERATOR_REPORTED_NOT_INDEPENDENTLY_VERIFIED",
-  "sourceHead": "1f16dd48f6bc416da8920072f2ec18200c9fa07a",
+  "sourceHead": "b83556dbfc6236556b15a252f09d5688361d1a03",
   "rows": [
     {
       "trancheId": "CVF-NCR-OFFLINE-PREVIEW-20261009",
@@ -204,6 +204,54 @@
         "Current dark-only selected widths, no current light/accent/full WCAG",
         "Script exactly300 lines"
       ]
+    },
+    {
+      "trancheId": "CVF-NCR-EXPENSE-LEGIBILITY-20261010",
+      "taskFamily": "FOCUSED_HEADER_TEXT_CONTRAST_AND_THREE_PROFILE_BROWSER_PROOF",
+      "implementationPaths": 2,
+      "deliveredPaths": 5,
+      "model": "Sonnet 5.5",
+      "effort": "High",
+      "role": "INTERNAL_AGENT_WORKER",
+      "status": "CLOSED_PASS_BOUNDED",
+      "evidence": "docs/reviews/evidence/cvf-expense-legibility-local-review-2026-10-10.json",
+      "evidenceSha256": "200179bff78b5885d21ff07b125045b68ac0a33f8e969ba9147ba6a58e79aa46",
+      "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_TEXT_LEGIBILITY_2026-10-10.md",
+      "technicalOutput": "ACCEPTED_BOUNDED_HEADER_COLOR_AND_THREE_SYNTHETIC_TEXT_FOCUS_PROFILES",
+      "procedure": "TIMER_AND_SCAFFOLD_RECEIPTS_CONSISTENT_PARTIAL_CHECKER_READS_RETAINED",
+      "firstReturnGateClean": true,
+      "workerImplementationRepairGroups": 1,
+      "workerProductRepairGroups": 0,
+      "workerHarnessRepairGroups": 1,
+      "workerReturnMetadataRepairGroups": 0,
+      "workerReturnDraftGateAttempts": 2,
+      "failedReturnDraftGateAttempts": 0,
+      "invalidProofAttempts": 0,
+      "reviewerRequestedWorkerRepairTurns": 0,
+      "reviewerProductCodeRepairs": 0,
+      "elapsed": {
+        "minutes": 12.97,
+        "basis": "WORKER_RECEIPT_CAPTURE_TO_FROZEN_B_END_MONOTONIC_ARITHMETIC_VERIFIED;READ_ORDER_DECLARED_NOT_INDEPENDENTLY_OBSERVED",
+        "fullDeliveryMinutes": null
+      },
+      "bill": {
+        "amount": null,
+        "currency": null,
+        "tokens": null,
+        "reason": "NO_EXPOSED_WORKER_REVIEWER_OR_REWORK_METER"
+      },
+      "processFindings": [
+        "Scaffold generated and timer persistence-before-read declared with consistent receipts",
+        "Partial checker reads retained; progressive startup/digest-bound reuse not mislabeled full reads",
+        "One cap-compaction harness group; readable final accepted, dispatcher budget pressure separate"
+      ],
+      "independentProof": "Own340 light: header10.3547, input44, keyboard focus, literal full text containment, DOM header-surface ratio1 negative and restoration",
+      "prospectiveAssessmentTiming": "Recorded after operator switch and worker start; not a valid pre-execution forecast",
+      "additionalLimitations": [
+        "Native month segment colors not individually measured",
+        "Synthetic light/teal profiles only",
+        "No matched model comparison or verified bill"
+      ]
     }
   ],
   "rubric": [
@@ -275,7 +323,7 @@
     }
   ],
   "reporting": {
-    "afterEachTranche": "Append accepted, rejected and blocked outcomes; retain corrections/history and raw evidence links. Update provisional task-family routing with confidence and limitations.",
+    "afterEachTranche": "Retain all reviewed outcomes and attribution; recommendations depend on task, exact configuration, benchmark conditions and Local evidence, never fixed model/task assignments.",
     "firstConsolidatedReport": "docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md",
     "earlyReportTrigger": "Material quality regression, authority breach or measured cost reversal: disclose promptly without waiting for three samples.",
     "reportSections": [
@@ -287,7 +335,8 @@
       "role/task-family selection matrix",
       "next useful comparison task"
     ],
-    "reviewedHaikuCount": 4
+    "reviewedHaikuCount": 4,
+    "reviewedSonnetCount": 2
   },
   "provisionalRoleRouting": [
     {
@@ -295,14 +344,16 @@
       "taskFamily": "ISOLATED_UI_UNIT_TESTS",
       "candidate": "Haiku 5.5 / Max",
       "disposition": "PROVISIONAL_BOUNDED",
-      "basis": "One accepted tranche with zero Local product repairs and disclosed process deviations."
+      "basis": "One accepted tranche with zero Local product repairs and disclosed process deviations.",
+      "interpretation": "Historical observed eligibility only; not a fixed task-to-model rule or comparative winner. Current choice requires version/configuration/evidence reassessment."
     },
     {
       "role": "IMPLEMENTATION_WORKER",
       "taskFamily": "BROWSER_PACKAGING_OR_MULTIFILE_INTEGRATION",
       "candidate": "Haiku 5.5 / Max",
       "disposition": "PROVISIONAL_BOUNDED",
-      "basis": "Three related browser/style tranches, including independent responsive text containment. Zero Local product-code repairs; one reviewer documentation erratum and a Local packet defect in fourth Haiku. Repeated process gaps retained."
+      "basis": "Three related browser/style tranches, including independent responsive text containment. Zero Local product-code repairs; one reviewer documentation erratum and a Local packet defect in fourth Haiku. Repeated process gaps retained.",
+      "interpretation": "Historical observed eligibility only; not a fixed task-to-model rule or comparative winner. Current choice requires version/configuration/evidence reassessment."
     }
   ],
   "comparisonLimits": [
@@ -314,12 +365,11 @@
   "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
   "laneProtection": "Reviewer-owned governed evidence promotion authorized by operator longitudinal tracking request. No worker file edit, new dispatch, provider effect or public export.",
   "observations": {
-    "technical": "Four related Haiku finite UI/unit/browser tranches accepted bounded; zero Local product-code repairs/worker redispatches, one guide erratum group. Sonnet larger package remains unmatched worker reference.",
-    "process": "All five samples first return gate not clean. All four Haiku timer history has gaps; partial required reads/scaffold remain in later samples. Visual self-correction despite passing geometry is positive worker judgment, not full process compliance.",
-    "localAttribution": "Narrow-layout guide manifest contradiction belongs to Local dispatcher; guide source-drift misstatement belongs to worker documentation and corrected by reviewer erratum. Gates86 passed but did not detect the semantic prose/ledger contradiction.",
-    "reportStatus": "PRELIMINARY_FOUR_HAIKU_PLUS_ONE_SONNET_WORKER_REFERENCE",
+    "technical": "Six accepted worker observations: four related Haiku Max and two different Sonnet High. Zero Local product repairs or worker redispatches; one older Haiku guide erratum.",
+    "process": "Five earlier samples had first-gate repair; current Sonnet first A passes, timer/scaffold receipts consistent, partial checker reads remain. Configuration/preparation/task confounds prevent attributing improvement solely to model.",
+    "reportStatus": "PRELIMINARY_SIX_WORKER_OBSERVATIONS_NO_COMPARATIVE_WINNER",
     "measuredBillComparison": null,
-    "nextControl": "Existing required first-action/read/scaffold rules and whole packet path reconciliation apply. No automatic model routing or guard code edit."
+    "nextControl": "Expense PARKED_BY_OPERATOR. Design evidence/version-aware orchestrator selection doctrine/contract on existing owners; no router or subagent activation."
   },
   "evaluationScope": {
     "role": "INTERNAL_AGENT_WORKER_ONLY",
@@ -414,5 +464,14 @@
     "costComparison": "Observed comparable total accepted-delivery bills only; null is unavailable, never zero; no effort-label inference.",
     "sampleHandling": "Retain all outcomes and historical corrections; related/reused tasks not independent samples; no benchmark-only repeats.",
     "configurationRule": "Use family-specific confidence/limits as future configuration input; no automatic model selector or orchestrator/reviewer recommendation for these models."
+  },
+  "selectionFoundation": {
+    "evidence": "docs/reviews/evidence/cvf-expense-legibility-local-review-2026-10-10.json",
+    "locator": "selectionFoundationAudit and selectionDesignClarification",
+    "consumer": "AGENT_ORCHESTRATOR",
+    "optional": true,
+    "nonCoderModelChoiceRequired": false,
+    "currentRuntimeStatus": "DESIGN_DIRECTION_ONLY",
+    "rule": "Quality/capability/authority floor before total-delivery-cost optimization; version-specific papers/model cards/original benchmark methods and reviewed Local results; unknown spend remains null."
   }
 }

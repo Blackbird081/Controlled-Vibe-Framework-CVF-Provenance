@@ -65,7 +65,7 @@ const cellStyle: CSSProperties = {
 const headerStyle: CSSProperties = {
     ...cellStyle,
     borderTop: 'none',
-    color: 'var(--cvf-text-muted)',
+    color: 'var(--cvf-text-secondary)',
     fontSize: 12,
     fontWeight: 600,
 };

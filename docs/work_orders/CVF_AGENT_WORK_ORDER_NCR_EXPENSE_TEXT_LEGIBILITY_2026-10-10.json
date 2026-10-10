@@ -2,11 +2,11 @@
   "schemaVersion": "cvf.preapprovalFeasibility.v1",
   "proposal": {
     "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_TEXT_LEGIBILITY_2026-10-10.md",
-    "sha256": "253bc768d4f94e411f9b81fff3c4017b11164e89345cc661f417285a202fefc6"
+    "sha256": "198d1b64bdf3fd895e269fc9a350ea549cb647e23fbeed337eff48f33d202c21"
   },
   "approvalTarget": {
     "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_TEXT_LEGIBILITY_2026-10-10.md",
-    "sha256": "253bc768d4f94e411f9b81fff3c4017b11164e89345cc661f417285a202fefc6",
+    "sha256": "198d1b64bdf3fd895e269fc9a350ea549cb647e23fbeed337eff48f33d202c21",
     "prospectiveOutcomeSha256": "eeb8a413cbdf98e398760a51cc3a4dca66750a07bb3c6722955b750cb7e7f4e3"
   },
   "prospectiveOutcome": {
@@ -52,8 +52,8 @@
         "requiredForPhase": true,
         "evidence": {
           "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/expenses/ExpenseList.tsx",
-          "sha256": "447463e1c1330d3152eba91401a68fc8a13320c29d24fb233ccd8830a62b26e3",
-          "locator": "color: 'var(--cvf-text-muted)'"
+          "sha256": "a53662b79cf56a1c85b219da5487271f3e9f9ef13077df3578a626b86f3a2afc",
+          "locator": "color: 'var(--cvf-text-secondary)'"
         },
         "deferredToPhase": null
       },

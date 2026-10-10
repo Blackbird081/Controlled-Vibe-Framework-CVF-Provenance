@@ -1,0 +1,1112 @@
+{
+  "schemaVersion": "cvf.expenseLegibilityLocalReview.v1",
+  "status": "CLOSED_PASS_BOUNDED",
+  "batchId": "CVF-NCR-EXPENSE-LEGIBILITY-20261010",
+  "closureBaseHead": "b83556dbfc6236556b15a252f09d5688361d1a03",
+  "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_TEXT_LEGIBILITY_2026-10-10.md",
+  "workerOriginalPins": {
+    "docs/guides/CVF_EXPENSE_TEXT_LEGIBILITY_README_2026-10-10.md": "a19b8cde4155fbeff973f14723263c413994fa24f5a216f518fcc74fb6e42bcb",
+    "scripts/test_cvf_expense_text_legibility_browser.cjs": "ef7995879c956c9dec309e4242b1b2d5c9b42468ff4f7ba5ca99b6293f3514f6",
+    "docs/reviews/CVF_NCR_EXPENSE_TEXT_LEGIBILITY_WORKER_RETURN_2026-10-10.md": "3864a1d9c76554d1f12173d3a11c941271a59b526982c0ac37644ff9b8b7ddb0",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/expenses/ExpenseList.tsx": "a53662b79cf56a1c85b219da5487271f3e9f9ef13077df3578a626b86f3a2afc",
+    "docs/reviews/evidence/cvf-expense-legibility-worker-2026-10-10.json": "b0e606d47e47ce7a30e66d27315cb43c5a2ba9dba7fb1ff9dcb4d1304196d13d"
+  },
+  "physicalLineCounts": {
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/expenses/ExpenseList.tsx": 142,
+    "docs/guides/CVF_EXPENSE_TEXT_LEGIBILITY_README_2026-10-10.md": 69,
+    "docs/reviews/CVF_NCR_EXPENSE_TEXT_LEGIBILITY_WORKER_RETURN_2026-10-10.md": 389,
+    "docs/reviews/evidence/cvf-expense-legibility-worker-2026-10-10.json": 262,
+    "scripts/test_cvf_expense_text_legibility_browser.cjs": 299
+  },
+  "workerRuntimeBytesObserved": 1378026,
+  "consumedWorkerEvidence": {
+    "unit": {
+      "sourcePath": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/expenses/ExpenseList.tsx",
+      "preimageSha256": "447463e1c1330d3152eba91401a68fc8a13320c29d24fb233ccd8830a62b26e3",
+      "postChangeSha256": "a53662b79cf56a1c85b219da5487271f3e9f9ef13077df3578a626b86f3a2afc",
+      "change": "headerStyle.color only: var(--cvf-text-muted) -> var(--cvf-text-secondary), an existing semantic text token; no other byte changed and line endings are unchanged (LF)",
+      "gitDiffStat": "1 file changed, 1 insertion(+), 1 deletion(-) relative to HEAD",
+      "physicalLines": 142,
+      "lineCap": 250,
+      "unitCommand": "node node_modules/vitest/vitest.mjs run src/expenses/ExpenseList.test.tsx --reporter=verbose",
+      "unitCwd": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\EXTENSIONS\\CVF_v1.6_AGENT_PLATFORM\\cvf-web (uppercase drive letter)",
+      "unitExit": 0,
+      "testFiles": 1,
+      "testsTotal": 12,
+      "testsPassed": 12,
+      "testsFailed": 0,
+      "unitDurationSeconds": 44.54,
+      "unitRunCount": 1,
+      "unitTestFileModified": false,
+      "unitResult": "PASS"
+    },
+    "browser": {
+      "status": "PASS",
+      "assertions": 693,
+      "tests": [
+        {
+          "label": "baseline",
+          "profile": "dark-320x844-default",
+          "status": "PASS",
+          "failureKind": null,
+          "assertions": 197,
+          "ms": 1639,
+          "error": null,
+          "externalRequests": 0,
+          "pageErrors": 0
+        },
+        {
+          "label": "baseline",
+          "profile": "light-320x844-default",
+          "status": "PASS",
+          "failureKind": null,
+          "assertions": 197,
+          "ms": 324,
+          "error": null,
+          "externalRequests": 0,
+          "pageErrors": 0
+        },
+        {
+          "label": "baseline",
+          "profile": "light-390x844-teal",
+          "status": "PASS",
+          "failureKind": null,
+          "assertions": 184,
+          "ms": 336,
+          "error": null,
+          "externalRequests": 0,
+          "pageErrors": 0
+        },
+        {
+          "label": "mutant-preimage",
+          "profile": "dark-320x844-default",
+          "status": "FAIL",
+          "failureKind": "ASSERTION",
+          "assertions": 44,
+          "ms": 513,
+          "error": "HEADER_TEXT_CONTRAST ratio 3.7987445700877784 < 4.5 (dark-320x844-default March \"Ng\u00e0y\" rgb(111, 120, 144) on rgb(28, 29, 39))",
+          "externalRequests": 0,
+          "pageErrors": 0
+        },
+        {
+          "label": "restored",
+          "profile": "dark-320x844-default",
+          "status": "PASS",
+          "failureKind": null,
+          "assertions": 69,
+          "ms": 225,
+          "error": null,
+          "externalRequests": 0,
+          "pageErrors": 0
+        }
+      ],
+      "mutants": [
+        {
+          "id": "mutant-preimage-header-contrast",
+          "collected": 1,
+          "completed": 1,
+          "killed": true,
+          "firstFailure": "HEADER_TEXT_CONTRAST ratio 3.7987445700877784 < 4.5 (dark-320x844-default March \"Ng\u00e0y\" rgb(111, 120, 144) on rgb(28, 29, 39))",
+          "headerRatio": 3.7987445700877784,
+          "layoutAndTouchPassedFirst": true,
+          "roles": [
+            {
+              "role": "HEADER_TEXT_CONTRAST",
+              "text": "Ng\u00e0y",
+              "fg": "rgb(111, 120, 144)",
+              "ratio": 3.7987
+            },
+            {
+              "role": "HEADER_TEXT_CONTRAST",
+              "text": "N\u1ed9i dung",
+              "fg": "rgb(111, 120, 144)",
+              "ratio": 3.7987
+            },
+            {
+              "role": "HEADER_TEXT_CONTRAST",
+              "text": "S\u1ed1 ti\u1ec1n",
+              "fg": "rgb(111, 120, 144)",
+              "ratio": 3.7987
+            },
+            {
+              "role": "ROW_TEXT_CONTRAST",
+              "text": "2026-03-04",
+              "fg": "rgb(244, 247, 251)",
+              "ratio": 15.5801
+            },
+            {
+              "role": "ROW_TEXT_CONTRAST",
+              "text": "Readable independent",
+              "fg": "rgb(244, 247, 251)",
+              "ratio": 15.5801
+            },
+            {
+              "role": "ROW_TEXT_CONTRAST",
+              "text": "120000",
+              "fg": "rgb(244, 247, 251)",
+              "ratio": 15.5801
+            },
+            {
+              "role": "ROW_TEXT_CONTRAST",
+              "text": "2026-03-18",
+              "fg": "rgb(244, 247, 251)",
+              "ratio": 15.5801
+            },
+            {
+              "role": "ROW_TEXT_CONTRAST",
+              "text": "ABCDEFGHIJKLMNOPQRST",
+              "fg": "rgb(244, 247, 251)",
+              "ratio": 15.5801
+            },
+            {
+              "role": "ROW_TEXT_CONTRAST",
+              "text": "345678",
+              "fg": "rgb(244, 247, 251)",
+              "ratio": 15.5801
+            },
+            {
+              "role": "TITLE_TEXT_CONTRAST",
+              "text": "Chi ti\u00eau",
+              "fg": "rgb(244, 247, 251)",
+              "ratio": 15.5801
+            },
+            {
+              "role": "LABEL_TEXT_CONTRAST",
+              "text": "L\u1ecdc theo th\u00e1ng",
+              "fg": "rgb(163, 173, 194)",
+              "ratio": 7.4248
+            },
+            {
+              "role": "NOTICE_TEXT_CONTRAST",
+              "text": "V\u00cd D\u1ee4 MINH H\u1eccA - CH\u01af",
+              "fg": "rgb(245, 158, 11)",
+              "ratio": 7.7949
+            },
+            {
+              "role": "MONTH_TEXT_CONTRAST",
+              "text": "",
+              "fg": "rgb(244, 247, 251)",
+              "ratio": 17.3949
+            }
+          ],
+          "sourceSha256": "447463e1c1330d3152eba91401a68fc8a13320c29d24fb233ccd8830a62b26e3"
+        }
+      ],
+      "sentinel": {
+        "copySha256": "a79a10d898f018de771733f1ded3bfd5f381e9b53fe87fd04f9144fd48c765dc",
+        "exit": 3,
+        "stderr": "REFUSED: SOURCE_PIN_DRIFT: a79a10d898f018de771733f1ded3bfd5f381e9b53fe87fd04f9144fd48c765dc != pinned a53662b79cf56a1c85b219da5487271f3e9f9ef13077df3578a626b86f3a2afc",
+        "stdoutBytes": 0,
+        "refused": true,
+        "noWrites": true,
+        "artifactsBefore": 17,
+        "artifactsAfter": 17
+      },
+      "screenshots": [
+        {
+          "profile": "dark-320x844-default",
+          "path": ".cvf/runtime/cvf-expense-legibility-worker-20261010/march-dark-320x844-default.png",
+          "bytes": 21173,
+          "sha256": "2319506b86556a6b56e5b5ed3d5bdf7fae62859b69c675f7dce74b9c22c51484"
+        },
+        {
+          "profile": "light-320x844-default",
+          "path": ".cvf/runtime/cvf-expense-legibility-worker-20261010/march-light-320x844-default.png",
+          "bytes": 20997,
+          "sha256": "8a549fab48acc9a8c0e64693a617e05c7ace673cd4b2d4fdd813c26005db5adb"
+        },
+        {
+          "profile": "light-390x844-teal",
+          "path": ".cvf/runtime/cvf-expense-legibility-worker-20261010/march-light-390x844-teal.png",
+          "bytes": 21024,
+          "sha256": "1299cbb459efb2ac9e19ce36de045dd6057ef34a8802148c66c078b7855ceb98"
+        }
+      ],
+      "browserVersion": "145.0.7632.6",
+      "sourceSha256": {
+        "start": "a53662b79cf56a1c85b219da5487271f3e9f9ef13077df3578a626b86f3a2afc",
+        "afterBuild": "a53662b79cf56a1c85b219da5487271f3e9f9ef13077df3578a626b86f3a2afc",
+        "end": "a53662b79cf56a1c85b219da5487271f3e9f9ef13077df3578a626b86f3a2afc"
+      },
+      "restoredPass": true
+    },
+    "lowestLoggedTextRatio": 7.09,
+    "timerEnd": {
+      "schemaVersion": "cvf.expenseLegibilityFinalConfirmation.v1",
+      "batchId": "CVF-NCR-EXPENSE-LEGIBILITY-20261010",
+      "utcStart": "2026-10-10T08:22:36.067Z",
+      "monotonicStartTicks": 5875185679056,
+      "monotonicFrequencyHz": 10000000,
+      "utcEnd": "2026-10-10T08:35:34.035Z",
+      "monotonicEndTicks": 5882965410186,
+      "elapsedSeconds": 778.0,
+      "elapsedMinutes": 12.97,
+      "budgetMinutes": 90,
+      "withinBudget": true,
+      "persistenceCompliance": "COMPLIANT_PERSISTED_BEFORE_FIRST_CVF_READ",
+      "elapsedIncludesFirstReadAndPostrecordConfirmation": true,
+      "frozenBeforeRunB": true,
+      "frozenFileSha256": {
+        "docs/guides/CVF_EXPENSE_TEXT_LEGIBILITY_README_2026-10-10.md": "a19b8cde4155fbeff973f14723263c413994fa24f5a216f518fcc74fb6e42bcb",
+        "scripts/test_cvf_expense_text_legibility_browser.cjs": "ef7995879c956c9dec309e4242b1b2d5c9b42468ff4f7ba5ca99b6293f3514f6",
+        "docs/reviews/CVF_NCR_EXPENSE_TEXT_LEGIBILITY_WORKER_RETURN_2026-10-10.md": "3864a1d9c76554d1f12173d3a11c941271a59b526982c0ac37644ff9b8b7ddb0",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/expenses/ExpenseList.tsx": "a53662b79cf56a1c85b219da5487271f3e9f9ef13077df3578a626b86f3a2afc",
+        "docs/reviews/evidence/cvf-expense-legibility-worker-2026-10-10.json": "b0e606d47e47ce7a30e66d27315cb43c5a2ba9dba7fb1ff9dcb4d1304196d13d"
+      },
+      "runBExitCode": 0,
+      "runBLog": ".cvf/runtime/cvf-expense-legibility-worker-20261010/gates/full-bound-confirmation-b.log",
+      "hashVerification": "MATCH_BEFORE_AND_AFTER_RUN_B",
+      "trackedFilesChangedAfterFreeze": false,
+      "usage": {
+        "tokens": null,
+        "tokensReason": "NOT_AVAILABLE_WITH_REASON: no token meter exposed to this worker",
+        "billAmount": null,
+        "billCurrency": null,
+        "billReason": "NOT_AVAILABLE_WITH_REASON: no bill exposed; no effort-based price inferred"
+      }
+    },
+    "repairGroups": {
+      "productRepairGroups": 0,
+      "harnessRepairGroups": 1,
+      "harnessRepairNote": "line-cap compaction of the browser script: the first complete draft was 369 physical lines against the 300 cap, then 356, then 316, then 299 after blank-line and import grouping. Assertions and oracle rows did not change. Some declarations are grouped on one line, a compaction the work order warns about; no statement-level obfuscation was added and no extra tracked helper was needed.",
+      "metadataRepairGroups": 0,
+      "invalidProofAttempts": 0
+    },
+    "scaffold": {
+      "command": "python -B governance/compat/run_worker_return_scaffold.py --emit --profile WORKER_RETURN_FULL_GATE_V1 --title \"NCR Expense Text Legibility Worker Return\"",
+      "generatedBeforeFilling": true,
+      "retainedIgnoredAt": ".cvf/runtime/cvf-expense-legibility-worker-20261010/scaffold/worker-return-skeleton.md",
+      "skeletonSha256": "6ef9c0b094ec3e8ea14cc7b64051d9830ba512e12e18df26006259658aa852db",
+      "skeletonPhysicalLines": 309,
+      "usage": "every scaffold section heading is present in the filled return; placeholder lines were replaced with real content"
+    }
+  },
+  "readCoverage": [
+    {
+      "item": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_TEXT_LEGIBILITY_2026-10-10.md",
+      "coverage": "READ_FULL",
+      "note": "first CVF read, after the timer persisted"
+    },
+    {
+      "item": "docs/baselines/CVF_GC018_NCR_EXPENSE_TEXT_LEGIBILITY_2026-10-10.md",
+      "coverage": "READ_FULL",
+      "note": ""
+    },
+    {
+      "item": "docs/reviews/evidence/cvf-expense-legibility-dispatch-inputs-2026-10-10.json",
+      "coverage": "READ_FULL",
+      "note": "all source and tool pins checked"
+    },
+    {
+      "item": "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json",
+      "coverage": "READ_FULL",
+      "note": "current authority names this order"
+    },
+    {
+      "item": "CVF_SESSION_MEMORY.md (front door)",
+      "coverage": "READ_PARTIAL",
+      "note": "lines 1-60 (startup order, active pointers, acknowledgment, next move); later lines are history and were not read"
+    },
+    {
+      "item": "AGENT_HANDOFF_V63_2026-09-18.md",
+      "coverage": "READ_PARTIAL",
+      "note": "lines 1-30 (current authority and mode); later sections not read"
+    },
+    {
+      "item": "ExpenseList.tsx (whole component)",
+      "coverage": "READ_FULL",
+      "note": "lines 1-56 and 56-142 read in this lane before the edit"
+    },
+    {
+      "item": "ExpenseList.test.tsx (whole)",
+      "coverage": "READ_FULL_EARLIER_IN_SESSION_DIGEST_BOUND",
+      "note": "read in full earlier in this session; SHA-256 051eda76 re-verified unchanged in this lane"
+    },
+    {
+      "item": "DESIGN.md sections 2, 7 and 8",
+      "coverage": "READ_EARLIER_IN_SESSION_DIGEST_BOUND",
+      "note": "read earlier in this session; SHA-256 15c1b506 re-verified unchanged"
+    },
+    {
+      "item": "DESIGN.md section 14 (14.6 pre-ship verification)",
+      "coverage": "READ_FULL",
+      "note": "lines 441-523 read in this lane"
+    },
+    {
+      "item": "docs/reference/CVF_NCR_GENERAL_VIDEO_DESIGN_2026-10-02.md S05 and S06",
+      "coverage": "READ_EARLIER_IN_SESSION_DIGEST_BOUND",
+      "note": "S05 and S06 sections read earlier in this session; SHA-256 3ce5e236 re-verified unchanged"
+    },
+    {
+      "item": "docs/reviews/CVF_NCR_EXPENSE_NARROW_LAYOUT_COMPLETION_2026-10-10.md",
+      "coverage": "READ_FULL",
+      "note": "including the Reviewer Guide Erratum"
+    },
+    {
+      "item": "docs/reviews/evidence/cvf-expense-layout-local-review-2026-10-10.json",
+      "coverage": "PIN_CHECK_ONLY",
+      "note": "SHA-256 ddeef22f matched; content not read in this lane"
+    },
+    {
+      "item": "scripts/test_cvf_expense_narrow_layout_browser.cjs and scripts/test_cvf_expense_touch_target_browser.cjs",
+      "coverage": "READ_EARLIER_IN_SESSION_DIGEST_BOUND",
+      "note": "both were authored or read in full earlier in this session; SHA-256 8c3b28ac and 39e5b62f re-verified unchanged; used as transport and token-profile method only"
+    },
+    {
+      "item": "governance/compat/learning_application_binding.py",
+      "coverage": "READ_FULL",
+      "note": "SHA-256 84068b6f matches the pin in the learning plan"
+    },
+    {
+      "item": "governance/compat/run_worker_return_scaffold.py",
+      "coverage": "READ_FULL",
+      "note": "scaffold actually generated, see scaffold"
+    },
+    {
+      "item": "governance/compat/check_worker_return_quality_gate.py literals",
+      "coverage": "READ_PARTIAL",
+      "note": "lines 56-180 in this lane (headings, field lists, tokens) and lines 286-485 in the touch lane of this session"
+    },
+    {
+      "item": "governance/compat/check_work_order_acceptance_ledger.py",
+      "coverage": "READ_PARTIAL",
+      "note": "lines 1-100 in this lane and 100-208 in the layout lane; lines 209-250 not read"
+    },
+    {
+      "item": "governance/compat/check_gate_to_role_closeability.py",
+      "coverage": "READ_PARTIAL",
+      "note": "lines 200-430 in this lane; lines 1-199 and 431-495 not read"
+    },
+    {
+      "item": "governance/compat/check_independent_review_probe_admission.py",
+      "coverage": "READ_PARTIAL",
+      "note": "lines 1-120 plus a grep of the disposition constants (PENDING_REVIEWER_EXECUTION, PASS_INDEPENDENT_PROBE); the rest not read"
+    }
+  ],
+  "independentProbe": {
+    "status": "PASS",
+    "viewport": {
+      "width": 340,
+      "height": 844
+    },
+    "profile": "synthetic-light-default",
+    "sourceSha256": "a53662b79cf56a1c85b219da5487271f3e9f9ef13077df3578a626b86f3a2afc",
+    "oracleSha256": "78e41f47e5c4cd6bf3977cb52aa58bd41950e0e4296e943f6f9ad0a000e3cd7c",
+    "headerRatios": [
+      10.35474573184942,
+      10.35474573184942,
+      10.35474573184942
+    ],
+    "focusMarch": {
+      "active": true,
+      "visible": true,
+      "color": [
+        91,
+        92,
+        246
+      ],
+      "width": "2px",
+      "style": "solid",
+      "offset": "2px"
+    },
+    "focusEmpty": {
+      "active": true,
+      "visible": true,
+      "color": [
+        91,
+        92,
+        246
+      ],
+      "width": "2px",
+      "style": "solid",
+      "offset": "2px"
+    },
+    "negative": {
+      "kind": "DOM_ONLY_HEADER_SAME_AS_SURFACE",
+      "ratios": [
+        1,
+        1,
+        1
+      ],
+      "rejectedByAssertion": true,
+      "rejection": "HEADER_TEXT_CONTRAST Ng\u00e0y"
+    },
+    "restored": "PASS",
+    "clearIds": [
+      "RV-F",
+      "RV-M2",
+      "RV-M1"
+    ],
+    "screenshot": {
+      "path": ".cvf/runtime/cvf-expense-legibility-local-review-20261010/own-340-light.png",
+      "sha256": "428979a27612144a0e95e8a1e0ee93b88e62a12582403b66a3b3b21503a51c7c"
+    },
+    "externalRequests": 0,
+    "pageErrors": 0,
+    "browserVersion": "145.0.7632.6",
+    "independence": "Own literals, IDs, fixture and contrast formula; imports actual component only. Source exposure disclosed; worker oracle not imported.",
+    "positiveSummary": {
+      "ids": [
+        "RV-M2",
+        "RV-M1"
+      ],
+      "input": {
+        "left": 33,
+        "right": 194.328125,
+        "top": 137,
+        "bottom": 181,
+        "width": 161.328125,
+        "height": 44
+      },
+      "headerColors": [
+        {
+          "text": "Ng\u00e0y",
+          "color": [
+            51,
+            65,
+            85
+          ],
+          "bg": [
+            255,
+            255,
+            255
+          ]
+        },
+        {
+          "text": "N\u1ed9i dung",
+          "color": [
+            51,
+            65,
+            85
+          ],
+          "bg": [
+            255,
+            255,
+            255
+          ]
+        },
+        {
+          "text": "S\u1ed1 ti\u1ec1n",
+          "color": [
+            51,
+            65,
+            85
+          ],
+          "bg": [
+            255,
+            255,
+            255
+          ]
+        }
+      ],
+      "fullCellTextAndInnerContainment": "PASS",
+      "docOverflow": 0,
+      "sectionOverflow": 0,
+      "semantics": "PASS"
+    }
+  },
+  "probeSourceText": "'use strict';\nconst fs = require('fs');\nconst path = require('path');\nconst crypto = require('crypto');\nconst assert = require('assert');\nconst { pathToFileURL } = require('url');\nconst root = process.cwd();\nconst out = path.join(root, '.cvf/runtime/cvf-expense-legibility-local-review-20261010');\nconst web = path.join(root, 'EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web');\nconst source = path.join(web, 'src/expenses/ExpenseList.tsx');\nconst hash = p => crypto.createHash('sha256').update(fs.readFileSync(p)).digest('hex');\nconst sourceHash = hash(source);\nconst longText = 'Reviewer340Light0123456789'.repeat(4);\nconst rows = [\n  { id: 'RV-F', date: '2026-02-27', label: 'Other month', amount: 76543 },\n  { id: 'RV-M2', date: '2026-03-29', label: longText, amount: 987654 },\n  { id: 'RV-M1', date: '2026-03-02', label: 'Local light contrast probe', amount: 123456 },\n  { id: 'RV-BAD', date: '05/03/2026', label: 'Bad date row', amount: 99999 },\n];\nconst luminance = rgb => rgb.map(v => {\n  const s = v / 255;\n  return s <= 0.04045 ? s / 12.92 : ((s + 0.055) / 1.055) ** 2.4;\n}).reduce((v, c, i) => v + c * [0.2126, 0.7152, 0.0722][i], 0);\nconst contrast = (a, b) => {\n  const l = [luminance(a), luminance(b)].sort((x, y) => y - x);\n  return (l[0] + 0.05) / (l[1] + 0.05);\n};\nfunction requireHeaderContrast(headers) {\n  assert.equal(headers.length, 3, 'three measured headers');\n  for (const h of headers) assert(contrast(h.color, h.bg) >= 4.5, 'HEADER_TEXT_CONTRAST ' + h.text);\n}\nasync function measure(page) {\n  return page.evaluate(() => {\n    const cs = el => getComputedStyle(el);\n    const rgb = c => c.match(/[\\d.]+/g).slice(0, 3).map(Number);\n    const rect = el => {\n      const r = el.getBoundingClientRect();\n      return { left: r.left, right: r.right, top: r.top, bottom: r.bottom, width: r.width, height: r.height };\n    };\n    const inner = el => {\n      const r = rect(el), s = cs(el);\n      return { left: r.left + parseFloat(s.paddingLeft) + parseFloat(s.borderLeftWidth), right: r.right - parseFloat(s.paddingRight) - parseFloat(s.borderRightWidth), top: r.top + parseFloat(s.paddingTop) + parseFloat(s.borderTopWidth), bottom: r.bottom - parseFloat(s.paddingBottom) - parseFloat(s.borderBottomWidth) };\n    };\n    const section = document.querySelector('section'), title = document.querySelector('h2');\n    const input = document.querySelector('input'), label = document.querySelector('label');\n    const table = document.querySelector('table'), focus = cs(input);\n    return {\n      ids: [...document.querySelectorAll('[data-expense-id]')].map(el => el.dataset.expenseId),\n      headers: [...document.querySelectorAll('th')].map(el => ({ text: el.textContent, color: rgb(cs(el).color), bg: rgb(cs(section).backgroundColor) })),\n      cells: [...document.querySelectorAll('th,td')].map(el => {\n        const range = document.createRange(); range.selectNodeContents(el);\n        return { text: el.textContent, box: rect(el), inner: inner(el), lines: [...range.getClientRects()].map(r => ({ left: r.left, right: r.right, top: r.top, bottom: r.bottom })) };\n      }),\n      input: rect(input), inputColor: rgb(cs(input).color), inputBackground: rgb(cs(input).backgroundColor),\n      labelLinked: label.control === input, labelText: label.textContent, inputType: input.type,\n      titleLinked: section.getAttribute('aria-labelledby') === title.id,\n      tableLinked: table ? table.getAttribute('aria-labelledby') === title.id : null,\n      scopes: [...document.querySelectorAll('th')].map(el => el.getAttribute('scope')),\n      section: inner(section), docOverflow: document.documentElement.scrollWidth - innerWidth,\n      sectionOverflow: section.scrollWidth - section.clientWidth,\n      surface: rgb(cs(section).backgroundColor), page: rgb(cs(document.body).backgroundColor),\n      focus: { active: document.activeElement === input, visible: input.matches(':focus-visible'), color: rgb(focus.outlineColor), width: focus.outlineWidth, style: focus.outlineStyle, offset: focus.outlineOffset },\n      status: document.querySelector('[role=status]')?.textContent ?? null,\n    };\n  });\n}\nconst contained = (r, b) => r.left >= b.left - 1 && r.right <= b.right + 1 && r.top >= b.top - 1 && r.bottom <= b.bottom + 1;\nfunction requireLayout(s) {\n  assert(s.input.width >= 44 && s.input.height >= 44, 'native touch target');\n  assert(s.docOverflow <= 0 && s.sectionOverflow <= 1, 'no horizontal overflow');\n  for (const cell of s.cells) {\n    assert(contained(cell.box, s.section), 'cell within section');\n    for (const line of cell.lines) assert(contained(line, cell.inner), 'full text inside cell');\n  }\n}\nasync function requireKeyboard(page) {\n  await page.evaluate(() => {\n    document.body.setAttribute('tabindex', '-1');\n    document.body.focus();\n  });\n  await page.keyboard.press('Tab');\n  const s = await measure(page);\n  await page.evaluate(() => document.body.removeAttribute('tabindex'));\n  assert(s.focus.active && s.focus.visible, 'keyboard focus on month input');\n  assert.deepEqual([s.focus.width, s.focus.style, s.focus.offset], ['2px', 'solid', '2px']);\n  assert(contrast(s.focus.color, s.surface) >= 3 && contrast(s.focus.color, s.page) >= 3, 'focus contrast');\n  return s.focus;\n}\n(async () => {\n  const entry = path.join(out, 'own-entry.tsx');\n  const spec = path.relative(out, source).replace(/\\\\/g, '/');\n  fs.writeFileSync(entry, `import React from 'react';import {createRoot} from 'react-dom/client';import {ExpenseList} from ${JSON.stringify(spec)};createRoot(document.getElementById('root')).render(React.createElement(ExpenseList,{expenses:${JSON.stringify(rows)}}));`);\n  const vite = await import(pathToFileURL(path.join(web, 'node_modules/vite/dist/node/index.js')).href);\n  const result = await vite.build({ configFile: false, envFile: false, root: out, mode: 'production', logLevel: 'silent', define: { 'process.env.NODE_ENV': '\"production\"' }, resolve: { alias: ['react-dom', 'react'].map(name => ({ find: name, replacement: path.join(web, 'node_modules', name).replace(/\\\\/g, '/') })) }, oxc: { jsx: { runtime: 'automatic' } }, build: { write: false, minify: true, sourcemap: false, emptyOutDir: false, lib: { entry, formats: ['iife'], name: 'LocalLegibility' } } });\n  const chunks = (Array.isArray(result) ? result : [result]).flatMap(r => r.output);\n  assert.equal(chunks.length, 1);\n  const html = path.join(out, 'own-340-light.html');\n  fs.writeFileSync(html, `<!doctype html><html lang=\"vi\"><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><style>:root{color-scheme:light;--cvf-bg-page:#f8fafc;--cvf-surface:#ffffff;--cvf-text-primary:#0f172a;--cvf-text-secondary:#334155;--cvf-text-muted:#475569;--cvf-border:rgba(15,23,42,.12);--cvf-border-strong:rgba(15,23,42,.24);--cvf-warning:#92400e;--cvf-accent:#5b5cf6}body{margin:0;background:var(--cvf-bg-page);font:16px system-ui}main{padding:16px}:focus-visible{outline:2px solid var(--cvf-accent);outline-offset:2px}</style><main><div id=\"root\"></div></main><script>${chunks[0].code.replace(/<\\/(script)/gi, '<\\\\/$1')}</script></html>`);\n  const { chromium } = require(path.join(web, 'node_modules/@playwright/test'));\n  const browser = await chromium.launch();\n  let report;\n  try {\n    const context = await browser.newContext({ viewport: { width: 340, height: 844 } });\n    try {\n      const page = await context.newPage(), external = [], errors = [];\n      page.setDefaultTimeout(15000);\n      await context.route('**/*', r => r.request().url().startsWith('file:') ? r.continue() : r.abort());\n      page.on('request', r => { if (!r.url().startsWith('file:')) external.push(r.url()); });\n      page.on('pageerror', e => errors.push(e.message));\n      page.on('console', m => { if (m.type() === 'error') errors.push(m.text()); });\n      await page.goto(pathToFileURL(html).href);\n      await page.waitForSelector('[data-expense-id=\"RV-M2\"]');\n      await page.locator('input').fill('2026-03');\n      const positive = await measure(page);\n      requireHeaderContrast(positive.headers); requireLayout(positive);\n      assert.deepEqual(positive.ids, ['RV-M2', 'RV-M1']);\n      assert.deepEqual(positive.cells.map(c => c.text), ['Ng\u00e0y', 'N\u1ed9i dung', 'S\u1ed1 ti\u1ec1n', '2026-03-29', longText, '987654', '2026-03-02', 'Local light contrast probe', '123456']);\n      assert(positive.labelLinked && positive.titleLinked && positive.tableLinked);\n      assert.equal(positive.labelText, 'L\u1ecdc theo th\u00e1ng'); assert.equal(positive.inputType, 'month');\n      assert.deepEqual(positive.scopes, ['col', 'col', 'col']);\n      assert(contrast(positive.inputColor, positive.inputBackground) >= 4.5);\n      const focusMarch = await requireKeyboard(page);\n      const screenshot = path.join(out, 'own-340-light.png');\n      await page.screenshot({ path: screenshot, fullPage: true });\n      await page.evaluate(() => { for (const th of document.querySelectorAll('th')) th.style.color = 'var(--cvf-surface)'; });\n      const negative = await measure(page); let rejection = null;\n      try { requireHeaderContrast(negative.headers); } catch (e) { assert.equal(e.name, 'AssertionError'); rejection = e.message; }\n      assert(rejection?.startsWith('HEADER_TEXT_CONTRAST'), 'negative discriminates header defect');\n      await page.evaluate(() => { for (const th of document.querySelectorAll('th')) th.style.removeProperty('color'); });\n      requireHeaderContrast((await measure(page)).headers);\n      await page.locator('input').fill('2026-04');\n      const empty = await measure(page); assert.deepEqual(empty.ids, []); assert(empty.status?.startsWith('Kh\u00f4ng c\u00f3 kho\u1ea3n chi n\u00e0o.')); requireLayout(empty);\n      const focusEmpty = await requireKeyboard(page);\n      await page.locator('input').fill('');\n      const cleared = await measure(page); assert.deepEqual(cleared.ids, ['RV-F', 'RV-M2', 'RV-M1']); requireHeaderContrast(cleared.headers); requireLayout(cleared);\n      assert.equal(hash(source), sourceHash); assert.equal(external.length, 0); assert.equal(errors.length, 0);\n      report = { status: 'PASS', viewport: { width: 340, height: 844 }, profile: 'synthetic-light-default', sourceSha256: sourceHash, oracleSha256: hash(__filename), positive, headerRatios: positive.headers.map(h => contrast(h.color,h.bg)), focusMarch, focusEmpty, negative: { kind: 'DOM_ONLY_HEADER_SAME_AS_SURFACE', ratios: negative.headers.map(h => contrast(h.color,h.bg)), rejectedByAssertion: true, rejection }, restored: 'PASS', clearIds: cleared.ids, screenshot: { path: path.relative(root,screenshot).replace(/\\\\/g,'/'), sha256: hash(screenshot) }, externalRequests: 0, pageErrors: 0, browserVersion: browser.version(), independence: 'Own literals, IDs, fixture and contrast formula; imports actual component only. Source exposure disclosed; worker oracle not imported.' };\n    } finally { await context.close(); }\n  } finally { await browser.close(); }\n  fs.writeFileSync(path.join(out,'probe-results.json'), JSON.stringify(report,null,2)+'\\n');\n  console.log(JSON.stringify({ status: report.status, headerRatios: report.headerRatios, negative: report.negative, inputHeight: report.positive.input.height, screenshot: report.screenshot }));\n})().catch(e => { console.error(e.stack); process.exitCode = 1; });\n",
+  "probeReproduction": "Extract probeSourceText under ignored Local runtime and run node from repo root. Direct actual-component bundle, own fixture/literals/contrast formula. Temporary body tabindex resets keyboard traversal then removed; DOM negative changes headers only and restores. Source exposure disclosed; worker oracle not imported.",
+  "screenshotsVisuallyInspected": [
+    {
+      "profile": "dark-320x844-default",
+      "path": ".cvf/runtime/cvf-expense-legibility-worker-20261010/march-dark-320x844-default.png",
+      "bytes": 21173,
+      "sha256": "2319506b86556a6b56e5b5ed3d5bdf7fae62859b69c675f7dce74b9c22c51484",
+      "observation": "Header and full row text visible; long content wraps without clipping; native English month widget/selected segment observed; fixture only"
+    },
+    {
+      "profile": "light-320x844-default",
+      "path": ".cvf/runtime/cvf-expense-legibility-worker-20261010/march-light-320x844-default.png",
+      "bytes": 20997,
+      "sha256": "8a549fab48acc9a8c0e64693a617e05c7ace673cd4b2d4fdd813c26005db5adb",
+      "observation": "Header and full row text visible; long content wraps without clipping; native English month widget/selected segment observed; fixture only"
+    },
+    {
+      "profile": "light-390x844-teal",
+      "path": ".cvf/runtime/cvf-expense-legibility-worker-20261010/march-light-390x844-teal.png",
+      "bytes": 21024,
+      "sha256": "1299cbb459efb2ac9e19ce36de045dd6057ef34a8802148c66c078b7855ceb98",
+      "observation": "Header and full row text visible; long content wraps without clipping; native English month widget/selected segment observed; fixture only"
+    },
+    {
+      "path": ".cvf/runtime/cvf-expense-legibility-local-review-20261010/own-340-light.png",
+      "sha256": "428979a27612144a0e95e8a1e0ee93b88e62a12582403b66a3b3b21503a51c7c",
+      "observation": "Own340 light header and long literal text visible; month focus outline visible"
+    }
+  ],
+  "reviewerInitialProbeDiagnostic": {
+    "owner": "LOCAL_REVIEWER",
+    "status": "LOCAL_PROBE_PREPARATION_FAILURE_NOT_WORKER_DEFECT",
+    "command": "node .cvf/runtime/cvf-expense-legibility-local-review-20261010/probe.cjs",
+    "exit": 1,
+    "failure": "AssertionError: keyboard focus on month input at requireKeyboard after month.fill",
+    "correction": "Reset sequential keyboard navigation from the fixture body using temporary tabindex=-1 and body.focus, then press real Tab and remove the fixture-only body tabindex. Component and worker files untouched.",
+    "workerRepairCountEffect": 0
+  },
+  "findings": [
+    {
+      "id": "F1",
+      "owner": "WORKER",
+      "disposition": "TECHNICAL_ACCEPT_BOUNDED",
+      "finding": "Exact header-only muted-to-secondary semantic token correction. Original frozen five files match B. Consumed unit12/12, worker693 assertions, three profiles, preimage3.79874457 HEADER_TEXT_CONTRAST kill, restoration and pin sentinel. Local340 light distinct fixture, header10.35474573, native44, literal full-text containment/focus and header-surface1:1 assertion rejection/restoration PASS."
+    },
+    {
+      "id": "F2",
+      "owner": "WORKER_AND_DISPATCHER_SEPARATELY",
+      "disposition": "READABILITY_ACCEPTED_CAP_DESIGN_REVIEW_REQUIRED",
+      "finding": "Final browser script299 lines, max physical line290 characters, four lines over200. Named functions, role map, constants and comments remain traceable; grouped declarations judged readable for this bounded result, no minified source or opaque helper. Initial369-line draft compressed in one harness repair group. Worker owns the compaction choice; dispatcher cap/scoped proof mismatch caused repair overhead. Do not retroactively raise cap or manufacture worker compliance; reassess maintainability budgets in foundation work."
+    },
+    {
+      "id": "F3",
+      "owner": "WORKER",
+      "disposition": "READ_COVERAGE_LIMITS_RETAINED_TIMER_SCAFFOLD_IMPROVED",
+      "finding": "Timer receipt and end arithmetic consistent, declared persisted before first CVF read; actual scaffold hash matches retained generated skeleton. Progressive60-line front door/30-line handoff are compatible with current-binding startup and not a full-history violation. Digest-bound same-session reuse accepted as declared reuse, not independently attested understanding. Required checker literal reads remain partial. No historical full-read certification."
+    },
+    {
+      "id": "F4",
+      "owner": "WORKER_PROOF_BOUNDARY",
+      "disposition": "LIMITED_NATIVE_WIDGET_AND_SYNTHETIC_THEME_PROOF",
+      "finding": "Month text assertion measures input computed color, not each native date segment or selected-text rendering. Chromium English widget observed. Light/teal are explicit fixture profiles. No full WCAG, screen-reader, actual app-theme, locale or all-browser claim."
+    },
+    {
+      "id": "F5",
+      "owner": "OPERATOR_ASSIGNMENT_AND_LOCAL_REVIEW",
+      "disposition": "ACTUAL_SONNET_HIGH_WORKER_ONLY_COST_UNKNOWN",
+      "finding": "Operator assigned Sonnet5.5/High; frozen dispatch Haiku5.5/Max remains historical preference, not actual execution identity. Model/effort are operator-reported, no provider identity receipt. Bill/tokens null. Worker first bound A passed, A2/B passed; one cap harness group, zero product/return-metadata groups and invalid proof attempts. Local initial keyboard probe preparation failure retained as Local-only, zero worker redispatch or Local product-code repairs."
+    },
+    {
+      "id": "F6",
+      "owner": "LOCAL_ORCHESTRATOR",
+      "disposition": "EXPENSE_PARKED_MODEL_SELECTION_FOUNDATION_DESIGN_NEXT",
+      "finding": "Operator explicitly parks further expense work after this closure and selects capability/evidence/total-cost model-selection foundation. Optional capability for orchestrator, no mandatory Non coder model choice. Version-specific official technical reports/model cards and original benchmark methods inform proposals; historical data retained without fixed model/task rules or automatic role promotion. Doctrine/contract design and proof chain remain prospective, no router activation."
+    }
+  ],
+  "technicalDisposition": "ACCEPT_BOUNDED",
+  "proceduralDisposition": "LIMITS_DISCLOSED_NOT_FULL_HISTORICAL_PROCEDURE_CERTIFICATION",
+  "modelAssessment": {
+    "model": "Sonnet 5.5",
+    "effort": "High",
+    "identityBasis": "OPERATOR_REPORTED_NOT_INDEPENDENTLY_VERIFIED",
+    "role": "INTERNAL_AGENT_WORKER_ONLY",
+    "technicalOutput": "ACCEPTED_BOUNDED_HEADER_COLOR_AND_THREE_SYNTHETIC_TEXT_FOCUS_PROFILES",
+    "firstReturnGateClean": true,
+    "workerProductRepairGroups": 0,
+    "workerHarnessRepairGroups": 1,
+    "workerReturnMetadataRepairGroups": 0,
+    "invalidProofAttempts": 0,
+    "reviewerRequestedWorkerRepairTurns": 0,
+    "reviewerProductCodeRepairs": 0,
+    "reviewerDiagnosticFailures": 1,
+    "elapsedMinutes": 12.97,
+    "elapsedBasis": "WORKER_RECEIPT_CAPTURE_TO_FROZEN_B_END_MONOTONIC_ARITHMETIC_VERIFIED;READ_ORDER_DECLARED_NOT_INDEPENDENTLY_OBSERVED",
+    "bill": {
+      "amount": null,
+      "currency": null,
+      "tokens": null,
+      "reason": "NO_EXPOSED_WORKER_REVIEWER_OR_REWORK_METER"
+    },
+    "process": "TIMER_AND_SCAFFOLD_RECEIPTS_CONSISTENT_PARTIAL_CHECKER_READS_RETAINED",
+    "comparison": "Not matched to previous Haiku tasks; better first gate and declared timer/scaffold adherence in this sample do not establish model superiority."
+  },
+  "prospectiveAssessment": {
+    "schemaVersion": "cvf.localWorkerSelectionAssessment.runtime.v1",
+    "recordedAtUtc": "2026-10-10T08:26:27.897740+00:00",
+    "status": "PROSPECTIVE_ASSESSMENT_PENDING_WORKER_RETURN",
+    "timingBoundary": "AFTER_OPERATOR_REASSIGNMENT_AND_OBSERVED_IMPLEMENTATION_START_NOT_PRE_EXECUTION",
+    "role": "LOCAL_INTERNAL_AGENT_ORCHESTRATOR_REVIEWER",
+    "decisionOwner": "LOCAL",
+    "startupAcknowledgment": {
+      "mode": "cvf_ncr_p10_closed_p11_parked",
+      "handoff": "AGENT_HANDOFF_V63_2026-09-18.md",
+      "nextAllowedMove": "Worker executing text-legibility; Local records task/model assessment and later reviews return",
+      "parked": "sourceR2/provider/media/public/deploy/P11"
+    },
+    "batchId": "CVF-NCR-EXPENSE-LEGIBILITY-20261010",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_TEXT_LEGIBILITY_2026-10-10.md",
+    "headAtAssessment": "b83556dbfc6236556b15a252f09d5688361d1a03",
+    "observedWorkingTreeStatus": [
+      " M EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/expenses/ExpenseList.tsx",
+      "?? scripts/test_cvf_expense_text_legibility_browser.cjs"
+    ],
+    "actualAssignedWorker": {
+      "model": "Sonnet 5.5",
+      "effort": "High",
+      "role": "WORKER_ONLY",
+      "identityBasis": "OPERATOR_REPORTED",
+      "operatorDecision": "Operator switched current worker from previous Haiku5.5/Max preference to Sonnet5.5/High."
+    },
+    "priorPreferenceDisposition": "Historical frozen dispatch Haiku preference retained; current assignment supersedes preference only, not scope/authority or past worker identities.",
+    "taskAssessment": {
+      "family": "FOCUSED_UI_TEXT_LEGIBILITY_AND_MULTIPROFILE_BROWSER_PROOF",
+      "productChangeComplexity": "LOW_ONE_HEADER_COLOR_TOKEN_ONLY",
+      "proofEngineeringComplexity": "MEDIUM",
+      "integrationBreadth": "BOUNDED_COMPONENT_VITE_REACT_CHROMIUM_AND_RETURN_EVIDENCE",
+      "reuse": "HIGH_ACCEPTED_COMPONENT_LAYOUT_UNIT_SUITE_COMPILER_BROWSER_TRANSPORT",
+      "novelty": "Computed header/all-text contrast and semantic token joins across3 profiles, meaningful preimage contrast kill and no-write source-pin sentinel.",
+      "authorityRisk": "LOW_PRIVATE_SYNTHETIC_ONLY; strict five-path/header-only boundary",
+      "executionRisk": "MEDIUM_ORACLE_SUFFICIENCY_EFFECTIVE_BACKGROUND_KEYBOARD_FOCUS_PIN_ADMISSION_AND300_LINE_CAP",
+      "processRisk": "ELEVATED_PRIOR_RELATED_WORKER_TIMER_READ_SCAFFOLD_AND_GUIDE_GAPS; no inference that Sonnet necessarily avoids them.",
+      "expectedReviewBurden": "TARGETED_SOURCE_DIFF_AND_EVIDENCE_JOIN_THREE_SCREENSHOTS_ONE_OWN340_LIGHT_PROBE_WITH_CONTRAST_NEGATIVE; actual duration unknown."
+    },
+    "recommendation": {
+      "worker": "Sonnet 5.5 / High",
+      "rationale": "Reasonable current assignment for a small product edit with moderately demanding independent browser/oracle/evidence engineering. Align with operator switch and obtain a second real Sonnet worker observation within related UI work.",
+      "alternative": "Haiku 5.5 / Max remains eligible for this bounded family based on4 accepted related samples; no technical evidence disqualifies it.",
+      "confidence": "PROVISIONAL_LOW_TO_MODERATE_TASK_FIT_NOT_MODEL_SUPERIORITY",
+      "comparisonLimit": "Related tasks differ in acceptance breadth and reuse; this is not a matched A/B replay. No observed price/speed or process advantage is asserted.",
+      "operatorOverride": "Operator final worker choice; record recommendation and actual choice separately.",
+      "automaticRouterActivated": false
+    },
+    "forecastToCheckAtReview": [
+      {
+        "dimension": "product correctness",
+        "expectation": "Header-only existing-token change; semantic/filter/layout44 preservation; required unit/profile proof and independent Local acceptance."
+      },
+      {
+        "dimension": "proof correctness",
+        "expectation": "All required text/background/token/focus ratios; meaningful preimage HEADER_TEXT_CONTRAST failure, restored PASS and no-write pin sentinel; no invalid harness kill."
+      },
+      {
+        "dimension": "process quality",
+        "expectation": "Check actual first timer persistence, named/read-reuse coverage, generated return scaffold and frozen A/B custody; do not assume improvement from model label."
+      },
+      {
+        "dimension": "rework/review burden",
+        "expectation": "Record actual first gate, grouped product/harness/metadata repairs, worker redispatch, Local product/documentation corrections and Local packet errors separately; no forecasted numeric count."
+      },
+      {
+        "dimension": "total accepted-delivery cost",
+        "expectation": "Capture exposed worker+rework+review time/token/bill with basis; unavailable values remain null, no effort/price inference."
+      }
+    ],
+    "futureDispatchAssessmentContract": {
+      "timing": "Create assessment BEFORE manual transfer/implementation on each future real admitted task; freeze timestamp/head/source/acceptance basis, never fabricate earlier timing.",
+      "fields": [
+        "task family and finite outcome",
+        "product and proof-engineering complexity separately",
+        "integration breadth and novelty",
+        "existing input/tool/evidence reuse",
+        "correctness, authority and process risk",
+        "expected Local review burden",
+        "recommended worker/effort, rationale, alternatives and confidence",
+        "operator actual choice and override reason if provided",
+        "success criteria and forecast-to-observed comparison plan",
+        "cost availability and unknowns"
+      ],
+      "routingHeuristic": [
+        {
+          "task": "Clear isolated changes with reusable tested harness and narrow integration",
+          "candidate": "Haiku5.5/Max provisional eligible worker; verify task-specific proof/authority."
+        },
+        {
+          "task": "Moderate new proof/harness integration, multiple interacting acceptance dimensions or ambiguity needing worker judgment",
+          "candidate": "Sonnet5.5/High provisional candidate; Haiku may still qualify when scaffold/oracles/reuse sufficiently constrain task."
+        },
+        {
+          "task": "Broad architecture, security/transaction correctness or authority-bearing decisions",
+          "candidate": "No comparative winner established; Local resolves design/authority and scopes work before recommending any implementation worker."
+        }
+      ],
+      "heuristicBoundary": "Working task-fit hypothesis from limited local observations, not measured model capability or validated thresholds. Both models remain workers only.",
+      "reviewLoop": "Join frozen assessment with accepted/rejected/blocked return and Local review; retain forecast errors and actual operator choice; update family confidence instead of rewriting predictions.",
+      "scope": "Existing ledger/report at admitted review/closure; no new benchmark-only task, normative provider-specific work order, automated router or worker interruption."
+    },
+    "cost": {
+      "workerBill": null,
+      "workerTokens": null,
+      "reviewBill": null,
+      "reworkBill": null,
+      "reason": "No exposed meters or comparable complete delivery duration."
+    },
+    "reviewMergePlan": {
+      "targetLedger": "docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json",
+      "targetReport": "docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md",
+      "phase": "LOCAL_RETURN_REVIEW_OR_CLOSURE",
+      "actualModelAttribution": "Use current operator-reported Sonnet5.5/High for this tranche; reviewed counts unchanged until result reviewed.",
+      "pins": "Retain frozen dispatch/source report pins during in-flight work; join this runtime assessment by raw hash at review and record current timing boundary."
+    },
+    "claimBoundary": "Local runtime selection observation/forecast only, not governed worker result, measured savings or pre-execution forecast for this already-started tranche; no role promotion or product/source/work-order edit."
+  },
+  "prospectiveTimingBoundary": "Recorded after operator switch and worker start; not a valid pre-execution forecast",
+  "selectionFoundationAudit": {
+    "schemaVersion": "cvf.localWorkerSelectionFoundationAudit.runtime.v1",
+    "recordedAtUtc": "2026-10-10T08:43:23.660280+00:00",
+    "status": "BOUNDED_LOCAL_AUDIT_COMPLETE_ADVISORY_NOT_ROUTER_ACTIVATION",
+    "role": "LOCAL_INTERNAL_AGENT_ORCHESTRATOR_REVIEWER",
+    "phase": "EXTERNAL_PUBLIC_EVIDENCE_INTAKE_TO_LOCAL_FOUNDATION_DISPOSITION",
+    "decisionOwner": "LOCAL_REVIEWER_WITH_OPERATOR_ASSIGNMENT_AUTHORITY",
+    "head": "b83556dbfc6236556b15a252f09d5688361d1a03",
+    "startup": {
+      "mode": "cvf_ncr_p10_closed_p11_parked",
+      "handoff": "AGENT_HANDOFF_V63_2026-09-18.md",
+      "nextAllowedMove": "Read-only foundation audit while worker executes legibility; review returned evidence afterward",
+      "parked": "sourceR2/provider runtime/media/public/deploy/P11"
+    },
+    "scope": {
+      "method": "Named-owner and selected implementation audit plus public primary-source lookup",
+      "repositoryCompletenessClaim": false,
+      "fullHistoryRead": false,
+      "workerOutputReviewPerformed": false,
+      "runtimeRoutingImplementationAuthorized": false,
+      "subagentInvocationAuthorizedByThisAudit": false
+    },
+    "existingFoundation": [
+      {
+        "path": "docs/reference/CVF_GOVERNED_WORK_LIFECYCLE_AND_DESIGN_CONTROL_STANDARD_2026-06-11.md",
+        "sha256": "b48f11363ee62a2ec4c85c6f9fba4540b90eb74475c31aeab18cfe4492a536de",
+        "classification": "ACTIVE_STANDARD",
+        "readScope": "Execution-Surface And Total-Cost Feasibility",
+        "reuse": "Compare orchestration, preparation/execution, review and probable rework; unmeasured model costs remain assumptions."
+      },
+      {
+        "path": "docs/reference/CVF_PINT_T2_PROVIDER_INTELLIGENCE_CLAIM_BOUNDARY_AND_RECEIPT_ADVISORY_2026-06-28.md",
+        "sha256": "c3b5931fb507eed971b049fd5029a5d23032160e993742296bea9d073c5d7e21",
+        "classification": "ACTIVE_REFERENCE_ADVISORY_BOUNDARY",
+        "readScope": "Central Rule; Cost / Latency / Quality",
+        "reuse": "Intelligence informs selection; policy and registry admit routes; quality requires separate evaluation evidence."
+      },
+      {
+        "path": "docs/reference/CVF_LHW23_T1_MODEL_REGISTRY_SERVICE_ADVISORY_CONNECTOR_SPEC_2026-05-31.md",
+        "sha256": "195873eded66bf6b14e28f274036d1db1d560d089f974dded836e2275d5b3b9a",
+        "classification": "BOUNDED_DOCUMENTATION_ONLY",
+        "readScope": "S2-S4",
+        "reuse": "Task to capability to registry to candidate; avoid hardcoded model selection. No runtime execution grant."
+      },
+      {
+        "path": "docs/reference/CVF_LHW23_T2_MULTIFACTOR_ROUTING_POLICY_ADVISORY_CONNECTOR_SPEC_2026-05-31.md",
+        "sha256": "1323c64f88fc35b11a330bcb249c9db7ca316814d1d7623efdd09c26e3ee5918",
+        "classification": "BOUNDED_DOCUMENTATION_ONLY",
+        "readScope": "Factors and claim boundary",
+        "reuse": "Reuse multifactor complexity/risk/stage/cost/reliability concepts; not an activated adaptive router."
+      },
+      {
+        "path": "docs/reference/CVF_MODEL_GATEWAY_C02_P2_DYNAMIC_MODEL_REGISTRY_BOUNDARY_DEFINITION_2026-06-15.md",
+        "sha256": "2e6f7e64b3c85f318f7055d7681a32cd4bf2a87285bcd4fe16adda6876c6bc83",
+        "classification": "CONTRACT_BOUNDARY",
+        "readScope": "P2 contract and future implementation boundary",
+        "reuse": "Dynamic cost/latency metadata cannot replace capability and allowed-route authority."
+      },
+      {
+        "path": "docs/reference/review_cost_control/CVF_REVIEW_COST_AND_DIMINISHING_RETURN_CONTROL_STANDARD.md",
+        "sha256": "17d27144c7db34b717633c14428a778b2b00949f62d71e6a1d8f4f9a2bbe8700",
+        "classification": "ACTIVE_REVIEW_COST_OWNER",
+        "readScope": "Review cost and repair burden",
+        "reuse": "Consume valid proof and record review/repair overhead rather than duplicating implementation."
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.5.2_SKILL_LIBRARY_FOR_END_USERS/ai_ml_evaluation/01_model_selection.skill.md",
+        "sha256": "e73e24318913555b9ddb9b79fafb41298901fa96ce8d549ca5d1be51e24a26d1",
+        "classification": "EXISTING_ADVISORY_SKILL_REFERENCE",
+        "readScope": "Inputs and evaluation guidance",
+        "reuse": "Use-case, quality, latency, volume and realistic comparative costs."
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.5.2_SKILL_LIBRARY_FOR_END_USERS/ai_ml_evaluation/05_cost_optimization.skill.md",
+        "sha256": "a939f2a49bdc019c0b0841123076642923448438f6c1b7bfeb34134d2d469fd2",
+        "classification": "EXISTING_ADVISORY_SKILL_REFERENCE",
+        "readScope": "Inputs and quality tradeoffs",
+        "reuse": "Cost optimization requires usage evidence and preserving quality."
+      },
+      {
+        "path": "docs/reference/CVF_MSEA_R72D_GOVERNANCE_COST_METRIC_AND_MONTHLY_READOUT_SPECIFICATION_2026-07-08.md",
+        "sha256": "ea3f201fcc917754c255ca4d2640b4ad7e2ba08a31e10eb2664f9ac6e89aaee8",
+        "classification": "PROXY_METRIC_SPECIFICATION",
+        "readScope": "Metric definitions",
+        "reuse": "Governance artifact/checker proxies are not measured provider bills."
+      },
+      {
+        "path": "docs/reviews/CVF_ASCP_T5_PROVIDER_MODEL_SELECTION_USE_CASE_COMPLETION_2026-06-30.md",
+        "sha256": "e02636c931d0fff0fd0b9a34bacbbc4ec3e7585160cc841ebc50d52304c2686c",
+        "classification": "HISTORICAL_BOUNDED_USE_CASE",
+        "readScope": "Scope and selection proof",
+        "reuse": "Quota/expiration-aware model selection evidence does not establish comparative worker quality or a general router."
+      }
+    ],
+    "implementationEvidence": [
+      {
+        "path": "EXTENSIONS/CVF_MODEL_GATEWAY/src/routing-policy.ts",
+        "sha256": "7fe2b98f16b2d166cded15d8faa04c92696a8c64bf9c25db3b6bef73f1315c07"
+      },
+      {
+        "path": "EXTENSIONS/CVF_MODEL_GATEWAY/src/routing-policy-pipeline.ts",
+        "sha256": "a91d4bfc5397245dac5144e0077df4d1a7628de0e3f5b3a13b51d71eff0a7eb1"
+      },
+      {
+        "path": "EXTENSIONS/CVF_MODEL_GATEWAY/src/dynamic-model-registry-contract.ts",
+        "sha256": "e836afd2717650bbc5cade7aa28cb4d7b3a643f8df47d2dcb9282931edd276ee"
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/model-pricing.ts",
+        "sha256": "a9d997bbc85231c6a342b42418958c704f702242541ff5438ca5290559c54289"
+      }
+    ],
+    "gaps": [
+      {
+        "id": "COST_DIMENSION",
+        "path": "EXTENSIONS/CVF_MODEL_GATEWAY/src/routing-policy-pipeline.ts",
+        "anchor": "filterByCostBudget, line 244",
+        "finding": "estimatedTokens is compared directly with costBudget for every candidate; this is not candidate-specific monetary pricing.",
+        "impact": "Cannot claim this code optimizes accepted-delivery cost across Haiku/Sonnet/Luna."
+      },
+      {
+        "id": "QUALITY_PROXY",
+        "path": "EXTENSIONS/CVF_MODEL_GATEWAY/src/routing-policy-pipeline.ts",
+        "anchor": "complexity/risk filtering, lines 213 and 224",
+        "finding": "Complexity ordering uses provider riskClass, not measured model capability or benchmark quality.",
+        "impact": "Provider safety/availability and task-solving quality need separate evidence."
+      },
+      {
+        "id": "LATENCY_DECLARATION",
+        "path": "EXTENSIONS/CVF_MODEL_GATEWAY/src/routing-policy-pipeline.ts",
+        "anchor": "latencyBudgetMs policy collection",
+        "finding": "Selected pipeline records a latency policy but contains no latency-budget filtering stage.",
+        "impact": "Declared metadata is not proof of enforced latency selection."
+      },
+      {
+        "id": "DYNAMIC_METADATA",
+        "path": "EXTENSIONS/CVF_MODEL_GATEWAY/src/dynamic-model-registry-contract.ts",
+        "finding": "Inspected file supplies interfaces and candidate cost/latency fields; no registry implementation in that file.",
+        "impact": "Useful integration contract, not evidence of an operating worker selector."
+      },
+      {
+        "id": "STALE_PRICE_FALLBACK",
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/model-pricing.ts",
+        "finding": "Inspected table has older model identifiers; unknown models use USD 1 input / 4 output per million tokens.",
+        "impact": "Fallback values cannot price these new models or establish their actual bills. Cache, reasoning accounting and delivery repair are not represented."
+      }
+    ],
+    "publicEvidenceAsOf": "2026-10-10",
+    "publicEvidence": [
+      {
+        "url": "https://platform.claude.com/docs/en/about-claude/pricing",
+        "class": "OFFICIAL_CURRENT_API_TARIFF_NOT_WORKER_BILL",
+        "facts": "USD per million tokens, standard global API: Sonnet 5.5 input 2/output 10/cache-read 0.10. Haiku 5.5 input 0.10/output 0.50 for prompt <=100k; input 0.50/output 2.50 above 100k. Prompt length includes cached input. Cache writes, batch and residency modifiers require separate accounting.",
+        "conflict": "Sonnet launch article lists cache-read 0.20; current pricing page and model overview list 0.10. Retain both provenance records; use current tariff only for a dated estimate, actual invoice for measured cost."
+      },
+      {
+        "url": "https://developers.openai.com/api/docs/models/gpt-6-luna",
+        "class": "OFFICIAL_MODEL_CATALOG_AND_API_TARIFF",
+        "facts": "Catalog supports Max effort; USD per million tokens: input 0.10, cached input 0.01, cache write 0.125, output 0.50.",
+        "identityBoundary": "GPT-6 Luna is a catalog candidate, not a verified identity for the operator shorthand Luna; actual model/version/channel remains required."
+      },
+      {
+        "url": "https://www.anthropic.com/claude-sonnet-5-5",
+        "class": "PROVIDER_REPORTED_BENCHMARK_NOT_INDEPENDENT_LOCAL_PROOF",
+        "facts": "FrontierCode 1.1 reports Max below Xhigh; provider attributes some loss to code-review subagents causing timeout or scope expansion.",
+        "selectionImplication": "Effort and scaffold change quality/cost; higher effort is not automatically preferable. Published best-effort scores cannot be assigned to our High worker."
+      },
+      {
+        "url": "https://www.anthropic.com/claude-haiku-5-5",
+        "class": "PROVIDER_REPORTED_BENCHMARK_PRIOR",
+        "facts": "New-generation capability evidence is relevant to candidacy, but headline benchmark comparisons are not matched CVF Haiku-Max versus Sonnet-High trials.",
+        "selectionImplication": "Do not inherit an older Haiku capability ceiling or promote headline results into a local winner."
+      },
+      {
+        "url": "https://artificialanalysis.ai/methodology/coding-agents-benchmarking",
+        "class": "INDEPENDENT_BENCHMARK_PUBLISHER_METHOD_NOT_VERIFIED_CURRENT_RANKING",
+        "facts": "Coding Agent Index v1.5 separates agent variants/settings. Cost is API-priced per attempt, with cache/reasoning usage and wall time; missing telemetry is excluded rather than zero.",
+        "selectionImplication": "Compare matching agent/model/effort/harness settings and distinguish benchmark attempt cost from CVF accepted-delivery cost or subscription billing."
+      }
+    ],
+    "externalCoverageLimits": [
+      "Haiku model overview could not be opened; tariff verified using the official pricing page instead.",
+      "Artificial Analysis coding-agent leaderboard could not be opened; no current ranking or exact High-versus-Max score claimed.",
+      "Public sources are advisory evidence, not CVF route authorization or live governance proof."
+    ],
+    "localEvidence": {
+      "ledger": "docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json",
+      "sha256": "074df0db983e95c44dd4c7c27fd812e5f715f76549178e21f6b85ac05f497364",
+      "rowCount": 5,
+      "configurationCounts": {
+        "Haiku 5.5/Max": 4,
+        "Sonnet 5.5/High": 1
+      },
+      "identityBasis": "OPERATOR_REPORTED",
+      "measuredComparativeBillAvailable": false,
+      "limits": [
+        "Related tasks with differing scope/scaffold; not matched randomized A/B.",
+        "Accepted observations do not estimate future failure probability.",
+        "Missing cost/time values remain null; no performance-per-dollar winner.",
+        "Task preparation and dispatcher contradictions must be separated from worker failures."
+      ]
+    },
+    "selectionFoundation": {
+      "basis": "REUSE_EXISTING_CVF_OWNERS_AND_EXISTING_LEDGER_NOT_NEW_RUNTIME_CONTRACT",
+      "objective": "Meet task-specific quality and authority requirements with defensible total delivery cost and latency.",
+      "decisionSequence": [
+        "Describe task capability, proof novelty, integration breadth, context needs, risk, required tools, quality floor and delivery deadline before dispatch.",
+        "Filter candidates by admitted role/route, available tools, context and required capabilities. Worker observations do not qualify an orchestrator/reviewer.",
+        "Attach dated official identity/pricing and relevant independent benchmark configurations; label provider-reported scores separately. Unknown matches remain unknown.",
+        "Use comparable local tranche evidence to estimate acceptance quality, self-repair, redispatch, review burden and elapsed time; account for task/scaffold confounders.",
+        "Choose among candidates meeting the quality floor using cost/latency/reliability tradeoffs and uncertainty. No permanent model-to-task-family mapping or invented universal weights.",
+        "Freeze rationale, alternatives, unknowns and actual operator choice before the next transfer; compare forecast with reviewed return and update the existing ledger."
+      ],
+      "assessmentFields": [
+        "taskFamilyAndScope",
+        "qualityFloor",
+        "requiredCapabilitiesAndTools",
+        "modelIdVersionProviderChannel",
+        "effortAndScaffoldVersion",
+        "contextAndCacheAssumptions",
+        "benchmarkSourceVersionDateConditions",
+        "localComparableEvidence",
+        "priceBasisAndUsageCoverage",
+        "predictedReviewAndRepairBurden",
+        "costLatencyQualityTradeoff",
+        "confidenceAndUnknowns",
+        "recommendedCandidateAndAlternatives",
+        "actualAssignmentAndOverrideReason"
+      ],
+      "costAccounting": {
+        "measure": "All orchestration/preparation/worker/retry/escalation/review/tool costs through terminal disposition; retain unsuccessful outcomes and collection-window definitions.",
+        "costPerAcceptedDelivery": "Total attributable monetary cost for all attempts in a defined comparable cohort divided by accepted deliveries, only when coverage and denominator are known.",
+        "unitDiscipline": "Track monetary cost and human/agent elapsed time separately. Monetize time only with an explicit rate; do not add dollars to minutes.",
+        "apiEstimate": "Use per-request tariff and mutually exclusive token billing categories, context thresholds, cache and tool charges; avoid double-counting reasoning included in output.",
+        "channelBoundary": "API tariff estimates do not establish Claude subscription or IDE meter charges.",
+        "missingness": "Unknown bill/token coverage stays null, not zero or fallback-priced actual spend."
+      },
+      "refreshTriggers": [
+        "Model/version or deployment update",
+        "Effort/scaffold/tool change",
+        "Tariff/channel/context/cache change",
+        "Relevant benchmark-method revision",
+        "New local failure/repair/acceptance evidence"
+      ],
+      "comparisonPlan": "Use representative bounded tasks with comparable tools, scope, acceptance oracle and preparation; alternate configurations where feasible, preserve failed attempts and avoid tuning prompts only for one candidate. No duplicate production implementation is required by this audit."
+    },
+    "priorAssessmentDisposition": {
+      "path": ".cvf/runtime/cvf-expense-legibility-local-review-20261010/worker-selection-assessment.json",
+      "sha256": "4ff40d562caa7a06959dba315cd7b1e394caeb89b93759f7d336e02ac81983b4",
+      "preserved": true,
+      "correction": "Earlier simple/complex model preferences are provisional hypotheses, not evidence-backed fixed routing rules. This foundation supersedes that interpretation, without rewriting the historical forecast.",
+      "currentAssignment": "Sonnet 5.5 / High, operator-reported, WORKER_ONLY",
+      "currentRecommendation": "Preserve ongoing assignment; do not infer comparative superiority before reviewed result. Haiku Max and exact-version Luna Max remain candidates subject to capability, quality and evidence checks."
+    },
+    "continuation": {
+      "nextReview": "Attach this audit to the current tranche review, then reconcile foundation and prospective selection fields into the existing report/ledger after worker source pins are released.",
+      "futureRouting": "Any implementation of dynamic selection or subagent execution requires its own admitted work order and existing policy/registry boundaries."
+    },
+    "protectedSourcePins": {
+      "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_TEXT_LEGIBILITY_2026-10-10.md": "253bc768d4f94e411f9b81fff3c4017b11164e89345cc661f417285a202fefc6",
+      "docs/baselines/CVF_GC018_NCR_EXPENSE_TEXT_LEGIBILITY_2026-10-10.md": "6e19991d0b780c5748cf71b7624b79fd102146b830d115fb4cb3954eb0ae14c4",
+      "docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json": "074df0db983e95c44dd4c7c27fd812e5f715f76549178e21f6b85ac05f497364",
+      "docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md": "aeec1bf5f3d720896612f5cee3460e99e99622b7092dc71afd9aa59534edc8d5"
+    },
+    "verification": {
+      "protectedPinsMatchBeforeWrite": true,
+      "workerPathsEditedByAudit": [],
+      "governedFilesEditedByAudit": [],
+      "gatesRerun": [],
+      "reason": "Read-only audit plus ignored runtime receipt; no live governance or release claim."
+    }
+  },
+  "selectionDesignClarification": {
+    "schemaVersion": "cvf.localWorkerSelectionDesignClarification.runtime.v1",
+    "recordedAtUtc": "2026-10-10T08:56:22.519764+00:00",
+    "status": "OPERATOR_DESIGN_DIRECTION_RECORDED_NOT_IMPLEMENTATION_OR_DOCTRINE_ACTIVATION",
+    "role": "LOCAL_INTERNAL_AGENT_ORCHESTRATOR_REVIEWER",
+    "phase": "INTERNAL_DESIGN_CLARIFICATION",
+    "decisionOwner": "LOCAL_FOR_TECHNICAL_DESIGN_WITHIN_OPERATOR_AUTHORITY",
+    "startupAcknowledgment": {
+      "mode": "cvf_ncr_p10_closed_p11_parked",
+      "handoff": "AGENT_HANDOFF_V63_2026-09-18.md",
+      "nextAllowedMove": "Read-only foundation audit while worker executes legibility; review returned evidence afterward",
+      "parked": "sourceR2/provider runtime/media/public/deploy/P11"
+    },
+    "foundationAudit": {
+      "path": ".cvf/runtime/cvf-expense-legibility-local-review-20261010/worker-selection-foundation-audit.json",
+      "sha256": "2611c8537cd735c77fd76226fd781b84fa77eb590361056d50a2d1df2ee9d889",
+      "preserved": true
+    },
+    "operatorClarification": {
+      "primaryConsumer": "AGENT_ORCHESTRATOR",
+      "optionalCapability": true,
+      "nonCoderExperience": "State desired work and relevant outcome constraints; no mandatory model selection or technical comparison.",
+      "readmeOption": "Short optional explanation that CVF can recommend/select an admitted model configuration from evidence; technical evidence remains available to agents and expert operators.",
+      "decisionBoundary": "Orchestrator selects within admitted tools, roles and budget; preserve an explicit operator assignment or override. Selection does not authorize provider calls or subagents.",
+      "versionFreshness": "A new version can change quality, cost and behavior substantially. Refresh primary-source evidence and assess applicability before treating the new version as equivalent."
+    },
+    "correctionToPreviousProposal": "Remove required candidate choice, alternatives and technical confidence details from the Non coder flow; retain those fields in the orchestrator decision receipt.",
+    "versionEvidenceProtocolProposal": {
+      "identity": [
+        "provider",
+        "exactModelId",
+        "versionOrSnapshot",
+        "deploymentChannel",
+        "effort",
+        "harnessAndToolConfiguration"
+      ],
+      "preferredSources": [
+        "Original provider technical paper, technical report or system/model card",
+        "Original independent benchmark report and methodology",
+        "Official version/release and pricing documentation for current identity and tariff"
+      ],
+      "sourceMetadata": [
+        "sourceUrl",
+        "publisher",
+        "publicationDate",
+        "retrievedAt",
+        "sourceRevisionOrHashWhenAvailable",
+        "modelVersionCovered",
+        "benchmarkVersion",
+        "effortAndHarness",
+        "sampleAndBudgetConditions",
+        "evidenceClass",
+        "claimLimits"
+      ],
+      "evidenceSeparation": "Provider-reported evaluation, independent benchmark and Local reviewed output remain separate. Marketing summaries alone do not establish task fitness.",
+      "missingPaper": "If no technical paper is published, record that limit and available official evidence; do not invent a paper, assume peer review or mark the model universally unusable.",
+      "noScoreInheritance": "Preserve old-version history. New versions start with their own evidence coverage; old scores and accepted outcomes are not relabeled as results for the new version.",
+      "newVersionUse": "Relevant published evidence can support a provisional candidate within authority; increase confidence with reviewed Local tasks, without requiring a universal repeated benchmark campaign.",
+      "refreshAt": "At the next admitted selection when a version/effort/harness/tariff change is detected or evidence is stale/conflicting; use bounded retrieval and retain the source window.",
+      "conflicts": "Retain contradictory results and configuration differences; lower confidence or choose an adequately supported alternative rather than silently averaging incompatible scores.",
+      "cost": "Use dated official tariff and actual usage/bills where available; technical paper performance is not a worker invoice."
+    },
+    "systemChainProposal": [
+      "Task requirements and acceptance floor",
+      "Admitted candidate configurations",
+      "Version-specific evidence intake and freshness disposition",
+      "Orchestrator selection receipt frozen before dispatch",
+      "Actual execution and independently reviewed return",
+      "Quality/procedure/cost learning disposition",
+      "Verified consumption in a later selection"
+    ],
+    "proofBoundary": "Schema or receipt joins prove declarations only. Demonstrate an actual bounded selection-to-review-to-next-selection loop before claiming the system chain operates. Provider behavior claims require admitted real provider proof.",
+    "continuation": "Carry this clarification into doctrine/contract design and the existing model-selection report after current worker pins are released. Keep the ongoing Sonnet 5.5/High worker assignment.",
+    "verification": {
+      "governedFilesChanged": [],
+      "workerFilesChanged": [],
+      "protectedSourcePinsVerified": true,
+      "gatesRerun": [],
+      "newWebResearchPerformedForThisClarification": false
+    }
+  },
+  "closureManifest": [
+    "docs/guides/CVF_EXPENSE_TEXT_LEGIBILITY_README_2026-10-10.md",
+    "scripts/test_cvf_expense_text_legibility_browser.cjs",
+    "docs/reviews/CVF_NCR_EXPENSE_TEXT_LEGIBILITY_WORKER_RETURN_2026-10-10.md",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/expenses/ExpenseList.tsx",
+    "docs/reviews/evidence/cvf-expense-legibility-worker-2026-10-10.json",
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_TEXT_LEGIBILITY_2026-10-10.md",
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_TEXT_LEGIBILITY_2026-10-10.json",
+    "docs/reviews/CVF_NCR_EXPENSE_TEXT_LEGIBILITY_COMPLETION_2026-10-10.md",
+    "docs/reviews/evidence/cvf-expense-legibility-local-review-2026-10-10.json",
+    "docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json",
+    "docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md",
+    "AGENT_HANDOFF_V63_2026-09-18.md",
+    "CVF_SESSION_MEMORY.md",
+    "CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json",
+    "CVF_SESSION/state/entries/nextAllowedMove.json",
+    "CVF_SESSION/state/entries/cvfNcrConsolidatedLocalFoundation20261006.json",
+    "CVF_SESSION/ACTIVE_SESSION_STATE.json",
+    "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json"
+  ],
+  "adif": {
+    "query": "taskClass=expense-text-legibility, role=reviewer, lifecyclePhase=review",
+    "returned": "NONE_RETURNED",
+    "totalCandidates": 0,
+    "truncated": false
+  },
+  "claimBoundary": "Selected synthetic Chromium text/header/focus acceptance only. No full native widget/locale/WCAG/theme certification, provider runtime/public/deploy/P11, benchmark winner or measured savings. Further expense work PARKED_BY_OPERATOR; foundation design next."
+}

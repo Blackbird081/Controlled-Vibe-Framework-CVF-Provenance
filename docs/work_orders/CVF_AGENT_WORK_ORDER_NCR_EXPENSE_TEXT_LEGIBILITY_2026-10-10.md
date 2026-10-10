@@ -1,7 +1,7 @@
 # CVF Agent Work Order - NCR Expense Text Legibility
 Memory class: governed-worker-dispatch
 docType: work_order
-Status: READY
+Status: CLOSED_PASS_BOUNDED
 Date: 2026-10-10
 Batch ID: CVF-NCR-EXPENSE-LEGIBILITY-20261010
 Dispatch base head: d68715e97c080c8d9974f99f8294adb9c2bd9b2f
@@ -585,3 +585,30 @@ Owner: canonical UI contract DESIGN.md sections7/8/14.6 readability/focus/theme.
 ```
 
 Dispatch plan is not proof worker applies learning.
+
+## Local Closure Receipt
+
+CLOSED_PASS_BOUNDED: original five worker files accepted; own340 light header/focus/native44 and header-surface negative/restoration PASS. Cap pressure, partial checker reads and native-widget limits retained.
+Completion: docs/reviews/CVF_NCR_EXPENSE_TEXT_LEGIBILITY_COMPLETION_2026-10-10.md; docs/reviews/evidence/cvf-expense-legibility-local-review-2026-10-10.json. Sonnet5.5/High operator-reported actual worker; bill unknown. Further expense PARKED_BY_OPERATOR; model-selection foundation design next, no redispatch.
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| COMPONENT | header-only existing semantic token, unit regression | exact one-line diff; unit12/12 consumed | PASS |
+| BROWSER | three profile all-role text/focus, mutant and pin sentinel | worker693 assertions, preimage3.7987 kill/restoration/refusal; own340 header10.3547 and1:1 negative/focus/44 PASS | PASS |
+| GUIDE | source/profile/usage limits | original guide inspected; synthetic/Chromium/native widget limits retained in review | PASS |
+| RETURN | frozen B, truthful read/timer/model record | A/A2/B COMPLIANT; five pins MATCH; partial checker reads and null bills retained | PASS |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_TEXT_LEGIBILITY_2026-10-10.md | CLOSED_PASS_BOUNDED; no redispatch | PASS |
+| Completion or reviewer artifact | docs/reviews/CVF_NCR_EXPENSE_TEXT_LEGIBILITY_COMPLETION_2026-10-10.md | five frozen bytes, own340 positive/negative, limits | PASS |
+| Roadmap state | existing NCR/video owners | further expense parked, no automatic successor | N/A with reason: standalone work order |
+| Registry JSON | docs/reviews/evidence/cvf-expense-legibility-local-review-2026-10-10.json; docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json | six reviewed observations with source hashes | PASS |
+| Registry Markdown | docs/reviews/CVF_NCR_EXPENSE_TEXT_LEGIBILITY_COMPLETION_2026-10-10.md; docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md | bounded acceptance and foundation direction | PASS |
+| External evidence digest | docs/reviews/evidence/cvf-expense-legibility-local-review-2026-10-10.json | previous source-reviewed advisory audit preserved; no new external absorption | N/A with reason: internal worker review |
+| System loop interlock | sourceR2 and C1 STOP retained | no retry/reset/effect grant | PASS |
+| Session continuity | AGENT_HANDOFF_V63_2026-09-18.md; generated state/bootstrap | closed raw pin, expense parked/foundation design next; actual-SHA sync follows | PASS |

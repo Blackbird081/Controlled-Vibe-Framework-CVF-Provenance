@@ -39,9 +39,9 @@
     "baselinePath": "docs/baselines/CVF_GC018_NCR_EXPENSE_TEXT_LEGIBILITY_2026-10-10.md",
     "baselineSha256": "6e19991d0b780c5748cf71b7624b79fd102146b830d115fb4cb3954eb0ae14c4",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_TEXT_LEGIBILITY_2026-10-10.md",
-    "workOrderSha256": "253bc768d4f94e411f9b81fff3c4017b11164e89345cc661f417285a202fefc6"
+    "workOrderSha256": "198d1b64bdf3fd895e269fc9a350ea549cb647e23fbeed337eff48f33d202c21"
   },
-  "currentAuthoritySyncReason": "Operator worker-only collection/configuration evidence and continue; bounded text-legibility packet material be4c71807d74f81910dbf7cb585f361443520ccf; exact four committed contents verified; no worker execution or router effect.",
+  "currentAuthoritySyncReason": "Sonnet legibility accepted bounded; expense parked by operator; model-selection foundation design next. Worker originals retained, no router or provider effect.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",

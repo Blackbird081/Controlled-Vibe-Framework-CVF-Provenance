@@ -7,11 +7,11 @@ Date: 2026-10-10
 
 ## Purpose
 
-Recommend provisional worker selection from four reviewed Haiku tranches and one Sonnet reference. Operator instruction2026-10-10 fixes Haiku and Sonnet to worker roles only; Local remains orchestrator/reviewer. Operator-reported identities: Haiku 5.5 / Max and Sonnet 5.5 / High. No provider/model identity verification or billing inference. This is evidence for future multi-agent selection, not a deployed router or parallel-agent experiment.
+Recommend provisional worker selection from four reviewed Haiku tranches and two Sonnet observations. Operator instruction2026-10-10 fixes Haiku and Sonnet to worker roles only; Local remains orchestrator/reviewer. Operator-reported identities: Haiku 5.5 / Max and Sonnet 5.5 / High. No provider/model identity verification or billing inference. This is evidence for future multi-agent selection, not a deployed router or parallel-agent experiment.
 
 ## Scope / Methodology
 
-Finite private UI/unit/browser work only. Consume original reviewed evidence, independent probes and longitudinal ledger docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json; raw SHA-256 074df0db983e95c44dd4c7c27fd812e5f715f76549178e21f6b85ac05f497364. Prior rows retained, including limitations; no accepted work rerun for benchmarking. Five technical acceptances, no rejected/blocked worker returns in this observed set; this does not cover unobserved failures or establish statistical sufficiency. Four related Haiku tasks share component/tools/prior evidence, so they are not independent or matched samples.
+Finite private UI/unit/browser work only. Consume original reviewed evidence, independent probes and longitudinal ledger docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json; raw SHA-256 59c7651cdf60e1d923eb67bcba0395202acbe07c589c2cfbbf8bee6c905d12cb. Prior rows retained, including limitations; no accepted work rerun for benchmarking. Six technical acceptances, no rejected/blocked worker returns in this observed set; this does not cover unobserved failures or establish statistical sufficiency. Four related Haiku tasks share component/tools/prior evidence, so they are not independent or matched samples.
 
 ## Target / Source
 
@@ -23,6 +23,8 @@ Finite private UI/unit/browser work only. Consume original reviewed evidence, in
 | Haiku / Max touch correction | 5 artifacts, 2 implementation paths; two-line style diff, reused UI/tooling; new four-profile script | unit12/12 consumed, source36 mutant kill, own320 geometry/contrast/36 rejection PASS | 1 harness/report group and 1 return metadata group; first draft failed, A2/A3/B PASS; capture early reported but persistence late, required reads incomplete; zero Local product repairs | bill/token unknown; reported13.62min, full compliance unproven |
 
 | Haiku / Max responsive table | 5 artifacts, 2 implementation paths; same component/tools; new text-range containment | unit12/12 consumed, preimage layout assertion kill, own330120-char text/nowrap negative PASS | 1 product visual repair, 1 harness/report group, 1 encoding metadata group; A2/A3/B PASS; timer/read/scaffold gaps; zero Local product-code repairs; 1 guide erratum; Local path-copy defect excluded | bill/token unknown; reported10.05min, full compliance unproven |
+
+| Sonnet / High header legibility | 5 artifacts, 2 implementation paths; one token correction, three synthetic text/focus profiles and substantial reuse | unit12/12 and worker693 assertions consumed; own340 light and header-surface negative PASS | first full A PASS, A2/B PASS; 1 cap harness group; timer/scaffold receipts consistent, partial checker reads retained; zero Local product repairs | bill/token unknown; receipt12.97min through frozen B, excludes Local review |
 
 Evidence authority is the Local review JSON, not provider memory or operator model label. Raw pins are reconciled in the ledger:
 
@@ -36,7 +38,7 @@ Evidence authority is the Local review JSON, not provider memory or operator mod
 
 ## Findings / Position
 
-Haiku produced usable bounded technical results across all four observed tranches. Local requested zero worker redispatches and made zero product code repairs. Independent probes provide more useful evidence than raw assertion counts. All five model samples needed return-gate repair; only the Haiku sequence has repeated detailed timer/read observations, so that recurrence is not proof Sonnet has better process discipline.
+Haiku produced usable bounded technical results across all four observed tranches. Local requested zero worker redispatches and made zero product code repairs. Independent probes provide more useful evidence than raw assertion counts. The five earlier model samples needed return-gate repair; current Sonnet first bound gate passes; only the Haiku sequence has repeated detailed timer/read observations, so that recurrence is not proof Sonnet has better process discipline.
 
 The third/fourth Haiku returns provide monotonic/end recording and frozen confirmation, but still fail timer persistence-before-read and have partial required reads/scaffold. Fourth output needs one guide erratum; Local packet path defect is separate. Output acceptance and procedural compliance remain separate. Worker disclosure is positive evidence of honesty, not a substitute for missing proof.
 
@@ -44,21 +46,23 @@ Local review/packaging errors belong to Local: prior browser closure sequencing/
 
 ## Decision / Disposition
 
-| Role / task family | Provisional selection | Evidence confidence and escalation |
-|---|---|---|
-| Worker: finite isolated UI/unit fixture | Haiku 5.5 / Max is an eligible candidate under operator preference | bounded evidence; literal acceptance, negatives, independent Local review; escalate unresolved correctness/authority conflict |
-| Worker: focused component/browser fixture work | Haiku 5.5 / Max is an eligible candidate under operator preference | three related observations, substantial reuse; cannot generalize to broad application integration |
-| Worker: new multifile architecture or broad integration | no comparative winner; Sonnet reference only | larger reference package accepted, no matched Haiku sample; choose by scope/risk and new evidence |
-| Orchestrator / reviewer / closer / session steward | outside this model evaluation; Local retains these roles | operator explicitly limits Haiku and Sonnet to workers; no role promotion |
-| Automatic multi-agent routing / parallel coordination | deferred, not evaluated | no actual router/coordination experiment or authority grant |
+Six observations support bounded worker eligibility, not a ranking or fixed task-to-model assignment. Use task capability and acceptance requirements, exact model/version/effort/harness, relevant published evaluations and comparable Local outcomes before weighing total preparation/execution/review/rework cost. Unknown telemetry stays null. Worker evidence does not qualify an orchestrator or reviewer; Local retains these roles.
 
-These are reviewer recommendations, not model-specific normative work-order requirements. Roles, authority, finite acceptance and independent proof remain the execution contract.
+Operator2026-10-10 parks further expense work after this review and selects the CVF model-selection foundation. Optional capability is primarily consumed by the orchestrator; Non coder states desired work and outcome constraints, without required technical model choice. README may explain the option briefly; decision rationale belongs in the agent receipt. Preserve explicit operator assignments.
+
+## Selection Foundation And Version Evidence Direction
+
+Source-reviewed foundation and operator clarification are preserved in docs/reviews/evidence/cvf-expense-legibility-local-review-2026-10-10.json under selectionFoundationAudit and selectionDesignClarification. Existing lifecycle total-cost, Provider Intelligence, multifactor routing and dynamic registry boundaries own the reuse; inspected contracts do not establish an activated selector.
+
+Doctrine principles should remain model/version independent; registry/evaluation evidence is versioned. A new model version requires fresh applicability assessment using official technical papers/reports/system or model cards, original benchmark reports/methods, current identity/pricing and Local outcomes. Record effort/harness/date/conditions. Preserve older-version history rather than relabeling scores. Provider-reported, independent and Local evidence remain separate. Missing papers/conflicts lower confidence; do not invent proof or inherit quality solely from a family name.
+
+Prospective chain: task and quality floor -> admitted candidates -> version-specific evidence -> frozen orchestrator decision -> execution -> independent review -> learning -> verified consumption in a later decision. This is design direction only; schema joins do not prove behavioral adoption. No automatic selection, provider invocation or subagent execution is introduced by this review.
 
 ## Risk / Corrective Action
 
 No actual bill, token meter or comparable complete delivery duration is available for any sample. Keep monetary/token fields null, including reviewer and rework costs. Operator's belief that Haiku Max is cheaper is a selection hypothesis; observed savings are not established. Do not rank speed from27.6/18.35/12.77/13.62 because task difficulty, reused tools and timing boundaries differ.
 
-Next useful comparison is the next real admitted roadmap task of similar family and integration complexity, using the existing exact read/timer/freeze rules and actual worker/reviewer/rework bill receipts if exposed. Capture all future accepted/rejected/blocked outcomes; do not manufacture benchmark tasks or repeat delivered work merely to compare models. This collection does not seek an orchestrator/reviewer model assignment; Haiku and Sonnet remain worker-only under the operator instruction.
+Expense comparisons are now PARKED_BY_OPERATOR; next priority is foundation doctrine/contract design. Any later useful comparison uses a real admitted task of similar family and integration complexity, using the existing exact read/timer/freeze rules and actual worker/reviewer/rework bill receipts if exposed. Capture all future accepted/rejected/blocked outcomes; do not manufacture benchmark tasks or repeat delivered work merely to compare models. This collection does not seek an orchestrator/reviewer model assignment; Haiku and Sonnet remain worker-only under the operator instruction.
 
 ## Checker Source Read-Ahead Block
 
@@ -67,11 +71,11 @@ Next useful comparison is the next real admitted roadmap task of similar family 
 | applicableCheckersRead | governance/compat/check_agent_operation_trace.py; governance/compat/check_corpus_completeness_report_integrity.py; governance/compat/check_independent_review_probe_admission.py; governance/compat/check_finding_to_governance_learning.py |
 | literalTokensReviewed | ACTIVE_REFERENCE; NOT_APPLICABLE_WITH_REASON; DEFERRED_PRIVATE_ONLY; source pins; role neutrality |
 | gateRunPurpose | confirmation and evidence of scoped empirical report, not runtime routing or price certification |
-| claimBoundary | four related Haiku worker observations and one different Sonnet reference only |
+| claimBoundary | six worker observations with task/configuration confounds and unknown spend |
 
 ## Corpus Completeness And Report Integrity
 
-- Corpus verdict: NOT_APPLICABLE_WITH_REASON - five named reviewed observations, no repository-wide enumeration claim.
+- Corpus verdict: NOT_APPLICABLE_WITH_REASON - six named reviewed observations, no repository-wide enumeration claim.
 
 ## Knowledge System Applicability
 
@@ -83,12 +87,13 @@ NOT_APPLICABLE_WITH_REASON: empirical observation ledger only, no corpus-to-know
 |---|---|---|---|---|---|
 | Repeated timer/read deviations | WORKER_EXECUTION_ERROR | DOCUMENTATION_ONLY_LEARNING | RULE_EXISTS | enforce existing sequential timer persistence and named reads, retain historical deviations | handled |
 | Comparative bills unavailable | RUNTIME_SIGNAL_GAP | COST_ECONOMICS_LEARNING | N/A_WITH_REASON: no exposed billing meter | retain nulls; collect observed worker/reviewer/rework bill if exposed on future admitted task | deferred |
-| Model suitability observations | RUNTIME_SIGNAL_GAP | DOCUMENTATION_ONLY_LEARNING | N/A_WITH_REASON: related finite samples, no general superiority | provisional family-specific worker use only; independent review and role-specific evaluation | handled |
+| Model suitability and version-aware selection | RULE_GAP | GOVERNANCE_CONTROL_PLANE | DESIGN_REVIEW_REQUIRED | design optional orchestrator evidence/total-cost doctrine and end-to-end learning consumption on existing owners; no fixed model-family routing | deferred |
+| Cap creates harness repair overhead | ORCHESTRATOR_PACKET_GAP | GOVERNANCE_CONTROL_PLANE | DESIGN_REVIEW_REQUIRED | review maintainability budgets against proof scope; preserve current final299 readable script | deferred |
 
 ## Epistemic Process Block
 
 Expected Result / Prediction: finite task families may support provisional worker selection while retaining uncertainty.
-Evidence Comparison: four Haiku and one Sonnet reference accepted bounded, independent probes, zero Local product repairs, all first gates failed; bills unavailable.
+Evidence Comparison: four Haiku and two Sonnet observations accepted bounded; five earlier first gates failed, current Sonnet first gate passes with consistent timer/scaffold receipts and partial checker reads; bills unavailable.
 Contradiction Or Gap Disposition: differing complexity/reuse, related samples, historical process gaps and missing complete timing/cost prevent model ranking.
 Claim Update: provisional family-specific worker eligibility, no general capability, price or cross-role conclusion.
 
@@ -107,31 +112,35 @@ Operator-reported identities only; bounded UI worker observations. No universal 
 |---|---|
 | Actor | Local orchestrator/reviewer/closer |
 | Provider or surface | private shared CVF workspace |
-| Session or invocation | cvf-expense-layout-local-review-20261010 |
+| Session or invocation | cvf-expense-legibility-local-review-20261010 |
 | Working directory | repository root |
-| Command or tool surface | frozen raw-pin joins, consumed worker/unit/mutant/screenshots, own330 containment/negative, guide-path adjudication and static erratum |
-| Target paths | `scripts/test_cvf_expense_narrow_layout_browser.cjs`; `docs/reviews/evidence/cvf-expense-layout-worker-2026-10-10.json`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/expenses/ExpenseList.tsx`; `docs/reviews/CVF_NCR_EXPENSE_NARROW_LAYOUT_WORKER_RETURN_2026-10-10.md`; `docs/guides/CVF_EXPENSE_NARROW_LAYOUT_README_2026-10-10.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_NARROW_LAYOUT_2026-10-10.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_NARROW_LAYOUT_2026-10-10.json`; `docs/reviews/CVF_NCR_EXPENSE_NARROW_LAYOUT_COMPLETION_2026-10-10.md`; `docs/reviews/evidence/cvf-expense-layout-local-review-2026-10-10.json`; `docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json`; `docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/cvfNcrConsolidatedLocalFoundation20261006.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Allowed scope source | work-order Reviewer Closure Conversion and operator worker-only longitudinal evaluation |
-| Before status evidence | HEAD 1f16dd48f6bc416da8920072f2ec18200c9fa07a; component modified, four worker files new |
-| After status evidence | eighteen-path closure; original worker five bytes preserved; actual-SHA continuity follows |
-| Diff evidence | exact staged manifest and git diff --check |
-| Approval boundary | private Local closure and worker evidence evaluation |
-| Claim boundary | bounded dark UI with guide erratum/process limits; worker-only, bill unknown |
+| Command or tool surface | frozen-pin intake, direct-source340 light contrast/focus and DOM negative; consumed worker evidence; exact closure/state generation |
+| Target paths | `docs/guides/CVF_EXPENSE_TEXT_LEGIBILITY_README_2026-10-10.md`; `scripts/test_cvf_expense_text_legibility_browser.cjs`; `docs/reviews/CVF_NCR_EXPENSE_TEXT_LEGIBILITY_WORKER_RETURN_2026-10-10.md`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/expenses/ExpenseList.tsx`; `docs/reviews/evidence/cvf-expense-legibility-worker-2026-10-10.json`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_TEXT_LEGIBILITY_2026-10-10.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_TEXT_LEGIBILITY_2026-10-10.json`; `docs/reviews/CVF_NCR_EXPENSE_TEXT_LEGIBILITY_COMPLETION_2026-10-10.md`; `docs/reviews/evidence/cvf-expense-legibility-local-review-2026-10-10.json`; `docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json`; `docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/cvfNcrConsolidatedLocalFoundation20261006.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Allowed scope source | work-order Reviewer Closure Conversion and operator review/park/foundation direction |
+| Before status evidence | HEAD b83556dbfc6236556b15a252f09d5688361d1a03; exact five worker outputs pending |
+| After status evidence | exact eighteen-path closure conversion; five worker bytes preserved; actual-SHA continuity follows |
+| Diff evidence | git diff --check and exact staged manifest |
+| Approval boundary | Local review/closure and operator-directed parking/design only |
+| Claim boundary | bounded synthetic UI, six worker observations; no runtime selection or cost superiority |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | cvf-expense-layout-local-review-20261010 |
-| Expected manifest | `scripts/test_cvf_expense_narrow_layout_browser.cjs`; `docs/reviews/evidence/cvf-expense-layout-worker-2026-10-10.json`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/expenses/ExpenseList.tsx`; `docs/reviews/CVF_NCR_EXPENSE_NARROW_LAYOUT_WORKER_RETURN_2026-10-10.md`; `docs/guides/CVF_EXPENSE_NARROW_LAYOUT_README_2026-10-10.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_NARROW_LAYOUT_2026-10-10.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_NARROW_LAYOUT_2026-10-10.json`; `docs/reviews/CVF_NCR_EXPENSE_NARROW_LAYOUT_COMPLETION_2026-10-10.md`; `docs/reviews/evidence/cvf-expense-layout-local-review-2026-10-10.json`; `docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json`; `docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/cvfNcrConsolidatedLocalFoundation20261006.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Actual changed set | `scripts/test_cvf_expense_narrow_layout_browser.cjs`; `docs/reviews/evidence/cvf-expense-layout-worker-2026-10-10.json`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/expenses/ExpenseList.tsx`; `docs/reviews/CVF_NCR_EXPENSE_NARROW_LAYOUT_WORKER_RETURN_2026-10-10.md`; `docs/guides/CVF_EXPENSE_NARROW_LAYOUT_README_2026-10-10.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_NARROW_LAYOUT_2026-10-10.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_NARROW_LAYOUT_2026-10-10.json`; `docs/reviews/CVF_NCR_EXPENSE_NARROW_LAYOUT_COMPLETION_2026-10-10.md`; `docs/reviews/evidence/cvf-expense-layout-local-review-2026-10-10.json`; `docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json`; `docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/cvfNcrConsolidatedLocalFoundation20261006.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Invocation ID | cvf-expense-legibility-local-review-20261010 |
+| Expected manifest | `docs/guides/CVF_EXPENSE_TEXT_LEGIBILITY_README_2026-10-10.md`; `scripts/test_cvf_expense_text_legibility_browser.cjs`; `docs/reviews/CVF_NCR_EXPENSE_TEXT_LEGIBILITY_WORKER_RETURN_2026-10-10.md`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/expenses/ExpenseList.tsx`; `docs/reviews/evidence/cvf-expense-legibility-worker-2026-10-10.json`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_TEXT_LEGIBILITY_2026-10-10.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_TEXT_LEGIBILITY_2026-10-10.json`; `docs/reviews/CVF_NCR_EXPENSE_TEXT_LEGIBILITY_COMPLETION_2026-10-10.md`; `docs/reviews/evidence/cvf-expense-legibility-local-review-2026-10-10.json`; `docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json`; `docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/cvfNcrConsolidatedLocalFoundation20261006.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Actual changed set | `docs/guides/CVF_EXPENSE_TEXT_LEGIBILITY_README_2026-10-10.md`; `scripts/test_cvf_expense_text_legibility_browser.cjs`; `docs/reviews/CVF_NCR_EXPENSE_TEXT_LEGIBILITY_WORKER_RETURN_2026-10-10.md`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/expenses/ExpenseList.tsx`; `docs/reviews/evidence/cvf-expense-legibility-worker-2026-10-10.json`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_TEXT_LEGIBILITY_2026-10-10.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_TEXT_LEGIBILITY_2026-10-10.json`; `docs/reviews/CVF_NCR_EXPENSE_TEXT_LEGIBILITY_COMPLETION_2026-10-10.md`; `docs/reviews/evidence/cvf-expense-legibility-local-review-2026-10-10.json`; `docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json`; `docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/cvfNcrConsolidatedLocalFoundation20261006.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |
 
 ## Worker-Only Classification For Later Configuration
 
-The governed ledger now separates five observed task families: isolated unit fixture; direct-component browser fixture; focused component style/browser regression; larger multifile offline builder/static/browser delivery; responsive table text containment. Each family records scope difficulty and reuse, bounded technical result, procedural quality and cost availability. Historical observation rows and Local source hashes are unchanged.
+The governed ledger separates six observed task families, adding focused header/text/focus proof to the previous five. Each observation records scope difficulty and reuse, bounded technical result, procedural quality and cost availability. Earlier rows and evidence digests are retained; the sixth outcome is appended.
 
-Configuration should admit a worker by task family and evidence confidence, then retain Local independent acceptance. Compare accepted-delivery cost only when worker, review and rework bills are exposed on comparable basis. Preserve rejected/blocked results and Local-owned errors. No aggregate numeric quality score or model-wide speed ranking is supported by these related samples.
+Configuration should admit a worker by required capability, exact version/effort/harness and relevant evidence, then retain independent acceptance. Task families organize observations; they do not fix model assignments. Compare accepted-delivery cost only with adequate worker, review and rework telemetry on comparable basis. Preserve rejected/blocked results and Local-owned errors. These related samples support no aggregate numeric quality score or model-wide speed ranking.
 
-The useful narrow320 layout correction has now been accepted bounded with own330 proof and one guide erratum. It is not a benchmark repeat; do not create a successor solely to grow sample count. Haiku/Max remains the operator's worker preference observation; Sonnet/High remains a worker reference. No model is assigned or invoked here, and no operational configuration is activated.
+The layout and header-legibility corrections are accepted bounded; further expense work is PARKED_BY_OPERATOR. Four HaikuMax and two SonnetHigh outcomes remain worker observations, with assignments reported by the operator. The current Sonnet choice superseded the historical Haiku preference for this tranche. Optional model-selection foundation design is next; no operational selector is activated here.
 
 ## Fourth Haiku Review And Attribution
 
 docs/reviews/evidence/cvf-expense-layout-worker-2026-10-10.json; Local evidence docs/reviews/evidence/cvf-expense-layout-local-review-2026-10-10.json raw SHA-256 ddeef22f9f18d12ca55cf04a667e6986df946ad75ed681afdad745e39b872f80. Local dispatcher copied wrong guide path in two prose tables; ledger/routing/inputs correct and accepted touch guide unchanged. Reviewer adjudicated new narrow guide; original released order preserved at execution base. Worker guide has one erratum group: historical touch script does not enforce628 postimage refusal, and own reviewer probe is330 not320. Zero Local product-code repairs means neither zero documentation corrections nor zero review cost. Current model labels remain operator-reported worker-only.
+
+## Current Sonnet Observation
+
+docs/reviews/evidence/cvf-expense-legibility-local-review-2026-10-10.json; raw SHA-256 200179bff78b5885d21ff07b125045b68ac0a33f8e969ba9147ba6a58e79aa46. Original five worker bytes frozen, independent340 header/focus/negative PASS. Sonnet5.5/High identity is operator-reported; dispatch Haiku preference is historical. Current receipt12.97min is worker interval only, not total delivery cost; no speed/cost ranking. One Local keyboard-fixture preparation failure is excluded from worker repairs.
