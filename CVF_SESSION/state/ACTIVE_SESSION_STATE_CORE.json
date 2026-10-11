@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_SELECTION_S2_R3_PROJECTION_2026-10-11.md",
     "workOrderSha256": "49e85d6ddbf6e361d5b49c24775f86a76ed9692754841bffb2256d7a294ea22c"
   },
-  "currentAuthoritySyncReason": "S2-R3 projection DISPATCH_READY material d9af730b763d0c5c3993dc4607356a09f631d573; exact paired raw pins retained; matching six-surface SHA/batch continuity and bound release required before manual start. Preparation maintenance accepted; same-session Opus linkage retained, no sample addition/effect/push.",
+  "currentAuthoritySyncReason": "S2-R3 projection DISPATCH_READY material d9af730b763d0c5c3993dc4607356a09f631d573; exact paired raw pins retained; six-surface SHA/batch continuity with canonical EXECUTE action class per DR-06. Bound release required before manual start. Preparation maintenance accepted; same-session Opus linkage retained, no sample addition/effect/push.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
