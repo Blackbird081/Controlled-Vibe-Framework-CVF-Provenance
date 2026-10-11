@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 docType: work_order
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 Date: 2026-10-11
 Batch ID: CVF-MODEL-SELECTION-S2-R1-20261011
 Dispatch base head: 4208370ba642df7934b16401d9d3dcc071ebc390
@@ -477,3 +477,31 @@ NOT_APPLICABLE_WITH_REASON: this bounded task implements a new standalone offlin
 ```
 
 This existing dispatch observability obligation is distinct from the S4 LOCAL_OBSERVATION link; neither is application proof at dispatch.
+
+## Local Closure Receipt
+
+CLOSED_PASS_BOUNDED: `docs/reviews/CVF_MODEL_SELECTION_S2_R1_COMPLETION_2026-10-11.md`; independent evidence `docs/reviews/evidence/model-selection-s2-r1-local-review-20261011.json`. Original dispatch raw SHA `7c4a53d9f5cdc731b38997495fde2dd096237f6b5a38f4fc3cd5a60618dc9b4d`; frozen Manual B rationale UTF-8 LF section SHA `4491794794323481937dbd2d00c545c3babfd1100e7b011f2dcdce11f085ec6b` unchanged. Closure metadata/status only; no worker redispatch.
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| Changed set | six exact worker paths | frozen submitted pins/status retained; Local closure paths separately owned | PASS |
+| Profile/source pins | exact hashes before closure | locked hash unchanged; sourceVerification in Local evidence | PASS |
+| Actual consumer | optional helper, useful example/guide | explicit gap VALID_RECORD_ONLY; wrong learning token rejected by real CLI | PASS_BOUNDED |
+| Independent review | different actual CLI/API oracle | 65/65 plus source-to-code inspection | PASS |
+| Worker proof | focused tests and actual final-byte gate | consumed logs and failure/repair history retained | PASS_WITH_LIMIT |
+| Learning/identity/cost | actual action/result and honest unknowns | ACTION_VERIFIED/PARTIAL; observed model and bill unknown; no ranking | PASS_BOUNDED |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_SELECTION_S2_R1_OFFLINE_MANUAL_RECORD_2026-10-11.md` | CLOSED_PASS_BOUNDED; frozen rationale retained | PASS |
+| Completion or reviewer artifact | this completion and `docs/reviews/evidence/model-selection-s2-r1-local-review-20261011.json` | actual independent probes and submitted/accepted pins | PASS |
+| Roadmap state | `docs/roadmaps/CVF_ORCHESTRATOR_MODEL_SELECTION_SYSTEM_CHAIN_ROADMAP_2026-10-10.md` | S2-R1 bounded optional profile closed; other branches/S5 unopened | PASS |
+| Registry JSON | task worker/Local evidence and example | existing task home; no global ledger/store | PASS |
+| Registry Markdown | guide, return and completion | useful manual invocation and explicit limits | PASS |
+| External evidence digest | internal original S4 source | no new external intake | N/A with reason: internal task |
+| System loop interlock | closed order and locked offline profile | no runtime admission, hooks, API or persistence | PASS |
+| Session continuity | core hash and generated projections | exact closed-order join; actual-SHA continuity follows | PASS |

@@ -1,0 +1,221 @@
+{
+  "profileVersion": "cvf.model-selection-manual-record@0.1.0",
+  "recordId": "s4-manual-task-projection",
+  "task": {
+    "taskId": "model-selection-s4-r1",
+    "artifact": {
+      "locator": "docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_SELECTION_S4_R1_MANUAL_WORKED_EXAMPLE_2026-10-11.md",
+      "sha256": "5159f2b71b7ac4d3cc67e0fcc64b3d814ed92a2c0611c044c33a4bafd1fd1c57"
+    },
+    "surface": "AGENT_SEAT",
+    "role": "WORKER",
+    "outcome": "bounded manual worked-example documentation with no comparative model-quality claim",
+    "acceptanceFloor": {
+      "locator": "docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_SELECTION_S4_R1_MANUAL_WORKED_EXAMPLE_2026-10-11.md",
+      "sha256": "5159f2b71b7ac4d3cc67e0fcc64b3d814ed92a2c0611c044c33a4bafd1fd1c57"
+    },
+    "choiceAuthority": {
+      "locator": "docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_SELECTION_S4_R1_MANUAL_WORKED_EXAMPLE_2026-10-11.md#Manual-B-Selection-Rationale",
+      "sha256": "5159f2b71b7ac4d3cc67e0fcc64b3d814ed92a2c0611c044c33a4bafd1fd1c57"
+    },
+    "choiceKind": "EXPLICIT_ASSIGNMENT",
+    "assignedCandidateId": "assigned-luna-worker",
+    "provisionalAllowed": false
+  },
+  "candidates": [
+    {
+      "candidateId": "assigned-luna-worker",
+      "requested": {
+        "providerProduct": null,
+        "model": "gpt-6-luna",
+        "snapshot": null,
+        "channel": null,
+        "effort": "xhigh",
+        "harnessVersion": null,
+        "toolProfile": null,
+        "role": "WORKER",
+        "unknownReason": "The assignment records gpt-6-luna/xhigh; provider product, snapshot, channel, harness and tool profile were not verified."
+      },
+      "requestedBasis": "OPERATOR_REPORTED",
+      "observed": {
+        "providerProduct": null,
+        "model": null,
+        "snapshot": null,
+        "channel": null,
+        "effort": null,
+        "harnessVersion": null,
+        "toolProfile": null,
+        "role": null,
+        "unknownReason": "Native tool runtime identity and effort were not exposed in the accepted S4 record."
+      },
+      "observedBasis": "UNRESOLVED",
+      "runtimeEvidence": null,
+      "eligible": true,
+      "contextDisposition": "PENDING",
+      "availability": "UNKNOWN"
+    }
+  ],
+  "evidence": [
+    {
+      "evidenceId": "s3-packet-completeness-mechanism",
+      "candidateId": "assigned-luna-worker",
+      "evidenceClass": "LOCAL_REVIEWED_OUTCOME",
+      "claimKind": "METHODOLOGY_ONLY",
+      "source": {
+        "locator": "docs/reviews/CVF_MODEL_SELECTION_S3_R1_COMPLETION_2026-10-10.md",
+        "sha256": "b02b0077a97d7808a433a6ad2d6dedbb1a3ab50cf4362c4627d7888d3aa11a9a"
+      },
+      "retrievedAt": "2026-10-11T03:04:52.080507Z",
+      "configurationMatch": "PARTIAL",
+      "taskApplicability": "RELEVANT",
+      "freshness": "CURRENT_FOR_DECISION",
+      "testedConfiguration": {
+        "providerProduct": null,
+        "model": "claude-haiku-5-5",
+        "snapshot": null,
+        "channel": null,
+        "effort": null,
+        "harnessVersion": null,
+        "toolProfile": null,
+        "role": "WORKER",
+        "unknownReason": "S3 Local evidence records a runtime-context model report and operator Max/Max label only; immutable snapshot, observed effort and harness are unverified."
+      },
+      "limitations": "PARTIAL packet-completeness mechanism from S3, whose reported model was Claude Haiku. No transfer of model quality, effort, runtime identity or cost to requested Luna/xhigh."
+    },
+    {
+      "evidenceId": "s4-local-accepted-result",
+      "candidateId": "assigned-luna-worker",
+      "evidenceClass": "LOCAL_REVIEWED_OUTCOME",
+      "claimKind": "METHODOLOGY_ONLY",
+      "source": {
+        "locator": "docs/reviews/CVF_MODEL_SELECTION_S4_R1_COMPLETION_2026-10-11.md",
+        "sha256": "3e00b130b594de6a6d97e037093f059b65452ed144f8e11fbe9529ad55708c16"
+      },
+      "retrievedAt": "2026-10-11T03:04:52.080507Z",
+      "configurationMatch": "PARTIAL",
+      "taskApplicability": "RELEVANT",
+      "freshness": "CURRENT_FOR_DECISION",
+      "testedConfiguration": {
+        "providerProduct": null,
+        "model": "gpt-6-luna",
+        "snapshot": null,
+        "channel": null,
+        "effort": "xhigh",
+        "harnessVersion": null,
+        "toolProfile": null,
+        "role": "WORKER",
+        "unknownReason": "Model/effort here reproduce the requested S4 assignment only; runtime identity and effort remained unobserved."
+      },
+      "limitations": "Requested assignment is separate from observed identity; two worker repairs and one Local repair remain disclosed; no quality comparison or bill."
+    }
+  ],
+  "selection": {
+    "decisionId": "s4-manual-decision",
+    "owner": "LOCAL",
+    "decidedAt": "2026-10-11T02:43:12Z",
+    "disposition": "SELECT",
+    "selectedCandidateId": "assigned-luna-worker",
+    "operatorAssignmentDisposition": "HONORED_WITH_EVIDENCE_GAP",
+    "qualityDisposition": "INSUFFICIENT",
+    "evidenceIds": [
+      "s3-packet-completeness-mechanism",
+      "s4-local-accepted-result"
+    ],
+    "rationale": "Honor the explicit task assignment with a quality evidence gap; keep the independent acceptance and admission decision separate, and do not infer model quality from repaired documentation.",
+    "executionAuthorized": false,
+    "frozenDigests": {
+      "task": "1ee74ad94ecb1f177bca42507e0782376d7e20c3c138b0449393370dd43e6161",
+      "candidates": "772a61da12f5f7ff5a2d7a85025f4d51f52d3523bfdb184825e3a1a2c0a78fd1",
+      "evidence": "c752b4ecdc779b6966b6ba4b8e59516c12b0d4d6e4ef99a61d02c8584a7a5462"
+    }
+  },
+  "admission": {
+    "disposition": "PENDING",
+    "authorityDisposition": "PENDING",
+    "methodDisposition": "PENDING",
+    "contextDisposition": "PENDING",
+    "budgetDisposition": "PENDING",
+    "availabilityDisposition": "PENDING",
+    "refs": [
+      {
+        "locator": "docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_SELECTION_S4_R1_MANUAL_WORKED_EXAMPLE_2026-10-11.md",
+        "sha256": "5159f2b71b7ac4d3cc67e0fcc64b3d814ed92a2c0611c044c33a4bafd1fd1c57"
+      }
+    ],
+    "reason": "The projection does not convert the S4 manual dispatch record into a separate authority, context, budget or runtime-admission receipt."
+  },
+  "cost": {
+    "stages": [
+      {
+        "stage": "EXECUTION",
+        "unit": "MONEY",
+        "amount": null,
+        "currency": null,
+        "window": "S4 worker task",
+        "unknownReason": "No provider billing receipt was exposed."
+      },
+      {
+        "stage": "EXECUTION",
+        "unit": "TOKENS",
+        "amount": null,
+        "currency": null,
+        "window": "S4 worker task",
+        "unknownReason": "Provider-neutral token usage was unavailable."
+      },
+      {
+        "stage": "EXECUTION",
+        "unit": "QUOTA",
+        "amount": null,
+        "currency": null,
+        "window": "S4 worker task",
+        "unknownReason": "Quota telemetry was unavailable."
+      },
+      {
+        "stage": "EXECUTION",
+        "unit": "WALL_SECONDS",
+        "amount": 1045,
+        "currency": null,
+        "window": "dispatch lower-bound to artifact freeze",
+        "unknownReason": null
+      },
+      {
+        "stage": "EXECUTION",
+        "unit": "WORKER_SECONDS",
+        "amount": null,
+        "currency": null,
+        "window": "S4 worker task",
+        "unknownReason": "Processing time was not measured separately."
+      },
+      {
+        "stage": "EXECUTION",
+        "unit": "HUMAN_SECONDS",
+        "amount": null,
+        "currency": null,
+        "window": "S4 worker task",
+        "unknownReason": "Human review time was not measured as a comparable cost."
+      }
+    ],
+    "hardCaps": []
+  },
+  "learningLinks": [
+    {
+      "linkId": "s4-consumes-s3-mechanism",
+      "laterDecisionId": "s4-manual-decision",
+      "branch": "LOCAL_OBSERVATION",
+      "source": {
+        "locator": "docs/reviews/CVF_MODEL_SELECTION_S3_R1_COMPLETION_2026-10-10.md",
+        "sha256": "b02b0077a97d7808a433a6ad2d6dedbb1a3ab50cf4362c4627d7888d3aa11a9a"
+      },
+      "presentSourceDisposition": "ACTIVE",
+      "currentCheckAt": "2026-10-11T03:04:52.080507Z",
+      "applicability": "PARTIAL",
+      "applicabilityReason": "The S4 Local review retains S3 packet completeness as a mechanism-level observation; it is not transferable as Luna quality evidence.",
+      "evidenceUse": "ACTION_VERIFIED",
+      "actionOrReason": "S4 exposed the complete packet controls and used the S3 packet-completeness observation; Local reviewed the usable guide/return and final gate. Two worker repairs remain; no causal or model-quality claim.",
+      "verification": {
+        "locator": "docs/reviews/CVF_MODEL_SELECTION_S4_R1_COMPLETION_2026-10-11.md",
+        "sha256": "3e00b130b594de6a6d97e037093f059b65452ed144f8e11fbe9529ad55708c16"
+      }
+    }
+  ]
+}

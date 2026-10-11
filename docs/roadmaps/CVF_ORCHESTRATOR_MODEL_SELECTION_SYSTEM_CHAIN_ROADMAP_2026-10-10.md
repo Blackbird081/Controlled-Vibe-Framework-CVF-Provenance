@@ -92,7 +92,7 @@ any separate provider calls a worker might request during its task.
 | S1 Design review and owner disposition | R2_DESIGN_CONCURRENCE_RECORDED | F1-F11 confirmed with R1-B1 corrected in one R2 delta | same reviewer granted conditional CONCUR_WITH_R2; Local hash/paragraph verification satisfies that condition; no second review |
 | S3 One bounded real task loop | CLOSED_PASS_BOUNDED | manual B work-order rationale -> operator-started execution -> independent Local review -> evidence disposition | S3-R1 R3 documentation outcome and Local completion; actual model ID runtime-context reported, Max/Max operator-reported, snapshot/effort/bill unknown; no benchmark-only task |
 | S4 Later decision consumption | CLOSED_PASS_BOUNDED | actual S4-R1 guide task consumes S3 packet-completeness observation | `docs/reviews/CVF_MODEL_SELECTION_S4_R1_COMPLETION_2026-10-11.md`; independent action/result ACTION_VERIFIED, PARTIAL mechanism-only applicability; two worker self-repairs and one Local repair retained |
-| S2 Contract implementation if selected | S2_R1_ADMITTED_OFFLINE_PROFILE | strict declared manual decision/local-observation consistency; full outcome/PLL/A deferred | fresh `docs/baselines/CVF_GC018_MODEL_SELECTION_S2_R1_OFFLINE_MANUAL_RECORD_2026-10-11.md` and `docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_SELECTION_S2_R1_OFFLINE_MANUAL_RECORD_2026-10-11.md`; locked profile; original S4 wrong-enum gap; implementation/independent probe pending |
+| S2 Contract implementation if selected | CLOSED_PASS_BOUNDED_S2_R1 | optional offline typed manual decision/local-observation slice; full outcome/PLL/A deferred | `docs/reviews/CVF_MODEL_SELECTION_S2_R1_COMPLETION_2026-10-11.md`; independent CLI/API 65/65; useful source-pinned example; no runtime integration |
 | S5 Optional runtime automation | PARKED_DEMAND_GATED | integrate only if bounded loop shows value and demand exists | separate authority and current real runtime/provider proof, rollback and holds |
 
 S0 authorship is not independent acceptance. This roadmap remains open at design
@@ -164,7 +164,7 @@ invoices. Do not infer superiority from assertion counts or these six acceptance
 
 ## Receiving-Agent Continuation
 
-Consume `docs/reviews/CVF_MODEL_SELECTION_S4_R1_COMPLETION_2026-10-11.md` and `docs/reviews/evidence/model-selection-s4-r1-local-review-20261011.json` for the bounded S4-R1 result. The accepted guide is a manual continuation aid under the R3 proposals; it is not an executable selector. Local owns final disposition. Requested Luna/xhigh, first FAILs, two worker self-repairs, one Local repair and null identity/usage remain distinct evidence. Do not require a Non coder model picker. No further task is automatically opened: S2 needs a demonstrated strict-schema value gap with fresh packet; S5 needs separate real runtime demand and authority. Expense and provider/public/deploy effects remain parked. Source S3 observation is PARTIAL packet-mechanism evidence with its historical failed-range limitation; no global ledger or frozen review is rewritten.
+Consume `docs/reviews/CVF_MODEL_SELECTION_S4_R1_COMPLETION_2026-10-11.md` and `docs/reviews/evidence/model-selection-s4-r1-local-review-20261011.json` for the bounded S4-R1 result. The accepted guide is a manual continuation aid under the R3 proposals; it is not an executable selector. Local owns final disposition. Requested Luna/xhigh, first FAILs, two worker self-repairs, one Local repair and null identity/usage remain distinct evidence. Do not require a Non coder model picker. No further task is automatically opened: S2-R1 optional offline slice is accepted below; other R3 branches need fresh value/packet, S5 needs separate runtime demand and authority. Expense and provider/public/deploy effects remain parked. Source S3 observation is PARTIAL packet-mechanism evidence with its historical failed-range limitation; no global ledger or frozen review is rewritten.
 
 ## Checker Source Read-Ahead Block
 
@@ -282,8 +282,12 @@ uplift, cost saving, public publication, deployment or production readiness clai
 
 ## S4-R1 Local Disposition
 
-`docs/reviews/CVF_MODEL_SELECTION_S4_R1_COMPLETION_2026-10-11.md` accepts only the manual guide and reviewer-checked packet-completeness action/result. Four static worker-gate runs occur inside one requested Luna/xhigh invocation; hidden runtime identity and billing remain unknown. This roadmap remains DESIGN_DRAFT overall; S2/S5 are unopened. Prior historical operation/claim blocks above retain their original design-batch scope.
+`docs/reviews/CVF_MODEL_SELECTION_S4_R1_COMPLETION_2026-10-11.md` accepts only the manual guide and reviewer-checked packet-completeness action/result. Four static worker-gate runs occur inside one requested Luna/xhigh invocation; hidden runtime identity and billing remain unknown. Historical S4 closure: S2/S5 were unopened at that time; S2-R1 is separately accepted below. Overall DESIGN_DRAFT; S5 unopened. Prior historical operation/claim blocks above retain their original design-batch scope.
 
 ## S2-R1 Bounded Admission
 
 Fresh operator continuation selects an offline optional validator for the actual S4 wrong-enum gap. Locked profile: `docs/reference/CVF_MODEL_SELECTION_MANUAL_RECORD_PROFILE_2026-10-11.md`; order: `docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_SELECTION_S2_R1_OFFLINE_MANUAL_RECORD_2026-10-11.md`. This admits a finite typed decision/local-observation slice under existing R3 owners, with declared-only checks and six worker paths. Other R3 branches and S5 remain unopened; no hook/runtime/store/model-choice authority is added. This roadmap remains DESIGN_DRAFT overall.
+
+## S2-R1 Local Disposition
+
+`docs/reviews/CVF_MODEL_SELECTION_S2_R1_COMPLETION_2026-10-11.md` accepts the optional standalone offline slice only. Actual wrong-token rejection and useful source-pinned example/guide independently verified; declared consistency is not live governance or source authentication. Requested Luna/xhigh and unknown runtime identity/bill remain separate. Root/worker/reviewer corrections retained. Full outcome/PLL/score/Gateway and S5 unopened; overall DESIGN_DRAFT, no automatic successor.

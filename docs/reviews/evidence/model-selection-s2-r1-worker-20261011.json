@@ -1,0 +1,286 @@
+{
+  "schemaVersion": "cvf.workOrderAcceptanceEvidence@1.0.0",
+  "executionBaseHead": "35e290ab333ff1185a5f45fd370ccdd21deee51c",
+  "results": [
+    {
+      "requirementId": "VALIDATOR",
+      "actualArtifacts": [
+        "governance/compat/model_selection_manual_record.py",
+        "governance/compat/test_model_selection_manual_record.py"
+      ],
+      "proofRefs": ["STATIC_TESTS"],
+      "status": "PASS"
+    },
+    {
+      "requirementId": "CONSUMER",
+      "actualArtifacts": [
+        "docs/reviews/evidence/model-selection-s2-r1-example-20261011.json",
+        "docs/guides/CVF_MODEL_SELECTION_MANUAL_RECORD_VALIDATION_2026-10-11.md"
+      ],
+      "proofRefs": ["EXAMPLE_RESULT"],
+      "status": "PASS"
+    },
+    {
+      "requirementId": "RETURN",
+      "actualArtifacts": [
+        "docs/reviews/CVF_MODEL_SELECTION_S2_R1_WORKER_RETURN_2026-10-11.md",
+        "docs/reviews/evidence/model-selection-s2-r1-worker-20261011.json"
+      ],
+      "proofRefs": ["RETURN_GATE", "OBSERVATION_ACTION"],
+      "status": "PASS"
+    }
+  ],
+  "task": {
+    "batchId": "CVF-MODEL-SELECTION-S2-R1-20261011",
+    "role": "INTERNAL_AGENT implementation worker",
+    "phase": "bounded offline implementation and return",
+    "decisionOwner": "Local independent reviewer/closer",
+    "attemptCount": 1,
+    "requestedModel": "gpt-6-luna",
+    "requestedEffort": "xhigh",
+    "observedRuntimeModel": "UNKNOWN",
+    "observedSnapshot": "UNKNOWN",
+    "observedEffort": "UNKNOWN",
+    "observedHarness": "UNKNOWN",
+    "providerOrDirectApiCall": false,
+    "externalInvocationCount": 0,
+    "providerCallCount": 0
+  },
+  "clockAndUsage": {
+    "parentDispatchLowerBoundUtc": "2026-10-11T03:34:30Z",
+    "workerFirstClockUtc": "2026-10-11T03:34:47Z",
+    "workerDeadlineUtc": "2026-10-11T04:19:47Z",
+    "workerEndUtc": "SEE_DETACHED_FINAL_TIME_LOG",
+    "workerElapsedSecondsAtEnd": null,
+    "endTimeEvidence": ".cvf/runtime/model-selection-s2-r1-20261011/final-time.log",
+    "endTimeReason": "Exact final gate completion UTC and elapsed seconds are captured after the frozen-byte run in the detached log; tracked evidence remains frozen.",
+    "money": null,
+    "moneyReason": "UNKNOWN_NOT_EXPOSED_BY_NATIVE_WORKER_SURFACE",
+    "tokens": null,
+    "tokensReason": "UNKNOWN_NOT_EXPOSED_BY_NATIVE_WORKER_SURFACE",
+    "quota": null,
+    "quotaReason": "UNKNOWN_NOT_EXPOSED_BY_NATIVE_WORKER_SURFACE",
+    "processingTimeSeconds": null,
+    "processingTimeReason": "UNKNOWN_NOT_EXPOSED_BY_NATIVE_WORKER_SURFACE",
+    "humanMinutes": null,
+    "humanMinutesReason": "NOT_METERED_FOR_THIS_WORKER_TASK",
+    "rootPreparationAndReviewCost": "RECORDED_SEPARATELY_BY_LOCAL; NOT_ATTRIBUTED_TO_WORKER_OR_REQUESTED_MODEL"
+  },
+  "sourcePins": [
+    {
+      "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_SELECTION_S2_R1_OFFLINE_MANUAL_RECORD_2026-10-11.md",
+      "sha256": "7c4a53d9f5cdc731b38997495fde2dd096237f6b5a38f4fc3cd5a60618dc9b4d",
+      "use": "active task contract, exact paths, profile requirements and acceptance ledger"
+    },
+    {
+      "path": "docs/baselines/CVF_GC018_MODEL_SELECTION_S2_R1_OFFLINE_MANUAL_RECORD_2026-10-11.md",
+      "sha256": "8a2dd23f36e681146f03de905adeacc71de0e80a87569720247c8e575dca72bd",
+      "use": "bounded target, source scope and evidence floor"
+    },
+    {
+      "path": "docs/reference/CVF_MODEL_SELECTION_MANUAL_RECORD_PROFILE_2026-10-11.md",
+      "sha256": "ffa0bda042b6f7f16f30de412f3f3e11eff7b64b193273e108c672109cb4e5c6",
+      "use": "locked schema, API, CLI, enum, digest and cross-field contract"
+    },
+    {
+      "path": "docs/reviews/CVF_MODEL_SELECTION_S4_R1_COMPLETION_2026-10-11.md",
+      "sha256": "3e00b130b594de6a6d97e037093f059b65452ed144f8e11fbe9529ad55708c16",
+      "use": "S4 source observation of the noncanonical learning enum"
+    },
+    {
+      "path": "docs/reviews/evidence/model-selection-s4-r1-local-review-20261011.json",
+      "sha256": "4a24ee0a46dc43dcacbe43d156f8dcacde2c7953d4ab130cdcb02e4024129671",
+      "use": "Local source review and accepted S4 pins"
+    },
+    {
+      "path": "docs/reviews/CVF_MODEL_SELECTION_S3_R1_COMPLETION_2026-10-10.md",
+      "sha256": "b02b0077a97d7808a433a6ad2d6dedbb1a3ab50cf4362c4627d7888d3aa11a9a",
+      "use": "S3 source projection; mechanism usefulness remains PARTIAL"
+    },
+    {
+      "path": "docs/roadmaps/CVF_ORCHESTRATOR_MODEL_SELECTION_SYSTEM_CHAIN_ROADMAP_2026-10-10.md",
+      "sha256": "9d40cbba5ff2a4ed0151911a448f22f2b255f7920bc4cf64ce6314fd09d28779",
+      "use": "demand-gated S2 boundary and no automatic S5"
+    },
+    {
+      "path": "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json",
+      "sha256": "82972d614766a3039507bcbcdb5e67091e03fd05a08ef1b39ebab3707eff00cb",
+      "use": "current mode, handoff and next allowed move"
+    },
+    {
+      "path": "CVF_SESSION_MEMORY.md",
+      "sha256": "16c8c2854679ea62563209d66b758fa57d1665943aa5460ec70e2b97c8199184",
+      "use": "front door and startup instruction carrier"
+    }
+  ],
+  "preImplementationGate": {
+    "command": "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base 35e290ab333ff1185a5f45fd370ccdd21deee51c --head HEAD --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_SELECTION_S2_R1_OFFLINE_MANUAL_RECORD_2026-10-11.md",
+    "status": "PASS",
+    "commandsPassed": 88,
+    "commandsTotal": 88,
+    "elapsedSeconds": 13.48,
+    "generatedIgnoredReceipt": ".cvf/runtime/autorun-receipts/pre-implementation.json",
+    "receiptInterpretation": "pre-edit bound autorun evidence; not a runtime or model-quality proof"
+  },
+  "implementation": {
+    "dependencyPolicy": "Python standard library only",
+    "sideEffects": "No network, reference following, persistent writes or provider behavior",
+    "validatorLineCount": 708,
+    "pythonAutomationSizeGuard": {
+      "command": "python governance/compat/check_python_automation_size.py --enforce",
+      "status": "PASS",
+      "hardLimitLines": 900,
+      "advisoryLines": 600,
+      "violations": 0,
+      "advisoryDisposition": "ABOVE_SOFT_ADVISORY_BELOW_HARD_LIMIT; disclosed in worker return"
+    },
+    "firstTestRun": {
+      "tests": 18,
+      "status": "PASS",
+      "note": "followed by in-scope strict exponent finiteness hardening and a deeper CLI input case"
+    },
+    "inScopeHardeningAfterFirstTestRun": [
+      "Reject JSON exponent overflow that parses to a non-finite value",
+      "Add CLI depth-boundary coverage through an actual input file"
+    ]
+  },
+  "tests": {
+    "command": "python -m unittest governance.compat.test_model_selection_manual_record -v",
+    "status": "PASS",
+    "count": 20,
+    "coverageClasses": [
+      "positive explicit assignment with quality gap and pending evidence",
+      "positive supported/provisional delegated case and HOLD case",
+      "actual noncanonical learning enum at a JSON pointer",
+      "closed shapes, duplicate identifiers, dangling joins and selection invariants",
+      "delegated insufficiency and unverified identity rejection",
+      "unknown-to-zero cost and cap mismatch rejection",
+      "retracted source and PARENT_CONTROL learning rejection",
+      "freeze drift, digest and execution-authority denial",
+      "API cycle/depth failures",
+      "CLI valid, invalid, duplicate-key, non-finite, encoding, size, malformed and deep-input cases",
+      "diagnostics do not echo raw values"
+    ],
+    "actualLog": ".cvf/runtime/model-selection-s2-r1-20261011/focused-tests.log"
+  },
+  "exampleValidation": {
+    "command": "python governance/compat/model_selection_manual_record.py --input docs/reviews/evidence/model-selection-s2-r1-example-20261011.json",
+    "status": "PASS",
+    "disposition": "VALID_RECORD_ONLY",
+    "executionAuthorized": false,
+    "errors": [],
+    "actualLog": ".cvf/runtime/model-selection-s2-r1-20261011/example-cli.log"
+  },
+  "learningConsumption": {
+    "source": "docs/reviews/CVF_MODEL_SELECTION_S4_R1_COMPLETION_2026-10-11.md",
+    "sourceSha256": "3e00b130b594de6a6d97e037093f059b65452ed144f8e11fbe9529ad55708c16",
+    "evidenceUseAtAuthoring": "CITED",
+    "s3MechanismApplicability": "PARTIAL",
+    "sourceStatus": "ACTIVE_NOT_RETRACTED",
+    "actionVerification": "PENDING_LOCAL_INDEPENDENT_CLI_PROBE",
+    "localDecisionOwner": "Local"
+  },
+  "nonGateCommandMisfires": [
+    {
+      "command": "python governance/compat/check_governed_python_automation_size.py --help",
+      "result": "FAIL_FILE_NOT_FOUND",
+      "repair": "Located governance/compat/check_python_automation_size.py and ran its enforcing check successfully",
+      "changedFiles": false
+    },
+    {
+      "command": "PowerShell command containing a Bash-style python - <<'PY' here-document",
+      "result": "FAIL_SHELL_PARSE",
+      "repair": "Used PowerShell-native Get-FileHash and native command syntax",
+      "changedFiles": false
+    },
+    {
+      "command": "Read-only rg command with a misspelled working-directory suffix",
+      "result": "FAIL_WORKDIR_INVALID",
+      "repair": "Reran with the exact repository working directory",
+      "changedFiles": false
+    },
+    {
+      "command": "rg -n with a PowerShell-style wildcard in the directory argument",
+      "result": "FAIL_PATH_GLOB_SYNTAX",
+      "repair": "Used rg -g to apply the file glob",
+      "changedFiles": false
+    }
+  ],
+  "workerReturnGate": {
+    "requiredCommand": "python governance/compat/run_worker_return_fast_gate.py --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_SELECTION_S2_R1_OFFLINE_MANUAL_RECORD_2026-10-11.md",
+    "status": "FIRST_TWO_RUNS_FAILED_PACKET_SHAPE; THIRD_AND_FOURTH_RUN_PASS; FINAL_FREEZE_GATE_PENDING",
+    "firstResult": {
+      "exitCode": 1,
+      "log": ".cvf/runtime/model-selection-s2-r1-20261011/worker-return-fast-gate-initial.log",
+      "failingChecks": [
+        "semantic convergence and escalation control: active SCEC block missing",
+        "worker experience retrospective: required structured token missing",
+        "gate-to-role closeability: required closeable recheck fields missing",
+        "review cost control: usage and terminal readiness values malformed/missing",
+        "work-order dispatch quality: negative-search discipline section missing after a not-found statement",
+        "agent operation trace integrity: expected manifest had no parsed repo-local paths",
+        "external knowledge intake routing: chain-map rows and exact coordination binding missing",
+        "rescan intelligence hardening: compact non-applicability collided with a return-text trigger"
+      ],
+      "implementationDefect": false,
+      "consolidatedRepair": "Return/evidence packet shape only; validator and focused tests had no reported gate defect."
+    },
+    "secondResult": {
+      "exitCode": 1,
+      "log": ".cvf/runtime/model-selection-s2-r1-20261011/worker-return-fast-gate-repair1.log",
+      "failingChecks": [
+        "semantic convergence and escalation control: non-decreasing blocker transition counter expected 1",
+        "external knowledge intake routing: exact Claim boundary row and full binding fields contractSha256/parentArtifact missing"
+      ],
+      "otherReviewerFastChecks": "PASS",
+      "implementationDefect": false,
+      "consolidatedRepair": "SCEC counter and coordination binding envelope corrected in the return artifact."
+    },
+    "thirdResult": {
+      "exitCode": 0,
+      "log": ".cvf/runtime/model-selection-s2-r1-20261011/worker-return-fast-gate-repair2.log",
+      "reviewerFastChecksPassed": 70,
+      "reviewerFastChecksTotal": 70,
+      "workerReturnFastGate": "PASS",
+      "violations": 0
+    },
+    "fourthResult": {
+      "exitCode": 0,
+      "log": ".cvf/runtime/model-selection-s2-r1-20261011/worker-return-fast-gate-candidate.log",
+      "reviewerFastChecksPassed": 70,
+      "reviewerFastChecksTotal": 70,
+      "workerReturnFastGate": "PASS",
+      "violations": 0
+    },
+    "finalResult": null,
+    "actualLog": ".cvf/runtime/model-selection-s2-r1-20261011/worker-return-fast-gate-final.log"
+  },
+  "gitAndScope": {
+    "initialHead": "35e290ab333ff1185a5f45fd370ccdd21deee51c",
+    "initialWorktree": "CLEAN",
+    "sixOutputPathsInitiallyAbsent": true,
+    "finalAllowedPathCount": 6,
+    "staged": false,
+    "committed": false,
+    "otherTrackedMutations": false,
+    "actualFinalStatusLog": ".cvf/runtime/model-selection-s2-r1-20261011/final-status.log"
+  },
+  "artifactHashes": {
+    "policy": "SHA-256 for the five peer artifacts is pinned after their final bytes are fixed; this evidence document's own hash is recorded only in the detached manifest.",
+    "hashes": {
+      "governance/compat/model_selection_manual_record.py": "797af1a112df13b8e951c91074df749c295f3eab694df7a098c85740beb07032",
+      "governance/compat/test_model_selection_manual_record.py": "a063dae99b57754f06b10a11c7983ade2fb1018a142615d9aeb2b9a6950c35ef",
+      "docs/reviews/evidence/model-selection-s2-r1-example-20261011.json": "5ad6df40bbcf9f7e4ac1f2a27697373f67ac4a4adc2c58c43db6140386c48e4f",
+      "docs/guides/CVF_MODEL_SELECTION_MANUAL_RECORD_VALIDATION_2026-10-11.md": "d5fb426a65175e10b21d9f57cf00ec47ea97bd638545143f14773b603b08b083",
+      "docs/reviews/CVF_MODEL_SELECTION_S2_R1_WORKER_RETURN_2026-10-11.md": "0aa4d0db58b19c4c59b0404896253191487f616b3b575d06b6dfa2612b2262dc"
+    }
+  },
+  "finalByteCheck": {
+    "status": "PENDING",
+    "startedAfterArtifactFreeze": true,
+    "logDirectory": ".cvf/runtime/model-selection-s2-r1-20261011/",
+    "hashManifest": ".cvf/runtime/model-selection-s2-r1-20261011/frozen-sha256.txt",
+    "postGateMutation": "NONE"
+  },
+  "claimBoundary": "PASS proves only the declared bounded record's local consistency. No model quality, source truth, runtime, provider, authority, admission or lifecycle integration claim is made."
+}

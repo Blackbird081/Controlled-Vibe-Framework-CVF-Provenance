@@ -39,9 +39,9 @@
     "baselinePath": "docs/baselines/CVF_GC018_MODEL_SELECTION_S2_R1_OFFLINE_MANUAL_RECORD_2026-10-11.md",
     "baselineSha256": "8a2dd23f36e681146f03de905adeacc71de0e80a87569720247c8e575dca72bd",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_SELECTION_S2_R1_OFFLINE_MANUAL_RECORD_2026-10-11.md",
-    "workOrderSha256": "7c4a53d9f5cdc731b38997495fde2dd096237f6b5a38f4fc3cd5a60618dc9b4d"
+    "workOrderSha256": "9728b45b6642d25adf89820769bac1a2fdb00dad3678c7ae2d246ed0965f305d"
   },
-  "currentAuthoritySyncReason": "S2-R1 locked offline record packet released after operator continuation/subagent assignment. Requested gpt-6-luna / xhigh; outcome pending. Prior S3 mixed-range receipt failure retained in current packet adjudication.",
+  "currentAuthoritySyncReason": "S2-R1 optional offline closure; frozen selection/profile preserved; exact order-hash/projection atomicity. Actual-SHA continuity follows.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",

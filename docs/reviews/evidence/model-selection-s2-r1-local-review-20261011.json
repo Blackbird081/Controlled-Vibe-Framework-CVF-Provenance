@@ -1,0 +1,1578 @@
+{
+  "schemaVersion": "cvf.modelSelectionS2R1LocalReview@0.1.0",
+  "batchId": "CVF-MODEL-SELECTION-S2-R1-20261011",
+  "executionBaseHead": "35e290ab333ff1185a5f45fd370ccdd21deee51c",
+  "reviewerActor": "LOCAL_REVIEWER_CODEX_ROOT",
+  "workerActor": "INTERNAL_AGENT_S2_WORKER",
+  "workerInvocationId": "/root/s2_luna_worker",
+  "probeInvocationId": "cvf-model-selection-s2-r1-independent-cli-api-20261011",
+  "profileSha256": "ffa0bda042b6f7f16f30de412f3f3e11eff7b64b193273e108c672109cb4e5c6",
+  "submittedOriginals": [
+    {
+      "path": "governance/compat/model_selection_manual_record.py",
+      "sha256": "797af1a112df13b8e951c91074df749c295f3eab694df7a098c85740beb07032"
+    },
+    {
+      "path": "governance/compat/test_model_selection_manual_record.py",
+      "sha256": "a063dae99b57754f06b10a11c7983ade2fb1018a142615d9aeb2b9a6950c35ef"
+    },
+    {
+      "path": "docs/reviews/evidence/model-selection-s2-r1-example-20261011.json",
+      "sha256": "5ad6df40bbcf9f7e4ac1f2a27697373f67ac4a4adc2c58c43db6140386c48e4f"
+    },
+    {
+      "path": "docs/guides/CVF_MODEL_SELECTION_MANUAL_RECORD_VALIDATION_2026-10-11.md",
+      "sha256": "d5fb426a65175e10b21d9f57cf00ec47ea97bd638545143f14773b603b08b083"
+    },
+    {
+      "path": "docs/reviews/CVF_MODEL_SELECTION_S2_R1_WORKER_RETURN_2026-10-11.md",
+      "sha256": "0aa4d0db58b19c4c59b0404896253191487f616b3b575d06b6dfa2612b2262dc"
+    },
+    {
+      "path": "docs/reviews/evidence/model-selection-s2-r1-worker-20261011.json",
+      "sha256": "bcfa4322f63c44f91cd63c37ed300498de679fdbfeeabf462aba85ba1d96cbf7"
+    }
+  ],
+  "acceptedPins": [
+    {
+      "path": "governance/compat/model_selection_manual_record.py",
+      "sha256": "8db98426eeeb6ea9f13f8d78efcc3bee15f57ccb2e586081577b3559a1374c0e"
+    },
+    {
+      "path": "governance/compat/test_model_selection_manual_record.py",
+      "sha256": "74776e46a025c7d9585174f911680476223adeae410bc2b1e750f6712007e0ad"
+    },
+    {
+      "path": "docs/reviews/evidence/model-selection-s2-r1-example-20261011.json",
+      "sha256": "ff162e891be3e4216c7a7f96a8c0c34a95ad897b2161f8e2987b3a847a0d0ed0"
+    },
+    {
+      "path": "docs/guides/CVF_MODEL_SELECTION_MANUAL_RECORD_VALIDATION_2026-10-11.md",
+      "sha256": "256632f03670680e97ebb56f0d2eab6217c9fc8e6c1855f03946771e013817a3"
+    },
+    {
+      "path": "docs/reviews/CVF_MODEL_SELECTION_S2_R1_WORKER_RETURN_2026-10-11.md",
+      "sha256": "93b86de22ab93de3a5dc6ceb488491b904f374b7db16653e6914a14da567ba4e"
+    },
+    {
+      "path": "docs/reviews/evidence/model-selection-s2-r1-worker-20261011.json",
+      "sha256": "bcfa4322f63c44f91cd63c37ed300498de679fdbfeeabf462aba85ba1d96cbf7"
+    }
+  ],
+  "independentProbe": {
+    "scope": "source-derived offline counterfactual CLI/API checks; separate from worker tests",
+    "profileSha256": "ffa0bda042b6f7f16f30de412f3f3e11eff7b64b193273e108c672109cb4e5c6",
+    "count": 65,
+    "passed": 65,
+    "rows": [
+      {
+        "name": "explicit-gap",
+        "expected": "VALID_RECORD_ONLY",
+        "passed": true,
+        "exit": 0,
+        "result": {
+          "profileVersion": "cvf.model-selection-manual-record@0.1.0",
+          "disposition": "VALID_RECORD_ONLY",
+          "executionAuthorized": false,
+          "errors": []
+        },
+        "stderr": ""
+      },
+      {
+        "name": "invented-learning-token",
+        "expected": "ENUM",
+        "passed": true,
+        "exit": 1,
+        "result": {
+          "profileVersion": "cvf.model-selection-manual-record@0.1.0",
+          "disposition": "INVALID_RECORD",
+          "executionAuthorized": false,
+          "errors": [
+            {
+              "code": "ENUM",
+              "pointer": "/learningLinks/0/evidenceUse",
+              "message": "value is not in the closed enum"
+            }
+          ]
+        },
+        "stderr": ""
+      },
+      {
+        "name": "missing-assigned-model",
+        "expected": "IDENTITY_BASIS",
+        "passed": true,
+        "exit": 1,
+        "result": {
+          "profileVersion": "cvf.model-selection-manual-record@0.1.0",
+          "disposition": "INVALID_RECORD",
+          "executionAuthorized": false,
+          "errors": [
+            {
+              "code": "IDENTITY_BASIS",
+              "pointer": "/candidates/0/requested/model",
+              "message": "requested model or alias is required"
+            }
+          ]
+        },
+        "stderr": ""
+      },
+      {
+        "name": "unsupported-quality-promotion",
+        "expected": "DELEGATED_EVIDENCE",
+        "passed": true,
+        "exit": 1,
+        "result": {
+          "profileVersion": "cvf.model-selection-manual-record@0.1.0",
+          "disposition": "INVALID_RECORD",
+          "executionAuthorized": false,
+          "errors": [
+            {
+              "code": "DELEGATED_EVIDENCE",
+              "pointer": "/selection/evidenceIds",
+              "message": "SUPPORTED or PROVISIONAL requires relevant current positive-quality evidence"
+            }
+          ]
+        },
+        "stderr": ""
+      },
+      {
+        "name": "known-admission-conflict-select",
+        "expected": "ADMISSION_INVARIANT",
+        "passed": true,
+        "exit": 1,
+        "result": {
+          "profileVersion": "cvf.model-selection-manual-record@0.1.0",
+          "disposition": "INVALID_RECORD",
+          "executionAuthorized": false,
+          "errors": [
+            {
+              "code": "ADMISSION_INVARIANT",
+              "pointer": "/selection/disposition",
+              "message": "an admission HOLD component requires HOLD_OPERATOR_CONSTRAINT"
+            }
+          ]
+        },
+        "stderr": ""
+      },
+      {
+        "name": "known-unavailable-select",
+        "expected": "SELECTION_INVARIANT",
+        "passed": true,
+        "exit": 1,
+        "result": {
+          "profileVersion": "cvf.model-selection-manual-record@0.1.0",
+          "disposition": "INVALID_RECORD",
+          "executionAuthorized": false,
+          "errors": [
+            {
+              "code": "SELECTION_INVARIANT",
+              "pointer": "/selection/disposition",
+              "message": "known unavailability or context HOLD prevents SELECT"
+            },
+            {
+              "code": "SELECTION_INVARIANT",
+              "pointer": "/selection/disposition",
+              "message": "an explicit assignment conflict requires HOLD_OPERATOR_CONSTRAINT"
+            }
+          ]
+        },
+        "stderr": ""
+      },
+      {
+        "name": "delegated-insufficient",
+        "expected": "DELEGATED_EVIDENCE",
+        "passed": true,
+        "exit": 1,
+        "result": {
+          "profileVersion": "cvf.model-selection-manual-record@0.1.0",
+          "disposition": "INVALID_RECORD",
+          "executionAuthorized": false,
+          "errors": [
+            {
+              "code": "DELEGATED_EVIDENCE",
+              "pointer": "/selection/qualityDisposition",
+              "message": "delegated SELECT cannot claim INSUFFICIENT quality"
+            }
+          ]
+        },
+        "stderr": ""
+      },
+      {
+        "name": "unknown-snapshot-exact",
+        "expected": "EXACT_MATCH",
+        "passed": true,
+        "exit": 1,
+        "result": {
+          "profileVersion": "cvf.model-selection-manual-record@0.1.0",
+          "disposition": "INVALID_RECORD",
+          "executionAuthorized": false,
+          "errors": [
+            {
+              "code": "EXACT_MATCH",
+              "pointer": "/evidence/0/configurationMatch",
+              "message": "EXACT requires all eight known identity dimensions to match"
+            }
+          ]
+        },
+        "stderr": ""
+      },
+      {
+        "name": "requested-as-observed",
+        "expected": "IDENTITY_BASIS",
+        "passed": true,
+        "exit": 1,
+        "result": {
+          "profileVersion": "cvf.model-selection-manual-record@0.1.0",
+          "disposition": "INVALID_RECORD",
+          "executionAuthorized": false,
+          "errors": [
+            {
+              "code": "IDENTITY_BASIS",
+              "pointer": "/candidates/0/observed",
+              "message": "UNRESOLVED identity requires all dimensions and runtimeEvidence to be null"
+            }
+          ]
+        },
+        "stderr": ""
+      },
+      {
+        "name": "revoked-verified-use",
+        "expected": "LEARNING_INVARIANT",
+        "passed": true,
+        "exit": 1,
+        "result": {
+          "profileVersion": "cvf.model-selection-manual-record@0.1.0",
+          "disposition": "INVALID_RECORD",
+          "executionAuthorized": false,
+          "errors": [
+            {
+              "code": "LEARNING_INVARIANT",
+              "pointer": "/learningLinks/0",
+              "message": "verified learning use requires active source, applicable scope, action/reason and verification ref"
+            }
+          ]
+        },
+        "stderr": ""
+      },
+      {
+        "name": "forbidden-parent-branch",
+        "expected": "LEARNING_INVARIANT",
+        "passed": true,
+        "exit": 1,
+        "result": {
+          "profileVersion": "cvf.model-selection-manual-record@0.1.0",
+          "disposition": "INVALID_RECORD",
+          "executionAuthorized": false,
+          "errors": [
+            {
+              "code": "LEARNING_INVARIANT",
+              "pointer": "/learningLinks/0/branch",
+              "message": "only LOCAL_OBSERVATION is supported by this profile"
+            }
+          ]
+        },
+        "stderr": ""
+      },
+      {
+        "name": "forbidden-delivery-field",
+        "expected": "SHAPE",
+        "passed": true,
+        "exit": 1,
+        "result": {
+          "profileVersion": "cvf.model-selection-manual-record@0.1.0",
+          "disposition": "INVALID_RECORD",
+          "executionAuthorized": false,
+          "errors": [
+            {
+              "code": "SHAPE",
+              "pointer": "/learningLinks/0",
+              "message": "unsupported fields: delivery"
+            }
+          ]
+        },
+        "stderr": ""
+      },
+      {
+        "name": "dangling-decision",
+        "expected": "DANGLING_REF",
+        "passed": true,
+        "exit": 1,
+        "result": {
+          "profileVersion": "cvf.model-selection-manual-record@0.1.0",
+          "disposition": "INVALID_RECORD",
+          "executionAuthorized": false,
+          "errors": [
+            {
+              "code": "DANGLING_REF",
+              "pointer": "/learningLinks/0/laterDecisionId",
+              "message": "laterDecisionId must equal the current decisionId"
+            }
+          ]
+        },
+        "stderr": ""
+      },
+      {
+        "name": "non-iso-time-separator",
+        "expected": "FORMAT",
+        "passed": true,
+        "exit": 1,
+        "result": {
+          "profileVersion": "cvf.model-selection-manual-record@0.1.0",
+          "disposition": "INVALID_RECORD",
+          "executionAuthorized": false,
+          "errors": [
+            {
+              "code": "FORMAT",
+              "pointer": "/selection/decidedAt",
+              "message": "expected a valid timezone-aware ISO-8601 timestamp"
+            }
+          ]
+        },
+        "stderr": ""
+      },
+      {
+        "name": "freeze-drift",
+        "expected": "FREEZE_DRIFT",
+        "passed": true,
+        "exit": 1,
+        "result": {
+          "profileVersion": "cvf.model-selection-manual-record@0.1.0",
+          "disposition": "INVALID_RECORD",
+          "executionAuthorized": false,
+          "errors": [
+            {
+              "code": "FREEZE_DRIFT",
+              "pointer": "/selection/frozenDigests/task",
+              "message": "declared freeze digest does not match the current record value"
+            }
+          ]
+        },
+        "stderr": ""
+      },
+      {
+        "name": "duplicate-candidate",
+        "expected": "DUPLICATE_ID",
+        "passed": true,
+        "exit": 1,
+        "result": {
+          "profileVersion": "cvf.model-selection-manual-record@0.1.0",
+          "disposition": "INVALID_RECORD",
+          "executionAuthorized": false,
+          "errors": [
+            {
+              "code": "DUPLICATE_ID",
+              "pointer": "/candidates/1/candidateId",
+              "message": "candidateId is duplicated"
+            }
+          ]
+        },
+        "stderr": ""
+      },
+      {
+        "name": "bool-is-not-limit",
+        "expected": "TYPE",
+        "passed": true,
+        "exit": 1,
+        "result": {
+          "profileVersion": "cvf.model-selection-manual-record@0.1.0",
+          "disposition": "INVALID_RECORD",
+          "executionAuthorized": false,
+          "errors": [
+            {
+              "code": "TYPE",
+              "pointer": "/cost/hardCaps/0/limit",
+              "message": "expected a finite number"
+            }
+          ]
+        },
+        "stderr": ""
+      },
+      {
+        "name": "cross-unit-cap-bound",
+        "expected": "COST_UNITS",
+        "passed": true,
+        "exit": 1,
+        "result": {
+          "profileVersion": "cvf.model-selection-manual-record@0.1.0",
+          "disposition": "INVALID_RECORD",
+          "executionAuthorized": false,
+          "errors": [
+            {
+              "code": "COST_UNITS",
+              "pointer": "/cost/hardCaps/0/bound",
+              "message": "supplied bound needs a matching stage unit/currency/window"
+            }
+          ]
+        },
+        "stderr": ""
+      },
+      {
+        "name": "hard-budget-overrun",
+        "expected": "COST_BOUND",
+        "passed": true,
+        "exit": 1,
+        "result": {
+          "profileVersion": "cvf.model-selection-manual-record@0.1.0",
+          "disposition": "INVALID_RECORD",
+          "executionAuthorized": false,
+          "errors": [
+            {
+              "code": "COST_BOUND",
+              "pointer": "/admission/budgetDisposition",
+              "message": "an over-limit bound requires budget HOLD"
+            }
+          ]
+        },
+        "stderr": ""
+      },
+      {
+        "name": "budget-owner-known-failure-hold",
+        "expected": "VALID_RECORD_ONLY",
+        "passed": true,
+        "exit": 0,
+        "result": {
+          "profileVersion": "cvf.model-selection-manual-record@0.1.0",
+          "disposition": "VALID_RECORD_ONLY",
+          "executionAuthorized": false,
+          "errors": []
+        },
+        "stderr": ""
+      },
+      {
+        "name": "historical-citation-only",
+        "expected": "VALID_RECORD_ONLY",
+        "passed": true,
+        "exit": 0,
+        "result": {
+          "profileVersion": "cvf.model-selection-manual-record@0.1.0",
+          "disposition": "VALID_RECORD_ONLY",
+          "executionAuthorized": false,
+          "errors": []
+        },
+        "stderr": ""
+      },
+      {
+        "name": "tariff-not-quality",
+        "expected": "DELEGATED_EVIDENCE",
+        "passed": true,
+        "exit": 1,
+        "result": {
+          "profileVersion": "cvf.model-selection-manual-record@0.1.0",
+          "disposition": "INVALID_RECORD",
+          "executionAuthorized": false,
+          "errors": [
+            {
+              "code": "DELEGATED_EVIDENCE",
+              "pointer": "/selection/evidenceIds",
+              "message": "SUPPORTED or PROVISIONAL requires relevant current positive-quality evidence"
+            }
+          ]
+        },
+        "stderr": ""
+      },
+      {
+        "name": "provisional-envelope-required",
+        "expected": "DELEGATED_EVIDENCE",
+        "passed": true,
+        "exit": 1,
+        "result": {
+          "profileVersion": "cvf.model-selection-manual-record@0.1.0",
+          "disposition": "INVALID_RECORD",
+          "executionAuthorized": false,
+          "errors": [
+            {
+              "code": "DELEGATED_EVIDENCE",
+              "pointer": "/selection/qualityDisposition",
+              "message": "PROVISIONAL requires provisionalAllowed=true"
+            }
+          ]
+        },
+        "stderr": ""
+      },
+      {
+        "name": "conflicting-quality",
+        "expected": "DELEGATED_EVIDENCE",
+        "passed": true,
+        "exit": 1,
+        "result": {
+          "profileVersion": "cvf.model-selection-manual-record@0.1.0",
+          "disposition": "INVALID_RECORD",
+          "executionAuthorized": false,
+          "errors": [
+            {
+              "code": "DELEGATED_EVIDENCE",
+              "pointer": "/selection/evidenceIds",
+              "message": "conflicting positive-quality evidence cannot support this selection quality"
+            },
+            {
+              "code": "DELEGATED_EVIDENCE",
+              "pointer": "/selection/evidenceIds",
+              "message": "SUPPORTED or PROVISIONAL requires relevant current positive-quality evidence"
+            }
+          ]
+        },
+        "stderr": ""
+      },
+      {
+        "name": "delegated-supported",
+        "expected": "VALID_RECORD_ONLY",
+        "passed": true,
+        "exit": 0,
+        "result": {
+          "profileVersion": "cvf.model-selection-manual-record@0.1.0",
+          "disposition": "VALID_RECORD_ONLY",
+          "executionAuthorized": false,
+          "errors": []
+        },
+        "stderr": ""
+      },
+      {
+        "name": "delegated-provisional",
+        "expected": "VALID_RECORD_ONLY",
+        "passed": true,
+        "exit": 0,
+        "result": {
+          "profileVersion": "cvf.model-selection-manual-record@0.1.0",
+          "disposition": "VALID_RECORD_ONLY",
+          "executionAuthorized": false,
+          "errors": []
+        },
+        "stderr": ""
+      },
+      {
+        "name": "budget-overrun-correctly-held",
+        "expected": "VALID_RECORD_ONLY",
+        "passed": true,
+        "exit": 0,
+        "result": {
+          "profileVersion": "cvf.model-selection-manual-record@0.1.0",
+          "disposition": "VALID_RECORD_ONLY",
+          "executionAuthorized": false,
+          "errors": []
+        },
+        "stderr": ""
+      },
+      {
+        "name": "learning-pointer-after-malformed-sibling",
+        "expected": "DANGLING_REF at /learningLinks/1/laterDecisionId",
+        "passed": true,
+        "errors": [
+          {
+            "code": "TYPE",
+            "pointer": "/learningLinks/0",
+            "message": "expected an object"
+          },
+          {
+            "code": "DANGLING_REF",
+            "pointer": "/learningLinks/1/laterDecisionId",
+            "message": "laterDecisionId must equal the current decisionId"
+          }
+        ]
+      },
+      {
+        "name": "known-conflict-hold",
+        "expected": "VALID_RECORD_ONLY",
+        "passed": true,
+        "exit": 0,
+        "result": {
+          "profileVersion": "cvf.model-selection-manual-record@0.1.0",
+          "disposition": "VALID_RECORD_ONLY",
+          "executionAuthorized": false,
+          "errors": []
+        },
+        "stderr": ""
+      },
+      {
+        "name": "duplicate-key",
+        "expected": "INPUT_ERROR",
+        "passed": true,
+        "exit": 2,
+        "result": {
+          "profileVersion": "cvf.model-selection-manual-record@0.1.0",
+          "disposition": "INPUT_ERROR",
+          "executionAuthorized": false,
+          "errors": [
+            {
+              "code": "DUPLICATE_KEY",
+              "pointer": "",
+              "message": "JSON object contains a duplicate key"
+            }
+          ]
+        },
+        "stderr": ""
+      },
+      {
+        "name": "nan",
+        "expected": "INPUT_ERROR",
+        "passed": true,
+        "exit": 2,
+        "result": {
+          "profileVersion": "cvf.model-selection-manual-record@0.1.0",
+          "disposition": "INPUT_ERROR",
+          "executionAuthorized": false,
+          "errors": [
+            {
+              "code": "NONFINITE_NUMBER",
+              "pointer": "",
+              "message": "JSON contains a non-finite number"
+            }
+          ]
+        },
+        "stderr": ""
+      },
+      {
+        "name": "bad-encoding",
+        "expected": "INPUT_ERROR",
+        "passed": true,
+        "exit": 2,
+        "result": {
+          "profileVersion": "cvf.model-selection-manual-record@0.1.0",
+          "disposition": "INPUT_ERROR",
+          "executionAuthorized": false,
+          "errors": [
+            {
+              "code": "INPUT_ENCODING",
+              "pointer": "",
+              "message": "input is not valid UTF-8"
+            }
+          ]
+        },
+        "stderr": ""
+      },
+      {
+        "name": "bad-json",
+        "expected": "INPUT_ERROR",
+        "passed": true,
+        "exit": 2,
+        "result": {
+          "profileVersion": "cvf.model-selection-manual-record@0.1.0",
+          "disposition": "INPUT_ERROR",
+          "executionAuthorized": false,
+          "errors": [
+            {
+              "code": "INPUT_JSON",
+              "pointer": "",
+              "message": "input is not valid strict JSON"
+            }
+          ]
+        },
+        "stderr": ""
+      },
+      {
+        "name": "oversize",
+        "expected": "INPUT_ERROR",
+        "passed": true,
+        "exit": 2,
+        "result": {
+          "profileVersion": "cvf.model-selection-manual-record@0.1.0",
+          "disposition": "INPUT_ERROR",
+          "executionAuthorized": false,
+          "errors": [
+            {
+              "code": "INPUT_SIZE",
+              "pointer": "",
+              "message": "input exceeds the 1 MiB limit"
+            }
+          ]
+        },
+        "stderr": ""
+      },
+      {
+        "name": "deep",
+        "expected": "INPUT_ERROR",
+        "passed": true,
+        "exit": 2,
+        "result": {
+          "profileVersion": "cvf.model-selection-manual-record@0.1.0",
+          "disposition": "INPUT_ERROR",
+          "executionAuthorized": false,
+          "errors": [
+            {
+              "code": "INPUT_JSON",
+              "pointer": "",
+              "message": "input is not valid strict JSON"
+            }
+          ]
+        },
+        "stderr": ""
+      },
+      {
+        "name": "malformed-task-NoneType",
+        "expected": "CONTROLLED_API_ERROR",
+        "passed": true,
+        "errors": [
+          {
+            "code": "FREEZE_DRIFT",
+            "pointer": "/selection/frozenDigests/task",
+            "message": "declared freeze digest does not match the current record value"
+          },
+          {
+            "code": "TYPE",
+            "pointer": "/task",
+            "message": "expected an object"
+          }
+        ]
+      },
+      {
+        "name": "malformed-task-int",
+        "expected": "CONTROLLED_API_ERROR",
+        "passed": true,
+        "errors": [
+          {
+            "code": "FREEZE_DRIFT",
+            "pointer": "/selection/frozenDigests/task",
+            "message": "declared freeze digest does not match the current record value"
+          },
+          {
+            "code": "TYPE",
+            "pointer": "/task",
+            "message": "expected an object"
+          }
+        ]
+      },
+      {
+        "name": "malformed-task-dict",
+        "expected": "CONTROLLED_API_ERROR",
+        "passed": true,
+        "errors": [
+          {
+            "code": "FREEZE_DRIFT",
+            "pointer": "/selection/frozenDigests/task",
+            "message": "declared freeze digest does not match the current record value"
+          },
+          {
+            "code": "SHAPE",
+            "pointer": "/task",
+            "message": "missing fields: acceptanceFloor, artifact, assignedCandidateId, choiceAuthority, choiceKind, outcome, provisionalAllowed, role, surface, taskId; unsupported fields: invalid"
+          }
+        ]
+      },
+      {
+        "name": "malformed-candidates-NoneType",
+        "expected": "CONTROLLED_API_ERROR",
+        "passed": true,
+        "errors": [
+          {
+            "code": "TYPE",
+            "pointer": "/candidates",
+            "message": "expected an array"
+          },
+          {
+            "code": "FREEZE_DRIFT",
+            "pointer": "/selection/frozenDigests/candidates",
+            "message": "declared freeze digest does not match the current record value"
+          }
+        ]
+      },
+      {
+        "name": "malformed-candidates-int",
+        "expected": "CONTROLLED_API_ERROR",
+        "passed": true,
+        "errors": [
+          {
+            "code": "TYPE",
+            "pointer": "/candidates",
+            "message": "expected an array"
+          },
+          {
+            "code": "FREEZE_DRIFT",
+            "pointer": "/selection/frozenDigests/candidates",
+            "message": "declared freeze digest does not match the current record value"
+          }
+        ]
+      },
+      {
+        "name": "malformed-candidates-dict",
+        "expected": "CONTROLLED_API_ERROR",
+        "passed": true,
+        "errors": [
+          {
+            "code": "TYPE",
+            "pointer": "/candidates",
+            "message": "expected an array"
+          },
+          {
+            "code": "FREEZE_DRIFT",
+            "pointer": "/selection/frozenDigests/candidates",
+            "message": "declared freeze digest does not match the current record value"
+          }
+        ]
+      },
+      {
+        "name": "malformed-evidence-NoneType",
+        "expected": "CONTROLLED_API_ERROR",
+        "passed": true,
+        "errors": [
+          {
+            "code": "TYPE",
+            "pointer": "/evidence",
+            "message": "expected an array"
+          },
+          {
+            "code": "FREEZE_DRIFT",
+            "pointer": "/selection/frozenDigests/evidence",
+            "message": "declared freeze digest does not match the current record value"
+          }
+        ]
+      },
+      {
+        "name": "malformed-evidence-int",
+        "expected": "CONTROLLED_API_ERROR",
+        "passed": true,
+        "errors": [
+          {
+            "code": "TYPE",
+            "pointer": "/evidence",
+            "message": "expected an array"
+          },
+          {
+            "code": "FREEZE_DRIFT",
+            "pointer": "/selection/frozenDigests/evidence",
+            "message": "declared freeze digest does not match the current record value"
+          }
+        ]
+      },
+      {
+        "name": "malformed-evidence-dict",
+        "expected": "CONTROLLED_API_ERROR",
+        "passed": true,
+        "errors": [
+          {
+            "code": "TYPE",
+            "pointer": "/evidence",
+            "message": "expected an array"
+          },
+          {
+            "code": "FREEZE_DRIFT",
+            "pointer": "/selection/frozenDigests/evidence",
+            "message": "declared freeze digest does not match the current record value"
+          }
+        ]
+      },
+      {
+        "name": "malformed-selection-NoneType",
+        "expected": "CONTROLLED_API_ERROR",
+        "passed": true,
+        "errors": [
+          {
+            "code": "TYPE",
+            "pointer": "/selection",
+            "message": "expected an object"
+          }
+        ]
+      },
+      {
+        "name": "malformed-selection-int",
+        "expected": "CONTROLLED_API_ERROR",
+        "passed": true,
+        "errors": [
+          {
+            "code": "TYPE",
+            "pointer": "/selection",
+            "message": "expected an object"
+          }
+        ]
+      },
+      {
+        "name": "malformed-selection-dict",
+        "expected": "CONTROLLED_API_ERROR",
+        "passed": true,
+        "errors": [
+          {
+            "code": "SHAPE",
+            "pointer": "/selection",
+            "message": "missing fields: decidedAt, decisionId, disposition, evidenceIds, executionAuthorized, frozenDigests, operatorAssignmentDisposition, owner, qualityDisposition, rationale, selectedCandidateId; unsupported fields: invalid"
+          }
+        ]
+      },
+      {
+        "name": "malformed-admission-NoneType",
+        "expected": "CONTROLLED_API_ERROR",
+        "passed": true,
+        "errors": [
+          {
+            "code": "TYPE",
+            "pointer": "/admission",
+            "message": "expected an object"
+          }
+        ]
+      },
+      {
+        "name": "malformed-admission-int",
+        "expected": "CONTROLLED_API_ERROR",
+        "passed": true,
+        "errors": [
+          {
+            "code": "TYPE",
+            "pointer": "/admission",
+            "message": "expected an object"
+          }
+        ]
+      },
+      {
+        "name": "malformed-admission-dict",
+        "expected": "CONTROLLED_API_ERROR",
+        "passed": true,
+        "errors": [
+          {
+            "code": "SHAPE",
+            "pointer": "/admission",
+            "message": "missing fields: authorityDisposition, availabilityDisposition, budgetDisposition, contextDisposition, disposition, methodDisposition, reason, refs; unsupported fields: invalid"
+          }
+        ]
+      },
+      {
+        "name": "malformed-cost-NoneType",
+        "expected": "CONTROLLED_API_ERROR",
+        "passed": true,
+        "errors": [
+          {
+            "code": "TYPE",
+            "pointer": "/cost",
+            "message": "expected an object"
+          }
+        ]
+      },
+      {
+        "name": "malformed-cost-int",
+        "expected": "CONTROLLED_API_ERROR",
+        "passed": true,
+        "errors": [
+          {
+            "code": "TYPE",
+            "pointer": "/cost",
+            "message": "expected an object"
+          }
+        ]
+      },
+      {
+        "name": "malformed-cost-dict",
+        "expected": "CONTROLLED_API_ERROR",
+        "passed": true,
+        "errors": [
+          {
+            "code": "SHAPE",
+            "pointer": "/cost",
+            "message": "missing fields: hardCaps, stages; unsupported fields: invalid"
+          }
+        ]
+      },
+      {
+        "name": "malformed-learningLinks-NoneType",
+        "expected": "CONTROLLED_API_ERROR",
+        "passed": true,
+        "errors": [
+          {
+            "code": "TYPE",
+            "pointer": "/learningLinks",
+            "message": "expected an array"
+          }
+        ]
+      },
+      {
+        "name": "malformed-learningLinks-int",
+        "expected": "CONTROLLED_API_ERROR",
+        "passed": true,
+        "errors": [
+          {
+            "code": "TYPE",
+            "pointer": "/learningLinks",
+            "message": "expected an array"
+          }
+        ]
+      },
+      {
+        "name": "malformed-learningLinks-dict",
+        "expected": "CONTROLLED_API_ERROR",
+        "passed": true,
+        "errors": [
+          {
+            "code": "TYPE",
+            "pointer": "/learningLinks",
+            "message": "expected an array"
+          }
+        ]
+      },
+      {
+        "name": "finite-large-integer",
+        "expected": "VALID_RECORD_ONLY",
+        "passed": true,
+        "exit": 0,
+        "result": {
+          "profileVersion": "cvf.model-selection-manual-record@0.1.0",
+          "disposition": "VALID_RECORD_ONLY",
+          "executionAuthorized": false,
+          "errors": []
+        },
+        "stderr": ""
+      },
+      {
+        "name": "acyclic-shared-reference-api",
+        "expected": "VALID_RECORD_ONLY",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "name": "exact-malformed-requested",
+        "expected": "TYPE at /candidates/0/requested",
+        "passed": true,
+        "errors": [
+          {
+            "code": "TYPE",
+            "pointer": "/candidates/0/requested",
+            "message": "expected an object"
+          },
+          {
+            "code": "EXACT_MATCH",
+            "pointer": "/evidence/0/configurationMatch",
+            "message": "EXACT requires all eight known identity dimensions to match"
+          }
+        ]
+      },
+      {
+        "name": "exact-malformed-candidate-join",
+        "expected": "TYPE at /evidence/0/candidateId",
+        "passed": true,
+        "errors": [
+          {
+            "code": "TYPE",
+            "pointer": "/evidence/0/candidateId",
+            "message": "expected a string"
+          }
+        ]
+      },
+      {
+        "name": "unhashable-selection-evidence",
+        "expected": "TYPE at /selection/evidenceIds/0",
+        "passed": true,
+        "errors": [
+          {
+            "code": "TYPE",
+            "pointer": "/selection/evidenceIds/0",
+            "message": "expected a string"
+          }
+        ]
+      },
+      {
+        "name": "unhashable-cap-unit",
+        "expected": "TYPE at /cost/hardCaps/0/unit",
+        "passed": true,
+        "errors": [
+          {
+            "code": "TYPE",
+            "pointer": "/cost/hardCaps/0/unit",
+            "message": "expected an enum string"
+          }
+        ]
+      },
+      {
+        "name": "nested-role-pointer",
+        "expected": "IDENTITY_BASIS at /candidates/0/requested/role",
+        "passed": true,
+        "errors": [
+          {
+            "code": "IDENTITY_BASIS",
+            "pointer": "/candidates/0/requested/role",
+            "message": "requested role must equal task role"
+          }
+        ]
+      },
+      {
+        "name": "cyclic-api",
+        "passed": true,
+        "errors": [
+          {
+            "code": "SHAPE",
+            "pointer": "/self",
+            "message": "record contains a cyclic container"
+          }
+        ]
+      },
+      {
+        "name": "surrogate-api",
+        "passed": true,
+        "errors": [
+          {
+            "code": "FORMAT",
+            "pointer": "/recordId",
+            "message": "string is not valid UTF-8"
+          }
+        ]
+      }
+    ]
+  },
+  "reviewDecision": {
+    "decision": "ACCEPT_BOUNDED",
+    "methodology": "EVALUATE_RETURNED_EVIDENCE_NOT_RECREATE_IMPLEMENTATION. Consumed worker final logs (20 focused tests, example CLI, final 70/70 gate, six frozen hashes); all nine declared source pins match actual bytes before closure. Audited the locked profile against the complete bounded helper/test/guide/example and return, using named sources only. Root source-derived actual CLI/API oracles are separate from worker tests. Initial 63 probes exposed seven failures; two further source-derived positive boundary/pointer cases justified expanding the oracle to 65 (56 passed, nine failed). All known dependency classes were audited before one consolidated Local semantic repair. Reran focused tests and independent probes only for changed code/fixture bytes and named contradictions; accepted-byte fast gate preceded adding Local closure paths.",
+    "findings": "ACCEPT_BOUNDED after five attributed Local repair groups: (1) malformed requested identity and unhashable evidence/cap joins must preserve controlled field/sibling diagnostics; (2) nested requested-role and skipped-learning-index JSON pointers must locate original fields; (3) known budget owner failure may HOLD without numeric overrun, and a correctly constrained overrun is a valid held record; (4) reject the arbitrary date/time separator accepted by Python fromisoformat; (5) correct S3 reported Claude Haiku configuration and preserve S4 ACTION_VERIFIED/PARTIAL consumption in the derived example, separate from current S2 use of S4. Final 24/24 focused tests and 65/65 different-actor CLI/API probes passed. Amended-byte gate passed 70/70, COMPLIANT 6.11s. Original worker assertions, initial defects and two worker packet self-repairs remain historical evidence; they are not final acceptance of amended bytes.",
+    "risk": "Only optional offline declared consistency is accepted. Refs are never followed by the helper; Local source pin checks do not authenticate identity, authority, current source status or bills. Example is a retrospective projection, not a replacement S4 decision or original dispatch freeze. Helper 707 lines exceeds 600 advisory and stays below 900 hard limit: keep this bounded cross-field validator in one authorized module; no new split topology or guard exemption. Size enforcement PASS. Full outcome, score, PLL, Gateway, persistent store and hook/runtime integration remain deferred. Native requested Luna/xhigh remains separate from unknown observed identity/effort/harness and underlying provider usage; no model ranking or savings claim.",
+    "closureDiagnostic": "Local accepted-byte gate first failed solely on RESOLUTION_EVIDENCE_HASH_MISMATCH: the active SCEC payload still pinned submitted test bytes. Updated that active pin to the amended regression file and reran once with information gain final-byte consistency: PASS 70/70. Original return/hash and failed log retained. This is Local closure packaging, separate from the single semantic repair. Root ignored-helper preparation also had one nested-quote SyntaxError before file writes (corrected using apply_patch), and one read-only rg guessed the S3 Local evidence date wrong (corrected to 2026-10-11). No deletion, provider call or worker attribution. Material and continuity gates/commits are required next and are not predeclared complete here. Material validation additionally detected PREDECESSOR_HASH_MISMATCH after closed-order metadata changed. The tranche helper suppressed detailed stdout; one named diagnostic rerun exposed the sole SCEC failure. Updated active predecessor to closed-order bytes; frozen rationale/profile/code unchanged. Retained both logs; no historical dispatch pin rewrite.",
+    "worker": {
+      "invocationCount": 1,
+      "requestedModel": "gpt-6-luna",
+      "requestedEffort": "xhigh",
+      "observedIdentity": null,
+      "firstClockUtc": "2026-10-11T03:34:47Z",
+      "endClockUtc": "2026-10-11T04:04:37Z",
+      "elapsedSeconds": 1790,
+      "deadlineUtc": "2026-10-11T04:19:47Z",
+      "capSatisfied": true,
+      "selfRepairRounds": 2,
+      "gateRunCount": 5,
+      "gateHistory": [
+        "FAIL_PACKET_SHAPE_8",
+        "FAIL_PACKET_SHAPE_2",
+        "PASS_CANDIDATE",
+        "PASS_CANDIDATE",
+        "PASS_FINAL_FROZEN"
+      ],
+      "nonGateCommandMistakes": [
+        {
+          "command": "python governance/compat/check_governed_python_automation_size.py --help",
+          "result": "FAIL_FILE_NOT_FOUND",
+          "repair": "Located governance/compat/check_python_automation_size.py and ran its enforcing check successfully",
+          "changedFiles": false
+        },
+        {
+          "command": "PowerShell command containing a Bash-style python - <<'PY' here-document",
+          "result": "FAIL_SHELL_PARSE",
+          "repair": "Used PowerShell-native Get-FileHash and native command syntax",
+          "changedFiles": false
+        },
+        {
+          "command": "Read-only rg command with a misspelled working-directory suffix",
+          "result": "FAIL_WORKDIR_INVALID",
+          "repair": "Reran with the exact repository working directory",
+          "changedFiles": false
+        },
+        {
+          "command": "rg -n with a PowerShell-style wildcard in the directory argument",
+          "result": "FAIL_PATH_GLOB_SYNTAX",
+          "repair": "Used rg -g to apply the file glob",
+          "changedFiles": false
+        }
+      ],
+      "originalFinalGateSeconds": 6.22,
+      "focusedTests": 20
+    },
+    "localRepair": {
+      "semanticRounds": 1,
+      "rootCauseGroups": 5,
+      "initialProbePassed": 56,
+      "initialProbeTotal": 65,
+      "initialFailures": [
+        {
+          "name": "non-iso-time-separator",
+          "expected": "FORMAT",
+          "passed": false,
+          "exit": 0,
+          "result": {
+            "profileVersion": "cvf.model-selection-manual-record@0.1.0",
+            "disposition": "VALID_RECORD_ONLY",
+            "executionAuthorized": false,
+            "errors": []
+          },
+          "stderr": ""
+        },
+        {
+          "name": "budget-owner-known-failure-hold",
+          "expected": "VALID_RECORD_ONLY",
+          "passed": false,
+          "exit": 1,
+          "result": {
+            "profileVersion": "cvf.model-selection-manual-record@0.1.0",
+            "disposition": "INVALID_RECORD",
+            "executionAuthorized": false,
+            "errors": [
+              {
+                "code": "COST_BOUND",
+                "pointer": "/admission/budgetDisposition",
+                "message": "budget HOLD requires a declared over-limit bound"
+              }
+            ]
+          },
+          "stderr": ""
+        },
+        {
+          "name": "budget-overrun-correctly-held",
+          "expected": "VALID_RECORD_ONLY",
+          "passed": false,
+          "exit": 1,
+          "result": {
+            "profileVersion": "cvf.model-selection-manual-record@0.1.0",
+            "disposition": "INVALID_RECORD",
+            "executionAuthorized": false,
+            "errors": [
+              {
+                "code": "COST_BOUND",
+                "pointer": "/cost/hardCaps/0/bound",
+                "message": "declared bound exceeds the hard limit"
+              }
+            ]
+          },
+          "stderr": ""
+        },
+        {
+          "name": "learning-pointer-after-malformed-sibling",
+          "expected": "DANGLING_REF at /learningLinks/1/laterDecisionId",
+          "passed": false,
+          "errors": [
+            {
+              "code": "TYPE",
+              "pointer": "/learningLinks/0",
+              "message": "expected an object"
+            },
+            {
+              "code": "DANGLING_REF",
+              "pointer": "/learningLinks/0/laterDecisionId",
+              "message": "laterDecisionId must equal the current decisionId"
+            }
+          ]
+        },
+        {
+          "name": "exact-malformed-requested",
+          "expected": "TYPE at /candidates/0/requested",
+          "passed": false,
+          "exception": "AttributeError"
+        },
+        {
+          "name": "exact-malformed-candidate-join",
+          "expected": "TYPE at /evidence/0/candidateId",
+          "passed": false,
+          "errors": [
+            {
+              "code": "SHAPE",
+              "pointer": "",
+              "message": "record could not be validated safely"
+            }
+          ]
+        },
+        {
+          "name": "unhashable-selection-evidence",
+          "expected": "TYPE at /selection/evidenceIds/0",
+          "passed": false,
+          "errors": [
+            {
+              "code": "SHAPE",
+              "pointer": "",
+              "message": "record could not be validated safely"
+            }
+          ]
+        },
+        {
+          "name": "unhashable-cap-unit",
+          "expected": "TYPE at /cost/hardCaps/0/unit",
+          "passed": false,
+          "errors": [
+            {
+              "code": "SHAPE",
+              "pointer": "",
+              "message": "record could not be validated safely"
+            }
+          ]
+        },
+        {
+          "name": "nested-role-pointer",
+          "expected": "IDENTITY_BASIS at /candidates/0/requested/role",
+          "passed": false,
+          "errors": [
+            {
+              "code": "IDENTITY_BASIS",
+              "pointer": "/candidates/0/requested~1role",
+              "message": "requested role must equal task role"
+            }
+          ]
+        }
+      ],
+      "focusedTests": 24,
+      "finalProbePassed": 65,
+      "finalProbeTotal": 65,
+      "packagingRepairRounds": 2,
+      "profileChanged": false,
+      "workerEvidenceChanged": false
+    },
+    "sourceVerification": [
+      {
+        "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_SELECTION_S2_R1_OFFLINE_MANUAL_RECORD_2026-10-11.md",
+        "sha256": "7c4a53d9f5cdc731b38997495fde2dd096237f6b5a38f4fc3cd5a60618dc9b4d",
+        "use": "active task contract, exact paths, profile requirements and acceptance ledger",
+        "actualSha256": "7c4a53d9f5cdc731b38997495fde2dd096237f6b5a38f4fc3cd5a60618dc9b4d",
+        "matches": true
+      },
+      {
+        "path": "docs/baselines/CVF_GC018_MODEL_SELECTION_S2_R1_OFFLINE_MANUAL_RECORD_2026-10-11.md",
+        "sha256": "8a2dd23f36e681146f03de905adeacc71de0e80a87569720247c8e575dca72bd",
+        "use": "bounded target, source scope and evidence floor",
+        "actualSha256": "8a2dd23f36e681146f03de905adeacc71de0e80a87569720247c8e575dca72bd",
+        "matches": true
+      },
+      {
+        "path": "docs/reference/CVF_MODEL_SELECTION_MANUAL_RECORD_PROFILE_2026-10-11.md",
+        "sha256": "ffa0bda042b6f7f16f30de412f3f3e11eff7b64b193273e108c672109cb4e5c6",
+        "use": "locked schema, API, CLI, enum, digest and cross-field contract",
+        "actualSha256": "ffa0bda042b6f7f16f30de412f3f3e11eff7b64b193273e108c672109cb4e5c6",
+        "matches": true
+      },
+      {
+        "path": "docs/reviews/CVF_MODEL_SELECTION_S4_R1_COMPLETION_2026-10-11.md",
+        "sha256": "3e00b130b594de6a6d97e037093f059b65452ed144f8e11fbe9529ad55708c16",
+        "use": "S4 source observation of the noncanonical learning enum",
+        "actualSha256": "3e00b130b594de6a6d97e037093f059b65452ed144f8e11fbe9529ad55708c16",
+        "matches": true
+      },
+      {
+        "path": "docs/reviews/evidence/model-selection-s4-r1-local-review-20261011.json",
+        "sha256": "4a24ee0a46dc43dcacbe43d156f8dcacde2c7953d4ab130cdcb02e4024129671",
+        "use": "Local source review and accepted S4 pins",
+        "actualSha256": "4a24ee0a46dc43dcacbe43d156f8dcacde2c7953d4ab130cdcb02e4024129671",
+        "matches": true
+      },
+      {
+        "path": "docs/reviews/CVF_MODEL_SELECTION_S3_R1_COMPLETION_2026-10-10.md",
+        "sha256": "b02b0077a97d7808a433a6ad2d6dedbb1a3ab50cf4362c4627d7888d3aa11a9a",
+        "use": "S3 source projection; mechanism usefulness remains PARTIAL",
+        "actualSha256": "b02b0077a97d7808a433a6ad2d6dedbb1a3ab50cf4362c4627d7888d3aa11a9a",
+        "matches": true
+      },
+      {
+        "path": "docs/roadmaps/CVF_ORCHESTRATOR_MODEL_SELECTION_SYSTEM_CHAIN_ROADMAP_2026-10-10.md",
+        "sha256": "9d40cbba5ff2a4ed0151911a448f22f2b255f7920bc4cf64ce6314fd09d28779",
+        "use": "demand-gated S2 boundary and no automatic S5",
+        "actualSha256": "9d40cbba5ff2a4ed0151911a448f22f2b255f7920bc4cf64ce6314fd09d28779",
+        "matches": true
+      },
+      {
+        "path": "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json",
+        "sha256": "82972d614766a3039507bcbcdb5e67091e03fd05a08ef1b39ebab3707eff00cb",
+        "use": "current mode, handoff and next allowed move",
+        "actualSha256": "82972d614766a3039507bcbcdb5e67091e03fd05a08ef1b39ebab3707eff00cb",
+        "matches": true
+      },
+      {
+        "path": "CVF_SESSION_MEMORY.md",
+        "sha256": "16c8c2854679ea62563209d66b758fa57d1665943aa5460ec70e2b97c8199184",
+        "use": "front door and startup instruction carrier",
+        "actualSha256": "16c8c2854679ea62563209d66b758fa57d1665943aa5460ec70e2b97c8199184",
+        "matches": true
+      }
+    ],
+    "additionalImmutablePins": [
+      {
+        "path": "docs/reviews/evidence/model-selection-s3-r1-local-review-20261011.json",
+        "sha256": "23acbe618d0fbab4e01ba6edff8dacc4b8888dae7e675dc24b7d29119a68f2ae"
+      },
+      {
+        "path": "docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json",
+        "sha256": "59c7651cdf60e1d923eb67bcba0395202acbe07c589c2cfbbf8bee6c905d12cb"
+      },
+      {
+        "path": "docs/reference/CVF_ORCHESTRATOR_MODEL_SELECTION_DOCTRINE_DESIGN_2026-10-10.md",
+        "sha256": "9eb0b9cb8020113f1db7dbd41923b4f06ac57d884d5eade7ee31156395504082"
+      },
+      {
+        "path": "docs/reference/CVF_ORCHESTRATOR_MODEL_SELECTION_CONTRACT_DESIGN_2026-10-10.md",
+        "sha256": "7e090f5249d7e61a939ca1a0dadc65e10555cc5b04f75a053c1c64e190611a09"
+      },
+      {
+        "path": "docs/guides/CVF_MODEL_SELECTION_MANUAL_AGENT_SEAT_WORKED_EXAMPLE_2026-10-11.md",
+        "sha256": "7e3ca5aa69608f693054c8a0071d303b9c7bea9c34dcda8ec038cdea1fd17d94"
+      }
+    ],
+    "actualLogPins": [
+      {
+        "path": ".cvf/runtime/model-selection-s2-r1-20261011/focused-tests.log",
+        "sha256": "4b81ae05d226faaaa1dd3732000e26a8d8b2dc63024b293f9ea16adc05c6a9a9"
+      },
+      {
+        "path": ".cvf/runtime/model-selection-s2-r1-20261011/example-cli.log",
+        "sha256": "abc9c5bfeb8866c1b2b1309793a2e2588117a9f3745b44e3f9a020f614602622"
+      },
+      {
+        "path": ".cvf/runtime/model-selection-s2-r1-20261011/worker-return-fast-gate-initial.log",
+        "sha256": "6a0e6640574e1ca56f5d68a8c08cbbf7fb11f1ac8b05b306856bdf32c7b85e3d"
+      },
+      {
+        "path": ".cvf/runtime/model-selection-s2-r1-20261011/worker-return-fast-gate-repair1.log",
+        "sha256": "cfaac717bb11abbcff531da1fd1aa8f19eded0ed0bc2ba4e19bddb0e6330774b"
+      },
+      {
+        "path": ".cvf/runtime/model-selection-s2-r1-20261011/worker-return-fast-gate-repair2.log",
+        "sha256": "5fcececcd91b1f1408678f6f6d6c8787dbf6233562bfee48c99419c873078c97"
+      },
+      {
+        "path": ".cvf/runtime/model-selection-s2-r1-20261011/worker-return-fast-gate-candidate.log",
+        "sha256": "e81f1c58cbabde8df0a30daa0ebae3c2bacd5f36c02ee5cd46800ae3f135b260"
+      },
+      {
+        "path": ".cvf/runtime/model-selection-s2-r1-20261011/worker-return-fast-gate-final.log",
+        "sha256": "9656239dd567f7b554cf78e50ff64278b798614b2c264fd991aa7a6ab42e72b1"
+      },
+      {
+        "path": ".cvf/runtime/model-selection-s2-r1-20261011/frozen-sha256.txt",
+        "sha256": "1b67ad52ced28bc748a2d21dc6b7c2f65fd33917bb72d5c3a327886a156307f2"
+      },
+      {
+        "path": ".cvf/runtime/model-selection-s2-r1-20261011/final-hash-verification.log",
+        "sha256": "98c2cc6d4696d9daf20eff346c87e29f55e8cb08410db71b966e6304ab65abd3"
+      },
+      {
+        "path": ".cvf/runtime/model-selection-s2-r1-20261011/final-time.log",
+        "sha256": "5788c450201b19f504d95a9be64d3505db16dabce6c926d45f14a1c79e205b8b"
+      },
+      {
+        "path": ".cvf/runtime/model-selection-s2-r1-20261011/final-status.log",
+        "sha256": "4c467a15c54bdc98f1dc32e4053cde5ba30c6a2afe5cc9ba118a6e3464630048"
+      },
+      {
+        "path": ".cvf/runtime/model-selection-s2-r1-20261011/local-focused-tests.log",
+        "sha256": "5d28a4b7ba83d24c3733d62ac275baff008fb0b0654b4818c9904103ee7e0235"
+      },
+      {
+        "path": ".cvf/runtime/model-selection-s2-r1-20261011/local-accepted-byte-fast-gate.log",
+        "sha256": "d0fcd3b5dd52069a80b028f322d7e1f63eb7cfdf5667dce82ad8d1c19c8d5bd5"
+      },
+      {
+        "path": ".cvf/runtime/model-selection-s2-r1-20261011/local-accepted-byte-fast-gate-final.log",
+        "sha256": "ba5d52100efcf33279dfa4a558cfaa62da8e4a9c37a64b5387445efe7a4ef693"
+      },
+      {
+        "path": ".cvf/runtime/model-selection-s2-r1-20261011/local-python-size.log",
+        "sha256": "00813eed392b0113726e734612d37c0068118ac31930932475f52f9bda9b81cd"
+      },
+      {
+        "path": ".cvf/runtime/model-selection-s2-r1-20261011/independent-probes-original.json",
+        "sha256": "19fc45154d65e4428bdab49248e6e124b35d90454beea8aef0a2b89651fae475"
+      },
+      {
+        "path": ".cvf/runtime/model-selection-s2-r1-20261011/independent-probes-original-oracle.py",
+        "sha256": "05a51589443a915853adb690b233e9a7d105dc2b1f0efae148d0b8b7bb217c57"
+      },
+      {
+        "path": ".cvf/runtime/model-selection-s2-r1-20261011/closure-material.log",
+        "sha256": "3183ffe425c9927f4abe039db752429b682a4c234b1b7564da6b4dc20f55a843"
+      },
+      {
+        "path": ".cvf/runtime/model-selection-s2-r1-20261011/closure-material-diagnostic.log",
+        "sha256": "6cdcc38a1b1869e9c0653e71838fa705e6d381b21b1477662bcaa91d1b632096"
+      }
+    ],
+    "probeOracleSha256": "05a51589443a915853adb690b233e9a7d105dc2b1f0efae148d0b8b7bb217c57",
+    "learningConsumption": {
+      "source": "docs/reviews/CVF_MODEL_SELECTION_S4_R1_COMPLETION_2026-10-11.md",
+      "sourceSha256": "3e00b130b594de6a6d97e037093f059b65452ed144f8e11fbe9529ad55708c16",
+      "presentSourceDisposition": "ACTIVE",
+      "checkBasis": "targeted source/roadmap verification at review; no exhaustive absence claim",
+      "applicability": "PARTIAL",
+      "evidenceUse": "ACTION_VERIFIED",
+      "action": "implement optional strict validator and usable source-pinned guide/example",
+      "verification": "actual CLI rejects CITED_PENDING_LOCAL_REVIEW at /learningLinks/0/evidenceUse; valid example returns VALID_RECORD_ONLY; root independently reviews action/result",
+      "limitations": "one bounded later application, with Local repairs; no causal error-elimination or model-quality inference"
+    },
+    "usage": {
+      "directApiCalls": 0,
+      "nativeImplementingWorkerInvocations": 1,
+      "nativeProfileAuditInvocations": 1,
+      "nativeProfileAuditTurns": 4,
+      "underlyingProviderRequests": null,
+      "money": null,
+      "tokens": null,
+      "quota": null,
+      "observedRuntimeIdentity": null,
+      "humanTime": null,
+      "reason": "NOT_EXPOSED_OR_NOT_METERED; root preparation/review/closure separate from worker 1790s"
+    },
+    "reviewTime": {
+      "firstProbeEndObservedUtc": "2026-10-11T04:07:47Z",
+      "semanticVerificationEndUtc": "2026-10-11T04:09:27Z",
+      "recordAuthoredUtc": "2026-10-11T04:11:07.289161+00:00",
+      "exactSemanticStartUtc": null,
+      "exactTotalClosureElapsed": null,
+      "reason": "complete source reads began during worker lane; no exact full interval captured; detached final verification follows"
+    },
+    "telemetry": "Review-Cost Telemetry: REQUIRED\nreviewRoundCount: 1\nworkerRepairTurnCount: 2\nnewRootCauseCountThisRound: 5\ndependentFindingCountThisRound: 9\nproviderCallCount: 0\nmaterialCommitCount: 1\ncontinuityCommitCount: 1\nelapsedReviewMinutes: NOT_AVAILABLE_WITH_REASON: complete root semantic/closure interval not metered; actual verification clocks retained in Local JSON\ntokenOrQuotaUsage: NOT_AVAILABLE_WITH_REASON: native worker/reviewer billing and usage unexposed\nvalueDelta: usable strict offline manual-record check and independently verified enum-gap action/result\nstopDisposition: COMPLETE_REVIEW\npreRepairAuditDisposition: COMPLETE_BEFORE_FIRST_REPAIR\ncommitPlanDisposition: DEFAULT_ONE_MATERIAL_ONE_CONTINUITY\nlatencyDisposition: NOT_MEASURED_WITH_REASON: full root review/closure interval unavailable at authoring\navoidableDelayClass: GATE_DISCOVERY_LOOP\n\nDirect API calls zero; native implementing worker invocation one, profile-audit invocation one/four turns; underlying provider requests UNKNOWN. Five worker gate runs/two packet repair turns and one consolidated Local semantic repair are retained. One Local active-resolution hash repair is closure packaging, not a second semantic repair. Material/continuity counts describe the mandatory planned closure pair; actual SHAs and final range receipts follow in continuity. Root profile design/admission history is separately pinned; no attribution to Luna. Money, tokens, quota, worker processing and human time stay null, not zero; worker wall interval 1790 seconds includes its final gate."
+  },
+  "orchestratorAdmission": {
+    "scope": "Local orchestrator authoring/admission only, before implementing worker; no attribution to Luna",
+    "profileHash": "ffa0bda042b6f7f16f30de412f3f3e11eff7b64b193273e108c672109cb4e5c6",
+    "profileAuditActor": "/root/s2_value_audit",
+    "auditInvocationCount": 1,
+    "auditTurnCount": 4,
+    "initialDesignBlockers": [
+      "SELECT allowed with known hard admission HOLD",
+      "requested model null",
+      "quality supported/provisional without selected positive evidence"
+    ],
+    "profileDelta": "Corrected before build; auditor CONCUR_BOUNDED_WITH_LIMITS on locked hash",
+    "packetFailures": [
+      "author fast: legacy N/A and negated corpus phrase; inherited stale prose also corrected",
+      "material pre-implementation: six owner/literal bindings; helper dropped detail, source diagnostic retained",
+      "material pre-implementation: remaining case-sensitive ADIF literal; source diagnostic retained"
+    ],
+    "releaseMaterial": "e1e6d20453e5bdcbb7cc9f05ff16c27a81aa0d4b",
+    "releaseContinuity": "35e290ab333ff1185a5f45fd370ccdd21deee51c",
+    "continuityRepair": "helper omits Batch ID in marker; own unpushed continuity amended with full hooks before dispatch",
+    "dispatchLowerBoundUtc": "2026-10-11T03:34:30Z",
+    "workerFirstCapturedUtc": "2026-10-11T03:34:47Z",
+    "workerFirstCapturedBasis": "worker message; reconcile frozen return on receipt",
+    "dispatchGate": "COMPLIANT bound pre-dispatch 13.44s",
+    "logs": [
+      {
+        "path": ".cvf/runtime/model-selection-s2-r1-20261011/packet-author-fast.log",
+        "sha256": "0f28b7229907a463fe02b04302baf91f28256f8f0c9bba82f954aa8ba2861f96"
+      },
+      {
+        "path": ".cvf/runtime/model-selection-s2-r1-20261011/packet-author-fast-final.log",
+        "sha256": "c063c3d8f15f347adca315b0c17f49083759825bb263944e798d2d6a5263ccab"
+      },
+      {
+        "path": ".cvf/runtime/model-selection-s2-r1-20261011/admission-material.log",
+        "sha256": "bf75135e792ec9fcbc259f19fec5ec058a9c32f55336fac4c80c139c84306da0"
+      },
+      {
+        "path": ".cvf/runtime/model-selection-s2-r1-20261011/admission-diagnostic.log",
+        "sha256": "917802b1933e84c67e7c9590f90743b0953d08ef098635a1dc157eb57241587a"
+      },
+      {
+        "path": ".cvf/runtime/model-selection-s2-r1-20261011/admission-material-final.log",
+        "sha256": "bf75135e792ec9fcbc259f19fec5ec058a9c32f55336fac4c80c139c84306da0"
+      },
+      {
+        "path": ".cvf/runtime/model-selection-s2-r1-20261011/admission-diagnostic-r2.log",
+        "sha256": "6595e2628d4837890e951c818e8b0532dbcbdae04708ebf457461c6a6dcc0958"
+      },
+      {
+        "path": ".cvf/runtime/model-selection-s2-r1-20261011/admission-material-r3.log",
+        "sha256": "3866077e614ac29fe2343e60b758bac33e300b728c8ee435d466a0dab2a1cad1"
+      },
+      {
+        "path": ".cvf/runtime/model-selection-s2-r1-20261011/admission-continuity.log",
+        "sha256": "b5c31cd4955ee58e66bb9f2f4772273bb76adf09e65d76ba072658c04a3acae0"
+      },
+      {
+        "path": ".cvf/runtime/model-selection-s2-r1-20261011/admission-marker-amend.log",
+        "sha256": "ed5016693d0fcdab20214d00c5b3ab98638f0b262305f5bf34645ae4f730cda5"
+      },
+      {
+        "path": ".cvf/runtime/model-selection-s2-r1-20261011/bound-pre-dispatch.log",
+        "sha256": "761fd39291e39267be480f5e40775fb10103c5d5413d5542bf2ed874fc3a8d9a"
+      }
+    ],
+    "unknown": {
+      "money": null,
+      "tokens": null,
+      "quota": null,
+      "rootPrepElapsed": null,
+      "auditRuntimeObservedIdentity": null,
+      "underlyingNativeProviderRequestCount": null
+    },
+    "claimBoundary": "Zero direct APIs is separate from unknown native underlying provider use; no model ranking or comparative cost.",
+    "reviewPreparationCommandMistake": {
+      "phase": "after worker dispatch; ignored runtime helper preparation only",
+      "actor": "Local root",
+      "error": "Nested triple-quote SyntaxError in attempted closure-helper writer; failed before writing any file",
+      "correction": "Used structured apply_patch for ignored helper and verified compilation",
+      "scope": "non-gate command entry; not worker error, semantic repair or tracked mutation"
+    }
+  },
+  "claimBoundary": "Offline declared consistency only; no live governance, authenticated source/identity/bill, model comparison or full R3/runtime admission."
+}
