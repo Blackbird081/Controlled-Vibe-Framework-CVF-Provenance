@@ -1,0 +1,779 @@
+{
+  "schemaVersion": "cvf.ncrProcessingLifecycleLocalReview@1.0.0",
+  "batchId": "CVF-NCR-PROCESSING-LIFECYCLE-20261012",
+  "executionBaseHead": "4ea59861d9bfe2c9806f5071cf535e320dcb5ae4",
+  "closureBaseHead": "4ea59861d9bfe2c9806f5071cf535e320dcb5ae4",
+  "decisionOwner": "LOCAL_INTERNAL_AGENT_REVIEWER_CLOSER",
+  "status": "CLOSED_PASS_BOUNDED",
+  "technicalOutput": "ACCEPTED_BOUNDED_AFTER_LOCAL_DEPENDENT_REPAIR",
+  "procedureDisposition": "FAIL",
+  "procedureReason": "Mandatory existing-test/Home/setup scopes read after first product edit; later reading does not establish pre-edit compliance. Optional R1/R4 omissions and wizard tests outside packet are not violations.",
+  "source": {
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_PROCESSING_LIFECYCLE_2026-10-12.md",
+    "baseline": "docs/baselines/CVF_GC018_NCR_PROCESSING_LIFECYCLE_2026-10-12.md",
+    "workerReturn": "docs/reviews/CVF_NCR_PROCESSING_LIFECYCLE_WORKER_RETURN_2026-10-12.md",
+    "workerEvidence": "docs/reviews/evidence/ncr-processing-lifecycle-worker-20261012.json"
+  },
+  "originalWorkerFiles": [
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ProcessingScreen.tsx",
+      "rawSha256": "b5de3bd883e0a328e232982a6e3b695e121f2d545e4f032684b2ca64f7000c39",
+      "bytes": 46197,
+      "snapshot": "'use client';\n\nimport { useEffect, useState, useCallback, useRef } from 'react';\nimport { useSettings } from './Settings';\nimport { useLanguage } from '@/lib/i18n';\nimport { logEnforcementDecision } from '@/lib/enforcement-log';\nimport { trackEvent } from '@/lib/analytics';\nimport { getSafetyStatus } from '@/lib/safety-status';\nimport type { SafetyRiskLevel } from '@/lib/safety-status';\nimport type { ExecutionRequest, GovernanceEvidenceReceipt } from '@/lib/ai';\nimport type { ExecutionDiagnostic } from '@/lib/execution-diagnostics';\n\nexport interface ProcessingExecutionOverrides {\n    mode?: ExecutionRequest['mode'];\n    cvfPhase?: ExecutionRequest['cvfPhase'];\n    cvfRiskLevel?: ExecutionRequest['cvfRiskLevel'];\n    skillPreflightDeclaration?: ExecutionRequest['skillPreflightDeclaration'];\n    skillPreflightRecordRef?: ExecutionRequest['skillPreflightRecordRef'];\n    skillIds?: ExecutionRequest['skillIds'];\n    fileScope?: ExecutionRequest['fileScope'];\n    aiCommit?: ExecutionRequest['aiCommit'];\n}\n\ninterface ProcessingScreenProps {\n    templateName: string;\n    templateId?: string;\n    inputs?: Record<string, string>;\n    intent?: string;\n    executionOverrides?: ProcessingExecutionOverrides;\n    onComplete: (output: string, evidenceReceipt?: GovernanceEvidenceReceipt) => void;\n    onCancel: () => void;\n}\n\nexport interface GovernanceEvidenceState {\n    provider?: string;\n    model?: string;\n    decision?: string;\n    riskLevel?: string;\n    providerDecision?: string;\n    policySnapshotId?: string;\n    envelopeId?: string;\n    receiptId?: string;\n    evidenceMode?: string;\n    knowledgeSource?: string;\n    knowledgeInjected?: boolean;\n    knowledgeCollectionId?: string | null;\n    knowledgeChunkCount?: number;\n    validationHint?: string;\n    approvalId?: string;\n}\n\ntype FalsePositiveReportState = 'idle' | 'submitting' | 'submitted' | 'error';\n\nfunction mapSettingsProviderToExecutionProvider(provider?: string): ExecutionRequest['provider'] | undefined {\n    if (!provider) {\n        return undefined;\n    }\n\n    if (provider === 'anthropic') {\n        return 'claude';\n    }\n\n    return provider as ExecutionRequest['provider'];\n}\n\nfunction resolveTemplateGuardAction(overrides?: ProcessingExecutionOverrides): string {\n    const phase = overrides?.cvfPhase?.trim().toUpperCase();\n    const hasBuildPreflight =\n        Boolean(overrides?.skillPreflightDeclaration) ||\n        Boolean(overrides?.skillPreflightRecordRef) ||\n        Boolean(overrides?.skillIds?.length) ||\n        Boolean(overrides?.fileScope?.length);\n\n    if (phase === 'BUILD' || phase === 'PHASE C' || phase === 'C' || hasBuildPreflight) {\n        return 'build template execution request';\n    }\n\n    return 'analyze template execution request';\n}\n\nfunction resolveApprovalSafeHint(reasons: unknown, isVi: boolean): string | null {\n    const reasonText = Array.isArray(reasons) ? reasons.join(' ') : String(reasons ?? '');\n    const normalized = reasonText.toLowerCase();\n\n    const hints = [\n        {\n            pattern: /skill preflight|preflight/i,\n            vi: 'B\u1ea1n c\u00f3 th\u1ec3 b\u1ed5 sung khai b\u00e1o ph\u1ea1m vi/k\u1ef9 n\u0103ng tr\u01b0\u1edbc khi g\u1eedi l\u1ea1i, ho\u1eb7c gi\u1eef y\u00eau c\u1ea7u n\u00e0y trong h\u00e0ng ch\u1edd review.',\n            en: 'You can add the missing scope or skill declaration before retrying, or keep this request in the review queue.',\n        },\n        {\n            pattern: /budget|quota|cost/i,\n            vi: 'B\u1ea1n c\u00f3 th\u1ec3 gi\u1ea3m ph\u1ea1m vi x\u1eed l\u00fd ho\u1eb7c ch\u1edd admin xem x\u00e9t gi\u1edbi h\u1ea1n tr\u01b0\u1edbc khi ch\u1ea1y l\u1ea1i.',\n            en: 'You can narrow the task scope or wait for an admin to review the limit before retrying.',\n        },\n        {\n            pattern: /r3|r4|approval|human approval|executive/i,\n            vi: 'B\u1ea1n c\u00f3 th\u1ec3 g\u1eedi review nh\u01b0 hi\u1ec7n t\u1ea1i, ho\u1eb7c t\u00e1ch y\u00eau c\u1ea7u th\u00e0nh b\u01b0\u1edbc l\u1eadp k\u1ebf ho\u1ea1ch r\u1ee7i ro th\u1ea5p h\u01a1n tr\u01b0\u1edbc.',\n            en: 'You can keep this in review, or split the task into a lower-risk planning step first.',\n        },\n    ];\n\n    const match = hints.find(hint => hint.pattern.test(normalized));\n    return match ? (isVi ? match.vi : match.en) : null;\n}\n\n// One attempt per admitted logical task; Cancel, unmount or task replacement invalidates all of its\n// async work. Client abort is best effort: correctness never depends on the transport honouring it.\ninterface Attempt {\n    active: boolean;\n    delivered: boolean;\n    cancelRequested: boolean;\n    controller: AbortController;\n    timeouts: Set<ReturnType<typeof setTimeout>>;\n    intervals: Set<ReturnType<typeof setInterval>>;\n}\n\ntype CompleteArgs = [output: string, evidenceReceipt?: GovernanceEvidenceReceipt];\n\nfunction createAttempt(): Attempt {\n    return {\n        active: true,\n        delivered: false,\n        cancelRequested: false,\n        controller: new AbortController(),\n        timeouts: new Set(),\n        intervals: new Set(),\n    };\n}\n\nfunction stopAttempt(attempt: Attempt) {\n    attempt.active = false;\n    attempt.controller.abort();\n    attempt.timeouts.forEach(id => clearTimeout(id));\n    attempt.intervals.forEach(id => clearInterval(id));\n    attempt.timeouts.clear();\n    attempt.intervals.clear();\n}\n\nfunction scheduleInAttempt(attempt: Attempt, run: () => void, delay: number) {\n    const id = setTimeout(() => {\n        attempt.timeouts.delete(id);\n        if (attempt.active) run();\n    }, delay);\n    attempt.timeouts.add(id);\n    return id;\n}\n\n// At-most-once delivery per active attempt for both manual and automatic completion.\nfunction deliverOnce(attempt: Attempt, onComplete: (...args: CompleteArgs) => void, args: CompleteArgs) {\n    if (!attempt.active || attempt.delivered) return;\n    attempt.delivered = true;\n    onComplete(...args);\n}\n\n// Content key of the request-determining values, so object identity never restarts a task.\nfunction stableKey(value: unknown): string {\n    if (Array.isArray(value)) return `[${value.map(stableKey).join(',')}]`;\n    if (value && typeof value === 'object') {\n        const record = value as Record<string, unknown>;\n        return `{${Object.keys(record).sort().map(key => `${JSON.stringify(key)}:${stableKey(record[key])}`).join(',')}}`;\n    }\n    return JSON.stringify(value) ?? 'undefined';\n}\n\nexport function ProcessingScreen({\n    templateName,\n    templateId,\n    inputs,\n    intent,\n    executionOverrides,\n    onComplete,\n    onCancel\n}: ProcessingScreenProps) {\n    const { settings, isLoaded } = useSettings();\n    const { language } = useLanguage();\n    const isVi = language === 'vi';\n    const [progress, setProgress] = useState(0);\n    const [status, setStatus] = useState(isVi ? '\u0110ang kh\u1edfi t\u1ea1o...' : 'Initializing...');\n    const [error, setError] = useState<string | null>(null);\n    const [guidedResponse, setGuidedResponse] = useState<string | null>(null);\n    const [isRealExecution] = useState(() => Boolean(inputs && intent && Object.keys(inputs).length > 0));\n    // W92-T1: Approval request state\n    const [approvalRequestId, setApprovalRequestId] = useState<string | null>(null);\n    const [approvalSubmitting, setApprovalSubmitting] = useState(false);\n    const [enforcementStatus, setEnforcementStatus] = useState<string | null>(null);\n    const [approvalSafeHint, setApprovalSafeHint] = useState<string | null>(null);\n    const [falsePositiveReportState, setFalsePositiveReportState] = useState<FalsePositiveReportState>('idle');\n    // W94-T1: Risk badge state\n    const [executionRiskLevel, setExecutionRiskLevel] = useState<SafetyRiskLevel | null>(null);\n    // W114-T1 CP5: user-visible governance evidence from the live execute route\n    const [governanceEvidence, setGovernanceEvidence] = useState<GovernanceEvidenceState | null>(null);\n    const [executionDiagnostic, setExecutionDiagnostic] = useState<ExecutionDiagnostic | null>(null);\n    // W96-T1: Completion state \u2014 set when success+riskLevel; suppresses 300ms path\n    const [completion, setCompletion] = useState<{ attempt: Attempt; output: string; receipt?: GovernanceEvidenceReceipt } | null>(null);\n    const executionProvider = mapSettingsProviderToExecutionProvider(settings.preferences?.defaultProvider);\n    const selectedModel = settings.preferences?.defaultProvider\n        ? settings.providers?.[settings.preferences.defaultProvider]?.selectedModel\n        : undefined;\n\n    // Callbacks and presentation are read at use time so their identity never restarts a task.\n    const currentView = {\n        onComplete,\n        onCancel,\n        isVi,\n        request: {\n            templateId,\n            templateName,\n            inputs,\n            intent,\n            executionOverrides,\n            mode: settings.preferences.defaultExportMode || 'governance',\n            executionProvider,\n            selectedModel,\n        },\n    };\n    const latest = useRef(currentView);\n    useEffect(() => {\n        latest.current = currentView;\n    });\n    const attemptRef = useRef<Attempt | null>(null);\n    const taskKey = stableKey(currentView.request);\n\n    // Real API execution for one attempt; nothing from an abandoned attempt reaches the UI.\n    const executeReal = useCallback(async (attempt: Attempt) => {\n        const { request, isVi } = latest.current;\n        const { templateId, templateName, inputs, intent, executionOverrides, mode, executionProvider, selectedModel } = request;\n        if (!inputs || !intent) return false;\n\n        try {\n            setStatus(isVi ? '\u0110ang k\u1ebft n\u1ed1i AI...' : 'Connecting to AI provider...');\n            setProgress(10);\n            const aiCommit = executionOverrides?.aiCommit || {\n                commitId: `web-ui-${templateId || templateName}-${Date.now()}`,\n                agentId: 'cvf-web-ui',\n                timestamp: Date.now(),\n                description: `UI execution for ${templateName}`,\n            };\n            const action = resolveTemplateGuardAction(executionOverrides);\n\n            const response = await fetch('/api/execute', {\n                method: 'POST',\n                headers: { 'Content-Type': 'application/json' },\n                signal: attempt.controller.signal,\n                body: JSON.stringify({\n                    templateId: templateId || templateName,\n                    templateName,\n                    inputs,\n                    intent,\n                    mode,\n                    action,\n                    ...(executionProvider ? { provider: executionProvider } : {}),\n                    ...(selectedModel ? { model: selectedModel } : {}),\n                    ...executionOverrides,\n                    aiCommit,\n                }),\n            });\n\n            if (!attempt.active) return false;\n            setProgress(50);\n            setStatus(isVi ? '\u0110ang x\u1eed l\u00fd ph\u1ea3n h\u1ed3i...' : 'Processing response...');\n\n            const data = await response.json();\n            if (!attempt.active) return false;\n            const enforcement = data.enforcement;\n            const receipt = data.governanceEvidenceReceipt as GovernanceEvidenceReceipt | undefined;\n            const diagnostic = data.diagnostic as ExecutionDiagnostic | undefined;\n            setExecutionDiagnostic(diagnostic ?? null);\n            setFalsePositiveReportState('idle');\n            setGovernanceEvidence({\n                provider: receipt?.provider || data.provider,\n                model: receipt?.model || data.model,\n                decision: receipt?.decision || enforcement?.status,\n                riskLevel: receipt?.riskLevel || enforcement?.riskGate?.riskLevel,\n                providerDecision: receipt?.routingDecision || data.providerRouting?.decision,\n                policySnapshotId: receipt?.policySnapshotId || data.policySnapshotId || data.governanceEnvelope?.policySnapshotId,\n                envelopeId: receipt?.envelopeId || data.governanceEnvelope?.envelopeId,\n                receiptId: receipt?.receiptId,\n                evidenceMode: receipt?.evidenceMode,\n                knowledgeSource: receipt?.knowledgeSource || data.knowledgeInjection?.source,\n                knowledgeInjected: receipt?.knowledgeInjected ?? data.knowledgeInjection?.injected,\n                knowledgeCollectionId: receipt?.knowledgeCollectionId ?? data.knowledgeInjection?.collectionId,\n                knowledgeChunkCount: receipt?.knowledgeChunkCount ?? data.knowledgeInjection?.chunkCount,\n                validationHint: receipt?.validationHint || data.outputValidation?.qualityHint,\n                approvalId: receipt?.approvalId || data.approvalId,\n            });\n            // W94-T1: Extract risk level for badge (R4 \u2192 R3 cap for safety-status.ts compat)\n            const rawRisk = enforcement?.riskGate?.riskLevel as string | undefined;\n            const badgeLevel: SafetyRiskLevel | null =\n                rawRisk === 'R0' || rawRisk === 'R1' || rawRisk === 'R2' ? rawRisk :\n                rawRisk === 'R3' || rawRisk === 'R4' ? 'R3' : null;\n            if (badgeLevel) setExecutionRiskLevel(badgeLevel);\n            if (enforcement) {\n                logEnforcementDecision({\n                    source: 'api_execute',\n                    mode,\n                    enforcement,\n                    context: {\n                        templateId: templateId || templateName,\n                        templateName,\n                        provider: data.provider,\n                        model: data.model,\n                    },\n                });\n            }\n\n            setProgress(90);\n            setStatus(isVi ? '\u0110ang ho\u00e0n t\u1ea5t...' : 'Finalizing...');\n\n            if (data.success && data.output) {\n                setProgress(100);\n                if (badgeLevel) {\n                    // W96-T1: persist badge \u2014 completion-banner + useEffect auto-advance\n                    setCompletion({ attempt, output: data.output, receipt });\n                } else {\n                    scheduleInAttempt(attempt, () => deliverOnce(attempt, latest.current.onComplete, [data.output, receipt]), 300);\n                }\n                return true;\n            }\n\n            if (enforcement?.status === 'CLARIFY') {\n                const missing = enforcement.specGate?.missing\n                    ?.map((field: { label?: string }) => field.label || 'field')\n                    .join(', ');\n                setError(missing\n                    ? (isVi ? `Thi\u1ebfu th\u00f4ng tin b\u1eaft bu\u1ed9c: ${missing}` : `Missing required input: ${missing}`)\n                    : (isVi ? 'C\u1ea7n th\u00eam th\u00f4ng tin tr\u01b0\u1edbc khi th\u1ef1c thi.' : 'Spec needs additional info before execution.'));\n                return true;\n            }\n\n            if (enforcement?.status === 'BLOCK') {\n                setError(data.error || (isVi ? 'B\u1ecb ch\u1eb7n b\u1edfi CVF.' : 'Blocked by CVF enforcement.'));\n                if (data.guidedResponse) setGuidedResponse(data.guidedResponse);\n                return true;\n            }\n\n            if (enforcement?.status === 'NEEDS_APPROVAL') {\n                setError(data.error || (isVi ? 'C\u1ea7n ph\u00ea duy\u1ec7t tr\u01b0\u1edbc khi th\u1ef1c thi.' : 'Approval required before execution.'));\n                if (data.guidedResponse) setGuidedResponse(data.guidedResponse);\n                setEnforcementStatus('NEEDS_APPROVAL');\n                setApprovalSafeHint(resolveApprovalSafeHint(enforcement.reasons, isVi));\n                if (data.approvalId) setApprovalRequestId(data.approvalId);\n                return true;\n            }\n\n            // CP3: guard BLOCK must not trigger mock fallback \u2014 guard decision is a classified non-counted outcome\n            if (data.guardResult?.finalDecision === 'BLOCK') {\n                setError(data.error || (isVi ? 'B\u1ecb ch\u1eb7n b\u1edfi h\u1ec7 th\u1ed1ng b\u1ea3o v\u1ec7.' : 'Blocked by guard pipeline.'));\n                return true;\n            }\n\n            // If real execution fails, render the classified failure truthfully.\n            if (diagnostic) {\n                const nextAction = diagnostic.userAction.replaceAll('_', ' ');\n                setError(isVi\n                    ? `${diagnostic.safeMessage} B\u01b0\u1edbc ti\u1ebfp theo: ${nextAction}.`\n                    : `${diagnostic.safeMessage} Next action: ${nextAction}.`);\n                trackEvent('task_recovery_prompted', {\n                    method: 'execution_diagnostic',\n                    class: diagnostic.class,\n                    userAction: diagnostic.userAction,\n                    receiptId: diagnostic.receiptId ?? receipt?.receiptId,\n                    templateId,\n                });\n                return true;\n            }\n\n            setError(data.error || (isVi\n                ? 'Th\u1ef1c thi API th\u1ea5t b\u1ea1i. Kh\u00f4ng t\u1ea1o k\u1ebft qu\u1ea3 m\u1eabu thay th\u1ebf.'\n                : 'API execution failed. No mock output was generated.'));\n            return true;\n        } catch (err) {\n            if (!attempt.active) return false;\n            setExecutionDiagnostic(null);\n            const message = err instanceof Error ? err.message : 'Network error';\n            setError(isVi\n                ? `${message}. Kh\u00f4ng t\u1ea1o k\u1ebft qu\u1ea3 m\u1eabu thay th\u1ebf.`\n                : `${message}. No mock output was generated.`);\n            return true;\n        }\n    }, []);\n\n    const canReportFalsePositive =\n        Boolean(governanceEvidence?.receiptId) &&\n        (governanceEvidence?.decision === 'BLOCK' || governanceEvidence?.decision === 'CLARIFY');\n\n    useEffect(() => {\n        const decision = governanceEvidence?.decision;\n        if (!governanceEvidence?.receiptId || !decision) return;\n        if (decision !== 'BLOCK' && decision !== 'CLARIFY' && decision !== 'NEEDS_APPROVAL') return;\n        trackEvent('task_recovery_prompted', {\n            receiptId: governanceEvidence.receiptId,\n            decision,\n            riskLevel: governanceEvidence.riskLevel,\n            templateId,\n        });\n    }, [governanceEvidence?.decision, governanceEvidence?.receiptId, governanceEvidence?.riskLevel, templateId]);\n\n    const reportFalsePositive = useCallback(async () => {\n        if (!canReportFalsePositive || !governanceEvidence?.receiptId || !governanceEvidence.decision) return;\n\n        setFalsePositiveReportState('submitting');\n        try {\n            const response = await fetch('/api/governance/false-positive-report', {\n                method: 'POST',\n                headers: { 'Content-Type': 'application/json' },\n                body: JSON.stringify({\n                    receiptId: governanceEvidence.receiptId,\n                    envelopeId: governanceEvidence.envelopeId,\n                    decision: governanceEvidence.decision,\n                    riskLevel: governanceEvidence.riskLevel,\n                    reason: error ?? undefined,\n                    templateId: templateId || templateName,\n                    routeId: '/api/execute',\n                }),\n            });\n            const data = await response.json().catch(() => ({}));\n            if (!response.ok || !data.success) {\n                throw new Error(typeof data.error === 'string' ? data.error : 'Unable to record report');\n            }\n            setFalsePositiveReportState('submitted');\n            trackEvent('task_recovery_started', {\n                method: 'false_positive_report',\n                receiptId: governanceEvidence.receiptId,\n                decision: governanceEvidence.decision,\n                riskLevel: governanceEvidence.riskLevel,\n                templateId,\n            });\n        } catch {\n            setFalsePositiveReportState('error');\n        }\n    }, [canReportFalsePositive, error, governanceEvidence, templateId, templateName]);\n\n    // W92-T1: Submit approval request\n    const submitApprovalRequest = useCallback(async () => {\n        if (!templateId || !intent) return;\n        setApprovalSubmitting(true);\n        try {\n            const response = await fetch('/api/approvals', {\n                method: 'POST',\n                headers: { 'Content-Type': 'application/json' },\n                body: JSON.stringify({\n                    templateId: templateId || templateName,\n                    templateName,\n                    inputs,\n                    intent,\n                    ...(executionOverrides?.cvfPhase ? { cvfPhase: executionOverrides.cvfPhase } : {}),\n                    ...(executionOverrides?.cvfRiskLevel ? { cvfRiskLevel: executionOverrides.cvfRiskLevel } : {}),\n                    ...(executionProvider ? { provider: executionProvider } : {}),\n                    ...(selectedModel ? { model: selectedModel } : {}),\n                    reason: error || '',\n                }),\n            });\n            const data = await response.json();\n            if (data.success && data.id) {\n                setApprovalRequestId(data.id);\n                trackEvent('task_recovery_started', {\n                    method: 'approval_request',\n                    approvalId: data.id,\n                    decision: 'NEEDS_APPROVAL',\n                    templateId,\n                });\n            }\n        } finally {\n            setApprovalSubmitting(false);\n        }\n    }, [templateId, templateName, inputs, intent, error, executionOverrides?.cvfPhase, executionOverrides?.cvfRiskLevel, executionProvider, selectedModel]);\n\n    const runMockExecution = useCallback((attempt: Attempt) => {\n        const { isVi, request } = latest.current;\n        const statuses = isVi\n            ? [\n                '\u0110ang kh\u1edfi t\u1ea1o...',\n                '\u0110ang ph\u00e2n t\u00edch \u00fd \u0111\u1ecbnh...',\n                '\u0110ang t\u1ea1o ph\u1ea3n h\u1ed3i...',\n                '\u0110ang ki\u1ec3m tra ch\u1ea5t l\u01b0\u1ee3ng...',\n                '\u0110ang ho\u00e0n t\u1ea5t...',\n            ]\n            : [\n                'Initializing...',\n                'Parsing intent...',\n                'Generating response...',\n                'Applying quality checks...',\n                'Finalizing output...',\n            ];\n\n        // Progress is tracked locally so no side effect runs inside a state updater.\n        setStatus(statuses[0]);\n        let value = 0;\n        const interval = setInterval(() => {\n            value += Math.random() * 15;\n            setProgress(Math.min(value, 100));\n            setStatus(statuses[Math.min(Math.floor(value / 25), statuses.length - 1)]);\n\n            if (value >= 100) {\n                clearInterval(interval);\n                attempt.intervals.delete(interval);\n                scheduleInAttempt(attempt, () => deliverOnce(attempt, latest.current.onComplete, [generateMockOutput(request.templateName)]), 500);\n            }\n        }, 300);\n        attempt.intervals.add(interval);\n    }, []);\n\n    // W96-T1: auto-advance after 2000ms when completion state is set\n    useEffect(() => {\n        if (!completion) return;\n        const timer = scheduleInAttempt(completion.attempt, () => deliverOnce(completion.attempt, latest.current.onComplete, [completion.output, completion.receipt]), 2000);\n        return () => clearTimeout(timer);\n    }, [completion]);\n\n    // The attempt restarts only when the request content (taskKey) or settings readiness changes.\n    useEffect(() => {\n        if (!isLoaded) {\n            return;\n        }\n\n        const attempt = createAttempt();\n        attemptRef.current = attempt;\n        scheduleInAttempt(attempt, () => {\n            // A replaced attempt must not leave its results visible as the current attempt's UI.\n            const { request } = latest.current;\n            setProgress(0);\n            setError(null);\n            setGuidedResponse(null);\n            setApprovalRequestId(null);\n            setEnforcementStatus(null);\n            setApprovalSafeHint(null);\n            setFalsePositiveReportState('idle');\n            setExecutionRiskLevel(null);\n            setGovernanceEvidence(null);\n            setExecutionDiagnostic(null);\n            setCompletion(null);\n\n            // Try real execution first if we have the required data\n            if (request.inputs && request.intent && Object.keys(request.inputs).length > 0) {\n                void executeReal(attempt);\n            } else {\n                // No inputs provided, use mock\n                runMockExecution(attempt);\n            }\n        }, 0);\n\n        return () => {\n            stopAttempt(attempt);\n            if (attemptRef.current === attempt) attemptRef.current = null;\n        };\n    }, [taskKey, isLoaded, executeReal, runMockExecution]);\n\n    // Cancel invalidates the attempt, then forwards onCancel once per attempt.\n    const handleCancel = useCallback(() => {\n        const attempt = attemptRef.current;\n        if (attempt) {\n            if (attempt.cancelRequested) return;\n            attempt.cancelRequested = true;\n            stopAttempt(attempt);\n        }\n        latest.current.onCancel();\n    }, []);\n\n    return (\n        <div className=\"min-h-[60vh] flex flex-col items-center justify-center\">\n            <div className=\"text-center\">\n                {/* Spinning icon */}\n                <div className=\"w-20 h-20 mx-auto mb-8 relative\">\n                    <div className=\"absolute inset-0 rounded-full border-4 border-gray-200 dark:border-gray-700\" />\n                    <div\n                        className=\"absolute inset-0 rounded-full border-4 border-blue-600 border-t-transparent animate-spin\"\n                    />\n                    <div className=\"absolute inset-0 flex items-center justify-center text-3xl\">\n                        {isRealExecution ? '\ud83e\udd16' : '\u23f3'}\n                    </div>\n                </div>\n\n                <h2 className=\"text-2xl font-bold text-gray-900 dark:text-white mb-2\">\n                    {isRealExecution\n                        ? (isVi ? 'AI \u0110ang x\u1eed l\u00fd...' : 'AI Processing...')\n                        : (isVi ? '\u0110ang x\u1eed l\u00fd...' : 'Processing...')}\n                </h2>\n\n                <p className=\"text-gray-600 dark:text-gray-400 mb-2\" aria-live=\"polite\">\n                    {status}\n                </p>\n\n                {isRealExecution && (\n                    <p className=\"text-xs text-emerald-600 dark:text-emerald-400 mb-4\">\n                        \ud83d\udd17 {isVi ? '\u0110\u00e3 k\u1ebft n\u1ed1i AI' : 'Connected to AI Provider'}\n                    </p>\n                )}\n\n                {error && !guidedResponse && (\n                    <p className=\"text-sm text-amber-600 dark:text-amber-400 mb-4\" role=\"alert\" aria-live=\"assertive\">\n                        \u26a0\ufe0f {error}{!isRealExecution ? ` \u2014 ${isVi ? '\u0110ang d\u00f9ng ch\u1ebf \u0111\u1ed9 demo' : 'Using demo mode'}` : ''}\n                    </p>\n                )}\n\n                {guidedResponse && (\n                    <div\n                        className=\"mt-4 mb-4 mx-auto max-w-md rounded-lg border border-blue-200 dark:border-blue-700 bg-blue-50 dark:bg-blue-950 p-4 text-left\"\n                        role=\"alert\"\n                        aria-live=\"polite\"\n                        data-testid=\"guided-response-panel\"\n                    >\n                        <p className=\"text-sm font-semibold text-blue-800 dark:text-blue-200 mb-2\">\n                            {isVi ? '\ud83d\udca1 B\u01b0\u1edbc an to\u00e0n ti\u1ebfp theo' : '\ud83d\udca1 Safe next step'}\n                        </p>\n                        <p className=\"text-xs text-red-600 dark:text-red-400 mb-3\">\n                            {isVi\n                                ? `\u26a0\ufe0f Y\u00eau c\u1ea7u n\u00e0y c\u1ea7n xem l\u1ea1i: ${error}`\n                                : `\u26a0\ufe0f This request needs review: ${error}`}\n                        </p>\n                        <p className=\"text-sm text-blue-900 dark:text-blue-100 whitespace-pre-wrap\">\n                            {guidedResponse}\n                        </p>\n                    </div>\n                )}\n\n                {executionDiagnostic && (\n                    <div\n                        className=\"mt-4 mb-4 mx-auto max-w-md rounded-lg border border-amber-200 bg-amber-50 p-4 text-left dark:border-amber-700 dark:bg-amber-950/40\"\n                        role=\"alert\"\n                        aria-live=\"assertive\"\n                        data-testid=\"execution-diagnostic-panel\"\n                    >\n                        <p className=\"text-sm font-semibold text-amber-900 dark:text-amber-100\">\n                            {isVi ? 'Ch\u1ea9n \u0111o\u00e1n l\u01b0\u1ee3t ch\u1ea1y' : 'Execution diagnostic'}\n                        </p>\n                        <p className=\"mt-2 text-sm text-amber-800 dark:text-amber-200\">\n                            {executionDiagnostic.safeMessage}\n                        </p>\n                        <div className=\"mt-3 grid grid-cols-2 gap-2 text-xs text-amber-700 dark:text-amber-300\">\n                            <p><span className=\"font-medium\">Stage:</span> {executionDiagnostic.stage}</p>\n                            <p><span className=\"font-medium\">Class:</span> {executionDiagnostic.class}</p>\n                            <p><span className=\"font-medium\">{isVi ? 'Retry:' : 'Retry:'}</span> {executionDiagnostic.retryable ? (isVi ? 'c\u00f3 th\u1ec3' : 'possible') : (isVi ? 'kh\u00f4ng n\u00ean' : 'not advised')}</p>\n                            <p><span className=\"font-medium\">{isVi ? 'Next:' : 'Next:'}</span> {executionDiagnostic.userAction}</p>\n                        </div>\n                        {(executionDiagnostic.receiptId || executionDiagnostic.traceId) && (\n                            <div className=\"mt-3 space-y-1 text-[11px] text-amber-700 dark:text-amber-300\">\n                                {executionDiagnostic.receiptId && <p className=\"break-all\"><span className=\"font-medium\">Receipt:</span> {executionDiagnostic.receiptId}</p>}\n                                {executionDiagnostic.traceId && <p className=\"break-all\"><span className=\"font-medium\">Trace:</span> {executionDiagnostic.traceId}</p>}\n                            </div>\n                        )}\n                    </div>\n                )}\n\n                {canReportFalsePositive && (\n                    <div\n                        className=\"mt-3 mb-4 mx-auto max-w-md rounded-lg border border-rose-200 dark:border-rose-800\n                            bg-rose-50 dark:bg-rose-950/40 p-4 text-left\"\n                        data-testid=\"false-positive-report-panel\"\n                    >\n                        <p className=\"text-sm font-semibold text-rose-800 dark:text-rose-200 mb-1\">\n                            {isVi ? 'Quy\u1ebft \u0111\u1ecbnh n\u00e0y c\u00f3 v\u1ebb ch\u01b0a \u0111\u00fang?' : 'Does this decision look wrong?'}\n                        </p>\n                        <p className=\"text-xs text-rose-700 dark:text-rose-300 mb-3\">\n                            {isVi\n                                ? 'G\u1eedi b\u00e1o c\u00e1o \u0111\u1ec3 CVF \u0111o t\u1ef7 l\u1ec7 ch\u1eb7n/l\u00e0m r\u00f5 nh\u1ea7m. B\u00e1o c\u00e1o n\u00e0y kh\u00f4ng t\u1ef1 m\u1edf kh\u00f3a y\u00eau c\u1ea7u.'\n                                : 'Report it so CVF can measure incorrect blocks or clarifications. This does not auto-unlock the request.'}\n                        </p>\n                        <button\n                            type=\"button\"\n                            onClick={reportFalsePositive}\n                            disabled={falsePositiveReportState === 'submitting' || falsePositiveReportState === 'submitted'}\n                            data-testid=\"report-false-positive-btn\"\n                            className=\"w-full rounded-lg border border-rose-300 bg-white px-4 py-2 text-sm font-medium\n                                text-rose-700 transition-colors hover:bg-rose-100 disabled:opacity-60\n                                dark:border-rose-700 dark:bg-gray-950 dark:text-rose-200 dark:hover:bg-rose-900/30\"\n                        >\n                            {falsePositiveReportState === 'submitting'\n                                ? (isVi ? '\u0110ang g\u1eedi...' : 'Reporting...')\n                                : falsePositiveReportState === 'submitted'\n                                    ? (isVi ? '\u0110\u00e3 ghi nh\u1eadn b\u00e1o c\u00e1o' : 'Report recorded')\n                                    : (isVi ? 'Report false positive' : 'Report false positive')}\n                        </button>\n                        {falsePositiveReportState === 'error' && (\n                            <p className=\"mt-2 text-xs text-rose-700 dark:text-rose-300\" role=\"alert\">\n                                {isVi ? 'Ch\u01b0a ghi nh\u1eadn \u0111\u01b0\u1ee3c b\u00e1o c\u00e1o. Vui l\u00f2ng th\u1eed l\u1ea1i.' : 'The report was not recorded. Please try again.'}\n                            </p>\n                        )}\n                    </div>\n                )}\n\n                {/* W92-T1: Approval submission flow */}\n                {enforcementStatus === 'NEEDS_APPROVAL' && !approvalRequestId && (\n                    <div className=\"mt-3 mb-4 mx-auto max-w-md\">\n                        <button\n                            type=\"button\"\n                            onClick={submitApprovalRequest}\n                            disabled={approvalSubmitting}\n                            data-testid=\"submit-approval-btn\"\n                            className=\"w-full px-4 py-2 bg-amber-600 hover:bg-amber-700 disabled:opacity-50\n                                text-white text-sm font-medium rounded-lg transition-colors\"\n                        >\n                            {approvalSubmitting\n                                ? (isVi ? '\u0110ang g\u1eedi...' : 'Submitting...')\n                                : (isVi ? '\ud83d\udccb G\u1eedi y\u00eau c\u1ea7u ph\u00ea duy\u1ec7t' : '\ud83d\udccb Submit for Review')}\n                        </button>\n                    </div>\n                )}\n\n                {approvalRequestId && (\n                    <div\n                        className=\"mt-3 mb-4 mx-auto max-w-md rounded-lg border border-amber-200 dark:border-amber-700\n                            bg-amber-50 dark:bg-amber-950 p-4 text-left\"\n                        data-testid=\"approval-status-panel\"\n                    >\n                        <p className=\"text-sm font-semibold text-amber-800 dark:text-amber-200 mb-2\">\n                            {isVi ? '\u2705 \u0110\u00e3 g\u1eedi y\u00eau c\u1ea7u ph\u00ea duy\u1ec7t' : '\u2705 Review request submitted'}\n                        </p>\n                        <p className=\"text-xs text-amber-700 dark:text-amber-300 mb-1\">\n                            {isVi ? 'M\u00e3 y\u00eau c\u1ea7u:' : 'Request ID:'} <span className=\"font-mono\">{approvalRequestId}</span>\n                        </p>\n                        <p className=\"text-xs text-amber-700 dark:text-amber-300 mb-2\">\n                            {isVi ? 'Tr\u1ea1ng th\u00e1i:' : 'Status:'}{' '}\n                            <span className=\"font-semibold\">{isVi ? '\u0110ang ch\u1edd xem x\u00e9t' : 'Pending review'}</span>\n                        </p>\n                        <p className=\"text-xs text-amber-600 dark:text-amber-400\">\n                            {isVi\n                                ? 'Qu\u1ea3n tr\u1ecb vi\u00ean s\u1ebd xem x\u00e9t y\u00eau c\u1ea7u c\u1ee7a b\u1ea1n. Khi \u0111\u01b0\u1ee3c ph\u00ea duy\u1ec7t, b\u1ea1n c\u00f3 th\u1ec3 th\u1eed l\u1ea1i. Khi b\u1ecb t\u1eeb ch\u1ed1i, b\u1ea1n s\u1ebd nh\u1eadn \u0111\u01b0\u1ee3c l\u00fd do c\u1ee5 th\u1ec3.'\n                                : 'An admin will review your request. Once approved, you can retry your task. If rejected, you will receive a specific reason.'}\n                        </p>\n                        <p className=\"mt-2 text-xs text-amber-600 dark:text-amber-400\">\n                            {isVi\n                                ? 'Y\u00eau c\u1ea7u ph\u00ea duy\u1ec7t hi\u1ec7n h\u1ebft h\u1ea1n sau 24 gi\u1edd trong workflow local.'\n                                : 'Approval requests currently expire after 24 hours in the local workflow.'}\n                        </p>\n                        {approvalSafeHint && (\n                            <p className=\"mt-2 rounded border border-amber-200 bg-white/60 p-2 text-xs text-amber-700 dark:border-amber-800 dark:bg-gray-950/40 dark:text-amber-300\">\n                                {approvalSafeHint}\n                            </p>\n                        )}\n                    </div>\n                )}\n\n                {/* W96-T1: Completion banner \u2014 shown when success+riskLevel */}\n                {completion && (\n                    <div\n                        data-testid=\"completion-banner\"\n                        className=\"mt-3 mb-4 mx-auto max-w-md rounded-lg border border-green-200\n                            dark:border-green-700 bg-green-50 dark:bg-green-950 p-3 text-center\"\n                    >\n                        <p className=\"text-sm font-semibold text-green-800 dark:text-green-200 mb-2\">\n                            \u2705 {isVi ? 'X\u1eed l\u00fd ho\u00e0n t\u1ea5t' : 'Processing complete'}\n                        </p>\n                        <button\n                            type=\"button\"\n                            data-testid=\"view-results-btn\"\n                            onClick={() => deliverOnce(completion.attempt, latest.current.onComplete, [completion.output, completion.receipt])}\n                            className=\"mt-1 px-4 py-1.5 bg-green-600 hover:bg-green-700 text-white\n                                text-sm font-medium rounded-lg transition-colors\"\n                        >\n                            {isVi ? 'Xem k\u1ebft qu\u1ea3 \u2192' : 'View Results \u2192'}\n                        </button>\n                    </div>\n                )}\n\n                {/* W94-T1: Risk badge */}\n                {executionRiskLevel && (() => {\n                    const safetyStatus = getSafetyStatus(executionRiskLevel);\n                    return (\n                        <div\n                            data-testid=\"risk-badge\"\n                            className=\"mt-3 mb-4 mx-auto max-w-md rounded-lg border border-gray-200\n                                dark:border-gray-600 bg-gray-50 dark:bg-gray-800/50 p-3 text-left\"\n                        >\n                            <p className=\"text-xs font-semibold text-gray-700 dark:text-gray-300\">\n                                {safetyStatus.emoji}{' '}\n                                {isVi ? safetyStatus.label.vi : safetyStatus.label.en}\n                                <span className=\"ml-2 font-mono text-gray-400\">{executionRiskLevel}</span>\n                            </p>\n                            <p className=\"text-xs text-gray-500 dark:text-gray-400 mt-0.5\">\n                                {isVi ? safetyStatus.description.vi : safetyStatus.description.en}\n                            </p>\n                        </div>\n                    );\n                })()}\n\n                {governanceEvidence && (\n                    <div\n                        data-testid=\"governance-evidence-panel\"\n                        className=\"mt-3 mb-4 mx-auto max-w-md rounded-lg border border-emerald-200\n                            dark:border-emerald-700 bg-emerald-50 dark:bg-emerald-950 p-3 text-left\"\n                    >\n                        <p className=\"text-xs font-semibold text-emerald-800 dark:text-emerald-200 mb-2\">\n                            {isVi ? 'CVF \u0111\u00e3 ki\u1ec3m so\u00e1t l\u01b0\u1ee3t ch\u1ea1y n\u00e0y' : 'CVF governed this run'}\n                        </p>\n                        <div className=\"grid grid-cols-2 gap-x-3 gap-y-1 text-xs text-emerald-700 dark:text-emerald-300\">\n                            {governanceEvidence.decision && (\n                                <p><span className=\"font-medium\">{isVi ? 'Quy\u1ebft \u0111\u1ecbnh:' : 'Decision:'}</span> {governanceEvidence.decision}</p>\n                            )}\n                            {governanceEvidence.riskLevel && (\n                                <p><span className=\"font-medium\">{isVi ? 'R\u1ee7i ro:' : 'Risk:'}</span> {governanceEvidence.riskLevel}</p>\n                            )}\n                            {governanceEvidence.provider && (\n                                <p><span className=\"font-medium\">{isVi ? 'Provider:' : 'Provider:'}</span> {governanceEvidence.provider}</p>\n                            )}\n                            {governanceEvidence.model && (\n                                <p><span className=\"font-medium\">{isVi ? 'Model:' : 'Model:'}</span> {governanceEvidence.model}</p>\n                            )}\n                            {governanceEvidence.providerDecision && (\n                                <p><span className=\"font-medium\">{isVi ? 'Routing:' : 'Routing:'}</span> {governanceEvidence.providerDecision}</p>\n                            )}\n                            {governanceEvidence.knowledgeSource && governanceEvidence.knowledgeSource !== 'none' && (\n                                <p><span className=\"font-medium\">{isVi ? 'Knowledge:' : 'Knowledge:'}</span> {governanceEvidence.knowledgeSource}</p>\n                            )}\n                            {governanceEvidence.knowledgeCollectionId && (\n                                <p className=\"break-all\"><span className=\"font-medium\">{isVi ? 'Collection:' : 'Collection:'}</span> {governanceEvidence.knowledgeCollectionId}</p>\n                            )}\n                            {typeof governanceEvidence.knowledgeChunkCount === 'number' && governanceEvidence.knowledgeChunkCount > 0 && (\n                                <p><span className=\"font-medium\">{isVi ? 'Chunks:' : 'Chunks:'}</span> {governanceEvidence.knowledgeChunkCount}</p>\n                            )}\n                            {governanceEvidence.validationHint && (\n                                <p><span className=\"font-medium\">{isVi ? 'Output:' : 'Output:'}</span> {governanceEvidence.validationHint}</p>\n                            )}\n                        </div>\n                        {(governanceEvidence.receiptId || governanceEvidence.policySnapshotId || governanceEvidence.envelopeId || governanceEvidence.approvalId) && (\n                            <div className=\"mt-2 space-y-1 text-[11px] text-emerald-600 dark:text-emerald-400\">\n                                {governanceEvidence.receiptId && (\n                                    <p className=\"break-all\"><span className=\"font-medium\">Receipt:</span> {governanceEvidence.receiptId}</p>\n                                )}\n                                {governanceEvidence.policySnapshotId && (\n                                    <p className=\"break-all\"><span className=\"font-medium\">Policy:</span> {governanceEvidence.policySnapshotId}</p>\n                                )}\n                                {governanceEvidence.envelopeId && (\n                                    <p className=\"break-all\"><span className=\"font-medium\">Envelope:</span> {governanceEvidence.envelopeId}</p>\n                                )}\n                                {governanceEvidence.approvalId && (\n                                    <p className=\"break-all\"><span className=\"font-medium\">Approval:</span> {governanceEvidence.approvalId}</p>\n                                )}\n                            </div>\n                        )}\n                    </div>\n                )}\n\n                {/* Progress bar */}\n                <div className=\"w-80 mx-auto\">\n                    <div className=\"h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden\">\n                        <div\n                            className={`h-full rounded-full transition-all duration-300 ${isRealExecution\n                                    ? 'bg-gradient-to-r from-emerald-500 to-emerald-600'\n                                    : 'bg-gradient-to-r from-blue-500 to-blue-600'\n                                }`}\n                            style={{ width: `${progress}%` }}\n                        />\n                    </div>\n                    <p className=\"mt-2 text-sm text-gray-500\">\n                        {Math.round(progress)}%\n                    </p>\n                </div>\n\n                {!isRealExecution && (\n                    <p className=\"mt-4 text-sm text-gray-500\">\n                        {isVi ? '\u01af\u1edbc t\u00ednh:' : 'Estimated:'} {Math.max(1, Math.round((100 - progress) / 10))} {isVi ? 'gi\u00e2y' : 'seconds'}\n                    </p>\n                )}\n\n                <button\n                    type=\"button\"\n                    onClick={handleCancel}\n                    className=\"mt-8 px-6 py-2 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white\n                     border border-gray-300 dark:border-gray-600 rounded-lg\n                     hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors\"\n                >\n                    {isVi ? 'H\u1ee7y' : 'Cancel'}\n                </button>\n            </div>\n        </div>\n    );\n}\n\nfunction generateMockOutput(templateName: string): string {\n    return `# ${templateName} Analysis\n\n## Executive Summary\n\nBased on the provided context and requirements, this analysis presents a comprehensive evaluation with actionable recommendations.\n\n## Key Findings\n\n### Strengths\n- Clear strategic direction aligned with market opportunities\n- Strong foundation for growth initiatives\n- Competitive advantages in key areas\n\n### Areas for Improvement\n- Consider diversifying market approach\n- Strengthen risk mitigation strategies\n- Enhance stakeholder communication\n\n## Detailed Analysis\n\n### Option A: Organic Growth\n| Aspect | Assessment |\n|--------|------------|\n| Risk Level | Low |\n| Investment | Moderate |\n| Timeline | 12-18 months |\n| ROI Potential | 25-40% |\n\n### Option B: Strategic Partnership\n| Aspect | Assessment |\n|--------|------------|\n| Risk Level | Medium |\n| Investment | Low |\n| Timeline | 6-12 months |\n| ROI Potential | 30-50% |\n\n## Risk Assessment\n\n| Risk | Probability | Impact | Mitigation |\n|------|------------|--------|------------|\n| Market volatility | Medium | High | Diversification strategy |\n| Execution delays | Low | Medium | Milestone tracking |\n| Resource constraints | Medium | Medium | Phased approach |\n\n## Recommendations\n\n1. **Short-term (0-6 months)**\n   - Conduct detailed market analysis\n   - Establish key partnerships\n   - Set up monitoring framework\n\n2. **Medium-term (6-12 months)**\n   - Execute pilot programs\n   - Measure and iterate\n   - Scale successful initiatives\n\n3. **Long-term (12+ months)**\n   - Full market expansion\n   - Continuous optimization\n   - Strategic review and adjustment\n\n## Next Steps\n\n- [ ] Schedule stakeholder alignment meeting\n- [ ] Develop detailed implementation roadmap\n- [ ] Identify resource requirements\n- [ ] Establish success metrics\n\n---\n*Generated by CVF v1.5 UX Platform*\n`;\n}\n"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ProcessingScreen.lifecycle.test.tsx",
+      "rawSha256": "6feb63262c7797fd3dbcd63213bb388459753f2aa86dfef12f4abacde1e8aef5",
+      "bytes": 17066,
+      "snapshot": "/**\n * @vitest-environment jsdom\n */\nimport { StrictMode, type ComponentProps } from 'react';\nimport { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';\nimport { act, cleanup, fireEvent, render, screen } from '@testing-library/react';\nimport { ProcessingScreen } from './ProcessingScreen';\n\n// Language is switchable so a presentation-only rerender can be exercised.\nconst language = vi.hoisted(() => ({ current: 'en' }));\n\nvi.mock('./Settings', () => ({\n    useSettings: () => ({\n        settings: { preferences: { defaultExportMode: 'governance' } },\n        isLoaded: true,\n    }),\n}));\n\nvi.mock('@/lib/i18n', () => ({\n    useLanguage: () => ({ language: language.current }),\n}));\n\nvi.mock('@/lib/enforcement-log', () => ({\n    logEnforcementDecision: vi.fn(),\n}));\n\nvi.mock('@/lib/analytics', () => ({\n    trackEvent: vi.fn(),\n}));\n\ntype Props = ComponentProps<typeof ProcessingScreen>;\n\n// Each helper call builds independent objects, so attempt A and attempt B never share data.\nconst receiptFor = (id: string) => ({ receiptId: `receipt_${id}`, decision: 'ALLOW' });\nconst responseFor = (output: string, badge = false) => ({\n    json: async () => ({\n        success: true,\n        output,\n        governanceEvidenceReceipt: receiptFor(output),\n        ...(badge ? { enforcement: { status: 'ALLOW', riskGate: { riskLevel: 'R1' } } } : {}),\n    }),\n});\n\n// A transport whose response is released by the test, and which ignores abort on purpose.\nfunction deferredTransport() {\n    const pending: Array<(value: ReturnType<typeof responseFor>) => void> = [];\n    const fetchMock = vi.fn().mockImplementation(\n        () => new Promise(resolve => { pending.push(resolve as (value: ReturnType<typeof responseFor>) => void); }),\n    );\n    return { fetchMock, release: (index: number, value: ReturnType<typeof responseFor>) => pending[index](value) };\n}\n\nconst taskA = (): Pick<Props, 'templateId' | 'templateName' | 'inputs' | 'intent'> => ({\n    templateId: 'task_a',\n    templateName: 'Task A',\n    inputs: { topic: 'synthetic task A' },\n    intent: 'Synthetic offline A',\n});\n\nconst taskB = (): Pick<Props, 'templateId' | 'templateName' | 'inputs' | 'intent'> => ({\n    templateId: 'task_b',\n    templateName: 'Task B',\n    inputs: { topic: 'synthetic task B' },\n    intent: 'Synthetic offline B',\n});\n\n// Advances fake time in small acts so React flushes state (and schedules effect timers) between steps.\nconst advance = async (ms: number) => {\n    for (let left = ms; left > 0; left -= 100) {\n        const step = Math.min(left, 100);\n        await act(async () => { await vi.advanceTimersByTimeAsync(step); });\n    }\n};\nconst bodyOf = (fetchMock: ReturnType<typeof vi.fn>, call: number) => JSON.parse(String(fetchMock.mock.calls[call][1]?.body));\n\ndescribe('ProcessingScreen lifecycle', () => {\n    beforeEach(() => {\n        language.current = 'en';\n        vi.useFakeTimers();\n    });\n\n    afterEach(() => {\n        cleanup();\n        vi.clearAllTimers();\n        vi.useRealTimers();\n        vi.unstubAllGlobals();\n    });\n\n    describe('positive controls', () => {\n        it('delivers exact output and receipt once for an uncancelled success without a badge', async () => {\n            const onComplete = vi.fn();\n            const fetchMock = vi.fn().mockResolvedValue(responseFor('OUTPUT_A'));\n            vi.stubGlobal('fetch', fetchMock);\n\n            render(<ProcessingScreen {...taskA()} onComplete={onComplete} onCancel={vi.fn()} />);\n            await advance(1000);\n\n            expect(fetchMock).toHaveBeenCalledTimes(1);\n            expect(onComplete).toHaveBeenCalledTimes(1);\n            expect(onComplete).toHaveBeenCalledWith('OUTPUT_A', receiptFor('OUTPUT_A'));\n        });\n\n        it('delivers exact output and receipt once for an uncancelled success with a risk badge', async () => {\n            const onComplete = vi.fn();\n            vi.stubGlobal('fetch', vi.fn().mockResolvedValue(responseFor('OUTPUT_A', true)));\n\n            render(<ProcessingScreen {...taskA()} onComplete={onComplete} onCancel={vi.fn()} />);\n            await advance(1);\n            expect(screen.getByTestId('completion-banner')).toBeTruthy();\n            expect(onComplete).not.toHaveBeenCalled();\n\n            await advance(2500);\n            expect(onComplete).toHaveBeenCalledTimes(1);\n            expect(onComplete).toHaveBeenCalledWith('OUTPUT_A', receiptFor('OUTPUT_A'));\n        });\n    });\n\n    describe('cancel and unmount', () => {\n        it('does not deliver a response that arrives after Cancel and calls onCancel once', async () => {\n            const onComplete = vi.fn();\n            const onCancel = vi.fn();\n            const transport = deferredTransport();\n            vi.stubGlobal('fetch', transport.fetchMock);\n\n            render(<ProcessingScreen {...taskA()} onComplete={onComplete} onCancel={onCancel} />);\n            await advance(1);\n            expect(transport.fetchMock).toHaveBeenCalledTimes(1);\n\n            fireEvent.click(screen.getByRole('button', { name: 'Cancel' }));\n            fireEvent.click(screen.getByRole('button', { name: 'Cancel' }));\n            expect(onCancel).toHaveBeenCalledTimes(1);\n\n            await act(async () => { transport.release(0, responseFor('OUTPUT_A')); await Promise.resolve(); });\n            await advance(3000);\n\n            expect(onComplete).not.toHaveBeenCalled();\n            expect(screen.queryByTestId('completion-banner')).toBeNull();\n        });\n\n        it('aborts the in-flight request on Cancel', async () => {\n            const transport = deferredTransport();\n            vi.stubGlobal('fetch', transport.fetchMock);\n\n            render(<ProcessingScreen {...taskA()} onComplete={vi.fn()} onCancel={vi.fn()} />);\n            await advance(1);\n            const signal = transport.fetchMock.mock.calls[0][1]?.signal as AbortSignal;\n            expect(signal.aborted).toBe(false);\n\n            fireEvent.click(screen.getByRole('button', { name: 'Cancel' }));\n            expect(signal.aborted).toBe(true);\n        });\n\n        it('suppresses the scheduled no-badge completion when Cancel happens before the 300ms timer', async () => {\n            const onComplete = vi.fn();\n            vi.stubGlobal('fetch', vi.fn().mockResolvedValue(responseFor('OUTPUT_A')));\n\n            render(<ProcessingScreen {...taskA()} onComplete={onComplete} onCancel={vi.fn()} />);\n            await advance(10);\n            expect(onComplete).not.toHaveBeenCalled();\n\n            fireEvent.click(screen.getByRole('button', { name: 'Cancel' }));\n            await advance(3000);\n\n            expect(onComplete).not.toHaveBeenCalled();\n        });\n\n        it('suppresses the badge auto-advance when Cancel happens before the 2000ms timer', async () => {\n            const onComplete = vi.fn();\n            vi.stubGlobal('fetch', vi.fn().mockResolvedValue(responseFor('OUTPUT_A', true)));\n\n            render(<ProcessingScreen {...taskA()} onComplete={onComplete} onCancel={vi.fn()} />);\n            await advance(1);\n            expect(screen.getByTestId('completion-banner')).toBeTruthy();\n\n            fireEvent.click(screen.getByRole('button', { name: 'Cancel' }));\n            await advance(3000);\n\n            expect(onComplete).not.toHaveBeenCalled();\n        });\n\n        it('does not deliver a response or scheduled completion after unmount', async () => {\n            const onComplete = vi.fn();\n            const transport = deferredTransport();\n            vi.stubGlobal('fetch', transport.fetchMock);\n\n            const view = render(<ProcessingScreen {...taskA()} onComplete={onComplete} onCancel={vi.fn()} />);\n            await advance(1);\n            view.unmount();\n            await act(async () => { transport.release(0, responseFor('OUTPUT_A')); await Promise.resolve(); });\n            await advance(3000);\n\n            expect(onComplete).not.toHaveBeenCalled();\n        });\n\n        it('does not deliver the delayed no-badge completion after unmount', async () => {\n            const onComplete = vi.fn();\n            vi.stubGlobal('fetch', vi.fn().mockResolvedValue(responseFor('OUTPUT_A')));\n\n            const view = render(<ProcessingScreen {...taskA()} onComplete={onComplete} onCancel={vi.fn()} />);\n            await advance(10);\n            view.unmount();\n            await advance(3000);\n\n            expect(onComplete).not.toHaveBeenCalled();\n        });\n    });\n\n    describe('same logical task', () => {\n        it('does not issue another request when only the callbacks change', async () => {\n            const fetchMock = vi.fn().mockReturnValue(new Promise(() => { }));\n            vi.stubGlobal('fetch', fetchMock);\n\n            const task = taskA();\n            const view = render(<ProcessingScreen {...task} onComplete={vi.fn()} onCancel={vi.fn()} />);\n            await advance(1);\n            view.rerender(<ProcessingScreen {...task} onComplete={vi.fn()} onCancel={vi.fn()} />);\n            await advance(1);\n\n            expect(fetchMock).toHaveBeenCalledTimes(1);\n        });\n\n        it('does not issue another request for fresh but equivalent input objects', async () => {\n            const fetchMock = vi.fn().mockReturnValue(new Promise(() => { }));\n            vi.stubGlobal('fetch', fetchMock);\n\n            const first = taskA();\n            const view = render(<ProcessingScreen {...first} onComplete={vi.fn()} onCancel={vi.fn()} />);\n            await advance(1);\n            const equivalent = taskA();\n            // Different object identity, same content: distinguishes request content from React identity.\n            expect(equivalent.inputs).not.toBe(first.inputs);\n            expect(equivalent.inputs).toEqual(first.inputs);\n            view.rerender(<ProcessingScreen {...equivalent} onComplete={vi.fn()} onCancel={vi.fn()} />);\n            await advance(1);\n\n            expect(fetchMock).toHaveBeenCalledTimes(1);\n        });\n\n        it('does not issue another request when the language changes', async () => {\n            const fetchMock = vi.fn().mockReturnValue(new Promise(() => { }));\n            vi.stubGlobal('fetch', fetchMock);\n\n            const task = taskA();\n            const onComplete = vi.fn();\n            const onCancel = vi.fn();\n            const view = render(<ProcessingScreen {...task} onComplete={onComplete} onCancel={onCancel} />);\n            await advance(1);\n            language.current = 'vi';\n            view.rerender(<ProcessingScreen {...task} onComplete={onComplete} onCancel={onCancel} />);\n            await advance(1);\n\n            expect(language.current).toBe('vi');\n            expect(fetchMock).toHaveBeenCalledTimes(1);\n        });\n\n        it('issues one request under StrictMode', async () => {\n            const fetchMock = vi.fn().mockReturnValue(new Promise(() => { }));\n            vi.stubGlobal('fetch', fetchMock);\n\n            render(\n                <StrictMode>\n                    <ProcessingScreen {...taskA()} onComplete={vi.fn()} onCancel={vi.fn()} />\n                </StrictMode>,\n            );\n            await advance(5);\n\n            expect(fetchMock).toHaveBeenCalledTimes(1);\n        });\n    });\n\n    describe('request replacement', () => {\n        it('lets replacement B win and ignores the late response of A', async () => {\n            const onComplete = vi.fn();\n            const transport = deferredTransport();\n            vi.stubGlobal('fetch', transport.fetchMock);\n\n            const view = render(<ProcessingScreen {...taskA()} onComplete={onComplete} onCancel={vi.fn()} />);\n            await advance(1);\n            view.rerender(<ProcessingScreen {...taskB()} onComplete={onComplete} onCancel={vi.fn()} />);\n            await advance(1);\n\n            expect(transport.fetchMock).toHaveBeenCalledTimes(2);\n            expect(bodyOf(transport.fetchMock, 0).templateId).toBe('task_a');\n            expect(bodyOf(transport.fetchMock, 1).templateId).toBe('task_b');\n            expect(bodyOf(transport.fetchMock, 1).inputs).toEqual({ topic: 'synthetic task B' });\n\n            await act(async () => { transport.release(0, responseFor('OUTPUT_A')); await Promise.resolve(); });\n            await advance(500);\n            expect(onComplete).not.toHaveBeenCalled();\n\n            await act(async () => { transport.release(1, responseFor('OUTPUT_B')); await Promise.resolve(); });\n            await advance(500);\n\n            expect(onComplete).toHaveBeenCalledTimes(1);\n            expect(onComplete).toHaveBeenCalledWith('OUTPUT_B', receiptFor('OUTPUT_B'));\n        });\n\n        it('treats a changed intent as a new request', async () => {\n            const fetchMock = vi.fn().mockReturnValue(new Promise(() => { }));\n            vi.stubGlobal('fetch', fetchMock);\n\n            const view = render(<ProcessingScreen {...taskA()} onComplete={vi.fn()} onCancel={vi.fn()} />);\n            await advance(1);\n            view.rerender(<ProcessingScreen {...taskA()} intent=\"Refined intent\" onComplete={vi.fn()} onCancel={vi.fn()} />);\n            await advance(1);\n\n            expect(fetchMock).toHaveBeenCalledTimes(2);\n            expect(bodyOf(fetchMock, 1).intent).toBe('Refined intent');\n        });\n    });\n\n    describe('completion delivery', () => {\n        it('delivers once when View Results is clicked repeatedly and the timer later expires', async () => {\n            const onComplete = vi.fn();\n            vi.stubGlobal('fetch', vi.fn().mockResolvedValue(responseFor('OUTPUT_A', true)));\n\n            render(<ProcessingScreen {...taskA()} onComplete={onComplete} onCancel={vi.fn()} />);\n            await advance(1);\n            const button = screen.getByTestId('view-results-btn');\n            fireEvent.click(button);\n            fireEvent.click(button);\n            await advance(3000);\n\n            expect(onComplete).toHaveBeenCalledTimes(1);\n            expect(onComplete).toHaveBeenCalledWith('OUTPUT_A', receiptFor('OUTPUT_A'));\n        });\n\n        it('delivers once when the timer fires first and View Results is clicked afterwards', async () => {\n            const onComplete = vi.fn();\n            vi.stubGlobal('fetch', vi.fn().mockResolvedValue(responseFor('OUTPUT_A', true)));\n\n            render(<ProcessingScreen {...taskA()} onComplete={onComplete} onCancel={vi.fn()} />);\n            await advance(2500);\n            expect(onComplete).toHaveBeenCalledTimes(1);\n\n            const button = screen.queryByTestId('view-results-btn');\n            if (button) fireEvent.click(button);\n            await advance(3000);\n\n            expect(onComplete).toHaveBeenCalledTimes(1);\n        });\n    });\n\n    describe('demo execution', () => {\n        beforeEach(() => {\n            vi.spyOn(Math, 'random').mockReturnValue(1);\n        });\n\n        afterEach(() => {\n            vi.restoreAllMocks();\n        });\n\n        it('stops the demo interval and completion on Cancel', async () => {\n            const onComplete = vi.fn();\n            const fetchMock = vi.fn();\n            vi.stubGlobal('fetch', fetchMock);\n\n            render(<ProcessingScreen templateName=\"Demo\" onComplete={onComplete} onCancel={vi.fn()} />);\n            await advance(600);\n            expect(vi.getTimerCount()).toBeGreaterThan(0);\n\n            fireEvent.click(screen.getByRole('button', { name: 'Cancel' }));\n            expect(vi.getTimerCount()).toBe(0);\n            await advance(20000);\n\n            expect(onComplete).not.toHaveBeenCalled();\n            expect(fetchMock).not.toHaveBeenCalled();\n        });\n\n        it('clears the demo timers on unmount', async () => {\n            const onComplete = vi.fn();\n            const view = render(<ProcessingScreen templateName=\"Demo\" onComplete={onComplete} onCancel={vi.fn()} />);\n            await advance(600);\n            view.unmount();\n            expect(vi.getTimerCount()).toBe(0);\n            await advance(20000);\n\n            expect(onComplete).not.toHaveBeenCalled();\n        });\n\n        it('still completes an uncancelled demo run once with generated output', async () => {\n            const onComplete = vi.fn();\n            const fetchMock = vi.fn();\n            vi.stubGlobal('fetch', fetchMock);\n\n            render(<ProcessingScreen templateName=\"Demo\" onComplete={onComplete} onCancel={vi.fn()} />);\n            await advance(20000);\n\n            expect(onComplete).toHaveBeenCalledTimes(1);\n            expect(String(onComplete.mock.calls[0][0])).toContain('# Demo Analysis');\n            expect(fetchMock).not.toHaveBeenCalled();\n        });\n    });\n\n    describe('failure and fallback controls', () => {\n        it('shows a classified failure for a real request without mock fallback or completion', async () => {\n            const onComplete = vi.fn();\n            vi.stubGlobal('fetch', vi.fn().mockRejectedValue(new Error('Network down')));\n\n            render(<ProcessingScreen {...taskA()} onComplete={onComplete} onCancel={vi.fn()} />);\n            await advance(3000);\n\n            expect(screen.getByRole('alert').textContent).toContain('No mock output was generated');\n            expect(onComplete).not.toHaveBeenCalled();\n        });\n    });\n});\n"
+    },
+    {
+      "path": "docs/reviews/CVF_NCR_PROCESSING_LIFECYCLE_WORKER_RETURN_2026-10-12.md",
+      "rawSha256": "a7224837d15b99c835d130a4e3139076683e69cc9f1920e022a3fd143b50f34f",
+      "bytes": 27609,
+      "snapshotDisposition": "Original return/proof immutable and present at their governed path; raw hash retained."
+    },
+    {
+      "path": "docs/reviews/evidence/ncr-processing-lifecycle-worker-20261012.json",
+      "rawSha256": "814da87df31e2d1403050e7455cf0e1e0be41f06b3c164d966e4753a6b5b6fe0",
+      "bytes": 16283,
+      "snapshotDisposition": "Original return/proof immutable and present at their governed path; raw hash retained."
+    }
+  ],
+  "preRepairAudit": {
+    "disposition": "COMPLETE_BEFORE_FIRST_REPAIR",
+    "contract": "REQ-LIFETIME contract1 prohibits old result/receipt/error/progress/log becoming a replacement task's UI; recovery POST handlers are dependent async continuations of the same attempt.",
+    "schema": "Props and API payload remain unchanged; no durable/backend cancellation or receipt schema change.",
+    "paths": "Repair only worker-owned ProcessingScreen.tsx and sibling lifecycle test; original four files snapshotted before repair.",
+    "authority": "Standing Local reviewer/closure authority; no checker, route, settings, dependency, wizard, provider or public changes.",
+    "dependencies": "Full component includes execute, demo, approval/report awaits, recovery analytics, timers/manual completion, task startup/cleanup. Worker test/full return reviewed; required existing consumer scopes reviewed. Two missing dependent recovery callbacks confirmed by independently authored actual-component probe.",
+    "evidence": "Worker focused58/type/lint/fast evidence consumed. Local initial reviewer-fast PASS. Local original probe1 positive PASS,2 stale recovery failures, transport ignores abort. This is one known attempt-lifecycle root cluster, not a new roadmap branch.",
+    "repair": "Capture owning attempt in approval/report handlers, ignore inactive continuations and reset approval busy flag for B. Guard regression for both stale success and error/finally; keep active controls.",
+    "test": "Distinct3-case Local probe after repair plus expanded sibling regression, existing ProcessingScreen/Home, tsc and owned lint. Rerun justified by changed product bytes and reproduced stale state, no broad wizard or package-wide duplicate run.",
+    "range": "Worker/closure base4ea59861d9bfe2c9806f5071cf535e320dcb5ae4; original exact4 pending; no staged paths or unrelated changes.",
+    "commitPlan": "One material closure/collection with matching required currentAuthority projections, then dedicated exact6 continuity. No push. Full procedure acceptance FAIL for mandatory reads performed after edit; optional omissions are not failures.",
+    "timing": "Partial review clock in worker-originals.json; full entry clock unavailable, do not substitute capture time for complete reviewer elapsed time.",
+    "qualityCounts": "One reviewer product repair group affects2 recovery handlers. Baseline7 product symptom categories and14 red assertions are not worker error counts. Worker2 harness root errors,1 line-budget repair,1 encoding repair,1 read-order procedural deviation remain separate."
+  },
+  "rawWorkerLogs": [
+    {
+      "originalScratchpadName": "pl_eslint.log",
+      "preservedRuntimePath": ".cvf/runtime/ncr-processing-lifecycle-local-20261012/worker-pl_eslint.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectedSha256": null,
+      "match": null,
+      "tail": []
+    },
+    {
+      "originalScratchpadName": "pl_eslint2.log",
+      "preservedRuntimePath": ".cvf/runtime/ncr-processing-lifecycle-local-20261012/worker-pl_eslint2.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectedSha256": null,
+      "match": null,
+      "tail": []
+    },
+    {
+      "originalScratchpadName": "pl_fg1.txt",
+      "preservedRuntimePath": ".cvf/runtime/ncr-processing-lifecycle-local-20261012/worker-pl_fg1.txt",
+      "sha256": "2227697ae8c23f3187f5eb1f7f34290addfddf22140a309233758cec7fdd94e4",
+      "expectedSha256": null,
+      "match": null,
+      "tail": [
+        "=== git diff whitespace check ===",
+        "git diff --check",
+        "PASS: git diff whitespace check (0.04s)",
+        "",
+        "VIOLATION: worker-return fast gate blocked by 1 failure(s) in 5.74s."
+      ]
+    },
+    {
+      "originalScratchpadName": "pl_fg2.txt",
+      "preservedRuntimePath": ".cvf/runtime/ncr-processing-lifecycle-local-20261012/worker-pl_fg2.txt",
+      "sha256": "f397b853b348660de1818f726d2fa39376f394dcc0ba5e0cbfec77914e647362",
+      "expectedSha256": null,
+      "match": null,
+      "tail": [
+        "=== git diff whitespace check ===",
+        "git diff --check",
+        "PASS: git diff whitespace check (0.04s)",
+        "",
+        "COMPLIANT: worker-return fast gate passed in 5.36s."
+      ]
+    },
+    {
+      "originalScratchpadName": "pl_fg_last.txt",
+      "preservedRuntimePath": ".cvf/runtime/ncr-processing-lifecycle-local-20261012/worker-pl_fg_last.txt",
+      "sha256": "f2aedc5bda477363af906259b3773779ef54763bf0c5187553e826ab3399d573",
+      "expectedSha256": null,
+      "match": null,
+      "tail": [
+        "=== git diff whitespace check ===",
+        "git diff --check",
+        "PASS: git diff whitespace check (0.67s)",
+        "",
+        "COMPLIANT: worker-return fast gate passed in 26.00s."
+      ]
+    },
+    {
+      "originalScratchpadName": "pl_green1.log",
+      "preservedRuntimePath": ".cvf/runtime/ncr-processing-lifecycle-local-20261012/worker-pl_green1.log",
+      "sha256": "12b9ea75c1e35eee21455063d23a540e33c10aad3a35eb02dfd0d0a7393d2e87",
+      "expectedSha256": null,
+      "match": null,
+      "tail": [
+        " Test Files  3 passed (3)",
+        "      Tests  58 passed (58)",
+        "   Start at  01:12:16",
+        "   Duration  17.89s (transform 11.43s, setup 29.23s, import 1.99s, tests 7.65s, environment 4.12s)",
+        ""
+      ]
+    },
+    {
+      "originalScratchpadName": "pl_green2.log",
+      "preservedRuntimePath": ".cvf/runtime/ncr-processing-lifecycle-local-20261012/worker-pl_green2.log",
+      "sha256": "8dd417fd375b6ec07b821b22972ea7b6c3b1e68bde7de02e85bdd2bbc2f15a5e",
+      "expectedSha256": null,
+      "match": null,
+      "tail": [
+        " Test Files  3 passed (3)",
+        "      Tests  58 passed (58)",
+        "   Start at  01:13:01",
+        "   Duration  16.91s (transform 10.19s, setup 27.36s, import 1.86s, tests 7.69s, environment 2.96s)",
+        ""
+      ]
+    },
+    {
+      "originalScratchpadName": "pl_green3.log",
+      "preservedRuntimePath": ".cvf/runtime/ncr-processing-lifecycle-local-20261012/worker-pl_green3.log",
+      "sha256": "b8627777261e10715e8625fcad61cb5019bd55ae74c20f33b63b01ca82fcdf06",
+      "expectedSha256": "b8627777261e10715e8625fcad61cb5019bd55ae74c20f33b63b01ca82fcdf06",
+      "match": true,
+      "tail": [
+        " Test Files  3 passed (3)",
+        "      Tests  58 passed (58)",
+        "   Start at  01:18:08",
+        "   Duration  17.00s (transform 10.50s, setup 27.31s, import 1.88s, tests 7.73s, environment 3.23s)",
+        ""
+      ]
+    },
+    {
+      "originalScratchpadName": "pl_ledger1.txt",
+      "preservedRuntimePath": ".cvf/runtime/ncr-processing-lifecycle-local-20261012/worker-pl_ledger1.txt",
+      "sha256": "4e241054fd8f3e98a904265c2db377b5dcedf77c27ab0b6eedfeb0a6994455d2",
+      "expectedSha256": null,
+      "match": null,
+      "tail": [
+        "=== CVF Work Order Acceptance Ledger Gate ===",
+        "COMPLIANT"
+      ]
+    },
+    {
+      "originalScratchpadName": "pl_ledger2.txt",
+      "preservedRuntimePath": ".cvf/runtime/ncr-processing-lifecycle-local-20261012/worker-pl_ledger2.txt",
+      "sha256": "4e241054fd8f3e98a904265c2db377b5dcedf77c27ab0b6eedfeb0a6994455d2",
+      "expectedSha256": null,
+      "match": null,
+      "tail": [
+        "=== CVF Work Order Acceptance Ledger Gate ===",
+        "COMPLIANT"
+      ]
+    },
+    {
+      "originalScratchpadName": "pl_preimpl.txt",
+      "preservedRuntimePath": ".cvf/runtime/ncr-processing-lifecycle-local-20261012/worker-pl_preimpl.txt",
+      "sha256": "63c541b5788e577652280ef5cd895455135c89a2e99f29aaec1d59c4a1355729",
+      "expectedSha256": "63c541b5788e577652280ef5cd895455135c89a2e99f29aaec1d59c4a1355729",
+      "match": true,
+      "tail": [
+        "[PASS] independent review probe admission (0.73s)",
+        "[PASS] governed file size compatibility (1.96s)",
+        "",
+        "Receipt: D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\autorun-receipts\\pre-implementation.json",
+        "COMPLIANT: pre-implementation autorun gate passed in 8.47s."
+      ]
+    },
+    {
+      "originalScratchpadName": "pl_red1.log",
+      "preservedRuntimePath": ".cvf/runtime/ncr-processing-lifecycle-local-20261012/worker-pl_red1.log",
+      "sha256": "0ab03dcb1c84a7120c0becfbccc8535958a556f1eb4ce859580419ea79955ea5",
+      "expectedSha256": "0ab03dcb1c84a7120c0becfbccc8535958a556f1eb4ce859580419ea79955ea5",
+      "match": true,
+      "tail": [
+        " Test Files  1 failed (1)",
+        "      Tests  15 failed | 5 passed (20)",
+        "   Start at  01:09:34",
+        "   Duration  8.97s (transform 1.61s, setup 7.33s, import 164ms, tests 285ms, environment 1.00s)",
+        ""
+      ]
+    },
+    {
+      "originalScratchpadName": "pl_red2.log",
+      "preservedRuntimePath": ".cvf/runtime/ncr-processing-lifecycle-local-20261012/worker-pl_red2.log",
+      "sha256": "1cd6cc8ae3505e82a7c205bbb13a2c7c838bcb9a808a17c9d32e16196294534a",
+      "expectedSha256": "1cd6cc8ae3505e82a7c205bbb13a2c7c838bcb9a808a17c9d32e16196294534a",
+      "match": true,
+      "tail": [
+        " Test Files  1 failed (1)",
+        "      Tests  14 failed | 6 passed (20)",
+        "   Start at  01:10:32",
+        "   Duration  10.05s (transform 2.87s, setup 8.19s, import 306ms, tests 711ms, environment 670ms)",
+        ""
+      ]
+    },
+    {
+      "originalScratchpadName": "pl_tsc.log",
+      "preservedRuntimePath": ".cvf/runtime/ncr-processing-lifecycle-local-20261012/worker-pl_tsc.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectedSha256": null,
+      "match": null,
+      "tail": []
+    },
+    {
+      "originalScratchpadName": "pl_tsc2.log",
+      "preservedRuntimePath": ".cvf/runtime/ncr-processing-lifecycle-local-20261012/worker-pl_tsc2.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectedSha256": null,
+      "match": null,
+      "tail": []
+    }
+  ],
+  "reviewClock": {
+    "partialCaptureUtc": "2026-10-11T18:24:28.404100+00:00",
+    "proofAssembledUtc": "2026-10-11T18:36:01.555039+00:00",
+    "partialElapsedMinutes": 11.55,
+    "fullReviewMinutes": null,
+    "reason": "Clock after initial startup and return read, not complete review start.",
+    "fullAcceptedDeliveryMinutes": null
+  },
+  "workerClock": {
+    "invocationStartLocal": "2026-10-12T01:06:08+07:00",
+    "startCaptureNote": "HEAD, clean status, staged-empty and clock captured by the first repository command, before any file read",
+    "terminalImplementationLocal": "2026-10-12T01:14:43+07:00",
+    "terminalImplementationNote": "captured after the component change, the lifecycle tests, tsc, eslint and all mandatory reads completed; the encoding repair, return gates and the final gate runs came after this clock",
+    "finalGateEndLocal": "2026-10-12T01:20:12+07:00",
+    "elapsedMinutesToFinalGateEndApprox": 14.1,
+    "budgetMinutes": 45
+  },
+  "requestedConfiguration": {
+    "requestedLabel": "Claude Sonnet 5.5, effort high (operator manual selection; assignment metadata only)",
+    "selfReportedModel": "Sonnet 5.5 (self-report, not native attestation)",
+    "observedNativeIdentity": null,
+    "reason": "native identity and effort are not exposed to the worker"
+  },
+  "nativeUsage": {
+    "identity": null,
+    "effort": null,
+    "tokens": null,
+    "bill": null,
+    "reason": "not exposed to the worker; elapsed time is not a price"
+  },
+  "distinctIndependentProbe": {
+    "sourcePath": ".cvf/runtime/ncr-processing-lifecycle-local-20261012/local-probe.test.tsx",
+    "sourceSha256": "add110c21c03b0d238955937a0440a2ccb85d2d030fa0d235d087dd7095429e7",
+    "sourceText": "import React from 'react';\nimport { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';\nimport { act, cleanup, fireEvent, render, screen } from '@testing-library/react';\nimport { ProcessingScreen } from '@/components/ProcessingScreen';\nimport { trackEvent } from '@/lib/analytics';\nvi.mock('@/components/Settings', () => ({ useSettings: () => ({ settings: { preferences: { defaultExportMode: 'governance' } }, isLoaded: true }) }));\nvi.mock('@/lib/i18n', () => ({ useLanguage: () => ({ language: 'en' }) }));\nvi.mock('@/lib/enforcement-log', () => ({ logEnforcementDecision: vi.fn() }));\nvi.mock('@/lib/analytics', () => ({ trackEvent: vi.fn() }));\nconst task = (id: string) => ({ templateId: id, templateName: id, inputs: { topic: id }, intent: id, onComplete: vi.fn(), onCancel: vi.fn() });\nconst denied = (id: string, decision: string) => ({ ok: false, json: async () => ({ success: false, error: 'Synthetic hold', enforcement: { status: decision, reasons: ['Synthetic'], riskGate: { riskLevel: 'R3', status: decision } }, governanceEvidenceReceipt: { receiptId: id, decision } }) });\nconst tick = async () => { await act(async () => { await vi.advanceTimersByTimeAsync(1); }); };\ndescribe('Local independent abandoned recovery requests', () => {\n  beforeEach(() => { vi.useFakeTimers(); vi.clearAllMocks(); });\n  afterEach(() => { cleanup(); vi.clearAllTimers(); vi.useRealTimers(); vi.unstubAllGlobals(); });\n  it('positive control: active approval remains usable and records its own id', async () => {\n    vi.stubGlobal('fetch', vi.fn().mockResolvedValueOnce(denied('A', 'NEEDS_APPROVAL')).mockResolvedValueOnce({ json: async () => ({ success: true, id: 'approval_A' }) }));\n    render(<ProcessingScreen {...task('A')} />); await tick();\n    await act(async () => { fireEvent.click(screen.getByTestId('submit-approval-btn')); });\n    expect(screen.getByTestId('approval-status-panel').textContent).toContain('approval_A');\n    expect(trackEvent).toHaveBeenCalledWith('task_recovery_started', expect.objectContaining({ approvalId: 'approval_A' }));\n  });\n  it('replacement B starts with enabled approval and never shows pending A approval id', async () => {\n    let release!: (value: unknown) => void;\n    const pending = new Promise(resolve => { release = resolve; });\n    vi.stubGlobal('fetch', vi.fn().mockResolvedValueOnce(denied('A', 'NEEDS_APPROVAL')).mockReturnValueOnce(pending).mockResolvedValueOnce(denied('B', 'NEEDS_APPROVAL')));\n    const view = render(<ProcessingScreen {...task('A')} />); await tick();\n    fireEvent.click(screen.getByTestId('submit-approval-btn'));\n    view.rerender(<ProcessingScreen {...task('B')} />); await tick();\n    const enabledForB = !(screen.getByTestId('submit-approval-btn') as HTMLButtonElement).disabled;\n    await act(async () => { release({ json: async () => ({ success: true, id: 'approval_A' }) }); });\n    expect(screen.queryByTestId('approval-status-panel')).toBeNull();\n    expect(enabledForB).toBe(true);\n    expect(trackEvent).not.toHaveBeenCalledWith('task_recovery_started', expect.objectContaining({ approvalId: 'approval_A' }));\n  });\n  it('replacement B report remains unsubmitted when pending A report resolves', async () => {\n    let release!: (value: unknown) => void;\n    const pending = new Promise(resolve => { release = resolve; });\n    vi.stubGlobal('fetch', vi.fn().mockResolvedValueOnce(denied('receipt_A', 'BLOCK')).mockReturnValueOnce(pending).mockResolvedValueOnce(denied('receipt_B', 'BLOCK')));\n    const view = render(<ProcessingScreen {...task('A')} />); await tick();\n    fireEvent.click(screen.getByTestId('report-false-positive-btn'));\n    view.rerender(<ProcessingScreen {...task('B')} />); await tick();\n    await act(async () => { release({ ok: true, json: async () => ({ success: true }) }); });\n    expect(screen.getByTestId('report-false-positive-btn').textContent).toBe('Report false positive');\n    expect(trackEvent).not.toHaveBeenCalledWith('task_recovery_started', expect.objectContaining({ receiptId: 'receipt_A' }));\n  });\n});\n",
+    "configPath": ".cvf/runtime/ncr-processing-lifecycle-local-20261012/vitest.config.mts",
+    "configSha256": "58ea4eebf731bdcf9d274b6807639120c354f53426c61bea75dccca8715d9c7f",
+    "original": {
+      "path": ".cvf/runtime/ncr-processing-lifecycle-local-20261012/.cvf/runtime/ncr-processing-lifecycle-local-20261012/local-original.json",
+      "sha256": "b6b3ca0ac1d89c4246f069891e4c321a87b8eb31df6d9f608a7f1181346b401d",
+      "total": 3,
+      "passed": 1,
+      "failed": 2,
+      "success": false,
+      "assertions": [
+        {
+          "title": "positive control: active approval remains usable and records its own id",
+          "status": "passed",
+          "failures": []
+        },
+        {
+          "title": "replacement B starts with enabled approval and never shows pending A approval id",
+          "status": "failed",
+          "failures": [
+            "AssertionError: expected <div \u2026(2)><p \u2026(1)></p>\n\u2026(4)</div> to be null\n    at D:/UNG DUNG AI/TOOL AI 2026/Controlled-Vibe-Framework-CVF/.cvf/runtime/ncr-processing-lifecycle-local-20261012/local-probe.test.tsx:32:59\n    at file:///D:/UNG%20DUNG%20AI/TOOL%20AI%202026/Controlled-Vibe-Framework-CVF/EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:20"
+          ]
+        },
+        {
+          "title": "replacement B report remains unsubmitted when pending A report resolves",
+          "status": "failed",
+          "failures": [
+            "AssertionError: expected 'Report recorded' to be 'Report false positive' // Object.is equality\n    at D:/UNG DUNG AI/TOOL AI 2026/Controlled-Vibe-Framework-CVF/.cvf/runtime/ncr-processing-lifecycle-local-20261012/local-probe.test.tsx:44:73\n    at file:///D:/UNG%20DUNG%20AI/TOOL%20AI%202026/Controlled-Vibe-Framework-CVF/EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:20"
+          ]
+        }
+      ]
+    },
+    "repaired": {
+      "path": ".cvf/runtime/ncr-processing-lifecycle-local-20261012/local-repaired.json",
+      "sha256": "5c714241ced260ff1936010c5cc327a5ca3ac5ea618241026030ae93ad087e96",
+      "total": 3,
+      "passed": 3,
+      "failed": 0,
+      "success": true,
+      "assertions": [
+        {
+          "title": "positive control: active approval remains usable and records its own id",
+          "status": "passed",
+          "failures": []
+        },
+        {
+          "title": "replacement B starts with enabled approval and never shows pending A approval id",
+          "status": "passed",
+          "failures": []
+        },
+        {
+          "title": "replacement B report remains unsubmitted when pending A report resolves",
+          "status": "passed",
+          "failures": []
+        }
+      ]
+    },
+    "oracleIntegrity": "Fresh independently authored A/B fixtures; production component and actual rendered recovery buttons; pending transport ignores abort; no worker test imports. Positive approval proves active submission stays usable; original bytes fail two distinct stale-state assertions."
+  },
+  "repair": {
+    "owner": "LOCAL_REVIEWER",
+    "rounds": 1,
+    "productRootGroups": 1,
+    "affectedHandlers": 2,
+    "severity": "MODERATE_PRODUCT_CORRECTNESS_STALE_TASK_RECOVERY_UI",
+    "failure": "Old approval id/report-success from A becomes B UI; B approval also stays busy from A until resolution. Both are the same missing attempt-binding dependency class. No backend authority breach demonstrated.",
+    "change": "Capture active owning attempt in report/approval; check after fetch and JSON, suppress abandoned error/finally, reset B approvalSubmitting; preserve payloads and active rejection behavior.",
+    "workerRepairTurns": 0,
+    "regressionAddedCases": 6,
+    "acceptedFiles": [
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ProcessingScreen.tsx",
+        "sha256": "e34ff88d91b25e8274042cc7f77871eb25570ce01eb8e4531b75a274a99a77ec",
+        "bytes": 46691,
+        "lines": 950
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ProcessingScreen.lifecycle.test.tsx",
+        "sha256": "1ef99fc0f317d09624b6c383a20143fed435159ad2561f7e29f24c18ce053263",
+        "bytes": 22631,
+        "lines": 488
+      }
+    ],
+    "originalCodeAndTestPreserved": "originalWorkerFiles snapshot text plus rawSha256; immutable original return/proof retained as received.",
+    "assertedRawSnapshotIntegrity": true
+  },
+  "verification": {
+    "reviewerFastInitial": {
+      "exitCode": 0,
+      "logPath": ".cvf/runtime/ncr-processing-lifecycle-local-20261012/reviewer-fast-initial.log",
+      "sha256": "7d771ebaa5d63082d20c0253935570df90a92f695358718f266f6a17ee743558"
+    },
+    "focused": {
+      "path": ".cvf/runtime/ncr-processing-lifecycle-local-20261012/focused-repaired.json",
+      "sha256": "60ca8fe02706075a0a838e7c57a40c07bdd5684671a090e07e14cf216dbe9e70",
+      "total": 64,
+      "passed": 64,
+      "failed": 0,
+      "success": true,
+      "assertions": [
+        {
+          "title": "delivers exact output and receipt once for an uncancelled success without a badge",
+          "status": "passed",
+          "failures": []
+        },
+        {
+          "title": "delivers exact output and receipt once for an uncancelled success with a risk badge",
+          "status": "passed",
+          "failures": []
+        },
+        {
+          "title": "does not deliver a response that arrives after Cancel and calls onCancel once",
+          "status": "passed",
+          "failures": []
+        },
+        {
+          "title": "aborts the in-flight request on Cancel",
+          "status": "passed",
+          "failures": []
+        },
+        {
+          "title": "suppresses the scheduled no-badge completion when Cancel happens before the 300ms timer",
+          "status": "passed",
+          "failures": []
+        },
+        {
+          "title": "suppresses the badge auto-advance when Cancel happens before the 2000ms timer",
+          "status": "passed",
+          "failures": []
+        },
+        {
+          "title": "does not deliver a response or scheduled completion after unmount",
+          "status": "passed",
+          "failures": []
+        },
+        {
+          "title": "does not deliver the delayed no-badge completion after unmount",
+          "status": "passed",
+          "failures": []
+        },
+        {
+          "title": "does not issue another request when only the callbacks change",
+          "status": "passed",
+          "failures": []
+        },
+        {
+          "title": "does not issue another request for fresh but equivalent input objects",
+          "status": "passed",
+          "failures": []
+        },
+        {
+          "title": "does not issue another request when the language changes",
+          "status": "passed",
+          "failures": []
+        },
+        {
+          "title": "issues one request under StrictMode",
+          "status": "passed",
+          "failures": []
+        },
+        {
+          "title": "lets replacement B win and ignores the late response of A",
+          "status": "passed",
+          "failures": []
+        },
+        {
+          "title": "treats a changed intent as a new request",
+          "status": "passed",
+          "failures": []
+        },
+        {
+          "title": "delivers once when View Results is clicked repeatedly and the timer later expires",
+          "status": "passed",
+          "failures": []
+        },
+        {
+          "title": "delivers once when the timer fires first and View Results is clicked afterwards",
+          "status": "passed",
+          "failures": []
+        },
+        {
+          "title": "stops the demo interval and completion on Cancel",
+          "status": "passed",
+          "failures": []
+        },
+        {
+          "title": "clears the demo timers on unmount",
+          "status": "passed",
+          "failures": []
+        },
+        {
+          "title": "still completes an uncancelled demo run once with generated output",
+          "status": "passed",
+          "failures": []
+        },
+        {
+          "title": "does not import a late approval id into replacement B or keep B busy",
+          "status": "passed",
+          "failures": []
+        },
+        {
+          "title": "does not mark B reported when the abandoned A report succeeds",
+          "status": "passed",
+          "failures": []
+        },
+        {
+          "title": "ignores late BLOCK JSON after cancel",
+          "status": "passed",
+          "failures": []
+        },
+        {
+          "title": "ignores late NEEDS_APPROVAL JSON after cancel",
+          "status": "passed",
+          "failures": []
+        },
+        {
+          "title": "ignores late BLOCK rejection and keeps B submission owned by B",
+          "status": "passed",
+          "failures": []
+        },
+        {
+          "title": "ignores late NEEDS_APPROVAL rejection and keeps B submission owned by B",
+          "status": "passed",
+          "failures": []
+        },
+        {
+          "title": "shows a classified failure for a real request without mock fallback or completion",
+          "status": "passed",
+          "failures": []
+        },
+        {
+          "title": "forwards governed execution overrides to /api/execute",
+          "status": "passed",
+          "failures": []
+        },
+        {
+          "title": "renders guided-response panel when BLOCK response includes guidedResponse",
+          "status": "passed",
+          "failures": []
+        },
+        {
+          "title": "renders guided-response panel when NEEDS_APPROVAL response includes guidedResponse",
+          "status": "passed",
+          "failures": []
+        },
+        {
+          "title": "does not render guided-response panel for normal (success) tasks",
+          "status": "passed",
+          "failures": []
+        },
+        {
+          "title": "does not render guided-response panel when BLOCK has no guidedResponse",
+          "status": "passed",
+          "failures": []
+        },
+        {
+          "title": "renders execution diagnostic and does not fall back to mock output",
+          "status": "passed",
+          "failures": []
+        },
+        {
+          "title": "keeps incomplete output out of completion and displays its non-retryable diagnostic",
+          "status": "passed",
+          "failures": []
+        },
+        {
+          "title": "renders unclassified live failure without falling back to mock output",
+          "status": "passed",
+          "failures": []
+        },
+        {
+          "title": "renders risk-badge with R0 level when enforcement riskGate returns R0",
+          "status": "passed",
+          "failures": []
+        },
+        {
+          "title": "renders risk-badge with R1 level when enforcement riskGate returns R1",
+          "status": "passed",
+          "failures": []
+        },
+        {
+          "title": "renders risk-badge with R3 when enforcement riskGate returns R3",
+          "status": "passed",
+          "failures": []
+        },
+        {
+          "title": "does not render risk-badge when enforcement has no riskGate",
+          "status": "passed",
+          "failures": []
+        },
+        {
+          "title": "renders risk-badge description text (not empty)",
+          "status": "passed",
+          "failures": []
+        },
+        {
+          "title": "renders provider, routing, knowledge, and policy evidence returned by /api/execute",
+          "status": "passed",
+          "failures": []
+        },
+        {
+          "title": "uses execute-route approvalId directly when NEEDS_APPROVAL creates one",
+          "status": "passed",
+          "failures": []
+        },
+        {
+          "title": "shows false-positive report button for BLOCK receipt and records report without mutating receipt",
+          "status": "passed",
+          "failures": []
+        },
+        {
+          "title": "does not show false-positive report button for NEEDS_APPROVAL receipt",
+          "status": "passed",
+          "failures": []
+        },
+        {
+          "title": "renders Submit for Review button on NEEDS_APPROVAL response",
+          "status": "passed",
+          "failures": []
+        },
+        {
+          "title": "does not render Submit for Review button on BLOCK response",
+          "status": "passed",
+          "failures": []
+        },
+        {
+          "title": "calls POST /api/approvals with templateId and intent on submit",
+          "status": "passed",
+          "failures": []
+        },
+        {
+          "title": "shows approval-status-panel with request ID after successful submission",
+          "status": "passed",
+          "failures": []
+        },
+        {
+          "title": "shows completion-banner and risk-badge when success response includes riskLevel",
+          "status": "passed",
+          "failures": []
+        },
+        {
+          "title": "\"View Results \u2192\" button calls onComplete immediately with output",
+          "status": "passed",
+          "failures": []
+        },
+        {
+          "title": "existing success path (no riskGate) calls onComplete without showing completion-banner",
+          "status": "passed",
+          "failures": []
+        },
+        {
+          "title": "renders the browse experience by default",
+          "status": "passed",
+          "failures": []
+        },
+        {
+          "title": "shows restored A when the ambient current execution is B",
+          "status": "passed",
+          "failures": []
+        },
+        {
+          "title": "shows restored A when there is no ambient current execution",
+          "status": "passed",
+          "failures": []
+        },
+        {
+          "title": "keeps A displayed when the ambient current execution changes to another execution",
+          "status": "passed",
+          "failures": []
+        },
+        {
+          "title": "rejects restored A and leaves ambient B unchanged",
+          "status": "passed",
+          "failures": []
+        },
+        {
+          "title": "follow-up from restored A uses A as the parent and leaves A and B unchanged",
+          "status": "passed",
+          "failures": []
+        },
+        {
+          "title": "accepts a fresh execution after the ambient current execution moves to B",
+          "status": "passed",
+          "failures": []
+        },
+        {
+          "title": "switches identity and actions from A to C together",
+          "status": "passed",
+          "failures": []
+        },
+        {
+          "title": "returns an invalid history query (unknown id) to browse without showing prior output",
+          "status": "passed",
+          "failures": []
+        },
+        {
+          "title": "returns an invalid history query (unaccepted) to browse without showing prior output",
+          "status": "passed",
+          "failures": []
+        },
+        {
+          "title": "returns an invalid history query (empty output) to browse without showing prior output",
+          "status": "passed",
+          "failures": []
+        },
+        {
+          "title": "returns an invalid history query (unavailable template) to browse without showing prior output",
+          "status": "passed",
+          "failures": []
+        },
+        {
+          "title": "keeps a fresh submission bound to the created execution when no continue parameter is present",
+          "status": "passed",
+          "failures": []
+        },
+        {
+          "title": "binds processing completion to the created execution when the ambient current execution changes during processing",
+          "status": "passed",
+          "failures": []
+        }
+      ]
+    },
+    "tsc": {
+      "exitCode": 0,
+      "logSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "eslint": {
+      "exitCode": 0,
+      "logSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "rerunBasis": "Original distinct stale recovery assertions fail; repaired product bytes and six regressions require bounded focused/type/lint verification. No package-wide or wizard suite duplicate.",
+    "closurePhaseFirstDraft": {
+      "exitCode": 1,
+      "logPath": ".cvf/runtime/ncr-processing-lifecycle-local-20261012/reviewer-closure-preflight.log",
+      "attribution": "LOCAL_REVIEWER_PHASE_AND_CLOSURE_METADATA",
+      "workerOwnershipExpanded": false
+    }
+  },
+  "qualityAttribution": {
+    "workerHarnessRootDefects": 2,
+    "workerLineBudgetSelfRepairGroups": 1,
+    "workerEncodingSelfRepairGroups": 1,
+    "workerReadOrderProcedureDefectGroups": 1,
+    "reviewerProductRepairGroups": 1,
+    "reviewerDependentCallbackSymptoms": 2,
+    "workerReportedDefectGroups7Meaning": "Baseline product symptom categories, not worker error count or gate runs.",
+    "workerSelfRepairs3Inconsistency": "Narrative names2 harness repairs plus line-budget and encoding; Local records four technical self-repair groups separately and1 procedure group; does not silently accept3 as total.",
+    "workerClaimCorrection": "Worker blanket every-continuation guarded and all-known-dependencies sweep exceeded observed scope; independent stale approval/report failure disproves it. Original wording retained as a historical submission.",
+    "localToolingDefects": [
+      "Scaffold first targeted ignored runtime; tool requires docs/reviews; corrected before drafting.",
+      "Vitest first outputFile relative resolved under config root; original report retained and located; not worker attribution.",
+      "Local mistakenly reused worker-return wrapper after adding9 reviewer paths; scope check correctly rejected them. Initial frozen4 intake gate PASS remains valid; closure uses dedicated steward/closure gates.",
+      "First closure metadata check: baseline stale release wording, missing closure assertion matrix and confirmatory-purpose token; all Local closure authoring, not worker defects.",
+      "Closed Source Verification regex treated repo Home path /home/ as external filesystem; use canonical repo-local evidence wrapper with actual unchanged source scope/hash, no checker edit."
+    ],
+    "localDispatcherBaselineScopeProjection": "Baseline scope held sourceFinding/reproduction/limits string from authoring-variable reuse; work-order exact scope was complete. Local fixes baseline projection at closure, not worker attribution."
+  },
+  "claimBoundary": {
+    "evidence": "SYNTHETIC_OFFLINE_COMPONENT_ONLY",
+    "realProviderCalls": 0,
+    "browserRun": false,
+    "backendCancellationKnown": false,
+    "wizardSuitesRun": false,
+    "fullRoadmapClosure": false,
+    "newGateHookOrQuiz": false,
+    "economicEvaluation": "DEFERRED_BY_OPERATOR",
+    "nativeIdentityAttestation": false
+  },
+  "materialManifest": [
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ProcessingScreen.tsx",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ProcessingScreen.lifecycle.test.tsx",
+    "docs/reviews/CVF_NCR_PROCESSING_LIFECYCLE_WORKER_RETURN_2026-10-12.md",
+    "docs/reviews/evidence/ncr-processing-lifecycle-worker-20261012.json",
+    "docs/reviews/CVF_NCR_PROCESSING_LIFECYCLE_COMPLETION_2026-10-12.md",
+    "docs/reviews/evidence/ncr-processing-lifecycle-local-20261012.json",
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_PROCESSING_LIFECYCLE_2026-10-12.md",
+    "docs/baselines/CVF_GC018_NCR_PROCESSING_LIFECYCLE_2026-10-12.md",
+    "docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json",
+    "docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md",
+    "CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json",
+    "CVF_SESSION/ACTIVE_SESSION_STATE.json",
+    "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json"
+  ],
+  "continuityManifest": [
+    "AGENT_HANDOFF_V63_2026-09-18.md",
+    "CVF_SESSION_MEMORY.md",
+    "CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json",
+    "CVF_SESSION/state/entries/nextAllowedMove.json",
+    "CVF_SESSION/ACTIVE_SESSION_STATE.json",
+    "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json"
+  ],
+  "canonicalConsumerEvidence": {
+    "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.tsx",
+    "sha256": "9400ddde799b7c2ec386cdd1bd618df98be12b25020dba427607ecfb433d13fd",
+    "scopes": [
+      {
+        "lines": "376-411",
+        "text": "        addExecution(execution);\n        setActiveExecutionId(execution.id);\n        setWorkflowState('processing');\n    }, [selectedTemplate, addExecution]);\n\n    const handleProcessingComplete = useCallback((output: string, evidenceReceipt?: GovernanceEvidenceReceipt) => {\n        setCurrentOutput(output);\n        setCurrentEvidenceReceipt(evidenceReceipt);\n        if (activeExecutionId) {\n            // W123-T1: snapshot evidence receipt + knowledge collection into execution for continuity chain\n            const snap = buildEvidenceSnapshot(evidenceReceipt as Record<string, unknown> | undefined);\n            updateExecution(activeExecutionId, {\n                status: 'completed',\n                output,\n                qualityScore: 8.2,\n                completedAt: new Date(),\n                ...(snap ? { evidenceReceiptSnapshot: snap } : {}),\n                ...(snap?.knowledgeCollectionId ? { knowledgeCollectionId: snap.knowledgeCollectionId } : {}),\n            });\n        }\n        setWorkflowState('result');\n    }, [activeExecutionId, updateExecution]);\n\n    const handleBack = useCallback(() => {\n        setSelectedTemplate(null);\n        setActiveExecutionId(null);\n        setCurrentOutput('');\n        setCurrentEvidenceReceipt(undefined);\n        setIterationContext(null);\n        setWorkflowState('browse');\n    }, []);\n\n    const handleFollowUp = useCallback((refinement: string) => {\n        if (!selectedTemplate || !currentOutput) return;\n        const truncated = currentOutput.length > 600\n            ? currentOutput.slice(0, 600) + '\u2026'"
+      },
+      {
+        "lines": "606-629",
+        "text": "            {workflowState === 'research-wizard' && <ResearchProjectWizard onBack={handleBack} />}\n            {workflowState === 'system-wizard' && <SystemDesignWizard onBack={handleBack} />}\n            {workflowState === 'content-wizard' && <ContentStrategyWizard onBack={handleBack} />}\n            {workflowState === 'data-wizard' && <DataAnalysisWizard onBack={handleBack} />}\n\n            {workflowState === 'processing' && selectedTemplate && (\n                <ProcessingScreen\n                    templateName={selectedTemplate.name}\n                    templateId={selectedTemplate.id}\n                    inputs={iterationContext\n                        ? { ...currentInput, _previousOutput: iterationContext }\n                        : currentInput}\n                    intent={currentIntent}\n                    onComplete={handleProcessingComplete}\n                    onCancel={handleBack}\n                />\n            )}\n\n            {workflowState === 'result' && activeExecution && (\n                <ResultViewer\n                    execution={activeExecution}\n                    output={currentOutput}\n                    onAccept={handleAccept}\n                    onReject={handleReject}"
+      }
+    ],
+    "purpose": "Home completion/back and ProcessingScreen props preserve parent removal and callback contracts; Local source-derived evidence wrapper prevents false external-path classification of repo /home/ segment."
+  }
+}

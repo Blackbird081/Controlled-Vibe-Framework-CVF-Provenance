@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 docType: work_order
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 Date: 2026-10-12
 Batch ID: CVF-NCR-PROCESSING-LIFECYCLE-20261012
 Dispatch base head: 07fbf32cf04a6f4fd53697e6d3bb2216911e2afd
@@ -190,7 +190,7 @@ Actual result: 0 candidates, 0 returned, not truncated. This query does not prov
 | manual and auto completion separate | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ProcessingScreen.tsx` | completedOutput effect; view-results-btn onClick | ProcessingScreen | existing result delivery | ACCEPT |
 | mock interval cleanup unused; Cancel forwards only | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ProcessingScreen.tsx` | runMockExecution; startup mock branch; Cancel button | ProcessingScreen | existing demo/cancel consumer | ACCEPT |
 | actual failures with valid uncancelled control | `docs/reviews/evidence/ncr-processing-lifecycle-dispatch-20261012.json` | sourceFinding and reproduction | reproduction | Local offline actual-component probe | ACCEPT |
-| Home consumes completion and removes processing on back | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.tsx` | handleProcessingComplete; handleBack; ProcessingScreen render | HomePage | existing parent UI | ACCEPT |
+| Home consumes completion and removes processing on back | `docs/reviews/evidence/ncr-processing-lifecycle-local-20261012.json` | canonicalConsumerEvidence: unchanged Home path/hash/scopes376-411/606-629 | HomePage | existing parent UI | ACCEPT |
 | current behavior contract regression suite | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ProcessingScreen.test.tsx` | named describe groups in Required First Reads | ProcessingScreen | current offline component tests | ACCEPT |
 | installed offline selection and provider denial | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/vitest.config.ts` | default non-live include/exclude/setupFiles | defineConfig | current Vitest configuration | ACCEPT |
 
@@ -255,22 +255,22 @@ Claim Update: finite implementation task selected; no worker outcome, independen
 
 | Field | Evidence |
 |---|---|
-| Actor | Local dispatcher/selector and collection steward |
+| Actor | Local INTERNAL_AGENT reviewer/closer |
 | Provider or surface | private shared workspace |
-| Session or invocation | ncr-processing-lifecycle-dispatch-20261012 |
-| Working directory | repository root |
-| Command or tool surface | progressive startup; scoped code/roadmap/owner reads; actual component five-case red; resolver/scaffold; exact packet and pending owner/collection integration |
-| Target paths | `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_PROCESSING_LIFECYCLE_2026-10-12.md`; `docs/baselines/CVF_GC018_NCR_PROCESSING_LIFECYCLE_2026-10-12.md`; `docs/reviews/evidence/ncr-processing-lifecycle-dispatch-20261012.json`; `docs/reference/work_order_template/CVF_WORK_ORDER_SOURCE_VERIFICATION_ADDENDUM.md`; `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md`; `docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json`; `docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md` |
-| Allowed scope source | operator continuation, explicit Sonnet5.5 high switch, standing audit/select and proportional quality/time tracking |
-| Before status evidence | 07fbf32cf04a6f4fd53697e6d3bb2216911e2afd; exact four previously pending documentation files; staged empty;16 reviewed rows |
-| After status evidence | exact seven material documentation paths pending; no product edit; dedicated six-path continuity later |
-| Diff evidence | git diff --check; exact staged manifest before commit |
-| Approval boundary | private packet/continuity; release requires clean worktree and staged empty after both commits, verified before operator manually starts worker; no push/provider effect |
-| Claim boundary | synthetic UI source contradiction and task admission only |
+| Session or invocation | ncr-processing-lifecycle-local-review-20261012 |
+| Working directory | repo root and existing Web package |
+| Command or tool surface | intake snapshot, distinct actual-component probe, one bounded repair, focused/type/lint, closure/collection/generator/gates |
+| Target paths | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ProcessingScreen.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ProcessingScreen.lifecycle.test.tsx`; `docs/reviews/CVF_NCR_PROCESSING_LIFECYCLE_WORKER_RETURN_2026-10-12.md`; `docs/reviews/evidence/ncr-processing-lifecycle-worker-20261012.json`; `docs/reviews/CVF_NCR_PROCESSING_LIFECYCLE_COMPLETION_2026-10-12.md`; `docs/reviews/evidence/ncr-processing-lifecycle-local-20261012.json`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_PROCESSING_LIFECYCLE_2026-10-12.md`; `docs/baselines/CVF_GC018_NCR_PROCESSING_LIFECYCLE_2026-10-12.md`; `docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json`; `docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Allowed scope source | work-order Reviewer Closure Conversion and standing useful continuation/quality-time collection |
+| Before status evidence | HEAD 4ea59861d9bfe2c9806f5071cf535e320dcb5ae4; exact4 worker paths pending, staged empty |
+| After status evidence | exact13 material paths plus subsequent exact6 continuity |
+| Diff evidence | git diff --check; original raw hashes in Local JSON; staged exact manifest |
+| Approval boundary | private review/closure/continuity, no push grant |
+| Claim boundary | client synthetic offline; technical repaired acceptance, procedureFAIL |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-processing-lifecycle-dispatch-20261012 |
-| Expected manifest | `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_PROCESSING_LIFECYCLE_2026-10-12.md`; `docs/baselines/CVF_GC018_NCR_PROCESSING_LIFECYCLE_2026-10-12.md`; `docs/reviews/evidence/ncr-processing-lifecycle-dispatch-20261012.json`; `docs/reference/work_order_template/CVF_WORK_ORDER_SOURCE_VERIFICATION_ADDENDUM.md`; `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md`; `docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json`; `docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md` |
-| Actual changed set | `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_PROCESSING_LIFECYCLE_2026-10-12.md`; `docs/baselines/CVF_GC018_NCR_PROCESSING_LIFECYCLE_2026-10-12.md`; `docs/reviews/evidence/ncr-processing-lifecycle-dispatch-20261012.json`; `docs/reference/work_order_template/CVF_WORK_ORDER_SOURCE_VERIFICATION_ADDENDUM.md`; `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md`; `docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json`; `docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md` |
+| Invocation ID | ncr-processing-lifecycle-local-review-20261012 |
+| Expected manifest | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ProcessingScreen.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ProcessingScreen.lifecycle.test.tsx`; `docs/reviews/CVF_NCR_PROCESSING_LIFECYCLE_WORKER_RETURN_2026-10-12.md`; `docs/reviews/evidence/ncr-processing-lifecycle-worker-20261012.json`; `docs/reviews/CVF_NCR_PROCESSING_LIFECYCLE_COMPLETION_2026-10-12.md`; `docs/reviews/evidence/ncr-processing-lifecycle-local-20261012.json`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_PROCESSING_LIFECYCLE_2026-10-12.md`; `docs/baselines/CVF_GC018_NCR_PROCESSING_LIFECYCLE_2026-10-12.md`; `docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json`; `docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Actual changed set | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ProcessingScreen.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ProcessingScreen.lifecycle.test.tsx`; `docs/reviews/CVF_NCR_PROCESSING_LIFECYCLE_WORKER_RETURN_2026-10-12.md`; `docs/reviews/evidence/ncr-processing-lifecycle-worker-20261012.json`; `docs/reviews/CVF_NCR_PROCESSING_LIFECYCLE_COMPLETION_2026-10-12.md`; `docs/reviews/evidence/ncr-processing-lifecycle-local-20261012.json`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_PROCESSING_LIFECYCLE_2026-10-12.md`; `docs/baselines/CVF_GC018_NCR_PROCESSING_LIFECYCLE_2026-10-12.md`; `docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json`; `docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |
 
@@ -517,7 +517,7 @@ One reviewed material then separate actual-SHA six-path continuity, followed by 
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: dedicated exact six-path dispatch/closure continuity and currentAuthority only; no guard/checker/hook mutation.
+Authorized guard-maintenance scope: exact currentAuthority raw-pin projections in material and subsequent exact6 continuity; no guard/checker/hook edit.
 Protected paths:
 
 - `AGENT_HANDOFF_V63_2026-09-18.md`
@@ -527,12 +527,8 @@ Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 
-Operator authorization: 2026-10-12 continuation and Sonnet5.5 high manual worker switch, standing audit/select/useful work-order/collection direction. Local owns necessary private commits and continuity; no push.
-Rollback boundary: exact new packet and matching continuity only; preserve Home closure and historical observations.
-Dispatcher material exact manifest: `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_PROCESSING_LIFECYCLE_2026-10-12.md`; `docs/baselines/CVF_GC018_NCR_PROCESSING_LIFECYCLE_2026-10-12.md`; `docs/reviews/evidence/ncr-processing-lifecycle-dispatch-20261012.json`; `docs/reference/work_order_template/CVF_WORK_ORDER_SOURCE_VERIFICATION_ADDENDUM.md`; `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md`; `docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json`; `docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md`.
-Dedicated continuity exact manifest: `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`.
-Worker exact manifest: `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ProcessingScreen.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ProcessingScreen.lifecycle.test.tsx`; `docs/reviews/evidence/ncr-processing-lifecycle-worker-20261012.json`; `docs/reviews/CVF_NCR_PROCESSING_LIFECYCLE_WORKER_RETURN_2026-10-12.md`.
-Local reserves `docs/reviews/CVF_NCR_PROCESSING_LIFECYCLE_COMPLETION_2026-10-12.md` and `docs/reviews/evidence/ncr-processing-lifecycle-local-20261012.json`; collection admission only after review. Never hand-edit generated aggregates.
+Operator authorization: standing useful continuation, Local review/repair/closure, and quality/time collection; operator manually requested Sonnet5.5 high. No push grant.
+Rollback boundary: exact ProcessingScreen closure material/continuity; preserve16 historical rows and immutable worker submission.
 
 ## Near-Threshold Owner Maintainability Plan
 
@@ -554,4 +550,50 @@ Local first commits exact seven material docs after required preflight, then exa
 | interceptionBoundary | no host/Gateway interception |
 | claimLanguage | bounded client lifecycle outcome; implementation/review proof pending |
 | forbiddenExpansion | provider/live/durable approval/store/type/schema/S5/Expense/public/deploy |
+
+
+## Local Terminal Review Disposition
+
+Technical output accepted bounded after one Local dependent callback repair. Original worker return/proof unchanged; code/test pre-repair snapshots retained in Local JSON. Required-read timing procedureFAIL; optional roadmap/wizard omissions outside scope are not defects. Original Source Pin Contract is the execution preimage, not post-repair release; no fresh worker dispatch.
+
+## Mixed Protected-Path Atomicity Authorization
+
+Disposition: AUTHORIZED_EXACT_MANIFEST
+Atomicity reason: accepted repaired product, closure/collection and matching raw authority projections must describe one package. Subsequent dedicated exact6 continuity records actual material SHA.
+Rollback boundary: this exact material and projections only.
+Exact changed manifest:
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ProcessingScreen.tsx`
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ProcessingScreen.lifecycle.test.tsx`
+- `docs/reviews/CVF_NCR_PROCESSING_LIFECYCLE_WORKER_RETURN_2026-10-12.md`
+- `docs/reviews/evidence/ncr-processing-lifecycle-worker-20261012.json`
+- `docs/reviews/CVF_NCR_PROCESSING_LIFECYCLE_COMPLETION_2026-10-12.md`
+- `docs/reviews/evidence/ncr-processing-lifecycle-local-20261012.json`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_PROCESSING_LIFECYCLE_2026-10-12.md`
+- `docs/baselines/CVF_GC018_NCR_PROCESSING_LIFECYCLE_2026-10-12.md`
+- `docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json`
+- `docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_PROCESSING_LIFECYCLE_2026-10-12.md` | CLOSED_PASS_BOUNDED; repaired technical output, procedureFAIL | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_NCR_PROCESSING_LIFECYCLE_COMPLETION_2026-10-12.md` | distinct original fail and repaired PASS with immutable worker return/proof | PASS |
+| Roadmap state | `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` | parent retained; finite component fix does not close full R1/R3/R4 | PASS |
+| Registry JSON | `docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json` |17 task observations:10 Haiku-family,3 Sonnet,4 Luna | PASS |
+| Registry Markdown | `docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md` | dated17-task quality/time/repair section | PASS |
+| External evidence digest | `docs/reviews/evidence/ncr-processing-lifecycle-local-20261012.json` | sha256:6bb5ebe98e3997decf87307cbea7e617fd0f92061290f98569d271feee342dc7; internal Local independent evidence, preserved originals | PASS |
+| System loop interlock | parked checkpoints | no new loop or automatic successor | N/A with reason: existing client repair only |
+| Session continuity | six current continuity surfaces | raw authority projections then dedicated material-SHA continuity; verify before final report | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| old attempt receipt/report must not contaminate B | Local approval/report negatives fail original then pass repaired; B owns busy state | PASS |
+| active approval remains usable | independent positive control observes its own id and event | PASS |
+| technical acceptance distinct from procedural compliance | repaired bounded product, procedureFAIL | PASS truthful distinction |
 

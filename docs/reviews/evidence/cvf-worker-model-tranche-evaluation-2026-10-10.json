@@ -787,6 +787,71 @@
         "learningDisposition": "RULE_EXISTS; retain existing earliest-phase machine-check candidate without opening a metadata-only successor",
         "costDisposition": "DEFERRED_BY_OPERATOR"
       }
+    },
+    {
+      "trancheId": "CVF-NCR-PROCESSING-LIFECYCLE-20261012",
+      "taskFamily": "PRODUCT_UI_ASYNC_LIFECYCLE_REPAIR",
+      "implementationPaths": 2,
+      "deliveredPaths": 4,
+      "role": "INTERNAL_AGENT_WORKER",
+      "model": "Claude Sonnet (operator-requested5.5; native runtime unverified)",
+      "effort": "high",
+      "identityBasis": "OPERATOR_REQUESTED_MODEL_EFFORT_NOT_RUNTIME_VERIFIED",
+      "observedRuntimeIdentity": null,
+      "observedEffort": null,
+      "status": "CLOSED_PASS_BOUNDED",
+      "evidence": "docs/reviews/evidence/ncr-processing-lifecycle-local-20261012.json",
+      "evidenceSha256": "6bb5ebe98e3997decf87307cbea7e617fd0f92061290f98569d271feee342dc7",
+      "technicalOutput": "ACCEPTED_BOUNDED_AFTER_LOCAL_DEPENDENT_REPAIR",
+      "procedureDisposition": "FAIL",
+      "procedure": "MANDATORY_SCOPED_READS_COMPLETED_AFTER_FIRST_EDIT",
+      "firstReturnGateClean": false,
+      "workerTestHarnessRepairGroups": 2,
+      "workerLineBudgetSelfRepairGroups": 1,
+      "workerEncodingSelfRepairGroups": 1,
+      "workerReadOrderProcedureDefectGroups": 1,
+      "reviewerProductCodeRepairs": 1,
+      "reviewerProductCodeRepairCountBasis": "One missing-attempt-binding root group,2 dependent approval/report handlers;6 added regression cases.",
+      "reviewerProductDefectSeverity": "MODERATE_STALE_TASK_RECOVERY_UI_NO_BACKEND_BREACH_ESTABLISHED",
+      "reviewerRequestedWorkerRepairTurns": 0,
+      "clock": {
+        "invocationStartLocal": "2026-10-12T01:06:08+07:00",
+        "startCaptureNote": "HEAD, clean status, staged-empty and clock captured by the first repository command, before any file read",
+        "terminalImplementationLocal": "2026-10-12T01:14:43+07:00",
+        "terminalImplementationNote": "captured after the component change, the lifecycle tests, tsc, eslint and all mandatory reads completed; the encoding repair, return gates and the final gate runs came after this clock",
+        "finalGateEndLocal": "2026-10-12T01:20:12+07:00",
+        "elapsedMinutesToFinalGateEndApprox": 14.1,
+        "budgetMinutes": 45
+      },
+      "fullDeliveryMinutes": null,
+      "bill": {
+        "amount": null,
+        "tokens": null,
+        "reason": "NATIVE_USAGE_UNEXPOSED_COST_DEFERRED_BY_OPERATOR"
+      },
+      "proof": "Independent actual-component original1 control PASS/2 stale state FAIL; repaired3/3;64 focused tests,tsc,lint PASS. Worker20 initial cases; six Local cases attributed separately.",
+      "qualityInterpretation": "Useful core repair but remaining dependent async recovery gap requires Local repair. Repeat late mandatory reading prevents full procedure acceptance. No categorical Sonnet superiority established.",
+      "contextConfound": "Same operator-managed Claude continuous session; earlier model/context/tool reuse possible, not a matched independent benchmark.",
+      "workerErrorCountClarification": {
+        "workerHarnessRootDefects": 2,
+        "workerLineBudgetSelfRepairGroups": 1,
+        "workerEncodingSelfRepairGroups": 1,
+        "workerReadOrderProcedureDefectGroups": 1,
+        "reviewerProductRepairGroups": 1,
+        "reviewerDependentCallbackSymptoms": 2,
+        "workerReportedDefectGroups7Meaning": "Baseline product symptom categories, not worker error count or gate runs.",
+        "workerSelfRepairs3Inconsistency": "Narrative names2 harness repairs plus line-budget and encoding; Local records four technical self-repair groups separately and1 procedure group; does not silently accept3 as total.",
+        "workerClaimCorrection": "Worker blanket every-continuation guarded and all-known-dependencies sweep exceeded observed scope; independent stale approval/report failure disproves it. Original wording retained as a historical submission.",
+        "localToolingDefects": [
+          "Scaffold first targeted ignored runtime; tool requires docs/reviews; corrected before drafting.",
+          "Vitest first outputFile relative resolved under config root; original report retained and located; not worker attribution."
+        ]
+      },
+      "limitations": [
+        "Synthetic offline only; wizard suites outside packet not run; backend cancellation unknown.",
+        "Requested identity/effort are not native proof; time interval excludes full accepted-delivery.",
+        "Original worker every-continuation/known-dependency PASS wording disproven; immutable return retained."
+      ]
     }
   ],
   "rubric": [
@@ -871,9 +936,9 @@
       "next useful comparison task"
     ],
     "reviewedHaikuCount": 10,
-    "reviewedSonnetCount": 2,
+    "reviewedSonnetCount": 3,
     "reviewedLunaCount": 4,
-    "reviewedTaskObservationCount": 16
+    "reviewedTaskObservationCount": 17
   },
   "provisionalRoleRouting": [
     {
@@ -902,9 +967,9 @@
   "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
   "laneProtection": "Reviewer-owned governed evidence promotion authorized by operator longitudinal tracking request. No worker file edit, new dispatch, provider effect or public export.",
   "observations": {
-    "technical": "Sixteen deduplicated reviewed tasks:10 Haiku-family,2 Sonnet,4 Luna; previous15 rows retained.",
-    "process": "Latest Home repair accepted with zero Local product-code repairs; one test precondition self-repair, one return-metadata self-repair group and mandatory read-depth procedureFAIL retained.",
-    "reportStatus": "SIXTEEN_REVIEWED_TASK_OBSERVATIONS_NO_COMPARATIVE_WINNER",
+    "technical": "17 deduplicated reviewed tasks:10 Haiku-family,3 Sonnet,4 Luna; prior16 rows unchanged.",
+    "process": "ProcessingScreen core repair accepted after1 Local dependent root-group repair affecting2 callbacks; worker2 harness,1 line-budget,1 encoding self-repair and late-read procedureFAIL retained.",
+    "reportStatus": "SEVENTEEN_REVIEWED_TASK_OBSERVATIONS_NO_COMPARATIVE_WINNER",
     "measuredBillComparison": null,
     "nextControl": "Continue evidence collection on admitted work; Expense/S5 and effects parked; no automatic router or new benchmark task."
   },
@@ -1076,11 +1141,11 @@
     "omissionOwner": "LOCAL_ORCHESTRATOR",
     "OpusSameSessionAdvisoryExtraWorkers": 0,
     "latestReviewedTask": {
-      "trancheId": "CVF-NCR-HOME-HISTORY-BINDING-20261011",
-      "localReview": "docs/reviews/CVF_NCR_HOME_HISTORY_BINDING_COMPLETION_2026-10-11.md",
-      "evidence": "docs/reviews/evidence/ncr-home-history-binding-local-20261011.json",
-      "evidenceSha256": "f5b13f5c5e629195c53623934de4e8216fe212fad611264deaa2d57b9f25d1d7",
-      "previousFifteenRowsPreserved": true
+      "trancheId": "CVF-NCR-PROCESSING-LIFECYCLE-20261012",
+      "localReview": "docs/reviews/CVF_NCR_PROCESSING_LIFECYCLE_COMPLETION_2026-10-12.md",
+      "evidence": "docs/reviews/evidence/ncr-processing-lifecycle-local-20261012.json",
+      "evidenceSha256": "6bb5ebe98e3997decf87307cbea7e617fd0f92061290f98569d271feee342dc7",
+      "previousSixteenRowsPreserved": true
     }
   },
   "operatorObservationFocus": {
@@ -1101,12 +1166,12 @@
     "attribution": "Separate worker defects from dispatcher, reviewer and tooling defects; missing read depth and scaffold are procedural findings with their actual impact recorded.",
     "timeRule": "Retain start/end and interval basis; do not infer complete accepted-delivery time from incomplete worker intervals. Separate required review time from avoidable rework.",
     "costDisposition": "DEFERRED_BY_OPERATOR_FOR_CURRENT_EVALUATION; preserve historical null/available fields without new billing investigation or cost ranking.",
-    "samplingPlan": "Operator2026-10-12 switches next useful manually started worker to requested Claude Sonnet5.5 high. Preserve historical Haiku-family/Luna observations; no benchmark-only task or automatic worker/model substitution.",
+    "samplingPlan": "Continue operator-selected useful Sonnet tasks with quality/time measures; no benchmark-only or automatic model switch.",
     "comparisonRule": "Use the same quality/time interpretation after the switch, compare similar task families and complexity, retain reuse/session context and exact requested configurations; no benchmark-only tasks or automatic model assignment.",
-    "currentTask": "CVF-NCR-HOME-HISTORY-BINDING-20261011",
-    "currentTaskDisposition": "REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED_WITH_PROCEDURE_FAIL",
-    "reviewedTaskCount": 16,
-    "postClosureClarification": "Same16 tasks; unilateral required-read omission confirmed by operator-relayed worker explanation; product outcome unchanged.",
+    "currentTask": "CVF-NCR-PROCESSING-LIFECYCLE-20261012",
+    "currentTaskDisposition": "REVIEWER_ACCEPTED_AFTER_LOCAL_REPAIR_WITH_PROCEDURE_FAIL",
+    "reviewedTaskCount": 17,
+    "postClosureClarification": "Current17 tasks; Sonnet late required reads recur despite scoped orchestrator mapping. Technical repair and procedure tracked separately; no model winner.",
     "proportionalControlDirection": {
       "authority": "OPERATOR_DIRECT_INSTRUCTION_CURRENT_SESSION_2026-10-12",
       "principle": "Net useful delivery value and agent problem-solving autonomy must justify governance overhead. Avoid latency from excessively strict checks.",
@@ -1140,10 +1205,11 @@
       "requestedEffort": "high",
       "nativeIdentity": null,
       "nativeIdentityReason": "Requested configuration only; operator manually starts worker, observed identity unexposed.",
-      "collectionDisposition": "NOT_A_REVIEWED_OBSERVATION_YET",
+      "collectionDisposition": "REVIEWED_OBSERVATION_ADMITTED",
       "priorReviewedTaskCount": 16,
       "timeQualityMeasures": "Actual worker/review/rework intervals, defects/severity/self-repair/reviewer burden; cost deferred.",
-      "contextConfound": "Record continuous-session/prior-context reuse if operator keeps the Claude session; advisory/model switch is not an independent sample."
+      "contextConfound": "Record continuous-session/prior-context reuse if operator keeps the Claude session; advisory/model switch is not an independent sample.",
+      "review": "docs/reviews/CVF_NCR_PROCESSING_LIFECYCLE_COMPLETION_2026-10-12.md"
     }
   },
   "dispatchInterruptedAttempts": [
