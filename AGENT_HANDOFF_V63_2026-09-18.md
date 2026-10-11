@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Current NCR Continuation
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `8284746865a3d3b464b1d5ee2def273b7e58b3c8`. Material SHA: `8284746865a3d3b464b1d5ee2def273b7e58b3c8`. Batch ID: CVF-MFRP-CONTINUITY-COLLECTION-DESIGN-20261011. Local corrective closure; no successor.
+Current HEAD recorded for this handoff: `8a8572c4f799e5c85d840db344d0f75ec74d0bd1`. Material SHA: `8a8572c4f799e5c85d840db344d0f75ec74d0bd1`. Batch ID: CVF-NCR-HOME-HISTORY-BINDING-20261011. Bounded manual worker dispatch; no launch/push.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -9,19 +9,24 @@ Status: ACTIVE
 Current continuation only. Root AGENTS.md and canonical routing owners retain full rules.
 Closed history is preserved byte-for-byte at `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V63_PRE_NCR_COMPACTION_2026-10-07.md` (SHA256 `54801fdcf14e9abe17592352ec3c69a0b0e855632991af0caacac7b65252ccba`); it is NOT_ACTIVE_AUTHORITY and not default startup reading.
 ## Scope / Target / Owner Boundary
-Operator2026-10-11 returned MFRP design: Local bounded acceptance, retain skip; required-read procedure FAIL. Collection15:9 Haiku,2 Sonnet,4 Luna; Opus advisory excluded.
-Role: Local INTERNAL_AGENT reviewer/steward; phase: private design closure; owner=Local; no automatic successor.
-Remote tracking branch: `origin/main`. Exact remote SHA must be derived live from git when needed.
-External agent memory files: non-canonical convenience only.
+
+Operator2026-10-11 continuation without low-value branches and audit-and-choose selects existing Home history binding repair. Exactly two product/test edits and two return/evidence files; operator-started worker only after release.
+Role: Local INTERNAL_AGENT dispatcher/steward; phase=private dispatch; decision owner=Local. Collection15 retained (9 Haiku-family,2 Sonnet,4 Luna), Opus advisory excluded.
+Remote tracking branch: `origin/main`; no push grant. Provider memory is not canonical.
+
 ## Startup Acknowledgment
-Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`;handoff=`AGENT_HANDOFF_V63_2026-09-18.md`;next=bounded MFRP design closed;role=Local INTERNAL_AGENT reviewer/steward;phase=private closure;decision owner=Local;parked checkpoint=Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11.
+
+Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`;handoff=`AGENT_HANDOFF_V63_2026-09-18.md`;next=bounded Home history worker after committed release;role=Local INTERNAL_AGENT dispatcher/steward;phase=private dispatch;decision owner=Local;parked checkpoint=Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11.
+
 ## Current Mode
 `cvf_ncr_p10_closed_p11_parked`. P10 package remains `ACTIVE_PRODUCTION_RUNTIME`; P11 parked. Latest closed learning-history wave: `LHW24`.
 Current NIS-T1J is CLOSED_PASS_BOUNDED with no automatic successor; NCR consumer maintenance is separately operator-authorized.
 ## Current Authority
-Baseline: `docs/baselines/CVF_GC018_MFRP_CONTINUITY_COLLECTION_DESIGN_2026-10-11.md`; SHA256 `400736b3023763e0958bb13b70c4cb98c938cab9946f58b3d0138ae66394398a`.
-Work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_CONTINUITY_COLLECTION_DESIGN_2026-10-11.md`; SHA256 `b2b686e046228bf0440c0d8676bb65ab9f38fbb645e5cf460c51f8e4bc98e8c9`; CLOSED_PASS_BOUNDED.
-Review docs/reviews/CVF_MFRP_CONTINUITY_COLLECTION_DESIGN_COMPLETION_2026-10-11.md: retain skip/procedure FAIL; collection15 incl4 Luna. Local atomicity literals corrected after valid marker adjudication; old attempt/alarm retained, no sample promotion.
+
+Baseline: `docs/baselines/CVF_GC018_NCR_HOME_HISTORY_BINDING_2026-10-11.md`; SHA256 `c0ad83b191dc13992ca4fc085918b863aae8857707b65eed10e6c96673c977ef`.
+Work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HOME_HISTORY_BINDING_2026-10-11.md`; SHA256 `45a65d204fefe07cfdaccb6ef777685279fb9fc90fdc9a2b13d45dea5c8ac38e`; DISPATCH_READY.
+Local red/source evidence: docs/reviews/evidence/ncr-home-history-binding-dispatch-20261011.json; fixture_B|OUTPUT_A. Warm History selection mitigates normal click; Home query/null/ambient binding gap remains.
+Prior MFRP bounded closure retains skip/read-procedure limits and safety adjudication; no collection promotion.
 
 ## O6 Release Rebind After Provenance Sync (2026-10-11)
 Root marker replacement aa32f666 blocked DR-04/DR-05; rebind bd13e1a80 restored release. Log C:/Users/DELL/AppData/Local/Temp/o6_preimpl.log retained; no worker defect. Provenance lane closed, URL locked.
@@ -102,7 +107,9 @@ Receiving agents clarify incomplete ideas according to the existing lifecycle st
 Consume returned evidence under MFRP P4-C1: EVALUATE_RETURNED_EVIDENCE_NOT_RECREATE_IMPLEMENTATION. A rerun needs a named contradiction/changed consumer,information gain and cost reason.
 Alibaba calls are authorized for meaningful scoped tests; no other provider call,Claude dispatch,public push,deployment or actual-data cutover is inferred.
 ## Next Allowed Move
-PROGRAM_ID=CVF-CORE; NEXT_ACTION_CLASS=STOP; BATCH_ID=CVF-MFRP-CONTINUITY-COLLECTION-DESIGN-20261011. Bounded design CLOSED_PASS_BOUNDED; original material d4851874bdbe853f1f4946b604704f2ac76b5e73, Local atomicity correction 8284746865a3d3b464b1d5ee2def273b7e58b3c8. Retain historical skip; structural collection change DEFERRED_WITH_REASON, no automatic successor. Fifteen reviewed tasks:9 Haiku-family,2 Sonnet,4 Luna (requested xhigh2/max2); Opus advisory excluded. Current worker final gate PASS after3 FAIL; procedure FAIL/read gaps. Original submission retained; Local design trace-only conversion. Valid safety alarm adjudicated with original marker/attempt retained; no sample promotion. O6 helper/Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11 parked; LHW24; ahead advisory, no push grant. Further audit/selection under operator continuation.
+
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=BUILD; BATCH_ID=CVF-NCR-HOME-HISTORY-BINDING-20261011. Operator audit-and-choose selects bounded Home history binding: two existing Home/product-test paths plus new proof/return. Packet material 8a8572c4f799e5c85d840db344d0f75ec74d0bd1; manual operator-started worker only after bound release PASS, WORKER_MUST_NOT_COMMIT,45min. Root starts no worker. Actual Local synthetic red: fixture_B|OUTPUT_A; existing History warm-click mitigation/flag retained. Required view/action/lineage/query regression; no durable approval/live proof. Collection15:9 Haiku-family,2 Sonnet,4 Luna; new observation only after review, Opus advisory excluded. Prior MFRP design closed; collection change/O6 helper deferred. Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11 parked; LHW24; no push grant.
+
 ## Active Boundary
 T3B has a Local-verified active v1 specification. Party B is verified and T3C-C1 tooling accepted at `db78c87df`; T3C-C2 and Party C are verified. T3D-C1 tooling is accepted at `9ed844c2a` without source. T3D-C0-R1 closed at `2fffa1ef7`. T3D-C3 was accepted bounded at `88137e9a2`, but actual-mode prepare attempts failed before Party B/C execution; authorized cleanup removed the failed root and discarded unaccepted worker changes. G1 stopped, G2-G6 parked, and G7 research closed at `660601f0e` with `ADAPT_EXISTING_HANDOFF_ONLY`. Evidence-join sufficiency stays WATCH; no implementation successor exists. Rejected T2 paths remain archived; HRLTP-T2 paused.
 Post-G7 Local source intake and Jev P0 are closed at material commit `9ac0ee8e59fa041ddaa93d725796c509400f257a`. The audit records 32 READ plus 8,093 DEFERRED paths. Jev adds fail-closed decision-context binding, incomplete candidate-space escape, and `EVIDENCE_ONLY` judgment authority to the existing ASSF owner. Proof: TypeScript 84/84, Python 61/61, compile PASS, governance 90/90. G1-G7 remain closed.
@@ -128,7 +135,8 @@ The historic provider/live parked line applies to those stopped lanes; it does n
 Q001/Q004 actual-data source/writer,custody,retention/RPO/RTO/cost checkpoints are action-specific; do not require a user-supplied ledger copy for unrelated fresh isolated development.
 NCR send/B2 STOP and S05/C1 remain; IAB unavailable; repo Playwright Chromium present; vision/full P04/full release remain unproved. No autonomous P11/public/deploy activation.
 ## Core Guard Self-Protection Authorization
-Authorized guard-maintenance scope: exact six-surface accepted MFRP design closure; raw closed-packet pins retained.
+
+Authorized guard-maintenance scope: exact six-surface Home dispatch continuity only; packet/source identities unchanged.
 Protected paths:
 
 - `AGENT_HANDOFF_V63_2026-09-18.md`
@@ -138,32 +146,32 @@ Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 
-Operator authorization: returned design review, longitudinal collection/Luna correction and necessary private continuity.
-Rollback boundary: restore matching continuity; preserve historical proof and parked effects. Generated aggregates regenerated only.
+Operator authorization: continuation and explicit audit-and-choose; necessary private work-order release/continuity.
+Rollback boundary: revert matching dispatch continuity; preserve historical proof, collection and parked effects. Generated aggregates regenerated only.
 
 ## Agent Operation Trace Block
 
+
 | Field | Evidence |
 |---|---|
-| Actor | Local maintainer/session-sync steward |
+| Actor | Local dispatcher/session-sync steward |
 | Provider or surface | private shared workspace |
-| Session or invocation | mfrp-continuity-collection-design-corrective-sync-20261011 |
+| Session or invocation | ncr-home-history-dispatch-sync-20261011 |
 | Working directory | repository root |
-| Command or tool surface | canonical generator; atomic commit; bound gates |
-| Target paths | six continuity paths listed in the manifest below |
-| Allowed scope source | paired MFRP design closure; operator returned design/model collection/Luna correction |
-| Before status evidence | 8284746865a3d3b464b1d5ee2def273b7e58b3c8; exact5 Local atomicity correction, original12 preserved |
-| After status evidence | finite MFRP design closed; collection15 and procedure limits retained |
-| Diff evidence | exact six continuity paths; material unchanged |
-| Approval boundary | authorized accepted-design continuity only |
-| Claim boundary | documentary closure; correct target guard; no collection recovery or model ranking |
+| Command or tool surface | canonical generator; exact6 commit; bound release gates |
+| Target paths | six continuity paths listed below |
+| Allowed scope source | operator audit-and-choose; paired Home packet |
+| Before status evidence | 8a8572c4f799e5c85d840db344d0f75ec74d0bd1; clean material committed, worker outputs absent |
+| After status evidence | matching currentAuthority/marker/next-move; worker not started |
+| Diff evidence | git diff --check; exact six-path staged manifest |
+| Approval boundary | private manual dispatch continuity; no push |
+| Claim boundary | source-selected UI repair packet, no worker acceptance/live claim |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | mfrp-continuity-collection-design-corrective-sync-20261011 |
+| Invocation ID | ncr-home-history-dispatch-sync-20261011 |
 | Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |
+
 ## Claim Boundary
 Current facts,pointers and granted next actions only. Archive preserves history,not active authority. No full-roadmap,live governance,release,public or deployment claim.
-
-Local sync-helper diagnostic: conflicting enforce/plan-only options rejected; corrected enforce required bullet-list protected paths, so existing scope reformatted. Logs retained in .cvf/runtime/mfrp-continuity-design-local-20261011.

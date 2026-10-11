@@ -34,12 +34,12 @@ artifact.
 | Prior handoff (archive-qualified) | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V62_2026-09-17.md` |
 | Latest front-door archive | `CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_COMPACTION_ARCHIVE_2026-08-11.md` |
 | Current authority evidence | `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` `currentAuthority` |
-| Parent maintenance | existing MFRP collection owners; design closed with retained skip and procedure limits; no automatic successor |
+| Parent maintenance | existing NCR Home/store owners; bounded source-selected result binding; prior MFRP design closed/deferred |
 | Freeze posture | `governance_kernel_freeze_recommended` |
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`;handoff=`AGENT_HANDOFF_V63_2026-09-18.md`;next=bounded MFRP design closed;role=Local INTERNAL_AGENT reviewer/steward;phase=private closure;decision owner=Local;parked checkpoint=Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11.
+Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`;handoff=`AGENT_HANDOFF_V63_2026-09-18.md`;next=bounded Home history worker after committed release;role=Local INTERNAL_AGENT dispatcher/steward;phase=private dispatch;decision owner=Local;parked checkpoint=Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11.
 
 ## Current Mode
 
@@ -48,7 +48,7 @@ Current mode: `cvf_ncr_p10_closed_p11_parked`; previous mode marker: `cvf_ncr_p1
 
 ## Next Allowed Move
 Mode: `cvf_ncr_p10_closed_p11_parked`
-PROGRAM_ID=CVF-CORE; NEXT_ACTION_CLASS=STOP; BATCH_ID=CVF-MFRP-CONTINUITY-COLLECTION-DESIGN-20261011. Bounded design CLOSED_PASS_BOUNDED; original material d4851874bdbe853f1f4946b604704f2ac76b5e73, Local atomicity correction 8284746865a3d3b464b1d5ee2def273b7e58b3c8. Retain historical skip; structural collection change DEFERRED_WITH_REASON, no automatic successor. Fifteen reviewed tasks:9 Haiku-family,2 Sonnet,4 Luna (requested xhigh2/max2); Opus advisory excluded. Current worker final gate PASS after3 FAIL; procedure FAIL/read gaps. Original submission retained; Local design trace-only conversion. Valid safety alarm adjudicated with original marker/attempt retained; no sample promotion. O6 helper/Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11 parked; LHW24; ahead advisory, no push grant. Further audit/selection under operator continuation.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=BUILD; BATCH_ID=CVF-NCR-HOME-HISTORY-BINDING-20261011. Operator audit-and-choose selects bounded Home history binding: two existing Home/product-test paths plus new proof/return. Packet material 8a8572c4f799e5c85d840db344d0f75ec74d0bd1; manual operator-started worker only after bound release PASS, WORKER_MUST_NOT_COMMIT,45min. Root starts no worker. Actual Local synthetic red: fixture_B|OUTPUT_A; existing History warm-click mitigation/flag retained. Required view/action/lineage/query regression; no durable approval/live proof. Collection15:9 Haiku-family,2 Sonnet,4 Luna; new observation only after review, Opus advisory excluded. Prior MFRP design closed; collection change/O6 helper deferred. Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11 parked; LHW24; no push grant.
 Historical G1-G7 terminal baseline: mode `acel_g1_g7_research_terminally_closed`. G1-G6 terminal review: `docs/reviews/CVF_ACEL_G1_G6_TERMINAL_STOP_CLOSURE_2026-09-24.md`; G7 research closure: `docs/reviews/CVF_ACEL_G7_CROSS_RUN_CAPABILITY_EVOLUTION_RESEARCH_CLOSURE_2026-09-24.md`. The packet-only post-G7 reconciliation review at `docs/reviews/CVF_ACEL_POST_G7_FULL_CORPUS_ABSORPTION_CLOSURE_2026-09-24.md` is superseded for repository absorption by the 2026-09-25 pinned-source audit. G1 is stopped, G2-G6 remain parked, G7 research is closed, and no automatic G1-G7 successor exists.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
