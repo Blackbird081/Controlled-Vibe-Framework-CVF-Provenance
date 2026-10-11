@@ -26,9 +26,11 @@ The approval covers the exact existing range and necessary authorization record,
 followed by mandatory gates and canonical private-provenance push.
 
 The authorization document, its corrective metadata commit, and the mandatory
-dedicated handoff-sync raise the authorized push debt ceiling to 35 commits
+dedicated handoff-sync, plus one authorization correction and one handoff
+literal-format repair pair, raise the authorized push debt ceiling to 37 commits
 and the net changed-path ceiling to 68. The handoff is already in the source
-manifest; only its current material SHA continuity marker is refreshed. This exception ends when the
+manifest; its current material SHA continuity marker and two checker-required remote/
+provider-memory boundary sentences are refreshed. This exception ends when the
 approved stack reaches origin/main; it does not authorize another tranche.
 
 ## Startup Acknowledgment
@@ -124,12 +126,12 @@ range is a transport stack of existing commits, not a proposed single mixed
 commit. Retain every source commit; no squash or history rewrite is authorized.
 The new authorization is a material-only documentation commit and does not
 change session semantics or active O6 packet hashes. GC-020 requires a separate
-handoff-sync commit after the final material correction; refresh only the
-current material HEAD marker and preserve the O6 dispatch material pin.
+handoff-sync commit after the final material correction; refresh the
+current material HEAD marker and restore the required boundary sentence literals and preserve the O6 dispatch material pin.
 
 Rerun core self-protection against the entire live-upstream-to-HEAD range with
 this aggregate authorization. Run the final push-readiness preview over the
-nonempty final handoff-sync commit, using --upstream-ahead-limit 35 for this
+nonempty final handoff-sync commit, using --upstream-ahead-limit 37 for this
 explicitly authorized debt. Keep its range distinct from full transport-range
 checks and the mandatory full pre-push chain. Do not report a full-stack commit
 shape PASS from the narrower final-commit preview.
@@ -274,7 +276,19 @@ change manifest, not a claim of repository corpus reading or completeness.
 
 Authorization addition: `docs/baselines/CVF_PROVENANCE_BATCH_PUSH_AUTHORIZATION_2026-10-11.md`.
 Continuity-only refresh: `AGENT_HANDOFF_V63_2026-09-18.md` current material
-HEAD marker; O6 authority, execution material pin and next move remain intact.
+HEAD marker and canonical boundary sentence literals; O6 authority, execution material pin and next move remain intact.
+
+## Full Pre-Push Literal Repair
+
+The first canonical push attempt ran all 105 checks and stopped before unlock:
+104 passed; the active handoff guard found two compressed boundary sentences
+missing its literal markers. Restore exactly "Exact remote SHA must be derived
+live from git when needed" and "External agent memory files: non-canonical
+convenience only" in the existing handoff. This preserves the original boundary
+semantics and is the only extra repair; implementation stays pinned. Keep its
+metadata commit separate from the authorization correction, within the same
+operator-approved private sync. Retain the failed attempt log and rerun the
+canonical push route after the repaired-state preview passes.
 
 ## Verification And Continuation
 
@@ -325,7 +339,7 @@ this record is not a provider, runtime, live-governance or production proof.
 ## Claim Boundary
 
 Only private provenance synchronization of the pinned commits, this record,
-and mandatory handoff marker synchronization.
+and mandatory handoff marker/literal-boundary synchronization.
 No public export, worker execution, model ranking, new roadmap implementation,
 provider call, deployment, universal compliance or live-governance proof.
 All parked checkpoints and original review limitations remain in force.
