@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Current NCR Continuation
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `a8db7faa4f0088d5e601ea3e9889640fd87aa05e`. Batch ID: CVF-SYMBOL-LINE-ANCHOR-FIX-20261011. Selected repair accepted; model collection retained.
+Current HEAD recorded for this handoff: `d93f63a59de6f58953ec07c3e3907706a4c21524`. Batch ID: CVF-WORKER-RETURN-PREPARATION-20261011. Preparation controls implemented; continuation audit admitted.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -9,20 +9,19 @@ Status: ACTIVE
 Current continuation only. Root AGENTS.md and canonical routing owners retain full rules.
 Closed history is preserved byte-for-byte at `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V63_PRE_NCR_COMPACTION_2026-10-07.md` (SHA256 `54801fdcf14e9abe17592352ec3c69a0b0e855632991af0caacac7b65252ccba`); it is NOT_ACTIVE_AUTHORITY and not default startup reading.
 ## Scope / Target / Owner Boundary
-Operator2026-10-11: worker returned; collect model evidence retained. Haiku/ex high is reported configuration, native version/effort unverified; Local owns acceptance.
-Role: Local INTERNAL_AGENT reviewer/closer; phase: terminal source-maintenance closure and model collection; decision owner=Local. Worker honored no commit; no successor.
-PROGRAM_ID=CVF-CORE; NEXT_ACTION_CLASS=STOP; BATCH_ID=CVF-SYMBOL-LINE-ANCHOR-FIX-20261011. CLOSED_PASS_BOUNDED at a8db7faa4f0088d5e601ea3e9889640fd87aa05e; Local completion docs/reviews/CVF_SYMBOL_LINE_ANCHOR_FIX_COMPLETION_2026-10-11.md. Selected checker repair terminal, no automatic successor. Model ledger docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json: 8 reviewed workers (six Haiku-family, two Sonnet), requested effort separated; native identity/usage/bill/time unknown. Collect on admitted work. O6 helper/scaffold deferred. Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11 parked; LHW24 retained. Ahead count advisory; no new push grant.
+Operator2026-10-11: fix preparation and continue. Haiku/ex high requested; Opus5.5/High same-session analysis linked; native identity unverified.
+Role: Local INTERNAL_AGENT dispatcher; phase: maintenance closure/continuation audit; decision owner=Local. Manual worker launch follows released packet.
 Remote tracking branch: `origin/main`. Exact remote SHA must be derived live from git when needed.
 External agent memory files: non-canonical convenience only.
 ## Startup Acknowledgment
-Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`;handoff=`AGENT_HANDOFF_V63_2026-09-18.md`;next=selected repair terminal;role=Local INTERNAL_AGENT reviewer/closer;phase=closure and model collection;decision owner=Local;parked checkpoint=Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11.
+Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`;handoff=`AGENT_HANDOFF_V63_2026-09-18.md`;next=bounded S2 projection audit/packet;role=Local INTERNAL_AGENT dispatcher;phase=preparation maintenance and continuation;decision owner=Local;parked checkpoint=Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11.
 ## Current Mode
 `cvf_ncr_p10_closed_p11_parked`. P10 package remains `ACTIVE_PRODUCTION_RUNTIME`; P11 parked. Latest closed learning-history wave: `LHW24`.
 Current NIS-T1J is CLOSED_PASS_BOUNDED with no automatic successor; NCR consumer maintenance is separately operator-authorized.
 ## Current Authority
 Baseline: `docs/baselines/CVF_GC018_SYMBOL_LINE_ANCHOR_FIX_2026-10-11.md`; SHA256 `10d6cb2f08dae2a6be7786356b8ab5fb13896d013f321da3e19912bbfd3fdf44`.
 Work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_SYMBOL_LINE_ANCHOR_FIX_2026-10-11.md`; SHA256 `2d9c0ec5da43fa4e8c9440c7671b54c26a72899e4848d6c7a89545e868af6cd1`; CLOSED_PASS_BOUNDED; four criteria accepted with process limits.
-Completion docs/reviews/CVF_SYMBOL_LINE_ANCHOR_FIX_COMPLETION_2026-10-11.md; independent fresh probe PASS; no Local code repair. Ledger eight workers; O6 helper/scaffold deferred. Push count advisory; no push grant.
+Symbol-line acceptance retained. Preparation review docs/reviews/CVF_RETURN_PREPARATION_MAINTENANCE_2026-10-11.md:121 tests/8 CLI PASS, same Local actor; future worker consumption pending. Ledger eight; O6 helper deferred.
 ## O6 Release Rebind After Provenance Sync (2026-10-11)
 Root marker replacement aa32f666 blocked DR-04/DR-05; rebind bd13e1a80 restored release. Log C:/Users/DELL/AppData/Local/Temp/o6_preimpl.log retained; no worker defect. Provenance lane closed, URL locked.
 Learning: ORCHESTRATOR_PACKET_GAP; GOVERNANCE_CONTROL_PLANE; RULE_EXISTS. Future active dispatch continuity preserves packet binding and revalidates release; no checker change.
@@ -102,7 +101,7 @@ Receiving agents clarify incomplete ideas according to the existing lifecycle st
 Consume returned evidence under MFRP P4-C1: EVALUATE_RETURNED_EVIDENCE_NOT_RECREATE_IMPLEMENTATION. A rerun needs a named contradiction/changed consumer,information gain and cost reason.
 Alibaba calls are authorized for meaningful scoped tests; no other provider call,Claude dispatch,public push,deployment or actual-data cutover is inferred.
 ## Next Allowed Move
-PROGRAM_ID=CVF-CORE; NEXT_ACTION_CLASS=LOCAL_DISPOSITION_ONLY; BATCH_ID=CVF-CONTINUITY-DISPATCH-O3-20261011. O3 staged coverage/finite child diagnostics maintenance IMPLEMENTED_BOUNDED; Local completion=docs/reviews/CVF_O3_LOW_LATENCY_MAINTENANCE_2026-10-11.md; evidence=docs/reviews/evidence/o3-low-latency-maintenance-20261011.json; actual material=5d42bd16bed859878be340499e7b53dc739e39f5. Direct Local execution; same-actor focused verification; no automatic successor. Oracle/scaffold design remains deferred; original S2-R2 retained. Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11 parked; LHW24 retained.
+PROGRAM_ID=CVF-CORE; NEXT_ACTION_CLASS=DESIGN; BATCH_ID=CVF-WORKER-RETURN-PREPARATION-20261011. Preparation maintenance IMPLEMENTED_BOUNDED at d93f63a59de6f58953ec07c3e3907706a4c21524; review docs/reviews/CVF_RETURN_PREPARATION_MAINTENANCE_2026-10-11.md. Continue bounded S2 outcome-evidence projection audit/packet for manually assigned worker; no launch until bound release. Eight reviewed workers retained; same-session Opus High analysis linked, not ninth sample; native identity/usage/bill unknown. O6 helper deferred; Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11 parked; LHW24 retained. Ahead advisory; no push grant.
 ## Active Boundary
 T3B has a Local-verified active v1 specification. Party B is verified and T3C-C1 tooling accepted at `db78c87df`; T3C-C2 and Party C are verified. T3D-C1 tooling is accepted at `9ed844c2a` without source. T3D-C0-R1 closed at `2fffa1ef7`. T3D-C3 was accepted bounded at `88137e9a2`, but actual-mode prepare attempts failed before Party B/C execution; authorized cleanup removed the failed root and discarded unaccepted worker changes. G1 stopped, G2-G6 parked, and G7 research closed at `660601f0e` with `ADAPT_EXISTING_HANDOFF_ONLY`. Evidence-join sufficiency stays WATCH; no implementation successor exists. Rejected T2 paths remain archived; HRLTP-T2 paused.
 Post-G7 Local source intake and Jev P0 are closed at material commit `9ac0ee8e59fa041ddaa93d725796c509400f257a`. The audit records 32 READ plus 8,093 DEFERRED paths. Jev adds fail-closed decision-context binding, incomplete candidate-space escape, and `EVIDENCE_ONLY` judgment authority to the existing ASSF owner. Proof: TypeScript 84/84, Python 61/61, compile PASS, governance 90/90. G1-G7 remain closed.
@@ -128,25 +127,25 @@ The historic provider/live parked line applies to those stopped lanes; it does n
 Q001/Q004 actual-data source/writer,custody,retention/RPO/RTO/cost checkpoints are action-specific; do not require a user-supplied ledger copy for unrelated fresh isolated development.
 NCR send/B2 STOP and S05/C1 remain; IAB unavailable; repo Playwright Chromium present; vision/full P04/full release remain unproved. No autonomous P11/public/deploy activation.
 ## Core Guard Self-Protection Authorization
-Authorized guard-maintenance scope: six-surface terminal symbol-line closure; closed packet pins retained. Protected paths: `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`. Operator authorization: admitted Local closure plus model collection and necessary continuity. Rollback boundary: restore matching continuity; preserve parked effects. Generated aggregates regenerated only.
+Authorized guard-maintenance scope: six-surface preparation-maintenance closure/continuation; closed packet pins retained. Protected paths: `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`. Operator authorization: admitted Local closure plus model collection and necessary continuity. Rollback boundary: restore matching continuity; preserve parked effects. Generated aggregates regenerated only.
 ## Agent Operation Trace Block
 
 | Field | Evidence |
 |---|---|
 | Actor | Local maintainer/session-sync steward |
 | Provider or surface | private shared workspace |
-| Session or invocation | symbol-line-terminal-continuity-20261011 |
+| Session or invocation | return-preparation-continuity-20261011 |
 | Working directory | repository root |
 | Command or tool surface | canonical generator; atomic commit; bound gates |
 | Target paths | six continuity paths listed in the manifest below |
-| Allowed scope source | symbol-line baseline/Local closure; operator collection |
-| Before status evidence | a8db7faa4f0088d5e601ea3e9889640fd87aa05e; corrected accepted material |
-| After status evidence | terminal acceptance; eight-worker collection retained |
+| Allowed scope source | Local preparation maintenance; operator continuation/collection |
+| Before status evidence | d93f63a59de6f58953ec07c3e3907706a4c21524; preparation material |
+| After status evidence | preparation implemented; eight-worker collection retained |
 | Diff evidence | exact six continuity paths; material unchanged |
 | Approval boundary | authorized terminal continuity only |
 | Claim boundary | documentary release; no oracle execution or accepted worker output |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | symbol-line-terminal-continuity-20261011 |
+| Invocation ID | return-preparation-continuity-20261011 |
 | Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Manifest delta | MATCH |

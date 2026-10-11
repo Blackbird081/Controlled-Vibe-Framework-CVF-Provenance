@@ -2,7 +2,7 @@
   "schemaVersion": "0.1.0",
   "currentMode": "cvf_ncr_p10_closed_p11_parked",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=CVF-CORE; NEXT_ACTION_CLASS=STOP; BATCH_ID=CVF-SYMBOL-LINE-ANCHOR-FIX-20261011. CLOSED_PASS_BOUNDED at a8db7faa4f0088d5e601ea3e9889640fd87aa05e; Local completion docs/reviews/CVF_SYMBOL_LINE_ANCHOR_FIX_COMPLETION_2026-10-11.md. Selected checker repair terminal, no automatic successor. Model ledger docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json: 8 reviewed workers (six Haiku-family, two Sonnet), requested effort separated; native identity/usage/bill/time unknown. Collect on admitted work. O6 helper/scaffold deferred. Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11 parked; LHW24 retained. Ahead count advisory; no new push grant.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-CORE; NEXT_ACTION_CLASS=DESIGN; BATCH_ID=CVF-WORKER-RETURN-PREPARATION-20261011. Preparation maintenance IMPLEMENTED_BOUNDED at d93f63a59de6f58953ec07c3e3907706a4c21524; review docs/reviews/CVF_RETURN_PREPARATION_MAINTENANCE_2026-10-11.md. Continue bounded S2 outcome-evidence projection audit/packet for manually assigned worker; no launch until bound release. Eight reviewed workers retained; same-session Opus High analysis linked, not ninth sample; native identity/usage/bill unknown. O6 helper deferred; Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11 parked; LHW24 retained. Ahead advisory; no push grant.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
