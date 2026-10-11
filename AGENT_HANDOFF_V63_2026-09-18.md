@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Current NCR Continuation
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `d4851874bdbe853f1f4946b604704f2ac76b5e73`. Material SHA: `d4851874bdbe853f1f4946b604704f2ac76b5e73`. Batch ID: CVF-MFRP-CONTINUITY-COLLECTION-DESIGN-20261011. Bounded design closed; no successor.
+Current HEAD recorded for this handoff: `8284746865a3d3b464b1d5ee2def273b7e58b3c8`. Material SHA: `8284746865a3d3b464b1d5ee2def273b7e58b3c8`. Batch ID: CVF-MFRP-CONTINUITY-COLLECTION-DESIGN-20261011. Local corrective closure; no successor.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -20,8 +20,8 @@ Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`;handoff=`AGEN
 Current NIS-T1J is CLOSED_PASS_BOUNDED with no automatic successor; NCR consumer maintenance is separately operator-authorized.
 ## Current Authority
 Baseline: `docs/baselines/CVF_GC018_MFRP_CONTINUITY_COLLECTION_DESIGN_2026-10-11.md`; SHA256 `400736b3023763e0958bb13b70c4cb98c938cab9946f58b3d0138ae66394398a`.
-Work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_CONTINUITY_COLLECTION_DESIGN_2026-10-11.md`; SHA256 `50a99dd431fcbf25468290194670d8e1fd910a287193d96b7f17a98382a1032b`; CLOSED_PASS_BOUNDED.
-Review docs/reviews/CVF_MFRP_CONTINUITY_COLLECTION_DESIGN_COMPLETION_2026-10-11.md; evidence docs/reviews/evidence/mfrp-continuity-collection-design-local-20261011.json: current-time target qualified, old closure cause found; legacy PASS is not target proof. Retain skip; procedure FAIL/read gaps; collection15 incl4 Luna.
+Work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_CONTINUITY_COLLECTION_DESIGN_2026-10-11.md`; SHA256 `b2b686e046228bf0440c0d8676bb65ab9f38fbb645e5cf460c51f8e4bc98e8c9`; CLOSED_PASS_BOUNDED.
+Review docs/reviews/CVF_MFRP_CONTINUITY_COLLECTION_DESIGN_COMPLETION_2026-10-11.md: retain skip/procedure FAIL; collection15 incl4 Luna. Local atomicity literals corrected after valid marker adjudication; old attempt/alarm retained, no sample promotion.
 
 ## O6 Release Rebind After Provenance Sync (2026-10-11)
 Root marker replacement aa32f666 blocked DR-04/DR-05; rebind bd13e1a80 restored release. Log C:/Users/DELL/AppData/Local/Temp/o6_preimpl.log retained; no worker defect. Provenance lane closed, URL locked.
@@ -102,7 +102,7 @@ Receiving agents clarify incomplete ideas according to the existing lifecycle st
 Consume returned evidence under MFRP P4-C1: EVALUATE_RETURNED_EVIDENCE_NOT_RECREATE_IMPLEMENTATION. A rerun needs a named contradiction/changed consumer,information gain and cost reason.
 Alibaba calls are authorized for meaningful scoped tests; no other provider call,Claude dispatch,public push,deployment or actual-data cutover is inferred.
 ## Next Allowed Move
-PROGRAM_ID=CVF-CORE; NEXT_ACTION_CLASS=STOP; BATCH_ID=CVF-MFRP-CONTINUITY-COLLECTION-DESIGN-20261011. Bounded design CLOSED_PASS_BOUNDED at material d4851874bdbe853f1f4946b604704f2ac76b5e73; retain historical material skip, structural collection change DEFERRED_WITH_REASON; no automatic successor. Local completion docs/reviews/CVF_MFRP_CONTINUITY_COLLECTION_DESIGN_COMPLETION_2026-10-11.md. Fifteen reviewed task observations:9 Haiku-family,2 Sonnet,4 Luna (requested xhigh2/max2); Opus same-session advisory excluded. Current worker final gate PASS after3 FAIL; procedure FAIL for mandatory-read gaps. Original worker bytes retained; Local design trace-only closure edit. O6 helper/Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11 parked; LHW24. Ahead advisory; no push grant. Further audit/selection only under operator continuation.
+PROGRAM_ID=CVF-CORE; NEXT_ACTION_CLASS=STOP; BATCH_ID=CVF-MFRP-CONTINUITY-COLLECTION-DESIGN-20261011. Bounded design CLOSED_PASS_BOUNDED; original material d4851874bdbe853f1f4946b604704f2ac76b5e73, Local atomicity correction 8284746865a3d3b464b1d5ee2def273b7e58b3c8. Retain historical skip; structural collection change DEFERRED_WITH_REASON, no automatic successor. Fifteen reviewed tasks:9 Haiku-family,2 Sonnet,4 Luna (requested xhigh2/max2); Opus advisory excluded. Current worker final gate PASS after3 FAIL; procedure FAIL/read gaps. Original submission retained; Local design trace-only conversion. Valid safety alarm adjudicated with original marker/attempt retained; no sample promotion. O6 helper/Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11 parked; LHW24; ahead advisory, no push grant. Further audit/selection under operator continuation.
 ## Active Boundary
 T3B has a Local-verified active v1 specification. Party B is verified and T3C-C1 tooling accepted at `db78c87df`; T3C-C2 and Party C are verified. T3D-C1 tooling is accepted at `9ed844c2a` without source. T3D-C0-R1 closed at `2fffa1ef7`. T3D-C3 was accepted bounded at `88137e9a2`, but actual-mode prepare attempts failed before Party B/C execution; authorized cleanup removed the failed root and discarded unaccepted worker changes. G1 stopped, G2-G6 parked, and G7 research closed at `660601f0e` with `ADAPT_EXISTING_HANDOFF_ONLY`. Evidence-join sufficiency stays WATCH; no implementation successor exists. Rejected T2 paths remain archived; HRLTP-T2 paused.
 Post-G7 Local source intake and Jev P0 are closed at material commit `9ac0ee8e59fa041ddaa93d725796c509400f257a`. The audit records 32 READ plus 8,093 DEFERRED paths. Jev adds fail-closed decision-context binding, incomplete candidate-space escape, and `EVIDENCE_ONLY` judgment authority to the existing ASSF owner. Proof: TypeScript 84/84, Python 61/61, compile PASS, governance 90/90. G1-G7 remain closed.
@@ -147,18 +147,18 @@ Rollback boundary: restore matching continuity; preserve historical proof and pa
 |---|---|
 | Actor | Local maintainer/session-sync steward |
 | Provider or surface | private shared workspace |
-| Session or invocation | mfrp-continuity-collection-design-closure-20261011 |
+| Session or invocation | mfrp-continuity-collection-design-corrective-sync-20261011 |
 | Working directory | repository root |
 | Command or tool surface | canonical generator; atomic commit; bound gates |
 | Target paths | six continuity paths listed in the manifest below |
 | Allowed scope source | paired MFRP design closure; operator returned design/model collection/Luna correction |
-| Before status evidence | d4851874bdbe853f1f4946b604704f2ac76b5e73; committed exact12 reviewed design/collection/authority material |
+| Before status evidence | 8284746865a3d3b464b1d5ee2def273b7e58b3c8; exact5 Local atomicity correction, original12 preserved |
 | After status evidence | finite MFRP design closed; collection15 and procedure limits retained |
 | Diff evidence | exact six continuity paths; material unchanged |
 | Approval boundary | authorized accepted-design continuity only |
 | Claim boundary | documentary closure; correct target guard; no collection recovery or model ranking |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | mfrp-continuity-collection-design-closure-20261011 |
+| Invocation ID | mfrp-continuity-collection-design-corrective-sync-20261011 |
 | Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Manifest delta | MATCH |
