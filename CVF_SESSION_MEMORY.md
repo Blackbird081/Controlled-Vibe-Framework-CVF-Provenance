@@ -34,12 +34,12 @@ artifact.
 | Prior handoff (archive-qualified) | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V62_2026-09-17.md` |
 | Latest front-door archive | `CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_COMPACTION_ARCHIVE_2026-08-11.md` |
 | Current authority evidence | `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` `currentAuthority` |
-| Parent maintenance | S2-R1 decision and S2-R2 outcome helpers accepted; completion docs/reviews/CVF_MODEL_SELECTION_S2_R2_COMPLETION_2026-10-11.md; optional offline scope, original model evidence immutable |
+| Parent maintenance | existing MFRP P2/P4/fingerprint and bounded retry owners; frozen S2-R3 collection skip; design only |
 | Freeze posture | `governance_kernel_freeze_recommended` |
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`;handoff=`AGENT_HANDOFF_V63_2026-09-18.md`;next=bounded S2-R3 closure terminal, no automatic successor;role=Local INTERNAL_AGENT reviewer/steward;phase=closure continuity;decision owner=Local;parked checkpoint=Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11.
+Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`;handoff=`AGENT_HANDOFF_V63_2026-09-18.md`;next=manual worker start after bound MFRP design release;role=Local INTERNAL_AGENT dispatcher;phase=design dispatch;decision owner=Local;parked checkpoint=Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11.
 
 ## Current Mode
 
@@ -48,7 +48,7 @@ Current mode: `cvf_ncr_p10_closed_p11_parked`; previous mode marker: `cvf_ncr_p1
 
 ## Next Allowed Move
 Mode: `cvf_ncr_p10_closed_p11_parked`
-PROGRAM_ID=CVF-CORE; NEXT_ACTION_CLASS=STOP; BATCH_ID=CVF-MODEL-SELECTION-S2-R3-PROJECTION-20261011. S2-R3 existing-profile projection CLOSED_PASS_BOUNDED at 0ab461e2b807a33984a4f8357140f5d28988fd23; completion docs/reviews/CVF_MODEL_SELECTION_S2_R3_PROJECTION_COMPLETION_2026-10-11.md. Product/return unchanged, one Local proof source-map repair; historical procedure FAIL retained. Nine reviewed workers: seven Haiku-family/two Sonnet; Opus same-session advisory excluded. Current corrected scaffold consumption ACTION_VERIFIED/PARTIAL; first gate failed, read/full-clock/native identity/usage limits retained. O6 helper deferred; Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11 parked; LHW24 retained. No automatic successor or worker redispatch. Ahead advisory; no push grant.
+PROGRAM_ID=CVF-CORE; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-MFRP-CONTINUITY-COLLECTION-DESIGN-20261011. Operator manually starts assigned INTERNAL_AGENT Haiku/ex high requested worker after committed bound pre-dispatch PASS; Local launches none. Packet docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_CONTINUITY_COLLECTION_DESIGN_2026-10-11.md; material 9afd2165a549fdb295bfd68aad1005e99578efe5. Three new design/proof/return paths, no commit/code/receipt/journal/history edit or sample promotion.13 pins, exact scaffold before prose,450-line/64000-byte return,45min; three isolated owner probes and one safe recommendation or justified deferral. Correct fail-closed fingerprint retained. Nine reviewed workers and same-session Opus advisory retained; new observation after Local review. O6 helper/Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11 parked; LHW24. Ahead advisory; no push grant.
 Historical G1-G7 terminal baseline: mode `acel_g1_g7_research_terminally_closed`. G1-G6 terminal review: `docs/reviews/CVF_ACEL_G1_G6_TERMINAL_STOP_CLOSURE_2026-09-24.md`; G7 research closure: `docs/reviews/CVF_ACEL_G7_CROSS_RUN_CAPABILITY_EVOLUTION_RESEARCH_CLOSURE_2026-09-24.md`. The packet-only post-G7 reconciliation review at `docs/reviews/CVF_ACEL_POST_G7_FULL_CORPUS_ABSORPTION_CLOSURE_2026-09-24.md` is superseded for repository absorption by the 2026-09-25 pinned-source audit. G1 is stopped, G2-G6 remain parked, G7 research is closed, and no automatic G1-G7 successor exists.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
