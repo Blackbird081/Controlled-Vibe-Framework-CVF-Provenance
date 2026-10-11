@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_SELECTION_S4_R1_MANUAL_WORKED_EXAMPLE_2026-10-11.md",
     "workOrderSha256": "5159f2b71b7ac4d3cc67e0fcc64b3d814ed92a2c0611c044c33a4bafd1fd1c57"
   },
-  "currentAuthoritySyncReason": "S4-R1 Local bounded closure metadata; frozen Manual B selection section preserved. Exact mixed atomicity joins work-order bytes/hash/projections; separate actual-SHA continuity follows.",
+  "currentAuthoritySyncReason": "S4-R1 CLOSED_PASS_BOUNDED; material efc8bf560f64fafbb0462e4663bf8445a2c2a184; material shape/atomicity checks passed; first full range blocked only on expected pre-sync handoff HEAD. Final range validation follows continuity. Manual guide accepted; S3 packet observation ACTION_VERIFIED/PARTIAL; no automatic successor.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
