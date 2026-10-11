@@ -471,6 +471,234 @@
         "First Local fresh probe used unsupported --json; argparse rejected before validation. Source-derived argv corrected, original failure retained, no worker attribution.",
         "Local original packet omitted six explicit conditional shape terms and used bare read-ahead paths; material preflight exposed it, corrected on existing closed packet. Not worker-owned."
       ]
+    },
+    {
+      "trancheId": "CVF-MODEL-SELECTION-S3-R1-20261010",
+      "taskFamily": "R3_DOCUMENTATION_DESIGN",
+      "role": "INTERNAL_AGENT_WORKER",
+      "model": "Claude Haiku 5.5",
+      "effort": "Max/Max",
+      "identityBasis": "OPERATOR_REPORTED",
+      "observedRuntimeIdentity": null,
+      "observedEffort": null,
+      "status": "CLOSED_PASS_BOUNDED",
+      "evidence": "docs/reviews/evidence/model-selection-s3-r1-local-review-20261011.json",
+      "evidenceSha256": "23acbe618d0fbab4e01ba6edff8dacc4b8888dae7e675dc24b7d29119a68f2ae",
+      "technicalOutput": "ACCEPTED_BOUNDED_R3_DOCUMENTATION",
+      "workerSelfRepairRounds": 2,
+      "localSemanticRepairRounds": 0,
+      "localMetadataCorrectionRounds": 1,
+      "localSemanticGroups": 0,
+      "timing": {
+        "seconds": 902,
+        "basis": "SOURCE_REPORTED_WORKER_INTERVAL",
+        "fullDeliverySeconds": null,
+        "workerProcessingSeconds": null,
+        "humanSeconds": null
+      },
+      "bill": {
+        "money": null,
+        "tokens": null,
+        "quota": null,
+        "basis": "NO_EXPOSED_COMPARABLE_BILL"
+      },
+      "collectionDisposition": "HISTORICAL_BACKFILL_ALREADY_REVIEWED_NO_RERUN",
+      "derivationSource": "docs/reviews/evidence/cvf-worker-model-usage-observation-supplement-2026-10-11.json",
+      "derivationSha256": "fdf137fbb756122f9d7002d38505fac3f14c72977a422e5959beb8efe23d482c",
+      "limitations": [
+        "Related source-scoped task, not matched benchmark or runtime identity proof",
+        "Original source initial/final and worker/Local burden remain authoritative"
+      ]
+    },
+    {
+      "trancheId": "CVF-MODEL-SELECTION-S4-R1-20261011",
+      "taskFamily": "MANUAL_GUIDE_DOCUMENTATION",
+      "role": "INTERNAL_AGENT_WORKER",
+      "model": "gpt-6-luna",
+      "effort": "xhigh",
+      "identityBasis": "NATIVE_REQUEST_FIELDS",
+      "observedRuntimeIdentity": null,
+      "observedEffort": null,
+      "status": "CLOSED_PASS_BOUNDED",
+      "evidence": "docs/reviews/evidence/model-selection-s4-r1-local-review-20261011.json",
+      "evidenceSha256": "4a24ee0a46dc43dcacbe43d156f8dcacde2c7953d4ab130cdcb02e4024129671",
+      "technicalOutput": "ACCEPTED_BOUNDED_MANUAL_GUIDE",
+      "workerSelfRepairRounds": 2,
+      "localSemanticRepairRounds": 1,
+      "localMetadataCorrectionRounds": null,
+      "localSemanticGroups": 3,
+      "timing": {
+        "seconds": 1045,
+        "basis": "CONSERVATIVE_DISPATCH_LOWER_BOUND_TO_ARTIFACT_FREEZE",
+        "firstReadUtc": null,
+        "finalGateFinishLowerBoundSeconds": 1064.2346475,
+        "fullDeliverySeconds": null,
+        "workerProcessingSeconds": null,
+        "humanSeconds": null
+      },
+      "bill": {
+        "money": null,
+        "tokens": null,
+        "quota": null,
+        "basis": "NOT_EXPOSED_BY_NATIVE_SURFACE"
+      },
+      "collectionDisposition": "HISTORICAL_BACKFILL_ALREADY_REVIEWED_NO_RERUN",
+      "derivationSource": "docs/reviews/evidence/cvf-worker-model-usage-observation-supplement-2026-10-11.json",
+      "derivationSha256": "fdf137fbb756122f9d7002d38505fac3f14c72977a422e5959beb8efe23d482c",
+      "limitations": [
+        "Related source-scoped task, not matched benchmark or runtime identity proof",
+        "Original source initial/final and worker/Local burden remain authoritative"
+      ]
+    },
+    {
+      "trancheId": "CVF-MODEL-SELECTION-S2-R1-20261011",
+      "taskFamily": "OFFLINE_VALIDATOR_IMPLEMENTATION",
+      "role": "INTERNAL_AGENT_WORKER",
+      "model": "gpt-6-luna",
+      "effort": "xhigh",
+      "identityBasis": "NATIVE_REQUEST_FIELDS",
+      "observedRuntimeIdentity": null,
+      "observedEffort": null,
+      "status": "CLOSED_PASS_BOUNDED",
+      "evidence": "docs/reviews/evidence/model-selection-s2-r1-local-review-20261011.json",
+      "evidenceSha256": "344d2b8f068dc262610220c7c465cfe041df1a9f24b0e4e0aafb07c4920bd3c5",
+      "technicalOutput": "ACCEPTED_BOUNDED_OFFLINE_VALIDATOR_AFTER_LOCAL_REPAIR",
+      "workerSelfRepairRounds": 2,
+      "localSemanticRepairRounds": 1,
+      "localMetadataCorrectionRounds": 2,
+      "localSemanticGroups": 5,
+      "timing": {
+        "seconds": 1790,
+        "basis": "FIRST_CAPTURED_WORKER_CLOCK_THROUGH_FINAL_FROZEN_GATE_AND_CHECKS",
+        "firstClockUtc": "2026-10-11T03:34:47Z",
+        "endClockUtc": "2026-10-11T04:04:37Z",
+        "fullDeliverySeconds": null,
+        "workerProcessingSeconds": null,
+        "humanSeconds": null
+      },
+      "bill": {
+        "money": null,
+        "tokens": null,
+        "quota": null,
+        "underlyingNativeProviderRequests": null,
+        "directApiCalls": 0,
+        "basis": "NOT_EXPOSED_OR_NOT_METERED; direct calls distinct from native usage"
+      },
+      "collectionDisposition": "HISTORICAL_BACKFILL_ALREADY_REVIEWED_NO_RERUN",
+      "derivationSource": "docs/reviews/evidence/cvf-worker-model-usage-observation-supplement-2026-10-11.json",
+      "derivationSha256": "fdf137fbb756122f9d7002d38505fac3f14c72977a422e5959beb8efe23d482c",
+      "limitations": [
+        "Related source-scoped task, not matched benchmark or runtime identity proof",
+        "Original source initial/final and worker/Local burden remain authoritative"
+      ]
+    },
+    {
+      "trancheId": "CVF-MODEL-SELECTION-S2-R2-20261011",
+      "taskFamily": "OFFLINE_REVIEWED_OUTCOME_VALIDATOR",
+      "role": "INTERNAL_AGENT_WORKER",
+      "model": "gpt-6-luna",
+      "effort": "max",
+      "identityBasis": "NATIVE_REQUEST_FIELDS_NOT_RUNTIME_ATTESTATION",
+      "observedRuntimeIdentity": null,
+      "observedEffort": null,
+      "workerInvocationId": "/root/s2_r2_luna_worker",
+      "status": "CLOSED_PASS_BOUNDED",
+      "evidence": "docs/reviews/evidence/model-selection-s2-r2-local-review-20261011.json",
+      "evidenceSha256": "80c6b238c536fb35fcf547218cd7fd8948d94f21c0d3e8485558f7d65217d8ee",
+      "technicalOutput": "ACCEPTED_BOUNDED_AFTER_LOCAL_SEMANTIC_REPAIR",
+      "reviewerProductRepairGroups": 4,
+      "reviewerRequestedWorkerRepairTurns": 0,
+      "collectionDisposition": "HISTORICAL_BACKFILL_ALREADY_REVIEWED_NO_RERUN",
+      "bill": {
+        "amount": null,
+        "tokens": null,
+        "quota": null,
+        "reason": "NATIVE_USAGE_UNEXPOSED"
+      },
+      "limitations": [
+        "Actual native request is distinct from unverified observed model/effort",
+        "Original self-repair/test/log/read-depth limits retained in named Local source",
+        "Local preparation/oracle/packaging defects are not worker/model defects"
+      ]
+    },
+    {
+      "trancheId": "CVF-CONTINUITY-DISPATCH-O3-20261011",
+      "taskFamily": "EXISTING_COMMIT_HELPER_DISPATCH_CONTINUITY",
+      "role": "INTERNAL_AGENT_WORKER",
+      "model": "gpt-6-luna",
+      "effort": "max",
+      "identityBasis": "NATIVE_REQUEST_FIELDS_NOT_RUNTIME_ATTESTATION",
+      "observedRuntimeIdentity": null,
+      "observedEffort": null,
+      "workerInvocationId": "/root/o3_luna_worker",
+      "status": "CLOSED_PASS_BOUNDED",
+      "evidence": "docs/reviews/evidence/continuity-dispatch-o3-local-20261011.json",
+      "evidenceSha256": "7742ea5b6653518bc7644b844b514540cc6655b8ee295a8d27f2b28316e610de",
+      "technicalOutput": "ACCEPTED_BOUNDED_AFTER_LOCAL_SEMANTIC_REPAIR",
+      "reviewerProductRepairGroups": 2,
+      "reviewerRequestedWorkerRepairTurns": 0,
+      "collectionDisposition": "HISTORICAL_BACKFILL_ALREADY_REVIEWED_NO_RERUN",
+      "bill": {
+        "amount": null,
+        "tokens": null,
+        "quota": null,
+        "reason": "NATIVE_USAGE_UNEXPOSED"
+      },
+      "limitations": [
+        "Actual native request is distinct from unverified observed model/effort",
+        "Original self-repair/test/log/read-depth limits retained in named Local source",
+        "Local preparation/oracle/packaging defects are not worker/model defects"
+      ]
+    },
+    {
+      "trancheId": "CVF-MFRP-CONTINUITY-COLLECTION-DESIGN-20261011",
+      "taskFamily": "BOUNDED_MFRP_RECEIPT_CONTINUITY_DOCUMENTARY_DESIGN",
+      "implementationPaths": 0,
+      "deliveredPaths": 3,
+      "role": "INTERNAL_AGENT_WORKER",
+      "model": "Claude Haiku (operator-requested family; native version unknown)",
+      "effort": "ex high",
+      "identityBasis": "OPERATOR_REQUESTED_NOT_RUNTIME_VERIFIED",
+      "observedRuntimeIdentity": null,
+      "observedEffort": null,
+      "status": "CLOSED_PASS_BOUNDED",
+      "evidence": "docs/reviews/evidence/mfrp-continuity-collection-design-local-20261011.json",
+      "evidenceSha256": "c939d3ba3e2142e809b1bc454b291c452792a44938881f6713047c6c8df48954",
+      "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_CONTINUITY_COLLECTION_DESIGN_2026-10-11.md",
+      "technicalOutput": "ACCEPTED_RETAIN_SKIP_WITH_LOCAL_CLAIM_CLARIFICATION",
+      "procedureDisposition": "FAIL",
+      "procedure": "MANDATORY_READ_DEPTH_INCOMPLETE_DISCLOSED",
+      "firstReturnGateClean": false,
+      "workerReturnDraftGateAttempts": 4,
+      "failedReturnDraftGateAttempts": 3,
+      "workerSelfRepairRounds": 3,
+      "reviewerRequestedWorkerRepairTurns": 0,
+      "reviewerProductRepairs": 0,
+      "reviewerClaimClarificationGroups": 1,
+      "timing": {
+        "firstLaneToFinalGateEndSeconds": 554,
+        "fastGateSeconds": 5.29,
+        "fullInvocationEnd": null,
+        "fullDeliverySeconds": null
+      },
+      "bill": {
+        "amount": null,
+        "tokens": null,
+        "reason": "NO_EXPOSED_NATIVE_WORKER_REVIEWER_REWORK_METER"
+      },
+      "processFindings": [
+        "Scaffold actually generated before prose; four gate logs retained, first three fail",
+        "Required source depth partially omitted; prescribed pin labels do not override actual readDepth",
+        "Legacy PASS risk qualified; explicit existing collector skip and missing closure cause resolved by Local",
+        "Local design trace-only metadata conversion and separate closure packaging failures retained; no worker attribution."
+      ],
+      "independentProof": "Fresh canonical one-sided-declaration rejection with unchanged siblings; worker fixture proof consumed",
+      "limitations": [
+        "One new design authoring task, not a repeated historical execution",
+        "No matched benchmark/model winner",
+        "No collector/sample recovery or causal error prevention proof"
+      ],
+      "reviewerTraceMetadataRepairGroups": 1
     }
   ],
   "rubric": [
@@ -554,8 +782,10 @@
       "role/task-family selection matrix",
       "next useful comparison task"
     ],
-    "reviewedHaikuCount": 7,
-    "reviewedSonnetCount": 2
+    "reviewedHaikuCount": 9,
+    "reviewedSonnetCount": 2,
+    "reviewedLunaCount": 4,
+    "reviewedTaskObservationCount": 15
   },
   "provisionalRoleRouting": [
     {
@@ -584,9 +814,9 @@
   "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
   "laneProtection": "Reviewer-owned governed evidence promotion authorized by operator longitudinal tracking request. No worker file edit, new dispatch, provider effect or public export.",
   "observations": {
-    "technical": "Nine reviewed worker observations: seven Haiku-family, two Sonnet; original first seven rows unchanged, historical eighth procedure clarified, current projection appended.",
-    "process": "Current scaffold consumed with retained receipt, one first-gate FAIL/four defects and one Local proof metadata repair; no full read/timer/identity compliance claim.",
-    "reportStatus": "NINE_WORKER_OBSERVATIONS_NO_COMPARATIVE_WINNER",
+    "technical": "Fifteen deduplicated reviewed task observations: nine Haiku-family, two Sonnet, four native-request Luna; original first nine rows retained.",
+    "process": "Current worker scaffold consumed, first three fast gates FAIL and mandatory read-depth gaps retained as procedure FAIL; Local clarifies receipt semantics without editing worker originals.",
+    "reportStatus": "FIFTEEN_REVIEWED_TASK_OBSERVATIONS_NO_COMPARATIVE_WINNER",
     "measuredBillComparison": null,
     "nextControl": "Continue evidence collection on admitted work; Expense/S5 and effects parked; no automatic router or new benchmark task."
   },
@@ -595,7 +825,9 @@
     "modelsObserved": [
       "Haiku 5.5 / Max",
       "Sonnet 5.5 / High",
-      "Claude Haiku / requested ex high; native version/effort unknown"
+      "Claude Haiku / requested ex high; native version/effort unknown",
+      "gpt-6-luna / requested xhigh",
+      "gpt-6-luna / requested max"
     ],
     "operatorInstruction": "2026-10-10: collect/classify/evaluate for later operational configuration; Haiku and Sonnet used as workers only.",
     "excludedRoles": [
@@ -729,5 +961,19 @@
     "nonCoderModelChoiceRequired": false,
     "currentRuntimeStatus": "DESIGN_DIRECTION_ONLY",
     "rule": "Quality/capability/authority floor before total-delivery-cost optimization; version-specific papers/model cards/original benchmark methods and reviewed Local results; unknown spend remains null."
+  },
+  "coverageReconciliation": {
+    "asOf": "2026-10-11",
+    "localReview": "docs/reviews/CVF_MFRP_CONTINUITY_COLLECTION_DESIGN_COMPLETION_2026-10-11.md",
+    "evidence": "docs/reviews/evidence/mfrp-continuity-collection-design-local-20261011.json",
+    "evidenceSha256": "c939d3ba3e2142e809b1bc454b291c452792a44938881f6713047c6c8df48954",
+    "dedupKey": "trancheId; repeated review/repair/gate/derivative records are not new worker tasks",
+    "originalNineRowsPreserved": true,
+    "historicalBackfilledTaskCount": 5,
+    "currentNewTaskCount": 1,
+    "allAgentActivityClaim": false,
+    "independentMatchedSampleClaim": false,
+    "omissionOwner": "LOCAL_ORCHESTRATOR",
+    "OpusSameSessionAdvisoryExtraWorkers": 0
   }
 }

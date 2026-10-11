@@ -1,0 +1,515 @@
+{
+  "reviewActor": "/root",
+  "workerActor": "mfrp-continuity-collection-design-worker",
+  "workerInvocationId": "mfrp-continuity-collection-design-worker-20261011",
+  "probeInvocationId": "mfrp-continuity-design-local-one-sided-20261011",
+  "executionBaseHead": "2575d3e5d0497c1fb392c313fb35038c6fa6c1c9",
+  "closureBaseHead": "2575d3e5d0497c1fb392c313fb35038c6fa6c1c9",
+  "reviewStartedUtc": "2026-10-11T14:31:04.679297+00:00",
+  "originals": [
+    {
+      "path": "docs/reviews/CVF_MFRP_CONTINUITY_COLLECTION_DESIGN_2026-10-11.md",
+      "sha256": "5e7c666c27592819c7e6382898273e5863191c87221e6e49755cd6ed1f68d335",
+      "bytes": 18264,
+      "lines": 180,
+      "frozenCopy": ".cvf/runtime/mfrp-continuity-design-local-20261011/originals/CVF_MFRP_CONTINUITY_COLLECTION_DESIGN_2026-10-11.md",
+      "rawUtf8": "# MFRP Material Continuity Collection Design - Proposal\n\nMemory class: governed-design\n\ndocType: review\n\nStatus: DESIGN_PROPOSAL_PENDING_LOCAL_REVIEW\n\nDate: 2026-10-11\n\nBatch ID: CVF-MFRP-CONTINUITY-COLLECTION-DESIGN-20261011\n\nDispatch base head: 0e5de48d040c44a76cd729565d9780b8c50207d1\n\nexecutionBaseHead: 2575d3e5d0497c1fb392c313fb35038c6fa6c1c9\n\nCommit mode: WORKER_MUST_NOT_COMMIT\n\nrawMemoryReleased=false\n\nCompanion evidence: `docs/reviews/evidence/mfrp-continuity-collection-design-worker-20261011.json`\n\n## Purpose\n\nDecide whether the existing MFRP P2 producer, P4-C1 collector and material/continuity fingerprint owners can safely recover collection for the real S2-R3 case, in which a reviewed material commit was skipped with `SKIPPED_NO_COMMITTED_EVIDENCE`. The design keeps the fail-closed fingerprint behaviour, selects one disposition, and lists the owner changes that a future decision would need. It is not an implementation, not a receipt rewrite, not a sample promotion, and not a model benchmark.\n\n## Target / Source\n\n| Item | Source and identity |\n|---|---|\n| Material commit | `0ab461e2b807a33984a4f8357140f5d28988fd23`; parent `6ed5646236858413f0696bdd10169e6cb135118b` |\n| Continuity commit | `0e5de48d040c44a76cd729565d9780b8c50207d1` |\n| Frozen case | `docs/reviews/evidence/mfrp-continuity-collection-design-dispatch-case-20261011.json` (raw sha `6cec4aa6...`) |\n| Committed-evidence contract | `docs/reference/review_cost_control/CVF_COMMITTED_EVIDENCE_FINGERPRINT_CONTRACT.md` (sha `57ee1b05...`) |\n| Fingerprint helper | `governance/compat/committed_evidence_fingerprint.py` (sha `39feb312...`) |\n| Producer | `governance/compat/run_agent_autorun_workflow_gate.py` (sha `8d28ac30...`) |\n| Collector | `governance/compat/mfrp_shadow_canary_autocollect.py` (sha `7002f9e0...`) |\n| Canonical receipt reader | `governance/compat/agent_automation_machine_verification_readout.py` (sha `ff6088bf...`) |\n| Bounded retry owner | `docs/reviews/CVF_MFRP_P4_C1_BOUNDED_RETRY_RECOVERY_COMPLETION_2026-09-27.md` (sha `f4194852...`) |\n| Semantic acceptance of the material | `docs/reviews/CVF_MODEL_SELECTION_S2_R3_PROJECTION_COMPLETION_2026-10-11.md` (sha `8f5dc02e...`) |\n\nEach claim below names the artifact that supplies it. Pin matches are identity checks only; they do not establish that a source was read in full.\n\n## Scope / Methodology\n\nStartup order was followed. The work order, the committed-evidence contract, the retry completion and the frozen case were read in full. The fingerprint helper's verification and identity functions, the readout reader, the collector's receipt validation, candidate and retry selection, and the producer's committed-evidence branch were read as named bodies. Roadmap, completion and collection-ledger sections were located and read as targeted sections. The pre-implementation gate passed at the execution base before any output existed.\n\nMethod: (1) validate the two frozen raw receipts with the canonical reader on disposable copies, without changing the frozen case; (2) reconcile the three overlapping paths against their committed blobs; (3) run four isolated Git fixture probes through the real helper with explicit SHAs and an explicit working directory; (4) compare three options against feasibility, authority, fraud negatives, marginal value, rollback and cost.\n\nProbe results and their source are recorded in the companion evidence. No probe touched the source repository, its Git configuration, the journal, the safety marker or any receipt.\n\n## Findings / Position\n\nFinding 1 - the fail-closed behaviour is correct. The historical material target is refused at the current worktree because later commits changed three overlapping paths. Real-repo verification of `6ed5646..0ab461e` returns false with the reason `worktree content at 'CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json' does not match 0ab461e2b...'s committed blob`. The contract's guard 3 is the source of this refusal.\n\nFinding 2 - the continuity binding is genuine. The frozen continuity receipt declares a `committedEvidence` object whose fingerprint `3aaa07f9...` recomputes exactly from the Git objects of `0ab461e..0e5de48`. Its raw bytes match the frozen raw hash, and the canonical reader accepts it.\n\nFinding 3 - the three overlapping paths are real and their raw blob identities match the case. `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`, `CVF_SESSION/ACTIVE_SESSION_STATE.json` and `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` are changed by both the material range and the continuity range. The material closure receipt (`6ed5646..0ab461e`) declares no binding, and the frozen case does not record why.\n\nFinding 4 - the gap is structural for session-sync materials. The collector regenerates a receipt for a trusted commit at the next disclosure, so the gate reads the bytes of that later worktree. Guard 3 then cannot admit the material's historical target whenever the next session-sync commit changes any path the material also changed. The existing owner already names this mismatch: the retry completion's finding `HISTORICAL_REPLAY_MISMATCH` selects only replayable items and leaves unreplayable evidence visible and unconsumed.\n\nFinding 5 - the generated receipt is still a PASS for the requested range. Guard 3 denies provenance, but it does not stop the gate from producing a legacy PASS receipt that names `base..head` while reading later bytes. The collector treats that receipt as a legacy skip, so the risk is contained today. It is recorded as a standing risk, not changed here.\n\nFinding 6 - continuity admissibility is time-dependent. The case captured the continuity target as true at `0e5de48d0`. At the current HEAD `2575d3e5d`, the same check returns false, because the packet commits `9afd2165a` and `2575d3e5d` changed the same continuity files. A current-HEAD check cannot demonstrate continuity admissibility for an older range.\n\nPosition: the existing machinery already does what the work order asks of a safe design. It refuses the wrong target, keeps the unreplayable item visible and unconsumed, and does not consume a retry it cannot replay. No small contract change is needed to make this case collectable without weakening a guard, and the only candidate that would collect it re-executes history. The recommendation below follows from that.\n\n## Option Comparison\n\n| Option | Feasibility | Authority and conflicts | Fraud negatives | Marginal collection value | Cost and rollback | Verdict |\n|---|---|---|---|---|---|---|\n| 1. Retain explicit skip (`SKIPPED_NO_COMMITTED_EVIDENCE`) | implemented; retryable class; not replayable now | no authority change; matches the accepted retry design (unreplayable items stay visible and unconsumed) | none new | zero new rows for this material; the material's acceptance is already recorded in its completion | no cost; no rollback needed | SELECTED for this case |\n| 2. Inspect exact historical material in an isolated target | possible with a clean isolated checkout of `6ed5646..0ab461e`, but the collector would then run the whole pre-closure bundle again in a new environment | a re-executed bundle is a new attempt, not the original closure execution; needs a new admission class and conflicts with the no-historical-replay rule | selection bias: a re-run could pass where the original did not, unless every attempt is recorded | adds one row for one material; no evidence that the re-run matches the original execution | repeated full bundle per material; rollback removes the isolated path only | DEFERRED_WITH_REASON |\n| 3a. Reuse a closure-time receipt that already carries a valid binding for the exact trusted range | works only if the material's own closure receipt carries a binding | does not help this case (Finding 3: that receipt has none); reopens the existing rule that stale phase files do not compete | stale or replayed receipts, forged bindings, receipts from a dirty tree | prevents future systematic skips for materials that closed clean | small owner change; rollback is removal of the reuse branch | DEFERRED_WITH_REASON, future candidate |\n| 3b. Record the material's immutable range identity beside the continuity binding without a producer-issued binding | computable from Git objects | not allowed: the contract's producer admission condition requires the gate to have run against the committed target | proves bytes existed, not that the gate ran against them | misleading if read as collected evidence | none | REJECTED |\n| 4. Relax guard 3 so a later session-sync commit does not break an earlier target | feasible in code | forbidden by the contract's target guard | creates the exact false-admission class the guard was added to prevent | would collect rows that do not match their range | none | REJECTED |\n\n## Selected Disposition\n\nSelected: RETAIN_EXPLICIT_SKIP_FOR_THIS_MATERIAL and DEFER_STRUCTURAL_COLLECTION_CHANGE.\n\nExact owners retained unchanged: `committed_evidence_fingerprint.verify_worktree_matches_committed_target` (guard 3), `mfrp_shadow_canary_autocollect.validate_and_reconcile_receipt` (the `SKIPPED_NO_COMMITTED_EVIDENCE` branch), `mfrp_shadow_canary_autocollect.find_receipt_candidate` (no stale-receipt competition), and the bounded retry owner (one retry per trusted commit, replayable only).\n\nAuthority granted by this design: none. No owner changes, no receipt or journal changes, no sample promotion, no safety-marker change.\n\nProof: the four isolated probes and the real-repo reconciliation in the companion evidence.\n\nRollback: nothing to roll back. The recommendation is a documented retained disposition.\n\n## Future Admission Requirements (Not Granted)\n\nOption 3a may be reconsidered only through a separate design that proves all of the following:\n\n1. The reused receipt's `base..head` equals the exact trusted range, and its `committedEvidence` recomputes from Git objects.\n2. The canonical receipt reader accepts the receipt, including its digest.\n3. The binding was produced when HEAD equalled the trusted commit with a clean worktree. This timing must be recorded in the receipt, not inferred.\n4. Hostile negatives: an old PASS receipt for another range; a receipt with a forged or one-sided binding; a receipt produced from a dirty tree; a receipt whose disclosure ordering is not proven.\n5. Guard 3 is unchanged, and one bounded retry per trusted commit is preserved.\n6. Opportunity, attempt and sample counts stay separate.\n\nOption 2 may be reconsidered only through a separate design that defines isolated re-execution as its own admission class, records every attempt including failures, and proves that the isolated environment reproduces the original gate inputs.\n\n## Risk / Corrective Action\n\nRisk 1 - systematic skips for session-sync materials. Materials whose overlapping paths are updated by the next session-sync commit will not bind. Corrective action: none in this design. Local should decide whether to accept this as a known limit or to open a separate design under Option 3a.\n\nRisk 2 - misleading legacy PASS receipts (Finding 5). The generated receipt names the requested range but reads later bytes. Corrective action: recorded as a standing risk. A future design should make the gate refuse a PASS receipt when the worktree does not match the range, or label it explicitly.\n\nRisk 3 - time-dependent continuity admissibility (Finding 6). Corrective action: any continuity claim must name the HEAD at which it was checked.\n\nRisk 4 - unknown closure cause for the material's own receipt (Finding 3). The frozen case does not record why that receipt has no binding. Corrective action: Local should consult the closure-time runtime log if it still exists before any future decision.\n\n## Retry And Attempt Accounting\n\nThe case records one collector attempt for trusted commit `0ab461e2b`: outcome `SKIPPED_NO_COMMITTED_EVIDENCE`, not a historical diagnostic, with no retry marker. `SKIPPED_NO_COMMITTED_EVIDENCE` is a retryable outcome in the observability owner. The retry is consumed only if the trusted target is replayable; it is not, so no retry is consumed by this design.\n\nOpportunity count for this material: one trusted commit evaluated at one disclosure. Attempts: one. Collected samples: none. No count was inflated by the design work, which made no collector call.\n\n## Finding-To-Governance Learning Disposition\n\nDefect class: MACHINE_GATE_GAP\nLearning lane: GOVERNANCE_CONTROL_PLANE\nDisposition: MACHINE_CHECK_CANDIDATE\nNext action: Local decides whether to open a separate design for the closure-time reuse option (3a) with anti-replay negatives, or to accept the standing risk that a generated receipt can report PASS for bytes it did not match. This design adds no check.\nRuntime/provider/cost learning: N/A_WITH_REASON - no runtime, provider or cost finding; no experiment or measured comparison was selected.\n\nThe design repeats a known class (unreplayable historical target, `HISTORICAL_REPLAY_MISMATCH`) that the retry owner already handled. The new facts are that the material closure receipt lacks a binding for an unrecorded reason, and that the collector's regenerated receipt can report PASS for bytes it did not match. Both belong to the owner that generates receipts and are recorded as risks in this design.\n\n## Checker Source Read-Ahead Block\n\n| Field | Value |\n|---|---|\n| applicableCheckersRead | `governance/compat/check_worker_return_quality_gate.py`; `governance/compat/check_work_order_acceptance_ledger.py`; `governance/compat/check_agent_operation_trace.py`; `governance/compat/check_review_cost_control.py`; `governance/compat/check_gate_to_role_closeability.py`; `governance/compat/check_finding_to_governance_learning.py`; `governance/compat/check_rescan_intelligence_hardening.py`; `governance/compat/check_truth_foundation_claim_guard.py`; `governance/compat/check_independent_review_probe_admission.py`. Named for gate application; their constants were not re-read line by line in this lane. |\n| literalTokensReviewed | Checker Source Read-Ahead Block; Agent Operation Trace Block; Epistemic Process Block; Finding-To-Governance Learning Disposition; Rescan Intelligence Hardening; Expected Result / Prediction; Evidence Comparison; Contradiction Or Gap Disposition; Defect class; Learning lane; Disposition; Next action |\n| gateRunPurpose | confirmation and evidence of the fast gate on final bytes; the gate verifies the required structure and does not replace the owner probes |\n| claimBoundary | covers the named owner bodies and the probes in the companion evidence; other applicable checkers are exercised by the fast gate and were not read line by line; no corpus claim |\n\n## Agent Operation Trace Block\n\n| Field | Evidence |\n|---|---|\n| Actor | Haiku-family INTERNAL_AGENT worker, operator-started shared-workspace seat |\n| Provider or surface | private shared workspace, no provider or network call |\n| Session or invocation | mfrp-continuity-collection-design-worker-20261011 |\n| Working directory | repository root; probe fixtures under the ignored runtime folder |\n| Command or tool surface | file reads, git read-only commands, canonical receipt reader on copies, real-repo read-only owner calls, isolated fixture probes |\n| Target paths | `docs/reviews/CVF_MFRP_CONTINUITY_COLLECTION_DESIGN_2026-10-11.md`; companion evidence; return |\n| Allowed scope source | work order Write Ownership table |\n| Before status evidence | HEAD 2575d3e5d; clean worktree; staged empty |\n| After status evidence | three untracked owned files; no tracked file modified |\n| Diff evidence | `git status --short` shows the owned untracked files only |\n| Approval boundary | operator-started worker after bound pre-implementation PASS; no commit or nested agent |\n| Claim boundary | offline design and owner probes; no runtime or collection claim |\n| Agent type | INTERNAL_AGENT |\n| Invocation ID | mfrp-continuity-collection-design-worker-20261011 |\n| Expected manifest | `docs/reviews/CVF_MFRP_CONTINUITY_COLLECTION_DESIGN_2026-10-11.md`; `docs/reviews/evidence/mfrp-continuity-collection-design-worker-20261011.json`; `docs/reviews/CVF_MFRP_CONTINUITY_COLLECTION_DESIGN_WORKER_RETURN_2026-10-11.md` |\n| Actual changed set | `docs/reviews/CVF_MFRP_CONTINUITY_COLLECTION_DESIGN_2026-10-11.md`; `docs/reviews/evidence/mfrp-continuity-collection-design-worker-20261011.json`; `docs/reviews/CVF_MFRP_CONTINUITY_COLLECTION_DESIGN_WORKER_RETURN_2026-10-11.md` |\n| Manifest delta | MATCH |\n| Deletion or rename disposition | N/A with reason: none |\n\n## Epistemic Process Block\n\nExpected Result / Prediction: the existing owners refuse the historical target and keep the unreplayable item visible and unconsumed, so a safe recovery needs either an explicit admission change or a retained skip.\nEvidence Comparison: four isolated probes match their expected results, including the no-op control; the two frozen raw receipts validate; the continuity range identity recomputes exactly; the real-repo historical target is refused at the current HEAD.\nContradiction Or Gap Disposition: the continuity check was true in the case and false at the current HEAD; this is time-dependent and is reported, not resolved. The material closure receipt's missing binding is unexplained by the case and is recorded as a limit.\nClaim Update: retained explicit skip proposed for this material; structural change deferred with reasons; no collection or effectiveness claim.\n\n## Rescan Intelligence Hardening\n\n- N/A with reason: this design is a documentary owner analysis; no intake refresh, delta ledger, routing matrix or source reassessment was produced.\n\n- Rescan intelligence verdict: NOT_APPLICABLE_WITH_REASON\n\n## Public Export Disposition\n\nDEFERRED_PRIVATE_ONLY. Private design and evidence only; no public-sync authorization.\n\n## Claim Boundary\n\nOne source-derived design. It names the existing owners, records one retained disposition with reasons, and lists the future admission requirements without granting them. It makes no claim about runtime collection, collector recovery, model ranking, live AI governance, cost, or the truth of any receipt's execution. `independentProbeDisposition: PENDING_REVIEWER_EXECUTION`. Historical semantics, actual target bytes and current authority are kept separate throughout.\n"
+    },
+    {
+      "path": "docs/reviews/evidence/mfrp-continuity-collection-design-worker-20261011.json",
+      "sha256": "6ad1ea6b0aaec467ee46493a471615160d1dcb870026baf2bb8f3ed547adaf75",
+      "bytes": 25129,
+      "lines": 474,
+      "frozenCopy": ".cvf/runtime/mfrp-continuity-design-local-20261011/originals/mfrp-continuity-collection-design-worker-20261011.json",
+      "rawUtf8": "{\r\n  \"schemaVersion\": \"cvf.mfrpContinuityCollectionDesignWorkerEvidence@1.0.0\",\r\n  \"batchId\": \"CVF-MFRP-CONTINUITY-COLLECTION-DESIGN-20261011\",\r\n  \"workOrder\": {\r\n    \"path\": \"docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_CONTINUITY_COLLECTION_DESIGN_2026-10-11.md\",\r\n    \"sha256\": \"84aae344efadedbf111ee03c376afceeaa432806efc34c987fa7af2774632e1c\"\r\n  },\r\n  \"executionBaseHead\": \"2575d3e5d0497c1fb392c313fb35038c6fa6c1c9\",\r\n  \"dispatchBaseHead\": \"0e5de48d040c44a76cd729565d9780b8c50207d1\",\r\n  \"clocks\": {\r\n    \"startUtc\": \"2026-10-11T14:09:28Z\",\r\n    \"startMeasures\": \"first lane command (HEAD, status, staged) in the same batch as the work-order read; no source read preceded it\",\r\n    \"preImplementationGate\": \"passed at HEAD before outputs; log .cvf/runtime/mfrp-continuity-collection-design-20261011/pre-implementation.log\",\r\n    \"scaffoldUtc\": \"2026-10-11T14:10:08Z\",\r\n    \"probesUtcFrom\": \"2026-10-11T14:11:46.632305+00:00\",\r\n    \"probesUtcTo\": \"2026-10-11T14:11:51.633908+00:00\",\r\n    \"finalGateStartUtc\": \"RECORDED_BY_FINAL_RUN_WRAPPER_IN_FINAL_TERMINAL_CLOCK\",\r\n    \"endMeasures\": \"worker end is not separately observable; the final terminal clock is written after verification to an ignored file\"\r\n  },\r\n  \"pins\": {\r\n    \"sourcePins\": [\r\n      {\r\n        \"path\": \"docs/reference/review_cost_control/CVF_COMMITTED_EVIDENCE_FINGERPRINT_CONTRACT.md\",\r\n        \"pinned\": \"57ee1b0502943b1d4126a7afc4bae78d8338806fcd0fa62ddc811c8fadaa0c0a\",\r\n        \"actual\": \"57ee1b0502943b1d4126a7afc4bae78d8338806fcd0fa62ddc811c8fadaa0c0a\",\r\n        \"match\": true,\r\n        \"readDepthDeclared\": \"FULL_CONTRACT\",\r\n        \"workerReadDepth\": \"FULL_CONTRACT_REQUIRED\"\r\n      },\r\n      {\r\n        \"path\": \"governance/compat/committed_evidence_fingerprint.py\",\r\n        \"pinned\": \"39feb312e2da64af4da1b3d023bbd1e2e1ea3a6b0e65e1e5d7fc0dcab7658ace\",\r\n        \"actual\": \"39feb312e2da64af4da1b3d023bbd1e2e1ea3a6b0e65e1e5d7fc0dcab7658ace\",\r\n        \"match\": true,\r\n        \"readDepthDeclared\": \"TARGETED_SECTIONS_OR_SYMBOLS\",\r\n        \"workerReadDepth\": \"verify_worktree_matches_committed_target and its direct byte/metadata helpers; build/compute recipe; no full-module-read claim\"\r\n      },\r\n      {\r\n        \"path\": \"governance/compat/run_agent_autorun_workflow_gate.py\",\r\n        \"pinned\": \"8d28ac306eb2d7569571b53a833478b59708e89860ef11ff06115ba8a8ea6a1e\",\r\n        \"actual\": \"8d28ac306eb2d7569571b53a833478b59708e89860ef11ff06115ba8a8ea6a1e\",\r\n        \"match\": true,\r\n        \"readDepthDeclared\": \"TARGETED_SECTIONS_OR_SYMBOLS\",\r\n        \"workerReadDepth\": \"_run_phase binding branch, _closure_worktree_finality_failures, committed-range shape wiring and main; targeted\"\r\n      },\r\n      {\r\n        \"path\": \"governance/compat/mfrp_shadow_canary_autocollect.py\",\r\n        \"pinned\": \"7002f9e0f72753c65101a3b9e6729bf4ce7186685226a2d85feb627bbd23cab0\",\r\n        \"actual\": \"7002f9e0f72753c65101a3b9e6729bf4ce7186685226a2d85feb627bbd23cab0\",\r\n        \"match\": true,\r\n        \"readDepthDeclared\": \"TARGETED_SECTIONS_OR_SYMBOLS\",\r\n        \"workerReadDepth\": \"generate_current_receipt, find_receipt_candidate, validate_and_reconcile_receipt, run_collection and disclosure/retry seams; targeted\"\r\n      },\r\n      {\r\n        \"path\": \"governance/compat/agent_autorun_machine_verification.py\",\r\n        \"pinned\": \"e3686ee11d7d52e644a7d68eea47dd744ec3a6e9970d503aed704f4e9c3cc9d5\",\r\n        \"actual\": \"e3686ee11d7d52e644a7d68eea47dd744ec3a6e9970d503aed704f4e9c3cc9d5\",\r\n        \"match\": true,\r\n        \"readDepthDeclared\": \"TARGETED_SECTIONS_OR_SYMBOLS\",\r\n        \"workerReadDepth\": \"_validate_receipt_integrity committedEvidence/top-nested equality and digest branch; targeted\"\r\n      },\r\n      {\r\n        \"path\": \"governance/compat/agent_automation_machine_verification_readout.py\",\r\n        \"pinned\": \"ff6088bf8144deec4582ce9faf62384b314346c9cbbb87f6b3349a2d23f7e7c3\",\r\n        \"actual\": \"ff6088bf8144deec4582ce9faf62384b314346c9cbbb87f6b3349a2d23f7e7c3\",\r\n        \"match\": true,\r\n        \"readDepthDeclared\": \"TARGETED_SECTIONS_OR_SYMBOLS\",\r\n        \"workerReadDepth\": \"read_receipt_readonly complete body; targeted\"\r\n      },\r\n      {\r\n        \"path\": \"governance/compat/run_agent_commit_steward_preflight.py\",\r\n        \"pinned\": \"235834162c57aec66b461cc341321b34a1d72427c70cc4b458428a5f5d32c8b9\",\r\n        \"actual\": \"235834162c57aec66b461cc341321b34a1d72427c70cc4b458428a5f5d32c8b9\",\r\n        \"match\": true,\r\n        \"readDepthDeclared\": \"TARGETED_SECTIONS_OR_SYMBOLS\",\r\n        \"workerReadDepth\": \"mixed-path exception and committed-range shape preflight; targeted\"\r\n      },\r\n      {\r\n        \"path\": \"docs/reviews/CVF_MFRP_P4_C1_BOUNDED_RETRY_RECOVERY_COMPLETION_2026-09-27.md\",\r\n        \"pinned\": \"f41948529464ee9d947a54a7685584a66f4d8595a56f05a26c02d9b648d7f898\",\r\n        \"actual\": \"f41948529464ee9d947a54a7685584a66f4d8595a56f05a26c02d9b648d7f898\",\r\n        \"match\": true,\r\n        \"readDepthDeclared\": \"TARGETED_SECTIONS_OR_SYMBOLS\",\r\n        \"workerReadDepth\": \"FULL_BOUNDED_COMPLETION_REQUIRED; one-retry-per-commit limit\"\r\n      },\r\n      {\r\n        \"path\": \"docs/reviews/CVF_MODEL_SELECTION_S2_R3_PROJECTION_COMPLETION_2026-10-11.md\",\r\n        \"pinned\": \"8f5dc02e7e59dcb96e86ccea36c6618e78faa8517a58a3126997d13167b48bf9\",\r\n        \"actual\": \"8f5dc02e7e59dcb96e86ccea36c6618e78faa8517a58a3126997d13167b48bf9\",\r\n        \"match\": true,\r\n        \"readDepthDeclared\": \"TARGETED_SECTIONS_OR_SYMBOLS\",\r\n        \"workerReadDepth\": \"Independent Review Probe Admission; Local Packaging Diagnostic; mixed material manifest; targeted\"\r\n      },\r\n      {\r\n        \"path\": \"docs/roadmaps/CVF_GCLH_MACHINE_FIRST_REVIEW_PREFLIGHT_ROADMAP_2026-09-01.md\",\r\n        \"pinned\": \"4438fcce757dcbe9bb6041a025b36adf2a3d3350199000bd18fc2ed9f6c11a07\",\r\n        \"actual\": \"4438fcce757dcbe9bb6041a025b36adf2a3d3350199000bd18fc2ed9f6c11a07\",\r\n        \"match\": true,\r\n        \"readDepthDeclared\": \"TARGETED_SECTIONS_OR_SYMBOLS\",\r\n        \"workerReadDepth\": \"machine responsibilities, active P4-C1 context, reviewed/nonduplication limits; targeted\"\r\n      },\r\n      {\r\n        \"path\": \"docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json\",\r\n        \"pinned\": \"bbeabf8a029fdcc8d31cf2a5b8fd163c4fdb048e92702b75b5b1923b580158e0\",\r\n        \"actual\": \"bbeabf8a029fdcc8d31cf2a5b8fd163c4fdb048e92702b75b5b1923b580158e0\",\r\n        \"match\": true,\r\n        \"readDepthDeclared\": \"TARGETED_SECTIONS_OR_SYMBOLS\",\r\n        \"workerReadDepth\": \"last two rows, reporting/observations; targeted\"\r\n      },\r\n      {\r\n        \"path\": \"governance/compat/run_worker_return_scaffold.py\",\r\n        \"pinned\": \"fd2f492b5c5468ce2545925a22264b663768eba126255d91eb7a02be029c2501\",\r\n        \"actual\": \"fd2f492b5c5468ce2545925a22264b663768eba126255d91eb7a02be029c2501\",\r\n        \"match\": true,\r\n        \"readDepthDeclared\": \"TARGETED_SECTIONS_OR_SYMBOLS\",\r\n        \"workerReadDepth\": \"actual main/build/shape/budget command behavior; targeted\"\r\n      },\r\n      {\r\n        \"path\": \"docs/reviews/evidence/mfrp-continuity-collection-design-dispatch-case-20261011.json\",\r\n        \"pinned\": \"6cec4aa6a1a0d3971f1c999951d75e87a42483a7ad90638cdfb90e7354807ddb\",\r\n        \"actual\": \"6cec4aa6a1a0d3971f1c999951d75e87a42483a7ad90638cdfb90e7354807ddb\",\r\n        \"match\": true,\r\n        \"readDepthDeclared\": \"GENERATED_AND_VERIFIED_CASE\",\r\n        \"workerReadDepth\": \"FULL_CASE_REQUIRED; raw snapshot integrity and named case only\"\r\n      }\r\n    ],\r\n    \"allSourcePinsMatch\": true,\r\n    \"sourcePinCount\": 13,\r\n    \"authorityPair\": {\r\n      \"baseline\": {\r\n        \"path\": \"docs/baselines/CVF_GC018_MFRP_CONTINUITY_COLLECTION_DESIGN_2026-10-11.md\",\r\n        \"pinned\": \"30e013cab9fd80bf52b07efbac5928b5cc1f180a2532a97e89bc11256f93fcab\",\r\n        \"actual\": \"30e013cab9fd80bf52b07efbac5928b5cc1f180a2532a97e89bc11256f93fcab\",\r\n        \"match\": true\r\n      },\r\n      \"workOrder\": {\r\n        \"path\": \"docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_CONTINUITY_COLLECTION_DESIGN_2026-10-11.md\",\r\n        \"pinned\": \"84aae344efadedbf111ee03c376afceeaa432806efc34c987fa7af2774632e1c\",\r\n        \"actual\": \"84aae344efadedbf111ee03c376afceeaa432806efc34c987fa7af2774632e1c\",\r\n        \"match\": true\r\n      }\r\n    },\r\n    \"allAuthorityPinsMatch\": true\r\n  },\r\n  \"gitStateBeforeOutputs\": {\r\n    \"statusShort\": [],\r\n    \"stagedNames\": [],\r\n    \"cleanWorktree\": true\r\n  },\r\n  \"preImplementationGate\": {\r\n    \"command\": \"python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base 2575d3e5d0497c1fb392c313fb35038c6fa6c1c9 --head HEAD --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_CONTINUITY_COLLECTION_DESIGN_2026-10-11.md\",\r\n    \"log\": \".cvf/runtime/mfrp-continuity-collection-design-20261011/pre-implementation.log\",\r\n    \"logSha256\": \"246be5687a01574332193fadb3649d866f4040134c3dc1db8a3163b33e0839e2\",\r\n    \"exit\": 0\r\n  },\r\n  \"scaffoldPreparation\": {\r\n    \"command\": \"python governance/compat/run_worker_return_scaffold.py --write docs/reviews/CVF_MFRP_CONTINUITY_COLLECTION_DESIGN_WORKER_RETURN_2026-10-11.md --check-shape --max-lines 450 --max-bytes 64000 --title \\\"MFRP Material Continuity Collection Design\\\"\",\r\n    \"receiptLog\": \".cvf/runtime/mfrp-continuity-collection-design-20261011/scaffold-receipt.txt\",\r\n    \"receiptSha256\": \"a51c7bb94988f44e96882c434c2de76e92a4241039fc56e907c9642268cf4d2d\",\r\n    \"exit\": 0,\r\n    \"generatedLinesAtReceipt\": 323,\r\n    \"generatedBytesAtReceipt\": 13380,\r\n    \"pendingFieldsAreEvidence\": false\r\n  },\r\n  \"readDepth\": {\r\n    \"docs/reference/review_cost_control/CVF_COMMITTED_EVIDENCE_FINGERPRINT_CONTRACT.md\": \"FULL_FILE_265_LINES\",\r\n    \"governance/compat/committed_evidence_fingerprint.py\": \"compute_committed_evidence_fingerprint, _read_worktree_bytes, _worktree_bytes_match_committed_blob, _allows_crlf_checkout, verify_worktree_matches_committed_target, build_committed_evidence (lines 169-409); module header and other helpers by hash only\",\r\n    \"governance/compat/mfrp_shadow_canary_autocollect.py\": \"generate_current_receipt, candidate discovery, find_receipt_candidate, _fail_closed_if_declared_binding_caused_rejection, validate_and_reconcile_receipt, _historical_attempt_rows, _prepare_journal, _persist_attempt, _retry_is_replayable, _select_replayable_retry_attempt, run_collection through the collected/skipped branches (lines 213-854); main and disclosure helpers by hash only\",\r\n    \"governance/compat/mfrp_p4_enrollment_observability.py\": \"retryable_attempts and RETRYABLE_OUTCOMES (targeted)\",\r\n    \"governance/compat/agent_automation_machine_verification_readout.py\": \"_import_autorun_owner and read_receipt_readonly bodies (lines 33-62); remaining readout functions by hash only\",\r\n    \"governance/compat/agent_autorun_machine_verification.py\": \"committedEvidence branches of the integrity validator (targeted grep of lines 92-234)\",\r\n    \"governance/compat/run_agent_autorun_workflow_gate.py\": \"committedEvidence producer branch (targeted grep of lines 434-729)\",\r\n    \"docs/reviews/CVF_MFRP_P4_C1_BOUNDED_RETRY_RECOVERY_COMPLETION_2026-09-27.md\": \"FULL_FILE_303_LINES\",\r\n    \"docs/reviews/CVF_MODEL_SELECTION_S2_R3_PROJECTION_COMPLETION_2026-10-11.md\": \"TARGETED_SECTION_LOCATIONS_ONLY (Independent Review Probe Admission line 38; Local Packaging Diagnostic line 242)\",\r\n    \"docs/roadmaps/CVF_GCLH_MACHINE_FIRST_REVIEW_PREFLIGHT_ROADMAP_2026-09-01.md\": \"section map only (Design Control Gate, Current Owner Map, Historical Replay matrix)\",\r\n    \"docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json\": \"row count and symbol-line row only; the last-two-rows and observations sections were not read in full\",\r\n    \"docs/reviews/evidence/mfrp-continuity-collection-design-dispatch-case-20261011.json\": \"FULL_CASE_STRUCTURE_RECEIPTS_OVERLAP_ATTEMPT_AND_DIAGNOSTIC_READ_VIA_PARSE; raw receipt strings validated byte-exact\",\r\n    \"governance/compat/run_worker_return_scaffold.py\": \"argument surface and generated receipt (via help and run); main body by receipt only\",\r\n    \"checker constants (return gates)\": \"not re-read in this lane; verified by the fast gate and acceptance ledger runs\"\r\n  },\r\n  \"rawCase\": {\r\n    \"receipts\": [\r\n      {\r\n        \"kind\": \"material\",\r\n        \"rawSha256Matches\": true,\r\n        \"rawBytes\": 41747,\r\n        \"canonicalValid\": true,\r\n        \"canonicalReason\": \"receipt internal integrity valid\",\r\n        \"payloadBase\": \"6ed564623\",\r\n        \"payloadHead\": \"0ab461e2b\",\r\n        \"declaresCommittedEvidence\": false\r\n      },\r\n      {\r\n        \"kind\": \"continuity\",\r\n        \"rawSha256Matches\": true,\r\n        \"rawBytes\": 42348,\r\n        \"canonicalValid\": true,\r\n        \"canonicalReason\": \"receipt internal integrity valid\",\r\n        \"payloadBase\": \"0ab461e2b\",\r\n        \"payloadHead\": \"0e5de48d0\",\r\n        \"declaresCommittedEvidence\": true,\r\n        \"declaredFingerprint\": \"3aaa07f94998041e28054b03e2ebb57ea0118fd2c31568f0a34ae363d45d9be5\",\r\n        \"declaredBase\": \"0ab461e2b807a33984a4f8357140f5d28988fd23\",\r\n        \"declaredHead\": \"0e5de48d040c44a76cd729565d9780b8c50207d1\"\r\n      }\r\n    ],\r\n    \"overlap\": [\r\n      {\r\n        \"path\": \"CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json\",\r\n        \"materialRawMatches\": true,\r\n        \"continuityRawMatches\": true\r\n      },\r\n      {\r\n        \"path\": \"CVF_SESSION/ACTIVE_SESSION_STATE.json\",\r\n        \"materialRawMatches\": true,\r\n        \"continuityRawMatches\": true\r\n      },\r\n      {\r\n        \"path\": \"CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json\",\r\n        \"materialRawMatches\": true,\r\n        \"continuityRawMatches\": true\r\n      }\r\n    ],\r\n    \"realRepoIdentity\": {\r\n      \"materialRangeIdentity\": \"56cd0b1d9931a85f10c7c0c8c8dcdd249987d2ae1a5af519409ff0233b30cc6b\",\r\n      \"continuityRangeIdentity\": \"3aaa07f94998041e28054b03e2ebb57ea0118fd2c31568f0a34ae363d45d9be5\",\r\n      \"continuityDeclaredMatchesIdentity\": true,\r\n      \"note\": \"materialRangeIdentity is computed from Git objects but is declared by no receipt\"\r\n    },\r\n    \"realRepoCurrentHead\": {\r\n      \"head\": \"2575d3e5d0497c1fb392c313fb35038c6fa6c1c9\",\r\n      \"historicalMaterialTarget\": {\r\n        \"ok\": false,\r\n        \"reason\": \"worktree content at 'CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json' does not match 0ab461e2b807a33984a4f8357140f5d28988fd23's committed blob da077c553adb0f12f6f57d1a056e837375ed2284 -- bytes differ outside the admitted checkout representation; committedEvidence binding withheld\"\r\n      },\r\n      \"continuityTarget\": {\r\n        \"ok\": false,\r\n        \"reason\": \"worktree content at 'AGENT_HANDOFF_V63_2026-09-18.md' does not match 0e5de48d040c44a76cd729565d9780b8c50207d1's committed blob 0c6373189e00f11335295322e14b0f74f7611602 -- bytes differ outside the admitted checkout representation; committedEvidence binding withheld\"\r\n      },\r\n      \"note\": \"time-dependent: the case recorded the continuity target as true at 0e5de48d0; at this HEAD it is false because commits 9afd2165a and 2575d3e5d changed the same continuity files\"\r\n    }\r\n  },\r\n  \"probes\": [\r\n    {\r\n      \"probe\": \"p1-disjoint-continuity\",\r\n      \"description\": \"A baseline; B trusted semantic artifact; C only a separate handoff path\",\r\n      \"fixtureRepo\": \".cvf/runtime/mfrp-continuity-collection-design-20261011/fixtures/p1-disjoint-continuity\",\r\n      \"call\": \"verify_worktree_matches_committed_target(c00601b19e067ab48d6f0f50f6c4e36e553ad341, ccab91c61c74c90f729e380f5802e4427f3ed0c5, cwd=fixture)\",\r\n      \"headAtCall\": \"d1f6768b7a59423abd3c38b5f737dad9a92944c9\",\r\n      \"pathsChangedInAB\": [\r\n        \"reviews/semantic.md\"\r\n      ],\r\n      \"pathsChangedBC\": [\r\n        \"handoff/AGENT_HANDOFF.md\"\r\n      ],\r\n      \"result\": true,\r\n      \"reason\": \"worktree content matches the committed target for every changed path\",\r\n      \"expectedResult\": true,\r\n      \"matchesExpected\": true\r\n    },\r\n    {\r\n      \"probe\": \"p2-companion-overlap\",\r\n      \"description\": \"A baseline; B semantic artifact plus projection companion; C changes only the companion\",\r\n      \"fixtureRepo\": \".cvf/runtime/mfrp-continuity-collection-design-20261011/fixtures/p2-companion-overlap\",\r\n      \"call\": \"verify_worktree_matches_committed_target(2242f89bcbc9f1cd7d4a57ca01f2b9fccaa264dd, 37aea42cc8e1e9bf6ed01c6e4924445102c74315, cwd=fixture)\",\r\n      \"headAtCall\": \"3bb040809faae615071765c847209a3d3192d0b8\",\r\n      \"pathsChangedInAB\": [\r\n        \"reviews/semantic.md\",\r\n        \"session/projection.json\"\r\n      ],\r\n      \"pathsChangedBC\": [\r\n        \"session/projection.json\"\r\n      ],\r\n      \"result\": false,\r\n      \"reason\": \"worktree content at 'session/projection.json' does not match 37aea42cc8e1e9bf6ed01c6e4924445102c74315's committed blob 436c685df375b7e5502875c5307207cef4084eb8 -- bytes differ outside the admitted checkout representation; committedEvidence binding withheld\",\r\n      \"expectedResult\": false,\r\n      \"matchesExpected\": true\r\n    },\r\n    {\r\n      \"probe\": \"p3-semantic-drift\",\r\n      \"description\": \"A baseline; B trusted semantic artifact; C changes the artifact\",\r\n      \"fixtureRepo\": \".cvf/runtime/mfrp-continuity-collection-design-20261011/fixtures/p3-semantic-drift\",\r\n      \"call\": \"verify_worktree_matches_committed_target(12ace850906e3a73dc585550affdfbc57fdeaa76, 7877712ece04f16b2713ae30fa2b818a4f522ce6, cwd=fixture)\",\r\n      \"headAtCall\": \"7ea215f58d4cc17e5ed4bc16d201173f6f026b86\",\r\n      \"pathsChangedInAB\": [\r\n        \"reviews/semantic.md\"\r\n      ],\r\n      \"pathsChangedBC\": [\r\n        \"reviews/semantic.md\"\r\n      ],\r\n      \"result\": false,\r\n      \"reason\": \"worktree content at 'reviews/semantic.md' does not match 7877712ece04f16b2713ae30fa2b818a4f522ce6's committed blob 17da3fdf35495b5af01ea5ffc95d669c4192da8f -- bytes differ outside the admitted checkout representation; committedEvidence binding withheld\",\r\n      \"expectedResult\": false,\r\n      \"matchesExpected\": true\r\n    },\r\n    {\r\n      \"probe\": \"p0-noop-control\",\r\n      \"description\": \"control: C identical to B for the trusted path set; a no-op must stay TRUE and not be relabeled\",\r\n      \"fixtureRepo\": \".cvf/runtime/mfrp-continuity-collection-design-20261011/fixtures/p0-noop-control\",\r\n      \"call\": \"verify_worktree_matches_committed_target(12ace850906e3a73dc585550affdfbc57fdeaa76, bb5eac76c8c7e4148f0629cacf6066dfe9d89f7e, cwd=fixture)\",\r\n      \"headAtCall\": \"b86ae9fe68f42a83df62631cc04bda7dfa04f3c0\",\r\n      \"pathsChangedInAB\": [\r\n        \"reviews/semantic.md\"\r\n      ],\r\n      \"pathsChangedBC\": [\r\n        \"README.md\"\r\n      ],\r\n      \"result\": true,\r\n      \"reason\": \"worktree content matches the committed target for every changed path\",\r\n      \"expectedResult\": true,\r\n      \"matchesExpected\": true\r\n    }\r\n  ],\r\n  \"probeInputsAndSiblingDiscipline\": {\r\n    \"method\": \"each probe builds a fresh isolated Git repository under the ignored runtime folder; SHAs are the full commit SHAs produced by the fixture; the call is verify_worktree_matches_committed_target(base, head, cwd=fixture)\",\r\n    \"preconditions\": \"each mutated path is in the expected changed set; P0 proves a no-op control stays TRUE\",\r\n    \"siblings\": \"untouched semantic and projection bytes are unchanged across probes; no probe touched the source repository, Git config, journal, safety marker or any receipt\"\r\n  },\r\n  \"optionEvidence\": {\r\n    \"option1RetainSkip\": {\r\n      \"feasible\": true,\r\n      \"replayableNow\": false,\r\n      \"retryableOutcome\": true,\r\n      \"consumesRetry\": false\r\n    },\r\n    \"option2IsolatedReexecution\": {\r\n      \"feasible\": \"partial\",\r\n      \"reexecutesBundle\": true,\r\n      \"newAdmissionClassRequired\": true,\r\n      \"verdict\": \"DEFERRED_WITH_REASON\"\r\n    },\r\n    \"option3aClosureTimeReuse\": {\r\n      \"helpsThisCase\": false,\r\n      \"reason\": \"material closure receipt declares no binding\",\r\n      \"verdict\": \"DEFERRED_WITH_REASON\"\r\n    },\r\n    \"option3bIdentityWithoutBinding\": {\r\n      \"verdict\": \"REJECTED\",\r\n      \"reason\": \"producer admission condition not met\"\r\n    },\r\n    \"option4RelaxGuard3\": {\r\n      \"verdict\": \"REJECTED\",\r\n      \"reason\": \"forbidden by the target guard\"\r\n    }\r\n  },\r\n  \"retryAndAttemptAccounting\": {\r\n    \"collectorAttemptsForMaterial\": 1,\r\n    \"attemptOutcome\": \"SKIPPED_NO_COMMITTED_EVIDENCE\",\r\n    \"historicalDiagnostic\": false,\r\n    \"retryMarker\": null,\r\n    \"opportunityCountForThisDesign\": 1,\r\n    \"collectedSamples\": 0,\r\n    \"consumedRetries\": 0\r\n  },\r\n  \"sourceToClaimMap\": [\r\n    {\r\n      \"claim\": \"fail-closed refusal of the historical material target\",\r\n      \"supplier\": \"governance/compat/committed_evidence_fingerprint.py verify_worktree_matches_committed_target (real-repo call in realRepoCurrentHead); case readOnlyActualOwnerDiagnostic\",\r\n      \"fidelity\": \"CURRENT_REPO_CALL_AND_CASE_RECORD_AGREE_ON_REFUSAL\"\r\n    },\r\n    {\r\n      \"claim\": \"continuity binding genuine\",\r\n      \"supplier\": \"receipts[continuity].declaredFingerprint equals realRepoIdentity.continuityRangeIdentity\",\r\n      \"fidelity\": \"RECOMPUTED_FROM_GIT_OBJECTS\"\r\n    },\r\n    {\r\n      \"claim\": \"three overlapping paths and raw identities\",\r\n      \"supplier\": \"rawCase.overlap (committed blobs at both heads)\",\r\n      \"fidelity\": \"RAW_BLOB_SHA256_MATCHES_CASE\"\r\n    },\r\n    {\r\n      \"claim\": \"material closure receipt has no binding and cause unknown\",\r\n      \"supplier\": \"receipts[material].declaresCommittedEvidence false; case does not record cause\",\r\n      \"fidelity\": \"RECORD_STATE_ONLY_CAUSE_UNKNOWN\"\r\n    },\r\n    {\r\n      \"claim\": \"collector regenerates receipt at next disclosure and guard 3 then fails\",\r\n      \"supplier\": \"governance/compat/mfrp_shadow_canary_autocollect.py generate_current_receipt, run_collection (read bodies)\",\r\n      \"fidelity\": \"SOURCE_BODY_READ\"\r\n    },\r\n    {\r\n      \"claim\": \"unreplayable retryable item stays visible and unconsumed\",\r\n      \"supplier\": \"docs/reviews/CVF_MFRP_P4_C1_BOUNDED_RETRY_RECOVERY_COMPLETION_2026-09-27.md finding row HISTORICAL_REPLAY_MISMATCH (full read); retryable_attempts (targeted)\",\r\n      \"fidelity\": \"SEMANTIC_READ_OF_COMPLETION_AND_TARGETED_CODE\"\r\n    },\r\n    {\r\n      \"claim\": \"generated receipt may PASS a range with mismatched bytes\",\r\n      \"supplier\": \"design finding 5 derived from generate_current_receipt body and guard 3 definition\",\r\n      \"fidelity\": \"DERIVED_RISK_NOT_EXERCISED_BY_PROBE\"\r\n    },\r\n    {\r\n      \"claim\": \"continuity admissibility is time-dependent\",\r\n      \"supplier\": \"realRepoCurrentHead continuityTarget false; git log of commits 9afd2165a and 2575d3e5d touching the continuity paths\",\r\n      \"fidelity\": \"CURRENT_REPO_OBSERVATION\"\r\n    },\r\n    {\r\n      \"claim\": \"S2-R3 material semantic acceptance\",\r\n      \"supplier\": \"docs/reviews/CVF_MODEL_SELECTION_S2_R3_PROJECTION_COMPLETION_2026-10-11.md (pinned sha; targeted section only)\",\r\n      \"fidelity\": \"HASH_AND_TARGETED_SECTION\"\r\n    }\r\n  ],\r\n  \"sourceAcceptanceSeparation\": {\r\n    \"semanticAcceptance\": \"Local S2-R3 completion (accepted material)\",\r\n    \"gatePass\": \"pre-closure gate PASS on the receipt bytes; a PASS does not imply guard 3\",\r\n    \"committedTargetBinding\": \"present only in the continuity receipt for 0ab..0e5\",\r\n    \"collectionEligibility\": \"none for the material in this design; retained skip\",\r\n    \"currentContextContinuity\": \"checked at the current HEAD only; time-dependent\"\r\n  },\r\n  \"requirements\": {\r\n    \"REQ-DESIGN\": {\r\n      \"proofId\": \"PROOF-REQ-DESIGN\",\r\n      \"status\": \"PASS\",\r\n      \"joins\": [\r\n        \"design.Selected Disposition\",\r\n        \"design.Option Comparison\",\r\n        \"optionEvidence\",\r\n        \"probes\"\r\n      ]\r\n    },\r\n    \"REQ-SEAM\": {\r\n      \"proofId\": \"PROOF-REQ-SEAM\",\r\n      \"status\": \"PASS\",\r\n      \"joins\": [\r\n        \"sourceToClaimMap\",\r\n        \"rawCase\",\r\n        \"sourceAcceptanceSeparation\",\r\n        \"allSourcePinsMatch\"\r\n      ]\r\n    },\r\n    \"REQ-PROBES\": {\r\n      \"proofId\": \"PROOF-REQ-PROBES\",\r\n      \"status\": \"PASS\",\r\n      \"joins\": [\r\n        \"probes\",\r\n        \"probeInputsAndSiblingDiscipline\",\r\n        \"realRepoCurrentHead\"\r\n      ]\r\n    },\r\n    \"REQ-RETURN\": {\r\n      \"proofId\": \"PROOF-REQ-RETURN\",\r\n      \"status\": \"PASS_VALIDATED_BY_FINAL_FAST_GATE_RUN_LOG\",\r\n      \"joins\": [\r\n        \"scaffoldPreparation\",\r\n        \"return\",\r\n        \"fast-gate final log\",\r\n        \"acceptance ledger\"\r\n      ]\r\n    }\r\n  },\r\n  \"nullUnknowns\": {\r\n    \"nativeModelVersion\": {\r\n      \"value\": null,\r\n      \"reason\": \"requested Claude Haiku ex high is operator metadata; native version and effort are not exposed\"\r\n    },\r\n    \"tokensAndBill\": {\r\n      \"value\": null,\r\n      \"reason\": \"no exposed worker, reviewer or rework meter\"\r\n    },\r\n    \"workerStartEnd\": {\r\n      \"value\": null,\r\n      \"reason\": \"start captured at the first lane command; end is not separately observable; 45-minute budget not instrumented\"\r\n    },\r\n    \"materialClosureCause\": {\r\n      \"value\": null,\r\n      \"reason\": \"the case preserves the material receipt bytes but not the closure-time worktree state\"\r\n    }\r\n  },\r\n  \"providerCallCount\": 0,\r\n  \"nestedAgentCount\": 0,\r\n  \"independentProbeDisposition\": \"PENDING_REVIEWER_EXECUTION\",\r\n  \"runtimeProviderCostLearning\": \"N/A_WITH_REASON - no provider experiment and no measured cost comparison were selected\",\r\n  \"designRef\": \"docs/reviews/CVF_MFRP_CONTINUITY_COLLECTION_DESIGN_2026-10-11.md\",\r\n  \"designSha256\": \"5e7c666c27592819c7e6382898273e5863191c87221e6e49755cd6ed1f68d335\"\r\n}\r\n"
+    },
+    {
+      "path": "docs/reviews/CVF_MFRP_CONTINUITY_COLLECTION_DESIGN_WORKER_RETURN_2026-10-11.md",
+      "sha256": "22bc08d6c9091183ca57da0cdcdae4463306dff2322ac64292a9f064ab2e6e63",
+      "bytes": 27724,
+      "lines": 339,
+      "frozenCopy": ".cvf/runtime/mfrp-continuity-design-local-20261011/originals/CVF_MFRP_CONTINUITY_COLLECTION_DESIGN_WORKER_RETURN_2026-10-11.md",
+      "rawUtf8": "# MFRP Material Continuity Collection Design - Worker Return\n\nMemory class: FULL_RECORD\n\ndocType: review\n\nStatus: COMPLETE_PENDING_REVIEW\n\nSelf-declared worker-return artifact: yes\n\nResponds to work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_CONTINUITY_COLLECTION_DESIGN_2026-10-11.md`\n\ndispatchWorkOrder: `docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_CONTINUITY_COLLECTION_DESIGN_2026-10-11.md`\n\nBatch ID: CVF-MFRP-CONTINUITY-COLLECTION-DESIGN-20261011\n\nexecutionBaseHead: 2575d3e5d0497c1fb392c313fb35038c6fa6c1c9\n\ndispatchBaseHead: 0e5de48d040c44a76cd729565d9780b8c50207d1\n\nCommit mode: WORKER_MUST_NOT_COMMIT\n\nproviderExecutionAuthority: FORBIDDEN\n\nrawMemoryReleased=false\n\ncontractProfile: WORKER_RETURN_FULL_GATE_V1\n\nCompanion evidence: `docs/reviews/evidence/mfrp-continuity-collection-design-worker-20261011.json`\n\n## Tool / Classifier Block Recovery Event\n\ntoolClassifierBlockRecoveryApplicability: NOT_APPLICABLE_WITH_REASON - no classifier block affected an in-scope action\ntoolClassifierBlockEventCount: 0\nplatformForcedOperatorPromptCount: 0\nworkerAuthoredOperatorQuestionCount: 0\nrecoveryAttemptCount: 0\nrecoveryDisposition: NO_EVENT\neventEvidence: NOT_APPLICABLE_WITH_REASON - no classifier block event occurred\n\n## Work-Order Acceptance Evidence Ledger\n\n```acceptance-evidence-json\n{\"schemaVersion\":\"cvf.workOrderAcceptanceEvidence@1.0.0\",\"executionBaseHead\":\"2575d3e5d0497c1fb392c313fb35038c6fa6c1c9\",\"results\":[{\"requirementId\":\"REQ-DESIGN\",\"actualArtifacts\":[\"docs/reviews/CVF_MFRP_CONTINUITY_COLLECTION_DESIGN_2026-10-11.md\",\"docs/reviews/evidence/mfrp-continuity-collection-design-worker-20261011.json\"],\"proofRefs\":[\"PROOF-REQ-DESIGN\"],\"status\":\"PASS\"},{\"requirementId\":\"REQ-SEAM\",\"actualArtifacts\":[\"docs/reviews/CVF_MFRP_CONTINUITY_COLLECTION_DESIGN_2026-10-11.md\",\"docs/reviews/evidence/mfrp-continuity-collection-design-worker-20261011.json\"],\"proofRefs\":[\"PROOF-REQ-SEAM\"],\"status\":\"PASS\"},{\"requirementId\":\"REQ-PROBES\",\"actualArtifacts\":[\"docs/reviews/evidence/mfrp-continuity-collection-design-worker-20261011.json\"],\"proofRefs\":[\"PROOF-REQ-PROBES\"],\"status\":\"PASS\"},{\"requirementId\":\"REQ-RETURN\",\"actualArtifacts\":[\"docs/reviews/CVF_MFRP_CONTINUITY_COLLECTION_DESIGN_WORKER_RETURN_2026-10-11.md\",\"docs/reviews/evidence/mfrp-continuity-collection-design-worker-20261011.json\"],\"proofRefs\":[\"PROOF-REQ-RETURN\"],\"status\":\"PASS\"}]}\n```\n\nEvidence completion guidance: each results row carries exactly requirementId, actualArtifacts, proofRefs and status, and matches the dispatcher ledger. A PASS row is backed by the probe, reconciliation and gate records named under Command Evidence.\n\n## Readiness And Self-Proof\n\nReadiness completion guidance: READY_FOR_REVIEW is claimed only with a completed dependency sweep, actual productionBindingEvidence and PASS_TARGETED_DEFECT_CLASS. Those are recorded below.\n\nrootCauseClusterId: INITIAL_SCOPE_CVF-MFRP-CONTINUITY-COLLECTION-DESIGN-20261011\nreworkGeneration: 0\nconsolidatedDefectClassSweep: COMPLETE_ALL_KNOWN_DEPENDENCIES\nproductionBindingEvidence: VERIFIED_OWNER_CALLS_AND_RAW_CASE_RECONCILIATION_OFFLINE_NO_RUNTIME\nadversarialRegressionDisposition: PASS_TARGETED_DEFECT_CLASS\nsuccessorTrancheOpened: NO\nimplementationAutonomyDisposition: CONTRACT_AUTHORITY_EVIDENCE_OUTCOME_ONLY\ninternalAgentInvocationCount: 1\nexternalAgentInvocationCount: 0\nproviderCallCount: 0\ntokenOrQuotaUsage: NOT_AVAILABLE_WITH_REASON: no usage meter is exposed to this worker; tokens, bill and native identity are UNKNOWN\nterminalReadinessVerdict: READY_FOR_REVIEW\nindependentProbeDisposition: PENDING_REVIEWER_EXECUTION\n\n## Purpose\n\nDecide whether the existing P2 producer, P4-C1 collector and material/continuity fingerprint owners can safely recover collection for the real S2-R3 case, in which a reviewed material commit was skipped with `SKIPPED_NO_COMMITTED_EVIDENCE`. The result is one retained disposition with its reasons, and the owner changes a future decision would need. The design is documentary and offline. It is not an implementation, not a receipt rewrite, not a sample promotion and not a model benchmark.\n\n## Target / Source\n\n| Item | Source |\n|---|---|\n| Design (new) | `docs/reviews/CVF_MFRP_CONTINUITY_COLLECTION_DESIGN_2026-10-11.md` |\n| Companion evidence (new) | `docs/reviews/evidence/mfrp-continuity-collection-design-worker-20261011.json` |\n| Frozen dispatch case | `docs/reviews/evidence/mfrp-continuity-collection-design-dispatch-case-20261011.json` (pinned, read by parse, receipts byte-exact) |\n| Committed-evidence contract | `docs/reference/review_cost_control/CVF_COMMITTED_EVIDENCE_FINGERPRINT_CONTRACT.md` (read in full) |\n| Owner bodies | `governance/compat/committed_evidence_fingerprint.py`; `governance/compat/mfrp_shadow_canary_autocollect.py`; `governance/compat/agent_automation_machine_verification_readout.py`; `governance/compat/run_agent_autorun_workflow_gate.py`; `governance/compat/agent_autorun_machine_verification.py` (read as named sections, see Command Evidence) |\n| Retry owner | `docs/reviews/CVF_MFRP_P4_C1_BOUNDED_RETRY_RECOVERY_COMPLETION_2026-09-27.md` (read in full) |\n\n## Scope / Methodology\n\nStartup order was followed: the bootstrap, the front door's startup and next-move sections, and the active handoff head were read before any output. Clean and staged-empty state was verified, all 13 source pins and the authority pair matched, and the bound pre-implementation gate passed at `2575d3e5d` before any output existed. The scaffold was generated before any long prose.\n\nMethod: (1) validate the two frozen raw receipts with the canonical reader on disposable copies; (2) reconcile the three overlapping paths and the two range identities against Git objects; (3) run four isolated Git fixture probes (P1 disjoint continuity, P2 companion overlap, P3 semantic drift, P0 no-op control) through the real helper with explicit full SHAs and an explicit working directory; (4) write the design and the evidence from those results; (5) run the fast gate and acceptance ledger on the final bytes.\n\n## Findings / Position\n\nFinding 1: the fail-closed behaviour is correct. At the current HEAD, the historical material target is refused because later commits changed three overlapping paths, and guard 3 names the first mismatched path.\n\nFinding 2: the continuity binding is genuine. The frozen continuity receipt declares a `committedEvidence` whose fingerprint recomputes exactly from Git objects, and its raw bytes match the pinned hash.\n\nFinding 3: the structural gap. The collector regenerates a receipt at the next disclosure commit, so the gate reads later bytes. For any material whose overlapping paths are changed by the next session-sync commit, guard 3 cannot admit the historical target. The retry owner already handles this class by leaving the item visible and unconsumed.\n\nFinding 4: the generated receipt can still report PASS for a range it did not match. This is recorded as a standing risk and not changed here.\n\nFinding 5: continuity admissibility is time-dependent. The case recorded it as true at `0e5de48d0`; at this HEAD it is false, because this packet's own commits changed the same continuity files.\n\nPosition: no existing owner needs a change for this case. The recommended disposition is RETAIN_EXPLICIT_SKIP_FOR_THIS_MATERIAL and DEFER_STRUCTURAL_COLLECTION_CHANGE. The option matrix, the reasons for rejecting or deferring the other options, and the future admission requirements are in the design.\n\n## Option Matrix Summary\n\n| Option | Verdict | Principal reason |\n|---|---|---|\n| 1. Retain explicit skip | SELECTED for this case | already the accepted behaviour for unreplayable retryable items; no authority change |\n| 2. Isolated historical re-execution | DEFERRED_WITH_REASON | re-runs the whole bundle in a new environment; needs a new admission class |\n| 3a. Reuse a closure-time bound receipt | DEFERRED_WITH_REASON | does not help this case; reopens the stale-receipt rule |\n| 3b. Immutable range identity without a binding | REJECTED | producer admission condition not met |\n| 4. Relax guard 3 | REJECTED | forbidden by the target guard |\n\n## Risk / Corrective Action\n\nRisk 1: materials touched by the next session-sync commit will not bind. Corrective action: Local decides whether to accept this as a known limit or to open a separate design under Option 3a.\n\nRisk 2: the generated receipt can report PASS for mismatched bytes. Corrective action: recorded as a standing risk; a future design should refuse or label such a PASS.\n\nRisk 3: time-dependent continuity admissibility. Corrective action: any continuity claim must name the HEAD at which it was checked.\n\nRisk 4: the closure cause of the material's own receipt is not recorded. Corrective action: Local should consult the closure-time runtime log before any future decision, if it still exists.\n\n## Decision / Disposition\n\nDisposition: COMPLETE_PENDING_REVIEW. The worker recommends RETAIN_EXPLICIT_SKIP_FOR_THIS_MATERIAL and DEFER_STRUCTURAL_COLLECTION_CHANGE. No owner, receipt, journal, safety marker or sample changed. Nothing was staged, committed, pushed or delegated. Local owns the completion review and its evidence.\n\n## Checker Source Read-Ahead Block\n\n| Field | Value |\n|---|---|\n| applicableCheckersRead | `governance/compat/check_worker_return_quality_gate.py`; `governance/compat/check_work_order_acceptance_ledger.py`; `governance/compat/check_agent_operation_trace.py`; `governance/compat/check_review_cost_control.py`; `governance/compat/check_gate_to_role_closeability.py`; `governance/compat/check_finding_to_governance_learning.py`; `governance/compat/check_semantic_convergence_control.py`; `governance/compat/check_external_knowledge_intake_routing.py`; `governance/compat/check_core_guard_self_protection.py`; `governance/compat/check_worker_experience_retrospective.py`. Named for gate application; their constants were not re-read line by line in this lane. The producer `governance/compat/run_worker_return_scaffold.py` was read and used. |\n| literalTokensReviewed | COMPLETE_PENDING_REVIEW; Self-declared worker-return artifact: yes; dispatchWorkOrder; cvf.workOrderAcceptanceEvidence@1.0.0; NOT_AVAILABLE_WITH_REASON; READY_FOR_REVIEW; CLAIM_REJECTED_NO_RECEIPT; ACTION_EVIDENCE_PRESENT; CVF_RECEIPT_PRESENT; DEFERRED_PRIVATE_ONLY; TRACE_REQUIRED_LABELS; SKIPPED_NO_COMMITTED_EVIDENCE; RETAIN_EXPLICIT_SKIP_FOR_THIS_MATERIAL; DEFER_STRUCTURAL_COLLECTION_CHANGE |\n| gateRunPurpose | confirmation and evidence of the fast gate and ledger on final bytes; the gate verifies the return-structure tokens and does not replace the owner probes |\n| claimBoundary | covers the named owner bodies and the probes listed in Command Evidence; other applicable checkers are exercised by the fast gate and were not read line by line; no corpus claim |\n\n## Agent Operation Trace Block\n\n| Field | Evidence |\n|---|---|\n| Actor | Haiku-family INTERNAL_AGENT worker, operator-started shared-workspace seat (requested Claude Haiku ex high; native identity not observed) |\n| Provider or surface | private shared workspace, local Windows shell, no provider or network call |\n| Session or invocation | mfrp-continuity-collection-design-worker-20261011 |\n| Working directory | repository root; probe fixtures under the ignored runtime folder |\n| Command or tool surface | file reads, git read-only commands, pin hashing, canonical receipt reader on copies, real-repo read-only owner calls, isolated fixture probes, scaffold generator, fast gate, acceptance ledger |\n| Target paths | `docs/reviews/CVF_MFRP_CONTINUITY_COLLECTION_DESIGN_2026-10-11.md`; `docs/reviews/evidence/mfrp-continuity-collection-design-worker-20261011.json`; `docs/reviews/CVF_MFRP_CONTINUITY_COLLECTION_DESIGN_WORKER_RETURN_2026-10-11.md` |\n| Allowed scope source | work order Write Ownership and Required Artifact Manifest |\n| Before status evidence | HEAD 2575d3e5d0497c1fb392c313fb35038c6fa6c1c9; `git status --short` empty; staged empty |\n| After status evidence | three untracked owned files; no tracked file modified; staged empty |\n| Diff evidence | `git diff --name-status` shows no tracked change; `git status --short` shows three owned untracked files |\n| Approval boundary | operator-started worker after bound pre-implementation PASS; no stage, commit, push, nested agent or successor |\n| Claim boundary | offline design and owner probes; no runtime, provider, live governance, collector-recovery, cost or ranking claim |\n| Agent type | INTERNAL_AGENT |\n| Invocation ID | mfrp-continuity-collection-design-worker-20261011 |\n| Expected manifest | `docs/reviews/CVF_MFRP_CONTINUITY_COLLECTION_DESIGN_2026-10-11.md`; `docs/reviews/evidence/mfrp-continuity-collection-design-worker-20261011.json`; `docs/reviews/CVF_MFRP_CONTINUITY_COLLECTION_DESIGN_WORKER_RETURN_2026-10-11.md` |\n| Actual changed set | `docs/reviews/CVF_MFRP_CONTINUITY_COLLECTION_DESIGN_2026-10-11.md`; `docs/reviews/evidence/mfrp-continuity-collection-design-worker-20261011.json`; `docs/reviews/CVF_MFRP_CONTINUITY_COLLECTION_DESIGN_WORKER_RETURN_2026-10-11.md` |\n| Manifest delta | MATCH |\n| Deletion or rename disposition | N/A with reason: none; no file deleted or renamed |\n\n## Delta Execution Claim Boundary Control Block\n\n| Field | Disposition |\n|---|---|\n| claimScope | one documentary MFRP collection design with a retained disposition and owner probes |\n| claimDisposition | BOUNDED_CLAIM_WITH_EVIDENCE: offline owner behaviour under isolated fixtures; no runtime collection claim |\n| receiptEvidence | CVF_RECEIPT_PRESENT: canonical reader results on copied raw receipts, scaffold receipt, pre-implementation receipt, fast-gate logs |\n| actionEvidence | ACTION_EVIDENCE_PRESENT: pin verification, receipt validation, real-repo read-only calls, four fixture probes, design and evidence writing, fast gate |\n| invocationBoundary | operator-started shared-workspace worker after the bound pre-implementation PASS |\n| interceptionBoundary | no host, IDE, shell hook, Gateway or provider interception claim |\n| claimLanguage | proposed disposition with one retained skip; future admission not granted |\n| forbiddenExpansion | owner, guard, profile, test, journal, receipt, historical evidence, provider, runtime, Expense, S5, public-sync, deployment |\n\n## Core Guard Self-Protection Authorization\n\nAuthorized guard-maintenance scope: N/A with reason - no executable guard, owner, profile, test, journal, receipt or continuity surface was changed. Only three new documentation and evidence files were created.\n\nProtected paths: none changed by this worker. The work order's protected continuity paths were read and pinned, not edited.\n\nOperator authorization: N/A with reason - no guard maintenance was performed.\n\nRollback boundary: N/A with reason - no tracked file changed; revert by removing the three owned untracked files.\n\n## Public Export Disposition\n\nDEFERRED_PRIVATE_ONLY\n\nReason: private design and evidence in the provenance workspace; no public-sync authorization.\n\n## External Knowledge Intake Routing\n\n| Field | Value |\n|---|---|\n| Chain map | `docs/reference/external_agent_review/CVF_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP.md` |\n| Input type | internal governed input (no external intake) |\n| Internal source | `docs/reviews/evidence/mfrp-continuity-collection-design-dispatch-case-20261011.json` |\n| Chain map route | frozen Local receipt case -> existing owner design -> distinct Local disposition |\n| Matching local-view guard | `governance/compat/check_external_knowledge_intake_routing.py` |\n| Owner surface | existing P2, P4 collector, fingerprint and closure owners |\n| Disposition | internal design; no external research |\n| Claim boundary | Local private source verification and final decision |\n\n## External/Local Coordination Binding\n\n```json\n{\"contractId\":\"cvf.external-local-absorption-coordination@1\",\"invariants\":{\"externalRole\":\"ADVISORY_RESEARCH_AND_PATTERN_MAPPING\",\"externalContext\":\"PUBLIC_GITHUB_AND_REFRESHED_EXTERNAL_AGENT_READ\",\"localRole\":\"SOURCE_RUNTIME_VALUE_AND_PRIVATE_CVF_VERIFICATION\",\"finalDecisionOwner\":\"LOCAL\",\"localCoverageBasis\":\"SOURCE_DERIVED_NOT_EXTERNAL_SHORTLIST\",\"externalEvidenceAuthority\":\"INPUT_NOT_PRIVATE_CVF_PROOF\"},\"contractSha256\":\"92df8a7c9492e8c3cedf624cfaa79b8185ca31442ecaf96107fd88dfcb81800c\",\"parentArtifact\":null}\n```\n\n## Semantic Convergence Outcome\n\nStandard: `docs/reference/semantic_convergence_control/CVF_SEMANTIC_CONVERGENCE_AND_ESCALATION_CONTROL_STANDARD.md`\n\n```json\n{\"schemaVersion\":\"cvf.semanticConvergenceControl.v1\",\"problemKey\":\"mfrp-material-continuity-collection-design\",\"chainMode\":\"INITIAL\",\"chainOrdinal\":0,\"predecessor\":null,\"blockerDelta\":{\"prior\":[],\"resolved\":[],\"retained\":[],\"new\":[],\"reopened\":[],\"current\":[]},\"resolutionEvidence\":{},\"counters\":{\"partialReadyClosures\":0,\"reviewerScopeExpansions\":0,\"sameClaimCorrections\":0,\"nonDecreasingBlockerTransitions\":0},\"claims\":[{\"claimId\":\"MFRP-CONTINUITY-DESIGN-RETURN\",\"claimClass\":\"DOCUMENTATION_ONLY\",\"proofClass\":\"PROPOSAL_ONLY_NO_RUNTIME_READINESS\",\"evidenceRef\":\"docs/reviews/evidence/mfrp-continuity-collection-design-worker-20261011.json\"}],\"requiredDisposition\":\"CONTINUE_BOUNDED\",\"successorScope\":\"NO_SUCCESSOR\"}\n```\n\n## Worker Experience Retrospective\n\nWORKER_EXPERIENCE_RETRO:\nfrictionLevel: LOW\nfrictionType: SOURCE_DISCOVERY\nobservedStep: the closure cause of the material's own receipt is not recorded in the frozen case, and the continuity check changed between the case capture and this HEAD\npreventiveControlCandidate: HELPER_DIAGNOSTIC\n\n## Rescan Intelligence Hardening\n\n- N/A with reason: this worker return is a design and evidence output; no intake refresh, delta ledger or source reassessment was produced.\n\n- Rescan intelligence verdict: NOT_APPLICABLE_WITH_REASON\n\n## Corpus Completeness And Report Integrity\n\n- Corpus verdict: NOT_APPLICABLE_WITH_REASON - named owner sources, the frozen case and the retry completion only; no repository or corpus scan.\n\n## Finding-To-Governance Learning Disposition\n\nDefect class: MACHINE_GATE_GAP\nLearning lane: GOVERNANCE_CONTROL_PLANE\nDisposition: MACHINE_CHECK_CANDIDATE\nNext action: Local decides whether to open a separate design for the closure-time reuse option (3a) with anti-replay negatives, or to accept the standing PASS-for-mismatched-bytes risk as a known limit. No check was added by the worker.\nRuntime/provider/cost learning: N/A_WITH_REASON - no runtime, provider or cost finding; no experiment or measured comparison was selected.\n\nFinding: the collector's generated receipt can report PASS for a range whose bytes it did not match. The contract refuses provenance, but nothing refuses the PASS receipt itself. The collector handles it today as a legacy skip; no check enforces that handling.\n\n## Epistemic Process Block\n\nExpected Result / Prediction: the existing owners refuse the historical target and keep the unreplayable item visible and unconsumed, so a safe recovery needs either an explicit admission change or a retained skip.\nEvidence Comparison: four isolated probes match their expected results, including the no-op control; the two frozen raw receipts validate; the continuity range identity recomputes exactly; the real-repo historical target is refused at the current HEAD.\nContradiction Or Gap Disposition: the continuity check was true in the case and false at the current HEAD; this is time-dependent and is reported, not resolved. The material closure receipt's missing binding is unexplained by the case and is recorded as a limit.\nClaim Update: retained explicit skip proposed for this material; structural change deferred with reasons; no collection, collector recovery or effectiveness claim.\n\n## Knowledge System Applicability\n\nNOT_APPLICABLE_WITH_REASON: named owner sources and a frozen case; no corpus-derived map or ingestion.\n\n## Command Evidence\n\n| Step | Command | Result |\n|---|---|---|\n| Startup and HEAD | `git rev-parse HEAD`; `git status --short`; `git diff --cached --name-only`; bootstrap and front-door reads | HEAD 2575d3e5d; status empty; staged empty |\n| Source and authority pins | sha256 of 13 source pins and the authority pair | all match |\n| Pre-implementation | `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base 2575d3e5d0497c1fb392c313fb35038c6fa6c1c9 --head HEAD --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_CONTINUITY_COLLECTION_DESIGN_2026-10-11.md` | exit 0; COMPLIANT; log `.cvf/runtime/mfrp-continuity-collection-design-20261011/pre-implementation.log` |\n| Scaffold | `python governance/compat/run_worker_return_scaffold.py --write docs/reviews/CVF_MFRP_CONTINUITY_COLLECTION_DESIGN_WORKER_RETURN_2026-10-11.md --check-shape --max-lines 450 --max-bytes 64000 --title \"MFRP Material Continuity Collection Design\"` | exit 0; PREPARATION_SHAPE_PRESENT; 323 lines and 13380 bytes at generation; receipt `scaffold-receipt.txt` |\n| Canonical receipt validation | `read_receipt_readonly` on byte-exact copies of the two frozen raw receipts in the runtime folder | both raw SHA-256 match; material valid without binding; continuity valid with binding |\n| Overlap reconciliation | `git show` of the three overlapping paths at both heads, sha256 of raw bytes | all six raw identities match the case |\n| Real-repo owner calls (read-only) | `verify_worktree_matches_committed_target` for `6ed5646..0ab461e` and `0ab461e..0e5de48` with the repository as cwd; `compute_committed_evidence_fingerprint` for both ranges | historical false; continuity false at HEAD; continuity identity matches declared |\n| Fixture probes | `verify_worktree_matches_committed_target(A, B, cwd=fixture)` in four isolated repositories | P1 TRUE (expected TRUE); P2 FALSE (expected FALSE); P3 FALSE (expected FALSE); P0 no-op TRUE (expected TRUE); result file `probe-results.json` |\n| Design and evidence generation | `python .cvf/runtime/mfrp-continuity-collection-design-20261011/build_evidence.py` | evidence written; all 13 pins and authority pins match |\n| Repository status after probes | `git status --short` | only the owned untracked files; source repository unchanged |\n| Fast gate (run 1) | `python governance/compat/run_worker_return_fast_gate.py --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_CONTINUITY_COLLECTION_DESIGN_2026-10-11.md --max-return-lines 450 --max-return-bytes 64000` | exit 1; epistemic process packet and reviewer-fast failed on the design's missing epistemic, read-ahead, trace, learning and intelligence-hardening structure, one truth-foundation wording, and a return citation of a not-yet-created completion path (removed); log `fast-gate-run1.log` |\n| Fast gate (run 2) | same command after the design structure repairs | exit 1; reviewer-fast failed only on design read-ahead fields, expected manifest and learning defect class; log `fast-gate-run2.log`; repaired in the design |\n| Fast gate (run 3) | same command after run 2 repairs | exit 1; trace changed-set path, learning runtime line and an intelligence-hardening wording in the return were flagged; log `fast-gate-run3.log`; repaired |\n| Final fast gate (run 4) | same command on the final return and evidence bytes | exit 0; run_worker_return_fast_gate.py PASS and COMPLIANT on every component; log `fast-gate-final.log` |\n| Acceptance ledger | `python governance/compat/check_work_order_acceptance_ledger.py --work-order docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_CONTINUITY_COLLECTION_DESIGN_2026-10-11.md --return docs/reviews/CVF_MFRP_CONTINUITY_COLLECTION_DESIGN_WORKER_RETURN_2026-10-11.md --enforce` | exit 0; COMPLIANT |\n| Whitespace | `git diff --check` | exit 0 |\n\n## Gate Result Summary\n\nRun 1 (`fast-gate-run1.log`): FAIL; design structure and one return citation, as listed in Command Evidence. Run 2 (`fast-gate-run2.log`): FAIL on design read-ahead, expected manifest and learning fields only. Run 3 (`fast-gate-run3.log`): FAIL on the design's changed-set paths, learning runtime line and an intelligence-hardening wording in the return; repaired. Run 4 (`fast-gate-final.log`): the final run on the bytes frozen at the end of this record; its result validates the return. Earlier results are not overwritten.\n\n## Worker Return Scaffold Effectiveness Measurement\n\n| Measurement | Result |\n|---|---|\n| scaffoldUsedBeforeLongDraft | YES - scaffold generated before any long prose |\n| scaffoldMissingSectionFound | NONE for required sections; scaffold placeholders were replaced by evidence |\n| firstWorkerReturnFastGateResult | FAIL on run 1 (`fast-gate-run1.log`): design structure and one return citation; see Command Evidence |\n| postScaffoldManualRepairCount | three repair rounds on the design structure and one return citation; no owner, probe or raw-evidence change |\n\n## Worker Return Jurisdiction Block\n\n| Field | Disposition |\n|---|---|\n| capturedArtifacts | the three owned files above |\n| capturedOperations | pin verification; pre-implementation gate; scaffold; canonical receipt validation; real-repo read-only owner calls; fixture probes; design and evidence generation; fast gate; acceptance ledger |\n| deferredOperations | Local completion and Local evidence (Local-owned, not created by the worker); the Option 3a design; any owner change; continuity surfaces |\n| outOfScopeRequests | N/A with reason - none requested or performed |\n| reviewerActionNeeded | review the design against the probes; decide the standing PASS-for-mismatched-bytes risk; decide whether to open Option 3a; decide the closure cause question with the closure-time log if it still exists |\n\n## Changed Files\n\n- `docs/reviews/CVF_MFRP_CONTINUITY_COLLECTION_DESIGN_2026-10-11.md` (created; the design)\n- `docs/reviews/evidence/mfrp-continuity-collection-design-worker-20261011.json` (created; the companion evidence)\n- `docs/reviews/CVF_MFRP_CONTINUITY_COLLECTION_DESIGN_WORKER_RETURN_2026-10-11.md` (created; this return)\n\nNo tracked file was modified, deleted or renamed. Ignored probe fixtures, logs and generators are under `.cvf/runtime/mfrp-continuity-collection-design-20261011/`.\n\n## git status --short\n\n```\n?? docs/reviews/CVF_MFRP_CONTINUITY_COLLECTION_DESIGN_2026-10-11.md\n?? docs/reviews/CVF_MFRP_CONTINUITY_COLLECTION_DESIGN_WORKER_RETURN_2026-10-11.md\n?? docs/reviews/evidence/mfrp-continuity-collection-design-worker-20261011.json\n```\n\nStaged set empty at return.\n\n## No-Commit Statement\n\nWORKER_MUST_NOT_COMMIT honored: HEAD unchanged; no git commit, stage, push, nested agent, provider call or successor was performed by the worker. The reviewer or closer owns any material commit.\n\n## Return-Time Closeability Recheck\n\ncloseabilityDisposition: CLOSEABLE\noutsideAuthorityBlockers: NONE\nnextRepairRoute: NONE\nstaged: EMPTY\nreviewerClosureOwner: Local reviewer/closer\nworkerRedispatchAllowed: NO\n\n## Machine Closure Package\n\n| Artifact | Evidence | Disposition |\n|---|---|---|\n| Worker return status | `Status: COMPLETE_PENDING_REVIEW` | pending reviewer closure; the worker does not mark closure |\n| Work order status | `dispatchWorkOrder` above | N/A with reason: reviewer or closer owns closure conversion |\n| Changed set | `## Changed Files` above | three owned untracked files |\n| Gate evidence | `## Command Evidence` and `## Gate Result Summary` | fast gate and acceptance ledger recorded on final bytes |\n\n## Claim Boundary\n\nOne source-derived MFRP collection design with a retained explicit skip for one material, deferred structural options with their reasons, and owner probes in isolated fixtures. It does not authenticate source truth, runtime identity, historical dispatch freeze or independent actors; it grants no collection, collector recovery, owner change, sample promotion, model ranking, cost saving or live AI governance effect. `independentProbeDisposition: PENDING_REVIEWER_EXECUTION`.\n"
+    }
+  ],
+  "sourcePins": [
+    {
+      "path": "docs/reference/review_cost_control/CVF_COMMITTED_EVIDENCE_FINGERPRINT_CONTRACT.md",
+      "sha256": "57ee1b0502943b1d4126a7afc4bae78d8338806fcd0fa62ddc811c8fadaa0c0a",
+      "match": true
+    },
+    {
+      "path": "governance/compat/committed_evidence_fingerprint.py",
+      "sha256": "39feb312e2da64af4da1b3d023bbd1e2e1ea3a6b0e65e1e5d7fc0dcab7658ace",
+      "match": true
+    },
+    {
+      "path": "governance/compat/run_agent_autorun_workflow_gate.py",
+      "sha256": "8d28ac306eb2d7569571b53a833478b59708e89860ef11ff06115ba8a8ea6a1e",
+      "match": true
+    },
+    {
+      "path": "governance/compat/mfrp_shadow_canary_autocollect.py",
+      "sha256": "7002f9e0f72753c65101a3b9e6729bf4ce7186685226a2d85feb627bbd23cab0",
+      "match": true
+    },
+    {
+      "path": "governance/compat/agent_autorun_machine_verification.py",
+      "sha256": "e3686ee11d7d52e644a7d68eea47dd744ec3a6e9970d503aed704f4e9c3cc9d5",
+      "match": true
+    },
+    {
+      "path": "governance/compat/agent_automation_machine_verification_readout.py",
+      "sha256": "ff6088bf8144deec4582ce9faf62384b314346c9cbbb87f6b3349a2d23f7e7c3",
+      "match": true
+    },
+    {
+      "path": "governance/compat/run_agent_commit_steward_preflight.py",
+      "sha256": "235834162c57aec66b461cc341321b34a1d72427c70cc4b458428a5f5d32c8b9",
+      "match": true
+    },
+    {
+      "path": "docs/reviews/CVF_MFRP_P4_C1_BOUNDED_RETRY_RECOVERY_COMPLETION_2026-09-27.md",
+      "sha256": "f41948529464ee9d947a54a7685584a66f4d8595a56f05a26c02d9b648d7f898",
+      "match": true
+    },
+    {
+      "path": "docs/reviews/CVF_MODEL_SELECTION_S2_R3_PROJECTION_COMPLETION_2026-10-11.md",
+      "sha256": "8f5dc02e7e59dcb96e86ccea36c6618e78faa8517a58a3126997d13167b48bf9",
+      "match": true
+    },
+    {
+      "path": "docs/roadmaps/CVF_GCLH_MACHINE_FIRST_REVIEW_PREFLIGHT_ROADMAP_2026-09-01.md",
+      "sha256": "4438fcce757dcbe9bb6041a025b36adf2a3d3350199000bd18fc2ed9f6c11a07",
+      "match": true
+    },
+    {
+      "path": "docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json",
+      "sha256": "bbeabf8a029fdcc8d31cf2a5b8fd163c4fdb048e92702b75b5b1923b580158e0",
+      "match": true
+    },
+    {
+      "path": "governance/compat/run_worker_return_scaffold.py",
+      "sha256": "fd2f492b5c5468ce2545925a22264b663768eba126255d91eb7a02be029c2501",
+      "match": true
+    },
+    {
+      "path": "docs/reviews/evidence/mfrp-continuity-collection-design-dispatch-case-20261011.json",
+      "sha256": "6cec4aa6a1a0d3971f1c999951d75e87a42483a7ad90638cdfb90e7354807ddb",
+      "match": true
+    }
+  ],
+  "logs": [
+    {
+      "path": ".cvf/runtime/mfrp-continuity-collection-design-20261011/pre-implementation.log",
+      "sha256": "246be5687a01574332193fadb3649d866f4040134c3dc1db8a3163b33e0839e2",
+      "bytes": 4798
+    },
+    {
+      "path": ".cvf/runtime/mfrp-continuity-collection-design-20261011/scaffold-receipt.txt",
+      "sha256": "a51c7bb94988f44e96882c434c2de76e92a4241039fc56e907c9642268cf4d2d",
+      "bytes": 254
+    },
+    {
+      "path": ".cvf/runtime/mfrp-continuity-collection-design-20261011/fast-gate-run1.log",
+      "sha256": "e3c30b7062fce5cf555b4aded3d064ccf7f4c9437cb956312229e8aa243b6a7f",
+      "bytes": 16724
+    },
+    {
+      "path": ".cvf/runtime/mfrp-continuity-collection-design-20261011/fast-gate-run2.log",
+      "sha256": "3866f9d2c2a7b65866516cf124f11e851856a79c358e59ba739ee9c5f4a3130c",
+      "bytes": 16378
+    },
+    {
+      "path": ".cvf/runtime/mfrp-continuity-collection-design-20261011/fast-gate-run3.log",
+      "sha256": "46cd1b5ec81a24300baa9699bdca154943cfa4ac53d16da7f920e34d81afe963",
+      "bytes": 13623
+    },
+    {
+      "path": ".cvf/runtime/mfrp-continuity-collection-design-20261011/fast-gate-final.log",
+      "sha256": "3d8badf5276a9182038b5be1fcdd25eaaaff9d7400f5b0646e3a689cb52acd49",
+      "bytes": 11094
+    },
+    {
+      "path": ".cvf/runtime/mfrp-continuity-collection-design-20261011/acceptance-ledger-final.log",
+      "sha256": "4e241054fd8f3e98a904265c2db377b5dcedf77c27ab0b6eedfeb0a6994455d2",
+      "bytes": 58
+    },
+    {
+      "path": ".cvf/runtime/mfrp-continuity-collection-design-20261011/final-terminal-clock.json",
+      "sha256": "f140d3f0b90291ea924a2eeceb765f120edef0bf179986903e88896a37c90c1c",
+      "bytes": 1075
+    },
+    {
+      "path": ".cvf/runtime/mfrp-continuity-collection-design-20261011/probe-results.json",
+      "sha256": "2941d67a99b698c9548ba145df3615e10ec526da5d99426841b32622e5888169",
+      "bytes": 6074
+    },
+    {
+      "path": ".cvf/runtime/mfrp-continuity-collection-design-20261011/run_probes.py",
+      "sha256": "a86c78b269715ae7845da53e3e6edb5f8d9dc01fe36ee369e1563baf971a258b",
+      "bytes": 7543
+    }
+  ],
+  "retainedRawReceipts": [
+    {
+      "kind": "material",
+      "sha256": "b0ea0129fee061c99a6f4edc46808aa085c771548e4acd85155e08e96b425e89",
+      "canonicalResultConsumed": {
+        "kind": "material",
+        "rawSha256Matches": true,
+        "rawBytes": 41747,
+        "canonicalValid": true,
+        "canonicalReason": "receipt internal integrity valid",
+        "payloadBase": "6ed564623",
+        "payloadHead": "0ab461e2b",
+        "declaresCommittedEvidence": false
+      }
+    },
+    {
+      "kind": "continuity",
+      "sha256": "63ebd4a3371c94405318acb118b6538b25ed4b90f7588efd32b769fe95d9ec60",
+      "canonicalResultConsumed": {
+        "kind": "continuity",
+        "rawSha256Matches": true,
+        "rawBytes": 42348,
+        "canonicalValid": true,
+        "canonicalReason": "receipt internal integrity valid",
+        "payloadBase": "0ab461e2b",
+        "payloadHead": "0e5de48d0",
+        "declaresCommittedEvidence": true,
+        "declaredFingerprint": "3aaa07f94998041e28054b03e2ebb57ea0118fd2c31568f0a34ae363d45d9be5",
+        "declaredBase": "0ab461e2b807a33984a4f8357140f5d28988fd23",
+        "declaredHead": "0e5de48d040c44a76cd729565d9780b8c50207d1"
+      }
+    }
+  ],
+  "fixtureInputReconciliation": [
+    {
+      "probe": "p1-disjoint-continuity",
+      "base": "c00601b19e067ab48d6f0f50f6c4e36e553ad341",
+      "target": "ccab91c61c74c90f729e380f5802e4427f3ed0c5",
+      "current": "d1f6768b7a59423abd3c38b5f737dad9a92944c9",
+      "changedAB": [
+        "reviews/semantic.md"
+      ],
+      "changedBC": [
+        "handoff/AGENT_HANDOFF.md"
+      ],
+      "rawBlobs": [
+        {
+          "path": "handoff/AGENT_HANDOFF.md",
+          "targetSha256": null,
+          "currentSha256": "c1d73659b427ed35aa922d857055638e99574128d50e91ad2f0b28b8691865c8",
+          "siblingPreserved": null
+        },
+        {
+          "path": "reviews/semantic.md",
+          "targetSha256": "d83f67a6247fad16d832cd84c40686df44700a353fd1b8aeeeb7954fba71bfa5",
+          "currentSha256": "d83f67a6247fad16d832cd84c40686df44700a353fd1b8aeeeb7954fba71bfa5",
+          "siblingPreserved": true
+        }
+      ],
+      "ownerResultConsumed": true,
+      "ownerNotRerun": true
+    },
+    {
+      "probe": "p2-companion-overlap",
+      "base": "2242f89bcbc9f1cd7d4a57ca01f2b9fccaa264dd",
+      "target": "37aea42cc8e1e9bf6ed01c6e4924445102c74315",
+      "current": "3bb040809faae615071765c847209a3d3192d0b8",
+      "changedAB": [
+        "reviews/semantic.md",
+        "session/projection.json"
+      ],
+      "changedBC": [
+        "session/projection.json"
+      ],
+      "rawBlobs": [
+        {
+          "path": "session/projection.json",
+          "targetSha256": "114a7f36ac159dd451a418d5ee6ca75c8000c1f7218ddcea4b5e6e193e5d2723",
+          "currentSha256": "e89193245567fbf74a5228f29ecea2db73f3a3d7686e5e461089a2a9cf7d6012",
+          "siblingPreserved": null
+        },
+        {
+          "path": "reviews/semantic.md",
+          "targetSha256": "d83f67a6247fad16d832cd84c40686df44700a353fd1b8aeeeb7954fba71bfa5",
+          "currentSha256": "d83f67a6247fad16d832cd84c40686df44700a353fd1b8aeeeb7954fba71bfa5",
+          "siblingPreserved": true
+        }
+      ],
+      "ownerResultConsumed": false,
+      "ownerNotRerun": true
+    },
+    {
+      "probe": "p3-semantic-drift",
+      "base": "12ace850906e3a73dc585550affdfbc57fdeaa76",
+      "target": "7877712ece04f16b2713ae30fa2b818a4f522ce6",
+      "current": "7ea215f58d4cc17e5ed4bc16d201173f6f026b86",
+      "changedAB": [
+        "reviews/semantic.md"
+      ],
+      "changedBC": [
+        "reviews/semantic.md"
+      ],
+      "rawBlobs": [
+        {
+          "path": "reviews/semantic.md",
+          "targetSha256": "d83f67a6247fad16d832cd84c40686df44700a353fd1b8aeeeb7954fba71bfa5",
+          "currentSha256": "9cb8f862662654c2aa43f5adc3d7d9e0409c5f4f7d84126cdbb06f9a76533f54",
+          "siblingPreserved": null
+        }
+      ],
+      "ownerResultConsumed": false,
+      "ownerNotRerun": true
+    },
+    {
+      "probe": "p0-noop-control",
+      "base": "12ace850906e3a73dc585550affdfbc57fdeaa76",
+      "target": "bb5eac76c8c7e4148f0629cacf6066dfe9d89f7e",
+      "current": "b86ae9fe68f42a83df62631cc04bda7dfa04f3c0",
+      "changedAB": [
+        "reviews/semantic.md"
+      ],
+      "changedBC": [
+        "README.md"
+      ],
+      "rawBlobs": [
+        {
+          "path": "README.md",
+          "targetSha256": null,
+          "currentSha256": "e75c39802b15283462bfa2cb63e81f8e269398e93ff034f0bfd11795d64d2044",
+          "siblingPreserved": null
+        },
+        {
+          "path": "reviews/semantic.md",
+          "targetSha256": "d83f67a6247fad16d832cd84c40686df44700a353fd1b8aeeeb7954fba71bfa5",
+          "currentSha256": "d83f67a6247fad16d832cd84c40686df44700a353fd1b8aeeeb7954fba71bfa5",
+          "siblingPreserved": true
+        }
+      ],
+      "ownerResultConsumed": true,
+      "ownerNotRerun": true
+    }
+  ],
+  "independentProbe": {
+    "executorActor": "/root",
+    "executorRole": "LOCAL_REVIEWER_NOT_IMPLEMENTATION_WORKER",
+    "invocationId": "mfrp-continuity-design-local-one-sided-20261011",
+    "method": "canonical read_receipt_readonly on positive legacy copy and one-sided top-level binding copy",
+    "positive": {
+      "path": ".cvf/runtime/mfrp-continuity-design-local-20261011/probe-positive-legacy.json",
+      "sha256": "d4d3beaeec27b799a721f6f6cb757a86dfacfe97c76aea2d2efaa93eff72a736",
+      "valid": true,
+      "reason": "receipt internal integrity valid",
+      "committedEvidencePresent": false
+    },
+    "negative": {
+      "path": ".cvf/runtime/mfrp-continuity-design-local-20261011/probe-negative-one-sided.json",
+      "sha256": "492a2e34e4fec92d8d11634008a1179897039f6466aaf84c9fdf09cad641504e",
+      "valid": false,
+      "reason": "receipt committedEvidence is one-sided between top level and machineVerification"
+    },
+    "changedPointers": [
+      "/committedEvidence"
+    ],
+    "unchangedSiblings": true,
+    "workerEvidenceRef": "docs/reviews/evidence/mfrp-continuity-collection-design-worker-20261011.json",
+    "workerOracleSha256": "6ad1ea6b0aaec467ee46493a471615160d1dcb870026baf2bb8f3ed547adaf75",
+    "oracleSeparationBasis": "Distinct Local actor/invocation, source-derived one-sided declaration challenge; worker fixture tests not imported or rerun.",
+    "expectedInformationGain": "Resolve worker assertion that no check enforces legacy skip: canonical owner explicitly distinguishes omission from malformed binding; this probe checks only one-sided rejection, not every collector branch.",
+    "costReason": "Two small canonical-reader calls; no gate bundle, historical suite or collector replay.",
+    "disposition": "PASS_INDEPENDENT_PROBE",
+    "negativeInputSha256": "492a2e34e4fec92d8d11634008a1179897039f6466aaf84c9fdf09cad641504e"
+  },
+  "historicalClosureCause": {
+    "path": ".cvf/runtime/model-selection-s2-r3-local-20261011/material-closure.log",
+    "sha256": "982734a4efe1f6886778e1ec7d595952557bc9f96ef2a2cf14408bad45906bb4",
+    "rawDiagnostic": "No committedEvidence binding produced (worktree does not match the historical target committed at headSha; refusing to certify unverified content (worktree content at 'CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json' does not match 0ab461e2b807a33984a4f8357140f5d28988fd23's committed blob da077c553adb0f12f6f57d1a056e837375ed2284 -- bytes differ outside the admitted checkout representation; committedEvidence binding withheld)); receipt carries raw fingerprint only.",
+    "rootCause": "Historical target differs after continuity; raw-only receipt is the documented producer fallback.",
+    "logRetained": true,
+    "receiptBytesUnchanged": true
+  },
+  "terminalClock": {
+    "path": ".cvf/runtime/mfrp-continuity-collection-design-20261011/final-terminal-clock.json",
+    "sha256": "f140d3f0b90291ea924a2eeceb765f120edef0bf179986903e88896a37c90c1c",
+    "raw": {
+      "finalRunStartUtc": "2026-10-11T14:18:37Z",
+      "finalRunEndUtc": "2026-10-11T14:18:42Z",
+      "finalFastGateExit": 0,
+      "acceptanceLedgerExit": 0,
+      "gitDiffCheckExit": 0,
+      "priorFinalAttempts": [
+        {
+          "log": ".cvf/runtime/mfrp-continuity-collection-design-20261011/fast-gate-run3.log",
+          "exit": 1,
+          "note": "reviewer-fast trace, learning and rescan wording; repaired before the next run"
+        }
+      ],
+      "workerEndMeasures": "worker end is not separately observable; this file records the final gate interval on final frozen bytes only, not a full-duration claim",
+      "ownedFileSha256": {
+        "docs/reviews/CVF_MFRP_CONTINUITY_COLLECTION_DESIGN_2026-10-11.md": "5e7c666c27592819c7e6382898273e5863191c87221e6e49755cd6ed1f68d335",
+        "docs/reviews/evidence/mfrp-continuity-collection-design-worker-20261011.json": "6ad1ea6b0aaec467ee46493a471615160d1dcb870026baf2bb8f3ed547adaf75",
+        "docs/reviews/CVF_MFRP_CONTINUITY_COLLECTION_DESIGN_WORKER_RETURN_2026-10-11.md": "22bc08d6c9091183ca57da0cdcdae4463306dff2322ac64292a9f064ab2e6e63"
+      }
+    },
+    "firstLaneToFinalGateEndSeconds": 554.0,
+    "fullInvocationEnd": null,
+    "fullDeliveryCost": null
+  },
+  "localCommandDiagnostic": "Read-only help attempted nonexistent run_session_sync.py; no artifact effects. Correct owner build_session_sync_pack.py discovered and help read.",
+  "scope": "Source-derived bounded documentary design review; no owner code, replay or collector call.",
+  "materialManifest": [
+    "docs/reviews/CVF_MFRP_CONTINUITY_COLLECTION_DESIGN_COMPLETION_2026-10-11.md",
+    "docs/reviews/CVF_MFRP_CONTINUITY_COLLECTION_DESIGN_2026-10-11.md",
+    "docs/reviews/CVF_MFRP_CONTINUITY_COLLECTION_DESIGN_WORKER_RETURN_2026-10-11.md",
+    "docs/reviews/evidence/mfrp-continuity-collection-design-worker-20261011.json",
+    "docs/reviews/evidence/mfrp-continuity-collection-design-local-20261011.json",
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_CONTINUITY_COLLECTION_DESIGN_2026-10-11.md",
+    "docs/baselines/CVF_GC018_MFRP_CONTINUITY_COLLECTION_DESIGN_2026-10-11.md",
+    "docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json",
+    "docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md",
+    "CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json",
+    "CVF_SESSION/ACTIVE_SESSION_STATE.json",
+    "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json"
+  ],
+  "continuityManifest": [
+    "AGENT_HANDOFF_V63_2026-09-18.md",
+    "CVF_SESSION_MEMORY.md",
+    "CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json",
+    "CVF_SESSION/state/entries/nextAllowedMove.json",
+    "CVF_SESSION/ACTIVE_SESSION_STATE.json",
+    "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json"
+  ],
+  "requirements": {
+    "REQ-DESIGN": "ACCEPTED_BOUNDED_RETAIN_SKIP; no impossibility or future-contract adequacy theorem",
+    "REQ-SEAM": "ACCEPTED_BOUNDED_WITH_LOCAL_HISTORICAL_LOG_CAUSE_AND_CURRENT_HEAD_QUALIFIER",
+    "REQ-PROBES": "ACCEPTED_CONSUMED_FOUR_ISOLATED_OWNER_RESULTS_AND_RAW_GIT_INPUT_RECONCILIATION",
+    "REQ-RETURN": "TECHNICAL_PACKET_ACCEPTED; PROCEDURE_FAIL_REQUIRED_READ_DEPTH_NOT_MET"
+  },
+  "localSemanticDisposition": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "selected": "RETAIN_EXPLICIT_SKIP_FOR_THIS_MATERIAL",
+    "structuralChange": "DEFERRED_WITH_REASON; demand-triggered closure-time evidence design only",
+    "fullWorkOrderProcedureSatisfied": false,
+    "procedureDisposition": "FAIL",
+    "workerFilesChangedByLocal": true,
+    "localProductRepairGroups": 0,
+    "localClaimClarificationGroups": 1,
+    "localCollectionReconciliationGroups": 1,
+    "workerReturnFastGateRuns": 4,
+    "workerReturnFailedRuns": 3,
+    "workerSelfRepairRounds": 3,
+    "workerRedispatchCount": 0,
+    "newWorkerObservationCount": 1,
+    "priorHistoricalBackfillCount": 5,
+    "modelRanking": false,
+    "observedRuntimeIdentity": null,
+    "tokens": null,
+    "bill": null,
+    "directProviderCalls": 0,
+    "nativeProviderUsage": null,
+    "causalPreventionEffectivenessProved": false,
+    "localTraceMetadataRepairGroups": 1
+  },
+  "claimClarifications": [
+    "The historical continuity target was admissible at 0e5de48d0; neither current 2575 nor later closure inherits that target-equivalence result.",
+    "Retained material-closure.log proves binding was withheld after continuity changed the bootstrap target bytes, not an unexplained worker/code failure.",
+    "Legacy PASS without committedEvidence is explicitly allowed by the producer contract; collector validate_and_reconcile_receipt explicitly enforces SKIPPED_NO_COMMITTED_EVIDENCE. Misreading risk is distinct from absent enforcement.",
+    "Gate PASS is command-run evidence under its raw/current worktree identity, never committed-target execution proof without binding.",
+    "Option2 exact-target isolated inspection need not itself rerun the entire bundle. Fresh collection execution would require separate admission and cannot be substituted for historical proof.",
+    "No change is selected for this case; this does not prove no safe small future contract change could exist.",
+    "A reused historical bound receipt does not generally require HEAD equal target; existing contract also admits later disjoint continuity. Future design must honor actual target-byte/digest/ref/drift conditions and separate current authority.",
+    "Worker RequiredReadDepth labels and actual readDepth conflict for roadmap, ledger, completion, scaffold and steward/checker sections. Actual readDepth governs; structure PASS is not reading proof."
+  ],
+  "readDepthReview": {
+    "authoritativeWorkerField": "readDepth, not repeated prescribed pins.workerReadDepth",
+    "requiredReadsIncomplete": true,
+    "disclosed": [
+      "roadmap section map only",
+      "S2-R3 completion locations only",
+      "ledger row count and one row instead of required last two/observations",
+      "scaffold help/generated receipt instead of named body",
+      "return-gate constants not reread in this lane",
+      "steward actual required branch body not evidenced in readDepth"
+    ],
+    "localRemedy": "Consume and independently assess useful design; disclose procedure FAIL, no history fabrication or benchmark-only rework."
+  },
+  "collectionScopeCorrection": {
+    "previousHeadline": 9,
+    "previousLedgerSubset": {
+      "Haiku": 7,
+      "Sonnet": 2
+    },
+    "additionalDistinctPriorTasks": [
+      "CVF-MODEL-SELECTION-S3-R1-20261010",
+      "CVF-MODEL-SELECTION-S4-R1-20261011",
+      "CVF-MODEL-SELECTION-S2-R1-20261011",
+      "CVF-MODEL-SELECTION-S2-R2-20261011",
+      "CVF-CONTINUITY-DISPATCH-O3-20261011"
+    ],
+    "priorReconciledTotal": 14,
+    "newCurrentTaskCount": 1,
+    "newTotal": 15,
+    "requestedOrReportedFamilies": {
+      "Haiku": 9,
+      "Sonnet": 2,
+      "Luna": 4
+    },
+    "lunaEfforts": {
+      "xhigh": 2,
+      "max": 2
+    },
+    "OpusSameSessionAdvisoryExtraWorkers": 0,
+    "notExhaustiveAllAgentActivity": true,
+    "notIndependentMatchedSamples": true,
+    "defectOwner": "LOCAL_ORCHESTRATOR_AGGREGATION_SCOPE_OMISSION"
+  },
+  "acceptedControlPins": [
+    {
+      "path": "docs/reviews/CVF_MFRP_CONTINUITY_COLLECTION_DESIGN_2026-10-11.md",
+      "sha256": "3fb7860bba366e2f8f739aef64045ac2ecb5d3a316ebcc7675470ae0842fbf36",
+      "originalSha256": "5e7c666c27592819c7e6382898273e5863191c87221e6e49755cd6ed1f68d335",
+      "localEdit": "TRACE_MANIFEST_ONLY"
+    },
+    {
+      "path": "docs/reviews/evidence/mfrp-continuity-collection-design-worker-20261011.json",
+      "sha256": "6ad1ea6b0aaec467ee46493a471615160d1dcb870026baf2bb8f3ed547adaf75",
+      "originalSha256": "6ad1ea6b0aaec467ee46493a471615160d1dcb870026baf2bb8f3ed547adaf75",
+      "localEdit": "NONE"
+    },
+    {
+      "path": "docs/reviews/CVF_MFRP_CONTINUITY_COLLECTION_DESIGN_WORKER_RETURN_2026-10-11.md",
+      "sha256": "22bc08d6c9091183ca57da0cdcdae4463306dff2322ac64292a9f064ab2e6e63",
+      "originalSha256": "22bc08d6c9091183ca57da0cdcdae4463306dff2322ac64292a9f064ab2e6e63",
+      "localEdit": "NONE"
+    }
+  ],
+  "localPackagingDiagnostic": {
+    "firstReviewerFastLog": ".cvf/runtime/mfrp-continuity-design-local-20261011/reviewer-fast.log",
+    "sha256": "95c2769a76c545b00cc3a5646b956a9ca100d42d5dc0f6377675e66c67b9fe5a",
+    "failures": [
+      "closure return recheck missing",
+      "earliest trace artifact needs current13 manifest",
+      "closed baseline/order missing machine closure sections",
+      "external digest row lacks SHA",
+      "Local/roadmap coordination binding missing",
+      "public private-only Reason/boundary missing"
+    ],
+    "assistLog": ".cvf/runtime/mfrp-continuity-design-local-20261011/assist.log",
+    "assistSha256": "f4d6ea1c991ec3250c6635518b2dde4b7b4ef38e0fd8aab8493c1be20935ea43",
+    "assistFailure": "Negated inventory phrase tripped corpus-completeness pattern; source/coverage claim stays bounded.",
+    "defectOwner": "LOCAL_REVIEWER_PACKAGING_NOT_WORKER",
+    "ruleDisposition": "RULE_EXISTS",
+    "repairGroupCount": 1,
+    "precommitFailure": {
+      "helperLog": ".cvf/runtime/mfrp-continuity-design-local-20261011/material-commit.log",
+      "helperSha256": "ee714834c7299448ba3b72e4f4cfdbabb8ab9008793ad129b06c1991f837affa",
+      "directDiagnosticLog": ".cvf/runtime/mfrp-continuity-design-local-20261011/precommit-diagnostic.log",
+      "sha256": "d25b86faa798484a8495edaefeefb23b62362917410456dd9976ed5afcdefeb5",
+      "failedGate": "active archive hygiene compatibility; changed stale dated roadmap",
+      "repair": "Drop our optional old parent-roadmap delta; maintain accepted side-design disposition in completion. No archive move/registry exception/hook bypass."
+    }
+  }
+}

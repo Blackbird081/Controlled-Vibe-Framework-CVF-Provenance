@@ -1,0 +1,474 @@
+{
+  "schemaVersion": "cvf.mfrpContinuityCollectionDesignWorkerEvidence@1.0.0",
+  "batchId": "CVF-MFRP-CONTINUITY-COLLECTION-DESIGN-20261011",
+  "workOrder": {
+    "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_CONTINUITY_COLLECTION_DESIGN_2026-10-11.md",
+    "sha256": "84aae344efadedbf111ee03c376afceeaa432806efc34c987fa7af2774632e1c"
+  },
+  "executionBaseHead": "2575d3e5d0497c1fb392c313fb35038c6fa6c1c9",
+  "dispatchBaseHead": "0e5de48d040c44a76cd729565d9780b8c50207d1",
+  "clocks": {
+    "startUtc": "2026-10-11T14:09:28Z",
+    "startMeasures": "first lane command (HEAD, status, staged) in the same batch as the work-order read; no source read preceded it",
+    "preImplementationGate": "passed at HEAD before outputs; log .cvf/runtime/mfrp-continuity-collection-design-20261011/pre-implementation.log",
+    "scaffoldUtc": "2026-10-11T14:10:08Z",
+    "probesUtcFrom": "2026-10-11T14:11:46.632305+00:00",
+    "probesUtcTo": "2026-10-11T14:11:51.633908+00:00",
+    "finalGateStartUtc": "RECORDED_BY_FINAL_RUN_WRAPPER_IN_FINAL_TERMINAL_CLOCK",
+    "endMeasures": "worker end is not separately observable; the final terminal clock is written after verification to an ignored file"
+  },
+  "pins": {
+    "sourcePins": [
+      {
+        "path": "docs/reference/review_cost_control/CVF_COMMITTED_EVIDENCE_FINGERPRINT_CONTRACT.md",
+        "pinned": "57ee1b0502943b1d4126a7afc4bae78d8338806fcd0fa62ddc811c8fadaa0c0a",
+        "actual": "57ee1b0502943b1d4126a7afc4bae78d8338806fcd0fa62ddc811c8fadaa0c0a",
+        "match": true,
+        "readDepthDeclared": "FULL_CONTRACT",
+        "workerReadDepth": "FULL_CONTRACT_REQUIRED"
+      },
+      {
+        "path": "governance/compat/committed_evidence_fingerprint.py",
+        "pinned": "39feb312e2da64af4da1b3d023bbd1e2e1ea3a6b0e65e1e5d7fc0dcab7658ace",
+        "actual": "39feb312e2da64af4da1b3d023bbd1e2e1ea3a6b0e65e1e5d7fc0dcab7658ace",
+        "match": true,
+        "readDepthDeclared": "TARGETED_SECTIONS_OR_SYMBOLS",
+        "workerReadDepth": "verify_worktree_matches_committed_target and its direct byte/metadata helpers; build/compute recipe; no full-module-read claim"
+      },
+      {
+        "path": "governance/compat/run_agent_autorun_workflow_gate.py",
+        "pinned": "8d28ac306eb2d7569571b53a833478b59708e89860ef11ff06115ba8a8ea6a1e",
+        "actual": "8d28ac306eb2d7569571b53a833478b59708e89860ef11ff06115ba8a8ea6a1e",
+        "match": true,
+        "readDepthDeclared": "TARGETED_SECTIONS_OR_SYMBOLS",
+        "workerReadDepth": "_run_phase binding branch, _closure_worktree_finality_failures, committed-range shape wiring and main; targeted"
+      },
+      {
+        "path": "governance/compat/mfrp_shadow_canary_autocollect.py",
+        "pinned": "7002f9e0f72753c65101a3b9e6729bf4ce7186685226a2d85feb627bbd23cab0",
+        "actual": "7002f9e0f72753c65101a3b9e6729bf4ce7186685226a2d85feb627bbd23cab0",
+        "match": true,
+        "readDepthDeclared": "TARGETED_SECTIONS_OR_SYMBOLS",
+        "workerReadDepth": "generate_current_receipt, find_receipt_candidate, validate_and_reconcile_receipt, run_collection and disclosure/retry seams; targeted"
+      },
+      {
+        "path": "governance/compat/agent_autorun_machine_verification.py",
+        "pinned": "e3686ee11d7d52e644a7d68eea47dd744ec3a6e9970d503aed704f4e9c3cc9d5",
+        "actual": "e3686ee11d7d52e644a7d68eea47dd744ec3a6e9970d503aed704f4e9c3cc9d5",
+        "match": true,
+        "readDepthDeclared": "TARGETED_SECTIONS_OR_SYMBOLS",
+        "workerReadDepth": "_validate_receipt_integrity committedEvidence/top-nested equality and digest branch; targeted"
+      },
+      {
+        "path": "governance/compat/agent_automation_machine_verification_readout.py",
+        "pinned": "ff6088bf8144deec4582ce9faf62384b314346c9cbbb87f6b3349a2d23f7e7c3",
+        "actual": "ff6088bf8144deec4582ce9faf62384b314346c9cbbb87f6b3349a2d23f7e7c3",
+        "match": true,
+        "readDepthDeclared": "TARGETED_SECTIONS_OR_SYMBOLS",
+        "workerReadDepth": "read_receipt_readonly complete body; targeted"
+      },
+      {
+        "path": "governance/compat/run_agent_commit_steward_preflight.py",
+        "pinned": "235834162c57aec66b461cc341321b34a1d72427c70cc4b458428a5f5d32c8b9",
+        "actual": "235834162c57aec66b461cc341321b34a1d72427c70cc4b458428a5f5d32c8b9",
+        "match": true,
+        "readDepthDeclared": "TARGETED_SECTIONS_OR_SYMBOLS",
+        "workerReadDepth": "mixed-path exception and committed-range shape preflight; targeted"
+      },
+      {
+        "path": "docs/reviews/CVF_MFRP_P4_C1_BOUNDED_RETRY_RECOVERY_COMPLETION_2026-09-27.md",
+        "pinned": "f41948529464ee9d947a54a7685584a66f4d8595a56f05a26c02d9b648d7f898",
+        "actual": "f41948529464ee9d947a54a7685584a66f4d8595a56f05a26c02d9b648d7f898",
+        "match": true,
+        "readDepthDeclared": "TARGETED_SECTIONS_OR_SYMBOLS",
+        "workerReadDepth": "FULL_BOUNDED_COMPLETION_REQUIRED; one-retry-per-commit limit"
+      },
+      {
+        "path": "docs/reviews/CVF_MODEL_SELECTION_S2_R3_PROJECTION_COMPLETION_2026-10-11.md",
+        "pinned": "8f5dc02e7e59dcb96e86ccea36c6618e78faa8517a58a3126997d13167b48bf9",
+        "actual": "8f5dc02e7e59dcb96e86ccea36c6618e78faa8517a58a3126997d13167b48bf9",
+        "match": true,
+        "readDepthDeclared": "TARGETED_SECTIONS_OR_SYMBOLS",
+        "workerReadDepth": "Independent Review Probe Admission; Local Packaging Diagnostic; mixed material manifest; targeted"
+      },
+      {
+        "path": "docs/roadmaps/CVF_GCLH_MACHINE_FIRST_REVIEW_PREFLIGHT_ROADMAP_2026-09-01.md",
+        "pinned": "4438fcce757dcbe9bb6041a025b36adf2a3d3350199000bd18fc2ed9f6c11a07",
+        "actual": "4438fcce757dcbe9bb6041a025b36adf2a3d3350199000bd18fc2ed9f6c11a07",
+        "match": true,
+        "readDepthDeclared": "TARGETED_SECTIONS_OR_SYMBOLS",
+        "workerReadDepth": "machine responsibilities, active P4-C1 context, reviewed/nonduplication limits; targeted"
+      },
+      {
+        "path": "docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json",
+        "pinned": "bbeabf8a029fdcc8d31cf2a5b8fd163c4fdb048e92702b75b5b1923b580158e0",
+        "actual": "bbeabf8a029fdcc8d31cf2a5b8fd163c4fdb048e92702b75b5b1923b580158e0",
+        "match": true,
+        "readDepthDeclared": "TARGETED_SECTIONS_OR_SYMBOLS",
+        "workerReadDepth": "last two rows, reporting/observations; targeted"
+      },
+      {
+        "path": "governance/compat/run_worker_return_scaffold.py",
+        "pinned": "fd2f492b5c5468ce2545925a22264b663768eba126255d91eb7a02be029c2501",
+        "actual": "fd2f492b5c5468ce2545925a22264b663768eba126255d91eb7a02be029c2501",
+        "match": true,
+        "readDepthDeclared": "TARGETED_SECTIONS_OR_SYMBOLS",
+        "workerReadDepth": "actual main/build/shape/budget command behavior; targeted"
+      },
+      {
+        "path": "docs/reviews/evidence/mfrp-continuity-collection-design-dispatch-case-20261011.json",
+        "pinned": "6cec4aa6a1a0d3971f1c999951d75e87a42483a7ad90638cdfb90e7354807ddb",
+        "actual": "6cec4aa6a1a0d3971f1c999951d75e87a42483a7ad90638cdfb90e7354807ddb",
+        "match": true,
+        "readDepthDeclared": "GENERATED_AND_VERIFIED_CASE",
+        "workerReadDepth": "FULL_CASE_REQUIRED; raw snapshot integrity and named case only"
+      }
+    ],
+    "allSourcePinsMatch": true,
+    "sourcePinCount": 13,
+    "authorityPair": {
+      "baseline": {
+        "path": "docs/baselines/CVF_GC018_MFRP_CONTINUITY_COLLECTION_DESIGN_2026-10-11.md",
+        "pinned": "30e013cab9fd80bf52b07efbac5928b5cc1f180a2532a97e89bc11256f93fcab",
+        "actual": "30e013cab9fd80bf52b07efbac5928b5cc1f180a2532a97e89bc11256f93fcab",
+        "match": true
+      },
+      "workOrder": {
+        "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_CONTINUITY_COLLECTION_DESIGN_2026-10-11.md",
+        "pinned": "84aae344efadedbf111ee03c376afceeaa432806efc34c987fa7af2774632e1c",
+        "actual": "84aae344efadedbf111ee03c376afceeaa432806efc34c987fa7af2774632e1c",
+        "match": true
+      }
+    },
+    "allAuthorityPinsMatch": true
+  },
+  "gitStateBeforeOutputs": {
+    "statusShort": [],
+    "stagedNames": [],
+    "cleanWorktree": true
+  },
+  "preImplementationGate": {
+    "command": "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base 2575d3e5d0497c1fb392c313fb35038c6fa6c1c9 --head HEAD --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_CONTINUITY_COLLECTION_DESIGN_2026-10-11.md",
+    "log": ".cvf/runtime/mfrp-continuity-collection-design-20261011/pre-implementation.log",
+    "logSha256": "246be5687a01574332193fadb3649d866f4040134c3dc1db8a3163b33e0839e2",
+    "exit": 0
+  },
+  "scaffoldPreparation": {
+    "command": "python governance/compat/run_worker_return_scaffold.py --write docs/reviews/CVF_MFRP_CONTINUITY_COLLECTION_DESIGN_WORKER_RETURN_2026-10-11.md --check-shape --max-lines 450 --max-bytes 64000 --title \"MFRP Material Continuity Collection Design\"",
+    "receiptLog": ".cvf/runtime/mfrp-continuity-collection-design-20261011/scaffold-receipt.txt",
+    "receiptSha256": "a51c7bb94988f44e96882c434c2de76e92a4241039fc56e907c9642268cf4d2d",
+    "exit": 0,
+    "generatedLinesAtReceipt": 323,
+    "generatedBytesAtReceipt": 13380,
+    "pendingFieldsAreEvidence": false
+  },
+  "readDepth": {
+    "docs/reference/review_cost_control/CVF_COMMITTED_EVIDENCE_FINGERPRINT_CONTRACT.md": "FULL_FILE_265_LINES",
+    "governance/compat/committed_evidence_fingerprint.py": "compute_committed_evidence_fingerprint, _read_worktree_bytes, _worktree_bytes_match_committed_blob, _allows_crlf_checkout, verify_worktree_matches_committed_target, build_committed_evidence (lines 169-409); module header and other helpers by hash only",
+    "governance/compat/mfrp_shadow_canary_autocollect.py": "generate_current_receipt, candidate discovery, find_receipt_candidate, _fail_closed_if_declared_binding_caused_rejection, validate_and_reconcile_receipt, _historical_attempt_rows, _prepare_journal, _persist_attempt, _retry_is_replayable, _select_replayable_retry_attempt, run_collection through the collected/skipped branches (lines 213-854); main and disclosure helpers by hash only",
+    "governance/compat/mfrp_p4_enrollment_observability.py": "retryable_attempts and RETRYABLE_OUTCOMES (targeted)",
+    "governance/compat/agent_automation_machine_verification_readout.py": "_import_autorun_owner and read_receipt_readonly bodies (lines 33-62); remaining readout functions by hash only",
+    "governance/compat/agent_autorun_machine_verification.py": "committedEvidence branches of the integrity validator (targeted grep of lines 92-234)",
+    "governance/compat/run_agent_autorun_workflow_gate.py": "committedEvidence producer branch (targeted grep of lines 434-729)",
+    "docs/reviews/CVF_MFRP_P4_C1_BOUNDED_RETRY_RECOVERY_COMPLETION_2026-09-27.md": "FULL_FILE_303_LINES",
+    "docs/reviews/CVF_MODEL_SELECTION_S2_R3_PROJECTION_COMPLETION_2026-10-11.md": "TARGETED_SECTION_LOCATIONS_ONLY (Independent Review Probe Admission line 38; Local Packaging Diagnostic line 242)",
+    "docs/roadmaps/CVF_GCLH_MACHINE_FIRST_REVIEW_PREFLIGHT_ROADMAP_2026-09-01.md": "section map only (Design Control Gate, Current Owner Map, Historical Replay matrix)",
+    "docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json": "row count and symbol-line row only; the last-two-rows and observations sections were not read in full",
+    "docs/reviews/evidence/mfrp-continuity-collection-design-dispatch-case-20261011.json": "FULL_CASE_STRUCTURE_RECEIPTS_OVERLAP_ATTEMPT_AND_DIAGNOSTIC_READ_VIA_PARSE; raw receipt strings validated byte-exact",
+    "governance/compat/run_worker_return_scaffold.py": "argument surface and generated receipt (via help and run); main body by receipt only",
+    "checker constants (return gates)": "not re-read in this lane; verified by the fast gate and acceptance ledger runs"
+  },
+  "rawCase": {
+    "receipts": [
+      {
+        "kind": "material",
+        "rawSha256Matches": true,
+        "rawBytes": 41747,
+        "canonicalValid": true,
+        "canonicalReason": "receipt internal integrity valid",
+        "payloadBase": "6ed564623",
+        "payloadHead": "0ab461e2b",
+        "declaresCommittedEvidence": false
+      },
+      {
+        "kind": "continuity",
+        "rawSha256Matches": true,
+        "rawBytes": 42348,
+        "canonicalValid": true,
+        "canonicalReason": "receipt internal integrity valid",
+        "payloadBase": "0ab461e2b",
+        "payloadHead": "0e5de48d0",
+        "declaresCommittedEvidence": true,
+        "declaredFingerprint": "3aaa07f94998041e28054b03e2ebb57ea0118fd2c31568f0a34ae363d45d9be5",
+        "declaredBase": "0ab461e2b807a33984a4f8357140f5d28988fd23",
+        "declaredHead": "0e5de48d040c44a76cd729565d9780b8c50207d1"
+      }
+    ],
+    "overlap": [
+      {
+        "path": "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json",
+        "materialRawMatches": true,
+        "continuityRawMatches": true
+      },
+      {
+        "path": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
+        "materialRawMatches": true,
+        "continuityRawMatches": true
+      },
+      {
+        "path": "CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json",
+        "materialRawMatches": true,
+        "continuityRawMatches": true
+      }
+    ],
+    "realRepoIdentity": {
+      "materialRangeIdentity": "56cd0b1d9931a85f10c7c0c8c8dcdd249987d2ae1a5af519409ff0233b30cc6b",
+      "continuityRangeIdentity": "3aaa07f94998041e28054b03e2ebb57ea0118fd2c31568f0a34ae363d45d9be5",
+      "continuityDeclaredMatchesIdentity": true,
+      "note": "materialRangeIdentity is computed from Git objects but is declared by no receipt"
+    },
+    "realRepoCurrentHead": {
+      "head": "2575d3e5d0497c1fb392c313fb35038c6fa6c1c9",
+      "historicalMaterialTarget": {
+        "ok": false,
+        "reason": "worktree content at 'CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json' does not match 0ab461e2b807a33984a4f8357140f5d28988fd23's committed blob da077c553adb0f12f6f57d1a056e837375ed2284 -- bytes differ outside the admitted checkout representation; committedEvidence binding withheld"
+      },
+      "continuityTarget": {
+        "ok": false,
+        "reason": "worktree content at 'AGENT_HANDOFF_V63_2026-09-18.md' does not match 0e5de48d040c44a76cd729565d9780b8c50207d1's committed blob 0c6373189e00f11335295322e14b0f74f7611602 -- bytes differ outside the admitted checkout representation; committedEvidence binding withheld"
+      },
+      "note": "time-dependent: the case recorded the continuity target as true at 0e5de48d0; at this HEAD it is false because commits 9afd2165a and 2575d3e5d changed the same continuity files"
+    }
+  },
+  "probes": [
+    {
+      "probe": "p1-disjoint-continuity",
+      "description": "A baseline; B trusted semantic artifact; C only a separate handoff path",
+      "fixtureRepo": ".cvf/runtime/mfrp-continuity-collection-design-20261011/fixtures/p1-disjoint-continuity",
+      "call": "verify_worktree_matches_committed_target(c00601b19e067ab48d6f0f50f6c4e36e553ad341, ccab91c61c74c90f729e380f5802e4427f3ed0c5, cwd=fixture)",
+      "headAtCall": "d1f6768b7a59423abd3c38b5f737dad9a92944c9",
+      "pathsChangedInAB": [
+        "reviews/semantic.md"
+      ],
+      "pathsChangedBC": [
+        "handoff/AGENT_HANDOFF.md"
+      ],
+      "result": true,
+      "reason": "worktree content matches the committed target for every changed path",
+      "expectedResult": true,
+      "matchesExpected": true
+    },
+    {
+      "probe": "p2-companion-overlap",
+      "description": "A baseline; B semantic artifact plus projection companion; C changes only the companion",
+      "fixtureRepo": ".cvf/runtime/mfrp-continuity-collection-design-20261011/fixtures/p2-companion-overlap",
+      "call": "verify_worktree_matches_committed_target(2242f89bcbc9f1cd7d4a57ca01f2b9fccaa264dd, 37aea42cc8e1e9bf6ed01c6e4924445102c74315, cwd=fixture)",
+      "headAtCall": "3bb040809faae615071765c847209a3d3192d0b8",
+      "pathsChangedInAB": [
+        "reviews/semantic.md",
+        "session/projection.json"
+      ],
+      "pathsChangedBC": [
+        "session/projection.json"
+      ],
+      "result": false,
+      "reason": "worktree content at 'session/projection.json' does not match 37aea42cc8e1e9bf6ed01c6e4924445102c74315's committed blob 436c685df375b7e5502875c5307207cef4084eb8 -- bytes differ outside the admitted checkout representation; committedEvidence binding withheld",
+      "expectedResult": false,
+      "matchesExpected": true
+    },
+    {
+      "probe": "p3-semantic-drift",
+      "description": "A baseline; B trusted semantic artifact; C changes the artifact",
+      "fixtureRepo": ".cvf/runtime/mfrp-continuity-collection-design-20261011/fixtures/p3-semantic-drift",
+      "call": "verify_worktree_matches_committed_target(12ace850906e3a73dc585550affdfbc57fdeaa76, 7877712ece04f16b2713ae30fa2b818a4f522ce6, cwd=fixture)",
+      "headAtCall": "7ea215f58d4cc17e5ed4bc16d201173f6f026b86",
+      "pathsChangedInAB": [
+        "reviews/semantic.md"
+      ],
+      "pathsChangedBC": [
+        "reviews/semantic.md"
+      ],
+      "result": false,
+      "reason": "worktree content at 'reviews/semantic.md' does not match 7877712ece04f16b2713ae30fa2b818a4f522ce6's committed blob 17da3fdf35495b5af01ea5ffc95d669c4192da8f -- bytes differ outside the admitted checkout representation; committedEvidence binding withheld",
+      "expectedResult": false,
+      "matchesExpected": true
+    },
+    {
+      "probe": "p0-noop-control",
+      "description": "control: C identical to B for the trusted path set; a no-op must stay TRUE and not be relabeled",
+      "fixtureRepo": ".cvf/runtime/mfrp-continuity-collection-design-20261011/fixtures/p0-noop-control",
+      "call": "verify_worktree_matches_committed_target(12ace850906e3a73dc585550affdfbc57fdeaa76, bb5eac76c8c7e4148f0629cacf6066dfe9d89f7e, cwd=fixture)",
+      "headAtCall": "b86ae9fe68f42a83df62631cc04bda7dfa04f3c0",
+      "pathsChangedInAB": [
+        "reviews/semantic.md"
+      ],
+      "pathsChangedBC": [
+        "README.md"
+      ],
+      "result": true,
+      "reason": "worktree content matches the committed target for every changed path",
+      "expectedResult": true,
+      "matchesExpected": true
+    }
+  ],
+  "probeInputsAndSiblingDiscipline": {
+    "method": "each probe builds a fresh isolated Git repository under the ignored runtime folder; SHAs are the full commit SHAs produced by the fixture; the call is verify_worktree_matches_committed_target(base, head, cwd=fixture)",
+    "preconditions": "each mutated path is in the expected changed set; P0 proves a no-op control stays TRUE",
+    "siblings": "untouched semantic and projection bytes are unchanged across probes; no probe touched the source repository, Git config, journal, safety marker or any receipt"
+  },
+  "optionEvidence": {
+    "option1RetainSkip": {
+      "feasible": true,
+      "replayableNow": false,
+      "retryableOutcome": true,
+      "consumesRetry": false
+    },
+    "option2IsolatedReexecution": {
+      "feasible": "partial",
+      "reexecutesBundle": true,
+      "newAdmissionClassRequired": true,
+      "verdict": "DEFERRED_WITH_REASON"
+    },
+    "option3aClosureTimeReuse": {
+      "helpsThisCase": false,
+      "reason": "material closure receipt declares no binding",
+      "verdict": "DEFERRED_WITH_REASON"
+    },
+    "option3bIdentityWithoutBinding": {
+      "verdict": "REJECTED",
+      "reason": "producer admission condition not met"
+    },
+    "option4RelaxGuard3": {
+      "verdict": "REJECTED",
+      "reason": "forbidden by the target guard"
+    }
+  },
+  "retryAndAttemptAccounting": {
+    "collectorAttemptsForMaterial": 1,
+    "attemptOutcome": "SKIPPED_NO_COMMITTED_EVIDENCE",
+    "historicalDiagnostic": false,
+    "retryMarker": null,
+    "opportunityCountForThisDesign": 1,
+    "collectedSamples": 0,
+    "consumedRetries": 0
+  },
+  "sourceToClaimMap": [
+    {
+      "claim": "fail-closed refusal of the historical material target",
+      "supplier": "governance/compat/committed_evidence_fingerprint.py verify_worktree_matches_committed_target (real-repo call in realRepoCurrentHead); case readOnlyActualOwnerDiagnostic",
+      "fidelity": "CURRENT_REPO_CALL_AND_CASE_RECORD_AGREE_ON_REFUSAL"
+    },
+    {
+      "claim": "continuity binding genuine",
+      "supplier": "receipts[continuity].declaredFingerprint equals realRepoIdentity.continuityRangeIdentity",
+      "fidelity": "RECOMPUTED_FROM_GIT_OBJECTS"
+    },
+    {
+      "claim": "three overlapping paths and raw identities",
+      "supplier": "rawCase.overlap (committed blobs at both heads)",
+      "fidelity": "RAW_BLOB_SHA256_MATCHES_CASE"
+    },
+    {
+      "claim": "material closure receipt has no binding and cause unknown",
+      "supplier": "receipts[material].declaresCommittedEvidence false; case does not record cause",
+      "fidelity": "RECORD_STATE_ONLY_CAUSE_UNKNOWN"
+    },
+    {
+      "claim": "collector regenerates receipt at next disclosure and guard 3 then fails",
+      "supplier": "governance/compat/mfrp_shadow_canary_autocollect.py generate_current_receipt, run_collection (read bodies)",
+      "fidelity": "SOURCE_BODY_READ"
+    },
+    {
+      "claim": "unreplayable retryable item stays visible and unconsumed",
+      "supplier": "docs/reviews/CVF_MFRP_P4_C1_BOUNDED_RETRY_RECOVERY_COMPLETION_2026-09-27.md finding row HISTORICAL_REPLAY_MISMATCH (full read); retryable_attempts (targeted)",
+      "fidelity": "SEMANTIC_READ_OF_COMPLETION_AND_TARGETED_CODE"
+    },
+    {
+      "claim": "generated receipt may PASS a range with mismatched bytes",
+      "supplier": "design finding 5 derived from generate_current_receipt body and guard 3 definition",
+      "fidelity": "DERIVED_RISK_NOT_EXERCISED_BY_PROBE"
+    },
+    {
+      "claim": "continuity admissibility is time-dependent",
+      "supplier": "realRepoCurrentHead continuityTarget false; git log of commits 9afd2165a and 2575d3e5d touching the continuity paths",
+      "fidelity": "CURRENT_REPO_OBSERVATION"
+    },
+    {
+      "claim": "S2-R3 material semantic acceptance",
+      "supplier": "docs/reviews/CVF_MODEL_SELECTION_S2_R3_PROJECTION_COMPLETION_2026-10-11.md (pinned sha; targeted section only)",
+      "fidelity": "HASH_AND_TARGETED_SECTION"
+    }
+  ],
+  "sourceAcceptanceSeparation": {
+    "semanticAcceptance": "Local S2-R3 completion (accepted material)",
+    "gatePass": "pre-closure gate PASS on the receipt bytes; a PASS does not imply guard 3",
+    "committedTargetBinding": "present only in the continuity receipt for 0ab..0e5",
+    "collectionEligibility": "none for the material in this design; retained skip",
+    "currentContextContinuity": "checked at the current HEAD only; time-dependent"
+  },
+  "requirements": {
+    "REQ-DESIGN": {
+      "proofId": "PROOF-REQ-DESIGN",
+      "status": "PASS",
+      "joins": [
+        "design.Selected Disposition",
+        "design.Option Comparison",
+        "optionEvidence",
+        "probes"
+      ]
+    },
+    "REQ-SEAM": {
+      "proofId": "PROOF-REQ-SEAM",
+      "status": "PASS",
+      "joins": [
+        "sourceToClaimMap",
+        "rawCase",
+        "sourceAcceptanceSeparation",
+        "allSourcePinsMatch"
+      ]
+    },
+    "REQ-PROBES": {
+      "proofId": "PROOF-REQ-PROBES",
+      "status": "PASS",
+      "joins": [
+        "probes",
+        "probeInputsAndSiblingDiscipline",
+        "realRepoCurrentHead"
+      ]
+    },
+    "REQ-RETURN": {
+      "proofId": "PROOF-REQ-RETURN",
+      "status": "PASS_VALIDATED_BY_FINAL_FAST_GATE_RUN_LOG",
+      "joins": [
+        "scaffoldPreparation",
+        "return",
+        "fast-gate final log",
+        "acceptance ledger"
+      ]
+    }
+  },
+  "nullUnknowns": {
+    "nativeModelVersion": {
+      "value": null,
+      "reason": "requested Claude Haiku ex high is operator metadata; native version and effort are not exposed"
+    },
+    "tokensAndBill": {
+      "value": null,
+      "reason": "no exposed worker, reviewer or rework meter"
+    },
+    "workerStartEnd": {
+      "value": null,
+      "reason": "start captured at the first lane command; end is not separately observable; 45-minute budget not instrumented"
+    },
+    "materialClosureCause": {
+      "value": null,
+      "reason": "the case preserves the material receipt bytes but not the closure-time worktree state"
+    }
+  },
+  "providerCallCount": 0,
+  "nestedAgentCount": 0,
+  "independentProbeDisposition": "PENDING_REVIEWER_EXECUTION",
+  "runtimeProviderCostLearning": "N/A_WITH_REASON - no provider experiment and no measured cost comparison were selected",
+  "designRef": "docs/reviews/CVF_MFRP_CONTINUITY_COLLECTION_DESIGN_2026-10-11.md",
+  "designSha256": "5e7c666c27592819c7e6382898273e5863191c87221e6e49755cd6ed1f68d335"
+}

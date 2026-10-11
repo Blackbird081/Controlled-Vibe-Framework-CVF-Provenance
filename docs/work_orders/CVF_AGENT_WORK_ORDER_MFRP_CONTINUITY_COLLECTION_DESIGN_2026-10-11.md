@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 docType: work_order
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 Date: 2026-10-11
 Batch ID: CVF-MFRP-CONTINUITY-COLLECTION-DESIGN-20261011
 Dispatch base head: 0e5de48d040c44a76cd729565d9780b8c50207d1
@@ -169,7 +169,7 @@ Actual result: 0 candidates, 0 returned, not truncated. This query does not prov
 | Field | Value |
 |---|---|
 | applicableCheckersRead | `governance/compat/check_work_order_dispatch_quality.py`; `governance/compat/check_gate_to_role_closeability.py`; `governance/compat/check_governed_artifact_checker_read_ahead.py`; `governance/compat/check_dispatch_prompt_envelope.py`; `governance/compat/check_markdown_structural_completeness.py`; `governance/compat/check_agent_operation_trace.py`; `governance/compat/check_public_export_disposition.py`; `governance/compat/check_work_order_acceptance_ledger.py`; `governance/compat/check_task_governance_route.py`; `governance/compat/check_independent_review_probe_admission.py`; `governance/compat/check_dispatch_scaffold_provenance.py`; `governance/compat/check_core_guard_self_protection.py`; `governance/compat/check_agent_packet_authority_and_encoding.py` |
-| literalTokensReviewed | DISPATCH_READY; WORKER_MUST_NOT_COMMIT; INTERNAL_AGENT; REQUIRED_FIELDS; TRACE_REQUIRED_LABELS; SECTION_GROUPS; DEFERRED_PRIVATE_ONLY |
+| literalTokensReviewed | CLOSED_PASS_BOUNDED; WORKER_MUST_NOT_COMMIT; INTERNAL_AGENT; REQUIRED_FIELDS; TRACE_REQUIRED_LABELS; SECTION_GROUPS; DEFERRED_PRIVATE_ONLY |
 | gateRunPurpose | confirmation/evidence of selected packet structure; not a dispatch or implementation proof |
 | claimBoundary | checker constants and applicable predicates read before these packet files; added ready-state contracts were read before their declarations |
 
@@ -232,14 +232,14 @@ Claim Update: design task selected, implementation/collection recovery/effective
 | Target paths | exact six dispatcher material paths; three worker outputs are future-owned |
 | Allowed scope source | operator continuation, manual work-order request and audit-and-choose authority |
 | Before status evidence | HEAD 0e5de48d040c44a76cd729565d9780b8c50207d1; clean worktree; git status --short empty; staged empty; maintenance split-range gates passed |
-| After status evidence | exact five-path packet/authority material; worker unstarted |
+| After status evidence | exact twelve-path reviewed closure material; worker complete |
 | Diff evidence | git status --short; staged exact manifest |
 | Approval boundary | finite design packet and private release; operator starts worker |
 | Claim boundary | proposal and retained local source observations; no worker acceptance |
 | Agent type | INTERNAL_AGENT |
 | Invocation ID | mfrp-continuity-collection-design-packet-20261011 |
-| Expected manifest | `docs/baselines/CVF_GC018_MFRP_CONTINUITY_COLLECTION_DESIGN_2026-10-11.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_CONTINUITY_COLLECTION_DESIGN_2026-10-11.md`; `docs/reviews/evidence/mfrp-continuity-collection-design-dispatch-case-20261011.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Actual changed set | `docs/baselines/CVF_GC018_MFRP_CONTINUITY_COLLECTION_DESIGN_2026-10-11.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_CONTINUITY_COLLECTION_DESIGN_2026-10-11.md`; `docs/reviews/evidence/mfrp-continuity-collection-design-dispatch-case-20261011.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Expected manifest | `docs/reviews/CVF_MFRP_CONTINUITY_COLLECTION_DESIGN_COMPLETION_2026-10-11.md`; `docs/reviews/CVF_MFRP_CONTINUITY_COLLECTION_DESIGN_2026-10-11.md`; `docs/reviews/CVF_MFRP_CONTINUITY_COLLECTION_DESIGN_WORKER_RETURN_2026-10-11.md`; `docs/reviews/evidence/mfrp-continuity-collection-design-worker-20261011.json`; `docs/reviews/evidence/mfrp-continuity-collection-design-local-20261011.json`; `docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_CONTINUITY_COLLECTION_DESIGN_2026-10-11.md`; `docs/baselines/CVF_GC018_MFRP_CONTINUITY_COLLECTION_DESIGN_2026-10-11.md`; `docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json`; `docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Actual changed set | `docs/reviews/CVF_MFRP_CONTINUITY_COLLECTION_DESIGN_COMPLETION_2026-10-11.md`; `docs/reviews/CVF_MFRP_CONTINUITY_COLLECTION_DESIGN_2026-10-11.md`; `docs/reviews/CVF_MFRP_CONTINUITY_COLLECTION_DESIGN_WORKER_RETURN_2026-10-11.md`; `docs/reviews/evidence/mfrp-continuity-collection-design-worker-20261011.json`; `docs/reviews/evidence/mfrp-continuity-collection-design-local-20261011.json`; `docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_CONTINUITY_COLLECTION_DESIGN_2026-10-11.md`; `docs/baselines/CVF_GC018_MFRP_CONTINUITY_COLLECTION_DESIGN_2026-10-11.md`; `docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json`; `docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |
 
@@ -514,16 +514,18 @@ Previous S2-R3 Local packaging exposed missing explicit conditional shape terms 
 
 ## Mixed Protected-Path Atomicity Authorization
 
-Disposition: AUTHORIZED_EXACT_MANIFEST
-
-Atomicity reason: new packet/case must bind raw current-authority source hashes and generated projections in the same exact material; separate actual-SHA continuity follows. Existing steward exception only.
-
-Rollback boundary: revert exact dispatcher material and matching continuity; preserve original history/receipts and parked effects.
-
-Exact changed manifest:
-- `docs/baselines/CVF_GC018_MFRP_CONTINUITY_COLLECTION_DESIGN_2026-10-11.md`
+Owner: Local reviewer/closer.
+Atomicity reason: raw closed-packet hashes and generated currentAuthority projections belong to this reviewed material; dedicated continuity follows.
+Allowed mixed paths:
+- `docs/reviews/CVF_MFRP_CONTINUITY_COLLECTION_DESIGN_COMPLETION_2026-10-11.md`
+- `docs/reviews/CVF_MFRP_CONTINUITY_COLLECTION_DESIGN_2026-10-11.md`
+- `docs/reviews/CVF_MFRP_CONTINUITY_COLLECTION_DESIGN_WORKER_RETURN_2026-10-11.md`
+- `docs/reviews/evidence/mfrp-continuity-collection-design-worker-20261011.json`
+- `docs/reviews/evidence/mfrp-continuity-collection-design-local-20261011.json`
 - `docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_CONTINUITY_COLLECTION_DESIGN_2026-10-11.md`
-- `docs/reviews/evidence/mfrp-continuity-collection-design-dispatch-case-20261011.json`
+- `docs/baselines/CVF_GC018_MFRP_CONTINUITY_COLLECTION_DESIGN_2026-10-11.md`
+- `docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json`
+- `docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
@@ -541,3 +543,31 @@ Use owned isolated repositories and existing helper with explicit cwd/full SHA; 
 ## Worker Design Presentation Contract
 
 Design metadata: Memory class governed-design; docType review; Status DESIGN_PROPOSAL_PENDING_LOCAL_REVIEW. Include Purpose; Target / Source; Scope / Methodology; Findings / Position; options/value/dedup matrix; exact selected disposition and proof/rollback/authority; Risk / Corrective Action; Finding-To-Governance Learning Disposition; checker read-ahead; trace; public disposition; claim limits. Knowledge System Applicability only with reason: no map production. Use source-specific claim/pin joins, report correct guard refusal without treating it as a worker/code defect. No citation of future Local completion as existing evidence.
+
+## Local Closure Disposition
+
+Local documentary design acceptance `docs/reviews/CVF_MFRP_CONTINUITY_COLLECTION_DESIGN_COMPLETION_2026-10-11.md` and raw evidence `docs/reviews/evidence/mfrp-continuity-collection-design-local-20261011.json`. Finite task closed with retained explicit skip; implementation and sample promotion remain deferred. Mandatory source reading was incomplete, so procedureDisposition FAIL; final shape PASS does not certify full preparation. Original three worker files MATCH terminal SHA-256; Local expands design trace metadata only; Local qualifications are in completion. Current collection reconciles15 task observations (9 Haiku-family,2 Sonnet,4 Luna), not exhaustive agent history. Original nine-row subset and dispatch read pins retain their historical scope. No worker redispatch or automatic successor.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_CONTINUITY_COLLECTION_DESIGN_2026-10-11.md | CLOSED_PASS_BOUNDED; finite design accepted with procedure limits | PASS |
+| Completion or reviewer artifact | docs/reviews/CVF_MFRP_CONTINUITY_COLLECTION_DESIGN_COMPLETION_2026-10-11.md | Local disposition and docs/reviews/evidence/mfrp-continuity-collection-design-local-20261011.json | PASS |
+| Roadmap state | docs/roadmaps/CVF_GCLH_MACHINE_FIRST_REVIEW_PREFLIGHT_ROADMAP_2026-09-01.md | N/A with reason: parent historical state retained; finite side-design disposition is owned by this completion | PASS |
+| Registry JSON | docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json | fifteen deduplicated task rows; requested/reported identity and cost nulls | PASS |
+| Registry Markdown | docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md | reconciled counts and per-task source visibility | PASS |
+| External evidence digest | docs/reviews/evidence/mfrp-continuity-collection-design-local-20261011.json | sha256 c939d3ba3e2142e809b1bc454b291c452792a44938881f6713047c6c8df48954; internal named evidence only | PASS |
+| System loop interlock | existing P2 producer -> P4 collector -> retry owners | skip preserved; no collection effect | PASS |
+| Session continuity | material currentAuthority then exact six-path sync | canonical regenerate, actual material-SHA marker, split closure | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| original worker identities | all three terminal raw hashes MATCH | PASS |
+| actual fixture proof | TRUE/FALSE/FALSE/TRUE; refs/raw changed paths and siblings checked | PASS |
+| malformed declaration refused | one-sided binding FALSE under canonical reader | PASS |
+| worker final structure | final full fast-gate PASS, acceptance ledger COMPLIANT | PASS |
+| complete required reading | actual depth gaps disclosed; procedure FAIL | BLOCKED with reason: historical preparation cannot be repaired retrospectively |
+| historical material collection | skip retained; no binding/sample upgrade | PASS |

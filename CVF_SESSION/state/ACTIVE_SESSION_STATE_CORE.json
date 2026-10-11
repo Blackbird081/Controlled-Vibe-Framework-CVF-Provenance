@@ -37,11 +37,11 @@
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_MFRP_CONTINUITY_COLLECTION_DESIGN_2026-10-11.md",
-    "baselineSha256": "30e013cab9fd80bf52b07efbac5928b5cc1f180a2532a97e89bc11256f93fcab",
+    "baselineSha256": "400736b3023763e0958bb13b70c4cb98c938cab9946f58b3d0138ae66394398a",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_CONTINUITY_COLLECTION_DESIGN_2026-10-11.md",
-    "workOrderSha256": "84aae344efadedbf111ee03c376afceeaa432806efc34c987fa7af2774632e1c"
+    "workOrderSha256": "50a99dd431fcbf25468290194670d8e1fd910a287193d96b7f17a98382a1032b"
   },
-  "currentAuthoritySyncReason": "MFRP collection design dispatch material 9afd2165a549fdb295bfd68aad1005e99578efe5; six-surface actual-SHA EXECUTE/manual-worker release, correct target guard and nine worker observations preserved.",
+  "currentAuthoritySyncReason": "MFRP bounded design closed with retained skip/procedure limits; raw closed packet pins and fifteen deduplicated reviewed tasks including four Luna. Dedicated actual-SHA continuity follows.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
