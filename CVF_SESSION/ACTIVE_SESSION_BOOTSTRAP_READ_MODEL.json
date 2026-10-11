@@ -2,16 +2,16 @@
   "schemaVersion": "0.1.0",
   "currentMode": "cvf_ncr_p10_closed_p11_parked",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=CVF-CORE; NEXT_ACTION_CLASS=LOCAL_DISPOSITION_ONLY; BATCH_ID=CVF-MODEL-USAGE-OBSERVATIONS-20261011. Material=abbfc7258148d48532c3d8e572848b345d7cb4a2; accepted source-only supplement docs/reviews/CVF_WORKER_MODEL_USAGE_OBSERVATION_SUPPLEMENT_2026-10-11.md; six legacy rows plus S3/S4/S2, nine selected task references (not matched/independent samples). Initial/final artifacts, worker versus Local burden, requested versus observed identity and unlike clocks stay separate; bill/usage unknown, no model equivalence/ranking. S2-R1 optional offline helper remains CLOSED_PASS_BOUNDED; full outcome/PLL/score/Gateway and S5 unopened. Non coder does not choose a model. Expense PARKED_BY_OPERATOR; SourceR2/media/provider/public/deploy/P11 parked; LHW24 retained. Continue only a real relevant task/value gap within its own admitted scope; no automatic successor or benchmark.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-CORE; NEXT_ACTION_CLASS=EXECUTE_BOUNDED_WORK_ORDER; BATCH_ID=CVF-MODEL-SELECTION-S2-R2-20261011. Material=57f8dc7b041c6cd17919aa3c300ad55bf324d329; execute docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_SELECTION_S2_R2_OFFLINE_REVIEWED_OUTCOME_2026-10-11.md once using operator-assigned native worker configuration gpt-6-luna/max after final bound pre-dispatch PASS. Local is independent reviewer/final decision owner; six offline code/test/example/guide/return paths only; no nested or direct provider calls. S2-R1 repair-attribution source CITED pending independent actual outcome-join action/result; original task evidence immutable. Non coder does not choose a model. Expense PARKED_BY_OPERATOR; S5/SourceR2/media/provider/public/deploy/P11 parked; LHW24 retained. No automatic successor.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_MODEL_SELECTION_S2_R1_OFFLINE_MANUAL_RECORD_2026-10-11.md",
-    "baselineSha256": "8a2dd23f36e681146f03de905adeacc71de0e80a87569720247c8e575dca72bd",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_SELECTION_S2_R1_OFFLINE_MANUAL_RECORD_2026-10-11.md",
-    "workOrderSha256": "9728b45b6642d25adf89820769bac1a2fdb00dad3678c7ae2d246ed0965f305d"
+    "baselinePath": "docs/baselines/CVF_GC018_MODEL_SELECTION_S2_R2_OFFLINE_REVIEWED_OUTCOME_2026-10-11.md",
+    "baselineSha256": "416d46577e8d95e29fd2b03042e63410b1f5cbe00670d96ac1bdd82dc5a2c852",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_SELECTION_S2_R2_OFFLINE_REVIEWED_OUTCOME_2026-10-11.md",
+    "workOrderSha256": "d089b84557c715b0c24ad5a79498f30e1de7fe3264f4177cc518914de8b8943c"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

@@ -36,12 +36,12 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_MODEL_SELECTION_S2_R1_OFFLINE_MANUAL_RECORD_2026-10-11.md",
-    "baselineSha256": "8a2dd23f36e681146f03de905adeacc71de0e80a87569720247c8e575dca72bd",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_SELECTION_S2_R1_OFFLINE_MANUAL_RECORD_2026-10-11.md",
-    "workOrderSha256": "9728b45b6642d25adf89820769bac1a2fdb00dad3678c7ae2d246ed0965f305d"
+    "baselinePath": "docs/baselines/CVF_GC018_MODEL_SELECTION_S2_R2_OFFLINE_REVIEWED_OUTCOME_2026-10-11.md",
+    "baselineSha256": "416d46577e8d95e29fd2b03042e63410b1f5cbe00670d96ac1bdd82dc5a2c852",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_SELECTION_S2_R2_OFFLINE_REVIEWED_OUTCOME_2026-10-11.md",
+    "workOrderSha256": "d089b84557c715b0c24ad5a79498f30e1de7fe3264f4177cc518914de8b8943c"
   },
-  "currentAuthoritySyncReason": "Source-only model-usage supplement accepted at abbfc7258148d48532c3d8e572848b345d7cb4a2; closed S2-R1 authority unchanged; nine selected task references, no ranking/runtime/automatic successor.",
+  "currentAuthoritySyncReason": "S2-R2 locked optional offline outcome packet released under fresh operator instruction; requested Luna/max. Previous S2-R1 and source-only observation supplement remain accepted; runtime/PLL/selector unopened.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",

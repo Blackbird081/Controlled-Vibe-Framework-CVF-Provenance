@@ -1,0 +1,18 @@
+{
+  "stateOrder": 3004,
+  "stateKey": "modelSelectionS2R2Dispatch20261011",
+  "value": {
+    "status": "DISPATCH_READY",
+    "materialCommit": "57f8dc7b041c6cd17919aa3c300ad55bf324d329",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_SELECTION_S2_R2_OFFLINE_REVIEWED_OUTCOME_2026-10-11.md",
+    "workerRequest": {
+      "model": "gpt-6-luna",
+      "reasoningEffort": "max",
+      "identityEvidence": "REQUESTED_CONFIGURATION_ONLY",
+      "immutableSnapshot": null
+    },
+    "result": "One locked offline decision-to-outcome companion; S2-R1 repair observation CITED. Canonical originals retained; no retrospective dispatch-freeze promotion.",
+    "nextAction": "One admitted native worker; Local independent review; Expense and S5 remain parked.",
+    "claimBoundary": "Optional offline outcome consistency only; no ranking, source truth, identity authentication, runtime selector or worker outcome."
+  }
+}
