@@ -7,6 +7,35 @@ Date: 2026-10-10
 Batch ID: CVF-WORKER-SELECTION-FOUNDATION-20261010
 Revision: R2 - R1-B1 corrected; conditional reviewer concurrence recorded by Local
 
+## Current Delivery Priority - 2026-10-12
+
+Operator directs roadmap reconciliation to avoid drift. This roadmap is a
+supporting collection lane for the existing NCR product journey, not a second
+delivery program. Optional manual/offline companions have bounded acceptance;
+overall DESIGN_DRAFT and runtime/S5 demand gates remain in force.
+
+Current evidence owner: `docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json`
+has17 reviewed task rows:10 Haiku-family,3 Sonnet,4 Luna. The nine-task supplement
+below is a historical slice. ProcessingScreen's later result and limits are in
+`docs/reviews/CVF_NCR_PROCESSING_LIFECYCLE_COMPLETION_2026-10-12.md`.
+No new sample is added by this roadmap edit or Customer Care learning intake.
+
+Capture quality, defect severity, worker self-repair, Local product repair,
+procedural deviation and exposed elapsed intervals during admitted real work.
+Keep orchestrator/reviewer faults separate; requested identity differs from
+observed identity. Same-session advisory or model switching is context, not an
+independent implementation sample. Cost comparison is deferred by operator;
+unknown native identity/token/bill fields remain unknown rather than blocking
+useful work or becoming zero. No model ranking/default is justified by17 unlike tasks.
+
+Next action: use the existing manual guide/profile when a selected NCR coding
+outcome needs dispatch, then append one observation only after actual Local
+review. Do not commission benchmark-only tasks, more retrospective projections,
+read-enforcement gates or companion machinery without a decision-changing consumer
+gap. S5 automation, full R3 scoring/PLL/Gateway integration and Expense remain
+parked. Stop a selected task at its useful accepted output or real boundary.
+NCR milestone/route/handback owner: `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`, Current Delivery Checkpoint.
+
 ## Purpose
 
 Deliver a reviewable doctrine/contract/system-chain design for model selection by
@@ -146,9 +175,9 @@ docs/reviews/evidence/model-selection-design-review-20261010/ with intake hashes
 |---|---|---|---|
 | Proposed responsibilities map to existing owners | STATIC_SOURCE_VERIFIED | original review, same-reviewer confirmation and Local R1-B1 paragraph check | PROVEN at bounded design/source level only; no runtime enforcement |
 | Strict record joins reject bad identity/units/drift | LOCAL_DETERMINISTIC_EXECUTION | `docs/reviews/CVF_MODEL_SELECTION_S2_R1_COMPLETION_2026-10-11.md`; locked optional offline slice, 24 focused tests and 65 independent CLI/API probes | PROVEN_BOUNDED_OFFLINE; full R3 families/runtime/source authenticity unproved |
-| Orchestrator selects and actual worker executes selected configuration | CURRENT_RUNTIME_INVOCATION; REAL_PROVIDER_BOUNDED where provider is in chain | six prior worker outcomes without this decision chain | MISSING |
+| Orchestrator selects and actual worker executes selected configuration | CURRENT_RUNTIME_INVOCATION; REAL_PROVIDER_BOUNDED where provider is in chain | 17 reviewed task records with requested configurations; native execution identity and complete selector chain remain unproved | PARTIAL_MANUAL_ONLY |
 | Evidence/control is used in a later selection | actual later decision/action/review; typed application only for parent controls | `docs/reviews/CVF_MODEL_SELECTION_S4_R1_COMPLETION_2026-10-11.md`; LOCAL_OBSERVATION packet-completeness action/result verified | PROVEN_BOUNDED_MANUAL; no typed parent control or measured effectiveness |
-| Lower accepted-delivery cost | comparable complete measured stage receipts | bills/reviewer cost unknown | MISSING |
+| Lower accepted-delivery cost | comparable complete measured stage receipts | bills/reviewer cost unknown; comparison deferred by operator | DEFERRED_WITH_REASON |
 
 Proof owner: docs/reference/system_chain/CVF_SYSTEM_CHAIN_LIVE_PROOF_AND_LEARNING_LOOP_STANDARD.md.
 Provider-governance claims require an admitted real call; release-quality claims
@@ -157,16 +186,29 @@ gate is warranted by this design. Before any failed/partial live rerun, use the
 existing secret-safe diagnostic standard. Consume prior valid proof; a rerun needs
 a named contradiction, expected information gain and cost reason.
 
-Future admitted tasks capture complete worker/reviewer/rework timing and exposed
-usage/bills. Unknown fields stay null. Record failed/blocked/stopped outcomes and
+Future admitted useful tasks capture worker/reviewer/rework timing and quality.
+Cost comparison is deferred; exposed usage/bills may be retained without requiring
+a measurement campaign. Unknown fields stay null. Record failed/blocked/stopped outcomes and
 configuration confounds. Published API tariffs are dated estimates, not subscription
-invoices. Do not infer superiority from assertion counts or these six acceptances.
+invoices. Do not infer superiority from assertion counts or unlike task observations.
 
 ## Receiving-Agent Continuation
 
-Consume `docs/reviews/CVF_MODEL_SELECTION_S2_R1_COMPLETION_2026-10-11.md` for the accepted optional offline slice, and `docs/reviews/CVF_WORKER_MODEL_USAGE_OBSERVATION_SUPPLEMENT_2026-10-11.md` for the current source-scoped worker observation view. S3/S4 original completions retain their historical boundaries. The accepted guide is a manual continuation aid under the R3 proposals; it is not an executable selector. Local owns final disposition. Requested Luna/xhigh, first FAILs, two worker self-repairs, one Local repair and null identity/usage remain distinct evidence. Do not require a Non coder model picker. No further task is automatically opened: S2-R1 optional offline slice is accepted below; other R3 branches need fresh value/packet, S5 needs separate runtime demand and authority. Expense and provider/public/deploy effects remain parked. Source S3 observation is PARTIAL packet-mechanism evidence with its historical failed-range limitation; no global ledger or frozen review is rewritten.
+Use Current Delivery Priority above and the17-row evaluation evidence for current
+selection. S3/S4/S2 completions and the nine-task observation supplement retain
+their historical task/revision limits. The guide and optional offline companions
+are continuation aids, not an executable selector. Local owns final acceptance;
+no Non coder model picker or automatic successor is required. Quality/time
+collection supports the selected NCR output; cost comparison stays deferred.
+Other R3 branches/S5 need a real consumer gap and separate authority; existing
+Expense/provider/public/deploy holds and historical failed-range limits remain.
 
 ## Checker Source Read-Ahead Block
+
+2026-10-12 read-ahead before edits: structural/read-ahead, authority/encoding,
+operation trace, public export, epistemic and file-size checker sources; confirmation
+of documentation reconciliation only. Literal tokens: Current Delivery Checkpoint,
+DEFERRED_PRIVATE_ONLY, NOT_ACTIVE_AUTHORITY, Expected manifest, Manifest delta.
 
 | Field | Value |
 |---|---|
@@ -291,7 +333,7 @@ Fresh operator continuation selects an offline optional validator for the actual
 
 `docs/reviews/CVF_MODEL_SELECTION_S2_R1_COMPLETION_2026-10-11.md` accepts the optional standalone offline slice only. Actual wrong-token rejection and useful source-pinned example/guide independently verified; declared consistency is not live governance or source authentication. Requested Luna/xhigh and unknown runtime identity/bill remain separate. Root/worker/reviewer corrections retained. Full outcome/PLL/score/Gateway and S5 unopened; overall DESIGN_DRAFT, no automatic successor.
 
-## Current Observation Visibility
+## Historical Nine-Task Observation Visibility - 2026-10-11
 
 `docs/reviews/CVF_WORKER_MODEL_USAGE_OBSERVATION_SUPPLEMENT_2026-10-11.md` references six historical UI rows and three later S3/S4/S2 tasks, with source pins and separate worker/Local burden. This is not nine independent/matched samples or a model ranking. Only current proof/continuation statements above are reconciled; historical trace/claim blocks remain source-scoped. No implementing work order or S5 successor opens from this supplement.
 
@@ -307,4 +349,4 @@ Pre-release R2 correction: S2 historical review time remains null with reason wh
 
 ## S2-R3 Bounded Application Disposition - 2026-10-11
 
-`docs/reviews/CVF_MODEL_SELECTION_S2_R3_PROJECTION_COMPLETION_2026-10-11.md` accepts one source-pinned Haiku symbol-line retrospective projection under the existing optional profile. Technical ACCEPTED_BOUNDED and historical procedure FAIL remain distinct; authoring clocks are not historical decision clocks. Two proof source-map rows corrected by Local; actual outcome JSON unchanged. Current preparation owner consumed once with retained receipt, first worker gate failure/read limits still recorded. Collection nine worker observations, Opus advisory excluded. Overall DESIGN_DRAFT, full R3/runtime/scoring/PLL/Gateway/S5 unopened; no automatic successor.
+`docs/reviews/CVF_MODEL_SELECTION_S2_R3_PROJECTION_COMPLETION_2026-10-11.md` accepts one source-pinned Haiku symbol-line retrospective projection under the existing optional profile. Technical ACCEPTED_BOUNDED and historical procedure FAIL remain distinct; authoring clocks are not historical decision clocks. Two proof source-map rows corrected by Local; actual outcome JSON unchanged. Current preparation owner consumed once with retained receipt, first worker gate failure/read limits still recorded. Historical collection at this S2-R3 disposition: nine worker observations, Opus advisory excluded; current collection is17 in the checkpoint above. Overall DESIGN_DRAFT, full R3/runtime/scoring/PLL/Gateway/S5 unopened; no automatic successor.

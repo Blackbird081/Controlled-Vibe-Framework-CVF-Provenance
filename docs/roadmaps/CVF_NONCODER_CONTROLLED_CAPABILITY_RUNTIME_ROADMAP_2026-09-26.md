@@ -4,17 +4,70 @@ Memory class: FULL_RECORD
 
 docType: roadmap
 
-Status: ACCEPTED_UNIFIED_ROADMAP_R0_W01_ACCEPTED_PILOT_SCOPE_PENDING
+Status: ACCEPTED_UNIFIED_ROADMAP_LOCAL_CONSUMER_BOUNDED_FULL_PILOT_OPEN
 
 Date: 2026-09-26
 
 Program ID: CVF-NCR
 
-Version: 2.8
+Version: 2.9
 
-Revision disposition: HTML_B2A_SYNTHETIC_ACCEPTED_BOUNDED; Q001_PROFILE_A_DEFAULT_OPERATOR_CHECKPOINT_OPEN
+Revision disposition: LOCAL_CONSUMER_MAINTENANCE_ACCEPTED_BOUNDED; END_TO_END_PILOT_OPEN; Q001_AND_P11_CHECKPOINTS_RETAINED
 
 Decision owner: operator về định hướng/phạm vi; Local reviewer về đối chiếu kỹ thuật và nghiệm thu.
+
+## Current Delivery Checkpoint - 2026-10-12
+
+Operator asks to update our roadmaps to prevent drift. Local owns this bounded
+documentation reconciliation; current mode=cvf_ncr_p10_closed_p11_parked,
+handoff=AGENT_HANDOFF_V63_2026-09-18.md, next=useful coding outcome selection.
+This checkpoint supersedes older current/next wording for selection; historical
+decisions, accepted proofs, phase IDs and effect checkpoints retain their scope.
+
+**Product destination:** one controlled local job from confirmed idea to a
+run-bound result, preview/revision/export and understandable cancel/error/recovery.
+The user can use the output without reading source or assembling review metadata.
+**Nearest milestone:** demonstrate that finite existing-consumer journey at the
+offline claim level first; full real-provider R3 acceptance remains open.
+
+| Stage / contribution | Observed position and evidence | Remaining milestone gap |
+|---|---|---|
+| R0 selection | HTML review-packet candidate selected; prior W00/W01 bounded evidence retained | current route/acceptance must be fixed for the next actual job; no new runtime shortlist |
+| R1 user journey | audience/export evidence archived below; Home history/result/child binding accepted in docs/reviews/CVF_NCR_HOME_HISTORY_BINDING_COMPLETION_2026-10-11.md | complete integrated journey has not been accepted by these component proofs |
+| R2/R3 delivery | offline preview package accepted in docs/reviews/CVF_NCR_OFFLINE_PREVIEW_DELIVERY_COMPLETION_2026-10-09.md | source/media/send and real-provider admission remain separately held; no full R2/R3 exit |
+| R4 recovery contribution | ProcessingScreen client attempt isolation/once delivery accepted after Local repair in docs/reviews/CVF_NCR_PROCESSING_LIFECYCLE_COMPLETION_2026-10-12.md | offline client coverage does not prove backend cancellation, durable effects, restart/restore or full R4 exit |
+| R5/R6 | hosted/scale/new-capability work remains demand/authority gated | no automatic implementation from this roadmap |
+
+**Finite next route:** (1) Local selects one existing Home/result/preview/export
+journey and checks only its decision-relevant source and reusable proof; names an
+actual unmet assertion or records that the selected offline outcome is already
+supported. (2) Only if a material gap exists, group compatible repairs in one
+bounded product package under the existing dispatch/acceptance owners. Without
+a material gap, reuse the accepted output; do not manufacture a worker task.
+(3) Review that journey's output and meaningful controls, state what is usable
+and what remains unproved, then stop this selected package. No endless endpoint
+audit. These are at most three planned actions, not three promised tranches or ETA.
+
+The orchestrator records milestone contribution, blocking prerequisites and stop
+condition in existing Purpose/Scope/acceptance fields before dispatch. On a failed
+prerequisite or a support chain that no longer shortens the route, reconsider
+continue/merge/narrow/park; do not automatically commission another support task.
+Reuse same-scope repair within authority/budget. This is orchestrator responsibility,
+not an extra worker quiz, approval round, numeric threshold or machine gate.
+
+Model collection accompanies useful delivery: 17 reviewed tasks (10 Haiku-family,
+3 Sonnet, 4 Luna); quality/severity/repair burden/time, cost deferred. Root faults
+stay separate. Model-selection companions do not authorize a parallel campaign.
+Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11 remain
+parked. ETA and end-to-end readiness are NOT_ESTABLISHED; tests/commits/tranches
+are evidence quantities, not product-completion percentages. Handback reports
+usable output, remaining acceptance gap, blocker and finite planned next steps.
+
+## Current Runtime Freshness Verification
+
+Checkpoint base: f93e07bed73958a2e9aac928bf1c4f9ff5bfc43f. Consume the three named
+bounded completion records at their accepted revisions; no product or provider
+rerun for this document update. Complete journey/live freshness remains unproved.
 
 ## Purpose
 
@@ -222,7 +275,7 @@ Historical v2.2 startup acknowledged: current mode at entry=`cvf_ncr_r1_w01_html
 
 Historical v2.3 startup acknowledged: mode=`cvf_ncr_p10_closed_p11_parked`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=hold for operator checkpoint, with this operator-requested bounded roadmap update; parked checkpoint=P11 execution/dispatch. Role=Local planner/source verifier; phase=internal roadmap disposition after external advisory; technical decision owner=Local, scope/effect/expense decision owner=operator.
 
-Current v2.4 startup acknowledged: mode=`cvf_ncr_p10_closed_p11_parked`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=operator-requested read-only Q008 reconciliation while the P11 checkpoint remains parked; role=Local source verifier; phase=internal roadmap decision; technical decision owner=Local, effect/data/cost decision owner=operator.
+Historical v2.4 startup acknowledged: mode=`cvf_ncr_p10_closed_p11_parked`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=operator-requested read-only Q008 reconciliation while the P11 checkpoint remains parked; role=Local source verifier; phase=internal roadmap decision; technical decision owner=Local, effect/data/cost decision owner=operator.
 
 ## Scope
 
@@ -482,7 +535,7 @@ Audit W00–W06 là các work package nền; W07 được hấp thụ vào R0/R1
 
 Các giai đoạn dưới đây là kế hoạch, trừ NCR-R0/W00 đã được Local nghiệm thu bounded ở `docs/reviews/CVF_CVF_NCR_R0_W00_PILOT_SELECTION_WORKER_RETURN_2026-09-26.md`. Operator đã chọn HTML review packet làm ứng viên pilot nội bộ đầu tiên; việc chọn ứng viên không cấp quyền chạy pilot hoặc sửa runtime. Các bước còn lại là gói công việc để tạo work order giới hạn, không phải lệnh thi công sẵn. Thời gian/ngân sách được chốt theo slice ở R0; không đặt lịch hoàn thành giả khi chưa biết provider, workload và hạ tầng. Không tạo work order sửa toàn P01–P10 trước khi biết route/profile và finding áp dụng.
 
-Current W01 update: `docs/reviews/CVF_CVF_NCR_R0_W01_HTML_PROFILE_WORKER_RETURN_2026-09-26.md` đã được Local nghiệm thu `ACCEPTED_BOUNDED_SOURCE_PROFILE_PACKET` tại `d9b43a6f6deff7fb19710b5a9a4f50bf2a6015b6`. Ngoại lệ đối với mô tả kế hoạch phía trên gồm cả W00 và W01; chưa chứng minh UI walkthrough, route runtime/provider/live. Các vấn đề profile/effect ở Q001 vẫn mở. Work package audit W01 về dependency/CI trong R1 khác NCR-R0/W01 source/profile packet; không dùng chung nhãn để suy đã sửa CI. Giao mới tạm dừng theo operator.
+Historical W01 update (2026-09-26): `docs/reviews/CVF_CVF_NCR_R0_W01_HTML_PROFILE_WORKER_RETURN_2026-09-26.md` đã được Local nghiệm thu `ACCEPTED_BOUNDED_SOURCE_PROFILE_PACKET` tại `d9b43a6f6deff7fb19710b5a9a4f50bf2a6015b6`. Ngoại lệ đối với mô tả kế hoạch phía trên gồm cả W00 và W01; chưa chứng minh UI walkthrough, route runtime/provider/live. Các vấn đề profile/effect ở Q001 vẫn mở. Work package audit W01 về dependency/CI trong R1 khác NCR-R0/W01 source/profile packet; không dùng chung nhãn để suy đã sửa CI. Dispatch hold at that checkpoint is historical; current continuation is governed by the October12 checkpoint above.
 
 ### R0 - Chốt consumer, owner và pilot nhỏ nhất
 
@@ -663,6 +716,7 @@ Không đổi thứ tự chỉ vì công nghệ mới hấp dẫn. Có thể đi
 
 | ID | Ngày | Quyết định / trạng thái | Lý do / bước tiếp |
 |---|---|---|---|
+| D111 | 2026-10-12 | Current Delivery Checkpoint: finite existing-consumer outcome, bounded proof gaps and quality/time collection; no phase exit | Existing lifecycle/Review Cost owners; three-action selection/repair-if-needed/review route; preserve parked effects; raw historical section archived; exact-path active-window registration; document checks only, rollback this four-path batch if routing/proof text regresses |
 | D001 | 2026-09-26 | Hướng non-coder + capability reuse + CVF-independent governance | Tổng hợp yêu cầu operator; I01-I12 là mốc đối chiếu |
 | D002 | 2026-09-26 | Local là pilot, portability/backup từ thiết kế đầu | Không khóa dữ liệu vào laptop; cloud triển khai sau proof phù hợp |
 | D003 | 2026-09-26 | Provider/model/account do user chọn; hỗ trợ dựa trên giao diện chính thức | Không hứa login chung cho mọi nhà cung cấp |
@@ -940,6 +994,15 @@ External research stays advisory and ends before internal implementation/review/
 
 ## Checker Source Read-Ahead Block
 
+2026-10-12 follow-up: governance/compat/check_active_archive_hygiene.py and
+governance/compat/check_active_window_registry.py read before additive registration;
+BINDING_REFERENCE_ACTIVE_WINDOW, PERMANENT_ACTIVE_WINDOW and ACTIVE literals.
+
+2026-10-12 read-ahead before edits: structural/read-ahead, authority/encoding,
+operation trace, public export, epistemic and file-size checker sources; confirmation
+of documentation reconciliation only. Literal tokens: Current Delivery Checkpoint,
+DEFERRED_PRIVATE_ONLY, NOT_ACTIVE_AUTHORITY, Expected manifest, Manifest delta.
+
 2026-10-06 guidance read-ahead: `governance/compat/check_agent_instruction_carriers.py`
 (carrier budgets and required literals),
 `governance/compat/check_core_guard_self_protection.py` (authorization fields),
@@ -959,7 +1022,7 @@ no execution-readiness, source-absorption or behavioral proof is asserted.
 |---|---|
 | applicableCheckersRead | `governance/compat/check_markdown_structural_completeness.py`; `governance/compat/check_governed_artifact_checker_read_ahead.py`; `governance/compat/check_agent_packet_authority_and_encoding.py`; `governance/compat/check_agent_operation_trace.py`; `governance/compat/check_delta_execution_claim_boundary.py`; `governance/compat/check_public_export_disposition.py`; `governance/compat/check_governed_file_size.py`; `governance/compat/check_absorption_blindspot_control_presence.py`; `governance/compat/check_external_knowledge_intake_routing.py`; `governance/compat/check_external_absorption_core.py`; `governance/compat/check_external_absorption_value_conversion.py`; `governance/compat/check_external_absorption_overlap_discipline.py`; `governance/compat/check_corpus_completeness_report_integrity.py`; `governance/compat/check_corpus_to_knowledge_map_reconciliation.py` |
 | literalTokensReviewed | roadmap headings Authorization, Purpose, Scope, Non-Goals, Design Control Gate, Work Plan, Acceptance Criteria, Verification; `applicableCheckersRead`, `literalTokensReviewed`, `gateRunPurpose`, `claimBoundary`; `Status` is non-closed; `Public Export Disposition`; `Text Encoding Exception`; `NOT_APPLICABLE_WITH_REASON`; delta claim `CLAIM_REJECTED` markers; D014 names source pins as conditional planning decisions without whole-repo intake/corpus-complete claim |
-| gateRunPurpose | 2026-09-28 D015: checker applicability and roadmap control blocks read before edit; confirmation/evidence of v2.4 HTML-only runtime disposition, existing owner/claim boundaries and no runtime promotion after source read-ahead; not first discovery of checker requirements |
+| gateRunPurpose | Historical2026-09-28 D015: checker applicability and roadmap control blocks read before edit; confirmation/evidence of v2.4 HTML-only runtime disposition, existing owner/claim boundaries and no runtime promotion after source read-ahead; not first discovery of checker requirements |
 | claimBoundary | Existing roadmap incorporates operator-approved D013/D014 direction and Local D015 HTML source decision; R1/W01 accepted bounded; four source candidates remain conditional for other jobs; no activation, live, hosted, public or production claim |
 
 ## Text Encoding Exception
@@ -1078,90 +1141,26 @@ orientation packets are not refreshed by this private local edit.
 
 | Field | Evidence |
 |---|---|
-| Actor | Local source maintainer / reviewer |
-| Provider or surface | Local private provenance workspace |
-| Session or invocation | receiving-to-planning-consumer-repair-20261006; audience-brief-design-20261006 |
-| Working directory | Repository root; package-local test/type/lint commands |
-| Command or tool surface | Named source reads, scoped protocol edit, static Vitest output controls, TypeScript, ESLint and existing governance bundle |
-| Target paths | SpecExport.tsx, SpecExport.test.tsx and the two named export helpers; lifecycle standard carries audience rules; this roadmap records authority, design and results |
-| Allowed scope source | Operator approved receiving-to-planning work and clarified the Vietnamese idea / English INTAKE artifact design on 2026-10-06 |
-| Before status evidence | HEAD 45b1a48d4f97e221adcd3e3bd21610b54d6f5f5a with the previous six-file guidance delta preserved |
-| After status evidence | Prior eight-path delta preserved; fresh audience consumer scope adds two existing exporter helper files, for ten paths total |
-| Diff evidence | git diff --check; git diff --stat; normalized source comparison outside the protocol constant |
-| Approval boundary | Prior protocol repair plus operator-approved audience brief UI/export maintenance; no provider, skill invocation, BUILD effect or public/deploy |
-| Claim boundary | Static protocol repair and session-local audience UI/export implementation; no real-agent semantic accuracy, enforcement, durable idea acceptance or novice UX proof |
-| Agent type | INTERNAL_AGENT, Local source maintenance role |
-| Invocation ID | receiving-to-planning-consumer-repair-20261006 |
-| Expected manifest | Historical six guidance paths; SpecExport.tsx and SpecExport.test.tsx; two exact helper paths in Audience Brief Consumer Implementation Scope |
-| Actual changed set | Ten exact paths: six guidance files and four exporter source/test files; no generated state, package source/registry, endpoint or persistence changes |
-| Manifest delta | MATCH: ten exact paths independently reconciled with Git status |
-| Deletion or rename disposition | None; replacing protocol text does not delete or rename files |
+| Actor | Local orchestrator / roadmap maintainer |
+| Provider or surface | private shared CVF workspace |
+| Session or invocation | roadmap-realignment-20261012 |
+| Working directory | repository root |
+| Command or tool surface | selected continuity/source/checker reads; exact historical-section relocation; scoped document edits; existing static gates |
+| Target paths | this roadmap; model-selection roadmap; NCR October6 evidence archive; active-window registry |
+| Allowed scope source | operator2026-10-12 asks to update our roadmaps to avoid drift; existing lifecycle outcome-bound owner |
+| Before status evidence | HEAD f93e07bed73958a2e9aac928bf1c4f9ff5bfc43f; git status --short empty |
+| After status evidence | four-path documentation batch; current mode and closed work-order authority retained |
+| Diff evidence | git diff --check; exact raw historical-section comparison; .cvf/runtime/roadmap-realignment-20261012/verification.json |
+| Approval boundary | roadmap documentation only; effects and parked checkpoints retain their existing owners |
+| Claim boundary | milestone/proof-gap reconciliation; no fresh product acceptance or agent-behavior proof |
+| Agent type | INTERNAL_AGENT |
+| Invocation ID | roadmap-realignment-20261012 |
+| Expected manifest | docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md; docs/roadmaps/CVF_ORCHESTRATOR_MODEL_SELECTION_SYSTEM_CHAIN_ROADMAP_2026-10-10.md; docs/roadmaps/archive/CVF_NCR_CONSUMER_EVIDENCE_2026-10-06_ARCHIVED_2026-10-12.md; governance/compat/CVF_ACTIVE_WINDOW_REGISTRY.json |
+| Actual changed set | same four paths; reconciled against Git before completion |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | no files deleted/renamed; original89-line historical section retained exactly in the named archive |
 
-## Historical Receiving-To-Planning Repair Validation
-
-- Baseline static controls: two full-mode failures and two non-full-mode passes; `.cvf/runtime/receiver-guidance-before.log`.
-- Focused output/confirmation/acceptance suites: 118/118 PASS, three collected files; `.cvf/runtime/receiver-guidance-focused.log`.
-- Source scope: content outside fullModeProtocol is normalized-identical to HEAD; only future Full Mode protocol bytes change.
-- TypeScript: PASS (tsc --noEmit --incremental false, exit 0); `.cvf/runtime/receiver-guidance-typecheck.log`.
-- ESLint: PASS (exact two changed source/test files, exit 0); `.cvf/runtime/receiver-guidance-lint.log`.
-- Static governance bundle on the eight-file source/guidance delta: 85/85 PASS; `.cvf/runtime/receiver-guidance-governance.log`.
-- Final result-only roadmap metadata receives focused document checks; product tests are not rerun for metadata. No behavioral/provider proof claimed.
-- Local logs are ignored evidence; no public export or committed-range closure is claimed.
-
-## Audience Brief Consumer Implementation Results
-
-Implemented: Vietnamese summary/download; confirm-and-export creates the English
-working artifact; optional English preview; one current text for file/copy/send;
-source/review-edit invalidation; error retry retains the confirmed idea. Existing
-review/confirmation UI is optional and distinct from idea confirmation. Open/stale
-answers remain INTAKE inputs, not accepted BUILD decisions. Bindings are exact
-session-local content comparisons and increasing revisions (including A-to-B-to-A),
-not durable IDs or actor-authenticated acceptance. Mode/preview changes preserve
-idea confirmation; changed guidance needs regeneration before copy/send. The send
-callback opens the conversation and remains subject to separate risk/authority.
-
-Original input, names/identifiers, review decisions and open-point evidence remain.
-Normalization retains source instead of discarding unmatched qualifiers; it is
-bounded local wording, not general LLM translation or semantic-equivalence proof.
-Consolidated wizard ideas and existing Web design context are retained. No browser,
-noncoder usability, real-agent governance behavior or live accuracy proof is claimed.
-
-Task classification: taskKind=PURE_LOCAL_IMPLEMENTATION; authorityImpact=USES_EXISTING_OWNER;
-externalEffect=LOCAL_REVERSIBLE; dataSensitivity=PRIVATE_REPO; reversibility=GIT_REVERSIBLE;
-sourceScale=NAMED_FILES; delegation=SINGLE_ROLE; novelty=OWNER_COMPOSITION.
-Cumulative canonical guidance keeps P3_ELEVATED and the existing full static bundle.
-Role=Local maintainer/reviewer; phase=implementation/static validation; technical
-owner=Local, scope owner=operator. No dispatch or external research is involved.
-
-- Final static regressions: 212/212 PASS in nine files with one Vitest worker, including review/open-item/confirmation/acceptance and DynamicForm/AppBuilderWizard; .cvf/runtime/audience-brief-regression-serial.log. Earlier 211/211 receipt remains historical.
-- ESLint: PASS, zero warnings/errors on the four changed exporter files; .cvf/runtime/audience-brief-lint-receipt.log.
-- TypeScript: PASS (tsc --noEmit --incremental false, exit 0); .cvf/runtime/audience-brief-typecheck-final.log.
-- Intermediate failures remain in audience-brief-focused.log / audience-brief-regression.log; corrected test argument order, async timing and localized-status expectations. Initial test-edit cwd error changed no file.
-- Governance: existing pre-implementation bundle 85/85 PASS with PYTHONUTF8=1; .cvf/runtime/audience-brief-governance-utf8.log. Prior default-codec failure and near-threshold roadmap finding are retained; current prose was compacted without changing checker policy.
-- Worker-start timeout (nine errors, zero tests executed) remains at .cvf/runtime/audience-brief-regression-receipt.log; subsequent standalone one-worker run passed. Resource contention during concurrent checks is an inference, not a product-defect conclusion.
-- Manifest MATCH: ten exact modified paths, no staged/untracked material, HEAD unchanged at 45b1a48d4; git diff --check PASS. Carrier budgets: root 220 / downstream template 180 lines.
-- Last evidence-only metadata receives focused existing document checks; no duplicate product rerun for prose. All checks remain static, with no semantic/runtime or committed-range closure claim.
-
-## Current Runtime Freshness Verification
-
-2026-10-06 Local inspection at HEAD 45b1a48d4 plus disclosed worktree changes:
-SpecExport.tsx handlers; IntentSpecReview.tsx hook; intent-spec-review.ts synchronization;
-two exporter helpers. Previous packet construction occurred at render, with review
-bound to language/mode; normalization was local. Query: rg -n 'english.*brief|English.*Brief|englishSpec|english.*freeze|freezeEnglish|translate'
-under cvf-web source app/api and components. Execute response readouts use the
-different spec-english-freeze route; that is not this idea-confirmation UI. Scope is
-a named consumer, not whole-repo absence. Diff/static controls verify maintenance;
-no provider execution/live receipt is used. Freshness-rule repair read-ahead followed
-the initial finding; .cvf/runtime/audience-brief-pre-implementation.log retains it.
-
-## Working Brief Workflow Evidence Update - 2026-10-06
-
-Operator clarification: model calls supply workflow evidence, not model evaluation/ranking/default selection. Existing lifecycle owner carries this rule. Bounded sample: three successful direct-provider calls plus one diagnosed authentication failure; `docs/baselines/CVF_GC018_INTAKE_WORKING_BRIEF_MODEL_COMPARISON_2026-10-06.md` and `.cvf/runtime/intake-model-comparison-20261006/REPORT.md`. Extract lost-qualifier, terminology-drift and unsupported-assumption findings for source-preserving handoff and correct INTAKE question ownership. Prior static-only UI evidence remains separate; no Web integration, release-quality governance proof or closure is asserted.
-Quota reference refreshed from operator screenshots received 2026-10-06: 17 distinct visible model rows, absolute expiration dates, console-rounded balances and visible Stop-on-Exhaust state. Capture date unknown; historical snapshot retained. Actual model identities/date in live receipts remain unchanged. No additional API calls, schema, checker, pilot or model-default change follows from this update.
-
-Subsequent operator authorization extended the bounded evidence sample to Kimi K3, GLM 5.3 and Qwen 27B: nine total HTTP attempts including two documented parameter corrections; four complete model outputs / twelve case briefs, one timeout and one token-limited unusable final output. Repeated qualifier/terminology drift informed existing exporter guidance: source/review evidence first, reconcile English candidates, then permitted INTAKE; route material source ambiguity to its owner without mandatory English review. Existing source-preservation matrix now covers automatic/manual export and accounting/allocation, 39/39 PASS. Lifecycle owner distinguishes model-supported invocation, generation completion and semantic fidelity; preserves confirmed idea on timeout/truncation. Same baseline/report retain all receipts. No provider wired into UI, model ranking/default, new schema/checker/pilot or automatic successor tranche.
-
-Latest operator clarification fixes the evaluation boundary: baseline CVF exports structured idea/spec input, not a complete or BUILD-ready LLM Working Brief; receiving agents own INTAKE analysis and dependent BUILD prerequisites. Optional user-selected LLM enrichment is a possible enhancement. Export marker wording now distinguishes local normalization coverage from business ambiguity; exact marker remains compatible. The app_builder_complete description and bilingual intent no longer imply build-ready baseline output. Two actual simple-mode export-builder artifacts received two complete qwen3.8-flash API answers (3209/3241 tokens); both retained main constraints/authority, but receiver introduced unnecessary technical-owner questions and a lock/limit coupling. These are disclosed receiver-analysis defects, not baseline completeness defects; no broad PASS or enforcement claim. Existing three-file regression 68/68 PASS; evidence under receiving-artifacts/ and receiving-regression.log in the same runtime directory. No further calls or automatic successor.
+Historical October6 consumer evidence: `docs/roadmaps/archive/CVF_NCR_CONSUMER_EVIDENCE_2026-10-06_ARCHIVED_2026-10-12.md`, NOT_ACTIVE_AUTHORITY. Source revision and raw section digest are retained there; reuse its bounded observations without presenting them as current runtime freshness.
 
 ## Public Export Disposition
 
