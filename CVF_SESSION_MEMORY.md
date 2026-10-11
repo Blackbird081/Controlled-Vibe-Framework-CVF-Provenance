@@ -39,7 +39,7 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`;handoff=`AGENT_HANDOFF_V63_2026-09-18.md`;next=S3-R1 manual design worker after admission;role=Local INTERNAL_AGENT dispatcher/reviewer;phase=internal dispatch;decision owner=Local;parked checkpoint=expense/S2/S4/S5/sourceR2/media/provider/public/deploy/P11;no automatic successor.
+Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`;handoff=`AGENT_HANDOFF_V63_2026-09-18.md`;next=Local disposition after bounded S3-R1 closure;role=Local INTERNAL_AGENT reviewer/closer;phase=internal closure/design;decision owner=Local;parked checkpoint=expense/S2/S4/S5/sourceR2/media/provider/public/deploy/P11;no automatic successor.
 
 ## Current Mode
 
@@ -48,7 +48,7 @@ Current mode: `cvf_ncr_p10_closed_p11_parked`; previous mode marker: `cvf_ncr_p1
 
 ## Next Allowed Move
 Mode: `cvf_ncr_p10_closed_p11_parked`
-PROGRAM_ID=CVF-CORE; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-MODEL-SELECTION-S3-R1-20261010; ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_SELECTION_S3_R1_MANUAL_DESIGN_TASK_2026-10-10.md; Material=28b71634c8f0efdb87f043085039e1479d2c4f5b. First manual AGENT_SEAT R3 doctrine/contract task, only after clean committed pre-dispatch PASS and current worker seat/context/authority/budget admission. Local chooses and independently reviews; Non coder does not choose a model. Expense PARKED_BY_OPERATOR; S2/S4/S5, SourceR2/media/provider/public/deploy/P11 parked; LHW24 retained. No worker invocation yet.
+PROGRAM_ID=CVF-CORE; NEXT_ACTION_CLASS=LOCAL_DISPOSITION_ONLY; BATCH_ID=CVF-MODEL-SELECTION-S3-R1-20261010. Material=011c9cd1d7a3d3ffbd6b8e070d8aab37f6774a40; S3-R1 manual doctrine/contract task CLOSED_PASS_BOUNDED at docs/reviews/CVF_MODEL_SELECTION_S3_R1_COMPLETION_2026-10-10.md. Local may evaluate the next roadmap step through fresh evidence and authorization; S2/S4/S5 are unopened. Non coder does not choose a model. Expense PARKED_BY_OPERATOR; SourceR2/media/provider/public/deploy/P11 parked; LHW24 retained. No automatic successor.
 Historical G1-G7 terminal baseline: mode `acel_g1_g7_research_terminally_closed`. G1-G6 terminal review: `docs/reviews/CVF_ACEL_G1_G6_TERMINAL_STOP_CLOSURE_2026-09-24.md`; G7 research closure: `docs/reviews/CVF_ACEL_G7_CROSS_RUN_CAPABILITY_EVOLUTION_RESEARCH_CLOSURE_2026-09-24.md`. The packet-only post-G7 reconciliation review at `docs/reviews/CVF_ACEL_POST_G7_FULL_CORPUS_ABSORPTION_CLOSURE_2026-09-24.md` is superseded for repository absorption by the 2026-09-25 pinned-source audit. G1 is stopped, G2-G6 remain parked, G7 research is closed, and no automatic G1-G7 successor exists.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1

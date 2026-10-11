@@ -1,0 +1,14 @@
+{
+  "stateOrder": 2998,
+  "stateKey": "modelSelectionS3R1BoundedClosure20261011",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "011c9cd1d7a3d3ffbd6b8e070d8aab37f6774a40",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_SELECTION_S3_R1_MANUAL_DESIGN_TASK_2026-10-10.md",
+    "completion": "docs/reviews/CVF_MODEL_SELECTION_S3_R1_COMPLETION_2026-10-10.md",
+    "localEvidence": "docs/reviews/evidence/model-selection-s3-r1-local-review-20261011.json",
+    "result": "R3 doctrine and contract accepted for a bounded manual design task; three source-derived static Local probes passed. The worker return retains first gate failures and two self-repairs; Local attributed one verdict-label format correction. Immutable model snapshot, effort and bill remain unknown.",
+    "nextAction": "Local disposition only; S2, S4 and S5 remain unopened and require fresh evidence and authorization. Expense remains parked by operator. Non coder does not choose a model.",
+    "claimBoundary": "Documentation and manual worker/reviewer loop only; no runtime model selector, provider proof, comparative quality, savings, public export or production claim."
+  }
+}

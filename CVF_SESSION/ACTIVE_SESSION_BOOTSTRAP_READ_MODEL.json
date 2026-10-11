@@ -2,7 +2,7 @@
   "schemaVersion": "0.1.0",
   "currentMode": "cvf_ncr_p10_closed_p11_parked",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=CVF-CORE; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-MODEL-SELECTION-S3-R1-20261010; ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_SELECTION_S3_R1_MANUAL_DESIGN_TASK_2026-10-10.md; Material=28b71634c8f0efdb87f043085039e1479d2c4f5b. First manual AGENT_SEAT R3 doctrine/contract task, only after clean committed pre-dispatch PASS and current worker seat/context/authority/budget admission. Local chooses and independently reviews; Non coder does not choose a model. Expense PARKED_BY_OPERATOR; S2/S4/S5, SourceR2/media/provider/public/deploy/P11 parked; LHW24 retained. No worker invocation yet.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-CORE; NEXT_ACTION_CLASS=LOCAL_DISPOSITION_ONLY; BATCH_ID=CVF-MODEL-SELECTION-S3-R1-20261010. Material=011c9cd1d7a3d3ffbd6b8e070d8aab37f6774a40; S3-R1 manual doctrine/contract task CLOSED_PASS_BOUNDED at docs/reviews/CVF_MODEL_SELECTION_S3_R1_COMPLETION_2026-10-10.md. Local may evaluate the next roadmap step through fresh evidence and authorization; S2/S4/S5 are unopened. Non coder does not choose a model. Expense PARKED_BY_OPERATOR; SourceR2/media/provider/public/deploy/P11 parked; LHW24 retained. No automatic successor.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
