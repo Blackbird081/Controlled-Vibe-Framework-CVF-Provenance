@@ -37,11 +37,11 @@
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_ORACLE_O6_DESIGN_2026-10-11.md",
-    "baselineSha256": "f62fc2430e7e507fd1a8527104445368840261d89ccc13c3e131079a22139190",
+    "baselineSha256": "85c80033c3b16f01259a8f45cb69a5d01a32e37775449146741dcdbd3248a92d",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_ORACLE_O6_DESIGN_2026-10-11.md",
-    "workOrderSha256": "e65126e390e2b2e78a7350fcb51464c9170365efd50252736b1d47e75b5507ce"
+    "workOrderSha256": "aa5be1970ed4cc481ef6f850f8f0268bb741849ab2e328b351f5b76a08cbd78b"
   },
-  "currentAuthoritySyncReason": "Operator delegated Local branch audit/selection and assigned manual Haiku ex high worker. O6 documentary design packet material f9b2b67f1a7683728f729ba77b269d69ae8bf0d5; actual-SHA continuity recorded separately. No dispatcher worker invocation; original O3/S2-R2 evidence and parked effects retained. O6 continuity rebind after provenance handoff marker displaced dispatch release (DR-04/DR-05); provenance lane closed at aa32f66620fed1eef871a5e9f64e3feb819d7ed2. Packet hashes unchanged; six surfaces synchronize atomically before bound redispatch.",
+  "currentAuthoritySyncReason": "O6 closed as bounded documentary checklist after Local design review; helper deferred, global gate rejected; matching closed packet hashes. Actual-SHA terminal continuity follows material commit.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",

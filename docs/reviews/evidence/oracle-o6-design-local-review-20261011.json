@@ -1,0 +1,103 @@
+{
+  "schemaVersion": "cvf.oracleO6DesignLocalReview@1.0.0",
+  "batchId": "CVF-ORACLE-O6-DESIGN-20261011",
+  "executionBaseHead": "bd13e1a8057cfbc6c753053b290cd21ee76c45e3",
+  "closureBaseHead": "bd13e1a8057cfbc6c753053b290cd21ee76c45e3",
+  "reviewerActor": "LOCAL_REVIEWER_CODEX_ROOT",
+  "workerActor": "INTERNAL_AGENT_O6_DESIGN_WORKER",
+  "workerInvocationId": "oracle-o6-design-worker-20261011",
+  "probeInvocationId": "o6-design-local-review-20261011",
+  "reviewMethod": "different-actor source-derived documentary challenge; no historical suite or planned case execution",
+  "originalWorkerArtifacts": {
+    "docs/reference/CVF_ORACLE_O6_INTEGRITY_DESIGN_2026-10-11.md": {
+      "sha256": "3005f37893981763321eb0d4983ce3d4292e96ced1e44524bb488bde42958886",
+      "bytes": 18370
+    },
+    "docs/reviews/CVF_ORACLE_O6_DESIGN_WORKER_RETURN_2026-10-11.md": {
+      "sha256": "be1aac106cf04bf7753a018a02f8824f39cf783b0caa22e6b59c402641256ab0",
+      "bytes": 22169
+    },
+    "docs/reviews/evidence/oracle-o6-design-worker-20261011.json": {
+      "sha256": "9538cd116f755e0f175b0eb64ecf423707e87843ba81252cb1a1aa60e37fb267",
+      "bytes": 12129
+    }
+  },
+  "acceptedDesignSha256": "78e4c99228c95298cf07b5baafa0c8c179f32e4c08dcbce38cd22998be5dd646",
+  "consumedEvidence": {
+    "workerFastGateLog": ".cvf/runtime/oracle-o6-design-20261011/worker-return-fast-gate-final.log",
+    "gateResult": "COMPLIANT",
+    "gateSeconds": 7.5,
+    "reviewerFastChecks": 70,
+    "firstFailuresRetained": true,
+    "workingTreeOwnedFiles": 3
+  },
+  "documentaryChallenges": [
+    {
+      "claim": "effective mutation",
+      "observation": "Both-side alias and no-op invalidate the oracle before product attribution",
+      "disposition": "PASS_SOURCE_DERIVED; historical mechanism reused"
+    },
+    {
+      "claim": "exact semantic delta",
+      "observation": "Subtree digests propagate ancestor changes; smallest edit paths define the comparison",
+      "disposition": "LOCAL_DOCUMENTARY_REPAIR"
+    },
+    {
+      "claim": "one mutation versus compound sibling",
+      "observation": "Malformed-sibling retained case declares two edits; mutation list admits the bundle explicitly",
+      "disposition": "LOCAL_DOCUMENTARY_REPAIR"
+    },
+    {
+      "claim": "consumer binding",
+      "observation": "API consumes a parsed tree, not a filesystem path; P0 control has no mutated digest inequality",
+      "disposition": "LOCAL_DOCUMENTARY_REPAIR"
+    },
+    {
+      "claim": "diagnostic expectation",
+      "observation": "_cross_outcome assigns REPAIR_ATTRIBUTION to changed unmatched accepted pin; validate_outcome_record returns diagnostics for parsed input",
+      "disposition": "PASS_TARGETED_SOURCE_REVIEW; no exact runtime diagnostic set claimed"
+    },
+    {
+      "claim": "adoption/value",
+      "observation": "Manual checklist selected, helper deferred, global gate rejected; proposed cases remain unexecuted",
+      "disposition": "ACCEPT_DOCUMENTARY_ONLY"
+    }
+  ],
+  "symbolLineCandidate": [
+    {
+      "path": "governance/compat/model_selection_reviewed_outcome.py",
+      "symbol": "validate_outcome_record",
+      "astDefinitionLine": 701,
+      "checkerReportedLine": 699,
+      "sourceSha256": "9526916557ef81654930bac9697bc242d6b8ebf41163b23977b78729392ec0ff"
+    },
+    {
+      "path": "governance/compat/check_independent_review_probe_admission.py",
+      "symbol": "_normalize_identity",
+      "astDefinitionLine": 409,
+      "checkerReportedLine": 407,
+      "sourceSha256": "738cfd2da5a58910d7334805fb9bab074ddddfc8c156e4a2a9f4573c6ac51a96"
+    }
+  ],
+  "symbolLineDisposition": "CONFIRMED_BOUNDED_SOURCE_REPRO; MACHINE_CHECK_CANDIDATE; checker unchanged",
+  "decision": "CLOSED_PASS_BOUNDED_DESIGN_ONLY",
+  "plannedCaseExecutions": 0,
+  "historicalSuiteReruns": 0,
+  "codeEdits": 0,
+  "workerRedispatches": 0,
+  "providerCalls": 0,
+  "timing": {
+    "localCorrectionFirstClockUtc": "2026-10-11T09:27:23Z",
+    "wholeReviewMinutes": null,
+    "reason": "review began before first explicit clock; do not invent start or total"
+  },
+  "nativeIdentityUsageBill": "UNKNOWN; operator-requested Haiku/ex high is not observed runtime evidence",
+  "limits": [
+    "No implemented oracle helper or automatic prevention",
+    "Eight cases are plans only",
+    "Five historical code expectations retained as count only",
+    "No measured model ranking or savings",
+    "No knowledge corpus or runtime/provider proof"
+  ],
+  "nextAllowedMove": "STOP_SELECTED_OUTCOME; no automatic successor; helper reopens only on named recurrence or admitted negative-heavy reviewer demand"
+}

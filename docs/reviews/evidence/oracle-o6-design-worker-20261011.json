@@ -1,0 +1,116 @@
+{
+  "schemaVersion": "cvf.oracleO6DesignWorkerEvidence@1.0.0",
+  "batchId": "CVF-ORACLE-O6-DESIGN-20261011",
+  "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_ORACLE_O6_DESIGN_2026-10-11.md",
+  "dispatchBaseHead": "140d73fd65b8d4fca30b609223bb9ff6b63cf5b1",
+  "executionBaseHead": "bd13e1a8057cfbc6c753053b290cd21ee76c45e3",
+  "executionBaseStatus": "clean worktree; empty staged set; released by Local restore commit bd13e1a80",
+  "workerStatusAtWrite": "DESIGN_PENDING_LOCAL_REVIEW",
+  "commitMode": "WORKER_MUST_NOT_COMMIT",
+  "independentProbeDisposition": "PENDING_REVIEWER_EXECUTION",
+  "outputs": [
+    "docs/reference/CVF_ORACLE_O6_INTEGRITY_DESIGN_2026-10-11.md",
+    "docs/reviews/CVF_ORACLE_O6_DESIGN_WORKER_RETURN_2026-10-11.md",
+    "docs/reviews/evidence/oracle-o6-design-worker-20261011.json"
+  ],
+  "sourcePins": [
+    {"path": "docs/work_orders/CVF_AGENT_WORK_ORDER_ORACLE_O6_DESIGN_2026-10-11.md", "sha256": "e65126e390e2b2e78a7350fcb51464c9170365efd50252736b1d47e75b5507ce", "pinned": true, "readDepth": "FULL_READ"},
+    {"path": "docs/baselines/CVF_GC018_ORACLE_O6_DESIGN_2026-10-11.md", "sha256": "f62fc2430e7e507fd1a8527104445368840261d89ccc13c3e131079a22139190", "pinned": true, "readDepth": "FULL_READ"},
+    {"path": "docs/reviews/CVF_MODEL_SELECTION_ORCHESTRATOR_LEARNING_DISPOSITION_2026-10-11.md", "sha256": "3e90e2eddc554966cef77cd3942b541ac411e669bfff974364d908fa644bd94e", "pinned": true, "readDepth": "TARGETED_GREP_OF_O6_FINDING_AND_PROOF_SECTIONS"},
+    {"path": "docs/reviews/evidence/model-selection-orchestrator-learning-20261011.json", "sha256": "814cc0ea040798cbc9835543f98f6dea0abd37a5b1b1c67f48b60503e7b00cea", "pinned": true, "readDepth": "TARGETED_READ_LINES_120_TO_320_AND_GREP"},
+    {"path": "docs/reviews/CVF_MODEL_SELECTION_S2_R2_COMPLETION_2026-10-11.md", "sha256": "12ffc68ef9940260fed89be8ac14d2f349c99cfe145040ad2aa58c583fca22b8", "pinned": true, "readDepth": "FULL_READ"},
+    {"path": "docs/reference/CVF_MODEL_SELECTION_REVIEWED_OUTCOME_PROFILE_2026-10-11.md", "sha256": "612735bf1f27354b9b5e9389239fa9ded6d3aeb9a77bfb4da63da4376eb84c5d", "pinned": true, "readDepth": "FULL_READ"},
+    {"path": "governance/compat/model_selection_reviewed_outcome.py", "sha256": "9526916557ef81654930bac9697bc242d6b8ebf41163b23977b78729392ec0ff", "pinned": true, "readDepth": "TARGETED_SYMBOL_ANCHORS_AND_LITERAL_SCAN"},
+    {"path": "governance/compat/check_independent_review_probe_admission.py", "sha256": "738cfd2da5a58910d7334805fb9bab074ddddfc8c156e4a2a9f4573c6ac51a96", "pinned": true, "readDepth": "TARGETED_SYMBOL_ANCHORS"},
+    {"path": "docs/roadmaps/CVF_ORCHESTRATOR_MODEL_SELECTION_SYSTEM_CHAIN_ROADMAP_2026-10-10.md", "sha256": "172dd1dcaf88b75b415390cab8ad537ce40cc76113e2c8c7d9c854572163b2b2", "pinned": true, "readDepth": "TARGETED_READ_DESIGN_CONTROL_GATE_AND_RECEIVING_AGENT_CONTINUATION"},
+    {"path": "docs/reviews/CVF_O3_LOW_LATENCY_MAINTENANCE_2026-10-11.md", "sha256": "e29f81eda01f7b997c73241a2b68ad4d28a3fce73a8298956ef5945645b47e2e", "pinned": true, "readDepth": "TARGETED_GREP_OF_SECTION_HEADINGS"},
+    {"path": "governance/compat/build_worker_return_skeleton_scaffold.py", "sha256": "1fc5318c26a09d4118e3796db45fa69aea331136a7c9c4a04e95c4868de32a37", "pinned": true, "readDepth": "HASH_ONLY"},
+    {"path": "governance/compat/check_corpus_to_knowledge_map_reconciliation.py", "sha256": "ca368e4bc551924079f2be94ea3fb3acf556be0ef183e773c3a4010562b22000", "pinned": true, "readDepth": "HASH_ONLY"},
+    {"path": "docs/reference/guard_orientation/README.md", "sha256": "3ad845e61de40db20a300adbfdcf61db72cc68a334229ce26315db44fac6af7f", "pinned": false, "readDepth": "FULL_READ"},
+    {"path": "docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md", "sha256": "dcb12ad8df392298ebd54b3cb4a721553387329d9053e26543f1ab0b3d1d8996", "pinned": false, "readDepth": "FULL_READ"},
+    {"path": "docs/reference/review_cost_control/CVF_REVIEW_COST_AND_DIMINISHING_RETURN_CONTROL_STANDARD.md", "sha256": "17d27144c7db34b717633c14428a778b2b00949f62d71e6a1d8f4f9a2bbe8700", "pinned": false, "readDepth": "TARGETED_READ_WORKER_SELF_PROOF_PROBE_BOUNDARY_ORACLE_FINGERPRINT_AND_HEADINGS"},
+    {"path": "governance/compat/check_work_order_acceptance_ledger.py", "sha256": "8b6ce487f01eb432cab16456da98c79f0995468f6a1da8c16765d204cc6a39b4", "pinned": false, "readDepth": "TARGETED_READ_SCHEMA_AND_EVIDENCE_ROWS"},
+    {"path": "governance/compat/check_worker_return_quality_gate.py", "sha256": "c87f1a50dd95af3459e3af1bcc6aaed8e0c1f5cec28e7761a9f3b254f3ec7257", "pinned": false, "readDepth": "TARGETED_READ_CONSTANTS_AND_FAST_DOC_PROFILE"},
+    {"path": "governance/compat/check_review_cost_control.py", "sha256": "82d970a5f89fb33bb4d400ffc64330d1ee54c637a2817295beb781c77d590c6c", "pinned": false, "readDepth": "TARGETED_READ_CONSTANTS_AND_WORKER_RETURN_DIAGNOSIS"},
+    {"path": "governance/compat/check_dispatch_release_readiness.py", "sha256": "4c4247343d406af9ec06d54913c75f573adf9c4b26f080af355d0888dc8caed5", "pinned": false, "readDepth": "TARGETED_READ_DR_04_DR_05_CONDITIONS"},
+    {"path": "docs/reviews/CVF_MODEL_SELECTION_S2_R2_WORKER_RETURN_2026-10-11.md", "sha256": "fdd9d975f5fa03409dd5992fcd9bf5c4521fdd5573e15a670427508c082a3ee8", "pinned": false, "readDepth": "TARGETED_READ_HEADINGS_AND_SELECTED_SECTIONS_AS_TEMPLATE"},
+    {"path": "CVF_SESSION_MEMORY.md", "sha256": "02747c9cbacc961624d8761cccc1a2295602036722ea27e12da8cee25d1e4c60", "pinned": false, "readDepth": "FULL_READ_AT_STARTUP_EARLIER_SESSION"},
+    {"path": ".cvf/runtime/model-selection-s2-r2-20261011/independent_oracle_before_first_run.py", "sha256": "5243b5112746cd226e4558599e37ade7150028ee7bb553683a6e7cc0715e94f6", "pinned": "optional_ignored_historical_input", "readDepth": "TARGETED_READ_FIXTURE_LINES_17_TO_62_AND_CASE_TABLE_GREP", "matchesEvidenceSourceSha256": true}
+  ],
+  "sourceDerivedFindings": {
+    "originalPinObjectAliased": {"sourceRef": "docs/reviews/evidence/model-selection-orchestrator-learning-20261011.json", "pointer": "boundedMechanismProbes.originalOracleMutation", "value": true, "lines": "289-295"},
+    "fixtureSharesProductObject": {"sourceRef": ".cvf/runtime/model-selection-s2-r2-20261011/independent_oracle_before_first_run.py", "lines": "29 and 31", "freshlyVerified": true},
+    "aliasingCaseMutatesInPlace": {"sourceRef": ".cvf/runtime/model-selection-s2-r2-20261011/independent_oracle_before_first_run.py", "lines": "33-37 and 110", "freshlyVerified": true},
+    "validatorLiteralScan": {"method": "static grep of quoted uppercase tokens in governance/compat/model_selection_reviewed_outcome.py", "emittedDiagnosticCodeLiterals": 18, "loaderOrCliCodeLiterals": 8, "oracleUppercaseTokens": 55, "oracleTokensNotValidatorLiterals": ["API_INGESTION", "LOCAL_REVIEWER_CODEX_ROOT"], "nonCodeReason": "API mode label and actor string, not diagnostic codes", "freshlyVerified": true},
+    "countsRetainedNotEnumerated": {"fixtureAliasing": 1, "affectedCases": 2, "diagnosticExpectations": 5, "sourceRef": "docs/reviews/evidence/model-selection-orchestrator-learning-20261011.json", "lines": "257-262", "identitiesEnumerated": false}
+  },
+  "requirementMappings": {
+    "REQ-O6-OWNER": {
+      "designSections": ["Owner And Overlap Map", "Failure Being Designed Against"],
+      "expectedArtifacts": ["docs/reference/CVF_ORACLE_O6_INTEGRITY_DESIGN_2026-10-11.md", "docs/reviews/evidence/oracle-o6-design-worker-20261011.json"],
+      "proofId": "PROOF-REQ-O6-OWNER",
+      "result": "DESIGN_PROPOSED_PENDING_LOCAL_REVIEW"
+    },
+    "REQ-O6-MUTATION": {
+      "designSections": ["Precondition Chain", "Source-Derived Mutation Contract", "Case Matrix"],
+      "expectedArtifacts": ["docs/reference/CVF_ORACLE_O6_INTEGRITY_DESIGN_2026-10-11.md", "docs/reviews/evidence/oracle-o6-design-worker-20261011.json"],
+      "proofId": "PROOF-REQ-O6-MUTATION",
+      "result": "DESIGN_PROPOSED_PENDING_LOCAL_REVIEW"
+    },
+    "REQ-O6-SOURCE": {
+      "designSections": ["Source-Derived Mutation Contract", "Case Matrix", "Failure Being Designed Against"],
+      "expectedArtifacts": ["docs/reference/CVF_ORACLE_O6_INTEGRITY_DESIGN_2026-10-11.md", "docs/reviews/evidence/oracle-o6-design-worker-20261011.json"],
+      "proofId": "PROOF-REQ-O6-SOURCE",
+      "result": "DESIGN_PROPOSED_PENDING_LOCAL_REVIEW"
+    },
+    "REQ-O6-VALUE": {
+      "designSections": ["Alternatives, Value, And Cost", "Rollout And Rollback Proposal"],
+      "expectedArtifacts": ["docs/reference/CVF_ORACLE_O6_INTEGRITY_DESIGN_2026-10-11.md", "docs/reviews/evidence/oracle-o6-design-worker-20261011.json"],
+      "proofId": "PROOF-REQ-O6-VALUE",
+      "result": "DESIGN_PROPOSED_PENDING_LOCAL_REVIEW"
+    },
+    "REQ-O6-RETURN": {
+      "designSections": ["Evidence Limits", "Claim Boundary", "Agent Operation Trace Block"],
+      "expectedArtifacts": ["docs/reference/CVF_ORACLE_O6_INTEGRITY_DESIGN_2026-10-11.md", "docs/reviews/CVF_ORACLE_O6_DESIGN_WORKER_RETURN_2026-10-11.md", "docs/reviews/evidence/oracle-o6-design-worker-20261011.json"],
+      "proofId": "PROOF-REQ-O6-RETURN",
+      "result": "PENDING_WORKER_RETURN_GATE_RUN_RECORDED_IN_RETURN"
+    }
+  },
+  "plannedCases": [
+    {"caseId": "CTRL-VALID", "expectedInvariant": "control record validates with zero diagnostics and exit 0", "executed": false},
+    {"caseId": "TGT-INDEPENDENT-DRIFT", "expectedInvariant": "exactly one REPAIR_ATTRIBUTION at /outcome/acceptedArtifacts; only the declared pointer changes", "executed": false},
+    {"caseId": "ALIAS-BOTH-SIDES", "expectedInvariant": "alias check fails before consumer; two pointers change, so ORACLE_ALIASED_SNAPSHOT", "executed": false},
+    {"caseId": "NOOP-MUTATION", "expectedInvariant": "empty semantic delta, so ORACLE_NO_OP before consumer", "executed": false},
+    {"caseId": "SIBLING-DRIFT", "expectedInvariant": "unintended pointer in delta, so ORACLE_SIBLING_DRIFT before consumer", "executed": false},
+    {"caseId": "CODE-INVENTED", "expectedInvariant": "expected token absent from validator literal set, so ORACLE_CODE_NOT_SOURCE_ASSIGNED", "executed": false},
+    {"caseId": "MALFORMED-SIBLING-RETAINED", "expectedInvariant": "DECISION_JOIN at /outcome/decisionId survives the malformed /decision/candidates subtree; API does not raise", "executed": false},
+    {"caseId": "CONSUMER-ORIGINAL-BYTES", "expectedInvariant": "recorded consumer digest equals control digest, so ORACLE_CONSUMER_INPUT_MISMATCH and no result accepted", "executed": false}
+  ],
+  "unknownFields": {
+    "workerRuntimeIdentity": {"value": null, "reason": "host did not expose observed runtime identity to this session"},
+    "effortNormalization": {"value": null, "reason": "operator-reported label ex high; host normalization not exposed"},
+    "tokenUsage": {"value": null, "reason": "native underlying usage not exposed to this session"},
+    "bill": {"value": null, "reason": "no billing surface exposed to this session"},
+    "providerRequestCount": {"value": 0, "reason": "observed: this worker made no provider or network call"}
+  },
+  "clocks": {
+    "workerClockFirstObservedUtc": "2026-10-11T09:17:39Z",
+    "workerClockFirstObservedBasis": "first clock capture after bd13e1a80 release check; earlier worker start is not observable",
+    "preImplementationGateRecords": [
+      {"executionBase": "aa32f66620fed1eef871a5e9f64e3feb819d7ed2", "exit": 1, "failingGate": "dispatch release readiness", "violations": ["DR-04", "DR-05"], "durationSeconds": 12.52, "disposition": "superseded; Local restored continuity at bd13e1a80"},
+      {"executionBase": "bd13e1a8057cfbc6c753053b290cd21ee76c45e3", "exit": 0, "durationSeconds": 12.47, "receipt": ".cvf/runtime/autorun-receipts/pre-implementation.json", "disposition": "COMPLIANT; authoring permitted"}
+    ],
+    "finalGateRecord": "recorded in the worker return Command Evidence section after the final bytes; this file is not edited after the final gate run"
+  },
+  "forbiddenEffectsObserved": {
+    "providerCalls": 0,
+    "networkWrites": 0,
+    "publicWrites": 0,
+    "deployment": 0,
+    "realDataMutation": 0,
+    "hookWiring": 0,
+    "subagents": 0,
+    "commits": 0,
+    "checkerOrCodeEdits": 0
+  }
+}

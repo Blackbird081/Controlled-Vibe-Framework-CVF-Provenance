@@ -2,7 +2,7 @@
 
 Memory class: governed-dispatch-baseline
 docType: baseline
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 Date: 2026-10-11
 Batch ID: CVF-ORACLE-O6-DESIGN-20261011
 Dispatch base head: 140d73fd65b8d4fca30b609223bb9ff6b63cf5b1
@@ -115,3 +115,29 @@ Material phase exact manifest: `docs/baselines/CVF_GC018_ORACLE_O6_DESIGN_2026-1
 ## Epistemic Process Block
 
 EPISTEMIC_PROCESS_NA_WITH_REASON: normative authorization baseline; selection reasoning and limits are in the paired order; no worker outcome is observed.
+
+## Local Closure Disposition (2026-10-11)
+
+CLOSED_PASS_BOUNDED: accepted documentary checklist after one Local contract clarification; opt-in helper deferred with named recurrence/demand trigger; global gate rejected. Original worker return/evidence retained. Eight planned cases remain unexecuted. Worker source pins describe the admitted packet version; updated packet hashes bind this closer disposition. No automatic successor.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_ORACLE_O6_DESIGN_2026-10-11.md` | Status CLOSED_PASS_BOUNDED | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_ORACLE_O6_DESIGN_COMPLETION_2026-10-11.md` | decision CLOSED_PASS_BOUNDED_DESIGN_ONLY; Local source review | PASS |
+| Roadmap state | `docs/roadmaps/CVF_ORCHESTRATOR_MODEL_SELECTION_SYSTEM_CHAIN_ROADMAP_2026-10-10.md` | existing S5 PARKED_DEMAND_GATED retained; O6 is a finite subordinate design | PASS parent state retained |
+| Registry JSON | `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | currentAuthority pins the closed packet; source projection regenerated; no scan registry created | PASS active authority closure binding |
+| Registry Markdown | `docs/reviews/CVF_ORACLE_O6_DESIGN_COMPLETION_2026-10-11.md` | finite Local acceptance and deferred candidate disposition; no corpus inventory | PASS bounded Local disposition |
+| External evidence digest | `docs/reviews/evidence/oracle-o6-design-local-review-20261011.json` | sha256:2056b1a9aafc877b6d26ba2025beef8826128b2810579b3e1a5e735182c9ae17; original worker hashes and accepted design hash; internal evidence only | PASS |
+| System loop interlock | existing parked effects | N/A with reason: no runtime loop or helper implementation | N/A with reason: no loop transition |
+| Session continuity | exact six source/generated paths | material authority hashes regenerated; separate actual-SHA next-move/handoff sync before final closure | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| Worker ownership | three documentary outputs; no worker commit | three untracked outputs before Local review | PASS |
+| Design versus execution | proposed cases only | eight plans, zero case executions; helper deferred | PASS |
+| Source and custody | retained initial evidence, different Local review actor | original worker hashes and Local evidence; worker return/evidence preserved | PASS |
+| Parent authority | parked runtime effects and no automatic successor | subordinate design accepted only; parent unchanged | PASS |
