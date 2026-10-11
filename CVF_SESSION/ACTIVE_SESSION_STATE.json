@@ -36,12 +36,12 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_MFRP_CONTINUITY_COLLECTION_DESIGN_2026-10-11.md",
-    "baselineSha256": "400736b3023763e0958bb13b70c4cb98c938cab9946f58b3d0138ae66394398a",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_CONTINUITY_COLLECTION_DESIGN_2026-10-11.md",
-    "workOrderSha256": "b2b686e046228bf0440c0d8676bb65ab9f38fbb645e5cf460c51f8e4bc98e8c9"
+    "baselinePath": "docs/baselines/CVF_GC018_NCR_HOME_HISTORY_BINDING_2026-10-11.md",
+    "baselineSha256": "c0ad83b191dc13992ca4fc085918b863aae8857707b65eed10e6c96673c977ef",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HOME_HISTORY_BINDING_2026-10-11.md",
+    "workOrderSha256": "45a65d204fefe07cfdaccb6ef777685279fb9fc90fdc9a2b13d45dea5c8ac38e"
   },
-  "currentAuthoritySyncReason": "Actual corrective material 8284746865a3d3b464b1d5ee2def273b7e58b3c8; original material d4851874bdbe853f1f4946b604704f2ac76b5e73; exact6 private closure, valid safety adjudication retained; collection15 and worker procedure limits unchanged.",
+  "currentAuthoritySyncReason": "Operator audit-and-choose selects bounded Home history result/action binding; source red retained, matching private dispatch packet projections; actual-SHA six-path continuity follows.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",

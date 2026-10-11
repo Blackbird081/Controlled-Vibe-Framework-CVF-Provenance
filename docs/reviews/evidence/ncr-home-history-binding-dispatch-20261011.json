@@ -1,0 +1,131 @@
+{
+  "schemaVersion": "cvf.localDispatchEvidence@1.0.0",
+  "batchId": "CVF-NCR-HOME-HISTORY-BINDING-20261011",
+  "authoringBaseHead": "35b2f9f1cdb579a6078513dd74382f339f85dbd6",
+  "role": "LOCAL_INTERNAL_AGENT_DISPATCHER",
+  "phase": "SOURCE_AUDIT_AND_PACKET_SELECTION",
+  "decisionOwner": "LOCAL",
+  "consumer": "user reopening accepted local work and following up in existing Home flow",
+  "selectedOutcome": "consistent displayed execution/output and decision/follow-up identity for resumed historical work",
+  "sourcePins": [
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.tsx",
+      "sha256": "a0a3f5b9de756553ad7d9efdc52a99e0d0c577b69ff29529dc5ef9969a7e6929"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.test.tsx",
+      "sha256": "7d24ffcd8fd9c0fddb738af981213fe7d27dafad9ea9125399b87cb086815afa"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/store.ts",
+      "sha256": "f5deb700c631c680924d3ba74fd1c56ef862e99703fe59c461828a8a64953c06"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execution-continuity.ts",
+      "sha256": "3faf1a73620fc37853736a832c4b59ed02df557e18ec81bdc856089e722ea09a"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/types/index.ts",
+      "sha256": "924e0ba06697be1de5501f0a8e5d03b73d18da9e86c52482cbfc585ba0d56a85"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/history/page.tsx",
+      "sha256": "4c648e373be11e271ead6e69043f312724dc674b14ad908629c9a83b1efb8629"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.tsx",
+      "sha256": "37c3f811593426e631bd50891931d363a460a943b5c012bdb7796d9923911bd1"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/vitest.config.ts",
+      "sha256": "9a4a65976b5b7a5d038f9cb412a90d417f804108cf1dd33bae4421989a863420"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/test/setup.ts",
+      "sha256": "bc573b2a6133b07404c42f797bce43fe73464711e0281f29da8234bf2fed6b27"
+    },
+    {
+      "path": "docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md",
+      "sha256": "10ee4c86eaf1d5c468250ed569307f5af5ad98dade82400fcffa5ea3fdc7de62"
+    },
+    {
+      "path": "docs/reviews/CVF_ORACLE_O6_DESIGN_COMPLETION_2026-10-11.md",
+      "sha256": "e92b67a5d6c4d47e82291c6018de113de1f13def576b9bcbd71c45e83375d518"
+    },
+    {
+      "path": "governance/compat/run_worker_return_scaffold.py",
+      "sha256": "fd2f492b5c5468ce2545925a22264b663768eba126255d91eb7a02be029c2501"
+    }
+  ],
+  "sourceFinding": {
+    "restoreOwner": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.tsx",
+    "restoreSection": "effect following W123-T1 restore result state comment",
+    "displayAndActionOwner": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.tsx",
+    "displaySection": "ResultViewer invocation; handleAccept; handleReject; handleFollowUp",
+    "storeOwner": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/store.ts",
+    "storeSections": [
+      "addExecution sets currentExecution",
+      "setCurrentExecution",
+      "getExecutionById"
+    ],
+    "historyOwner": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/history/page.tsx",
+    "historySection": "router.push with continue query",
+    "expected": "fixture_A|OUTPUT_A",
+    "observed": "fixture_B|OUTPUT_A",
+    "result": "CONFIRMED_OFFLINE_COMPONENT_BINDING_DEFECT",
+    "historyQualification": "Existing History onContinue calls setCurrentExecution(A) before navigation and is iteration-memory flag gated. It mitigates the warm normal click. Home remains unbound on direct historical URL, null selection after reload (currentExecution not persisted), or later ambient selection change. No flag is activated and no full normal-click failure is asserted."
+  },
+  "reproduction": {
+    "command": "node EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/node_modules/vitest/vitest.mjs run --config .cvf/runtime/ncr-home-history-dispatch-20261011/reproduce.config.mjs",
+    "exitCode": 1,
+    "testCount": 1,
+    "assertionCount": 1,
+    "result": "EXPECTED_RED_ASSERTION",
+    "oracleRawUtf8": "import React from 'react';\nimport { describe, it, expect, vi } from 'vitest';\nimport { render, screen } from '@testing-library/react';\nimport { useExecutionStore } from '@/lib/store';\nimport { templates } from '@/lib/templates';\nimport HomePage from '@/app/(dashboard)/home/page';\n\nvi.mock('next/navigation', () => {\n  const params = new URLSearchParams('continue=fixture_A');\n  return { useSearchParams: () => params };\n});\nvi.mock('@/lib/i18n', () => ({ useLanguage: () => ({ language: 'en', t: (key: string) => key }) }));\nvi.mock('@/lib/analytics', () => ({ trackEvent: vi.fn() }));\nvi.mock('@/components/Settings', () => ({ useSettings: () => ({ settings: { providers: {} } }) }));\nvi.mock('@/lib/hooks/useExecute', () => ({ useProviders: () => ({ providers: [], anyConfigured: false, fetchProviders: vi.fn() }) }));\nvi.mock('@/components/home/HomeBrowseExperience', () => ({ HomeBrowseExperience: () => <div>browse</div> }));\nvi.mock('@/components', () => ({\n  ResultViewer: ({ execution, output }: any) => <div data-testid=\"view\">{execution.id}|{output}</div>,\n  TemplatePreviewModal: () => null,\n  OnboardingTour: () => null,\n}));\n\ndescribe('Local source-derived Home resume contradiction', () => {\n  it('binds restored A output to A even when latest current execution is B', () => {\n    const template = templates.find(t => !t.isFolder && t.id === 'documentation')!;\n    expect(template).toBeTruthy();\n    const base = { templateId: template.id, templateName: template.name, category: template.category,\n      input: {}, intent: 'synthetic only', status: 'completed' as const, createdAt: new Date('2026-10-11T00:00:00Z') };\n    const a = { ...base, id: 'fixture_A', output: 'OUTPUT_A', result: 'accepted' as const };\n    const b = { ...base, id: 'fixture_B', output: 'OUTPUT_B' };\n    useExecutionStore.setState({ executions: [b, a], currentExecution: b });\n    render(<HomePage />);\n    expect(screen.getByTestId('view').textContent).toBe('fixture_A|OUTPUT_A');\n  });\n});\n",
+    "oracleSha256": "26c2fa4e6aca090217fe1ea8f1f641959a4f7aa7f4f365d0a5888e7e6dd5edf8",
+    "configRawUtf8": "import path from 'node:path';\nimport { fileURLToPath } from 'node:url';\nconst directory = path.dirname(fileURLToPath(import.meta.url));\nconst web = path.resolve(directory, '../../../EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web');\nexport default {\n  root: web,\n  resolve: { alias: { '@': path.join(web, 'src'), 'next/navigation': path.join(web, 'node_modules/next/navigation.js'), react: path.join(web, 'node_modules/react'), '@testing-library/react': path.join(web, 'node_modules/@testing-library/react') } },\n  test: { environment: 'jsdom', setupFiles: [path.join(web, 'src/test/setup.ts')], include: [path.join(directory, 'reproduce.test.tsx').replaceAll('\\\\', '/')], testTimeout: 15000, env: { CVF_LIVE_TEST_SELECTION: '0' } },\n};\n\n",
+    "logRawUtf8": "\n RUN  v4.1.8 D:/UNG DUNG AI/TOOL AI 2026/Controlled-Vibe-Framework-CVF/EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web\n\n \u276f ../../../.cvf/runtime/ncr-home-history-dispatch-20261011/reproduce.test.tsx (1 test | 1 failed) 43ms\n     \u00d7 binds restored A output to A even when latest current execution is B 41ms\n\n\u23af\u23af\u23af\u23af\u23af\u23af\u23af Failed Tests 1 \u23af\u23af\u23af\u23af\u23af\u23af\u23af\n\n FAIL  ../../../.cvf/runtime/ncr-home-history-dispatch-20261011/reproduce.test.tsx > Local source-derived Home resume contradiction > binds restored A output to A even when latest current execution is B\nAssertionError: expected 'fixture_B|OUTPUT_A' to be 'fixture_A|OUTPUT_A' // Object.is equality\n\nExpected: \"fixture_A|OUTPUT_A\"\nReceived: \"fixture_B|OUTPUT_A\"\n\n \u276f ../../../.cvf/runtime/ncr-home-history-dispatch-20261011/reproduce.test.tsx:33:52\n     31|     useExecutionStore.setState({ executions: [b, a], currentExecution:\u2026\n     32|     render(<HomePage />);\n     33|     expect(screen.getByTestId('view').textContent).toBe('fixture_A|OUT\u2026\n       |                                                    ^\n     34|   });\n     35| });\n\n\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af[1/1]\u23af\n\n\n Test Files  1 failed (1)\n      Tests  1 failed (1)\n   Start at  22:25:11\n   Duration  9.17s (transform 1.66s, setup 7.12s, import 877ms, tests 43ms, environment 926ms)\n\n",
+    "logSha256": "7f7e1b7515c1e57149c0573cff05d16c486dc2a0b9795fa3060bb8decc306687",
+    "limits": "actual Home and real execution store; lightweight ResultViewer/transport/settings mocks; synthetic A/B; no browser or provider proof"
+  },
+  "localHarnessFailures": [
+    {
+      "file": "reproduce-harness-fail-1.log",
+      "rawUtf8": "Both esbuild and oxc options were set. oxc options will be used and esbuild options will be ignored. The following esbuild options were set: `{ jsx: 'automatic' }`\n\n RUN  v4.1.8 D:/UNG DUNG AI/TOOL AI 2026/Controlled-Vibe-Framework-CVF/EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web\n\nNo test files found, exiting with code 1\n\ninclude: D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-home-history-dispatch-20261011\\reproduce.test.tsx\nexclude:  **/node_modules/**, **/.git/**\n\n",
+      "sha256": "eef6f585abd615e8770c4a41d5292e6af3062813ab8e778bf00670f236c71994",
+      "owner": "LOCAL",
+      "excludedFromWorkerBurden": true
+    },
+    {
+      "file": "reproduce-harness-fail-2.log",
+      "rawUtf8": "Both esbuild and oxc options were set. oxc options will be used and esbuild options will be ignored. The following esbuild options were set: `{ jsx: 'automatic' }`\n\n RUN  v4.1.8 D:/UNG DUNG AI/TOOL AI 2026/Controlled-Vibe-Framework-CVF/EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web\n\n \u276f ../../../.cvf/runtime/ncr-home-history-dispatch-20261011/reproduce.test.tsx (1 test | 1 failed) 81ms\n     \u00d7 binds restored A output to A even when latest current execution is B 76ms\n\n\u23af\u23af\u23af\u23af\u23af\u23af\u23af Failed Tests 1 \u23af\u23af\u23af\u23af\u23af\u23af\u23af\n\n FAIL  ../../../.cvf/runtime/ncr-home-history-dispatch-20261011/reproduce.test.tsx > Local source-derived Home resume contradiction > binds restored A output to A even when latest current execution is B\nTypeError: Cannot read properties of null (reading 'get')\n \u276f src/app/(dashboard)/home/page.tsx:286:41\n    284|\n    285|     useEffect(() => {\n    286|         const templateId = searchParams.get('template')?.trim();\n       |                                         ^\n    287|         const category = searchParams.get('category')?.trim();\n    288|         const launchKey = `${templateId || ''}|${category || ''}`;\n \u276f Object.react_stack_bottom_frame node_modules/react-dom/cjs/react-dom-client.development.js:25989:20\n \u276f runWithFiberInDEV node_modules/react-dom/cjs/react-dom-client.development.js:874:13\n \u276f commitHookEffectListMount node_modules/react-dom/cjs/react-dom-client.development.js:13249:29\n \u276f commitHookPassiveMountEffects node_modules/react-dom/cjs/react-dom-client.development.js:13336:11\n \u276f commitPassiveMountOnFiber node_modules/react-dom/cjs/react-dom-client.development.js:15484:13\n \u276f recursivelyTraversePassiveMountEffects node_modules/react-dom/cjs/react-dom-client.development.js:15439:11\n \u276f commitPassiveMountOnFiber node_modules/react-dom/cjs/react-dom-client.development.js:15519:11\n \u276f flushPassiveEffects node_modules/react-dom/cjs/react-dom-client.development.js:18432:9\n \u276f node_modules/react-dom/cjs/react-dom-client.development.js:17923:15\n\n\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af[1/1]\u23af\n\n\n Test Files  1 failed (1)\n      Tests  1 failed (1)\n   Start at  22:23:28\n   Duration  58.54s (transform 8.40s, setup 20.62s, import 2.48s, tests 81ms, environment 34.67s)\n\n",
+      "sha256": "2f19fe3561ffc505fd8d53f67541b253034fb84e43f95834e424a661d9a67210",
+      "owner": "LOCAL",
+      "excludedFromWorkerBurden": true
+    }
+  ],
+  "branchDisposition": {
+    "MFRP_STRUCTURAL_COLLECTION": "DEFERRED_WITH_REASON_NO_CURRENT_VALUE_CASE",
+    "O6_HELPER": "DEFERRED_WITH_REASON_NO_NEW_RECURRENCE",
+    "S5": "PARKED_DEMAND_GATED",
+    "Expense": "PARKED_BY_OPERATOR",
+    "sourceR2_media_provider_public_deploy_P11": "PARKED",
+    "selected": "NCR_EXISTING_HOME_HISTORY_BINDING_REPAIR"
+  },
+  "collection": {
+    "reviewedTaskObservations": 15,
+    "haikuFamily": 9,
+    "sonnet": 2,
+    "luna": 4,
+    "currentWorkerNotCountedBeforeReview": true,
+    "opusSameSessionAdvisoryExcluded": true,
+    "benchmarkOrRankingClaim": false
+  },
+  "nativeUsage": {
+    "identity": null,
+    "tokens": null,
+    "bill": null,
+    "reason": "not exposed; requested labels do not observe native runtime"
+  },
+  "claimBoundary": "offline local UI binding evidence only; no real-provider governance, release, durable approval or runtime activation claim"
+}
