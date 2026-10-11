@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HOME_HISTORY_BINDING_2026-10-11.md",
     "workOrderSha256": "228258aa63bdd5b3f8afeab15f37059e3803fcced0f64b0b10a0314b0bdfc128"
   },
-  "currentAuthoritySyncReason": "Home material745502c1c1885bba5beebb291869f80e0b461ec2; exact6 terminal continuity, selected-run repair accepted technically with procedureFAIL retained. Collection16, original4 preserved, Local persistence claim corrected, no automatic successor/push.",
+  "currentAuthoritySyncReason": "Post-closure quality clarification materialf2fcfdecd0df7e15e71a970089bae8f41416c6f7; same16 observations and Home product closure745502c1c, procedureFAIL retained; packet raw pins unchanged; exact6 terminal continuity, no new worker/checker/effect.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
