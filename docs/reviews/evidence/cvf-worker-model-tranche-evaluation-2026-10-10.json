@@ -4,7 +4,7 @@
   "status": "ACTIVE_LOCAL_REVIEWED_LEDGER",
   "decisionOwner": "LOCAL_REVIEWER",
   "purpose": "Longitudinal worker evidence for model selection by role and task family in a future multi-agent use case. No agent invocation or automatic routing.",
-  "identityBasis": "ALL_MODEL_LABELS_OPERATOR_REPORTED_NOT_INDEPENDENTLY_VERIFIED",
+  "identityBasis": "MODEL_LABELS_OPERATOR_REPORTED_OR_WORKER_SELF_REPORTED_NOT_RUNTIME_VERIFIED",
   "sourceHead": "1a1de1a28decf163ed64a84a496831f5f1d1989d",
   "rows": [
     {
@@ -351,6 +351,9 @@
         "Finite lexical anchor repair, not general parser correctness",
         "CRLF file consumer normalizes newlines; direct strings cover CRLF",
         "No ranking, time saving, actual cost saving or parallel-subagent experiment"
+      ],
+      "localOwnedDefects": [
+        "Local completion bound test/oracle digests to JSON refs; committed-range gate rejected it; Local metadata-only correction, no worker fault or code repair"
       ]
     }
   ],

@@ -52,8 +52,8 @@ implementationWorkerActor: INTERNAL_AGENT_SYMBOL_LINE_WORKER
 probeExecutorActor: LOCAL_REVIEWER_CODEX_ROOT
 workerInvocationId: symbol-line-anchor-fix-worker-20261011
 probeInvocationId: symbol-line-anchor-fix-local-review-20261011
-workerOracleSha256: dcdff06851d4fc15c331a69e54931302a35f69c7e5515d61e4dc4ea7e4bbeeb9
-probeOracleSha256: b288cd970372d622d40469d61ee64f5dff5d259b99a41920037973c5bd0a783f
+workerOracleSha256: 7f11c4728427c5e54a6ec15f7fd21d529bda53b9f405faec8305e22703cfbf20
+probeOracleSha256: 88fc422144627db40181584c88b1a546950f7bd6bb6271e3932829927c776984
 workerEvidenceRef: docs/reviews/evidence/symbol-line-anchor-fix-worker-20261011.json
 probeEvidenceRef: docs/reviews/evidence/symbol-line-anchor-fix-local-review-20261011.json
 probeCommandOrMethod: python .cvf/runtime/symbol-line-anchor-fix-20261011/local_review_probe.py
@@ -131,9 +131,9 @@ Rollback boundary: preserve original worker/evidence history; bounded forward co
 | Claim boundary | deterministic source verification and worker evidence; no observed identity/economics/live/public claim |
 | Agent type | INTERNAL_AGENT |
 | Invocation ID | symbol-line-anchor-fix-local-review-20261011 |
-| Expected manifest | `governance/compat/check_work_order_dispatch_quality_source.py`; `governance/compat/test_check_work_order_dispatch_quality_source.py`; `docs/reviews/CVF_SYMBOL_LINE_ANCHOR_FIX_WORKER_RETURN_2026-10-11.md`; `docs/reviews/evidence/symbol-line-anchor-fix-worker-20261011.json`; `docs/reviews/CVF_SYMBOL_LINE_ANCHOR_FIX_COMPLETION_2026-10-11.md`; `docs/reviews/evidence/symbol-line-anchor-fix-local-review-20261011.json`; `docs/work_orders/CVF_AGENT_WORK_ORDER_SYMBOL_LINE_ANCHOR_FIX_2026-10-11.md`; `docs/baselines/CVF_GC018_SYMBOL_LINE_ANCHOR_FIX_2026-10-11.md`; `docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json`; `docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Actual changed set | `governance/compat/check_work_order_dispatch_quality_source.py`; `governance/compat/test_check_work_order_dispatch_quality_source.py`; `docs/reviews/CVF_SYMBOL_LINE_ANCHOR_FIX_WORKER_RETURN_2026-10-11.md`; `docs/reviews/evidence/symbol-line-anchor-fix-worker-20261011.json`; `docs/reviews/CVF_SYMBOL_LINE_ANCHOR_FIX_COMPLETION_2026-10-11.md`; `docs/reviews/evidence/symbol-line-anchor-fix-local-review-20261011.json`; `docs/work_orders/CVF_AGENT_WORK_ORDER_SYMBOL_LINE_ANCHOR_FIX_2026-10-11.md`; `docs/baselines/CVF_GC018_SYMBOL_LINE_ANCHOR_FIX_2026-10-11.md`; `docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json`; `docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Manifest delta | MATCH |
+| Expected manifest | N/A with reason: multi-commit Local correction; original 13-path material manifest and current two-path correction are independently reconciled under Local adjudication below. |
+| Actual changed set | N/A with reason: multi-commit Local correction; original 13-path material manifest and current two-path correction are independently reconciled under Local adjudication below. |
+| Manifest delta | N/A with reason: multi-commit Local correction; original 13-path material manifest and current two-path correction are independently reconciled under Local adjudication below. |
 | Deletion or rename disposition | N/A with reason: none |
 
 ## External Knowledge Intake Routing
@@ -217,3 +217,15 @@ Disposition: AUTHORIZED_EXACT_MANIFEST
 Atomicity reason: closed order/baseline and their currentAuthority raw pins must move together with accepted material and authorized model evidence; actual-SHA handoff/next move follows separately. Worker ownership remains four paths.
 Rollback boundary: preserve original worker artifacts/evidence history and restore matching source/packet/pins with any bounded forward correction.
 Exact changed manifest: `governance/compat/check_work_order_dispatch_quality_source.py`; `governance/compat/test_check_work_order_dispatch_quality_source.py`; `docs/reviews/CVF_SYMBOL_LINE_ANCHOR_FIX_WORKER_RETURN_2026-10-11.md`; `docs/reviews/evidence/symbol-line-anchor-fix-worker-20261011.json`; `docs/reviews/CVF_SYMBOL_LINE_ANCHOR_FIX_COMPLETION_2026-10-11.md`; `docs/reviews/evidence/symbol-line-anchor-fix-local-review-20261011.json`; `docs/work_orders/CVF_AGENT_WORK_ORDER_SYMBOL_LINE_ANCHOR_FIX_2026-10-11.md`; `docs/baselines/CVF_GC018_SYMBOL_LINE_ANCHOR_FIX_2026-10-11.md`; `docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json`; `docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+
+## Local Binding Correction And MFRP Safety Adjudication
+
+Reviewer/closer disposition: ADJUDICATED_LOCAL_EVIDENCE_BINDING_ERROR_BOUNDED_CORRECTION_ALLOWED.
+
+The first committed material 7efca5aba and its continuation af2ac5696 remain in history. Post-commit MFRP collector correctly rejected the two Local-written digest fields: they identified the test/oracle script while their evidence refs named JSON files. The fresh technical probe, source/test bytes and original worker return were valid. Correct only those JSON-ref bindings; script/test hashes remain retained inside Local evidence. This is Local review packaging overhead, never a Haiku repair or model failure.
+
+Safety marker code UNSAFE_AUTORUN_RECEIPT_GENERATION_FAILED; original raw SHA256 26b8f619d7f36d2e116dff739b9a17d27da4245e781c4e495aea97127b5a8413. Original marker copy and failure logs retained under the existing ignored runtime scope. After direct evidence-ref verification passes, the Local reviewer may clear this marker for the current two-file correction and matching continuity only. No collector/hook/predicate changed; journal attempt remains. Owner: `docs/roadmaps/CVF_GCLH_MACHINE_FIRST_REVIEW_PREFLIGHT_ROADMAP_2026-09-01.md`, activated P4-C1 collector contract and reviewer safety adjudication; required reviewer evidence is supplied here. The nonterminal collector work order is an active policy owner, not a dependency closed by this tranche.
+
+Original material exact manifest is retained in this artifact's Mixed Protected-Path Atomicity Authorization and in the Local ignored manifest; `git diff --name-only 1a1de1a28..7efca5aba` reconciles all 13 paths. Current corrective exact manifest: `docs/reviews/CVF_SYMBOL_LINE_ANCHOR_FIX_COMPLETION_2026-10-11.md`; `docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json`. The ledger's inherited global identity-basis label is clarified to include worker self-report, consistently with existing row-level native-identity unknowns. Add the Local binding mistake to this row's Local-owned attribution; original six rows and technical evidence hash retained.
+
+The operation trace's manifest fields are N/A for a single-range comparison because this acceptance now spans original and corrective material plus separate continuity. The explicit per-batch manifests above and read-only git reconciliation supply actual scope evidence. No scope grant or source result is inferred from that N/A. Final committed-range gates are rerun after bounded correction and clean continuity; worker tests are consumed rather than replayed.
