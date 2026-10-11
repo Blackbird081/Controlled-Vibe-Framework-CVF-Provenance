@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_ORACLE_O6_DESIGN_2026-10-11.md",
     "workOrderSha256": "e65126e390e2b2e78a7350fcb51464c9170365efd50252736b1d47e75b5507ce"
   },
-  "currentAuthoritySyncReason": "Operator delegated Local branch audit/selection and assigned manual Haiku ex high worker. O6 documentary design packet material f9b2b67f1a7683728f729ba77b269d69ae8bf0d5; actual-SHA continuity recorded separately. No dispatcher worker invocation; original O3/S2-R2 evidence and parked effects retained.",
+  "currentAuthoritySyncReason": "Operator delegated Local branch audit/selection and assigned manual Haiku ex high worker. O6 documentary design packet material f9b2b67f1a7683728f729ba77b269d69ae8bf0d5; actual-SHA continuity recorded separately. No dispatcher worker invocation; original O3/S2-R2 evidence and parked effects retained. O6 continuity rebind after provenance handoff marker displaced dispatch release (DR-04/DR-05); provenance lane closed at aa32f66620fed1eef871a5e9f64e3feb819d7ed2. Packet hashes unchanged; six surfaces synchronize atomically before bound redispatch.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
