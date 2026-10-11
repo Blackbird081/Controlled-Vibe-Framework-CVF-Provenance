@@ -145,7 +145,7 @@ docs/reviews/evidence/model-selection-design-review-20261010/ with intake hashes
 | Claim | Required proof | Current evidence | Status |
 |---|---|---|---|
 | Proposed responsibilities map to existing owners | STATIC_SOURCE_VERIFIED | original review, same-reviewer confirmation and Local R1-B1 paragraph check | PROVEN at bounded design/source level only; no runtime enforcement |
-| Strict record joins reject bad identity/units/drift | LOCAL_DETERMINISTIC_EXECUTION | proposed negative matrix only | MISSING |
+| Strict record joins reject bad identity/units/drift | LOCAL_DETERMINISTIC_EXECUTION | `docs/reviews/CVF_MODEL_SELECTION_S2_R1_COMPLETION_2026-10-11.md`; locked optional offline slice, 24 focused tests and 65 independent CLI/API probes | PROVEN_BOUNDED_OFFLINE; full R3 families/runtime/source authenticity unproved |
 | Orchestrator selects and actual worker executes selected configuration | CURRENT_RUNTIME_INVOCATION; REAL_PROVIDER_BOUNDED where provider is in chain | six prior worker outcomes without this decision chain | MISSING |
 | Evidence/control is used in a later selection | actual later decision/action/review; typed application only for parent controls | `docs/reviews/CVF_MODEL_SELECTION_S4_R1_COMPLETION_2026-10-11.md`; LOCAL_OBSERVATION packet-completeness action/result verified | PROVEN_BOUNDED_MANUAL; no typed parent control or measured effectiveness |
 | Lower accepted-delivery cost | comparable complete measured stage receipts | bills/reviewer cost unknown | MISSING |
@@ -164,7 +164,7 @@ invoices. Do not infer superiority from assertion counts or these six acceptance
 
 ## Receiving-Agent Continuation
 
-Consume `docs/reviews/CVF_MODEL_SELECTION_S4_R1_COMPLETION_2026-10-11.md` and `docs/reviews/evidence/model-selection-s4-r1-local-review-20261011.json` for the bounded S4-R1 result. The accepted guide is a manual continuation aid under the R3 proposals; it is not an executable selector. Local owns final disposition. Requested Luna/xhigh, first FAILs, two worker self-repairs, one Local repair and null identity/usage remain distinct evidence. Do not require a Non coder model picker. No further task is automatically opened: S2-R1 optional offline slice is accepted below; other R3 branches need fresh value/packet, S5 needs separate runtime demand and authority. Expense and provider/public/deploy effects remain parked. Source S3 observation is PARTIAL packet-mechanism evidence with its historical failed-range limitation; no global ledger or frozen review is rewritten.
+Consume `docs/reviews/CVF_MODEL_SELECTION_S2_R1_COMPLETION_2026-10-11.md` for the accepted optional offline slice, and `docs/reviews/CVF_WORKER_MODEL_USAGE_OBSERVATION_SUPPLEMENT_2026-10-11.md` for the current source-scoped worker observation view. S3/S4 original completions retain their historical boundaries. The accepted guide is a manual continuation aid under the R3 proposals; it is not an executable selector. Local owns final disposition. Requested Luna/xhigh, first FAILs, two worker self-repairs, one Local repair and null identity/usage remain distinct evidence. Do not require a Non coder model picker. No further task is automatically opened: S2-R1 optional offline slice is accepted below; other R3 branches need fresh value/packet, S5 needs separate runtime demand and authority. Expense and provider/public/deploy effects remain parked. Source S3 observation is PARTIAL packet-mechanism evidence with its historical failed-range limitation; no global ledger or frozen review is rewritten.
 
 ## Checker Source Read-Ahead Block
 
@@ -186,11 +186,10 @@ Named responsibilities and unresolved proof are above.
 
 Expected Result / Prediction: a bounded evidence chain can support orchestrator-owned
 choice and observable learning while keeping technical choices away from the Non coder.
-Evidence Comparison: existing owners and preliminary observations support a design;
-the admitted S4-R1 manual guide task now has independent bounded action/result verification; no automated selection invocation is proved.
+Evidence Comparison: existing owners and reviewed manual tasks support the design; S4 action/result and S2-R1 offline consistency are accepted bounded. No automated selection invocation is proved.
 Contradiction Or Gap Disposition: runtime admission, identity capture, measured cost
 and learning effectiveness remain unproven and require separate scoped work.
-Claim Update: DESIGN_DRAFT; no accepted implementation, operating selector or savings.
+Claim Update: DESIGN_DRAFT overall; S2-R1 optional offline validator accepted bounded. Operating selector, full R3 families and savings remain unproved.
 
 ## Dual Agent Surface Matrix
 
@@ -291,3 +290,7 @@ Fresh operator continuation selects an offline optional validator for the actual
 ## S2-R1 Local Disposition
 
 `docs/reviews/CVF_MODEL_SELECTION_S2_R1_COMPLETION_2026-10-11.md` accepts the optional standalone offline slice only. Actual wrong-token rejection and useful source-pinned example/guide independently verified; declared consistency is not live governance or source authentication. Requested Luna/xhigh and unknown runtime identity/bill remain separate. Root/worker/reviewer corrections retained. Full outcome/PLL/score/Gateway and S5 unopened; overall DESIGN_DRAFT, no automatic successor.
+
+## Current Observation Visibility
+
+`docs/reviews/CVF_WORKER_MODEL_USAGE_OBSERVATION_SUPPLEMENT_2026-10-11.md` references six historical UI rows and three later S3/S4/S2 tasks, with source pins and separate worker/Local burden. This is not nine independent/matched samples or a model ranking. Only current proof/continuation statements above are reconciled; historical trace/claim blocks remain source-scoped. No implementing work order or S5 successor opens from this supplement.

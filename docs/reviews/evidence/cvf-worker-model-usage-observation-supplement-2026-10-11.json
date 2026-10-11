@@ -1,0 +1,335 @@
+{
+  "recordKind": "DERIVED_LOCAL_OBSERVATION_SUPPLEMENT",
+  "asOf": "2026-10-11",
+  "baseCommit": "e5ddf9af0e41a00a4dccb1de1ca5779ab1f3b835",
+  "decisionOwner": "LOCAL",
+  "sourcePins": [
+    {
+      "path": "docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md",
+      "sha256": "789838fa8e16c02e7f708828eac338f0349e94108ee7dac43fc390fd10643f9e"
+    },
+    {
+      "path": "docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json",
+      "sha256": "59c7651cdf60e1d923eb67bcba0395202acbe07c589c2cfbbf8bee6c905d12cb"
+    },
+    {
+      "path": "docs/reviews/CVF_MODEL_SELECTION_S3_R1_COMPLETION_2026-10-10.md",
+      "sha256": "b02b0077a97d7808a433a6ad2d6dedbb1a3ab50cf4362c4627d7888d3aa11a9a"
+    },
+    {
+      "path": "docs/reviews/evidence/model-selection-s3-r1-local-review-20261011.json",
+      "sha256": "23acbe618d0fbab4e01ba6edff8dacc4b8888dae7e675dc24b7d29119a68f2ae"
+    },
+    {
+      "path": "docs/reviews/CVF_MODEL_SELECTION_S4_R1_COMPLETION_2026-10-11.md",
+      "sha256": "3e00b130b594de6a6d97e037093f059b65452ed144f8e11fbe9529ad55708c16"
+    },
+    {
+      "path": "docs/reviews/evidence/model-selection-s4-r1-local-review-20261011.json",
+      "sha256": "4a24ee0a46dc43dcacbe43d156f8dcacde2c7953d4ab130cdcb02e4024129671"
+    },
+    {
+      "path": "docs/reviews/CVF_MODEL_SELECTION_S2_R1_COMPLETION_2026-10-11.md",
+      "sha256": "94a9eb529aaaa9f5792c31d0fbcc5b0dd15e64f5a159df0dbce1cfd471284c64"
+    },
+    {
+      "path": "docs/reviews/evidence/model-selection-s2-r1-local-review-20261011.json",
+      "sha256": "344d2b8f068dc262610220c7c465cfe041df1a9f24b0e4e0aafb07c4920bd3c5"
+    }
+  ],
+  "legacyReference": {
+    "path": "docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json",
+    "sha256": "59c7651cdf60e1d923eb67bcba0395202acbe07c589c2cfbbf8bee6c905d12cb",
+    "selectedRowCount": 6,
+    "taskIds": [
+      "CVF-NCR-OFFLINE-PREVIEW-20261009",
+      "CVF-NCR-EXPENSE-FIXTURE-20261009",
+      "CVF-NCR-EXPENSE-BROWSER-20261010",
+      "CVF-NCR-EXPENSE-TOUCH-20261010",
+      "CVF-NCR-EXPENSE-LAYOUT-20261010",
+      "CVF-NCR-EXPENSE-LEGIBILITY-20261010"
+    ],
+    "transformation": "REFERENCED_NOT_COPIED_OR_RELABELLED"
+  },
+  "laterTaskObservations": [
+    {
+      "taskId": "CVF-MODEL-SELECTION-S3-R1-20261010",
+      "taskFamily": "R3_DOCUMENTATION_DESIGN",
+      "source": "docs/reviews/evidence/model-selection-s3-r1-local-review-20261011.json",
+      "identity": {
+        "requestedModel": "Claude Haiku 5.5",
+        "requestedEffort": "Max/Max",
+        "requestedBasis": "OPERATOR_REPORTED",
+        "reportedRuntimeModel": "claude-haiku-5-5",
+        "observedVerifiedIdentity": null,
+        "snapshot": null,
+        "observedEffort": null,
+        "harness": null,
+        "basis": "claude-haiku-5-5 runtime-context report only; operator Max/Max label; immutable snapshot/effort/harness version unverified"
+      },
+      "initialReturn": "FAIL_RETURN_SHAPE",
+      "workerSelfRepairRounds": 2,
+      "finalResult": "ACCEPTED_BOUNDED_R3_DOCUMENTATION",
+      "localSemanticRepairRounds": 0,
+      "localMetadataCorrectionRounds": 1,
+      "localSemanticGroups": 0,
+      "attribution": "Local verdict-label correction; packet omitted seven required reviewer-fast sections. Worker blocked-rm account is operator-reported; no deletion proved by current diff, no historical execution telemetry.",
+      "timing": {
+        "seconds": 902,
+        "basis": "SOURCE_REPORTED_WORKER_INTERVAL",
+        "fullDeliverySeconds": null,
+        "workerProcessingSeconds": null,
+        "humanSeconds": null
+      },
+      "cost": {
+        "money": null,
+        "tokens": null,
+        "quota": null,
+        "basis": "NO_EXPOSED_COMPARABLE_BILL"
+      },
+      "historicalRangeLimit": {
+        "historicalFailedRange": "c3d4b0b961cfc079a802a0e2df531bc7c48b57bc..011c9cd1d7a3d3ffbd6b8e070d8aab37f6774a40",
+        "disposition": "RETAIN_FAILED_HISTORICAL_RANGE_NO_RECEIPT_PROMOTION",
+        "retainedMarkerSha256": "6285fb493a965960df52822f5493f4a5e09da0fad242ff6fae2b7356ca1b6a7c",
+        "owner": "current S4 baseline/order Local Safety Marker Adjudication",
+        "limit": "semantic observation remains usable PARTIAL; no successful full-range S3 receipt fabricated"
+      }
+    },
+    {
+      "taskId": "CVF-MODEL-SELECTION-S4-R1-20261011",
+      "taskFamily": "MANUAL_GUIDE_DOCUMENTATION",
+      "source": "docs/reviews/evidence/model-selection-s4-r1-local-review-20261011.json",
+      "identity": {
+        "requestedModel": "gpt-6-luna",
+        "requestedEffort": "xhigh",
+        "requestedBasis": "NATIVE_REQUEST_FIELDS",
+        "reportedRuntimeModel": null,
+        "observedVerifiedIdentity": null,
+        "snapshot": null,
+        "observedEffort": null,
+        "harness": null,
+        "basis": "REQUESTED_CONFIGURATION_ONLY; immutable observed identity unexposed"
+      },
+      "initialReturn": "FAIL_SEVEN_GROUPS_TRANSCRIPT_REPORTED_NO_DURABLE_LOG",
+      "workerSelfRepairRounds": 2,
+      "finalResult": "ACCEPTED_BOUNDED_MANUAL_GUIDE",
+      "localSemanticRepairRounds": 1,
+      "localMetadataCorrectionRounds": null,
+      "localSemanticGroups": 3,
+      "attribution": {
+        "consolidatedSemanticGroups": [
+          {
+            "rootCause": "noncanonical evidence-use token",
+            "paths": [
+              "docs/guides/CVF_MODEL_SELECTION_MANUAL_AGENT_SEAT_WORKED_EXAMPLE_2026-10-11.md",
+              "docs/reviews/CVF_MODEL_SELECTION_S4_R1_WORKER_RETURN_2026-10-11.md"
+            ],
+            "old": "CITED_PENDING_LOCAL_REVIEW",
+            "new": "CITED with independent-review-pending prose"
+          },
+          {
+            "rootCause": "selection hold branch ambiguity",
+            "path": "docs/guides/CVF_MODEL_SELECTION_MANUAL_AGENT_SEAT_WORKED_EXAMPLE_2026-10-11.md",
+            "cases": [
+              2,
+              7
+            ],
+            "change": "explicit-assignment branch separated; unavailable assignment names HOLD_OPERATOR_CONSTRAINT/null selected candidate"
+          },
+          {
+            "rootCause": "historical repair overwritten during finalization",
+            "path": "docs/reviews/CVF_MODEL_SELECTION_S4_R1_WORKER_RETURN_2026-10-11.md",
+            "change": "restore PENDING_BEFORE_READY as historical round-2 blocked-draft requirement; final documentation N/A retained"
+          }
+        ],
+        "localAssistance": [
+          "Corrected initial short release SHA and startup mode/parked acknowledgment before work; read-only message, no worker-lane tracked mutation",
+          "Corrected packet shorthand ConfigurationRef to canonical CandidateConfiguration",
+          "Supplied conservative dispatch lower bound after missing first-read clock"
+        ],
+        "closurePackaging": "Separately disclosed in S4 completion; no normalized count inferred from prose."
+      },
+      "timing": {
+        "seconds": 1045,
+        "basis": "CONSERVATIVE_DISPATCH_LOWER_BOUND_TO_ARTIFACT_FREEZE",
+        "firstReadUtc": null,
+        "finalGateFinishLowerBoundSeconds": 1064.2346475,
+        "fullDeliverySeconds": null,
+        "workerProcessingSeconds": null,
+        "humanSeconds": null
+      },
+      "cost": {
+        "money": null,
+        "tokens": null,
+        "quota": null,
+        "basis": "NOT_EXPOSED_BY_NATIVE_SURFACE"
+      },
+      "learning": {
+        "branch": "LOCAL_OBSERVATION",
+        "source": "docs/reviews/CVF_MODEL_SELECTION_S3_R1_COMPLETION_2026-10-10.md",
+        "sourceSha256": "b02b0077a97d7808a433a6ad2d6dedbb1a3ab50cf4362c4627d7888d3aa11a9a",
+        "sourceCommit": "011c9cd1d7a3d3ffbd6b8e070d8aab37f6774a40",
+        "currentRetractionOrSupersession": "none found in targeted current source/roadmap/authority references at review",
+        "applicability": "PARTIAL: packet completeness mechanism only",
+        "evidenceUse": "ACTION_VERIFIED",
+        "action": "S4 work order exposes seven previously omitted controls; full section list and exact ledger are used by actual three-file worker return; guide tells next dispatcher to retain identity/admission/repair/learning distinctions",
+        "result": "Independent Local review checks usable guide and returned section coverage, with first failures and final PASS retained. Completeness action is verified; first-run error prevention and global effectiveness are not established.",
+        "verificationRef": "docs/reviews/CVF_MODEL_SELECTION_S4_R1_COMPLETION_2026-10-11.md",
+        "parentControlApplication": false
+      }
+    },
+    {
+      "taskId": "CVF-MODEL-SELECTION-S2-R1-20261011",
+      "taskFamily": "OFFLINE_VALIDATOR_IMPLEMENTATION",
+      "source": "docs/reviews/evidence/model-selection-s2-r1-local-review-20261011.json",
+      "identity": {
+        "requestedModel": "gpt-6-luna",
+        "requestedEffort": "xhigh",
+        "requestedBasis": "NATIVE_REQUEST_FIELDS",
+        "reportedRuntimeModel": null,
+        "observedVerifiedIdentity": null,
+        "snapshot": null,
+        "observedEffort": null,
+        "harness": null,
+        "basis": "REQUESTED_CONFIGURATION_ONLY; immutable observed identity unexposed"
+      },
+      "initialReturn": "FAIL_PACKET_SHAPE_8",
+      "workerSelfRepairRounds": 2,
+      "finalResult": "ACCEPTED_BOUNDED_OFFLINE_VALIDATOR_AFTER_LOCAL_REPAIR",
+      "localSemanticRepairRounds": 1,
+      "localMetadataCorrectionRounds": 2,
+      "localSemanticGroups": 5,
+      "attribution": {
+        "localSemanticGroups": [
+          "malformed nested joins/control of diagnostics",
+          "nested role and original learning-index pointers",
+          "over-constrained budget HOLD",
+          "non-ISO date/time separator",
+          "source configuration and historical verified learning example"
+        ],
+        "rootPreparation": [
+          "SELECT allowed with known hard admission HOLD",
+          "requested model null",
+          "quality supported/provisional without selected positive evidence"
+        ],
+        "rootPacketFailures": [
+          "author fast: legacy N/A and negated corpus phrase; inherited stale prose also corrected",
+          "material pre-implementation: six owner/literal bindings; helper dropped detail, source diagnostic retained",
+          "material pre-implementation: remaining case-sensitive ADIF literal; source diagnostic retained"
+        ],
+        "rootAuditInvocations": 1,
+        "rootAuditTurns": 4,
+        "closurePackaging": "two active SCEC pin corrections; no extra semantic repair round",
+        "nonGateWorkerCommandMistakes": [
+          {
+            "command": "python governance/compat/check_governed_python_automation_size.py --help",
+            "result": "FAIL_FILE_NOT_FOUND",
+            "repair": "Located governance/compat/check_python_automation_size.py and ran its enforcing check successfully",
+            "changedFiles": false
+          },
+          {
+            "command": "PowerShell command containing a Bash-style python - <<'PY' here-document",
+            "result": "FAIL_SHELL_PARSE",
+            "repair": "Used PowerShell-native Get-FileHash and native command syntax",
+            "changedFiles": false
+          },
+          {
+            "command": "Read-only rg command with a misspelled working-directory suffix",
+            "result": "FAIL_WORKDIR_INVALID",
+            "repair": "Reran with the exact repository working directory",
+            "changedFiles": false
+          },
+          {
+            "command": "rg -n with a PowerShell-style wildcard in the directory argument",
+            "result": "FAIL_PATH_GLOB_SYNTAX",
+            "repair": "Used rg -g to apply the file glob",
+            "changedFiles": false
+          }
+        ]
+      },
+      "validation": {
+        "workerFocusedTests": 20,
+        "acceptedFocusedTests": 24,
+        "initialIndependentPassed": 56,
+        "initialIndependentTotal": 65,
+        "acceptedIndependentPassed": 65,
+        "acceptedIndependentTotal": 65,
+        "usage": "SOURCE_CONSUMED_PROOF_NOT_MODEL_SCORE"
+      },
+      "timing": {
+        "seconds": 1790,
+        "basis": "FIRST_CAPTURED_WORKER_CLOCK_THROUGH_FINAL_FROZEN_GATE_AND_CHECKS",
+        "firstClockUtc": "2026-10-11T03:34:47Z",
+        "endClockUtc": "2026-10-11T04:04:37Z",
+        "fullDeliverySeconds": null,
+        "workerProcessingSeconds": null,
+        "humanSeconds": null
+      },
+      "cost": {
+        "money": null,
+        "tokens": null,
+        "quota": null,
+        "underlyingNativeProviderRequests": null,
+        "directApiCalls": 0,
+        "basis": "NOT_EXPOSED_OR_NOT_METERED; direct calls distinct from native usage"
+      },
+      "learning": {
+        "source": "docs/reviews/CVF_MODEL_SELECTION_S4_R1_COMPLETION_2026-10-11.md",
+        "sourceSha256": "3e00b130b594de6a6d97e037093f059b65452ed144f8e11fbe9529ad55708c16",
+        "presentSourceDisposition": "ACTIVE",
+        "checkBasis": "targeted source/roadmap verification at review; no exhaustive absence claim",
+        "applicability": "PARTIAL",
+        "evidenceUse": "ACTION_VERIFIED",
+        "action": "implement optional strict validator and usable source-pinned guide/example",
+        "verification": "actual CLI rejects CITED_PENDING_LOCAL_REVIEW at /learningLinks/0/evidenceUse; valid example returns VALID_RECORD_ONLY; root independently reviews action/result",
+        "limitations": "one bounded later application, with Local repairs; no causal error-elimination or model-quality inference"
+      }
+    }
+  ],
+  "selectedTaskCount": 9,
+  "sampleBoundary": "Nine referenced task observations, not nine independent/matched samples or all agent activity. Profile audit is preparation, not an implementing task. No new durable model registry/schema authority.",
+  "review": {
+    "rootActor": "/root",
+    "readOnlyValueAuditor": "/root/s2_value_audit",
+    "valueDisposition": "GO_BOUNDED_SMALL_DIRECT_LOCAL_REVIEW",
+    "outputAudit": "CONCUR_BOUNDED_DIFFERENT_ACTOR_SOURCE_CLAIM_AUDIT",
+    "newImplementingWorkerInvocations": 0,
+    "newReadOnlyAuditTurns": 2,
+    "directProviderApiCalls": 0,
+    "underlyingNativeUsage": null,
+    "rootExactStartUtc": null,
+    "firstCapturedRootClockUtc": "2026-10-11T04:18:59Z",
+    "rootMoney": null,
+    "rootTokens": null,
+    "rootQuota": null,
+    "diagnostic": "Initial ignored Python source-inspection command assumed observations was an array and raised KeyError before writes. Corrected to inspect rows; Local attribution only.",
+    "auditedPendingPins": [
+      {
+        "path": "docs/reviews/CVF_WORKER_MODEL_USAGE_OBSERVATION_SUPPLEMENT_2026-10-11.md",
+        "sha256": "1e15472bc54ed338603beb48dc41bb33e02b82a35405db47c1fb08411b87ec56"
+      },
+      {
+        "path": "docs/reviews/evidence/cvf-worker-model-usage-observation-supplement-2026-10-11.json",
+        "sha256": "ab78d4a06caacd72bb1707e9e5602ffda8b611a954a9fc0ead9998b5402ee00e"
+      },
+      {
+        "path": "docs/roadmaps/CVF_ORCHESTRATOR_MODEL_SELECTION_SYSTEM_CHAIN_ROADMAP_2026-10-10.md",
+        "sha256": "4e1053f9bbbeb3ffe3a023fa3f534d67342c43913ceea92fc382eac6601d4ff0"
+      }
+    ],
+    "rootDecision": "ACCEPT_BOUNDED_SOURCE_VISIBILITY",
+    "reviewRecordedUtc": "2026-10-11T04:23:21.838971+00:00",
+    "metadataCorrection": "Changed audit-turn count 1 to 2 after actual value/output turns; no source/claim repair. Status/audit fields finalized after concurrence.",
+    "localAuthoringGateRepair": {
+      "count": 1,
+      "failedCheck": "external knowledge intake routing: Internal source row omitted",
+      "repair": "added existing pinned S2 Local completion; no source/claim change",
+      "ruleDisposition": "RULE_EXISTS",
+      "log": ".cvf/runtime/model-selection-observation-supplement-20261011/reviewer-fast.log",
+      "sha256": "66d6e65b6f87e32cb0072959afd1d20d18e9cb0a557a284d5d971ac33dcd71e1"
+    }
+  },
+  "decision": "COLLECT_OBSERVATIONS_WITHOUT_MODEL_RANKING",
+  "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
+  "claimBoundary": "Source-derived bounded visibility only; no fresh execution, suitability comparison, equivalence, savings, runtime or live governance."
+}
