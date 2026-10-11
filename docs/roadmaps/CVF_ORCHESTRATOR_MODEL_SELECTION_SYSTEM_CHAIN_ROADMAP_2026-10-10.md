@@ -92,7 +92,7 @@ any separate provider calls a worker might request during its task.
 | S1 Design review and owner disposition | R2_DESIGN_CONCURRENCE_RECORDED | F1-F11 confirmed with R1-B1 corrected in one R2 delta | same reviewer granted conditional CONCUR_WITH_R2; Local hash/paragraph verification satisfies that condition; no second review |
 | S3 One bounded real task loop | CLOSED_PASS_BOUNDED | manual B work-order rationale -> operator-started execution -> independent Local review -> evidence disposition | S3-R1 R3 documentation outcome and Local completion; actual model ID runtime-context reported, Max/Max operator-reported, snapshot/effort/bill unknown; no benchmark-only task |
 | S4 Later decision consumption | CLOSED_PASS_BOUNDED | actual S4-R1 guide task consumes S3 packet-completeness observation | `docs/reviews/CVF_MODEL_SELECTION_S4_R1_COMPLETION_2026-10-11.md`; independent action/result ACTION_VERIFIED, PARTIAL mechanism-only applicability; two worker self-repairs and one Local repair retained |
-| S2 Contract implementation if selected | NOT_AUTHORIZED | strict schema/validator only if S3/S4 reveal value beyond manual records | fresh baseline/order; exact owner/fields; no arbitrary minimum task count or automatic activation |
+| S2 Contract implementation if selected | S2_R1_ADMITTED_OFFLINE_PROFILE | strict declared manual decision/local-observation consistency; full outcome/PLL/A deferred | fresh `docs/baselines/CVF_GC018_MODEL_SELECTION_S2_R1_OFFLINE_MANUAL_RECORD_2026-10-11.md` and `docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_SELECTION_S2_R1_OFFLINE_MANUAL_RECORD_2026-10-11.md`; locked profile; original S4 wrong-enum gap; implementation/independent probe pending |
 | S5 Optional runtime automation | PARKED_DEMAND_GATED | integrate only if bounded loop shows value and demand exists | separate authority and current real runtime/provider proof, rollback and holds |
 
 S0 authorship is not independent acceptance. This roadmap remains open at design
@@ -283,3 +283,7 @@ uplift, cost saving, public publication, deployment or production readiness clai
 ## S4-R1 Local Disposition
 
 `docs/reviews/CVF_MODEL_SELECTION_S4_R1_COMPLETION_2026-10-11.md` accepts only the manual guide and reviewer-checked packet-completeness action/result. Four static worker-gate runs occur inside one requested Luna/xhigh invocation; hidden runtime identity and billing remain unknown. This roadmap remains DESIGN_DRAFT overall; S2/S5 are unopened. Prior historical operation/claim blocks above retain their original design-batch scope.
+
+## S2-R1 Bounded Admission
+
+Fresh operator continuation selects an offline optional validator for the actual S4 wrong-enum gap. Locked profile: `docs/reference/CVF_MODEL_SELECTION_MANUAL_RECORD_PROFILE_2026-10-11.md`; order: `docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_SELECTION_S2_R1_OFFLINE_MANUAL_RECORD_2026-10-11.md`. This admits a finite typed decision/local-observation slice under existing R3 owners, with declared-only checks and six worker paths. Other R3 branches and S5 remain unopened; no hook/runtime/store/model-choice authority is added. This roadmap remains DESIGN_DRAFT overall.
