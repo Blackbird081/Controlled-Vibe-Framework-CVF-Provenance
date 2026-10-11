@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Current NCR Continuation
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `7efca5abaeccb7d15c80277791a4a6fcfd709226`. Batch ID: CVF-SYMBOL-LINE-ANCHOR-FIX-20261011. Selected repair accepted; model collection retained.
+Current HEAD recorded for this handoff: `a8db7faa4f0088d5e601ea3e9889640fd87aa05e`. Batch ID: CVF-SYMBOL-LINE-ANCHOR-FIX-20261011. Selected repair accepted; model collection retained.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -11,7 +11,7 @@ Closed history is preserved byte-for-byte at `CVF_SESSION/handoffs/archive/AGENT
 ## Scope / Target / Owner Boundary
 Operator2026-10-11: worker returned; collect model evidence retained. Haiku/ex high is reported configuration, native version/effort unverified; Local owns acceptance.
 Role: Local INTERNAL_AGENT reviewer/closer; phase: terminal source-maintenance closure and model collection; decision owner=Local. Worker honored no commit; no successor.
-PROGRAM_ID=CVF-CORE; NEXT_ACTION_CLASS=STOP; BATCH_ID=CVF-SYMBOL-LINE-ANCHOR-FIX-20261011. CLOSED_PASS_BOUNDED at 7efca5abaeccb7d15c80277791a4a6fcfd709226; Local completion docs/reviews/CVF_SYMBOL_LINE_ANCHOR_FIX_COMPLETION_2026-10-11.md. Selected checker repair terminal, no automatic successor. Model ledger docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json: 8 reviewed workers (six Haiku-family, two Sonnet), requested effort separated; native identity/usage/bill/time unknown. Collect on admitted work. O6 helper/scaffold deferred. Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11 parked; LHW24 retained. Ahead count advisory; no new push grant.
+PROGRAM_ID=CVF-CORE; NEXT_ACTION_CLASS=STOP; BATCH_ID=CVF-SYMBOL-LINE-ANCHOR-FIX-20261011. CLOSED_PASS_BOUNDED at a8db7faa4f0088d5e601ea3e9889640fd87aa05e; Local completion docs/reviews/CVF_SYMBOL_LINE_ANCHOR_FIX_COMPLETION_2026-10-11.md. Selected checker repair terminal, no automatic successor. Model ledger docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json: 8 reviewed workers (six Haiku-family, two Sonnet), requested effort separated; native identity/usage/bill/time unknown. Collect on admitted work. O6 helper/scaffold deferred. Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11 parked; LHW24 retained. Ahead count advisory; no new push grant.
 Remote tracking branch: `origin/main`. Exact remote SHA must be derived live from git when needed.
 External agent memory files: non-canonical convenience only.
 ## Startup Acknowledgment
@@ -140,7 +140,7 @@ Authorized guard-maintenance scope: six-surface terminal symbol-line closure; cl
 | Command or tool surface | canonical generator; atomic commit; bound gates |
 | Target paths | six continuity paths listed in the manifest below |
 | Allowed scope source | symbol-line baseline/Local closure; operator collection |
-| Before status evidence | 7efca5abaeccb7d15c80277791a4a6fcfd709226; accepted closure material |
+| Before status evidence | a8db7faa4f0088d5e601ea3e9889640fd87aa05e; corrected accepted material |
 | After status evidence | terminal acceptance; eight-worker collection retained |
 | Diff evidence | exact six continuity paths; material unchanged |
 | Approval boundary | authorized terminal continuity only |
