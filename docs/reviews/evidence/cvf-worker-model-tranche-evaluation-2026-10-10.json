@@ -975,5 +975,62 @@
     "independentMatchedSampleClaim": false,
     "omissionOwner": "LOCAL_ORCHESTRATOR",
     "OpusSameSessionAdvisoryExtraWorkers": 0
-  }
+  },
+  "operatorObservationFocus": {
+    "asOf": "2026-10-11",
+    "authority": "OPERATOR_DIRECT_INSTRUCTION_CURRENT_SESSION",
+    "role": "LOCAL_INTERNAL_AGENT_COLLECTION_STEWARD",
+    "currentMode": "cvf_ncr_p10_closed_p11_parked",
+    "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
+    "decisionOwner": "LOCAL_REVIEWER",
+    "reviewRequirement": "Reviewer confirmation is mandatory for every worker. Its presence is not a model quality defect; measure defects and repair burden found during delivery and review.",
+    "primaryMeasures": [
+      "Useful required outputs and actual independent technical acceptance by task family and integration breadth",
+      "Distinct root-cause defect groups, severity and impact; distinguish product correctness, test/proof validity and return metadata",
+      "Worker self-repairs, defects remaining at first handoff, reviewer product repairs and requested worker repair turns",
+      "Actual observed worker, review and rework time intervals with clock boundaries, provenance and unknown intervals retained"
+    ],
+    "countingRule": "Gate runs are not distinct defects. Group repeated symptoms by root cause; retain raw logs. Do not invent exact defect counts or severity for historical records lacking evidence.",
+    "attribution": "Separate worker defects from dispatcher, reviewer and tooling defects; missing read depth and scaffold are procedural findings with their actual impact recorded.",
+    "timeRule": "Retain start/end and interval basis; do not infer complete accepted-delivery time from incomplete worker intervals. Separate required review time from avoidable rework.",
+    "costDisposition": "DEFERRED_BY_OPERATOR_FOR_CURRENT_EVALUATION; preserve historical null/available fields without new billing investigation or cost ranking.",
+    "samplingPlan": "Continue observing useful admitted tasks for the operator-requested Haiku-family configuration; operator intends to switch to Sonnet after several further runs. Exact switch count is unspecified and creates no automatic invocation.",
+    "comparisonRule": "Use the same quality/time interpretation after the switch, compare similar task families and complexity, retain reuse/session context and exact requested configurations; no benchmark-only tasks or automatic model assignment.",
+    "currentTask": "CVF-NCR-HOME-HISTORY-BINDING-20261011",
+    "currentTaskDisposition": "NOT_ADDED_UNTIL_LOCAL_REVIEW",
+    "reviewedTaskCountUnchanged": 15
+  },
+  "dispatchInterruptedAttempts": [
+    {
+      "batchId": "CVF-NCR-HOME-HISTORY-BINDING-20261011",
+      "executionBaseHead": "8240cd0d65e205f028391d31f58ac1555bd5b233",
+      "status": "BLOCKED_WITH_REASON",
+      "causeOwner": "LOCAL_ORCHESTRATOR_CVF",
+      "cause": "STALE13TH_EVIDENCE_PIN",
+      "requestedModel": "Claude Haiku / ex high",
+      "observedModel": null,
+      "observedEffort": null,
+      "tokens": null,
+      "bill": null,
+      "time": {
+        "invocationStartLocal": "2026-10-11T22:48:58+07:00",
+        "startCaptureNote": "work order was read before the first repository command; HEAD, clean status and clock were captured by the first repository command",
+        "terminalLocal": "2026-10-11T22:53:02+07:00",
+        "finalGateEndLocal": "2026-10-11T22:58:06+07:00",
+        "elapsedMinutesToTerminalApprox": 4.1,
+        "elapsedMinutesToFinalGateEndApprox": 9.1,
+        "budgetMinutes": 45,
+        "gateRunsAfterTerminalClock": true
+      },
+      "localEvidence": "docs/reviews/evidence/ncr-home-history-binding-local-20261011.json",
+      "workerReturnSha256": "d9bc2246ae73fa67f903a04616a785662927dd46aa7327ccb6f7473a97d81b50",
+      "workerProofSha256": "02eb371aabdcee15d617d8ccff63d1e9c0deb6c500209fb253171ef9668c6552",
+      "productEdited": false,
+      "workerBlockDecision": "CORRECT",
+      "returnGateAttempts": 3,
+      "failedReturnGateAttempts": 2,
+      "distinctReturnDefectGroups": null,
+      "countRule": "Interrupted invocation of pending Home task; not an extra reviewed task/sample. Gate runs are not defect counts."
+    }
+  ]
 }

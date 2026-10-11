@@ -5,7 +5,7 @@ docType: baseline
 Status: DISPATCH_READY
 Date: 2026-10-11
 Batch ID: CVF-NCR-HOME-HISTORY-BINDING-20261011
-Dispatch base head: 35b2f9f1cdb579a6078513dd74382f339f85dbd6
+Dispatch base head: 8240cd0d65e205f028391d31f58ac1555bd5b233
 Commit mode: WORKER_MUST_NOT_COMMIT
 providerExecutionAuthority: FORBIDDEN
 
@@ -108,6 +108,10 @@ Actual result: 0 candidates, 0 returned, not truncated. This query does not prov
 {"contractId":"cvf.external-local-absorption-coordination@1","invariants":{"externalRole":"ADVISORY_RESEARCH_AND_PATTERN_MAPPING","externalContext":"PUBLIC_GITHUB_AND_REFRESHED_EXTERNAL_AGENT_READ","localRole":"SOURCE_RUNTIME_VALUE_AND_PRIVATE_CVF_VERIFICATION","finalDecisionOwner":"LOCAL","localCoverageBasis":"SOURCE_DERIVED_NOT_EXTERNAL_SHORTLIST","externalEvidenceAuthority":"INPUT_NOT_PRIVATE_CVF_PROOF"},"contractSha256":"92df8a7c9492e8c3cedf624cfaa79b8185ca31442ecaf96107fd88dfcb81800c","parentArtifact":null}
 ```
 
+## Dispatch Pin Repair Disposition
+
+Local reviewed the blocked first invocation at8240cd0d6: the13th dispatch-evidence pin was stale. Intended committed evidence is confirmed; working-file and HEAD-blob hashes are now explicit and checked together. Original blocked return/proof are preserved verbatim in `docs/reviews/evidence/ncr-home-history-binding-local-20261011.json` with digests. Prior invocation is not implementation acceptance; capture fresh clocks/HEAD and perform the required semantic reads in the new invocation. Worker outputs are absent after Local preservation. No helper/checker or product mutation is included in this repair.
+
 ## Core Guard Self-Protection Authorization
 
 Authorized guard-maintenance scope: exact current-authority projections and dedicated six-path dispatch/closure continuity only; no guard/checker mutation.
@@ -122,7 +126,7 @@ Protected paths:
 
 Operator authorization: 2026-10-11 continuation, explicit audit-and-choose response, standing manual worker/work-order and collection instruction. Local owns necessary private admission/commit/continuity; no push grant.
 Rollback boundary: revert this exact dispatch/implementation and its matching authority/continuity; preserve historical accepted work and raw returned evidence.
-Dispatcher material exact manifest: `docs/baselines/CVF_GC018_NCR_HOME_HISTORY_BINDING_2026-10-11.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HOME_HISTORY_BINDING_2026-10-11.md`; `docs/reviews/evidence/ncr-home-history-binding-dispatch-20261011.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`.
+Dispatcher material exact manifest: `docs/baselines/CVF_GC018_NCR_HOME_HISTORY_BINDING_2026-10-11.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HOME_HISTORY_BINDING_2026-10-11.md`; `docs/reviews/evidence/ncr-home-history-binding-local-20261011.json`; `docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json`; `docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`.
 Dedicated continuity exact manifest: `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`.
 Worker exact manifest: `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.test.tsx`; `docs/reviews/evidence/ncr-home-history-binding-worker-20261011.json`; `docs/reviews/CVF_NCR_HOME_HISTORY_BINDING_WORKER_RETURN_2026-10-11.md`.
 Local reserves `docs/reviews/CVF_NCR_HOME_HISTORY_BINDING_COMPLETION_2026-10-11.md` and `docs/reviews/evidence/ncr-home-history-binding-local-20261011.json`; any later collection promotion is reviewer-owned. Generated aggregates regenerated only.

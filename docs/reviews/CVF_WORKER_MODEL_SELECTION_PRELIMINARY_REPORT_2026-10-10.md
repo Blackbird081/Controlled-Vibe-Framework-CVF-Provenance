@@ -118,22 +118,22 @@ Operator-reported identities only; bounded UI worker observations. No universal 
 
 | Field | Evidence |
 |---|---|
-| Actor | Local orchestrator/reviewer/closer |
+| Actor | Local collection steward/dispatcher |
 | Provider or surface | private shared CVF workspace |
-| Session or invocation | cvf-expense-legibility-local-review-20261010 |
+| Session or invocation | ncr-home-history-pin-repair-20261011 |
 | Working directory | repository root |
-| Command or tool surface | frozen-pin intake, direct-source340 light contrast/focus and DOM negative; consumed worker evidence; exact closure/state generation |
-| Target paths | `docs/guides/CVF_EXPENSE_TEXT_LEGIBILITY_README_2026-10-10.md`; `scripts/test_cvf_expense_text_legibility_browser.cjs`; `docs/reviews/CVF_NCR_EXPENSE_TEXT_LEGIBILITY_WORKER_RETURN_2026-10-10.md`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/expenses/ExpenseList.tsx`; `docs/reviews/evidence/cvf-expense-legibility-worker-2026-10-10.json`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_TEXT_LEGIBILITY_2026-10-10.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_TEXT_LEGIBILITY_2026-10-10.json`; `docs/reviews/CVF_NCR_EXPENSE_TEXT_LEGIBILITY_COMPLETION_2026-10-10.md`; `docs/reviews/evidence/cvf-expense-legibility-local-review-2026-10-10.json`; `docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json`; `docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/cvfNcrConsolidatedLocalFoundation20261006.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Allowed scope source | work-order Reviewer Closure Conversion and operator review/park/foundation direction |
-| Before status evidence | HEAD b83556dbfc6236556b15a252f09d5688361d1a03; exact five worker outputs pending |
-| After status evidence | exact eighteen-path closure conversion; five worker bytes preserved; actual-SHA continuity follows |
+| Command or tool surface | retained blocked intake,13 working-file/blob pin checks; paired packet repair; collection focus; authority generator and mandatory gates |
+| Target paths | `docs/baselines/CVF_GC018_NCR_HOME_HISTORY_BINDING_2026-10-11.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HOME_HISTORY_BINDING_2026-10-11.md`; `docs/reviews/evidence/ncr-home-history-binding-local-20261011.json`; `docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json`; `docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Allowed scope source | operator quality/time tracking and standing bounded Home dispatch continuation |
+| Before status evidence | HEAD8240cd0d65e205f028391d31f58ac1555bd5b233; two Local tracking edits and two blocked-worker files pending; staged empty |
+| After status evidence | exact eight material repair paths; blocked originals retained before removal;15 reviewed tasks preserved |
 | Diff evidence | git diff --check and exact staged manifest |
 | Approval boundary | Local review/closure and operator-directed parking/design only |
-| Claim boundary | bounded synthetic UI, six worker observations; no runtime selection or cost superiority |
+| Claim boundary | blocked attempt and tracking clarification only; no code acceptance or model ranking |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | cvf-expense-legibility-local-review-20261010 |
-| Expected manifest | `docs/guides/CVF_EXPENSE_TEXT_LEGIBILITY_README_2026-10-10.md`; `scripts/test_cvf_expense_text_legibility_browser.cjs`; `docs/reviews/CVF_NCR_EXPENSE_TEXT_LEGIBILITY_WORKER_RETURN_2026-10-10.md`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/expenses/ExpenseList.tsx`; `docs/reviews/evidence/cvf-expense-legibility-worker-2026-10-10.json`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_TEXT_LEGIBILITY_2026-10-10.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_TEXT_LEGIBILITY_2026-10-10.json`; `docs/reviews/CVF_NCR_EXPENSE_TEXT_LEGIBILITY_COMPLETION_2026-10-10.md`; `docs/reviews/evidence/cvf-expense-legibility-local-review-2026-10-10.json`; `docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json`; `docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/cvfNcrConsolidatedLocalFoundation20261006.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Actual changed set | `docs/guides/CVF_EXPENSE_TEXT_LEGIBILITY_README_2026-10-10.md`; `scripts/test_cvf_expense_text_legibility_browser.cjs`; `docs/reviews/CVF_NCR_EXPENSE_TEXT_LEGIBILITY_WORKER_RETURN_2026-10-10.md`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/expenses/ExpenseList.tsx`; `docs/reviews/evidence/cvf-expense-legibility-worker-2026-10-10.json`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_TEXT_LEGIBILITY_2026-10-10.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_EXPENSE_TEXT_LEGIBILITY_2026-10-10.json`; `docs/reviews/CVF_NCR_EXPENSE_TEXT_LEGIBILITY_COMPLETION_2026-10-10.md`; `docs/reviews/evidence/cvf-expense-legibility-local-review-2026-10-10.json`; `docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json`; `docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/cvfNcrConsolidatedLocalFoundation20261006.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Invocation ID | ncr-home-history-pin-repair-20261011 |
+| Expected manifest | `docs/baselines/CVF_GC018_NCR_HOME_HISTORY_BINDING_2026-10-11.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HOME_HISTORY_BINDING_2026-10-11.md`; `docs/reviews/evidence/ncr-home-history-binding-local-20261011.json`; `docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json`; `docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Actual changed set | `docs/baselines/CVF_GC018_NCR_HOME_HISTORY_BINDING_2026-10-11.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HOME_HISTORY_BINDING_2026-10-11.md`; `docs/reviews/evidence/ncr-home-history-binding-local-20261011.json`; `docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json`; `docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |
 
@@ -163,7 +163,7 @@ The corrected scaffold was actually consumed with exact command/profile/caps/rec
 
 ## Reconciled Worker Collection - 2026-10-11
 
-Current reconciled total: **15 reviewed task observations: 9 Haiku-family, 2 Sonnet, 4 Luna**. The earlier nine-row headline covered only one ledger subset and omitted S3 plus four native workers already documented elsewhere. This aggregation omission belongs to Local. Deduplicate by trancheId/source task; original first nine rows are MATCH by structured row comparison, not relabeled. Companion ledger raw SHA-256 97324fd892eea97eced500fc798be65ed716d2ce2a8d35ffb508b51c3e753553; Local reconciliation `docs/reviews/evidence/mfrp-continuity-collection-design-local-20261011.json`.
+Current reconciled total: **15 reviewed task observations: 9 Haiku-family, 2 Sonnet, 4 Luna**. The earlier nine-row headline covered only one ledger subset and omitted S3 plus four native workers already documented elsewhere. This aggregation omission belongs to Local. Deduplicate by trancheId/source task; original first nine rows are MATCH by structured row comparison, not relabeled. Companion ledger raw SHA-256 d45646b7334fed38e5c33bc407cd2b55249b65581fb92a47d16f6e9abc91e49f; Local reconciliation `docs/reviews/evidence/mfrp-continuity-collection-design-local-20261011.json`.
 
 | Restored or new task | Requested/reported configuration | Evidence | Attribution |
 |---|---|---|---|
@@ -175,3 +175,19 @@ Current reconciled total: **15 reviewed task observations: 9 Haiku-family, 2 Son
 | MFRP collection design new | Claude Haiku / ex high requested | docs/reviews/evidence/mfrp-continuity-collection-design-local-20261011.json | four gates, first three FAIL; required-read procedure FAIL; zero Local semantic product edits, one claim-clarification group and one design trace-only closure conversion |
 
 Restoring five prior task records is not five new invocations. The current design adds one new authoring observation. These fifteen are differently scoped related tasks, not fifteen independent/matched samples with coverage limited to the named reviewed tasks. Luna xhigh and max requests stay separate from unexposed runtime identity. Same-session Opus5.5/High advisory remains linked context with zero extra workers/reviews/replications. Native tokens, bills and complete delivery costs remain unknown. No model ranking or routing change.
+
+## Operator Observation Focus - 2026-10-11
+
+Operator clarification: reviewer confirmation is mandatory for every worker. The useful comparison is how many distinct defects occur, their severity and impact, and how much self-repair or reviewer repair is needed for a usable required output. Gate attempt counts are not defect counts. Separate product correctness, proof validity, return metadata and procedural findings; retain dispatcher/reviewer/tooling attribution. Historical unavailable defect counts remain unknown.
+
+Continue recording actual worker, review and rework intervals with start/end provenance and incomplete-clock limits. Complete accepted-delivery time is unknown where not observed. Cost evaluation is deferred by the operator for now; historical usage/bill fields remain as recorded.
+
+The operator intends several further Haiku-family worker observations on useful admitted tasks, then a switch to Sonnet. The switch count is unspecified; it authorizes no automatic invocation. Keep the same quality/time interpretation across models and compare similar task families, complexity and reuse context to identify where each worker produces the best results. No additional task is created solely for measurement.
+
+Reviewed collection remains 15 tasks: 9 Haiku-family, 2 Sonnet, 4 Luna. Home history binding is pending Local review and is not an additional reviewed observation. This tracking clarification changes no active packet, worker ownership, technical acceptance, parked checkpoint or public export disposition.
+
+## Home Dispatch Interrupted Invocation - 2026-10-11
+
+The first Home worker invocation is BLOCKED_WITH_REASON before product edits:12 source pins match and the13th dispatcher-evidence pin is stale. The cause is Local-owned packet preparation/verification. Worker correctly refused to repin or continue. This is an interrupted invocation attached to the pending task, not a16th reviewed task or a coding-quality failure. Original blocked return/proof and digests are retained in `docs/reviews/evidence/ncr-home-history-binding-local-20261011.json`.
+
+Observed interval to final gate end is about9.1min; packet read preceded the captured clock, so full invocation duration is unknown. Three return gates include two FAIL and final PASS; retain that metadata repair burden without equating runs to distinct defects. Source semantic implementation reads were not reached; no code-quality conclusion follows. Native identity/effort/token/bill remain null. Global pin-gate extension is deferred; this release explicitly checks all13 working-file and HEAD-blob pin pairs. Collection15 and prior technical acceptances retained.

@@ -37,11 +37,11 @@
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_NCR_HOME_HISTORY_BINDING_2026-10-11.md",
-    "baselineSha256": "c0ad83b191dc13992ca4fc085918b863aae8857707b65eed10e6c96673c977ef",
+    "baselineSha256": "63c162bd10d990b271826e357b0f99d20204c37309d3d616f2e52f4de9387dc5",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HOME_HISTORY_BINDING_2026-10-11.md",
-    "workOrderSha256": "45a65d204fefe07cfdaccb6ef777685279fb9fc90fdc9a2b13d45dea5c8ac38e"
+    "workOrderSha256": "bab201131adbf589174185d6ce388b03dfdbe1cd268096df490b415106fe592f"
   },
-  "currentAuthoritySyncReason": "Dispatch material 8a8572c4f799e5c85d840db344d0f75ec74d0bd1 unchanged; exact6 corrective continuity for Local DR-06 EXECUTE literal/work-order path omission. First release FAIL retained; no worker invocation, collection15 and parked effects preserved.",
+  "currentAuthoritySyncReason": "Paired Home dispatch pin repair: all13 working-file/HEAD-blob identities; preserved first blocked invocation, collection15 unchanged. Actual-SHA six-surface continuity follows; no worker launch/push.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
