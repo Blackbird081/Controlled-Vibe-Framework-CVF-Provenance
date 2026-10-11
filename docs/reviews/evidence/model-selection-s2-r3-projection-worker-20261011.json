@@ -1,0 +1,501 @@
+{
+  "schemaVersion": "cvf.s2R3ProjectionWorkerEvidence@1.0.0",
+  "batchId": "CVF-MODEL-SELECTION-S2-R3-PROJECTION-20261011",
+  "workOrder": {
+    "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_SELECTION_S2_R3_PROJECTION_2026-10-11.md",
+    "sha256": "49e85d6ddbf6e361d5b49c24775f86a76ed9692754841bffb2256d7a294ea22c"
+  },
+  "baseline": {
+    "path": "docs/baselines/CVF_GC018_MODEL_SELECTION_S2_R3_PROJECTION_2026-10-11.md",
+    "sha256": "4ec826bce650d98d886f61fbdc71d0e2e831df32e323701664e40347bfa71f65"
+  },
+  "executionBaseHead": "6ed5646236858413f0696bdd10169e6cb135118b",
+  "dispatchBaseHead": "42e86fa0c65f97d9c84233e1d967758216f1ce97",
+  "releaseCommitsBeforeWorker": [
+    "d9af730b7",
+    "5158a4334",
+    "5dc877b50",
+    "6ed564623"
+  ],
+  "clocks": {
+    "startLocal": "2026-10-11 20:03:23 SEAST",
+    "startUtc": "2026-10-11T13:03:23Z",
+    "startMeasures": "first lane command, before any source read",
+    "scaffoldUtc": "2026-10-11T13:04:29Z",
+    "evidenceGeneratedUtc": "2026-10-11T13:08:56Z",
+    "finalGateStartUtc": "2026-10-11T13:12:24Z",
+    "endMeasures": "final gate start on final frozen bytes; worker end is not separately observable"
+  },
+  "pins": {
+    "sourcePins": [
+      {
+        "path": "docs/reference/CVF_MODEL_SELECTION_REVIEWED_OUTCOME_PROFILE_2026-10-11.md",
+        "pinned": "612735bf1f27354b9b5e9389239fa9ded6d3aeb9a77bfb4da63da4376eb84c5d",
+        "actual": "612735bf1f27354b9b5e9389239fa9ded6d3aeb9a77bfb4da63da4376eb84c5d",
+        "match": true
+      },
+      {
+        "path": "docs/reference/CVF_MODEL_SELECTION_MANUAL_RECORD_PROFILE_2026-10-11.md",
+        "pinned": "ffa0bda042b6f7f16f30de412f3f3e11eff7b64b193273e108c672109cb4e5c6",
+        "actual": "ffa0bda042b6f7f16f30de412f3f3e11eff7b64b193273e108c672109cb4e5c6",
+        "match": true
+      },
+      {
+        "path": "governance/compat/model_selection_reviewed_outcome.py",
+        "pinned": "9526916557ef81654930bac9697bc242d6b8ebf41163b23977b78729392ec0ff",
+        "actual": "9526916557ef81654930bac9697bc242d6b8ebf41163b23977b78729392ec0ff",
+        "match": true
+      },
+      {
+        "path": "governance/compat/model_selection_manual_record.py",
+        "pinned": "8db98426eeeb6ea9f13f8d78efcc3bee15f57ccb2e586081577b3559a1374c0e",
+        "actual": "8db98426eeeb6ea9f13f8d78efcc3bee15f57ccb2e586081577b3559a1374c0e",
+        "match": true
+      },
+      {
+        "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_SYMBOL_LINE_ANCHOR_FIX_2026-10-11.md",
+        "pinned": "2d9c0ec5da43fa4e8c9440c7671b54c26a72899e4848d6c7a89545e868af6cd1",
+        "actual": "2d9c0ec5da43fa4e8c9440c7671b54c26a72899e4848d6c7a89545e868af6cd1",
+        "match": true
+      },
+      {
+        "path": "docs/reviews/CVF_SYMBOL_LINE_ANCHOR_FIX_WORKER_RETURN_2026-10-11.md",
+        "pinned": "e8ea06d39862eb878248e7682d1528bd99a0903edf100440e4fbfde9320e5303",
+        "actual": "e8ea06d39862eb878248e7682d1528bd99a0903edf100440e4fbfde9320e5303",
+        "match": true
+      },
+      {
+        "path": "docs/reviews/evidence/symbol-line-anchor-fix-worker-20261011.json",
+        "pinned": "7f11c4728427c5e54a6ec15f7fd21d529bda53b9f405faec8305e22703cfbf20",
+        "actual": "7f11c4728427c5e54a6ec15f7fd21d529bda53b9f405faec8305e22703cfbf20",
+        "match": true
+      },
+      {
+        "path": "docs/reviews/evidence/symbol-line-anchor-fix-local-review-20261011.json",
+        "pinned": "88fc422144627db40181584c88b1a546950f7bd6bb6271e3932829927c776984",
+        "actual": "88fc422144627db40181584c88b1a546950f7bd6bb6271e3932829927c776984",
+        "match": true
+      },
+      {
+        "path": "docs/reviews/evidence/symbol-line-anchor-fix-learning-review-20261011.json",
+        "pinned": "8a11e18baf1aceff646b69236c97f74f995c2086544120af9329d42753498f92",
+        "actual": "8a11e18baf1aceff646b69236c97f74f995c2086544120af9329d42753498f92",
+        "match": true
+      },
+      {
+        "path": "docs/reviews/CVF_SYMBOL_LINE_ANCHOR_FIX_LEARNING_CANDIDATES_LOCAL_REVIEW_2026-10-11.md",
+        "pinned": "1bdc9b89e31405652ccac369204bb427fbc6124fc92574edc6fc1d79c3a9f23d",
+        "actual": "1bdc9b89e31405652ccac369204bb427fbc6124fc92574edc6fc1d79c3a9f23d",
+        "match": true
+      },
+      {
+        "path": "docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json",
+        "pinned": "9f679ab12291f7c0ead3d8c9fce7e5b34be366654d0dc7ee31f4824511f94dd4",
+        "actual": "9f679ab12291f7c0ead3d8c9fce7e5b34be366654d0dc7ee31f4824511f94dd4",
+        "match": true
+      },
+      {
+        "path": "docs/reviews/CVF_RETURN_PREPARATION_MAINTENANCE_2026-10-11.md",
+        "pinned": "f97ddc7ae19c11664d05267e0ce9f7b35d65ce6c8afeaed1908c24c071bf1ee0",
+        "actual": "f97ddc7ae19c11664d05267e0ce9f7b35d65ce6c8afeaed1908c24c071bf1ee0",
+        "match": true
+      },
+      {
+        "path": "docs/reviews/evidence/model-selection-s2-r2-outcome-example-20261011.json",
+        "pinned": "3ecc797c342f65efec167af9f82e1faa07fbbd3a40ba4cf32112b451dfd69c92",
+        "actual": "3ecc797c342f65efec167af9f82e1faa07fbbd3a40ba4cf32112b451dfd69c92",
+        "match": true
+      },
+      {
+        "path": "docs/roadmaps/CVF_ORCHESTRATOR_MODEL_SELECTION_SYSTEM_CHAIN_ROADMAP_2026-10-10.md",
+        "pinned": "172dd1dcaf88b75b415390cab8ad537ce40cc76113e2c8c7d9c854572163b2b2",
+        "actual": "172dd1dcaf88b75b415390cab8ad537ce40cc76113e2c8c7d9c854572163b2b2",
+        "match": true
+      },
+      {
+        "path": "governance/compat/run_worker_return_scaffold.py",
+        "pinned": "fd2f492b5c5468ce2545925a22264b663768eba126255d91eb7a02be029c2501",
+        "actual": "fd2f492b5c5468ce2545925a22264b663768eba126255d91eb7a02be029c2501",
+        "match": true
+      },
+      {
+        "path": "governance/compat/build_worker_return_skeleton_scaffold.py",
+        "pinned": "2f5b3aa8092acd8797950c1ecc40280a074f7e015f8edafc664a6d86c5aef16c",
+        "actual": "2f5b3aa8092acd8797950c1ecc40280a074f7e015f8edafc664a6d86c5aef16c",
+        "match": true
+      }
+    ],
+    "allPinsMatch": true,
+    "pinCount": 16
+  },
+  "gitStateBeforeEdits": {
+    "statusShort": [],
+    "stagedNames": [],
+    "cleanWorktree": true
+  },
+  "preImplementationGate": {
+    "command": "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base 6ed5646236858413f0696bdd10169e6cb135118b --head HEAD --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_SELECTION_S2_R3_PROJECTION_2026-10-11.md",
+    "log": ".cvf/runtime/model-selection-s2-r3-projection-20261011/pre-implementation.log",
+    "logSha256": "211bac90450cf07f3ab6acb211b843950c815ca7e76129a52d7f624e12dfc351",
+    "result": "COMPLIANT: pre-implementation autorun gate passed in 33.45s.",
+    "exit": 0,
+    "receipt": ".cvf/runtime/autorun-receipts/pre-implementation.json"
+  },
+  "scaffoldPreparation": {
+    "command": "python governance/compat/run_worker_return_scaffold.py --write docs/reviews/CVF_MODEL_SELECTION_S2_R3_PROJECTION_WORKER_RETURN_2026-10-11.md --check-shape --max-lines 450 --max-bytes 64000 --title \"Reviewed Haiku Outcome Projection\"",
+    "receiptLog": ".cvf/runtime/model-selection-s2-r3-projection-20261011/scaffold-receipt.txt",
+    "receiptSha256": "9138dad1cb7d180968f50edbbbcbc7482c0b5b8472ada6d047b688fc63f5eb8b",
+    "receiptFirstLine": "PREPARATION_SHAPE_PRESENT: pending fields are not worker evidence or gate acceptance",
+    "exit": 0,
+    "generatedBytes": 13371,
+    "generatedLines": 323,
+    "generatedProfile": "WORKER_RETURN_FULL_GATE_V1 (default), packet cap 450 lines / 64000 bytes",
+    "pendingFieldsAreEvidence": false
+  },
+  "readDepth": {
+    "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json": "FULL_FILE",
+    "CVF_SESSION_MEMORY.md": "STARTUP_ORDER_POINTERS_AND_NEXT_MOVE_SECTIONS",
+    "AGENT_HANDOFF_V63_2026-09-18.md": "FIRST_25_LINES_CURRENT_AUTHORITY_AND_STARTUP",
+    "CVF_SESSION/ACTIVE_SESSION_STATE.json": "NOT_READ_NOT_REQUIRED_BY_BOOTSTRAP",
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_SELECTION_S2_R3_PROJECTION_2026-10-11.md": "FULL_FILE",
+    "docs/baselines/CVF_GC018_MODEL_SELECTION_S2_R3_PROJECTION_2026-10-11.md": "FULL_FILE",
+    "docs/reference/CVF_MODEL_SELECTION_REVIEWED_OUTCOME_PROFILE_2026-10-11.md": "FULL_FILE",
+    "docs/reference/CVF_MODEL_SELECTION_MANUAL_RECORD_PROFILE_2026-10-11.md": "FULL_FILE",
+    "docs/reviews/evidence/model-selection-s2-r2-outcome-example-20261011.json": "FULL_FILE_SHAPE_TEMPLATE_ONLY",
+    "docs/reviews/evidence/symbol-line-anchor-fix-local-review-20261011.json": "FULL_FILE",
+    "docs/reviews/evidence/symbol-line-anchor-fix-learning-review-20261011.json": "FULL_FILE",
+    "docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json": "SYMBOL_LINE_ROW_AND_COUNT_ONLY",
+    "governance/compat/model_selection_reviewed_outcome.py": "validate_outcome_record_and_main_read; remaining branches not read line by line",
+    "governance/compat/model_selection_manual_record.py": "DEFINITION_MAP_AND_CLI_RESULT_ONLY; validator bodies not read in this lane",
+    "governance/compat/run_worker_return_scaffold.py": "usage_options_and_output_receipt_read",
+    "governance/compat/build_worker_return_skeleton_scaffold.py": "PINNED_HASH_ONLY",
+    "governance/compat/run_worker_return_fast_gate.py": "option_flags_read",
+    "checker constants for return gates": "PRIOR_SAME_SESSION_READS_RE_VERIFIED_BY_GATE_RUN; not re-read line by line in this lane"
+  },
+  "frozenWorkerProductsForInitialFinal": {
+    "checker": {
+      "path": "governance/compat/check_work_order_dispatch_quality_source.py",
+      "sha256": "3b261fb9ae7824338a0d8353eda6d87945738c68cd9a1ada5b6891232e11ce75"
+    },
+    "test": {
+      "path": "governance/compat/test_check_work_order_dispatch_quality_source.py",
+      "sha256": "dcdff06851d4fc15c331a69e54931302a35f69c7e5515d61e4dc4ea7e4bbeeb9"
+    },
+    "workerReturn": {
+      "path": "docs/reviews/CVF_SYMBOL_LINE_ANCHOR_FIX_WORKER_RETURN_2026-10-11.md",
+      "sha256": "e8ea06d39862eb878248e7682d1528bd99a0903edf100440e4fbfde9320e5303"
+    },
+    "workerEvidence": {
+      "path": "docs/reviews/evidence/symbol-line-anchor-fix-worker-20261011.json",
+      "sha256": "7f11c4728427c5e54a6ec15f7fd21d529bda53b9f405faec8305e22703cfbf20"
+    }
+  },
+  "outcomeRecord": {
+    "path": "docs/reviews/evidence/model-selection-s2-r3-symbol-line-outcome-20261011.json",
+    "sha256": "814276dd8a1a9bea069366b6ef640987ed74a3636e83358c24ba3a66b8dd54fc",
+    "decisionDigest": "9b09e04655b150112c7e27ad71820edff037243bb0125e0e179b9ff3e8d4521b"
+  },
+  "controls": [
+    {
+      "id": "POSITIVE_OUTCOME_CLI",
+      "input": "docs/reviews/evidence/model-selection-s2-r3-symbol-line-outcome-20261011.json",
+      "inputSha256": "814276dd8a1a9bea069366b6ef640987ed74a3636e83358c24ba3a66b8dd54fc",
+      "exit": 0,
+      "disposition": "VALID_OUTCOME_RECORD_ONLY",
+      "errors": []
+    },
+    {
+      "id": "POSITIVE_EMBEDDED_DECISION_CLI",
+      "input": ".cvf/runtime/model-selection-s2-r3-projection-20261011/decision-extracted.json",
+      "inputSha256": "23c2c66feba1b7527189d2e0ce37bb38813767d5d42935761b4d4af77d2a4481",
+      "exit": 0,
+      "disposition": "VALID_RECORD_ONLY",
+      "errors": []
+    },
+    {
+      "id": "NEG1_ACCEPTED_PRODUCT_HASH_DRIFT_WITHOUT_REPAIR",
+      "input": ".cvf/runtime/model-selection-s2-r3-projection-20261011/negative-1-accepted-product-drift.json",
+      "inputSha256": "ada93f272e90410d99d38d8c4ca1643cd43e190fb3293016b5ea01ad4aa1735b",
+      "mutation": "acceptedArtifacts[0].sha256 changed without a matching LOCAL_REVIEW before/after repair",
+      "exit": 1,
+      "disposition": "INVALID_OUTCOME_RECORD",
+      "errors": [
+        {
+          "code": "REPAIR_ATTRIBUTION",
+          "pointer": "/outcome/acceptedArtifacts"
+        },
+        {
+          "code": "REPAIR_ATTRIBUTION",
+          "pointer": "/outcome/acceptedArtifacts"
+        }
+      ]
+    },
+    {
+      "id": "NEG2_SAME_NORMALIZED_REVIEWER_WORKER_ACTOR",
+      "input": ".cvf/runtime/model-selection-s2-r3-projection-20261011/negative-2-same-normalized-actor.json",
+      "inputSha256": "cc940a1350908864f02001aefed39c264fc78828b5a54541fd0af469d37c8ae1",
+      "mutation": "review.actor normalizes to the worker actor",
+      "exit": 1,
+      "disposition": "INVALID_OUTCOME_RECORD",
+      "errors": [
+        {
+          "code": "REVIEW_INDEPENDENCE",
+          "pointer": "/outcome/review"
+        }
+      ]
+    },
+    {
+      "id": "NEG3_REQUESTED_IDENTITY_PROMOTED_TO_OBSERVED",
+      "input": ".cvf/runtime/model-selection-s2-r3-projection-20261011/negative-3-observed-identity-promotion.json",
+      "inputSha256": "07aef1bdf120adf205374cd98537e5f02c1f537c333e8d68c230104d8610d08c",
+      "mutation": "attempt observed.model set without runtime evidence",
+      "exit": 1,
+      "disposition": "INVALID_OUTCOME_RECORD",
+      "errors": [
+        {
+          "code": "CONFIGURATION_DISPOSITION",
+          "pointer": "/outcome/attempts/0/configurationDisposition"
+        },
+        {
+          "code": "IDENTITY_BASIS",
+          "pointer": "/outcome/attempts/0/observedBasis"
+        }
+      ]
+    },
+    {
+      "id": "NEG4_EMBEDDED_DECISION_FROZEN_FAMILY_DRIFT",
+      "input": ".cvf/runtime/model-selection-s2-r3-projection-20261011/negative-4-embedded-frozen-drift.json",
+      "inputSha256": "583159302836cc87629ac98aef0d5a6230b5ae6964e488163f39abf6e4355ab4",
+      "mutation": "decision requested effort changed without digest repair",
+      "exit": 1,
+      "disposition": "INVALID_OUTCOME_RECORD",
+      "errors": [
+        {
+          "code": "FREEZE_DRIFT",
+          "pointer": "/decision/selection/frozenDigests/candidates"
+        },
+        {
+          "code": "DECISION_DRIFT",
+          "pointer": "/decisionDigest"
+        }
+      ]
+    }
+  ],
+  "siblingPreservation": {
+    "positiveOutcomeNotMutated": true,
+    "negativeCopiesIndependent": true,
+    "outcomeSha256Now": "814276dd8a1a9bea069366b6ef640987ed74a3636e83358c24ba3a66b8dd54fc",
+    "note": "Each negative copy changes one area; collateral codes are reported in controls rather than hidden."
+  },
+  "sourceToFieldMap": [
+    {
+      "field": "decision.task.artifact / choiceAuthority / decisionSource",
+      "source": "docs/work_orders/CVF_AGENT_WORK_ORDER_SYMBOL_LINE_ANCHOR_FIX_2026-10-11.md",
+      "pinSha256": "2d9c0ec5da43fa4e8c9440c7671b54c26a72899e4848d6c7a89545e868af6cd1",
+      "fidelity": "PIN_VERIFIED"
+    },
+    {
+      "field": "decision.task.acceptanceFloor",
+      "source": "docs/baselines/CVF_GC018_SYMBOL_LINE_ANCHOR_FIX_2026-10-11.md",
+      "pinSha256": "10d6cb2f08dae2a6be7786356b8ab5fb13896d013f321da3e19912bbfd3fdf44",
+      "fidelity": "PIN_VERIFIED"
+    },
+    {
+      "field": "candidates.requested.model / effort / requestedBasis",
+      "source": "docs/reviews/evidence/symbol-line-anchor-fix-local-review-20261011.json modelObservation.operatorReportedModel and requestedEffort",
+      "fidelity": "COPIED_FROM_LOCAL_EVIDENCE_OPERATOR_METADATA"
+    },
+    {
+      "field": "candidates.observed and attempt.observed",
+      "source": "symbol-line local review modelObservation.observedRuntimeIdentity/observedEffort null",
+      "fidelity": "UNRESOLVED_NULL_WITH_REASON"
+    },
+    {
+      "field": "attempt.workerActor / workerInvocationId",
+      "source": "symbol-line local review workerActor / workerInvocationId",
+      "fidelity": "COPIED_FROM_LOCAL_EVIDENCE"
+    },
+    {
+      "field": "review.actor / invocationId",
+      "source": "symbol-line local review reviewerActor / probeInvocationId",
+      "fidelity": "COPIED_FROM_LOCAL_EVIDENCE"
+    },
+    {
+      "field": "initialReturn.ref / finalReturn",
+      "source": "symbol-line local review independentProbe.result.frozenWorkerArtifacts (return) and current bytes",
+      "fidelity": "PIN_VERIFIED_UNCHANGED"
+    },
+    {
+      "field": "initialReturn.artifacts / acceptedArtifacts",
+      "source": "symbol-line local review originalWorkerArtifacts (checker, test, worker evidence)",
+      "fidelity": "PIN_VERIFIED_UNCHANGED"
+    },
+    {
+      "field": "review.ref",
+      "source": "docs/reviews/CVF_SYMBOL_LINE_ANCHOR_FIX_COMPLETION_2026-10-11.md",
+      "fidelity": "CURRENT_BYTES_COMMITTED_NOT_ON_PACKET_PIN_LIST"
+    },
+    {
+      "field": "firstDisposition ACCEPTED_UNREPAIRED",
+      "source": "symbol-line local review sourceScope.reviewerProductCodeRepairs 0 and modelObservation.reviewerRequestedWorkerRepairTurns 0",
+      "fidelity": "DERIVED_WITH_REASON"
+    },
+    {
+      "field": "procedureDisposition FAIL and deviations PROCEDURE",
+      "source": "symbol-line learning review operatorClarification.acceptedHistoricalError REQUIRED_SCAFFOLD_OMISSION",
+      "fidelity": "OPERATOR_CONFIRMED_NOT_MACHINE_RECEIPT"
+    },
+    {
+      "field": "startedAt / endedAt null",
+      "source": "symbol-line local review modelObservation.workerMinutesReason",
+      "fidelity": "UNKNOWN_WITH_REASON"
+    },
+    {
+      "field": "telemetry and bill fields",
+      "source": "symbol-line local review modelObservation workerTokens/reviewerTokens/reworkTokens/bill null and unknownReason",
+      "fidelity": "UNKNOWN_WITH_REASON"
+    },
+    {
+      "field": "repairs []",
+      "source": "pre-return draft counts in local review modelObservation; intermediate hashes not retained",
+      "fidelity": "LIMITATION_NOT_REPRESENTED_AS_REPAIR"
+    },
+    {
+      "field": "frozenDigests and decisionDigest",
+      "source": "canonical JSON SHA-256 computed by build_outcome.py",
+      "fidelity": "COMPUTED_BY_PROFILE_RULE"
+    },
+    {
+      "field": "decidedAt / asOf",
+      "source": "authoring time of this record, not historical selection time",
+      "fidelity": "AUTHORING_CLOCK"
+    },
+    {
+      "field": "Opus 5.5 same-session advisory",
+      "source": "symbol-line learning review advisoryAnalysisIdentity",
+      "fidelity": "PROOF_ONLY_NOT_A_RECORD_ROLE"
+    }
+  ],
+  "discrepancies": [
+    {
+      "item": "collection ledger procedure label",
+      "source": "docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json row CVF-SYMBOL-LINE-ANCHOR-FIX-20261011",
+      "ledgerValue": "TECHNICAL_ACCEPTANCE_WITH_SCAFFOLD_READ_AND_TIMER_LIMITS",
+      "recordValue": "procedureDisposition FAIL",
+      "disposition": "Record follows the operator-confirmed learning review; ledger is read-only and the mismatch is reported for Local review, not edited."
+    },
+    {
+      "item": "work-order dispatch base versus HEAD",
+      "source": "docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_SELECTION_S2_R3_PROJECTION_2026-10-11.md",
+      "ledgerValue": "dispatch base 42e86fa0c",
+      "recordValue": "executionBaseHead 6ed564623",
+      "disposition": "Release commits d9af730b7..6ed564623 are packet and continuity material; pins verified."
+    }
+  ],
+  "requirements": {
+    "REQ-PROJECTION": {
+      "proofId": "PROOF-REQ-PROJECTION",
+      "status": "PASS",
+      "joins": [
+        "controls[POSITIVE_OUTCOME_CLI]",
+        "controls[POSITIVE_EMBEDDED_DECISION_CLI]",
+        "pins"
+      ],
+      "validatorUnchanged": true
+    },
+    "REQ-SOURCE": {
+      "proofId": "PROOF-REQ-SOURCE",
+      "status": "PASS",
+      "joins": [
+        "sourceToFieldMap",
+        "frozenWorkerProductsForInitialFinal",
+        "discrepancies"
+      ],
+      "distinctActors": {
+        "worker": "INTERNAL_AGENT_SYMBOL_LINE_WORKER",
+        "reviewer": "LOCAL_REVIEWER_CODEX_ROOT",
+        "sameNormalizedActor": false
+      },
+      "historicalClocksUnknownWithReason": true
+    },
+    "REQ-CONTROLS": {
+      "proofId": "PROOF-REQ-CONTROLS",
+      "status": "PASS",
+      "joins": [
+        "controls[NEG1..NEG4]",
+        "siblingPreservation"
+      ],
+      "negativesRejectedExit1": true
+    },
+    "REQ-RETURN": {
+      "proofId": "PROOF-REQ-RETURN",
+      "status": "PASS_VALIDATED_BY_FINAL_FAST_GATE_RUN_LOG",
+      "fastGateRuns": [
+        {
+          "log": ".cvf/runtime/model-selection-s2-r3-projection-20261011/fast-gate-run1.log",
+          "exit": 1,
+          "result": "FAIL",
+          "repairs": "read-ahead checker paths, ASCII ellipses, completion path citation removed, Internal source row added"
+        },
+        {
+          "log": ".cvf/runtime/model-selection-s2-r3-projection-20261011/fast-gate-run2.log",
+          "exit": 0,
+          "result": "PASS",
+          "note": "superseded by run 3 after the return text recorded run 1"
+        },
+        {
+          "log": ".cvf/runtime/model-selection-s2-r3-projection-20261011/fast-gate-run3.log",
+          "exit": 0,
+          "result": "PASS",
+          "note": "bytes before the final-clock record was added"
+        },
+        {
+          "log": ".cvf/runtime/model-selection-s2-r3-projection-20261011/fast-gate-final.log",
+          "exit": 0,
+          "result": "FINAL_RUN_ON_FROZEN_BYTES"
+        }
+      ],
+      "joins": [
+        "scaffoldPreparation",
+        "return",
+        "fast-gate-final.log",
+        "acceptance ledger"
+      ]
+    }
+  },
+  "nullUnknowns": {
+    "requestedIdentityExactVersion": {
+      "value": null,
+      "reason": "operator metadata names Claude Haiku family and ex high only"
+    },
+    "observedIdentity": {
+      "value": null,
+      "reason": "native runtime identity and effort were not exposed"
+    },
+    "workerStartEndClock": {
+      "value": null,
+      "reason": "start not captured; end not observable"
+    },
+    "tokensBillQuota": {
+      "value": null,
+      "reason": "no exposed meter for worker, reviewer or rework"
+    },
+    "reviewerAcceptanceTimestamp": {
+      "value": null,
+      "reason": "pinned completion carries no terminal timestamp"
+    }
+  },
+  "providerCallCount": 0,
+  "nestedAgentCount": 0,
+  "opusAdvisoryLinkage": {
+    "basis": "OPERATOR_REPORTED_MODEL_EFFORT_AND_CONTINUOUS_SESSION",
+    "reportedModel": "Opus 5.5",
+    "reportedEffort": "High",
+    "source": "docs/reviews/evidence/symbol-line-anchor-fix-learning-review-20261011.json",
+    "independentBlindReview": false,
+    "countsAsAttempt": false,
+    "countsAsSample": false
+  },
+  "independentProbeDisposition": "PENDING_REVIEWER_EXECUTION",
+  "runtimeProviderCostLearning": "N/A_WITH_REASON - no provider experiment and no measured cost comparison were selected"
+}

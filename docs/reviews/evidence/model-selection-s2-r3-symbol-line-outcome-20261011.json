@@ -1,0 +1,264 @@
+{
+  "profileVersion": "cvf.model-selection-reviewed-outcome@0.1.0",
+  "recordId": "s2-r3-symbol-line-haiku-retrospective",
+  "basis": "RETROSPECTIVE_PROJECTION",
+  "asOf": "2026-10-11T13:07:06Z",
+  "decisionSource": {
+    "locator": "docs/work_orders/CVF_AGENT_WORK_ORDER_SYMBOL_LINE_ANCHOR_FIX_2026-10-11.md",
+    "sha256": "2d9c0ec5da43fa4e8c9440c7671b54c26a72899e4848d6c7a89545e868af6cd1"
+  },
+  "decision": {
+    "profileVersion": "cvf.model-selection-manual-record@0.1.0",
+    "recordId": "s2-r3-symbol-line-haiku-manual-decision",
+    "task": {
+      "taskId": "symbol-line-anchor-fix-20261011",
+      "artifact": {
+        "locator": "docs/work_orders/CVF_AGENT_WORK_ORDER_SYMBOL_LINE_ANCHOR_FIX_2026-10-11.md",
+        "sha256": "2d9c0ec5da43fa4e8c9440c7671b54c26a72899e4848d6c7a89545e868af6cd1"
+      },
+      "surface": "AGENT_SEAT",
+      "role": "WORKER",
+      "outcome": "bounded existing-checker definition-line anchor repair with focused regression tests and a pending worker return",
+      "acceptanceFloor": {
+        "locator": "docs/baselines/CVF_GC018_SYMBOL_LINE_ANCHOR_FIX_2026-10-11.md",
+        "sha256": "10d6cb2f08dae2a6be7786356b8ab5fb13896d013f321da3e19912bbfd3fdf44"
+      },
+      "choiceAuthority": {
+        "locator": "docs/work_orders/CVF_AGENT_WORK_ORDER_SYMBOL_LINE_ANCHOR_FIX_2026-10-11.md",
+        "sha256": "2d9c0ec5da43fa4e8c9440c7671b54c26a72899e4848d6c7a89545e868af6cd1"
+      },
+      "choiceKind": "EXPLICIT_ASSIGNMENT",
+      "assignedCandidateId": "symbol-line-haiku-worker",
+      "provisionalAllowed": false
+    },
+    "candidates": [
+      {
+        "candidateId": "symbol-line-haiku-worker",
+        "requested": {
+          "providerProduct": null,
+          "model": "Claude Haiku",
+          "snapshot": null,
+          "channel": null,
+          "effort": "ex high",
+          "harnessVersion": null,
+          "toolProfile": null,
+          "role": "WORKER",
+          "unknownReason": "Operator-reported family 'Claude Haiku' and requested effort 'ex high' only; provider product, snapshot, channel, harness and tool profile were not pinned at dispatch. The worker self-report 'Haiku 5.5 / claude-haiku-5-5' is not used as requested identity."
+        },
+        "requestedBasis": "OPERATOR_REPORTED",
+        "observed": {
+          "providerProduct": null,
+          "model": null,
+          "snapshot": null,
+          "channel": null,
+          "effort": null,
+          "harnessVersion": null,
+          "toolProfile": null,
+          "role": null,
+          "unknownReason": "Native runtime identity and effort were not exposed to the Local record; no observed dimension is claimed. The worker self-report is not runtime evidence."
+        },
+        "observedBasis": "UNRESOLVED",
+        "runtimeEvidence": null,
+        "eligible": true,
+        "contextDisposition": "PENDING",
+        "availability": "UNKNOWN"
+      }
+    ],
+    "evidence": [],
+    "selection": {
+      "decisionId": "s2-r3-symbol-line-haiku-decision",
+      "owner": "LOCAL",
+      "decidedAt": "2026-10-11T13:07:06Z",
+      "disposition": "SELECT",
+      "selectedCandidateId": "symbol-line-haiku-worker",
+      "operatorAssignmentDisposition": "HONORED_WITH_EVIDENCE_GAP",
+      "qualityDisposition": "INSUFFICIENT",
+      "evidenceIds": [],
+      "rationale": "Retrospective projection of the operator-assigned Claude Haiku ex-high worker on the 2026-10-11 symbol-line task. decidedAt is this authoring time, not the historical assignment time. Quality is INSUFFICIENT: no predictive support, runtime identity or model quality is claimed. executionAuthorized is false.",
+      "executionAuthorized": false,
+      "frozenDigests": {
+        "task": "028439a7fa15a01af3d9c4f01d896405c509e0428f18ed8fc5f5ca70bd819572",
+        "candidates": "1f25895d92eed00021fde8578542233370dc76ec5fd236192aa25b109ef3ba7e",
+        "evidence": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "admission": {
+      "disposition": "PENDING",
+      "authorityDisposition": "PENDING",
+      "methodDisposition": "PENDING",
+      "contextDisposition": "PENDING",
+      "budgetDisposition": "PENDING",
+      "availabilityDisposition": "PENDING",
+      "refs": [
+        {
+          "locator": "docs/work_orders/CVF_AGENT_WORK_ORDER_SYMBOL_LINE_ANCHOR_FIX_2026-10-11.md",
+          "sha256": "2d9c0ec5da43fa4e8c9440c7671b54c26a72899e4848d6c7a89545e868af6cd1"
+        }
+      ],
+      "reason": "Retrospective projection; no dispatch-time admission receipt is recreated or authenticated."
+    },
+    "cost": {
+      "stages": [],
+      "hardCaps": []
+    },
+    "learningLinks": []
+  },
+  "decisionDigest": "9b09e04655b150112c7e27ad71820edff037243bb0125e0e179b9ff3e8d4521b",
+  "outcome": {
+    "outcomeId": "s2-r3-symbol-line-haiku-retrospective-outcome",
+    "decisionId": "s2-r3-symbol-line-haiku-decision",
+    "primaryAttemptId": "symbol-line-haiku-primary-attempt",
+    "attempts": [
+      {
+        "attemptId": "symbol-line-haiku-primary-attempt",
+        "candidateId": "symbol-line-haiku-worker",
+        "executionRef": {
+          "locator": "docs/reviews/CVF_SYMBOL_LINE_ANCHOR_FIX_WORKER_RETURN_2026-10-11.md",
+          "sha256": "e8ea06d39862eb878248e7682d1528bd99a0903edf100440e4fbfde9320e5303"
+        },
+        "workerActor": "INTERNAL_AGENT_SYMBOL_LINE_WORKER",
+        "workerInvocationId": "symbol-line-anchor-fix-worker-20261011",
+        "status": "COMPLETED",
+        "startedAt": null,
+        "endedAt": null,
+        "clockUnknownReason": "Worker start was not captured (budgetStatus NOT_OBSERVABLE in the pinned worker evidence); end time was not captured. No substitute clock is used.",
+        "observed": {
+          "providerProduct": null,
+          "model": null,
+          "snapshot": null,
+          "channel": null,
+          "effort": null,
+          "harnessVersion": null,
+          "toolProfile": null,
+          "role": null,
+          "unknownReason": "Native runtime identity and effort were not exposed to the Local record; no observed dimension is claimed. The worker self-report is not runtime evidence."
+        },
+        "observedBasis": "UNRESOLVED",
+        "runtimeEvidence": null,
+        "configurationDisposition": "UNKNOWN"
+      }
+    ],
+    "failedOrAbandonedAttemptIds": [],
+    "initialReturn": {
+      "ref": {
+        "locator": "docs/reviews/CVF_SYMBOL_LINE_ANCHOR_FIX_WORKER_RETURN_2026-10-11.md",
+        "sha256": "e8ea06d39862eb878248e7682d1528bd99a0903edf100440e4fbfde9320e5303"
+      },
+      "artifacts": [
+        {
+          "locator": "governance/compat/check_work_order_dispatch_quality_source.py",
+          "sha256": "3b261fb9ae7824338a0d8353eda6d87945738c68cd9a1ada5b6891232e11ce75"
+        },
+        {
+          "locator": "governance/compat/test_check_work_order_dispatch_quality_source.py",
+          "sha256": "dcdff06851d4fc15c331a69e54931302a35f69c7e5515d61e4dc4ea7e4bbeeb9"
+        },
+        {
+          "locator": "docs/reviews/evidence/symbol-line-anchor-fix-worker-20261011.json",
+          "sha256": "7f11c4728427c5e54a6ec15f7fd21d529bda53b9f405faec8305e22703cfbf20"
+        }
+      ],
+      "firstDisposition": "ACCEPTED_UNREPAIRED",
+      "capturedAt": null,
+      "unknownReason": "The pinned Local evidence retains the submitted and accepted return bytes but no exact initial-capture timestamp."
+    },
+    "finalReturn": {
+      "locator": "docs/reviews/CVF_SYMBOL_LINE_ANCHOR_FIX_WORKER_RETURN_2026-10-11.md",
+      "sha256": "e8ea06d39862eb878248e7682d1528bd99a0903edf100440e4fbfde9320e5303"
+    },
+    "repairs": [],
+    "review": {
+      "disposition": "ACCEPTED_BOUNDED",
+      "actor": "LOCAL_REVIEWER_CODEX_ROOT",
+      "invocationId": "symbol-line-anchor-fix-local-review-20261011",
+      "ref": {
+        "locator": "docs/reviews/CVF_SYMBOL_LINE_ANCHOR_FIX_COMPLETION_2026-10-11.md",
+        "sha256": "bed2846133dc35665484ef190b1798d48719a515c2b277a638ace1324310abb1"
+      },
+      "reviewedAt": null,
+      "unknownReason": "The pinned completion and Local evidence retain probe and verification stages but no terminal acceptance timestamp."
+    },
+    "technicalDisposition": "ACCEPTED_BOUNDED",
+    "procedureDisposition": "FAIL",
+    "procedureReason": "Operator-confirmed REQUIRED_SCAFFOLD_OMISSION: the worker hand-authored its return instead of generating the checker-safe skeleton the work order required. Evidence basis is operator-confirmed execution history, not a machine receipt. Technical acceptance is recorded separately and is not reduced by this procedural failure.",
+    "acceptedArtifacts": [
+      {
+        "locator": "governance/compat/check_work_order_dispatch_quality_source.py",
+        "sha256": "3b261fb9ae7824338a0d8353eda6d87945738c68cd9a1ada5b6891232e11ce75"
+      },
+      {
+        "locator": "governance/compat/test_check_work_order_dispatch_quality_source.py",
+        "sha256": "dcdff06851d4fc15c331a69e54931302a35f69c7e5515d61e4dc4ea7e4bbeeb9"
+      },
+      {
+        "locator": "docs/reviews/evidence/symbol-line-anchor-fix-worker-20261011.json",
+        "sha256": "7f11c4728427c5e54a6ec15f7fd21d529bda53b9f405faec8305e22703cfbf20"
+      }
+    ],
+    "telemetry": [
+      {
+        "stage": "EXECUTION",
+        "unit": "TOKENS",
+        "amount": null,
+        "currency": null,
+        "window": "symbol-line worker run",
+        "unknownReason": "NO_EXPOSED_WORKER_TOKEN_METER",
+        "actor": "INTERNAL_AGENT_SYMBOL_LINE_WORKER",
+        "basis": "UNKNOWN"
+      },
+      {
+        "stage": "EXECUTION",
+        "unit": "WORKER_SECONDS",
+        "amount": null,
+        "currency": null,
+        "window": "symbol-line worker run",
+        "unknownReason": "WORKER_START_NOT_CAPTURED; 35_MINUTE_BUDGET_NOT_OBSERVABLE",
+        "actor": "INTERNAL_AGENT_SYMBOL_LINE_WORKER",
+        "basis": "UNKNOWN"
+      },
+      {
+        "stage": "EXECUTION",
+        "unit": "MONEY",
+        "amount": null,
+        "currency": null,
+        "window": "symbol-line worker run",
+        "unknownReason": "NO_EXPOSED_BILL_METER",
+        "actor": "INTERNAL_AGENT_SYMBOL_LINE_WORKER",
+        "basis": "UNKNOWN"
+      },
+      {
+        "stage": "REWORK",
+        "unit": "WORKER_SECONDS",
+        "amount": null,
+        "currency": null,
+        "window": "worker pre-return drafts and gate repairs",
+        "unknownReason": "PRE_RETURN_DRAFT_TIME_NOT_CAPTURED",
+        "actor": "INTERNAL_AGENT_SYMBOL_LINE_WORKER",
+        "basis": "UNKNOWN"
+      },
+      {
+        "stage": "REVIEW",
+        "unit": "TOKENS",
+        "amount": null,
+        "currency": null,
+        "window": "Local independent review",
+        "unknownReason": "NO_EXPOSED_REVIEWER_TOKEN_METER",
+        "actor": "LOCAL_REVIEWER_CODEX_ROOT",
+        "basis": "UNKNOWN"
+      }
+    ],
+    "remainingParentTaskSpend": [],
+    "deviations": [
+      {
+        "attemptId": "symbol-line-haiku-primary-attempt",
+        "kind": "PROCEDURE",
+        "reason": "REQUIRED_SCAFFOLD_OMISSION confirmed by the operator and recorded in the symbol-line learning review. The worker did not use the checker-safe skeleton, and its first fast-gate runs failed on return-structure fields.",
+        "evidence": {
+          "locator": "docs/reviews/evidence/symbol-line-anchor-fix-learning-review-20261011.json",
+          "sha256": "8a11e18baf1aceff646b69236c97f74f995c2086544120af9329d42753498f92"
+        }
+      }
+    ],
+    "limitations": "Source pins: the four worker frozen artifacts are in the Local evidence and match current bytes. Pre-return drafts (two failed gate draft attempts, one implementation repair group, two return-metadata repair groups and one post-pass compaction) are draft history; intermediate hashes were not retained, so they are not represented as repair rows or separate attempts. Worker and reviewer start, end, token, bill and effort telemetry are unknown with reasons; empty spend is not zero. Requested Claude Haiku ex-high is operator metadata; native identity and effort were not observed. Same-session Opus 5.5 advisory analysis is linked in the proof only and is not an independent attempt, review or worker sample. Source truth, hidden attempts and current freshness are not authenticated. This is offline declared-consistency evidence only, not model ranking, cost saving or complete R3."
+  }
+}

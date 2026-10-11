@@ -2,7 +2,7 @@
 
 Memory class: governed-dispatch-baseline
 docType: baseline
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 Date: 2026-10-11
 Batch ID: CVF-MODEL-SELECTION-S2-R3-PROJECTION-20261011
 Dispatch base head: 42e86fa0c65f97d9c84233e1d967758216f1ce97
@@ -34,7 +34,7 @@ Existing actual API/CLI positive plus four non-aliased negative controls; source
 | Field | Value |
 |---|---|
 | applicableCheckersRead | `governance/compat/check_work_order_dispatch_quality.py`; `governance/compat/check_gate_to_role_closeability.py`; `governance/compat/check_governed_artifact_checker_read_ahead.py`; `governance/compat/check_dispatch_prompt_envelope.py`; `governance/compat/check_markdown_structural_completeness.py`; `governance/compat/check_agent_operation_trace.py`; `governance/compat/check_public_export_disposition.py`; `governance/compat/check_work_order_acceptance_ledger.py`; `governance/compat/check_task_governance_route.py`; `governance/compat/check_independent_review_probe_admission.py`; `governance/compat/check_dispatch_scaffold_provenance.py`; `governance/compat/check_core_guard_self_protection.py`; `governance/compat/check_agent_packet_authority_and_encoding.py` |
-| literalTokensReviewed | DISPATCH_READY; WORKER_MUST_NOT_COMMIT; INTERNAL_AGENT; REQUIRED_FIELDS; TRACE_REQUIRED_LABELS; SECTION_GROUPS; DEFERRED_PRIVATE_ONLY |
+| literalTokensReviewed | CLOSED_PASS_BOUNDED; WORKER_MUST_NOT_COMMIT; INTERNAL_AGENT; REQUIRED_FIELDS; TRACE_REQUIRED_LABELS; SECTION_GROUPS; DEFERRED_PRIVATE_ONLY |
 | gateRunPurpose | confirmation/evidence of selected packet structure; not a dispatch or implementation proof |
 | claimBoundary | checker constants and applicable predicates read before these packet files; added ready-state contracts were read before their declarations |
 
@@ -117,3 +117,30 @@ EPISTEMIC_PROCESS_NA_WITH_REASON: normative admission baseline; source/consumer 
 ## Claim Boundary
 
 Packet proposal under existing optional profiles; final committed bound pre-dispatch must PASS before manual worker start. No old-history quality upgrade, extra original Haiku/Opus sample, runtime effect or push authority.
+
+## Local Closure Disposition - 2026-10-11
+
+Reviewer Local INTERNAL_AGENT; phase=review/closure; owner=Local. executionBaseHead: 6ed5646236858413f0696bdd10169e6cb135118b; closureBaseHead: 6ed5646236858413f0696bdd10169e6cb135118b. `docs/reviews/CVF_MODEL_SELECTION_S2_R3_PROJECTION_COMPLETION_2026-10-11.md` accepts current existing-profile projection after one proof metadata repair. Product/return bytes unchanged; original packet pins and worker gate receipts frozen in Local evidence. Historical procedure FAIL and unknown clocks/runtime/usage retained. Ninth worker observation promoted; current scaffold adoption bounded, no effectiveness proof or successor.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_SELECTION_S2_R3_PROJECTION_2026-10-11.md` | CLOSED_PASS_BOUNDED; original frozen authoring contract retained | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_MODEL_SELECTION_S2_R3_PROJECTION_COMPLETION_2026-10-11.md` and `docs/reviews/evidence/model-selection-s2-r3-projection-local-20261011.json` | raw submission/accepted pins; distinct Local source/invocation probe | PASS |
+| Roadmap state | `docs/roadmaps/CVF_ORCHESTRATOR_MODEL_SELECTION_SYSTEM_CHAIN_ROADMAP_2026-10-10.md` | one bounded application; overall design/S5 parked | PASS |
+| Registry JSON | `docs/reviews/evidence/model-selection-s2-r3-symbol-line-outcome-20261011.json` and `docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json` | typed outcome; ninth worker observation; historical procedure FAIL | PASS |
+| Registry Markdown | `docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md` and `docs/reviews/CVF_MODEL_SELECTION_S2_R3_PROJECTION_WORKER_RETURN_2026-10-11.md` | attribution and null/read/timing limits retained | PASS |
+| External evidence digest | named original internal symbol-line sources | no external intake | N/A with reason: internal task |
+| System loop interlock | locked existing profile and closed order | executionAuthorized=false; no runtime effect | PASS |
+| Session continuity | current authority raw hash/generated projections | closed packet hash atomic; actual-SHA semantic continuity follows | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| Projection | existing profile; historical sources | raw product/embedded refs and consumed CLI PASS | PASS_BOUNDED |
+| Source | raw joins and honest limits | original immutable refs; corrected two proof metadata rows | PASS_BOUNDED |
+| Controls | positive and four isolated negatives | six retained results; fresh Local invocation control | PASS |
+| Return | first/final gates, preparation, clocks/read limits | first FAIL +three PASS; ledger COMPLIANT; receipt and limitations retained | PASS_WITH_LIMIT |
+| Collection | all reviewed outcomes; no false attempts | nine workers, seven Haiku-family/two Sonnet; Opus excluded | PASS_BOUNDED |

@@ -319,7 +319,7 @@
       "evidenceSha256": "88fc422144627db40181584c88b1a546950f7bd6bb6271e3932829927c776984",
       "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_SYMBOL_LINE_ANCHOR_FIX_2026-10-11.md",
       "technicalOutput": "ACCEPTED_TWO_REGEX_ANCHORS_98_WORKER_TESTS_DISTINCT_LOCAL_PROBE",
-      "procedure": "TECHNICAL_ACCEPTANCE_WITH_SCAFFOLD_READ_AND_TIMER_LIMITS",
+      "procedure": "TECHNICAL_ACCEPTANCE_WITH_CONFIRMED_SCAFFOLD_OMISSION_AND_TIMER_READ_LIMITS",
       "firstReturnGateClean": false,
       "workerReturnDraftGateAttempts": 4,
       "failedReturnDraftGateAttempts": 2,
@@ -395,9 +395,82 @@
           "evidenceSha256": "06235df7d62714bd7adaba5cee2b262cb0c2b0884d91fff3f083e3bf39d66bcd",
           "newWorkerObservation": false,
           "effectivenessProved": false,
-          "historicalMeasurementsPreserved": true
+          "historicalMeasurementsPreserved": true,
+          "consumptionObservation": {
+            "trancheId": "CVF-MODEL-SELECTION-S2-R3-PROJECTION-20261011",
+            "evidenceRef": "docs/reviews/evidence/model-selection-s2-r3-projection-local-20261011.json",
+            "disposition": "ACTION_VERIFIED_PARTIAL",
+            "firstGateClean": false,
+            "effectivenessProved": false
+          }
         }
-      }
+      },
+      "procedureLabelHistory": [
+        {
+          "value": "TECHNICAL_ACCEPTANCE_WITH_SCAFFOLD_READ_AND_TIMER_LIMITS",
+          "disposition": "REPLACED_FOR_CLARITY_NOT_TECHNICAL_REVOCATION"
+        }
+      ],
+      "procedureDisposition": "FAIL",
+      "procedureReason": "Required scaffold omission operator-confirmed in existing learning review; technical acceptance retained; partial reads and original timer unknown."
+    },
+    {
+      "trancheId": "CVF-MODEL-SELECTION-S2-R3-PROJECTION-20261011",
+      "taskFamily": "EXISTING_PROFILE_RETROSPECTIVE_OUTCOME_PROJECTION",
+      "implementationPaths": 0,
+      "deliveredPaths": 3,
+      "model": "Claude Haiku (operator-reported family; native version unknown)",
+      "effort": "ex high",
+      "identityBasis": "OPERATOR_REPORTED_REQUEST_NOT_RUNTIME_VERIFIED",
+      "observedRuntimeIdentity": null,
+      "observedEffort": null,
+      "role": "INTERNAL_AGENT_WORKER",
+      "status": "CLOSED_PASS_BOUNDED",
+      "evidence": "docs/reviews/evidence/model-selection-s2-r3-projection-local-20261011.json",
+      "evidenceSha256": "98f1bcdf5b192c197490ee829586908715d2091bb002e6981395530ed38b6db5",
+      "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_SELECTION_S2_R3_PROJECTION_2026-10-11.md",
+      "technicalOutput": "ACCEPTED_EXISTING_PROFILE_PROJECTION_AFTER_LOCAL_SOURCE_MAP_METADATA_REPAIR",
+      "procedure": "BOUNDED_ACCEPTANCE_WITH_DISCLOSED_READ_DEPTH_GAPS",
+      "firstReturnGateClean": false,
+      "workerReturnDraftGateAttempts": 4,
+      "failedReturnDraftGateAttempts": 1,
+      "workerImplementationRepairGroups": 0,
+      "workerReturnMetadataRepairGroups": 1,
+      "reviewerRequestedWorkerRepairTurns": 0,
+      "reviewerProductCodeRepairs": 0,
+      "reviewerProductJsonRepairs": 0,
+      "reviewerProofMetadataRepairGroups": 1,
+      "elapsed": {
+        "minutes": null,
+        "basis": "WORKER_REPORTED_START_TO_FINAL_GATE_START541_SECONDS; FINAL_GATE7.41_SECONDS; WHOLE_INVOCATION_END_UNKNOWN",
+        "startToFinalGateStartSeconds": 541,
+        "finalGateSeconds": 7.41,
+        "fullDeliveryMinutes": null
+      },
+      "bill": {
+        "amount": null,
+        "currency": null,
+        "tokens": null,
+        "reason": "NO_EXPOSED_WORKER_REVIEWER_REWORK_METER"
+      },
+      "processFindings": [
+        "First fast gate failed four return defects; three later PASS logs retained. One worker metadata repair group; intermediate draft hashes unavailable.",
+        "Local corrected two historical packet source-map rows in one proof metadata group; product JSON and worker return unchanged.",
+        "Current scaffold command/profile/caps/receipt verified: one bounded consumption observation, first gate still failed.",
+        "Worker manual-record validator body unread, outcome branches partly read, previous same-session checker reads reused; hashes/gates do not prove reading.",
+        "decidedAt/asOf are record authoring clocks. Historical procedureFAIL and unknown runtime/usage remain separate from technical acceptance."
+      ],
+      "independentProof": "Raw source/product refs, retained six worker controls without rerun, and one fresh source-derived same-invocation/distinct-actor CLI rejection; unchanged siblings.",
+      "limitations": [
+        "Retrospective projection is not a new execution of symbol-line repair",
+        "Related existing-profile tasks are not independent matched benchmark samples",
+        "Same-session Opus advisory remains linked context, excluded from attempts/reviews/worker observations",
+        "Whole accepted-delivery timing and costs unknown; no model ranking or runtime selection"
+      ],
+      "localOwnedDefects": [
+        "First Local fresh probe used unsupported --json; argparse rejected before validation. Source-derived argv corrected, original failure retained, no worker attribution.",
+        "Local original packet omitted six explicit conditional shape terms and used bare read-ahead paths; material preflight exposed it, corrected on existing closed packet. Not worker-owned."
+      ]
     }
   ],
   "rubric": [
@@ -481,7 +554,7 @@
       "role/task-family selection matrix",
       "next useful comparison task"
     ],
-    "reviewedHaikuCount": 6,
+    "reviewedHaikuCount": 7,
     "reviewedSonnetCount": 2
   },
   "provisionalRoleRouting": [
@@ -511,9 +584,9 @@
   "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
   "laneProtection": "Reviewer-owned governed evidence promotion authorized by operator longitudinal tracking request. No worker file edit, new dispatch, provider effect or public export.",
   "observations": {
-    "technical": "Eight reviewed worker observations: six Haiku-family, two Sonnet. Original six rows retained; O6 documentary backfill and symbol-line repair appended.",
-    "process": "Two new ex high requests differ from earlier Max labels. O6 needed one Local documentary clarification; symbol-line zero reviewer code repairs, first two metadata gates failed, total timer unknown. Dispatcher marker defect is Local-owned.",
-    "reportStatus": "EIGHT_WORKER_OBSERVATIONS_NO_COMPARATIVE_WINNER",
+    "technical": "Nine reviewed worker observations: seven Haiku-family, two Sonnet; original first seven rows unchanged, historical eighth procedure clarified, current projection appended.",
+    "process": "Current scaffold consumed with retained receipt, one first-gate FAIL/four defects and one Local proof metadata repair; no full read/timer/identity compliance claim.",
+    "reportStatus": "NINE_WORKER_OBSERVATIONS_NO_COMPARATIVE_WINNER",
     "measuredBillComparison": null,
     "nextControl": "Continue evidence collection on admitted work; Expense/S5 and effects parked; no automatic router or new benchmark task."
   },
@@ -615,7 +688,19 @@
       "complexity": "TWO_REGEX_LINES_PLUS_PARAMETERIZED_REGRESSIONS",
       "reuse": "Existing governed owner, pinned O6 context and installed Python tooling",
       "quality": "ACCEPTED_TWO_REGEX_ANCHORS_98_WORKER_TESTS_DISTINCT_LOCAL_PROBE",
-      "process": "TECHNICAL_ACCEPTANCE_WITH_CONFIRMED_SCAFFOLD_READ_AND_TIMER_LIMITS",
+      "process": "TECHNICAL_ACCEPTANCE_WITH_CONFIRMED_SCAFFOLD_OMISSION_AND_TIMER_READ_LIMITS",
+      "configurationUse": "WORKER_EVIDENCE_ONLY_NO_MATCHED_COMPARISON",
+      "costVerdict": "UNMEASURED"
+    },
+    {
+      "family": "EXISTING_PROFILE_RETROSPECTIVE_OUTCOME_PROJECTION",
+      "observedTranches": [
+        "CVF-MODEL-SELECTION-S2-R3-PROJECTION-20261011"
+      ],
+      "complexity": "THREE_DOCUMENTARY_OUTPUTS_EXISTING_TYPED_PROFILE_AND_FROZEN_SOURCE_JOINS",
+      "reuse": "Accepted symbol-line source, existing validators/example and corrected scaffold owner",
+      "quality": "ACCEPTED_EXISTING_PROFILE_PROJECTION_AFTER_LOCAL_SOURCE_MAP_METADATA_REPAIR",
+      "process": "BOUNDED_ACCEPTANCE_WITH_DISCLOSED_READ_DEPTH_GAPS",
       "configurationUse": "WORKER_EVIDENCE_ONLY_NO_MATCHED_COMPARISON",
       "costVerdict": "UNMEASURED"
     }

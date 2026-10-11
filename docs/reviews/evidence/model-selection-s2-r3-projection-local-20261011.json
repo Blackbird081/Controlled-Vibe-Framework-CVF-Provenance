@@ -1,0 +1,402 @@
+{
+  "schemaVersion": "cvf.s2R3ProjectionLocalReview@1.0.0",
+  "reviewHead": "6ed5646236858413f0696bdd10169e6cb135118b",
+  "auditAt": "2026-10-11T13:20:47.434191+00:00",
+  "frozenSubmission": [
+    {
+      "path": "docs/reviews/evidence/model-selection-s2-r3-projection-worker-20261011.json",
+      "sha256": "3706578ec175782619c001ee5b6dc7582f36c424dc4c0b3036887009a6441002",
+      "snapshot": ".cvf/runtime/model-selection-s2-r3-local-20261011/submitted-model-selection-s2-r3-projection-worker-20261011.json"
+    },
+    {
+      "path": "docs/reviews/evidence/model-selection-s2-r3-symbol-line-outcome-20261011.json",
+      "sha256": "814276dd8a1a9bea069366b6ef640987ed74a3636e83358c24ba3a66b8dd54fc",
+      "snapshot": ".cvf/runtime/model-selection-s2-r3-local-20261011/submitted-model-selection-s2-r3-symbol-line-outcome-20261011.json"
+    },
+    {
+      "path": "docs/reviews/CVF_MODEL_SELECTION_S2_R3_PROJECTION_WORKER_RETURN_2026-10-11.md",
+      "sha256": "6863fd4f56b76683c61a141781c82a7428db8c9241f681a5499f2f2028e5770e",
+      "snapshot": ".cvf/runtime/model-selection-s2-r3-local-20261011/submitted-CVF_MODEL_SELECTION_S2_R3_PROJECTION_WORKER_RETURN_2026-10-11.md"
+    }
+  ],
+  "sourceVerification": [
+    {
+      "path": "docs/reference/CVF_MODEL_SELECTION_REVIEWED_OUTCOME_PROFILE_2026-10-11.md",
+      "sha256": "612735bf1f27354b9b5e9389239fa9ded6d3aeb9a77bfb4da63da4376eb84c5d",
+      "status": "PASS_AT_REVIEW_HEAD"
+    },
+    {
+      "path": "docs/reference/CVF_MODEL_SELECTION_MANUAL_RECORD_PROFILE_2026-10-11.md",
+      "sha256": "ffa0bda042b6f7f16f30de412f3f3e11eff7b64b193273e108c672109cb4e5c6",
+      "status": "PASS_AT_REVIEW_HEAD"
+    },
+    {
+      "path": "governance/compat/model_selection_reviewed_outcome.py",
+      "sha256": "9526916557ef81654930bac9697bc242d6b8ebf41163b23977b78729392ec0ff",
+      "status": "PASS_AT_REVIEW_HEAD"
+    },
+    {
+      "path": "governance/compat/model_selection_manual_record.py",
+      "sha256": "8db98426eeeb6ea9f13f8d78efcc3bee15f57ccb2e586081577b3559a1374c0e",
+      "status": "PASS_AT_REVIEW_HEAD"
+    },
+    {
+      "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_SYMBOL_LINE_ANCHOR_FIX_2026-10-11.md",
+      "sha256": "2d9c0ec5da43fa4e8c9440c7671b54c26a72899e4848d6c7a89545e868af6cd1",
+      "status": "PASS_AT_REVIEW_HEAD"
+    },
+    {
+      "path": "docs/reviews/CVF_SYMBOL_LINE_ANCHOR_FIX_WORKER_RETURN_2026-10-11.md",
+      "sha256": "e8ea06d39862eb878248e7682d1528bd99a0903edf100440e4fbfde9320e5303",
+      "status": "PASS_AT_REVIEW_HEAD"
+    },
+    {
+      "path": "docs/reviews/evidence/symbol-line-anchor-fix-worker-20261011.json",
+      "sha256": "7f11c4728427c5e54a6ec15f7fd21d529bda53b9f405faec8305e22703cfbf20",
+      "status": "PASS_AT_REVIEW_HEAD"
+    },
+    {
+      "path": "docs/reviews/evidence/symbol-line-anchor-fix-local-review-20261011.json",
+      "sha256": "88fc422144627db40181584c88b1a546950f7bd6bb6271e3932829927c776984",
+      "status": "PASS_AT_REVIEW_HEAD"
+    },
+    {
+      "path": "docs/reviews/evidence/symbol-line-anchor-fix-learning-review-20261011.json",
+      "sha256": "8a11e18baf1aceff646b69236c97f74f995c2086544120af9329d42753498f92",
+      "status": "PASS_AT_REVIEW_HEAD"
+    },
+    {
+      "path": "docs/reviews/CVF_SYMBOL_LINE_ANCHOR_FIX_LEARNING_CANDIDATES_LOCAL_REVIEW_2026-10-11.md",
+      "sha256": "1bdc9b89e31405652ccac369204bb427fbc6124fc92574edc6fc1d79c3a9f23d",
+      "status": "PASS_AT_REVIEW_HEAD"
+    },
+    {
+      "path": "docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json",
+      "sha256": "9f679ab12291f7c0ead3d8c9fce7e5b34be366654d0dc7ee31f4824511f94dd4",
+      "status": "PASS_AT_REVIEW_HEAD"
+    },
+    {
+      "path": "docs/reviews/CVF_RETURN_PREPARATION_MAINTENANCE_2026-10-11.md",
+      "sha256": "f97ddc7ae19c11664d05267e0ce9f7b35d65ce6c8afeaed1908c24c071bf1ee0",
+      "status": "PASS_AT_REVIEW_HEAD"
+    },
+    {
+      "path": "docs/reviews/evidence/model-selection-s2-r2-outcome-example-20261011.json",
+      "sha256": "3ecc797c342f65efec167af9f82e1faa07fbbd3a40ba4cf32112b451dfd69c92",
+      "status": "PASS_AT_REVIEW_HEAD"
+    },
+    {
+      "path": "docs/roadmaps/CVF_ORCHESTRATOR_MODEL_SELECTION_SYSTEM_CHAIN_ROADMAP_2026-10-10.md",
+      "sha256": "172dd1dcaf88b75b415390cab8ad537ce40cc76113e2c8c7d9c854572163b2b2",
+      "status": "PASS_AT_REVIEW_HEAD"
+    },
+    {
+      "path": "governance/compat/run_worker_return_scaffold.py",
+      "sha256": "fd2f492b5c5468ce2545925a22264b663768eba126255d91eb7a02be029c2501",
+      "status": "PASS_AT_REVIEW_HEAD"
+    },
+    {
+      "path": "governance/compat/build_worker_return_skeleton_scaffold.py",
+      "sha256": "2f5b3aa8092acd8797950c1ecc40280a074f7e015f8edafc664a6d86c5aef16c",
+      "status": "PASS_AT_REVIEW_HEAD"
+    }
+  ],
+  "consumedWorkerControls": [
+    {
+      "id": "POSITIVE_OUTCOME_CLI",
+      "inputSha256": "814276dd8a1a9bea069366b6ef640987ed74a3636e83358c24ba3a66b8dd54fc",
+      "retainedLog": ".cvf/runtime/model-selection-s2-r3-projection-20261011/outcome-cli-positive.txt",
+      "logSha256": "9d025bfe2c82d1a0fec0f6e48e2daef59a86d891353e51226aeddcbd7d621db4",
+      "observedDisposition": "VALID_OUTCOME_RECORD_ONLY",
+      "changedPointers": [],
+      "status": "CONSUMED_NOT_RERUN"
+    },
+    {
+      "id": "POSITIVE_EMBEDDED_DECISION_CLI",
+      "inputSha256": "23c2c66feba1b7527189d2e0ce37bb38813767d5d42935761b4d4af77d2a4481",
+      "retainedLog": ".cvf/runtime/model-selection-s2-r3-projection-20261011/decision-cli-positive.txt",
+      "logSha256": "abc9c5bfeb8866c1b2b1309793a2e2588117a9f3745b44e3f9a020f614602622",
+      "observedDisposition": "VALID_RECORD_ONLY",
+      "changedPointers": [],
+      "status": "CONSUMED_NOT_RERUN"
+    },
+    {
+      "id": "NEG1_ACCEPTED_PRODUCT_HASH_DRIFT_WITHOUT_REPAIR",
+      "inputSha256": "ada93f272e90410d99d38d8c4ca1643cd43e190fb3293016b5ea01ad4aa1735b",
+      "retainedLog": ".cvf/runtime/model-selection-s2-r3-projection-20261011/negative-1-accepted-product-drift.cli.txt",
+      "logSha256": "bb90883121faa1f32449887db3c4dbce708b6e1474540bff25ab6303c51cc382",
+      "observedDisposition": "INVALID_OUTCOME_RECORD",
+      "changedPointers": [
+        "/outcome/acceptedArtifacts/0/sha256"
+      ],
+      "status": "CONSUMED_NOT_RERUN"
+    },
+    {
+      "id": "NEG2_SAME_NORMALIZED_REVIEWER_WORKER_ACTOR",
+      "inputSha256": "cc940a1350908864f02001aefed39c264fc78828b5a54541fd0af469d37c8ae1",
+      "retainedLog": ".cvf/runtime/model-selection-s2-r3-projection-20261011/negative-2-same-normalized-actor.cli.txt",
+      "logSha256": "058105adef0e536c1bd73fcebb2fdabe69d45d4f62ff060520ec431d4bc48e80",
+      "observedDisposition": "INVALID_OUTCOME_RECORD",
+      "changedPointers": [
+        "/outcome/review/actor"
+      ],
+      "status": "CONSUMED_NOT_RERUN"
+    },
+    {
+      "id": "NEG3_REQUESTED_IDENTITY_PROMOTED_TO_OBSERVED",
+      "inputSha256": "07aef1bdf120adf205374cd98537e5f02c1f537c333e8d68c230104d8610d08c",
+      "retainedLog": ".cvf/runtime/model-selection-s2-r3-projection-20261011/negative-3-observed-identity-promotion.cli.txt",
+      "logSha256": "9d49be73b32e2c756c7b144531524707ba46aaa9ca711e2e5987548cd4a4665b",
+      "observedDisposition": "INVALID_OUTCOME_RECORD",
+      "changedPointers": [
+        "/outcome/attempts/0/observed/model"
+      ],
+      "status": "CONSUMED_NOT_RERUN"
+    },
+    {
+      "id": "NEG4_EMBEDDED_DECISION_FROZEN_FAMILY_DRIFT",
+      "inputSha256": "583159302836cc87629ac98aef0d5a6230b5ae6964e488163f39abf6e4355ab4",
+      "retainedLog": ".cvf/runtime/model-selection-s2-r3-projection-20261011/negative-4-embedded-frozen-drift.cli.txt",
+      "logSha256": "283db16f72ce4b71932117c2d402d05301856b9671d865688e260afec556c49c",
+      "observedDisposition": "INVALID_OUTCOME_RECORD",
+      "changedPointers": [
+        "/decision/candidates/0/requested/effort"
+      ],
+      "status": "CONSUMED_NOT_RERUN"
+    }
+  ],
+  "consumedGateLogs": [
+    {
+      "path": ".cvf/runtime/model-selection-s2-r3-projection-20261011/fast-gate-run1.log",
+      "sha256": "e8213d50f9cfc05870914761492f81be33251d6f94bdd20fc1e8e8bd75493048",
+      "terminalText": "y and encoding exited 1\n  - [11/70] governed artifact checker read-ahead exited 1\n  - [16/70] worker-return quality gate exited 1\n  - [31/70] external knowledge intake routing exited 1\nFAIL: reviewer-fast governance gate exited 1 (5.79s)\n\n=== git diff whitespace check ===\ngit diff --check\nPASS: git diff whitespace check (0.08s)\n\nVIOLATION: worker-return fast gate blocked by 2 failure(s) in 7.72s.\n"
+    },
+    {
+      "path": ".cvf/runtime/model-selection-s2-r3-projection-20261011/fast-gate-run2.log",
+      "sha256": "6d7d1e225283132d9ecf0feba7890b899d2c4a9bcd4cd4d13a220db9b9cc97a3",
+      "terminalText": " carrier compaction (0.19s)\n[CVF hook] PASS [69/70] dispatch scaffold provenance (0.28s)\n[CVF hook] PASS [70/70] active session state compatibility (1.16s)\n[CVF hook] All reviewer-fast governance checks passed.\nPASS: reviewer-fast governance gate (5.69s)\n\n=== git diff whitespace check ===\ngit diff --check\nPASS: git diff whitespace check (0.05s)\n\nCOMPLIANT: worker-return fast gate passed in 7.45s.\n"
+    },
+    {
+      "path": ".cvf/runtime/model-selection-s2-r3-projection-20261011/fast-gate-run3.log",
+      "sha256": "699979a7e85bceb82920db1bf8f5243a40b4976e490ce2fb86d70436b5d16919",
+      "terminalText": " carrier compaction (0.20s)\n[CVF hook] PASS [69/70] dispatch scaffold provenance (0.31s)\n[CVF hook] PASS [70/70] active session state compatibility (0.83s)\n[CVF hook] All reviewer-fast governance checks passed.\nPASS: reviewer-fast governance gate (5.27s)\n\n=== git diff whitespace check ===\ngit diff --check\nPASS: git diff whitespace check (0.07s)\n\nCOMPLIANT: worker-return fast gate passed in 7.02s.\n"
+    },
+    {
+      "path": ".cvf/runtime/model-selection-s2-r3-projection-20261011/fast-gate-final.log",
+      "sha256": "b4b20dfd9ff97152d6556f6dab5a87bffa99ca77772effd0350729ee40e36466",
+      "terminalText": " carrier compaction (0.18s)\n[CVF hook] PASS [69/70] dispatch scaffold provenance (0.28s)\n[CVF hook] PASS [70/70] active session state compatibility (0.91s)\n[CVF hook] All reviewer-fast governance checks passed.\nPASS: reviewer-fast governance gate (5.43s)\n\n=== git diff whitespace check ===\ngit diff --check\nPASS: git diff whitespace check (0.07s)\n\nCOMPLIANT: worker-return fast gate passed in 7.41s.\n"
+    },
+    {
+      "path": ".cvf/runtime/model-selection-s2-r3-projection-20261011/acceptance-ledger-final.log",
+      "sha256": "4e241054fd8f3e98a904265c2db377b5dcedf77c27ab0b6eedfeb0a6994455d2",
+      "terminalText": "=== CVF Work Order Acceptance Ledger Gate ===\nCOMPLIANT\n"
+    }
+  ],
+  "preRepairSourceMap": [
+    {
+      "field": "decision.task.artifact / choiceAuthority / decisionSource",
+      "declaredSource": "docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_SELECTION_S2_R3_PROJECTION_2026-10-11.md",
+      "actualProductSource": "docs/work_orders/CVF_AGENT_WORK_ORDER_SYMBOL_LINE_ANCHOR_FIX_2026-10-11.md",
+      "expectedRawSha256": "2d9c0ec5da43fa4e8c9440c7671b54c26a72899e4848d6c7a89545e868af6cd1",
+      "status": "FAIL_SOURCE_MAP_METADATA"
+    },
+    {
+      "field": "decision.task.acceptanceFloor",
+      "declaredSource": "docs/baselines/CVF_GC018_MODEL_SELECTION_S2_R3_PROJECTION_2026-10-11.md",
+      "actualProductSource": "docs/baselines/CVF_GC018_SYMBOL_LINE_ANCHOR_FIX_2026-10-11.md",
+      "expectedRawSha256": "10d6cb2f08dae2a6be7786356b8ab5fb13896d013f321da3e19912bbfd3fdf44",
+      "status": "FAIL_SOURCE_MAP_METADATA"
+    }
+  ],
+  "independentProbe": {
+    "executorActor": "LOCAL_REVIEWER_CODEX_ROOT",
+    "implementationWorkerActor": "INTERNAL_AGENT_S2_R3_PROJECTION_WORKER",
+    "workerInvocationId": "s2-r3-projection-worker-20261011",
+    "probeInvocationId": "cvf-model-selection-s2-r3-local-source-invocation-20261011",
+    "sourceBasis": "model_selection_reviewed_outcome.py _Validator._review compares BOTH normalized actor and invocation independently; source metadata checked against actual product refs, not worker tests",
+    "expectedCode": "REVIEW_INDEPENDENCE",
+    "expectedPointer": "/outcome/review",
+    "changedPointers": [
+      "/outcome/review/invocationId"
+    ],
+    "command": [
+      "python",
+      "governance/compat/model_selection_reviewed_outcome.py",
+      "--input",
+      ".cvf/runtime/model-selection-s2-r3-local-20261011/same-invocation-distinct-actor.json"
+    ],
+    "exit": 1,
+    "result": {
+      "profileVersion": "cvf.model-selection-reviewed-outcome@0.1.0",
+      "disposition": "INVALID_OUTCOME_RECORD",
+      "executionAuthorized": false,
+      "errors": [
+        {
+          "code": "REVIEW_INDEPENDENCE",
+          "pointer": "/outcome/review",
+          "message": "review actor and invocation must differ from each attempt worker"
+        }
+      ]
+    },
+    "inputSha256": "43498b36ffcf4aa53bc23cc0556d358b1c4f4c2273bdc5d19d5842b19b8fc32b",
+    "logSha256": "071b3a181443d45ab143d14b7abf26336a915abc313ee910543f398195819bec",
+    "workerTestsImported": false,
+    "broadWorkerSuiteReruns": 0,
+    "originalFourWorkerControlReruns": 0
+  },
+  "sourceMapRepairPending": false,
+  "localOwnedDiagnostics": [
+    {
+      "reason": "First Local fresh probe used unsupported --json; argparse rejected before validation, not a semantic control or worker failure. Corrected against actual main parser; only this fresh Local control rerun.",
+      "log": ".cvf/runtime/model-selection-s2-r3-local-20261011/local-invalid-argv-first-run.log"
+    },
+    {
+      "reason": "Local material helper preflight exposed original packet missing six named conditional shape terms and bare checker read-ahead paths. Clean unchanged-HEAD worker release did not evaluate changed work-order shape. Closed packet clarified on existing owner; no worker responsibility, code/profile relaxation or new gate.",
+      "log": ".cvf/runtime/model-selection-s2-r3-local-20261011/material-preflight.log",
+      "disposition": "ORCHESTRATOR_PACKET_GAP_RULE_EXISTS"
+    }
+  ],
+  "status": "CLOSED_PASS_BOUNDED",
+  "batchId": "CVF-MODEL-SELECTION-S2-R3-PROJECTION-20261011",
+  "reviewerDecisionOwner": "LOCAL",
+  "reviewRef": "docs/reviews/CVF_MODEL_SELECTION_S2_R3_PROJECTION_COMPLETION_2026-10-11.md",
+  "localRepair": {
+    "groups": 1,
+    "kind": "PROOF_METADATA_ONLY",
+    "changedPointers": [
+      "/sourceToFieldMap/0/source",
+      "/sourceToFieldMap/0/pinSha256",
+      "/sourceToFieldMap/1/source",
+      "/sourceToFieldMap/1/pinSha256"
+    ],
+    "reason": "Proof mapped historical product fields to new authoring packet instead of original symbol-line packet. Product and worker return unchanged.",
+    "workerRedispatches": 0,
+    "productJsonRepairs": 0,
+    "beforeProofSha256": "3706578ec175782619c001ee5b6dc7582f36c424dc4c0b3036887009a6441002",
+    "afterProofSha256": "193efbde4e24789650d9145e16601be40030196c22549df0673f6fedf58a378b"
+  },
+  "acceptedArtifacts": [
+    {
+      "path": "docs/reviews/evidence/model-selection-s2-r3-symbol-line-outcome-20261011.json",
+      "sha256": "814276dd8a1a9bea069366b6ef640987ed74a3636e83358c24ba3a66b8dd54fc"
+    },
+    {
+      "path": "docs/reviews/CVF_MODEL_SELECTION_S2_R3_PROJECTION_WORKER_RETURN_2026-10-11.md",
+      "sha256": "6863fd4f56b76683c61a141781c82a7428db8c9241f681a5499f2f2028e5770e"
+    },
+    {
+      "path": "docs/reviews/evidence/model-selection-s2-r3-projection-worker-20261011.json",
+      "sha256": "193efbde4e24789650d9145e16601be40030196c22549df0673f6fedf58a378b"
+    }
+  ],
+  "sourceMapAfterRepair": [
+    {
+      "field": "decision.task.artifact / choiceAuthority / decisionSource",
+      "source": "docs/work_orders/CVF_AGENT_WORK_ORDER_SYMBOL_LINE_ANCHOR_FIX_2026-10-11.md",
+      "sha256": "2d9c0ec5da43fa4e8c9440c7671b54c26a72899e4848d6c7a89545e868af6cd1",
+      "status": "PASS"
+    },
+    {
+      "field": "decision.task.acceptanceFloor",
+      "source": "docs/baselines/CVF_GC018_SYMBOL_LINE_ANCHOR_FIX_2026-10-11.md",
+      "sha256": "10d6cb2f08dae2a6be7786356b8ab5fb13896d013f321da3e19912bbfd3fdf44",
+      "status": "PASS"
+    }
+  ],
+  "historicalSourceDisposition": {
+    "technicalDisposition": "ACCEPTED_BOUNDED",
+    "procedureDisposition": "FAIL",
+    "firstDisposition": "ACCEPTED_UNREPAIRED",
+    "basis": "All three initial/final product refs equal and raw pins verified, original return unchanged, Local originalWorkerArtifacts and distinct acceptance retained; zero historical reviewer code repair and zero redispatch corroborate. Draft failures occurred before frozen initial return, lack intermediate pins and remain limitations.",
+    "authoringClock": "decidedAt/asOf refer to record authoring, never original historical selection/acceptance.",
+    "opusAdvisory": "Same continuous Claude conversation, model switch only, operator reported Opus5.5/High; no new attempt/review/sample."
+  },
+  "modelObservation": {
+    "operatorReportedModel": "Claude Haiku",
+    "requestedEffort": "ex high",
+    "identityBasis": "OPERATOR_REPORTED_REQUEST_ONLY",
+    "observedRuntimeIdentity": null,
+    "observedEffort": null,
+    "role": "INTERNAL_AGENT_WORKER",
+    "taskFamily": "EXISTING_PROFILE_RETROSPECTIVE_OUTCOME_PROJECTION",
+    "newReviewedWorkerObservation": true,
+    "historicalSymbolLineRunRepeated": false,
+    "independentStatisticalSample": false,
+    "firstReturnGateClean": false,
+    "workerReturnDraftGateAttempts": 4,
+    "failedReturnDraftGateAttempts": 1,
+    "workerImplementationRepairGroups": 0,
+    "workerReturnMetadataRepairGroups": 1,
+    "firstGateDefects": [
+      "incomplete checker paths",
+      "non-ASCII ellipsis",
+      "nonexistent completion source",
+      "missing Internal source routing row"
+    ],
+    "reviewerRequestedWorkerRepairTurns": 0,
+    "reviewerProductCodeRepairs": 0,
+    "reviewerProductJsonRepairs": 0,
+    "reviewerProofMetadataRepairGroups": 1,
+    "workerStartUTC": "2026-10-11T13:03:23Z",
+    "workerStartToFinalGateStartSeconds": 541,
+    "clockBasis": "WORKER_REPORTED_CLOCKS; final gate elapsed7.41s from retained log; full invocation end not separately captured",
+    "fullWorkerSeconds": null,
+    "workerTokens": null,
+    "reviewerTokens": null,
+    "reworkTokens": null,
+    "bill": null,
+    "unknownReason": "Native identity/effort, inference metering, billed currency/amount and complete accepted-delivery timing not exposed. Null is unavailable, not zero.",
+    "providerCallCount": 0,
+    "providerCountBasis": "Explicit additional provider API calls only; native chat inference not metered.",
+    "nestedAgentCount": 0
+  },
+  "currentProcedure": {
+    "disposition": "BOUNDED_ACCEPTANCE_WITH_DISCLOSED_READ_DEPTH_GAPS",
+    "readDepth": {
+      "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json": "FULL_FILE",
+      "CVF_SESSION_MEMORY.md": "STARTUP_ORDER_POINTERS_AND_NEXT_MOVE_SECTIONS",
+      "AGENT_HANDOFF_V63_2026-09-18.md": "FIRST_25_LINES_CURRENT_AUTHORITY_AND_STARTUP",
+      "CVF_SESSION/ACTIVE_SESSION_STATE.json": "NOT_READ_NOT_REQUIRED_BY_BOOTSTRAP",
+      "docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_SELECTION_S2_R3_PROJECTION_2026-10-11.md": "FULL_FILE",
+      "docs/baselines/CVF_GC018_MODEL_SELECTION_S2_R3_PROJECTION_2026-10-11.md": "FULL_FILE",
+      "docs/reference/CVF_MODEL_SELECTION_REVIEWED_OUTCOME_PROFILE_2026-10-11.md": "FULL_FILE",
+      "docs/reference/CVF_MODEL_SELECTION_MANUAL_RECORD_PROFILE_2026-10-11.md": "FULL_FILE",
+      "docs/reviews/evidence/model-selection-s2-r2-outcome-example-20261011.json": "FULL_FILE_SHAPE_TEMPLATE_ONLY",
+      "docs/reviews/evidence/symbol-line-anchor-fix-local-review-20261011.json": "FULL_FILE",
+      "docs/reviews/evidence/symbol-line-anchor-fix-learning-review-20261011.json": "FULL_FILE",
+      "docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json": "SYMBOL_LINE_ROW_AND_COUNT_ONLY",
+      "governance/compat/model_selection_reviewed_outcome.py": "validate_outcome_record_and_main_read; remaining branches not read line by line",
+      "governance/compat/model_selection_manual_record.py": "DEFINITION_MAP_AND_CLI_RESULT_ONLY; validator bodies not read in this lane",
+      "governance/compat/run_worker_return_scaffold.py": "usage_options_and_output_receipt_read",
+      "governance/compat/build_worker_return_skeleton_scaffold.py": "PINNED_HASH_ONLY",
+      "governance/compat/run_worker_return_fast_gate.py": "option_flags_read",
+      "checker constants for return gates": "PRIOR_SAME_SESSION_READS_RE_VERIFIED_BY_GATE_RUN; not re-read line by line in this lane"
+    },
+    "limits": "Manual-record validator body not read by worker; outcome validator branches partly read; earlier same-session checker reads reused. CLI/hash PASS does not prove semantic reading. Historical nullUnknowns workerStartEndClock applies to original symbol-line run, not this new projection clock.",
+    "scaffoldConsumption": "ACTION_VERIFIED_PARTIAL: exact current command/profile/caps/receipt verified before prose; no zero-error or universal-effectiveness claim.",
+    "durationBudget": "Start to final gate start541s plus retained7.41s gate supports that bounded interval within45min; full terminal invocation duration unknown."
+  },
+  "learningDisposition": {
+    "sourceMapDefect": "WORKER_EXECUTION_ERROR/RULE_EXISTS; source-to-field review already required, one Local metadata repair",
+    "ledgerProseAmbiguity": "RULE_EXISTS; refine existing row with typed FAIL and label history, retain acceptance/measurements",
+    "globalConsistencyGuardCandidate": "NOT_ADOPTED_WITH_REASON: no new generic gate demonstrated necessary; source truth remains Local-owned",
+    "scaffoldApplication": "One admitted worker consumed corrected owner; first gate still failed, adoption evidence does not prove causal error reduction."
+  },
+  "preRepairAuditDisposition": "COMPLETE_BEFORE_FIRST_REPAIR",
+  "materialManifest": [
+    "docs/reviews/evidence/model-selection-s2-r3-symbol-line-outcome-20261011.json",
+    "docs/reviews/CVF_MODEL_SELECTION_S2_R3_PROJECTION_WORKER_RETURN_2026-10-11.md",
+    "docs/reviews/evidence/model-selection-s2-r3-projection-worker-20261011.json",
+    "docs/reviews/evidence/model-selection-s2-r3-projection-local-20261011.json",
+    "docs/reviews/CVF_MODEL_SELECTION_S2_R3_PROJECTION_COMPLETION_2026-10-11.md",
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_SELECTION_S2_R3_PROJECTION_2026-10-11.md",
+    "docs/baselines/CVF_GC018_MODEL_SELECTION_S2_R3_PROJECTION_2026-10-11.md",
+    "docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json",
+    "docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md",
+    "docs/roadmaps/CVF_ORCHESTRATOR_MODEL_SELECTION_SYSTEM_CHAIN_ROADMAP_2026-10-10.md",
+    "CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json",
+    "CVF_SESSION/ACTIVE_SESSION_STATE.json",
+    "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json"
+  ],
+  "publicExportDisposition": "DEFERRED_PRIVATE_ONLY"
+}

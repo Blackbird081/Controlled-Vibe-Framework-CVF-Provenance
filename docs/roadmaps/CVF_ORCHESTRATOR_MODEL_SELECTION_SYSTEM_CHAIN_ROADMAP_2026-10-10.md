@@ -304,3 +304,7 @@ Pre-release R2 correction: S2 historical review time remains null with reason wh
 ## S2-R2 Local Disposition - 2026-10-11
 
 `docs/reviews/CVF_MODEL_SELECTION_S2_R2_COMPLETION_2026-10-11.md` accepts the optional offline ReviewedOutcomeLink companion and retrospective S2-R1 projection. Declared decision/attempt/return/repair/review/units joins are independently verified; actual S2-R1 repair-attribution action/result is ACTION_VERIFIED/PARTIAL. Historical S2-R1 Luna/xhigh stays separate from current worker requested Luna/max; observed runtime identity/bill unknown. Root and worker/Local failures remain attributed separately. Full source authenticity, PLL/scoring/Gateway and S5 remain unopened; overall DESIGN_DRAFT, no automatic successor.
+
+## S2-R3 Bounded Application Disposition - 2026-10-11
+
+`docs/reviews/CVF_MODEL_SELECTION_S2_R3_PROJECTION_COMPLETION_2026-10-11.md` accepts one source-pinned Haiku symbol-line retrospective projection under the existing optional profile. Technical ACCEPTED_BOUNDED and historical procedure FAIL remain distinct; authoring clocks are not historical decision clocks. Two proof source-map rows corrected by Local; actual outcome JSON unchanged. Current preparation owner consumed once with retained receipt, first worker gate failure/read limits still recorded. Collection nine worker observations, Opus advisory excluded. Overall DESIGN_DRAFT, full R3/runtime/scoring/PLL/Gateway/S5 unopened; no automatic successor.
