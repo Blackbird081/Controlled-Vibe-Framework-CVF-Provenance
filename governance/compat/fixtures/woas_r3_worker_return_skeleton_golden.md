@@ -45,6 +45,25 @@ recurrenceDisposition: NOT_APPLICABLE_WITH_REASON - replace with FIRST_OCCURRENC
 priorRelatedFinding: NOT_APPLICABLE_WITH_REASON - replace with the exact governed prior path for a recurring cluster
 operatorNoticeDisposition: NOT_APPLICABLE_WITH_REASON - replace with OPERATOR_NOTICE_REQUIRED for a recurring cluster
 successorFreezeDisposition: NOT_APPLICABLE_WITH_REASON - replace with FEATURE_SUCCESSORS_FROZEN for a recurring cluster
+## Independent Review Probe Disposition
+independentProbeDisposition: PENDING_REVIEWER_EXECUTION
+Guidance: verify work-order applicability; reviewer owns actual probe. Remove this block only when the linked order does not require a probe.
+## Return-Time Closeability Recheck
+closeabilityDisposition: TO_FILL_FROM_ACTUAL_RECHECK
+outsideAuthorityBlockers: TO_FILL_FROM_ACTUAL_RECHECK
+nextRepairRoute: TO_FILL_FROM_ACTUAL_RECHECK
+workerRedispatchAllowed: NO
+Guidance: COMPLETE_PENDING_REVIEW requires CLOSEABLE and NONE; otherwise use BLOCKED_WITH_REASON and the actual controlled repair route.
+## External/Local Coordination Binding
+```json
+{"contractId":"cvf.external-local-absorption-coordination@1","invariants":{"externalRole":"ADVISORY_RESEARCH_AND_PATTERN_MAPPING","externalContext":"PUBLIC_GITHUB_AND_REFRESHED_EXTERNAL_AGENT_READ","localRole":"SOURCE_RUNTIME_VALUE_AND_PRIVATE_CVF_VERIFICATION","finalDecisionOwner":"LOCAL","localCoverageBasis":"SOURCE_DERIVED_NOT_EXTERNAL_SHORTLIST","externalEvidenceAuthority":"INPUT_NOT_PRIVATE_CVF_PROOF"},"contractSha256":"92df8a7c9492e8c3cedf624cfaa79b8185ca31442ecaf96107fd88dfcb81800c","parentArtifact":null}
+```
+## Core Guard Self-Protection Authorization
+Authorized guard-maintenance scope: TO_FILL or N/A with reason
+Protected paths: TO_FILL actual paths or N/A with reason
+Operator authorization: TO_FILL actual grant or N/A with reason
+Rollback boundary: TO_FILL or N/A with reason
+
 ## Purpose
 TO_FILL: state the mission prompt for this worker return.
 ## Scope / Methodology

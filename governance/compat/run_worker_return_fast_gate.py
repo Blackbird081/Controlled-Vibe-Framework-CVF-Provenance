@@ -187,6 +187,16 @@ def _run(command: FastGateCommand) -> int:
     return proc.returncode
 
 
+def return_budget_issues(raw: bytes, max_lines: int | None = None, max_bytes: int | None = None) -> list[str]:
+    """Measure actual bytes against explicit task limits; no universal cap."""
+    issues = []
+    if max_lines is not None and len(raw.splitlines()) > max_lines:
+        issues.append(f"return line budget exceeded: {len(raw.splitlines())} > {max_lines}")
+    if max_bytes is not None and len(raw) > max_bytes:
+        issues.append(f"return byte budget exceeded: {len(raw)} > {max_bytes}")
+    return issues
+
+
 def main() -> int:
     _configure_stdout()
     parser = argparse.ArgumentParser(description="Run the CVF worker-return fast gate")
@@ -207,7 +217,27 @@ def main() -> int:
             "lane, even while untracked)."
         ),
     )
+    parser.add_argument("--max-return-lines", type=int, help="Optional task-selected bound return line limit")
+    parser.add_argument("--max-return-bytes", type=int, help="Optional task-selected bound return byte limit")
     args = parser.parse_args()
+    selected_limits = (args.max_return_lines, args.max_return_bytes)
+    if any(value is not None and value <= 0 for value in selected_limits):
+        parser.error("selected return budgets must be positive")
+    if any(value is not None for value in selected_limits):
+        if not args.active_work_order:
+            parser.error("selected return budget requires --active-work-order")
+        try:
+            path = (REPO_ROOT / _worker_return_path(args.active_work_order)).resolve()
+            relative = path.relative_to(REPO_ROOT.resolve()).as_posix()
+            if not relative.startswith("docs/reviews/") or path.suffix != ".md":
+                raise ValueError("bound return must be a contained docs/reviews Markdown file")
+            issues = return_budget_issues(path.read_bytes(), *selected_limits)
+        except (OSError, UnicodeError, ValueError) as exc:
+            print(f"RETURN_BUDGET_BLOCKED: {exc}", file=sys.stderr)
+            return 1
+        if issues:
+            print("RETURN_BUDGET_BLOCKED: " + "; ".join(issues), file=sys.stderr)
+            return 1
 
     print("=== CVF Worker Return Fast Gate ===")
     print("Purpose: fail early on worker-return defects before full closure gates.")

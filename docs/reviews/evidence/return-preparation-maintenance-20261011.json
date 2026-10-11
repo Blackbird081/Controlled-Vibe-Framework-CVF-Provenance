@@ -1,0 +1,248 @@
+{
+  "schemaVersion": "cvf.returnPreparationMaintenance@1.0.0",
+  "executionBaseHead": "c424196b15015d5584f89cacd68866fa37674eb3",
+  "status": "IMPLEMENTED_BOUNDED",
+  "role": "LOCAL_INTERNAL_AGENT_DIRECT_MAINTAINER_REVIEWER_CLOSER",
+  "independentReviewClaim": false,
+  "providerCalls": 0,
+  "newWorkerObservation": false,
+  "materialManifest": [
+    "docs/reviews/CVF_RETURN_PREPARATION_MAINTENANCE_2026-10-11.md",
+    "docs/reviews/CVF_SYMBOL_LINE_ANCHOR_FIX_LEARNING_CANDIDATES_LOCAL_REVIEW_2026-10-11.md",
+    "docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md",
+    "docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json",
+    "docs/reviews/evidence/return-preparation-maintenance-20261011.json",
+    "docs/reviews/evidence/symbol-line-anchor-fix-learning-review-20261011.json",
+    "governance/compat/build_dispatch_packet_acceptance_sections.py",
+    "governance/compat/build_worker_return_skeleton_scaffold.py",
+    "governance/compat/fixtures/woas_r2_source_intake_scaffold_golden.md",
+    "governance/compat/fixtures/woas_r3_worker_return_skeleton_golden.md",
+    "governance/compat/run_worker_return_fast_gate.py",
+    "governance/compat/run_worker_return_scaffold.py",
+    "governance/compat/test_run_worker_return_fast_gate.py",
+    "governance/compat/test_run_worker_return_scaffold.py",
+    "governance/compat/test_worker_return_scaffold_friction.py"
+  ],
+  "manifestDelta": "MATCH",
+  "sourcePins": [
+    {
+      "path": "governance/compat/run_worker_return_scaffold.py",
+      "beforeGitBlobSha256": "bf9c5ab58f5810427663efedc8025267368de0b05f3809253cdd5f96f58a64da",
+      "afterRawWorktreeSha256": "fd2f492b5c5468ce2545925a22264b663768eba126255d91eb7a02be029c2501",
+      "representationBoundary": "Git blob baseline and raw worktree separately measured; not interchangeable EOL pins"
+    },
+    {
+      "path": "governance/compat/build_worker_return_skeleton_scaffold.py",
+      "beforeGitBlobSha256": "fd5994cb3855616be98694e71b52f669887e9c5242cc0ed09b9f16e821c60ba2",
+      "afterRawWorktreeSha256": "2f5b3aa8092acd8797950c1ecc40280a074f7e015f8edafc664a6d86c5aef16c",
+      "representationBoundary": "Git blob baseline and raw worktree separately measured; not interchangeable EOL pins"
+    },
+    {
+      "path": "governance/compat/build_dispatch_packet_acceptance_sections.py",
+      "beforeGitBlobSha256": "380a26f9357ca967d71e0e8fc9f43ae725f14ffe3460fb1aa134af3a70cece6c",
+      "afterRawWorktreeSha256": "25193a6c9b59783a999e572cd519d5f0326c8ff6a36aad8bf00328cf17c82d91",
+      "representationBoundary": "Git blob baseline and raw worktree separately measured; not interchangeable EOL pins"
+    },
+    {
+      "path": "governance/compat/run_worker_return_fast_gate.py",
+      "beforeGitBlobSha256": "a94abf38d2ff0168d300dbd6578a9026c5ee37fc2c52dc64162acc55989d2c68",
+      "afterRawWorktreeSha256": "8132cd26c46bb9a2c26e2dd86a13a45b07cdbbe822f62011adee1af6b801e8ee",
+      "representationBoundary": "Git blob baseline and raw worktree separately measured; not interchangeable EOL pins"
+    },
+    {
+      "path": "governance/compat/test_run_worker_return_scaffold.py",
+      "beforeGitBlobSha256": "87eb20605f56a2a552287a1a106b0e8de235f40e877469b653060afc9e3f3827",
+      "afterRawWorktreeSha256": "5df4f42949ae1252c65329d4ccad75110da7c54b3a2f6a478b49935ee4e2e112",
+      "representationBoundary": "Git blob baseline and raw worktree separately measured; not interchangeable EOL pins"
+    },
+    {
+      "path": "governance/compat/test_worker_return_scaffold_friction.py",
+      "beforeGitBlobSha256": "7a2be3b156e4d0adae898e287e25873b2ee084ed7d37b89d054a305d2904de59",
+      "afterRawWorktreeSha256": "cba5d931d40fcdf7753882725215d5191aad7a8fa5a8d43a663a31dfd27f4163",
+      "representationBoundary": "Git blob baseline and raw worktree separately measured; not interchangeable EOL pins"
+    },
+    {
+      "path": "governance/compat/test_run_worker_return_fast_gate.py",
+      "beforeGitBlobSha256": "e8da0dc313874aedbaa119cf1a20c926e5ea14212d95d186c9ca84e4ddb3d020",
+      "afterRawWorktreeSha256": "e6f4ebd31e6609327409c410c91deeda63e777bc4f2e9d3625eb683010191cf0",
+      "representationBoundary": "Git blob baseline and raw worktree separately measured; not interchangeable EOL pins"
+    },
+    {
+      "path": "governance/compat/fixtures/woas_r2_source_intake_scaffold_golden.md",
+      "beforeGitBlobSha256": "bbd15a2320533977df901cc45c5bd8c6705df1122fd7a9b26be628154182c0ea",
+      "afterRawWorktreeSha256": "9b95a58a8fff8e62bef6189dfa86bf96e8a5bed7b207bf4d965f740a40b617a7",
+      "representationBoundary": "Git blob baseline and raw worktree separately measured; not interchangeable EOL pins"
+    },
+    {
+      "path": "governance/compat/fixtures/woas_r3_worker_return_skeleton_golden.md",
+      "beforeGitBlobSha256": "a47faf355f56c0381d0e6e3575d7887eb3040cf32b7b2a3d5f87513dabaf4c2d",
+      "afterRawWorktreeSha256": "8035a1157e65ad624892014985b839430bbe1baa7701d059788ff44f7c30cca7",
+      "representationBoundary": "Git blob baseline and raw worktree separately measured; not interchangeable EOL pins"
+    }
+  ],
+  "frozenAcceptedPins": {
+    "governance/compat/check_work_order_dispatch_quality_source.py": "3b261fb9ae7824338a0d8353eda6d87945738c68cd9a1ada5b6891232e11ce75",
+    "governance/compat/test_check_work_order_dispatch_quality_source.py": "dcdff06851d4fc15c331a69e54931302a35f69c7e5515d61e4dc4ea7e4bbeeb9",
+    "docs/reviews/CVF_SYMBOL_LINE_ANCHOR_FIX_WORKER_RETURN_2026-10-11.md": "e8ea06d39862eb878248e7682d1528bd99a0903edf100440e4fbfde9320e5303",
+    "docs/reviews/evidence/symbol-line-anchor-fix-worker-20261011.json": "7f11c4728427c5e54a6ec15f7fd21d529bda53b9f405faec8305e22703cfbf20",
+    "docs/reviews/evidence/symbol-line-anchor-fix-local-review-20261011.json": "88fc422144627db40181584c88b1a546950f7bd6bb6271e3932829927c776984"
+  },
+  "preImplementation": {
+    "firstExit": 1,
+    "failedChecks": 7,
+    "owner": "LOCAL_ADMISSION_DOCUMENT",
+    "correctedExit": 0,
+    "correctedReceipt": ".cvf/runtime/worker-return-preparation-20261011/pre-implementation-receipts-corrected/pre-implementation.json",
+    "sourceEditedOnlyAfterPass": true
+  },
+  "regressions": {
+    "initialRed": {
+      "failed": 1,
+      "passed": 6
+    },
+    "initialComposed": {
+      "failedGoldenExpectations": 2,
+      "passed": 119
+    },
+    "finalFocused": {
+      "passed": 121,
+      "failed": 0
+    },
+    "localTestBindingCorrections": "Additional real probe-consumer assertions first exposed TODO and synthetic order references; corrected test bindings, not producer behavior.",
+    "command": "python -m pytest governance/compat/test_worker_return_scaffold_friction.py governance/compat/test_run_worker_return_scaffold.py governance/compat/test_run_worker_return_fast_gate.py governance/compat/test_build_dispatch_packet_scaffold.py -q --tb=short"
+  },
+  "actualCliProof": {
+    "scope": "actual subprocess preparation and budget refusals; no complete worker gate acceptance",
+    "scriptSha256": "3ea8f01646a737711c2e5111aa5bda040eed1219ff3e543a0c4b353bb1288ab8",
+    "cases": [
+      {
+        "command": [
+          "governance/compat/run_worker_return_scaffold.py",
+          "--emit",
+          "--profile",
+          "WORKER_RETURN_FULL_GATE_V1",
+          "--check-shape",
+          "--max-lines",
+          "1"
+        ],
+        "exit": 1,
+        "stdoutBytes": 0,
+        "stderr": "PREPARATION_BLOCKED: return line budget exceeded: 323 > 1"
+      },
+      {
+        "command": [
+          "governance/compat/run_worker_return_scaffold.py",
+          "--emit",
+          "--profile",
+          "WORKER_RETURN_FULL_GATE_V1",
+          "--check-shape",
+          "--max-lines",
+          "600"
+        ],
+        "exit": 0,
+        "stdoutBytes": 13683,
+        "stderr": "PREPARATION_SHAPE_PRESENT: pending fields are not worker evidence or gate acceptance"
+      },
+      {
+        "command": [
+          "governance/compat/run_worker_return_scaffold.py",
+          "--emit",
+          "--profile",
+          "WORKER_RETURN_FAST_DOC_V1",
+          "--check-shape",
+          "--max-lines",
+          "1"
+        ],
+        "exit": 1,
+        "stdoutBytes": 0,
+        "stderr": "PREPARATION_BLOCKED: return line budget exceeded: 305 > 1"
+      },
+      {
+        "command": [
+          "governance/compat/run_worker_return_scaffold.py",
+          "--emit",
+          "--profile",
+          "WORKER_RETURN_FAST_DOC_V1",
+          "--check-shape",
+          "--max-lines",
+          "600"
+        ],
+        "exit": 0,
+        "stdoutBytes": 12769,
+        "stderr": "PREPARATION_SHAPE_PRESENT: pending fields are not worker evidence or gate acceptance"
+      },
+      {
+        "scenario": "oversized",
+        "exit": 1,
+        "beforeGateCommands": true,
+        "stderr": "RETURN_BUDGET_BLOCKED: active work order lacks an exact workerReturnPath"
+      },
+      {
+        "scenario": "missing",
+        "exit": 1,
+        "beforeGateCommands": true,
+        "stderr": "RETURN_BUDGET_BLOCKED: active work order lacks an exact workerReturnPath"
+      },
+      {
+        "scenario": "escape",
+        "exit": 1,
+        "beforeGateCommands": true,
+        "stderr": "RETURN_BUDGET_BLOCKED: active work order lacks an exact workerReturnPath"
+      },
+      {
+        "scenario": "invalid",
+        "exit": 2,
+        "beforeGateCommands": true,
+        "stderr": "usage: run_worker_return_fast_gate.py [-h] [--pytest-target PYTEST_TARGET]\r\n                                      [--active-work-order ACTIVE_WORK_ORDER]\r\n                                      [--max-return-lines MAX_RETURN_LINES]\r\n                                      [--max-return-bytes MAX_RETURN_BYTES]\r\nrun_worker_return_fast_gate.py: error: selected return budgets must be positive"
+      }
+    ]
+  },
+  "retainedLogs": [
+    {
+      "path": "C:\\Users\\DELL\\AppData\\Local\\Temp\\cvf-return-preparation-red.log",
+      "rawSha256": "079b40e44c0e9f144e408bab70a5a9d6e1a4f19b40ebe1ef937e0e13a8c27bf0"
+    },
+    {
+      "path": "C:\\Users\\DELL\\AppData\\Local\\Temp\\cvf-return-preparation-green-initial.log",
+      "rawSha256": "89054194373693c5496e99fd46970995dbffc9a1c73008a2205c8b82e4c667a7"
+    },
+    {
+      "path": "C:\\Users\\DELL\\AppData\\Local\\Temp\\cvf-return-preparation-green.log",
+      "rawSha256": "8ee995b94c44d8b333ba37b5a055a514f21aecd3380815de9d2ec5aa34d3c8cd"
+    },
+    {
+      "path": "C:\\Users\\DELL\\AppData\\Local\\Temp\\cvf-worker-return-preparation-preimpl.log",
+      "rawSha256": "fcb5c37b09272ba78c8055b0e0bc00eccc7a30c330f3b5b619f91e4687adfc57"
+    },
+    {
+      "path": "C:\\Users\\DELL\\AppData\\Local\\Temp\\cvf-worker-return-preparation-preimpl-corrected.log",
+      "rawSha256": "fe4811f6cbfcd1b2f6f09d64beed65d7fa37418c0855ea699a5af50c3197d12f"
+    }
+  ],
+  "behavior": [
+    "Both generators/full and fast-doc emit pending probe, closeability, coordination and one authorization block.",
+    "Actual closeability/probe consumers accept completed nonterminal fields and refuse omissions; raw scaffold still fails evidence/readiness consumers.",
+    "Dispatch sections expose exact preparation command and conditional reading/profile guidance.",
+    "Optional task-specific limits refuse invalid/missing/escaping/oversized bound return before focused or global gate commands.",
+    "Default mandatory gate bundle unchanged; no default universal cap, global hook or fabricated acceptance."
+  ],
+  "learning": {
+    "joined": [
+      "L1",
+      "L4",
+      "L5"
+    ],
+    "budgetDependency": "L2",
+    "preventionOwner": "LOCAL_ORCHESTRATOR_CVF",
+    "implementationStatus": "IMPLEMENTED_BOUNDED",
+    "futureWorkerConsumption": "PENDING_ADMITTED_TASK_RECEIPT",
+    "effectivenessProved": false
+  },
+  "limits": [
+    "Finite preparation controls; no proof of reading comprehension or zero future errors.",
+    "Emission limits measure UTF-8 canonical generated text; --write persists LF, shell stdout redirection may convert line endings.",
+    "Explicit budgets must fit actual selected profile; no 300-line universal cap.",
+    "Eight worker rows preserved; same-context Opus analysis is linked evidence, not independent ninth sample."
+  ],
+  "publicExportDisposition": "DEFERRED_PRIVATE_ONLY"
+}

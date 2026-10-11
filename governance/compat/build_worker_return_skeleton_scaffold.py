@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import json
+import re
 import sys
 from pathlib import Path
 from typing import Any
@@ -26,6 +27,64 @@ except ImportError:  # pragma: no cover - import path fallback for direct script
 
 SCEC_SCHEMA_VERSION = "cvf.semanticConvergenceControl.v1"
 SCEC_UNRESOLVED_PREDECESSOR_SENTINEL = "SCEC_PREDECESSOR_HASH_UNRESOLVED"
+
+
+def render_return_preparation_block(*, include_authorization: bool = False) -> str:
+    """Shared authoring fields; never evidence of execution or closeability."""
+    binding = {
+        "contractId": "cvf.external-local-absorption-coordination@1",
+        "invariants": {
+            "externalRole": "ADVISORY_RESEARCH_AND_PATTERN_MAPPING",
+            "externalContext": "PUBLIC_GITHUB_AND_REFRESHED_EXTERNAL_AGENT_READ",
+            "localRole": "SOURCE_RUNTIME_VALUE_AND_PRIVATE_CVF_VERIFICATION",
+            "finalDecisionOwner": "LOCAL",
+            "localCoverageBasis": "SOURCE_DERIVED_NOT_EXTERNAL_SHORTLIST",
+            "externalEvidenceAuthority": "INPUT_NOT_PRIVATE_CVF_PROOF",
+        },
+        "contractSha256": "92df8a7c9492e8c3cedf624cfaa79b8185ca31442ecaf96107fd88dfcb81800c",
+        "parentArtifact": None,
+    }
+    text = (
+        "## Independent Review Probe Disposition\n"
+        "independentProbeDisposition: PENDING_REVIEWER_EXECUTION\n"
+        "Guidance: verify work-order applicability; reviewer owns actual probe. "
+        "Remove this block only when the linked order does not require a probe.\n"
+        "## Return-Time Closeability Recheck\n"
+        "closeabilityDisposition: TO_FILL_FROM_ACTUAL_RECHECK\n"
+        "outsideAuthorityBlockers: TO_FILL_FROM_ACTUAL_RECHECK\n"
+        "nextRepairRoute: TO_FILL_FROM_ACTUAL_RECHECK\n"
+        "workerRedispatchAllowed: NO\n"
+        "Guidance: COMPLETE_PENDING_REVIEW requires CLOSEABLE and NONE; otherwise "
+        "use BLOCKED_WITH_REASON and the actual controlled repair route.\n"
+        "## External/Local Coordination Binding\n"
+        f"```json\n{json.dumps(binding, separators=(',', ':'))}\n```\n"
+    )
+    if include_authorization:
+        text += (
+            "## Core Guard Self-Protection Authorization\n"
+            "Authorized guard-maintenance scope: TO_FILL or N/A with reason\n"
+            "Protected paths: TO_FILL actual paths or N/A with reason\n"
+            "Operator authorization: TO_FILL actual grant or N/A with reason\n"
+            "Rollback boundary: TO_FILL or N/A with reason\n"
+        )
+    return text
+
+
+def preparation_shape_issues(text: str) -> list[str]:
+    """Check preparation presence only; unfinished values remain unaccepted."""
+    headings = (
+        "Independent Review Probe Disposition", "Return-Time Closeability Recheck",
+        "External/Local Coordination Binding", "Core Guard Self-Protection Authorization",
+    )
+    fields = (
+        "independentProbeDisposition", "closeabilityDisposition",
+        "outsideAuthorityBlockers", "nextRepairRoute", "workerRedispatchAllowed",
+    )
+    return [f"missing preparation heading: {h}" for h in headings
+            if not re.search(r"(?m)^## " + re.escape(h) + r"\s*$", text)] + [
+        f"missing preparation field: {f}" for f in fields
+        if not re.search(r"(?m)^" + re.escape(f) + r":\s*\S", text)
+    ]
 
 
 def render_scec_outcome_block(
@@ -304,6 +363,7 @@ recurrenceDisposition: NOT_APPLICABLE_WITH_REASON - replace with FIRST_OCCURRENC
 priorRelatedFinding: NOT_APPLICABLE_WITH_REASON - replace with the exact governed prior path for a recurring cluster
 operatorNoticeDisposition: NOT_APPLICABLE_WITH_REASON - replace with OPERATOR_NOTICE_REQUIRED for a recurring cluster
 successorFreezeDisposition: NOT_APPLICABLE_WITH_REASON - replace with FEATURE_SUCCESSORS_FROZEN for a recurring cluster
+{render_return_preparation_block(include_authorization=True)}
 ## Purpose
 TO_FILL: state the mission prompt for this worker return.
 ## Scope / Methodology

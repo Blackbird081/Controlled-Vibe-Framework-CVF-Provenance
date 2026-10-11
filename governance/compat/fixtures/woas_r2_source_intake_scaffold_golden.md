@@ -203,6 +203,11 @@ Use `N/A with reason` for every non-applicable conditional block.
 
 Shape-list rule: when listing required worker-output sections, write section names without the `##` prefix. Reserve actual heading syntax for real sections so structural checkers do not treat this checklist as the artifact section body.
 
+scaffoldPreparationCommand: `python governance/compat/run_worker_return_scaffold.py --write docs/reviews/CVF_WOAS-R2-GOLDEN_WORKER_RETURN_2026-07-01.md --check-shape`
+Run before long prose; helper refuses overwrite. Record the actual command/profile under scaffold effectiveness. Read applicable checker pointers before filling fields.
+Required preparation: pending independent probe; Return-Time Closeability Recheck; coordination binding; applicable Core authorization. Preparation shape is not execution evidence.
+Budget fit: generate/count before dispatch. Choose feasible per-task line/byte limits; no universal cap. When selected, append --max-lines/--max-bytes to preparation and --max-return-lines/--max-return-bytes to required fast gate with --active-work-order.
+
 
 ## Verification Commands
 

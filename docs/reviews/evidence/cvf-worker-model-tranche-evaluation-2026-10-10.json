@@ -319,7 +319,7 @@
       "evidenceSha256": "88fc422144627db40181584c88b1a546950f7bd6bb6271e3932829927c776984",
       "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_SYMBOL_LINE_ANCHOR_FIX_2026-10-11.md",
       "technicalOutput": "ACCEPTED_TWO_REGEX_ANCHORS_98_WORKER_TESTS_DISTINCT_LOCAL_PROBE",
-      "procedure": "TECHNICAL_ACCEPTANCE_WITH_READ_AND_TIMER_LIMITS",
+      "procedure": "TECHNICAL_ACCEPTANCE_WITH_SCAFFOLD_READ_AND_TIMER_LIMITS",
       "firstReturnGateClean": false,
       "workerReturnDraftGateAttempts": 4,
       "failedReturnDraftGateAttempts": 2,
@@ -344,7 +344,8 @@
         "Full worker elapsed and 35-minute budget not observable; no complete procedural-compliance claim",
         "Required roadmap sections were located, not semantically read; O6 completion grep-only; other checker reads targeted, not full",
         "Worker text says eight pins; nine records exist when packet authority pair is counted; all current retained readonly pins match",
-        "Runtime label Haiku 5.5 is worker self-report; operator confirms Claude Haiku family, requested ex high; native identity/effort not exposed"
+        "Runtime label Haiku 5.5 is worker self-report; operator confirms Claude Haiku family, requested ex high; native identity/effort not exposed",
+        "Required skeleton was omitted, confirmed by operator after same-session Opus analysis. Five checker constants were reported read before authoring; conditional coverage remains incomplete. Historical machine receipt unavailable; orchestrator/CVF owns prevention."
       ],
       "independentProof": "32 fresh anchor cases, 3 ACCEPT-row controls, absent/unsupported controls, 2 AST real cases; 12 preimage negatives fail; frozen four paths retained",
       "limitations": [
@@ -353,8 +354,50 @@
         "No ranking, time saving, actual cost saving or parallel-subagent experiment"
       ],
       "localOwnedDefects": [
-        "Local completion bound test/oracle digests to JSON refs; committed-range gate rejected it; Local metadata-only correction, no worker fault or code repair"
-      ]
+        "Local completion bound test/oracle digests to JSON refs; committed-range gate rejected it; Local metadata-only correction, no worker fault or code repair",
+        "Local learning disposition initially treated real scaffold omission as hypothetical and under-specified orchestrator prevention; corrected after operator clarified continuous-session Opus review. Not another worker repair."
+      ],
+      "learningCandidateReview": {
+        "reviewRef": "docs/reviews/CVF_SYMBOL_LINE_ANCHOR_FIX_LEARNING_CANDIDATES_LOCAL_REVIEW_2026-10-11.md",
+        "evidenceRef": "docs/reviews/evidence/symbol-line-anchor-fix-learning-review-20261011.json",
+        "evidenceSha256": "8a11e18baf1aceff646b69236c97f74f995c2086544120af9329d42753498f92",
+        "workerScaffoldCompliance": "DEVIATION_OPERATOR_CONFIRMED",
+        "workerScaffoldOmission": "OPERATOR_CONFIRMED_EXECUTION_HISTORY",
+        "orchestratorHelperFindings": [
+          "L1 missing conditional fields",
+          "L2 per-packet cap not machine-bound",
+          "L5 command discoverability folded into L1"
+        ],
+        "analysisIsNewWorkerObservation": false,
+        "technicalAcceptanceChanged": false,
+        "preventionOwner": "LOCAL_ORCHESTRATOR_CVF",
+        "preventionStatus": "IMPLEMENTED_BOUNDED_PENDING_FUTURE_WORKER_CONSUMPTION",
+        "linkedAnalysisObservation": {
+          "basis": "OPERATOR_REPORTED_MODEL_EFFORT_AND_CONTINUOUS_SESSION",
+          "reportedProvider": "Claude",
+          "reportedModel": "Opus 5.5",
+          "reportedEffort": "High",
+          "reportedRole": "ADVISORY_ANALYSIS_OF_PRIOR_WORKER_RUN",
+          "observedModel": null,
+          "observedEffort": null,
+          "nativeRuntimeIdentityVerified": false,
+          "sessionContinuity": "SAME_CONTINUOUS_CONVERSATION_MODEL_SWITCH_ONLY_OPERATOR_REPORTED",
+          "sameProviderAsWorker": true,
+          "independentBlindReview": false,
+          "independentExecutionSample": false,
+          "inputAuthority": "NOT_CVF_SOURCE",
+          "attributionAuthority": "OPERATOR_CLARIFICATION_RECORDED_IN_LOCAL_REVIEW",
+          "newWorkerObservation": false
+        },
+        "maintenanceApplication": {
+          "reviewRef": "docs/reviews/CVF_RETURN_PREPARATION_MAINTENANCE_2026-10-11.md",
+          "evidenceRef": "docs/reviews/evidence/return-preparation-maintenance-20261011.json",
+          "evidenceSha256": "06235df7d62714bd7adaba5cee2b262cb0c2b0884d91fff3f083e3bf39d66bcd",
+          "newWorkerObservation": false,
+          "effectivenessProved": false,
+          "historicalMeasurementsPreserved": true
+        }
+      }
     }
   ],
   "rubric": [
@@ -572,7 +615,7 @@
       "complexity": "TWO_REGEX_LINES_PLUS_PARAMETERIZED_REGRESSIONS",
       "reuse": "Existing governed owner, pinned O6 context and installed Python tooling",
       "quality": "ACCEPTED_TWO_REGEX_ANCHORS_98_WORKER_TESTS_DISTINCT_LOCAL_PROBE",
-      "process": "TECHNICAL_ACCEPTANCE_WITH_READ_AND_TIMER_LIMITS",
+      "process": "TECHNICAL_ACCEPTANCE_WITH_CONFIRMED_SCAFFOLD_READ_AND_TIMER_LIMITS",
       "configurationUse": "WORKER_EVIDENCE_ONLY_NO_MATCHED_COMPARISON",
       "costVerdict": "UNMEASURED"
     }

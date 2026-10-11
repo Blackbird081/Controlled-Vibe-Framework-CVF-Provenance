@@ -101,6 +101,36 @@ def _complete_scaffold(
 
 
 class WorkerReturnScaffoldFrictionTests(unittest.TestCase):
+    def test_preparation_fields_reach_actual_consumers_four_way(self):
+        import check_gate_to_role_closeability as closeability
+        import check_external_knowledge_intake_routing as routing
+        import check_independent_review_probe_admission as probe
+        for name, text in _get_four_way_scaffolds():
+            with self.subTest(generator=name):
+                self.assertIn('independentProbeDisposition: PENDING_REVIEWER_EXECUTION', text)
+                self.assertEqual(bws.preparation_shape_issues(text), [])
+                self.assertEqual(text.count('## Core Guard Self-Protection Authorization'), 1)
+                binding = routing._json_section(text, routing.BINDING_HEADING)
+                self.assertEqual(binding['invariants'], routing.EXPECTED_CONTRACT['invariants'])
+                completed = text.replace('Status: TODO_WORKER_STATUS', 'Status: COMPLETE_PENDING_REVIEW')
+                completed = completed.replace('closeabilityDisposition: TO_FILL_FROM_ACTUAL_RECHECK', 'closeabilityDisposition: CLOSEABLE')
+                completed = completed.replace('outsideAuthorityBlockers: TO_FILL_FROM_ACTUAL_RECHECK', 'outsideAuthorityBlockers: NONE')
+                completed = completed.replace('nextRepairRoute: TO_FILL_FROM_ACTUAL_RECHECK', 'nextRepairRoute: NO_REPAIR_REQUIRED')
+                self.assertEqual(closeability.check_recheck('docs/reviews/example.md', completed), [])
+                # A missing section must fail early; the real return consumer also refuses it.
+                missing = completed.replace('## Return-Time Closeability Recheck', '## Removed Recheck')
+                self.assertTrue(bws.preparation_shape_issues(missing))
+                self.assertTrue(closeability.check_recheck('docs/reviews/example.md', missing))
+                # A nonterminal pending disposition remains pending, not a fabricated pass.
+                self.assertIn(probe.DISPOSITION_PENDING, completed)
+                linked = completed.replace('TODO_WORK_ORDER_PATH', 'docs/work_orders/CVF_AGENT_WORK_ORDER_SYMBOL_LINE_ANCHOR_FIX_2026-10-11.md')
+                linked = linked.replace('docs/work_orders/CVF_AGENT_WORK_ORDER_CVF-TEST-FR1_2026-10-04.md', 'docs/work_orders/CVF_AGENT_WORK_ORDER_SYMBOL_LINE_ANCHOR_FIX_2026-10-11.md')
+                diagnostic = probe.diagnose_closure('docs/reviews/example.md', linked)
+                self.assertTrue(diagnostic.applicable)
+                self.assertEqual(diagnostic.issues, ())
+                omitted = linked.replace('independentProbeDisposition: PENDING_REVIEWER_EXECUTION', '')
+                self.assertTrue(probe.diagnose_closure('docs/reviews/example.md', omitted).issues)
+
     def test_raw_scaffold_guidance_present_in_both_generators(self) -> None:
         for name, text in _get_four_way_scaffolds():
             with self.subTest(generator=name):

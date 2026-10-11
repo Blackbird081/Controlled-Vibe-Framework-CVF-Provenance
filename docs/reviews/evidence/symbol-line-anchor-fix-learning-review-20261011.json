@@ -1,0 +1,372 @@
+{
+  "reviewHead": "c424196b15015d5584f89cacd68866fa37674eb3",
+  "advisorySha256": "185943b7a8dfc1d903d92a3fb972fa8d55642679b96e1e8036189a37c2ffc1cb",
+  "advisoryAuthority": "NOT_CVF_SOURCE",
+  "probeScriptSha256": "d37235e43fb782f1090306b53d746d380e193c1d238a80d616854cf55270897c",
+  "generatedScaffolds": {
+    "standaloneFull": {
+      "command": [
+        "python",
+        "-B",
+        "governance/compat/run_worker_return_scaffold.py",
+        "--emit",
+        "--profile",
+        "WORKER_RETURN_FULL_GATE_V1"
+      ],
+      "emitted": {
+        "sha256": "95287357f50224c899313f4f4192317931122d3ca5c0397120d2a717ff74661a",
+        "bytes": 12508,
+        "lines": 309,
+        "CR": 309,
+        "LF": 309
+      },
+      "requiredFieldsPresent": {
+        "External/Local Coordination Binding": false,
+        "workerRedispatchAllowed": false,
+        "independentProbeDisposition": false,
+        "Core Guard Self-Protection Authorization": true
+      },
+      "qualityIssues": [
+        "agent operation trace lacks `git diff --name-status` diff evidence",
+        "command evidence lacks PASS/FAIL/BLOCKED/N/A disposition",
+        "COMPLETE_PENDING_REVIEW lacks PASS/COMPLIANT evidence for the required worker-return fast gate"
+      ],
+      "closeabilityIssues": [
+        "return_recheck_missing"
+      ],
+      "independentProbeIssues": [
+        "artifact is linked to a work order declaring `independentProbeRequired: YES` but omits required field `independentProbeDisposition`"
+      ],
+      "coordinationApplies": true,
+      "unfinishedNotAnAcceptedReturn": true
+    },
+    "packetFull": {
+      "command": [
+        "python",
+        "-B",
+        "governance/compat/build_dispatch_packet_scaffold.py",
+        "--packet-kind",
+        "protected-governance-path",
+        "--batch-id",
+        "SYMBOL_LINE_ANCHOR_FIX",
+        "--title",
+        "Source Verification Symbol Line Anchor Repair",
+        "--date",
+        "2026-10-11",
+        "--base",
+        "1a1de1a28decf163ed64a84a496831f5f1d1989d",
+        "--commit-mode",
+        "WORKER_MUST_NOT_COMMIT",
+        "--dependency",
+        "docs/reviews/CVF_ORACLE_O6_DESIGN_COMPLETION_2026-10-11.md",
+        "--include-worker-return-skeleton",
+        "--no-evidence-readiness-applicable",
+        "--scec-problem-key",
+        "symbol-definition-line-anchor",
+        "--stdout"
+      ],
+      "emitted": {
+        "sha256": "cd66546474d797b4edacc8bf73729ae673858f1ef788430dc5c31e391477101e",
+        "bytes": 11310,
+        "lines": 205,
+        "CR": 205,
+        "LF": 205
+      },
+      "requiredFieldsPresent": {
+        "External/Local Coordination Binding": false,
+        "workerRedispatchAllowed": false,
+        "independentProbeDisposition": false,
+        "Core Guard Self-Protection Authorization": false
+      },
+      "qualityIssues": [
+        "COMPLETE_PENDING_REVIEW lacks PASS/COMPLIANT evidence for the required worker-return fast gate"
+      ],
+      "closeabilityIssues": [
+        "return_recheck_missing"
+      ],
+      "independentProbeIssues": [
+        "artifact is linked to a work order declaring `independentProbeRequired: YES` but omits required field `independentProbeDisposition`"
+      ],
+      "coordinationApplies": true,
+      "unfinishedNotAnAcceptedReturn": true
+    }
+  },
+  "accepted262": {
+    "lineCount": 262,
+    "qualityIssues": []
+  },
+  "padded338": {
+    "lineCount": 338,
+    "qualityIssues": []
+  },
+  "budgetScope": "QUALITY_CONSUMER_ONLY; not a replay of historical full fast gate",
+  "returnProvenance": {
+    "dispatchCheckerAppliesToReturn": false,
+    "workerEvidenceScaffoldCommandRecorded": false,
+    "workerReturnScaffoldCommandRecorded": false,
+    "absenceBoundary": "No recorded invocation proves compliance; does not prove no unrecorded invocation occurred"
+  },
+  "eolCheckout": {
+    "isolatedTemporaryRoot": "C:\\Users\\DELL\\AppData\\Local\\Temp\\cvf-learning-eol-7qb95t_7",
+    "files": {
+      "governance/compat/check_work_order_dispatch_quality_source.py": {
+        "false": {
+          "sha256": "b0b91b686628a79e8d17efcd2329445a44a736d9700b147c34fc6b4b9cb6a5db",
+          "bytes": 40671,
+          "lines": 949,
+          "CR": 0,
+          "LF": 949
+        },
+        "falseNormalizedSha256": "b0b91b686628a79e8d17efcd2329445a44a736d9700b147c34fc6b4b9cb6a5db",
+        "true": {
+          "sha256": "f3e1d6230378daf03318cad4746e836cb4601a00f9a5e5250376953b5a01d658",
+          "bytes": 41620,
+          "lines": 949,
+          "CR": 949,
+          "LF": 949
+        },
+        "trueNormalizedSha256": "b0b91b686628a79e8d17efcd2329445a44a736d9700b147c34fc6b4b9cb6a5db",
+        "rawHashesDiffer": true,
+        "normalizedHashesEqual": true
+      },
+      "governance/compat/test_check_work_order_dispatch_quality_source.py": {
+        "false": {
+          "sha256": "57d6be4d628222b6662b0dff19fafe5d155b04cb94aad45186dcaa8fba892a7b",
+          "bytes": 9982,
+          "lines": 247,
+          "CR": 0,
+          "LF": 247
+        },
+        "falseNormalizedSha256": "57d6be4d628222b6662b0dff19fafe5d155b04cb94aad45186dcaa8fba892a7b",
+        "true": {
+          "sha256": "3db17075500dc259464d1508e335b612fee6b32c85bb73ed8e71f120688ba6c9",
+          "bytes": 10229,
+          "lines": 247,
+          "CR": 247,
+          "LF": 247
+        },
+        "trueNormalizedSha256": "57d6be4d628222b6662b0dff19fafe5d155b04cb94aad45186dcaa8fba892a7b",
+        "rawHashesDiffer": true,
+        "normalizedHashesEqual": true
+      }
+    },
+    "actualRepositoryAttributes": "",
+    "workspaceConfigUnchanged": true
+  },
+  "testDiff": "89\t0\tgovernance/compat/test_check_work_order_dispatch_quality_source.py",
+  "workerFrozenNow": {
+    "governance/compat/check_work_order_dispatch_quality_source.py": "3b261fb9ae7824338a0d8353eda6d87945738c68cd9a1ada5b6891232e11ce75",
+    "governance/compat/test_check_work_order_dispatch_quality_source.py": "dcdff06851d4fc15c331a69e54931302a35f69c7e5515d61e4dc4ea7e4bbeeb9",
+    "docs/reviews/CVF_SYMBOL_LINE_ANCHOR_FIX_WORKER_RETURN_2026-10-11.md": "e8ea06d39862eb878248e7682d1528bd99a0903edf100440e4fbfde9320e5303",
+    "docs/reviews/evidence/symbol-line-anchor-fix-worker-20261011.json": "7f11c4728427c5e54a6ec15f7fd21d529bda53b9f405faec8305e22703cfbf20"
+  },
+  "schemaVersion": "cvf.symbolLineLearningReview@1.0.0",
+  "status": "ACTIVE_LOCAL_REVIEWED_EVIDENCE",
+  "date": "2026-10-11",
+  "decisionOwner": "LOCAL_REVIEWER",
+  "reviewRef": "docs/reviews/CVF_SYMBOL_LINE_ANCHOR_FIX_LEARNING_CANDIDATES_LOCAL_REVIEW_2026-10-11.md",
+  "advisoryAnalysisIdentity": {
+    "basis": "OPERATOR_REPORTED_MODEL_EFFORT_AND_CONTINUOUS_SESSION",
+    "reportedProvider": "Claude",
+    "reportedModel": "Opus 5.5",
+    "reportedEffort": "High",
+    "reportedRole": "ADVISORY_ANALYSIS_OF_PRIOR_WORKER_RUN",
+    "observedModel": null,
+    "observedEffort": null,
+    "nativeRuntimeIdentityVerified": false,
+    "sessionContinuity": "SAME_CONTINUOUS_CONVERSATION_MODEL_SWITCH_ONLY_OPERATOR_REPORTED",
+    "sameProviderAsWorker": true,
+    "independentBlindReview": false,
+    "independentExecutionSample": false,
+    "inputAuthority": "NOT_CVF_SOURCE",
+    "attributionAuthority": "OPERATOR_CLARIFICATION_RECORDED_IN_LOCAL_REVIEW",
+    "newWorkerObservation": false
+  },
+  "fullFastGateReplay": false,
+  "workerSuiteReplay": false,
+  "probeResult": "PASS_BOUNDED_DIAGNOSTICS",
+  "frozenAcceptedLocalEvidenceSha256": "88fc422144627db40181584c88b1a546950f7bd6bb6271e3932829927c776984",
+  "dispositions": {
+    "L1": "CONFIRMED_BOUNDED_AUTHORING_COVERAGE_GAP",
+    "L2": "CONFIRMED_PACKET_BUDGET_AUTOMATION_GAP_NO_GLOBAL_CAP_PROMOTION",
+    "L3": "CONFIRMED_EOL_DEPENDENCE_RULE_GAP_NOT_ESTABLISHED",
+    "L4": "OPERATOR_CONFIRMED_SCAFFOLD_OMISSION_READ_COVERAGE_GAP_ORCHESTRATOR_PREVENTION_REQUIRED",
+    "L5": "FOLD_INTO_L1_EXISTING_OWNER_DISCOVERABILITY",
+    "L6": "NO_NEW_DEFECT",
+    "L7": "NO_NEW_DEFECT"
+  },
+  "measurementLimitations": [
+    "Historical338 return bytes unavailable; JSON reports count, retained log proves run3 PASS.",
+    "338-line padding fixture tests quality consumer only, not historical full gate.",
+    "Original test raw preimage unavailable; pinned77cdf value not reconstructed by pure LF/CRLF historical Git checkouts.",
+    "No exact-root recurrence established by prior FR1-R1/FR2 closure comparison.",
+    "No new return provenance checker found only in bounded inspected current checker/gate scope.",
+    "Historical scaffold omission is operator-confirmed; no historical machine receipt or native model identity/effort telemetry supplied."
+  ],
+  "governedSourcePins": [
+    {
+      "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_SYMBOL_LINE_ANCHOR_FIX_2026-10-11.md",
+      "rawSha256": "2d9c0ec5da43fa4e8c9440c7671b54c26a72899e4848d6c7a89545e868af6cd1",
+      "readDepth": "TARGETED_SYMBOLS_AND_SECTIONS_NO_CORPUS_CLAIM"
+    },
+    {
+      "path": "docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md",
+      "rawSha256": "06fefaf63fadb1ef629b4008bd2710fcfcfcd3e43d870e5aa572b327fce6cefa",
+      "readDepth": "TARGETED_SYMBOLS_AND_SECTIONS_NO_CORPUS_CLAIM"
+    },
+    {
+      "path": "governance/compat/run_worker_return_scaffold.py",
+      "rawSha256": "5b44b17973069acd5eb383a1e05dbaba84846206e64e1af5715f6811c3722f6c",
+      "readDepth": "TARGETED_SYMBOLS_AND_SECTIONS_NO_CORPUS_CLAIM"
+    },
+    {
+      "path": "governance/compat/build_worker_return_skeleton_scaffold.py",
+      "rawSha256": "1fc5318c26a09d4118e3796db45fa69aea331136a7c9c4a04e95c4868de32a37",
+      "readDepth": "TARGETED_SYMBOLS_AND_SECTIONS_NO_CORPUS_CLAIM"
+    },
+    {
+      "path": "governance/compat/check_worker_return_quality_gate.py",
+      "rawSha256": "c87f1a50dd95af3459e3af1bcc6aaed8e0c1f5cec28e7761a9f3b254f3ec7257",
+      "readDepth": "TARGETED_SYMBOLS_AND_SECTIONS_NO_CORPUS_CLAIM"
+    },
+    {
+      "path": "governance/compat/check_gate_to_role_closeability.py",
+      "rawSha256": "8f00c6421eebe3c1b237e5307ac6e2b0b0343c9a35cf635bbab17aa886e00e8e",
+      "readDepth": "TARGETED_SYMBOLS_AND_SECTIONS_NO_CORPUS_CLAIM"
+    },
+    {
+      "path": "governance/compat/check_independent_review_probe_admission.py",
+      "rawSha256": "738cfd2da5a58910d7334805fb9bab074ddddfc8c156e4a2a9f4573c6ac51a96",
+      "readDepth": "TARGETED_SYMBOLS_AND_SECTIONS_NO_CORPUS_CLAIM"
+    },
+    {
+      "path": "governance/compat/check_external_knowledge_intake_routing.py",
+      "rawSha256": "1b43209d92a1aba7cfd4c750db8625b2e82e4545b43372cd59ec2504ccc92c96",
+      "readDepth": "TARGETED_SYMBOLS_AND_SECTIONS_NO_CORPUS_CLAIM"
+    },
+    {
+      "path": "governance/compat/check_dispatch_scaffold_provenance.py",
+      "rawSha256": "9a6106fa251f9ba70137b24553c90f2c75cc14a4e289d8b763ee7e0fecaf2085",
+      "readDepth": "TARGETED_SYMBOLS_AND_SECTIONS_NO_CORPUS_CLAIM"
+    },
+    {
+      "path": "governance/compat/check_governed_artifact_checker_read_ahead.py",
+      "rawSha256": "44f4b67c9441c541a42f91526d8f25c8805efeb1e08e6aed69c60aee6153ef77",
+      "readDepth": "TARGETED_SYMBOLS_AND_SECTIONS_NO_CORPUS_CLAIM"
+    },
+    {
+      "path": "governance/compat/check_governed_file_size.py",
+      "rawSha256": "ca6336fdf441e0efdf652468c2ec351ea54837a27842f07c804124eef6324531",
+      "readDepth": "TARGETED_SYMBOLS_AND_SECTIONS_NO_CORPUS_CLAIM"
+    },
+    {
+      "path": "governance/compat/CVF_GOVERNED_FILE_SIZE_EXCEPTION_REGISTRY.json",
+      "rawSha256": "4e2a7ed411aefd70d52f297133f9c948dd411d9b44f8c4ed3c34953fc44d56ad",
+      "readDepth": "TARGETED_SYMBOLS_AND_SECTIONS_NO_CORPUS_CLAIM"
+    },
+    {
+      "path": "docs/reviews/CVF_SYMBOL_LINE_ANCHOR_FIX_WORKER_RETURN_2026-10-11.md",
+      "rawSha256": "e8ea06d39862eb878248e7682d1528bd99a0903edf100440e4fbfde9320e5303",
+      "readDepth": "TARGETED_SYMBOLS_AND_SECTIONS_NO_CORPUS_CLAIM"
+    },
+    {
+      "path": "docs/reviews/evidence/symbol-line-anchor-fix-worker-20261011.json",
+      "rawSha256": "7f11c4728427c5e54a6ec15f7fd21d529bda53b9f405faec8305e22703cfbf20",
+      "readDepth": "TARGETED_SYMBOLS_AND_SECTIONS_NO_CORPUS_CLAIM"
+    },
+    {
+      "path": "docs/reviews/CVF_WRS_FR1_R1_SCAFFOLD_FRICTION_REPAIR_COMPLETION_2026-10-04.md",
+      "rawSha256": "2699b8b04ce66c2679f6f9084b3101c7805a6bad7e4dab0cfd2482c3bc4763f8",
+      "readDepth": "TARGETED_SYMBOLS_AND_SECTIONS_NO_CORPUS_CLAIM"
+    },
+    {
+      "path": "docs/reviews/CVF_WRS_FR2_DISPATCH_CLOSURE_FRICTION_REPAIR_COMPLETION_2026-10-04.md",
+      "rawSha256": "14a5c5cdb51ecf7587971808b11c89ddc78e0b7cf72f14f3a28fde8cb65d3f4c",
+      "readDepth": "TARGETED_SYMBOLS_AND_SECTIONS_NO_CORPUS_CLAIM"
+    },
+    {
+      "path": "governance/compat/check_machine_closure_package.py",
+      "rawSha256": "ce5fb1aad57f0341a601bd81ae8b193aa729f9114598fc40acfad777944ba980",
+      "readDepth": "TARGETED_SYMBOLS_AND_SECTIONS_NO_CORPUS_CLAIM"
+    },
+    {
+      "path": "governance/compat/check_raw_memory_release_invariant.py",
+      "rawSha256": "2d92bab1fb0c113506d808f3c670f66f0c44900e99e9a2c60c8f3dee1c59c7d3",
+      "readDepth": "TARGETED_SYMBOLS_AND_SECTIONS_NO_CORPUS_CLAIM"
+    },
+    {
+      "path": "docs/reference/CVF_AGENT_ERROR_TO_GOVERNANCE_LEARNING_PHILOSOPHY_2026-05-28.md",
+      "rawSha256": "43cf43c03420693ffad5a098c65a8cd4a7c4035f03abbdaa8aba12eac81f6a38",
+      "readDepth": "CORE_PHILOSOPHY_CHAIN_FIRST_AND_ESCALATION_LADDER"
+    }
+  ],
+  "retainedRun3LogSha256": "86a1a39f9b1ca7dcfd01031be7dade9f7390593b24c148f0f4e92856d9d52e6c",
+  "localReviewDiagnostics": {
+    "argumentParsingRejectedInvocations": 2,
+    "firstValidReviewerFastExit": 1,
+    "firstValidReviewerFastFailures": [
+      "incidental historical closure token in first80 lines",
+      "missing rawMemoryReleased=false assertion for historical raw-memory wording"
+    ],
+    "correctedReviewerFastExit": 0,
+    "correctedReviewerFastChecks": 70,
+    "attribution": "LOCAL_REVIEWER_NOT_WORKER",
+    "finalVerificationRecord": ".cvf/runtime/symbol-line-anchor-fix-20261011/learning-review-final-verification.json",
+    "operatorCorrection": "Local previously discounted confirmed historical omission and under-specified system prevention; corrected with continuous-session context and explicit Local ownership."
+  },
+  "operatorClarification": {
+    "date": "2026-10-11",
+    "recordedIn": "docs/reviews/CVF_SYMBOL_LINE_ANCHOR_FIX_LEARNING_CANDIDATES_LOCAL_REVIEW_2026-10-11.md",
+    "messageSummary": "Operator assigned the critique to Opus 5.5 / High, changed only the model within the same continuous provider conversation, confirmed the error is real, and assigned preventive learning to orchestrator/CVF.",
+    "acceptedHistoricalError": "REQUIRED_SCAFFOLD_OMISSION",
+    "evidenceBasis": "OPERATOR_CONFIRMED_EXECUTION_HISTORY_NOT_MACHINE_RECEIPT",
+    "machineReceiptStillUnavailable": true,
+    "preventionOwner": "LOCAL_ORCHESTRATOR_CVF",
+    "unsupportedBlanketUnreadConstantsClaimAccepted": false
+  },
+  "dispositionHistory": [
+    {
+      "finding": "L4",
+      "prior": "PARTIAL_READ_LIMIT_CONFIRMED_SKELETON_COMPLIANCE_NOT_PROVEN_BLANKET_CLAIM_REJECTED",
+      "supersededBy": "OPERATOR_CONFIRMED_SCAFFOLD_OMISSION_READ_COVERAGE_GAP",
+      "reason": "Operator supplied missing same-session context and confirmed real error; absent receipts do not nullify this historical confirmation."
+    }
+  ],
+  "preventiveActionPlan": {
+    "owner": "LOCAL_ORCHESTRATOR_CVF",
+    "ruleOwner": "docs/reference/CVF_AGENT_ERROR_TO_GOVERNANCE_LEARNING_PHILOSOPHY_2026-05-28.md",
+    "joinedFindings": [
+      "L1",
+      "L4",
+      "L5"
+    ],
+    "budgetDependency": "L2_PROPORTIONAL_BUDGET_FIT_BEFORE_ENFORCEMENT",
+    "nextPreparationCommand": "python governance/compat/run_worker_return_scaffold.py --emit --profile WORKER_RETURN_FULL_GATE_V1",
+    "requiredPreparation": [
+      "Generate before long prose and bind actual work-order profile/applicability.",
+      "Supply exact worker command and source-reading pointers.",
+      "Add applicable coordination, pending probe, return recheck and protected-path authorization guidance.",
+      "Check feasible size budget before dispatch; standalone309 versus packet300 is not feasible as a default."
+    ],
+    "futureAcceptanceProof": [
+      "Actual generated required profile/conditional fields present.",
+      "Omitted required conditional field refused by actual consumer.",
+      "Completed truthful return accepted; no fabricated probe or early PASS.",
+      "Future admitted task consumes corrected route with lightweight command/profile receipt."
+    ],
+    "implementationStatus": "IMPLEMENTED_BOUNDED_PENDING_FUTURE_WORKER_CONSUMPTION",
+    "learningRecorded": true,
+    "effectivenessProved": false,
+    "historicalImplementationStatus": "NOT_IMPLEMENTED_AT_ORIGINAL_LEARNING_REVIEW"
+  },
+  "governedSourcePinsRevision": "c424196b15015d5584f89cacd68866fa37674eb3",
+  "governedSourcePinsRepresentation": "HISTORICAL_RAW_WORKTREE_AT_REVIEW_BEFORE_PREPARATION_MAINTENANCE; NOT_CURRENT_SOURCE_PINS_OR_GIT_BLOB_PINS",
+  "maintenanceApplication": {
+    "reviewRef": "docs/reviews/CVF_RETURN_PREPARATION_MAINTENANCE_2026-10-11.md",
+    "evidenceRef": "docs/reviews/evidence/return-preparation-maintenance-20261011.json",
+    "evidenceSha256": "06235df7d62714bd7adaba5cee2b262cb0c2b0884d91fff3f083e3bf39d66bcd",
+    "newWorkerObservation": false,
+    "effectivenessProved": false,
+    "historicalMeasurementsPreserved": true
+  }
+}
