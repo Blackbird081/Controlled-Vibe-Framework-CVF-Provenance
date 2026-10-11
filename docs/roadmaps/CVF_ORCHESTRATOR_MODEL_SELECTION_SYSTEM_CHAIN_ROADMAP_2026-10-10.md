@@ -294,3 +294,7 @@ Fresh operator continuation selects an offline optional validator for the actual
 ## Current Observation Visibility
 
 `docs/reviews/CVF_WORKER_MODEL_USAGE_OBSERVATION_SUPPLEMENT_2026-10-11.md` references six historical UI rows and three later S3/S4/S2 tasks, with source pins and separate worker/Local burden. This is not nine independent/matched samples or a model ranking. Only current proof/continuation statements above are reconciled; historical trace/claim blocks remain source-scoped. No implementing work order or S5 successor opens from this supplement.
+
+## S2-R2 Offline Outcome Join Admission - 2026-10-11
+
+Operator explicitly selected the missing offline ReviewedOutcomeLink branch and assigned current native worker gpt-6-luna/max. Prior xhigh is historical metadata, not equivalent observed configuration. Consumer=Local dispatcher/reviewer; finite outcome=frozen decision to attempts, initial return, repairs, independent review and final artifacts. Locked profile `docs/reference/CVF_MODEL_SELECTION_REVIEWED_OUTCOME_PROFILE_2026-10-11.md`; baseline `docs/baselines/CVF_GC018_MODEL_SELECTION_S2_R2_OFFLINE_REVIEWED_OUTCOME_2026-10-11.md`; work order `docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_SELECTION_S2_R2_OFFLINE_REVIEWED_OUTCOME_2026-10-11.md`. Optional companion only, source truth/host identity/PLL/scoring/Gateway/S5/Expense remain outside scope. Initial implementation/probe acceptance pending; no full-chain runtime claim.
