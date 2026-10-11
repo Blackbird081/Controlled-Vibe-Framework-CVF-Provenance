@@ -1,0 +1,1924 @@
+{
+  "schemaVersion": "cvf.o3LocalAcceptance@0.1.0",
+  "status": "ACCEPT_BOUNDED",
+  "reviewOwner": "LOCAL_ROOT",
+  "workerInvocationId": "/root/o3_luna_worker",
+  "probeInvocationId": "continuity-dispatch-o3-independent-cli-20261011",
+  "executionBaseHead": "0097a796bd3834ea2385c8673f70deae961c3e9f",
+  "frozenReturn": {
+    "schemaVersion": "cvf.o3FrozenReturn@0.1.0",
+    "workerInvocationId": "/root/o3_luna_worker",
+    "frozenAtUtc": "2026-10-11T07:08:41.031934+00:00",
+    "reviewBaseHead": "0097a796bd3834ea2385c8673f70deae961c3e9f",
+    "status": "M docs/reference/CVF_TRANCHE_COMMIT_CHOREOGRAPHY_STANDARD_2026-06-03.md\n M scripts/cvf_commit_tranche.py\n M scripts/test_cvf_commit_tranche.py\n?? docs/reviews/CVF_CONTINUITY_DISPATCH_O3_WORKER_RETURN_2026-10-11.md\n?? docs/reviews/evidence/continuity-dispatch-o3-worker-20261011.json\n?? scripts/test_cvf_commit_tranche_dispatch.py",
+    "changedPaths": [
+      "docs/reference/CVF_TRANCHE_COMMIT_CHOREOGRAPHY_STANDARD_2026-06-03.md",
+      "docs/reviews/CVF_CONTINUITY_DISPATCH_O3_WORKER_RETURN_2026-10-11.md",
+      "docs/reviews/evidence/continuity-dispatch-o3-worker-20261011.json",
+      "scripts/cvf_commit_tranche.py",
+      "scripts/test_cvf_commit_tranche.py",
+      "scripts/test_cvf_commit_tranche_dispatch.py"
+    ],
+    "staging": "EMPTY",
+    "artifacts": [
+      {
+        "path": "scripts/cvf_commit_tranche.py",
+        "sha256": "86db471aa834757e43cf18260269b22a4e64ba67fb0d1c409eb49ae9a8f9ae44",
+        "bytes": 33256,
+        "changed": true
+      },
+      {
+        "path": "scripts/test_cvf_commit_tranche.py",
+        "sha256": "a553fb110717e4aafdb55776eeb062676fb35c1ef63dfaffc2ead37472edb33f",
+        "bytes": 20836,
+        "changed": true
+      },
+      {
+        "path": "scripts/test_cvf_commit_tranche_dispatch.py",
+        "sha256": "8e833675bc35cb9d8cc3cbf7eba59ee30e734274b9fd7b1626ba376a4d5e6090",
+        "bytes": 21327,
+        "changed": true
+      },
+      {
+        "path": "docs/reference/CVF_TRANCHE_COMMIT_CHOREOGRAPHY_STANDARD_2026-06-03.md",
+        "sha256": "ffa7c80bedc5d37114bf344b9230af6a9425034a73813af0b24fffc035d79fc5",
+        "bytes": 29199,
+        "changed": true
+      },
+      {
+        "path": "docs/reviews/CVF_CONTINUITY_DISPATCH_O3_WORKER_RETURN_2026-10-11.md",
+        "sha256": "c1dc1843ef1ad2631ca79f066f00fe43cc5238ea0a5ebf891ab65e852b9df6f2",
+        "bytes": 23032,
+        "changed": true
+      },
+      {
+        "path": "docs/reviews/evidence/continuity-dispatch-o3-worker-20261011.json",
+        "sha256": "98404d2b6cb2e1a383d1970802bb2d405cd1b9c5b8c29a3ef159a3c34f63d41e",
+        "bytes": 10217,
+        "changed": true
+      }
+    ]
+  },
+  "workerEvidence": {
+    "path": "docs/reviews/evidence/continuity-dispatch-o3-worker-20261011.json",
+    "sha256": "98404d2b6cb2e1a383d1970802bb2d405cd1b9c5b8c29a3ef159a3c34f63d41e",
+    "value": {
+      "schemaVersion": "cvf.continuityDispatchO3WorkerEvidence@1.0.0",
+      "batchId": "CVF-CONTINUITY-DISPATCH-O3-20261011",
+      "role": "INTERNAL_AGENT",
+      "decisionOwner": "LOCAL",
+      "executionBaseHead": "0097a796bd3834ea2385c8673f70deae961c3e9f",
+      "finalHead": "0097a796bd3834ea2385c8673f70deae961c3e9f",
+      "stagedSet": [],
+      "clocks": {
+        "firstRecordedUtc": "2026-10-11 06:28:23 UTC",
+        "firstClockOrderingDeviation": "Required startup/source reads preceded the first recorded clock. This timestamp is not invocation start and not full worker cost.",
+        "lastRecordedUtcBeforeFinalGate": "2026-10-11 07:06:54 UTC",
+        "elapsedFromFirstRecordedClockMinutes": 38.52,
+        "fullInvocationElapsed": "NOT_AVAILABLE_WITH_REASON: actual invocation start preceded first recorded clock and was not captured",
+        "attemptLimitMinutes": 45
+      },
+      "configuration": {
+        "requestedModel": "gpt-6-luna",
+        "requestedEffort": "max",
+        "observedProvider": "NOT_OBSERVED_WITH_REASON: provider identity is not exposed",
+        "observedModel": "NOT_OBSERVED_WITH_REASON: requested model cannot be used as proof of observed identity",
+        "observedEffort": "NOT_OBSERVED_WITH_REASON: runtime effort is not exposed",
+        "tokenOrQuotaUsage": "NOT_AVAILABLE_WITH_REASON: per-invocation usage was not exposed",
+        "internalAgentInvocationCount": 1,
+        "externalAgentInvocationCount": 0,
+        "providerApiCallCount": 0,
+        "nestedAgentCount": 0
+      },
+      "releaseAndBaseline": {
+        "preDispatchReceipt": {
+          "path": ".cvf/runtime/continuity-dispatch-o3-20261011/release-gate-final/pre-dispatch.json",
+          "sha256": "9b8697ab36d8be819c871e9f3c347672da05377c760c4671eb2d2e13a8be3cd2",
+          "result": "PASS",
+          "elapsedSeconds": 19.34,
+          "head": "0097a796bd3834ea2385c8673f70deae961c3e9f"
+        },
+        "preImplementation": {
+          "command": "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base 0097a796bd3834ea2385c8673f70deae961c3e9f --head HEAD --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_CONTINUITY_DISPATCH_O3_2026-10-11.md",
+          "result": "PASS",
+          "checks": "88/88",
+          "elapsedSeconds": 9.52
+        },
+        "workOrder": {
+          "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_CONTINUITY_DISPATCH_O3_2026-10-11.md",
+          "sha256": "2c790d64a26ac22abaabee5a8277febd787a4b32a68bb422d982a633e4661049"
+        },
+        "baseline": {
+          "path": "docs/baselines/CVF_GC018_CONTINUITY_DISPATCH_O3_2026-10-11.md",
+          "sha256": "3621fdbd371e0e166f76a83f9f0aed5c22bd3b5e377cda95d1493d40c0af79f2"
+        },
+        "sourceRevision": "067f382c124f6717c4cb915b5f30abda54b2e904"
+      },
+      "sourcePins": [
+        {
+          "path": "scripts/cvf_commit_tranche.py",
+          "dispatchSha256": "9d214020070551a5f832ea390f165e47f80245daaa803097cf0d943231200f1c",
+          "finalSha256": "86db471aa834757e43cf18260269b22a4e64ba67fb0d1c409eb49ae9a8f9ae44"
+        },
+        {
+          "path": "scripts/test_cvf_commit_tranche.py",
+          "dispatchSha256": "da5d4e169bf1d41a7f5b0b5fdd2cdded2c3f02b17ff7fffc51e27f56b7df24f8",
+          "finalSha256": "a553fb110717e4aafdb55776eeb062676fb35c1ef63dfaffc2ead37472edb33f"
+        },
+        {
+          "path": "governance/compat/check_dispatch_release_readiness.py",
+          "dispatchSha256": "4c4247343d406af9ec06d54913c75f573adf9c4b26f080af355d0888dc8caed5",
+          "finalSha256": "4c4247343d406af9ec06d54913c75f573adf9c4b26f080af355d0888dc8caed5"
+        },
+        {
+          "path": "governance/compat/generate_active_session_state.py",
+          "dispatchSha256": "764115c0c9429cb4c39a355be02b7422325e114e6922debe26609ae6c890636a",
+          "finalSha256": "764115c0c9429cb4c39a355be02b7422325e114e6922debe26609ae6c890636a"
+        },
+        {
+          "path": "docs/reference/CVF_TRANCHE_COMMIT_CHOREOGRAPHY_STANDARD_2026-06-03.md",
+          "dispatchSha256": "c66543cc606b12b82a2e043ea7718a0d48472b8b41379a7488aacecdf2b586c4",
+          "finalSha256": "ffa7c80bedc5d37114bf344b9230af6a9425034a73813af0b24fffc035d79fc5"
+        },
+        {
+          "path": "docs/reference/CVF_DISPATCH_RELEASE_READINESS_MACHINE_STANDARD_2026-09-25.md",
+          "dispatchSha256": "6bad9423aba25261c01804400f1e4b5d89687f89548d45d2a254ede0c94ff15b",
+          "finalSha256": "6bad9423aba25261c01804400f1e4b5d89687f89548d45d2a254ede0c94ff15b"
+        },
+        {
+          "path": "docs/reviews/CVF_MODEL_SELECTION_ORCHESTRATOR_LEARNING_DISPOSITION_2026-10-11.md",
+          "dispatchSha256": "3e90e2eddc554966cef77cd3942b541ac411e669bfff974364d908fa644bd94e",
+          "finalSha256": "3e90e2eddc554966cef77cd3942b541ac411e669bfff974364d908fa644bd94e"
+        }
+      ],
+      "tests": {
+        "command": "python -m pytest scripts/test_cvf_commit_tranche.py scripts/test_cvf_commit_tranche_dispatch.py -q",
+        "result": "PASS",
+        "passed": 168,
+        "skipped": 1,
+        "durationSeconds": 93.39,
+        "logPath": ".cvf/runtime/continuity-dispatch-o3-20261011/focused-tests.log",
+        "logSha256": "781432ce5a150804ad8b7ed64334a01a45ec65b9d39ed15dd62562d870019b8e",
+        "skipReason": "Symlink-specific fixture skipped because symlink creation was unavailable in the Windows environment; symlink/reparse protection remains implemented."
+      },
+      "contractCoverage": {
+        "scope": "Locked six-path O3 helper producer/consumer composition.",
+        "positiveLifecycle": "Real helper CLI, disposable Git material and continuity commits, canonical generator, unchanged release evaluator PASS, and read-only ALREADY_SYNCHRONIZED recheck.",
+        "rejectionCoverage": [
+          "missing, wrong, duplicate, and stale batch identity",
+          "dirty or source-pin-mismatched packet and baseline",
+          "stale core authority or wrong next move",
+          "unsafe path/symlink and wrong parent",
+          "generated output disagreement",
+          "postcommit release rejection preserves committed fixture state and exact argv",
+          "retry preserves explicit binding",
+          "legacy unbound resume behavior"
+        ],
+        "testFileSha256": "8e833675bc35cb9d8cc3cbf7eba59ee30e734274b9fd7b1626ba376a4d5e6090",
+        "standardFinalSha256": "ffa7c80bedc5d37114bf344b9230af6a9425034a73813af0b24fffc035d79fc5"
+      },
+      "firstFailures": {
+        "ledgerPath": ".cvf/runtime/continuity-dispatch-o3-20261011/first-failure-repair-ledger.json",
+        "ledgerSha256": "d2a261d54da6c4ff89458a00f1bb92d6d6bc419f6362638e9b479b30d40ff234",
+        "rawOutputLimitation": "Early failed pytest output was not separately redirected to byte-exact files at run time; attempt summaries are reconstructed from retained tool outputs in the session and explicitly marked in the ledger.",
+        "attempts": [
+          {
+            "result": "4 failed, 11 passed, 1 skipped",
+            "class": "DISPATCH_TEST_FIXTURE_SETUP",
+            "repairOwner": "INTERNAL_AGENT_WORKER",
+            "repair": "Added caller-authored post-material handoff revision to the disposable repository fixture."
+          },
+          {
+            "result": "3 failed, 12 passed, 1 skipped",
+            "class": "IMPLEMENTATION_DEFECT",
+            "repairOwner": "INTERNAL_AGENT_WORKER",
+            "repair": "Added the missing capturing group to the evidence-marker regex."
+          },
+          {
+            "result": "2 failed, 13 passed, 1 skipped",
+            "class": "DISPATCH_TEST_FIXTURE_ENVIRONMENT",
+            "repairOwner": "INTERNAL_AGENT_WORKER",
+            "repair": "Ignored Python cache artifacts created by the real release checker in the disposable repository."
+          },
+          {
+            "result": "4 failed, 11 passed, 1 skipped",
+            "class": "DISPATCH_TEST_FIXTURE_SETUP",
+            "repairOwner": "INTERNAL_AGENT_WORKER",
+            "repair": "Added the .cvf runtime ignore boundary to the fixture."
+          }
+        ],
+        "packetGap": {
+          "classification": "ORCHESTRATOR_PACKET_GAP / RULE_EXISTS",
+          "decisionOwner": "LOCAL",
+          "workerAction": "Added one meaningful unbound-resume compatibility assertion to the legacy test, as authorized."
+        },
+        "returnGateShapeFailures": [
+          {
+            "logPath": ".cvf/runtime/continuity-dispatch-o3-20261011/worker-return-fast-gate-first-failure.log",
+            "sha256": "e2075391addcaf209eba5cb7cc1b2f5a25841943392b1616127266ccc184e67f",
+            "result": "FAIL",
+            "finding": "Return encoding, providerExecutionAuthority declaration, SCEC executable-proof claim link, and trace expected-manifest parsing required repair.",
+            "repairOwner": "INTERNAL_AGENT_WORKER",
+            "repair": "Repaired only the governed return shape and retained the acceptance-ledger packet gap as a distinct Local-owned classification."
+          },
+          {
+            "logPath": ".cvf/runtime/continuity-dispatch-o3-20261011/worker-return-fast-gate-second-failure.log",
+            "sha256": "183156c5eba22f35398a77fe941b17edb5dec59812e41a45c915b778c9dc5c4d",
+            "result": "FAIL",
+            "finding": "One non-ASCII dash remained in the return.",
+            "repairOwner": "INTERNAL_AGENT_WORKER",
+            "repair": "Replaced the remaining dash with ASCII."
+          }
+        ]
+      },
+      "workerReturnGate": {
+        "command": "python governance/compat/run_worker_return_fast_gate.py --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_CONTINUITY_DISPATCH_O3_2026-10-11.md",
+        "result": "PASS",
+        "outputLogPath": ".cvf/runtime/continuity-dispatch-o3-20261011/worker-return-fast-gate-final.log"
+      },
+      "learningConsumption": {
+        "selectedFinding": "O3 candidate in docs/reviews/CVF_MODEL_SELECTION_ORCHESTRATOR_LEARNING_DISPOSITION_2026-10-11.md",
+        "selectedFindingSha256": "3e90e2eddc554966cef77cd3942b541ac411e669bfff974364d908fa644bd94e",
+        "workerDisposition": "IMPLEMENTED_PENDING_DISTINCT_LOCAL_REVIEW",
+        "acceptancePacketGap": "ORCHESTRATOR_PACKET_GAP / RULE_EXISTS; no worker-defect attribution",
+        "enrolledParentApplicationReceipt": "NOT_CLAIMED",
+        "successorTrancheOpened": false
+      },
+      "changedSet": [
+        "docs/reference/CVF_TRANCHE_COMMIT_CHOREOGRAPHY_STANDARD_2026-06-03.md",
+        "scripts/cvf_commit_tranche.py",
+        "scripts/test_cvf_commit_tranche.py",
+        "scripts/test_cvf_commit_tranche_dispatch.py",
+        "docs/reviews/CVF_CONTINUITY_DISPATCH_O3_WORKER_RETURN_2026-10-11.md",
+        "docs/reviews/evidence/continuity-dispatch-o3-worker-20261011.json"
+      ],
+      "actualWorkspaceCommit": "NONE; WORKER_MUST_NOT_COMMIT honored",
+      "selfHashPolicy": "This evidence JSON and the return Markdown intentionally do not include their own byte hashes."
+    }
+  },
+  "orchestratorAdmission": {
+    "schemaVersion": "cvf.o3AdmissionEvidence@0.1.0",
+    "releaseHead": "0097a796bd3834ea2385c8673f70deae961c3e9f",
+    "role": "LOCAL_ORCHESTRATOR_REVIEWER",
+    "nativeWorker": "/root/o3_luna_worker",
+    "requestedModel": "gpt-6-luna",
+    "requestedEffort": "max",
+    "observedModel": "UNKNOWN_NOT_HOST_ATTESTED",
+    "observedUsage": "UNKNOWN",
+    "implementationContractUnchangedThroughPacketCorrection": true,
+    "contractContentSha256": "6ed5e896a1862dcc6cb1d2f4f9f27ee208cd76d76f2ae38439a32521c0ad9c21",
+    "currentAuthorityAtRelease": {
+      "baselinePath": "docs/baselines/CVF_GC018_CONTINUITY_DISPATCH_O3_2026-10-11.md",
+      "baselineSha256": "3621fdbd371e0e166f76a83f9f0aed5c22bd3b5e377cda95d1493d40c0af79f2",
+      "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CONTINUITY_DISPATCH_O3_2026-10-11.md",
+      "workOrderSha256": "2c790d64a26ac22abaabee5a8277febd787a4b32a68bb422d982a633e4661049"
+    },
+    "releaseReceipt": {
+      "path": ".cvf/runtime/continuity-dispatch-o3-20261011/release-gate-final/pre-dispatch.json",
+      "sha256": "9b8697ab36d8be819c871e9f3c347672da05377c760c4671eb2d2e13a8be3cd2",
+      "status": "PASS",
+      "checks": 86,
+      "durationSeconds": 19.344
+    },
+    "preparationStart": null,
+    "preparationStartUnknownReason": "first clock of this root turn was not captured; first explicit UTC observation06:11:17Z is not the start",
+    "commits": {
+      "initialMaterial": "606807b98cbfe4ab8ea9f15890630ee5c0c2012e",
+      "initialContinuity": "b2c4928ee9261bc143d27ce36cb5fbc7bf9128b2",
+      "correctedMaterial": "067f382c124f6717c4cb915b5f30abda54b2e904",
+      "releasedContinuity": "0097a796bd3834ea2385c8673f70deae961c3e9f"
+    },
+    "rootPreparationDefects": [
+      {
+        "class": "ORCHESTRATOR_PACKET_GAP",
+        "cluster": "SOURCE_LITERAL_APPLICATION",
+        "events": [
+          "Windows rg filesystem wildcards failed before directory/exact path searches",
+          "one guessed hook-source absent; actual core.hooksPath discovery corrected it",
+          "standalone route checker was given unsupported active-work-order flag before its actual argparse interface was used",
+          "handoff closeability literal and dated-owner row omitted",
+          "Vietnamese evidence quote exception omitted",
+          "routing omitted three steward paths",
+          "combined two-phase range used with material-only author trace",
+          "in-place authority packet correction initially omitted core/projection hash refresh"
+        ],
+        "disposition": "RULE_EXISTS",
+        "foundationValue": "existing source/literal/phase/atomic-pin owners already cover these errors; recurring root application failure, no duplicate rule added",
+        "futurePrevention": "NOT_PROVEN"
+      },
+      {
+        "class": "MACHINE_GATE_GAP",
+        "cluster": "OPAQUE_CHILD_FAILURE_OUTPUT",
+        "event": "helper emitted failed argv without child diagnostics; exact diagnostic reruns identified authoring/encoding/pin failures",
+        "disposition": "RULE_EXISTS",
+        "foundationValue": "existing diagnostic contract applies; structured child-output design remains an O7 consideration, not implemented by selected O3 scope"
+      }
+    ],
+    "workerAttribution": "no worker was invoked until all corrected release conditions passed; no root preparation failure is worker/model performance",
+    "claimBoundary": "root preparation/admission provenance only; source controls are pinned, no current implementation or model quality claim",
+    "postDispatchRootReadDefects": {
+      "actor": "LOCAL_ROOT",
+      "events": [
+        "one guessed parent-contract filename was absent; corrected through rg file inventory",
+        "one guessed semantic helper filename was absent; read the existing checker directly",
+        "root suggested retained legacy artifact could fulfill the PASS ledger without observing validate_return changed-path membership; worker identified the existing guard and added meaningful unbound-template compatibility assertion within allowed scope",
+        "ignored closure-template patch failed due ordered context; no partial tracked mutation",
+        "ignored template replacement expected a phrase already replaced; corrected before write",
+        "initial contract comparison included heading unlike admission body-only digest; source-derived correction, not contract drift"
+      ],
+      "disposition": "RULE_EXISTS",
+      "value": "Existing exact source/interface and acceptance-ledger owners already reject the mismatch; no additional rule/control value proved. Root instruction error, not a worker defect. Worker repair was meaningful and in scope."
+    }
+  },
+  "independentProbe": {
+    "schemaVersion": "cvf.o3IndependentCliProbe@0.1.0",
+    "actor": "LOCAL_ROOT_NOT_IMPLEMENTATION_WORKER",
+    "sourcePins": [
+      {
+        "path": "scripts/cvf_commit_tranche.py",
+        "sha256": "b964156112a2d64378e43a0f705d7ba3d916c9b428ce65820e47a7f6575c1ab2"
+      },
+      {
+        "path": "governance/compat/generate_active_session_state.py",
+        "sha256": "764115c0c9429cb4c39a355be02b7422325e114e6922debe26609ae6c890636a"
+      },
+      {
+        "path": "governance/compat/check_dispatch_release_readiness.py",
+        "sha256": "4c4247343d406af9ec06d54913c75f573adf9c4b26f080af355d0888dc8caed5"
+      },
+      {
+        "path": "governance/compat/check_work_order_acceptance_ledger.py",
+        "sha256": "8b6ce487f01eb432cab16456da98c79f0995468f6a1da8c16765d204cc6a39b4"
+      }
+    ],
+    "results": [
+      {
+        "case": "actual material/resume/dry-run/atomic generator+commit/release/idempotent recheck",
+        "status": "PASS",
+        "material": "a6548e530e26f2b0fb4fb2c02e782bb304cb2ac2",
+        "continuity": "1d56c60bc79775a43f8e0ea692d027dab721ee09",
+        "releaseReport": {
+          "policy": "docs/reference/CVF_DISPATCH_RELEASE_READINESS_MACHINE_STANDARD_2026-09-25.md",
+          "activeWorkOrder": "docs/work_orders/CVF_ROOT_O3_FIXTURE.md",
+          "batchId": "CVF-O3-ROOT-FIXTURE",
+          "materialCommit": "a6548e530e26f2b0fb4fb2c02e782bb304cb2ac2",
+          "violationCount": 0,
+          "violations": [],
+          "compliant": true
+        },
+        "changedPaths": [
+          "AGENT_HANDOFF_FIXTURE.md",
+          "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json",
+          "CVF_SESSION/ACTIVE_SESSION_STATE.json",
+          "CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json",
+          "CVF_SESSION/state/entries/nextAllowedMove.json",
+          "CVF_SESSION/state/entries/o3.json",
+          "CVF_SESSION_MEMORY.md"
+        ]
+      },
+      {
+        "case": "missing_batch",
+        "status": "PASS",
+        "exitCode": 3,
+        "terminal": {
+          "schemaVersion": "cvf.gc020TerminalOutput.v1",
+          "terminalState": "CONTINUITY_VALIDATION_FAILED",
+          "materialSha": "50eb3c5e08341513bb1e5b90cfcaaa9256dd129b",
+          "currentHead": "50eb3c5e08341513bb1e5b90cfcaaa9256dd129b",
+          "activeHandoff": "AGENT_HANDOFF_FIXTURE.md",
+          "stagedPaths": [],
+          "unstagedPaths": [
+            "AGENT_HANDOFF_FIXTURE.md",
+            "CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json",
+            "CVF_SESSION/state/entries/nextAllowedMove.json",
+            "CVF_SESSION/state/entries/o3.json",
+            "CVF_SESSION_MEMORY.md"
+          ],
+          "untrackedPaths": [],
+          "failedCommand": null,
+          "diagnosticCode": "DISPATCH_BATCH_ID_REJECTED",
+          "diagnosticDetails": {
+            "path": "docs/work_orders/CVF_ROOT_O3_FIXTURE.md",
+            "declarationCount": 0
+          },
+          "resumeArgvTemplate": [
+            "python",
+            "scripts/cvf_commit_tranche.py",
+            "--mode",
+            "resume",
+            "--resume-material-sha",
+            "50eb3c5e08341513bb1e5b90cfcaaa9256dd129b",
+            "--base",
+            "cdfad66e32f17b55f1ec0515b8942b7dfcdd1595",
+            "--continuity-manifest",
+            ".cvf/runtime/tranche-continuity/50eb3c5e08341513bb1e5b90cfcaaa9256dd129b.json",
+            "--continuity-message",
+            "<continuityCommitMessage>",
+            "--active-work-order",
+            "docs/work_orders/CVF_ROOT_O3_FIXTURE.md",
+            "--execute"
+          ],
+          "resumeCommand": null
+        },
+        "mutationEffective": true,
+        "preflightSnapshotUnchanged": true
+      },
+      {
+        "case": "duplicate_batch",
+        "status": "PASS",
+        "exitCode": 3,
+        "terminal": {
+          "schemaVersion": "cvf.gc020TerminalOutput.v1",
+          "terminalState": "CONTINUITY_VALIDATION_FAILED",
+          "materialSha": "24f8517f65a1a13b7dc923b2937654998390db0c",
+          "currentHead": "24f8517f65a1a13b7dc923b2937654998390db0c",
+          "activeHandoff": "AGENT_HANDOFF_FIXTURE.md",
+          "stagedPaths": [],
+          "unstagedPaths": [
+            "AGENT_HANDOFF_FIXTURE.md",
+            "CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json",
+            "CVF_SESSION/state/entries/nextAllowedMove.json",
+            "CVF_SESSION/state/entries/o3.json",
+            "CVF_SESSION_MEMORY.md"
+          ],
+          "untrackedPaths": [],
+          "failedCommand": null,
+          "diagnosticCode": "DISPATCH_BATCH_ID_REJECTED",
+          "diagnosticDetails": {
+            "path": "docs/work_orders/CVF_ROOT_O3_FIXTURE.md",
+            "declarationCount": 2
+          },
+          "resumeArgvTemplate": [
+            "python",
+            "scripts/cvf_commit_tranche.py",
+            "--mode",
+            "resume",
+            "--resume-material-sha",
+            "24f8517f65a1a13b7dc923b2937654998390db0c",
+            "--base",
+            "b2a5ed948da8ff43846d856049150ac13b047c85",
+            "--continuity-manifest",
+            ".cvf/runtime/tranche-continuity/24f8517f65a1a13b7dc923b2937654998390db0c.json",
+            "--continuity-message",
+            "<continuityCommitMessage>",
+            "--active-work-order",
+            "docs/work_orders/CVF_ROOT_O3_FIXTURE.md",
+            "--execute"
+          ],
+          "resumeCommand": null
+        },
+        "mutationEffective": true,
+        "preflightSnapshotUnchanged": true
+      },
+      {
+        "case": "wrong_baseline_batch",
+        "status": "PASS",
+        "exitCode": 3,
+        "terminal": {
+          "schemaVersion": "cvf.gc020TerminalOutput.v1",
+          "terminalState": "CONTINUITY_VALIDATION_FAILED",
+          "materialSha": "deeda22633403682076632273ce8b5de55d39ccc",
+          "currentHead": "deeda22633403682076632273ce8b5de55d39ccc",
+          "activeHandoff": "AGENT_HANDOFF_FIXTURE.md",
+          "stagedPaths": [],
+          "unstagedPaths": [
+            "AGENT_HANDOFF_FIXTURE.md",
+            "CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json",
+            "CVF_SESSION/state/entries/nextAllowedMove.json",
+            "CVF_SESSION/state/entries/o3.json",
+            "CVF_SESSION_MEMORY.md"
+          ],
+          "untrackedPaths": [],
+          "failedCommand": null,
+          "diagnosticCode": "DISPATCH_BATCH_ID_REJECTED",
+          "diagnosticDetails": {
+            "reason": "packet batch declarations differ"
+          },
+          "resumeArgvTemplate": [
+            "python",
+            "scripts/cvf_commit_tranche.py",
+            "--mode",
+            "resume",
+            "--resume-material-sha",
+            "deeda22633403682076632273ce8b5de55d39ccc",
+            "--base",
+            "7c7f2c11b6e06b90b312a01c7c55d1afbb1d2bd9",
+            "--continuity-manifest",
+            ".cvf/runtime/tranche-continuity/deeda22633403682076632273ce8b5de55d39ccc.json",
+            "--continuity-message",
+            "<continuityCommitMessage>",
+            "--active-work-order",
+            "docs/work_orders/CVF_ROOT_O3_FIXTURE.md",
+            "--execute"
+          ],
+          "resumeCommand": null
+        },
+        "mutationEffective": true,
+        "preflightSnapshotUnchanged": true
+      },
+      {
+        "case": "stale_pin",
+        "status": "PASS",
+        "exitCode": 3,
+        "terminal": {
+          "schemaVersion": "cvf.gc020TerminalOutput.v1",
+          "terminalState": "CONTINUITY_VALIDATION_FAILED",
+          "materialSha": "403cf326e817b0e4aba8b4ba08582520c6a3f989",
+          "currentHead": "403cf326e817b0e4aba8b4ba08582520c6a3f989",
+          "activeHandoff": "AGENT_HANDOFF_FIXTURE.md",
+          "stagedPaths": [],
+          "unstagedPaths": [
+            "AGENT_HANDOFF_FIXTURE.md",
+            "CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json",
+            "CVF_SESSION/state/entries/nextAllowedMove.json",
+            "CVF_SESSION/state/entries/o3.json",
+            "CVF_SESSION_MEMORY.md"
+          ],
+          "untrackedPaths": [],
+          "failedCommand": null,
+          "diagnosticCode": "DISPATCH_PACKET_HASH_MISMATCH",
+          "diagnosticDetails": {
+            "path": "docs/work_orders/CVF_ROOT_O3_FIXTURE.md"
+          },
+          "resumeArgvTemplate": [
+            "python",
+            "scripts/cvf_commit_tranche.py",
+            "--mode",
+            "resume",
+            "--resume-material-sha",
+            "403cf326e817b0e4aba8b4ba08582520c6a3f989",
+            "--base",
+            "abb1d4143a19c80fad1d3e40031db6eb9d96a1e7",
+            "--continuity-manifest",
+            ".cvf/runtime/tranche-continuity/403cf326e817b0e4aba8b4ba08582520c6a3f989.json",
+            "--continuity-message",
+            "<continuityCommitMessage>",
+            "--active-work-order",
+            "docs/work_orders/CVF_ROOT_O3_FIXTURE.md",
+            "--execute"
+          ],
+          "resumeCommand": null
+        },
+        "mutationEffective": true,
+        "preflightSnapshotUnchanged": true
+      },
+      {
+        "case": "wrong_authority",
+        "status": "PASS",
+        "exitCode": 3,
+        "terminal": {
+          "schemaVersion": "cvf.gc020TerminalOutput.v1",
+          "terminalState": "CONTINUITY_VALIDATION_FAILED",
+          "materialSha": "0f85dc38617f0e4b28eedb1794cb4f11e2b5d7c1",
+          "currentHead": "0f85dc38617f0e4b28eedb1794cb4f11e2b5d7c1",
+          "activeHandoff": "AGENT_HANDOFF_FIXTURE.md",
+          "stagedPaths": [],
+          "unstagedPaths": [
+            "AGENT_HANDOFF_FIXTURE.md",
+            "CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json",
+            "CVF_SESSION/state/entries/nextAllowedMove.json",
+            "CVF_SESSION/state/entries/o3.json",
+            "CVF_SESSION_MEMORY.md"
+          ],
+          "untrackedPaths": [],
+          "failedCommand": null,
+          "diagnosticCode": "DISPATCH_AUTHORITY_REJECTED",
+          "diagnosticDetails": {
+            "workOrderPath": "docs/work_orders/WRONG.md",
+            "requestedPath": "docs/work_orders/CVF_ROOT_O3_FIXTURE.md"
+          },
+          "resumeArgvTemplate": [
+            "python",
+            "scripts/cvf_commit_tranche.py",
+            "--mode",
+            "resume",
+            "--resume-material-sha",
+            "0f85dc38617f0e4b28eedb1794cb4f11e2b5d7c1",
+            "--base",
+            "a2b72e0a6870d55fb86f11c02ee421152c925604",
+            "--continuity-manifest",
+            ".cvf/runtime/tranche-continuity/0f85dc38617f0e4b28eedb1794cb4f11e2b5d7c1.json",
+            "--continuity-message",
+            "<continuityCommitMessage>",
+            "--active-work-order",
+            "docs/work_orders/CVF_ROOT_O3_FIXTURE.md",
+            "--execute"
+          ],
+          "resumeCommand": null
+        },
+        "mutationEffective": true,
+        "preflightSnapshotUnchanged": true
+      },
+      {
+        "case": "wrong_next_batch",
+        "status": "PASS",
+        "exitCode": 3,
+        "terminal": {
+          "schemaVersion": "cvf.gc020TerminalOutput.v1",
+          "terminalState": "CONTINUITY_VALIDATION_FAILED",
+          "materialSha": "c92497b84d11afffa5ba2740476a1039ed655e61",
+          "currentHead": "c92497b84d11afffa5ba2740476a1039ed655e61",
+          "activeHandoff": "AGENT_HANDOFF_FIXTURE.md",
+          "stagedPaths": [],
+          "unstagedPaths": [
+            "AGENT_HANDOFF_FIXTURE.md",
+            "CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json",
+            "CVF_SESSION/state/entries/nextAllowedMove.json",
+            "CVF_SESSION/state/entries/o3.json",
+            "CVF_SESSION_MEMORY.md"
+          ],
+          "untrackedPaths": [],
+          "failedCommand": null,
+          "diagnosticCode": "DISPATCH_NEXT_MOVE_REJECTED",
+          "diagnosticDetails": {
+            "workOrderPath": "docs/work_orders/CVF_ROOT_O3_FIXTURE.md",
+            "batchId": "CVF-O3-ROOT-FIXTURE",
+            "actionClass": "EXECUTE_BOUNDED"
+          },
+          "resumeArgvTemplate": [
+            "python",
+            "scripts/cvf_commit_tranche.py",
+            "--mode",
+            "resume",
+            "--resume-material-sha",
+            "c92497b84d11afffa5ba2740476a1039ed655e61",
+            "--base",
+            "d79c5b11585050f924b3cd2d31f374a7b56582f5",
+            "--continuity-manifest",
+            ".cvf/runtime/tranche-continuity/c92497b84d11afffa5ba2740476a1039ed655e61.json",
+            "--continuity-message",
+            "<continuityCommitMessage>",
+            "--active-work-order",
+            "docs/work_orders/CVF_ROOT_O3_FIXTURE.md",
+            "--execute"
+          ],
+          "resumeCommand": null
+        },
+        "mutationEffective": true,
+        "preflightSnapshotUnchanged": true
+      },
+      {
+        "case": "held_next",
+        "status": "PASS",
+        "exitCode": 3,
+        "terminal": {
+          "schemaVersion": "cvf.gc020TerminalOutput.v1",
+          "terminalState": "CONTINUITY_VALIDATION_FAILED",
+          "materialSha": "a99ba69efbe674485fa0528437e0ef2a1d6b34ea",
+          "currentHead": "a99ba69efbe674485fa0528437e0ef2a1d6b34ea",
+          "activeHandoff": "AGENT_HANDOFF_FIXTURE.md",
+          "stagedPaths": [],
+          "unstagedPaths": [
+            "AGENT_HANDOFF_FIXTURE.md",
+            "CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json",
+            "CVF_SESSION/state/entries/nextAllowedMove.json",
+            "CVF_SESSION/state/entries/o3.json",
+            "CVF_SESSION_MEMORY.md"
+          ],
+          "untrackedPaths": [],
+          "failedCommand": null,
+          "diagnosticCode": "DISPATCH_NEXT_MOVE_REJECTED",
+          "diagnosticDetails": {
+            "workOrderPath": "docs/work_orders/CVF_ROOT_O3_FIXTURE.md",
+            "batchId": "CVF-O3-ROOT-FIXTURE",
+            "actionClass": "LOCAL_DISPOSITION_ONLY"
+          },
+          "resumeArgvTemplate": [
+            "python",
+            "scripts/cvf_commit_tranche.py",
+            "--mode",
+            "resume",
+            "--resume-material-sha",
+            "a99ba69efbe674485fa0528437e0ef2a1d6b34ea",
+            "--base",
+            "448e2a0ebe05259d30b9d6a72ca382890d7cf328",
+            "--continuity-manifest",
+            ".cvf/runtime/tranche-continuity/a99ba69efbe674485fa0528437e0ef2a1d6b34ea.json",
+            "--continuity-message",
+            "<continuityCommitMessage>",
+            "--active-work-order",
+            "docs/work_orders/CVF_ROOT_O3_FIXTURE.md",
+            "--execute"
+          ],
+          "resumeCommand": null
+        },
+        "mutationEffective": true,
+        "preflightSnapshotUnchanged": true
+      },
+      {
+        "case": "dirty_packet",
+        "status": "PASS",
+        "exitCode": 3,
+        "terminal": {
+          "schemaVersion": "cvf.gc020TerminalOutput.v1",
+          "terminalState": "CONTINUITY_VALIDATION_FAILED",
+          "materialSha": "da2fc9b311f2df947208f49cbc7efc13220a6089",
+          "currentHead": "da2fc9b311f2df947208f49cbc7efc13220a6089",
+          "activeHandoff": "AGENT_HANDOFF_FIXTURE.md",
+          "stagedPaths": [],
+          "unstagedPaths": [
+            "AGENT_HANDOFF_FIXTURE.md",
+            "CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json",
+            "CVF_SESSION/state/entries/nextAllowedMove.json",
+            "CVF_SESSION/state/entries/o3.json",
+            "CVF_SESSION_MEMORY.md",
+            "docs/work_orders/CVF_ROOT_O3_FIXTURE.md"
+          ],
+          "untrackedPaths": [],
+          "failedCommand": null,
+          "diagnosticCode": "DISPATCH_PACKET_NOT_CLEAN",
+          "diagnosticDetails": {
+            "path": "docs/work_orders/CVF_ROOT_O3_FIXTURE.md"
+          },
+          "resumeArgvTemplate": [
+            "python",
+            "scripts/cvf_commit_tranche.py",
+            "--mode",
+            "resume",
+            "--resume-material-sha",
+            "da2fc9b311f2df947208f49cbc7efc13220a6089",
+            "--base",
+            "b6a46918745731ee0c368f8035f9b04dee9230b7",
+            "--continuity-manifest",
+            ".cvf/runtime/tranche-continuity/da2fc9b311f2df947208f49cbc7efc13220a6089.json",
+            "--continuity-message",
+            "<continuityCommitMessage>",
+            "--active-work-order",
+            "docs/work_orders/CVF_ROOT_O3_FIXTURE.md",
+            "--execute"
+          ],
+          "resumeCommand": null
+        },
+        "mutationEffective": true,
+        "preflightSnapshotUnchanged": true
+      },
+      {
+        "case": "wrong_parent",
+        "status": "PASS",
+        "exitCode": 3,
+        "terminal": {
+          "schemaVersion": "cvf.gc020TerminalOutput.v1",
+          "terminalState": "CONTINUITY_VALIDATION_FAILED",
+          "materialSha": "eb1d890273964d49fdd79c1ac99bcac942abf5bf",
+          "currentHead": "eb1d890273964d49fdd79c1ac99bcac942abf5bf",
+          "activeHandoff": "AGENT_HANDOFF_FIXTURE.md",
+          "stagedPaths": [],
+          "unstagedPaths": [
+            "AGENT_HANDOFF_FIXTURE.md",
+            "CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json",
+            "CVF_SESSION/state/entries/nextAllowedMove.json",
+            "CVF_SESSION/state/entries/o3.json",
+            "CVF_SESSION_MEMORY.md"
+          ],
+          "untrackedPaths": [],
+          "failedCommand": null,
+          "diagnosticCode": "MATERIAL_PARENT_MISMATCH",
+          "diagnosticDetails": {
+            "materialParent": "4da0cb263ea9289a5433849912fc6b3093d984c1",
+            "base": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "resumeArgvTemplate": [
+            "python",
+            "scripts/cvf_commit_tranche.py",
+            "--mode",
+            "resume",
+            "--resume-material-sha",
+            "eb1d890273964d49fdd79c1ac99bcac942abf5bf",
+            "--base",
+            "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "--continuity-manifest",
+            ".cvf/runtime/tranche-continuity/eb1d890273964d49fdd79c1ac99bcac942abf5bf.json",
+            "--continuity-message",
+            "<continuityCommitMessage>",
+            "--active-work-order",
+            "docs/work_orders/CVF_ROOT_O3_FIXTURE.md",
+            "--execute"
+          ],
+          "resumeCommand": null
+        },
+        "mutationEffective": true,
+        "preflightSnapshotUnchanged": true
+      },
+      {
+        "case": "suffix_next_path",
+        "status": "PASS",
+        "exitCode": 3,
+        "terminal": {
+          "schemaVersion": "cvf.gc020TerminalOutput.v1",
+          "terminalState": "CONTINUITY_VALIDATION_FAILED",
+          "materialSha": "1c00e3102a0aa477a041e4730e9825b01f74de6e",
+          "currentHead": "1c00e3102a0aa477a041e4730e9825b01f74de6e",
+          "activeHandoff": "AGENT_HANDOFF_FIXTURE.md",
+          "stagedPaths": [],
+          "unstagedPaths": [
+            "AGENT_HANDOFF_FIXTURE.md",
+            "CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json",
+            "CVF_SESSION/state/entries/nextAllowedMove.json",
+            "CVF_SESSION/state/entries/o3.json",
+            "CVF_SESSION_MEMORY.md"
+          ],
+          "untrackedPaths": [],
+          "failedCommand": null,
+          "diagnosticCode": "DISPATCH_NEXT_MOVE_REJECTED",
+          "diagnosticDetails": {
+            "workOrderPath": "docs/work_orders/CVF_ROOT_O3_FIXTURE.md",
+            "batchId": "CVF-O3-ROOT-FIXTURE",
+            "actionClass": "EXECUTE_BOUNDED"
+          },
+          "resumeArgvTemplate": [
+            "python",
+            "scripts/cvf_commit_tranche.py",
+            "--mode",
+            "resume",
+            "--resume-material-sha",
+            "1c00e3102a0aa477a041e4730e9825b01f74de6e",
+            "--base",
+            "6b6212a6ae97c8b31ca7da2398474b7aeb6db173",
+            "--continuity-manifest",
+            ".cvf/runtime/tranche-continuity/1c00e3102a0aa477a041e4730e9825b01f74de6e.json",
+            "--continuity-message",
+            "<continuityCommitMessage>",
+            "--active-work-order",
+            "docs/work_orders/CVF_ROOT_O3_FIXTURE.md",
+            "--execute"
+          ],
+          "resumeCommand": null
+        },
+        "mutationEffective": true,
+        "preflightSnapshotUnchanged": true
+      },
+      {
+        "case": "prefix_next_path",
+        "status": "PASS",
+        "exitCode": 3,
+        "terminal": {
+          "schemaVersion": "cvf.gc020TerminalOutput.v1",
+          "terminalState": "CONTINUITY_VALIDATION_FAILED",
+          "materialSha": "f3c026900bab2e40c17ce92f0463fe7c74d4b6a2",
+          "currentHead": "f3c026900bab2e40c17ce92f0463fe7c74d4b6a2",
+          "activeHandoff": "AGENT_HANDOFF_FIXTURE.md",
+          "stagedPaths": [],
+          "unstagedPaths": [
+            "AGENT_HANDOFF_FIXTURE.md",
+            "CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json",
+            "CVF_SESSION/state/entries/nextAllowedMove.json",
+            "CVF_SESSION/state/entries/o3.json",
+            "CVF_SESSION_MEMORY.md"
+          ],
+          "untrackedPaths": [],
+          "failedCommand": null,
+          "diagnosticCode": "DISPATCH_NEXT_MOVE_REJECTED",
+          "diagnosticDetails": {
+            "workOrderPath": "docs/work_orders/CVF_ROOT_O3_FIXTURE.md",
+            "batchId": "CVF-O3-ROOT-FIXTURE",
+            "actionClass": "EXECUTE_BOUNDED"
+          },
+          "resumeArgvTemplate": [
+            "python",
+            "scripts/cvf_commit_tranche.py",
+            "--mode",
+            "resume",
+            "--resume-material-sha",
+            "f3c026900bab2e40c17ce92f0463fe7c74d4b6a2",
+            "--base",
+            "e02a93c394461f842328801dc7413125b0800b8d",
+            "--continuity-manifest",
+            ".cvf/runtime/tranche-continuity/f3c026900bab2e40c17ce92f0463fe7c74d4b6a2.json",
+            "--continuity-message",
+            "<continuityCommitMessage>",
+            "--active-work-order",
+            "docs/work_orders/CVF_ROOT_O3_FIXTURE.md",
+            "--execute"
+          ],
+          "resumeCommand": null
+        },
+        "mutationEffective": true,
+        "preflightSnapshotUnchanged": true
+      },
+      {
+        "case": "postcommit dirty marker cannot yield success",
+        "status": "PASS",
+        "terminal": {
+          "schemaVersion": "cvf.gc020TerminalOutput.v1",
+          "terminalState": "CONTINUITY_POSTCOMMIT_VALIDATION_FAILED",
+          "materialSha": "919dcb6db3c32265b0390ab66eca6facba4af81e",
+          "currentHead": "d292e33d8c4c9d7f5b8fec9ad5c638b3dc04f2aa",
+          "activeHandoff": "AGENT_HANDOFF_FIXTURE.md",
+          "stagedPaths": [],
+          "unstagedPaths": [
+            "AGENT_HANDOFF_FIXTURE.md"
+          ],
+          "untrackedPaths": [],
+          "failedCommand": null,
+          "diagnosticCode": "POSTCOMMIT_WORKTREE_NOT_CLEAN",
+          "diagnosticDetails": {
+            "paths": [
+              "AGENT_HANDOFF_FIXTURE.md"
+            ]
+          },
+          "resumeArgvTemplate": [
+            "python",
+            "scripts/cvf_commit_tranche.py",
+            "--mode",
+            "resume",
+            "--resume-material-sha",
+            "919dcb6db3c32265b0390ab66eca6facba4af81e",
+            "--base",
+            "5ae5293f2db2fb1195fe33aab13baff366ff6909",
+            "--continuity-manifest",
+            ".cvf/runtime/tranche-continuity/919dcb6db3c32265b0390ab66eca6facba4af81e.json",
+            "--continuity-message",
+            "<continuityCommitMessage>",
+            "--active-work-order",
+            "docs/work_orders/CVF_ROOT_O3_FIXTURE.md",
+            "--execute"
+          ],
+          "resumeCommand": null
+        }
+      },
+      {
+        "case": "postcommit hook contradiction is rejected before consumer; committed state preserved",
+        "status": "PASS",
+        "terminal": {
+          "schemaVersion": "cvf.gc020TerminalOutput.v1",
+          "terminalState": "CONTINUITY_POSTCOMMIT_VALIDATION_FAILED",
+          "materialSha": "558f930e7da78b75fe91688eda142e43503fb8b1",
+          "currentHead": "4698d5ee9c50b97bb1be28188b1405f50132903e",
+          "activeHandoff": "AGENT_HANDOFF_FIXTURE.md",
+          "stagedPaths": [],
+          "unstagedPaths": [
+            "AGENT_HANDOFF_FIXTURE.md"
+          ],
+          "untrackedPaths": [],
+          "failedCommand": null,
+          "diagnosticCode": "DISPATCH_MARKER_DISAGREEMENT",
+          "diagnosticDetails": {
+            "path": "AGENT_HANDOFF_FIXTURE.md"
+          },
+          "resumeArgvTemplate": [
+            "python",
+            "scripts/cvf_commit_tranche.py",
+            "--mode",
+            "resume",
+            "--resume-material-sha",
+            "558f930e7da78b75fe91688eda142e43503fb8b1",
+            "--base",
+            "a7236a5d475087c0c4217c2f3974e72e952407e2",
+            "--continuity-manifest",
+            ".cvf/runtime/tranche-continuity/558f930e7da78b75fe91688eda142e43503fb8b1.json",
+            "--continuity-message",
+            "<continuityCommitMessage>",
+            "--active-work-order",
+            "docs/work_orders/CVF_ROOT_O3_FIXTURE.md",
+            "--execute"
+          ],
+          "resumeCommand": null
+        },
+        "releaseReport": {
+          "policy": "docs/reference/CVF_DISPATCH_RELEASE_READINESS_MACHINE_STANDARD_2026-09-25.md",
+          "activeWorkOrder": "docs/work_orders/CVF_ROOT_O3_FIXTURE.md",
+          "batchId": "CVF-O3-ROOT-FIXTURE",
+          "materialCommit": "558f930e7da78b75fe91688eda142e43503fb8b1",
+          "violationCount": 2,
+          "violations": [
+            {
+              "rule": "DR-04",
+              "message": "continuity path `AGENT_HANDOFF_FIXTURE.md` is not committed and clean: path has uncommitted state: M AGENT_HANDOFF_FIXTURE.md"
+            },
+            {
+              "rule": "DR-05",
+              "message": "material-SHA marker does not name batch `CVF-O3-ROOT-FIXTURE`"
+            }
+          ],
+          "compliant": false
+        },
+        "material": "558f930e7da78b75fe91688eda142e43503fb8b1",
+        "head": "4698d5ee9c50b97bb1be28188b1405f50132903e"
+      },
+      {
+        "case": "actual consumer alone rejects invalid ledger; exact failed argv and clean committed state preserved",
+        "status": "PASS",
+        "terminal": {
+          "schemaVersion": "cvf.gc020TerminalOutput.v1",
+          "terminalState": "CONTINUITY_POSTCOMMIT_VALIDATION_FAILED",
+          "materialSha": "22ab688118fd18d78fd8b5fef581332c73bb2f9e",
+          "currentHead": "8fc51c5aa17188179f7fc968064d7ccb8358bbd3",
+          "activeHandoff": "AGENT_HANDOFF_FIXTURE.md",
+          "stagedPaths": [],
+          "unstagedPaths": [],
+          "untrackedPaths": [],
+          "failedCommand": [
+            "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+            "governance/compat/check_dispatch_release_readiness.py",
+            "--active-work-order",
+            "docs/work_orders/CVF_ROOT_O3_FIXTURE.md",
+            "--head",
+            "HEAD",
+            "--enforce",
+            "--json"
+          ],
+          "diagnosticCode": null,
+          "diagnosticDetails": null,
+          "resumeArgvTemplate": [
+            "python",
+            "scripts/cvf_commit_tranche.py",
+            "--mode",
+            "resume",
+            "--resume-material-sha",
+            "22ab688118fd18d78fd8b5fef581332c73bb2f9e",
+            "--base",
+            "5a780d6356fea2f71e578cd8be80eefe62a7b4c3",
+            "--continuity-manifest",
+            ".cvf/runtime/tranche-continuity/22ab688118fd18d78fd8b5fef581332c73bb2f9e.json",
+            "--continuity-message",
+            "<continuityCommitMessage>",
+            "--active-work-order",
+            "docs/work_orders/CVF_ROOT_O3_FIXTURE.md",
+            "--execute"
+          ],
+          "resumeCommand": null
+        },
+        "material": "22ab688118fd18d78fd8b5fef581332c73bb2f9e",
+        "head": "8fc51c5aa17188179f7fc968064d7ccb8358bbd3"
+      }
+    ],
+    "passed": 15,
+    "total": 15,
+    "fixtureIsolation": "real helper/main CLI, real canonical generator, real Git commits, real release checker/ledger; only unrelated compatibility catalogs and Git hook installation isolated",
+    "claimBoundary": "disposable deterministic control composition; no AI/provider governance, bill, runtime or real-project application proof"
+  },
+  "reviewAudit": {
+    "schemaVersion": "cvf.o3BoundedReviewAudit@0.1.0",
+    "completeBeforeRepair": true,
+    "disposition": "ACCEPT_BOUNDED",
+    "scope": "Six frozen worker artifacts, locked eight-part contract and existing helper/generator/release owners; not a corpus scan",
+    "matrix": [
+      {
+        "class": "authority/path/hash/packet commit/batch",
+        "result": "Reviewed source and actual positive/negative controls; safe packet paths, raw pins and latest commit checks are present"
+      },
+      {
+        "class": "source next move",
+        "result": "Two independent exact-path counterexamples: prefix and suffix references accepted and committed; locked exact-path requirement violated",
+        "repair": "Exact path-token boundary in existing helper, two focused regressions"
+      },
+      {
+        "class": "marker/generated/atomicity/retry",
+        "result": "Actual full lifecycle, exact changed set/parent/idempotence passed; real generator disagreement and retry evidence consumed"
+      },
+      {
+        "class": "postcommit rejection",
+        "result": "Semantic marker contradiction safely rejected before release; separate actual consumer-only invalid-ledger case reports exact failed argv and preserves clean committed state"
+      },
+      {
+        "class": "legacy compatibility",
+        "result": "153 legacy tests consumed, meaningful unbound-template assertion included; no broad duplicate replay needed for bound-only path repair"
+      },
+      {
+        "class": "normative phase/budget",
+        "result": "Step4A wrongly places full pre-dispatch release before producer continuity and generalizes this task's45-minute ceiling",
+        "repair": "Document packet material -> bound resume/continuity -> helper release check -> full pre-dispatch -> worker; ceiling from governing work order"
+      },
+      {
+        "class": "evidence/role/cost",
+        "result": "Distinct Local reviewer; requested Luna/max versus unknown observed identity; startup-first-clock deviation; early failed pytest summaries reconstructed, final test and failed/final return logs pinned; seven of eight source-pin records and no per-source worker read-depth ledger",
+        "repair": "Local verification of missing read-only source and explicit partial evidence/read-depth limitations; preserve worker JSON and frozen submitted bytes"
+      },
+      {
+        "class": "closure/range/authority",
+        "result": "Local owns parent enrollment/closure and13-path material, separate7-path continuity; closed work-order pin/projections atomic; all parked effects retained"
+      }
+    ],
+    "semanticRepairGroups": [
+      {
+        "id": "EXACT_NEXT_MOVE_PATH",
+        "actor": "LOCAL_REVIEWER_CODEX_ROOT",
+        "defectClass": "WORKER_EXECUTION_ERROR",
+        "evidence": "independent-probe-original-implementation.json:13/15; two boundary false successes"
+      },
+      {
+        "id": "STEP4A_PHASE_AND_BUDGET",
+        "actor": "LOCAL_REVIEWER_CODEX_ROOT",
+        "defectClass": "WORKER_EXECUTION_ERROR",
+        "evidence": "Source norm contradicts locked producer-before-release chronology and per-work-order invocation ceiling"
+      }
+    ],
+    "rootOracleCorrection": {
+      "defectClass": "ORCHESTRATOR_PACKET_GAP",
+      "disposition": "RULE_EXISTS",
+      "event": "Initial hook counterexample required release argv despite an earlier valid semantic rejection; source-derived correction distinguishes preemptive producer rejection from consumer-only ledger rejection",
+      "limit": "First failed oracle log retained; no worker defect inferred from that assertion"
+    },
+    "sourceReadDepthLimit": "Root reviewed complete helper/new dispatch tests/worker return/worker JSON and changed legacy assertion/Step4A region with existing owner context. Worker did not provide a per-source read-depth ledger; no full-history/full-handoff claim is admitted.",
+    "firstFailureLimit": "First four failed pytest attempts are reconstructed worker reports, not byte-exact retained test logs. Pinned final test and two failed/final return-gate logs are verified separately.",
+    "claimBoundary": "Source declarations and deterministic disposable control composition only; no AI/provider behavior, model ranking, OS race, universal application or full cost claim",
+    "afterRepair": {
+      "independentProbe": "15/15 PASS",
+      "affectedTests": "17 passed/1 skipped40.57s",
+      "groups": 2
+    }
+  },
+  "localImplementationRepairGroups": 2,
+  "workerRedispatchCount": 0,
+  "directProviderCalls": 0,
+  "observedNativeUsage": null,
+  "usageLimit": "Requested Luna/max configuration only; observed runtime identity, effort, tokens and bill not host-attested.",
+  "reviewElapsedSecondsAtDisposition": 515.488209,
+  "reviewCostLimit": "actual full review/closure interval and final commit identities recorded in detached final verification; no future SHA prediction",
+  "materialManifest": [
+    "docs/reference/CVF_TRANCHE_COMMIT_CHOREOGRAPHY_STANDARD_2026-06-03.md",
+    "docs/reviews/CVF_CONTINUITY_DISPATCH_O3_WORKER_RETURN_2026-10-11.md",
+    "docs/reviews/evidence/continuity-dispatch-o3-worker-20261011.json",
+    "scripts/cvf_commit_tranche.py",
+    "scripts/test_cvf_commit_tranche.py",
+    "scripts/test_cvf_commit_tranche_dispatch.py",
+    "docs/reviews/CVF_CONTINUITY_DISPATCH_O3_COMPLETION_2026-10-11.md",
+    "docs/reviews/evidence/continuity-dispatch-o3-local-20261011.json",
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_CONTINUITY_DISPATCH_O3_2026-10-11.md",
+    "docs/reference/downstream_gate_profile/downstream_finding_intake_registry.json",
+    "CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json",
+    "CVF_SESSION/ACTIVE_SESSION_STATE.json",
+    "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json"
+  ],
+  "acceptedControlPins": [
+    {
+      "path": "docs/reference/CVF_TRANCHE_COMMIT_CHOREOGRAPHY_STANDARD_2026-06-03.md",
+      "sha256": "1b96c81fa8d6e7dca8f02d51ca091db19a36c64b56b0c5903591ecdfc48cea9b"
+    },
+    {
+      "path": "docs/reviews/CVF_CONTINUITY_DISPATCH_O3_WORKER_RETURN_2026-10-11.md",
+      "sha256": "0335f589ca16ac0595d343567df4801158254d33c2c902b4e759b89253ec770b"
+    },
+    {
+      "path": "docs/reviews/evidence/continuity-dispatch-o3-worker-20261011.json",
+      "sha256": "98404d2b6cb2e1a383d1970802bb2d405cd1b9c5b8c29a3ef159a3c34f63d41e"
+    },
+    {
+      "path": "scripts/cvf_commit_tranche.py",
+      "sha256": "b964156112a2d64378e43a0f705d7ba3d916c9b428ce65820e47a7f6575c1ab2"
+    },
+    {
+      "path": "scripts/test_cvf_commit_tranche.py",
+      "sha256": "a553fb110717e4aafdb55776eeb062676fb35c1ef63dfaffc2ead37472edb33f"
+    },
+    {
+      "path": "scripts/test_cvf_commit_tranche_dispatch.py",
+      "sha256": "4161ea5b045a377f03b942d40b1ac67b9fcf77a3c725d6ef7dfafbb2f3b139ec"
+    }
+  ],
+  "claimBoundary": "opt-in disposable offline Git/filesystem control composition; legacy compatibility consumed; no universal interception, AI/provider behavior, real dispatch application receipt, Expense reopening, model equivalence or price claim",
+  "originalImplementationProbe": {
+    "schemaVersion": "cvf.o3IndependentCliProbe@0.1.0",
+    "actor": "LOCAL_ROOT_NOT_IMPLEMENTATION_WORKER",
+    "sourcePins": [
+      {
+        "path": "scripts/cvf_commit_tranche.py",
+        "sha256": "86db471aa834757e43cf18260269b22a4e64ba67fb0d1c409eb49ae9a8f9ae44"
+      },
+      {
+        "path": "governance/compat/generate_active_session_state.py",
+        "sha256": "764115c0c9429cb4c39a355be02b7422325e114e6922debe26609ae6c890636a"
+      },
+      {
+        "path": "governance/compat/check_dispatch_release_readiness.py",
+        "sha256": "4c4247343d406af9ec06d54913c75f573adf9c4b26f080af355d0888dc8caed5"
+      },
+      {
+        "path": "governance/compat/check_work_order_acceptance_ledger.py",
+        "sha256": "8b6ce487f01eb432cab16456da98c79f0995468f6a1da8c16765d204cc6a39b4"
+      }
+    ],
+    "results": [
+      {
+        "case": "actual material/resume/dry-run/atomic generator+commit/release/idempotent recheck",
+        "status": "PASS",
+        "material": "56bdc18b44a1f540b4cfd175dcec71e38c6c2a8b",
+        "continuity": "e2f67afab8be68d3ac3f21f80334df8ee1edeb2b",
+        "releaseReport": {
+          "policy": "docs/reference/CVF_DISPATCH_RELEASE_READINESS_MACHINE_STANDARD_2026-09-25.md",
+          "activeWorkOrder": "docs/work_orders/CVF_ROOT_O3_FIXTURE.md",
+          "batchId": "CVF-O3-ROOT-FIXTURE",
+          "materialCommit": "56bdc18b44a1f540b4cfd175dcec71e38c6c2a8b",
+          "violationCount": 0,
+          "violations": [],
+          "compliant": true
+        },
+        "changedPaths": [
+          "AGENT_HANDOFF_FIXTURE.md",
+          "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json",
+          "CVF_SESSION/ACTIVE_SESSION_STATE.json",
+          "CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json",
+          "CVF_SESSION/state/entries/nextAllowedMove.json",
+          "CVF_SESSION/state/entries/o3.json",
+          "CVF_SESSION_MEMORY.md"
+        ]
+      },
+      {
+        "case": "missing_batch",
+        "status": "PASS",
+        "exitCode": 3,
+        "terminal": {
+          "schemaVersion": "cvf.gc020TerminalOutput.v1",
+          "terminalState": "CONTINUITY_VALIDATION_FAILED",
+          "materialSha": "1be070f495c4cd6d4244b8f130d203e6fe09c0d3",
+          "currentHead": "1be070f495c4cd6d4244b8f130d203e6fe09c0d3",
+          "activeHandoff": "AGENT_HANDOFF_FIXTURE.md",
+          "stagedPaths": [],
+          "unstagedPaths": [
+            "AGENT_HANDOFF_FIXTURE.md",
+            "CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json",
+            "CVF_SESSION/state/entries/nextAllowedMove.json",
+            "CVF_SESSION/state/entries/o3.json",
+            "CVF_SESSION_MEMORY.md"
+          ],
+          "untrackedPaths": [],
+          "failedCommand": null,
+          "diagnosticCode": "DISPATCH_BATCH_ID_REJECTED",
+          "diagnosticDetails": {
+            "path": "docs/work_orders/CVF_ROOT_O3_FIXTURE.md",
+            "declarationCount": 0
+          },
+          "resumeArgvTemplate": [
+            "python",
+            "scripts/cvf_commit_tranche.py",
+            "--mode",
+            "resume",
+            "--resume-material-sha",
+            "1be070f495c4cd6d4244b8f130d203e6fe09c0d3",
+            "--base",
+            "bb5b48ce28fa0b9a2b46db8e9380f19cecbf9fd7",
+            "--continuity-manifest",
+            ".cvf/runtime/tranche-continuity/1be070f495c4cd6d4244b8f130d203e6fe09c0d3.json",
+            "--continuity-message",
+            "<continuityCommitMessage>",
+            "--active-work-order",
+            "docs/work_orders/CVF_ROOT_O3_FIXTURE.md",
+            "--execute"
+          ],
+          "resumeCommand": null
+        },
+        "mutationEffective": true,
+        "preflightSnapshotUnchanged": true
+      },
+      {
+        "case": "duplicate_batch",
+        "status": "PASS",
+        "exitCode": 3,
+        "terminal": {
+          "schemaVersion": "cvf.gc020TerminalOutput.v1",
+          "terminalState": "CONTINUITY_VALIDATION_FAILED",
+          "materialSha": "9e10c5c093e96f4b32e9d2732dfd551f09640a3d",
+          "currentHead": "9e10c5c093e96f4b32e9d2732dfd551f09640a3d",
+          "activeHandoff": "AGENT_HANDOFF_FIXTURE.md",
+          "stagedPaths": [],
+          "unstagedPaths": [
+            "AGENT_HANDOFF_FIXTURE.md",
+            "CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json",
+            "CVF_SESSION/state/entries/nextAllowedMove.json",
+            "CVF_SESSION/state/entries/o3.json",
+            "CVF_SESSION_MEMORY.md"
+          ],
+          "untrackedPaths": [],
+          "failedCommand": null,
+          "diagnosticCode": "DISPATCH_BATCH_ID_REJECTED",
+          "diagnosticDetails": {
+            "path": "docs/work_orders/CVF_ROOT_O3_FIXTURE.md",
+            "declarationCount": 2
+          },
+          "resumeArgvTemplate": [
+            "python",
+            "scripts/cvf_commit_tranche.py",
+            "--mode",
+            "resume",
+            "--resume-material-sha",
+            "9e10c5c093e96f4b32e9d2732dfd551f09640a3d",
+            "--base",
+            "8230ddeb7f870eb706a6e6e38e98c9d5c0bfdfe0",
+            "--continuity-manifest",
+            ".cvf/runtime/tranche-continuity/9e10c5c093e96f4b32e9d2732dfd551f09640a3d.json",
+            "--continuity-message",
+            "<continuityCommitMessage>",
+            "--active-work-order",
+            "docs/work_orders/CVF_ROOT_O3_FIXTURE.md",
+            "--execute"
+          ],
+          "resumeCommand": null
+        },
+        "mutationEffective": true,
+        "preflightSnapshotUnchanged": true
+      },
+      {
+        "case": "wrong_baseline_batch",
+        "status": "PASS",
+        "exitCode": 3,
+        "terminal": {
+          "schemaVersion": "cvf.gc020TerminalOutput.v1",
+          "terminalState": "CONTINUITY_VALIDATION_FAILED",
+          "materialSha": "fcfee353e05fbe2424833d8d560a95df278ec3fa",
+          "currentHead": "fcfee353e05fbe2424833d8d560a95df278ec3fa",
+          "activeHandoff": "AGENT_HANDOFF_FIXTURE.md",
+          "stagedPaths": [],
+          "unstagedPaths": [
+            "AGENT_HANDOFF_FIXTURE.md",
+            "CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json",
+            "CVF_SESSION/state/entries/nextAllowedMove.json",
+            "CVF_SESSION/state/entries/o3.json",
+            "CVF_SESSION_MEMORY.md"
+          ],
+          "untrackedPaths": [],
+          "failedCommand": null,
+          "diagnosticCode": "DISPATCH_BATCH_ID_REJECTED",
+          "diagnosticDetails": {
+            "reason": "packet batch declarations differ"
+          },
+          "resumeArgvTemplate": [
+            "python",
+            "scripts/cvf_commit_tranche.py",
+            "--mode",
+            "resume",
+            "--resume-material-sha",
+            "fcfee353e05fbe2424833d8d560a95df278ec3fa",
+            "--base",
+            "0c89e35f6cbb51fe2d17c941974d7a453964633b",
+            "--continuity-manifest",
+            ".cvf/runtime/tranche-continuity/fcfee353e05fbe2424833d8d560a95df278ec3fa.json",
+            "--continuity-message",
+            "<continuityCommitMessage>",
+            "--active-work-order",
+            "docs/work_orders/CVF_ROOT_O3_FIXTURE.md",
+            "--execute"
+          ],
+          "resumeCommand": null
+        },
+        "mutationEffective": true,
+        "preflightSnapshotUnchanged": true
+      },
+      {
+        "case": "stale_pin",
+        "status": "PASS",
+        "exitCode": 3,
+        "terminal": {
+          "schemaVersion": "cvf.gc020TerminalOutput.v1",
+          "terminalState": "CONTINUITY_VALIDATION_FAILED",
+          "materialSha": "f075969143c54e078523ba35cb492d86cafb6791",
+          "currentHead": "f075969143c54e078523ba35cb492d86cafb6791",
+          "activeHandoff": "AGENT_HANDOFF_FIXTURE.md",
+          "stagedPaths": [],
+          "unstagedPaths": [
+            "AGENT_HANDOFF_FIXTURE.md",
+            "CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json",
+            "CVF_SESSION/state/entries/nextAllowedMove.json",
+            "CVF_SESSION/state/entries/o3.json",
+            "CVF_SESSION_MEMORY.md"
+          ],
+          "untrackedPaths": [],
+          "failedCommand": null,
+          "diagnosticCode": "DISPATCH_PACKET_HASH_MISMATCH",
+          "diagnosticDetails": {
+            "path": "docs/work_orders/CVF_ROOT_O3_FIXTURE.md"
+          },
+          "resumeArgvTemplate": [
+            "python",
+            "scripts/cvf_commit_tranche.py",
+            "--mode",
+            "resume",
+            "--resume-material-sha",
+            "f075969143c54e078523ba35cb492d86cafb6791",
+            "--base",
+            "a8e9d3f3850b1fe130266102ae4548f83233fbc7",
+            "--continuity-manifest",
+            ".cvf/runtime/tranche-continuity/f075969143c54e078523ba35cb492d86cafb6791.json",
+            "--continuity-message",
+            "<continuityCommitMessage>",
+            "--active-work-order",
+            "docs/work_orders/CVF_ROOT_O3_FIXTURE.md",
+            "--execute"
+          ],
+          "resumeCommand": null
+        },
+        "mutationEffective": true,
+        "preflightSnapshotUnchanged": true
+      },
+      {
+        "case": "wrong_authority",
+        "status": "PASS",
+        "exitCode": 3,
+        "terminal": {
+          "schemaVersion": "cvf.gc020TerminalOutput.v1",
+          "terminalState": "CONTINUITY_VALIDATION_FAILED",
+          "materialSha": "0ad80ebd4334740b5fb887e8ea13ec96d6d0625a",
+          "currentHead": "0ad80ebd4334740b5fb887e8ea13ec96d6d0625a",
+          "activeHandoff": "AGENT_HANDOFF_FIXTURE.md",
+          "stagedPaths": [],
+          "unstagedPaths": [
+            "AGENT_HANDOFF_FIXTURE.md",
+            "CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json",
+            "CVF_SESSION/state/entries/nextAllowedMove.json",
+            "CVF_SESSION/state/entries/o3.json",
+            "CVF_SESSION_MEMORY.md"
+          ],
+          "untrackedPaths": [],
+          "failedCommand": null,
+          "diagnosticCode": "DISPATCH_AUTHORITY_REJECTED",
+          "diagnosticDetails": {
+            "workOrderPath": "docs/work_orders/WRONG.md",
+            "requestedPath": "docs/work_orders/CVF_ROOT_O3_FIXTURE.md"
+          },
+          "resumeArgvTemplate": [
+            "python",
+            "scripts/cvf_commit_tranche.py",
+            "--mode",
+            "resume",
+            "--resume-material-sha",
+            "0ad80ebd4334740b5fb887e8ea13ec96d6d0625a",
+            "--base",
+            "75402fbbc112984f87e007255b891bfbf691a729",
+            "--continuity-manifest",
+            ".cvf/runtime/tranche-continuity/0ad80ebd4334740b5fb887e8ea13ec96d6d0625a.json",
+            "--continuity-message",
+            "<continuityCommitMessage>",
+            "--active-work-order",
+            "docs/work_orders/CVF_ROOT_O3_FIXTURE.md",
+            "--execute"
+          ],
+          "resumeCommand": null
+        },
+        "mutationEffective": true,
+        "preflightSnapshotUnchanged": true
+      },
+      {
+        "case": "wrong_next_batch",
+        "status": "PASS",
+        "exitCode": 3,
+        "terminal": {
+          "schemaVersion": "cvf.gc020TerminalOutput.v1",
+          "terminalState": "CONTINUITY_VALIDATION_FAILED",
+          "materialSha": "f7ddd2f7d2ab46663c18fdffe27104ac8e772fbe",
+          "currentHead": "f7ddd2f7d2ab46663c18fdffe27104ac8e772fbe",
+          "activeHandoff": "AGENT_HANDOFF_FIXTURE.md",
+          "stagedPaths": [],
+          "unstagedPaths": [
+            "AGENT_HANDOFF_FIXTURE.md",
+            "CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json",
+            "CVF_SESSION/state/entries/nextAllowedMove.json",
+            "CVF_SESSION/state/entries/o3.json",
+            "CVF_SESSION_MEMORY.md"
+          ],
+          "untrackedPaths": [],
+          "failedCommand": null,
+          "diagnosticCode": "DISPATCH_NEXT_MOVE_REJECTED",
+          "diagnosticDetails": {
+            "workOrderPath": "docs/work_orders/CVF_ROOT_O3_FIXTURE.md",
+            "batchId": "CVF-O3-ROOT-FIXTURE",
+            "actionClass": "EXECUTE_BOUNDED"
+          },
+          "resumeArgvTemplate": [
+            "python",
+            "scripts/cvf_commit_tranche.py",
+            "--mode",
+            "resume",
+            "--resume-material-sha",
+            "f7ddd2f7d2ab46663c18fdffe27104ac8e772fbe",
+            "--base",
+            "d06164e88b745ae69a72c4a2aca0f40b66f14a3d",
+            "--continuity-manifest",
+            ".cvf/runtime/tranche-continuity/f7ddd2f7d2ab46663c18fdffe27104ac8e772fbe.json",
+            "--continuity-message",
+            "<continuityCommitMessage>",
+            "--active-work-order",
+            "docs/work_orders/CVF_ROOT_O3_FIXTURE.md",
+            "--execute"
+          ],
+          "resumeCommand": null
+        },
+        "mutationEffective": true,
+        "preflightSnapshotUnchanged": true
+      },
+      {
+        "case": "held_next",
+        "status": "PASS",
+        "exitCode": 3,
+        "terminal": {
+          "schemaVersion": "cvf.gc020TerminalOutput.v1",
+          "terminalState": "CONTINUITY_VALIDATION_FAILED",
+          "materialSha": "4c3f6f8f4e5da4f46e6d7a9c174cd5bbe477cc31",
+          "currentHead": "4c3f6f8f4e5da4f46e6d7a9c174cd5bbe477cc31",
+          "activeHandoff": "AGENT_HANDOFF_FIXTURE.md",
+          "stagedPaths": [],
+          "unstagedPaths": [
+            "AGENT_HANDOFF_FIXTURE.md",
+            "CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json",
+            "CVF_SESSION/state/entries/nextAllowedMove.json",
+            "CVF_SESSION/state/entries/o3.json",
+            "CVF_SESSION_MEMORY.md"
+          ],
+          "untrackedPaths": [],
+          "failedCommand": null,
+          "diagnosticCode": "DISPATCH_NEXT_MOVE_REJECTED",
+          "diagnosticDetails": {
+            "workOrderPath": "docs/work_orders/CVF_ROOT_O3_FIXTURE.md",
+            "batchId": "CVF-O3-ROOT-FIXTURE",
+            "actionClass": "LOCAL_DISPOSITION_ONLY"
+          },
+          "resumeArgvTemplate": [
+            "python",
+            "scripts/cvf_commit_tranche.py",
+            "--mode",
+            "resume",
+            "--resume-material-sha",
+            "4c3f6f8f4e5da4f46e6d7a9c174cd5bbe477cc31",
+            "--base",
+            "ab02c9b4c775445ec743c301c417deb19d75680f",
+            "--continuity-manifest",
+            ".cvf/runtime/tranche-continuity/4c3f6f8f4e5da4f46e6d7a9c174cd5bbe477cc31.json",
+            "--continuity-message",
+            "<continuityCommitMessage>",
+            "--active-work-order",
+            "docs/work_orders/CVF_ROOT_O3_FIXTURE.md",
+            "--execute"
+          ],
+          "resumeCommand": null
+        },
+        "mutationEffective": true,
+        "preflightSnapshotUnchanged": true
+      },
+      {
+        "case": "dirty_packet",
+        "status": "PASS",
+        "exitCode": 3,
+        "terminal": {
+          "schemaVersion": "cvf.gc020TerminalOutput.v1",
+          "terminalState": "CONTINUITY_VALIDATION_FAILED",
+          "materialSha": "05dac3094949163ed6194b2721efbd9b9f7fb9cb",
+          "currentHead": "05dac3094949163ed6194b2721efbd9b9f7fb9cb",
+          "activeHandoff": "AGENT_HANDOFF_FIXTURE.md",
+          "stagedPaths": [],
+          "unstagedPaths": [
+            "AGENT_HANDOFF_FIXTURE.md",
+            "CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json",
+            "CVF_SESSION/state/entries/nextAllowedMove.json",
+            "CVF_SESSION/state/entries/o3.json",
+            "CVF_SESSION_MEMORY.md",
+            "docs/work_orders/CVF_ROOT_O3_FIXTURE.md"
+          ],
+          "untrackedPaths": [],
+          "failedCommand": null,
+          "diagnosticCode": "DISPATCH_PACKET_NOT_CLEAN",
+          "diagnosticDetails": {
+            "path": "docs/work_orders/CVF_ROOT_O3_FIXTURE.md"
+          },
+          "resumeArgvTemplate": [
+            "python",
+            "scripts/cvf_commit_tranche.py",
+            "--mode",
+            "resume",
+            "--resume-material-sha",
+            "05dac3094949163ed6194b2721efbd9b9f7fb9cb",
+            "--base",
+            "2971d021abf98785f451412d70cd5fdb0a759696",
+            "--continuity-manifest",
+            ".cvf/runtime/tranche-continuity/05dac3094949163ed6194b2721efbd9b9f7fb9cb.json",
+            "--continuity-message",
+            "<continuityCommitMessage>",
+            "--active-work-order",
+            "docs/work_orders/CVF_ROOT_O3_FIXTURE.md",
+            "--execute"
+          ],
+          "resumeCommand": null
+        },
+        "mutationEffective": true,
+        "preflightSnapshotUnchanged": true
+      },
+      {
+        "case": "wrong_parent",
+        "status": "PASS",
+        "exitCode": 3,
+        "terminal": {
+          "schemaVersion": "cvf.gc020TerminalOutput.v1",
+          "terminalState": "CONTINUITY_VALIDATION_FAILED",
+          "materialSha": "1c7f43b24d44c9524d34f4bfcfbc9e38f8ae21a1",
+          "currentHead": "1c7f43b24d44c9524d34f4bfcfbc9e38f8ae21a1",
+          "activeHandoff": "AGENT_HANDOFF_FIXTURE.md",
+          "stagedPaths": [],
+          "unstagedPaths": [
+            "AGENT_HANDOFF_FIXTURE.md",
+            "CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json",
+            "CVF_SESSION/state/entries/nextAllowedMove.json",
+            "CVF_SESSION/state/entries/o3.json",
+            "CVF_SESSION_MEMORY.md"
+          ],
+          "untrackedPaths": [],
+          "failedCommand": null,
+          "diagnosticCode": "MATERIAL_PARENT_MISMATCH",
+          "diagnosticDetails": {
+            "materialParent": "f51d0e9bb53214d49ab34115ad84950852a5a226",
+            "base": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "resumeArgvTemplate": [
+            "python",
+            "scripts/cvf_commit_tranche.py",
+            "--mode",
+            "resume",
+            "--resume-material-sha",
+            "1c7f43b24d44c9524d34f4bfcfbc9e38f8ae21a1",
+            "--base",
+            "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "--continuity-manifest",
+            ".cvf/runtime/tranche-continuity/1c7f43b24d44c9524d34f4bfcfbc9e38f8ae21a1.json",
+            "--continuity-message",
+            "<continuityCommitMessage>",
+            "--active-work-order",
+            "docs/work_orders/CVF_ROOT_O3_FIXTURE.md",
+            "--execute"
+          ],
+          "resumeCommand": null
+        },
+        "mutationEffective": true,
+        "preflightSnapshotUnchanged": true
+      },
+      {
+        "case": "suffix_next_path",
+        "status": "FAIL",
+        "exitCode": 0,
+        "terminal": {
+          "schemaVersion": "cvf.gc020TerminalOutput.v1",
+          "terminalState": "COMPLETE_ONE_MATERIAL_ONE_CONTINUITY",
+          "materialSha": "1662c7a3f94d02053ff928d9901ce8353349b4a3",
+          "currentHead": "6534ae5a1d4016f6d5897f1410863bd0142ff8c5",
+          "activeHandoff": "AGENT_HANDOFF_FIXTURE.md",
+          "stagedPaths": [],
+          "unstagedPaths": [],
+          "untrackedPaths": [],
+          "failedCommand": null,
+          "diagnosticCode": null,
+          "diagnosticDetails": null,
+          "resumeArgvTemplate": null,
+          "resumeCommand": null
+        },
+        "mutationEffective": true,
+        "preflightSnapshotUnchanged": false
+      },
+      {
+        "case": "prefix_next_path",
+        "status": "FAIL",
+        "exitCode": 0,
+        "terminal": {
+          "schemaVersion": "cvf.gc020TerminalOutput.v1",
+          "terminalState": "COMPLETE_ONE_MATERIAL_ONE_CONTINUITY",
+          "materialSha": "12731c6532a33d7cc0d69f23a67d7beb670f3a21",
+          "currentHead": "01046b43247e0933cda0bdc229913b9994733961",
+          "activeHandoff": "AGENT_HANDOFF_FIXTURE.md",
+          "stagedPaths": [],
+          "unstagedPaths": [],
+          "untrackedPaths": [],
+          "failedCommand": null,
+          "diagnosticCode": null,
+          "diagnosticDetails": null,
+          "resumeArgvTemplate": null,
+          "resumeCommand": null
+        },
+        "mutationEffective": true,
+        "preflightSnapshotUnchanged": false
+      },
+      {
+        "case": "postcommit dirty marker cannot yield success",
+        "status": "PASS",
+        "terminal": {
+          "schemaVersion": "cvf.gc020TerminalOutput.v1",
+          "terminalState": "CONTINUITY_POSTCOMMIT_VALIDATION_FAILED",
+          "materialSha": "6eca6bcb285f042f85a331167822aa599d74d47c",
+          "currentHead": "df02560b0dd172afdcd75bd7ddb45adf6f3aad68",
+          "activeHandoff": "AGENT_HANDOFF_FIXTURE.md",
+          "stagedPaths": [],
+          "unstagedPaths": [
+            "AGENT_HANDOFF_FIXTURE.md"
+          ],
+          "untrackedPaths": [],
+          "failedCommand": null,
+          "diagnosticCode": "POSTCOMMIT_WORKTREE_NOT_CLEAN",
+          "diagnosticDetails": {
+            "paths": [
+              "AGENT_HANDOFF_FIXTURE.md"
+            ]
+          },
+          "resumeArgvTemplate": [
+            "python",
+            "scripts/cvf_commit_tranche.py",
+            "--mode",
+            "resume",
+            "--resume-material-sha",
+            "6eca6bcb285f042f85a331167822aa599d74d47c",
+            "--base",
+            "674bd3f0046517510acfce92ecb7e6f1670250f6",
+            "--continuity-manifest",
+            ".cvf/runtime/tranche-continuity/6eca6bcb285f042f85a331167822aa599d74d47c.json",
+            "--continuity-message",
+            "<continuityCommitMessage>",
+            "--active-work-order",
+            "docs/work_orders/CVF_ROOT_O3_FIXTURE.md",
+            "--execute"
+          ],
+          "resumeCommand": null
+        }
+      },
+      {
+        "case": "postcommit hook contradiction is rejected before consumer; committed state preserved",
+        "status": "PASS",
+        "terminal": {
+          "schemaVersion": "cvf.gc020TerminalOutput.v1",
+          "terminalState": "CONTINUITY_POSTCOMMIT_VALIDATION_FAILED",
+          "materialSha": "be51b31882df91b7f7fd1523766fc27f272aae5f",
+          "currentHead": "e4e9e018e8cd5e6883f63baee386e2e504efa6a6",
+          "activeHandoff": "AGENT_HANDOFF_FIXTURE.md",
+          "stagedPaths": [],
+          "unstagedPaths": [
+            "AGENT_HANDOFF_FIXTURE.md"
+          ],
+          "untrackedPaths": [],
+          "failedCommand": null,
+          "diagnosticCode": "DISPATCH_MARKER_DISAGREEMENT",
+          "diagnosticDetails": {
+            "path": "AGENT_HANDOFF_FIXTURE.md"
+          },
+          "resumeArgvTemplate": [
+            "python",
+            "scripts/cvf_commit_tranche.py",
+            "--mode",
+            "resume",
+            "--resume-material-sha",
+            "be51b31882df91b7f7fd1523766fc27f272aae5f",
+            "--base",
+            "b60f5a6d74a620283cfbb62ac797f60d92553f44",
+            "--continuity-manifest",
+            ".cvf/runtime/tranche-continuity/be51b31882df91b7f7fd1523766fc27f272aae5f.json",
+            "--continuity-message",
+            "<continuityCommitMessage>",
+            "--active-work-order",
+            "docs/work_orders/CVF_ROOT_O3_FIXTURE.md",
+            "--execute"
+          ],
+          "resumeCommand": null
+        },
+        "releaseReport": {
+          "policy": "docs/reference/CVF_DISPATCH_RELEASE_READINESS_MACHINE_STANDARD_2026-09-25.md",
+          "activeWorkOrder": "docs/work_orders/CVF_ROOT_O3_FIXTURE.md",
+          "batchId": "CVF-O3-ROOT-FIXTURE",
+          "materialCommit": "be51b31882df91b7f7fd1523766fc27f272aae5f",
+          "violationCount": 2,
+          "violations": [
+            {
+              "rule": "DR-04",
+              "message": "continuity path `AGENT_HANDOFF_FIXTURE.md` is not committed and clean: path has uncommitted state: M AGENT_HANDOFF_FIXTURE.md"
+            },
+            {
+              "rule": "DR-05",
+              "message": "material-SHA marker does not name batch `CVF-O3-ROOT-FIXTURE`"
+            }
+          ],
+          "compliant": false
+        },
+        "material": "be51b31882df91b7f7fd1523766fc27f272aae5f",
+        "head": "e4e9e018e8cd5e6883f63baee386e2e504efa6a6"
+      },
+      {
+        "case": "actual consumer alone rejects invalid ledger; exact failed argv and clean committed state preserved",
+        "status": "PASS",
+        "terminal": {
+          "schemaVersion": "cvf.gc020TerminalOutput.v1",
+          "terminalState": "CONTINUITY_POSTCOMMIT_VALIDATION_FAILED",
+          "materialSha": "2fba2d98e27302a3925fa1485b5f9a7dc4c2d639",
+          "currentHead": "66e1888c16e85bb112d03e1513f9cd03213f5eed",
+          "activeHandoff": "AGENT_HANDOFF_FIXTURE.md",
+          "stagedPaths": [],
+          "unstagedPaths": [],
+          "untrackedPaths": [],
+          "failedCommand": [
+            "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+            "governance/compat/check_dispatch_release_readiness.py",
+            "--active-work-order",
+            "docs/work_orders/CVF_ROOT_O3_FIXTURE.md",
+            "--head",
+            "HEAD",
+            "--enforce",
+            "--json"
+          ],
+          "diagnosticCode": null,
+          "diagnosticDetails": null,
+          "resumeArgvTemplate": [
+            "python",
+            "scripts/cvf_commit_tranche.py",
+            "--mode",
+            "resume",
+            "--resume-material-sha",
+            "2fba2d98e27302a3925fa1485b5f9a7dc4c2d639",
+            "--base",
+            "0a22cb66e4f8819b980d5f5cf45183e8443f3b01",
+            "--continuity-manifest",
+            ".cvf/runtime/tranche-continuity/2fba2d98e27302a3925fa1485b5f9a7dc4c2d639.json",
+            "--continuity-message",
+            "<continuityCommitMessage>",
+            "--active-work-order",
+            "docs/work_orders/CVF_ROOT_O3_FIXTURE.md",
+            "--execute"
+          ],
+          "resumeCommand": null
+        },
+        "material": "2fba2d98e27302a3925fa1485b5f9a7dc4c2d639",
+        "head": "66e1888c16e85bb112d03e1513f9cd03213f5eed"
+      }
+    ],
+    "passed": 13,
+    "total": 15,
+    "fixtureIsolation": "real helper/main CLI, real canonical generator, real Git commits, real release checker/ledger; only unrelated compatibility catalogs and Git hook installation isolated",
+    "claimBoundary": "disposable deterministic control composition; no AI/provider governance, bill, runtime or real-project application proof"
+  },
+  "firstRootOracleFailure": {
+    "path": ".cvf/runtime/continuity-dispatch-o3-20261011/independent-probe-first.log",
+    "sha256": "2c1905b8c8bd813cce4433afb1e1deef56213ecdcce4b81bcb48919101d78d88",
+    "attribution": "ROOT_ORACLE_OVER_SPECIFIC: early semantic rejection was correct"
+  },
+  "workerFulfillment": "PARTIAL_METADATA_WITH_LOCAL_REPAIR_AND_ACCEPTANCE:7/8 source-pin rows; no structured worker read-depth ledger; early failed pytest raw logs unavailable; startup clock order deviated",
+  "affectedTests": {
+    "command": "python -m pytest scripts/test_cvf_commit_tranche_dispatch.py -q",
+    "passed": 17,
+    "skipped": 1,
+    "durationSeconds": 40.57,
+    "logSha256": "878ee99e93376029b5ddc2760fe77ed608d73f29fc8ba40ef4fb5885a8dd9025"
+  },
+  "sourceVerification": [
+    {
+      "path": "scripts/cvf_commit_tranche.py",
+      "admittedInitialSha256": "9d214020070551a5f832ea390f165e47f80245daaa803097cf0d943231200f1c",
+      "currentSha256": "b964156112a2d64378e43a0f705d7ba3d916c9b428ce65820e47a7f6575c1ab2",
+      "authorizedChange": true,
+      "unchangedCurrentPinVerified": false
+    },
+    {
+      "path": "scripts/test_cvf_commit_tranche.py",
+      "admittedInitialSha256": "da5d4e169bf1d41a7f5b0b5fdd2cdded2c3f02b17ff7fffc51e27f56b7df24f8",
+      "currentSha256": "a553fb110717e4aafdb55776eeb062676fb35c1ef63dfaffc2ead37472edb33f",
+      "authorizedChange": true,
+      "unchangedCurrentPinVerified": false
+    },
+    {
+      "path": "governance/compat/check_dispatch_release_readiness.py",
+      "admittedInitialSha256": "4c4247343d406af9ec06d54913c75f573adf9c4b26f080af355d0888dc8caed5",
+      "currentSha256": "4c4247343d406af9ec06d54913c75f573adf9c4b26f080af355d0888dc8caed5",
+      "authorizedChange": false,
+      "unchangedCurrentPinVerified": true
+    },
+    {
+      "path": "governance/compat/generate_active_session_state.py",
+      "admittedInitialSha256": "764115c0c9429cb4c39a355be02b7422325e114e6922debe26609ae6c890636a",
+      "currentSha256": "764115c0c9429cb4c39a355be02b7422325e114e6922debe26609ae6c890636a",
+      "authorizedChange": false,
+      "unchangedCurrentPinVerified": true
+    },
+    {
+      "path": "docs/reference/CVF_TRANCHE_COMMIT_CHOREOGRAPHY_STANDARD_2026-06-03.md",
+      "admittedInitialSha256": "c66543cc606b12b82a2e043ea7718a0d48472b8b41379a7488aacecdf2b586c4",
+      "currentSha256": "3fa80389b5e3e23ee6767b3122b8835244dcfbf14345923a91d53369f0e5e825",
+      "authorizedChange": true,
+      "unchangedCurrentPinVerified": false
+    },
+    {
+      "path": "docs/reference/CVF_DISPATCH_RELEASE_READINESS_MACHINE_STANDARD_2026-09-25.md",
+      "admittedInitialSha256": "6bad9423aba25261c01804400f1e4b5d89687f89548d45d2a254ede0c94ff15b",
+      "currentSha256": "6bad9423aba25261c01804400f1e4b5d89687f89548d45d2a254ede0c94ff15b",
+      "authorizedChange": false,
+      "unchangedCurrentPinVerified": true
+    },
+    {
+      "path": "docs/reviews/CVF_MODEL_SELECTION_ORCHESTRATOR_LEARNING_DISPOSITION_2026-10-11.md",
+      "admittedInitialSha256": "3e90e2eddc554966cef77cd3942b541ac411e669bfff974364d908fa644bd94e",
+      "currentSha256": "3e90e2eddc554966cef77cd3942b541ac411e669bfff974364d908fa644bd94e",
+      "authorizedChange": false,
+      "unchangedCurrentPinVerified": true
+    },
+    {
+      "path": "docs/reviews/evidence/model-selection-orchestrator-learning-20261011.json",
+      "admittedInitialSha256": "814cc0ea040798cbc9835543f98f6dea0abd37a5b1b1c67f48b60503e7b00cea",
+      "currentSha256": "814cc0ea040798cbc9835543f98f6dea0abd37a5b1b1c67f48b60503e7b00cea",
+      "authorizedChange": false,
+      "unchangedCurrentPinVerified": true
+    }
+  ],
+  "closurePackagingDiagnostic": {
+    "actor": "LOCAL_ROOT",
+    "class": "ORCHESTRATOR_PACKET_GAP",
+    "disposition": "RULE_EXISTS",
+    "failure": "MCP receipt-shaped closed order lacked its own Acceptance Receipt Assertion Matrix",
+    "repair": "reuse actual completion matrix, refresh predecessor/accepted/parent/core pins atomically",
+    "implementationChange": false
+  },
+  "closurePackagingLiteralDiagnostic": {
+    "actor": "LOCAL_ROOT",
+    "class": "ORCHESTRATOR_PACKET_GAP",
+    "disposition": "RULE_EXISTS",
+    "failure": "Closed completion claim-boundary wording matched the existing stale-closed-language regex.",
+    "diagnosticLog": ".cvf/runtime/continuity-dispatch-o3-20261011/material-diagnostic.log",
+    "repair": "Rephrase claim boundary without changing meaning; refresh Local oracle and new O3 parent pins.",
+    "implementationChange": false,
+    "checkerChange": false
+  }
+}

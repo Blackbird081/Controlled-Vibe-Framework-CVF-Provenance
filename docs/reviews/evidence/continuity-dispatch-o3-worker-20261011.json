@@ -1,0 +1,193 @@
+{
+  "schemaVersion": "cvf.continuityDispatchO3WorkerEvidence@1.0.0",
+  "batchId": "CVF-CONTINUITY-DISPATCH-O3-20261011",
+  "role": "INTERNAL_AGENT",
+  "decisionOwner": "LOCAL",
+  "executionBaseHead": "0097a796bd3834ea2385c8673f70deae961c3e9f",
+  "finalHead": "0097a796bd3834ea2385c8673f70deae961c3e9f",
+  "stagedSet": [],
+  "clocks": {
+    "firstRecordedUtc": "2026-10-11 06:28:23 UTC",
+    "firstClockOrderingDeviation": "Required startup/source reads preceded the first recorded clock. This timestamp is not invocation start and not full worker cost.",
+    "lastRecordedUtcBeforeFinalGate": "2026-10-11 07:06:54 UTC",
+    "elapsedFromFirstRecordedClockMinutes": 38.52,
+    "fullInvocationElapsed": "NOT_AVAILABLE_WITH_REASON: actual invocation start preceded first recorded clock and was not captured",
+    "attemptLimitMinutes": 45
+  },
+  "configuration": {
+    "requestedModel": "gpt-6-luna",
+    "requestedEffort": "max",
+    "observedProvider": "NOT_OBSERVED_WITH_REASON: provider identity is not exposed",
+    "observedModel": "NOT_OBSERVED_WITH_REASON: requested model cannot be used as proof of observed identity",
+    "observedEffort": "NOT_OBSERVED_WITH_REASON: runtime effort is not exposed",
+    "tokenOrQuotaUsage": "NOT_AVAILABLE_WITH_REASON: per-invocation usage was not exposed",
+    "internalAgentInvocationCount": 1,
+    "externalAgentInvocationCount": 0,
+    "providerApiCallCount": 0,
+    "nestedAgentCount": 0
+  },
+  "releaseAndBaseline": {
+    "preDispatchReceipt": {
+      "path": ".cvf/runtime/continuity-dispatch-o3-20261011/release-gate-final/pre-dispatch.json",
+      "sha256": "9b8697ab36d8be819c871e9f3c347672da05377c760c4671eb2d2e13a8be3cd2",
+      "result": "PASS",
+      "elapsedSeconds": 19.34,
+      "head": "0097a796bd3834ea2385c8673f70deae961c3e9f"
+    },
+    "preImplementation": {
+      "command": "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base 0097a796bd3834ea2385c8673f70deae961c3e9f --head HEAD --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_CONTINUITY_DISPATCH_O3_2026-10-11.md",
+      "result": "PASS",
+      "checks": "88/88",
+      "elapsedSeconds": 9.52
+    },
+    "workOrder": {
+      "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_CONTINUITY_DISPATCH_O3_2026-10-11.md",
+      "sha256": "2c790d64a26ac22abaabee5a8277febd787a4b32a68bb422d982a633e4661049"
+    },
+    "baseline": {
+      "path": "docs/baselines/CVF_GC018_CONTINUITY_DISPATCH_O3_2026-10-11.md",
+      "sha256": "3621fdbd371e0e166f76a83f9f0aed5c22bd3b5e377cda95d1493d40c0af79f2"
+    },
+    "sourceRevision": "067f382c124f6717c4cb915b5f30abda54b2e904"
+  },
+  "sourcePins": [
+    {
+      "path": "scripts/cvf_commit_tranche.py",
+      "dispatchSha256": "9d214020070551a5f832ea390f165e47f80245daaa803097cf0d943231200f1c",
+      "finalSha256": "86db471aa834757e43cf18260269b22a4e64ba67fb0d1c409eb49ae9a8f9ae44"
+    },
+    {
+      "path": "scripts/test_cvf_commit_tranche.py",
+      "dispatchSha256": "da5d4e169bf1d41a7f5b0b5fdd2cdded2c3f02b17ff7fffc51e27f56b7df24f8",
+      "finalSha256": "a553fb110717e4aafdb55776eeb062676fb35c1ef63dfaffc2ead37472edb33f"
+    },
+    {
+      "path": "governance/compat/check_dispatch_release_readiness.py",
+      "dispatchSha256": "4c4247343d406af9ec06d54913c75f573adf9c4b26f080af355d0888dc8caed5",
+      "finalSha256": "4c4247343d406af9ec06d54913c75f573adf9c4b26f080af355d0888dc8caed5"
+    },
+    {
+      "path": "governance/compat/generate_active_session_state.py",
+      "dispatchSha256": "764115c0c9429cb4c39a355be02b7422325e114e6922debe26609ae6c890636a",
+      "finalSha256": "764115c0c9429cb4c39a355be02b7422325e114e6922debe26609ae6c890636a"
+    },
+    {
+      "path": "docs/reference/CVF_TRANCHE_COMMIT_CHOREOGRAPHY_STANDARD_2026-06-03.md",
+      "dispatchSha256": "c66543cc606b12b82a2e043ea7718a0d48472b8b41379a7488aacecdf2b586c4",
+      "finalSha256": "ffa7c80bedc5d37114bf344b9230af6a9425034a73813af0b24fffc035d79fc5"
+    },
+    {
+      "path": "docs/reference/CVF_DISPATCH_RELEASE_READINESS_MACHINE_STANDARD_2026-09-25.md",
+      "dispatchSha256": "6bad9423aba25261c01804400f1e4b5d89687f89548d45d2a254ede0c94ff15b",
+      "finalSha256": "6bad9423aba25261c01804400f1e4b5d89687f89548d45d2a254ede0c94ff15b"
+    },
+    {
+      "path": "docs/reviews/CVF_MODEL_SELECTION_ORCHESTRATOR_LEARNING_DISPOSITION_2026-10-11.md",
+      "dispatchSha256": "3e90e2eddc554966cef77cd3942b541ac411e669bfff974364d908fa644bd94e",
+      "finalSha256": "3e90e2eddc554966cef77cd3942b541ac411e669bfff974364d908fa644bd94e"
+    }
+  ],
+  "tests": {
+    "command": "python -m pytest scripts/test_cvf_commit_tranche.py scripts/test_cvf_commit_tranche_dispatch.py -q",
+    "result": "PASS",
+    "passed": 168,
+    "skipped": 1,
+    "durationSeconds": 93.39,
+    "logPath": ".cvf/runtime/continuity-dispatch-o3-20261011/focused-tests.log",
+    "logSha256": "781432ce5a150804ad8b7ed64334a01a45ec65b9d39ed15dd62562d870019b8e",
+    "skipReason": "Symlink-specific fixture skipped because symlink creation was unavailable in the Windows environment; symlink/reparse protection remains implemented."
+  },
+  "contractCoverage": {
+    "scope": "Locked six-path O3 helper producer/consumer composition.",
+    "positiveLifecycle": "Real helper CLI, disposable Git material and continuity commits, canonical generator, unchanged release evaluator PASS, and read-only ALREADY_SYNCHRONIZED recheck.",
+    "rejectionCoverage": [
+      "missing, wrong, duplicate, and stale batch identity",
+      "dirty or source-pin-mismatched packet and baseline",
+      "stale core authority or wrong next move",
+      "unsafe path/symlink and wrong parent",
+      "generated output disagreement",
+      "postcommit release rejection preserves committed fixture state and exact argv",
+      "retry preserves explicit binding",
+      "legacy unbound resume behavior"
+    ],
+    "testFileSha256": "8e833675bc35cb9d8cc3cbf7eba59ee30e734274b9fd7b1626ba376a4d5e6090",
+    "standardFinalSha256": "ffa7c80bedc5d37114bf344b9230af6a9425034a73813af0b24fffc035d79fc5"
+  },
+  "firstFailures": {
+    "ledgerPath": ".cvf/runtime/continuity-dispatch-o3-20261011/first-failure-repair-ledger.json",
+    "ledgerSha256": "d2a261d54da6c4ff89458a00f1bb92d6d6bc419f6362638e9b479b30d40ff234",
+    "rawOutputLimitation": "Early failed pytest output was not separately redirected to byte-exact files at run time; attempt summaries are reconstructed from retained tool outputs in the session and explicitly marked in the ledger.",
+    "attempts": [
+      {
+        "result": "4 failed, 11 passed, 1 skipped",
+        "class": "DISPATCH_TEST_FIXTURE_SETUP",
+        "repairOwner": "INTERNAL_AGENT_WORKER",
+        "repair": "Added caller-authored post-material handoff revision to the disposable repository fixture."
+      },
+      {
+        "result": "3 failed, 12 passed, 1 skipped",
+        "class": "IMPLEMENTATION_DEFECT",
+        "repairOwner": "INTERNAL_AGENT_WORKER",
+        "repair": "Added the missing capturing group to the evidence-marker regex."
+      },
+      {
+        "result": "2 failed, 13 passed, 1 skipped",
+        "class": "DISPATCH_TEST_FIXTURE_ENVIRONMENT",
+        "repairOwner": "INTERNAL_AGENT_WORKER",
+        "repair": "Ignored Python cache artifacts created by the real release checker in the disposable repository."
+      },
+      {
+        "result": "4 failed, 11 passed, 1 skipped",
+        "class": "DISPATCH_TEST_FIXTURE_SETUP",
+        "repairOwner": "INTERNAL_AGENT_WORKER",
+        "repair": "Added the .cvf runtime ignore boundary to the fixture."
+      }
+    ],
+    "packetGap": {
+      "classification": "ORCHESTRATOR_PACKET_GAP / RULE_EXISTS",
+      "decisionOwner": "LOCAL",
+      "workerAction": "Added one meaningful unbound-resume compatibility assertion to the legacy test, as authorized."
+    },
+    "returnGateShapeFailures": [
+      {
+        "logPath": ".cvf/runtime/continuity-dispatch-o3-20261011/worker-return-fast-gate-first-failure.log",
+        "sha256": "e2075391addcaf209eba5cb7cc1b2f5a25841943392b1616127266ccc184e67f",
+        "result": "FAIL",
+        "finding": "Return encoding, providerExecutionAuthority declaration, SCEC executable-proof claim link, and trace expected-manifest parsing required repair.",
+        "repairOwner": "INTERNAL_AGENT_WORKER",
+        "repair": "Repaired only the governed return shape and retained the acceptance-ledger packet gap as a distinct Local-owned classification."
+      },
+      {
+        "logPath": ".cvf/runtime/continuity-dispatch-o3-20261011/worker-return-fast-gate-second-failure.log",
+        "sha256": "183156c5eba22f35398a77fe941b17edb5dec59812e41a45c915b778c9dc5c4d",
+        "result": "FAIL",
+        "finding": "One non-ASCII dash remained in the return.",
+        "repairOwner": "INTERNAL_AGENT_WORKER",
+        "repair": "Replaced the remaining dash with ASCII."
+      }
+    ]
+  },
+  "workerReturnGate": {
+    "command": "python governance/compat/run_worker_return_fast_gate.py --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_CONTINUITY_DISPATCH_O3_2026-10-11.md",
+    "result": "PASS",
+    "outputLogPath": ".cvf/runtime/continuity-dispatch-o3-20261011/worker-return-fast-gate-final.log"
+  },
+  "learningConsumption": {
+    "selectedFinding": "O3 candidate in docs/reviews/CVF_MODEL_SELECTION_ORCHESTRATOR_LEARNING_DISPOSITION_2026-10-11.md",
+    "selectedFindingSha256": "3e90e2eddc554966cef77cd3942b541ac411e669bfff974364d908fa644bd94e",
+    "workerDisposition": "IMPLEMENTED_PENDING_DISTINCT_LOCAL_REVIEW",
+    "acceptancePacketGap": "ORCHESTRATOR_PACKET_GAP / RULE_EXISTS; no worker-defect attribution",
+    "enrolledParentApplicationReceipt": "NOT_CLAIMED",
+    "successorTrancheOpened": false
+  },
+  "changedSet": [
+    "docs/reference/CVF_TRANCHE_COMMIT_CHOREOGRAPHY_STANDARD_2026-06-03.md",
+    "scripts/cvf_commit_tranche.py",
+    "scripts/test_cvf_commit_tranche.py",
+    "scripts/test_cvf_commit_tranche_dispatch.py",
+    "docs/reviews/CVF_CONTINUITY_DISPATCH_O3_WORKER_RETURN_2026-10-11.md",
+    "docs/reviews/evidence/continuity-dispatch-o3-worker-20261011.json"
+  ],
+  "actualWorkspaceCommit": "NONE; WORKER_MUST_NOT_COMMIT honored",
+  "selfHashPolicy": "This evidence JSON and the return Markdown intentionally do not include their own byte hashes."
+}

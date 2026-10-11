@@ -397,6 +397,170 @@
           }
         }
       ]
+    },
+    {
+      "intakeId": "CVF-CORE-O3-CONTINUITY-DISPATCH-20261011",
+      "authority": "LOCAL_VERIFIED_BOUNDED_CONTROL",
+      "findings": [
+        {
+          "id": "O3",
+          "sourceRecord": "docs/reviews/CVF_MODEL_SELECTION_ORCHESTRATOR_LEARNING_DISPOSITION_2026-10-11.md",
+          "defectClass": "MACHINE_GATE_GAP",
+          "parentEvidence": {
+            "schemaVersion": "cvf.parentLearningEvidence@1.0.0",
+            "findingId": "O3",
+            "source": {
+              "sourceProject": "CVF-CORE",
+              "evidence": {
+                "path": "docs/reviews/CVF_MODEL_SELECTION_ORCHESTRATOR_LEARNING_DISPOSITION_2026-10-11.md",
+                "sha256": "3e90e2eddc554966cef77cd3942b541ac411e669bfff974364d908fa644bd94e",
+                "fragment": "O3",
+                "evidenceClass": "OBSERVED_LOCAL"
+              }
+            },
+            "valueChecks": {
+              "sourceConfidence": {
+                "status": "SUPPORTED",
+                "reason": "Original O3 source, retained producer/consumer contradiction and distinct Local review are pinned.",
+                "evidence": [
+                  {
+                    "path": "docs/reviews/CVF_MODEL_SELECTION_ORCHESTRATOR_LEARNING_DISPOSITION_2026-10-11.md",
+                    "sha256": "3e90e2eddc554966cef77cd3942b541ac411e669bfff974364d908fa644bd94e",
+                    "fragment": "O3",
+                    "evidenceClass": "OBSERVED_LOCAL"
+                  },
+                  {
+                    "path": "docs/reviews/CVF_CONTINUITY_DISPATCH_O3_COMPLETION_2026-10-11.md",
+                    "sha256": "56e2228f08c01072aeabd275fca4b542215a094a29dfd296ed674b749f86af08",
+                    "fragment": "Findings / Position",
+                    "evidenceClass": "OBSERVED_LOCAL"
+                  }
+                ],
+                "limits": "Only declared opt-in Git/filesystem control and disposable proof; no universal adherence, OS race or real-project application."
+              },
+              "reusableMechanism": {
+                "status": "SUPPORTED",
+                "reason": "A producer-generated continuity marker can lose identity required by a downstream release consumer.",
+                "evidence": [
+                  {
+                    "path": "docs/reviews/CVF_MODEL_SELECTION_ORCHESTRATOR_LEARNING_DISPOSITION_2026-10-11.md",
+                    "sha256": "3e90e2eddc554966cef77cd3942b541ac411e669bfff974364d908fa644bd94e",
+                    "fragment": "Candidate Proof Required",
+                    "evidenceClass": "OBSERVED_LOCAL"
+                  }
+                ],
+                "limits": "Only declared opt-in Git/filesystem control and disposable proof; no universal adherence, OS race or real-project application."
+              },
+              "existingCoverage": {
+                "status": "SUPPORTED",
+                "reason": "Merge at existing GC020 helper/Step4A and unchanged DR checker; no new gate, catalog, ADIF or LSC root.",
+                "evidence": [
+                  {
+                    "path": "docs/reference/CVF_TRANCHE_COMMIT_CHOREOGRAPHY_STANDARD_2026-06-03.md",
+                    "sha256": "1b96c81fa8d6e7dca8f02d51ca091db19a36c64b56b0c5903591ecdfc48cea9b",
+                    "fragment": "Step4A",
+                    "evidenceClass": "OBSERVED_LOCAL"
+                  },
+                  {
+                    "path": "governance/compat/check_dispatch_release_readiness.py",
+                    "sha256": "4c4247343d406af9ec06d54913c75f573adf9c4b26f080af355d0888dc8caed5",
+                    "fragment": "evaluate",
+                    "evidenceClass": "OBSERVED_LOCAL"
+                  }
+                ],
+                "limits": "Only declared opt-in Git/filesystem control and disposable proof; no universal adherence, OS race or real-project application."
+              },
+              "incrementalValue": {
+                "status": "SUPPORTED",
+                "reason": "Bound producer now validates and retains source identity before mutation and rejects actual failed release.",
+                "evidence": [
+                  {
+                    "path": "scripts/cvf_commit_tranche.py",
+                    "sha256": "b964156112a2d64378e43a0f705d7ba3d916c9b428ce65820e47a7f6575c1ab2",
+                    "fragment": "control:bound-resume",
+                    "evidenceClass": "OBSERVED_LOCAL"
+                  },
+                  {
+                    "path": "docs/reviews/CVF_CONTINUITY_DISPATCH_O3_COMPLETION_2026-10-11.md",
+                    "sha256": "56e2228f08c01072aeabd275fca4b542215a094a29dfd296ed674b749f86af08",
+                    "fragment": "Decision / Disposition",
+                    "evidenceClass": "OBSERVED_LOCAL"
+                  }
+                ],
+                "limits": "Only declared opt-in Git/filesystem control and disposable proof; no universal adherence, OS race or real-project application."
+              },
+              "boundedProof": {
+                "status": "SUPPORTED",
+                "reason": "Fifteen source-derived independent actual CLI/Git controls plus consumed focused legacy/dispatch proof.",
+                "evidence": [
+                  {
+                    "path": "docs/reviews/evidence/continuity-dispatch-o3-local-20261011.json",
+                    "sha256": "7742ea5b6653518bc7644b844b514540cc6655b8ee295a8d27f2b28316e610de",
+                    "fragment": "independentProbe.results",
+                    "evidenceClass": "SYNTHETIC_OFFLINE"
+                  }
+                ],
+                "limits": "Only declared opt-in Git/filesystem control and disposable proof; no universal adherence, OS race or real-project application."
+              }
+            },
+            "decision": {
+              "state": "MERGE",
+              "reason": "Extend existing continuity producer/release join; preserve checker and generator owners.",
+              "reviewer": "LOCAL_REVIEWER_CODEX_ROOT",
+              "owner": "docs/reference/CVF_TRANCHE_COMMIT_CHOREOGRAPHY_STANDARD_2026-06-03.md",
+              "f2gDisposition": "MACHINE_CHECK_ADDED",
+              "evidence": [
+                {
+                  "path": "docs/reviews/CVF_CONTINUITY_DISPATCH_O3_COMPLETION_2026-10-11.md",
+                  "sha256": "56e2228f08c01072aeabd275fca4b542215a094a29dfd296ed674b749f86af08",
+                  "fragment": "Decision / Disposition",
+                  "evidenceClass": "OBSERVED_LOCAL"
+                }
+              ]
+            },
+            "implementation": {
+              "state": "IMPLEMENTED_BOUNDED",
+              "reason": "Optional bound source/marker/generated/release composition implemented and independently checked.",
+              "evidence": [
+                {
+                  "path": "scripts/cvf_commit_tranche.py",
+                  "sha256": "b964156112a2d64378e43a0f705d7ba3d916c9b428ce65820e47a7f6575c1ab2",
+                  "fragment": "control:bound-resume",
+                  "evidenceClass": "OBSERVED_LOCAL"
+                },
+                {
+                  "path": "docs/reviews/evidence/continuity-dispatch-o3-local-20261011.json",
+                  "sha256": "7742ea5b6653518bc7644b844b514540cc6655b8ee295a8d27f2b28316e610de",
+                  "fragment": "proof-positive:actual-lifecycle",
+                  "evidenceClass": "SYNTHETIC_OFFLINE"
+                },
+                {
+                  "path": "docs/reviews/evidence/continuity-dispatch-o3-local-20261011.json",
+                  "sha256": "7742ea5b6653518bc7644b844b514540cc6655b8ee295a8d27f2b28316e610de",
+                  "fragment": "proof-negative:identity-and-release-rejection",
+                  "evidenceClass": "SYNTHETIC_OFFLINE"
+                }
+              ]
+            },
+            "projectResolution": {
+              "state": "OPEN",
+              "reason": "Selected helper gap handled bounded; broader orchestrator application/adherence is unproved.",
+              "evidence": []
+            },
+            "returnDelivery": {
+              "state": "NOT_RETURNED",
+              "reason": "No typed DELIVERY receipt is created by implementation acceptance.",
+              "evidence": []
+            },
+            "projectApplication": {
+              "state": "NOT_APPLIED",
+              "reason": "No authorized real-project APPLICATION receipt; disposable fixtures only.",
+              "evidence": []
+            },
+            "claimLimits": "Only declared opt-in Git/filesystem control and disposable proof; no universal adherence, OS race or real-project application. Expense and other parked projects remain unopened."
+          }
+        }
+      ]
     }
   ]
 }

@@ -351,6 +351,7 @@ def test_resume_dry_run_preserves_hash_head_index_and_status(helper, repo, capsy
     assert helper.main(resume_args(base, material, manifest)) == 0
     result = terminal(capsys)
     assert result["terminalState"] == "DRY_RUN_CONTINUITY_PLAN_VALIDATED"
+    assert "--active-work-order" not in result["resumeArgvTemplate"]
     assert snapshot(repo) == before
 
 

@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 docType: work_order
-Status: READY
+Status: CLOSED_PASS_BOUNDED
 Date: 2026-10-11
 Batch ID: CVF-CONTINUITY-DISPATCH-O3-20261011
 Dispatch base head: b2c4928ee9261bc143d27ce36cb5fbc7bf9128b2
@@ -445,7 +445,7 @@ DEFERRED_PRIVATE_ONLY
 | Session or invocation | continuity-dispatch-o3-packet-20261011 |
 | Working directory | repository root |
 | Command or tool surface | targeted sources; actual scaffold; exact two-file packet |
-| Target paths | `docs/baselines/CVF_GC018_CONTINUITY_DISPATCH_O3_2026-10-11.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_CONTINUITY_DISPATCH_O3_2026-10-11.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Target paths | `docs/reference/CVF_TRANCHE_COMMIT_CHOREOGRAPHY_STANDARD_2026-06-03.md`; `docs/reviews/CVF_CONTINUITY_DISPATCH_O3_WORKER_RETURN_2026-10-11.md`; `docs/reviews/evidence/continuity-dispatch-o3-worker-20261011.json`; `scripts/cvf_commit_tranche.py`; `scripts/test_cvf_commit_tranche.py`; `scripts/test_cvf_commit_tranche_dispatch.py`; `docs/reviews/CVF_CONTINUITY_DISPATCH_O3_COMPLETION_2026-10-11.md`; `docs/reviews/evidence/continuity-dispatch-o3-local-20261011.json`; `docs/work_orders/CVF_AGENT_WORK_ORDER_CONTINUITY_DISPATCH_O3_2026-10-11.md`; `docs/reference/downstream_gate_profile/downstream_finding_intake_registry.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Allowed scope source | operator foundation-first request and standing Luna/max worker grant |
 | Before status evidence | HEAD `4318ae2e7bed347ba32002a5531c9e3704240403`; clean worktree; empty staged set |
 | After status evidence | two packet files; implementation pending |
@@ -454,8 +454,8 @@ DEFERRED_PRIVATE_ONLY
 | Claim boundary | no implemented control or worker result yet |
 | Agent type | INTERNAL_AGENT |
 | Invocation ID | continuity-dispatch-o3-packet-20261011 |
-| Expected manifest | `docs/baselines/CVF_GC018_CONTINUITY_DISPATCH_O3_2026-10-11.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_CONTINUITY_DISPATCH_O3_2026-10-11.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Actual changed set | `docs/baselines/CVF_GC018_CONTINUITY_DISPATCH_O3_2026-10-11.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_CONTINUITY_DISPATCH_O3_2026-10-11.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Expected manifest | `docs/reference/CVF_TRANCHE_COMMIT_CHOREOGRAPHY_STANDARD_2026-06-03.md`; `docs/reviews/CVF_CONTINUITY_DISPATCH_O3_WORKER_RETURN_2026-10-11.md`; `docs/reviews/evidence/continuity-dispatch-o3-worker-20261011.json`; `scripts/cvf_commit_tranche.py`; `scripts/test_cvf_commit_tranche.py`; `scripts/test_cvf_commit_tranche_dispatch.py`; `docs/reviews/CVF_CONTINUITY_DISPATCH_O3_COMPLETION_2026-10-11.md`; `docs/reviews/evidence/continuity-dispatch-o3-local-20261011.json`; `docs/work_orders/CVF_AGENT_WORK_ORDER_CONTINUITY_DISPATCH_O3_2026-10-11.md`; `docs/reference/downstream_gate_profile/downstream_finding_intake_registry.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Actual changed set | `docs/reference/CVF_TRANCHE_COMMIT_CHOREOGRAPHY_STANDARD_2026-06-03.md`; `docs/reviews/CVF_CONTINUITY_DISPATCH_O3_WORKER_RETURN_2026-10-11.md`; `docs/reviews/evidence/continuity-dispatch-o3-worker-20261011.json`; `scripts/cvf_commit_tranche.py`; `scripts/test_cvf_commit_tranche.py`; `scripts/test_cvf_commit_tranche_dispatch.py`; `docs/reviews/CVF_CONTINUITY_DISPATCH_O3_COMPLETION_2026-10-11.md`; `docs/reviews/evidence/continuity-dispatch-o3-local-20261011.json`; `docs/work_orders/CVF_AGENT_WORK_ORDER_CONTINUITY_DISPATCH_O3_2026-10-11.md`; `docs/reference/downstream_gate_profile/downstream_finding_intake_registry.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |
 
@@ -540,3 +540,60 @@ First final release used the combined packet/continuity range. DR01-07 passed, b
 ## Material Authority-Pin Repair Authorization
 
 Core Guard Self-Protection Authorization: current packet byte corrections require currentAuthority raw-pin refresh before material commit. Protected paths: `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`. Scope is matching currentAuthority hashes and canonical projections only, inside this corrected five-path material batch; no new dispatch/implementation grant. Operator authorization: foundation-first O3 and necessary private authority continuity. Rollback: restore matching packet/authority as one governed correction, keeping original failures. Handoff/next move actualSHA and all four release surfaces are synchronized afterward in the dedicated seven-path continuity commit. Material authoring trace is five paths; final bound release range is materialSHA..continuityHEAD.
+
+## Local Closure Conversion
+
+Original dispatch prose and initial SCEC block are a spent dispatch snapshot, not a new invocation or current blocker report. Local completion owns current acceptance: two consolidated repairs,15 independent controls and affected17-pass/1-skip proof. Root ledger instruction/oracle errors and partial worker read-depth/raw-failure evidence are explicit. One material plus one actual-SHA continuity planned. No delivery/application receipt or parked effect.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_CONTINUITY_DISPATCH_O3_2026-10-11.md` | CLOSED_PASS_BOUNDED; locked Implementation Contract unchanged | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_CONTINUITY_DISPATCH_O3_COMPLETION_2026-10-11.md`; `docs/reviews/evidence/continuity-dispatch-o3-local-20261011.json` | distinct Local probe and frozen submission evidence | PASS |
+| Roadmap state | standalone work order; original system-chain design retained | no dedicated foundation roadmap; S5 and Expense parked | N/A with reason: standalone O3 maintenance |
+| Registry JSON | `docs/reference/downstream_gate_profile/downstream_finding_intake_registry.json` | opt-in O3 parent MERGE / IMPLEMENTED_BOUNDED; no delivery/application receipt | PASS |
+| Registry Markdown | `docs/reference/CVF_TRANCHE_COMMIT_CHOREOGRAPHY_STANDARD_2026-06-03.md`; worker return and Local completion | existing owner describes optional binding/recovery/limits | PASS |
+| External evidence digest | internal governed O3 assessment | no external intake or external research | N/A with reason: internal task |
+| System loop interlock | closed order and separate parent lifecycle states | no runtime selector, launch grant or parked project effect | PASS |
+| Session continuity | core authority and canonical generated projections | matching closed-order pin; actual-SHA semantic sync follows | PASS |
+
+## Mixed Protected-Path Atomicity Authorization
+
+Disposition: AUTHORIZED_EXACT_MANIFEST
+
+Atomicity reason: close the order, enroll the observed O3 parent decision and refresh matching current-authority raw pin/projections in one reviewed material. Semantic move/handoff is the separate continuity phase.
+
+Rollback boundary: revert this exact material with matching continuity; preserve frozen original evidence and parked effects.
+
+Exact changed manifest:
+- `docs/reference/CVF_TRANCHE_COMMIT_CHOREOGRAPHY_STANDARD_2026-06-03.md`
+- `docs/reviews/CVF_CONTINUITY_DISPATCH_O3_WORKER_RETURN_2026-10-11.md`
+- `docs/reviews/evidence/continuity-dispatch-o3-worker-20261011.json`
+- `scripts/cvf_commit_tranche.py`
+- `scripts/test_cvf_commit_tranche.py`
+- `scripts/test_cvf_commit_tranche_dispatch.py`
+- `docs/reviews/CVF_CONTINUITY_DISPATCH_O3_COMPLETION_2026-10-11.md`
+- `docs/reviews/evidence/continuity-dispatch-o3-local-20261011.json`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_CONTINUITY_DISPATCH_O3_2026-10-11.md`
+- `docs/reference/downstream_gate_profile/downstream_finding_intake_registry.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| Scope and authority | six worker paths; locked contract | frozen originals and final pins; contract unchanged | PASS |
+| Source-bound mutation | validate identity before writes | eleven independent negative controls preserve snapshots | PASS |
+| Composition | helper/generator/Git/release actual bytes | full atomic lifecycle and read-only recheck | PASS |
+| Rejection | no success after release contradiction | postcommit hook and dirty-marker counterexamples | PASS |
+| Compatibility | unbound legacy remains |153 legacy tests consumed; unbound-template assertion added | PASS |
+| Evidence | failures/actor/read/clock/usage disclosed | frozen return plus attributed root admission history | PASS_WITH_LIMIT |
+| Learning value | five value checks, existing owner merge | typed O3 MERGE / IMPLEMENTED_BOUNDED; delivery/application absent | PASS_BOUNDED |
+
+
+## Local Closure Packaging Diagnostic
+
+Root MCP preflight required this matrix on the changed receipt-shaped closed work order itself, not only the linked completion. Existing guard applied; metadata corrected with all dependent raw pins, no implementation change.

@@ -235,6 +235,66 @@ sources and control manifest:
 python scripts/cvf_commit_tranche.py --mode resume --resume-material-sha <fullMaterialSha> --base <closureBaseHead> --continuity-manifest .cvf/runtime/tranche-continuity/<fullMaterialSha>.json --continuity-message "<continuity commit message>" --execute
 ```
 
+#### Optional dispatch binding
+
+For a committed material dispatch packet with caller-authored pending continuity,
+the resume phase may carry that exact source binding:
+
+```powershell
+python scripts/cvf_commit_tranche.py --mode resume --resume-material-sha <fullMaterialSha> --base <closureBaseHead> --continuity-manifest .cvf/runtime/tranche-continuity/<fullMaterialSha>.json --active-work-order docs/work_orders/<releasedWorkOrder>.md --continuity-message "<continuity commit message>" --execute
+```
+
+The helper derives the batch from the single `Batch ID:` declaration in the
+work order and its pinned baseline. Before it writes or stages anything, it
+requires the caller-authored core `currentAuthority` to pin those exact packet
+paths and raw SHA256 values, both packets to be tracked and clean, and each
+packet's latest Git commit to equal `<fullMaterialSha>`. The caller-authored
+`nextAllowedMove` must name the same work-order path, batch and `EXECUTE`
+action class, with an exact path token rather than a prefix/suffix match. The
+flag is resume-only; material mode rejects it. Without the
+flag, the established non-dispatch behavior and terminal schema remain in
+force. There is no batch override or inferred work-order default.
+
+Bound resume replaces the handoff evidence block below the H1 with exactly one
+marker containing the actual full material SHA and source-derived batch. After
+the canonical state generator and exact manifest-plus-derived-output staging,
+the helper checks the generated current authority, next move, active handoff
+and marker against the binding before the continuity commit. It then invokes
+the existing release checker with the explicit work order and `HEAD`, both
+after the continuity commit and on a postcommit recheck. The four release
+surfaces and all derived outputs remain in the same continuity commit. Phase
+order is packet material -> bound resume/continuity -> helper release check ->
+separate full bound pre-dispatch autorun PASS -> worker invocation. The full
+pre-dispatch gate is not a prerequisite for preparing its own continuity.
+
+#### Phase window and recovery
+
+For a bounded dispatch, use the attempt ceiling declared in its governing work
+order, covering implementation, focused verification and the final-byte return
+gate (the O3 trial declared45 minutes; this is not a universal ceiling). Capture
+the actual UTC start before task work, record phase times separately, and stop
+at the window limit with a consolidated return if required proof is incomplete.
+The worker's window does not replace the dispatcher's pre-dispatch deadline or
+the independent review and closure phases.
+
+An identity, packet, topology or manifest rejection before mutation leaves the
+helper's HEAD, index and files unchanged; correct the caller-owned source and
+retry against the same actual material SHA and base. If generation or a
+precommit check fails, preserve the material commit and report the exact failed
+argv or structured diagnostic; retry only with the same material SHA, manifest
+and explicit binding after the caller has restored valid pending sources. A
+continuity commit failure may leave the exact batch staged for that retry. If
+the postcommit release check rejects, the continuity commit is preserved and
+the helper returns `CONTINUITY_POSTCOMMIT_VALIDATION_FAILED`; do not reset,
+amend or automatically create a replacement commit. Route repair and any new
+authorized action through the Local owner. A clean, already committed valid
+batch may return `ALREADY_SYNCHRONIZED` after a read-only postcommit check.
+
+The bound helper result proves only this deterministic local producer/consumer
+contract for the supplied source and Git state. It is not the full pre-dispatch
+autorun receipt, does not establish model/provider identity or cost, and does
+not itself authorize worker launch or claim AI governance/runtime behavior.
+
 Use the helper to reduce operator friction, not to widen commit scope. If the
 artifact batch needs session-state updates, protected-path authorization, or
 large-scope authorization, those files must be staged intentionally before the
@@ -266,7 +326,7 @@ makes no provider, live, public, deployment or production-readiness claim.
 | Session or invocation | GC020-SYNC-T1, 2026-09-09 |
 | Working directory | repository root |
 | Command or tool surface | local edits, focused pytest, governed local gates |
-| Target paths | helper, focused test, this Step 4A owner, worker return |
+| Target paths | `docs/reference/CVF_TRANCHE_COMMIT_CHOREOGRAPHY_STANDARD_2026-06-03.md`; `docs/reviews/CVF_CONTINUITY_DISPATCH_O3_WORKER_RETURN_2026-10-11.md`; `docs/reviews/evidence/continuity-dispatch-o3-worker-20261011.json`; `scripts/cvf_commit_tranche.py`; `scripts/test_cvf_commit_tranche.py`; `scripts/test_cvf_commit_tranche_dispatch.py`; `docs/reviews/CVF_CONTINUITY_DISPATCH_O3_COMPLETION_2026-10-11.md`; `docs/reviews/evidence/continuity-dispatch-o3-local-20261011.json`; `docs/work_orders/CVF_AGENT_WORK_ORDER_CONTINUITY_DISPATCH_O3_2026-10-11.md`; `docs/reference/downstream_gate_profile/downstream_finding_intake_registry.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Allowed scope source | GC020-SYNC-T1 work order Write Ownership |
 | Before status evidence | clean at `2da68f7575c4c816b3e7d24f22c8133990e84591` |
 | After status evidence | exact four owned paths pending, staging empty |
@@ -275,8 +335,8 @@ makes no provider, live, public, deployment or production-readiness claim.
 | Claim boundary | bounded repository-local helper contract only |
 | Agent type | internal worker |
 | Invocation ID | cvf-gc020-sync-t1-standard-2026-09-09 |
-| Expected manifest | exact four GC020-SYNC-T1 Write Ownership paths |
-| Actual changed set | exact four paths |
+| Expected manifest | `docs/reference/CVF_TRANCHE_COMMIT_CHOREOGRAPHY_STANDARD_2026-06-03.md`; `docs/reviews/CVF_CONTINUITY_DISPATCH_O3_WORKER_RETURN_2026-10-11.md`; `docs/reviews/evidence/continuity-dispatch-o3-worker-20261011.json`; `scripts/cvf_commit_tranche.py`; `scripts/test_cvf_commit_tranche.py`; `scripts/test_cvf_commit_tranche_dispatch.py`; `docs/reviews/CVF_CONTINUITY_DISPATCH_O3_COMPLETION_2026-10-11.md`; `docs/reviews/evidence/continuity-dispatch-o3-local-20261011.json`; `docs/work_orders/CVF_AGENT_WORK_ORDER_CONTINUITY_DISPATCH_O3_2026-10-11.md`; `docs/reference/downstream_gate_profile/downstream_finding_intake_registry.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Actual changed set | `docs/reference/CVF_TRANCHE_COMMIT_CHOREOGRAPHY_STANDARD_2026-06-03.md`; `docs/reviews/CVF_CONTINUITY_DISPATCH_O3_WORKER_RETURN_2026-10-11.md`; `docs/reviews/evidence/continuity-dispatch-o3-worker-20261011.json`; `scripts/cvf_commit_tranche.py`; `scripts/test_cvf_commit_tranche.py`; `scripts/test_cvf_commit_tranche_dispatch.py`; `docs/reviews/CVF_CONTINUITY_DISPATCH_O3_COMPLETION_2026-10-11.md`; `docs/reviews/evidence/continuity-dispatch-o3-local-20261011.json`; `docs/work_orders/CVF_AGENT_WORK_ORDER_CONTINUITY_DISPATCH_O3_2026-10-11.md`; `docs/reference/downstream_gate_profile/downstream_finding_intake_registry.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | no deletion, rename or path move |
 
@@ -447,3 +507,7 @@ DEFERRED_PRIVATE_ONLY
 
 Reason: this standard governs private provenance repository workflow,
 session-state continuity, archive hygiene, and internal guard operation.
+
+## Local Closure Attribution
+
+Local expanded the current material trace to the authorized thirteen-path reviewer closure batch. Original six-path submitted bytes are preserved in frozen evidence; implementation/test bytes are unchanged by Local.

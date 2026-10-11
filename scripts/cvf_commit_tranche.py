@@ -9,8 +9,10 @@ resume with a SHA-keyed manifest. Dry-runs are strictly read-only.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import re
+import stat
 import subprocess
 import sys
 from dataclasses import dataclass
@@ -28,10 +30,12 @@ DERIVED_OUTPUTS = {AGGREGATE.as_posix(), BOOTSTRAP.as_posix()}
 MANIFEST_SCHEMA = "cvf.gc020ContinuityManifest.v1"
 OUTPUT_SCHEMA = "cvf.gc020TerminalOutput.v1"
 SHA_RE = re.compile(r"^[0-9a-fA-F]{40}$")
+SHA256_RE = re.compile(r"^[0-9a-f]{64}$")
+BATCH_DECLARATION_RE = re.compile(r"(?m)^Batch ID:\s*([^\s]+)\s*$")
 ACTIVE_STATUS_RE = re.compile(r"^Status:\s*ACTIVE\s*$", re.MULTILINE)
 LEGACY_HEAD_RE = re.compile(r"^Current HEAD recorded for this handoff: `[^`]+`.*$", re.MULTILINE)
 EVIDENCE_RE = re.compile(
-    r"\n?<!-- CVF-GC020-MATERIAL-SHA:START -->\n.*?"
+    r"\n?<!-- CVF-GC020-MATERIAL-SHA:START -->\n(.*?)"
     r"<!-- CVF-GC020-MATERIAL-SHA:END -->\n?", re.DOTALL
 )
 TERMINAL_EXIT = {
@@ -67,6 +71,17 @@ class SemanticFailure(Exception):
 @dataclass
 class CommandFailure(Exception):
     argv: list[str]
+
+
+@dataclass(frozen=True)
+class DispatchBinding:
+    work_order_path: str
+    baseline_path: str
+    batch_id: str
+    work_order_sha256: str
+    baseline_sha256: str
+    current_authority: dict[str, Any]
+    next_allowed_move: str
 
 
 class TerminalParser(argparse.ArgumentParser):
@@ -129,7 +144,8 @@ def _best_effort_handoff() -> str | None:
 
 
 def _resume_template(material_sha: str | None, base: str | None,
-                     manifest: str | None, *, execute: bool = True) -> list[str] | None:
+                     manifest: str | None, *, execute: bool = True,
+                     active_work_order: str | None = None) -> list[str] | None:
     if not material_sha or not base:
         return None
     manifest = manifest or f".cvf/runtime/tranche-continuity/{material_sha}.json"
@@ -139,6 +155,8 @@ def _resume_template(material_sha: str | None, base: str | None,
         "--continuity-manifest", manifest, "--continuity-message",
         "<continuityCommitMessage>",
     ]
+    if active_work_order:
+        result.extend(["--active-work-order", active_work_order])
     if execute:
         result.append("--execute")
     return result
@@ -181,6 +199,7 @@ def _parser() -> TerminalParser:
     parser.add_argument("--resume-material-sha")
     parser.add_argument("--continuity-manifest")
     parser.add_argument("--continuity-message")
+    parser.add_argument("--active-work-order")
     parser.add_argument("--execute", action="store_true")
     return parser
 
@@ -191,7 +210,8 @@ def _validate_args(args: argparse.Namespace) -> None:
     if args.mode == "material":
         if not args.message:
             raise ArgumentFailure("--message is required in material mode")
-        if args.resume_material_sha or args.continuity_manifest or args.continuity_message:
+        if (args.resume_material_sha or args.continuity_manifest or
+                args.continuity_message or args.active_work_order is not None):
             raise ArgumentFailure("resume-only arguments are forbidden in material mode")
         return
     if args.message:
@@ -200,6 +220,8 @@ def _validate_args(args: argparse.Namespace) -> None:
         raise ArgumentFailure("--resume-material-sha must be exactly 40 hexadecimal characters")
     if not args.continuity_manifest:
         raise ArgumentFailure("--continuity-manifest is required in resume mode")
+    if args.active_work_order is not None and not args.active_work_order:
+        raise ArgumentFailure("--active-work-order must name a repository-relative work order")
     if args.execute and not args.continuity_message:
         raise ArgumentFailure("--continuity-message is required in resume execute mode")
 
@@ -279,6 +301,153 @@ def _active_handoff_from_core() -> str:
     return active
 
 
+def _dispatch_repo_path(raw: str, *, prefix: str, suffix: str) -> PurePosixPath:
+    path = PurePosixPath(raw)
+    if (not raw or "\\" in raw or ":" in raw or path.is_absolute() or
+            path.as_posix() != raw or ".." in path.parts or
+            not raw.startswith(prefix) or not raw.endswith(suffix)):
+        raise SemanticFailure("DISPATCH_PATH_REJECTED", {"path": raw, "requiredPrefix": prefix})
+    return path
+
+
+def _regular_repo_file(raw: str, *, purpose: str) -> Path:
+    """Resolve a repo-relative regular file without following symlink/reparse components."""
+    posix = PurePosixPath(raw)
+    if not raw or "\\" in raw or ":" in raw or posix.is_absolute() or posix.as_posix() != raw:
+        raise SemanticFailure("DISPATCH_SOURCE_UNSAFE", {"path": raw, "purpose": purpose})
+    root = REPO_ROOT.resolve()
+    target = root
+    try:
+        for part in posix.parts:
+            target = target / part
+            info = target.lstat()
+            reparse = bool(getattr(info, "st_file_attributes", 0) & 0x400)
+            if stat.S_ISLNK(info.st_mode) or reparse:
+                raise SemanticFailure("DISPATCH_SOURCE_UNSAFE", {"path": raw, "purpose": purpose})
+        resolved = target.resolve(strict=True)
+        resolved.relative_to(root)
+        if not stat.S_ISREG(target.lstat().st_mode):
+            raise SemanticFailure("DISPATCH_SOURCE_UNSAFE", {"path": raw, "purpose": purpose})
+    except SemanticFailure:
+        raise
+    except (OSError, ValueError):
+        raise SemanticFailure("DISPATCH_SOURCE_UNSAFE", {"path": raw, "purpose": purpose}) from None
+    return target
+
+
+def _tracked_clean_dispatch_packet(raw: str) -> None:
+    tracked = _git(["ls-files", "--error-unmatch", "--", raw], required=False)
+    if tracked.returncode:
+        raise SemanticFailure("DISPATCH_PACKET_NOT_TRACKED", {"path": raw})
+    status = _git(["status", "--porcelain=v1", "--", raw], required=False)
+    if status.returncode:
+        raise SemanticFailure("DISPATCH_PACKET_STATUS_FAILED", {"path": raw})
+    if status.stdout.strip():
+        raise SemanticFailure("DISPATCH_PACKET_NOT_CLEAN", {"path": raw})
+
+
+def _packet_batch(text: str, *, path: str) -> str:
+    matches = BATCH_DECLARATION_RE.findall(text)
+    if len(matches) != 1:
+        raise SemanticFailure(
+            "DISPATCH_BATCH_ID_REJECTED", {"path": path, "declarationCount": len(matches)}
+        )
+    return matches[0]
+
+
+def _validate_dispatch_binding(raw_work_order: str, material_sha: str) -> DispatchBinding:
+    _dispatch_repo_path(raw_work_order, prefix="docs/work_orders/", suffix=".md")
+    if material_sha != material_sha.lower() or _head(material_sha) != material_sha:
+        raise SemanticFailure("DISPATCH_MATERIAL_SHA_REJECTED", {})
+
+    try:
+        core_path = _regular_repo_file(CORE_STATE.as_posix(), purpose="coreState")
+        core = json.loads(core_path.read_text(encoding="utf-8"))
+    except SemanticFailure:
+        raise
+    except (OSError, ValueError, UnicodeError):
+        raise SemanticFailure("DISPATCH_AUTHORITY_REJECTED", {"source": CORE_STATE.as_posix()}) from None
+    authority = core.get("currentAuthority") if isinstance(core, dict) else None
+    required_authority_fields = {
+        "baselinePath", "baselineSha256", "workOrderPath", "workOrderSha256",
+    }
+    if not isinstance(authority, dict) or set(authority) != required_authority_fields:
+        raise SemanticFailure("DISPATCH_AUTHORITY_REJECTED", {"reason": "currentAuthority shape"})
+    work_order = authority.get("workOrderPath")
+    baseline = authority.get("baselinePath")
+    work_order_sha = authority.get("workOrderSha256")
+    baseline_sha = authority.get("baselineSha256")
+    if work_order != raw_work_order:
+        raise SemanticFailure(
+            "DISPATCH_AUTHORITY_REJECTED", {"workOrderPath": work_order, "requestedPath": raw_work_order}
+        )
+    if not isinstance(work_order_sha, str) or not SHA256_RE.fullmatch(work_order_sha):
+        raise SemanticFailure("DISPATCH_AUTHORITY_REJECTED", {"field": "workOrderSha256"})
+    if not isinstance(baseline, str):
+        raise SemanticFailure("DISPATCH_AUTHORITY_REJECTED", {"field": "baselinePath"})
+    _dispatch_repo_path(baseline, prefix="docs/baselines/", suffix=".md")
+    if not isinstance(baseline_sha, str) or not SHA256_RE.fullmatch(baseline_sha):
+        raise SemanticFailure("DISPATCH_AUTHORITY_REJECTED", {"field": "baselineSha256"})
+
+    packet_text: dict[str, str] = {}
+    for path, expected_hash in ((work_order, work_order_sha), (baseline, baseline_sha)):
+        packet_file = _regular_repo_file(path, purpose="authorityPacket")
+        _tracked_clean_dispatch_packet(path)
+        try:
+            raw_bytes = packet_file.read_bytes()
+            packet_text[path] = raw_bytes.decode("utf-8")
+        except (OSError, UnicodeError):
+            raise SemanticFailure("DISPATCH_PACKET_READ_FAILED", {"path": path}) from None
+        actual_hash = hashlib.sha256(raw_bytes).hexdigest()
+        if actual_hash != expected_hash:
+            raise SemanticFailure("DISPATCH_PACKET_HASH_MISMATCH", {"path": path})
+        latest = _git(["log", "-1", "--format=%H", "--", path], required=False)
+        if latest.returncode or latest.stdout.strip() != material_sha:
+            raise SemanticFailure(
+                "DISPATCH_PACKET_COMMIT_MISMATCH", {"path": path, "expectedCommit": material_sha}
+            )
+
+    order_batch = _packet_batch(packet_text[work_order], path=work_order)
+    baseline_batch = _packet_batch(packet_text[baseline], path=baseline)
+    if order_batch != baseline_batch:
+        raise SemanticFailure("DISPATCH_BATCH_ID_REJECTED", {"reason": "packet batch declarations differ"})
+
+    try:
+        next_path = _regular_repo_file(NEXT_MOVE, purpose="nextAllowedMove")
+        next_entry = json.loads(next_path.read_text(encoding="utf-8"))
+    except SemanticFailure:
+        raise
+    except (OSError, ValueError, UnicodeError):
+        raise SemanticFailure("DISPATCH_NEXT_MOVE_REJECTED", {"source": NEXT_MOVE}) from None
+    value = next_entry.get("value") if isinstance(next_entry, dict) else None
+    if not isinstance(value, str):
+        raise SemanticFailure("DISPATCH_NEXT_MOVE_REJECTED", {"reason": "value must be a string"})
+    batch_values = re.findall(r"(?<![A-Z0-9_])BATCH_ID=([^\s.;,]+)", value)
+    action_values = re.findall(r"(?<![A-Z0-9_])NEXT_ACTION_CLASS=([A-Z0-9_]+)", value)
+    work_order_refs = re.findall(
+        r"(?<![\w./\\:-])" + re.escape(raw_work_order) + r"(?![\w./\\:-])", value,
+    )
+    if (batch_values != [order_batch] or len(work_order_refs) != 1 or
+            value.count(raw_work_order) != 1 or
+            len(action_values) != 1 or
+            not (action_values[0] == "EXECUTE" or action_values[0].startswith("EXECUTE_"))):
+        raise SemanticFailure(
+            "DISPATCH_NEXT_MOVE_REJECTED",
+            {"workOrderPath": raw_work_order, "batchId": order_batch,
+             "actionClass": action_values[0] if len(action_values) == 1 else None},
+        )
+
+    return DispatchBinding(
+        work_order_path=work_order,
+        baseline_path=baseline,
+        batch_id=order_batch,
+        work_order_sha256=work_order_sha,
+        baseline_sha256=baseline_sha,
+        current_authority=dict(authority),
+        next_allowed_move=value,
+    )
+
+
 def _load_manifest(raw: str, material_sha: str, active: str) -> tuple[Path, list[str]]:
     path = _manifest_path(raw, material_sha)
     try:
@@ -347,23 +516,25 @@ def _validate_pending(paths: list[str]) -> None:
         raise SemanticFailure(code, {"paths": extra})
 
 
-def _evidence_block(material_sha: str) -> str:
+def _evidence_block(material_sha: str, batch_id: str | None = None) -> str:
+    batch_line = f"Batch ID: `{batch_id}`.\n" if batch_id else ""
     return (
         "<!-- CVF-GC020-MATERIAL-SHA:START -->\n"
         f"Current HEAD recorded for this handoff: `{material_sha}`. "
         "Material parent anchor for the dedicated continuity synchronization commit.\n"
+        f"{batch_line}"
         "<!-- CVF-GC020-MATERIAL-SHA:END -->"
     )
 
 
-def _update_handoff(active: str, material_sha: str) -> None:
+def _update_handoff(active: str, material_sha: str, batch_id: str | None = None) -> None:
     path = REPO_ROOT / active
     text = EVIDENCE_RE.sub("\n", path.read_text(encoding="utf-8")).rstrip() + "\n"
     text = LEGACY_HEAD_RE.sub("", text).replace("\n\n\n", "\n\n")
     first_break = text.find("\n")
     if first_break < 0 or not text.startswith("# "):
         raise SemanticFailure("HANDOFF_STRUCTURE_REJECTED", {"path": active})
-    updated = (text[:first_break + 1] + "\n" + _evidence_block(material_sha) + "\n" +
+    updated = (text[:first_break + 1] + "\n" + _evidence_block(material_sha, batch_id) + "\n" +
                text[first_break + 1:].lstrip("\n"))
     path.write_text(updated, encoding="utf-8", newline="\n")
 
@@ -379,9 +550,51 @@ def _verify_generated_handoff(active: str) -> None:
         raise SemanticFailure("GENERATED_HANDOFF_DISAGREEMENT", values)
 
 
+def _verify_dispatch_surfaces(binding: DispatchBinding, active: str, material_sha: str) -> None:
+    current = _validate_dispatch_binding(binding.work_order_path, material_sha)
+    if current != binding:
+        raise SemanticFailure("DISPATCH_BINDING_CHANGED", {})
+    _verify_generated_handoff(active)
+    for label, rel in (("aggregate", AGGREGATE), ("bootstrap", BOOTSTRAP)):
+        try:
+            value = json.loads((REPO_ROOT / rel).read_text(encoding="utf-8"))
+        except (OSError, ValueError, UnicodeError):
+            raise SemanticFailure("GENERATED_DISPATCH_BINDING_DISAGREEMENT", {"source": label}) from None
+        if (not isinstance(value, dict) or
+                value.get("currentAuthority") != binding.current_authority or
+                value.get("nextAllowedMove") != binding.next_allowed_move or
+                value.get("activeHandoff") != active):
+            raise SemanticFailure("GENERATED_DISPATCH_BINDING_DISAGREEMENT", {"source": label})
+
+    try:
+        handoff = (REPO_ROOT / active).read_text(encoding="utf-8")
+    except (OSError, UnicodeError):
+        raise SemanticFailure("DISPATCH_MARKER_DISAGREEMENT", {"path": active}) from None
+    markers = list(EVIDENCE_RE.finditer(handoff))
+    if (not handoff.startswith("# ") or handoff.count("<!-- CVF-GC020-MATERIAL-SHA:START -->") != 1 or
+            handoff.count("<!-- CVF-GC020-MATERIAL-SHA:END -->") != 1 or len(markers) != 1):
+        raise SemanticFailure("DISPATCH_MARKER_DISAGREEMENT", {"path": active, "markerCount": len(markers)})
+    first_line_end = handoff.find("\n")
+    if first_line_end < 0 or markers[0].start() <= first_line_end:
+        raise SemanticFailure("DISPATCH_MARKER_DISAGREEMENT", {"path": active, "reason": "marker is not H1-first"})
+    marker = markers[0].group(1)
+    if (f"Current HEAD recorded for this handoff: `{material_sha}`." not in marker or
+            f"Batch ID: `{binding.batch_id}`." not in marker):
+        raise SemanticFailure("DISPATCH_MARKER_DISAGREEMENT", {"path": active})
+
+
 def _run_checks() -> None:
     for argv in CONTINUITY_CHECKS:
         _command(argv)
+
+
+def _run_dispatch_release(active_work_order: str | None) -> None:
+    if not active_work_order:
+        return
+    _command([
+        sys.executable, "governance/compat/check_dispatch_release_readiness.py",
+        "--active-work-order", active_work_order, "--head", "HEAD", "--enforce", "--json",
+    ])
 
 
 def _resume_failure(state: str, args: argparse.Namespace, active: str | None, *,
@@ -392,11 +605,15 @@ def _resume_failure(state: str, args: argparse.Namespace, active: str | None, *,
         failed_command=command,
         diagnostic_code=semantic.code if semantic else None,
         diagnostic_details=semantic.details if semantic else None,
-        resume_argv=_resume_template(args.resume_material_sha, args.base, args.continuity_manifest),
+        resume_argv=_resume_template(
+            args.resume_material_sha, args.base, args.continuity_manifest,
+            active_work_order=args.active_work_order,
+        ),
     )
 
 
-def _postcommit_recheck(args: argparse.Namespace, active: str, paths: list[str]) -> int:
+def _postcommit_recheck(args: argparse.Namespace, active: str, paths: list[str],
+                        binding: DispatchBinding | None = None) -> int:
     try:
         staged, unstaged, untracked = _path_state()
         if staged or unstaged or untracked:
@@ -407,10 +624,14 @@ def _postcommit_recheck(args: argparse.Namespace, active: str, paths: list[str])
         if changed != expected:
             raise SemanticFailure("POSTCOMMIT_PATH_SET_MISMATCH",
                                   {"expected": sorted(expected), "actual": sorted(changed)})
-        if args.resume_material_sha not in (REPO_ROOT / active).read_text(encoding="utf-8"):
-            raise SemanticFailure("HANDOFF_EVIDENCE_MISMATCH", {"path": active})
-        _verify_generated_handoff(active)
+        if binding:
+            _verify_dispatch_surfaces(binding, active, args.resume_material_sha)
+        else:
+            if args.resume_material_sha not in (REPO_ROOT / active).read_text(encoding="utf-8"):
+                raise SemanticFailure("HANDOFF_EVIDENCE_MISMATCH", {"path": active})
+            _verify_generated_handoff(active)
         _run_checks()
+        _run_dispatch_release(args.active_work_order)
     except SemanticFailure as exc:
         return _resume_failure("CONTINUITY_POSTCOMMIT_VALIDATION_FAILED", args, active, semantic=exc)
     except CommandFailure as exc:
@@ -418,24 +639,32 @@ def _postcommit_recheck(args: argparse.Namespace, active: str, paths: list[str])
     return _emit("ALREADY_SYNCHRONIZED", material_sha=args.resume_material_sha, active_handoff=active)
 
 
-def _pending_or_retry(args: argparse.Namespace, active: str, paths: list[str]) -> int:
+def _pending_or_retry(args: argparse.Namespace, active: str, paths: list[str],
+                      binding: DispatchBinding | None = None) -> int:
     try:
         _validate_pending(paths)
     except SemanticFailure as exc:
         return _resume_failure("CONTINUITY_VALIDATION_FAILED", args, active, semantic=exc)
     if not args.execute:
         return _emit("DRY_RUN_CONTINUITY_PLAN_VALIDATED",
-                     material_sha=args.resume_material_sha, active_handoff=active)
+                     material_sha=args.resume_material_sha, active_handoff=active,
+                     resume_argv=_resume_template(
+                         args.resume_material_sha, args.base, args.continuity_manifest,
+                         active_work_order=args.active_work_order,
+                     ))
     try:
-        _update_handoff(active, args.resume_material_sha)
+        _update_handoff(active, args.resume_material_sha, binding.batch_id if binding else None)
         _command([sys.executable, "governance/compat/generate_active_session_state.py", "--generate"])
-        _verify_generated_handoff(active)
+        if not binding:
+            _verify_generated_handoff(active)
         expected = set(paths) | DERIVED_OUTPUTS
         _command(["git", "add", "--", *paths, *sorted(DERIVED_OUTPUTS)])
         staged, _, _ = _path_state()
         if set(staged) != expected:
             raise SemanticFailure("STAGED_PATH_SET_MISMATCH",
                                   {"expected": sorted(expected), "actual": staged})
+        if binding:
+            _verify_dispatch_surfaces(binding, active, args.resume_material_sha)
         unchanged = [item for item in sorted(DERIVED_OUTPUTS)
                      if _git(["diff", "--cached", "--quiet", "--", item], required=False).returncode == 0]
         if unchanged:
@@ -453,7 +682,10 @@ def _pending_or_retry(args: argparse.Namespace, active: str, paths: list[str]) -
     try:
         if _head("HEAD^") != args.resume_material_sha or _head(f"{args.resume_material_sha}^") != args.base:
             raise SemanticFailure("POSTCOMMIT_TOPOLOGY_MISMATCH", {})
+        if binding:
+            _verify_dispatch_surfaces(binding, active, args.resume_material_sha)
         _run_checks()
+        _run_dispatch_release(args.active_work_order)
     except SemanticFailure as exc:
         return _resume_failure("CONTINUITY_POSTCOMMIT_VALIDATION_FAILED", args, active, semantic=exc)
     except CommandFailure as exc:
@@ -464,15 +696,18 @@ def _pending_or_retry(args: argparse.Namespace, active: str, paths: list[str]) -
 
 def _resume(args: argparse.Namespace) -> int:
     active: str | None = None
+    binding: DispatchBinding | None = None
     try:
         active = _active_handoff_from_core()
+        if args.active_work_order:
+            binding = _validate_dispatch_binding(args.active_work_order, args.resume_material_sha)
         _, paths = _load_manifest(args.continuity_manifest, args.resume_material_sha, active)
         branch = _classify_topology(args.resume_material_sha, args.base)
     except SemanticFailure as exc:
         return _resume_failure("CONTINUITY_VALIDATION_FAILED", args, active, semantic=exc)
     if branch == "POSTCOMMIT_RECHECK":
-        return _postcommit_recheck(args, active, paths)
-    return _pending_or_retry(args, active, paths)
+        return _postcommit_recheck(args, active, paths, binding)
+    return _pending_or_retry(args, active, paths, binding)
 
 
 def main(argv: list[str] | None = None) -> int:
