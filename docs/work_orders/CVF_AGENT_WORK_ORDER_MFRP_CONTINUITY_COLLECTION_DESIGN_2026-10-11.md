@@ -514,9 +514,11 @@ Previous S2-R3 Local packaging exposed missing explicit conditional shape terms 
 
 ## Mixed Protected-Path Atomicity Authorization
 
+Disposition: AUTHORIZED_EXACT_MANIFEST
 Owner: Local reviewer/closer.
+Rollback boundary: revert only the admitted closure/authority material and its matching continuity; original worker/source evidence retained.
 Atomicity reason: raw closed-packet hashes and generated currentAuthority projections belong to this reviewed material; dedicated continuity follows.
-Allowed mixed paths:
+Exact changed manifest:
 - `docs/reviews/CVF_MFRP_CONTINUITY_COLLECTION_DESIGN_COMPLETION_2026-10-11.md`
 - `docs/reviews/CVF_MFRP_CONTINUITY_COLLECTION_DESIGN_2026-10-11.md`
 - `docs/reviews/CVF_MFRP_CONTINUITY_COLLECTION_DESIGN_WORKER_RETURN_2026-10-11.md`
@@ -571,3 +573,7 @@ Local documentary design acceptance `docs/reviews/CVF_MFRP_CONTINUITY_COLLECTION
 | worker final structure | final full fast-gate PASS, acceptance ledger COMPLIANT | PASS |
 | complete required reading | actual depth gaps disclosed; procedure FAIL | BLOCKED with reason: historical preparation cannot be repaired retrospectively |
 | historical material collection | skip retained; no binding/sample upgrade | PASS |
+
+## Local Atomicity Parser Correction
+
+Original Local closure authorization lacked the steward exact token, rollback field and exact-manifest label. Added required literals within the already granted12-path material scope after valid safety-marker adjudication. Corrective metadata/material and separate actual-SHA continuity only; no helper/guard bypass, journal relabel or sample promotion. Local completion owns disposition.

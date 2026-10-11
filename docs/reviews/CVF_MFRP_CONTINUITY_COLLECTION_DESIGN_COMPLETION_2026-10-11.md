@@ -73,14 +73,14 @@ workerRepairTurnCount: 0
 newRootCauseCountThisRound: 1
 dependentFindingCountThisRound: 3
 providerCallCount: 0
-materialCommitCount: 1
-continuityCommitCount: 1
+materialCommitCount: 2
+continuityCommitCount: 2
 elapsedReviewMinutes: NOT_AVAILABLE_WITH_REASON: full receiving/review/closure interval not metered; captured verification clock in Local JSON is narrower
 tokenOrQuotaUsage: NOT_AVAILABLE_WITH_REASON: native worker/reviewer/rework meter and bills unexposed
 valueDelta: useful safe retain-skip decision; old closure cause resolved; current receipt semantics clarified and four Luna workers restored to current visibility
 stopDisposition: COMPLETE_REVIEW
 preRepairAuditDisposition: COMPLETE_BEFORE_FIRST_REPAIR
-commitPlanDisposition: DEFAULT_ONE_MATERIAL_ONE_CONTINUITY
+commitPlanDisposition: EXCEPTION_WITH_REASON: initial12 material and six-surface sync landed; valid post-commit safety alarm requires one bounded5-path corrective metadata material plus its own six-surface continuity
 latencyDisposition: NOT_MEASURED_WITH_REASON: full accepted-delivery interval unknown
 avoidableDelayClass: GATE_DISCOVERY_LOOP
 
@@ -181,8 +181,8 @@ NOT_APPLICABLE_WITH_REASON: selected source-derived design and observation recon
 | Claim boundary | bounded design acceptance with procedure FAIL; no collection/ranking/full-history claim |
 | Agent type | INTERNAL_AGENT |
 | Invocation ID | mfrp-continuity-design-local-20261011 |
-| Expected manifest | `docs/reviews/CVF_MFRP_CONTINUITY_COLLECTION_DESIGN_COMPLETION_2026-10-11.md`; `docs/reviews/CVF_MFRP_CONTINUITY_COLLECTION_DESIGN_2026-10-11.md`; `docs/reviews/CVF_MFRP_CONTINUITY_COLLECTION_DESIGN_WORKER_RETURN_2026-10-11.md`; `docs/reviews/evidence/mfrp-continuity-collection-design-worker-20261011.json`; `docs/reviews/evidence/mfrp-continuity-collection-design-local-20261011.json`; `docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_CONTINUITY_COLLECTION_DESIGN_2026-10-11.md`; `docs/baselines/CVF_GC018_MFRP_CONTINUITY_COLLECTION_DESIGN_2026-10-11.md`; `docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json`; `docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Actual changed set | `docs/reviews/CVF_MFRP_CONTINUITY_COLLECTION_DESIGN_COMPLETION_2026-10-11.md`; `docs/reviews/CVF_MFRP_CONTINUITY_COLLECTION_DESIGN_2026-10-11.md`; `docs/reviews/CVF_MFRP_CONTINUITY_COLLECTION_DESIGN_WORKER_RETURN_2026-10-11.md`; `docs/reviews/evidence/mfrp-continuity-collection-design-worker-20261011.json`; `docs/reviews/evidence/mfrp-continuity-collection-design-local-20261011.json`; `docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_CONTINUITY_COLLECTION_DESIGN_2026-10-11.md`; `docs/baselines/CVF_GC018_MFRP_CONTINUITY_COLLECTION_DESIGN_2026-10-11.md`; `docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json`; `docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Expected manifest | `docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_CONTINUITY_COLLECTION_DESIGN_2026-10-11.md`; `docs/reviews/CVF_MFRP_CONTINUITY_COLLECTION_DESIGN_COMPLETION_2026-10-11.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Actual changed set | `docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_CONTINUITY_COLLECTION_DESIGN_2026-10-11.md`; `docs/reviews/CVF_MFRP_CONTINUITY_COLLECTION_DESIGN_COMPLETION_2026-10-11.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |
 
@@ -195,18 +195,13 @@ Rollback boundary: revert exact closure/collection/current-authority material an
 
 ## Mixed Protected-Path Atomicity Authorization
 
+Disposition: AUTHORIZED_EXACT_MANIFEST
 Owner: Local reviewer/closer.
-Atomicity reason: closed packet raw hashes must bind their source Core and generated projections in this reviewed material; actual-SHA continuity follows separately.
-Allowed mixed paths:
-- `docs/reviews/CVF_MFRP_CONTINUITY_COLLECTION_DESIGN_COMPLETION_2026-10-11.md`
-- `docs/reviews/CVF_MFRP_CONTINUITY_COLLECTION_DESIGN_2026-10-11.md`
-- `docs/reviews/CVF_MFRP_CONTINUITY_COLLECTION_DESIGN_WORKER_RETURN_2026-10-11.md`
-- `docs/reviews/evidence/mfrp-continuity-collection-design-worker-20261011.json`
-- `docs/reviews/evidence/mfrp-continuity-collection-design-local-20261011.json`
+Atomicity reason: exact5 corrective order/completion/raw authority projections close the disclosed Local packaging defect.
+Rollback boundary: revert exact corrective metadata and matching continuity; retain original marker/journal/worker evidence.
+Exact changed manifest:
 - `docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_CONTINUITY_COLLECTION_DESIGN_2026-10-11.md`
-- `docs/baselines/CVF_GC018_MFRP_CONTINUITY_COLLECTION_DESIGN_2026-10-11.md`
-- `docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json`
-- `docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md`
+- `docs/reviews/CVF_MFRP_CONTINUITY_COLLECTION_DESIGN_COMPLETION_2026-10-11.md`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
@@ -242,3 +237,9 @@ First Local reviewer-fast failed six existing closure packaging classes (recheck
 Local follow-up direct machine-closure check found the two closed packets also require acceptance assertion matrices; added the existing completion matrix to order/baseline in the same packaging repair group. Direct failed log `.cvf/runtime/mfrp-continuity-design-local-20261011/repair-check_machine_closure_package.py.log` is retained.
 
 Local material helper first commit failed. Direct91-check hook diagnostic identified only active-archive hygiene: the optional parent-roadmap delta changed a stale dated path. Reverted our own roadmap delta to captured base and reduced exact material to12 files; side-design closure remains here. This stays in the same Local packaging group, with no archive/retention expansion or bypass. Retained diagnostic logs are pinned in Local JSON.
+
+## P4-C1 Safety Marker Adjudication - Local Atomicity Metadata
+
+Original material d4851874bdbe853f1f4946b604704f2ac76b5e73 and continuity b26444b6be1e058af2cbdabf6968236f097ea948 remain history. The automatic receipt-generation alarm UNSAFE_AUTORUN_RECEIPT_GENERATION_FAILED is valid: steward pre-closure could not recognize the Local exact mixed-manifest authorization. Required literals are Disposition: AUTHORIZED_EXACT_MANIFEST, Atomicity reason:, Rollback boundary:, Exact changed manifest:. The previous block had the paths but omitted three literal bindings. This is Local closure metadata, not a worker/helper behavior defect. Raw marker archived at `.cvf/runtime/mfrp-continuity-design-local-20261011/safety-marker-before-adjudication.json`, SHA-256 513ebcf65dcc6c7a9491de541857a1107a0f7ebcd930b26958508776c58198c2.
+
+Local reviewer disposition: preserve unsafe attempt/journal and original alarm, refuse sample/checkpoint promotion, correct only order/completion and existing authority/projections, then verify actual steward plans before clearing this exact marker for the corrective commit. No source guard change, threshold relaxation, hook bypass or manual collector retry. This adjudication is committed in the correction; one corrective material/six-path sync is an EXCEPTION_WITH_REASON to the original plan. Fresh gates evaluate actual corrected checkout and separate ranges; they do not authenticate original target execution. The original twelve-path material authorization remains explicit in the current order, and the corrective five-path manifest belongs to this completion.
