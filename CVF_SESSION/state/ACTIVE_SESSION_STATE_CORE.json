@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CONTINUITY_DISPATCH_O3_2026-10-11.md",
     "workOrderSha256": "2c790d64a26ac22abaabee5a8277febd787a4b32a68bb422d982a633e4661049"
   },
-  "currentAuthoritySyncReason": "Operator foundation-first selects O3; actual material 606807b98cbfe4ab8ea9f15890630ee5c0c2012e and atomic dispatch continuity; original S2-R2 closure/evidence unchanged.",
+  "currentAuthoritySyncReason": "Operator foundation-first selects O3; actual material 067f382c124f6717c4cb915b5f30abda54b2e904 and atomic dispatch continuity; original S2-R2 closure/evidence unchanged.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",

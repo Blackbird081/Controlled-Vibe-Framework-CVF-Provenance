@@ -4,7 +4,7 @@
   "value": {
     "status": "READY_AFTER_BOUND_RELEASE",
     "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_CONTINUITY_DISPATCH_O3_2026-10-11.md",
-    "materialCommit": "606807b98cbfe4ab8ea9f15890630ee5c0c2012e",
+    "materialCommit": "067f382c124f6717c4cb915b5f30abda54b2e904",
     "requestedWorker": "gpt-6-luna/max",
     "role": "INTERNAL_AGENT",
     "reviewOwner": "LOCAL",

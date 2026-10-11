@@ -1,5 +1,5 @@
 {
   "stateOrder": 2980,
   "stateKey": "nextAllowedMove",
-  "value": "PROGRAM_ID=CVF-CORE; NEXT_ACTION_CLASS=EXECUTE_BOUNDED; BATCH_ID=CVF-CONTINUITY-DISPATCH-O3-20261011. Execute docs/work_orders/CVF_AGENT_WORK_ORDER_CONTINUITY_DISPATCH_O3_2026-10-11.md after committed bound pre-dispatch PASS; packet material=606807b98cbfe4ab8ea9f15890630ee5c0c2012e. One INTERNAL_AGENT gpt-6-luna/max worker implements six paths for O3 helper/release batch composition; Local final reviewer. No actual workspace worker commit. Original S2-R2 evidence retained. Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11 parked; oracle/scaffold design deferred; no automatic successor; LHW24 retained."
+  "value": "PROGRAM_ID=CVF-CORE; NEXT_ACTION_CLASS=EXECUTE_BOUNDED; BATCH_ID=CVF-CONTINUITY-DISPATCH-O3-20261011. Execute docs/work_orders/CVF_AGENT_WORK_ORDER_CONTINUITY_DISPATCH_O3_2026-10-11.md after committed bound pre-dispatch PASS; packet material=067f382c124f6717c4cb915b5f30abda54b2e904. One INTERNAL_AGENT gpt-6-luna/max worker implements six paths for O3 helper/release batch composition; Local final reviewer. No actual workspace worker commit. Original S2-R2 evidence retained. Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11 parked; oracle/scaffold design deferred; no automatic successor; LHW24 retained."
 }
