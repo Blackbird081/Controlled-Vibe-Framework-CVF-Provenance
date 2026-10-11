@@ -39,7 +39,7 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`;handoff=`AGENT_HANDOFF_V63_2026-09-18.md`;next=execute bounded O3 after exact release PASS;role=Local INTERNAL_AGENT orchestrator/reviewer;phase=foundation implementation;decision owner=Local;parked checkpoint=expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11.
+Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`;handoff=`AGENT_HANDOFF_V63_2026-09-18.md`;next=Local disposition after O3 bounded closure;role=Local INTERNAL_AGENT reviewer/closer;phase=foundation closed;decision owner=Local;parked checkpoint=Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11.
 
 ## Current Mode
 
@@ -48,7 +48,7 @@ Current mode: `cvf_ncr_p10_closed_p11_parked`; previous mode marker: `cvf_ncr_p1
 
 ## Next Allowed Move
 Mode: `cvf_ncr_p10_closed_p11_parked`
-PROGRAM_ID=CVF-CORE; NEXT_ACTION_CLASS=EXECUTE_BOUNDED; BATCH_ID=CVF-CONTINUITY-DISPATCH-O3-20261011. Execute docs/work_orders/CVF_AGENT_WORK_ORDER_CONTINUITY_DISPATCH_O3_2026-10-11.md after committed bound pre-dispatch PASS; packet material=067f382c124f6717c4cb915b5f30abda54b2e904. One INTERNAL_AGENT gpt-6-luna/max worker implements six paths for O3 helper/release batch composition; Local final reviewer. No actual workspace worker commit. Original S2-R2 evidence retained. Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11 parked; oracle/scaffold design deferred; no automatic successor; LHW24 retained.
+PROGRAM_ID=CVF-CORE; NEXT_ACTION_CLASS=LOCAL_DISPOSITION_ONLY; BATCH_ID=CVF-CONTINUITY-DISPATCH-O3-20261011. O3 helper/release join IMPLEMENTED_BOUNDED; Local completion=docs/reviews/CVF_CONTINUITY_DISPATCH_O3_COMPLETION_2026-10-11.md; evidence=docs/reviews/evidence/continuity-dispatch-o3-local-20261011.json; actual material=c1871f0c26e96ec0f03dbbab00db8befe27d5c1e. Luna/max requested, independent Local acceptance; no automatic successor. Oracle/scaffold design remains deferred; original S2-R2 retained. Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11 parked; LHW24 retained.
 Historical G1-G7 terminal baseline: mode `acel_g1_g7_research_terminally_closed`. G1-G6 terminal review: `docs/reviews/CVF_ACEL_G1_G6_TERMINAL_STOP_CLOSURE_2026-09-24.md`; G7 research closure: `docs/reviews/CVF_ACEL_G7_CROSS_RUN_CAPABILITY_EVOLUTION_RESEARCH_CLOSURE_2026-09-24.md`. The packet-only post-G7 reconciliation review at `docs/reviews/CVF_ACEL_POST_G7_FULL_CORPUS_ABSORPTION_CLOSURE_2026-09-24.md` is superseded for repository absorption by the 2026-09-25 pinned-source audit. G1 is stopped, G2-G6 remain parked, G7 research is closed, and no automatic G1-G7 successor exists.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
