@@ -1,0 +1,18 @@
+{
+  "stateOrder": 2999,
+  "stateKey": "modelSelectionS4R1Dispatch20261011",
+  "value": {
+    "status": "DISPATCH_READY",
+    "materialCommit": "d4a88ed8eeb6e92a8fcb2cfe480c66ef767990f6",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_SELECTION_S4_R1_MANUAL_WORKED_EXAMPLE_2026-10-11.md",
+    "workerRequest": {
+      "model": "gpt-6-luna",
+      "reasoningEffort": "xhigh",
+      "identityEvidence": "REQUESTED_CONFIGURATION_ONLY",
+      "immutableSnapshot": null
+    },
+    "result": "One source-bound worked example task; S3 packet-gap observation CITED. Prior failed S3 mixed-range receipt preserved/adjudicated; no full-range receipt promotion.",
+    "nextAction": "One admitted native worker; Local independent review; Expense and S2/S5 remain parked.",
+    "claimBoundary": "No model equivalence, cost advantage, automated selector or worker outcome."
+  }
+}

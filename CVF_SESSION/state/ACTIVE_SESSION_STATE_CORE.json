@@ -36,12 +36,12 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_MODEL_SELECTION_S3_R1_MANUAL_DESIGN_TASK_2026-10-10.md",
-    "baselineSha256": "59d87ed086d4da8397d5757b21e897a1136bdc34b252374a249d399b9d7b0c2e",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_SELECTION_S3_R1_MANUAL_DESIGN_TASK_2026-10-10.md",
-    "workOrderSha256": "a72a2a0fd61f8ef5be7411d177d0ff8a474a5f67f0a8d22ade9736d3c0f3428b"
+    "baselinePath": "docs/baselines/CVF_GC018_MODEL_SELECTION_S4_R1_MANUAL_WORKED_EXAMPLE_2026-10-11.md",
+    "baselineSha256": "daba5c16243353284151c61159a8eeebcbbe16d4e30f4f2ff33c0a7a876e6fc8",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_SELECTION_S4_R1_MANUAL_WORKED_EXAMPLE_2026-10-11.md",
+    "workOrderSha256": "d33284509af2456fc2402e4cf21868bd45bbde16c1523940f955986a8d69806b"
   },
-  "currentAuthoritySyncReason": "S3-R1 manual design task CLOSED_PASS_BOUNDED at material commit 011c9cd1d7a3d3ffbd6b8e070d8aab37f6774a40; work-order hash is current. Expense remains parked; S2/S4/S5 stay unopened.",
+  "currentAuthoritySyncReason": "S4-R1 source-bound guide packet released after operator continuation/subagent assignment. Requested gpt-6-luna / xhigh; outcome pending. Prior S3 mixed-range receipt failure retained in current packet adjudication.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
