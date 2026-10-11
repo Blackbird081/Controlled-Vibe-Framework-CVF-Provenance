@@ -116,26 +116,24 @@ Operator-reported identities only; bounded UI worker observations. No universal 
 
 ## Agent Operation Trace Block
 
-
-
 | Field | Evidence |
 |---|---|
-| Actor | Local collection steward/reviewer |
+| Actor | Local dispatcher/selector and collection steward |
 | Provider or surface | private shared workspace |
-| Session or invocation | ncr-home-history-read-clarification-20261011 |
+| Session or invocation | ncr-processing-lifecycle-dispatch-20261012 |
 | Working directory | repository root |
-| Command or tool surface | targeted packet/return/ResultViewer callback and existing lifecycle verification; existing collection correction; confirmation gates |
-| Target paths | `docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json`; `docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md` |
-| Allowed scope source | operator ongoing worker quality/time collection and new relayed explanation |
-| Before status evidence | 6bcc88a9cfe53150db0f8d8df454e12b0df0a78e; clean worktree, staged empty,16 reviewed tasks |
-| After status evidence | exact2 documentation paths; same16 tasks, technical acceptance and procedureFAIL retained |
-| Diff evidence | git diff --check; exact2 manifest; first15 rows structurally unchanged |
-| Approval boundary | private observation correction; no worker/checker/provider/public effect |
-| Claim boundary | motivation self-report; governed scope/depth and callback anchors independently checked |
+| Command or tool surface | progressive startup; scoped code/roadmap/owner reads; actual component five-case red; resolver/scaffold; exact packet and pending owner/collection integration |
+| Target paths | `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_PROCESSING_LIFECYCLE_2026-10-12.md`; `docs/baselines/CVF_GC018_NCR_PROCESSING_LIFECYCLE_2026-10-12.md`; `docs/reviews/evidence/ncr-processing-lifecycle-dispatch-20261012.json`; `docs/reference/work_order_template/CVF_WORK_ORDER_SOURCE_VERIFICATION_ADDENDUM.md`; `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md`; `docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json`; `docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md` |
+| Allowed scope source | operator continuation, explicit Sonnet5.5 high switch, standing audit/select and proportional quality/time tracking |
+| Before status evidence | 07fbf32cf04a6f4fd53697e6d3bb2216911e2afd; exact four previously pending documentation files; staged empty;16 reviewed rows |
+| After status evidence | exact seven material documentation paths pending; no product edit; dedicated six-path continuity later |
+| Diff evidence | git diff --check; exact staged manifest before commit |
+| Approval boundary | private packet/continuity; operator manually starts worker; no push/provider effect |
+| Claim boundary | synthetic UI source contradiction and task admission only |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-home-history-read-clarification-20261011 |
-| Expected manifest | `docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json`; `docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md` |
-| Actual changed set | `docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json`; `docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md` |
+| Invocation ID | ncr-processing-lifecycle-dispatch-20261012 |
+| Expected manifest | `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_PROCESSING_LIFECYCLE_2026-10-12.md`; `docs/baselines/CVF_GC018_NCR_PROCESSING_LIFECYCLE_2026-10-12.md`; `docs/reviews/evidence/ncr-processing-lifecycle-dispatch-20261012.json`; `docs/reference/work_order_template/CVF_WORK_ORDER_SOURCE_VERIFICATION_ADDENDUM.md`; `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md`; `docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json`; `docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md` |
+| Actual changed set | `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_PROCESSING_LIFECYCLE_2026-10-12.md`; `docs/baselines/CVF_GC018_NCR_PROCESSING_LIFECYCLE_2026-10-12.md`; `docs/reviews/evidence/ncr-processing-lifecycle-dispatch-20261012.json`; `docs/reference/work_order_template/CVF_WORK_ORDER_SOURCE_VERIFICATION_ADDENDUM.md`; `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md`; `docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json`; `docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |
 
@@ -213,3 +211,27 @@ Existing lifecycle authority separates useful verified output, procedure deviati
 A machine read receipt can check missing rows, span/identity consistency and contradictory terminal status; it cannot certify comprehension. Universal first-edit prevention needs a controlled write surface; no such enforcement is present or claimed here. Preserve the existing machine-check candidate without a new helper/hook or benchmark-only task. Root also corrected stale operatorObservationFocus fields that still said pending/15 while reporting and reviewed rows already showed16; this projection error belongs to Local.
 
 Current companion ledger raw SHA-256: da6f8a9e67278806e1000ed40472e9915c717a3844b9535eff958c6b7ef8d87b. Existing evidence/worker hashes and prior15 rows retained. Cost evaluation deferred; no product rerun, automatic worker, model winner or new effect authority.
+
+## Proportional Control Direction - 2026-10-12
+
+Operator direction: preserve agent problem-solving autonomy and useful delivery value; excessive checking latency is not justified by one worker's disclosed omissions. The prior read-only/release/per-tool-hook proposal is NOT_SELECTED for current bounded work and remains unimplemented. No new checker/hook, Claude upgrade, extra preparation-review cycle or repeated per-edit challenge follows from this clarification. Existing canonical required gates and safety/effect boundaries still apply; the proportional router's shadow contract does not authorize silently skipping legacy gates.
+
+The operator suspects the requested Haiku5.5 configuration contributes to noncompliance and expects Sonnet to comply better. Record this as a model/task/configuration hypothesis. Current16 task observations (10 Haiku-family,2 Sonnet,4 Luna) remain unchanged; two prior Sonnet observations are unmatched and show one first-return-gate FAIL and one PASS. They do not establish categorical Sonnet compliance superiority. Runtime model/effort uncertainty and task/session/reuse confounds remain. Use the next useful operator-selected Sonnet work with the same quality/time measures; no task exists solely for a sample and no worker starts automatically.
+
+For subsequent admitted work, the dispatcher should keep mandatory reads to decision-relevant scoped sources and explicitly label contextual references optional. Preserve worker implementation choices inside granted scope. Consume existing meaningful tests and final reviewer evidence, with mandatory-read deviations truthfully retained; technical acceptance cannot certify complete procedure fulfillment. Do not add routine read quizzes, extra worker/reviewer round trips or duplicate suite runs. Additional enforcement requires recurrence or severity with material product/proof/authority impact, named decision-changing information, and justified latency versus repair avoided.
+
+Track useful output, distinct defects/severity and self/reviewer repair burden alongside actual worker/review/rework/gate/wait intervals. Cost remains deferred. Root records this preference and its orchestrator authoring requirement in existing owners pending the next admitted material batch; no standalone commit/continuity cycle solely for this clarification. Current companion ledger raw SHA-256: 46eb20857e896c438ded905d4a3002c6232937148a731d04bc6646e9a8c430c7. Historical dated observations/pins remain snapshots; all16 reviewed task rows and original worker/evidence files remain unchanged.
+
+## Orchestrator Requirement Ownership - 2026-10-12
+
+Operator-selected correction: the source/scope -> requirement/condition -> observable result/evidence mapping is a MUST for the orchestrator/dispatcher before dispatch. Canonical owner: `docs/reference/work_order_template/CVF_WORK_ORDER_SOURCE_VERIFICATION_ADDENDUM.md`, Orchestrator Source And Acceptance Clarification; compact routing and Required First Reads example updated in `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md`. Use existing packet source/read/acceptance sections; no new schema, worker planning deliverable, pre-edit approval round or machine gate.
+
+The orchestrator verifies and narrows each required source, states mandatory versus optional status, supplies the source-derived condition and acceptance proof/failure criterion, and resolves material ambiguity before release. The worker retains implementation choices within granted scope and performs the declared task; it cannot silently drop a mandatory source or claim complete fulfillment with admitted missing evidence. The reviewer checks decision-relevant evidence and assigns packet clarity defects to the orchestrator. Earlier worker omission and all16 historical reviewed rows remain unchanged; this owner clarification does not rewrite past compliance.
+
+This is an in-place authoring clarification of the existing source-fidelity requirement, compatible with proportional governance and the current machine-coverage boundary. Structural checks do not certify source understanding or automatic enforcement. Current companion ledger raw SHA-256: 46eb20857e896c438ded905d4a3002c6232937148a731d04bc6646e9a8c430c7. These pending authoring/collection updates join the useful ProcessingScreen dispatch material below; no governance-only worker.
+
+## Operator Sonnet Switch And Useful Task - 2026-10-12
+
+Operator selects requested Claude Sonnet5.5 high for the next manually started internal worker. Dispatch `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_PROCESSING_LIFECYCLE_2026-10-12.md` targets the actual ProcessingScreen client lifecycle: late completion after cancel/unmount, callback rerender duplicate POST and manual/timer completion duplication. Local five-case offline red has four observed failures plus one passing valid control in `docs/reviews/evidence/ncr-processing-lifecycle-dispatch-20261012.json`. This is a useful bounded product task, not a model benchmark.
+
+No worker started or new observation admitted at dispatch. Reviewed16 rows (10 Haiku-family,2 Sonnet,4 Luna) and their original evidence remain unchanged. Record actual worker/review/rework time, defect severity and repair burden later; cost deferred. Requested configuration is not native runtime proof. Continuous Claude session/context remains a comparison confound if reused. Current companion ledger raw SHA-256: 46eb20857e896c438ded905d4a3002c6232937148a731d04bc6646e9a8c430c7.

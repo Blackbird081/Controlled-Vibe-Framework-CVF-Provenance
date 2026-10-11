@@ -136,6 +136,10 @@ Verification requirements:
   source-verified before the work order is marked ready;
 - work-order authors must verify source facts before dispatch, not delegate
   ambiguous source discovery to the implementer;
+- the orchestrator/dispatcher must prepare scoped mandatory/optional reads and
+  source-to-requirement acceptance mappings under Orchestrator Source And
+  Acceptance Clarification in
+  `docs/reference/work_order_template/CVF_WORK_ORDER_SOURCE_VERIFICATION_ADDENDUM.md`;
 - roadmap-derived work orders must include a Roadmap-to-Work-Order Trace Matrix;
 - acceptance criteria must be observable;
 - fail conditions must be explicit when missing fields, stale source facts,
@@ -371,10 +375,14 @@ zero entries):
 
 ## 5. Required First Reads
 
-Before filing GC-018 or editing files, read:
+Before filing GC-018 or editing files, read the mandatory scopes below. Optional
+context is available when relevant:
 
-- <path 1> - why it matters
-- <path 2> - why it matters
+- <path 1> - mandatory: <section/symbol/span>; <requirement and derived condition>;
+  acceptance: <observable result and proof in existing acceptance criteria>
+- <path 2> - optional context: <section/symbol/span and relevance>
+
+The orchestrator supplies these classifications and mappings before dispatch.
 
 ## 6. Pre-Flight Checks
 

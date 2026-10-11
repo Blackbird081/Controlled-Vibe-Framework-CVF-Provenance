@@ -1084,7 +1084,7 @@
     }
   },
   "operatorObservationFocus": {
-    "asOf": "2026-10-11",
+    "asOf": "2026-10-12",
     "authority": "OPERATOR_DIRECT_INSTRUCTION_CURRENT_SESSION",
     "role": "LOCAL_INTERNAL_AGENT_COLLECTION_STEWARD",
     "currentMode": "cvf_ncr_p10_closed_p11_parked",
@@ -1101,12 +1101,50 @@
     "attribution": "Separate worker defects from dispatcher, reviewer and tooling defects; missing read depth and scaffold are procedural findings with their actual impact recorded.",
     "timeRule": "Retain start/end and interval basis; do not infer complete accepted-delivery time from incomplete worker intervals. Separate required review time from avoidable rework.",
     "costDisposition": "DEFERRED_BY_OPERATOR_FOR_CURRENT_EVALUATION; preserve historical null/available fields without new billing investigation or cost ranking.",
-    "samplingPlan": "Continue observing useful admitted tasks for the operator-requested Haiku-family configuration; operator intends to switch to Sonnet after several further runs. Exact switch count is unspecified and creates no automatic invocation.",
+    "samplingPlan": "Operator2026-10-12 switches next useful manually started worker to requested Claude Sonnet5.5 high. Preserve historical Haiku-family/Luna observations; no benchmark-only task or automatic worker/model substitution.",
     "comparisonRule": "Use the same quality/time interpretation after the switch, compare similar task families and complexity, retain reuse/session context and exact requested configurations; no benchmark-only tasks or automatic model assignment.",
     "currentTask": "CVF-NCR-HOME-HISTORY-BINDING-20261011",
     "currentTaskDisposition": "REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED_WITH_PROCEDURE_FAIL",
     "reviewedTaskCount": 16,
-    "postClosureClarification": "Same16 tasks; unilateral required-read omission confirmed by operator-relayed worker explanation; product outcome unchanged."
+    "postClosureClarification": "Same16 tasks; unilateral required-read omission confirmed by operator-relayed worker explanation; product outcome unchanged.",
+    "proportionalControlDirection": {
+      "authority": "OPERATOR_DIRECT_INSTRUCTION_CURRENT_SESSION_2026-10-12",
+      "principle": "Net useful delivery value and agent problem-solving autonomy must justify governance overhead. Avoid latency from excessively strict checks.",
+      "heavyEnforcementDisposition": "NOT_SELECTED_FOR_CURRENT_BOUNDED_WORK: prior read-only/release/per-tool-hook proposal remains unimplemented and is not the next workstream.",
+      "modelHypothesis": "Operator suspects the requested Haiku5.5 configuration contributes to omissions and expects Sonnet to comply better. Treat as a hypothesis to evaluate on useful reviewed tasks, not a verified family-wide conclusion.",
+      "evidenceLimits": "16 reviewed tasks,10 Haiku-family/2 Sonnet/4 Luna; existing two Sonnet tasks are unmatched, one first return gate FAIL and one PASS. Native runtime identity/effort unknown where unexposed; no categorical compliance winner.",
+      "lightweightControl": "Orchestrator MUST prepare source/scope -> requirement/condition -> observable result/evidence in existing packet sections before dispatch. Contextual sources explicitly optional; no worker-authored duplicate plan or added review round.",
+      "readOmissionHandling": "Worker cannot silently downgrade mandatory requirements; preserve observed procedure deviations separately from useful verified product output. No false COMPLETE/full-fulfillment or historical-read compliance claim.",
+      "escalationRule": "Consider a narrow additional control only when recurrence or severity shows material delivery/proof/authority harm and a named check provides decision-changing information. Check latency and expected repair avoided before adoption; retain existing identity/safety/effect boundaries.",
+      "measurement": "Track defects, severity, repair burden and actual worker/review/rework/gate/wait intervals. Mandatory reviewer presence is not a defect. No duplicated verification or sample-only tasks; cost evaluation stays deferred.",
+      "switchRule": "Keep the operator-controlled Sonnet switch and exact requested configuration explicit; no automatic invocation, replacement or upgrade authorized by this clarification.",
+      "requirementOwner": "ORCHESTRATOR_DISPATCHER_BEFORE_DISPATCH",
+      "canonicalOwner": "docs/reference/work_order_template/CVF_WORK_ORDER_SOURCE_VERIFICATION_ADDENDUM.md#Orchestrator Source And Acceptance Clarification",
+      "canonicalTemplate": "docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md",
+      "orchestratorRequirements": [
+        "Specify exact required source path and section/symbol/span with mandatory versus optional status and task-specific reason.",
+        "Derive source conditions and map them to existing requirement IDs, observable acceptance results and necessary negative assertions before dispatch.",
+        "Resolve material source ambiguity before release; keep read scope and proof proportional to useful task outcome; preserve worker implementation autonomy."
+      ],
+      "workerBoundary": "Worker executes the already clarified packet and provides actual proof/omission disclosure; no new mapping deliverable, read quiz or pre-edit approval turn. Worker cannot silently downgrade mandatory scope.",
+      "reviewerBoundary": "Evaluate decision-relevant product/procedure evidence; attribute unclear packet mappings to orchestrator. Historical admitted worker omission remains attributed as originally reviewed.",
+      "canonicalOwnerRawSha256": "9958188aaf9b30d285a3402f74b17dad25d0afe0c4cd4ece55610c0891915755",
+      "canonicalTemplateRawSha256": "ae02c4008ad16ec65487ec3137135d6103685ff41c131a9e91325a4f59959f8a"
+    },
+    "nextAssignment": {
+      "batchId": "CVF-NCR-PROCESSING-LIFECYCLE-20261012",
+      "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_PROCESSING_LIFECYCLE_2026-10-12.md",
+      "taskFamily": "PRODUCT_UI_ASYNC_LIFECYCLE_REPAIR",
+      "requestedProvider": "Claude",
+      "requestedModel": "Sonnet 5.5",
+      "requestedEffort": "high",
+      "nativeIdentity": null,
+      "nativeIdentityReason": "Requested configuration only; operator manually starts worker, observed identity unexposed.",
+      "collectionDisposition": "NOT_A_REVIEWED_OBSERVATION_YET",
+      "priorReviewedTaskCount": 16,
+      "timeQualityMeasures": "Actual worker/review/rework intervals, defects/severity/self-repair/reviewer burden; cost deferred.",
+      "contextConfound": "Record continuous-session/prior-context reuse if operator keeps the Claude session; advisory/model switch is not an independent sample."
+    }
   },
   "dispatchInterruptedAttempts": [
     {

@@ -1,0 +1,99 @@
+{
+  "schemaVersion": "cvf.localDispatchEvidence@1.0.0",
+  "batchId": "CVF-NCR-PROCESSING-LIFECYCLE-20261012",
+  "authoringBaseHead": "07fbf32cf04a6f4fd53697e6d3bb2216911e2afd",
+  "role": "INTERNAL_AGENT_LOCAL_DISPATCHER",
+  "requestedConfiguration": {
+    "provider": "Claude",
+    "model": "Sonnet 5.5",
+    "effort": "high",
+    "source": "OPERATOR_CURRENT_SESSION",
+    "observedRuntimeIdentity": null,
+    "observedIdentityReason": "Operator-requested metadata only; operator starts worker manually."
+  },
+  "selection": {
+    "consumer": "existing ProcessingScreen invoked by Home and wizard workflows",
+    "finiteOutcome": "client execution lifecycle: cancel/unmount/task replacement isolates late work, same task does not redispatch on callback rerender, completion is at most once",
+    "alternativesDisposition": "defer dormant hook, pin checker, retrospective model projections and runtime/effect expansion; no demand for benchmark-only work",
+    "parent": "NCR R1/R4 bounded existing UI maintenance, not phase exit"
+  },
+  "sourceFinding": {
+    "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ProcessingScreen.tsx",
+    "workingFileSha256": "82517a0870b432c327b2f9f04f75fb8dbfe40407bc6178c2f3fecdea5de3c96a",
+    "headBlobSha256": "82517a0870b432c327b2f9f04f75fb8dbfe40407bc6178c2f3fecdea5de3c96a",
+    "sections": [
+      "executeReal fetch and delayed no-badge completion",
+      "runMockExecution interval and delayed callback",
+      "completion auto-advance effect and View Results click",
+      "execution startup effect dependency list and cleanup",
+      "Cancel button forwards onCancel only"
+    ],
+    "observedLimit": "Client/UI lifecycle only. Transport aborted does not prove provider/backend effect cancellation; no server change requested."
+  },
+  "reproduction": {
+    "command": "node node_modules/vitest/vitest.mjs run --config '../../../.cvf/runtime/ncr-processing-lifecycle-dispatch-20261012/vitest.config.mts' --reporter=json --outputFile='../../../.cvf/runtime/ncr-processing-lifecycle-dispatch-20261012/probe-red-with-control.json'",
+    "cwd": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web",
+    "exitCode": 1,
+    "tests": 5,
+    "positiveControlsPassed": 1,
+    "negativeAssertionsFailed": 4,
+    "assertions": [
+      {
+        "name": "positive control: uncancelled real-shaped response completes once without a badge",
+        "status": "passed",
+        "failureMessages": []
+      },
+      {
+        "name": "does not deliver a delayed result after unmount",
+        "status": "failed",
+        "failureMessages": [
+          "AssertionError: expected \"vi.fn()\" to not be called at all, but actually been called 1 times\n\nReceived:\n\n  1st vi.fn() call:\n\n    Array [\n      \"OUTPUT_A\",\n      undefined,\n    ]\n\n\nNumber of calls: 1\n\n    at Proxy.<anonymous> (file:///D:/UNG%20DUNG%20AI/TOOL%20AI%202026/Controlled-Vibe-Framework-CVF/EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/node_modules/@vitest/expect/dist/index.js:1467:10)\n    at Proxy.<anonymous> (file:///D:/UNG%20DUNG%20AI/TOOL%20AI%202026/Controlled-Vibe-Framework-CVF/EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/node_modules/@vitest/expect/dist/index.js:1156:15)\n    at Proxy.methodWrapper (file:///D:/UNG%20DUNG%20AI/TOOL%20AI%202026/Controlled-Vibe-Framework-CVF/EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/node_modules/chai/index.js:1700:25)\n    at D:/UNG DUNG AI/TOOL AI 2026/Controlled-Vibe-Framework-CVF/.cvf/runtime/ncr-processing-lifecycle-dispatch-20261012/dispatch-probe.test.tsx:35:28\n    at file:///D:/UNG%20DUNG%20AI/TOOL%20AI%202026/Controlled-Vibe-Framework-CVF/EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:20"
+        ]
+      },
+      {
+        "name": "ignores a response arriving after explicit cancel even if parent stays mounted",
+        "status": "failed",
+        "failureMessages": [
+          "AssertionError: expected \"vi.fn()\" to not be called at all, but actually been called 1 times\n\nReceived:\n\n  1st vi.fn() call:\n\n    Array [\n      \"OUTPUT_A\",\n      undefined,\n    ]\n\n\nNumber of calls: 1\n\n    at Proxy.<anonymous> (file:///D:/UNG%20DUNG%20AI/TOOL%20AI%202026/Controlled-Vibe-Framework-CVF/EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/node_modules/@vitest/expect/dist/index.js:1467:10)\n    at Proxy.<anonymous> (file:///D:/UNG%20DUNG%20AI/TOOL%20AI%202026/Controlled-Vibe-Framework-CVF/EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/node_modules/@vitest/expect/dist/index.js:1156:15)\n    at Proxy.methodWrapper (file:///D:/UNG%20DUNG%20AI/TOOL%20AI%202026/Controlled-Vibe-Framework-CVF/EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/node_modules/chai/index.js:1700:25)\n    at D:/UNG DUNG AI/TOOL AI 2026/Controlled-Vibe-Framework-CVF/.cvf/runtime/ncr-processing-lifecycle-dispatch-20261012/dispatch-probe.test.tsx:49:28\n    at file:///D:/UNG%20DUNG%20AI/TOOL%20AI%202026/Controlled-Vibe-Framework-CVF/EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:20"
+        ]
+      },
+      {
+        "name": "callback-only rerender does not issue another POST for the same mounted task",
+        "status": "failed",
+        "failureMessages": [
+          "AssertionError: expected \"vi.fn()\" to be called 1 times, but got 2 times\n    at D:/UNG DUNG AI/TOOL AI 2026/Controlled-Vibe-Framework-CVF/.cvf/runtime/ncr-processing-lifecycle-dispatch-20261012/dispatch-probe.test.tsx:59:23\n    at file:///D:/UNG%20DUNG%20AI/TOOL%20AI%202026/Controlled-Vibe-Framework-CVF/EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:20"
+        ]
+      },
+      {
+        "name": "manual view and automatic timer share a single completion",
+        "status": "failed",
+        "failureMessages": [
+          "AssertionError: expected \"vi.fn()\" to be called 1 times, but got 3 times\n    at D:/UNG DUNG AI/TOOL AI 2026/Controlled-Vibe-Framework-CVF/.cvf/runtime/ncr-processing-lifecycle-dispatch-20261012/dispatch-probe.test.tsx:70:24\n    at file:///D:/UNG%20DUNG%20AI/TOOL%20AI%202026/Controlled-Vibe-Framework-CVF/EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:20"
+        ]
+      }
+    ],
+    "observedCompletionCounts": {
+      "afterUnmount": 1,
+      "afterCancel": 1,
+      "manualClicksAndAutoTimer": 3
+    },
+    "observedPostCountOnCallbackOnlyRerender": 2,
+    "harnessSource": "import React from 'react';\nimport { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';\nimport { act, cleanup, fireEvent, render, screen } from '@testing-library/react';\nimport { ProcessingScreen } from '@/components/ProcessingScreen';\n\nconst settings = { preferences: { defaultExportMode: 'governance' } };\nvi.mock('@/components/Settings', () => ({ useSettings: () => ({ settings, isLoaded: true }) }));\nvi.mock('@/lib/i18n', () => ({ useLanguage: () => ({ language: 'en' }) }));\nvi.mock('@/lib/enforcement-log', () => ({ logEnforcementDecision: vi.fn() }));\nvi.mock('@/lib/analytics', () => ({ trackEvent: vi.fn() }));\nconst inputs = { topic: 'synthetic task A' };\nconst props = { templateId: 'test', templateName: 'Test', inputs, intent: 'Synthetic offline A' };\nconst response = (badge = false) => ({ json: async () => ({ success: true, output: 'OUTPUT_A', ...(badge ? { enforcement: { status: 'ALLOW', riskGate: { riskLevel: 'R1' } } } : {}) }) });\n\ndescribe('Local dispatch: actual ProcessingScreen lifecycle', () => {\n  beforeEach(() => { vi.useFakeTimers(); });\n  afterEach(() => { cleanup(); vi.clearAllTimers(); vi.useRealTimers(); vi.unstubAllGlobals(); });\n\n  it('positive control: uncancelled real-shaped response completes once without a badge', async () => {\n    const onComplete = vi.fn();\n    vi.stubGlobal('fetch', vi.fn().mockResolvedValue(response()));\n    render(<ProcessingScreen {...props} onComplete={onComplete} onCancel={vi.fn()} />);\n    await act(async () => { await vi.advanceTimersByTimeAsync(1000); });\n    expect(onComplete).toHaveBeenCalledTimes(1);\n    expect(onComplete).toHaveBeenCalledWith('OUTPUT_A', undefined);\n  });\n\n  it('does not deliver a delayed result after unmount', async () => {\n    const onComplete = vi.fn();\n    vi.stubGlobal('fetch', vi.fn().mockResolvedValue(response()));\n    const view = render(<ProcessingScreen {...props} onComplete={onComplete} onCancel={vi.fn()} />);\n    await act(async () => { await vi.advanceTimersByTimeAsync(1); });\n    view.unmount();\n    await act(async () => { await vi.advanceTimersByTimeAsync(1000); });\n    expect(onComplete).not.toHaveBeenCalled();\n  });\n\n  it('ignores a response arriving after explicit cancel even if parent stays mounted', async () => {\n    let resolve!: (value: ReturnType<typeof response>) => void;\n    const pending = new Promise<ReturnType<typeof response>>(r => { resolve = r; });\n    const onComplete = vi.fn(); const onCancel = vi.fn();\n    vi.stubGlobal('fetch', vi.fn().mockReturnValue(pending));\n    render(<ProcessingScreen {...props} onComplete={onComplete} onCancel={onCancel} />);\n    await act(async () => { await vi.advanceTimersByTimeAsync(1); });\n    fireEvent.click(screen.getByRole('button', { name: 'Cancel' }));\n    expect(onCancel).toHaveBeenCalledTimes(1);\n    await act(async () => { resolve(response()); await Promise.resolve(); });\n    await act(async () => { await vi.advanceTimersByTimeAsync(1000); });\n    expect(onComplete).not.toHaveBeenCalled();\n  });\n\n  it('callback-only rerender does not issue another POST for the same mounted task', async () => {\n    const fetchMock = vi.fn().mockReturnValue(new Promise(() => {}));\n    vi.stubGlobal('fetch', fetchMock);\n    const view = render(<ProcessingScreen {...props} onComplete={vi.fn()} onCancel={vi.fn()} />);\n    await act(async () => { await vi.advanceTimersByTimeAsync(1); });\n    view.rerender(<ProcessingScreen {...props} onComplete={vi.fn()} onCancel={vi.fn()} />);\n    await act(async () => { await vi.advanceTimersByTimeAsync(1); });\n    expect(fetchMock).toHaveBeenCalledTimes(1);\n  });\n\n  it('manual view and automatic timer share a single completion', async () => {\n    const onComplete = vi.fn();\n    vi.stubGlobal('fetch', vi.fn().mockResolvedValue(response(true)));\n    render(<ProcessingScreen {...props} onComplete={onComplete} onCancel={vi.fn()} />);\n    await act(async () => { await vi.advanceTimersByTimeAsync(1); });\n    const button = screen.getByTestId('view-results-btn');\n    fireEvent.click(button); fireEvent.click(button);\n    await act(async () => { await vi.advanceTimersByTimeAsync(2500); });\n    expect(onComplete).toHaveBeenCalledTimes(1);\n  });\n});\n",
+    "harnessSha256": "bbfe50f739770a24c8b54b020bdf8acc4d5ce996165359687471b866ff7db3f8",
+    "configSource": "import { defineConfig } from '../../../EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/node_modules/vitest/dist/config.js';\nimport path from 'node:path';\nimport { fileURLToPath } from 'node:url';\nconst directory = path.dirname(fileURLToPath(import.meta.url));\nconst web = path.resolve(directory, '../../../EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web');\nexport default defineConfig({ root: directory, esbuild: { jsx: 'automatic' }, resolve: { alias: { '@': path.join(web, 'src'), react: path.join(web, 'node_modules/react'), 'react-dom': path.join(web, 'node_modules/react-dom'), '@testing-library/react': path.join(web, 'node_modules/@testing-library/react'), vitest: path.join(web, 'node_modules/vitest') } }, test: { environment: 'jsdom', include: ['dispatch-probe.test.tsx'], setupFiles: [path.join(web, 'src/test/setup.ts')], testTimeout: 15000 } });\n",
+    "reportSha256": "57843dd7438a2e4897b688febf0f8e4c11c54f8de62efedb941d54d5c58cb393",
+    "logSha256": "edebdc48a3a6829b979776c36db2dbe1441c8561705e5f7a0221969b3d6397ce",
+    "reportStartEpochMs": 1791740997716,
+    "firstHarnessFailures": [
+      {
+        "logs": [
+          "probe-red.log",
+          "probe-diagnostic.log"
+        ],
+        "reason": "No tests collected: config root remained Web package while probe lived outside it. Not product evidence; Local config root corrected."
+      }
+    ],
+    "probeRevision": "Four genuine failures first reproduced; added uncancelled positive control and reran only that amended five-case probe."
+  },
+  "claimBoundary": "Source-derived Local synthetic offline red; no worker implementation/acceptance, live governance, backend cancellation or comparative model claim. Historical16 reviewed rows unchanged."
+}
