@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_SELECTION_S2_R1_OFFLINE_MANUAL_RECORD_2026-10-11.md",
     "workOrderSha256": "9728b45b6642d25adf89820769bac1a2fdb00dad3678c7ae2d246ed0965f305d"
   },
-  "currentAuthoritySyncReason": "S2-R1 CLOSED_PASS_BOUNDED; material 02dd66166a10d762c47890e811955a384ecd4409; material/commit validation passed; final committed ranges evaluated after continuity. Optional offline helper accepted; S4 enum-gap action/result ACTION_VERIFIED/PARTIAL; no automatic successor.",
+  "currentAuthoritySyncReason": "Source-only model-usage supplement accepted at abbfc7258148d48532c3d8e572848b345d7cb4a2; closed S2-R1 authority unchanged; nine selected task references, no ranking/runtime/automatic successor.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
@@ -16864,7 +16864,7 @@
   "cvfNcrQ001DockerReceipt20260928": "BOUNDED_LOCAL_INTEGRATION_OBSERVED at material commit 87a3da943. Docker Desktop ran cvf-web and Governance Engine on an internal network with synthetic content and development mock login. Real local HTTP returned receipt ALLOW/R0 joined by exact request_id to a verified sandbox ledger block; export remained DRAFT_UNACCEPTED. The current engine response-shape bridge was repaired with 40/40 focused tests, TypeScript, ESLint and pre-commit 90/90. Engine tracked ledger seed shape differs from runtime list contract; sandbox excluded it and initialized a fresh ledger. No real provider, hosted UI, durable retention, cost or Q001/R0 closure is claimed. Review: docs/reviews/CVF_CVF_NCR_Q001_DOCKER_RECEIPT_WIRING_EVIDENCE_2026-09-28.md.",
   "cvfNcrQ001DockerLedgerEnforcement20260929": "BOUNDED_LOCAL_REPAIR_OBSERVED at material commit bdaa7fbb1. Engine now rejects an incompatible object ledger seed at startup, binds an isolated runtime ledger path and reads nested final_decision for enforcement. Two Docker services on an internal network returned a synthetic HTTP export receipt ALLOW/R0 with action ALLOW; the artifact remained DRAFT_UNACCEPTED. A named volume preserved two valid ledger blocks across one engine restart. Engine tests 152/152, web focused tests 27/27 and pre-commit 90/90 passed. This does not prove backup, RPO/RTO, hosted UI, provider governance, acceptance or Q001/R0 exit. Review: docs/reviews/CVF_CVF_NCR_Q001_DOCKER_LEDGER_ENFORCEMENT_REPAIR_2026-09-29.md.",
   "cvfNcrQ001DockerBrowserUi20260929": "BOUNDED_LOCAL_UI_OBSERVED at material commit 5c1ee025b. Chromium on an internal Docker network used mock login and an authenticated synthetic audit record to click Work Transfer export. Warm session-auth HTTP returned receipt ALLOW/R0 joined to a hash-valid engine volume block; screenshot shows DRAFT_UNACCEPTED, 8/8 presentation checks and no approval badge. First cold Next.js development compile exceeded the 4-second receipt hop timeout and returned draft without receipt. Temporary allowedDevOrigins existed only in the sandbox container; repository UI source was unchanged. No hosted, production, provider-live, artifact-acceptance or Q001/R0 exit claim. Review: docs/reviews/CVF_CVF_NCR_Q001_DOCKER_BROWSER_UI_WALKTHROUGH_2026-09-29.md.",
-  "nextAllowedMove": "PROGRAM_ID=CVF-CORE; NEXT_ACTION_CLASS=LOCAL_DISPOSITION_ONLY; BATCH_ID=CVF-MODEL-SELECTION-S2-R1-20261011. Material=02dd66166a10d762c47890e811955a384ecd4409; S2-R1 CLOSED_PASS_BOUNDED at docs/reviews/CVF_MODEL_SELECTION_S2_R1_COMPLETION_2026-10-11.md. Optional offline manual record validator, focused tests, S4-derived example and guide accepted after independent CLI/API review. Declared consistency only; full outcome/PLL/score/Gateway branches and S5 unopened. Requested gpt-6-luna/xhigh; observed identity/bill unknown; root design/packet and worker/reviewer corrections retained separately. Non coder does not choose a model. Expense PARKED_BY_OPERATOR; SourceR2/media/provider/public/deploy/P11 parked; LHW24 retained. Local may evaluate a fresh real task/value gap; no automatic successor.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-CORE; NEXT_ACTION_CLASS=LOCAL_DISPOSITION_ONLY; BATCH_ID=CVF-MODEL-USAGE-OBSERVATIONS-20261011. Material=abbfc7258148d48532c3d8e572848b345d7cb4a2; accepted source-only supplement docs/reviews/CVF_WORKER_MODEL_USAGE_OBSERVATION_SUPPLEMENT_2026-10-11.md; six legacy rows plus S3/S4/S2, nine selected task references (not matched/independent samples). Initial/final artifacts, worker versus Local burden, requested versus observed identity and unlike clocks stay separate; bill/usage unknown, no model equivalence/ranking. S2-R1 optional offline helper remains CLOSED_PASS_BOUNDED; full outcome/PLL/score/Gateway and S5 unopened. Non coder does not choose a model. Expense PARKED_BY_OPERATOR; SourceR2/media/provider/public/deploy/P11 parked; LHW24 retained. Continue only a real relevant task/value gap within its own admitted scope; no automatic successor or benchmark.",
   "cvfNcrQ001ReceiptStatus20260929": "BOUNDED_LOCAL_CORRECTION_OBSERVED at material commit 65238b20d. Export receipt attempts now expose explicit status and attempt ID, a bounded timeout setting, and current decision/enforcement agreement. Focused 44/44, TypeScript, ESLint and pre-commit 90/90 passed. First export in one-server synthetic Docker development profile returned PRESENT/ALLOW, DRAFT_UNACCEPTED and a hash-valid ledger join. Production-like next build was blocked by missing required Auth.js configuration; no fake credentials, provider call, deployment, acceptance or Q001/R0 exit. Review: docs/reviews/CVF_CVF_NCR_Q001_RECEIPT_STATUS_CORRECTION_2026-09-29.md.",
   "cvfNcrQ001ProductionAuthBoundary20260929": "BOUNDED_SOURCE_CORRECTION at material commit e60b34f83. Known mock CredentialsProvider accounts now reject outside test/development; production login UI presents GitHub/Google controls without demo credentials. Focused 14/14, TypeScript, ESLint and pre-commit 90/90 passed. Auth.js production-like build still requires real operator-controlled OAuth configuration; OAuth callback, identity/role mapping and Q001 latency are unproved. No provider/live call, production acceptance, artifact approval, public sync or P11. Review: docs/reviews/CVF_CVF_NCR_Q001_PRODUCTION_AUTH_PROFILE_BOUNDARY_2026-09-29.md.",
   "cvfNcrQ001SingleOAuthBinding20260929": "BOUNDED_SOURCE_CONTRACT at material commit 569cf4aa3. Production Auth.js selects one GitHub or Google provider with its client pair and requires exact provider-subject to CVF user/role/org/team binding. Unknown or revoked production sessions fail closed in JWT and API session readers; local mock login remains test/development only. Focused 36/36, adjacent 41/41, TypeScript, ESLint and pre-commit 90/90 passed. No provider selection, real subject/secret, OAuth callback, production-like receipt latency, public sync, deployment or Q001/R0 exit. Review: docs/reviews/CVF_CVF_NCR_Q001_SINGLE_OAUTH_IDENTITY_BINDING_2026-09-29.md.",
@@ -18259,5 +18259,23 @@
     "materialRangeGate": "MATERIAL_VALIDATION_PASS_EXACT13; FINAL_FULL_RANGE_AFTER_SYNC",
     "nextAction": "Local disposition only; fresh task needs demonstrated demand/value and packet; other R3 branches/S5 unopened.",
     "claimBoundary": "No model equivalence, comparative quality/cost, runtime enforcement or public claim."
+  },
+  "modelUsageObservationSupplement20261011": {
+    "status": "ACCEPTED_BOUNDED_SOURCE_VISIBILITY",
+    "materialCommit": "abbfc7258148d48532c3d8e572848b345d7cb4a2",
+    "review": "docs/reviews/CVF_WORKER_MODEL_USAGE_OBSERVATION_SUPPLEMENT_2026-10-11.md",
+    "evidence": "docs/reviews/evidence/cvf-worker-model-usage-observation-supplement-2026-10-11.json",
+    "selectedTaskReferences": 9,
+    "legacyRowsReferenced": 6,
+    "laterTasksReferenced": [
+      "S3-R1",
+      "S4-R1",
+      "S2-R1"
+    ],
+    "newImplementingWorkerInvocations": 0,
+    "readOnlyAuditTurns": 2,
+    "result": "Source/claim audit concurred; current offline proof reconciled. Original outcomes/ledger preserved; unlike clocks, requested/observed identity and worker/Local burdens separated.",
+    "nextAction": "Local disposition only; real relevant task/value gap required; no automatic successor.",
+    "claimBoundary": "Not matched/independent samples, model equivalence/ranking, comparable bill or runtime proof."
   }
 }

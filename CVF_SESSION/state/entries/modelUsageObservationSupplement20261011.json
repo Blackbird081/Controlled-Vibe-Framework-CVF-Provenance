@@ -1,0 +1,22 @@
+{
+  "stateOrder": 3003,
+  "stateKey": "modelUsageObservationSupplement20261011",
+  "value": {
+    "status": "ACCEPTED_BOUNDED_SOURCE_VISIBILITY",
+    "materialCommit": "abbfc7258148d48532c3d8e572848b345d7cb4a2",
+    "review": "docs/reviews/CVF_WORKER_MODEL_USAGE_OBSERVATION_SUPPLEMENT_2026-10-11.md",
+    "evidence": "docs/reviews/evidence/cvf-worker-model-usage-observation-supplement-2026-10-11.json",
+    "selectedTaskReferences": 9,
+    "legacyRowsReferenced": 6,
+    "laterTasksReferenced": [
+      "S3-R1",
+      "S4-R1",
+      "S2-R1"
+    ],
+    "newImplementingWorkerInvocations": 0,
+    "readOnlyAuditTurns": 2,
+    "result": "Source/claim audit concurred; current offline proof reconciled. Original outcomes/ledger preserved; unlike clocks, requested/observed identity and worker/Local burdens separated.",
+    "nextAction": "Local disposition only; real relevant task/value gap required; no automatic successor.",
+    "claimBoundary": "Not matched/independent samples, model equivalence/ranking, comparable bill or runtime proof."
+  }
+}
