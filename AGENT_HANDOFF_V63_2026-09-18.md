@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Current NCR Continuation
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `57f8dc7b041c6cd17919aa3c300ad55bf324d329`. Material parent anchor for the dedicated continuity synchronization commit.
+Current HEAD recorded for this handoff: `57f8dc7b041c6cd17919aa3c300ad55bf324d329`. Material parent anchor; Batch ID: CVF-MODEL-SELECTION-S2-R2-20261011. Release-marker correction after continuity b48f935188c1f41786df3fe0729a05660a61e6ab; helper omitted the required batch binding (DR-05); no worker dispatched before correction.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
