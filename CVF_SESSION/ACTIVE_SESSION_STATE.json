@@ -37,9 +37,9 @@
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_CONTINUITY_DISPATCH_O3_2026-10-11.md",
-    "baselineSha256": "ed859a22964204291189ac3eccbf6a135be3507eb29022173f1bcae75981f3dd",
+    "baselineSha256": "3621fdbd371e0e166f76a83f9f0aed5c22bd3b5e377cda95d1493d40c0af79f2",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CONTINUITY_DISPATCH_O3_2026-10-11.md",
-    "workOrderSha256": "7022d3a03cc2aa8c0cce7b500dc7fb4b5ebb5e9344cb4bd1f0880f568fc7570f"
+    "workOrderSha256": "2c790d64a26ac22abaabee5a8277febd787a4b32a68bb422d982a633e4661049"
   },
   "currentAuthoritySyncReason": "Operator foundation-first selects O3; actual material 606807b98cbfe4ab8ea9f15890630ee5c0c2012e and atomic dispatch continuity; original S2-R2 closure/evidence unchanged.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",

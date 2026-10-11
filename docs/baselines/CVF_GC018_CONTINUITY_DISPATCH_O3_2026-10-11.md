@@ -65,7 +65,7 @@ Actual scaffold generated in ignored task home; packet sources pin initial raw b
 | Session or invocation | continuity-dispatch-o3-packet-20261011 |
 | Working directory | repository root |
 | Command or tool surface | targeted sources; actual scaffold; exact two-file packet |
-| Target paths | `docs/baselines/CVF_GC018_CONTINUITY_DISPATCH_O3_2026-10-11.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_CONTINUITY_DISPATCH_O3_2026-10-11.md` |
+| Target paths | `docs/baselines/CVF_GC018_CONTINUITY_DISPATCH_O3_2026-10-11.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_CONTINUITY_DISPATCH_O3_2026-10-11.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Allowed scope source | operator foundation-first request and standing Luna/max worker grant |
 | Before status evidence | HEAD `4318ae2e7bed347ba32002a5531c9e3704240403`; clean worktree; empty staged set |
 | After status evidence | two packet files; implementation pending |
@@ -74,8 +74,8 @@ Actual scaffold generated in ignored task home; packet sources pin initial raw b
 | Claim boundary | no implemented control or worker result yet |
 | Agent type | INTERNAL_AGENT |
 | Invocation ID | continuity-dispatch-o3-packet-20261011 |
-| Expected manifest | `docs/baselines/CVF_GC018_CONTINUITY_DISPATCH_O3_2026-10-11.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_CONTINUITY_DISPATCH_O3_2026-10-11.md` |
-| Actual changed set | `docs/baselines/CVF_GC018_CONTINUITY_DISPATCH_O3_2026-10-11.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_CONTINUITY_DISPATCH_O3_2026-10-11.md` |
+| Expected manifest | `docs/baselines/CVF_GC018_CONTINUITY_DISPATCH_O3_2026-10-11.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_CONTINUITY_DISPATCH_O3_2026-10-11.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Actual changed set | `docs/baselines/CVF_GC018_CONTINUITY_DISPATCH_O3_2026-10-11.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_CONTINUITY_DISPATCH_O3_2026-10-11.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |
 
@@ -125,3 +125,11 @@ EPISTEMIC_PROCESS_NA_WITH_REASON: normative baseline; actual results belong to w
 Bounded offline Git/filesystem declaration-control composition only. No AI governance runtime proof, model quality/equivalence/cost ranking, full systemchain readiness, universal interception or loopback into parked Expense. New foundation candidate implementation remains pending at dispatch; root errors remain root-owned.
 
 
+
+## Release Range Reconciliation
+
+Root repairs packet routing coverage for all seven exact steward paths. Final bound release evaluates the dedicated continuity range; unmodified DR01-07 separately prove committed packet identity. Initial combined-range failure and earlier material/continuity remain retained. No locked implementation semantics changed.
+
+## Material Authority-Pin Repair Authorization
+
+Core Guard Self-Protection Authorization: current packet byte corrections require currentAuthority raw-pin refresh before material commit. Protected paths: `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`. Scope is matching currentAuthority hashes and canonical projections only, inside this corrected five-path material batch; no new dispatch/implementation grant. Operator authorization: foundation-first O3 and necessary private authority continuity. Rollback: restore matching packet/authority as one governed correction, keeping original failures. Handoff/next move actualSHA and all four release surfaces are synchronized afterward in the dedicated seven-path continuity commit. Material authoring trace is five paths; final bound release range is materialSHA..continuityHEAD.

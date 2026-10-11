@@ -5,7 +5,7 @@ docType: work_order
 Status: READY
 Date: 2026-10-11
 Batch ID: CVF-CONTINUITY-DISPATCH-O3-20261011
-Dispatch base head: 4318ae2e7bed347ba32002a5531c9e3704240403
+Dispatch base head: b2c4928ee9261bc143d27ce36cb5fbc7bf9128b2
 Commit mode: WORKER_MUST_NOT_COMMIT
 Worker return path: `docs/reviews/CVF_CONTINUITY_DISPATCH_O3_WORKER_RETURN_2026-10-11.md`
 providerExecutionAuthority: FORBIDDEN
@@ -318,7 +318,7 @@ Contract source archive-qualified exception: `docs/reference/CVF_AHB_T2_AGENT_HA
 | route | MULTI_AGENT_MULTI_ROLE |
 | rolePattern | Local dispatcher -> shared-workspace worker -> Local independent reviewer/closer -> session-sync steward |
 | phase | packet authoring; admitted offline implementation; review; closure |
-| baseHeadFor(phase) | dispatchBaseHead=4318ae2e7bed347ba32002a5531c9e3704240403; executionBaseHead=WORKER_MUST_CAPTURE_AT_START; closureBaseHead=REVIEWER_TO_SET |
+| baseHeadFor(phase) | dispatchBaseHead=b2c4928ee9261bc143d27ce36cb5fbc7bf9128b2; executionBaseHead=WORKER_MUST_CAPTURE_AT_START; closureBaseHead=REVIEWER_TO_SET |
 | changedSetScope(phase) | exact six worker-owned paths; baseline/order and continuity separately owned |
 | traceScope(phase, actor) | each actor records own actual reads/actions/results |
 | commitOwner(phase) | Local closer; WORKER_MUST_NOT_COMMIT |
@@ -388,7 +388,7 @@ This graph assigns repair and commit owners; it does not report those future gat
 ## Task Governance Routing Manifest
 
 ```json
-{"schemaVersion":"cvf.taskGovernanceManifest.v1","taskId":"CVF-CONTINUITY-DISPATCH-O3-20261011","requestedProfile":"P3_ELEVATED","classification":{"taskKind":"PURE_LOCAL_IMPLEMENTATION","authorityImpact":"USES_EXISTING_OWNER","externalEffect":"LOCAL_REVERSIBLE","dataSensitivity":"PRIVATE_REPO","reversibility":"GIT_REVERSIBLE","sourceScale":"NAMED_FILES","delegation":"MULTI_ROLE_NO_COMMIT","novelty":"NEW_INTERFACE"},"pathFamilies":["docs/baselines/CVF_GC018_CONTINUITY_DISPATCH_O3_2026-10-11.md","docs/work_orders/CVF_AGENT_WORK_ORDER_CONTINUITY_DISPATCH_O3_2026-10-11.md","scripts/cvf_commit_tranche.py","scripts/test_cvf_commit_tranche.py","scripts/test_cvf_commit_tranche_dispatch.py","docs/reference/CVF_TRANCHE_COMMIT_CHOREOGRAPHY_STANDARD_2026-06-03.md","docs/reviews/CVF_CONTINUITY_DISPATCH_O3_WORKER_RETURN_2026-10-11.md","docs/reviews/evidence/continuity-dispatch-o3-worker-20261011.json","docs/reviews/CVF_CONTINUITY_DISPATCH_O3_COMPLETION_2026-10-11.md","docs/reviews/evidence/continuity-dispatch-o3-local-20261011.json","docs/reference/downstream_gate_profile/downstream_finding_intake_registry.json","AGENT_HANDOFF_V63_2026-09-18.md","CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json","CVF_SESSION/ACTIVE_SESSION_STATE.json","CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json"],"claims":["BOUNDED_OFFLINE_GIT_CONTROL_COMPOSITION_ONLY"],"requiredProof":["GIT_COMPOSITION_TESTS","CONTRACT_MATCH","RETURN_GATE","OBSERVATION_ACTION"],"operatorCheckpoints":[],"forbiddenEffects":["PROVIDER_CALL","NETWORK_WRITE","PUBLIC_WRITE","DEPLOYMENT","REAL_DATA_MUTATION","HOOK_WIRING"],"sourceEvidence":{"selectedFilesFullyRead":false,"corpusReceiptRef":null,"completenessClaimChanged":false}}
+{"schemaVersion":"cvf.taskGovernanceManifest.v1","taskId":"CVF-CONTINUITY-DISPATCH-O3-20261011","requestedProfile":"P3_ELEVATED","classification":{"taskKind":"PURE_LOCAL_IMPLEMENTATION","authorityImpact":"USES_EXISTING_OWNER","externalEffect":"LOCAL_REVERSIBLE","dataSensitivity":"PRIVATE_REPO","reversibility":"GIT_REVERSIBLE","sourceScale":"NAMED_FILES","delegation":"MULTI_ROLE_NO_COMMIT","novelty":"NEW_INTERFACE"},"pathFamilies":["docs/baselines/CVF_GC018_CONTINUITY_DISPATCH_O3_2026-10-11.md","docs/work_orders/CVF_AGENT_WORK_ORDER_CONTINUITY_DISPATCH_O3_2026-10-11.md","scripts/cvf_commit_tranche.py","scripts/test_cvf_commit_tranche.py","scripts/test_cvf_commit_tranche_dispatch.py","docs/reference/CVF_TRANCHE_COMMIT_CHOREOGRAPHY_STANDARD_2026-06-03.md","docs/reviews/CVF_CONTINUITY_DISPATCH_O3_WORKER_RETURN_2026-10-11.md","docs/reviews/evidence/continuity-dispatch-o3-worker-20261011.json","docs/reviews/CVF_CONTINUITY_DISPATCH_O3_COMPLETION_2026-10-11.md","docs/reviews/evidence/continuity-dispatch-o3-local-20261011.json","docs/reference/downstream_gate_profile/downstream_finding_intake_registry.json","AGENT_HANDOFF_V63_2026-09-18.md","CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json","CVF_SESSION/ACTIVE_SESSION_STATE.json","CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json","CVF_SESSION_MEMORY.md","CVF_SESSION/state/entries/nextAllowedMove.json","CVF_SESSION/state/entries/continuityDispatchO320261011.json"],"claims":["BOUNDED_OFFLINE_GIT_CONTROL_COMPOSITION_ONLY"],"requiredProof":["GIT_COMPOSITION_TESTS","CONTRACT_MATCH","RETURN_GATE","OBSERVATION_ACTION"],"operatorCheckpoints":[],"forbiddenEffects":["PROVIDER_CALL","NETWORK_WRITE","PUBLIC_WRITE","DEPLOYMENT","REAL_DATA_MUTATION","HOOK_WIRING"],"sourceEvidence":{"selectedFilesFullyRead":false,"corpusReceiptRef":null,"completenessClaimChanged":false}}
 ```
 
 ## Corpus Completeness And Report Integrity
@@ -445,7 +445,7 @@ DEFERRED_PRIVATE_ONLY
 | Session or invocation | continuity-dispatch-o3-packet-20261011 |
 | Working directory | repository root |
 | Command or tool surface | targeted sources; actual scaffold; exact two-file packet |
-| Target paths | `docs/baselines/CVF_GC018_CONTINUITY_DISPATCH_O3_2026-10-11.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_CONTINUITY_DISPATCH_O3_2026-10-11.md` |
+| Target paths | `docs/baselines/CVF_GC018_CONTINUITY_DISPATCH_O3_2026-10-11.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_CONTINUITY_DISPATCH_O3_2026-10-11.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Allowed scope source | operator foundation-first request and standing Luna/max worker grant |
 | Before status evidence | HEAD `4318ae2e7bed347ba32002a5531c9e3704240403`; clean worktree; empty staged set |
 | After status evidence | two packet files; implementation pending |
@@ -454,8 +454,8 @@ DEFERRED_PRIVATE_ONLY
 | Claim boundary | no implemented control or worker result yet |
 | Agent type | INTERNAL_AGENT |
 | Invocation ID | continuity-dispatch-o3-packet-20261011 |
-| Expected manifest | `docs/baselines/CVF_GC018_CONTINUITY_DISPATCH_O3_2026-10-11.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_CONTINUITY_DISPATCH_O3_2026-10-11.md` |
-| Actual changed set | `docs/baselines/CVF_GC018_CONTINUITY_DISPATCH_O3_2026-10-11.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_CONTINUITY_DISPATCH_O3_2026-10-11.md` |
+| Expected manifest | `docs/baselines/CVF_GC018_CONTINUITY_DISPATCH_O3_2026-10-11.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_CONTINUITY_DISPATCH_O3_2026-10-11.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Actual changed set | `docs/baselines/CVF_GC018_CONTINUITY_DISPATCH_O3_2026-10-11.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_CONTINUITY_DISPATCH_O3_2026-10-11.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |
 
@@ -532,3 +532,11 @@ Raw initial source identities, verified before edits. Authorized helper/test/sta
 
 Root-owned read-only Windows path-wildcard lookups and one guessed hook-source lookup failed before corrected exact/directory/config discovery. First authoring gate rejected dispatch_continuity surface without literal exact handoff marker and omitted dated-owner classification. Commit hook then rejected the minimal Vietnamese operator quote without its local encoding exception; the encoding owner permits evidence quotes and this exception is now explicit. Fixed packet declarations before release; no worker invocation or implementation yet. RULE_EXISTS under O1: source/literal application failures, no new foundation rule justified by these authoring mistakes. Ancillary inherited task prose/hash was corrected against actual O3 source before release. Failed helper/hook diagnostic logs retained; opaque helper failure required one named diagnostic rerun.
 
+
+## Local Release Range Diagnostic
+
+First final release used the combined packet/continuity range. DR01-07 passed, but task routing omitted three declared steward paths and packet author trace described only its two-file material range. Root corrected the routing family to all seven exact steward paths. Keep material and continuity trace scopes separate: final committed bound pre-dispatch uses the actual packet material SHA as its base and continuity HEAD as head; unchanged release evaluator independently proves the packet material commit. This is phase/range evidence discipline under existing owners, not a weakened guard or worker fault. First release FAIL retained; worker still not invoked.
+
+## Material Authority-Pin Repair Authorization
+
+Core Guard Self-Protection Authorization: current packet byte corrections require currentAuthority raw-pin refresh before material commit. Protected paths: `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`. Scope is matching currentAuthority hashes and canonical projections only, inside this corrected five-path material batch; no new dispatch/implementation grant. Operator authorization: foundation-first O3 and necessary private authority continuity. Rollback: restore matching packet/authority as one governed correction, keeping original failures. Handoff/next move actualSHA and all four release surfaces are synchronized afterward in the dedicated seven-path continuity commit. Material authoring trace is five paths; final bound release range is materialSHA..continuityHEAD.
