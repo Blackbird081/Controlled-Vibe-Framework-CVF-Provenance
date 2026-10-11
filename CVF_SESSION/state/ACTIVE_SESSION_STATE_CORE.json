@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_ORACLE_O6_DESIGN_2026-10-11.md",
     "workOrderSha256": "aa5be1970ed4cc481ef6f850f8f0268bb741849ab2e328b351f5b76a08cbd78b"
   },
-  "currentAuthoritySyncReason": "O6 closed as bounded documentary checklist after Local design review; helper deferred, global gate rejected; matching closed packet hashes. Actual-SHA terminal continuity follows material commit.",
+  "currentAuthoritySyncReason": "O6 design accepted at cc584e69fd4086407806ee9c20deaf1c753724d5; actual-SHA terminal continuity; manual checklist only, helper deferred/global rejected, no worker redispatch or successor. One Local material and one continuity commit; original worker return/evidence retained; gate diagnostics separate from worker result.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",

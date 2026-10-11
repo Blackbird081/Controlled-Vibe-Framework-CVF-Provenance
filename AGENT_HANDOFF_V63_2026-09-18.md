@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Current NCR Continuation
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `aa32f66620fed1eef871a5e9f64e3feb819d7ed2`. Batch ID: CVF-ORACLE-O6-DESIGN-20261011. O6 packet material: `f9b2b67f1a7683728f729ba77b269d69ae8bf0d5`; parent anchor for dedicated six-surface continuity rebind.
+Current HEAD recorded for this handoff: `cc584e69fd4086407806ee9c20deaf1c753724d5`. Batch ID: CVF-ORACLE-O6-DESIGN-20261011. Accepted design material anchor; original packet material f9b2b67f1a7683728f729ba77b269d69ae8bf0d5.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -10,24 +10,22 @@ Current continuation only. Root AGENTS.md and canonical routing owners retain fu
 Closed history is preserved byte-for-byte at `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V63_PRE_NCR_COMPACTION_2026-10-07.md` (SHA256 `54801fdcf14e9abe17592352ec3c69a0b0e855632991af0caacac7b65252ccba`); it is NOT_ACTIVE_AUTHORITY and not default startup reading.
 ## Scope / Target / Owner Boundary
 Operator2026-10-11: audit and choose; Local selects O6 design. Worker preference Haiku ex high, operator-reported; Local does not launch it.
-Role: Local INTERNAL_AGENT dispatcher/reviewer; phase: bounded design dispatch; decision owner=Local. Three worker outputs; no automatic successor.
-PROGRAM_ID=CVF-CORE; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-ORACLE-O6-DESIGN-20261011; WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_ORACLE_O6_DESIGN_2026-10-11.md. Operator-started shared-workspace worker Haiku ex high; O6 design only, three outputs,45-minute ceiling,WORKER_MUST_NOT_COMMIT; Local independent review. Packet material=f9b2b67f1a7683728f729ba77b269d69ae8bf0d5; no automatic successor. O3/S2-R2 evidence retained; scaffold design deferred pending pinned producer-to-consumer mismatch. Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11 parked; LHW24 retained. Provenance lane CLOSED at aa32f66620fed1eef871a5e9f64e3feb819d7ed2; O6 continuity rebound after DR-04/DR-05 worker block; manual restart only after fresh bound gates PASS.
+Role: Local INTERNAL_AGENT reviewer/closer; phase: bounded design closure; decision owner=Local. Worker returned; no redispatch or automatic successor.
+PROGRAM_ID=CVF-CORE; NEXT_ACTION_CLASS=LOCAL_DISPOSITION_ONLY; BATCH_ID=CVF-ORACLE-O6-DESIGN-20261011. STOP_SELECTED_OUTCOME: O6 CLOSED_PASS_BOUNDED_DESIGN_ONLY; completion=docs/reviews/CVF_ORACLE_O6_DESIGN_COMPLETION_2026-10-11.md; material=cc584e69fd4086407806ee9c20deaf1c753724d5. Manual P0-P7 checklist accepted; helper DEFERRED_WITH_REASON until recurrence or admitted negative-heavy reviewer demand; global gate REJECTED. No worker redispatch or automatic successor. Symbol-line MACHINE_CHECK_CANDIDATE confirmed/deferred; scaffold design still deferred pending pinned producer-to-consumer mismatch. Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11 parked; LHW24 retained.
 Remote tracking branch: `origin/main`. Exact remote SHA must be derived live from git when needed.
 External agent memory files: non-canonical convenience only.
 ## Startup Acknowledgment
-Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`;handoff=`AGENT_HANDOFF_V63_2026-09-18.md`;next=operator-started O6 design worker after bound release;role=Local INTERNAL_AGENT dispatcher/reviewer;phase=design dispatch;decision owner=Local;parked checkpoint=Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11.
+Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`;handoff=`AGENT_HANDOFF_V63_2026-09-18.md`;next=O6 closed, no successor;role=Local INTERNAL_AGENT reviewer/closer;phase=design closure;decision owner=Local;parked checkpoint=Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11.
 ## Current Mode
 `cvf_ncr_p10_closed_p11_parked`. P10 package remains `ACTIVE_PRODUCTION_RUNTIME`; P11 parked. Latest closed learning-history wave: `LHW24`.
 Current NIS-T1J is CLOSED_PASS_BOUNDED with no automatic successor; NCR consumer maintenance is separately operator-authorized.
 ## Current Authority
-Baseline: `docs/baselines/CVF_GC018_ORACLE_O6_DESIGN_2026-10-11.md`; SHA256 `f62fc2430e7e507fd1a8527104445368840261d89ccc13c3e131079a22139190`.
-Work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_ORACLE_O6_DESIGN_2026-10-11.md`; SHA256 `e65126e390e2b2e78a7350fcb51464c9170365efd50252736b1d47e75b5507ce`; DISPATCH_READY, final bound gate before manual worker start.
-O3 and original S2-R2 acceptance retained; no oracle implementation, scaffold redesign or parked effect.
+Baseline: `docs/baselines/CVF_GC018_ORACLE_O6_DESIGN_2026-10-11.md`; SHA256 `85c80033c3b16f01259a8f45cb69a5d01a32e37775449146741dcdbd3248a92d`.
+Work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_ORACLE_O6_DESIGN_2026-10-11.md`; SHA256 `aa5be1970ed4cc481ef6f850f8f0268bb741849ab2e328b351f5b76a08cbd78b`; CLOSED_PASS_BOUNDED, no worker start.
+O6 manual design accepted at cc584e69fd4086407806ee9c20deaf1c753724d5; completion docs/reviews/CVF_ORACLE_O6_DESIGN_COMPLETION_2026-10-11.md; one Local contract clarification, no case execution. Helper deferred, global gate rejected; symbol-line candidate confirmed/deferred. O3/S2-R2 acceptance and parked effects retained.
 ## O6 Release Rebind After Provenance Sync (2026-10-11)
-Provenance CLOSED at aa32f66620fed1eef871a5e9f64e3feb819d7ed2: GitHub/local matched, 0/0, clean, URL locked. No concurrent push lane.
-Worker BLOCKED before outputs; C:/Users/DELL/AppData/Local/Temp/o6_preimpl.log confirms DR-04/DR-05. Root replaced the O6 marker and diverged continuity; no worker defect. Source evidence reused; no oracle replay.
-Repair: six paths atomically; parent/O6 marker, hashes retained. Both bound gates required before restart.
-Learning: ORCHESTRATOR_PACKET_GAP; GOVERNANCE_CONTROL_PLANE; RULE_EXISTS (DR-04/DR-05). Future active-O6 continuity edits preserve binding and revalidate release; no checker change.
+Historical root marker replacement at aa32f666 caused worker DR-04/DR-05 block; six-path rebind bd13e1a80 restored release. Log C:/Users/DELL/AppData/Local/Temp/o6_preimpl.log retained; no worker defect or oracle replay. Provenance lane closed, push URL locked.
+Learning: ORCHESTRATOR_PACKET_GAP; GOVERNANCE_CONTROL_PLANE; RULE_EXISTS. Future active dispatch continuity preserves packet binding and revalidates release; no checker change.
 
 ## Publication And Packet Update (2026-10-10)
 Web review reconciled at `9c6186c5f`: NO_MATERIAL_BLOCKER for R2; 01/04/06 enrich first manual task, 02/03/07 owner pointers, 05 deferred API cash condition. Local disposition: `docs/reviews/CVF_MODEL_SELECTION_WEB_REVIEW_LOCAL_DISPOSITION_2026-10-10.md`; raw return in its evidence folder. Public context pin `e9ddcbcdcac2a9df520f5eb0761dbdb609b9deba`. Historical Web-pin stage; S3/S4 now bounded manual closures, Expense/provider parked.
@@ -130,25 +128,25 @@ The historic provider/live parked line applies to those stopped lanes; it does n
 Q001/Q004 actual-data source/writer,custody,retention/RPO/RTO/cost checkpoints are action-specific; do not require a user-supplied ledger copy for unrelated fresh isolated development.
 NCR send/B2 STOP and S05/C1 remain; IAB unavailable; repo Playwright Chromium present; vision/full P04/full release remain unproved. No autonomous P11/public/deploy activation.
 ## Core Guard Self-Protection Authorization
-Authorized guard-maintenance scope: O6 six-surface continuity repair for DR-04/DR-05 only; unchanged packet authority, hashes and material. Protected paths: `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`. Operator authorization: admitted O6 dispatch and necessary Local correction of the worker-reported protected-path blocker. Rollback boundary: restore matching O6 continuity; preserve worker blocked evidence and all parked effects. Generated aggregates regenerated only.
+Authorized guard-maintenance scope: O6 six-surface terminal closure continuity; closed packet hashes and accepted material retained. Protected paths: `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`. Operator authorization: admitted O6 Local review/closure and necessary private terminal continuity. Rollback boundary: restore matching O6 continuity; preserve worker blocked evidence and all parked effects. Generated aggregates regenerated only.
 ## Agent Operation Trace Block
 
 | Field | Evidence |
 |---|---|
-| Actor | Local O6 dispatcher/session-sync steward |
+| Actor | Local O6 reviewer/closer/session-sync steward |
 | Provider or surface | private shared workspace |
-| Session or invocation | o6-release-continuity-rebind-20261011 |
+| Session or invocation | o6-design-terminal-continuity-20261011 |
 | Working directory | repository root |
 | Command or tool surface | canonical generator; atomic commit; bound gates |
 | Target paths | six continuity paths listed in the manifest below |
 | Allowed scope source | O6 baseline dedicated continuity exact manifest; operator worker-blocker intake |
-| Before status evidence | aa32f66620fed1eef871a5e9f64e3feb819d7ed2; clean, worker outputs absent |
-| After status evidence | six-surface rebind; bound gates required after commit |
-| Diff evidence | exact six continuity paths; no packet or implementation edits |
+| Before status evidence | cc584e69fd4086407806ee9c20deaf1c753724d5; clean material commit |
+| After status evidence | six-surface terminal next move; split closure verification follows |
+| Diff evidence | exact six continuity paths; material unchanged |
 | Approval boundary | O6 continuity repair only |
 | Claim boundary | documentary release; no oracle execution or accepted worker output |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | o6-release-continuity-rebind-20261011 |
+| Invocation ID | o6-design-terminal-continuity-20261011 |
 | Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Manifest delta | MATCH |
