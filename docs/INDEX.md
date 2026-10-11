@@ -32,6 +32,7 @@ Trạng thái: Chỉ mục lưu trữ chính thức cho `docs/`.
   Default memory role: `SUMMARY_RECORD`
 - `roadmaps/` — roadmap, remediation plan, stabilization plan, rollout plan
   Default memory role: `SUMMARY_RECORD`
+  Management front door: [Roadmap Management Index](roadmaps/README.md).
 - `reviews/` — review archive theo scope/module
   Default memory role: `FULL_RECORD`
 - `work_orders/` — agent-facing execution orders issued after final roadmaps
