@@ -91,7 +91,7 @@ any separate provider calls a worker might request during its task.
 | S0 Foundation design | DRAFT_AUTHORED | doctrine proposal, field/join contract, chain and negative matrix | source/shape gates plus design review; no runtime completion |
 | S1 Design review and owner disposition | R2_DESIGN_CONCURRENCE_RECORDED | F1-F11 confirmed with R1-B1 corrected in one R2 delta | same reviewer granted conditional CONCUR_WITH_R2; Local hash/paragraph verification satisfies that condition; no second review |
 | S3 One bounded real task loop | CLOSED_PASS_BOUNDED | manual B work-order rationale -> operator-started execution -> independent Local review -> evidence disposition | S3-R1 R3 documentation outcome and Local completion; actual model ID runtime-context reported, Max/Max operator-reported, snapshot/effort/bill unknown; no benchmark-only task |
-| S4 Later decision consumption | PARKED_DEMAND_GATED | later B task consumes observation or admitted control; reviewer checks action/result | local evidence-use label or applicable typed PLL proof; reasoned no-change allowed |
+| S4 Later decision consumption | CLOSED_PASS_BOUNDED | actual S4-R1 guide task consumes S3 packet-completeness observation | `docs/reviews/CVF_MODEL_SELECTION_S4_R1_COMPLETION_2026-10-11.md`; independent action/result ACTION_VERIFIED, PARTIAL mechanism-only applicability; two worker self-repairs and one Local repair retained |
 | S2 Contract implementation if selected | NOT_AUTHORIZED | strict schema/validator only if S3/S4 reveal value beyond manual records | fresh baseline/order; exact owner/fields; no arbitrary minimum task count or automatic activation |
 | S5 Optional runtime automation | PARKED_DEMAND_GATED | integrate only if bounded loop shows value and demand exists | separate authority and current real runtime/provider proof, rollback and holds |
 
@@ -101,9 +101,7 @@ Phase IDs stay stable for review traceability; proposed order is S1 -> S3 -> S4 
 S2 only on demonstrated need -> S5 only on separate demand/authority. S3-R1 is
 independently Local-accepted at `docs/reviews/CVF_MODEL_SELECTION_S3_R1_COMPLETION_2026-10-10.md`
 for its documentation outcome. The worker's initial gate failures and two self-repair
-rounds remain attributed; seat identity is partial and cost is unknown. S4 remains
-demand-gated. One actual loop establishes bounded use, never comparative quality or
-cost effectiveness.
+rounds remain attributed; seat identity is partial and cost is unknown. S4-R1 now has independent bounded action/result verification in the Local completion. Any further task remains demand-gated. Two useful documentation loops do not establish comparative model quality or cost effectiveness. The prior S3 failed mixed-range receipt is retained/adjudicated in the S4 packet; no historical full-range PASS is promoted.
 
 ## Acceptance Criteria
 
@@ -149,7 +147,7 @@ docs/reviews/evidence/model-selection-design-review-20261010/ with intake hashes
 | Proposed responsibilities map to existing owners | STATIC_SOURCE_VERIFIED | original review, same-reviewer confirmation and Local R1-B1 paragraph check | PROVEN at bounded design/source level only; no runtime enforcement |
 | Strict record joins reject bad identity/units/drift | LOCAL_DETERMINISTIC_EXECUTION | proposed negative matrix only | MISSING |
 | Orchestrator selects and actual worker executes selected configuration | CURRENT_RUNTIME_INVOCATION; REAL_PROVIDER_BOUNDED where provider is in chain | six prior worker outcomes without this decision chain | MISSING |
-| Evidence/control is used in a later selection | actual later decision/action/review; typed application only for parent controls | existing PLL control; no selection-loop receipt | MISSING |
+| Evidence/control is used in a later selection | actual later decision/action/review; typed application only for parent controls | `docs/reviews/CVF_MODEL_SELECTION_S4_R1_COMPLETION_2026-10-11.md`; LOCAL_OBSERVATION packet-completeness action/result verified | PROVEN_BOUNDED_MANUAL; no typed parent control or measured effectiveness |
 | Lower accepted-delivery cost | comparable complete measured stage receipts | bills/reviewer cost unknown | MISSING |
 
 Proof owner: docs/reference/system_chain/CVF_SYSTEM_CHAIN_LIVE_PROOF_AND_LEARNING_LOOP_STANDARD.md.
@@ -166,17 +164,7 @@ invoices. Do not infer superiority from assertion counts or these six acceptance
 
 ## Receiving-Agent Continuation
 
-Design agreement is recorded through the reviewer's conditional R2 concurrence.
-No further review round is needed for R1-B1. The next separately scoped action is
-the operator-sequenced public-safe Web context preparation using agreed R2 and the
-existing export boundaries. Read preserved returns only for a named gap; do not
-repeat valid source/gate evidence without expected information gain. Do not ask the Non coder to
-pick a technical model. Do not open Expense or a model trial. A later implementation
-proposal must specify exact owner paths, fresh baseline/order, tool/transfer feasibility,
-negative proof and learning obligations before asking for any required effect approval.
-Operator sequencing: converge with the current independent reviewer first, then
-prepare one public-safe GitHub/External Agent Read refresh for Web review. Neither
-publication nor Web packet refresh has occurred in this reconciliation.
+Consume `docs/reviews/CVF_MODEL_SELECTION_S4_R1_COMPLETION_2026-10-11.md` and `docs/reviews/evidence/model-selection-s4-r1-local-review-20261011.json` for the bounded S4-R1 result. The accepted guide is a manual continuation aid under the R3 proposals; it is not an executable selector. Local owns final disposition. Requested Luna/xhigh, first FAILs, two worker self-repairs, one Local repair and null identity/usage remain distinct evidence. Do not require a Non coder model picker. No further task is automatically opened: S2 needs a demonstrated strict-schema value gap with fresh packet; S5 needs separate real runtime demand and authority. Expense and provider/public/deploy effects remain parked. Source S3 observation is PARTIAL packet-mechanism evidence with its historical failed-range limitation; no global ledger or frozen review is rewritten.
 
 ## Checker Source Read-Ahead Block
 
@@ -199,7 +187,7 @@ Named responsibilities and unresolved proof are above.
 Expected Result / Prediction: a bounded evidence chain can support orchestrator-owned
 choice and observable learning while keeping technical choices away from the Non coder.
 Evidence Comparison: existing owners and preliminary observations support a design;
-no prospective selection-to-later-consumption invocation has occurred.
+the admitted S4-R1 manual guide task now has independent bounded action/result verification; no automated selection invocation is proved.
 Contradiction Or Gap Disposition: runtime admission, identity capture, measured cost
 and learning effectiveness remain unproven and require separate scoped work.
 Claim Update: DESIGN_DRAFT; no accepted implementation, operating selector or savings.
@@ -291,3 +279,7 @@ Design package only. Conditional R2 concurrence from the existing reviewer is re
 Current operation trace is in the Local reconciliation review. No commit,
 worker dispatch, provider call, runtime selection, measured quality
 uplift, cost saving, public publication, deployment or production readiness claim.
+
+## S4-R1 Local Disposition
+
+`docs/reviews/CVF_MODEL_SELECTION_S4_R1_COMPLETION_2026-10-11.md` accepts only the manual guide and reviewer-checked packet-completeness action/result. Four static worker-gate runs occur inside one requested Luna/xhigh invocation; hidden runtime identity and billing remain unknown. This roadmap remains DESIGN_DRAFT overall; S2/S5 are unopened. Prior historical operation/claim blocks above retain their original design-batch scope.

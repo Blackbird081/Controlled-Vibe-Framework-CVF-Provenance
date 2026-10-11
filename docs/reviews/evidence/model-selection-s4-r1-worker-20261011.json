@@ -1,0 +1,422 @@
+{
+  "schemaVersion": "cvf.modelSelectionS4R1WorkerEvidence@1.0.0",
+  "batchId": "CVF-MODEL-SELECTION-S4-R1-20261011",
+  "status": "COMPLETE_PENDING_REVIEW",
+  "executionBaseHead": "d35e96b9456d78f4ebcb8aa9d7a91584c501af3f",
+  "workerRole": "INTERNAL_AGENT",
+  "phase": "internal documentation execution",
+  "decisionOwner": "LOCAL",
+  "scope": "exactly three private documentation/evidence paths; no commit",
+  "requestedConfiguration": {
+    "model": "gpt-6-luna",
+    "effort": "xhigh",
+    "requestSource": "S4-R1 work order and Local dispatch"
+  },
+  "observedConfiguration": {
+    "runtimeModelIdentity": null,
+    "immutableSnapshot": null,
+    "providerProduct": null,
+    "channel": null,
+    "observedEffort": null,
+    "harnessVersion": null,
+    "reason": "No immutable runtime identity or configuration receipt is exposed to this shared-workspace worker. Requested settings are not runtime observation."
+  },
+  "selection": {
+    "branch": "EXPLICIT_OPERATOR_ASSIGNMENT",
+    "disposition": "SELECT",
+    "operatorAssignmentDisposition": "HONORED_WITH_EVIDENCE_GAP",
+    "qualityDisposition": "INSUFFICIENT",
+    "qualityEvidenceGap": "No prior Luna trial supports a task-specific quality upgrade.",
+    "admissionBoundary": "Selection does not waive authority, policy, method, context, budget, tool, availability, or effect checks."
+  },
+  "sourcePins": [
+    {
+      "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_SELECTION_S4_R1_MANUAL_WORKED_EXAMPLE_2026-10-11.md",
+      "sha256": "d33284509af2456fc2402e4cf21868bd45bbde16c1523940f955986a8d69806b",
+      "readDepth": "full"
+    },
+    {
+      "path": "docs/baselines/CVF_GC018_MODEL_SELECTION_S4_R1_MANUAL_WORKED_EXAMPLE_2026-10-11.md",
+      "sha256": "daba5c16243353284151c61159a8eeebcbbe16d4e30f4f2ff33c0a7a876e6fc8",
+      "readDepth": "full"
+    },
+    {
+      "path": "docs/reference/CVF_ORCHESTRATOR_MODEL_SELECTION_DOCTRINE_DESIGN_2026-10-10.md",
+      "sha256": "9eb0b9cb8020113f1db7dbd41923b4f06ac57d884d5eade7ee31156395504082",
+      "sections": [
+        "Selection Surfaces And Delegated Choice",
+        "Proposed Doctrine Principles",
+        "Decision Procedure And Uncertainty",
+        "Cost And Evidence Discipline",
+        "Evidence Refresh And Learning"
+      ]
+    },
+    {
+      "path": "docs/reference/CVF_ORCHESTRATOR_MODEL_SELECTION_CONTRACT_DESIGN_2026-10-10.md",
+      "sha256": "7e090f5249d7e61a939ca1a0dadc65e10555cc5b04f75a053c1c64e190611a09",
+      "sections": [
+        "Record Families And Required Joins",
+        "Identity And Evidence Semantics",
+        "Decision And Cost Semantics",
+        "Freeze, Drift And Transition Contract",
+        "Prospective Acceptance And Negative Matrix"
+      ],
+      "canonicalCandidateRecord": "CandidateConfiguration"
+    },
+    {
+      "path": "docs/roadmaps/CVF_ORCHESTRATOR_MODEL_SELECTION_SYSTEM_CHAIN_ROADMAP_2026-10-10.md",
+      "sha256": "2583aa5f81394cc9353f078c51053d00ca3b102c2f133f6a6a5ebfa162ba7e14",
+      "sections": [
+        "Work Plan And Exit Criteria",
+        "S4"
+      ]
+    },
+    {
+      "path": "docs/reviews/CVF_MODEL_SELECTION_S3_R1_COMPLETION_2026-10-10.md",
+      "sha256": "b02b0077a97d7808a433a6ad2d6dedbb1a3ab50cf4362c4627d7888d3aa11a9a",
+      "sourceCommit": "011c9cd1d7a3d3ffbd6b8e070d8aab37f6774a40",
+      "sections": [
+        "Findings / Position",
+        "Risk / Corrective Action"
+      ]
+    },
+    {
+      "path": "docs/reference/CVF_AGENT_DELEGATION_AND_SUBAGENT_BOUNDARY_STANDARD_2026-05-19.md",
+      "sha256": "5a5356b1afe32dbd1ce1c109ad0fc04bbc9c54cafd8f05a3f081d0c5dcb07f52",
+      "sections": [
+        "Protocol / Contract / Requirements",
+        "Rule",
+        "Provider Execution Authority"
+      ]
+    },
+    {
+      "path": "docs/reference/project_role_provider_delegation/README.md",
+      "sha256": "d8b4ff00d6d1793dd924105152ec40905b4780b3ba22b342570cffee07ca2755",
+      "sections": [
+        "Role And Delegation Map",
+        "Provider Lane Selection Boundary",
+        "Cost And Quota Ceiling"
+      ]
+    }
+  ],
+  "preDispatchGate": {
+    "disposition": "PASS_REPORTED_BY_LOCAL",
+    "releaseHead": "d35e96b9456d78f4ebcb8aa9d7a91584c501af3f",
+    "workerRecreated": false,
+    "source": "Local dispatcher instruction at worker handoff"
+  },
+  "preImplementationGate": {
+    "disposition": "PASS",
+    "command": "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base d35e96b9456d78f4ebcb8aa9d7a91584c501af3f --head HEAD --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_SELECTION_S4_R1_MANUAL_WORKED_EXAMPLE_2026-10-11.md",
+    "base": "d35e96b9456d78f4ebcb8aa9d7a91584c501af3f",
+    "head": "d35e96b9456d78f4ebcb8aa9d7a91584c501af3f",
+    "resultCount": 88,
+    "elapsedSeconds": 9.25,
+    "receipt": ".cvf/runtime/autorun-receipts/pre-implementation.json",
+    "startedAtUtc": "2026-10-11T02:45:12Z",
+    "completedBeforeFirstEdit": true
+  },
+  "staticCases": [
+    {
+      "caseId": "explicit_quality_gap",
+      "execution": "ACTUAL",
+      "selection": "SELECT; HONORED_WITH_EVIDENCE_GAP",
+      "admission": "separate task admission passed for this bounded private documentation task",
+      "evidence": "predictive quality history insufficient; runtime identity and snapshot unknown",
+      "acceptance": "worker artifact is pending independent Local review",
+      "guideAnchor": "Actual Worked Example: Explicit Assignment"
+    },
+    {
+      "caseId": "delegated_insufficient_evidence",
+      "execution": "HYPOTHETICAL_UNEXECUTED",
+      "selection": "HOLD_EVIDENCE",
+      "admission": "do not dispatch absent a supported eligible alternative or resolved evidence",
+      "evidence": "missing quality evidence remains missing",
+      "acceptance": "no execution or artifact to accept",
+      "guideAnchor": "Static Counterfactual Cases, Case 2"
+    },
+    {
+      "caseId": "missing_context_proof",
+      "execution": "HYPOTHETICAL_UNEXECUTED",
+      "selection": "explicit assignment may remain selected",
+      "admission": "hold until context proof owner resolves the mandatory proof",
+      "evidence": "quality evidence-gap label is not context PASS",
+      "acceptance": "no execution or artifact acceptance",
+      "guideAnchor": "Static Counterfactual Cases, Case 3"
+    },
+    {
+      "caseId": "requested_observed_identity_mismatch",
+      "execution": "HYPOTHETICAL_UNEXECUTED",
+      "selection": "preserve original decision",
+      "admission": "hold dependent action under the existing admission owner",
+      "evidence": "record requested and observed identity separately as a deviation",
+      "acceptance": "do not promote output to the originally selected configuration",
+      "guideAnchor": "Static Counterfactual Cases, Case 4"
+    },
+    {
+      "caseId": "repaired_artifact",
+      "execution": "HYPOTHETICAL_UNEXECUTED",
+      "selection": "original selection remains unchanged",
+      "admission": "repair only within granted scope",
+      "evidence": "preserve initial return, first disposition, repair attribution, and final bytes",
+      "acceptance": "reviewer may accept final artifact without upgrading first-return quality",
+      "guideAnchor": "Static Counterfactual Cases, Case 5"
+    },
+    {
+      "caseId": "retracted_source",
+      "execution": "HYPOTHETICAL_UNEXECUTED",
+      "selection": "do not base a dependent decision on stale evidence",
+      "admission": "hold dependent action or narrow source to historical context",
+      "evidence": "retain original pin and present retraction/applicability check",
+      "acceptance": "no ACTION_VERIFIED or NO_CHANGE_REASONED claim on retracted source",
+      "guideAnchor": "Static Counterfactual Cases, Case 6"
+    },
+    {
+      "caseId": "unavailable_assigned_model",
+      "execution": "HYPOTHETICAL_UNEXECUTED",
+      "selection": "record conflict; substitute only if already authorized",
+      "admission": "hold without silent fallback",
+      "evidence": "availability belongs to current admission check",
+      "acceptance": "no result until a permitted configuration is admitted",
+      "guideAnchor": "Static Counterfactual Cases, Case 7"
+    },
+    {
+      "caseId": "unknown_money",
+      "execution": "HYPOTHETICAL_UNEXECUTED",
+      "selection": "do not rank on unknown money",
+      "admission": "compare a hard cap only in a supported matching unit/window",
+      "evidence": "unknown values remain null; tokens, quota, worker time, human time and elapsed time remain separate",
+      "acceptance": "no bill, savings, or cost-effectiveness claim",
+      "guideAnchor": "Static Counterfactual Cases, Case 8"
+    }
+  ],
+  "learningConsumption": {
+    "branch": "LOCAL_OBSERVATION",
+    "source": "docs/reviews/CVF_MODEL_SELECTION_S3_R1_COMPLETION_2026-10-10.md",
+    "sourceSha256": "b02b0077a97d7808a433a6ad2d6dedbb1a3ab50cf4362c4627d7888d3aa11a9a",
+    "sourceCommit": "011c9cd1d7a3d3ffbd6b8e070d8aab37f6774a40",
+    "currentFreshnessDisposition": "CURRENT_AT_EXECUTION_HEAD",
+    "presentSourceDisposition": "LOCAL_ACCEPTED_S3_DOCUMENTATION_OUTCOME; no retraction/supersession appears in the pinned review or current roadmap references",
+    "applicabilityDisposition": "PARTIAL: packet completeness mechanism only; no model-quality/runtime transfer",
+    "recordedEvidenceUse": "CITED",
+    "actualTaskAction": "guide and return expose the full worker-return section list and packet-completeness follow-through",
+    "independentActionResultVerification": "PENDING_LOCAL_REVIEW",
+    "verificationRef": null,
+    "parentControlDisposition": "NOT_CLAIMED",
+    "pllDeliveryOrApplicationClaim": false
+  },
+  "workerReturnGate": {
+    "requiredCommand": "python governance/compat/run_worker_return_fast_gate.py --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_SELECTION_S4_R1_MANUAL_WORKED_EXAMPLE_2026-10-11.md",
+    "individualCheckerSubstitution": "FORBIDDEN",
+    "attempts": [
+      {
+        "attemptNumber": 1,
+        "disposition": "FAIL",
+        "command": "python governance/compat/run_worker_return_fast_gate.py --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_SELECTION_S4_R1_MANUAL_WORKED_EXAMPLE_2026-10-11.md",
+        "durationSeconds": 6.02,
+        "timestampUtc": null,
+        "timestampReason": "Exact invocation timestamp was not persisted; captured in the worker tool transcript at approximately 2026-10-11T02:51:53Z.",
+        "durableLogPath": null,
+        "durableLogReason": "Initial console output was not redirected to a file; the defect groups and actual FAIL disposition are preserved here from the execution transcript.",
+        "failureGroups": [
+          {
+            "group": "semantic convergence",
+            "detail": "Two active SCEC blocks; blocker chain did not reconcile prior with resolved/retained; old blocker disappeared; claim proof class was invalid; resolution evidence was unbound/extraneous."
+          },
+          {
+            "group": "guide structural completeness",
+            "detail": "Missing claim/final/verification boundary and required review section headings Scope / Methodology, Findings / Position, Risk / Corrective Action, and Decision / Disposition."
+          },
+          {
+            "group": "checker read-ahead purpose",
+            "detail": "gateRunPurpose did not explicitly describe confirmation/evidence rather than discovery."
+          },
+          {
+            "group": "worker experience retrospective",
+            "detail": "Unsupported frictionType and preventiveControlCandidate enum values."
+          },
+          {
+            "group": "review cost telemetry",
+            "detail": "tokenOrQuotaUsage and terminalReadinessVerdict used invalid dash-style sentinels instead of required tokens."
+          },
+          {
+            "group": "agent operation trace",
+            "detail": "Expected manifest did not expose three parseable repository-relative paths; actual set and manifest delta were pending."
+          },
+          {
+            "group": "finding-to-governance disposition",
+            "detail": "Missing allowed disposition token and explicit runtime/provider/cost N/A lane; FIRST_OCCURRENCE lacked required prior-finding and operator/successor N/A dispositions."
+          }
+        ]
+      },
+      {
+        "attemptNumber": 2,
+        "disposition": "FAIL",
+        "command": "python governance/compat/run_worker_return_fast_gate.py --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_SELECTION_S4_R1_MANUAL_WORKED_EXAMPLE_2026-10-11.md",
+        "durationSeconds": 8.03,
+        "timestampUtc": null,
+        "timestampReason": "Exact invocation timestamp was not separately captured; output was captured on 2026-10-11T02:58:21Z.",
+        "durableLogPath": ".cvf/runtime/model-selection-s4-r1-20261011/worker-return-fast-gate-attempt-2.log",
+        "reviewerFastDisposition": "FAIL: one review-cost-control violation; all other required components passed.",
+        "failureGroups": [
+          {
+            "group": "review cost telemetry",
+            "detail": "Blocked preparatory draft requires productionBindingEvidence: PENDING_BEFORE_READY; it had NOT_APPLICABLE_WITH_REASON."
+          }
+        ],
+        "logDisposition": "Full command output captured to the stated ignored runtime log."
+      },
+      {
+        "attemptNumber": 3,
+        "disposition": "PASS",
+        "command": "python governance/compat/run_worker_return_fast_gate.py --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_SELECTION_S4_R1_MANUAL_WORKED_EXAMPLE_2026-10-11.md",
+        "durationSeconds": 8.71,
+        "timestampUtc": null,
+        "timestampReason": "Exact invocation start time not separately captured; completion output was observed by the worker at 2026-10-11T02:59:25Z.",
+        "durableLogPath": ".cvf/runtime/model-selection-s4-r1-20261011/worker-return-fast-gate-attempt-3.log",
+        "reviewerFastDisposition": "PASS: all 70 checks passed.",
+        "complianceLine": "COMPLIANT: worker-return fast gate passed in 8.71s.",
+        "runTargetState": "temporary preparatory BLOCKED_WITH_REASON draft before final-status edits"
+      }
+    ],
+    "firstActualGateDisposition": "FAIL",
+    "finalDisposition": "PASS_ON_PREPARATORY_DRAFT; FINAL_BYTE_RESULT_IN_DURABLE_LOG",
+    "reason": "Attempt 3 passed on the preparatory blocked draft; after final-status/evidence edits, final-byte attempt 4 is captured separately at finalVerificationLogPath.",
+    "finalVerificationLogPath": ".cvf/runtime/model-selection-s4-r1-20261011/worker-return-fast-gate-final.log",
+    "completedAttemptCountBeforeFinalByteRun": 3,
+    "repairRoundCount": 2
+  },
+  "attempt": {
+    "dispatchStartLowerBoundUtc": "2026-10-11T02:43:12Z",
+    "firstReadAtUtc": null,
+    "firstReadTimeReason": "Exact first-read timestamp was not captured; 2026-10-11T02:43:12Z is Local dispatch-side lower-bound assistance, not first-read telemetry.",
+    "firstObservedWorkerCheckpointUtc": "2026-10-11T02:45:05Z",
+    "preImplementationGateStartedAtUtc": "2026-10-11T02:45:12Z",
+    "endTimeUtc": null,
+    "elapsedFromDispatchLowerBoundSeconds": 1045,
+    "capMinutes": 45,
+    "capDisposition": "WITHIN_45_MINUTE_CAP_AT_ARTIFACT_FREEZE; final-byte fast gate follows without file edits",
+    "nativeInternalAgentInvocations": 1,
+    "externalAgentInvocations": 0,
+    "nestedWorkerInvocations": 0,
+    "directProviderApiCalls": 0,
+    "firstActualGateObservedAtUtcApprox": "2026-10-11T02:51:53Z",
+    "firstActualGateDurationSeconds": 6.02,
+    "repairRoundsSoFar": 2,
+    "currentWorkerCheckpointUtc": "2026-10-11T03:00:37Z",
+    "secondActualGateObservedAtUtc": "2026-10-11T02:58:21Z",
+    "artifactsFrozenAtUtc": "2026-10-11T03:00:37Z",
+    "finalGateOutputPath": ".cvf/runtime/model-selection-s4-r1-20261011/worker-return-fast-gate-final.log",
+    "capturedRemainingWorkInterval": {
+      "capturedAtUtc": "2026-10-11T03:00:37Z",
+      "elapsedFromDispatchLowerBoundSeconds": 1045,
+      "remainingTo45MinuteCapSeconds": 1655,
+      "remainingTo45MinuteCapMinutes": "27m35s at artifact freeze",
+      "interpretation": "Conservative budget remainder from Local dispatch-side lower bound; not exact first-read telemetry or a model runtime measurement."
+    },
+    "remainingTo45MinuteCapSeconds": 1655,
+    "finalRunCountBeforeFinalByteRun": 3
+  },
+  "unitSafeCost": {
+    "money": null,
+    "currency": null,
+    "tokens": null,
+    "quota": null,
+    "subscriptionAllocation": null,
+    "workerTime": null,
+    "humanTime": null,
+    "elapsed": null,
+    "unknownReason": "No unit-safe billing or usage meter is exposed; attempt elapsed time from the dispatch-side lower bound is recorded separately."
+  },
+  "repairAndHelpAttribution": [
+    {
+      "actor": "Local dispatcher/reviewer",
+      "type": "source terminology assistance",
+      "detail": "Corrected the R3 record-family name from the work-order shorthand ConfigurationRef to canonical CandidateConfiguration before guide drafting; no file mutation by Local in the worker lane."
+    },
+    {
+      "actor": "Local dispatcher",
+      "type": "time-bound assistance",
+      "detail": "Supplied 2026-10-11T02:43:12Z as a dispatch-side lower bound because exact first-read time was not captured."
+    }
+  ],
+  "outputs": [
+    {
+      "path": "docs/guides/CVF_MODEL_SELECTION_MANUAL_AGENT_SEAT_WORKED_EXAMPLE_2026-10-11.md",
+      "sha256": "344199fff3ea91e05bbc1578003f771ce37d9eddff57ce9bd981ee98791d2b67",
+      "sha256Measured": true
+    },
+    {
+      "path": "docs/reviews/CVF_MODEL_SELECTION_S4_R1_WORKER_RETURN_2026-10-11.md",
+      "sha256": "41297d82bcdaab39c602621ad4dcbca50ebe45061f932b2e731f3d2818bc9253",
+      "sha256Measured": true
+    },
+    {
+      "path": "docs/reviews/evidence/model-selection-s4-r1-worker-20261011.json",
+      "sha256": null,
+      "sha256Measured": false,
+      "selfHashOmittedReason": "Avoid impossible self-referential evidence-file hash."
+    }
+  ],
+  "expectedOutputPaths": [
+    "docs/guides/CVF_MODEL_SELECTION_MANUAL_AGENT_SEAT_WORKED_EXAMPLE_2026-10-11.md",
+    "docs/reviews/CVF_MODEL_SELECTION_S4_R1_WORKER_RETURN_2026-10-11.md",
+    "docs/reviews/evidence/model-selection-s4-r1-worker-20261011.json"
+  ],
+  "actualOutputPaths": [
+    "docs/guides/CVF_MODEL_SELECTION_MANUAL_AGENT_SEAT_WORKED_EXAMPLE_2026-10-11.md",
+    "docs/reviews/CVF_MODEL_SELECTION_S4_R1_WORKER_RETURN_2026-10-11.md",
+    "docs/reviews/evidence/model-selection-s4-r1-worker-20261011.json"
+  ],
+  "manifestDelta": "MATCH",
+  "firstActualGateFailure": {
+    "attemptNumber": 1,
+    "disposition": "FAIL",
+    "durationSeconds": 6.02,
+    "timestampUtc": null,
+    "timestampReason": "Exact time not persisted; approximate observation from tool transcript: 2026-10-11T02:51:53Z.",
+    "durableLogPath": null,
+    "failureGroupCount": 7,
+    "source": "Actual required worker-return fast-gate execution, reported in the worker tool transcript."
+  },
+  "postGateMutationDisposition": "Final-status/evidence finalization occurred after attempt 3 PASS; final-byte attempt 4 is required and uses the stated durable log path.",
+  "repairHistory": [
+    {
+      "round": 1,
+      "scope": "exactly the three authorized worker outputs",
+      "changes": [
+        "deduplicated SCEC block and corrected initial blocker/claim chain",
+        "added required guide structural review/claim boundary sections",
+        "clarified gate purpose as confirmation/evidence",
+        "replaced unsupported retrospective enums",
+        "corrected review-cost sentinels",
+        "listed exact manifest paths and reconciled actual set",
+        "added allowed N/A learning dispositions and FIRST_OCCURRENCE evidence"
+      ],
+      "sourceAuthorityChanges": 0,
+      "checkerOrStandardChanges": 0,
+      "localAssistance": [
+        "canonical contract record family CandidateConfiguration terminology; dispatch-side 2026-10-11T02:43:12Z lower-bound timestamp"
+      ]
+    },
+    {
+      "round": 2,
+      "scope": "one field in the worker return only",
+      "triggeringGateAttempt": 2,
+      "change": "changed productionBindingEvidence to PENDING_BEFORE_READY as required for the temporary blocked draft",
+      "closeabilityRecheck": "PASS, zero violations, immediately before this repair",
+      "sourceAuthorityChanges": 0,
+      "checkerOrStandardChanges": 0
+    }
+  ],
+  "secondActualGateFailure": {
+    "attemptNumber": 2,
+    "disposition": "FAIL",
+    "durationSeconds": 8.03,
+    "timestampUtc": null,
+    "timestampReason": "Exact invocation timestamp not separately captured; completion output captured at 2026-10-11T02:58:21Z.",
+    "durableLogPath": ".cvf/runtime/model-selection-s4-r1-20261011/worker-return-fast-gate-attempt-2.log",
+    "failureGroupCount": 1,
+    "detail": "Review-cost control required productionBindingEvidence: PENDING_BEFORE_READY for a blocked preparatory draft."
+  }
+}

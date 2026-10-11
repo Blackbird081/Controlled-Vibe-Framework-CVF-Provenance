@@ -11,7 +11,7 @@
     "baselinePath": "docs/baselines/CVF_GC018_MODEL_SELECTION_S4_R1_MANUAL_WORKED_EXAMPLE_2026-10-11.md",
     "baselineSha256": "daba5c16243353284151c61159a8eeebcbbe16d4e30f4f2ff33c0a7a876e6fc8",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_SELECTION_S4_R1_MANUAL_WORKED_EXAMPLE_2026-10-11.md",
-    "workOrderSha256": "d33284509af2456fc2402e4cf21868bd45bbde16c1523940f955986a8d69806b"
+    "workOrderSha256": "5159f2b71b7ac4d3cc67e0fcc64b3d814ed92a2c0611c044c33a4bafd1fd1c57"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

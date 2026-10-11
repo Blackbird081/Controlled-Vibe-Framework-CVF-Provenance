@@ -1,0 +1,292 @@
+{
+  "schemaVersion": "cvf.modelSelectionS4R1LocalReview@0.1.0",
+  "batchId": "CVF-MODEL-SELECTION-S4-R1-20261011",
+  "reviewerActor": "LOCAL_REVIEWER_CODEX_ROOT",
+  "workerActor": "INTERNAL_AGENT_S4_WORKER",
+  "workerInvocationId": "/root/s4_luna_worker",
+  "probeInvocationId": "cvf-model-selection-s4-r1-local-review-20261011",
+  "executionBaseHead": "d35e96b9456d78f4ebcb8aa9d7a91584c501af3f",
+  "reviewStartedAtUtc": "2026-10-11T03:01:20Z",
+  "semanticReviewRecordedAtUtc": "2026-10-11T03:04:52.080507+00:00",
+  "scope": "independent source-derived static semantic review and returned-evidence reconciliation; no executed runtime negative tests",
+  "sourcePinsAtReviewBeforeClosureEdits": [
+    {
+      "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_SELECTION_S4_R1_MANUAL_WORKED_EXAMPLE_2026-10-11.md",
+      "sha256": "d33284509af2456fc2402e4cf21868bd45bbde16c1523940f955986a8d69806b",
+      "readDepth": "full"
+    },
+    {
+      "path": "docs/baselines/CVF_GC018_MODEL_SELECTION_S4_R1_MANUAL_WORKED_EXAMPLE_2026-10-11.md",
+      "sha256": "daba5c16243353284151c61159a8eeebcbbe16d4e30f4f2ff33c0a7a876e6fc8",
+      "readDepth": "full"
+    },
+    {
+      "path": "docs/reference/CVF_ORCHESTRATOR_MODEL_SELECTION_DOCTRINE_DESIGN_2026-10-10.md",
+      "sha256": "9eb0b9cb8020113f1db7dbd41923b4f06ac57d884d5eade7ee31156395504082",
+      "sections": [
+        "Selection Surfaces And Delegated Choice",
+        "Proposed Doctrine Principles",
+        "Decision Procedure And Uncertainty",
+        "Cost And Evidence Discipline",
+        "Evidence Refresh And Learning"
+      ]
+    },
+    {
+      "path": "docs/reference/CVF_ORCHESTRATOR_MODEL_SELECTION_CONTRACT_DESIGN_2026-10-10.md",
+      "sha256": "7e090f5249d7e61a939ca1a0dadc65e10555cc5b04f75a053c1c64e190611a09",
+      "sections": [
+        "Record Families And Required Joins",
+        "Identity And Evidence Semantics",
+        "Decision And Cost Semantics",
+        "Freeze, Drift And Transition Contract",
+        "Prospective Acceptance And Negative Matrix"
+      ],
+      "canonicalCandidateRecord": "CandidateConfiguration"
+    },
+    {
+      "path": "docs/roadmaps/CVF_ORCHESTRATOR_MODEL_SELECTION_SYSTEM_CHAIN_ROADMAP_2026-10-10.md",
+      "sha256": "2583aa5f81394cc9353f078c51053d00ca3b102c2f133f6a6a5ebfa162ba7e14",
+      "sections": [
+        "Work Plan And Exit Criteria",
+        "S4"
+      ]
+    },
+    {
+      "path": "docs/reviews/CVF_MODEL_SELECTION_S3_R1_COMPLETION_2026-10-10.md",
+      "sha256": "b02b0077a97d7808a433a6ad2d6dedbb1a3ab50cf4362c4627d7888d3aa11a9a",
+      "sourceCommit": "011c9cd1d7a3d3ffbd6b8e070d8aab37f6774a40",
+      "sections": [
+        "Findings / Position",
+        "Risk / Corrective Action"
+      ]
+    },
+    {
+      "path": "docs/reference/CVF_AGENT_DELEGATION_AND_SUBAGENT_BOUNDARY_STANDARD_2026-05-19.md",
+      "sha256": "5a5356b1afe32dbd1ce1c109ad0fc04bbc9c54cafd8f05a3f081d0c5dcb07f52",
+      "sections": [
+        "Protocol / Contract / Requirements",
+        "Rule",
+        "Provider Execution Authority"
+      ]
+    },
+    {
+      "path": "docs/reference/project_role_provider_delegation/README.md",
+      "sha256": "d8b4ff00d6d1793dd924105152ec40905b4780b3ba22b342570cffee07ca2755",
+      "sections": [
+        "Role And Delegation Map",
+        "Provider Lane Selection Boundary",
+        "Cost And Quota Ceiling"
+      ]
+    }
+  ],
+  "allEightSourcePinsMatchedBeforeClosureEdits": true,
+  "submittedOriginals": [
+    {
+      "path": "docs/guides/CVF_MODEL_SELECTION_MANUAL_AGENT_SEAT_WORKED_EXAMPLE_2026-10-11.md",
+      "sha256": "344199fff3ea91e05bbc1578003f771ce37d9eddff57ce9bd981ee98791d2b67"
+    },
+    {
+      "path": "docs/reviews/CVF_MODEL_SELECTION_S4_R1_WORKER_RETURN_2026-10-11.md",
+      "sha256": "41297d82bcdaab39c602621ad4dcbca50ebe45061f932b2e731f3d2818bc9253"
+    },
+    {
+      "path": "docs/reviews/evidence/model-selection-s4-r1-worker-20261011.json",
+      "sha256": "d72badfb04d57433beb6dcd01ee4e4eaad9580d8d47fc83ec742cf9e8526c6f3"
+    }
+  ],
+  "acceptedPins": [
+    {
+      "path": "docs/guides/CVF_MODEL_SELECTION_MANUAL_AGENT_SEAT_WORKED_EXAMPLE_2026-10-11.md",
+      "sha256": "7e3ca5aa69608f693054c8a0071d303b9c7bea9c34dcda8ec038cdea1fd17d94"
+    },
+    {
+      "path": "docs/reviews/CVF_MODEL_SELECTION_S4_R1_WORKER_RETURN_2026-10-11.md",
+      "sha256": "ad0a2d7d9665d75556715305fbf5e06da4eab1e848d6c68d6daa63569de422f9"
+    },
+    {
+      "path": "docs/reviews/evidence/model-selection-s4-r1-worker-20261011.json",
+      "sha256": "d72badfb04d57433beb6dcd01ee4e4eaad9580d8d47fc83ec742cf9e8526c6f3"
+    }
+  ],
+  "originalBytesRetainedAt": ".cvf/runtime/model-selection-s4-r1-20261011/submitted-originals/",
+  "independentProbe": {
+    "method": "Local read of contract decision/cost/freeze/learning owners, guide and return; independent counterfactual judgments, not worker staticCases/text oracle",
+    "cases": [
+      {
+        "id": "P1",
+        "challenge": "Explicit assignment lacks predictive quality history",
+        "expected": "SELECT/HONORED_WITH_EVIDENCE_GAP; insufficient quality and independent acceptance remain",
+        "observed": "guide actual steps 2-4 and Case 1",
+        "result": "PASS_STATIC_DESIGN"
+      },
+      {
+        "id": "P2",
+        "challenge": "Generic authority asserted to waive delegated insufficient evidence",
+        "expected": "HOLD_EVIDENCE; relevant evidence/eligible supported alternative or distinct explicit-assignment branch",
+        "observed": "Case 2 initially ambiguous; Local clarified branch without evidence waiver",
+        "result": "PASS_AFTER_LOCAL_REPAIR"
+      },
+      {
+        "id": "P3",
+        "challenge": "Quality-gap label asserted as mandatory context PASS",
+        "expected": "SELECT may stand; dispatch holds for existing context owner",
+        "observed": "actual step 3/4 and Case 3 retain independent admission",
+        "result": "PASS_STATIC_DESIGN"
+      },
+      {
+        "id": "P4",
+        "challenge": "Returned identity differs but outcome assigned to requested configuration",
+        "expected": "preserve request; disclose deviation; no silent validation/fallback",
+        "observed": "Case 4 separates identity fields and outcome attribution",
+        "result": "PASS_STATIC_DESIGN"
+      },
+      {
+        "id": "P5",
+        "challenge": "Repaired accepted guide asserted as first-return quality",
+        "expected": "retain first failure/repair/help/final; artifact-only acceptance",
+        "observed": "Case 5 and actual step 5 preserve separate claims",
+        "result": "PASS_STATIC_DESIGN"
+      },
+      {
+        "id": "P6",
+        "challenge": "Retracted source reused for current ACTION_VERIFIED or parent application",
+        "expected": "historical CITED only or dependent hold; current freshness check; no PLL shortcut",
+        "observed": "Case 6 and consumption section consistent; invented CITED_PENDING_LOCAL_REVIEW corrected to CITED plus pending-review prose",
+        "result": "PASS_AFTER_LOCAL_REPAIR"
+      },
+      {
+        "id": "P7",
+        "challenge": "Unavailable assignment treated as selected until substitution",
+        "expected": "HOLD_OPERATOR_CONSTRAINT with owner/reason and null selected candidate; separately admitted alternative only",
+        "observed": "Case 7 original broad hold prose clarified to contract outcome",
+        "result": "PASS_AFTER_LOCAL_REPAIR"
+      },
+      {
+        "id": "P8",
+        "challenge": "Unknown bill treated as zero or compared with time/tokens for a monetary cap",
+        "expected": "null money; only supported matching-unit cap admission; no cap invented here",
+        "observed": "Case 8 and actual step 2/5 preserve units and no cost ranking",
+        "result": "PASS_STATIC_DESIGN"
+      }
+    ],
+    "disposition": "PASS_STATIC_DESIGN_AFTER_ONE_CONSOLIDATED_LOCAL_REPAIR"
+  },
+  "learningConsumption": {
+    "branch": "LOCAL_OBSERVATION",
+    "source": "docs/reviews/CVF_MODEL_SELECTION_S3_R1_COMPLETION_2026-10-10.md",
+    "sourceSha256": "b02b0077a97d7808a433a6ad2d6dedbb1a3ab50cf4362c4627d7888d3aa11a9a",
+    "sourceCommit": "011c9cd1d7a3d3ffbd6b8e070d8aab37f6774a40",
+    "currentRetractionOrSupersession": "none found in targeted current source/roadmap/authority references at review",
+    "applicability": "PARTIAL: packet completeness mechanism only",
+    "evidenceUse": "ACTION_VERIFIED",
+    "action": "S4 work order exposes seven previously omitted controls; full section list and exact ledger are used by actual three-file worker return; guide tells next dispatcher to retain identity/admission/repair/learning distinctions",
+    "result": "Independent Local review checks usable guide and returned section coverage, with first failures and final PASS retained. Completeness action is verified; first-run error prevention and global effectiveness are not established.",
+    "verificationRef": "docs/reviews/CVF_MODEL_SELECTION_S4_R1_COMPLETION_2026-10-11.md",
+    "parentControlApplication": false
+  },
+  "workerHistory": {
+    "nativeInternalAgentInvocationCount": 1,
+    "requestedModel": "gpt-6-luna",
+    "requestedEffort": "xhigh",
+    "runtimeObservedModel": null,
+    "immutableSnapshot": null,
+    "actualEffort": null,
+    "harnessVersion": null,
+    "firstFastGate": "FAIL_SEVEN_GROUPS_TRANSCRIPT_REPORTED_NO_DURABLE_LOG",
+    "secondFastGate": "FAIL_ONE_REVIEW_COST_SENTINEL",
+    "workerSelfRepairRounds": 2,
+    "thirdFastGate": "PASS_PREPARATORY_DRAFT",
+    "fourthFastGate": "PASS_FINAL_SUBMITTED_BYTES",
+    "fourthGateStartedAtUtc": "2026-10-11T03:00:47.9476488Z",
+    "fourthGateFinishedAtUtc": "2026-10-11T03:00:56.2346475Z",
+    "fourthGateDurationSeconds": 8.07,
+    "frozenWorkerEvidenceUnchanged": true,
+    "finalReturnHistoricalSentinelContradiction": "Markdown finalization overwrote historical PENDING_BEFORE_READY token; Local restores history, frozen worker JSON already has correct round-2 token.",
+    "reviewerRepairRounds": 1,
+    "directProviderApiCalls": 0,
+    "underlyingNativeProviderRequestCount": null,
+    "bill": null,
+    "tokens": null,
+    "quota": null
+  },
+  "timing": {
+    "dispatchLowerBoundUtc": "2026-10-11T02:43:12Z",
+    "exactFirstReadAtUtc": null,
+    "artifactFrozenAtUtc": "2026-10-11T03:00:37Z",
+    "elapsedToArtifactFreezeFromLowerBoundSeconds": 1045,
+    "elapsedToFinalGateFinishFromLowerBoundSeconds": 1064.2346475,
+    "capMinutes": 45,
+    "capDisposition": "WITHIN_CAP; lower bound conservative, not exact first read",
+    "workerProcessingTime": null,
+    "humanTime": null
+  },
+  "localAssistance": [
+    "Corrected initial short release SHA and startup mode/parked acknowledgment before work; read-only message, no worker-lane tracked mutation",
+    "Corrected packet shorthand ConfigurationRef to canonical CandidateConfiguration",
+    "Supplied conservative dispatch lower bound after missing first-read clock"
+  ],
+  "gateEvidence": [
+    {
+      "path": ".cvf/runtime/model-selection-s4-r1-20261011/worker-return-fast-gate-final.log",
+      "sha256": "5d405ad4715de3c0bd81e5befb15b2031eb7bc42bb378abfb51566ac00533f6a",
+      "scope": "worker frozen submission",
+      "disposition": "COMPLIANT_PASS_70_REVIEWER_FAST"
+    },
+    {
+      "path": ".cvf/runtime/model-selection-s4-r1-20261011/local-amended-return-fast-gate.log",
+      "sha256": "ab2cd535fda27fba92653b05fab92c98e8a0dea9a0cf932693cca35f07c05d7b",
+      "scope": "Local-amended guide/return, exactly three-path ledger before Local closure files",
+      "disposition": "COMPLIANT_PASS_70_REVIEWER_FAST",
+      "rerunReason": "Changed final guide/return bytes and historical sentinel contradiction; verify ledger/gate validity once, no implementation replay"
+    }
+  ],
+  "localRepairs": [
+    {
+      "rootCause": "noncanonical evidence-use token",
+      "paths": [
+        "docs/guides/CVF_MODEL_SELECTION_MANUAL_AGENT_SEAT_WORKED_EXAMPLE_2026-10-11.md",
+        "docs/reviews/CVF_MODEL_SELECTION_S4_R1_WORKER_RETURN_2026-10-11.md"
+      ],
+      "old": "CITED_PENDING_LOCAL_REVIEW",
+      "new": "CITED with independent-review-pending prose"
+    },
+    {
+      "rootCause": "selection hold branch ambiguity",
+      "path": "docs/guides/CVF_MODEL_SELECTION_MANUAL_AGENT_SEAT_WORKED_EXAMPLE_2026-10-11.md",
+      "cases": [
+        2,
+        7
+      ],
+      "change": "explicit-assignment branch separated; unavailable assignment names HOLD_OPERATOR_CONSTRAINT/null selected candidate"
+    },
+    {
+      "rootCause": "historical repair overwritten during finalization",
+      "path": "docs/reviews/CVF_MODEL_SELECTION_S4_R1_WORKER_RETURN_2026-10-11.md",
+      "change": "restore PENDING_BEFORE_READY as historical round-2 blocked-draft requirement; final documentation N/A retained"
+    }
+  ],
+  "priorS3RangeSafetyDisposition": {
+    "historicalFailedRange": "c3d4b0b961cfc079a802a0e2df531bc7c48b57bc..011c9cd1d7a3d3ffbd6b8e070d8aab37f6774a40",
+    "disposition": "RETAIN_FAILED_HISTORICAL_RANGE_NO_RECEIPT_PROMOTION",
+    "retainedMarkerSha256": "6285fb493a965960df52822f5493f4a5e09da0fad242ff6fae2b7356ca1b6a7c",
+    "owner": "current S4 baseline/order Local Safety Marker Adjudication",
+    "limit": "semantic observation remains usable PARTIAL; no successful full-range S3 receipt fabricated"
+  },
+  "limitations": [
+    "One useful manual documentation loop, not a randomized comparison or transferable quality sample",
+    "Tool request records requested model/effort only; immutable observed identity and billing unknown",
+    "First gate exact timestamp/log unavailable; worker transcript-reported failure retained",
+    "Packet lists sections but two self-repair rounds still occurred; no proven error elimination",
+    "Native invocation is separate from zero direct API calls; underlying provider use uninstrumented",
+    "Original six-row tranche ledger and S3 evidence unchanged; no new global model score or store"
+  ],
+  "decision": "TECHNICAL_ACCEPT_BOUNDED_DOCUMENTATION; S4-R1 action/result verified within packet mechanism; S2/S5 remain unopened",
+  "localClosureAuthoringDiagnostic": {
+    "firstClosureReviewerFast": "FAIL: stale-language literal in envelope; work-order acceptance matrix missing",
+    "firstStagedWhitespace": "FAIL: extra blank at guide EOF",
+    "owner": "Local closure author; not additional worker repair or native attempt",
+    "correction": "removed stale-envelope literal outside frozen rationale; added receipt assertion matrix; normalized trailing blank; frozen selection section untouched",
+    "finalValidation": "pending final material reviewer/pre-commit/pre-closure",
+    "fullBundleDiagnostic": "Material helper pre-implementation FAIL on knowledge-map owner: worker N/A section used map-reconciliation claim heading. One diagnostic rerun retained stdout because helper suppressed failed command output. Local renamed to Knowledge System Applicability, consistent with no map claim and packet; no invented map counts."
+  }
+}

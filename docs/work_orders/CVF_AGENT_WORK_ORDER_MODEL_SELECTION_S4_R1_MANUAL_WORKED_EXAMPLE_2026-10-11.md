@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 docType: work_order
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 Date: 2026-10-11
 Batch ID: CVF-MODEL-SELECTION-S4-R1-20261011
 Dispatch base head: 82b2804f55320ba2979192697478d442aa1ffb04
@@ -19,7 +19,7 @@ Commit mode: WORKER_MUST_NOT_COMMIT. executionBaseHead: WORKER_MUST_CAPTURE_AT_S
 Current-time notes: execution metadata operator explicitly requested gpt-6-luna, extra high (tool value xhigh). Native subagent only; no API route, nested worker or model substitution. Requested identity is not verified immutable runtime identity.
 Required first actions: progressive startup, guard orientation/literal gotchas, this order/baseline, named R3 owners and S3 completion; capture execution HEAD/start and read applicable checker constants.
 Return contract: exactly guide, worker return and JSON evidence; COMPLETE_PENDING_REVIEW or one consolidated BLOCKED_WITH_REASON. Preserve first gate disposition, failures, repairs and unknown spend.
-Do-not-misread notes: SELECT is not dispatch authority; use only admitted shared-workspace read/write/local-checker tools. Expense, S2, S5, Gateway, public and deploy remain parked.
+Do-not-misread notes: SELECT does not grant invocation authority; use only admitted shared-workspace read/write/local-checker tools. Expense, S2, S5, Gateway, public and deploy remain parked.
 
 ## Purpose
 
@@ -457,3 +457,31 @@ Local reviewer/closer adjudication: RETAIN_FAILED_HISTORICAL_RANGE_NO_RECEIPT_PR
 The exact original marker is retained at `.cvf/runtime/model-selection-s4-r1-20261011/S3_UNSAFE_AUTORUN_RECEIPT_GENERATION_FAILED_RETAINED.json`, SHA256 6285fb493a965960df52822f5493f4a5e09da0fad242ff6fae2b7356ca1b6a7c. Source command: `git diff-tree --no-commit-id --name-only -r 011c9cd1d7a3d3ffbd6b8e070d8aab37f6774a40`; range-shape checker source confirms the rejected topology. Local evidence and S3 source bytes are not rewritten. Reviewer owns removal of the blocking filename under the P4-C1 Automatic Collection Contract, while preserving the failure and preventing receipt/sample promotion. This is adjudication of a historical receipt-generation failure, not a waiver for current gates. New packet and guide material use separate state continuity commits; future work-order closure leaves its frozen dispatch bytes unchanged and records terminal status in the Local completion/continuity to avoid a protected-pointer edit in material.
 
 Current packet authoring failures remain orchestrator-attributed: missing Current-time notes literal, invalid scaffold enum, missing baseline intake/coordination declarations and conditional Machine Closure Package term were repaired before release. The expected pre-commit clean-release readiness hold was not a worker failure. No worker has run yet.
+
+## Local Closure Receipt
+
+Local CLOSED_PASS_BOUNDED: final amended guide and action/result accepted; worker JSON frozen; no redispatch. Receipt: `docs/reviews/CVF_MODEL_SELECTION_S4_R1_COMPLETION_2026-10-11.md`; independent evidence: `docs/reviews/evidence/model-selection-s4-r1-local-review-20261011.json`. Original dispatch order SHA-256 `d33284509af2456fc2402e4cf21868bd45bbde16c1523940f955986a8d69806b`; Manual B Selection Rationale section remains byte-identical (UTF-8 LF section SHA-256 `757810da611e634fc84628cae906cb27137bdbfc3e9e7bac70397734d148a964`). Only closure metadata/status are updated; prior selection/input pins remain historical.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_SELECTION_S4_R1_MANUAL_WORKED_EXAMPLE_2026-10-11.md` | CLOSED_PASS_BOUNDED; frozen Manual B rationale retained | PASS |
+| Completion or reviewer artifact | this completion and `docs/reviews/evidence/model-selection-s4-r1-local-review-20261011.json` | independent P1-P8 judgments and original/accepted hashes | PASS |
+| Roadmap state | `docs/roadmaps/CVF_ORCHESTRATOR_MODEL_SELECTION_SYSTEM_CHAIN_ROADMAP_2026-10-10.md` | S4 bounded manual action/result closed; S2/S5 unopened | PASS |
+| Registry JSON | Local/worker task evidence | separate accepted/submitted pins, unknown units; no global ledger append | PASS |
+| Registry Markdown | guide, return and this completion | Local-amended artifact with historical worker attribution | PASS |
+| External evidence digest | internal frozen S3 source | no new external intake | N/A with reason: internal task only |
+| System loop interlock | existing work-order effect/role boundary | native worker only; no Gateway/runtime activation | PASS |
+| Session continuity | active handoff and generated state/bootstrap | exact hash projection here; separate actual-SHA continuity follows | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| Worker changed set | three exact output paths | exactly three untracked paths; no staging/deletion/rename at return | PASS |
+| Source identity | eight local byte pins match | all eight verified before closure edits; dispatch hashes retained | PASS |
+| Guide semantics | eight independent boundaries | P1-P8 source-derived static review; Local clarifies three root-cause groups | PASS |
+| Return gate | preserve failures and verify final bytes | worker final log PASS; Local-amended three-path gate COMPLIANT | PASS |
+| Later learning action | actual action/result not mere citation | complete packet/returned controls and usable guide independently verified | PASS_BOUNDED |
+| Seat/time/cost | request separate from observation; cap/unit honest | requested Luna/xhigh; observed identity/bill unknown; conservative elapsed within cap | PASS_WITH_LIMIT |
