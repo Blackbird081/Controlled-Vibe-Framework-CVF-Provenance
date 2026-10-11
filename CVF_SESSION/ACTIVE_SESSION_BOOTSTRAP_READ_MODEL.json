@@ -8,10 +8,10 @@
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_CONTINUITY_DISPATCH_O3_2026-10-11.md",
-    "baselineSha256": "3621fdbd371e0e166f76a83f9f0aed5c22bd3b5e377cda95d1493d40c0af79f2",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CONTINUITY_DISPATCH_O3_2026-10-11.md",
-    "workOrderSha256": "821ff96fd97e9a5062666b5039d595a0399c55857234fdddf821023e860fc75c"
+    "baselinePath": "docs/baselines/CVF_GC018_ORACLE_O6_DESIGN_2026-10-11.md",
+    "baselineSha256": "f62fc2430e7e507fd1a8527104445368840261d89ccc13c3e131079a22139190",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_ORACLE_O6_DESIGN_2026-10-11.md",
+    "workOrderSha256": "e65126e390e2b2e78a7350fcb51464c9170365efd50252736b1d47e75b5507ce"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

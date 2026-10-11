@@ -36,12 +36,12 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_CONTINUITY_DISPATCH_O3_2026-10-11.md",
-    "baselineSha256": "3621fdbd371e0e166f76a83f9f0aed5c22bd3b5e377cda95d1493d40c0af79f2",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CONTINUITY_DISPATCH_O3_2026-10-11.md",
-    "workOrderSha256": "821ff96fd97e9a5062666b5039d595a0399c55857234fdddf821023e860fc75c"
+    "baselinePath": "docs/baselines/CVF_GC018_ORACLE_O6_DESIGN_2026-10-11.md",
+    "baselineSha256": "f62fc2430e7e507fd1a8527104445368840261d89ccc13c3e131079a22139190",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_ORACLE_O6_DESIGN_2026-10-11.md",
+    "workOrderSha256": "e65126e390e2b2e78a7350fcb51464c9170365efd50252736b1d47e75b5507ce"
   },
-  "currentAuthoritySyncReason": "Operator-approved O3 direct maintenance; actual material 5d42bd16bed859878be340499e7b53dc739e39f5 synchronized atomically; closed assignment, no new invocation or parked effects.",
+  "currentAuthoritySyncReason": "Operator requested roadmap continuation and manual Haiku ex high worker assignment, then delegated source-based branch selection to Local. O6 design packet selected; exact committed release and separate actual-SHA continuity required before worker start. Original O3/S2-R2 evidence and parked effects retained.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
