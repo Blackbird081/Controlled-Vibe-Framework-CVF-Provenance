@@ -36,12 +36,12 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_MODEL_SELECTION_S2_R3_PROJECTION_2026-10-11.md",
-    "baselineSha256": "d713fd67dc8da10d503429996a361a1959d0e6b8bd283d9f3ccccf77be058222",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_SELECTION_S2_R3_PROJECTION_2026-10-11.md",
-    "workOrderSha256": "519cd91625acc4ef36e450fc934dcd2b10d0e013e5f7aab997f234895cb5c0ae"
+    "baselinePath": "docs/baselines/CVF_GC018_MFRP_CONTINUITY_COLLECTION_DESIGN_2026-10-11.md",
+    "baselineSha256": "30e013cab9fd80bf52b07efbac5928b5cc1f180a2532a97e89bc11256f93fcab",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_CONTINUITY_COLLECTION_DESIGN_2026-10-11.md",
+    "workOrderSha256": "84aae344efadedbf111ee03c376afceeaa432806efc34c987fa7af2774632e1c"
   },
-  "currentAuthoritySyncReason": "S2-R3 bounded closure material 0ab461e2b807a33984a4f8357140f5d28988fd23; six-surface actual-SHA terminal continuity, nine worker observations, no automatic successor.",
+  "currentAuthoritySyncReason": "MFRP continuity collection design selected by operator next; exact six-path packet/case/raw authority material, actual-SHA dispatch continuity follows.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
