@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Current NCR Continuation
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `cc584e69fd4086407806ee9c20deaf1c753724d5`. Batch ID: CVF-ORACLE-O6-DESIGN-20261011. Accepted design material anchor; original packet material f9b2b67f1a7683728f729ba77b269d69ae8bf0d5.
+Current HEAD recorded for this handoff: `823a01ceba2fd52489cef2f74936f2590e41e61a`. Batch ID: CVF-ORACLE-O6-DESIGN-20261011. Closure metadata parent; accepted design material cc584e69fd4086407806ee9c20deaf1c753724d5.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -11,7 +11,7 @@ Closed history is preserved byte-for-byte at `CVF_SESSION/handoffs/archive/AGENT
 ## Scope / Target / Owner Boundary
 Operator2026-10-11: audit and choose; Local selects O6 design. Worker preference Haiku ex high, operator-reported; Local does not launch it.
 Role: Local INTERNAL_AGENT reviewer/closer; phase: bounded design closure; decision owner=Local. Worker returned; no redispatch or automatic successor.
-PROGRAM_ID=CVF-CORE; NEXT_ACTION_CLASS=LOCAL_DISPOSITION_ONLY; BATCH_ID=CVF-ORACLE-O6-DESIGN-20261011. STOP_SELECTED_OUTCOME: O6 CLOSED_PASS_BOUNDED_DESIGN_ONLY; completion=docs/reviews/CVF_ORACLE_O6_DESIGN_COMPLETION_2026-10-11.md; material=cc584e69fd4086407806ee9c20deaf1c753724d5. Manual P0-P7 checklist accepted; helper DEFERRED_WITH_REASON until recurrence or admitted negative-heavy reviewer demand; global gate REJECTED. No worker redispatch or automatic successor. Symbol-line MACHINE_CHECK_CANDIDATE confirmed/deferred; scaffold design still deferred pending pinned producer-to-consumer mismatch. Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11 parked; LHW24 retained.
+PROGRAM_ID=CVF-CORE; NEXT_ACTION_CLASS=LOCAL_DISPOSITION_ONLY; BATCH_ID=CVF-ORACLE-O6-DESIGN-20261011. STOP_SELECTED_OUTCOME: O6 CLOSED_PASS_BOUNDED_DESIGN_ONLY; completion=docs/reviews/CVF_ORACLE_O6_DESIGN_COMPLETION_2026-10-11.md; material=cc584e69fd4086407806ee9c20deaf1c753724d5. Manual P0-P7 checklist accepted; helper DEFERRED_WITH_REASON until recurrence or admitted negative-heavy reviewer demand; global gate REJECTED. No worker redispatch or automatic successor. Baseline ADIF disclosure corrected at 823a01ceba2fd52489cef2f74936f2590e41e61a; symbol-line candidate confirmed/deferred; scaffold design still deferred pending pinned producer-to-consumer mismatch. Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11 parked; LHW24 retained.
 Remote tracking branch: `origin/main`. Exact remote SHA must be derived live from git when needed.
 External agent memory files: non-canonical convenience only.
 ## Startup Acknowledgment
@@ -20,11 +20,11 @@ Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`;handoff=`AGEN
 `cvf_ncr_p10_closed_p11_parked`. P10 package remains `ACTIVE_PRODUCTION_RUNTIME`; P11 parked. Latest closed learning-history wave: `LHW24`.
 Current NIS-T1J is CLOSED_PASS_BOUNDED with no automatic successor; NCR consumer maintenance is separately operator-authorized.
 ## Current Authority
-Baseline: `docs/baselines/CVF_GC018_ORACLE_O6_DESIGN_2026-10-11.md`; SHA256 `85c80033c3b16f01259a8f45cb69a5d01a32e37775449146741dcdbd3248a92d`.
+Baseline: `docs/baselines/CVF_GC018_ORACLE_O6_DESIGN_2026-10-11.md`; SHA256 `d1bf89232cf73376982cb7645633c61daed84d222106ff12abd8e633a9d323dc`.
 Work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_ORACLE_O6_DESIGN_2026-10-11.md`; SHA256 `aa5be1970ed4cc481ef6f850f8f0268bb741849ab2e328b351f5b76a08cbd78b`; CLOSED_PASS_BOUNDED, no worker start.
-O6 manual design accepted at cc584e69fd4086407806ee9c20deaf1c753724d5; completion docs/reviews/CVF_ORACLE_O6_DESIGN_COMPLETION_2026-10-11.md; one Local contract clarification, no case execution. Helper deferred, global gate rejected; symbol-line candidate confirmed/deferred. O3/S2-R2 acceptance and parked effects retained.
+O6 completion docs/reviews/CVF_ORACLE_O6_DESIGN_COMPLETION_2026-10-11.md; manual checklist accepted, no case execution. Helper/symbol-line repair deferred; global gate rejected. O3/S2-R2 and parked effects retained.
 ## O6 Release Rebind After Provenance Sync (2026-10-11)
-Historical root marker replacement at aa32f666 caused worker DR-04/DR-05 block; six-path rebind bd13e1a80 restored release. Log C:/Users/DELL/AppData/Local/Temp/o6_preimpl.log retained; no worker defect or oracle replay. Provenance lane closed, push URL locked.
+Root marker replacement aa32f666 blocked DR-04/DR-05; rebind bd13e1a80 restored release. Log C:/Users/DELL/AppData/Local/Temp/o6_preimpl.log retained; no worker defect. Provenance lane closed, URL locked.
 Learning: ORCHESTRATOR_PACKET_GAP; GOVERNANCE_CONTROL_PLANE; RULE_EXISTS. Future active dispatch continuity preserves packet binding and revalidates release; no checker change.
 
 ## Publication And Packet Update (2026-10-10)
@@ -140,7 +140,7 @@ Authorized guard-maintenance scope: O6 six-surface terminal closure continuity; 
 | Command or tool surface | canonical generator; atomic commit; bound gates |
 | Target paths | six continuity paths listed in the manifest below |
 | Allowed scope source | O6 baseline dedicated continuity exact manifest; operator worker-blocker intake |
-| Before status evidence | cc584e69fd4086407806ee9c20deaf1c753724d5; clean material commit |
+| Before status evidence | 823a01ceba2fd52489cef2f74936f2590e41e61a; clean metadata material |
 | After status evidence | six-surface terminal next move; split closure verification follows |
 | Diff evidence | exact six continuity paths; material unchanged |
 | Approval boundary | O6 continuity repair only |
