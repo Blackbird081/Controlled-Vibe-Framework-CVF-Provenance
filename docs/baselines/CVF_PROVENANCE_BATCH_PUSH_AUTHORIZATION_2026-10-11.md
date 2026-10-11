@@ -25,8 +25,10 @@ Operator authorization: explicit response on 2026-10-11, "Cho phep chuan hoa bat
 The approval covers the exact existing range and necessary authorization record,
 followed by mandatory gates and canonical private-provenance push.
 
-This one new documentation commit raises the authorized push debt ceiling to 33
-commits and the net changed-path ceiling to 68. This exception ends when the
+The authorization document, its corrective metadata commit, and the mandatory
+dedicated handoff-sync raise the authorized push debt ceiling to 35 commits
+and the net changed-path ceiling to 68. The handoff is already in the source
+manifest; only its current material SHA continuity marker is refreshed. This exception ends when the
 approved stack reaches origin/main; it does not authorize another tranche.
 
 ## Startup Acknowledgment
@@ -72,7 +74,8 @@ record supplies aggregate coverage for the push range; it adds no new protected
 file edits.
 
 Operator authorization: the explicit batch approval above, restricted to the
-32 source commits plus this authorization document.
+32 source commits plus this authorization document, its finite correction, and
+mandatory handoff SHA continuity synchronization.
 
 Rollback boundary: before push, stop on a failed gate and leave the push URL
 locked. Preserve all source commits. After push, correction requires an explicit
@@ -104,11 +107,12 @@ Protected paths:
 ## Large-Scope Change Authorization
 
 Changed-file ceiling: 68 net paths for this one approved private push; 67 source
-paths plus this authorization artifact. No implementation edits beyond the
+paths plus this authorization artifact; handoff SHA metadata uses an existing
+source path. No implementation edits beyond the
 source head are authorized.
 Rename/delete ceiling: 0.
 Operator authorization: explicit approval of the 32-commit/67-file batch and
-necessary authorization record on 2026-10-11.
+necessary authorization record and mandatory continuity on 2026-10-11.
 Rollback boundary: stop before push on a violation; preserve history and use
 only a separately authorized forward correction after synchronization.
 
@@ -119,11 +123,13 @@ paths, excess push debt, and missing aggregate authorization. That combined
 range is a transport stack of existing commits, not a proposed single mixed
 commit. Retain every source commit; no squash or history rewrite is authorized.
 The new authorization is a material-only documentation commit and does not
-require changes to session semantics or active O6 packet hashes.
+change session semantics or active O6 packet hashes. GC-020 requires a separate
+handoff-sync commit after the final material correction; refresh only the
+current material HEAD marker and preserve the O6 dispatch material pin.
 
 Rerun core self-protection against the entire live-upstream-to-HEAD range with
 this aggregate authorization. Run the final push-readiness preview over the
-nonempty new authorization commit, using --upstream-ahead-limit 33 for this
+nonempty final handoff-sync commit, using --upstream-ahead-limit 35 for this
 explicitly authorized debt. Keep its range distinct from full transport-range
 checks and the mandatory full pre-push chain. Do not report a full-stack commit
 shape PASS from the narrower final-commit preview.
@@ -133,7 +139,7 @@ and preserving separate source commits; it does not change a gate implementation
 
 ## Decision / Disposition
 
-Authorize the exact accumulated source stack and one new documentation commit
+Authorize the exact accumulated source stack and necessary authorization/correction plus dedicated handoff-sync commits
 for private provenance synchronization after the mandatory checks. Preserve
 all existing separate commits and the O6 next move. No automatic successor.
 
@@ -267,11 +273,13 @@ change manifest, not a claim of repository corpus reading or completeness.
 - `scripts/test_cvf_commit_tranche_dispatch.py`
 
 Authorization addition: `docs/baselines/CVF_PROVENANCE_BATCH_PUSH_AUTHORIZATION_2026-10-11.md`.
+Continuity-only refresh: `AGENT_HANDOFF_V63_2026-09-18.md` current material
+HEAD marker; O6 authority, execution material pin and next move remain intact.
 
 ## Verification And Continuation
 
-Before push: verify live remote base remains pinned, source implementation diff
-against the source head is empty, core full-range authorization passes, final
+Before push: verify live remote base remains pinned, source implementation files
+match the source head (only authorization document and handoff marker differ), core full-range authorization passes, final
 material-commit preview passes, and the canonical script's full pre-push chain
 passes. Retain operational logs in ignored local diagnostics.
 
@@ -316,7 +324,8 @@ this record is not a provider, runtime, live-governance or production proof.
 
 ## Claim Boundary
 
-Only private provenance synchronization of the pinned commits and this record.
+Only private provenance synchronization of the pinned commits, this record,
+and mandatory handoff marker synchronization.
 No public export, worker execution, model ranking, new roadmap implementation,
 provider call, deployment, universal compliance or live-governance proof.
 All parked checkpoints and original review limitations remain in force.
