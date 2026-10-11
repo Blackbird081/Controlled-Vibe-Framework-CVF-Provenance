@@ -31,13 +31,27 @@ Required command:
 python governance/compat/run_agent_push_readiness_preview.py --base <baseHead> --head HEAD --enforce
 ```
 
-Default upstream debt rule: the preview fails when the local branch is more
-than 2 commits ahead of its upstream tracking branch. The normal safe shape is
-one material commit plus one dedicated session-sync or handoff-sync commit.
-If a governed batch truly needs a larger local stack, the agent must either
-push the completed pair first, or record a concrete blocker and operator
-authorization before continuing into the next tranche.
+Upstream backlog policy (operator revision, 2026-10-11): local ahead count is
+an advisory disclosure, not an execution or push limit. More than 2 commits
+produces WARN with exit 0; --enforce never fails solely because of this count.
+Multiple admitted tranches may remain local until an operator-selected sync
+checkpoint. No extra authorization, immediate push or stop-new-tranche rule is
+required solely for an ahead count, regardless of stack length.
 
+One material commit plus one dedicated continuity commit remains the preferred
+shape for a single tranche, not a cap on the whole branch. Preserve separate
+tranche ranges and evidence so a later multi-tranche push remains reviewable.
+Run the preview at a planned sync checkpoint, before push, or when a concrete
+range/continuity issue appears; do not impose a full preview after every pair.
+The advisory threshold can be configured with --upstream-ahead-warning;
+--upstream-ahead-limit remains a compatibility alias with advisory semantics.
+
+Missing or unreadable upstream state and unreconciled remote commits still fail
+push readiness. Hold the dependent push for reconciliation; this is not a ban
+on independently authorized local work. Actual scope authorization, protected
+paths, generated state, continuity, commit shape and mandatory pre-push checks
+remain blocking. Ahead count is neither proof of a malformed stack nor push
+authorization.
 If the branch intentionally has no upstream tracking branch, use
 `--skip-upstream` and record that reason in the closure packet. For final push
 evidence, the preview range must be non-stale and must not be confused with the
@@ -73,11 +87,11 @@ split the batch:
 3. Run preview again over the relevant final range.
 4. Then run the canonical pre-push gate.
 
-If the preview reports upstream push debt over the default limit, the agent
-must not open or continue another governed tranche on that branch. The next
-action is to push the already-complete safe range, rebuild/split the unpushed
-range if it is already malformed, or record a concrete blocker in the active
-handoff and stop new material work.
+When the preview reports an ahead-count advisory, disclose the local stack and
+continue admitted local work. At an authorized push checkpoint, bind the intended
+upstream..HEAD scope and inspect its actual authorizations and tranche split.
+Escalate only a concrete blocker or a missing effect grant. Do not force a push,
+request a numeric exception, or stop a new tranche merely because ahead > 2.
 
 ## Findings / Position
 
@@ -103,13 +117,12 @@ Corrective action: the closure packet must name the base/head range used for
 final push readiness and must keep material and session-sync ranges separate
 when commit-shape says to split them.
 
-Risk: an agent may keep committing multiple governed tranches locally and defer
-push until the resulting range mixes material, protected session surfaces, and
-handoff rotation history.
+Risk: a multi-tranche transport range may contain a real missing authorization,
+stale continuity marker or malformed per-tranche commit shape.
 
-Corrective action: the preview helper fails by default when upstream ahead
-count exceeds 2. The agent must clear or explicitly park that push debt before
-starting another governed tranche.
+Corrective action: show the full ahead/behind count as context and verify actual
+scope/continuity at the selected sync checkpoint. Count alone stays advisory;
+repair or hold only the named failed condition. No automatic push follows WARN.
 
 ## Decision / Disposition
 
@@ -146,7 +159,7 @@ public-facing artifact is authorized in this batch.
 | claimLanguage | read-only preview before canonical pre-push gate |
 | forbiddenExpansion | push authorization, public-sync authorization, runtime/provider/live proof, readiness certification, queue/daemon/watcher, or universal governed-coding-control claim |
 
-## Agent Operation Trace Block
+## Historical Agent Operation Trace Block
 
 | Field | Evidence |
 |---|---|
@@ -166,4 +179,26 @@ public-facing artifact is authorized in this batch.
 | Invocation ID | `agent-push-readiness-preview-standardization-2026-06-27` |
 | Expected manifest | `docs/reference/CVF_AGENT_PUSH_READINESS_PREVIEW_STANDARD_2026-06-27.md`; `governance/compat/run_agent_push_readiness_preview.py`; `governance/compat/test_run_agent_push_readiness_preview.py`; `docs/reference/guard_orientation/README.md`; `docs/reviews/CVF_AGENT_PUSH_READINESS_PREVIEW_STANDARDIZATION_COMPLETION_2026-06-27.md`; `governance/compat/CVF_REVIEW_RETENTION_REGISTRY.json` |
 | Actual changed set | `docs/reference/CVF_AGENT_PUSH_READINESS_PREVIEW_STANDARD_2026-06-27.md`; `docs/reference/guard_orientation/README.md`; `docs/reviews/CVF_AGENT_PUSH_READINESS_PREVIEW_STANDARDIZATION_COMPLETION_2026-06-27.md`; `governance/compat/CVF_REVIEW_RETENTION_REGISTRY.json`; `governance/compat/run_agent_push_readiness_preview.py`; `governance/compat/test_run_agent_push_readiness_preview.py` |
+| Manifest delta | MATCH |
+
+## Agent Operation Trace Block
+
+| Field | Evidence |
+|---|---|
+| Actor | Local Codex maintainer |
+| Provider or surface | private shared workspace |
+| Session or invocation | operator count-policy revision, 2026-10-11 |
+| Working directory | repository root |
+| Command or tool surface | source read, apply_patch, focused pytest and maintenance gates |
+| Target paths | `governance/compat/CVF_ACTIVE_WINDOW_REGISTRY.json`; `governance/compat/run_agent_push_readiness_preview.py`; `governance/compat/test_run_agent_push_readiness_preview.py`; `docs/reference/CVF_AGENT_PUSH_READINESS_PREVIEW_STANDARD_2026-06-27.md`; `docs/reference/CVF_AGENT_COMMIT_STEWARD_PROTOCOL_STANDARD_2026-06-15.md`; `docs/reference/guard_orientation/README.md`; `docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0013.md`; `docs/baselines/CVF_GC018_PUSH_BACKLOG_ADVISORY_2026-10-11.md` |
+| Allowed scope source | direct operator request and that GC-018 authorization |
+| Before status evidence | clean HEAD 3700b4ee949af6a216b2f74b652fc027f7a72ba3, ahead 2 / behind 0 |
+| After status evidence | ahead-only WARN is nonblocking; 17 focused tests passed |
+| Diff evidence | exact named-owner policy/helper/test and active-window binding changes; historical trace retained above |
+| Approval boundary | authorized local maintenance, no push grant |
+| Claim boundary | static policy checks; no worker/provider/live/public proof |
+| Agent type | INTERNAL_AGENT maintainer |
+| Invocation ID | cvf-push-backlog-advisory-20261011 |
+| Expected manifest | `governance/compat/CVF_ACTIVE_WINDOW_REGISTRY.json`; `governance/compat/run_agent_push_readiness_preview.py`; `governance/compat/test_run_agent_push_readiness_preview.py`; `docs/reference/CVF_AGENT_PUSH_READINESS_PREVIEW_STANDARD_2026-06-27.md`; `docs/reference/CVF_AGENT_COMMIT_STEWARD_PROTOCOL_STANDARD_2026-06-15.md`; `docs/reference/guard_orientation/README.md`; `docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0013.md`; `docs/baselines/CVF_GC018_PUSH_BACKLOG_ADVISORY_2026-10-11.md` |
+| Actual changed set | `governance/compat/CVF_ACTIVE_WINDOW_REGISTRY.json`; `governance/compat/run_agent_push_readiness_preview.py`; `governance/compat/test_run_agent_push_readiness_preview.py`; `docs/reference/CVF_AGENT_PUSH_READINESS_PREVIEW_STANDARD_2026-06-27.md`; `docs/reference/CVF_AGENT_COMMIT_STEWARD_PROTOCOL_STANDARD_2026-06-15.md`; `docs/reference/guard_orientation/README.md`; `docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0013.md`; `docs/baselines/CVF_GC018_PUSH_BACKLOG_ADVISORY_2026-10-11.md` |
 | Manifest delta | MATCH |

@@ -20,7 +20,7 @@ taskClasses: Push-readiness preview; Closure; Session-sync
 roles: reviewer; closer; session-sync steward
 lifecyclePhases: pre-closure; pre-push
 surfaceSelectors: governed branch with upstream tracking branch and local commits ahead of upstream
-detectionSignals: push-readiness preview reports upstream push debt exceeds the configured ahead limit; git rev-list --left-right --count upstream...HEAD shows local ahead count greater than 2
+detectionSignals: preview discloses ahead count as WARN above the advisory threshold; actual missing authorization, unreconciled remote commits or stale continuity requires targeted repair; commit count alone is not a defect
 enforcementLevel: MACHINE_CHECKED
 checkerBindings: governance/compat/run_agent_push_readiness_preview.py
 promotionState: MACHINE_CHECK_ADDED
@@ -38,10 +38,11 @@ and guard authorization artifacts accumulate in one unpublished range, the
 pre-push path becomes hard to repair because each sub-range can require a
 different authorization or commit shape.
 
-The defect is not "push took a long time" by itself. The defect is allowing
-new governed work to continue while the branch is already more than one
-material-plus-session pair ahead of upstream, without recording a concrete
-blocker or operator-authorized exception.
+Operator revision, 2026-10-11: a large unpublished stack is not itself a defect.
+The actionable defect is an actual missing scope authorization, stale continuity
+or malformed per-tranche range discovered at sync. Ahead count is machine-reported
+advisory context, not a prohibition on continuing local work. The historical
+June control was overly broad and is superseded by this current remediation.
 
 ## Scope / Applies To
 
@@ -52,34 +53,24 @@ and the reason is recorded in the closure packet.
 
 ## Bad Example
 
-```text
-Finish tranche T1, commit material and session-sync locally, skip push,
-then continue T2/T3/T4. Only after many local commits, run the pre-push gate
-once over the entire upstream..HEAD span.
-```
-
-This makes the upstream range contain unrelated material and protected
-session/handoff changes, so a single missing authorization or stale marker can
-block the entire publish path.
+Accumulate local tranches and later assert push readiness without reconciling
+actual scope/continuity, or force a push/stop new work solely because ahead > 2.
+Commit count cannot establish either safety or a violation.
 
 ## Good Example
 
-```text
-Finish one material commit and one dedicated session-sync commit, run
-push-readiness preview and canonical pre-push for that range, then push. If
-push is blocked, record the exact blocker and do not open another governed
-tranche on the same branch until the debt is cleared or explicitly parked.
-```
-
-The safe default is at most 2 commits ahead of upstream: one material commit
-and one session-sync or handoff-sync commit.
+Keep material and continuity commits separate within each admitted tranche.
+Continue local work until the operator-selected sync checkpoint. Then disclose
+upstream..HEAD and ahead/behind, verify real authorizations and continuity, run
+canonical push checks and push only with the existing effect authorization.
+An ahead-count WARN alone needs no exception or worker interruption.
 
 ## Canonical Sources
 
 - `docs/reference/CVF_AGENT_PUSH_READINESS_PREVIEW_STANDARD_2026-06-27.md`:
   upstream push-debt rule and required preview command
 - `governance/compat/run_agent_push_readiness_preview.py`:
-  `DEFAULT_UPSTREAM_AHEAD_LIMIT` and `_upstream_status`
+  `DEFAULT_UPSTREAM_AHEAD_WARNING` and `_upstream_status`
 - `docs/reference/guard_orientation/README.md`:
   Push-readiness preview task-class row and common failure pattern
 - `docs/reference/CVF_TRANCHE_COMMIT_CHOREOGRAPHY_STANDARD_2026-06-03.md`:
@@ -87,13 +78,13 @@ and one session-sync or handoff-sync commit.
 
 ## Remediation
 
-Run push-readiness preview before starting a fresh governed tranche and after
-each completed material-plus-session pair. If the local branch is more than 2
-commits ahead of upstream, stop new governed work on that branch. Push the safe
-sub-range, rebuild or split the malformed local stack from a backup branch, or
-record a concrete blocker and operator authorization before continuing.
+Run preview at planned sync checkpoints, before push or for a named range issue.
+An ahead-only WARN does not fail --enforce and permits admitted local continuation.
+Hold dependent push for missing/unreadable upstream or unreconciled remote commits;
+repair concrete authorization/continuity/shape failures under their owners.
+The historical 2-commit stop rule is withdrawn, not replaced by a larger hard cap.
 
-## Agent Operation Trace Block
+## Historical Agent Operation Trace Block - 2026-06-27
 
 | Field | Evidence |
 |---|---|
@@ -113,6 +104,28 @@ record a concrete blocker and operator authorization before continuing.
 | Invocation ID | cvf-adif-0013-upstream-push-debt-2026-06-27 |
 | Expected manifest | this entry, plus README table row |
 | Actual changed set | this entry, plus README table row |
+| Manifest delta | MATCH |
+
+## Agent Operation Trace Block
+
+| Field | Evidence |
+|---|---|
+| Actor | Local Codex maintainer |
+| Provider or surface | private shared workspace |
+| Session or invocation | operator count-policy revision, 2026-10-11 |
+| Working directory | repository root |
+| Command or tool surface | source read, apply_patch, focused pytest and maintenance gates |
+| Target paths | `governance/compat/CVF_ACTIVE_WINDOW_REGISTRY.json`; `governance/compat/run_agent_push_readiness_preview.py`; `governance/compat/test_run_agent_push_readiness_preview.py`; `docs/reference/CVF_AGENT_PUSH_READINESS_PREVIEW_STANDARD_2026-06-27.md`; `docs/reference/CVF_AGENT_COMMIT_STEWARD_PROTOCOL_STANDARD_2026-06-15.md`; `docs/reference/guard_orientation/README.md`; `docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0013.md`; `docs/baselines/CVF_GC018_PUSH_BACKLOG_ADVISORY_2026-10-11.md` |
+| Allowed scope source | direct operator request and that GC-018 authorization |
+| Before status evidence | clean HEAD 3700b4ee949af6a216b2f74b652fc027f7a72ba3, ahead 2 / behind 0 |
+| After status evidence | ahead-only WARN is nonblocking; 17 focused tests passed |
+| Diff evidence | exact named-owner policy/helper/test and active-window binding changes; historical trace retained above |
+| Approval boundary | authorized local maintenance, no push grant |
+| Claim boundary | static policy checks; no worker/provider/live/public proof |
+| Agent type | INTERNAL_AGENT maintainer |
+| Invocation ID | cvf-push-backlog-advisory-20261011 |
+| Expected manifest | `governance/compat/CVF_ACTIVE_WINDOW_REGISTRY.json`; `governance/compat/run_agent_push_readiness_preview.py`; `governance/compat/test_run_agent_push_readiness_preview.py`; `docs/reference/CVF_AGENT_PUSH_READINESS_PREVIEW_STANDARD_2026-06-27.md`; `docs/reference/CVF_AGENT_COMMIT_STEWARD_PROTOCOL_STANDARD_2026-06-15.md`; `docs/reference/guard_orientation/README.md`; `docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0013.md`; `docs/baselines/CVF_GC018_PUSH_BACKLOG_ADVISORY_2026-10-11.md` |
+| Actual changed set | `governance/compat/CVF_ACTIVE_WINDOW_REGISTRY.json`; `governance/compat/run_agent_push_readiness_preview.py`; `governance/compat/test_run_agent_push_readiness_preview.py`; `docs/reference/CVF_AGENT_PUSH_READINESS_PREVIEW_STANDARD_2026-06-27.md`; `docs/reference/CVF_AGENT_COMMIT_STEWARD_PROTOCOL_STANDARD_2026-06-15.md`; `docs/reference/guard_orientation/README.md`; `docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0013.md`; `docs/baselines/CVF_GC018_PUSH_BACKLOG_ADVISORY_2026-10-11.md` |
 | Manifest delta | MATCH |
 
 ## Public Export Disposition
