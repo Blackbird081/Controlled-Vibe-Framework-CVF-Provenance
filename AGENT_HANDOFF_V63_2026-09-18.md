@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Current NCR Continuation
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `976e5b4a96cfc4f2f8c945023c97813cf865005a`. Batch ID: CVF-SYMBOL-LINE-ANCHOR-FIX-20261011. Packet material for exact source-helper/test worker release; O6 design remains accepted.
+Current HEAD recorded for this handoff: `ba14138ba34ebd1a235990b515be5b3a84c211e7`. Batch ID: CVF-SYMBOL-LINE-ANCHOR-FIX-20261011. Packet material `976e5b4a96cfc4f2f8c945023c97813cf865005a` retained.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -11,7 +11,7 @@ Closed history is preserved byte-for-byte at `CVF_SESSION/handoffs/archive/AGENT
 ## Scope / Target / Owner Boundary
 Operator2026-10-11: continue; prior audit-and-choose/manual-worker preference retained. Local selects confirmed symbol-line anchor repair; operator starts Haiku ex high manually, no Local launch.
 Role: Local INTERNAL_AGENT dispatcher; phase: bounded source-maintenance dispatch; decision owner=Local. Worker unstarted; exact four write paths, no stage/commit; no successor.
-PROGRAM_ID=CVF-CORE; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-SYMBOL-LINE-ANCHOR-FIX-20261011. Work order docs/work_orders/CVF_AGENT_WORK_ORDER_SYMBOL_LINE_ANCHOR_FIX_2026-10-11.md; material=976e5b4a96cfc4f2f8c945023c97813cf865005a. Manual INTERNAL_AGENT worker after bound pre-dispatch PASS; capture executionBaseHead, pre-implementation before edits; four paths, 35 minutes, WORKER_MUST_NOT_COMMIT; pending return to Local. O6 accepted; helper/scaffold deferred; no successor. Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11 parked; LHW24 retained.
+PROGRAM_ID=CVF-CORE; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-SYMBOL-LINE-ANCHOR-FIX-20261011. Work order docs/work_orders/CVF_AGENT_WORK_ORDER_SYMBOL_LINE_ANCHOR_FIX_2026-10-11.md; material=976e5b4a96cfc4f2f8c945023c97813cf865005a. Manual INTERNAL_AGENT worker after bound pre-dispatch PASS; capture executionBaseHead, pre-implementation before edits; four paths, 35 minutes, WORKER_MUST_NOT_COMMIT; pending return to Local. O6 accepted; helper/scaffold deferred; no successor. Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11 parked; LHW24 retained. Ahead count advisory; no new push grant.
 Remote tracking branch: `origin/main`. Exact remote SHA must be derived live from git when needed.
 External agent memory files: non-canonical convenience only.
 ## Startup Acknowledgment
@@ -22,7 +22,7 @@ Current NIS-T1J is CLOSED_PASS_BOUNDED with no automatic successor; NCR consumer
 ## Current Authority
 Baseline: `docs/baselines/CVF_GC018_SYMBOL_LINE_ANCHOR_FIX_2026-10-11.md`; SHA256 `f7a95b94214bebc99dc49723470770809a26d7dbc01260cf162096ae5513c80d`.
 Work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_SYMBOL_LINE_ANCHOR_FIX_2026-10-11.md`; SHA256 `497a23d001e626685e725255d85ac80bd2175a766b51fc16468041b8d549bcd0`; DISPATCH_READY subject to final committed bound gate.
-Material 976e5b4a96cfc4f2f8c945023c97813cf865005a; worker unstarted. Prior O6 completion docs/reviews/CVF_ORACLE_O6_DESIGN_COMPLETION_2026-10-11.md retained; helper/scaffold deferred. Private sync 4d5612f72 complete; packet pair unpushed. TEMP logs retain dispatcher metadata repairs.
+Material 976e5b4a96cfc4f2f8c945023c97813cf865005a; worker unstarted. Prior O6 completion docs/reviews/CVF_ORACLE_O6_DESIGN_COMPLETION_2026-10-11.md retained; helper/scaffold deferred. Private sync 4d5612f72 complete. Push count advisory; no push grant.
 ## O6 Release Rebind After Provenance Sync (2026-10-11)
 Root marker replacement aa32f666 blocked DR-04/DR-05; rebind bd13e1a80 restored release. Log C:/Users/DELL/AppData/Local/Temp/o6_preimpl.log retained; no worker defect. Provenance lane closed, URL locked.
 Learning: ORCHESTRATOR_PACKET_GAP; GOVERNANCE_CONTROL_PLANE; RULE_EXISTS. Future active dispatch continuity preserves packet binding and revalidates release; no checker change.
@@ -128,25 +128,25 @@ The historic provider/live parked line applies to those stopped lanes; it does n
 Q001/Q004 actual-data source/writer,custody,retention/RPO/RTO/cost checkpoints are action-specific; do not require a user-supplied ledger copy for unrelated fresh isolated development.
 NCR send/B2 STOP and S05/C1 remain; IAB unavailable; repo Playwright Chromium present; vision/full P04/full release remain unproved. No autonomous P11/public/deploy activation.
 ## Core Guard Self-Protection Authorization
-Authorized guard-maintenance scope: O6 six-surface terminal closure continuity; closed packet hashes and accepted material retained. Protected paths: `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`. Operator authorization: admitted O6 Local review/closure and necessary private terminal continuity. Rollback boundary: restore matching O6 continuity; preserve worker blocked evidence and all parked effects. Generated aggregates regenerated only.
+Authorized guard-maintenance scope: six-surface continuity after operator-authorized push-count revision; active packet pins retained. Protected paths: `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`. Operator authorization: direct 2026-10-11 count-policy revision and necessary continuity. Rollback boundary: restore matching continuity; preserve parked effects. Generated aggregates regenerated only.
 ## Agent Operation Trace Block
 
 | Field | Evidence |
 |---|---|
-| Actor | Local O6 reviewer/closer/session-sync steward |
+| Actor | Local maintainer/session-sync steward |
 | Provider or surface | private shared workspace |
-| Session or invocation | o6-design-terminal-continuity-20261011 |
+| Session or invocation | push-backlog-advisory-continuity-20261011 |
 | Working directory | repository root |
 | Command or tool surface | canonical generator; atomic commit; bound gates |
 | Target paths | six continuity paths listed in the manifest below |
-| Allowed scope source | O6 baseline dedicated continuity exact manifest; operator worker-blocker intake |
-| Before status evidence | 823a01ceba2fd52489cef2f74936f2590e41e61a; clean metadata material |
-| After status evidence | six-surface terminal next move; split closure verification follows |
+| Allowed scope source | GC018 push-backlog baseline; direct operator revision |
+| Before status evidence | ba14138ba34ebd1a235990b515be5b3a84c211e7; clean policy material |
+| After status evidence | count policy recorded; active worker packet retained |
 | Diff evidence | exact six continuity paths; material unchanged |
-| Approval boundary | O6 continuity repair only |
+| Approval boundary | authorized policy continuity only |
 | Claim boundary | documentary release; no oracle execution or accepted worker output |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | o6-design-terminal-continuity-20261011 |
+| Invocation ID | push-backlog-advisory-continuity-20261011 |
 | Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Manifest delta | MATCH |
