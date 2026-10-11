@@ -6,7 +6,7 @@ Status: DESIGN_DRAFT
 Date: 2026-10-10
 Batch ID: CVF-WORKER-SELECTION-FOUNDATION-20261010
 Proposed contract ID: cvf.orchestrator-model-selection-advisory@0.2.1
-Revision: R2 - R1-B1 corrected; conditional reviewer concurrence recorded by Local
+Revision: R3 - post-Web design delta (CVF-MS-WEB-01/04/06) over R2; R2 bytes and conditional concurrence remain historical evidence for R2 only
 
 ## Purpose
 
@@ -35,8 +35,8 @@ Doctrine proposal: docs/reference/CVF_ORCHESTRATOR_MODEL_SELECTION_DOCTRINE_DESI
 | CandidateConfiguration | candidateId, provider/productId, modelId/alias, snapshot or null, identityBasis per observed field, aliasResolution, channel, effort, harness product/version/settings with unknowns, tool profile, hashes only for captured material, role, capabilityRefs, surfaceAdmissionRefs, contextEligibilityRef where required | seat configuration for B or registry for A -> applicable admission owners -> orchestrator |
 | VersionEvidence | evidenceId, candidateId, evidenceClass, claim, locator/section, sourceRevision or capturedHash, retrievedAt, sourceAsOf, methodologyRef, configurationMatch, taskApplicability, limitations, freshnessDisposition | source intake -> Local applicability review -> orchestrator |
 | SelectionDecision | decisionId, contractVersion, taskProfileRef/hash, candidateSnapshotRef/hash, evidenceSnapshotRef/hash, decisionOwner, decidedAt, candidateDispositions, selectedCandidateId or null, rationale, qualityDisposition, confidenceReason, costBasis, learningInputs, operatorAssignmentDisposition, predecessorDecisionRef or null, executionAuthorized=false | orchestrator -> existing dispatcher/admission review -> future dispatch |
-| ReviewedOutcomeLink | outcomeId, decisionRef/hash, executionAttemptRef, observedConfiguration, identityEvidence, returnRef/hash, independentReviewRef/hash, technicalDisposition, procedureDisposition, repairAttribution, telemetry, deviations | execution/reviewer -> existing review and custody owners -> learning intake |
-| LearningConsumptionLink | laterDecisionId, branch (PARENT_CONTROL or LOCAL_OBSERVATION), sourceRef/hash, applicabilityReason, actionOrNoChangeReason, verificationRef/hash or null; branch-specific disposition | later orchestrator -> later reviewer -> later task's existing decision/review evidence |
+| ReviewedOutcomeLink | outcomeId, decisionRef/hash, executionAttemptRef, observedConfiguration, identityEvidence, initialReturnRef/hash, firstDisposition, returnRef/hash (final), independentReviewRef/hash, technicalDisposition, procedureDisposition, repairAttribution (repair or assistance), failedOrAbandonedAttemptRefs, finalAcceptedArtifactRef/hash, remainingParentTaskSpend (money, tokens, quota, worker time, human time and elapsed time separate; unknown null), telemetry, deviations | execution/reviewer -> existing review and custody owners -> learning intake |
+| LearningConsumptionLink | laterDecisionId, branch (PARENT_CONTROL or LOCAL_OBSERVATION), sourceRef/hash (immutable original pin), currentSupersessionOrRetractionCheck, currentApplicabilityDisposition, applicabilityReason, actionOrNoChangeReason, verificationRef/hash or null; branch-specific disposition | later orchestrator -> later reviewer -> later task's existing decision/review evidence |
 
 B surfaceAdmissionRefs name the admitted seat/task, permitted tools, topology and
 role/context declaration. A instead requires current policy/registry/capability/health
@@ -61,6 +61,11 @@ Outcome facts remain in the task's single existing review/evidence record. The s
 legacy tranche ledger remains read-only evidence, not backfilled or a second future
 outcome store. ReviewedOutcomeLink references that canonical task record. Later
 consumption lives in the later task's decision/review section, not a global new ledger.
+For the first B outcome, ReviewedOutcomeLink also keeps the initial worker return and
+first disposition, repair or assistance attribution, the final accepted artifact, failed
+or abandoned attempt references and remaining parent-task spend. Artifact acceptance is
+recorded separately from evidence about the originally selected configuration, so a
+repaired final artifact cannot upgrade that configuration's first-return quality.
 Exact future artifact paths are declared by that task before execution; none is created
 here. Machine format and validation are demand-gated after useful manual-loop evidence.
 
@@ -115,7 +120,7 @@ the explicit-assignment branch below records the gap without treating it as qual
 
 No choice delegation and no explicit assignment yields HOLD_OPERATOR_CONSTRAINT
 for autonomous SELECT; a recommendation is still allowed. For an explicit operator
-assignment, absence of quality evidence alone does not hold: SELECT the assigned
+assignment, absence of predictive quality history alone does not hold: SELECT the assigned
 candidate and record `operatorAssignmentDisposition=HONORED_WITH_EVIDENCE_GAP`,
 the missing evidence, confidence limit and mandatory independent acceptance against
 the unchanged floor. Keep qualityDisposition=INSUFFICIENT when warranted; this is
@@ -123,6 +128,9 @@ an assignment disposition, not a quality upgrade or invocation grant.
 Hold an explicit assignment for unavailability, authority/policy/method/context
 conflicts, or a known failed hard requirement. Existing task/budget/effect admission
 remains required. Missing quality evidence must not be relabeled as known failure.
+The gap exception waives only missing predictive quality history: a missing mandatory
+context, authority, budget or effect proof stays pending with its existing owner, so
+SELECT and dispatch admission remain separate and the gap label is never a PASS for that proof.
 The orchestrator seat itself is excluded from self-selection.
 For delegated selections, SUPPORTED/PROVISIONAL follow the doctrine's Decision
 Procedure And Uncertainty: PROVISIONAL needs relevant positive evidence and the
@@ -178,6 +186,12 @@ PLL states or a new learning lifecycle. ACTION_VERIFIED needs a reviewer-checked
 action/result; NO_CHANGE_REASONED records justified applicability without improvement.
 Both branches retain concrete source pins and limits. Local outcomes only enter
 F2G/PLL if the separate value-admission checks justify an actual reusable control.
+Before a later decision consumes the immutable source, it checks current supersession or
+retraction and applicability, and records that present disposition beside the original
+pin; a retracted or superseded source is cited only as historical context. A
+LOCAL_OBSERVATION link never claims parent DELIVERY or APPLICATION, and PARENT_CONTROL
+follows only the existing typed PLL obligations. Zero, one or many consumers remain valid,
+and frozen history is not edited.
 
 B freeze and identity checks are cooperative evidence controls, not host interception.
 Observed or reported deviations are disclosed; unobserved silent changes remain unknown.
@@ -210,6 +224,9 @@ Observed or reported deviations are disclosed; unobserved silent changes remain 
 | Earlier outcome has zero, one or many later consumers | earlier decision terminal; each later task owns its own link | append-only one-to-many joins |
 | Quota-only cap with currency unknown | compare quota/window; no currency conversion | unit-safe capacity evidence |
 | Two candidates pass | choose exactly one with rationale | no exactly-one-eligible restriction |
+| Quality-history gap plus missing mandatory context proof (R3 static row, not executed) | SELECT may stand as HONORED_WITH_EVIDENCE_GAP for the assigned configuration; dispatch held pending context-eligibility admission; narrowed claim is the assignment record only; owner is the dispatch context-eligibility owner with Local as decision owner | static text; the gap label is never a PASS for the context proof |
+| Accepted artifact only after material reviewer repair (R3 static row, not executed) | artifact acceptance may be recorded; ReviewedOutcomeLink keeps the initial return, first disposition and repair attribution; claim narrowed to artifact acceptance with no first-return quality upgrade for the selected configuration; owner is the reviewer/closer under the existing review record with Local deciding | static text; no executed repair-attribution check |
+| Later decision citing retracted or superseded evidence (R3 static row, not executed) | HOLD the dependent later action or narrow the link to historical CITED context; no ACTION_VERIFIED or NO_CHANGE_REASONED claim on the retracted source; PARENT_CONTROL not claimed; owner is the later orchestrator decision with the later reviewer and the existing PLL owner | static text; frozen earlier decision unchanged |
 
 This matrix specifies future checks; none are reported as executed behavior here.
 
@@ -231,6 +248,8 @@ DEFERRED_PRIVATE_ONLY
 
 Local INTERNAL_AGENT; internal design; final technical decision owner=Local.
 Conditional R2 concurrence is from the original reviewer, verified against the
-corrected paragraphs by Local; it is not a second independent review.
+corrected paragraphs by Local; it is not a second independent review. R3 is an INTERNAL_AGENT worker design delta
+applying CVF-MS-WEB-01/04/06 clarifications; it has no independent acceptance until Local
+review, and the R2 concurrence does not extend to R3 bytes.
 No new schema authority, dispatch, router,
 provider/live proof, public export, production or universal compliance claim.

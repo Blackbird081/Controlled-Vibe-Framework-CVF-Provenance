@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 docType: work_order
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 Date: 2026-10-10
 Batch ID: CVF-MODEL-SELECTION-S3-R1-20261010
 Dispatch base head: 95ed2e98fbe034adf7f632e503a7844db4b02235
@@ -17,7 +17,7 @@ Role: INTERNAL_AGENT shared-workspace design worker; Local orchestrator is the r
 Canonical packet: `docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_SELECTION_S3_R1_MANUAL_DESIGN_TASK_2026-10-10.md`; paired baseline `docs/baselines/CVF_GC018_MODEL_SELECTION_S3_R1_MANUAL_DESIGN_TASK_2026-10-10.md`.
 Commit mode: WORKER_MUST_NOT_COMMIT. executionBaseHead: WORKER_MUST_CAPTURE_AT_START from a clean committed release.
 Current-time notes: selected worker-seat candidate is the operator-started Claude Haiku 5.5 Max/Max configuration, identity OPERATOR_REPORTED and snapshot UNKNOWN; Local must confirm the actual seat, role/context eligibility and current grant before dispatch. No API route or additional provider invocation is granted.
-Do-not-misread notes: DISPATCH_READY still requires clean committed release and current seat/context admission before worker invocation; Expense, Gateway API, external research, public-sync and deployment remain parked.
+Do-not-misread notes (dispatch-time condition, now historical): clean committed release and current seat/context admission were required before worker invocation; Expense, Gateway API, external research, public-sync and deployment remain parked.
 Required first actions: read session bootstrap/front door and active handoff, guard orientation/literal gotchas, this order and baseline, the four named owner inputs, then applicable checker sources; capture start time and execution HEAD before edits.
 Return contract: exact two design drafts plus evidence and worker return; `COMPLETE_PENDING_REVIEW` or one consolidated `BLOCKED_WITH_REASON`, with uncommitted diff and first-disposition/repair/cost evidence.
 
@@ -407,7 +407,7 @@ DEFERRED_PRIVATE_ONLY
 | actionEvidence | ACTION_EVIDENCE_PRESENT: source hashes, packet diff, ADIF resolver and dispatch gates only |
 | invocationBoundary | packet authoring uses local read/write/checker tools; separate current-time worker admission required |
 | interceptionBoundary | no wrapper, proxy, agent action interception or Gateway API control |
-| claimLanguage | DISPATCH_READY packet only; S3 outcome pending worker and independent Local review |
+| claimLanguage | At packet creation, dispatch eligibility only; S3 outcome then awaited worker and independent Local review. See current Local Closure Receipt. |
 | forbiddenExpansion | Expense, S2/S4/S5, direct provider call, runtime activation, public-sync, deployment |
 
 ## Scaffold Provenance Block
@@ -447,4 +447,30 @@ DEFERRED_PRIVATE_ONLY
 
 ## Claim Boundary
 
-This DISPATCH_READY packet is a concrete first work order, not a worker invocation or S3 completion. The provisional choice is worker-only and does not choose/replace the active orchestrator seat. No provider/live, Gateway API, Expense, public or production claim follows.
+At creation, this packet defined a concrete first work order and did not itself prove a worker invocation or S3 completion. The provisional choice was worker-only and did not choose or replace the active orchestrator seat. No provider/live, Gateway API, Expense, public or production claim follows.
+
+## Local Closure Receipt
+
+CLOSED_PASS_BOUNDED on 2026-10-11. Local completion: `docs/reviews/CVF_MODEL_SELECTION_S3_R1_COMPLETION_2026-10-10.md`; independent evidence: `docs/reviews/evidence/model-selection-s3-r1-local-review-20261011.json`. Earlier dispatch-time conditions describe packet creation, not the present state. The two worker R3 drafts and worker evidence JSON are accepted unchanged; Local added one attributed verdict-label format correction to the return. First gate FAIL and two worker self-repair rounds remain attributed to the worker. Model snapshot, effort and bill remain unknown; no S4/S2/S5 successor is opened.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this work order | CLOSED_PASS_BOUNDED Local receipt | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_MODEL_SELECTION_S3_R1_COMPLETION_2026-10-10.md` | independent Local probe and bounded disposition | PASS |
+| Roadmap state | `docs/roadmaps/CVF_ORCHESTRATOR_MODEL_SELECTION_SYSTEM_CHAIN_ROADMAP_2026-10-10.md` | S3-R1 closed; S4/S2/S5 parked | PASS |
+| Registry JSON | `docs/reviews/evidence/model-selection-s3-r1-local-review-20261011.json` | source pins, probe results and limitations | PASS |
+| Registry Markdown | Local completion and worker return | distinct decision and original worker attribution | PASS |
+| External evidence digest | `docs/reviews/CVF_MODEL_SELECTION_WEB_REVIEW_LOCAL_DISPOSITION_2026-10-10.md` | previously reconciled advisory; no new external intake | N/A with reason: internal worker return |
+| System loop interlock | this work order | no Gateway, runtime or provider activation | PASS |
+| Session continuity | active handoff and generated state/bootstrap | separate actual-material-SHA sync follows | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| Worker return | `docs/reviews/CVF_MODEL_SELECTION_S3_R1_WORKER_RETURN_2026-10-10.md` present with four bounded changed paths | PASS |
+| Independent Local acceptance | Local completion and source-derived probe identify distinct reviewer invocation and limited static result | PASS |
+| Live runtime or provider receipt | N/A with reason: documentation design task did not exercise selector runtime or provider API | N/A_WITH_REASON |
+| Closure claim | `CLOSED_PASS_BOUNDED` for S3-R1 manual design task only | PASS |

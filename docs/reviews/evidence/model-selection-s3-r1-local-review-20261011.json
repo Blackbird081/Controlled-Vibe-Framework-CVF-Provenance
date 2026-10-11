@@ -1,0 +1,101 @@
+{
+  "schemaVersion": "cvf.modelSelectionS3R1LocalReview@0.1.0",
+  "batchId": "CVF-MODEL-SELECTION-S3-R1-20261010",
+  "reviewDate": "2026-10-11",
+  "reviewerActor": "LOCAL_REVIEWER_CODEX_ROOT",
+  "workerActor": "INTERNAL_AGENT_CLAUDE_WORKER",
+  "executionBaseHead": "c3d4b0b961cfc079a802a0e2df531bc7c48b57bc",
+  "scope": "independent source-to-R3 semantic probe and return evidence review; documentation only",
+  "sourcePins": {
+    "webLocalDisposition": {
+      "path": "docs/reviews/CVF_MODEL_SELECTION_WEB_REVIEW_LOCAL_DISPOSITION_2026-10-10.md",
+      "sha256": "a5f1e0e9b01dd12edcada9c09fcfd22d3f2f31f8b19b8ad556e8d32ebff70167"
+    },
+    "doctrineR2": {
+      "path": "docs/reference/CVF_ORCHESTRATOR_MODEL_SELECTION_DOCTRINE_DESIGN_2026-10-10.md",
+      "sha256": "10f93ae2c7716e9e96529f6886996918acd6acb4e630b47719a0543d68422ff9"
+    },
+    "contractR2": {
+      "path": "docs/reference/CVF_ORCHESTRATOR_MODEL_SELECTION_CONTRACT_DESIGN_2026-10-10.md",
+      "sha256": "dcdc1a0e87348b5300efecb0f96490140d965957fa0b6743761f813be3a5faa0"
+    }
+  },
+  "workerPins": {
+    "workerEvidence": {
+      "path": "docs/reviews/evidence/model-selection-s3-r1-worker-20261010.json",
+      "sha256": "975d1f7fcf8ffba8700281e446d4f594cc519d57ec27a4ee3834c3136e76c051"
+    },
+    "workerReturn": {
+      "path": "docs/reviews/CVF_MODEL_SELECTION_S3_R1_WORKER_RETURN_2026-10-10.md",
+      "sha256": "39d69274d67858da292986d1dfb37ae3bb33acc96f565ec45fd8fc0136e501a0",
+      "unamendedSubmittedSha256": "545dbe403c5e9af7a5551d9967b82dc1483da345838acf678a7501864d1fadba",
+      "localCorrection": "Added required Corpus verdict label to the existing N/A statement; no worker design or conclusion change"
+    },
+    "doctrineR3": {
+      "path": "docs/reference/CVF_ORCHESTRATOR_MODEL_SELECTION_DOCTRINE_DESIGN_2026-10-10.md",
+      "sha256": "9eb0b9cb8020113f1db7dbd41923b4f06ac57d884d5eade7ee31156395504082"
+    },
+    "contractR3": {
+      "path": "docs/reference/CVF_ORCHESTRATOR_MODEL_SELECTION_CONTRACT_DESIGN_2026-10-10.md",
+      "sha256": "7e090f5249d7e61a939ca1a0dadc65e10555cc5b04f75a053c1c64e190611a09"
+    }
+  },
+  "independentProbe": {
+    "method": "Local read of pinned Web disposition and R2 Git preimages, direct R3 diff and three counterfactual scenario judgments; no worker 15-cluster oracle imported",
+    "positiveControl": "explicit assignment lacking predictive quality history only may SELECT with HONORED_WITH_EVIDENCE_GAP; independent acceptance and dispatch admission remain separate",
+    "cases": [
+      {
+        "id": "NR1",
+        "source": "CVF-MS-WEB-01",
+        "counterfactual": "missing mandatory context proof counted as covered by quality-history exception",
+        "observed": "R3 permits assigned SELECT but holds dispatch; context owner keeps missing proof pending, never PASS",
+        "result": "PASS_STATIC_DESIGN"
+      },
+      {
+        "id": "NR2",
+        "source": "CVF-MS-WEB-04",
+        "counterfactual": "final repaired artifact accepted as evidence that first worker return or selected configuration was good",
+        "observed": "R3 retains initial return, first disposition, repair attribution, failed attempts and separate spend; acceptance claim stays artifact-only",
+        "result": "PASS_STATIC_DESIGN"
+      },
+      {
+        "id": "NR3",
+        "source": "CVF-MS-WEB-06",
+        "counterfactual": "later decision treats retracted immutable source as current ACTION_VERIFIED or typed parent application",
+        "observed": "R3 requires current supersession/retraction and applicability check, historical-only citation or hold; typed PLL branch stays separate",
+        "result": "PASS_STATIC_DESIGN"
+      }
+    ],
+    "disposition": "PASS_STATIC_DESIGN_ONLY"
+  },
+  "evidenceIntegrity": {
+    "workerManifestMatchesGitStatus": true,
+    "r2PreimagesMatchGitHead": true,
+    "r3HashesMatchWorkerEvidence": true,
+    "webLocalHashMatchesWorkerEvidence": true,
+    "workerReturnSubmittedBytesGateRerun": "PASS",
+    "reviewerFastSubmittedBytesRerun": "PASS_70_OF_70",
+    "finalReturnCorrectionGate": "PASS_PRE_IMPLEMENTATION_86_OF_86",
+    "whitespace": "PASS"
+  },
+  "workerHistory": {
+    "firstFastGate": "FAIL_RETURN_SHAPE",
+    "workerSelfRepairRounds": 2,
+    "finalFastGate": "PASS",
+    "reviewerRepairs": 1,
+    "abandonedAttempts": 0,
+    "workerElapsedSeconds": 902,
+    "bill": null,
+    "tokens": null,
+    "quota": null
+  },
+  "limitations": {
+    "modelIdentity": "claude-haiku-5-5 runtime-context report only; operator Max/Max label; immutable snapshot/effort/harness version unverified",
+    "seatAdmission": "operator manually invoked shared-workspace worker; post-hoc technical acceptance does not prove every dispatch-time seat/context check",
+    "cost": "money/tokens/quota unknown; no comparative quality or savings inference",
+    "staticOnly": "three design probes are not executed runtime/provider tests",
+    "operatorReportedBlockedRm": "operator reports shell command blocked before execution; current diff has no deletion; no historical command-execution proof claimed"
+  },
+  "packetGapDisposition": "closed work order receives required closure fields and return receives one attributed verdict-label correction; next packet should list reviewer-fast return shape explicitly. No global template/checker change from this single bounded observation.",
+  "decision": "TECHNICAL_ACCEPT_BOUNDED_DOCUMENTATION; S3-R1 result accepted with identity/admission limits; no S4/S2/S5 auto-open"
+}

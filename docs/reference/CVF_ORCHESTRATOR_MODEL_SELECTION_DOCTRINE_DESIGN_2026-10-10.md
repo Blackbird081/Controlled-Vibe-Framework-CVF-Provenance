@@ -5,7 +5,7 @@ docType: reference
 Status: DESIGN_DRAFT
 Date: 2026-10-10
 Batch ID: CVF-WORKER-SELECTION-FOUNDATION-20261010
-Revision: R2 - R1-B1 corrected; conditional reviewer concurrence recorded by Local
+Revision: R3 - post-Web design delta (CVF-MS-WEB-01/04/06) over R2; R2 bytes and conditional concurrence remain historical evidence for R2 only
 
 ## Purpose
 
@@ -39,14 +39,18 @@ or receipts substitute for the other's. No gateway call is a prerequisite of B.
 Operator controls topology and may assign a model explicitly or delegate technical
 choice within a named seat/role and allowed set, per task or standing policy. Record
 that choice authority in the task before SELECT; selection authority never grants
-invocation authority. For an explicit operator assignment, absence of quality evidence
-alone does not hold selection. SELECT records
+invocation authority. For an explicit operator assignment, absence of predictive quality history
+alone does not hold selection. The evidence-gap exception covers only that missing
+history. SELECT records
 `operatorAssignmentDisposition=HONORED_WITH_EVIDENCE_GAP`, the confidence limit and
 mandatory independent acceptance against the unchanged observable floor. Preserve
 the evidence gap; selection does not upgrade quality evidence to SUPPORTED.
 Hold an explicit assignment for unavailability, authority/policy/method/context
 conflicts, or a known failed hard requirement. Existing task/budget/effect admission
 still applies; missing quality history is not itself a known failed requirement.
+The exception never waives a mandatory context, authority, budget or effect proof. Such
+proof stays pending with its existing owner, so a selection record can stand while
+dispatch is held until admission; the gap label is never recorded as PASS for it.
 An unassigned seat without delegated choice may receive a recommendation, but cannot
 SELECT autonomously. A standing delegation avoids repeated technical questions to the
 Non coder. The current design request authorizes design only, not a new live delegation.
@@ -137,7 +141,10 @@ owner for an explicit allowance or hold. No new risk taxonomy or live grant is c
 For delegated selections, INSUFFICIENT or absent quality evidence yields an evidence
 hold or a supported alternative. For an explicit assignment, the evidence-gap clause
 above takes precedence; retain INSUFFICIENT if warranted and honor the assignment
-with independent acceptance. Known failed hard requirements still hold both branches.
+with independent acceptance. Known failed hard requirements still hold both branches. In that explicit-assignment
+clause, "evidence gap" means predictive quality history only; an unproven mandatory
+context, authority, budget or effect precondition stays pending with its owner and is
+never closed by the gap label.
 These are design-level admission semantics; operational use needs its admitted task.
 
 No eligible configuration means HOLD_NO_ELIGIBLE_CANDIDATE, with the precise gap
@@ -163,7 +170,11 @@ failure probabilities from the six accepted, related worker observations.
 Capacity may instead be measured in quota units, rate limits or wall-clock budgets;
 compare a hard cap only to evidence in its own unit/window. Unknown marginal money
 is not zero; a monetary cap still needs a supported upper bound. Do not convert
-subscription capacity to currency without a declared method and evidence.
+subscription capacity to currency without a declared method and evidence. Outcome
+records keep the initial worker return and its first disposition, repair or assistance
+attribution, failed or abandoned attempts and remaining parent-task spend apart from
+the accepted final artifact; an accepted artifact does not validate the originally
+selected configuration.
 
 Existing pipeline cost, quality-proxy, latency and price-fallback limitations are
 dated observations in docs/reviews/evidence/cvf-expense-legibility-local-review-2026-10-10.json,
@@ -194,7 +205,9 @@ home in their task's existing review/evidence record; selection links reference 
 Do not also append a duplicate outcome store to the legacy ledger. Ordinary performance
 evidence may inform later decisions without promotion into an F2G/PLL lesson.
 Consumption is recorded by each later decision, so zero or many later uses do not
-reopen or mutate the earlier frozen decision. Only the admitted parent-control branch
+reopen or mutate the earlier frozen decision. Before a later decision consumes an
+immutable source, it checks current supersession or retraction and applicability; a
+retracted or superseded source may be cited only as historical context. Only the admitted parent-control branch
 can claim PLL DELIVERY/APPLICATION; local observations use separately named dispositions.
 Reviewer eligibility also requires the dispatch context-eligibility checks; model
 quality or a different model name cannot establish independence.
@@ -223,5 +236,7 @@ DEFERRED_PRIVATE_ONLY
 One Local INTERNAL_AGENT authored this proposal; phase=internal design; decision owner=Local.
 R0 critique and same-context R1 confirmation are retained. Local verified the R1-B1
 correction under the reviewer's conditional CONCUR_WITH_R2; no second review occurred.
+R3 is an INTERNAL_AGENT worker design delta applying CVF-MS-WEB-01/04/06; it has no
+independent acceptance until Local review, and the R2 concurrence does not extend to R3 bytes.
 No frozen doctrine ratification, runtime/subagent activation,
 provider call, current market certification, public-sync or deployment evidence.

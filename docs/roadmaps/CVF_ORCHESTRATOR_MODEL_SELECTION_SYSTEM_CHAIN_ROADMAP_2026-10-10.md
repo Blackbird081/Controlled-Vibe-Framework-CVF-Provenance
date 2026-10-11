@@ -90,7 +90,7 @@ any separate provider calls a worker might request during its task.
 |---|---|---|---|
 | S0 Foundation design | DRAFT_AUTHORED | doctrine proposal, field/join contract, chain and negative matrix | source/shape gates plus design review; no runtime completion |
 | S1 Design review and owner disposition | R2_DESIGN_CONCURRENCE_RECORDED | F1-F11 confirmed with R1-B1 corrected in one R2 delta | same reviewer granted conditional CONCUR_WITH_R2; Local hash/paragraph verification satisfies that condition; no second review |
-| S3 One bounded real task loop | PARKED_DEMAND_GATED | manual B work-order rationale -> admitted execution -> independent review -> evidence disposition | disclosed actual identity/authority and task outcome; no extra task solely for benchmarking |
+| S3 One bounded real task loop | CLOSED_PASS_BOUNDED | manual B work-order rationale -> operator-started execution -> independent Local review -> evidence disposition | S3-R1 R3 documentation outcome and Local completion; actual model ID runtime-context reported, Max/Max operator-reported, snapshot/effort/bill unknown; no benchmark-only task |
 | S4 Later decision consumption | PARKED_DEMAND_GATED | later B task consumes observation or admitted control; reviewer checks action/result | local evidence-use label or applicable typed PLL proof; reasoned no-change allowed |
 | S2 Contract implementation if selected | NOT_AUTHORIZED | strict schema/validator only if S3/S4 reveal value beyond manual records | fresh baseline/order; exact owner/fields; no arbitrary minimum task count or automatic activation |
 | S5 Optional runtime automation | PARKED_DEMAND_GATED | integrate only if bounded loop shows value and demand exists | separate authority and current real runtime/provider proof, rollback and holds |
@@ -98,8 +98,12 @@ any separate provider calls a worker might request during its task.
 S0 authorship is not independent acceptance. This roadmap remains open at design
 scope. S2-S5 are proposals, not automatic successors or authority to dispatch agents.
 Phase IDs stay stable for review traceability; proposed order is S1 -> S3 -> S4 ->
-S2 only on demonstrated need -> S5 only on separate demand/authority. One actual
-loop can establish bounded use, never comparative quality or cost effectiveness.
+S2 only on demonstrated need -> S5 only on separate demand/authority. S3-R1 is
+independently Local-accepted at `docs/reviews/CVF_MODEL_SELECTION_S3_R1_COMPLETION_2026-10-10.md`
+for its documentation outcome. The worker's initial gate failures and two self-repair
+rounds remain attributed; seat identity is partial and cost is unknown. S4 remains
+demand-gated. One actual loop establishes bounded use, never comparative quality or
+cost effectiveness.
 
 ## Acceptance Criteria
 

@@ -1,0 +1,226 @@
+{
+  "schemaVersion": "cvf.modelSelectionS3R1WorkerEvidence@0.1.0",
+  "batchId": "CVF-MODEL-SELECTION-S3-R1-20261010",
+  "commitMode": "WORKER_MUST_NOT_COMMIT",
+  "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_SELECTION_S3_R1_MANUAL_DESIGN_TASK_2026-10-10.md",
+  "baseline": "docs/baselines/CVF_GC018_MODEL_SELECTION_S3_R1_MANUAL_DESIGN_TASK_2026-10-10.md",
+  "workerReturn": "docs/reviews/CVF_MODEL_SELECTION_S3_R1_WORKER_RETURN_2026-10-10.md",
+  "dispatchBaseHead": "95ed2e98fbe034adf7f632e503a7844db4b02235",
+  "executionBaseHead": "c3d4b0b961cfc079a802a0e2df531bc7c48b57bc",
+  "workerSeat": {
+    "observedModelId": "claude-haiku-5-5",
+    "observedModelIdSource": "runtime system context of the invoking session; not telemetry-verified",
+    "operatorLabel": "Claude Haiku 5.5 Max/Max",
+    "operatorLabelIdentityBasis": "OPERATOR_REPORTED",
+    "effort": null,
+    "effortReason": "not exposed to the worker",
+    "immutableSnapshot": null,
+    "snapshotReason": "UNKNOWN; not exposed to the worker",
+    "harness": "Claude Code runtime, VS Code extension context per the session system prompt",
+    "harnessVersion": null,
+    "toolProfile": "local shell, file read, targeted edit; no subagent; no network write; no provider call",
+    "seatAdmissionEvidence": [
+      "pre-implementation autorun gate PASS",
+      "pre-dispatch autorun gate PASS",
+      "operator dispatch instruction in the 2026-10-11 session"
+    ],
+    "seatAdmissionGap": "actual seat, current grant and effort remain for the dispatcher to confirm; the worker cannot verify them"
+  },
+  "time": {
+    "startUtc": "2026-10-11T01:40:02Z",
+    "endUtc": "2026-10-11T01:55:04Z",
+    "elapsedMinutes": 15.0,
+    "ceilingMinutes": 45,
+    "withinCeiling": true,
+    "method": "first worker command timestamp to final gate completion, UTC"
+  },
+  "preimages": {
+    "doctrine": {
+      "path": "docs/reference/CVF_ORCHESTRATOR_MODEL_SELECTION_DOCTRINE_DESIGN_2026-10-10.md",
+      "sha256Before": "10f93ae2c7716e9e96529f6886996918acd6acb4e630b47719a0543d68422ff9",
+      "sha256After": "9eb0b9cb8020113f1db7dbd41923b4f06ac57d884d5eade7ee31156395504082",
+      "changed": true
+    },
+    "contract": {
+      "path": "docs/reference/CVF_ORCHESTRATOR_MODEL_SELECTION_CONTRACT_DESIGN_2026-10-10.md",
+      "sha256Before": "dcdc1a0e87348b5300efecb0f96490140d965957fa0b6743761f813be3a5faa0",
+      "sha256After": "7e090f5249d7e61a939ca1a0dadc65e10555cc5b04f75a053c1c64e190611a09",
+      "changed": true
+    },
+    "webLocalDisposition": {
+      "path": "docs/reviews/CVF_MODEL_SELECTION_WEB_REVIEW_LOCAL_DISPOSITION_2026-10-10.md",
+      "sha256": "a5f1e0e9b01dd12edcada9c09fcfd22d3f2f31f8b19b8ad556e8d32ebff70167",
+      "changed": false
+    },
+    "baseline": {
+      "sha256": "59d87ed086d4da8397d5757b21e897a1136bdc34b252374a249d399b9d7b0c2e",
+      "changed": false
+    },
+    "workOrder": {
+      "sha256": "014cf9d1f6b76a9bf8c78adfbe70f03fdd8b5f4ad84c30ece087e8d408a4116f",
+      "changed": false
+    },
+    "absentBeforeAuthoring": [
+      "docs/reviews/CVF_MODEL_SELECTION_S3_R1_WORKER_RETURN_2026-10-10.md",
+      "docs/reviews/evidence/model-selection-s3-r1-worker-20261010.json"
+    ]
+  },
+  "changedSet": {
+    "expected": [
+      "docs/reference/CVF_ORCHESTRATOR_MODEL_SELECTION_DOCTRINE_DESIGN_2026-10-10.md",
+      "docs/reference/CVF_ORCHESTRATOR_MODEL_SELECTION_CONTRACT_DESIGN_2026-10-10.md",
+      "docs/reviews/CVF_MODEL_SELECTION_S3_R1_WORKER_RETURN_2026-10-10.md",
+      "docs/reviews/evidence/model-selection-s3-r1-worker-20261010.json"
+    ],
+    "gitStatusAtAuthoring": [
+      " M docs/reference/CVF_ORCHESTRATOR_MODEL_SELECTION_CONTRACT_DESIGN_2026-10-10.md",
+      " M docs/reference/CVF_ORCHESTRATOR_MODEL_SELECTION_DOCTRINE_DESIGN_2026-10-10.md",
+      "?? docs/reviews/CVF_MODEL_SELECTION_S3_R1_WORKER_RETURN_2026-10-10.md",
+      "?? docs/reviews/evidence/model-selection-s3-r1-worker-20261010.json"
+    ],
+    "outsideManifest": [],
+    "stagedSet": []
+  },
+  "doctrineDiff": {
+    "proofId": "R3_DOCTRINE_DIFF",
+    "changes": [
+      "Revision header marks the R3 post-Web delta and keeps R2 as historical evidence",
+      "Selection Surfaces: evidence-gap exception narrowed to predictive quality history; mandatory context, authority, budget and effect proof stays pending with its owner",
+      "Decision Procedure: explicit-assignment evidence gap defined as predictive quality history only",
+      "Cost And Evidence Discipline: outcome records keep initial return, first disposition, repair attribution, attempts and remaining spend apart from the accepted artifact",
+      "Evidence Refresh And Learning: current supersession or retraction and applicability checked before a later decision consumes an immutable source",
+      "Claim Boundary: R3 delta has no independent acceptance; the R2 concurrence does not extend to R3 bytes"
+    ]
+  },
+  "contractDiff": {
+    "proofId": "R3_CONTRACT_DIFF",
+    "changes": [
+      "Revision header marks the R3 post-Web delta",
+      "Record Families: ReviewedOutcomeLink gains initialReturnRef/hash, firstDisposition, repair or assistance attribution, failedOrAbandonedAttemptRefs, finalAcceptedArtifactRef/hash and remainingParentTaskSpend with separate units and null for unknown",
+      "Record Families: LearningConsumptionLink gains the immutable source pin, currentSupersessionOrRetractionCheck and currentApplicabilityDisposition",
+      "Minimum Manual Record: artifact acceptance kept separate from evidence about the originally selected configuration; no second ledger",
+      "Decision And Cost Semantics: evidence-gap exception limited to predictive quality history; mandatory proof stays pending and is never a PASS",
+      "Freeze and learning: current supersession, retraction and applicability check before consumption; LOCAL_OBSERVATION never claims parent DELIVERY or APPLICATION; zero, one or many consumers preserved; frozen history not edited",
+      "Prospective Acceptance And Negative Matrix: three static R3 negative rows appended, marked not executed"
+    ]
+  },
+  "negativeRows": [
+    {
+      "id": "NR1",
+      "scenario": "quality-history gap plus missing mandatory context proof",
+      "expectedDisposition": "SELECT may stand as HONORED_WITH_EVIDENCE_GAP for the assigned configuration; dispatch held pending context-eligibility admission",
+      "narrowedClaim": "assignment record only",
+      "owner": "dispatch context-eligibility owner; Local decision owner",
+      "proofBoundary": "STATIC_TEXT_NOT_EXECUTED"
+    },
+    {
+      "id": "NR2",
+      "scenario": "accepted artifact only after material reviewer repair",
+      "expectedDisposition": "artifact acceptance recorded; initial return, first disposition and repair attribution kept in ReviewedOutcomeLink; no first-return quality upgrade",
+      "narrowedClaim": "artifact acceptance only",
+      "owner": "reviewer/closer under the existing review record; Local decision owner",
+      "proofBoundary": "STATIC_TEXT_NOT_EXECUTED"
+    },
+    {
+      "id": "NR3",
+      "scenario": "later decision citing retracted or superseded evidence",
+      "expectedDisposition": "dependent later action HELD, or link narrowed to historical CITED context; no ACTION_VERIFIED or NO_CHANGE_REASONED claim on the retracted source; no PARENT_CONTROL claim",
+      "narrowedClaim": "historical citation only",
+      "owner": "later orchestrator decision; later reviewer; existing PLL owner",
+      "proofBoundary": "STATIC_TEXT_NOT_EXECUTED"
+    }
+  ],
+  "preGates": {
+    "preImplementation": {
+      "command": "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base c3d4b0b961cfc079a802a0e2df531bc7c48b57bc --head HEAD --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_SELECTION_S3_R1_MANUAL_DESIGN_TASK_2026-10-10.md",
+      "result": "PASS",
+      "exitCode": 0,
+      "passRows": 88,
+      "failRows": 0,
+      "log": ".cvf/runtime/model-selection-s3-r1-worker-20261010/gate-pre-implementation-run1.log"
+    },
+    "preDispatch": {
+      "command": "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-dispatch --base c3d4b0b961cfc079a802a0e2df531bc7c48b57bc --head HEAD --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_SELECTION_S3_R1_MANUAL_DESIGN_TASK_2026-10-10.md",
+      "result": "PASS",
+      "exitCode": 0,
+      "failRows": 0,
+      "log": ".cvf/runtime/model-selection-s3-r1-worker-20261010/gate-pre-dispatch-check.log"
+    },
+    "gitDiffCheck": {
+      "command": "git diff --check",
+      "result": "PASS",
+      "exitCode": 0
+    }
+  },
+  "workerReturnGate": {
+    "command": "python governance/compat/run_worker_return_fast_gate.py --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_SELECTION_S3_R1_MANUAL_DESIGN_TASK_2026-10-10.md",
+    "runs": [
+      {
+        "run": 1,
+        "result": "FAIL",
+        "exitCode": 1,
+        "log": ".cvf/runtime/model-selection-s3-r1-worker-20261010/gate-fast-run1.log",
+        "violations": "seven reviewer-fast return-shape violations: SCEC block, worker experience retro, convergence telemetry fields, closeability recheck, external intake routing rows, learning disposition fields, rescan verdict"
+      },
+      {
+        "run": 2,
+        "result": "FAIL",
+        "exitCode": 1,
+        "log": ".cvf/runtime/model-selection-s3-r1-worker-20261010/gate-fast-run2.log",
+        "violations": "external intake guard required one External/Local Coordination Binding section; rescan guard found the word rescan outside its section in three places"
+      },
+      {
+        "run": 3,
+        "result": "COMPLIANT",
+        "exitCode": 0,
+        "log": ".cvf/runtime/model-selection-s3-r1-worker-20261010/gate-fast-run3.log",
+        "note": "after the run 2 repairs"
+      },
+      {
+        "run": 4,
+        "result": "COMPLIANT",
+        "exitCode": 0,
+        "log": ".cvf/runtime/model-selection-s3-r1-worker-20261010/gate-fast-run4.log",
+        "note": "before the read-order and scope corrections"
+      },
+      {
+        "run": 5,
+        "result": "COMPLIANT",
+        "exitCode": 0,
+        "log": ".cvf/runtime/model-selection-s3-r1-worker-20261010/gate-fast-run5.log",
+        "note": "final return bytes"
+      }
+    ],
+    "finalResult": "COMPLIANT on run 5 over the final return bytes"
+  },
+  "firstReturnDisposition": "FAIL on the first fast-gate run, all failing items return-shape only; the worker-return quality gate, acceptance ledger, epistemic packet, independent probe admission and whitespace check passed or reported no violation",
+  "attempts": [
+    {
+      "attempt": 1,
+      "outcome": "returned as COMPLETE_PENDING_REVIEW after two worker self-repair rounds on the return shape; no second worker attempt and no automatic retry",
+      "abandoned": false
+    }
+  ],
+  "repairAttribution": {
+    "workerSelfRepairRounds": 2,
+    "reviewerRepairs": 0,
+    "externalAssistance": "none",
+    "subagentCalls": 0,
+    "providerCalls": 0,
+    "gatewayCalls": 0,
+    "networkWrites": 0
+  },
+  "cost": {
+    "moneyCost": null,
+    "moneyReason": "no monetary cap or dated tariff was supplied; actual billing is UNKNOWN",
+    "tokens": null,
+    "tokenReason": "token usage is not exposed to the worker",
+    "quotaUnits": null,
+    "quotaReason": "subscription allocation is not exposed to the worker",
+    "workerElapsedMinutes": 15.0,
+    "humanMinutes": null,
+    "reviewerMinutes": null,
+    "repairMinutes": "UNKNOWN: repair was not timed separately; it is included in workerElapsedMinutes"
+  },
+  "claimBoundary": "Documentation-only R3 delta with static negative rows. No model-quality measurement, cost or savings claim, seat-version verification, independent acceptance, S3 completion, provider or Gateway call, subagent, commit, push, public export or runtime activation."
+}
