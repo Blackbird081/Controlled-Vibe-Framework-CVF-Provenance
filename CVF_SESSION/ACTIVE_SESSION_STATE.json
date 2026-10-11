@@ -36,12 +36,12 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_ORACLE_O6_DESIGN_2026-10-11.md",
-    "baselineSha256": "d1bf89232cf73376982cb7645633c61daed84d222106ff12abd8e633a9d323dc",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_ORACLE_O6_DESIGN_2026-10-11.md",
-    "workOrderSha256": "aa5be1970ed4cc481ef6f850f8f0268bb741849ab2e328b351f5b76a08cbd78b"
+    "baselinePath": "docs/baselines/CVF_GC018_SYMBOL_LINE_ANCHOR_FIX_2026-10-11.md",
+    "baselineSha256": "f7a95b94214bebc99dc49723470770809a26d7dbc01260cf162096ae5513c80d",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_SYMBOL_LINE_ANCHOR_FIX_2026-10-11.md",
+    "workOrderSha256": "497a23d001e626685e725255d85ac80bd2175a766b51fc16468041b8d549bcd0"
   },
-  "currentAuthoritySyncReason": "Accepted O6 design material cc584e69fd4086407806ee9c20deaf1c753724d5; disclosure correction 823a01ceba2fd52489cef2f74936f2590e41e61a; two material/two continuity commits for this Local closure lane, second pair root metadata rework. Worker return/evidence unchanged; design manual only; no successor. Private provenance transport authorization 8a5cbfe19cd4f1f4847798b1364d3a870c7c4c45; O6 closed authority and source pins retained.",
+  "currentAuthoritySyncReason": "Fresh continuation selects confirmed symbol-line defect; exact existing helper/test packet CVF-SYMBOL-LINE-ANCHOR-FIX-20261011. O6 accepted design/helper deferral and parked effects retained. Material authority phase; dedicated actual-SHA continuity before release.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
