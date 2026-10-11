@@ -1,0 +1,572 @@
+{
+  "schemaVersion": "cvf.modelSelectionOrchestratorLearningAssessment@0.1.0",
+  "sourceRevision": "381c4c0fe9b8012a3e4fa9d3d5335962d30b1dbe",
+  "createdAt": "2026-10-11T05:54:00.173961+00:00",
+  "actor": "LOCAL_ORCHESTRATOR_CODEX_ROOT",
+  "reviewIndependence": "SELF_AUDIT_OF_ORCHESTRATOR; not a second independent worker review",
+  "operatorRequest": "Orchestrator errors require explicit assessment of CVF foundational-learning value.",
+  "sourcePins": [
+    {
+      "path": "docs/reviews/evidence/model-selection-s2-r2-local-review-20261011.json",
+      "sha256": "80c6b238c536fb35fcf547218cd7fd8948d94f21c0d3e8485558f7d65217d8ee",
+      "gitBlob": "658032fd145bbd2f7ceb4d91b8de380fd49700ae",
+      "readScope": "targeted relevant sections except full binding philosophy; raw whole-file identity, not all-lines claim"
+    },
+    {
+      "path": "docs/reviews/CVF_MODEL_SELECTION_S2_R2_COMPLETION_2026-10-11.md",
+      "sha256": "12ffc68ef9940260fed89be8ac14d2f349c99cfe145040ad2aa58c583fca22b8",
+      "gitBlob": "b7ed1dfbaaa531ec510676bcf42d419282a95a91",
+      "readScope": "targeted relevant sections except full binding philosophy; raw whole-file identity, not all-lines claim"
+    },
+    {
+      "path": "docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md",
+      "sha256": "1609cc9d955bc88b2e09179331d7828406114d98b23c81cfb3f2992afa3920f6",
+      "gitBlob": "27a112533bf81b23a237bfe20f5cbe35dad22a16",
+      "readScope": "targeted relevant sections except full binding philosophy; raw whole-file identity, not all-lines claim"
+    },
+    {
+      "path": "docs/reference/CVF_AGENT_ERROR_TO_GOVERNANCE_LEARNING_PHILOSOPHY_2026-05-28.md",
+      "sha256": "43cf43c03420693ffad5a098c65a8cd4a7c4035f03abbdaa8aba12eac81f6a38",
+      "gitBlob": "2a080358fe5584570d0e8de752d4b5cb615b9364",
+      "readScope": "targeted relevant sections except full binding philosophy; raw whole-file identity, not all-lines claim"
+    },
+    {
+      "path": "docs/reference/CVF_FINDING_TO_GOVERNANCE_LEARNING_TRIGGER_STANDARD.md",
+      "sha256": "f9f70fa4af76588b92ad3e65c784789ca896c7634cedc9cbfd073ce0d7a26f76",
+      "gitBlob": "30d48ba03faca76ecd7333be89f369cf4df08178",
+      "readScope": "targeted relevant sections except full binding philosophy; raw whole-file identity, not all-lines claim"
+    },
+    {
+      "path": "docs/reference/CVF_GOVERNED_WORK_LIFECYCLE_AND_DESIGN_CONTROL_STANDARD_2026-06-11.md",
+      "sha256": "b48f11363ee62a2ec4c85c6f9fba4540b90eb74475c31aeab18cfe4492a536de",
+      "gitBlob": "3d9a91f40e3e84a9e90fec8c0f0001f2dc6ef789",
+      "readScope": "targeted relevant sections except full binding philosophy; raw whole-file identity, not all-lines claim"
+    },
+    {
+      "path": "docs/reference/downstream_gate_profile/CVF_PROJECT_LEARNING_LOOP_STANDARD.md",
+      "sha256": "61124b8674f2323be6f71746312cd47fbb2b49b550eedf863ff79d5aaef8b878",
+      "gitBlob": "872968da1d1bbd3696e42ae260df1387c6f3563a",
+      "readScope": "targeted relevant sections except full binding philosophy; raw whole-file identity, not all-lines claim"
+    },
+    {
+      "path": "docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md",
+      "sha256": "dcb12ad8df392298ebd54b3cb4a721553387329d9053e26543f1ab0b3d1d8996",
+      "gitBlob": "f6903ee8ac4478058b731343738589ef72124971",
+      "readScope": "targeted relevant sections except full binding philosophy; raw whole-file identity, not all-lines claim"
+    },
+    {
+      "path": "scripts/cvf_commit_tranche.py",
+      "sha256": "9d214020070551a5f832ea390f165e47f80245daaa803097cf0d943231200f1c",
+      "gitBlob": "ffdad94ec4b09c7e816beceaaf5fadd34de8fcdc",
+      "readScope": "targeted relevant sections except full binding philosophy; raw whole-file identity, not all-lines claim"
+    },
+    {
+      "path": "governance/compat/check_dispatch_release_readiness.py",
+      "sha256": "4c4247343d406af9ec06d54913c75f573adf9c4b26f080af355d0888dc8caed5",
+      "gitBlob": "6dd1cddb27b3633a3eaec7d4cd8923de327eff37",
+      "readScope": "targeted relevant sections except full binding philosophy; raw whole-file identity, not all-lines claim"
+    },
+    {
+      "path": "governance/compat/build_worker_return_skeleton_scaffold.py",
+      "sha256": "1fc5318c26a09d4118e3796db45fa69aea331136a7c9c4a04e95c4868de32a37",
+      "gitBlob": "d9f2b906a0deef67dcb257288d488ae0975cb036",
+      "readScope": "targeted relevant sections except full binding philosophy; raw whole-file identity, not all-lines claim"
+    },
+    {
+      "path": "governance/compat/run_worker_return_fast_gate.py",
+      "sha256": "7cab0762f628f30b5337dc8a9e33ab91688d2fe5079029e96360647befd83a2d",
+      "gitBlob": "7cd877468320d346a20b64b8e1c4bc543afb8280",
+      "readScope": "targeted relevant sections except full binding philosophy; raw whole-file identity, not all-lines claim"
+    },
+    {
+      "path": "governance/compat/check_corpus_to_knowledge_map_reconciliation.py",
+      "sha256": "ca368e4bc551924079f2be94ea3fb3acf556be0ef183e773c3a4010562b22000",
+      "gitBlob": "74da5352c94476a19c7487d20bf0b20b58eb4e88",
+      "readScope": "targeted relevant sections except full binding philosophy; raw whole-file identity, not all-lines claim"
+    },
+    {
+      "path": "governance/compat/check_finding_to_governance_learning.py",
+      "sha256": "338a3d7492ad6fd6b962157a668c3d13a47b286580c36a26f1acf897a50049ea",
+      "gitBlob": "5e1e7a35696fd993546f44e1c06f8ecb472456d8",
+      "readScope": "targeted relevant sections except full binding philosophy; raw whole-file identity, not all-lines claim"
+    },
+    {
+      "path": "governance/compat/check_governed_artifact_checker_read_ahead.py",
+      "sha256": "44f4b67c9441c541a42f91526d8f25c8805efeb1e08e6aed69c60aee6153ef77",
+      "gitBlob": "3fe344305922036c3eaed61cfff813b4ab8ccff2",
+      "readScope": "targeted relevant sections except full binding philosophy; raw whole-file identity, not all-lines claim"
+    },
+    {
+      "path": "governance/compat/check_markdown_structural_completeness.py",
+      "sha256": "a76806333a19814c1cb1fe04f305dec33a9c5572175db728e30441637d2e78c7",
+      "gitBlob": "3bd14f8bd0fd4f7e0b38228a691a1636ba65d93b",
+      "readScope": "targeted relevant sections except full binding philosophy; raw whole-file identity, not all-lines claim"
+    },
+    {
+      "path": "governance/compat/check_agent_operation_trace.py",
+      "sha256": "57aaac11abdca0b7a94998dfb21bc259d8013ce0b9bdc9d53a906202e9fabaaa",
+      "gitBlob": "478535af9eeb8c81a6dea2dff15aec4dc7f2435c",
+      "readScope": "targeted relevant sections except full binding philosophy; raw whole-file identity, not all-lines claim"
+    },
+    {
+      "path": "governance/compat/check_machine_closure_package.py",
+      "sha256": "ce5fb1aad57f0341a601bd81ae8b193aa729f9114598fc40acfad777944ba980",
+      "gitBlob": "d7c12322a6d146c830bd61bf607941193cd418f8",
+      "readScope": "closure classification predicate/first80-line boundary"
+    },
+    {
+      "path": "governance/compat/check_closure_packaging_preflight.py",
+      "sha256": "0e8b3cabcada91f4f5db0135e2449c24bcff4e13014a5b697db967db54c3b8f8",
+      "gitBlob": "52ffd8bc04f46130094f853d453b4e839f5c254e",
+      "readScope": "closure classification predicate/first80-line boundary"
+    }
+  ],
+  "originalAdmission": {
+    "scope": "LOCAL_ORCHESTRATOR_PREPARATION_ONLY_NOT_LUNA",
+    "profileSha256": "612735bf1f27354b9b5e9389239fa9ded6d3aeb9a77bfb4da63da4376eb84c5d",
+    "auditInvocation": "/root/s2_value_audit",
+    "auditTurnCount": 4,
+    "designCorrections": [
+      "Canonical independence normalization",
+      "Primary versus nonprimary and packaging chronology",
+      "Initial product pins and submitted-to-accepted repair attribution",
+      "Unknown terminal acceptance clock retained with reason"
+    ],
+    "packetFailures": [
+      "Guessed absent ignored author-helper and source/support paths; directory discovery repaired; no tracked deletion",
+      "Windows rg filesystem wildcard rejected; directory plus -g used",
+      "Ignored authorscript asserted wrong probe heading before packet writes",
+      "Guessed nonexistent reviewer-fast command exited2; actual hook name used",
+      "Initial reviewer-fast2 violations: stale prior review path and missing clean-worktree literal",
+      "Dispatch probe duplicate declaration then missing required risk class; fixed against complete checker constants",
+      "R2 material correction: AOT exact manifest and current-head marker; then TPGR handoff path binding",
+      "Continuity generator missing --generate: command exited2; then canonical generator and active-state check passed",
+      "Release DR-05 helper omitted batch marker; handoff-only repair subsequently exposed DR-04 atomic continuity requirement",
+      "Atomic repair exposed GC-020 current-parent marker absence; final five-path sync included current parent and all four release surfaces",
+      "Verification Commands accidentally named old unittest module: root corrected worker by native message before tests; closure metadata will fix command"
+    ],
+    "materialCommits": [
+      "32aabb2b91c180474e32053c6f496da2aa24244b",
+      "57f8dc7b041c6cd17919aa3c300ad55bf324d329"
+    ],
+    "continuityAndCorrectionCommits": [
+      "b48f935188c1f41786df3fe0729a05660a61e6ab",
+      "9f614b9dc87b9ddf0ccf0b1aaad8661c3ed702e2",
+      "103e1252b1a6e39cf2ff80ea398ed0d94b25d214",
+      "0bf6f773ee755d8e20e24678c646e5da3bb3ba09"
+    ],
+    "workerReleaseHead": "0bf6f773ee755d8e20e24678c646e5da3bb3ba09",
+    "releaseGate": "COMPLIANT pre-dispatch12.32s, 86 commands",
+    "lastRootClockBeforeNativeDispatchUtc": "2026-10-11T05:04:06Z",
+    "rootPrepElapsed": null,
+    "usage": {
+      "directProviderApiCalls": 0,
+      "nativeImplementingInvocations": 1,
+      "nativeProfileAuditInvocation": 1,
+      "underlyingProviderRequestCount": null,
+      "money": null,
+      "tokens": null,
+      "quota": null,
+      "humanTime": null,
+      "observedRuntimeIdentity": null
+    },
+    "limitations": "Partial stage clock only; native launch invocation is requested configuration, not observed host/model evidence. No comparison to historical xhigh/Haiku. No worker released before final gate.",
+    "logs": [
+      {
+        "path": ".cvf/runtime/model-selection-s2-r2-20261011/packet-reviewer-fast.log",
+        "sha256": "f5ce3c69c5580f7ee38fbc98b251df7f1c89f3e3bc5c576cbde7f7b2aecfbb34"
+      },
+      {
+        "path": ".cvf/runtime/model-selection-s2-r2-20261011/packet-reviewer-fast-actual.log",
+        "sha256": "3aee598bf255d14bdd0662bc41df804c759041280c557a73b4c3d6479d1e5f9f"
+      },
+      {
+        "path": ".cvf/runtime/model-selection-s2-r2-20261011/packet-reviewer-fast-final.log",
+        "sha256": "3dbed2bc56fcf13ce4f50f67a8cceecac120e331c9485a50339fc6a9f5dee68f"
+      },
+      {
+        "path": ".cvf/runtime/model-selection-s2-r2-20261011/packet-authoring-full.log",
+        "sha256": "0e4fc00dcebef6d06d15a4d51cf64b144dc886c9b4541d58b3590257907483ce"
+      },
+      {
+        "path": ".cvf/runtime/model-selection-s2-r2-20261011/dispatch-material.log",
+        "sha256": "b9583412ff6c3299cfe301063a7658dd89efb1cae4e446fe2fb14f5e22e1401d"
+      },
+      {
+        "path": ".cvf/runtime/model-selection-s2-r2-20261011/dispatch-material-final.log",
+        "sha256": "b9583412ff6c3299cfe301063a7658dd89efb1cae4e446fe2fb14f5e22e1401d"
+      },
+      {
+        "path": ".cvf/runtime/model-selection-s2-r2-20261011/dispatch-material-pass.log",
+        "sha256": "01bc0e5e919242e01e3efb0113b31814fe9d886cc626c7675f27ae46e1e53b9d"
+      },
+      {
+        "path": ".cvf/runtime/model-selection-s2-r2-20261011/dispatch-contract-correction.log",
+        "sha256": "9b4b8b4e1a8534ee83db02958fd3ead74470b7f8bc5b348a08db63066f7f5f7a"
+      },
+      {
+        "path": ".cvf/runtime/model-selection-s2-r2-20261011/dispatch-contract-correction-final.log",
+        "sha256": "cb7c1c5456e7b3879b4705e5b6dd07d008f81f2ca7ebbcb9681b8dfa7137b69d"
+      },
+      {
+        "path": ".cvf/runtime/model-selection-s2-r2-20261011/contract-correction-authoring-full.log",
+        "sha256": "1b2c4f7d88a8de25ba9d2ee1faaef162ae9d7308d3cf965f7ea3ab288f4297b4"
+      },
+      {
+        "path": ".cvf/runtime/model-selection-s2-r2-20261011/contract-correction-second-full.log",
+        "sha256": "e4b46a42c916556824411ddff9155bbf728735b7c65800df5ff8bb162787829d"
+      },
+      {
+        "path": ".cvf/runtime/model-selection-s2-r2-20261011/dispatch-contract-correction-pass.log",
+        "sha256": "af76171698a405dcf5aa9e4a9ce3b05da135b22ee9d572fa69d3be1328b298a3"
+      },
+      {
+        "path": ".cvf/runtime/model-selection-s2-r2-20261011/dispatch-continuity.log",
+        "sha256": "f3c07af550fd6e84e339c682a6d91381e07b98267b5ea36c60db668563044fff"
+      },
+      {
+        "path": ".cvf/runtime/model-selection-s2-r2-20261011/dispatch-release.log",
+        "sha256": "489266b0a596410ef57c7502f4d45ca2d8abe55ac4837d177a51da7eac74f811"
+      },
+      {
+        "path": ".cvf/runtime/model-selection-s2-r2-20261011/dispatch-marker-correction.log",
+        "sha256": "d7f6f8730ce2759553d30fd570bc03c6497875383eaba480bbfcdff7eff19dc8"
+      },
+      {
+        "path": ".cvf/runtime/model-selection-s2-r2-20261011/dispatch-release-final.log",
+        "sha256": "18cd36c281c3ad46cbca8d1b11fed9949584df91874ad99e9f5a9b269054e763"
+      },
+      {
+        "path": ".cvf/runtime/model-selection-s2-r2-20261011/dispatch-atomic-correction.log",
+        "sha256": "d483f75e2be83a27d8dc6cfd29956304f798dff222597c9eeff31beddec7bc2e"
+      },
+      {
+        "path": ".cvf/runtime/model-selection-s2-r2-20261011/dispatch-release-atomic.log",
+        "sha256": "0d49b2e569230e76652afc7736688b1dad958f47eb3dd8725e75b8263ada76cc"
+      },
+      {
+        "path": ".cvf/runtime/model-selection-s2-r2-20261011/dispatch-parent-correction.log",
+        "sha256": "3ba5acea29cf41dbd280a3de2f374926c21ec41f76b8f3542026d62574ea33d8"
+      },
+      {
+        "path": ".cvf/runtime/model-selection-s2-r2-20261011/dispatch-release-final-bound.log",
+        "sha256": "7bff96ee6820c7ad5d5907db1c6f045aac237dd800b4e44f5c743fadb27c3194"
+      }
+    ]
+  },
+  "originalOracleCorrections": {
+    "fixtureAliasing": 1,
+    "affectedCases": 2,
+    "diagnosticExpectations": 5,
+    "attribution": "LOCAL_REVIEWER_ORACLE_ERROR; original122/113 results retained; corrected/extended129/121 reproduced on unchanged submitted implementation"
+  },
+  "originalClosurePacketRepairs": {
+    "rounds": 1,
+    "groups": 2,
+    "findings": [
+      "completion confirmatory gate-purpose literal missing",
+      "worker non-applicable knowledge heading requires complete bounded accounting under broader pre-implementation gate"
+    ],
+    "diagnosticLog": ".cvf\\runtime\\model-selection-s2-r2-20261011\\closure-material-diagnostic.log",
+    "noImplementationChange": true,
+    "attribution": "LOCAL_CLOSURE_PACKAGING; worker fast gate omits the broader knowledge check"
+  },
+  "boundedMechanismProbes": {
+    "scope": "source-extracted actual pure builders; no helper lifecycle or release rerun",
+    "continuityComposition": {
+      "producerPath": "scripts/cvf_commit_tranche.py",
+      "function": "_evidence_block",
+      "materialSha": "57f8dc7b041c6cd17919aa3c300ad55bf324d329",
+      "batchId": "CVF-MODEL-SELECTION-S2-R2-20261011",
+      "generatedMarker": "<!-- CVF-GC020-MATERIAL-SHA:START -->\nCurrent HEAD recorded for this handoff: `57f8dc7b041c6cd17919aa3c300ad55bf324d329`. Material parent anchor for the dedicated continuity synchronization commit.\n<!-- CVF-GC020-MATERIAL-SHA:END -->",
+      "generatedMarkerContainsMaterial": true,
+      "generatedMarkerContainsRequiredBatch": false,
+      "historicCorrectedMarkerContainsMaterial": true,
+      "historicCorrectedMarkerContainsBatch": true,
+      "releaseRule": "DR-05 batch binding; DR-04 atomicity is a separate caller duty",
+      "fullHelperToReleaseFixture": "NOT_RUN; design/admission needed"
+    },
+    "originalOracleMutation": {
+      "source": ".cvf/runtime/model-selection-s2-r2-20261011/independent_oracle_before_first_run.py",
+      "sourceSha256": "5243b5112746cd226e4558599e37ade7150028ee7bb553683a6e7cc0715e94f6",
+      "originalPinObjectAliased": true,
+      "acceptedMutationAlsoChangedInitialPin": true,
+      "meaning": "Negative mutation changed both sides; no product drift created. Root corrected oracle before repair; not a worker defect."
+    }
+  },
+  "failureLogExcerpts": [
+    {
+      "path": ".cvf/runtime/model-selection-s2-r2-20261011/dispatch-release.log",
+      "sha256": "489266b0a596410ef57c7502f4d45ca2d8abe55ac4837d177a51da7eac74f811",
+      "excerpts": [
+        {
+          "line": 8,
+          "text": "=== parallel autorun bundle: 86 commands, max_workers=6 ==="
+        },
+        {
+          "line": 23,
+          "text": "[FAIL] dispatch release readiness (1.45s)"
+        },
+        {
+          "line": 30,
+          "text": "  - [DR-05] material-SHA marker does not name batch `CVF-MODEL-SELECTION-S2-R2-20261011`"
+        },
+        {
+          "line": 105,
+          "text": "VIOLATION: pre-dispatch blocked by 1 failing gate(s) in 9.51s."
+        }
+      ]
+    },
+    {
+      "path": ".cvf/runtime/model-selection-s2-r2-20261011/dispatch-release-final.log",
+      "sha256": "18cd36c281c3ad46cbca8d1b11fed9949584df91874ad99e9f5a9b269054e763",
+      "excerpts": [
+        {
+          "line": 8,
+          "text": "=== parallel autorun bundle: 86 commands, max_workers=6 ==="
+        },
+        {
+          "line": 19,
+          "text": "[FAIL] dispatch release readiness (1.40s)"
+        },
+        {
+          "line": 26,
+          "text": "  - [DR-04] handoff/front-door/generated continuity surfaces must share one committed sync"
+        },
+        {
+          "line": 105,
+          "text": "VIOLATION: pre-dispatch blocked by 1 failing gate(s) in 10.27s."
+        }
+      ]
+    },
+    {
+      "path": ".cvf/runtime/model-selection-s2-r2-20261011/dispatch-release-atomic.log",
+      "sha256": "0d49b2e569230e76652afc7736688b1dad958f47eb3dd8725e75b8263ada76cc",
+      "excerpts": [
+        {
+          "line": 8,
+          "text": "=== parallel autorun bundle: 86 commands, max_workers=6 ==="
+        },
+        {
+          "line": 91,
+          "text": "[FAIL] active session state compatibility (0.92s)"
+        },
+        {
+          "line": 113,
+          "text": "  - active handoff does not contain current HEAD SHA 103e1252 (103e1252b1a6e39cf2ff80ea398ed0d94b25d214) or, for a handoff-sync commit, parent SHA 9f614b9d in a dedicated session-sync-only commit \ufffd update the handoff HEAD block after every commit (GC-020 In-Place Update Rule)"
+        },
+        {
+          "line": 128,
+          "text": "VIOLATION: pre-dispatch blocked by 1 failing gate(s) in 10.48s."
+        }
+      ]
+    },
+    {
+      "path": ".cvf/runtime/model-selection-s2-r2-20261011/dispatch-release-final-bound.log",
+      "sha256": "7bff96ee6820c7ad5d5907db1c6f045aac237dd800b4e44f5c743fadb27c3194",
+      "excerpts": [
+        {
+          "line": 8,
+          "text": "=== parallel autorun bundle: 86 commands, max_workers=6 ==="
+        },
+        {
+          "line": 97,
+          "text": "COMPLIANT: pre-dispatch autorun gate passed in 12.32s."
+        }
+      ]
+    },
+    {
+      "path": ".cvf/runtime/model-selection-s2-r2-20261011/closure-material-diagnostic.log",
+      "sha256": "4753a5f12c0d69531b3eda8fd078fddd2075c98b149bb2b0ad0899e95b04d714",
+      "excerpts": [
+        {
+          "line": 8,
+          "text": "=== parallel autorun bundle: 86 commands, max_workers=6 ==="
+        },
+        {
+          "line": 17,
+          "text": "[FAIL] governed artifact checker read-ahead (0.43s)"
+        },
+        {
+          "line": 30,
+          "text": "  - docs/reviews/CVF_MODEL_SELECTION_S2_R2_COMPLETION_2026-10-11.md: checker_read_ahead_purpose_not_confirmatory - `gateRunPurpose` must explicitly frame gate runs as confirmation/evidence, not first discovery"
+        },
+        {
+          "line": 68,
+          "text": "[FAIL] corpus-to-knowledge-map reconciliation (0.61s)"
+        },
+        {
+          "line": 78,
+          "text": "  - docs/reviews/CVF_MODEL_SELECTION_S2_R2_WORKER_RETURN_2026-10-11.md: knowledge_reconciliation_field_missing - missing field `Knowledge task class:`"
+        },
+        {
+          "line": 79,
+          "text": "  - docs/reviews/CVF_MODEL_SELECTION_S2_R2_WORKER_RETURN_2026-10-11.md: knowledge_reconciliation_field_missing - missing field `Source manifest:`"
+        },
+        {
+          "line": 80,
+          "text": "  - docs/reviews/CVF_MODEL_SELECTION_S2_R2_WORKER_RETURN_2026-10-11.md: knowledge_reconciliation_field_missing - missing field `Source manifest hash:`"
+        },
+        {
+          "line": 81,
+          "text": "  - docs/reviews/CVF_MODEL_SELECTION_S2_R2_WORKER_RETURN_2026-10-11.md: knowledge_reconciliation_field_missing - missing field `Enumeration safety:`"
+        },
+        {
+          "line": 82,
+          "text": "  - docs/reviews/CVF_MODEL_SELECTION_S2_R2_WORKER_RETURN_2026-10-11.md: knowledge_reconciliation_field_missing - missing field `Intake registry or ledger:`"
+        },
+        {
+          "line": 83,
+          "text": "  - docs/reviews/CVF_MODEL_SELECTION_S2_R2_WORKER_RETURN_2026-10-11.md: knowledge_reconciliation_field_missing - missing field `Authority assets:`"
+        },
+        {
+          "line": 84,
+          "text": "  - docs/reviews/CVF_MODEL_SELECTION_S2_R2_WORKER_RETURN_2026-10-11.md: knowledge_reconciliation_field_missing - missing field `Derived views:`"
+        },
+        {
+          "line": 85,
+          "text": "  - docs/reviews/CVF_MODEL_SELECTION_S2_R2_WORKER_RETURN_2026-10-11.md: knowledge_reconciliation_field_missing - missing field `Semantic region ledger:`"
+        },
+        {
+          "line": 86,
+          "text": "  - docs/reviews/CVF_MODEL_SELECTION_S2_R2_WORKER_RETURN_2026-10-11.md: knowledge_reconciliation_field_missing - missing field `Region reconciliation:`"
+        },
+        {
+          "line": 87,
+          "text": "  - docs/reviews/CVF_MODEL_SELECTION_S2_R2_WORKER_RETURN_2026-10-11.md: knowledge_reconciliation_field_missing - missing field `Orphan or unmapped assets:`"
+        },
+        {
+          "line": 88,
+          "text": "  - docs/reviews/CVF_MODEL_SELECTION_S2_R2_WORKER_RETURN_2026-10-11.md: knowledge_reconciliation_field_missing - missing field `Cross-region links:`"
+        },
+        {
+          "line": 89,
+          "text": "  - docs/reviews/CVF_MODEL_SELECTION_S2_R2_WORKER_RETURN_2026-10-11.md: knowledge_reconciliation_field_missing - missing field `Drift check:`"
+        },
+        {
+          "line": 90,
+          "text": "  - docs/reviews/CVF_MODEL_SELECTION_S2_R2_WORKER_RETURN_2026-10-11.md: knowledge_reconciliation_field_missing - missing field `Rebuildability check:`"
+        },
+        {
+          "line": 91,
+          "text": "  - docs/reviews/CVF_MODEL_SELECTION_S2_R2_WORKER_RETURN_2026-10-11.md: knowledge_reconciliation_field_missing - missing field `Retrieval boundary:`"
+        },
+        {
+          "line": 92,
+          "text": "  - docs/reviews/CVF_MODEL_SELECTION_S2_R2_WORKER_RETURN_2026-10-11.md: knowledge_reconciliation_field_missing - missing field `Adversarial verification:`"
+        },
+        {
+          "line": 93,
+          "text": "  - docs/reviews/CVF_MODEL_SELECTION_S2_R2_WORKER_RETURN_2026-10-11.md: knowledge_reconciliation_field_missing - missing field `Knowledge-map verdict:`"
+        },
+        {
+          "line": 94,
+          "text": "  - docs/reviews/CVF_MODEL_SELECTION_S2_R2_WORKER_RETURN_2026-10-11.md: knowledge_map_verdict_invalid - missing or invalid knowledge-map verdict"
+        },
+        {
+          "line": 137,
+          "text": "VIOLATION: pre-implementation blocked by 2 failing gate(s) in 14.01s."
+        }
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "O1",
+      "finding": "Known packet/scaffold/source-command rules applied inconsistently, including old unittest command and guessed paths/flags.",
+      "actor": "LOCAL_ORCHESTRATOR",
+      "defectClass": "ORCHESTRATOR_PACKET_GAP",
+      "disposition": "RULE_EXISTS",
+      "foundationDecision": "DECLINE_DUPLICATE_RULE",
+      "owner": "existing lifecycle Technical Feasibility Before Operator Approval and literal checklist",
+      "action": "Use source-verified commands/scaffold and narrow applicable guards before full gates; reapply existing rule.",
+      "applicationProof": "NOT_PROVEN_FOR_FUTURE_DISPATCH"
+    },
+    {
+      "id": "O2",
+      "finding": "Contract drafts omitted canonical actor normalization/product pins/phase-specific chronology and over-required an unavailable historical terminal clock.",
+      "actor": "LOCAL_ORCHESTRATOR",
+      "defectClass": "ORCHESTRATOR_PACKET_GAP",
+      "disposition": "RULE_EXISTS",
+      "foundationDecision": "MERGE_WITH_EXISTING_SOURCE_FEASIBILITY_OWNER",
+      "owner": "lifecycle plus R3 source/unknown evidence contracts",
+      "action": "Test locked requirements against at least one real pinned consumer source before release; preserve honest null clocks.",
+      "applicationProof": "BOUNDED_SOURCE_CORRECTION_BEFORE_FIRST_IMPLEMENTING_DISPATCH; not general prevention"
+    },
+    {
+      "id": "O3",
+      "finding": "Continuity helper replaces caller marker with material SHA but no Batch ID, while dispatch release DR-05 requires that Batch ID in the marker.",
+      "actor": "LOCAL_ORCHESTRATOR_AND_EXISTING_PRODUCER_CONSUMER_JOIN",
+      "defectClass": "MACHINE_GATE_GAP",
+      "disposition": "MACHINE_CHECK_CANDIDATE",
+      "foundationDecision": "ACCEPT_CANDIDATE_DEFER_IMPLEMENTATION",
+      "owner": "existing tranche helper/standard and dispatch release readiness contract",
+      "action": "Design bounded dispatch-aware producer/consumer binding and pre-mutation validation in existing helper; do not weaken release guard.",
+      "applicationProof": "SOURCE_EXTRACTED_MARKER_COUNTEREXAMPLE_AND_HISTORICAL_CORRECTION_MATCH; full lifecycle fix NOT_RUN"
+    },
+    {
+      "id": "O4",
+      "finding": "A handoff-only root repair of DR-05 then violated DR-04 atomic continuity; later parent anchor required another correction.",
+      "actor": "LOCAL_ORCHESTRATOR",
+      "defectClass": "ORCHESTRATOR_PACKET_GAP",
+      "disposition": "RULE_EXISTS",
+      "foundationDecision": "DECLINE_DUPLICATE_ATOMICITY_RULE",
+      "owner": "existing dispatch release DR-04 and active-state GC020",
+      "action": "Reconcile the complete authority-to-continuity dependency set before changing one path; do not blame helper for this separate caller mistake.",
+      "applicationProof": "FINAL_BOUND_RELEASE_PASS86; repeated corrections retained"
+    },
+    {
+      "id": "O5",
+      "finding": "Root omitted confirmatory literal and copied a non-applicable knowledge heading unsupported by the broader checker; fast70 scope is intentionally narrower than full pre-implementation.",
+      "actor": "LOCAL_ORCHESTRATOR; inherited worker metadata kept distinct",
+      "defectClass": "ORCHESTRATOR_PACKET_GAP",
+      "disposition": "RULE_EXISTS",
+      "foundationDecision": "DECLINE_DUPLICATE_RULE; DESIGN_REVIEW_REQUIRED_FOR_SCAFFOLD_APPLICABILITY",
+      "owner": "literal checklist item11 and prior orchestrator learning O4; existing scaffold/phase catalogs",
+      "action": "Apply existing exact section/applicability rules; assess one shared scaffold-to-phase contract only if it demonstrably prevents recurrence. Do not make fast70 claim full-hook equivalence.",
+      "applicationProof": "RECURS_PRIOR20261008_AUDIT; original full preflight failed then packet-only correction passed"
+    },
+    {
+      "id": "O6",
+      "finding": "Root oracle shared initial/accepted product objects and expected five diagnostic codes not assigned by the profile; corrected before semantic repair.",
+      "actor": "LOCAL_REVIEWER_ORCHESTRATOR",
+      "defectClass": "ORCHESTRATOR_PACKET_GAP",
+      "disposition": "DESIGN_REVIEW_REQUIRED",
+      "foundationDecision": "DEFER_REUSABLE_ORACLE_PRECONDITION_DESIGN",
+      "owner": "existing independent review source/positive-control and review-cost owner",
+      "action": "Require each negative fixture to actually introduce its named contradiction while preserving its controls; derive code expectations from source. Consider opt-in bounded oracle checks, not a new global gate per test.",
+      "applicationProof": "SOURCE_EXTRACTED_ALIAS_COUNTEREXAMPLE; corrected129/121 before repair and129/129 after; automated prevention NOT_IMPLEMENTED"
+    },
+    {
+      "id": "O7",
+      "finding": "Opaque helper child failures caused one diagnostic rerun; root initially copied an older PASS receipt before checking phase provenance; later KeyError was a read-only assertion error.",
+      "actor": "LOCAL_ORCHESTRATOR_REVIEWER",
+      "defectClass": "ORCHESTRATOR_PACKET_GAP",
+      "disposition": "RULE_EXISTS",
+      "foundationDecision": "DECLINE_NEW_REGISTRY_OR_RECEIPT_RULE",
+      "owner": "existing diagnostic/receipt identity and source-read discipline",
+      "action": "Bind receipt phase/base/head before use; preserve exact failed argv and sanitized diagnostics. Evaluate structured child diagnostic delivery only as helper design scope under O3.",
+      "applicationProof": "FALSE_FAILURE_RECEIPT_EXCLUDED; no implementation acceptance based on stale receipt"
+    },
+    {
+      "id": "O8",
+      "finding": "Prior closure grouped every root correction as RULE_EXISTS without recording separate value/dedup decisions for composition and oracle gaps.",
+      "actor": "LOCAL_ORCHESTRATOR_REVIEWER",
+      "defectClass": "ORCHESTRATOR_PACKET_GAP",
+      "disposition": "RULE_EXISTS",
+      "foundationDecision": "APPLY_EXISTING_F2G_VALUE_ASSESSMENT_IN_THIS_AUDIT",
+      "owner": "Error-To-Governance and PLL five value checks",
+      "action": "Record owner, reusable mechanism, existing coverage, incremental value and bounded proof per root cluster; handled/unimplemented states separate.",
+      "applicationProof": "THIS_TARGETED_ASSESSMENT_ONLY; prior closure/evidence not rewritten"
+    }
+  ],
+  "implementationState": "NO_NEW_RULE_CHECKER_TEMPLATE_OR_RUNTIME_IMPLEMENTED",
+  "deliveryState": "ASSESSMENT_IN_EXISTING_REVIEW_EVIDENCE; no typed parent DELIVERY/APPLICATION receipt",
+  "workerBoundary": "Four Local semantic repair groups and worker self-repairs remain original task evidence; this audit neither erases them nor attributes root defects to Luna.",
+  "currentAuditMisfires": [
+    "Two early Windows rg path-glob arguments were invalid; corrected to directory -g or exact file; existing O1 rule application failure.",
+    "Bounded source probe initially mixed relative and absolute paths in relative_to; corrected before any evidence write.",
+    "Historical source closure token fell within first80 lines and triggered closed-equivalent classification; corrected assessment wording without changing original status/source or guards. Failed helper output and one diagnostic rerun retained under ignored assessment runtime; two affected narrow guards rechecked before retry."
+  ],
+  "claimBoundary": "Selected root incidents and reusable-control value decisions only; no whole-corpus scan, hidden cognitive cause, model quality or live governance proof."
+}
