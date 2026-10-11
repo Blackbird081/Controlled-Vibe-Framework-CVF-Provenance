@@ -748,7 +748,45 @@
         "Worker red logs only reported digests/summaries; Local preimage negatives independently verified.",
         "Worker source read omissions retained; no full procedural compliance.",
         "Component synthetic offline only; no browser/provider/live/durable approval claim."
-      ]
+      ],
+      "postClosureRequiredReadClarification": {
+        "sourceKind": "OPERATOR_RELAY_CURRENT_SESSION",
+        "sourceAuthority": "Operator-provided worker explanation; corroborated requirements/depth from governed packet/return. Worker motivation is self-report, not independently observed internal reasoning.",
+        "receivedDate": "2026-10-11",
+        "role": "INTERNAL_AGENT_WORKER; Local final disposition",
+        "workerReportedCause": "Worker unilaterally deprioritized O6/R4 as background, substituted grep, and did not recheck required-read list before deciding. No claimed technical/tool or time constraint.",
+        "relayedStatements": [
+          "Nguy\u00ean nh\u00e2n l\u00e0 t\u00f4i t\u1ef1 quy\u1ebft \u0111\u1ecbnh b\u1ecf qua, kh\u00f4ng ph\u1ea3i do gi\u1edbi h\u1ea1n n\u00e0o t\u1eeb b\u00ean ngo\u00e0i.",
+          "T\u00f4i \u0111\u00e1nh gi\u00e1 O6 v\u00e0 R4 l\u00e0 tham chi\u1ebfu, kh\u00f4ng \u1ea3nh h\u01b0\u1edfng code.",
+          "T\u00f4i kh\u00f4ng \u0111\u1ed1i chi\u1ebfu l\u1ea1i danh s\u00e1ch required read tr\u01b0\u1edbc khi quy\u1ebft \u0111\u1ecbnh."
+        ],
+        "verifiedRequirementOwner": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HOME_HISTORY_BINDING_2026-10-11.md#Required First Reads",
+        "verifiedReportedDepthOwner": "docs/reviews/CVF_NCR_HOME_HISTORY_BINDING_WORKER_RETURN_2026-10-11.md#Source Inventory",
+        "O6": "Required P0-P7 semantic reading and application; reported grep only. Worker application claim unverified; Local distinct probe application is separate.",
+        "R4": "Required R1/R4 and held checkpoints; reported heading/grep only. Worker roadmap trace not independently established by that reading.",
+        "ResultViewer": {
+          "fullRenderRequired": false,
+          "requiredScope": "ResultViewerProps and callback uses only",
+          "declaredRead": "lines1-90; props/signature/state",
+          "currentSource": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.tsx",
+          "currentSourceSha256": "37c3f811593426e631bd50891931d363a460a943b5c012bdb7796d9923911bd1",
+          "actualUses": {
+            "onFollowUp": 851,
+            "onAccept": 868,
+            "onReject": 877
+          },
+          "disposition": "Full render omission alone is not a defect. Declared1-90 does not cover callback invocations; later claim of packet compliance unsupported without additional read evidence."
+        },
+        "qualityClass": "REQUIRED_READ_UNILATERALLY_DEPRIORITIZED; worker instruction-following deviation, separate from usable product correctness",
+        "technicalDispositionUnchanged": "CLOSED_PASS_BOUNDED; no new product counterexample, no duplicate product rerun",
+        "procedureDispositionUnchanged": "FAIL; no full work-order fulfillment or prepared-compliant sample",
+        "counterRule": "Same task and same procedural defect group; not new worker/model sample or new independent review. Original16 rows and original worker outputs retained.",
+        "LocalResponsibility": "Existing review explicitly retained procedureFAIL. Keep technical acceptance separate and explain instruction-following risk; do not imply0 code repairs means full work-order compliance.",
+        "nextAdmittedTaskControl": "Use existing packet execution ordering: before edits provide complete required-read checklist with source scope and source-derived obligation mapped to actual planned assertion; required read cannot be silently excluded as background. Return any admitted omitted required read as BLOCKED_WITH_REASON rather than COMPLETE_PENDING_REVIEW. Reviewer challenges decision-relevant source-to-assertion mapping; reading later does not certify earlier preparation.",
+        "machineBoundary": "Read receipt/span/hash validates declarations and consistency, not comprehension or actual historical order. Universal first-edit blocking requires controlled write surface and separate implementation; no such enforcement claim or new checker/hook introduced here.",
+        "learningDisposition": "RULE_EXISTS; retain existing earliest-phase machine-check candidate without opening a metadata-only successor",
+        "costDisposition": "DEFERRED_BY_OPERATOR"
+      }
     }
   ],
   "rubric": [
@@ -1066,8 +1104,9 @@
     "samplingPlan": "Continue observing useful admitted tasks for the operator-requested Haiku-family configuration; operator intends to switch to Sonnet after several further runs. Exact switch count is unspecified and creates no automatic invocation.",
     "comparisonRule": "Use the same quality/time interpretation after the switch, compare similar task families and complexity, retain reuse/session context and exact requested configurations; no benchmark-only tasks or automatic model assignment.",
     "currentTask": "CVF-NCR-HOME-HISTORY-BINDING-20261011",
-    "currentTaskDisposition": "NOT_ADDED_UNTIL_LOCAL_REVIEW",
-    "reviewedTaskCountUnchanged": 15
+    "currentTaskDisposition": "REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED_WITH_PROCEDURE_FAIL",
+    "reviewedTaskCount": 16,
+    "postClosureClarification": "Same16 tasks; unilateral required-read omission confirmed by operator-relayed worker explanation; product outcome unchanged."
   },
   "dispatchInterruptedAttempts": [
     {

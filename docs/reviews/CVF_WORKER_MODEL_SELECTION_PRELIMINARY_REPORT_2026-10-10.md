@@ -117,24 +117,25 @@ Operator-reported identities only; bounded UI worker observations. No universal 
 ## Agent Operation Trace Block
 
 
+
 | Field | Evidence |
 |---|---|
-| Actor | Local reviewer/closer |
+| Actor | Local collection steward/reviewer |
 | Provider or surface | private shared workspace |
-| Session or invocation | ncr-home-history-local-review-20261011 |
-| Working directory | repository root; existing Web package |
-| Command or tool surface | frozen intake; distinct actual Home probe and original-source negative; bounded verification; closure/collection/generator/gates |
-| Target paths | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.test.tsx`; `docs/reviews/CVF_NCR_HOME_HISTORY_BINDING_WORKER_RETURN_2026-10-11.md`; `docs/reviews/evidence/ncr-home-history-binding-worker-20261011.json`; `docs/reviews/CVF_NCR_HOME_HISTORY_BINDING_COMPLETION_2026-10-11.md`; `docs/reviews/evidence/ncr-home-history-binding-local-20261011.json`; `docs/reviews/evidence/ncr-home-history-binding-dispatch-20261011.json`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HOME_HISTORY_BINDING_2026-10-11.md`; `docs/baselines/CVF_GC018_NCR_HOME_HISTORY_BINDING_2026-10-11.md`; `docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json`; `docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Allowed scope source | paired Home Reviewer Closure Conversion and standing operator quality/time collection |
-| Before status evidence | c56d24728b5a0dc823a5d6c96e89b966cc3603c4; exact4 worker outputs pending, staged empty |
-| After status evidence | exact14 material paths; original worker code/test/return/proof preserved; matching authority projections |
-| Diff evidence | git diff --check; raw original hashes and exact staged manifest |
-| Approval boundary | private bounded review/closure only; no push grant |
-| Claim boundary | component synthetic offline; technical acceptance with procedureFAIL |
+| Session or invocation | ncr-home-history-read-clarification-20261011 |
+| Working directory | repository root |
+| Command or tool surface | targeted packet/return/ResultViewer callback and existing lifecycle verification; existing collection correction; confirmation gates |
+| Target paths | `docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json`; `docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md` |
+| Allowed scope source | operator ongoing worker quality/time collection and new relayed explanation |
+| Before status evidence | 6bcc88a9cfe53150db0f8d8df454e12b0df0a78e; clean worktree, staged empty,16 reviewed tasks |
+| After status evidence | exact2 documentation paths; same16 tasks, technical acceptance and procedureFAIL retained |
+| Diff evidence | git diff --check; exact2 manifest; first15 rows structurally unchanged |
+| Approval boundary | private observation correction; no worker/checker/provider/public effect |
+| Claim boundary | motivation self-report; governed scope/depth and callback anchors independently checked |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-home-history-local-review-20261011 |
-| Expected manifest | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.test.tsx`; `docs/reviews/CVF_NCR_HOME_HISTORY_BINDING_WORKER_RETURN_2026-10-11.md`; `docs/reviews/evidence/ncr-home-history-binding-worker-20261011.json`; `docs/reviews/CVF_NCR_HOME_HISTORY_BINDING_COMPLETION_2026-10-11.md`; `docs/reviews/evidence/ncr-home-history-binding-local-20261011.json`; `docs/reviews/evidence/ncr-home-history-binding-dispatch-20261011.json`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HOME_HISTORY_BINDING_2026-10-11.md`; `docs/baselines/CVF_GC018_NCR_HOME_HISTORY_BINDING_2026-10-11.md`; `docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json`; `docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Actual changed set | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.test.tsx`; `docs/reviews/CVF_NCR_HOME_HISTORY_BINDING_WORKER_RETURN_2026-10-11.md`; `docs/reviews/evidence/ncr-home-history-binding-worker-20261011.json`; `docs/reviews/CVF_NCR_HOME_HISTORY_BINDING_COMPLETION_2026-10-11.md`; `docs/reviews/evidence/ncr-home-history-binding-local-20261011.json`; `docs/reviews/evidence/ncr-home-history-binding-dispatch-20261011.json`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HOME_HISTORY_BINDING_2026-10-11.md`; `docs/baselines/CVF_GC018_NCR_HOME_HISTORY_BINDING_2026-10-11.md`; `docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json`; `docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Invocation ID | ncr-home-history-read-clarification-20261011 |
+| Expected manifest | `docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json`; `docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md` |
+| Actual changed set | `docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json`; `docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |
 
@@ -200,3 +201,15 @@ Current collection16:10 Haiku-family,2 Sonnet,4 Luna. The prior15 task rows are 
 Worker burden: one invalid-query test-precondition self-repair before code edits, one return metadata repair group (four reported categories), first return gate FAIL and final PASS. Mandatory source-read depth remains procedureFAIL; useful technical output does not erase it. Worker red logs remain hash/summary declarations; independent Local negatives and raw focused logs supply current proof. Local owns correction of its false persistence claim and its preimage harness/import/printing failures. Worker dispatchBaseHead is stale authoring metadata, while executionBaseHead is correct; originals retained.
 
 Worker interval~12.6min is reported captured-start to final gate end; earlier~9.1min blocked invocation is retained separately. No sum is labeled total delivery: operator restart wait, full worker invocation end and full review interval are unknown. Exact requested configuration remains separate from unexposed runtime identity/effort. Cost evaluation remains deferred. Sonnet switch stays operator-timed; no task exists just to collect a sample.
+
+## Post-Closure Required-Read Clarification - 2026-10-11
+
+The operator relayed the worker's explanation: it chose to treat O6 and R4 as background, replaced semantic reading with grep, and did not recheck the mandatory list, despite unused budget. This is a worker-reported cause, not independently observed internal reasoning. The governed packet Required First Reads/Execution Plan and original return Source Inventory independently establish the requirement/depth mismatch. O6 worker application and R4 trace are unverified; Local distinct probe application does not establish worker preparation. Same task and procedural defect group; collection remains16 (10 Haiku-family,2 Sonnet,4 Luna), no new model sample. Technical product disposition remains accepted bounded; mandatory procedure stays FAIL.
+
+ResultViewer requires props and callback uses, not the full render body. The declared read1-90 includes props/signature, while actual follow-up invocation is851 and accept/reject uses are868/877 in unchanged source. Omitting unrelated render details alone is acceptable; the later claim that the required callback-use scope was satisfied is unsupported by the declared read span. The original worker return remains unchanged.
+
+Existing lifecycle authority separates useful verified output, procedure deviations and dispatcher contradictions. Existing packet order already requires semantic reads and complete acceptance checklist before tests/implementation; no new permission is necessary to apply that requirement or to reject full-fulfillment claims with admitted omissions. On the next admitted useful task, make the required-read checklist actionable: source/required scope, source-derived obligation and planned observable assertion before edits; worker cannot silently substitute grep or drop a required source as background. A disclosed unmet mandatory read routes to BLOCKED_WITH_REASON, and reviewer checks a decision-relevant source-to-assertion mapping. Later reading may repair present understanding but cannot rewrite historical preparation.
+
+A machine read receipt can check missing rows, span/identity consistency and contradictory terminal status; it cannot certify comprehension. Universal first-edit prevention needs a controlled write surface; no such enforcement is present or claimed here. Preserve the existing machine-check candidate without a new helper/hook or benchmark-only task. Root also corrected stale operatorObservationFocus fields that still said pending/15 while reporting and reviewed rows already showed16; this projection error belongs to Local.
+
+Current companion ledger raw SHA-256: da6f8a9e67278806e1000ed40472e9915c717a3844b9535eff958c6b7ef8d87b. Existing evidence/worker hashes and prior15 rows retained. Cost evaluation deferred; no product rerun, automatic worker, model winner or new effect authority.
