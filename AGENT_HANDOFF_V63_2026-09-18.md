@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Current NCR Continuation
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `2ef6087156583ce01c914a0290792910ca904989`. Batch ID: CVF-PROVENANCE-PUSH-20261011. Private push authorization material anchor; O6 dispatch material remains f9b2b67f1a7683728f729ba77b269d69ae8bf0d5.
+Current HEAD recorded for this handoff: `343e1b2c63fa6ba57e94bedd7d35f2487d2c69a3`. Batch ID: CVF-PROVENANCE-PUSH-20261011. Private push authorization material anchor; O6 dispatch material remains f9b2b67f1a7683728f729ba77b269d69ae8bf0d5.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -12,7 +12,8 @@ Closed history is preserved byte-for-byte at `CVF_SESSION/handoffs/archive/AGENT
 Operator2026-10-11: audit and choose; Local selects O6 design. Worker preference Haiku ex high, operator-reported; Local does not launch it.
 Role: Local INTERNAL_AGENT dispatcher/reviewer; phase: bounded design dispatch; decision owner=Local. Three worker outputs; no automatic successor.
 PROGRAM_ID=CVF-CORE; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-ORACLE-O6-DESIGN-20261011; WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_ORACLE_O6_DESIGN_2026-10-11.md. Operator-started shared-workspace worker Haiku ex high; O6 design only, three outputs,45-minute ceiling,WORKER_MUST_NOT_COMMIT; Local independent review. Packet material=f9b2b67f1a7683728f729ba77b269d69ae8bf0d5; no automatic successor. O3/S2-R2 evidence retained; scaffold design deferred pending pinned producer-to-consumer mismatch. Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11 parked; LHW24 retained.
-Remote tracking branch: `origin/main`; derive remote SHA live only when needed. Provider memory is non-canonical.
+Remote tracking branch: `origin/main`. Exact remote SHA must be derived live from git when needed.
+External agent memory files: non-canonical convenience only.
 ## Startup Acknowledgment
 Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`;handoff=`AGENT_HANDOFF_V63_2026-09-18.md`;next=operator-started O6 design worker after bound release;role=Local INTERNAL_AGENT dispatcher/reviewer;phase=design dispatch;decision owner=Local;parked checkpoint=Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11.
 ## Current Mode
