@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Current NCR Continuation
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `7f4fedff3a804175ee94574e6b01b0a5653643f8`. Material SHA: `7f4fedff3a804175ee94574e6b01b0a5653643f8`. Batch ID: CVF-NCR-PROCESSING-LIFECYCLE-20261012. ProcessingScreen dispatch; Sonnet5.5 high requested; no push.
+Current HEAD recorded for this handoff: `687a49c6c05047cffa30cab6c655c2d21d74a4a0`. Material SHA: `687a49c6c05047cffa30cab6c655c2d21d74a4a0`. Batch ID: CVF-NCR-PROCESSING-LIFECYCLE-20261012. ProcessingScreen reviewed closure; exact13 material, Sonnet requested, no push.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -9,15 +9,15 @@ Status: ACTIVE
 Current continuation only. Root AGENTS.md and canonical routing owners retain full rules.
 Closed history is preserved byte-for-byte at `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V63_PRE_NCR_COMPACTION_2026-10-07.md` (SHA256 `54801fdcf14e9abe17592352ec3c69a0b0e855632991af0caacac7b65252ccba`); it is NOT_ACTIVE_AUTHORITY and not default startup reading.
 ## Scope / Target / Owner Boundary
-Local INTERNAL_AGENT dispatcher/steward; private bounded ProcessingScreen dispatch, decision owner=Local reviewer. Operator starts requested Sonnet5.5 high after release gates; exact4 worker paths. Collection16 unchanged. Origin/main; no push grant. Provider memory is not canonical.
+Local INTERNAL_AGENT reviewer/closer/steward; private ProcessingScreen repaired closure, decision owner=Local. Collection17:10 Haiku-family/3 Sonnet/4 Luna. Prior16 unchanged. No push grant; provider memory not canonical.
 ## Startup Acknowledgment
-Startup acknowledged: current mode=`cvf_ncr_p10_corrective_execution`;handoff=`AGENT_HANDOFF_V63_2026-09-18.md`;next=operator-started bounded ProcessingScreen worker after committed release gates;role=Local INTERNAL_AGENT dispatcher/steward;phase=private dispatch;decision owner=Local reviewer;parked checkpoint=Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11.
+Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`;handoff=`AGENT_HANDOFF_V63_2026-09-18.md`;next=useful coding outcome audit/selection after ProcessingScreen closure;role=Local INTERNAL_AGENT reviewer/closer/steward;phase=private closure;decision owner=Local;parked checkpoint=Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11.
 ## Current Mode
-`cvf_ncr_p10_corrective_execution`. P10 remains ACTIVE_PRODUCTION_RUNTIME; P11 parked. LHW24; only bounded offline ProcessingScreen maintenance admitted.
+`cvf_ncr_p10_closed_p11_parked`. P10 remains ACTIVE_PRODUCTION_RUNTIME; P11 parked. LHW24; bounded ProcessingScreen maintenance closed.
 ## Current Authority
-Baseline: `docs/baselines/CVF_GC018_NCR_PROCESSING_LIFECYCLE_2026-10-12.md`; SHA256 `2dc44840ee929006acc5bb9d6e9efdab07e7a3bdd22f38e2d83d7cfca73fc5d2`.
-Work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_PROCESSING_LIFECYCLE_2026-10-12.md`; SHA256 `242d6e941aab8258b9c4cadc60bb26d8948f4128a534662d06913308d2b9f24d`; DISPATCH_READY after committed continuity and bound gates.
-Actual5-case red:4 FAIL/1 control PASS; component unchanged. Requested Sonnet5.5 high;16 reviewed observations retained, new row only after review. Home745502c1c closure/procedureFAIL retained.
+Baseline: `docs/baselines/CVF_GC018_NCR_PROCESSING_LIFECYCLE_2026-10-12.md`; SHA256 `94d8c8db268bd1189437ca409e4b17f80f7aef547b54ace70714bd403b45121a`.
+Work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_PROCESSING_LIFECYCLE_2026-10-12.md`; SHA256 `af7dac0032c5d926df60507318290960c9b91dff5519d334e542c34170fdd039`; CLOSED_PASS_BOUNDED.
+Completion `docs/reviews/CVF_NCR_PROCESSING_LIFECYCLE_COMPLETION_2026-10-12.md`; proof `docs/reviews/evidence/ncr-processing-lifecycle-local-20261012.json`. Local1 root-group repair/2 callbacks; probe3/3 and focused64/64/type/lint PASS. Sonnet requested interval14.1min; procedureFAIL for late mandatory reads. No model winner or backend cancellation claim.
 ## O6 Release Rebind After Provenance Sync (2026-10-11)
 Root marker replacement aa32f666 blocked DR-04/DR-05; rebind bd13e1a80 restored release. Log C:/Users/DELL/AppData/Local/Temp/o6_preimpl.log retained; no worker defect. Provenance lane closed, URL locked.
 Learning: ORCHESTRATOR_PACKET_GAP; GOVERNANCE_CONTROL_PLANE; RULE_EXISTS. Future active dispatch continuity preserves packet binding and revalidates release; no checker change.
@@ -97,7 +97,7 @@ Receiving agents clarify incomplete ideas according to the existing lifecycle st
 Consume returned evidence under MFRP P4-C1: EVALUATE_RETURNED_EVIDENCE_NOT_RECREATE_IMPLEMENTATION. A rerun needs a named contradiction/changed consumer,information gain and cost reason.
 Alibaba calls are authorized for meaningful scoped tests; no other provider call,Claude dispatch,public push,deployment or actual-data cutover is inferred.
 ## Next Allowed Move
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_WORKER; BATCH_ID=CVF-NCR-PROCESSING-LIFECYCLE-20261012. Operator manually starts requested Claude Sonnet5.5 high under docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_PROCESSING_LIFECYCLE_2026-10-12.md, paired docs/baselines/CVF_GC018_NCR_PROCESSING_LIFECYCLE_2026-10-12.md; exact4 worker outputs,45min, no commit/stage/subagents. Local actual ProcessingScreen five-case offline red:4 lifetime/duplicate failures,1 valid control PASS. Orchestrator supplied mandatory scopes and source-derived acceptance; roadmap/O6 optional context. Final bound release gates required before worker starts. Collection remains16 reviewed:10 Haiku-family,2 Sonnet,4 Luna; new observation only after Local review. Track quality/time/repair burden, cost deferred. Client cancellation is not confirmed backend effect cancellation. Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11 parked; LHW24; no push grant.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=LOCAL_REVIEW_AND_SELECTION; BATCH_ID=CVF-NCR-PROCESSING-LIFECYCLE-20261012. ProcessingScreen CLOSED_PASS_BOUNDED at 687a49c6c05047cffa30cab6c655c2d21d74a4a0; Local one dependent attempt-binding repair covers2 approval/report callbacks. Completion docs/reviews/CVF_NCR_PROCESSING_LIFECYCLE_COMPLETION_2026-10-12.md; proof docs/reviews/evidence/ncr-processing-lifecycle-local-20261012.json. Distinct original1 control PASS/2 stale recovery FAIL, repaired3/3;64 focused/type/lint PASS. Worker requested Sonnet5.5 high interval~14.1min, native identity unknown; mandatory read order procedureFAIL.17 reviewed tasks:10 Haiku-family,3 Sonnet,4 Luna; prior16 rows unchanged. Next audit/select only a concrete useful coding outcome; no metadata-only successor, new worker auto-start or stricter gate/quiz. Keep scoped orchestrator source/acceptance mapping and quality/time/repair tracking; cost deferred. Client abort is not backend cancellation proof. Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11 parked; LHW24; no push grant.
 ## Active Boundary
 T3B has a Local-verified active v1 specification. Party B is verified and T3C-C1 tooling accepted at `db78c87df`; T3C-C2 and Party C are verified. T3D-C1 tooling is accepted at `9ed844c2a` without source. T3D-C0-R1 closed at `2fffa1ef7`. T3D-C3 was accepted bounded at `88137e9a2`, but actual-mode prepare attempts failed before Party B/C execution; authorized cleanup removed the failed root and discarded unaccepted worker changes. G1 stopped, G2-G6 parked, and G7 research closed at `660601f0e` with `ADAPT_EXISTING_HANDOFF_ONLY`. Evidence-join sufficiency stays WATCH; no implementation successor exists. Rejected T2 paths remain archived; HRLTP-T2 paused.
 Post-G7 Local source intake and Jev P0 are closed at material commit `9ac0ee8e59fa041ddaa93d725796c509400f257a`. The audit records 32 READ plus 8,093 DEFERRED paths. Jev adds fail-closed decision-context binding, incomplete candidate-space escape, and `EVIDENCE_ONLY` judgment authority to the existing ASSF owner. Proof: TypeScript 84/84, Python 61/61, compile PASS, governance 90/90. G1-G7 remain closed.
@@ -123,7 +123,7 @@ The historic provider/live parked line applies to those stopped lanes; it does n
 Q001/Q004 actual-data source/writer,custody,retention/RPO/RTO/cost checkpoints are action-specific; do not require a user-supplied ledger copy for unrelated fresh isolated development.
 NCR send/B2 STOP and S05/C1 remain; IAB unavailable; repo Playwright Chromium present; vision/full P04/full release remain unproved. No autonomous P11/public/deploy activation.
 ## Core Guard Self-Protection Authorization
-Authorized guard-maintenance scope: exact6 ProcessingScreen dispatch authority/continuity, no checker/source edits.
+Authorized guard-maintenance scope: exact6 ProcessingScreen closure authority/continuity, no checker/source edits.
 Protected paths:
 - `AGENT_HANDOFF_V63_2026-09-18.md`
 - `CVF_SESSION_MEMORY.md`
@@ -131,25 +131,25 @@ Protected paths:
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-Operator authorization:2026-10-12 continuation/Sonnet5.5 high switch; standing audit/select/work-order and quality/time collection.
-Rollback boundary: matching exact6 dispatch continuity; preserve prior Home closure/16 task rows and original evidence.
+Operator authorization: standing continuation/Local bounded review-repair-closure and quality/time collection.
+Rollback boundary: exact6 closure continuity; preserve prior16 task rows and original worker evidence.
 ## Agent Operation Trace Block
 | Field | Evidence |
 |---|---|
-| Actor | Local dispatcher/session-sync steward |
+| Actor | Local reviewer/closer/session-sync steward |
 | Provider or surface | private shared workspace |
-| Session or invocation | ncr-processing-lifecycle-sync-20261012 |
+| Session or invocation | ncr-processing-lifecycle-closure-sync-20261012 |
 | Working directory | repository root |
-| Command or tool surface | canonical state generator; exact6 continuity; committed bound release gates |
+| Command or tool surface | canonical generator; exact6 closure continuity; required steward/closure gates |
 | Target paths | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Allowed scope source | operator continuation/model switch; committed baseline/order 7f4fedff3a804175ee94574e6b01b0a5653643f8 |
-| Before status evidence | 7f4fedff3a804175ee94574e6b01b0a5653643f8; exact7 dispatch material committed; clean worktree, staged empty |
-| After status evidence | exact6 continuity; new packet pins and EXECUTE_WORKER aligned;16 reviewed tasks retained |
+| Allowed scope source | standing useful continuation/Local closure; exact13 material 687a49c6c05047cffa30cab6c655c2d21d74a4a0 |
+| Before status evidence | 687a49c6c05047cffa30cab6c655c2d21d74a4a0; exact13 closure material committed,91/91 precommit PASS; clean worktree, staged empty |
+| After status evidence | exact6 continuity; closed packet/mode/useful selection aligned;17 reviewed tasks |
 | Diff evidence | git diff --check; exact6 manifest |
-| Approval boundary | private dispatch continuity; operator manually starts worker; no push/provider/public effect |
-| Claim boundary | source-selected offline client task admission; no worker result or backend cancellation proof |
+| Approval boundary | private closure continuity; no new worker/provider/public/push effect |
+| Claim boundary | reviewed synthetic client closure; procedureFAIL retained, backend cancellation unknown |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-processing-lifecycle-sync-20261012 |
+| Invocation ID | ncr-processing-lifecycle-closure-sync-20261012 |
 | Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Manifest delta | MATCH |

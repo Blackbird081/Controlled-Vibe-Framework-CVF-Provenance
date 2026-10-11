@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_PROCESSING_LIFECYCLE_2026-10-12.md",
     "workOrderSha256": "af7dac0032c5d926df60507318290960c9b91dff5519d334e542c34170fdd039"
   },
-  "currentAuthoritySyncReason": "ProcessingScreen Local repaired technical closure with procedureFAIL; raw currentAuthority projection matches closed paired packet. Dedicated actual-material-SHA continuity follows.",
+  "currentAuthoritySyncReason": "ProcessingScreen bounded repaired closure/procedureFAIL at 687a49c6c05047cffa30cab6c655c2d21d74a4a0; exact6 continuity with closed paired authority,17 observations and useful-selection next move.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
@@ -110,8 +110,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_ncr_p10_corrective_execution",
-  "previousMode": "cvf_ncr_p10_closed_p11_parked",
+  "currentMode": "cvf_ncr_p10_closed_p11_parked",
+  "previousMode": "cvf_ncr_p10_corrective_execution",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",

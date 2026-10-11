@@ -34,21 +34,21 @@ artifact.
 | Prior handoff (archive-qualified) | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V62_2026-09-17.md` |
 | Latest front-door archive | `CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_COMPACTION_ARCHIVE_2026-08-11.md` |
 | Current authority evidence | `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` `currentAuthority` |
-| Parent maintenance | existing NCR ProcessingScreen client lifecycle; Home binding closed; prior MFRP design deferred |
+| Parent maintenance | ProcessingScreen client lifecycle closed with Local repair/procedureFAIL; Home binding closed; MFRP design deferred |
 | Freeze posture | `governance_kernel_freeze_recommended` |
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_p10_corrective_execution`;handoff=`AGENT_HANDOFF_V63_2026-09-18.md`;next=operator-started bounded ProcessingScreen worker after committed release gates;role=Local INTERNAL_AGENT dispatcher/steward;phase=private dispatch;decision owner=Local reviewer;parked checkpoint=Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11.
+Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`;handoff=`AGENT_HANDOFF_V63_2026-09-18.md`;next=useful coding outcome audit/selection after ProcessingScreen closure;role=Local INTERNAL_AGENT reviewer/closer/steward;phase=private closure;decision owner=Local;parked checkpoint=Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11.
 
 ## Current Mode
 
-Current mode marker: `cvf_ncr_p10_corrective_execution`
-Current mode: `cvf_ncr_p10_corrective_execution`; previous mode marker: `cvf_ncr_p10_closed_p11_parked`
+Current mode marker: `cvf_ncr_p10_closed_p11_parked`
+Current mode: `cvf_ncr_p10_closed_p11_parked`; previous mode marker: `cvf_ncr_p10_corrective_execution`
 
 ## Next Allowed Move
-Mode: `cvf_ncr_p10_corrective_execution`
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_WORKER; BATCH_ID=CVF-NCR-PROCESSING-LIFECYCLE-20261012. Operator manually starts requested Claude Sonnet5.5 high under docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_PROCESSING_LIFECYCLE_2026-10-12.md, paired docs/baselines/CVF_GC018_NCR_PROCESSING_LIFECYCLE_2026-10-12.md; exact4 worker outputs,45min, no commit/stage/subagents. Local actual ProcessingScreen five-case offline red:4 lifetime/duplicate failures,1 valid control PASS. Orchestrator supplied mandatory scopes and source-derived acceptance; roadmap/O6 optional context. Final bound release gates required before worker starts. Collection remains16 reviewed:10 Haiku-family,2 Sonnet,4 Luna; new observation only after Local review. Track quality/time/repair burden, cost deferred. Client cancellation is not confirmed backend effect cancellation. Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11 parked; LHW24; no push grant.
+Mode: `cvf_ncr_p10_closed_p11_parked`
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=LOCAL_REVIEW_AND_SELECTION; BATCH_ID=CVF-NCR-PROCESSING-LIFECYCLE-20261012. ProcessingScreen CLOSED_PASS_BOUNDED at 687a49c6c05047cffa30cab6c655c2d21d74a4a0; Local one dependent attempt-binding repair covers2 approval/report callbacks. Completion docs/reviews/CVF_NCR_PROCESSING_LIFECYCLE_COMPLETION_2026-10-12.md; proof docs/reviews/evidence/ncr-processing-lifecycle-local-20261012.json. Distinct original1 control PASS/2 stale recovery FAIL, repaired3/3;64 focused/type/lint PASS. Worker requested Sonnet5.5 high interval~14.1min, native identity unknown; mandatory read order procedureFAIL.17 reviewed tasks:10 Haiku-family,3 Sonnet,4 Luna; prior16 rows unchanged. Next audit/select only a concrete useful coding outcome; no metadata-only successor, new worker auto-start or stricter gate/quiz. Keep scoped orchestrator source/acceptance mapping and quality/time/repair tracking; cost deferred. Client abort is not backend cancellation proof. Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11 parked; LHW24; no push grant.
 Historical G1-G7 terminal baseline: mode `acel_g1_g7_research_terminally_closed`. G1-G6 terminal review: `docs/reviews/CVF_ACEL_G1_G6_TERMINAL_STOP_CLOSURE_2026-09-24.md`; G7 research closure: `docs/reviews/CVF_ACEL_G7_CROSS_RUN_CAPABILITY_EVOLUTION_RESEARCH_CLOSURE_2026-09-24.md`. The packet-only post-G7 reconciliation review at `docs/reviews/CVF_ACEL_POST_G7_FULL_CORPUS_ABSORPTION_CLOSURE_2026-09-24.md` is superseded for repository absorption by the 2026-09-25 pinned-source audit. G1 is stopped, G2-G6 remain parked, G7 research is closed, and no automatic G1-G7 successor exists.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
