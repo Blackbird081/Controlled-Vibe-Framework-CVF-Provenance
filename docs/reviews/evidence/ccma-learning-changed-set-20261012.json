@@ -1,0 +1,33 @@
+{
+  "baseHead": "13e03746650d3697aa6b88c9131b3ef0c49802b9",
+  "materialPaths": [
+    ".gitattributes",
+    "docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json",
+    "docs/corpus-intelligence/registry/entries/ccma-shared-learning-delta-20261012.json",
+    "docs/reference/downstream_gate_profile/CVF_BUILD_LEARNING_EVIDENCE_CHECKLIST.md",
+    "docs/reference/downstream_gate_profile/downstream_finding_intake_registry.json",
+    "docs/reviews/evidence/ccma-learning-ccmai-to-cvf-downstream-gate-learning-intake-2026-10-01-20261012.txt",
+    "docs/reviews/evidence/ccma-learning-changed-set-20261012.json",
+    "docs/reviews/evidence/ccma-learning-feedback-archive-byte-manifest-20261012.txt",
+    "docs/reviews/evidence/ccma-learning-feedback-cvf-repair-workflow-20261012.txt",
+    "docs/reviews/evidence/ccma-learning-feedback-minor-reviewer-repairs-20261012.txt",
+    "docs/reviews/evidence/ccma-learning-feedback-orchestrator-roadmap-control-20261012.txt",
+    "docs/reviews/evidence/ccma-learning-feedback-review-publication-receipt-integrity-20261012.txt",
+    "docs/reviews/evidence/ccma-learning-feedback-sync-coverage-evidence-layers-20261012.txt",
+    "docs/reviews/evidence/ccma-learning-feedback-uuid-fixtures-and-terminal-receipt-prefix-20261012.txt",
+    "docs/reviews/evidence/ccma-learning-parent-probe-20261012.json",
+    "docs/reviews/evidence/ccma-learning-parent-probe-20261012.py",
+    "docs/reviews/evidence/ccma-learning-readme-20261012.txt",
+    "docs/reviews/evidence/ccma-learning-source-manifest-20261012.json",
+    "docs/reviews/learnings/CVF_CCMA_PROOF_PREPARATION_LEARNING_2026-10-12.md",
+    "docs/reviews/learnings/README.md"
+  ],
+  "expectedEqualsActual": true,
+  "deletions": [],
+  "renames": [],
+  "separateContinuityPaths": [
+    "AGENT_HANDOFF_V63_2026-09-18.md"
+  ],
+  "sourceProjectAction": "READ_ONLY_NO_TEST_OR_WRITE",
+  "workerSampleAdded": false
+}

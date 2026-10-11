@@ -9013,6 +9013,61 @@
       "nextScanRecommendation": "Consume this exact scope for NIS-T1B-D R1 worker evidence and Local review; reconcile actual files on return without expanding to a broad corpus scan."
     },
     {
+      "id": "ccma-shared-learning-delta-20261012",
+      "corpusType": "PROJECT_SOURCE",
+      "displayName": "Customer Care ten shared learning records, 2026-10-12 delta",
+      "scopePaths": [
+        "docs/reviews/evidence/ccma-learning-ccmai-to-cvf-downstream-gate-learning-intake-2026-10-01-20261012.txt",
+        "docs/reviews/evidence/ccma-learning-feedback-archive-byte-manifest-20261012.txt",
+        "docs/reviews/evidence/ccma-learning-feedback-cvf-repair-workflow-20261012.txt",
+        "docs/reviews/evidence/ccma-learning-feedback-minor-reviewer-repairs-20261012.txt",
+        "docs/reviews/evidence/ccma-learning-feedback-orchestrator-roadmap-control-20261012.txt",
+        "docs/reviews/evidence/ccma-learning-feedback-review-publication-receipt-integrity-20261012.txt",
+        "docs/reviews/evidence/cvf-pll-source-feedback_shell_cleanup_and_paths-2026-10-04.txt",
+        "docs/reviews/evidence/ccma-learning-feedback-sync-coverage-evidence-layers-20261012.txt",
+        "docs/reviews/evidence/ccma-learning-feedback-uuid-fixtures-and-terminal-receipt-prefix-20261012.txt",
+        "docs/reviews/evidence/ccma-learning-readme-20261012.txt"
+      ],
+      "status": "SCANNED_WITH_FINDINGS",
+      "findings": [
+        {
+          "id": "CCMA-PROOF-PREPARATION-DELTA-20261012",
+          "summary": "Merge proof-preparation examples into existing checklist; roadmap/metadata/shell/sync owners already exist.",
+          "disposition": "ACCEPT_WITH_BOUNDARY",
+          "nextAction": "Use relevant checklist in selected coding work; no documentation-only successor; project application parked.",
+          "defectClass": "ORCHESTRATOR_PACKET_GAP",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE",
+          "f2gRef": "docs/reviews/learnings/CVF_CCMA_PROOF_PREPARATION_LEARNING_2026-10-12.md"
+        }
+      ],
+      "negativeSearchTerms": [],
+      "nextScanRecommendation": "No rescan without a named changed source or contradictory evidence. Customer Care remains parked.",
+      "fileCount": 10,
+      "scanWave": "CCMA-SHARED-LEARNING-20261012",
+      "scanDate": "2026-10-12",
+      "manifestHash": "013d2618ee271bce057da324f81b522f36a3c9df2a45c5f5b1c29783a455de8e",
+      "hashAlgorithm": "sha256",
+      "hashInput": "sorted-paths-newline-joined-with-trailing-newline",
+      "manifestPath": "docs/reviews/evidence/ccma-learning-source-manifest-20261012.json",
+      "packetPath": "docs/reviews/learnings/CVF_CCMA_PROOF_PREPARATION_LEARNING_2026-10-12.md",
+      "completionReviewPath": "docs/reviews/learnings/CVF_CCMA_PROOF_PREPARATION_LEARNING_2026-10-12.md",
+      "gcBaselineRef": null,
+      "verdicts": {
+        "gc047": "COMPLETE_WITH_DECLARED_EXCLUSIONS",
+        "gc048": "RECONCILED_WITH_DECLARED_GAPS",
+        "gc050": "N/A_WITH_REASON"
+      },
+      "semanticRegions": [
+        "proof preparation",
+        "archive member byte identity",
+        "receipt publication",
+        "durable terminal prefix",
+        "outcome-bound orchestration"
+      ],
+      "priorAbsorption": "Existing DGIP-T1 and PLL-T1 retained; unchanged shell snapshot reused; only shared-record delta assessed.",
+      "notes": "Registry consulted before source reading; new source entry was registered after reading (Local timing deviation). Historical project evidence attributed, not independently replayed."
+    },
+    {
       "id": "dsh-wra-r1-whole-repository-absorption",
       "corpusType": "EXTERNAL_SOURCE",
       "displayName": "DeepSeek Harness DSH-WRA-R1 whole-repository absorption and runtime realization",

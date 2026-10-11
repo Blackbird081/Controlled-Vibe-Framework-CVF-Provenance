@@ -1,0 +1,118 @@
+{
+  "schemaVersion": "ccma.learningSourceManifest@1",
+  "sourceProject": "Customer-Care-Monitor",
+  "sourceHead": "b72c0f4ec92c0fc02daf3f6cfaad1a303a27824c",
+  "snapshotTime": "2026-10-12",
+  "normalization": "UTF-8 without BOM; CRLF/CR to LF for documentary snapshots only; source raw hashes retained",
+  "manifestHash": "013d2618ee271bce057da324f81b522f36a3c9df2a45c5f5b1c29783a455de8e",
+  "hashInput": "sorted-paths-newline-joined-with-trailing-newline",
+  "processingLedger": [
+    {
+      "sourcePath": "docs/reviews/learnings/CCMAI_TO_CVF_DOWNSTREAM_GATE_LEARNING_INTAKE_2026-10-01.md",
+      "sourceBytes": 21732,
+      "sourceSha256": "c32f452b42a526735cf5905ab7ee1aaf6c411bf1cd11e2a3bcef33b7438ea170",
+      "snapshotPath": "docs/reviews/evidence/ccma-learning-ccmai-to-cvf-downstream-gate-learning-intake-2026-10-01-20261012.txt",
+      "snapshotSha256": "14ad719fdade40467161cad5bd42275afc473c8e4cedcba2d8d5cc99a5316372",
+      "terminalStatus": "READ",
+      "readDepth": "Full shared learning record; linked historical code/tests not replayed",
+      "evidenceClass": "ATTRIBUTED_SOURCE"
+    },
+    {
+      "sourcePath": "docs/reviews/learnings/feedback_archive_byte_manifest.md",
+      "sourceBytes": 1671,
+      "sourceSha256": "22c332a3d020e73dc45bdfd0a592b089b8e477271704aaa52f99ae22fc2c2086",
+      "snapshotPath": "docs/reviews/evidence/ccma-learning-feedback-archive-byte-manifest-20261012.txt",
+      "snapshotSha256": "1633c0baad9f6e5e86eb8d007862a615956b9fe2665116f4e7363c1c3a84ad2b",
+      "terminalStatus": "READ",
+      "readDepth": "Full shared learning record; linked historical code/tests not replayed",
+      "evidenceClass": "ATTRIBUTED_SOURCE"
+    },
+    {
+      "sourcePath": "docs/reviews/learnings/feedback_cvf_repair_workflow.md",
+      "sourceBytes": 29058,
+      "sourceSha256": "745aa20711f191d3117f3ad0e7344367ee26377a0bb545e4ae08d77fde0344e7",
+      "snapshotPath": "docs/reviews/evidence/ccma-learning-feedback-cvf-repair-workflow-20261012.txt",
+      "snapshotSha256": "00e0e4104e0ddc242e963cb1eb70ef7994f50f6127b41bd58b2f08dbaee1a1a0",
+      "terminalStatus": "READ",
+      "readDepth": "Full shared learning record; linked historical code/tests not replayed",
+      "evidenceClass": "ATTRIBUTED_SOURCE"
+    },
+    {
+      "sourcePath": "docs/reviews/learnings/feedback_minor_reviewer_repairs.md",
+      "sourceBytes": 7585,
+      "sourceSha256": "87d672b9a9fd1ccfa4aec24334f032c52635bc5d36df9158e1f321c36e84b63b",
+      "snapshotPath": "docs/reviews/evidence/ccma-learning-feedback-minor-reviewer-repairs-20261012.txt",
+      "snapshotSha256": "0022838ff625267bf4ea5a3a1ff9253411d408f734f19a266e51b329f5b01164",
+      "terminalStatus": "READ",
+      "readDepth": "Full shared learning record; linked historical code/tests not replayed",
+      "evidenceClass": "ATTRIBUTED_SOURCE"
+    },
+    {
+      "sourcePath": "docs/reviews/learnings/feedback_orchestrator_roadmap_control.md",
+      "sourceBytes": 7753,
+      "sourceSha256": "f6afb539b05b06500cd2d77319546239f6e6151a167a46d2cf33889fcbf17e83",
+      "snapshotPath": "docs/reviews/evidence/ccma-learning-feedback-orchestrator-roadmap-control-20261012.txt",
+      "snapshotSha256": "8542a7d1c0c6a9e73eaab885887242c85284f7de2569c8f8eea19c0b6e76f801",
+      "terminalStatus": "READ",
+      "readDepth": "Full shared learning record; linked historical code/tests not replayed",
+      "evidenceClass": "ATTRIBUTED_SOURCE"
+    },
+    {
+      "sourcePath": "docs/reviews/learnings/feedback_review_publication_receipt_integrity.md",
+      "sourceBytes": 2268,
+      "sourceSha256": "1d67cb2494d8f66abb73443d454197a7c0666a2eb0b2616783b1f89bf39f84b0",
+      "snapshotPath": "docs/reviews/evidence/ccma-learning-feedback-review-publication-receipt-integrity-20261012.txt",
+      "snapshotSha256": "7381471de0a6e327fcb172e254d38ce33b1a9e232aa60af15cbae55fb4c6b62c",
+      "terminalStatus": "READ",
+      "readDepth": "Full shared learning record; linked historical code/tests not replayed",
+      "evidenceClass": "ATTRIBUTED_SOURCE"
+    },
+    {
+      "sourcePath": "docs/reviews/learnings/feedback_shell_cleanup_and_paths.md",
+      "sourceBytes": 4839,
+      "sourceSha256": "bd63ce96c4ca5b6be9ba6a692f342d89e25ff430fba0794a14e1ef4b7d7c445e",
+      "snapshotPath": "docs/reviews/evidence/cvf-pll-source-feedback_shell_cleanup_and_paths-2026-10-04.txt",
+      "snapshotSha256": "7a1c6d7da6fdff3eded4d465752d0ca28920ed0655e62dd9d41f2ed9ded10be1",
+      "terminalStatus": "READ",
+      "readDepth": "Full shared learning record; linked historical code/tests not replayed",
+      "evidenceClass": "ATTRIBUTED_SOURCE"
+    },
+    {
+      "sourcePath": "docs/reviews/learnings/feedback_sync_coverage_evidence_layers.md",
+      "sourceBytes": 5427,
+      "sourceSha256": "86b542f0ac3c98f2e5f0a86c945da1aa8345a09596d2aa69395361037e361fee",
+      "snapshotPath": "docs/reviews/evidence/ccma-learning-feedback-sync-coverage-evidence-layers-20261012.txt",
+      "snapshotSha256": "6e49d8e8703831e94fc6eb0cdaee0ca6871ea69f400bc88eac142c57bfa9c15a",
+      "terminalStatus": "READ",
+      "readDepth": "Full shared learning record; linked historical code/tests not replayed",
+      "evidenceClass": "ATTRIBUTED_SOURCE"
+    },
+    {
+      "sourcePath": "docs/reviews/learnings/feedback_uuid_fixtures_and_terminal_receipt_prefix.md",
+      "sourceBytes": 2439,
+      "sourceSha256": "051232097277fef1496278b8c01e48a8f6d6ec854f3dc339734b2f468d8d3f76",
+      "snapshotPath": "docs/reviews/evidence/ccma-learning-feedback-uuid-fixtures-and-terminal-receipt-prefix-20261012.txt",
+      "snapshotSha256": "35ef09b6a60e9503de5db0b1b07fc2c07dc0cbd4b4709a25540846630df7b7d9",
+      "terminalStatus": "READ",
+      "readDepth": "Full shared learning record; linked historical code/tests not replayed",
+      "evidenceClass": "ATTRIBUTED_SOURCE"
+    },
+    {
+      "sourcePath": "docs/reviews/learnings/README.md",
+      "sourceBytes": 5753,
+      "sourceSha256": "5ab9b0c4fe865a4110daab9f91ce9a340c536414e6dfcb3b544ccc4224b82674",
+      "snapshotPath": "docs/reviews/evidence/ccma-learning-readme-20261012.txt",
+      "snapshotSha256": "6fb8f6bef63e4f83857527cc0493f155d713a0506015b97a07b7445d4d08d4af",
+      "terminalStatus": "READ",
+      "readDepth": "Full shared learning record; linked historical code/tests not replayed",
+      "evidenceClass": "ATTRIBUTED_SOURCE"
+    }
+  ],
+  "reconciliation": {
+    "manifest": 10,
+    "ledgerTerminal": 10,
+    "exclusions": 0,
+    "unresolved": 0
+  },
+  "claimLimit": "Ten shared Markdown records only; attributed project history, not private source/test reproduction"
+}

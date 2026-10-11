@@ -561,6 +561,153 @@
           }
         }
       ]
+    },
+    {
+      "intakeId": "CCMA-SHARED-LEARNING-20261012",
+      "authority": "LOCAL_VERIFIED_BOUNDED_DOCUMENTARY_MERGE",
+      "sourceProjectClaims": "ATTRIBUTED_NOT_REPLAYED; source-project application PARKED_BY_OPERATOR",
+      "findings": [
+        {
+          "id": "CCMA-PROOF-PREPARATION-DELTA-20261012",
+          "sourceRecord": "docs/reviews/learnings/CVF_CCMA_PROOF_PREPARATION_LEARNING_2026-10-12.md",
+          "defectClass": "ORCHESTRATOR_PACKET_GAP",
+          "parentEvidence": {
+            "schemaVersion": "cvf.parentLearningEvidence@1.0.0",
+            "findingId": "CCMA-PROOF-PREPARATION-DELTA-20261012",
+            "source": {
+              "sourceProject": "Customer-Care-Monitor",
+              "evidence": {
+                "path": "docs/reviews/learnings/CVF_CCMA_PROOF_PREPARATION_LEARNING_2026-10-12.md",
+                "sha256": "52429607fb609a46d696dd82ad99b51c6a3f0f36c4f66b4da62ba26c1895c316",
+                "fragment": "Target / Source",
+                "evidenceClass": "OBSERVED_LOCAL"
+              }
+            },
+            "valueChecks": {
+              "sourceConfidence": {
+                "status": "SUPPORTED",
+                "reason": "Pinned shared records with raw source and documentary snapshot hashes; project history remains attributed.",
+                "evidence": [
+                  {
+                    "path": "docs/reviews/evidence/ccma-learning-source-manifest-20261012.json",
+                    "sha256": "6fbd611032f866eb0d1c7824fef3fe12c30e17a3a5d647ee88f2e94fa7366308",
+                    "fragment": "processingLedger",
+                    "evidenceClass": "ATTRIBUTED_SOURCE"
+                  }
+                ],
+                "limits": "Bounded written guidance and disposable offline examples; historical project claims attributed, no agent adherence or project/runtime proof."
+              },
+              "reusableMechanism": {
+                "status": "SUPPORTED",
+                "reason": "Proof preparation can confuse invalid fixtures, archive bytes, publication targets and durable receipt layers.",
+                "evidence": [
+                  {
+                    "path": "docs/reviews/learnings/CVF_CCMA_PROOF_PREPARATION_LEARNING_2026-10-12.md",
+                    "sha256": "52429607fb609a46d696dd82ad99b51c6a3f0f36c4f66b4da62ba26c1895c316",
+                    "fragment": "Findings / Position",
+                    "evidenceClass": "OBSERVED_LOCAL"
+                  }
+                ],
+                "limits": "Bounded written guidance and disposable offline examples; historical project claims attributed, no agent adherence or project/runtime proof."
+              },
+              "existingCoverage": {
+                "status": "SUPPORTED",
+                "reason": "Local owner reconciliation preserves lifecycle, O6 and ADIF routing without duplicate controls.",
+                "evidence": [
+                  {
+                    "path": "docs/reviews/learnings/CVF_CCMA_PROOF_PREPARATION_LEARNING_2026-10-12.md",
+                    "sha256": "52429607fb609a46d696dd82ad99b51c6a3f0f36c4f66b4da62ba26c1895c316",
+                    "fragment": "Source Authority",
+                    "evidenceClass": "OBSERVED_LOCAL"
+                  }
+                ],
+                "limits": "Bounded written guidance and disposable offline examples; historical project claims attributed, no agent adherence or project/runtime proof."
+              },
+              "incrementalValue": {
+                "status": "SUPPORTED",
+                "reason": "Existing checklist gains specific archive-member, target-shape and durable-prefix guidance.",
+                "evidence": [
+                  {
+                    "path": "docs/reference/downstream_gate_profile/CVF_BUILD_LEARNING_EVIDENCE_CHECKLIST.md",
+                    "sha256": "152bfb5a9097c58122778179bc26c143727634990937c578ed9ab68d477cd153",
+                    "fragment": "control:proof-preparation",
+                    "evidenceClass": "OBSERVED_LOCAL"
+                  }
+                ],
+                "limits": "Bounded written guidance and disposable offline examples; historical project claims attributed, no agent adherence or project/runtime proof."
+              },
+              "boundedProof": {
+                "status": "SUPPORTED",
+                "reason": "Nine offline checks demonstrate selected distinctions, including actual disposable Git archive bytes.",
+                "evidence": [
+                  {
+                    "path": "docs/reviews/evidence/ccma-learning-parent-probe-20261012.json",
+                    "sha256": "8d132e269fd0ad52e84e908153b3742e46d81164522c98f6bad529b5c6e91af1",
+                    "fragment": "cases",
+                    "evidenceClass": "SYNTHETIC_OFFLINE"
+                  }
+                ],
+                "limits": "Bounded written guidance and disposable offline examples; historical project claims attributed, no agent adherence or project/runtime proof."
+              }
+            },
+            "decision": {
+              "state": "MERGE",
+              "reason": "Extend existing evidence-preparation checklist; covered cases retain existing owners.",
+              "reviewer": "LOCAL_REVIEWER_CODEX_ROOT",
+              "owner": "docs/reference/downstream_gate_profile/CVF_BUILD_LEARNING_EVIDENCE_CHECKLIST.md",
+              "f2gDisposition": "TEMPLATE_UPDATED",
+              "evidence": [
+                {
+                  "path": "docs/reviews/learnings/CVF_CCMA_PROOF_PREPARATION_LEARNING_2026-10-12.md",
+                  "sha256": "52429607fb609a46d696dd82ad99b51c6a3f0f36c4f66b4da62ba26c1895c316",
+                  "fragment": "Decision / Disposition",
+                  "evidenceClass": "OBSERVED_LOCAL"
+                }
+              ]
+            },
+            "implementation": {
+              "state": "IMPLEMENTED_BOUNDED",
+              "reason": "Written checklist guidance only; no machine gate or global worker obligation.",
+              "evidence": [
+                {
+                  "path": "docs/reference/downstream_gate_profile/CVF_BUILD_LEARNING_EVIDENCE_CHECKLIST.md",
+                  "sha256": "152bfb5a9097c58122778179bc26c143727634990937c578ed9ab68d477cd153",
+                  "fragment": "control:proof-preparation",
+                  "evidenceClass": "OBSERVED_LOCAL"
+                },
+                {
+                  "path": "docs/reviews/evidence/ccma-learning-parent-probe-20261012.json",
+                  "sha256": "8d132e269fd0ad52e84e908153b3742e46d81164522c98f6bad529b5c6e91af1",
+                  "fragment": "proof-positive:cases",
+                  "evidenceClass": "SYNTHETIC_OFFLINE"
+                },
+                {
+                  "path": "docs/reviews/evidence/ccma-learning-parent-probe-20261012.json",
+                  "sha256": "8d132e269fd0ad52e84e908153b3742e46d81164522c98f6bad529b5c6e91af1",
+                  "fragment": "proof-negative:cases",
+                  "evidenceClass": "SYNTHETIC_OFFLINE"
+                }
+              ]
+            },
+            "projectResolution": {
+              "state": "PARKED_BY_OPERATOR",
+              "reason": "Operator permits parent processing only; no source-project action or delivery/application receipt.",
+              "evidence": []
+            },
+            "returnDelivery": {
+              "state": "PARKED_BY_OPERATOR",
+              "reason": "Operator permits parent processing only; no source-project action or delivery/application receipt.",
+              "evidence": []
+            },
+            "projectApplication": {
+              "state": "PARKED_BY_OPERATOR",
+              "reason": "Operator permits parent processing only; no source-project action or delivery/application receipt.",
+              "evidence": []
+            },
+            "claimLimits": "Bounded written guidance and disposable offline examples; historical project claims attributed, no agent adherence or project/runtime proof."
+          }
+        }
+      ]
     }
   ]
 }

@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "ccma.parentLearningProbe@1",
+  "evidenceClass": "SYNTHETIC_OFFLINE",
+  "cases": [
+    {
+      "name": "archive-member-positive",
+      "result": "PASS"
+    },
+    {
+      "name": "raw-blob-comparison-separate",
+      "result": "PASS"
+    },
+    {
+      "name": "archive-tamper-negative",
+      "result": "PASS"
+    },
+    {
+      "name": "archive-missing-member-negative",
+      "result": "PASS"
+    },
+    {
+      "name": "domain-positive-before-negative",
+      "result": "PASS"
+    },
+    {
+      "name": "fallback-status-is-not-terminal-summary",
+      "result": "PASS"
+    },
+    {
+      "name": "blocked-fallback-keeps-prefix",
+      "result": "PASS"
+    },
+    {
+      "name": "publication-shape-positive",
+      "result": "PASS"
+    },
+    {
+      "name": "publication-summary-miswrite-negative",
+      "result": "PASS"
+    }
+  ],
+  "archiveSha256": "e8a17fc5431c1db5a1aa4a93a1afea79d11031120f7210e5fd986488cdbe138b",
+  "archiveSourceRef": "7e900030d2a0fda3e805d2fea48a06d7203c6d23",
+  "archiveMembers": {
+    ".gitattributes": {
+      "size": 26,
+      "sha256": "97fc93758b288282432ac43c176987d60e63e2b1e637f5e9cbde704080d300de"
+    },
+    "payload.txt": {
+      "size": 15,
+      "sha256": "f8e0f1568dd9254c3262d199d5dcfc9ff6d4855e18ec53a7176f9eab948ed93e"
+    }
+  },
+  "rawBlobs": {
+    ".gitattributes": {
+      "size": 26,
+      "sha256": "97fc93758b288282432ac43c176987d60e63e2b1e637f5e9cbde704080d300de"
+    },
+    "payload.txt": {
+      "size": 13,
+      "sha256": "dbea9325179efe46ea2add94f7b6b745ca983fabb208dc6d34aa064623d7ee23"
+    }
+  },
+  "gitVersion": "git version 2.55.0.windows.3",
+  "configuration": {
+    "core.autocrlf": false,
+    "gitattributes": "payload.txt text eol=crlf"
+  },
+  "claimLimit": "Actual disposable Git/archive bytes plus synthetic UUID/state/shape examples. No Customer Care tests, database, provider, agent-adherence or general effectiveness proof.",
+  "scriptSha256": "28eeba73721ab8ed07dde95e5996a66c80a3479dc8f780aa057f397e4e522457"
+}
