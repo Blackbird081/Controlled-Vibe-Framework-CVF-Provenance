@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Current NCR Continuation
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `8a5cbfe19cd4f1f4847798b1364d3a870c7c4c45`. Batch ID: CVF-ORACLE-O6-DESIGN-20261011. Transport parent; accepted O6 material cc584e69fd4086407806ee9c20deaf1c753724d5.
+Current HEAD recorded for this handoff: `976e5b4a96cfc4f2f8c945023c97813cf865005a`. Batch ID: CVF-SYMBOL-LINE-ANCHOR-FIX-20261011. Packet material for exact source-helper/test worker release; O6 design remains accepted.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -9,20 +9,20 @@ Status: ACTIVE
 Current continuation only. Root AGENTS.md and canonical routing owners retain full rules.
 Closed history is preserved byte-for-byte at `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V63_PRE_NCR_COMPACTION_2026-10-07.md` (SHA256 `54801fdcf14e9abe17592352ec3c69a0b0e855632991af0caacac7b65252ccba`); it is NOT_ACTIVE_AUTHORITY and not default startup reading.
 ## Scope / Target / Owner Boundary
-Operator2026-10-11: audit and choose; Local selects O6 design. Worker preference Haiku ex high, operator-reported; Local does not launch it.
-Role: Local INTERNAL_AGENT reviewer/closer; phase: bounded design closure; decision owner=Local. Worker returned; no redispatch or automatic successor.
-PROGRAM_ID=CVF-CORE; NEXT_ACTION_CLASS=LOCAL_DISPOSITION_ONLY; BATCH_ID=CVF-ORACLE-O6-DESIGN-20261011. STOP_SELECTED_OUTCOME: O6 CLOSED_PASS_BOUNDED_DESIGN_ONLY; completion=docs/reviews/CVF_ORACLE_O6_DESIGN_COMPLETION_2026-10-11.md; material=cc584e69fd4086407806ee9c20deaf1c753724d5. Manual P0-P7 checklist accepted; helper DEFERRED_WITH_REASON until recurrence or admitted negative-heavy reviewer demand; global gate REJECTED. No worker redispatch or automatic successor. Baseline ADIF disclosure corrected at 823a01ceba2fd52489cef2f74936f2590e41e61a; symbol-line candidate confirmed/deferred; scaffold design still deferred pending pinned producer-to-consumer mismatch. Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11 parked; LHW24 retained. Private provenance transport authorized at 8a5cbfe19cd4f1f4847798b1364d3a870c7c4c45; no outcome reopened.
+Operator2026-10-11: continue; prior audit-and-choose/manual-worker preference retained. Local selects confirmed symbol-line anchor repair; operator starts Haiku ex high manually, no Local launch.
+Role: Local INTERNAL_AGENT dispatcher; phase: bounded source-maintenance dispatch; decision owner=Local. Worker unstarted; exact four write paths, no stage/commit; no successor.
+PROGRAM_ID=CVF-CORE; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-SYMBOL-LINE-ANCHOR-FIX-20261011. Work order docs/work_orders/CVF_AGENT_WORK_ORDER_SYMBOL_LINE_ANCHOR_FIX_2026-10-11.md; material=976e5b4a96cfc4f2f8c945023c97813cf865005a. Manual INTERNAL_AGENT worker after bound pre-dispatch PASS; capture executionBaseHead, pre-implementation before edits; four paths, 35 minutes, WORKER_MUST_NOT_COMMIT; pending return to Local. O6 accepted; helper/scaffold deferred; no successor. Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11 parked; LHW24 retained.
 Remote tracking branch: `origin/main`. Exact remote SHA must be derived live from git when needed.
 External agent memory files: non-canonical convenience only.
 ## Startup Acknowledgment
-Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`;handoff=`AGENT_HANDOFF_V63_2026-09-18.md`;next=O6 closed, no successor;role=Local INTERNAL_AGENT reviewer/closer;phase=design closure;decision owner=Local;parked checkpoint=Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11.
+Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`;handoff=`AGENT_HANDOFF_V63_2026-09-18.md`;next=manual worker after bound release;role=Local INTERNAL_AGENT dispatcher;phase=source-maintenance dispatch;decision owner=Local;parked checkpoint=Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11.
 ## Current Mode
 `cvf_ncr_p10_closed_p11_parked`. P10 package remains `ACTIVE_PRODUCTION_RUNTIME`; P11 parked. Latest closed learning-history wave: `LHW24`.
 Current NIS-T1J is CLOSED_PASS_BOUNDED with no automatic successor; NCR consumer maintenance is separately operator-authorized.
 ## Current Authority
-Baseline: `docs/baselines/CVF_GC018_ORACLE_O6_DESIGN_2026-10-11.md`; SHA256 `d1bf89232cf73376982cb7645633c61daed84d222106ff12abd8e633a9d323dc`.
-Work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_ORACLE_O6_DESIGN_2026-10-11.md`; SHA256 `aa5be1970ed4cc481ef6f850f8f0268bb741849ab2e328b351f5b76a08cbd78b`; CLOSED_PASS_BOUNDED, no worker start.
-O6 completion docs/reviews/CVF_ORACLE_O6_DESIGN_COMPLETION_2026-10-11.md; manual checklist accepted, no case execution. Helper/symbol-line repair deferred; global gate rejected. O3/S2-R2 and parked effects retained.
+Baseline: `docs/baselines/CVF_GC018_SYMBOL_LINE_ANCHOR_FIX_2026-10-11.md`; SHA256 `f7a95b94214bebc99dc49723470770809a26d7dbc01260cf162096ae5513c80d`.
+Work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_SYMBOL_LINE_ANCHOR_FIX_2026-10-11.md`; SHA256 `497a23d001e626685e725255d85ac80bd2175a766b51fc16468041b8d549bcd0`; DISPATCH_READY subject to final committed bound gate.
+Material 976e5b4a96cfc4f2f8c945023c97813cf865005a; worker unstarted. Prior O6 completion docs/reviews/CVF_ORACLE_O6_DESIGN_COMPLETION_2026-10-11.md retained; helper/scaffold deferred. Private sync 4d5612f72 complete; packet pair unpushed. TEMP logs retain dispatcher metadata repairs.
 ## O6 Release Rebind After Provenance Sync (2026-10-11)
 Root marker replacement aa32f666 blocked DR-04/DR-05; rebind bd13e1a80 restored release. Log C:/Users/DELL/AppData/Local/Temp/o6_preimpl.log retained; no worker defect. Provenance lane closed, URL locked.
 Learning: ORCHESTRATOR_PACKET_GAP; GOVERNANCE_CONTROL_PLANE; RULE_EXISTS. Future active dispatch continuity preserves packet binding and revalidates release; no checker change.

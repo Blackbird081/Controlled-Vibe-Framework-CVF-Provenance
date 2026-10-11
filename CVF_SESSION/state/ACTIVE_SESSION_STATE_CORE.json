@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_SYMBOL_LINE_ANCHOR_FIX_2026-10-11.md",
     "workOrderSha256": "497a23d001e626685e725255d85ac80bd2175a766b51fc16468041b8d549bcd0"
   },
-  "currentAuthoritySyncReason": "Fresh continuation selects confirmed symbol-line defect; exact existing helper/test packet CVF-SYMBOL-LINE-ANCHOR-FIX-20261011. O6 accepted design/helper deferral and parked effects retained. Material authority phase; dedicated actual-SHA continuity before release.",
+  "currentAuthoritySyncReason": "Packet CVF-SYMBOL-LINE-ANCHOR-FIX-20261011 material 976e5b4a96cfc4f2f8c945023c97813cf865005a; dedicated six-path continuity records actual SHA/batch for final bound release. O6 accepted design and parked effects retained; worker unstarted, Local dispatcher phase, final disposition owner Local.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
