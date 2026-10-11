@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_CONTINUITY_COLLECTION_DESIGN_2026-10-11.md",
     "workOrderSha256": "50a99dd431fcbf25468290194670d8e1fd910a287193d96b7f17a98382a1032b"
   },
-  "currentAuthoritySyncReason": "MFRP bounded design closed with retained skip/procedure limits; raw closed packet pins and fifteen deduplicated reviewed tasks including four Luna. Dedicated actual-SHA continuity follows.",
+  "currentAuthoritySyncReason": "MFRP design closed material d4851874bdbe853f1f4946b604704f2ac76b5e73; six-surface actual-SHA STOP, collection15 including4 Luna; original worker evidence/procedure FAIL retained.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
