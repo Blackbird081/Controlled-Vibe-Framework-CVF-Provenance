@@ -36,12 +36,12 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_MODEL_SELECTION_S4_R1_MANUAL_WORKED_EXAMPLE_2026-10-11.md",
-    "baselineSha256": "daba5c16243353284151c61159a8eeebcbbe16d4e30f4f2ff33c0a7a876e6fc8",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_SELECTION_S4_R1_MANUAL_WORKED_EXAMPLE_2026-10-11.md",
-    "workOrderSha256": "5159f2b71b7ac4d3cc67e0fcc64b3d814ed92a2c0611c044c33a4bafd1fd1c57"
+    "baselinePath": "docs/baselines/CVF_GC018_MODEL_SELECTION_S2_R1_OFFLINE_MANUAL_RECORD_2026-10-11.md",
+    "baselineSha256": "8a2dd23f36e681146f03de905adeacc71de0e80a87569720247c8e575dca72bd",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_SELECTION_S2_R1_OFFLINE_MANUAL_RECORD_2026-10-11.md",
+    "workOrderSha256": "7c4a53d9f5cdc731b38997495fde2dd096237f6b5a38f4fc3cd5a60618dc9b4d"
   },
-  "currentAuthoritySyncReason": "S4-R1 CLOSED_PASS_BOUNDED; material efc8bf560f64fafbb0462e4663bf8445a2c2a184; material shape/atomicity checks passed; first full range blocked only on expected pre-sync handoff HEAD. Final range validation follows continuity. Manual guide accepted; S3 packet observation ACTION_VERIFIED/PARTIAL; no automatic successor.",
+  "currentAuthoritySyncReason": "S2-R1 locked offline record packet released after operator continuation/subagent assignment. Requested gpt-6-luna / xhigh; outcome pending. Prior S3 mixed-range receipt failure retained in current packet adjudication.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",

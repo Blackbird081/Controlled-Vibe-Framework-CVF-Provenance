@@ -1,0 +1,18 @@
+{
+  "stateOrder": 3001,
+  "stateKey": "modelSelectionS2R1Dispatch20261011",
+  "value": {
+    "status": "DISPATCH_READY",
+    "materialCommit": "e1e6d20453e5bdcbb7cc9f05ff16c27a81aa0d4b",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_SELECTION_S2_R1_OFFLINE_MANUAL_RECORD_2026-10-11.md",
+    "workerRequest": {
+      "model": "gpt-6-luna",
+      "reasoningEffort": "xhigh",
+      "identityEvidence": "REQUESTED_CONFIGURATION_ONLY",
+      "immutableSnapshot": null
+    },
+    "result": "One locked offline record-validator task; S4 enum-gap observation CITED. Prior failed S3 mixed-range receipt preserved/adjudicated; no full-range receipt promotion.",
+    "nextAction": "One admitted native worker; Local independent review; Expense and S5 remain parked.",
+    "claimBoundary": "Declared consistency only; no model equivalence, cost advantage, runtime selector or worker outcome."
+  }
+}
