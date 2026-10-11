@@ -431,7 +431,7 @@
                   },
                   {
                     "path": "docs/reviews/CVF_CONTINUITY_DISPATCH_O3_COMPLETION_2026-10-11.md",
-                    "sha256": "56e2228f08c01072aeabd275fca4b542215a094a29dfd296ed674b749f86af08",
+                    "sha256": "2d13378d37ef173afd654ec79e38f0420ff7784e8fd7586dd63b9cbb34b6028e",
                     "fragment": "Findings / Position",
                     "evidenceClass": "OBSERVED_LOCAL"
                   }
@@ -482,7 +482,7 @@
                   },
                   {
                     "path": "docs/reviews/CVF_CONTINUITY_DISPATCH_O3_COMPLETION_2026-10-11.md",
-                    "sha256": "56e2228f08c01072aeabd275fca4b542215a094a29dfd296ed674b749f86af08",
+                    "sha256": "2d13378d37ef173afd654ec79e38f0420ff7784e8fd7586dd63b9cbb34b6028e",
                     "fragment": "Decision / Disposition",
                     "evidenceClass": "OBSERVED_LOCAL"
                   }
@@ -512,7 +512,7 @@
               "evidence": [
                 {
                   "path": "docs/reviews/CVF_CONTINUITY_DISPATCH_O3_COMPLETION_2026-10-11.md",
-                  "sha256": "56e2228f08c01072aeabd275fca4b542215a094a29dfd296ed674b749f86af08",
+                  "sha256": "2d13378d37ef173afd654ec79e38f0420ff7784e8fd7586dd63b9cbb34b6028e",
                   "fragment": "Decision / Disposition",
                   "evidenceClass": "OBSERVED_LOCAL"
                 }

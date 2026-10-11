@@ -6,10 +6,11 @@ Status: CLOSED_PASS_BOUNDED
 Date: 2026-10-11
 Batch ID: CVF-CONTINUITY-DISPATCH-O3-20261011
 executionBaseHead: 0097a796bd3834ea2385c8673f70deae961c3e9f
-closureBaseHead: 0097a796bd3834ea2385c8673f70deae961c3e9f
+closureBaseHead: 17962cf9a9eda72d345531f9e275b0d121d9d17f
 dispatchWorkOrder: docs/work_orders/CVF_AGENT_WORK_ORDER_CONTINUITY_DISPATCH_O3_2026-10-11.md
 independentProbeDisposition: PASS_INDEPENDENT_PROBE
 rawMemoryReleased=false
+providerExecutionAuthority: FORBIDDEN
 Text Encoding Exception: minimal Vietnamese operator quote remains in the closed work order for source-evidence fidelity; no broader normalization.
 
 ## Purpose
@@ -18,7 +19,7 @@ Accept O3 foundation control at the existing continuity-helper/release-consumer 
 
 ## Target / Source
 
-Locked order `docs/work_orders/CVF_AGENT_WORK_ORDER_CONTINUITY_DISPATCH_O3_2026-10-11.md` and baseline `docs/baselines/CVF_GC018_CONTINUITY_DISPATCH_O3_2026-10-11.md`; original O3 assessment `docs/reviews/CVF_MODEL_SELECTION_ORCHESTRATOR_LEARNING_DISPOSITION_2026-10-11.md`. Existing helper and Step4A owner are extended; release checker, canonical generator, hooks/catalogs and original S2 evidence remain unchanged. Thirteen reviewed material paths; source/frozen/final identities are in `docs/reviews/evidence/continuity-dispatch-o3-local-20261011.json`.
+Locked order `docs/work_orders/CVF_AGENT_WORK_ORDER_CONTINUITY_DISPATCH_O3_2026-10-11.md` and baseline `docs/baselines/CVF_GC018_CONTINUITY_DISPATCH_O3_2026-10-11.md`; original O3 assessment `docs/reviews/CVF_MODEL_SELECTION_ORCHESTRATOR_LEARNING_DISPOSITION_2026-10-11.md`. Existing helper and Step4A owner are extended; release checker, canonical generator, hooks/catalogs and original S2 evidence remain unchanged. Initial thirteen reviewed material paths; source/frozen/final identities are in `docs/reviews/evidence/continuity-dispatch-o3-local-20261011.json`.
 
 ## Scope / Methodology
 
@@ -78,18 +79,18 @@ workerRepairTurnCount: 0
 newRootCauseCountThisRound: 2
 dependentFindingCountThisRound: 0
 providerCallCount: 0
-materialCommitCount: 0
-continuityCommitCount: 0
+materialCommitCount: 1
+continuityCommitCount: 1
 elapsedReviewMinutes: 8
 tokenOrQuotaUsage: NOT_AVAILABLE_WITH_REASON: native usage and root bill are not exposed
 valueDelta: actual producer/consumer join now preserves pinned identity and rejects invalid bound releases; fifteen distinct Local probes support the selected control
 stopDisposition: COMPLETE_REVIEW
 preRepairAuditDisposition: COMPLETE_BEFORE_FIRST_REPAIR
-commitPlanDisposition: DEFAULT_ONE_MATERIAL_ONE_CONTINUITY
+commitPlanDisposition: EXCEPTION_WITH_REASON: additional material/continuity solely repairs root final-gate provider metadata omission
 latencyDisposition: NOT_MEASURED_WITH_REASON: full review/closure interval pending detached final verification
-avoidableDelayClass: NONE
+avoidableDelayClass: MULTIPLE_AVOIDABLE_DELAYS
 
-Counts are this closure lane at authoring before commits; plan is one material/one continuity. Actual commit identities/counts and elapsed interval follow detached verification. Root admission's two materials/two continuities and failed preparation are separate; worker first-clock deviation forbids a full invocation duration claim. No matched model comparison or savings assertion.
+Counts are this closure lane before the metadata correction: initial material c1871f0c26e96ec0f03dbbab00db8befe27d5c1e and continuity 17962cf9a9eda72d345531f9e275b0d121d9d17f. A second material/continuity pair is required solely for the root-owned final-gate omission; no repeated implementation proof. Actual final identities and elapsed interval follow detached verification. Root admission's two materials/two continuities and failed preparation are separate; worker first-clock deviation forbids a full invocation duration claim. No matched model comparison or savings assertion.
 
 ## Finding-To-Governance Learning Disposition
 
@@ -196,22 +197,22 @@ DEFERRED_PRIVATE_ONLY
 
 | Field | Evidence |
 |---|---|
-| Actor | Local independent reviewer/closer |
+| Actor | Local root closure metadata repair steward |
 | Provider or surface | private shared workspace |
-| Session or invocation | continuity-dispatch-o3-independent-cli-20261011 |
+| Session or invocation | continuity-dispatch-o3-provider-metadata-repair-20261011 |
 | Working directory | repository root |
 | Command or tool surface | frozen return reads; source-derived actual CLI/Git probe; parent enrollment; material/continuity |
-| Target paths | `docs/reference/CVF_TRANCHE_COMMIT_CHOREOGRAPHY_STANDARD_2026-06-03.md`; `docs/reviews/CVF_CONTINUITY_DISPATCH_O3_WORKER_RETURN_2026-10-11.md`; `docs/reviews/evidence/continuity-dispatch-o3-worker-20261011.json`; `scripts/cvf_commit_tranche.py`; `scripts/test_cvf_commit_tranche.py`; `scripts/test_cvf_commit_tranche_dispatch.py`; `docs/reviews/CVF_CONTINUITY_DISPATCH_O3_COMPLETION_2026-10-11.md`; `docs/reviews/evidence/continuity-dispatch-o3-local-20261011.json`; `docs/work_orders/CVF_AGENT_WORK_ORDER_CONTINUITY_DISPATCH_O3_2026-10-11.md`; `docs/reference/downstream_gate_profile/downstream_finding_intake_registry.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Target paths | `docs/reviews/CVF_CONTINUITY_DISPATCH_O3_COMPLETION_2026-10-11.md`; `docs/reference/downstream_gate_profile/downstream_finding_intake_registry.json` |
 | Allowed scope source | foundation-first operator grant and work-order Local closure ownership |
-| Before status evidence | 0097a796bd3834ea2385c8673f70deae961c3e9f; six unstaged worker paths; submitted originals retained |
+| Before status evidence | 17962cf9a9eda72d345531f9e275b0d121d9d17f; clean worktree; original technical acceptance retained |
 | After status evidence | bounded O3 closure; original S2 retained |
-| Diff evidence | exact thirteen-path material manifest and phase-bound receipts |
+| Diff evidence | two exact closure metadata paths; unchanged helper/tests and source evidence |
 | Approval boundary | selected O3 private control only |
 | Claim boundary | opt-in offline composition; no provider/runtime or public effects |
 | Agent type | reviewer |
-| Invocation ID | continuity-dispatch-o3-independent-cli-20261011 |
-| Expected manifest | `docs/reference/CVF_TRANCHE_COMMIT_CHOREOGRAPHY_STANDARD_2026-06-03.md`; `docs/reviews/CVF_CONTINUITY_DISPATCH_O3_WORKER_RETURN_2026-10-11.md`; `docs/reviews/evidence/continuity-dispatch-o3-worker-20261011.json`; `scripts/cvf_commit_tranche.py`; `scripts/test_cvf_commit_tranche.py`; `scripts/test_cvf_commit_tranche_dispatch.py`; `docs/reviews/CVF_CONTINUITY_DISPATCH_O3_COMPLETION_2026-10-11.md`; `docs/reviews/evidence/continuity-dispatch-o3-local-20261011.json`; `docs/work_orders/CVF_AGENT_WORK_ORDER_CONTINUITY_DISPATCH_O3_2026-10-11.md`; `docs/reference/downstream_gate_profile/downstream_finding_intake_registry.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Actual changed set | `docs/reference/CVF_TRANCHE_COMMIT_CHOREOGRAPHY_STANDARD_2026-06-03.md`; `docs/reviews/CVF_CONTINUITY_DISPATCH_O3_WORKER_RETURN_2026-10-11.md`; `docs/reviews/evidence/continuity-dispatch-o3-worker-20261011.json`; `scripts/cvf_commit_tranche.py`; `scripts/test_cvf_commit_tranche.py`; `scripts/test_cvf_commit_tranche_dispatch.py`; `docs/reviews/CVF_CONTINUITY_DISPATCH_O3_COMPLETION_2026-10-11.md`; `docs/reviews/evidence/continuity-dispatch-o3-local-20261011.json`; `docs/work_orders/CVF_AGENT_WORK_ORDER_CONTINUITY_DISPATCH_O3_2026-10-11.md`; `docs/reference/downstream_gate_profile/downstream_finding_intake_registry.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Invocation ID | continuity-dispatch-o3-provider-metadata-repair-20261011 |
+| Expected manifest | `docs/reviews/CVF_CONTINUITY_DISPATCH_O3_COMPLETION_2026-10-11.md`; `docs/reference/downstream_gate_profile/downstream_finding_intake_registry.json` |
+| Actual changed set | `docs/reviews/CVF_CONTINUITY_DISPATCH_O3_COMPLETION_2026-10-11.md`; `docs/reference/downstream_gate_profile/downstream_finding_intake_registry.json` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |
 
@@ -219,7 +220,7 @@ DEFERRED_PRIVATE_ONLY
 
 | Field | Value |
 |---|---|
-| applicableCheckersRead | governance/compat/check_independent_review_probe_admission.py; governance/compat/check_review_cost_control.py; governance/compat/check_work_order_acceptance_ledger.py; governance/compat/check_finding_to_governance_learning.py; governance/compat/parent_learning_evidence.py; governance/compat/check_machine_closure_package.py; governance/compat/check_agent_operation_trace.py; governance/compat/check_semantic_convergence_control.py; governance/compat/check_task_governance_route.py; governance/compat/run_agent_commit_steward_preflight.py; governance/compat/run_agent_autorun_workflow_gate.py |
+| applicableCheckersRead | governance/compat/check_subagent_provider_execution_authority.py; governance/compat/check_closure_packaging_preflight.py; governance/compat/check_independent_review_probe_admission.py; governance/compat/check_review_cost_control.py; governance/compat/check_work_order_acceptance_ledger.py; governance/compat/check_finding_to_governance_learning.py; governance/compat/parent_learning_evidence.py; governance/compat/check_machine_closure_package.py; governance/compat/check_agent_operation_trace.py; governance/compat/check_semantic_convergence_control.py; governance/compat/check_task_governance_route.py; governance/compat/run_agent_commit_steward_preflight.py; governance/compat/run_agent_autorun_workflow_gate.py |
 | literalTokensReviewed | PASS_INDEPENDENT_PROBE; CLOSED_PASS_BOUNDED; MACHINE_CHECK_ADDED; IMPLEMENTED_BOUNDED; AUTHORIZED_EXACT_MANIFEST; confirmation/evidence |
 | gateRunPurpose | confirmation/evidence for final closure bytes and exact phase ranges after complete bounded source review |
 | claimBoundary | structural evidence does not prove agent comprehension, universal adoption, model quality or AI/runtime governance |
@@ -232,25 +233,28 @@ CLOSED_PASS_BOUNDED. Merge O3 into the existing helper/choreography owner and re
 
 Optional bound resume only. Full bound pre-dispatch autorun remains separately mandatory; helper release success alone does not authorize worker launch. Legacy unbound success leaves dispatch release unproved. Disposable control evidence does not prove provider/runtime behavior, OS race prevention, host identity, cost, universal adherence or real-project adoption.
 
+## Root Closure Metadata Correction And Safety Adjudication
+
+actor: LOCAL_ROOT
+defectClass: ORCHESTRATOR_PACKET_GAP
+learningDisposition: RULE_EXISTS
+initialMaterial: c1871f0c26e96ec0f03dbbab00db8befe27d5c1e
+initialContinuity: 17962cf9a9eda72d345531f9e275b0d121d9d17f
+
+The unchanged provider authority checker rejected the completion filename containing DISPATCH because the root omitted providerExecutionAuthority. Post-commit auto-collection and the independent final material bundle both reported this single failure; continuity pre-closure passed. The marker UNSAFE_AUTORUN_RECEIPT_GENERATION_FAILED is a valid safety alarm about missing metadata, not a new helper defect or a worker failure. Direct provider execution remains FORBIDDEN; actual direct API calls were zero. Existing source/literal/read-ahead rules own prevention, so no new doctrine or checker is justified by this correction. Staged-discovery differences are a potential coverage question requiring source-derived design admission before any future control change; no such change is authorized here.
+
+Root repair is the explicit authority declaration plus dependent parent raw pins. After the unchanged authority and parent/probe guards confirm these bytes, Local reviewer authorizes archiving and removing this exact marker to allow the correction commit. The original failure, hook attempt and raw marker remain preserved under .cvf/runtime/continuity-dispatch-o3-20261011/. This does not relabel the original material as passed, retry its unsafe sample, reset the MFRP population, or clear any other alarm. MFRP population remains five collected samples at M5; routine per-row re-review is not opened.
+
+Root also corrected its invented commit-plan exception token after the actual existing cost guard rejected it; the failed helper and exact child diagnostic remain retained, and the canonical EXCEPTION_WITH_REASON token is now used. This is an additional root RULE_EXISTS application error. Root corrected a diagnostic-only registry lookup using the wrong key; this did not mutate tracked evidence or affect technical acceptance. The additional two metadata commits are avoidable root rework, separately disclosed from worker costs. No implementation/test/source evidence changed, so the prior 15 independent controls and affected 17-pass/1-skip run are consumed.
+
 ## Mixed Protected-Path Atomicity Authorization
 
 Disposition: AUTHORIZED_EXACT_MANIFEST
 
-Atomicity reason: close the order, enroll the observed O3 parent decision and refresh matching current-authority raw pin/projections in one reviewed material. Semantic move/handoff is the separate continuity phase.
+Atomicity reason: correct the Local completion declaration and matching O3 parent pin in one material; actual-SHA semantic continuity follows separately.
 
-Rollback boundary: revert this exact material with matching continuity; preserve frozen original evidence and parked effects.
+Rollback boundary: revert this exact metadata material with matching continuity, preserving initial commits, frozen evidence and parked effects.
 
 Exact changed manifest:
-- `docs/reference/CVF_TRANCHE_COMMIT_CHOREOGRAPHY_STANDARD_2026-06-03.md`
-- `docs/reviews/CVF_CONTINUITY_DISPATCH_O3_WORKER_RETURN_2026-10-11.md`
-- `docs/reviews/evidence/continuity-dispatch-o3-worker-20261011.json`
-- `scripts/cvf_commit_tranche.py`
-- `scripts/test_cvf_commit_tranche.py`
-- `scripts/test_cvf_commit_tranche_dispatch.py`
 - `docs/reviews/CVF_CONTINUITY_DISPATCH_O3_COMPLETION_2026-10-11.md`
-- `docs/reviews/evidence/continuity-dispatch-o3-local-20261011.json`
-- `docs/work_orders/CVF_AGENT_WORK_ORDER_CONTINUITY_DISPATCH_O3_2026-10-11.md`
 - `docs/reference/downstream_gate_profile/downstream_finding_intake_registry.json`
-- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
