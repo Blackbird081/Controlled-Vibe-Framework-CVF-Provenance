@@ -2,7 +2,7 @@
 
 Memory class: governed-dispatch-baseline
 docType: baseline
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 Date: 2026-10-11
 Batch ID: CVF-SYMBOL-LINE-ANCHOR-FIX-20261011
 Dispatch base head: 4d5612f72f0c54f9a12610dc5807aff62e956fd6
@@ -34,7 +34,7 @@ Required genuine pre-fix red, post-fix green, existing-source module PASS, LF/CR
 | Field | Value |
 |---|---|
 | applicableCheckersRead | `governance/compat/check_work_order_dispatch_quality.py`; `governance/compat/check_gate_to_role_closeability.py`; `governance/compat/check_governed_artifact_checker_read_ahead.py`; `governance/compat/check_dispatch_prompt_envelope.py`; `governance/compat/check_markdown_structural_completeness.py`; `governance/compat/check_agent_operation_trace.py`; `governance/compat/check_public_export_disposition.py`; `governance/compat/check_work_order_acceptance_ledger.py`; `governance/compat/check_task_governance_route.py`; `governance/compat/check_independent_review_probe_admission.py`; `governance/compat/check_dispatch_scaffold_provenance.py`; `governance/compat/check_core_guard_self_protection.py`; `governance/compat/check_agent_packet_authority_and_encoding.py` |
-| literalTokensReviewed | DISPATCH_READY; WORKER_MUST_NOT_COMMIT; INTERNAL_AGENT; REQUIRED_FIELDS; TRACE_REQUIRED_LABELS; SECTION_GROUPS; DEFERRED_PRIVATE_ONLY |
+| literalTokensReviewed | CLOSED_PASS_BOUNDED; WORKER_MUST_NOT_COMMIT; INTERNAL_AGENT; REQUIRED_FIELDS; TRACE_REQUIRED_LABELS; SECTION_GROUPS; DEFERRED_PRIVATE_ONLY |
 | gateRunPurpose | confirmation/evidence of selected packet structure; not a dispatch or implementation proof |
 | claimBoundary | checker constants and applicable predicates read before these packet files; added ready-state contracts were read before their declarations |
 
@@ -121,3 +121,20 @@ EPISTEMIC_PROCESS_NA_WITH_REASON: normative admission baseline; selection/observ
 ## Claim Boundary
 
 Packet/authority proposal only; implementation acceptance/worker invocation/push/effects not claimed. Final committed bound pre-dispatch must PASS before manual start. Original O6 and parked checkpoints retained.
+
+## Local Closure Disposition - 2026-10-11
+
+CLOSED_PASS_BOUNDED; finite selected repair accepted with disclosed read/timing/model limits. Original dispatch contract retained as historical admission. Local review `docs/reviews/CVF_SYMBOL_LINE_ANCHOR_FIX_COMPLETION_2026-10-11.md`; evidence `docs/reviews/evidence/symbol-line-anchor-fix-local-review-20261011.json`. No worker redispatch or automatic successor.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_SYMBOL_LINE_ANCHOR_FIX_2026-10-11.md` | Status CLOSED_PASS_BOUNDED | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_SYMBOL_LINE_ANCHOR_FIX_COMPLETION_2026-10-11.md` | independent Local acceptance | PASS |
+| Roadmap state | `docs/roadmaps/CVF_ORCHESTRATOR_MODEL_SELECTION_SYSTEM_CHAIN_ROADMAP_2026-10-10.md` | existing S5 PARKED_DEMAND_GATED; finite subordinate maintenance, no successor | PASS parent state retained |
+| Registry JSON | `docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | eight worker observations; currentAuthority raw pins refreshed and aggregates regenerated | PASS |
+| Registry Markdown | `docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md` | dated continuation distinguishes current collection from original six-observation snapshot | PASS |
+| External evidence digest | `docs/reviews/evidence/symbol-line-anchor-fix-local-review-20261011.json` | sha256:88fc422144627db40181584c88b1a546950f7bd6bb6271e3932829927c776984; internal original/final evidence binding only | PASS |
+| System loop interlock | existing parked effects | N/A with reason: no runtime loop transition | N/A with reason: finite checker repair |
+| Session continuity | six source/generated continuity paths | closed packet pins in material; dedicated actual-SHA handoff and terminal next move follow before final closure proof | PASS |

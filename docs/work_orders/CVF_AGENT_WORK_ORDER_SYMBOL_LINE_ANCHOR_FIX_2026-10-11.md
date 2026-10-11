@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 docType: work_order
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 Date: 2026-10-11
 Batch ID: CVF-SYMBOL-LINE-ANCHOR-FIX-20261011
 Dispatch base head: 4d5612f72f0c54f9a12610dc5807aff62e956fd6
@@ -182,7 +182,7 @@ Actual result: 0 candidates, 0 returned, not truncated. This query does not prov
 | Field | Value |
 |---|---|
 | applicableCheckersRead | `governance/compat/check_work_order_dispatch_quality.py`; `governance/compat/check_gate_to_role_closeability.py`; `governance/compat/check_governed_artifact_checker_read_ahead.py`; `governance/compat/check_dispatch_prompt_envelope.py`; `governance/compat/check_markdown_structural_completeness.py`; `governance/compat/check_agent_operation_trace.py`; `governance/compat/check_public_export_disposition.py`; `governance/compat/check_work_order_acceptance_ledger.py`; `governance/compat/check_task_governance_route.py`; `governance/compat/check_independent_review_probe_admission.py`; `governance/compat/check_dispatch_scaffold_provenance.py`; `governance/compat/check_core_guard_self_protection.py`; `governance/compat/check_agent_packet_authority_and_encoding.py` |
-| literalTokensReviewed | DISPATCH_READY; WORKER_MUST_NOT_COMMIT; INTERNAL_AGENT; REQUIRED_FIELDS; TRACE_REQUIRED_LABELS; SECTION_GROUPS; DEFERRED_PRIVATE_ONLY |
+| literalTokensReviewed | CLOSED_PASS_BOUNDED; WORKER_MUST_NOT_COMMIT; INTERNAL_AGENT; REQUIRED_FIELDS; TRACE_REQUIRED_LABELS; SECTION_GROUPS; DEFERRED_PRIVATE_ONLY |
 | gateRunPurpose | confirmation/evidence of selected packet structure; not a dispatch or implementation proof |
 | claimBoundary | checker constants and applicable predicates read before these packet files; added ready-state contracts were read before their declarations |
 
@@ -271,7 +271,7 @@ Fixed requirement/proof IDs; join using existing acceptance-evidence-json, no sc
 ## Semantic Convergence Outcome
 
 ```json
-{"schemaVersion":"cvf.semanticConvergenceControl.v1","problemKey":"symbol-definition-line-anchor","chainMode":"INITIAL","chainOrdinal":0,"predecessor":null,"blockerDelta":{"prior":[],"resolved":[],"retained":[],"new":["symbol_definition_line_anchor_incorrect"],"reopened":[],"current":["symbol_definition_line_anchor_incorrect"]},"resolutionEvidence":{},"counters":{"partialReadyClosures":0,"reviewerScopeExpansions":0,"sameClaimCorrections":0,"nonDecreasingBlockerTransitions":0},"claims":[{"claimId":"SYMBOL-LINE-PACKET","claimClass":"DOCUMENTATION_ONLY","proofClass":"PROPOSAL_ONLY_NO_RUNTIME_READINESS","evidenceRef":"docs/baselines/CVF_GC018_SYMBOL_LINE_ANCHOR_FIX_2026-10-11.md"}],"requiredDisposition":"CONTINUE_BOUNDED","successorScope":"INITIAL_BOUNDED"}
+{"schemaVersion":"cvf.semanticConvergenceControl.v1","problemKey":"symbol-definition-line-anchor","chainMode":"INITIAL","chainOrdinal":0,"predecessor":null,"blockerDelta":{"prior":["symbol_definition_line_anchor_incorrect"],"resolved":["symbol_definition_line_anchor_incorrect"],"retained":[],"new":[],"reopened":[],"current":[]},"resolutionEvidence":{"symbol_definition_line_anchor_incorrect":{"evidenceClass":"ACCEPTED_REVIEW","evidencePath":"docs/reviews/evidence/symbol-line-anchor-fix-local-review-20261011.json","sha256":"88fc422144627db40181584c88b1a546950f7bd6bb6271e3932829927c776984","locator":"acceptance"}},"counters":{"partialReadyClosures":0,"reviewerScopeExpansions":0,"sameClaimCorrections":0,"nonDecreasingBlockerTransitions":0},"claims":[{"claimId":"SYMBOL-LINE-PACKET","claimClass":"DOCUMENTATION_ONLY","proofClass":"PROPOSAL_ONLY_NO_RUNTIME_READINESS","evidenceRef":"docs/baselines/CVF_GC018_SYMBOL_LINE_ANCHOR_FIX_2026-10-11.md"}],"requiredDisposition":"CONTINUE_BOUNDED","successorScope":"NO_SUCCESSOR"}
 ```
 
 ## Architecture Readiness Admission
@@ -517,3 +517,20 @@ Dispatcher material is exact five-path paired packet/raw-authority source/projec
 ## Historical Local Authoring Diagnostic
 
 Initial reviewer-fast rejected permission-ownership applicability because task-file ownership prose matched a security-mutation trigger. Local clarified file write-scope terms only; no transaction, checker relaxation or worker scope change. Original TEMP log retained. A Windows command-length failure preceded file writes; the authoring script was split into bounded ignored local preparation parts. Both are dispatcher application diagnostics, not worker defects.
+
+## Local Closure Disposition - 2026-10-11
+
+CLOSED_PASS_BOUNDED; finite selected repair accepted with disclosed read/timing/model limits. Original dispatch contract retained as historical admission. Local review `docs/reviews/CVF_SYMBOL_LINE_ANCHOR_FIX_COMPLETION_2026-10-11.md`; evidence `docs/reviews/evidence/symbol-line-anchor-fix-local-review-20261011.json`. No worker redispatch or automatic successor.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_SYMBOL_LINE_ANCHOR_FIX_2026-10-11.md` | Status CLOSED_PASS_BOUNDED | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_SYMBOL_LINE_ANCHOR_FIX_COMPLETION_2026-10-11.md` | independent Local acceptance | PASS |
+| Roadmap state | `docs/roadmaps/CVF_ORCHESTRATOR_MODEL_SELECTION_SYSTEM_CHAIN_ROADMAP_2026-10-10.md` | existing S5 PARKED_DEMAND_GATED; finite subordinate maintenance, no successor | PASS parent state retained |
+| Registry JSON | `docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | eight worker observations; currentAuthority raw pins refreshed and aggregates regenerated | PASS |
+| Registry Markdown | `docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md` | dated continuation distinguishes current collection from original six-observation snapshot | PASS |
+| External evidence digest | `docs/reviews/evidence/symbol-line-anchor-fix-local-review-20261011.json` | sha256:88fc422144627db40181584c88b1a546950f7bd6bb6271e3932829927c776984; internal original/final evidence binding only | PASS |
+| System loop interlock | existing parked effects | N/A with reason: no runtime loop transition | N/A with reason: finite checker repair |
+| Session continuity | six source/generated continuity paths | closed packet pins in material; dedicated actual-SHA handoff and terminal next move follow before final closure proof | PASS |

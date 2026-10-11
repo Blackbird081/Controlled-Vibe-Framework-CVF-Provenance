@@ -37,11 +37,11 @@
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_SYMBOL_LINE_ANCHOR_FIX_2026-10-11.md",
-    "baselineSha256": "f7a95b94214bebc99dc49723470770809a26d7dbc01260cf162096ae5513c80d",
+    "baselineSha256": "10d6cb2f08dae2a6be7786356b8ab5fb13896d013f321da3e19912bbfd3fdf44",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_SYMBOL_LINE_ANCHOR_FIX_2026-10-11.md",
-    "workOrderSha256": "497a23d001e626685e725255d85ac80bd2175a766b51fc16468041b8d549bcd0"
+    "workOrderSha256": "2d9c0ec5da43fa4e8c9440c7671b54c26a72899e4848d6c7a89545e868af6cd1"
   },
-  "currentAuthoritySyncReason": "Policy material ba14138ba34ebd1a235990b515be5b3a84c211e7: ahead count advisory, no push grant. Packet CVF-SYMBOL-LINE-ANCHOR-FIX-20261011 material 976e5b4a96cfc4f2f8c945023c97813cf865005a and exact authority hashes retained; six-surface continuity revalidates bound release. Worker unstarted; Local decision owner; parked effects retained.",
+  "currentAuthoritySyncReason": "Symbol-line selected checker repair accepted CLOSED_PASS_BOUNDED; closed packet raw pins refreshed atomically with Local evidence and eight-worker ledger. Dedicated six-surface terminal actual-SHA continuity follows; no new effect authorization.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",

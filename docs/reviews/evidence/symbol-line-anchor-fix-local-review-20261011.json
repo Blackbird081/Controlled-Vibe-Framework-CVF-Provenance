@@ -1,0 +1,421 @@
+{
+  "schemaVersion": "cvf.symbolLineAnchorFixLocalReview@1.0.0",
+  "batchId": "CVF-SYMBOL-LINE-ANCHOR-FIX-20261011",
+  "executionBaseHead": "1a1de1a28decf163ed64a84a496831f5f1d1989d",
+  "closureBaseHead": "1a1de1a28decf163ed64a84a496831f5f1d1989d",
+  "reviewerActor": "LOCAL_REVIEWER_CODEX_ROOT",
+  "workerActor": "INTERNAL_AGENT_SYMBOL_LINE_WORKER",
+  "workerInvocationId": "symbol-line-anchor-fix-worker-20261011",
+  "probeInvocationId": "symbol-line-anchor-fix-local-review-20261011",
+  "originalWorkerArtifacts": {
+    "governance/compat/check_work_order_dispatch_quality_source.py": {
+      "sha256": "3b261fb9ae7824338a0d8353eda6d87945738c68cd9a1ada5b6891232e11ce75",
+      "bytes": 41626
+    },
+    "governance/compat/test_check_work_order_dispatch_quality_source.py": {
+      "sha256": "dcdff06851d4fc15c331a69e54931302a35f69c7e5515d61e4dc4ea7e4bbeeb9",
+      "bytes": 13925
+    },
+    "docs/reviews/CVF_SYMBOL_LINE_ANCHOR_FIX_WORKER_RETURN_2026-10-11.md": {
+      "sha256": "e8ea06d39862eb878248e7682d1528bd99a0903edf100440e4fbfde9320e5303",
+      "bytes": 20838
+    },
+    "docs/reviews/evidence/symbol-line-anchor-fix-worker-20261011.json": {
+      "sha256": "7f11c4728427c5e54a6ec15f7fd21d529bda53b9f405faec8305e22703cfbf20",
+      "bytes": 14604
+    }
+  },
+  "decision": "CLOSED_PASS_BOUNDED",
+  "headDriftDisposition": "CONFIRMED_AUTHORIZED_POLICY_AND_CONTINUITY_ONLY; pinned inputs untouched; executionBaseHead valid",
+  "consumedEvidence": {
+    "preImplementation": "PASS at actual execution base before edits; retained worker receipt",
+    "red": {
+      "failed": 59,
+      "passed": 39,
+      "sha256": "a9e8740cde31c13105143ea9b3a83dbf61146233778805525f805ee54568f102"
+    },
+    "green": {
+      "passed": 98,
+      "sha256": "ee2f52f3c7f61c5fd467dcd12150aca6ebb23d7231000c1a6a1138bdfb7b2e9b"
+    },
+    "finalWorkerGate": {
+      "result": "COMPLIANT",
+      "durationSeconds": 5.43,
+      "logSha256": "a1768be09d5070948188155bc316abde4bd839f21300f0bd6fab9f0f9e39c3c0",
+      "finalExitEvidence": "actual retained log confirms all components PASS, not merely exitExpected in JSON"
+    },
+    "reviewerFast": "70/70 PASS; log %TEMP%/cvf-symbol-line-return-reviewer-fast.log"
+  },
+  "independentProbe": {
+    "command": "python .cvf/runtime/symbol-line-anchor-fix-20261011/local_review_probe.py",
+    "oracleSha256": "b288cd970372d622d40469d61ee64f5dff5d259b99a41920037973c5bd0a783f",
+    "resultSha256": "87927f43de5a37fd367d05f099dee66f61cb299316e2c0c8627b8e1d2a7190d9",
+    "result": {
+      "result": "PASS",
+      "frozenWorkerArtifacts": {
+        "governance/compat/check_work_order_dispatch_quality_source.py": "3b261fb9ae7824338a0d8353eda6d87945738c68cd9a1ada5b6891232e11ce75",
+        "governance/compat/test_check_work_order_dispatch_quality_source.py": "dcdff06851d4fc15c331a69e54931302a35f69c7e5515d61e4dc4ea7e4bbeeb9",
+        "docs/reviews/CVF_SYMBOL_LINE_ANCHOR_FIX_WORKER_RETURN_2026-10-11.md": "e8ea06d39862eb878248e7682d1528bd99a0903edf100440e4fbfde9320e5303",
+        "docs/reviews/evidence/symbol-line-anchor-fix-worker-20261011.json": "7f11c4728427c5e54a6ec15f7fd21d529bda53b9f405faec8305e22703cfbf20"
+      },
+      "freshCases": [
+        {
+          "suffix": ".py",
+          "newline": "LF",
+          "blanks": 0,
+          "expected": 3,
+          "actual": 3,
+          "preimage": 3
+        },
+        {
+          "suffix": ".py",
+          "newline": "LF",
+          "blanks": 3,
+          "expected": 6,
+          "actual": 6,
+          "preimage": 6
+        },
+        {
+          "suffix": ".py",
+          "newline": "CRLF",
+          "blanks": 0,
+          "expected": 3,
+          "actual": 3,
+          "preimage": 3
+        },
+        {
+          "suffix": ".py",
+          "newline": "CRLF",
+          "blanks": 3,
+          "expected": 6,
+          "actual": 6,
+          "preimage": 6
+        },
+        {
+          "suffix": ".py",
+          "newline": "LF",
+          "blanks": 0,
+          "expected": 3,
+          "actual": 3,
+          "preimage": 3
+        },
+        {
+          "suffix": ".py",
+          "newline": "LF",
+          "blanks": 3,
+          "expected": 6,
+          "actual": 6,
+          "preimage": 6
+        },
+        {
+          "suffix": ".py",
+          "newline": "CRLF",
+          "blanks": 0,
+          "expected": 3,
+          "actual": 3,
+          "preimage": 3
+        },
+        {
+          "suffix": ".py",
+          "newline": "CRLF",
+          "blanks": 3,
+          "expected": 6,
+          "actual": 6,
+          "preimage": 6
+        },
+        {
+          "suffix": ".ts",
+          "newline": "LF",
+          "blanks": 0,
+          "expected": 2,
+          "actual": 2,
+          "preimage": 2
+        },
+        {
+          "suffix": ".ts",
+          "newline": "LF",
+          "blanks": 3,
+          "expected": 5,
+          "actual": 5,
+          "preimage": 2
+        },
+        {
+          "suffix": ".ts",
+          "newline": "CRLF",
+          "blanks": 0,
+          "expected": 2,
+          "actual": 2,
+          "preimage": 2
+        },
+        {
+          "suffix": ".ts",
+          "newline": "CRLF",
+          "blanks": 3,
+          "expected": 5,
+          "actual": 5,
+          "preimage": 2
+        },
+        {
+          "suffix": ".tsx",
+          "newline": "LF",
+          "blanks": 0,
+          "expected": 2,
+          "actual": 2,
+          "preimage": 2
+        },
+        {
+          "suffix": ".tsx",
+          "newline": "LF",
+          "blanks": 3,
+          "expected": 5,
+          "actual": 5,
+          "preimage": 2
+        },
+        {
+          "suffix": ".tsx",
+          "newline": "CRLF",
+          "blanks": 0,
+          "expected": 2,
+          "actual": 2,
+          "preimage": 2
+        },
+        {
+          "suffix": ".tsx",
+          "newline": "CRLF",
+          "blanks": 3,
+          "expected": 5,
+          "actual": 5,
+          "preimage": 2
+        },
+        {
+          "suffix": ".jsx",
+          "newline": "LF",
+          "blanks": 0,
+          "expected": 2,
+          "actual": 2,
+          "preimage": 2
+        },
+        {
+          "suffix": ".jsx",
+          "newline": "LF",
+          "blanks": 3,
+          "expected": 5,
+          "actual": 5,
+          "preimage": 2
+        },
+        {
+          "suffix": ".jsx",
+          "newline": "CRLF",
+          "blanks": 0,
+          "expected": 2,
+          "actual": 2,
+          "preimage": 2
+        },
+        {
+          "suffix": ".jsx",
+          "newline": "CRLF",
+          "blanks": 3,
+          "expected": 5,
+          "actual": 5,
+          "preimage": 2
+        },
+        {
+          "suffix": ".js",
+          "newline": "LF",
+          "blanks": 0,
+          "expected": 2,
+          "actual": 2,
+          "preimage": 2
+        },
+        {
+          "suffix": ".js",
+          "newline": "LF",
+          "blanks": 3,
+          "expected": 5,
+          "actual": 5,
+          "preimage": 2
+        },
+        {
+          "suffix": ".js",
+          "newline": "CRLF",
+          "blanks": 0,
+          "expected": 2,
+          "actual": 2,
+          "preimage": 2
+        },
+        {
+          "suffix": ".js",
+          "newline": "CRLF",
+          "blanks": 3,
+          "expected": 5,
+          "actual": 5,
+          "preimage": 2
+        },
+        {
+          "suffix": ".mjs",
+          "newline": "LF",
+          "blanks": 0,
+          "expected": 2,
+          "actual": 2,
+          "preimage": 2
+        },
+        {
+          "suffix": ".mjs",
+          "newline": "LF",
+          "blanks": 3,
+          "expected": 5,
+          "actual": 5,
+          "preimage": 2
+        },
+        {
+          "suffix": ".mjs",
+          "newline": "CRLF",
+          "blanks": 0,
+          "expected": 2,
+          "actual": 2,
+          "preimage": 2
+        },
+        {
+          "suffix": ".mjs",
+          "newline": "CRLF",
+          "blanks": 3,
+          "expected": 5,
+          "actual": 5,
+          "preimage": 2
+        },
+        {
+          "suffix": ".cjs",
+          "newline": "LF",
+          "blanks": 0,
+          "expected": 2,
+          "actual": 2,
+          "preimage": 2
+        },
+        {
+          "suffix": ".cjs",
+          "newline": "LF",
+          "blanks": 3,
+          "expected": 5,
+          "actual": 5,
+          "preimage": 2
+        },
+        {
+          "suffix": ".cjs",
+          "newline": "CRLF",
+          "blanks": 0,
+          "expected": 2,
+          "actual": 2,
+          "preimage": 2
+        },
+        {
+          "suffix": ".cjs",
+          "newline": "CRLF",
+          "blanks": 3,
+          "expected": 5,
+          "actual": 5,
+          "preimage": 2
+        }
+      ],
+      "consumerCases": [
+        {
+          "cited": 5,
+          "expected": 5,
+          "accepted": true,
+          "issues": []
+        },
+        {
+          "cited": 2,
+          "expected": 5,
+          "accepted": false,
+          "issues": [
+            "Source Verification ACCEPT row cites `fresh_probe` at line 2, but `governance/compat/fresh_review.py` defines it at line 5; cite the symbol definition line, not a continuation or interior signature line"
+          ]
+        },
+        {
+          "cited": 6,
+          "expected": 5,
+          "accepted": false,
+          "issues": [
+            "Source Verification ACCEPT row cites `fresh_probe` at line 6, but `governance/compat/fresh_review.py` defines it at line 5; cite the symbol definition line, not a continuation or interior signature line"
+          ]
+        }
+      ],
+      "absentAndUnsupportedControls": "PASS",
+      "realCases": [
+        {
+          "path": "governance/compat/model_selection_reviewed_outcome.py",
+          "symbol": "validate_outcome_record",
+          "ast": 701,
+          "actual": 701
+        },
+        {
+          "path": "governance/compat/check_independent_review_probe_admission.py",
+          "symbol": "_normalize_identity",
+          "ast": 409,
+          "actual": 409
+        }
+      ],
+      "preimageFailureCount": 12,
+      "oracleSeparation": "Reviewer constructed fresh fixtures and AST/direct line counts; worker pytest was not rerun; preimage negative rejects no-op."
+    }
+  },
+  "sourceScope": {
+    "checkerChangedLines": 2,
+    "checkerLines": 949,
+    "testLines": 336,
+    "reviewerProductCodeRepairs": 0,
+    "workerRedispatches": 0,
+    "historicalSuiteReruns": 0,
+    "duplicateWorkerPytestReruns": 0
+  },
+  "acceptance": {
+    "REQ-LINE-REPRO": "PASS",
+    "REQ-LINE-FIX": "PASS",
+    "REQ-LINE-GUARD": "PASS",
+    "REQ-LINE-RETURN": "PASS"
+  },
+  "processFindings": [
+    "First two fast gates failed on return metadata; third PASS; fourth confirmed condensed <=300-line return",
+    "Full worker elapsed and 35-minute budget not observable; no complete procedural-compliance claim",
+    "Required roadmap sections were located, not semantically read; O6 completion grep-only; other checker reads targeted, not full",
+    "Worker text says eight pins; nine records exist when packet authority pair is counted; all current retained readonly pins match",
+    "Runtime label Haiku 5.5 is worker self-report; operator confirms Claude Haiku family, requested ex high; native identity/effort not exposed"
+  ],
+  "modelObservation": {
+    "role": "INTERNAL_AGENT_WORKER",
+    "operatorReportedModel": "Claude Haiku",
+    "workerSelfReportedModel": "Haiku 5.5 / claude-haiku-5-5",
+    "requestedEffort": "ex high",
+    "observedRuntimeIdentity": null,
+    "observedEffort": null,
+    "workerMinutes": null,
+    "workerMinutesReason": "start time absent; budgetStatus NOT_OBSERVABLE",
+    "workerTokens": null,
+    "reviewerTokens": null,
+    "reworkTokens": null,
+    "bill": null,
+    "unknownReason": "NO_EXPOSED_NATIVE_IDENTITY_USAGE_OR_BILL_METER",
+    "providerCallCount": 0,
+    "providerCallCountBoundary": "additional explicit provider experiments only; worker inference itself unmetered",
+    "nestedAgentCount": 0,
+    "operatorStartedWorkerRuns": 1,
+    "firstReturnGateClean": false,
+    "workerReturnDraftGateAttempts": 4,
+    "failedReturnDraftGateAttempts": 2,
+    "workerImplementationRepairGroups": 1,
+    "workerReturnMetadataRepairGroups": 2,
+    "postPassCompactionGroups": 1,
+    "reviewerRequestedWorkerRepairTurns": 0
+  },
+  "limits": [
+    "Finite lexical anchor repair, not general parser correctness",
+    "CRLF file consumer normalizes newlines; direct strings cover CRLF",
+    "No ranking, time saving, actual cost saving or parallel-subagent experiment"
+  ],
+  "learningApplication": {
+    "manualO6Checklist": "APPLIED_BOUNDED_TO_MUTATION_AND_ORACLE_SEPARATION",
+    "preimageNegativeFailures": 12,
+    "sameFourFrozenArtifactsBeforeAfterProbe": true
+  },
+  "nextAllowedMove": "finite closure and collection; no automatic successor or new push grant"
+}

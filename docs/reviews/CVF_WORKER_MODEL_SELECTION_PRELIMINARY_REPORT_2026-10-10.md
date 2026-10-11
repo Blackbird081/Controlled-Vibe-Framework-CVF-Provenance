@@ -5,6 +5,10 @@ docType: review
 Status: ACTIVE_REFERENCE
 Date: 2026-10-10
 
+## Collection Continuation - 2026-10-11
+
+The original six-observation narrative and pins below are a historical snapshot. Current longitudinal ledger has eight reviewed worker observations: six Haiku-family and two Sonnet; original rows retained. Added O6 documentary design (historical backfill) and symbol-line checker repair, requested effort ex high, separately from older Max labels. O6 required one Local documentary clarification; symbol-line required zero Local code repairs and passed a distinct probe, but its first two return gates failed and total duration is unknown. Runtime model/version, normalized effort, tokens and bills remain unverified/unavailable. New evidence: `docs/reviews/evidence/symbol-line-anchor-fix-local-review-20261011.json`. No comparative winner, cost ranking, automatic configuration or benchmark-only rerun.
+
 ## Purpose
 
 Recommend provisional worker selection from four reviewed Haiku tranches and two Sonnet observations. Operator instruction2026-10-10 fixes Haiku and Sonnet to worker roles only; Local remains orchestrator/reviewer. Operator-reported identities: Haiku 5.5 / Max and Sonnet 5.5 / High. No provider/model identity verification or billing inference. This is evidence for future multi-agent selection, not a deployed router or parallel-agent experiment.

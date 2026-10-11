@@ -1,0 +1,183 @@
+{
+  "schemaVersion": "cvf.symbolLineAnchorFixWorkerEvidence@1.0.0",
+  "batchId": "CVF-SYMBOL-LINE-ANCHOR-FIX-20261011",
+  "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_SYMBOL_LINE_ANCHOR_FIX_2026-10-11.md",
+  "workerReturn": "docs/reviews/CVF_SYMBOL_LINE_ANCHOR_FIX_WORKER_RETURN_2026-10-11.md",
+  "executionBaseHead": "1a1de1a28decf163ed64a84a496831f5f1d1989d",
+  "dispatchBaseHead": "4d5612f72f0c54f9a12610dc5807aff62e956fd6",
+  "operatorBriefReleaseHead": "3700b4ee9",
+  "headDriftDisposition": {
+    "observed": "HEAD is 1a1de1a28, two commits after the operator-named release 3700b4ee9: ba14138ba (push-readiness advisory wording and backlog count) and 1a1de1a28 (session continuity sync).",
+    "workerOwnedPathsChangedSinceDispatchBase": [],
+    "pinnedSourcesChangedSinceDispatchBase": [],
+    "preImplementationGateAtExecutionBase": "PASS",
+    "classification": "EXPLAINED_CONTINUITY_DRIFT_NOT_SOURCE_DRIFT",
+    "dispatcherConfirmationNeeded": true
+  },
+  "observedStartup": {
+    "currentMode": "cvf_ncr_p10_closed_p11_parked",
+    "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
+    "nextAllowedMove": "PROGRAM_ID=CVF-CORE; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-SYMBOL-LINE-ANCHOR-FIX-20261011",
+    "roleAcknowledged": "INTERNAL_AGENT worker; decision owner Local",
+    "readDepth": {
+      "CVF_SESSION_MEMORY.md": "FULL_FILE",
+      "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json": "FULL_FILE",
+      "AGENT_HANDOFF_V63_2026-09-18.md": "FIRST_40_LINES_CURRENT_AUTHORITY_AND_STARTUP",
+      "docs/reference/guard_orientation/README.md": "FIRST_60_LINES_READ_FIRST_AND_ACTION_CONTINUATION",
+      "CVF_SESSION/ACTIVE_SESSION_STATE.json": "TARGETED_LOOKUP_NOT_REQUIRED"
+    }
+  },
+  "gitStateBeforeEdits": {
+    "statusShort": [],
+    "stagedNames": [],
+    "cleanWorktree": true
+  },
+  "preImplementationGate": {
+    "command": "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base 1a1de1a28decf163ed64a84a496831f5f1d1989d --head HEAD --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_SYMBOL_LINE_ANCHOR_FIX_2026-10-11.md",
+    "exit": 0,
+    "result": "COMPLIANT",
+    "receipt": ".cvf/runtime/autorun-receipts/pre-implementation.json",
+    "durationSeconds": 8.67
+  },
+  "sourcePreimages": [
+    {"path": "governance/compat/check_work_order_dispatch_quality_source.py", "rawSha256Preimage": "f3e1d6230378daf03318cad4746e836cb4601a00f9a5e5250376953b5a01d658", "pinnedInWorkOrder": "f3e1d6230378daf03318cad4746e836cb4601a00f9a5e5250376953b5a01d658", "match": true, "readDepth": "TARGETED_SYMBOLS_AND_SECTIONS"},
+    {"path": "governance/compat/test_check_work_order_dispatch_quality_source.py", "rawSha256Preimage": "77cdfb77901c71ce3b1809022c938313cbbcdbee3204908800c7985f86c40204", "pinnedInWorkOrder": "77cdfb77901c71ce3b1809022c938313cbbcdbee3204908800c7985f86c40204", "match": true, "readDepth": "FULL_FILE_247_LINES"},
+    {"path": "governance/compat/model_selection_reviewed_outcome.py", "rawSha256Preimage": "9526916557ef81654930bac9697bc242d6b8ebf41163b23977b78729392ec0ff", "pinnedInWorkOrder": "9526916557ef81654930bac9697bc242d6b8ebf41163b23977b78729392ec0ff", "match": true, "readDepth": "AST_DEFINITION_AND_SURROUNDING_LINES_ONLY"},
+    {"path": "governance/compat/check_independent_review_probe_admission.py", "rawSha256Preimage": "738cfd2da5a58910d7334805fb9bab074ddddfc8c156e4a2a9f4573c6ac51a96", "pinnedInWorkOrder": "738cfd2da5a58910d7334805fb9bab074ddddfc8c156e4a2a9f4573c6ac51a96", "match": true, "readDepth": "AST_DEFINITION_AND_SURROUNDING_LINES_ONLY"},
+    {"path": "docs/reviews/evidence/oracle-o6-design-local-review-20261011.json", "rawSha256Preimage": "2056b1a9aafc877b6d26ba2025beef8826128b2810579b3e1a5e735182c9ae17", "pinnedInWorkOrder": "2056b1a9aafc877b6d26ba2025beef8826128b2810579b3e1a5e735182c9ae17", "match": true, "readDepth": "SYMBOL_LINE_CANDIDATE_OBJECT_READ"},
+    {"path": "docs/reviews/CVF_ORACLE_O6_DESIGN_COMPLETION_2026-10-11.md", "rawSha256Preimage": "e92b67a5d6c4d47e82291c6018de113de1f13def576b9bcbd71c45e83375d518", "pinnedInWorkOrder": "e92b67a5d6c4d47e82291c6018de113de1f13def576b9bcbd71c45e83375d518", "match": true, "readDepth": "GREP_CANDIDATE_ROW_ONLY"},
+    {"path": "docs/roadmaps/CVF_ORCHESTRATOR_MODEL_SELECTION_SYSTEM_CHAIN_ROADMAP_2026-10-10.md", "rawSha256Preimage": "172dd1dcaf88b75b415390cab8ad537ce40cc76113e2c8c7d9c854572163b2b2", "pinnedInWorkOrder": "172dd1dcaf88b75b415390cab8ad537ce40cc76113e2c8c7d9c854572163b2b2", "match": true, "readDepth": "HEADINGS_LOCATED_DESIGN_CONTROL_GATE_AND_RECEIVING_AGENT_CONTINUATION"},
+    {"path": "docs/baselines/CVF_GC018_SYMBOL_LINE_ANCHOR_FIX_2026-10-11.md", "rawSha256Preimage": "f7a95b94214bebc99dc49723470770809a26d7dbc01260cf162096ae5513c80d", "pinnedInCurrentAuthority": "f7a95b94214bebc99dc49723470770809a26d7dbc01260cf162096ae5513c80d", "match": true, "readDepth": "FULL_FILE"},
+    {"path": "docs/work_orders/CVF_AGENT_WORK_ORDER_SYMBOL_LINE_ANCHOR_FIX_2026-10-11.md", "rawSha256Preimage": "497a23d001e626685e725255d85ac80bd2175a766b51fc16468041b8d549bcd0", "pinnedInCurrentAuthority": "497a23d001e626685e725255d85ac80bd2175a766b51fc16468041b8d549bcd0", "match": true, "readDepth": "FULL_FILE"}
+  ],
+  "checkerSourceReadAhead": {
+    "checkersReadTargeted": [
+      "governance/compat/check_worker_return_quality_gate.py (REQUIRED_HEADINGS, READ_AHEAD_FIELDS, AOT_FIELDS, DELTA_FIELDS, PUBLIC_EXPORT_TOKENS, DELTA token constants)",
+      "governance/compat/check_work_order_acceptance_ledger.py (validate_work_order, validate_return, git_observed_paths)",
+      "governance/compat/check_agent_operation_trace.py (TRACE_REQUIRED_LABELS)",
+      "governance/compat/check_review_cost_control.py (WORKER_RETURN_FIELDS, REQUIRED_INTEGER_FIELDS, UNAVAILABLE_ALLOWED_FIELDS)",
+      "governance/compat/check_gate_to_role_closeability.py (CONTRACT_HEADING, RECHECK_HEADING, ACTIVE_STATUSES)"
+    ],
+    "notReadInFullByWorker": "remaining applicable checkers are exercised by the worker-return fast gate; not read line by line"
+  },
+  "pytestRed": {
+    "command": "python -m pytest governance/compat/test_check_work_order_dispatch_quality_source.py -q -p no:warnings",
+    "timing": "after new regression tests were added and before any checker edit",
+    "checkerSha256": "f3e1d6230378daf03318cad4746e836cb4601a00f9a5e5250376953b5a01d658",
+    "testSha256": "dcdff06851d4fc15c331a69e54931302a35f69c7e5515d61e4dc4ea7e4bbeeb9",
+    "exit": 1,
+    "passed": 39,
+    "failed": 59,
+    "durationSeconds": 0.64,
+    "log": ".cvf/runtime/symbol-line-anchor-fix-20261011/pre-fix-red.log",
+    "failedCaseClasses": {
+      "test_symbol_definition_line_ignores_preceding_blank_lines blank-line variants": 56,
+      "test_source_verification_line_anchor_accepts_declaration_after_blank_lines": 2,
+      "test_symbol_definition_line_exact_name_absent_and_unsupported_cases": 1
+    },
+    "passedControls": "28 no-blank-control cases (14 declaration forms x LF and CRLF) plus 11 original tests",
+    "observedFailureReason": "helper returned the first blank or whitespace-only line before the declaration (for example 2 where 4 is expected); exact-name case returned 4 where 6 is expected; correct ACCEPT citation rejected",
+    "classification": "GENUINE_EXPECTED_RED"
+  },
+  "checkerEdit": {
+    "patchScope": "leading anchor of the Python pattern and of the JS/TS pattern in _symbol_definition_line: regex leading whitespace changed from whitespace class to horizontal space and tab class",
+    "linesBefore": 949,
+    "linesAfter": 949,
+    "blobBytesBefore": 40671,
+    "onDiskBytesBefore": 41620,
+    "onDiskBytesAfter": 41626,
+    "signatureChanged": false,
+    "diagnosticWordingChanged": false,
+    "finalSha256": "3b261fb9ae7824338a0d8353eda6d87945738c68cd9a1ada5b6891232e11ce75"
+  },
+  "postfixGreen": {
+    "command": "python -m pytest governance/compat/test_check_work_order_dispatch_quality_source.py -q -p no:warnings",
+    "exit": 0,
+    "passed": 98,
+    "failed": 0,
+    "durationSeconds": 0.31,
+    "log": ".cvf/runtime/symbol-line-anchor-fix-20261011/post-fix-green.log",
+    "testSha256": "dcdff06851d4fc15c331a69e54931302a35f69c7e5515d61e4dc4ea7e4bbeeb9"
+  },
+  "realCaseRecheck": [
+    {"path": "governance/compat/model_selection_reviewed_outcome.py", "symbol": "validate_outcome_record", "independentAstLine": 701, "helperBeforeFix": 699, "helperAfterFix": 701, "match": true},
+    {"path": "governance/compat/check_independent_review_probe_admission.py", "symbol": "_normalize_identity", "independentAstLine": 409, "helperBeforeFix": 407, "helperAfterFix": 409, "match": true}
+  ],
+  "minimalControls": [
+    {"form": "python def after three blank lines, declared at line 5", "independentLine": 5, "helperBeforeFix": 2, "helperAfterFix": 5},
+    {"form": "typescript export function after one blank line, declared at line 3", "independentLine": 3, "helperBeforeFix": 2, "helperAfterFix": 3}
+  ],
+  "testCaseMatrix": {
+    "declarationForms": 14,
+    "blankLineVariants": ["no-blank-control", "lf-blank-lines", "space-and-tab-only-lines"],
+    "newlines": ["lf", "crlf"],
+    "parametrizedCases": 84,
+    "integrationCases": 2,
+    "exactNameAndAbsentUnsupportedCases": 1,
+    "originalTestsPreserved": 11
+  },
+  "requirements": {
+    "REQ-LINE-REPRO": {"proofId": "PROOF-REQ-LINE-REPRO", "status": "PASS", "joins": ["pytestRed", "realCaseRecheck", "sourcePreimages", "minimalControls"], "expectedArtifacts": ["docs/reviews/evidence/symbol-line-anchor-fix-worker-20261011.json", "governance/compat/test_check_work_order_dispatch_quality_source.py"]},
+    "REQ-LINE-FIX": {"proofId": "PROOF-REQ-LINE-FIX", "status": "PASS", "joins": ["checkerEdit", "postfixGreen", "realCaseRecheck"], "expectedArtifacts": ["governance/compat/check_work_order_dispatch_quality_source.py", "governance/compat/test_check_work_order_dispatch_quality_source.py", "docs/reviews/evidence/symbol-line-anchor-fix-worker-20261011.json"]},
+    "REQ-LINE-GUARD": {"proofId": "PROOF-REQ-LINE-GUARD", "status": "PASS", "joins": ["testCaseMatrix", "postfixGreen"], "expectedArtifacts": ["docs/reviews/evidence/symbol-line-anchor-fix-worker-20261011.json", "governance/compat/test_check_work_order_dispatch_quality_source.py"], "caseCoverage": {"LF_and_CRLF": true, "python_def_async_class_indented_method": true, "js_ts_export_default_and_suffixes": true, "no_blank_control": true, "absent_symbol_returns_none": true, "unsupported_suffix_returns_none": true, "correct_citation_accepted_with_blank_and_whitespace_lines": true, "preceding_blank_citation_rejected": true, "interior_signature_citation_rejected": true, "existing_source_tests_pass": true}},
+    "REQ-LINE-RETURN": {"proofId": "PROOF-REQ-LINE-RETURN", "status": "PASS", "joins": ["fastGate"], "expectedArtifacts": ["docs/reviews/CVF_SYMBOL_LINE_ANCHOR_FIX_WORKER_RETURN_2026-10-11.md", "docs/reviews/evidence/symbol-line-anchor-fix-worker-20261011.json"]}
+  },
+  "eolObservation": {
+    "checkerOnDisk": "CRLF line endings preserved from the existing working copy",
+    "testOnDisk": "LF line endings; git autocrlf warning reported by git diff --check; no line-ending normalization performed by worker",
+    "blobsInIndex": "LF"
+  },
+  "readHelperLimit": "_read_rel uses text-mode read, which normalizes CRLF; CRLF coverage is therefore exercised by direct helper calls on string input, not through the file-based acceptance path",
+  "nullUnknowns": {
+    "identity": {"value": null, "reason": "worker self-reports Claude Haiku 5.5 (claude-haiku-5-5); exact provider version and observed identity are not exposed to the worker"},
+    "effort": {"value": null, "reason": "operator metadata ex high; effort normalization not exposed to the worker"},
+    "tokens": {"value": null, "reason": "no usage meter is exposed to the worker"},
+    "cost": {"value": null, "reason": "no billing exposure; economic learning N/A"}
+  },
+  "clocks": {
+    "preImplementationGateSeconds": 8.67,
+    "pytestRedSeconds": 0.64,
+    "pytestGreenSeconds": 0.31,
+    "workerStartClock": null,
+    "workerStartClockReason": "start time was not captured before the first action; 35-minute budget is not instrumented",
+    "budgetStatus": "NOT_OBSERVABLE"
+  },
+  "providerCallCount": 0,
+  "nestedAgentCount": 0,
+  "fastGate": {
+    "firstRun": {
+      "log": ".cvf/runtime/symbol-line-anchor-fix-20261011/fast-gate-run1.log",
+      "exit": 1,
+      "passedComponents": ["corpus scan registry aggregate drift", "epistemic process packet", "work-order acceptance ledger", "git diff whitespace check"],
+      "failedComponents": ["worker-return quality gate", "independent review probe admission", "external knowledge intake routing guard", "reviewer-fast governance gate (12 preflight checks, return-structure violations)"],
+      "violationClass": "RETURN_STRUCTURE_ONLY_NO_CHECKER_OR_TEST_CHANGE",
+      "resolution": "return fields added: trace diff evidence, independentProbeDisposition, external routing rows and binding, core-guard authorization block, SCEC block, learning vocabulary, rescan N/A verdict, retro block, workerRedispatchAllowed"
+    },
+    "secondRun": {
+      "log": ".cvf/runtime/symbol-line-anchor-fix-20261011/fast-gate-run2.log",
+      "exit": 1,
+      "failedComponents": ["worker-return quality gate (fast-gate PASS evidence line absent)", "reviewer-fast governance gate (rescan verdict not parsed; bullet form required)"],
+      "resolution": "rescan verdict written in bullet form; Command Evidence fast-gate PASS line added"
+    },
+    "thirdRun": {
+      "log": ".cvf/runtime/symbol-line-anchor-fix-20261011/fast-gate-run3.log",
+      "exit": 0,
+      "result": "COMPLIANT, every component PASS, on the pre-condensation return",
+      "supersededBy": "finalRun",
+      "supersessionReason": "return measured 338 lines against the 300-line budget in the work order maintainability plan; return condensed without removing any required field; final run repeats the gate on the condensed bytes"
+    },
+    "finalRun": {
+      "log": ".cvf/runtime/symbol-line-anchor-fix-20261011/fast-gate-final.log",
+      "command": "python governance/compat/run_worker_return_fast_gate.py --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_SYMBOL_LINE_ANCHOR_FIX_2026-10-11.md",
+      "exitExpected": 0,
+      "bytesRunOn": "final return and this evidence file as written before the run"
+    }
+  },
+  "independentProbeDisposition": "PENDING_REVIEWER_EXECUTION",
+  "runtimeProviderCostLearning": "N/A_WITH_REASON - no provider experiment or measured economic comparison selected",
+  "gitEvidenceNotes": {
+    "stagedAtReturn": [],
+    "commitsMade": 0,
+    "pushesMade": 0
+  }
+}
