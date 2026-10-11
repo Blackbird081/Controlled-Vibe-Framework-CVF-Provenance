@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Current NCR Continuation
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `66e32f4c5b3988031929aa9c3a427e1a67b18688`. Material parent anchor for the dedicated continuity synchronization commit.
+Current HEAD recorded for this handoff: `6a9d45e58f69362f154fa1302a32a468202c5821`. Material parent anchor for the dedicated continuity synchronization commit.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -9,12 +9,12 @@ Status: ACTIVE
 Current continuation only. Root AGENTS.md and canonical routing owners retain full rules.
 Closed history is preserved byte-for-byte at `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V63_PRE_NCR_COMPACTION_2026-10-07.md` (SHA256 `54801fdcf14e9abe17592352ec3c69a0b0e855632991af0caacac7b65252ccba`); it is NOT_ACTIVE_AUTHORITY and not default startup reading.
 ## Scope / Target / Owner Boundary
-Closure base: 0bf6f773ee755d8e20e24678c646e5da3bb3ba09; exact13 material checks passed; final split-range closure follows actual-SHA continuity.
-Role: Local INTERNAL_AGENT orchestrator/reviewer; phase: S2-R2 bounded closure; decision owner=Local. Expense parked; no automatic successor.
-Operator continuation: native Luna/max worker and Local final review authorized; bounded offline outcome companion accepted at `docs/reviews/CVF_MODEL_SELECTION_S2_R2_COMPLETION_2026-10-11.md`; S2-R1 repair-attribution use ACTION_VERIFIED/PARTIAL; all actor burden/source limitations retained.
+Closure base: 381c4c0fe9b8012a3e4fa9d3d5335962d30b1dbe; root learning assessment exact two material paths; source S2-R2 closure unchanged.
+Role: Local INTERNAL_AGENT orchestrator/reviewer; phase: root learning value assessment; decision owner=Local. Expense parked; no automatic successor.
+Operator continuation: assess orchestrator errors for CVF foundation learning at `docs/reviews/CVF_MODEL_SELECTION_ORCHESTRATOR_LEARNING_DISPOSITION_2026-10-11.md`; O3 machine candidate, oracle/scaffold design review, covered mistakes need rule application. No control implementation grant; original S2-R2 accepted.
 Remote tracking branch: `origin/main`. Exact remote SHA must be derived live from git when needed; this handoff records no assumed current remote SHA. External agent memory files: non-canonical convenience only.
 ## Startup Acknowledgment
-Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`;handoff=`AGENT_HANDOFF_V63_2026-09-18.md`;next=Local disposition after S2-R2 closure;role=Local INTERNAL_AGENT orchestrator/reviewer;phase=bounded closure;decision owner=Local;parked checkpoint=expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11.
+Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`;handoff=`AGENT_HANDOFF_V63_2026-09-18.md`;next=Local disposition after root learning assessment;role=Local INTERNAL_AGENT orchestrator/reviewer;phase=value assessment;decision owner=Local;parked checkpoint=expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11.
 ## Current Mode
 `cvf_ncr_p10_closed_p11_parked`. P10 package remains `ACTIVE_PRODUCTION_RUNTIME`; P11 parked. Latest closed learning-history wave: `LHW24`.
 Current NIS-T1J is CLOSED_PASS_BOUNDED with no automatic successor; NCR consumer maintenance is separately operator-authorized.
@@ -97,7 +97,7 @@ Receiving agents clarify incomplete ideas according to the existing lifecycle st
 Consume returned evidence under MFRP P4-C1: EVALUATE_RETURNED_EVIDENCE_NOT_RECREATE_IMPLEMENTATION. A rerun needs a named contradiction/changed consumer,information gain and cost reason.
 Alibaba calls are authorized for meaningful scoped tests; no other provider call,Claude dispatch,public push,deployment or actual-data cutover is inferred.
 ## Next Allowed Move
-PROGRAM_ID=CVF-CORE; NEXT_ACTION_CLASS=LOCAL_DISPOSITION_ONLY; BATCH_ID=CVF-MODEL-SELECTION-S2-R2-20261011. Material=66e32f4c5b3988031929aa9c3a427e1a67b18688; S2-R2 CLOSED_PASS_BOUNDED at docs/reviews/CVF_MODEL_SELECTION_S2_R2_COMPLETION_2026-10-11.md. Optional offline decision-to-reviewed-outcome helper, tests, retrospective S2-R1 projection and guide accepted by different-actor actual API/CLI review. S2-R1 repair-attribution use ACTION_VERIFIED/PARTIAL. Prior requested Luna/xhigh and current Luna/max remain separate; observed identity/bill unknown; root and worker/Local corrections retained. Non coder does not choose a model. Expense PARKED_BY_OPERATOR; S5/PLL/scoring/Gateway/SourceR2/media/provider/public/deploy/P11 remain parked; LHW24 retained. Continue only a fresh real task/value gap with its own admission; no automatic successor.
+PROGRAM_ID=CVF-CORE; NEXT_ACTION_CLASS=LOCAL_DISPOSITION_ONLY; BATCH_ID=CVF-MODEL-SELECTION-S2-R2-20261011. S2-R2 bounded offline outcome accepted; original closure/evidence retained. Root learning assessment=docs/reviews/CVF_MODEL_SELECTION_ORCHESTRATOR_LEARNING_DISPOSITION_2026-10-11.md; material=6a9d45e58f69362f154fa1302a32a468202c5821. Eight root clusters: O3 continuity producer/release batch binding MACHINE_CHECK_CANDIDATE; oracle/scaffold DESIGN_REVIEW_REQUIRED; other defects RULE_EXISTS with future application unproved. No new control implemented or automatic successor; select one bounded design/admission only for a real value gap. Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11 parked; LHW24 retained. Non coder supplies goals; Local owns technical decisions.
 ## Active Boundary
 T3B has a Local-verified active v1 specification. Party B is verified and T3C-C1 tooling accepted at `db78c87df`; T3C-C2 and Party C are verified. T3D-C1 tooling is accepted at `9ed844c2a` without source. T3D-C0-R1 closed at `2fffa1ef7`. T3D-C3 was accepted bounded at `88137e9a2`, but actual-mode prepare attempts failed before Party B/C execution; authorized cleanup removed the failed root and discarded unaccepted worker changes. G1 stopped, G2-G6 parked, and G7 research closed at `660601f0e` with `ADAPT_EXISTING_HANDOFF_ONLY`. Evidence-join sufficiency stays WATCH; no implementation successor exists. Rejected T2 paths remain archived; HRLTP-T2 paused.
 Post-G7 Local source intake and Jev P0 are closed at material commit `9ac0ee8e59fa041ddaa93d725796c509400f257a`. The audit records 32 READ plus 8,093 DEFERRED paths. Jev adds fail-closed decision-context binding, incomplete candidate-space escape, and `EVIDENCE_ONLY` judgment authority to the existing ASSF owner. Proof: TypeScript 84/84, Python 61/61, compile PASS, governance 90/90. G1-G7 remain closed.
@@ -123,27 +123,27 @@ The historic provider/live parked line applies to those stopped lanes; it does n
 Q001/Q004 actual-data source/writer,custody,retention/RPO/RTO/cost checkpoints are action-specific; do not require a user-supplied ledger copy for unrelated fresh isolated development.
 NCR send/B2 STOP and S05/C1 remain; IAB unavailable; repo Playwright Chromium present; vision/full P04/full release remain unproved. No autonomous P11/public/deploy activation.
 ## Core Guard Self-Protection Authorization
-Authorized guard-maintenance scope: S2-R2 actual-SHA closure continuity only. Protected paths: `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/modelSelectionS2R2BoundedClosure20261011.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`. Operator authorization: native worker and Local final decision; necessary private continuity. Rollback boundary: revert matching material/continuity; all parked effects retained.
+Authorized guard-maintenance scope: root learning assessment actual-SHA continuity only. Protected paths: `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/modelSelectionOrchestratorLearning20261011.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`. Operator authorization: learning-value assessment and necessary private continuity. Rollback boundary: revert matching assessment material/continuity; original source closure and parked effects retained.
 ## Agent Operation Trace Block
 
 | Field | Evidence |
 |---|---|
-| Actor | Local continuity steward |
-| Provider or surface | private shared CVF workspace |
-| Session or invocation | model-selection-s2-r2-closure-continuity-20261011 |
+| Actor | Local learning-assessment continuity steward |
+| Provider or surface | private shared workspace |
+| Session or invocation | model-selection-orchestrator-learning-continuity-20261011 |
 | Working directory | repository root |
-| Command or tool surface | actual material SHA; source continuity and canonical generator |
+| Command or tool surface | actual material SHA; source semantic continuity; canonical generator |
 | Target paths | seven continuity paths below |
-| Allowed scope source | operator continuation; Local accepted outcome completion |
-| Before status evidence | material 66e32f4c5b3988031929aa9c3a427e1a67b18688; exact13 validation/commit checks passed; clean worktree |
-| After status evidence | S2-R2 closed; Local disposition only; parked effects retained |
-| Diff evidence | seven-path continuity; generated projections; final range receipts |
-| Approval boundary | private closure continuity only |
-| Claim boundary | no observed model identity/bill, source authenticity, runtime or public proof |
+| Allowed scope source | operator root-learning assessment and necessary private continuity |
+| Before status evidence | material 6a9d45e58f69362f154fa1302a32a468202c5821; two documentary paths; clean worktree |
+| After status evidence | learning assessment discoverable; original S2-R2 authority/parked effects retained |
+| Diff evidence | seven exact continuity paths; generated projections; final range receipt |
+| Approval boundary | private continuity only; no candidate implementation |
+| Claim boundary | no foundation control, typed delivery/application or model quality proof |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | model-selection-s2-r2-closure-continuity-20261011 |
-| Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/modelSelectionS2R2BoundedClosure20261011.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/modelSelectionS2R2BoundedClosure20261011.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Invocation ID | model-selection-orchestrator-learning-continuity-20261011 |
+| Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/modelSelectionOrchestratorLearning20261011.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/modelSelectionOrchestratorLearning20261011.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |
 ## Claim Boundary

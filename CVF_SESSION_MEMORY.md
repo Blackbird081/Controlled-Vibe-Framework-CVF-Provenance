@@ -39,7 +39,7 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`;handoff=`AGENT_HANDOFF_V63_2026-09-18.md`;next=Local disposition after S2-R2 closure;role=Local INTERNAL_AGENT orchestrator/reviewer;phase=bounded closure;decision owner=Local;parked checkpoint=expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11.
+Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`;handoff=`AGENT_HANDOFF_V63_2026-09-18.md`;next=Local disposition after root learning assessment;role=Local INTERNAL_AGENT orchestrator/reviewer;phase=value assessment;decision owner=Local;parked checkpoint=expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11.
 
 ## Current Mode
 
@@ -48,7 +48,7 @@ Current mode: `cvf_ncr_p10_closed_p11_parked`; previous mode marker: `cvf_ncr_p1
 
 ## Next Allowed Move
 Mode: `cvf_ncr_p10_closed_p11_parked`
-PROGRAM_ID=CVF-CORE; NEXT_ACTION_CLASS=LOCAL_DISPOSITION_ONLY; BATCH_ID=CVF-MODEL-SELECTION-S2-R2-20261011. Material=66e32f4c5b3988031929aa9c3a427e1a67b18688; S2-R2 CLOSED_PASS_BOUNDED at docs/reviews/CVF_MODEL_SELECTION_S2_R2_COMPLETION_2026-10-11.md. Optional offline decision-to-reviewed-outcome helper, tests, retrospective S2-R1 projection and guide accepted by different-actor actual API/CLI review. S2-R1 repair-attribution use ACTION_VERIFIED/PARTIAL. Prior requested Luna/xhigh and current Luna/max remain separate; observed identity/bill unknown; root and worker/Local corrections retained. Non coder does not choose a model. Expense PARKED_BY_OPERATOR; S5/PLL/scoring/Gateway/SourceR2/media/provider/public/deploy/P11 remain parked; LHW24 retained. Continue only a fresh real task/value gap with its own admission; no automatic successor.
+PROGRAM_ID=CVF-CORE; NEXT_ACTION_CLASS=LOCAL_DISPOSITION_ONLY; BATCH_ID=CVF-MODEL-SELECTION-S2-R2-20261011. S2-R2 bounded offline outcome accepted; original closure/evidence retained. Root learning assessment=docs/reviews/CVF_MODEL_SELECTION_ORCHESTRATOR_LEARNING_DISPOSITION_2026-10-11.md; material=6a9d45e58f69362f154fa1302a32a468202c5821. Eight root clusters: O3 continuity producer/release batch binding MACHINE_CHECK_CANDIDATE; oracle/scaffold DESIGN_REVIEW_REQUIRED; other defects RULE_EXISTS with future application unproved. No new control implemented or automatic successor; select one bounded design/admission only for a real value gap. Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11 parked; LHW24 retained. Non coder supplies goals; Local owns technical decisions.
 Historical G1-G7 terminal baseline: mode `acel_g1_g7_research_terminally_closed`. G1-G6 terminal review: `docs/reviews/CVF_ACEL_G1_G6_TERMINAL_STOP_CLOSURE_2026-09-24.md`; G7 research closure: `docs/reviews/CVF_ACEL_G7_CROSS_RUN_CAPABILITY_EVOLUTION_RESEARCH_CLOSURE_2026-09-24.md`. The packet-only post-G7 reconciliation review at `docs/reviews/CVF_ACEL_POST_G7_FULL_CORPUS_ABSORPTION_CLOSURE_2026-09-24.md` is superseded for repository absorption by the 2026-09-25 pinned-source audit. G1 is stopped, G2-G6 remain parked, G7 research is closed, and no automatic G1-G7 successor exists.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
