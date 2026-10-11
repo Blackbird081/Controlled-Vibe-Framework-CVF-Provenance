@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_SELECTION_S2_R1_OFFLINE_MANUAL_RECORD_2026-10-11.md",
     "workOrderSha256": "9728b45b6642d25adf89820769bac1a2fdb00dad3678c7ae2d246ed0965f305d"
   },
-  "currentAuthoritySyncReason": "S2-R1 optional offline closure; frozen selection/profile preserved; exact order-hash/projection atomicity. Actual-SHA continuity follows.",
+  "currentAuthoritySyncReason": "S2-R1 CLOSED_PASS_BOUNDED; material 02dd66166a10d762c47890e811955a384ecd4409; material/commit validation passed; final committed ranges evaluated after continuity. Optional offline helper accepted; S4 enum-gap action/result ACTION_VERIFIED/PARTIAL; no automatic successor.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
