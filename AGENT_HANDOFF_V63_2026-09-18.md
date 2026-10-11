@@ -108,7 +108,7 @@ Consume returned evidence under MFRP P4-C1: EVALUATE_RETURNED_EVIDENCE_NOT_RECRE
 Alibaba calls are authorized for meaningful scoped tests; no other provider call,Claude dispatch,public push,deployment or actual-data cutover is inferred.
 ## Next Allowed Move
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=BUILD; BATCH_ID=CVF-NCR-HOME-HISTORY-BINDING-20261011. Operator audit-and-choose selects bounded Home history binding: two existing Home/product-test paths plus new proof/return. Packet material 8a8572c4f799e5c85d840db344d0f75ec74d0bd1; manual operator-started worker only after bound release PASS, WORKER_MUST_NOT_COMMIT,45min. Root starts no worker. Actual Local synthetic red: fixture_B|OUTPUT_A; existing History warm-click mitigation/flag retained. Required view/action/lineage/query regression; no durable approval/live proof. Collection15:9 Haiku-family,2 Sonnet,4 Luna; new observation only after review, Opus advisory excluded. Prior MFRP design closed; collection change/O6 helper deferred. Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11 parked; LHW24; no push grant.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-HOME-HISTORY-BINDING-20261011. Work order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HOME_HISTORY_BINDING_2026-10-11.md. Operator audit-and-choose selects bounded Home history binding: two existing Home/product-test paths plus new proof/return. Packet material 8a8572c4f799e5c85d840db344d0f75ec74d0bd1; manual operator-started worker only after bound release PASS, WORKER_MUST_NOT_COMMIT,45min. Root starts no worker. Actual Local synthetic red: fixture_B|OUTPUT_A; existing History warm-click mitigation/flag retained. Required view/action/lineage/query regression; no durable approval/live proof. Collection15:9 Haiku-family,2 Sonnet,4 Luna; new observation only after review, Opus advisory excluded. Prior MFRP design closed; collection change/O6 helper deferred. Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11 parked; LHW24; no push grant.
 
 ## Active Boundary
 T3B has a Local-verified active v1 specification. Party B is verified and T3C-C1 tooling accepted at `db78c87df`; T3C-C2 and Party C are verified. T3D-C1 tooling is accepted at `9ed844c2a` without source. T3D-C0-R1 closed at `2fffa1ef7`. T3D-C3 was accepted bounded at `88137e9a2`, but actual-mode prepare attempts failed before Party B/C execution; authorized cleanup removed the failed root and discarded unaccepted worker changes. G1 stopped, G2-G6 parked, and G7 research closed at `660601f0e` with `ADAPT_EXISTING_HANDOFF_ONLY`. Evidence-join sufficiency stays WATCH; no implementation successor exists. Rejected T2 paths remain archived; HRLTP-T2 paused.
@@ -161,7 +161,7 @@ Rollback boundary: revert matching dispatch continuity; preserve historical proo
 | Command or tool surface | canonical generator; exact6 commit; bound release gates |
 | Target paths | six continuity paths listed below |
 | Allowed scope source | operator audit-and-choose; paired Home packet |
-| Before status evidence | 8a8572c4f799e5c85d840db344d0f75ec74d0bd1; clean material committed, worker outputs absent |
+| Before status evidence | a13f88cefb5b8a7ae5d50489e11e086bdfe7a551; clean dispatch continuity, worker absent; DR-06 next-token/path repair |
 | After status evidence | matching currentAuthority/marker/next-move; worker not started |
 | Diff evidence | git diff --check; exact six-path staged manifest |
 | Approval boundary | private manual dispatch continuity; no push |
@@ -174,4 +174,4 @@ Rollback boundary: revert matching dispatch continuity; preserve historical proo
 | Deletion or rename disposition | N/A with reason: none |
 
 ## Claim Boundary
-Current facts,pointers and granted next actions only. Archive preserves history,not active authority. No full-roadmap,live governance,release,public or deployment claim.
+Current facts,pointers and granted next actions only. Local DR-06 release FAIL retained; EXECUTE/path continuity corrected before worker handoff. Archive preserves history,not active authority. No full-roadmap,live governance,release,public or deployment claim.

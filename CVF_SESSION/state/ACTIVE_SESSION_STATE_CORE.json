@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HOME_HISTORY_BINDING_2026-10-11.md",
     "workOrderSha256": "45a65d204fefe07cfdaccb6ef777685279fb9fc90fdc9a2b13d45dea5c8ac38e"
   },
-  "currentAuthoritySyncReason": "Actual dispatch material 8a8572c4f799e5c85d840db344d0f75ec74d0bd1; exact6 current-authority/batch marker/next-move continuity for manual Home worker. Prior MFRP bounded closure and collection15 retained; no push/effect grant.",
+  "currentAuthoritySyncReason": "Dispatch material 8a8572c4f799e5c85d840db344d0f75ec74d0bd1 unchanged; exact6 corrective continuity for Local DR-06 EXECUTE literal/work-order path omission. First release FAIL retained; no worker invocation, collection15 and parked effects preserved.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
