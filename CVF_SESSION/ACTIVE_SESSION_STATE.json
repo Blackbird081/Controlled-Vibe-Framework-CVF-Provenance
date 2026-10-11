@@ -36,12 +36,12 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_SYMBOL_LINE_ANCHOR_FIX_2026-10-11.md",
-    "baselineSha256": "10d6cb2f08dae2a6be7786356b8ab5fb13896d013f321da3e19912bbfd3fdf44",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_SYMBOL_LINE_ANCHOR_FIX_2026-10-11.md",
-    "workOrderSha256": "2d9c0ec5da43fa4e8c9440c7671b54c26a72899e4848d6c7a89545e868af6cd1"
+    "baselinePath": "docs/baselines/CVF_GC018_MODEL_SELECTION_S2_R3_PROJECTION_2026-10-11.md",
+    "baselineSha256": "4ec826bce650d98d886f61fbdc71d0e2e831df32e323701664e40347bfa71f65",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_SELECTION_S2_R3_PROJECTION_2026-10-11.md",
+    "workOrderSha256": "49e85d6ddbf6e361d5b49c24775f86a76ed9692754841bffb2256d7a294ea22c"
   },
-  "currentAuthoritySyncReason": "Preparation maintenance IMPLEMENTED_BOUNDED material d93f63a59de6f58953ec07c3e3907706a4c21524; six-surface sync; closed symbol-line authority hashes retained. Operator continuation admits bounded S2 outcome projection audit/packet; manual launch requires released packet. Eight workers plus linked same-session Opus analysis; no push/effect grant.",
+  "currentAuthoritySyncReason": "Operator-selected S2-R3 optional Haiku retrospective projection packet; worker unstarted until matching six-surface continuity/bound release. Eight historical workers and same-session Opus context retained; no push/effect grant.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
