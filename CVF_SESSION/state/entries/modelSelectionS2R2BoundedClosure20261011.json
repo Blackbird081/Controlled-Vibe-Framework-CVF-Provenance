@@ -1,0 +1,19 @@
+{
+  "stateOrder": 3005,
+  "stateKey": "modelSelectionS2R2BoundedClosure20261011",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "66e32f4c5b3988031929aa9c3a427e1a67b18688",
+    "completion": "docs/reviews/CVF_MODEL_SELECTION_S2_R2_COMPLETION_2026-10-11.md",
+    "evidence": "docs/reviews/evidence/model-selection-s2-r2-local-review-20261011.json",
+    "workerRequest": {
+      "model": "gpt-6-luna",
+      "reasoningEffort": "max",
+      "runtimeObservedIdentity": null
+    },
+    "result": "Optional offline outcome companion, source-pinned retrospective S2-R1 projection and guide independently accepted; initial/final and repair actors separate.",
+    "materialRangeGate": "MATERIAL_VALIDATION_PASS_EXACT13; FINAL_SPLIT_RANGE_AFTER_SYNC",
+    "nextAction": "Local disposition only; new task/value gap needs separate admission; S5/Expense remain parked.",
+    "claimBoundary": "Data consistency only; no model equivalence/ranking, identity/bill authentication or runtime/public claim."
+  }
+}
