@@ -258,6 +258,105 @@ def test_material_commit_failure_is_recovery_json(helper, repo, monkeypatch, cap
     assert result["diagnosticCode"] is None
 
 
+def test_material_child_failure_reports_safe_captured_diagnostics_once(helper, repo, monkeypatch, capsys):
+    secret = "fixture-" + "opaque-value"
+    child = repo / "governance/compat/run_agent_autorun_workflow_gate.py"
+    write(child, "import sys\nprint('[FAIL] subagent provider execution authority (0.01s)')\n"
+          "print('missing providerExecutionAuthority')\n"
+          f"print({secret!r}, file=sys.stderr)\nsys.exit(7)\n")
+    run(repo, "git", "add", "--", child.relative_to(repo).as_posix())
+    before = snapshot(repo)
+    original = helper._run
+    children = []
+
+    def observe(argv):
+        if child.name in " ".join(argv):
+            children.append(argv)
+        return original(argv)
+
+    monkeypatch.setattr(helper, "_run", observe)
+    assert helper.main(["--mode", "material", "--base", head(repo),
+                        "--message", "m", "--execute"]) == 1
+    result = terminal(capsys)
+    assert result["terminalState"] == "MATERIAL_VALIDATION_FAILED"
+    assert result["diagnosticDetails"]["returnCode"] == 7
+    assert result["diagnosticDetails"]["failedGates"] == ["subagent provider execution authority"]
+    assert result["diagnosticDetails"]["hints"] == ["providerExecutionAuthority"]
+    assert result["diagnosticDetails"]["rawOutputOmitted"] is True
+    assert secret not in json.dumps(result)
+    assert len(children) == 1
+    assert snapshot(repo) == before
+
+
+def test_command_success_does_not_build_diagnostics(helper, monkeypatch):
+    monkeypatch.setattr(helper, "_command_diagnostics", lambda _: pytest.fail("success-path diagnostic"))
+    assert helper._command([sys.executable, "-c", "print('ok')"]).stdout.strip() == "ok"
+
+
+def test_command_diagnostics_bound_scan_and_omit_unknown_raw_text(helper):
+    secret = "fixture-" + "opaque-value"
+    stdout = f"[FAIL] {secret} (0.01s)\n" + "x" * 70000 + "commitPlanDisposition"
+    result = helper._command_diagnostics(subprocess.CompletedProcess([], 2, stdout, secret))
+    assert result["failedGates"] == [] and result["hints"] == []
+    assert result["outputTruncated"] is True
+    assert secret not in json.dumps(result) and len(json.dumps(result)) < 512
+
+
+def test_command_diagnostics_catalog_failure_preserves_child_error(helper, monkeypatch):
+    import runpy
+
+    def unavailable(_):
+        raise ValueError("invalid diagnostic catalog")
+
+    monkeypatch.setattr(runpy, "run_path", unavailable)
+    with pytest.raises(helper.CommandFailure) as captured:
+        helper._command([sys.executable, "-c", "raise SystemExit(7)"])
+    assert captured.value.diagnostics["returnCode"] == 7
+    assert captured.value.diagnostics["failedGates"] == []
+
+
+@pytest.mark.parametrize("phase", ["precommit", "commit", "postcommit", "recheck"])
+def test_resume_child_diagnostics_keep_recovery_and_original_terminal(helper, repo, monkeypatch, capsys, phase):
+    base, material = make_material(repo)
+    manifest = prepare_resume(repo, material)
+    install_fake_generation(helper, repo, monkeypatch)
+    argv = resume_args(base, material, manifest, "--continuity-message", "sync", "--execute")
+    if phase == "recheck":
+        assert helper.main(argv) == 0
+        terminal(capsys)
+    child_argv = [sys.executable, "-c", "print('[FAIL] review cost and rework dispatch convergence (0.01s)'); raise SystemExit(9)"]
+    with pytest.raises(helper.CommandFailure) as captured:
+        helper._command(child_argv)
+    failure = captured.value
+    calls = []
+
+    def checks():
+        calls.append(1)
+        if phase != "postcommit" or len(calls) == 2:
+            raise failure
+
+    if phase == "commit":
+        monkeypatch.setattr(helper, "_run_checks", lambda: None)
+        original = helper._command
+
+        def command(args):
+            if args[:2] == ["git", "commit"]:
+                raise failure
+            return original(args)
+
+        monkeypatch.setattr(helper, "_command", command)
+    else:
+        monkeypatch.setattr(helper, "_run_checks", checks)
+    expected = {"precommit": 3, "commit": 4, "postcommit": 5, "recheck": 5}[phase]
+    assert helper.main(argv) == expected
+    result = terminal(capsys)
+    assert result["diagnosticDetails"] == failure.diagnostics
+    assert result["diagnosticDetails"]["returnCode"] == 9
+    assert result["diagnosticDetails"]["failedGates"] == ["review cost and rework dispatch convergence"]
+    assert result["resumeArgvTemplate"][5] == material
+    assert (head(repo) if phase in {"precommit", "commit"} else head(repo, "HEAD^")) == material
+
+
 @pytest.mark.parametrize("raw,code", [
     ("C:/tmp/x.json", "MANIFEST_PATH_MUST_BE_REPO_RELATIVE"),
     ("../x.json", "PATH_TRAVERSAL_REJECTED"),

@@ -476,7 +476,7 @@
                 "evidence": [
                   {
                     "path": "scripts/cvf_commit_tranche.py",
-                    "sha256": "b964156112a2d64378e43a0f705d7ba3d916c9b428ce65820e47a7f6575c1ab2",
+                    "sha256": "1a296b55e9590d80f83f3a57f9f88f0ddc3d8071c7ca909682a817ac38284754",
                     "fragment": "control:bound-resume",
                     "evidenceClass": "OBSERVED_LOCAL"
                   },
@@ -524,7 +524,7 @@
               "evidence": [
                 {
                   "path": "scripts/cvf_commit_tranche.py",
-                  "sha256": "b964156112a2d64378e43a0f705d7ba3d916c9b428ce65820e47a7f6575c1ab2",
+                  "sha256": "1a296b55e9590d80f83f3a57f9f88f0ddc3d8071c7ca909682a817ac38284754",
                   "fragment": "control:bound-resume",
                   "evidenceClass": "OBSERVED_LOCAL"
                 },

@@ -71,6 +71,7 @@ class SemanticFailure(Exception):
 @dataclass
 class CommandFailure(Exception):
     argv: list[str]
+    diagnostics: dict[str, Any] | None = None
 
 
 @dataclass(frozen=True)
@@ -102,10 +103,43 @@ def _run(argv: list[str]) -> subprocess.CompletedProcess[str]:
     )
 
 
+def _command_diagnostics(result: subprocess.CompletedProcess[str]) -> dict[str, Any]:
+    """Return finite source-owned signals, never arbitrary child text/secrets.
+
+    Failure-only: reuse captured output and catalog labels without running a
+    command, loading credentials, or changing the terminal schema.
+    """
+    import runpy
+
+    limit = 65536
+    stdout, stderr = result.stdout or "", result.stderr or ""
+    scanned = stdout[:limit] + "\n" + stderr[:limit]
+    catalog = Path(__file__).resolve().parents[1] / "governance/compat/agent_autorun_command_catalog.py"
+    names: set[str] = set()
+    if catalog.is_file():
+        try:
+            owner = runpy.run_path(str(catalog))
+            names = {gate.name for gate in owner["_common_commands"]("HEAD", "HEAD")}
+        except Exception:
+            pass  # Diagnostics cannot change the original failure disposition.
+    failed = re.findall(r"(?m)^\[FAIL\] (.+?) \([0-9.]+s\)\s*$", scanned)
+    hints = (
+        "providerExecutionAuthority", "commitPlanDisposition",
+        "Acceptance Receipt Assertion Matrix",
+    )
+    return {
+        "returnCode": result.returncode,
+        "failedGates": sorted(set(failed) & names),
+        "hints": [hint for hint in hints if hint in scanned],
+        "outputTruncated": len(stdout) > limit or len(stderr) > limit,
+        "rawOutputOmitted": True,
+    }
+
+
 def _command(argv: list[str]) -> subprocess.CompletedProcess[str]:
     result = _run(argv)
     if result.returncode:
-        raise CommandFailure(argv)
+        raise CommandFailure(argv, _command_diagnostics(result))
     return result
 
 
@@ -250,12 +284,14 @@ def _material(args: argparse.Namespace) -> int:
     try:
         _command(preflight)
     except CommandFailure as exc:
-        return _emit("MATERIAL_VALIDATION_FAILED", active_handoff=active, failed_command=exc.argv)
+        return _emit("MATERIAL_VALIDATION_FAILED", active_handoff=active,
+                     failed_command=exc.argv, diagnostic_details=exc.diagnostics)
     commit_argv = ["git", "commit", "-m", args.message]
     try:
         _command(commit_argv)
-    except CommandFailure:
-        return _emit("MATERIAL_COMMIT_FAILED", active_handoff=active, failed_command=commit_argv)
+    except CommandFailure as exc:
+        return _emit("MATERIAL_COMMIT_FAILED", active_handoff=active,
+                     failed_command=commit_argv, diagnostic_details=exc.diagnostics)
     material_sha = _head()
     active = _best_effort_handoff()  # Preserved post-material re-resolution.
     return _emit(
@@ -599,12 +635,13 @@ def _run_dispatch_release(active_work_order: str | None) -> None:
 
 def _resume_failure(state: str, args: argparse.Namespace, active: str | None, *,
                     command: list[str] | None = None,
+                    command_diagnostics: dict[str, Any] | None = None,
                     semantic: SemanticFailure | None = None) -> int:
     return _emit(
         state, material_sha=args.resume_material_sha, active_handoff=active,
         failed_command=command,
         diagnostic_code=semantic.code if semantic else None,
-        diagnostic_details=semantic.details if semantic else None,
+        diagnostic_details=semantic.details if semantic else command_diagnostics,
         resume_argv=_resume_template(
             args.resume_material_sha, args.base, args.continuity_manifest,
             active_work_order=args.active_work_order,
@@ -635,7 +672,8 @@ def _postcommit_recheck(args: argparse.Namespace, active: str, paths: list[str],
     except SemanticFailure as exc:
         return _resume_failure("CONTINUITY_POSTCOMMIT_VALIDATION_FAILED", args, active, semantic=exc)
     except CommandFailure as exc:
-        return _resume_failure("CONTINUITY_POSTCOMMIT_VALIDATION_FAILED", args, active, command=exc.argv)
+        return _resume_failure("CONTINUITY_POSTCOMMIT_VALIDATION_FAILED", args, active,
+                               command=exc.argv, command_diagnostics=exc.diagnostics)
     return _emit("ALREADY_SYNCHRONIZED", material_sha=args.resume_material_sha, active_handoff=active)
 
 
@@ -673,12 +711,14 @@ def _pending_or_retry(args: argparse.Namespace, active: str, paths: list[str],
     except SemanticFailure as exc:
         return _resume_failure("CONTINUITY_VALIDATION_FAILED", args, active, semantic=exc)
     except CommandFailure as exc:
-        return _resume_failure("CONTINUITY_VALIDATION_FAILED", args, active, command=exc.argv)
+        return _resume_failure("CONTINUITY_VALIDATION_FAILED", args, active,
+                               command=exc.argv, command_diagnostics=exc.diagnostics)
     commit_argv = ["git", "commit", "-m", args.continuity_message]
     try:
         _command(commit_argv)
-    except CommandFailure:
-        return _resume_failure("CONTINUITY_COMMIT_FAILED", args, active, command=commit_argv)
+    except CommandFailure as exc:
+        return _resume_failure("CONTINUITY_COMMIT_FAILED", args, active,
+                               command=commit_argv, command_diagnostics=exc.diagnostics)
     try:
         if _head("HEAD^") != args.resume_material_sha or _head(f"{args.resume_material_sha}^") != args.base:
             raise SemanticFailure("POSTCOMMIT_TOPOLOGY_MISMATCH", {})
@@ -689,7 +729,8 @@ def _pending_or_retry(args: argparse.Namespace, active: str, paths: list[str],
     except SemanticFailure as exc:
         return _resume_failure("CONTINUITY_POSTCOMMIT_VALIDATION_FAILED", args, active, semantic=exc)
     except CommandFailure as exc:
-        return _resume_failure("CONTINUITY_POSTCOMMIT_VALIDATION_FAILED", args, active, command=exc.argv)
+        return _resume_failure("CONTINUITY_POSTCOMMIT_VALIDATION_FAILED", args, active,
+                               command=exc.argv, command_diagnostics=exc.diagnostics)
     return _emit("COMPLETE_ONE_MATERIAL_ONE_CONTINUITY",
                  material_sha=args.resume_material_sha, active_handoff=active)
 

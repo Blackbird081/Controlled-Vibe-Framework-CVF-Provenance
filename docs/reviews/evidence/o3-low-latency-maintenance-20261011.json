@@ -1,0 +1,90 @@
+{
+  "schemaVersion": "cvf.o3LowLatencyMaintenance@0.1.0",
+  "status": "IMPLEMENTED_BOUNDED",
+  "actor": "LOCAL_INTERNAL_AGENT_MAINTAINER",
+  "executionBaseHead": "4c214350dfac9220fed8c7f967bb2faadfca5c09",
+  "authorization": "Operator approved exactly staged coverage and already-captured child diagnostics. Direct small-task lane under lifecycle Outcome-Bound Work Selection And Terminal Review.",
+  "priorControl": {
+    "path": "scripts/cvf_commit_tranche.py",
+    "sha256": "b964156112a2d64378e43a0f705d7ba3d916c9b428ce65820e47a7f6575c1ab2",
+    "commit": "4c214350dfac9220fed8c7f967bb2faadfca5c09"
+  },
+  "currentControlPins": [
+    {
+      "path": "governance/compat/check_subagent_provider_execution_authority.py",
+      "sha256": "ad4470e74e8d074198a90114273e2044e2a640dc0aecc9671951fffa984fc331"
+    },
+    {
+      "path": "governance/compat/test_check_subagent_provider_execution_authority.py",
+      "sha256": "f7ab7fe106352fd3d1e4a1e0e478aa31cf7eedb112ca7c7f3bba0020416ddb2f"
+    },
+    {
+      "path": "scripts/cvf_commit_tranche.py",
+      "sha256": "1a296b55e9590d80f83f3a57f9f88f0ddc3d8071c7ca909682a817ac38284754"
+    },
+    {
+      "path": "scripts/test_cvf_commit_tranche.py",
+      "sha256": "d9cc5479e57286a9f96f090f45def137a6193b0bcde59f3d7054f3fef016169e"
+    }
+  ],
+  "tests": [
+    {
+      "path": ".cvf/runtime/continuity-dispatch-o3-20261011/maintenance-focused-tests.log",
+      "sha256": "5c013efc2bd7cfd88939cf9ff44b6bd3a32220f36b29c610d4798b71c105e1d0",
+      "passed": 52,
+      "deselected": 117,
+      "elapsedSeconds": 30.28
+    },
+    {
+      "path": ".cvf/runtime/continuity-dispatch-o3-20261011/maintenance-dispatch-tests.log",
+      "sha256": "f2e052ef875f909fed9cb8e2435eda204b0266b6491d74cdaf98dac98d31bbcb",
+      "passed": 3,
+      "deselected": 15,
+      "elapsedSeconds": 15.86
+    },
+    {
+      "path": ".cvf/runtime/continuity-dispatch-o3-20261011/maintenance-final-delta-tests.log",
+      "sha256": "0940c9aeb5703e586e27ff2595259e0bb25af71cfe6baf53933c6e68dd628d10",
+      "passed": 7,
+      "deselected": 164,
+      "elapsedSeconds": 5.82
+    }
+  ],
+  "testAccounting": "52 initial scenario passes, 3 shared dispatch passes, 7 targeted final-delta passes; runs overlap, do not sum as unique cases. 117 textual bindings excluded; no repeat independent oracle, provider or broad worker suite.",
+  "proof-positive:maintenance-compatibility": {
+    "terminalSchema": "cvf.gc020TerminalOutput.v1; keys and exit codes unchanged",
+    "dispatch": "actual bound CLI/generator/release positive, rejection and retry tested",
+    "sameActor": true,
+    "independentReviewClaim": false
+  },
+  "proof-negative:staged-and-child-failure": {
+    "stagedOnly": "actual checker main denies missing grant",
+    "indexWorktreeCancellation": "path discovery preserves the staged candidate even when worktree matches HEAD; policy evaluation remains disk-based",
+    "childFailure": "one actual failed child, terminal JSON includes finite catalog labels/hints and return code; recovery branches preserve material",
+    "catalogUnavailable": "original child failure preserved; empty label list fallback",
+    "arbitraryRawOutput": "omitted; fake secret absent from JSON; input scanning bounded to 65536 characters per stream"
+  },
+  "runtimeCostBoundary": {
+    "checkerGitCommands": 3,
+    "priorCheckerGitCommands": 3,
+    "newGateCount": 0,
+    "newProviderCallCount": 0,
+    "newSubagentInvocationCount": 0,
+    "successfulChildDiagnosticWork": 0,
+    "failureOnlyDiagnosticWork": "read/execute source-owned command catalog declarations and inspect bounded already-captured stdout/stderr; no child retry or command execution",
+    "latencySla": "NOT_MEASURED; process-count and path conditions verified, not zero milliseconds or billing savings"
+  },
+  "claimBoundary": "offline filesystem/Git and deterministic tool behavior only; no AI/runtime governance, model identity, economics, universal adoption or new project application.",
+  "rootArtifactCorrection": {
+    "actor": "LOCAL_ROOT",
+    "defectClass": "ORCHESTRATOR_PACKET_GAP",
+    "disposition": "RULE_EXISTS",
+    "firstPreflightLog": ".cvf/runtime/continuity-dispatch-o3-20261011/maintenance-preflight.log",
+    "issues": [
+      "operator approval wording near repair/guard falsely matched preference-escalation regex",
+      "missing explicit runtime/provider/cost non-applicability token"
+    ],
+    "repair": "use authorization wording; declare N/A_WITH_REASON; no checker changes",
+    "sourceApplicationErrors": "diagnostic-only path glob/guessed source lookup corrected using directory inventory"
+  }
+}
