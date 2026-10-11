@@ -39,7 +39,7 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`;handoff=`AGENT_HANDOFF_V63_2026-09-18.md`;next=manual worker after bound release;role=Local INTERNAL_AGENT dispatcher;phase=source-maintenance dispatch;decision owner=Local;parked checkpoint=Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11.
+Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`;handoff=`AGENT_HANDOFF_V63_2026-09-18.md`;next=selected repair terminal;role=Local INTERNAL_AGENT reviewer/closer;phase=closure and model collection;decision owner=Local;parked checkpoint=Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11.
 
 ## Current Mode
 
@@ -48,7 +48,7 @@ Current mode: `cvf_ncr_p10_closed_p11_parked`; previous mode marker: `cvf_ncr_p1
 
 ## Next Allowed Move
 Mode: `cvf_ncr_p10_closed_p11_parked`
-PROGRAM_ID=CVF-CORE; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-SYMBOL-LINE-ANCHOR-FIX-20261011. Work order docs/work_orders/CVF_AGENT_WORK_ORDER_SYMBOL_LINE_ANCHOR_FIX_2026-10-11.md; material=976e5b4a96cfc4f2f8c945023c97813cf865005a. Manual INTERNAL_AGENT worker after bound pre-dispatch PASS; capture executionBaseHead, pre-implementation before edits; four paths, 35 minutes, WORKER_MUST_NOT_COMMIT; pending return to Local. O6 accepted; helper/scaffold deferred; no successor. Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11 parked; LHW24 retained. Ahead count advisory; no new push grant.
+PROGRAM_ID=CVF-CORE; NEXT_ACTION_CLASS=STOP; BATCH_ID=CVF-SYMBOL-LINE-ANCHOR-FIX-20261011. CLOSED_PASS_BOUNDED at 7efca5abaeccb7d15c80277791a4a6fcfd709226; Local completion docs/reviews/CVF_SYMBOL_LINE_ANCHOR_FIX_COMPLETION_2026-10-11.md. Selected checker repair terminal, no automatic successor. Model ledger docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json: 8 reviewed workers (six Haiku-family, two Sonnet), requested effort separated; native identity/usage/bill/time unknown. Collect on admitted work. O6 helper/scaffold deferred. Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11 parked; LHW24 retained. Ahead count advisory; no new push grant.
 Historical G1-G7 terminal baseline: mode `acel_g1_g7_research_terminally_closed`. G1-G6 terminal review: `docs/reviews/CVF_ACEL_G1_G6_TERMINAL_STOP_CLOSURE_2026-09-24.md`; G7 research closure: `docs/reviews/CVF_ACEL_G7_CROSS_RUN_CAPABILITY_EVOLUTION_RESEARCH_CLOSURE_2026-09-24.md`. The packet-only post-G7 reconciliation review at `docs/reviews/CVF_ACEL_POST_G7_FULL_CORPUS_ABSORPTION_CLOSURE_2026-09-24.md` is superseded for repository absorption by the 2026-09-25 pinned-source audit. G1 is stopped, G2-G6 remain parked, G7 research is closed, and no automatic G1-G7 successor exists.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
