@@ -1,0 +1,180 @@
+{
+  "schemaVersion": "cvf.ncrHistoryRecoveryDispatch@1",
+  "baseHead": "58efa8c43b70ace270dcb10ab03ecc92319f575b",
+  "sourceFinding": "History onSelect pushes /home without identity; Home starts browse and only accepted continue query restores a result.",
+  "sourcePins": [
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.tsx",
+      "rawFileSha256": "9400ddde799b7c2ec386cdd1bd618df98be12b25020dba427607ecfb433d13fd",
+      "headBlobSha256": "9400ddde799b7c2ec386cdd1bd618df98be12b25020dba427607ecfb433d13fd"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/history/page.tsx",
+      "rawFileSha256": "4c648e373be11e271ead6e69043f312724dc674b14ad908629c9a83b1efb8629",
+      "headBlobSha256": "4c648e373be11e271ead6e69043f312724dc674b14ad908629c9a83b1efb8629"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/store.ts",
+      "rawFileSha256": "f5deb700c631c680924d3ba74fd1c56ef862e99703fe59c461828a8a64953c06",
+      "headBlobSha256": "f5deb700c631c680924d3ba74fd1c56ef862e99703fe59c461828a8a64953c06"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HistoryList.tsx",
+      "rawFileSha256": "1a8794e7fa7e61889f229bd560e8c9e2d56adb8e2ad7c969d9663c2997757770",
+      "headBlobSha256": "1a8794e7fa7e61889f229bd560e8c9e2d56adb8e2ad7c969d9663c2997757770"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.tsx",
+      "rawFileSha256": "37c3f811593426e631bd50891931d363a460a943b5c012bdb7796d9923911bd1",
+      "headBlobSha256": "37c3f811593426e631bd50891931d363a460a943b5c012bdb7796d9923911bd1"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.test.tsx",
+      "rawFileSha256": "332a100889580078daca4dbb0a1e815a2c6d9e0e0fcdbfa912b02fa0e1af63e2",
+      "headBlobSha256": "332a100889580078daca4dbb0a1e815a2c6d9e0e0fcdbfa912b02fa0e1af63e2"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/vitest.config.ts",
+      "rawFileSha256": "9a4a65976b5b7a5d038f9cb412a90d417f804108cf1dd33bae4421989a863420",
+      "headBlobSha256": "9a4a65976b5b7a5d038f9cb412a90d417f804108cf1dd33bae4421989a863420"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/test/setup.ts",
+      "rawFileSha256": "bc573b2a6133b07404c42f797bce43fe73464711e0281f29da8234bf2fed6b27",
+      "headBlobSha256": "bc573b2a6133b07404c42f797bce43fe73464711e0281f29da8234bf2fed6b27"
+    }
+  ],
+  "sourceReadBoundary": "Home, History and store behavior read; ResultViewer selected identity/export and UI action scopes; not a whole Web audit.",
+  "reproduction": {
+    "result": {
+      "numTotalTestSuites": 2,
+      "numPassedTestSuites": 0,
+      "numFailedTestSuites": 2,
+      "numPendingTestSuites": 0,
+      "numTotalTests": 3,
+      "numPassedTests": 1,
+      "numFailedTests": 2,
+      "numPendingTests": 0,
+      "numTodoTests": 0,
+      "snapshot": {
+        "added": 0,
+        "failure": false,
+        "filesAdded": 0,
+        "filesRemoved": 0,
+        "filesRemovedList": [],
+        "filesUnmatched": 0,
+        "filesUpdated": 0,
+        "matched": 0,
+        "total": 0,
+        "unchecked": 0,
+        "uncheckedKeysByFile": [],
+        "unmatched": 0,
+        "updated": 0,
+        "didUpdate": false
+      },
+      "startTime": 1791760524314,
+      "success": false,
+      "testResults": [
+        {
+          "assertionResults": [
+            {
+              "ancestorTitles": [
+                "actual History to Home selected result journey"
+              ],
+              "fullName": "actual History to Home selected result journey control: accepted continue query restores exact A while ambient selection is B",
+              "status": "passed",
+              "title": "control: accepted continue query restores exact A while ambient selection is B",
+              "duration": 92.88270000000011,
+              "failureMessages": [],
+              "meta": {},
+              "tags": []
+            },
+            {
+              "ancestorTitles": [
+                "actual History to Home selected result journey"
+              ],
+              "fullName": "actual History to Home selected result journey desired: History click reopens completed accepted result A",
+              "status": "failed",
+              "title": "desired: History click reopens completed accepted result A",
+              "duration": 304.97270000000026,
+              "failureMessages": [
+                "AssertionError: expected undefined to be 'exec_saved_A' // Object.is equality\n    at D:/UNG DUNG AI/TOOL AI 2026/Controlled-Vibe-Framework-CVF/.cvf/runtime/ncr-history-recovery-20261012/history-journey.probe.test.tsx:198:68\n    at file:///D:/UNG%20DUNG%20AI/TOOL%20AI%202026/Controlled-Vibe-Framework-CVF/EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/node_modules/@vitest/runner/dist/chunk-artifact.js:302:11\n    at file:///D:/UNG%20DUNG%20AI/TOOL%20AI%202026/Controlled-Vibe-Framework-CVF/EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:26\n    at file:///D:/UNG%20DUNG%20AI/TOOL%20AI%202026/Controlled-Vibe-Framework-CVF/EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/node_modules/@vitest/runner/dist/chunk-artifact.js:2326:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file:///D:/UNG%20DUNG%20AI/TOOL%20AI%202026/Controlled-Vibe-Framework-CVF/EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/node_modules/@vitest/runner/dist/chunk-artifact.js:2323:10)\n    at file:///D:/UNG%20DUNG%20AI/TOOL%20AI%202026/Controlled-Vibe-Framework-CVF/EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/node_modules/@vitest/runner/dist/chunk-artifact.js:2305:20\n    at new Promise (<anonymous>)\n    at runWithTimeout (file:///D:/UNG%20DUNG%20AI/TOOL%20AI%202026/Controlled-Vibe-Framework-CVF/EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/node_modules/@vitest/runner/dist/chunk-artifact.js:2272:10)\n    at file:///D:/UNG%20DUNG%20AI/TOOL%20AI%202026/Controlled-Vibe-Framework-CVF/EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/node_modules/@vitest/runner/dist/chunk-artifact.js:2955:64"
+              ],
+              "meta": {},
+              "tags": []
+            },
+            {
+              "ancestorTitles": [
+                "actual History to Home selected result journey"
+              ],
+              "fullName": "actual History to Home selected result journey desired: History click reopens completed unreviewed result A",
+              "status": "failed",
+              "title": "desired: History click reopens completed unreviewed result A",
+              "duration": 49.425600000000486,
+              "failureMessages": [
+                "AssertionError: expected undefined to be 'exec_saved_A' // Object.is equality\n    at D:/UNG DUNG AI/TOOL AI 2026/Controlled-Vibe-Framework-CVF/.cvf/runtime/ncr-history-recovery-20261012/history-journey.probe.test.tsx:198:68\n    at file:///D:/UNG%20DUNG%20AI/TOOL%20AI%202026/Controlled-Vibe-Framework-CVF/EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/node_modules/@vitest/runner/dist/chunk-artifact.js:302:11\n    at file:///D:/UNG%20DUNG%20AI/TOOL%20AI%202026/Controlled-Vibe-Framework-CVF/EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:26\n    at file:///D:/UNG%20DUNG%20AI/TOOL%20AI%202026/Controlled-Vibe-Framework-CVF/EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/node_modules/@vitest/runner/dist/chunk-artifact.js:2326:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file:///D:/UNG%20DUNG%20AI/TOOL%20AI%202026/Controlled-Vibe-Framework-CVF/EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/node_modules/@vitest/runner/dist/chunk-artifact.js:2323:10)\n    at file:///D:/UNG%20DUNG%20AI/TOOL%20AI%202026/Controlled-Vibe-Framework-CVF/EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/node_modules/@vitest/runner/dist/chunk-artifact.js:2305:20\n    at new Promise (<anonymous>)\n    at runWithTimeout (file:///D:/UNG%20DUNG%20AI/TOOL%20AI%202026/Controlled-Vibe-Framework-CVF/EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/node_modules/@vitest/runner/dist/chunk-artifact.js:2272:10)\n    at file:///D:/UNG%20DUNG%20AI/TOOL%20AI%202026/Controlled-Vibe-Framework-CVF/EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/node_modules/@vitest/runner/dist/chunk-artifact.js:2955:64"
+              ],
+              "meta": {},
+              "tags": []
+            }
+          ],
+          "startTime": 1791760535897,
+          "endTime": 1791760536344.4255,
+          "status": "failed",
+          "message": "",
+          "name": "D:/UNG DUNG AI/TOOL AI 2026/Controlled-Vibe-Framework-CVF/.cvf/runtime/ncr-history-recovery-20261012/history-journey.probe.test.tsx"
+        }
+      ]
+    },
+    "probeSourceSha256": "9277f73a1815bb3ff90748065941f17a53b1403474609367eaee5ebcd80d9ad7",
+    "configSha256": "bb489a0b25cec71466c5632970810362ea90f8c2998faf8ec7217e274d0c3d28",
+    "setupPath": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/test/setup.ts",
+    "claimScope": "Actual Home/History/store with leaf UI stubs; no complete export/browser/provider proof yet."
+  },
+  "harnessFailures": [
+    {
+      "kind": "CONFIG_IMPORT_ERROR",
+      "log": ".cvf/runtime/ncr-history-recovery-20261012/probe.log",
+      "sha256": "822b1b8b579cf88f54ef532a30878726731e4b4bdb81f072c59292ec25baac04"
+    },
+    {
+      "kind": "MOCK_RESOLUTION_ERROR",
+      "resultPath": ".cvf/runtime/ncr-history-recovery-20261012/probe-harness-results.json",
+      "sha256": "4d42b08d700ad8e297a3e994721acb07fd00a9d32c4e7625ce7ef56237a45435"
+    }
+  ],
+  "selectedOutcome": "Open completed saved result by explicit identity, copy/download and preserve review/child binding across a persisted cold start.",
+  "materialPaths": [
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HISTORY_RECOVERY_2026-10-12.md",
+    "docs/baselines/CVF_GC018_NCR_HISTORY_RECOVERY_2026-10-12.md",
+    "docs/reviews/evidence/ncr-history-recovery-dispatch-20261012.json",
+    "docs/roadmaps/README.md",
+    "CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json",
+    "CVF_SESSION/ACTIVE_SESSION_STATE.json",
+    "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json"
+  ],
+  "workerPaths": [
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.tsx",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/history/page.tsx",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/history-recovery.test.tsx",
+    "docs/reviews/evidence/ncr-history-recovery-worker-20261012.json",
+    "docs/reviews/CVF_NCR_HISTORY_RECOVERY_WORKER_RETURN_2026-10-12.md"
+  ],
+  "continuityPaths": [
+    "AGENT_HANDOFF_V63_2026-09-18.md",
+    "CVF_SESSION_MEMORY.md",
+    "CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json",
+    "CVF_SESSION/state/entries/nextAllowedMove.json",
+    "CVF_SESSION/ACTIVE_SESSION_STATE.json",
+    "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json"
+  ],
+  "claimLimits": "Synthetic client UI/source contradiction only. No stored full-receipt restoration, live governance, backend cancellation, project or whole R1/R4 acceptance.",
+  "workerSampleAdded": false,
+  "requestedConfiguration": {
+    "provider": "Claude",
+    "model": "Sonnet 5.5",
+    "effort": "high",
+    "basis": "standing most recent operator selection; no agent launched",
+    "runtimeIdentity": null
+  }
+}
