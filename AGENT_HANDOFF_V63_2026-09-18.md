@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Current NCR Continuation
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `f9b2b67f1a7683728f729ba77b269d69ae8bf0d5`. Batch ID: CVF-ORACLE-O6-DESIGN-20261011. Material parent anchor for this dedicated continuity sync.
+Current HEAD recorded for this handoff: `2ef6087156583ce01c914a0290792910ca904989`. Batch ID: CVF-PROVENANCE-PUSH-20261011. Private push authorization material anchor; O6 dispatch material remains f9b2b67f1a7683728f729ba77b269d69ae8bf0d5.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
