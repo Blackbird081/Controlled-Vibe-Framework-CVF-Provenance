@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Current NCR Continuation
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `823a01ceba2fd52489cef2f74936f2590e41e61a`. Batch ID: CVF-ORACLE-O6-DESIGN-20261011. Closure metadata parent; accepted design material cc584e69fd4086407806ee9c20deaf1c753724d5.
+Current HEAD recorded for this handoff: `8a5cbfe19cd4f1f4847798b1364d3a870c7c4c45`. Batch ID: CVF-ORACLE-O6-DESIGN-20261011. Transport parent; accepted O6 material cc584e69fd4086407806ee9c20deaf1c753724d5.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -11,7 +11,7 @@ Closed history is preserved byte-for-byte at `CVF_SESSION/handoffs/archive/AGENT
 ## Scope / Target / Owner Boundary
 Operator2026-10-11: audit and choose; Local selects O6 design. Worker preference Haiku ex high, operator-reported; Local does not launch it.
 Role: Local INTERNAL_AGENT reviewer/closer; phase: bounded design closure; decision owner=Local. Worker returned; no redispatch or automatic successor.
-PROGRAM_ID=CVF-CORE; NEXT_ACTION_CLASS=LOCAL_DISPOSITION_ONLY; BATCH_ID=CVF-ORACLE-O6-DESIGN-20261011. STOP_SELECTED_OUTCOME: O6 CLOSED_PASS_BOUNDED_DESIGN_ONLY; completion=docs/reviews/CVF_ORACLE_O6_DESIGN_COMPLETION_2026-10-11.md; material=cc584e69fd4086407806ee9c20deaf1c753724d5. Manual P0-P7 checklist accepted; helper DEFERRED_WITH_REASON until recurrence or admitted negative-heavy reviewer demand; global gate REJECTED. No worker redispatch or automatic successor. Baseline ADIF disclosure corrected at 823a01ceba2fd52489cef2f74936f2590e41e61a; symbol-line candidate confirmed/deferred; scaffold design still deferred pending pinned producer-to-consumer mismatch. Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11 parked; LHW24 retained.
+PROGRAM_ID=CVF-CORE; NEXT_ACTION_CLASS=LOCAL_DISPOSITION_ONLY; BATCH_ID=CVF-ORACLE-O6-DESIGN-20261011. STOP_SELECTED_OUTCOME: O6 CLOSED_PASS_BOUNDED_DESIGN_ONLY; completion=docs/reviews/CVF_ORACLE_O6_DESIGN_COMPLETION_2026-10-11.md; material=cc584e69fd4086407806ee9c20deaf1c753724d5. Manual P0-P7 checklist accepted; helper DEFERRED_WITH_REASON until recurrence or admitted negative-heavy reviewer demand; global gate REJECTED. No worker redispatch or automatic successor. Baseline ADIF disclosure corrected at 823a01ceba2fd52489cef2f74936f2590e41e61a; symbol-line candidate confirmed/deferred; scaffold design still deferred pending pinned producer-to-consumer mismatch. Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11 parked; LHW24 retained. Private provenance transport authorized at 8a5cbfe19cd4f1f4847798b1364d3a870c7c4c45; no outcome reopened.
 Remote tracking branch: `origin/main`. Exact remote SHA must be derived live from git when needed.
 External agent memory files: non-canonical convenience only.
 ## Startup Acknowledgment
