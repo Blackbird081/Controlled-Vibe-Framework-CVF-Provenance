@@ -1,0 +1,320 @@
+{
+  "profileVersion": "cvf.model-selection-reviewed-outcome@0.1.0",
+  "recordId": "model-selection-s2-r2-s2-r1-retrospective",
+  "basis": "RETROSPECTIVE_PROJECTION",
+  "asOf": "2026-10-11T05:20:53Z",
+  "decisionSource": {
+    "locator": "docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_SELECTION_S2_R1_OFFLINE_MANUAL_RECORD_2026-10-11.md",
+    "sha256": "9728b45b6642d25adf89820769bac1a2fdb00dad3678c7ae2d246ed0965f305d"
+  },
+  "decision": {
+    "profileVersion": "cvf.model-selection-manual-record@0.1.0",
+    "recordId": "s2-r1-retrospective-manual-decision",
+    "task": {
+      "taskId": "model-selection-s2-r1-retrospective",
+      "artifact": {
+        "locator": "docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_SELECTION_S2_R1_OFFLINE_MANUAL_RECORD_2026-10-11.md",
+        "sha256": "9728b45b6642d25adf89820769bac1a2fdb00dad3678c7ae2d246ed0965f305d"
+      },
+      "surface": "AGENT_SEAT",
+      "role": "WORKER",
+      "outcome": "bounded offline S2 manual-record validator implementation and return",
+      "acceptanceFloor": {
+        "locator": "docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_SELECTION_S2_R1_OFFLINE_MANUAL_RECORD_2026-10-11.md",
+        "sha256": "9728b45b6642d25adf89820769bac1a2fdb00dad3678c7ae2d246ed0965f305d"
+      },
+      "choiceAuthority": {
+        "locator": "docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_SELECTION_S2_R1_OFFLINE_MANUAL_RECORD_2026-10-11.md#Manual-B-Selection-Rationale",
+        "sha256": "9728b45b6642d25adf89820769bac1a2fdb00dad3678c7ae2d246ed0965f305d"
+      },
+      "choiceKind": "EXPLICIT_ASSIGNMENT",
+      "assignedCandidateId": "assigned-luna-worker",
+      "provisionalAllowed": true
+    },
+    "candidates": [
+      {
+        "candidateId": "assigned-luna-worker",
+        "requested": {
+          "providerProduct": null,
+          "model": "gpt-6-luna",
+          "snapshot": null,
+          "channel": null,
+          "effort": "xhigh",
+          "harnessVersion": null,
+          "toolProfile": null,
+          "role": "WORKER",
+          "unknownReason": "S2-R1 requested Luna/xhigh was retained; unspecified provider, snapshot, channel, harness and tool dimensions were not pinned."
+        },
+        "requestedBasis": "OPERATOR_REPORTED",
+        "observed": {
+          "providerProduct": null,
+          "model": null,
+          "snapshot": null,
+          "channel": null,
+          "effort": null,
+          "harnessVersion": null,
+          "toolProfile": null,
+          "role": null,
+          "unknownReason": "Accepted Local evidence says native worker runtime identity was not exposed; no observed model, snapshot, effort, harness or tool profile is claimed."
+        },
+        "observedBasis": "UNRESOLVED",
+        "runtimeEvidence": null,
+        "eligible": true,
+        "contextDisposition": "PENDING",
+        "availability": "UNKNOWN"
+      }
+    ],
+    "evidence": [],
+    "selection": {
+      "decisionId": "s2-r1-retrospective-decision",
+      "owner": "LOCAL",
+      "decidedAt": "2026-10-11T05:14:00Z",
+      "disposition": "SELECT",
+      "selectedCandidateId": "assigned-luna-worker",
+      "operatorAssignmentDisposition": "HONORED_WITH_EVIDENCE_GAP",
+      "qualityDisposition": "INSUFFICIENT",
+      "evidenceIds": [],
+      "rationale": "Retrospectively projects the S2-R1 explicit Luna/xhigh assignment for an offline outcome example; this is not the original dispatch-time decision freeze or evidence of runtime identity or model quality.",
+      "executionAuthorized": false,
+      "frozenDigests": {
+        "task": "93ce224d595b4d7189859cd965bdc3c464fe03654a3a9f8bd77e7145fd8b66cd",
+        "candidates": "5fea3772d6e11a6f24a8a591aade69972eae97b96b1d737f7fdc160084ddb4ec",
+        "evidence": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "admission": {
+      "disposition": "PENDING",
+      "authorityDisposition": "PENDING",
+      "methodDisposition": "PENDING",
+      "contextDisposition": "PENDING",
+      "budgetDisposition": "PENDING",
+      "availabilityDisposition": "PENDING",
+      "refs": [
+        {
+          "locator": "docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_SELECTION_S2_R1_OFFLINE_MANUAL_RECORD_2026-10-11.md",
+          "sha256": "9728b45b6642d25adf89820769bac1a2fdb00dad3678c7ae2d246ed0965f305d"
+        }
+      ],
+      "reason": "Retrospective projection only; this embedded minimal decision does not recreate or authenticate the original admission receipt."
+    },
+    "cost": {
+      "stages": [],
+      "hardCaps": []
+    },
+    "learningLinks": []
+  },
+  "decisionDigest": "d471efa8da7661d54e295689f49a1dd1f4d26609becd62ab7d38f97b680a7edb",
+  "outcome": {
+    "outcomeId": "s2-r1-retrospective-reviewed-outcome",
+    "decisionId": "s2-r1-retrospective-decision",
+    "primaryAttemptId": "s2-r1-primary-attempt",
+    "attempts": [
+      {
+        "attemptId": "s2-r1-primary-attempt",
+        "candidateId": "assigned-luna-worker",
+        "executionRef": {
+          "locator": "docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_SELECTION_S2_R1_OFFLINE_MANUAL_RECORD_2026-10-11.md",
+          "sha256": "9728b45b6642d25adf89820769bac1a2fdb00dad3678c7ae2d246ed0965f305d"
+        },
+        "workerActor": "INTERNAL_AGENT_S2_WORKER",
+        "workerInvocationId": "/root/s2_luna_worker",
+        "status": "COMPLETED",
+        "startedAt": "2026-10-11T03:34:47Z",
+        "endedAt": "2026-10-11T04:04:37Z",
+        "clockUnknownReason": null,
+        "observed": {
+          "providerProduct": null,
+          "model": null,
+          "snapshot": null,
+          "channel": null,
+          "effort": null,
+          "harnessVersion": null,
+          "toolProfile": null,
+          "role": null,
+          "unknownReason": "Accepted Local evidence says native worker runtime identity was not exposed; no observed model, snapshot, effort, harness or tool profile is claimed."
+        },
+        "observedBasis": "UNRESOLVED",
+        "runtimeEvidence": null,
+        "configurationDisposition": "UNKNOWN"
+      }
+    ],
+    "failedOrAbandonedAttemptIds": [],
+    "initialReturn": {
+      "ref": {
+        "locator": "docs/reviews/CVF_MODEL_SELECTION_S2_R1_WORKER_RETURN_2026-10-11.md",
+        "sha256": "0aa4d0db58b19c4c59b0404896253191487f616b3b575d06b6dfa2612b2262dc"
+      },
+      "artifacts": [
+        {
+          "locator": "governance/compat/model_selection_manual_record.py",
+          "sha256": "797af1a112df13b8e951c91074df749c295f3eab694df7a098c85740beb07032"
+        },
+        {
+          "locator": "governance/compat/test_model_selection_manual_record.py",
+          "sha256": "a063dae99b57754f06b10a11c7983ade2fb1018a142615d9aeb2b9a6950c35ef"
+        },
+        {
+          "locator": "docs/reviews/evidence/model-selection-s2-r1-example-20261011.json",
+          "sha256": "5ad6df40bbcf9f7e4ac1f2a27697373f67ac4a4adc2c58c43db6140386c48e4f"
+        },
+        {
+          "locator": "docs/guides/CVF_MODEL_SELECTION_MANUAL_RECORD_VALIDATION_2026-10-11.md",
+          "sha256": "d5fb426a65175e10b21d9f57cf00ec47ea97bd638545143f14773b603b08b083"
+        }
+      ],
+      "firstDisposition": "PENDING_REVIEW",
+      "capturedAt": null,
+      "unknownReason": "The accepted Local evidence pins the submitted return bytes but not an exact initial-capture timestamp."
+    },
+    "finalReturn": {
+      "locator": "docs/reviews/CVF_MODEL_SELECTION_S2_R1_WORKER_RETURN_2026-10-11.md",
+      "sha256": "93b86de22ab93de3a5dc6ceb488491b904f374b7db16653e6914a14da567ba4e"
+    },
+    "repairs": [
+      {
+        "repairId": "local-review-validator-semantic-repair",
+        "attemptId": "s2-r1-primary-attempt",
+        "actor": "LOCAL_REVIEWER_CODEX_ROOT",
+        "invocationId": "cvf-model-selection-s2-r1-independent-cli-api-20261011",
+        "kind": "REPAIR",
+        "phase": "LOCAL_REVIEW",
+        "before": {
+          "locator": "governance/compat/model_selection_manual_record.py",
+          "sha256": "797af1a112df13b8e951c91074df749c295f3eab694df7a098c85740beb07032"
+        },
+        "after": {
+          "locator": "governance/compat/model_selection_manual_record.py",
+          "sha256": "8db98426eeeb6ea9f13f8d78efcc3bee15f57ccb2e586081577b3559a1374c0e"
+        },
+        "reason": "Consolidated Local semantic repair attribution for controlled malformed-input diagnostics, safe joins, and strict time validation; five root-cause groups are detailed in the pinned Local completion and evidence. Submitted-to-accepted attribution does not claim intermediate edit completeness.",
+        "at": null,
+        "clockUnknownReason": "Exact per-repair time was not retained in the pinned Local evidence; no review-stage clock is substituted."
+      },
+      {
+        "repairId": "local-review-test-semantic-repair",
+        "attemptId": "s2-r1-primary-attempt",
+        "actor": "LOCAL_REVIEWER_CODEX_ROOT",
+        "invocationId": "cvf-model-selection-s2-r1-independent-cli-api-20261011",
+        "kind": "REPAIR",
+        "phase": "LOCAL_REVIEW",
+        "before": {
+          "locator": "governance/compat/test_model_selection_manual_record.py",
+          "sha256": "a063dae99b57754f06b10a11c7983ade2fb1018a142615d9aeb2b9a6950c35ef"
+        },
+        "after": {
+          "locator": "governance/compat/test_model_selection_manual_record.py",
+          "sha256": "74776e46a025c7d9585174f911680476223adeae410bc2b1e750f6712007e0ad"
+        },
+        "reason": "Consolidated Local regression additions covering malformed identities and joins, JSON pointers, held budget boundaries, and strict timestamps, as part of the five semantic repair groups pinned by Local evidence.",
+        "at": null,
+        "clockUnknownReason": "Exact per-repair time was not retained in the pinned Local evidence; no review-stage clock is substituted."
+      },
+      {
+        "repairId": "local-review-example-projection-repair",
+        "attemptId": "s2-r1-primary-attempt",
+        "actor": "LOCAL_REVIEWER_CODEX_ROOT",
+        "invocationId": "cvf-model-selection-s2-r1-independent-cli-api-20261011",
+        "kind": "REPAIR",
+        "phase": "LOCAL_REVIEW",
+        "before": {
+          "locator": "docs/reviews/evidence/model-selection-s2-r1-example-20261011.json",
+          "sha256": "5ad6df40bbcf9f7e4ac1f2a27697373f67ac4a4adc2c58c43db6140386c48e4f"
+        },
+        "after": {
+          "locator": "docs/reviews/evidence/model-selection-s2-r1-example-20261011.json",
+          "sha256": "ff162e891be3e4216c7a7f96a8c0c34a95ad897b2161f8e2987b3a847a0d0ed0"
+        },
+        "reason": "Corrected the derived example's reported S3 Claude Haiku configuration and preserved S4 ACTION_VERIFIED/PARTIAL learning consumption, separate from S2 requested Luna/xhigh; one of five Local semantic repair groups.",
+        "at": null,
+        "clockUnknownReason": "Exact per-repair time was not retained in the pinned Local evidence; no review-stage clock is substituted."
+      },
+      {
+        "repairId": "local-review-guide-semantic-addendum",
+        "attemptId": "s2-r1-primary-attempt",
+        "actor": "LOCAL_REVIEWER_CODEX_ROOT",
+        "invocationId": "cvf-model-selection-s2-r1-independent-cli-api-20261011",
+        "kind": "REPAIR",
+        "phase": "LOCAL_REVIEW",
+        "before": {
+          "locator": "docs/guides/CVF_MODEL_SELECTION_MANUAL_RECORD_VALIDATION_2026-10-11.md",
+          "sha256": "d5fb426a65175e10b21d9f57cf00ec47ea97bd638545143f14773b603b08b083"
+        },
+        "after": {
+          "locator": "docs/guides/CVF_MODEL_SELECTION_MANUAL_RECORD_VALIDATION_2026-10-11.md",
+          "sha256": "256632f03670680e97ebb56f0d2eab6217c9fc8e6c1855f03946771e013817a3"
+        },
+        "reason": "The Local review amended the guide alongside helper/tests/example to record the five bounded semantic findings and their claim limits; submitted-to-accepted attribution does not claim intermediate edit completeness.",
+        "at": null,
+        "clockUnknownReason": "Exact per-repair time was not retained in the pinned Local evidence; no review-stage clock is substituted."
+      },
+      {
+        "repairId": "local-review-return-pin-correction",
+        "attemptId": "s2-r1-primary-attempt",
+        "actor": "LOCAL_REVIEWER_CODEX_ROOT",
+        "invocationId": "cvf-model-selection-s2-r1-independent-cli-api-20261011",
+        "kind": "REPAIR",
+        "phase": "LOCAL_REVIEW",
+        "before": {
+          "locator": "docs/reviews/CVF_MODEL_SELECTION_S2_R1_WORKER_RETURN_2026-10-11.md",
+          "sha256": "0aa4d0db58b19c4c59b0404896253191487f616b3b575d06b6dfa2612b2262dc"
+        },
+        "after": {
+          "locator": "docs/reviews/CVF_MODEL_SELECTION_S2_R1_WORKER_RETURN_2026-10-11.md",
+          "sha256": "93b86de22ab93de3a5dc6ceb488491b904f374b7db16653e6914a14da567ba4e"
+        },
+        "reason": "Local review amended the return with the five semantic findings and addendum; its accepted bytes also reflect two Local SCEC closure-packaging corrections (resolution and closed-order predecessor), distinct from semantic repairs.",
+        "at": null,
+        "clockUnknownReason": "Exact per-repair time was not retained in the pinned Local evidence; no review-stage clock is substituted."
+      },
+      {
+        "repairId": "closure-packaging-assistance",
+        "attemptId": "s2-r1-primary-attempt",
+        "actor": "LOCAL_REVIEWER_CODEX_ROOT",
+        "invocationId": "cvf-model-selection-s2-r1-independent-cli-api-20261011",
+        "kind": "ASSISTANCE",
+        "phase": "CLOSURE_PACKAGING",
+        "before": null,
+        "after": null,
+        "reason": "Separate Local SCEC resolution and closed-order predecessor pin corrections were closure packaging, not additional semantic repair groups.",
+        "at": null,
+        "clockUnknownReason": "Exact per-repair time was not retained in the pinned Local evidence; no review-stage clock is substituted."
+      }
+    ],
+    "review": {
+      "disposition": "ACCEPTED_BOUNDED",
+      "actor": "LOCAL_REVIEWER_CODEX_ROOT",
+      "invocationId": "cvf-model-selection-s2-r1-independent-cli-api-20261011",
+      "ref": {
+        "locator": "docs/reviews/CVF_MODEL_SELECTION_S2_R1_COMPLETION_2026-10-11.md",
+        "sha256": "94a9eb529aaaa9f5792c31d0fbcc5b0dd15e64f5a159df0dbce1cfd471284c64"
+      },
+      "reviewedAt": null,
+      "unknownReason": "The pinned completion/evidence retain probe and verification clocks but not an exact terminal review acceptance timestamp."
+    },
+    "technicalDisposition": "ACCEPTED_BOUNDED",
+    "procedureDisposition": "PASS",
+    "procedureReason": "The final frozen worker return gate passed 70/70 and the Local independent source-derived CLI/API oracle passed 65/65. Earlier worker return gate attempts failed packet-shape checks and were repaired; those initial failures remain recorded in the pinned worker evidence.",
+    "acceptedArtifacts": [
+      {
+        "locator": "governance/compat/model_selection_manual_record.py",
+        "sha256": "8db98426eeeb6ea9f13f8d78efcc3bee15f57ccb2e586081577b3559a1374c0e"
+      },
+      {
+        "locator": "governance/compat/test_model_selection_manual_record.py",
+        "sha256": "74776e46a025c7d9585174f911680476223adeae410bc2b1e750f6712007e0ad"
+      },
+      {
+        "locator": "docs/reviews/evidence/model-selection-s2-r1-example-20261011.json",
+        "sha256": "ff162e891be3e4216c7a7f96a8c0c34a95ad897b2161f8e2987b3a847a0d0ed0"
+      },
+      {
+        "locator": "docs/guides/CVF_MODEL_SELECTION_MANUAL_RECORD_VALIDATION_2026-10-11.md",
+        "sha256": "256632f03670680e97ebb56f0d2eab6217c9fc8e6c1855f03946771e013817a3"
+      }
+    ],
+    "telemetry": [],
+    "remainingParentTaskSpend": [],
+    "deviations": [],
+    "limitations": "Source pins: original worker evidence docs/reviews/evidence/model-selection-s2-r1-worker-20261011.json SHA-256 bcfa4322f63c44f91cd63c37ed300498de679fdbfeeabf462aba85ba1d96cbf7; Local review evidence docs/reviews/evidence/model-selection-s2-r1-local-review-20261011.json SHA-256 344d2b8f068dc262610220c7c465cfe041df1a9f24b0e4e0aafb07c4920bd3c5; Local completion is pinned by review.ref. The initial submitted and accepted return pins remain distinct. This projection does not authenticate source truth, worker/runtime identity, hidden attempts, provider usage or current source status. The native requested Luna/xhigh assignment is separate from the current worker's Luna/max request. Money, tokens, quota, processing time, and comparable human effort remain unknown; empty spend lists are not zero. This is offline consistency evidence, not model ranking, quality upgrade, selector authority, runtime behavior, or complete R3 implementation."
+  }
+}

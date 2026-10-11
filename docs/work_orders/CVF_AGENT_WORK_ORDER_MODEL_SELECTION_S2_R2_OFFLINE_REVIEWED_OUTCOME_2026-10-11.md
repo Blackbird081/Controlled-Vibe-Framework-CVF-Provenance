@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 docType: work_order
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 Date: 2026-10-11
 Batch ID: CVF-MODEL-SELECTION-S2-R2-20261011
 Dispatch base head: 2e1c83eb1b16698c282e3b8888b34258d1428ba2
@@ -138,7 +138,7 @@ Operator has explicitly selected the offline outcome branch and current requeste
 
 ## Verification Commands
 
-Before edits: `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base <executionBaseHead> --head HEAD --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_SELECTION_S2_R2_OFFLINE_REVIEWED_OUTCOME_2026-10-11.md`. Focused proof: `python -m unittest governance.compat.test_model_selection_manual_record -v`; `python governance/compat/model_selection_reviewed_outcome.py --input docs/reviews/evidence/model-selection-s2-r2-outcome-example-20261011.json`. Required return: `python governance/compat/run_worker_return_fast_gate.py --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_SELECTION_S2_R2_OFFLINE_REVIEWED_OUTCOME_2026-10-11.md`; `git diff --check`; `git status --short`. Run full autorun if a relevant conditional checker is absent from the fast bundle; retain the first failure and actual final logs.
+Before edits: `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base <executionBaseHead> --head HEAD --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_SELECTION_S2_R2_OFFLINE_REVIEWED_OUTCOME_2026-10-11.md`. Focused proof: `python -m unittest governance.compat.test_model_selection_reviewed_outcome -v`; `python governance/compat/model_selection_reviewed_outcome.py --input docs/reviews/evidence/model-selection-s2-r2-outcome-example-20261011.json`. Required return: `python governance/compat/run_worker_return_fast_gate.py --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_SELECTION_S2_R2_OFFLINE_REVIEWED_OUTCOME_2026-10-11.md`; `git diff --check`; `git status --short`. Run full autorun if a relevant conditional checker is absent from the fast bundle; retain the first failure and actual final logs.
 
 ## Worker Autonomy / No-Question Rule
 
@@ -381,7 +381,7 @@ This graph assigns repair and commit owners; it does not report those future gat
 ## Task Governance Routing Manifest
 
 ```json
-{"schemaVersion":"cvf.taskGovernanceManifest.v1","taskId":"CVF-MODEL-SELECTION-S2-R2-20261011","requestedProfile":"P3_ELEVATED","classification":{"taskKind":"PURE_LOCAL_IMPLEMENTATION","authorityImpact":"USES_EXISTING_OWNER","externalEffect":"LOCAL_REVERSIBLE","dataSensitivity":"PRIVATE_REPO","reversibility":"GIT_REVERSIBLE","sourceScale":"NAMED_FILES","delegation":"MULTI_ROLE_NO_COMMIT","novelty":"NEW_INTERFACE"},"pathFamilies":["docs/baselines/CVF_GC018_MODEL_SELECTION_S2_R2_OFFLINE_REVIEWED_OUTCOME_2026-10-11.md","docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_SELECTION_S2_R2_OFFLINE_REVIEWED_OUTCOME_2026-10-11.md","docs/reference/CVF_MODEL_SELECTION_REVIEWED_OUTCOME_PROFILE_2026-10-11.md","governance/compat/model_selection_reviewed_outcome.py","governance/compat/test_model_selection_reviewed_outcome.py","docs/reviews/evidence/model-selection-s2-r2-outcome-example-20261011.json","docs/guides/CVF_MODEL_SELECTION_REVIEWED_OUTCOME_VALIDATION_2026-10-11.md","docs/reviews/CVF_MODEL_SELECTION_S2_R2_WORKER_RETURN_2026-10-11.md","docs/reviews/evidence/model-selection-s2-r2-worker-20261011.json","docs/roadmaps/CVF_ORCHESTRATOR_MODEL_SELECTION_SYSTEM_CHAIN_ROADMAP_2026-10-10.md","AGENT_HANDOFF_V63_2026-09-18.md"],"claims":["OFFLINE_DECLARED_RECORD_CONSISTENCY_ONLY","NO_RUNTIME_OR_MODEL_QUALITY_CLAIM"],"requiredProof":["STATIC_TESTS","EXAMPLE_RESULT","RETURN_GATE","OBSERVATION_ACTION"],"operatorCheckpoints":[],"forbiddenEffects":["PROVIDER_CALL","NETWORK_WRITE","PUBLIC_WRITE","DEPLOYMENT","REAL_DATA_MUTATION","HOOK_WIRING"],"sourceEvidence":{"selectedFilesFullyRead":false,"corpusReceiptRef":null,"completenessClaimChanged":false}}
+{"schemaVersion":"cvf.taskGovernanceManifest.v1","taskId":"CVF-MODEL-SELECTION-S2-R2-20261011","requestedProfile":"P3_ELEVATED","classification":{"taskKind":"PURE_LOCAL_IMPLEMENTATION","authorityImpact":"USES_EXISTING_OWNER","externalEffect":"LOCAL_REVERSIBLE","dataSensitivity":"PRIVATE_REPO","reversibility":"GIT_REVERSIBLE","sourceScale":"NAMED_FILES","delegation":"MULTI_ROLE_NO_COMMIT","novelty":"NEW_INTERFACE"},"pathFamilies":["docs/baselines/CVF_GC018_MODEL_SELECTION_S2_R2_OFFLINE_REVIEWED_OUTCOME_2026-10-11.md","docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_SELECTION_S2_R2_OFFLINE_REVIEWED_OUTCOME_2026-10-11.md","docs/reference/CVF_MODEL_SELECTION_REVIEWED_OUTCOME_PROFILE_2026-10-11.md","governance/compat/model_selection_reviewed_outcome.py","governance/compat/test_model_selection_reviewed_outcome.py","docs/reviews/evidence/model-selection-s2-r2-outcome-example-20261011.json","docs/guides/CVF_MODEL_SELECTION_REVIEWED_OUTCOME_VALIDATION_2026-10-11.md","docs/reviews/CVF_MODEL_SELECTION_S2_R2_WORKER_RETURN_2026-10-11.md","docs/reviews/evidence/model-selection-s2-r2-worker-20261011.json","docs/roadmaps/CVF_ORCHESTRATOR_MODEL_SELECTION_SYSTEM_CHAIN_ROADMAP_2026-10-10.md","AGENT_HANDOFF_V63_2026-09-18.md","docs/reviews/evidence/model-selection-s2-r2-local-review-20261011.json","docs/reviews/CVF_MODEL_SELECTION_S2_R2_COMPLETION_2026-10-11.md","CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json","CVF_SESSION/ACTIVE_SESSION_STATE.json","CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json"],"claims":["OFFLINE_DECLARED_RECORD_CONSISTENCY_ONLY","NO_RUNTIME_OR_MODEL_QUALITY_CLAIM"],"requiredProof":["STATIC_TESTS","EXAMPLE_RESULT","RETURN_GATE","OBSERVATION_ACTION"],"operatorCheckpoints":[],"forbiddenEffects":["PROVIDER_CALL","NETWORK_WRITE","PUBLIC_WRITE","DEPLOYMENT","REAL_DATA_MUTATION","HOOK_WIRING"],"sourceEvidence":{"selectedFilesFullyRead":false,"corpusReceiptRef":null,"completenessClaimChanged":false}}
 ```
 
 ## Corpus Completeness And Report Integrity
@@ -509,3 +509,32 @@ Exact changed manifest:
 Core Guard Self-Protection Authorization for the same pre-release correction: Protected paths: `AGENT_HANDOFF_V63_2026-09-18.md`. Operator authorization: fresh offline outcome continuation; marker-only maintenance to satisfy GC-020, not an execution grant. Rollback boundary: revert matching correction/marker; canonical generator-based execution continuity is later.
 
 Correction authoring guard diagnosed the exact marker path missing from TPGR pathFamilies; added only that Local-owned handoff marker path. Worker write ownership stays the same six paths. Original source/decision histories and failed guard logs retained.
+
+## Local Closure Receipt
+
+CLOSED_PASS_BOUNDED: `docs/reviews/CVF_MODEL_SELECTION_S2_R2_COMPLETION_2026-10-11.md`; independent evidence `docs/reviews/evidence/model-selection-s2-r2-local-review-20261011.json`. Original dispatch raw SHA `d089b84557c715b0c24ad5a79498f30e1de7fe3264f4177cc518914de8b8943c`; frozen Manual B rationale UTF-8 LF section SHA `387a3950799dd83928f891b87585640e4d83bb5b8d57f72fcbca229ab6af6487` retained. Verification Commands old-test-module typo corrected; no dispatch authority or locked profile change, no redispatch.
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| Worker scope | six exact outputs | submitted originals and accepted pins in Local evidence | PASS |
+| Locked contract | exact source profile | raw SHA 612735bf1f27354b9b5e9389239fa9ded6d3aeb9a77bfb4da63da4376eb84c5d retained | PASS |
+| Consumer | useful S2-R1 retrospective projection and guide | real CLI consistency plus source/repair attribution review | PASS_BOUNDED |
+| Independence | distinct actual Local oracle | 129/129 source-derived API/CLI cases | PASS |
+| Returned proof | focused tests and final-byte gate | consumed pinned worker logs; first failures retained | PASS_WITH_LIMIT |
+| Learning boundary | action/result rather than citation | S2-R1 repair-attribution ACTION_VERIFIED/PARTIAL | PASS_BOUNDED |
+| Runtime and cost | requested versus observed; unlike units | Luna/max requested; observed identity and bill unknown | PASS_BOUNDED |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_SELECTION_S2_R2_OFFLINE_REVIEWED_OUTCOME_2026-10-11.md` | CLOSED_PASS_BOUNDED; frozen rationale/profile retained | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_MODEL_SELECTION_S2_R2_COMPLETION_2026-10-11.md` and `docs/reviews/evidence/model-selection-s2-r2-local-review-20261011.json` | actual distinct-actor probe and submitted/accepted evidence | PASS |
+| Roadmap state | `docs/roadmaps/CVF_ORCHESTRATOR_MODEL_SELECTION_SYSTEM_CHAIN_ROADMAP_2026-10-10.md` | bounded S2-R1 decision and S2-R2 outcome helpers; S5 parked | PASS |
+| Registry JSON | task worker/Local evidence and retrospective example | existing evidence home; no global outcome store | PASS |
+| Registry Markdown | guide, return and completion | usable offline consumer and explicit limits | PASS |
+| External evidence digest | original internal S2-R1 sources | no external intake in this task | N/A with reason: internal task |
+| System loop interlock | closed order and locked optional profile | data consistency only; executionAuthorized=false | PASS |
+| Session continuity | core authority hash and generated projections | closed-order hash atomic; actual-SHA semantic continuity follows | PASS |

@@ -1,0 +1,355 @@
+{
+  "schemaVersion": "cvf.modelSelectionS2R2WorkerEvidence@0.1.0",
+  "batchId": "CVF-MODEL-SELECTION-S2-R2-20261011",
+  "role": "INTERNAL_AGENT implementation worker",
+  "phase": "bounded offline implementation and return",
+  "decisionOwner": "Local independent reviewer/closer",
+  "executionBaseHead": "0bf6f773ee755d8e20e24678c646e5da3bb3ba09",
+  "attemptCount": 1,
+  "requestedModel": "gpt-6-luna",
+  "requestedEffort": "max",
+  "observedRuntimeModel": "UNKNOWN",
+  "observedSnapshot": "UNKNOWN",
+  "observedEffort": "UNKNOWN",
+  "observedHarness": "UNKNOWN",
+  "providerOrDirectApiCall": false,
+  "externalInvocationCount": 0,
+  "providerCallCount": 0,
+  "clockAndUsage": {
+    "workerFirstClockUtc": "2026-10-11T05:04:57Z",
+    "workerDeadlineUtc": "2026-10-11T05:49:57Z",
+    "workerEndUtc": "SEE_DETACHED_FINAL_TIME_LOG",
+    "workerElapsedSecondsAtEnd": null,
+    "endTimeEvidence": ".cvf/runtime/model-selection-s2-r2-20261011/final-time.log",
+    "endTimeReason": "Exact frozen-byte gate completion time and elapsed seconds are captured in the detached ignored runtime log after tracked evidence is frozen.",
+    "money": null,
+    "moneyReason": "UNKNOWN_NOT_EXPOSED_BY_NATIVE_WORKER_SURFACE",
+    "tokens": null,
+    "tokensReason": "UNKNOWN_NOT_EXPOSED_BY_NATIVE_WORKER_SURFACE",
+    "quota": null,
+    "quotaReason": "UNKNOWN_NOT_EXPOSED_BY_NATIVE_WORKER_SURFACE",
+    "processingTimeSeconds": null,
+    "processingTimeReason": "UNKNOWN_NOT_EXPOSED_BY_NATIVE_WORKER_SURFACE",
+    "humanMinutes": null,
+    "humanMinutesReason": "NOT_METERED_FOR_THIS_WORKER_TASK",
+    "rootPreparationAndReviewCost": "RECORDED_SEPARATELY_BY_LOCAL; NOT_ATTRIBUTED_TO_WORKER_OR_REQUESTED_MODEL"
+  },
+  "sourcePins": [
+    {
+      "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_SELECTION_S2_R2_OFFLINE_REVIEWED_OUTCOME_2026-10-11.md",
+      "sha256": "d089b84557c715b0c24ad5a79498f30e1de7fe3264f4177cc518914de8b8943c",
+      "use": "Active scope, six paths, profile requirements, acceptance ledger, role and owner contract."
+    },
+    {
+      "path": "docs/baselines/CVF_GC018_MODEL_SELECTION_S2_R2_OFFLINE_REVIEWED_OUTCOME_2026-10-11.md",
+      "sha256": "416d46577e8d95e29fd2b03042e63410b1f5cbe00670d96ac1bdd82dc5a2c852",
+      "use": "Bounded objective, evidence floor, constraints and source boundary."
+    },
+    {
+      "path": "docs/reference/CVF_MODEL_SELECTION_REVIEWED_OUTCOME_PROFILE_2026-10-11.md",
+      "sha256": "612735bf1f27354b9b5e9389239fa9ded6d3aeb9a77bfb4da63da4376eb84c5d",
+      "use": "Locked contract shapes, enums, joins, chronology, API, CLI and failure contract."
+    },
+    {
+      "path": "docs/reference/CVF_MODEL_SELECTION_MANUAL_RECORD_PROFILE_2026-10-11.md",
+      "sha256": "ffa0bda042b6f7f16f30de412f3f3e11eff7b64b193273e108c672109cb4e5c6",
+      "use": "Existing embedded decision contract and canonical digest rules."
+    },
+    {
+      "path": "governance/compat/model_selection_manual_record.py",
+      "sha256": "8db98426eeeb6ea9f13f8d78efcc3bee15f57ccb2e586081577b3559a1374c0e",
+      "use": "Unmodified public validate_record(record) API reused by the companion."
+    },
+    {
+      "path": "docs/reviews/CVF_MODEL_SELECTION_S2_R1_COMPLETION_2026-10-11.md",
+      "sha256": "94a9eb529aaaa9f5792c31d0fbcc5b0dd15e64f5a159df0dbce1cfd471284c64",
+      "use": "Source-bound initial/final review outcome and attributed Local repair groups."
+    },
+    {
+      "path": "docs/reviews/evidence/model-selection-s2-r1-worker-20261011.json",
+      "sha256": "bcfa4322f63c44f91cd63c37ed300498de679fdbfeeabf462aba85ba1d96cbf7",
+      "use": "Original worker evidence, submitted/final return distinction and product pins."
+    },
+    {
+      "path": "docs/reviews/evidence/model-selection-s2-r1-local-review-20261011.json",
+      "sha256": "344d2b8f068dc262610220c7c465cfe041df1a9f24b0e4e0aafb07c4920bd3c5",
+      "use": "Different-actor disposition, accepted pins and Local repair evidence."
+    },
+    {
+      "path": "docs/reviews/CVF_WORKER_MODEL_USAGE_OBSERVATION_SUPPLEMENT_2026-10-11.md",
+      "sha256": "9f5bada8150da021d6d527d52028aef0882d69ca2184f686d20dbbc0d24740d2",
+      "use": "Bounded usage and attribution observations; no model-ranking basis."
+    },
+    {
+      "path": "docs/roadmaps/CVF_ORCHESTRATOR_MODEL_SELECTION_SYSTEM_CHAIN_ROADMAP_2026-10-10.md",
+      "sha256": "98febb9d9cf53f245aec498791c6910f5c61778e65b95f9f20e56d4c158dc2a9",
+      "use": "R3 boundary, demand-gated outcome join and S5 parked state."
+    },
+    {
+      "path": "CVF_SESSION_MEMORY.md",
+      "sha256": "ca39458dac081c4925820a93a48883167009b2141e360b11494ec495fc96fc8c",
+      "use": "Startup front door and current-session routing."
+    },
+    {
+      "path": "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json",
+      "sha256": "79188be2711eabfc8e5ecbc62b7c0803e9d19bb0b718f09d4d4ff80773f3d791",
+      "use": "Current mode, handoff and next allowed move."
+    },
+    {
+      "path": "AGENT_HANDOFF_V63_2026-09-18.md",
+      "sha256": "32a90bf4d6c46906de1c3b87908d3edffed2cc82bc390638924e035937b430f2",
+      "use": "Named active handoff and parked checkpoint."
+    },
+    {
+      "path": "docs/reference/guard_orientation/README.md",
+      "sha256": "3ad845e61de40db20a300adbfdcf61db72cc68a334229ce26315db44fac6af7f",
+      "use": "Role/task guard routing."
+    },
+    {
+      "path": "docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md",
+      "sha256": "dcb12ad8df392298ebd54b3cb4a721553387329d9053e26543f1ab0b3d1d8996",
+      "use": "Literal formatting and gate traps."
+    },
+    {
+      "path": "docs/reference/CVF_GOVERNED_WORK_LIFECYCLE_AND_DESIGN_CONTROL_STANDARD_2026-06-11.md",
+      "sha256": "b48f11363ee62a2ec4c85c6f9fba4540b90eb74475c31aeab18cfe4492a536de",
+      "use": "Action readiness and continuation requirements."
+    },
+    {
+      "path": "docs/reference/external_agent_review/CVF_CROSS_WORKSPACE_EVIDENCE_RELAY_METHOD.md",
+      "sha256": "4616ac6986c9a8e0f8049c3432f7b6febc7bc8a9c361f8540ec78a590b77b869",
+      "use": "External/Local role boundary."
+    },
+    {
+      "path": "docs/reference/external_agent_review/CVF_CROSS_WORKSPACE_DOMAIN_FUNNEL_ABSORPTION_METHOD.md",
+      "sha256": "a584b8f419fac59914d800ddef38eb49ae9723459b5b3c07ba7a3352fe7dfa88",
+      "use": "External intake and Local decision ownership."
+    },
+    {
+      "path": "governance/compat/check_worker_return_quality_gate.py",
+      "sha256": "c87f1a50dd95af3459e3af1bcc6aaed8e0c1f5cec28e7761a9f3b254f3ec7257",
+      "use": "Required headings, command evidence, checker integration and claim bounds."
+    },
+    {
+      "path": "governance/compat/check_markdown_structural_completeness.py",
+      "sha256": "a76806333a19814c1cb1fe04f305dec33a9c5572175db728e30441637d2e78c7",
+      "use": "Review guide structure and governed-document front matter."
+    },
+    {
+      "path": "governance/compat/check_work_order_dispatch_quality.py",
+      "sha256": "a2356b1d86c32ddd3773eb908e13d0ef698d4cbc58500da2bb983a718caa8988",
+      "use": "Source verification table and source path requirements."
+    },
+    {
+      "path": "governance/compat/check_agent_packet_authority_and_encoding.py",
+      "sha256": "5f1ce8f2cde856707e6375ebdc6667f270db411aabb3971c85981e757abb3d78",
+      "use": "Encoding and packet authority checks."
+    },
+    {
+      "path": "governance/compat/check_work_order_acceptance_ledger.py",
+      "sha256": "8b6ce487f01eb432cab16456da98c79f0995468f6a1da8c16765d204cc6a39b4",
+      "use": "Acceptance evidence schema, artifact/proof join and terminal reducer."
+    },
+    {
+      "path": "governance/compat/check_core_guard_self_protection.py",
+      "sha256": "fb373c5efa08b6fd6a8a4bfcfa7d58918a102e4d23f6f1b3bb29c3689e800c60",
+      "use": "Protected-path authorization language."
+    },
+    {
+      "path": "governance/compat/check_semantic_convergence_control.py",
+      "sha256": "94d4a26f130f5fd20eefa54871e3533e9755164dfc8204864e7f555f211352e9",
+      "use": "SCEC schema, predecessor/hash, blocker transitions and resolution evidence."
+    },
+    {
+      "path": "governance/compat/check_review_cost_control.py",
+      "sha256": "82d970a5f89fb33bb4d400ffc64330d1ee54c637a2817295beb781c77d590c6c",
+      "use": "Dispatch and worker convergence/cost fields."
+    },
+    {
+      "path": "governance/compat/check_agent_operation_trace.py",
+      "sha256": "57aaac11abdca0b7a94998dfb21bc259d8013ce0b9bdc9d53a906202e9fabaaa",
+      "use": "Operation-trace required labels."
+    },
+    {
+      "path": "governance/compat/check_delta_execution_claim_boundary.py",
+      "sha256": "595c639e27ce9cafe40ee7d3a79bebc624ba18df5b09aca9ef8259630466f782",
+      "use": "Delta claim-boundary required fields."
+    },
+    {
+      "path": "governance/compat/check_independent_review_probe_admission.py",
+      "sha256": "738cfd2da5a58910d7334805fb9bab074ddddfc8c156e4a2a9f4573c6ac51a96",
+      "use": "Independent Local review disposition remains pending."
+    },
+    {
+      "path": "governance/compat/check_finding_to_governance_learning.py",
+      "sha256": "338a3d7492ad6fd6b962157a668c3d13a47b286580c36a26f1acf897a50049ea",
+      "use": "Learning disposition and recurrence requirements."
+    },
+    {
+      "path": "governance/compat/check_worker_experience_retrospective.py",
+      "sha256": "230f30ec0821e94f56daeabcb3b134459706089dae945777f59eb779fa0c0d88",
+      "use": "Worker friction retrospective token and enum contract."
+    },
+    {
+      "path": "governance/compat/check_python_automation_size.py",
+      "sha256": "e3925c1ebff7f8fff0ac3aa279b0c02bfae9ec2add1ed047b3cb76b25508b9c1",
+      "use": "Python advisory/hard size limits."
+    },
+    {
+      "path": "governance/compat/run_worker_return_fast_gate.py",
+      "sha256": "7cab0762f628f30b5337dc8a9e33ab91688d2fe5079029e96360647befd83a2d",
+      "use": "Required aggregate worker-return preparation gate."
+    }
+  ],
+  "preImplementationGate": {
+    "command": "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base 0bf6f773ee755d8e20e24678c646e5da3bb3ba09 --head HEAD --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_SELECTION_S2_R2_OFFLINE_REVIEWED_OUTCOME_2026-10-11.md",
+    "status": "PASS",
+    "commandsPassed": 88,
+    "commandsTotal": 88,
+    "elapsedSeconds": 10.171,
+    "receiptDigest": "8e9f43509853889ddaefff55f0e421b152ea6b9fe515f2481129a495e1a60dee",
+    "generatedIgnoredReceipt": ".cvf/runtime/autorun-receipts/pre-implementation.json",
+    "receiptInterpretation": "Bound pre-edit evidence at the execution base; not runtime or model-quality proof."
+  },
+  "implementation": {
+    "dependencyPolicy": "Python standard library only",
+    "sideEffects": "No network, reference following, install, provider behavior, persistent write, or runtime integration.",
+    "validatorLineCount": 766,
+    "testLineCount": 289,
+    "pythonAutomationSizeGuard": {
+      "command": "python governance/compat/check_python_automation_size.py --enforce",
+      "status": "PASS",
+      "hardLimitLines": 900,
+      "advisoryLines": 600,
+      "violations": 0,
+      "advisoryDisposition": "VALIDATOR_ABOVE_SOFT_ADVISORY_BELOW_HARD_LIMIT; disclosed in worker return"
+    },
+    "firstTestRun": {
+      "command": "python -m unittest governance.compat.test_model_selection_reviewed_outcome -v",
+      "status": "FAIL_INITIAL_CLI_IMPORT_BOUNDARY",
+      "totalTests": 25,
+      "failedCliSubtests": 7,
+      "cause": "Direct-file CLI process could not resolve package-qualified governance import.",
+      "logRetention": "Initial terminal log was not retained; failure and repair are disclosed from the observed run."
+    },
+    "repairAfterFirstTestRun": {
+      "repairTurnCount": 1,
+      "change": "Added guarded sibling import fallback for direct-file CLI invocation; package import remains normal path.",
+      "changedPath": "governance/compat/model_selection_reviewed_outcome.py",
+      "subsequentFocusedTests": 25,
+      "subsequentStatus": "PASS"
+    }
+  },
+  "tests": {
+    "command": "python -m unittest governance.compat.test_model_selection_reviewed_outcome -v",
+    "status": "PASS",
+    "count": 25,
+    "coverageClasses": [
+      "valid repaired retrospective example and no-repair/pending cases",
+      "decision digest and attempt/return/repair/reviewer/accepted-artifact joins",
+      "actor independence and normalized identity collisions",
+      "repair attribution and changed accepted/final-return pins",
+      "failed history and stable safe error siblings",
+      "identity mismatch, cost units, and chronology",
+      "API cycle/depth and non-finite number handling",
+      "CLI valid/invalid, malformed, duplicate-key, resource-boundary and diagnostic behavior"
+    ],
+    "actualLog": ".cvf/runtime/model-selection-s2-r2-20261011/focused-tests-final-preliminary.log"
+  },
+  "exampleValidation": {
+    "command": "python governance/compat/model_selection_reviewed_outcome.py --input docs/reviews/evidence/model-selection-s2-r2-outcome-example-20261011.json",
+    "status": "PASS",
+    "disposition": "VALID_OUTCOME_RECORD_ONLY",
+    "executionAuthorized": false,
+    "errors": [],
+    "actualLog": ".cvf/runtime/model-selection-s2-r2-20261011/example-cli-final-preliminary.log"
+  },
+  "learningConsumption": {
+    "source": "docs/reviews/CVF_MODEL_SELECTION_S2_R1_COMPLETION_2026-10-11.md",
+    "sourceSha256": "94a9eb529aaaa9f5792c31d0fbcc5b0dd15e64f5a159df0dbce1cfd471284c64",
+    "evidenceUseAtAuthoring": "CITED",
+    "applicability": "PARTIAL_REPAIR_ATTRIBUTION_METHODOLOGY_ONLY",
+    "sourceStatus": "CLOSED_PASS_BOUNDED_NOT_RETRACTED",
+    "actionVerification": "PENDING_LOCAL_INDEPENDENT_CLI_PROBE",
+    "localDecisionOwner": "Local"
+  },
+  "nonGateCommandMisfires": [
+    {
+      "command": "Execute temporary example builder by file path",
+      "result": "FAIL_PACKAGE_IMPORT",
+      "repair": "Executed ignored helper through Python runpy.run_path; example then validated by actual CLI.",
+      "changedFiles": false
+    },
+    {
+      "command": "Read checker source with default legacy text encoding",
+      "result": "FAIL_UNICODE_DECODE",
+      "repair": "Reran targeted source reads with explicit UTF-8.",
+      "changedFiles": false
+    }
+  ],
+  "orchestratorPacketGap": {
+    "disposition": "ORCHESTRATOR_PACKET_GAP",
+    "staleCommandInWorkOrder": "python -m unittest governance.compat.test_model_selection_manual_record -v",
+    "admittedCorrectedCommand": "python -m unittest governance.compat.test_model_selection_reviewed_outcome -v",
+    "correctionOwner": "dispatcher",
+    "oldSuiteReplay": "NOT_RUN; superseded module is outside this task proof"
+  },
+  "workerReturnGate": {
+    "requiredCommand": "python governance/compat/run_worker_return_fast_gate.py --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_SELECTION_S2_R2_OFFLINE_REVIEWED_OUTCOME_2026-10-11.md",
+    "status": "PASS_PREPARATORY_CANDIDATE",
+    "actualLog": ".cvf/runtime/model-selection-s2-r2-20261011/worker-return-fast-gate-pre-freeze.log",
+    "exitCode": 0,
+    "firstFailureClasses": [
+      "independent review probe disposition parse",
+      "SCEC proof and claim link",
+      "return trace expected-manifest paths",
+      "guide structural front matter",
+      "source verification table columns",
+      "review-cost convergence token",
+      "ASCII-only text in focused test"
+    ],
+    "finalFrozenByteGate": "PENDING_DETACHED_FINAL_BYTE_CHECK",
+    "elapsedSeconds": 8.8,
+    "reviewerFastChecks": "PASS 70/70",
+    "firstFailedCandidate": {
+      "log": ".cvf/runtime/model-selection-s2-r2-20261011/worker-return-fast-gate-candidate.log",
+      "exitCode": 1,
+      "elapsedSeconds": 9.1,
+      "failureClasses": [
+        "independent review probe disposition parse",
+        "SCEC proof and claim link",
+        "return trace expected-manifest paths",
+        "guide structural front matter",
+        "source verification table columns",
+        "review-cost convergence token",
+        "ASCII-only text in focused test"
+      ]
+    },
+    "preFreezeGateLog": ".cvf/runtime/model-selection-s2-r2-20261011/worker-return-fast-gate-pre-freeze.log"
+  },
+  "artifactPins": [
+    {
+      "path": "governance/compat/model_selection_reviewed_outcome.py",
+      "sha256": "bece34dcf8acf73b2c9f18b8b62e969f4aa22d630b53ea3c0208ff0764043fec"
+    },
+    {
+      "path": "governance/compat/test_model_selection_reviewed_outcome.py",
+      "sha256": "888f826813ec3788865b50d703839006dc21e975a793074f596368172a7760e4"
+    },
+    {
+      "path": "docs/reviews/evidence/model-selection-s2-r2-outcome-example-20261011.json",
+      "sha256": "3ecc797c342f65efec167af9f82e1faa07fbbd3a40ba4cf32112b451dfd69c92"
+    },
+    {
+      "path": "docs/guides/CVF_MODEL_SELECTION_REVIEWED_OUTCOME_VALIDATION_2026-10-11.md",
+      "sha256": "13e686cd1114b2945277794cc71c44c13421338cdfd36c46dec220102a0820c0"
+    }
+  ],
+  "workerReturnGateProof": {
+    "proofPath": "docs/reviews/CVF_MODEL_SELECTION_S2_R2_WORKER_RETURN_2026-10-11.md",
+    "status": "COMPLETE_PENDING_REVIEW",
+    "independentProbeDisposition": "PENDING_REVIEWER_EXECUTION",
+    "finalHashDisposition": "DETACHED_FINAL_BYTE_GATE_ONLY; no self-hash",
+    "candidateGateStatus": "PASS_PREPARATORY_CANDIDATE"
+  }
+}

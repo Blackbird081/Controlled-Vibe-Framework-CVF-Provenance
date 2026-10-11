@@ -1,0 +1,2455 @@
+{
+  "schemaVersion": "cvf.modelSelectionS2R2LocalReview@0.1.0",
+  "batchId": "CVF-MODEL-SELECTION-S2-R2-20261011",
+  "executionBaseHead": "0bf6f773ee755d8e20e24678c646e5da3bb3ba09",
+  "reviewerActor": "LOCAL_REVIEWER_CODEX_ROOT",
+  "workerActor": "INTERNAL_AGENT_IMPLEMENTATION_WORKER",
+  "workerInvocationId": "/root/s2_r2_luna_worker",
+  "probeInvocationId": "cvf-model-selection-s2-r2-independent-cli-api-20261011",
+  "profileSha256": "612735bf1f27354b9b5e9389239fa9ded6d3aeb9a77bfb4da63da4376eb84c5d",
+  "submittedOriginals": [
+    {
+      "path": "governance/compat/model_selection_reviewed_outcome.py",
+      "sha256": "bece34dcf8acf73b2c9f18b8b62e969f4aa22d630b53ea3c0208ff0764043fec",
+      "bytes": 45688,
+      "copyPath": ".cvf\\runtime\\model-selection-s2-r2-20261011\\submitted-originals\\governance\\compat\\model_selection_reviewed_outcome.py"
+    },
+    {
+      "path": "governance/compat/test_model_selection_reviewed_outcome.py",
+      "sha256": "888f826813ec3788865b50d703839006dc21e975a793074f596368172a7760e4",
+      "bytes": 12265,
+      "copyPath": ".cvf\\runtime\\model-selection-s2-r2-20261011\\submitted-originals\\governance\\compat\\test_model_selection_reviewed_outcome.py"
+    },
+    {
+      "path": "docs/reviews/evidence/model-selection-s2-r2-outcome-example-20261011.json",
+      "sha256": "3ecc797c342f65efec167af9f82e1faa07fbbd3a40ba4cf32112b451dfd69c92",
+      "bytes": 16874,
+      "copyPath": ".cvf\\runtime\\model-selection-s2-r2-20261011\\submitted-originals\\docs\\reviews\\evidence\\model-selection-s2-r2-outcome-example-20261011.json"
+    },
+    {
+      "path": "docs/guides/CVF_MODEL_SELECTION_REVIEWED_OUTCOME_VALIDATION_2026-10-11.md",
+      "sha256": "13e686cd1114b2945277794cc71c44c13421338cdfd36c46dec220102a0820c0",
+      "bytes": 5112,
+      "copyPath": ".cvf\\runtime\\model-selection-s2-r2-20261011\\submitted-originals\\docs\\guides\\CVF_MODEL_SELECTION_REVIEWED_OUTCOME_VALIDATION_2026-10-11.md"
+    },
+    {
+      "path": "docs/reviews/CVF_MODEL_SELECTION_S2_R2_WORKER_RETURN_2026-10-11.md",
+      "sha256": "11bc1f60003203ed9ce3c10030806cba9a9f329e0f3f51df1dbd71ca751a8410",
+      "bytes": 31566,
+      "copyPath": ".cvf\\runtime\\model-selection-s2-r2-20261011\\submitted-originals\\docs\\reviews\\CVF_MODEL_SELECTION_S2_R2_WORKER_RETURN_2026-10-11.md"
+    },
+    {
+      "path": "docs/reviews/evidence/model-selection-s2-r2-worker-20261011.json",
+      "sha256": "2bfa685fcd135ced523639ff8b9ded70ffdb1e414a684b8334c253270b3874a8",
+      "bytes": 17534,
+      "copyPath": ".cvf\\runtime\\model-selection-s2-r2-20261011\\submitted-originals\\docs\\reviews\\evidence\\model-selection-s2-r2-worker-20261011.json"
+    }
+  ],
+  "acceptedPins": [
+    {
+      "path": "governance/compat/model_selection_reviewed_outcome.py",
+      "sha256": "9526916557ef81654930bac9697bc242d6b8ebf41163b23977b78729392ec0ff"
+    },
+    {
+      "path": "governance/compat/test_model_selection_reviewed_outcome.py",
+      "sha256": "b0edea5314374f357c3d55537ed0078e64a53cbf3901b293bbb329a017258939"
+    },
+    {
+      "path": "docs/reviews/evidence/model-selection-s2-r2-outcome-example-20261011.json",
+      "sha256": "3ecc797c342f65efec167af9f82e1faa07fbbd3a40ba4cf32112b451dfd69c92"
+    },
+    {
+      "path": "docs/guides/CVF_MODEL_SELECTION_REVIEWED_OUTCOME_VALIDATION_2026-10-11.md",
+      "sha256": "4dbfb65c6436b3d4d86885b67503d47139bf7d0d5ca7c5b92127371ffb2c7900"
+    },
+    {
+      "path": "docs/reviews/CVF_MODEL_SELECTION_S2_R2_WORKER_RETURN_2026-10-11.md",
+      "sha256": "fdd9d975f5fa03409dd5992fcd9bf5c4521fdd5573e15a670427508c082a3ee8"
+    },
+    {
+      "path": "docs/reviews/evidence/model-selection-s2-r2-worker-20261011.json",
+      "sha256": "2bfa685fcd135ced523639ff8b9ded70ffdb1e414a684b8334c253270b3874a8"
+    }
+  ],
+  "independentProbe": {
+    "schemaVersion": "cvf.modelSelectionS2R2IndependentProbe@0.1.0",
+    "actor": "LOCAL_REVIEWER_CODEX_ROOT",
+    "invocationId": "cvf-model-selection-s2-r2-independent-cli-api-20261011",
+    "profileSha256": "612735bf1f27354b9b5e9389239fa9ded6d3aeb9a77bfb4da63da4376eb84c5d",
+    "oracleSha256": "9b43ab17946804f2c458095defaa69c81e2643c10e411b7e8bc267e2c1e94938",
+    "implementationSha256": "9526916557ef81654930bac9697bc242d6b8ebf41163b23977b78729392ec0ff",
+    "finishedAt": "2026-10-11T05:35:29.546232+00:00",
+    "count": 129,
+    "passed": 129,
+    "rows": [
+      {
+        "name": "accepted-no-repair",
+        "mode": "API",
+        "expectedCode": null,
+        "expectedPointer": null,
+        "passed": true,
+        "errors": []
+      },
+      {
+        "name": "accepted-procedure-fail",
+        "mode": "API",
+        "expectedCode": null,
+        "expectedPointer": null,
+        "passed": true,
+        "errors": []
+      },
+      {
+        "name": "accepted-repaired-first-rejection",
+        "mode": "API",
+        "expectedCode": null,
+        "expectedPointer": null,
+        "passed": true,
+        "errors": []
+      },
+      {
+        "name": "terminal-review-clock-unknown",
+        "mode": "API",
+        "expectedCode": null,
+        "expectedPointer": null,
+        "passed": true,
+        "errors": []
+      },
+      {
+        "name": "valid-pending",
+        "mode": "API",
+        "expectedCode": null,
+        "expectedPointer": null,
+        "passed": true,
+        "errors": []
+      },
+      {
+        "name": "valid-rejected",
+        "mode": "API",
+        "expectedCode": null,
+        "expectedPointer": null,
+        "passed": true,
+        "errors": []
+      },
+      {
+        "name": "valid-hold",
+        "mode": "API",
+        "expectedCode": null,
+        "expectedPointer": null,
+        "passed": true,
+        "errors": []
+      },
+      {
+        "name": "pending-assigned-reviewer",
+        "mode": "API",
+        "expectedCode": null,
+        "expectedPointer": null,
+        "passed": true,
+        "errors": []
+      },
+      {
+        "name": "valid-history-FAILED",
+        "mode": "API",
+        "expectedCode": null,
+        "expectedPointer": null,
+        "passed": true,
+        "errors": []
+      },
+      {
+        "name": "valid-history-BLOCKED",
+        "mode": "API",
+        "expectedCode": null,
+        "expectedPointer": null,
+        "passed": true,
+        "errors": []
+      },
+      {
+        "name": "valid-history-ABANDONED",
+        "mode": "API",
+        "expectedCode": null,
+        "expectedPointer": null,
+        "passed": true,
+        "errors": []
+      },
+      {
+        "name": "unknown-attempt-clocks",
+        "mode": "API",
+        "expectedCode": null,
+        "expectedPointer": null,
+        "passed": true,
+        "errors": []
+      },
+      {
+        "name": "valid-return-repair",
+        "mode": "API",
+        "expectedCode": null,
+        "expectedPointer": null,
+        "passed": true,
+        "errors": []
+      },
+      {
+        "name": "valid-new-product",
+        "mode": "API",
+        "expectedCode": null,
+        "expectedPointer": null,
+        "passed": true,
+        "errors": []
+      },
+      {
+        "name": "valid-deviation-disclosed",
+        "mode": "API",
+        "expectedCode": null,
+        "expectedPointer": null,
+        "passed": true,
+        "errors": []
+      },
+      {
+        "name": "partial-config-model-only",
+        "mode": "API",
+        "expectedCode": null,
+        "expectedPointer": null,
+        "passed": true,
+        "errors": []
+      },
+      {
+        "name": "valid-unknown-money",
+        "mode": "API",
+        "expectedCode": null,
+        "expectedPointer": null,
+        "passed": true,
+        "errors": []
+      },
+      {
+        "name": "valid-measured-zero",
+        "mode": "API",
+        "expectedCode": null,
+        "expectedPointer": null,
+        "passed": true,
+        "errors": []
+      },
+      {
+        "name": "valid-unit-separation",
+        "mode": "API",
+        "expectedCode": null,
+        "expectedPointer": null,
+        "passed": true,
+        "errors": []
+      },
+      {
+        "name": "valid-offset-instants",
+        "mode": "API",
+        "expectedCode": null,
+        "expectedPointer": null,
+        "passed": true,
+        "errors": []
+      },
+      {
+        "name": "decision-digest-drift",
+        "mode": "API",
+        "expectedCode": "DECISION_DRIFT",
+        "expectedPointer": "/decisionDigest",
+        "passed": true,
+        "errors": [
+          {
+            "code": "DECISION_DRIFT",
+            "pointer": "/decisionDigest",
+            "message": "digest does not match canonical embedded decision bytes"
+          }
+        ]
+      },
+      {
+        "name": "decision-join",
+        "mode": "API",
+        "expectedCode": "DECISION_JOIN",
+        "expectedPointer": null,
+        "passed": true,
+        "errors": [
+          {
+            "code": "DECISION_JOIN",
+            "pointer": "/outcome/decisionId",
+            "message": "outcome decisionId does not match embedded decision"
+          }
+        ]
+      },
+      {
+        "name": "attempt-candidate-join",
+        "mode": "API",
+        "expectedCode": "ATTEMPT_JOIN",
+        "expectedPointer": null,
+        "passed": true,
+        "errors": [
+          {
+            "code": "ATTEMPT_JOIN",
+            "pointer": "/outcome/attempts/0/candidateId",
+            "message": "attempt candidate does not match the selected candidate"
+          }
+        ]
+      },
+      {
+        "name": "missing-primary",
+        "mode": "API",
+        "expectedCode": "ATTEMPT_JOIN",
+        "expectedPointer": null,
+        "passed": true,
+        "errors": [
+          {
+            "code": "ATTEMPT_JOIN",
+            "pointer": "/outcome/primaryAttemptId",
+            "message": "primary attempt ID does not resolve"
+          },
+          {
+            "code": "OUTCOME_INVARIANT",
+            "pointer": "/outcome/technicalDisposition",
+            "message": "accepted outcome requires completed primary, returned evidence, final return and accepted products"
+          }
+        ]
+      },
+      {
+        "name": "duplicate-attempt",
+        "mode": "API",
+        "expectedCode": "DUPLICATE_ID",
+        "expectedPointer": null,
+        "passed": true,
+        "errors": [
+          {
+            "code": "DUPLICATE_ID",
+            "pointer": "/outcome/attempts/1/attemptId",
+            "message": "attempt ID is repeated"
+          }
+        ]
+      },
+      {
+        "name": "missing-failed-history",
+        "mode": "API",
+        "expectedCode": "ATTEMPT_HISTORY",
+        "expectedPointer": null,
+        "passed": true,
+        "errors": [
+          {
+            "code": "ATTEMPT_HISTORY",
+            "pointer": "/outcome/failedOrAbandonedAttemptIds",
+            "message": "IDs must exactly match declared FAILED, BLOCKED and ABANDONED attempts"
+          }
+        ]
+      },
+      {
+        "name": "unexpected-completed-history",
+        "mode": "API",
+        "expectedCode": "ATTEMPT_HISTORY",
+        "expectedPointer": null,
+        "passed": true,
+        "errors": [
+          {
+            "code": "ATTEMPT_HISTORY",
+            "pointer": "/outcome/failedOrAbandonedAttemptIds",
+            "message": "IDs must exactly match declared FAILED, BLOCKED and ABANDONED attempts"
+          }
+        ]
+      },
+      {
+        "name": "duplicate-history",
+        "mode": "API",
+        "expectedCode": "ATTEMPT_HISTORY",
+        "expectedPointer": null,
+        "passed": true,
+        "errors": [
+          {
+            "code": "ATTEMPT_HISTORY",
+            "pointer": "/outcome/failedOrAbandonedAttemptIds",
+            "message": "IDs must exactly match declared FAILED, BLOCKED and ABANDONED attempts"
+          },
+          {
+            "code": "DUPLICATE_ID",
+            "pointer": "/outcome/failedOrAbandonedAttemptIds/1",
+            "message": "failed attempt ID is repeated"
+          }
+        ]
+      },
+      {
+        "name": "original-freeze-start",
+        "mode": "API",
+        "expectedCode": "CHRONOLOGY",
+        "expectedPointer": null,
+        "passed": true,
+        "errors": [
+          {
+            "code": "CHRONOLOGY",
+            "pointer": "/outcome/attempts/0/startedAt",
+            "message": "original attempt starts before selection decision"
+          }
+        ]
+      },
+      {
+        "name": "retrospective-start-before-decision",
+        "mode": "API",
+        "expectedCode": null,
+        "expectedPointer": null,
+        "passed": true,
+        "errors": []
+      },
+      {
+        "name": "end-before-start",
+        "mode": "API",
+        "expectedCode": "CHRONOLOGY",
+        "expectedPointer": null,
+        "passed": true,
+        "errors": [
+          {
+            "code": "CHRONOLOGY",
+            "pointer": "/outcome/attempts/0/endedAt",
+            "message": "attempt end precedes start"
+          }
+        ]
+      },
+      {
+        "name": "future-end",
+        "mode": "API",
+        "expectedCode": "CHRONOLOGY",
+        "expectedPointer": null,
+        "passed": true,
+        "errors": [
+          {
+            "code": "CHRONOLOGY",
+            "pointer": "/outcome/attempts/0",
+            "message": "attempt clock is later than record asOf"
+          },
+          {
+            "code": "CHRONOLOGY",
+            "pointer": "/outcome/review/reviewedAt",
+            "message": "review time precedes primary attempt end"
+          }
+        ]
+      },
+      {
+        "name": "capture-before-primary",
+        "mode": "API",
+        "expectedCode": "CHRONOLOGY",
+        "expectedPointer": null,
+        "passed": true,
+        "errors": [
+          {
+            "code": "CHRONOLOGY",
+            "pointer": "/outcome/initialReturn/capturedAt",
+            "message": "initial capture precedes primary attempt start"
+          }
+        ]
+      },
+      {
+        "name": "review-before-capture",
+        "mode": "API",
+        "expectedCode": "CHRONOLOGY",
+        "expectedPointer": null,
+        "passed": true,
+        "errors": [
+          {
+            "code": "CHRONOLOGY",
+            "pointer": "/outcome/review/reviewedAt",
+            "message": "review time precedes initial capture"
+          }
+        ]
+      },
+      {
+        "name": "non-T-clock",
+        "mode": "API",
+        "expectedCode": "FORMAT",
+        "expectedPointer": null,
+        "passed": true,
+        "errors": [
+          {
+            "code": "CHRONOLOGY",
+            "pointer": "/outcome/attempts/0/clockUnknownReason",
+            "message": "unknown attempt clock requires a reason"
+          },
+          {
+            "code": "FORMAT",
+            "pointer": "/outcome/attempts/0/startedAt",
+            "message": "expected a valid timezone-aware timestamp with literal T and seconds"
+          }
+        ]
+      },
+      {
+        "name": "missing-clock-reason",
+        "mode": "API",
+        "expectedCode": "CHRONOLOGY",
+        "expectedPointer": null,
+        "passed": true,
+        "errors": [
+          {
+            "code": "CHRONOLOGY",
+            "pointer": "/outcome/attempts/0/clockUnknownReason",
+            "message": "unknown attempt clock requires a reason"
+          }
+        ]
+      },
+      {
+        "name": "unresolved-with-model",
+        "mode": "API",
+        "expectedCode": "CONFIGURATION_DISPOSITION",
+        "expectedPointer": null,
+        "passed": true,
+        "errors": [
+          {
+            "code": "CONFIGURATION_DISPOSITION",
+            "pointer": "/outcome/attempts/0/configurationDisposition",
+            "message": "disposition does not match known requested/observed dimensions"
+          },
+          {
+            "code": "IDENTITY_BASIS",
+            "pointer": "/outcome/attempts/0/observedBasis",
+            "message": "UNRESOLVED requires all-null identity, no runtime reference and a reason"
+          }
+        ]
+      },
+      {
+        "name": "unobserved-match",
+        "mode": "API",
+        "expectedCode": "CONFIGURATION_DISPOSITION",
+        "expectedPointer": null,
+        "passed": true,
+        "errors": [
+          {
+            "code": "CONFIGURATION_DISPOSITION",
+            "pointer": "/outcome/attempts/0/configurationDisposition",
+            "message": "disposition does not match known requested/observed dimensions"
+          }
+        ]
+      },
+      {
+        "name": "hidden-config-deviation",
+        "mode": "API",
+        "expectedCode": "CONFIGURATION_DISPOSITION",
+        "expectedPointer": null,
+        "passed": true,
+        "errors": [
+          {
+            "code": "CONFIGURATION_DISPOSITION",
+            "pointer": "/outcome/deviations",
+            "message": "DEVIATION attempt requires a CONFIGURATION deviation row"
+          }
+        ]
+      },
+      {
+        "name": "false-config-deviation-row",
+        "mode": "API",
+        "expectedCode": "CONFIGURATION_DISPOSITION",
+        "expectedPointer": null,
+        "passed": true,
+        "errors": [
+          {
+            "code": "CONFIGURATION_DISPOSITION",
+            "pointer": "/outcome/deviations",
+            "message": "non-DEVIATION attempt cannot have a CONFIGURATION deviation row"
+          }
+        ]
+      },
+      {
+        "name": "same-worker-reviewer-actor",
+        "mode": "API",
+        "expectedCode": "REVIEW_INDEPENDENCE",
+        "expectedPointer": null,
+        "passed": true,
+        "errors": [
+          {
+            "code": "REVIEW_INDEPENDENCE",
+            "pointer": "/outcome/review",
+            "message": "review actor and invocation must differ from each attempt worker"
+          }
+        ]
+      },
+      {
+        "name": "same-worker-reviewer-invocation",
+        "mode": "API",
+        "expectedCode": "REVIEW_INDEPENDENCE",
+        "expectedPointer": null,
+        "passed": true,
+        "errors": [
+          {
+            "code": "REVIEW_INDEPENDENCE",
+            "pointer": "/outcome/review",
+            "message": "review actor and invocation must differ from each attempt worker"
+          }
+        ]
+      },
+      {
+        "name": "pending-identical-actor",
+        "mode": "API",
+        "expectedCode": "REVIEW_INDEPENDENCE",
+        "expectedPointer": null,
+        "passed": true,
+        "errors": [
+          {
+            "code": "REVIEW_INDEPENDENCE",
+            "pointer": "/outcome/review",
+            "message": "review actor and invocation must differ from each attempt worker"
+          }
+        ]
+      },
+      {
+        "name": "terminal-missing-clock-reason",
+        "mode": "API",
+        "expectedCode": "CHRONOLOGY",
+        "expectedPointer": null,
+        "passed": true,
+        "errors": [
+          {
+            "code": "CHRONOLOGY",
+            "pointer": "/outcome/review/unknownReason",
+            "message": "unknown terminal review time requires a reason"
+          }
+        ]
+      },
+      {
+        "name": "review-disposition-mapping",
+        "mode": "API",
+        "expectedCode": "OUTCOME_INVARIANT",
+        "expectedPointer": null,
+        "passed": true,
+        "errors": [
+          {
+            "code": "OUTCOME_INVARIANT",
+            "pointer": "/outcome/acceptedArtifacts",
+            "message": "non-accepted technical dispositions cannot claim accepted artifacts"
+          },
+          {
+            "code": "OUTCOME_INVARIANT",
+            "pointer": "/outcome/review/disposition",
+            "message": "review and technical dispositions do not map exactly"
+          }
+        ]
+      },
+      {
+        "name": "accepted-primary-failed",
+        "mode": "API",
+        "expectedCode": "OUTCOME_INVARIANT",
+        "expectedPointer": null,
+        "passed": true,
+        "errors": [
+          {
+            "code": "ATTEMPT_HISTORY",
+            "pointer": "/outcome/failedOrAbandonedAttemptIds",
+            "message": "IDs must exactly match declared FAILED, BLOCKED and ABANDONED attempts"
+          },
+          {
+            "code": "OUTCOME_INVARIANT",
+            "pointer": "/outcome/technicalDisposition",
+            "message": "accepted outcome requires completed primary, returned evidence, final return and accepted products"
+          },
+          {
+            "code": "OUTCOME_INVARIANT",
+            "pointer": "/outcome/technicalDisposition",
+            "message": "accepted outcome requires a completed primary attempt"
+          }
+        ]
+      },
+      {
+        "name": "accepted-empty-products",
+        "mode": "API",
+        "expectedCode": "OUTCOME_INVARIANT",
+        "expectedPointer": null,
+        "passed": true,
+        "errors": [
+          {
+            "code": "OUTCOME_INVARIANT",
+            "pointer": "/outcome/technicalDisposition",
+            "message": "accepted outcome requires completed primary, returned evidence, final return and accepted products"
+          }
+        ]
+      },
+      {
+        "name": "accepted-no-final",
+        "mode": "API",
+        "expectedCode": "OUTCOME_INVARIANT",
+        "expectedPointer": null,
+        "passed": true,
+        "errors": [
+          {
+            "code": "OUTCOME_INVARIANT",
+            "pointer": "/outcome/technicalDisposition",
+            "message": "accepted outcome requires completed primary, returned evidence, final return and accepted products"
+          }
+        ]
+      },
+      {
+        "name": "pending-with-accepted",
+        "mode": "API",
+        "expectedCode": "OUTCOME_INVARIANT",
+        "expectedPointer": null,
+        "passed": true,
+        "errors": [
+          {
+            "code": "OUTCOME_INVARIANT",
+            "pointer": "/outcome/acceptedArtifacts",
+            "message": "non-accepted technical dispositions cannot claim accepted artifacts"
+          }
+        ]
+      },
+      {
+        "name": "return-repair-laundering",
+        "mode": "API",
+        "expectedCode": "REPAIR_ATTRIBUTION",
+        "expectedPointer": null,
+        "passed": true,
+        "errors": [
+          {
+            "code": "REPAIR_ATTRIBUTION",
+            "pointer": "/outcome/finalReturn",
+            "message": "changed return requires primary LOCAL_REVIEW before/after attribution"
+          }
+        ]
+      },
+      {
+        "name": "product-repair-laundering",
+        "mode": "API",
+        "expectedCode": "REPAIR_ATTRIBUTION",
+        "expectedPointer": null,
+        "passed": true,
+        "errors": [
+          {
+            "code": "REPAIR_ATTRIBUTION",
+            "pointer": "/outcome/acceptedArtifacts",
+            "message": "changed accepted product requires primary LOCAL_REVIEW before/after attribution"
+          }
+        ]
+      },
+      {
+        "name": "new-product-unattributed",
+        "mode": "API",
+        "expectedCode": "REPAIR_ATTRIBUTION",
+        "expectedPointer": null,
+        "passed": true,
+        "errors": [
+          {
+            "code": "REPAIR_ATTRIBUTION",
+            "pointer": "/outcome/acceptedArtifacts",
+            "message": "new accepted product requires primary LOCAL_REVIEW attribution"
+          }
+        ]
+      },
+      {
+        "name": "closure-packaging-not-product-repair",
+        "mode": "API",
+        "expectedCode": "REPAIR_ATTRIBUTION",
+        "expectedPointer": null,
+        "passed": true,
+        "errors": [
+          {
+            "code": "REPAIR_ATTRIBUTION",
+            "pointer": "/outcome/acceptedArtifacts",
+            "message": "changed accepted product requires primary LOCAL_REVIEW before/after attribution"
+          }
+        ]
+      },
+      {
+        "name": "unrepaired-claim-contradiction",
+        "mode": "API",
+        "expectedCode": "REPAIR_ATTRIBUTION",
+        "expectedPointer": null,
+        "passed": true,
+        "errors": [
+          {
+            "code": "REPAIR_ATTRIBUTION",
+            "pointer": "/outcome/acceptedArtifacts",
+            "message": "ACCEPTED_UNREPAIRED requires unchanged accepted product pins"
+          },
+          {
+            "code": "REPAIR_ATTRIBUTION",
+            "pointer": "/outcome/repairs",
+            "message": "ACCEPTED_UNREPAIRED forbids primary LOCAL_REVIEW repairs"
+          }
+        ]
+      },
+      {
+        "name": "repair-before-capture",
+        "mode": "API",
+        "expectedCode": "CHRONOLOGY",
+        "expectedPointer": null,
+        "passed": true,
+        "errors": [
+          {
+            "code": "CHRONOLOGY",
+            "pointer": "/outcome/repairs/0/at",
+            "message": "primary local review repair precedes initial capture"
+          }
+        ]
+      },
+      {
+        "name": "repair-after-review",
+        "mode": "API",
+        "expectedCode": "CHRONOLOGY",
+        "expectedPointer": null,
+        "passed": true,
+        "errors": [
+          {
+            "code": "CHRONOLOGY",
+            "pointer": "/outcome/repairs/0/at",
+            "message": "primary local review repair is later than review"
+          }
+        ]
+      },
+      {
+        "name": "repair-unknown-clock",
+        "mode": "API",
+        "expectedCode": null,
+        "expectedPointer": null,
+        "passed": true,
+        "errors": []
+      },
+      {
+        "name": "duplicate-initial-products",
+        "mode": "API",
+        "expectedCode": "DUPLICATE_ID",
+        "expectedPointer": null,
+        "passed": true,
+        "errors": [
+          {
+            "code": "DUPLICATE_ID",
+            "pointer": "/outcome/initialReturn/artifacts/1/locator",
+            "message": "reference locator is repeated"
+          }
+        ]
+      },
+      {
+        "name": "duplicate-accepted-products",
+        "mode": "API",
+        "expectedCode": "DUPLICATE_ID",
+        "expectedPointer": null,
+        "passed": true,
+        "errors": [
+          {
+            "code": "DUPLICATE_ID",
+            "pointer": "/outcome/acceptedArtifacts/1/locator",
+            "message": "reference locator is repeated"
+          }
+        ]
+      },
+      {
+        "name": "malformed-decision-safe-sibling",
+        "mode": "API",
+        "expectedCode": "DECISION_JOIN",
+        "expectedPointer": null,
+        "passed": true,
+        "errors": [
+          {
+            "code": "TYPE",
+            "pointer": "/decision/candidates",
+            "message": "embedded decision: expected an array"
+          },
+          {
+            "code": "FREEZE_DRIFT",
+            "pointer": "/decision/selection/frozenDigests/candidates",
+            "message": "embedded decision: declared freeze digest does not match the current record value"
+          },
+          {
+            "code": "DECISION_DRIFT",
+            "pointer": "/decisionDigest",
+            "message": "digest does not match canonical embedded decision bytes"
+          },
+          {
+            "code": "DECISION_JOIN",
+            "pointer": "/outcome/decisionId",
+            "message": "outcome decisionId does not match embedded decision"
+          }
+        ]
+      },
+      {
+        "name": "embedded-pointer",
+        "mode": "API",
+        "expectedCode": "TYPE",
+        "expectedPointer": "/decision/candidates/0/requested",
+        "passed": true,
+        "errors": [
+          {
+            "code": "TYPE",
+            "pointer": "/decision/candidates/0/requested",
+            "message": "embedded decision: expected an object"
+          },
+          {
+            "code": "FREEZE_DRIFT",
+            "pointer": "/decision/selection/frozenDigests/candidates",
+            "message": "embedded decision: declared freeze digest does not match the current record value"
+          },
+          {
+            "code": "DECISION_DRIFT",
+            "pointer": "/decisionDigest",
+            "message": "digest does not match canonical embedded decision bytes"
+          }
+        ]
+      },
+      {
+        "name": "malformed-/outcome/attempts/0",
+        "mode": "API",
+        "expectedCode": "TYPE",
+        "expectedPointer": "/outcome/attempts/0",
+        "passed": true,
+        "errors": [
+          {
+            "code": "TYPE",
+            "pointer": "/outcome/attempts/0",
+            "message": "expected an object"
+          },
+          {
+            "code": "ATTEMPT_JOIN",
+            "pointer": "/outcome/primaryAttemptId",
+            "message": "primary attempt ID does not resolve"
+          },
+          {
+            "code": "OUTCOME_INVARIANT",
+            "pointer": "/outcome/technicalDisposition",
+            "message": "accepted outcome requires completed primary, returned evidence, final return and accepted products"
+          }
+        ]
+      },
+      {
+        "name": "malformed-/outcome/initialReturn",
+        "mode": "API",
+        "expectedCode": "TYPE",
+        "expectedPointer": "/outcome/initialReturn",
+        "passed": true,
+        "errors": [
+          {
+            "code": "REPAIR_ATTRIBUTION",
+            "pointer": "/outcome/acceptedArtifacts",
+            "message": "new accepted product requires primary LOCAL_REVIEW attribution"
+          },
+          {
+            "code": "RETURN_INVARIANT",
+            "pointer": "/outcome/finalReturn",
+            "message": "final return requires an initial return"
+          },
+          {
+            "code": "TYPE",
+            "pointer": "/outcome/initialReturn",
+            "message": "expected an object"
+          },
+          {
+            "code": "OUTCOME_INVARIANT",
+            "pointer": "/outcome/technicalDisposition",
+            "message": "accepted outcome requires completed primary, returned evidence, final return and accepted products"
+          }
+        ]
+      },
+      {
+        "name": "malformed-/outcome/review",
+        "mode": "API",
+        "expectedCode": "TYPE",
+        "expectedPointer": "/outcome/review",
+        "passed": true,
+        "errors": [
+          {
+            "code": "TYPE",
+            "pointer": "/outcome/review",
+            "message": "expected an object"
+          },
+          {
+            "code": "OUTCOME_INVARIANT",
+            "pointer": "/outcome/review/disposition",
+            "message": "review and technical dispositions do not map exactly"
+          }
+        ]
+      },
+      {
+        "name": "malformed-/outcome/repairs",
+        "mode": "API",
+        "expectedCode": "TYPE",
+        "expectedPointer": "/outcome/repairs",
+        "passed": true,
+        "errors": [
+          {
+            "code": "TYPE",
+            "pointer": "/outcome/repairs",
+            "message": "expected an array"
+          }
+        ]
+      },
+      {
+        "name": "malformed-/outcome/telemetry",
+        "mode": "API",
+        "expectedCode": "TYPE",
+        "expectedPointer": "/outcome/telemetry",
+        "passed": true,
+        "errors": [
+          {
+            "code": "TYPE",
+            "pointer": "/outcome/telemetry",
+            "message": "expected an array"
+          }
+        ]
+      },
+      {
+        "name": "malformed-/decision",
+        "mode": "API",
+        "expectedCode": "TYPE",
+        "expectedPointer": "/decision",
+        "passed": true,
+        "errors": [
+          {
+            "code": "TYPE",
+            "pointer": "/decision",
+            "message": "embedded decision: expected an object"
+          }
+        ]
+      },
+      {
+        "name": "root-shape",
+        "mode": "API",
+        "expectedCode": "SHAPE",
+        "expectedPointer": null,
+        "passed": true,
+        "errors": [
+          {
+            "code": "SHAPE",
+            "pointer": "",
+            "message": "unsupported fields: unexpected"
+          }
+        ]
+      },
+      {
+        "name": "money-needs-currency",
+        "mode": "API",
+        "expectedCode": "COST_UNITS",
+        "expectedPointer": null,
+        "passed": true,
+        "errors": [
+          {
+            "code": "COST_UNITS",
+            "pointer": "/outcome/remainingParentTaskSpend/0/currency",
+            "message": "known MONEY requires currency"
+          }
+        ]
+      },
+      {
+        "name": "token-forbids-currency",
+        "mode": "API",
+        "expectedCode": "COST_UNITS",
+        "expectedPointer": null,
+        "passed": true,
+        "errors": [
+          {
+            "code": "COST_UNITS",
+            "pointer": "/outcome/remainingParentTaskSpend/0/currency",
+            "message": "non-MONEY units require null currency"
+          }
+        ]
+      },
+      {
+        "name": "amount-bool",
+        "mode": "API",
+        "expectedCode": "TYPE",
+        "expectedPointer": null,
+        "passed": true,
+        "errors": [
+          {
+            "code": "TYPE",
+            "pointer": "/outcome/remainingParentTaskSpend/0/amount",
+            "message": "expected a finite nonnegative number"
+          }
+        ]
+      },
+      {
+        "name": "amount-negative",
+        "mode": "API",
+        "expectedCode": "FORMAT",
+        "expectedPointer": null,
+        "passed": true,
+        "errors": [
+          {
+            "code": "FORMAT",
+            "pointer": "/outcome/remainingParentTaskSpend/0/amount",
+            "message": "number must be nonnegative"
+          }
+        ]
+      },
+      {
+        "name": "known-unknown-basis",
+        "mode": "API",
+        "expectedCode": "COST_BASIS",
+        "expectedPointer": null,
+        "passed": true,
+        "errors": [
+          {
+            "code": "COST_BASIS",
+            "pointer": "/outcome/remainingParentTaskSpend/0",
+            "message": "known amount requires MEASURED or ESTIMATED basis and null reason"
+          }
+        ]
+      },
+      {
+        "name": "unknown-measured-basis",
+        "mode": "API",
+        "expectedCode": "COST_BASIS",
+        "expectedPointer": null,
+        "passed": true,
+        "errors": [
+          {
+            "code": "COST_BASIS",
+            "pointer": "/outcome/remainingParentTaskSpend/0",
+            "message": "unknown amount requires UNKNOWN basis and a reason"
+          }
+        ]
+      },
+      {
+        "name": "duplicate-remaining",
+        "mode": "API",
+        "expectedCode": "COST_UNITS",
+        "expectedPointer": null,
+        "passed": true,
+        "errors": [
+          {
+            "code": "COST_UNITS",
+            "pointer": "/outcome/remainingParentTaskSpend/1",
+            "message": "measurement uniqueness key is repeated"
+          }
+        ]
+      },
+      {
+        "name": "duplicate-telemetry-actor",
+        "mode": "API",
+        "expectedCode": "COST_UNITS",
+        "expectedPointer": null,
+        "passed": true,
+        "errors": [
+          {
+            "code": "COST_UNITS",
+            "pointer": "/outcome/telemetry/1",
+            "message": "measurement uniqueness key is repeated"
+          }
+        ]
+      },
+      {
+        "name": "full-known-match",
+        "mode": "API",
+        "expectedCode": null,
+        "expectedPointer": null,
+        "passed": true,
+        "errors": []
+      },
+      {
+        "name": "full-mismatch-disclosed",
+        "mode": "API",
+        "expectedCode": null,
+        "expectedPointer": null,
+        "passed": true,
+        "errors": []
+      },
+      {
+        "name": "full-known-false-partial",
+        "mode": "API",
+        "expectedCode": "CONFIGURATION_DISPOSITION",
+        "expectedPointer": null,
+        "passed": true,
+        "errors": [
+          {
+            "code": "CONFIGURATION_DISPOSITION",
+            "pointer": "/outcome/attempts/0/configurationDisposition",
+            "message": "disposition does not match known requested/observed dimensions"
+          }
+        ]
+      },
+      {
+        "name": "pending-half-actor",
+        "mode": "API",
+        "expectedCode": "OUTCOME_INVARIANT",
+        "expectedPointer": null,
+        "passed": true,
+        "errors": [
+          {
+            "code": "OUTCOME_INVARIANT",
+            "pointer": "/outcome/review",
+            "message": "pending reviewer actor and invocation must be both present or both null"
+          }
+        ]
+      },
+      {
+        "name": "worker-prereturn-actor",
+        "mode": "API",
+        "expectedCode": "REPAIR_ATTRIBUTION",
+        "expectedPointer": null,
+        "passed": true,
+        "errors": [
+          {
+            "code": "REPAIR_ATTRIBUTION",
+            "pointer": "/outcome/acceptedArtifacts",
+            "message": "changed accepted product requires primary LOCAL_REVIEW before/after attribution"
+          },
+          {
+            "code": "REPAIR_ATTRIBUTION",
+            "pointer": "/outcome/repairs/0",
+            "message": "WORKER_PRE_RETURN actor and invocation must match its attempt"
+          }
+        ]
+      },
+      {
+        "name": "repair-missing-after",
+        "mode": "API",
+        "expectedCode": "REPAIR_ATTRIBUTION",
+        "expectedPointer": null,
+        "passed": true,
+        "errors": [
+          {
+            "code": "REPAIR_ATTRIBUTION",
+            "pointer": "/outcome/acceptedArtifacts",
+            "message": "changed accepted product requires primary LOCAL_REVIEW before/after attribution"
+          },
+          {
+            "code": "REPAIR_ATTRIBUTION",
+            "pointer": "/outcome/repairs/0/after",
+            "message": "REPAIR requires an after reference"
+          }
+        ]
+      },
+      {
+        "name": "repair-no-byte-change",
+        "mode": "API",
+        "expectedCode": "REPAIR_ATTRIBUTION",
+        "expectedPointer": null,
+        "passed": true,
+        "errors": [
+          {
+            "code": "REPAIR_ATTRIBUTION",
+            "pointer": "/outcome/acceptedArtifacts",
+            "message": "changed accepted product requires primary LOCAL_REVIEW before/after attribution"
+          },
+          {
+            "code": "REPAIR_ATTRIBUTION",
+            "pointer": "/outcome/repairs/0/after",
+            "message": "a changed repair requires a different before digest"
+          }
+        ]
+      },
+      {
+        "name": "repair-unknown-attempt",
+        "mode": "API",
+        "expectedCode": "ATTEMPT_JOIN",
+        "expectedPointer": null,
+        "passed": true,
+        "errors": [
+          {
+            "code": "REPAIR_ATTRIBUTION",
+            "pointer": "/outcome/acceptedArtifacts",
+            "message": "changed accepted product requires primary LOCAL_REVIEW before/after attribution"
+          },
+          {
+            "code": "ATTEMPT_JOIN",
+            "pointer": "/outcome/repairs/0/attemptId",
+            "message": "repair attempt ID does not resolve"
+          }
+        ]
+      },
+      {
+        "name": "assistance-does-not-repair-product",
+        "mode": "API",
+        "expectedCode": "REPAIR_ATTRIBUTION",
+        "expectedPointer": null,
+        "passed": true,
+        "errors": [
+          {
+            "code": "REPAIR_ATTRIBUTION",
+            "pointer": "/outcome/acceptedArtifacts",
+            "message": "changed accepted product requires primary LOCAL_REVIEW before/after attribution"
+          },
+          {
+            "code": "REPAIR_ATTRIBUTION",
+            "pointer": "/outcome/repairs/0",
+            "message": "ASSISTANCE cannot claim changed bytes"
+          }
+        ]
+      },
+      {
+        "name": "packaging-after-review",
+        "mode": "API",
+        "expectedCode": null,
+        "expectedPointer": null,
+        "passed": true,
+        "errors": []
+      },
+      {
+        "name": "unrepaired-with-packaging",
+        "mode": "API",
+        "expectedCode": null,
+        "expectedPointer": null,
+        "passed": true,
+        "errors": []
+      },
+      {
+        "name": "unhashable-/outcome/attempts/0/candidateId",
+        "mode": "API",
+        "expectedCode": "TYPE",
+        "expectedPointer": "/outcome/attempts/0/candidateId",
+        "passed": true,
+        "errors": [
+          {
+            "code": "ATTEMPT_JOIN",
+            "pointer": "/outcome/attempts/0/candidateId",
+            "message": "attempt candidate does not match the selected candidate"
+          },
+          {
+            "code": "TYPE",
+            "pointer": "/outcome/attempts/0/candidateId",
+            "message": "expected a string"
+          }
+        ]
+      },
+      {
+        "name": "unhashable-/outcome/attempts/0/workerActor",
+        "mode": "API",
+        "expectedCode": "TYPE",
+        "expectedPointer": "/outcome/attempts/0/workerActor",
+        "passed": true,
+        "errors": [
+          {
+            "code": "TYPE",
+            "pointer": "/outcome/attempts/0/workerActor",
+            "message": "expected a string"
+          }
+        ]
+      },
+      {
+        "name": "unhashable-/outcome/attempts/0/observedBasis",
+        "mode": "API",
+        "expectedCode": "TYPE",
+        "expectedPointer": "/outcome/attempts/0/observedBasis",
+        "passed": true,
+        "errors": [
+          {
+            "code": "TYPE",
+            "pointer": "/outcome/attempts/0/observedBasis",
+            "message": "expected an enum string"
+          }
+        ]
+      },
+      {
+        "name": "unhashable-/outcome/initialReturn/firstDisposition",
+        "mode": "API",
+        "expectedCode": "TYPE",
+        "expectedPointer": "/outcome/initialReturn/firstDisposition",
+        "passed": true,
+        "errors": [
+          {
+            "code": "TYPE",
+            "pointer": "/outcome/initialReturn/firstDisposition",
+            "message": "expected an enum string"
+          }
+        ]
+      },
+      {
+        "name": "unhashable-/outcome/review/disposition",
+        "mode": "API",
+        "expectedCode": "TYPE",
+        "expectedPointer": "/outcome/review/disposition",
+        "passed": true,
+        "errors": [
+          {
+            "code": "OUTCOME_INVARIANT",
+            "pointer": "/outcome/review/disposition",
+            "message": "review and technical dispositions do not map exactly"
+          },
+          {
+            "code": "TYPE",
+            "pointer": "/outcome/review/disposition",
+            "message": "expected an enum string"
+          }
+        ]
+      },
+      {
+        "name": "unhashable-/outcome/technicalDisposition",
+        "mode": "API",
+        "expectedCode": "TYPE",
+        "expectedPointer": "/outcome/technicalDisposition",
+        "passed": true,
+        "errors": [
+          {
+            "code": "OUTCOME_INVARIANT",
+            "pointer": "/outcome/acceptedArtifacts",
+            "message": "non-accepted technical dispositions cannot claim accepted artifacts"
+          },
+          {
+            "code": "OUTCOME_INVARIANT",
+            "pointer": "/outcome/review/disposition",
+            "message": "review and technical dispositions do not map exactly"
+          },
+          {
+            "code": "TYPE",
+            "pointer": "/outcome/technicalDisposition",
+            "message": "expected an enum string"
+          }
+        ]
+      },
+      {
+        "name": "unhashable-/outcome/primaryAttemptId",
+        "mode": "API",
+        "expectedCode": "TYPE",
+        "expectedPointer": "/outcome/primaryAttemptId",
+        "passed": true,
+        "errors": [
+          {
+            "code": "ATTEMPT_JOIN",
+            "pointer": "/outcome/primaryAttemptId",
+            "message": "primary attempt ID does not resolve"
+          },
+          {
+            "code": "TYPE",
+            "pointer": "/outcome/primaryAttemptId",
+            "message": "expected a string"
+          },
+          {
+            "code": "OUTCOME_INVARIANT",
+            "pointer": "/outcome/technicalDisposition",
+            "message": "accepted outcome requires completed primary, returned evidence, final return and accepted products"
+          }
+        ]
+      },
+      {
+        "name": "unhashable-/outcome/decisionId",
+        "mode": "API",
+        "expectedCode": "TYPE",
+        "expectedPointer": "/outcome/decisionId",
+        "passed": true,
+        "errors": [
+          {
+            "code": "DECISION_JOIN",
+            "pointer": "/outcome/decisionId",
+            "message": "outcome decisionId does not match embedded decision"
+          },
+          {
+            "code": "TYPE",
+            "pointer": "/outcome/decisionId",
+            "message": "expected a string"
+          }
+        ]
+      },
+      {
+        "name": "unhashable-/outcome/attempts/0/executionRef",
+        "mode": "API",
+        "expectedCode": "TYPE",
+        "expectedPointer": "/outcome/attempts/0/executionRef",
+        "passed": true,
+        "errors": [
+          {
+            "code": "TYPE",
+            "pointer": "/outcome/attempts/0/executionRef",
+            "message": "expected an object"
+          }
+        ]
+      },
+      {
+        "name": "unhashable-/decisionSource",
+        "mode": "API",
+        "expectedCode": "TYPE",
+        "expectedPointer": "/decisionSource",
+        "passed": true,
+        "errors": [
+          {
+            "code": "TYPE",
+            "pointer": "/decisionSource",
+            "message": "expected an object"
+          }
+        ]
+      },
+      {
+        "name": "unhashable-/decisionDigest",
+        "mode": "API",
+        "expectedCode": "TYPE",
+        "expectedPointer": "/decisionDigest",
+        "passed": true,
+        "errors": [
+          {
+            "code": "TYPE",
+            "pointer": "/decisionDigest",
+            "message": "expected a string"
+          }
+        ]
+      },
+      {
+        "name": "reviewer-collides-secondary-worker",
+        "mode": "API",
+        "expectedCode": "REVIEW_INDEPENDENCE",
+        "expectedPointer": null,
+        "passed": true,
+        "errors": [
+          {
+            "code": "REVIEW_INDEPENDENCE",
+            "pointer": "/outcome/review",
+            "message": "review actor and invocation must differ from each attempt worker"
+          }
+        ]
+      },
+      {
+        "name": "pending-no-return",
+        "mode": "API",
+        "expectedCode": null,
+        "expectedPointer": null,
+        "passed": true,
+        "errors": []
+      },
+      {
+        "name": "no-return-with-final",
+        "mode": "API",
+        "expectedCode": "RETURN_INVARIANT",
+        "expectedPointer": null,
+        "passed": true,
+        "errors": [
+          {
+            "code": "RETURN_INVARIANT",
+            "pointer": "/outcome/finalReturn",
+            "message": "final return requires an initial return"
+          }
+        ]
+      },
+      {
+        "name": "reject-first-disposition-promotion",
+        "mode": "API",
+        "expectedCode": "REPAIR_ATTRIBUTION",
+        "expectedPointer": null,
+        "passed": true,
+        "errors": [
+          {
+            "code": "REPAIR_ATTRIBUTION",
+            "pointer": "/outcome/finalReturn",
+            "message": "ACCEPTED_UNREPAIRED requires unchanged final return"
+          },
+          {
+            "code": "REPAIR_ATTRIBUTION",
+            "pointer": "/outcome/repairs",
+            "message": "ACCEPTED_UNREPAIRED forbids primary LOCAL_REVIEW repairs"
+          }
+        ]
+      },
+      {
+        "name": "pending-ref-prohibited",
+        "mode": "API",
+        "expectedCode": "OUTCOME_INVARIANT",
+        "expectedPointer": null,
+        "passed": true,
+        "errors": [
+          {
+            "code": "OUTCOME_INVARIANT",
+            "pointer": "/outcome/review",
+            "message": "PENDING review requires null ref/time and an unknown reason"
+          }
+        ]
+      },
+      {
+        "name": "terminal-ref-missing",
+        "mode": "API",
+        "expectedCode": "OUTCOME_INVARIANT",
+        "expectedPointer": null,
+        "passed": true,
+        "errors": [
+          {
+            "code": "OUTCOME_INVARIANT",
+            "pointer": "/outcome/review",
+            "message": "terminal review requires actor, invocation and reference"
+          }
+        ]
+      },
+      {
+        "name": "malformed-prereturn-workerActor",
+        "mode": "API",
+        "expectedCode": "TYPE",
+        "expectedPointer": "/outcome/attempts/0/workerActor",
+        "passed": true,
+        "errors": [
+          {
+            "code": "REPAIR_ATTRIBUTION",
+            "pointer": "/outcome/acceptedArtifacts",
+            "message": "changed accepted product requires primary LOCAL_REVIEW before/after attribution"
+          },
+          {
+            "code": "TYPE",
+            "pointer": "/outcome/attempts/0/workerActor",
+            "message": "expected a string"
+          }
+        ]
+      },
+      {
+        "name": "malformed-prereturn-workerInvocationId",
+        "mode": "API",
+        "expectedCode": "TYPE",
+        "expectedPointer": "/outcome/attempts/0/workerInvocationId",
+        "passed": true,
+        "errors": [
+          {
+            "code": "REPAIR_ATTRIBUTION",
+            "pointer": "/outcome/acceptedArtifacts",
+            "message": "changed accepted product requires primary LOCAL_REVIEW before/after attribution"
+          },
+          {
+            "code": "TYPE",
+            "pointer": "/outcome/attempts/0/workerInvocationId",
+            "message": "expected a string"
+          }
+        ]
+      },
+      {
+        "name": "unrepaired-pending-changed-pin",
+        "mode": "API",
+        "expectedCode": "REPAIR_ATTRIBUTION",
+        "expectedPointer": null,
+        "passed": true,
+        "errors": [
+          {
+            "code": "REPAIR_ATTRIBUTION",
+            "pointer": "/outcome/finalReturn",
+            "message": "changed return requires primary LOCAL_REVIEW before/after attribution"
+          },
+          {
+            "code": "REPAIR_ATTRIBUTION",
+            "pointer": "/outcome/finalReturn",
+            "message": "ACCEPTED_UNREPAIRED requires unchanged final return"
+          }
+        ]
+      },
+      {
+        "name": "unrepaired-pending-primary-local-repair",
+        "mode": "API",
+        "expectedCode": "REPAIR_ATTRIBUTION",
+        "expectedPointer": null,
+        "passed": true,
+        "errors": [
+          {
+            "code": "REPAIR_ATTRIBUTION",
+            "pointer": "/outcome/repairs",
+            "message": "ACCEPTED_UNREPAIRED forbids primary LOCAL_REVIEW repairs"
+          }
+        ]
+      },
+      {
+        "name": "invalid-offset-minute",
+        "mode": "API",
+        "expectedCode": "FORMAT",
+        "expectedPointer": null,
+        "passed": true,
+        "errors": [
+          {
+            "code": "CHRONOLOGY",
+            "pointer": "/outcome/attempts/0/clockUnknownReason",
+            "message": "unknown attempt clock requires a reason"
+          },
+          {
+            "code": "FORMAT",
+            "pointer": "/outcome/attempts/0/startedAt",
+            "message": "expected a valid timezone-aware timestamp with literal T and seconds"
+          }
+        ]
+      },
+      {
+        "name": "invalid-review-time-safe-siblings",
+        "mode": "API",
+        "expectedCode": "TYPE",
+        "expectedPointer": "/outcome/procedureReason",
+        "passed": true,
+        "errors": [
+          {
+            "code": "TYPE",
+            "pointer": "/outcome/procedureReason",
+            "message": "expected a string"
+          },
+          {
+            "code": "FORMAT",
+            "pointer": "/outcome/review/reviewedAt",
+            "message": "expected a valid timezone-aware timestamp with literal T and seconds"
+          },
+          {
+            "code": "CHRONOLOGY",
+            "pointer": "/outcome/review/unknownReason",
+            "message": "unknown terminal review time requires a reason"
+          }
+        ]
+      },
+      {
+        "name": "invalid-original-decision-time-safe-siblings",
+        "mode": "API",
+        "expectedCode": "TYPE",
+        "expectedPointer": "/outcome/procedureReason",
+        "passed": true,
+        "errors": [
+          {
+            "code": "FORMAT",
+            "pointer": "/decision/selection/decidedAt",
+            "message": "embedded decision: expected a valid timezone-aware ISO-8601 timestamp"
+          },
+          {
+            "code": "FORMAT",
+            "pointer": "/decision/selection/decidedAt",
+            "message": "expected a valid timezone-aware timestamp with literal T and seconds"
+          },
+          {
+            "code": "DECISION_DRIFT",
+            "pointer": "/decisionDigest",
+            "message": "digest does not match canonical embedded decision bytes"
+          },
+          {
+            "code": "TYPE",
+            "pointer": "/outcome/procedureReason",
+            "message": "expected a string"
+          }
+        ]
+      },
+      {
+        "name": "valid-json",
+        "mode": "CLI",
+        "expectedCode": null,
+        "passed": true,
+        "exit": 0,
+        "result": {
+          "profileVersion": "cvf.model-selection-reviewed-outcome@0.1.0",
+          "disposition": "VALID_OUTCOME_RECORD_ONLY",
+          "executionAuthorized": false,
+          "errors": []
+        },
+        "stderrEmpty": true
+      },
+      {
+        "name": "valid-bom",
+        "mode": "CLI",
+        "expectedCode": null,
+        "passed": true,
+        "exit": 0,
+        "result": {
+          "profileVersion": "cvf.model-selection-reviewed-outcome@0.1.0",
+          "disposition": "VALID_OUTCOME_RECORD_ONLY",
+          "executionAuthorized": false,
+          "errors": []
+        },
+        "stderrEmpty": true
+      },
+      {
+        "name": "duplicate-keys",
+        "mode": "CLI",
+        "expectedCode": "DUPLICATE_KEY",
+        "passed": true,
+        "exit": 2,
+        "result": {
+          "profileVersion": "cvf.model-selection-reviewed-outcome@0.1.0",
+          "disposition": "INPUT_ERROR",
+          "executionAuthorized": false,
+          "errors": [
+            {
+              "code": "DUPLICATE_KEY",
+              "pointer": "",
+              "message": "JSON object contains a duplicate key"
+            }
+          ]
+        },
+        "stderrEmpty": true
+      },
+      {
+        "name": "nonfinite",
+        "mode": "CLI",
+        "expectedCode": "NONFINITE_NUMBER",
+        "passed": true,
+        "exit": 2,
+        "result": {
+          "profileVersion": "cvf.model-selection-reviewed-outcome@0.1.0",
+          "disposition": "INPUT_ERROR",
+          "executionAuthorized": false,
+          "errors": [
+            {
+              "code": "NONFINITE_NUMBER",
+              "pointer": "",
+              "message": "JSON contains a non-finite number"
+            }
+          ]
+        },
+        "stderrEmpty": true
+      },
+      {
+        "name": "invalid-utf8",
+        "mode": "CLI",
+        "expectedCode": "INPUT_ENCODING",
+        "passed": true,
+        "exit": 2,
+        "result": {
+          "profileVersion": "cvf.model-selection-reviewed-outcome@0.1.0",
+          "disposition": "INPUT_ERROR",
+          "executionAuthorized": false,
+          "errors": [
+            {
+              "code": "INPUT_ENCODING",
+              "pointer": "",
+              "message": "input is not valid UTF-8"
+            }
+          ]
+        },
+        "stderrEmpty": true
+      },
+      {
+        "name": "excess-size",
+        "mode": "CLI",
+        "expectedCode": "INPUT_SIZE",
+        "passed": true,
+        "exit": 2,
+        "result": {
+          "profileVersion": "cvf.model-selection-reviewed-outcome@0.1.0",
+          "disposition": "INPUT_ERROR",
+          "executionAuthorized": false,
+          "errors": [
+            {
+              "code": "INPUT_SIZE",
+              "pointer": "",
+              "message": "input exceeds the 1 MiB limit"
+            }
+          ]
+        },
+        "stderrEmpty": true
+      },
+      {
+        "name": "malformed-json",
+        "mode": "CLI",
+        "expectedCode": "INPUT_JSON",
+        "passed": true,
+        "exit": 2,
+        "result": {
+          "profileVersion": "cvf.model-selection-reviewed-outcome@0.1.0",
+          "disposition": "INPUT_ERROR",
+          "executionAuthorized": false,
+          "errors": [
+            {
+              "code": "INPUT_JSON",
+              "pointer": "",
+              "message": "input is not valid strict JSON"
+            }
+          ]
+        },
+        "stderrEmpty": true
+      },
+      {
+        "name": "unicode-surrogate",
+        "mode": "CLI",
+        "expectedCode": "INPUT_ENCODING",
+        "passed": true,
+        "exit": 2,
+        "result": {
+          "profileVersion": "cvf.model-selection-reviewed-outcome@0.1.0",
+          "disposition": "INPUT_ERROR",
+          "executionAuthorized": false,
+          "errors": [
+            {
+              "code": "INPUT_ENCODING",
+              "pointer": "",
+              "message": "JSON contains a string that is not valid UTF-8"
+            }
+          ]
+        },
+        "stderrEmpty": true
+      },
+      {
+        "name": "cli-return-repair-laundering",
+        "mode": "CLI",
+        "expectedCode": "REPAIR_ATTRIBUTION",
+        "passed": true,
+        "exit": 1,
+        "result": {
+          "profileVersion": "cvf.model-selection-reviewed-outcome@0.1.0",
+          "disposition": "INVALID_OUTCOME_RECORD",
+          "executionAuthorized": false,
+          "errors": [
+            {
+              "code": "REPAIR_ATTRIBUTION",
+              "pointer": "/outcome/finalReturn",
+              "message": "changed return requires primary LOCAL_REVIEW before/after attribution"
+            }
+          ]
+        },
+        "stderrEmpty": true
+      },
+      {
+        "name": "cli-product-repair-laundering",
+        "mode": "CLI",
+        "expectedCode": "REPAIR_ATTRIBUTION",
+        "passed": true,
+        "exit": 1,
+        "result": {
+          "profileVersion": "cvf.model-selection-reviewed-outcome@0.1.0",
+          "disposition": "INVALID_OUTCOME_RECORD",
+          "executionAuthorized": false,
+          "errors": [
+            {
+              "code": "REPAIR_ATTRIBUTION",
+              "pointer": "/outcome/acceptedArtifacts",
+              "message": "changed accepted product requires primary LOCAL_REVIEW before/after attribution"
+            }
+          ]
+        },
+        "stderrEmpty": true
+      },
+      {
+        "name": "cli-same-worker-reviewer-actor",
+        "mode": "CLI",
+        "expectedCode": "REVIEW_INDEPENDENCE",
+        "passed": true,
+        "exit": 1,
+        "result": {
+          "profileVersion": "cvf.model-selection-reviewed-outcome@0.1.0",
+          "disposition": "INVALID_OUTCOME_RECORD",
+          "executionAuthorized": false,
+          "errors": [
+            {
+              "code": "REVIEW_INDEPENDENCE",
+              "pointer": "/outcome/review",
+              "message": "review actor and invocation must differ from each attempt worker"
+            }
+          ]
+        },
+        "stderrEmpty": true
+      },
+      {
+        "name": "cli-accepted-repaired-first-rejection",
+        "mode": "CLI",
+        "expectedCode": null,
+        "passed": true,
+        "exit": 0,
+        "result": {
+          "profileVersion": "cvf.model-selection-reviewed-outcome@0.1.0",
+          "disposition": "VALID_OUTCOME_RECORD_ONLY",
+          "executionAuthorized": false,
+          "errors": []
+        },
+        "stderrEmpty": true
+      },
+      {
+        "name": "cli-valid-pending",
+        "mode": "CLI",
+        "expectedCode": null,
+        "passed": true,
+        "exit": 0,
+        "result": {
+          "profileVersion": "cvf.model-selection-reviewed-outcome@0.1.0",
+          "disposition": "VALID_OUTCOME_RECORD_ONLY",
+          "executionAuthorized": false,
+          "errors": []
+        },
+        "stderrEmpty": true
+      },
+      {
+        "name": "actual-s2-r1-retrospective",
+        "mode": "CLI",
+        "expectedCode": null,
+        "passed": true,
+        "exit": 0,
+        "result": {
+          "profileVersion": "cvf.model-selection-reviewed-outcome@0.1.0",
+          "disposition": "VALID_OUTCOME_RECORD_ONLY",
+          "executionAuthorized": false,
+          "errors": []
+        },
+        "stderrEmpty": true
+      },
+      {
+        "name": "cycle",
+        "mode": "API_INGESTION",
+        "passed": true,
+        "errors": [
+          {
+            "code": "SHAPE",
+            "pointer": "/x",
+            "message": "record contains a cyclic container"
+          }
+        ]
+      },
+      {
+        "name": "depth",
+        "mode": "API_INGESTION",
+        "passed": true,
+        "errors": [
+          {
+            "code": "SHAPE",
+            "pointer": "/x/x/x/x/x/x/x/x/x/x/x/x/x/x/x/x/x/x/x/x/x/x/x/x/x/x/x/x/x/x/x/x",
+            "message": "record exceeds the maximum container depth of 32"
+          }
+        ]
+      },
+      {
+        "name": "surrogate",
+        "mode": "API_INGESTION",
+        "passed": true,
+        "errors": [
+          {
+            "code": "FORMAT",
+            "pointer": "/x",
+            "message": "string is not valid UTF-8"
+          }
+        ]
+      },
+      {
+        "name": "nonfinite-api",
+        "mode": "API_INGESTION",
+        "passed": true,
+        "errors": [
+          {
+            "code": "NONFINITE_NUMBER",
+            "pointer": "/x",
+            "message": "numbers must be finite"
+          }
+        ]
+      }
+    ],
+    "claimBoundary": "Synthetic source-derived data consistency, no runtime invocation or authority."
+  },
+  "reviewDecision": {
+    "decision": "ACCEPT_BOUNDED",
+    "workerActor": "INTERNAL_AGENT_IMPLEMENTATION_WORKER",
+    "methodology": "Consumed frozen submitted six paths, 88/88 pre-edit receipt, 25/25 focused proof, actual example result, retained failed/candidate/final gate logs and detached hash/time logs. Read the complete bounded profile, helper, tests, example, guide and return; verified all 33 worker source pins before closure and original S2-R1 submitted/accepted pins. Root independently executed source-derived API/CLI controls without importing worker tests, completed the defect-class sweep before one consolidated repair, then reran only the affected new focused suite and oracle. EVALUATE_RETURNED_EVIDENCE_NOT_RECREATE_IMPLEMENTATION; no old suite or broad corpus replay.",
+    "findings": "Four Local semantic repair groups: (1) type-guard actor normalization and strict cross-clock parsing preserve malformed-input/sibling diagnostics, (2) independence also applies to assigned PENDING reviewers, (3) ACCEPTED_UNREPAIRED is checked across technical dispositions, (4) offset minutes above59 are rejected rather than normalized. The complete before-repair oracle had121/129 PASS with eight counterexamples; the repaired helper has129/129 PASS and five new focused regressions give30/30 PASS. The actual S2-R1 retrospective consumer/source pins are correct and unchanged. Requested historical Luna/xhigh remains distinct from this native Luna/max assignment.",
+    "risk": "Original worker implementation required Local semantic repair despite25/25 worker tests and70/70 structural gate. Original seven CLI subtest failures are self-reported because the first terminal log was not retained; do not label that run hash-proven. Retained gate failures and exact frozen final proof are consumed. Root first oracle had one shared-object fixture defect affecting two cases plus five over-specific code expectations; these were corrected against the locked profile and all initial results retained separately, not attributed to Luna. Source authentication, omitted history, actor authenticity, observed runtime identity, tokens/quota/bill, complete R3/runtime selection and comparative quality remain unproved.",
+    "closeability": "After full bounded source audit, one Local consolidated repair and exact affected evidence, no semantic blocker remains under the locked optional profile. New helper/tests, usable retrospective consumer/guide and distinct Local acceptance are present. No worker redispatch, extra provider call or independent benchmark is needed; private material/actual-SHA continuity and final gate receipts follow. S5/Expense/PLL/scoring/Gateway/public/provider/deploy/P11 remain parked.",
+    "closureDiagnostic": "Root closure only: correct a63-character raw-profile hash typo in the worker return, append an attributed Local review addendum, accept the guide, refresh active SCEC test/closed-order pins, close the order and update its exact authority hash/projections. Preserve worker JSON/example and submitted originals. Initial root oracle corrections and all admission/continuity corrections remain separately attributed. Final committed-range receipts are produced only after actual commits; split material checks are not promoted to historical committed-target proof if later continuity changed the projections. First material-helper preflight failed; opaque child output required one explicit diagnostic rerun, which found two metadata classes. Source read-ahead corrected confirmatory wording and truthful scoped zero-map/PARTIAL accounting without changing code or importing a corpus. A cached old PASS receipt was initially copied during diagnostic lookup; it is not failure proof. One read-only Windows rg path-glob lookup failed and was corrected to the exact file.",
+    "localRepair": {
+      "rounds": 1,
+      "rootCauseGroups": 4,
+      "newRegressionTests": 5,
+      "beforeRepairPassed": 121,
+      "beforeRepairCount": 129,
+      "counterexampleCount": 8,
+      "codePaths": [
+        "governance/compat/model_selection_reviewed_outcome.py",
+        "governance/compat/test_model_selection_reviewed_outcome.py"
+      ],
+      "rootCauseSweep": "COMPLETE_BEFORE_FIRST_REPAIR"
+    },
+    "oracleCorrections": {
+      "fixtureAliasing": 1,
+      "affectedCases": 2,
+      "diagnosticExpectations": 5,
+      "attribution": "LOCAL_REVIEWER_ORACLE_ERROR; original122/113 results retained; corrected/extended129/121 reproduced on unchanged submitted implementation"
+    },
+    "worker": {
+      "requestedModel": "gpt-6-luna",
+      "requestedEffort": "max",
+      "actualNativeInvocation": "/root/s2_r2_luna_worker",
+      "firstClockUtc": "2026-10-11T05:04:57Z",
+      "finalGateEndUtc": "2026-10-11T05:32:19.5737345Z",
+      "hashVerificationEndUtc": "2026-10-11T05:32:33.457Z",
+      "workerWallThroughDetachedVerificationSeconds": 1656.457,
+      "observedIdentity": null,
+      "usage": null,
+      "focusedTestsAtReturn": 25,
+      "gateRuns": 4,
+      "candidateGateFailures": 1,
+      "packetFindingClasses": 7,
+      "preReturnImplementationRepairRounds": 1,
+      "packetSelfRepairRounds": 1,
+      "firstFocusedFailureLog": "NOT_RETAINED_SELF_REPORTED_ONLY"
+    },
+    "sourceVerification": [
+      {
+        "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_SELECTION_S2_R2_OFFLINE_REVIEWED_OUTCOME_2026-10-11.md",
+        "expected": "d089b84557c715b0c24ad5a79498f30e1de7fe3264f4177cc518914de8b8943c",
+        "observed": "d089b84557c715b0c24ad5a79498f30e1de7fe3264f4177cc518914de8b8943c"
+      },
+      {
+        "path": "docs/baselines/CVF_GC018_MODEL_SELECTION_S2_R2_OFFLINE_REVIEWED_OUTCOME_2026-10-11.md",
+        "expected": "416d46577e8d95e29fd2b03042e63410b1f5cbe00670d96ac1bdd82dc5a2c852",
+        "observed": "416d46577e8d95e29fd2b03042e63410b1f5cbe00670d96ac1bdd82dc5a2c852"
+      },
+      {
+        "path": "docs/reference/CVF_MODEL_SELECTION_REVIEWED_OUTCOME_PROFILE_2026-10-11.md",
+        "expected": "612735bf1f27354b9b5e9389239fa9ded6d3aeb9a77bfb4da63da4376eb84c5d",
+        "observed": "612735bf1f27354b9b5e9389239fa9ded6d3aeb9a77bfb4da63da4376eb84c5d"
+      },
+      {
+        "path": "docs/reference/CVF_MODEL_SELECTION_MANUAL_RECORD_PROFILE_2026-10-11.md",
+        "expected": "ffa0bda042b6f7f16f30de412f3f3e11eff7b64b193273e108c672109cb4e5c6",
+        "observed": "ffa0bda042b6f7f16f30de412f3f3e11eff7b64b193273e108c672109cb4e5c6"
+      },
+      {
+        "path": "governance/compat/model_selection_manual_record.py",
+        "expected": "8db98426eeeb6ea9f13f8d78efcc3bee15f57ccb2e586081577b3559a1374c0e",
+        "observed": "8db98426eeeb6ea9f13f8d78efcc3bee15f57ccb2e586081577b3559a1374c0e"
+      },
+      {
+        "path": "docs/reviews/CVF_MODEL_SELECTION_S2_R1_COMPLETION_2026-10-11.md",
+        "expected": "94a9eb529aaaa9f5792c31d0fbcc5b0dd15e64f5a159df0dbce1cfd471284c64",
+        "observed": "94a9eb529aaaa9f5792c31d0fbcc5b0dd15e64f5a159df0dbce1cfd471284c64"
+      },
+      {
+        "path": "docs/reviews/evidence/model-selection-s2-r1-worker-20261011.json",
+        "expected": "bcfa4322f63c44f91cd63c37ed300498de679fdbfeeabf462aba85ba1d96cbf7",
+        "observed": "bcfa4322f63c44f91cd63c37ed300498de679fdbfeeabf462aba85ba1d96cbf7"
+      },
+      {
+        "path": "docs/reviews/evidence/model-selection-s2-r1-local-review-20261011.json",
+        "expected": "344d2b8f068dc262610220c7c465cfe041df1a9f24b0e4e0aafb07c4920bd3c5",
+        "observed": "344d2b8f068dc262610220c7c465cfe041df1a9f24b0e4e0aafb07c4920bd3c5"
+      },
+      {
+        "path": "docs/reviews/CVF_WORKER_MODEL_USAGE_OBSERVATION_SUPPLEMENT_2026-10-11.md",
+        "expected": "9f5bada8150da021d6d527d52028aef0882d69ca2184f686d20dbbc0d24740d2",
+        "observed": "9f5bada8150da021d6d527d52028aef0882d69ca2184f686d20dbbc0d24740d2"
+      },
+      {
+        "path": "docs/roadmaps/CVF_ORCHESTRATOR_MODEL_SELECTION_SYSTEM_CHAIN_ROADMAP_2026-10-10.md",
+        "expected": "98febb9d9cf53f245aec498791c6910f5c61778e65b95f9f20e56d4c158dc2a9",
+        "observed": "98febb9d9cf53f245aec498791c6910f5c61778e65b95f9f20e56d4c158dc2a9"
+      },
+      {
+        "path": "CVF_SESSION_MEMORY.md",
+        "expected": "ca39458dac081c4925820a93a48883167009b2141e360b11494ec495fc96fc8c",
+        "observed": "ca39458dac081c4925820a93a48883167009b2141e360b11494ec495fc96fc8c"
+      },
+      {
+        "path": "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json",
+        "expected": "79188be2711eabfc8e5ecbc62b7c0803e9d19bb0b718f09d4d4ff80773f3d791",
+        "observed": "79188be2711eabfc8e5ecbc62b7c0803e9d19bb0b718f09d4d4ff80773f3d791"
+      },
+      {
+        "path": "AGENT_HANDOFF_V63_2026-09-18.md",
+        "expected": "32a90bf4d6c46906de1c3b87908d3edffed2cc82bc390638924e035937b430f2",
+        "observed": "32a90bf4d6c46906de1c3b87908d3edffed2cc82bc390638924e035937b430f2"
+      },
+      {
+        "path": "docs/reference/guard_orientation/README.md",
+        "expected": "3ad845e61de40db20a300adbfdcf61db72cc68a334229ce26315db44fac6af7f",
+        "observed": "3ad845e61de40db20a300adbfdcf61db72cc68a334229ce26315db44fac6af7f"
+      },
+      {
+        "path": "docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md",
+        "expected": "dcb12ad8df392298ebd54b3cb4a721553387329d9053e26543f1ab0b3d1d8996",
+        "observed": "dcb12ad8df392298ebd54b3cb4a721553387329d9053e26543f1ab0b3d1d8996"
+      },
+      {
+        "path": "docs/reference/CVF_GOVERNED_WORK_LIFECYCLE_AND_DESIGN_CONTROL_STANDARD_2026-06-11.md",
+        "expected": "b48f11363ee62a2ec4c85c6f9fba4540b90eb74475c31aeab18cfe4492a536de",
+        "observed": "b48f11363ee62a2ec4c85c6f9fba4540b90eb74475c31aeab18cfe4492a536de"
+      },
+      {
+        "path": "docs/reference/external_agent_review/CVF_CROSS_WORKSPACE_EVIDENCE_RELAY_METHOD.md",
+        "expected": "4616ac6986c9a8e0f8049c3432f7b6febc7bc8a9c361f8540ec78a590b77b869",
+        "observed": "4616ac6986c9a8e0f8049c3432f7b6febc7bc8a9c361f8540ec78a590b77b869"
+      },
+      {
+        "path": "docs/reference/external_agent_review/CVF_CROSS_WORKSPACE_DOMAIN_FUNNEL_ABSORPTION_METHOD.md",
+        "expected": "a584b8f419fac59914d800ddef38eb49ae9723459b5b3c07ba7a3352fe7dfa88",
+        "observed": "a584b8f419fac59914d800ddef38eb49ae9723459b5b3c07ba7a3352fe7dfa88"
+      },
+      {
+        "path": "governance/compat/check_worker_return_quality_gate.py",
+        "expected": "c87f1a50dd95af3459e3af1bcc6aaed8e0c1f5cec28e7761a9f3b254f3ec7257",
+        "observed": "c87f1a50dd95af3459e3af1bcc6aaed8e0c1f5cec28e7761a9f3b254f3ec7257"
+      },
+      {
+        "path": "governance/compat/check_markdown_structural_completeness.py",
+        "expected": "a76806333a19814c1cb1fe04f305dec33a9c5572175db728e30441637d2e78c7",
+        "observed": "a76806333a19814c1cb1fe04f305dec33a9c5572175db728e30441637d2e78c7"
+      },
+      {
+        "path": "governance/compat/check_work_order_dispatch_quality.py",
+        "expected": "a2356b1d86c32ddd3773eb908e13d0ef698d4cbc58500da2bb983a718caa8988",
+        "observed": "a2356b1d86c32ddd3773eb908e13d0ef698d4cbc58500da2bb983a718caa8988"
+      },
+      {
+        "path": "governance/compat/check_agent_packet_authority_and_encoding.py",
+        "expected": "5f1ce8f2cde856707e6375ebdc6667f270db411aabb3971c85981e757abb3d78",
+        "observed": "5f1ce8f2cde856707e6375ebdc6667f270db411aabb3971c85981e757abb3d78"
+      },
+      {
+        "path": "governance/compat/check_work_order_acceptance_ledger.py",
+        "expected": "8b6ce487f01eb432cab16456da98c79f0995468f6a1da8c16765d204cc6a39b4",
+        "observed": "8b6ce487f01eb432cab16456da98c79f0995468f6a1da8c16765d204cc6a39b4"
+      },
+      {
+        "path": "governance/compat/check_core_guard_self_protection.py",
+        "expected": "fb373c5efa08b6fd6a8a4bfcfa7d58918a102e4d23f6f1b3bb29c3689e800c60",
+        "observed": "fb373c5efa08b6fd6a8a4bfcfa7d58918a102e4d23f6f1b3bb29c3689e800c60"
+      },
+      {
+        "path": "governance/compat/check_semantic_convergence_control.py",
+        "expected": "94d4a26f130f5fd20eefa54871e3533e9755164dfc8204864e7f555f211352e9",
+        "observed": "94d4a26f130f5fd20eefa54871e3533e9755164dfc8204864e7f555f211352e9"
+      },
+      {
+        "path": "governance/compat/check_review_cost_control.py",
+        "expected": "82d970a5f89fb33bb4d400ffc64330d1ee54c637a2817295beb781c77d590c6c",
+        "observed": "82d970a5f89fb33bb4d400ffc64330d1ee54c637a2817295beb781c77d590c6c"
+      },
+      {
+        "path": "governance/compat/check_agent_operation_trace.py",
+        "expected": "57aaac11abdca0b7a94998dfb21bc259d8013ce0b9bdc9d53a906202e9fabaaa",
+        "observed": "57aaac11abdca0b7a94998dfb21bc259d8013ce0b9bdc9d53a906202e9fabaaa"
+      },
+      {
+        "path": "governance/compat/check_delta_execution_claim_boundary.py",
+        "expected": "595c639e27ce9cafe40ee7d3a79bebc624ba18df5b09aca9ef8259630466f782",
+        "observed": "595c639e27ce9cafe40ee7d3a79bebc624ba18df5b09aca9ef8259630466f782"
+      },
+      {
+        "path": "governance/compat/check_independent_review_probe_admission.py",
+        "expected": "738cfd2da5a58910d7334805fb9bab074ddddfc8c156e4a2a9f4573c6ac51a96",
+        "observed": "738cfd2da5a58910d7334805fb9bab074ddddfc8c156e4a2a9f4573c6ac51a96"
+      },
+      {
+        "path": "governance/compat/check_finding_to_governance_learning.py",
+        "expected": "338a3d7492ad6fd6b962157a668c3d13a47b286580c36a26f1acf897a50049ea",
+        "observed": "338a3d7492ad6fd6b962157a668c3d13a47b286580c36a26f1acf897a50049ea"
+      },
+      {
+        "path": "governance/compat/check_worker_experience_retrospective.py",
+        "expected": "230f30ec0821e94f56daeabcb3b134459706089dae945777f59eb779fa0c0d88",
+        "observed": "230f30ec0821e94f56daeabcb3b134459706089dae945777f59eb779fa0c0d88"
+      },
+      {
+        "path": "governance/compat/check_python_automation_size.py",
+        "expected": "e3925c1ebff7f8fff0ac3aa279b0c02bfae9ec2add1ed047b3cb76b25508b9c1",
+        "observed": "e3925c1ebff7f8fff0ac3aa279b0c02bfae9ec2add1ed047b3cb76b25508b9c1"
+      },
+      {
+        "path": "governance/compat/run_worker_return_fast_gate.py",
+        "expected": "7cab0762f628f30b5337dc8a9e33ab91688d2fe5079029e96360647befd83a2d",
+        "observed": "7cab0762f628f30b5337dc8a9e33ab91688d2fe5079029e96360647befd83a2d"
+      }
+    ],
+    "consumerSourceVerification": {
+      "submittedAllMatch": true,
+      "acceptedAllMatch": true,
+      "acceptedActualBytesAllMatch": true,
+      "decisionSourceRawMatch": true,
+      "reviewSourceRawMatch": true,
+      "terminalReviewClockHonestNull": true,
+      "initialCaptureHonestNull": true,
+      "historicalRequestedEffort": "xhigh",
+      "historicalObservedAllNull": true
+    },
+    "learningConsumption": {
+      "source": "docs/reviews/CVF_MODEL_SELECTION_S2_R1_COMPLETION_2026-10-11.md",
+      "status": "ACTION_VERIFIED",
+      "applicability": "PARTIAL_REPAIR_ATTRIBUTION_ONLY",
+      "positive": "actual retrospective source-pinned CLI valid",
+      "negative": "actual API/CLI changed return and product without Local attribution invalid",
+      "notDelivered": "PLL/runtime selector, scoring or model-quality update"
+    },
+    "actualLogPins": [
+      {
+        "path": ".cvf\\runtime\\model-selection-s2-r2-20261011\\worker-pre-implementation-receipt.json",
+        "sha256": "917d9afff9d99464b33c0ee4f04a61b69dd77e12dbd5d78804374f66590ec815"
+      },
+      {
+        "path": ".cvf\\runtime\\model-selection-s2-r2-20261011\\focused-tests-final-preliminary.log",
+        "sha256": "2200b34e424bca5802bc2f3bdea82bbecda479e83277ccc691302eed90aad123"
+      },
+      {
+        "path": ".cvf\\runtime\\model-selection-s2-r2-20261011\\example-cli-final-preliminary.log",
+        "sha256": "0d4f7df5382e4d1b23a8e3597c6fe1aa3b3126178a9a58d14ba5c629493bb2e7"
+      },
+      {
+        "path": ".cvf\\runtime\\model-selection-s2-r2-20261011\\worker-return-fast-gate-candidate.log",
+        "sha256": "1bad3e86600c59eb780f7c903d047041c4cbdd2a0d8605299efe8103b5a1c120"
+      },
+      {
+        "path": ".cvf\\runtime\\model-selection-s2-r2-20261011\\worker-return-fast-gate-retry1.log",
+        "sha256": "9719456e94eeef8a49450f5628c6ba822a317ac1a6f3aa0b49ed3061b932b0aa"
+      },
+      {
+        "path": ".cvf\\runtime\\model-selection-s2-r2-20261011\\worker-return-fast-gate-pre-freeze.log",
+        "sha256": "0d7c7cc62c7304bffb245a63d33aedd21c9cdf2d125162dc4f2e951489050f7c"
+      },
+      {
+        "path": ".cvf\\runtime\\model-selection-s2-r2-20261011\\worker-return-fast-gate-final-frozen.log",
+        "sha256": "86dae50e31541bfbc107b37d96e7d4bfd1d60dd5375a690039337e516757880e"
+      },
+      {
+        "path": ".cvf\\runtime\\model-selection-s2-r2-20261011\\final-hash-verification.log",
+        "sha256": "3d79c47f2d2d3a9d967e58d26bce1a4ef358947866d77a3d647a405d124fef24"
+      },
+      {
+        "path": ".cvf\\runtime\\model-selection-s2-r2-20261011\\final-time.log",
+        "sha256": "d2f7d8a96b57543f620c600fbe400d8f32510d59b45f2152270eae464550551b"
+      },
+      {
+        "path": ".cvf\\runtime\\model-selection-s2-r2-20261011\\local-focused-tests-after-repair.log",
+        "sha256": "4e09006b9b4859c94a4e317568eb35ba1cc51aee7e01c0e82777fbd4ada0e2b7"
+      },
+      {
+        "path": ".cvf\\runtime\\model-selection-s2-r2-20261011\\independent-probes-initial.json",
+        "sha256": "5e24792e19c9d93affa918b2db5ad3557515e709e8435f9c4f9e00f418d6afe5"
+      },
+      {
+        "path": ".cvf\\runtime\\model-selection-s2-r2-20261011\\independent-probes-corrected-oracle-before-repair.json",
+        "sha256": "9f87ebf5fdcd909cc1f76b1ce89929ef1c8ad1333bf564570bc17fbcf1710962"
+      },
+      {
+        "path": ".cvf\\runtime\\model-selection-s2-r2-20261011\\independent-probes-full-audit-before-repair.json",
+        "sha256": "bfb48e71fe0ee733b190aa7d4273f86271e9864fd9f116122f0753cbfa02ce48"
+      },
+      {
+        "path": ".cvf\\runtime\\model-selection-s2-r2-20261011\\independent-probes.json",
+        "sha256": "db8354de311c5f4cd4a79d4fb070060a8f9858735fe170318c5ef67019fcdbd7"
+      },
+      {
+        "path": ".cvf\\runtime\\model-selection-s2-r2-20261011\\independent_oracle_before_first_run.py",
+        "sha256": "5243b5112746cd226e4558599e37ade7150028ee7bb553683a6e7cc0715e94f6"
+      },
+      {
+        "path": ".cvf\\runtime\\model-selection-s2-r2-20261011\\independent_oracle.py",
+        "sha256": "9b43ab17946804f2c458095defaa69c81e2643c10e411b7e8bc267e2c1e94938"
+      },
+      {
+        "path": ".cvf\\runtime\\model-selection-s2-r2-20261011\\worker-source-pin-verification.json",
+        "sha256": "1cf4433b061bac9bad27fe72e5bd08efc9b5212c346b76eb8d7b0b9bf2b6b232"
+      },
+      {
+        "path": ".cvf\\runtime\\model-selection-s2-r2-20261011\\retrospective-source-verification.json",
+        "sha256": "1ba309a66b5c9e07d3bfde7480cf5d8f6b3a085cf9ab372b406fb2261c0049ca"
+      }
+    ],
+    "reviewTime": {
+      "firstReadClockUtc": "2026-10-11T05:32:49.356297+00:00",
+      "semanticDispositionAuthoredUtc": "2026-10-11T05:37:46.178948+00:00",
+      "elapsedThroughAuthoringSeconds": 296.822651,
+      "fullReviewClosureEndUtc": null,
+      "unknownReason": "Final closure, commit and range-verification interval is recorded in detached final evidence; no future clock predicted."
+    },
+    "usage": {
+      "money": null,
+      "tokens": null,
+      "quota": null,
+      "processingTimeSeconds": null,
+      "humanMinutes": null,
+      "reason": "Not exposed or metered; unknown is not zero."
+    },
+    "telemetry": "Review-Cost Telemetry: REQUIRED\nreviewRoundCount: 1\nworkerRepairTurnCount: 0\nnewRootCauseCountThisRound: 4\ndependentFindingCountThisRound: 4\nproviderCallCount: 0\nmaterialCommitCount: 0\ncontinuityCommitCount: 0\nelapsedReviewMinutes: 5\ntokenOrQuotaUsage: NOT_AVAILABLE_WITH_REASON: native underlying usage and root bill not exposed\nvalueDelta: accepted useful offline outcome after129 independent probes and four Local repair groups; attribution prevents worker-model quality overclaim\nstopDisposition: COMPLETE_REVIEW\npreRepairAuditDisposition: COMPLETE_BEFORE_FIRST_REPAIR\ncommitPlanDisposition: DEFAULT_ONE_MATERIAL_ONE_CONTINUITY\nlatencyDisposition: NOT_MEASURED_WITH_REASON: full review/closure interval pending detached final verification\navoidableDelayClass: NONE\n\nCounts above are the Local closure lane at authoring before its commits; plan is one material plus one continuity, actual SHAs/counts are recorded after execution. Root admission already cost two materials and four continuity/correction commits, separately recorded in orchestratorAdmission; none are Luna delivery. Worker1656.457 wall seconds through final hash verification; Local review296.823 seconds through this disposition only. Local semantic repair rounds=1, groups=4, tests added=5; no worker redispatch. Unexposed model identity/usage and human effort remain unknown. This is one task observation, not a matched benchmark.",
+    "closurePacketRepairs": {
+      "rounds": 1,
+      "groups": 2,
+      "findings": [
+        "completion confirmatory gate-purpose literal missing",
+        "worker non-applicable knowledge heading requires complete bounded accounting under broader pre-implementation gate"
+      ],
+      "diagnosticLog": ".cvf\\runtime\\model-selection-s2-r2-20261011\\closure-material-diagnostic.log",
+      "noImplementationChange": true,
+      "attribution": "LOCAL_CLOSURE_PACKAGING; worker fast gate omits the broader knowledge check"
+    }
+  },
+  "orchestratorAdmission": {
+    "scope": "LOCAL_ORCHESTRATOR_PREPARATION_ONLY_NOT_LUNA",
+    "profileSha256": "612735bf1f27354b9b5e9389239fa9ded6d3aeb9a77bfb4da63da4376eb84c5d",
+    "auditInvocation": "/root/s2_value_audit",
+    "auditTurnCount": 4,
+    "designCorrections": [
+      "Canonical independence normalization",
+      "Primary versus nonprimary and packaging chronology",
+      "Initial product pins and submitted-to-accepted repair attribution",
+      "Unknown terminal acceptance clock retained with reason"
+    ],
+    "packetFailures": [
+      "Guessed absent ignored author-helper and source/support paths; directory discovery repaired; no tracked deletion",
+      "Windows rg filesystem wildcard rejected; directory plus -g used",
+      "Ignored authorscript asserted wrong probe heading before packet writes",
+      "Guessed nonexistent reviewer-fast command exited2; actual hook name used",
+      "Initial reviewer-fast2 violations: stale prior review path and missing clean-worktree literal",
+      "Dispatch probe duplicate declaration then missing required risk class; fixed against complete checker constants",
+      "R2 material correction: AOT exact manifest and current-head marker; then TPGR handoff path binding",
+      "Continuity generator missing --generate: command exited2; then canonical generator and active-state check passed",
+      "Release DR-05 helper omitted batch marker; handoff-only repair subsequently exposed DR-04 atomic continuity requirement",
+      "Atomic repair exposed GC-020 current-parent marker absence; final five-path sync included current parent and all four release surfaces",
+      "Verification Commands accidentally named old unittest module: root corrected worker by native message before tests; closure metadata will fix command"
+    ],
+    "materialCommits": [
+      "32aabb2b91c180474e32053c6f496da2aa24244b",
+      "57f8dc7b041c6cd17919aa3c300ad55bf324d329"
+    ],
+    "continuityAndCorrectionCommits": [
+      "b48f935188c1f41786df3fe0729a05660a61e6ab",
+      "9f614b9dc87b9ddf0ccf0b1aaad8661c3ed702e2",
+      "103e1252b1a6e39cf2ff80ea398ed0d94b25d214",
+      "0bf6f773ee755d8e20e24678c646e5da3bb3ba09"
+    ],
+    "workerReleaseHead": "0bf6f773ee755d8e20e24678c646e5da3bb3ba09",
+    "releaseGate": "COMPLIANT pre-dispatch12.32s, 86 commands",
+    "lastRootClockBeforeNativeDispatchUtc": "2026-10-11T05:04:06Z",
+    "rootPrepElapsed": null,
+    "usage": {
+      "directProviderApiCalls": 0,
+      "nativeImplementingInvocations": 1,
+      "nativeProfileAuditInvocation": 1,
+      "underlyingProviderRequestCount": null,
+      "money": null,
+      "tokens": null,
+      "quota": null,
+      "humanTime": null,
+      "observedRuntimeIdentity": null
+    },
+    "limitations": "Partial stage clock only; native launch invocation is requested configuration, not observed host/model evidence. No comparison to historical xhigh/Haiku. No worker released before final gate.",
+    "logs": [
+      {
+        "path": ".cvf/runtime/model-selection-s2-r2-20261011/packet-reviewer-fast.log",
+        "sha256": "f5ce3c69c5580f7ee38fbc98b251df7f1c89f3e3bc5c576cbde7f7b2aecfbb34"
+      },
+      {
+        "path": ".cvf/runtime/model-selection-s2-r2-20261011/packet-reviewer-fast-actual.log",
+        "sha256": "3aee598bf255d14bdd0662bc41df804c759041280c557a73b4c3d6479d1e5f9f"
+      },
+      {
+        "path": ".cvf/runtime/model-selection-s2-r2-20261011/packet-reviewer-fast-final.log",
+        "sha256": "3dbed2bc56fcf13ce4f50f67a8cceecac120e331c9485a50339fc6a9f5dee68f"
+      },
+      {
+        "path": ".cvf/runtime/model-selection-s2-r2-20261011/packet-authoring-full.log",
+        "sha256": "0e4fc00dcebef6d06d15a4d51cf64b144dc886c9b4541d58b3590257907483ce"
+      },
+      {
+        "path": ".cvf/runtime/model-selection-s2-r2-20261011/dispatch-material.log",
+        "sha256": "b9583412ff6c3299cfe301063a7658dd89efb1cae4e446fe2fb14f5e22e1401d"
+      },
+      {
+        "path": ".cvf/runtime/model-selection-s2-r2-20261011/dispatch-material-final.log",
+        "sha256": "b9583412ff6c3299cfe301063a7658dd89efb1cae4e446fe2fb14f5e22e1401d"
+      },
+      {
+        "path": ".cvf/runtime/model-selection-s2-r2-20261011/dispatch-material-pass.log",
+        "sha256": "01bc0e5e919242e01e3efb0113b31814fe9d886cc626c7675f27ae46e1e53b9d"
+      },
+      {
+        "path": ".cvf/runtime/model-selection-s2-r2-20261011/dispatch-contract-correction.log",
+        "sha256": "9b4b8b4e1a8534ee83db02958fd3ead74470b7f8bc5b348a08db63066f7f5f7a"
+      },
+      {
+        "path": ".cvf/runtime/model-selection-s2-r2-20261011/dispatch-contract-correction-final.log",
+        "sha256": "cb7c1c5456e7b3879b4705e5b6dd07d008f81f2ca7ebbcb9681b8dfa7137b69d"
+      },
+      {
+        "path": ".cvf/runtime/model-selection-s2-r2-20261011/contract-correction-authoring-full.log",
+        "sha256": "1b2c4f7d88a8de25ba9d2ee1faaef162ae9d7308d3cf965f7ea3ab288f4297b4"
+      },
+      {
+        "path": ".cvf/runtime/model-selection-s2-r2-20261011/contract-correction-second-full.log",
+        "sha256": "e4b46a42c916556824411ddff9155bbf728735b7c65800df5ff8bb162787829d"
+      },
+      {
+        "path": ".cvf/runtime/model-selection-s2-r2-20261011/dispatch-contract-correction-pass.log",
+        "sha256": "af76171698a405dcf5aa9e4a9ce3b05da135b22ee9d572fa69d3be1328b298a3"
+      },
+      {
+        "path": ".cvf/runtime/model-selection-s2-r2-20261011/dispatch-continuity.log",
+        "sha256": "f3c07af550fd6e84e339c682a6d91381e07b98267b5ea36c60db668563044fff"
+      },
+      {
+        "path": ".cvf/runtime/model-selection-s2-r2-20261011/dispatch-release.log",
+        "sha256": "489266b0a596410ef57c7502f4d45ca2d8abe55ac4837d177a51da7eac74f811"
+      },
+      {
+        "path": ".cvf/runtime/model-selection-s2-r2-20261011/dispatch-marker-correction.log",
+        "sha256": "d7f6f8730ce2759553d30fd570bc03c6497875383eaba480bbfcdff7eff19dc8"
+      },
+      {
+        "path": ".cvf/runtime/model-selection-s2-r2-20261011/dispatch-release-final.log",
+        "sha256": "18cd36c281c3ad46cbca8d1b11fed9949584df91874ad99e9f5a9b269054e763"
+      },
+      {
+        "path": ".cvf/runtime/model-selection-s2-r2-20261011/dispatch-atomic-correction.log",
+        "sha256": "d483f75e2be83a27d8dc6cfd29956304f798dff222597c9eeff31beddec7bc2e"
+      },
+      {
+        "path": ".cvf/runtime/model-selection-s2-r2-20261011/dispatch-release-atomic.log",
+        "sha256": "0d49b2e569230e76652afc7736688b1dad958f47eb3dd8725e75b8263ada76cc"
+      },
+      {
+        "path": ".cvf/runtime/model-selection-s2-r2-20261011/dispatch-parent-correction.log",
+        "sha256": "3ba5acea29cf41dbd280a3de2f374926c21ec41f76b8f3542026d62574ea33d8"
+      },
+      {
+        "path": ".cvf/runtime/model-selection-s2-r2-20261011/dispatch-release-final-bound.log",
+        "sha256": "7bff96ee6820c7ad5d5907db1c6f045aac237dd800b4e44f5c743fadb27c3194"
+      }
+    ]
+  },
+  "claimBoundary": "Optional offline declaration consistency; no runtime selector, source truth, identity/billing authenticity, model comparison or complete R3."
+}
