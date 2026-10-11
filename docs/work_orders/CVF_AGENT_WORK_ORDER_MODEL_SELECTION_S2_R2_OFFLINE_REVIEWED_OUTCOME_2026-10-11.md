@@ -231,7 +231,7 @@ Existing LOCAL_OBSERVATION owner=R3 contract. Source `docs/reviews/CVF_MODEL_SEL
 
 ## Dated Owner Dependency Discovery
 
-Dated2026-10-11: R3 owns ReviewedOutcomeLink; S2 public decision validator checks declared selection but no execution/initial/final outcome joins. Current supplement manually separates nine source references and repair burdens. Existing worker-return and acceptance-ledger guards own task fulfillment, not this optional embedded decision/outcome projection. New locked profile raw SHA `cfc199a0774101bbb22c14a9a37f6553380d4daec532cf5077cf4dfed51fca81`; draft audit found three root design blocker classes (independence normalization, phase chronology and returned product pins), corrected before build; corrected draft audit CONCUR_BOUNDED_WITH_LIMITS on raw29d4d2c2267fcdcba782f549a7270a140de3e9b397a16e3874aa53aa648a8311; only Status metadata then locked, contract unchanged. Old helper/profile and originals remain read-only. No EXTENSIONS runtime/test registry entry or new persistent owner required.
+Dated2026-10-11: R3 owns ReviewedOutcomeLink; S2 public decision validator checks declared selection but no execution/initial/final outcome joins. Current supplement manually separates nine source references and repair burdens. Existing worker-return and acceptance-ledger guards own task fulfillment, not this optional embedded decision/outcome projection. New locked profile raw SHA `612735bf1f27354b9b5e9389239fa9ded6d3aeb9a77bfb4da63da4376eb84c5d`; draft audit found three root design blocker classes (independence normalization, phase chronology and returned product pins), corrected before build; corrected draft audit CONCUR_BOUNDED_WITH_LIMITS on raw29d4d2c2267fcdcba782f549a7270a140de3e9b397a16e3874aa53aa648a8311; only Status metadata then locked, contract unchanged. Old helper/profile and originals remain read-only. No EXTENSIONS runtime/test registry entry or new persistent owner required.
 
 ## Checker Source Read-Ahead Block
 
@@ -381,7 +381,7 @@ This graph assigns repair and commit owners; it does not report those future gat
 ## Task Governance Routing Manifest
 
 ```json
-{"schemaVersion":"cvf.taskGovernanceManifest.v1","taskId":"CVF-MODEL-SELECTION-S2-R2-20261011","requestedProfile":"P3_ELEVATED","classification":{"taskKind":"PURE_LOCAL_IMPLEMENTATION","authorityImpact":"USES_EXISTING_OWNER","externalEffect":"LOCAL_REVERSIBLE","dataSensitivity":"PRIVATE_REPO","reversibility":"GIT_REVERSIBLE","sourceScale":"NAMED_FILES","delegation":"MULTI_ROLE_NO_COMMIT","novelty":"NEW_INTERFACE"},"pathFamilies":["docs/baselines/CVF_GC018_MODEL_SELECTION_S2_R2_OFFLINE_REVIEWED_OUTCOME_2026-10-11.md","docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_SELECTION_S2_R2_OFFLINE_REVIEWED_OUTCOME_2026-10-11.md","docs/reference/CVF_MODEL_SELECTION_REVIEWED_OUTCOME_PROFILE_2026-10-11.md","governance/compat/model_selection_reviewed_outcome.py","governance/compat/test_model_selection_reviewed_outcome.py","docs/reviews/evidence/model-selection-s2-r2-outcome-example-20261011.json","docs/guides/CVF_MODEL_SELECTION_REVIEWED_OUTCOME_VALIDATION_2026-10-11.md","docs/reviews/CVF_MODEL_SELECTION_S2_R2_WORKER_RETURN_2026-10-11.md","docs/reviews/evidence/model-selection-s2-r2-worker-20261011.json","docs/roadmaps/CVF_ORCHESTRATOR_MODEL_SELECTION_SYSTEM_CHAIN_ROADMAP_2026-10-10.md"],"claims":["OFFLINE_DECLARED_RECORD_CONSISTENCY_ONLY","NO_RUNTIME_OR_MODEL_QUALITY_CLAIM"],"requiredProof":["STATIC_TESTS","EXAMPLE_RESULT","RETURN_GATE","OBSERVATION_ACTION"],"operatorCheckpoints":[],"forbiddenEffects":["PROVIDER_CALL","NETWORK_WRITE","PUBLIC_WRITE","DEPLOYMENT","REAL_DATA_MUTATION","HOOK_WIRING"],"sourceEvidence":{"selectedFilesFullyRead":false,"corpusReceiptRef":null,"completenessClaimChanged":false}}
+{"schemaVersion":"cvf.taskGovernanceManifest.v1","taskId":"CVF-MODEL-SELECTION-S2-R2-20261011","requestedProfile":"P3_ELEVATED","classification":{"taskKind":"PURE_LOCAL_IMPLEMENTATION","authorityImpact":"USES_EXISTING_OWNER","externalEffect":"LOCAL_REVERSIBLE","dataSensitivity":"PRIVATE_REPO","reversibility":"GIT_REVERSIBLE","sourceScale":"NAMED_FILES","delegation":"MULTI_ROLE_NO_COMMIT","novelty":"NEW_INTERFACE"},"pathFamilies":["docs/baselines/CVF_GC018_MODEL_SELECTION_S2_R2_OFFLINE_REVIEWED_OUTCOME_2026-10-11.md","docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_SELECTION_S2_R2_OFFLINE_REVIEWED_OUTCOME_2026-10-11.md","docs/reference/CVF_MODEL_SELECTION_REVIEWED_OUTCOME_PROFILE_2026-10-11.md","governance/compat/model_selection_reviewed_outcome.py","governance/compat/test_model_selection_reviewed_outcome.py","docs/reviews/evidence/model-selection-s2-r2-outcome-example-20261011.json","docs/guides/CVF_MODEL_SELECTION_REVIEWED_OUTCOME_VALIDATION_2026-10-11.md","docs/reviews/CVF_MODEL_SELECTION_S2_R2_WORKER_RETURN_2026-10-11.md","docs/reviews/evidence/model-selection-s2-r2-worker-20261011.json","docs/roadmaps/CVF_ORCHESTRATOR_MODEL_SELECTION_SYSTEM_CHAIN_ROADMAP_2026-10-10.md","AGENT_HANDOFF_V63_2026-09-18.md"],"claims":["OFFLINE_DECLARED_RECORD_CONSISTENCY_ONLY","NO_RUNTIME_OR_MODEL_QUALITY_CLAIM"],"requiredProof":["STATIC_TESTS","EXAMPLE_RESULT","RETURN_GATE","OBSERVATION_ACTION"],"operatorCheckpoints":[],"forbiddenEffects":["PROVIDER_CALL","NETWORK_WRITE","PUBLIC_WRITE","DEPLOYMENT","REAL_DATA_MUTATION","HOOK_WIRING"],"sourceEvidence":{"selectedFilesFullyRead":false,"corpusReceiptRef":null,"completenessClaimChanged":false}}
 ```
 
 ## Corpus Completeness And Report Integrity
@@ -446,8 +446,8 @@ DEFERRED_PRIVATE_ONLY
 | Claim boundary | no worker outcome, runtime identity, cost comparison or automation |
 | Agent type | INTERNAL_AGENT |
 | Invocation ID | model-selection-s2-r2-packet-20261011 |
-| Expected manifest | `docs/reference/CVF_MODEL_SELECTION_REVIEWED_OUTCOME_PROFILE_2026-10-11.md`; `docs/baselines/CVF_GC018_MODEL_SELECTION_S2_R2_OFFLINE_REVIEWED_OUTCOME_2026-10-11.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_SELECTION_S2_R2_OFFLINE_REVIEWED_OUTCOME_2026-10-11.md`; `docs/roadmaps/CVF_ORCHESTRATOR_MODEL_SELECTION_SYSTEM_CHAIN_ROADMAP_2026-10-10.md` |
-| Actual changed set | `docs/reference/CVF_MODEL_SELECTION_REVIEWED_OUTCOME_PROFILE_2026-10-11.md`; `docs/baselines/CVF_GC018_MODEL_SELECTION_S2_R2_OFFLINE_REVIEWED_OUTCOME_2026-10-11.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_SELECTION_S2_R2_OFFLINE_REVIEWED_OUTCOME_2026-10-11.md`; `docs/roadmaps/CVF_ORCHESTRATOR_MODEL_SELECTION_SYSTEM_CHAIN_ROADMAP_2026-10-10.md` |
+| Expected manifest | `docs/reference/CVF_MODEL_SELECTION_REVIEWED_OUTCOME_PROFILE_2026-10-11.md`; `docs/baselines/CVF_GC018_MODEL_SELECTION_S2_R2_OFFLINE_REVIEWED_OUTCOME_2026-10-11.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_SELECTION_S2_R2_OFFLINE_REVIEWED_OUTCOME_2026-10-11.md`; `docs/roadmaps/CVF_ORCHESTRATOR_MODEL_SELECTION_SYSTEM_CHAIN_ROADMAP_2026-10-10.md`; `AGENT_HANDOFF_V63_2026-09-18.md` |
+| Actual changed set | `docs/reference/CVF_MODEL_SELECTION_REVIEWED_OUTCOME_PROFILE_2026-10-11.md`; `docs/baselines/CVF_GC018_MODEL_SELECTION_S2_R2_OFFLINE_REVIEWED_OUTCOME_2026-10-11.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_SELECTION_S2_R2_OFFLINE_REVIEWED_OUTCOME_2026-10-11.md`; `docs/roadmaps/CVF_ORCHESTRATOR_MODEL_SELECTION_SYSTEM_CHAIN_ROADMAP_2026-10-10.md`; `AGENT_HANDOFF_V63_2026-09-18.md` |
 | Manifest delta | MATCH after staging |
 | Deletion or rename disposition | N/A with reason: none |
 
@@ -484,3 +484,28 @@ Root material-helper first validation stopped before commit; staged whitespace c
 Explicit full authoring gate diagnosed duplicate independentProbeRequired declarations inherited across closure-conversion and probe-plan sections. Kept the canonical single probe-plan declaration; required different-actor probe unchanged. Root packet error, not worker outcome.
 
 The duplicate declaration initially masked a missing independentProbeRiskClass in the rewritten section. Root read the complete DISPATCH_FIELDS validator and restored that field before release; no weakening of required probe scope.
+
+## Pre-Release Contract Correction
+
+Root consumer/source check after initial packet material32aabb2b91c180474e32053c6f496da2aa24244b found no exact terminal review timestamp in S2 source. Existing stage clocks cannot substitute. Revised profile preserves nullable reviewedAt with unknownReason while terminal actor/invocation/ref and known-clock ordering remain mandatory. Read-only auditor concurred; root design blocker4, not worker work. Exact original profile/packet remain in prior commit; no child execution or dispatch receipt preceded this correction. Extra pre-release material commit is a disclosed design correction; normal worker closure remains one material/one continuity.
+
+## Mixed Protected-Path Atomicity Authorization
+
+Disposition: AUTHORIZED_EXACT_MANIFEST
+
+Atomicity reason: preserve the pre-release contract correction and update the active handoff HEAD marker for already committed initial material32aabb2b91c180474e32053c6f496da2aa24244b in the same corrected packet range. Otherwise GC-020 latest-HEAD validation blocks this source correction. No mode/next-action change occurs here; actual-SHA execution continuity follows separately. Fresh operator outcome continuation authorizes this bounded repository maintenance; no worker or runtime release.
+
+Rollback boundary: revert this exact correction and matching continuity; keep original packet history and parked effects.
+
+Exact changed manifest:
+- `docs/reference/CVF_MODEL_SELECTION_REVIEWED_OUTCOME_PROFILE_2026-10-11.md`
+- `docs/baselines/CVF_GC018_MODEL_SELECTION_S2_R2_OFFLINE_REVIEWED_OUTCOME_2026-10-11.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_SELECTION_S2_R2_OFFLINE_REVIEWED_OUTCOME_2026-10-11.md`
+- `docs/roadmaps/CVF_ORCHESTRATOR_MODEL_SELECTION_SYSTEM_CHAIN_ROADMAP_2026-10-10.md`
+- `AGENT_HANDOFF_V63_2026-09-18.md`
+
+## Correction Guard Authorization
+
+Core Guard Self-Protection Authorization for the same pre-release correction: Protected paths: `AGENT_HANDOFF_V63_2026-09-18.md`. Operator authorization: fresh offline outcome continuation; marker-only maintenance to satisfy GC-020, not an execution grant. Rollback boundary: revert matching correction/marker; canonical generator-based execution continuity is later.
+
+Correction authoring guard diagnosed the exact marker path missing from TPGR pathFamilies; added only that Local-owned handoff marker path. Worker write ownership stays the same six paths. Original source/decision histories and failed guard logs retained.

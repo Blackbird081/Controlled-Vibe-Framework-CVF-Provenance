@@ -60,7 +60,7 @@ Actual API/CLI conform to locked offline profile; valid no-repair, repaired, pen
 
 ## Evidence / Verification
 
-Locked profile `docs/reference/CVF_MODEL_SELECTION_REVIEWED_OUTCOME_PROFILE_2026-10-11.md` raw SHA-256 `cfc199a0774101bbb22c14a9a37f6553380d4daec532cf5077cf4dfed51fca81`. Actual source verification captured in packet pins before release. Consume S2 canonical originals, no ledger rewrite. Contract audit is design-only; native model/snapshot/usage unknown; one current worker requests max, historical task requested xhigh. API/CLI static proof and independent review pending.
+Locked profile `docs/reference/CVF_MODEL_SELECTION_REVIEWED_OUTCOME_PROFILE_2026-10-11.md` raw SHA-256 `612735bf1f27354b9b5e9389239fa9ded6d3aeb9a77bfb4da63da4376eb84c5d`. Actual source verification captured in packet pins before release. Consume S2 canonical originals, no ledger rewrite. Contract audit is design-only; native model/snapshot/usage unknown; one current worker requests max, historical task requested xhigh. API/CLI static proof and independent review pending.
 
 ## Checker Source Read-Ahead Block
 
@@ -142,3 +142,7 @@ Rollback boundary: revert these bounded outputs and matching disposition togethe
 | checkerReadAheadConfirmation | applicable literal controls read before authoring; confirmation/evidence purpose |
 | docOnlyNewFields | locked bounded profile types; no runtime/store field installation |
 | claimBoundary | packet preparation, not implementation proof |
+
+## Pre-Release Contract Correction
+
+Root consumer/source check after initial packet material32aabb2b91c180474e32053c6f496da2aa24244b found no exact terminal review timestamp in S2 source. Existing stage clocks cannot substitute. Revised profile preserves nullable reviewedAt with unknownReason while terminal actor/invocation/ref and known-clock ordering remain mandatory. Read-only auditor concurred; root design blocker4, not worker work. Exact original profile/packet remain in prior commit; no child execution or dispatch receipt preceded this correction. Extra pre-release material commit is a disclosed design correction; normal worker closure remains one material/one continuity.
