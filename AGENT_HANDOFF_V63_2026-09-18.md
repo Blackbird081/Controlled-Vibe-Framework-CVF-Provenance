@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Current NCR Continuation
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `e3516a3fcd245be7745f5a8e5355349262f10aa4`. Material SHA: `e3516a3fcd245be7745f5a8e5355349262f10aa4`. Batch ID: CVF-NCR-HOME-HISTORY-BINDING-20261011. Pin-repaired manual dispatch; no launch/push.
+Current HEAD recorded for this handoff: `745502c1c1885bba5beebb291869f80e0b461ec2`. Material SHA: `745502c1c1885bba5beebb291869f80e0b461ec2`. Batch ID: CVF-NCR-HOME-HISTORY-BINDING-20261011. Bounded Home technical closure; procedureFAIL, no push.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -11,14 +11,16 @@ Closed history is preserved byte-for-byte at `CVF_SESSION/handoffs/archive/AGENT
 ## Scope / Target / Owner Boundary
 
 
-Existing Home history binding only; exact4 worker outputs, fresh operator-started invocation after release.
-Role: Local INTERNAL_AGENT dispatcher/steward;phase=private dispatch;decision owner=Local. Collection15(9Haiku,2Sonnet,4Luna); blocked first invocation retained separately.
+
+Existing Home binding fix reviewed/closed; original4 worker bytes preserved, zero Local product repairs.
+Role: Local INTERNAL_AGENT reviewer/steward;phase=private closure;decision owner=Local. Collection16(10Haiku,2Sonnet,4Luna); procedureFAIL, pin-blocked attempt separate.
 Remote tracking branch: origin/main; no push grant. Provider memory is not canonical.
 
 ## Startup Acknowledgment
 
 
-Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`;handoff=`AGENT_HANDOFF_V63_2026-09-18.md`;next=fresh Home worker after pin-repaired release;role=Local INTERNAL_AGENT dispatcher/steward;phase=private dispatch;decision owner=Local;parked checkpoint=Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11.
+
+Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`;handoff=`AGENT_HANDOFF_V63_2026-09-18.md`;next=Home terminal review closed, STOP;role=Local INTERNAL_AGENT reviewer/steward;phase=private closure;decision owner=Local;parked checkpoint=Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11.
 
 ## Current Mode
 `cvf_ncr_p10_closed_p11_parked`. P10 package remains `ACTIVE_PRODUCTION_RUNTIME`; P11 parked. Latest closed learning-history wave: `LHW24`.
@@ -26,9 +28,10 @@ Current NIS-T1J is CLOSED_PASS_BOUNDED with no automatic successor; NCR consumer
 ## Current Authority
 
 
-Baseline: `docs/baselines/CVF_GC018_NCR_HOME_HISTORY_BINDING_2026-10-11.md`; SHA256 `63c162bd10d990b271826e357b0f99d20204c37309d3d616f2e52f4de9387dc5`.
-Work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HOME_HISTORY_BINDING_2026-10-11.md`; SHA256 `bab201131adbf589174185d6ce388b03dfdbe1cd268096df490b415106fe592f`; DISPATCH_READY.
-Local red fixture_B|OUTPUT_A remains in dispatch evidence; warm History click mitigates normal path. Pin repair checks13 raw+13 HEAD hashes, explicit EOL; original blocked input retained in Local evidence. Prior MFRP skip/procedure limits retained; no collection promotion.
+
+Baseline: `docs/baselines/CVF_GC018_NCR_HOME_HISTORY_BINDING_2026-10-11.md`; SHA256 `d10dc8e77574b142b8b4ef7a534164f0266b7ed2e69a147145469f12547d835d`.
+Work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HOME_HISTORY_BINDING_2026-10-11.md`; SHA256 `228258aa63bdd5b3f8afeab15f37059e3803fcced0f64b0b10a0314b0bdfc128`; CLOSED_PASS_BOUNDED.
+Local3 green/original2 assertion FAIL; focused88/type/lint PASS; zero code repairs. Persistence claim corrected, mandatory-read FAIL retained; collection16, no full roadmap/readiness claim.
 
 ## O6 Release Rebind After Provenance Sync (2026-10-11)
 Root marker replacement aa32f666 blocked DR-04/DR-05; rebind bd13e1a80 restored release. Log C:/Users/DELL/AppData/Local/Temp/o6_preimpl.log retained; no worker defect. Provenance lane closed, URL locked.
@@ -111,7 +114,8 @@ Alibaba calls are authorized for meaningful scoped tests; no other provider call
 ## Next Allowed Move
 
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-HOME-HISTORY-BINDING-20261011. Work order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HOME_HISTORY_BINDING_2026-10-11.md. Operator audit-and-choose selects bounded Home history binding: two existing Home/product-test paths plus new proof/return. Packet material e3516a3fcd245be7745f5a8e5355349262f10aa4; manual operator-started worker only after bound release PASS, WORKER_MUST_NOT_COMMIT,45min. Root starts no worker. Pin repair checks13 working-file+13 HEAD-blob hashes; first blocked invocation~9.1min preserved separately, not task16. Actual Local synthetic red: fixture_B|OUTPUT_A; existing History warm-click mitigation/flag retained. Required view/action/lineage/query regression; no durable approval/live proof. Collection15:9 Haiku-family,2 Sonnet,4 Luna; new observation only after review, Opus advisory excluded. Prior MFRP design closed; collection change/O6 helper deferred. Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11 parked; LHW24; no push grant.
+
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=STOP; BATCH_ID=CVF-NCR-HOME-HISTORY-BINDING-20261011. Home binding CLOSED_PASS_BOUNDED; material 745502c1c1885bba5beebb291869f80e0b461ec2; docs/reviews/CVF_NCR_HOME_HISTORY_BINDING_COMPLETION_2026-10-11.md. Actual Home display/decisions/child lineage use selected execution; Local3 independent assertions and88 focused tests/type/lint PASS, original source2 controls FAIL. Zero Local product repairs; worker read procedureFAIL retained. Local persistence claim corrected: currentExecution is persisted. Collection16:10 Haiku-family,2 Sonnet,4 Luna; one Home task, reported~12.6min; earlier~9.1min pin-blocked attempt separate, full delivery unknown. Keep quality/time tracking, cost deferred, Opus advisory excluded. No automatic successor/worker; next concrete coding outcome requires audit/value selection under standing operator direction; pin checker and dormant hook deferred. Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11 parked; LHW24; no push grant.
 
 ## Active Boundary
 T3B has a Local-verified active v1 specification. Party B is verified and T3C-C1 tooling accepted at `db78c87df`; T3C-C2 and Party C are verified. T3D-C1 tooling is accepted at `9ed844c2a` without source. T3D-C0-R1 closed at `2fffa1ef7`. T3D-C3 was accepted bounded at `88137e9a2`, but actual-mode prepare attempts failed before Party B/C execution; authorized cleanup removed the failed root and discarded unaccepted worker changes. G1 stopped, G2-G6 parked, and G7 research closed at `660601f0e` with `ADAPT_EXISTING_HANDOFF_ONLY`. Evidence-join sufficiency stays WATCH; no implementation successor exists. Rejected T2 paths remain archived; HRLTP-T2 paused.
@@ -140,7 +144,8 @@ NCR send/B2 STOP and S05/C1 remain; IAB unavailable; repo Playwright Chromium pr
 ## Core Guard Self-Protection Authorization
 
 
-Authorized guard-maintenance scope: exact6 pin-repaired Home dispatch continuity only; no checker/source edits.
+
+Authorized guard-maintenance scope: exact6 Home closure continuity only; no checker/source edits.
 Protected paths:
 
 - `AGENT_HANDOFF_V63_2026-09-18.md`
@@ -150,29 +155,30 @@ Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 
-Operator authorization: standing continuation/manual worker and explicit review/release of pin blocker.
-Rollback boundary: matching repair continuity only; preserve original blocked evidence and historical work. Regenerate aggregates.
+Operator authorization: standing bounded Home continuation/review/closure and quality/time collection.
+Rollback boundary: matching closure continuity; preserve original worker and blocked evidence. Regenerate aggregates.
 
 ## Agent Operation Trace Block
 
 
 
+
 | Field | Evidence |
 |---|---|
-| Actor | Local dispatcher/session-sync steward |
+| Actor | Local reviewer/session-sync steward |
 | Provider or surface | private shared workspace |
-| Session or invocation | ncr-home-history-pin-repair-sync-20261011 |
+| Session or invocation | ncr-home-history-closure-sync-20261011 |
 | Working directory | repository root |
-| Command or tool surface | canonical generator; exact6 commit;13 raw/blob pins and bound release gates |
+| Command or tool surface | canonical generator; exact6 commit; bound committed-range closure gates |
 | Target paths | exact six continuity paths |
-| Allowed scope source | operator continuation/manual-worker tracking; paired repaired packet |
-| Before status evidence | e3516a3fcd245be7745f5a8e5355349262f10aa4; material committed, clean worktree; staged empty; new worker outputs absent |
-| After status evidence | matching authority/marker/next move; fresh worker not started |
+| Allowed scope source | operator bounded Home review/closure; paired closed packet |
+| Before status evidence | 745502c1c1885bba5beebb291869f80e0b461ec2; material committed, clean worktree; staged empty |
+| After status evidence | matching closed authority/marker/STOP; no worker started |
 | Diff evidence | git diff --check; exact6 staged manifest |
 | Approval boundary | private continuity only; no push |
-| Claim boundary | pin-repaired packet only; no implementation acceptance |
+| Claim boundary | bounded offline technical closure; procedureFAIL retained |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-home-history-pin-repair-sync-20261011 |
+| Invocation ID | ncr-home-history-closure-sync-20261011 |
 | Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Manifest delta | MATCH |
