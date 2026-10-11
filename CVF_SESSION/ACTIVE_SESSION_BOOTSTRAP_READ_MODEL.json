@@ -2,7 +2,7 @@
   "schemaVersion": "0.1.0",
   "currentMode": "cvf_ncr_p10_closed_p11_parked",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=CVF-CORE; NEXT_ACTION_CLASS=LOCAL_DISPOSITION_ONLY; BATCH_ID=CVF-CONTINUITY-DISPATCH-O3-20261011. O3 staged coverage/finite child diagnostics maintenance IMPLEMENTED_BOUNDED; Local completion=docs/reviews/CVF_O3_LOW_LATENCY_MAINTENANCE_2026-10-11.md; evidence=docs/reviews/evidence/o3-low-latency-maintenance-20261011.json; actual material=5d42bd16bed859878be340499e7b53dc739e39f5. Direct Local execution; same-actor focused verification; no automatic successor. Oracle/scaffold design remains deferred; original S2-R2 retained. Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11 parked; LHW24 retained.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-CORE; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-ORACLE-O6-DESIGN-20261011; WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_ORACLE_O6_DESIGN_2026-10-11.md. Operator-started shared-workspace worker Haiku ex high; O6 design only, three outputs,45-minute ceiling,WORKER_MUST_NOT_COMMIT; Local independent review. Packet material=f9b2b67f1a7683728f729ba77b269d69ae8bf0d5; no automatic successor. O3/S2-R2 evidence retained; scaffold design deferred pending pinned producer-to-consumer mismatch. Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11 parked; LHW24 retained.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
