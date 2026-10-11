@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 docType: work_order
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 Date: 2026-10-11
 Batch ID: CVF-NCR-HOME-HISTORY-BINDING-20261011
 Dispatch base head: 8240cd0d65e205f028391d31f58ac1555bd5b233
@@ -175,12 +175,12 @@ Actual result: 0 candidates, 0 returned, not truncated. This query does not prov
 
 | Claimed item | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Disposition |
 |---|---|---|---|---|---|
-| restore A output without selecting A execution | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.tsx` | W123-T1 restore effect; ResultViewer invocation; handleAccept/handleReject/handleFollowUp bodies | HomePage | existing Home workflow | ACCEPT |
+| restore A output without selecting A execution | `docs/reviews/evidence/ncr-home-history-binding-local-20261011.json` | implementationReview source audit and original Home preimage; restore/ResultViewer/action bodies | HomePage | existing Home workflow | ACCEPT |
 | exact store selection available | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/store.ts` | execution store methods | setCurrentExecution; getExecutionById | existing execution store | ACCEPT |
 | child lineage comes from supplied parent | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execution-continuity.ts` | buildContinuationExecution body | buildContinuationExecution | existing continuity helper | ACCEPT |
 | History routes accepted work to Home | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/history/page.tsx` | onContinue prop body | HistoryPage | existing history consumer | ACCEPT |
 | result metadata and callbacks supplied by Home | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.tsx` | ResultViewerProps; ResultViewer signature | ResultViewer | existing result consumer | ACCEPT |
-| real Home regression currently browse-only | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.test.tsx` | HomePage describe block | HomePage | existing component-test home | ACCEPT |
+| real Home regression currently browse-only | `docs/reviews/evidence/ncr-home-history-binding-local-20261011.json` | implementationReview frozen worker Home test digest and Local focused verification | HomePage | existing component-test home | ACCEPT |
 | offline test selection uses current setup | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/vitest.config.ts` | default non-live include/exclude/setupFiles | defineConfig | existing Vitest configuration | ACCEPT |
 | real contradictory render observed | `docs/reviews/evidence/ncr-home-history-binding-dispatch-20261011.json` | reproduction; sourceFinding; localHarnessFailures | sourceFinding | Local synthetic component evidence | ACCEPT |
 | O6 subordinate checklist applied to new controls | `docs/reviews/CVF_ORACLE_O6_DESIGN_COMPLETION_2026-10-11.md` | Purpose; Decision / Disposition | manual P0-P7 | existing reviewer reference | ACCEPT |
@@ -190,7 +190,7 @@ Actual result: 0 candidates, 0 returned, not truncated. This query does not prov
 | Field | Value |
 |---|---|
 | applicableCheckersRead | `governance/compat/check_work_order_dispatch_quality.py`; `governance/compat/check_gate_to_role_closeability.py`; `governance/compat/check_governed_artifact_checker_read_ahead.py`; `governance/compat/check_dispatch_prompt_envelope.py`; `governance/compat/check_markdown_structural_completeness.py`; `governance/compat/check_agent_operation_trace.py`; `governance/compat/check_public_export_disposition.py`; `governance/compat/check_work_order_acceptance_ledger.py`; `governance/compat/check_task_governance_route.py`; `governance/compat/check_independent_review_probe_admission.py`; `governance/compat/check_dispatch_scaffold_provenance.py`; `governance/compat/check_core_guard_self_protection.py`; `governance/compat/check_agent_packet_authority_and_encoding.py` |
-| literalTokensReviewed | DISPATCH_READY; WORKER_MUST_NOT_COMMIT; INTERNAL_AGENT; REQUIRED_FIELDS; TRACE_REQUIRED_LABELS; SECTION_GROUPS; DEFERRED_PRIVATE_ONLY |
+| literalTokensReviewed | CLOSED_PASS_BOUNDED; WORKER_MUST_NOT_COMMIT; INTERNAL_AGENT; REQUIRED_FIELDS; TRACE_REQUIRED_LABELS; SECTION_GROUPS; DEFERRED_PRIVATE_ONLY |
 | gateRunPurpose | confirmation/evidence of selected packet structure; not a dispatch or implementation proof |
 | claimBoundary | targeted current checker constants/required sections and ready-state predicates read; not an all-lines reading claim |
 
@@ -260,8 +260,8 @@ Claim Update: finite implementation selected; product fix/worker result and inde
 | Claim boundary | source-selected task and actual synthetic UI contradiction only |
 | Agent type | INTERNAL_AGENT |
 | Invocation ID | ncr-home-history-dispatch-20261011 |
-| Expected manifest | `docs/baselines/CVF_GC018_NCR_HOME_HISTORY_BINDING_2026-10-11.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HOME_HISTORY_BINDING_2026-10-11.md`; `docs/reviews/evidence/ncr-home-history-binding-local-20261011.json`; `docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json`; `docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Actual changed set | `docs/baselines/CVF_GC018_NCR_HOME_HISTORY_BINDING_2026-10-11.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HOME_HISTORY_BINDING_2026-10-11.md`; `docs/reviews/evidence/ncr-home-history-binding-local-20261011.json`; `docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json`; `docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Expected manifest | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.test.tsx`; `docs/reviews/CVF_NCR_HOME_HISTORY_BINDING_WORKER_RETURN_2026-10-11.md`; `docs/reviews/evidence/ncr-home-history-binding-worker-20261011.json`; `docs/reviews/CVF_NCR_HOME_HISTORY_BINDING_COMPLETION_2026-10-11.md`; `docs/reviews/evidence/ncr-home-history-binding-local-20261011.json`; `docs/reviews/evidence/ncr-home-history-binding-dispatch-20261011.json`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HOME_HISTORY_BINDING_2026-10-11.md`; `docs/baselines/CVF_GC018_NCR_HOME_HISTORY_BINDING_2026-10-11.md`; `docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json`; `docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Actual changed set | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.test.tsx`; `docs/reviews/CVF_NCR_HOME_HISTORY_BINDING_WORKER_RETURN_2026-10-11.md`; `docs/reviews/evidence/ncr-home-history-binding-worker-20261011.json`; `docs/reviews/CVF_NCR_HOME_HISTORY_BINDING_COMPLETION_2026-10-11.md`; `docs/reviews/evidence/ncr-home-history-binding-local-20261011.json`; `docs/reviews/evidence/ncr-home-history-binding-dispatch-20261011.json`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HOME_HISTORY_BINDING_2026-10-11.md`; `docs/baselines/CVF_GC018_NCR_HOME_HISTORY_BINDING_2026-10-11.md`; `docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json`; `docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |
 
@@ -484,7 +484,7 @@ Exact new packet/baseline/case/return/proof/completion names checked absent by P
 | `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` | `10ee4c86eaf1d5c468250ed569307f5af5ad98dade82400fcffa5ea3fdc7de62` | `4fca532675947582bd9c641d8c19db0c3fc514d6b034464c585630839e9b39cd` | R1/R4 and current stopped checkpoints |
 | `docs/reviews/CVF_ORACLE_O6_DESIGN_COMPLETION_2026-10-11.md` | `e92b67a5d6c4d47e82291c6018de113de1f13def576b9bcbd71c45e83375d518` | `e92b67a5d6c4d47e82291c6018de113de1f13def576b9bcbd71c45e83375d518` | P0-P7 adopted subordinate checklist |
 | `governance/compat/run_worker_return_scaffold.py` | `fd2f492b5c5468ce2545925a22264b663768eba126255d91eb7a02be029c2501` | `8bdf5253731cc45030582d392ce3d11eae02ca65c8f38cf2af7735a8169035d1` | main scaffold flags and budget selection |
-| `docs/reviews/evidence/ncr-home-history-binding-dispatch-20261011.json` | `6c16a7f9669352f1a3a02def02472639356a9945cb4302245e79ac52a914eb37` | `6c16a7f9669352f1a3a02def02472639356a9945cb4302245e79ac52a914eb37` | sourceFinding/reproduction/limits/Local harness attribution |
+| `docs/reviews/evidence/ncr-home-history-binding-dispatch-20261011.json` | `9f667e7978c3ae68eb5302acfda400a94e519848293c28f4e7c8f5b4a39775fc` | `9f667e7978c3ae68eb5302acfda400a94e519848293c28f4e7c8f5b4a39775fc` | sourceFinding/reproduction/limits/Local harness attribution |
 
 Working-file hashes bind the actual bytes read in this Windows workspace; HEAD-blob hashes bind committed bytes. The two differing pairs are CRLF/LF representations only, verified after newline normalization. SHA-256 is distinct from the Git blob object ID. Underlying source content originates at35b2f9f1c; the dispatcher evidence was introduced at8a8572c4f and is not claimed present at the authoring base. Check all13 rows against current released HEAD before edits; do not replace pins yourself.
 
@@ -508,7 +508,7 @@ for path,raw_pin,blob_pin in rows:
 print("SOURCE_PIN_PASS: 13 working files + 13 HEAD blobs")
 ```
 
-Also verify paired baseline/order working-file hashes against released currentAuthority. Any content change invalidates release until Local checks compatibility; worker must not silently repin.
+Local documentary source pin was transitioned after completed execution; original dispatch-evidence bytes/hash and worker verification are retained in Local proof. Product-source pins remain execution preimages. Also verify paired baseline/order working-file hashes against released currentAuthority. Any content change invalidates release until Local checks compatibility; worker must not silently repin.
 
 ## Reviewer Closure Conversion
 
@@ -566,15 +566,45 @@ Dispatcher stages exact eight material paths (paired packet, retained blocked-at
 ## Mixed Protected-Path Atomicity Authorization
 
 
+
 Disposition: AUTHORIZED_EXACT_MANIFEST
-Atomicity reason: corrected paired packet and retained blocked input must agree with raw currentAuthority; collection tracking remains on existing owners; actual-SHA continuity follows separately.
-Rollback boundary: exact repaired packet and authority projection; retain original blocked evidence and all15 reviewed tasks.
+Atomicity reason: accepted frozen worker artifacts, corrected Local source claim, closure/collection and raw currentAuthority projections must describe one reviewed package; exact6 actual-SHA continuity follows.
+Rollback boundary: this exact Home material and projections only; retain original blocked and completed worker evidence.
 Exact changed manifest:
-- `docs/baselines/CVF_GC018_NCR_HOME_HISTORY_BINDING_2026-10-11.md`
-- `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HOME_HISTORY_BINDING_2026-10-11.md`
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.tsx`
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.test.tsx`
+- `docs/reviews/CVF_NCR_HOME_HISTORY_BINDING_WORKER_RETURN_2026-10-11.md`
+- `docs/reviews/evidence/ncr-home-history-binding-worker-20261011.json`
+- `docs/reviews/CVF_NCR_HOME_HISTORY_BINDING_COMPLETION_2026-10-11.md`
 - `docs/reviews/evidence/ncr-home-history-binding-local-20261011.json`
+- `docs/reviews/evidence/ncr-home-history-binding-dispatch-20261011.json`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HOME_HISTORY_BINDING_2026-10-11.md`
+- `docs/baselines/CVF_GC018_NCR_HOME_HISTORY_BINDING_2026-10-11.md`
 - `docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json`
 - `docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+
+## Local Terminal Review Disposition
+
+Technical Home output accepted bounded without product repair. Worker originals retained; required semantic-reading procedureFAIL recorded in `docs/reviews/CVF_NCR_HOME_HISTORY_BINDING_COMPLETION_2026-10-11.md`. Original Source Pin Contract describes the dispatch/execution preimage, not post-repair current bytes; no fresh worker release is implied by the closed packet. Local corrected its persistence claim; the original dispatcher evidence is preserved in Local proof. No automatic successor.
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| Historical snapshot must not become full receipt | Local actual-Home probe with receipt-bearing snapshot observes full receipt absent | PASS |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HOME_HISTORY_BINDING_2026-10-11.md` | Status CLOSED_PASS_BOUNDED; technical acceptance, procedureFAIL retained | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_NCR_HOME_HISTORY_BINDING_COMPLETION_2026-10-11.md` | independent Local source/behavior disposition | PASS |
+| Roadmap state | `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` | existing R1/R4 parent state retained; bounded Home maintenance does not close full R1/R3/R4 | PASS |
+| Registry JSON | `docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json` |16 deduplicated task rows;10 Haiku,2 Sonnet,4 Luna | PASS |
+| Registry Markdown | `docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md` | dated16-task section; quality/time focus and historical subsets retained | PASS |
+| External evidence digest | `docs/reviews/evidence/ncr-home-history-binding-local-20261011.json` | sha256:f5b13f5c5e629195c53623934de4e8216fe212fad611264deaa2d57b9f25d1d7; internal Local proof and preserved originals only | PASS |
+| System loop interlock | parked checkpoints | no new runtime loop or automatic successor | N/A with reason: bounded existing Home repair |
+| Session continuity | six current continuity surfaces | material authority pins then dedicated actual-SHA continuity; checked before final operator report | PASS |

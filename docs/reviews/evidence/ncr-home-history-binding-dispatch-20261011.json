@@ -73,7 +73,13 @@
     "expected": "fixture_A|OUTPUT_A",
     "observed": "fixture_B|OUTPUT_A",
     "result": "CONFIRMED_OFFLINE_COMPONENT_BINDING_DEFECT",
-    "historyQualification": "Existing History onContinue calls setCurrentExecution(A) before navigation and is iteration-memory flag gated. It mitigates the warm normal click. Home remains unbound on direct historical URL, null selection after reload (currentExecution not persisted), or later ambient selection change. No flag is activated and no full normal-click failure is asserted."
+    "historyQualification": "Existing History onContinue calls setCurrentExecution(A) before navigation and is iteration-memory flag gated, mitigating the warm normal click. Store persist has no partialize and currentExecution is persisted. The original confirmed defect is direct historical URL restoring A while ambient selection is B, or a later ambient selection change; null selection is an explicit synthetic state, not a reload guarantee. No flag activation or full normal-click failure is asserted.",
+    "localClaimCorrection": {
+      "reviewEvidence": "docs/reviews/evidence/ncr-home-history-binding-local-20261011.json",
+      "originalEvidenceSha256": "6c16a7f9669352f1a3a02def02472639356a9945cb4302245e79ac52a914eb37",
+      "disposition": "RELOAD_NULL_PERSISTENCE_CLAIM_CORRECTED_BY_LOCAL",
+      "productEffect": "NONE"
+    }
   },
   "reproduction": {
     "command": "node EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/node_modules/vitest/vitest.mjs run --config .cvf/runtime/ncr-home-history-dispatch-20261011/reproduce.config.mjs",

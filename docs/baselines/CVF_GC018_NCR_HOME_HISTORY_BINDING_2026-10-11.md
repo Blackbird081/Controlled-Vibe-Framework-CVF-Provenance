@@ -2,7 +2,7 @@
 
 Memory class: governed-dispatch-baseline
 docType: baseline
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 Date: 2026-10-11
 Batch ID: CVF-NCR-HOME-HISTORY-BINDING-20261011
 Dispatch base head: 8240cd0d65e205f028391d31f58ac1555bd5b233
@@ -47,12 +47,12 @@ Actual Home red-green; stored A/B independence and B preservation; accept/reject
 
 | Claimed item | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Disposition |
 |---|---|---|---|---|---|
-| restore A output without selecting A execution | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.tsx` | W123-T1 restore effect; ResultViewer invocation; handleAccept/handleReject/handleFollowUp bodies | HomePage | existing Home workflow | ACCEPT |
+| restore A output without selecting A execution | `docs/reviews/evidence/ncr-home-history-binding-local-20261011.json` | implementationReview source audit and original Home preimage; restore/ResultViewer/action bodies | HomePage | existing Home workflow | ACCEPT |
 | exact store selection available | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/store.ts` | execution store methods | setCurrentExecution; getExecutionById | existing execution store | ACCEPT |
 | child lineage comes from supplied parent | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execution-continuity.ts` | buildContinuationExecution body | buildContinuationExecution | existing continuity helper | ACCEPT |
 | History routes accepted work to Home | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/history/page.tsx` | onContinue prop body | HistoryPage | existing history consumer | ACCEPT |
 | result metadata and callbacks supplied by Home | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.tsx` | ResultViewerProps; ResultViewer signature | ResultViewer | existing result consumer | ACCEPT |
-| real Home regression currently browse-only | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.test.tsx` | HomePage describe block | HomePage | existing component-test home | ACCEPT |
+| real Home regression currently browse-only | `docs/reviews/evidence/ncr-home-history-binding-local-20261011.json` | implementationReview frozen worker Home test digest and Local focused verification | HomePage | existing component-test home | ACCEPT |
 | offline test selection uses current setup | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/vitest.config.ts` | default non-live include/exclude/setupFiles | defineConfig | existing Vitest configuration | ACCEPT |
 | real contradictory render observed | `docs/reviews/evidence/ncr-home-history-binding-dispatch-20261011.json` | reproduction; sourceFinding; localHarnessFailures | sourceFinding | Local synthetic component evidence | ACCEPT |
 | O6 subordinate checklist applied to new controls | `docs/reviews/CVF_ORACLE_O6_DESIGN_COMPLETION_2026-10-11.md` | Purpose; Decision / Disposition | manual P0-P7 | existing reviewer reference | ACCEPT |
@@ -62,7 +62,7 @@ Actual Home red-green; stored A/B independence and B preservation; accept/reject
 | Field | Value |
 |---|---|
 | applicableCheckersRead | `governance/compat/check_work_order_dispatch_quality.py`; `governance/compat/check_gate_to_role_closeability.py`; `governance/compat/check_governed_artifact_checker_read_ahead.py`; `governance/compat/check_dispatch_prompt_envelope.py`; `governance/compat/check_markdown_structural_completeness.py`; `governance/compat/check_agent_operation_trace.py`; `governance/compat/check_public_export_disposition.py`; `governance/compat/check_work_order_acceptance_ledger.py`; `governance/compat/check_task_governance_route.py`; `governance/compat/check_independent_review_probe_admission.py`; `governance/compat/check_dispatch_scaffold_provenance.py`; `governance/compat/check_core_guard_self_protection.py`; `governance/compat/check_agent_packet_authority_and_encoding.py` |
-| literalTokensReviewed | DISPATCH_READY; WORKER_MUST_NOT_COMMIT; INTERNAL_AGENT; REQUIRED_FIELDS; TRACE_REQUIRED_LABELS; SECTION_GROUPS; DEFERRED_PRIVATE_ONLY |
+| literalTokensReviewed | CLOSED_PASS_BOUNDED; WORKER_MUST_NOT_COMMIT; INTERNAL_AGENT; REQUIRED_FIELDS; TRACE_REQUIRED_LABELS; SECTION_GROUPS; DEFERRED_PRIVATE_ONLY |
 | gateRunPurpose | confirmation/evidence of selected packet structure; not a dispatch or implementation proof |
 | claimBoundary | targeted current checker constants/required sections and ready-state predicates read; not an all-lines reading claim |
 
@@ -143,3 +143,26 @@ Reason: private dispatch packet, no publication claim.
 ## Claim Boundary
 
 Bounded local product repair selected; no provider governance, full NCR exit, durable approval, release, production or comparative model claim. Fifteen reviewed tasks remain historical collection; new worker observation only after Local review.
+
+## Local Terminal Review Disposition
+
+Technical Home output accepted bounded without product repair. Worker originals retained; required semantic-reading procedureFAIL recorded in `docs/reviews/CVF_NCR_HOME_HISTORY_BINDING_COMPLETION_2026-10-11.md`. Original Source Pin Contract describes the dispatch/execution preimage, not post-repair current bytes; no fresh worker release is implied by the closed packet. Local corrected its persistence claim; the original dispatcher evidence is preserved in Local proof. No automatic successor.
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| Historical snapshot must not become full receipt | Local actual-Home probe with receipt-bearing snapshot observes full receipt absent | PASS |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HOME_HISTORY_BINDING_2026-10-11.md` | Status CLOSED_PASS_BOUNDED; technical acceptance, procedureFAIL retained | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_NCR_HOME_HISTORY_BINDING_COMPLETION_2026-10-11.md` | independent Local source/behavior disposition | PASS |
+| Roadmap state | `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` | existing R1/R4 parent state retained; bounded Home maintenance does not close full R1/R3/R4 | PASS |
+| Registry JSON | `docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json` |16 deduplicated task rows;10 Haiku,2 Sonnet,4 Luna | PASS |
+| Registry Markdown | `docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md` | dated16-task section; quality/time focus and historical subsets retained | PASS |
+| External evidence digest | `docs/reviews/evidence/ncr-home-history-binding-local-20261011.json` | sha256:f5b13f5c5e629195c53623934de4e8216fe212fad611264deaa2d57b9f25d1d7; internal Local proof and preserved originals only | PASS |
+| System loop interlock | parked checkpoints | no new runtime loop or automatic successor | N/A with reason: bounded existing Home repair |
+| Session continuity | six current continuity surfaces | material authority pins then dedicated actual-SHA continuity; checked before final operator report | PASS |

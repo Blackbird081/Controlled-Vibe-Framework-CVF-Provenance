@@ -96,11 +96,14 @@ export default function HomePage() {
     const [searchQuery, setSearchQuery] = useState('');
     const [starterHandoff, setStarterHandoff] = useState<GovernedStarterHandoff | null>(null);
     const [iterationContext, setIterationContext] = useState<string | null>(null);
+    // Binding for the result view, local decisions and completion; never the ambient store selection.
+    const [activeExecutionId, setActiveExecutionId] = useState<string | null>(null);
     const [bannerDismissed, setBannerDismissed] = useState(
         () => typeof window !== 'undefined' && localStorage.getItem('cvf_setup_banner_dismissed') === '1',
     );
 
-    const { addExecution, updateExecution, currentExecution, getExecutionById } = useExecutionStore();
+    const { addExecution, updateExecution, getExecutionById } = useExecutionStore();
+    const activeExecution = activeExecutionId ? getExecutionById(activeExecutionId) ?? null : null;
 
     const allRunnableTemplates = useMemo(
         () => templates.filter(template => !template.isFolder),
@@ -244,6 +247,7 @@ export default function HomePage() {
             createdAt: new Date(),
         };
         addExecution(execution);
+        setActiveExecutionId(execution.id);
         setWorkflowState('processing');
     }, [addExecution]);
 
@@ -327,21 +331,31 @@ export default function HomePage() {
         }
     }, [searchParams]);
 
-    // W123-T1: restore result state when navigating from history with ?continue=exec_id
+    // W123-T1: restore result state when navigating from history with ?continue=exec_id.
+    // The restored execution id is the binding; the ambient currentExecution is not consulted.
     useEffect(() => {
         const continueId = searchParams.get('continue')?.trim();
         if (!continueId) return;
         const exec = getExecutionById(continueId);
-        if (!exec || exec.result !== 'accepted' || !exec.output) return;
-        const output = exec.output;
-        const tpl = templates.find((t) => t.id === exec.templateId);
-        if (!tpl) return;
+        const tpl = exec ? templates.find((t) => t.id === exec.templateId) : undefined;
         startTransition(() => {
+            if (!exec || exec.result !== 'accepted' || !exec.output || !tpl) {
+                // Invalid history query: drop any prior bound context and return to browse.
+                setActiveExecutionId(null);
+                setSelectedTemplate(null);
+                setCurrentOutput('');
+                setCurrentEvidenceReceipt(undefined);
+                setIterationContext(null);
+                setWorkflowState('browse');
+                return;
+            }
+            setActiveExecutionId(exec.id);
             setSelectedTemplate(tpl);
             setCurrentInput(exec.input);
             setCurrentIntent(exec.intent);
-            setCurrentOutput(output);
+            setCurrentOutput(exec.output);
             setCurrentEvidenceReceipt(undefined);
+            setIterationContext(null);
             setWorkflowState('result');
         });
     }, [searchParams, getExecutionById]);
@@ -360,16 +374,17 @@ export default function HomePage() {
             createdAt: new Date(),
         };
         addExecution(execution);
+        setActiveExecutionId(execution.id);
         setWorkflowState('processing');
     }, [selectedTemplate, addExecution]);
 
     const handleProcessingComplete = useCallback((output: string, evidenceReceipt?: GovernanceEvidenceReceipt) => {
         setCurrentOutput(output);
         setCurrentEvidenceReceipt(evidenceReceipt);
-        if (currentExecution) {
+        if (activeExecutionId) {
             // W123-T1: snapshot evidence receipt + knowledge collection into execution for continuity chain
             const snap = buildEvidenceSnapshot(evidenceReceipt as Record<string, unknown> | undefined);
-            updateExecution(currentExecution.id, {
+            updateExecution(activeExecutionId, {
                 status: 'completed',
                 output,
                 qualityScore: 8.2,
@@ -379,10 +394,11 @@ export default function HomePage() {
             });
         }
         setWorkflowState('result');
-    }, [currentExecution, updateExecution]);
+    }, [activeExecutionId, updateExecution]);
 
     const handleBack = useCallback(() => {
         setSelectedTemplate(null);
+        setActiveExecutionId(null);
         setCurrentOutput('');
         setCurrentEvidenceReceipt(undefined);
         setIterationContext(null);
@@ -397,14 +413,14 @@ export default function HomePage() {
         setIterationContext(truncated);
         setCurrentIntent(refinement);
         // W123-T1: build durable continuation chain when a parent execution exists
-        const execution: Execution = currentExecution
+        const execution: Execution = activeExecution
             ? buildContinuationExecution({
                 templateId: selectedTemplate.id,
                 templateName: selectedTemplate.name,
                 category: selectedTemplate.category,
                 input: { ...currentInput, _previousOutput: truncated },
                 intent: refinement,
-                parentExecution: currentExecution,
+                parentExecution: activeExecution,
             })
             : {
                 id: `exec_followup_${Date.now()}`,
@@ -417,8 +433,9 @@ export default function HomePage() {
                 createdAt: new Date(),
             };
         addExecution(execution);
+        setActiveExecutionId(execution.id);
         setWorkflowState('processing');
-    }, [selectedTemplate, currentOutput, currentInput, currentExecution, addExecution]);
+    }, [selectedTemplate, currentOutput, currentInput, activeExecution, addExecution]);
 
     const handleSendToAgent = useCallback((prompt: string) => {
         window.dispatchEvent(new CustomEvent('cvf:openAgent', {
@@ -460,18 +477,18 @@ export default function HomePage() {
     }, []);
 
     const handleAccept = useCallback(() => {
-        if (currentExecution) {
-            updateExecution(currentExecution.id, { result: 'accepted' });
+        if (activeExecutionId) {
+            updateExecution(activeExecutionId, { result: 'accepted' });
         }
         handleBack();
-    }, [currentExecution, updateExecution, handleBack]);
+    }, [activeExecutionId, updateExecution, handleBack]);
 
     const handleReject = useCallback(() => {
-        if (currentExecution) {
-            updateExecution(currentExecution.id, { result: 'rejected' });
+        if (activeExecutionId) {
+            updateExecution(activeExecutionId, { result: 'rejected' });
         }
         setWorkflowState('form');
-    }, [currentExecution, updateExecution]);
+    }, [activeExecutionId, updateExecution]);
 
     const handleOpenGovernedStarter = useCallback(() => {
         if (!starterHandoff) {
@@ -604,9 +621,9 @@ export default function HomePage() {
                 />
             )}
 
-            {workflowState === 'result' && currentExecution && (
+            {workflowState === 'result' && activeExecution && (
                 <ResultViewer
-                    execution={currentExecution}
+                    execution={activeExecution}
                     output={currentOutput}
                     onAccept={handleAccept}
                     onReject={handleReject}

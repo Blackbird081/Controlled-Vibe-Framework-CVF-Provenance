@@ -1,0 +1,176 @@
+{
+  "schemaVersion": "cvf.workerEvidence@1.0.0",
+  "batchId": "CVF-NCR-HOME-HISTORY-BINDING-20261011",
+  "invocation": "second operator-started worker invocation on the pin-repaired release; the first invocation was blocked and its attempt is retained by Local",
+  "status": "COMPLETE_PENDING_REVIEW",
+  "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HOME_HISTORY_BINDING_2026-10-11.md",
+  "returnPath": "docs/reviews/CVF_NCR_HOME_HISTORY_BINDING_WORKER_RETURN_2026-10-11.md",
+  "dispatchBaseHead": "35b2f9f1cdb579a6078513dd74382f339f85dbd6",
+  "executionBaseHead": "c56d24728b5a0dc823a5d6c96e89b966cc3603c4",
+  "commitMode": "WORKER_MUST_NOT_COMMIT",
+  "commitPerformed": false,
+  "stagedAtStart": "EMPTY",
+  "stagedAtTerminal": "EMPTY",
+  "clock": {
+    "invocationStartLocal": "2026-10-11T23:18:35+07:00",
+    "startCaptureNote": "HEAD, clean status, staged-empty and clock captured by the first repository command of this invocation",
+    "terminalImplementationLocal": "2026-10-11T23:26:11+07:00",
+    "terminalImplementationNote": "captured after the Home change, the synthetic tests, tsc and eslint completed",
+    "finalGateEndLocal": "2026-10-11T23:31:12+07:00",
+    "elapsedMinutesToFinalGateEndApprox": 12.6,
+    "budgetMinutes": 45
+  },
+  "requestedConfiguration": {
+    "requestedLabel": "Claude Haiku, ex high (operator manual preference; metadata only)",
+    "selfReportedModel": "Haiku 5.5 (self-report, not native attestation)",
+    "observedNativeIdentity": null,
+    "reason": "native identity is not exposed to the worker"
+  },
+  "nativeUsage": {
+    "identity": null,
+    "effort": null,
+    "tokens": null,
+    "bill": null,
+    "reason": "not exposed to the worker; elapsed time is not a price"
+  },
+  "sourcePinCheck": {
+    "method": "packet Source Pin Contract script (working-file SHA-256, HEAD-blob SHA-256, CRLF-normalized content equality), run from repository root against HEAD c56d24728",
+    "result": "SOURCE_PIN_PASS: 13 working files + 13 HEAD blobs",
+    "exitCode": 0
+  },
+  "currentAuthorityCheck": {
+    "method": "bootstrap currentAuthority baselineSha256 and workOrderSha256 compared with working files",
+    "baseline": "docs/baselines/CVF_GC018_NCR_HOME_HISTORY_BINDING_2026-10-11.md 63c162bd10d990b271826e357b0f99d20204c37309d3d616f2e52f4de9387dc5",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HOME_HISTORY_BINDING_2026-10-11.md bab201131adbf589174185d6ce388b03dfdbe1cd268096df490b415106fe592f",
+    "result": "CURRENT_AUTHORITY_PASS for both"
+  },
+  "preparation": {
+    "preImplementationGate": {
+      "command": "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base c56d24728b5a0dc823a5d6c96e89b966cc3603c4 --head HEAD --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HOME_HISTORY_BINDING_2026-10-11.md",
+      "exitCode": 0,
+      "result": "COMPLIANT",
+      "commandsPassed": 88,
+      "receipt": ".cvf/runtime/autorun-receipts/pre-implementation.json (helper-owned, ignored runtime)"
+    },
+    "returnScaffold": {
+      "command": "python governance/compat/run_worker_return_scaffold.py --write docs/reviews/CVF_NCR_HOME_HISTORY_BINDING_WORKER_RETURN_2026-10-11.md --check-shape --max-lines 450 --max-bytes 64000",
+      "exitCode": 0,
+      "shapeResult": "PREPARATION_SHAPE_PRESENT",
+      "generatedLines": 323
+    }
+  },
+  "readDepth": {
+    "fullRead": [
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.tsx (631 lines before the change)",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.test.tsx (37 lines before the change)",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/store.ts (166 lines; execution methods and persist options)",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execution-continuity.ts (135 lines)",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/history/page.tsx (44 lines)",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/test/setup.ts (74 lines)",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/vitest.config.ts (67 lines, read in the earlier invocation; hash matches the pin)"
+    ],
+    "partialRead": [
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/types/index.ts lines 30-69 (ExecutionEvidenceSnapshot and Execution)",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.tsx lines 1-90 (ResultViewerProps, signature and state; internal rendering not read)",
+      "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HOME_HISTORY_BINDING_2026-10-11.md lines 466-535 and targeted grep (the full read applied to the earlier version, sha 45a65d20; the repair section and pin table were read in this invocation)"
+    ],
+    "targetedOnly": [
+      "docs/reviews/CVF_ORACLE_O6_DESIGN_COMPLETION_2026-10-11.md: P0-P7 grep only (lines 14, 31, 61); the checklist body was not read",
+      "docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md: R1 heading (line 505) and R1/R4 grep only; the R4 body was not read",
+      "Source pins for the other sources: hash-only through the pin script"
+    ],
+    "checkersRead": [
+      "governance/compat/check_worker_return_quality_gate.py (constants)",
+      "governance/compat/check_work_order_acceptance_ledger.py (schema, reducer)",
+      "governance/compat/check_review_cost_control.py (constants)",
+      "governance/compat/check_gate_to_role_closeability.py (closeability tokens)",
+      "governance/compat/check_agent_operation_trace.py (manifest parsing and comparison)",
+      "governance/compat/check_finding_to_governance_learning.py (disposition, lane and recurrence constants)",
+      "governance/compat/check_external_knowledge_intake_routing.py (allowed input types)"
+    ],
+    "notRead": [
+      "CVF_SESSION_MEMORY.md body beyond the mode and handoff lines",
+      "AGENT_HANDOFF_V63_2026-09-18.md body (budget-bounded; not needed for this repair)"
+    ]
+  },
+  "implementation": {
+    "productFilesEdited": [
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.tsx",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.test.tsx"
+    ],
+    "pageLinesAfter": 648,
+    "testLinesAfter": 371,
+    "pageSha256After": "9400ddde799b7c2ec386cdd1bd618df98be12b25020dba427607ecfb433d13fd",
+    "testSha256After": "332a100889580078daca4dbb0a1e815a2c6d9e0e0fcdbfa912b02fa0e1af63e2",
+    "pageSha256Preimage": "a0a3f5b9de756553ad7d9efdc52a99e0d0c577b69ff29529dc5ef9969a7e6929",
+    "design": "page binds the displayed execution to a local activeExecutionId; the restore effect, fresh submit, demo, follow-up and processing completion set it; accept, reject, follow-up and completion read it; ambient currentExecution is no longer read by the Home page; invalid history queries clear the bound context and return to browse; store, types, continuity helper, history page and the ?continue flag are unchanged"
+  },
+  "redGreen": {
+    "firstRedRun": {
+      "command": "node node_modules/vitest/vitest.mjs run 'src/app/(dashboard)/home/page.test.tsx'",
+      "exitCode": 1,
+      "logSha256": "9856c4577b1883b48da17dd632caf50bf9924253feb173d79b1830263e50e37d",
+      "result": "12 failed, 2 passed (14 tests) against the unmodified page; invalid-query tests failed at their precondition because ambient B was shown instead of A"
+    },
+    "selfRepairBeforeFix": "invalid-query tests were seeded with ambient A (the History warm-click state) so the valid precondition holds on old and new code and the invalid transition is isolated; this change was made before any page edit",
+    "finalRedRun": {
+      "logSha256": "7814ec43b31ccf4ef03ac790b1c9162fcee9bcb1af5379664d61494fd49af37c",
+      "exitCode": 1,
+      "result": "12 failed, 2 passed against the unmodified page; invalid-query tests failed at 'home-browse-experience' with the stale result-viewer still rendered"
+    },
+    "greenRun": {
+      "command": "node node_modules/vitest/vitest.mjs run 'src/app/(dashboard)/home/page.test.tsx' src/lib/store.test.ts src/lib/execution-continuity.test.ts src/components/ResultViewer.test.tsx",
+      "exitCode": 0,
+      "logSha256": "04b102607b5915be6cdc277523c996e3077f26aaf05f01741dc4d0fbfe228516",
+      "result": "4 files passed; 88 tests passed"
+    },
+    "passedBeforeAndAfter": [
+      "renders the browse experience by default",
+      "keeps a fresh submission bound to the created execution when no continue parameter is present"
+    ],
+    "firstFinalFailure": "red run 2 (log 7814ec43) is the retained final planned red; red run 1 (log 9856c457) is retained as the first failure"
+  },
+  "typeAndLint": {
+    "tsc": { "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false", "exitCode": 0, "errors": 0 },
+    "eslint": { "command": "node node_modules/eslint/bin/eslint.js 'src/app/(dashboard)/home/page.tsx' 'src/app/(dashboard)/home/page.test.tsx'", "exitCode": 0 }
+  },
+  "syntheticTestDesign": {
+    "mocks": "transport-free: next/navigation (hoisted params), i18n, analytics, Settings, useProviders (no network), '@/components' leaf stubs (DynamicForm, ProcessingScreen, ResultViewer, wizards, preview, tour), HomeBrowseExperience stub; Home page and execution store are real",
+    "fixtures": "A, B, C, R, E, T and D are independent objects built by separate calls; B and other siblings are snapshotted with structuredClone and compared after each action",
+    "actionBoundary": "accept, reject, follow-up and completion are triggered through the rendered stub callbacks, not through a helper or source-string match",
+    "negativeMutationClasses": {
+      "ambientBSubstitution": "restore with ambient B; ambient null; ambient change to C while A displayed; ambient D during processing; ambient B before accept",
+      "wrongParentOrLineage": "follow-up parent, thread, root, project and knowledge fields compared with A",
+      "invalidHistoryQuery": "unknown id, unaccepted, empty output, unavailable template, each after a valid A",
+      "staleContext": "invalid query after valid A must not keep A output or result view",
+      "receiptFabrication": "not separately asserted; restore code sets the evidence receipt to undefined and builds none"
+    }
+  },
+  "acceptance": {
+    "REQ-IDENTITY": { "status": "PASS", "proof": "restored A shown with ambient B, ambient null and ambient change; restored A output, template and id asserted; processing completion bound under ambient D" },
+    "REQ-ACTIONS": { "status": "PASS", "proof": "reject on restored A changes A only; follow-up parent A with thread, root, project and knowledge preserved; accept after ambient B changes the fresh execution only; B and D unchanged" },
+    "REQ-CONTROLS": { "status": "PASS", "proof": "A to C switches display, template and actions together; four invalid query classes return to browse without the prior A output and without a new job; a fresh submission with no continue parameter remains bound" },
+    "REQ-RETURN": { "status": "PASS", "proof": "this evidence, the return, pins, read depth, red and green logs, tsc and eslint exit codes; staged set empty; no commit" }
+  },
+  "findings": [
+    {
+      "id": "EVIDENCE-CLAIM-PERSISTENCE",
+      "source": "docs/reviews/evidence/ncr-home-history-binding-dispatch-20261011.json historyQualification",
+      "claim": "currentExecution is not persisted, so the selection is null after reload",
+      "observed": "src/lib/store.ts uses persist without partialize; zustand's default partialize is the identity (node_modules/zustand/esm/middleware.mjs line 331), so currentExecution is persisted",
+      "impact": "not used by this fix, which binds by execution id; the Local claim should be corrected or confirmed by Local",
+      "owner": "Local reviewer/closer"
+    },
+    {
+      "id": "PIN-GATE-COVERAGE",
+      "source": "first invocation blocked on a stale pin; pre-implementation gate passed in both invocations",
+      "impact": "the pre-implementation gate does not check packet pin rows; the source pin script was run manually",
+      "owner": "Local reviewer/closer"
+    }
+  ],
+  "unknowns": [
+    "native model identity, effort, tokens and bill are not exposed to the worker",
+    "elapsed time covers the worker session only and is approximate"
+  ],
+  "claimBoundary": "offline synthetic component evidence for the Home history identity binding; no browser, live provider, durable approval, release, production or public claim; the outcome is pending Local independent review"
+}
