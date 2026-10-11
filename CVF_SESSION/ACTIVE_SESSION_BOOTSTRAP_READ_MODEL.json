@@ -9,7 +9,7 @@
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_ORACLE_O6_DESIGN_2026-10-11.md",
-    "baselineSha256": "85c80033c3b16f01259a8f45cb69a5d01a32e37775449146741dcdbd3248a92d",
+    "baselineSha256": "d1bf89232cf73376982cb7645633c61daed84d222106ff12abd8e633a9d323dc",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_ORACLE_O6_DESIGN_2026-10-11.md",
     "workOrderSha256": "aa5be1970ed4cc481ef6f850f8f0268bb741849ab2e328b351f5b76a08cbd78b"
   },

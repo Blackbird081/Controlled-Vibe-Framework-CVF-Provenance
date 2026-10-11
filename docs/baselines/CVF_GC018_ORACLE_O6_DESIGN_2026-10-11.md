@@ -141,3 +141,32 @@ CLOSED_PASS_BOUNDED: accepted documentary checklist after one Local contract cla
 | Design versus execution | proposed cases only | eight plans, zero case executions; helper deferred | PASS |
 | Source and custody | retained initial evidence, different Local review actor | original worker hashes and Local evidence; worker return/evidence preserved | PASS |
 | Parent authority | parked runtime effects and no automatic successor | subordinate design accepted only; parent unchanged | PASS |
+
+## ADIF Defect Registry Disclosure
+
+Resolver query: taskClass=`work-order`, role=`dispatcher`, lifecyclePhase=`pre-dispatch`
+Resolver command: `python governance/compat/run_adif_defect_resolver.py --task-class "work-order" --role dispatcher --lifecycle-phase pre-dispatch`
+Returned defects: NONE_RETURNED
+Actual result: 0 candidates, 0 returned, not truncated. This query does not prove absence of all applicable defects; refresh the final task class at release if classification changes.
+
+
+## Closure Metadata Correction
+
+The first material pre-closure run found this baseline missing ADIF disclosure.
+Local supplies the existing query (refreshed, zero results) and regenerates
+matching authority pins; no worker or design-semantic defect. Original failure
+log retained in local diagnostics. One extra metadata material/continuity pair
+is Local closure rework, not worker delivery or measured savings.
+
+## Mixed Protected-Path Atomicity Authorization
+
+Disposition: AUTHORIZED_EXACT_MANIFEST
+Atomicity reason: baseline disclosure and matching authority raw hashes move
+as one correction; final material SHA is synchronized separately.
+Rollback boundary: restore this metadata and authority pins together; retain
+accepted design, original evidence and parked effects.
+Exact changed manifest:
+- `docs/baselines/CVF_GC018_ORACLE_O6_DESIGN_2026-10-11.md`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`

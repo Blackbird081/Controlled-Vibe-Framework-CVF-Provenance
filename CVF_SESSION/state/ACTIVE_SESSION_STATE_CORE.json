@@ -37,11 +37,11 @@
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_ORACLE_O6_DESIGN_2026-10-11.md",
-    "baselineSha256": "85c80033c3b16f01259a8f45cb69a5d01a32e37775449146741dcdbd3248a92d",
+    "baselineSha256": "d1bf89232cf73376982cb7645633c61daed84d222106ff12abd8e633a9d323dc",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_ORACLE_O6_DESIGN_2026-10-11.md",
     "workOrderSha256": "aa5be1970ed4cc481ef6f850f8f0268bb741849ab2e328b351f5b76a08cbd78b"
   },
-  "currentAuthoritySyncReason": "O6 design accepted at cc584e69fd4086407806ee9c20deaf1c753724d5; actual-SHA terminal continuity; manual checklist only, helper deferred/global rejected, no worker redispatch or successor. One Local material and one continuity commit; original worker return/evidence retained; gate diagnostics separate from worker result.",
+  "currentAuthoritySyncReason": "O6 design accepted at cc584e69fd4086407806ee9c20deaf1c753724d5; actual-SHA terminal continuity; manual checklist only, helper deferred/global rejected, no worker redispatch or successor. One Local material and one continuity commit; original worker return/evidence retained; gate diagnostics separate from worker result. Final closure metadata correction adds missing baseline ADIF disclosure; matching authority raw pin regenerated; extra root metadata pair attributed separately.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
