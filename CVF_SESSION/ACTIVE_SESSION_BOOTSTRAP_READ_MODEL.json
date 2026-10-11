@@ -2,16 +2,16 @@
   "schemaVersion": "0.1.0",
   "currentMode": "cvf_ncr_p10_closed_p11_parked",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=CVF-CORE; NEXT_ACTION_CLASS=LOCAL_DISPOSITION_ONLY; BATCH_ID=CVF-MODEL-SELECTION-S2-R2-20261011. S2-R2 bounded offline outcome accepted; original closure/evidence retained. Root learning assessment=docs/reviews/CVF_MODEL_SELECTION_ORCHESTRATOR_LEARNING_DISPOSITION_2026-10-11.md; material=6a9d45e58f69362f154fa1302a32a468202c5821. Eight root clusters: O3 continuity producer/release batch binding MACHINE_CHECK_CANDIDATE; oracle/scaffold DESIGN_REVIEW_REQUIRED; other defects RULE_EXISTS with future application unproved. No new control implemented or automatic successor; select one bounded design/admission only for a real value gap. Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11 parked; LHW24 retained. Non coder supplies goals; Local owns technical decisions.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-CORE; NEXT_ACTION_CLASS=EXECUTE_BOUNDED; BATCH_ID=CVF-CONTINUITY-DISPATCH-O3-20261011. Execute docs/work_orders/CVF_AGENT_WORK_ORDER_CONTINUITY_DISPATCH_O3_2026-10-11.md after committed bound pre-dispatch PASS; packet material=606807b98cbfe4ab8ea9f15890630ee5c0c2012e. One INTERNAL_AGENT gpt-6-luna/max worker implements six paths for O3 helper/release batch composition; Local final reviewer. No actual workspace worker commit. Original S2-R2 evidence retained. Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11 parked; oracle/scaffold design deferred; no automatic successor; LHW24 retained.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_MODEL_SELECTION_S2_R2_OFFLINE_REVIEWED_OUTCOME_2026-10-11.md",
-    "baselineSha256": "416d46577e8d95e29fd2b03042e63410b1f5cbe00670d96ac1bdd82dc5a2c852",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_SELECTION_S2_R2_OFFLINE_REVIEWED_OUTCOME_2026-10-11.md",
-    "workOrderSha256": "a4f23fcb8493832fd557f612584532e4b61af21890c50e24c288010ded8c3de2"
+    "baselinePath": "docs/baselines/CVF_GC018_CONTINUITY_DISPATCH_O3_2026-10-11.md",
+    "baselineSha256": "ed859a22964204291189ac3eccbf6a135be3507eb29022173f1bcae75981f3dd",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CONTINUITY_DISPATCH_O3_2026-10-11.md",
+    "workOrderSha256": "7022d3a03cc2aa8c0cce7b500dc7fb4b5ebb5e9344cb4bd1f0880f568fc7570f"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

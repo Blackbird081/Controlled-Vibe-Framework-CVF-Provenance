@@ -36,12 +36,12 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_MODEL_SELECTION_S2_R2_OFFLINE_REVIEWED_OUTCOME_2026-10-11.md",
-    "baselineSha256": "416d46577e8d95e29fd2b03042e63410b1f5cbe00670d96ac1bdd82dc5a2c852",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_SELECTION_S2_R2_OFFLINE_REVIEWED_OUTCOME_2026-10-11.md",
-    "workOrderSha256": "a4f23fcb8493832fd557f612584532e4b61af21890c50e24c288010ded8c3de2"
+    "baselinePath": "docs/baselines/CVF_GC018_CONTINUITY_DISPATCH_O3_2026-10-11.md",
+    "baselineSha256": "ed859a22964204291189ac3eccbf6a135be3507eb29022173f1bcae75981f3dd",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CONTINUITY_DISPATCH_O3_2026-10-11.md",
+    "workOrderSha256": "7022d3a03cc2aa8c0cce7b500dc7fb4b5ebb5e9344cb4bd1f0880f568fc7570f"
   },
-  "currentAuthoritySyncReason": "S2-R2 original authority remains closed; separate root learning value assessment material 6a9d45e58f69362f154fa1302a32a468202c5821; candidate implementation/delivery/application deferred, actual-SHA continuity only.",
+  "currentAuthoritySyncReason": "Operator foundation-first selects O3; actual material 606807b98cbfe4ab8ea9f15890630ee5c0c2012e and atomic dispatch continuity; original S2-R2 closure/evidence unchanged.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
