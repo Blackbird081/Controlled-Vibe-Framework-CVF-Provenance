@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_AGENT_HANDOFF_2026-10-12.md",
     "workOrderSha256": "cd4e8afdd6ac71a539aaa29b7609135449452396c1b4efa9d3af90c297d96a83"
   },
-  "currentAuthoritySyncReason": "Agent handoff reviewed material raw authority projection; original worker BLOCKED/procedureFAIL retained; full mode/next sync follows actual material commit.",
+  "currentAuthoritySyncReason": "Agent handoff lifecycle bounded Local closure material 8b18c412bac38c738f8e2aa8db9c7e4331f58beb; dedicated exact6 continuity, historical worker BLOCKED/procedureFAIL retained,21 observations.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
@@ -110,8 +110,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_ncr_agent_handoff_worker_execution",
-  "previousMode": "cvf_ncr_draft_export_closed_useful_selection",
+  "currentMode": "cvf_ncr_agent_handoff_closed_useful_selection",
+  "previousMode": "cvf_ncr_agent_handoff_worker_execution",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
