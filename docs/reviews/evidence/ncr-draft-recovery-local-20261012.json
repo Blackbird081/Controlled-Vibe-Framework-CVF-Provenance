@@ -1,0 +1,733 @@
+{
+  "schemaVersion": "cvf.ncrDraftRecoveryLocalReview@1",
+  "batchId": "CVF-NCR-DRAFT-RECOVERY-20261012",
+  "executionBaseHead": "e3b5b5f6ac6891abdd787ae7f3be4d5edaa82078",
+  "closureBaseHead": "e3b5b5f6ac6891abdd787ae7f3be4d5edaa82078",
+  "status": "CLOSED_PASS_BOUNDED",
+  "technicalOutput": "ACCEPTED_BOUNDED_AFTER_LOCAL_FORM_ISOLATION_REPAIR",
+  "procedureDisposition": "FAIL",
+  "procedureReason": "Worker did not read mandatory baseline and most output-checker sources; fast gate does not prove reading. Preserve deviation and incorrect complete-fulfillment claim; Local reviewed scope/product, not retrospective worker compliance.",
+  "decisionOwner": "LOCAL_INTERNAL_AGENT_REVIEWER_CLOSER",
+  "source": {
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_DRAFT_RECOVERY_2026-10-12.md",
+    "baseline": "docs/baselines/CVF_GC018_NCR_DRAFT_RECOVERY_2026-10-12.md",
+    "workerReturn": "docs/reviews/CVF_NCR_DRAFT_RECOVERY_WORKER_RETURN_2026-10-12.md",
+    "workerEvidence": "docs/reviews/evidence/ncr-draft-recovery-worker-20261012.json"
+  },
+  "originalWorkerArtifacts": [
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.tsx",
+      "sha256": "20ee5e638f0e42e8ef54123aff2b59cb62c135ce71b04d28076c6ccffda64e44",
+      "snapshot": ".cvf/runtime/ncr-draft-recovery-local-20261012/original-0-page.tsx",
+      "originalText": "'use client';\n\nimport { useState, useMemo, useCallback, useEffect, useRef, startTransition } from 'react';\nimport { useSearchParams } from 'next/navigation';\nimport { Layers3, ShieldCheck, Sparkles, Wand2 } from 'lucide-react';\nimport { templates, generateIntent } from '@/lib/templates';\nimport { useExecutionStore } from '@/lib/store';\nimport { useProviders } from '@/lib/hooks/useExecute';\nimport type { GovernanceEvidenceReceipt } from '@/lib/ai';\nimport { useSettings } from '@/components/Settings';\nimport { Template, Execution } from '@/types';\nimport { useLanguage } from '@/lib/i18n';\nimport { trackEvent } from '@/lib/analytics';\nimport {\n    clearGovernedStarterHandoff,\n    readGovernedStarterHandoff,\n    saveGovernedStarterHandoff,\n    type GovernedStarterHandoff,\n} from '@/lib/governed-starter-path';\nimport { isIntentFirstEnabled, type IntentRouteResult } from '@/lib/intent-router';\nimport { buildContinuationExecution, buildEvidenceSnapshot } from '@/lib/execution-continuity';\nimport { OUTCOME_WORKFLOW_REGISTRY } from '@/lib/workflow-composition';\nimport {\n    DynamicForm,\n    ProcessingScreen,\n    ResultViewer,\n    AppBuilderWizard,\n    ProductDesignWizard,\n    MarketingCampaignWizard,\n    BusinessStrategyWizard,\n    SecurityAssessmentWizard,\n    ResearchProjectWizard,\n    SystemDesignWizard,\n    ContentStrategyWizard,\n    DataAnalysisWizard,\n    TemplatePreviewModal,\n    OnboardingTour,\n} from '@/components';\nimport { HomeBrowseExperience } from '@/components/home/HomeBrowseExperience';\n\ntype WorkflowState = 'browse' | 'form' | 'processing' | 'result' |\n    'wizard' | 'product-wizard' | 'marketing-wizard' | 'business-wizard' |\n    'security-wizard' | 'research-wizard' | 'system-wizard' | 'content-wizard' | 'data-wizard';\n\nconst QUICK_TRY_CONFIGS: Record<string, Record<string, string>> = {\n    documentation: {\n        subject: 'Quy tr\u00ecnh onboarding kh\u00e1ch h\u00e0ng m\u1edbi v\u00e0 g\u1eedi b\u00e1o gi\u00e1',\n        currentNotes: 'Kh\u00e1ch v\u00e0o form \u0111\u0103ng k\u00fd \u2192 sales g\u1ecdi l\u1ea1i trong 2h \u2192 n\u1ebfu \u0111\u1ee7 \u0111i\u1ec1u ki\u1ec7n th\u00ec g\u1eedi b\u00e1o gi\u00e1 trong ng\u00e0y. Hay b\u1ecb h\u1ecfi: bao l\u00e2u tri\u1ec3n khai, c\u1ea7n chu\u1ea9n b\u1ecb g\u00ec.',\n        readerGoal: 'Nh\u00e2n vi\u00ean m\u1edbi c\u00f3 th\u1ec3 x\u1eed l\u00fd lead \u0111\u1ea7u v\u00e0o m\u00e0 kh\u00f4ng ph\u1ea3i h\u1ecfi l\u1ea1i team lead.',\n        audience: 'Ng\u01b0\u1eddi m\u1edbi ti\u1ebfp nh\u1eadn',\n    },\n    strategy_analysis: {\n        topic: 'M\u1edf r\u1ed9ng th\u1ecb tr\u01b0\u1eddng mi\u1ec1n Trung cho d\u00f2ng s\u1ea3n ph\u1ea9m SaaS B2B',\n        context: 'C\u00f4ng ty SaaS B2B, 200 nh\u00e2n vi\u00ean, doanh thu $5M/n\u0103m. Th\u1ecb tr\u01b0\u1eddng \u0111ang t\u0103ng tr\u01b0\u1edfng 15%/n\u0103m. Hi\u1ec7n ch\u1ec9 c\u00f3 v\u0103n ph\u00f2ng t\u1ea1i TP.HCM v\u00e0 H\u00e0 N\u1ed9i.',\n        options: '1. M\u1edf chi nh\u00e1nh tr\u1ef1c ti\u1ebfp t\u1ea1i \u0110\u00e0 N\u1eb5ng\\n2. H\u1ee3p t\u00e1c v\u1edbi \u0111\u1ed1i t\u00e1c \u0111\u1ecba ph\u01b0\u01a1ng\\n3. Ch\u1ec9 b\u00e1n online v\u00e0 h\u1ed7 tr\u1ee3 t\u1eeb xa',\n        priority: 'Growth',\n    },\n    seo_audit: {\n        url: 'https://shopx.vn',\n        industry: 'SaaS B2B \u2014 qu\u1ea3n l\u00fd d\u1ef1 \u00e1n',\n        keywords: 'qu\u1ea3n l\u00fd d\u1ef1 \u00e1n online\\nproject management tool',\n        competitors: 'asana.com, monday.com',\n    },\n};\n\nconst WIZARD_MAP: Record<string, WorkflowState> = {\n    app_builder_wizard: 'wizard',\n    product_design_wizard: 'product-wizard',\n    marketing_campaign_wizard: 'marketing-wizard',\n    business_strategy_wizard: 'business-wizard',\n    security_assessment_wizard: 'security-wizard',\n    research_project_wizard: 'research-wizard',\n    system_design_wizard: 'system-wizard',\n    content_strategy_wizard: 'content-wizard',\n    data_analysis_wizard: 'data-wizard',\n};\n\nexport default function HomePage() {\n    const { t, language } = useLanguage();\n    const searchParams = useSearchParams();\n    const handledLaunchParam = useRef('');\n    const mockAiEnabled = process.env.NEXT_PUBLIC_CVF_MOCK_AI === '1';\n    const { settings } = useSettings();\n    const hasAnyApiKey = Object.values(settings.providers).some(p => p.apiKey && p.apiKey.trim().length > 0);\n    const { providers, anyConfigured: serverAnyProviderConfigured, fetchProviders } = useProviders();\n\n    const [workflowState, setWorkflowState] = useState<WorkflowState>('browse');\n    const [selectedTemplate, setSelectedTemplate] = useState<Template | null>(null);\n    const [previewTemplate, setPreviewTemplate] = useState<Template | null>(null);\n    const [selectedCategory, setSelectedCategory] = useState('all');\n    const [currentOutput, setCurrentOutput] = useState('');\n    const [currentEvidenceReceipt, setCurrentEvidenceReceipt] = useState<GovernanceEvidenceReceipt | undefined>(undefined);\n    const [currentInput, setCurrentInput] = useState<Record<string, string>>({});\n    const [currentIntent, setCurrentIntent] = useState('');\n    const [currentFolder, setCurrentFolder] = useState<string | null>(null);\n    const [searchQuery, setSearchQuery] = useState('');\n    const [starterHandoff, setStarterHandoff] = useState<GovernedStarterHandoff | null>(null);\n    const [iterationContext, setIterationContext] = useState<string | null>(null);\n    // Binding for the result view, local decisions and completion; never the ambient store selection.\n    const [activeExecutionId, setActiveExecutionId] = useState<string | null>(null);\n    // Editable draft returned to the form after a local stop, retry or reject; never persisted.\n    const [draftInput, setDraftInput] = useState<Record<string, string> | null>(null);\n    const [stopNotice, setStopNotice] = useState(false);\n    const attemptSequence = useRef(0);\n    const [bannerDismissed, setBannerDismissed] = useState(\n        () => typeof window !== 'undefined' && localStorage.getItem('cvf_setup_banner_dismissed') === '1',\n    );\n\n    const { addExecution, updateExecution, getExecutionById } = useExecutionStore();\n    const activeExecution = activeExecutionId ? getExecutionById(activeExecutionId) ?? null : null;\n\n    // Distinct id per attempt: the clock alone repeats within a millisecond, so a per-page\n    // sequence is added and any id already present in the store is skipped.\n    const newAttemptId = useCallback((prefix: string) => {\n        let id: string;\n        do {\n            id = `${prefix}_${Date.now()}_${(attemptSequence.current++).toString(36)}`;\n        } while (getExecutionById(id));\n        return id;\n    }, [getExecutionById]);\n\n    // A fresh template choice must not inherit a previous attempt's draft, notice or context.\n    const clearRecoveryContext = useCallback(() => {\n        setDraftInput(null);\n        setStopNotice(false);\n        setIterationContext(null);\n    }, []);\n\n    const allRunnableTemplates = useMemo(\n        () => templates.filter(template => !template.isFolder),\n        [],\n    );\n\n    const categoryCounts = useMemo(() => {\n        const counts: Record<string, number> = { all: allRunnableTemplates.length };\n        allRunnableTemplates.forEach((template) => {\n            counts[template.category] = (counts[template.category] ?? 0) + 1;\n        });\n        return counts;\n    }, [allRunnableTemplates]);\n\n    const statCards = useMemo(() => ([\n        {\n            label: language === 'vi' ? 'K\u1ebft qu\u1ea3' : 'Outcomes',\n            value: String(OUTCOME_WORKFLOW_REGISTRY.length),\n            icon: Layers3,\n            tone: 'accent' as const,\n        },\n        {\n            label: language === 'vi' ? 'Lu\u1ed3ng c\u00f3 h\u01b0\u1edbng d\u1eabn' : 'Guided Flows',\n            value: String(Object.keys(WIZARD_MAP).length),\n            icon: ShieldCheck,\n            tone: 'emerald' as const,\n        },\n        {\n            label: language === 'vi' ? 'Model live' : 'Live Models',\n            value: '3',\n            icon: Sparkles,\n            tone: 'amber' as const,\n        },\n        {\n            label: language === 'vi' ? 'Starter flows' : 'Starter Flows',\n            value: starterHandoff ? '1' : '0',\n            icon: Wand2,\n            tone: 'violet' as const,\n        },\n    ]), [language, starterHandoff]);\n\n    const liveReadyProviders = useMemo(\n        () => providers.filter(provider => provider.configured),\n        [providers],\n    );\n\n    const setupConfidence = useMemo(() => {\n        if (mockAiEnabled) {\n            return {\n                liveTaskReady: false,\n                workspaceReady: true,\n                label: language === 'vi' ? 'Demo mode' : 'Demo mode',\n                description: language === 'vi'\n                    ? 'Mock AI \u0111ang b\u1eadt; c\u00f3 th\u1ec3 xem lu\u1ed3ng UI nh\u01b0ng ch\u01b0a ph\u1ea3i b\u1eb1ng ch\u1ee9ng governance live.'\n                    : 'Mock AI is enabled; you can inspect UI flow but this is not live governance proof.',\n                nextAction: language === 'vi' ? 'T\u1eaft mock \u0111\u1ec3 ch\u1ea1y live' : 'Disable mock to run live',\n                tone: 'amber',\n            };\n        }\n\n        if (serverAnyProviderConfigured || hasAnyApiKey) {\n            const primary = liveReadyProviders[0];\n            const source = primary?.keySourceName || (hasAnyApiKey ? 'browser settings' : 'server env');\n            return {\n                liveTaskReady: true,\n                workspaceReady: true,\n                label: language === 'vi' ? 'Live task ready' : 'Live task ready',\n                description: language === 'vi'\n                    ? `Provider \u0111\u00e3 s\u1eb5n s\u00e0ng qua ${source}. CVF ch\u1ec9 hi\u1ec3n th\u1ecb t\u00ean ngu\u1ed3n, kh\u00f4ng hi\u1ec3n th\u1ecb key.`\n                    : `Provider is ready via ${source}. CVF shows source name only, never the key value.`,\n                nextAction: language === 'vi' ? 'Ch\u1ecdn template v\u00e0 ch\u1ea1y task' : 'Pick a template and run a task',\n                tone: 'emerald',\n            };\n        }\n\n        return {\n            liveTaskReady: false,\n            workspaceReady: true,\n            label: language === 'vi' ? 'C\u1ea7n provider key' : 'Provider key needed',\n            description: language === 'vi'\n                ? 'Workspace enforcement artifacts c\u00f3 th\u1ec3 s\u1eb5n s\u00e0ng, nh\u01b0ng live task c\u1ea7n key trong env ho\u1eb7c settings.'\n                : 'Workspace enforcement artifacts can be ready, but live tasks need a key in env or settings.',\n            nextAction: language === 'vi' ? 'M\u1edf Provider Keys' : 'Open Provider Keys',\n            tone: 'amber',\n        };\n    }, [hasAnyApiKey, language, liveReadyProviders, mockAiEnabled, serverAnyProviderConfigured]);\n\n    const filteredTemplates = useMemo(() => {\n        let result = selectedCategory === 'all'\n            ? templates\n            : templates.filter(t => t.category === selectedCategory);\n\n        if (currentFolder) {\n            result = result.filter(t => t.parentFolder === currentFolder);\n        } else {\n            result = result.filter(t => !t.parentFolder);\n        }\n\n        if (searchQuery.trim()) {\n            const q = searchQuery.toLowerCase();\n            result = result.filter(t =>\n                t.name.toLowerCase().includes(q) ||\n                t.description.toLowerCase().includes(q)\n            );\n        }\n\n        return result;\n    }, [selectedCategory, currentFolder, searchQuery]);\n\n    const handleDemoRun = useCallback(() => {\n        const demoTemplate = templates.find(t => !t.isFolder && !WIZARD_MAP[t.id] && t.fields.length > 0);\n        if (!demoTemplate) return;\n\n        trackEvent('demo_auto_run', { templateId: demoTemplate.id });\n\n        const demoValues: Record<string, string> = {};\n        demoTemplate.fields.forEach(field => {\n            if (field.example) {\n                demoValues[field.id] = field.example;\n            } else if (field.default) {\n                demoValues[field.id] = field.default;\n            } else if (field.placeholder) {\n                demoValues[field.id] = field.placeholder.replace(/^VD:\\s*/i, '').replace(/^E\\.g\\.\\s*/i, '');\n            } else {\n                demoValues[field.id] = `Demo ${field.label}`;\n            }\n        });\n\n        clearRecoveryContext();\n        setCurrentOutput('');\n        setCurrentEvidenceReceipt(undefined);\n        setSelectedTemplate(demoTemplate);\n        setCurrentInput(demoValues);\n        setCurrentIntent(`[DEMO] Auto-generated intent for ${demoTemplate.name}`);\n\n        const execution: Execution = {\n            id: newAttemptId('exec_demo'),\n            templateId: demoTemplate.id,\n            templateName: demoTemplate.name,\n            category: demoTemplate.category,\n            input: demoValues,\n            intent: `[DEMO] Auto-generated intent for ${demoTemplate.name}`,\n            status: 'processing',\n            createdAt: new Date(),\n        };\n        addExecution(execution);\n        setActiveExecutionId(execution.id);\n        setWorkflowState('processing');\n    }, [addExecution, clearRecoveryContext, newAttemptId]);\n\n    const handleTryTemplate = useCallback((template: Template, prefilled: Record<string, string>) => {\n        trackEvent('template_try_quick_path', { templateId: template.id });\n        clearRecoveryContext();\n        setSelectedTemplate(template);\n        setCurrentInput(prefilled);\n        setCurrentIntent(generateIntent(template, prefilled));\n        setWorkflowState('form');\n    }, [clearRecoveryContext]);\n\n    const handleSelectTemplate = useCallback((template: Template) => {\n        if (template.isFolder) {\n            setCurrentFolder(template.id);\n            return;\n        }\n        trackEvent('template_selected', {\n            templateId: template.id,\n            templateName: template.name,\n            category: template.category,\n        });\n        const wizardState = WIZARD_MAP[template.id];\n        if (wizardState) {\n            setWorkflowState(wizardState);\n            return;\n        }\n        clearRecoveryContext();\n        setSelectedTemplate(template);\n        setWorkflowState('form');\n    }, [clearRecoveryContext]);\n\n    const handleOutcomeQuickAction = useCallback((templateId: string) => {\n        const template = templates.find((item) => item.id === templateId);\n        if (!template) {\n            return;\n        }\n        handleSelectTemplate(template);\n    }, [handleSelectTemplate]);\n\n    useEffect(() => {\n        const templateId = searchParams.get('template')?.trim();\n        const category = searchParams.get('category')?.trim();\n        const launchKey = `${templateId || ''}|${category || ''}`;\n        if ((!templateId && !category) || handledLaunchParam.current === launchKey) {\n            return;\n        }\n        handledLaunchParam.current = launchKey;\n\n        if (templateId) {\n            const template = templates.find(item => item.id === templateId);\n            if (!template) {\n                return;\n            }\n            startTransition(() => {\n                setCurrentFolder(null);\n                clearRecoveryContext();\n                setSelectedTemplate(template);\n                trackEvent('template_selected', {\n                    templateId: template.id,\n                    templateName: template.name,\n                    category: template.category,\n                    source: 'skill_library',\n                });\n\n                if (template.isFolder) {\n                    setCurrentFolder(template.id);\n                    setWorkflowState('browse');\n                    return;\n                }\n\n                const wizardState = WIZARD_MAP[template.id];\n                setWorkflowState(wizardState ?? 'form');\n            });\n            return;\n        }\n\n        if (category) {\n            startTransition(() => {\n                setCurrentFolder(null);\n                setSelectedCategory(category);\n                setWorkflowState('browse');\n            });\n        }\n    }, [searchParams, clearRecoveryContext]);\n\n    // W123-T1: restore result state when navigating from history with ?continue=exec_id\n    // (accepted runs only) or ?result=exec_id (any completed saved run, viewing only).\n    // continue governs when both are present. The restored execution id is the binding;\n    // the ambient currentExecution is not consulted and nothing is re-executed.\n    useEffect(() => {\n        const hasContinue = searchParams.has('continue');\n        if (!hasContinue && !searchParams.has('result')) return;\n        const restoreId = searchParams.get(hasContinue ? 'continue' : 'result')?.trim();\n        const exec = restoreId ? getExecutionById(restoreId) : undefined;\n        const tpl = exec ? templates.find((t) => t.id === exec.templateId) : undefined;\n        startTransition(() => {\n            clearRecoveryContext();\n            if (!exec || exec.status !== 'completed' || !exec.output || !tpl\n                || (hasContinue && exec.result !== 'accepted')) {\n                // Invalid history query: drop any prior bound context and return to browse.\n                setActiveExecutionId(null);\n                setSelectedTemplate(null);\n                setCurrentOutput('');\n                setCurrentEvidenceReceipt(undefined);\n                setWorkflowState('browse');\n                return;\n            }\n            setActiveExecutionId(exec.id);\n            setSelectedTemplate(tpl);\n            setCurrentInput(exec.input);\n            setCurrentIntent(exec.intent);\n            setCurrentOutput(exec.output);\n            setCurrentEvidenceReceipt(undefined);\n            setWorkflowState('result');\n        });\n    }, [searchParams, getExecutionById, clearRecoveryContext]);\n\n    // An explicit submit starts a new attempt: no inherited result, receipt or continuation context.\n    const handleFormSubmit = useCallback((values: Record<string, string>, intent: string) => {\n        clearRecoveryContext();\n        setCurrentOutput('');\n        setCurrentEvidenceReceipt(undefined);\n        setCurrentInput(values);\n        setCurrentIntent(intent);\n        const execution: Execution = {\n            id: newAttemptId('exec'),\n            templateId: selectedTemplate!.id,\n            templateName: selectedTemplate!.name,\n            category: selectedTemplate!.category,\n            input: values,\n            intent,\n            status: 'processing',\n            createdAt: new Date(),\n        };\n        addExecution(execution);\n        setActiveExecutionId(execution.id);\n        setWorkflowState('processing');\n    }, [selectedTemplate, addExecution, clearRecoveryContext, newAttemptId]);\n\n    const handleProcessingComplete = useCallback((output: string, evidenceReceipt?: GovernanceEvidenceReceipt) => {\n        // A stopped attempt has no binding left, so a late delivery can never reach a record.\n        if (!activeExecutionId) return;\n        setCurrentOutput(output);\n        setCurrentEvidenceReceipt(evidenceReceipt);\n        if (activeExecutionId) {\n            // W123-T1: snapshot evidence receipt + knowledge collection into execution for continuity chain\n            const snap = buildEvidenceSnapshot(evidenceReceipt as Record<string, unknown> | undefined);\n            updateExecution(activeExecutionId, {\n                status: 'completed',\n                output,\n                qualityScore: 8.2,\n                completedAt: new Date(),\n                ...(snap ? { evidenceReceiptSnapshot: snap } : {}),\n                ...(snap?.knowledgeCollectionId ? { knowledgeCollectionId: snap.knowledgeCollectionId } : {}),\n            });\n        }\n        setWorkflowState('result');\n    }, [activeExecutionId, updateExecution]);\n\n    const handleBack = useCallback(() => {\n        clearRecoveryContext();\n        setSelectedTemplate(null);\n        setActiveExecutionId(null);\n        setCurrentOutput('');\n        setCurrentEvidenceReceipt(undefined);\n        setCurrentInput({});\n        setCurrentIntent('');\n        setWorkflowState('browse');\n    }, [clearRecoveryContext]);\n\n    // Return to the editable form with the exact submitted fields. Nothing is executed\n    // here; only an explicit submit starts a new attempt.\n    const returnToDraft = useCallback((stopped: boolean) => {\n        setDraftInput({ ...currentInput });\n        setStopNotice(stopped);\n        setActiveExecutionId(null);\n        setCurrentOutput('');\n        setCurrentEvidenceReceipt(undefined);\n        setIterationContext(null);\n        setWorkflowState('form');\n    }, [currentInput]);\n\n    // Cancel is a local stop only: the bound pending/processing attempt is recorded as\n    // unsuccessful (existing failed status), which does not prove the server stopped.\n    const handleStopProcessing = useCallback(() => {\n        const bound = activeExecutionId ? getExecutionById(activeExecutionId) : undefined;\n        if (bound && (bound.status === 'processing' || bound.status === 'pending')) {\n            updateExecution(bound.id, { status: 'failed' });\n        }\n        returnToDraft(true);\n    }, [activeExecutionId, getExecutionById, updateExecution, returnToDraft]);\n\n    const handleRetry = useCallback(() => returnToDraft(false), [returnToDraft]);\n\n    const handleFollowUp = useCallback((refinement: string) => {\n        if (!selectedTemplate || !currentOutput) return;\n        const truncated = currentOutput.length > 600\n            ? currentOutput.slice(0, 600) + '\u2026'\n            : currentOutput;\n        setIterationContext(truncated);\n        setCurrentIntent(refinement);\n        // W123-T1: build durable continuation chain when a parent execution exists\n        const execution: Execution = activeExecution\n            ? buildContinuationExecution({\n                templateId: selectedTemplate.id,\n                templateName: selectedTemplate.name,\n                category: selectedTemplate.category,\n                input: { ...currentInput, _previousOutput: truncated },\n                intent: refinement,\n                parentExecution: activeExecution,\n            })\n            : {\n                id: newAttemptId('exec_followup'),\n                templateId: selectedTemplate.id,\n                templateName: selectedTemplate.name,\n                category: selectedTemplate.category,\n                input: { ...currentInput, _previousOutput: truncated },\n                intent: refinement,\n                status: 'processing',\n                createdAt: new Date(),\n            };\n        addExecution(execution);\n        setActiveExecutionId(execution.id);\n        setWorkflowState('processing');\n    }, [selectedTemplate, currentOutput, currentInput, activeExecution, addExecution, newAttemptId]);\n\n    const handleSendToAgent = useCallback((prompt: string) => {\n        window.dispatchEvent(new CustomEvent('cvf:openAgent', {\n            detail: {\n                prompt,\n            },\n        }));\n    }, []);\n\n    useEffect(() => {\n        const syncStarterHandoff = () => {\n            setStarterHandoff(readGovernedStarterHandoff());\n        };\n\n        syncStarterHandoff();\n        window.addEventListener('cvf:starterHandoffReady', syncStarterHandoff);\n        return () => window.removeEventListener('cvf:starterHandoffReady', syncStarterHandoff);\n    }, []);\n\n    useEffect(() => {\n        fetchProviders();\n    }, [fetchProviders]);\n\n    // W129-T1: rollout signal capture \u2014 fire once per session when rollout flag is active\n    useEffect(() => {\n        if (!isIntentFirstEnabled()) return;\n        const sessionKey = 'cvf_w129_rollout_session_fired';\n        if (typeof window === 'undefined') return;\n        trackEvent('rollout_flag_enabled', { flag: 'NEXT_PUBLIC_CVF_INTENT_FIRST_FRONT_DOOR' });\n        if (!sessionStorage.getItem(sessionKey)) {\n            sessionStorage.setItem(sessionKey, '1');\n            trackEvent('rollout_session_start', { flag: 'NEXT_PUBLIC_CVF_INTENT_FIRST_FRONT_DOOR' });\n        }\n    }, []);\n\n    const handleDismissBanner = useCallback(() => {\n        localStorage.setItem('cvf_setup_banner_dismissed', '1');\n        setBannerDismissed(true);\n    }, []);\n\n    const handleAccept = useCallback(() => {\n        if (activeExecutionId) {\n            updateExecution(activeExecutionId, { result: 'accepted' });\n        }\n        handleBack();\n    }, [activeExecutionId, updateExecution, handleBack]);\n\n    const handleReject = useCallback(() => {\n        if (activeExecutionId) {\n            updateExecution(activeExecutionId, { result: 'rejected' });\n        }\n        returnToDraft(false);\n    }, [activeExecutionId, updateExecution, returnToDraft]);\n\n    const handleOpenGovernedStarter = useCallback(() => {\n        if (!starterHandoff) {\n            return;\n        }\n\n        clearGovernedStarterHandoff();\n        setStarterHandoff(null);\n\n        const wizardState = WIZARD_MAP[starterHandoff.recommendedTemplateId];\n        if (wizardState) {\n            setWorkflowState(wizardState);\n            return;\n        }\n\n        const starterTemplate = templates.find(template => template.id === starterHandoff.recommendedTemplateId);\n        if (starterTemplate) {\n            setSelectedTemplate(starterTemplate);\n            setCurrentIntent(starterHandoff.userInput);\n            setWorkflowState('form');\n        }\n    }, [starterHandoff]);\n\n    const handleDismissGovernedStarter = useCallback(() => {\n        clearGovernedStarterHandoff();\n        setStarterHandoff(null);\n    }, []);\n\n    const handleIntentRoute = useCallback((result: IntentRouteResult, userInput: string) => {\n        // \u00a78.A4 hard contract: refuse to route on weak confidence.\n        // W126: form routes (routeType === 'form') have strong confidence with starterKey null.\n        if (!result.recommendedTemplateId || (result.routeType === 'wizard' && !result.starterKey)) {\n            return;\n        }\n\n        // Persist routed context into starter handoff so the wizard/form surface can\n        // show userInput + rationale + phase/risk (Codex review M3 \u2014 preserve\n        // routed context across the IntentEntry \u2192 wizard/form transition).\n        const handoff: GovernedStarterHandoff = {\n            recommendedTemplateId: result.recommendedTemplateId,\n            recommendedTemplateLabel: result.recommendedTemplateLabel ?? '',\n            userInput,\n            provider: 'alibaba',\n            phase: result.phase,\n            riskLevel: result.riskLevel,\n            friendlyPhase: result.friendlyPhase,\n            friendlyRisk: result.friendlyRisk,\n            suggestedTemplates: result.starterKey ? [result.starterKey] : [result.recommendedTemplateId],\n        };\n        saveGovernedStarterHandoff(handoff);\n        setStarterHandoff(handoff);\n\n        const wizardState = WIZARD_MAP[result.recommendedTemplateId];\n        if (wizardState) {\n            setWorkflowState(wizardState);\n            return;\n        }\n        const starterTemplate = templates.find(t => t.id === result.recommendedTemplateId);\n        if (starterTemplate) {\n            setSelectedTemplate(starterTemplate);\n            setCurrentIntent(userInput);\n            setWorkflowState('form');\n        }\n    }, []);\n\n    return (\n        <div className=\"pb-10\">\n            {workflowState === 'browse' && (\n                <HomeBrowseExperience\n                    language={language as 'vi' | 'en'}\n                    t={t}\n                    currentFolder={currentFolder}\n                    setCurrentFolder={setCurrentFolder}\n                    templates={templates}\n                    categoryCounts={categoryCounts}\n                    selectedCategory={selectedCategory}\n                    setSelectedCategory={setSelectedCategory}\n                    filteredTemplates={filteredTemplates}\n                    searchQuery={searchQuery}\n                    setSearchQuery={setSearchQuery}\n                    handleOutcomeQuickAction={handleOutcomeQuickAction}\n                    handleSelectTemplate={handleSelectTemplate}\n                    handleTryTemplate={handleTryTemplate}\n                    QUICK_TRY_CONFIGS={QUICK_TRY_CONFIGS}\n                    setPreviewTemplate={setPreviewTemplate}\n                    statCards={statCards}\n                    isIntentFirstEnabled={isIntentFirstEnabled}\n                    handleIntentRoute={handleIntentRoute}\n                    starterHandoff={starterHandoff}\n                    handleOpenGovernedStarter={handleOpenGovernedStarter}\n                    handleDismissGovernedStarter={handleDismissGovernedStarter}\n                    mockAiEnabled={mockAiEnabled}\n                    hasAnyApiKey={hasAnyApiKey}\n                    bannerDismissed={bannerDismissed}\n                    handleDismissBanner={handleDismissBanner}\n                    handleDemoRun={handleDemoRun}\n                    setupConfidence={setupConfidence}\n                />\n            )}\n\n            {workflowState === 'form' && selectedTemplate && (\n                <>\n                    {stopNotice && (\n                        <div\n                            role=\"status\"\n                            data-testid=\"draft-stop-notice\"\n                            className=\"max-w-3xl mx-auto mb-4 rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900 dark:border-amber-800 dark:bg-amber-950/30 dark:text-amber-100\"\n                        >\n                            {/* Text Encoding Exception: Vietnamese user-facing local-stop notice. */}\n                            {language === 'vi'\n                                ? '\u0110\u00e3 d\u1eebng tr\u00ean thi\u1ebft b\u1ecb n\u00e0y. N\u1ed9i dung b\u1ea1n nh\u1eadp \u0111\u01b0\u1ee3c gi\u1eef l\u1ea1i; nh\u00e0 cung c\u1ea5p AI c\u00f3 th\u1ec3 ch\u01b0a d\u1eebng y\u00eau c\u1ea7u n\u00e0y. Ch\u1ec9nh s\u1eeda r\u1ed3i g\u1eedi l\u1ea1i khi s\u1eb5n s\u00e0ng.'\n                                : 'Stopped on this device. Your inputs are kept; the AI provider may not have stopped this request. Edit and resubmit when ready.'}\n                        </div>\n                    )}\n                    <DynamicForm\n                        template={selectedTemplate}\n                        initialValues={draftInput ?? undefined}\n                        onSubmit={handleFormSubmit}\n                        onBack={handleBack}\n                        onSendToAgent={handleSendToAgent}\n                    />\n                </>\n            )}\n\n            {workflowState === 'wizard' && <AppBuilderWizard onBack={handleBack} />}\n            {workflowState === 'product-wizard' && <ProductDesignWizard onBack={handleBack} />}\n            {workflowState === 'marketing-wizard' && <MarketingCampaignWizard onBack={handleBack} />}\n            {workflowState === 'business-wizard' && <BusinessStrategyWizard onBack={handleBack} />}\n            {workflowState === 'security-wizard' && <SecurityAssessmentWizard onBack={handleBack} />}\n            {workflowState === 'research-wizard' && <ResearchProjectWizard onBack={handleBack} />}\n            {workflowState === 'system-wizard' && <SystemDesignWizard onBack={handleBack} />}\n            {workflowState === 'content-wizard' && <ContentStrategyWizard onBack={handleBack} />}\n            {workflowState === 'data-wizard' && <DataAnalysisWizard onBack={handleBack} />}\n\n            {workflowState === 'processing' && selectedTemplate && (\n                <ProcessingScreen\n                    templateName={selectedTemplate.name}\n                    templateId={selectedTemplate.id}\n                    inputs={iterationContext\n                        ? { ...currentInput, _previousOutput: iterationContext }\n                        : currentInput}\n                    intent={currentIntent}\n                    onComplete={handleProcessingComplete}\n                    onCancel={handleStopProcessing}\n                />\n            )}\n\n            {workflowState === 'result' && activeExecution && (\n                <ResultViewer\n                    execution={activeExecution}\n                    output={currentOutput}\n                    onAccept={handleAccept}\n                    onReject={handleReject}\n                    onRetry={handleRetry}\n                    onBack={handleBack}\n                    onSendToAgent={handleSendToAgent}\n                    onFollowUp={handleFollowUp}\n                    evidenceReceipt={currentEvidenceReceipt}\n                />\n            )}\n\n            <TemplatePreviewModal\n                isOpen={!!previewTemplate}\n                onClose={() => setPreviewTemplate(null)}\n                templateName={previewTemplate?.name || ''}\n                sampleOutput={previewTemplate?.sampleOutput}\n            />\n\n            {workflowState === 'browse' && <OnboardingTour />}\n        </div>\n    );\n}\n"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.tsx",
+      "sha256": "2cf58f9f22145c9755285b7340e9a6858fc8de98b4ae79bbc72315911b30a1ac",
+      "snapshot": ".cvf/runtime/ncr-draft-recovery-local-20261012/original-1-DynamicForm.tsx",
+      "originalText": "'use client';\n\nimport { useState } from 'react';\nimport { useForm, useWatch, type FieldErrors, type UseFormRegister } from 'react-hook-form';\nimport { Template, TemplateField } from '@/types';\nimport { generateIntent } from '@/lib/templates';\nimport { SpecExport } from './SpecExport';\nimport { useLanguage } from '@/lib/i18n';\nimport { getSkillForTemplate } from '@/lib/skill-template-map';\nimport {\n    getTemplateDescription,\n    getTemplateFieldChrome,\n    getTemplateFieldLabel,\n    getTemplateIntentPattern,\n    getTemplateName,\n} from '@/lib/template-i18n';\n\ninterface DynamicFormProps {\n    template: Template;\n    onSubmit: (values: Record<string, string>, intent: string) => void;\n    onBack: () => void;\n    onSendToAgent?: (spec: string) => void;\n    /** Optional draft restored into the editable fields; omitted by callers that start empty. */\n    initialValues?: Record<string, string>;\n}\n\nfunction FormField({ field, register, errors }: {\n    field: TemplateField;\n    register: UseFormRegister<Record<string, string>>;\n    errors: FieldErrors<Record<string, string>>;\n}) {\n    const baseClasses = `\n    w-full px-4 py-3 rounded-lg\n    border border-gray-300 dark:border-gray-600\n    bg-white dark:bg-gray-800\n    text-gray-900 dark:text-white\n    placeholder-gray-400 dark:placeholder-gray-500\n    focus:ring-2 focus:ring-blue-500 focus:border-transparent\n    transition-all duration-200\n  `;\n\n    const errorClasses = errors[field.id] ? 'border-red-500 focus:ring-red-500' : '';\n\n    switch (field.type) {\n        case 'textarea':\n            return (\n                <textarea\n                    {...register(field.id, { required: field.required })}\n                    placeholder={field.placeholder}\n                    rows={field.rows || 4}\n                    className={`${baseClasses} ${errorClasses} resize-none`}\n                />\n            );\n\n        case 'select':\n            return (\n                <select\n                    {...register(field.id)}\n                    defaultValue={field.default}\n                    className={`${baseClasses} ${errorClasses}`}\n                >\n                    {field.options?.map((opt) => (\n                        <option key={opt} value={opt}>{opt}</option>\n                    ))}\n                </select>\n            );\n\n        default:\n            return (\n                <input\n                    type=\"text\"\n                    {...register(field.id, { required: field.required })}\n                    placeholder={field.placeholder}\n                    maxLength={field.maxLength}\n                    className={`${baseClasses} ${errorClasses}`}\n                />\n            );\n    }\n}\n\n// Only values that belong to this template's own fields are restored, so context keys\n// such as a continuation's previous output can never re-enter a fresh submission.\nfunction pickDraftValues(template: Template, initialValues?: Record<string, string>) {\n    if (!initialValues) return undefined;\n    const entries = template.fields\n        .filter(field => typeof initialValues[field.id] === 'string')\n        .map(field => [field.id, initialValues[field.id]] as const);\n    return entries.length > 0 ? Object.fromEntries(entries) : undefined;\n}\n\nexport function DynamicForm({ template, onSubmit, onBack, onSendToAgent, initialValues }: DynamicFormProps) {\n    const { language, t } = useLanguage();\n    const [draftValues] = useState(() => pickDraftValues(template, initialValues));\n    const [showAdvanced, setShowAdvanced] = useState(() => Boolean(draftValues\n        && template.fields.some(field => field.section === 'advanced' && draftValues[field.id])));\n    const [showPreview, setShowPreview] = useState(false);\n    const [showSpecExport, setShowSpecExport] = useState(false);\n\n    const { register, handleSubmit, control, formState: { errors } } = useForm<Record<string, string>>({\n        defaultValues: draftValues,\n    });\n    const watchedValues = useWatch({ control }) as Record<string, string | undefined> | undefined;\n    const formValues = Object.fromEntries(\n        Object.entries(watchedValues || {}).map(([key, value]) => [key, value || ''])\n    ) as Record<string, string>;\n    const localizedTemplate: Template = {\n        ...template,\n        name: getTemplateName(template.id, template.name, language),\n        description: getTemplateDescription(template.id, template.description, language),\n        intentPattern: getTemplateIntentPattern(template.id, template.intentPattern, language),\n        fields: template.fields.map(field => {\n            const chrome = getTemplateFieldChrome(template.id, field.id, language);\n            return {\n                ...field,\n                label: getTemplateFieldLabel(template.id, field.id, field.label, language),\n                placeholder: chrome.placeholder ?? field.placeholder,\n                hint: chrome.hint ?? field.hint,\n                example: chrome.example ?? field.example,\n            };\n        }),\n    };\n    const previewIntent = generateIntent(localizedTemplate, formValues);\n\n    const requiredFields = localizedTemplate.fields.filter(f => f.section !== 'advanced');\n    const advancedFields = localizedTemplate.fields.filter(f => f.section === 'advanced');\n\n    const onFormSubmit = (data: Record<string, string>) => {\n        const intent = generateIntent(localizedTemplate, data);\n        onSubmit(data, intent);\n    };\n\n    return (\n        <div className=\"max-w-3xl mx-auto\">\n            {/* Header */}\n            <div className=\"flex items-center gap-4 mb-8\">\n                <button\n                    onClick={onBack}\n                    className=\"p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors\"\n                >\n                    <svg className=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\">\n                        <path strokeLinecap=\"round\" strokeLinejoin=\"round\" strokeWidth={2} d=\"M15 19l-7-7 7-7\" />\n                    </svg>\n                </button>\n                <div>\n                    <h1 className=\"text-2xl font-bold flex items-center gap-3\">\n                        <span>{template.icon}</span>\n                        <span>{localizedTemplate.name}</span>\n                    </h1>\n                    <div className=\"flex items-center gap-2 mt-1\">\n                        <p className=\"text-gray-600 dark:text-gray-400\">{localizedTemplate.description}</p>\n                        {(() => {\n                            const skillRef = getSkillForTemplate(template.id);\n                            if (!skillRef) return null;\n                            return (\n                                <a\n                                    href={`/skills/${skillRef.domain}/${skillRef.skillId}`}\n                                    className=\"inline-flex items-center gap-1 px-2.5 py-1 text-[11px] font-semibold bg-emerald-100 text-emerald-800 rounded-full hover:bg-emerald-200 transition-colors whitespace-nowrap\"\n                                    title={t('skills.viewRelatedSkill')}\n                                >\n                                    {t('skills.viewSkill')}\n                                </a>\n                            );\n                        })()}\n                    </div>\n                </div>\n            </div>\n\n            <div className=\"mb-6 rounded-xl border border-blue-200/70 bg-blue-50/70 px-4 py-4 text-sm text-blue-900 dark:border-blue-900/60 dark:bg-blue-950/30 dark:text-blue-100\">\n                <p className=\"font-semibold mb-1\">\n                    {language === 'en'\n                        ? 'Describe the outcome in plain language.'\n                        : 'B\u1ea1n ch\u1ec9 c\u1ea7n m\u00f4 t\u1ea3 k\u1ebft qu\u1ea3 mong mu\u1ed1n b\u1eb1ng ng\u00f4n ng\u1eef b\u00ecnh th\u01b0\u1eddng.'}\n                </p>\n                <p className=\"text-blue-800 dark:text-blue-200\">\n                    {language === 'en'\n                        ? 'CVF keeps the structure, handoff packet, and safety checks behind the form.'\n                        : 'CVF gi\u1eef c\u1ea5u tr\u00fac, packet giao vi\u1ec7c v\u00e0 ki\u1ec3m tra an to\u00e0n \u1edf ph\u00eda sau form.'}\n                </p>\n            </div>\n\n            <form onSubmit={handleSubmit(onFormSubmit)} className=\"space-y-6\">\n                {/* Required Fields */}\n                {requiredFields.map((field) => (\n                    <div key={field.id}>\n                        <label className=\"block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2\">\n                            {field.label}\n                            {field.required && <span className=\"text-red-500 ml-1\">*</span>}\n                        </label>\n                        <FormField field={field} register={register} errors={errors} />\n                        {errors[field.id] && (\n                            <p className=\"mt-1 text-sm text-red-500\">This field is required</p>\n                        )}\n                        {field.hint && (\n                            <p className=\"mt-1.5 text-xs text-amber-600 dark:text-amber-400 flex items-start gap-1\">\n                                <span>\ud83d\udca1</span>\n                                <span>{field.hint}</span>\n                            </p>\n                        )}\n                        {field.example && (\n                            <p className=\"mt-1 text-xs text-gray-400 dark:text-gray-500 italic\">\n                                {language === 'en' ? 'Example' : 'VD'}: {field.example}\n                            </p>\n                        )}\n                    </div>\n                ))}\n\n                {/* Advanced Fields Toggle */}\n                {advancedFields.length > 0 && (\n                    <div>\n                        <button\n                            type=\"button\"\n                            onClick={() => setShowAdvanced(!showAdvanced)}\n                            className=\"flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600\"\n                        >\n                            <svg\n                                className={`w-4 h-4 transition-transform ${showAdvanced ? 'rotate-180' : ''}`}\n                                fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\"\n                            >\n                                <path strokeLinecap=\"round\" strokeLinejoin=\"round\" strokeWidth={2} d=\"M19 9l-7 7-7-7\" />\n                            </svg>\n                            {showAdvanced ? (language === 'en' ? 'Hide' : '\u1ea8n') : (language === 'en' ? 'Show' : 'Hi\u1ec7n')} {language === 'en' ? 'Advanced Options' : 'T\u00f9y ch\u1ecdn n\u00e2ng cao'} ({advancedFields.length})\n                        </button>\n\n                        {showAdvanced && (\n                            <div className=\"mt-4 space-y-4 p-4 bg-gray-50 dark:bg-gray-800/50 rounded-lg\">\n                                {advancedFields.map((field) => (\n                                    <div key={field.id}>\n                                        <label className=\"block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2\">\n                                            {field.label}\n                                        </label>\n                                        <FormField field={field} register={register} errors={errors} />\n                                        {field.hint && (\n                                            <p className=\"mt-1.5 text-xs text-amber-600 dark:text-amber-400 flex items-start gap-1\">\n                                                <span>\ud83d\udca1</span>\n                                                <span>{field.hint}</span>\n                                            </p>\n                                        )}\n                                        {field.example && (\n                                            <p className=\"mt-1 text-xs text-gray-400 dark:text-gray-500 italic\">\n                                                {language === 'en' ? 'Example' : 'VD'}: {field.example}\n                                            </p>\n                                        )}\n                                    </div>\n                                ))}\n                            </div>\n                        )}\n                    </div>\n                )}\n\n                {/* Technical Details Toggle \u2014 collapsed by default */}\n                <div className=\"border-t border-gray-200 dark:border-gray-700 pt-6\">\n                    <button\n                        type=\"button\"\n                        onClick={() => setShowPreview(!showPreview)}\n                        className=\"flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 font-medium transition-colors\"\n                    >\n                        <svg\n                            className={`w-4 h-4 transition-transform ${showPreview ? 'rotate-180' : ''}`}\n                            fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\"\n                        >\n                            <path strokeLinecap=\"round\" strokeLinejoin=\"round\" strokeWidth={2} d=\"M19 9l-7 7-7-7\" />\n                        </svg>\n                        {language === 'en' ? 'Preview agent instructions' : 'Xem b\u1ea3n giao cho agent'}\n                    </button>\n\n                    {showPreview && (\n                        <div className=\"mt-4 p-4 bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 rounded-lg\">\n                            <pre className=\"text-sm text-gray-700 dark:text-gray-300 whitespace-pre-wrap font-mono\">\n                                {previewIntent}\n                            </pre>\n                        </div>\n                    )}\n                </div>\n\n                {/* AI Quick Links */}\n                <div className=\"flex flex-wrap items-center gap-2 py-3\">\n                    <span className=\"text-xs text-gray-500 dark:text-gray-400\">{language === 'en' ? 'Paste to AI:' : 'Paste v\u00e0o AI:'}</span>\n                    <a\n                        href=\"https://chat.openai.com/\"\n                        target=\"_blank\"\n                        rel=\"noopener noreferrer\"\n                        className=\"inline-flex items-center gap-1 text-xs px-3 py-1.5 bg-green-100 dark:bg-green-900/50 text-green-700 dark:text-green-300 rounded-full hover:bg-green-200 dark:hover:bg-green-800 transition-colors\"\n                    >\n                        <span>\ud83e\udd16</span> ChatGPT\n                    </a>\n                    <a\n                        href=\"https://claude.ai/\"\n                        target=\"_blank\"\n                        rel=\"noopener noreferrer\"\n                        className=\"inline-flex items-center gap-1 text-xs px-3 py-1.5 bg-orange-100 dark:bg-orange-900/50 text-orange-700 dark:text-orange-300 rounded-full hover:bg-orange-200 dark:hover:bg-orange-800 transition-colors\"\n                    >\n                        <span>\ud83e\udde0</span> Claude\n                    </a>\n                    <a\n                        href=\"https://gemini.google.com/\"\n                        target=\"_blank\"\n                        rel=\"noopener noreferrer\"\n                        className=\"inline-flex items-center gap-1 text-xs px-3 py-1.5 bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300 rounded-full hover:bg-blue-200 dark:hover:bg-blue-800 transition-colors\"\n                    >\n                        <span>\u2728</span> Gemini\n                    </a>\n                </div>\n\n                {/* Action Buttons */}\n                <div className=\"flex gap-3\">\n                    {/* Export/Copy Spec Button */}\n                    <button\n                        type=\"button\"\n                        onClick={() => setShowSpecExport(!showSpecExport)}\n                        className=\"flex-1 py-4 px-6 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 \n                         text-gray-700 dark:text-gray-300 font-semibold rounded-lg\n                         transition-all duration-200\n                         flex items-center justify-center gap-2\"\n                    >\n                        <span>\ud83d\udccb</span>\n                        <span>{language === 'en' ? 'Export Spec' : 'Xu\u1ea5t Spec'}</span>\n                    </button>\n\n                    {/* Submit Button - Opens SpecExport to choose mode first */}\n                    <button\n                        type=\"button\"\n                        onClick={() => setShowSpecExport(true)}\n                        title={language === 'en' ? 'Submit this form to generate AI output' : 'G\u1eedi form \u0111\u1ec3 AI t\u1ea1o k\u1ebft qu\u1ea3'}\n                        className=\"flex-1 py-4 px-6 bg-blue-600 hover:bg-blue-700 \n                         text-white font-semibold rounded-lg\n                         shadow-lg hover:shadow-xl\n                         transition-all duration-200\n                         flex items-center justify-center gap-2\"\n                    >\n                        <span>{language === 'en' ? 'Create Agent Spec' : 'T\u1ea1o Spec cho Agent'}</span>\n                        <span>\ud83d\ude80</span>\n                    </button>\n                </div>\n            </form>\n\n            {/* Spec Export Panel */}\n            {showSpecExport && (\n                <div className=\"mt-6\">\n                    <SpecExport\n                        template={template}\n                        values={formValues}\n                        onClose={() => setShowSpecExport(false)}\n                        onSendToAgent={onSendToAgent}\n                    />\n                </div>\n            )}\n        </div>\n    );\n}\n"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/draft-recovery.test.tsx",
+      "sha256": "13e929ec41425fd81e2a5042fbdaa4eea71ac33dace7e85d6b5b5d1960f4c51f",
+      "snapshot": ".cvf/runtime/ncr-draft-recovery-local-20261012/original-2-draft-recovery.test.tsx",
+      "originalText": "/**\n * @vitest-environment jsdom\n *\n * Offline composition regressions for local stop / editable draft / explicit resubmit:\n * the real Home page, real DynamicForm and real ProcessingScreen over the real persisted\n * execution store. Only unrelated leaves are stubbed: ResultViewer (retry/reject/follow-up\n * callbacks), SpecExport (the visible Create Agent Spec flow is NOT proven here; the real\n * form submit event is used) and the browse experience. The only network seam is a\n * controlled synthetic /api/execute response; the shared provider fetch guard is\n * asserted separately and no provider destination is ever contacted.\n *\n * Text Encoding Exception: two Vietnamese documentation-template option values are\n * asserted verbatim; all other authored text is ASCII.\n */\nimport { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';\nimport { render, screen, fireEvent, act, waitFor } from '@testing-library/react';\nimport HomePage from './page';\nimport { templates } from '@/lib/templates';\nimport { useExecutionStore } from '@/lib/store';\nimport type { Execution } from '@/types';\n\n// Captured before any spy: this is the shared setup provider-denial guard.\nconst guardedFetch = globalThis.fetch;\n\nconst nav = vi.hoisted(() => ({ params: new URLSearchParams() }));\nconst mockSettings = vi.hoisted(() => ({\n    settings: { providers: {}, preferences: { defaultExportMode: 'governance' } },\n    isLoaded: true,\n}));\n\nvi.mock('next/navigation', () => ({\n    useRouter: () => ({ push: vi.fn(), replace: vi.fn() }),\n    useSearchParams: () => nav.params,\n}));\nvi.mock('@/lib/i18n', () => ({\n    useLanguage: () => ({ language: 'en', t: (key: string) => key }),\n}));\nvi.mock('@/lib/analytics', () => ({ trackEvent: vi.fn() }));\nvi.mock('@/components/Settings', () => ({ useSettings: () => mockSettings }));\nvi.mock('@/components/SpecExport', () => ({ SpecExport: () => null }));\nvi.mock('@/lib/skill-template-map', () => ({ getSkillForTemplate: () => null }));\nvi.mock('@/lib/hooks/useExecute', () => {\n    const providers: never[] = [];\n    const fetchProviders = () => undefined;\n    return { useProviders: () => ({ providers, anyConfigured: false, fetchProviders }) };\n});\n\nvi.mock('@/components', async () => {\n    const { DynamicForm } = await vi.importActual<typeof import('@/components/DynamicForm')>('@/components/DynamicForm');\n    const { ProcessingScreen } = await vi.importActual<typeof import('@/components/ProcessingScreen')>('@/components/ProcessingScreen');\n    return {\n        DynamicForm,\n        ProcessingScreen,\n        ResultViewer: (props: {\n            execution: Execution;\n            output: string;\n            onAccept: () => void;\n            onReject: () => void;\n            onRetry: () => void;\n            onFollowUp?: (refinement: string) => void;\n        }) => (\n            <div data-testid=\"result-viewer\">\n                <span data-testid=\"result-id\">{props.execution.id}</span>\n                <span data-testid=\"result-output\">{props.output}</span>\n                <button onClick={props.onAccept}>accept</button>\n                <button onClick={props.onReject}>reject</button>\n                <button onClick={props.onRetry}>retry</button>\n                <button onClick={() => props.onFollowUp?.('refine it')}>follow-up</button>\n            </div>\n        ),\n        TemplatePreviewModal: () => null,\n        OnboardingTour: () => null,\n        AppBuilderWizard: () => null,\n        ProductDesignWizard: () => null,\n        MarketingCampaignWizard: () => null,\n        BusinessStrategyWizard: () => null,\n        SecurityAssessmentWizard: () => null,\n        ResearchProjectWizard: () => null,\n        SystemDesignWizard: () => null,\n        ContentStrategyWizard: () => null,\n        DataAnalysisWizard: () => null,\n    };\n});\n\nvi.mock('@/components/home/HomeBrowseExperience', () => ({\n    HomeBrowseExperience: (props: {\n        templates: Array<{ id: string }>;\n        handleSelectTemplate: (template: unknown) => void;\n        handleDemoRun: () => void;\n    }) => (\n        <div data-testid=\"home-browse-experience\">\n            <button onClick={() => props.handleSelectTemplate(props.templates.find(t => t.id === 'documentation'))}>\n                pick-documentation\n            </button>\n            <button onClick={() => props.handleSelectTemplate(props.templates.find(t => t.id === 'strategy_analysis'))}>\n                pick-strategy\n            </button>\n            <button onClick={props.handleDemoRun}>run-demo</button>\n        </div>\n    ),\n}));\n\nconst STORAGE_KEY = 'cvf-executions-storage';\nconst FROZEN_NOW = 1791763200000;\nconst strategy = templates.find(t => t.id === 'strategy_analysis')!;\n\n// Independent drafts: required fields plus both advanced fields of the documentation template.\nconst DRAFT_A = {\n    subject: 'Selected draft A subject',\n    currentNotes: 'Notes that only belong to draft A',\n    readerGoal: 'Recover without typing again',\n    audience: 'Qu\u1ea3n l\u00fd / approver',\n    mustPreserve: 'Keep the Enterprise Plus name',\n};\n\ninterface Call {\n    body: { templateId: string; inputs: Record<string, string>; intent: string };\n    signal?: AbortSignal;\n    respond: (payload: Record<string, unknown>) => void;\n}\nlet calls: Call[];\nlet requestedUrls: string[];\nlet fetchSpy: ReturnType<typeof vi.spyOn>;\n\nfunction buildSaved(id: string, output: string, overrides: Partial<Execution> = {}): Execution {\n    return {\n        id,\n        templateId: 'documentation',\n        templateName: 'Saved template',\n        input: { subject: `${id} subject` },\n        intent: `${id} intent`,\n        output,\n        status: 'completed',\n        createdAt: new Date('2026-10-11T00:00:00Z'),\n        ...overrides,\n    };\n}\nconst buildB = () => buildSaved('exec_saved_B', 'OUTPUT_B', {\n    result: 'accepted', threadId: 'thread_B', rootExecutionId: 'root_B', projectLabel: 'Project B', knowledgeCollectionId: 'kc_B',\n});\n\nconst executions = () => useExecutionStore.getState().executions;\nconst byId = (id: string) => executions().find(e => e.id === id);\nconst serial = (id: string) => JSON.stringify(byId(id));\nconst persisted = (id: string): Execution | undefined =>\n    JSON.parse(localStorage.getItem(STORAGE_KEY) ?? '{}').state?.executions?.find((e: Execution) => e.id === id);\nconst newestId = () => executions()[0].id;\nconst click = (name: string | RegExp) => fireEvent.click(screen.getByRole('button', { name }));\nconst field = (name: string) =>\n    document.querySelector(`[name=\"${name}\"]`) as HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement | null;\nconst valueOf = (name: string) => field(name)?.value;\nconst formValues = () => Array.from(document.querySelectorAll<HTMLInputElement>('input,textarea,select')).map(e => e.value);\n\nfunction fill(values: Record<string, string>) {\n    for (const [name, value] of Object.entries(values)) fireEvent.change(field(name)!, { target: { value } });\n}\nfunction openAdvanced() {\n    if (!field('mustPreserve')) click(/Advanced Options/);\n}\nasync function submitForm() {\n    await act(async () => { fireEvent.submit(document.querySelector('form')!); });\n    await waitFor(() => expect(screen.getByRole('button', { name: 'Cancel' })).toBeTruthy());\n}\nasync function fetchStarted(count: number) {\n    await waitFor(() => expect(calls.length).toBe(count));\n}\nasync function startA() {\n    render(<HomePage />);\n    click('pick-documentation');\n    fill({ subject: DRAFT_A.subject, currentNotes: DRAFT_A.currentNotes, readerGoal: DRAFT_A.readerGoal });\n    openAdvanced();\n    fill({ audience: DRAFT_A.audience, mustPreserve: DRAFT_A.mustPreserve });\n    await submitForm();\n    await fetchStarted(1);\n    return newestId();\n}\nasync function completeCurrent(call: Call, output: string) {\n    await act(async () => { call.respond({ success: true, output }); });\n    await waitFor(() => expect(screen.getByTestId('result-viewer')).toBeTruthy(), { timeout: 3000 });\n}\n\nbeforeEach(() => {\n    localStorage.clear();\n    sessionStorage.clear();\n    nav.params = new URLSearchParams();\n    useExecutionStore.setState({ executions: [], currentExecution: null });\n    calls = [];\n    requestedUrls = [];\n    // Transport is deliberately NOT abort-aware, so late delivery after Cancel is exercised.\n    fetchSpy = vi.spyOn(globalThis, 'fetch').mockImplementation((input, init) => {\n        requestedUrls.push(String(input));\n        return new Promise<Response>((resolve) => {\n            calls.push({\n                body: JSON.parse(String(init?.body)),\n                signal: init?.signal ?? undefined,\n                respond: (payload) => resolve(new Response(JSON.stringify(payload), { status: 200 })),\n            });\n        });\n    });\n});\n\nafterEach(() => {\n    expect(requestedUrls.every(url => url === '/api/execute')).toBe(true);\n    fetchSpy.mockRestore();\n    vi.restoreAllMocks();\n});\n\ndescribe('control: a fresh submit still completes on the selected attempt', () => {\n    it('binds the fresh attempt, ignores ambient B and keeps the saved result viewable', async () => {\n        const b = buildB();\n        const bBefore = JSON.stringify(b);\n        const id = await startA();\n        act(() => { useExecutionStore.getState().addExecution(b); });\n        expect(byId(id)?.input).toEqual(DRAFT_A);\n        expect(calls[0].body.inputs).toEqual(DRAFT_A);\n\n        await completeCurrent(calls[0], 'OUT_FRESH');\n\n        expect(screen.getByTestId('result-id').textContent).toBe(id);\n        expect(byId(id)?.status).toBe('completed');\n        expect(byId(id)?.output).toBe('OUT_FRESH');\n        expect(JSON.stringify(byId(b.id))).toBe(bBefore);\n    });\n});\n\ndescribe('REQ-STOP: cancel marks only the bound attempt unsuccessful locally', () => {\n    it('fails only A in memory and in persisted storage, aborts the client request and starts nothing new', async () => {\n        const b = buildB();\n        const id = await startA();\n        act(() => { useExecutionStore.getState().addExecution(b); });\n        const bBefore = serial(b.id);\n        const before = byId(id)!;\n\n        click('Cancel');\n\n        expect(byId(id)?.status).toBe('failed');\n        expect(byId(id)?.input).toEqual(before.input);\n        expect(byId(id)?.intent).toBe(before.intent);\n        expect(byId(id)?.output).toBeUndefined();\n        expect(persisted(id)?.status).toBe('failed');\n        expect(persisted(id)?.input).toEqual(DRAFT_A);\n        expect(serial(b.id)).toBe(bBefore);\n        expect(executions()).toHaveLength(2);\n        expect(calls).toHaveLength(1);\n        expect(calls[0].signal?.aborted).toBe(true);\n        expect(screen.queryByRole('button', { name: 'Cancel' })).toBeNull();\n        const notice = screen.getByTestId('draft-stop-notice').textContent ?? '';\n        expect(notice).toContain('on this device');\n        expect(notice).toContain('may not have stopped');\n    });\n\n    it('uses the same exit after a displayed local failure', async () => {\n        const id = await startA();\n        await act(async () => { calls[0].respond({ success: false, error: 'Provider offline' }); });\n        await waitFor(() => expect(screen.getByRole('alert').textContent).toContain('Provider offline'));\n        expect(byId(id)?.status).toBe('processing');\n\n        click('Cancel');\n\n        expect(byId(id)?.status).toBe('failed');\n        expect(persisted(id)?.status).toBe('failed');\n        expect(valueOf('subject')).toBe(DRAFT_A.subject);\n        expect(executions()).toHaveLength(1);\n        expect(calls).toHaveLength(1);\n    });\n\n    it('does not downgrade a record that completed elsewhere while processing', async () => {\n        const id = await startA();\n        act(() => { useExecutionStore.getState().updateExecution(id, { status: 'completed', output: 'OUT_ELSEWHERE' }); });\n\n        click('Cancel');\n\n        expect(byId(id)?.status).toBe('completed');\n        expect(byId(id)?.output).toBe('OUT_ELSEWHERE');\n        expect(persisted(id)?.status).toBe('completed');\n        expect(valueOf('subject')).toBe(DRAFT_A.subject);\n    });\n\n    it('creates nothing and leaves other records alone when the bound record is missing', async () => {\n        const b = buildB();\n        const id = await startA();\n        act(() => {\n            useExecutionStore.setState({ executions: [b], currentExecution: b });\n        });\n        const bBefore = serial(b.id);\n\n        click('Cancel');\n\n        expect(executions().map(e => e.id)).toEqual([b.id]);\n        expect(serial(b.id)).toBe(bBefore);\n        expect(byId(id)).toBeUndefined();\n        expect(valueOf('subject')).toBe(DRAFT_A.subject);\n    });\n\n    it('ignores a late response after the stop and never shows output for it', async () => {\n        const id = await startA();\n        click('Cancel');\n\n        await act(async () => {\n            calls[0].respond({ success: true, output: 'OUT_LATE' });\n            await new Promise(resolve => setTimeout(resolve, 450));\n        });\n\n        expect(screen.queryByTestId('result-viewer')).toBeNull();\n        expect(byId(id)?.status).toBe('failed');\n        expect(byId(id)?.output).toBeUndefined();\n        expect(valueOf('subject')).toBe(DRAFT_A.subject);\n        expect(document.body.textContent).not.toContain('OUT_LATE');\n    });\n});\n\ndescribe('REQ-DRAFT: the exact editable draft is restored', () => {\n    it('returns required and advanced values after cancel and recomputes intent from edited values', async () => {\n        const id = await startA();\n        const oldIntent = byId(id)!.intent;\n        click('Cancel');\n\n        expect(valueOf('subject')).toBe(DRAFT_A.subject);\n        expect(valueOf('currentNotes')).toBe(DRAFT_A.currentNotes);\n        expect(valueOf('readerGoal')).toBe(DRAFT_A.readerGoal);\n        expect(valueOf('audience')).toBe(DRAFT_A.audience);\n        expect(valueOf('mustPreserve')).toBe(DRAFT_A.mustPreserve);\n\n        fill({ subject: 'Edited subject C' });\n        await submitForm();\n        await fetchStarted(2);\n\n        expect(calls[1].body.inputs).toEqual({ ...DRAFT_A, subject: 'Edited subject C' });\n        expect(calls[1].body.intent).toContain('Edited subject C');\n        expect(calls[1].body.intent).not.toContain(DRAFT_A.subject);\n        expect(calls[1].body.intent).not.toBe(oldIntent);\n        expect(byId(newestId())?.intent).toBe(calls[1].body.intent);\n        expect(byId(id)?.status).toBe('failed');\n    });\n\n    it('keeps required validation and defaults on the restored form', async () => {\n        await startA();\n        click('Cancel');\n\n        fill({ subject: '' });\n        await act(async () => { fireEvent.submit(document.querySelector('form')!); });\n\n        expect(await screen.findByText('This field is required')).toBeTruthy();\n        expect(calls).toHaveLength(1);\n        expect(executions()).toHaveLength(1);\n    });\n\n    it('shows the unchanged documentation defaults when no draft is supplied', () => {\n        render(<HomePage />);\n        click('pick-documentation');\n\n        expect(valueOf('subject')).toBe('');\n        expect(screen.queryByTestId('draft-stop-notice')).toBeNull();\n        openAdvanced();\n        expect(valueOf('audience')).toBe('Ng\u01b0\u1eddi v\u1eadn h\u00e0nh n\u1ed9i b\u1ed9');\n        expect(valueOf('mustPreserve')).toBe('');\n    });\n\n    it('restores the filled fields on Retry without executing or altering saved A', async () => {\n        const id = await startA();\n        await completeCurrent(calls[0], 'OUT_A');\n        const aBefore = serial(id);\n\n        click('retry');\n\n        expect(screen.queryByTestId('result-viewer')).toBeNull();\n        expect(valueOf('subject')).toBe(DRAFT_A.subject);\n        expect(valueOf('currentNotes')).toBe(DRAFT_A.currentNotes);\n        expect(valueOf('audience')).toBe(DRAFT_A.audience);\n        expect(valueOf('mustPreserve')).toBe(DRAFT_A.mustPreserve);\n        expect(screen.queryByTestId('draft-stop-notice')).toBeNull();\n        expect(serial(id)).toBe(aBefore);\n        expect(executions()).toHaveLength(1);\n        expect(calls).toHaveLength(1);\n    });\n\n    it('restores the draft on Reject and changes only the review result of bound A', async () => {\n        const b = buildB();\n        const id = await startA();\n        await completeCurrent(calls[0], 'OUT_A');\n        act(() => { useExecutionStore.getState().addExecution(b); });\n        const bBefore = serial(b.id);\n        const aBefore = JSON.parse(serial(id));\n\n        click('reject');\n\n        expect(serial(id)).toBe(JSON.stringify({ ...aBefore, result: 'rejected' }));\n        expect(serial(b.id)).toBe(bBefore);\n        expect(valueOf('subject')).toBe(DRAFT_A.subject);\n        expect(valueOf('mustPreserve')).toBe(DRAFT_A.mustPreserve);\n        expect(executions()).toHaveLength(2);\n        expect(calls).toHaveLength(1);\n    });\n\n    it('clears the prior draft and notice on Back and for a different template', async () => {\n        await startA();\n        click('Cancel');\n        expect(screen.getByTestId('draft-stop-notice')).toBeTruthy();\n\n        fireEvent.click(document.querySelector('button')!);\n        expect(screen.getByTestId('home-browse-experience')).toBeTruthy();\n        click('pick-documentation');\n        expect(valueOf('subject')).toBe('');\n        expect(valueOf('currentNotes')).toBe('');\n        expect(screen.queryByTestId('draft-stop-notice')).toBeNull();\n\n        fireEvent.click(document.querySelector('button')!);\n        click('pick-strategy');\n        const leaked = formValues().filter(value => Object.values(DRAFT_A).includes(value));\n        expect(leaked).toEqual([]);\n        expect(field(strategy.fields[0].id)?.value ?? '').toBe('');\n        expect(screen.queryByTestId('draft-stop-notice')).toBeNull();\n    });\n});\n\ndescribe('REQ-IDENTITY: an explicit resubmit is a distinct attempt', () => {\n    it('creates C with a new id under a frozen clock and prior colliding ids, keeping A and B', async () => {\n        vi.spyOn(Date, 'now').mockReturnValue(FROZEN_NOW);\n        const b = buildB();\n        const legacy = buildSaved(`exec_${FROZEN_NOW}`, 'OUTPUT_LEGACY');\n        const legacyBefore = JSON.stringify(legacy);\n        act(() => { useExecutionStore.setState({ executions: [b, legacy], currentExecution: b }); });\n        const bBefore = serial(b.id);\n\n        const a = await startA();\n        await completeCurrent(calls[0], 'OUT_A');\n        const aBefore = serial(a);\n        click('retry');\n        await submitForm();\n        await fetchStarted(2);\n        const c = newestId();\n\n        expect(new Set(executions().map(e => e.id)).size).toBe(4);\n        expect(a).not.toBe(`exec_${FROZEN_NOW}`);\n        expect(c).not.toBe(a);\n        expect(byId(c)?.status).toBe('processing');\n        expect(byId(c)?.input).toEqual(DRAFT_A);\n        expect(byId(c)?.output).toBeUndefined();\n        expect(byId(c)?.result).toBeUndefined();\n        expect(byId(c)?.evidenceReceiptSnapshot).toBeUndefined();\n        expect(byId(c)?.parentExecutionId).toBeUndefined();\n        expect(byId(c)?.threadId).toBeUndefined();\n        expect(serial(a)).toBe(aBefore);\n        expect(serial(b.id)).toBe(bBefore);\n        expect(JSON.stringify(byId(legacy.id))).toBe(legacyBefore);\n        expect(screen.queryByTestId('result-viewer')).toBeNull();\n    });\n\n    it('completes C on its own record and leaves saved A untouched', async () => {\n        vi.spyOn(Date, 'now').mockReturnValue(FROZEN_NOW);\n        const a = await startA();\n        await completeCurrent(calls[0], 'OUT_A');\n        const aBefore = serial(a);\n        click('retry');\n        await submitForm();\n        await fetchStarted(2);\n        const c = newestId();\n\n        await completeCurrent(calls[1], 'OUT_C');\n\n        expect(screen.getByTestId('result-id').textContent).toBe(c);\n        expect(screen.getByTestId('result-output').textContent).toBe('OUT_C');\n        expect(byId(c)?.output).toBe('OUT_C');\n        expect(serial(a)).toBe(aBefore);\n    });\n\n    it('gives each same-clock demo attempt its own id', async () => {\n        vi.spyOn(Date, 'now').mockReturnValue(FROZEN_NOW);\n        render(<HomePage />);\n        click('run-demo');\n        await fetchStarted(1);\n        const first = newestId();\n        click('Cancel');\n        fireEvent.click(document.querySelector('button')!);\n        click('run-demo');\n        await fetchStarted(2);\n        const second = newestId();\n\n        expect(second).not.toBe(first);\n        expect(byId(first)?.status).toBe('failed');\n        expect(byId(second)?.status).toBe('processing');\n        expect(first).not.toBe(`exec_demo_${FROZEN_NOW}`);\n    });\n});\n\ndescribe('follow-up and continuation boundaries', () => {\n    it('stops a follow-up on its own record and resubmits fresh without continuation metadata', async () => {\n        const a = await startA();\n        await completeCurrent(calls[0], 'OUT_A');\n        const aBefore = serial(a);\n\n        click('follow-up');\n        await fetchStarted(2);\n        const followUp = newestId();\n        expect(byId(followUp)?.parentExecutionId).toBe(a);\n        expect(calls[1].body.inputs._previousOutput).toBe('OUT_A');\n\n        click('Cancel');\n\n        expect(byId(followUp)?.status).toBe('failed');\n        expect(serial(a)).toBe(aBefore);\n        expect(valueOf('subject')).toBe(DRAFT_A.subject);\n        expect(valueOf('mustPreserve')).toBe(DRAFT_A.mustPreserve);\n\n        await submitForm();\n        await fetchStarted(3);\n        const fresh = newestId();\n\n        expect(calls[2].body.inputs).toEqual(DRAFT_A);\n        expect(calls[2].body.inputs._previousOutput).toBeUndefined();\n        expect(fresh).not.toBe(followUp);\n        expect(byId(fresh)?.parentExecutionId).toBeUndefined();\n        expect(byId(fresh)?.threadId).toBeUndefined();\n        expect(byId(fresh)?.input._previousOutput).toBeUndefined();\n        expect(serial(a)).toBe(aBefore);\n    });\n\n    it('does not carry a completed follow-up context into a resubmit after Retry', async () => {\n        const a = await startA();\n        await completeCurrent(calls[0], 'OUT_A');\n        click('follow-up');\n        await fetchStarted(2);\n        await completeCurrent(calls[1], 'OUT_FOLLOW');\n        click('retry');\n\n        await submitForm();\n        await fetchStarted(3);\n\n        expect(calls[2].body.inputs._previousOutput).toBeUndefined();\n        expect(byId(newestId())?.input).toEqual(DRAFT_A);\n        expect(byId(a)?.output).toBe('OUT_A');\n    });\n\n    it('keeps accepted+completed history Continue eligibility and rejects ineligible records', () => {\n        const accepted = buildSaved('exec_hist_ok', 'OUT_HIST', { templateId: 'documentation', result: 'accepted' });\n        const unaccepted = buildSaved('exec_hist_no', 'OUT_NO');\n        act(() => { useExecutionStore.setState({ executions: [unaccepted, accepted], currentExecution: unaccepted }); });\n        nav.params = new URLSearchParams('continue=exec_hist_ok');\n        const view = render(<HomePage />);\n        expect(screen.getByTestId('result-id').textContent).toBe('exec_hist_ok');\n        view.unmount();\n\n        nav.params = new URLSearchParams('continue=exec_hist_no');\n        render(<HomePage />);\n        expect(screen.getByTestId('home-browse-experience')).toBeTruthy();\n        expect(screen.queryByTestId('result-viewer')).toBeNull();\n    });\n});\n\ndescribe('no-provider boundary', () => {\n    it('keeps the shared setup guard denying a provider destination', async () => {\n        await expect(guardedFetch('https://api.openai.com/v1/chat/completions')).rejects.toThrow(/CVF_PROVIDER_EXECUTION_DENIED/);\n        expect(requestedUrls).toEqual([]);\n    });\n});\n"
+    },
+    {
+      "path": "docs/reviews/evidence/ncr-draft-recovery-worker-20261012.json",
+      "sha256": "0051bf4bf8006bb1b9b31b0e9d3d9b58fe81932e3b892881615753f55fa3e0b1",
+      "snapshot": ".cvf/runtime/ncr-draft-recovery-local-20261012/original-3-ncr-draft-recovery-worker-20261012.json",
+      "immutableGovernedArtifactRetained": true
+    },
+    {
+      "path": "docs/reviews/CVF_NCR_DRAFT_RECOVERY_WORKER_RETURN_2026-10-12.md",
+      "sha256": "60c4fdf876a56f827beae79ef3623d681e6c32fd3c4380651ee3cc65666262fb",
+      "snapshot": ".cvf/runtime/ncr-draft-recovery-local-20261012/original-4-CVF_NCR_DRAFT_RECOVERY_WORKER_RETURN_2026-10-12.md",
+      "immutableGovernedArtifactRetained": true
+    }
+  ],
+  "sourcePinsVerifiedAgainstExecutionBase": [
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.tsx",
+      "sha256": "11a1877ae8ee1b8ab268b4eaad5b9dfe4050aa513accf198fa74f26b8fffeb15",
+      "executionBaseBlobVerified": true
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.tsx",
+      "sha256": "4c4213cef96d44b38d3c298612ebdf73e873310885e9e115fee3ec64859b10a1",
+      "executionBaseBlobVerified": true
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/store.ts",
+      "sha256": "f5deb700c631c680924d3ba74fd1c56ef862e99703fe59c461828a8a64953c06",
+      "executionBaseBlobVerified": true
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/types/index.ts",
+      "sha256": "924e0ba06697be1de5501f0a8e5d03b73d18da9e86c52482cbfc585ba0d56a85",
+      "executionBaseBlobVerified": true
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ProcessingScreen.tsx",
+      "sha256": "e34ff88d91b25e8274042cc7f77871eb25570ce01eb8e4531b75a274a99a77ec",
+      "executionBaseBlobVerified": true
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.test.tsx",
+      "sha256": "332a100889580078daca4dbb0a1e815a2c6d9e0e0fcdbfa912b02fa0e1af63e2",
+      "executionBaseBlobVerified": true
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/history-recovery.test.tsx",
+      "sha256": "c4e3c715bc7b6ca203ea9098cae71017012a56dfe2703acffef4a44d559d4842",
+      "executionBaseBlobVerified": true
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.test.tsx",
+      "sha256": "02170f9f50454ba0af9562576b618951ba529162304461713427b4d1bdd908b6",
+      "executionBaseBlobVerified": true
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/vitest.config.ts",
+      "sha256": "9a4a65976b5b7a5d038f9cb412a90d417f804108cf1dd33bae4421989a863420",
+      "executionBaseBlobVerified": true
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/test/setup.ts",
+      "sha256": "bc573b2a6133b07404c42f797bce43fe73464711e0281f29da8234bf2fed6b27",
+      "executionBaseBlobVerified": true
+    }
+  ],
+  "workerEvidenceVerification": {
+    "finalSubmittedCodeHashes": "All three full digests match before Local repair",
+    "commandLogHashChecks": [],
+    "reason": "Returned JSON records results and some hashes without resolvable raw log paths. Consume as disclosed worker reports, not independently attested logs."
+  },
+  "workerClock": {
+    "workerStartLocal": "2026-10-12T10:20:54+07:00",
+    "budgetMinutes": 45,
+    "startedBeforeFirstRead": true,
+    "firstRedStartLocal": "2026-10-12T10:24:34+07:00",
+    "finalTestStartLocal": "2026-10-12T10:38:26+07:00",
+    "finalTestEndLocal": "2026-10-12T10:38:57+07:00",
+    "note": "Clock started before the first read; the final fast gate and terminal end are recorded in the return, not here.",
+    "mutationStartLocal": "2026-10-12T10:34:37+07:00",
+    "firstFastGateLocal": "2026-10-12T10:36:51+07:00",
+    "reportedMinutesToFinalTestEnd": 18.05,
+    "finalGateEnd": null,
+    "terminalEnd": null,
+    "fullAcceptedDeliveryMinutes": null,
+    "limit": "Return contains no promised final gate/terminal clock instant.18.05min is start to final test end only; full45min budget compliance unproven."
+  },
+  "requestedConfiguration": {
+    "provider": "Claude",
+    "model": "Sonnet 5.5",
+    "effort": "high",
+    "basis": "operator-selected, manually started"
+  },
+  "nativeIdentity": {
+    "model": null,
+    "effort": null,
+    "inputTokens": null,
+    "outputTokens": null,
+    "bill": null,
+    "reason": "the worker session exposes no usage meter or effort readout to itself; the session system prompt names the model as Sonnet 5.5 only"
+  },
+  "reviewClock": {
+    "partialStartUtc": "2026-10-12T03:46:51.503704+00:00",
+    "assembledUtc": "2026-10-12T03:59:20.183277+00:00",
+    "fullMinutes": null,
+    "reason": "partial clock: initial startup/reads before this capture excluded"
+  },
+  "preRepairAudit": {
+    "disposition": "COMPLETE_BEFORE_FIRST_REPAIR",
+    "basis": "Finite Home/form/processing callback and submitted test/fixture contract, raw hashes/ownership, full baseline and declared required source mapping, original byte snapshots and independent actual form/query challenge inspected before three-line Home fix.",
+    "limits": "Progressive handoff/current sources only; no whole repo/browser/SpecExport/provider or full read-order attestation."
+  },
+  "qualityAttribution": {
+    "workerTestSelfRepairGroups": 1,
+    "workerReturnShapeManualRepairsReported": 8,
+    "workerReturnFailedGateAttemptsReported": 2,
+    "gateCountLimit": "Return describes first two failed attempts but JSON commands retain only first fast-gate row. Counts self-reported; raw gate logs not located by Local. Not eight independent roots.",
+    "workerMutationHarnessFailures": 1,
+    "workerProductRepairGroupsAtHandoff": 1,
+    "localDependentSymptoms": 2,
+    "localProductRepairSeverity": "MODERATE_DRAFT_AND_INPUT_ISOLATION_NO_BACKEND_BREACH_ESTABLISHED",
+    "mandatoryReadOmissionGroups": 1,
+    "mandatoryReadOmissions": [
+      "governing baseline full semantic read",
+      "most required output-checker preparation"
+    ],
+    "workerStatusOverclaim": "COMPLETE_PENDING_REVIEW and all mandatory reads before edit conflict with admitted baseline omission; no retroactive compliance",
+    "orchestratorPacketAmbiguities": 0,
+    "attributionCorrection": "Worker attributed misleading demo mutation/source-red oracle to ORCHESTRATOR_PACKET_GAP. Local classifies worker harness/expectation discrimination; packet supplied the required negative condition.",
+    "localHarnessNotes": [
+      "First Local cross-template case checked DOM only; strengthened submitted field-set assertion before first repair, preserving first3 PASS/1 FAIL report and second2 PASS/2 FAIL.",
+      "Read-only guessed worker runtime folder absent; found no referenced worker log paths. No worker command-log hash validation claimed."
+    ]
+  },
+  "independentProbe": {
+    "first": {
+      "path": ".cvf/runtime/ncr-draft-recovery-local-20261012/probe-first.json",
+      "sha256": "b9d8a344fbb1a8bf55496d9682f59a56e4fcd74e439fa47a0ce9e4b670908f8f",
+      "total": 4,
+      "passed": 3,
+      "failed": 1,
+      "assertions": [
+        {
+          "title": "positive: selected stop persists only failed A while ambient B survives",
+          "status": "passed",
+          "firstFailureLine": ""
+        },
+        {
+          "title": "positive: constant-clock resubmit completes C independently of saved A",
+          "status": "passed",
+          "firstFailureLine": ""
+        },
+        {
+          "title": "negative: live template query switch clears old DOM and submitted field set",
+          "status": "passed",
+          "firstFailureLine": ""
+        },
+        {
+          "title": "negative: same-template query fresh choice clears recovered values",
+          "status": "failed",
+          "firstFailureLine": "AssertionError: expected 'Selected draft A' to be '' // Object.is equality"
+        }
+      ]
+    },
+    "before": {
+      "path": ".cvf/runtime/ncr-draft-recovery-local-20261012/probe-before.json",
+      "sha256": "76816353b8d1205940ca63da5c72a999002a2ec8a41cca463b53df0b278a4bec",
+      "total": 4,
+      "passed": 2,
+      "failed": 2,
+      "assertions": [
+        {
+          "title": "positive: selected stop persists only failed A while ambient B survives",
+          "status": "passed",
+          "firstFailureLine": ""
+        },
+        {
+          "title": "positive: constant-clock resubmit completes C independently of saved A",
+          "status": "passed",
+          "firstFailureLine": ""
+        },
+        {
+          "title": "negative: live template query switch clears old DOM and submitted field set",
+          "status": "failed",
+          "firstFailureLine": "AssertionError: expected 'Selected draft A' to be undefined"
+        },
+        {
+          "title": "negative: same-template query fresh choice clears recovered values",
+          "status": "failed",
+          "firstFailureLine": "AssertionError: expected 'Selected draft A' to be '' // Object.is equality"
+        }
+      ]
+    },
+    "after": {
+      "path": ".cvf/runtime/ncr-draft-recovery-local-20261012/probe-final.json",
+      "sha256": "fa752b9955fd24cd63246e36593cbac77b2f3c44ee6ce95bebbd2019c1836de7",
+      "total": 4,
+      "passed": 4,
+      "failed": 0,
+      "assertions": [
+        {
+          "title": "positive: selected stop persists only failed A while ambient B survives",
+          "status": "passed",
+          "firstFailureLine": ""
+        },
+        {
+          "title": "positive: constant-clock resubmit completes C independently of saved A",
+          "status": "passed",
+          "firstFailureLine": ""
+        },
+        {
+          "title": "negative: live template query switch clears old DOM and submitted field set",
+          "status": "passed",
+          "firstFailureLine": ""
+        },
+        {
+          "title": "negative: same-template query fresh choice clears recovered values",
+          "status": "passed",
+          "firstFailureLine": ""
+        }
+      ]
+    },
+    "sourceSha256": "26a6d1d1f98ec36006f2cf526afc4bee65aec1bfb2ea4b1e023e32d17b7a2f46",
+    "sourceText": "/**\n * @vitest-environment jsdom\n */\nimport { describe, it, expect, vi, beforeEach } from 'vitest';\nimport { render, screen, fireEvent, act, waitFor } from '@testing-library/react';\nimport HomePage from '@/app/(dashboard)/home/page';\nimport { DynamicForm as ActualDynamicForm } from '@/components/DynamicForm';\nimport { templates } from '@/lib/templates';\nimport { useExecutionStore } from '@/lib/store';\nimport type { Execution } from '@/types';\n\nconst navigation = vi.hoisted(() => ({ params: new URLSearchParams() }));\n\nvi.mock('next/navigation', () => ({\n    useRouter: () => ({ push: vi.fn(), replace: vi.fn() }),\n    useSearchParams: () => navigation.params,\n}));\n\nvi.mock('@/lib/i18n', () => ({\n    useLanguage: () => ({ language: 'en', t: (key: string) => key }),\n}));\n\nvi.mock('@/components/SpecExport', () => ({ SpecExport: () => null }));\nvi.mock('@/lib/skill-template-map', () => ({ getSkillForTemplate: () => null }));\n\nvi.mock('@/lib/analytics', () => ({\n    trackEvent: vi.fn(),\n}));\n\nvi.mock('@/components/Settings', () => ({\n    useSettings: () => ({ settings: { providers: {} } }),\n}));\n\nvi.mock('@/lib/hooks/useExecute', () => {\n    const providers: never[] = [];\n    const fetchProviders = () => undefined;\n    return {\n        useProviders: () => ({ providers, anyConfigured: false, fetchProviders }),\n    };\n});\n\n// Leaf controls are replaced by stubs that expose their callbacks as buttons.\n// The Home page and the execution store stay real.\nvi.mock('@/components', async () => ({\n    DynamicForm: (await import('@/components/DynamicForm')).DynamicForm,\n    ProcessingScreen: (props: { onComplete: (output: string) => void; onCancel: () => void }) => (\n        <div data-testid=\"processing-screen\">\n            <button onClick={props.onCancel}>cancel-processing</button>\n            <button onClick={() => props.onComplete('OUTPUT_NEW')}>complete-processing</button>\n        </div>\n    ),\n    ResultViewer: (props: {\n        execution: Execution;\n        output: string;\n        onAccept: () => void;\n        onReject: () => void;\n        onRetry: () => void;\n        onFollowUp?: (refinement: string) => void;\n    }) => (\n        <div data-testid=\"result-viewer\">\n            <span data-testid=\"result-id\">{props.execution.id}</span>\n            <span data-testid=\"result-template\">{props.execution.templateId}</span>\n            <span data-testid=\"result-output\">{props.output}</span>\n            <button onClick={props.onAccept}>accept</button>\n            <button onClick={props.onReject}>reject</button>\n            <button onClick={props.onRetry}>retry</button>\n            <button onClick={() => props.onFollowUp?.('refine it')}>follow-up</button>\n        </div>\n    ),\n    TemplatePreviewModal: () => null,\n    OnboardingTour: () => null,\n    AppBuilderWizard: () => null,\n    ProductDesignWizard: () => null,\n    MarketingCampaignWizard: () => null,\n    BusinessStrategyWizard: () => null,\n    SecurityAssessmentWizard: () => null,\n    ResearchProjectWizard: () => null,\n    SystemDesignWizard: () => null,\n    ContentStrategyWizard: () => null,\n    DataAnalysisWizard: () => null,\n}));\n\nvi.mock('@/components/home/HomeBrowseExperience', () => ({\n    HomeBrowseExperience: (props: {\n        templates: Array<{ id: string }>;\n        handleSelectTemplate: (template: unknown) => void;\n    }) => (\n        <div data-testid=\"home-browse-experience\">\n            <button onClick={() => props.handleSelectTemplate(props.templates.find(t => t.id === 'documentation'))}>\n                pick-documentation\n            </button>\n        </div>\n    ),\n}));\n\nconst documentation = templates.find(t => !t.isFolder && t.id === 'documentation')!;\nconst otherTemplate = templates.find(t => !t.isFolder && t.id !== documentation.id)!;\n\n// Each call builds an independent object so that A, B and the other fixtures\n// can never alias one another.\nfunction fixture(id: string, output: string, overrides: Partial<Execution> = {}): Execution {\n    return {\n        id,\n        templateId: documentation.id,\n        templateName: documentation.name,\n        category: documentation.category,\n        input: { topic: `${id} topic` },\n        intent: `${id} intent`,\n        output,\n        status: 'completed',\n        createdAt: new Date('2026-10-11T00:00:00Z'),\n        ...overrides,\n    };\n}\n\nconst buildA = () => fixture('exec_fixture_A', 'OUTPUT_A', {\n    result: 'accepted',\n    threadId: 'thread_A',\n    rootExecutionId: 'root_A',\n    projectLabel: 'Project A',\n    knowledgeCollectionId: 'kc_A',\n});\n\nconst buildB = () => fixture('exec_fixture_B', 'OUTPUT_B', {\n    threadId: 'thread_B',\n    rootExecutionId: 'root_B',\n    projectLabel: 'Project B',\n    knowledgeCollectionId: 'kc_B',\n});\n\nconst buildC = () => fixture('exec_fixture_C', 'OUTPUT_C', {\n    templateId: otherTemplate.id,\n    templateName: otherTemplate.name,\n    category: otherTemplate.category,\n    result: 'accepted',\n    threadId: 'thread_C',\n    rootExecutionId: 'root_C',\n});\n\nconst buildUnaccepted = () => fixture('exec_fixture_R', 'OUTPUT_R', { result: 'rejected' });\nconst buildEmptyOutput = () => fixture('exec_fixture_E', '', { result: 'accepted' });\nconst buildMissingTemplate = () => fixture('exec_fixture_T', 'OUTPUT_T', {\n    result: 'accepted',\n    templateId: 'template_missing_fixture',\n});\n\nfunction seed(executions: Execution[], current: Execution | null) {\n    useExecutionStore.setState({ executions, currentExecution: current });\n}\n\nfunction openHistory(id: string) {\n    navigation.params = new URLSearchParams(`continue=${id}`);\n}\n\nfunction byId(id: string) {\n    return useExecutionStore.getState().executions.find(e => e.id === id);\n}\n\nfunction click(name: string) {\n    fireEvent.click(screen.getByRole('button', { name }));\n}\n\nfunction startFreshRun() {\n    click('pick-documentation');\n    click('submit-form');\n}\n\nbeforeEach(() => {\n    vi.restoreAllMocks();\n    localStorage.clear();\n    sessionStorage.clear();\n    navigation.params = new URLSearchParams();\n    useExecutionStore.setState({ executions: [], currentExecution: null });\n});\n\n\nconst draft = { subject: 'Selected draft A', currentNotes: 'Notes only for A', readerGoal: 'Recover without typing again' };\nfunction fill() {\n    for (const [name,value] of Object.entries(draft)) fireEvent.change(document.querySelector('[name=\"'+name+'\"]')!, {target:{value}});\n}\nasync function submit() {\n    fireEvent.submit(document.querySelector('form')!);\n    await waitFor(() => expect(screen.getByTestId('processing-screen')).toBeTruthy());\n}\nasync function start() { render(<HomePage />); click('pick-documentation'); fill(); await submit(); return useExecutionStore.getState().executions[0].id; }\n\ndescribe('Local selected draft isolation challenge', () => {\n    it('positive: selected stop persists only failed A while ambient B survives', async () => {\n        const id=await start(); const b=buildB(); act(()=>useExecutionStore.getState().addExecution(b)); const before=JSON.stringify(b);\n        click('cancel-processing'); expect(byId(id)?.status).toBe('failed'); expect(JSON.stringify(byId(b.id))).toBe(before);\n        expect((document.querySelector('[name=\"subject\"]') as HTMLInputElement).value).toBe(draft.subject);\n        expect(JSON.parse(localStorage.getItem('cvf-executions-storage')!).state.executions.find((e:Execution)=>e.id===id).status).toBe('failed');\n    });\n    it('positive: constant-clock resubmit completes C independently of saved A', async () => {\n        vi.spyOn(Date,'now').mockReturnValue(1791763200000);\n        const id=await start(); click('complete-processing'); const before=JSON.stringify(byId(id)); click('retry');\n        fireEvent.change(document.querySelector('[name=\"subject\"]')!,{target:{value:'Edited C'}}); await submit();\n        const c=useExecutionStore.getState().executions[0].id; expect(c).not.toBe(id); click('complete-processing');\n        expect(byId(c)?.input.subject).toBe('Edited C'); expect(JSON.stringify(byId(id))).toBe(before);\n    });\n    it('negative: live template query switch clears old DOM and submitted field set', async () => {\n        const view=render(<HomePage />); click('pick-documentation'); fill(); await submit(); click('cancel-processing');\n        const before=JSON.stringify(useExecutionStore.getState().executions);\n        navigation.params=new URLSearchParams('template=strategy_analysis'); view.rerender(<HomePage />);\n        await waitFor(()=>expect(document.querySelector('[name=\"topic\"]')).toBeTruthy());\n        const values=Array.from(document.querySelectorAll('input,textarea,select')).map(e=>(e as HTMLInputElement).value);\n        expect(values).not.toContain(draft.subject); expect(values).not.toContain(draft.currentNotes);\n        expect((document.querySelector('[name=\"topic\"]') as HTMLInputElement).value).toBe('');\n        expect(JSON.stringify(useExecutionStore.getState().executions)).toBe(before);\n        fireEvent.change(document.querySelector('[name=\"topic\"]')!,{target:{value:'New B topic'}});\n        fireEvent.change(document.querySelector('[name=\"context\"]')!,{target:{value:'New B context'}});\n        await submit();\n        const input=useExecutionStore.getState().executions[0].input;\n        expect(input.subject).toBeUndefined(); expect(input.currentNotes).toBeUndefined(); expect(input.readerGoal).toBeUndefined();\n        expect(input.topic).toBe('New B topic'); expect(input.context).toBe('New B context');\n    });\n    it('negative: same-template query fresh choice clears recovered values', async () => {\n        const view=render(<HomePage />); click('pick-documentation'); fill(); await submit(); click('cancel-processing');\n        navigation.params=new URLSearchParams('template=documentation'); view.rerender(<HomePage />);\n        await waitFor(()=>expect((document.querySelector('[name=\"subject\"]') as HTMLInputElement).value).toBe(''));\n        expect(screen.queryByTestId('draft-stop-notice')).toBeNull(); expect(useExecutionStore.getState().executions).toHaveLength(1);\n    });\n});\n",
+    "oracleSeparation": "Local dispatch-derived real Home/form/store harness; worker test not imported. ProcessingScreen leaf callback stub; actual lifecycle worker19-case composition proof consumed, not recreated.",
+    "contradiction": "Fresh launch query while form remains mounted retains old react-hook-form registration/defaults; cross-template submit carries old subject/currentNotes, same-template DOM still has A draft.",
+    "informationGain": "Both observable draft and actual submitted field-set isolation; existing worker Back test unmounts form and cannot cover query reuse.",
+    "costReason": "One finite4-case distinct review; no broad historical/wizard/provider suite."
+  },
+  "repair": {
+    "rootCause": "MOUNTED_FORM_REUSE_AFTER_RECOVERY_CONTEXT_CLEAR",
+    "localProductCodeRepairGroups": 1,
+    "dependentSymptoms": 2,
+    "code": "Home clearRecoveryContext increments formRevision; DynamicForm key combines template identity/revision, resetting all registered/default fields on fresh choice.",
+    "regressionsAdded": 2,
+    "acceptedFiles": [
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.tsx",
+        "sha256": "b6b1d7ff64bcc5586b830b2a23c8e1b94957ef276a4abd9cea9eaa0825965322",
+        "lines": 728
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.tsx",
+        "sha256": "2cf58f9f22145c9755285b7340e9a6858fc8de98b4ae79bbc72315911b30a1ac",
+        "lines": 349
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/draft-recovery.test.tsx",
+        "sha256": "7d1b53ab1a36af0dac594cafce082eb48db3a553e7cdc273486b99c8557e33d3",
+        "lines": 583
+      }
+    ]
+  },
+  "finalFocusedSuite": {
+    "path": ".cvf/runtime/ncr-draft-recovery-local-20261012/focused-final.json",
+    "sha256": "4a8a848b59b20c9221c2e70d5487e8117c59c378265d5f2001e37e49d6b080d4",
+    "total": 67,
+    "passed": 66,
+    "failed": 1,
+    "assertions": [
+      {
+        "title": "renders app_builder_complete form chrome in English mode",
+        "status": "failed",
+        "firstFailureLine": "TestingLibraryElementError: Unable to find an element with the text: /Create a full product brief/. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible."
+      },
+      {
+        "title": "keeps app_builder_complete form chrome in Vietnamese mode",
+        "status": "passed",
+        "firstFailureLine": ""
+      },
+      {
+        "title": "uses English preview intent in English mode without changing source values",
+        "status": "passed",
+        "firstFailureLine": ""
+      },
+      {
+        "title": "binds the fresh attempt, ignores ambient B and keeps the saved result viewable",
+        "status": "passed",
+        "firstFailureLine": ""
+      },
+      {
+        "title": "fails only A in memory and in persisted storage, aborts the client request and starts nothing new",
+        "status": "passed",
+        "firstFailureLine": ""
+      },
+      {
+        "title": "uses the same exit after a displayed local failure",
+        "status": "passed",
+        "firstFailureLine": ""
+      },
+      {
+        "title": "does not downgrade a record that completed elsewhere while processing",
+        "status": "passed",
+        "firstFailureLine": ""
+      },
+      {
+        "title": "creates nothing and leaves other records alone when the bound record is missing",
+        "status": "passed",
+        "firstFailureLine": ""
+      },
+      {
+        "title": "ignores a late response after the stop and never shows output for it",
+        "status": "passed",
+        "firstFailureLine": ""
+      },
+      {
+        "title": "returns required and advanced values after cancel and recomputes intent from edited values",
+        "status": "passed",
+        "firstFailureLine": ""
+      },
+      {
+        "title": "keeps required validation and defaults on the restored form",
+        "status": "passed",
+        "firstFailureLine": ""
+      },
+      {
+        "title": "shows the unchanged documentation defaults when no draft is supplied",
+        "status": "passed",
+        "firstFailureLine": ""
+      },
+      {
+        "title": "restores the filled fields on Retry without executing or altering saved A",
+        "status": "passed",
+        "firstFailureLine": ""
+      },
+      {
+        "title": "restores the draft on Reject and changes only the review result of bound A",
+        "status": "passed",
+        "firstFailureLine": ""
+      },
+      {
+        "title": "clears the prior draft and notice on Back and for a different template",
+        "status": "passed",
+        "firstFailureLine": ""
+      },
+      {
+        "title": "clears required/advanced fields on a fresh choice of the same template",
+        "status": "passed",
+        "firstFailureLine": ""
+      },
+      {
+        "title": "never submits the previous template fields after a different fresh launch",
+        "status": "passed",
+        "firstFailureLine": ""
+      },
+      {
+        "title": "creates C with a new id under a frozen clock and prior colliding ids, keeping A and B",
+        "status": "passed",
+        "firstFailureLine": ""
+      },
+      {
+        "title": "completes C on its own record and leaves saved A untouched",
+        "status": "passed",
+        "firstFailureLine": ""
+      },
+      {
+        "title": "gives each same-clock demo attempt its own id",
+        "status": "passed",
+        "firstFailureLine": ""
+      },
+      {
+        "title": "stops a follow-up on its own record and resubmits fresh without continuation metadata",
+        "status": "passed",
+        "firstFailureLine": ""
+      },
+      {
+        "title": "does not carry a completed follow-up context into a resubmit after Retry",
+        "status": "passed",
+        "firstFailureLine": ""
+      },
+      {
+        "title": "keeps accepted+completed history Continue eligibility and rejects ineligible records",
+        "status": "passed",
+        "firstFailureLine": ""
+      },
+      {
+        "title": "keeps the shared setup guard denying a provider destination",
+        "status": "passed",
+        "firstFailureLine": ""
+      },
+      {
+        "title": "restores exact A from the continue query while the ambient run is B",
+        "status": "passed",
+        "firstFailureLine": ""
+      },
+      {
+        "title": "keeps the accepted-only Continue button distinct from basic row selection",
+        "status": "passed",
+        "firstFailureLine": ""
+      },
+      {
+        "title": "opens a accepted completed result after a persisted cold start with ambient B",
+        "status": "passed",
+        "firstFailureLine": ""
+      },
+      {
+        "title": "opens a rejected completed result after a persisted cold start with ambient B",
+        "status": "passed",
+        "firstFailureLine": ""
+      },
+      {
+        "title": "opens a not yet reviewed completed result after a persisted cold start with ambient B",
+        "status": "passed",
+        "firstFailureLine": ""
+      },
+      {
+        "title": "encodes an id with reserved characters and restores that exact record",
+        "status": "passed",
+        "firstFailureLine": ""
+      },
+      {
+        "title": "opens the selected record from the URL alone, with or without an ambient run",
+        "status": "passed",
+        "firstFailureLine": ""
+      },
+      {
+        "title": "keeps A displayed and reviewed when the ambient run changes to B and a new run C",
+        "status": "passed",
+        "firstFailureLine": ""
+      },
+      {
+        "title": "accepts an unreviewed result opened from History, leaving other records unchanged",
+        "status": "passed",
+        "firstFailureLine": ""
+      },
+      {
+        "title": "starts a bound follow-up from A without rerunning it and keeps A and B unchanged",
+        "status": "passed",
+        "firstFailureLine": ""
+      },
+      {
+        "title": "copies A to the clipboard without an execute request or a fabricated receipt",
+        "status": "passed",
+        "firstFailureLine": ""
+      },
+      {
+        "title": "downloads the Markdown result and the deliverable pack from A only",
+        "status": "passed",
+        "firstFailureLine": ""
+      },
+      {
+        "title": "drops prior bound output for unknown id without creating or changing a run",
+        "status": "passed",
+        "firstFailureLine": ""
+      },
+      {
+        "title": "drops prior bound output for processing record without creating or changing a run",
+        "status": "passed",
+        "firstFailureLine": ""
+      },
+      {
+        "title": "drops prior bound output for failed record without creating or changing a run",
+        "status": "passed",
+        "firstFailureLine": ""
+      },
+      {
+        "title": "drops prior bound output for empty output without creating or changing a run",
+        "status": "passed",
+        "firstFailureLine": ""
+      },
+      {
+        "title": "drops prior bound output for unavailable template without creating or changing a run",
+        "status": "passed",
+        "firstFailureLine": ""
+      },
+      {
+        "title": "shows browse for an invalid query on a cold start",
+        "status": "passed",
+        "firstFailureLine": ""
+      },
+      {
+        "title": "clears the prior result instead of falling back for result=",
+        "status": "passed",
+        "firstFailureLine": ""
+      },
+      {
+        "title": "clears the prior result instead of falling back for result=%20%20",
+        "status": "passed",
+        "firstFailureLine": ""
+      },
+      {
+        "title": "clears the prior result instead of falling back for continue=&result=exec_saved_B",
+        "status": "passed",
+        "firstFailureLine": ""
+      },
+      {
+        "title": "clears the prior result instead of falling back for continue=%20&result=exec_saved_B",
+        "status": "passed",
+        "firstFailureLine": ""
+      },
+      {
+        "title": "rejects an accepted but non-completed pending record on continue",
+        "status": "passed",
+        "firstFailureLine": ""
+      },
+      {
+        "title": "rejects an accepted but non-completed processing record on continue",
+        "status": "passed",
+        "firstFailureLine": ""
+      },
+      {
+        "title": "rejects an accepted but non-completed failed record on continue",
+        "status": "passed",
+        "firstFailureLine": ""
+      },
+      {
+        "title": "lets an ineligible continue govern even when result names a valid record",
+        "status": "passed",
+        "firstFailureLine": ""
+      },
+      {
+        "title": "lets an eligible continue win over a different result record",
+        "status": "passed",
+        "firstFailureLine": ""
+      },
+      {
+        "title": "keeps continue accepted-only while the same unreviewed record opens through result",
+        "status": "passed",
+        "firstFailureLine": ""
+      },
+      {
+        "title": "binds a fresh run to its own execution while the ambient run is B",
+        "status": "passed",
+        "firstFailureLine": ""
+      },
+      {
+        "title": "renders the browse experience by default",
+        "status": "passed",
+        "firstFailureLine": ""
+      },
+      {
+        "title": "shows restored A when the ambient current execution is B",
+        "status": "passed",
+        "firstFailureLine": ""
+      },
+      {
+        "title": "shows restored A when there is no ambient current execution",
+        "status": "passed",
+        "firstFailureLine": ""
+      },
+      {
+        "title": "keeps A displayed when the ambient current execution changes to another execution",
+        "status": "passed",
+        "firstFailureLine": ""
+      },
+      {
+        "title": "rejects restored A and leaves ambient B unchanged",
+        "status": "passed",
+        "firstFailureLine": ""
+      },
+      {
+        "title": "follow-up from restored A uses A as the parent and leaves A and B unchanged",
+        "status": "passed",
+        "firstFailureLine": ""
+      },
+      {
+        "title": "accepts a fresh execution after the ambient current execution moves to B",
+        "status": "passed",
+        "firstFailureLine": ""
+      },
+      {
+        "title": "switches identity and actions from A to C together",
+        "status": "passed",
+        "firstFailureLine": ""
+      },
+      {
+        "title": "returns an invalid history query (unknown id) to browse without showing prior output",
+        "status": "passed",
+        "firstFailureLine": ""
+      },
+      {
+        "title": "returns an invalid history query (unaccepted) to browse without showing prior output",
+        "status": "passed",
+        "firstFailureLine": ""
+      },
+      {
+        "title": "returns an invalid history query (empty output) to browse without showing prior output",
+        "status": "passed",
+        "firstFailureLine": ""
+      },
+      {
+        "title": "returns an invalid history query (unavailable template) to browse without showing prior output",
+        "status": "passed",
+        "firstFailureLine": ""
+      },
+      {
+        "title": "keeps a fresh submission bound to the created execution when no continue parameter is present",
+        "status": "passed",
+        "firstFailureLine": ""
+      },
+      {
+        "title": "binds processing completion to the created execution when the ambient current execution changes during processing",
+        "status": "passed",
+        "firstFailureLine": ""
+      }
+    ]
+  },
+  "knownBaselineFailure": {
+    "disposition": "WAIVED_FOR_THIS_TRANCHE_PRE_EXISTING",
+    "failure": {
+      "path": ".cvf/runtime/ncr-draft-recovery-local-20261012/baseline-results.json",
+      "sha256": "f5278496142e25e75e6c4d32bba80938cc8d7e3b340aeca440ca8c17a1a1bfff",
+      "total": 3,
+      "passed": 0,
+      "failed": 1,
+      "assertions": [
+        {
+          "title": "renders app_builder_complete form chrome in English mode",
+          "status": "failed",
+          "firstFailureLine": "TestingLibraryElementError: Unable to find an element with the text: /Create a full product brief/. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible."
+        },
+        {
+          "title": "keeps app_builder_complete form chrome in Vietnamese mode",
+          "status": "skipped",
+          "firstFailureLine": ""
+        },
+        {
+          "title": "uses English preview intent in English mode without changing source values",
+          "status": "skipped",
+          "firstFailureLine": ""
+        }
+      ]
+    },
+    "source": [
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.tsx",
+        "sha256": "4c4213cef96d44b38d3c298612ebdf73e873310885e9e115fee3ec64859b10a1",
+        "copiedHeadBytes": true
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.test.tsx",
+        "sha256": "02170f9f50454ba0af9562576b618951ba529162304461713427b4d1bdd908b6",
+        "copiedHeadBytes": true
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/template-i18n.ts",
+        "sha256": "96e8a9d5f583816d6f62234ebcc0524a7d369951f70896f0a294fe9a90d74a4b",
+        "headUnchanged": true
+      }
+    ],
+    "reason": "Unchanged English template description says Create a structured product brief; read-only pre-existing assertion expects Create a full product brief. HEAD component/test copied byte-exact and isolated single assertion fails. No new regression; global suite is not all green.",
+    "debtDisposition": "DEFERRED_OUTSIDE_SELECTED_OUTCOME_WITH_REASON: known assertion maintenance only; no automatic successor"
+  },
+  "localChecks": {
+    "tsc": {
+      "exitCode": 0,
+      "path": ".cvf/runtime/ncr-draft-recovery-local-20261012/tsc.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "eslint": {
+      "exitCode": 0,
+      "path": ".cvf/runtime/ncr-draft-recovery-local-20261012/eslint.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "canonicalSourceVerificationWrapper": {
+    "basis": "Execution-base blob pin verification, original raw product/test text and accepted source hashes; canonical repo sources remain authority, no external filesystem source."
+  },
+  "claimLimits": [
+    "synthetic real Home/form/processing worker composition; Local processing stub",
+    "visible SpecExport/Create Agent Spec not proven",
+    "no real browser/Next routing/backend cancel/live governance/persisted draft resume/whole R1/R3/R4",
+    "native identity/effort/tokens/bill unavailable",
+    "complete worker/gate/accepted delivery and review times unknown"
+  ],
+  "materialPaths": [
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.tsx",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.tsx",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/draft-recovery.test.tsx",
+    "docs/reviews/evidence/ncr-draft-recovery-worker-20261012.json",
+    "docs/reviews/CVF_NCR_DRAFT_RECOVERY_WORKER_RETURN_2026-10-12.md",
+    "docs/reviews/CVF_NCR_DRAFT_RECOVERY_COMPLETION_2026-10-12.md",
+    "docs/reviews/evidence/ncr-draft-recovery-local-20261012.json",
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_DRAFT_RECOVERY_2026-10-12.md",
+    "docs/baselines/CVF_GC018_NCR_DRAFT_RECOVERY_2026-10-12.md",
+    "docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json",
+    "docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md",
+    "docs/roadmaps/README.md",
+    ".gitattributes",
+    "CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json",
+    "CVF_SESSION/ACTIVE_SESSION_STATE.json",
+    "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json"
+  ],
+  "continuityPaths": [
+    "AGENT_HANDOFF_V63_2026-09-18.md",
+    "CVF_SESSION_MEMORY.md",
+    "CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json",
+    "CVF_SESSION/state/entries/nextAllowedMove.json",
+    "CVF_SESSION/ACTIVE_SESSION_STATE.json",
+    "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json"
+  ],
+  "localClosurePreparation": {
+    "firstReviewerFastExit": 1,
+    "logPath": ".cvf/runtime/ncr-draft-recovery-local-20261012/reviewer-fast.log",
+    "logSha256": "1e6f5528b470a44df914b521c3bc95bed41a525da3e2997eacda2a548b0e7722",
+    "findings": "Local Machine Closure Package table omitted required eight-row/four-column schema and learning Next action literal absent; fixed as one metadata repair sweep. Worker raw artifacts unchanged.",
+    "attribution": "LOCAL_REVIEWER_METADATA_ERROR"
+  }
+}

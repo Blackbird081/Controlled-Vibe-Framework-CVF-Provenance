@@ -1,0 +1,382 @@
+{
+  "schemaVersion": "cvf.ncrDraftRecoveryWorker@1",
+  "batchId": "CVF-NCR-DRAFT-RECOVERY-20261012",
+  "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_DRAFT_RECOVERY_2026-10-12.md",
+  "workOrderRawSha256": "3f2e566744f1b75e00645591955e3bbe70ea1c50011aa38bed81f73117c1e16b",
+  "baselineRawSha256": "676147b6a4091cf5ea757dec6fd07e7fbf2576c6f4517f76fa6b1d33bcf63673",
+  "executionBaseHead": "e3b5b5f6ac6891abdd787ae7f3be4d5edaa82078",
+  "dispatchAuthoringBaseHead": "1d8092788a1e515217ee001d267fe4b1d2939ec9",
+  "headAtFinalCheck": "e3b5b5f6ac6891abdd787ae7f3be4d5edaa82078",
+  "worker": {
+    "role": "INTERNAL_AGENT shared-workspace implementation worker",
+    "requestedConfiguration": {
+      "provider": "Claude",
+      "model": "Sonnet 5.5",
+      "effort": "high",
+      "basis": "operator-selected, manually started"
+    },
+    "nativeIdentity": {
+      "model": null,
+      "effort": null,
+      "inputTokens": null,
+      "outputTokens": null,
+      "bill": null,
+      "reason": "the worker session exposes no usage meter or effort readout to itself; the session system prompt names the model as Sonnet 5.5 only"
+    },
+    "nestedAgentsLaunched": 0,
+    "externalAgentInvocations": 0,
+    "providerCalls": 0,
+    "gitStageOrCommit": false
+  },
+  "clock": {
+    "workerStartLocal": "2026-10-12T10:20:54+07:00",
+    "budgetMinutes": 45,
+    "startedBeforeFirstRead": true,
+    "firstRedStartLocal": "2026-10-12T10:24:34+07:00",
+    "finalTestStartLocal": "2026-10-12T10:38:26+07:00",
+    "finalTestEndLocal": "2026-10-12T10:38:57+07:00",
+    "note": "Clock started before the first read; the final fast gate and terminal end are recorded in the return, not here.",
+    "mutationStartLocal": "2026-10-12T10:34:37+07:00",
+    "firstFastGateLocal": "2026-10-12T10:36:51+07:00"
+  },
+  "preflight": {
+    "workingTreeAtStart": "clean (git status --short empty)",
+    "stagedAtStart": "empty",
+    "rawPinsMatchedAtStart": true,
+    "headBlobPinsMatchedAtStart": true,
+    "baselineAndOrderMatchBootstrapCurrentAuthority": true,
+    "preImplementationGate": "COMPLIANT in 17.13s at executionBaseHead e3b5b5f6a",
+    "outputsAbsentAtStart": true
+  },
+  "sourcePinsAtStart": [
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.tsx",
+      "sha256": "11a1877ae8ee1b8ab268b4eaad5b9dfe4050aa513accf198fa74f26b8fffeb15"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.tsx",
+      "sha256": "4c4213cef96d44b38d3c298612ebdf73e873310885e9e115fee3ec64859b10a1"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/store.ts",
+      "sha256": "f5deb700c631c680924d3ba74fd1c56ef862e99703fe59c461828a8a64953c06"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/types/index.ts",
+      "sha256": "924e0ba06697be1de5501f0a8e5d03b73d18da9e86c52482cbfc585ba0d56a85"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ProcessingScreen.tsx",
+      "sha256": "e34ff88d91b25e8274042cc7f77871eb25570ce01eb8e4531b75a274a99a77ec"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.test.tsx",
+      "sha256": "332a100889580078daca4dbb0a1e815a2c6d9e0e0fcdbfa912b02fa0e1af63e2"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/history-recovery.test.tsx",
+      "sha256": "c4e3c715bc7b6ca203ea9098cae71017012a56dfe2703acffef4a44d559d4842"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.test.tsx",
+      "sha256": "02170f9f50454ba0af9562576b618951ba529162304461713427b4d1bdd908b6"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/vitest.config.ts",
+      "sha256": "9a4a65976b5b7a5d038f9cb412a90d417f804108cf1dd33bae4421989a863420"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/test/setup.ts",
+      "sha256": "bc573b2a6133b07404c42f797bce43fe73464711e0281f29da8234bf2fed6b27"
+    }
+  ],
+  "commands": [
+    {
+      "id": "C1",
+      "argv": "git rev-parse HEAD; git status --short",
+      "exit": 0,
+      "result": "e3b5b5f6ac6891abdd787ae7f3be4d5edaa82078; clean"
+    },
+    {
+      "id": "C2",
+      "argv": "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base e3b5b5f6ac6891abdd787ae7f3be4d5edaa82078 --head HEAD --active-work-order <order>",
+      "exit": 0,
+      "result": "COMPLIANT in 17.13s"
+    },
+    {
+      "id": "C3",
+      "argv": "python governance/compat/run_worker_return_scaffold.py --write <return> --check-shape --max-lines 450 --max-bytes 64000",
+      "exit": 0,
+      "result": "PREPARATION_SHAPE_PRESENT; 323 lines 13385 bytes scaffold, written before any prose"
+    },
+    {
+      "id": "C4",
+      "argv": "node node_modules/vitest/vitest.mjs run draft-recovery.test.tsx (original source)",
+      "exit": 1,
+      "result": "15 failed | 4 passed (19); log sha256 b07f59b571ae08521d0a01cb1907e19c3b5ab12dafd3363fe8a22e7906fe16d0"
+    },
+    {
+      "id": "C5",
+      "argv": "node node_modules/vitest/vitest.mjs run draft-recovery.test.tsx (first run after the two source edits)",
+      "exit": 1,
+      "result": "18 passed, 1 failed (test-side Date-vs-string comparison); log sha256 789596232a4ec610d8e1b438069ffab25f690471d9870bf4aca5cc82e8863b49"
+    },
+    {
+      "id": "C6",
+      "argv": "node node_modules/vitest/vitest.mjs run src/components/DynamicForm.test.tsx with DynamicForm.tsx temporarily restored to HEAD bytes (sha 4c4213ce...)",
+      "exit": 1,
+      "result": "1 failed | 2 passed: same English-description assertion at line 66 as with the edited file; edited file restored byte-for-byte afterwards (sha 2cf58f9f...)"
+    },
+    {
+      "id": "C7",
+      "argv": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+      "exit": 0,
+      "result": "no diagnostics"
+    },
+    {
+      "id": "C8",
+      "argv": "node node_modules/eslint/bin/eslint.js page.tsx DynamicForm.tsx draft-recovery.test.tsx",
+      "exit": 0,
+      "result": "no diagnostics"
+    },
+    {
+      "id": "C9",
+      "argv": "node node_modules/vitest/vitest.mjs run draft-recovery page history-recovery DynamicForm (final bytes)",
+      "exit": 1,
+      "result": "64 passed, 1 failed (pre-existing DynamicForm.test.tsx English-description assertion); log sha256 e2d56becfd5b3a6b305c161302037c93a7bffb19824f1ecfa38581b2494e62e1",
+      "note": "superseded by C11 after a comment-only Text Encoding Exception header was added to the test"
+    },
+    {
+      "id": "C10",
+      "argv": "node node_modules/vitest/vitest.mjs run draft-recovery.test.tsx -t REQ-IDENTITY (mutated clock-only id)",
+      "exit": 1,
+      "result": "3 failed | 16 skipped; page.tsx restored byte-identical to sha 20ee5e63..."
+    },
+    {
+      "id": "C11",
+      "argv": "node node_modules/vitest/vitest.mjs run draft-recovery page history-recovery DynamicForm (final bytes, after header comment)",
+      "exit": 1,
+      "result": "64 passed, 1 failed (same pre-existing DynamicForm.test.tsx assertion); new suite 19 of 19; log sha256 3a0c6738f388d64bc479f7baed94504442ac1de33766c123037bcef6c9e0c8da; tsc exit 0; eslint exit 0"
+    },
+    {
+      "id": "C12",
+      "argv": "python governance/compat/run_worker_return_fast_gate.py (first run)",
+      "exit": 1,
+      "result": "FAIL at 2026-10-12T10:36:51+07:00: reviewer-fast sub-gates encoding, retrospective, review cost, quality gate, operation trace, intake routing; repaired in return and test header"
+    }
+  ],
+  "sourceRed": {
+    "productSource": "page.tsx 11a1877a..., DynamicForm.tsx 4c4213ce... (unmodified HEAD bytes)",
+    "newSuite": {
+      "total": 19,
+      "passed": 4,
+      "failed": 15
+    },
+    "positiveControlsPassed": [
+      "control: a fresh submit still completes on the selected attempt",
+      "shows the unchanged documentation defaults when no draft is supplied",
+      "keeps accepted+completed history Continue eligibility and rejects ineligible records",
+      "keeps the shared setup guard denying a provider destination"
+    ],
+    "meaningfulProductFailures": [
+      "cancel leaves the bound record in processing (expected failed) in memory and in storage",
+      "cancel after a displayed local failure leaves the record processing",
+      "cancel after the bound record completed elsewhere returns no restored draft",
+      "cancel with a missing bound record returns no restored draft",
+      "late response after cancel: record still processing",
+      "cancel returns no exact required/advanced draft; intent not recomputed from edits",
+      "Retry returns empty fields (expected the submitted subject)",
+      "Reject returns empty fields",
+      "no local-stop notice; Back/other template clearing cannot be shown",
+      "explicit resubmit cannot start from a restored draft (no Cancel/processing reached)",
+      "follow-up cancel leaves the follow-up record processing"
+    ],
+    "harnessFailuresInSameRed": [
+      "keeps required validation and defaults on the restored form: field element absent because the draft is not restored (product cause)",
+      "gives each same-clock demo attempt its own id: on original source Cancel goes straight to browse, so the test's second step selected a template instead of reaching run-demo; this is the missing cancel-to-editable-form behavior, and it does not isolate the duplicate-id defect (see mutationCheck)"
+    ]
+  },
+  "firstGreenFailure": {
+    "failed": [
+      "restores the draft on Reject and changes only the review result of bound A"
+    ],
+    "cause": "test compared a store record holding a Date createdAt with a JSON-parsed copy holding a string; the product behavior was correct",
+    "attribution": "worker test defect (harness), not a product defect",
+    "repair": "compare serialized strings; test file only"
+  },
+  "finalGreen": {
+    "total": 65,
+    "passed": 64,
+    "failed": 1,
+    "newSuiteTests": 19,
+    "newSuitePassed": 19,
+    "existingDynamicFormTests": 3,
+    "existingDynamicFormPassed": 2,
+    "preExistingFailure": "DynamicForm.test.tsx 'renders app_builder_complete form chrome in English mode' expects /Create a full product brief/; fails identically on unmodified HEAD source (C6); file is read-only for this worker",
+    "existingSuitesTotalTests": 46,
+    "existingSuitesPassed": 45,
+    "existingSuitesNote": "page.test.tsx + history-recovery.test.tsx + DynamicForm.test.tsx; per-suite split not separately recorded",
+    "logSha256": "3a0c6738f388d64bc479f7baed94504442ac1de33766c123037bcef6c9e0c8da"
+  },
+  "REQ-STOP": {
+    "status": "PASS",
+    "claim": "Cancel (including after a displayed local failure and for a follow-up) marks only the bound pending/processing record failed in memory and in persisted storage, preserving input/intent/output; completed or missing bound records are not downgraded or created; unrelated B is byte-identical; the client request is aborted best-effort; a late response is ignored; the notice says the stop is on this device and the provider may not have stopped.",
+    "testCases": [
+      "fails only A in memory and in persisted storage, aborts the client request and starts nothing new",
+      "uses the same exit after a displayed local failure",
+      "does not downgrade a record that completed elsewhere while processing",
+      "creates nothing and leaves other records alone when the bound record is missing",
+      "ignores a late response after the stop and never shows output for it",
+      "stops a follow-up on its own record and resubmits fresh without continuation metadata"
+    ]
+  },
+  "REQ-DRAFT": {
+    "status": "PASS",
+    "claim": "DynamicForm accepts optional initialValues limited to the template's own field ids and opens the advanced section when it holds a value; Cancel, Retry and Reject restore exact required and advanced DOM values; edited values recompute the intent; required validation still applies; Back, fresh template selection, demo, history restore and launch parameters clear draft, notice and iteration context; callers that omit the prop are unchanged.",
+    "testCases": [
+      "returns required and advanced values after cancel and recomputes intent from edited values",
+      "keeps required validation and defaults on the restored form",
+      "shows the unchanged documentation defaults when no draft is supplied",
+      "restores the filled fields on Retry without executing or altering saved A",
+      "restores the draft on Reject and changes only the review result of bound A",
+      "clears the prior draft and notice on Back and for a different template",
+      "does not carry a completed follow-up context into a resubmit after Retry"
+    ]
+  },
+  "REQ-IDENTITY": {
+    "status": "PASS",
+    "claim": "Home form, demo and follow-up-fallback ids come from a per-page sequence plus a store-collision skip, so explicit resubmission under a frozen Date.now yields a distinct id from A, B and a legacy exec_<ms> record; C starts processing with no output, result, receipt snapshot, parent or thread; A and B serialize unchanged; completion binds to C.",
+    "testCases": [
+      "creates C with a new id under a frozen clock and prior colliding ids, keeping A and B",
+      "completes C on its own record and leaves saved A untouched",
+      "gives each same-clock demo attempt its own id",
+      "keeps accepted+completed history Continue eligibility and rejects ineligible records"
+    ],
+    "limits": "buildContinuationExecution (read-only library) still generates follow-up ids from its own clock; only the Home fallback branch uses the new generator."
+  },
+  "REQ-RETURN": {
+    "status": "PASS",
+    "claim": "Exactly five owned paths; fixed four proof IDs; unavailable native metadata is null with reason; no commit, stage, nested agent or provider call.",
+    "ownedPaths": [
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.tsx",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.tsx",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/draft-recovery.test.tsx",
+      "docs/reviews/evidence/ncr-draft-recovery-worker-20261012.json",
+      "docs/reviews/CVF_NCR_DRAFT_RECOVERY_WORKER_RETURN_2026-10-12.md"
+    ],
+    "finalGateResults": "final fast gate and acceptance ledger recorded in the return after the last run; see return Gate Evidence"
+  },
+  "ownedCodeFinalBytes": [
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.tsx",
+      "sha256": "20ee5e638f0e42e8ef54123aff2b59cb62c135ce71b04d28076c6ccffda64e44",
+      "lines": 725
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.tsx",
+      "sha256": "2cf58f9f22145c9755285b7340e9a6858fc8de98b4ae79bbc72315911b30a1ac",
+      "lines": 349
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/draft-recovery.test.tsx",
+      "sha256": "13e929ec41425fd81e2a5042fbdaa4eea71ac33dace7e85d6b5b5d1960f4c51f",
+      "lines": 555
+    }
+  ],
+  "budgets": {
+    "homeLinesCeiling": 850,
+    "dynamicFormLinesCeiling": 400,
+    "newTestLinesCeiling": 600,
+    "note": "Home 652->725, DynamicForm 333->349, test 555; all under ceilings"
+  },
+  "readDepth": [
+    {
+      "source": "work order",
+      "depth": "full"
+    },
+    {
+      "source": "CVF_SESSION_MEMORY.md and ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json",
+      "depth": "full"
+    },
+    {
+      "source": "home/page.tsx",
+      "depth": "full"
+    },
+    {
+      "source": "DynamicForm.tsx",
+      "depth": "full"
+    },
+    {
+      "source": "ProcessingScreen.tsx",
+      "depth": "full"
+    },
+    {
+      "source": "lib/store.ts",
+      "depth": "full"
+    },
+    {
+      "source": "types/index.ts",
+      "depth": "Execution interface and status union (lines 40-85)"
+    },
+    {
+      "source": "home/page.test.tsx and home/history-recovery.test.tsx",
+      "depth": "full"
+    },
+    {
+      "source": "DynamicForm.test.tsx",
+      "depth": "full"
+    },
+    {
+      "source": "vitest.config.ts and src/test/setup.ts",
+      "depth": "full"
+    },
+    {
+      "source": "src/test/provider-execution-guard.ts",
+      "depth": "full (not a mandatory scope)"
+    },
+    {
+      "source": "docs/reviews/evidence/ncr-draft-recovery-dispatch-20261012.json",
+      "depth": "full"
+    },
+    {
+      "source": "baseline docs/baselines/CVF_GC018_NCR_DRAFT_RECOVERY_2026-10-12.md",
+      "depth": "NOT read; only its raw SHA-256 was compared with bootstrap currentAuthority (see unknowns)"
+    },
+    {
+      "source": "governance checker sources named by the order",
+      "depth": "NOT read; the shape was taken from the generated scaffold and the final gate result (see unknowns)"
+    }
+  ],
+  "severityAndDefects": {
+    "selfRepairs": 1,
+    "defectGroups": [
+      "worker test Date-vs-string comparison (harness, low)"
+    ],
+    "productDefectsFound": [
+      "Cancel left the bound record in processing and discarded the draft",
+      "DynamicForm could not receive initial values; Retry/Reject restored an empty form",
+      "Home ids were millisecond-only and could repeat for an explicit resubmit",
+      "A fresh submit after a follow-up kept the stale iteration context and old output/receipt in Home state"
+    ],
+    "decisionsForReviewer": [
+      "Pre-existing DynamicForm.test.tsx failure (English description) is outside this order and fails identically on HEAD; decide whether it blocks acceptance.",
+      "returnToDraft clears the Home binding (activeExecutionId) after Retry/Reject/stop and handleProcessingComplete now ignores a delivery with no binding.",
+      "The notice is bilingual (language switch) with an ASCII Text Encoding Exception comment for the Vietnamese line."
+    ]
+  },
+  "unknowns": [
+    "Native model identity, effort, tokens and bill: unavailable to the worker (null above).",
+    "The baseline document and the checker source files named by the order were not read; correctness of checker-literal conformance rests on the generated scaffold and the final fast gate.",
+    "The visible Create Agent Spec / SpecExport flow, browser routing, backend cancellation and persisted draft resume are not exercised."
+  ],
+  "claimBoundary": "Synthetic offline client proof: real Home, DynamicForm and ProcessingScreen over the real persisted store with a controlled /api/execute response; ResultViewer, SpecExport and the browse list are stubs. failed means locally unsuccessful, not confirmed provider cancellation. No provider call, push, public sync or whole R1/R3/R4 exit.",
+  "mutationCheck": {
+    "mutation": "page.tsx newAttemptId temporarily replaced by a clock-only id (prefix_Date.now) and the REQ-IDENTITY cases run with -t",
+    "firstAttempt": "mutating only the sequence suffix made the store-collision loop spin forever under a frozen clock (heap out of memory, 16 skipped); mutation artifact, not a product path, because the real generator increments the sequence",
+    "secondAttempt": "3 failed | 16 skipped: duplicate/unchanged id under frozen Date.now for explicit resubmit, A overwritten/aliased, and same-clock demo ids equal",
+    "logSha256": "2b6dd06c1b2d92057f0d91b5ee57579372e9c026a6a3ae2908ee826c94b22fb",
+    "restoredByteIdentical": true,
+    "restoredSha256": "20ee5e638f0e42e8ef54123aff2b59cb62c135ce71b04d28076c6ccffda64e44",
+    "interpretation": "the identity regressions discriminate a clock-only id generator; the full suite was NOT rerun on the mutated source"
+  }
+}

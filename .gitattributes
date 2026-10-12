@@ -12,3 +12,8 @@ docs/reference/downstream_gate_profile/CVF_BUILD_LEARNING_EVIDENCE_CHECKLIST.md 
 docs/reviews/CVF_NCR_HISTORY_RECOVERY_WORKER_RETURN_2026-10-12.md -text whitespace=cr-at-eol
 docs/reviews/evidence/ncr-history-recovery-worker-20261012.json -text whitespace=cr-at-eol
 docs/reviews/evidence/ncr-history-recovery-local-20261012.json text eol=lf
+
+# Draft recovery: immutable submitted worker evidence and stable Local proof.
+docs/reviews/CVF_NCR_DRAFT_RECOVERY_WORKER_RETURN_2026-10-12.md -text whitespace=cr-at-eol
+docs/reviews/evidence/ncr-draft-recovery-worker-20261012.json -text whitespace=cr-at-eol
+docs/reviews/evidence/ncr-draft-recovery-local-20261012.json text eol=lf

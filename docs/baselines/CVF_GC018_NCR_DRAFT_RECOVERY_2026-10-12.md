@@ -2,7 +2,7 @@
 
 Memory class: governed-dispatch-baseline
 docType: baseline
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 Date: 2026-10-12
 Batch ID: CVF-NCR-DRAFT-RECOVERY-20261012
 Dispatch base head: 1d8092788a1e515217ee001d267fe4b1d2939ec9
@@ -51,7 +51,7 @@ Existing failed means unsuccessful local attempt, not confirmed backend stop. Se
 | Field | Value |
 |---|---|
 | applicableCheckersRead | `governance/compat/check_work_order_dispatch_quality.py`; `governance/compat/check_gate_to_role_closeability.py`; `governance/compat/check_governed_artifact_checker_read_ahead.py`; `governance/compat/check_dispatch_prompt_envelope.py`; `governance/compat/check_markdown_structural_completeness.py`; `governance/compat/check_agent_operation_trace.py`; `governance/compat/check_public_export_disposition.py`; `governance/compat/check_work_order_acceptance_ledger.py`; `governance/compat/check_task_governance_route.py`; `governance/compat/check_independent_review_probe_admission.py`; `governance/compat/check_dispatch_scaffold_provenance.py`; `governance/compat/check_core_guard_self_protection.py`; `governance/compat/check_agent_packet_authority_and_encoding.py` |
-| literalTokensReviewed | DISPATCH_READY; WORKER_MUST_NOT_COMMIT; INTERNAL_AGENT; REQUIRED_FIELDS; TRACE_REQUIRED_LABELS; SECTION_GROUPS; DEFERRED_PRIVATE_ONLY |
+| literalTokensReviewed | previous bounded dispatch; WORKER_MUST_NOT_COMMIT; INTERNAL_AGENT; REQUIRED_FIELDS; TRACE_REQUIRED_LABELS; SECTION_GROUPS; DEFERRED_PRIVATE_ONLY |
 | gateRunPurpose | confirmation/evidence of selected packet structure; not a dispatch or implementation proof |
 | claimBoundary | targeted current checker constants/required sections and ready-state predicates read; not an all-lines reading claim |
 
@@ -97,38 +97,6 @@ Actual result: 0 candidates, 0 returned, not truncated. This query does not prov
 | Manifest delta | MATCH required |
 | Deletion or rename disposition | N/A with reason: none |
 
-## Mixed Protected-Path Atomicity Authorization
-
-Disposition: AUTHORIZED_EXACT_MANIFEST
-Atomicity reason: paired dispatch and currentAuthority raw-hash projections commit together; dedicated exact6 continuity binds material SHA/batch.
-Rollback boundary: exact seven material paths, no product edits.
-Exact changed manifest:
-
-- `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_DRAFT_RECOVERY_2026-10-12.md`
-- `docs/baselines/CVF_GC018_NCR_DRAFT_RECOVERY_2026-10-12.md`
-- `docs/reviews/evidence/ncr-draft-recovery-dispatch-20261012.json`
-- `docs/roadmaps/README.md`
-- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-
-Expected Artifact Existence: Local creates baseline/order/dispatch proof before commit; index/projections existing. No worker output or fabricated completion.
-
-## Core Guard Self-Protection Authorization
-
-Authorized guard-maintenance scope: exact currentAuthority projections in material and subsequent six-path continuity; no checker/hook/guard edit.
-Protected paths:
-
-- `AGENT_HANDOFF_V63_2026-09-18.md`
-- `CVF_SESSION_MEMORY.md`
-- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/nextAllowedMove.json`
-- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-
-Operator authorization: standing continuation, audit-and-choose and manually started Sonnet 5.5 high useful coding; Local owns packet/continuity. No push grant.
-Rollback boundary: exact dispatch material and continuity; preserve18 historical worker rows and prior accepted closures.
-
 ## Epistemic Process Block
 
 Expected Result / Prediction: selected cancel/retry should return an editable draft, preserve correct unsuccessful state and allow a distinct new submit.
@@ -144,3 +112,70 @@ Reason: private dispatch only, no public-sync or push grant.
 ## Claim Boundary
 
 Source-selected client recovery and packet only, no fixed/full journey, backend cancellation/provider/governance/production or ranking claim.
+
+## Local Closure Disposition - 2026-10-12
+
+CLOSED_PASS_BOUNDED: useful client recovery after one Local mounted-form isolation repair,2 symptoms.66 focused PASS/1 explicit pre-existing English assertion waiver; independent4/4/type/lint PASS. ProcedureFAIL for baseline/checker omission; original complete-read status not accepted. Completion `docs/reviews/CVF_NCR_DRAFT_RECOVERY_COMPLETION_2026-10-12.md`; Local proof `docs/reviews/evidence/ncr-draft-recovery-local-20261012.json` sha256 `4dfa158b1126e69b311114178d1b1890b62f7a1c8b2e561af0289bb1af12f9b5`. Original worker return/proof preserved. No full browser/provider/job or ranking, no successor.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_DRAFT_RECOVERY_2026-10-12.md` | CLOSED_PASS_BOUNDED; finite product with procedureFAIL retained | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_NCR_DRAFT_RECOVERY_COMPLETION_2026-10-12.md` | independent2 PASS/2 FAIL ->4/4;66 focused PASS/1 baseline waiver; raw originals retained | PASS |
+| Roadmap state | `docs/roadmaps/README.md` | finite draft recovery closed; whole NCR R1/R3/R4 stays open | PASS |
+| Registry JSON | `docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json` |19 reviewed tasks10 Haiku-family/5 Sonnet/4 Luna; previous18 retained | PASS |
+| Registry Markdown | `docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md` | current19; historical counts retained | PASS |
+| External evidence digest | `docs/reviews/evidence/ncr-draft-recovery-local-20261012.json` | sha256:4dfa158b1126e69b311114178d1b1890b62f7a1c8b2e561af0289bb1af12f9b5; internal distinct Local proof, no raw worker-log attestation | PASS |
+| System loop interlock | parked checkpoints | no new loop or automatic successor | N/A with reason: bounded product maintenance |
+| Session continuity | six current continuity surfaces | authority raw projections then exact6 real-material sync | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Requirement | Actual assertion/evidence | Disposition |
+|---|---|---|
+| REQ-STOP | worker real processing cancel/failure-exit and storage proof; Local bound A/ambientB independent control | ACCEPTED_BOUNDED |
+| REQ-DRAFT | restored required/advanced input and validation; Local query remount/old submitted fields negatives now repaired | ACCEPTED_BOUNDED_AFTER_LOCAL_REPAIR |
+| REQ-IDENTITY | worker reported same-clock mutations and controls; Local constant-clock C completes without altering A | ACCEPTED_BOUNDED |
+| REQ-RETURN | five raw artifacts, ten verified pins, honest null metadata; omitted baseline/checker reads and unavailable final clock/raw logs retained | ACCEPTED_BOUNDED_EVIDENCE; PROCEDURE_FAIL; original full-fulfillment not accepted |
+
+## Core Guard Self-Protection Authorization
+
+Authorized guard-maintenance scope: exact16 reviewed closure and subsequent exact6 continuity, no checker/hook/guard changes.
+Protected paths:
+
+- `AGENT_HANDOFF_V63_2026-09-18.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+
+Operator authorization: standing continue/audit-and-choose and returned-worker Local decision/review/closure; no push grant.
+Rollback boundary: exact16 material and dedicated exact6 continuity; original worker return/proof and prior18 reviewed rows preserved.
+
+## Mixed Protected-Path Atomicity Authorization
+
+Disposition: AUTHORIZED_EXACT_MANIFEST
+Atomicity reason: reviewed code/test, closure/evidence, work-order/baseline disposition, collection/index and currentAuthority raw pins close together; dedicated continuity binds real material SHA.
+Rollback boundary: exact16 below, no extra product path.
+Exact changed manifest:
+
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.tsx`
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.tsx`
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/draft-recovery.test.tsx`
+- `docs/reviews/evidence/ncr-draft-recovery-worker-20261012.json`
+- `docs/reviews/CVF_NCR_DRAFT_RECOVERY_WORKER_RETURN_2026-10-12.md`
+- `docs/reviews/CVF_NCR_DRAFT_RECOVERY_COMPLETION_2026-10-12.md`
+- `docs/reviews/evidence/ncr-draft-recovery-local-20261012.json`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_DRAFT_RECOVERY_2026-10-12.md`
+- `docs/baselines/CVF_GC018_NCR_DRAFT_RECOVERY_2026-10-12.md`
+- `docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json`
+- `docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md`
+- `docs/roadmaps/README.md`
+- `.gitattributes`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+
+Expected Artifact Existence: worker outputs already submitted; Local completion/proof authored before commit; other listed paths tracked. No future worker output.

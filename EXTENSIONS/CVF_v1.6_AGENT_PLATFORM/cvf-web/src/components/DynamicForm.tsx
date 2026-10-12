@@ -20,6 +20,8 @@ interface DynamicFormProps {
     onSubmit: (values: Record<string, string>, intent: string) => void;
     onBack: () => void;
     onSendToAgent?: (spec: string) => void;
+    /** Optional draft restored into the editable fields; omitted by callers that start empty. */
+    initialValues?: Record<string, string>;
 }
 
 function FormField({ field, register, errors }: {
@@ -76,13 +78,27 @@ function FormField({ field, register, errors }: {
     }
 }
 
-export function DynamicForm({ template, onSubmit, onBack, onSendToAgent }: DynamicFormProps) {
+// Only values that belong to this template's own fields are restored, so context keys
+// such as a continuation's previous output can never re-enter a fresh submission.
+function pickDraftValues(template: Template, initialValues?: Record<string, string>) {
+    if (!initialValues) return undefined;
+    const entries = template.fields
+        .filter(field => typeof initialValues[field.id] === 'string')
+        .map(field => [field.id, initialValues[field.id]] as const);
+    return entries.length > 0 ? Object.fromEntries(entries) : undefined;
+}
+
+export function DynamicForm({ template, onSubmit, onBack, onSendToAgent, initialValues }: DynamicFormProps) {
     const { language, t } = useLanguage();
-    const [showAdvanced, setShowAdvanced] = useState(false);
+    const [draftValues] = useState(() => pickDraftValues(template, initialValues));
+    const [showAdvanced, setShowAdvanced] = useState(() => Boolean(draftValues
+        && template.fields.some(field => field.section === 'advanced' && draftValues[field.id])));
     const [showPreview, setShowPreview] = useState(false);
     const [showSpecExport, setShowSpecExport] = useState(false);
 
-    const { register, handleSubmit, control, formState: { errors } } = useForm<Record<string, string>>();
+    const { register, handleSubmit, control, formState: { errors } } = useForm<Record<string, string>>({
+        defaultValues: draftValues,
+    });
     const watchedValues = useWatch({ control }) as Record<string, string | undefined> | undefined;
     const formValues = Object.fromEntries(
         Object.entries(watchedValues || {}).map(([key, value]) => [key, value || ''])

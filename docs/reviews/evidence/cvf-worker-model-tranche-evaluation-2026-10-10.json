@@ -920,6 +920,99 @@
         "Native identity/effort/tokens/bill unavailable",
         "Full accepted-delivery and full review time unknown"
       ]
+    },
+    {
+      "trancheId": "CVF-NCR-DRAFT-RECOVERY-20261012",
+      "taskFamily": "PRODUCT_UI_LOCAL_STOP_DRAFT_AND_RESUBMIT_IDENTITY",
+      "implementationPaths": 3,
+      "deliveredPaths": 5,
+      "role": "INTERNAL_AGENT_WORKER",
+      "model": "Claude Sonnet (operator-requested5.5; native runtime unverified)",
+      "effort": "high",
+      "identityBasis": "OPERATOR_REQUESTED_MODEL_EFFORT_NOT_RUNTIME_VERIFIED",
+      "observedRuntimeIdentity": null,
+      "observedEffort": null,
+      "status": "CLOSED_PASS_BOUNDED",
+      "evidence": "docs/reviews/evidence/ncr-draft-recovery-local-20261012.json",
+      "evidenceSha256": "4dfa158b1126e69b311114178d1b1890b62f7a1c8b2e561af0289bb1af12f9b5",
+      "technicalOutput": "ACCEPTED_BOUNDED_AFTER_LOCAL_FORM_ISOLATION_REPAIR",
+      "procedureDisposition": "FAIL",
+      "procedure": "Worker did not read mandatory baseline and most output-checker sources; fast gate does not prove reading. Preserve deviation and incorrect complete-fulfillment claim; Local reviewed scope/product, not retrospective worker compliance.",
+      "firstReturnGateClean": false,
+      "workerTestAssertionSelfRepairGroups": 1,
+      "workerReturnGateFailedAttemptsReported": 2,
+      "workerReturnShapeManualRepairsReported": 8,
+      "workerReturnShapeRootGroups": null,
+      "reviewerRequestedWorkerRepairTurns": 0,
+      "reviewerProductCodeRepairs": 1,
+      "reviewerProductCodeRepairCountBasis": "One mounted-form reuse root,2 stale draft/submission symptoms;2 Local regression tests.",
+      "reviewerProductDefectSeverity": "MODERATE_DRAFT_AND_INPUT_ISOLATION_NO_BACKEND_BREACH_ESTABLISHED",
+      "orchestratorPacketAmbiguities": 0,
+      "clock": {
+        "workerStartLocal": "2026-10-12T10:20:54+07:00",
+        "budgetMinutes": 45,
+        "startedBeforeFirstRead": true,
+        "firstRedStartLocal": "2026-10-12T10:24:34+07:00",
+        "finalTestStartLocal": "2026-10-12T10:38:26+07:00",
+        "finalTestEndLocal": "2026-10-12T10:38:57+07:00",
+        "note": "Clock started before the first read; the final fast gate and terminal end are recorded in the return, not here.",
+        "mutationStartLocal": "2026-10-12T10:34:37+07:00",
+        "firstFastGateLocal": "2026-10-12T10:36:51+07:00",
+        "reportedMinutesToFinalTestEnd": 18.05,
+        "finalGateEnd": null,
+        "terminalEnd": null,
+        "fullAcceptedDeliveryMinutes": null,
+        "limit": "Return contains no promised final gate/terminal clock instant.18.05min is start to final test end only; full45min budget compliance unproven."
+      },
+      "elapsed": {
+        "minutes": 18.05,
+        "basis": "WORKER_REPORTED_START_TO_FINAL_TEST_END_ONLY",
+        "fullDeliveryMinutes": null
+      },
+      "bill": {
+        "amount": null,
+        "tokens": null,
+        "reason": "NATIVE_USAGE_UNEXPOSED_COST_DEFERRED"
+      },
+      "proof": "Worker reports19/19 new+45/46 existing; Local distinct2 PASS/2 FAIL ->4/4; focused66 PASS/1 HEAD-reproduced stale assertion, type/lint0.",
+      "qualityInterpretation": "Useful client patch, one moderate isolation defect repaired by Local. Baseline/checker omitted, full COMPLETE/preparation claim false. No superiority or matched speed inference.",
+      "contextConfound": "Operator-managed continuous Claude context/model switch, unpaired useful tasks; not independent matched benchmark.",
+      "qualityAttribution": {
+        "workerTestSelfRepairGroups": 1,
+        "workerReturnShapeManualRepairsReported": 8,
+        "workerReturnFailedGateAttemptsReported": 2,
+        "gateCountLimit": "Return describes first two failed attempts but JSON commands retain only first fast-gate row. Counts self-reported; raw gate logs not located by Local. Not eight independent roots.",
+        "workerMutationHarnessFailures": 1,
+        "workerProductRepairGroupsAtHandoff": 1,
+        "localDependentSymptoms": 2,
+        "localProductRepairSeverity": "MODERATE_DRAFT_AND_INPUT_ISOLATION_NO_BACKEND_BREACH_ESTABLISHED",
+        "mandatoryReadOmissionGroups": 1,
+        "mandatoryReadOmissions": [
+          "governing baseline full semantic read",
+          "most required output-checker preparation"
+        ],
+        "workerStatusOverclaim": "COMPLETE_PENDING_REVIEW and all mandatory reads before edit conflict with admitted baseline omission; no retroactive compliance",
+        "orchestratorPacketAmbiguities": 0,
+        "attributionCorrection": "Worker attributed misleading demo mutation/source-red oracle to ORCHESTRATOR_PACKET_GAP. Local classifies worker harness/expectation discrimination; packet supplied the required negative condition.",
+        "localHarnessNotes": [
+          "First Local cross-template case checked DOM only; strengthened submitted field-set assertion before first repair, preserving first3 PASS/1 FAIL report and second2 PASS/2 FAIL.",
+          "Read-only guessed worker runtime folder absent; found no referenced worker log paths. No worker command-log hash validation claimed."
+        ],
+        "localClosurePreparation": {
+          "firstReviewerFastExit": 1,
+          "logPath": ".cvf/runtime/ncr-draft-recovery-local-20261012/reviewer-fast.log",
+          "logSha256": "1e6f5528b470a44df914b521c3bc95bed41a525da3e2997eacda2a548b0e7722",
+          "findings": "Local Machine Closure Package table omitted required eight-row/four-column schema and learning Next action literal absent; fixed as one metadata repair sweep. Worker raw artifacts unchanged.",
+          "attribution": "LOCAL_REVIEWER_METADATA_ERROR"
+        }
+      },
+      "limitations": [
+        "synthetic real Home/form/processing worker composition; Local processing stub",
+        "visible SpecExport/Create Agent Spec not proven",
+        "no real browser/Next routing/backend cancel/live governance/persisted draft resume/whole R1/R3/R4",
+        "native identity/effort/tokens/bill unavailable",
+        "complete worker/gate/accepted delivery and review times unknown"
+      ]
     }
   ],
   "rubric": [
@@ -1004,9 +1097,9 @@
       "next useful comparison task"
     ],
     "reviewedHaikuCount": 10,
-    "reviewedSonnetCount": 4,
+    "reviewedSonnetCount": 5,
     "reviewedLunaCount": 4,
-    "reviewedTaskObservationCount": 18
+    "reviewedTaskObservationCount": 19
   },
   "provisionalRoleRouting": [
     {
@@ -1035,9 +1128,9 @@
   "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
   "laneProtection": "Reviewer-owned governed evidence promotion authorized by operator longitudinal tracking request. No worker file edit, new dispatch, provider effect or public export.",
   "observations": {
-    "technical": "18 deduplicated reviewed tasks:10 Haiku-family,4 Sonnet,4 Luna; prior17 rows unchanged.",
-    "process": "History recovery accepted after1 Local query-presence root repair; worker1 assertion self-repair/2 failed return gates; product read scopes reported complete with checker-reading limits; packet ambiguity Local-owned.",
-    "reportStatus": "EIGHTEEN_REVIEWED_TASK_OBSERVATIONS_NO_COMPARATIVE_WINNER",
+    "technical": "19 reviewed tasks10 Haiku-family/5 Sonnet/4 Luna; prior18 rows preserved.",
+    "process": "Draft recovery technically accepted after1 Local root/2 symptoms; mandatory baseline/checker omission remains procedureFAIL; known original test waiver explicit,18.05min to last test only.",
+    "reportStatus": "NINETEEN_REVIEWED_TASK_OBSERVATIONS_NO_COMPARATIVE_WINNER",
     "measuredBillComparison": null,
     "nextControl": "Continue evidence collection on admitted work; Expense/S5 and effects parked; no automatic router or new benchmark task."
   },
@@ -1209,11 +1302,11 @@
     "omissionOwner": "LOCAL_ORCHESTRATOR",
     "OpusSameSessionAdvisoryExtraWorkers": 0,
     "latestReviewedTask": {
-      "trancheId": "CVF-NCR-HISTORY-RECOVERY-20261012",
-      "localReview": "docs/reviews/CVF_NCR_HISTORY_RECOVERY_COMPLETION_2026-10-12.md",
-      "evidence": "docs/reviews/evidence/ncr-history-recovery-local-20261012.json",
-      "evidenceSha256": "7450ea01bcb5ebf2a470491b126ad3feec30068159f16300b28fc17177e074a1",
-      "previousSeventeenRowsPreserved": true
+      "trancheId": "CVF-NCR-DRAFT-RECOVERY-20261012",
+      "localReview": "docs/reviews/CVF_NCR_DRAFT_RECOVERY_COMPLETION_2026-10-12.md",
+      "evidence": "docs/reviews/evidence/ncr-draft-recovery-local-20261012.json",
+      "evidenceSha256": "4dfa158b1126e69b311114178d1b1890b62f7a1c8b2e561af0289bb1af12f9b5",
+      "previousEighteenRowsPreserved": true
     }
   },
   "operatorObservationFocus": {
@@ -1265,19 +1358,19 @@
       "canonicalTemplateRawSha256": "ae02c4008ad16ec65487ec3137135d6103685ff41c131a9e91325a4f59959f8a"
     },
     "nextAssignment": {
-      "batchId": "CVF-NCR-HISTORY-RECOVERY-20261012",
-      "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HISTORY_RECOVERY_2026-10-12.md",
-      "taskFamily": "PRODUCT_UI_PERSISTED_RESULT_IDENTITY_AND_EXPORT",
+      "batchId": "CVF-NCR-DRAFT-RECOVERY-20261012",
+      "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_DRAFT_RECOVERY_2026-10-12.md",
+      "taskFamily": "PRODUCT_UI_LOCAL_STOP_DRAFT_AND_RESUBMIT_IDENTITY",
       "requestedProvider": "Claude",
       "requestedModel": "Sonnet 5.5",
       "requestedEffort": "high",
       "nativeIdentity": null,
-      "nativeIdentityReason": "Requested configuration, runtime unexposed",
+      "nativeIdentityReason": "Runtime unexposed",
       "collectionDisposition": "REVIEWED_OBSERVATION_ADMITTED",
-      "priorReviewedTaskCount": 17,
-      "review": "docs/reviews/CVF_NCR_HISTORY_RECOVERY_COMPLETION_2026-10-12.md",
-      "timeQualityMeasures": "Quality/severity/repair burden and bounded clock; cost deferred",
-      "contextConfound": "Operator-managed continuous Claude context/model switch; unpaired tasks and reused tools, not independent matched benchmark."
+      "priorReviewedTaskCount": 18,
+      "review": "docs/reviews/CVF_NCR_DRAFT_RECOVERY_COMPLETION_2026-10-12.md",
+      "timeQualityMeasures": "Actual defect/severity/repair and partial clock; cost deferred",
+      "contextConfound": "Operator-managed continuous Claude context/model switch, unpaired useful tasks; not independent matched benchmark."
     }
   },
   "dispatchInterruptedAttempts": [
