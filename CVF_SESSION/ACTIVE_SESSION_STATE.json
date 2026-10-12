@@ -37,11 +37,11 @@
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_NCR_DRAFT_EXPORT_2026-10-12.md",
-    "baselineSha256": "3d528f8841d934d98a258c5d42e788e78749577795f2e98175261ba498802ae9",
+    "baselineSha256": "6264876e645fa76675ad54ec5145e0ba4464475e7c46b679bc2d2a93b1812c2e",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_DRAFT_EXPORT_2026-10-12.md",
-    "workOrderSha256": "993fcff356bcbf71f9b67db844d9e01135e87dbfe276f7e9386d1aa1ff3d24f3"
+    "workOrderSha256": "b1e02c4df106d3f2e117e4b44d3de0cf79efae0cad08da63832f35a3289eacfb"
   },
-  "currentAuthoritySyncReason": "Manual visible draft/export proof dispatch material ee79bb127b1fe68b85a73320d388d0eed34abad0; dedicated exact6 continuity,19 prior observations preserved.",
+  "currentAuthoritySyncReason": "Release-correction reanchor 6c0b0d20922593283c067a638ea0a360e1a2372c; paired raw hashes bound; exact6 continuity rebind follows material.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",

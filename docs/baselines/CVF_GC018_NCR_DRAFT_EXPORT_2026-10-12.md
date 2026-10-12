@@ -5,7 +5,7 @@ docType: baseline
 Status: READY
 Date: 2026-10-12
 Batch ID: CVF-NCR-DRAFT-EXPORT-20261012
-Dispatch base head: ae3e9813afc424f3b590ccf91c353aaadc35102b
+Dispatch base head: 6c0b0d20922593283c067a638ea0a360e1a2372c
 Commit mode: WORKER_MUST_NOT_COMMIT
 providerExecutionAuthority: FORBIDDEN
 
@@ -66,17 +66,17 @@ Actual result: 0 candidates, 0 returned, not truncated. This query does not prov
 | Session or invocation | ncr-draft-export-dispatch-20261012 |
 | Working directory | repository root |
 | Command or tool surface | targeted reads, actual scaffold/ADIF, source pins, packet/gates/commits |
-| Target paths | `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_DRAFT_EXPORT_2026-10-12.md`; `docs/baselines/CVF_GC018_NCR_DRAFT_EXPORT_2026-10-12.md`; `docs/reviews/evidence/ncr-draft-export-dispatch-20261012.json`; `docs/roadmaps/README.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.csv`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Target paths | `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_DRAFT_EXPORT_2026-10-12.md`; `docs/baselines/CVF_GC018_NCR_DRAFT_EXPORT_2026-10-12.md`; `docs/reviews/evidence/ncr-draft-export-dispatch-20261012.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Allowed scope source | explicit operator manual Sonnet worker assignment plus prior local selection |
-| Before status evidence | HEAD ae3e9813afc424f3b590ccf91c353aaadc35102b; four pre-existing orchestrator roadmap/index/inventory changes; staged empty |
-| After status evidence | exact10 dispatch material then dedicated exact6 continuity; worker not started |
+| Before status evidence | 6c0b0d20922593283c067a638ea0a360e1a2372c; initial material and continuity clean; release FAIL retained in bound-release.log; source pins remain at original inspection commit |
+| After status evidence | exact6 release correction then exact6 continuity rebind; worker not started |
 | Diff evidence | git diff --check and exact manifests |
 | Approval boundary | manual shared-workspace worker, no provider/live/public effects |
 | Claim boundary | dispatch and declared source gap only; runtime proof pending |
 | Agent type | INTERNAL_AGENT |
 | Invocation ID | ncr-draft-export-dispatch-20261012 |
-| Expected manifest | `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_DRAFT_EXPORT_2026-10-12.md`; `docs/baselines/CVF_GC018_NCR_DRAFT_EXPORT_2026-10-12.md`; `docs/reviews/evidence/ncr-draft-export-dispatch-20261012.json`; `docs/roadmaps/README.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.csv`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Actual changed set | `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_DRAFT_EXPORT_2026-10-12.md`; `docs/baselines/CVF_GC018_NCR_DRAFT_EXPORT_2026-10-12.md`; `docs/reviews/evidence/ncr-draft-export-dispatch-20261012.json`; `docs/roadmaps/README.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.csv`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Expected manifest | `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_DRAFT_EXPORT_2026-10-12.md`; `docs/baselines/CVF_GC018_NCR_DRAFT_EXPORT_2026-10-12.md`; `docs/reviews/evidence/ncr-draft-export-dispatch-20261012.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Actual changed set | `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_DRAFT_EXPORT_2026-10-12.md`; `docs/baselines/CVF_GC018_NCR_DRAFT_EXPORT_2026-10-12.md`; `docs/reviews/evidence/ncr-draft-export-dispatch-20261012.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Manifest delta | MATCH required before commit |
 | Deletion or rename disposition | N/A with reason: none |
 
@@ -109,63 +109,19 @@ Rollback boundary: exact dispatch material and subsequent continuity; accepted p
 ## Mixed Protected-Path Atomicity Authorization
 
 Disposition: AUTHORIZED_EXACT_MANIFEST
-Atomicity reason: selected roadmap/index/inventory, new baseline/order/evidence and raw authority projections bind one dispatch; six-path continuity follows real material commit.
-Rollback boundary: only this dispatch material; prior accepted product unchanged.
+Atomicity reason: paired baseline/order release reanchor and worker gate command, source evidence and raw authority projections repair orchestrator release; dedicated continuity binds new material SHA.
+Rollback boundary: exact6 release correction; prior material/continuity and all failures retained.
 Exact changed manifest:
 
 - `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_DRAFT_EXPORT_2026-10-12.md`
 - `docs/baselines/CVF_GC018_NCR_DRAFT_EXPORT_2026-10-12.md`
 - `docs/reviews/evidence/ncr-draft-export-dispatch-20261012.json`
-- `docs/roadmaps/README.md`
-- `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`
-- `docs/roadmaps/CVF_ROADMAP_INVENTORY.md`
-- `docs/roadmaps/CVF_ROADMAP_INVENTORY.csv`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 
-Expected Artifact Existence: three dispatcher packet files created before commit; remaining material paths tracked. Three future worker files are not current material artifacts.
+Expected Artifact Existence: all six paths already tracked; worker outputs remain absent.
 
-## External Knowledge Intake Routing
+## Release Reanchor
 
-| Field | Value |
-|---|---|
-| Chain map | `docs/reference/external_agent_review/CVF_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP.md` |
-| Input type | internal governed input (no external intake) |
-| Internal source | `docs/reviews/evidence/ncr-draft-export-dispatch-20261012.json` |
-| Chain map route | Local Home visible recovered-draft/export coverage gap -> existing component -> independent Local review |
-| Matching local-view guard | `governance/compat/check_external_knowledge_intake_routing.py` |
-| Owner surface | existing UI lifecycle/source-fidelity/closure owners |
-| Disposition | internal existing product composition proof; no external research |
-| Claim boundary | Local private source verification and final decision |
-
-## External/Local Coordination Binding
-
-```json
-{"contractId":"cvf.external-local-absorption-coordination@1","invariants":{"externalRole":"ADVISORY_RESEARCH_AND_PATTERN_MAPPING","externalContext":"PUBLIC_GITHUB_AND_REFRESHED_EXTERNAL_AGENT_READ","localRole":"SOURCE_RUNTIME_VALUE_AND_PRIVATE_CVF_VERIFICATION","finalDecisionOwner":"LOCAL","localCoverageBasis":"SOURCE_DERIVED_NOT_EXTERNAL_SHORTLIST","externalEvidenceAuthority":"INPUT_NOT_PRIVATE_CVF_PROOF"},"contractSha256":"92df8a7c9492e8c3cedf624cfaa79b8185ca31442ecaf96107fd88dfcb81800c","parentArtifact":null}
-```
-
-## Corpus Completeness And Report Integrity
-
-- Corpus verdict: NOT_APPLICABLE_WITH_REASON - named consumer/test evidence only; no repository/corpus scan.
-
-## Knowledge System Applicability
-
-NOT_APPLICABLE_WITH_REASON: named Home/DynamicForm source and fixture evidence only; no corpus rescan or semantic knowledge-map/retrieval production.
-
-## Rescan Intelligence Hardening
-
-- Rescan intelligence verdict: NOT_APPLICABLE_WITH_REASON
-- N/A with reason: named UI composition proof, no rescan/intake.
-
-## Claim Boundary
-
-No actual worker started. Ready status is conditional on committed bound final pre-dispatch PASS before copy transfer. No product fix, whole journey/AI governance/live/provider/browser/backend/R3/R4 exit, model ranking/public/deployment claim.
-
-## Decision / Proposed Tranche
-
-Operator-requested manual worker proof of selected composition only. Exactly three new outputs, no production edit or automatic successor. Paired work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_DRAFT_EXPORT_2026-10-12.md`. Existing19 observations stay unchanged.
-
-## Evidence / Verification
-
-Current source/HEAD pins and inspected facts are in `docs/reviews/evidence/ncr-draft-export-dispatch-20261012.json`; no integrated runtime probe run by dispatcher. Worker delivers actual visible composition assertions and final gates; Local distinct review later. First authoring-shape failures retained at C:/Users/DELL/AppData/Local/Temp/ncr-draft-export-dispatch-preflight.log; corrected packet does not certify future worker proof.
+Current dispatch base: 6c0b0d20922593283c067a638ea0a360e1a2372c. Source evidence remains pinned at original selection commit, with current production hashes checked unchanged. Correct worker pre-implementation uses the autorun wrapper current-HEAD default and active work-order binding. Prior release FAIL retained at C:/Users/DELL/AppData/Local/Temp/ncr-draft-export-bound-release.log; no worker effect occurred.

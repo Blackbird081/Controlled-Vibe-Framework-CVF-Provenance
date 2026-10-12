@@ -72,5 +72,7 @@
     "docs/reviews/CVF_NCR_DRAFT_EXPORT_WORKER_RETURN_2026-10-12.md"
   ],
   "requestedConfiguration": "Sonnet 5.5 high; operator-selected manual worker",
-  "existingObservations": 19
+  "existingObservations": 19,
+  "releaseReanchor": "6c0b0d20922593283c067a638ea0a360e1a2372c",
+  "releaseCorrection": "dispatcher literal EXECUTE_WORK_ORDER/work-order-path binding and current-HEAD gate range; previous FAIL retained; no worker defect"
 }
