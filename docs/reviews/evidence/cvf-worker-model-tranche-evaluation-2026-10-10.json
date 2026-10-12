@@ -852,6 +852,74 @@
         "Requested identity/effort are not native proof; time interval excludes full accepted-delivery.",
         "Original worker every-continuation/known-dependency PASS wording disproven; immutable return retained."
       ]
+    },
+    {
+      "trancheId": "CVF-NCR-HISTORY-RECOVERY-20261012",
+      "taskFamily": "PRODUCT_UI_PERSISTED_RESULT_IDENTITY_AND_EXPORT",
+      "implementationPaths": 3,
+      "deliveredPaths": 5,
+      "role": "INTERNAL_AGENT_WORKER",
+      "model": "Claude Sonnet (operator-requested5.5; native runtime unverified)",
+      "effort": "high",
+      "identityBasis": "OPERATOR_REQUESTED_MODEL_EFFORT_NOT_RUNTIME_VERIFIED",
+      "observedRuntimeIdentity": null,
+      "observedEffort": null,
+      "status": "CLOSED_PASS_BOUNDED",
+      "evidence": "docs/reviews/evidence/ncr-history-recovery-local-20261012.json",
+      "evidenceSha256": "7450ea01bcb5ebf2a470491b126ad3feec30068159f16300b28fc17177e074a1",
+      "technicalOutput": "ACCEPTED_BOUNDED_AFTER_LOCAL_QUERY_REPAIR",
+      "procedureDisposition": "ACCEPTED_WITH_DISCLOSED_CHECKER_READ_LIMITS",
+      "procedure": "Required product source scopes and pre-edit ordering reported complete, unlike the prior late-read task. Optional PDF/DOCX/browser omissions are scoped limits. Checker read declarations vary between the return table and proof; no independent temporal attestation or full checker-read compliance is claimed. First two return gates fail then final passes.",
+      "firstReturnGateClean": false,
+      "workerTestAssertionSelfRepairGroups": 1,
+      "workerReturnGateFailedAttempts": 2,
+      "workerReturnShapeFindings": 10,
+      "workerReturnShapeRootGroups": null,
+      "reviewerRequestedWorkerRepairTurns": 0,
+      "reviewerProductCodeRepairs": 1,
+      "reviewerProductCodeRepairCountBasis": "One query-presence root, two dependent stale/fallback symptoms; seven added regressions.",
+      "reviewerProductDefectSeverity": "MODERATE_SELECTION_UI_NO_BACKEND_BREACH_ESTABLISHED",
+      "orchestratorPacketAmbiguities": 1,
+      "clock": {
+        "workerStartUtc": "2026-10-12T01:56:47.4253106Z",
+        "budgetMinutes": 45,
+        "startedBeforeFirstRead": true,
+        "note": "clock captured by the first command, before any other read or edit; end-of-run instants are in the return packet clock row",
+        "finalGateEndUtc": "2026-10-12T02:13:28.1799581+00:00",
+        "elapsedMinutesToFinalGateEnd": 16.68,
+        "fullAcceptedDeliveryMinutes": null
+      },
+      "fullDeliveryMinutes": null,
+      "bill": {
+        "amount": null,
+        "tokens": null,
+        "reason": "NATIVE_USAGE_UNEXPOSED_COST_DEFERRED_BY_OPERATOR"
+      },
+      "proof": "Worker77/77 consumed; independent original4 PASS/4 FAIL then8/8 repaired; focused84/type/lint PASS. Poisoned lightweight snapshot excluded from actual A export.",
+      "qualityInterpretation": "Useful small production patch and meaningful22-case composition suite; one selection-boundary defect left for Local. Required product reads reported complete this time; checker-reading discrepancy limits procedure certification. Packet ambiguity belongs to Local. No model winner.",
+      "contextConfound": "Operator-managed continuous Claude context/model switch; unpaired tasks and reused tools, not independent matched benchmark.",
+      "qualityAttribution": {
+        "workerTestAssertionSelfRepairGroups": 1,
+        "workerReturnGateFailedAttempts": 2,
+        "workerReturnShapeFindings": 10,
+        "workerReturnShapeRootGroups": null,
+        "shapeCountReason": "Eight findings first attempt/two literal findings second; not ten independent root causes.",
+        "localProductRepairGroups": 1,
+        "localDependentSymptoms": 2,
+        "orchestratorPacketAmbiguities": 1,
+        "requiredProductReadOmissionsReported": 0,
+        "localToolingDefects": [
+          "Two read-only guessed runtime filenames were absent; corrected using discovered paths.",
+          "First probe shell command used four parent levels instead of three; log redirection failed before Vitest launched. This is Local tooling, not a worker test attempt.",
+          "First reviewer-fast call used unsupported --base/--head flags; parser rejected before checks. Corrected to hook CLI."
+        ],
+        "checkerReadLimit": "Return source/read-ahead tables list three additional checker reads; proof says other listed checkers not opened. Product required reads are reported fulfilled; strict checker preparation not independently certified. No procedure winner claim."
+      },
+      "limitations": [
+        "jsdom/router stub, no real reload/Next route/PDF/Word",
+        "Native identity/effort/tokens/bill unavailable",
+        "Full accepted-delivery and full review time unknown"
+      ]
     }
   ],
   "rubric": [
@@ -936,9 +1004,9 @@
       "next useful comparison task"
     ],
     "reviewedHaikuCount": 10,
-    "reviewedSonnetCount": 3,
+    "reviewedSonnetCount": 4,
     "reviewedLunaCount": 4,
-    "reviewedTaskObservationCount": 17
+    "reviewedTaskObservationCount": 18
   },
   "provisionalRoleRouting": [
     {
@@ -967,9 +1035,9 @@
   "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
   "laneProtection": "Reviewer-owned governed evidence promotion authorized by operator longitudinal tracking request. No worker file edit, new dispatch, provider effect or public export.",
   "observations": {
-    "technical": "17 deduplicated reviewed tasks:10 Haiku-family,3 Sonnet,4 Luna; prior16 rows unchanged.",
-    "process": "ProcessingScreen core repair accepted after1 Local dependent root-group repair affecting2 callbacks; worker2 harness,1 line-budget,1 encoding self-repair and late-read procedureFAIL retained.",
-    "reportStatus": "SEVENTEEN_REVIEWED_TASK_OBSERVATIONS_NO_COMPARATIVE_WINNER",
+    "technical": "18 deduplicated reviewed tasks:10 Haiku-family,4 Sonnet,4 Luna; prior17 rows unchanged.",
+    "process": "History recovery accepted after1 Local query-presence root repair; worker1 assertion self-repair/2 failed return gates; product read scopes reported complete with checker-reading limits; packet ambiguity Local-owned.",
+    "reportStatus": "EIGHTEEN_REVIEWED_TASK_OBSERVATIONS_NO_COMPARATIVE_WINNER",
     "measuredBillComparison": null,
     "nextControl": "Continue evidence collection on admitted work; Expense/S5 and effects parked; no automatic router or new benchmark task."
   },
@@ -1141,11 +1209,11 @@
     "omissionOwner": "LOCAL_ORCHESTRATOR",
     "OpusSameSessionAdvisoryExtraWorkers": 0,
     "latestReviewedTask": {
-      "trancheId": "CVF-NCR-PROCESSING-LIFECYCLE-20261012",
-      "localReview": "docs/reviews/CVF_NCR_PROCESSING_LIFECYCLE_COMPLETION_2026-10-12.md",
-      "evidence": "docs/reviews/evidence/ncr-processing-lifecycle-local-20261012.json",
-      "evidenceSha256": "6bb5ebe98e3997decf87307cbea7e617fd0f92061290f98569d271feee342dc7",
-      "previousSixteenRowsPreserved": true
+      "trancheId": "CVF-NCR-HISTORY-RECOVERY-20261012",
+      "localReview": "docs/reviews/CVF_NCR_HISTORY_RECOVERY_COMPLETION_2026-10-12.md",
+      "evidence": "docs/reviews/evidence/ncr-history-recovery-local-20261012.json",
+      "evidenceSha256": "7450ea01bcb5ebf2a470491b126ad3feec30068159f16300b28fc17177e074a1",
+      "previousSeventeenRowsPreserved": true
     }
   },
   "operatorObservationFocus": {
@@ -1197,19 +1265,19 @@
       "canonicalTemplateRawSha256": "ae02c4008ad16ec65487ec3137135d6103685ff41c131a9e91325a4f59959f8a"
     },
     "nextAssignment": {
-      "batchId": "CVF-NCR-PROCESSING-LIFECYCLE-20261012",
-      "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_PROCESSING_LIFECYCLE_2026-10-12.md",
-      "taskFamily": "PRODUCT_UI_ASYNC_LIFECYCLE_REPAIR",
+      "batchId": "CVF-NCR-HISTORY-RECOVERY-20261012",
+      "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HISTORY_RECOVERY_2026-10-12.md",
+      "taskFamily": "PRODUCT_UI_PERSISTED_RESULT_IDENTITY_AND_EXPORT",
       "requestedProvider": "Claude",
       "requestedModel": "Sonnet 5.5",
       "requestedEffort": "high",
       "nativeIdentity": null,
-      "nativeIdentityReason": "Requested configuration only; operator manually starts worker, observed identity unexposed.",
+      "nativeIdentityReason": "Requested configuration, runtime unexposed",
       "collectionDisposition": "REVIEWED_OBSERVATION_ADMITTED",
-      "priorReviewedTaskCount": 16,
-      "timeQualityMeasures": "Actual worker/review/rework intervals, defects/severity/self-repair/reviewer burden; cost deferred.",
-      "contextConfound": "Record continuous-session/prior-context reuse if operator keeps the Claude session; advisory/model switch is not an independent sample.",
-      "review": "docs/reviews/CVF_NCR_PROCESSING_LIFECYCLE_COMPLETION_2026-10-12.md"
+      "priorReviewedTaskCount": 17,
+      "review": "docs/reviews/CVF_NCR_HISTORY_RECOVERY_COMPLETION_2026-10-12.md",
+      "timeQualityMeasures": "Quality/severity/repair burden and bounded clock; cost deferred",
+      "contextConfound": "Operator-managed continuous Claude context/model switch; unpaired tasks and reused tools, not independent matched benchmark."
     }
   },
   "dispatchInterruptedAttempts": [

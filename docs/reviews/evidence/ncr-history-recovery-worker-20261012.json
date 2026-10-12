@@ -1,0 +1,528 @@
+{
+  "schemaVersion": "cvf.ncrHistoryRecoveryWorkerEvidence@1",
+  "batchId": "CVF-NCR-HISTORY-RECOVERY-20261012",
+  "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HISTORY_RECOVERY_2026-10-12.md",
+  "workOrderRawSha256": "26012bbe8e229515c30b97ba1e9d7b2cbe90a0323415bfdeb1839c655a09781f",
+  "baselineRawSha256": "8dc1f8877762c4c66a2640f81f187bca1b1ba66ba58a78f66119457acbc61911",
+  "executionBaseHead": "eb50152fae407533784f160a06d2c1faea683478",
+  "dispatchAuthoringBaseHead": "58efa8c43b70ace270dcb10ab03ecc92319f575b",
+  "headAtFinalCheck": "eb50152fae407533784f160a06d2c1faea683478",
+  "worker": {
+    "role": "INTERNAL_AGENT shared-workspace implementation worker",
+    "requestedConfiguration": {
+      "provider": "Claude",
+      "model": "Sonnet 5.5",
+      "effort": "high",
+      "basis": "work order requested configuration; operator started manually"
+    },
+    "nativeIdentity": {
+      "model": null,
+      "effort": null,
+      "inputTokens": null,
+      "outputTokens": null,
+      "bill": null,
+      "reason": "the worker has no runtime introspection or usage meter; the session environment text names claude-sonnet-5-5 but that is self-reported and not verified, effort and usage are not visible to the worker"
+    },
+    "nestedAgentsLaunched": 0,
+    "externalAgentInvocations": 0,
+    "providerCalls": 0,
+    "gitStageOrCommit": false
+  },
+  "clock": {
+    "workerStartUtc": "2026-10-12T01:56:47.4253106Z",
+    "budgetMinutes": 45,
+    "startedBeforeFirstRead": true,
+    "note": "clock captured by the first command, before any other read or edit; end-of-run instants are in the return packet clock row"
+  },
+  "preflight": {
+    "workingTreeAtStart": "clean (git status --short empty)",
+    "stagedAtStart": "empty",
+    "rawPinsMatchedAtStart": true,
+    "baselineAndOrderMatchBootstrapCurrentAuthority": true
+  },
+  "sourcePins": [
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.tsx",
+      "pinnedRawSha256": "9400ddde799b7c2ec386cdd1bd618df98be12b25020dba427607ecfb433d13fd",
+      "headBlobSha256AtExecutionBase": "9400ddde799b7c2ec386cdd1bd618df98be12b25020dba427607ecfb433d13fd",
+      "startRawMatchedPin": true,
+      "headBlobMatchedPin": true,
+      "finalRawSha256": "de28caed2d18c08951d289f7e148b0723eb372cba53ca2c260d63fd8c4cc5f76",
+      "changedByWorker": true
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/history/page.tsx",
+      "pinnedRawSha256": "4c648e373be11e271ead6e69043f312724dc674b14ad908629c9a83b1efb8629",
+      "headBlobSha256AtExecutionBase": "4c648e373be11e271ead6e69043f312724dc674b14ad908629c9a83b1efb8629",
+      "startRawMatchedPin": true,
+      "headBlobMatchedPin": true,
+      "finalRawSha256": "46623499014993b95e8d8c4e493b3de94c106379f44e064b105675c4329bf2b3",
+      "changedByWorker": true
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/store.ts",
+      "pinnedRawSha256": "f5deb700c631c680924d3ba74fd1c56ef862e99703fe59c461828a8a64953c06",
+      "headBlobSha256AtExecutionBase": "f5deb700c631c680924d3ba74fd1c56ef862e99703fe59c461828a8a64953c06",
+      "startRawMatchedPin": true,
+      "headBlobMatchedPin": true,
+      "finalRawSha256": "f5deb700c631c680924d3ba74fd1c56ef862e99703fe59c461828a8a64953c06",
+      "unchangedAtFinal": true
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HistoryList.tsx",
+      "pinnedRawSha256": "1a8794e7fa7e61889f229bd560e8c9e2d56adb8e2ad7c969d9663c2997757770",
+      "headBlobSha256AtExecutionBase": "1a8794e7fa7e61889f229bd560e8c9e2d56adb8e2ad7c969d9663c2997757770",
+      "startRawMatchedPin": true,
+      "headBlobMatchedPin": true,
+      "finalRawSha256": "1a8794e7fa7e61889f229bd560e8c9e2d56adb8e2ad7c969d9663c2997757770",
+      "unchangedAtFinal": true
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.tsx",
+      "pinnedRawSha256": "37c3f811593426e631bd50891931d363a460a943b5c012bdb7796d9923911bd1",
+      "headBlobSha256AtExecutionBase": "37c3f811593426e631bd50891931d363a460a943b5c012bdb7796d9923911bd1",
+      "startRawMatchedPin": true,
+      "headBlobMatchedPin": true,
+      "finalRawSha256": "37c3f811593426e631bd50891931d363a460a943b5c012bdb7796d9923911bd1",
+      "unchangedAtFinal": true
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.test.tsx",
+      "pinnedRawSha256": "332a100889580078daca4dbb0a1e815a2c6d9e0e0fcdbfa912b02fa0e1af63e2",
+      "headBlobSha256AtExecutionBase": "332a100889580078daca4dbb0a1e815a2c6d9e0e0fcdbfa912b02fa0e1af63e2",
+      "startRawMatchedPin": true,
+      "headBlobMatchedPin": true,
+      "finalRawSha256": "332a100889580078daca4dbb0a1e815a2c6d9e0e0fcdbfa912b02fa0e1af63e2",
+      "unchangedAtFinal": true
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/vitest.config.ts",
+      "pinnedRawSha256": "9a4a65976b5b7a5d038f9cb412a90d417f804108cf1dd33bae4421989a863420",
+      "headBlobSha256AtExecutionBase": "9a4a65976b5b7a5d038f9cb412a90d417f804108cf1dd33bae4421989a863420",
+      "startRawMatchedPin": true,
+      "headBlobMatchedPin": true,
+      "finalRawSha256": "9a4a65976b5b7a5d038f9cb412a90d417f804108cf1dd33bae4421989a863420",
+      "unchangedAtFinal": true
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/test/setup.ts",
+      "pinnedRawSha256": "bc573b2a6133b07404c42f797bce43fe73464711e0281f29da8234bf2fed6b27",
+      "headBlobSha256AtExecutionBase": "bc573b2a6133b07404c42f797bce43fe73464711e0281f29da8234bf2fed6b27",
+      "startRawMatchedPin": true,
+      "headBlobMatchedPin": true,
+      "finalRawSha256": "bc573b2a6133b07404c42f797bce43fe73464711e0281f29da8234bf2fed6b27",
+      "unchangedAtFinal": true
+    }
+  ],
+  "commands": [
+    {
+      "id": "C01",
+      "argv": "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base eb50152fae407533784f160a06d2c1faea683478 --head HEAD --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HISTORY_RECOVERY_2026-10-12.md",
+      "exit": 0,
+      "result": "COMPLIANT in 15.71s",
+      "receipt": ".cvf/runtime/autorun-receipts/pre-implementation.json",
+      "ranBefore": "any output was created",
+      "timestampCaptured": false
+    },
+    {
+      "id": "C02",
+      "argv": "node node_modules/vitest/vitest.mjs run 'src/app/(dashboard)/home/history-recovery.test.tsx' --reporter=json (ORIGINAL product source)",
+      "startUtc": "2026-10-12T02:00:21.5815300Z",
+      "endUtc": "2026-10-12T02:01:09.2974591Z",
+      "exit": 1,
+      "tests": 22,
+      "passed": 6,
+      "failed": 16,
+      "log": {
+        "path": ".cvf/runtime/ncr-history-recovery-worker-20261012/red1.log",
+        "sha256": "73b6af6927d848494fb52ce18ea1e10ecd6dcdddb2668b21a21b5ce35ccaff1a",
+        "bytes": 142
+      },
+      "json": {
+        "path": ".cvf/runtime/ncr-history-recovery-worker-20261012/red1.json",
+        "sha256": "ebf864f466b41a3683b6fa7586fcca9fef9fbea1da1bd1378e7a828ae8b34d9e",
+        "bytes": 23624
+      }
+    },
+    {
+      "id": "C03",
+      "argv": "node node_modules/vitest/vitest.mjs run history-recovery.test.tsx page.test.tsx ResultViewer.test.tsx (first green attempt)",
+      "startUtc": "2026-10-12T02:01:32.1680134Z",
+      "endUtc": "2026-10-12T02:01:51.9446566Z",
+      "exit": 1,
+      "tests": 77,
+      "passed": 74,
+      "failed": 3,
+      "log": {
+        "path": ".cvf/runtime/ncr-history-recovery-worker-20261012/green1.log",
+        "sha256": "3436fe5eeb8f380917cdf6bcf84a753c77d63ed14c68407848809ce7e1dddc88",
+        "bytes": 144
+      },
+      "json": {
+        "path": ".cvf/runtime/ncr-history-recovery-worker-20261012/green1.json",
+        "sha256": "2d2373cd3419cfe51fbdf6e84d70d20995cc797a58f7f3073ba1259d60dc62aa",
+        "bytes": 27827
+      }
+    },
+    {
+      "id": "C04",
+      "argv": "node node_modules/vitest/vitest.mjs run history-recovery.test.tsx page.test.tsx ResultViewer.test.tsx (final bytes)",
+      "startUtc": "2026-10-12T02:02:13.5090982Z",
+      "endUtc": "2026-10-12T02:02:31.1496735Z",
+      "exit": 0,
+      "tests": 77,
+      "passed": 77,
+      "failed": 0,
+      "suites": 26,
+      "log": {
+        "path": ".cvf/runtime/ncr-history-recovery-worker-20261012/green2.log",
+        "sha256": "41857bd84b61e1665f18781913e2500dd2ebd2276ff32e8e68967e3a9cfed067",
+        "bytes": 144
+      },
+      "json": {
+        "path": ".cvf/runtime/ncr-history-recovery-worker-20261012/green2.json",
+        "sha256": "6685fd21a4b65ddbc0f964e88186795195d3139d741d062564989c5e0d978392",
+        "bytes": 26057
+      }
+    },
+    {
+      "id": "C05",
+      "argv": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+      "startUtc": "2026-10-12T02:02:31.2578859Z",
+      "endUtc": "2026-10-12T02:04:39Z (next command start)",
+      "exit": 0,
+      "log": {
+        "path": ".cvf/runtime/ncr-history-recovery-worker-20261012/tsc1.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      }
+    },
+    {
+      "id": "C06",
+      "argv": "node node_modules/eslint/bin/eslint.js home/page.tsx history/page.tsx home/history-recovery.test.tsx",
+      "startUtc": "2026-10-12T02:04:39.4457734Z",
+      "endUtc": "2026-10-12T02:06:29.4527582Z",
+      "exit": 0,
+      "log": {
+        "path": ".cvf/runtime/ncr-history-recovery-worker-20261012/eslint1.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      }
+    },
+    {
+      "id": "C07",
+      "argv": "temporary mutation of home/page.tsx (accepted-only continue guard replaced by false), vitest history-recovery + page.test, then file restored",
+      "startUtc": "between 2026-10-12T02:06:29Z and 2026-10-12T02:07:03Z (not separately stamped)",
+      "exit": 1,
+      "tests": 36,
+      "passed": 33,
+      "failed": 3,
+      "restoredSha256": "de28caed2d18c08951d289f7e148b0723eb372cba53ca2c260d63fd8c4cc5f76",
+      "restoredEqualsPreMutation": true,
+      "log": {
+        "path": ".cvf/runtime/ncr-history-recovery-worker-20261012/mutation1.log",
+        "sha256": "07426f12c87c2ce26715c8a0575ee357e1567f848668b93926d08bbf9bb743eb",
+        "bytes": 147
+      },
+      "json": {
+        "path": ".cvf/runtime/ncr-history-recovery-worker-20261012/mutation1.json",
+        "sha256": "302b168ebf99fb0c21c47a1a692347627a19ff3e2e0a1132aa9ccfea2bc2fb58",
+        "bytes": 38261
+      }
+    },
+    {
+      "id": "C09",
+      "argv": "python governance/compat/run_worker_return_fast_gate.py --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HISTORY_RECOVERY_2026-10-12.md --max-return-lines 450 --max-return-bytes 64000 (first run on the draft return)",
+      "startUtc": "2026-10-12T02:10:57.1101631Z",
+      "endUtc": "2026-10-12T02:11:03.9966380Z",
+      "exit": 1,
+      "result": "FAIL: 8 shape violations in 5 checks; acceptance ledger inside it COMPLIANT; preserved, not overwritten",
+      "log": {
+        "path": ".cvf/runtime/ncr-history-recovery-worker-20261012/fastgate1.log",
+        "sha256": "0fccf8f5562394594a390a45dc14323dd0173adba0c65fc74bd7cf7222267022",
+        "bytes": 15040
+      }
+    },
+    {
+      "id": "C10",
+      "argv": "same fast gate, second run after the first repairs",
+      "startUtc": "2026-10-12T02:12:30.4532287Z",
+      "endUtc": "2026-10-12T02:12:37.3502673Z",
+      "exit": 1,
+      "result": "FAIL: review cost control wants exact tokens COMPLETE_ALL_KNOWN_DEPENDENCIES and PASS_TARGETED_DEFECT_CLASS; quality gate and ledger COMPLIANT; preserved",
+      "log": {
+        "path": ".cvf/runtime/ncr-history-recovery-worker-20261012/fastgate2.log",
+        "sha256": "9b460e75346be268a0155abdeb23ad32dec0ae9f8a79533d7c8d67bc7269e1c5",
+        "bytes": 11834
+      }
+    },
+    {
+      "id": "C08",
+      "argv": "python governance/compat/run_worker_return_scaffold.py --write docs/reviews/CVF_NCR_HISTORY_RECOVERY_WORKER_RETURN_2026-10-12.md --check-shape --max-lines 450 --max-bytes 64000",
+      "startUtc": "2026-10-12T02:07:03.0131722Z",
+      "exit": 0,
+      "result": "PREPARATION_SHAPE_PRESENT; scaffold written before return prose",
+      "log": {
+        "path": ".cvf/runtime/ncr-history-recovery-worker-20261012/scaffold.log",
+        "sha256": "c3fa00dbb009900aaf444273a3f43765ca941c9d7d3e52904885174ac1e4b7c6",
+        "bytes": 241
+      }
+    }
+  ],
+  "sourceRed": {
+    "productSource": "original Home and History bytes at executionBaseHead",
+    "newSuite": {
+      "total": 22,
+      "passed": 6,
+      "failed": 16
+    },
+    "positiveControlsPassed": [
+      "accepted continue control restores exact A from the continue query while the ambient run is B",
+      "accepted continue control keeps the accepted-only Continue button distinct from basic row selection",
+      "invalid saved-result queries return to browse shows browse for an invalid query on a cold start",
+      "continue precedence and eligibility lets an ineligible continue govern even when result names a valid record",
+      "continue precedence and eligibility lets an eligible continue win over a different result record",
+      "fresh submission is unaffected binds a fresh run to its own execution while the ambient run is B"
+    ],
+    "failedAssertions": [
+      "History click reopens the selected saved result opens a accepted completed result after a persisted cold start with ambient B",
+      "History click reopens the selected saved result opens a rejected completed result after a persisted cold start with ambient B",
+      "History click reopens the selected saved result opens a not yet reviewed completed result after a persisted cold start with ambient B",
+      "History click reopens the selected saved result encodes an id with reserved characters and restores that exact record",
+      "History click reopens the selected saved result opens the selected record from the URL alone, with or without an ambient run",
+      "identity and review actions bind to the selected record keeps A displayed and reviewed when the ambient run changes to B and a new run C",
+      "identity and review actions bind to the selected record accepts an unreviewed result opened from History, leaving other records unchanged",
+      "identity and review actions bind to the selected record starts a bound follow-up from A without rerunning it and keeps A and B unchanged",
+      "real ResultViewer export of a restored result copies A to the clipboard without an execute request or a fabricated receipt",
+      "real ResultViewer export of a restored result downloads the Markdown result and the deliverable pack from A only",
+      "invalid saved-result queries return to browse drops prior bound output for unknown id without creating or changing a run",
+      "invalid saved-result queries return to browse drops prior bound output for processing record without creating or changing a run",
+      "invalid saved-result queries return to browse drops prior bound output for failed record without creating or changing a run",
+      "invalid saved-result queries return to browse drops prior bound output for empty output without creating or changing a run",
+      "invalid saved-result queries return to browse drops prior bound output for unavailable template without creating or changing a run",
+      "continue precedence and eligibility keeps continue accepted-only while the same unreviewed record opens through result"
+    ],
+    "failureCauses": {
+      "historySenderPushesBareHome": "3 History-click cases and the reserved-character case observed pushed ['/home'] instead of /home?result=<encoded id>",
+      "homeReceiverIgnoresResultQuery": "Home stayed in browse for ?result=<id>; every downstream review, follow-up, export, invalid-transition and unreviewed-result case failed at the missing result view"
+    },
+    "harnessFailures": "none in this worker run; the Local dispatch harness failures (config import, mock resolution) are retained separately in the dispatch evidence and not imported"
+  },
+  "firstGreenFailure": {
+    "failed": [
+      "History click reopens the selected saved result opens a accepted completed result after a persisted cold start with ambient B",
+      "History click reopens the selected saved result opens a rejected completed result after a persisted cold start with ambient B",
+      "History click reopens the selected saved result opens a not yet reviewed completed result after a persisted cold start with ambient B"
+    ],
+    "cause": "worker test over-asserted: the whole persisted localStorage payload was compared before/after a History click, but the existing History onSelect also moves the ambient currentExecution pointer, which is persisted. Saved executions were unchanged.",
+    "attribution": "worker test-authoring defect, not a product defect",
+    "repair": "narrowed the assertion to the persisted executions payload (storedExecutions); no product change; one self-repair"
+  },
+  "finalGreen": {
+    "total": 77,
+    "passed": 77,
+    "failed": 0,
+    "newSuiteTests": 22,
+    "newSuiteCases": [
+      "accepted continue control restores exact A from the continue query while the ambient run is B",
+      "accepted continue control keeps the accepted-only Continue button distinct from basic row selection",
+      "History click reopens the selected saved result opens a accepted completed result after a persisted cold start with ambient B",
+      "History click reopens the selected saved result opens a rejected completed result after a persisted cold start with ambient B",
+      "History click reopens the selected saved result opens a not yet reviewed completed result after a persisted cold start with ambient B",
+      "History click reopens the selected saved result encodes an id with reserved characters and restores that exact record",
+      "History click reopens the selected saved result opens the selected record from the URL alone, with or without an ambient run",
+      "identity and review actions bind to the selected record keeps A displayed and reviewed when the ambient run changes to B and a new run C",
+      "identity and review actions bind to the selected record accepts an unreviewed result opened from History, leaving other records unchanged",
+      "identity and review actions bind to the selected record starts a bound follow-up from A without rerunning it and keeps A and B unchanged",
+      "real ResultViewer export of a restored result copies A to the clipboard without an execute request or a fabricated receipt",
+      "real ResultViewer export of a restored result downloads the Markdown result and the deliverable pack from A only",
+      "invalid saved-result queries return to browse drops prior bound output for unknown id without creating or changing a run",
+      "invalid saved-result queries return to browse drops prior bound output for processing record without creating or changing a run",
+      "invalid saved-result queries return to browse drops prior bound output for failed record without creating or changing a run",
+      "invalid saved-result queries return to browse drops prior bound output for empty output without creating or changing a run",
+      "invalid saved-result queries return to browse drops prior bound output for unavailable template without creating or changing a run",
+      "invalid saved-result queries return to browse shows browse for an invalid query on a cold start",
+      "continue precedence and eligibility lets an ineligible continue govern even when result names a valid record",
+      "continue precedence and eligibility lets an eligible continue win over a different result record",
+      "continue precedence and eligibility keeps continue accepted-only while the same unreviewed record opens through result",
+      "fresh submission is unaffected binds a fresh run to its own execution while the ambient run is B"
+    ],
+    "existingHomeTests": 14,
+    "existingResultViewerTests": 41
+  },
+  "mutationCheck": {
+    "mutation": "removed the accepted-only guard for continue (the continue eligibility test replaced by false)",
+    "failedAssertions": [
+      "continue precedence and eligibility lets an ineligible continue govern even when result names a valid record",
+      "continue precedence and eligibility keeps continue accepted-only while the same unreviewed record opens through result",
+      "HomePage history controls returns an invalid history query (unaccepted) to browse without showing prior output"
+    ],
+    "interpretation": "two new composition cases and one pre-existing Home case detect widened continue eligibility; one mutation only, not a mutation score",
+    "restoredByteIdentical": true
+  },
+  "REQ-RESTORE": {
+    "status": "PASS_PENDING_REVIEW",
+    "claim": "Actual History row click pushes /home?result=<encoded id>; actual Home restores the exact completed record for accepted, rejected and unreviewed runs after a persisted cold start, with ambient B or no ambient run; invalid, processing, failed, empty-output and missing-template records and an unknown id return to browse; continue governs when both queries are present",
+    "observed": {
+      "pushedUrlPattern": "/home?result=<encodeURIComponent(id)>",
+      "reservedCharacterId": "exec/saved A&1#x?y=z round-trips through URLSearchParams to the same id and selects that record, not a decoy sharing a prefix",
+      "storageValue": "cvf-executions-storage written with state.executions and state.currentExecution, version 0, then useExecutionStore.persist.rehydrate() from an emptied store",
+      "rehydrationEvent": "persist.rehydrate() awaited in the coldStart helper before every render"
+    },
+    "testCases": [
+      "accepted continue control restores exact A from the continue query while the ambient run is B",
+      "accepted continue control keeps the accepted-only Continue button distinct from basic row selection",
+      "History click reopens the selected saved result opens a accepted completed result after a persisted cold start with ambient B",
+      "History click reopens the selected saved result opens a rejected completed result after a persisted cold start with ambient B",
+      "History click reopens the selected saved result opens a not yet reviewed completed result after a persisted cold start with ambient B",
+      "History click reopens the selected saved result encodes an id with reserved characters and restores that exact record",
+      "History click reopens the selected saved result opens the selected record from the URL alone, with or without an ambient run",
+      "invalid saved-result queries return to browse drops prior bound output for unknown id without creating or changing a run",
+      "invalid saved-result queries return to browse drops prior bound output for processing record without creating or changing a run",
+      "invalid saved-result queries return to browse drops prior bound output for failed record without creating or changing a run",
+      "invalid saved-result queries return to browse drops prior bound output for empty output without creating or changing a run",
+      "invalid saved-result queries return to browse drops prior bound output for unavailable template without creating or changing a run",
+      "invalid saved-result queries return to browse shows browse for an invalid query on a cold start",
+      "continue precedence and eligibility lets an ineligible continue govern even when result names a valid record",
+      "continue precedence and eligibility lets an eligible continue win over a different result record",
+      "continue precedence and eligibility keeps continue accepted-only while the same unreviewed record opens through result"
+    ]
+  },
+  "REQ-IDENTITY": {
+    "status": "PASS_PENDING_REVIEW",
+    "claim": "A stays displayed and is the only record changed by review while the ambient run moves to B and a new run C is added; follow-up from A creates a child with A as parent and A thread, root, project label and knowledge collection, and leaves A and B byte-equal",
+    "observed": "child.parentExecutionId equals A, child.input._previousOutput equals A output, executions grew by exactly one, A and B JSON snapshots unchanged, processing stub shown (no execute call)",
+    "testCases": [
+      "identity and review actions bind to the selected record keeps A displayed and reviewed when the ambient run changes to B and a new run C",
+      "identity and review actions bind to the selected record accepts an unreviewed result opened from History, leaving other records unchanged",
+      "identity and review actions bind to the selected record starts a bound follow-up from A without rerunning it and keeps A and B unchanged"
+    ]
+  },
+  "REQ-EXPORT": {
+    "status": "PASS_PENDING_REVIEW",
+    "claim": "The real ResultViewer clipboard copy, Markdown download and deliverable pack download of a restored record contain A output and template and never B; restore, copy and download made no fetch call, did not change saved executions, and added no receipt",
+    "observed": {
+      "clipboard": "navigator.clipboard.writeText called once; content contains A output marker and template name, excludes B marker and the CVF Evidence Receipt heading",
+      "markdownDownload": "Blob captured through URL.createObjectURL and read with FileReader; file name cvf-result-<templateId>-<ts>.md",
+      "packDownload": "Blob captured the same way; file name cvf-pack-<templateId>-<ts>.md; contains Source execution equal to A id, Receipt available no, no Receipt id",
+      "fetch": "pass-through spy on the shared guarded fetch asserted not called in afterEach for every case"
+    },
+    "testCases": [
+      "real ResultViewer export of a restored result copies A to the clipboard without an execute request or a fabricated receipt",
+      "real ResultViewer export of a restored result downloads the Markdown result and the deliverable pack from A only"
+    ],
+    "limits": "PDF and Word export paths were not exercised; they are optional per the order and unchanged"
+  },
+  "REQ-RETURN": {
+    "status": "PASS_PENDING_REVIEW",
+    "claim": "exactly five owned outputs, scaffold generated before prose, first and final attempts recorded, gate results recorded in the return packet",
+    "ownedPaths": [
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.tsx",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/history/page.tsx",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/history-recovery.test.tsx",
+      "docs/reviews/evidence/ncr-history-recovery-worker-20261012.json",
+      "docs/reviews/CVF_NCR_HISTORY_RECOVERY_WORKER_RETURN_2026-10-12.md"
+    ],
+    "finalGateResults": "recorded in the return packet Gate Evidence table because the gates run over this file"
+  },
+  "ownedCodeFinalBytes": [
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.tsx",
+      "sha256": "de28caed2d18c08951d289f7e148b0723eb372cba53ca2c260d63fd8c4cc5f76",
+      "bytes": 28008,
+      "lines": 652
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/history/page.tsx",
+      "sha256": "46623499014993b95e8d8c4e493b3de94c106379f44e064b105675c4329bf2b3",
+      "bytes": 1936,
+      "lines": 43
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/history-recovery.test.tsx",
+      "sha256": "73c21c8b886a600e9a860c849b5afdcf974056ea3ec6d2eeb177aa6ac5e43831",
+      "bytes": 20290,
+      "lines": 520
+    }
+  ],
+  "budgets": {
+    "homeLinesCeiling": 850,
+    "historyLinesCeiling": 180,
+    "newTestLinesCeiling": 600,
+    "note": "line counts are measured in ownedCodeFinalBytes"
+  },
+  "readDepth": [
+    {
+      "scope": "SRC-HOME home/page.tsx",
+      "depth": "complete, all lines"
+    },
+    {
+      "scope": "SRC-HISTORY history/page.tsx",
+      "depth": "complete, all lines"
+    },
+    {
+      "scope": "store.ts",
+      "depth": "complete, lines 1-166 (whole file)"
+    },
+    {
+      "scope": "HistoryList.tsx",
+      "depth": "complete, all lines"
+    },
+    {
+      "scope": "ResultViewer.tsx",
+      "depth": "props, state, clipboard/Markdown/pack handlers and the rendered export, accept/reject and follow-up buttons read in full (lines 1-262, 495-630, 755-890 plus a symbol search); PDF and DOCX internals (about lines 263-495) and the receipt/preview markup (about 630-755) not read, which the order marks optional"
+    },
+    {
+      "scope": "SRC-HOME-TEST page.test.tsx",
+      "depth": "complete, all lines, read before the first edit"
+    },
+    {
+      "scope": "vitest.config.ts and src/test/setup.ts",
+      "depth": "complete, all lines"
+    },
+    {
+      "scope": "docs baseline and work order",
+      "depth": "work order complete; baseline complete; active handoff complete; front door and bootstrap complete"
+    },
+    {
+      "scope": "dispatch evidence JSON",
+      "depth": "complete"
+    },
+    {
+      "scope": "supporting product reads outside the mandatory list",
+      "depth": "deliverable-pack.ts generate/serialize functions (lines 320-420 plus symbol search), execution-continuity.ts buildContinuationExecution (symbol search), types Execution interface, ResultViewer.test.tsx lines 1-90"
+    },
+    {
+      "scope": "return checkers",
+      "depth": "check_worker_return_quality_gate.py lines 1-260 (constants, headings, field tuples); check_work_order_acceptance_ledger.py by symbol search only; other listed checkers not opened, the fast gate was used to confirm shape"
+    }
+  ],
+  "severityAndDefects": {
+    "selfRepairs": 1,
+    "defectGroups": [
+      {
+        "group": "test over-assertion on persisted pointer",
+        "severity": "LOW",
+        "owner": "worker test",
+        "repairedBy": "narrowed to persisted executions"
+      }
+    ],
+    "productDefectsFound": [
+      "History sender carried no selected id",
+      "Home receiver restored only accepted continue"
+    ],
+    "decisionsForReviewer": [
+      "Home now also requires status completed for the continue path (shared eligibility predicate); previously continue checked only result accepted and output present. This only narrows a path that was already accepted-only; the existing page.test cases stay green.",
+      "History still calls setCurrentExecution on row click (existing behavior); Home no longer reads it for selection.",
+      "A whitespace-only output is still treated as present, as before."
+    ]
+  },
+  "unknowns": [
+    "native model identity, effort and token usage of the worker",
+    "bill and wall-clock beyond recorded instants",
+    "real browser, real localStorage across a page reload and Next.js routing were not exercised; the cold start is a persist.rehydrate() in jsdom with a router stub",
+    "PDF and Word export content",
+    "whether Local review finds a distinct failure in an unexercised combination"
+  ],
+  "claimBoundary": "Synthetic offline UI composition only. No provider call, live governance, backend recovery, cancellation, full receipt restoration, whole offline job or R3/R4 exit is claimed."
+}

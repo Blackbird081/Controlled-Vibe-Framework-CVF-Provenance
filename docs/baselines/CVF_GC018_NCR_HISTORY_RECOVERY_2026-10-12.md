@@ -2,7 +2,7 @@
 
 Memory class: governed-dispatch-baseline
 docType: baseline
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 Date: 2026-10-12
 Batch ID: CVF-NCR-HISTORY-RECOVERY-20261012
 Dispatch base head: 58efa8c43b70ace270dcb10ab03ecc92319f575b
@@ -40,7 +40,7 @@ One source positive PASS/two desired failures retained, first harness configurat
 | Claimed item | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Disposition |
 |---|---|---|---|---|---|
 | RUNTIME_BEHAVIOR: History selects then pushes /home without selected ID | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/history/page.tsx` | onSelect inside HistoryPage | HistoryPage | existing UI consumer | ACCEPT |
-| RUNTIME_BEHAVIOR: Home starts browse and restores only continue | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.tsx` | state and continue restoration effect | HomePage | existing UI consumer | ACCEPT |
+| RUNTIME_BEHAVIOR: Home starts browse and restores only continue | `docs/reviews/evidence/ncr-history-recovery-local-20261012.json` | canonicalSourceVerificationWrapper; execution preimage sourcePinsVerifiedAgainstExecutionBase and originalWorkerArtifacts | HomePage | existing UI consumer | ACCEPT |
 | RUNTIME_BEHAVIOR: persist includes execution state | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/store.ts` | persist options and execution actions | useExecutionStore | existing UI consumer | ACCEPT |
 | RUNTIME_BEHAVIOR: History row triggers selection | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HistoryList.tsx` | row click and Continue button | HistoryList | existing UI consumer | ACCEPT |
 | RUNTIME_BEHAVIOR: Markdown/copy use execution/output props | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.tsx` | props and copy/download handlers | ResultViewer | existing UI consumer | ACCEPT |
@@ -51,7 +51,7 @@ One source positive PASS/two desired failures retained, first harness configurat
 | Field | Value |
 |---|---|
 | applicableCheckersRead | `governance/compat/check_work_order_dispatch_quality.py`; `governance/compat/check_gate_to_role_closeability.py`; `governance/compat/check_governed_artifact_checker_read_ahead.py`; `governance/compat/check_dispatch_prompt_envelope.py`; `governance/compat/check_markdown_structural_completeness.py`; `governance/compat/check_agent_operation_trace.py`; `governance/compat/check_public_export_disposition.py`; `governance/compat/check_work_order_acceptance_ledger.py`; `governance/compat/check_task_governance_route.py`; `governance/compat/check_independent_review_probe_admission.py`; `governance/compat/check_dispatch_scaffold_provenance.py`; `governance/compat/check_core_guard_self_protection.py`; `governance/compat/check_agent_packet_authority_and_encoding.py` |
-| literalTokensReviewed | DISPATCH_READY; WORKER_MUST_NOT_COMMIT; INTERNAL_AGENT; REQUIRED_FIELDS; TRACE_REQUIRED_LABELS; SECTION_GROUPS; DEFERRED_PRIVATE_ONLY |
+| literalTokensReviewed | released for bounded worker execution; WORKER_MUST_NOT_COMMIT; INTERNAL_AGENT; REQUIRED_FIELDS; TRACE_REQUIRED_LABELS; SECTION_GROUPS; DEFERRED_PRIVATE_ONLY |
 | gateRunPurpose | confirmation/evidence of selected packet structure; not a dispatch or implementation proof |
 | claimBoundary | targeted current checker constants/required sections and ready-state predicates read; not an all-lines reading claim |
 
@@ -144,3 +144,29 @@ Reason: private packet only, no public-sync or push grant.
 ## Claim Boundary
 
 Source-selected offline maintenance and ready packet only; no full provider/governance, backend recovery, whole roadmap or production claim.
+
+## Local Closure Disposition - 2026-10-12
+
+Technical acceptance CLOSED_PASS_BOUNDED after one Local query-presence repair. `docs/reviews/CVF_NCR_HISTORY_RECOVERY_COMPLETION_2026-10-12.md` / `docs/reviews/evidence/ncr-history-recovery-local-20261012.json` (sha256:7450ea01bcb5ebf2a470491b126ad3feec30068159f16300b28fc17177e074a1); original worker return/proof unchanged. Continue completed guard retained by Local clarification: valid accepted completed continue remains supported; noncompleted accepted record is rejected. Explicit empty continue governs rather than falling through; empty result clears prior output. Original source pins are execution preimage at eb50152fae407533784f160a06d2c1faea683478, not a new dispatch pin or authority to run again. No worker restart, provider, public or push effect. Preparation limits and first failures retained.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HISTORY_RECOVERY_2026-10-12.md` | CLOSED_PASS_BOUNDED; useful selected recovery slice | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_NCR_HISTORY_RECOVERY_COMPLETION_2026-10-12.md` | original4 PASS/4 FAIL then repaired8/8; worker originals retained | PASS |
+| Roadmap state | `docs/roadmaps/README.md` | finite History slice accepted; full NCR R1/R3/R4 stays open | PASS |
+| Registry JSON | `docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json` |18 reviewed tasks:10 Haiku-family,4 Sonnet,4 Luna | PASS |
+| Registry Markdown | `docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md` | current18, old dated counts retained | PASS |
+| External evidence digest | `docs/reviews/evidence/ncr-history-recovery-local-20261012.json` | sha256:7450ea01bcb5ebf2a470491b126ad3feec30068159f16300b28fc17177e074a1; internal distinct Local proof | PASS |
+| System loop interlock | parked checkpoints | no new loop or automatic successor | N/A with reason: bounded product maintenance |
+| Session continuity | six current continuity surfaces | closed authority projections plus subsequent exact6 actual-material sync | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Evidence | Status |
+|---|---|---|
+| REQ-RESTORE | original22 cases consume actual History URL/store; Local empty-id repair and status/precedence controls | PASS |
+| REQ-IDENTITY | worker review/follow-up parent/root/thread assertions; Local A export despite B with records unchanged | PASS |
+| REQ-EXPORT | worker real clipboard/Markdown/pack bytes; independent poisoned snapshot excluded from A clipboard; fetch not called | PASS |
+| REQ-RETURN | exact5 submitted paths; pins/logs/final gate verified; original metadata retained and Local repairs separate | PASS bounded; preparation limits retained |

@@ -8,3 +8,7 @@ docs/reviews/evidence/model-selection-design-review-20261010/* -text whitespace=
 docs/reviews/evidence/ccma-learning-*-20261012.* text eol=lf
 docs/reviews/learnings/CVF_CCMA_PROOF_PREPARATION_LEARNING_2026-10-12.md text eol=lf
 docs/reference/downstream_gate_profile/CVF_BUILD_LEARNING_EVIDENCE_CHECKLIST.md text eol=lf
+# History recovery: preserve the immutable worker submission and Local raw pin.
+docs/reviews/CVF_NCR_HISTORY_RECOVERY_WORKER_RETURN_2026-10-12.md -text whitespace=cr-at-eol
+docs/reviews/evidence/ncr-history-recovery-worker-20261012.json -text whitespace=cr-at-eol
+docs/reviews/evidence/ncr-history-recovery-local-20261012.json text eol=lf

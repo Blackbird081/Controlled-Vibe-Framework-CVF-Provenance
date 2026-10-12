@@ -37,9 +37,9 @@
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_NCR_HISTORY_RECOVERY_2026-10-12.md",
-    "baselineSha256": "8dc1f8877762c4c66a2640f81f187bca1b1ba66ba58a78f66119457acbc61911",
+    "baselineSha256": "701fafa7b4795bfcd2d4d34a48f3b5733098a94597ca35f360d2be87815f2a40",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HISTORY_RECOVERY_2026-10-12.md",
-    "workOrderSha256": "26012bbe8e229515c30b97ba1e9d7b2cbe90a0323415bfdeb1839c655a09781f"
+    "workOrderSha256": "0d2ae4d7b10a76f51d7f0f72feaa1d3c654a4ddab2ee535803ad65a55aa4df8d"
   },
   "currentAuthoritySyncReason": "ProcessingScreen bounded repaired closure/procedureFAIL at 687a49c6c05047cffa30cab6c655c2d21d74a4a0; exact6 continuity with closed paired authority,17 observations and useful-selection next move.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",

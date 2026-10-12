@@ -331,15 +331,19 @@ export default function HomePage() {
         }
     }, [searchParams]);
 
-    // W123-T1: restore result state when navigating from history with ?continue=exec_id.
-    // The restored execution id is the binding; the ambient currentExecution is not consulted.
+    // W123-T1: restore result state when navigating from history with ?continue=exec_id
+    // (accepted runs only) or ?result=exec_id (any completed saved run, viewing only).
+    // continue governs when both are present. The restored execution id is the binding;
+    // the ambient currentExecution is not consulted and nothing is re-executed.
     useEffect(() => {
-        const continueId = searchParams.get('continue')?.trim();
-        if (!continueId) return;
-        const exec = getExecutionById(continueId);
+        const hasContinue = searchParams.has('continue');
+        if (!hasContinue && !searchParams.has('result')) return;
+        const restoreId = searchParams.get(hasContinue ? 'continue' : 'result')?.trim();
+        const exec = restoreId ? getExecutionById(restoreId) : undefined;
         const tpl = exec ? templates.find((t) => t.id === exec.templateId) : undefined;
         startTransition(() => {
-            if (!exec || exec.result !== 'accepted' || !exec.output || !tpl) {
+            if (!exec || exec.status !== 'completed' || !exec.output || !tpl
+                || (hasContinue && exec.result !== 'accepted')) {
                 // Invalid history query: drop any prior bound context and return to browse.
                 setActiveExecutionId(null);
                 setSelectedTemplate(null);
