@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_DRAFT_EXPORT_2026-10-12.md",
     "workOrderSha256": "993fcff356bcbf71f9b67db844d9e01135e87dbfe276f7e9386d1aa1ff3d24f3"
   },
-  "currentAuthoritySyncReason": "NCR Draft Export Composition manual worker dispatch; paired packet hashes bound before material commit; next-mode continuity follows material SHA.",
+  "currentAuthoritySyncReason": "Manual visible draft/export proof dispatch material ee79bb127b1fe68b85a73320d388d0eed34abad0; dedicated exact6 continuity,19 prior observations preserved.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
@@ -110,8 +110,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_ncr_draft_recovery_closed_useful_selection",
-  "previousMode": "cvf_ncr_history_recovery_worker_execution",
+  "currentMode": "cvf_ncr_draft_export_worker_execution",
+  "previousMode": "cvf_ncr_draft_recovery_closed_useful_selection",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",

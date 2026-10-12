@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Current NCR Continuation
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `a16ec40461f60b2007fd6a744a7b7be202f127a3`. Material SHA: `a16ec40461f60b2007fd6a744a7b7be202f127a3`. Batch ID: CVF-NCR-DRAFT-RECOVERY-20261012. Exact16 reviewed material; client draft slice closed, no push.
+Current HEAD recorded for this handoff: `ee79bb127b1fe68b85a73320d388d0eed34abad0`. Material SHA: `ee79bb127b1fe68b85a73320d388d0eed34abad0`. Batch ID: CVF-NCR-DRAFT-EXPORT-20261012. Exact10 dispatch material; exact3 test/proof/return worker, no push.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -9,15 +9,23 @@ Status: ACTIVE
 Current continuation only. Root AGENTS.md and canonical routing owners retain full rules.
 Closed history is preserved byte-for-byte at `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V63_PRE_NCR_COMPACTION_2026-10-07.md` (SHA256 `54801fdcf14e9abe17592352ec3c69a0b0e855632991af0caacac7b65252ccba`); it is NOT_ACTIVE_AUTHORITY and not default startup reading.
 ## Scope / Target / Owner Boundary
-Local INTERNAL_AGENT reviewer/closer/steward.19 reviewed tasks10 Haiku-family/5 Sonnet/4 Luna; prior18 retained. No new worker or push; provider memory not authority.
+
+Local INTERNAL_AGENT orchestrator/reviewer/steward; operator starts Sonnet manually after bound release.19 prior reviewed observations unchanged. Worker owns three outputs, no commit/provider/subagent. Provider memory is not authority.
+
 ## Startup Acknowledgment
-Startup acknowledged: current mode=`cvf_ncr_draft_recovery_closed_useful_selection`;handoff=`AGENT_HANDOFF_V63_2026-09-18.md`;next=finite draft recovery closed,useful product selection only;role=Local INTERNAL_AGENT reviewer/closer/steward;phase=private closure;decision owner=Local;parked checkpoint=Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11/Customer Care application.
+
+Startup acknowledged: current mode=`cvf_ncr_draft_export_worker_execution`;handoff=`AGENT_HANDOFF_V63_2026-09-18.md`;next=manual Sonnet exact3 offline visible draft/export proof after committed bound release;role=Local INTERNAL_AGENT orchestrator/reviewer;phase=internal dispatch;decision owner=Local;parked checkpoint=Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11/Customer Care application.
+
 ## Current Mode
-`cvf_ncr_draft_recovery_closed_useful_selection`. Client draft recovery technically closed; procedureFAIL and known test waiver retained. Whole job/browser/backend unproved;P11 parked;LHW24.
+
+`cvf_ncr_draft_export_worker_execution`. Manual visible restored-draft/export composition proof pending; worker not started. Draft recovery bounded closure/procedureFAIL/test waiver retained. Whole job/browser/backend/R3/R4 unproved;P11 parked;LHW24.
+
 ## Current Authority
-Baseline: `docs/baselines/CVF_GC018_NCR_DRAFT_RECOVERY_2026-10-12.md`; SHA256 `8eafc50b15a517536707c9ca5ae964d87a3768b40533ed6a7caf91438daeda74`.
-Work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_DRAFT_RECOVERY_2026-10-12.md`; SHA256 `a4284d0644493c6ffb8138bd96dc2d94b7f3cc14e19d8b8983fb174050e7c47c`; CLOSED_PASS_BOUNDED.
-Completion `docs/reviews/CVF_NCR_DRAFT_RECOVERY_COMPLETION_2026-10-12.md`; proof `docs/reviews/evidence/ncr-draft-recovery-local-20261012.json`. Local1 form-isolation root/2 symptoms; independent4/4;focused66 PASS/1 original English assertion waiver,type/lint PASS. Mandatory baseline/checker omitted:procedureFAIL;18.05min to final test only,full budget unknown. No model/browser/backend/R1/R3/R4 winner or exit claim.
+
+Baseline: `docs/baselines/CVF_GC018_NCR_DRAFT_EXPORT_2026-10-12.md`; SHA256 `3d528f8841d934d98a258c5d42e788e78749577795f2e98175261ba498802ae9`.
+Work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_DRAFT_EXPORT_2026-10-12.md`; SHA256 `993fcff356bcbf71f9b67db844d9e01135e87dbfe276f7e9386d1aa1ff3d24f3`; READY, final committed bound release required before manual start.
+Source evidence: docs/reviews/evidence/ncr-draft-export-dispatch-20261012.json. Real Home/DynamicForm/SpecExport, fixed3 outputs/3 proof IDs,60min total; source/UI proof only. All production/old tests and collection read-only. Mandatory full baseline/order/scoped semantic/checker reads and final clocks; Local final review.19 observations unchanged; no source bug/full outcome proof claimed by dispatcher.
+
 ## O6 Release Rebind After Provenance Sync (2026-10-11)
 Root marker replacement aa32f666 blocked DR-04/DR-05; rebind bd13e1a80 restored release. Log C:/Users/DELL/AppData/Local/Temp/o6_preimpl.log retained; no worker defect. Provenance lane closed, URL locked.
 Learning: ORCHESTRATOR_PACKET_GAP; GOVERNANCE_CONTROL_PLANE; RULE_EXISTS. Future active dispatch continuity preserves packet binding and revalidates release; no checker change.
@@ -97,7 +105,7 @@ Receiving agents clarify incomplete ideas according to the existing lifecycle st
 Consume returned evidence under MFRP P4-C1: EVALUATE_RETURNED_EVIDENCE_NOT_RECREATE_IMPLEMENTATION. A rerun needs a named contradiction/changed consumer,information gain and cost reason.
 Alibaba calls are authorized for meaningful scoped tests; no other provider call,Claude dispatch,public push,deployment or actual-data cutover is inferred.
 ## Next Allowed Move
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=LOCAL_REVIEW_AND_SELECTION; BATCH_ID=CVF-NCR-DRAFT-RECOVERY-20261012. Draft recovery CLOSED_PASS_BOUNDED at a16ec40461f60b2007fd6a744a7b7be202f127a3; completion docs/reviews/CVF_NCR_DRAFT_RECOVERY_COMPLETION_2026-10-12.md; proof docs/reviews/evidence/ncr-draft-recovery-local-20261012.json. Client stop -> editable draft -> distinct resubmit accepted after1 Local mounted-form root repair/2 symptoms; independent4/4,focused66 PASS/1 HEAD-reproduced English test waiver,type/lint PASS. ProcedureFAIL: mandatory baseline/checker reads omitted; original complete-read claim not accepted. Sonnet5.5 high requested,native unknown;18.05min start-to-final-test only,final gate/terminal clocks absent,full budget compliance unknown.19 reviewed tasks10 Haiku-family/5 Sonnet/4 Luna; prior18 preserved,cost deferred. Stop finite scope; next only concrete useful product selection. No automatic worker,metadata-only successor,stricter gate/quiz,duplicate suite or push. Whole job/visible SpecExport/browser/backend/R3/R4 unproved. Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11/Customer Care application parked;LHW24.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=WORKER_IMPLEMENTATION; BATCH_ID=CVF-NCR-DRAFT-EXPORT-20261012. Operator requests manually copied Sonnet worker; packet material ee79bb127b1fe68b85a73320d388d0eed34abad0. Existing Home/DynamicForm/SpecExport visible restored-draft -> current brief/revision/isolation proof; exact3 new test/proof/return paths, no production edits. Worker starts only after clean committed bound pre-dispatch and dry pre-implementation PASS; WORKER_MUST_NOT_COMMIT,one60min invocation,zero nested agents/provider/public effects. Mandatory full paired baseline/order and supplied semantic/checker reads before outputs; real UI controls,independent synthetic A/B,actual Blob/event/storage assertions; no fabricated source red. COMPLETE_PENDING_REVIEW only final fixed ledger/gates PASS,otherwise consolidated BLOCKED_WITH_REASON. Local reviewer owns independent disposition/closure; no automatic successor/push. Prior draft recovery CLOSED_PASS_BOUNDED at a16ec40461f60b2007fd6a744a7b7be202f127a3;procedureFAIL/test waiver retained.19 reviewed observations unchanged,cost deferred. Whole job/browser/backend/R3/R4 unproved;Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11/Customer Care application parked;LHW24.
 ## Active Boundary
 T3B has a Local-verified active v1 specification. Party B is verified and T3C-C1 tooling accepted at `db78c87df`; T3C-C2 and Party C are verified. T3D-C1 tooling is accepted at `9ed844c2a` without source. T3D-C0-R1 closed at `2fffa1ef7`. T3D-C3 was accepted bounded at `88137e9a2`, but actual-mode prepare attempts failed before Party B/C execution; authorized cleanup removed the failed root and discarded unaccepted worker changes. G1 stopped, G2-G6 parked, and G7 research closed at `660601f0e` with `ADAPT_EXISTING_HANDOFF_ONLY`. Evidence-join sufficiency stays WATCH; no implementation successor exists. Rejected T2 paths remain archived; HRLTP-T2 paused.
 Post-G7 Local source intake and Jev P0 are closed at material commit `9ac0ee8e59fa041ddaa93d725796c509400f257a`. The audit records 32 READ plus 8,093 DEFERRED paths. Jev adds fail-closed decision-context binding, incomplete candidate-space escape, and `EVIDENCE_ONLY` judgment authority to the existing ASSF owner. Proof: TypeScript 84/84, Python 61/61, compile PASS, governance 90/90. G1-G7 remain closed.
@@ -123,7 +131,7 @@ The historic provider/live parked line applies to those stopped lanes; it does n
 Q001/Q004 actual-data source/writer,custody,retention/RPO/RTO/cost checkpoints are action-specific; do not require a user-supplied ledger copy for unrelated fresh isolated development.
 NCR send/B2 STOP and S05/C1 remain; IAB unavailable; repo Playwright Chromium present; vision/full P04/full release remain unproved. No autonomous P11/public/deploy activation.
 ## Core Guard Self-Protection Authorization
-Authorized guard-maintenance scope: exact6 draft closure authority/continuity,no checker/source edit.
+Authorized guard-maintenance scope: exact6 visible draft/export dispatch authority/continuity,no checker/source edit.
 Protected paths:
 - `AGENT_HANDOFF_V63_2026-09-18.md`
 - `CVF_SESSION_MEMORY.md`
@@ -131,25 +139,25 @@ Protected paths:
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-Operator authorization: standing Local review/repair/closure and quality/time collection.
-Rollback boundary: exact6; worker originals and previous18 rows retained.
+Operator authorization: explicit manual Sonnet worker assignment; Local orchestrator/reviewer owns release,2026-10-12.
+Rollback boundary: exact6; prior worker originals and19 reviewed observations retained.
 ## Agent Operation Trace Block
 | Field | Evidence |
 |---|---|
 | Actor | Local reviewer/closer/session-sync steward |
 | Provider or surface | private shared workspace |
-| Session or invocation | ncr-draft-recovery-closure-sync-20261012 |
+| Session or invocation | ncr-draft-export-dispatch-sync-20261012 |
 | Working directory | repo root |
-| Command or tool surface | canonical generator,exact6 closure sync and gates |
+| Command or tool surface | canonical generator,exact6 dispatch sync and gates |
 | Target paths | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Allowed scope source | standing Local closure; exact16 material a16ec40461f60b2007fd6a744a7b7be202f127a3 |
-| Before status evidence | a16ec40461f60b2007fd6a744a7b7be202f127a3; exact16 committed,91/91 precommit PASS; clean/staged empty |
-| After status evidence | exact6; current closed authority/useful selection aligned;19 reviewed tasks |
+| Allowed scope source | explicit manual dispatch; exact10 material ee79bb127b1fe68b85a73320d388d0eed34abad0 |
+| Before status evidence | ee79bb127b1fe68b85a73320d388d0eed34abad0; exact10 committed,91/91 precommit PASS; clean/staged empty |
+| After status evidence | exact6; manual worker proof authority aligned;19 reviewed observations unchanged |
 | Diff evidence | git diff --check; exact6 manifest |
 | Approval boundary | private continuity; no worker/provider/public/push |
-| Claim boundary | client technical slice; procedureFAIL/test waiver retained;whole job open |
+| Claim boundary | manual visible draft/export proof dispatch;worker not started;whole job open |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-draft-recovery-closure-sync-20261012 |
+| Invocation ID | ncr-draft-export-dispatch-sync-20261012 |
 | Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Manifest delta | MATCH |
