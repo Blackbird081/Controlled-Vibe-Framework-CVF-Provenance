@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_DRAFT_EXPORT_2026-10-12.md",
     "workOrderSha256": "b1e02c4df106d3f2e117e4b44d3de0cf79efae0cad08da63832f35a3289eacfb"
   },
-  "currentAuthoritySyncReason": "Release-correction reanchor 6c0b0d20922593283c067a638ea0a360e1a2372c; paired raw hashes bound; exact6 continuity rebind follows material.",
+  "currentAuthoritySyncReason": "Manual visible draft/export proof dispatch material 027ed5f61fe8c082d5bb7996788136c8af8c97fa; dedicated exact6 continuity,19 prior observations preserved.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",

@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Current NCR Continuation
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `ee79bb127b1fe68b85a73320d388d0eed34abad0`. Material SHA: `ee79bb127b1fe68b85a73320d388d0eed34abad0`. Batch ID: CVF-NCR-DRAFT-EXPORT-20261012. Exact10 dispatch material; exact3 test/proof/return worker, no push.
+Current HEAD recorded for this handoff: `027ed5f61fe8c082d5bb7996788136c8af8c97fa`. Material SHA: `027ed5f61fe8c082d5bb7996788136c8af8c97fa`. Batch ID: CVF-NCR-DRAFT-EXPORT-20261012. Exact6 release-correction material; exact3 test/proof/return worker, no push.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -22,8 +22,8 @@ Startup acknowledged: current mode=`cvf_ncr_draft_export_worker_execution`;hando
 
 ## Current Authority
 
-Baseline: `docs/baselines/CVF_GC018_NCR_DRAFT_EXPORT_2026-10-12.md`; SHA256 `3d528f8841d934d98a258c5d42e788e78749577795f2e98175261ba498802ae9`.
-Work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_DRAFT_EXPORT_2026-10-12.md`; SHA256 `993fcff356bcbf71f9b67db844d9e01135e87dbfe276f7e9386d1aa1ff3d24f3`; READY, final committed bound release required before manual start.
+Baseline: `docs/baselines/CVF_GC018_NCR_DRAFT_EXPORT_2026-10-12.md`; SHA256 `6264876e645fa76675ad54ec5145e0ba4464475e7c46b679bc2d2a93b1812c2e`.
+Work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_DRAFT_EXPORT_2026-10-12.md`; SHA256 `b1e02c4df106d3f2e117e4b44d3de0cf79efae0cad08da63832f35a3289eacfb`; READY, final committed bound release required before manual start.
 Source evidence: docs/reviews/evidence/ncr-draft-export-dispatch-20261012.json. Real Home/DynamicForm/SpecExport, fixed3 outputs/3 proof IDs,60min total; source/UI proof only. All production/old tests and collection read-only. Mandatory full baseline/order/scoped semantic/checker reads and final clocks; Local final review.19 observations unchanged; no source bug/full outcome proof claimed by dispatcher.
 
 ## O6 Release Rebind After Provenance Sync (2026-10-11)
@@ -105,7 +105,7 @@ Receiving agents clarify incomplete ideas according to the existing lifecycle st
 Consume returned evidence under MFRP P4-C1: EVALUATE_RETURNED_EVIDENCE_NOT_RECREATE_IMPLEMENTATION. A rerun needs a named contradiction/changed consumer,information gain and cost reason.
 Alibaba calls are authorized for meaningful scoped tests; no other provider call,Claude dispatch,public push,deployment or actual-data cutover is inferred.
 ## Next Allowed Move
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=WORKER_IMPLEMENTATION; BATCH_ID=CVF-NCR-DRAFT-EXPORT-20261012. Operator requests manually copied Sonnet worker; packet material ee79bb127b1fe68b85a73320d388d0eed34abad0. Existing Home/DynamicForm/SpecExport visible restored-draft -> current brief/revision/isolation proof; exact3 new test/proof/return paths, no production edits. Worker starts only after clean committed bound pre-dispatch and dry pre-implementation PASS; WORKER_MUST_NOT_COMMIT,one60min invocation,zero nested agents/provider/public effects. Mandatory full paired baseline/order and supplied semantic/checker reads before outputs; real UI controls,independent synthetic A/B,actual Blob/event/storage assertions; no fabricated source red. COMPLETE_PENDING_REVIEW only final fixed ledger/gates PASS,otherwise consolidated BLOCKED_WITH_REASON. Local reviewer owns independent disposition/closure; no automatic successor/push. Prior draft recovery CLOSED_PASS_BOUNDED at a16ec40461f60b2007fd6a744a7b7be202f127a3;procedureFAIL/test waiver retained.19 reviewed observations unchanged,cost deferred. Whole job/browser/backend/R3/R4 unproved;Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11/Customer Care application parked;LHW24.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_BOUNDED_WORKER; BATCH_ID=CVF-NCR-DRAFT-EXPORT-20261012. WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_DRAFT_EXPORT_2026-10-12.md; material 027ed5f61fe8c082d5bb7996788136c8af8c97fa; manual Sonnet worker. Existing Home/DynamicForm/SpecExport visible restored-draft -> current brief/revision/isolation proof; exact3 new test/proof/return paths, no production edits. Worker starts only after clean committed bound pre-dispatch and dry pre-implementation PASS; WORKER_MUST_NOT_COMMIT,one60min invocation,zero nested agents/provider/public effects. Full baseline/order and supplied source/checker reads before outputs; real UI,A/B,Blob/event/storage proof; no fabricated red. COMPLETE_PENDING_REVIEW only final fixed ledger/gates PASS,otherwise consolidated BLOCKED_WITH_REASON. Local review/closure; no successor/push. Prior draft recovery CLOSED_PASS_BOUNDED at a16ec40461f60b2007fd6a744a7b7be202f127a3;procedureFAIL/test waiver retained.19 reviewed observations unchanged,cost deferred. Whole job/browser/backend/R3/R4 unproved;Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11/Customer Care application parked;LHW24.
 ## Active Boundary
 T3B has a Local-verified active v1 specification. Party B is verified and T3C-C1 tooling accepted at `db78c87df`; T3C-C2 and Party C are verified. T3D-C1 tooling is accepted at `9ed844c2a` without source. T3D-C0-R1 closed at `2fffa1ef7`. T3D-C3 was accepted bounded at `88137e9a2`, but actual-mode prepare attempts failed before Party B/C execution; authorized cleanup removed the failed root and discarded unaccepted worker changes. G1 stopped, G2-G6 parked, and G7 research closed at `660601f0e` with `ADAPT_EXISTING_HANDOFF_ONLY`. Evidence-join sufficiency stays WATCH; no implementation successor exists. Rejected T2 paths remain archived; HRLTP-T2 paused.
 Post-G7 Local source intake and Jev P0 are closed at material commit `9ac0ee8e59fa041ddaa93d725796c509400f257a`. The audit records 32 READ plus 8,093 DEFERRED paths. Jev adds fail-closed decision-context binding, incomplete candidate-space escape, and `EVIDENCE_ONLY` judgment authority to the existing ASSF owner. Proof: TypeScript 84/84, Python 61/61, compile PASS, governance 90/90. G1-G7 remain closed.
@@ -150,8 +150,8 @@ Rollback boundary: exact6; prior worker originals and19 reviewed observations re
 | Working directory | repo root |
 | Command or tool surface | canonical generator,exact6 dispatch sync and gates |
 | Target paths | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Allowed scope source | explicit manual dispatch; exact10 material ee79bb127b1fe68b85a73320d388d0eed34abad0 |
-| Before status evidence | ee79bb127b1fe68b85a73320d388d0eed34abad0; exact10 committed,91/91 precommit PASS; clean/staged empty |
+| Allowed scope source | explicit manual Sonnet dispatch; exact6 release correction 027ed5f61fe8c082d5bb7996788136c8af8c97fa |
+| Before status evidence | 027ed5f61fe8c082d5bb7996788136c8af8c97fa; paired release correction committed,91/91 precommit PASS; clean/staged empty |
 | After status evidence | exact6; manual worker proof authority aligned;19 reviewed observations unchanged |
 | Diff evidence | git diff --check; exact6 manifest |
 | Approval boundary | private continuity; no worker/provider/public/push |
