@@ -5,7 +5,7 @@
   "decisionOwner": "LOCAL_REVIEWER",
   "purpose": "Longitudinal worker evidence for model selection by role and task family in a future multi-agent use case. No agent invocation or automatic routing.",
   "identityBasis": "MODEL_LABELS_OPERATOR_REPORTED_OR_WORKER_SELF_REPORTED_NOT_RUNTIME_VERIFIED",
-  "sourceHead": "1a1de1a28decf163ed64a84a496831f5f1d1989d",
+  "sourceHead": "5ee6af6bccff4cfa4b6cb382aa57e53ae35bebb9",
   "rows": [
     {
       "trancheId": "CVF-NCR-OFFLINE-PREVIEW-20261009",
@@ -1013,6 +1013,98 @@
         "native identity/effort/tokens/bill unavailable",
         "complete worker/gate/accepted delivery and review times unknown"
       ]
+    },
+    {
+      "trancheId": "CVF-NCR-DRAFT-EXPORT-20261012",
+      "taskFamily": "PRODUCT_UI_VISIBLE_DRAFT_EXPORT_COMPOSITION",
+      "implementationPaths": 1,
+      "deliveredPaths": 3,
+      "role": "INTERNAL_AGENT_WORKER",
+      "model": "Claude Sonnet (operator-requested5.5; native runtime unverified)",
+      "effort": "high",
+      "identityBasis": "OPERATOR_REQUESTED_MODEL_EFFORT_NOT_RUNTIME_VERIFIED",
+      "observedRuntimeIdentity": null,
+      "observedEffort": null,
+      "status": "CLOSED_PASS_BOUNDED",
+      "evidence": "docs/reviews/evidence/ncr-draft-export-local-20261012.json",
+      "evidenceSha256": "f362b6bcc7752734937110dd928b265c0c37824c4d29a9c5efb744ee0e73c9bf",
+      "technicalOutput": "ACCEPTED_BOUNDED_NO_PRODUCT_REPAIR",
+      "procedureDisposition": "FAIL",
+      "procedure": "Mandatory review-cost/closeability checker reads omitted; return/proof review-cost read reporting contradicts. Original full preparation not certified; technical evidence separately accepted.",
+      "firstReturnGateClean": false,
+      "workerTestAssertionSelfRepairGroups": 1,
+      "workerReturnGateFailedAttemptsReported": 1,
+      "workerReturnShapeManualRepairsReported": 1,
+      "workerReturnShapeRootGroups": null,
+      "reviewerRequestedWorkerRepairTurns": 0,
+      "reviewerProductCodeRepairs": 0,
+      "reviewerProductCodeRepairCountBasis": "No source or product defect identified in finite selected contract; distinct Local2/2 PASS, no production edits.",
+      "reviewerProductDefectSeverity": "NONE_IDENTIFIED_IN_BOUNDED_SCOPE",
+      "orchestratorPacketAmbiguities": 1,
+      "clock": {
+        "workerReportedUtc": {
+          "start": "2026-10-12T04:45:44.4615061Z",
+          "preImplementationGateStart": "2026-10-12T04:45:55.1176369Z",
+          "scaffoldStart": "2026-10-12T04:47:20.2961958Z",
+          "firstTestRunStart": "2026-10-12T04:50:20.5397752Z",
+          "finalTestRunStart": "2026-10-12T04:51:42.2371650Z",
+          "finalTestRunEnd": "2026-10-12T04:52:00.8924712Z",
+          "typecheckStart": "2026-10-12T04:52:07.3599521Z",
+          "typecheckEnd": "2026-10-12T04:53:53.1383769Z",
+          "lintEnd": "2026-10-12T04:56:04.8683422Z",
+          "firstFastGateStart": "2026-10-12T05:00:06.8455382Z",
+          "finalGateStart": "2026-10-12T05:01:25.2883744Z",
+          "finalGateEnd": "2026-10-12T05:01:31.9813753Z",
+          "acceptanceLedgerCheckStart": "2026-10-12T05:01:39.6017536Z",
+          "terminal": "2026-10-12T05:01:58.8786273Z",
+          "totalMinutesStartToTerminal": 16.2,
+          "budgetMinutes": 60
+        },
+        "fullAcceptedDeliveryMinutes": null,
+        "limit": "Recorded16.2min terminal before later confirmation gate3; not complete accepted-delivery clock."
+      },
+      "elapsed": {
+        "minutes": 16.2,
+        "basis": "WORKER_REPORTED_START_TO_RECORDED_TERMINAL_BEFORE_LATER_CONFIRMATION",
+        "fullDeliveryMinutes": null
+      },
+      "bill": {
+        "amount": null,
+        "tokens": null,
+        "reason": "NATIVE_USAGE_UNEXPOSED_COST_DEFERRED"
+      },
+      "proof": "Worker10/10 final focused log hash verified, type/lint reported0; bound intake PASS, Local distinct2/2 PASS.",
+      "qualityInterpretation": "Useful test-only UI proof, no Local product repair; mandatory checker omission procedureFAIL. View/form audience ambiguity is dispatcher wording, resolved against source. No model superiority.",
+      "contextConfound": "Operator-managed continuous Claude context/model switch, unpaired useful tasks; not independent matched benchmark.",
+      "qualityAttribution": {
+        "workerTestSelfRepairGroups": 1,
+        "workerReturnFailedGateAttempts": 1,
+        "workerShapeRepairCountBasis": "One consolidated worker shape-repair round after initial gate; not one root per checker failure.",
+        "mandatoryReadOmissionGroups": 1,
+        "mandatoryReadOmissions": [
+          "review-cost checker",
+          "gate-closeability checker"
+        ],
+        "orchestratorPacketAmbiguities": 1,
+        "workerProductRepairGroupsAtHandoff": 0,
+        "localProductRepairGroups": 0,
+        "runtimeIdentityBasis": "Session self-reported model string retained in original proof; native Local verification unavailable.",
+        "localClosurePreparation": {
+          "firstGateResult": "FAIL_LOCAL_METADATA_ONLY",
+          "logSha256": "bdd0285eef92ffe9a027a7f805ff2e5abacd0fbf299fe191a426ab952078ed1c",
+          "findings": "Local replaced dispatch probe plan and omitted plan scalar fields; work-order closure lacked receipt assertion heading; roadmap index closed literal triggered closure table requirement. Consolidated metadata correction; no worker/source repair.",
+          "attribution": "LOCAL_REVIEWER_METADATA_ERROR"
+        }
+      },
+      "limitations": [
+        "documentation template only",
+        "no app_builder_complete/wizard/full mode",
+        "jsdom not actual browser/Next routing",
+        "no production mutation detection-power claim",
+        "no provider/live/runtime governance/whole NCR closure",
+        "native model/effort/token/bill unavailable",
+        "full accepted-delivery and reviewer clocks unavailable"
+      ]
     }
   ],
   "rubric": [
@@ -1128,9 +1220,9 @@
   "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
   "laneProtection": "Reviewer-owned governed evidence promotion authorized by operator longitudinal tracking request. No worker file edit, new dispatch, provider effect or public export.",
   "observations": {
-    "technical": "19 reviewed tasks10 Haiku-family/5 Sonnet/4 Luna; prior18 rows preserved.",
-    "process": "Draft recovery technically accepted after1 Local root/2 symptoms; mandatory baseline/checker omission remains procedureFAIL; known original test waiver explicit,18.05min to last test only.",
-    "reportStatus": "NINETEEN_REVIEWED_TASK_OBSERVATIONS_NO_COMPARATIVE_WINNER",
+    "technical": "20 reviewed tasks10 Haiku-family/6 Sonnet/4 Luna; previous19 semantically preserved. Latest documentation/jsdom export composition proof accepted without product repair.",
+    "process": "Latest mandatory checker-read omissions/reporting contradiction procedureFAIL; one dispatcher audience wording ambiguity resolved locally;16.2min partial accepted interval, no native usage or ranking.",
+    "reportStatus": "TWENTY_REVIEWED_TASK_OBSERVATIONS_NO_COMPARATIVE_WINNER",
     "measuredBillComparison": null,
     "nextControl": "Continue evidence collection on admitted work; Expense/S5 and effects parked; no automatic router or new benchmark task."
   },
@@ -1302,11 +1394,11 @@
     "omissionOwner": "LOCAL_ORCHESTRATOR",
     "OpusSameSessionAdvisoryExtraWorkers": 0,
     "latestReviewedTask": {
-      "trancheId": "CVF-NCR-DRAFT-RECOVERY-20261012",
-      "localReview": "docs/reviews/CVF_NCR_DRAFT_RECOVERY_COMPLETION_2026-10-12.md",
-      "evidence": "docs/reviews/evidence/ncr-draft-recovery-local-20261012.json",
-      "evidenceSha256": "4dfa158b1126e69b311114178d1b1890b62f7a1c8b2e561af0289bb1af12f9b5",
-      "previousEighteenRowsPreserved": true
+      "trancheId": "CVF-NCR-DRAFT-EXPORT-20261012",
+      "localReview": "docs/reviews/CVF_NCR_DRAFT_EXPORT_COMPLETION_2026-10-12.md",
+      "evidence": "docs/reviews/evidence/ncr-draft-export-local-20261012.json",
+      "evidenceSha256": "f362b6bcc7752734937110dd928b265c0c37824c4d29a9c5efb744ee0e73c9bf",
+      "previousNineteenRowsPreserved": true
     }
   },
   "operatorObservationFocus": {

@@ -37,11 +37,11 @@
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_NCR_DRAFT_EXPORT_2026-10-12.md",
-    "baselineSha256": "6264876e645fa76675ad54ec5145e0ba4464475e7c46b679bc2d2a93b1812c2e",
+    "baselineSha256": "0fb7f3f43fd8438cda52a7217f678e3dd422e89cb32a1a618741f0ca8cf71e16",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_DRAFT_EXPORT_2026-10-12.md",
-    "workOrderSha256": "b1e02c4df106d3f2e117e4b44d3de0cf79efae0cad08da63832f35a3289eacfb"
+    "workOrderSha256": "cc53f964f6c27a7efa8a3aa4ce4f54ce72516f8060877b1e5852a23f3658fbb4"
   },
-  "currentAuthoritySyncReason": "Manual visible draft/export proof dispatch material 027ed5f61fe8c082d5bb7996788136c8af8c97fa; dedicated exact6 continuity,19 prior observations preserved.",
+  "currentAuthoritySyncReason": "Local draft-export bounded technical closure; procedureFAIL retained, raw worker originals/source pins unchanged;20 reviewed tasks, no product repair. Dedicated actual-material SHA continuity follows.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",

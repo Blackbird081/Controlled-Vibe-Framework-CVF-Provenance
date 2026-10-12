@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 docType: work_order
-Status: READY
+Status: CLOSED_PASS_BOUNDED
 Date: 2026-10-12
 Batch ID: CVF-NCR-DRAFT-EXPORT-20261012
 Dispatch base head: 6c0b0d20922593283c067a638ea0a360e1a2372c
@@ -245,23 +245,23 @@ Claim Update: offline proof task admitted; composed outcome pending worker and d
 
 | Field | Evidence |
 |---|---|
-| Actor | Local orchestrator/dispatcher |
+| Actor | Local INTERNAL_AGENT reviewer/closer |
 | Provider or surface | private Codex IDE shared workspace |
-| Session or invocation | ncr-draft-export-dispatch-20261012 |
-| Working directory | repository root |
-| Command or tool surface | targeted reads, actual scaffold/ADIF, source pins, packet/gates/commits |
-| Target paths | `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_DRAFT_EXPORT_2026-10-12.md`; `docs/baselines/CVF_GC018_NCR_DRAFT_EXPORT_2026-10-12.md`; `docs/reviews/evidence/ncr-draft-export-dispatch-20261012.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Allowed scope source | explicit operator manual Sonnet worker assignment plus prior local selection |
-| Before status evidence | 6c0b0d20922593283c067a638ea0a360e1a2372c; initial material and continuity clean; release FAIL retained in bound-release.log; source pins remain at original inspection commit |
-| After status evidence | exact6 release correction then exact6 continuity rebind; worker not started |
+| Session or invocation | ncr-draft-export-local-review-20261012 |
+| Working directory | repo root and installed Web package |
+| Command or tool surface | targeted reads, original pins/log validation, intake gate, distinct2-case Local probe, actual scaffold, closure/gates |
+| Target paths | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/draft-export.test.tsx`; `docs/reviews/evidence/ncr-draft-export-worker-20261012.json`; `docs/reviews/CVF_NCR_DRAFT_EXPORT_WORKER_RETURN_2026-10-12.md`; `docs/reviews/CVF_NCR_DRAFT_EXPORT_COMPLETION_2026-10-12.md`; `docs/reviews/evidence/ncr-draft-export-local-20261012.json`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_DRAFT_EXPORT_2026-10-12.md`; `docs/baselines/CVF_GC018_NCR_DRAFT_EXPORT_2026-10-12.md`; `docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json`; `docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md`; `docs/roadmaps/README.md`; `.gitattributes`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Allowed scope source | standing returned-worker Local review/closure and current order |
+| Before status evidence | HEAD 5ee6af6bccff4cfa4b6cb382aa57e53ae35bebb9; three worker untracked paths, staged empty |
+| After status evidence | exact14 reviewed material then dedicated exact6 continuity |
 | Diff evidence | git diff --check and exact manifests |
-| Approval boundary | manual shared-workspace worker, no provider/live/public effects |
-| Claim boundary | dispatch and declared source gap only; runtime proof pending |
+| Approval boundary | no worker redispatch, provider, public or push |
+| Claim boundary | documentation/jsdom only; procedureFAIL retained |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-draft-export-dispatch-20261012 |
-| Expected manifest | `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_DRAFT_EXPORT_2026-10-12.md`; `docs/baselines/CVF_GC018_NCR_DRAFT_EXPORT_2026-10-12.md`; `docs/reviews/evidence/ncr-draft-export-dispatch-20261012.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Actual changed set | `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_DRAFT_EXPORT_2026-10-12.md`; `docs/baselines/CVF_GC018_NCR_DRAFT_EXPORT_2026-10-12.md`; `docs/reviews/evidence/ncr-draft-export-dispatch-20261012.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Manifest delta | MATCH required before commit |
+| Invocation ID | ncr-draft-export-local-review-20261012 |
+| Expected manifest | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/draft-export.test.tsx`; `docs/reviews/evidence/ncr-draft-export-worker-20261012.json`; `docs/reviews/CVF_NCR_DRAFT_EXPORT_WORKER_RETURN_2026-10-12.md`; `docs/reviews/CVF_NCR_DRAFT_EXPORT_COMPLETION_2026-10-12.md`; `docs/reviews/evidence/ncr-draft-export-local-20261012.json`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_DRAFT_EXPORT_2026-10-12.md`; `docs/baselines/CVF_GC018_NCR_DRAFT_EXPORT_2026-10-12.md`; `docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json`; `docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md`; `docs/roadmaps/README.md`; `.gitattributes`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Actual changed set | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/draft-export.test.tsx`; `docs/reviews/evidence/ncr-draft-export-worker-20261012.json`; `docs/reviews/CVF_NCR_DRAFT_EXPORT_WORKER_RETURN_2026-10-12.md`; `docs/reviews/CVF_NCR_DRAFT_EXPORT_COMPLETION_2026-10-12.md`; `docs/reviews/evidence/ncr-draft-export-local-20261012.json`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_DRAFT_EXPORT_2026-10-12.md`; `docs/baselines/CVF_GC018_NCR_DRAFT_EXPORT_2026-10-12.md`; `docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json`; `docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md`; `docs/roadmaps/README.md`; `.gitattributes`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |
 
 ## Public Export Disposition
@@ -353,13 +353,26 @@ Run before long prose, not by manual skeleton recreation. Generated full-profile
 independentProbeRequired: YES
 independentProbeRiskClass: SELECTED_VISIBLE_DRAFT_EXPORT_REVISION_ISOLATION
 independentProbeDispositionAtDispatch: PLANNED_FOR_LOCAL_REVIEW
-probeExecutorRole: LOCAL_REVIEWER_NOT_IMPLEMENTATION_WORKER
 implementationOracleSeparation: separately authored Local challenge, no worker-test imports.
 positiveControl: current recovered source exported through actual mounted controls.
 negativeMutationClasses: stale confirmed artifact after edit; A -> B -> A revalidation bypass; saved-job input leak; mismatched Blob/event text.
 expectedInformationGain: actual UI source/revision and isolation beyond test count.
 rerunCostReason: one bounded distinct challenge; consume returned proof, no broad repetition.
+
+independentProbeDisposition: PASS_INDEPENDENT_PROBE
+probeExecutorRole: LOCAL_REVIEWER_NOT_IMPLEMENTATION_WORKER
+probeExecutorActor: LOCAL_REVIEWER_CODEX_ROOT
+implementationWorkerActor: INTERNAL_WORKER_REQUESTED_SONNET
+workerInvocationId: ncr-draft-export-worker-20261012
 reviewerDecisionOwner: LOCAL
+probeInvocationId: ncr-draft-export-local-review-20261012
+workerOracleSha256: b0a44068b344def1ca15361db6ee0152db3d721abe5da330300cbc1218c46950
+probeOracleSha256: f362b6bcc7752734937110dd928b265c0c37824c4d29a9c5efb744ee0e73c9bf
+workerEvidenceRef: docs/reviews/evidence/ncr-draft-export-worker-20261012.json
+probeEvidenceRef: docs/reviews/evidence/ncr-draft-export-local-20261012.json
+probeCommandOrMethod: node node_modules/vitest/vitest.mjs run 'src/app/(dashboard)/home/local-draft-export-probe.test.tsx'
+probeObservedResult: PASS 2/2
+oracleSeparationBasis: Local authored actual Home/Form/SpecExport/store fixture with unrelated ambientB; no worker import/helper. ResultViewer retry leaf and unused ProcessingScreen stub disclosed; Blob/preview/copy/handoff and persistent state equality. Source/log embedded in Local JSON; temporary source removed.
 
 ## Required Artifact Manifest
 
@@ -518,7 +531,7 @@ NOT_APPLICABLE_WITH_REASON: all production owner entrypoints remain read-only; n
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: Local dispatch currentAuthority/source regeneration then exact6 dedicated continuity. Worker cannot edit protected paths.
+Authorized guard-maintenance scope: exact14 reviewed material and subsequent exact6 continuity; no checker/hook/guard changes.
 Protected paths:
 - `AGENT_HANDOFF_V63_2026-09-18.md`
 - `CVF_SESSION_MEMORY.md`
@@ -526,22 +539,64 @@ Protected paths:
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-
-Operator authorization: explicit continue/assign manual Sonnet worker,2026-10-12.
-Rollback boundary: exact dispatch material and subsequent continuity; accepted prior worker bytes/closures and19 observations preserved. No checker/hook/guard change.
+Operator authorization: standing roadmap/manual-worker Local review/closure and returned-worker Local decision,2026-10-12; no push.
+Rollback boundary: exact14 material and dedicated exact6 continuity; three raw worker artifacts and previous19 collection rows preserved.
 
 ## Mixed Protected-Path Atomicity Authorization
 
 Disposition: AUTHORIZED_EXACT_MANIFEST
-Atomicity reason: paired baseline/order release reanchor and worker gate command, source evidence and raw authority projections repair orchestrator release; dedicated continuity binds new material SHA.
-Rollback boundary: exact6 release correction; prior material/continuity and all failures retained.
+Atomicity reason: reviewed test/evidence, closure/order/baseline disposition, collection/index and raw authority projections close together; dedicated continuity binds actual material SHA.
+Rollback boundary: exact14 below, no production edit.
 Exact changed manifest:
 
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/draft-export.test.tsx`
+- `docs/reviews/evidence/ncr-draft-export-worker-20261012.json`
+- `docs/reviews/CVF_NCR_DRAFT_EXPORT_WORKER_RETURN_2026-10-12.md`
+- `docs/reviews/CVF_NCR_DRAFT_EXPORT_COMPLETION_2026-10-12.md`
+- `docs/reviews/evidence/ncr-draft-export-local-20261012.json`
 - `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_DRAFT_EXPORT_2026-10-12.md`
 - `docs/baselines/CVF_GC018_NCR_DRAFT_EXPORT_2026-10-12.md`
-- `docs/reviews/evidence/ncr-draft-export-dispatch-20261012.json`
+- `docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json`
+- `docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md`
+- `docs/roadmaps/README.md`
+- `.gitattributes`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 
-Expected Artifact Existence: all six paths already tracked; worker outputs remain absent.
+Expected Artifact Existence: worker outputs submitted; Local proof/completion authored before commit; other named paths tracked.
+
+
+## Local Closure Disposition - 2026-10-12
+
+Technical CLOSED_PASS_BOUNDED, no production repair. Original worker contract and acceptance ledger unchanged. Audience-only means VI/EN view; guidance mode preserves idea confirmation but needs regenerated brief; editing form audience is a source revision and invalidates confirmation. Required checker-read omissions/reporting contradiction remain procedureFAIL. Raw released baseline/order identity remains available at executionBaseHead 5ee6af6bccff4cfa4b6cb382aa57e53ae35bebb9 and worker original proof. Native metadata and accepted-delivery clock limits retained. See `docs/reviews/CVF_NCR_DRAFT_EXPORT_COMPLETION_2026-10-12.md` / `docs/reviews/evidence/ncr-draft-export-local-20261012.json`; documentation/jsdom only; no successor.
+
+## Finding-To-Governance Learning Disposition
+
+| Finding | Defect class | Learning lane | Disposition | Next action |
+|---|---|---|---|---|
+| audience-only wording did not identify control | ORCHESTRATOR_PACKET_GAP | GOVERNANCE_CONTROL_PLANE | RULE_EXISTS | Next action: Local resolves view vs source edit using existing source/lifecycle; retain clarification, no new checker |
+| mandatory return checker read omissions | WORKER_EXECUTION_ERROR | DOCUMENTATION_ONLY_LEARNING | RULE_EXISTS | Next action: retain procedureFAIL and reporting contradiction in existing collection; no retroactive read certification |
+
+Runtime/provider/cost learning: N/A_WITH_REASON - UI proof only, economics deferred. Initial worker harness and gate failures remain raw evidence; no extra task samples or inferred source defect.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_DRAFT_EXPORT_2026-10-12.md` | CLOSED_PASS_BOUNDED technical; procedureFAIL retained | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_NCR_DRAFT_EXPORT_COMPLETION_2026-10-12.md` | worker10/10 consumed; independent2/2; no product repair | PASS |
+| Roadmap state | `docs/roadmaps/README.md` | finite documentation/jsdom draft-export proof accepted; whole job remains open | PASS |
+| Registry JSON | `docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json` |20 reviewed tasks10 Haiku-family/6 Sonnet/4 Luna; previous19 retained | PASS |
+| Registry Markdown | `docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md` | current20; historical counts retained | PASS |
+| External evidence digest | `docs/reviews/evidence/ncr-draft-export-local-20261012.json` | sha256:f362b6bcc7752734937110dd928b265c0c37824c4d29a9c5efb744ee0e73c9bf; internal Local proof/log validation, no external intake | PASS |
+| System loop interlock | parked checkpoints | no automatic successor or new loop | N/A with reason: bounded proof-only maintenance |
+| Session continuity | six current continuity surfaces | raw authority projections then dedicated real-material SHA sync | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Requirement | Actual assertion/evidence | Disposition |
+|---|---|---|
+| REQ-COMPOSE | actual recovered/edit/confirm UI, preview/copy/Blob/event/storage equality; independent current A/ambientB control | ACCEPTED_BOUNDED |
+| REQ-REVISION | edits/A-B-A invalidate, view retains, mode regeneration, fresh form excludes saved A/B | ACCEPTED_BOUNDED |
+| REQ-RETURN | exact three raw outputs, source/log pins, intake gate and distinct Local proof; required checker reads omitted | ACCEPTED_BOUNDED_EVIDENCE; PROCEDURE_FAIL; original full mandatory preparation not accepted |

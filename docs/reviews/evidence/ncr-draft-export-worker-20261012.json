@@ -1,0 +1,246 @@
+{
+  "schemaVersion": "cvf.ncrDraftExportWorkerProof@1",
+  "batchId": "CVF-NCR-DRAFT-EXPORT-20261012",
+  "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_DRAFT_EXPORT_2026-10-12.md",
+  "executionBaseHead": "5ee6af6bccff4cfa4b6cb382aa57e53ae35bebb9",
+  "textEncodingException": "Text Encoding Exception: localized Vietnamese UI labels, option values and sentinels are verbatim product strings; all other authored text is ASCII.",
+  "claimBoundary": "Synthetic offline UI/source-binding proof only. No policy correctness, live provider, receiving-agent execution, real browser/Next routing, backend abort, durable restart, AI governance or whole-NCR claim. Event emission is the terminal boundary.",
+  "identity": {
+    "requestedConfiguration": "Sonnet 5.5 High (configuration metadata, not a trust anchor)",
+    "observedModel": "claude-sonnet-5-5 (as stated by the session system prompt; not independently verifiable by the worker)",
+    "observedEffort": null,
+    "observedEffortReason": "effort level is not exposed to the worker inside the session",
+    "tokens": null,
+    "tokensReason": "no usage meter is visible to the worker",
+    "bill": null,
+    "billReason": "no billing surface is visible to the worker"
+  },
+  "clocksUtc": {
+    "start": "2026-10-12T04:45:44.4615061Z",
+    "preImplementationGateStart": "2026-10-12T04:45:55.1176369Z",
+    "scaffoldStart": "2026-10-12T04:47:20.2961958Z",
+    "firstTestRunStart": "2026-10-12T04:50:20.5397752Z",
+    "finalTestRunStart": "2026-10-12T04:51:42.2371650Z",
+    "finalTestRunEnd": "2026-10-12T04:52:00.8924712Z",
+    "typecheckStart": "2026-10-12T04:52:07.3599521Z",
+    "typecheckEnd": "2026-10-12T04:53:53.1383769Z",
+    "lintEnd": "2026-10-12T04:56:04.8683422Z",
+    "firstFastGateStart": "2026-10-12T05:00:06.8455382Z",
+    "finalGateStart": "2026-10-12T05:01:25.2883744Z",
+    "finalGateEnd": "2026-10-12T05:01:31.9813753Z",
+    "acceptanceLedgerCheckStart": "2026-10-12T05:01:39.6017536Z",
+    "terminal": "2026-10-12T05:01:58.8786273Z",
+    "totalMinutesStartToTerminal": 16.2,
+    "budgetMinutes": 60
+  },
+  "startupAndPins": {
+    "headAtStart": "5ee6af6bccff4cfa4b6cb382aa57e53ae35bebb9",
+    "statusAtStart": "clean; staged empty; three worker outputs absent",
+    "authorityPins": {
+      "baselineSha256": "6264876e645fa76675ad54ec5145e0ba4464475e7c46b679bc2d2a93b1812c2e",
+      "workOrderSha256": "b1e02c4df106d3f2e117e4b44d3de0cf79efae0cad08da63832f35a3289eacfb",
+      "matchesBootstrapCurrentAuthority": true
+    },
+    "sourcePinsRawEqualsHeadBlobEqualsWorkOrder": true,
+    "sourcePinCount": 9,
+    "preImplementationGate": {
+      "command": "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_DRAFT_EXPORT_2026-10-12.md",
+      "exitCode": 0,
+      "result": "COMPLIANT: pre-implementation autorun gate passed in 10.98s",
+      "log": ".cvf/runtime/ncr-draft-export-worker-20261012/pre-implementation.log",
+      "logSha256": "bd24f0bd58ddc5a321fbfba2cf79918f90a7238a39a98d018fd7062729ab3bb3",
+      "ranBeforeAnyOutputWasCreated": true
+    },
+    "scaffold": {
+      "command": "python governance/compat/run_worker_return_scaffold.py --write docs/reviews/CVF_NCR_DRAFT_EXPORT_WORKER_RETURN_2026-10-12.md --check-shape --max-lines 450 --max-bytes 64000",
+      "exitCode": 0,
+      "receipt": "PREPARATION_SHAPE_PRESENT: pending fields are not worker evidence or gate acceptance",
+      "ranBeforeLongProse": true
+    }
+  },
+  "readScopes": {
+    "fullyRead": [
+      "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_DRAFT_EXPORT_2026-10-12.md",
+      "docs/baselines/CVF_GC018_NCR_DRAFT_EXPORT_2026-10-12.md",
+      "docs/reviews/evidence/ncr-draft-export-dispatch-20261012.json",
+      "CVF_SESSION_MEMORY.md",
+      "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json",
+      "web: src/app/(dashboard)/home/page.tsx",
+      "web: src/components/DynamicForm.tsx",
+      "web: src/components/SpecExport.tsx",
+      "web: src/components/SpecExport.test.tsx",
+      "web: src/app/(dashboard)/home/draft-recovery.test.tsx",
+      "web: src/lib/store.ts",
+      "web: src/lib/spec-export-english-working-brief.ts",
+      "web: src/test/setup.ts",
+      "web: vitest.config.ts",
+      "web: src/components/IntentSpecReview.tsx",
+      "governance/compat/check_work_order_acceptance_ledger.py"
+    ],
+    "partiallyRead": [
+      "AGENT_HANDOFF_V63_2026-09-18.md (first 70 of a 32707-byte file)",
+      "web: src/lib/intent-spec-review.ts (lines 1-165: types, create/synchronize/update/acknowledge)",
+      "web: src/lib/templates/content.ts (lines 1-90: documentation template)",
+      "web: src/components/UserContext.tsx (lines 1-70)",
+      "web: src/lib/enforcement-log.ts (lines 1-45)",
+      "web: src/lib/enforcement.ts (about 40 lines of evaluateEnforcement)",
+      "governance/compat/check_worker_return_quality_gate.py (lines 56-190 and 281-485 constants and diagnose)",
+      "governance/compat/check_agent_operation_trace.py (lines 1-260 constants, trace block extraction)",
+      "governance/compat/run_worker_return_fast_gate.py (lines 1-120)"
+    ],
+    "notRead": [
+      "governance/compat/check_review_cost_control.py",
+      "governance/compat/check_gate_to_role_closeability.py",
+      "src/lib/intent-spec-open-items.ts and the IntentSpecConfirmation component bodies",
+      "the production bodies of ProcessingScreen, WorkflowVisualizer, SpecExportQuickLinks, spec-gate, governance-context"
+    ],
+    "completeReadClaim": false
+  },
+  "stubsAndEnvironment": {
+    "stubbedLeaves": [
+      "ResultViewer (exposes only the real Retry and Reject callbacks)",
+      "HomeBrowseExperience (one pick-documentation control)",
+      "TemplatePreviewModal, OnboardingTour and the nine wizard components (render null)",
+      "@/components/Settings useSettings (defaultExportMode governance, no providers)",
+      "@/lib/analytics trackEvent",
+      "@/lib/skill-template-map getSkillForTemplate (null)",
+      "@/lib/hooks/useExecute useProviders (no providers)",
+      "@/lib/i18n useLanguage (language en)",
+      "next/navigation useSearchParams/useRouter",
+      "URL.createObjectURL / URL.revokeObjectURL (jsdom has none; blobs captured)",
+      "HTMLAnchorElement.prototype.click (download name captured, no navigation)",
+      "navigator.clipboard.writeText (vi.fn recording)",
+      "globalThis.fetch spy that records /api/execute and never resolves"
+    ],
+    "notStubbed": ["Home page", "DynamicForm", "ProcessingScreen", "SpecExport", "buildVietnameseIdeaBrief / buildIntakeWorkingBrief", "useExecutionStore with zustand persist and localStorage", "the cvf:openAgent window event", "evaluateEnforcement, governance-context, spec-gate"],
+    "providerDenialSetup": "src/test/setup.ts unchanged and enabled; the guarded fetch captured before any spy rejects https://api.openai.com with CVF_PROVIDER_EXECUTION_DENIED (test 'keeps the shared setup guard denying a provider destination')",
+    "environment": {"os": "Windows 11 (win32)", "node": "v22.17.0", "vitest": "v4.1.8", "domEnvironment": "jsdom", "browser": "none (no real browser or Next routing)"}
+  },
+  "commands": [
+    {"id": "preImplementation", "exitCode": 0, "result": "PASS"},
+    {"id": "scaffold", "exitCode": 0, "result": "PASS (shape present)"},
+    {"id": "firstFocusedTest", "command": "node node_modules/vitest/vitest.mjs run 'src/app/(dashboard)/home/draft-export.test.tsx'", "exitCode": 1, "result": "FAIL 1 of 10: harness defect in the new test (the guidance control is a <summary>, queried as a button)", "log": ".cvf/runtime/ncr-draft-export-worker-20261012/test-run1.log", "logSha256": "8a25770a5cb85736d71e099bebd7020357bb9a9d2a11a8fc8e8f8dd9f452148c", "firstMeaningfulFailure": "TestingLibraryElementError: Unable to find an accessible element with the role \"button\" and name \"Hướng dẫn kèm theo cho agent\" in test 'retains a valid confirmation across view and guidance-audience switches'", "classification": "HARNESS_DEFECT_IN_NEW_TEST_NOT_SOURCE_FAILURE", "repair": "fireEvent.click(screen.getByText(...)) on the summary, as the existing SpecExport.test.tsx does"},
+    {"id": "finalFocusedTest", "command": "node node_modules/vitest/vitest.mjs run 'src/app/(dashboard)/home/draft-export.test.tsx' --reporter=verbose", "exitCode": 0, "result": "PASS 10 of 10", "log": ".cvf/runtime/ncr-draft-export-worker-20261012/test-run2.log", "logSha256": "f7aa2ae4e565dfa3fe402e38a73d41477050f1de6835ebb6ad3f9d3abe63d854"},
+    {"id": "typecheck", "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false", "exitCode": 0, "result": "PASS, no output"},
+    {"id": "lintNewTest", "command": "node node_modules/eslint/bin/eslint.js 'src/app/(dashboard)/home/draft-export.test.tsx'", "exitCode": 0, "result": "PASS, no output"}
+  ],
+  "testFile": {
+    "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/draft-export.test.tsx",
+    "lines": 410,
+    "bytes": 22865,
+    "sha256AtFinalTestRun": "a1fccf902fc3c91442b7f70beebff6c860693feb3ffb38f0fab546feaba407de",
+    "lineBudget": 600,
+    "unchangedSinceFinalTestRun": true
+  },
+  "fixtures": {
+    "savedA": {"id": "exec_saved_A", "inputSentinels": ["ALPHA-SUBJECT-7141", "ALPHA-NOTES-7142", "ALPHA-GOAL-7143", "Quản lý / approver", "ALPHA-KEEP-7144"], "outputSentinel": "OUTPUT_A_SENTINEL"},
+    "savedB": {"id": "exec_saved_B", "inputSentinels": ["BRAVO-SUBJECT-9201", "BRAVO-NOTES-9202", "BRAVO-GOAL-9203", "Khách hàng / end user", "BRAVO-KEEP-9204"], "outputSentinel": "OUTPUT_B_SENTINEL"},
+    "editSentinels": ["EDITED-SUBJECT-3300", "EDITED-KEEP-3301", "EDITED-NOTES-3302"],
+    "revisionStateSentinel": "INTERIM-EDIT-5521 (a distinct value, never the saved-job B sentinel, used as the A -> B -> A middle state)",
+    "freshSentinel": "FRESH-SUBJECT-6600",
+    "seeding": "A and B written to localStorage key cvf-executions-storage and loaded through useExecutionStore.persist.rehydrate()"
+  },
+  "REQ-COMPOSE": {
+    "proofId": "PROOF-REQ-COMPOSE",
+    "status": "PASS",
+    "artifacts": ["EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/draft-export.test.tsx", "docs/reviews/evidence/ncr-draft-export-worker-20261012.json"],
+    "assertions": [
+      {
+        "name": "exports the edited and untouched recovered values and nothing from unrelated saved job B",
+        "route": "persisted A+B -> Home ?result=exec_saved_A -> real Retry -> real DynamicForm draft -> edit subject (required) and mustPreserve (advanced) -> visible 'Create Agent Spec' -> Vietnamese idea region -> 'Xác nhận ý tưởng và xuất cho agent' -> full Blob text",
+        "expected": "restored form holds all five A values; idea region and Blob contain EDITED-SUBJECT-3300, EDITED-KEEP-3301 and the untouched notes/goal/audience; neither contains BRAVO-, the replaced A subject or the replaced A mustPreserve; Blob has '# English Working Brief', 'Idea revision: 1', 'Execution authority: NONE inferred'; download name cvf-intake-documentation-idea-r1-governance.md",
+        "observed": "all assertions held; saved A and B serialized in memory and in persisted storage byte-identical before and after; two executions; zero fetch requests",
+        "result": "PASS"
+      },
+      {
+        "name": "recovers through a real local stop (Cancel) and exports that draft without B",
+        "route": "real form + real ProcessingScreen submit -> real Cancel -> restored draft with stop notice -> edit readerGoal -> visible export -> Blob",
+        "expected": "stopped attempt persisted as failed; B unchanged; Blob holds the untouched A values and EDITED-NOTES-3302 only; exactly one /api/execute request (the fresh submit) and none from export",
+        "observed": "all assertions held",
+        "result": "PASS"
+      },
+      {
+        "name": "recovers through Reject, changing only the review result of A, then exports the draft",
+        "route": "?result=exec_saved_A -> real Reject -> restored draft -> visible export",
+        "expected": "A differs from its seed only by result rejected; Blob contains all five A values and no BRAVO-",
+        "observed": "all assertions held; zero fetch requests",
+        "result": "PASS"
+      }
+    ]
+  },
+  "REQ-REVISION": {
+    "proofId": "PROOF-REQ-REVISION",
+    "status": "PASS",
+    "artifacts": ["EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/draft-export.test.tsx", "docs/reviews/evidence/ncr-draft-export-worker-20261012.json"],
+    "assertions": [
+      {
+        "name": "keeps preview, clipboard, Blob download and the cvf:openAgent prompt identical and executes nothing",
+        "expected": "English preview <pre> text, clipboard argument, event detail.prompt and the downloaded Blob text are the same string; exactly one event; the panel closes after the handoff; a reopened panel is revision 1 and unconfirmed with send and copy disabled; no fetch; A and B unchanged",
+        "observed": "all assertions held (event emission is the terminal boundary)",
+        "result": "PASS"
+      },
+      {
+        "name": "invalidates the old confirmation on an idea edit and exports the updated brief after reconfirmation",
+        "expected": "after editing currentNotes the status shows revision 2 and 'Chưa xác nhận ý tưởng', send and copy disabled, no stale English artifact shown; reconfirmed Blob differs from the first, says 'Idea revision: 2', holds EDITED-NOTES-3302 and not the old notes; file name ...-r2-governance.md; preview, clipboard and event equal the new Blob",
+        "observed": "all assertions held",
+        "result": "PASS"
+      },
+      {
+        "name": "treats the form audience field as an idea edit, not as a view switch",
+        "expected": "changing the DynamicForm audience select after confirmation raises the revision and removes confirmation",
+        "observed": "revision 2, unconfirmed, send and copy disabled. This is the observed source behavior and is disclosed as an interpretation point in the return",
+        "result": "PASS"
+      },
+      {
+        "name": "invalidates on A -> B -> A within the idea revision and does not revive revision 1",
+        "expected": "subject A -> INTERIM-EDIT-5521 -> A gives revisions 2 then 3, never confirmed; send does nothing; the English panel shows no artifact; reconfirmed Blob is revision 3 and equals the first Blob after replacing 'Idea revision: 3' with 'Idea revision: 1'; INTERIM and BRAVO absent; preview, clipboard and event equal it",
+        "observed": "all assertions held",
+        "result": "PASS"
+      },
+      {
+        "name": "retains a valid confirmation across view and guidance-audience switches, regenerating only the guidance",
+        "expected": "English view hide/show and guidance mode governance -> simple keep revision 1 and 'Đã xác nhận ý tưởng' with no new confirmation question; send stays disabled until the mode-specific export; the simple Blob is shorter, still holds all five A values, file name ...-r1-simple.md; preview, clipboard and event equal it",
+        "observed": "all assertions held",
+        "result": "PASS"
+      },
+      {
+        "name": "shows and exports only new input after Back, with saved jobs unchanged",
+        "expected": "after the real DynamicForm back control and a new pick of the same template the form is empty, no stop notice, SpecExport is revision 1 unconfirmed with 'Chưa có thông tin ý tưởng.' and a disabled export button, no ALPHA-/EDITED-/BRAVO- text; after typing FRESH-SUBJECT-6600 the Blob holds it and the status revision and none of ALPHA-/EDITED-/BRAVO-/OUTPUT_",
+        "observed": "all assertions held; A and B unchanged; zero fetch requests",
+        "result": "PASS"
+      },
+      {
+        "name": "keeps the shared setup guard denying a provider destination",
+        "expected": "the guarded fetch rejects https://api.openai.com with CVF_PROVIDER_EXECUTION_DENIED and no recorded request",
+        "observed": "held",
+        "result": "PASS"
+      }
+    ],
+    "interpretationDisclosure": "The work order says 'audience-only switching must retain valid confirmation'. SpecExport has no control named audience. Two readings were tested: (1) the human (Vietnamese) versus agent (English) view and the guidance-audience mode switches retain confirmation (PASS); (2) the DynamicForm audience field is part of the idea source and invalidates (PASS as observed). If Local intended reading (2) to retain confirmation, that is a source/authority contradiction for Local to resolve, not a worker-fixable test choice."
+  },
+  "REQ-RETURN": {
+    "proofId": "PROOF-REQ-RETURN",
+    "status": "PASS",
+    "artifacts": ["docs/reviews/evidence/ncr-draft-export-worker-20261012.json", "docs/reviews/CVF_NCR_DRAFT_EXPORT_WORKER_RETURN_2026-10-12.md"],
+    "exactThreeOutputs": ["EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/draft-export.test.tsx", "docs/reviews/evidence/ncr-draft-export-worker-20261012.json", "docs/reviews/CVF_NCR_DRAFT_EXPORT_WORKER_RETURN_2026-10-12.md"],
+    "forbiddenEffects": {"productionSourceEdits": 0, "existingTestEdits": 0, "stagedPaths": 0, "commits": 0, "pushes": 0, "providerCalls": 0, "networkEffects": 0, "subagents": 0, "installs": 0, "serversOrBrowsers": 0},
+    "returnLines": 285,
+    "returnBytes": 29000,
+    "returnLineByteBudget": "450 lines / 64000 bytes",
+    "returnSha256AtFinalFastGate": "7bde671a5807494528fe1b2882413da73b3efa4033a35f0825127a58188acffe",
+    "firstFastGate": {"command": "python governance/compat/run_worker_return_fast_gate.py --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_DRAFT_EXPORT_2026-10-12.md --max-return-lines 450 --max-return-bytes 64000", "exitCode": 1, "result": "FAIL: 6 reviewer-fast checks on the first full draft (encoding exception marker missing, NOT FOUND phrase trap, trace changed-set paths, internal source row, retrospective enum values, equivalence wording)", "log": ".cvf/runtime/ncr-draft-export-worker-20261012/fast-gate-run1.log", "logSha256": "efd734f1dce987db39d4441e40faf58649218062e9e0eeef8cc86ddfd0d8cd34", "attribution": "worker return authoring; no checker, source or order defect"},
+    "finalFastGate": {"exitCode": 0, "result": "COMPLIANT: worker-return fast gate passed in 6.57s (acceptance ledger, quality gate, probe admission, reviewer-fast 70 checks, git diff --check)", "log": ".cvf/runtime/ncr-draft-export-worker-20261012/fast-gate-run2.log", "logSha256": "c559e284ffd2a86e8ecacb8fc004bcf4c1838fc6ec72886a511de940f7693e0f"},
+    "acceptanceLedgerCheck": {"command": "python governance/compat/check_work_order_acceptance_ledger.py --work-order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_DRAFT_EXPORT_2026-10-12.md --return docs/reviews/CVF_NCR_DRAFT_EXPORT_WORKER_RETURN_2026-10-12.md --enforce", "exitCode": 0, "result": "COMPLIANT", "log": ".cvf/runtime/ncr-draft-export-worker-20261012/ledger.log", "logSha256": "4e241054fd8f3e98a904265c2db377b5dcedf77c27ab0b6eedfeb0a6994455d2"},
+    "gitDiffCheck": {"exitCode": 0},
+    "gitStatusShort": "three untracked owned paths only; staged empty; HEAD unchanged at 5ee6af6bccff4cfa4b6cb382aa57e53ae35bebb9",
+    "proofEditAfterFinalGate": "this proof was edited after the final fast gate to record final-gate and terminal clocks; the return bytes were not changed, and a confirmation fast-gate and ledger run after this edit is reported in the worker final message, not embedded here"
+  },
+  "limits": [
+    "Only the documentation template (no review hook) was composed; the app_builder_complete review path and wizard templates were not exercised.",
+    "Export modes governance and simple were exercised; full mode was not.",
+    "SpecExport was always mounted by the real DynamicForm button; the Export Spec toggle button was not separately exercised.",
+    "jsdom without a real browser: Blob, clipboard and anchor download are stand-ins.",
+    "No mutation of production source was run, so detection power was not measured by mutation; Local owns the independent probe."
+  ],
+  "independentProbeDisposition": "PENDING_REVIEWER_EXECUTION"
+}

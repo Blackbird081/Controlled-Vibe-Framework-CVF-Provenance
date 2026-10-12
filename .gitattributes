@@ -17,3 +17,12 @@ docs/reviews/evidence/ncr-history-recovery-local-20261012.json text eol=lf
 docs/reviews/CVF_NCR_DRAFT_RECOVERY_WORKER_RETURN_2026-10-12.md -text whitespace=cr-at-eol
 docs/reviews/evidence/ncr-draft-recovery-worker-20261012.json -text whitespace=cr-at-eol
 docs/reviews/evidence/ncr-draft-recovery-local-20261012.json text eol=lf
+
+# Draft export: immutable worker bytes and stable raw-hash closure pins.
+docs/reviews/CVF_NCR_DRAFT_EXPORT_WORKER_RETURN_2026-10-12.md -text whitespace=cr-at-eol
+docs/reviews/evidence/ncr-draft-export-worker-20261012.json -text whitespace=cr-at-eol
+docs/reviews/evidence/ncr-draft-export-local-20261012.json text eol=lf
+docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_DRAFT_EXPORT_2026-10-12.md text eol=lf
+docs/baselines/CVF_GC018_NCR_DRAFT_EXPORT_2026-10-12.md text eol=lf
+docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json text eol=lf
+docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md text eol=lf
