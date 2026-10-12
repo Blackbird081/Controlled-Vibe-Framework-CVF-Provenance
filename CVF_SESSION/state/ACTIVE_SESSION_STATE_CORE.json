@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_CHAT_HISTORY_2026-10-12.md",
     "workOrderSha256": "784f98f147cb384c9daa52ed97610aa43ca6fcecd2a77fc655280ac675408a17"
   },
-  "currentAuthoritySyncReason": "Chat history Local bounded closure raw authority projection; original five bytes and procedureFAIL retained; dedicated actual material-SHA continuity follows.",
+  "currentAuthoritySyncReason": "Chat history bounded closure material 2f10042a00a9dbb12571fb495d41dacc33bd1875;exact6 actual-SHA continuity;worker5 unchanged,procedureFAIL separate,22 observations.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
@@ -110,8 +110,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_ncr_chat_history_worker_execution",
-  "previousMode": "cvf_ncr_agent_handoff_closed_useful_selection",
+  "currentMode": "cvf_ncr_chat_history_closed_useful_selection",
+  "previousMode": "cvf_ncr_chat_history_worker_execution",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
