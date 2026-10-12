@@ -34,21 +34,21 @@ artifact.
 | Prior handoff (archive-qualified) | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V62_2026-09-17.md` |
 | Latest front-door archive | `CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_COMPACTION_ARCHIVE_2026-08-11.md` |
 | Current authority evidence | `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` `currentAuthority` |
-| Parent maintenance | Visible draft/export proof dispatch;draft recovery closed with procedureFAIL/test waiver;whole job open |
+| Parent maintenance | Draft-export proof accepted;procedureFAIL and clock limits retained;whole job open |
 | Freeze posture | `governance_kernel_freeze_recommended` |
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_draft_export_worker_execution`;handoff=`AGENT_HANDOFF_V63_2026-09-18.md`;next=manual Sonnet exact3 offline visible draft/export proof after committed bound release;role=Local INTERNAL_AGENT orchestrator/reviewer;phase=internal dispatch;decision owner=Local;parked checkpoint=Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11/Customer Care application.
+Startup acknowledged: current mode=`cvf_ncr_draft_export_closed_useful_selection`;handoff=`AGENT_HANDOFF_V63_2026-09-18.md`;next=Local useful product selection after bounded draft-export closure;role=Local INTERNAL_AGENT orchestrator/reviewer;phase=private closure;decision owner=Local;parked checkpoint=Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11/Customer Care application.
 
 ## Current Mode
 
-Current mode marker: `cvf_ncr_draft_export_worker_execution`
-Current mode: `cvf_ncr_draft_export_worker_execution`; previous mode marker: `cvf_ncr_draft_recovery_closed_useful_selection`
+Current mode marker: `cvf_ncr_draft_export_closed_useful_selection`
+Current mode: `cvf_ncr_draft_export_closed_useful_selection`; previous mode marker: `cvf_ncr_draft_export_worker_execution`
 ## Next Allowed Move
 
-Mode: `cvf_ncr_draft_export_worker_execution`
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_BOUNDED_WORKER; BATCH_ID=CVF-NCR-DRAFT-EXPORT-20261012. WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_DRAFT_EXPORT_2026-10-12.md; material 027ed5f61fe8c082d5bb7996788136c8af8c97fa; manual Sonnet worker. Existing Home/DynamicForm/SpecExport visible restored-draft -> current brief/revision/isolation proof; exact3 new test/proof/return paths, no production edits. Worker starts only after clean committed bound pre-dispatch and dry pre-implementation PASS; WORKER_MUST_NOT_COMMIT,one60min invocation,zero nested agents/provider/public effects. Full baseline/order and supplied source/checker reads before outputs; real UI,A/B,Blob/event/storage proof; no fabricated red. COMPLETE_PENDING_REVIEW only final fixed ledger/gates PASS,otherwise consolidated BLOCKED_WITH_REASON. Local review/closure; no successor/push. Prior draft recovery CLOSED_PASS_BOUNDED at a16ec40461f60b2007fd6a744a7b7be202f127a3;procedureFAIL/test waiver retained.19 reviewed observations unchanged,cost deferred. Whole job/browser/backend/R3/R4 unproved;Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11/Customer Care application parked;LHW24.
+Mode: `cvf_ncr_draft_export_closed_useful_selection`
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=LOCAL_REVIEW_AND_SELECTION; BATCH_ID=CVF-NCR-DRAFT-EXPORT-20261012. Draft export CLOSED_PASS_BOUNDED at bf9ab6b134db5084025cc895c14d250c8889c915; completion docs/reviews/CVF_NCR_DRAFT_EXPORT_COMPLETION_2026-10-12.md; proof docs/reviews/evidence/ncr-draft-export-local-20261012.json. Documentation/jsdom actual Home/Form/SpecExport: recovered edited confirmed source -> current brief preview/copy/Blob/handoff, worker10/10 consumed and independent Local2/2 PASS; no production repair. VI/EN view retains confirmation; guidance mode needs regenerated brief; form audience/edit/A-B-A invalidates. ProcedureFAIL mandatory checker reads/reporting contradiction retained; raw worker bytes unchanged. Sonnet5.5 high requested,native metadata unknown;16.2min partial interval before later confirmation,full accepted time unknown.20 reviewed tasks10 Haiku-family/6 Sonnet/4 Luna; previous19 preserved,cost deferred. Stop finite scope; next only concrete useful product selection. No automatic worker,metadata-only successor,stricter gate/quiz,duplicate suite or push. Whole job/full/app-builder/wizard/browser/backend/R3/R4 unproved;Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11/Customer Care application parked;LHW24.
 Historical G1-G7 terminal baseline: mode `acel_g1_g7_research_terminally_closed`. G1-G6 terminal review: `docs/reviews/CVF_ACEL_G1_G6_TERMINAL_STOP_CLOSURE_2026-09-24.md`; G7 research closure: `docs/reviews/CVF_ACEL_G7_CROSS_RUN_CAPABILITY_EVOLUTION_RESEARCH_CLOSURE_2026-09-24.md`. The packet-only post-G7 reconciliation review at `docs/reviews/CVF_ACEL_POST_G7_FULL_CORPUS_ABSORPTION_CLOSURE_2026-09-24.md` is superseded for repository absorption by the 2026-09-25 pinned-source audit. G1 is stopped, G2-G6 remain parked, G7 research is closed, and no automatic G1-G7 successor exists.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1

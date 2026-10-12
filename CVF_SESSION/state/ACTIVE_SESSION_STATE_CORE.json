@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_DRAFT_EXPORT_2026-10-12.md",
     "workOrderSha256": "cc53f964f6c27a7efa8a3aa4ce4f54ce72516f8060877b1e5852a23f3658fbb4"
   },
-  "currentAuthoritySyncReason": "Local draft-export bounded technical closure; procedureFAIL retained, raw worker originals/source pins unchanged;20 reviewed tasks, no product repair. Dedicated actual-material SHA continuity follows.",
+  "currentAuthoritySyncReason": "Draft-export technical closure material bf9ab6b134db5084025cc895c14d250c8889c915; dedicated exact6 continuity,20 reviewed tasks and historical procedureFAIL retained, no product repair.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
@@ -110,8 +110,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_ncr_draft_export_worker_execution",
-  "previousMode": "cvf_ncr_draft_recovery_closed_useful_selection",
+  "currentMode": "cvf_ncr_draft_export_closed_useful_selection",
+  "previousMode": "cvf_ncr_draft_export_worker_execution",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
