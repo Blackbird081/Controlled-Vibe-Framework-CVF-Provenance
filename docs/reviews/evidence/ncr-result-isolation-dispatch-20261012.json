@@ -1,0 +1,110 @@
+{
+  "schemaVersion": "cvf.ncrResultIsolationDispatch@1",
+  "baseHead": "cd7314b0cbdab2e0a0b1f842ce6d1a6d4540ca29",
+  "batchId": "CVF-NCR-RESULT-ISOLATION-20261012",
+  "sourceFacts": {
+    "home": "same mounted ResultViewer receives activeExecution when history query changes; no key",
+    "viewer": "transient draft/menu/view/export/copy state and async finally/timers lack execution-lifetime scope"
+  },
+  "sourcePins": [
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.tsx",
+      "rawSha256": "37c3f811593426e631bd50891931d363a460a943b5c012bdb7796d9923911bd1",
+      "headSha256": "37c3f811593426e631bd50891931d363a460a943b5c012bdb7796d9923911bd1",
+      "head": "cd7314b0cbdab2e0a0b1f842ce6d1a6d4540ca29"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.test.tsx",
+      "rawSha256": "d55efdeb542eeef9b4e3e7a4732432895fff7547dcef7bd1ed4c26ed7d996396",
+      "headSha256": "d55efdeb542eeef9b4e3e7a4732432895fff7547dcef7bd1ed4c26ed7d996396",
+      "head": "cd7314b0cbdab2e0a0b1f842ce6d1a6d4540ca29"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.tsx",
+      "rawSha256": "b6b1d7ff64bcc5586b830b2a23c8e1b94957ef276a4abd9cea9eaa0825965322",
+      "headSha256": "b6b1d7ff64bcc5586b830b2a23c8e1b94957ef276a4abd9cea9eaa0825965322",
+      "head": "cd7314b0cbdab2e0a0b1f842ce6d1a6d4540ca29"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.test.tsx",
+      "rawSha256": "332a100889580078daca4dbb0a1e815a2c6d9e0e0fcdbfa912b02fa0e1af63e2",
+      "headSha256": "332a100889580078daca4dbb0a1e815a2c6d9e0e0fcdbfa912b02fa0e1af63e2",
+      "head": "cd7314b0cbdab2e0a0b1f842ce6d1a6d4540ca29"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/store.ts",
+      "rawSha256": "f5deb700c631c680924d3ba74fd1c56ef862e99703fe59c461828a8a64953c06",
+      "headSha256": "f5deb700c631c680924d3ba74fd1c56ef862e99703fe59c461828a8a64953c06",
+      "head": "cd7314b0cbdab2e0a0b1f842ce6d1a6d4540ca29"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/deliverable-pack.ts",
+      "rawSha256": "9a9b93dbaa503baf33e38ea3a5cacc6d0cb1da7e696adeab3f033c9fe97415a9",
+      "headSha256": "9a9b93dbaa503baf33e38ea3a5cacc6d0cb1da7e696adeab3f033c9fe97415a9",
+      "head": "cd7314b0cbdab2e0a0b1f842ce6d1a6d4540ca29"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/deliverable-pack.test.ts",
+      "rawSha256": "d6a4e2cbd326937b8e609c8d0b38f884bc1c007683af47ab7e904bafe102c599",
+      "headSha256": "d6a4e2cbd326937b8e609c8d0b38f884bc1c007683af47ab7e904bafe102c599",
+      "head": "cd7314b0cbdab2e0a0b1f842ce6d1a6d4540ca29"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/types/index.ts",
+      "rawSha256": "924e0ba06697be1de5501f0a8e5d03b73d18da9e86c52482cbfc585ba0d56a85",
+      "headSha256": "924e0ba06697be1de5501f0a8e5d03b73d18da9e86c52482cbfc585ba0d56a85",
+      "head": "cd7314b0cbdab2e0a0b1f842ce6d1a6d4540ca29"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/ai/types.ts",
+      "rawSha256": "58eff6bceea2caa7088fada51dbf4e53d1074633ab4fee15d90f5ff791d4abd3",
+      "headSha256": "58eff6bceea2caa7088fada51dbf4e53d1074633ab4fee15d90f5ff791d4abd3",
+      "head": "cd7314b0cbdab2e0a0b1f842ce6d1a6d4540ca29"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/test/setup.ts",
+      "rawSha256": "bc573b2a6133b07404c42f797bce43fe73464711e0281f29da8234bf2fed6b27",
+      "headSha256": "bc573b2a6133b07404c42f797bce43fe73464711e0281f29da8234bf2fed6b27",
+      "head": "cd7314b0cbdab2e0a0b1f842ce6d1a6d4540ca29"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/vitest.config.ts",
+      "rawSha256": "9a4a65976b5b7a5d038f9cb412a90d417f804108cf1dd33bae4421989a863420",
+      "headSha256": "9a4a65976b5b7a5d038f9cb412a90d417f804108cf1dd33bae4421989a863420",
+      "head": "cd7314b0cbdab2e0a0b1f842ce6d1a6d4540ca29"
+    }
+  ],
+  "workerOwnedPaths": [
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.tsx",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.isolation.test.tsx",
+    "docs/reviews/evidence/ncr-result-isolation-worker-20261012.json",
+    "docs/reviews/CVF_NCR_RESULT_ISOLATION_WORKER_RETURN_2026-10-12.md"
+  ],
+  "existingObservations": 22,
+  "requestedConfiguration": "Sonnet5.5 high,operator-requested manual shared-workspace worker",
+  "admissionWitness": {
+    "result": "two valid original-source assertions FAIL; same-ID draft preservation and captured A clipboard payload controls PASS",
+    "observed": [
+      "A unsent follow-up text remains after B render",
+      "late A clipboard completion labels B Copied"
+    ],
+    "command": "node node_modules/vitest/vitest.mjs run src/components/local-result-isolation-admission.test.tsx",
+    "sourceSha256": "d98eacd0e20573b6f588e5e99595824d7dbf08febb29832595f05a6544bbf66d",
+    "sourceText": "// @vitest-environment jsdom\nimport {beforeEach,afterEach,it,expect,vi} from 'vitest';\nimport {render,screen,fireEvent,act,cleanup} from '@testing-library/react';\nimport {ResultViewer} from './ResultViewer';\nimport type {Execution} from '@/types';\nvi.mock('@/lib/i18n',()=>({useLanguage:()=>({language:'en',t:(k:string)=>k})}));\nvi.mock('@/lib/analytics',()=>({trackEvent:vi.fn()}));\nconst make=(id:string):Execution=>({id,templateId:'documentation',templateName:`LOCAL_${id}`,input:{subject:id},intent:id,output:`LOCAL_OUTPUT_${id}`,status:'completed',createdAt:new Date('2026-10-12T00:00:00Z')});\nconst props=(id:string)=>({execution:make(id),output:`LOCAL_OUTPUT_${id}`,onAccept:vi.fn(),onReject:vi.fn(),onRetry:vi.fn(),onBack:vi.fn(),onFollowUp:vi.fn()});\nbeforeEach(()=>vi.useFakeTimers());\nafterEach(()=>{cleanup();vi.useRealTimers();vi.restoreAllMocks();});\nit('retains same-run draft but clears draft for a new execution identity',()=>{\n const a=props('A');const view=render(<ResultViewer {...a}/>);\n fireEvent.change(screen.getByTestId('followup-input'),{target:{value:'LOCAL_A_UNSENT_REFINEMENT'}});\n view.rerender(<ResultViewer {...a} execution={{...a.execution}}/>);\n expect((screen.getByTestId('followup-input') as HTMLTextAreaElement).value).toBe('LOCAL_A_UNSENT_REFINEMENT');\n view.rerender(<ResultViewer {...props('B')}/>);\n expect((screen.getByTestId('followup-input') as HTMLTextAreaElement).value).toBe('');\n expect((screen.getByTestId('followup-submit-btn') as HTMLButtonElement).disabled).toBe(true);\n});\nit('late clipboard completion for A cannot mark B as copied',async()=>{\n let resolve!:()=>void;\n const writeText=vi.fn(()=>new Promise<void>(r=>{resolve=r}));\n Object.defineProperty(navigator,'clipboard',{value:{writeText},configurable:true});\n const view=render(<ResultViewer {...props('A')}/>);\n fireEvent.click(screen.getByRole('button',{name:/Export/i}));\n fireEvent.click(screen.getByRole('button',{name:/Copy to Clipboard/i}));\n expect(writeText).toHaveBeenCalledTimes(1);\n expect(writeText.mock.calls[0][0]).toContain('LOCAL_OUTPUT_A');\n view.rerender(<ResultViewer {...props('B')}/>);\n await act(async()=>{resolve();await Promise.resolve();});\n expect(screen.queryByRole('button',{name:/Copied!/i})).toBeNull();\n});\n",
+    "logSha256": "9788df9d1d1c373d63adbd331a30efecc47d3d2fc63ee0781b7850ad83ce19f7",
+    "logText": "\n RUN  v4.1.8 D:/UNG DUNG AI/TOOL AI 2026/Controlled-Vibe-Framework-CVF/EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web\n\n \u276f src/components/local-result-isolation-admission.test.tsx (2 tests | 2 failed) 881ms\n   \u00d7 retains same-run draft but clears draft for a new execution identity 273ms\n   \u00d7 late clipboard completion for A cannot mark B as copied 604ms\n\n\u23af\u23af\u23af\u23af\u23af\u23af\u23af Failed Tests 2 \u23af\u23af\u23af\u23af\u23af\u23af\u23af\n\n FAIL  src/components/local-result-isolation-admission.test.tsx > retains same-run draft but clears draft for a new execution identity\nAssertionError: expected 'LOCAL_A_UNSENT_REFINEMENT' to be '' // Object.is equality\n\n- Expected\n+ Received\n\n+ LOCAL_A_UNSENT_REFINEMENT\n\n \u276f src/components/local-result-isolation-admission.test.tsx:18:78\n     16|  expect((screen.getByTestId('followup-input') as HTMLTextAreaElement).\u2026\n     17|  view.rerender(<ResultViewer {...props('B')}/>);\n     18|  expect((screen.getByTestId('followup-input') as HTMLTextAreaElement).\u2026\n       |                                                                              ^\n     19|  expect((screen.getByTestId('followup-submit-btn') as HTMLButtonElemen\u2026\n     20| });\n\n\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af[1/2]\u23af\n\n FAIL  src/components/local-result-isolation-admission.test.tsx > late clipboard completion for A cannot mark B as copied\nAssertionError: expected <button \u2026(1)></button> to be null\n\n- Expected:\nnull\n\n+ Received:\n<button\n  class=\"w-full px-4 py-3 text-left hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center gap-2 text-sm\"\n>\n  \u2705 Copied!\n</button>\n\n \u276f src/components/local-result-isolation-admission.test.tsx:32:57\n     30|  view.rerender(<ResultViewer {...props('B')}/>);\n     31|  await act(async()=>{resolve();await Promise.resolve();});\n     32|  expect(screen.queryByRole('button',{name:/Copied!/i})).toBeNull();\n       |                                                         ^\n     33| });\n     34|\n\n\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af[2/2]\u23af\n\n\n Test Files  1 failed (1)\n      Tests  2 failed (2)\n   Start at  15:41:04\n   Duration  11.68s (transform 3.44s, setup 8.80s, import 700ms, tests 881ms, environment 1.08s)\n\n",
+    "oracle": "actual ResultViewer; deterministic synthetic Execution objects and deferred clipboard only; no component helper mock/provider/AI governance claim",
+    "readDepth": "full current transient state/copy/export/follow-up sections and scoped Home result/restore; no whole corpus/full entire source claim",
+    "cleanup": "temporary source removed after preservation;production unchanged"
+  },
+  "scaffold": {
+    "command": "python governance/compat/build_dispatch_packet_scaffold.py --packet-kind web-ui-dashboard --batch-id CVF-NCR-RESULT-ISOLATION-20261012 --title \"NCR Result Viewer Run Isolation\" --date 2026-10-12 --base cd7314b0cbdab2e0a0b1f842ce6d1a6d4540ca29 --commit-mode WORKER_MUST_NOT_COMMIT --dependency docs/reviews/CVF_NCR_CHAT_HISTORY_COMPLETION_2026-10-12.md --include-worker-return-skeleton --no-evidence-readiness-applicable --scec-problem-key ncr-result-run-isolation --scec-successor-scope NO_SUCCESSOR --stdout",
+    "rawReceiptSha256": "37923c4656c2a149e8b13338fa3461171abd43102ca3bf125b0a421d6c95a6c2"
+  },
+  "adif": {
+    "command": "python governance/compat/run_adif_defect_resolver.py --task-class work-order --role dispatcher --lifecycle-phase pre-dispatch",
+    "logSha256": "584da68bec83f76cbd8fd532638ca6e3671278619844691cd9ad91319f47a1f1",
+    "result": "0 candidates,0 returned,not truncated"
+  },
+  "publicExportDisposition": "DEFERRED_PRIVATE_ONLY"
+}

@@ -57,3 +57,14 @@ docs/reviews/evidence/ncr-chat-history-worker-20261012.json text eol=lf
 docs/reviews/CVF_NCR_CHAT_HISTORY_WORKER_RETURN_2026-10-12.md text eol=lf
 docs/reviews/CVF_NCR_CHAT_HISTORY_COMPLETION_2026-10-12.md text eol=lf
 docs/reviews/evidence/ncr-chat-history-local-20261012.json text eol=lf
+
+# NCR result isolation dispatch and raw future evidence
+docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RESULT_ISOLATION_2026-10-12.md text eol=lf
+docs/baselines/CVF_GC018_NCR_RESULT_ISOLATION_2026-10-12.md text eol=lf
+docs/reviews/evidence/ncr-result-isolation-dispatch-20261012.json text eol=lf
+EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.tsx text eol=lf
+EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.isolation.test.tsx text eol=lf
+docs/reviews/evidence/ncr-result-isolation-worker-20261012.json text eol=lf
+docs/reviews/CVF_NCR_RESULT_ISOLATION_WORKER_RETURN_2026-10-12.md text eol=lf
+docs/reviews/CVF_NCR_RESULT_ISOLATION_COMPLETION_2026-10-12.md text eol=lf
+docs/reviews/evidence/ncr-result-isolation-local-20261012.json text eol=lf

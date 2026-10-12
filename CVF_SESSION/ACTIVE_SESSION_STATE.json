@@ -36,12 +36,12 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_NCR_CHAT_HISTORY_2026-10-12.md",
-    "baselineSha256": "92baa46205e6db162e4c0560b4777d88e76ea61b5561031d5ad6ae3723409612",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_CHAT_HISTORY_2026-10-12.md",
-    "workOrderSha256": "784f98f147cb384c9daa52ed97610aa43ca6fcecd2a77fc655280ac675408a17"
+    "baselinePath": "docs/baselines/CVF_GC018_NCR_RESULT_ISOLATION_2026-10-12.md",
+    "baselineSha256": "4ad906858e223311c19ebcc05e0ec2bea24fb169ab7ed4bd9919798003eb180a",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RESULT_ISOLATION_2026-10-12.md",
+    "workOrderSha256": "fff7fc9caab5ca0d8d71a7b6fb59df1c7c611954374bd1703a2c4a1837779dbc"
   },
-  "currentAuthoritySyncReason": "Chat history bounded closure material 2f10042a00a9dbb12571fb495d41dacc33bd1875;exact6 actual-SHA continuity;worker5 unchanged,procedureFAIL separate,22 observations.",
+  "currentAuthoritySyncReason": "ResultViewer run-isolation dispatch selected from actual two-case source witness;exact11 packet projection,actual-SHA continuity follows;22 observations unchanged.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",

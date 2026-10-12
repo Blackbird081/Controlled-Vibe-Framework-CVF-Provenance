@@ -18,11 +18,9 @@ Decision owner: operator về định hướng/phạm vi; Local reviewer về đ
 
 ## Current Delivery Checkpoint - 2026-10-12
 
-Operator asks to update our roadmaps to prevent drift. Local owns this bounded
-documentation reconciliation; current mode=cvf_ncr_chat_history_closed_useful_selection,
+Current delivery projection; Local decision owner. Current mode=cvf_ncr_chat_history_closed_useful_selection,
 handoff=AGENT_HANDOFF_V63_2026-09-18.md, next=useful coding outcome selection.
-This checkpoint supersedes older current/next wording for selection; historical
-decisions, accepted proofs, phase IDs and effect checkpoints retain their scope.
+Prior evidence/phase/effect checkpoints retain their scope.
 
 **Product destination:** one controlled local job from confirmed idea to a
 run-bound result, preview/revision/export and understandable cancel/error/recovery.
@@ -41,8 +39,7 @@ offline claim level first; full real-provider R3 acceptance remains open.
 **Accepted finite outcome - Agent Chat handoff lifecycle, 2026-10-12:**
 docs/reviews/CVF_NCR_AGENT_HANDOFF_COMPLETION_2026-10-12.md accepts offline/jsdom:
 worker35/35 consumed, original-source9/12 FAIL, Local actual receiver2/2 PASS.
-Minimize/restore retains session/messages/draft; explicit new/identical-text
-handoff isolates a fresh session; close/replacement clears queued timer.
+Minimize/restore retains session/draft; new handoff isolates; old timer cleared.
 Worker layout repair; no Local product repair. Four original bytes retained,
 historical BLOCKED/startup-order procedureFAIL separate. Local literal/manifest
 and evidence binding corrected with actual-SHA continuity; initial closureFAIL
@@ -50,12 +47,18 @@ retained.21 observations, previous20 retained; cost/full delivery time unknown.
 **Accepted finite outcome - Agent Chat history consistency, 2026-10-12:**
 docs/reviews/CVF_NCR_CHAT_HISTORY_COMPLETION_2026-10-12.md accepts offline/jsdom:
 worker55/55 consumed, original-source14/16 FAIL, actual Local chat/sidebar/hook2/2 PASS.
-Controlled sidebar shares wrapper history; create/title/count/select and delete/clear
-agree with storage. One empty fallback, no old callback/prompt resurrection; saved
-metadata/reopen preserved. Original five bytes retained, no Local product repair.
+Sidebar/chat/store agree; one empty fallback,no resurrection,reopen preserved.
+Original five bytes unchanged,no Local product repair.
 ProcedureFAIL remains separate.22 observations, previous21 unchanged; cost deferred.
-**Next selection:** useful coding outcome from evidence; no automatic successor.
-Whole job/full/browser/backend/provider/R3/R4 remain open.
+**Selected next outcome - ResultViewer run isolation, 2026-10-12:**
+Actual Local source witness2FAIL: A unsent follow-up remains under B;
+late A clipboard completion marks B Copied. Same-A draft/payload controls PASS.
+docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RESULT_ISOLATION_2026-10-12.md
+fixes ResultViewer only plus independent regression/proof/return,exact4.
+New identity resets transient UI; same-run draft/view preserved; old async/timers
+cannot alter replacement/reopened UI. Actual Home history seam; no OS-side-effect
+cancellation claim.22 observations unchanged;worker manual after bound release.
+Whole job/full/browser/backend/provider/R3/R4 open;no automatic successor.
 
 Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11 remain
 parked. ETA and end-to-end readiness are NOT_ESTABLISHED; tests/commits/tranches
@@ -1060,20 +1063,20 @@ Repair read-ahead: `governance/compat/check_delta_execution_claim_boundary.py`, 
 |---|---|
 | Actor | Local reviewer / roadmap author |
 | Provider or surface | Local coding-agent workspace |
-| Session or invocation | CVF-NCR core skills incorporation-v2.2, 2026-09-27 |
+| Session or invocation | ncr-result-isolation-dispatch-20261012 |
 | Working directory | Private CVF provenance repository root |
 | Command or tool surface | Read-only CVF/relay/Git inspection, apply_patch, document/governance checks |
-| Target paths | `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` |
+| Target paths | `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RESULT_ISOLATION_2026-10-12.md`; `docs/baselines/CVF_GC018_NCR_RESULT_ISOLATION_2026-10-12.md`; `docs/reviews/evidence/ncr-result-isolation-dispatch-20261012.json`; `docs/roadmaps/README.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.csv`; `.gitattributes`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Allowed scope source | Operator transferred converged research to Local; incorporate D013 and prepare bounded internal packet, stop for operator relay |
-| Before status evidence | HEAD `90128a22360ff46f3662d52ccf74a5c0552c613e`; worktree clean before edit; no fresh remote/public-sync claim |
-| After status evidence | Roadmap v2.2 is the intended working-tree delta; final status and gates recorded in D013 verification; no runtime/owner/session mutation by this authoring step |
+| Before status evidence | cd7314b0cbdab2e0a0b1f842ce6d1a6d4540ca29;clean before source witness |
+| After status evidence | exact11 dispatch then exact6 continuity;worker pending,22 observations unchanged |
 | Diff evidence | `git diff -- docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `git status --short` |
 | Approval boundary | D013 roadmap incorporation; internal packet requires scoped authority and pre-dispatch; effects remain separately gated |
 | Claim boundary | Accepted design with W00/W01 closed bounded and actual pilot scope pending; no completed capability or audit finding closure |
 | Agent type | INTERNAL_AGENT, orchestrator authoring role |
-| Invocation ID | cvf-ncr-core-skills-v2-2-2026-09-27 |
-| Expected manifest | This roadmap only |
-| Actual changed set | This roadmap only for the author delta; external advisory files remain outside the repository |
+| Invocation ID | ncr-result-isolation-dispatch-20261012 |
+| Expected manifest | `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RESULT_ISOLATION_2026-10-12.md`; `docs/baselines/CVF_GC018_NCR_RESULT_ISOLATION_2026-10-12.md`; `docs/reviews/evidence/ncr-result-isolation-dispatch-20261012.json`; `docs/roadmaps/README.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.csv`; `.gitattributes`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Actual changed set | `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RESULT_ISOLATION_2026-10-12.md`; `docs/baselines/CVF_GC018_NCR_RESULT_ISOLATION_2026-10-12.md`; `docs/reviews/evidence/ncr-result-isolation-dispatch-20261012.json`; `docs/roadmaps/README.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.csv`; `.gitattributes`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Manifest delta | Expected author delta MATCH: roadmap only; confirm from final git status before material commit |
 | Deletion or rename disposition | None; no stash, deletion, rename or unrelated cleanup authorized |
 
@@ -1093,20 +1096,20 @@ current continuity, parked lanes, existing runtime and all prior evidence.
 |---|---|
 | Actor | Local documentation maintainer / reviewer |
 | Provider or surface | Local private provenance workspace |
-| Session or invocation | agent-continuation-guidance-20261006 |
+| Session or invocation | ncr-result-isolation-dispatch-20261012 |
 | Working directory | Repository root |
 | Command or tool surface | Read, Git inspection, exact UTF-8 edits, existing local governance gates |
-| Target paths | AGENTS.md; routing index; lifecycle standard; priority standard; downstream AGENTS template; this roadmap |
+| Target paths | `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RESULT_ISOLATION_2026-10-12.md`; `docs/baselines/CVF_GC018_NCR_RESULT_ISOLATION_2026-10-12.md`; `docs/reviews/evidence/ncr-result-isolation-dispatch-20261012.json`; `docs/roadmaps/README.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.csv`; `.gitattributes`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Allowed scope source | Operator 2026-10-06 adopt A-C and make instructions discoverable without reminders |
-| Before status evidence | Clean main at 45b1a48d4f97e221adcd3e3bd21610b54d6f5f5a; ahead 118 against local origin/main tracking ref |
-| After status evidence | Six-file documentation delta; no generated continuity or runtime mutation |
+| Before status evidence | cd7314b0cbdab2e0a0b1f842ce6d1a6d4540ca29;clean before source witness |
+| After status evidence | exact11 dispatch then exact6 continuity;worker pending,22 observations unchanged |
 | Diff evidence | git diff --stat; git diff --check; git status --short |
 | Approval boundary | Existing owner and instruction-route edits only |
 | Claim boundary | Instruction discoverability and static document checks; no agent behavior/enforcement proof |
 | Agent type | INTERNAL_AGENT, documentation maintenance role |
-| Invocation ID | agent-continuation-guidance-20261006 |
-| Expected manifest | Six exact paths listed in the guidance verification below |
-| Actual changed set | Exact six documentation paths listed below; independently reconciled with Git status |
+| Invocation ID | ncr-result-isolation-dispatch-20261012 |
+| Expected manifest | `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RESULT_ISOLATION_2026-10-12.md`; `docs/baselines/CVF_GC018_NCR_RESULT_ISOLATION_2026-10-12.md`; `docs/reviews/evidence/ncr-result-isolation-dispatch-20261012.json`; `docs/roadmaps/README.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.csv`; `.gitattributes`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Actual changed set | `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RESULT_ISOLATION_2026-10-12.md`; `docs/baselines/CVF_GC018_NCR_RESULT_ISOLATION_2026-10-12.md`; `docs/reviews/evidence/ncr-result-isolation-dispatch-20261012.json`; `docs/roadmaps/README.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.csv`; `.gitattributes`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Manifest delta | MATCH: six paths, no additions/deletions/renames outside the declared manifest |
 | Deletion or rename disposition | None |
 
@@ -1141,20 +1144,20 @@ orientation packets are not refreshed by this private local edit.
 |---|---|
 | Actor | Local INTERNAL_AGENT orchestrator/dispatcher |
 | Provider or surface | private shared workspace |
-| Session or invocation | ncr-chat-history-dispatch-20261012 |
+| Session or invocation | ncr-result-isolation-dispatch-20261012 |
 | Working directory | repository root and installed Web package |
 | Command or tool surface | targeted source/owner/constants reads, actual scaffold/ADIF, bounded admission witness, raw/HEAD pins, dispatch/gates/commits |
-| Target paths | `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_CHAT_HISTORY_2026-10-12.md`; `docs/baselines/CVF_GC018_NCR_CHAT_HISTORY_2026-10-12.md`; `docs/reviews/evidence/ncr-chat-history-dispatch-20261012.json`; `docs/roadmaps/README.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.csv`; `.gitattributes`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Target paths | `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RESULT_ISOLATION_2026-10-12.md`; `docs/baselines/CVF_GC018_NCR_RESULT_ISOLATION_2026-10-12.md`; `docs/reviews/evidence/ncr-result-isolation-dispatch-20261012.json`; `docs/roadmaps/README.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.csv`; `.gitattributes`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Allowed scope source | operator next under standing manual worker/Local orchestration; outcome-bound existing NCR client maintenance |
-| Before status evidence | 4aabff8808e150f76c371dc7e087b5dad6f186ba; clean/staged empty before temporary witness; no production mutation |
-| After status evidence | exact11 dispatch material then exact6 continuity; worker not started |
+| Before status evidence | cd7314b0cbdab2e0a0b1f842ce6d1a6d4540ca29;clean before source witness |
+| After status evidence | exact11 dispatch then exact6 continuity;worker pending,22 observations unchanged |
 | Diff evidence | git diff --check and exact manifests |
 | Approval boundary | one manual shared-workspace worker, offline synthetic data only |
 | Claim boundary | actual wrapper/sidebar/history with Chat leaf recorder; no provider or whole NCR exit |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-chat-history-dispatch-20261012 |
-| Expected manifest | `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_CHAT_HISTORY_2026-10-12.md`; `docs/baselines/CVF_GC018_NCR_CHAT_HISTORY_2026-10-12.md`; `docs/reviews/evidence/ncr-chat-history-dispatch-20261012.json`; `docs/roadmaps/README.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.csv`; `.gitattributes`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Actual changed set | `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_CHAT_HISTORY_2026-10-12.md`; `docs/baselines/CVF_GC018_NCR_CHAT_HISTORY_2026-10-12.md`; `docs/reviews/evidence/ncr-chat-history-dispatch-20261012.json`; `docs/roadmaps/README.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.csv`; `.gitattributes`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Invocation ID | ncr-result-isolation-dispatch-20261012 |
+| Expected manifest | `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RESULT_ISOLATION_2026-10-12.md`; `docs/baselines/CVF_GC018_NCR_RESULT_ISOLATION_2026-10-12.md`; `docs/reviews/evidence/ncr-result-isolation-dispatch-20261012.json`; `docs/roadmaps/README.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.csv`; `.gitattributes`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Actual changed set | `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RESULT_ISOLATION_2026-10-12.md`; `docs/baselines/CVF_GC018_NCR_RESULT_ISOLATION_2026-10-12.md`; `docs/reviews/evidence/ncr-result-isolation-dispatch-20261012.json`; `docs/roadmaps/README.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.csv`; `.gitattributes`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Manifest delta | MATCH required before commit |
 | Deletion or rename disposition | N/A with reason: none |
 
