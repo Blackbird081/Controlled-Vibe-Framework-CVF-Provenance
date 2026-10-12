@@ -1,0 +1,386 @@
+{
+ "schemaVersion": "cvf.ncrResultIsolationWorkerEvidence@1",
+ "batchId": "CVF-NCR-RESULT-ISOLATION-20261012",
+ "executionBaseHead": "c51f6f09bb762ff79138e8fe221a1528c25f8f8e",
+ "clocks": {
+  "startUtc": "2026-10-12T08:57:49Z",
+  "head": "c51f6f09bb762ff79138e8fe221a1528c25f8f8e",
+  "preImplementationUtc": "08:58:02Z-08:58:15Z",
+  "scaffoldUtc": "08:58:23Z",
+  "sourceRed1Utc": "09:01:03Z-09:01:19Z",
+  "sourceRed2Utc": "09:01:39Z",
+  "sourceRed3Utc": "09:02:10Z",
+  "implementationIter1Utc": "09:02:56Z",
+  "firstFocusedUtc": "09:03:20Z-09:04:26Z",
+  "finalFocusedUtc": "09:08:00Z-09:09:05Z",
+  "firstFastGateUtc": "09:07:45Z-09:07:51Z",
+  "preliminaryTerminalUtc": "2026-10-12T09:09:31Z",
+  "clockNote": "UTC values are date -u outputs captured by the worker; the sandbox clock advances faster than file mtimes.",
+  "preliminaryTerminalNote": "Captured before the final gate run on final bytes; the final confirmation UTC is recorded only in the ignored final-gates.log and the worker closing message."
+ },
+ "provenanceNote": "Logs under ignored .cvf/runtime/ncr-result-isolation-worker-20261012 are digested below; snapshots are copied from final-focused.log SNAP lines printed by the regression itself.",
+ "sourceBaseline": {
+  "resultViewerPinBefore": "37c3f811593426e631bd50891931d363a460a943b5c012bdb7796d9923911bd1",
+  "allElevenRawAndHeadPinsMatchedAtStart": true,
+  "pairedAuthorityHashesMatchedAtStart": true,
+  "workerOwnedSha256After": {
+   "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.tsx": "b2d33d48d394cb6973ad85c06d31434c0de6a4c54f14dccd253a29cd3cbf71a1",
+   "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.isolation.test.tsx": "843ca3e36d5b4de06c4ac92d8b241d1b8b3f2097456014c3fe2c8d4e93145aba"
+  }
+ },
+ "commands": [
+  {
+   "cmd": "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --active-work-order <work order>",
+   "exit": 0,
+   "log": "pre-impl.log"
+  },
+  {
+   "cmd": "python governance/compat/run_worker_return_scaffold.py --write <return> --check-shape --max-lines 450 --max-bytes 64000",
+   "exit": 0,
+   "log": "scaffold.log"
+  },
+  {
+   "cmd": "vitest run ResultViewer.isolation.test.tsx (unmodified source, run 1)",
+   "exit": 1,
+   "log": "source-red.log"
+  },
+  {
+   "cmd": "vitest run ResultViewer.isolation.test.tsx (unmodified source, run 2)",
+   "exit": 1,
+   "log": "source-red-2.log"
+  },
+  {
+   "cmd": "vitest run ResultViewer.isolation.test.tsx (unmodified source, run 3 = first valid source-red)",
+   "exit": 1,
+   "log": "source-red-3.log"
+  },
+  {
+   "cmd": "vitest run ResultViewer.isolation.test.tsx (after repair, iteration 1)",
+   "exit": 0,
+   "log": "iter1.log"
+  },
+  {
+   "cmd": "eslint 2 owned TS paths (first run, unused helper warning)",
+   "exit": 0,
+   "log": "eslint-first-warning.log"
+  },
+  {
+   "cmd": "vitest run 4 selected suites (final bytes)",
+   "exit": 0,
+   "log": "final-focused.log"
+  },
+  {
+   "cmd": "tsc --noEmit --incremental false (final)",
+   "exit": 0,
+   "log": "tsc.log"
+  },
+  {
+   "cmd": "eslint 2 owned TS paths (final)",
+   "exit": 0,
+   "log": "eslint.log"
+  },
+  {
+   "cmd": "run_worker_return_fast_gate.py (first, on written return; non-ASCII test text without Text Encoding Exception marker)",
+   "exit": 1,
+   "log": "fast-gate-first.log"
+  }
+ ],
+ "logDigests": {
+  "pre-impl.log": {
+   "sha256": "20c027e0628b600df354f318bb08c60e687959831710d5074bd387ec5a50e839",
+   "bytes": 4761
+  },
+  "scaffold.log": {
+   "sha256": "2b1069bfe5fec99dceaa7d03cad67d75646d9550ee5be786259e9a74d170a9b4",
+   "bytes": 241
+  },
+  "source-red.log": {
+   "sha256": "475cf5461c57fc60cf7459f521a7979b3a1cca0cda3b7c8b67306845f678a564",
+   "bytes": 53826
+  },
+  "source-red-2.log": {
+   "sha256": "d4d630da293e91f34e2b57eb8c7ce46d9f75ea067ccf9d04e32bed9d852627a3",
+   "bytes": 20344
+  },
+  "source-red-3.log": {
+   "sha256": "33b91ef598ebdb395a39491622c497597e4b07b33c624ba7ff22c7b611b0ef3f",
+   "bytes": 47702
+  },
+  "iter1.log": {
+   "sha256": "7ab81e0f3a5e7641d2980afa0b842dc1eecb0e49236e12fda376f294f17541d3",
+   "bytes": 8501
+  },
+  "eslint-first-warning.log": {
+   "sha256": "24994b5173df3a4e51aebf179b123c9a195338c926e5548bab1103958560db60",
+   "bytes": 283
+  },
+  "fast-gate-first.log": {
+   "sha256": "73e188c1230ea2355531acd949a8f9f1ab86f5cff14e4ed118bdf598112dffc8",
+   "bytes": 12327
+  },
+  "final-focused.log": {
+   "sha256": "e5164db07100c2b44e5bc9f4231e7f3398bb703366748abae99c596894c2115f",
+   "bytes": 19745
+  },
+  "tsc.log": {
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "bytes": 0
+  },
+  "eslint.log": {
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "bytes": 0
+  }
+ },
+ "REQ-IDENTITY": {
+  "firstValidSourceRed": {
+   "log": "source-red-3.log",
+   "sourceState": "unmodified ResultViewer.tsx (pin above)",
+   "tests": "18 total: 15 failed, 3 passed",
+   "failed": [
+    "ResultViewer: a different run id resets transient state > clears draft, view, menu, copy feedback and busy state for B even with identical output and template",
+    "ResultViewer: a different run id resets transient state > defaults to the result view without a follow-up handler and keeps the export language preference",
+    "ResultViewer: a different run id resets transient state > treats A to B to A as a new lifetime for A",
+    "ResultViewer: a different run id resets transient state > binds the follow-up to B and never submits the A draft",
+    "ResultViewer: stale async work cannot touch the replacement run > a late clipboard completion for A leaves B uncopied and keeps A payload",
+    "ResultViewer: stale async work cannot touch the replacement run > a late completion also cannot mark a reopened A (A to B to A)",
+    "ResultViewer: stale async work cannot touch the replacement run > an old feedback timer cannot shorten the success feedback of B",
+    "ResultViewer: stale async work cannot touch the replacement run > a repeated copy in the same run is not shortened by its first timer",
+    "ResultViewer: stale async work cannot touch the replacement run > a late receipt copy for A marks neither receipt control of B, but A analytics stay on A",
+    "ResultViewer: stale async work cannot touch the replacement run > unmount invalidates pending copy work: no state change and no timer",
+    "ResultViewer: deferred Word export > A finishing while B export is pending keeps B busy and the menu open; payloads stay per run",
+    "ResultViewer: deferred Word export > A failing while B export is pending does not clear B busy state",
+    "ResultViewer: deferred Word export > A finishing after A to B to A leaves the reopened A menu and busy state alone",
+    "Home to ResultViewer history seam (real Home, store and ResultViewer) > moving history A to B drops A draft, menu and late copy feedback; follow-up continues from B",
+    "Home to ResultViewer history seam (real Home, store and ResultViewer) > history A to B to A starts a new lifetime for A"
+   ],
+   "passed": [
+    "ResultViewer: same-run state is preserved > keeps the draft, view preference and open menu across rerenders, a changed object, fresh output and language",
+    "ResultViewer: same-run state is preserved > keeps the draft under StrictMode with rerenders and sends it once to the current callback",
+    "ResultViewer: stale async work cannot touch the replacement run > a failed clipboard write for A after the switch does not touch B"
+   ],
+   "assertionSamples": [
+    "AssertionError: expected { draft: 'A unsent refinement', \u2026(6) } to match object { draft: '', view: 'pack', \u2026(3) }",
+    "AssertionError: expected 'pack' to be 'result' // Object.is equality",
+    "AssertionError: expected 'B draft kept while B is shown' to be '' // Object.is equality",
+    "AssertionError: expected false to be true // Object.is equality",
+    "AssertionError: expected '\u2705 Copied!' to contain 'Copy to Clipboard'",
+    "AssertionError: expected '\u2705 Copied!' to contain 'Copy to Clipboard'",
+    "AssertionError: expected '\ud83d\udccb Copy to Clipboard' to contain 'Copied'",
+    "AssertionError: expected '\ud83d\udccb Copy to Clipboard' to contain 'Copied'"
+   ],
+   "meaning": "Local transient state (draft, view, menu, copy, busy) was held by one long-lived component and survived a different execution id; late copy and Word completions and old feedback timers then changed the replacement run."
+  },
+  "retainedFixtureErrorRuns": {
+   "source-red.log": "16 failed, 2 passed: my copy/Word selectors matched menu and nudge copied labels (multiple elements) and the Home fixture asserted OUTPUT_A against output OUTPUT_exec_A. Not original-source evidence.",
+   "source-red-2.log": "15 failed, 3 passed: a toggling menu opener closed the stale-open menu the old source carries over, giving TypeError/click-null failures at the wrong line. Not original-source evidence."
+  },
+  "intermediateRun": {
+   "log": "iter1.log",
+   "result": "18 of 18 passed after the first repair; no second production edit followed. eslint-first-warning.log records one unused test helper warning removed afterwards."
+  },
+  "finalControls": {
+   "log": "final-focused.log",
+   "command": "node node_modules/vitest/vitest.mjs run src/components/ResultViewer.isolation.test.tsx src/components/ResultViewer.test.tsx 'src/app/(dashboard)/home/page.test.tsx' src/lib/deliverable-pack.test.ts --reporter=verbose",
+   "result": "4 files, 105 tests passed",
+   "newSuiteTests": 18
+  },
+  "snapshots": [
+   {
+    "label": "same-run-before",
+    "ui": {
+     "draft": "A unsent refinement",
+     "view": "result",
+     "menuOpen": true,
+     "copyLabel": "\ud83d\udccb Copy to Clipboard",
+     "receiptLabel": "Copy evidence receipt",
+     "nudgeLabel": "\ud83d\udccb Copy Evidence Receipt",
+     "wordLabel": "\ud83d\udcd8 Download Word"
+    }
+   },
+   {
+    "label": "same-run-after",
+    "ui": {
+     "draft": "A unsent refinement",
+     "view": "result",
+     "menuOpen": true,
+     "copyLabel": "\ud83d\udccb Copy to Clipboard",
+     "receiptLabel": "Copy evidence receipt",
+     "nudgeLabel": "\ud83d\udccb Sao ch\u00e9p b\u1eb1ng ch\u1ee9ng",
+     "wordLabel": "\ud83d\udcd8 Download Word"
+    }
+   },
+   {
+    "label": "different-run-before",
+    "ui": {
+     "draft": "A unsent refinement",
+     "view": "result",
+     "menuOpen": true,
+     "copyLabel": "\u2705 Copied!",
+     "receiptLabel": "Receipt copied",
+     "nudgeLabel": "\u2705 Copied!",
+     "wordLabel": "\u23f3 Exporting..."
+    }
+   },
+   {
+    "label": "different-run-after",
+    "ui": {
+     "draft": "",
+     "view": "pack",
+     "menuOpen": true,
+     "copyLabel": "\ud83d\udccb Copy to Clipboard",
+     "receiptLabel": "Copy evidence receipt",
+     "nudgeLabel": "\ud83d\udccb Copy Evidence Receipt",
+     "wordLabel": "\ud83d\udcd8 Download Word"
+    }
+   },
+   {
+    "label": "a-b-a",
+    "ui": {
+     "draft": "",
+     "view": "pack",
+     "menuOpen": false,
+     "copyLabel": null,
+     "receiptLabel": "Copy evidence receipt",
+     "nudgeLabel": "\ud83d\udccb Copy Evidence Receipt",
+     "wordLabel": null
+    }
+   }
+  ],
+  "homeSeam": "Real Home page, real execution store and real ResultViewer; ProcessingScreen, DynamicForm, browse and wizards are stubs. History navigation A to B drops A draft, menu and late copy feedback; the B follow-up creates a continuation with parentExecutionId B; A and B store records unchanged.",
+  "payloadIdentity": "follow-up callback and followup_started analytics bound to B; copied clipboard text and Word saveAs filename and blob stayed with the run that started the action."
+ },
+ "REQ-ASYNC": {
+  "snapshots": [
+   {
+    "label": "late-clipboard",
+    "ui": {
+     "draft": "",
+     "view": "pack",
+     "menuOpen": true,
+     "copyLabel": "\ud83d\udccb Copy to Clipboard",
+     "receiptLabel": "Copy evidence receipt",
+     "nudgeLabel": "\ud83d\udccb Copy Evidence Receipt",
+     "wordLabel": "\ud83d\udcd8 Download Word"
+    }
+   },
+   {
+    "label": "timer-not-shortened",
+    "ui": {
+     "draft": "",
+     "view": "pack",
+     "menuOpen": true,
+     "copyLabel": "\ud83d\udccb Copy to Clipboard",
+     "receiptLabel": "Copy evidence receipt",
+     "nudgeLabel": "\ud83d\udccb Copy Evidence Receipt",
+     "wordLabel": "\ud83d\udcd8 Download Word"
+    }
+   },
+   {
+    "label": "late-receipt",
+    "ui": {
+     "draft": "",
+     "view": "pack",
+     "menuOpen": false,
+     "copyLabel": null,
+     "receiptLabel": "Receipt copied",
+     "nudgeLabel": "\u2705 Copied!",
+     "wordLabel": null
+    }
+   },
+   {
+    "label": "word-a-done-b-pending",
+    "ui": {
+     "draft": "",
+     "view": "pack",
+     "menuOpen": true,
+     "copyLabel": "\ud83d\udccb Copy to Clipboard",
+     "receiptLabel": "Copy evidence receipt",
+     "nudgeLabel": "\ud83d\udccb Copy Evidence Receipt",
+     "wordLabel": "\u23f3 Exporting..."
+    }
+   },
+   {
+    "label": "home-a-before",
+    "ui": {
+     "draft": "A draft from history",
+     "view": "pack",
+     "menuOpen": true,
+     "copyLabel": "\ud83d\udccb Copy to Clipboard",
+     "receiptLabel": null,
+     "nudgeLabel": null,
+     "wordLabel": "\ud83d\udcd8 Download Word"
+    }
+   },
+   {
+    "label": "home-b-after-late-copy",
+    "ui": {
+     "draft": "",
+     "view": "pack",
+     "menuOpen": true,
+     "copyLabel": "\ud83d\udccb Copy to Clipboard",
+     "receiptLabel": null,
+     "nudgeLabel": null,
+     "wordLabel": "\ud83d\udcd8 Download Word"
+    }
+   },
+   {
+    "label": "home-b-follow-up",
+    "ui": {
+     "draft": null,
+     "view": "result",
+     "menuOpen": false,
+     "copyLabel": null,
+     "receiptLabel": null,
+     "nudgeLabel": null,
+     "wordLabel": null
+    }
+   },
+   {
+    "label": "home-a-b-a",
+    "ui": {
+     "draft": "",
+     "view": "pack",
+     "menuOpen": false,
+     "copyLabel": null,
+     "receiptLabel": null,
+     "nudgeLabel": null,
+     "wordLabel": null
+    }
+   }
+  ],
+  "coveredCases": [
+   "deferred clipboard write for A resolving after B shows leaves B uncopied and leaves no timer",
+   "same after A to B to A (reopened A is a new lifetime)",
+   "old A feedback timer cannot shorten B success feedback (fake setTimeout)",
+   "repeated copy in one run replaces the first timer instead of being cut short",
+   "late receipt copy for A marks neither receipt control of B; A analytics identity stays A; both controls follow one flag in the current run",
+   "unmount before a deferred copy resolves creates no state change and no timer",
+   "failed clipboard write for A after the switch does not touch B",
+   "deferred Word export: A finishes while B export is pending, B stays busy with the menu open, A saveAs gets A blob and filename, B later gets B blob and filename, A then B analytics",
+   "A Word failure while B export is pending keeps B busy; the original error is still logged",
+   "A Word completion after A to B to A leaves the reopened A menu and busy state alone while the explicit old download still completes"
+  ],
+  "notCancelled": "OS clipboard writes, already started file generation and downloads, and any backend work are not cancelled; only stale UI state and timers are suppressed."
+ },
+ "REQ-RETURN": {
+  "nativeMetadata": {
+   "requestedByOperator": "Sonnet 5.5, high",
+   "selfReportedModelString": "claude-sonnet-5-5 (system-prompt string, not an independently verified native identity)",
+   "nativeModelIdentity": null,
+   "nativeEffort": null,
+   "tokens": null,
+   "bill": null,
+   "nullReason": "The shared-workspace session exposes no native usage, identity or billing meter to the worker."
+  },
+  "stubAndOmissionBoundaries": [
+   "clipboard, docx Packer, file-saver and analytics are disclosed stand-ins with exact payload capture; jspdf is not exercised (Word is the representative deferred export)",
+   "Home seam stubs ProcessingScreen, DynamicForm, browse and wizard leaves",
+   "jsdom only: no browser, backend, provider or AI governance claim; fixture receipts are presentation data",
+   "src/test/setup.ts and vitest.config.ts were read in full earlier in this session (previous task) and were hash-verified unchanged here; they were not re-read in this task",
+   "dispatch evidence JSON read at sourcePins and admissionWitness only; checker sources read at constants and branches, not all lines"
+  ],
+  "forbiddenEffects": "none: no stage, commit, push, install, server, browser, provider call or nested agent",
+  "preliminaryTerminalUtc": "2026-10-12T09:09:31Z",
+  "preliminaryTerminalNote": "Captured before the final gate run on final bytes; the final confirmation UTC is recorded only in the ignored final-gates.log and the worker closing message."
+ }
+}

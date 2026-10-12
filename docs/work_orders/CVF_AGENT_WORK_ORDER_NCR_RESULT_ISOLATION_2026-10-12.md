@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 docType: work_order
-Status: READY
+Status: CLOSED_PASS_BOUNDED
 Date: 2026-10-12
 Batch ID: CVF-NCR-RESULT-ISOLATION-20261012
 Dispatch base head: cd7314b0cbdab2e0a0b1f842ce6d1a6d4540ca29
@@ -190,7 +190,7 @@ Actual result: 0 candidates, 0 returned, not truncated. This query does not prov
 
 | Claimed item | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Disposition |
 |---|---|---|---|---|---|
-| EXISTS: run changes without remount | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.tsx` | result rendering and history restore | ResultViewer | execution={activeExecution} | ACCEPT |
+| EXISTS: run changes without remount | `docs/reviews/evidence/ncr-result-isolation-dispatch-20261012.json` | sourcePins: actual Home result rendering and history restore | ResultViewer | execution={activeExecution} | ACCEPT |
 | EXISTS: stale draft and late copy feedback | `docs/reviews/evidence/ncr-result-isolation-dispatch-20261012.json` | admissionWitness | admissionWitness | actual ResultViewer, same-run control, two original-source failures | ACCEPT |
 | EXISTS: accepted prior history outcome | docs/reviews/CVF_NCR_CHAT_HISTORY_COMPLETION_2026-10-12.md | Claim Boundary | finite prior repair | Local disposition | ACCEPT |
 
@@ -556,3 +556,28 @@ Defect class: ORCHESTRATOR_PACKET_GAP
 Learning lane: GOVERNANCE_CONTROL_PLANE
 Disposition: RULE_EXISTS - first Local authoring preflight exposed envelope/fence/baseline-shape omissions and UI session-binding risk-word ambiguity; one consolidated packet correction, failure preserved in dispatch JSON.
 Next action: apply existing checker literals and finite source contract before transfer; no new checker, worker quiz or scope.
+
+## Local Closure Disposition - 2026-10-12
+
+Run isolation ACCEPTED_BOUNDED; worker105/105 consumed, Local2/2 PASS. Original four bytes unchanged, zero Local production edits/redispatch. Preparation PARTIAL_WITH_REASON: prior unchanged config full-read lineage supported, formal worker reuse citation incomplete; progressive continuity/scoped dispatch reads allowed. Completion: `docs/reviews/CVF_NCR_RESULT_ISOLATION_COMPLETION_2026-10-12.md`.
+
+## Acceptance Receipt Assertion Matrix
+
+| Requirement | Actual assertion/evidence | Disposition |
+|---|---|---|
+| REQ-IDENTITY | new id resets transient states; same-id object/output/language/StrictMode retains draft/view; real Home history and current follow-up parent/payload; worker18/18 and Local history composition | ACCEPTED_BOUNDED |
+| REQ-ASYNC | both receipt controls and timers; old copy/Word completion cannot alter replacement/reopened UI; Local deferred PDF A actual text/analytics completes while Word B stays busy | ACCEPTED_BOUNDED |
+| REQ-RETURN | original four bytes, eleven source pins and eleven declared log digests verified; final105/105/type/lint/fast/ledger; reuse citation gap separately retained | ACCEPTED_BOUNDED_EVIDENCE; PROCEDURE_PARTIAL_WITH_REASON |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RESULT_ISOLATION_2026-10-12.md` | CLOSED_PASS_BOUNDED technical; preparation limits separate | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_NCR_RESULT_ISOLATION_COMPLETION_2026-10-12.md` | worker105/105 consumed; independent Local2/2; no Local product repair | PASS |
+| Roadmap state | `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `docs/roadmaps/README.md` | ResultViewer isolation accepted; integrated NCR job open | PASS |
+| Registry JSON | `docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json` |23 tasks10 Haiku-family/9 Sonnet/4 Luna; previous22 preserved | PASS |
+| Registry Markdown | `docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md` | current23, distinct worker/Local attribution | PASS |
+| External evidence digest | `docs/reviews/evidence/ncr-result-isolation-local-20261012.json` | sha256:9884a2993ab842b2352a4408c2f430e3e7a79e198046846c4e6f93b37d034c7d; internal Local proof/log/source verification | PASS |
+| System loop interlock | parked checkpoints | no automatic successor or new loop | N/A with reason: finite offline UI repair |
+| Session continuity | current source/generated continuity surfaces | authority projection then dedicated actual material-SHA exact6 sync | PASS |

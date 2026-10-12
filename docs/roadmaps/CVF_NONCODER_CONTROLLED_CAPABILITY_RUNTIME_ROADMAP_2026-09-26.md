@@ -50,15 +50,16 @@ worker55/55 consumed, original-source14/16 FAIL, actual Local chat/sidebar/hook2
 Sidebar/chat/store agree; one empty fallback,no resurrection,reopen preserved.
 Original five bytes unchanged,no Local product repair.
 ProcedureFAIL remains separate.22 observations, previous21 unchanged; cost deferred.
-**Selected next outcome - ResultViewer run isolation, 2026-10-12:**
-Actual Local source witness2FAIL: A unsent follow-up remains under B;
-late A clipboard completion marks B Copied. Same-A draft/payload controls PASS.
-docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RESULT_ISOLATION_2026-10-12.md
-fixes ResultViewer only plus independent regression/proof/return,exact4.
-New identity resets transient UI; same-run draft/view preserved; old async/timers
-cannot alter replacement/reopened UI. Actual Home history seam; no OS-side-effect
-cancellation claim.22 observations unchanged;worker manual after bound release.
-Whole job/full/browser/backend/provider/R3/R4 open;no automatic successor.
+**Accepted finite outcome - ResultViewer run isolation, 2026-10-12:**
+docs/reviews/CVF_NCR_RESULT_ISOLATION_COMPLETION_2026-10-12.md accepts offline/jsdom:
+worker105/105 consumed, valid source-red15FAIL/3PASS, Local PDF/Home2/2 PASS.
+Run lifetime owns transient UI; same-run draft/view preserved; old async/timers
+cannot alter replacement/reopened UI. Actual Home parent/payload and PDF/Word
+interleaving verified. Original four unchanged,no Local production edits/redispatch.
+Preparation PARTIAL_WITH_REASON; prior pinned config reads reused,citation gap retained.
+23 observations,previous22 unchanged,cost deferred. No OS-side-effect cancellation.
+**Next selection:** useful coding outcome from evidence; no automatic successor.
+Whole job/full/browser/backend/provider/R3/R4 remain open.
 
 Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11 remain
 parked. ETA and end-to-end readiness are NOT_ESTABLISHED; tests/commits/tranches

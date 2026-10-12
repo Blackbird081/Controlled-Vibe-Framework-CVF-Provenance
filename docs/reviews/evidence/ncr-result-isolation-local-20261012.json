@@ -1,0 +1,335 @@
+{
+  "schemaVersion": "cvf.ncrResultIsolationLocalReview@1.0.0",
+  "date": "2026-10-12",
+  "role": "LOCAL_INTERNAL_AGENT_REVIEWER_CLOSER",
+  "decisionOwner": "LOCAL",
+  "executionBaseHead": "c51f6f09bb762ff79138e8fe221a1528c25f8f8e",
+  "closureBaseHead": "c51f6f09bb762ff79138e8fe221a1528c25f8f8e",
+  "disposition": "CLOSED_PASS_BOUNDED",
+  "originalWorkerArtifacts": {
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.tsx": "b2d33d48d394cb6973ad85c06d31434c0de6a4c54f14dccd253a29cd3cbf71a1",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.isolation.test.tsx": "843ca3e36d5b4de06c4ac92d8b241d1b8b3f2097456014c3fe2c8d4e93145aba",
+    "docs/reviews/evidence/ncr-result-isolation-worker-20261012.json": "bdf26b5bef3a8f9ddf7ce455568ba2f7b2b21afeaefdd09ada830e881063ec11",
+    "docs/reviews/CVF_NCR_RESULT_ISOLATION_WORKER_RETURN_2026-10-12.md": "a2aa215a7ccd642fb9c46e6702306dcf0d110b0c0025b7506c2e18babcaddfb3"
+  },
+  "authorityAtIntake": {
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RESULT_ISOLATION_2026-10-12.md": "fff7fc9caab5ca0d8d71a7b6fb59df1c7c611954374bd1703a2c4a1837779dbc",
+    "docs/baselines/CVF_GC018_NCR_RESULT_ISOLATION_2026-10-12.md": "4ad906858e223311c19ebcc05e0ec2bea24fb169ab7ed4bd9919798003eb180a"
+  },
+  "sourcePins": [
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.tsx",
+      "dispatchRawSha256": "37c3f811593426e631bd50891931d363a460a943b5c012bdb7796d9923911bd1",
+      "baseBlobSha256": "37c3f811593426e631bd50891931d363a460a943b5c012bdb7796d9923911bd1",
+      "currentRawSha256": "b2d33d48d394cb6973ad85c06d31434c0de6a4c54f14dccd253a29cd3cbf71a1",
+      "disposition": "AUTHORIZED_WORKER_SOURCE_DELTA"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.test.tsx",
+      "dispatchRawSha256": "d55efdeb542eeef9b4e3e7a4732432895fff7547dcef7bd1ed4c26ed7d996396",
+      "baseBlobSha256": "d55efdeb542eeef9b4e3e7a4732432895fff7547dcef7bd1ed4c26ed7d996396",
+      "currentRawSha256": "d55efdeb542eeef9b4e3e7a4732432895fff7547dcef7bd1ed4c26ed7d996396",
+      "disposition": "UNCHANGED"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.tsx",
+      "dispatchRawSha256": "b6b1d7ff64bcc5586b830b2a23c8e1b94957ef276a4abd9cea9eaa0825965322",
+      "baseBlobSha256": "b6b1d7ff64bcc5586b830b2a23c8e1b94957ef276a4abd9cea9eaa0825965322",
+      "currentRawSha256": "b6b1d7ff64bcc5586b830b2a23c8e1b94957ef276a4abd9cea9eaa0825965322",
+      "disposition": "UNCHANGED"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.test.tsx",
+      "dispatchRawSha256": "332a100889580078daca4dbb0a1e815a2c6d9e0e0fcdbfa912b02fa0e1af63e2",
+      "baseBlobSha256": "332a100889580078daca4dbb0a1e815a2c6d9e0e0fcdbfa912b02fa0e1af63e2",
+      "currentRawSha256": "332a100889580078daca4dbb0a1e815a2c6d9e0e0fcdbfa912b02fa0e1af63e2",
+      "disposition": "UNCHANGED"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/store.ts",
+      "dispatchRawSha256": "f5deb700c631c680924d3ba74fd1c56ef862e99703fe59c461828a8a64953c06",
+      "baseBlobSha256": "f5deb700c631c680924d3ba74fd1c56ef862e99703fe59c461828a8a64953c06",
+      "currentRawSha256": "f5deb700c631c680924d3ba74fd1c56ef862e99703fe59c461828a8a64953c06",
+      "disposition": "UNCHANGED"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/deliverable-pack.ts",
+      "dispatchRawSha256": "9a9b93dbaa503baf33e38ea3a5cacc6d0cb1da7e696adeab3f033c9fe97415a9",
+      "baseBlobSha256": "9a9b93dbaa503baf33e38ea3a5cacc6d0cb1da7e696adeab3f033c9fe97415a9",
+      "currentRawSha256": "9a9b93dbaa503baf33e38ea3a5cacc6d0cb1da7e696adeab3f033c9fe97415a9",
+      "disposition": "UNCHANGED"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/deliverable-pack.test.ts",
+      "dispatchRawSha256": "d6a4e2cbd326937b8e609c8d0b38f884bc1c007683af47ab7e904bafe102c599",
+      "baseBlobSha256": "d6a4e2cbd326937b8e609c8d0b38f884bc1c007683af47ab7e904bafe102c599",
+      "currentRawSha256": "d6a4e2cbd326937b8e609c8d0b38f884bc1c007683af47ab7e904bafe102c599",
+      "disposition": "UNCHANGED"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/types/index.ts",
+      "dispatchRawSha256": "924e0ba06697be1de5501f0a8e5d03b73d18da9e86c52482cbfc585ba0d56a85",
+      "baseBlobSha256": "924e0ba06697be1de5501f0a8e5d03b73d18da9e86c52482cbfc585ba0d56a85",
+      "currentRawSha256": "924e0ba06697be1de5501f0a8e5d03b73d18da9e86c52482cbfc585ba0d56a85",
+      "disposition": "UNCHANGED"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/ai/types.ts",
+      "dispatchRawSha256": "58eff6bceea2caa7088fada51dbf4e53d1074633ab4fee15d90f5ff791d4abd3",
+      "baseBlobSha256": "58eff6bceea2caa7088fada51dbf4e53d1074633ab4fee15d90f5ff791d4abd3",
+      "currentRawSha256": "58eff6bceea2caa7088fada51dbf4e53d1074633ab4fee15d90f5ff791d4abd3",
+      "disposition": "UNCHANGED"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/test/setup.ts",
+      "dispatchRawSha256": "bc573b2a6133b07404c42f797bce43fe73464711e0281f29da8234bf2fed6b27",
+      "baseBlobSha256": "bc573b2a6133b07404c42f797bce43fe73464711e0281f29da8234bf2fed6b27",
+      "currentRawSha256": "bc573b2a6133b07404c42f797bce43fe73464711e0281f29da8234bf2fed6b27",
+      "disposition": "UNCHANGED"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/vitest.config.ts",
+      "dispatchRawSha256": "9a4a65976b5b7a5d038f9cb412a90d417f804108cf1dd33bae4421989a863420",
+      "baseBlobSha256": "9a4a65976b5b7a5d038f9cb412a90d417f804108cf1dd33bae4421989a863420",
+      "currentRawSha256": "9a4a65976b5b7a5d038f9cb412a90d417f804108cf1dd33bae4421989a863420",
+      "disposition": "UNCHANGED"
+    }
+  ],
+  "workerEvidenceConsumed": {
+    "focused": "105/105 PASS; four suites, new18 and existing87",
+    "sourceNegative": "First valid original-source run15 FAIL/3 PASS; first two harness-invalid runs retained, excluded as product-negative evidence",
+    "typecheck": "Final exit0, empty log; no duplicate rerun",
+    "lint": "Final exit0, empty log; first unused-helper warning retained",
+    "finalConfirmation": "fast/ledger/diff exit0 in ignored final-gates.log, final confirmation09:09:54Z",
+    "commands": [
+      {
+        "cmd": "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --active-work-order <work order>",
+        "exit": 0,
+        "log": "pre-impl.log"
+      },
+      {
+        "cmd": "python governance/compat/run_worker_return_scaffold.py --write <return> --check-shape --max-lines 450 --max-bytes 64000",
+        "exit": 0,
+        "log": "scaffold.log"
+      },
+      {
+        "cmd": "vitest run ResultViewer.isolation.test.tsx (unmodified source, run 1)",
+        "exit": 1,
+        "log": "source-red.log"
+      },
+      {
+        "cmd": "vitest run ResultViewer.isolation.test.tsx (unmodified source, run 2)",
+        "exit": 1,
+        "log": "source-red-2.log"
+      },
+      {
+        "cmd": "vitest run ResultViewer.isolation.test.tsx (unmodified source, run 3 = first valid source-red)",
+        "exit": 1,
+        "log": "source-red-3.log"
+      },
+      {
+        "cmd": "vitest run ResultViewer.isolation.test.tsx (after repair, iteration 1)",
+        "exit": 0,
+        "log": "iter1.log"
+      },
+      {
+        "cmd": "eslint 2 owned TS paths (first run, unused helper warning)",
+        "exit": 0,
+        "log": "eslint-first-warning.log"
+      },
+      {
+        "cmd": "vitest run 4 selected suites (final bytes)",
+        "exit": 0,
+        "log": "final-focused.log"
+      },
+      {
+        "cmd": "tsc --noEmit --incremental false (final)",
+        "exit": 0,
+        "log": "tsc.log"
+      },
+      {
+        "cmd": "eslint 2 owned TS paths (final)",
+        "exit": 0,
+        "log": "eslint.log"
+      },
+      {
+        "cmd": "run_worker_return_fast_gate.py (first, on written return; non-ASCII test text without Text Encoding Exception marker)",
+        "exit": 1,
+        "log": "fast-gate-first.log"
+      }
+    ],
+    "logs": [
+      {
+        "path": ".cvf/runtime/ncr-result-isolation-worker-20261012/eslint-first-warning.log",
+        "sha256": "24994b5173df3a4e51aebf179b123c9a195338c926e5548bab1103958560db60",
+        "bytes": 283,
+        "declaredHashVerified": true
+      },
+      {
+        "path": ".cvf/runtime/ncr-result-isolation-worker-20261012/eslint.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0,
+        "declaredHashVerified": true
+      },
+      {
+        "path": ".cvf/runtime/ncr-result-isolation-worker-20261012/fast-gate-first.log",
+        "sha256": "73e188c1230ea2355531acd949a8f9f1ab86f5cff14e4ed118bdf598112dffc8",
+        "bytes": 12327,
+        "declaredHashVerified": true
+      },
+      {
+        "path": ".cvf/runtime/ncr-result-isolation-worker-20261012/final-focused.log",
+        "sha256": "e5164db07100c2b44e5bc9f4231e7f3398bb703366748abae99c596894c2115f",
+        "bytes": 19745,
+        "declaredHashVerified": true,
+        "text": "\n RUN  v4.1.8 D:/UNG DUNG AI/TOOL AI 2026/Controlled-Vibe-Framework-CVF/EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web\n\n \u2713 src/lib/deliverable-pack.test.ts > inferPackType > maps app_builder_wizard \u2192 app_planning 4ms\n \u2713 src/lib/deliverable-pack.test.ts > inferPackType > maps app_builder_complete \u2192 app_planning 1ms\n \u2713 src/lib/deliverable-pack.test.ts > inferPackType > maps business_strategy_wizard \u2192 business_decision 0ms\n \u2713 src/lib/deliverable-pack.test.ts > inferPackType > maps security_assessment_wizard \u2192 review_findings 1ms\n \u2713 src/lib/deliverable-pack.test.ts > inferPackType > maps documentation_wizard \u2192 documentation_handoff 1ms\n \u2713 src/lib/deliverable-pack.test.ts > inferPackType > maps system_design_wizard \u2192 app_planning 1ms\n \u2713 src/lib/deliverable-pack.test.ts > inferPackType > maps data_analysis_wizard \u2192 review_findings 0ms\n \u2713 src/lib/deliverable-pack.test.ts > inferPackType > falls back to category when template is unrecognized 1ms\n \u2713 src/lib/deliverable-pack.test.ts > inferPackType > falls back to documentation_handoff when neither template nor category match 1ms\n \u2713 src/lib/deliverable-pack.test.ts > inferPackType > template match takes priority over category 1ms\n \u2713 src/lib/deliverable-pack.test.ts > generateDeliverablePack > returns a pack with correct packType inferred from templateId 4ms\n \u2713 src/lib/deliverable-pack.test.ts > generateDeliverablePack > returns a pack with correct packType inferred from category fallback 1ms\n \u2713 src/lib/deliverable-pack.test.ts > generateDeliverablePack > includes headline with intent 1ms\n \u2713 src/lib/deliverable-pack.test.ts > generateDeliverablePack > includes mainOutput from execution.output 0ms\n \u2713 src/lib/deliverable-pack.test.ts > generateDeliverablePack > has empty mainOutput when execution.output is undefined 0ms\n \u2713 src/lib/deliverable-pack.test.ts > generateDeliverablePack > builds executiveSummary from first long paragraph of output 0ms\n \u2713 src/lib/deliverable-pack.test.ts > generateDeliverablePack > falls back to default executive summary when output is empty 1ms\n \u2713 src/lib/deliverable-pack.test.ts > generateDeliverablePack > has non-empty scopeBoundary for all pack types 1ms\n \u2713 src/lib/deliverable-pack.test.ts > generateDeliverablePack > has at least 3 recommendedNextActions for every pack type 1ms\n \u2713 src/lib/deliverable-pack.test.ts > generateDeliverablePack > sets governanceEvidence.receiptAvailable=false when no receipt 0ms\n \u2713 src/lib/deliverable-pack.test.ts > generateDeliverablePack > keeps missing receipt visible as artifact verification warning 5ms\n \u2713 src/lib/deliverable-pack.test.ts > generateDeliverablePack > sets governanceEvidence from receipt when provided 1ms\n \u2713 src/lib/deliverable-pack.test.ts > generateDeliverablePack > fails artifact verification when main output is missing 1ms\n \u2713 src/lib/deliverable-pack.test.ts > generateDeliverablePack > includes sourceExecutionId matching execution.id 1ms\n \u2713 src/lib/deliverable-pack.test.ts > generateDeliverablePack > generatedAt is a valid ISO string 3ms\n \u2713 src/lib/deliverable-pack.test.ts > serializePackToMarkdown > includes headline as H1 1ms\n \u2713 src/lib/deliverable-pack.test.ts > serializePackToMarkdown > includes all required sections 1ms\n \u2713 src/lib/deliverable-pack.test.ts > serializePackToMarkdown > serializes artifact verification and provenance without upgrading missing receipt 1ms\n \u2713 src/lib/deliverable-pack.test.ts > serializePackToMarkdown > includes numbered next actions 1ms\n \u2713 src/lib/deliverable-pack.test.ts > serializePackToMarkdown > includes provider info when receipt is provided 1ms\n \u2713 src/lib/deliverable-pack.test.ts > serializePackToMarkdown > includes sourceExecutionId in footer 0ms\n \u2713 src/lib/deliverable-pack.test.ts > serializePackToMarkdown > produces non-empty markdown for all 4 pack types 1ms\n \u2713 src/components/ResultViewer.test.tsx > ResultViewer > renders the template name with Complete status 209ms\n \u2713 src/components/ResultViewer.test.tsx > ResultViewer > renders markdown output 26ms\n \u2713 src/components/ResultViewer.test.tsx > ResultViewer > renders W119 evidence receipt fields for non-coder handoff 31ms\n \u2713 src/components/ResultViewer.test.tsx > ResultViewer > copies W119 evidence receipt without raw keys 51ms\n \u2713 src/components/ResultViewer.test.tsx > ResultViewer > calls onBack when back button is clicked 16ms\n \u2713 src/components/ResultViewer.test.tsx > ResultViewer > calls onAccept when accept button is clicked 14ms\n \u2713 src/components/ResultViewer.test.tsx > ResultViewer > calls onReject when reject button is clicked 14ms\n \u2713 src/components/ResultViewer.test.tsx > ResultViewer > calls onRetry when retry button is clicked 16ms\n \u2713 src/components/ResultViewer.test.tsx > ResultViewer > renders Send to Agent button when onSendToAgent is provided 18ms\n \u2713 src/components/ResultViewer.test.tsx > ResultViewer > calls onSendToAgent with exported content when Send to Agent is clicked 20ms\n \u2713 src/components/ResultViewer.test.tsx > ResultViewer > does not render Send to Agent button when prop is absent 13ms\n \u2713 src/components/ResultViewer.test.tsx > ResultViewer > export menu > toggles export menu visibility 25ms\n \u2713 src/components/ResultViewer.test.tsx > ResultViewer > export menu > shows language selector in export menu 23ms\n \u2713 src/components/ResultViewer.test.tsx > ResultViewer > export menu > exports to markdown file 30ms\n \u2713 src/app/(dashboard)/home/page.test.tsx > HomePage > renders the browse experience by default 66ms\n \u2713 src/app/(dashboard)/home/page.test.tsx > HomePage > restored history identity > shows restored A when the ambient current execution is B 24ms\n \u2713 src/components/ResultViewer.test.tsx > ResultViewer > export menu > copies to clipboard 56ms\n \u2713 src/components/ResultViewer.test.tsx > ResultViewer > export menu > shows PDF and Word download buttons 37ms\n \u2713 src/components/ResultViewer.test.tsx > ResultViewer > bilingual export labels > shows Vietnamese labels when export language is switched to vi 39ms\n \u2713 src/components/ResultViewer.test.tsx > ResultViewer > Send to Agent > calls onSendToAgent with generated content when clicked 13ms\n \u2713 src/components/ResultViewer.test.tsx > ResultViewer > copy feedback > shows Copied feedback after clipboard copy 39ms\n \u2713 src/components/ResultViewer.test.tsx > ResultViewer > metadata > renders timestamp section 13ms\n \u2713 src/components/ResultViewer.test.tsx > ResultViewer > export menu closes on action > closes export menu after markdown download 36ms\n \u2713 src/components/ResultViewer.test.tsx > ResultViewer > PDF export > exports to PDF successfully 52ms\n \u2713 src/components/ResultViewer.test.tsx > ResultViewer > PDF export > renders all markdown element types in PDF 79ms\n \u2713 src/app/(dashboard)/home/page.test.tsx > HomePage > restored history identity > shows restored A when there is no ambient current execution 11ms\n \u2713 src/app/(dashboard)/home/page.test.tsx > HomePage > restored history identity > keeps A displayed when the ambient current execution changes to another execution 11ms\n \u2713 src/components/ResultViewer.test.tsx > ResultViewer > PDF export > handles PDF page overflow by adding pages 51ms\n \u2713 src/components/ResultViewer.test.tsx > ResultViewer > PDF export > handles PDF export error gracefully 43ms\n \u2713 src/components/ResultViewer.test.tsx > ResultViewer > PDF export > closes export menu after PDF export 35ms\n \u2713 src/app/(dashboard)/home/page.test.tsx > HomePage > actions bind to the displayed execution > rejects restored A and leaves ambient B unchanged 297ms\n \u2713 src/app/(dashboard)/home/page.test.tsx > HomePage > actions bind to the displayed execution > follow-up from restored A uses A as the parent and leaves A and B unchanged 42ms\n \u2713 src/components/ResultViewer.test.tsx > ResultViewer > Word export > exports to DOCX successfully 37ms\n \u2713 src/components/ResultViewer.test.tsx > ResultViewer > Word export > renders all markdown element types in DOCX 49ms\n \u2713 src/components/ResultViewer.test.tsx > ResultViewer > Word export > handles DOCX export error gracefully 35ms\n \u2713 src/app/(dashboard)/home/page.test.tsx > HomePage > actions bind to the displayed execution > accepts a fresh execution after the ambient current execution moves to B 106ms\n \u2713 src/app/(dashboard)/home/page.test.tsx > HomePage > history controls > switches identity and actions from A to C together 33ms\n \u2713 src/app/(dashboard)/home/page.test.tsx > HomePage > history controls > returns an invalid history query (unknown id) to browse without showing prior output 15ms\n \u2713 src/app/(dashboard)/home/page.test.tsx > HomePage > history controls > returns an invalid history query (unaccepted) to browse without showing prior output 10ms\n \u2713 src/app/(dashboard)/home/page.test.tsx > HomePage > history controls > returns an invalid history query (empty output) to browse without showing prior output 9ms\n \u2713 src/app/(dashboard)/home/page.test.tsx > HomePage > history controls > returns an invalid history query (unavailable template) to browse without showing prior output 9ms\n \u2713 src/app/(dashboard)/home/page.test.tsx > HomePage > history controls > keeps a fresh submission bound to the created execution when no continue parameter is present 52ms\n \u2713 src/app/(dashboard)/home/page.test.tsx > HomePage > history controls > binds processing completion to the created execution when the ambient current execution changes during processing 48ms\n \u2713 src/components/ResultViewer.test.tsx > ResultViewer > Word export > closes export menu after DOCX export 35ms\n \u2713 src/components/ResultViewer.test.tsx > ResultViewer > Word export > uses Vietnamese labels when export language is vi 43ms\n \u2713 src/components/ResultViewer.test.tsx > ResultViewer > Word export > toggles export language back to English after switching to Vietnamese 40ms\nstdout | src/components/ResultViewer.isolation.test.tsx > ResultViewer: same-run state is preserved > keeps the draft, view preference and open menu across rerenders, a changed object, fresh output and language\nSNAP {\"label\":\"same-run-before\",\"ui\":{\"draft\":\"A unsent refinement\",\"view\":\"result\",\"menuOpen\":true,\"copyLabel\":\"\ud83d\udccb Copy to Clipboard\",\"receiptLabel\":\"Copy evidence receipt\",\"nudgeLabel\":\"\ud83d\udccb Copy Evidence Receipt\",\"wordLabel\":\"\ud83d\udcd8 Download Word\"}}\nSNAP {\"label\":\"same-run-after\",\"ui\":{\"draft\":\"A unsent refinement\",\"view\":\"result\",\"menuOpen\":true,\"copyLabel\":\"\ud83d\udccb Copy to Clipboard\",\"receiptLabel\":\"Copy evidence receipt\",\"nudgeLabel\":\"\ud83d\udccb Sao ch\u00e9p b\u1eb1ng ch\u1ee9ng\",\"wordLabel\":\"\ud83d\udcd8 Download Word\"}}\n\n \u2713 src/components/ResultViewer.test.tsx > ResultViewer > handleExportToFile (markdown download) > triggers file download with correct blob and cleans up 32ms\n \u2713 src/components/ResultViewer.test.tsx > ResultViewer > noncoder export nudge (W130-T1) > renders noncoder export nudge when onFollowUp is provided and output is present 23ms\n \u2713 src/components/ResultViewer.test.tsx > ResultViewer > noncoder export nudge (W130-T1) > does not render noncoder export nudge when onFollowUp is absent 15ms\n \u2713 src/components/ResultViewer.test.tsx > ResultViewer > noncoder export nudge (W130-T1) > nudge copy evidence btn fires evidence_exported analytics event 47ms\n \u2713 src/components/ResultViewer.test.tsx > ResultViewer > noncoder export nudge (W130-T1) > nudge download pack btn fires deliverable_pack_exported analytics event 23ms\n \u2713 src/components/ResultViewer.test.tsx > ResultViewer > noncoder export nudge (W130-T1) > pack tab is default active tab in noncoder mode 15ms\n \u2713 src/components/ResultViewer.test.tsx > ResultViewer > follow-up section (W97-T1) > renders follow-up section when onFollowUp prop is provided and output is present 17ms\n \u2713 src/components/ResultViewer.test.tsx > ResultViewer > follow-up section (W97-T1) > does not render follow-up section when onFollowUp prop is absent 9ms\n \u2713 src/components/ResultViewer.test.tsx > ResultViewer > follow-up section (W97-T1) > calls onFollowUp with trimmed text and resets input when submit is clicked with valid text 29ms\n \u2713 src/components/ResultViewer.isolation.test.tsx > ResultViewer: same-run state is preserved > keeps the draft, view preference and open menu across rerenders, a changed object, fresh output and language 797ms\n \u2713 src/components/ResultViewer.isolation.test.tsx > ResultViewer: same-run state is preserved > keeps the draft under StrictMode with rerenders and sends it once to the current callback 70ms\nstdout | src/components/ResultViewer.isolation.test.tsx > ResultViewer: a different run id resets transient state > clears draft, view, menu, copy feedback and busy state for B even with identical output and template\nSNAP {\"label\":\"different-run-before\",\"ui\":{\"draft\":\"A unsent refinement\",\"view\":\"result\",\"menuOpen\":true,\"copyLabel\":\"\u2705 Copied!\",\"receiptLabel\":\"Receipt copied\",\"nudgeLabel\":\"\u2705 Copied!\",\"wordLabel\":\"\u23f3 Exporting...\"}}\nSNAP {\"label\":\"different-run-after\",\"ui\":{\"draft\":\"\",\"view\":\"pack\",\"menuOpen\":true,\"copyLabel\":\"\ud83d\udccb Copy to Clipboard\",\"receiptLabel\":\"Copy evidence receipt\",\"nudgeLabel\":\"\ud83d\udccb Copy Evidence Receipt\",\"wordLabel\":\"\ud83d\udcd8 Download Word\"}}\n\n \u2713 src/components/ResultViewer.isolation.test.tsx > ResultViewer: a different run id resets transient state > clears draft, view, menu, copy feedback and busy state for B even with identical output and template 612ms\nstdout | src/components/ResultViewer.isolation.test.tsx > ResultViewer: a different run id resets transient state > treats A to B to A as a new lifetime for A\nSNAP {\"label\":\"a-b-a\",\"ui\":{\"draft\":\"\",\"view\":\"pack\",\"menuOpen\":false,\"copyLabel\":null,\"receiptLabel\":\"Copy evidence receipt\",\"nudgeLabel\":\"\ud83d\udccb Copy Evidence Receipt\",\"wordLabel\":null}}\n\n \u2713 src/components/ResultViewer.isolation.test.tsx > ResultViewer: a different run id resets transient state > defaults to the result view without a follow-up handler and keeps the export language preference 143ms\n \u2713 src/components/ResultViewer.isolation.test.tsx > ResultViewer: a different run id resets transient state > treats A to B to A as a new lifetime for A 104ms\n \u2713 src/components/ResultViewer.isolation.test.tsx > ResultViewer: a different run id resets transient state > binds the follow-up to B and never submits the A draft 55ms\nstdout | src/components/ResultViewer.isolation.test.tsx > ResultViewer: stale async work cannot touch the replacement run > a late clipboard completion for A leaves B uncopied and keeps A payload\nSNAP {\"label\":\"late-clipboard\",\"ui\":{\"draft\":\"\",\"view\":\"pack\",\"menuOpen\":true,\"copyLabel\":\"\ud83d\udccb Copy to Clipboard\",\"receiptLabel\":\"Copy evidence receipt\",\"nudgeLabel\":\"\ud83d\udccb Copy Evidence Receipt\",\"wordLabel\":\"\ud83d\udcd8 Download Word\"}}\n\n \u2713 src/components/ResultViewer.isolation.test.tsx > ResultViewer: stale async work cannot touch the replacement run > a late clipboard completion for A leaves B uncopied and keeps A payload 302ms\n \u2713 src/components/ResultViewer.isolation.test.tsx > ResultViewer: stale async work cannot touch the replacement run > a late completion also cannot mark a reopened A (A to B to A) 236ms\nstdout | src/components/ResultViewer.isolation.test.tsx > ResultViewer: stale async work cannot touch the replacement run > an old feedback timer cannot shorten the success feedback of B\nSNAP {\"label\":\"timer-not-shortened\",\"ui\":{\"draft\":\"\",\"view\":\"pack\",\"menuOpen\":true,\"copyLabel\":\"\ud83d\udccb Copy to Clipboard\",\"receiptLabel\":\"Copy evidence receipt\",\"nudgeLabel\":\"\ud83d\udccb Copy Evidence Receipt\",\"wordLabel\":\"\ud83d\udcd8 Download Word\"}}\n\n \u2713 src/components/ResultViewer.isolation.test.tsx > ResultViewer: stale async work cannot touch the replacement run > an old feedback timer cannot shorten the success feedback of B 427ms\nstdout | src/components/ResultViewer.isolation.test.tsx > ResultViewer: stale async work cannot touch the replacement run > a late receipt copy for A marks neither receipt control of B, but A analytics stay on A\nSNAP {\"label\":\"late-receipt\",\"ui\":{\"draft\":\"\",\"view\":\"pack\",\"menuOpen\":false,\"copyLabel\":null,\"receiptLabel\":\"Receipt copied\",\"nudgeLabel\":\"\u2705 Copied!\",\"wordLabel\":null}}\n\n \u2713 src/components/ResultViewer.isolation.test.tsx > ResultViewer: stale async work cannot touch the replacement run > a repeated copy in the same run is not shortened by its first timer 195ms\n \u2713 src/components/ResultViewer.isolation.test.tsx > ResultViewer: stale async work cannot touch the replacement run > a late receipt copy for A marks neither receipt control of B, but A analytics stay on A 88ms\n \u2713 src/components/ResultViewer.isolation.test.tsx > ResultViewer: stale async work cannot touch the replacement run > unmount invalidates pending copy work: no state change and no timer 115ms\n \u2713 src/components/ResultViewer.isolation.test.tsx > ResultViewer: stale async work cannot touch the replacement run > a failed clipboard write for A after the switch does not touch B 47ms\nstdout | src/components/ResultViewer.isolation.test.tsx > ResultViewer: deferred Word export > A finishing while B export is pending keeps B busy and the menu open; payloads stay per run\nSNAP {\"label\":\"word-a-done-b-pending\",\"ui\":{\"draft\":\"\",\"view\":\"pack\",\"menuOpen\":true,\"copyLabel\":\"\ud83d\udccb Copy to Clipboard\",\"receiptLabel\":\"Copy evidence receipt\",\"nudgeLabel\":\"\ud83d\udccb Copy Evidence Receipt\",\"wordLabel\":\"\u23f3 Exporting...\"}}\n\n \u2713 src/components/ResultViewer.isolation.test.tsx > ResultViewer: deferred Word export > A finishing while B export is pending keeps B busy and the menu open; payloads stay per run 685ms\n \u2713 src/components/ResultViewer.isolation.test.tsx > ResultViewer: deferred Word export > A failing while B export is pending does not clear B busy state 476ms\nstdout | src/components/ResultViewer.isolation.test.tsx > Home to ResultViewer history seam (real Home, store and ResultViewer) > moving history A to B drops A draft, menu and late copy feedback; follow-up continues from B\nSNAP {\"label\":\"home-a-before\",\"ui\":{\"draft\":\"A draft from history\",\"view\":\"pack\",\"menuOpen\":true,\"copyLabel\":\"\ud83d\udccb Copy to Clipboard\",\"receiptLabel\":null,\"nudgeLabel\":null,\"wordLabel\":\"\ud83d\udcd8 Download Word\"}}\n\n \u2713 src/components/ResultViewer.isolation.test.tsx > ResultViewer: deferred Word export > A finishing after A to B to A leaves the reopened A menu and busy state alone 379ms\nstdout | src/components/ResultViewer.isolation.test.tsx > Home to ResultViewer history seam (real Home, store and ResultViewer) > moving history A to B drops A draft, menu and late copy feedback; follow-up continues from B\nSNAP {\"label\":\"home-b-after-late-copy\",\"ui\":{\"draft\":\"\",\"view\":\"pack\",\"menuOpen\":true,\"copyLabel\":\"\ud83d\udccb Copy to Clipboard\",\"receiptLabel\":null,\"nudgeLabel\":null,\"wordLabel\":\"\ud83d\udcd8 Download Word\"}}\nSNAP {\"label\":\"home-b-follow-up\",\"ui\":{\"draft\":null,\"view\":\"result\",\"menuOpen\":false,\"copyLabel\":null,\"receiptLabel\":null,\"nudgeLabel\":null,\"wordLabel\":null}}\n\nstdout | src/components/ResultViewer.isolation.test.tsx > Home to ResultViewer history seam (real Home, store and ResultViewer) > history A to B to A starts a new lifetime for A\nSNAP {\"label\":\"home-a-b-a\",\"ui\":{\"draft\":\"\",\"view\":\"pack\",\"menuOpen\":false,\"copyLabel\":null,\"receiptLabel\":null,\"nudgeLabel\":null,\"wordLabel\":null}}\n\n \u2713 src/components/ResultViewer.isolation.test.tsx > Home to ResultViewer history seam (real Home, store and ResultViewer) > moving history A to B drops A draft, menu and late copy feedback; follow-up continues from B 336ms\n \u2713 src/components/ResultViewer.isolation.test.tsx > Home to ResultViewer history seam (real Home, store and ResultViewer) > history A to B to A starts a new lifetime for A 63ms\n\n Test Files  4 passed (4)\n      Tests  105 passed (105)\n   Start at  16:08:01\n   Duration  17.55s (transform 14.71s, setup 37.48s, import 4.11s, tests 7.37s, environment 5.11s)\n\n"
+      },
+      {
+        "path": ".cvf/runtime/ncr-result-isolation-worker-20261012/final-gates.log",
+        "sha256": "53975d56deeefe478ab4313a16af8df327aba259a6b301fcb6ae0699ddb9e581",
+        "bytes": 969,
+        "declaredHashVerified": false,
+        "text": "== final gates start 09:09:47Z\nCOMPLIANT - epistemic process packet evidence structure is aligned.\nCOMPLIANT\nCOMPLIANT - worker-return packets are review-ready.\nPASS: git diff whitespace check (0.04s)\nCOMPLIANT: worker-return fast gate passed in 5.74s.\nfast_exit=0\n== ledger\n=== CVF Work Order Acceptance Ledger Gate ===\r\nCOMPLIANT\r\nledger_exit=0\n== diff check\ndiffcheck_exit=0\n== status\n M EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.tsx\n?? EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.isolation.test.tsx\n?? docs/reviews/CVF_NCR_RESULT_ISOLATION_WORKER_RETURN_2026-10-12.md\n?? docs/reviews/evidence/ncr-result-isolation-worker-20261012.json\n== staged count\n0\nc51f6f09bb762ff79138e8fe221a1528c25f8f8e\n  404 29038 docs/reviews/CVF_NCR_RESULT_ISOLATION_WORKER_RETURN_2026-10-12.md\n  386 16611 docs/reviews/evidence/ncr-result-isolation-worker-20261012.json\n  790 45649 total\n== final confirmation 2026-10-12T09:09:54Z\n"
+      },
+      {
+        "path": ".cvf/runtime/ncr-result-isolation-worker-20261012/iter1.log",
+        "sha256": "7ab81e0f3a5e7641d2980afa0b842dc1eecb0e49236e12fda376f294f17541d3",
+        "bytes": 8501,
+        "declaredHashVerified": true
+      },
+      {
+        "path": ".cvf/runtime/ncr-result-isolation-worker-20261012/pre-impl.log",
+        "sha256": "20c027e0628b600df354f318bb08c60e687959831710d5074bd387ec5a50e839",
+        "bytes": 4761,
+        "declaredHashVerified": true
+      },
+      {
+        "path": ".cvf/runtime/ncr-result-isolation-worker-20261012/scaffold.log",
+        "sha256": "2b1069bfe5fec99dceaa7d03cad67d75646d9550ee5be786259e9a74d170a9b4",
+        "bytes": 241,
+        "declaredHashVerified": true
+      },
+      {
+        "path": ".cvf/runtime/ncr-result-isolation-worker-20261012/source-red-2.log",
+        "sha256": "d4d630da293e91f34e2b57eb8c7ce46d9f75ea067ccf9d04e32bed9d852627a3",
+        "bytes": 20344,
+        "declaredHashVerified": true
+      },
+      {
+        "path": ".cvf/runtime/ncr-result-isolation-worker-20261012/source-red-3.log",
+        "sha256": "33b91ef598ebdb395a39491622c497597e4b07b33c624ba7ff22c7b611b0ef3f",
+        "bytes": 47702,
+        "declaredHashVerified": true,
+        "summary": "eBeenCalledTimes(1)); \u2026\n\n\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af[13/15]\u23af\n\n FAIL  src/components/ResultViewer.isolation.test.tsx > Home to ResultViewer history seam (real Home, store and ResultViewer) > moving history A to B drops A draft, menu and late copy feedback; follow-up continues from B\nAssertionError: expected { draft: 'A draft from history', \u2026(6) } to match object { draft: '', menuOpen: false, \u2026(1) }\n(4 matching properties omitted from actual)\n\n- Expected\n+ Received\n\n  {\n-   \"draft\": \"\",\n-   \"menuOpen\": false,\n+   \"draft\": \"A draft from history\",\n+   \"menuOpen\": true,\n    \"view\": \"pack\",\n  }\n\n \u276f src/components/ResultViewer.isolation.test.tsx:426:22\n    424|         expect(text()).toContain('OUTPUT_B');\n    425|         expect(text()).not.toContain('OUTPUT_A');\n    426|         expect(ui()).toMatchObject({ draft: '', menuOpen: false, view:\u2026\n       |                      ^\n    427|         await resolveClip(0);\n    428|         openMenu();\n\n\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af[14/15]\u23af\n\n FAIL  src/components/ResultViewer.isolation.test.tsx > Home to ResultViewer history seam (real Home, store and ResultViewer) > history A to B to A starts a new lifetime for A\nAssertionError: expected 'A draft from history' to be '' // Object.is equality\n\n- Expected\n+ Received\n\n+ A draft from history\n\n \u276f src/components/ResultViewer.isolation.test.tsx:453:34\n    451|         open('exec_A', view);\n    452|         expect(text()).toContain('OUTPUT_A');\n    453|         expect(draftBox().value).toBe('');\n       |                                  ^\n    454|         snap('home-a-b-a');\n    455|     });\n\n\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af[15/15]\u23af\n\n\n Test Files  1 failed (1)\n      Tests  15 failed | 3 passed (18)\n   Start at  16:02:10\n   Duration  17.34s (transform 3.66s, setup 8.69s, import 1.89s, tests 5.81s, environment 684ms)\n\n"
+      },
+      {
+        "path": ".cvf/runtime/ncr-result-isolation-worker-20261012/source-red.log",
+        "sha256": "475cf5461c57fc60cf7459f521a7979b3a1cca0cda3b7c8b67306845f678a564",
+        "bytes": 53826,
+        "declaredHashVerified": true
+      },
+      {
+        "path": ".cvf/runtime/ncr-result-isolation-worker-20261012/tsc.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0,
+        "declaredHashVerified": true
+      }
+    ]
+  },
+  "localProbe": {
+    "command": "node node_modules/vitest/vitest.mjs run src/components/local-result-isolation-probe.test.tsx --reporter=verbose",
+    "result": "PASS 2/2",
+    "source": "/** @vitest-environment jsdom */\n// Independent Local oracle: actual ResultViewer/Home/store; synthetic offline presentation only.\nimport { StrictMode } from 'react';\nimport { act, fireEvent, render, screen, waitFor, within } from '@testing-library/react';\nimport { beforeEach, expect, it, vi } from 'vitest';\nimport { ResultViewer } from './ResultViewer';\nimport Home from '../app/(dashboard)/home/page';\nimport { useExecutionStore } from '@/lib/store';\nimport type { Execution } from '@/types';\n\nconst ctl = vi.hoisted(() => ({\n    params: new URLSearchParams(), track: vi.fn(), save: vi.fn(),\n    clipboard: [] as Array<{ text: string; finish: () => void }>,\n    word: [] as Array<{ document: unknown; finish: (blob: Blob) => void }>,\n    pdfLoaded: false, releasePdf: () => {}, pdfText: [] as string[], pdfNames: [] as string[],\n}));\nvi.mock('@/lib/i18n', () => ({ useLanguage: () => ({ language: 'en', t: (s: string) => s }) }));\nvi.mock('@/lib/analytics', () => ({ trackEvent: ctl.track }));\nvi.mock('jspdf', async () => {\n    await new Promise<void>(resolve => { ctl.releasePdf = resolve; ctl.pdfLoaded = true; });\n    return { jsPDF: class {\n        internal = { pageSize: { getWidth: () => 210, getHeight: () => 297 } };\n        setFontSize() {} setFont() {} setDrawColor() {} line() {} addPage() {}\n        splitTextToSize(text: string) { return [text]; }\n        text(text: string) { ctl.pdfText.push(text); }\n        save(name: string) { ctl.pdfNames.push(name); }\n    } };\n});\nvi.mock('docx', () => {\n    function C(this: object, options: object) { Object.assign(this, options); }\n    return { Document: C, Paragraph: C, TextRun: C,\n        Packer: { toBlob: (document: unknown) => new Promise<Blob>(finish => ctl.word.push({ document, finish })) },\n        HeadingLevel: { TITLE: 't', HEADING_1: 'h1', HEADING_2: 'h2', HEADING_3: 'h3' },\n        AlignmentType: { CENTER: 'c' }, BorderStyle: { SINGLE: 's' } };\n});\nvi.mock('file-saver', () => ({ saveAs: ctl.save }));\nvi.mock('next/navigation', () => ({ useRouter: () => ({ push: vi.fn(), replace: vi.fn() }), useSearchParams: () => ctl.params }));\nvi.mock('@/components/Settings', () => ({ useSettings: () => ({ settings: { providers: {} } }) }));\nvi.mock('@/lib/hooks/useExecute', () => {\n    const providers: never[] = []; const fetchProviders = () => {};\n    return { useProviders: () => ({ providers, anyConfigured: false, fetchProviders }) };\n});\nvi.mock('@/components', async () => ({\n    ResultViewer: (await vi.importActual<typeof import('./ResultViewer')>('./ResultViewer')).ResultViewer,\n    ProcessingScreen: () => <div data-testid=\"local-processing\" />, DynamicForm: () => null,\n    TemplatePreviewModal: () => null, OnboardingTour: () => null, AppBuilderWizard: () => null,\n    ProductDesignWizard: () => null, MarketingCampaignWizard: () => null, BusinessStrategyWizard: () => null,\n    SecurityAssessmentWizard: () => null, ResearchProjectWizard: () => null, SystemDesignWizard: () => null,\n    ContentStrategyWizard: () => null, DataAnalysisWizard: () => null,\n}));\nvi.mock('@/components/home/HomeBrowseExperience', () => ({ HomeBrowseExperience: () => null }));\nconst execution = (id: string): Execution => ({ id, templateId: 'documentation', templateName: `Template ${id}`,\n    input: { subject: id }, intent: `Intent ${id}`, output: `PRIVATE_PAYLOAD_${id}`, status: 'completed',\n    createdAt: new Date('2026-10-12T00:00:00Z') });\nconst props = (id: string) => ({ execution: execution(id), output: `PRIVATE_PAYLOAD_${id}`,\n    onAccept: vi.fn(), onReject: vi.fn(), onRetry: vi.fn(), onBack: vi.fn(), onFollowUp: vi.fn() });\nfunction menu() {\n    if (!screen.queryByText(/Export Result/)) fireEvent.click(screen.getByRole('button', { name: /Export$/ }));\n    return within(screen.getByText(/Export Result/).closest('.absolute') as HTMLElement);\n}\nconst draft = () => screen.getByTestId('followup-input') as HTMLTextAreaElement;\nbeforeEach(() => {\n    ctl.track.mockClear(); ctl.save.mockClear(); ctl.word.length = 0; ctl.clipboard.length = 0;\n    Object.defineProperty(navigator, 'clipboard', { configurable: true, value: {\n        writeText: (text: string) => new Promise<void>(finish => ctl.clipboard.push({ text, finish })) } });\n    localStorage.clear(); useExecutionStore.setState({ executions: [], currentExecution: null });\n});\n\nit('PDF A loads after B starts Word: original PDF payload/analytics finish while B stays busy', async () => {\n    const view = render(<StrictMode><ResultViewer {...props('pdf_A')} /></StrictMode>);\n    fireEvent.click(menu().getByRole('button', { name: /Download PDF/ }));\n    await waitFor(() => expect(ctl.pdfLoaded).toBe(true));\n    view.rerender(<StrictMode><ResultViewer {...props('word_B')} /></StrictMode>);\n    fireEvent.click(menu().getByRole('button', { name: /Download Word/ }));\n    await waitFor(() => expect(ctl.word).toHaveLength(1));\n    expect(JSON.stringify(ctl.word[0].document)).toContain('PRIVATE_PAYLOAD_word_B');\n    expect(JSON.stringify(ctl.word[0].document)).not.toContain('PRIVATE_PAYLOAD_pdf_A');\n    await act(async () => { ctl.releasePdf(); });\n    await waitFor(() => expect(ctl.pdfNames).toHaveLength(1));\n    expect(ctl.pdfText).toContain('PRIVATE_PAYLOAD_pdf_A');\n    expect(ctl.pdfText.join(' ')).not.toContain('PRIVATE_PAYLOAD_word_B');\n    expect(ctl.pdfNames[0]).toMatch(/^cvf-result-documentation-\\d+\\.pdf$/);\n    expect(ctl.track).toHaveBeenCalledWith('evidence_exported', { executionId: 'pdf_A', format: 'pdf' });\n    expect(screen.getByText(/Export Result/)).toBeTruthy();\n    const busy = menu().getAllByRole('button', { name: /Exporting/ });\n    expect(busy).toHaveLength(1); expect((busy[0] as HTMLButtonElement).disabled).toBe(true);\n    const blob = new Blob(['local-word-B']);\n    await act(async () => { ctl.word[0].finish(blob); });\n    await waitFor(() => expect(ctl.save).toHaveBeenCalledWith(blob, expect.stringMatching(/\\.docx$/)));\n    await waitFor(() => expect(screen.queryByText(/Export Result/)).toBeNull());\n    expect(ctl.track).toHaveBeenCalledWith('evidence_exported', { executionId: 'word_B', format: 'docx' });\n    console.log('LOCAL_PDF_ORACLE ' + JSON.stringify({ pdfText: ctl.pdfText, pdfNames: ctl.pdfNames,\n        wordPayload: ctl.word[0].document, analytics: ctl.track.mock.calls }));\n});\n\nit('real history A-B-A, same-run refresh, continuation and late clipboard stay in their own lifetime', async () => {\n    const a = execution('history_A'); const b = execution('history_B');\n    useExecutionStore.setState({ executions: [b, a], currentExecution: null });\n    ctl.params = new URLSearchParams('result=history_A');\n    const view = render(<StrictMode><Home /></StrictMode>);\n    fireEvent.change(draft(), { target: { value: 'discard first A draft' } });\n    fireEvent.click(menu().getByRole('button', { name: /Copy to Clipboard/ }));\n    expect(ctl.clipboard[0].text).toContain('PRIVATE_PAYLOAD_history_A');\n    ctl.params = new URLSearchParams('result=history_B'); view.rerender(<StrictMode><Home /></StrictMode>);\n    fireEvent.change(draft(), { target: { value: 'discard B draft' } });\n    ctl.params = new URLSearchParams('result=history_A'); view.rerender(<StrictMode><Home /></StrictMode>);\n    expect(draft().value).toBe('');\n    fireEvent.change(draft(), { target: { value: 'new A continuation' } });\n    fireEvent.click(screen.getByLabelText('Result view'));\n    view.rerender(<StrictMode><Home /></StrictMode>);\n    expect(draft().value).toBe('new A continuation');\n    expect(screen.queryByTestId('deliverable-pack-preview')).toBeNull();\n    fireEvent.click(menu().getByRole('button', { name: /Copy to Clipboard/ }));\n    await act(async () => { ctl.clipboard[0].finish(); });\n    expect(menu().getByRole('button', { name: /Copy to Clipboard/ })).toBeTruthy();\n    await act(async () => { ctl.clipboard[1].finish(); });\n    expect(menu().getByRole('button', { name: /Copied!/ })).toBeTruthy();\n    fireEvent.click(screen.getByTestId('followup-submit-btn'));\n    expect(screen.getByTestId('local-processing')).toBeTruthy();\n    const child = useExecutionStore.getState().executions[0];\n    expect(child.parentExecutionId).toBe('history_A');\n    expect(child.intent).toBe('new A continuation');\n    expect(child.input._previousOutput).toBe('PRIVATE_PAYLOAD_history_A');\n    expect(useExecutionStore.getState().executions.find(e => e.id === a.id)).toEqual(a);\n    expect(useExecutionStore.getState().executions.find(e => e.id === b.id)).toEqual(b);\n    expect(ctl.track).toHaveBeenCalledWith('followup_started', expect.objectContaining({ executionId: a.id }));\n    console.log('LOCAL_HISTORY_ORACLE ' + JSON.stringify({ child, parentRowsUnchanged: true,\n        clipboard: ctl.clipboard.map(c => c.text), analytics: ctl.track.mock.calls }));\n});\n",
+    "sourceSha256": "0eafa55adc28012623412b4d077a3b451cef14fdc26196fa55317b960c23f2d3",
+    "log": "\r\n RUN  v4.1.8 D:/UNG DUNG AI/TOOL AI 2026/Controlled-Vibe-Framework-CVF/EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web\r\n\r\nstdout | src/components/local-result-isolation-probe.test.tsx > PDF A loads after B starts Word: original PDF payload/analytics finish while B stays busy\r\nLOCAL_PDF_ORACLE {\"pdfText\":[\"CVF Analysis Result\",\"Template: Template pdf_A\",\"Generated: 2026-10-12\",\"PRIVATE_PAYLOAD_pdf_A\",\"Generated by CVF\"],\"pdfNames\":[\"cvf-result-documentation-1791800509696.pdf\"],\"wordPayload\":{\"sections\":[{\"children\":[{\"children\":[{\"text\":\"CVF Analysis Result\",\"bold\":true,\"size\":36,\"color\":\"1a56db\"}],\"heading\":\"t\",\"spacing\":{\"after\":200}},{\"children\":[{\"text\":\"Template: \",\"bold\":true,\"size\":22},{\"text\":\"Template word_B\",\"size\":22}],\"spacing\":{\"after\":50}},{\"children\":[{\"text\":\"Generated: \",\"bold\":true,\"size\":22},{\"text\":\"2026-10-12\",\"size\":22}],\"spacing\":{\"after\":200}},{\"border\":{\"bottom\":{\"style\":\"s\",\"size\":1,\"color\":\"cccccc\"}},\"spacing\":{\"after\":300}},{\"children\":[{\"text\":\"PRIVATE_PAYLOAD_word_B\",\"bold\":false,\"size\":20}],\"spacing\":{\"after\":80}},{\"border\":{\"top\":{\"style\":\"s\",\"size\":1,\"color\":\"cccccc\"}},\"spacing\":{\"before\":400}},{\"children\":[{\"text\":\"Generated by CVF\",\"italics\":true,\"size\":16,\"color\":\"888888\"}],\"alignment\":\"c\"}]}],\"creator\":\"CVF Agent Platform\",\"title\":\"Template word_B - CVF Result\"},\"analytics\":[[\"evidence_exported\",{\"executionId\":\"pdf_A\",\"format\":\"pdf\"}],[\"evidence_exported\",{\"executionId\":\"word_B\",\"format\":\"docx\"}]]}\r\n\r\n \u2713 src/components/local-result-isolation-probe.test.tsx > PDF A loads after B starts Word: original PDF payload/analytics finish while B stays busy 2066ms\r\nstdout | src/components/local-result-isolation-probe.test.tsx > real history A-B-A, same-run refresh, continuation and late clipboard stay in their own lifetime\r\nLOCAL_HISTORY_ORACLE {\"child\":{\"id\":\"exec_1791800510880_y0cb0\",\"templateId\":\"documentation\",\"templateName\":\"T\u00e0i li\u1ec7u K\u1ef9 thu\u1eadt\",\"category\":\"content\",\"input\":{\"subject\":\"history_A\",\"_previousOutput\":\"PRIVATE_PAYLOAD_history_A\"},\"intent\":\"new A continuation\",\"status\":\"processing\",\"createdAt\":\"2026-10-12T10:21:50.880Z\",\"threadId\":\"history_A\",\"rootExecutionId\":\"history_A\",\"parentExecutionId\":\"history_A\",\"starterSource\":\"history-followup\"},\"parentRowsUnchanged\":true,\"clipboard\":[\"---\\n# CVF Analysis Result\\n**Generated:** 2026-10-12\\n**Template:** Template history_A\\n---\\n\\nPRIVATE_PAYLOAD_history_A\\n\\n\\n\\n---\\n*Generated by CVF*\\n\",\"---\\n# CVF Analysis Result\\n**Generated:** 2026-10-12\\n**Template:** Template history_A\\n---\\n\\nPRIVATE_PAYLOAD_history_A\\n\\n\\n\\n---\\n*Generated by CVF*\\n\"],\"analytics\":[[\"rollout_flag_enabled\",{\"flag\":\"NEXT_PUBLIC_CVF_INTENT_FIRST_FRONT_DOOR\"}],[\"rollout_session_start\",{\"flag\":\"NEXT_PUBLIC_CVF_INTENT_FIRST_FRONT_DOOR\"}],[\"rollout_flag_enabled\",{\"flag\":\"NEXT_PUBLIC_CVF_INTENT_FIRST_FRONT_DOOR\"}],[\"followup_started\",{\"executionId\":\"history_A\"}],[\"execution_created\",{\"templateId\":\"documentation\",\"templateName\":\"T\u00e0i li\u1ec7u K\u1ef9 thu\u1eadt\",\"category\":\"content\"}]]}\r\n\r\n \u2713 src/components/local-result-isolation-probe.test.tsx > real history A-B-A, same-run refresh, continuation and late clipboard stay in their own lifetime 979ms\r\n\r\n Test Files  1 passed (1)\r\n      Tests  2 passed (2)\r\n   Start at  17:21:32\r\n   Duration  18.21s (transform 5.53s, setup 10.99s, import 2.99s, tests 3.05s, environment 942ms)\r\n\r\n",
+    "logSha256": "fe9295856955a82d529bcc9d49f200e22a0fa018619c2859e47e312644607677",
+    "oracleSeparation": "Independent deferred PDF module A versus deferred Word B with actual generated text/document capture, plus actual Home/store A-B-A/same-run refresh/old-new clipboard/continuation under StrictMode; no worker test/helper imports. Worker Word representative proof reused, PDF deferral fills disclosed gap.",
+    "temporarySourceRemoved": true
+  },
+  "localHarnessFailures": [
+    {
+      "path": "C:\\Users\\DELL\\AppData\\Local\\Temp\\ncr-result-isolation-local-probe-first-fail-20261012.log",
+      "sha256": "36b6ef09b02c4fa80a4feb4ff23fc5430da29f32e50d2634ded004011df2a5fb",
+      "bytes": 28861,
+      "excerpt": "\r\n RUN  v4.1.8 D:/UNG DUNG AI/TOOL AI 2026/Controlled-Vibe-Framework-CVF/EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web\r\n\r\n \u00d7 src/components/local-result-isolation-probe.test.tsx > PDF A loads after B starts Word: original PDF payload/analytics finish while B stays busy 1199ms\r\n   \u2192 Unable to find an element with the text: Export Result. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.\r\n\r\nIgnored nodes: comments, script, style\r\n\u001b[36m<body>\u001b[39m\r\n  \u001b[36m<div>\u001b[39m\r\n    \u001b[36m<div\u001b[39m\r\n      \u001b[33mclass\u001b[39m=\u001b[32m\"max-w-4xl mx-auto\"\u001b[39m\r\n    \u001b[36m>\u001b[39m\r\n      \u001b[36m<div\u001b[39m\r\n        \u001b[33mclass\u001b[39m=\u001b[32m\"flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6\"\u001b[39m\r\n      \u001b[36m>\u001b[39m\r\n        \u001b[36m<div\u001b[39m\r\n          \u001b[33mclass\u001b[39m=\u001b[32m\"flex items-center gap-4",
+      "attribution": "LOCAL_SELECTOR_ERROR: exact title omitted emoji; corrected regex, no product change"
+    },
+    {
+      "path": "C:\\Users\\DELL\\AppData\\Local\\Temp\\ncr-result-isolation-local-probe-second-fail-20261012.log",
+      "sha256": "d8f5990ff7decb9258768ec6e5f4455ff1f4a0f56d5d665e39dc913d2919e5ae",
+      "bytes": 2872,
+      "excerpt": "\r\n RUN  v4.1.8 D:/UNG DUNG AI/TOOL AI 2026/Controlled-Vibe-Framework-CVF/EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web\r\n\r\n \u00d7 src/components/local-result-isolation-probe.test.tsx > PDF A loads after B starts Word: original PDF payload/analytics finish while B stays busy 2213ms\r\n   \u2192 Invalid Chai property: toBeDisabled\r\nstdout | src/components/local-result-isolation-probe.test.tsx > real history A-B-A, same-run refresh, continuation and late clipboard stay in their own lifetime\r\nLOCAL_HISTORY_ORACLE {\"child\":{\"id\":\"exec_1791800474297_zg8m0\",\"templateId\":\"documentation\",\"templateName\":\"T\u00e0i li\u1ec7u K\u1ef9 thu\u1eadt\",\"category\":\"content\",\"input\":{\"subject\":\"history_A\",\"_previousOutput\":\"PRIVATE_PAYLOAD_history_A\"},\"intent\":\"new A continuation\",\"status\":\"processing\",\"createdAt\":\"2026-10-12T10:21:14.297Z\",\"threadId\":\"history_A\",\"rootExecutionId\":\"history_A\",\"parentExecutionId\":\"history_A\",\"starterSource\":\"hi",
+      "attribution": "LOCAL_MATCHER_ERROR: toBeDisabled unavailable in installed setup; replaced with native HTMLButtonElement.disabled assertion, no product change"
+    }
+  ],
+  "procedureDisposition": "PARTIAL_WITH_REASON: current mandatory startup/design/production scopes reported read; progressive continuity and scoped dispatch reads allowed. Two test configuration sources have prior full-read disclosure and unchanged pinned identity. Worker reuse cites a previous task generically rather than exact prior artifact/anchor/verdict; Local lineage supplement does not retroactively certify full formal reuse compliance. Scoped checker reads/self-report do not prove understanding.",
+  "priorReadLineageSupplement": {
+    "priorArtifact": "docs/reviews/CVF_NCR_CHAT_HISTORY_WORKER_RETURN_2026-10-12.md",
+    "priorArtifactSha256": "90389c439c58dbd06b6d7c8464b1a4d146da84fdfa13e45f0f205ffb71dd7365",
+    "priorVerificationArtifact": "docs/reviews/evidence/ncr-chat-history-local-20261012.json",
+    "priorVerificationAnchor": "cd7314b0cbdab2e0a0b1f842ce6d1a6d4540ca29",
+    "reusedSourcePaths": [
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/test/setup.ts",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/vitest.config.ts"
+    ],
+    "verdict": "PRIOR_FULL_READ_DISCLOSURE_AND_CURRENT_UNCHANGED_HASH_VERIFIED",
+    "boundary": "Lineage proves disclosure and identity; not hidden execution/understanding or retrospective worker citation compliance",
+    "priorVerificationArtifactSha256": "f6a138a695b8fad66a0584fc8551bdd2882a6b3b995577027064d5cbc5bde5c3"
+  },
+  "timing": {
+    "workerDeclared": {
+      "startUtc": "2026-10-12T08:57:49Z",
+      "head": "c51f6f09bb762ff79138e8fe221a1528c25f8f8e",
+      "preImplementationUtc": "08:58:02Z-08:58:15Z",
+      "scaffoldUtc": "08:58:23Z",
+      "sourceRed1Utc": "09:01:03Z-09:01:19Z",
+      "sourceRed2Utc": "09:01:39Z",
+      "sourceRed3Utc": "09:02:10Z",
+      "implementationIter1Utc": "09:02:56Z",
+      "firstFocusedUtc": "09:03:20Z-09:04:26Z",
+      "finalFocusedUtc": "09:08:00Z-09:09:05Z",
+      "firstFastGateUtc": "09:07:45Z-09:07:51Z",
+      "preliminaryTerminalUtc": "2026-10-12T09:09:31Z",
+      "clockNote": "UTC values are date -u outputs captured by the worker; the sandbox clock advances faster than file mtimes.",
+      "preliminaryTerminalNote": "Captured before the final gate run on final bytes; the final confirmation UTC is recorded only in the ignored final-gates.log and the worker closing message."
+    },
+    "observedLastLoggedConfirmationUtc": "2026-10-12T09:09:54Z",
+    "startThroughLoggedConfirmationMinutes": 12.0833333333,
+    "completeAcceptedDeliveryMinutes": null,
+    "reason": "Worker reports sandbox UTC clock advances faster than file mtimes; timestamps are reported/logged, not independently validated wallclock speed. Accepted-delivery endpoint unknown."
+  },
+  "effects": {
+    "providerCalls": 0,
+    "sourceRepairByLocal": false,
+    "workerRedispatch": false,
+    "browser": false,
+    "install": false,
+    "push": false
+  },
+  "materialManifest": [
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.tsx",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.isolation.test.tsx",
+    "docs/reviews/evidence/ncr-result-isolation-worker-20261012.json",
+    "docs/reviews/CVF_NCR_RESULT_ISOLATION_WORKER_RETURN_2026-10-12.md",
+    "docs/reviews/CVF_NCR_RESULT_ISOLATION_COMPLETION_2026-10-12.md",
+    "docs/reviews/evidence/ncr-result-isolation-local-20261012.json",
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RESULT_ISOLATION_2026-10-12.md",
+    "docs/baselines/CVF_GC018_NCR_RESULT_ISOLATION_2026-10-12.md",
+    "docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json",
+    "docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md",
+    "docs/roadmaps/README.md",
+    "docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md",
+    "docs/roadmaps/CVF_ROADMAP_INVENTORY.md",
+    "docs/roadmaps/CVF_ROADMAP_INVENTORY.csv",
+    "CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json",
+    "CVF_SESSION/ACTIVE_SESSION_STATE.json",
+    "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json"
+  ],
+  "claimBoundary": "Offline jsdom ResultViewer/Home UI identity, drafts and async feedback only; synthetic clipboard/docx/jsPDF/file-saver/analytics adapters. No real provider, AI governance, browser, backend, OS-side-effect cancellation, full mode, whole NCR, public or model ranking claim.",
+  "localClosureGateCorrection": {
+    "failedGate": "reviewer-fast machine closure package",
+    "ignoredLogSha256": "2c95ddf6dbe8bf737a3966905984efcbbdc95692456d779f2c073f5a85934716",
+    "cause": "Existing lexical external-path regex matches repo-relative /home/ segment in Source Verification. Two closed authority rows now cite repo-local dispatch sourcePins digest; actual source pins and worker bytes unchanged.",
+    "attribution": "LOCAL_CLOSURE_PACKET_REPRESENTATION; no worker/product/checker changes"
+  }
+}

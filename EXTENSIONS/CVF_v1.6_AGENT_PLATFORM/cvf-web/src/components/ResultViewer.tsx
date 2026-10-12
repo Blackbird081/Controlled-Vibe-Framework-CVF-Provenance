@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useCallback, useMemo } from 'react';
+import { useState, useCallback, useMemo, useRef, useEffect } from 'react';
 import { generateDeliverablePack, serializePackToMarkdown } from '@/lib/deliverable-pack';
 import ReactMarkdown from 'react-markdown';
 import { Execution } from '@/types';
@@ -66,13 +66,46 @@ const exportLabels = {
     },
 };
 
-export function ResultViewer({ execution, output, onAccept, onReject, onRetry, onBack, onSendToAgent, onFollowUp, evidenceReceipt }: ResultViewerProps) {
+// A run's transient UI (draft, view, menu, copy feedback, busy state and deferred work) lives in a
+// body keyed by execution.id, so a different run id, A to B to A included, starts a new lifetime and
+// unmounting ends the old one. The export language is a user preference, not run identity, so it
+// stays here above the key. Same-id rerenders (new object, refreshed output, language) keep the body.
+export function ResultViewer(props: ResultViewerProps) {
+    const { language } = useLanguage();
+    const [exportLang, setExportLang] = useState<ExportLanguage>(language as ExportLanguage);
+    return <ResultViewerBody key={props.execution.id} {...props} exportLang={exportLang} onExportLangChange={setExportLang} />;
+}
+
+function ResultViewerBody({ execution, output, onAccept, onReject, onRetry, onBack, onSendToAgent, onFollowUp, evidenceReceipt, exportLang, onExportLangChange }: ResultViewerProps & {
+    exportLang: ExportLanguage;
+    onExportLangChange: (lang: ExportLanguage) => void;
+}) {
     const { language } = useLanguage();
     const [showExportMenu, setShowExportMenu] = useState(false);
     const [copied, setCopied] = useState(false);
     const [receiptCopied, setReceiptCopied] = useState(false);
-    const [exportLang, setExportLang] = useState<ExportLanguage>(language as ExportLanguage);
     const [exporting, setExporting] = useState<string | null>(null);
+    // Deferred completions and feedback timers belong to this mounted lifetime only. The export
+    // sequence lets a newer export keep its busy state when an older one finishes. Already started
+    // clipboard, download and analytics side effects are not cancelled; only stale UI state is.
+    const alive = useRef(true);
+    const exportSeq = useRef(0);
+    const feedbackTimers = useRef<{ copied?: ReturnType<typeof setTimeout>; receipt?: ReturnType<typeof setTimeout> }>({});
+    useEffect(() => {
+        alive.current = true;
+        const timers = feedbackTimers.current;
+        return () => {
+            alive.current = false;
+            clearTimeout(timers.copied);
+            clearTimeout(timers.receipt);
+        };
+    }, []);
+    // Show 1.5s success feedback; a newer success replaces the older timer instead of being cut short.
+    const flashFeedback = useCallback((key: 'copied' | 'receipt', set: (value: boolean) => void) => {
+        set(true);
+        clearTimeout(feedbackTimers.current[key]);
+        feedbackTimers.current[key] = setTimeout(() => set(false), 1500);
+    }, []);
     // W97-T1: follow-up input state
     const [followupText, setFollowupText] = useState('');
     // W125-T1: deliverable pack view mode; W130-T1: default to pack in noncoder mode (onFollowUp present)
@@ -187,10 +220,7 @@ ${evidenceReceipt ? generateEvidenceReceiptContent() : ''}
             if (!copiedOk) {
                 throw new Error('Clipboard copy failed');
             }
-            setCopied(true);
-            setTimeout(() => {
-                setCopied(false);
-            }, 1500);
+            if (alive.current) flashFeedback('copied', setCopied);
         } catch (err) {
             console.error('Failed to copy:', err);
         }
@@ -212,35 +242,26 @@ ${evidenceReceipt ? generateEvidenceReceiptContent() : ''}
         trackEvent('evidence_exported', { executionId: execution.id, format: 'md' });
     };
 
-    const handleCopyReceipt = async () => {
+    // Both receipt-copy controls share this path; only the tracked one fires the W130 analytics event.
+    const copyReceipt = useCallback(async (trackExport: boolean) => {
         if (!evidenceReceipt) return;
+        const runId = execution.id;
         try {
             const copiedOk = await writeTextToClipboard(generateEvidenceReceiptContent());
             if (!copiedOk) {
                 throw new Error('Receipt copy failed');
             }
-            setReceiptCopied(true);
-            setTimeout(() => setReceiptCopied(false), 1500);
+            if (alive.current) flashFeedback('receipt', setReceiptCopied);
+            if (trackExport) trackEvent('evidence_exported', { executionId: runId, format: 'receipt_copy' });
         } catch (err) {
             console.error('Failed to copy receipt:', err);
         }
-    };
+    }, [evidenceReceipt, execution.id, flashFeedback, generateEvidenceReceiptContent, writeTextToClipboard]);
+
+    const handleCopyReceipt = () => copyReceipt(false);
 
     // W130-T1: Copy receipt with analytics tracking (fires evidence_exported)
-    const handleCopyReceiptWithTracking = useCallback(async () => {
-        if (!evidenceReceipt) return;
-        try {
-            const copiedOk = await writeTextToClipboard(generateEvidenceReceiptContent());
-            if (!copiedOk) {
-                throw new Error('Receipt copy failed');
-            }
-            setReceiptCopied(true);
-            setTimeout(() => setReceiptCopied(false), 1500);
-            trackEvent('evidence_exported', { executionId: execution.id, format: 'receipt_copy' });
-        } catch (err) {
-            console.error('Failed to copy receipt:', err);
-        }
-    }, [evidenceReceipt, execution.id, generateEvidenceReceiptContent, writeTextToClipboard]);
+    const handleCopyReceiptWithTracking = useCallback(() => copyReceipt(true), [copyReceipt]);
 
     // W125-T1: Download deliverable pack as .md
     const handleDownloadPack = useCallback(() => {
@@ -261,6 +282,7 @@ ${evidenceReceipt ? generateEvidenceReceiptContent() : ''}
 
     // Real PDF export using jsPDF
     const handleExportPdf = useCallback(async () => {
+        const exportToken = ++exportSeq.current;
         setExporting('pdf');
         try {
             const { jsPDF } = await import('jspdf');
@@ -351,13 +373,16 @@ ${evidenceReceipt ? generateEvidenceReceiptContent() : ''}
         } catch (err) {
             console.error('PDF export failed:', err);
         } finally {
-            setExporting(null);
-            setShowExportMenu(false);
+            if (alive.current && exportSeq.current === exportToken) {
+                setExporting(null);
+                setShowExportMenu(false);
+            }
         }
     }, [output, execution, labels]);
 
     // Real Word (.docx) export using docx library
     const handleExportDocx = useCallback(async () => {
+        const exportToken = ++exportSeq.current;
         setExporting('docx');
         try {
             const { Document, Packer, Paragraph, TextRun, HeadingLevel, AlignmentType, BorderStyle } = await import('docx');
@@ -488,8 +513,10 @@ ${evidenceReceipt ? generateEvidenceReceiptContent() : ''}
         } catch (err) {
             console.error('Word export failed:', err);
         } finally {
-            setExporting(null);
-            setShowExportMenu(false);
+            if (alive.current && exportSeq.current === exportToken) {
+                setExporting(null);
+                setShowExportMenu(false);
+            }
         }
     }, [output, execution, labels]);
 
@@ -557,7 +584,7 @@ ${evidenceReceipt ? generateEvidenceReceiptContent() : ''}
                                     <div className="text-xs text-gray-500 mb-1">{labels.langLabel}:</div>
                                     <div className="flex gap-2">
                                         <button
-                                            onClick={() => setExportLang('vi')}
+                                            onClick={() => onExportLangChange('vi')}
                                             className={`px-3 py-1 text-xs rounded ${exportLang === 'vi'
                                                 ? 'bg-blue-600 text-white'
                                                 : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300'
@@ -566,7 +593,7 @@ ${evidenceReceipt ? generateEvidenceReceiptContent() : ''}
                                             🇻🇳 Tiếng Việt
                                         </button>
                                         <button
-                                            onClick={() => setExportLang('en')}
+                                            onClick={() => onExportLangChange('en')}
                                             className={`px-3 py-1 text-xs rounded ${exportLang === 'en'
                                                 ? 'bg-blue-600 text-white'
                                                 : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300'

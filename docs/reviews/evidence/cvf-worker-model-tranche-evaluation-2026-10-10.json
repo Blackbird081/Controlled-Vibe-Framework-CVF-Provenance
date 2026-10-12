@@ -5,7 +5,7 @@
   "decisionOwner": "LOCAL_REVIEWER",
   "purpose": "Longitudinal worker evidence for model selection by role and task family in a future multi-agent use case. No agent invocation or automatic routing.",
   "identityBasis": "MODEL_LABELS_OPERATOR_REPORTED_OR_WORKER_SELF_REPORTED_NOT_RUNTIME_VERIFIED",
-  "sourceHead": "419b6470c1e9c53fd4d3fdd83336b646a5799b43",
+  "sourceHead": "c51f6f09bb762ff79138e8fe221a1528c25f8f8e",
   "rows": [
     {
       "trancheId": "CVF-NCR-OFFLINE-PREVIEW-20261009",
@@ -1281,6 +1281,83 @@
         "Offline jsdom UI/session persistence only; no AI governance/live/full/browser/backend/cross-tab/arbitrary concurrent delete/whole roadmap/model ranking.",
         "Complete accepted-delivery interval unknown; final logged confirmation differs from declared terminal."
       ]
+    },
+    {
+      "trancheId": "CVF-NCR-RESULT-ISOLATION-20261012",
+      "taskFamily": "PRODUCT_UI_RESULT_VIEWER_RUN_LIFETIME_ISOLATION",
+      "model": "Sonnet 5.5",
+      "effort": "High",
+      "requestedProvider": "Claude",
+      "requestedModel": "Sonnet 5.5",
+      "requestedEffort": "high",
+      "role": "INTERNAL_AGENT_WORKER",
+      "status": "CLOSED_PASS_BOUNDED",
+      "nativeModel": null,
+      "nativeEffort": null,
+      "tokens": null,
+      "bill": {
+        "amount": null,
+        "currency": null,
+        "reason": "Native identity/usage/billing meter unavailable; cost deferred"
+      },
+      "identityUnavailableReason": "Requested/self-reported string is not verified native identity",
+      "implementationPaths": 2,
+      "productionPaths": 1,
+      "deliveredPaths": 4,
+      "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RESULT_ISOLATION_2026-10-12.md",
+      "evidence": "docs/reviews/evidence/ncr-result-isolation-local-20261012.json",
+      "evidenceSha256": "9884a2993ab842b2352a4408c2f430e3e7a79e198046846c4e6f93b37d034c7d",
+      "firstReturnGateClean": false,
+      "workerSelfRepairRounds": null,
+      "invalidHarnessAttempts": 2,
+      "workerReturnGateFailedAttemptsReported": 1,
+      "reviewerRequestedWorkerRepairTurns": 0,
+      "reviewerProductCodeRepairs": 0,
+      "workerRedispatchCount": 0,
+      "technicalOutput": "ACCEPTED_BOUNDED_SOURCE_REPAIR_NO_LOCAL_PRODUCT_REPAIR",
+      "procedureDisposition": "PARTIAL_WITH_REASON",
+      "procedure": "PARTIAL_WITH_REASON: current mandatory startup/design/production scopes reported read; progressive continuity and scoped dispatch reads allowed. Two test configuration sources have prior full-read disclosure and unchanged pinned identity. Worker reuse cites a previous task generically rather than exact prior artifact/anchor/verdict; Local lineage supplement does not retroactively certify full formal reuse compliance. Scoped checker reads/self-report do not prove understanding.",
+      "proof": "worker105/105, valid source-red15FAIL/3PASS; Local independent PDF/Home2/2 PASS",
+      "elapsed": {
+        "minutes": 12.0833333333,
+        "basis": "REPORTED_WORKER_START_THROUGH_LOGGED_FINAL_CONFIRMATION_CLOCK_UNVERIFIED",
+        "fullDeliveryMinutes": null
+      },
+      "clock": {
+        "workerDeclared": {
+          "startUtc": "2026-10-12T08:57:49Z",
+          "head": "c51f6f09bb762ff79138e8fe221a1528c25f8f8e",
+          "preImplementationUtc": "08:58:02Z-08:58:15Z",
+          "scaffoldUtc": "08:58:23Z",
+          "sourceRed1Utc": "09:01:03Z-09:01:19Z",
+          "sourceRed2Utc": "09:01:39Z",
+          "sourceRed3Utc": "09:02:10Z",
+          "implementationIter1Utc": "09:02:56Z",
+          "firstFocusedUtc": "09:03:20Z-09:04:26Z",
+          "finalFocusedUtc": "09:08:00Z-09:09:05Z",
+          "firstFastGateUtc": "09:07:45Z-09:07:51Z",
+          "preliminaryTerminalUtc": "2026-10-12T09:09:31Z",
+          "clockNote": "UTC values are date -u outputs captured by the worker; the sandbox clock advances faster than file mtimes.",
+          "preliminaryTerminalNote": "Captured before the final gate run on final bytes; the final confirmation UTC is recorded only in the ignored final-gates.log and the worker closing message."
+        },
+        "observedLastLoggedConfirmationUtc": "2026-10-12T09:09:54Z",
+        "startThroughLoggedConfirmationMinutes": 12.0833333333,
+        "completeAcceptedDeliveryMinutes": null,
+        "reason": "Worker reports sandbox UTC clock advances faster than file mtimes; timestamps are reported/logged, not independently validated wallclock speed. Accepted-delivery endpoint unknown."
+      },
+      "qualityAttribution": {
+        "workerInvalidFixtureAttempts": 2,
+        "workerEncodingMarkerFailedFastAttempts": 1,
+        "workerLintWarnings": 1,
+        "formalReuseCitationGapGroups": 1,
+        "localProductRepairGroups": 0,
+        "localHarnessFailureGroups": 2
+      },
+      "qualityInterpretation": "Third consecutive finite source repair accepted without Local product edits; mandatory source disclosure improved, reuse citation remains incomplete. No matched comparative model/speed/cost winner.",
+      "limitations": [
+        "Offline jsdom ResultViewer/Home UI identity, drafts and async feedback only; synthetic clipboard/docx/jsPDF/file-saver/analytics adapters. No real provider, AI governance, browser, backend, OS-side-effect cancellation, full mode, whole NCR, public or model ranking claim.",
+        "Worker clock provenance not independent wallclock; accepted delivery endpoint unknown"
+      ]
     }
   ],
   "rubric": [
@@ -1365,9 +1442,9 @@
       "next useful comparison task"
     ],
     "reviewedHaikuCount": 10,
-    "reviewedSonnetCount": 8,
+    "reviewedSonnetCount": 9,
     "reviewedLunaCount": 4,
-    "reviewedTaskObservationCount": 22
+    "reviewedTaskObservationCount": 23
   },
   "provisionalRoleRouting": [
     {
@@ -1396,9 +1473,9 @@
   "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
   "laneProtection": "Reviewer-owned governed evidence promotion authorized by operator longitudinal tracking request. No worker file edit, new dispatch, provider effect or public export.",
   "observations": {
-    "technical": "22 reviewed tasks10 Haiku-family/8 Sonnet/4 Luna; previous21 preserved. History consistency worker55/55 and Local2/2, zero Local product repair.",
-    "process": "Mandatory read omissions procedureFAIL; worker test/type/shape repairs and Local harness/output errors retained separately.",
-    "reportStatus": "TWENTY_TWO_REVIEWED_TASK_OBSERVATIONS_NO_COMPARATIVE_WINNER",
+    "technical": "23 reviewed tasks10 Haiku-family/9 Sonnet/4 Luna; previous22 preserved. Result isolation worker105/105 and Local2/2; zero Local product repair.",
+    "process": "Broader mandatory source disclosure improved; formal prior-read reuse citation gap retained as PARTIAL_WITH_REASON, progressive reads allowed. Worker and Local fixture failures separate.",
+    "reportStatus": "TWENTY_THREE_REVIEWED_TASK_OBSERVATIONS_NO_COMPARATIVE_WINNER",
     "measuredBillComparison": null,
     "nextControl": "Continue evidence collection on admitted work; Expense/S5 and effects parked; no automatic router or new benchmark task."
   },
@@ -1570,11 +1647,11 @@
     "omissionOwner": "LOCAL_ORCHESTRATOR",
     "OpusSameSessionAdvisoryExtraWorkers": 0,
     "latestReviewedTask": {
-      "trancheId": "CVF-NCR-CHAT-HISTORY-20261012",
-      "localReview": "docs/reviews/CVF_NCR_CHAT_HISTORY_COMPLETION_2026-10-12.md",
-      "evidence": "docs/reviews/evidence/ncr-chat-history-local-20261012.json",
-      "evidenceSha256": "f6a138a695b8fad66a0584fc8551bdd2882a6b3b995577027064d5cbc5bde5c3",
-      "previousTwentyOneRowsPreserved": true
+      "trancheId": "CVF-NCR-RESULT-ISOLATION-20261012",
+      "localReview": "docs/reviews/CVF_NCR_RESULT_ISOLATION_COMPLETION_2026-10-12.md",
+      "evidence": "docs/reviews/evidence/ncr-result-isolation-local-20261012.json",
+      "evidenceSha256": "9884a2993ab842b2352a4408c2f430e3e7a79e198046846c4e6f93b37d034c7d",
+      "previousTwentyTwoRowsPreserved": true
     }
   },
   "operatorObservationFocus": {
@@ -1597,9 +1674,9 @@
     "costDisposition": "DEFERRED_BY_OPERATOR_FOR_CURRENT_EVALUATION; preserve historical null/available fields without new billing investigation or cost ranking.",
     "samplingPlan": "Continue operator-selected useful Sonnet tasks with quality/time measures; no benchmark-only or automatic model switch.",
     "comparisonRule": "Use the same quality/time interpretation after the switch, compare similar task families and complexity, retain reuse/session context and exact requested configurations; no benchmark-only tasks or automatic model assignment.",
-    "currentTask": "CVF-NCR-CHAT-HISTORY-20261012",
+    "currentTask": "CVF-NCR-RESULT-ISOLATION-20261012",
     "currentTaskDisposition": "LOCAL_REVIEWED_BOUNDED_CLOSURE",
-    "reviewedTaskCount": 22,
+    "reviewedTaskCount": 23,
     "postClosureClarification": "Current17 tasks; Sonnet late required reads recur despite scoped orchestrator mapping. Technical repair and procedure tracked separately; no model winner.",
     "proportionalControlDirection": {
       "authority": "OPERATOR_DIRECT_INSTRUCTION_CURRENT_SESSION_2026-10-12",
@@ -1626,16 +1703,16 @@
       "canonicalTemplateRawSha256": "ae02c4008ad16ec65487ec3137135d6103685ff41c131a9e91325a4f59959f8a"
     },
     "nextAssignment": {
-      "batchId": "CVF-NCR-CHAT-HISTORY-20261012",
-      "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_CHAT_HISTORY_2026-10-12.md",
-      "taskFamily": "PRODUCT_UI_AGENT_CHAT_HISTORY_CONSISTENCY",
+      "batchId": "CVF-NCR-RESULT-ISOLATION-20261012",
+      "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RESULT_ISOLATION_2026-10-12.md",
+      "taskFamily": "PRODUCT_UI_RESULT_VIEWER_RUN_LIFETIME_ISOLATION",
       "requestedProvider": "Claude",
       "requestedModel": "Sonnet 5.5",
       "requestedEffort": "high",
       "nativeIdentity": null,
       "collectionDisposition": "REVIEWED_OBSERVATION_ADMITTED",
-      "priorReviewedTaskCount": 21,
-      "review": "docs/reviews/CVF_NCR_CHAT_HISTORY_COMPLETION_2026-10-12.md",
+      "priorReviewedTaskCount": 22,
+      "review": "docs/reviews/CVF_NCR_RESULT_ISOLATION_COMPLETION_2026-10-12.md",
       "nextDispatch": "NONE_NO_AUTOMATIC_SUCCESSOR"
     }
   },
