@@ -34,21 +34,21 @@ artifact.
 | Prior handoff (archive-qualified) | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V62_2026-09-17.md` |
 | Latest front-door archive | `CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_COMPACTION_ARCHIVE_2026-08-11.md` |
 | Current authority evidence | `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` `currentAuthority` |
-| Parent maintenance | Receiving lifecycle accepted bounded;original worker BLOCKED/procedureFAIL retained;whole job open |
+| Parent maintenance | Chat history consistency dispatch;prior receiving bounded/history retained;whole job open |
 | Freeze posture | `governance_kernel_freeze_recommended` |
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_agent_handoff_closed_useful_selection`;handoff=`AGENT_HANDOFF_V63_2026-09-18.md`;next=useful outcome selection;role=Local INTERNAL_AGENT reviewer/closer/steward;phase=private closure;decision owner=Local;parked checkpoint=Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11/Customer Care application.
+Startup acknowledged: current mode=`cvf_ncr_chat_history_worker_execution`;handoff=`AGENT_HANDOFF_V63_2026-09-18.md`;next=manual worker exact5 history consistency after bound release;role=Local INTERNAL_AGENT orchestrator/reviewer;phase=private dispatch;decision owner=Local;parked checkpoint=Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11/Customer Care application.
 
 ## Current Mode
 
-Current mode marker: `cvf_ncr_agent_handoff_closed_useful_selection`
-Current mode: `cvf_ncr_agent_handoff_closed_useful_selection`; previous mode marker: `cvf_ncr_agent_handoff_worker_execution`
+Current mode marker: `cvf_ncr_chat_history_worker_execution`
+Current mode: `cvf_ncr_chat_history_worker_execution`; previous mode marker: `cvf_ncr_agent_handoff_closed_useful_selection`
 ## Next Allowed Move
 
-Mode: `cvf_ncr_agent_handoff_closed_useful_selection`
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=LOCAL_REVIEW_AND_SELECTION; BATCH_ID=CVF-NCR-AGENT-HANDOFF-20261012. Receiving lifecycle CLOSED_PASS_BOUNDED at 40f07d84e051158cd07dcc74421f71f5c78e7180; completion docs/reviews/CVF_NCR_AGENT_HANDOFF_COMPLETION_2026-10-12.md; proof docs/reviews/evidence/ncr-agent-handoff-local-20261012.json. Worker layout repair keeps minimized chat mounted and keys explicit prompt-bearing handoffs; actual session/draft/messages retained, new/identical-text intent isolated, close/replacement clears queued timer. Worker35/35 and original-source9/12 FAIL consumed,Local actual chat/hook2/2 PASS. Four original worker bytes unchanged; historical BLOCKED/procedureFAIL retained. Local mode/manifest and evidence bindings corrected;initial closureFAIL retained; no Local product repair/redispatch. Local reviewer-fast70/70 and material precommit91/91 PASS. Sonnet5.5 high requested,native identity/usage unknown;13.8min preliminary terminal,full accepted interval unknown.21 reviewed tasks10 Haiku-family/7 Sonnet/4 Luna; previous20 rows preserved,cost deferred. Stop finite scope; next only concrete useful product selection, no automatic worker/successor/push. Whole job/full/browser/backend/R3/R4 unproved;Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11/Customer Care application parked;LHW24.
+Mode: `cvf_ncr_chat_history_worker_execution`
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_BOUNDED_WORKER; BATCH_ID=CVF-NCR-CHAT-HISTORY-20261012. WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_CHAT_HISTORY_2026-10-12.md. Material 5aac1ca8bc2d1cc10a65d20759b0f31f66bfff26;manual worker after clean committed bound pre-dispatch/dry pre-implementation PASS. Chat history consistency:create/title/count/select/delete/clear agree across actual sidebar/chat/storage,no stale resurrection or prompt replay,one empty fallback. Worker exact5:wrapper/history source,new regression/proof/return;all other sources/old tests/owners/continuity read-only. WORKER_MUST_NOT_COMMIT;60min inclusive. Full paired/scoped source/checker reads,raw pins,actual scaffold,own source-red/final real-sidebar and actual Chat/hook proof with provider denial;final clocks/ledger/fast. Local review/closure;no provider/browser/server/install/subagent/public/push/successor. Prior receiving35/35+Local2/2,original BLOCKED/procedureFAIL and Local initial closureFAIL retained.21 observations unchanged,cost deferred. Whole job/full/browser/backend/R3/R4 unproved;Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11/Customer Care application parked;LHW24.
 Historical G1-G7 terminal baseline: mode `acel_g1_g7_research_terminally_closed`. G1-G6 terminal review: `docs/reviews/CVF_ACEL_G1_G6_TERMINAL_STOP_CLOSURE_2026-09-24.md`; G7 research closure: `docs/reviews/CVF_ACEL_G7_CROSS_RUN_CAPABILITY_EVOLUTION_RESEARCH_CLOSURE_2026-09-24.md`. The packet-only post-G7 reconciliation review at `docs/reviews/CVF_ACEL_POST_G7_FULL_CORPUS_ABSORPTION_CLOSURE_2026-09-24.md` is superseded for repository absorption by the 2026-09-25 pinned-source audit. G1 is stopped, G2-G6 remain parked, G7 research is closed, and no automatic G1-G7 successor exists.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1

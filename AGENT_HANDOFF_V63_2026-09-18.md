@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Current NCR Continuation
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `40f07d84e051158cd07dcc74421f71f5c78e7180`. Material SHA: `40f07d84e051158cd07dcc74421f71f5c78e7180`. Batch ID: CVF-NCR-AGENT-HANDOFF-20261012. Corrective3 after initial19; exact6 continuity; no push.
+Current HEAD recorded for this handoff: `5aac1ca8bc2d1cc10a65d20759b0f31f66bfff26`. Material SHA: `5aac1ca8bc2d1cc10a65d20759b0f31f66bfff26`. Batch ID: CVF-NCR-CHAT-HISTORY-20261012. Exact11 dispatch/exact6 continuity;no push.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -10,21 +10,21 @@ Current continuation only. Root AGENTS.md and canonical routing owners retain fu
 Closed history is preserved byte-for-byte at `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V63_PRE_NCR_COMPACTION_2026-10-07.md` (SHA256 `54801fdcf14e9abe17592352ec3c69a0b0e855632991af0caacac7b65252ccba`); it is NOT_ACTIVE_AUTHORITY and not default startup reading.
 ## Scope / Target / Owner Boundary
 
-Local INTERNAL_AGENT reviewer/closer/steward; finite receiving lifecycle accepted, original worker BLOCKED/procedureFAIL retained.21 observations, previous20 unchanged. No worker redispatch, Local product repair/provider/public/push; provider memory is not authority.
+Local INTERNAL_AGENT orchestrator/reviewer/steward;operator manually starts worker after bound release. Worker exact5,wrapper/history source plus regression/proof/return,no commit/provider/subagent.21 observations unchanged;provider memory is not authority.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_agent_handoff_closed_useful_selection`;handoff=`AGENT_HANDOFF_V63_2026-09-18.md`;next=useful outcome selection;role=Local INTERNAL_AGENT reviewer/closer/steward;phase=private closure;decision owner=Local;parked checkpoint=Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11/Customer Care application.
+Startup acknowledged: current mode=`cvf_ncr_chat_history_worker_execution`;handoff=`AGENT_HANDOFF_V63_2026-09-18.md`;next=manual worker exact5 history consistency after bound release;role=Local INTERNAL_AGENT orchestrator/reviewer;phase=private dispatch;decision owner=Local;parked checkpoint=Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11/Customer Care application.
 
 ## Current Mode
 
-`cvf_ncr_agent_handoff_closed_useful_selection`. Offline/jsdom35/35+Local2/2;original BLOCKED/procedureFAIL;Local proof binding/P4 adjudication corrected;initial closureFAIL retained;whole job open,LHW24.
+`cvf_ncr_chat_history_worker_execution`. Chat history consistency pending;Local actual sidebar/store source witness2FAIL,no product edit. Prior receiving evidence retained;whole job/R3/R4 open,LHW24.
 
 ## Current Authority
 
-Baseline: `docs/baselines/CVF_GC018_NCR_AGENT_HANDOFF_2026-10-12.md`; SHA256 `ab093700c33b2a88dcb98f67000ecaade1aedac1c376458270238a3beba3fd86`.
-Work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_AGENT_HANDOFF_2026-10-12.md`; SHA256 `cd4e8afdd6ac71a539aaa29b7609135449452396c1b4efa9d3af90c297d96a83`; CLOSED_PASS_BOUNDED technical,procedureFAIL retained.
-Local closure: `docs/reviews/CVF_NCR_AGENT_HANDOFF_COMPLETION_2026-10-12.md`; proof `docs/reviews/evidence/ncr-agent-handoff-local-20261012.json`. Original4 retained; no successor/effect grant.
+Baseline: `docs/baselines/CVF_GC018_NCR_CHAT_HISTORY_2026-10-12.md`; SHA256 `820617c634be245eb7fce764392a99669018a568004aecd0b1170147f8108d97`.
+Work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_CHAT_HISTORY_2026-10-12.md`; SHA256 `8055b1b1d2c9f16cfa674cd8ce14d88627f7d213cc9efc1ffefe2de487224d87`; READY after committed bound release.
+Witness/source pins: `docs/reviews/evidence/ncr-chat-history-dispatch-20261012.json`. Worker exact5;60min inclusive. Mandatory full paired/scoped source/checker reads,actual scaffold/own regressions/final clocks. Local review/closure;21 observations unchanged.
 
 ## O6 Release Rebind After Provenance Sync (2026-10-11)
 Root marker replacement aa32f666 blocked DR-04/DR-05; rebind bd13e1a80 restored release. Log C:/Users/DELL/AppData/Local/Temp/o6_preimpl.log retained; no worker defect. Provenance lane closed, URL locked.
@@ -106,7 +106,9 @@ Receiving agents clarify incomplete ideas according to the existing lifecycle st
 Consume returned evidence under MFRP P4-C1: EVALUATE_RETURNED_EVIDENCE_NOT_RECREATE_IMPLEMENTATION. A rerun needs a named contradiction/changed consumer,information gain and cost reason.
 Alibaba calls are authorized for meaningful scoped tests; no other provider call,Claude dispatch,public push,deployment or actual-data cutover is inferred.
 ## Next Allowed Move
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=LOCAL_REVIEW_AND_SELECTION; BATCH_ID=CVF-NCR-AGENT-HANDOFF-20261012. Receiving lifecycle CLOSED_PASS_BOUNDED at 40f07d84e051158cd07dcc74421f71f5c78e7180; completion docs/reviews/CVF_NCR_AGENT_HANDOFF_COMPLETION_2026-10-12.md; proof docs/reviews/evidence/ncr-agent-handoff-local-20261012.json. Worker layout repair keeps minimized chat mounted and keys explicit prompt-bearing handoffs; actual session/draft/messages retained, new/identical-text intent isolated, close/replacement clears queued timer. Worker35/35 and original-source9/12 FAIL consumed,Local actual chat/hook2/2 PASS. Four original worker bytes unchanged; historical BLOCKED/procedureFAIL retained. Local mode/manifest and evidence bindings corrected;initial closureFAIL retained; no Local product repair/redispatch. Local reviewer-fast70/70 and material precommit91/91 PASS. Sonnet5.5 high requested,native identity/usage unknown;13.8min preliminary terminal,full accepted interval unknown.21 reviewed tasks10 Haiku-family/7 Sonnet/4 Luna; previous20 rows preserved,cost deferred. Stop finite scope; next only concrete useful product selection, no automatic worker/successor/push. Whole job/full/browser/backend/R3/R4 unproved;Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11/Customer Care application parked;LHW24.
+
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_BOUNDED_WORKER; BATCH_ID=CVF-NCR-CHAT-HISTORY-20261012. WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_CHAT_HISTORY_2026-10-12.md. Material 5aac1ca8bc2d1cc10a65d20759b0f31f66bfff26;manual worker after clean committed bound pre-dispatch/dry pre-implementation PASS. Chat history consistency:create/title/count/select/delete/clear agree across actual sidebar/chat/storage,no stale resurrection or prompt replay,one empty fallback. Worker exact5:wrapper/history source,new regression/proof/return;all other sources/old tests/owners/continuity read-only. WORKER_MUST_NOT_COMMIT;60min inclusive. Full paired/scoped source/checker reads,raw pins,actual scaffold,own source-red/final real-sidebar and actual Chat/hook proof with provider denial;final clocks/ledger/fast. Local review/closure;no provider/browser/server/install/subagent/public/push/successor. Prior receiving35/35+Local2/2,original BLOCKED/procedureFAIL and Local initial closureFAIL retained.21 observations unchanged,cost deferred. Whole job/full/browser/backend/R3/R4 unproved;Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11/Customer Care application parked;LHW24.
+
 ## Active Boundary
 T3B has a Local-verified active v1 specification. Party B is verified and T3C-C1 tooling accepted at `db78c87df`; T3C-C2 and Party C are verified. T3D-C1 tooling is accepted at `9ed844c2a` without source. T3D-C0-R1 closed at `2fffa1ef7`. T3D-C3 was accepted bounded at `88137e9a2`, but actual-mode prepare attempts failed before Party B/C execution; authorized cleanup removed the failed root and discarded unaccepted worker changes. G1 stopped, G2-G6 parked, and G7 research closed at `660601f0e` with `ADAPT_EXISTING_HANDOFF_ONLY`. Evidence-join sufficiency stays WATCH; no implementation successor exists. Rejected T2 paths remain archived; HRLTP-T2 paused.
 Post-G7 Local source intake and Jev P0 are closed at material commit `9ac0ee8e59fa041ddaa93d725796c509400f257a`. The audit records 32 READ plus 8,093 DEFERRED paths. Jev adds fail-closed decision-context binding, incomplete candidate-space escape, and `EVIDENCE_ONLY` judgment authority to the existing ASSF owner. Proof: TypeScript 84/84, Python 61/61, compile PASS, governance 90/90. G1-G7 remain closed.
@@ -133,7 +135,7 @@ Q001/Q004 actual-data source/writer,custody,retention/RPO/RTO/cost checkpoints a
 NCR send/B2 STOP and S05/C1 remain; IAB unavailable; repo Playwright Chromium present; vision/full P04/full release remain unproved. No autonomous P11/public/deploy activation.
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: exact6 receiving lifecycle closure continuity,no checker/source edit.
+Authorized guard-maintenance scope: exact6 chat history dispatch continuity,no checker/source edit.
 Protected paths:
 - `AGENT_HANDOFF_V63_2026-09-18.md`
 - `CVF_SESSION_MEMORY.md`
@@ -141,29 +143,32 @@ Protected paths:
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-Operator authorization: explicit Local blocker repair/closure under standing reviewer/closer roles.
-Rollback boundary: exact6; original worker4 and previous20 rows retained.
+
+Operator authorization: next under standing manual worker/Local orchestrator-reviewer roles.
+Rollback boundary: exact6;prior accepted artifacts and21 observations retained.
 
 ## Agent Operation Trace Block
+
 | Field | Evidence |
 |---|---|
-| Actor | Local reviewer/closer/session-sync steward |
+| Actor | Local orchestrator/reviewer/session-sync steward |
 | Provider or surface | private shared workspace |
-| Session or invocation | ncr-agent-handoff-closure-sync-20261012 |
+| Session or invocation | ncr-chat-history-dispatch-sync-20261012 |
 | Working directory | repo root |
-| Command or tool surface | canonical generator,exact6 closure sync and gates |
+| Command or tool surface | canonical generator,exact6 continuity and gates |
 | Target paths | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Allowed scope source | operator Local repair/closure; corrective3 material 40f07d84e051158cd07dcc74421f71f5c78e7180 |
-| Before status evidence | 40f07d84e051158cd07dcc74421f71f5c78e7180; corrective3 committed,91/91 PASS;clean |
-| After status evidence | exact6; bounded receiving accepted,21 observations,original BLOCKED/procedureFAIL retained |
-| Diff evidence | git diff --check; exact6 manifest |
-| Approval boundary | private continuity; no worker/provider/public/push |
-| Claim boundary | receiving lifecycle offline/jsdom only;whole job/effects open |
+| Allowed scope source | operator next/manual worker;exact11 material 5aac1ca8bc2d1cc10a65d20759b0f31f66bfff26 |
+| Before status evidence | 5aac1ca8bc2d1cc10a65d20759b0f31f66bfff26; material committed,91/91 precommit PASS;clean |
+| After status evidence | exact6; worker pending,21 observations unchanged |
+| Diff evidence | git diff --check;exact6 manifest |
+| Approval boundary | private dispatch continuity;manual worker only after bound release |
+| Claim boundary | offline history repair dispatch;whole job/effects open |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-agent-handoff-closure-sync-20261012 |
+| Invocation ID | ncr-chat-history-dispatch-sync-20261012 |
 | Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Manifest delta | MATCH |
-| Deletion or rename disposition | N/A with reason: none |
+| Deletion or rename disposition | N/A with reason:none |
+
 ## Claim Boundary
 Current facts, exact packet binding and permitted next action only. Historical Home/O6 evidence remains bounded; no whole-roadmap, live/provider, backend cancellation, release/public/deployment or model-winner claim.
