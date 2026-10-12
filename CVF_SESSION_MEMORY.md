@@ -34,21 +34,21 @@ artifact.
 | Prior handoff (archive-qualified) | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V62_2026-09-17.md` |
 | Latest front-door archive | `CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_COMPACTION_ARCHIVE_2026-08-11.md` |
 | Current authority evidence | `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` `currentAuthority` |
-| Parent maintenance | History recovery slice closed after Local query repair; full job/browser/provider proof open; MFRP design deferred |
+| Parent maintenance | Draft recovery technically closed;procedureFAIL/original test waiver retained;whole job/browser/backend open |
 | Freeze posture | `governance_kernel_freeze_recommended` |
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_draft_recovery_worker_execution`;handoff=`AGENT_HANDOFF_V63_2026-09-18.md`;next=operator-started bounded Home draft recovery worker;role=Local INTERNAL_AGENT dispatcher/steward;phase=dispatch release;decision owner=Local;parked checkpoint=Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11/Customer Care application.
+Startup acknowledged: current mode=`cvf_ncr_draft_recovery_closed_useful_selection`;handoff=`AGENT_HANDOFF_V63_2026-09-18.md`;next=finite draft recovery closed,useful product selection only;role=Local INTERNAL_AGENT reviewer/closer/steward;phase=private closure;decision owner=Local;parked checkpoint=Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11/Customer Care application.
 
 ## Current Mode
 
-Current mode marker: `cvf_ncr_draft_recovery_worker_execution`
-Current mode: `cvf_ncr_draft_recovery_worker_execution`; previous mode marker: `cvf_ncr_history_recovery_closed_useful_selection`
+Current mode marker: `cvf_ncr_draft_recovery_closed_useful_selection`
+Current mode: `cvf_ncr_draft_recovery_closed_useful_selection`; previous mode marker: `cvf_ncr_draft_recovery_worker_execution`
 
 ## Next Allowed Move
-Mode: `cvf_ncr_draft_recovery_worker_execution`
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_WORKER; BATCH_ID=CVF-NCR-DRAFT-RECOVERY-20261012. Operator-started Sonnet5.5 high shared-workspace worker: docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_DRAFT_RECOVERY_2026-10-12.md. Exact5 paths: Home/form, composition test, proof/return; WORKER_MUST_NOT_COMMIT,45min. Source Home/form/store probe1 control PASS/4 desired failures: selected local stop, retained editable draft, explicit unique resubmit. Implementation pending. Existing failed is unsuccessful local attempt, not provider abort; no new schema/status. Worker captures executionBaseHead; verify raw/HEAD/currentAuthority pins and mandatory scoped reads before edit; bound pre-implementation, final fast gate/ledger. Local review then quality/time collection; prior18 tasks10 Haiku-family/4 Sonnet/4 Luna unchanged, cost deferred. Prior Home/Processing/History accepted scope retained. Whole job/visible SpecExport/browser/R3/R4 not proven. No auto-start, stricter gate/quiz, metadata-only successor or push. Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11/Customer Care application parked; LHW24.
+Mode: `cvf_ncr_draft_recovery_closed_useful_selection`
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=LOCAL_REVIEW_AND_SELECTION; BATCH_ID=CVF-NCR-DRAFT-RECOVERY-20261012. Draft recovery CLOSED_PASS_BOUNDED at a16ec40461f60b2007fd6a744a7b7be202f127a3; completion docs/reviews/CVF_NCR_DRAFT_RECOVERY_COMPLETION_2026-10-12.md; proof docs/reviews/evidence/ncr-draft-recovery-local-20261012.json. Client stop -> editable draft -> distinct resubmit accepted after1 Local mounted-form root repair/2 symptoms; independent4/4,focused66 PASS/1 HEAD-reproduced English test waiver,type/lint PASS. ProcedureFAIL: mandatory baseline/checker reads omitted; original complete-read claim not accepted. Sonnet5.5 high requested,native unknown;18.05min start-to-final-test only,final gate/terminal clocks absent,full budget compliance unknown.19 reviewed tasks10 Haiku-family/5 Sonnet/4 Luna; prior18 preserved,cost deferred. Stop finite scope; next only concrete useful product selection. No automatic worker,metadata-only successor,stricter gate/quiz,duplicate suite or push. Whole job/visible SpecExport/browser/backend/R3/R4 unproved. Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11/Customer Care application parked;LHW24.
 Historical G1-G7 terminal baseline: mode `acel_g1_g7_research_terminally_closed`. G1-G6 terminal review: `docs/reviews/CVF_ACEL_G1_G6_TERMINAL_STOP_CLOSURE_2026-09-24.md`; G7 research closure: `docs/reviews/CVF_ACEL_G7_CROSS_RUN_CAPABILITY_EVOLUTION_RESEARCH_CLOSURE_2026-09-24.md`. The packet-only post-G7 reconciliation review at `docs/reviews/CVF_ACEL_POST_G7_FULL_CORPUS_ABSORPTION_CLOSURE_2026-09-24.md` is superseded for repository absorption by the 2026-09-25 pinned-source audit. G1 is stopped, G2-G6 remain parked, G7 research is closed, and no automatic G1-G7 successor exists.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
