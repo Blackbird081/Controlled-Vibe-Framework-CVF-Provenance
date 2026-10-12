@@ -19,7 +19,7 @@ Decision owner: operator về định hướng/phạm vi; Local reviewer về đ
 ## Current Delivery Checkpoint - 2026-10-12
 
 Operator asks to update our roadmaps to prevent drift. Local owns this bounded
-documentation reconciliation; current mode=cvf_ncr_p10_closed_p11_parked,
+documentation reconciliation; current mode=cvf_ncr_draft_recovery_closed_useful_selection,
 handoff=AGENT_HANDOFF_V63_2026-09-18.md, next=useful coding outcome selection.
 This checkpoint supersedes older current/next wording for selection; historical
 decisions, accepted proofs, phase IDs and effect checkpoints retain their scope.
@@ -38,30 +38,31 @@ offline claim level first; full real-provider R3 acceptance remains open.
 | R4 recovery contribution | ProcessingScreen client attempt isolation/once delivery accepted after Local repair in docs/reviews/CVF_NCR_PROCESSING_LIFECYCLE_COMPLETION_2026-10-12.md | offline client coverage does not prove backend cancellation, durable effects, restart/restore or full R4 exit |
 | R5/R6 | hosted/scale/new-capability work remains demand/authority gated | no automatic implementation from this roadmap |
 
-**Finite next route:** (1) Local selects one existing Home/result/preview/export
-journey and checks only its decision-relevant source and reusable proof; names an
-actual unmet assertion or records that the selected offline outcome is already
-supported. (2) Only if a material gap exists, group compatible repairs in one
-bounded product package under the existing dispatch/acceptance owners. Without
-a material gap, reuse the accepted output; do not manufacture a worker task.
-(3) Review that journey's output and meaningful controls, state what is usable
-and what remains unproved, then stop this selected package. No endless endpoint
-audit. These are at most three planned actions, not three promised tranches or ETA.
+**Selected next outcome - Local source selection, 2026-10-12:** recover a Home
+draft, edit and confirm its Vietnamese idea, then obtain the current English
+Working Brief through the visible export controls. Consumer: the noncoder and
+receiving INTAKE agent. Selection base: ae3e9813afc424f3b590ccf91c353aaadc35102b.
+`EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/draft-recovery.test.tsx`
+explicitly hides SpecExport; separate component tests do not establish this mounted
+Home journey. This is a coverage gap, not a demonstrated product defect.
+Source route: Home passes restored values to DynamicForm, which mounts SpecExport;
+Home's handleSendToAgent emits cvf:openAgent with the prompt. Receiving that event,
+executing a job and producing a result are later claims, outside this selection.
 
-The orchestrator records milestone contribution, blocking prerequisites and stop
-condition in existing Purpose/Scope/acceptance fields before dispatch. On a failed
-prerequisite or a support chain that no longer shortens the route, reconsider
-continue/merge/narrow/park; do not automatically commission another support task.
-Reuse same-scope repair within authority/budget. This is orchestrator responsibility,
-not an extra worker quiz, approval round, numeric threshold or machine gate.
+**Finite acceptance:** use the real Home/DynamicForm/SpecExport UI for a synthetic
+recovered draft; exported text must contain its current inputs and exclude another
+saved job's inputs. Preview/copy/download and the emitted handoff prompt must use
+the current brief. An idea edit, including A -> B -> A, must require confirmation
+again; audience switching alone must preserve it. Saved job controls stay intact.
+Reuse accepted recovery and export evidence; verify only this missing composition.
+**Dispatch boundary:** operator now requests a manual Sonnet worker for this proof;
+docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_DRAFT_EXPORT_2026-10-12.md fixes three
+test/proof/return paths; no production edits. Bound release required. Stop after this finite
+journey's assertions or a named blocker; whole NCR/R3/R4 acceptance remains open.
 
-Model collection accompanies useful delivery: 17 reviewed tasks (10 Haiku-family,
-3 Sonnet, 4 Luna); quality/severity/repair burden/time, cost deferred. Root faults
-stay separate. Model-selection companions do not authorize a parallel campaign.
 Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11 remain
 parked. ETA and end-to-end readiness are NOT_ESTABLISHED; tests/commits/tranches
-are evidence quantities, not product-completion percentages. Handback reports
-usable output, remaining acceptance gap, blocker and finite planned next steps.
+are evidence quantities, not product-completion percentages.
 
 ## Current Runtime Freshness Verification
 
@@ -1022,7 +1023,7 @@ no execution-readiness, source-absorption or behavioral proof is asserted.
 |---|---|
 | applicableCheckersRead | `governance/compat/check_markdown_structural_completeness.py`; `governance/compat/check_governed_artifact_checker_read_ahead.py`; `governance/compat/check_agent_packet_authority_and_encoding.py`; `governance/compat/check_agent_operation_trace.py`; `governance/compat/check_delta_execution_claim_boundary.py`; `governance/compat/check_public_export_disposition.py`; `governance/compat/check_governed_file_size.py`; `governance/compat/check_absorption_blindspot_control_presence.py`; `governance/compat/check_external_knowledge_intake_routing.py`; `governance/compat/check_external_absorption_core.py`; `governance/compat/check_external_absorption_value_conversion.py`; `governance/compat/check_external_absorption_overlap_discipline.py`; `governance/compat/check_corpus_completeness_report_integrity.py`; `governance/compat/check_corpus_to_knowledge_map_reconciliation.py` |
 | literalTokensReviewed | roadmap headings Authorization, Purpose, Scope, Non-Goals, Design Control Gate, Work Plan, Acceptance Criteria, Verification; `applicableCheckersRead`, `literalTokensReviewed`, `gateRunPurpose`, `claimBoundary`; `Status` is non-closed; `Public Export Disposition`; `Text Encoding Exception`; `NOT_APPLICABLE_WITH_REASON`; delta claim `CLAIM_REJECTED` markers; D014 names source pins as conditional planning decisions without whole-repo intake/corpus-complete claim |
-| gateRunPurpose | Historical2026-09-28 D015: checker applicability and roadmap control blocks read before edit; confirmation/evidence of v2.4 HTML-only runtime disposition, existing owner/claim boundaries and no runtime promotion after source read-ahead; not first discovery of checker requirements |
+| gateRunPurpose | 2026-10-12 continuation: confirmation of source-only selection after reading read-ahead/structural/index/encoding/public-export/file-size checker constants; no UI execution or governance-behavior proof. Historical2026-09-28 D015 checker reading remains prior evidence, not a current full-read claim. |
 | claimBoundary | Existing roadmap incorporates operator-approved D013/D014 direction and Local D015 HTML source decision; R1/W01 accepted bounded; four source candidates remain conditional for other jobs; no activation, live, hosted, public or production claim |
 
 ## Text Encoding Exception

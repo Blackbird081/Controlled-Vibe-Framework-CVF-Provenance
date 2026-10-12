@@ -1,0 +1,76 @@
+{
+  "schemaVersion": "cvf.ncrDraftExportDispatch@1",
+  "baseHead": "ae3e9813afc424f3b590ccf91c353aaadc35102b",
+  "batchId": "CVF-NCR-DRAFT-EXPORT-20261012",
+  "sourceFacts": {
+    "recoveryTest": "SpecExport mock returns null; explicit visible-flow proof exclusion",
+    "formRoute": "Home mounts DynamicForm with draftInput; form mounts SpecExport with formValues",
+    "handoff": "handleSendToAgent emits cvf:openAgent detail.prompt",
+    "componentControls": "standalone SpecExport tests compare preview/copy/download/send and invalidate A -> B -> A",
+    "runtimeProof": "NOT_RUN_BY_DISPATCHER; source-derived coverage gap only"
+  },
+  "sourcePins": [
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.tsx",
+      "rawSha256": "b6b1d7ff64bcc5586b830b2a23c8e1b94957ef276a4abd9cea9eaa0825965322",
+      "headSha256": "b6b1d7ff64bcc5586b830b2a23c8e1b94957ef276a4abd9cea9eaa0825965322",
+      "head": "ae3e9813afc424f3b590ccf91c353aaadc35102b"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.tsx",
+      "rawSha256": "2cf58f9f22145c9755285b7340e9a6858fc8de98b4ae79bbc72315911b30a1ac",
+      "headSha256": "2cf58f9f22145c9755285b7340e9a6858fc8de98b4ae79bbc72315911b30a1ac",
+      "head": "ae3e9813afc424f3b590ccf91c353aaadc35102b"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/SpecExport.tsx",
+      "rawSha256": "8c425b3b0f4d468ee129224c688d30141a8924e01f78dcf0d1d28a4357d9689a",
+      "headSha256": "8c425b3b0f4d468ee129224c688d30141a8924e01f78dcf0d1d28a4357d9689a",
+      "head": "ae3e9813afc424f3b590ccf91c353aaadc35102b"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/SpecExport.test.tsx",
+      "rawSha256": "eb7a781a5d01e4e0b96a450778e16505f281dcdbb9a09f2fda18fbce8202e9af",
+      "headSha256": "eb7a781a5d01e4e0b96a450778e16505f281dcdbb9a09f2fda18fbce8202e9af",
+      "head": "ae3e9813afc424f3b590ccf91c353aaadc35102b"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/draft-recovery.test.tsx",
+      "rawSha256": "7d1b53ab1a36af0dac594cafce082eb48db3a553e7cdc273486b99c8557e33d3",
+      "headSha256": "7d1b53ab1a36af0dac594cafce082eb48db3a553e7cdc273486b99c8557e33d3",
+      "head": "ae3e9813afc424f3b590ccf91c353aaadc35102b"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/store.ts",
+      "rawSha256": "f5deb700c631c680924d3ba74fd1c56ef862e99703fe59c461828a8a64953c06",
+      "headSha256": "f5deb700c631c680924d3ba74fd1c56ef862e99703fe59c461828a8a64953c06",
+      "head": "ae3e9813afc424f3b590ccf91c353aaadc35102b"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/spec-export-english-working-brief.ts",
+      "rawSha256": "76604b150f0a7f4e5379cf0d6ae5a41d3ab7152b034de940eab6d6515f41fb44",
+      "headSha256": "76604b150f0a7f4e5379cf0d6ae5a41d3ab7152b034de940eab6d6515f41fb44",
+      "head": "ae3e9813afc424f3b590ccf91c353aaadc35102b"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/test/setup.ts",
+      "rawSha256": "bc573b2a6133b07404c42f797bce43fe73464711e0281f29da8234bf2fed6b27",
+      "headSha256": "bc573b2a6133b07404c42f797bce43fe73464711e0281f29da8234bf2fed6b27",
+      "head": "ae3e9813afc424f3b590ccf91c353aaadc35102b"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/vitest.config.ts",
+      "rawSha256": "9a4a65976b5b7a5d038f9cb412a90d417f804108cf1dd33bae4421989a863420",
+      "headSha256": "9a4a65976b5b7a5d038f9cb412a90d417f804108cf1dd33bae4421989a863420",
+      "head": "ae3e9813afc424f3b590ccf91c353aaadc35102b"
+    }
+  ],
+  "readDepth": "named implementation render/callback and fixture/assertion scopes; no all-files/full-corpus read claim",
+  "workerOwnedPaths": [
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/draft-export.test.tsx",
+    "docs/reviews/evidence/ncr-draft-export-worker-20261012.json",
+    "docs/reviews/CVF_NCR_DRAFT_EXPORT_WORKER_RETURN_2026-10-12.md"
+  ],
+  "requestedConfiguration": "Sonnet 5.5 high; operator-selected manual worker",
+  "existingObservations": 19
+}
