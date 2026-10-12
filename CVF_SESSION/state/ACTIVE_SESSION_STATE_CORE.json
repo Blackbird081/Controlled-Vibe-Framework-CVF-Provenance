@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HISTORY_RECOVERY_2026-10-12.md",
     "workOrderSha256": "0d2ae4d7b10a76f51d7f0f72feaa1d3c654a4ddab2ee535803ad65a55aa4df8d"
   },
-  "currentAuthoritySyncReason": "ProcessingScreen bounded repaired closure/procedureFAIL at 687a49c6c05047cffa30cab6c655c2d21d74a4a0; exact6 continuity with closed paired authority,17 observations and useful-selection next move.",
+  "currentAuthoritySyncReason": "History recovery reviewed closure at bbff80863f71797b0d70e6df3c010473d488cf5e; exact6 continuity with closed paired authority,18 task observations and useful-selection next move.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
@@ -110,8 +110,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_ncr_history_recovery_worker_execution",
-  "previousMode": "cvf_ncr_p10_corrective_execution",
+  "currentMode": "cvf_ncr_history_recovery_closed_useful_selection",
+  "previousMode": "cvf_ncr_history_recovery_worker_execution",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
