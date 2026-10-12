@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_AGENT_HANDOFF_2026-10-12.md",
     "workOrderSha256": "0111b1b220274520a09aeff5c8422820e979b4ea9583b7f4d91ef6c84bc516fe"
   },
-  "currentAuthoritySyncReason": "New finite incoming handoff lifecycle repair selected; two Local source witnesses fail; paired ready packet raw hashes before material, dedicated actual-SHA continuity follows;20 prior observations unchanged.",
+  "currentAuthoritySyncReason": "Incoming Agent Chat lifecycle repair dispatch material 731c82e35370b7a043ad2b2028fcca6873496c35; dedicated exact6 continuity; source witness two FAIL, worker pending,20 observations unchanged.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
@@ -110,8 +110,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_ncr_draft_export_closed_useful_selection",
-  "previousMode": "cvf_ncr_draft_export_worker_execution",
+  "currentMode": "cvf_ncr_agent_handoff_worker_execution",
+  "previousMode": "cvf_ncr_draft_export_closed_useful_selection",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
