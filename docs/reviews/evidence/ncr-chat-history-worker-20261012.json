@@ -1,0 +1,836 @@
+{
+ "schemaVersion": "cvf.ncrChatHistoryWorkerEvidence@1",
+ "batchId": "CVF-NCR-CHAT-HISTORY-20261012",
+ "executionBaseHead": "419b6470c1e9c53fd4d3fdd83336b646a5799b43",
+ "clocks": {
+  "startUtc": "2026-10-12T07:48:49Z",
+  "head": "419b6470c1e9c53fd4d3fdd83336b646a5799b43",
+  "preImplementationUtc": "07:49:54Z-07:50:14Z",
+  "scaffoldUtc": "07:50:14Z",
+  "sourceRedUtc": "07:51:58Z",
+  "implementationEditsUtc": "07:52:37Z",
+  "finalFocusedUtc": "07:56:01Z-07:56:35Z",
+  "firstFastGateUtc": "07:56:43Z",
+  "preliminaryTerminalUtc": "2026-10-12T07:58:33Z",
+  "finalTerminalUtc": "2026-10-12T08:01:18Z",
+  "finalTerminalNote": "Time of the evidence confirmation (fast gate run4 exit 0 at 08:00:50Z-08:01:04Z). Recording it required a JSON-only byte change, so the fast gate, ledger gate and git checks were rerun once afterwards on the final bytes; their results are in the worker closing message and logs final-gates.log.",
+  "clockNote": "UTC values are `date -u` outputs captured by the worker during the run."
+ },
+ "provenanceNote": "Logs under ignored .cvf/runtime/ncr-chat-history-worker-20261012 are digested below; snapshots are copied from final-focused.log SNAP lines emitted by the regression itself.",
+ "sourceBaseline": {
+  "workerEditedPinsBefore": {
+   "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/AgentChatWithHistory.tsx": "20d74655258b5c9033f7a42d6821c07cc5c23d857abf3faf057e16bb78f949bf",
+   "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/chat-history.tsx": "dc4a450b97cd74dea6f67c23b253e06726622382c055c4cc48c1be8849803d0b"
+  },
+  "allElevenRawAndHeadPinsMatchedAtStart": true,
+  "workerOwnedSha256After": {
+   "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/AgentChatWithHistory.tsx": "cbc3eb22d1f932444a1f6c5e82016a49eb1944eef71fd2cb2ddc53beda6f1a80",
+   "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/chat-history.tsx": "55a2e0de3c38673ea68df9cacab8929bbf995b79897fcccfc3c9fbcefbc26e50",
+   "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/AgentChatHistoryConsistency.test.tsx": "d08733b16620cc369ea82b8862077dd43ca2d19fcf04f9b75fc8d66aea3fdf60"
+  }
+ },
+ "commands": [
+  {
+   "cmd": "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --active-work-order <work order>",
+   "exit": 0,
+   "log": "pre-impl.log"
+  },
+  {
+   "cmd": "python governance/compat/run_worker_return_scaffold.py --write <return> --check-shape --max-lines 450 --max-bytes 64000",
+   "exit": 0,
+   "log": "scaffold.log"
+  },
+  {
+   "cmd": "vitest run AgentChatHistoryConsistency.test.tsx (unmodified source)",
+   "exit": 1,
+   "log": "source-red.log"
+  },
+  {
+   "cmd": "vitest run AgentChatHistoryConsistency.test.tsx (after repair, iteration 1)",
+   "exit": 1,
+   "log": "iter1.log"
+  },
+  {
+   "cmd": "vitest run 4 selected suites (final bytes)",
+   "exit": 0,
+   "log": "final-focused.log"
+  },
+  {
+   "cmd": "tsc --noEmit --incremental false (first, worker test type error)",
+   "exit": 2,
+   "log": "tsc-first-fail.log"
+  },
+  {
+   "cmd": "tsc --noEmit --incremental false (final)",
+   "exit": 0,
+   "log": "tsc.log"
+  },
+  {
+   "cmd": "eslint 3 owned TS paths (final)",
+   "exit": 0,
+   "log": "eslint.log"
+  },
+  {
+   "cmd": "run_worker_return_fast_gate.py (first, on scaffold)",
+   "exit": 1,
+   "log": "fast-gate-first.log"
+  }
+ ],
+ "logDigests": {
+  "pre-impl.log": {
+   "sha256": "8c7b7ac95daeef1be849c90625ac77a55e030ed43e9ed2f7947654d93f5dc434",
+   "bytes": 4761
+  },
+  "scaffold.log": {
+   "sha256": "194485e07808c76b13e408c5b355ecd57d34a88609e0a874fac66713d479a244",
+   "bytes": 237
+  },
+  "source-red.log": {
+   "sha256": "13e7f1ed837f06c388b9f4bffeff6590e11fac3abc46551391b6a7c30cad9920",
+   "bytes": 20508
+  },
+  "iter1.log": {
+   "sha256": "fe49dc897def311dae3e353fa54cdd92f4d3e1444b9131619c4fa08dff425d8a",
+   "bytes": 12872
+  },
+  "final-focused.log": {
+   "sha256": "61ca09c2cd616175c17379651863a652d557e2f8e626d75cc0f918edd75418a6",
+   "bytes": 22938
+  },
+  "tsc-first-fail.log": {
+   "sha256": "6c67821df1f5360fcbb2bd77f938c48595e768e76457eb657d86bd9114c3c8b7",
+   "bytes": 129
+  },
+  "tsc.log": {
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "bytes": 0
+  },
+  "eslint.log": {
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "bytes": 0
+  },
+  "fast-gate-first.log": {
+   "sha256": "1479c73aaae84e359263e944fadb6790458efd847ed79e4bb01d4c0931f45478",
+   "bytes": 16558
+  }
+ },
+ "REQ-HISTORY": {
+  "firstSourceRed": {
+   "log": "source-red.log",
+   "command": "node node_modules/vitest/vitest.mjs run src/components/AgentChatHistoryConsistency.test.tsx --reporter=verbose",
+   "sourceState": "unmodified wrapper and history (pins above)",
+   "tests": "16 total: 14 failed, 2 passed",
+   "failed": [
+    "New Chat shows at once, title/count follow real messages, selection restores each own messages",
+    "incoming prompt session shows immediately and is never replayed by New Chat or selection",
+    "deleting the active session selects the first survivor, persists it and cannot resurrect it",
+    "active delete picks the state-array-first survivor, not the neighbour",
+    "deleting the final session creates exactly one empty replacement (also under StrictMode)",
+    "Confirm Clear All leaves one empty replacement; Cancel changes nothing",
+    "clearing the incoming session cannot replay its prompt into the replacement",
+    "deleting the incoming session before anything else cannot replay it either",
+    "a delayed message callback from a deleted or cleared chat restores nothing",
+    "a delayed callback for a live session lands in that session only, never in the selected one",
+    "ordinary rerenders and StrictMode never add visible or persisted sessions",
+    "an orphaned active ID in storage recovers to the first stored session",
+    "real send updates sidebar title/count; selection shows each own messages; no cross-copy",
+    "a provider result that arrives after the active session was deleted restores nothing"
+   ],
+   "passed": [
+    "control: seeded sessions show in the sidebar and the active one fills the chat",
+    "deleting an inactive session leaves the open chat untouched"
+   ],
+   "assertionSamples": [
+    "AssertionError: expected [ { title: 'Saved A', \u2026(2) }, \u2026(1) ] to deeply equal [ { title: 'New Chat', \u2026(2) }, \u2026(2) ]",
+    "AssertionError: expected [ { title: 'Saved A', \u2026(2) }, \u2026(1) ] to deeply equal [ { title: 'INCOMING', \u2026(2) }, \u2026(2) ]",
+    "AssertionError: expected [ Array(1) ] to deeply equal [ Array(1) ]",
+    "AssertionError: expected [ Array(1) ] to deeply equal [ { title: 'typed-N', \u2026(2) }, \u2026(1) ]",
+    "AssertionError: expected [] to deeply equal [ { title: 'New Chat', \u2026(2) } ]",
+    "AssertionError: expected [] to deeply equal [ { title: 'New Chat', \u2026(2) } ]"
+   ],
+   "meaning": "Real sidebar kept a second stale useChatHistory snapshot: New Chat and incoming prompt absent from rows, deleted ids restored, title/count lagging."
+  },
+  "intermediateRunDisclosure": {
+   "log": "iter1.log",
+   "result": "15 passed, 1 failed",
+   "cause": "worker test defect: a late callback was replayed from the NEW live chat, which legitimately updates its own session; that call was removed. No production change followed."
+  },
+  "finalControls": {
+   "log": "final-focused.log",
+   "command": "node node_modules/vitest/vitest.mjs run <4 selected suites> --reporter=verbose",
+   "result": "4 files, 55 tests passed",
+   "newSuiteTests": 16,
+   "selectedExistingSuites": [
+    "AgentChatWithHistory.test.tsx",
+    "chat-history.test.tsx",
+    "layout-agent-handoff.test.tsx"
+   ]
+  },
+  "snapshots": [
+   {
+    "label": "control-seeded",
+    "sidebar": [
+     {
+      "title": "Saved A",
+      "count": 1,
+      "active": true
+     },
+     {
+      "title": "Saved B",
+      "count": 2,
+      "active": false
+     }
+    ],
+    "chat": "body-A",
+    "storage": {
+     "active": "saved-A",
+     "sessions": [
+      {
+       "id": "saved-A",
+       "title": "Saved A",
+       "count": 1,
+       "texts": [
+        "body-A"
+       ]
+      },
+      {
+       "id": "saved-B",
+       "title": "Saved B",
+       "count": 2,
+       "texts": [
+        "body-B",
+        "answer-B"
+       ]
+      }
+     ]
+    }
+   },
+   {
+    "label": "new-chat",
+    "sidebar": [
+     {
+      "title": "New Chat",
+      "count": 0,
+      "active": true
+     },
+     {
+      "title": "Saved A",
+      "count": 1,
+      "active": false
+     },
+     {
+      "title": "Saved B",
+      "count": 2,
+      "active": false
+     }
+    ],
+    "chat": "",
+    "storage": {
+     "active": "session_1791791773819_6gjr78",
+     "sessions": [
+      {
+       "id": "session_1791791773819_6gjr78",
+       "title": "New Chat",
+       "count": 0,
+       "texts": []
+      },
+      {
+       "id": "saved-A",
+       "title": "Saved A",
+       "count": 1,
+       "texts": [
+        "body-A"
+       ]
+      },
+      {
+       "id": "saved-B",
+       "title": "Saved B",
+       "count": 2,
+       "texts": [
+        "body-B",
+        "answer-B"
+       ]
+      }
+     ]
+    }
+   },
+   {
+    "label": "new-chat-two-messages",
+    "sidebar": [
+     {
+      "title": "typed-N",
+      "count": 2,
+      "active": true
+     },
+     {
+      "title": "Saved A",
+      "count": 1,
+      "active": false
+     },
+     {
+      "title": "Saved B",
+      "count": 2,
+      "active": false
+     }
+    ],
+    "chat": "typed-N|typed-N2",
+    "storage": {
+     "active": "session_1791791773819_6gjr78",
+     "sessions": [
+      {
+       "id": "session_1791791773819_6gjr78",
+       "title": "typed-N",
+       "count": 2,
+       "texts": [
+        "typed-N",
+        "typed-N2"
+       ]
+      },
+      {
+       "id": "saved-A",
+       "title": "Saved A",
+       "count": 1,
+       "texts": [
+        "body-A"
+       ]
+      },
+      {
+       "id": "saved-B",
+       "title": "Saved B",
+       "count": 2,
+       "texts": [
+        "body-B",
+        "answer-B"
+       ]
+      }
+     ]
+    }
+   },
+   {
+    "label": "selection-roundtrip",
+    "sidebar": [
+     {
+      "title": "typed-N",
+      "count": 2,
+      "active": true
+     },
+     {
+      "title": "Saved A",
+      "count": 1,
+      "active": false
+     },
+     {
+      "title": "Saved B",
+      "count": 2,
+      "active": false
+     }
+    ],
+    "chat": "typed-N|typed-N2",
+    "storage": {
+     "active": "session_1791791773819_6gjr78",
+     "sessions": [
+      {
+       "id": "session_1791791773819_6gjr78",
+       "title": "typed-N",
+       "count": 2,
+       "texts": [
+        "typed-N",
+        "typed-N2"
+       ]
+      },
+      {
+       "id": "saved-A",
+       "title": "Saved A",
+       "count": 1,
+       "texts": [
+        "body-A"
+       ]
+      },
+      {
+       "id": "saved-B",
+       "title": "Saved B",
+       "count": 2,
+       "texts": [
+        "body-B",
+        "answer-B"
+       ]
+      }
+     ]
+    }
+   },
+   {
+    "label": "incoming-prompt",
+    "sidebar": [
+     {
+      "title": "INCOMING",
+      "count": 1,
+      "active": true
+     },
+     {
+      "title": "Saved A",
+      "count": 1,
+      "active": false
+     },
+     {
+      "title": "Saved B",
+      "count": 2,
+      "active": false
+     }
+    ],
+    "chat": "INCOMING",
+    "storage": {
+     "active": "session_1791791773859_wwnzc0",
+     "sessions": [
+      {
+       "id": "session_1791791773859_wwnzc0",
+       "title": "INCOMING",
+       "count": 1,
+       "texts": [
+        "INCOMING"
+       ]
+      },
+      {
+       "id": "saved-A",
+       "title": "Saved A",
+       "count": 1,
+       "texts": [
+        "body-A"
+       ]
+      },
+      {
+       "id": "saved-B",
+       "title": "Saved B",
+       "count": 2,
+       "texts": [
+        "body-B",
+        "answer-B"
+       ]
+      }
+     ]
+    }
+   },
+   {
+    "label": "real-send",
+    "sidebar": [
+     {
+      "title": "REAL_Q",
+      "count": 2,
+      "active": true
+     },
+     {
+      "title": "Saved A",
+      "count": 1,
+      "active": false
+     },
+     {
+      "title": "Saved B",
+      "count": 2,
+      "active": false
+     }
+    ],
+    "chat": null,
+    "storage": {
+     "active": "session_1791791774294_p09h66",
+     "sessions": [
+      {
+       "id": "session_1791791774294_p09h66",
+       "title": "REAL_Q",
+       "count": 2,
+       "texts": [
+        "REAL_Q",
+        "STUB_REPLY(REAL_Q)"
+       ]
+      },
+      {
+       "id": "saved-A",
+       "title": "Saved A",
+       "count": 1,
+       "texts": [
+        "body-A"
+       ]
+      },
+      {
+       "id": "saved-B",
+       "title": "Saved B",
+       "count": 2,
+       "texts": [
+        "body-B",
+        "answer-B"
+       ]
+      }
+     ]
+    }
+   }
+  ],
+  "realChatSeam": "AgentChat/useAgentChat real; createAIProvider replaced by in-process stub (providerChat mock); a fetch spy wrapping the shared denial guard was never called; stub text proves UI wiring only.",
+  "standaloneApisRetained": "ChatHistorySidebar without sessions/onDeleteSession/onClearHistory props still mounts its own useChatHistory; hook deleteSession keeps active id null (existing chat-history.test.tsx passed unchanged)."
+ },
+ "REQ-DELETE": {
+  "snapshots": [
+   {
+    "label": "delete-inactive",
+    "sidebar": [
+     {
+      "title": "Saved A",
+      "count": 1,
+      "active": true
+     }
+    ],
+    "chat": "body-A",
+    "storage": {
+     "active": "saved-A",
+     "sessions": [
+      {
+       "id": "saved-A",
+       "title": "Saved A",
+       "count": 1,
+       "texts": [
+        "body-A"
+       ]
+      }
+     ]
+    }
+   },
+   {
+    "label": "delete-active",
+    "sidebar": [
+     {
+      "title": "Saved B",
+      "count": 2,
+      "active": true
+     }
+    ],
+    "chat": "body-B|answer-B",
+    "storage": {
+     "active": "saved-B",
+     "sessions": [
+      {
+       "id": "saved-B",
+       "title": "Saved B",
+       "count": 2,
+       "texts": [
+        "body-B",
+        "answer-B"
+       ]
+      }
+     ]
+    }
+   },
+   {
+    "label": "delete-active-then-new-chat",
+    "sidebar": [
+     {
+      "title": "after-delete",
+      "count": 1,
+      "active": true
+     },
+     {
+      "title": "Saved B",
+      "count": 2,
+      "active": false
+     }
+    ],
+    "chat": "after-delete",
+    "storage": {
+     "active": "session_1791791773968_x8fy5z",
+     "sessions": [
+      {
+       "id": "session_1791791773968_x8fy5z",
+       "title": "after-delete",
+       "count": 1,
+       "texts": [
+        "after-delete"
+       ]
+      },
+      {
+       "id": "saved-B",
+       "title": "Saved B",
+       "count": 2,
+       "texts": [
+        "body-B",
+        "answer-B"
+       ]
+      }
+     ]
+    }
+   },
+   {
+    "label": "delete-final-plain",
+    "sidebar": [
+     {
+      "title": "New Chat",
+      "count": 0,
+      "active": true
+     }
+    ],
+    "chat": "",
+    "storage": {
+     "active": "session_1791791774022_4c1jj4",
+     "sessions": [
+      {
+       "id": "session_1791791774022_4c1jj4",
+       "title": "New Chat",
+       "count": 0,
+       "texts": []
+      }
+     ]
+    }
+   },
+   {
+    "label": "delete-final-strict",
+    "sidebar": [
+     {
+      "title": "New Chat",
+      "count": 0,
+      "active": true
+     }
+    ],
+    "chat": "",
+    "storage": {
+     "active": "session_1791791774035_o6xbws",
+     "sessions": [
+      {
+       "id": "session_1791791774035_o6xbws",
+       "title": "New Chat",
+       "count": 0,
+       "texts": []
+      }
+     ]
+    }
+   },
+   {
+    "label": "clear-cancel",
+    "sidebar": [
+     {
+      "title": "Saved A",
+      "count": 1,
+      "active": true
+     },
+     {
+      "title": "Saved B",
+      "count": 2,
+      "active": false
+     }
+    ],
+    "chat": "body-A",
+    "storage": {
+     "active": "saved-A",
+     "sessions": [
+      {
+       "id": "saved-A",
+       "title": "Saved A",
+       "count": 1,
+       "texts": [
+        "body-A"
+       ]
+      },
+      {
+       "id": "saved-B",
+       "title": "Saved B",
+       "count": 2,
+       "texts": [
+        "body-B",
+        "answer-B"
+       ]
+      }
+     ]
+    }
+   },
+   {
+    "label": "clear-confirm",
+    "sidebar": [
+     {
+      "title": "New Chat",
+      "count": 0,
+      "active": true
+     }
+    ],
+    "chat": "",
+    "storage": {
+     "active": "session_1791791774060_dhtocz",
+     "sessions": [
+      {
+       "id": "session_1791791774060_dhtocz",
+       "title": "New Chat",
+       "count": 0,
+       "texts": []
+      }
+     ]
+    }
+   },
+   {
+    "label": "clear-incoming",
+    "sidebar": [
+     {
+      "title": "New Chat",
+      "count": 0,
+      "active": true
+     },
+     {
+      "title": "New Chat",
+      "count": 0,
+      "active": false
+     }
+    ],
+    "chat": "",
+    "storage": {
+     "active": "session_1791791774096_vhxmh3",
+     "sessions": [
+      {
+       "id": "session_1791791774096_vhxmh3",
+       "title": "New Chat",
+       "count": 0,
+       "texts": []
+      },
+      {
+       "id": "session_1791791774075_6tfopn",
+       "title": "New Chat",
+       "count": 0,
+       "texts": []
+      }
+     ]
+    }
+   },
+   {
+    "label": "late-after-delete",
+    "sidebar": [
+     {
+      "title": "New Chat",
+      "count": 0,
+      "active": true
+     },
+     {
+      "title": "Saved B",
+      "count": 2,
+      "active": false
+     }
+    ],
+    "chat": "",
+    "storage": {
+     "active": "session_1791791774174_4jo8k1",
+     "sessions": [
+      {
+       "id": "session_1791791774174_4jo8k1",
+       "title": "New Chat",
+       "count": 0,
+       "texts": []
+      },
+      {
+       "id": "saved-B",
+       "title": "Saved B",
+       "count": 2,
+       "texts": [
+        "body-B",
+        "answer-B"
+       ]
+      }
+     ]
+    }
+   },
+   {
+    "label": "late-after-clear",
+    "sidebar": [
+     {
+      "title": "New Chat",
+      "count": 0,
+      "active": true
+     }
+    ],
+    "chat": "",
+    "storage": {
+     "active": "session_1791791774182_f9hrek",
+     "sessions": [
+      {
+       "id": "session_1791791774182_f9hrek",
+       "title": "New Chat",
+       "count": 0,
+       "texts": []
+      }
+     ]
+    }
+   },
+   {
+    "label": "real-late-result-after-delete",
+    "sidebar": [
+     {
+      "title": "New Chat",
+      "count": 0,
+      "active": true
+     },
+     {
+      "title": "Saved A",
+      "count": 1,
+      "active": false
+     },
+     {
+      "title": "Saved B",
+      "count": 2,
+      "active": false
+     }
+    ],
+    "chat": null,
+    "storage": {
+     "active": "session_1791791774580_ddix7c",
+     "sessions": [
+      {
+       "id": "session_1791791774580_ddix7c",
+       "title": "New Chat",
+       "count": 0,
+       "texts": []
+      },
+      {
+       "id": "saved-A",
+       "title": "Saved A",
+       "count": 1,
+       "texts": [
+        "body-A"
+       ]
+      },
+      {
+       "id": "saved-B",
+       "title": "Saved B",
+       "count": 2,
+       "texts": [
+        "body-B",
+        "answer-B"
+       ]
+      }
+     ]
+    }
+   }
+  ],
+  "coveredCases": [
+   "inactive delete leaves chat instance mounted and content unchanged",
+   "active delete picks state-array-first survivor and persists active id",
+   "final delete and Confirm Clear create exactly one empty alibaba replacement (plain and StrictMode)",
+   "Cancel Clear leaves raw storage byte-identical",
+   "deleted or cleared incoming session cannot replay its prompt (delivered stays 1; reopen with no prompt)",
+   "delayed mount-time callback after delete or clear leaves storage unchanged and does not resurrect ids",
+   "delayed callback for a live session lands in that session only",
+   "real useAgentChat provider continuation resolved after the session was deleted restores neither id nor text",
+   "orphaned active id in storage recovers to first stored session",
+   "accepted handoff regression (layout-agent-handoff.test.tsx) and AgentChatWithHistory.test.tsx passed unchanged"
+  ]
+ },
+ "REQ-RETURN": {
+  "nativeMetadata": {
+   "requestedByOperator": "Sonnet 5.5, high",
+   "selfReportedModelString": "claude-sonnet-5-5 (system-prompt string, not an independently verified native identity)",
+   "nativeModelIdentity": null,
+   "nativeEffort": null,
+   "tokens": null,
+   "bill": null,
+   "nullReason": "The shared-workspace session exposes no native usage, identity or billing meter to the worker."
+  },
+  "stubAndOmissionBoundaries": [
+   "recorder leaf is a disclosed transparent stand-in",
+   "provider adapter is an in-process stub; no HTTP, provider, browser or backend-abort claim",
+   "no AI governance, full-mode, cross-tab, schema, import or retention claim",
+   "DESIGN.md, AGENTS.md, routing index, active handoff V63 and the handoff completion review were not read; layout.tsx read by targeted grep only; dispatch evidence JSON read only at sourceFacts and admissionWitness"
+  ],
+  "forbiddenEffects": "none: no stage, commit, push, install, server, browser, provider call or nested agent",
+  "preliminaryTerminalUtc": "2026-10-12T07:58:33Z",
+  "finalTerminalUtc": "2026-10-12T08:01:18Z",
+  "finalTerminalNote": "Time of the evidence confirmation (fast gate run4 exit 0 at 08:00:50Z-08:01:04Z). Recording it required a JSON-only byte change, so the fast gate, ledger gate and git checks were rerun once afterwards on the final bytes; their results are in the worker closing message and logs final-gates.log."
+ }
+}

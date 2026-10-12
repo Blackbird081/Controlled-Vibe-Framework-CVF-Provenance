@@ -5,7 +5,7 @@
   "decisionOwner": "LOCAL_REVIEWER",
   "purpose": "Longitudinal worker evidence for model selection by role and task family in a future multi-agent use case. No agent invocation or automatic routing.",
   "identityBasis": "MODEL_LABELS_OPERATOR_REPORTED_OR_WORKER_SELF_REPORTED_NOT_RUNTIME_VERIFIED",
-  "sourceHead": "bf7d6c3d86a039d013d414d5d7b8449a8fd9bc4d",
+  "sourceHead": "419b6470c1e9c53fd4d3fdd83336b646a5799b43",
   "rows": [
     {
       "trancheId": "CVF-NCR-OFFLINE-PREVIEW-20261009",
@@ -1218,6 +1218,69 @@
         "Historical fail gates and Local harness/packaging failures are retained, not new worker samples.",
         "Local failed instant-adapter fixture emitted existing Date.now-based duplicate message-key warnings; no ID-policy repair, backend cancellation or arbitrary concurrency claim."
       ]
+    },
+    {
+      "trancheId": "CVF-NCR-CHAT-HISTORY-20261012",
+      "taskFamily": "PRODUCT_UI_AGENT_CHAT_HISTORY_CONSISTENCY",
+      "requestedProvider": "Claude",
+      "requestedModel": "Sonnet 5.5",
+      "requestedEffort": "high",
+      "nativeModel": null,
+      "nativeEffort": null,
+      "tokens": null,
+      "bill": null,
+      "identityUnavailableReason": "Native identity/effort/usage/billing not exposed by worker tool; requested identity not runtime verification.",
+      "implementationPaths": 3,
+      "deliveredPaths": 5,
+      "evidence": "docs/reviews/evidence/ncr-chat-history-local-20261012.json",
+      "evidenceSha256": "f6a138a695b8fad66a0584fc8551bdd2882a6b3b995577027064d5cbc5bde5c3",
+      "technicalOutput": "ACCEPTED_BOUNDED_SOURCE_REPAIR_NO_LOCAL_PRODUCT_REPAIR",
+      "procedureDisposition": "FAIL",
+      "procedure": "FAIL: AGENTS/routing, DESIGN, active handoff and prior completion unread; dispatch proof/selected checker branches only partial; mandatory full preparation not certified. Original disclosure preserved.",
+      "proof": "Worker55/55 and original-source14/16 FAIL consumed; Local actual chat/sidebar/hook2/2 PASS.",
+      "workerReturnGateFailedAttemptsReported": 3,
+      "workerReturnShapeManualRepairsReported": null,
+      "reviewerProductCodeRepairCount": 0,
+      "workerRedispatchCount": 0,
+      "elapsed": {
+        "minutes": 12.6833333333,
+        "basis": "WORKER_START_THROUGH_OBSERVED_LAST_LOGGED_CONFIRMATION",
+        "fullDeliveryMinutes": null
+      },
+      "clock": {
+        "workerDeclared": {
+          "startUtc": "2026-10-12T07:48:49Z",
+          "head": "419b6470c1e9c53fd4d3fdd83336b646a5799b43",
+          "preImplementationUtc": "07:49:54Z-07:50:14Z",
+          "scaffoldUtc": "07:50:14Z",
+          "sourceRedUtc": "07:51:58Z",
+          "implementationEditsUtc": "07:52:37Z",
+          "finalFocusedUtc": "07:56:01Z-07:56:35Z",
+          "firstFastGateUtc": "07:56:43Z",
+          "preliminaryTerminalUtc": "2026-10-12T07:58:33Z",
+          "finalTerminalUtc": "2026-10-12T08:01:18Z",
+          "finalTerminalNote": "Time of the evidence confirmation (fast gate run4 exit 0 at 08:00:50Z-08:01:04Z). Recording it required a JSON-only byte change, so the fast gate, ledger gate and git checks were rerun once afterwards on the final bytes; their results are in the worker closing message and logs final-gates.log.",
+          "clockNote": "UTC values are `date -u` outputs captured by the worker during the run."
+        },
+        "observedLastLoggedConfirmationUtc": "2026-10-12T08:01:30Z",
+        "startThroughLoggedConfirmationMinutes": 12.6833333333,
+        "completeAcceptedDeliveryMinutes": null,
+        "reason": "Recorded terminal08:01:18 precedes final confirmation; actual accepted-delivery endpoint not measured."
+      },
+      "qualityAttribution": {
+        "workerTestSelfRepairGroups": 1,
+        "workerTestTypeRepairGroups": 1,
+        "workerReturnFailedGateAttempts": 3,
+        "mandatoryReadOmissionGroups": 1,
+        "localProductRepairGroups": 0,
+        "localProbeWrongAssertionGroups": 1,
+        "localOutputEncodingFailureGroups": 1
+      },
+      "qualityInterpretation": "Second consecutive bounded source repair accepted without Local product edits; procedureFAIL persists; unmatched tasks/native identity unknown prevent quality trend or model/cost ranking.",
+      "limitations": [
+        "Offline jsdom UI/session persistence only; no AI governance/live/full/browser/backend/cross-tab/arbitrary concurrent delete/whole roadmap/model ranking.",
+        "Complete accepted-delivery interval unknown; final logged confirmation differs from declared terminal."
+      ]
     }
   ],
   "rubric": [
@@ -1302,9 +1365,9 @@
       "next useful comparison task"
     ],
     "reviewedHaikuCount": 10,
-    "reviewedSonnetCount": 7,
+    "reviewedSonnetCount": 8,
     "reviewedLunaCount": 4,
-    "reviewedTaskObservationCount": 21
+    "reviewedTaskObservationCount": 22
   },
   "provisionalRoleRouting": [
     {
@@ -1333,9 +1396,9 @@
   "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
   "laneProtection": "Reviewer-owned governed evidence promotion authorized by operator longitudinal tracking request. No worker file edit, new dispatch, provider effect or public export.",
   "observations": {
-    "technical": "21 reviewed tasks10 Haiku-family/7 Sonnet/4 Luna; previous20 preserved. Latest receiving/session source repair accepted, worker35/35 and Local2/2.",
-    "process": "Latest startup-order procedureFAIL; protected mode packet gap and Local harness/ledger-boundary repair retained separately.13.8min preliminary interval only.",
-    "reportStatus": "TWENTY_ONE_REVIEWED_TASK_OBSERVATIONS_NO_COMPARATIVE_WINNER",
+    "technical": "22 reviewed tasks10 Haiku-family/8 Sonnet/4 Luna; previous21 preserved. History consistency worker55/55 and Local2/2, zero Local product repair.",
+    "process": "Mandatory read omissions procedureFAIL; worker test/type/shape repairs and Local harness/output errors retained separately.",
+    "reportStatus": "TWENTY_TWO_REVIEWED_TASK_OBSERVATIONS_NO_COMPARATIVE_WINNER",
     "measuredBillComparison": null,
     "nextControl": "Continue evidence collection on admitted work; Expense/S5 and effects parked; no automatic router or new benchmark task."
   },
@@ -1507,11 +1570,11 @@
     "omissionOwner": "LOCAL_ORCHESTRATOR",
     "OpusSameSessionAdvisoryExtraWorkers": 0,
     "latestReviewedTask": {
-      "trancheId": "CVF-NCR-AGENT-HANDOFF-20261012",
-      "localReview": "docs/reviews/CVF_NCR_AGENT_HANDOFF_COMPLETION_2026-10-12.md",
-      "evidence": "docs/reviews/evidence/ncr-agent-handoff-local-20261012.json",
-      "evidenceSha256": "2ee7c21b9812f1f7b7277ee066ce7559439c572a4872e36321ef1aa76927b116",
-      "previousTwentyRowsPreserved": true
+      "trancheId": "CVF-NCR-CHAT-HISTORY-20261012",
+      "localReview": "docs/reviews/CVF_NCR_CHAT_HISTORY_COMPLETION_2026-10-12.md",
+      "evidence": "docs/reviews/evidence/ncr-chat-history-local-20261012.json",
+      "evidenceSha256": "f6a138a695b8fad66a0584fc8551bdd2882a6b3b995577027064d5cbc5bde5c3",
+      "previousTwentyOneRowsPreserved": true
     }
   },
   "operatorObservationFocus": {
@@ -1534,9 +1597,9 @@
     "costDisposition": "DEFERRED_BY_OPERATOR_FOR_CURRENT_EVALUATION; preserve historical null/available fields without new billing investigation or cost ranking.",
     "samplingPlan": "Continue operator-selected useful Sonnet tasks with quality/time measures; no benchmark-only or automatic model switch.",
     "comparisonRule": "Use the same quality/time interpretation after the switch, compare similar task families and complexity, retain reuse/session context and exact requested configurations; no benchmark-only tasks or automatic model assignment.",
-    "currentTask": "CVF-NCR-AGENT-HANDOFF-20261012",
+    "currentTask": "CVF-NCR-CHAT-HISTORY-20261012",
     "currentTaskDisposition": "LOCAL_REVIEWED_BOUNDED_CLOSURE",
-    "reviewedTaskCount": 21,
+    "reviewedTaskCount": 22,
     "postClosureClarification": "Current17 tasks; Sonnet late required reads recur despite scoped orchestrator mapping. Technical repair and procedure tracked separately; no model winner.",
     "proportionalControlDirection": {
       "authority": "OPERATOR_DIRECT_INSTRUCTION_CURRENT_SESSION_2026-10-12",
@@ -1563,16 +1626,16 @@
       "canonicalTemplateRawSha256": "ae02c4008ad16ec65487ec3137135d6103685ff41c131a9e91325a4f59959f8a"
     },
     "nextAssignment": {
-      "batchId": "CVF-NCR-AGENT-HANDOFF-20261012",
-      "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_AGENT_HANDOFF_2026-10-12.md",
-      "taskFamily": "PRODUCT_UI_INCOMING_AGENT_HANDOFF_SESSION_LIFECYCLE",
+      "batchId": "CVF-NCR-CHAT-HISTORY-20261012",
+      "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_CHAT_HISTORY_2026-10-12.md",
+      "taskFamily": "PRODUCT_UI_AGENT_CHAT_HISTORY_CONSISTENCY",
       "requestedProvider": "Claude",
       "requestedModel": "Sonnet 5.5",
       "requestedEffort": "high",
       "nativeIdentity": null,
       "collectionDisposition": "REVIEWED_OBSERVATION_ADMITTED",
-      "priorReviewedTaskCount": 20,
-      "review": "docs/reviews/CVF_NCR_AGENT_HANDOFF_COMPLETION_2026-10-12.md",
+      "priorReviewedTaskCount": 21,
+      "review": "docs/reviews/CVF_NCR_CHAT_HISTORY_COMPLETION_2026-10-12.md",
       "nextDispatch": "NONE_NO_AUTOMATIC_SUCCESSOR"
     }
   },

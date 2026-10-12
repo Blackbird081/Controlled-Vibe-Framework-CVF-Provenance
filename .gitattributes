@@ -48,3 +48,12 @@ docs/baselines/CVF_GC018_NCR_AGENT_HANDOFF_2026-10-12.md text eol=lf
 docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_CHAT_HISTORY_2026-10-12.md text eol=lf
 docs/baselines/CVF_GC018_NCR_CHAT_HISTORY_2026-10-12.md text eol=lf
 docs/reviews/evidence/ncr-chat-history-dispatch-20261012.json text eol=lf
+
+# NCR chat history closure raw evidence
+EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/AgentChatWithHistory.tsx text eol=lf
+EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/chat-history.tsx text eol=lf
+EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/AgentChatHistoryConsistency.test.tsx text eol=lf
+docs/reviews/evidence/ncr-chat-history-worker-20261012.json text eol=lf
+docs/reviews/CVF_NCR_CHAT_HISTORY_WORKER_RETURN_2026-10-12.md text eol=lf
+docs/reviews/CVF_NCR_CHAT_HISTORY_COMPLETION_2026-10-12.md text eol=lf
+docs/reviews/evidence/ncr-chat-history-local-20261012.json text eol=lf

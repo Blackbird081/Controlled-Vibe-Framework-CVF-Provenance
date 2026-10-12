@@ -112,8 +112,9 @@ export function useChatHistory(initialProvider?: ProviderKey) {
         setState(prev => ({
             ...prev,
             sessions: prev.sessions.map(s =>
-                s.id === sessionId
-                    ? {
+                s.id !== sessionId || s.messages === messages
+                    ? s
+                    : {
                         ...s,
                         messages,
                         // Generate title only if current title is default and we have user messages
@@ -123,7 +124,6 @@ export function useChatHistory(initialProvider?: ProviderKey) {
                         updatedAt: new Date(),
                         metadata: { ...s.metadata, messageCount: messages.length },
                     }
-                    : s
             ),
         }));
     }, []);
@@ -178,16 +178,40 @@ export function useChatHistory(initialProvider?: ProviderKey) {
 }
 
 // Chat History Sidebar Component
-export function ChatHistorySidebar({
-    onSelectSession,
-    onNewChat,
-    currentSessionId
-}: {
+interface ChatHistorySidebarProps {
     onSelectSession: (session: ChatSession) => void;
     onNewChat: () => void;
     currentSessionId?: string | null;
-}) {
+    // Controlled mode: a consumer that already owns useChatHistory passes its current
+    // sessions and delete/clear actions so the list never keeps a second stale writer.
+    sessions?: ChatSession[];
+    onDeleteSession?: (sessionId: string) => void;
+    onClearHistory?: () => void;
+}
+
+export function ChatHistorySidebar(props: ChatHistorySidebarProps) {
+    return props.sessions && props.onDeleteSession && props.onClearHistory
+        ? <ChatHistorySidebarView {...props} sessions={props.sessions} onDeleteSession={props.onDeleteSession} onClearHistory={props.onClearHistory} />
+        : <StandaloneChatHistorySidebar {...props} />;
+}
+
+function StandaloneChatHistorySidebar(props: ChatHistorySidebarProps) {
     const { sessions, deleteSession, clearHistory } = useChatHistory();
+    return <ChatHistorySidebarView {...props} sessions={sessions} onDeleteSession={deleteSession} onClearHistory={clearHistory} />;
+}
+
+function ChatHistorySidebarView({
+    onSelectSession,
+    onNewChat,
+    currentSessionId,
+    sessions,
+    onDeleteSession,
+    onClearHistory,
+}: ChatHistorySidebarProps & {
+    sessions: ChatSession[];
+    onDeleteSession: (sessionId: string) => void;
+    onClearHistory: () => void;
+}) {
     const [showConfirmClear, setShowConfirmClear] = useState(false);
 
     const formatDate = (date: Date) => {
@@ -244,7 +268,7 @@ export function ChatHistorySidebar({
                                         </div>
                                     </div>
                                     <button
-                                        onClick={(e) => { e.stopPropagation(); deleteSession(session.id); }}
+                                        onClick={(e) => { e.stopPropagation(); onDeleteSession(session.id); }}
                                         className="opacity-0 group-hover:opacity-100 p-1 text-red-500 hover:bg-red-100 dark:hover:bg-red-900/30 rounded transition-all"
                                         title="Delete"
                                     >
@@ -262,7 +286,7 @@ export function ChatHistorySidebar({
                     {showConfirmClear ? (
                         <div className="flex gap-2">
                             <button
-                                onClick={() => { clearHistory(); setShowConfirmClear(false); }}
+                                onClick={() => { onClearHistory(); setShowConfirmClear(false); }}
                                 className="flex-1 py-1.5 bg-red-600 text-white text-sm rounded"
                             >
                                 Confirm

@@ -37,11 +37,11 @@
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_NCR_CHAT_HISTORY_2026-10-12.md",
-    "baselineSha256": "820617c634be245eb7fce764392a99669018a568004aecd0b1170147f8108d97",
+    "baselineSha256": "92baa46205e6db162e4c0560b4777d88e76ea61b5561031d5ad6ae3723409612",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_CHAT_HISTORY_2026-10-12.md",
-    "workOrderSha256": "8055b1b1d2c9f16cfa674cd8ce14d88627f7d213cc9efc1ffefe2de487224d87"
+    "workOrderSha256": "784f98f147cb384c9daa52ed97610aa43ca6fcecd2a77fc655280ac675408a17"
   },
-  "currentAuthoritySyncReason": "Chat history consistency dispatch material 5aac1ca8bc2d1cc10a65d20759b0f31f66bfff26; dedicated exact6 continuity; Local source witness2FAIL,worker not started,21 observations unchanged.",
+  "currentAuthoritySyncReason": "Chat history Local bounded closure raw authority projection; original five bytes and procedureFAIL retained; dedicated actual material-SHA continuity follows.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",

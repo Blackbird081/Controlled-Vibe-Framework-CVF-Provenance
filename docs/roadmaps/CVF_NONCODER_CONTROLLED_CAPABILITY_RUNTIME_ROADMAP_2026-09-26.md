@@ -19,7 +19,7 @@ Decision owner: operator về định hướng/phạm vi; Local reviewer về đ
 ## Current Delivery Checkpoint - 2026-10-12
 
 Operator asks to update our roadmaps to prevent drift. Local owns this bounded
-documentation reconciliation; current mode=cvf_ncr_agent_handoff_closed_useful_selection,
+documentation reconciliation; current mode=cvf_ncr_chat_history_closed_useful_selection,
 handoff=AGENT_HANDOFF_V63_2026-09-18.md, next=useful coding outcome selection.
 This checkpoint supersedes older current/next wording for selection; historical
 decisions, accepted proofs, phase IDs and effect checkpoints retain their scope.
@@ -47,19 +47,14 @@ Worker layout repair; no Local product repair. Four original bytes retained,
 historical BLOCKED/startup-order procedureFAIL separate. Local literal/manifest
 and evidence binding corrected with actual-SHA continuity; initial closureFAIL
 retained.21 observations, previous20 retained; cost/full delivery time unknown.
-**Selected next outcome - Agent Chat history consistency, 2026-10-12:**
-actual wrapper/sidebar each keep an independent history snapshot. Local seeded
-A/B witness: New Chat persists3 but sidebar shows2; delete active A leaves body-A
-and subsequent New Chat resurrects deleted A. Two desired assertions FAIL,
-actual sidebar/store with disclosed Chat leaf recorder; Local fixture corrections
-retained in docs/reviews/evidence/ncr-chat-history-dispatch-20261012.json.
-docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_CHAT_HISTORY_2026-10-12.md
-fixes wrapper/history repair plus regression/proof/pending return, five outputs.
-Acceptance: create/title/count/selection agree; active/inactive/final delete and
-Confirm/Cancel Clear preserve correct messages and prevent stale resurrection;
-one empty fallback, no prompt replay. Existing receiving evidence consumed.
-One manual offline60min worker only after clean committed bound release;
-Local reviews/closes.21 observations unchanged, no automatic successor.
+**Accepted finite outcome - Agent Chat history consistency, 2026-10-12:**
+docs/reviews/CVF_NCR_CHAT_HISTORY_COMPLETION_2026-10-12.md accepts offline/jsdom:
+worker55/55 consumed, original-source14/16 FAIL, actual Local chat/sidebar/hook2/2 PASS.
+Controlled sidebar shares wrapper history; create/title/count/select and delete/clear
+agree with storage. One empty fallback, no old callback/prompt resurrection; saved
+metadata/reopen preserved. Original five bytes retained, no Local product repair.
+ProcedureFAIL remains separate.22 observations, previous21 unchanged; cost deferred.
+**Next selection:** useful coding outcome from evidence; no automatic successor.
 Whole job/full/browser/backend/provider/R3/R4 remain open.
 
 Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11 remain

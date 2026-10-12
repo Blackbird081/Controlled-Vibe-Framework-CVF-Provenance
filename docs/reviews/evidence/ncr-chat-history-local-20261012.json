@@ -1,0 +1,304 @@
+{
+  "schemaVersion": "cvf.ncrChatHistoryLocalReview@1.0.0",
+  "date": "2026-10-12",
+  "role": "LOCAL_INTERNAL_AGENT_REVIEWER_CLOSER",
+  "decisionOwner": "LOCAL",
+  "executionBaseHead": "419b6470c1e9c53fd4d3fdd83336b646a5799b43",
+  "closureBaseHead": "419b6470c1e9c53fd4d3fdd83336b646a5799b43",
+  "disposition": "CLOSED_PASS_BOUNDED",
+  "originalWorkerArtifacts": {
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/AgentChatWithHistory.tsx": "cbc3eb22d1f932444a1f6c5e82016a49eb1944eef71fd2cb2ddc53beda6f1a80",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/chat-history.tsx": "55a2e0de3c38673ea68df9cacab8929bbf995b79897fcccfc3c9fbcefbc26e50",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/AgentChatHistoryConsistency.test.tsx": "d08733b16620cc369ea82b8862077dd43ca2d19fcf04f9b75fc8d66aea3fdf60",
+    "docs/reviews/evidence/ncr-chat-history-worker-20261012.json": "085394666d6612db476882aa97e5136d4ee71624246a7071c5b8942f74f53942",
+    "docs/reviews/CVF_NCR_CHAT_HISTORY_WORKER_RETURN_2026-10-12.md": "90389c439c58dbd06b6d7c8464b1a4d146da84fdfa13e45f0f205ffb71dd7365"
+  },
+  "sourcePins": [
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/AgentChatWithHistory.tsx",
+      "dispatchRawSha256": "20d74655258b5c9033f7a42d6821c07cc5c23d857abf3faf057e16bb78f949bf",
+      "baseBlobSha256": "20d74655258b5c9033f7a42d6821c07cc5c23d857abf3faf057e16bb78f949bf",
+      "currentRawSha256": "cbc3eb22d1f932444a1f6c5e82016a49eb1944eef71fd2cb2ddc53beda6f1a80",
+      "disposition": "AUTHORIZED_WORKER_SOURCE_DELTA"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/chat-history.tsx",
+      "dispatchRawSha256": "dc4a450b97cd74dea6f67c23b253e06726622382c055c4cc48c1be8849803d0b",
+      "baseBlobSha256": "dc4a450b97cd74dea6f67c23b253e06726622382c055c4cc48c1be8849803d0b",
+      "currentRawSha256": "55a2e0de3c38673ea68df9cacab8929bbf995b79897fcccfc3c9fbcefbc26e50",
+      "disposition": "AUTHORIZED_WORKER_SOURCE_DELTA"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/AgentChatWithHistory.test.tsx",
+      "dispatchRawSha256": "278becb72892428deb1aa1341c077f9989e814102de7d6a1b87009b6312154cd",
+      "baseBlobSha256": "278becb72892428deb1aa1341c077f9989e814102de7d6a1b87009b6312154cd",
+      "currentRawSha256": "278becb72892428deb1aa1341c077f9989e814102de7d6a1b87009b6312154cd",
+      "disposition": "UNCHANGED"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/chat-history.test.tsx",
+      "dispatchRawSha256": "17b4e014a05d22a5547a2b8341029a4b6ad4a2de5ce3e611833ca38c4e094289",
+      "baseBlobSha256": "17b4e014a05d22a5547a2b8341029a4b6ad4a2de5ce3e611833ca38c4e094289",
+      "currentRawSha256": "17b4e014a05d22a5547a2b8341029a4b6ad4a2de5ce3e611833ca38c4e094289",
+      "disposition": "UNCHANGED"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/AgentChat.tsx",
+      "dispatchRawSha256": "f5e31153e8b0482d1036904aae64cd7d81d36ab654076afcbe355568c9bd238a",
+      "baseBlobSha256": "f5e31153e8b0482d1036904aae64cd7d81d36ab654076afcbe355568c9bd238a",
+      "currentRawSha256": "f5e31153e8b0482d1036904aae64cd7d81d36ab654076afcbe355568c9bd238a",
+      "disposition": "UNCHANGED"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/hooks/useAgentChat.ts",
+      "dispatchRawSha256": "5f60cb289473b21e0d3c017992478cfa9bb062b7c891c7ba1479d854ad0b5192",
+      "baseBlobSha256": "5f60cb289473b21e0d3c017992478cfa9bb062b7c891c7ba1479d854ad0b5192",
+      "currentRawSha256": "5f60cb289473b21e0d3c017992478cfa9bb062b7c891c7ba1479d854ad0b5192",
+      "disposition": "UNCHANGED"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/hooks/useAgentChat.test.ts",
+      "dispatchRawSha256": "09ecf7a2c9d63ed6ecd7b188a6a56d3cb4e37d0f4b55231916b6ce67cae30494",
+      "baseBlobSha256": "09ecf7a2c9d63ed6ecd7b188a6a56d3cb4e37d0f4b55231916b6ce67cae30494",
+      "currentRawSha256": "09ecf7a2c9d63ed6ecd7b188a6a56d3cb4e37d0f4b55231916b6ce67cae30494",
+      "disposition": "UNCHANGED"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/layout.tsx",
+      "dispatchRawSha256": "25474fb5ae581f052831f9e7dcd4094c130a7a45b662c54c22ada7196bd7c11c",
+      "baseBlobSha256": "25474fb5ae581f052831f9e7dcd4094c130a7a45b662c54c22ada7196bd7c11c",
+      "currentRawSha256": "25474fb5ae581f052831f9e7dcd4094c130a7a45b662c54c22ada7196bd7c11c",
+      "disposition": "UNCHANGED"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/layout-agent-handoff.test.tsx",
+      "dispatchRawSha256": "06197e4b8303781bab2920533c7d1bc914c15feaf669e2325bc4b681eabd02b4",
+      "baseBlobSha256": "06197e4b8303781bab2920533c7d1bc914c15feaf669e2325bc4b681eabd02b4",
+      "currentRawSha256": "06197e4b8303781bab2920533c7d1bc914c15feaf669e2325bc4b681eabd02b4",
+      "disposition": "UNCHANGED"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/test/setup.ts",
+      "dispatchRawSha256": "bc573b2a6133b07404c42f797bce43fe73464711e0281f29da8234bf2fed6b27",
+      "baseBlobSha256": "bc573b2a6133b07404c42f797bce43fe73464711e0281f29da8234bf2fed6b27",
+      "currentRawSha256": "bc573b2a6133b07404c42f797bce43fe73464711e0281f29da8234bf2fed6b27",
+      "disposition": "UNCHANGED"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/vitest.config.ts",
+      "dispatchRawSha256": "9a4a65976b5b7a5d038f9cb412a90d417f804108cf1dd33bae4421989a863420",
+      "baseBlobSha256": "9a4a65976b5b7a5d038f9cb412a90d417f804108cf1dd33bae4421989a863420",
+      "currentRawSha256": "9a4a65976b5b7a5d038f9cb412a90d417f804108cf1dd33bae4421989a863420",
+      "disposition": "UNCHANGED"
+    }
+  ],
+  "workerEvidenceConsumed": {
+    "focused": "55/55 PASS, four suites; new16 and existing39",
+    "sourceNegative": "14/16 FAIL on original source; two meaningful controls PASS",
+    "typecheck": "Final exit0 with empty log; prior worker test type failure retained",
+    "lint": "Final exit0 with empty log; no duplicate rerun",
+    "finalConfirmation": "final-gates.log: fast/ledger/diff exit0 at 08:01:30Z; run4 full70/70 PASS",
+    "commands": [
+      {
+        "cmd": "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --active-work-order <work order>",
+        "exit": 0,
+        "log": "pre-impl.log"
+      },
+      {
+        "cmd": "python governance/compat/run_worker_return_scaffold.py --write <return> --check-shape --max-lines 450 --max-bytes 64000",
+        "exit": 0,
+        "log": "scaffold.log"
+      },
+      {
+        "cmd": "vitest run AgentChatHistoryConsistency.test.tsx (unmodified source)",
+        "exit": 1,
+        "log": "source-red.log"
+      },
+      {
+        "cmd": "vitest run AgentChatHistoryConsistency.test.tsx (after repair, iteration 1)",
+        "exit": 1,
+        "log": "iter1.log"
+      },
+      {
+        "cmd": "vitest run 4 selected suites (final bytes)",
+        "exit": 0,
+        "log": "final-focused.log"
+      },
+      {
+        "cmd": "tsc --noEmit --incremental false (first, worker test type error)",
+        "exit": 2,
+        "log": "tsc-first-fail.log"
+      },
+      {
+        "cmd": "tsc --noEmit --incremental false (final)",
+        "exit": 0,
+        "log": "tsc.log"
+      },
+      {
+        "cmd": "eslint 3 owned TS paths (final)",
+        "exit": 0,
+        "log": "eslint.log"
+      },
+      {
+        "cmd": "run_worker_return_fast_gate.py (first, on scaffold)",
+        "exit": 1,
+        "log": "fast-gate-first.log"
+      }
+    ],
+    "logs": [
+      {
+        "path": ".cvf/runtime/ncr-chat-history-worker-20261012/eslint.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0,
+        "text": null
+      },
+      {
+        "path": ".cvf/runtime/ncr-chat-history-worker-20261012/fast-gate-first.log",
+        "sha256": "1479c73aaae84e359263e944fadb6790458efd847ed79e4bb01d4c0931f45478",
+        "bytes": 16558,
+        "text": null
+      },
+      {
+        "path": ".cvf/runtime/ncr-chat-history-worker-20261012/fast-gate-run2.log",
+        "sha256": "f39eee780906a36ee85ff8eaeb774111a4b386b0eaeb91d9531cebc48c1c3668",
+        "bytes": 15235,
+        "text": null
+      },
+      {
+        "path": ".cvf/runtime/ncr-chat-history-worker-20261012/fast-gate-run3.log",
+        "sha256": "56c2125746fc7835abb57cf26f1ff31345ee46e2d9e739944a77fcdfc875b226",
+        "bytes": 11681,
+        "text": null
+      },
+      {
+        "path": ".cvf/runtime/ncr-chat-history-worker-20261012/fast-gate-run4.log",
+        "sha256": "dd45c5fca54ba3997b1b49d5ffd6a190bccdac6d36223cdd865b5bd9049eb5a7",
+        "bytes": 11011,
+        "text": "=== CVF Worker Return Fast Gate ===\nPurpose: fail early on worker-return defects before full closure gates.\n\n=== corpus scan registry aggregate drift ===\npython governance/compat/generate_corpus_scan_registry.py --check\nGC-051 registry aggregate matches per-entry sources.\nPASS: corpus scan registry aggregate drift (0.09s)\n\n=== epistemic process packet ===\npython governance/compat/check_epistemic_process_packet.py --enforce\n=== CVF Epistemic Process Packet Gate (FPC-T3-C01) ===\nStandard: docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md\nChanged paths observed: 5\nEvidence-heavy packets checked: 1\nViolations: 0\n\nCOMPLIANT - epistemic process packet evidence structure is aligned.\nPASS: epistemic process packet (0.22s)\n\n=== work-order acceptance ledger ===\npython governance/compat/check_work_order_acceptance_ledger.py --work-order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_CHAT_HISTORY_2026-10-12.md --return docs/reviews/CVF_NCR_CHAT_HISTORY_WORKER_RETURN_2026-10-12.md --enforce\n=== CVF Work Order Acceptance Ledger Gate ===\nCOMPLIANT\nPASS: work-order acceptance ledger (0.18s)\n\n=== worker-return quality gate ===\npython governance/compat/check_worker_return_quality_gate.py --enforce --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_CHAT_HISTORY_2026-10-12.md\n=== CVF Worker Return Quality Gate ===\nStandard: docs/reference/work_order_authoring/CVF_WORKER_RETURN_QUALITY_GATE_STANDARD.md\nActive work order: docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_CHAT_HISTORY_2026-10-12.md\nEligible worker-return artifacts checked: 1\nViolations: 0\nCOMPLIANT - worker-return packets are review-ready.\nPASS: worker-return quality gate (0.52s)\n\n=== independent review probe admission ===\npython governance/compat/check_independent_review_probe_admission.py --enforce --changed-lane-only --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_CHAT_HISTORY_2026-10-12.md\n=== CVF Independent Review Probe Admission Gate ===\nApplicable artifacts checked: 1\nPASS: all applicable artifacts satisfy the independent-probe admission contract.\nPASS: independent review probe admission (1.36s)\n\n=== reviewer-fast governance gate ===\npython governance/compat/run_local_governance_hook_chain.py --hook reviewer-fast\n[CVF hook] Parallel preflight enabled: 70 checks, max_workers=6.\n[CVF hook] START [1/70] closure packaging preflight\n[CVF hook] START [2/70] agent packet authority and encoding\n[CVF hook] START [3/70] core guard self-protection\n[CVF hook] START [4/70] high-risk local transaction proof\n[CVF hook] START [5/70] semantic convergence and escalation control\n[CVF hook] START [6/70] preapproval feasibility\n[CVF hook] START [7/70] subagent provider execution authority\n[CVF hook] PASS [1/70] core guard self-protection (1.22s)\n[CVF hook] START [8/70] task-proportional governance shadow route\n[CVF hook] PASS [2/70] closure packaging preflight (1.29s)\n[CVF hook] START [9/70] docs governance compatibility\n[CVF hook] PASS [3/70] high-risk local transaction proof (1.30s)\n[CVF hook] START [10/70] markdown structural completeness\n[CVF hook] PASS [4/70] agent packet authority and encoding (1.73s)\n[CVF hook] START [11/70] governed artifact checker read-ahead\n[CVF hook] PASS [5/70] preapproval feasibility (2.12s)\n[CVF hook] START [12/70] work-order dispatch quality\n[CVF hook] PASS [6/70] semantic convergence and escalation control (2.29s)\n[CVF hook] START [13/70] worker experience retrospective\n[CVF hook] PASS [7/70] docs governance compatibility (1.44s)\n[CVF hook] START [14/70] review cost control\n[CVF hook] PASS [8/70] task-proportional governance shadow route (1.49s)\n[CVF hook] START [15/70] gate-to-role closeability\n[CVF hook] PASS [9/70] subagent provider execution authority (1.59s)\n[CVF hook] START [16/70] worker-return quality gate\n[CVF hook] PASS [10/70] governed artifact checker read-ahead (0.78s)\n[CVF hook] START [17/70] dispatch prompt envelope\n[CVF hook] PASS [11/70] markdown structural completeness (1.38s)\n[CVF hook] START [18/70] dispatch packet lifecycle hygiene\n[CVF hook] PASS [12/70] worker experience retrospective (0.80s)\n[CVF hook] START [19/70] source intake decision packet preflight\n[CVF hook] PASS [13/70] gate-to-role closeability (1.10s)\n[CVF hook] START [20/70] PLCS companion routing block\n[CVF hook] PASS [14/70] worker-return quality gate (1.01s)\n[CVF hook] START [21/70] agent operation trace integrity\n[CVF hook] PASS [15/70] review cost control (1.13s)\n[CVF hook] START [22/70] agent handoff boundary\n[CVF hook] PASS [16/70] dispatch prompt envelope (0.93s)\n[CVF hook] START [23/70] agent workspace design boundary\n[CVF hook] PASS [17/70] dispatch packet lifecycle hygiene (0.55s)\n[CVF hook] START [24/70] agent workspace state\n[CVF hook] PASS [18/70] work-order dispatch quality (1.91s)\n[CVF hook] START [25/70] agent workspace skeleton\n[CVF hook] PASS [19/70] source intake decision packet preflight (0.63s)\n[CVF hook] START [26/70] agent workspace runtime boundary\n[CVF hook] PASS [20/70] agent workspace state (0.48s)\n[CVF hook] START [27/70] machine closure package\n[CVF hook] PASS [21/70] PLCS companion routing block (0.85s)\n[CVF hook] START [28/70] roadmap closure freshness\n[CVF hook] PASS [22/70] agent workspace skeleton (0.32s)\n[CVF hook] START [29/70] finding-to-governance learning quality\n[CVF hook] PASS [23/70] agent operation trace integrity (1.02s)\n[CVF hook] START [30/70] external-agent absorption table\n[CVF hook] PASS [24/70] agent handoff boundary (0.92s)\n[CVF hook] START [31/70] external knowledge intake routing\n[CVF hook] PASS [25/70] agent workspace runtime boundary (0.36s)\n[CVF hook] START [32/70] external absorption core\n[CVF hook] PASS [26/70] agent workspace design boundary (1.09s)\n[CVF hook] START [33/70] external absorption value conversion\n[CVF hook] PASS [27/70] machine closure package (0.95s)\n[CVF hook] START [34/70] mixed-origin derived synthesis absorption\n[CVF hook] PASS [28/70] roadmap closure freshness (0.97s)\n[CVF hook] START [35/70] external absorption overlap discipline\n[CVF hook] PASS [29/70] external-agent absorption table (0.88s)\n[CVF hook] START [36/70] source mirror migration\n[CVF hook] PASS [30/70] external knowledge intake routing (0.97s)\n[CVF hook] START [37/70] Delta mutating profile boundary\n[CVF hook] PASS [31/70] finding-to-governance learning quality (1.15s)\n[CVF hook] START [38/70] Delta execution claim boundary\n[CVF hook] PASS [32/70] external absorption core (1.02s)\n[CVF hook] START [39/70] foundation storage layout\n[CVF hook] PASS [33/70] external absorption value conversion (0.92s)\n[CVF hook] START [40/70] public export disposition quality\n[CVF hook] PASS [34/70] mixed-origin derived synthesis absorption (0.85s)\n[CVF hook] START [41/70] rescan intelligence hardening\n[CVF hook] PASS [35/70] external absorption overlap discipline (0.89s)\n[CVF hook] START [42/70] index classification\n[CVF hook] PASS [36/70] source mirror migration (0.87s)\n[CVF hook] START [43/70] memory access claim\n[CVF hook] PASS [37/70] Delta mutating profile boundary (0.84s)\n[CVF hook] START [44/70] external provider skill usage trace\n[CVF hook] PASS [38/70] Delta execution claim boundary (0.74s)\n[CVF hook] START [45/70] CVF skill usage receipt trace\n[CVF hook] PASS [39/70] external provider skill usage trace (0.46s)\n[CVF hook] START [46/70] skill truth packets\n[CVF hook] PASS [40/70] rescan intelligence hardening (0.77s)\n[CVF hook] START [47/70] package skill productionization pipeline\n[CVF hook] PASS [41/70] foundation storage layout (0.99s)\n[CVF hook] START [48/70] skill control plane inventory\n[CVF hook] PASS [42/70] public export disposition quality (1.05s)\n[CVF hook] START [49/70] CVF Web skill control plane projection\n[CVF hook] PASS [43/70] CVF skill usage receipt trace (0.39s)\n[CVF hook] START [50/70] truth foundation claim guard\n[CVF hook] PASS [44/70] index classification (0.94s)\n[CVF hook] START [51/70] raw memory release invariant\n[CVF hook] PASS [45/70] skill truth packets (0.40s)\n[CVF hook] START [52/70] DICE machine-candidate coverage\n[CVF hook] PASS [46/70] memory access claim (1.02s)\n[CVF hook] START [53/70] FPC system-chain acceptance ledger\n[CVF hook] PASS [47/70] CVF Web skill control plane projection (0.29s)\n[CVF hook] START [54/70] FPC parked reopen inventory\n[CVF hook] PASS [48/70] skill control plane inventory (0.36s)\n[CVF hook] START [55/70] KIOD runtime candidate reopen inventory\n[CVF hook] PASS [49/70] truth foundation claim guard (0.67s)\n[CVF hook] START [56/70] corpus scan registry\n[CVF hook] PASS [50/70] FPC parked reopen inventory (0.58s)\n[CVF hook] START [57/70] ASSF certified metadata admission\n[CVF hook] PASS [51/70] FPC system-chain acceptance ledger (0.68s)\n[CVF hook] START [58/70] ASSF package candidate anatomy\n[CVF hook] PASS [52/70] package skill productionization pipeline (1.15s)\n[CVF hook] START [59/70] ASSF external-agent metadata readout\n[CVF hook] PASS [53/70] DICE machine-candidate coverage (1.05s)\n[CVF hook] START [60/70] changed corpus registry coverage\n[CVF hook] PASS [54/70] raw memory release invariant (1.11s)\n[CVF hook] START [61/70] active session state compatibility\n[CVF hook] PASS [55/70] ASSF certified metadata admission (0.35s)\n[CVF hook] START [62/70] session mode consistency\n[CVF hook] PASS [56/70] ASSF package candidate anatomy (0.33s)\n[CVF hook] START [63/70] next-move freshness\n[CVF hook] PASS [57/70] ASSF external-agent metadata readout (0.30s)\n[CVF hook] START [64/70] system chain map freshness\n[CVF hook] PASS [58/70] corpus scan registry (0.63s)\n[CVF hook] START [65/70] as-built system catalog drift\n[CVF hook] PASS [59/70] session mode consistency (0.29s)\n[CVF hook] START [66/70] memory consolidation artifact quality\n[CVF hook] PASS [60/70] KIOD runtime candidate reopen inventory (0.91s)\n[CVF hook] START [67/70] epistemic process packet\n[CVF hook] PASS [61/70] system chain map freshness (0.21s)\n[CVF hook] START [68/70] equivalence claim evidence\n[CVF hook] PASS [62/70] changed corpus registry coverage (0.64s)\n[CVF hook] START [69/70] dispatch scaffold provenance\n[CVF hook] PASS [63/70] memory consolidation artifact quality (0.50s)\n[CVF hook] START [70/70] agent instruction carrier compaction\n[CVF hook] PASS [64/70] next-move freshness (0.71s)\n[CVF hook] PASS [65/70] as-built system catalog drift (0.73s)\n[CVF hook] PASS [66/70] epistemic process packet (0.69s)\n[CVF hook] PASS [67/70] equivalence claim evidence (0.58s)\n[CVF hook] PASS [68/70] agent instruction carrier compaction (0.28s)\n[CVF hook] PASS [69/70] dispatch scaffold provenance (0.46s)\n[CVF hook] PASS [70/70] active session state compatibility (1.43s)\n[CVF hook] All reviewer-fast governance checks passed.\nPASS: reviewer-fast governance gate (10.67s)\n\n=== git diff whitespace check ===\ngit diff --check\nPASS: git diff whitespace check (0.07s)\n\nCOMPLIANT: worker-return fast gate passed in 13.11s.\n"
+      },
+      {
+        "path": ".cvf/runtime/ncr-chat-history-worker-20261012/final-focused.log",
+        "sha256": "61ca09c2cd616175c17379651863a652d557e2f8e626d75cc0f918edd75418a6",
+        "bytes": 22938,
+        "text": "\n RUN  v4.1.8 D:/UNG DUNG AI/TOOL AI 2026/Controlled-Vibe-Framework-CVF/EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web\n\n \u2713 src/components/AgentChatWithHistory.test.tsx > initial intake prompt ownership > creates one history session and mounts only its ready chat for a new prompt 49ms\n \u2713 src/components/AgentChatWithHistory.test.tsx > initial intake prompt ownership > does not replay the incoming prompt when opening another chat or historical session 35ms\n \u2713 src/lib/chat-history.test.tsx > useChatHistory > creates a session and sets active session 30ms\n \u2713 src/lib/chat-history.test.tsx > useChatHistory > updates session title and metadata 4ms\n \u2713 src/lib/chat-history.test.tsx > useChatHistory > deletes session and clears active session when needed 4ms\n \u2713 src/lib/chat-history.test.tsx > useChatHistory > exports and imports history 4ms\n \u2713 src/lib/chat-history.test.tsx > useChatHistory > truncates long titles to 50 chars 3ms\n \u2713 src/lib/chat-history.test.tsx > useChatHistory > generates date-based title when no user messages 3ms\n \u2713 src/lib/chat-history.test.tsx > useChatHistory > sets active session to null 2ms\n \u2713 src/lib/chat-history.test.tsx > useChatHistory > sets active session to specific session ID 2ms\n \u2713 src/lib/chat-history.test.tsx > useChatHistory > returns correct activeSession object 4ms\n \u2713 src/lib/chat-history.test.tsx > useChatHistory > returns null activeSession when no sessions exist 2ms\n \u2713 src/lib/chat-history.test.tsx > useChatHistory > limits to MAX_SESSIONS (50) 13ms\n \u2713 src/lib/chat-history.test.tsx > useChatHistory > importHistory returns false for invalid JSON 2ms\n \u2713 src/lib/chat-history.test.tsx > useChatHistory > does not change active session when deleting a different session 2ms\n \u2713 src/lib/chat-history.test.tsx > useChatHistory > persists to localStorage and loads on mount 2ms\n \u2713 src/lib/chat-history.test.tsx > ChatHistorySidebar > renders empty state when no sessions 27ms\n \u2713 src/lib/chat-history.test.tsx > ChatHistorySidebar > renders New Chat button and calls onNewChat 13ms\n \u2713 src/lib/chat-history.test.tsx > ChatHistorySidebar > renders sessions from localStorage 9ms\n \u2713 src/lib/chat-history.test.tsx > ChatHistorySidebar > renders Clear All History button and confirm flow 15ms\n \u2713 src/lib/chat-history.test.tsx > ChatHistorySidebar > calls onSelectSession when clicking a session 5ms\n \u2713 src/lib/chat-history.test.tsx > ChatHistorySidebar > shows provider emoji icons 7ms\n \u2713 src/lib/chat-history.test.tsx > ChatHistorySidebar > shows \"Yesterday\" for sessions updated 1 day ago 4ms\n \u2713 src/lib/chat-history.test.tsx > ChatHistorySidebar > shows \"N days ago\" for sessions updated 3 days ago 5ms\n \u2713 src/lib/chat-history.test.tsx > ChatHistorySidebar > shows locale date for sessions older than 7 days 31ms\n \u2713 src/lib/chat-history.test.tsx > ChatHistorySidebar > deletes a session when delete button is clicked 7ms\n \u2713 src/lib/chat-history.test.tsx > ChatHistorySidebar > confirms and clears all history 9ms\nstdout | src/components/AgentChatHistoryConsistency.test.tsx > history consistency: real sidebar + hook, recorder Chat leaf > control: seeded sessions show in the sidebar and the active one fills the chat\nSNAP {\"label\":\"control-seeded\",\"sidebar\":[{\"title\":\"Saved A\",\"count\":1,\"active\":true},{\"title\":\"Saved B\",\"count\":2,\"active\":false}],\"chat\":\"body-A\",\"storage\":{\"active\":\"saved-A\",\"sessions\":[{\"id\":\"saved-A\",\"title\":\"Saved A\",\"count\":1,\"texts\":[\"body-A\"]},{\"id\":\"saved-B\",\"title\":\"Saved B\",\"count\":2,\"texts\":[\"body-B\",\"answer-B\"]}]}}\n\n \u2713 src/app/(dashboard)/layout-agent-handoff.test.tsx > incoming handoff session binding (recorder leaf) > delivers the first handoff once to its own ready session, apart from saved history 75ms\nstdout | src/components/AgentChatHistoryConsistency.test.tsx > history consistency: real sidebar + hook, recorder Chat leaf > New Chat shows at once, title/count follow real messages, selection restores each own messages\nSNAP {\"label\":\"new-chat\",\"sidebar\":[{\"title\":\"New Chat\",\"count\":0,\"active\":true},{\"title\":\"Saved A\",\"count\":1,\"active\":false},{\"title\":\"Saved B\",\"count\":2,\"active\":false}],\"chat\":\"\",\"storage\":{\"active\":\"session_1791791773819_6gjr78\",\"sessions\":[{\"id\":\"session_1791791773819_6gjr78\",\"title\":\"New Chat\",\"count\":0,\"texts\":[]},{\"id\":\"saved-A\",\"title\":\"Saved A\",\"count\":1,\"texts\":[\"body-A\"]},{\"id\":\"saved-B\",\"title\":\"Saved B\",\"count\":2,\"texts\":[\"body-B\",\"answer-B\"]}]}}\nSNAP {\"label\":\"new-chat-two-messages\",\"sidebar\":[{\"title\":\"typed-N\",\"count\":2,\"active\":true},{\"title\":\"Saved A\",\"count\":1,\"active\":false},{\"title\":\"Saved B\",\"count\":2,\"active\":false}],\"chat\":\"typed-N|typed-N2\",\"storage\":{\"active\":\"session_1791791773819_6gjr78\",\"sessions\":[{\"id\":\"session_1791791773819_6gjr78\",\"title\":\"typed-N\",\"count\":2,\"texts\":[\"typed-N\",\"typed-N2\"]},{\"id\":\"saved-A\",\"title\":\"Saved A\",\"count\":1,\"texts\":[\"body-A\"]},{\"id\":\"saved-B\",\"title\":\"Saved B\",\"count\":2,\"texts\":[\"body-B\",\"answer-B\"]}]}}\nSNAP {\"label\":\"selection-roundtrip\",\"sidebar\":[{\"title\":\"typed-N\",\"count\":2,\"active\":true},{\"title\":\"Saved A\",\"count\":1,\"active\":false},{\"title\":\"Saved B\",\"count\":2,\"active\":false}],\"chat\":\"typed-N|typed-N2\",\"storage\":{\"active\":\"session_1791791773819_6gjr78\",\"sessions\":[{\"id\":\"session_1791791773819_6gjr78\",\"title\":\"typed-N\",\"count\":2,\"texts\":[\"typed-N\",\"typed-N2\"]},{\"id\":\"saved-A\",\"title\":\"Saved A\",\"count\":1,\"texts\":[\"body-A\"]},{\"id\":\"saved-B\",\"title\":\"Saved B\",\"count\":2,\"texts\":[\"body-B\",\"answer-B\"]}]}}\n\n \u2713 src/components/AgentChatHistoryConsistency.test.tsx > history consistency: real sidebar + hook, recorder Chat leaf > control: seeded sessions show in the sidebar and the active one fills the chat 82ms\nstdout | src/components/AgentChatHistoryConsistency.test.tsx > history consistency: real sidebar + hook, recorder Chat leaf > incoming prompt session shows immediately and is never replayed by New Chat or selection\nSNAP {\"label\":\"incoming-prompt\",\"sidebar\":[{\"title\":\"INCOMING\",\"count\":1,\"active\":true},{\"title\":\"Saved A\",\"count\":1,\"active\":false},{\"title\":\"Saved B\",\"count\":2,\"active\":false}],\"chat\":\"INCOMING\",\"storage\":{\"active\":\"session_1791791773859_wwnzc0\",\"sessions\":[{\"id\":\"session_1791791773859_wwnzc0\",\"title\":\"INCOMING\",\"count\":1,\"texts\":[\"INCOMING\"]},{\"id\":\"saved-A\",\"title\":\"Saved A\",\"count\":1,\"texts\":[\"body-A\"]},{\"id\":\"saved-B\",\"title\":\"Saved B\",\"count\":2,\"texts\":[\"body-B\",\"answer-B\"]}]}}\n\nstdout | src/components/AgentChatHistoryConsistency.test.tsx > history consistency: real sidebar + hook, recorder Chat leaf > deleting an inactive session leaves the open chat untouched\nSNAP {\"label\":\"delete-inactive\",\"sidebar\":[{\"title\":\"Saved A\",\"count\":1,\"active\":true}],\"chat\":\"body-A\",\"storage\":{\"active\":\"saved-A\",\"sessions\":[{\"id\":\"saved-A\",\"title\":\"Saved A\",\"count\":1,\"texts\":[\"body-A\"]}]}}\n\nstdout | src/components/AgentChatHistoryConsistency.test.tsx > history consistency: real sidebar + hook, recorder Chat leaf > deleting the active session selects the first survivor, persists it and cannot resurrect it\nSNAP {\"label\":\"delete-active\",\"sidebar\":[{\"title\":\"Saved B\",\"count\":2,\"active\":true}],\"chat\":\"body-B|answer-B\",\"storage\":{\"active\":\"saved-B\",\"sessions\":[{\"id\":\"saved-B\",\"title\":\"Saved B\",\"count\":2,\"texts\":[\"body-B\",\"answer-B\"]}]}}\nSNAP {\"label\":\"delete-active-then-new-chat\",\"sidebar\":[{\"title\":\"after-delete\",\"count\":1,\"active\":true},{\"title\":\"Saved B\",\"count\":2,\"active\":false}],\"chat\":\"after-delete\",\"storage\":{\"active\":\"session_1791791773968_x8fy5z\",\"sessions\":[{\"id\":\"session_1791791773968_x8fy5z\",\"title\":\"after-delete\",\"count\":1,\"texts\":[\"after-delete\"]},{\"id\":\"saved-B\",\"title\":\"Saved B\",\"count\":2,\"texts\":[\"body-B\",\"answer-B\"]}]}}\n\n \u2713 src/components/AgentChatHistoryConsistency.test.tsx > history consistency: real sidebar + hook, recorder Chat leaf > New Chat shows at once, title/count follow real messages, selection restores each own messages 220ms\n \u2713 src/components/AgentChatHistoryConsistency.test.tsx > history consistency: real sidebar + hook, recorder Chat leaf > incoming prompt session shows immediately and is never replayed by New Chat or selection 71ms\n \u2713 src/components/AgentChatHistoryConsistency.test.tsx > history consistency: real sidebar + hook, recorder Chat leaf > deleting an inactive session leaves the open chat untouched 9ms\n \u2713 src/app/(dashboard)/layout-agent-handoff.test.tsx > incoming handoff session binding (recorder leaf) > keeps session, draft and delivery count across minimize, restore and unrelated rerenders 222ms\n \u2713 src/app/(dashboard)/layout-agent-handoff.test.tsx > incoming handoff session binding (recorder leaf) > does not replay or add a session under StrictMode minimize/restore 62ms\n \u2713 src/app/(dashboard)/layout-agent-handoff.test.tsx > incoming handoff session binding (recorder leaf) > receives a new explicit handoff B in a fresh session while chat A is open 19ms\n \u2713 src/app/(dashboard)/layout-agent-handoff.test.tsx > incoming handoff session binding (recorder leaf) > receives B when an ordinary empty chat is already open 13ms\nstdout | src/components/AgentChatHistoryConsistency.test.tsx > history consistency: real sidebar + hook, recorder Chat leaf > deleting the final session creates exactly one empty replacement (also under StrictMode)\nSNAP {\"label\":\"delete-final-plain\",\"sidebar\":[{\"title\":\"New Chat\",\"count\":0,\"active\":true}],\"chat\":\"\",\"storage\":{\"active\":\"session_1791791774022_4c1jj4\",\"sessions\":[{\"id\":\"session_1791791774022_4c1jj4\",\"title\":\"New Chat\",\"count\":0,\"texts\":[]}]}}\nSNAP {\"label\":\"delete-final-strict\",\"sidebar\":[{\"title\":\"New Chat\",\"count\":0,\"active\":true}],\"chat\":\"\",\"storage\":{\"active\":\"session_1791791774035_o6xbws\",\"sessions\":[{\"id\":\"session_1791791774035_o6xbws\",\"title\":\"New Chat\",\"count\":0,\"texts\":[]}]}}\n\nstdout | src/components/AgentChatHistoryConsistency.test.tsx > history consistency: real sidebar + hook, recorder Chat leaf > Confirm Clear All leaves one empty replacement; Cancel changes nothing\nSNAP {\"label\":\"clear-cancel\",\"sidebar\":[{\"title\":\"Saved A\",\"count\":1,\"active\":true},{\"title\":\"Saved B\",\"count\":2,\"active\":false}],\"chat\":\"body-A\",\"storage\":{\"active\":\"saved-A\",\"sessions\":[{\"id\":\"saved-A\",\"title\":\"Saved A\",\"count\":1,\"texts\":[\"body-A\"]},{\"id\":\"saved-B\",\"title\":\"Saved B\",\"count\":2,\"texts\":[\"body-B\",\"answer-B\"]}]}}\nSNAP {\"label\":\"clear-confirm\",\"sidebar\":[{\"title\":\"New Chat\",\"count\":0,\"active\":true}],\"chat\":\"\",\"storage\":{\"active\":\"session_1791791774060_dhtocz\",\"sessions\":[{\"id\":\"session_1791791774060_dhtocz\",\"title\":\"New Chat\",\"count\":0,\"texts\":[]}]}}\n\nstdout | src/components/AgentChatHistoryConsistency.test.tsx > history consistency: real sidebar + hook, recorder Chat leaf > clearing the incoming session cannot replay its prompt into the replacement\nSNAP {\"label\":\"clear-incoming\",\"sidebar\":[{\"title\":\"New Chat\",\"count\":0,\"active\":true},{\"title\":\"New Chat\",\"count\":0,\"active\":false}],\"chat\":\"\",\"storage\":{\"active\":\"session_1791791774096_vhxmh3\",\"sessions\":[{\"id\":\"session_1791791774096_vhxmh3\",\"title\":\"New Chat\",\"count\":0,\"texts\":[]},{\"id\":\"session_1791791774075_6tfopn\",\"title\":\"New Chat\",\"count\":0,\"texts\":[]}]}}\n\n \u2713 src/components/AgentChatHistoryConsistency.test.tsx > history consistency: real sidebar + hook, recorder Chat leaf > deleting the active session selects the first survivor, persists it and cannot resurrect it 36ms\n \u2713 src/components/AgentChatHistoryConsistency.test.tsx > history consistency: real sidebar + hook, recorder Chat leaf > active delete picks the state-array-first survivor, not the neighbour 42ms\n \u2713 src/components/AgentChatHistoryConsistency.test.tsx > history consistency: real sidebar + hook, recorder Chat leaf > deleting the final session creates exactly one empty replacement (also under StrictMode) 25ms\n \u2713 src/components/AgentChatHistoryConsistency.test.tsx > history consistency: real sidebar + hook, recorder Chat leaf > Confirm Clear All leaves one empty replacement; Cancel changes nothing 22ms\nstderr | src/app/(dashboard)/layout-agent-handoff.test.tsx > real AgentChat and useAgentChat receiving seam (in-process provider stub) > delivers A once and keeps the session through minimize/restore after delivery\nEncountered two children with the same key, `msg_1791791774551`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted \u2014 the behavior is unsupported and could change in a future version.\nEncountered two children with the same key, `msg_1791791774551`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted \u2014 the behavior is unsupported and could change in a future version.\n\n \u2713 src/app/(dashboard)/layout-agent-handoff.test.tsx > incoming handoff session binding (recorder leaf) > treats two deliberate identical-text handoffs as two sessions, and restore as neither 58ms\n \u2713 src/app/(dashboard)/layout-agent-handoff.test.tsx > incoming handoff session binding (recorder leaf) > close clears the incoming prompt and body lock; ordinary reopen does not replay it 45ms\nstderr | src/app/(dashboard)/layout-agent-handoff.test.tsx > real AgentChat and useAgentChat receiving seam (in-process provider stub) > delivers A once and keeps the session through minimize/restore after delivery\nEncountered two children with the same key, `msg_1791791774551`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted \u2014 the behavior is unsupported and could change in a future version.\nEncountered two children with the same key, `msg_1791791774551`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted \u2014 the behavior is unsupported and could change in a future version.\n\nstdout | src/components/AgentChatHistoryConsistency.test.tsx > history consistency: real sidebar + hook, recorder Chat leaf > a delayed message callback from a deleted or cleared chat restores nothing\nSNAP {\"label\":\"late-after-delete\",\"sidebar\":[{\"title\":\"New Chat\",\"count\":0,\"active\":true},{\"title\":\"Saved B\",\"count\":2,\"active\":false}],\"chat\":\"\",\"storage\":{\"active\":\"session_1791791774174_4jo8k1\",\"sessions\":[{\"id\":\"session_1791791774174_4jo8k1\",\"title\":\"New Chat\",\"count\":0,\"texts\":[]},{\"id\":\"saved-B\",\"title\":\"Saved B\",\"count\":2,\"texts\":[\"body-B\",\"answer-B\"]}]}}\nSNAP {\"label\":\"late-after-clear\",\"sidebar\":[{\"title\":\"New Chat\",\"count\":0,\"active\":true}],\"chat\":\"\",\"storage\":{\"active\":\"session_1791791774182_f9hrek\",\"sessions\":[{\"id\":\"session_1791791774182_f9hrek\",\"title\":\"New Chat\",\"count\":0,\"texts\":[]}]}}\n\n \u2713 src/components/AgentChatHistoryConsistency.test.tsx > history consistency: real sidebar + hook, recorder Chat leaf > clearing the incoming session cannot replay its prompt into the replacement 42ms\n \u2713 src/components/AgentChatHistoryConsistency.test.tsx > history consistency: real sidebar + hook, recorder Chat leaf > deleting the incoming session before anything else cannot replay it either 35ms\n \u2713 src/components/AgentChatHistoryConsistency.test.tsx > history consistency: real sidebar + hook, recorder Chat leaf > a delayed message callback from a deleted or cleared chat restores nothing 47ms\n \u2713 src/components/AgentChatHistoryConsistency.test.tsx > history consistency: real sidebar + hook, recorder Chat leaf > a delayed callback for a live session lands in that session only, never in the selected one 15ms\nstderr | src/app/(dashboard)/layout-agent-handoff.test.tsx > real AgentChat and useAgentChat receiving seam (in-process provider stub) > sends exactly once when minimized before the deferred timer and restored after it\nEncountered two children with the same key, `msg_1791791774689`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted \u2014 the behavior is unsupported and could change in a future version.\nEncountered two children with the same key, `msg_1791791774689`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted \u2014 the behavior is unsupported and could change in a future version.\n\nstderr | src/app/(dashboard)/layout-agent-handoff.test.tsx > real AgentChat and useAgentChat receiving seam (in-process provider stub) > sends exactly once when minimized before the deferred timer and restored after it\nEncountered two children with the same key, `msg_1791791774689`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted \u2014 the behavior is unsupported and could change in a future version.\n\n \u2713 src/app/(dashboard)/layout-agent-handoff.test.tsx > real AgentChat and useAgentChat receiving seam (in-process provider stub) > delivers A once and keeps the session through minimize/restore after delivery 139ms\n \u2713 src/components/AgentChatHistoryConsistency.test.tsx > history consistency: real sidebar + hook, recorder Chat leaf > ordinary rerenders and StrictMode never add visible or persisted sessions 14ms\n \u2713 src/components/AgentChatHistoryConsistency.test.tsx > history consistency: real sidebar + hook, recorder Chat leaf > an orphaned active ID in storage recovers to the first stored session 9ms\n \u2713 src/app/(dashboard)/layout-agent-handoff.test.tsx > real AgentChat and useAgentChat receiving seam (in-process provider stub) > sends exactly once when minimized before the deferred timer and restored after it 87ms\n \u2713 src/app/(dashboard)/layout-agent-handoff.test.tsx > real AgentChat and useAgentChat receiving seam (in-process provider stub) > does not dispatch the queued prompt when closed before the timer fires 68ms\nstderr | src/app/(dashboard)/layout-agent-handoff.test.tsx > real AgentChat and useAgentChat receiving seam (in-process provider stub) > replaces A with B before the timer: only B is sent, in its own session\nEncountered two children with the same key, `msg_1791791775044`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted \u2014 the behavior is unsupported and could change in a future version.\nEncountered two children with the same key, `msg_1791791775044`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted \u2014 the behavior is unsupported and could change in a future version.\n\nstdout | src/components/AgentChatHistoryConsistency.test.tsx > history consistency: real AgentChat and useAgentChat seam (in-process provider stub) > real send updates sidebar title/count; selection shows each own messages; no cross-copy\nSNAP {\"label\":\"real-send\",\"sidebar\":[{\"title\":\"REAL_Q\",\"count\":2,\"active\":true},{\"title\":\"Saved A\",\"count\":1,\"active\":false},{\"title\":\"Saved B\",\"count\":2,\"active\":false}],\"chat\":null,\"storage\":{\"active\":\"session_1791791774294_p09h66\",\"sessions\":[{\"id\":\"session_1791791774294_p09h66\",\"title\":\"REAL_Q\",\"count\":2,\"texts\":[\"REAL_Q\",\"STUB_REPLY(REAL_Q)\"]},{\"id\":\"saved-A\",\"title\":\"Saved A\",\"count\":1,\"texts\":[\"body-A\"]},{\"id\":\"saved-B\",\"title\":\"Saved B\",\"count\":2,\"texts\":[\"body-B\",\"answer-B\"]}]}}\n\nstderr | src/app/(dashboard)/layout-agent-handoff.test.tsx > real AgentChat and useAgentChat receiving seam (in-process provider stub) > sends one user message under StrictMode with rerender and minimize/restore\nEncountered two children with the same key, `msg_1791791774893`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted \u2014 the behavior is unsupported and could change in a future version.\nEncountered two children with the same key, `msg_1791791774893`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted \u2014 the behavior is unsupported and could change in a future version.\n\nstderr | src/app/(dashboard)/layout-agent-handoff.test.tsx > real AgentChat and useAgentChat receiving seam (in-process provider stub) > sends one user message under StrictMode with rerender and minimize/restore\nEncountered two children with the same key, `msg_1791791774893`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted \u2014 the behavior is unsupported and could change in a future version.\nEncountered two children with the same key, `msg_1791791774893`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted \u2014 the behavior is unsupported and could change in a future version.\nEncountered two children with the same key, `msg_1791791774893`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted \u2014 the behavior is unsupported and could change in a future version.\n\n \u2713 src/app/(dashboard)/layout-agent-handoff.test.tsx > real AgentChat and useAgentChat receiving seam (in-process provider stub) > replaces A with B before the timer: only B is sent, in its own session 49ms\n \u2713 src/app/(dashboard)/layout-agent-handoff.test.tsx > real AgentChat and useAgentChat receiving seam (in-process provider stub) > sends one user message under StrictMode with rerender and minimize/restore 117ms\n \u2713 src/components/AgentChatHistoryConsistency.test.tsx > history consistency: real AgentChat and useAgentChat seam (in-process provider stub) > real send updates sidebar title/count; selection shows each own messages; no cross-copy 189ms\nstdout | src/components/AgentChatHistoryConsistency.test.tsx > history consistency: real AgentChat and useAgentChat seam (in-process provider stub) > a provider result that arrives after the active session was deleted restores nothing\nSNAP {\"label\":\"real-late-result-after-delete\",\"sidebar\":[{\"title\":\"New Chat\",\"count\":0,\"active\":true},{\"title\":\"Saved A\",\"count\":1,\"active\":false},{\"title\":\"Saved B\",\"count\":2,\"active\":false}],\"chat\":null,\"storage\":{\"active\":\"session_1791791774580_ddix7c\",\"sessions\":[{\"id\":\"session_1791791774580_ddix7c\",\"title\":\"New Chat\",\"count\":0,\"texts\":[]},{\"id\":\"saved-A\",\"title\":\"Saved A\",\"count\":1,\"texts\":[\"body-A\"]},{\"id\":\"saved-B\",\"title\":\"Saved B\",\"count\":2,\"texts\":[\"body-B\",\"answer-B\"]}]}}\n\n \u2713 src/components/AgentChatHistoryConsistency.test.tsx > history consistency: real AgentChat and useAgentChat seam (in-process provider stub) > a provider result that arrives after the active session was deleted restores nothing 209ms\n\n Test Files  4 passed (4)\n      Tests  55 passed (55)\n   Start at  14:56:01\n   Duration  12.63s (transform 7.13s, setup 34.20s, import 3.62s, tests 2.33s, environment 4.45s)\n\n"
+      },
+      {
+        "path": ".cvf/runtime/ncr-chat-history-worker-20261012/final-gates.log",
+        "sha256": "9a44fc3404bd37907146041f671cefdcac13877a6a80b33f990b59838197a3d7",
+        "bytes": 869,
+        "text": "== fast gate (final bytes)\nPASS: git diff whitespace check (0.07s)\n\nCOMPLIANT: worker-return fast gate passed in 11.55s.\nfast_exit=0\n== ledger\n=== CVF Work Order Acceptance Ledger Gate ===\nCOMPLIANT\nledger_exit=0\n== diff check\ndiffcheck_exit=0\n== status\n M EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/AgentChatWithHistory.tsx\n M EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/chat-history.tsx\n?? EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/AgentChatHistoryConsistency.test.tsx\n?? docs/reviews/CVF_NCR_CHAT_HISTORY_WORKER_RETURN_2026-10-12.md\n?? docs/reviews/evidence/ncr-chat-history-worker-20261012.json\n== staged\n0\n419b6470c1e9c53fd4d3fdd83336b646a5799b43\n  409 29506 docs/reviews/CVF_NCR_CHAT_HISTORY_WORKER_RETURN_2026-10-12.md\n  836 21159 docs/reviews/evidence/ncr-chat-history-worker-20261012.json\n 1245 50665 total\n08:01:30Z\n"
+      },
+      {
+        "path": ".cvf/runtime/ncr-chat-history-worker-20261012/iter1.log",
+        "sha256": "fe49dc897def311dae3e353fa54cdd92f4d3e1444b9131619c4fa08dff425d8a",
+        "bytes": 12872,
+        "text": null
+      },
+      {
+        "path": ".cvf/runtime/ncr-chat-history-worker-20261012/pre-impl.log",
+        "sha256": "8c7b7ac95daeef1be849c90625ac77a55e030ed43e9ed2f7947654d93f5dc434",
+        "bytes": 4761,
+        "text": null
+      },
+      {
+        "path": ".cvf/runtime/ncr-chat-history-worker-20261012/scaffold.log",
+        "sha256": "194485e07808c76b13e408c5b355ecd57d34a88609e0a874fac66713d479a244",
+        "bytes": 237,
+        "text": null
+      },
+      {
+        "path": ".cvf/runtime/ncr-chat-history-worker-20261012/source-red.log",
+        "sha256": "13e7f1ed837f06c388b9f4bffeff6590e11fac3abc46551391b6a7c30cad9920",
+        "bytes": 20508,
+        "text": null
+      },
+      {
+        "path": ".cvf/runtime/ncr-chat-history-worker-20261012/tsc-first-fail.log",
+        "sha256": "6c67821df1f5360fcbb2bd77f938c48595e768e76457eb657d86bd9114c3c8b7",
+        "bytes": 129,
+        "text": null
+      },
+      {
+        "path": ".cvf/runtime/ncr-chat-history-worker-20261012/tsc.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0,
+        "text": null
+      }
+    ]
+  },
+  "localProbe": {
+    "command": "node node_modules/vitest/vitest.mjs run src/components/local-chat-history-probe.test.tsx",
+    "result": "PASS 2/2",
+    "source": "import { StrictMode } from 'react';\nimport { act, cleanup, fireEvent, render, screen, within } from '@testing-library/react';\nimport { afterEach, beforeEach, expect, it, vi } from 'vitest';\nimport { AgentChatWithHistory } from './AgentChatWithHistory';\nconst { transport } = vi.hoisted(() => ({ transport: vi.fn() }));\nvi.mock('./Settings', () => ({ useSettings: () => ({ settings: { preferences: { defaultProvider: 'alibaba' }, providers: { alibaba: { apiKey: 'local-fixture-key', selectedModel: 'qwen-plus' } } }, updateProvider: vi.fn(), updatePreferences: vi.fn() }) }));\nvi.mock('@/lib/i18n', () => ({ useLanguage: () => ({ language: 'en', t: (k: string) => k }) }));\nvi.mock('@/lib/ai-providers', () => ({ createAIProvider: () => ({ chat: transport }) }));\nvi.mock('@/lib/hooks/useModelPricing', () => ({ useModelPricing: () => ({ pricing: {}, status: 'ready', updatedAt: null }) }));\nvi.mock('@/lib/quota-manager', async original => ({ ...await original<typeof import('@/lib/quota-manager')>(), useQuotaManager: () => ({ trackUsage: vi.fn(), checkBudget: () => ({ ok: true, remaining: { daily: Infinity, monthly: Infinity } }) }) }));\nconst KEY='cvf_chat_history'; const WHEN='2026-02-02T00:00:00.000Z';\nconst saved=(id:string)=>({id,title:'Local '+id,provider:'alibaba',createdAt:WHEN,updatedAt:WHEN,metadata:{messageCount:2,totalTokens:13},messages:[{id:id+'-u',role:'user',content:'question-'+id,timestamp:WHEN},{id:id+'-a',role:'assistant',content:'answer-'+id,timestamp:WHEN}]});\nconst state=()=>JSON.parse(localStorage.getItem(KEY)!);\nconst ids=()=>state().sessions.map((s:{id:string})=>s.id);\nconst rows=()=>screen.queryAllByTitle('Delete').map(b=>b.closest('.group') as HTMLElement);\nconst row=(title:string)=>rows().find(r=>r.querySelector('span.font-medium')?.textContent===title)!;\nconst remove=(title:string)=>fireEvent.click(within(row(title)).getByTitle('Delete'));\nconst tick=(ms=25)=>act(async()=>{await vi.advanceTimersByTimeAsync(ms);});\nconst send=(text:string)=>{fireEvent.change(screen.getByLabelText('Message input'),{target:{value:text}});fireEvent.click(screen.getByLabelText('Send message'));};\nconst clear=(choice:string)=>{fireEvent.click(screen.getByText(/Clear All History/));fireEvent.click(screen.getByText(choice));};\nconst snap=(label:string)=>console.log('LOCAL_SNAPSHOT '+JSON.stringify({label,state:state(),sidebar:rows().map(r=>r.textContent)}));\nbeforeEach(()=>{vi.useFakeTimers();localStorage.clear();transport.mockReset();transport.mockImplementation(async (m:Array<{content:string}>)=>({text:'LOCAL_REPLY:'+m[m.length-1].content,usage:{totalTokens:2}}));localStorage.setItem(KEY,JSON.stringify({sessions:[saved('one'),saved('two')],activeSessionId:'one'}));});\nafterEach(()=>{cleanup();vi.useRealTimers();localStorage.clear();});\nit('real send/select/inactive delete survives close/reopen, then clear leaves one empty persisted session',async()=>{\n const fetchSpy=vi.spyOn(globalThis,'fetch');\n const untouched=state().sessions[1];\n const view=render(<StrictMode><AgentChatWithHistory /></StrictMode>);\n expect(screen.getByText('answer-one')).toBeDefined();\n fireEvent.click(screen.getByRole('button',{name:/New Chat/}));await tick(25);\n send('LOCAL_NEW_WORK');await tick(25);const newId=state().activeSessionId;\n expect(rows()).toHaveLength(3);expect(row('LOCAL_NEW_WORK').textContent).toContain('2 msgs');\n expect(state().sessions[0].messages.map((m:{content:string})=>m.content)).toEqual(['LOCAL_NEW_WORK','LOCAL_REPLY:LOCAL_NEW_WORK']);\n expect(screen.getByText('LOCAL_REPLY:LOCAL_NEW_WORK')).toBeDefined();\n fireEvent.click(row('Local two'));await tick();expect(state().activeSessionId).toBe('two');\n expect(screen.queryByText('LOCAL_REPLY:LOCAL_NEW_WORK')).toBeNull();expect(screen.getByText('answer-two')).toBeDefined();\n expect(state().sessions.find((s:{id:string})=>s.id==='two')).toEqual(untouched);\n remove('LOCAL_NEW_WORK');await tick();expect(ids()).not.toContain(newId);expect(state().activeSessionId).toBe('two');\n snap('inactive-delete');view.unmount();\n const reopened=render(<StrictMode><AgentChatWithHistory /></StrictMode>);await tick();\n expect(screen.getByText('answer-two')).toBeDefined();expect(ids()).toEqual(['one','two']);\n const beforeCancel=localStorage.getItem(KEY);clear('Cancel');expect(localStorage.getItem(KEY)).toBe(beforeCancel);\n clear('Confirm');await tick();expect(state().sessions).toHaveLength(1);expect(state().sessions[0].messages).toEqual([]);\n const emptyId=state().activeSessionId;expect(rows()).toHaveLength(1);snap('cleared');reopened.unmount();\n render(<StrictMode><AgentChatWithHistory /></StrictMode>);await tick();\n expect(state().activeSessionId).toBe(emptyId);expect(state().sessions).toHaveLength(1);expect(state().sessions[0].messages).toEqual([]);\n expect(transport).toHaveBeenCalledTimes(1);expect(fetchSpy).not.toHaveBeenCalled();fetchSpy.mockRestore();\n});\nit('clear cancels queued intake, then deletes an in-flight final session without resurrecting its late result',async()=>{\n const view=render(<StrictMode><AgentChatWithHistory initialPrompt=\"LOCAL_QUEUED_INTAKE\" /></StrictMode>);\n clear('Confirm');await tick(900);expect(transport).not.toHaveBeenCalled();\n expect(state().sessions).toHaveLength(1);expect(state().sessions[0].messages).toEqual([]);\n let resolve!: (v:{text:string;usage:{totalTokens:number}})=>void;\n transport.mockImplementation(()=>new Promise(r=>{resolve=r;}));\n await tick(25);send('LOCAL_INFLIGHT');await tick(25);const removedId=state().activeSessionId;\n expect(transport).toHaveBeenCalledTimes(1);remove('LOCAL_INFLIGHT');await tick();\n const replacementId=state().activeSessionId;expect(replacementId).not.toBe(removedId);expect(state().sessions).toHaveLength(1);\n await act(async()=>{resolve({text:'LOCAL_LATE_RESULT',usage:{totalTokens:1}});});await tick(900);\n expect(ids()).toEqual([replacementId]);expect(JSON.stringify(state())).not.toMatch(/LOCAL_INFLIGHT|LOCAL_LATE_RESULT|LOCAL_QUEUED_INTAKE/);\n expect(state().sessions[0].messages).toEqual([]);expect(rows()).toHaveLength(1);snap('late-final-delete');\n view.unmount();render(<AgentChatWithHistory />);await tick();\n expect(ids()).toEqual([replacementId]);expect(state().sessions[0].messages).toEqual([]);expect(transport).toHaveBeenCalledTimes(1);\n});\n",
+    "sourceSha256": "e58f929fe52bd2a74aaf54de3180f85868a4fc90d6b3dd38cbc578a61a7681ef",
+    "log": "\n RUN  v4.1.8 D:/UNG DUNG AI/TOOL AI 2026/Controlled-Vibe-Framework-CVF/EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web\n\n\n Test Files  1 passed (1)\n      Tests  2 passed (2)\n   Start at  15:19:26\n   Duration  75.94s (transform 36.67s, setup 54.27s, import 4.67s, tests 1.66s, environment 14.79s)\n\n",
+    "logSha256": "d973a15a7209dc98a19fbfa51e1537365447cddab289f4e5c646c57cb87b399b",
+    "oracleSeparation": "Independent composite create/send/select/delete/reopen/clear-cancel-confirm and queued-clear/inflight-final-delete sequences; actual wrapper/sidebar/chat/history/hook under StrictMode, fixture transport only, no worker imports/helpers. Metadata exact snapshot retained.",
+    "temporarySourceRemoved": true
+  },
+  "localPreparationFailures": [
+    {
+      "path": "C:\\Users\\DELL\\AppData\\Local\\Temp\\ncr-chat-history-local-probe-first-fail-20261012.log",
+      "sha256": "88daae9c0032c6db2e8236fa1fae092e7606f750e0500fa638db163466073c27",
+      "text": "\n RUN  v4.1.8 D:/UNG DUNG AI/TOOL AI 2026/Controlled-Vibe-Framework-CVF/EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web\n\n \u276f src/components/local-chat-history-probe.test.tsx (2 tests | 1 failed) 1050ms\n   \u00d7 real send/select/inactive delete survives close/reopen, then clear leaves one empty persisted session 865ms\n\n\u23af\u23af\u23af\u23af\u23af\u23af\u23af Failed Tests 1 \u23af\u23af\u23af\u23af\u23af\u23af\u23af\n\n FAIL  src/components/local-chat-history-probe.test.tsx > real send/select/inactive delete survives close/reopen, then clear leaves one empty persisted session\nAssertionError: expected '\ud83e\uddedLOCAL_NEW_WORKToday \u00b7 2 msgs\ud83d\uddd1\ufe0f' to contain '3 msgs'\n\nExpected: \"3 msgs\"\nReceived: \"\ud83e\uddedLOCAL_NEW_WORKToday \u00b7 2 msgs\ud83d\uddd1\ufe0f\"\n\n \u276f src/components/local-chat-history-probe.test.tsx:31:75\n     29|  fireEvent.click(screen.getByRole('button',{name:/New Chat/}));await t\u2026\n     30|  send('LOCAL_NEW_WORK');await tick(25);const newId=state().activeSessi\u2026\n     31|  expect(rows()).toHaveLength(3);expect(row('LOCAL_NEW_WORK').textConte\u2026\n       |                                                                           ^\n     32|  expect(screen.getByText('LOCAL_REPLY:LOCAL_NEW_WORK')).toBeDefined();\n     33|  fireEvent.click(row('Local two'));await tick();expect(state().activeS\u2026\n\n\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af[1/1]\u23af\n\n\n Test Files  1 failed (1)\n      Tests  1 failed | 1 passed (2)\n   Start at  15:18:45\n   Duration  13.45s (transform 4.10s, setup 8.84s, import 2.19s, tests 1.05s, environment 980ms)\n\n",
+      "attribution": "LOCAL_REVIEWER_HARNESS_OR_OUTPUT_ERROR; expected3 message count corrected to actual user/reply2; subsequent CP1252 printing failure did not change product."
+    },
+    {
+      "path": "C:\\Users\\DELL\\AppData\\Local\\Temp\\ncr-chat-history-local-wrapper-encoding-fail-20261012.log",
+      "sha256": "2e02abe57d507bcad5317c8d43965c09e3b7c6e2fe0204863fd3237b9125eb6f",
+      "text": "Traceback (most recent call last):\n  File \"C:\\Users\\DELL\\AppData\\Local\\Temp/prepare_ncr_chat_history_local_probe.py\", line 70, in <module>\n    (TMP/'ncr-chat-history-local-probe-20261012.log').write_bytes(result.stdout); print(result.stdout.decode('utf-8','replace')); raise SystemExit(result.returncode)\n                                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\encodings\\cp1252.py\", line 19, in encode\n    return codecs.charmap_encode(input,self.errors,encoding_table)[0]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nUnicodeEncodeError: 'charmap' codec can't encode character '\\u276f' in position 120: character maps to <undefined>\n",
+      "attribution": "LOCAL_REVIEWER_HARNESS_OR_OUTPUT_ERROR; expected3 message count corrected to actual user/reply2; subsequent CP1252 printing failure did not change product."
+    }
+  ],
+  "procedureDisposition": "FAIL: AGENTS/routing, DESIGN, active handoff and prior completion unread; dispatch proof/selected checker branches only partial; mandatory full preparation not certified. Original disclosure preserved.",
+  "timing": {
+    "workerDeclared": {
+      "startUtc": "2026-10-12T07:48:49Z",
+      "head": "419b6470c1e9c53fd4d3fdd83336b646a5799b43",
+      "preImplementationUtc": "07:49:54Z-07:50:14Z",
+      "scaffoldUtc": "07:50:14Z",
+      "sourceRedUtc": "07:51:58Z",
+      "implementationEditsUtc": "07:52:37Z",
+      "finalFocusedUtc": "07:56:01Z-07:56:35Z",
+      "firstFastGateUtc": "07:56:43Z",
+      "preliminaryTerminalUtc": "2026-10-12T07:58:33Z",
+      "finalTerminalUtc": "2026-10-12T08:01:18Z",
+      "finalTerminalNote": "Time of the evidence confirmation (fast gate run4 exit 0 at 08:00:50Z-08:01:04Z). Recording it required a JSON-only byte change, so the fast gate, ledger gate and git checks were rerun once afterwards on the final bytes; their results are in the worker closing message and logs final-gates.log.",
+      "clockNote": "UTC values are `date -u` outputs captured by the worker during the run."
+    },
+    "observedLastLoggedConfirmationUtc": "2026-10-12T08:01:30Z",
+    "startThroughLoggedConfirmationMinutes": 12.6833333333,
+    "completeAcceptedDeliveryMinutes": null,
+    "reason": "Recorded terminal08:01:18 precedes final confirmation; actual accepted-delivery endpoint not measured."
+  },
+  "effects": {
+    "providerCalls": 0,
+    "sourceRepairByLocal": false,
+    "workerRedispatch": false,
+    "browser": false,
+    "install": false,
+    "push": false
+  },
+  "materialManifest": [
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/AgentChatWithHistory.tsx",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/chat-history.tsx",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/AgentChatHistoryConsistency.test.tsx",
+    "docs/reviews/evidence/ncr-chat-history-worker-20261012.json",
+    "docs/reviews/CVF_NCR_CHAT_HISTORY_WORKER_RETURN_2026-10-12.md",
+    "docs/reviews/CVF_NCR_CHAT_HISTORY_COMPLETION_2026-10-12.md",
+    "docs/reviews/evidence/ncr-chat-history-local-20261012.json",
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_CHAT_HISTORY_2026-10-12.md",
+    "docs/baselines/CVF_GC018_NCR_CHAT_HISTORY_2026-10-12.md",
+    "docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json",
+    "docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md",
+    "docs/roadmaps/README.md",
+    "docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md",
+    "docs/roadmaps/CVF_ROADMAP_INVENTORY.md",
+    "docs/roadmaps/CVF_ROADMAP_INVENTORY.csv",
+    ".gitattributes",
+    "CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json",
+    "CVF_SESSION/ACTIVE_SESSION_STATE.json",
+    "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json"
+  ],
+  "claimBoundary": "Offline jsdom UI/session persistence only; no AI governance/live/full/browser/backend/cross-tab/arbitrary concurrent delete/whole roadmap/model ranking."
+}

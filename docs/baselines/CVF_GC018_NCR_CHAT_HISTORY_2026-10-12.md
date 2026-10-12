@@ -2,7 +2,7 @@
 
 Memory class: governed-dispatch-baseline
 docType: baseline
-Status: READY
+Status: CLOSED_PASS_BOUNDED
 Date: 2026-10-12
 Batch ID: CVF-NCR-CHAT-HISTORY-20261012
 Dispatch base head: 4aabff8808e150f76c371dc7e087b5dad6f186ba
@@ -177,3 +177,28 @@ Paired order contains fixed acceptance ledger, exact paths/source pins and final
 ## Decision / Proposed Tranche
 
 Five outputs, one manual60min offline worker after bound committed release. Paired `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_CHAT_HISTORY_2026-10-12.md`;21 observations unchanged; no automatic successor.
+
+## Local Closure Disposition - 2026-10-12
+
+Technical history consistency ACCEPTED_BOUNDED; worker55/55 consumed, independent Local2/2 PASS. Original five bytes unchanged, no Local product repair or redispatch. Mandatory read omissions remain procedureFAIL; full preparation/work-order fulfillment not certified. Completion: `docs/reviews/CVF_NCR_CHAT_HISTORY_COMPLETION_2026-10-12.md`.
+
+## Acceptance Receipt Assertion Matrix
+
+| Requirement | Actual assertion/evidence | Disposition |
+|---|---|---|
+| REQ-HISTORY | actual sidebar create/title/count/select agree with body/store; original-source14/16 FAIL and final16/16; Local real send, saved metadata and reopen | ACCEPTED_BOUNDED |
+| REQ-DELETE | inactive/active/final delete; Confirm/Cancel Clear; one empty fallback; actual hook late callback and queued prompt cannot resurrect deleted session | ACCEPTED_BOUNDED |
+| REQ-RETURN | original five bytes, eleven source pins and log hashes verified; final worker gate/ledger exit0; mandatory read omissions retained | ACCEPTED_BOUNDED_EVIDENCE; PROCEDURE_FAIL |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_CHAT_HISTORY_2026-10-12.md` | CLOSED_PASS_BOUNDED technical; procedureFAIL retained | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_NCR_CHAT_HISTORY_COMPLETION_2026-10-12.md` | worker55/55 consumed; independent Local2/2; no Local product repair | PASS |
+| Roadmap state | `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `docs/roadmaps/README.md` | history consistency accepted; integrated NCR job open | PASS |
+| Registry JSON | `docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json` |22 tasks10 Haiku-family/8 Sonnet/4 Luna; previous21 preserved | PASS |
+| Registry Markdown | `docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md` | current22, distinct worker/Local attribution | PASS |
+| External evidence digest | `docs/reviews/evidence/ncr-chat-history-local-20261012.json` | sha256:f6a138a695b8fad66a0584fc8551bdd2882a6b3b995577027064d5cbc5bde5c3; internal Local proof/log/source verification | PASS |
+| System loop interlock | parked checkpoints | no automatic successor or new loop | N/A with reason: finite offline UI repair |
+| Session continuity | current source/generated continuity surfaces | authority hash projections then dedicated actual material-SHA exact6 sync | PASS |
