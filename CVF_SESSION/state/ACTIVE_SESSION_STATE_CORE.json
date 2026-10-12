@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RESULT_ISOLATION_2026-10-12.md",
     "workOrderSha256": "d1fd2ebef8308351d501da58b1d4ff84f7bbb8889118ccc0758bafcf4cd1edc0"
   },
-  "currentAuthoritySyncReason": "ResultViewer isolation Local bounded closure authority projection; original four unchanged, preparation limits retained; dedicated actual material-SHA continuity follows.",
+  "currentAuthoritySyncReason": "ResultViewer bounded closure material 60d08d8f2a4abdb590f6c67ec96f45498edc3ffc;exact6 actual-SHA continuity;worker4 unchanged,preparation limits separate,23 observations.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
@@ -110,8 +110,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_ncr_result_isolation_worker_execution",
-  "previousMode": "cvf_ncr_chat_history_closed_useful_selection",
+  "currentMode": "cvf_ncr_result_isolation_closed_useful_selection",
+  "previousMode": "cvf_ncr_result_isolation_worker_execution",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
