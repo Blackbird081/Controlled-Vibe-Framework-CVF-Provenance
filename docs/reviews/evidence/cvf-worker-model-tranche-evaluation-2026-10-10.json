@@ -5,7 +5,7 @@
   "decisionOwner": "LOCAL_REVIEWER",
   "purpose": "Longitudinal worker evidence for model selection by role and task family in a future multi-agent use case. No agent invocation or automatic routing.",
   "identityBasis": "MODEL_LABELS_OPERATOR_REPORTED_OR_WORKER_SELF_REPORTED_NOT_RUNTIME_VERIFIED",
-  "sourceHead": "5ee6af6bccff4cfa4b6cb382aa57e53ae35bebb9",
+  "sourceHead": "bf7d6c3d86a039d013d414d5d7b8449a8fd9bc4d",
   "rows": [
     {
       "trancheId": "CVF-NCR-OFFLINE-PREVIEW-20261009",
@@ -1105,6 +1105,111 @@
         "native model/effort/token/bill unavailable",
         "full accepted-delivery and reviewer clocks unavailable"
       ]
+    },
+    {
+      "trancheId": "CVF-NCR-AGENT-HANDOFF-20261012",
+      "taskFamily": "PRODUCT_UI_INCOMING_AGENT_HANDOFF_SESSION_LIFECYCLE",
+      "implementationPaths": 2,
+      "deliveredPaths": 4,
+      "role": "INTERNAL_AGENT_WORKER",
+      "model": "Claude Sonnet (operator-requested5.5; native runtime unverified)",
+      "effort": "high",
+      "identityBasis": "OPERATOR_REQUESTED_MODEL_EFFORT_NOT_RUNTIME_VERIFIED",
+      "observedRuntimeIdentity": null,
+      "observedEffort": null,
+      "status": "CLOSED_PASS_BOUNDED",
+      "evidence": "docs/reviews/evidence/ncr-agent-handoff-local-20261012.json",
+      "evidenceSha256": "2ee7c21b9812f1f7b7277ee066ce7559439c572a4872e36321ef1aa76927b116",
+      "technicalOutput": "ACCEPTED_BOUNDED_SOURCE_REPAIR_NO_LOCAL_PRODUCT_REPAIR",
+      "procedureDisposition": "FAIL",
+      "procedure": "Active handoff read after implementation; AGENTS/routing unopened; full startup preparation not certified.",
+      "firstReturnGateClean": false,
+      "workerTestAssertionSelfRepairGroups": 1,
+      "workerReturnGateFailedAttemptsReported": 6,
+      "workerReturnShapeManualRepairsReported": 3,
+      "workerReturnShapeRootGroups": null,
+      "reviewerRequestedWorkerRepairTurns": 0,
+      "reviewerProductCodeRepairs": 0,
+      "reviewerProductCodeRepairCountBasis": "No Local source changes; worker layout/test final hashes preserved, distinct Local2/2 PASS.",
+      "reviewerProductDefectSeverity": "NONE_IDENTIFIED_IN_BOUNDED_SCOPE",
+      "orchestratorPacketAmbiguities": 1,
+      "clock": {
+        "workerReportedUtc": {
+          "start": "2026-10-12T06:04:59Z",
+          "preImplementationGateRun": "2026-10-12T06:05:49Z (printed immediately before the gate command; gate itself took 8.00s)",
+          "scaffoldStart": "2026-10-12T06:06:28Z",
+          "firstRedRunStart": "2026-10-12T06:08:52Z",
+          "firstRedRunEnd": "2026-10-12T06:09:08Z",
+          "finalFocusedTscEslintEnd": "2026-10-12T06:11:34Z",
+          "preliminaryTerminalForEvidenceAuthoring": "2026-10-12T06:13:14Z",
+          "finalTestRunStart": null,
+          "finalTestRunEnd": "2026-10-12T06:11:34Z",
+          "finalGateStart": "2026-10-12T06:18:39Z",
+          "finalGateEnd": "2026-10-12T06:18:45Z",
+          "terminal": "2026-10-12T06:18:45Z (preliminary; see terminalNote)",
+          "totalMinutesStartToTerminal": 13.8,
+          "budgetMinutes": 60,
+          "clockNote": "Not every intermediate command was individually clocked; unclocked steps are null rather than reconstructed. finalTestRun* is the focused-suite run on final layout and test bytes; final gate/terminal values are written after the last confirmation and are therefore preliminary relative to the evidence write itself (see proofEditAfterFinalGate).",
+          "finalTestRunStartReason": "the focused vitest, tsc and eslint commands ran in one block that was not individually clocked; only the block end 06:11:34Z was captured",
+          "terminalNote": "Preliminary terminal for this file = last gate end 06:18:45Z (about 13.8 minutes after start 06:04:59Z, budget 60). The proof edit and the post-edit confirmation gate ran after that instant; the confirmation gate time and result are reported in the worker's closing message, not here, because recording them here would change this file again."
+        },
+        "fullAcceptedDeliveryMinutes": null,
+        "limit": "13.8min preliminary terminal before proof edit/confirmation; full accepted interval unknown."
+      },
+      "elapsed": {
+        "minutes": 13.8,
+        "basis": "WORKER_REPORTED_PRELIMINARY_TERMINAL_BEFORE_PROOF_EDIT_CONFIRMATION",
+        "fullDeliveryMinutes": null
+      },
+      "bill": {
+        "amount": null,
+        "tokens": null,
+        "reason": "NATIVE_USAGE_UNEXPOSED_COST_DEFERRED"
+      },
+      "proof": "Worker35/35 and final old-source9/12 FAIL hashes validated; Local actual chat/hook2/2 PASS. Original worker fast gate FAIL solely steward mode; Local converted closure manifest.",
+      "qualityInterpretation": "Useful bounded lifecycle source repair; worker procedureFAIL and orchestrator protected packet gap separately retained. No ranking.",
+      "contextConfound": "Operator-managed continuous Claude context/model switch, unpaired useful tasks; not independent matched benchmark.",
+      "qualityAttribution": {
+        "workerTestSelfRepairGroups": 1,
+        "workerReturnFailedGateAttempts": 6,
+        "workerShapeRepairCountBasis": "Worker reports3 manual shape repairs, not3 independent source defects; final failure protected Local mode.",
+        "mandatoryReadOmissionGroups": 1,
+        "mandatoryReadOmissions": [
+          "active handoff startup order",
+          "AGENTS/routing owners not opened"
+        ],
+        "orchestratorPacketAmbiguities": 1,
+        "workerProductRepairGroupsAtHandoff": 0,
+        "localProductRepairGroups": 0,
+        "runtimeIdentityBasis": "Unverified session string, native identity unavailable.",
+        "localClosurePreparation": {
+          "firstBoundGate": "FAIL_LOCAL_FIFTH_PATH_BOUNDARY",
+          "localProbeFailedAttempts": 2,
+          "localProbeFailureClass": "LOCAL_REVIEWER_HARNESS_ERROR",
+          "collectionReportingCorrection": "Stale19 metadata against20 original rows corrected to21; previous20 row values unchanged.",
+          "metadataPreflight": {
+            "initialGate": "FAIL_LOCAL_METADATA_ONLY",
+            "logSha256": "35b6e26c5e1fe111f36be9539ee39313842d78642cc646c5ab76a46985ec2be4",
+            "findings": [
+              "Closed work-order timer constraint wording matched stale dispatch phrase",
+              "Existing dispatch workspace State binding label missing exact required State ownership literal"
+            ],
+            "attribution": "LOCAL_ORCHESTRATOR_PACKET_METADATA",
+            "repair": "Equivalent wording and mandatory label, no source/worker repair"
+          }
+        }
+      },
+      "limitations": [
+        "jsdom only: hidden-ness is proven by the [hidden] attribute ancestor and by the absence of the fixed overlay classes; no CSS cascade or browser rendering was run, so 'visually inaccessible' is not browser-verified",
+        "recorder leaf is a stand-in for message/prompt callbacks; only the 'real' describe block exercises actual AgentChat/useAgentChat, and it uses an in-process adapter stub returning fixture text",
+        "behaviour change disclosed: a minimized chat now stays mounted, so an initial-send timer or in-flight request is no longer torn down by minimize (it was before); close and replacement still unmount and clear the timer",
+        "a promptless cvf:openAgent while a prompted chat is open keeps that chat mounted and only clears the shell prompt state; it does not create a session",
+        "ChatHistorySidebar owns an independent useChatHistory instance (stale-snapshot limit noted in the work order); tests used the real sidebar and observed no overwrite at mount, but concurrent sidebar actions during a handoff are not exercised",
+        "ordinary-chat control starts from empty storage; an ordinary open chat that already holds messages when B arrives is covered only through the A-then-B and saved-S0 cases",
+        "no claim for AI governance decisions, full mode, phase gates, real provider or HTTP behaviour, backend cancellation, Home/export (consumed from the accepted draft-export evidence), or any whole-NCR milestone",
+        "Historical fail gates and Local harness/packaging failures are retained, not new worker samples.",
+        "Local failed instant-adapter fixture emitted existing Date.now-based duplicate message-key warnings; no ID-policy repair, backend cancellation or arbitrary concurrency claim."
+      ]
     }
   ],
   "rubric": [
@@ -1189,9 +1294,9 @@
       "next useful comparison task"
     ],
     "reviewedHaikuCount": 10,
-    "reviewedSonnetCount": 5,
+    "reviewedSonnetCount": 7,
     "reviewedLunaCount": 4,
-    "reviewedTaskObservationCount": 19
+    "reviewedTaskObservationCount": 21
   },
   "provisionalRoleRouting": [
     {
@@ -1220,9 +1325,9 @@
   "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
   "laneProtection": "Reviewer-owned governed evidence promotion authorized by operator longitudinal tracking request. No worker file edit, new dispatch, provider effect or public export.",
   "observations": {
-    "technical": "20 reviewed tasks10 Haiku-family/6 Sonnet/4 Luna; previous19 semantically preserved. Latest documentation/jsdom export composition proof accepted without product repair.",
-    "process": "Latest mandatory checker-read omissions/reporting contradiction procedureFAIL; one dispatcher audience wording ambiguity resolved locally;16.2min partial accepted interval, no native usage or ranking.",
-    "reportStatus": "TWENTY_REVIEWED_TASK_OBSERVATIONS_NO_COMPARATIVE_WINNER",
+    "technical": "21 reviewed tasks10 Haiku-family/7 Sonnet/4 Luna; previous20 preserved. Latest receiving/session source repair accepted, worker35/35 and Local2/2.",
+    "process": "Latest startup-order procedureFAIL; protected mode packet gap and Local harness/ledger-boundary repair retained separately.13.8min preliminary interval only.",
+    "reportStatus": "TWENTY_ONE_REVIEWED_TASK_OBSERVATIONS_NO_COMPARATIVE_WINNER",
     "measuredBillComparison": null,
     "nextControl": "Continue evidence collection on admitted work; Expense/S5 and effects parked; no automatic router or new benchmark task."
   },
@@ -1394,11 +1499,11 @@
     "omissionOwner": "LOCAL_ORCHESTRATOR",
     "OpusSameSessionAdvisoryExtraWorkers": 0,
     "latestReviewedTask": {
-      "trancheId": "CVF-NCR-DRAFT-EXPORT-20261012",
-      "localReview": "docs/reviews/CVF_NCR_DRAFT_EXPORT_COMPLETION_2026-10-12.md",
-      "evidence": "docs/reviews/evidence/ncr-draft-export-local-20261012.json",
-      "evidenceSha256": "f362b6bcc7752734937110dd928b265c0c37824c4d29a9c5efb744ee0e73c9bf",
-      "previousNineteenRowsPreserved": true
+      "trancheId": "CVF-NCR-AGENT-HANDOFF-20261012",
+      "localReview": "docs/reviews/CVF_NCR_AGENT_HANDOFF_COMPLETION_2026-10-12.md",
+      "evidence": "docs/reviews/evidence/ncr-agent-handoff-local-20261012.json",
+      "evidenceSha256": "2ee7c21b9812f1f7b7277ee066ce7559439c572a4872e36321ef1aa76927b116",
+      "previousTwentyRowsPreserved": true
     }
   },
   "operatorObservationFocus": {
@@ -1421,9 +1526,9 @@
     "costDisposition": "DEFERRED_BY_OPERATOR_FOR_CURRENT_EVALUATION; preserve historical null/available fields without new billing investigation or cost ranking.",
     "samplingPlan": "Continue operator-selected useful Sonnet tasks with quality/time measures; no benchmark-only or automatic model switch.",
     "comparisonRule": "Use the same quality/time interpretation after the switch, compare similar task families and complexity, retain reuse/session context and exact requested configurations; no benchmark-only tasks or automatic model assignment.",
-    "currentTask": "CVF-NCR-PROCESSING-LIFECYCLE-20261012",
-    "currentTaskDisposition": "REVIEWER_ACCEPTED_AFTER_LOCAL_REPAIR_WITH_PROCEDURE_FAIL",
-    "reviewedTaskCount": 17,
+    "currentTask": "CVF-NCR-AGENT-HANDOFF-20261012",
+    "currentTaskDisposition": "LOCAL_REVIEWED_BOUNDED_CLOSURE",
+    "reviewedTaskCount": 21,
     "postClosureClarification": "Current17 tasks; Sonnet late required reads recur despite scoped orchestrator mapping. Technical repair and procedure tracked separately; no model winner.",
     "proportionalControlDirection": {
       "authority": "OPERATOR_DIRECT_INSTRUCTION_CURRENT_SESSION_2026-10-12",
@@ -1450,19 +1555,17 @@
       "canonicalTemplateRawSha256": "ae02c4008ad16ec65487ec3137135d6103685ff41c131a9e91325a4f59959f8a"
     },
     "nextAssignment": {
-      "batchId": "CVF-NCR-DRAFT-RECOVERY-20261012",
-      "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_DRAFT_RECOVERY_2026-10-12.md",
-      "taskFamily": "PRODUCT_UI_LOCAL_STOP_DRAFT_AND_RESUBMIT_IDENTITY",
+      "batchId": "CVF-NCR-AGENT-HANDOFF-20261012",
+      "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_AGENT_HANDOFF_2026-10-12.md",
+      "taskFamily": "PRODUCT_UI_INCOMING_AGENT_HANDOFF_SESSION_LIFECYCLE",
       "requestedProvider": "Claude",
       "requestedModel": "Sonnet 5.5",
       "requestedEffort": "high",
       "nativeIdentity": null,
-      "nativeIdentityReason": "Runtime unexposed",
       "collectionDisposition": "REVIEWED_OBSERVATION_ADMITTED",
-      "priorReviewedTaskCount": 18,
-      "review": "docs/reviews/CVF_NCR_DRAFT_RECOVERY_COMPLETION_2026-10-12.md",
-      "timeQualityMeasures": "Actual defect/severity/repair and partial clock; cost deferred",
-      "contextConfound": "Operator-managed continuous Claude context/model switch, unpaired useful tasks; not independent matched benchmark."
+      "priorReviewedTaskCount": 20,
+      "review": "docs/reviews/CVF_NCR_AGENT_HANDOFF_COMPLETION_2026-10-12.md",
+      "nextDispatch": "NONE_NO_AUTOMATIC_SUCCESSOR"
     }
   },
   "dispatchInterruptedAttempts": [

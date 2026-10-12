@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 docType: work_order
-Status: READY
+Status: CLOSED_PASS_BOUNDED
 Date: 2026-10-12
 Batch ID: CVF-NCR-AGENT-HANDOFF-20261012
 Dispatch base head: f0199132050799c293f6b34db8c27b535694baed
@@ -66,7 +66,7 @@ Use actual DashboardLayout, AgentChatWithHistory and persisted useChatHistory at
 2. A first explicit cvf:openAgent prompt must reach its own ready chat session exactly once. Initial A must be distinct from an unrelated saved history session; do not overwrite saved message fields. Compare complete prompt/messages, not only session/button counts.
 3. Minimize then restore before and after the initial timer/delivery, and ordinary unrelated rerenders/StrictMode where supported, must preserve the same session and draft/messages without extra handoff delivery/session. A hidden chat is visually inaccessible; do not weaken modal/body-scroll behavior. Do not assert global provider abort from UI lifecycle.
 4. A new explicit B handoff while A is open must create a ready fresh session for B with no A prompt/messages/ambient history contamination; completed A stays in history. Also cover ordinary empty chat already open before incoming B. Two deliberate events with identical prompt text are two user handoffs: do not silently dedupe intent by text; ordinary restore/rerender is not a new event.
-5. Close clears shell incoming prompt and restores navigation/body overflow; reopening ordinary chat/history must not replay a handoff. Closing/replacing before deferred initial-send timer fires must not dispatch the stale queued prompt; consume existing hook cleanup controls, add only the composed seam cases. No guarantee aborting a request already started.
+5. Close clears shell incoming prompt and restores navigation/body overflow; reopening ordinary chat/history must not replay a handoff. Closing/replacing before deferred initial-send timer fires must prevent delivery of the stale queued prompt; consume existing hook cleanup controls, add only the composed seam cases. No guarantee aborting a request already started.
 6. Add independently authored focused regressions, retain existing tests, and use the real AgentChat/hook in at least one bounded synthetic receiver integration. In-process adapter response is fixture text only; no actual AI/governance behavior claim. A required source fault beyond writable layout is a consolidated blocker, not authority to expand paths.
 
 ## Acceptance Criteria
@@ -399,7 +399,7 @@ laneReleaseEvidence: terminal worker return, four-path changed-set reconciliatio
 | Front door | `docs/reference/agent_workspace/README.md` |
 | Storage class | Existing review/evidence plus return/evidence; no workspace storage is created |
 | Handoff fields | AHB block above and explicit lane handoff own route, base, paths, return and commit |
-| State binding | Local session-sync steward updates active continuity after material disposition |
+| State ownership | Local session-sync steward updates active continuity after material disposition |
 | Guard owner | Existing handoff, workspace-design, trace and autorun checkers |
 | Build boundary | runtime source: bounded existing client layout only; provider proof: no; public-sync: no; registry edits: no; workspace UI/queue/runtime: no |
 
@@ -557,3 +557,28 @@ Defect class: ORCHESTRATOR_PACKET_GAP
 Learning lane: GOVERNANCE_CONTROL_PLANE
 Disposition: RULE_EXISTS - first Local authoring preflight exposed envelope/fence/baseline-shape omissions and UI session-binding risk-word ambiguity; one consolidated packet correction, failure preserved in dispatch JSON.
 Next action: apply existing checker literals and finite source contract before transfer; no new checker, worker quiz or scope.
+
+## Local Closure Disposition - 2026-10-12
+
+Technical receiving lifecycle ACCEPTED_BOUNDED. Original worker BLOCKED_WITH_REASON and preparation procedureFAIL retained; Local protected literal repair and reviewer manifest conversion, no worker redispatch.35/35 worker tests consumed, Local independent2/2 PASS. Completion: `docs/reviews/CVF_NCR_AGENT_HANDOFF_COMPLETION_2026-10-12.md`.
+
+## Acceptance Receipt Assertion Matrix
+
+| Requirement | Actual assertion/evidence | Disposition |
+|---|---|---|
+| REQ-RECEIVE | fresh A/B/identical-text sessions; existing history isolation; worker actual chat/hook seam, Local actual repeatedB and ambientC | ACCEPTED_BOUNDED |
+| REQ-LIFECYCLE | minimize/restore retains messages and unsent draft; actual timer close/replacement, StrictMode worker control, Local hidden queuedA replacement | ACCEPTED_BOUNDED |
+| REQ-RETURN | four original bytes/pins/logs retained; blocked worker ledger valid; Local steward mode repair and separate closure manifest | ACCEPTED_BOUNDED_EVIDENCE; PROCEDURE_FAIL; historical worker gate remains FAIL |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_AGENT_HANDOFF_2026-10-12.md` | CLOSED_PASS_BOUNDED technical; historical BLOCKED/procedureFAIL retained | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_NCR_AGENT_HANDOFF_COMPLETION_2026-10-12.md` | worker35/35 consumed; independent Local2/2; no Local product repair | PASS |
+| Roadmap state | `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `docs/roadmaps/README.md` | finite receiving lifecycle accepted, whole NCR open | PASS |
+| Registry JSON | `docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json` |21 reviewed tasks10 Haiku-family/7 Sonnet/4 Luna; previous20 retained | PASS |
+| Registry Markdown | `docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md` | current21 and distinct attribution; historical counts retained | PASS |
+| External evidence digest | `docs/reviews/evidence/ncr-agent-handoff-local-20261012.json` | sha256:2ee7c21b9812f1f7b7277ee066ce7559439c572a4872e36321ef1aa76927b116; internal Local proof and log/pin checks | PASS |
+| System loop interlock | parked checkpoints | no automatic successor or new loop | N/A with reason: finite offline repair only |
+| Session continuity | current source/generated continuity surfaces | raw authority projections then dedicated actual material-SHA six-path sync | PASS |

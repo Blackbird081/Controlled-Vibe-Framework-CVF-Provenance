@@ -19,7 +19,7 @@ Decision owner: operator về định hướng/phạm vi; Local reviewer về đ
 ## Current Delivery Checkpoint - 2026-10-12
 
 Operator asks to update our roadmaps to prevent drift. Local owns this bounded
-documentation reconciliation; current mode=cvf_ncr_draft_export_closed_useful_selection,
+documentation reconciliation; current mode=cvf_ncr_agent_handoff_closed_useful_selection,
 handoff=AGENT_HANDOFF_V63_2026-09-18.md, next=useful coding outcome selection.
 This checkpoint supersedes older current/next wording for selection; historical
 decisions, accepted proofs, phase IDs and effect checkpoints retain their scope.
@@ -38,24 +38,19 @@ offline claim level first; full real-provider R3 acceptance remains open.
 | R4 recovery contribution | ProcessingScreen client attempt isolation/once delivery accepted after Local repair in docs/reviews/CVF_NCR_PROCESSING_LIFECYCLE_COMPLETION_2026-10-12.md | offline client coverage does not prove backend cancellation, durable effects, restart/restore or full R4 exit |
 | R5/R6 | hosted/scale/new-capability work remains demand/authority gated | no automatic implementation from this roadmap |
 
-**Selected next outcome - Local receiving-side repair, 2026-10-12:** accepted
-draft export ends at cvf:openAgent; docs/reviews/CVF_NCR_DRAFT_EXPORT_COMPLETION_2026-10-12.md
-records documentation/jsdom worker10/10,Local2/2 with procedureFAIL retained.
-Next consumer is the actual dashboard Agent Chat session, without prompt retyping.
-Source base: f0199132050799c293f6b34db8c27b535694baed. Dashboard unmounts chat on minimize while
-retaining initialPrompt; wrapper pins incoming ownership at mount. A distinct
-Local shell/wrapper/history witness observes restore replay[A,A] and lost newB[A],
-two desired assertions FAIL; synthetic Chat recorder, no AI/governance claim.
-docs/reviews/evidence/ncr-agent-handoff-dispatch-20261012.json preserves source/log.
-**Finite acceptance:** incoming prompt owns one fresh ready session; minimize/
-restore preserves its session/messages with no replay; a new explicit handoff
-while chat is open receives the current prompt without saved-session contamination.
-Close/replacement clears queued old prompt; preserve ordinary navigation/history.
-**Dispatch boundary:** docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_AGENT_HANDOFF_2026-10-12.md
-fixes four worker paths: layout repair, regression, proof and pending return;
-all other production/history/hooks remain read-only. One manual offline worker,
-only after committed bound release. Stop at finite accepted outcome or blocker;
-whole NCR/full/browser/provider/R3/R4 remains open.20 observations unchanged.
+**Accepted finite outcome - Agent Chat handoff lifecycle, 2026-10-12:**
+docs/reviews/CVF_NCR_AGENT_HANDOFF_COMPLETION_2026-10-12.md accepts the
+offline/jsdom receiving repair: worker35/35 consumed, old-source9/12 FAIL,
+Local actual shell/wrapper/chat/hook/history2/2 PASS. Minimize/restore retains
+session/messages/unsent draft; explicit new or identical-text handoff gets a
+fresh ready session; close/replacement clears queued old timer. Worker layout
+repair only; Local no product repair. Four original worker bytes unchanged.
+Protected mode literal fixed by Local; original BLOCKED return and startup-order
+procedureFAIL retained. Local reviewer manifest conversion resolves the fifth-path
+intake collision, with dedicated actual-SHA continuity.21 observations total,
+previous20 unchanged; cost and complete accepted-delivery time unknown.
+**Next selection:** choose useful coding outcome from current evidence; no
+automatic successor. Complete job/full/browser/backend/provider/R3/R4 still open.
 
 Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11 remain
 parked. ETA and end-to-end readiness are NOT_ESTABLISHED; tests/commits/tranches

@@ -37,11 +37,11 @@
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_NCR_AGENT_HANDOFF_2026-10-12.md",
-    "baselineSha256": "736b8c0676244bc6ae891b260381636bbf86daef1a683908bff338b9e2514ed7",
+    "baselineSha256": "ab093700c33b2a88dcb98f67000ecaade1aedac1c376458270238a3beba3fd86",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_AGENT_HANDOFF_2026-10-12.md",
-    "workOrderSha256": "0111b1b220274520a09aeff5c8422820e979b4ea9583b7f4d91ef6c84bc516fe"
+    "workOrderSha256": "cd4e8afdd6ac71a539aaa29b7609135449452396c1b4efa9d3af90c297d96a83"
   },
-  "currentAuthoritySyncReason": "Incoming Agent Chat lifecycle repair dispatch material 731c82e35370b7a043ad2b2028fcca6873496c35; dedicated exact6 continuity; source witness two FAIL, worker pending,20 observations unchanged.",
+  "currentAuthoritySyncReason": "Agent handoff reviewed material raw authority projection; original worker BLOCKED/procedureFAIL retained; full mode/next sync follows actual material commit.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",

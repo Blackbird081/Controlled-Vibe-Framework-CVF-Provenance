@@ -51,6 +51,10 @@ function DashboardLayoutInner({ children }: { children: React.ReactNode }) {
 
     const [sidebarOpen, setSidebarOpen] = useState(false);
     const [agentPrompt, setAgentPrompt] = useState<string | undefined>();
+    // Each explicit prompt-bearing cvf:openAgent event gets a fresh identity so the
+    // chat wrapper binds that prompt to its own new session. Minimize/restore and
+    // unrelated rerenders keep the identity, so a delivered prompt is never replayed.
+    const [agentHandoffId, setAgentHandoffId] = useState(0);
     const [isAgentMinimized, setIsAgentMinimized] = useState(false);
     // Seed from URL so the correct modal renders on the first frame (no flash).
     // After mount, state is the sole rendering driver — URL changes are synced
@@ -71,6 +75,7 @@ function DashboardLayoutInner({ children }: { children: React.ReactNode }) {
             const detail = (event as CustomEvent<{ prompt?: string }>).detail;
             modals.closeAllModals();
             setAgentPrompt(detail?.prompt);
+            if (detail?.prompt) setAgentHandoffId(id => id + 1);
             setActiveModal('agent');
             setIsAgentMinimized(false);
         };
@@ -320,10 +325,16 @@ function DashboardLayoutInner({ children }: { children: React.ReactNode }) {
             )}
 
             {/* Agent Chat */}
-            {visibleModal === 'agent' && !isAgentMinimized && (
-                <div className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-0 md:p-4">
+            {/* Stays mounted while minimized (hidden, not unmounted) so the session,
+                draft and already-delivered prompt survive restore. */}
+            {visibleModal === 'agent' && (
+                <div
+                    hidden={isAgentMinimized}
+                    className={isAgentMinimized ? 'hidden' : 'fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-0 md:p-4'}
+                >
                     <div className="w-full h-full md:h-[85vh] md:max-w-5xl rounded-none md:rounded-xl overflow-hidden shadow-2xl">
                         <AgentChatWithHistory
+                            key={agentHandoffId}
                             initialPrompt={agentPrompt}
                             onClose={closeActiveModal}
                             onComplete={closeActiveModal}

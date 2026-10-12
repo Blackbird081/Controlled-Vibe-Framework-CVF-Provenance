@@ -18,7 +18,7 @@ Startup acknowledged: current mode=`cvf_ncr_agent_handoff_worker_execution`;hand
 
 ## Current Mode
 
-cvf_ncr_agent_handoff_worker_execution. Worker pending; Local initialA PASS,restore replay/lostB desired2/2 FAIL. Prior draft-export bounded/procedureFAIL retained;whole job open,LHW24.
+`cvf_ncr_agent_handoff_worker_execution`. Worker pending; Local initialA PASS,restore replay/lostB desired2/2 FAIL. Prior draft-export bounded/procedureFAIL retained;whole job open,LHW24.
 
 ## Current Authority
 

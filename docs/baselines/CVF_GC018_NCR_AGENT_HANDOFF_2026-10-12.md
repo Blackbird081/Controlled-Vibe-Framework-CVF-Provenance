@@ -2,7 +2,7 @@
 
 Memory class: governed-dispatch-baseline
 docType: baseline
-Status: READY
+Status: CLOSED_PASS_BOUNDED
 Date: 2026-10-12
 Batch ID: CVF-NCR-AGENT-HANDOFF-20261012
 Dispatch base head: f0199132050799c293f6b34db8c27b535694baed
@@ -178,3 +178,28 @@ Defect class: ORCHESTRATOR_PACKET_GAP
 Learning lane: GOVERNANCE_CONTROL_PLANE
 Disposition: RULE_EXISTS - first Local authoring preflight exposed envelope/fence/baseline-shape omissions and UI session-binding risk-word ambiguity; one consolidated packet correction, failure preserved in dispatch JSON.
 Next action: apply existing checker literals and finite source contract before transfer; no new checker, worker quiz or scope.
+
+## Local Closure Disposition - 2026-10-12
+
+Technical receiving lifecycle ACCEPTED_BOUNDED. Original worker BLOCKED_WITH_REASON and preparation procedureFAIL retained; Local protected literal repair and reviewer manifest conversion, no worker redispatch.35/35 worker tests consumed, Local independent2/2 PASS. Completion: `docs/reviews/CVF_NCR_AGENT_HANDOFF_COMPLETION_2026-10-12.md`.
+
+## Acceptance Receipt Assertion Matrix
+
+| Requirement | Actual assertion/evidence | Disposition |
+|---|---|---|
+| REQ-RECEIVE | fresh A/B/identical-text sessions; existing history isolation; worker actual chat/hook seam, Local actual repeatedB and ambientC | ACCEPTED_BOUNDED |
+| REQ-LIFECYCLE | minimize/restore retains messages and unsent draft; actual timer close/replacement, StrictMode worker control, Local hidden queuedA replacement | ACCEPTED_BOUNDED |
+| REQ-RETURN | four original bytes/pins/logs retained; blocked worker ledger valid; Local steward mode repair and separate closure manifest | ACCEPTED_BOUNDED_EVIDENCE; PROCEDURE_FAIL; historical worker gate remains FAIL |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_AGENT_HANDOFF_2026-10-12.md` | CLOSED_PASS_BOUNDED technical; historical BLOCKED/procedureFAIL retained | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_NCR_AGENT_HANDOFF_COMPLETION_2026-10-12.md` | worker35/35 consumed; independent Local2/2; no Local product repair | PASS |
+| Roadmap state | `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `docs/roadmaps/README.md` | finite receiving lifecycle accepted, whole NCR open | PASS |
+| Registry JSON | `docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json` |21 reviewed tasks10 Haiku-family/7 Sonnet/4 Luna; previous20 retained | PASS |
+| Registry Markdown | `docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md` | current21 and distinct attribution; historical counts retained | PASS |
+| External evidence digest | `docs/reviews/evidence/ncr-agent-handoff-local-20261012.json` | sha256:2ee7c21b9812f1f7b7277ee066ce7559439c572a4872e36321ef1aa76927b116; internal Local proof and log/pin checks | PASS |
+| System loop interlock | parked checkpoints | no automatic successor or new loop | N/A with reason: finite offline repair only |
+| Session continuity | current source/generated continuity surfaces | raw authority projections then dedicated actual material-SHA six-path sync | PASS |

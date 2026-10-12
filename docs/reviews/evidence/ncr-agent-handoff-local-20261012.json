@@ -1,0 +1,477 @@
+{
+  "schemaVersion": "cvf.ncrAgentHandoffLocalReview@1.0.0",
+  "date": "2026-10-12",
+  "role": "Local INTERNAL_AGENT reviewer/closer/steward",
+  "phase": "PRIVATE_RETURN_REVIEW_AND_CLOSURE",
+  "decisionOwner": "LOCAL",
+  "executionBaseHead": "bf7d6c3d86a039d013d414d5d7b8449a8fd9bc4d",
+  "closureBaseHead": "bf7d6c3d86a039d013d414d5d7b8449a8fd9bc4d",
+  "disposition": "CLOSED_PASS_BOUNDED",
+  "claimBoundary": "Offline jsdom client session lifecycle only; no AI governance/live/provider/browser/backend/public/deployment or whole-NCR acceptance.",
+  "originalWorkerArtifacts": {
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/layout.tsx": "25474fb5ae581f052831f9e7dcd4094c130a7a45b662c54c22ada7196bd7c11c",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/layout-agent-handoff.test.tsx": "06197e4b8303781bab2920533c7d1bc914c15feaf669e2325bc4b681eabd02b4",
+    "docs/reviews/evidence/ncr-agent-handoff-worker-20261012.json": "632016697b47a6618ead295e71006ca551b18929a1541de267b4c5ac1bddae28",
+    "docs/reviews/CVF_NCR_AGENT_HANDOFF_WORKER_RETURN_2026-10-12.md": "901e388a8c57f183ab718bcb5548860e8ca807828c10b041fb60774c94ef8667"
+  },
+  "sourcePins": [
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/layout.tsx",
+      "dispatchRawSha256": "18e35af0031172385bc9e16811ba242011c0a3d8cefc9c3888403e61979f16a8",
+      "baseBlobSha256": "18e35af0031172385bc9e16811ba242011c0a3d8cefc9c3888403e61979f16a8",
+      "currentRawSha256": "25474fb5ae581f052831f9e7dcd4094c130a7a45b662c54c22ada7196bd7c11c",
+      "disposition": "AUTHORIZED_WORKER_LAYOUT_DELTA"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/layout.test.tsx",
+      "dispatchRawSha256": "bc3b183f79782da0e42725cb576b3287747b43e7edddd7848e3f3e83cd50f133",
+      "baseBlobSha256": "bc3b183f79782da0e42725cb576b3287747b43e7edddd7848e3f3e83cd50f133",
+      "currentRawSha256": "bc3b183f79782da0e42725cb576b3287747b43e7edddd7848e3f3e83cd50f133",
+      "disposition": "UNCHANGED"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/AgentChatWithHistory.tsx",
+      "dispatchRawSha256": "20d74655258b5c9033f7a42d6821c07cc5c23d857abf3faf057e16bb78f949bf",
+      "baseBlobSha256": "20d74655258b5c9033f7a42d6821c07cc5c23d857abf3faf057e16bb78f949bf",
+      "currentRawSha256": "20d74655258b5c9033f7a42d6821c07cc5c23d857abf3faf057e16bb78f949bf",
+      "disposition": "UNCHANGED"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/AgentChatWithHistory.test.tsx",
+      "dispatchRawSha256": "278becb72892428deb1aa1341c077f9989e814102de7d6a1b87009b6312154cd",
+      "baseBlobSha256": "278becb72892428deb1aa1341c077f9989e814102de7d6a1b87009b6312154cd",
+      "currentRawSha256": "278becb72892428deb1aa1341c077f9989e814102de7d6a1b87009b6312154cd",
+      "disposition": "UNCHANGED"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/AgentChat.tsx",
+      "dispatchRawSha256": "f5e31153e8b0482d1036904aae64cd7d81d36ab654076afcbe355568c9bd238a",
+      "baseBlobSha256": "f5e31153e8b0482d1036904aae64cd7d81d36ab654076afcbe355568c9bd238a",
+      "currentRawSha256": "f5e31153e8b0482d1036904aae64cd7d81d36ab654076afcbe355568c9bd238a",
+      "disposition": "UNCHANGED"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/chat-history.tsx",
+      "dispatchRawSha256": "dc4a450b97cd74dea6f67c23b253e06726622382c055c4cc48c1be8849803d0b",
+      "baseBlobSha256": "dc4a450b97cd74dea6f67c23b253e06726622382c055c4cc48c1be8849803d0b",
+      "currentRawSha256": "dc4a450b97cd74dea6f67c23b253e06726622382c055c4cc48c1be8849803d0b",
+      "disposition": "UNCHANGED"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/chat-history.test.tsx",
+      "dispatchRawSha256": "17b4e014a05d22a5547a2b8341029a4b6ad4a2de5ce3e611833ca38c4e094289",
+      "baseBlobSha256": "17b4e014a05d22a5547a2b8341029a4b6ad4a2de5ce3e611833ca38c4e094289",
+      "currentRawSha256": "17b4e014a05d22a5547a2b8341029a4b6ad4a2de5ce3e611833ca38c4e094289",
+      "disposition": "UNCHANGED"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/hooks/useAgentChat.ts",
+      "dispatchRawSha256": "5f60cb289473b21e0d3c017992478cfa9bb062b7c891c7ba1479d854ad0b5192",
+      "baseBlobSha256": "5f60cb289473b21e0d3c017992478cfa9bb062b7c891c7ba1479d854ad0b5192",
+      "currentRawSha256": "5f60cb289473b21e0d3c017992478cfa9bb062b7c891c7ba1479d854ad0b5192",
+      "disposition": "UNCHANGED"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/hooks/useAgentChat.test.ts",
+      "dispatchRawSha256": "09ecf7a2c9d63ed6ecd7b188a6a56d3cb4e37d0f4b55231916b6ce67cae30494",
+      "baseBlobSha256": "09ecf7a2c9d63ed6ecd7b188a6a56d3cb4e37d0f4b55231916b6ce67cae30494",
+      "currentRawSha256": "09ecf7a2c9d63ed6ecd7b188a6a56d3cb4e37d0f4b55231916b6ce67cae30494",
+      "disposition": "UNCHANGED"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.tsx",
+      "dispatchRawSha256": "b6b1d7ff64bcc5586b830b2a23c8e1b94957ef276a4abd9cea9eaa0825965322",
+      "baseBlobSha256": "b6b1d7ff64bcc5586b830b2a23c8e1b94957ef276a4abd9cea9eaa0825965322",
+      "currentRawSha256": "b6b1d7ff64bcc5586b830b2a23c8e1b94957ef276a4abd9cea9eaa0825965322",
+      "disposition": "UNCHANGED"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/test/setup.ts",
+      "dispatchRawSha256": "bc573b2a6133b07404c42f797bce43fe73464711e0281f29da8234bf2fed6b27",
+      "baseBlobSha256": "bc573b2a6133b07404c42f797bce43fe73464711e0281f29da8234bf2fed6b27",
+      "currentRawSha256": "bc573b2a6133b07404c42f797bce43fe73464711e0281f29da8234bf2fed6b27",
+      "disposition": "UNCHANGED"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/vitest.config.ts",
+      "dispatchRawSha256": "9a4a65976b5b7a5d038f9cb412a90d417f804108cf1dd33bae4421989a863420",
+      "baseBlobSha256": "9a4a65976b5b7a5d038f9cb412a90d417f804108cf1dd33bae4421989a863420",
+      "currentRawSha256": "9a4a65976b5b7a5d038f9cb412a90d417f804108cf1dd33bae4421989a863420",
+      "disposition": "UNCHANGED"
+    }
+  ],
+  "workerEvidenceConsumed": {
+    "focusedTests": "35/35 PASS (12 new,23 existing)",
+    "originalSourceNegative": "9/12 FAIL on final test bytes",
+    "typecheck": "exit0 report; empty-log hash and tsc.exit0 observed, no rerun",
+    "lint": "exit0 report and empty-log hash observed, no rerun",
+    "finalPostProofConfirmation": "FAIL solely handoff mode; worker four-path ledger and quality PASS",
+    "commands": [
+      {
+        "id": "pre-implementation",
+        "exit": 0,
+        "result": "COMPLIANT"
+      },
+      {
+        "id": "scaffold",
+        "exit": 0,
+        "logSha256": "5176a0019cfe5bfa1a3f06eb5f96dc042cbcff5e88c37aade48fa372d0cab76a"
+      },
+      {
+        "id": "first-red-run",
+        "command": "node node_modules/vitest/vitest.mjs run 'src/app/(dashboard)/layout-agent-handoff.test.tsx' (layout unmodified)",
+        "exit": 1,
+        "result": "9 failed, 3 passed of 12",
+        "logSha256": "e91a84be7a2b39501a0b38b343798c18f07afebc97815d55c294b2cc0a8484a9",
+        "firstMeaningfulFailure": "minimize/restore case: Unable to find an element by [data-testid=\"chat-recorder\"] right after Recorder minimize + hidden check, because the unmodified shell unmounts the chat on minimize"
+      },
+      {
+        "id": "first-green-attempt",
+        "exit": 1,
+        "result": "4 failed, 8 passed after the layout fix",
+        "logSha256": "1f2dcc348dce23c213b231b1b9aacdd354f4eaac51de2d52c1460e59d6d9062c",
+        "cause": "Defect in my own test helper: history() returned an object that embedded a byId closure, so toEqual(before) compared function identity ('Compared values have no visual difference'). Source was not at fault; helper split into data snapshot plus a separate byId function."
+      },
+      {
+        "id": "second-green-run",
+        "exit": 0,
+        "result": "12 passed of 12",
+        "logSha256": "36817fe808ffca2d3263d2a3dfd9fe3d858ce21df94964efcece757047d8e47c"
+      },
+      {
+        "id": "red-run-final-test-bytes",
+        "command": "same command with layout.tsx temporarily restored to its HEAD bytes (sha 18e35af0...), then the fixed layout copied back and re-hashed equal to 25474fb5...",
+        "exit": 1,
+        "result": "9 failed, 3 passed of 12 on the final test bytes",
+        "logSha256": "5e137aa92ba371d4ee932187509518f269ec2b2132f1da2b5034c19532e7e89a",
+        "failingCases": [
+          "keeps session, draft and delivery count across minimize, restore and unrelated rerenders",
+          "does not replay or add a session under StrictMode minimize/restore",
+          "receives a new explicit handoff B in a fresh session while chat A is open",
+          "receives B when an ordinary empty chat is already open",
+          "treats two deliberate identical-text handoffs as two sessions, and restore as neither",
+          "delivers A once and keeps the session through minimize/restore after delivery",
+          "sends exactly once when minimized before the deferred timer and restored after it",
+          "replaces A with B before the timer: only B is sent, in its own session",
+          "sends one user message under StrictMode with rerender and minimize/restore"
+        ],
+        "passingControlsOnUnfixedSource": [
+          "delivers the first handoff once to its own ready session, apart from saved history",
+          "close clears the incoming prompt and body lock; ordinary reopen does not replay it",
+          "does not dispatch the queued prompt when closed before the timer fires"
+        ]
+      },
+      {
+        "id": "final-focused-suites",
+        "command": "node node_modules/vitest/vitest.mjs run 'src/app/(dashboard)/layout-agent-handoff.test.tsx' 'src/app/(dashboard)/layout.test.tsx' 'src/components/AgentChatWithHistory.test.tsx' 'src/lib/hooks/useAgentChat.test.ts'",
+        "exit": 0,
+        "result": "4 files passed, 35 tests passed (12 new + 23 existing)",
+        "logSha256": "7c4a85aec617a288428a2291b8c53adf3f8b3fe5d835104ee9f0a2feff59a931"
+      },
+      {
+        "id": "typecheck",
+        "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+        "exit": 0,
+        "result": "no output",
+        "logSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "id": "lint",
+        "command": "node node_modules/eslint/bin/eslint.js 'src/app/(dashboard)/layout.tsx' 'src/app/(dashboard)/layout-agent-handoff.test.tsx'",
+        "exit": 0,
+        "result": "no output",
+        "logSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "id": "first-return-fast-gate",
+        "exit": 1,
+        "startUtc": "2026-10-12T06:15:53Z",
+        "endUtc": "2026-10-12T06:15:59Z",
+        "logSha256": "b69a0a31fcd5cd1f683b30d3b4a530b71dfb19609cf3e18a91e029d3cba76df9",
+        "result": "FAIL: 4 items - worker-return quality gate (my provisional COMPLETE status lacked fast-gate PASS evidence), external intake routing (missing Internal source row), finding-to-governance learning (runtime lane line missing), session mode consistency (handoff Current Mode has no backticked token)"
+      },
+      {
+        "id": "fast-gate-run-2",
+        "exit": 1,
+        "startUtc": "2026-10-12T06:17:25Z",
+        "logSha256": "fdd442861ff06934e70267382b8dafdec9c699eaa9532b87ba94d4850474cb40",
+        "result": "FAIL: learning (BLOCKED return needs recurrence fields) and session mode consistency"
+      },
+      {
+        "id": "fast-gate-run-3",
+        "exit": 1,
+        "startUtc": "2026-10-12T06:17:48Z",
+        "logSha256": "4d59c4333e8dd57bd1edfad789bc21107ef4e76a8c14f6b563f3336b73067a87",
+        "result": "FAIL: only reviewer-fast item 62/70 session mode consistency"
+      },
+      {
+        "id": "fast-gate-run-4",
+        "exit": 1,
+        "startUtc": "2026-10-12T06:18:21Z",
+        "logSha256": "5b321a9465f3cd3453b9e58e794153840bcd49c559570c8f32554fe2deba93e2",
+        "result": "FAIL: session mode consistency plus a new work-order dispatch quality item caused by my own wording (a quoted checker phrase containing the words 'not found'); phrase reworded, failure preserved"
+      },
+      {
+        "id": "final-return-fast-gate",
+        "exit": 1,
+        "startUtc": "2026-10-12T06:18:39Z",
+        "endUtc": "2026-10-12T06:18:45Z",
+        "logSha256": "5ee062cdfdd397b3e1fd427e57034477a68aefb47dbea8230c6f0cfd8b7aa90a",
+        "returnSha256": "901e388a8c57f183ab718bcb5548860e8ca807828c10b041fb60774c94ef8667",
+        "result": "FAIL on the final return bytes with exactly one failing item: reviewer-fast 62/70 session mode consistency (AGENT_HANDOFF_V63_2026-09-18.md ## Current Mode has no backtick-wrapped mode token). Corpus drift, epistemic, acceptance ledger, worker-return quality gate, probe admission and git diff --check PASS. No final PASS is claimed."
+      },
+      {
+        "id": "acceptance-ledger",
+        "exit": 0,
+        "result": "COMPLIANT (standalone, also PASS inside the fast gate); reducer agrees with BLOCKED_WITH_REASON because REQ-RETURN is BLOCKED",
+        "logSha256": "4e241054fd8f3e98a904265c2db377b5dcedf77c27ab0b6eedfeb0a6994455d2"
+      },
+      {
+        "id": "git-diff-check",
+        "exit": 0,
+        "result": "no output",
+        "logSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "id": "session-mode-standalone",
+        "command": "python governance/compat/check_session_mode_consistency.py --enforce",
+        "exit": 1,
+        "logSha256": "08bf10a66f3d010859b2619e090d553071345e58d6e6f3e3f3e7b519cdffa420",
+        "result": "same single violation; git diff HEAD on AGENT_HANDOFF_V63_2026-09-18.md, CVF_SESSION_MEMORY.md and CVF_SESSION/ is empty, so it is independent of worker artifacts",
+        "rootCause": "HANDOFF_CURRENT_MODE_RE in check_session_mode_consistency.py requires '## Current Mode' followed by a backtick-wrapped token; the active handoff writes the mode unwrapped",
+        "ownerAndRepair": "session-sync steward / Local reviewer: wrap cvf_ncr_agent_handoff_worker_execution in backticks under '## Current Mode' in AGENT_HANDOFF_V63_2026-09-18.md, then rerun the fast gate; worker redispatch not needed"
+      }
+    ],
+    "logs": [
+      {
+        "path": ".cvf/runtime/ncr-agent-handoff-worker-20261012/diffcheck.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0,
+        "text": null
+      },
+      {
+        "path": ".cvf/runtime/ncr-agent-handoff-worker-20261012/eslint.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0,
+        "text": null
+      },
+      {
+        "path": ".cvf/runtime/ncr-agent-handoff-worker-20261012/fast-gate-1.log",
+        "sha256": "b69a0a31fcd5cd1f683b30d3b4a530b71dfb19609cf3e18a91e029d3cba76df9",
+        "bytes": 14250,
+        "text": null
+      },
+      {
+        "path": ".cvf/runtime/ncr-agent-handoff-worker-20261012/fast-gate-2.log",
+        "sha256": "fdd442861ff06934e70267382b8dafdec9c699eaa9532b87ba94d4850474cb40",
+        "bytes": 13285,
+        "text": null
+      },
+      {
+        "path": ".cvf/runtime/ncr-agent-handoff-worker-20261012/fast-gate-3.log",
+        "sha256": "4d59c4333e8dd57bd1edfad789bc21107ef4e76a8c14f6b563f3336b73067a87",
+        "bytes": 12010,
+        "text": null
+      },
+      {
+        "path": ".cvf/runtime/ncr-agent-handoff-worker-20261012/fast-gate-4-final-bytes.log",
+        "sha256": "5b321a9465f3cd3453b9e58e794153840bcd49c559570c8f32554fe2deba93e2",
+        "bytes": 12742,
+        "text": null
+      },
+      {
+        "path": ".cvf/runtime/ncr-agent-handoff-worker-20261012/fast-gate-5-final-bytes.log",
+        "sha256": "5ee062cdfdd397b3e1fd427e57034477a68aefb47dbea8230c6f0cfd8b7aa90a",
+        "bytes": 12010,
+        "text": null
+      },
+      {
+        "path": ".cvf/runtime/ncr-agent-handoff-worker-20261012/fast-gate-6-post-proof-edit.log",
+        "sha256": "1381af9cd31a5958a0a1c04739152a46f2e33ff0a2b4f24cf44ebe10b27e6a93",
+        "bytes": 12010,
+        "text": "=== CVF Worker Return Fast Gate ===\nPurpose: fail early on worker-return defects before full closure gates.\n\n=== corpus scan registry aggregate drift ===\npython governance/compat/generate_corpus_scan_registry.py --check\nGC-051 registry aggregate matches per-entry sources.\nPASS: corpus scan registry aggregate drift (0.07s)\n\n=== epistemic process packet ===\npython governance/compat/check_epistemic_process_packet.py --enforce\n=== CVF Epistemic Process Packet Gate (FPC-T3-C01) ===\nStandard: docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md\nChanged paths observed: 4\nEvidence-heavy packets checked: 1\nViolations: 0\n\nCOMPLIANT - epistemic process packet evidence structure is aligned.\nPASS: epistemic process packet (0.17s)\n\n=== work-order acceptance ledger ===\npython governance/compat/check_work_order_acceptance_ledger.py --work-order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_AGENT_HANDOFF_2026-10-12.md --return docs/reviews/CVF_NCR_AGENT_HANDOFF_WORKER_RETURN_2026-10-12.md --enforce\n=== CVF Work Order Acceptance Ledger Gate ===\nCOMPLIANT\nPASS: work-order acceptance ledger (0.15s)\n\n=== worker-return quality gate ===\npython governance/compat/check_worker_return_quality_gate.py --enforce --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_AGENT_HANDOFF_2026-10-12.md\n=== CVF Worker Return Quality Gate ===\nStandard: docs/reference/work_order_authoring/CVF_WORKER_RETURN_QUALITY_GATE_STANDARD.md\nActive work order: docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_AGENT_HANDOFF_2026-10-12.md\nEligible worker-return artifacts checked: 1\nViolations: 0\nCOMPLIANT - worker-return packets are review-ready.\nPASS: worker-return quality gate (0.28s)\n\n=== independent review probe admission ===\npython governance/compat/check_independent_review_probe_admission.py --enforce --changed-lane-only --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_AGENT_HANDOFF_2026-10-12.md\n=== CVF Independent Review Probe Admission Gate ===\nApplicable artifacts checked: 1\nPASS: all applicable artifacts satisfy the independent-probe admission contract.\nPASS: independent review probe admission (0.79s)\n\n=== reviewer-fast governance gate ===\npython governance/compat/run_local_governance_hook_chain.py --hook reviewer-fast\n[CVF hook] Parallel preflight enabled: 70 checks, max_workers=6.\n[CVF hook] START [1/70] closure packaging preflight\n[CVF hook] START [2/70] agent packet authority and encoding\n[CVF hook] START [3/70] core guard self-protection\n[CVF hook] START [4/70] high-risk local transaction proof\n[CVF hook] START [5/70] semantic convergence and escalation control\n[CVF hook] START [6/70] preapproval feasibility\n[CVF hook] START [7/70] subagent provider execution authority\n[CVF hook] PASS [1/70] high-risk local transaction proof (0.31s)\n[CVF hook] START [8/70] task-proportional governance shadow route\n[CVF hook] PASS [2/70] core guard self-protection (0.35s)\n[CVF hook] START [9/70] docs governance compatibility\n[CVF hook] PASS [3/70] closure packaging preflight (0.35s)\n[CVF hook] START [10/70] markdown structural completeness\n[CVF hook] PASS [4/70] agent packet authority and encoding (0.43s)\n[CVF hook] START [11/70] governed artifact checker read-ahead\n[CVF hook] PASS [5/70] preapproval feasibility (0.59s)\n[CVF hook] START [12/70] work-order dispatch quality\n[CVF hook] PASS [6/70] semantic convergence and escalation control (0.65s)\n[CVF hook] START [13/70] worker experience retrospective\n[CVF hook] PASS [7/70] task-proportional governance shadow route (0.45s)\n[CVF hook] START [14/70] review cost control\n[CVF hook] PASS [8/70] docs governance compatibility (0.46s)\n[CVF hook] START [15/70] gate-to-role closeability\n[CVF hook] PASS [9/70] governed artifact checker read-ahead (0.23s)\n[CVF hook] START [16/70] worker-return quality gate\n[CVF hook] PASS [10/70] subagent provider execution authority (0.53s)\n[CVF hook] START [17/70] dispatch prompt envelope\n[CVF hook] PASS [11/70] markdown structural completeness (0.45s)\n[CVF hook] START [18/70] dispatch packet lifecycle hygiene\n[CVF hook] PASS [12/70] worker experience retrospective (0.27s)\n[CVF hook] START [19/70] source intake decision packet preflight\n[CVF hook] PASS [13/70] gate-to-role closeability (0.38s)\n[CVF hook] START [20/70] PLCS companion routing block\n[CVF hook] PASS [14/70] worker-return quality gate (0.37s)\n[CVF hook] START [21/70] agent operation trace integrity\n[CVF hook] PASS [15/70] review cost control (0.40s)\n[CVF hook] START [22/70] agent handoff boundary\n[CVF hook] PASS [16/70] dispatch prompt envelope (0.35s)\n[CVF hook] START [23/70] agent workspace design boundary\n[CVF hook] PASS [17/70] dispatch packet lifecycle hygiene (0.21s)\n[CVF hook] START [24/70] agent workspace state\n[CVF hook] PASS [18/70] work-order dispatch quality (0.65s)\n[CVF hook] START [25/70] agent workspace skeleton\n[CVF hook] PASS [19/70] source intake decision packet preflight (0.22s)\n[CVF hook] START [26/70] agent workspace runtime boundary\n[CVF hook] PASS [20/70] agent workspace state (0.18s)\n[CVF hook] START [27/70] machine closure package\n[CVF hook] PASS [21/70] PLCS companion routing block (0.33s)\n[CVF hook] START [28/70] roadmap closure freshness\n[CVF hook] PASS [22/70] agent workspace skeleton (0.16s)\n[CVF hook] START [29/70] finding-to-governance learning quality\n[CVF hook] PASS [23/70] agent operation trace integrity (0.38s)\n[CVF hook] START [30/70] external-agent absorption table\n[CVF hook] PASS [24/70] agent workspace runtime boundary (0.12s)\n[CVF hook] START [31/70] external knowledge intake routing\n[CVF hook] PASS [25/70] agent handoff boundary (0.38s)\n[CVF hook] START [32/70] external absorption core\n[CVF hook] PASS [26/70] agent workspace design boundary (0.35s)\n[CVF hook] START [33/70] external absorption value conversion\n[CVF hook] PASS [27/70] machine closure package (0.35s)\n[CVF hook] START [34/70] mixed-origin derived synthesis absorption\n[CVF hook] PASS [28/70] external-agent absorption table (0.30s)\n[CVF hook] START [35/70] external absorption overlap discipline\n[CVF hook] PASS [29/70] roadmap closure freshness (0.35s)\n[CVF hook] START [36/70] source mirror migration\n[CVF hook] PASS [30/70] external knowledge intake routing (0.34s)\n[CVF hook] START [37/70] Delta mutating profile boundary\n[CVF hook] PASS [31/70] external absorption core (0.38s)\n[CVF hook] START [38/70] Delta execution claim boundary\n[CVF hook] PASS [32/70] mixed-origin derived synthesis absorption (0.35s)\n[CVF hook] START [39/70] foundation storage layout\n[CVF hook] PASS [33/70] external absorption value conversion (0.37s)\n[CVF hook] START [40/70] public export disposition quality\n[CVF hook] PASS [34/70] external absorption overlap discipline (0.35s)\n[CVF hook] START [41/70] rescan intelligence hardening\n[CVF hook] PASS [35/70] source mirror migration (0.35s)\n[CVF hook] START [42/70] index classification\n[CVF hook] PASS [36/70] Delta mutating profile boundary (0.31s)\n[CVF hook] START [43/70] memory access claim\n[CVF hook] PASS [37/70] Delta execution claim boundary (0.33s)\n[CVF hook] START [44/70] external provider skill usage trace\n[CVF hook] PASS [38/70] rescan intelligence hardening (0.29s)\n[CVF hook] START [45/70] CVF skill usage receipt trace\n[CVF hook] PASS [39/70] foundation storage layout (0.36s)\n[CVF hook] START [46/70] skill truth packets\n[CVF hook] PASS [40/70] finding-to-governance learning quality (1.07s)\n[CVF hook] START [47/70] package skill productionization pipeline\n[CVF hook] PASS [41/70] public export disposition quality (0.40s)\n[CVF hook] START [48/70] skill control plane inventory\n[CVF hook] PASS [42/70] index classification (0.38s)\n[CVF hook] START [49/70] CVF Web skill control plane projection\n[CVF hook] PASS [43/70] external provider skill usage trace (0.14s)\n[CVF hook] START [50/70] truth foundation claim guard\n[CVF hook] PASS [44/70] CVF skill usage receipt trace (0.14s)\n[CVF hook] START [51/70] raw memory release invariant\n[CVF hook] PASS [45/70] skill control plane inventory (0.13s)\n[CVF hook] START [52/70] DICE machine-candidate coverage\n[CVF hook] PASS [46/70] skill truth packets (0.18s)\n[CVF hook] START [53/70] FPC system-chain acceptance ledger\n[CVF hook] PASS [47/70] CVF Web skill control plane projection (0.12s)\n[CVF hook] START [54/70] FPC parked reopen inventory\n[CVF hook] PASS [48/70] memory access claim (0.36s)\n[CVF hook] START [55/70] KIOD runtime candidate reopen inventory\n[CVF hook] PASS [49/70] truth foundation claim guard (0.26s)\n[CVF hook] START [56/70] corpus scan registry\n[CVF hook] PASS [50/70] FPC system-chain acceptance ledger (0.24s)\n[CVF hook] START [57/70] ASSF certified metadata admission\n[CVF hook] PASS [51/70] package skill productionization pipeline (0.42s)\n[CVF hook] START [58/70] ASSF package candidate anatomy\n[CVF hook] PASS [52/70] FPC parked reopen inventory (0.23s)\n[CVF hook] START [59/70] ASSF external-agent metadata readout\n[CVF hook] PASS [53/70] raw memory release invariant (0.37s)\n[CVF hook] START [60/70] changed corpus registry coverage\n[CVF hook] PASS [54/70] ASSF certified metadata admission (0.13s)\n[CVF hook] START [61/70] active session state compatibility\n[CVF hook] PASS [55/70] DICE machine-candidate coverage (0.40s)\n[CVF hook] START [62/70] session mode consistency\n[CVF hook] PASS [56/70] ASSF package candidate anatomy (0.13s)\n[CVF hook] START [63/70] next-move freshness\n[CVF hook] PASS [57/70] ASSF external-agent metadata readout (0.13s)\n[CVF hook] START [64/70] system chain map freshness\n[CVF hook] PASS [58/70] corpus scan registry (0.24s)\n[CVF hook] START [65/70] as-built system catalog drift\n[CVF hook] PASS [59/70] KIOD runtime candidate reopen inventory (0.32s)\n[CVF hook] START [66/70] memory consolidation artifact quality\n[CVF hook] FAIL [60/70] session mode consistency (0.14s)\n=== CVF Session Mode-Consistency Checker ===\n  front-door Current mode marker: cvf_ncr_agent_handoff_worker_execution  [CVF_SESSION_MEMORY.md Current mode marker:]\n  front-door Current mode: cvf_ncr_agent_handoff_worker_execution  [CVF_SESSION_MEMORY.md Current mode:]\n  front-door Next Allowed Move Mode: cvf_ncr_agent_handoff_worker_execution  [CVF_SESSION_MEMORY.md ## Next Allowed Move Mode:]\n  handoff startup acknowledgment: cvf_ncr_agent_handoff_worker_execution  [AGENT_HANDOFF_V63_2026-09-18.md startup current mode=]\n  handoff Current Mode: (not found)  [AGENT_HANDOFF_V63_2026-09-18.md ## Current Mode]\n  core currentMode: cvf_ncr_agent_handoff_worker_execution  [CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json currentMode]\n\nViolations: 1\n  - mode marker not found on surface 'handoff Current Mode' (AGENT_HANDOFF_V63_2026-09-18.md ## Current Mode)\n\nVIOLATION - session mode marker is inconsistent or incomplete.\n[CVF hook] START [67/70] epistemic process packet\n[CVF hook] PASS [61/70] system chain map freshness (0.13s)\n[CVF hook] START [68/70] equivalence claim evidence\n[CVF hook] PASS [62/70] changed corpus registry coverage (0.33s)\n[CVF hook] START [69/70] dispatch scaffold provenance\n[CVF hook] PASS [63/70] next-move freshness (0.32s)\n[CVF hook] START [70/70] agent instruction carrier compaction\n[CVF hook] PASS [64/70] memory consolidation artifact quality (0.24s)\n[CVF hook] PASS [65/70] as-built system catalog drift (0.38s)\n[CVF hook] PASS [66/70] equivalence claim evidence (0.27s)\n[CVF hook] PASS [67/70] agent instruction carrier compaction (0.16s)\n[CVF hook] PASS [68/70] epistemic process packet (0.40s)\n[CVF hook] PASS [69/70] dispatch scaffold provenance (0.23s)\n[CVF hook] PASS [70/70] active session state compatibility (0.67s)\n[CVF hook] Parallel preflight failures:\n  - [62/70] session mode consistency exited 1\nFAIL: reviewer-fast governance gate exited 1 (3.98s)\n\n=== git diff whitespace check ===\ngit diff --check\nPASS: git diff whitespace check (0.05s)\n\nVIOLATION: worker-return fast gate blocked by 1 failure(s) in 5.48s.\n"
+      },
+      {
+        "path": ".cvf/runtime/ncr-agent-handoff-worker-20261012/final-focused.log",
+        "sha256": "7c4a85aec617a288428a2291b8c53adf3f8b3fe5d835104ee9f0a2feff59a931",
+        "bytes": 293,
+        "text": "\n RUN  v4.1.8 D:/UNG DUNG AI/TOOL AI 2026/Controlled-Vibe-Framework-CVF/EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web\n\n\n Test Files  4 passed (4)\n      Tests  35 passed (35)\n   Start at  13:10:45\n   Duration  13.07s (transform 12.80s, setup 33.59s, import 2.68s, tests 2.29s, environment 4.54s)\n\n"
+      },
+      {
+        "path": ".cvf/runtime/ncr-agent-handoff-worker-20261012/green-run-1.log",
+        "sha256": "1f2dcc348dce23c213b231b1b9aacdd354f4eaac51de2d52c1460e59d6d9062c",
+        "bytes": 5028,
+        "text": null
+      },
+      {
+        "path": ".cvf/runtime/ncr-agent-handoff-worker-20261012/green-run-2.log",
+        "sha256": "36817fe808ffca2d3263d2a3dfd9fe3d858ce21df94964efcece757047d8e47c",
+        "bytes": 291,
+        "text": null
+      },
+      {
+        "path": ".cvf/runtime/ncr-agent-handoff-worker-20261012/ledger.log",
+        "sha256": "4e241054fd8f3e98a904265c2db377b5dcedf77c27ab0b6eedfeb0a6994455d2",
+        "bytes": 58,
+        "text": "=== CVF Work Order Acceptance Ledger Gate ===\nCOMPLIANT\n"
+      },
+      {
+        "path": ".cvf/runtime/ncr-agent-handoff-worker-20261012/red-run-final-bytes.log",
+        "sha256": "5e137aa92ba371d4ee932187509518f269ec2b2132f1da2b5034c19532e7e89a",
+        "bytes": 15484,
+        "text": null
+      },
+      {
+        "path": ".cvf/runtime/ncr-agent-handoff-worker-20261012/red-run.log",
+        "sha256": "e91a84be7a2b39501a0b38b343798c18f07afebc97815d55c294b2cc0a8484a9",
+        "bytes": 15482,
+        "text": null
+      },
+      {
+        "path": ".cvf/runtime/ncr-agent-handoff-worker-20261012/scaffold.log",
+        "sha256": "5176a0019cfe5bfa1a3f06eb5f96dc042cbcff5e88c37aade48fa372d0cab76a",
+        "bytes": 238,
+        "text": null
+      },
+      {
+        "path": ".cvf/runtime/ncr-agent-handoff-worker-20261012/session-mode-standalone.log",
+        "sha256": "08bf10a66f3d010859b2619e090d553071345e58d6e6f3e3f3e7b519cdffa420",
+        "bytes": 938,
+        "text": null
+      },
+      {
+        "path": ".cvf/runtime/ncr-agent-handoff-worker-20261012/tsc.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0,
+        "text": null
+      }
+    ]
+  },
+  "localProbe": {
+    "command": "node node_modules/vitest/vitest.mjs run 'src/app/(dashboard)/local-agent-handoff-probe.test.tsx'",
+    "result": "PASS 2/2",
+    "source": "// Local source-inspection witness only; synthetic Chat leaf, no AI/governance claim.\nimport { useEffect } from 'react';\nimport { act, cleanup, fireEvent, render, screen } from '@testing-library/react';\nimport { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';\nimport DashboardLayout from './layout';\nconst { delivered } = vi.hoisted(() => ({ delivered: vi.fn() }));\nvi.mock('next/navigation', () => ({ usePathname: () => '/home', useRouter: () => ({ push: vi.fn(), replace: vi.fn() }), useSearchParams: () => ({ get: () => null, toString: () => '' }) }));\nvi.mock('@/lib/hooks/useAuth', () => ({ useAuth: () => ({ userRole: 'admin', userName: 'Fixture', permissions: {}, handleLogout: vi.fn(), impersonation: null, endImpersonation: vi.fn() }) }));\nvi.mock('@/lib/hooks/useModals', () => ({ useModals: () => ({ closeAllModals: vi.fn(), openModal: vi.fn(), closeModal: vi.fn() }) }));\nvi.mock('@/lib/store', () => ({ useExecutionStore: () => ({ executions: [] }) }));\nvi.mock('@/components/Settings', () => ({ useSettings: () => ({ settings: { providers: {alibaba:{apiKey:'local-synthetic-key',selectedModel:'qwen-plus'}}, preferences: { defaultProvider: 'alibaba' } }, updateProvider: vi.fn(), updatePreferences: vi.fn() }) }));\nvi.mock('@/lib/i18n', () => ({ useLanguage: () => ({ language: 'en', t: (s: string) => s }) }));\nvi.mock('@/components/CompactHeader', () => ({ default: () => null }));\nvi.mock('@/components', async () => ({\n    AgentChatWithHistory: (await import('@/components/AgentChatWithHistory')).AgentChatWithHistory,\n    Sidebar: () => null, OnboardingWizard: () => null, QuickStart: () => null,\n    UserContextForm: () => null, SettingsPage: () => null, AIUsagePanel: () => null,\n    ApiKeyWizard: () => null, MultiAgentPanel: () => null, ToolsPage: () => null,\n}));\n\nvi.mock('@/lib/ai-providers', () => ({ createAIProvider: () => ({ chat: delivered }) }));\nvi.mock('@/lib/hooks/useModelPricing', () => ({ useModelPricing: () => ({ pricing: {}, status: 'ready', updatedAt: null }) }));\nvi.mock('@/lib/quota-manager', async original => ({\n    ...await original<typeof import('@/lib/quota-manager')>(),\n    useQuotaManager: () => ({ trackUsage: vi.fn(), checkBudget: () => ({ ok: true, remaining: { daily: Infinity, monthly: Infinity } }) }),\n}));\nconst handoff = (prompt: string) => act(() => { window.dispatchEvent(new CustomEvent('cvf:openAgent', { detail: { prompt } })); });\nconst tick = (ms: number) => act(async () => { await vi.advanceTimersByTimeAsync(ms); });\nconst history = () => JSON.parse(localStorage.getItem('cvf_chat_history')!);\nconst contents = (id: string) => history().sessions.find((s: {id: string}) => s.id === id).messages.map((m: {content: string}) => m.content);\nconst A = 'LOCAL_REVIEW_ALPHA'; const B = 'LOCAL_REVIEW_BETA';\nconst saved = {id:'local-unrelated-C',title:'Untouched C',provider:'alibaba',createdAt:'2026-01-01T00:00:00.000Z',updatedAt:'2026-01-01T00:00:00.000Z',metadata:{messageCount:2},messages:[{id:'C1',role:'user',content:'UNRELATED_C',timestamp:'2026-01-01T00:00:00.000Z'},{id:'C2',role:'assistant',content:'C_REPLY',timestamp:'2026-01-01T00:00:00.000Z'}]};\ndescribe('Local distinct actual chat receiving challenge', () => {\n beforeEach(() => {\n  vi.useFakeTimers(); localStorage.clear(); document.body.style.overflow=''; delivered.mockReset();\n  delivered.mockImplementation(async (m: Array<{content:string}>) => ({text:'LOCAL_REPLY:'+m[m.length-1].content,usage:{totalTokens:2}}));\n  localStorage.setItem('cvf_chat_history',JSON.stringify({sessions:[saved],activeSessionId:saved.id}));\n });\n afterEach(() => { cleanup(); vi.useRealTimers(); localStorage.clear(); document.body.style.overflow=''; });\n it('retains a real unsent draft and whole history across hide/restore, then accepts repeated explicit B separately', async () => {\n  const view=render(<DashboardLayout><div>Review</div></DashboardLayout>);\n  handoff(A); await tick(700); const aId=history().activeSessionId;\n  expect(contents(aId).slice(1)).toEqual([A,'LOCAL_REPLY:'+A]);\n  fireEvent.change(screen.getByPlaceholderText('Type a message...'),{target:{value:'LOCAL_UNSENT_DRAFT'}});\n  const before=history(); fireEvent.click(screen.getByRole('button',{name:'Minimize'}));\n  expect(screen.getByPlaceholderText('Type a message...').closest('[hidden]')).not.toBeNull();\n  view.rerender(<DashboardLayout><div>Changed unrelated child</div></DashboardLayout>);\n  await tick(900); fireEvent.click(screen.getByText('agent.restoreHint'));\n  expect((screen.getByPlaceholderText('Type a message...') as HTMLTextAreaElement).value).toBe('LOCAL_UNSENT_DRAFT');\n  expect(history()).toEqual(before); expect(delivered).toHaveBeenCalledTimes(1);\n  handoff(B); await tick(700); const bId=history().activeSessionId;\n  expect(bId).not.toBe(aId); expect(contents(aId).slice(1)).toEqual([A,'LOCAL_REPLY:'+A]);\n  expect(contents(bId).slice(1)).toEqual([B,'LOCAL_REPLY:'+B]);\n  handoff(B); await tick(700); const secondB=history().activeSessionId;\n  expect(secondB).not.toBe(bId); expect(contents(secondB).slice(1)).toEqual([B,'LOCAL_REPLY:'+B]);\n  expect(contents(saved.id)).toEqual(['UNRELATED_C','C_REPLY']); expect(delivered).toHaveBeenCalledTimes(3);\n });\n it('replaces a hidden queued A by B, then closes queued C without a send or history contamination', async () => {\n  render(<DashboardLayout><div>Review timer</div></DashboardLayout>);\n  handoff(A); const aId=history().activeSessionId;\n  fireEvent.click(screen.getByRole('button',{name:'Minimize'})); await tick(150);\n  handoff(B); const bId=history().activeSessionId; await tick(700);\n  expect(bId).not.toBe(aId); expect(contents(aId)).toEqual([]);\n  expect(contents(bId).slice(1)).toEqual([B,'LOCAL_REPLY:'+B]);\n  expect(delivered).toHaveBeenCalledTimes(1);\n  handoff('LOCAL_QUEUED_C'); await tick(100);\n  fireEvent.click(screen.getByRole('button',{name:'Close chat'})); await tick(900);\n  expect(delivered).toHaveBeenCalledTimes(1); expect(document.body.style.overflow).toBe('');\n  expect(contents(saved.id)).toEqual(['UNRELATED_C','C_REPLY']);\n  expect(history().sessions.every((row: {messages: Array<{content:string}>}) => !row.messages.some(m=>m.content==='LOCAL_QUEUED_C'))).toBe(true);\n });\n});\n",
+    "sourceSha256": "366cda099b090dc294cfcaf1451a14e2f4184d3b8ac62999d06b9cef2f7ce254",
+    "log": "\n RUN  v4.1.8 D:/UNG DUNG AI/TOOL AI 2026/Controlled-Vibe-Framework-CVF/EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web\n\n\n Test Files  1 passed (1)\n      Tests  2 passed (2)\n   Start at  13:55:58\n   Duration  16.36s (transform 5.34s, setup 11.16s, import 2.08s, tests 1.17s, environment 1.54s)\n\n",
+    "logSha256": "cbf7bf486ae6a01cb5e301fa745be9e327d12b4669c6a5514757f5c2ef90897b",
+    "oracleSeparation": "Local reauthored earlier Local witness with different composite event sequences, ambientC and real unsent draft; no worker test imports/helpers; actual DashboardLayout/AgentChatWithHistory/AgentChat/useAgentChat/history, unrelated chrome/auth/settings/navigation stubbed; in-process adapter only.",
+    "temporarySourceRemoved": true
+  },
+  "localPreparationFailures": [
+    {
+      "log": "C:\\Users\\DELL\\AppData\\Local\\Temp\\ncr-agent-handoff-local-probe-20261012.log",
+      "sha256": "305020198a0bb146ede6129c537ef93ea4fe9fb2d4177b371e02d53ac9dbf7e4",
+      "text": "\n RUN  v4.1.8 D:/UNG DUNG AI/TOOL AI 2026/Controlled-Vibe-Framework-CVF/EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web\n\nstderr | src/app/(dashboard)/local-agent-handoff-probe.test.tsx > Local distinct actual chat receiving challenge > retains a real unsent draft and whole history across hide/restore, then accepts repeated explicit B separately\nEncountered two children with the same key, `msg_1791788018949`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted \u2014 the behavior is unsupported and could change in a future version.\nEncountered two children with the same key, `msg_1791788018949`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted \u2014 the behavior is unsupported and could change in a future version.\n\nstderr | src/app/(dashboard)/local-agent-handoff-probe.test.tsx > Local distinct actual chat receiving challenge > retains a real unsent draft and whole history across hide/restore, then accepts repeated explicit B separately\nEncountered two children with the same key, `msg_1791788018949`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted \u2014 the behavior is unsupported and could change in a future version.\nEncountered two children with the same key, `msg_1791788018949`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted \u2014 the behavior is unsupported and could change in a future version.\nEncountered two children with the same key, `msg_1791788018949`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted \u2014 the behavior is unsupported and could change in a future version.\n\n \u276f src/app/(dashboard)/local-agent-handoff-probe.test.tsx (2 tests | 1 failed) 1111ms\n     \u00d7 retains a real unsent draft and whole history across hide/restore, then accepts repeated explicit B separately 767ms\n\n\u23af\u23af\u23af\u23af\u23af\u23af\u23af Failed Tests 1 \u23af\u23af\u23af\u23af\u23af\u23af\u23af\n\n FAIL  src/app/(dashboard)/local-agent-handoff-probe.test.tsx > Local distinct actual chat receiving challenge > retains a real unsent draft and whole history across hide/restore, then accepts repeated explicit B separately\nTestingLibraryElementError: Found multiple elements with the text: CVF Agent\n\nHere are the matching elements:\n\nIgnored nodes: comments, script, style\n\u001b[36m<h3\u001b[39m\n  \u001b[33mclass\u001b[39m=\u001b[32m\"font-bold text-white\"\u001b[39m\n\u001b[36m>\u001b[39m\n  \u001b[0mCVF Agent\u001b[0m\n\u001b[36m</h3>\u001b[39m\n\nIgnored nodes: comments, script, style\n\u001b[36m<span\u001b[39m\n  \u001b[33mclass\u001b[39m=\u001b[32m\"font-medium\"\u001b[39m\n\u001b[36m>\u001b[39m\n  \u001b[0mCVF Agent\u001b[0m\n\u001b[36m</span>\u001b[39m\n\n(If this is intentional, then use the `*AllBy*` variant of the query (like `queryAllByText`, `getAllByText`, or `findAllByText`)).\n\nIgnored nodes: comments, script, style\n\u001b[36m<body\u001b[39m\n  \u001b[33mstyle\u001b[39m=\u001b[32m\"overflow: hidden;\"\u001b[39m\n\u001b[36m>\u001b[39m\n  \u001b[36m<div>\u001b[39m\n    \u001b[36m<div\u001b[39m\n      \u001b[33mclass\u001b[39m=\u001b[32m\"min-h-screen bg-gray-50 dark:bg-gray-900\"\u001b[39m\n    \u001b[36m>\u001b[39m\n      \u001b[36m<main\u001b[39m\n        \u001b[33mclass\u001b[39m=\u001b[32m\"md:ml-[220px] min-h-screen\"\u001b[39m\n      \u001b[36m>\u001b[39m\n        \u001b[36m<div>\u001b[39m\n          \u001b[0mChanged unrelated child\u001b[0m\n        \u001b[36m</div>\u001b[39m\n        \u001b[36m<footer\u001b[39m\n          \u001b[33mclass\u001b[39m=\u001b[32m\"mt-16 py-8 border-t border-gray-200 dark:border-gray-800\"\u001b[39m\n        \u001b[36m>\u001b[39m\n          \u001b[36m<div\u001b[39m\n            \u001b[33mclass\u001b[39m=\u001b[32m\"max-w-6xl mx-auto px-4 text-center text-sm text-gray-500\"\u001b[39m\n          \u001b[36m>\u001b[39m\n            \u001b[36m<div\u001b[39m\n              \u001b[33mclass\u001b[39m=\u001b[32m\"space-y-1\"\u001b[39m\n            \u001b[36m>\u001b[39m\n              \u001b[36m<div>\u001b[39m\n                \u001b[0mfooter.tagline\u001b[0m\n              \u001b[36m</div>\u001b[39m\n              \u001b[36m<div\u001b[39m\n                \u001b[33mclass\u001b[39m=\u001b[32m\"text-xs text-gray-400\"\u001b[39m\n              \u001b[36m>\u001b[39m\n                \u001b[0mfooter.author\u001b[0m\n              \u001b[36m</div>\u001b[39m\n              \u001b[36m<div\u001b[39m\n                \u001b[33mclass\u001b[39m=\u001b[32m\"flex items-center justify-center gap-1.5 mt-2 text-xs text-emerald-600 dark:text-emerald-400\"\u001b[39m\n              \u001b[36m>\u001b[39m\n                \u001b[36m<span>\u001b[39m\n                  \u001b[0m\ud83d\udee1\ufe0f\u001b[0m\n                \u001b[36m</span>\u001b[39m\n                \u001b[36m<span>\u001b[39m\n                  \u001b[0msafety.badge\u001b[0m\n                \u001b[36m</span>\u001b[39m\n              \u001b[36m</div>\u001b[39m\n            \u001b[36m</div>\u001b[39m\n          \u001b[36m</div>\u001b[39m\n        \u001b[36m</footer>\u001b[39m\n      \u001b[36m</main>\u001b[39m\n      \u001b[36m<div\u001b[39m\n        \u001b[33mclass\u001b[39m=\u001b[32m\"hidden\"\u001b[39m\n        \u001b[33mhidden\u001b[39m=\u001b[32m\"\"\u001b[39m\n      \u001b[36m>\u001b[39m\n        \u001b[36m<div\u001b[39m\n          \u001b[33mclass\u001b[39m=\u001b[32m\"w-full h-full md:h-[85vh] md:max-w-5xl rounded-none md:rounded-xl overflow-hidden shadow-2xl\"\u001b[39m\n        \u001b[36m>\u001b[39m\n          \u001b[36m<div\u001b[39m\n            \u001b[33mclass\u001b[39m=\u001b[32m\"flex bg-white dark:bg-[#0d0f1a] rounded-xl overflow-hidden transition-all duration-300\n                        h-full\"\u001b[39m\n          \u001b[36m>\u001b[39m\n            \u001b[36m<button\u001b[39m\n              \u001b[33mclass\u001b[39m=\u001b[32m\"md:hidden absolute top-4 left-4 z-10 p-2 bg-gray-100 dark:bg-white/[0.07]\n                          rounded-lg hover:bg-gray-200 dark:hover:bg-white/[0.07] transition-colors\"\u001b[39m\n            \u001b[36m>\u001b[39m\n              \u001b[0m\u25c0\ufe0f\u001b[0m\n            \u001b[36m</button>\u001b[39m\n            \u001b[36m<div\u001b[39m\n              \u001b[33mclass\u001b[39m=\u001b[32m\"block md:block \n                            transition-all duration-300 border-r border-gray-200 dark:border-white/[0.07]\"\u001b[39m\n            \u001b[36m>\u001b[39m\n              \u001b[36m<div\u001b[39m\n                \u001b[33mclass\u001b[39m=\u001b[32m\"w-64 bg-gray-50 dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 flex flex-col h-full\"\u001b[39m\n              \u001b[36m>\u001b[39m\n                \u001b[36m<div\u001b[39m\n                  \u001b[33mclass\u001b[39m=\u001b[32m\"p-4 border-b border-gray-200 dark:border-gray-700\"\u001b[39m\n                \u001b[36m>\u001b[39m\n                  \u001b[36m<button\u001b[39m\n                    \u001b[33mclass\u001b[39m=\u001b[32m\"w-full py-2 px-4 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-colors flex items-center justify-center gap-2\"\u001b[39m\n                  \u001b[36m>\u001b[39m\n                    \u001b[36m<span>\u001b[39m\n                      \u001b[0m\u2795\u001b[0m\n                    \u001b[36m</span>\u001b[39m\n                    \u001b[0m New Chat\u001b[0m\n                  \u001b[36m</button>\u001b[39m\n                \u001b[36m</div>\u001b[39m\n                \u001b[36m<div\u001b[39m\n                  \u001b[33mclass\u001b[39m=\u001b[32m\"flex-1 overflow-y-auto\"\u001b[39m\n                \u001b[36m>\u001b[39m\n                  \u001b[36m<div\u001b[39m\n                    \u001b[33mclass\u001b[39m=\u001b[32m\"divide-y divide-gray-200 dark:divide-gray-700\"\u001b[39m\n                  \u001b[36m>\u001b[39m\n                    \u001b[36m<div\u001b[39m\n                      \u001b[33mclass\u001b[39m=\u001b[32m\"p-3 hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer transition-colors group \"\u001b[39m\n                    \u001b[36m>\u001b[39m\n                      \u001b[36m<div\u001b[39m\n                        \u001b[33mclass\u001b[39m=\u001b[32m\"flex items-start justify-between gap-2\"\u001b[39m\n                      \u001b[36m>\u001b[39m\n                        \u001b[36m<div\u001b[39m\n                          \u001b[33mclass\u001b[39m=\u001b[32m\"flex-1 min-w-0\"\u001b[39m\n                        \u001b[36m>\u001b[39m\n                          \u001b[36m<div\u001b[39m\n                            \u001b[33mclass\u001b[39m=\u001b[32m\"flex items-center gap-2\"\u001b[39m\n                          \u001b[36m>\u001b[39m\n                            \u001b[36m<span\u001b[39m\n                              \u001b[33mclass\u001b[39m=\u001b[32m\"text-sm\"\u001b[39m\n                            \u001b[36m>\u001b[39m\n                              \u001b[0m\ud83e\udded\u001b[0m\n                            \u001b[36m</span>\u001b[39m\n                            \u001b[36m<span\u001b[39m\n                              \u001b[33mclass\u001b[39m=\u001b[32m\"font-medium text-sm text-gray-900 dark:text-white truncate\"\u001b[39m\n                            \u001b[36m>\u001b[39m\n                              \u001b[0mUntouched C\u001b[0m\n                            \u001b[36m</span>\u001b[39m\n                          \u001b[36m</div>\u001b[39m\n                          \u001b[36m<div\u001b[39m\n                            \u001b[33mclass\u001b[39m=\u001b[32m\"text-xs text-gray-500 mt-1\"\u001b[39m\n                          \u001b[36m>\u001b[39m\n                            \u001b[0m1/1/2026\u001b[0m\n                            \u001b[0m \u00b7 \u001b[0m\n                            \u001b[0m2\u001b[0m\n                            \u001b[0m msgs\u001b[0m\n                          \u001b[36m</div>\u001b[39m\n                        \u001b[36m</div>\u001b[39m\n                        \u001b[36m<button\u001b[39m\n                          \u001b[33mclass\u001b[39m=\u001b[32m\"opacity-0 group-hover:opacity-100 p-1 text-red-500 hover:bg-red-100 dark:hover:bg-red-900/30 rounded transition-all\"\u001b[39m\n                          \u001b[33mtitle\u001b[39m=\u001b[32m\"Delete\"\u001b[39m\n                        \u001b[36m>\u001b[39m\n                          \u001b[0m\ud83d\uddd1\ufe0f\u001b[0m\n                        \u001b[36m</button>\u001b[39m\n                      \u001b[36m</div>\u001b[39m\n                    \u001b[36m</div>\u001b[39m\n                  \u001b[36m</div>\u001b[39m\n                \u001b[36m</div>\u001b[39m\n                \u001b[36m<div\u001b[39m\n                  \u001b[33mclass\u001b[39m=\u001b[32m\"p-3 border-t border-gray-200 dark:border-gray-700\"\u001b[39m\n                \u001b[36m>\u001b[39m\n                  \u001b[36m<button\u001b[39m\n                    \u001b[33mclass\u001b[39m=\u001b[32m\"w-full py-1.5 text-sm text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 rounded transition-colors\"\u001b[39m\n                  \u001b[36m>\u001b[39m\n                    \u001b[0m\ud83d\uddd1\ufe0f Clear All History\u001b[0m\n                  \u001b[36m</button>\u001b[39m\n                \u001b[36m</div>\u001b[39m\n              \u001b[36m</div>\u001b[39m\n            \u001b[36m</div>\u001b[39m\n            \u001b[36m<div\u001b[39m\n              \u001b[33mclass\u001b[39m=\u001b[32m\"flex-1 flex flex-col min-w-0\"\u001b[39m\n            \u001b[36m>\u001b[39m\n              \u001b[36m<div\u001b[39m\n                \u001b[33mclass\u001b[39m=\u001b[32m\"px-4 py-2 border-b border-gray-200 dark:border-white/[0.07] \n                                   bg-gray-50 dark:bg-[#1a1d2e]/80 flex items-center gap-2 text-sm\"\u001b[39m\n              \u001b[36m>\u001b[39m\n                \u001b[36m<span>\u001b[39m\n                  \u001b[0m\ud83e\udded\u001b[0m\n                \u001b[36m</span>\u001b[39m\n                \u001b[36m<s...\n \u276f Object.getElementError node_modules/@testing-library/dom/dist/config.js:37:19\n \u276f getElementError node_modules/@testing-library/dom/dist/query-helpers.js:20:35\n \u276f getMultipleElementsFoundError node_modules/@testing-library/dom/dist/query-helpers.js:23:10\n \u276f node_modules/@testing-library/dom/dist/query-helpers.js:55:13\n \u276f node_modules/@testing-library/dom/dist/query-helpers.js:95:19\n \u276f src/app/(dashboard)/local-agent-handoff-probe.test.tsx:48:43\n     46|   expect(screen.getByPlaceholderText('Type a message...').closest('[hi\u2026\n     47|   view.rerender(<DashboardLayout><div>Changed unrelated child</div></D\u2026\n     48|   await tick(900); fireEvent.click(screen.getByText('CVF Agent'));\n       |                                           ^\n     49|   expect(screen.getByPlaceholderText('Type a message...')).toHaveValue\u2026\n     50|   expect(history()).toEqual(before); expect(delivered).toHaveBeenCalle\u2026\n\n\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af[1/1]\u23af\n\n\n Test Files  1 failed (1)\n      Tests  1 failed | 1 passed (2)\n   Start at  13:53:28\n   Duration  10.97s (transform 3.36s, setup 6.34s, import 2.09s, tests 1.11s, environment 1.14s)\n\n",
+      "attribution": "LOCAL_REVIEWER_HARNESS_ERROR: ambiguous hidden header text query, then unavailable Chai matcher; no product repair"
+    },
+    {
+      "log": "C:\\Users\\DELL\\AppData\\Local\\Temp\\ncr-agent-handoff-local-probe-final-20261012.log",
+      "sha256": "61f5492c5be12699f2f002f4234bace8bddfea557e3a82b5a13a34e17911ce79",
+      "text": "\n RUN  v4.1.8 D:/UNG DUNG AI/TOOL AI 2026/Controlled-Vibe-Framework-CVF/EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web\n\nstderr | src/app/(dashboard)/local-agent-handoff-probe.test.tsx > Local distinct actual chat receiving challenge > retains a real unsent draft and whole history across hide/restore, then accepts repeated explicit B separately\nEncountered two children with the same key, `msg_1791788102120`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted \u2014 the behavior is unsupported and could change in a future version.\nEncountered two children with the same key, `msg_1791788102120`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted \u2014 the behavior is unsupported and could change in a future version.\n\nstderr | src/app/(dashboard)/local-agent-handoff-probe.test.tsx > Local distinct actual chat receiving challenge > retains a real unsent draft and whole history across hide/restore, then accepts repeated explicit B separately\nEncountered two children with the same key, `msg_1791788102120`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted \u2014 the behavior is unsupported and could change in a future version.\nEncountered two children with the same key, `msg_1791788102120`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted \u2014 the behavior is unsupported and could change in a future version.\nEncountered two children with the same key, `msg_1791788102120`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted \u2014 the behavior is unsupported and could change in a future version.\n\nstderr | src/app/(dashboard)/local-agent-handoff-probe.test.tsx > Local distinct actual chat receiving challenge > retains a real unsent draft and whole history across hide/restore, then accepts repeated explicit B separately\nEncountered two children with the same key, `msg_1791788102120`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted \u2014 the behavior is unsupported and could change in a future version.\n\n \u276f src/app/(dashboard)/local-agent-handoff-probe.test.tsx (2 tests | 1 failed) 1060ms\n     \u00d7 retains a real unsent draft and whole history across hide/restore, then accepts repeated explicit B separately 668ms\n\n\u23af\u23af\u23af\u23af\u23af\u23af\u23af Failed Tests 1 \u23af\u23af\u23af\u23af\u23af\u23af\u23af\n\n FAIL  src/app/(dashboard)/local-agent-handoff-probe.test.tsx > Local distinct actual chat receiving challenge > retains a real unsent draft and whole history across hide/restore, then accepts repeated explicit B separately\nError: Invalid Chai property: toHaveValue\n \u276f src/app/(dashboard)/local-agent-handoff-probe.test.tsx:49:58\n     47|   view.rerender(<DashboardLayout><div>Changed unrelated child</div></D\u2026\n     48|   await tick(900); fireEvent.click(screen.getByText('agent.restoreHint\u2026\n     49|   expect(screen.getByPlaceholderText('Type a message...')).toHaveValue\u2026\n       |                                                          ^\n     50|   expect(history()).toEqual(before); expect(delivered).toHaveBeenCalle\u2026\n     51|   handoff(B); await tick(700); const bId=history().activeSessionId;\n\n\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af[1/1]\u23af\n\n\n Test Files  1 failed (1)\n      Tests  1 failed | 1 passed (2)\n   Start at  13:54:49\n   Duration  13.55s (transform 3.94s, setup 9.18s, import 2.17s, tests 1.06s, environment 816ms)\n\n",
+      "attribution": "LOCAL_REVIEWER_HARNESS_ERROR: ambiguous hidden header text query, then unavailable Chai matcher; no product repair"
+    }
+  ],
+  "localBoundaryRepair": {
+    "protectedLiteral": "Two backticks only around Current Mode",
+    "workerOriginalBlockedReturnPreserved": true,
+    "firstLocalBoundFastGate": "FAIL: Local handoff fifth path outside worker manifest, ledger/quality/trace; mode checker PASS",
+    "logSha256": "6d396168cd1b624abac46e25038a96cc324fe5202f79c7dcd596b3d5d448b03d",
+    "disposition": "Reviewer conversion declares exact19 Local material manifest; original four-path worker ledger remains historical BLOCKED, not recertified. Local reviewer/precommit/closure gates own acceptance."
+  },
+  "procedureDisposition": "FAIL: active handoff read after implementation; AGENTS/routing not opened; partial applicable checker scopes retained. No retrospective full-preparation certification.",
+  "identity": {
+    "requestedConfiguration": "Sonnet 5.5 High (operator configuration metadata, not a trust anchor)",
+    "observedModel": "claude-sonnet-5-5 (as stated by the session system prompt; self-reported, not independently verified native identity)",
+    "nativeModelIdentity": null,
+    "nativeModelIdentityReason": "no native identity surface is visible to the worker inside the session",
+    "observedEffort": null,
+    "observedEffortReason": "effort level is not exposed to the worker inside the session",
+    "tokens": null,
+    "tokensReason": "no usage meter is visible to the worker",
+    "bill": null,
+    "billReason": "no billing surface is visible to the worker"
+  },
+  "timing": {
+    "worker": {
+      "start": "2026-10-12T06:04:59Z",
+      "preImplementationGateRun": "2026-10-12T06:05:49Z (printed immediately before the gate command; gate itself took 8.00s)",
+      "scaffoldStart": "2026-10-12T06:06:28Z",
+      "firstRedRunStart": "2026-10-12T06:08:52Z",
+      "firstRedRunEnd": "2026-10-12T06:09:08Z",
+      "finalFocusedTscEslintEnd": "2026-10-12T06:11:34Z",
+      "preliminaryTerminalForEvidenceAuthoring": "2026-10-12T06:13:14Z",
+      "finalTestRunStart": null,
+      "finalTestRunEnd": "2026-10-12T06:11:34Z",
+      "finalGateStart": "2026-10-12T06:18:39Z",
+      "finalGateEnd": "2026-10-12T06:18:45Z",
+      "terminal": "2026-10-12T06:18:45Z (preliminary; see terminalNote)",
+      "totalMinutesStartToTerminal": 13.8,
+      "budgetMinutes": 60,
+      "clockNote": "Not every intermediate command was individually clocked; unclocked steps are null rather than reconstructed. finalTestRun* is the focused-suite run on final layout and test bytes; final gate/terminal values are written after the last confirmation and are therefore preliminary relative to the evidence write itself (see proofEditAfterFinalGate).",
+      "finalTestRunStartReason": "the focused vitest, tsc and eslint commands ran in one block that was not individually clocked; only the block end 06:11:34Z was captured",
+      "terminalNote": "Preliminary terminal for this file = last gate end 06:18:45Z (about 13.8 minutes after start 06:04:59Z, budget 60). The proof edit and the post-edit confirmation gate ran after that instant; the confirmation gate time and result are reported in the worker's closing message, not here, because recording them here would change this file again."
+    },
+    "completeAcceptedDeliveryMinutes": null,
+    "reason": "13.8min preliminary terminal before proof edit and confirmation; complete accepted worker/reviewer interval unavailable"
+  },
+  "effects": {
+    "providerCalls": 0,
+    "browser": false,
+    "install": false,
+    "workerRedispatch": false,
+    "sourceRepairByLocal": false,
+    "push": false
+  },
+  "materialManifest": [
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/layout.tsx",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/layout-agent-handoff.test.tsx",
+    "docs/reviews/evidence/ncr-agent-handoff-worker-20261012.json",
+    "docs/reviews/CVF_NCR_AGENT_HANDOFF_WORKER_RETURN_2026-10-12.md",
+    "docs/reviews/CVF_NCR_AGENT_HANDOFF_COMPLETION_2026-10-12.md",
+    "docs/reviews/evidence/ncr-agent-handoff-local-20261012.json",
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_AGENT_HANDOFF_2026-10-12.md",
+    "docs/baselines/CVF_GC018_NCR_AGENT_HANDOFF_2026-10-12.md",
+    "docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json",
+    "docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md",
+    "docs/roadmaps/README.md",
+    "docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md",
+    "docs/roadmaps/CVF_ROADMAP_INVENTORY.md",
+    "docs/roadmaps/CVF_ROADMAP_INVENTORY.csv",
+    ".gitattributes",
+    "CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json",
+    "CVF_SESSION/ACTIVE_SESSION_STATE.json",
+    "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json",
+    "AGENT_HANDOFF_V63_2026-09-18.md"
+  ],
+  "limits": [
+    "jsdom only: hidden-ness is proven by the [hidden] attribute ancestor and by the absence of the fixed overlay classes; no CSS cascade or browser rendering was run, so 'visually inaccessible' is not browser-verified",
+    "recorder leaf is a stand-in for message/prompt callbacks; only the 'real' describe block exercises actual AgentChat/useAgentChat, and it uses an in-process adapter stub returning fixture text",
+    "behaviour change disclosed: a minimized chat now stays mounted, so an initial-send timer or in-flight request is no longer torn down by minimize (it was before); close and replacement still unmount and clear the timer",
+    "a promptless cvf:openAgent while a prompted chat is open keeps that chat mounted and only clears the shell prompt state; it does not create a session",
+    "ChatHistorySidebar owns an independent useChatHistory instance (stale-snapshot limit noted in the work order); tests used the real sidebar and observed no overwrite at mount, but concurrent sidebar actions during a handoff are not exercised",
+    "ordinary-chat control starts from empty storage; an ordinary open chat that already holds messages when B arrives is covered only through the A-then-B and saved-S0 cases",
+    "no claim for AI governance decisions, full mode, phase gates, real provider or HTTP behaviour, backend cancellation, Home/export (consumed from the accepted draft-export evidence), or any whole-NCR milestone",
+    "Historical fail gates and Local harness/packaging failures are retained, not new worker samples.",
+    "Local failed instant-adapter fixture emitted existing Date.now-based duplicate message-key warnings; no ID-policy repair, backend cancellation or arbitrary concurrency claim."
+  ],
+  "localClosurePreparation": {
+    "initialGate": "FAIL_LOCAL_METADATA_ONLY",
+    "logSha256": "35b6e26c5e1fe111f36be9539ee39313842d78642cc646c5ab76a46985ec2be4",
+    "findings": [
+      "Closed work-order timer constraint wording matched stale dispatch phrase",
+      "Existing dispatch workspace State binding label missing exact required State ownership literal"
+    ],
+    "attribution": "LOCAL_ORCHESTRATOR_PACKET_METADATA",
+    "repair": "Equivalent wording and mandatory label, no source/worker repair"
+  },
+  "localClosureValidation": {
+    "command": "python governance/compat/run_worker_return_fast_gate.py",
+    "activeWorkOrderBinding": false,
+    "role": "LOCAL_REVIEWER_CLOSURE_CONVERSION",
+    "exit": 0,
+    "result": "COMPLIANT; reviewer-fast70/70 PASS",
+    "logSha256": "9baed2d6385e443ef34102ad45531e1f0a9300fea019a67d083f096bab9e8a43",
+    "log": "=== CVF Worker Return Fast Gate ===\nPurpose: fail early on worker-return defects before full closure gates.\n\n=== corpus scan registry aggregate drift ===\npython governance/compat/generate_corpus_scan_registry.py --check\nGC-051 registry aggregate matches per-entry sources.\nPASS: corpus scan registry aggregate drift (0.08s)\n\n=== epistemic process packet ===\npython governance/compat/check_epistemic_process_packet.py --enforce\n=== CVF Epistemic Process Packet Gate (FPC-T3-C01) ===\nStandard: docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md\nChanged paths observed: 19\nEvidence-heavy packets checked: 3\nViolations: 0\n\nCOMPLIANT - epistemic process packet evidence structure is aligned.\nPASS: epistemic process packet (0.24s)\n\n=== worker-return quality gate ===\npython governance/compat/check_worker_return_quality_gate.py --enforce\n=== CVF Worker Return Quality Gate ===\nStandard: docs/reference/work_order_authoring/CVF_WORKER_RETURN_QUALITY_GATE_STANDARD.md\nEligible worker-return artifacts checked: 1\nViolations: 0\nCOMPLIANT - worker-return packets are review-ready.\nPASS: worker-return quality gate (0.30s)\n\n=== independent review probe admission ===\npython governance/compat/check_independent_review_probe_admission.py --enforce --changed-lane-only\n=== CVF Independent Review Probe Admission Gate ===\nApplicable artifacts checked: 3\nKnown findings outside the current changed lane: 1\n  (out-of-lane) docs/reviews/CVF_NCR_AGENT_HANDOFF_COMPLETION_2026-10-12.md: `workerEvidenceRef`/`workerOracleSha256` binding: declared digest `06197e4b8303781bab2920533c7d1bc914c15feaf669e2325bc4b681eabd02b4` does not match recomputed digest `632016697b47a6618ead295e71006ca551b18929a1541de267b4c5ac1bddae28` for `docs/reviews/evidence/ncr-agent-handoff-worker-20261012.json`\n  (out-of-lane) docs/reviews/CVF_NCR_AGENT_HANDOFF_COMPLETION_2026-10-12.md: `probeEvidenceRef`/`probeOracleSha256` binding: declared digest `366cda099b090dc294cfcaf1451a14e2f4184d3b8ac62999d06b9cef2f7ce254` does not match recomputed digest `db75580cc89560f36ed9a20093e5e3739712b530def7cd39740c68f0b6698360` for `docs/reviews/evidence/ncr-agent-handoff-local-20261012.json`\nPASS: all applicable artifacts satisfy the independent-probe admission contract.\nPASS: independent review probe admission (1.23s)\n\n=== reviewer-fast governance gate ===\npython governance/compat/run_local_governance_hook_chain.py --hook reviewer-fast\n[CVF hook] Parallel preflight enabled: 70 checks, max_workers=6.\n[CVF hook] START [1/70] closure packaging preflight\n[CVF hook] START [2/70] agent packet authority and encoding\n[CVF hook] START [3/70] core guard self-protection\n[CVF hook] START [4/70] high-risk local transaction proof\n[CVF hook] START [5/70] semantic convergence and escalation control\n[CVF hook] START [6/70] preapproval feasibility\n[CVF hook] START [7/70] subagent provider execution authority\n[CVF hook] PASS [1/70] high-risk local transaction proof (0.48s)\n[CVF hook] START [8/70] task-proportional governance shadow route\n[CVF hook] PASS [2/70] core guard self-protection (0.52s)\n[CVF hook] START [9/70] docs governance compatibility\n[CVF hook] PASS [3/70] closure packaging preflight (0.63s)\n[CVF hook] START [10/70] markdown structural completeness\n[CVF hook] PASS [4/70] preapproval feasibility (0.83s)\n[CVF hook] START [11/70] governed artifact checker read-ahead\n[CVF hook] PASS [5/70] semantic convergence and escalation control (0.90s)\n[CVF hook] START [12/70] work-order dispatch quality\n[CVF hook] PASS [6/70] subagent provider execution authority (0.57s)\n[CVF hook] START [13/70] worker experience retrospective\n[CVF hook] PASS [7/70] task-proportional governance shadow route (0.66s)\n[CVF hook] START [14/70] review cost control\n[CVF hook] PASS [8/70] governed artifact checker read-ahead (0.31s)\n[CVF hook] START [15/70] gate-to-role closeability\n[CVF hook] PASS [9/70] markdown structural completeness (0.44s)\n[CVF hook] START [16/70] worker-return quality gate\n[CVF hook] PASS [10/70] docs governance compatibility (0.68s)\n[CVF hook] START [17/70] dispatch prompt envelope\n[CVF hook] PASS [11/70] worker experience retrospective (0.29s)\n[CVF hook] START [18/70] dispatch packet lifecycle hygiene\n[CVF hook] PASS [12/70] review cost control (0.51s)\n[CVF hook] START [19/70] source intake decision packet preflight\n[CVF hook] PASS [13/70] agent packet authority and encoding (1.79s)\n[CVF hook] START [20/70] PLCS companion routing block\n[CVF hook] PASS [14/70] gate-to-role closeability (0.57s)\n[CVF hook] START [21/70] agent operation trace integrity\n[CVF hook] PASS [15/70] worker-return quality gate (0.56s)\n[CVF hook] START [22/70] agent handoff boundary\n[CVF hook] PASS [16/70] dispatch prompt envelope (0.47s)\n[CVF hook] START [23/70] agent workspace design boundary\n[CVF hook] PASS [17/70] dispatch packet lifecycle hygiene (0.33s)\n[CVF hook] START [24/70] agent workspace state\n[CVF hook] PASS [18/70] source intake decision packet preflight (0.30s)\n[CVF hook] START [25/70] agent workspace skeleton\n[CVF hook] PASS [19/70] PLCS companion routing block (0.43s)\n[CVF hook] START [26/70] agent workspace runtime boundary\n[CVF hook] PASS [20/70] agent workspace state (0.19s)\n[CVF hook] START [27/70] machine closure package\n[CVF hook] PASS [21/70] agent operation trace integrity (0.44s)\n[CVF hook] START [28/70] roadmap closure freshness\n[CVF hook] PASS [22/70] work-order dispatch quality (1.31s)\n[CVF hook] START [29/70] finding-to-governance learning quality\n[CVF hook] PASS [23/70] agent workspace runtime boundary (0.15s)\n[CVF hook] START [30/70] external-agent absorption table\n[CVF hook] PASS [24/70] agent handoff boundary (0.50s)\n[CVF hook] START [31/70] external knowledge intake routing\n[CVF hook] PASS [25/70] agent workspace skeleton (0.19s)\n[CVF hook] START [32/70] external absorption core\n[CVF hook] PASS [26/70] agent workspace design boundary (0.47s)\n[CVF hook] START [33/70] external absorption value conversion\n[CVF hook] PASS [27/70] roadmap closure freshness (0.50s)\n[CVF hook] START [34/70] mixed-origin derived synthesis absorption\n[CVF hook] PASS [28/70] machine closure package (0.58s)\n[CVF hook] START [35/70] external absorption overlap discipline\n[CVF hook] PASS [29/70] external-agent absorption table (0.47s)\n[CVF hook] START [36/70] source mirror migration\n[CVF hook] PASS [30/70] external knowledge intake routing (0.50s)\n[CVF hook] START [37/70] Delta mutating profile boundary\n[CVF hook] PASS [31/70] external absorption core (0.50s)\n[CVF hook] START [38/70] Delta execution claim boundary\n[CVF hook] PASS [32/70] mixed-origin derived synthesis absorption (0.46s)\n[CVF hook] START [39/70] foundation storage layout\n[CVF hook] PASS [33/70] external absorption value conversion (0.49s)\n[CVF hook] START [40/70] public export disposition quality\n[CVF hook] PASS [34/70] external absorption overlap discipline (0.50s)\n[CVF hook] START [41/70] rescan intelligence hardening\n[CVF hook] PASS [35/70] source mirror migration (0.47s)\n[CVF hook] START [42/70] index classification\n[CVF hook] PASS [36/70] Delta mutating profile boundary (0.42s)\n[CVF hook] START [43/70] memory access claim\n[CVF hook] PASS [37/70] finding-to-governance learning quality (1.41s)\n[CVF hook] START [44/70] external provider skill usage trace\n[CVF hook] PASS [38/70] Delta execution claim boundary (0.58s)\n[CVF hook] START [45/70] CVF skill usage receipt trace\n[CVF hook] PASS [39/70] foundation storage layout (0.77s)\n[CVF hook] START [46/70] skill truth packets\n[CVF hook] PASS [40/70] rescan intelligence hardening (0.73s)\n[CVF hook] START [47/70] package skill productionization pipeline\n[CVF hook] PASS [41/70] public export disposition quality (0.76s)\n[CVF hook] START [48/70] skill control plane inventory\n[CVF hook] PASS [42/70] external provider skill usage trace (0.27s)\n[CVF hook] START [49/70] CVF Web skill control plane projection\n[CVF hook] PASS [43/70] index classification (0.78s)\n[CVF hook] START [50/70] truth foundation claim guard\n[CVF hook] PASS [44/70] CVF skill usage receipt trace (0.19s)\n[CVF hook] START [51/70] raw memory release invariant\n[CVF hook] PASS [45/70] skill control plane inventory (0.15s)\n[CVF hook] START [52/70] DICE machine-candidate coverage\n[CVF hook] PASS [46/70] CVF Web skill control plane projection (0.14s)\n[CVF hook] START [53/70] FPC system-chain acceptance ledger\n[CVF hook] PASS [47/70] skill truth packets (0.23s)\n[CVF hook] START [54/70] FPC parked reopen inventory\n[CVF hook] PASS [48/70] memory access claim (0.87s)\n[CVF hook] START [55/70] KIOD runtime candidate reopen inventory\n[CVF hook] PASS [49/70] FPC system-chain acceptance ledger (0.33s)\n[CVF hook] START [56/70] corpus scan registry\n[CVF hook] PASS [50/70] truth foundation claim guard (0.46s)\n[CVF hook] START [57/70] ASSF certified metadata admission\n[CVF hook] PASS [51/70] package skill productionization pipeline (0.61s)\n[CVF hook] START [58/70] ASSF package candidate anatomy\n[CVF hook] PASS [52/70] DICE machine-candidate coverage (0.53s)\n[CVF hook] START [59/70] ASSF external-agent metadata readout\n[CVF hook] PASS [53/70] raw memory release invariant (0.56s)\n[CVF hook] START [60/70] changed corpus registry coverage\n[CVF hook] PASS [54/70] ASSF certified metadata admission (0.13s)\n[CVF hook] START [61/70] active session state compatibility\n[CVF hook] PASS [55/70] FPC parked reopen inventory (0.32s)\n[CVF hook] START [62/70] session mode consistency\n[CVF hook] PASS [56/70] ASSF package candidate anatomy (0.15s)\n[CVF hook] START [63/70] next-move freshness\n[CVF hook] PASS [57/70] ASSF external-agent metadata readout (0.16s)\n[CVF hook] START [64/70] system chain map freshness\n[CVF hook] PASS [58/70] corpus scan registry (0.34s)\n[CVF hook] START [65/70] as-built system catalog drift\n[CVF hook] START [66/70] memory consolidation artifact quality\n[CVF hook] PASS [59/70] KIOD runtime candidate reopen inventory (0.49s)\n[CVF hook] PASS [60/70] session mode consistency (0.16s)\n[CVF hook] START [67/70] epistemic process packet\n[CVF hook] PASS [61/70] system chain map freshness (0.14s)\n[CVF hook] START [68/70] equivalence claim evidence\n[CVF hook] PASS [62/70] changed corpus registry coverage (0.49s)\n[CVF hook] START [69/70] dispatch scaffold provenance\n[CVF hook] PASS [63/70] next-move freshness (0.40s)\n[CVF hook] START [70/70] agent instruction carrier compaction\n[CVF hook] PASS [64/70] memory consolidation artifact quality (0.31s)\n[CVF hook] PASS [65/70] as-built system catalog drift (0.40s)\n[CVF hook] PASS [66/70] agent instruction carrier compaction (0.16s)\n[CVF hook] PASS [67/70] epistemic process packet (0.45s)\n[CVF hook] PASS [68/70] dispatch scaffold provenance (0.28s)\n[CVF hook] PASS [69/70] equivalence claim evidence (0.33s)\n[CVF hook] PASS [70/70] active session state compatibility (0.87s)\n[CVF hook] All reviewer-fast governance checks passed.\nPASS: reviewer-fast governance gate (5.98s)\n\n=== git diff whitespace check ===\ngit diff --check\nwarning: in the working copy of '.gitattributes', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'AGENT_HANDOFF_V63_2026-09-18.md', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'docs/roadmaps/CVF_ROADMAP_INVENTORY.csv', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'docs/roadmaps/CVF_ROADMAP_INVENTORY.md', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'docs/roadmaps/README.md', LF will be replaced by CRLF the next time Git touches it\nPASS: git diff whitespace check (0.15s)\n\nCOMPLIANT: worker-return fast gate passed in 7.99s.\n",
+    "recordingBoundary": "PASS before this evidence-recording edit; final precommit/committed-range checks confirm delivered closure bytes. Historical bound worker gate remains FAIL."
+  }
+}

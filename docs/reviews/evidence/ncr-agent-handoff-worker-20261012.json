@@ -1,0 +1,375 @@
+{
+  "schemaVersion": "cvf.ncrAgentHandoffWorkerProof@1",
+  "batchId": "CVF-NCR-AGENT-HANDOFF-20261012",
+  "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_AGENT_HANDOFF_2026-10-12.md",
+  "executionBaseHead": "bf7d6c3d86a039d013d414d5d7b8449a8fd9bc4d",
+  "claimBoundary": "Synthetic offline jsdom client/session-lifecycle proof only. The in-process provider-adapter stub returns fixture text; no AI governance decision, full-mode certification, real provider/HTTP/backend cancellation, browser, public or deploy claim.",
+  "identity": {
+    "requestedConfiguration": "Sonnet 5.5 High (operator configuration metadata, not a trust anchor)",
+    "observedModel": "claude-sonnet-5-5 (as stated by the session system prompt; self-reported, not independently verified native identity)",
+    "nativeModelIdentity": null,
+    "nativeModelIdentityReason": "no native identity surface is visible to the worker inside the session",
+    "observedEffort": null,
+    "observedEffortReason": "effort level is not exposed to the worker inside the session",
+    "tokens": null,
+    "tokensReason": "no usage meter is visible to the worker",
+    "bill": null,
+    "billReason": "no billing surface is visible to the worker"
+  },
+  "clocksUtc": {
+    "start": "2026-10-12T06:04:59Z",
+    "preImplementationGateRun": "2026-10-12T06:05:49Z (printed immediately before the gate command; gate itself took 8.00s)",
+    "scaffoldStart": "2026-10-12T06:06:28Z",
+    "firstRedRunStart": "2026-10-12T06:08:52Z",
+    "firstRedRunEnd": "2026-10-12T06:09:08Z",
+    "finalFocusedTscEslintEnd": "2026-10-12T06:11:34Z",
+    "preliminaryTerminalForEvidenceAuthoring": "2026-10-12T06:13:14Z",
+    "finalTestRunStart": null,
+    "finalTestRunEnd": "2026-10-12T06:11:34Z",
+    "finalGateStart": "2026-10-12T06:18:39Z",
+    "finalGateEnd": "2026-10-12T06:18:45Z",
+    "terminal": "2026-10-12T06:18:45Z (preliminary; see terminalNote)",
+    "totalMinutesStartToTerminal": 13.8,
+    "budgetMinutes": 60,
+    "clockNote": "Not every intermediate command was individually clocked; unclocked steps are null rather than reconstructed. finalTestRun* is the focused-suite run on final layout and test bytes; final gate/terminal values are written after the last confirmation and are therefore preliminary relative to the evidence write itself (see proofEditAfterFinalGate).",
+    "finalTestRunStartReason": "the focused vitest, tsc and eslint commands ran in one block that was not individually clocked; only the block end 06:11:34Z was captured",
+    "terminalNote": "Preliminary terminal for this file = last gate end 06:18:45Z (about 13.8 minutes after start 06:04:59Z, budget 60). The proof edit and the post-edit confirmation gate ran after that instant; the confirmation gate time and result are reported in the worker's closing message, not here, because recording them here would change this file again."
+  },
+  "startupAndPins": {
+    "headAtStart": "bf7d6c3d86a039d013d414d5d7b8449a8fd9bc4d",
+    "headNote": "Released HEAD is the prompt value; the work order's dispatch base head f0199132050799c293f6b34db8c27b535694baed is the earlier inspection base, three Local commits older.",
+    "statusAtStart": "clean; staged empty; three worker output paths absent",
+    "authorityPins": {
+      "baselineSha256": "736b8c0676244bc6ae891b260381636bbf86daef1a683908bff338b9e2514ed7",
+      "workOrderSha256": "0111b1b220274520a09aeff5c8422820e979b4ea9583b7f4d91ef6c84bc516fe",
+      "matchesBootstrapCurrentAuthority": true
+    },
+    "sourcePinCount": 12,
+    "sourcePinsRawEqualsHeadBlobEqualsWorkOrder": true,
+    "preImplementationGate": {
+      "command": "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_AGENT_HANDOFF_2026-10-12.md",
+      "exit": 0,
+      "result": "COMPLIANT: pre-implementation autorun gate passed in 8.00s.",
+      "receiptPath": ".cvf/runtime/autorun-receipts/pre-implementation.json",
+      "receiptSha256": "ad88b34bd20df6e862450120bdba3e4901de56f666ed9f2a9ca260b5ebf79f6a"
+    },
+    "scaffold": {
+      "command": "python governance/compat/run_worker_return_scaffold.py --write docs/reviews/CVF_NCR_AGENT_HANDOFF_WORKER_RETURN_2026-10-12.md --check-shape --max-lines 450 --max-bytes 64000",
+      "exit": 0,
+      "result": "PREPARATION_SHAPE_PRESENT: pending fields are not worker evidence or gate acceptance",
+      "logSha256": "5176a0019cfe5bfa1a3f06eb5f96dc042cbcff5e88c37aade48fa372d0cab76a",
+      "runBeforeLongProse": true
+    }
+  },
+  "readScopes": {
+    "fullyRead": [
+      "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_AGENT_HANDOFF_2026-10-12.md (all 560 lines)",
+      "docs/baselines/CVF_GC018_NCR_AGENT_HANDOFF_2026-10-12.md (all 181 lines)",
+      "CVF_SESSION_MEMORY.md (all)",
+      "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json (all)",
+      "AGENT_HANDOFF_V63_2026-09-18.md (all 168 lines, read after implementation had started, not before)",
+      "src/app/(dashboard)/layout.tsx (all)",
+      "src/components/AgentChatWithHistory.tsx (all)",
+      "src/lib/chat-history.tsx (all)",
+      "src/components/AgentChat.tsx (all)",
+      "src/lib/hooks/useAgentChat.ts (all)",
+      "src/app/(dashboard)/layout.test.tsx (all)",
+      "src/components/AgentChatWithHistory.test.tsx (all)",
+      "src/lib/hooks/useAgentChat.test.ts (all)",
+      "src/lib/chat-history.test.tsx (all)",
+      "src/test/setup.ts (all)",
+      "vitest.config.ts (all)",
+      "docs/reviews/evidence/ncr-agent-handoff-dispatch-20261012.json (all)",
+      "docs/reviews/CVF_NCR_DRAFT_EXPORT_COMPLETION_2026-10-12.md (all)",
+      "governance/compat/check_worker_return_quality_gate.py (all 966 lines)",
+      "governance/compat/check_work_order_acceptance_ledger.py (all 250 lines)",
+      "governance/compat/check_agent_operation_trace.py (all 537 lines)",
+      "governance/compat/check_review_cost_control.py (all 775 lines)",
+      "governance/compat/check_gate_to_role_closeability.py (all 495 lines)",
+      "governance/compat/run_worker_return_fast_gate.py (all 258 lines)"
+    ],
+    "partiallyRead": [
+      "src/app/(dashboard)/home/page.tsx: only the handleSendToAgent / cvf:openAgent emission sites via a context grep (about 30 of its lines); work order scope was event detail only",
+      "src/components/AgentChat.test.tsx (not in the mandatory list): lines 1-130, used as the mock template for the real-chat cases",
+      "governance/compat/check_semantic_convergence_control.py: lines 20-120 and 270-330 (constants and claim-to-proof mapping)",
+      "governance/compat/check_worker_experience_retrospective.py: lines 30-75 and 150-260 (vocabulary and diagnose)",
+      "governance/compat/check_epistemic_process_packet.py: lines 1-200 of 318 (trigger and marker vocabulary)",
+      "governance/compat/check_independent_review_probe_admission.py: constants/field names via a grep only (about 70 matched lines of 954); worker records PENDING_REVIEWER_EXECUTION only"
+    ],
+    "notRead": [
+      "worker_evidence_readiness.py and the evidence-readiness binding path (work order declares no evidenceReadinessContract)",
+      "remaining lines of check_epistemic_process_packet.py, check_semantic_convergence_control.py, check_worker_experience_retrospective.py and check_independent_review_probe_admission.py",
+      "AgentChatHeader.tsx beyond a grep for its minimize/close labels, GovernanceBar.tsx, ChatInput.tsx and other AgentChat children (exercised, not read)",
+      "AGENTS.md and the routing index (CLAUDE.md names them as owners; not opened this session)"
+    ],
+    "completeReadClaim": false,
+    "orderOfReads": "Work order, baseline, front door and bootstrap before any edit; AGENT_HANDOFF_V63 was opened late, after the red run, the layout fix and green runs, because the work order treats full handoff history as not required and I treated the front door plus bootstrap as sufficient startup; recorded here as a startup-order deviation from CLAUDE.md."
+  },
+  "stubsAndEnvironment": {
+    "stubbedLeaves": [
+      "next/navigation (fixed /home pathname, router stubs, open-param driven by test)",
+      "useAuth, useModals (stable stub; closeAllModals spy), useExecutionStore, Settings (stable settings object, defaultProvider alibaba, synthetic key), i18n (language en, t returns key), CompactHeader, governed-starter-path",
+      "'@/components' barrel: only AgentChatWithHistory is real; Sidebar/Onboarding/QuickStart/UserContext/Settings/AIUsage/ApiKeyWizard/MultiAgent/Tools are null components",
+      "AgentChat in recorder mode: transparent stand-in mirroring the hook's once-per-prompt guard and messages callback, with a draft input plus minimize and close buttons",
+      "ai-providers createAIProvider: in-process adapter stub returning fixture text STUB_REPLY(<last message>)",
+      "useModelPricing and useQuotaManager (as in the existing AgentChat.test.tsx)"
+    ],
+    "notStubbed": [
+      "actual DashboardLayout (modified file)",
+      "actual AgentChatWithHistory wrapper",
+      "actual persisted useChatHistory and ChatHistorySidebar (real, with its own hook instance)",
+      "actual AgentChat and useAgentChat in the 'real' describe block, including the 500ms deferred initial-send timer, cleanup, enforcement evaluation and message persistence callback"
+    ],
+    "providerDenialSetup": "src/test/setup.ts unchanged and enabled: globalThis.fetch is wrapped by createProviderExecutionFetchGuard; no test issued a network request and zero provider calls were made.",
+    "environment": "jsdom under vitest 4.1.8 from the installed Web package; no server, browser, dependency install, subagent or nested agent."
+  },
+  "commands": [
+    {
+      "id": "pre-implementation",
+      "exit": 0,
+      "result": "COMPLIANT"
+    },
+    {
+      "id": "scaffold",
+      "exit": 0,
+      "logSha256": "5176a0019cfe5bfa1a3f06eb5f96dc042cbcff5e88c37aade48fa372d0cab76a"
+    },
+    {
+      "id": "first-red-run",
+      "command": "node node_modules/vitest/vitest.mjs run 'src/app/(dashboard)/layout-agent-handoff.test.tsx' (layout unmodified)",
+      "exit": 1,
+      "result": "9 failed, 3 passed of 12",
+      "logSha256": "e91a84be7a2b39501a0b38b343798c18f07afebc97815d55c294b2cc0a8484a9",
+      "firstMeaningfulFailure": "minimize/restore case: Unable to find an element by [data-testid=\"chat-recorder\"] right after Recorder minimize + hidden check, because the unmodified shell unmounts the chat on minimize"
+    },
+    {
+      "id": "first-green-attempt",
+      "exit": 1,
+      "result": "4 failed, 8 passed after the layout fix",
+      "logSha256": "1f2dcc348dce23c213b231b1b9aacdd354f4eaac51de2d52c1460e59d6d9062c",
+      "cause": "Defect in my own test helper: history() returned an object that embedded a byId closure, so toEqual(before) compared function identity ('Compared values have no visual difference'). Source was not at fault; helper split into data snapshot plus a separate byId function."
+    },
+    {
+      "id": "second-green-run",
+      "exit": 0,
+      "result": "12 passed of 12",
+      "logSha256": "36817fe808ffca2d3263d2a3dfd9fe3d858ce21df94964efcece757047d8e47c"
+    },
+    {
+      "id": "red-run-final-test-bytes",
+      "command": "same command with layout.tsx temporarily restored to its HEAD bytes (sha 18e35af0...), then the fixed layout copied back and re-hashed equal to 25474fb5...",
+      "exit": 1,
+      "result": "9 failed, 3 passed of 12 on the final test bytes",
+      "logSha256": "5e137aa92ba371d4ee932187509518f269ec2b2132f1da2b5034c19532e7e89a",
+      "failingCases": [
+        "keeps session, draft and delivery count across minimize, restore and unrelated rerenders",
+        "does not replay or add a session under StrictMode minimize/restore",
+        "receives a new explicit handoff B in a fresh session while chat A is open",
+        "receives B when an ordinary empty chat is already open",
+        "treats two deliberate identical-text handoffs as two sessions, and restore as neither",
+        "delivers A once and keeps the session through minimize/restore after delivery",
+        "sends exactly once when minimized before the deferred timer and restored after it",
+        "replaces A with B before the timer: only B is sent, in its own session",
+        "sends one user message under StrictMode with rerender and minimize/restore"
+      ],
+      "passingControlsOnUnfixedSource": [
+        "delivers the first handoff once to its own ready session, apart from saved history",
+        "close clears the incoming prompt and body lock; ordinary reopen does not replay it",
+        "does not dispatch the queued prompt when closed before the timer fires"
+      ]
+    },
+    {
+      "id": "final-focused-suites",
+      "command": "node node_modules/vitest/vitest.mjs run 'src/app/(dashboard)/layout-agent-handoff.test.tsx' 'src/app/(dashboard)/layout.test.tsx' 'src/components/AgentChatWithHistory.test.tsx' 'src/lib/hooks/useAgentChat.test.ts'",
+      "exit": 0,
+      "result": "4 files passed, 35 tests passed (12 new + 23 existing)",
+      "logSha256": "7c4a85aec617a288428a2291b8c53adf3f8b3fe5d835104ee9f0a2feff59a931"
+    },
+    {
+      "id": "typecheck",
+      "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+      "exit": 0,
+      "result": "no output",
+      "logSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "lint",
+      "command": "node node_modules/eslint/bin/eslint.js 'src/app/(dashboard)/layout.tsx' 'src/app/(dashboard)/layout-agent-handoff.test.tsx'",
+      "exit": 0,
+      "result": "no output",
+      "logSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "first-return-fast-gate",
+      "exit": 1,
+      "startUtc": "2026-10-12T06:15:53Z",
+      "endUtc": "2026-10-12T06:15:59Z",
+      "logSha256": "b69a0a31fcd5cd1f683b30d3b4a530b71dfb19609cf3e18a91e029d3cba76df9",
+      "result": "FAIL: 4 items - worker-return quality gate (my provisional COMPLETE status lacked fast-gate PASS evidence), external intake routing (missing Internal source row), finding-to-governance learning (runtime lane line missing), session mode consistency (handoff Current Mode has no backticked token)"
+    },
+    {
+      "id": "fast-gate-run-2",
+      "exit": 1,
+      "startUtc": "2026-10-12T06:17:25Z",
+      "logSha256": "fdd442861ff06934e70267382b8dafdec9c699eaa9532b87ba94d4850474cb40",
+      "result": "FAIL: learning (BLOCKED return needs recurrence fields) and session mode consistency"
+    },
+    {
+      "id": "fast-gate-run-3",
+      "exit": 1,
+      "startUtc": "2026-10-12T06:17:48Z",
+      "logSha256": "4d59c4333e8dd57bd1edfad789bc21107ef4e76a8c14f6b563f3336b73067a87",
+      "result": "FAIL: only reviewer-fast item 62/70 session mode consistency"
+    },
+    {
+      "id": "fast-gate-run-4",
+      "exit": 1,
+      "startUtc": "2026-10-12T06:18:21Z",
+      "logSha256": "5b321a9465f3cd3453b9e58e794153840bcd49c559570c8f32554fe2deba93e2",
+      "result": "FAIL: session mode consistency plus a new work-order dispatch quality item caused by my own wording (a quoted checker phrase containing the words 'not found'); phrase reworded, failure preserved"
+    },
+    {
+      "id": "final-return-fast-gate",
+      "exit": 1,
+      "startUtc": "2026-10-12T06:18:39Z",
+      "endUtc": "2026-10-12T06:18:45Z",
+      "logSha256": "5ee062cdfdd397b3e1fd427e57034477a68aefb47dbea8230c6f0cfd8b7aa90a",
+      "returnSha256": "901e388a8c57f183ab718bcb5548860e8ca807828c10b041fb60774c94ef8667",
+      "result": "FAIL on the final return bytes with exactly one failing item: reviewer-fast 62/70 session mode consistency (AGENT_HANDOFF_V63_2026-09-18.md ## Current Mode has no backtick-wrapped mode token). Corpus drift, epistemic, acceptance ledger, worker-return quality gate, probe admission and git diff --check PASS. No final PASS is claimed."
+    },
+    {
+      "id": "acceptance-ledger",
+      "exit": 0,
+      "result": "COMPLIANT (standalone, also PASS inside the fast gate); reducer agrees with BLOCKED_WITH_REASON because REQ-RETURN is BLOCKED",
+      "logSha256": "4e241054fd8f3e98a904265c2db377b5dcedf77c27ab0b6eedfeb0a6994455d2"
+    },
+    {
+      "id": "git-diff-check",
+      "exit": 0,
+      "result": "no output",
+      "logSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "session-mode-standalone",
+      "command": "python governance/compat/check_session_mode_consistency.py --enforce",
+      "exit": 1,
+      "logSha256": "08bf10a66f3d010859b2619e090d553071345e58d6e6f3e3f3e7b519cdffa420",
+      "result": "same single violation; git diff HEAD on AGENT_HANDOFF_V63_2026-09-18.md, CVF_SESSION_MEMORY.md and CVF_SESSION/ is empty, so it is independent of worker artifacts",
+      "rootCause": "HANDOFF_CURRENT_MODE_RE in check_session_mode_consistency.py requires '## Current Mode' followed by a backtick-wrapped token; the active handoff writes the mode unwrapped",
+      "ownerAndRepair": "session-sync steward / Local reviewer: wrap cvf_ncr_agent_handoff_worker_execution in backticks under '## Current Mode' in AGENT_HANDOFF_V63_2026-09-18.md, then rerun the fast gate; worker redispatch not needed"
+    }
+  ],
+  "sourceChange": {
+    "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/layout.tsx",
+    "headSha256": "18e35af0031172385bc9e16811ba242011c0a3d8cefc9c3888403e61979f16a8",
+    "finalSha256": "25474fb5ae581f052831f9e7dcd4094c130a7a45b662c54c22ada7196bd7c11c",
+    "lines": 395,
+    "lineCap": 700,
+    "diffSummary": "13 insertions, 2 deletions: (1) agentHandoffId state, incremented only when a cvf:openAgent event carries a prompt; (2) AgentChatWithHistory rendered whenever the agent modal is active, keyed by agentHandoffId, inside a container that is hidden (hidden attribute plus 'hidden' class, no fixed overlay classes) while minimized instead of being unmounted.",
+    "unchangedBehaviour": "body overflow lock still keyed to visibleModal (also while minimized); closeActiveModal still clears agentPrompt, minimized flag and ?open=; openShellModal and navigation unchanged; promptless cvf:openAgent still clears the prompt and restores a minimized chat without creating a session; no change to wrapper, history store, AgentChat, hook, Home or old tests."
+  },
+  "testFile": {
+    "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/layout-agent-handoff.test.tsx",
+    "lines": 326,
+    "bytes": 15340,
+    "sha256AtFinalFocusedRun": "06197e4b8303781bab2920533c7d1bc914c15feaf669e2325bc4b681eabd02b4",
+    "lineBudget": 600,
+    "unchangedSinceFinalFocusedRun": true
+  },
+  "fixtures": {
+    "savedHistory": "one synthetic session saved-S0 (title 'Saved unrelated') with messages [SAVED_QUESTION, SAVED_ANSWER], written to localStorage key cvf_chat_history, active at load",
+    "prompts": [
+      "PROMPT_A",
+      "PROMPT_B",
+      "SAME"
+    ],
+    "oracle": "complete session ids and message content lists read back from persisted localStorage after each event, not button or session counts alone"
+  },
+  "REQ-RECEIVE": {
+    "proofId": "PROOF-REQ-RECEIVE",
+    "status": "PASS",
+    "artifacts": [
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/layout.tsx",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/layout-agent-handoff.test.tsx",
+      "docs/reviews/evidence/ncr-agent-handoff-worker-20261012.json"
+    ],
+    "assertions": [
+      "first handoff A: delivered == [PROMPT_A]; one mount with existing messages []; active session is not saved-S0 and holds exactly [PROMPT_A]; saved-S0 messages byte-equal to the seed",
+      "new handoff B while A is open: delivered == [A, B]; second mount receives prompt B with existing []; three sessions; A keeps [PROMPT_A]; active session holds exactly [PROMPT_B]; saved-S0 unchanged",
+      "ordinary empty chat open before B (?open=agent, no prompt): ordinary session stays [] and is retained; B gets its own new active session holding exactly [PROMPT_B]",
+      "two deliberate identical-text handoffs: delivered == [SAME, SAME]; two distinct session ids each holding [SAME]; later minimize/restore changes neither",
+      "real AgentChat/useAgentChat + in-process stub: handoff A sends once; session holds [start system message, PROMPT_A, STUB_REPLY(PROMPT_A)]; B replacing A before the timer sends only B (provider called once with last message PROMPT_B) into a new session while A's session stays empty"
+    ],
+    "firstRed": "on unmodified layout: B case received [PROMPT_A] instead of [PROMPT_A, PROMPT_B]; ordinary-chat case received [] instead of [PROMPT_B]; identical-text case received [SAME] instead of [SAME, SAME]; real-seam B case reused A's session id"
+  },
+  "REQ-LIFECYCLE": {
+    "proofId": "PROOF-REQ-LIFECYCLE",
+    "status": "PASS",
+    "artifacts": [
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/layout.tsx",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/layout-agent-handoff.test.tsx",
+      "docs/reviews/evidence/ncr-agent-handoff-worker-20261012.json"
+    ],
+    "assertions": [
+      "minimize then restore plus an unrelated rerender: same single mount, typed draft 'half-typed' preserved, delivered still [PROMPT_A], persisted history deep-equal to the pre-minimize snapshot; while minimized the chat sits under a [hidden] ancestor and body overflow stays 'hidden'; after restore no [hidden] ancestor",
+      "StrictMode shell: minimize/restore keeps delivered [PROMPT_A] and one session",
+      "real hook: minimize after delivery and restore, then 1500ms more of timer time, leaves exactly one provider call and an unchanged persisted history",
+      "real hook: minimize BEFORE the 500ms timer and restore after it yields exactly one provider call and one session (the hidden chat stays mounted so the timer fires once)",
+      "real hook under StrictMode with rerender and minimize/restore: one provider call, one user message PROMPT_A",
+      "close clears the shell prompt and releases body overflow; ordinary reopen (promptless cvf:openAgent) mounts with prompt undefined, delivered stays [PROMPT_A], session count unchanged",
+      "close at 200ms (before the 500ms timer): provider never called and no persisted session contains the prompt",
+      "replace A by B at 200ms: stale queued A is cancelled by the unmount cleanup of the existing hook; only B is sent"
+    ],
+    "firstRed": "on unmodified layout the minimize case could not find the chat (unmounted), StrictMode restore replayed [PROMPT_A, PROMPT_A], real-hook post-delivery restore made a second provider call, and minimize-before-timer made a second session",
+    "notClaimed": "no global abort of a request already started; a hidden but mounted chat keeps its in-flight request and timers running"
+  },
+  "REQ-RETURN": {
+    "proofId": "PROOF-REQ-RETURN",
+    "status": "BLOCKED",
+    "artifacts": [
+      "docs/reviews/evidence/ncr-agent-handoff-worker-20261012.json",
+      "docs/reviews/CVF_NCR_AGENT_HANDOFF_WORKER_RETURN_2026-10-12.md"
+    ],
+    "exactFourOutputs": [
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/layout.tsx",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/layout-agent-handoff.test.tsx",
+      "docs/reviews/evidence/ncr-agent-handoff-worker-20261012.json",
+      "docs/reviews/CVF_NCR_AGENT_HANDOFF_WORKER_RETURN_2026-10-12.md"
+    ],
+    "forbiddenEffects": {
+      "providerCalls": 0,
+      "network": "none (shared fetch guard retained)",
+      "browserOrServer": "none",
+      "dependencyInstall": "none",
+      "nestedAgents": 0,
+      "stagedFiles": 0,
+      "commits": 0,
+      "push": "none",
+      "protectedContinuityPathsEdited": "none"
+    },
+    "returnLineByteBudget": "450 lines / 64000 bytes",
+    "returnLines": 367,
+    "returnBytes": 31871,
+    "returnSha256AtFinalFastGate": "901e388a8c57f183ab718bcb5548860e8ca807828c10b041fb60774c94ef8667",
+    "proofBytesBudget": 128000,
+    "gitStatusShort": "layout.tsx modified; layout-agent-handoff.test.tsx, the return and this proof untracked; staged empty; HEAD unchanged at bf7d6c3d8",
+    "blockedReason": "Mandatory final worker-return fast gate cannot PASS: reviewer-fast item 62/70 session mode consistency fails on the steward-owned AGENT_HANDOFF_V63_2026-09-18.md ## Current Mode (no backticked mode token). The handoff is a protected path outside the four writable paths; per the work order a required repair outside the exact set is BLOCKED_WITH_REASON, not permission to expand scope.",
+    "technicalRequirements": "REQ-RECEIVE and REQ-LIFECYCLE are PASS; only REQ-RETURN is BLOCKED, so the deterministic ledger reducer yields BLOCKED_WITH_REASON"
+  },
+  "limits": [
+    "jsdom only: hidden-ness is proven by the [hidden] attribute ancestor and by the absence of the fixed overlay classes; no CSS cascade or browser rendering was run, so 'visually inaccessible' is not browser-verified",
+    "recorder leaf is a stand-in for message/prompt callbacks; only the 'real' describe block exercises actual AgentChat/useAgentChat, and it uses an in-process adapter stub returning fixture text",
+    "behaviour change disclosed: a minimized chat now stays mounted, so an initial-send timer or in-flight request is no longer torn down by minimize (it was before); close and replacement still unmount and clear the timer",
+    "a promptless cvf:openAgent while a prompted chat is open keeps that chat mounted and only clears the shell prompt state; it does not create a session",
+    "ChatHistorySidebar owns an independent useChatHistory instance (stale-snapshot limit noted in the work order); tests used the real sidebar and observed no overwrite at mount, but concurrent sidebar actions during a handoff are not exercised",
+    "ordinary-chat control starts from empty storage; an ordinary open chat that already holds messages when B arrives is covered only through the A-then-B and saved-S0 cases",
+    "no claim for AI governance decisions, full mode, phase gates, real provider or HTTP behaviour, backend cancellation, Home/export (consumed from the accepted draft-export evidence), or any whole-NCR milestone"
+  ],
+  "independentProbeDisposition": "PENDING_REVIEWER_EXECUTION",
+  "proofEditAfterFinalGate": "This proof was edited after the final fast gate (run on return bytes 901e388a...) to record its result. The return file was not edited after that gate; a confirmation gate, ledger check and git diff --check after this edit are reported in the closing message.",
+  "closeability": {
+    "closeabilityDisposition": "UNCLOSEABLE_PACKET_CONTRADICTION",
+    "nextRepairRoute": "REVIEWER_LOCAL_REPAIR",
+    "workerRedispatchAllowed": "NO"
+  }
+}
