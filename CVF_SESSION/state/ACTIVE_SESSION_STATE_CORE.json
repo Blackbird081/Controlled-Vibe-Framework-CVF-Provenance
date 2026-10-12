@@ -36,10 +36,10 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_NCR_HISTORY_RECOVERY_2026-10-12.md",
-    "baselineSha256": "701fafa7b4795bfcd2d4d34a48f3b5733098a94597ca35f360d2be87815f2a40",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HISTORY_RECOVERY_2026-10-12.md",
-    "workOrderSha256": "0d2ae4d7b10a76f51d7f0f72feaa1d3c654a4ddab2ee535803ad65a55aa4df8d"
+    "baselinePath": "docs/baselines/CVF_GC018_NCR_DRAFT_RECOVERY_2026-10-12.md",
+    "baselineSha256": "676147b6a4091cf5ea757dec6fd07e7fbf2576c6f4517f76fa6b1d33bcf63673",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_DRAFT_RECOVERY_2026-10-12.md",
+    "workOrderSha256": "3f2e566744f1b75e00645591955e3bbe70ea1c50011aa38bed81f73117c1e16b"
   },
   "currentAuthoritySyncReason": "History recovery reviewed closure at bbff80863f71797b0d70e6df3c010473d488cf5e; exact6 continuity with closed paired authority,18 task observations and useful-selection next move.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",

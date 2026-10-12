@@ -1,0 +1,277 @@
+{
+  "schemaVersion": "cvf.ncrDraftRecoveryDispatch@1",
+  "baseHead": "1d8092788a1e515217ee001d267fe4b1d2939ec9",
+  "sourceFinding": "Home onCancel calls handleBack: clears selected template/binding but leaves persisted processing attempt. DynamicForm has no initial values. Date.now-only submit IDs collide for explicit same-millisecond resubmission.",
+  "sourcePins": [
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.tsx",
+      "rawFileSha256": "11a1877ae8ee1b8ab268b4eaad5b9dfe4050aa513accf198fa74f26b8fffeb15",
+      "headBlobSha256": "11a1877ae8ee1b8ab268b4eaad5b9dfe4050aa513accf198fa74f26b8fffeb15"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.tsx",
+      "rawFileSha256": "4c4213cef96d44b38d3c298612ebdf73e873310885e9e115fee3ec64859b10a1",
+      "headBlobSha256": "4c4213cef96d44b38d3c298612ebdf73e873310885e9e115fee3ec64859b10a1"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/store.ts",
+      "rawFileSha256": "f5deb700c631c680924d3ba74fd1c56ef862e99703fe59c461828a8a64953c06",
+      "headBlobSha256": "f5deb700c631c680924d3ba74fd1c56ef862e99703fe59c461828a8a64953c06"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/types/index.ts",
+      "rawFileSha256": "924e0ba06697be1de5501f0a8e5d03b73d18da9e86c52482cbfc585ba0d56a85",
+      "headBlobSha256": "924e0ba06697be1de5501f0a8e5d03b73d18da9e86c52482cbfc585ba0d56a85"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ProcessingScreen.tsx",
+      "rawFileSha256": "e34ff88d91b25e8274042cc7f77871eb25570ce01eb8e4531b75a274a99a77ec",
+      "headBlobSha256": "e34ff88d91b25e8274042cc7f77871eb25570ce01eb8e4531b75a274a99a77ec"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.test.tsx",
+      "rawFileSha256": "332a100889580078daca4dbb0a1e815a2c6d9e0e0fcdbfa912b02fa0e1af63e2",
+      "headBlobSha256": "332a100889580078daca4dbb0a1e815a2c6d9e0e0fcdbfa912b02fa0e1af63e2"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/history-recovery.test.tsx",
+      "rawFileSha256": "c4e3c715bc7b6ca203ea9098cae71017012a56dfe2703acffef4a44d559d4842",
+      "headBlobSha256": "c4e3c715bc7b6ca203ea9098cae71017012a56dfe2703acffef4a44d559d4842"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.test.tsx",
+      "rawFileSha256": "02170f9f50454ba0af9562576b618951ba529162304461713427b4d1bdd908b6",
+      "headBlobSha256": "02170f9f50454ba0af9562576b618951ba529162304461713427b4d1bdd908b6"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/vitest.config.ts",
+      "rawFileSha256": "9a4a65976b5b7a5d038f9cb412a90d417f804108cf1dd33bae4421989a863420",
+      "headBlobSha256": "9a4a65976b5b7a5d038f9cb412a90d417f804108cf1dd33bae4421989a863420"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/test/setup.ts",
+      "rawFileSha256": "bc573b2a6133b07404c42f797bce43fe73464711e0281f29da8234bf2fed6b27",
+      "headBlobSha256": "bc573b2a6133b07404c42f797bce43fe73464711e0281f29da8234bf2fed6b27"
+    }
+  ],
+  "sourceFacts": [
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.tsx",
+      "symbol": "HomePage",
+      "scope": "handleBack, handleReject, handleFormSubmit, handleDemoSubmit, form/result/processing render"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.tsx",
+      "symbol": "DynamicForm",
+      "scope": "props, useForm, onFormSubmit, registered fields"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/store.ts",
+      "symbol": "useExecutionStore",
+      "scope": "persist and updateExecution"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ProcessingScreen.tsx",
+      "symbol": "ProcessingScreen",
+      "scope": "handleCancel, stopAttempt, execute failure; no parent error callback"
+    }
+  ],
+  "sourceReadBoundary": "Full Home and DynamicForm; store/types; targeted ProcessingScreen callback/failure/cancel lifecycle and test setup. Not a Web corpus scan.",
+  "reproduction": {
+    "result": {
+      "numTotalTestSuites": 2,
+      "numPassedTestSuites": 0,
+      "numFailedTestSuites": 2,
+      "numPendingTestSuites": 0,
+      "numTotalTests": 5,
+      "numPassedTests": 1,
+      "numFailedTests": 4,
+      "numPendingTests": 0,
+      "numTodoTests": 0,
+      "snapshot": {
+        "added": 0,
+        "failure": false,
+        "filesAdded": 0,
+        "filesRemoved": 0,
+        "filesRemovedList": [],
+        "filesUnmatched": 0,
+        "filesUpdated": 0,
+        "matched": 0,
+        "total": 0,
+        "unchecked": 0,
+        "uncheckedKeysByFile": [],
+        "unmatched": 0,
+        "updated": 0,
+        "didUpdate": false
+      },
+      "startTime": 1791774309137,
+      "success": false,
+      "testResults": [
+        {
+          "assertionResults": [
+            {
+              "ancestorTitles": [
+                "Home editable draft recovery dispatch probe"
+              ],
+              "fullName": "Home editable draft recovery dispatch probe control: real form submits selected A and completion ignores ambient B",
+              "status": "passed",
+              "title": "control: real form submits selected A and completion ignores ambient B",
+              "duration": 882.5999000000011,
+              "failureMessages": [],
+              "meta": {},
+              "tags": []
+            },
+            {
+              "ancestorTitles": [
+                "Home editable draft recovery dispatch probe"
+              ],
+              "fullName": "Home editable draft recovery dispatch probe desired: stop marks only bound processing attempt unsuccessful, including persisted record",
+              "status": "failed",
+              "title": "desired: stop marks only bound processing attempt unsuccessful, including persisted record",
+              "duration": 262.4276000000027,
+              "failureMessages": [
+                "AssertionError: expected 'processing' to be 'failed' // Object.is equality\n    at D:/UNG DUNG AI/TOOL AI 2026/Controlled-Vibe-Framework-CVF/.cvf/runtime/ncr-draft-recovery-20261012/draft-recovery.probe.test.tsx:193:62\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at processTimers (node:internal/timers:520:9)\n    at file:///D:/UNG%20DUNG%20AI/TOOL%20AI%202026/Controlled-Vibe-Framework-CVF/EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:20"
+              ],
+              "meta": {},
+              "tags": []
+            },
+            {
+              "ancestorTitles": [
+                "Home editable draft recovery dispatch probe"
+              ],
+              "fullName": "Home editable draft recovery dispatch probe desired: stopping returns the exact editable draft without another attempt",
+              "status": "failed",
+              "title": "desired: stopping returns the exact editable draft without another attempt",
+              "duration": 184.53319999999803,
+              "failureMessages": [
+                "AssertionError: expected undefined to be 'Selected draft A' // Object.is equality\n    at D:/UNG DUNG AI/TOOL AI 2026/Controlled-Vibe-Framework-CVF/.cvf/runtime/ncr-draft-recovery-20261012/draft-recovery.probe.test.tsx:198:94\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at processTimers (node:internal/timers:520:9)\n    at file:///D:/UNG%20DUNG%20AI/TOOL%20AI%202026/Controlled-Vibe-Framework-CVF/EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:20"
+              ],
+              "meta": {},
+              "tags": []
+            },
+            {
+              "ancestorTitles": [
+                "Home editable draft recovery dispatch probe"
+              ],
+              "fullName": "Home editable draft recovery dispatch probe desired: retry restores filled fields without executing or altering saved output",
+              "status": "failed",
+              "title": "desired: retry restores filled fields without executing or altering saved output",
+              "duration": 240.0568000000021,
+              "failureMessages": [
+                "AssertionError: expected '' to be 'Notes only for A' // Object.is equality\n    at D:/UNG DUNG AI/TOOL AI 2026/Controlled-Vibe-Framework-CVF/.cvf/runtime/ncr-draft-recovery-20261012/draft-recovery.probe.test.tsx:203:97\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at processTimers (node:internal/timers:520:9)\n    at file:///D:/UNG%20DUNG%20AI/TOOL%20AI%202026/Controlled-Vibe-Framework-CVF/EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:20"
+              ],
+              "meta": {},
+              "tags": []
+            },
+            {
+              "ancestorTitles": [
+                "Home editable draft recovery dispatch probe"
+              ],
+              "fullName": "Home editable draft recovery dispatch probe desired: explicit resubmit gets distinct identity even in same millisecond and keeps saved A",
+              "status": "failed",
+              "title": "desired: explicit resubmit gets distinct identity even in same millisecond and keeps saved A",
+              "duration": 290.1195000000007,
+              "failureMessages": [
+                "AssertionError: expected 'exec_1791763200000' not to be 'exec_1791763200000' // Object.is equality\n    at D:/UNG DUNG AI/TOOL AI 2026/Controlled-Vibe-Framework-CVF/.cvf/runtime/ncr-draft-recovery-20261012/draft-recovery.probe.test.tsx:210:35\n    at file:///D:/UNG%20DUNG%20AI/TOOL%20AI%202026/Controlled-Vibe-Framework-CVF/EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:20"
+              ],
+              "meta": {},
+              "tags": []
+            }
+          ],
+          "startTime": 1791774324968,
+          "endTime": 1791774326828.1194,
+          "status": "failed",
+          "message": "",
+          "name": "D:/UNG DUNG AI/TOOL AI 2026/Controlled-Vibe-Framework-CVF/.cvf/runtime/ncr-draft-recovery-20261012/draft-recovery.probe.test.tsx"
+        }
+      ]
+    },
+    "probeSource": "/**\n * @vitest-environment jsdom\n */\nimport { describe, it, expect, vi, beforeEach } from 'vitest';\nimport { render, screen, fireEvent, act, waitFor } from '@testing-library/react';\nimport HomePage from '@/app/(dashboard)/home/page';\nimport { DynamicForm as ActualDynamicForm } from '@/components/DynamicForm';\nimport { templates } from '@/lib/templates';\nimport { useExecutionStore } from '@/lib/store';\nimport type { Execution } from '@/types';\n\nconst navigation = vi.hoisted(() => ({ params: new URLSearchParams() }));\n\nvi.mock('next/navigation', () => ({\n    useRouter: () => ({ push: vi.fn(), replace: vi.fn() }),\n    useSearchParams: () => navigation.params,\n}));\n\nvi.mock('@/lib/i18n', () => ({\n    useLanguage: () => ({ language: 'en', t: (key: string) => key }),\n}));\n\nvi.mock('@/components/SpecExport', () => ({ SpecExport: () => null }));\nvi.mock('@/lib/skill-template-map', () => ({ getSkillForTemplate: () => null }));\n\nvi.mock('@/lib/analytics', () => ({\n    trackEvent: vi.fn(),\n}));\n\nvi.mock('@/components/Settings', () => ({\n    useSettings: () => ({ settings: { providers: {} } }),\n}));\n\nvi.mock('@/lib/hooks/useExecute', () => {\n    const providers: never[] = [];\n    const fetchProviders = () => undefined;\n    return {\n        useProviders: () => ({ providers, anyConfigured: false, fetchProviders }),\n    };\n});\n\n// Leaf controls are replaced by stubs that expose their callbacks as buttons.\n// The Home page and the execution store stay real.\nvi.mock('@/components', async () => ({\n    DynamicForm: (await import('@/components/DynamicForm')).DynamicForm,\n    ProcessingScreen: (props: { onComplete: (output: string) => void; onCancel: () => void }) => (\n        <div data-testid=\"processing-screen\">\n            <button onClick={props.onCancel}>cancel-processing</button>\n            <button onClick={() => props.onComplete('OUTPUT_NEW')}>complete-processing</button>\n        </div>\n    ),\n    ResultViewer: (props: {\n        execution: Execution;\n        output: string;\n        onAccept: () => void;\n        onReject: () => void;\n        onRetry: () => void;\n        onFollowUp?: (refinement: string) => void;\n    }) => (\n        <div data-testid=\"result-viewer\">\n            <span data-testid=\"result-id\">{props.execution.id}</span>\n            <span data-testid=\"result-template\">{props.execution.templateId}</span>\n            <span data-testid=\"result-output\">{props.output}</span>\n            <button onClick={props.onAccept}>accept</button>\n            <button onClick={props.onReject}>reject</button>\n            <button onClick={props.onRetry}>retry</button>\n            <button onClick={() => props.onFollowUp?.('refine it')}>follow-up</button>\n        </div>\n    ),\n    TemplatePreviewModal: () => null,\n    OnboardingTour: () => null,\n    AppBuilderWizard: () => null,\n    ProductDesignWizard: () => null,\n    MarketingCampaignWizard: () => null,\n    BusinessStrategyWizard: () => null,\n    SecurityAssessmentWizard: () => null,\n    ResearchProjectWizard: () => null,\n    SystemDesignWizard: () => null,\n    ContentStrategyWizard: () => null,\n    DataAnalysisWizard: () => null,\n}));\n\nvi.mock('@/components/home/HomeBrowseExperience', () => ({\n    HomeBrowseExperience: (props: {\n        templates: Array<{ id: string }>;\n        handleSelectTemplate: (template: unknown) => void;\n    }) => (\n        <div data-testid=\"home-browse-experience\">\n            <button onClick={() => props.handleSelectTemplate(props.templates.find(t => t.id === 'documentation'))}>\n                pick-documentation\n            </button>\n        </div>\n    ),\n}));\n\nconst documentation = templates.find(t => !t.isFolder && t.id === 'documentation')!;\nconst otherTemplate = templates.find(t => !t.isFolder && t.id !== documentation.id)!;\n\n// Each call builds an independent object so that A, B and the other fixtures\n// can never alias one another.\nfunction fixture(id: string, output: string, overrides: Partial<Execution> = {}): Execution {\n    return {\n        id,\n        templateId: documentation.id,\n        templateName: documentation.name,\n        category: documentation.category,\n        input: { topic: `${id} topic` },\n        intent: `${id} intent`,\n        output,\n        status: 'completed',\n        createdAt: new Date('2026-10-11T00:00:00Z'),\n        ...overrides,\n    };\n}\n\nconst buildA = () => fixture('exec_fixture_A', 'OUTPUT_A', {\n    result: 'accepted',\n    threadId: 'thread_A',\n    rootExecutionId: 'root_A',\n    projectLabel: 'Project A',\n    knowledgeCollectionId: 'kc_A',\n});\n\nconst buildB = () => fixture('exec_fixture_B', 'OUTPUT_B', {\n    threadId: 'thread_B',\n    rootExecutionId: 'root_B',\n    projectLabel: 'Project B',\n    knowledgeCollectionId: 'kc_B',\n});\n\nconst buildC = () => fixture('exec_fixture_C', 'OUTPUT_C', {\n    templateId: otherTemplate.id,\n    templateName: otherTemplate.name,\n    category: otherTemplate.category,\n    result: 'accepted',\n    threadId: 'thread_C',\n    rootExecutionId: 'root_C',\n});\n\nconst buildUnaccepted = () => fixture('exec_fixture_R', 'OUTPUT_R', { result: 'rejected' });\nconst buildEmptyOutput = () => fixture('exec_fixture_E', '', { result: 'accepted' });\nconst buildMissingTemplate = () => fixture('exec_fixture_T', 'OUTPUT_T', {\n    result: 'accepted',\n    templateId: 'template_missing_fixture',\n});\n\nfunction seed(executions: Execution[], current: Execution | null) {\n    useExecutionStore.setState({ executions, currentExecution: current });\n}\n\nfunction openHistory(id: string) {\n    navigation.params = new URLSearchParams(`continue=${id}`);\n}\n\nfunction byId(id: string) {\n    return useExecutionStore.getState().executions.find(e => e.id === id);\n}\n\nfunction click(name: string) {\n    fireEvent.click(screen.getByRole('button', { name }));\n}\n\nfunction startFreshRun() {\n    click('pick-documentation');\n    click('submit-form');\n}\n\nbeforeEach(() => {\n    vi.restoreAllMocks();\n    localStorage.clear();\n    sessionStorage.clear();\n    navigation.params = new URLSearchParams();\n    useExecutionStore.setState({ executions: [], currentExecution: null });\n});\n\n\nconst draft = { subject: 'Selected draft A', currentNotes: 'Notes only for A', readerGoal: 'Recover without typing again' };\nfunction fill() {\n    for (const [name,value] of Object.entries(draft)) fireEvent.change(document.querySelector('[name=\"'+name+'\"]')!, {target:{value}});\n}\nasync function submit() {\n    fireEvent.submit(document.querySelector('form')!);\n    await waitFor(() => expect(screen.getByTestId('processing-screen')).toBeTruthy());\n}\nasync function start() { render(<HomePage />); click('pick-documentation'); fill(); await submit(); return useExecutionStore.getState().executions[0].id; }\ndescribe('Home editable draft recovery dispatch probe', () => {\n    it('control: real form submits selected A and completion ignores ambient B', async () => {\n        const id=await start(); const b=buildB(); act(()=>useExecutionStore.getState().addExecution(b));\n        click('complete-processing'); expect(byId(id)?.output).toBe('OUTPUT_NEW'); expect(byId(b.id)?.output).toBe(b.output);\n    });\n    it('desired: stop marks only bound processing attempt unsuccessful, including persisted record', async () => {\n        const id=await start(); const b=buildB(); act(()=>useExecutionStore.getState().addExecution(b)); const before=JSON.stringify(byId(b.id));\n        click('cancel-processing'); expect(byId(id)?.status).toBe('failed'); expect(JSON.stringify(byId(b.id))).toBe(before);\n        expect(JSON.parse(localStorage.getItem('cvf-executions-storage')!).state.executions.find((e:Execution)=>e.id===id).status).toBe('failed');\n    });\n    it('desired: stopping returns the exact editable draft without another attempt', async () => {\n        await start(); click('cancel-processing');\n        expect((document.querySelector('[name=\"subject\"]') as HTMLInputElement|null)?.value).toBe(draft.subject);\n        expect(useExecutionStore.getState().executions).toHaveLength(1);\n    });\n    it('desired: retry restores filled fields without executing or altering saved output', async () => {\n        const id=await start(); click('complete-processing'); const before=JSON.stringify(byId(id)); click('retry');\n        expect((document.querySelector('[name=\"currentNotes\"]') as HTMLTextAreaElement)?.value).toBe(draft.currentNotes);\n        expect(JSON.stringify(byId(id))).toBe(before); expect(useExecutionStore.getState().executions).toHaveLength(1);\n    });\n    it('desired: explicit resubmit gets distinct identity even in same millisecond and keeps saved A', async () => {\n        vi.spyOn(Date,'now').mockReturnValue(1791763200000);\n        const id=await start(); click('complete-processing'); const before=JSON.stringify(byId(id)); click('retry'); fill(); await submit();\n        const records=useExecutionStore.getState().executions;\n        expect(records[0].id).not.toBe(id); expect(JSON.stringify(records.find(e=>e.id===id))).toBe(before);\n    });\n});\n",
+    "probeSourceSha256": "68049ed1e9eef9d27445b749e72d2af102e915fdc19e512933bd34439442720d",
+    "configSha256": "8d1e8feb370db3c73b871f2cb8c3abb061c18923b3c16d5d6bb60402ce042dd9",
+    "claimScope": "Actual Home/DynamicForm/store, synthetic form submit; ProcessingScreen/ResultViewer/SpecExport leaf stubs. Not visible Create Agent Spec flow, browser or backend proof."
+  },
+  "harnessFailures": [
+    {
+      "kind": "HOISTED_MOCK_FACTORY_IMPORT_ERROR",
+      "result": {
+        "numTotalTestSuites": 1,
+        "numPassedTestSuites": 0,
+        "numFailedTestSuites": 1,
+        "numPendingTestSuites": 0,
+        "numTotalTests": 0,
+        "numPassedTests": 0,
+        "numFailedTests": 0,
+        "numPendingTests": 0,
+        "numTodoTests": 0,
+        "snapshot": {
+          "added": 0,
+          "failure": false,
+          "filesAdded": 0,
+          "filesRemoved": 0,
+          "filesRemovedList": [],
+          "filesUnmatched": 0,
+          "filesUpdated": 0,
+          "matched": 0,
+          "total": 0,
+          "unchecked": 0,
+          "uncheckedKeysByFile": [],
+          "unmatched": 0,
+          "updated": 0,
+          "didUpdate": false
+        },
+        "startTime": 1791774245306,
+        "success": false,
+        "testResults": [
+          {
+            "assertionResults": [],
+            "startTime": 1791774245306,
+            "endTime": 1791774245306,
+            "status": "failed",
+            "message": "[vitest] There was an error when mocking a module. If you are using \"vi.mock\" factory, make sure there are no top level variables inside, since this call is hoisted to top of the file. Read more: https://vitest.dev/api/vi.html#vi-mock",
+            "name": "D:/UNG DUNG AI/TOOL AI 2026/Controlled-Vibe-Framework-CVF/.cvf/runtime/ncr-draft-recovery-20261012/draft-recovery.probe.test.tsx"
+          }
+        ]
+      },
+      "attribution": "Local dispatch harness only; zero product assertions ran"
+    }
+  ],
+  "localReadToolErrors": [
+    "Quoted PowerShell edit failed before mutation; corrected via apply_patch",
+    "Three guessed checker/template paths absent; resolved through rg inventory; not worker defects"
+  ],
+  "selectedOutcome": "Cancel or retry a selected Home attempt, keep its editable draft, and explicitly resubmit as a distinct attempt without overwriting saved A or ambient B.",
+  "materialPaths": [
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_DRAFT_RECOVERY_2026-10-12.md",
+    "docs/baselines/CVF_GC018_NCR_DRAFT_RECOVERY_2026-10-12.md",
+    "docs/reviews/evidence/ncr-draft-recovery-dispatch-20261012.json",
+    "docs/roadmaps/README.md",
+    "CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json",
+    "CVF_SESSION/ACTIVE_SESSION_STATE.json",
+    "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json"
+  ],
+  "workerPaths": [
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.tsx",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.tsx",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/draft-recovery.test.tsx",
+    "docs/reviews/evidence/ncr-draft-recovery-worker-20261012.json",
+    "docs/reviews/CVF_NCR_DRAFT_RECOVERY_WORKER_RETURN_2026-10-12.md"
+  ],
+  "continuityPaths": [
+    "AGENT_HANDOFF_V63_2026-09-18.md",
+    "CVF_SESSION_MEMORY.md",
+    "CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json",
+    "CVF_SESSION/state/entries/nextAllowedMove.json",
+    "CVF_SESSION/ACTIVE_SESSION_STATE.json",
+    "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json"
+  ],
+  "claimLimits": "Synthetic client recovery only, existing failed means locally unsuccessful attempt; no confirmed provider abort, automatic failure transition, persisted draft resume, new status/schema or full R1/R4 exit.",
+  "workerSampleAdded": false,
+  "requestedConfiguration": {
+    "provider": "Claude",
+    "model": "Sonnet 5.5",
+    "effort": "high",
+    "basis": "standing operator selection; manual start only",
+    "runtimeIdentity": null
+  }
+}
