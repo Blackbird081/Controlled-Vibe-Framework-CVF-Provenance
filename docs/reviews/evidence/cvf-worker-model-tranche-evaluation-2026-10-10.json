@@ -1196,6 +1196,14 @@
             ],
             "attribution": "LOCAL_ORCHESTRATOR_PACKET_METADATA",
             "repair": "Equivalent wording and mandatory label, no source/worker repair"
+          },
+          "committedBindingCorrection": {
+            "failure": "LOCAL_REVIEWER_METADATA_ERROR",
+            "initialMaterial": "8b18c412bac38c738f8e2aa8db9c7e4331f58beb",
+            "initialContinuity": "cec8a075a8dbc0c60ad9f713e77bdb390d28f46d",
+            "reason": "Source-oracle hash versus referenced evidence JSON file digest mismatch; original worker/probe bytes retained.",
+            "commitPlan": "EXACT3_CORRECTIVE_METADATA_THEN_EXACT6_CONTINUITY",
+            "failedGateLogSha256": "ad4a2bda7a2185d8a7e2bf33d826c2725b735fb996e8de3eedb98f9a92160392"
           }
         }
       },

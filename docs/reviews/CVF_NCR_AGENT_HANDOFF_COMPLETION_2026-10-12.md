@@ -57,8 +57,8 @@ implementationWorkerActor: INTERNAL_WORKER_REQUESTED_SONNET
 workerInvocationId: ncr-agent-handoff-worker-20261012
 reviewerDecisionOwner: LOCAL
 probeInvocationId: ncr-agent-handoff-local-review-20261012
-workerOracleSha256: 06197e4b8303781bab2920533c7d1bc914c15feaf669e2325bc4b681eabd02b4
-probeOracleSha256: 366cda099b090dc294cfcaf1451a14e2f4184d3b8ac62999d06b9cef2f7ce254
+workerOracleSha256: 632016697b47a6618ead295e71006ca551b18929a1541de267b4c5ac1bddae28
+probeOracleSha256: 2ee7c21b9812f1f7b7277ee066ce7559439c572a4872e36321ef1aa76927b116
 workerEvidenceRef: docs/reviews/evidence/ncr-agent-handoff-worker-20261012.json
 probeEvidenceRef: docs/reviews/evidence/ncr-agent-handoff-local-20261012.json
 probeCommandOrMethod: node node_modules/vitest/vitest.mjs run 'src/app/(dashboard)/local-agent-handoff-probe.test.tsx'
@@ -87,16 +87,16 @@ dependentFindingCountThisRound: 4
 elapsedReviewMinutes: NOT_AVAILABLE_WITH_REASON: full multi-turn reviewer startup interval not captured
 providerCallCount: 0
 tokenOrQuotaUsage: NOT_AVAILABLE_WITH_REASON: native usage unavailable, cost deferred
-materialCommitCount: 0
-continuityCommitCount: 0
+materialCommitCount: 1
+continuityCommitCount: 1
 valueDelta: finite receiving/session repair accepted; worker35/35 and Local2/2, existing steward/closure controls resolve packet failure without product reimplementation
 stopDisposition: COMPLETE_REVIEW
 preRepairAuditDisposition: COMPLETE_BEFORE_FIRST_REPAIR
-commitPlanDisposition: DEFAULT_ONE_MATERIAL_ONE_CONTINUITY
+commitPlanDisposition: EXCEPTION_WITH_REASON: committed-range evidence-file digest mismatch requires one exact3 corrective metadata material plus exact6 continuity; original technical evidence unchanged
 latencyDisposition: NOT_MEASURED_WITH_REASON: preliminary worker terminal and full reviewer interval incomplete
 avoidableDelayClass: GATE_DISCOVERY_LOOP
 
-Counts before planned commits. Material includes the authorized two-byte mode repair; full mode/next/handoff SHA sync follows in dedicated exact6 continuity. Routine MFRP M5/M10/safety/M20;21 task observations are not21 eligible matched samples.
+Counts before corrective commits: initial exact19 material8b18c412b and exact6 continuitycec8a075a landed. Initial material pre-closure failed on evidence-file digest binding; corrected metadata will be committed and continuity rebound. Original material/probe source bytes remain historical; correction is not another worker task. Routine MFRP M5/M10/safety/M20;21 task observations are not21 eligible matched samples.
 
 ## Finding-To-Governance Learning Disposition
 
@@ -123,26 +123,26 @@ Runtime/provider/cost learning: N/A_WITH_REASON - offline client UI only, econom
 |---|---|
 | Actor | Local INTERNAL_AGENT reviewer/closer |
 | Provider or surface | private Codex IDE shared workspace |
-| Session or invocation | ncr-agent-handoff-local-review-20261012 |
+| Session or invocation | ncr-agent-handoff-local-binding-correction-20261012 |
 | Working directory | repo root and installed Web package |
-| Command or tool surface | source/log/pin verification, scaffold, distinct actual chat probe, steward literal fix, Local closure/gates |
-| Target paths | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/layout.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/layout-agent-handoff.test.tsx`; `docs/reviews/evidence/ncr-agent-handoff-worker-20261012.json`; `docs/reviews/CVF_NCR_AGENT_HANDOFF_WORKER_RETURN_2026-10-12.md`; `docs/reviews/CVF_NCR_AGENT_HANDOFF_COMPLETION_2026-10-12.md`; `docs/reviews/evidence/ncr-agent-handoff-local-20261012.json`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_AGENT_HANDOFF_2026-10-12.md`; `docs/baselines/CVF_GC018_NCR_AGENT_HANDOFF_2026-10-12.md`; `docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json`; `docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md`; `docs/roadmaps/README.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.csv`; `.gitattributes`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `AGENT_HANDOFF_V63_2026-09-18.md` |
+| Command or tool surface | reference-file SHA256 recomputation, strict independent admission, P4 safety adjudication, corrective metadata/closure gates |
+| Target paths | `docs/reviews/CVF_NCR_AGENT_HANDOFF_COMPLETION_2026-10-12.md`; `docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json`; `docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md` |
 | Allowed scope source | standing returned-worker Local review/closure and current order |
-| Before status evidence | HEAD bf7d6c3d86a039d013d414d5d7b8449a8fd9bc4d; worker exact4 plus Local two-byte handoff repair, staged empty |
-| After status evidence | exact19 reviewed material then dedicated exact6 actual-SHA continuity |
+| Before status evidence | HEAD cec8a075a8dbc0c60ad9f713e77bdb390d28f46d; clean; original material preclosure/P4 receipt failed only Local digest mismatch |
+| After status evidence | exact3 corrective metadata, then dedicated exact6 continuity; original worker4 unchanged |
 | Diff evidence | git diff --check and exact manifests |
 | Approval boundary | no worker redispatch, provider, public or push |
 | Claim boundary | offline jsdom/session only; original worker blocked/procedureFAIL retained |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-agent-handoff-local-review-20261012 |
-| Expected manifest | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/layout.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/layout-agent-handoff.test.tsx`; `docs/reviews/evidence/ncr-agent-handoff-worker-20261012.json`; `docs/reviews/CVF_NCR_AGENT_HANDOFF_WORKER_RETURN_2026-10-12.md`; `docs/reviews/CVF_NCR_AGENT_HANDOFF_COMPLETION_2026-10-12.md`; `docs/reviews/evidence/ncr-agent-handoff-local-20261012.json`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_AGENT_HANDOFF_2026-10-12.md`; `docs/baselines/CVF_GC018_NCR_AGENT_HANDOFF_2026-10-12.md`; `docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json`; `docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md`; `docs/roadmaps/README.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.csv`; `.gitattributes`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `AGENT_HANDOFF_V63_2026-09-18.md` |
-| Actual changed set | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/layout.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/layout-agent-handoff.test.tsx`; `docs/reviews/evidence/ncr-agent-handoff-worker-20261012.json`; `docs/reviews/CVF_NCR_AGENT_HANDOFF_WORKER_RETURN_2026-10-12.md`; `docs/reviews/CVF_NCR_AGENT_HANDOFF_COMPLETION_2026-10-12.md`; `docs/reviews/evidence/ncr-agent-handoff-local-20261012.json`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_AGENT_HANDOFF_2026-10-12.md`; `docs/baselines/CVF_GC018_NCR_AGENT_HANDOFF_2026-10-12.md`; `docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json`; `docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md`; `docs/roadmaps/README.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.csv`; `.gitattributes`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `AGENT_HANDOFF_V63_2026-09-18.md` |
+| Invocation ID | ncr-agent-handoff-local-binding-correction-20261012 |
+| Expected manifest | `docs/reviews/CVF_NCR_AGENT_HANDOFF_COMPLETION_2026-10-12.md`; `docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json`; `docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md` |
+| Actual changed set | `docs/reviews/CVF_NCR_AGENT_HANDOFF_COMPLETION_2026-10-12.md`; `docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json`; `docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |
 
 ## Required Artifact Manifest
 
-Exact19 material: `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/layout.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/layout-agent-handoff.test.tsx`; `docs/reviews/evidence/ncr-agent-handoff-worker-20261012.json`; `docs/reviews/CVF_NCR_AGENT_HANDOFF_WORKER_RETURN_2026-10-12.md`; `docs/reviews/CVF_NCR_AGENT_HANDOFF_COMPLETION_2026-10-12.md`; `docs/reviews/evidence/ncr-agent-handoff-local-20261012.json`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_AGENT_HANDOFF_2026-10-12.md`; `docs/baselines/CVF_GC018_NCR_AGENT_HANDOFF_2026-10-12.md`; `docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json`; `docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md`; `docs/roadmaps/README.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.csv`; `.gitattributes`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `AGENT_HANDOFF_V63_2026-09-18.md`. Dedicated continuity: the six named source/generated surfaces after actual material commit; no hand edit of aggregates.
+Current exact3 corrective metadata: `docs/reviews/CVF_NCR_AGENT_HANDOFF_COMPLETION_2026-10-12.md`; `docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json`; `docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md`. Initial exact19 material manifest is preserved in Local proof JSON; original worker4 unchanged. Dedicated exact6 continuity will rebind the corrected material SHA.
 
 ## Machine Closure Package
 
@@ -177,36 +177,20 @@ Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 Operator authorization: explicit Local blocker repair and xu ly continuation,2026-10-12, under standing reviewer/closer roles.
-Rollback boundary: exact19 and exact6; four original worker bytes and previous20 collection rows preserved; no push.
+Rollback boundary: initial exact19 retained; current exact3 corrective metadata then exact6 sync; original worker4 and previous20 rows preserved; no push.
 
 ## Mixed Protected-Path Atomicity Authorization
 
 Disposition: AUTHORIZED_EXACT_MANIFEST
-Atomicity reason: worker repair/proof, Local review and steward literal fix, packet status/pins, roadmap/collection and generated views close together; dedicated continuity binds actual material SHA.
-Rollback boundary: exact19 below; no Local product edits.
+Atomicity reason: corrected evidence reference digests and Local attribution/report pins belong to one bounded correction; no protected source path in current exact3.
+Rollback boundary: exact3 below; worker/source/proof bytes unchanged.
 Exact changed manifest:
 
-- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/layout.tsx`
-- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/layout-agent-handoff.test.tsx`
-- `docs/reviews/evidence/ncr-agent-handoff-worker-20261012.json`
-- `docs/reviews/CVF_NCR_AGENT_HANDOFF_WORKER_RETURN_2026-10-12.md`
 - `docs/reviews/CVF_NCR_AGENT_HANDOFF_COMPLETION_2026-10-12.md`
-- `docs/reviews/evidence/ncr-agent-handoff-local-20261012.json`
-- `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_AGENT_HANDOFF_2026-10-12.md`
-- `docs/baselines/CVF_GC018_NCR_AGENT_HANDOFF_2026-10-12.md`
 - `docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json`
 - `docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md`
-- `docs/roadmaps/README.md`
-- `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`
-- `docs/roadmaps/CVF_ROADMAP_INVENTORY.md`
-- `docs/roadmaps/CVF_ROADMAP_INVENTORY.csv`
-- `.gitattributes`
-- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-- `AGENT_HANDOFF_V63_2026-09-18.md`
 
-Expected Artifact Existence: four worker artifacts submitted; Local completion/proof authored before commit; other material paths tracked.
+Expected Artifact Existence: three tracked reviewer-owned files; correction does not rewrite original worker or Local probe evidence.
 
 ## External Knowledge Intake Routing
 
@@ -259,3 +243,23 @@ Reason: private provenance test/evidence only; no public-sync artifact/remote/co
 ## Claim Boundary
 
 Bounded offline jsdom receiving/session lifecycle repair only. No real provider/AI governance/full/browser/backend abort/arbitrary concurrency/public/deploy/whole-NCR/model-winner or complete time/read-compliance claim. Stop at finite reviewed outcome.
+
+## Local Corrective Adjudication - 2026-10-12
+
+Original material8b18c412b and continuitycec8a075a are immutable. Pre-closure and
+P4-C1 receipt generation rejected source-oracle hashes where the contract
+requires SHA256 of workerEvidenceRef/probeEvidenceRef file bytes. This is a
+LOCAL_REVIEWER_METADATA_ERROR, not an implementation-worker defect. Current
+digests recomputed from unchanged worker/Local evidence JSON; their embedded
+test/probe source hashes still establish distinct source oracles. Strict admission
+is checked without changed-lane filtering before safety-marker adjudication.
+
+Reviewer-owned exact3 correction is an explicit commit-plan exception. Original
+failed material and collector marker/journal details remain historical. The
+active P4-C1 collection contract Write Ownership / Automatic Collection Contract
+and `.githooks/pre-commit` reserve marker adjudication/removal to reviewer/closer
+after evidence-based resolution. This is an authority citation, not a dependency
+closure of the separately activated collection work order.
+Ignored adjudication receipt retains marker bytes, new binding digests and the
+strict PASS log; this does not rewrite a trusted disposition or machine history.
+No source/test rerun, worker redispatch, new checker or extra task sample.
