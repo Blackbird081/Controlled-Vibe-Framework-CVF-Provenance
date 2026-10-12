@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RESULT_ISOLATION_2026-10-12.md",
     "workOrderSha256": "fff7fc9caab5ca0d8d71a7b6fb59df1c7c611954374bd1703a2c4a1837779dbc"
   },
-  "currentAuthoritySyncReason": "ResultViewer run-isolation dispatch selected from actual two-case source witness;exact11 packet projection,actual-SHA continuity follows;22 observations unchanged.",
+  "currentAuthoritySyncReason": "ResultViewer run isolation dispatch material b9afe1890a681f7fa3de562545e78d6d10608c54;exact6 continuity;Local witness2FAIL,worker pending,22 observations unchanged.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
@@ -110,8 +110,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_ncr_chat_history_closed_useful_selection",
-  "previousMode": "cvf_ncr_chat_history_worker_execution",
+  "currentMode": "cvf_ncr_result_isolation_worker_execution",
+  "previousMode": "cvf_ncr_chat_history_closed_useful_selection",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
