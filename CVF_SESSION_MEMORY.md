@@ -39,16 +39,16 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_history_recovery_closed_useful_selection`;handoff=`AGENT_HANDOFF_V63_2026-09-18.md`;next=useful product gap selection after History closure;role=Local INTERNAL_AGENT reviewer/closer/steward;phase=private closure;decision owner=Local;parked checkpoint=Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11/Customer Care application.
+Startup acknowledged: current mode=`cvf_ncr_draft_recovery_worker_execution`;handoff=`AGENT_HANDOFF_V63_2026-09-18.md`;next=operator-started bounded Home draft recovery worker;role=Local INTERNAL_AGENT dispatcher/steward;phase=dispatch release;decision owner=Local;parked checkpoint=Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11/Customer Care application.
 
 ## Current Mode
 
-Current mode marker: `cvf_ncr_history_recovery_closed_useful_selection`
-Current mode: `cvf_ncr_history_recovery_closed_useful_selection`; previous mode marker: `cvf_ncr_history_recovery_worker_execution`
+Current mode marker: `cvf_ncr_draft_recovery_worker_execution`
+Current mode: `cvf_ncr_draft_recovery_worker_execution`; previous mode marker: `cvf_ncr_history_recovery_closed_useful_selection`
 
 ## Next Allowed Move
-Mode: `cvf_ncr_history_recovery_closed_useful_selection`
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=LOCAL_REVIEW_AND_SELECTION; BATCH_ID=CVF-NCR-HISTORY-RECOVERY-20261012. History recovery CLOSED_PASS_BOUNDED at bbff80863f71797b0d70e6df3c010473d488cf5e; completion docs/reviews/CVF_NCR_HISTORY_RECOVERY_COMPLETION_2026-10-12.md; proof docs/reviews/evidence/ncr-history-recovery-local-20261012.json. Saved result -> review/export/follow-up accepted offline after1 Local query-presence root repair/2 symptoms. Independent original4 PASS/4 FAIL, final8/8;84 focused/type/lint PASS. Continue requires accepted+completed by Local packet clarification; empty continue governs. Sonnet5.5 high requested, native unknown, worker16.68min; required product reads reported complete, checker-read limits retained.18 reviewed tasks:10 Haiku-family,4 Sonnet,4 Luna; prior17 unchanged; cost deferred. Next choose only a concrete useful product gap; no automatic worker, metadata-only successor, stricter gate/quiz or duplicate suite. Whole job/browser/Next routing/R3/R4 remain unproved. Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11/Customer Care application parked; LHW24; no push grant.
+Mode: `cvf_ncr_draft_recovery_worker_execution`
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_WORKER; BATCH_ID=CVF-NCR-DRAFT-RECOVERY-20261012. Operator-started Sonnet5.5 high shared-workspace worker: docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_DRAFT_RECOVERY_2026-10-12.md. Exact5 paths: Home/form, composition test, proof/return; WORKER_MUST_NOT_COMMIT,45min. Source Home/form/store probe1 control PASS/4 desired failures: selected local stop, retained editable draft, explicit unique resubmit. Implementation pending. Existing failed is unsuccessful local attempt, not provider abort; no new schema/status. Worker captures executionBaseHead; verify raw/HEAD/currentAuthority pins and mandatory scoped reads before edit; bound pre-implementation, final fast gate/ledger. Local review then quality/time collection; prior18 tasks10 Haiku-family/4 Sonnet/4 Luna unchanged, cost deferred. Prior Home/Processing/History accepted scope retained. Whole job/visible SpecExport/browser/R3/R4 not proven. No auto-start, stricter gate/quiz, metadata-only successor or push. Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11/Customer Care application parked; LHW24.
 Historical G1-G7 terminal baseline: mode `acel_g1_g7_research_terminally_closed`. G1-G6 terminal review: `docs/reviews/CVF_ACEL_G1_G6_TERMINAL_STOP_CLOSURE_2026-09-24.md`; G7 research closure: `docs/reviews/CVF_ACEL_G7_CROSS_RUN_CAPABILITY_EVOLUTION_RESEARCH_CLOSURE_2026-09-24.md`. The packet-only post-G7 reconciliation review at `docs/reviews/CVF_ACEL_POST_G7_FULL_CORPUS_ABSORPTION_CLOSURE_2026-09-24.md` is superseded for repository absorption by the 2026-09-25 pinned-source audit. G1 is stopped, G2-G6 remain parked, G7 research is closed, and no automatic G1-G7 successor exists.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
