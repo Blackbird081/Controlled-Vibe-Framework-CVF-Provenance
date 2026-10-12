@@ -8,10 +8,10 @@
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_NCR_DRAFT_EXPORT_2026-10-12.md",
-    "baselineSha256": "0fb7f3f43fd8438cda52a7217f678e3dd422e89cb32a1a618741f0ca8cf71e16",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_DRAFT_EXPORT_2026-10-12.md",
-    "workOrderSha256": "cc53f964f6c27a7efa8a3aa4ce4f54ce72516f8060877b1e5852a23f3658fbb4"
+    "baselinePath": "docs/baselines/CVF_GC018_NCR_AGENT_HANDOFF_2026-10-12.md",
+    "baselineSha256": "736b8c0676244bc6ae891b260381636bbf86daef1a683908bff338b9e2514ed7",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_AGENT_HANDOFF_2026-10-12.md",
+    "workOrderSha256": "0111b1b220274520a09aeff5c8422820e979b4ea9583b7f4d91ef6c84bc516fe"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

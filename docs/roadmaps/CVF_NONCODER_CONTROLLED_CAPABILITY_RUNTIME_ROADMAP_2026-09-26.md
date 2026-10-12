@@ -19,7 +19,7 @@ Decision owner: operator về định hướng/phạm vi; Local reviewer về đ
 ## Current Delivery Checkpoint - 2026-10-12
 
 Operator asks to update our roadmaps to prevent drift. Local owns this bounded
-documentation reconciliation; current mode=cvf_ncr_draft_recovery_closed_useful_selection,
+documentation reconciliation; current mode=cvf_ncr_draft_export_closed_useful_selection,
 handoff=AGENT_HANDOFF_V63_2026-09-18.md, next=useful coding outcome selection.
 This checkpoint supersedes older current/next wording for selection; historical
 decisions, accepted proofs, phase IDs and effect checkpoints retain their scope.
@@ -38,27 +38,24 @@ offline claim level first; full real-provider R3 acceptance remains open.
 | R4 recovery contribution | ProcessingScreen client attempt isolation/once delivery accepted after Local repair in docs/reviews/CVF_NCR_PROCESSING_LIFECYCLE_COMPLETION_2026-10-12.md | offline client coverage does not prove backend cancellation, durable effects, restart/restore or full R4 exit |
 | R5/R6 | hosted/scale/new-capability work remains demand/authority gated | no automatic implementation from this roadmap |
 
-**Selected next outcome - Local source selection, 2026-10-12:** recover a Home
-draft, edit and confirm its Vietnamese idea, then obtain the current English
-Working Brief through the visible export controls. Consumer: the noncoder and
-receiving INTAKE agent. Selection base: ae3e9813afc424f3b590ccf91c353aaadc35102b.
-`EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/draft-recovery.test.tsx`
-explicitly hides SpecExport; separate component tests do not establish this mounted
-Home journey. This is a coverage gap, not a demonstrated product defect.
-Source route: Home passes restored values to DynamicForm, which mounts SpecExport;
-Home's handleSendToAgent emits cvf:openAgent with the prompt. Receiving that event,
-executing a job and producing a result are later claims, outside this selection.
-
-**Finite acceptance:** use the real Home/DynamicForm/SpecExport UI for a synthetic
-recovered draft; exported text must contain its current inputs and exclude another
-saved job's inputs. Preview/copy/download and the emitted handoff prompt must use
-the current brief. An idea edit, including A -> B -> A, must require confirmation
-again; audience switching alone must preserve it. Saved job controls stay intact.
-Reuse accepted recovery and export evidence; verify only this missing composition.
-**Dispatch boundary:** operator now requests a manual Sonnet worker for this proof;
-docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_DRAFT_EXPORT_2026-10-12.md fixes three
-test/proof/return paths; no production edits. Bound release required. Stop after this finite
-journey's assertions or a named blocker; whole NCR/R3/R4 acceptance remains open.
+**Selected next outcome - Local receiving-side repair, 2026-10-12:** accepted
+draft export ends at cvf:openAgent; docs/reviews/CVF_NCR_DRAFT_EXPORT_COMPLETION_2026-10-12.md
+records documentation/jsdom worker10/10,Local2/2 with procedureFAIL retained.
+Next consumer is the actual dashboard Agent Chat session, without prompt retyping.
+Source base: f0199132050799c293f6b34db8c27b535694baed. Dashboard unmounts chat on minimize while
+retaining initialPrompt; wrapper pins incoming ownership at mount. A distinct
+Local shell/wrapper/history witness observes restore replay[A,A] and lost newB[A],
+two desired assertions FAIL; synthetic Chat recorder, no AI/governance claim.
+docs/reviews/evidence/ncr-agent-handoff-dispatch-20261012.json preserves source/log.
+**Finite acceptance:** incoming prompt owns one fresh ready session; minimize/
+restore preserves its session/messages with no replay; a new explicit handoff
+while chat is open receives the current prompt without saved-session contamination.
+Close/replacement clears queued old prompt; preserve ordinary navigation/history.
+**Dispatch boundary:** docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_AGENT_HANDOFF_2026-10-12.md
+fixes four worker paths: layout repair, regression, proof and pending return;
+all other production/history/hooks remain read-only. One manual offline worker,
+only after committed bound release. Stop at finite accepted outcome or blocker;
+whole NCR/full/browser/provider/R3/R4 remains open.20 observations unchanged.
 
 Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11 remain
 parked. ETA and end-to-end readiness are NOT_ESTABLISHED; tests/commits/tranches
@@ -1142,26 +1139,24 @@ orientation packets are not refreshed by this private local edit.
 
 | Field | Evidence |
 |---|---|
-| Actor | Local orchestrator / roadmap maintainer |
-| Provider or surface | private shared CVF workspace |
-| Session or invocation | roadmap-realignment-20261012 |
-| Working directory | repository root |
-| Command or tool surface | selected continuity/source/checker reads; exact historical-section relocation; scoped document edits; existing static gates |
-| Target paths | this roadmap; model-selection roadmap; NCR October6 evidence archive; active-window registry |
-| Allowed scope source | operator2026-10-12 asks to update our roadmaps to avoid drift; existing lifecycle outcome-bound owner |
-| Before status evidence | HEAD f93e07bed73958a2e9aac928bf1c4f9ff5bfc43f; git status --short empty |
-| After status evidence | four-path documentation batch; current mode and closed work-order authority retained |
-| Diff evidence | git diff --check; exact raw historical-section comparison; .cvf/runtime/roadmap-realignment-20261012/verification.json |
-| Approval boundary | roadmap documentation only; effects and parked checkpoints retain their existing owners |
-| Claim boundary | milestone/proof-gap reconciliation; no fresh product acceptance or agent-behavior proof |
+| Actor | Local INTERNAL_AGENT orchestrator/dispatcher |
+| Provider or surface | private shared workspace |
+| Session or invocation | ncr-agent-handoff-dispatch-20261012 |
+| Working directory | repository root and installed Web package |
+| Command or tool surface | targeted source/owner reads, actual scaffold/ADIF, bounded two-case inspection witness, source pins, dispatch/gates/commits |
+| Target paths | `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_AGENT_HANDOFF_2026-10-12.md`; `docs/baselines/CVF_GC018_NCR_AGENT_HANDOFF_2026-10-12.md`; `docs/reviews/evidence/ncr-agent-handoff-dispatch-20261012.json`; `docs/roadmaps/README.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.csv`; `.gitattributes`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Allowed scope source | operator next following manual worker role assignment; existing outcome-bound lifecycle |
+| Before status evidence | HEAD f0199132050799c293f6b34db8c27b535694baed; clean/staged empty; temporary Local witness removed |
+| After status evidence | exact11 dispatch material then dedicated exact6 continuity; worker not started |
+| Diff evidence | git diff --check and exact manifests |
+| Approval boundary | manual shared-workspace worker; offline client source only |
+| Claim boundary | two synthetic leaf-boundary failures witnessed; no provider or AI governance claim |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | roadmap-realignment-20261012 |
-| Expected manifest | docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md; docs/roadmaps/CVF_ORCHESTRATOR_MODEL_SELECTION_SYSTEM_CHAIN_ROADMAP_2026-10-10.md; docs/roadmaps/archive/CVF_NCR_CONSUMER_EVIDENCE_2026-10-06_ARCHIVED_2026-10-12.md; governance/compat/CVF_ACTIVE_WINDOW_REGISTRY.json |
-| Actual changed set | same four paths; reconciled against Git before completion |
-| Manifest delta | MATCH |
-| Deletion or rename disposition | no files deleted/renamed; original89-line historical section retained exactly in the named archive |
-
-Historical October6 consumer evidence: `docs/roadmaps/archive/CVF_NCR_CONSUMER_EVIDENCE_2026-10-06_ARCHIVED_2026-10-12.md`, NOT_ACTIVE_AUTHORITY. Source revision and raw section digest are retained there; reuse its bounded observations without presenting them as current runtime freshness.
+| Invocation ID | ncr-agent-handoff-dispatch-20261012 |
+| Expected manifest | `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_AGENT_HANDOFF_2026-10-12.md`; `docs/baselines/CVF_GC018_NCR_AGENT_HANDOFF_2026-10-12.md`; `docs/reviews/evidence/ncr-agent-handoff-dispatch-20261012.json`; `docs/roadmaps/README.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.csv`; `.gitattributes`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Actual changed set | `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_AGENT_HANDOFF_2026-10-12.md`; `docs/baselines/CVF_GC018_NCR_AGENT_HANDOFF_2026-10-12.md`; `docs/reviews/evidence/ncr-agent-handoff-dispatch-20261012.json`; `docs/roadmaps/README.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.csv`; `.gitattributes`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Manifest delta | MATCH required before commit |
+| Deletion or rename disposition | N/A with reason: none |
 
 ## Public Export Disposition
 

@@ -36,12 +36,12 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_NCR_DRAFT_EXPORT_2026-10-12.md",
-    "baselineSha256": "0fb7f3f43fd8438cda52a7217f678e3dd422e89cb32a1a618741f0ca8cf71e16",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_DRAFT_EXPORT_2026-10-12.md",
-    "workOrderSha256": "cc53f964f6c27a7efa8a3aa4ce4f54ce72516f8060877b1e5852a23f3658fbb4"
+    "baselinePath": "docs/baselines/CVF_GC018_NCR_AGENT_HANDOFF_2026-10-12.md",
+    "baselineSha256": "736b8c0676244bc6ae891b260381636bbf86daef1a683908bff338b9e2514ed7",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_AGENT_HANDOFF_2026-10-12.md",
+    "workOrderSha256": "0111b1b220274520a09aeff5c8422820e979b4ea9583b7f4d91ef6c84bc516fe"
   },
-  "currentAuthoritySyncReason": "Draft-export technical closure material bf9ab6b134db5084025cc895c14d250c8889c915; dedicated exact6 continuity,20 reviewed tasks and historical procedureFAIL retained, no product repair.",
+  "currentAuthoritySyncReason": "New finite incoming handoff lifecycle repair selected; two Local source witnesses fail; paired ready packet raw hashes before material, dedicated actual-SHA continuity follows;20 prior observations unchanged.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",

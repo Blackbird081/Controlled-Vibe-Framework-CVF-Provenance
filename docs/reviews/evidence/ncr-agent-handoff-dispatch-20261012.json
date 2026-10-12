@@ -1,0 +1,124 @@
+{
+  "schemaVersion": "cvf.ncrAgentHandoffDispatch@1",
+  "baseHead": "f0199132050799c293f6b34db8c27b535694baed",
+  "batchId": "CVF-NCR-AGENT-HANDOFF-20261012",
+  "sourceFacts": {
+    "shell": "cvf:openAgent sets prompt/modal; minimized render unmounts wrapper but preserves prompt",
+    "wrapper": "initialPromptSessionId captured at mount; nonempty or mismatched session suppresses prompt",
+    "history": "initialProvider initializes fresh session only on mount",
+    "hook": "500ms initialPrompt timer and handledPromptRef; existing StrictMode/cancel controls accepted"
+  },
+  "sourcePins": [
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/layout.tsx",
+      "rawSha256": "18e35af0031172385bc9e16811ba242011c0a3d8cefc9c3888403e61979f16a8",
+      "headSha256": "18e35af0031172385bc9e16811ba242011c0a3d8cefc9c3888403e61979f16a8",
+      "head": "f0199132050799c293f6b34db8c27b535694baed"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/layout.test.tsx",
+      "rawSha256": "bc3b183f79782da0e42725cb576b3287747b43e7edddd7848e3f3e83cd50f133",
+      "headSha256": "bc3b183f79782da0e42725cb576b3287747b43e7edddd7848e3f3e83cd50f133",
+      "head": "f0199132050799c293f6b34db8c27b535694baed"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/AgentChatWithHistory.tsx",
+      "rawSha256": "20d74655258b5c9033f7a42d6821c07cc5c23d857abf3faf057e16bb78f949bf",
+      "headSha256": "20d74655258b5c9033f7a42d6821c07cc5c23d857abf3faf057e16bb78f949bf",
+      "head": "f0199132050799c293f6b34db8c27b535694baed"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/AgentChatWithHistory.test.tsx",
+      "rawSha256": "278becb72892428deb1aa1341c077f9989e814102de7d6a1b87009b6312154cd",
+      "headSha256": "278becb72892428deb1aa1341c077f9989e814102de7d6a1b87009b6312154cd",
+      "head": "f0199132050799c293f6b34db8c27b535694baed"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/AgentChat.tsx",
+      "rawSha256": "f5e31153e8b0482d1036904aae64cd7d81d36ab654076afcbe355568c9bd238a",
+      "headSha256": "f5e31153e8b0482d1036904aae64cd7d81d36ab654076afcbe355568c9bd238a",
+      "head": "f0199132050799c293f6b34db8c27b535694baed"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/chat-history.tsx",
+      "rawSha256": "dc4a450b97cd74dea6f67c23b253e06726622382c055c4cc48c1be8849803d0b",
+      "headSha256": "dc4a450b97cd74dea6f67c23b253e06726622382c055c4cc48c1be8849803d0b",
+      "head": "f0199132050799c293f6b34db8c27b535694baed"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/chat-history.test.tsx",
+      "rawSha256": "17b4e014a05d22a5547a2b8341029a4b6ad4a2de5ce3e611833ca38c4e094289",
+      "headSha256": "17b4e014a05d22a5547a2b8341029a4b6ad4a2de5ce3e611833ca38c4e094289",
+      "head": "f0199132050799c293f6b34db8c27b535694baed"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/hooks/useAgentChat.ts",
+      "rawSha256": "5f60cb289473b21e0d3c017992478cfa9bb062b7c891c7ba1479d854ad0b5192",
+      "headSha256": "5f60cb289473b21e0d3c017992478cfa9bb062b7c891c7ba1479d854ad0b5192",
+      "head": "f0199132050799c293f6b34db8c27b535694baed"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/hooks/useAgentChat.test.ts",
+      "rawSha256": "09ecf7a2c9d63ed6ecd7b188a6a56d3cb4e37d0f4b55231916b6ce67cae30494",
+      "headSha256": "09ecf7a2c9d63ed6ecd7b188a6a56d3cb4e37d0f4b55231916b6ce67cae30494",
+      "head": "f0199132050799c293f6b34db8c27b535694baed"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.tsx",
+      "rawSha256": "b6b1d7ff64bcc5586b830b2a23c8e1b94957ef276a4abd9cea9eaa0825965322",
+      "headSha256": "b6b1d7ff64bcc5586b830b2a23c8e1b94957ef276a4abd9cea9eaa0825965322",
+      "head": "f0199132050799c293f6b34db8c27b535694baed"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/test/setup.ts",
+      "rawSha256": "bc573b2a6133b07404c42f797bce43fe73464711e0281f29da8234bf2fed6b27",
+      "headSha256": "bc573b2a6133b07404c42f797bce43fe73464711e0281f29da8234bf2fed6b27",
+      "head": "f0199132050799c293f6b34db8c27b535694baed"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/vitest.config.ts",
+      "rawSha256": "9a4a65976b5b7a5d038f9cb412a90d417f804108cf1dd33bae4421989a863420",
+      "headSha256": "9a4a65976b5b7a5d038f9cb412a90d417f804108cf1dd33bae4421989a863420",
+      "head": "f0199132050799c293f6b34db8c27b535694baed"
+    }
+  ],
+  "workerOwnedPaths": [
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/layout.tsx",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/layout-agent-handoff.test.tsx",
+    "docs/reviews/evidence/ncr-agent-handoff-worker-20261012.json",
+    "docs/reviews/CVF_NCR_AGENT_HANDOFF_WORKER_RETURN_2026-10-12.md"
+  ],
+  "requestedConfiguration": "Sonnet5.5 high, operator-selected manual worker",
+  "existingObservations": 20,
+  "admissionWitness": {
+    "result": "FAIL 2/2 desired assertions, initial A control PASS in both",
+    "observed": [
+      "restore delivers[A,A] rather than[A]",
+      "new B while A open delivers[A] rather than[A,B]"
+    ],
+    "command": "node node_modules/vitest/vitest.mjs run 'src/app/(dashboard)/local-handoff-admission.test.tsx'",
+    "sourceSha256": "269f7a0819ecd8a7158706625352cb18a3d9fdc3c1085bcb7458f0215a540861",
+    "sourceText": "// Local source-inspection witness only; synthetic Chat leaf, no AI/governance claim.\nimport { useEffect } from 'react';\nimport { act, cleanup, fireEvent, render, screen } from '@testing-library/react';\nimport { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';\nimport DashboardLayout from './layout';\nconst { delivered } = vi.hoisted(() => ({ delivered: vi.fn() }));\nvi.mock('next/navigation', () => ({ usePathname: () => '/home', useRouter: () => ({ push: vi.fn(), replace: vi.fn() }), useSearchParams: () => ({ get: () => null, toString: () => '' }) }));\nvi.mock('@/lib/hooks/useAuth', () => ({ useAuth: () => ({ userRole: 'admin', userName: 'Fixture', permissions: {}, handleLogout: vi.fn(), impersonation: null, endImpersonation: vi.fn() }) }));\nvi.mock('@/lib/hooks/useModals', () => ({ useModals: () => ({ closeAllModals: vi.fn(), openModal: vi.fn(), closeModal: vi.fn() }) }));\nvi.mock('@/lib/store', () => ({ useExecutionStore: () => ({ executions: [] }) }));\nvi.mock('@/components/Settings', () => ({ useSettings: () => ({ settings: { providers: {}, preferences: { defaultProvider: 'alibaba' } }, updateProvider: vi.fn(), updatePreferences: vi.fn() }) }));\nvi.mock('@/lib/i18n', () => ({ useLanguage: () => ({ language: 'en', t: (s: string) => s }) }));\nvi.mock('@/components/CompactHeader', () => ({ default: () => null }));\nvi.mock('@/components', async () => ({\n    AgentChatWithHistory: (await import('@/components/AgentChatWithHistory')).AgentChatWithHistory,\n    Sidebar: () => null, OnboardingWizard: () => null, QuickStart: () => null,\n    UserContextForm: () => null, SettingsPage: () => null, AIUsagePanel: () => null,\n    ApiKeyWizard: () => null, MultiAgentPanel: () => null, ToolsPage: () => null,\n}));\nvi.mock('@/components/AgentChat', () => ({\n    AgentChat: ({ initialPrompt, onMessagesChange, onMinimize }: {\n        initialPrompt?: string; onMessagesChange: (v: unknown[]) => void; onMinimize: () => void;\n    }) => {\n        useEffect(() => {\n            if (initialPrompt) {\n                delivered(initialPrompt);\n                onMessagesChange([{ id: `fixture-${initialPrompt}`, role: 'user', content: initialPrompt, timestamp: new Date() }]);\n            }\n        }, [initialPrompt, onMessagesChange]);\n        return <button onClick={onMinimize}>Witness minimize</button>;\n    },\n}));\nvi.mock('@/lib/chat-history', async original => ({\n    ...await original<typeof import('@/lib/chat-history')>(), ChatHistorySidebar: () => null,\n}));\nconst handoff = (prompt: string) => act(() => { window.dispatchEvent(new CustomEvent('cvf:openAgent', { detail: { prompt } })); });\ndescribe('Local incoming handoff lifecycle witness', () => {\n    beforeEach(() => { localStorage.clear(); delivered.mockClear(); });\n    afterEach(() => { cleanup(); localStorage.clear(); });\n    it('minimize/restore preserves one delivery and one existing history session', async () => {\n        render(<DashboardLayout><div>Home witness</div></DashboardLayout>);\n        handoff('LOCAL_CURRENT_A');\n        expect(delivered.mock.calls.map(c => c[0])).toEqual(['LOCAL_CURRENT_A']);\n        const first = JSON.parse(localStorage.getItem('cvf_chat_history')!);\n        fireEvent.click(screen.getByText('Witness minimize'));\n        fireEvent.click(screen.getByText('CVF Agent'));\n        expect(delivered.mock.calls.map(c => c[0])).toEqual(['LOCAL_CURRENT_A']);\n        expect(JSON.parse(localStorage.getItem('cvf_chat_history')!).sessions.map((s: { id: string }) => s.id))\n            .toEqual(first.sessions.map((s: { id: string }) => s.id));\n    });\n    it('new handoff B while chat A is open receives B in a distinct session', async () => {\n        render(<DashboardLayout><div>Home witness</div></DashboardLayout>);\n        handoff('LOCAL_CURRENT_A');\n        handoff('LOCAL_CURRENT_B');\n        expect(delivered.mock.calls.map(c => c[0])).toEqual(['LOCAL_CURRENT_A', 'LOCAL_CURRENT_B']);\n        const history = JSON.parse(localStorage.getItem('cvf_chat_history')!);\n        expect(history.sessions).toHaveLength(2);\n        const active = history.sessions.find((s: { id: string }) => s.id === history.activeSessionId);\n        expect(active.messages.map((m: { content: string }) => m.content)).toEqual(['LOCAL_CURRENT_B']);\n    });\n});\n",
+    "logSha256": "ca51978d9121c06b88c16193190eba0bec7e67f34ae0e01cb898aee0d9c27e8e",
+    "logText": "\n RUN  v4.1.8 D:/UNG DUNG AI/TOOL AI 2026/Controlled-Vibe-Framework-CVF/EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web\n\n \u276f src/app/(dashboard)/local-handoff-admission.test.tsx (2 tests | 2 failed) 59ms\n     \u00d7 minimize/restore preserves one delivery and one existing history session 50ms\n     \u00d7 new handoff B while chat A is open receives B in a distinct session 7ms\n\n\u23af\u23af\u23af\u23af\u23af\u23af\u23af Failed Tests 2 \u23af\u23af\u23af\u23af\u23af\u23af\u23af\n\n FAIL  src/app/(dashboard)/local-handoff-admission.test.tsx > Local incoming handoff lifecycle witness > minimize/restore preserves one delivery and one existing history session\nAssertionError: expected [ Array(2) ] to deeply equal [ 'LOCAL_CURRENT_A' ]\n\n- Expected\n+ Received\n\n  [\n    \"LOCAL_CURRENT_A\",\n+   \"LOCAL_CURRENT_A\",\n  ]\n\n \u276f src/app/(dashboard)/local-handoff-admission.test.tsx:47:53\n     45|         fireEvent.click(screen.getByText('Witness minimize'));\n     46|         fireEvent.click(screen.getByText('CVF Agent'));\n     47|         expect(delivered.mock.calls.map(c => c[0])).toEqual(['LOCAL_CU\u2026\n       |                                                     ^\n     48|         expect(JSON.parse(localStorage.getItem('cvf_chat_history')!).s\u2026\n     49|             .toEqual(first.sessions.map((s: { id: string }) => s.id));\n\n\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af[1/2]\u23af\n\n FAIL  src/app/(dashboard)/local-handoff-admission.test.tsx > Local incoming handoff lifecycle witness > new handoff B while chat A is open receives B in a distinct session\nAssertionError: expected [ 'LOCAL_CURRENT_A' ] to deeply equal [ Array(2) ]\n\n- Expected\n+ Received\n\n  [\n    \"LOCAL_CURRENT_A\",\n-   \"LOCAL_CURRENT_B\",\n  ]\n\n \u276f src/app/(dashboard)/local-handoff-admission.test.tsx:55:53\n     53|         handoff('LOCAL_CURRENT_A');\n     54|         handoff('LOCAL_CURRENT_B');\n     55|         expect(delivered.mock.calls.map(c => c[0])).toEqual(['LOCAL_CU\u2026\n       |                                                     ^\n     56|         const history = JSON.parse(localStorage.getItem('cvf_chat_hist\u2026\n     57|         expect(history.sessions).toHaveLength(2);\n\n\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af[2/2]\u23af\n\n\n Test Files  1 failed (1)\n      Tests  2 failed (2)\n   Start at  12:43:17\n   Duration  8.95s (transform 1.63s, setup 7.60s, import 235ms, tests 59ms, environment 852ms)\n\n",
+    "oracle": "actual shell/wrapper/history; synthetic Chat delivery recorder and unrelated chrome/auth/settings stubs; no AI/governance/transport correctness claim",
+    "cleanup": "temporary source removed, original bytes embedded here; no production edit"
+  },
+  "scaffold": {
+    "command": "python governance/compat/build_dispatch_packet_scaffold.py --packet-kind web-ui-dashboard --batch-id CVF-NCR-AGENT-HANDOFF-20261012 --title \"NCR Agent Handoff Lifecycle\" --date 2026-10-12 --base f0199132050799c293f6b34db8c27b535694baed --commit-mode WORKER_MUST_NOT_COMMIT --dependency docs/reviews/CVF_NCR_DRAFT_EXPORT_COMPLETION_2026-10-12.md --include-worker-return-skeleton --no-evidence-readiness-applicable --scec-problem-key ncr-agent-handoff-lifecycle --scec-successor-scope NO_SUCCESSOR --stdout",
+    "rawReceiptSha256": "8f2a63e5197e9bf7931129a7a34db4518ff80c4e982c889d2d7fc615a69c6699"
+  },
+  "readDepth": "named shell/wrapper/history and hook timer/send scopes; no whole repository/full corpus claim",
+  "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
+  "packetAuthoringCorrection": {
+    "firstResult": "FAIL_LOCAL_PACKET_SHAPE",
+    "logSha256": "771ebf146cd72b4f4e55830bf7181709d283d09b02775b7923a8c54e85664136",
+    "findings": [
+      "UI session-binding wording matched filesystem security trigger",
+      "baseline evidence heading missing",
+      "Return contract envelope label missing",
+      "typed acceptance-ledger-json fence missing"
+    ],
+    "correction": "Consolidated dispatcher metadata/literal repair, no source edit; original source witness unchanged."
+  }
+}
