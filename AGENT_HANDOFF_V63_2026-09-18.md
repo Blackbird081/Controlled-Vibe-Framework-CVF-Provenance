@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Current NCR Continuation
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `8b18c412bac38c738f8e2aa8db9c7e4331f58beb`. Material SHA: `8b18c412bac38c738f8e2aa8db9c7e4331f58beb`. Batch ID: CVF-NCR-AGENT-HANDOFF-20261012. Exact19 reviewed material; exact6 continuity; no push.
+Current HEAD recorded for this handoff: `40f07d84e051158cd07dcc74421f71f5c78e7180`. Material SHA: `40f07d84e051158cd07dcc74421f71f5c78e7180`. Batch ID: CVF-NCR-AGENT-HANDOFF-20261012. Corrective3 after initial19; exact6 continuity; no push.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -18,7 +18,7 @@ Startup acknowledged: current mode=`cvf_ncr_agent_handoff_closed_useful_selectio
 
 ## Current Mode
 
-`cvf_ncr_agent_handoff_closed_useful_selection`. Offline/jsdom receiving accepted35/35+Local2/2;original BLOCKED/procedureFAIL;whole job open,LHW24.
+`cvf_ncr_agent_handoff_closed_useful_selection`. Offline/jsdom35/35+Local2/2;original BLOCKED/procedureFAIL;Local proof binding/P4 adjudication corrected;initial closureFAIL retained;whole job open,LHW24.
 
 ## Current Authority
 
@@ -106,7 +106,7 @@ Receiving agents clarify incomplete ideas according to the existing lifecycle st
 Consume returned evidence under MFRP P4-C1: EVALUATE_RETURNED_EVIDENCE_NOT_RECREATE_IMPLEMENTATION. A rerun needs a named contradiction/changed consumer,information gain and cost reason.
 Alibaba calls are authorized for meaningful scoped tests; no other provider call,Claude dispatch,public push,deployment or actual-data cutover is inferred.
 ## Next Allowed Move
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=LOCAL_REVIEW_AND_SELECTION; BATCH_ID=CVF-NCR-AGENT-HANDOFF-20261012. Receiving lifecycle CLOSED_PASS_BOUNDED at 8b18c412bac38c738f8e2aa8db9c7e4331f58beb; completion docs/reviews/CVF_NCR_AGENT_HANDOFF_COMPLETION_2026-10-12.md; proof docs/reviews/evidence/ncr-agent-handoff-local-20261012.json. Worker layout repair keeps minimized chat mounted and keys explicit prompt-bearing handoffs; actual session/draft/messages retained, new/identical-text intent isolated, close/replacement clears queued timer. Worker35/35 and original-source9/12 FAIL consumed,Local actual chat/hook2/2 PASS. Four original worker bytes unchanged; historical BLOCKED/procedureFAIL retained. Local mode literal/fifth-path gate boundary repaired using reviewer manifest; no Local product repair/redispatch. Local reviewer-fast70/70 and material precommit91/91 PASS. Sonnet5.5 high requested,native identity/usage unknown;13.8min preliminary terminal,full accepted interval unknown.21 reviewed tasks10 Haiku-family/7 Sonnet/4 Luna; previous20 rows preserved,cost deferred. Stop finite scope; next only concrete useful product selection, no automatic worker/successor/push. Whole job/full/browser/backend/R3/R4 unproved;Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11/Customer Care application parked;LHW24.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=LOCAL_REVIEW_AND_SELECTION; BATCH_ID=CVF-NCR-AGENT-HANDOFF-20261012. Receiving lifecycle CLOSED_PASS_BOUNDED at 40f07d84e051158cd07dcc74421f71f5c78e7180; completion docs/reviews/CVF_NCR_AGENT_HANDOFF_COMPLETION_2026-10-12.md; proof docs/reviews/evidence/ncr-agent-handoff-local-20261012.json. Worker layout repair keeps minimized chat mounted and keys explicit prompt-bearing handoffs; actual session/draft/messages retained, new/identical-text intent isolated, close/replacement clears queued timer. Worker35/35 and original-source9/12 FAIL consumed,Local actual chat/hook2/2 PASS. Four original worker bytes unchanged; historical BLOCKED/procedureFAIL retained. Local mode/manifest and evidence bindings corrected;initial closureFAIL retained; no Local product repair/redispatch. Local reviewer-fast70/70 and material precommit91/91 PASS. Sonnet5.5 high requested,native identity/usage unknown;13.8min preliminary terminal,full accepted interval unknown.21 reviewed tasks10 Haiku-family/7 Sonnet/4 Luna; previous20 rows preserved,cost deferred. Stop finite scope; next only concrete useful product selection, no automatic worker/successor/push. Whole job/full/browser/backend/R3/R4 unproved;Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11/Customer Care application parked;LHW24.
 ## Active Boundary
 T3B has a Local-verified active v1 specification. Party B is verified and T3C-C1 tooling accepted at `db78c87df`; T3C-C2 and Party C are verified. T3D-C1 tooling is accepted at `9ed844c2a` without source. T3D-C0-R1 closed at `2fffa1ef7`. T3D-C3 was accepted bounded at `88137e9a2`, but actual-mode prepare attempts failed before Party B/C execution; authorized cleanup removed the failed root and discarded unaccepted worker changes. G1 stopped, G2-G6 parked, and G7 research closed at `660601f0e` with `ADAPT_EXISTING_HANDOFF_ONLY`. Evidence-join sufficiency stays WATCH; no implementation successor exists. Rejected T2 paths remain archived; HRLTP-T2 paused.
 Post-G7 Local source intake and Jev P0 are closed at material commit `9ac0ee8e59fa041ddaa93d725796c509400f257a`. The audit records 32 READ plus 8,093 DEFERRED paths. Jev adds fail-closed decision-context binding, incomplete candidate-space escape, and `EVIDENCE_ONLY` judgment authority to the existing ASSF owner. Proof: TypeScript 84/84, Python 61/61, compile PASS, governance 90/90. G1-G7 remain closed.
@@ -153,8 +153,8 @@ Rollback boundary: exact6; original worker4 and previous20 rows retained.
 | Working directory | repo root |
 | Command or tool surface | canonical generator,exact6 closure sync and gates |
 | Target paths | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Allowed scope source | operator Local repair/closure; exact19 material 8b18c412bac38c738f8e2aa8db9c7e4331f58beb |
-| Before status evidence | 8b18c412bac38c738f8e2aa8db9c7e4331f58beb; exact19 material committed,91/91 precommit PASS; clean/staged empty |
+| Allowed scope source | operator Local repair/closure; corrective3 material 40f07d84e051158cd07dcc74421f71f5c78e7180 |
+| Before status evidence | 40f07d84e051158cd07dcc74421f71f5c78e7180; corrective3 committed,91/91 PASS;clean |
 | After status evidence | exact6; bounded receiving accepted,21 observations,original BLOCKED/procedureFAIL retained |
 | Diff evidence | git diff --check; exact6 manifest |
 | Approval boundary | private continuity; no worker/provider/public/push |
