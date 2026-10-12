@@ -36,12 +36,12 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_NCR_AGENT_HANDOFF_2026-10-12.md",
-    "baselineSha256": "ab093700c33b2a88dcb98f67000ecaade1aedac1c376458270238a3beba3fd86",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_AGENT_HANDOFF_2026-10-12.md",
-    "workOrderSha256": "cd4e8afdd6ac71a539aaa29b7609135449452396c1b4efa9d3af90c297d96a83"
+    "baselinePath": "docs/baselines/CVF_GC018_NCR_CHAT_HISTORY_2026-10-12.md",
+    "baselineSha256": "820617c634be245eb7fce764392a99669018a568004aecd0b1170147f8108d97",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_CHAT_HISTORY_2026-10-12.md",
+    "workOrderSha256": "8055b1b1d2c9f16cfa674cd8ce14d88627f7d213cc9efc1ffefe2de487224d87"
   },
-  "currentAuthoritySyncReason": "Agent handoff corrected proof binding material 40f07d84e051158cd07dcc74421f71f5c78e7180; exact6 continuity; original19/6 and failed closure retained;21 observations, worker4 unchanged.",
+  "currentAuthoritySyncReason": "Finite chat history consistency repair selected; two Local source witnesses FAIL; ready paired packet raw hashes before material and dedicated continuity;21 observations unchanged.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",

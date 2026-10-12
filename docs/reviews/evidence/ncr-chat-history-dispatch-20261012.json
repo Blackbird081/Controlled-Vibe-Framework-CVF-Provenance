@@ -1,0 +1,119 @@
+{
+  "schemaVersion": "cvf.ncrChatHistoryDispatch@1",
+  "baseHead": "4aabff8808e150f76c371dc7e087b5dad6f186ba",
+  "batchId": "CVF-NCR-CHAT-HISTORY-20261012",
+  "sourceFacts": {
+    "wrapper": "useChatHistory owns current sessions, create/update and active session; sidebar receives only callbacks/current ID",
+    "sidebar": "independent useChatHistory loads snapshot and persists deletions/clear",
+    "writer": "each hook saves its whole local state; no same-window synchronization"
+  },
+  "sourcePins": [
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/AgentChatWithHistory.tsx",
+      "rawSha256": "20d74655258b5c9033f7a42d6821c07cc5c23d857abf3faf057e16bb78f949bf",
+      "headSha256": "20d74655258b5c9033f7a42d6821c07cc5c23d857abf3faf057e16bb78f949bf",
+      "head": "4aabff8808e150f76c371dc7e087b5dad6f186ba"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/chat-history.tsx",
+      "rawSha256": "dc4a450b97cd74dea6f67c23b253e06726622382c055c4cc48c1be8849803d0b",
+      "headSha256": "dc4a450b97cd74dea6f67c23b253e06726622382c055c4cc48c1be8849803d0b",
+      "head": "4aabff8808e150f76c371dc7e087b5dad6f186ba"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/AgentChatWithHistory.test.tsx",
+      "rawSha256": "278becb72892428deb1aa1341c077f9989e814102de7d6a1b87009b6312154cd",
+      "headSha256": "278becb72892428deb1aa1341c077f9989e814102de7d6a1b87009b6312154cd",
+      "head": "4aabff8808e150f76c371dc7e087b5dad6f186ba"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/chat-history.test.tsx",
+      "rawSha256": "17b4e014a05d22a5547a2b8341029a4b6ad4a2de5ce3e611833ca38c4e094289",
+      "headSha256": "17b4e014a05d22a5547a2b8341029a4b6ad4a2de5ce3e611833ca38c4e094289",
+      "head": "4aabff8808e150f76c371dc7e087b5dad6f186ba"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/AgentChat.tsx",
+      "rawSha256": "f5e31153e8b0482d1036904aae64cd7d81d36ab654076afcbe355568c9bd238a",
+      "headSha256": "f5e31153e8b0482d1036904aae64cd7d81d36ab654076afcbe355568c9bd238a",
+      "head": "4aabff8808e150f76c371dc7e087b5dad6f186ba"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/hooks/useAgentChat.ts",
+      "rawSha256": "5f60cb289473b21e0d3c017992478cfa9bb062b7c891c7ba1479d854ad0b5192",
+      "headSha256": "5f60cb289473b21e0d3c017992478cfa9bb062b7c891c7ba1479d854ad0b5192",
+      "head": "4aabff8808e150f76c371dc7e087b5dad6f186ba"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/hooks/useAgentChat.test.ts",
+      "rawSha256": "09ecf7a2c9d63ed6ecd7b188a6a56d3cb4e37d0f4b55231916b6ce67cae30494",
+      "headSha256": "09ecf7a2c9d63ed6ecd7b188a6a56d3cb4e37d0f4b55231916b6ce67cae30494",
+      "head": "4aabff8808e150f76c371dc7e087b5dad6f186ba"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/layout.tsx",
+      "rawSha256": "25474fb5ae581f052831f9e7dcd4094c130a7a45b662c54c22ada7196bd7c11c",
+      "headSha256": "25474fb5ae581f052831f9e7dcd4094c130a7a45b662c54c22ada7196bd7c11c",
+      "head": "4aabff8808e150f76c371dc7e087b5dad6f186ba"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/layout-agent-handoff.test.tsx",
+      "rawSha256": "06197e4b8303781bab2920533c7d1bc914c15feaf669e2325bc4b681eabd02b4",
+      "headSha256": "06197e4b8303781bab2920533c7d1bc914c15feaf669e2325bc4b681eabd02b4",
+      "head": "4aabff8808e150f76c371dc7e087b5dad6f186ba"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/test/setup.ts",
+      "rawSha256": "bc573b2a6133b07404c42f797bce43fe73464711e0281f29da8234bf2fed6b27",
+      "headSha256": "bc573b2a6133b07404c42f797bce43fe73464711e0281f29da8234bf2fed6b27",
+      "head": "4aabff8808e150f76c371dc7e087b5dad6f186ba"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/vitest.config.ts",
+      "rawSha256": "9a4a65976b5b7a5d038f9cb412a90d417f804108cf1dd33bae4421989a863420",
+      "headSha256": "9a4a65976b5b7a5d038f9cb412a90d417f804108cf1dd33bae4421989a863420",
+      "head": "4aabff8808e150f76c371dc7e087b5dad6f186ba"
+    }
+  ],
+  "workerOwnedPaths": [
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/AgentChatWithHistory.tsx",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/chat-history.tsx",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/AgentChatHistoryConsistency.test.tsx",
+    "docs/reviews/evidence/ncr-chat-history-worker-20261012.json",
+    "docs/reviews/CVF_NCR_CHAT_HISTORY_WORKER_RETURN_2026-10-12.md"
+  ],
+  "existingObservations": 21,
+  "requestedConfiguration": "Sonnet5.5 high operator-requested, manual invocation",
+  "admissionWitness": {
+    "result": "two valid desired source assertions FAIL; seeded actual message/storage controls PASS",
+    "observed": [
+      "new chat persistent3, sidebar Delete rows2",
+      "deleted saved-A still shown as body-A; New Chat resurrects saved-A"
+    ],
+    "command": "node node_modules/vitest/vitest.mjs run src/components/local-history-admission.test.tsx",
+    "sourceSha256": "718b2d762417b23589c95b69d579b383b954466e282e5fa2580a8ee732a3e8bd",
+    "sourceText": "import { fireEvent, render, screen, cleanup } from '@testing-library/react';\nimport { afterEach, beforeEach, expect, it, vi } from 'vitest';\nimport { AgentChatWithHistory } from './AgentChatWithHistory';\nvi.mock('./Settings', () => ({ useSettings: () => ({ settings: { preferences: { defaultProvider: 'alibaba' } } }) }));\nvi.mock('./AgentChat', () => ({ AgentChat: ({ existingMessages }: { existingMessages: { content: string }[] }) => <div data-testid=\"actual-chat-messages\">{existingMessages.map(m => m.content).join('|')}</div> }));\nconst key = 'cvf_chat_history';\nbeforeEach(() => {\n  localStorage.clear();\n  const when = new Date().toISOString();\n  localStorage.setItem(key, JSON.stringify({ activeSessionId: 'saved-A', sessions: ['A', 'B'].map(id => ({ id: `saved-${id}`, title: `Saved ${id}`, provider: 'alibaba', createdAt: when, updatedAt: when, metadata: { messageCount: 1 }, messages: [{ id: `msg-${id}`, role: 'user', content: `body-${id}`, timestamp: when }] })) }));\n});\nafterEach(() => { cleanup(); localStorage.clear(); });\nit('new chat appears in the actual sidebar and can be selected without reopening', () => {\n  render(<AgentChatWithHistory />);\n  expect(screen.getByTestId('actual-chat-messages').textContent).toBe('body-A');\n  fireEvent.click(screen.getByRole('button', { name: /New Chat/ }));\n  expect(JSON.parse(localStorage.getItem(key)!).sessions).toHaveLength(3);\n  expect(screen.getAllByTitle('Delete')).toHaveLength(3);\n});\nit('deleting active history changes the actual chat and cannot resurrect deleted content', () => {\n  render(<AgentChatWithHistory />);\n  expect(screen.getByTestId('actual-chat-messages').textContent).toBe('body-A');\n  fireEvent.click(screen.getAllByTitle('Delete')[0]);\n  expect(JSON.parse(localStorage.getItem(key)!).sessions.map((s: { id: string }) => s.id)).toEqual(['saved-B']);\n  const bodyAfterDelete = screen.getByTestId('actual-chat-messages').textContent;\n  fireEvent.click(screen.getByRole('button', { name: /New Chat/ }));\n  const idsAfterNew = JSON.parse(localStorage.getItem(key)!).sessions.map((s: { id: string }) => s.id);\n  expect({ bodyAfterDelete, resurrected: idsAfterNew.includes('saved-A') }).toEqual({ bodyAfterDelete: 'body-B', resurrected: false });\n});\n",
+    "logSha256": "c80e1c4efad2b97b8efecd24ae1770f7d672d69886b70a0081be1e62d261e767",
+    "logText": "\n RUN  v4.1.8 D:/UNG DUNG AI/TOOL AI 2026/Controlled-Vibe-Framework-CVF/EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web\n\n \u276f src/components/local-history-admission.test.tsx (2 tests | 2 failed) 532ms\n   \u00d7 new chat appears in the actual sidebar and can be selected without reopening 454ms\n   \u00d7 deleting active history changes the actual chat and cannot resurrect deleted content 75ms\n\n\u23af\u23af\u23af\u23af\u23af\u23af\u23af Failed Tests 2 \u23af\u23af\u23af\u23af\u23af\u23af\u23af\n\n FAIL  src/components/local-history-admission.test.tsx > new chat appears in the actual sidebar and can be selected without reopening\nAssertionError: expected [ <button \u2026(2)></button>, \u2026(1) ] to have a length of 3 but got 2\n\n- Expected\n+ Received\n\n- 3\n+ 2\n\n \u276f src/components/local-history-admission.test.tsx:18:42\n     16|   fireEvent.click(screen.getByRole('button', { name: /New Chat/ }));\n     17|   expect(JSON.parse(localStorage.getItem(key)!).sessions).toHaveLength\u2026\n     18|   expect(screen.getAllByTitle('Delete')).toHaveLength(3);\n       |                                          ^\n     19| });\n     20| it('deleting active history changes the actual chat and cannot resurre\u2026\n\n\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af[1/2]\u23af\n\n FAIL  src/components/local-history-admission.test.tsx > deleting active history changes the actual chat and cannot resurrect deleted content\nAssertionError: expected { bodyAfterDelete: 'body-A', \u2026(1) } to deeply equal { bodyAfterDelete: 'body-B', \u2026(1) }\n\n- Expected\n+ Received\n\n  {\n-   \"bodyAfterDelete\": \"body-B\",\n-   \"resurrected\": false,\n+   \"bodyAfterDelete\": \"body-A\",\n+   \"resurrected\": true,\n  }\n\n \u276f src/components/local-history-admission.test.tsx:28:77\n     26|   fireEvent.click(screen.getByRole('button', { name: /New Chat/ }));\n     27|   const idsAfterNew = JSON.parse(localStorage.getItem(key)!).sessions.\u2026\n     28|   expect({ bodyAfterDelete, resurrected: idsAfterNew.includes('saved-A\u2026\n       |                                                                             ^\n     29| });\n     30|\n\n\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af[2/2]\u23af\n\n\n Test Files  1 failed (1)\n      Tests  2 failed (2)\n   Start at  14:34:48\n   Duration  9.70s (transform 2.55s, setup 7.98s, import 201ms, tests 532ms, environment 800ms)\n\n",
+    "previousLocalFixtureAttempts": [
+      {
+        "kind": "fixture-fail",
+        "logSha256": "aacca4bd2f78680dcb0f48a2c2863bcdcceea24887a4a14f48774c7a01bdb157",
+        "logText": "\n RUN  v4.1.8 D:/UNG DUNG AI/TOOL AI 2026/Controlled-Vibe-Framework-CVF/EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web\n\n \u276f src/components/local-history-admission.test.tsx (2 tests | 2 failed) 42ms\n   \u00d7 new chat appears in the actual sidebar and can be selected without reopening 36ms\n   \u00d7 deleting active history changes the actual chat and cannot resurrect deleted content 5ms\n\n\u23af\u23af\u23af\u23af\u23af\u23af\u23af Failed Tests 2 \u23af\u23af\u23af\u23af\u23af\u23af\u23af\n\n FAIL  src/components/local-history-admission.test.tsx > new chat appears in the actual sidebar and can be selected without reopening\nError: Invalid Chai property: toHaveTextContent\n \u276f src/components/local-history-admission.test.tsx:15:52\n     13| it('new chat appears in the actual sidebar and can be selected without\u2026\n     14|   render(<AgentChatWithHistory />);\n     15|   expect(screen.getByTestId('actual-chat-messages')).toHaveTextContent\u2026\n       |                                                    ^\n     16|   fireEvent.click(screen.getByRole('button', { name: /New Chat/ }));\n     17|   expect(JSON.parse(localStorage.getItem(key)!).sessions).toHaveLength\u2026\n\n\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af[1/2]\u23af\n\n FAIL  src/components/local-history-admission.test.tsx > deleting active history changes the actual chat and cannot resurrect deleted content\nError: Invalid Chai property: toHaveTextContent\n \u276f src/components/local-history-admission.test.tsx:22:52\n     20| it('deleting active history changes the actual chat and cannot resurre\u2026\n     21|   render(<AgentChatWithHistory />);\n     22|   expect(screen.getByTestId('actual-chat-messages')).toHaveTextContent\u2026\n       |                                                    ^\n     23|   fireEvent.click(screen.getAllByTitle('Delete')[0]);\n     24|   expect(JSON.parse(localStorage.getItem(key)!).sessions.map((s: { id:\u2026\n\n\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af[2/2]\u23af\n\n\n Test Files  1 failed (1)\n      Tests  2 failed (2)\n   Start at  14:32:59\n   Duration  65.89s (transform 9.16s, setup 24.13s, import 178ms, tests 42ms, environment 41.09s)\n\n"
+      },
+      {
+        "kind": "partial-oracle",
+        "logSha256": "3333f2b544ea58ab6ac63839882671a15bce3945f729a95825a8bc93a97d817f",
+        "logText": "\n RUN  v4.1.8 D:/UNG DUNG AI/TOOL AI 2026/Controlled-Vibe-Framework-CVF/EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web\n\n \u276f src/components/local-history-admission.test.tsx (2 tests | 1 failed) 184ms\n   \u00d7 deleting active history changes the actual chat and cannot resurrect deleted content 34ms\n\n\u23af\u23af\u23af\u23af\u23af\u23af\u23af Failed Tests 1 \u23af\u23af\u23af\u23af\u23af\u23af\u23af\n\n FAIL  src/components/local-history-admission.test.tsx > deleting active history changes the actual chat and cannot resurrect deleted content\nAssertionError: expected { bodyAfterDelete: 'body-A', \u2026(1) } to deeply equal { bodyAfterDelete: 'body-B', \u2026(1) }\n\n- Expected\n+ Received\n\n  {\n-   \"bodyAfterDelete\": \"body-B\",\n-   \"resurrected\": false,\n+   \"bodyAfterDelete\": \"body-A\",\n+   \"resurrected\": true,\n  }\n\n \u276f src/components/local-history-admission.test.tsx:28:77\n     26|   fireEvent.click(screen.getByRole('button', { name: /New Chat/ }));\n     27|   const idsAfterNew = JSON.parse(localStorage.getItem(key)!).sessions.\u2026\n     28|   expect({ bodyAfterDelete, resurrected: idsAfterNew.includes('saved-A\u2026\n       |                                                                             ^\n     29| });\n     30|\n\n\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af[1/1]\u23af\n\n\n Test Files  1 failed (1)\n      Tests  1 failed | 1 passed (2)\n   Start at  14:34:25\n   Duration  8.81s (transform 1.66s, setup 7.50s, import 157ms, tests 184ms, environment 794ms)\n\n"
+      }
+    ],
+    "oracle": "actual wrapper/sidebar/useChatHistory, synthetic saved A/B, Chat leaf stored-message recorder; final survivor policy fixed by Local selection, no provider/AI governance claim",
+    "cleanup": "temporary source removed after preservation; no product source edit"
+  },
+  "scaffold": {
+    "command": "python governance/compat/build_dispatch_packet_scaffold.py --packet-kind web-ui-dashboard --batch-id CVF-NCR-CHAT-HISTORY-20261012 --title \"NCR Chat History Consistency\" --date 2026-10-12 --base 4aabff8808e150f76c371dc7e087b5dad6f186ba --commit-mode WORKER_MUST_NOT_COMMIT --dependency docs/reviews/CVF_NCR_AGENT_HANDOFF_COMPLETION_2026-10-12.md --include-worker-return-skeleton --no-evidence-readiness-applicable --scec-problem-key ncr-chat-history-consistency --scec-successor-scope NO_SUCCESSOR --stdout",
+    "rawReceiptSha256": "5d8a364b423594c3ba334ba6939a829d18ade2afdecfe01ff66c465fbcd158c5"
+  },
+  "readDepth": "full wrapper/history and current checkpoint; scoped hook/Chat lifecycle, existing fixture/config and guard constants; no whole corpus claim",
+  "publicExportDisposition": "DEFERRED_PRIVATE_ONLY"
+}

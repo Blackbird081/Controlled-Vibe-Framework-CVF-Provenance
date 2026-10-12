@@ -39,18 +39,28 @@ offline claim level first; full real-provider R3 acceptance remains open.
 | R5/R6 | hosted/scale/new-capability work remains demand/authority gated | no automatic implementation from this roadmap |
 
 **Accepted finite outcome - Agent Chat handoff lifecycle, 2026-10-12:**
-docs/reviews/CVF_NCR_AGENT_HANDOFF_COMPLETION_2026-10-12.md accepts the
-offline/jsdom receiving repair: worker35/35 consumed, old-source9/12 FAIL,
-Local actual shell/wrapper/chat/hook/history2/2 PASS. Minimize/restore retains
-session/messages/unsent draft; explicit new or identical-text handoff gets a
-fresh ready session; close/replacement clears queued old timer. Worker layout
-repair only; Local no product repair. Four original worker bytes unchanged.
-Protected mode literal fixed by Local; original BLOCKED return and startup-order
-procedureFAIL retained. Local reviewer manifest conversion resolves the fifth-path
-intake collision, with dedicated actual-SHA continuity.21 observations total,
-previous20 unchanged; cost and complete accepted-delivery time unknown.
-**Next selection:** choose useful coding outcome from current evidence; no
-automatic successor. Complete job/full/browser/backend/provider/R3/R4 still open.
+docs/reviews/CVF_NCR_AGENT_HANDOFF_COMPLETION_2026-10-12.md accepts offline/jsdom:
+worker35/35 consumed, original-source9/12 FAIL, Local actual receiver2/2 PASS.
+Minimize/restore retains session/messages/draft; explicit new/identical-text
+handoff isolates a fresh session; close/replacement clears queued timer.
+Worker layout repair; no Local product repair. Four original bytes retained,
+historical BLOCKED/startup-order procedureFAIL separate. Local literal/manifest
+and evidence binding corrected with actual-SHA continuity; initial closureFAIL
+retained.21 observations, previous20 retained; cost/full delivery time unknown.
+**Selected next outcome - Agent Chat history consistency, 2026-10-12:**
+actual wrapper/sidebar each keep an independent history snapshot. Local seeded
+A/B witness: New Chat persists3 but sidebar shows2; delete active A leaves body-A
+and subsequent New Chat resurrects deleted A. Two desired assertions FAIL,
+actual sidebar/store with disclosed Chat leaf recorder; Local fixture corrections
+retained in docs/reviews/evidence/ncr-chat-history-dispatch-20261012.json.
+docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_CHAT_HISTORY_2026-10-12.md
+fixes wrapper/history repair plus regression/proof/pending return, five outputs.
+Acceptance: create/title/count/selection agree; active/inactive/final delete and
+Confirm/Cancel Clear preserve correct messages and prevent stale resurrection;
+one empty fallback, no prompt replay. Existing receiving evidence consumed.
+One manual offline60min worker only after clean committed bound release;
+Local reviews/closes.21 observations unchanged, no automatic successor.
+Whole job/full/browser/backend/provider/R3/R4 remain open.
 
 Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11 remain
 parked. ETA and end-to-end readiness are NOT_ESTABLISHED; tests/commits/tranches
@@ -1136,20 +1146,20 @@ orientation packets are not refreshed by this private local edit.
 |---|---|
 | Actor | Local INTERNAL_AGENT orchestrator/dispatcher |
 | Provider or surface | private shared workspace |
-| Session or invocation | ncr-agent-handoff-dispatch-20261012 |
+| Session or invocation | ncr-chat-history-dispatch-20261012 |
 | Working directory | repository root and installed Web package |
-| Command or tool surface | targeted source/owner reads, actual scaffold/ADIF, bounded two-case inspection witness, source pins, dispatch/gates/commits |
-| Target paths | `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_AGENT_HANDOFF_2026-10-12.md`; `docs/baselines/CVF_GC018_NCR_AGENT_HANDOFF_2026-10-12.md`; `docs/reviews/evidence/ncr-agent-handoff-dispatch-20261012.json`; `docs/roadmaps/README.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.csv`; `.gitattributes`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Allowed scope source | operator next following manual worker role assignment; existing outcome-bound lifecycle |
-| Before status evidence | HEAD f0199132050799c293f6b34db8c27b535694baed; clean/staged empty; temporary Local witness removed |
-| After status evidence | exact11 dispatch material then dedicated exact6 continuity; worker not started |
+| Command or tool surface | targeted source/owner/constants reads, actual scaffold/ADIF, bounded admission witness, raw/HEAD pins, dispatch/gates/commits |
+| Target paths | `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_CHAT_HISTORY_2026-10-12.md`; `docs/baselines/CVF_GC018_NCR_CHAT_HISTORY_2026-10-12.md`; `docs/reviews/evidence/ncr-chat-history-dispatch-20261012.json`; `docs/roadmaps/README.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.csv`; `.gitattributes`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Allowed scope source | operator next under standing manual worker/Local orchestration; outcome-bound existing NCR client maintenance |
+| Before status evidence | 4aabff8808e150f76c371dc7e087b5dad6f186ba; clean/staged empty before temporary witness; no production mutation |
+| After status evidence | exact11 dispatch material then exact6 continuity; worker not started |
 | Diff evidence | git diff --check and exact manifests |
-| Approval boundary | manual shared-workspace worker; offline client source only |
-| Claim boundary | two synthetic leaf-boundary failures witnessed; no provider or AI governance claim |
+| Approval boundary | one manual shared-workspace worker, offline synthetic data only |
+| Claim boundary | actual wrapper/sidebar/history with Chat leaf recorder; no provider or whole NCR exit |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-agent-handoff-dispatch-20261012 |
-| Expected manifest | `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_AGENT_HANDOFF_2026-10-12.md`; `docs/baselines/CVF_GC018_NCR_AGENT_HANDOFF_2026-10-12.md`; `docs/reviews/evidence/ncr-agent-handoff-dispatch-20261012.json`; `docs/roadmaps/README.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.csv`; `.gitattributes`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Actual changed set | `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_AGENT_HANDOFF_2026-10-12.md`; `docs/baselines/CVF_GC018_NCR_AGENT_HANDOFF_2026-10-12.md`; `docs/reviews/evidence/ncr-agent-handoff-dispatch-20261012.json`; `docs/roadmaps/README.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.csv`; `.gitattributes`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Invocation ID | ncr-chat-history-dispatch-20261012 |
+| Expected manifest | `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_CHAT_HISTORY_2026-10-12.md`; `docs/baselines/CVF_GC018_NCR_CHAT_HISTORY_2026-10-12.md`; `docs/reviews/evidence/ncr-chat-history-dispatch-20261012.json`; `docs/roadmaps/README.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.csv`; `.gitattributes`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Actual changed set | `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_CHAT_HISTORY_2026-10-12.md`; `docs/baselines/CVF_GC018_NCR_CHAT_HISTORY_2026-10-12.md`; `docs/reviews/evidence/ncr-chat-history-dispatch-20261012.json`; `docs/roadmaps/README.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.csv`; `.gitattributes`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Manifest delta | MATCH required before commit |
 | Deletion or rename disposition | N/A with reason: none |
 
