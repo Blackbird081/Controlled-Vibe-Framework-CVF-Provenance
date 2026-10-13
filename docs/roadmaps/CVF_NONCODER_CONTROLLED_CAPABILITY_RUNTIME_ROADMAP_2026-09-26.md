@@ -5,11 +5,13 @@ docType: roadmap
 Status: ACCEPTED_UNIFIED_ROADMAP_LOCAL_CONSUMER_BOUNDED_FULL_PILOT_OPEN
 Date: 2026-09-26
 Program ID: CVF-NCR
-Version: 2.11
+Version: 2.12
 Revision disposition: LOCAL_CONSUMER_MAINTENANCE_ACCEPTED_BOUNDED; END_TO_END_PILOT_OPEN; Q001_AND_P11_CHECKPOINTS_RETAINED
 Decision owner: operator về định hướng/phạm vi; Local reviewer về đối chiếu kỹ thuật và nghiệm thu.
 
-## Current Delivery Checkpoint - 2026-10-13
+## Current Delivery Checkpoint - 2026-10-14
+
+**Accepted bounded Home/Alibaba contribution, 2026-10-14:** `docs/reviews/CVF_NCR_HOME_ALIBABA_JOURNEY_COMPLETION_2026-10-13.md` accepts the finite synthetic visible Generate root/child journey, governed Alibaba receipt, actual child Markdown bytes and return-to-edit checks based on frozen worker and distinct Local proof. Original BUILD stopped at 17:40:17Z with four calls/posts charged; separate continuation corrected the VI `xuong` export selector under its own bound. Earlier 401 and output-limit attempts remain failed history; the successful pre-continuation root/child lacked a Markdown download click. Procedure PARTIAL_WITH_REASON. R1/R2 partial; R3/R4 open; R5/R6 deferred. Selected HTML business pilot, real-data writer/custody, business acceptance, send/B2, P11, public sync, deployment and production remain parked.
 
 Current delivery projection; Local decision owner. Current mode=cvf_ncr_result_export_feedback_closed_useful_selection,
 handoff=AGENT_HANDOFF_V63_2026-09-18.md, next=useful coding outcome selection.

@@ -203,9 +203,7 @@ describe('offline Home parent-child journey', () => {
         expect(expectedIntent).toContain(parentValues.subject);
         expect(expectedIntent).toContain(parentValues.currentNotes);
 
-        const form = document.querySelector('form');
-        if (!form) throw new Error('Expected the actual DynamicForm element');
-        await act(async () => { fireEvent.submit(form); });
+        await act(async () => { fireEvent.click(screen.getByRole('button', { name: 'Generate result' })); });
         await waitFor(() => expect(calls).toHaveLength(1));
         expect(screen.getByText('AI Processing...')).toBeTruthy();
 

@@ -2,8 +2,8 @@
   "schemaVersion": "cvf.ncrHomeAlibabaJourneyDispatchPins.v1",
   "date": "2026-10-13",
   "inspectionHead": "84bfd4902e9ace48e069698ec7dfd02a296ca402",
-  "status": "SOURCE_PINNED_BOUNDED_DISPATCH_ADMISSION",
-  "claimBoundary": "Historical raw preimage and bounded read spans. DynamicForm lacks a visible submit action, so the proposed proof requires a narrow R1 submit wiring repair before live provider execution. No live call or release is claimed.",
+  "status": "HISTORICAL_DISPATCH_PINS_ROOT_CLOSED_BOUNDED",
+  "claimBoundary": "Historical source preimages only. Terminal current source hashes and real proof are in the completion review; R1/R2 partial; R3/R4 open; R5/R6 deferred. Selected HTML business pilot, real-data writer/custody, business acceptance, send/B2, P11, public sync, deployment and production remain parked.",
   "sources": [
     {
       "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.tsx",
@@ -462,6 +462,21 @@
         "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json"
       ],
       "originalHistoryPreserved": true
+    }
+  },
+  "rootClosure": {
+    "decision": "CLOSED_PASS_BOUNDED",
+    "workerProofSha256": "d0d1f6b50c122754b2dee6cc83e40cb8d5ef1e08ed3ef7b5e862c9ce78bfc00a",
+    "localProofSha256": "09703a65fd0fef5e2798565e19b0617b266552d19e100888bc12176212797862",
+    "originalWorkOrderArchive": "docs/reviews/archive/CVF_AGENT_WORK_ORDER_NCR_HOME_ALIBABA_JOURNEY_DISPATCH_2026-10-13.md",
+    "originalArchiveRawSha256": "4d083e4c5b80de148b49a1260e9a491eb83a576a8cc17820c9d810a4f7bd4aee",
+    "originalArchiveGitLfSha256": "06e5ac2db2fa39bbcca56af01c2b953e05add736ff378a4e82bfeffd3f0ddc2e",
+    "currentSourceRawSha256": {
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.tsx": "373a1d1095321a4393401d4b3edb48a2f685698399606b90e0ca4ab75685bc40",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.test.tsx": "1b54bffebd89f4859fd02bcfe5c231b12f526a45bd7c964043a35ce35b2278cf",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.journey.test.tsx": "12496e9d9fab50a6d60a8a627b41a296098ee23fee4efb2eb5438142448b63f3",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/ncr-home-alibaba-journey.live.spec.ts": "c09d2f57948be84576ab8bd226187ac659a3dcd482dad943a00ad84fd5a9c014",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/support/ncr-alibaba-boundary-preload.cjs": "d745f57278f66c5c5dfed578c0500544fa6da4982cd266504b1f046d0f37cb49"
     }
   }
 }

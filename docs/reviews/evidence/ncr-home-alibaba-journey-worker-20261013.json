@@ -1,0 +1,409 @@
+{
+  "schemaVersion": "cvf.ncrHomeAlibabaJourneyWorkerProof.v1",
+  "status": "COMPLETE_PENDING_REVIEW",
+  "executionBaseHead": "316c8c1ec50cbee73c2f19249836cd8ddfb456c2",
+  "buildStartedUtc": "2026-10-13T16:25:17Z",
+  "role": "LOCAL_INTERNAL_AGENT_WORKER",
+  "decisionOwner": "ROOT_LOCAL_REVIEWER_CLOSER",
+  "sourcePinReconciliation": {
+    "historicalDispatchPreimagesVerified": 23,
+    "preImplementationGate": "PASS_88_OF_88",
+    "postChangePinsAreNotHistoricalPreimages": true,
+    "amendment2PreImplementationGate": "PASS_88_OF_88",
+    "continuationPreImplementationGate": "PASS_88_OF_88"
+  },
+  "artifacts": [
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.tsx",
+      "sha256": "373a1d1095321a4393401d4b3edb48a2f685698399606b90e0ca4ab75685bc40",
+      "bytes": 18708
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.test.tsx",
+      "sha256": "1b54bffebd89f4859fd02bcfe5c231b12f526a45bd7c964043a35ce35b2278cf",
+      "bytes": 7376
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.journey.test.tsx",
+      "sha256": "12496e9d9fab50a6d60a8a627b41a296098ee23fee4efb2eb5438142448b63f3",
+      "bytes": 10976
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/ncr-home-alibaba-journey.live.spec.ts",
+      "sha256": "c09d2f57948be84576ab8bd226187ac659a3dcd482dad943a00ad84fd5a9c014",
+      "bytes": 16116
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/support/ncr-alibaba-boundary-preload.cjs",
+      "sha256": "d745f57278f66c5c5dfed578c0500544fa6da4982cd266504b1f046d0f37cb49",
+      "bytes": 4890
+    }
+  ],
+  "proofs": {
+    "PROOF-REQ-ACTION": {
+      "status": "PASS",
+      "red": {
+        "command": "npx vitest run src/components/DynamicForm.test.tsx \"src/app/(dashboard)/home/page.journey.test.tsx\"",
+        "result": "FAIL 4 failed, 3 passed before production edit",
+        "log": ".cvf/runtime/ncr-home-alibaba-journey-20261013/unit-red.log"
+      },
+      "green": {
+        "command": "npx vitest run src/components/DynamicForm.test.tsx src/components/DynamicForm.brief-lifecycle.test.tsx \"src/app/(dashboard)/home/page.journey.test.tsx\" \"src/app/(dashboard)/home/draft-recovery.test.tsx\"",
+        "result": "PASS 4 files, 29 tests",
+        "log": ".cvf/runtime/ncr-home-alibaba-journey-20261013/unit-green.log"
+      },
+      "typeCheck": "npm run check PASS",
+      "scopedEslint": "PASS",
+      "sourceAction": "localized EN/VI Generate result type=submit via existing react-hook-form handler; Spec/Create Agent buttons remain type=button"
+    },
+    "PROOF-REQ-PROFILE": {
+      "status": "PASS",
+      "serverPort": 3028,
+      "baseUrl": "http://localhost:3028",
+      "nextDistDir": ".next-cvf-ncr-home-worker-20261013-6",
+      "browser": "chromium",
+      "credentialAlias": "DASHSCOPE_API_KEY",
+      "credentialValueRecorded": false,
+      "browserApiKey": "EMPTY",
+      "otherProviderAliases": "EMPTY",
+      "redisAliases": "EMPTY",
+      "storageAdapter": "file",
+      "rateLimitStore": "memory",
+      "knowledgeStore": "owned precreated []",
+      "approvalStore": "owned precreated []",
+      "otherStores": "owned fresh memory/SOT3/events/snapshots",
+      "fetchBoundary": "processed-server wrapper active; two admitted Alibaba fetches; one classified framework fetch denial; zero unexpected destination",
+      "knowledgeInjected": false,
+      "knowledgeChunkCount": 0,
+      "serverPreflightResult": "PASS",
+      "claimBoundary": "test-only Node fetch wrapper, not OS-level network isolation",
+      "credentialSource": "DIRECT_FILE_PARSE",
+      "priorProviderAttempts": 4,
+      "freshCallCap": 2,
+      "providerAttemptsObserved": 2,
+      "cumulativeProviderAttempts": 6,
+      "googleAiAlias": "EMPTY"
+    },
+    "PROOF-REQ-LIVE-ROOT": {
+      "status": "PASS",
+      "routeHttpStatus": 200,
+      "routeSuccess": true,
+      "provider": "alibaba",
+      "model": "qwen-flash",
+      "evidenceMode": "live",
+      "receiptId": "rcpt-env-mv6z8obm-qbmgb9",
+      "runId": "exec_1791913845324_0",
+      "outputLength": 1159,
+      "outputSha256": "6799c607e88c12d5e9376f7e3ac2ddc62741692fab4a764620c9c8addaf04e96",
+      "providerCallCount": 1,
+      "browserStoreOutputAndReceiptAsserted": true,
+      "knowledgeInjected": false,
+      "knowledgeChunkCount": 0
+    },
+    "PROOF-REQ-CHILD": {
+      "status": "PASS",
+      "routeHttpStatus": 200,
+      "routeSuccess": true,
+      "provider": "alibaba",
+      "model": "qwen-flash",
+      "evidenceMode": "live",
+      "receiptId": "rcpt-env-mv6z8tp0-hf120t",
+      "runId": "exec_1791913857821_xstn5",
+      "parentExecutionId": "exec_1791913845324_0",
+      "outputLength": 2348,
+      "outputSha256": "47953b57ac3af12de56d6a14b06373193bfd925f08a2dfcc662e3c98b90f49d3",
+      "providerCallCount": 1,
+      "previousOutputSha256": "12a4aa8d404e5e4fb92c6d3c93dbf8981856703b5a2b467e93b5a1058660c3b2",
+      "previousOutputMatches": true,
+      "browserStoreOutputAndReceiptAsserted": true,
+      "distinctOutputAsserted": true,
+      "knowledgeInjected": false,
+      "knowledgeChunkCount": 0
+    },
+    "PROOF-REQ-EXPORT": {
+      "status": "PASS",
+      "downloads": 1,
+      "markdown": {
+        "filename": "cvf-result-strategy_analysis-1791913865882.md",
+        "byteCount": 3955,
+        "sha256": "9346fc808894fbaa9041e0c867d16cf7760d7cafac54e707ce6fb7d8a69e306e",
+        "exactCleanChildOutputContained": true,
+        "exactChildReceiptContained": true,
+        "rootReceiptExcluded": true
+      },
+      "quietRetry": true,
+      "executePostsAfterRetry": 2,
+      "providerCallsAfterRetry": 2,
+      "freshExecutePosts": 2,
+      "freshProviderCalls": 2,
+      "rootReceiptExcluded": true,
+      "childReceiptIncluded": true
+    },
+    "PROOF-REQ-BUDGET-RETURN": {
+      "status": "PASS",
+      "browserLaunches": 7,
+      "launchedServers": 6,
+      "playwrightRetries": 0,
+      "uiExecutePosts": 6,
+      "alibabaProviderAttempts": 6,
+      "workerCallCeiling": 6,
+      "providerCallsRemainingUnderCeiling": 0,
+      "noFurtherRun": "COMPLETE_ONE_CONTINUATION_ATTEMPT_ZERO_REMAINING_CALLS",
+      "noCommit": true,
+      "outOfManifestTrackedGeneration": "tsconfig restored to HEAD byte hash d4af4823c8a2919796c5faa29805cd152217fbc25d6021c2da57541a685ea0f6; no other tracked generation",
+      "exactSevenPathManifest": [
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.tsx",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.test.tsx",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.journey.test.tsx",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/ncr-home-alibaba-journey.live.spec.ts",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/support/ncr-alibaba-boundary-preload.cjs",
+        "docs/reviews/evidence/ncr-home-alibaba-journey-worker-20261013.json",
+        "docs/reviews/CVF_NCR_HOME_ALIBABA_JOURNEY_WORKER_RETURN_2026-10-13.md"
+      ],
+      "ownedListenerPortsAtStop": [],
+      "generatedFileRestorationVerified": true,
+      "cumulativeUiExecutePosts": 6,
+      "freshAlibabaProviderAttempts": 2,
+      "freshCallCeiling": 2,
+      "rootOwnedGc051Registry": "COMMITTED_BEFORE_RESUME",
+      "workerReturnFastGate": "PASS_COMPLIANT_REVIEWER_FAST_70_OF_70_AND_DIFF_CHECK"
+    }
+  },
+  "diagnosticHistory": [
+    {
+      "invocation": 1,
+      "stage": "launcher",
+      "class": "NODE_OPTIONS_WINDOWS_PATH_QUOTING",
+      "uiPosts": 0,
+      "providerCalls": 0,
+      "disposition": "corrected path separators before server start"
+    },
+    {
+      "invocation": 2,
+      "stage": "preflight",
+      "class": "EXPECTED_FRAMEWORK_DENIAL_COUNTED_AS_UNEXPECTED",
+      "uiPosts": 0,
+      "providerCalls": 0,
+      "rootDisposition": "one fresh profile run authorized; exact denied destinations remain blocked and logged"
+    },
+    {
+      "invocation": 3,
+      "stage": "login",
+      "class": "EXTERNAL_NEXT_DIST_REACT_MODULE_ANCESTRY",
+      "uiPosts": 0,
+      "providerCalls": 0,
+      "rootDisposition": "one fresh web-local ignored dist run authorized"
+    },
+    {
+      "invocation": 4,
+      "stage": "provider",
+      "class": "provider_http_error",
+      "providerHttpStatus": 401,
+      "uiPosts": 1,
+      "providerCalls": 1,
+      "rootDisposition": "HOLD after actual provider HTTP 401; inherited/file precedence diagnosed; no further provider run under current contract"
+    },
+    {
+      "invocation": 5,
+      "stage": "output_validation",
+      "class": "output_validation_failed",
+      "providerHttpStatus": 200,
+      "uiPosts": 1,
+      "providerCalls": 1,
+      "cumulativeUiPosts": 2,
+      "cumulativeProviderCalls": 2,
+      "rootDisposition": "HOLD; no automatic retry under one fresh amended attempt"
+    },
+    {
+      "invocation": 6,
+      "stage": "test_locator",
+      "class": "MARKDOWN_BUTTON_SELECTOR_MISMATCH",
+      "uiPosts": 2,
+      "providerCalls": 2,
+      "cumulativeUiPosts": 4,
+      "cumulativeProviderCalls": 4,
+      "rootAndChildLiveSuccess": true,
+      "downloadEventObserved": false,
+      "quietRetryObserved": false,
+      "rootDisposition": "HOLD; selector corrected but no rerun under one fresh amendment2 attempt",
+      "downloadClickCompleted": false
+    }
+  ],
+  "credentialProvenance": {
+    "fileAliasesEqual": true,
+    "inheritedAlibabaPresent": true,
+    "inheritedAlibabaEqualsFile": false,
+    "inheritedDashscopePresent": false,
+    "nextMergedAlibabaEqualsInherited": true,
+    "nextMergedDashscopeEqualsFile": true,
+    "placeholderPatternDetected": false,
+    "claimBoundary": "equality/presence only; placeholder heuristic does not establish validity",
+    "amendedSelectedAlias": "DASHSCOPE_API_KEY",
+    "amendedSource": "DIRECT_FILE_PARSE",
+    "amendedServerOtherProviderAliases": "EMPTY",
+    "amendedBrowserKey": "EMPTY"
+  },
+  "runtimeLogs": [
+    {
+      "path": ".cvf/runtime/ncr-home-alibaba-journey-20261013/live-worker/live-worker.log",
+      "sha256": "65b83d847116f501cb237ea84c65e185550766c57bd8961ec3d822be10566c4c",
+      "bytes": 1555
+    },
+    {
+      "path": ".cvf/runtime/ncr-home-alibaba-journey-20261013/live-worker/live-worker-2.log",
+      "sha256": "055da5a02a2e732f39a7834f7cfe71cfd44db054634e4ddac2ebf742f693a2cb",
+      "bytes": 5126
+    },
+    {
+      "path": ".cvf/runtime/ncr-home-alibaba-journey-20261013/live-worker/live-worker-3.log",
+      "sha256": "0406a567072e5c67c056b1d36f7c88b164eace05b34f0439d7f693b484c57c03",
+      "bytes": 25338
+    },
+    {
+      "path": ".cvf/runtime/ncr-home-alibaba-journey-20261013/live-worker/live-worker-4.log",
+      "sha256": "08290c384d78d77fc2a9096fff72c01f2ab5e576483885566ea53a5b63851b0d",
+      "bytes": 6820
+    },
+    {
+      "path": ".cvf/runtime/ncr-home-alibaba-journey-20261013/live-worker/boundary.jsonl",
+      "sha256": "54b808d2e53f2999d271392a099862459e5168ee3163ad0138bce7051db825f8",
+      "bytes": 61054
+    },
+    {
+      "path": ".cvf/runtime/ncr-home-alibaba-journey-20261013/live-worker-2/boundary.jsonl",
+      "sha256": "311f36b6d01999fb1f81d885580cebbb2842c3944fce92547ec900ee91b146b5",
+      "bytes": 400296
+    },
+    {
+      "path": ".cvf/runtime/ncr-home-alibaba-journey-20261013/live-worker-3/boundary.jsonl",
+      "sha256": "09ae7a9b036d517e5713144d4bd6faa34c1fd950f977e8c80de23743a5dbf0c3",
+      "bytes": 439463
+    },
+    {
+      "path": ".cvf/runtime/ncr-home-alibaba-journey-20261013/live-worker-3/provider-diagnostic.json",
+      "sha256": "c276ee815baee6a302bfb32ef27979cc7f910e6f2bbc76a54cf6ed077f33529c",
+      "bytes": 941
+    },
+    {
+      "path": ".cvf/runtime/ncr-home-alibaba-journey-20261013/live-worker/live-worker-amended.log",
+      "sha256": "8f4767e5fcc017d54a1937eb56b3675fa549b2fa5702018b2d64cf49a067f051",
+      "bytes": 6923
+    },
+    {
+      "path": ".cvf/runtime/ncr-home-alibaba-journey-20261013/live-worker-4/boundary.jsonl",
+      "sha256": "9256065577c896d09fd4fe7e46484f487cbad79bc9feea6b983ca6a34758bbd5",
+      "bytes": 682384
+    },
+    {
+      "path": ".cvf/runtime/ncr-home-alibaba-journey-20261013/live-worker-4/output-limit-diagnostic.json",
+      "sha256": "9bbd0516e0483a5d839a558102f736bf21db55e462d4b0948b63e7c135b1e144",
+      "bytes": 749
+    },
+    {
+      "path": ".cvf/runtime/ncr-home-alibaba-journey-20261013/live-worker-4/launcher-profile.json",
+      "sha256": "02496c43051f44564cdb6e01fd9ecf082ecb4a125fcc8009525fa504b9274af8",
+      "bytes": 746
+    },
+    {
+      "path": ".cvf/runtime/ncr-home-alibaba-journey-20261013/live-worker/live-worker-amendment2.log",
+      "sha256": "eac5ce28fcc9760d2ccf8171ee58f353dabbe24546712758df157f9536ee2c7b",
+      "bytes": 7107
+    },
+    {
+      "path": ".cvf/runtime/ncr-home-alibaba-journey-20261013/live-worker-5/boundary.jsonl",
+      "sha256": "cc0cefd4e7a8fc410111985a560c1c8dc6831b7461ff987524e2e4d64b2ddcf1",
+      "bytes": 4552965
+    },
+    {
+      "path": ".cvf/runtime/ncr-home-alibaba-journey-20261013/live-worker-5/launcher-profile.json",
+      "sha256": "635cb7787980ef7cee441dcdcb819042ffb9ea05a5d84461fc59b7ad03dbf247",
+      "bytes": 746
+    },
+    {
+      "path": ".cvf/runtime/ncr-home-alibaba-journey-20261013/live-worker-5/test-results/ncr-home-alibaba-journey.l-339a0-nd-downloads-child-Markdown/trace.zip",
+      "sha256": "c3d4bef4b74722acc35251ca8fc7a98ddfd237e1af5da696d3916f4fdeb5bb58",
+      "bytes": 11393440
+    },
+    {
+      "path": ".cvf/runtime/ncr-home-alibaba-journey-20261013/live-worker/live-worker-continuation.log",
+      "sha256": "f3b263c1f3bbe189d03fcb5b9fa5bfb50cf68f2944b21d3d3eeba1d2804b602e",
+      "bytes": 3351
+    },
+    {
+      "path": ".cvf/runtime/ncr-home-alibaba-journey-20261013/live-worker-6/boundary.jsonl",
+      "sha256": "159754a3d416f88c6c44d1a95e5e49edcb5eb2f407067cdfd3c2d383bfdd075c",
+      "bytes": 757524
+    },
+    {
+      "path": ".cvf/runtime/ncr-home-alibaba-journey-20261013/live-worker-6/launcher-profile.json",
+      "sha256": "aa476060151c6d52b88cfebc400ca4aa15cb5104e0cf1b4bae6a8c4b4050d46c",
+      "bytes": 746
+    },
+    {
+      "path": ".cvf/runtime/ncr-home-alibaba-journey-20261013/live-worker-6/journey-runtime.json",
+      "sha256": "a4aecd453a3bbb33e7fbbf980b10cad4a040d25f0f5ac63014a827d6b326b39d",
+      "bytes": 2287
+    }
+  ],
+  "claimBoundary": "Strict synthetic Home root-to-linked-child-to-Markdown browser journey and quiet Retry passed on one separate live continuation with two new Alibaba fetches, six worker calls cumulative. Original failures remain disclosed; Root independent probe/reviewer closure pending. No release-quality, whole R3/R4 exit, real-data, business, public or deploy claim.",
+  "buildStoppedUtc": "2026-10-13T17:54:15Z",
+  "originalExecutionBaseHead": "152481577108f2815f953471201b12473be45efa",
+  "resumedPreImplementationGate": "PASS_88_OF_88_AFTER_LITERAL_RETURN_REPAIR",
+  "amendedOutputTokenUsage": {
+    "inputTokens": 1259,
+    "outputTokens": 2048,
+    "totalTokens": 3307,
+    "source": "captured_route_response_usage",
+    "claimBoundary": "numeric usage only; no provider output or request body reproduced"
+  },
+  "resumedAmendment2ExecutionBaseHead": "1253047add170085400ffe97c549e51e3e761dda",
+  "traceTiming": {
+    "unit": "Playwright monotonic milliseconds",
+    "exportClickStart": 48354.142,
+    "exportClickEnd": 48448.248,
+    "downloadWaitStart": 48464.99,
+    "downloadClickStart": 48468.723,
+    "downloadClickEndWithLocatorTimeout": 306474.844,
+    "downloadClickCompleted": false,
+    "actualRenderedButtonName": "T\u1ea3i xu\u1ed1ng .md",
+    "originalUnmatchedSelector": "/Download \\.md|T\u1ea3i \\.md/i",
+    "correctedSelectorNotRerun": "/Download \\.md|T\u1ea3i xu\u1ed1ng \\.md/i"
+  },
+  "implementationWorkerActor": "INTERNAL_WORKER_SOL_CONFIGURED",
+  "workerInvocationId": "ncr-home-alibaba-worker-continuation-20261013",
+  "continuation": {
+    "delegationId": "NCR-HOME-ALIBABA-JOURNEY-CONTINUATION-20261013",
+    "releaseUtc": "2026-10-13T17:48:18Z",
+    "phaseStartedUtc": "2026-10-13T17:48:55Z",
+    "phaseBaseHead": "316c8c1ec50cbee73c2f19249836cd8ddfb456c2",
+    "originalBuildStoppedUtc": "2026-10-13T17:40:17Z",
+    "originalBaseHead": "152481577108f2815f953471201b12473be45efa",
+    "priorUiPosts": 4,
+    "priorProviderCalls": 4,
+    "freshUiPosts": 2,
+    "freshProviderCalls": 2,
+    "cumulativeUiPosts": 6,
+    "cumulativeProviderCalls": 6,
+    "noRerun": true,
+    "rootReviewerBudgetUnspent": true,
+    "phaseStoppedUtc": "2026-10-13T17:54:15Z",
+    "targetedPlaywrightResult": "PASS_2_OF_2_55_5_SECONDS",
+    "preImplementationGate": "PASS_88_OF_88",
+    "typeCheckScopedLintPreloadSyntax": "PASS"
+  },
+  "executionHistory": [
+    {
+      "phase": "original_blocked_and_amendments",
+      "cumulativeUiPosts": 4,
+      "cumulativeProviderCalls": 4,
+      "historyPreservedInDiagnosticHistory": true
+    },
+    {
+      "phase": "separate_continuation",
+      "freshUiPosts": 2,
+      "freshProviderCalls": 2,
+      "targetedPlaywright": "PASS_2_OF_2_55_5_SECONDS",
+      "strictJourneyRuntimeRecord": ".cvf/runtime/ncr-home-alibaba-journey-20261013/live-worker-6/journey-runtime.json"
+    }
+  ]
+}

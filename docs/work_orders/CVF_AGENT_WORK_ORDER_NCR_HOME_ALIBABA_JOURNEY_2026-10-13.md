@@ -2,32 +2,23 @@
 
 Memory class: governed-worker-dispatch
 docType: work_order
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 Date: 2026-10-13
 Batch ID: CVF-NCR-HOME-ALIBABA-JOURNEY-20261013
 Inspection base: `84bfd4902e9ace48e069698ec7dfd02a296ca402`
 Commit mode: WORKER_MUST_NOT_COMMIT
-providerExecutionAuthority: ORCHESTRATOR_GRANT_REQUIRED
+providerExecutionAuthority: FORBIDDEN
 providerExecutionGrantOwner: ORCHESTRATOR
 providerExecutionGrantSubject: /root/ncr_export_packet Local INTERNAL_AGENT Sol-medium continuation worker
 providerExecutionGrantDelegationId: NCR-HOME-ALIBABA-JOURNEY-CONTINUATION-20261013
 providerExecutionGrantMaxCalls: 2
 providerExecutionGrantExpiresAt: 2026-10-13T18:20:00Z
-providerExecutionGrantBoundary: separate continuation after committed bound release; original BUILD stopped at 17:40:17Z with four calls/posts charged; max two new root+child calls/posts, cumulative six/six; 30 minutes from actual release or 18:20:00Z, whichever first
+providerExecutionGrantBoundary: CLOSED; original and continuation grants retired, no repeat-live or successor authority
 Worker return path: `docs/reviews/CVF_NCR_HOME_ALIBABA_JOURNEY_WORKER_RETURN_2026-10-13.md`
 
 ## Dispatch Prompt Envelope
 
-Role: Local INTERNAL_AGENT implementation worker; Root is dispatcher/reviewer/closer and owns independent probe.
-Canonical packet: `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HOME_ALIBABA_JOURNEY_2026-10-13.md`
-Commit mode: WORKER_MUST_NOT_COMMIT
-executionBaseHead: WORKER_MUST_CAPTURE_AT_START using full HEAD before edits.
-Current-time notes: separate continuation after original BUILD STOPPED at 17:40:17UTC with prior4 UI/calls charged; one new root+child max2 UI/calls, cumulative6/6; Root1UI/3calls/global9. New delegation NCR-HOME-ALIBABA-JOURNEY-CONTINUATION-20261013; max30min from actual release or expiry2026-10-13T18:20:00Z first.
-Do-not-misread notes: the committed packet still requires a later exact-six continuity commit and final bound release. Root must bind/commit packet plus exact-six continuity and pass full bound pre-dispatch before worker invocation. No raw key may enter the browser. No product change outside the named form action; chosen HTML business acceptance stays parked.
-Required first actions: progressive startup, bound pre-implementation PASS, focused source pins and live diagnostic owner, return scaffold and processed-server profile preflight before any provider call.
-Return contract: COMPLETE_PENDING_REVIEW only with exact seven artifacts, unit RED-to-GREEN, strict live assertion evidence and final fast/ledger PASS; otherwise BLOCKED_WITH_REASON. No staging, commit, additional server run or blind retry.
-
-Continuation qualification: prior root/child PASS; corrected VI Markdown selector includes xuong. No history receipt injection or weaker assertions. Exact original seven; no automatic rerun.
+Terminal Local disposition: CLOSED_PASS_BOUNDED; QUALITY_ACCEPTED_BOUNDED. Actual frozen worker proof `sha256:d0d1f6b50c122754b2dee6cc83e40cb8d5ef1e08ed3ef7b5e862c9ce78bfc00a` and independent Local proof `sha256:09703a65fd0fef5e2798565e19b0617b266552d19e100888bc12176212797862` support the six bounded receipt assertions. R1/R2 partial; R3/R4 open; R5/R6 deferred. Selected HTML business pilot, real-data writer/custody, business acceptance, send/B2, P11, public sync, deployment and production remain parked. Original dispatch wording and action sequence are retained byte-for-byte in `docs/reviews/archive/CVF_AGENT_WORK_ORDER_NCR_HOME_ALIBABA_JOURNEY_DISPATCH_2026-10-13.md`. No successor execution is opened by this closure.
 
 ## Root Diagnostic Amendment 2 - Concise Fixture Admission
 
@@ -51,7 +42,7 @@ Profile remains direct FILE DASHSCOPE as sole server alias, empty other eligible
 
 ## Purpose
 
-Repair the missing visible Home form submit action, then prove one strict synthetic Home-to-real-Alibaba root result, user refinement child, and child Markdown download in an authenticated Chromium browser, while separating root/child output and receipts. This is bounded R1 wiring plus R3 composition; the selected Work Transfer HTML pilot and full NCR exits stay open.
+Record Local acceptance of the finite synthetic Home root/child Alibaba journey and its independent Root probe. R1/R2 partial; R3/R4 open; R5/R6 deferred. Selected HTML business pilot, real-data writer/custody, business acceptance, send/B2, P11, public sync, deployment and production remain parked.
 
 ## Authority Chain
 
@@ -120,11 +111,11 @@ Source hashes, line counts and bounded inspection spans are pinned in `docs/revi
 
 ## Pre-Flight Checks
 
-Capture actual full HEAD/status and the bound release gate, source raw hashes, server/browser port and clean profile, owned knowledge/approval/memory/SOT3/event/snapshot paths and empty knowledge file, key-alias *names*, loaded `NEXTAUTH_URL` state and active preload wrapping. Confirm exactly one eligible provider and expected Alibaba endpoint without printing key/value/body. Prepare proof/return scaffold. Fail closed before any provider call on profile or pin contradiction; notify Root with one consolidated blocker.
+Terminal Local disposition: CLOSED_PASS_BOUNDED; QUALITY_ACCEPTED_BOUNDED. Actual frozen worker proof `sha256:d0d1f6b50c122754b2dee6cc83e40cb8d5ef1e08ed3ef7b5e862c9ce78bfc00a` and independent Local proof `sha256:09703a65fd0fef5e2798565e19b0617b266552d19e100888bc12176212797862` support the six bounded receipt assertions. R1/R2 partial; R3/R4 open; R5/R6 deferred. Selected HTML business pilot, real-data writer/custody, business acceptance, send/B2, P11, public sync, deployment and production remain parked. Original dispatch wording and action sequence are retained byte-for-byte in `docs/reviews/archive/CVF_AGENT_WORK_ORDER_NCR_HOME_ALIBABA_JOURNEY_DISPATCH_2026-10-13.md`. No successor execution is opened by this closure.
 
 ## Execution Plan
 
-Build a strict single spec and test-only preload; first demonstrate preflight without provider call. Run one fresh owned Chromium/Next worker process with zero Playwright retries. Complete root UI form, capture real response/store; submit exactly one refinement child; capture and compare its response, parent linkage and store; download child Markdown and inspect raw bytes; exercise no-extra-call edit/reload negative. Stop after first terminal result; write secret-safe JSON and bounded return, run final fast/ledger. No canonical release bundle replay or additional provider harness.
+Terminal Local disposition: CLOSED_PASS_BOUNDED; QUALITY_ACCEPTED_BOUNDED. Actual frozen worker proof `sha256:d0d1f6b50c122754b2dee6cc83e40cb8d5ef1e08ed3ef7b5e862c9ce78bfc00a` and independent Local proof `sha256:09703a65fd0fef5e2798565e19b0617b266552d19e100888bc12176212797862` support the six bounded receipt assertions. R1/R2 partial; R3/R4 open; R5/R6 deferred. Selected HTML business pilot, real-data writer/custody, business acceptance, send/B2, P11, public sync, deployment and production remain parked. Original dispatch wording and action sequence are retained byte-for-byte in `docs/reviews/archive/CVF_AGENT_WORK_ORDER_NCR_HOME_ALIBABA_JOURNEY_DISPATCH_2026-10-13.md`. No successor execution is opened by this closure.
 
 ## Evidence Requirements
 
@@ -136,11 +127,11 @@ Exactly seven worker-owned paths; proof IDs above. Return maps all six requireme
 
 ## Verification Commands
 
-First run a focused DynamicForm RED, then GREEN across DynamicForm, brief-lifecycle, Home journey and `src/app/(dashboard)/home/draft-recovery.test.tsx` with TypeScript/scoped lint. Only then run a targeted single-spec Playwright invocation with `--retries=0 --workers=1` against a fresh owned server/profile, then TypeScript check and scoped ESLint for the new spec/support file as applicable. From repository root run `python -B governance/compat/run_worker_return_fast_gate.py --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HOME_ALIBABA_JOURNEY_2026-10-13.md --max-return-lines 450 --max-return-bytes 64000`; final bytes must pass. Proof JSON <=256000 bytes; spec <=700 lines, preload <=400. `git diff --check` and exact changed-set check required. Local runtime logs remain ignored. No broader suite, product edit outside DynamicForm or release-quality canonical bundle is requested.
+Terminal Local disposition: CLOSED_PASS_BOUNDED; QUALITY_ACCEPTED_BOUNDED. Actual frozen worker proof `sha256:d0d1f6b50c122754b2dee6cc83e40cb8d5ef1e08ed3ef7b5e862c9ce78bfc00a` and independent Local proof `sha256:09703a65fd0fef5e2798565e19b0617b266552d19e100888bc12176212797862` support the six bounded receipt assertions. R1/R2 partial; R3/R4 open; R5/R6 deferred. Selected HTML business pilot, real-data writer/custody, business acceptance, send/B2, P11, public sync, deployment and production remain parked. Original dispatch wording and action sequence are retained byte-for-byte in `docs/reviews/archive/CVF_AGENT_WORK_ORDER_NCR_HOME_ALIBABA_JOURNEY_DISPATCH_2026-10-13.md`. No successor execution is opened by this closure.
 
 ## Review Gate
 
-Root consumes valid returned source/runtime evidence, inspects test/preload and source identity, then performs one independent real-browser probe with a distinct synthetic fixture and own fresh server/browser invocation, at most one UI submit/three provider calls. Root's own Node Playwright oracle must be independent of the worker spec/helper assertion code: compare actual response and browser store, download raw Markdown bytes for exact clean output and receipt; click Retry to return to editable fields and prove zero additional execute/provider calls and no stale result/receipt. No worker-suite replay. A failed/partial live probe requires secret-safe diagnosis and Root call-budget decision before a repeat. Root owns GC-051, reviewer gates, completion/roadmap/continuity and commits.
+Terminal Local disposition: CLOSED_PASS_BOUNDED; QUALITY_ACCEPTED_BOUNDED. Actual frozen worker proof `sha256:d0d1f6b50c122754b2dee6cc83e40cb8d5ef1e08ed3ef7b5e862c9ce78bfc00a` and independent Local proof `sha256:09703a65fd0fef5e2798565e19b0617b266552d19e100888bc12176212797862` support the six bounded receipt assertions. R1/R2 partial; R3/R4 open; R5/R6 deferred. Selected HTML business pilot, real-data writer/custody, business acceptance, send/B2, P11, public sync, deployment and production remain parked. Original dispatch wording and action sequence are retained byte-for-byte in `docs/reviews/archive/CVF_AGENT_WORK_ORDER_NCR_HOME_ALIBABA_JOURNEY_DISPATCH_2026-10-13.md`. No successor execution is opened by this closure.
 
 ## Closure Checklist
 
@@ -148,11 +139,11 @@ Six proof rows, exact seven worker paths, no worker commit, actual call tally <=
 
 ## Return-To-Orchestrator Conditions
 
-Return COMPLETE_PENDING_REVIEW only after strict positive and negative oracle plus fast/ledger PASS; otherwise BLOCKED_WITH_REASON and one consolidated actual failure/profile/authority explanation. Return immediately before any provider call if the processed server cannot prove the admitted boundary; after a live failure stop without retry pending Root diagnostic disposition.
+Terminal Local disposition: CLOSED_PASS_BOUNDED; QUALITY_ACCEPTED_BOUNDED. Actual frozen worker proof `sha256:d0d1f6b50c122754b2dee6cc83e40cb8d5ef1e08ed3ef7b5e862c9ce78bfc00a` and independent Local proof `sha256:09703a65fd0fef5e2798565e19b0617b266552d19e100888bc12176212797862` support the six bounded receipt assertions. R1/R2 partial; R3/R4 open; R5/R6 deferred. Selected HTML business pilot, real-data writer/custody, business acceptance, send/B2, P11, public sync, deployment and production remain parked. Original dispatch wording and action sequence are retained byte-for-byte in `docs/reviews/archive/CVF_AGENT_WORK_ORDER_NCR_HOME_ALIBABA_JOURNEY_DISPATCH_2026-10-13.md`. No successor execution is opened by this closure.
 
 ## Operator Checkpoint
 
-No fresh operator choice is required for the disposable synthetic profile already selected by Root. Real-data writer/custody/retention/RPO/RTO, business acceptance, send/B2, P11, public and deployment remain parked with their owners.
+Terminal Local disposition: CLOSED_PASS_BOUNDED; QUALITY_ACCEPTED_BOUNDED. Actual frozen worker proof `sha256:d0d1f6b50c122754b2dee6cc83e40cb8d5ef1e08ed3ef7b5e862c9ce78bfc00a` and independent Local proof `sha256:09703a65fd0fef5e2798565e19b0617b266552d19e100888bc12176212797862` support the six bounded receipt assertions. R1/R2 partial; R3/R4 open; R5/R6 deferred. Selected HTML business pilot, real-data writer/custody, business acceptance, send/B2, P11, public sync, deployment and production remain parked. Original dispatch wording and action sequence are retained byte-for-byte in `docs/reviews/archive/CVF_AGENT_WORK_ORDER_NCR_HOME_ALIBABA_JOURNEY_DISPATCH_2026-10-13.md`. No successor execution is opened by this closure.
 
 ## Roadmap-to-Work-Order Trace Matrix
 
@@ -165,7 +156,7 @@ No fresh operator choice is required for the disposable synthetic profile alread
 
 ## Worker Autonomy / No-Question Rule
 
-Resolve selectors, fixture wording and ignored runtime details within the seven-path contract. Extra tracked path, changed provider/credential mode, missing live authority, server leakage or unbounded retry is one consolidated blocker to Root. Do not ask operator routine implementation preferences. No successor opens automatically.
+Terminal Local disposition: CLOSED_PASS_BOUNDED; QUALITY_ACCEPTED_BOUNDED. Actual frozen worker proof `sha256:d0d1f6b50c122754b2dee6cc83e40cb8d5ef1e08ed3ef7b5e862c9ce78bfc00a` and independent Local proof `sha256:09703a65fd0fef5e2798565e19b0617b266552d19e100888bc12176212797862` support the six bounded receipt assertions. R1/R2 partial; R3/R4 open; R5/R6 deferred. Selected HTML business pilot, real-data writer/custody, business acceptance, send/B2, P11, public sync, deployment and production remain parked. Original dispatch wording and action sequence are retained byte-for-byte in `docs/reviews/archive/CVF_AGENT_WORK_ORDER_NCR_HOME_ALIBABA_JOURNEY_DISPATCH_2026-10-13.md`. No successor execution is opened by this closure.
 
 ## Intake Role Routing Decision
 
@@ -214,18 +205,18 @@ Dispatch impact: preserve strict live and secret-safe boundary evidence.
 
 | Field | Evidence |
 |---|---|
-| applicableCheckersRead | `governance/compat/check_task_governance_route.py`; `governance/compat/check_review_cost_control.py`; `governance/compat/check_finding_to_governance_learning.py`; `governance/compat/check_work_order_dispatch_quality_lifecycle.py`; `governance/compat/check_gate_to_role_closeability.py`; `governance/compat/check_independent_review_probe_admission.py`; `governance/compat/check_work_order_acceptance_ledger.py`; `governance/compat/check_agent_operation_trace.py`; `governance/compat/check_core_guard_self_protection.py` |
-| literalTokensReviewed | DRAFT pending status, exact seven-path ledger, one RIPA YES block, closeability graph phases, operation trace labels, no Core Guard heading in work order |
-| gateRunPurpose | confirmation/evidence after source and literal review; Root later owns material and bound dispatch release |
-| claimBoundary | machine shape cannot certify actual browser/provider/download or complete NCR behavior |
+| applicableCheckersRead | Root must verify `governance/compat/check_machine_closure_package.py`; `governance/compat/check_review_cost_control.py`; `governance/compat/check_independent_review_probe_admission.py`; `governance/compat/check_agent_operation_trace.py`; `governance/compat/check_core_guard_self_protection.py` before accepting generated draft |
+| literalTokensReviewed | exact eight closure rows; six acceptance assertions; terminal RIPA union; historical source pins |
+| gateRunPurpose | confirmation/evidence after source and literal review; validates terminal metadata, never first discovery |
+| claimBoundary | machine shape alone does not prove whole NCR or business acceptance |
 
 ## Source Verification Block
 
 | Claimed item | Claim type | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Disposition |
 |---|---|---|---|---|---|---|
-| Missing visible submit action | EXISTS | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.tsx` | 148, 202, 328-353 | `onFormSubmit`, form `handleSubmit`, button actions | DynamicForm | ACCEPT |
-| Existing test bypass | EXISTS | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.journey.test.tsx` | 193-208 | `fireEvent.submit(form)` | Home journey test | ACCEPT |
-| Root/child UI path | EXISTS | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.tsx` | 400-510 | `handleFormSubmit`, `handleProcessingComplete`, `handleFollowUp` | Home | ACCEPT |
+| Visible validated submit action | EXISTS | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.tsx` | 149, 203, 325-332 | `onFormSubmit`, `handleSubmit`, submit button | DynamicForm | ACCEPT |
+| Home journey uses visible click | EXISTS | `docs/reviews/evidence/ncr-home-alibaba-journey-local-20261013.json` | frozenWorkerCustody.records; current source raw-hash table | Home journey test uses Generate result click | frozen source digest and unit evidence | ACCEPT |
+| Root/child UI path | EXISTS | `docs/reviews/evidence/ncr-home-alibaba-journey-local-20261013.json` | worker proof and rootReview | Home handleFormSubmit/handleProcessingComplete/handleFollowUp | real browser response/store comparison | ACCEPT |
 | Real route request | EXISTS | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ProcessingScreen.tsx` | 192-312 | `executeReal` | ProcessingScreen | ACCEPT |
 | Server credential/routing/retry | EXISTS | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts` | 220-224, 559-647, 758-845 | `resolveAlibabaApiKey`, `routeWebProvider`, `admitAndInvokeProvider` | execute POST | ACCEPT |
 | Actual Alibaba fetch | EXISTS | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/ai/providers.ts` | 299-408 | `executeAlibaba` | AI providers | ACCEPT |
@@ -236,6 +227,8 @@ Dispatch impact: preserve strict live and secret-safe boundary evidence.
 | Live env caveat | EXISTS | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/playwright.config.ts` | 1-42 | `loadEnvConfig` | Playwright | ACCEPT |
 | Raw-key browser fixture is unsuitable | EXISTS | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/utils.ts` | 144-160 | `seedStorageWithAlibaba` | test helper | REJECT |
 | Selected HTML differs | EXISTS | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/proof.ts` | 64-105 | `fetchGovernanceReceipt` | HTML helper | ACCEPT |
+
+Changed form/test rows above are current source; unchanged rows and the rejected browser-key shortcut retain dispatch inspection evidence. Current changed-source raw hashes and physical lines are recorded separately below; terminal behavior is bound to the worker and Local proof JSONs.
 
 ## Work-Order Acceptance Requirement Ledger
 
@@ -272,6 +265,18 @@ negativeMutationClasses: Retry returns original editable fields with no second e
 expectedInformationGain: distinct independent fixture and own oracle can expose fixture-specific success, stale browser attribution and fake-download assumptions missed by the worker's root/child test.
 rerunCostReason: one reviewer submission can make up to three real Alibaba calls; no worker suite duplication or rerun without a named contradiction, secret-safe diagnostic and remaining-budget decision.
 reviewerDecisionOwner: LOCAL
+independentProbeDisposition: PASS_INDEPENDENT_PROBE
+implementationWorkerActor: INTERNAL_WORKER_SOL_CONFIGURED
+probeExecutorActor: LOCAL_REVIEWER_CODEX_ROOT
+probeCommandOrMethod: python .cvf/runtime/ncr-home-alibaba-root-20261013/run-review.py
+probeObservedResult: PASS; 8/8 Root-owned assertions; secret-safe receipt and download facts retained.
+oracleSeparationBasis: Worker proof JSON raw SHA-256 d0d1f6b50c122754b2dee6cc83e40cb8d5ef1e08ed3ef7b5e862c9ce78bfc00a; Root executed independent test oracle SHA-256 d3e8bb8719dcc2693fabfd0d5af18fbfa9f92b91d0a498b097aca627e9013706; distinct worker/reviewer actors and invocation IDs.
+workerInvocationId: ncr-home-alibaba-worker-continuation-20261013
+probeInvocationId: ncr-home-alibaba-root-distinct-20261013
+workerEvidenceRef: docs/reviews/evidence/ncr-home-alibaba-journey-worker-20261013.json
+probeEvidenceRef: docs/reviews/evidence/ncr-home-alibaba-journey-local-20261013.json
+workerOracleSha256: d0d1f6b50c122754b2dee6cc83e40cb8d5ef1e08ed3ef7b5e862c9ce78bfc00a
+probeOracleSha256: 09703a65fd0fef5e2798565e19b0617b266552d19e100888bc12176212797862
 
 ## Worker Return Packet Shape Contract
 
@@ -333,8 +338,8 @@ reviewerOwnedClosurePaths:
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-pendingStatusTokensAllowedBeforeReview: COMPLETE_PENDING_REVIEW worker only; no closed-equivalent claim before Root probe and material commit
-forbiddenClosedEquivalentResidue: no DRAFT/dispatch release instruction as current closure status after final conversion
+pendingStatusTokensAllowedBeforeReview: NOT_APPLICABLE_WITH_REASON - terminal Root review completed
+forbiddenClosedEquivalentResidue: NONE_AS_CURRENT_STATUS; immutable dispatch archive retains history
 predecessorClosureFactSource: stable completion/review artifact; original dispatch archive is historical custody
 closureOwner: Local reviewer/closer
 workerCommitPermission: FORBIDDEN
@@ -403,10 +408,10 @@ dispatchBaseHead: `1253047add170085400ffe97c549e51e3e761dda`
 
 ## Epistemic Process Block
 
-Expected Result / Prediction: one real authenticated root/child journey and byte-checked Markdown download can be observed within six worker calls.
-Evidence Comparison: current packet has source preimage only; prior Alibaba diagnostic and Work Transfer HTML browser proof are separate.
-Contradiction Or Gap Disposition: live processed-server profile, real response, source/receipt linkage and Root independent probe pending.
-Claim Update: bounded provider/live dispatch; R3/R4 and selected HTML job remain open.
+Expected Result / Prediction: visible Home root and child complete through governed Alibaba and exact Markdown export.
+Evidence Comparison: `REQ-ACTION` -> `docs/reviews/evidence/ncr-home-alibaba-journey-worker-20261013.json#PROOF-REQ-ACTION` and `docs/reviews/evidence/ncr-home-alibaba-journey-local-20261013.json#assertions.REQ-ACTION`; `REQ-PROFILE` -> `docs/reviews/evidence/ncr-home-alibaba-journey-worker-20261013.json#PROOF-REQ-PROFILE` and `docs/reviews/evidence/ncr-home-alibaba-journey-local-20261013.json#assertions.REQ-PROFILE`; `REQ-LIVE-ROOT` -> `docs/reviews/evidence/ncr-home-alibaba-journey-worker-20261013.json#PROOF-REQ-LIVE-ROOT` and `docs/reviews/evidence/ncr-home-alibaba-journey-local-20261013.json#assertions.REQ-LIVE-ROOT`; `REQ-CHILD` -> `docs/reviews/evidence/ncr-home-alibaba-journey-worker-20261013.json#PROOF-REQ-CHILD` and `docs/reviews/evidence/ncr-home-alibaba-journey-local-20261013.json#assertions.REQ-CHILD`; `REQ-EXPORT` -> `docs/reviews/evidence/ncr-home-alibaba-journey-worker-20261013.json#PROOF-REQ-EXPORT` and `docs/reviews/evidence/ncr-home-alibaba-journey-local-20261013.json#assertions.REQ-EXPORT`; `REQ-BUDGET-RETURN` -> `docs/reviews/evidence/ncr-home-alibaba-journey-worker-20261013.json#PROOF-REQ-BUDGET-RETURN` and `docs/reviews/evidence/ncr-home-alibaba-journey-local-20261013.json#assertions.REQ-BUDGET-RETURN`.
+Contradiction Or Gap Disposition: earlier 401/output-limit attempts and original STOPPED BUILD remain historical. First concise root/child succeeded, but VI selector omitted `xuong`; Markdown download was never clicked and history clearing lost receipt, so zero-call recovery was insufficient. Separate continuation corrected only that selector; actual terminal proof reviewed separately.
+Claim Update: CLOSED_PASS_BOUNDED; QUALITY_ACCEPTED_BOUNDED. Actual frozen worker proof `sha256:d0d1f6b50c122754b2dee6cc83e40cb8d5ef1e08ed3ef7b5e862c9ce78bfc00a` and independent Local proof `sha256:09703a65fd0fef5e2798565e19b0617b266552d19e100888bc12176212797862` support the six bounded receipt assertions. R1/R2 partial; R3/R4 open; R5/R6 deferred. Selected HTML business pilot, real-data writer/custody, business acceptance, send/B2, P11, public sync, deployment and production remain parked.
 
 ## Scaffold Provenance Block
 
@@ -424,23 +429,23 @@ Claim Update: bounded provider/live dispatch; R3/R4 and selected HTML job remain
 
 | Field | Evidence |
 |---|---|
-| Actor | Local INTERNAL_AGENT orchestrator/reviewer dispatch owner |
-| Provider or surface | private shared repository, no provider invocation |
-| Session or invocation | ncr-home-alibaba-journey-root-amendment2-20261013 |
+| Actor | Local INTERNAL_AGENT Root reviewer/closer |
+| Provider or surface | private shared workspace; frozen real Alibaba browser evidence |
+| Session or invocation | ncr-home-alibaba-root-distinct-20261013 |
 | Working directory | repository root |
-| Command or tool surface | progressive startup, source inspection/scaffold, ADIF resolver and author fast gate |
-| Target paths | `docs/baselines/CVF_GC018_NCR_HOME_ALIBABA_JOURNEY_2026-10-13.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HOME_ALIBABA_JOURNEY_2026-10-13.md`; `docs/reviews/evidence/ncr-home-alibaba-journey-dispatch-20261013.json`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Allowed scope source | Root selected finite NCR continuation |
-| Before status evidence | 1253047add170085400ffe97c549e51e3e761dda; original BUILD STOPPED; exact7 custody3 frozen/stashed; clean worktree and staged empty before exact9 continuation |
-| After status evidence | exact9 coherent separate continuation; actual-SHA exact6 and bound gate required |
-| Diff evidence | `git status --short`; `git diff --check` at handoff |
-| Approval boundary | Root committed material/current-authority binding and full pre-dispatch release before BUILD |
-| Claim boundary | no actual browser/provider proof or selected HTML acceptance |
+| Command or tool surface | frozen worker proof; independent Local proof; closure preparation |
+| Target paths | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.journey.test.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.test.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/ncr-home-alibaba-journey.live.spec.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/support/ncr-alibaba-boundary-preload.cjs`; `docs/baselines/CVF_GC018_NCR_HOME_ALIBABA_JOURNEY_2026-10-13.md`; `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json`; `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md`; `docs/corpus-intelligence/registry/entries/cvf-ncr-home-alibaba-journey.json`; `docs/reviews/CVF_NCR_HOME_ALIBABA_JOURNEY_COMPLETION_2026-10-13.md`; `docs/reviews/CVF_NCR_HOME_ALIBABA_JOURNEY_WORKER_RETURN_2026-10-13.md`; `docs/reviews/archive/CVF_AGENT_WORK_ORDER_NCR_HOME_ALIBABA_JOURNEY_DISPATCH_2026-10-13.md`; `docs/reviews/evidence/ncr-home-alibaba-journey-dispatch-20261013.json`; `docs/reviews/evidence/ncr-home-alibaba-journey-local-20261013.json`; `docs/reviews/evidence/ncr-home-alibaba-journey-worker-20261013.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HOME_ALIBABA_JOURNEY_2026-10-13.md` |
+| Allowed scope source | operator NCR continuation and bounded amended work order |
+| Before status evidence | HEAD 316c8c1ec50cbee73c2f19249836cd8ddfb456c2; frozen exact7; staged empty |
+| After status evidence | exact material manifest pending Root gates/commit; exact-six actual-SHA continuity follows |
+| Diff evidence | Root must run exact manifest and staged diff checks |
+| Approval boundary | finite synthetic Home/Alibaba journey only |
+| Claim boundary | R1/R2 partial; R3/R4 open; R5/R6 deferred. Selected HTML business pilot, real-data writer/custody, business acceptance, send/B2, P11, public sync, deployment and production remain parked. |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-home-alibaba-journey-root-amendment2-20261013 |
-| Expected manifest | `docs/baselines/CVF_GC018_NCR_HOME_ALIBABA_JOURNEY_2026-10-13.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HOME_ALIBABA_JOURNEY_2026-10-13.md`; `docs/reviews/evidence/ncr-home-alibaba-journey-dispatch-20261013.json`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Actual changed set | `docs/baselines/CVF_GC018_NCR_HOME_ALIBABA_JOURNEY_2026-10-13.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HOME_ALIBABA_JOURNEY_2026-10-13.md`; `docs/reviews/evidence/ncr-home-alibaba-journey-dispatch-20261013.json`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Manifest delta | MATCH exact9 amendment material before commit |
+| Invocation ID | ncr-home-alibaba-root-distinct-20261013 |
+| Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.journey.test.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.test.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/ncr-home-alibaba-journey.live.spec.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/support/ncr-alibaba-boundary-preload.cjs`; `docs/baselines/CVF_GC018_NCR_HOME_ALIBABA_JOURNEY_2026-10-13.md`; `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json`; `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md`; `docs/corpus-intelligence/registry/entries/cvf-ncr-home-alibaba-journey.json`; `docs/reviews/CVF_NCR_HOME_ALIBABA_JOURNEY_COMPLETION_2026-10-13.md`; `docs/reviews/CVF_NCR_HOME_ALIBABA_JOURNEY_WORKER_RETURN_2026-10-13.md`; `docs/reviews/archive/CVF_AGENT_WORK_ORDER_NCR_HOME_ALIBABA_JOURNEY_DISPATCH_2026-10-13.md`; `docs/reviews/evidence/ncr-home-alibaba-journey-dispatch-20261013.json`; `docs/reviews/evidence/ncr-home-alibaba-journey-local-20261013.json`; `docs/reviews/evidence/ncr-home-alibaba-journey-worker-20261013.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HOME_ALIBABA_JOURNEY_2026-10-13.md` |
+| Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.journey.test.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.test.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/ncr-home-alibaba-journey.live.spec.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/support/ncr-alibaba-boundary-preload.cjs`; `docs/baselines/CVF_GC018_NCR_HOME_ALIBABA_JOURNEY_2026-10-13.md`; `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json`; `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md`; `docs/corpus-intelligence/registry/entries/cvf-ncr-home-alibaba-journey.json`; `docs/reviews/CVF_NCR_HOME_ALIBABA_JOURNEY_COMPLETION_2026-10-13.md`; `docs/reviews/CVF_NCR_HOME_ALIBABA_JOURNEY_WORKER_RETURN_2026-10-13.md`; `docs/reviews/archive/CVF_AGENT_WORK_ORDER_NCR_HOME_ALIBABA_JOURNEY_DISPATCH_2026-10-13.md`; `docs/reviews/evidence/ncr-home-alibaba-journey-dispatch-20261013.json`; `docs/reviews/evidence/ncr-home-alibaba-journey-local-20261013.json`; `docs/reviews/evidence/ncr-home-alibaba-journey-worker-20261013.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HOME_ALIBABA_JOURNEY_2026-10-13.md` |
+| Manifest delta | MATCH required before commit |
 | Deletion or rename disposition | None |
 
 ## Delta Execution Claim Boundary Control Block
@@ -464,3 +469,43 @@ Reason: private synthetic NCR proof dispatch.
 ## Claim Boundary
 
 This packet specifies a finite live proof; execution begins only after clean committed bound release. R1/R2 remain partial, R3/R4 open, R5/R6 deferred; real-data writer/custody/business acceptance, send/B2, P11, public and deployment remain parked.
+
+## Local Closure Disposition
+
+CLOSED_PASS_BOUNDED; QUALITY_ACCEPTED_BOUNDED. Actual frozen worker proof `sha256:d0d1f6b50c122754b2dee6cc83e40cb8d5ef1e08ed3ef7b5e862c9ce78bfc00a` and independent Local proof `sha256:09703a65fd0fef5e2798565e19b0617b266552d19e100888bc12176212797862` support the six bounded receipt assertions. R1/R2 partial; R3/R4 open; R5/R6 deferred. Selected HTML business pilot, real-data writer/custody, business acceptance, send/B2, P11, public sync, deployment and production remain parked.
+
+Original dispatch work order archive `docs/reviews/archive/CVF_AGENT_WORK_ORDER_NCR_HOME_ALIBABA_JOURNEY_DISPATCH_2026-10-13.md` raw SHA256 `4d083e4c5b80de148b49a1260e9a491eb83a576a8cc17820c9d810a4f7bd4aee`; original Git LF content SHA256 `06e5ac2db2fa39bbcca56af01c2b953e05add736ff378a4e82bfeffd3f0ddc2e`. Historical dispatch source pins remain historical.
+
+## Current Source Raw-Byte Hash Table
+
+| Reviewed source path | Current raw SHA256 | Physical lines |
+|---|---|---|
+| `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.tsx` | `373a1d1095321a4393401d4b3edb48a2f685698399606b90e0ca4ab75685bc40` | 378 |
+| `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.test.tsx` | `1b54bffebd89f4859fd02bcfe5c231b12f526a45bd7c964043a35ce35b2278cf` | 149 |
+| `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.journey.test.tsx` | `12496e9d9fab50a6d60a8a627b41a296098ee23fee4efb2eb5438142448b63f3` | 255 |
+| `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/ncr-home-alibaba-journey.live.spec.ts` | `c09d2f57948be84576ab8bd226187ac659a3dcd482dad943a00ad84fd5a9c014` | 249 |
+| `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/support/ncr-alibaba-boundary-preload.cjs` | `d745f57278f66c5c5dfed578c0500544fa6da4982cd266504b1f046d0f37cb49` | 101 |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HOME_ALIBABA_JOURNEY_2026-10-13.md` | CLOSED_PASS_BOUNDED; original dispatch archive | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_NCR_HOME_ALIBABA_JOURNEY_COMPLETION_2026-10-13.md` | six receipt assertions; independent Root proof | PASS |
+| Roadmap state | `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` | v2.12 bounded R1/R3 contribution; full exits open | PASS |
+| Registry JSON | `docs/corpus-intelligence/registry/entries/cvf-ncr-home-alibaba-journey.json`; `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | bounded completion note in source entry; generated aggregate; status NOT_STARTED | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | human companion lookup note updated | PASS |
+| External evidence digest | `docs/reviews/evidence/ncr-home-alibaba-journey-local-20261013.json` | sha256:09703a65fd0fef5e2798565e19b0617b266552d19e100888bc12176212797862; secret-safe independent proof | PASS |
+| System loop interlock | `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `docs/reviews/CVF_NCR_HOME_ALIBABA_JOURNEY_COMPLETION_2026-10-13.md` | parked owner and effect checkpoints explicitly retained | PASS |
+| Session continuity | six active source/generated surfaces | Root dedicated actual-SHA continuity after material commit | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Requirement | Required value | Observed value / evidence | Status |
+|---|---|---|---|
+| REQ-ACTION | Validated visible EN/VI submit; invalid fields block; Spec actions do not execute | Current DynamicForm submit diff, unit RED then29/29 GREEN consumed; own visible Generate click produced exactlyone realPOST. | PASS |
+| REQ-PROFILE | Live Alibaba only; sole server key; empty owned stores and zero knowledge; keyless browser | Worker processed server profile and six-call boundary consumed; own separate processed profile mock0, sole FILE DASHSCOPE, empty owned stores/keyless browser, one observed provider fetch. | PASS |
+| REQ-LIVE-ROOT | HTTP200 success; real live Alibaba/qwen-flash output and receipt | Distinct independent community-garden fixture returned HTTP200successALLOW/liveAlibabaqwen-flash receipt, exact output and store correspondence, zero knowledge chunks. | PASS |
+| REQ-CHILD | Distinct child output/receipt; exact previous-output prefix; parent link and root preserved | Frozen worker actual rootchild trace/spec/runtime: distinct receipts/outputs, exact600-character previous-output prefix and parentExecutionId; Root did not replay child. | PASS |
+| REQ-EXPORT | Actual child Markdown exact output+own receipt/root excluded; Retry no extra call | Consumed actual child3955-byte Markdown including exact child output/receipt and excluding root; own downloaded raw Markdown contains own exact output/live receipt/envelope; both Retry transitions causedzero extra execution/provider fetch. | PASS |
+| REQ-BUDGET-RETURN | Worker max6/6; reviewer max1UI/3calls; global9; exact7 and required gates | Frozen exact7 raw hashes, workerfast70/70+ledger+diff PASS, actualworker6UI/6provider+Root1UI/1provider=7/7 belowglobal9; ownedserversstopped/configrestored; historic failures retained. | PASS |

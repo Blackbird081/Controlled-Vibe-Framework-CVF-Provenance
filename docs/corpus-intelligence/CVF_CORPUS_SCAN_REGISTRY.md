@@ -84,7 +84,7 @@ prior scan here before starting new work.
 | Corpus | Type | Status | Wave | Files | Key findings |
 | --- | --- | --- | --- | --- | --- |
 | `NCR Work Transfer bounded synthetic browser test` | CVF_EXTENSION | NOT_STARTED | None | unknown | Exact named test registration only; primary journey blocked; Local quality review and frozen custody retained; no complete corpus scan |
-| `NCR Home Alibaba bounded synthetic browser journey test` | CVF_EXTENSION | NOT_STARTED | None | unknown | Exact spec/preload registration before worker-return gate; live journey pending Local review; semantic processing NOT_STARTED |
+| `NCR Home Alibaba bounded synthetic browser journey test` | CVF_EXTENSION | NOT_STARTED | None | unknown | Finite Home/Alibaba journey accepted bounded at `docs/reviews/CVF_NCR_HOME_ALIBABA_JOURNEY_COMPLETION_2026-10-13.md`; source-wide processing NOT_STARTED |
 | `NCR ResultViewer export controls and focused failure recovery test` | CVF_EXTENSION | NOT_STARTED | None | unknown | Exact helper/test source registration; finite offline UI acceptance only; semantic processing NOT_STARTED |
 | `CVF_PROVIDER_INTELLIGENCE` retained legacy corpus | EXTERNAL_SOURCE | SCANNED_WITH_FINDINGS | PINT-R1 | 50 | Full-content ledger and canonical digests reconciled; six advisory doctrine groups retained, two owner-source checks deferred, two variants closed as no-new-value; EAIC runtime knowledge gap remains parked |
 | `MLW-RT1 durable memory runtime proof` | RUNTIME_PROOF | SCANNED_WITH_FINDINGS | MLW-RT1 | 9 | Existing file-backed `/api/execute` durable-memory write/read continuity proved; backend migration/public readiness deferred |

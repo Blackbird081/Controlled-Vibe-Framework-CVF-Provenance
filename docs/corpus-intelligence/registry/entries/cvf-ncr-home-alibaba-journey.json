@@ -16,7 +16,7 @@
   "hashInput": null,
   "manifestPath": null,
   "packetPath": "docs/reviews/CVF_NCR_HOME_ALIBABA_JOURNEY_COMPLETION_2026-10-13.md",
-  "completionReviewPath": null,
+  "completionReviewPath": "docs/reviews/CVF_NCR_HOME_ALIBABA_JOURNEY_COMPLETION_2026-10-13.md",
   "gcBaselineRef": "docs/baselines/CVF_GC018_NCR_HOME_ALIBABA_JOURNEY_2026-10-13.md",
   "verdicts": {
     "gc047": "NOT_RUN",
@@ -24,8 +24,8 @@
     "gc050": "NOT_RUN"
   },
   "semanticRegions": [],
-  "priorAbsorption": "Named test registration before worker-return gate; semantic processing NOT_STARTED; no live acceptance inferred.",
+  "priorAbsorption": "Named Home Alibaba test registration; finite browser/probe completion accepted bounded at docs/reviews/CVF_NCR_HOME_ALIBABA_JOURNEY_COMPLETION_2026-10-13.md; source-wide processing NOT_STARTED.",
   "findings": [],
   "negativeSearchTerms": [],
-  "nextScanRecommendation": "Consume bounded journey evidence after Local review; semantic corpus processing remains NOT_STARTED."
+  "nextScanRecommendation": "Retain bounded proof; source-wide processing remains NOT_STARTED and requires separate admission."
 }

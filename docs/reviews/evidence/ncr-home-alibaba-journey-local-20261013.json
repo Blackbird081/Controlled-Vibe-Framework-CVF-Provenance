@@ -1,0 +1,2178 @@
+{
+  "schemaVersion": "CVF-NCR-HOME-ALIBABA-JOURNEY-LOCAL-PROOF/1.0.0",
+  "status": "PASS",
+  "rootReviewStatus": "PASS",
+  "builtAtUtc": "2026-10-13T17:56:55Z",
+  "role": "Local INTERNAL_AGENT",
+  "phase": "bounded independent review evidence assembly",
+  "decisionOwner": "Root",
+  "claimBoundary": "This proof records only allowlisted, secret-safe observations. It does not claim real-data acceptance, business acceptance, roadmap closure, publication, or deployment readiness.",
+  "evidenceRefs": {
+    "workerProof": "docs/reviews/evidence/ncr-home-alibaba-journey-worker-20261013.json",
+    "workerReturn": "docs/reviews/CVF_NCR_HOME_ALIBABA_JOURNEY_WORKER_RETURN_2026-10-13.md",
+    "probeEvidence": "independent-probe-result.json",
+    "rootProof": "docs/reviews/evidence/ncr-home-alibaba-journey-local-20261013.json",
+    "rootRunOutputs": [
+      ".cvf/runtime/ncr-home-alibaba-root-20261013/review-admission.json",
+      ".cvf/runtime/ncr-home-alibaba-root-20261013/review-run-result.json",
+      ".cvf/runtime/ncr-home-alibaba-root-20261013/independent-probe-result.json",
+      ".cvf/runtime/ncr-home-alibaba-root-20261013/review-fetch-events.jsonl",
+      ".cvf/runtime/ncr-home-alibaba-root-20261013/processed-review-profile-11024.json",
+      ".cvf/runtime/ncr-home-alibaba-root-20261013/processed-review-profile-29952.json",
+      ".cvf/runtime/ncr-home-alibaba-root-20261013/processed-review-profile-33392.json",
+      ".cvf/runtime/ncr-home-alibaba-root-20261013/processed-review-profile-33648.json",
+      ".cvf/runtime/ncr-home-alibaba-root-20261013/processed-review-profile-34600.json",
+      ".cvf/runtime/ncr-home-alibaba-root-20261013/processed-review-profile-39460.json"
+    ]
+  },
+  "worker": {
+    "proof": {
+      "ref": "docs/reviews/evidence/ncr-home-alibaba-journey-worker-20261013.json",
+      "availability": "PRESENT",
+      "rawSha256": "d0d1f6b50c122754b2dee6cc83e40cb8d5ef1e08ed3ef7b5e862c9ce78bfc00a",
+      "bytes": 17618,
+      "parseStatus": "VALID",
+      "proofsMapPresent": true,
+      "workerStatus": "PASS",
+      "role": "LOCAL_INTERNAL_AGENT_WORKER",
+      "decisionOwner": "ROOT_LOCAL_REVIEWER_CLOSER",
+      "workerActor": "INTERNAL_WORKER_SOL_CONFIGURED",
+      "workerInvocationId": "ncr-home-alibaba-worker-continuation-20261013",
+      "executionBaseHead": "316c8c1ec50cbee73c2f19249836cd8ddfb456c2",
+      "originalExecutionBaseHead": "152481577108f2815f953471201b12473be45efa",
+      "proofRows": [
+        {
+          "proofId": "PROOF-REQ-ACTION",
+          "status": "PASS"
+        },
+        {
+          "proofId": "PROOF-REQ-PROFILE",
+          "status": "PASS"
+        },
+        {
+          "proofId": "PROOF-REQ-LIVE-ROOT",
+          "status": "PASS"
+        },
+        {
+          "proofId": "PROOF-REQ-CHILD",
+          "status": "PASS"
+        },
+        {
+          "proofId": "PROOF-REQ-EXPORT",
+          "status": "PASS"
+        },
+        {
+          "proofId": "PROOF-REQ-BUDGET-RETURN",
+          "status": "PASS"
+        }
+      ],
+      "artifactHashes": [
+        {
+          "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.tsx",
+          "sha256": "373a1d1095321a4393401d4b3edb48a2f685698399606b90e0ca4ab75685bc40",
+          "bytes": 18708
+        },
+        {
+          "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.test.tsx",
+          "sha256": "1b54bffebd89f4859fd02bcfe5c231b12f526a45bd7c964043a35ce35b2278cf",
+          "bytes": 7376
+        },
+        {
+          "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.journey.test.tsx",
+          "sha256": "12496e9d9fab50a6d60a8a627b41a296098ee23fee4efb2eb5438142448b63f3",
+          "bytes": 10976
+        },
+        {
+          "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/ncr-home-alibaba-journey.live.spec.ts",
+          "sha256": "c09d2f57948be84576ab8bd226187ac659a3dcd482dad943a00ad84fd5a9c014",
+          "bytes": 16116
+        },
+        {
+          "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/support/ncr-alibaba-boundary-preload.cjs",
+          "sha256": "d745f57278f66c5c5dfed578c0500544fa6da4982cd266504b1f046d0f37cb49",
+          "bytes": 4890
+        }
+      ],
+      "diagnosticHistory": [
+        {
+          "record": 1,
+          "observations": [
+            {
+              "field": "stage",
+              "value": "launcher"
+            },
+            {
+              "field": "class",
+              "value": "NODE_OPTIONS_WINDOWS_PATH_QUOTING"
+            },
+            {
+              "field": "uiPosts",
+              "value": 0
+            },
+            {
+              "field": "providerCalls",
+              "value": 0
+            }
+          ]
+        },
+        {
+          "record": 2,
+          "observations": [
+            {
+              "field": "stage",
+              "value": "preflight"
+            },
+            {
+              "field": "class",
+              "value": "EXPECTED_FRAMEWORK_DENIAL_COUNTED_AS_UNEXPECTED"
+            },
+            {
+              "field": "uiPosts",
+              "value": 0
+            },
+            {
+              "field": "providerCalls",
+              "value": 0
+            }
+          ]
+        },
+        {
+          "record": 3,
+          "observations": [
+            {
+              "field": "stage",
+              "value": "login"
+            },
+            {
+              "field": "class",
+              "value": "EXTERNAL_NEXT_DIST_REACT_MODULE_ANCESTRY"
+            },
+            {
+              "field": "uiPosts",
+              "value": 0
+            },
+            {
+              "field": "providerCalls",
+              "value": 0
+            }
+          ]
+        },
+        {
+          "record": 4,
+          "observations": [
+            {
+              "field": "stage",
+              "value": "provider"
+            },
+            {
+              "field": "class",
+              "value": "provider_http_error"
+            },
+            {
+              "field": "uiPosts",
+              "value": 1
+            },
+            {
+              "field": "providerCalls",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "record": 5,
+          "observations": [
+            {
+              "field": "stage",
+              "value": "output_validation"
+            },
+            {
+              "field": "class",
+              "value": "output_validation_failed"
+            },
+            {
+              "field": "uiPosts",
+              "value": 1
+            },
+            {
+              "field": "providerCalls",
+              "value": 1
+            },
+            {
+              "field": "cumulativeProviderCalls",
+              "value": 2
+            }
+          ]
+        },
+        {
+          "record": 6,
+          "observations": [
+            {
+              "field": "stage",
+              "value": "test_locator"
+            },
+            {
+              "field": "class",
+              "value": "MARKDOWN_BUTTON_SELECTOR_MISMATCH"
+            },
+            {
+              "field": "uiPosts",
+              "value": 2
+            },
+            {
+              "field": "providerCalls",
+              "value": 2
+            },
+            {
+              "field": "cumulativeProviderCalls",
+              "value": 4
+            }
+          ]
+        }
+      ],
+      "safeObservations": [
+        {
+          "field": "status",
+          "value": "COMPLETE_PENDING_REVIEW"
+        },
+        {
+          "field": "executionBaseHead",
+          "value": "316c8c1ec50cbee73c2f19249836cd8ddfb456c2"
+        },
+        {
+          "field": "role",
+          "value": "LOCAL_INTERNAL_AGENT_WORKER"
+        },
+        {
+          "field": "decisionOwner",
+          "value": "ROOT_LOCAL_REVIEWER_CLOSER"
+        },
+        {
+          "field": "sha256",
+          "value": "373a1d1095321a4393401d4b3edb48a2f685698399606b90e0ca4ab75685bc40"
+        },
+        {
+          "field": "sha256",
+          "value": "1b54bffebd89f4859fd02bcfe5c231b12f526a45bd7c964043a35ce35b2278cf"
+        },
+        {
+          "field": "sha256",
+          "value": "12496e9d9fab50a6d60a8a627b41a296098ee23fee4efb2eb5438142448b63f3"
+        },
+        {
+          "field": "sha256",
+          "value": "c09d2f57948be84576ab8bd226187ac659a3dcd482dad943a00ad84fd5a9c014"
+        },
+        {
+          "field": "sha256",
+          "value": "d745f57278f66c5c5dfed578c0500544fa6da4982cd266504b1f046d0f37cb49"
+        },
+        {
+          "field": "status",
+          "value": "PASS"
+        },
+        {
+          "field": "storageAdapter",
+          "value": "file"
+        },
+        {
+          "field": "rateLimitStore",
+          "value": "memory"
+        },
+        {
+          "field": "routeSuccess",
+          "value": true
+        },
+        {
+          "field": "provider",
+          "value": "alibaba"
+        },
+        {
+          "field": "model",
+          "value": "qwen-flash"
+        },
+        {
+          "field": "receiptId",
+          "value": "rcpt-env-mv6z8obm-qbmgb9"
+        },
+        {
+          "field": "providerCallCount",
+          "value": 1
+        },
+        {
+          "field": "receiptId",
+          "value": "rcpt-env-mv6z8tp0-hf120t"
+        },
+        {
+          "field": "byteCount",
+          "value": 3955
+        },
+        {
+          "field": "sha256",
+          "value": "9346fc808894fbaa9041e0c867d16cf7760d7cafac54e707ce6fb7d8a69e306e"
+        },
+        {
+          "field": "uiExecutePosts",
+          "value": 6
+        },
+        {
+          "field": "alibabaProviderAttempts",
+          "value": 6
+        },
+        {
+          "field": "cumulativeUiExecutePosts",
+          "value": 6
+        },
+        {
+          "field": "stage",
+          "value": "launcher"
+        },
+        {
+          "field": "class",
+          "value": "NODE_OPTIONS_WINDOWS_PATH_QUOTING"
+        },
+        {
+          "field": "uiPosts",
+          "value": 0
+        },
+        {
+          "field": "providerCalls",
+          "value": 0
+        },
+        {
+          "field": "stage",
+          "value": "preflight"
+        },
+        {
+          "field": "class",
+          "value": "EXPECTED_FRAMEWORK_DENIAL_COUNTED_AS_UNEXPECTED"
+        },
+        {
+          "field": "stage",
+          "value": "login"
+        },
+        {
+          "field": "class",
+          "value": "EXTERNAL_NEXT_DIST_REACT_MODULE_ANCESTRY"
+        },
+        {
+          "field": "stage",
+          "value": "provider"
+        },
+        {
+          "field": "class",
+          "value": "provider_http_error"
+        },
+        {
+          "field": "uiPosts",
+          "value": 1
+        },
+        {
+          "field": "providerCalls",
+          "value": 1
+        },
+        {
+          "field": "stage",
+          "value": "output_validation"
+        },
+        {
+          "field": "class",
+          "value": "output_validation_failed"
+        },
+        {
+          "field": "cumulativeProviderCalls",
+          "value": 2
+        },
+        {
+          "field": "stage",
+          "value": "test_locator"
+        },
+        {
+          "field": "class",
+          "value": "MARKDOWN_BUTTON_SELECTOR_MISMATCH"
+        },
+        {
+          "field": "uiPosts",
+          "value": 2
+        },
+        {
+          "field": "providerCalls",
+          "value": 2
+        },
+        {
+          "field": "cumulativeProviderCalls",
+          "value": 4
+        },
+        {
+          "field": "sha256",
+          "value": "65b83d847116f501cb237ea84c65e185550766c57bd8961ec3d822be10566c4c"
+        },
+        {
+          "field": "sha256",
+          "value": "055da5a02a2e732f39a7834f7cfe71cfd44db054634e4ddac2ebf742f693a2cb"
+        },
+        {
+          "field": "sha256",
+          "value": "0406a567072e5c67c056b1d36f7c88b164eace05b34f0439d7f693b484c57c03"
+        },
+        {
+          "field": "sha256",
+          "value": "08290c384d78d77fc2a9096fff72c01f2ab5e576483885566ea53a5b63851b0d"
+        },
+        {
+          "field": "sha256",
+          "value": "54b808d2e53f2999d271392a099862459e5168ee3163ad0138bce7051db825f8"
+        },
+        {
+          "field": "sha256",
+          "value": "311f36b6d01999fb1f81d885580cebbb2842c3944fce92547ec900ee91b146b5"
+        },
+        {
+          "field": "sha256",
+          "value": "09ae7a9b036d517e5713144d4bd6faa34c1fd950f977e8c80de23743a5dbf0c3"
+        },
+        {
+          "field": "sha256",
+          "value": "c276ee815baee6a302bfb32ef27979cc7f910e6f2bbc76a54cf6ed077f33529c"
+        },
+        {
+          "field": "sha256",
+          "value": "8f4767e5fcc017d54a1937eb56b3675fa549b2fa5702018b2d64cf49a067f051"
+        },
+        {
+          "field": "sha256",
+          "value": "9256065577c896d09fd4fe7e46484f487cbad79bc9feea6b983ca6a34758bbd5"
+        },
+        {
+          "field": "sha256",
+          "value": "9bbd0516e0483a5d839a558102f736bf21db55e462d4b0948b63e7c135b1e144"
+        },
+        {
+          "field": "sha256",
+          "value": "02496c43051f44564cdb6e01fd9ecf082ecb4a125fcc8009525fa504b9274af8"
+        },
+        {
+          "field": "sha256",
+          "value": "eac5ce28fcc9760d2ccf8171ee58f353dabbe24546712758df157f9536ee2c7b"
+        },
+        {
+          "field": "sha256",
+          "value": "cc0cefd4e7a8fc410111985a560c1c8dc6831b7461ff987524e2e4d64b2ddcf1"
+        },
+        {
+          "field": "sha256",
+          "value": "635cb7787980ef7cee441dcdcb819042ffb9ea05a5d84461fc59b7ad03dbf247"
+        },
+        {
+          "field": "sha256",
+          "value": "c3d4bef4b74722acc35251ca8fc7a98ddfd237e1af5da696d3916f4fdeb5bb58"
+        },
+        {
+          "field": "sha256",
+          "value": "f3b263c1f3bbe189d03fcb5b9fa5bfb50cf68f2944b21d3d3eeba1d2804b602e"
+        },
+        {
+          "field": "sha256",
+          "value": "159754a3d416f88c6c44d1a95e5e49edcb5eb2f407067cdfd3c2d383bfdd075c"
+        },
+        {
+          "field": "sha256",
+          "value": "aa476060151c6d52b88cfebc400ca4aa15cb5104e0cf1b4bae6a8c4b4050d46c"
+        },
+        {
+          "field": "sha256",
+          "value": "a4aecd453a3bbb33e7fbbf980b10cad4a040d25f0f5ac63014a827d6b326b39d"
+        },
+        {
+          "field": "originalExecutionBaseHead",
+          "value": "152481577108f2815f953471201b12473be45efa"
+        },
+        {
+          "field": "cumulativeProviderCalls",
+          "value": 6
+        },
+        {
+          "field": "phase",
+          "value": "original_blocked_and_amendments"
+        },
+        {
+          "field": "phase",
+          "value": "separate_continuation"
+        }
+      ],
+      "runtimeLogDigests": [
+        {
+          "path": ".cvf/runtime/ncr-home-alibaba-journey-20261013/live-worker/live-worker.log",
+          "rawSha256": "65b83d847116f501cb237ea84c65e185550766c57bd8961ec3d822be10566c4c",
+          "bytes": 1555
+        },
+        {
+          "path": ".cvf/runtime/ncr-home-alibaba-journey-20261013/live-worker/live-worker-2.log",
+          "rawSha256": "055da5a02a2e732f39a7834f7cfe71cfd44db054634e4ddac2ebf742f693a2cb",
+          "bytes": 5126
+        },
+        {
+          "path": ".cvf/runtime/ncr-home-alibaba-journey-20261013/live-worker/live-worker-3.log",
+          "rawSha256": "0406a567072e5c67c056b1d36f7c88b164eace05b34f0439d7f693b484c57c03",
+          "bytes": 25338
+        },
+        {
+          "path": ".cvf/runtime/ncr-home-alibaba-journey-20261013/live-worker/live-worker-4.log",
+          "rawSha256": "08290c384d78d77fc2a9096fff72c01f2ab5e576483885566ea53a5b63851b0d",
+          "bytes": 6820
+        },
+        {
+          "path": ".cvf/runtime/ncr-home-alibaba-journey-20261013/live-worker/boundary.jsonl",
+          "rawSha256": "54b808d2e53f2999d271392a099862459e5168ee3163ad0138bce7051db825f8",
+          "bytes": 61054
+        },
+        {
+          "path": ".cvf/runtime/ncr-home-alibaba-journey-20261013/live-worker-2/boundary.jsonl",
+          "rawSha256": "311f36b6d01999fb1f81d885580cebbb2842c3944fce92547ec900ee91b146b5",
+          "bytes": 400296
+        },
+        {
+          "path": ".cvf/runtime/ncr-home-alibaba-journey-20261013/live-worker-3/boundary.jsonl",
+          "rawSha256": "09ae7a9b036d517e5713144d4bd6faa34c1fd950f977e8c80de23743a5dbf0c3",
+          "bytes": 439463
+        },
+        {
+          "path": ".cvf/runtime/ncr-home-alibaba-journey-20261013/live-worker-3/provider-diagnostic.json",
+          "rawSha256": "c276ee815baee6a302bfb32ef27979cc7f910e6f2bbc76a54cf6ed077f33529c",
+          "bytes": 941
+        },
+        {
+          "path": ".cvf/runtime/ncr-home-alibaba-journey-20261013/live-worker/live-worker-amended.log",
+          "rawSha256": "8f4767e5fcc017d54a1937eb56b3675fa549b2fa5702018b2d64cf49a067f051",
+          "bytes": 6923
+        },
+        {
+          "path": ".cvf/runtime/ncr-home-alibaba-journey-20261013/live-worker-4/boundary.jsonl",
+          "rawSha256": "9256065577c896d09fd4fe7e46484f487cbad79bc9feea6b983ca6a34758bbd5",
+          "bytes": 682384
+        },
+        {
+          "path": ".cvf/runtime/ncr-home-alibaba-journey-20261013/live-worker-4/output-limit-diagnostic.json",
+          "rawSha256": "9bbd0516e0483a5d839a558102f736bf21db55e462d4b0948b63e7c135b1e144",
+          "bytes": 749
+        },
+        {
+          "path": ".cvf/runtime/ncr-home-alibaba-journey-20261013/live-worker-4/launcher-profile.json",
+          "rawSha256": "02496c43051f44564cdb6e01fd9ecf082ecb4a125fcc8009525fa504b9274af8",
+          "bytes": 746
+        },
+        {
+          "path": ".cvf/runtime/ncr-home-alibaba-journey-20261013/live-worker/live-worker-amendment2.log",
+          "rawSha256": "eac5ce28fcc9760d2ccf8171ee58f353dabbe24546712758df157f9536ee2c7b",
+          "bytes": 7107
+        },
+        {
+          "path": ".cvf/runtime/ncr-home-alibaba-journey-20261013/live-worker-5/boundary.jsonl",
+          "rawSha256": "cc0cefd4e7a8fc410111985a560c1c8dc6831b7461ff987524e2e4d64b2ddcf1",
+          "bytes": 4552965
+        },
+        {
+          "path": ".cvf/runtime/ncr-home-alibaba-journey-20261013/live-worker-5/launcher-profile.json",
+          "rawSha256": "635cb7787980ef7cee441dcdcb819042ffb9ea05a5d84461fc59b7ad03dbf247",
+          "bytes": 746
+        },
+        {
+          "path": ".cvf/runtime/ncr-home-alibaba-journey-20261013/live-worker-5/test-results/ncr-home-alibaba-journey.l-339a0-nd-downloads-child-Markdown/trace.zip",
+          "rawSha256": "c3d4bef4b74722acc35251ca8fc7a98ddfd237e1af5da696d3916f4fdeb5bb58",
+          "bytes": 11393440
+        },
+        {
+          "path": ".cvf/runtime/ncr-home-alibaba-journey-20261013/live-worker/live-worker-continuation.log",
+          "rawSha256": "f3b263c1f3bbe189d03fcb5b9fa5bfb50cf68f2944b21d3d3eeba1d2804b602e",
+          "bytes": 3351
+        },
+        {
+          "path": ".cvf/runtime/ncr-home-alibaba-journey-20261013/live-worker-6/boundary.jsonl",
+          "rawSha256": "159754a3d416f88c6c44d1a95e5e49edcb5eb2f407067cdfd3c2d383bfdd075c",
+          "bytes": 757524
+        },
+        {
+          "path": ".cvf/runtime/ncr-home-alibaba-journey-20261013/live-worker-6/launcher-profile.json",
+          "rawSha256": "aa476060151c6d52b88cfebc400ca4aa15cb5104e0cf1b4bae6a8c4b4050d46c",
+          "bytes": 746
+        },
+        {
+          "path": ".cvf/runtime/ncr-home-alibaba-journey-20261013/live-worker-6/journey-runtime.json",
+          "rawSha256": "a4aecd453a3bbb33e7fbbf980b10cad4a040d25f0f5ac63014a827d6b326b39d",
+          "bytes": 2287
+        }
+      ],
+      "sixAcceptanceProofsPass": true
+    },
+    "return": {
+      "ref": "docs/reviews/CVF_NCR_HOME_ALIBABA_JOURNEY_WORKER_RETURN_2026-10-13.md",
+      "availability": "PRESENT",
+      "rawSha256": "c515dd7a8175a874d9e7e4d220d5b3e1a49ad82a027887f2a21d96f15bc7a4e1",
+      "bytes": 23722,
+      "parseStatus": "VALID_UTF8",
+      "terminalStatus": "COMPLETE_PENDING_REVIEW",
+      "blockedInPurposeHeader": false,
+      "invocationId": null
+    },
+    "budgetReturn": {
+      "proofRowPresent": true,
+      "proofRowStatus": "PASS",
+      "providerCalls": 6,
+      "uiExecutePosts": 6
+    },
+    "terminalStatus": "PASS",
+    "workerOracleSha256": "d0d1f6b50c122754b2dee6cc83e40cb8d5ef1e08ed3ef7b5e862c9ce78bfc00a",
+    "workerProofHashDomain": "SHA-256 of exact raw worker proof JSON bytes"
+  },
+  "workerOracleSha256": "d0d1f6b50c122754b2dee6cc83e40cb8d5ef1e08ed3ef7b5e862c9ce78bfc00a",
+  "workerEvidenceRef": "docs/reviews/evidence/ncr-home-alibaba-journey-worker-20261013.json",
+  "probeEvidenceRef": "docs/reviews/evidence/ncr-home-alibaba-journey-local-20261013.json",
+  "ripaEvidenceBindings": {
+    "workerProofRef": "docs/reviews/evidence/ncr-home-alibaba-journey-worker-20261013.json",
+    "localProofRef": "docs/reviews/evidence/ncr-home-alibaba-journey-local-20261013.json"
+  },
+  "probeOracleSha256": "SELF_REFERENTIAL_JSON_NOT_STORED",
+  "implementationWorkerActor": "INTERNAL_WORKER_SOL_CONFIGURED",
+  "probeExecutorActor": "LOCAL_REVIEWER_CODEX_ROOT",
+  "workerInvocationId": "ncr-home-alibaba-worker-continuation-20261013",
+  "probeInvocationId": "ncr-home-alibaba-root-distinct-20261013",
+  "providerCallCount": 1,
+  "uiExecutePosts": 1,
+  "independentProbeDisposition": "PASS_INDEPENDENT_PROBE",
+  "independentProbeAssertions": [
+    {
+      "index": 1,
+      "assertionId": "real same-origin test authentication",
+      "status": "PASS"
+    },
+    {
+      "index": 2,
+      "assertionId": "one visible validated Generate result click creates exactly one real execute POST",
+      "status": "PASS"
+    },
+    {
+      "index": 3,
+      "assertionId": "owned empty knowledge yields zero injected chunks",
+      "status": "PASS"
+    },
+    {
+      "index": 4,
+      "assertionId": "real response and live receipt with bounded measured calls",
+      "status": "PASS"
+    },
+    {
+      "index": 5,
+      "assertionId": "own browser record is bound to exact live output and receipt",
+      "status": "PASS"
+    },
+    {
+      "index": 6,
+      "assertionId": "browser settings contain no Alibaba key",
+      "status": "PASS"
+    },
+    {
+      "index": 7,
+      "assertionId": "actual raw Markdown download contains own output and own receipt",
+      "status": "PASS"
+    },
+    {
+      "index": 8,
+      "assertionId": "Retry restores exact draft and removes old result without resubmitting",
+      "status": "PASS"
+    }
+  ],
+  "independentProbeAssertionCount": 8,
+  "probeExecutorRole": "LOCAL_REVIEWER_NOT_IMPLEMENTATION_WORKER",
+  "probeCommandOrMethod": "python .cvf/runtime/ncr-home-alibaba-root-20261013/run-review.py",
+  "probeObservedResult": "PASS; 8/8 Root-owned assertions; secret-safe receipt and download facts retained.",
+  "oracleSeparationBasis": "Worker proof JSON raw SHA-256 d0d1f6b50c122754b2dee6cc83e40cb8d5ef1e08ed3ef7b5e862c9ce78bfc00a; Root executed independent test oracle SHA-256 d3e8bb8719dcc2693fabfd0d5af18fbfa9f92b91d0a498b097aca627e9013706; distinct worker/reviewer actors and invocation IDs.",
+  "assertions": {
+    "REQ-ACTION": "PASS",
+    "REQ-PROFILE": "PASS",
+    "REQ-LIVE-ROOT": "PASS",
+    "REQ-CHILD": "PASS",
+    "REQ-EXPORT": "PASS",
+    "REQ-BUDGET-RETURN": "PASS"
+  },
+  "assertionBasis": {
+    "REQ-ACTION": {
+      "workerProof": "docs/reviews/evidence/ncr-home-alibaba-journey-worker-20261013.json#proofs.PROOF-REQ-ACTION",
+      "rootProbe": ".cvf/runtime/ncr-home-alibaba-root-20261013/independent-probe-result.json#assertions",
+      "rule": "PASS only when the matching actual worker row and all eight actual Root-owned probe records pass under the valid live reviewer profile"
+    },
+    "REQ-PROFILE": {
+      "workerProof": "docs/reviews/evidence/ncr-home-alibaba-journey-worker-20261013.json#proofs.PROOF-REQ-PROFILE",
+      "rootProbe": ".cvf/runtime/ncr-home-alibaba-root-20261013/independent-probe-result.json#assertions",
+      "rule": "PASS only when the matching actual worker row and all eight actual Root-owned probe records pass under the valid live reviewer profile"
+    },
+    "REQ-LIVE-ROOT": {
+      "workerProof": "docs/reviews/evidence/ncr-home-alibaba-journey-worker-20261013.json#proofs.PROOF-REQ-LIVE-ROOT",
+      "rootProbe": ".cvf/runtime/ncr-home-alibaba-root-20261013/independent-probe-result.json#assertions",
+      "rule": "PASS only when the matching actual worker row and all eight actual Root-owned probe records pass under the valid live reviewer profile"
+    },
+    "REQ-CHILD": {
+      "workerProof": "docs/reviews/evidence/ncr-home-alibaba-journey-worker-20261013.json#proofs.PROOF-REQ-CHILD",
+      "rootProbe": ".cvf/runtime/ncr-home-alibaba-root-20261013/independent-probe-result.json#assertions",
+      "rule": "PASS only when the matching actual worker row and all eight actual Root-owned probe records pass under the valid live reviewer profile"
+    },
+    "REQ-EXPORT": {
+      "workerProof": "docs/reviews/evidence/ncr-home-alibaba-journey-worker-20261013.json#proofs.PROOF-REQ-EXPORT",
+      "rootProbe": ".cvf/runtime/ncr-home-alibaba-root-20261013/independent-probe-result.json#assertions",
+      "rule": "PASS only when the matching actual worker row and all eight actual Root-owned probe records pass under the valid live reviewer profile"
+    },
+    "REQ-BUDGET-RETURN": {
+      "workerProof": "docs/reviews/evidence/ncr-home-alibaba-journey-worker-20261013.json#proofs.PROOF-REQ-BUDGET-RETURN",
+      "rootProbe": ".cvf/runtime/ncr-home-alibaba-root-20261013/independent-probe-result.json#assertions",
+      "rule": "PASS only when the matching actual worker row and all eight actual Root-owned probe records pass under the valid live reviewer profile"
+    }
+  },
+  "cumulativeProviderCalls": 6,
+  "cumulativeUiExecutePosts": 6,
+  "rootReview": {
+    "outputs": [
+      {
+        "ref": ".cvf/runtime/ncr-home-alibaba-root-20261013/review-admission.json",
+        "availability": "PRESENT",
+        "rawSha256": "f4e2652ae7785115524bbcba7073c7d1b028927ee672f4065a766766351fff9d",
+        "bytes": 1667,
+        "parseStatus": "VALID",
+        "safeObservationCount": 1,
+        "assertionCount": 0,
+        "safeObservations": [
+          {
+            "field": "oracleSha256",
+            "value": "d3e8bb8719dcc2693fabfd0d5af18fbfa9f92b91d0a498b097aca627e9013706"
+          }
+        ]
+      },
+      {
+        "ref": ".cvf/runtime/ncr-home-alibaba-root-20261013/review-run-result.json",
+        "availability": "PRESENT",
+        "rawSha256": "cca7c779437f187eb3ae2d8e2fd983c54ab1871d5f60ea75f630842767edd0de",
+        "bytes": 6916,
+        "parseStatus": "VALID",
+        "safeObservationCount": 25,
+        "assertionCount": 0,
+        "safeObservations": [
+          {
+            "field": "outcome",
+            "value": "PASS"
+          },
+          {
+            "field": "providerCalls",
+            "value": 1
+          },
+          {
+            "field": "utc",
+            "value": "2026-10-13T17:55:07.846Z"
+          },
+          {
+            "field": "pid",
+            "value": 33392
+          },
+          {
+            "field": "ownedPaths",
+            "value": true
+          },
+          {
+            "field": "knowledgeEmpty",
+            "value": true
+          },
+          {
+            "field": "wrapped",
+            "value": true
+          },
+          {
+            "field": "mockAiDisabled",
+            "value": true
+          },
+          {
+            "field": "mockAiMode",
+            "value": "0"
+          },
+          {
+            "field": "authOrigin",
+            "value": "http://localhost:3035"
+          },
+          {
+            "field": "nextAuthEmpty",
+            "value": true
+          },
+          {
+            "field": "storageAdapter",
+            "value": "file"
+          },
+          {
+            "field": "rateLimitStore",
+            "value": "memory"
+          },
+          {
+            "field": "valid",
+            "value": true
+          },
+          {
+            "field": "utc",
+            "value": "2026-10-13T17:55:07.959Z"
+          },
+          {
+            "field": "pid",
+            "value": 34600
+          },
+          {
+            "field": "utc",
+            "value": "2026-10-13T17:55:07.990Z"
+          },
+          {
+            "field": "pid",
+            "value": 39460
+          },
+          {
+            "field": "utc",
+            "value": "2026-10-13T17:55:03.059Z"
+          },
+          {
+            "field": "kind",
+            "value": "DENIED_UNEXPECTED_DESTINATION"
+          },
+          {
+            "field": "utc",
+            "value": "2026-10-13T17:55:27.803Z"
+          },
+          {
+            "field": "kind",
+            "value": "ALIBABA_FETCH_STARTED"
+          },
+          {
+            "field": "utc",
+            "value": "2026-10-13T17:55:30.139Z"
+          },
+          {
+            "field": "kind",
+            "value": "ALIBABA_FETCH_COMPLETED"
+          },
+          {
+            "field": "httpStatus",
+            "value": 200
+          }
+        ]
+      },
+      {
+        "ref": ".cvf/runtime/ncr-home-alibaba-root-20261013/independent-probe-result.json",
+        "availability": "PRESENT",
+        "rawSha256": "1d3527251e915cb69c658deec302ad27d3c3269530962a50f8e49dce738fe673",
+        "bytes": 10201,
+        "parseStatus": "VALID",
+        "safeObservationCount": 22,
+        "assertionCount": 8,
+        "safeObservations": [
+          {
+            "field": "outcome",
+            "value": "PASS"
+          },
+          {
+            "field": "httpStatus",
+            "value": 200
+          },
+          {
+            "field": "providerCalls",
+            "value": 1
+          },
+          {
+            "field": "receiptId",
+            "value": "rcpt-env-mv6zelw2-lf7mag"
+          },
+          {
+            "field": "provider",
+            "value": "alibaba"
+          },
+          {
+            "field": "model",
+            "value": "qwen-flash"
+          },
+          {
+            "field": "envelopeId",
+            "value": "env-mv6zelw2-lf7mag"
+          },
+          {
+            "field": "stage",
+            "value": "enforcement"
+          },
+          {
+            "field": "stage",
+            "value": "routing"
+          },
+          {
+            "field": "stage",
+            "value": "knowledge"
+          },
+          {
+            "field": "stage",
+            "value": "memory"
+          },
+          {
+            "field": "stage",
+            "value": "validation"
+          },
+          {
+            "field": "inputTokens",
+            "value": 1448
+          },
+          {
+            "field": "outputTokens",
+            "value": 315
+          },
+          {
+            "field": "totalTokens",
+            "value": 1763
+          },
+          {
+            "field": "providerCallCount",
+            "value": 1
+          },
+          {
+            "field": "retryCount",
+            "value": 0
+          },
+          {
+            "field": "outputBytes",
+            "value": 1321
+          },
+          {
+            "field": "name",
+            "value": "cvf-result-strategy_analysis-1791914132806.md"
+          },
+          {
+            "field": "sha256",
+            "value": "aba5cfa830fd6d49ce6d156b5f6cefd872da0813aea195f89432a7c7de2624a6"
+          },
+          {
+            "field": "executePostCount",
+            "value": 1
+          },
+          {
+            "field": "oracleSha256",
+            "value": "d3e8bb8719dcc2693fabfd0d5af18fbfa9f92b91d0a498b097aca627e9013706"
+          }
+        ]
+      },
+      {
+        "ref": ".cvf/runtime/ncr-home-alibaba-root-20261013/review-fetch-events.jsonl",
+        "availability": "PRESENT",
+        "rawSha256": "be129def1d3707b2f0aa5c16db81ab00d0c2818538b0f6f751f3a5ccc2b307d4",
+        "bytes": 427,
+        "parseStatus": "VALID_JSONL",
+        "eventCount": 3,
+        "malformedLineCount": 0,
+        "safeObservationCount": 8,
+        "assertionCount": 0,
+        "safeObservations": [
+          {
+            "field": "utc",
+            "value": "2026-10-13T17:55:03.059Z"
+          },
+          {
+            "field": "pid",
+            "value": 33392
+          },
+          {
+            "field": "kind",
+            "value": "DENIED_UNEXPECTED_DESTINATION"
+          },
+          {
+            "field": "utc",
+            "value": "2026-10-13T17:55:27.803Z"
+          },
+          {
+            "field": "kind",
+            "value": "ALIBABA_FETCH_STARTED"
+          },
+          {
+            "field": "utc",
+            "value": "2026-10-13T17:55:30.139Z"
+          },
+          {
+            "field": "kind",
+            "value": "ALIBABA_FETCH_COMPLETED"
+          },
+          {
+            "field": "httpStatus",
+            "value": 200
+          }
+        ]
+      },
+      {
+        "ref": ".cvf/runtime/ncr-home-alibaba-root-20261013/processed-review-profile-11024.json",
+        "availability": "PRESENT",
+        "rawSha256": "ee11a1705b32ebc17a0fb61f113c28639ea7f630049535e8ef62e4b2469a69ee",
+        "bytes": 1666,
+        "parseStatus": "VALID",
+        "safeObservationCount": 12,
+        "assertionCount": 0,
+        "safeObservations": [
+          {
+            "field": "utc",
+            "value": "2026-10-13T17:55:09.749Z"
+          },
+          {
+            "field": "pid",
+            "value": 11024
+          },
+          {
+            "field": "ownedPaths",
+            "value": true
+          },
+          {
+            "field": "knowledgeEmpty",
+            "value": true
+          },
+          {
+            "field": "wrapped",
+            "value": true
+          },
+          {
+            "field": "mockAiDisabled",
+            "value": true
+          },
+          {
+            "field": "mockAiMode",
+            "value": "0"
+          },
+          {
+            "field": "authOrigin",
+            "value": "http://localhost:3035"
+          },
+          {
+            "field": "nextAuthEmpty",
+            "value": true
+          },
+          {
+            "field": "storageAdapter",
+            "value": "file"
+          },
+          {
+            "field": "rateLimitStore",
+            "value": "memory"
+          },
+          {
+            "field": "valid",
+            "value": true
+          }
+        ]
+      },
+      {
+        "ref": ".cvf/runtime/ncr-home-alibaba-root-20261013/processed-review-profile-29952.json",
+        "availability": "PRESENT",
+        "rawSha256": "af5ab2cc31f800b3c45406890714bf95defce82311fcb701353cee2e4336608e",
+        "bytes": 1666,
+        "parseStatus": "VALID",
+        "safeObservationCount": 12,
+        "assertionCount": 0,
+        "safeObservations": [
+          {
+            "field": "utc",
+            "value": "2026-10-13T17:55:28.282Z"
+          },
+          {
+            "field": "pid",
+            "value": 29952
+          },
+          {
+            "field": "ownedPaths",
+            "value": true
+          },
+          {
+            "field": "knowledgeEmpty",
+            "value": true
+          },
+          {
+            "field": "wrapped",
+            "value": true
+          },
+          {
+            "field": "mockAiDisabled",
+            "value": true
+          },
+          {
+            "field": "mockAiMode",
+            "value": "0"
+          },
+          {
+            "field": "authOrigin",
+            "value": "http://localhost:3035"
+          },
+          {
+            "field": "nextAuthEmpty",
+            "value": true
+          },
+          {
+            "field": "storageAdapter",
+            "value": "file"
+          },
+          {
+            "field": "rateLimitStore",
+            "value": "memory"
+          },
+          {
+            "field": "valid",
+            "value": true
+          }
+        ]
+      },
+      {
+        "ref": ".cvf/runtime/ncr-home-alibaba-root-20261013/processed-review-profile-33392.json",
+        "availability": "PRESENT",
+        "rawSha256": "9813b757a1e6f9f5880a707b26b734457d7736a39acdf75bd4fb1012060145b8",
+        "bytes": 1666,
+        "parseStatus": "VALID",
+        "safeObservationCount": 12,
+        "assertionCount": 0,
+        "safeObservations": [
+          {
+            "field": "utc",
+            "value": "2026-10-13T17:55:34.449Z"
+          },
+          {
+            "field": "pid",
+            "value": 33392
+          },
+          {
+            "field": "ownedPaths",
+            "value": true
+          },
+          {
+            "field": "knowledgeEmpty",
+            "value": true
+          },
+          {
+            "field": "wrapped",
+            "value": true
+          },
+          {
+            "field": "mockAiDisabled",
+            "value": true
+          },
+          {
+            "field": "mockAiMode",
+            "value": "0"
+          },
+          {
+            "field": "authOrigin",
+            "value": "http://localhost:3035"
+          },
+          {
+            "field": "nextAuthEmpty",
+            "value": true
+          },
+          {
+            "field": "storageAdapter",
+            "value": "file"
+          },
+          {
+            "field": "rateLimitStore",
+            "value": "memory"
+          },
+          {
+            "field": "valid",
+            "value": true
+          }
+        ]
+      },
+      {
+        "ref": ".cvf/runtime/ncr-home-alibaba-root-20261013/processed-review-profile-33648.json",
+        "availability": "PRESENT",
+        "rawSha256": "4b46443c6f814c5fa177c4d945f868f94e42cce9d01e1e11bd658da80be19ca1",
+        "bytes": 1666,
+        "parseStatus": "VALID",
+        "safeObservationCount": 12,
+        "assertionCount": 0,
+        "safeObservations": [
+          {
+            "field": "utc",
+            "value": "2026-10-13T17:55:21.114Z"
+          },
+          {
+            "field": "pid",
+            "value": 33648
+          },
+          {
+            "field": "ownedPaths",
+            "value": true
+          },
+          {
+            "field": "knowledgeEmpty",
+            "value": true
+          },
+          {
+            "field": "wrapped",
+            "value": true
+          },
+          {
+            "field": "mockAiDisabled",
+            "value": true
+          },
+          {
+            "field": "mockAiMode",
+            "value": "0"
+          },
+          {
+            "field": "authOrigin",
+            "value": "http://localhost:3035"
+          },
+          {
+            "field": "nextAuthEmpty",
+            "value": true
+          },
+          {
+            "field": "storageAdapter",
+            "value": "file"
+          },
+          {
+            "field": "rateLimitStore",
+            "value": "memory"
+          },
+          {
+            "field": "valid",
+            "value": true
+          }
+        ]
+      },
+      {
+        "ref": ".cvf/runtime/ncr-home-alibaba-root-20261013/processed-review-profile-34600.json",
+        "availability": "PRESENT",
+        "rawSha256": "d1c3a9afa1941f6ecb7057895798f70ac615670acc4b5c3b90ea3bc2f21c07c6",
+        "bytes": 1666,
+        "parseStatus": "VALID",
+        "safeObservationCount": 12,
+        "assertionCount": 0,
+        "safeObservations": [
+          {
+            "field": "utc",
+            "value": "2026-10-13T17:55:34.291Z"
+          },
+          {
+            "field": "pid",
+            "value": 34600
+          },
+          {
+            "field": "ownedPaths",
+            "value": true
+          },
+          {
+            "field": "knowledgeEmpty",
+            "value": true
+          },
+          {
+            "field": "wrapped",
+            "value": true
+          },
+          {
+            "field": "mockAiDisabled",
+            "value": true
+          },
+          {
+            "field": "mockAiMode",
+            "value": "0"
+          },
+          {
+            "field": "authOrigin",
+            "value": "http://localhost:3035"
+          },
+          {
+            "field": "nextAuthEmpty",
+            "value": true
+          },
+          {
+            "field": "storageAdapter",
+            "value": "file"
+          },
+          {
+            "field": "rateLimitStore",
+            "value": "memory"
+          },
+          {
+            "field": "valid",
+            "value": true
+          }
+        ]
+      },
+      {
+        "ref": ".cvf/runtime/ncr-home-alibaba-root-20261013/processed-review-profile-39460.json",
+        "availability": "PRESENT",
+        "rawSha256": "7117a20552dd33381595998a0a00766f91b3c6d3ef657ea8b83ba3e9612ffa65",
+        "bytes": 1666,
+        "parseStatus": "VALID",
+        "safeObservationCount": 12,
+        "assertionCount": 0,
+        "safeObservations": [
+          {
+            "field": "utc",
+            "value": "2026-10-13T17:55:07.990Z"
+          },
+          {
+            "field": "pid",
+            "value": 39460
+          },
+          {
+            "field": "ownedPaths",
+            "value": true
+          },
+          {
+            "field": "knowledgeEmpty",
+            "value": true
+          },
+          {
+            "field": "wrapped",
+            "value": true
+          },
+          {
+            "field": "mockAiDisabled",
+            "value": true
+          },
+          {
+            "field": "mockAiMode",
+            "value": "0"
+          },
+          {
+            "field": "authOrigin",
+            "value": "http://localhost:3035"
+          },
+          {
+            "field": "nextAuthEmpty",
+            "value": true
+          },
+          {
+            "field": "storageAdapter",
+            "value": "file"
+          },
+          {
+            "field": "rateLimitStore",
+            "value": "memory"
+          },
+          {
+            "field": "valid",
+            "value": true
+          }
+        ]
+      }
+    ],
+    "outcome": "PASS",
+    "independentProbeAssertions": [
+      {
+        "index": 1,
+        "assertionId": "real same-origin test authentication",
+        "status": "PASS"
+      },
+      {
+        "index": 2,
+        "assertionId": "one visible validated Generate result click creates exactly one real execute POST",
+        "status": "PASS"
+      },
+      {
+        "index": 3,
+        "assertionId": "owned empty knowledge yields zero injected chunks",
+        "status": "PASS"
+      },
+      {
+        "index": 4,
+        "assertionId": "real response and live receipt with bounded measured calls",
+        "status": "PASS"
+      },
+      {
+        "index": 5,
+        "assertionId": "own browser record is bound to exact live output and receipt",
+        "status": "PASS"
+      },
+      {
+        "index": 6,
+        "assertionId": "browser settings contain no Alibaba key",
+        "status": "PASS"
+      },
+      {
+        "index": 7,
+        "assertionId": "actual raw Markdown download contains own output and own receipt",
+        "status": "PASS"
+      },
+      {
+        "index": 8,
+        "assertionId": "Retry restores exact draft and removes old result without resubmitting",
+        "status": "PASS"
+      }
+    ],
+    "independentProbeAssertionCount": 8,
+    "reviewAssertions": [],
+    "allRootAssertionsPass": true,
+    "missingOrInvalidInputs": [],
+    "mockProfileQualification": {
+      "processedProfileMockAiDisabled": true,
+      "preflightProfiles": {
+        "profileCount": 3,
+        "allValid": true,
+        "allMockAiDisabled": true,
+        "records": [
+          {
+            "index": 1,
+            "valid": true,
+            "mockAiDisabled": true
+          },
+          {
+            "index": 2,
+            "valid": true,
+            "mockAiDisabled": true
+          },
+          {
+            "index": 3,
+            "valid": true,
+            "mockAiDisabled": true
+          }
+        ]
+      },
+      "processedProfileMockAiDisabledField": true,
+      "processedProfileMockAiMode": "0",
+      "alibabaFetchStartedCount": 1,
+      "boundaryFetchStartedCount": 1,
+      "providerCallsFromProbe": 1,
+      "providerCallsFromRunResult": 1,
+      "helperSources": {
+        "runReviewSourceRawSha256AtAssembly": "41aa496bfccaf4f639c6d38163dbb2fa7f32d7485cd33d04d46a0ddfe21d6420",
+        "reviewBoundarySourceRawSha256AtAssembly": "49ae35728e07eb443637c3dbc53b113668194dc887fa23a3e7be18b122594765",
+        "runReviewExplicitMockAiZero": true,
+        "reviewBoundaryRequiresMockAiDisabled": true,
+        "preMockProfileOriginals": [
+          {
+            "ref": ".cvf/runtime/ncr-home-alibaba-root-20261013/review-boundary.cjs.before-mock-profile",
+            "availability": "PRESENT",
+            "rawSha256": "e4c577731396acaf8ff2a7b4f9ed1d894398bf54f433346c458b5e7e89a60095",
+            "bytes": 4362
+          },
+          {
+            "ref": ".cvf/runtime/ncr-home-alibaba-root-20261013/run-review.py.before-mock-profile",
+            "availability": "PRESENT",
+            "rawSha256": "09ba06d463efa428e7f6751d31874be73c8724bb061f2f8407d0fb087d682993",
+            "bytes": 8368
+          }
+        ],
+        "preMockProfileOriginalsRetained": true,
+        "executedHelperHashesReported": [
+          "49ae35728e07eb443637c3dbc53b113668194dc887fa23a3e7be18b122594765"
+        ],
+        "executedBoundaryHashMatchesCurrentSource": true
+      }
+    },
+    "oracle": {
+      "sourceRef": ".cvf/runtime/ncr-home-alibaba-root-20261013/independent-probe.cjs",
+      "sourceRawSha256AtAssembly": "d3e8bb8719dcc2693fabfd0d5af18fbfa9f92b91d0a498b097aca627e9013706",
+      "dispatchPinnedSha256Historical": "70e9322da9666703d2383617b0da9c649f2987207ad5e832a690ba9c76264b24",
+      "dispatchPinMatchesRetainedPreimage": true,
+      "dispatchAndPriorPreimagesDistinct": true,
+      "dispatchPreimageSource": {
+        "ref": ".cvf/runtime/ncr-home-alibaba-root-20261013/independent-probe-dispatch-preimage.cjs",
+        "availability": "PRESENT",
+        "rawSha256": "70e9322da9666703d2383617b0da9c649f2987207ad5e832a690ba9c76264b24",
+        "bytes": 9512
+      },
+      "priorConciseSource": {
+        "ref": ".cvf/runtime/ncr-home-alibaba-root-20261013/independent-probe-before-concise.cjs",
+        "availability": "PRESENT",
+        "rawSha256": "da1c8c72094983189cc1017f5756589182b5fa010653aa89913d37eabedcb9e6",
+        "bytes": 9894
+      },
+      "retainedPreimages": [
+        {
+          "ref": ".cvf/runtime/ncr-home-alibaba-root-20261013/independent-probe-before-concise.cjs",
+          "availability": "PRESENT",
+          "rawSha256": "da1c8c72094983189cc1017f5756589182b5fa010653aa89913d37eabedcb9e6",
+          "bytes": 9894
+        },
+        {
+          "ref": ".cvf/runtime/ncr-home-alibaba-root-20261013/independent-probe-before-visible-assertion.cjs",
+          "availability": "PRESENT",
+          "rawSha256": "10386bd018654601e624246befbd881a1ed4b784e51dee485413b15a2997251d",
+          "bytes": 10075
+        },
+        {
+          "ref": ".cvf/runtime/ncr-home-alibaba-root-20261013/independent-probe-dispatch-preimage.cjs",
+          "availability": "PRESENT",
+          "rawSha256": "70e9322da9666703d2383617b0da9c649f2987207ad5e832a690ba9c76264b24",
+          "bytes": 9512
+        }
+      ],
+      "reportedExecutedSha256": [
+        "d3e8bb8719dcc2693fabfd0d5af18fbfa9f92b91d0a498b097aca627e9013706"
+      ],
+      "executedDigestVerification": "EXECUTED_DIGEST_MATCHES_CURRENT_SOURCE",
+      "verifiedExecutedSha256": "d3e8bb8719dcc2693fabfd0d5af18fbfa9f92b91d0a498b097aca627e9013706",
+      "reportedBoundarySha256": [
+        "49ae35728e07eb443637c3dbc53b113668194dc887fa23a3e7be18b122594765"
+      ],
+      "executedBoundaryMatchesCurrentSource": true,
+      "rawOracleCodeEmbedded": false
+    }
+  },
+  "frozenWorkerCustody": {
+    "source": {
+      "ref": ".cvf/runtime/ncr-home-alibaba-root-20261013/final-worker-custody.json",
+      "availability": "PRESENT",
+      "rawSha256": "ff738165dc4f7c48c50108a4348924112b54fc137e3de80a0d2b652d5abd4ee3",
+      "bytes": 136893
+    },
+    "status": "PASS_FROZEN_EXACT7",
+    "paths": [
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.journey.test.tsx",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.test.tsx",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.tsx",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/ncr-home-alibaba-journey.live.spec.ts",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/support/ncr-alibaba-boundary-preload.cjs",
+      "docs/reviews/CVF_NCR_HOME_ALIBABA_JOURNEY_WORKER_RETURN_2026-10-13.md",
+      "docs/reviews/evidence/ncr-home-alibaba-journey-worker-20261013.json"
+    ],
+    "sha256ByPath": {
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.journey.test.tsx": "12496e9d9fab50a6d60a8a627b41a296098ee23fee4efb2eb5438142448b63f3",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.test.tsx": "1b54bffebd89f4859fd02bcfe5c231b12f526a45bd7c964043a35ce35b2278cf",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.tsx": "373a1d1095321a4393401d4b3edb48a2f685698399606b90e0ca4ab75685bc40",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/ncr-home-alibaba-journey.live.spec.ts": "c09d2f57948be84576ab8bd226187ac659a3dcd482dad943a00ad84fd5a9c014",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/support/ncr-alibaba-boundary-preload.cjs": "d745f57278f66c5c5dfed578c0500544fa6da4982cd266504b1f046d0f37cb49",
+      "docs/reviews/CVF_NCR_HOME_ALIBABA_JOURNEY_WORKER_RETURN_2026-10-13.md": "c515dd7a8175a874d9e7e4d220d5b3e1a49ad82a027887f2a21d96f15bc7a4e1",
+      "docs/reviews/evidence/ncr-home-alibaba-journey-worker-20261013.json": "d0d1f6b50c122754b2dee6cc83e40cb8d5ef1e08ed3ef7b5e862c9ce78bfc00a"
+    },
+    "records": [
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.tsx",
+        "expectedSha256": "373a1d1095321a4393401d4b3edb48a2f685698399606b90e0ca4ab75685bc40",
+        "actualRawSha256": "373a1d1095321a4393401d4b3edb48a2f685698399606b90e0ca4ab75685bc40",
+        "actualBytes": 18708,
+        "status": "MATCH"
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.test.tsx",
+        "expectedSha256": "1b54bffebd89f4859fd02bcfe5c231b12f526a45bd7c964043a35ce35b2278cf",
+        "actualRawSha256": "1b54bffebd89f4859fd02bcfe5c231b12f526a45bd7c964043a35ce35b2278cf",
+        "actualBytes": 7376,
+        "status": "MATCH"
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.journey.test.tsx",
+        "expectedSha256": "12496e9d9fab50a6d60a8a627b41a296098ee23fee4efb2eb5438142448b63f3",
+        "actualRawSha256": "12496e9d9fab50a6d60a8a627b41a296098ee23fee4efb2eb5438142448b63f3",
+        "actualBytes": 10976,
+        "status": "MATCH"
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/ncr-home-alibaba-journey.live.spec.ts",
+        "expectedSha256": "c09d2f57948be84576ab8bd226187ac659a3dcd482dad943a00ad84fd5a9c014",
+        "actualRawSha256": "c09d2f57948be84576ab8bd226187ac659a3dcd482dad943a00ad84fd5a9c014",
+        "actualBytes": 16116,
+        "status": "MATCH"
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/support/ncr-alibaba-boundary-preload.cjs",
+        "expectedSha256": "d745f57278f66c5c5dfed578c0500544fa6da4982cd266504b1f046d0f37cb49",
+        "actualRawSha256": "d745f57278f66c5c5dfed578c0500544fa6da4982cd266504b1f046d0f37cb49",
+        "actualBytes": 4890,
+        "status": "MATCH"
+      },
+      {
+        "path": "docs/reviews/evidence/ncr-home-alibaba-journey-worker-20261013.json",
+        "expectedSha256": "d0d1f6b50c122754b2dee6cc83e40cb8d5ef1e08ed3ef7b5e862c9ce78bfc00a",
+        "actualRawSha256": "d0d1f6b50c122754b2dee6cc83e40cb8d5ef1e08ed3ef7b5e862c9ce78bfc00a",
+        "actualBytes": 17618,
+        "status": "MATCH"
+      },
+      {
+        "path": "docs/reviews/CVF_NCR_HOME_ALIBABA_JOURNEY_WORKER_RETURN_2026-10-13.md",
+        "expectedSha256": "c515dd7a8175a874d9e7e4d220d5b3e1a49ad82a027887f2a21d96f15bc7a4e1",
+        "actualRawSha256": "c515dd7a8175a874d9e7e4d220d5b3e1a49ad82a027887f2a21d96f15bc7a4e1",
+        "actualBytes": 23722,
+        "status": "MATCH"
+      }
+    ],
+    "manifestStatus": "VERIFIED_EXACT7",
+    "sourceStatus": "FROZEN_EXACT7",
+    "head": "316c8c1ec50cbee73c2f19249836cd8ddfb456c2",
+    "utc": "2026-10-13T17:54:59.162910+00:00",
+    "providerCalls": 6,
+    "executePosts": 6,
+    "expectedRecordCount": 7,
+    "manifestRecordCount": 7,
+    "unexpectedOrDuplicateRecordCount": 0
+  },
+  "dispatchCustody": {
+    "hashDomainNote": "rawSha256 hashes exact bytes read from the path; crlfToLfNormalizedContentSha256 hashes those bytes after CRLF-to-LF conversion and is not a Git object ID.",
+    "sourceCommits": {
+      "original": "152481577108f2815f953471201b12473be45efa",
+      "amendment1": "3c1d4492264177c0b29ba82c988291d52f66a235",
+      "amendment2": "6df91b10673928f27fe6f5c63f0f49d53afe59a5",
+      "amendment2Continuity": "1253047add170085400ffe97c549e51e3e761dda",
+      "current": "4993682628f6cd3a4ecd4bd971feb78a072958d2",
+      "currentContinuity": "316c8c1ec50cbee73c2f19249836cd8ddfb456c2"
+    },
+    "originalRawSnapshots": [
+      {
+        "label": "originalRawBaseline",
+        "ref": ".cvf/runtime/ncr-home-alibaba-root-20261013/pre-amendment-CVF_GC018_NCR_HOME_ALIBABA_JOURNEY_2026-10-13.md",
+        "availability": "PRESENT",
+        "rawSha256": "dbb1c25666fddd2f64b4194aca9cc26d8f56da7d9bebcfe3ee0574b6e54b8048",
+        "rawBytes": 16716,
+        "crlfToLfNormalizedContentSha256": "2ecb2809dd097c79300ff4a2170674fc5023caf51b8ccfc7a078c176f26b2c45",
+        "matchesExpectedRawSha256": true
+      },
+      {
+        "label": "originalRawPreAmendmentWorkOrder",
+        "ref": ".cvf/runtime/ncr-home-alibaba-root-20261013/pre-amendment-CVF_AGENT_WORK_ORDER_NCR_HOME_ALIBABA_JOURNEY_2026-10-13.md",
+        "availability": "PRESENT",
+        "rawSha256": "4d083e4c5b80de148b49a1260e9a491eb83a576a8cc17820c9d810a4f7bd4aee",
+        "rawBytes": 51334,
+        "crlfToLfNormalizedContentSha256": "06e5ac2db2fa39bbcca56af01c2b953e05add736ff378a4e82bfeffd3f0ddc2e",
+        "matchesExpectedRawSha256": true
+      },
+      {
+        "label": "originalRawDispatchPin",
+        "ref": ".cvf/runtime/ncr-home-alibaba-root-20261013/pre-amendment-ncr-home-alibaba-journey-dispatch-20261013.json",
+        "availability": "PRESENT",
+        "rawSha256": "1dda97d4650a7e261ab2f2213ae13ea06bcc8a75db055dbf7d62478051d64768",
+        "rawBytes": 11981,
+        "crlfToLfNormalizedContentSha256": "0e1bbff7f2ad748b7a0d475287182730874838c6f15fea432603047324239c86",
+        "matchesExpectedRawSha256": true
+      }
+    ],
+    "amendment1RawSnapshots": [
+      {
+        "label": "amendment1Baseline",
+        "ref": ".cvf/runtime/ncr-home-alibaba-root-20261013/pre-amendment2-CVF_GC018_NCR_HOME_ALIBABA_JOURNEY_2026-10-13.md",
+        "availability": "PRESENT",
+        "rawSha256": "2ebbe707ea3609c806523096f5df3d1b638f5f7c894bff696e782697fe97d30a",
+        "rawBytes": 21054,
+        "crlfToLfNormalizedContentSha256": "1efc603783b97a90d2d973198eca252c1c8e55e1d91cd72719a39edd972cba81"
+      },
+      {
+        "label": "amendment1WorkOrder",
+        "ref": ".cvf/runtime/ncr-home-alibaba-root-20261013/pre-amendment2-CVF_AGENT_WORK_ORDER_NCR_HOME_ALIBABA_JOURNEY_2026-10-13.md",
+        "availability": "PRESENT",
+        "rawSha256": "937657883dd1feec1a240e84aac93848068e6c15cb2214f9bcd5a1219e4794e0",
+        "rawBytes": 56007,
+        "crlfToLfNormalizedContentSha256": "5cc366f87a32ffe8937a46aac784b695e2fe1120cac73ca5d01ca7f35a7ccccf"
+      },
+      {
+        "label": "amendment1DispatchPin",
+        "ref": ".cvf/runtime/ncr-home-alibaba-root-20261013/pre-amendment2-ncr-home-alibaba-journey-dispatch-20261013.json",
+        "availability": "PRESENT",
+        "rawSha256": "1ab052031693cb3100177e98d0ba16284acc20aef34a52bacde7257ff6340747",
+        "rawBytes": 13629,
+        "crlfToLfNormalizedContentSha256": "9349660537fcee9afc335989f9a1cddce031b1bb88c6236ef6671188b8307e54"
+      }
+    ],
+    "retainedInterimRawSnapshots": [
+      {
+        "label": "retainedInterimRawPreimage",
+        "ref": ".cvf/runtime/ncr-home-alibaba-root-20261013/pre-amendment3-CVF_AGENT_WORK_ORDER_NCR_HOME_ALIBABA_JOURNEY_2026-10-13.md",
+        "availability": "PRESENT",
+        "rawSha256": "32601c8f35e7ec70bd2806f9575d730ec410c28578f748250d6591b2361de95c",
+        "rawBytes": 55772,
+        "crlfToLfNormalizedContentSha256": "06020d6491b9005a061da744a824eb17ea72b591ab1b1a4567d73e15e7b1263c"
+      },
+      {
+        "label": "retainedInterimRawPreimage",
+        "ref": ".cvf/runtime/ncr-home-alibaba-root-20261013/pre-amendment3-CVF_GC018_NCR_HOME_ALIBABA_JOURNEY_2026-10-13.md",
+        "availability": "PRESENT",
+        "rawSha256": "3543be322699a152836ac85d3ded199d1aace4c8d932f6a1fea4784f151caefe",
+        "rawBytes": 20812,
+        "crlfToLfNormalizedContentSha256": "13822413aa9cd823d0220507620ae54afacab275608f72885361aaec4445313f"
+      },
+      {
+        "label": "retainedInterimRawPreimage",
+        "ref": ".cvf/runtime/ncr-home-alibaba-root-20261013/pre-amendment3-ncr-home-alibaba-journey-dispatch-20261013.json",
+        "availability": "PRESENT",
+        "rawSha256": "ecb5f1075cd72b760915b278fb15ec7256bdb4707c7bc7c807c92102dc017698",
+        "rawBytes": 15773,
+        "crlfToLfNormalizedContentSha256": "25011e190c242ef05b41f6a3a10eeac3de34cc6d2a291e0b26ac458be64ed364"
+      }
+    ],
+    "currentWorktreeSnapshots": [
+      {
+        "label": "currentBaseline",
+        "ref": "docs/baselines/CVF_GC018_NCR_HOME_ALIBABA_JOURNEY_2026-10-13.md",
+        "availability": "PRESENT",
+        "rawSha256": "3f982d0f002c6c18bf27cd9f45f00bcc0480f1f77ca848f1bedc7c6806ab4c36",
+        "rawBytes": 22829,
+        "crlfToLfNormalizedContentSha256": "3b061886b7d481f83d128d14e7d6e72b8b4698de386ddc0b4c69e7ab99b78ac8"
+      },
+      {
+        "label": "currentWorkOrder",
+        "ref": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HOME_ALIBABA_JOURNEY_2026-10-13.md",
+        "availability": "PRESENT",
+        "rawSha256": "7d2de537d250235f38fac3ed7ed5993e53914cb5c689a7a0c8e12b7a8df41ffc",
+        "rawBytes": 58126,
+        "crlfToLfNormalizedContentSha256": "56f5af966ca2d40640ce4b34265533de59a0b9349440015360783e1cff4e853d"
+      },
+      {
+        "label": "currentDispatchPin",
+        "ref": "docs/reviews/evidence/ncr-home-alibaba-journey-dispatch-20261013.json",
+        "availability": "PRESENT",
+        "rawSha256": "e000bcc50467716131ca30c78b2f794343fb13d42b6f950dd308e93288073e61",
+        "rawBytes": 16925,
+        "crlfToLfNormalizedContentSha256": "e000bcc50467716131ca30c78b2f794343fb13d42b6f950dd308e93288073e61"
+      }
+    ],
+    "archive": {
+      "label": "governedBytePreservingArchive",
+      "ref": "docs/reviews/archive/CVF_AGENT_WORK_ORDER_NCR_HOME_ALIBABA_JOURNEY_DISPATCH_2026-10-13.md",
+      "availability": "MISSING"
+    },
+    "originalGitLfNormalizedContentSha256": {
+      "baseline": "2ecb2809dd097c79300ff4a2170674fc5023caf51b8ccfc7a078c176f26b2c45",
+      "workOrder": "06e5ac2db2fa39bbcca56af01c2b953e05add736ff378a4e82bfeffd3f0ddc2e",
+      "dispatchPin": "0e1bbff7f2ad748b7a0d475287182730874838c6f15fea432603047324239c86"
+    },
+    "amendment1GitLfNormalizedContentSha256": {
+      "baseline": "1efc603783b97a90d2d973198eca252c1c8e55e1d91cd72719a39edd972cba81",
+      "workOrder": "5cc366f87a32ffe8937a46aac784b695e2fe1120cac73ca5d01ca7f35a7ccccf"
+    }
+  },
+  "attemptAndDiagnosticHistory": [
+    {
+      "source": "worker-proof-diagnostic-1",
+      "safeObservations": [
+        {
+          "field": "stage",
+          "value": "launcher"
+        },
+        {
+          "field": "class",
+          "value": "NODE_OPTIONS_WINDOWS_PATH_QUOTING"
+        },
+        {
+          "field": "uiPosts",
+          "value": 0
+        },
+        {
+          "field": "providerCalls",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "source": "worker-proof-diagnostic-2",
+      "safeObservations": [
+        {
+          "field": "stage",
+          "value": "preflight"
+        },
+        {
+          "field": "class",
+          "value": "EXPECTED_FRAMEWORK_DENIAL_COUNTED_AS_UNEXPECTED"
+        },
+        {
+          "field": "uiPosts",
+          "value": 0
+        },
+        {
+          "field": "providerCalls",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "source": "worker-proof-diagnostic-3",
+      "safeObservations": [
+        {
+          "field": "stage",
+          "value": "login"
+        },
+        {
+          "field": "class",
+          "value": "EXTERNAL_NEXT_DIST_REACT_MODULE_ANCESTRY"
+        },
+        {
+          "field": "uiPosts",
+          "value": 0
+        },
+        {
+          "field": "providerCalls",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "source": "worker-proof-diagnostic-4",
+      "safeObservations": [
+        {
+          "field": "stage",
+          "value": "provider"
+        },
+        {
+          "field": "class",
+          "value": "provider_http_error"
+        },
+        {
+          "field": "uiPosts",
+          "value": 1
+        },
+        {
+          "field": "providerCalls",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "source": "worker-proof-diagnostic-5",
+      "safeObservations": [
+        {
+          "field": "stage",
+          "value": "output_validation"
+        },
+        {
+          "field": "class",
+          "value": "output_validation_failed"
+        },
+        {
+          "field": "uiPosts",
+          "value": 1
+        },
+        {
+          "field": "providerCalls",
+          "value": 1
+        },
+        {
+          "field": "cumulativeProviderCalls",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "source": "worker-proof-diagnostic-6",
+      "safeObservations": [
+        {
+          "field": "stage",
+          "value": "test_locator"
+        },
+        {
+          "field": "class",
+          "value": "MARKDOWN_BUTTON_SELECTOR_MISMATCH"
+        },
+        {
+          "field": "uiPosts",
+          "value": 2
+        },
+        {
+          "field": "providerCalls",
+          "value": 2
+        },
+        {
+          "field": "cumulativeProviderCalls",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "source": ".cvf/runtime/ncr-home-alibaba-root-20261013/worker-output-limit-diagnostic-4.json",
+      "artifact": {
+        "ref": ".cvf/runtime/ncr-home-alibaba-root-20261013/worker-output-limit-diagnostic-4.json",
+        "availability": "PRESENT",
+        "rawSha256": "ad6cb98a0029a79e82ba68c88ea2599e328aa59ca990d0ab083e2dcedce45b18",
+        "bytes": 755
+      },
+      "parseStatus": "VALID",
+      "safeObservations": [
+        {
+          "field": "stage",
+          "value": "output_validation"
+        },
+        {
+          "field": "class",
+          "value": "output_validation_failed"
+        },
+        {
+          "field": "routeSuccess",
+          "value": false
+        },
+        {
+          "field": "callsSoFar",
+          "value": 2
+        },
+        {
+          "field": "uiPostsSoFar",
+          "value": 2
+        },
+        {
+          "field": "sourceTokenLimit",
+          "value": 2048
+        },
+        {
+          "field": "reexecutionDisposition",
+          "value": "ONLY_AFTER_COMMITTED_BOUND_AMENDMENT2"
+        },
+        {
+          "field": "freshHardCap",
+          "value": 4
+        },
+        {
+          "field": "workerUiCeiling",
+          "value": 4
+        },
+        {
+          "field": "hardStopUtc",
+          "value": "2026-10-13T17:40:17Z"
+        },
+        {
+          "field": "inputTokens",
+          "value": 1259
+        },
+        {
+          "field": "outputTokens",
+          "value": 2048
+        },
+        {
+          "field": "totalTokens",
+          "value": 3307
+        }
+      ]
+    },
+    {
+      "source": ".cvf/runtime/ncr-home-alibaba-root-20261013/worker-preflight-diagnostic-1.json",
+      "artifact": {
+        "ref": ".cvf/runtime/ncr-home-alibaba-root-20261013/worker-preflight-diagnostic-1.json",
+        "availability": "PRESENT",
+        "rawSha256": "1836b4f8d10f71be2e0b654c2c1e12d4a85654c14f4532f3f447cfd7a4145a74",
+        "bytes": 2704
+      },
+      "parseStatus": "VALID",
+      "safeObservations": [
+        {
+          "field": "utc",
+          "value": "2026-10-13T16:35:34.553380+00:00"
+        },
+        {
+          "field": "stage",
+          "value": "network"
+        },
+        {
+          "field": "class",
+          "value": "unknown_error"
+        },
+        {
+          "field": "provider",
+          "value": "alibaba"
+        },
+        {
+          "field": "model",
+          "value": "qwen-flash"
+        },
+        {
+          "field": "providerCallsSoFar",
+          "value": 0
+        },
+        {
+          "field": "executePostsSoFar",
+          "value": 0
+        },
+        {
+          "field": "startup",
+          "value": 10
+        },
+        {
+          "field": "state",
+          "value": 57
+        },
+        {
+          "field": "fetch_denied",
+          "value": 5
+        },
+        {
+          "field": "event",
+          "value": "fetch_denied"
+        },
+        {
+          "field": "pid",
+          "value": 20228
+        },
+        {
+          "field": "disposition",
+          "value": "ONE_REPLACEMENT_INVOCATION_AUTHORIZED_WITHIN_ORIGINAL_TWO_UI_SIX_CALL_TOTAL"
+        }
+      ]
+    },
+    {
+      "source": ".cvf/runtime/ncr-home-alibaba-root-20261013/worker-preflight-diagnostic-2.json",
+      "artifact": {
+        "ref": ".cvf/runtime/ncr-home-alibaba-root-20261013/worker-preflight-diagnostic-2.json",
+        "availability": "PRESENT",
+        "rawSha256": "c6c6d61594754f388c9af0c11b961947dbe2dc33ea3eaccbb4f3573d2325d30a",
+        "bytes": 1927
+      },
+      "parseStatus": "VALID",
+      "safeObservations": [
+        {
+          "field": "utc",
+          "value": "2026-10-13T16:37:57.301578+00:00"
+        },
+        {
+          "field": "stage",
+          "value": "auth"
+        },
+        {
+          "field": "class",
+          "value": "unknown_error"
+        },
+        {
+          "field": "provider",
+          "value": "alibaba"
+        },
+        {
+          "field": "model",
+          "value": "qwen-flash"
+        },
+        {
+          "field": "providerCallsSoFar",
+          "value": 0
+        },
+        {
+          "field": "executePostsSoFar",
+          "value": 0
+        },
+        {
+          "field": "startup",
+          "value": 11
+        },
+        {
+          "field": "state",
+          "value": 436
+        },
+        {
+          "field": "fetch_denied",
+          "value": 1
+        },
+        {
+          "field": "event",
+          "value": "fetch_denied"
+        },
+        {
+          "field": "pid",
+          "value": 45596
+        },
+        {
+          "field": "disposition",
+          "value": "ONE_ADDITIONAL_PRE_PROVIDER_PROFILE_CORRECTION_AUTHORIZED_WITHIN_ORIGINAL_TWO_UI_SIX_CALL_TOTAL"
+        }
+      ]
+    },
+    {
+      "source": ".cvf/runtime/ncr-home-alibaba-root-20261013/worker-provider-diagnostic-3-first-draft.json",
+      "artifact": {
+        "ref": ".cvf/runtime/ncr-home-alibaba-root-20261013/worker-provider-diagnostic-3-first-draft.json",
+        "availability": "PRESENT",
+        "rawSha256": "1cfc16d3d6007108df4c4c2106685f439016fb9f4c028714c6bdc6a956f48bee",
+        "bytes": 1485
+      },
+      "parseStatus": "VALID",
+      "safeObservations": [
+        {
+          "field": "utc",
+          "value": "2026-10-13T16:42:33.292674+00:00"
+        },
+        {
+          "field": "stage",
+          "value": "provider"
+        },
+        {
+          "field": "class",
+          "value": "provider_http_error"
+        },
+        {
+          "field": "provider",
+          "value": "alibaba"
+        },
+        {
+          "field": "model",
+          "value": "qwen-flash"
+        },
+        {
+          "field": "httpStatus",
+          "value": 401
+        },
+        {
+          "field": "receiptId",
+          "value": "rcpt-env-mv6wobbq-9zqcfx"
+        },
+        {
+          "field": "traceId",
+          "value": "env-mv6wobbq-9zqcfx"
+        },
+        {
+          "field": "providerCallsSoFar",
+          "value": 1
+        },
+        {
+          "field": "executePostsSoFar",
+          "value": 1
+        },
+        {
+          "field": "sha256",
+          "value": "c276ee815baee6a302bfb32ef27979cc7f910e6f2bbc76a54cf6ed077f33529c"
+        },
+        {
+          "field": "disposition",
+          "value": "HOLD_PROVIDER_EXECUTION_PENDING_FORMAL_BOUND_PACKET_AMENDMENT"
+        }
+      ]
+    },
+    {
+      "source": ".cvf/runtime/ncr-home-alibaba-root-20261013/worker-provider-diagnostic-3.json",
+      "artifact": {
+        "ref": ".cvf/runtime/ncr-home-alibaba-root-20261013/worker-provider-diagnostic-3.json",
+        "availability": "PRESENT",
+        "rawSha256": "9c5d142a35e4e036b9d427ed2e5db84a76c02d51373f15679ae688da3007b348",
+        "bytes": 1871
+      },
+      "parseStatus": "VALID",
+      "safeObservations": [
+        {
+          "field": "utc",
+          "value": "2026-10-13T16:42:33.292674+00:00"
+        },
+        {
+          "field": "stage",
+          "value": "provider"
+        },
+        {
+          "field": "class",
+          "value": "provider_http_error"
+        },
+        {
+          "field": "provider",
+          "value": "alibaba"
+        },
+        {
+          "field": "model",
+          "value": "qwen-flash"
+        },
+        {
+          "field": "httpStatus",
+          "value": 401
+        },
+        {
+          "field": "receiptId",
+          "value": "rcpt-env-mv6wobbq-9zqcfx"
+        },
+        {
+          "field": "traceId",
+          "value": "env-mv6wobbq-9zqcfx"
+        },
+        {
+          "field": "providerCallsSoFar",
+          "value": 1
+        },
+        {
+          "field": "executePostsSoFar",
+          "value": 1
+        },
+        {
+          "field": "sha256",
+          "value": "c276ee815baee6a302bfb32ef27979cc7f910e6f2bbc76a54cf6ed077f33529c"
+        },
+        {
+          "field": "disposition",
+          "value": "HOLD_PROVIDER_EXECUTION_PENDING_FORMAL_BOUND_PACKET_AMENDMENT"
+        }
+      ]
+    }
+  ],
+  "blockingReasons": []
+}

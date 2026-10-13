@@ -1,4 +1,5 @@
 'use client';
+// Text Encoding Exception: the visible Vietnamese submit label is required for localized UI.
 
 import { useState } from 'react';
 import { useForm, useWatch, type FieldErrors, type UseFormRegister } from 'react-hook-form';
@@ -322,7 +323,14 @@ export function DynamicForm({ template, onSubmit, onBack, onSendToAgent, initial
                     </a>
                 </div>
 
-                {/* Action Buttons */}
+                <button
+                    type="submit"
+                    className="w-full py-4 px-6 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-200"
+                >
+                    {language === 'en' ? 'Generate result' : 'Tạo kết quả'}
+                </button>
+
+                {/* Spec actions stay separate from result submission. */}
                 <div className="flex gap-3">
                     {/* Export/Copy Spec Button */}
                     <button
@@ -337,7 +345,7 @@ export function DynamicForm({ template, onSubmit, onBack, onSendToAgent, initial
                         <span>{language === 'en' ? 'Export Spec' : 'Xuất Spec'}</span>
                     </button>
 
-                    {/* Submit Button - Opens SpecExport to choose mode first */}
+                    {/* Open the existing Agent Spec relay without submitting the result form. */}
                     <button
                         type="button"
                         onClick={openSpecExport}
