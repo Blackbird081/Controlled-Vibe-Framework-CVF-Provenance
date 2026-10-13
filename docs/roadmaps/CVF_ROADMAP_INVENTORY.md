@@ -5,7 +5,7 @@ docType: reference
 INDEX type: IDX-1 CORPUS_FAMILY_INDEX
 Source authority: AGENTS.md; docs/reference/CVF_INDEX_CLASSIFICATION_STANDARD_2026-06-21.md; source roadmaps in the inline manifest.
 Status: ACTIVE_METADATA_PROJECTION
-Date: 2026-10-12
+Date: 2026-10-13
 Human-reviewable: YES
 Claim boundary: Path/header/hash projection; semantic current-state review is deferred to Local when selecting a lane.
 Public Export Disposition: DEFERRED_PRIVATE_ONLY
@@ -41,10 +41,10 @@ sorted UTF-8 lines: repo-relative-path, TAB, normalized SHA256, LF.
 
 - Corpus task class: Metadata navigation inventory; semantic audit remains partial.
 - Corpus root: docs/roadmaps/ outside archive and index carriers.
-- Snapshot time: 2026-10-12T10:25:37Z; --check evaluates present source freshness independently of snapshot/publication time.
+- Snapshot time: 2026-10-13T04:46:10Z; --check evaluates present source freshness independently of snapshot/publication time.
 - Enumeration command: Python Path.rglob('*.md') in scripts/generate_roadmap_inventory.py; filesystem-backed, no Git ignore filter.
 - Manifest artifact or inline manifest: docs/roadmaps/CVF_ROADMAP_INVENTORY.csv, 224 source rows.
-- Manifest hash: d5e027be5566f1550b1a06d6da678593aeef24f97ddeb235870def44eda6ec4c
+- Manifest hash: 7c726bd1a410e8f941c967f9e0a3377a88b6b710bdaf6eb700d07850082ae077
 - Processing ledger artifact or inline ledger: Same table, metadata parsed; semantic review DEFERRED for each source.
 - Allowed terminal statuses: READ, SKIPPED_WITH_REASON, DEFERRED, BLOCKED_UNREADABLE; uses DEFERRED only.
 - Reconciliation: manifest=224; ledger_terminal=224; exclusions=0 within declared root; unresolved=0.
@@ -61,7 +61,7 @@ sorted UTF-8 lines: repo-relative-path, TAB, normalized SHA256, LF.
 
 - Knowledge task class: Metadata navigation; current-state semantic mapping deferred.
 - Source manifest: docs/roadmaps/CVF_ROADMAP_INVENTORY.csv.
-- Source manifest hash: d5e027be5566f1550b1a06d6da678593aeef24f97ddeb235870def44eda6ec4c
+- Source manifest hash: 7c726bd1a410e8f941c967f9e0a3377a88b6b710bdaf6eb700d07850082ae077
 - Enumeration safety: Filesystem-backed Path.rglob includes ignored Markdown in declared scope.
 - Intake registry or ledger: CSV semanticDisposition column; docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json consulted at authoring; no absorption claim.
 - Authority assets: Source roadmaps; baseline/closure/session owners govern selection.

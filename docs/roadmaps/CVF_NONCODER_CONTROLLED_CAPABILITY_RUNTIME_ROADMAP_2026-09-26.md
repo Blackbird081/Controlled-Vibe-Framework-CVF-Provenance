@@ -1,24 +1,17 @@
 # CVF Roadmap: Năng lực cộng đồng, thực thi có kiểm soát, trải nghiệm non-coder
 
 Memory class: FULL_RECORD
-
 docType: roadmap
-
 Status: ACCEPTED_UNIFIED_ROADMAP_LOCAL_CONSUMER_BOUNDED_FULL_PILOT_OPEN
-
 Date: 2026-09-26
-
 Program ID: CVF-NCR
-
 Version: 2.9
-
 Revision disposition: LOCAL_CONSUMER_MAINTENANCE_ACCEPTED_BOUNDED; END_TO_END_PILOT_OPEN; Q001_AND_P11_CHECKPOINTS_RETAINED
-
 Decision owner: operator về định hướng/phạm vi; Local reviewer về đối chiếu kỹ thuật và nghiệm thu.
 
-## Current Delivery Checkpoint - 2026-10-12
+## Current Delivery Checkpoint - 2026-10-13
 
-Current delivery projection; Local decision owner. Current mode=cvf_ncr_chat_history_closed_useful_selection,
+Current delivery projection; Local decision owner. Current mode=cvf_ncr_offline_journey_closed_useful_selection,
 handoff=AGENT_HANDOFF_V63_2026-09-18.md, next=useful coding outcome selection.
 Prior evidence/phase/effect checkpoints retain their scope.
 
@@ -31,7 +24,7 @@ offline claim level first; full real-provider R3 acceptance remains open.
 | Stage / contribution | Observed position and evidence | Remaining milestone gap |
 |---|---|---|
 | R0 selection | HTML review-packet candidate selected; prior W00/W01 bounded evidence retained | current route/acceptance must be fixed for the next actual job; no new runtime shortlist |
-| R1 user journey | audience/export evidence archived below; Home history/result/child binding accepted in docs/reviews/CVF_NCR_HOME_HISTORY_BINDING_COMPLETION_2026-10-11.md | complete integrated journey has not been accepted by these component proofs |
+| R1 user journey | audience/export evidence archived below; Home history/result/child binding accepted in docs/reviews/CVF_NCR_HOME_HISTORY_BINDING_COMPLETION_2026-10-11.md | one actual offline form-parent-child UI path accepted; complete job/export/recovery remains open |
 | R2/R3 delivery | offline preview package accepted in docs/reviews/CVF_NCR_OFFLINE_PREVIEW_DELIVERY_COMPLETION_2026-10-09.md | source/media/send and real-provider admission remain separately held; no full R2/R3 exit |
 | R4 recovery contribution | ProcessingScreen client attempt isolation/once delivery accepted after Local repair in docs/reviews/CVF_NCR_PROCESSING_LIFECYCLE_COMPLETION_2026-10-12.md | offline client coverage does not prove backend cancellation, durable effects, restart/restore or full R4 exit |
 | R5/R6 | hosted/scale/new-capability work remains demand/authority gated | no automatic implementation from this roadmap |
@@ -58,6 +51,14 @@ cannot alter replacement/reopened UI. Actual Home parent/payload and PDF/Word
 interleaving verified. Original four unchanged,no Local production edits/redispatch.
 Preparation PARTIAL_WITH_REASON; prior pinned config reads reused,citation gap retained.
 23 observations,previous22 unchanged,cost deferred. No OS-side-effect cancellation.
+**Accepted finite contribution - offline UI parent-child journey, 2026-10-13:**
+docs/reviews/CVF_NCR_OFFLINE_JOURNEY_COMPLETION_2026-10-13.md accepts one test-only offline/jsdom
+composition with real Home/DynamicForm/ProcessingScreen/ResultViewer/store. Worker1/1/type/lint consumed;
+independent Local strategy/decoy1/1 PASS. Actual form inputs/intent, displayed parent, child previous
+output/association and child display are bound; production unchanged. Original3 preserved; MATCH verified by raw
+hashes. Procedure PARTIAL_WITH_REASON and digest erratum retained. 24 task observations, prior23 preserved;
+native usage/bill unknown. This contributes to the nearest offline milestone; full job/export/recovery,
+browser/backend and real-provider R3/R4 acceptance remain open.
 **Next selection:** useful coding outcome from evidence; no automatic successor.
 Whole job/full/browser/backend/provider/R3/R4 remain open.
 
@@ -150,7 +151,6 @@ Completion: `docs/baselines/CVF_GC018_NCR_ALIBABA_TRUNCATED_COMPLETION_2026-10-0
 P09: `docs/baselines/CVF_GC018_NCR_P09_RELEASE_RESULT_CONSISTENCY_2026-10-06.md` (result truth only).
 Operator directs continuous admitted work and selects single-host development; P08/composed results, SQLite snapshot reconciliation and real-data checkpoints:
 `docs/baselines/CVF_GC018_NCR_CONSOLIDATED_LOCAL_FOUNDATION_2026-10-06.md`.
-
 
 ### Receiving-To-Planning Consumer Repair - 2026-10-06
 

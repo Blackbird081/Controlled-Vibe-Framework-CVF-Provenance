@@ -1358,6 +1358,73 @@
         "Offline jsdom ResultViewer/Home UI identity, drafts and async feedback only; synthetic clipboard/docx/jsPDF/file-saver/analytics adapters. No real provider, AI governance, browser, backend, OS-side-effect cancellation, full mode, whole NCR, public or model ranking claim.",
         "Worker clock provenance not independent wallclock; accepted delivery endpoint unknown"
       ]
+    },
+    {
+      "trancheId": "CVF-NCR-OFFLINE-JOURNEY-20261013",
+      "taskFamily": "TEST_ONLY_OFFLINE_UI_FORM_PARENT_CHILD_COMPOSITION",
+      "model": "gpt-6-luna",
+      "effort": "max",
+      "requestedProvider": "OpenAI collaboration",
+      "requestedModel": "gpt-6-luna",
+      "requestedEffort": "max",
+      "configurationEvidenceBasis": "Actual spawn_agent tool requested model gpt-6-luna / reasoning_effort max; this is configured identity, not native usage verification.",
+      "role": "INTERNAL_AGENT_WORKER",
+      "status": "CLOSED_PASS_BOUNDED",
+      "nativeModel": null,
+      "nativeEffort": null,
+      "tokens": null,
+      "bill": {
+        "amount": null,
+        "currency": null,
+        "reason": "Native identity/usage/billing meter unavailable; cost deferred"
+      },
+      "identityUnavailableReason": "Configured tool identity retained; native runtime/model version and effort not observed",
+      "implementationPaths": 1,
+      "productionPaths": 0,
+      "deliveredPaths": 3,
+      "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_OFFLINE_JOURNEY_2026-10-13.md",
+      "evidence": "docs/reviews/evidence/ncr-offline-journey-local-20261013.json",
+      "evidenceSha256": "d9fa39ffcc487335dc6432339141b6287857413683721dfc198655160c2f9dbb",
+      "firstReturnGateClean": false,
+      "workerSelfRepairRounds": 2,
+      "invalidHarnessAttempts": 1,
+      "workerReturnGateFailedAttemptsReported": 2,
+      "reviewerRequestedWorkerRepairTurns": 0,
+      "reviewerProductCodeRepairs": 0,
+      "workerRedispatchCount": 0,
+      "technicalOutput": "ACCEPTED_BOUNDED_TEST_ONLY_NO_PRODUCTION_REPAIR",
+      "procedureDisposition": "PARTIAL_WITH_REASON",
+      "procedure": "PARTIAL_WITH_REASON: BUILD start recorded after required packet/pin reads; intake start unavailable; candidate2 reported log digest missing one character. Formal read rows are worker reports, not independent proof of reading or understanding. Local normalized only return EOF after staged whitespace failure; original bytes embedded in Local proof. Mandatory hook91/91 passed on provisional commit; shell sequencing error, blocked amend and same-batch own private commit rebuild disclosed.",
+      "proof": "Worker1/1/type/lint/final-fast/ledger consumed; independent Local strategy/decoy1/1 PASS; production untouched",
+      "elapsed": {
+        "minutes": 40.7946166667,
+        "basis": "Worker UTC/log interval; misses earlier required reads/intake and excludes Local acceptance; not matched speed evidence.",
+        "fullDeliveryMinutes": null
+      },
+      "clock": {
+        "buildStartUtc": "2026-10-13T03:53:02.323Z",
+        "preliminaryProofEndUtc": "2026-10-13T04:31:17Z",
+        "finalPostGateConfirmationUtc": "2026-10-13T04:33:50Z",
+        "reportedStartThroughFinalMinutes": 40.7946166667,
+        "acceptedDeliveryMinutes": null,
+        "basis": "Worker UTC/log interval; misses earlier required reads/intake and excludes Local acceptance; not matched speed evidence."
+      },
+      "qualityAttribution": {
+        "workerInvalidFixtureAttempts": 1,
+        "workerReturnMetadataFailedCandidates": 2,
+        "workerLateBuildStart": true,
+        "workerDigestErratumGroups": 1,
+        "localProductRepairGroups": 0,
+        "localCommandPreparationFailureGroups": 1,
+        "localClosureMetadataFailedCandidates": 2,
+        "localPrematureClosureGateAttempts": 1,
+        "localReturnMetadataRepairs": 1
+      },
+      "qualityInterpretation": "Test-only integration contribution; final technical gates PASS, metadata/timing limitations retained. No model winner, matched speed/cost or whole-job claim.",
+      "limitations": [
+        "One synthetic offline UI composition path only. No AI correctness, governance, provider routing, approval/risk/DLP/audit behavior, real browser/OS export, backend cancellation, durable recovery, whole-job, R3/R4, release, public, deployment, or model-ranking claim.",
+        "Reported interval excludes required earlier reads/intake and Local acceptance."
+      ]
     }
   ],
   "rubric": [
@@ -1443,8 +1510,8 @@
     ],
     "reviewedHaikuCount": 10,
     "reviewedSonnetCount": 9,
-    "reviewedLunaCount": 4,
-    "reviewedTaskObservationCount": 23
+    "reviewedLunaCount": 5,
+    "reviewedTaskObservationCount": 24
   },
   "provisionalRoleRouting": [
     {
@@ -1473,9 +1540,9 @@
   "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
   "laneProtection": "Reviewer-owned governed evidence promotion authorized by operator longitudinal tracking request. No worker file edit, new dispatch, provider effect or public export.",
   "observations": {
-    "technical": "23 reviewed tasks10 Haiku-family/9 Sonnet/4 Luna; previous22 preserved. Result isolation worker105/105 and Local2/2; zero Local product repair.",
-    "process": "Broader mandatory source disclosure improved; formal prior-read reuse citation gap retained as PARTIAL_WITH_REASON, progressive reads allowed. Worker and Local fixture failures separate.",
-    "reportStatus": "TWENTY_THREE_REVIEWED_TASK_OBSERVATIONS_NO_COMPARATIVE_WINNER",
+    "technical": "24 reviewed tasks:10 Haiku-family/9 Sonnet/5 Luna; previous23 semantically preserved. Test-only actual UI journey worker1/1 and Local strategy/decoy1/1 PASS; zero production edits.",
+    "process": "Worker locator failure, two return metadata failed candidates, late BUILD clock and candidate2 digest typo retained; Local digest supplement and command preparation failure attributed separately.",
+    "reportStatus": "TWENTY_FOUR_REVIEWED_TASK_OBSERVATIONS_NO_COMPARATIVE_WINNER",
     "measuredBillComparison": null,
     "nextControl": "Continue evidence collection on admitted work; Expense/S5 and effects parked; no automatic router or new benchmark task."
   },
@@ -1647,11 +1714,11 @@
     "omissionOwner": "LOCAL_ORCHESTRATOR",
     "OpusSameSessionAdvisoryExtraWorkers": 0,
     "latestReviewedTask": {
-      "trancheId": "CVF-NCR-RESULT-ISOLATION-20261012",
-      "localReview": "docs/reviews/CVF_NCR_RESULT_ISOLATION_COMPLETION_2026-10-12.md",
-      "evidence": "docs/reviews/evidence/ncr-result-isolation-local-20261012.json",
-      "evidenceSha256": "9884a2993ab842b2352a4408c2f430e3e7a79e198046846c4e6f93b37d034c7d",
-      "previousTwentyTwoRowsPreserved": true
+      "trancheId": "CVF-NCR-OFFLINE-JOURNEY-20261013",
+      "localReview": "docs/reviews/CVF_NCR_OFFLINE_JOURNEY_COMPLETION_2026-10-13.md",
+      "evidence": "docs/reviews/evidence/ncr-offline-journey-local-20261013.json",
+      "evidenceSha256": "d9fa39ffcc487335dc6432339141b6287857413683721dfc198655160c2f9dbb",
+      "previousTwentyThreeRowsPreserved": true
     }
   },
   "operatorObservationFocus": {

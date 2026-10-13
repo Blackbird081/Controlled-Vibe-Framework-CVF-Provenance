@@ -1,0 +1,239 @@
+{
+  "schemaVersion": "cvf.ncrOfflineJourneyWorkerEvidence@1.0.0",
+  "batchId": "CVF-NCR-OFFLINE-JOURNEY-20261013",
+  "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_OFFLINE_JOURNEY_2026-10-13.md",
+  "pairedBaseline": "docs/baselines/CVF_GC018_NCR_OFFLINE_JOURNEY_2026-10-13.md",
+  "role": {
+    "agentType": "INTERNAL_AGENT",
+    "phase": "BUILD",
+    "decisionOwner": "LOCAL",
+    "invocationId": "CVF-NCR-OFFLINE-JOURNEY-20261013/luna_worker"
+  },
+  "requestedConfiguration": {
+    "model": "gpt-6-luna",
+    "reasoningEffort": "max",
+    "tokenUsage": null,
+    "billing": null,
+    "unavailableReason": "Collaboration configuration exposes requested model and effort, not native token or billing measurements."
+  },
+  "executionBaseHead": "25491206c403683e9e330a3bbaa86a65948abaf1",
+  "timeAccounting": {
+    "buildStartUtc": "2026-10-13T03:53:02.323Z",
+    "buildStartDeviation": "Captured after mandatory startup/packet re-read and HEAD/status/twelve source-pin audit. No technical source-content review, test, validation, or edit occurred before the recorded BUILD start. This is later than the work-order request to capture start before required reads; it is not backdated.",
+    "readOnlyIntake": {
+      "phase": "INTAKE",
+      "performedAsSeparatePriorPhase": true,
+      "startUtc": null,
+      "unavailableReason": "Prior read-only intake timestamp was not captured in the retained worker trace; no time is invented."
+    },
+    "preliminaryProofEndUtc": "2026-10-13T04:31:17Z",
+    "finalPostGateConfirmationUtc": "RECORDED_SEPARATELY_IN_IGNORED_WORKER_LOG_AND_PARENT_MESSAGE"
+  },
+  "scope": {
+    "scenario": "offline Home parent-child journey > submits actual fields, displays a parent result, and carries it into a distinct child result",
+    "decisiveRealComponents": [
+      "HomePage",
+      "DynamicForm",
+      "ProcessingScreen",
+      "ResultViewer",
+      "useExecutionStore"
+    ],
+    "fixtures": [
+      "Synthetic local /api/execute responses; every unexpected URL rejects and is recorded.",
+      "Settings, navigation, language, provider enumeration, analytics/enforcement recording, unrelated HomeBrowseExperience and wizard/onboarding leaves are isolated fixtures.",
+      "Clipboard, object URL, and anchor download boundaries are stubbed; the test asserts none are invoked."
+    ],
+    "parentInputs": {
+      "subject": "Parent journey subject marker",
+      "currentNotes": "Synthetic parent notes marker",
+      "readerGoal": "Confirm submitted field identity"
+    },
+    "parentIntent": "Actual previewed DynamicForm instructions; asserted to include the submitted subject and current notes and matched against stored and captured payload intent.",
+    "parentOutput": "PARENT_OUTPUT_MARKER: distinct synthetic parent result.",
+    "followUpInstruction": "Refine the parent with a distinct child instruction",
+    "childOutput": "CHILD_OUTPUT_MARKER: distinct synthetic follow-up result.",
+    "assertions": [
+      "Parent template, exact input object, previewed intent and captured /api/execute payload match.",
+      "Real ResultViewer displays parent output and deliverable pack; store currentExecution and parent output match parent identity.",
+      "Real follow-up form creates a distinct child with parentExecutionId, _previousOutput, original inputs, follow-up intent, and exact second transport payload.",
+      "Real ResultViewer and store display child output/current identity while parent output remains stored; exactly two expected local execute URLs occur."
+    ],
+    "claimBoundary": "One synthetic offline UI composition path only. No AI correctness, governance, provider routing, approval/risk/DLP/audit behavior, real browser/OS export, backend cancellation, durable recovery, whole-job, R3/R4, release, public, deployment, or model-ranking claim."
+  },
+  "sourcePins": [
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.tsx",
+      "rawSha256": "b6b1d7ff64bcc5586b830b2a23c8e1b94957ef276a4abd9cea9eaa0825965322",
+      "headBlobSha256": "b6b1d7ff64bcc5586b830b2a23c8e1b94957ef276a4abd9cea9eaa0825965322"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.test.tsx",
+      "rawSha256": "332a100889580078daca4dbb0a1e815a2c6d9e0e0fcdbfa912b02fa0e1af63e2",
+      "headBlobSha256": "332a100889580078daca4dbb0a1e815a2c6d9e0e0fcdbfa912b02fa0e1af63e2"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.tsx",
+      "rawSha256": "2cf58f9f22145c9755285b7340e9a6858fc8de98b4ae79bbc72315911b30a1ac",
+      "headBlobSha256": "2cf58f9f22145c9755285b7340e9a6858fc8de98b4ae79bbc72315911b30a1ac"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ProcessingScreen.tsx",
+      "rawSha256": "e34ff88d91b25e8274042cc7f77871eb25570ce01eb8e4531b75a274a99a77ec",
+      "headBlobSha256": "e34ff88d91b25e8274042cc7f77871eb25570ce01eb8e4531b75a274a99a77ec"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.tsx",
+      "rawSha256": "b2d33d48d394cb6973ad85c06d31434c0de6a4c54f14dccd253a29cd3cbf71a1",
+      "headBlobSha256": "b2d33d48d394cb6973ad85c06d31434c0de6a4c54f14dccd253a29cd3cbf71a1"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/store.ts",
+      "rawSha256": "f5deb700c631c680924d3ba74fd1c56ef862e99703fe59c461828a8a64953c06",
+      "headBlobSha256": "f5deb700c631c680924d3ba74fd1c56ef862e99703fe59c461828a8a64953c06"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/draft-recovery.test.tsx",
+      "rawSha256": "7d1b53ab1a36af0dac594cafce082eb48db3a553e7cdc273486b99c8557e33d3",
+      "headBlobSha256": "7d1b53ab1a36af0dac594cafce082eb48db3a553e7cdc273486b99c8557e33d3"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/templates/index.ts",
+      "rawSha256": "058320e6073533f4c2cc4fb9edcc94e87162ae88671368bc58bd2c696e719805",
+      "headBlobSha256": "058320e6073533f4c2cc4fb9edcc94e87162ae88671368bc58bd2c696e719805"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execution-continuity.ts",
+      "rawSha256": "3faf1a73620fc37853736a832c4b59ed02df557e18ec81bdc856089e722ea09a",
+      "headBlobSha256": "3faf1a73620fc37853736a832c4b59ed02df557e18ec81bdc856089e722ea09a"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/deliverable-pack.ts",
+      "rawSha256": "9a9b93dbaa503baf33e38ea3a5cacc6d0cb1da7e696adeab3f033c9fe97415a9",
+      "headBlobSha256": "9a9b93dbaa503baf33e38ea3a5cacc6d0cb1da7e696adeab3f033c9fe97415a9"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/test/setup.ts",
+      "rawSha256": "bc573b2a6133b07404c42f797bce43fe73464711e0281f29da8234bf2fed6b27",
+      "headBlobSha256": "bc573b2a6133b07404c42f797bce43fe73464711e0281f29da8234bf2fed6b27"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/vitest.config.ts",
+      "rawSha256": "9a4a65976b5b7a5d038f9cb412a90d417f804108cf1dd33bae4421989a863420",
+      "headBlobSha256": "9a4a65976b5b7a5d038f9cb412a90d417f804108cf1dd33bae4421989a863420"
+    }
+  ],
+  "validation": {
+    "preImplementation": {
+      "command": "python -B governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_OFFLINE_JOURNEY_2026-10-13.md",
+      "exitCode": 0,
+      "result": "PASS 88/88",
+      "log": ".cvf/runtime/ncr-offline-journey-worker-20261013/pre-implementation.txt"
+    },
+    "scaffold": {
+      "command": "python -B governance/compat/run_worker_return_scaffold.py --write docs/reviews/CVF_NCR_OFFLINE_JOURNEY_WORKER_RETURN_2026-10-13.md --check-shape --max-lines 450 --max-bytes 64000",
+      "exitCode": 0,
+      "result": "PASS; shape present, generated pending fields were not evidence",
+      "log": ".cvf/runtime/ncr-offline-journey-worker-20261013/return-scaffold.txt"
+    },
+    "focusedVitestFirst": {
+      "command": "node node_modules/vitest/vitest.mjs run 'src/app/(dashboard)/home/page.journey.test.tsx' --reporter=verbose",
+      "exitCode": 1,
+      "result": "Harness-only locator ambiguity: getByText(parentOutput) found the two intentional ResultViewer summary/body instances. No production/source defect or assertion of AI/governance behavior.",
+      "log": ".cvf/runtime/ncr-offline-journey-worker-20261013/focused-vitest-first.txt"
+    },
+    "focusedVitestCorrected": {
+      "command": "node node_modules/vitest/vitest.mjs run 'src/app/(dashboard)/home/page.journey.test.tsx' --reporter=verbose",
+      "exitCode": 0,
+      "result": "PASS; 1 test file, 1 test passed; corrected locator asserts two visible parent/child pack instances and their identity.",
+      "log": ".cvf/runtime/ncr-offline-journey-worker-20261013/focused-vitest-corrected.txt"
+    },
+    "typecheck": {
+      "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+      "exitCode": 0,
+      "result": "PASS",
+      "log": ".cvf/runtime/ncr-offline-journey-worker-20261013/typescript.txt"
+    },
+    "ownedFileLint": {
+      "command": "node node_modules/eslint/bin/eslint.js 'src/app/(dashboard)/home/page.journey.test.tsx'",
+      "exitCode": 0,
+      "result": "PASS",
+      "log": ".cvf/runtime/ncr-offline-journey-worker-20261013/eslint.txt"
+    },
+    "workerReturnFastGate": {
+      "requiredCommand": "python governance/compat/run_worker_return_fast_gate.py --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_OFFLINE_JOURNEY_2026-10-13.md --max-return-lines 450 --max-return-bytes 64000",
+      "candidateHistory": [
+        {
+          "candidate": 1,
+          "exitCode": 1,
+          "result": "FAIL; missing PASS evidence for COMPLETE_PENDING_REVIEW; missing work-order source inventory and literal requirements; read-ahead purpose wording, review-cost regression token and external knowledge Internal source token corrected.",
+          "log": ".cvf/runtime/ncr-offline-journey-worker-20261013/return-fast-gate-first.txt",
+          "logSha256": "9f63a6e4e4cc628b94bb37580999ea23c993d7091dec440c4f6e6a260d8b3943"
+        },
+        {
+          "candidate": 2,
+          "exitCode": 1,
+          "result": "FAIL; source inventory action cells and required paired-closure source row were not machine-readable, and gateRunPurpose wording triggered the checker; corrected before candidate 3.",
+          "log": ".cvf/runtime/ncr-offline-journey-worker-20261013/return-fast-gate-candidate2.txt",
+          "logSha256": "7a9cb77525e7244a00337509909b8d703f5bbfb69a7a9ba26149b892827ff0a"
+        },
+        {
+          "candidate": 3,
+          "exitCode": 0,
+          "result": "PASS; all reviewer-fast checks and git diff whitespace check passed.",
+          "log": ".cvf/runtime/ncr-offline-journey-worker-20261013/return-fast-gate-candidate3.txt",
+          "logSha256": "0f440794a76a18ba66c4b8d67eede2aee5a59d783a77fb22914218157b513699"
+        }
+      ],
+      "finalByteRun": {
+        "exitCode": 0,
+        "result": "PASS",
+        "log": ".cvf/runtime/ncr-offline-journey-worker-20261013/return-fast-gate-final.txt",
+        "logSha256": "RECORDED_IN_IGNORED_TERMINAL_TIMES_LOG_AFTER_FINAL_RUN"
+      }
+    },
+    "acceptanceLedger": {
+      "requiredCommand": "python governance/compat/check_work_order_acceptance_ledger.py --work-order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_OFFLINE_JOURNEY_2026-10-13.md --return docs/reviews/CVF_NCR_OFFLINE_JOURNEY_WORKER_RETURN_2026-10-13.md --enforce",
+      "exitCode": 0,
+      "result": "PASS; all three fixed requirements have PASS status and exact actual artifact bindings.",
+      "log": ".cvf/runtime/ncr-offline-journey-worker-20261013/acceptance-ledger-final.txt",
+      "logSha256": "RECORDED_IN_IGNORED_TERMINAL_TIMES_LOG"
+    }
+  },
+  "effects": {
+    "productionEdits": 0,
+    "dependencyChanges": 0,
+    "providerOrExternalAgentCalls": 0,
+    "networkOrBrowserOrServerUse": 0,
+    "commitsOrStaging": 0,
+    "nestedAgents": 0,
+    "customerCareScope": "OUT_OF_SCOPE"
+  },
+  "outputs": [
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.journey.test.tsx",
+    "docs/reviews/evidence/ncr-offline-journey-worker-20261013.json",
+    "docs/reviews/CVF_NCR_OFFLINE_JOURNEY_WORKER_RETURN_2026-10-13.md"
+  ],
+  "workerLaneRelease": {
+    "workerLaneDisposition": "RELEASED_TO_LOCAL_REVIEW",
+    "exact3ManifestDisposition": "MATCH",
+    "stagingDisposition": "EMPTY",
+    "trackedDiffDisposition": "NONE",
+    "commitDisposition": "NONE",
+    "reviewLaneStart": "LOCAL_MAY_BEGIN_READ_ONLY_REVIEW"
+  },
+  "terminalGitEvidence": {
+    "gitStatusShort": [
+      "?? EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.journey.test.tsx",
+      "?? docs/reviews/CVF_NCR_OFFLINE_JOURNEY_WORKER_RETURN_2026-10-13.md",
+      "?? docs/reviews/evidence/ncr-offline-journey-worker-20261013.json"
+    ],
+    "gitDiffCachedNameStatus": [],
+    "gitDiffNameStatusHead": [],
+    "untrackedPathManifest": [
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.journey.test.tsx",
+      "docs/reviews/evidence/ncr-offline-journey-worker-20261013.json",
+      "docs/reviews/CVF_NCR_OFFLINE_JOURNEY_WORKER_RETURN_2026-10-13.md"
+    ],
+    "gitDiffCheck": "PASS"
+  }
+}

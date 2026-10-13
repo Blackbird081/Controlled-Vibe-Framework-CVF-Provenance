@@ -5,6 +5,12 @@ docType: review
 Status: ACTIVE_REFERENCE
 Date: 2026-10-10
 
+## Current Collection Checkpoint - 2026-10-13
+
+24 reviewed task observations:10 Haiku-family,9 Sonnet,5 Luna; previous23 ledger rows semantically preserved by deep equality. Latest test-only offline UI journey: configured gpt-6-luna / max through the actual spawn tool; worker1/1/type/lint/final-fast/ledger PASS consumed; independent Local strategy/decoy1/1 PASS. Production paths0, implementation test paths1, returned paths3; no Local product repair or redispatch. Local evidence `docs/reviews/evidence/ncr-offline-journey-local-20261013.json`; SHA256 `d9fa39ffcc487335dc6432339141b6287857413683721dfc198655160c2f9dbb`. Current ledger SHA256 `0c042fbfdd8501ab14f1579aa32ad7dfe5c26133518898df372b04d16869a2e6`. Earlier collection checkpoints below are dated snapshots, not current counts.
+
+One worker locator failure and two metadata failed candidates retained. Preparation PARTIAL_WITH_REASON: late BUILD-start capture, unavailable intake start, candidate2 digest missing one character; Local supplies actual digest without editing original worker bytes. One Local command redirection failure prevented Node launch, then one actual probe PASS. Local EOF-only return metadata normalization preserves full original byte receipt; staged whitespace failure and shell continuation/blocked amend/private same-batch rebuild disclosed. Reported start-through-final interval40.79min excludes earlier reads/intake and Local acceptance; full delivery time unavailable. Native runtime identity/effort/tokens/bill remain unavailable. A test-only task is not a production repair or matched comparative sample; no model winner, speed/cost ranking or automatic router.
+
 ## Collection Continuation - 2026-10-11
 
 The original six-observation narrative and pins below are a historical snapshot. Current longitudinal ledger has eight reviewed worker observations: six Haiku-family and two Sonnet; original rows retained. Added O6 documentary design (historical backfill) and symbol-line checker repair, requested effort ex high, separately from older Max labels. O6 required one Local documentary clarification; symbol-line required zero Local code repairs and passed a distinct probe, but its first two return gates failed and total duration is unknown. Runtime model/version, normalized effort, tokens and bills remain unverified/unavailable. New evidence: `docs/reviews/evidence/symbol-line-anchor-fix-local-review-20261011.json`. No comparative winner, cost ranking, automatic configuration or benchmark-only rerun.

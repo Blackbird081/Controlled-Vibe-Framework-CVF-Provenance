@@ -5,7 +5,7 @@ docType: reference
 INDEX type: IDX-2 PLANE_OWNER_MAP
 Source authority: AGENTS.md; docs/reference/CVF_GOVERNED_WORK_LIFECYCLE_AND_DESIGN_CONTROL_STANDARD_2026-06-11.md; governed decision sources linked in each row.
 Status: ACTIVE_REFERENCE
-Date: 2026-10-12
+Date: 2026-10-13
 Human-reviewable: YES
 Claim boundary: Navigation and dated Local decision projection; source artifacts and current session authority control execution.
 Public Export Disposition: DEFERRED_PRIVATE_ONLY
@@ -15,7 +15,7 @@ Text Encoding Exception: Vietnamese operator-facing navigation and instructions,
 ## Purpose
 
 Một cửa vào để biết **đang ưu tiên gì, còn dang dở gì, vì sao dừng và khi nào
-được xem xét lại**. Local đối chiếu bảng điều hành ngày 2026-10-12;
+được xem xét lại**. Local đối chiếu bảng điều hành ngày 2026-10-13;
 [danh mục tra cứu](CVF_ROADMAP_INVENTORY.md) giữ các đường dẫn còn lại nhìn thấy được.
 Đọc bảng trước, chỉ mở nguồn của luồng liên quan; không đọc lại toàn corpus.
 
@@ -44,8 +44,8 @@ Header Status cũ hoặc child closure không đủ để kết luận cả chư
 
 | Luồng / roadmap | Nhãn quản lý | Đầu ra / nguồn quyết định / bước tiếp theo |
 |---|---|---|
-| [NCR - noncoder controlled runtime](CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md#current-delivery-checkpoint---2026-10-12) | ACTIVE_DELIVERY | [ResultViewer run isolation](../reviews/CVF_NCR_RESULT_ISOLATION_COMPLETION_2026-10-12.md) nghiệm thu bounded offline/jsdom: worker105/105, Local PDF/Home2/2; trạng thái theo run, async cũ không đổi UI mới. Không cần Local sửa production; preparation PARTIAL_WITH_REASON.23 observations, whole job/full/browser/backend/provider R3/R4 còn mở; P11 parked. Tiếp theo chọn đầu ra hữu ích, không tự dispatch successor. |
-| [Model selection](CVF_ORCHESTRATOR_MODEL_SELECTION_SYSTEM_CHAIN_ROADMAP_2026-10-10.md#current-delivery-priority---2026-10-12) | SUPPORTING | Chất lượng, severity, self-repair, Local repair, procedure và thời gian trên việc thực. [Evidence owner](../reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json): 22 task observations ở checkpoint này, gồm Haiku/Sonnet/Luna. Ghi sau Local review; cost deferred, không mở benchmark hoặc xếp hạng từ index. |
+| [NCR - noncoder controlled runtime](CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md#current-delivery-checkpoint---2026-10-13) | ACTIVE_DELIVERY | [Offline UI parent-child journey](../reviews/CVF_NCR_OFFLINE_JOURNEY_COMPLETION_2026-10-13.md) nghiệm thu bounded: worker1/1, Local strategy/decoy1/1; form/processing/result/store thực, production giữ nguyên. Procedure PARTIAL_WITH_REASON và hash erratum được lưu;24 observations. Full job/export/recovery/browser/backend/provider R3/R4 còn mở; không tự dispatch successor. |
+| [Model selection](CVF_ORCHESTRATOR_MODEL_SELECTION_SYSTEM_CHAIN_ROADMAP_2026-10-10.md#current-delivery-priority---2026-10-12) | SUPPORTING | Chất lượng, severity, self-repair, Local repair, procedure và thời gian trên việc thực. [Evidence owner](../reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json): 24 task observations ở checkpoint này, gồm Haiku/Sonnet/Luna. Ghi sau Local review; cost deferred, không mở benchmark hoặc xếp hạng từ index. |
 | [MFRP - machine-first review preflight](CVF_GCLH_MACHINE_FIRST_REVIEW_PREFLIGHT_ROADMAP_2026-09-01.md) | SUPPORTING | P4-C1 activated theo [AGENTS.md](../../AGENTS.md), review M5/M10/safety/M20. [Collection design closure](../reviews/CVF_MFRP_CONTINUITY_COLLECTION_DESIGN_COMPLETION_2026-10-11.md): structural change deferred. [P5 amendment](../baselines/CVF_MFRP_P4_SAMPLE_GATED_P5_REOPEN_AMENDMENT_2026-09-02.md): 20 eligible natural returns cần nhưng chưa đủ; P5/P6 chưa released. Model task observations không phải eligible MFRP samples. |
 
 ## Unfinished Foundation And Conditional Reopen
