@@ -716,7 +716,7 @@
         "sha256": "b7e2a9d8833c9515f3efa0131a318900812fad537abb8c1da62e3bf8cda82796"
       },
       "authority": "SELECTED_PROJECT_EVIDENCE_PARENT_LOCAL_DISPOSITION",
-      "sourceProjectClaims": "Three final Local project reviews accepted bounded fixes; historical execution is attributed, selected source comparison performed in Core intake.",
+  "sourceProjectClaims": "Three final Local project reviews accepted bounded fixes; historical execution is attributed, selected source comparison performed in Core intake. Later prospective documentary application is recorded in the typed project loopback receipts.",
       "findings": [
         {
           "id": "CCMA-OUTPUT-DELIVERY-TRUTH-20261013",
@@ -761,7 +761,7 @@
                     "evidenceClass": "OBSERVED_LOCAL"
                   }
                 ],
-                "limits": "Selected project source and final reviews are pinned but historical runtime tests are attributed; Core implements written evidence guidance only, without live SMTP, project rerun, universal agent compliance, public sync or return/application receipt."
+                "limits": "Selected project source and final reviews are pinned but historical runtime tests are attributed. Later return/application receipts prove prospective documentation adoption only; no live SMTP, project runtime rerun, universal agent compliance or public Core sync is claimed."
               },
               "reusableMechanism": {
                 "status": "SUPPORTED",
@@ -780,7 +780,7 @@
                     "evidenceClass": "OBSERVED_LOCAL"
                   }
                 ],
-                "limits": "Selected project source and final reviews are pinned but historical runtime tests are attributed; Core implements written evidence guidance only, without live SMTP, project rerun, universal agent compliance, public sync or return/application receipt."
+                "limits": "Selected project source and final reviews are pinned but historical runtime tests are attributed. Later return/application receipts prove prospective documentation adoption only; no live SMTP, project runtime rerun, universal agent compliance or public Core sync is claimed."
               },
               "existingCoverage": {
                 "status": "SUPPORTED",
@@ -799,7 +799,7 @@
                     "evidenceClass": "OBSERVED_LOCAL"
                   }
                 ],
-                "limits": "Selected project source and final reviews are pinned but historical runtime tests are attributed; Core implements written evidence guidance only, without live SMTP, project rerun, universal agent compliance, public sync or return/application receipt."
+                "limits": "Selected project source and final reviews are pinned but historical runtime tests are attributed. Later return/application receipts prove prospective documentation adoption only; no live SMTP, project runtime rerun, universal agent compliance or public Core sync is claimed."
               },
               "incrementalValue": {
                 "status": "SUPPORTED",
@@ -818,7 +818,7 @@
                     "evidenceClass": "OBSERVED_LOCAL"
                   }
                 ],
-                "limits": "Selected project source and final reviews are pinned but historical runtime tests are attributed; Core implements written evidence guidance only, without live SMTP, project rerun, universal agent compliance, public sync or return/application receipt."
+                "limits": "Selected project source and final reviews are pinned but historical runtime tests are attributed. Later return/application receipts prove prospective documentation adoption only; no live SMTP, project runtime rerun, universal agent compliance or public Core sync is claimed."
               },
               "boundedProof": {
                 "status": "SUPPORTED",
@@ -837,7 +837,7 @@
                     "evidenceClass": "ATTRIBUTED_SOURCE"
                   }
                 ],
-                "limits": "Selected project source and final reviews are pinned but historical runtime tests are attributed; Core implements written evidence guidance only, without live SMTP, project rerun, universal agent compliance, public sync or return/application receipt."
+                "limits": "Selected project source and final reviews are pinned but historical runtime tests are attributed. Later return/application receipts prove prospective documentation adoption only; no live SMTP, project runtime rerun, universal agent compliance or public Core sync is claimed."
               }
             },
             "decision": {
@@ -892,16 +892,30 @@
               ]
             },
             "returnDelivery": {
-              "state": "NOT_RETURNED",
-              "reason": "No typed delivery receipt or receiving-agent acknowledgment exists.",
-              "evidence": []
+              "state": "RETURNED",
+              "reason": "The project published and acknowledged the exact Core checklist as a portable learning record on its branch; remote readback and typed delivery receipt are pinned.",
+              "evidence": [
+                {
+                  "path": "docs/reviews/evidence/ccma-seven-finding-delivery-receipt-20261013.json",
+                  "sha256": "1167abc10f9ddc1e663a0e6f02d713d0592e3cab53e00b587faee9caa25816a2",
+                  "fragment": "projectReception",
+                  "evidenceClass": "OBSERVED_LOCAL"
+                }
+              ]
             },
             "projectApplication": {
-              "state": "NOT_APPLIED",
-              "reason": "Project fixes predate parent guidance; no subsequent application proof exists.",
-              "evidence": []
+              "state": "APPLIED",
+              "reason": "Project adopted the checklist as prospective documentation-only review criteria and registered discovery pointers. R091 runtime fixes predate the parent checklist and are not retroactively credited.",
+              "evidence": [
+                {
+                  "path": "docs/reviews/evidence/ccma-seven-finding-application-receipt-20261013.json",
+                  "sha256": "486161c08b561961bbc21c9c7890b0bc9f739fb22740e6646c3b589012784c17",
+                  "fragment": "projectVerification",
+                  "evidenceClass": "OBSERVED_LOCAL"
+                }
+              ]
             },
-            "claimLimits": "Selected project source and final reviews are pinned but historical runtime tests are attributed; Core implements written evidence guidance only, without live SMTP, project rerun, universal agent compliance, public sync or return/application receipt."
+            "claimLimits": "Selected project source and final reviews are pinned but historical runtime tests are attributed. Return and application receipts cover prospective documentation adoption only; no live SMTP, project runtime rerun, universal agent compliance or public Core sync is claimed."
           }
         }
       ],
@@ -910,11 +924,12 @@
         "learningRecord": "docs/reviews/learnings/CVF_CCMA_SEVEN_FINDING_DELIVERY_LEARNING_2026-10-13.md",
         "legacyChecklist": "docs/reference/downstream_gate_profile/CVF_BUILD_LEARNING_EVIDENCE_CHECKLIST.md",
         "companionChecklist": "docs/reference/downstream_gate_profile/CVF_PER_OUTPUT_DELIVERY_EVIDENCE_CHECKLIST.md",
-        "sourceManifest": "docs/reviews/evidence/ccma-seven-finding-learning-source-20261013.json"
+        "sourceManifest": "docs/reviews/evidence/ccma-seven-finding-learning-source-20261013.json",
+        "loopbackObservation": "docs/reviews/evidence/ccma-seven-finding-project-loopback-20261013.json",
+        "deliveryReceipt": "docs/reviews/evidence/ccma-seven-finding-delivery-receipt-20261013.json",
+        "applicationReceipt": "docs/reviews/evidence/ccma-seven-finding-application-receipt-20261013.json"
       },
       "deferred": [
-        "typed return-delivery receipt",
-        "project adoption proof",
         "live SMTP/provider/browser/deploy",
         "public Core sync"
       ]

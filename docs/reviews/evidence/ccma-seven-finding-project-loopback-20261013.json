@@ -1,0 +1,29 @@
+{
+  "schemaVersion": "cvf.projectLearningLoopbackObservation@1.0.0",
+  "findingId": "CCMA-OUTPUT-DELIVERY-TRUTH-20261013",
+  "sourceProject": "Customer-Care-Monitor-AI",
+  "parentControl": {
+    "commit": "b4d44307c22f68340746eccd2089d121430905d3",
+    "path": "docs/reference/downstream_gate_profile/CVF_PER_OUTPUT_DELIVERY_EVIDENCE_CHECKLIST.md",
+    "sha256": "13126809f82d4e05384fb3c293db84c8ce6925540ef55766a815a772d445bda3"
+  },
+  "operatorAuthorization": "After the parent learning handback identified CCMA and public export as not yet done, the operator requested completion and expressly allowed a Luna max subagent. Local treated this as authority for the CCMA documentation return; public Core export remains separately deferred.",
+  "projectReception": {
+    "repository": "https://github.com/CVF-Ecosystem/Customer-Care-Monitor.git",
+    "branch": "codex/cvf-portable-inheritance",
+    "commit": "9ae219c67c7bf258c095a2acd76e969345110753",
+    "remoteReadback": "9ae219c67c7bf258c095a2acd76e969345110753",
+    "recordPath": "docs/reviews/learnings/CCMAI_TO_CVF_PER_OUTPUT_DELIVERY_APPLICATION_2026-10-13.md",
+    "recordGitBlobSha256": "c5ce05d2f2fb8d71df669490468427112b787134c3169428a1c5c6df1b49e7e7",
+    "discovery": [
+      "docs/reviews/learnings/README.md",
+      "docs/catalog/ARTIFACT_REGISTRY.json",
+      "docs/INDEX.md",
+      "CVF_SESSION_MEMORY.md",
+      "CVF_SESSION/handoffs/AGENT_HANDOFF_OUTBOUND_R091_2026-10-13.md"
+    ]
+  },
+  "projectVerification": "Local independently read the published project record and confirmed the four per-output identity/acceptance/persistence/retry clauses and positive/negative examples against the exact parent checklist hash. Project preflight for cdf5537..9ae219c passed 7/7, downstream gate unit tests passed 89/89, and worker-reported catalog and workspace doctor passed 27/27. The adoption is prospective documentation guidance; R091 source fixes predate it and were not rerun. No real SMTP/provider, hosted CI, deployment, public Core export, or runtime CVF governance behavior is claimed.",
+  "projectApplicationScope": "APPLIED_BOUNDED_DOCUMENTATION_ONLY: a portable CCMA learning record and active discovery pointers direct future multi-output or uncertain-retry reviews to the selected checklist. No retroactive R091 execution or new runtime gate.",
+  "claimLimits": "This is a local Git and public project-branch readback observation, not evidence that a future agent read the guidance or that any customer output was delivered. Public Core remains at the CCMA manifest pin e9ddcbcdcac2a9df520f5eb0761dbdb609b9deba."
+}

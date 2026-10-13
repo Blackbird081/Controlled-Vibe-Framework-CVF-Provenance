@@ -1,0 +1,24 @@
+{
+  "schemaVersion": "cvf.learningLoopReceipt@1.0.0",
+  "findingId": "CCMA-OUTPUT-DELIVERY-TRUTH-20261013",
+  "sourceProject": "Customer-Care-Monitor-AI",
+  "control": {
+    "path": "docs/reference/downstream_gate_profile/CVF_PER_OUTPUT_DELIVERY_EVIDENCE_CHECKLIST.md",
+    "sha256": "13126809f82d4e05384fb3c293db84c8ce6925540ef55766a815a772d445bda3"
+  },
+  "actor": "Codex /root Local reviewer, CCMA commit steward and parent loopback owner",
+  "kind": "APPLICATION",
+  "authorization": {
+    "path": "docs/reviews/evidence/ccma-seven-finding-project-loopback-20261013.json",
+    "sha256": "2b31b8ec16894e65d31c7dc1da492a709787d6e800fa9fcdd3bb3fe7b7f8d759",
+    "fragment": "operatorAuthorization",
+    "evidenceClass": "OBSERVED_LOCAL"
+  },
+  "verification": {
+    "path": "docs/reviews/evidence/ccma-seven-finding-project-loopback-20261013.json",
+    "sha256": "2b31b8ec16894e65d31c7dc1da492a709787d6e800fa9fcdd3bb3fe7b7f8d759",
+    "fragment": "projectVerification",
+    "evidenceClass": "OBSERVED_LOCAL"
+  },
+  "claimLimits": "APPLIED means documented prospective project review guidance, verified in the published record and discovery pointers. R091 fixes predate the guidance; no new outbound runtime, live provider, customer, hosted CI or deployment proof is asserted."
+}

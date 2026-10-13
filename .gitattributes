@@ -9,6 +9,9 @@ docs/reviews/evidence/ccma-learning-*-20261012.* text eol=lf
 docs/reviews/learnings/CVF_CCMA_PROOF_PREPARATION_LEARNING_2026-10-12.md text eol=lf
 docs/reviews/evidence/ccma-seven-finding-learning-source-20261013.json text eol=lf
 docs/reviews/learnings/CVF_CCMA_SEVEN_FINDING_DELIVERY_LEARNING_2026-10-13.md text eol=lf
+docs/reviews/evidence/ccma-seven-finding-project-loopback-20261013.json text eol=lf
+docs/reviews/evidence/ccma-seven-finding-delivery-receipt-20261013.json text eol=lf
+docs/reviews/evidence/ccma-seven-finding-application-receipt-20261013.json text eol=lf
 docs/reference/downstream_gate_profile/CVF_PER_OUTPUT_DELIVERY_EVIDENCE_CHECKLIST.md text eol=lf
 docs/reference/downstream_gate_profile/CVF_BUILD_LEARNING_EVIDENCE_CHECKLIST.md text eol=lf
 # History recovery: preserve the immutable worker submission and Local raw pin.
