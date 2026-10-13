@@ -297,12 +297,12 @@ No release certification, quota benchmark or model ranking claim.
 
 ## Checker Source Read-Ahead Block
 
-| Field | Value |
+| Field | Evidence |
 |---|---|
-| applicableCheckersRead | governance/compat/check_markdown_structural_completeness.py; governance/compat/check_finding_to_governance_learning.py; governance/compat/check_agent_operation_trace.py; governance/compat/check_governed_artifact_checker_read_ahead.py; governance/compat/check_core_guard_self_protection.py; governance/compat/check_external_knowledge_intake_routing.py; governance/compat/check_corpus_completeness_report_integrity.py; governance/compat/check_epistemic_process_packet.py; governance/compat/check_review_cost_control.py; governance/compat/check_agent_packet_authority_and_encoding.py |
-| literalTokensReviewed | RULE_EXISTS; GOVERNANCE_CONTROL_PLANE; rawMemoryReleased=false; trace fields; NOT_APPLICABLE_WITH_REASON; coordination binding |
-| gateRunPurpose | confirmation/evidence of changed-document structure and continuity, not first discovery; no runtime behavior proof |
-| claimBoundary | no new integrated runtime or universal completion enforcement |
+| applicableCheckersRead | governance/compat/check_machine_closure_package.py; governance/compat/check_review_cost_control.py; governance/compat/check_independent_review_probe_admission.py; governance/compat/check_agent_operation_trace.py; governance/compat/check_core_guard_self_protection.py; governance/compat/check_finding_to_governance_learning.py; governance/compat/check_work_order_dispatch_quality.py; governance/compat/check_governed_artifact_checker_read_ahead.py |
+| literalTokensReviewed | CLOSED_PASS_BOUNDED; PASS_INDEPENDENT_PROBE; required actor/oracle fields; REQUIRED_CLOSURE_ITEMS; TRACE_REQUIRED_LABELS; AUTHORIZED_EXACT_MANIFEST; raw source pins and telemetry |
+| gateRunPurpose | confirmation/evidence of current bounded closure after returned-proof review and distinct actual Local probe |
+| claimBoundary | targeted constants/branches read; machine shape does not certify universal governance behavior |
 
 ## ADIF Query
 
@@ -313,24 +313,24 @@ Returned defects: zero; totalCandidates=0; truncated=false.
 
 | Field | Evidence |
 |---|---|
-| Actor | Local direct-task verifier and evidence recorder |
-| Provider or surface | private repository; local Web and Docker engine; Alibaba only |
-| Session or invocation | cvf-video-storyboard-local-html-20261008 |
-| Working directory | repository root |
-| Command or tool surface | existing isolated Next export route; signed local request; current Chromium file view; exact source/output hashes and cleanup |
-| Target paths | docs/reviews/CVF_NCR_W05_SELECTED_CHAIN_READINESS_2026-10-07.md; docs/reviews/evidence/cvf-video-storyboard-reconciliation-2026-10-09-authorization.json; docs/reviews/evidence/cvf-video-storyboard-reconciliation-2026-10-09.json; docs/reviews/evidence/cvf-video-storyboard-reconciliation-2026-10-09-original.html; docs/reviews/evidence/cvf-video-storyboard-reconciliation-2026-10-09-before.html; docs/reviews/evidence/cvf-video-storyboard-reconciliation-2026-10-09.html; docs/reviews/evidence/cvf-video-storyboard-reconciliation-2026-10-09-delivery.json; docs/reviews/evidence/cvf-video-storyboard-reconciliation-2026-10-09-application.json; docs/reference/downstream_gate_profile/downstream_finding_intake_registry.json |
-| Allowed scope source | operator agrees to local HTML and explicitly selects existing video design; private review output only |
-| Before status evidence | ae2a5a1aa69b14509c6209f0e948f3dfb6ff4698 clean |
-| After status evidence | two owner/evidence paths plus ignored local review artifact; accepted design/product source unchanged |
-| Diff evidence | git diff --check and exact manifest; companion source/evidence pins and gate diagnostics |
-| Approval boundary | local document output for operator review; audio/video/public/durable acceptance separate |
-| Claim boundary | actual local HTML presentation only; no semantic AI governance, media runtime or final content approval |
+| Actor | Local INTERNAL_AGENT orchestrator/reviewer/closer |
+| Provider or surface | shared private workspace; internal configured workers, native usage unavailable |
+| Session or invocation | ncr-work-transfer-browser-local-review-20261013 |
+| Working directory | repository root and installed Web package |
+| Command or tool surface | raw custody and pins; one distinct Node/Chromium Local probe; byte oracle; closure gates and actual-SHA continuity |
+| Target paths | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/ncr-work-transfer-browser.spec.ts`; `docs/reviews/evidence/ncr-work-transfer-browser-conditional-worker-20261013.json`; `docs/reviews/CVF_NCR_WORK_TRANSFER_BROWSER_CONDITIONAL_RETURN_2026-10-13.md`; `docs/reviews/CVF_NCR_WORK_TRANSFER_BROWSER_COMPLETION_2026-10-13.md`; `docs/reviews/evidence/ncr-work-transfer-browser-local-20261013.json`; `docs/reviews/evidence/ncr-alibaba-release-local-20261013.json`; `docs/baselines/CVF_GC018_NCR_WORK_TRANSFER_BROWSER_RETURN_REPAIR_2026-10-13.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_WORK_TRANSFER_BROWSER_RETURN_REPAIR_2026-10-13.md`; `docs/baselines/CVF_GC018_NCR_WORK_TRANSFER_BROWSER_2026-10-13.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_WORK_TRANSFER_BROWSER_2026-10-13.md`; `docs/reviews/CVF_NCR_W05_SELECTED_CHAIN_READINESS_2026-10-07.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `docs/roadmaps/README.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.csv`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `docs/reviews/archive/CVF_AGENT_WORK_ORDER_NCR_WORK_TRANSFER_BROWSER_RETURN_REPAIR_DISPATCH_2026-10-13.md` |
+| Allowed scope source | operator NCR continuation, conditional packet and Local closure authority |
+| Before status evidence | HEAD8fd2c56d26f441fa9824e71211178f6e85eee5f6; terminal conditional exact3; staged empty |
+| After status evidence | exact22 coherent material with pre-closure parent; dedicated exact6 actual-SHA continuity after commit |
+| Diff evidence | git diff --cached --check and exact manifest reconciliation required before commit; no production source/dependency delta |
+| Approval boundary | selected browser test and authorized separate Alibaba diagnostic; no new provider run or parked effects |
+| Claim boundary | Synthetic real-browser draft edit/preview/download/version/selection transport only. Output remains NOT_CONFIGURED/DRAFT_UNACCEPTED. Separate current Alibaba canonical9/9 is real-provider governance diagnostic evidence, not a composed accepted NCR job. Full R1-R4 exits, durable acceptance, two independent provider connections, restart/backup/restore, real-data/public/deploy/P11 remain open or parked. R5/R6 deferred. |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | cvf-video-storyboard-local-html-20261008 |
-| Expected manifest | docs/reviews/CVF_NCR_W05_SELECTED_CHAIN_READINESS_2026-10-07.md; docs/reviews/evidence/cvf-video-storyboard-reconciliation-2026-10-09-authorization.json; docs/reviews/evidence/cvf-video-storyboard-reconciliation-2026-10-09.json; docs/reviews/evidence/cvf-video-storyboard-reconciliation-2026-10-09-original.html; docs/reviews/evidence/cvf-video-storyboard-reconciliation-2026-10-09-before.html; docs/reviews/evidence/cvf-video-storyboard-reconciliation-2026-10-09.html; docs/reviews/evidence/cvf-video-storyboard-reconciliation-2026-10-09-delivery.json; docs/reviews/evidence/cvf-video-storyboard-reconciliation-2026-10-09-application.json; docs/reference/downstream_gate_profile/downstream_finding_intake_registry.json |
-| Actual changed set | docs/reviews/CVF_NCR_W05_SELECTED_CHAIN_READINESS_2026-10-07.md; docs/reviews/evidence/cvf-video-storyboard-reconciliation-2026-10-09-authorization.json; docs/reviews/evidence/cvf-video-storyboard-reconciliation-2026-10-09.json; docs/reviews/evidence/cvf-video-storyboard-reconciliation-2026-10-09-original.html; docs/reviews/evidence/cvf-video-storyboard-reconciliation-2026-10-09-before.html; docs/reviews/evidence/cvf-video-storyboard-reconciliation-2026-10-09.html; docs/reviews/evidence/cvf-video-storyboard-reconciliation-2026-10-09-delivery.json; docs/reviews/evidence/cvf-video-storyboard-reconciliation-2026-10-09-application.json; docs/reference/downstream_gate_profile/downstream_finding_intake_registry.json |
-| Manifest delta | MATCH |
-| Deletion or rename disposition | N/A with reason: none |
+| Invocation ID | ncr-work-transfer-browser-local-review-20261013 |
+| Expected manifest | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/ncr-work-transfer-browser.spec.ts`; `docs/reviews/evidence/ncr-work-transfer-browser-conditional-worker-20261013.json`; `docs/reviews/CVF_NCR_WORK_TRANSFER_BROWSER_CONDITIONAL_RETURN_2026-10-13.md`; `docs/reviews/CVF_NCR_WORK_TRANSFER_BROWSER_COMPLETION_2026-10-13.md`; `docs/reviews/evidence/ncr-work-transfer-browser-local-20261013.json`; `docs/reviews/evidence/ncr-alibaba-release-local-20261013.json`; `docs/baselines/CVF_GC018_NCR_WORK_TRANSFER_BROWSER_RETURN_REPAIR_2026-10-13.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_WORK_TRANSFER_BROWSER_RETURN_REPAIR_2026-10-13.md`; `docs/baselines/CVF_GC018_NCR_WORK_TRANSFER_BROWSER_2026-10-13.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_WORK_TRANSFER_BROWSER_2026-10-13.md`; `docs/reviews/CVF_NCR_W05_SELECTED_CHAIN_READINESS_2026-10-07.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `docs/roadmaps/README.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.csv`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `docs/reviews/archive/CVF_AGENT_WORK_ORDER_NCR_WORK_TRANSFER_BROWSER_RETURN_REPAIR_DISPATCH_2026-10-13.md` |
+| Actual changed set | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/ncr-work-transfer-browser.spec.ts`; `docs/reviews/evidence/ncr-work-transfer-browser-conditional-worker-20261013.json`; `docs/reviews/CVF_NCR_WORK_TRANSFER_BROWSER_CONDITIONAL_RETURN_2026-10-13.md`; `docs/reviews/CVF_NCR_WORK_TRANSFER_BROWSER_COMPLETION_2026-10-13.md`; `docs/reviews/evidence/ncr-work-transfer-browser-local-20261013.json`; `docs/reviews/evidence/ncr-alibaba-release-local-20261013.json`; `docs/baselines/CVF_GC018_NCR_WORK_TRANSFER_BROWSER_RETURN_REPAIR_2026-10-13.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_WORK_TRANSFER_BROWSER_RETURN_REPAIR_2026-10-13.md`; `docs/baselines/CVF_GC018_NCR_WORK_TRANSFER_BROWSER_2026-10-13.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_WORK_TRANSFER_BROWSER_2026-10-13.md`; `docs/reviews/CVF_NCR_W05_SELECTED_CHAIN_READINESS_2026-10-07.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `docs/roadmaps/README.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.csv`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `docs/reviews/archive/CVF_AGENT_WORK_ORDER_NCR_WORK_TRANSFER_BROWSER_RETURN_REPAIR_DISPATCH_2026-10-13.md` |
+| Manifest delta | MATCH required before material commit |
+| Deletion or rename disposition | N/A with reason: no tracked deletion; owned untracked build dirs preserved by native move in ignored runtime |
 
 ## External Knowledge Intake Routing
 
@@ -528,7 +528,7 @@ Artifact: `.cvf/runtime/cvf-video-storyboard-review-20261008/CVF_VIDEO_STORYBOAR
 UTF-8 bytes: 19136; SHA-256: ae90fce7387d7da230627055f882d2f580bef9e27c97f11fe704ca19cc073447.
 Actual existing export route returnedHTTP200 with signed ephemeral service-token
 authentication; receiptStatus=NOT_CONFIGURED, no receipt or attempt ID, artifact
-DRAFT_UNACCEPTED. Original source stayed byte-identical; complete source text
+DRAFT_UNACCEPTED. MATCH: historical saved-file digest comparison recorded below. Original source stayed byte-identical; complete source text
 submitted with route end-trimming only, no translation or summary.
 One current Chromium file view observes10 scene headings, narration, production
 checklist and draft boundary; zero observed HTTP requests. Saved file digest
@@ -633,3 +633,7 @@ empty committed range and pending worktree rejected closure. No CLOSED claim;
 material commit precedes the actual range-bound closure check.
 
 Commit-hook encoding diagnostic: quoted operator text in new metadata required ASCII encoding; authorization JSON now uses Unicode escapes preserving decoded text. No source/HTML language normalization. Focused authority/encoding recheck precedes the commit retry.
+
+## Current Bounded Browser Observation - 2026-10-13
+
+Local completion `docs/reviews/CVF_NCR_WORK_TRANSFER_BROWSER_COMPLETION_2026-10-13.md` accepts synthetic selected draft edit/preview/download/version/selection proof: focused Chromium2/2 plus distinct Local probe PASS. NOT_CONFIGURED/DRAFT_UNACCEPTED at this configuration; previous W05 real-engine/SQLite request IDs and two downloads remain their own evidence, not overwritten or replayed. Separate Alibaba canonical9/9 diagnostic is not a composed W05 pilot receipt. W05 pre-live readiness remains bounded and not closed; full R3/R4/business acceptance checkpoints remain. Historical providerExecutionAuthority does not authorize any new run.

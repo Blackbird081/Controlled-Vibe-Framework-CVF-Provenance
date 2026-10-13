@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "cvf_ncr_work_transfer_browser_conditional_execution",
+  "currentMode": "cvf_ncr_work_transfer_browser_closed_useful_selection",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_WORK_ORDER; BATCH_ID=CVF-NCR-WORK-TRANSFER-BROWSER-RETURN-REPAIR-20261013. Execute docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_WORK_TRANSFER_BROWSER_RETURN_REPAIR_2026-10-13.md only after final bound pre-dispatch PASS; one conditional45-minute BUILD, exact3, no commits/provider/product edits. Local independent probe and technical disposition required. Primary failure retained; Alibaba9/9 separate; full R1-R4 open; real-data/acceptance/public/deploy/P11 parked; no automatic successor. Latest closed wave LHW24 retained.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=SELECT_BOUNDED_OUTCOME; BATCH_ID=CVF-NCR-WORK-TRANSFER-BROWSER-CLOSURE-20261013. Finite synthetic browser contribution CLOSED_PASS_BOUNDED: focused Chromium2/2 and distinct Local probe PASS; separate Alibaba canonical9/9 diagnostic retained. Select one next bounded existing-owner gap with exact source/effect/acceptance/provider budget before dispatch. Primary failure retained; full R1-R4 open; R5/R6 deferred; real-data writer/custody/business acceptance/public/deploy/P11 parked. No automatic successor or new provider run. Latest closed LHW24 retained.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_NCR_WORK_TRANSFER_BROWSER_RETURN_REPAIR_2026-10-13.md",
-    "baselineSha256": "1cf2ab60e4429c347d2b7b3496ac2a1fb2964a67dacb33b9bfe3016dcc59d361",
+    "baselineSha256": "b5b7f39dc6d930df05762238746ccc5b902705970d48cf120fe8c793510db864",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_WORK_TRANSFER_BROWSER_RETURN_REPAIR_2026-10-13.md",
-    "workOrderSha256": "726074de4a1f2f902b74544b4eab89338c7aefa8cace9fed0ab19d694f1724f3"
+    "workOrderSha256": "89ba615a294bd77b8cd46dc3e0053aef0c0a95463ee49190c8fd1a8b5c712f10"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

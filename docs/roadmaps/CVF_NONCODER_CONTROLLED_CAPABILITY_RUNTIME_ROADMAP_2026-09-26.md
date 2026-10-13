@@ -5,7 +5,7 @@ docType: roadmap
 Status: ACCEPTED_UNIFIED_ROADMAP_LOCAL_CONSUMER_BOUNDED_FULL_PILOT_OPEN
 Date: 2026-09-26
 Program ID: CVF-NCR
-Version: 2.9
+Version: 2.10
 Revision disposition: LOCAL_CONSUMER_MAINTENANCE_ACCEPTED_BOUNDED; END_TO_END_PILOT_OPEN; Q001_AND_P11_CHECKPOINTS_RETAINED
 Decision owner: operator về định hướng/phạm vi; Local reviewer về đối chiếu kỹ thuật và nghiệm thu.
 
@@ -19,7 +19,7 @@ Prior evidence/phase/effect checkpoints retain their scope.
 run-bound result, preview/revision/export and understandable cancel/error/recovery.
 The user can use the output without reading source or assembling review metadata.
 **Nearest milestone:** demonstrate that finite existing-consumer journey at the
-offline claim level first; full real-provider R3 acceptance remains open.
+synthetic browser claim level first; current separate Alibaba9/9 diagnostic is accepted bounded, while full composed real-provider R3 job acceptance remains open.
 
 | Stage / contribution | Observed position and evidence | Remaining milestone gap |
 |---|---|---|
@@ -82,6 +82,12 @@ are evidence quantities, not product-completion percentages.
 Checkpoint base: f93e07bed73958a2e9aac928bf1c4f9ff5bfc43f. Consume the three named
 bounded completion records at their accepted revisions; no product or provider
 rerun for this document update. Complete journey/live freshness remains unproved.
+
+### Current Bounded Browser Contribution - 2026-10-13
+
+Local accepted `docs/reviews/CVF_NCR_WORK_TRANSFER_BROWSER_COMPLETION_2026-10-13.md`: focused real Chromium2/2, fresh type/scoped lint and worker fast/ledger consumed; distinct Local semantic browser probe PASS. Synthetic selected audit draft edits compose the real export POST, iframe preview and exact saved HTML bytes. Post-build edit marks the prior result stale; deselect/reselect/change/reload clear old results. Output is NOT_CONFIGURED/DRAFT_UNACCEPTED, not a completed controlled job or business acceptance. Prior W05 real-engine/SQLite browser proof retains its original scope; this proof adds edit/version/selection regression at a different configuration.
+
+Separate authorized Alibaba canonical9/9 live diagnostic is retained in `docs/reviews/evidence/ncr-alibaba-release-local-20261013.json`: unsigned dirty-base local proof, historical readiness reuse, partial server cost only. It does not compose the selected UI draft into a run-bound accepted pilot. R1/R2 remain partial; R3 real job and R4 recovery/backup/restore/connection-change exits remain open; R5/R6 deferred. Primary Luna failure and conditional Sol preparation qualifications retained; no product source changes, third BUILD, model comparison or automatic successor. Historical26 model observations unchanged. Next choose one bounded existing-owner gap using exact selected source, effect/acceptance boundary and provider/action budget; real writer/custody/retention/RPO/RTO remain operator checkpoints before persistent effects.
 
 ## Purpose
 
@@ -1055,33 +1061,33 @@ orientation packets are not refreshed by this private local edit.
 
 | Field | Evidence |
 |---|---|
-| applicableCheckersRead | `governance/compat/check_governed_artifact_checker_read_ahead.py`; `governance/compat/check_agent_operation_trace.py`; `governance/compat/check_core_guard_self_protection.py`; `governance/compat/check_review_cost_control.py`. Selected constants/shape sections read before this update; bounded excerpts only. |
-| literalTokensReviewed | applicableCheckersRead; literalTokensReviewed; gateRunPurpose; claimBoundary; Agent Operation Trace Block; Expected manifest; Actual changed set; Manifest delta |
-| gateRunPurpose | confirm final artifact shape and source evidence; earlier late code-edit confirmation is not temporal compliance |
-| claimBoundary | direct Local offline UI repair; selected source excerpts and read-only review; parked effects retain prior authority |
+| applicableCheckersRead | governance/compat/check_machine_closure_package.py; governance/compat/check_review_cost_control.py; governance/compat/check_independent_review_probe_admission.py; governance/compat/check_agent_operation_trace.py; governance/compat/check_core_guard_self_protection.py; governance/compat/check_finding_to_governance_learning.py; governance/compat/check_work_order_dispatch_quality.py; governance/compat/check_governed_artifact_checker_read_ahead.py |
+| literalTokensReviewed | CLOSED_PASS_BOUNDED; PASS_INDEPENDENT_PROBE; required actor/oracle fields; REQUIRED_CLOSURE_ITEMS; TRACE_REQUIRED_LABELS; AUTHORIZED_EXACT_MANIFEST; raw source pins and telemetry |
+| gateRunPurpose | confirmation/evidence of current bounded closure after returned-proof review and distinct actual Local probe |
+| claimBoundary | targeted constants/branches read; machine shape does not certify universal governance behavior |
 
 ## Agent Operation Trace Block
 
 | Field | Evidence |
 |---|---|
-| Actor | Local INTERNAL_AGENT documentation steward |
-| Provider or surface | private shared workspace |
-| Session or invocation | ncr-brief-copy-projection-sync-20261013 |
+| Actor | Local INTERNAL_AGENT orchestrator/reviewer/closer |
+| Provider or surface | shared private workspace; internal configured workers, native usage unavailable |
+| Session or invocation | ncr-work-transfer-browser-local-review-20261013 |
 | Working directory | repository root and installed Web package |
-| Command or tool surface | targeted bootstrap read, roadmap mode projection correction and staged hooks |
-| Target paths | `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` |
-| Allowed scope source | operator CVF continuation; existing lifecycle small direct task |
-| Before status evidence | eaa5bfc551ae9f8c7dc5c9a29bb351f7b8e5ca19; clean worktree |
-| After status evidence | roadmap-only projection alignment; clipboard implementation/evidence unchanged |
-| Diff evidence | git diff --name-status; git diff --cached --check; exact1 manifest |
-| Approval boundary | private local reversible task; parked effects retain prior authority |
-| Claim boundary | offline UI feedback only; no governance efficacy, actual browser/OS cancellation or whole-job claim |
+| Command or tool surface | raw custody and pins; one distinct Node/Chromium Local probe; byte oracle; closure gates and actual-SHA continuity |
+| Target paths | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/ncr-work-transfer-browser.spec.ts`; `docs/reviews/evidence/ncr-work-transfer-browser-conditional-worker-20261013.json`; `docs/reviews/CVF_NCR_WORK_TRANSFER_BROWSER_CONDITIONAL_RETURN_2026-10-13.md`; `docs/reviews/CVF_NCR_WORK_TRANSFER_BROWSER_COMPLETION_2026-10-13.md`; `docs/reviews/evidence/ncr-work-transfer-browser-local-20261013.json`; `docs/reviews/evidence/ncr-alibaba-release-local-20261013.json`; `docs/baselines/CVF_GC018_NCR_WORK_TRANSFER_BROWSER_RETURN_REPAIR_2026-10-13.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_WORK_TRANSFER_BROWSER_RETURN_REPAIR_2026-10-13.md`; `docs/baselines/CVF_GC018_NCR_WORK_TRANSFER_BROWSER_2026-10-13.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_WORK_TRANSFER_BROWSER_2026-10-13.md`; `docs/reviews/CVF_NCR_W05_SELECTED_CHAIN_READINESS_2026-10-07.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `docs/roadmaps/README.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.csv`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `docs/reviews/archive/CVF_AGENT_WORK_ORDER_NCR_WORK_TRANSFER_BROWSER_RETURN_REPAIR_DISPATCH_2026-10-13.md` |
+| Allowed scope source | operator NCR continuation, conditional packet and Local closure authority |
+| Before status evidence | HEAD8fd2c56d26f441fa9824e71211178f6e85eee5f6; terminal conditional exact3; staged empty |
+| After status evidence | exact22 coherent material with pre-closure parent; dedicated exact6 actual-SHA continuity after commit |
+| Diff evidence | git diff --cached --check and exact manifest reconciliation required before commit; no production source/dependency delta |
+| Approval boundary | selected browser test and authorized separate Alibaba diagnostic; no new provider run or parked effects |
+| Claim boundary | Synthetic real-browser draft edit/preview/download/version/selection transport only. Output remains NOT_CONFIGURED/DRAFT_UNACCEPTED. Separate current Alibaba canonical9/9 is real-provider governance diagnostic evidence, not a composed accepted NCR job. Full R1-R4 exits, durable acceptance, two independent provider connections, restart/backup/restore, real-data/public/deploy/P11 remain open or parked. R5/R6 deferred. |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-brief-copy-projection-sync-20261013 |
-| Expected manifest | `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` |
-| Actual changed set | `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` |
-| Manifest delta | MATCH required before commit |
-| Deletion or rename disposition | None; current checkpoint mode text and current operation trace only |
+| Invocation ID | ncr-work-transfer-browser-local-review-20261013 |
+| Expected manifest | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/ncr-work-transfer-browser.spec.ts`; `docs/reviews/evidence/ncr-work-transfer-browser-conditional-worker-20261013.json`; `docs/reviews/CVF_NCR_WORK_TRANSFER_BROWSER_CONDITIONAL_RETURN_2026-10-13.md`; `docs/reviews/CVF_NCR_WORK_TRANSFER_BROWSER_COMPLETION_2026-10-13.md`; `docs/reviews/evidence/ncr-work-transfer-browser-local-20261013.json`; `docs/reviews/evidence/ncr-alibaba-release-local-20261013.json`; `docs/baselines/CVF_GC018_NCR_WORK_TRANSFER_BROWSER_RETURN_REPAIR_2026-10-13.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_WORK_TRANSFER_BROWSER_RETURN_REPAIR_2026-10-13.md`; `docs/baselines/CVF_GC018_NCR_WORK_TRANSFER_BROWSER_2026-10-13.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_WORK_TRANSFER_BROWSER_2026-10-13.md`; `docs/reviews/CVF_NCR_W05_SELECTED_CHAIN_READINESS_2026-10-07.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `docs/roadmaps/README.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.csv`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `docs/reviews/archive/CVF_AGENT_WORK_ORDER_NCR_WORK_TRANSFER_BROWSER_RETURN_REPAIR_DISPATCH_2026-10-13.md` |
+| Actual changed set | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/ncr-work-transfer-browser.spec.ts`; `docs/reviews/evidence/ncr-work-transfer-browser-conditional-worker-20261013.json`; `docs/reviews/CVF_NCR_WORK_TRANSFER_BROWSER_CONDITIONAL_RETURN_2026-10-13.md`; `docs/reviews/CVF_NCR_WORK_TRANSFER_BROWSER_COMPLETION_2026-10-13.md`; `docs/reviews/evidence/ncr-work-transfer-browser-local-20261013.json`; `docs/reviews/evidence/ncr-alibaba-release-local-20261013.json`; `docs/baselines/CVF_GC018_NCR_WORK_TRANSFER_BROWSER_RETURN_REPAIR_2026-10-13.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_WORK_TRANSFER_BROWSER_RETURN_REPAIR_2026-10-13.md`; `docs/baselines/CVF_GC018_NCR_WORK_TRANSFER_BROWSER_2026-10-13.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_WORK_TRANSFER_BROWSER_2026-10-13.md`; `docs/reviews/CVF_NCR_W05_SELECTED_CHAIN_READINESS_2026-10-07.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `docs/roadmaps/README.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.csv`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `docs/reviews/archive/CVF_AGENT_WORK_ORDER_NCR_WORK_TRANSFER_BROWSER_RETURN_REPAIR_DISPATCH_2026-10-13.md` |
+| Manifest delta | MATCH required before material commit |
+| Deletion or rename disposition | N/A with reason: no tracked deletion; owned untracked build dirs preserved by native move in ignored runtime |
 
 ## Public Export Disposition
 

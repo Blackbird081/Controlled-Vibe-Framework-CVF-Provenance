@@ -2,7 +2,7 @@
 
 Memory class: governed-dispatch-baseline
 docType: baseline
-Status: DISPATCH_READY
+Status: SUPERSEDED_BY_CONTROLLED_REWORK
 Date: 2026-10-13
 Batch ID: CVF-NCR-WORK-TRANSFER-BROWSER-20261013
 Dispatch inspection base: 8accf591da4223fe0a88fc6c63b2062cce733ee1
@@ -171,3 +171,7 @@ NOT_APPLICABLE_WITH_REASON: no knowledge-map or repository scan claim.
 ## Claim Boundary
 
 Synthetic browser draft and byte transport only. No AI governance efficacy, artifact acceptance, durable draft, real-data, W05/R3/R4 exit, provider, public, deployment or production claim.
+
+## Local Supersession Disposition
+
+Primary QUALITY_REJECTED_WITH_CONSOLIDATED_FINDINGS remains unchanged in original worker proof/return and committed raw custody. This original packet is superseded by one conditional test repair, accepted only at the bounded claim level in `docs/reviews/CVF_NCR_WORK_TRANSFER_BROWSER_COMPLETION_2026-10-13.md`. Primary partial export200 is not upgraded to journey PASS. No new execution authority or whole NCR milestone closure.

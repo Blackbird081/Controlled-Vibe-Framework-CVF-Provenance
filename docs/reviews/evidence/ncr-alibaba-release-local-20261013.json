@@ -1,0 +1,296 @@
+{
+  "schemaVersion": "cvf.ncrAlibabaCanonicalReleaseDiagnostic@1.0.0",
+  "taskId": "NCR-RELEASE-REVIEW-20261013",
+  "actor": "LOCAL_REVIEWER_CODEX_ROOT",
+  "role": "Local INTERNAL_AGENT orchestrator/reviewer",
+  "decisionOwner": "LOCAL",
+  "phase": "separate bounded current-source canonical live diagnostic; not whole NCR pilot activation",
+  "captureUtc": "2026-10-13T11:09:56.803146+00:00",
+  "admission": {
+    "path": ".cvf/runtime/ncr-release-review-20261013/admission.json",
+    "bytes": 1320,
+    "sha256": "5e58b2a5a2af902032c428b44ffdb70b0c4c5ad7b0e9476859195ce43534cfe1",
+    "rawBase64": "ew0KICAiaWQiOiAiTkNSLVJFTEVBU0UtUkVWSUVXLTIwMjYxMDEzIiwNCiAgInJvbGUiOiAiTG9jYWwgSU5URVJOQUxfQUdFTlQgb3JjaGVzdHJhdG9yL3Jldmlld2VyIiwNCiAgInBoYXNlIjogImJvdW5kZWQgY3VycmVudCBsaXZlIGRpYWdub3N0aWM7IG5vdCBOQ1IgcGlsb3QgYWN0aXZhdGlvbiIsDQogICJkZWNpc2lvbk93bmVyIjogIkxvY2FsIiwNCiAgInNvdXJjZUhlYWQiOiAiOGFjY2Y1OTFkYTQyMjNmZTBhODhmYzZjNjNiMjA2MmNjZTczM2VlMSIsDQogICJzdGFydGVkQXQiOiAiMjAyNi0xMC0xM1QwOTo0ODoyOC42NjMyMDMrMDA6MDAiLA0KICAiYXV0aG9yaXR5IjogIk9wZXJhdG9yIDIwMjYtMTAtMTM6IGNvbnRpbnVlIE5DUiwgcGVybWl0IEFsaWJhYmEgbGl2ZSB0ZXN0OyBubyB0cml2aWFsIHJlY29uZmlybWF0aW9ucyIsDQogICJwcmVJbXBsZW1lbnRhdGlvbiI6ICJQQVNTOyAuY3ZmL3J1bnRpbWUvbmNyLWNvbnRpbnVhdGlvbi1wcmVpbXBsZW1lbnRhdGlvbi0yMDI2MTAxMy5sb2ciLA0KICAia2V5U291cmNlIjogIldlYiAuZW52LmxvY2FsOyBzZWxlY3RlZCBpbiBtZW1vcnkgb25seTsgcHJvY2VzcyBhbGlhc2VzIG92ZXJyaWRkZW4gaW4gY2hpbGQiLA0KICAiZGF0YSI6ICJleGlzdGluZyBjYW5vbmljYWwgc3ludGhldGljIGZpeHR1cmVzIG9ubHk7IGlzb2xhdGVkIGZpbGUgZXZlbnRzL3NuYXBzaG90cy9tZW1vcnkiLA0KICAibW9kZWxzIjogWw0KICAgICJxd2VuLWZsYXNoIChleGlzdGluZyBmcm96ZW4gY2Fub25pY2FsIHByb29mIGZpeHR1cmVzKSINCiAgXSwNCiAgInN0b3AiOiAib25lIGNhbm9uaWNhbCBidW5kbGU7IG5vIGJsaW5kIHJlcnVuOyBkaWFnbm9zZSBhbnkgZmFpbHVyZSBiZWZvcmUgZGVwZW5kZW50IHJldHJ5IiwNCiAgImJ1ZGdldCI6ICJmaW5pdGUgZXhpc3Rpbmcgc3VpdGUgKyBvbmUgQTUvQTQgcmVjb3ZlcnkgY2FsbDsgd3JhcHBlciB0aW1lb3V0IDE4MDAgc2Vjb25kczsgbm8gYWRkaXRpb25hbCBwcm9iZXMiLA0KICAiY29zdCI6ICJVTktOT1dOOyBubyBwcmljZS9iaWxsaW5nIGFjY2VwdGFuY2UgaW5mZXJyZWQiLA0KICAiZm9yYmlkZGVuRWZmZWN0cyI6IFsNCiAgICAicmVhbC1sZWRnZXIgbXV0YXRpb24iLA0KICAgICJhcnRpZmFjdCBhY2NlcHRhbmNlIiwNCiAgICAicHVibGljIHN5bmMiLA0KICAgICJkZXBsb3ltZW50IiwNCiAgICAicHJvZHVjdGlvbiINCiAgXSwNCiAgImxpbWl0cyI6ICJydW50aW1lIGFydGlmYWN0cy90cmFjZXMgcHJpdmF0ZSBpZ25vcmVkOyBuZXZlciBleHBvcnQgdW5yZWRhY3RlZCBicm93c2VyIHRyYWNlIG9yIGNyZWRlbnRpYWxzIg0KfQ0K",
+    "value": {
+      "id": "NCR-RELEASE-REVIEW-20261013",
+      "role": "Local INTERNAL_AGENT orchestrator/reviewer",
+      "phase": "bounded current live diagnostic; not NCR pilot activation",
+      "decisionOwner": "Local",
+      "sourceHead": "8accf591da4223fe0a88fc6c63b2062cce733ee1",
+      "startedAt": "2026-10-13T09:48:28.663203+00:00",
+      "authority": "Operator 2026-10-13: continue NCR, permit Alibaba live test; no trivial reconfirmations",
+      "preImplementation": "PASS; .cvf/runtime/ncr-continuation-preimplementation-20261013.log",
+      "keySource": "Web .env.local; selected in memory only; process aliases overridden in child",
+      "data": "existing canonical synthetic fixtures only; isolated file events/snapshots/memory",
+      "models": [
+        "qwen-flash (existing frozen canonical proof fixtures)"
+      ],
+      "stop": "one canonical bundle; no blind rerun; diagnose any failure before dependent retry",
+      "budget": "finite existing suite + one A5/A4 recovery call; wrapper timeout 1800 seconds; no additional probes",
+      "cost": "UNKNOWN; no price/billing acceptance inferred",
+      "forbiddenEffects": [
+        "real-ledger mutation",
+        "artifact acceptance",
+        "public sync",
+        "deployment",
+        "production"
+      ],
+      "limits": "runtime artifacts/traces private ignored; never export unredacted browser trace or credentials"
+    }
+  },
+  "result": {
+    "path": ".cvf/runtime/ncr-release-review-20261013/result.json",
+    "bytes": 2545,
+    "sha256": "d74149c4e4c6adb8fd2150474a88aafe625db0a21f57c5087a6acf45a872d97e",
+    "rawBase64": "ew0KICAiZGF0ZSI6ICIyMDI2LTEwLTEzIiwNCiAgImdhdGVfcmVzdWx0IjogIlBBU1MiLA0KICAiY2hlY2tzIjogWw0KICAgIHsNCiAgICAgICJuYW1lIjogIkNhcGFiaWxpdHkgZW52aXJvbm1lbnQgcHJlZmxpZ2h0IiwNCiAgICAgICJzdGF0dXMiOiAiUEFTUyIsDQogICAgICAibWVzc2FnZSI6ICJDYXBhYmlsaXR5IGVudmlyb25tZW50IHByZWZsaWdodCBQQVNTIiwNCiAgICAgICJkZXRhaWwiOiBbDQogICAgICAgICJnaXQ6QVZBSUxBQkxFIiwNCiAgICAgICAgInB5dGhvbjpBVkFJTEFCTEUiLA0KICAgICAgICAibm9kZTpBVkFJTEFCTEUiLA0KICAgICAgICAibnBtOkFWQUlMQUJMRSIsDQogICAgICAgICJucHg6QVZBSUxBQkxFIg0KICAgICAgXQ0KICAgIH0sDQogICAgew0KICAgICAgIm5hbWUiOiAiV2ViIGJ1aWxkIChucG0gcnVuIGJ1aWxkKSIsDQogICAgICAic3RhdHVzIjogIlBBU1MiLA0KICAgICAgIm1lc3NhZ2UiOiAiQnVpbGQgc3VjY2VlZGVkIiwNCiAgICAgICJkZXRhaWwiOiBbXQ0KICAgIH0sDQogICAgew0KICAgICAgIm5hbWUiOiAiVHlwZVNjcmlwdCBjaGVjayAoZ3VhcmQgY29udHJhY3QpIiwNCiAgICAgICJzdGF0dXMiOiAiUEFTUyIsDQogICAgICAibWVzc2FnZSI6ICJUeXBlU2NyaXB0IGNoZWNrIGNsZWFuIiwNCiAgICAgICJkZXRhaWwiOiBbXQ0KICAgIH0sDQogICAgew0KICAgICAgIm5hbWUiOiAiUHJvdmlkZXIgcmVhZGluZXNzIiwNCiAgICAgICJzdGF0dXMiOiAiUEFTUyIsDQogICAgICAibWVzc2FnZSI6ICJDRVJUSUZJRUQgbGFuZXM6IDMgXHUyMDE0IHN0YXR1czogQ0VSVElGSUVEIiwNCiAgICAgICJkZXRhaWwiOiBbXQ0KICAgIH0sDQogICAgew0KICAgICAgIm5hbWUiOiAiU2VjcmV0cyBzY2FuIiwNCiAgICAgICJzdGF0dXMiOiAiUEFTUyIsDQogICAgICAibWVzc2FnZSI6ICJObyBzZWNyZXQgcGF0dGVybnMgZGV0ZWN0ZWQgaW4gZGVjbGFyZWQgc2NhbiBzY29wZSIsDQogICAgICAiZGV0YWlsIjogWw0KICAgICAgICAiZmlsZXNTY2FubmVkPTY3OTQxIGZpbGVzU2tpcHBlZEV4dGVuc2lvbj0xMTIwNiBza2lwcGVkRGlyZWN0b3JpZXM9MTc3IGZpbGVzVW5yZWFkYWJsZT0wIHN0b3BwZWRBZnRlckZpbmRpbmdzTGltaXQ9ZmFsc2UiDQogICAgICBdDQogICAgfSwNCiAgICB7DQogICAgICAibmFtZSI6ICJEb2NzIGdvdmVybmFuY2UgKFJDIGRvY3MgcHJlc2VudCkiLA0KICAgICAgInN0YXR1cyI6ICJQQVNTIiwNCiAgICAgICJtZXNzYWdlIjogIkFsbCAzIHJlcXVpcmVkIFJDIGRvY3MgcHJlc2VudCIsDQogICAgICAiZGV0YWlsIjogW10NCiAgICB9LA0KICAgIHsNCiAgICAgICJuYW1lIjogIkUyRSBQbGF5d3JpZ2h0IFVJIChtb2NrKSIsDQogICAgICAic3RhdHVzIjogIlBBU1MiLA0KICAgICAgIm1lc3NhZ2UiOiAiUGxheXdyaWdodCBVSSBtb2NrIHN1aXRlIHBhc3NlZCIsDQogICAgICAiZGV0YWlsIjogWw0KICAgICAgICAiXHUwMDFiWzJtW1dlYlNlcnZlcl0gXHUwMDFiWzIybShVc2UgYG5vZGUgLS10cmFjZS13YXJuaW5ncyAuLi5gIHRvIHNob3cgd2hlcmUgdGhlIHdhcm5pbmcgd2FzIGNyZWF0ZWQpIg0KICAgICAgXQ0KICAgIH0sDQogICAgew0KICAgICAgIm5hbWUiOiAiRTJFIFBsYXl3cmlnaHQgR292ZXJuYW5jZSAobGl2ZSkiLA0KICAgICAgInN0YXR1cyI6ICJQQVNTIiwNCiAgICAgICJtZXNzYWdlIjogIlBsYXl3cmlnaHQgbGl2ZSBnb3Zlcm5hbmNlIHN1aXRlIHBhc3NlZCIsDQogICAgICAiZGV0YWlsIjogWw0KICAgICAgICAiXHUwMDFiWzJtW1dlYlNlcnZlcl0gXHUwMDFiWzIybShVc2UgYG5vZGUgLS10cmFjZS13YXJuaW5ncyAuLi5gIHRvIHNob3cgd2hlcmUgdGhlIHdhcm5pbmcgd2FzIGNyZWF0ZWQpIg0KICAgICAgXQ0KICAgIH0sDQogICAgew0KICAgICAgIm5hbWUiOiAiU09UMyBjYW5vbmljYWwgcmVsZWFzZSBwcm9vZiAoQTUpIiwNCiAgICAgICJzdGF0dXMiOiAiUEFTUyIsDQogICAgICAibWVzc2FnZSI6ICJTT1QzIGNhbm9uaWNhbCByZWxlYXNlIHByb29mIFBBU1Mgd2l0aCBmdWxsIG93bmVyIGNvcnJlbGF0aW9uIiwNCiAgICAgICJkZXRhaWwiOiBbXQ0KICAgIH0NCiAgXSwNCiAgInNvdDMiOiB7DQogICAgImFkbWlzc2lvbkZhaWx1cmVzIjogW10sDQogICAgImFwcHJvdmVkQ29udGV4dEluY2x1ZGVkIjogdHJ1ZSwNCiAgICAiY2xhaW0iOiAiU09UM19GQUlMVVJFX1JFQ09WRVJZX1BST1ZFTl9CT1VOREVEIiwNCiAgICAiZHVyYWJsZU93bmVyQ29ycmVsYXRpb25Db21wbGV0ZSI6IHRydWUsDQogICAgImh0dHBTdGF0dXMiOiAyMDAsDQogICAgImxvY2FsTmVnYXRpdmVHYXRlUGFzc2VkIjogdHJ1ZSwNCiAgICAibmVnYXRpdmVDYXNlQ291bnQiOiAxOSwNCiAgICAib3ZlcmFsbCI6ICJQQVNTIiwNCiAgICAicHJvdmlkZXJTdWNjZXNzIjogdHJ1ZSwNCiAgICAicmVjb3ZlcnlQcm92aWRlckNhbGxDb3VudCI6IDEsDQogICAgInJvbGxiYWNrUHJvdmlkZXJDYWxsQ291bnQiOiAxLA0KICAgICJ0cmFjZUNvdW50IjogMSwNCiAgICAiemVyb1Byb3ZpZGVyQ2FsbENhc2VDb3VudCI6IDE4DQogIH0NCn0NCg==",
+    "value": {
+      "date": "2026-10-13",
+      "gate_result": "PASS",
+      "checks": [
+        {
+          "name": "Capability environment preflight",
+          "status": "PASS",
+          "message": "Capability environment preflight PASS",
+          "detail": [
+            "git:AVAILABLE",
+            "python:AVAILABLE",
+            "node:AVAILABLE",
+            "npm:AVAILABLE",
+            "npx:AVAILABLE"
+          ]
+        },
+        {
+          "name": "Web build (npm run build)",
+          "status": "PASS",
+          "message": "Build succeeded",
+          "detail": []
+        },
+        {
+          "name": "TypeScript check (guard contract)",
+          "status": "PASS",
+          "message": "TypeScript check clean",
+          "detail": []
+        },
+        {
+          "name": "Provider readiness",
+          "status": "PASS",
+          "message": "CERTIFIED lanes: 3 \u2014 status: CERTIFIED",
+          "detail": []
+        },
+        {
+          "name": "Secrets scan",
+          "status": "PASS",
+          "message": "No secret patterns detected in declared scan scope",
+          "detail": [
+            "filesScanned=67941 filesSkippedExtension=11206 skippedDirectories=177 filesUnreadable=0 stoppedAfterFindingsLimit=false"
+          ]
+        },
+        {
+          "name": "Docs governance (RC docs present)",
+          "status": "PASS",
+          "message": "All 3 required RC docs present",
+          "detail": []
+        },
+        {
+          "name": "E2E Playwright UI (mock)",
+          "status": "PASS",
+          "message": "Playwright UI mock suite passed",
+          "detail": [
+            "\u001b[2m[WebServer] \u001b[22m(Use `node --trace-warnings ...` to show where the warning was created)"
+          ]
+        },
+        {
+          "name": "E2E Playwright Governance (live)",
+          "status": "PASS",
+          "message": "Playwright live governance suite passed",
+          "detail": [
+            "\u001b[2m[WebServer] \u001b[22m(Use `node --trace-warnings ...` to show where the warning was created)"
+          ]
+        },
+        {
+          "name": "SOT3 canonical release proof (A5)",
+          "status": "PASS",
+          "message": "SOT3 canonical release proof PASS with full owner correlation",
+          "detail": []
+        }
+      ],
+      "sot3": {
+        "admissionFailures": [],
+        "approvedContextIncluded": true,
+        "claim": "SOT3_FAILURE_RECOVERY_PROVEN_BOUNDED",
+        "durableOwnerCorrelationComplete": true,
+        "httpStatus": 200,
+        "localNegativeGatePassed": true,
+        "negativeCaseCount": 19,
+        "overall": "PASS",
+        "providerSuccess": true,
+        "recoveryProviderCallCount": 1,
+        "rollbackProviderCallCount": 1,
+        "traceCount": 1,
+        "zeroProviderCallCaseCount": 18
+      }
+    }
+  },
+  "manifest": {
+    "path": ".cvf/runtime/ncr-release-review-20261013/manifest.json",
+    "bytes": 1971,
+    "sha256": "397c4bd19bb9e75438a81cf23f3b98c525d12c4ffce7ec90002f97c61aa8c339",
+    "rawBase64": "ew0KICAiY2xhaW1Cb3VuZGFyeSI6ICJNYW5pZmVzdCByZWNvcmRzIGZpbGUgaGFzaGVzLCByZXJ1biBjb21tYW5kLCByZXBvIGNvbW1pdCwgYW5kIG9wdGlvbmFsIEhNQUMuIEl0IGRvZXMgbm90IHByb3ZlIHRoaXJkLXBhcnR5IGV4ZWN1dGlvbiB1bmxlc3MgYW4gZXh0ZXJuYWwgYW5jaG9yIGlzIHByb3ZpZGVkLiIsDQogICJldmlkZW5jZSI6IFsNCiAgICB7DQogICAgICAicGF0aCI6ICIuY3ZmL3J1bnRpbWUvbmNyLXJlbGVhc2UtcmV2aWV3LTIwMjYxMDEzL3Jlc3VsdC5qc29uIiwNCiAgICAgICJzaGEyNTYiOiAiZDc0MTQ5YzRlNGM2YWRiOGZkMjE1MDQ3NGE4OGFhZmU2MjVkYjBhMjFmNTdjNTA4N2E2YWNmNDVhODcyZDk3ZSIsDQogICAgICAic2l6ZUJ5dGVzIjogMjU0NQ0KICAgIH0sDQogICAgew0KICAgICAgInBhdGgiOiAiLmN2Zi9ydW50aW1lL25jci1yZWxlYXNlLXJldmlldy0yMDI2MTAxMy9zb3QzLWRpYWdub3N0aWMuanNvbiIsDQogICAgICAic2hhMjU2IjogIjhlYWIxMDFiN2VlOTViY2Y5Y2QzMDZmZDI3ZDdjN2Y4NjllOTM5OGZjODhiMjQ4ZGQ1NjU3ZDlkNjk3NDBkNDEiLA0KICAgICAgInNpemVCeXRlcyI6IDU0NA0KICAgIH0sDQogICAgew0KICAgICAgInBhdGgiOiAiLmN2Zi9ydW50aW1lL25jci1yZWxlYXNlLXJldmlldy0yMDI2MTAxMy9lMmUtZGlhZ25vc3RpYy5qc29uIiwNCiAgICAgICJzaGEyNTYiOiAiYWJkZmJmZmVjYmUxOGVkOTRkZjk4Mjk4MTllNTk2ZWUyODViNTJhOTRhYTEwODUxNDQ1MmE5MTIxNzIxYzc4OSIsDQogICAgICAic2l6ZUJ5dGVzIjogNg0KICAgIH0NCiAgXSwNCiAgImV4dGVybmFsQW5jaG9yIjogew0KICAgICJhbmNob3JJZCI6ICIiLA0KICAgICJhbmNob3JVcmwiOiAiIiwNCiAgICAic3RhdHVzIjogIk5PVF9QUk9WSURFRCINCiAgfSwNCiAgImdlbmVyYXRlZEF0IjogIjIwMjYtMTAtMTNUMDk6NTg6MjguMzc4NzIxKzAwOjAwIiwNCiAgInJlcG9zaXRvcnkiOiB7DQogICAgImJyYW5jaCI6ICJtYWluIiwNCiAgICAiY29tbWl0IjogIjhhY2NmNTkxZGE0MjIzZmUwYTg4ZmM2YzYzYjIwNjJjY2U3MzNlZTEiLA0KICAgICJkaXJ0eVN0YXR1cyI6ICJNIEVYVEVOU0lPTlMvQ1ZGX3YxLjZfQUdFTlRfUExBVEZPUk0vY3ZmLXdlYi90c2NvbmZpZy5qc29uXG4/PyBkb2NzL2Jhc2VsaW5lcy9DVkZfR0MwMThfTkNSX1dPUktfVFJBTlNGRVJfQlJPV1NFUl8yMDI2LTEwLTEzLm1kXG4/PyBkb2NzL3Jldmlld3MvZXZpZGVuY2UvbmNyLXdvcmstdHJhbnNmZXItYnJvd3Nlci1kaXNwYXRjaC0yMDI2MTAxMy5qc29uXG4/PyBkb2NzL3dvcmtfb3JkZXJzL0NWRl9BR0VOVF9XT1JLX09SREVSX05DUl9XT1JLX1RSQU5TRkVSX0JST1dTRVJfMjAyNi0xMC0xMy5tZCIsDQogICAgInJlbW90ZU9yaWdpbiI6ICJodHRwczovL2dpdGh1Yi5jb20vQmxhY2tiaXJkMDgxL0NvbnRyb2xsZWQtVmliZS1GcmFtZXdvcmstQ1ZGLVByb3ZlbmFuY2UuZ2l0Ig0KICB9LA0KICAicmVydW4iOiB7DQogICAgImFjY2VwdGVkU2VjcmV0RW52IjogWw0KICAgICAgIkRBU0hTQ09QRV9BUElfS0VZIiwNCiAgICAgICJBTElCQUJBX0FQSV9LRVkiLA0KICAgICAgIkNWRl9BTElCQUJBX0FQSV9LRVkiLA0KICAgICAgIkNWRl9CRU5DSE1BUktfQUxJQkFCQV9LRVkiDQogICAgXSwNCiAgICAiY29tbWFuZCI6ICJweXRob24gc2NyaXB0cy9ydW5fY3ZmX3JlbGVhc2VfZ2F0ZV9idW5kbGUucHkgLS1zb3QzLWRpYWdub3N0aWMtb3V0cHV0IDxwYXRoPiAtLWUyZS1kaWFnbm9zdGljLW91dHB1dCA8cGF0aD4gLS1qc29uIiwNCiAgICAicmVxdWlyZXNMaXZlUHJvdmlkZXJLZXkiOiB0cnVlDQogIH0sDQogICJzY2hlbWEiOiAiY3ZmLmxpdmVFdmlkZW5jZU1hbmlmZXN0LnYxIiwNCiAgInNpZ25hdHVyZSI6IHsNCiAgICAiYWxnb3JpdGhtIjogImhtYWMtc2hhMjU2IiwNCiAgICAiZGlnZXN0IjogIiIsDQogICAgInN0YXR1cyI6ICJVTlNJR05FRCINCiAgfQ0KfQ0K",
+    "value": {
+      "claimBoundary": "Manifest records file hashes, rerun command, repo commit, and optional HMAC. It does not prove third-party execution unless an external anchor is provided.",
+      "evidence": [
+        {
+          "path": ".cvf/runtime/ncr-release-review-20261013/result.json",
+          "sha256": "d74149c4e4c6adb8fd2150474a88aafe625db0a21f57c5087a6acf45a872d97e",
+          "sizeBytes": 2545
+        },
+        {
+          "path": ".cvf/runtime/ncr-release-review-20261013/sot3-diagnostic.json",
+          "sha256": "8eab101b7ee95bcf9cd306fd27d7c7f869e9398fc88b248dd5657d9d69740d41",
+          "sizeBytes": 544
+        },
+        {
+          "path": ".cvf/runtime/ncr-release-review-20261013/e2e-diagnostic.json",
+          "sha256": "abdfbffecbe18ed94df9829819e596ee285b52a94aa108514452a9121721c789",
+          "sizeBytes": 6
+        }
+      ],
+      "externalAnchor": {
+        "anchorId": "",
+        "anchorUrl": "",
+        "status": "NOT_PROVIDED"
+      },
+      "generatedAt": "2026-10-13T09:58:28.378721+00:00",
+      "repository": {
+        "branch": "main",
+        "commit": "8accf591da4223fe0a88fc6c63b2062cce733ee1",
+        "dirtyStatus": "M EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tsconfig.json\n?? docs/baselines/CVF_GC018_NCR_WORK_TRANSFER_BROWSER_2026-10-13.md\n?? docs/reviews/evidence/ncr-work-transfer-browser-dispatch-20261013.json\n?? docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_WORK_TRANSFER_BROWSER_2026-10-13.md",
+        "remoteOrigin": "https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF-Provenance.git"
+      },
+      "rerun": {
+        "acceptedSecretEnv": [
+          "DASHSCOPE_API_KEY",
+          "ALIBABA_API_KEY",
+          "CVF_ALIBABA_API_KEY",
+          "CVF_BENCHMARK_ALIBABA_KEY"
+        ],
+        "command": "python scripts/run_cvf_release_gate_bundle.py --sot3-diagnostic-output <path> --e2e-diagnostic-output <path> --json",
+        "requiresLiveProviderKey": true
+      },
+      "schema": "cvf.liveEvidenceManifest.v1",
+      "signature": {
+        "algorithm": "hmac-sha256",
+        "digest": "",
+        "status": "UNSIGNED"
+      }
+    }
+  },
+  "sot3Diagnostic": {
+    "path": ".cvf/runtime/ncr-release-review-20261013/sot3-diagnostic.json",
+    "bytes": 544,
+    "sha256": "8eab101b7ee95bcf9cd306fd27d7c7f869e9398fc88b248dd5657d9d69740d41",
+    "rawBase64": "ew0KICAiYTRMb2NhbE5lZ2F0aXZlR2F0ZVBhc3NlZCI6IHRydWUsDQogICJhNFJlY292ZXJ5UHJvdmlkZXJDYWxsQ291bnQiOiAxLA0KICAiYTRSZXR1cm5Db2RlIjogMCwNCiAgImFkbWlzc2lvbkZhaWx1cmVzIjogW10sDQogICJiYXRjaElkIjogIlNPVDMtQUNULUE1IiwNCiAgImRpYWdub3N0aWMiOiBudWxsLA0KICAiZmluaXNoZWRBdFV0YyI6ICIyMDI2LTEwLTEzVDA5OjU4OjI4LjM2NzY1MSswMDowMCIsDQogICJzY2hlbWFWZXJzaW9uIjogImN2Zi5zb3QzQWN0QTVEaWFnbm9zdGljLnYxIiwNCiAgInNlY3JldFNhZmV0eSI6IHsNCiAgICAiZnVsbFByb21wdFBlcnNpc3RlZCI6IGZhbHNlLA0KICAgICJyYXdLZXlQZXJzaXN0ZWQiOiBmYWxzZSwNCiAgICAicmF3T3V0cHV0UGVyc2lzdGVkIjogZmFsc2UsDQogICAgInJhd1Byb3ZpZGVyQm9keVBlcnNpc3RlZCI6IGZhbHNlDQogIH0sDQogICJzdGFydGVkQXRVdGMiOiAiMjAyNi0xMC0xM1QwOTo1NjozOC44MDUwNzMrMDA6MDAiLA0KICAidW5kZXJseWluZ0E0RGlhZ25vc3RpYyI6IG51bGwNCn0NCg==",
+    "value": {
+      "a4LocalNegativeGatePassed": true,
+      "a4RecoveryProviderCallCount": 1,
+      "a4ReturnCode": 0,
+      "admissionFailures": [],
+      "batchId": "SOT3-ACT-A5",
+      "diagnostic": null,
+      "finishedAtUtc": "2026-10-13T09:58:28.367651+00:00",
+      "schemaVersion": "cvf.sot3ActA5Diagnostic.v1",
+      "secretSafety": {
+        "fullPromptPersisted": false,
+        "rawKeyPersisted": false,
+        "rawOutputPersisted": false,
+        "rawProviderBodyPersisted": false
+      },
+      "startedAtUtc": "2026-10-13T09:56:38.805073+00:00",
+      "underlyingA4Diagnostic": null
+    }
+  },
+  "e2eDiagnostic": {
+    "path": ".cvf/runtime/ncr-release-review-20261013/e2e-diagnostic.json",
+    "bytes": 6,
+    "sha256": "abdfbffecbe18ed94df9829819e596ee285b52a94aa108514452a9121721c789",
+    "rawBase64": "bnVsbA0K",
+    "value": null
+  },
+  "exitCode": 0,
+  "latencyMs": 599890,
+  "exactCommand": "python -B scripts/run_cvf_release_gate_bundle.py --json --output .cvf/runtime/ncr-release-review-20261013/result.json --manifest-output .cvf/runtime/ncr-release-review-20261013/manifest.json --sot3-diagnostic-output .cvf/runtime/ncr-release-review-20261013/sot3-diagnostic.json --e2e-diagnostic-output .cvf/runtime/ncr-release-review-20261013/e2e-diagnostic.json",
+  "provider": "Alibaba",
+  "model": "qwen-flash",
+  "credentialValuePersisted": false,
+  "sourcePin": "8accf591da4223fe0a88fc6c63b2062cce733ee1",
+  "preflightEvidence": {
+    "path": ".cvf/runtime/ncr-continuation-preimplementation-20261013.log",
+    "result": "PASS"
+  },
+  "usage": {
+    "eventFileBytes": 110957,
+    "eventFileSha256": "4b6e17d1ef0908fcd4872e4ce4757329f1676d32cda19c141cc38d0536eb2555",
+    "eventCount": 44,
+    "auditRows": 38,
+    "costRows": 6,
+    "auditActionCounts": {
+      "CAPTURE_GOVERNANCE_AUDIT_MEMORY": 6,
+      "EMIT_RUNTIME_RECEIPT_COUNT": 6,
+      "EMIT_WORKFLOW_STEP_TRACES": 6,
+      "EXECUTE_AI_TEMPLATE": 6,
+      "FILTER_KNOWLEDGE_SCOPE": 6,
+      "READ_ADMIN_ROUTE": 2,
+      "analyze": 6
+    },
+    "auditEventTypeCounts": {
+      "ADMIN_ACCESS_DENIED": 2,
+      "AUDIT_MEMORY_RECEIPT_CAPTURED": 6,
+      "EXECUTION_COMPLETED": 6,
+      "KNOWLEDGE_SCOPE_FILTER_APPLIED": 6,
+      "MANDATORY_GATEWAY_EVALUATED": 6,
+      "OPERATIONAL_BENCHMARK_METRIC_EMITTED": 6,
+      "WORKFLOW_BINDING_EXECUTED": 6
+    },
+    "successfulExecutionRows": 6,
+    "costRowProviders": [
+      "alibaba"
+    ],
+    "costRowModels": [
+      "qwen-flash"
+    ],
+    "inputTokens": 9654,
+    "outputTokens": 5794,
+    "estimatedCostUSD": 0.03283,
+    "usageBoundary": "Partial isolated server ledger only; excludes direct-client and A4 scopes. Estimated cost is not provider billing. No global provider-call count or native subagent usage inferred."
+  },
+  "tsconfigCleanup": {
+    "path": ".cvf/runtime/ncr-release-review-20261013/tsconfig-cleanup.json",
+    "bytes": 693,
+    "sha256": "c8ebeedcac32f155305b61751b47b49cf0c898e1270c82d485ff68b19ac1848d",
+    "rawBase64": "ew0KICAicmVzdG9yZWQiOiAiR2l0IEhFQUQgdmlhIGdpdCByZXN0b3JlIiwNCiAgIm9yaWdpbmFsUmF3UHJlaW1hZ2UiOiAiTk9UX0NBUFRVUkVEX0JFRk9SRV9SVU47IEdpdCBub3JtYWxpemVkIGlkZW50aXR5IG9ubHkiLA0KICAiYWRkZWRJbmNsdWRlcyI6IFsNCiAgICAiLm5leHQtY3ZmLXJlbGVhc2UtZ2F0ZS1idWlsZC90eXBlcy8qKi8qLnRzIiwNCiAgICAiLm5leHQtY3ZmLXJlbGVhc2UtZ2F0ZS1idWlsZC9kZXYvdHlwZXMvKiovKi50cyIsDQogICAgIi5uZXh0LWN2Zi1yZWxlYXNlLWdhdGUtZTJlLW1vY2svdHlwZXMvKiovKi50cyIsDQogICAgIi5uZXh0LWN2Zi1yZWxlYXNlLWdhdGUtZTJlLW1vY2svZGV2L3R5cGVzLyoqLyoudHMiLA0KICAgICIubmV4dC1jdmYtcmVsZWFzZS1nYXRlLWUyZS1saXZlL3R5cGVzLyoqLyoudHMiLA0KICAgICIubmV4dC1jdmYtcmVsZWFzZS1nYXRlLWUyZS1saXZlL2Rldi90eXBlcy8qKi8qLnRzIg0KICBdLA0KICAiZ2VuZXJhdGVkU2hhMjU2IjogIjE1MDUxZGYyMTU1ZDI2MTQ5OWQ5MmM4ZjBjMTNmZjgzOTY4MDE5MDQ0MmU1MTY5NTMwZTc4NTA3YWFkMTZiOWQiLA0KICAicmVzdG9yZWRTaGEyNTYiOiAiZDRhZjQ4MjNjOGEyOTE5Nzk2YzVmYWEyOTgwNWNkMTUyMjE3ZmJjMjVkNjAyMWMyZGE1NzU0MWE2ODVlYTBmNiIsDQogICJzZW1hbnRpY01hdGNoIjogdHJ1ZQ0KfQ0K",
+    "value": {
+      "restored": "Git HEAD via git restore",
+      "originalRawPreimage": "NOT_CAPTURED_BEFORE_RUN; Git normalized identity only",
+      "addedIncludes": [
+        ".next-cvf-release-gate-build/types/**/*.ts",
+        ".next-cvf-release-gate-build/dev/types/**/*.ts",
+        ".next-cvf-release-gate-e2e-mock/types/**/*.ts",
+        ".next-cvf-release-gate-e2e-mock/dev/types/**/*.ts",
+        ".next-cvf-release-gate-e2e-live/types/**/*.ts",
+        ".next-cvf-release-gate-e2e-live/dev/types/**/*.ts"
+      ],
+      "generatedSha256": "15051df2155d261499d92c8f0c13ff839680190442e5169530e78507aad16b9d",
+      "restoredSha256": "d4af4823c8a2919796c5faa29805cd152217fbc25d6021c2da57541a685ea0f6",
+      "semanticMatch": true
+    }
+  },
+  "qualification": [
+    "Bundle ran while dispatch docs and Next-generated tsconfig were dirty; production sources were unchanged. This is not a clean-stamped release artifact.",
+    "Manifest is UNSIGNED with no external anchor; records are Local observations, not third-party attestation.",
+    "Provider-readiness three certified lanes consume saved historical receipts; this diagnostic does not freshly prove three connections.",
+    "SOT3 recoveryProviderCallCount=1 is a real call; rollbackProviderCallCount=1 is a local spy assertion, not an additional live call.",
+    "Initial raw tsconfig preimage was not captured before bundle; cleanup proved semantic identity and restored Git HEAD normalized bytes only.",
+    "Mock suite is UI structure only; live governance and SOT3 proof use actual Alibaba API. No blind repeat was run."
+  ],
+  "claimBoundary": "Canonical bundle9/9 PASS on named current sources with real Alibaba, bounded governance/failure-recovery evidence. No NCR selected-job accepted artifact, whole R1-R4 exit, backup/restore, two independent current provider connections, public/deployment/production readiness."
+}

@@ -1,0 +1,276 @@
+{
+  "schemaVersion": "cvf.ncrWorkTransferBrowserConditionalWorkerEvidence@1.0.0",
+  "batchId": "CVF-NCR-WORK-TRANSFER-BROWSER-RETURN-REPAIR-20261013",
+  "executionBaseHead": "8fd2c56d26f441fa9824e71211178f6e85eee5f6",
+  "buildStartUtc": "2026-10-13T11:25:30.3058942Z",
+  "proofWrittenUtc": "2026-10-13T11:36:22.557260+00:00",
+  "role": "INTERNAL_AGENT implementation worker",
+  "decisionOwner": "LOCAL reviewer/closer",
+  "sourcePinsVerified": {
+    "count": 13,
+    "rawAndHeadAllMatch": true
+  },
+  "primaryCustodyUnmodified": true,
+  "finalTestSha256": "a7c4d8379cb3552bd037bf8b2e1577501d5a38d1ec0374aa107a163b4336847c",
+  "proofs": {
+    "PROOF-REQ-PREFLIGHT": {
+      "status": "PASS",
+      "browserPreflight": {
+        "browserName": "chromium",
+        "port": "3021",
+        "baseUrl": "http://localhost:3021",
+        "nextDistDir": ".next-ncr-work-transfer-browser",
+        "authUrl": "http://localhost:3021",
+        "parentNextAuthUrlState": "EMPTY",
+        "noHopLogPath": "C:\\Users\\DELL\\AppData\\Local\\Temp\\cvf-ncr-work-transfer-browser-conditional-20261013-candidate5-no-hop.jsonl",
+        "preloadPath": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\EXTENSIONS\\CVF_v1.6_AGENT_PLATFORM\\cvf-web\\tests\\e2e\\support\\b2d-no-hop-preload.cjs",
+        "storageAdapter": "file",
+        "isolatedAuditPath": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-work-transfer-browser-conditional-20261013\\events.jsonl",
+        "isolatedSnapshotPath": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-work-transfer-browser-conditional-20261013\\snapshots",
+        "clearedCredentialNames": [
+          "ALIBABA_API_KEY"
+        ],
+        "remainingCredentialNames": [],
+        "isolation": {
+          "serverContexts": 3,
+          "processedServerContexts": 1,
+          "nextauthUrlStates": [
+            "EMPTY"
+          ],
+          "wrapperReached": true,
+          "attemptEvents": 0,
+          "maxAttemptCount": 0,
+          "newestServerTickAgeMs": 13
+        },
+        "exportRequestMethods": []
+      },
+      "noHopSummary": {
+        "logPath": "C:\\Users\\DELL\\AppData\\Local\\Temp\\cvf-ncr-work-transfer-browser-conditional-20261013-candidate5-no-hop.jsonl",
+        "logBytes": 168518,
+        "logSha256": "3d5227f9c0e36c0f7d46c7dbba3206383c70d12450dde28ad764aab9220fd0cf",
+        "allRows": 555,
+        "serverRows": 257,
+        "processedServerRows": 124,
+        "serverDistinctPidThreadContexts": 11,
+        "processedServerDistinctPidThreadContexts": 9,
+        "processedNextauthStates": [
+          "EMPTY"
+        ],
+        "attemptRows": 0,
+        "maxAttemptCount": 0
+      },
+      "browserLogPath": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-work-transfer-browser-conditional-20261013\\focused-browser-candidate5.log"
+    },
+    "PROOF-REQ-JOURNEY": {
+      "status": "PASS",
+      "observed": {
+        "browserName": "chromium",
+        "browserVersion": "145.0.7632.6",
+        "fixtureRecordIds": [
+          "ncr-synthetic-audit-001",
+          "ncr-synthetic-audit-002"
+        ],
+        "auditRequestMethods": [
+          "GET",
+          "GET"
+        ],
+        "interceptedAuditMethods": [
+          "GET",
+          "GET"
+        ],
+        "exportRequestMethods": [
+          "POST"
+        ],
+        "responseStatus": 200,
+        "responseFilename": "ncr-browser-draft-alpha.html",
+        "routeResponsePath": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-work-transfer-browser-conditional-20261013\\route-response.json",
+        "routeResponseByteLength": 5137,
+        "routeResponseJsonWireSha256": "4538ba6b045c53cf84f39d1b85e11dcc737ead164114b5c90903797f0957741e",
+        "sourceContentSha256": "6b5b9564a202e7f836f2fc8eabecccef290080f732cf5d82ce2d615ba900a98f",
+        "routeHtmlByteLength": 3191,
+        "routeHtmlSha256": "f6354ee2cd9c5748ebbdf9ec281f13db66a24f0d5a51aaf1fe494ba74c3a4bb8",
+        "downloadedHtmlPath": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-work-transfer-browser-conditional-20261013\\downloaded.html",
+        "downloadedHtmlByteLength": 3191,
+        "downloadedHtmlSha256": "f6354ee2cd9c5748ebbdf9ec281f13db66a24f0d5a51aaf1fe494ba74c3a4bb8",
+        "rawBytesEqual": true,
+        "receiptStatus": "NOT_CONFIGURED",
+        "receiptPresent": false,
+        "receiptAttemptIdPresent": false,
+        "governanceState": "DRAFT_UNACCEPTED",
+        "postBuildVersionState": "stale",
+        "selectionAndReload": "fresh editable draft with no prior result",
+        "externalRequests": [
+          {
+            "method": "GET",
+            "origin": "https://fonts.googleapis.com",
+            "pathname": "/css2"
+          },
+          {
+            "method": "GET",
+            "origin": "https://fonts.googleapis.com",
+            "pathname": "/css2"
+          },
+          {
+            "method": "GET",
+            "origin": "https://fonts.googleapis.com",
+            "pathname": "/css2"
+          }
+        ],
+        "unexpectedExternalRequests": [],
+        "isolationAfterRun": {
+          "serverContexts": 11,
+          "processedServerContexts": 9,
+          "nextauthUrlStates": [
+            "EMPTY"
+          ],
+          "wrapperReached": true,
+          "attemptEvents": 0,
+          "maxAttemptCount": 0,
+          "newestServerTickAgeMs": 104
+        }
+      },
+      "interceptionBoundary": "GET /api/admin/audit only; unmocked POST /api/artifacts/export",
+      "passiveExternalAssetSource": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/globals.css line 1; GET fonts.googleapis.com/css2 observed three times; no other external request observed"
+    },
+    "PROOF-REQ-VERSION-BYTES": {
+      "status": "PASS",
+      "wire": {
+        "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-work-transfer-browser-conditional-20261013\\route-response.json",
+        "bytes": 5137,
+        "sha256": "4538ba6b045c53cf84f39d1b85e11dcc737ead164114b5c90903797f0957741e"
+      },
+      "decodedHtml": {
+        "bytes": 3191,
+        "sha256": "f6354ee2cd9c5748ebbdf9ec281f13db66a24f0d5a51aaf1fe494ba74c3a4bb8"
+      },
+      "savedHtml": {
+        "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-work-transfer-browser-conditional-20261013\\downloaded.html",
+        "bytes": 3191,
+        "sha256": "f6354ee2cd9c5748ebbdf9ec281f13db66a24f0d5a51aaf1fe494ba74c3a4bb8"
+      },
+      "byteEqual": true,
+      "sourceContentSha256": "6b5b9564a202e7f836f2fc8eabecccef290080f732cf5d82ce2d615ba900a98f",
+      "receiptStatus": "NOT_CONFIGURED",
+      "governanceState": "DRAFT_UNACCEPTED"
+    },
+    "PROOF-REQ-RETURN": {
+      "status": "PASS",
+      "exactTrackedOutputs": [
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/ncr-work-transfer-browser.spec.ts",
+        "docs/reviews/evidence/ncr-work-transfer-browser-conditional-worker-20261013.json",
+        "docs/reviews/CVF_NCR_WORK_TRANSFER_BROWSER_CONDITIONAL_RETURN_2026-10-13.md"
+      ],
+      "independentProbe": "PENDING_LOCAL_REVIEWER",
+      "typeCheck": {
+        "command": "npx.cmd tsc --noEmit",
+        "exitCode": 0
+      },
+      "scopedLint": {
+        "command": "npx.cmd eslint tests/e2e/ncr-work-transfer-browser.spec.ts",
+        "exitCode": 0
+      },
+      "preImplementationAutorun": {
+        "firstScaffoldPlaceholderRun": {
+          "exitCode": 1,
+          "cause": "pending scaffold fields",
+          "durationSeconds": 13.51
+        },
+        "cleanReleasedBaseRun": {
+          "exitCode": 0,
+          "durationSeconds": 11.17
+        }
+      },
+      "corpusCoverage": {
+        "command": "python governance/compat/check_changed_corpus_registry_coverage.py --base 1d2f4bbae0b7ad8326c609cb3adc6a87ed08bf2e --head HEAD --enforce",
+        "exitCode": 0,
+        "scanStatus": "NOT_STARTED"
+      },
+      "rootTransientCleanupReceipt": ".cvf/runtime/ncr-work-transfer-browser-root-20261013/conditional-transient-cleanup.json",
+      "listener3021AfterRun": 0,
+      "distDisposition": "Root moved generated dist to ignored conditional-dist-retained; not deleted",
+      "tsconfigRestoredBy": "Local root",
+      "workerFastGate": {
+        "firstCandidateExit": 1,
+        "secondCandidateExit": 1,
+        "finalExit": 0,
+        "finalConfirmation": "candidate4 PASS; one full bound recheck after final metadata write",
+        "thirdCandidateExit": 1,
+        "fourthCandidateExit": 0,
+        "command": "python governance/compat/run_worker_return_fast_gate.py --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_WORK_TRANSFER_BROWSER_RETURN_REPAIR_2026-10-13.md --max-return-lines 450 --max-return-bytes 64000",
+        "passingLog": ".cvf\\runtime\\ncr-work-transfer-browser-conditional-20261013\\worker-fast-candidate4.log"
+      },
+      "acceptanceLedger": {
+        "command": "python governance/compat/check_work_order_acceptance_ledger.py --work-order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_WORK_TRANSFER_BROWSER_RETURN_REPAIR_2026-10-13.md --return docs/reviews/CVF_NCR_WORK_TRANSFER_BROWSER_CONDITIONAL_RETURN_2026-10-13.md --enforce",
+        "exitCode": 0,
+        "passRequirements": 4,
+        "totalRequirements": 4,
+        "log": ".cvf\\runtime\\ncr-work-transfer-browser-conditional-20261013\\acceptance-ledger-final.log"
+      },
+      "returnStatus": "COMPLETE_PENDING_REVIEW"
+    }
+  },
+  "candidates": [
+    {
+      "id": 1,
+      "outcome": "FAIL_PRE_CLI_POWERSHELL_STDERR",
+      "log": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-work-transfer-browser-conditional-20261013\\focused-browser.log"
+    },
+    {
+      "id": 2,
+      "outcome": "FAIL_PREFLIGHT_PARENT_NEXTAUTH_UNDEFINED_SERVER_SET",
+      "log": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-work-transfer-browser-conditional-20261013\\focused-browser-candidate2.log"
+    },
+    {
+      "id": 3,
+      "outcome": "FAIL_PASSIVE_FONT_EXTERNAL_ASSERTION_AFTER_DOWNLOAD",
+      "log": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-work-transfer-browser-conditional-20261013\\focused-browser-candidate3.log",
+      "retainedWire": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-work-transfer-browser-conditional-20261013\\route-response-candidate3.json",
+      "retainedDownload": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-work-transfer-browser-conditional-20261013\\downloaded-candidate3.html"
+    },
+    {
+      "id": 4,
+      "outcome": "PASS_2_OF_2_ORIGIN_ONLY_FONT_CLASSIFIER_SUPERSEDED",
+      "log": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-work-transfer-browser-conditional-20261013\\focused-browser-candidate4.log",
+      "retainedWire": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-work-transfer-browser-conditional-20261013\\route-response-candidate4.json",
+      "retainedDownload": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-work-transfer-browser-conditional-20261013\\downloaded-candidate4.html"
+    },
+    {
+      "id": 5,
+      "outcome": "PASS_2_OF_2_NARROW_PASSIVE_FONT_CLASSIFIER",
+      "log": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-work-transfer-browser-conditional-20261013\\focused-browser-candidate5.log"
+    }
+  ],
+  "modelAndUsage": {
+    "requestedConfiguration": "gpt-6-sol/medium",
+    "nativeIdentity": null,
+    "tokens": null,
+    "billing": null,
+    "reason": "runtime usage meter unavailable; configured label only"
+  },
+  "claimBoundary": "synthetic draft route/browser transport only; passive font GETs observed; no provider API, business acceptance, durability, NCR R3/R4, public or deploy claim",
+  "proofUpdatedUtc": "2026-10-13T11:43:59.270479+00:00",
+  "buildWindow": {
+    "startUtc": "2026-10-13T11:25:30.3058942Z",
+    "preliminaryProofEndUtc": "2026-10-13T11:43:59.270479+00:00",
+    "postGateFinalConfirmation": "final full bound gate log to follow; no self-hash assertion"
+  },
+  "candidateCommandEvidence": {
+    "browserCommand": "node .cvf/runtime/ncr-work-transfer-browser-conditional-20261013/launch-playwright.cjs from Web CWD, actual Playwright CLI test command with --config playwright.config.mock.ts --reporter=line --output ignored conditional path",
+    "browserExitCodes": [
+      1,
+      1,
+      1,
+      0,
+      0
+    ],
+    "workerFastExitCodes": [
+      1,
+      1,
+      1,
+      0
+    ],
+    "typeExitCode": 0,
+    "lintExitCode": 0,
+    "acceptanceLedgerExitCode": 0
+  }
+}

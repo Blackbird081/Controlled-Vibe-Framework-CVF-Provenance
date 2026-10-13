@@ -1,5 +1,5 @@
 {
   "stateOrder": 2980,
   "stateKey": "nextAllowedMove",
-  "value": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_WORK_ORDER; BATCH_ID=CVF-NCR-WORK-TRANSFER-BROWSER-RETURN-REPAIR-20261013. Execute docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_WORK_TRANSFER_BROWSER_RETURN_REPAIR_2026-10-13.md only after final bound pre-dispatch PASS; one conditional45-minute BUILD, exact3, no commits/provider/product edits. Local independent probe and technical disposition required. Primary failure retained; Alibaba9/9 separate; full R1-R4 open; real-data/acceptance/public/deploy/P11 parked; no automatic successor. Latest closed wave LHW24 retained."
+  "value": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=SELECT_BOUNDED_OUTCOME; BATCH_ID=CVF-NCR-WORK-TRANSFER-BROWSER-CLOSURE-20261013. Finite synthetic browser contribution CLOSED_PASS_BOUNDED: focused Chromium2/2 and distinct Local probe PASS; separate Alibaba canonical9/9 diagnostic retained. Select one next bounded existing-owner gap with exact source/effect/acceptance/provider budget before dispatch. Primary failure retained; full R1-R4 open; R5/R6 deferred; real-data writer/custody/business acceptance/public/deploy/P11 parked. No automatic successor or new provider run. Latest closed LHW24 retained."
 }

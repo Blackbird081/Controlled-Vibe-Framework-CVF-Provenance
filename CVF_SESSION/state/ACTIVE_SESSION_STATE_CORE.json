@@ -37,11 +37,11 @@
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_NCR_WORK_TRANSFER_BROWSER_RETURN_REPAIR_2026-10-13.md",
-    "baselineSha256": "1cf2ab60e4429c347d2b7b3496ac2a1fb2964a67dacb33b9bfe3016dcc59d361",
+    "baselineSha256": "b5b7f39dc6d930df05762238746ccc5b902705970d48cf120fe8c793510db864",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_WORK_TRANSFER_BROWSER_RETURN_REPAIR_2026-10-13.md",
-    "workOrderSha256": "726074de4a1f2f902b74544b4eab89338c7aefa8cace9fed0ab19d694f1724f3"
+    "workOrderSha256": "89ba615a294bd77b8cd46dc3e0053aef0c0a95463ee49190c8fd1a8b5c712f10"
   },
-  "currentAuthoritySyncReason": "Conditional same-scope browser repair packet committed, primary custody retained; bound release pending Material 69f45d69f1e883c41a75c3e83b3b46f694a5680e; dedicated exact6 source/generated continuity. Whole NCR pilot/effects remain separate.",
+  "currentAuthoritySyncReason": "Finite Work Transfer browser contribution accepted; Root completion docs/reviews/CVF_NCR_WORK_TRANSFER_BROWSER_COMPLETION_2026-10-13.md; separate Alibaba9/9; next bounded selection only Pre-closure parent 8fd2c56d26f441fa9824e71211178f6e85eee5f6; coherent source/generated authority; actual-SHA dedicated continuity follows material. Whole NCR pilot/effects remain separate.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
@@ -110,7 +110,7 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_ncr_work_transfer_browser_conditional_execution",
+  "currentMode": "cvf_ncr_work_transfer_browser_closed_useful_selection",
   "previousMode": "cvf_ncr_brief_copy_closed_useful_selection",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",

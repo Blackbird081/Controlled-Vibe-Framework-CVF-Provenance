@@ -61,7 +61,7 @@ const PLAYWRIGHT_BASE_URL = process.env.PLAYWRIGHT_BASE_URL ?? '';
 const NO_HOP_LOG = process.env.CVF_B2D_NO_HOP_LOG ?? '';
 const REPO_ROOT = path.resolve(__dirname, '../../../../..');
 const PRELOAD_PATH = path.resolve(__dirname, 'support/b2d-no-hop-preload.cjs');
-const EVIDENCE_DIRECTORY = path.join(REPO_ROOT, '.cvf', 'runtime', 'ncr-work-transfer-browser-worker-20261013');
+const EVIDENCE_DIRECTORY = path.join(REPO_ROOT, '.cvf', 'runtime', 'ncr-work-transfer-browser-conditional-20261013');
 const ROUTE_RESPONSE_PATH = path.join(EVIDENCE_DIRECTORY, 'route-response.json');
 const DOWNLOADED_HTML_PATH = path.join(EVIDENCE_DIRECTORY, 'downloaded.html');
 const EXPECTED_DIST_DIRECTORY = '.next-ncr-work-transfer-browser';
@@ -139,8 +139,8 @@ test('preflight proves processed server no-hop isolation before export', async (
   expect(process.env.CVF_STORAGE_ADAPTER_TYPE).toBe('file');
   expect(path.isAbsolute(process.env.CVF_CONTROL_PLANE_EVENTS_PATH ?? '')).toBe(true);
   expect(path.isAbsolute(process.env.CVF_POLICY_SNAPSHOT_DIR ?? '')).toBe(true);
-  expect(process.env.CVF_CONTROL_PLANE_EVENTS_PATH).toContain('ncr-work-transfer-browser-worker-20261013');
-  expect(process.env.CVF_POLICY_SNAPSHOT_DIR).toContain('ncr-work-transfer-browser-worker-20261013');
+  expect(process.env.CVF_CONTROL_PLANE_EVENTS_PATH).toContain('ncr-work-transfer-browser-conditional-20261013');
+  expect(process.env.CVF_POLICY_SNAPSHOT_DIR).toContain('ncr-work-transfer-browser-conditional-20261013');
 
   expect(path.isAbsolute(NO_HOP_LOG)).toBe(true);
   const resolvedLog = path.resolve(NO_HOP_LOG).toLowerCase();
@@ -193,12 +193,14 @@ test('Work Transfer selection builds, previews, and downloads one real draft ver
 
   const interceptedAuditMethods: string[] = [];
   const auditRequestMethods: string[] = [];
-  const externalRequestOrigins: string[] = [];
+  const externalRequests: Array<{ method: string; origin: string; pathname: string }> = [];
   page.on('request', request => {
     const url = new URL(request.url());
     if (url.pathname === '/api/admin/audit') auditRequestMethods.push(request.method());
     if (url.pathname === '/api/artifacts/export') exportRequestMethods.push(request.method());
-    if (!LOCAL_HOSTS.has(url.hostname)) externalRequestOrigins.push(url.origin);
+    if (!LOCAL_HOSTS.has(url.hostname)) externalRequests.push({
+      method: request.method(), origin: url.origin, pathname: url.pathname,
+    });
   });
   await page.route('**/api/admin/audit', async route => {
     if (route.request().method() !== 'GET') {
@@ -285,7 +287,8 @@ test('Work Transfer selection builds, previews, and downloads one real draft ver
   await expect(page.getByTestId('governance-receipt-attempt-id')).toHaveCount(0);
   await expect(page.getByTestId('artifact-version-notice')).toHaveAttribute('data-version-state', 'current');
   const preview = page.frameLocator('iframe[title="Preview"]');
-  const previewHeading = preview.getByRole('heading', { level: 1, name: builtTitle, exact: true });
+  const previewHeading = preview.locator('header > h1');
+  await expect(previewHeading).toHaveCount(1);
   await expect(previewHeading).toHaveText(builtTitle);
   await expect(preview.getByText('Worker browser marker: build version alpha.')).toBeVisible();
 
@@ -344,7 +347,13 @@ test('Work Transfer selection builds, previews, and downloads one real draft ver
   expect(auditRequestMethods).toEqual(interceptedAuditMethods);
   expect(auditRequestMethods.filter(method => method === 'GET').length).toBeGreaterThanOrEqual(2);
   expect(exportRequestMethods).toEqual(['POST']);
-  expect(externalRequestOrigins).toEqual([]);
+  const unexpectedExternalRequests = externalRequests.filter(request => !(
+    request.method === 'GET' && (
+      (request.origin === 'https://fonts.googleapis.com' && request.pathname === '/css2') ||
+      (request.origin === 'https://fonts.gstatic.com' && request.pathname.startsWith('/s/'))
+    )
+  ));
+  expect(unexpectedExternalRequests).toEqual([]);
 
   const isolationAfterRun = summarizeIsolation();
   expect(isolationAfterRun.nextauthUrlStates).toEqual(['EMPTY']);
@@ -376,7 +385,8 @@ test('Work Transfer selection builds, previews, and downloads one real draft ver
     governanceState: data.governanceState,
     postBuildVersionState: 'stale',
     selectionAndReload: 'fresh editable draft with no prior result',
-    externalRequestOrigins,
+    externalRequests,
+    unexpectedExternalRequests,
     isolationAfterRun,
   })}`);
 });

@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 docType: work_order
-Status: DISPATCH_READY
+Status: CLOSED_REJECTED_SUPERSEDED_BY_CONTROLLED_REWORK
 Date: 2026-10-13
 Batch ID: CVF-NCR-WORK-TRANSFER-BROWSER-20261013
 Dispatch inspection base: 8accf591da4223fe0a88fc6c63b2062cce733ee1
@@ -184,7 +184,7 @@ Actual result: 0 candidates, 0 returned, not truncated.
 | Field | Value |
 |---|---|
 | applicableCheckersRead | `governance/compat/check_work_order_dispatch_quality.py`; `governance/compat/check_gate_to_role_closeability.py`; `governance/compat/check_dispatch_prompt_envelope.py`; `governance/compat/check_dispatch_scaffold_provenance.py`; `governance/compat/check_agent_operation_trace.py`; `governance/compat/check_work_order_acceptance_ledger.py`; `governance/compat/check_independent_review_probe_admission.py`; `governance/compat/check_markdown_structural_completeness.py`; `governance/compat/check_public_export_disposition.py`; `governance/compat/check_agent_packet_authority_and_encoding.py` |
-| literalTokensReviewed | DISPATCH_READY; WORKER_MUST_NOT_COMMIT; acceptance-ledger-json; REQUIRED_GATE_IDS; REQUIRED_FIELDS; TRACE_REQUIRED_LABELS; DEFERRED_PRIVATE_ONLY |
+| literalTokensReviewed | `DISPATCH_READY` historical token; WORKER_MUST_NOT_COMMIT; acceptance-ledger-json; REQUIRED_GATE_IDS; REQUIRED_FIELDS; TRACE_REQUIRED_LABELS; DEFERRED_PRIVATE_ONLY |
 | gateRunPurpose | confirmation/evidence of packet shape, not first discovery; Local runs bound pre-dispatch after packet review and continuity release |
 | claimBoundary | targeted current constants and literal predicates, not all-lines checker review |
 
@@ -513,3 +513,34 @@ Protected paths:
 
 Operator authorization: 2026-10-13 NCR continuation with Local review/closure and one selected internal worker.
 Rollback boundary: reviewed dispatch/continuity delta only; accepted historical evidence remains.
+
+## Local Supersession Disposition
+
+Primary QUALITY_REJECTED_WITH_CONSOLIDATED_FINDINGS remains unchanged in original worker proof/return and committed raw custody. This original packet is superseded by one conditional test repair, accepted only at the bounded claim level in `docs/reviews/CVF_NCR_WORK_TRANSFER_BROWSER_COMPLETION_2026-10-13.md`. Primary partial export200 is not upgraded to journey PASS. No new execution authority or whole NCR milestone closure.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_WORK_TRANSFER_BROWSER_RETURN_REPAIR_2026-10-13.md` | CLOSED_REJECTED_SUPERSEDED_BY_CONTROLLED_REWORK; primary proof and BLOCKED ledger retained; conditional successor separately accepted | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_NCR_WORK_TRANSFER_BROWSER_COMPLETION_2026-10-13.md` | Conditional focused Chromium2/2, type, scoped lint, final70/70 worker fast and4/4 acceptance ledger PASS consumed; distinct Local semantic browser probe PASS, wire/download byte identity and stale/selection negatives verified. Primary QUALITY_REJECTED_WITH_CONSOLIDATED_FINDINGS retained; conditional QUALITY_ACCEPTED_BOUNDED; preparation PARTIAL_WITH_REASON. | PASS |
+| Roadmap state | `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `docs/roadmaps/README.md` | finite browser contribution accepted; R1-R4 whole exits open | PASS |
+| Registry JSON | `docs/corpus-intelligence/registry/entries/cvf-ncr-work-transfer-browser-test.json`; `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | already committed GC-051 named-source coverage; scan NOT_STARTED, no semantic processing claim | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | generated coverage projection; NOT_STARTED | PASS |
+| External evidence digest | `docs/reviews/evidence/ncr-work-transfer-browser-local-20261013.json` | sha256:40893e1d692f19bf762393995a24d6b26835f4619de5a848b9517540c21593a7; internal Local raw custody and distinct byte/probe verification, no external attestation | PASS |
+| System loop interlock | parked NCR checkpoints | no automatic successor; finite draft transport, business acceptance separate | N/A with reason: no runtime loop introduced |
+| Session continuity | six named source/generated active surfaces | closed pair raw authority; coherent next move; dedicated actual-SHA continuity | PASS |
+
+
+Rejected primary dispatch lifecycle is closed by supersession. No primary requirement, proof or independent-probe PASS is inferred from this administrative disposition. Original worker proof/return and raw quality custody remain unchanged.
+
+## Acceptance Receipt Assertion Matrix
+
+| Requirement | Required value | Observed primary value | Status |
+|---|---|---|---|
+| REQ-PREFLIGHT | processed isolation before/after full journey | partial preflight; no complete final journey | BLOCKED_REJECTED_PRIMARY |
+| REQ-JOURNEY | real route plus completed preview/download/selection/reload | real export200 reached, preview locator failed | BLOCKED_REJECTED_PRIMARY |
+| REQ-VERSION-BYTES | saved bytes and stale transition | no saved download in primary terminal evidence | BLOCKED_REJECTED_PRIMARY |
+| REQ-RETURN | all mandatory rows PASS with fresh gates | original primary deterministic BLOCKED_WITH_REASON retained | BLOCKED_REJECTED_PRIMARY |
+
+These are primary observations. Conditional successor independently provides bounded PASS evidence; it does not alter the rejected original ledger.
