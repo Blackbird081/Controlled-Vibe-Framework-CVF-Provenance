@@ -36,6 +36,9 @@ Downstream Bootstrap and Workspace Governance Learning Propagation closures.
 6. `CVF_PROJECT_LEARNING_PARENT_EVIDENCE_CONTRACT.md` - parent typed evidence contract and T2 validation binding.
    Schema: `parent_learning_evidence.schema.json`.
 7. `CVF_BUILD_LEARNING_EVIDENCE_CHECKLIST.md` - cleanup, mutation and coverage evidence practice.
+   For selected multi-output external delivery reviews, use its companion
+   `CVF_PER_OUTPUT_DELIVERY_EVIDENCE_CHECKLIST.md`; the original
+   hash-bound checklist remains unchanged.
 8. [CVF_PROJECT_LEARNING_OPERATOR_GUIDE.md](CVF_PROJECT_LEARNING_OPERATOR_GUIDE.md) - internal operator simulation, real disposable CLI results and structural-validation limits; no real-project adoption.
 
 ## Owner And Archive

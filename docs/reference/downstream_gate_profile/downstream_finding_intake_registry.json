@@ -708,6 +708,216 @@
           }
         }
       ]
+    },
+    {
+      "intakeId": "CCMA-SEVEN-FINDING-20261013",
+      "sourceSnapshot": {
+        "path": "docs/reviews/evidence/ccma-seven-finding-learning-source-20261013.json",
+        "sha256": "b7e2a9d8833c9515f3efa0131a318900812fad537abb8c1da62e3bf8cda82796"
+      },
+      "authority": "SELECTED_PROJECT_EVIDENCE_PARENT_LOCAL_DISPOSITION",
+      "sourceProjectClaims": "Three final Local project reviews accepted bounded fixes; historical execution is attributed, selected source comparison performed in Core intake.",
+      "findings": [
+        {
+          "id": "CCMA-OUTPUT-DELIVERY-TRUTH-20261013",
+          "defectClass": "RUNTIME_SIGNAL_GAP",
+          "dedup": [
+            {
+              "owner": "docs/reference/downstream_gate_profile/CVF_BUILD_LEARNING_EVIDENCE_CHECKLIST.md",
+              "disposition": "EXTENDS_EXISTING",
+              "reason": "Retain hash-bound terminal-write owner; add per-output guidance as a companion without rewriting prior typed evidence."
+            }
+          ],
+          "reusableControl": "docs/reference/downstream_gate_profile/CVF_PER_OUTPUT_DELIVERY_EVIDENCE_CHECKLIST.md#evidence-contract",
+          "workerProposedDisposition": "TEMPLATE_UPDATED",
+          "parentDisposition": "MERGED_BOUNDED_WRITTEN_GUIDANCE_ONLY",
+          "parentEvidence": {
+            "schemaVersion": "cvf.parentLearningEvidence@1.0.0",
+            "findingId": "CCMA-OUTPUT-DELIVERY-TRUTH-20261013",
+            "source": {
+              "sourceProject": "Customer-Care-Monitor-AI",
+              "evidence": {
+                "path": "docs/reviews/learnings/CVF_CCMA_SEVEN_FINDING_DELIVERY_LEARNING_2026-10-13.md",
+                "sha256": "eee97e82d7b109242bebe90d6bba39abc4bed0ddd748bac168a75ddc7c2bcd4c",
+                "fragment": "Source Confidence And Scope",
+                "evidenceClass": "OBSERVED_LOCAL"
+              }
+            },
+            "valueChecks": {
+              "sourceConfidence": {
+                "status": "SUPPORTED",
+                "reason": "Local observed pinned selected project files and review records; historical project test outcomes remain attributed.",
+                "evidence": [
+                  {
+                    "path": "docs/reviews/evidence/ccma-seven-finding-learning-source-20261013.json",
+                    "sha256": "b7e2a9d8833c9515f3efa0131a318900812fad537abb8c1da62e3bf8cda82796",
+                    "fragment": "selected-12-path-source-manifest",
+                    "evidenceClass": "ATTRIBUTED_SOURCE"
+                  },
+                  {
+                    "path": "docs/reviews/learnings/CVF_CCMA_SEVEN_FINDING_DELIVERY_LEARNING_2026-10-13.md",
+                    "sha256": "eee97e82d7b109242bebe90d6bba39abc4bed0ddd748bac168a75ddc7c2bcd4c",
+                    "fragment": "Five Parent Value Checks",
+                    "evidenceClass": "OBSERVED_LOCAL"
+                  }
+                ],
+                "limits": "Selected project source and final reviews are pinned but historical runtime tests are attributed; Core implements written evidence guidance only, without live SMTP, project rerun, universal agent compliance, public sync or return/application receipt."
+              },
+              "reusableMechanism": {
+                "status": "SUPPORTED",
+                "reason": "A multi-output job can have distinct accepted, failed, unknown and persisted states; aggregate sent status loses retry safety.",
+                "evidence": [
+                  {
+                    "path": "docs/reviews/evidence/ccma-seven-finding-learning-source-20261013.json",
+                    "sha256": "b7e2a9d8833c9515f3efa0131a318900812fad537abb8c1da62e3bf8cda82796",
+                    "fragment": "selected-12-path-source-manifest",
+                    "evidenceClass": "ATTRIBUTED_SOURCE"
+                  },
+                  {
+                    "path": "docs/reviews/learnings/CVF_CCMA_SEVEN_FINDING_DELIVERY_LEARNING_2026-10-13.md",
+                    "sha256": "eee97e82d7b109242bebe90d6bba39abc4bed0ddd748bac168a75ddc7c2bcd4c",
+                    "fragment": "Five Parent Value Checks",
+                    "evidenceClass": "OBSERVED_LOCAL"
+                  }
+                ],
+                "limits": "Selected project source and final reviews are pinned but historical runtime tests are attributed; Core implements written evidence guidance only, without live SMTP, project rerun, universal agent compliance, public sync or return/application receipt."
+              },
+              "existingCoverage": {
+                "status": "SUPPORTED",
+                "reason": "Existing terminal persistence and attempt principles cover adjacent facts; the companion makes per-output remote acceptance and retry eligibility explicit without altering the prior hash-bound checklist.",
+                "evidence": [
+                  {
+                    "path": "docs/reference/downstream_gate_profile/CVF_PROJECT_LEARNING_LOOP_STANDARD.md",
+                    "sha256": "61124b8674f2323be6f71746312cd47fbb2b49b550eedf863ff79d5aaef8b878",
+                    "fragment": "Value Admission",
+                    "evidenceClass": "OBSERVED_LOCAL"
+                  },
+                  {
+                    "path": "docs/reference/downstream_gate_profile/CVF_PER_OUTPUT_DELIVERY_EVIDENCE_CHECKLIST.md",
+                    "sha256": "13126809f82d4e05384fb3c293db84c8ce6925540ef55766a815a772d445bda3",
+                    "fragment": "control:per-output-outbound-delivery",
+                    "evidenceClass": "OBSERVED_LOCAL"
+                  }
+                ],
+                "limits": "Selected project source and final reviews are pinned but historical runtime tests are attributed; Core implements written evidence guidance only, without live SMTP, project rerun, universal agent compliance, public sync or return/application receipt."
+              },
+              "incrementalValue": {
+                "status": "SUPPORTED",
+                "reason": "A companion checklist under the same owner adds identity-specific acceptance and durable-outcome guidance for reviewers.",
+                "evidence": [
+                  {
+                    "path": "docs/reference/downstream_gate_profile/CVF_PER_OUTPUT_DELIVERY_EVIDENCE_CHECKLIST.md",
+                    "sha256": "13126809f82d4e05384fb3c293db84c8ce6925540ef55766a815a772d445bda3",
+                    "fragment": "control:per-output-outbound-delivery",
+                    "evidenceClass": "OBSERVED_LOCAL"
+                  },
+                  {
+                    "path": "docs/reviews/learnings/CVF_CCMA_SEVEN_FINDING_DELIVERY_LEARNING_2026-10-13.md",
+                    "sha256": "eee97e82d7b109242bebe90d6bba39abc4bed0ddd748bac168a75ddc7c2bcd4c",
+                    "fragment": "Five Parent Value Checks",
+                    "evidenceClass": "OBSERVED_LOCAL"
+                  }
+                ],
+                "limits": "Selected project source and final reviews are pinned but historical runtime tests are attributed; Core implements written evidence guidance only, without live SMTP, project rerun, universal agent compliance, public sync or return/application receipt."
+              },
+              "boundedProof": {
+                "status": "SUPPORTED",
+                "reason": "Pinned final source reviews describe positive accepted/mixed-output and negative ambiguity/persistence cases, attributed rather than rerun in Core.",
+                "evidence": [
+                  {
+                    "path": "docs/reviews/evidence/ccma-seven-finding-learning-source-20261013.json",
+                    "sha256": "b7e2a9d8833c9515f3efa0131a318900812fad537abb8c1da62e3bf8cda82796",
+                    "fragment": "proof-positive:explicit-acceptance-mixed-output-reentry",
+                    "evidenceClass": "ATTRIBUTED_SOURCE"
+                  },
+                  {
+                    "path": "docs/reviews/evidence/ccma-seven-finding-learning-source-20261013.json",
+                    "sha256": "b7e2a9d8833c9515f3efa0131a318900812fad537abb8c1da62e3bf8cda82796",
+                    "fragment": "proof-negative:uncertain-transport-and-outcome-persistence",
+                    "evidenceClass": "ATTRIBUTED_SOURCE"
+                  }
+                ],
+                "limits": "Selected project source and final reviews are pinned but historical runtime tests are attributed; Core implements written evidence guidance only, without live SMTP, project rerun, universal agent compliance, public sync or return/application receipt."
+              }
+            },
+            "decision": {
+              "state": "MERGE",
+              "reason": "Add a companion per-output evidence checklist under the existing profile owner while preserving the hash-bound earlier checklist; six other findings deduplicate.",
+              "reviewer": "LOCAL_CODEX_ROOT",
+              "owner": "docs/reference/downstream_gate_profile/CVF_PER_OUTPUT_DELIVERY_EVIDENCE_CHECKLIST.md",
+              "f2gDisposition": "TEMPLATE_UPDATED",
+              "evidence": [
+                {
+                  "path": "docs/reviews/learnings/CVF_CCMA_SEVEN_FINDING_DELIVERY_LEARNING_2026-10-13.md",
+                  "sha256": "eee97e82d7b109242bebe90d6bba39abc4bed0ddd748bac168a75ddc7c2bcd4c",
+                  "fragment": "Five Parent Value Checks",
+                  "evidenceClass": "OBSERVED_LOCAL"
+                }
+              ]
+            },
+            "implementation": {
+              "state": "IMPLEMENTED_BOUNDED",
+              "reason": "Written companion checklist only; no machine/runtime guard, and selected project evidence remains attributed.",
+              "evidence": [
+                {
+                  "path": "docs/reference/downstream_gate_profile/CVF_PER_OUTPUT_DELIVERY_EVIDENCE_CHECKLIST.md",
+                  "sha256": "13126809f82d4e05384fb3c293db84c8ce6925540ef55766a815a772d445bda3",
+                  "fragment": "control:per-output-outbound-delivery",
+                  "evidenceClass": "OBSERVED_LOCAL"
+                },
+                {
+                  "path": "docs/reviews/evidence/ccma-seven-finding-learning-source-20261013.json",
+                  "sha256": "b7e2a9d8833c9515f3efa0131a318900812fad537abb8c1da62e3bf8cda82796",
+                  "fragment": "proof-positive:explicit-acceptance-mixed-output-reentry",
+                  "evidenceClass": "ATTRIBUTED_SOURCE"
+                },
+                {
+                  "path": "docs/reviews/evidence/ccma-seven-finding-learning-source-20261013.json",
+                  "sha256": "b7e2a9d8833c9515f3efa0131a318900812fad537abb8c1da62e3bf8cda82796",
+                  "fragment": "proof-negative:uncertain-transport-and-outcome-persistence",
+                  "evidenceClass": "ATTRIBUTED_SOURCE"
+                }
+              ]
+            },
+            "projectResolution": {
+              "state": "RESOLVED",
+              "reason": "Project final Local reviews accepted all seven selected fixes within local/synthetic bounds.",
+              "evidence": [
+                {
+                  "path": "docs/reviews/evidence/ccma-seven-finding-learning-source-20261013.json",
+                  "sha256": "b7e2a9d8833c9515f3efa0131a318900812fad537abb8c1da62e3bf8cda82796",
+                  "fragment": "selected-12-path-source-manifest",
+                  "evidenceClass": "ATTRIBUTED_SOURCE"
+                }
+              ]
+            },
+            "returnDelivery": {
+              "state": "NOT_RETURNED",
+              "reason": "No typed delivery receipt or receiving-agent acknowledgment exists.",
+              "evidence": []
+            },
+            "projectApplication": {
+              "state": "NOT_APPLIED",
+              "reason": "Project fixes predate parent guidance; no subsequent application proof exists.",
+              "evidence": []
+            },
+            "claimLimits": "Selected project source and final reviews are pinned but historical runtime tests are attributed; Core implements written evidence guidance only, without live SMTP, project rerun, universal agent compliance, public sync or return/application receipt."
+          }
+        }
+      ],
+      "parentLinks": {
+        "standard": "docs/reference/downstream_gate_profile/CVF_PROJECT_LEARNING_LOOP_STANDARD.md",
+        "learningRecord": "docs/reviews/learnings/CVF_CCMA_SEVEN_FINDING_DELIVERY_LEARNING_2026-10-13.md",
+        "legacyChecklist": "docs/reference/downstream_gate_profile/CVF_BUILD_LEARNING_EVIDENCE_CHECKLIST.md",
+        "companionChecklist": "docs/reference/downstream_gate_profile/CVF_PER_OUTPUT_DELIVERY_EVIDENCE_CHECKLIST.md",
+        "sourceManifest": "docs/reviews/evidence/ccma-seven-finding-learning-source-20261013.json"
+      },
+      "deferred": [
+        "typed return-delivery receipt",
+        "project adoption proof",
+        "live SMTP/provider/browser/deploy",
+        "public Core sync"
+      ]
     }
   ]
 }

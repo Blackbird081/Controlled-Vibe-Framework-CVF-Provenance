@@ -1,0 +1,99 @@
+{
+  "schemaVersion": "1.0",
+  "scope": "SELECTED_SEVEN_FINDING_EVIDENCE_NOT_COMPLETE_CORPUS",
+  "sourceProject": "Customer-Care-Monitor-AI",
+  "sourceRepository": "https://github.com/CVF-Ecosystem/Customer-Care-Monitor.git",
+  "branch": "codex/cvf-portable-inheritance",
+  "sourceCommit": "cdf5537e10c7a285f0f08d51753a749eac75abb8",
+  "sourceWorktree": "CLEAN_AT_INTAKE",
+  "sourceClaims": "Three Local final reviews accepted bounded synthetic/local source/tests; historical test assertions attributed, not rerun in Core.",
+  "items": [
+    {
+      "path": "docs/reviews/R088_FINAL_INDEPENDENT_LOCAL_REVIEW_2026-10-13.md",
+      "sha256": "2bdd8b1bd2556da7fb98a4f59c093137de73c9478ef299f6069a3ec1c774028e",
+      "bytes": 7100,
+      "readDepth": "final-review-selected-claims"
+    },
+    {
+      "path": "docs/reviews/R090_FINAL_INDEPENDENT_LOCAL_REVIEW_2026-10-13.md",
+      "sha256": "41c23a1c9effc2cb808c51bc1e4e94986387c795d70f99bef051bbb164120d62",
+      "bytes": 5624,
+      "readDepth": "final-review-selected-claims"
+    },
+    {
+      "path": "docs/reviews/R091_FINAL_INDEPENDENT_LOCAL_REVIEW_2026-10-13.md",
+      "sha256": "e3af714cbbaa92cec6f905968fce2143337bcc6f1530043405f8f62f9ddb7e35",
+      "bytes": 10654,
+      "readDepth": "final-review-selected-claims"
+    },
+    {
+      "path": "docs/reviews/planning/CCMA_RUNTIME_CVF_INHERITANCE_ROADMAP_2026-10-12.md",
+      "sha256": "0ed8ba3583999f62445277e51263232a6c5b60251e0fc6b268c3cc1ef00e002d",
+      "bytes": 20757,
+      "readDepth": "final-review-selected-claims"
+    },
+    {
+      "path": "frontend/src/views/Messages.vue",
+      "sha256": "0ed5d3c100c26fd1db46e46e88db5d094743c3cc47c160344597a631eefb0d45",
+      "bytes": 49749,
+      "readDepth": "selected-symbols-and-control-flow"
+    },
+    {
+      "path": "frontend/src/stores/conversations.ts",
+      "sha256": "aa967ccbacec8d4355b1077fc3c391de273d55eec68803f193424e1e1e9f8855",
+      "bytes": 3687,
+      "readDepth": "selected-symbols-and-control-flow"
+    },
+    {
+      "path": "backend/notifications/dispatcher.go",
+      "sha256": "3eb03ad33c5669e98ca520f47e82f6613890eb965275878cbb836149b8045fb9",
+      "bytes": 6868,
+      "readDepth": "selected-symbols-and-control-flow"
+    },
+    {
+      "path": "backend/notifications/delivery_manifest.go",
+      "sha256": "a1704cb1ab08d4e5f310805cf50177b12f4bbebfeebbeb4929b8d1187aa4e207",
+      "bytes": 9152,
+      "readDepth": "selected-symbols-and-control-flow"
+    },
+    {
+      "path": "backend/notifications/delivery_attempt.go",
+      "sha256": "224c8304f5c3bec3e1f0d481815d986dea67d073cc38a5d5e0809499da1d5611",
+      "bytes": 5521,
+      "readDepth": "selected-symbols-and-control-flow"
+    },
+    {
+      "path": "backend/notifications/email.go",
+      "sha256": "b79fa00a0c8195a11709e1f04db299bede66bd6d87f2f5ac67cc31a904016dad",
+      "bytes": 2720,
+      "readDepth": "selected-symbols-and-control-flow"
+    },
+    {
+      "path": "backend/notifications/telegram.go",
+      "sha256": "3efd6fc74aebd0fdef34835459a3b5542158b0051d46fa11be2ca35801297461",
+      "bytes": 2617,
+      "readDepth": "selected-symbols-and-control-flow"
+    },
+    {
+      "path": "backend/engine/analyzer_batch_backoff.go",
+      "sha256": "ff283596fdd8083ebae7303aede2dd3d7048733d9765fc2e4f172a30683c7787",
+      "bytes": 437,
+      "readDepth": "selected-symbols-and-control-flow"
+    }
+  ],
+  "positiveEvidence": [
+    "R091 final review: explicit Telegram true and SMTP DATA250 acceptance; mixed-output/reentry with stable identities and committed rows",
+    "R088 final review: selected conversation identity remains current across A-B-A and stale response ordering",
+    "R090 final review: one conditional refresh winner and permission projection"
+  ],
+  "negativeEvidence": [
+    "R091 final review: unknown transport or failed outcome write leaves output unresolved and prevents automatic resend",
+    "R091 final review: old unlocked marker count/delete detector failed on source before repair"
+  ],
+  "excluded": [
+    "real SMTP/provider/browser/hosted CI/deployment",
+    "all files outside selected list",
+    "runtime recomputation of historical project tests"
+  ],
+  "parentObservation": "Core checklist previously separated returned outcome and durable terminal state; selected gap is per-output remote acceptance/unknown and retry eligibility."
+}
