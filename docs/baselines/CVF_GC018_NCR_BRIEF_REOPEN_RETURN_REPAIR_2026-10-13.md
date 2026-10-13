@@ -2,7 +2,7 @@
 
 Memory class: governed-dispatch-baseline
 docType: baseline
-Status: AUTHORIZED_BOUNDED
+Status: CLOSED_PASS_BOUNDED
 Date: 2026-10-13
 Batch ID: CVF-NCR-BRIEF-REOPEN-RETURN-REPAIR-20261013
 Dispatch base head: b3d0e8540c69b3c7ecf3e8db6a6816889788485f
@@ -11,7 +11,7 @@ providerExecutionAuthority: FORBIDDEN
 
 ## Immutable Return Lineage Anchor
 
-Exact-byte dispatch archive: `docs/work_orders/archive/CVF_AGENT_WORK_ORDER_NCR_BRIEF_REOPEN_RETURN_REPAIR_DISPATCH_2026-10-13.md`; SHA256 `1d6ca143b201fefc1383d9ec385c5113c9587e59f21541cc6df29222d065c302`. Historical frozen dispatch, NOT_ACTIVE_AUTHORITY. The final Sol return MUST use this immutable SCEC predecessor, chainOrdinal=3, problemKey=ncr-brief-panel-reopen. Active authority remains this paired order/baseline. No new assignment: original BUILD start 2026-10-13T06:42:06.7316596Z and deadline 2026-10-13T07:27:06.7316596Z retained; worker released with zero writes/runs. Root pause/rebind time is separately disclosed. Original later HEAD capture remains a preparation deviation. Required final proof: prior/current blockers empty, nonDecreasingBlockerTransitions=1, reviewerScopeExpansions=1 retained; READY_WITH_EXECUTABLE_PROOF / EXECUTABLE_IMPLEMENTATION only with actual current validation and final gates. If blocked, report truthful consolidated blockers under existing counters. Archive prevents later in-place closure from invalidating predecessor bytes.
+Historical dispatch snapshot is NOT_ACTIVE_AUTHORITY and retains its original historical release status; no historical closure is claimed. The active closed work order `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_BRIEF_REOPEN_RETURN_REPAIR_2026-10-13.md` owns the Immutable Return Lineage Anchor section; accepted Sol return owns successor ordinal3. Exact immutable archive SHA256 `1d6ca143b201fefc1383d9ec385c5113c9587e59f21541cc6df29222d065c302` remains verified. Original BUILD start2026-10-13T06:42:06.7316596Z, deadline2026-10-13T07:27:06.7316596Z and Root hold/rebind remain retained. Current acceptance is technical bounded with PARTIAL_WITH_REASON procedure; no new assignment or source/test mutation.
 
 ## Purpose
 
@@ -73,31 +73,35 @@ Actual result: 0 candidates, 0 returned, not truncated. This query does not prov
 
 | Field | Evidence |
 |---|---|
-| Actor | Local INTERNAL_AGENT reviewer/dispatcher |
+| Actor | Local INTERNAL_AGENT reviewer/closer |
 | Provider or surface | private shared workspace |
-| Session or invocation | ncr-brief-reopen-lineage-rebind-20261013 |
+| Session or invocation | ncr-brief-reopen-local-review-20261013 |
 | Working directory | repository root and installed Web package |
-| Command or tool surface | terminal evidence/byte custody, Local probe/copy correction, root contract and gates |
-| Target paths | `docs/work_orders/archive/CVF_AGENT_WORK_ORDER_NCR_BRIEF_REOPEN_RETURN_REPAIR_DISPATCH_2026-10-13.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_BRIEF_REOPEN_RETURN_REPAIR_2026-10-13.md`; `docs/baselines/CVF_GC018_NCR_BRIEF_REOPEN_RETURN_REPAIR_2026-10-13.md`; `.gitattributes`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Allowed scope source | operator explicit conditional Sol medium after inadequate quality; original Local closure responsibilities |
-| Before status evidence | 2c6d23b87c7884c222b94de3e733f4b487da1b57; clean worktree, Sol released with zero writes/runs |
-| After status evidence | exact7 immutable dispatch-lineage rebind, then exact6 actual-SHA continuity; same final BUILD |
-| Diff evidence | exact staged manifest and git diff --cached --check before commit |
-| Approval boundary | one final conditional BUILD; no third worker or parked effects |
-| Claim boundary | offline UI and proof identity only; original BLOCKED retained |
+| Command or tool surface | source/log custody, distinct Local probe, closure and committed gates |
+| Target paths | `docs/reviews/evidence/ncr-brief-reopen-sol-worker-20261013.json`; `docs/reviews/CVF_NCR_BRIEF_REOPEN_SOL_WORKER_RETURN_2026-10-13.md`; `docs/reviews/CVF_NCR_BRIEF_REOPEN_COMPLETION_2026-10-13.md`; `docs/reviews/evidence/ncr-brief-reopen-local-20261013.json`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_BRIEF_REOPEN_RETURN_REPAIR_2026-10-13.md`; `docs/baselines/CVF_GC018_NCR_BRIEF_REOPEN_RETURN_REPAIR_2026-10-13.md`; `docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json`; `docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md`; `docs/roadmaps/README.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.csv`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Allowed scope source | standing operator CVF continuation; exact2 conditional worker plus Local closure owner |
+| Before status evidence | a439f197bfe08e0e1bf423b6d5af1e1203817f02; terminal exact2 conditional worker, staged empty |
+| After status evidence | exact15 material; marker-only anchor if needed; exact6 actual-SHA continuity |
+| Diff evidence | git diff --cached --check and exact manifest required before commit |
+| Approval boundary | no extra worker after acceptance or parked effects |
+| Claim boundary | Offline jsdom panel visibility, text identity/revision, and callback/browser-adapter counts only. Synthetic governance leaf functions are fixtures; no AI governance efficacy, provider, actual browser/OS, durable recovery, whole job, R3/R4, release, public export, deploy, or model-quality claim. |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-brief-reopen-lineage-rebind-20261013 |
-| Expected manifest | `docs/work_orders/archive/CVF_AGENT_WORK_ORDER_NCR_BRIEF_REOPEN_RETURN_REPAIR_DISPATCH_2026-10-13.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_BRIEF_REOPEN_RETURN_REPAIR_2026-10-13.md`; `docs/baselines/CVF_GC018_NCR_BRIEF_REOPEN_RETURN_REPAIR_2026-10-13.md`; `.gitattributes`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Actual changed set | `docs/work_orders/archive/CVF_AGENT_WORK_ORDER_NCR_BRIEF_REOPEN_RETURN_REPAIR_DISPATCH_2026-10-13.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_BRIEF_REOPEN_RETURN_REPAIR_2026-10-13.md`; `docs/baselines/CVF_GC018_NCR_BRIEF_REOPEN_RETURN_REPAIR_2026-10-13.md`; `.gitattributes`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Invocation ID | ncr-brief-reopen-local-review-20261013 |
+| Expected manifest | `docs/reviews/evidence/ncr-brief-reopen-sol-worker-20261013.json`; `docs/reviews/CVF_NCR_BRIEF_REOPEN_SOL_WORKER_RETURN_2026-10-13.md`; `docs/reviews/CVF_NCR_BRIEF_REOPEN_COMPLETION_2026-10-13.md`; `docs/reviews/evidence/ncr-brief-reopen-local-20261013.json`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_BRIEF_REOPEN_RETURN_REPAIR_2026-10-13.md`; `docs/baselines/CVF_GC018_NCR_BRIEF_REOPEN_RETURN_REPAIR_2026-10-13.md`; `docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json`; `docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md`; `docs/roadmaps/README.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.csv`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Actual changed set | `docs/reviews/evidence/ncr-brief-reopen-sol-worker-20261013.json`; `docs/reviews/CVF_NCR_BRIEF_REOPEN_SOL_WORKER_RETURN_2026-10-13.md`; `docs/reviews/CVF_NCR_BRIEF_REOPEN_COMPLETION_2026-10-13.md`; `docs/reviews/evidence/ncr-brief-reopen-local-20261013.json`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_BRIEF_REOPEN_RETURN_REPAIR_2026-10-13.md`; `docs/baselines/CVF_GC018_NCR_BRIEF_REOPEN_RETURN_REPAIR_2026-10-13.md`; `docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json`; `docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md`; `docs/roadmaps/README.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.csv`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Manifest delta | MATCH required before commit |
-| Deletion or rename disposition | N/A with reason: ignored temporary probe removed after capture; original byte custody retained; no tracked deletion |
+| Deletion or rename disposition | N/A with reason: temporary Local probe removed after source/log capture; no tracked deletion |
 
 ## Epistemic Process Block
 
-Expected Result / Prediction: corrected current fixtures pass all14 without source changes; accurate supplemental proof converges the original return blocker.
-Evidence Comparison: primary product behavior independently1/1 PASS, current corrected chrome3/3; original combined failed and63-character digest invalid.
-Contradiction Or Gap Disposition: fresh exact2 evidence/return with actual validation; original immutable proof is not relabeled PASS.
-Claim Update: integrated conditional evidence repair; no new product/live/whole-job claim.
+Agent type: INTERNAL_AGENT
+Reasoning owner: LOCAL_REVIEWER_CODEX_ROOT
+Runtime identity disclosure: configured Luna/max only; native usage unavailable
+Hypothesis / Design question: presentation visibility can preserve same-idea child state while existing revision owner invalidates edits; fresh supplemental proof can preserve original failures.
+Expected Result / Prediction: voluntary close retains packet, hidden edits invalidate, successful send/reset preserves compatibility.
+Evidence Comparison: Conditional focused14/14, TypeScript, scoped lint and final exact2 fast/acceptance ledger PASS consumed; distinct Local real-component sequence1/1 PASS; primary original raw custody retained and canonical normalization disclosed; Sol exact2 frozen; PARTIAL_WITH_REASON.
+Contradiction Or Gap Disposition: Primary return QUALITY_REJECTED_WITH_CONSOLIDATED_FINDINGS: malformed63-character required digest, SHA1 labelled SHA256 and combined FAIL retained. Root fixed one legacy English assertion and preserved original raw bytes/canonical LF identity. Sol exact2 proof corrects identities and fresh14/type/lint PASS. Sol preparation PARTIAL_WITH_REASON: original HEAD/status capture after initial reads, transport-limited scope, runtime cp1252 console failures, first return gate failure corrected inside same BUILD. Original failed gates retained; no third BUILD or product edits.
+Claim Update: finite offline panel lifetime only; whole job/R3/R4 remain open.
 
 ## Public Export Disposition
 
@@ -106,7 +110,7 @@ Reason: private dispatch and offline proof only; no publication grant.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: exact7 immutable dispatch-lineage rebind raw authority, then exact6 continuity; no guard/hook edits.
+Authorized guard-maintenance scope: exact15 material raw authority projections; marker-only anchor; exact6 continuity; no checker/hook edits.
 Protected paths:
 - `AGENT_HANDOFF_V63_2026-09-18.md`
 - `CVF_SESSION_MEMORY.md`
@@ -114,25 +118,34 @@ Protected paths:
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-Operator authorization: 2026-10-13 continue CVF; conditional Sol medium on inadequate primary return; Local owns scoped repair/review/commits.
-Rollback boundary: exact7 then exact6; original bytes and prior24 observations retained; no parked effect.
+
+Operator authorization: continue CVF with primary Luna max; Sol medium only if Local rejects returned quality; Local owns closure/commits.
+Rollback boundary: exact15 plus actual-SHA continuity; Sol exact2 and historical24 observations retained; generated state never hand-edited.
 
 ## Mixed Protected-Path Atomicity Authorization
 
 Disposition: AUTHORIZED_EXACT_MANIFEST
-Atomicity reason: immutable predecessor archive and active contract/authority must bind together before the same worker resumes.
-Rollback boundary: exact7, then exact6 continuity; no product/test changes.
+Atomicity reason: finite reviewed product/proofs, paired closure, model record and raw authority bind one closure.
+Rollback boundary: exact15 material.
 Exact changed manifest:
 
-- `docs/work_orders/archive/CVF_AGENT_WORK_ORDER_NCR_BRIEF_REOPEN_RETURN_REPAIR_DISPATCH_2026-10-13.md`
+- `docs/reviews/evidence/ncr-brief-reopen-sol-worker-20261013.json`
+- `docs/reviews/CVF_NCR_BRIEF_REOPEN_SOL_WORKER_RETURN_2026-10-13.md`
+- `docs/reviews/CVF_NCR_BRIEF_REOPEN_COMPLETION_2026-10-13.md`
+- `docs/reviews/evidence/ncr-brief-reopen-local-20261013.json`
 - `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_BRIEF_REOPEN_RETURN_REPAIR_2026-10-13.md`
 - `docs/baselines/CVF_GC018_NCR_BRIEF_REOPEN_RETURN_REPAIR_2026-10-13.md`
-- `.gitattributes`
+- `docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json`
+- `docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md`
+- `docs/roadmaps/README.md`
+- `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`
+- `docs/roadmaps/CVF_ROADMAP_INVENTORY.md`
+- `docs/roadmaps/CVF_ROADMAP_INVENTORY.csv`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 
-Expected Artifact Existence: archive created from exact bytes; active pair and session sources exist; worker exact2 still absent.
+Expected Artifact Existence: Sol exact2 and new Local completion/proof; remaining material tracked.
 
 ## External Knowledge Intake Routing
 
@@ -179,8 +192,33 @@ Offline jsdom panel visibility, text identity/revision, and callback/browser-ada
 
 ## Evidence
 
-Local root contract `docs/reviews/CVF_NCR_BRIEF_REOPEN_PRIMARY_QUALITY_2026-10-13.md` SHA256 `6e5557606c623081ccef88fb88def4224f111ce6ef34d1f4a7bc94463e82ce8c`; quality/original custody `docs/reviews/evidence/ncr-brief-reopen-quality-20261013.json` SHA256 `983bf7f43ab23c6c4f909177e4e92290605b5b53f8bb9f8d196f47997c309038`. Current root chrome3/3, real Local panel1/1; fresh worker validation/delivery pending.
+Original release source pins/archive receipts: docs/reviews/evidence/ncr-brief-reopen-dispatch-20261013.json. Original full-byte custody and terminal Sol exact2, valid untouched-source red, final evidence and separate Local probe: `docs/reviews/evidence/ncr-brief-reopen-local-20261013.json` SHA256 `1082ecf425eab16270d000a02f0503207b798ef1de6b03b27b6cfd19e23df887`. Conditional focused14/14, TypeScript, scoped lint and final exact2 fast/acceptance ledger PASS consumed; distinct Local real-component sequence1/1 PASS; primary original raw custody retained and canonical normalization disclosed; Sol exact2 frozen; PARTIAL_WITH_REASON. Primary return QUALITY_REJECTED_WITH_CONSOLIDATED_FINDINGS: malformed63-character required digest, SHA1 labelled SHA256 and combined FAIL retained. Root fixed one legacy English assertion and preserved original raw bytes/canonical LF identity. Sol exact2 proof corrects identities and fresh14/type/lint PASS. Sol preparation PARTIAL_WITH_REASON: original HEAD/status capture after initial reads, transport-limited scope, runtime cp1252 console failures, first return gate failure corrected inside same BUILD. Original failed gates retained; no third BUILD or product edits.
 
 ## Decision / Proposed Tranche
 
-Integrated final conditional exact2 Sol medium evidence repair; original primary rejected, source/tests frozen. No source-chain/kernel/provider/whole-job reopening.
+Accepted one bounded production panel-lifetime repair, conditional Sol QUALITY_ACCEPTED_BOUNDED; primary rejected; conditional Sol medium not invoked. PARTIAL_WITH_REASON. Completion `docs/reviews/CVF_NCR_BRIEF_REOPEN_COMPLETION_2026-10-13.md`;26 task/repair observations, prior24 unchanged. Whole job/R3/R4 remain open.
+
+## Local Completion Disposition - 2026-10-13
+
+Voluntary panel close/reopen retains confirmed same-idea packet; hidden edits invalidate, including A-B-A; successful send and form/template unmount reset. Initial panel remains lazy. Conditional focused14/14, TypeScript, scoped lint and final exact2 fast/acceptance ledger PASS consumed; distinct Local real-component sequence1/1 PASS; primary original raw custody retained and canonical normalization disclosed; Sol exact2 frozen; PARTIAL_WITH_REASON. Primary QUALITY_REJECTED_WITH_CONSOLIDATED_FINDINGS; conditional Sol QUALITY_ACCEPTED_BOUNDED. Local proof `docs/reviews/evidence/ncr-brief-reopen-local-20261013.json`; SHA256 `1082ecf425eab16270d000a02f0503207b798ef1de6b03b27b6cfd19e23df887`; completion `docs/reviews/CVF_NCR_BRIEF_REOPEN_COMPLETION_2026-10-13.md`. Historical dispatch fields describe original release; final closure disposition here supersedes pending acceptance. Full job/R3/R4 remain open; no automatic successor. Primary return QUALITY_REJECTED_WITH_CONSOLIDATED_FINDINGS: malformed63-character required digest, SHA1 labelled SHA256 and combined FAIL retained. Root fixed one legacy English assertion and preserved original raw bytes/canonical LF identity. Sol exact2 proof corrects identities and fresh14/type/lint PASS. Sol preparation PARTIAL_WITH_REASON: original HEAD/status capture after initial reads, transport-limited scope, runtime cp1252 console failures, first return gate failure corrected inside same BUILD. Original failed gates retained; no third BUILD or product edits.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_BRIEF_REOPEN_RETURN_REPAIR_2026-10-13.md` | CLOSED_PASS_BOUNDED; conditional Sol QUALITY_ACCEPTED_BOUNDED; primary rejected | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_NCR_BRIEF_REOPEN_COMPLETION_2026-10-13.md` | Conditional focused14/14, TypeScript, scoped lint and final exact2 fast/acceptance ledger PASS consumed; distinct Local real-component sequence1/1 PASS; primary original raw custody retained and canonical normalization disclosed; Sol exact2 frozen; PARTIAL_WITH_REASON. | PASS |
+| Roadmap state | `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `docs/roadmaps/README.md` | accepted finite repair; whole job/R3/R4 open | PASS |
+| Registry JSON | `docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json` |26 task/repair observations10 Haiku-family/9 Sonnet/6 Luna/1 Sol; prior24 unchanged | PASS |
+| Registry Markdown | `docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md` | current26, configured/native boundary retained | PASS |
+| External evidence digest | `docs/reviews/evidence/ncr-brief-reopen-local-20261013.json` | sha256:1082ecf425eab16270d000a02f0503207b798ef1de6b03b27b6cfd19e23df887; internal Local source/log verification | PASS |
+| System loop interlock | parked checkpoints | no automatic successor or new effects | N/A with reason: finite UI presentation outcome |
+| Session continuity | source/generated session surfaces | raw paired authority then actual-SHA continuity | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Requirement | Actual assertion/evidence | Disposition |
+|---|---|---|
+| REQ-SUPPLEMENT | actual raw SHA256 versus Git SHA1; original FAIL/blocked and full byte custody retained | ACCEPTED_BOUNDED |
+| REQ-VALIDATION | frozen current focused14/type/scoped lint PASS; real modules with synthetic seams | ACCEPTED_BOUNDED |
+| REQ-RETURN | exact2 frozen final bytes; scaffold and bound fast/ledger PASS; preparation deviation disclosed | ACCEPTED_BOUNDED |

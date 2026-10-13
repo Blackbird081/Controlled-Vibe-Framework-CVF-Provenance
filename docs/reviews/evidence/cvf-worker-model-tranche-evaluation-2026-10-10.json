@@ -1425,6 +1425,121 @@
         "One synthetic offline UI composition path only. No AI correctness, governance, provider routing, approval/risk/DLP/audit behavior, real browser/OS export, backend cancellation, durable recovery, whole-job, R3/R4, release, public, deployment, or model-ranking claim.",
         "Reported interval excludes required earlier reads/intake and Local acceptance."
       ]
+    },
+    {
+      "requestedProvider": "OpenAI collaboration",
+      "role": "INTERNAL_AGENT_WORKER",
+      "nativeModel": null,
+      "nativeEffort": null,
+      "tokens": null,
+      "bill": {
+        "amount": null,
+        "currency": null,
+        "reason": "Native usage/billing unavailable"
+      },
+      "identityUnavailableReason": "Configured identity only; native runtime/version unobserved",
+      "parentTaskId": "CVF-NCR-BRIEF-REOPEN-20261013",
+      "localReview": "docs/reviews/CVF_NCR_BRIEF_REOPEN_COMPLETION_2026-10-13.md",
+      "evidence": "docs/reviews/evidence/ncr-brief-reopen-local-20261013.json",
+      "evidenceSha256": "1082ecf425eab16270d000a02f0503207b798ef1de6b03b27b6cfd19e23df887",
+      "matchedComparison": false,
+      "trancheId": "CVF-NCR-BRIEF-REOPEN-20261013",
+      "model": "gpt-6-luna",
+      "effort": "max",
+      "requestedModel": "gpt-6-luna",
+      "requestedEffort": "max",
+      "status": "QUALITY_REJECTED_WITH_CONSOLIDATED_FINDINGS",
+      "observationKind": "PRIMARY_WORKER_TASK",
+      "implementationPaths": 2,
+      "productionPaths": 1,
+      "deliveredPaths": 4,
+      "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_BRIEF_REOPEN_2026-10-13.md",
+      "technicalOutput": "BOUNDED_PANEL_BEHAVIOR_PASS_RETURN_REJECTED",
+      "qualityDisposition": "QUALITY_REJECTED_WITH_CONSOLIDATED_FINDINGS",
+      "workerDeclaredStatus": "BLOCKED_WITH_REASON",
+      "originalCombinedTestResult": "FAIL 2/14;12 PASS",
+      "reviewerProductCodeRepairs": 0,
+      "dispatcherLegacyAssertionRepairs": 1,
+      "conditionalSolWorkerUsed": true,
+      "elapsed": {
+        "startedUtc": "2026-10-13T05:23:24Z",
+        "finalPostGateUtc": "2026-10-13T06:11:29Z",
+        "elapsedMinutes": 48.083,
+        "basis": "Primary required-read BUILD through final detached post-gate confirmation; intake and Local review excluded; original combined FAIL retained."
+      },
+      "procedure": {
+        "workerDeclaredStatus": "BLOCKED_WITH_REASON",
+        "invalidSourceRedHarnessCandidates": 2,
+        "combinedHarnessFailure": 1,
+        "initialTypeFixtureFailure": 1,
+        "returnGateFailedCandidate": true,
+        "qualityFindings": [
+          {
+            "id": "BR-R1-01",
+            "class": "WORKER_EXECUTION_ERROR",
+            "requirement": "REQ-RETURN",
+            "problem": "Combined test log digest declared63 hex characters; actual required evidence identity differs. Stale preliminary gate entries and a40-character Git blob ID labelled SHA256 remain in original proof; final structural PASS is not semantic certification.",
+            "guard": "Fresh supplemental proof correctly binds original artifacts/log identities, declares Git blob ID separately from SHA256 and records final gate confirmation without changing the original primary proof."
+          },
+          {
+            "id": "BR-R1-02",
+            "class": "ORCHESTRATOR_PACKET_GAP",
+            "requirement": "REQ-RETURN",
+            "problem": "Required combined command remains FAIL; the known untouched English chrome expectation mismatches current structured INTAKE copy. First combined new-test matcher failure was corrected independently; original failed command must stay FAIL.",
+            "guard": "Permit only current English description assertion repair in old chrome test; run the new+old+draft-export focused14 once and preserve actual result. No runtime copy or product behavior change."
+          }
+        ],
+        "finalStructuralGates": "PASS; does not certify original malformed log identity or all14 PASS"
+      },
+      "proof": "Original terminal failures and malformed evidence identity retained; distinct Local panel1/1 and copy3/3 PASS; not full procedure compliant",
+      "configurationEvidenceBasis": "Existing /root/luna_worker configured gpt-6-luna/max; native unavailable"
+    },
+    {
+      "requestedProvider": "OpenAI collaboration",
+      "role": "INTERNAL_AGENT_WORKER",
+      "nativeModel": null,
+      "nativeEffort": null,
+      "tokens": null,
+      "bill": {
+        "amount": null,
+        "currency": null,
+        "reason": "Native usage/billing unavailable"
+      },
+      "identityUnavailableReason": "Configured identity only; native runtime/version unobserved",
+      "parentTaskId": "CVF-NCR-BRIEF-REOPEN-20261013",
+      "localReview": "docs/reviews/CVF_NCR_BRIEF_REOPEN_COMPLETION_2026-10-13.md",
+      "evidence": "docs/reviews/evidence/ncr-brief-reopen-local-20261013.json",
+      "evidenceSha256": "1082ecf425eab16270d000a02f0503207b798ef1de6b03b27b6cfd19e23df887",
+      "matchedComparison": false,
+      "trancheId": "CVF-NCR-BRIEF-REOPEN-RETURN-REPAIR-20261013",
+      "model": "gpt-6.1-sol",
+      "effort": "medium",
+      "requestedModel": "gpt-6.1-sol",
+      "requestedEffort": "medium",
+      "status": "CLOSED_PASS_BOUNDED",
+      "observationKind": "CONDITIONAL_REPAIR_OBSERVATION_NOT_NEW_TASK",
+      "implementationPaths": 0,
+      "productionPaths": 0,
+      "deliveredPaths": 2,
+      "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_BRIEF_REOPEN_RETURN_REPAIR_2026-10-13.md",
+      "technicalOutput": "ACCEPTED_BOUNDED_SUPPLEMENTAL_PROOF_AND_CURRENT_VALIDATION",
+      "qualityDisposition": "QUALITY_ACCEPTED_BOUNDED",
+      "workerDeclaredStatus": "COMPLETE_PENDING_REVIEW",
+      "proof": "Conditional focused14/14, TypeScript, scoped lint and final exact2 fast/acceptance ledger PASS consumed; distinct Local real-component sequence1/1 PASS; primary original raw custody retained and canonical normalization disclosed; Sol exact2 frozen; PARTIAL_WITH_REASON.",
+      "procedureDisposition": "PARTIAL_WITH_REASON",
+      "procedure": "Primary return QUALITY_REJECTED_WITH_CONSOLIDATED_FINDINGS: malformed63-character required digest, SHA1 labelled SHA256 and combined FAIL retained. Root fixed one legacy English assertion and preserved original raw bytes/canonical LF identity. Sol exact2 proof corrects identities and fresh14/type/lint PASS. Sol preparation PARTIAL_WITH_REASON: original HEAD/status capture after initial reads, transport-limited scope, runtime cp1252 console failures, first return gate failure corrected inside same BUILD. Original failed gates retained; no third BUILD or product edits.",
+      "elapsed": {
+        "startedUtc": "2026-10-13T06:42:06.7316596Z",
+        "finalPostGateUtc": "2026-10-13T07:07:12.416432+00:00",
+        "elapsedMinutes": 25.095,
+        "resumedUtc": "2026-10-13T06:52:20.0598363Z",
+        "rootPauseMinutes": null,
+        "rootPauseReason": "Same BUILD released before writes/runs for immutable dispatch lineage; hold start not independently UTC-stamped. Original clock retained, resume timestamp separately recorded.",
+        "basis": "Measured worker start through detached post-gate confirmation includes required reads and Root hold/rebind; excludes later Local closure. Unequal scopes/native unavailable prevent comparative speed/cost interpretation."
+      },
+      "reviewerProductCodeRepairs": 0,
+      "configurationEvidenceBasis": "Actual /root/sol_worker spawn gpt-6.1-sol/medium, fork none; native unavailable",
+      "qualityInterpretation": "Same-parent bounded repair; unequal work scope prevents speed/cost/model winner inference"
     }
   ],
   "rubric": [
@@ -1510,8 +1625,10 @@
     ],
     "reviewedHaikuCount": 10,
     "reviewedSonnetCount": 9,
-    "reviewedLunaCount": 5,
-    "reviewedTaskObservationCount": 24
+    "reviewedLunaCount": 6,
+    "reviewedTaskObservationCount": 26,
+    "reviewedSolCount": 1,
+    "reviewedRepairObservationCount": 1
   },
   "provisionalRoleRouting": [
     {
@@ -1540,9 +1657,9 @@
   "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
   "laneProtection": "Reviewer-owned governed evidence promotion authorized by operator longitudinal tracking request. No worker file edit, new dispatch, provider effect or public export.",
   "observations": {
-    "technical": "24 reviewed tasks:10 Haiku-family/9 Sonnet/5 Luna; previous23 semantically preserved. Test-only actual UI journey worker1/1 and Local strategy/decoy1/1 PASS; zero production edits.",
-    "process": "Worker locator failure, two return metadata failed candidates, late BUILD clock and candidate2 digest typo retained; Local digest supplement and command preparation failure attributed separately.",
-    "reportStatus": "TWENTY_FOUR_REVIEWED_TASK_OBSERVATIONS_NO_COMPARATIVE_WINNER",
+    "technical": "26 task/repair observations:10 Haiku-family/9 Sonnet/6 Luna/1 Sol; prior24 rows unchanged. Primary task rejected on return quality; conditional same-parent repair accepted. Conditional focused14/14, TypeScript, scoped lint and final exact2 fast/acceptance ledger PASS consumed; distinct Local real-component sequence1/1 PASS; primary original raw custody retained and canonical normalization disclosed; Sol exact2 frozen; PARTIAL_WITH_REASON.",
+    "process": "Primary return QUALITY_REJECTED_WITH_CONSOLIDATED_FINDINGS: malformed63-character required digest, SHA1 labelled SHA256 and combined FAIL retained. Root fixed one legacy English assertion and preserved original raw bytes/canonical LF identity. Sol exact2 proof corrects identities and fresh14/type/lint PASS. Sol preparation PARTIAL_WITH_REASON: original HEAD/status capture after initial reads, transport-limited scope, runtime cp1252 console failures, first return gate failure corrected inside same BUILD. Original failed gates retained; no third BUILD or product edits.",
+    "reportStatus": "TWENTY_SIX_TASK_AND_REPAIR_OBSERVATIONS_NO_COMPARATIVE_WINNER",
     "measuredBillComparison": null,
     "nextControl": "Continue evidence collection on admitted work; Expense/S5 and effects parked; no automatic router or new benchmark task."
   },
@@ -1705,7 +1822,7 @@
     "localReview": "docs/reviews/CVF_MFRP_CONTINUITY_COLLECTION_DESIGN_COMPLETION_2026-10-11.md",
     "evidence": "docs/reviews/evidence/mfrp-continuity-collection-design-local-20261011.json",
     "evidenceSha256": "c939d3ba3e2142e809b1bc454b291c452792a44938881f6713047c6c8df48954",
-    "dedupKey": "trancheId; repeated review/repair/gate/derivative records are not new worker tasks",
+    "dedupKey": "trancheId + observationKind; conditional repair observations retain parentTaskId and do not count as new distinct tasks",
     "originalNineRowsPreserved": true,
     "historicalBackfilledTaskCount": 5,
     "currentNewTaskCount": 1,
@@ -1714,11 +1831,14 @@
     "omissionOwner": "LOCAL_ORCHESTRATOR",
     "OpusSameSessionAdvisoryExtraWorkers": 0,
     "latestReviewedTask": {
-      "trancheId": "CVF-NCR-OFFLINE-JOURNEY-20261013",
-      "localReview": "docs/reviews/CVF_NCR_OFFLINE_JOURNEY_COMPLETION_2026-10-13.md",
-      "evidence": "docs/reviews/evidence/ncr-offline-journey-local-20261013.json",
-      "evidenceSha256": "d9fa39ffcc487335dc6432339141b6287857413683721dfc198655160c2f9dbb",
-      "previousTwentyThreeRowsPreserved": true
+      "trancheId": "CVF-NCR-BRIEF-REOPEN-20261013",
+      "conditionalRepairId": "CVF-NCR-BRIEF-REOPEN-RETURN-REPAIR-20261013",
+      "localReview": "docs/reviews/CVF_NCR_BRIEF_REOPEN_COMPLETION_2026-10-13.md",
+      "evidence": "docs/reviews/evidence/ncr-brief-reopen-local-20261013.json",
+      "evidenceSha256": "1082ecf425eab16270d000a02f0503207b798ef1de6b03b27b6cfd19e23df887",
+      "previousTwentyFourRowsPreserved": true,
+      "newDistinctTaskCount": 1,
+      "repairObservationCount": 1
     }
   },
   "operatorObservationFocus": {

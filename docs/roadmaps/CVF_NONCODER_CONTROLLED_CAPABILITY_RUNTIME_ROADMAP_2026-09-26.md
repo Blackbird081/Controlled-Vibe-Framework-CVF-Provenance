@@ -11,7 +11,7 @@ Decision owner: operator về định hướng/phạm vi; Local reviewer về đ
 
 ## Current Delivery Checkpoint - 2026-10-13
 
-Current delivery projection; Local decision owner. Current mode=cvf_ncr_offline_journey_closed_useful_selection,
+Current delivery projection; Local decision owner. Current mode=cvf_ncr_brief_reopen_closed_useful_selection,
 handoff=AGENT_HANDOFF_V63_2026-09-18.md, next=useful coding outcome selection.
 Prior evidence/phase/effect checkpoints retain their scope.
 
@@ -59,7 +59,13 @@ output/association and child display are bound; production unchanged. Original3 
 hashes. Procedure PARTIAL_WITH_REASON and digest erratum retained. 24 task observations, prior23 preserved;
 native usage/bill unknown. This contributes to the nearest offline milestone; full job/export/recovery,
 browser/backend and real-provider R3/R4 acceptance remain open.
-**Next selection:** brief-panel reopen continuity under `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_BRIEF_REOPEN_2026-10-13.md`; primary worker and Local review pending, conditional repair only if quality rejected.
+**Accepted finite outcome - Working Brief panel lifetime, 2026-10-13:**
+docs/reviews/CVF_NCR_BRIEF_REOPEN_COMPLETION_2026-10-13.md accepts the primary worker's
+parent-only presentation repair. Conditional focused14/14, TypeScript, scoped lint and final exact2 fast/acceptance ledger PASS consumed; distinct Local real-component sequence1/1 PASS; primary original raw custody retained and canonical normalization disclosed; Sol exact2 frozen; PARTIAL_WITH_REASON.
+Voluntary panel close/reopen retains confirmed same-idea packet; hidden edits invalidate, including A-B-A; successful send and form/template unmount reset. Initial panel remains lazy. Primary QUALITY_REJECTED_WITH_CONSOLIDATED_FINDINGS; conditional Sol QUALITY_ACCEPTED_BOUNDED.
+26 task/repair observations, prior24 unchanged; native usage/bill unavailable.
+Whole job, browser/backend and real-provider R3/R4 remain open.
+**Next selection:** select the next useful finite coding outcome from existing NCR owners; no automatic successor or additional worker release.
 Whole job/full/browser/backend/provider/R3/R4 remain open.
 
 Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11 remain
@@ -720,6 +726,7 @@ Historical D001-D110 rows are preserved in `docs/roadmaps/archive/CVF_NCR_PRE_BR
 
 | ID | Ngày | Quyết định / trạng thái | Lý do / bước tiếp |
 |---|---|---|---|
+| D113 | 2026-10-13 | Accepted bounded brief-panel lifetime repair; primary QUALITY_REJECTED_WITH_CONSOLIDATED_FINDINGS; conditional Sol accepted bounded | Original4 retained; worker final proofs consumed and independent Local1/1;26 task/repair observations/prior24 retained; whole job/R3/R4 remain open |
 | D112 | 2026-10-13 | Selected bounded brief-panel continuity repair; exact4 worker outputs; conditional repair only on Local quality rejection | Existing child revision owner retained; roadmap raw history archived/shrunk, active handoff preimage archived; no whole-job/R3/R4 exit or new effects |
 | D111 | 2026-10-12 | Current Delivery Checkpoint: finite existing-consumer outcome, bounded proof gaps and quality/time collection; no phase exit | Existing lifecycle/Review Cost owners; three-action selection/repair-if-needed/review route; preserve parked effects; raw historical section archived; exact-path active-window registration; document checks only, rollback this four-path batch if routing/proof text regresses |
 | Q001 | PILOT_CANDIDATE_SELECTED_SCOPE_OPEN; D009/D010/D016-D033/D035/D036; SYNTHETIC_SQLITE_TARGET_PUBLICATION_ACCEPTED_BOUNDED | Ứng viên HTML đã chọn; source repair, receipt/ledger wiring, enforcement, browser UI và GitHub OAuth/admin local đã kiểm bounded. Work Transfer từ phiên GitHub có response trực tiếp `authMode=session`, `ALLOW`/`DRAFT_UNACCEPTED` và request ID khớp ledger. D029 chấp nhận SQLite local candidate, D030 chứng minh synthetic Web→engine→SQLite, D031 ghi các lỗi rehearsal, D032 lập corrective packet, D033 chấp nhận sửa target publication trên dữ liệu synthetic. D035 chọn Profile A không effect làm mặc định; D036 chấp nhận riêng B1 consumer binding bằng mocked UI tests, không thêm effect. Bản sao ledger thật và cutover là hai bước có điều kiện khác nhau. Còn authoritative instance/retry, latency, retention/backup dưới failure, live effect, deployment/cost, full P08, baseline/metric và RPO/RTO | Giữ pilot effect parked. Operator cần xác định ledger/instance nào là nguồn, phân loại dữ liệu và quyền đọc bản sao trước Profile B; sau đó mới chốt writer, backup location/key/retention, RPO/RTO, P08 áp dụng, cost/retry, artifact acceptance và pilot/live. Profile C chưa được phép; chưa cấp work order thi công real ledger. `ALLOW` không là artifact approval hoặc provider-governance proof; cost vẫn `UNKNOWN`; video có scope/approval riêng |

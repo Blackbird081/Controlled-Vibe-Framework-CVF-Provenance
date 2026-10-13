@@ -37,11 +37,11 @@
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_NCR_BRIEF_REOPEN_RETURN_REPAIR_2026-10-13.md",
-    "baselineSha256": "3cfd6a7f6a93bf59d055b7d341944114c503da3cc388870b690ee837972a20d4",
+    "baselineSha256": "91ef78d0f43279c1aca08426bffca0b96506c7ee2d0fab04abe4966bbd803a8d",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_BRIEF_REOPEN_RETURN_REPAIR_2026-10-13.md",
-    "workOrderSha256": "a737804f6ad439c6ddfec3b41c4d96447e5e3ede595f9b573fab1d283c5854af"
+    "workOrderSha256": "41d519ff1435caabc6c17a12cc8c473d3c613007137260542340e0557cec27a7"
   },
-  "currentAuthoritySyncReason": "Brief-panel worker material 2acd458d4; exact6 actual-SHA continuity; original history archived; no other effect grant.",
+  "currentAuthoritySyncReason": "Local accepted bounded brief-panel closure raw authority projection; actual-SHA continuity follows material commit.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",

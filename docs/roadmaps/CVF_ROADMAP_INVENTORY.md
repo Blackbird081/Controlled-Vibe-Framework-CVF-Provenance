@@ -41,10 +41,10 @@ sorted UTF-8 lines: repo-relative-path, TAB, normalized SHA256, LF.
 
 - Corpus task class: Metadata navigation inventory; semantic audit remains partial.
 - Corpus root: docs/roadmaps/ outside archive and index carriers.
-- Snapshot time: 2026-10-13T04:46:10Z; --check evaluates present source freshness independently of snapshot/publication time.
+- Snapshot time: 2026-10-13T07:08:59Z; --check evaluates present source freshness independently of snapshot/publication time.
 - Enumeration command: Python Path.rglob('*.md') in scripts/generate_roadmap_inventory.py; filesystem-backed, no Git ignore filter.
 - Manifest artifact or inline manifest: docs/roadmaps/CVF_ROADMAP_INVENTORY.csv, 224 source rows.
-- Manifest hash: 7c726bd1a410e8f941c967f9e0a3377a88b6b710bdaf6eb700d07850082ae077
+- Manifest hash: 7bd5b0db717957ecc77d06336c73e6a0f72fa35726d17c1f94247c2457ccd55c
 - Processing ledger artifact or inline ledger: Same table, metadata parsed; semantic review DEFERRED for each source.
 - Allowed terminal statuses: READ, SKIPPED_WITH_REASON, DEFERRED, BLOCKED_UNREADABLE; uses DEFERRED only.
 - Reconciliation: manifest=224; ledger_terminal=224; exclusions=0 within declared root; unresolved=0.
@@ -61,7 +61,7 @@ sorted UTF-8 lines: repo-relative-path, TAB, normalized SHA256, LF.
 
 - Knowledge task class: Metadata navigation; current-state semantic mapping deferred.
 - Source manifest: docs/roadmaps/CVF_ROADMAP_INVENTORY.csv.
-- Source manifest hash: 7c726bd1a410e8f941c967f9e0a3377a88b6b710bdaf6eb700d07850082ae077
+- Source manifest hash: 7bd5b0db717957ecc77d06336c73e6a0f72fa35726d17c1f94247c2457ccd55c
 - Enumeration safety: Filesystem-backed Path.rglob includes ignored Markdown in declared scope.
 - Intake registry or ledger: CSV semanticDisposition column; docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json consulted at authoring; no absorption claim.
 - Authority assets: Source roadmaps; baseline/closure/session owners govern selection.

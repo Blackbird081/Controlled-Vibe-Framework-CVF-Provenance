@@ -1,0 +1,963 @@
+{
+  "schemaVersion": "cvf.ncrBriefReopenSupplementalEvidence@1.0.0",
+  "batchId": "CVF-NCR-BRIEF-REOPEN-RETURN-REPAIR-20261013",
+  "role": "INTERNAL_AGENT",
+  "phase": "bounded BUILD supplemental evidence",
+  "decisionOwner": "Local reviewer/closer",
+  "executionBaseHead": "a439f197bfe08e0e1bf423b6d5af1e1203817f02",
+  "originalInitialReleaseHead": "2c6d23b87c7884c222b94de3e733f4b487da1b57",
+  "status": "COMPLETE_PENDING_REVIEW",
+  "procedureDisposition": "PARTIAL_WITH_REASON",
+  "timestampsUtc": {
+    "buildStartedBeforeRequiredReads": "2026-10-13T06:42:06.7316596Z",
+    "deadline": "2026-10-13T07:27:06.7316596Z",
+    "resumedCaptureBeforeWrite": "2026-10-13T06:52:20.0598363Z",
+    "proofPrepared": "2026-10-13T07:03:59.775614+00:00",
+    "finalGateConfirmation": null,
+    "finalWorkerMessage": null,
+    "finalClockDisposition": "Detached post-gate message and runtime confirmation bind final exact2 bytes; no self-rewrite after final gates"
+  },
+  "preparationDeviations": [
+    "BUILD start was captured before reads; initial HEAD/status was captured after bootstrap/front-door/handoff/pair reads, not in the initial command. Current PASS cannot certify the missing historical capture order.",
+    "Some combined read outputs exceeded tool transport limits; inventory declares scoped/partial reads rather than all files read.",
+    "Root requested lane release before any write/run, committed immutable dispatch lineage and continuity, then resumed the SAME BUILD. Original45-minute clock includes this delay; hold start is not independently UTC-stamped by worker.",
+    "Capture helper console printing failed with Windows cp1252 after focused child exited0 and stdout/receipt were safely written. Runtime helper encoding alone was corrected; preserved focused log read; no test rerun. A later metadata-only console print also encountered cp1252; no validation command affected."
+  ],
+  "configuration": {
+    "configuredModel": "gpt-6.1-sol",
+    "configuredReasoningEffort": "medium",
+    "nativeModelIdentity": null,
+    "nativeModelVersion": null,
+    "nativeReasoningEffort": null,
+    "nativeTokens": null,
+    "nativeBilling": null,
+    "nativeQuota": null,
+    "unavailableReason": "No native identity/version/effort or usage/billing meter exposed; configured values are assignment metadata only; no ranking claim",
+    "priorObservationCountRetained": 24
+  },
+  "scope": {
+    "ownedPaths": [
+      "docs/reviews/evidence/ncr-brief-reopen-sol-worker-20261013.json",
+      "docs/reviews/CVF_NCR_BRIEF_REOPEN_SOL_WORKER_RETURN_2026-10-13.md"
+    ],
+    "actualChangedSet": [
+      "docs/reviews/evidence/ncr-brief-reopen-sol-worker-20261013.json",
+      "docs/reviews/CVF_NCR_BRIEF_REOPEN_SOL_WORKER_RETURN_2026-10-13.md"
+    ],
+    "sourceAndEveryTestReadOnly": true,
+    "stageCount": 0,
+    "commitCount": 0,
+    "nestedWorkerCount": 0,
+    "providerCallCount": 0,
+    "externalInvocationCount": 0,
+    "browserServerInstallPublicDeployCount": 0
+  },
+  "preparation": {
+    "snapshot": {
+      "capturedUtc": "2026-10-13T06:53:24.490885+00:00",
+      "executionBaseHead": "a439f197bfe08e0e1bf423b6d5af1e1203817f02",
+      "status": "",
+      "staged": "",
+      "sourcePins": [
+        {
+          "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.tsx",
+          "expectedRawSha256": "a970962580b3d12b2ec0c26004162122cd647df5e564bf10db8b0672e79bfe32",
+          "expectedHeadBlobSha256": "a970962580b3d12b2ec0c26004162122cd647df5e564bf10db8b0672e79bfe32",
+          "rawSha256": "a970962580b3d12b2ec0c26004162122cd647df5e564bf10db8b0672e79bfe32",
+          "headBlobSha256": "a970962580b3d12b2ec0c26004162122cd647df5e564bf10db8b0672e79bfe32",
+          "gitBlobOidSha1": "883ba48cbb13a59c7c1946c6f7f8869bfc95bd1c",
+          "result": "MATCH"
+        },
+        {
+          "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.brief-lifecycle.test.tsx",
+          "expectedRawSha256": "6b9971ceca6babcf6291ae3ad3f5ce381ab39d4aa5ad3a3b75530ff49782dd6d",
+          "expectedHeadBlobSha256": "6b9971ceca6babcf6291ae3ad3f5ce381ab39d4aa5ad3a3b75530ff49782dd6d",
+          "rawSha256": "6b9971ceca6babcf6291ae3ad3f5ce381ab39d4aa5ad3a3b75530ff49782dd6d",
+          "headBlobSha256": "6b9971ceca6babcf6291ae3ad3f5ce381ab39d4aa5ad3a3b75530ff49782dd6d",
+          "gitBlobOidSha1": "c87283cf9bd77baed117ff279d82e008843cb197",
+          "result": "MATCH"
+        },
+        {
+          "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.test.tsx",
+          "expectedRawSha256": "3e3d98cf8e8aead5180d3f253310aa0c3fdc15c1e5d2cfbbda522bc885ac0257",
+          "expectedHeadBlobSha256": "3e3d98cf8e8aead5180d3f253310aa0c3fdc15c1e5d2cfbbda522bc885ac0257",
+          "rawSha256": "3e3d98cf8e8aead5180d3f253310aa0c3fdc15c1e5d2cfbbda522bc885ac0257",
+          "headBlobSha256": "3e3d98cf8e8aead5180d3f253310aa0c3fdc15c1e5d2cfbbda522bc885ac0257",
+          "gitBlobOidSha1": "3889793c0c6f738d53194e8c5e6316f99e4c14f5",
+          "result": "MATCH"
+        },
+        {
+          "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/template-i18n.ts",
+          "expectedRawSha256": "96e8a9d5f583816d6f62234ebcc0524a7d369951f70896f0a294fe9a90d74a4b",
+          "expectedHeadBlobSha256": "96e8a9d5f583816d6f62234ebcc0524a7d369951f70896f0a294fe9a90d74a4b",
+          "rawSha256": "96e8a9d5f583816d6f62234ebcc0524a7d369951f70896f0a294fe9a90d74a4b",
+          "headBlobSha256": "96e8a9d5f583816d6f62234ebcc0524a7d369951f70896f0a294fe9a90d74a4b",
+          "gitBlobOidSha1": "a55f643357840e55b305793500bdb13641671bc1",
+          "result": "MATCH"
+        },
+        {
+          "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/draft-export.test.tsx",
+          "expectedRawSha256": "a1fccf902fc3c91442b7f70beebff6c860693feb3ffb38f0fab546feaba407de",
+          "expectedHeadBlobSha256": "a1fccf902fc3c91442b7f70beebff6c860693feb3ffb38f0fab546feaba407de",
+          "rawSha256": "a1fccf902fc3c91442b7f70beebff6c860693feb3ffb38f0fab546feaba407de",
+          "headBlobSha256": "a1fccf902fc3c91442b7f70beebff6c860693feb3ffb38f0fab546feaba407de",
+          "gitBlobOidSha1": "56fac35c561394193cf6d4e00fa4dd26c35ee429",
+          "result": "MATCH"
+        },
+        {
+          "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/SpecExport.tsx",
+          "expectedRawSha256": "8c425b3b0f4d468ee129224c688d30141a8924e01f78dcf0d1d28a4357d9689a",
+          "expectedHeadBlobSha256": "8c425b3b0f4d468ee129224c688d30141a8924e01f78dcf0d1d28a4357d9689a",
+          "rawSha256": "8c425b3b0f4d468ee129224c688d30141a8924e01f78dcf0d1d28a4357d9689a",
+          "headBlobSha256": "8c425b3b0f4d468ee129224c688d30141a8924e01f78dcf0d1d28a4357d9689a",
+          "gitBlobOidSha1": "10b02a7aea64b0eecc9ad8b80d8d8026611ac951",
+          "result": "MATCH"
+        }
+      ],
+      "authorityBindings": [
+        {
+          "path": "docs\\work_orders\\CVF_AGENT_WORK_ORDER_NCR_BRIEF_REOPEN_RETURN_REPAIR_2026-10-13.md",
+          "sha256": "a737804f6ad439c6ddfec3b41c4d96447e5e3ede595f9b573fab1d283c5854af"
+        },
+        {
+          "path": "docs/baselines/CVF_GC018_NCR_BRIEF_REOPEN_RETURN_REPAIR_2026-10-13.md",
+          "sha256": "3cfd6a7f6a93bf59d055b7d341944114c503da3cc388870b690ee837972a20d4"
+        },
+        {
+          "path": "docs/work_orders/archive/CVF_AGENT_WORK_ORDER_NCR_BRIEF_REOPEN_RETURN_REPAIR_DISPATCH_2026-10-13.md",
+          "sha256": "1d6ca143b201fefc1383d9ec385c5113c9587e59f21541cc6df29222d065c302"
+        }
+      ],
+      "ownedAbsentBeforeScaffold": true
+    },
+    "preImplementationAutorunReceipt": {
+      "path": ".cvf/runtime/ncr-brief-reopen-sol-worker-20261013/pre-implementation-autorun-receipt.json",
+      "sha256": "19ff0998d84022b611193d69e1b2c9814dfbbbb7198984e5f06887761bb63a87",
+      "bytes": 39133
+    },
+    "preImplementationCheckCount": 88,
+    "actualScaffold": {
+      "path": ".cvf/runtime/ncr-brief-reopen-sol-worker-20261013/generated-scaffold.md",
+      "sha256": "28809eaf56d65f855da94946fa4389f74f8b3b472c745715f1f063f14d2c4d79",
+      "bytes": 13387
+    },
+    "commands": [
+      {
+        "name": "pre-implementation",
+        "argv": [
+          "python",
+          "-B",
+          "governance/compat/run_agent_autorun_workflow_gate.py",
+          "--phase",
+          "pre-implementation",
+          "--active-work-order",
+          "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_BRIEF_REOPEN_RETURN_REPAIR_2026-10-13.md"
+        ],
+        "cwd": ".",
+        "startedUtc": "2026-10-13T06:53:29.816848+00:00",
+        "endedUtc": "2026-10-13T06:53:41.799115+00:00",
+        "elapsedSeconds": 11.985,
+        "exitCode": 0,
+        "log": ".cvf/runtime/ncr-brief-reopen-sol-worker-20261013/pre-implementation.log",
+        "logSha256": "3b5b82307684d7952a8d6115aa4ab3e78476fc5b1f6e9ae8e18cddd2831f0806",
+        "logBytes": 4761
+      },
+      {
+        "name": "scaffold",
+        "argv": [
+          "python",
+          "governance/compat/run_worker_return_scaffold.py",
+          "--write",
+          "docs/reviews/CVF_NCR_BRIEF_REOPEN_SOL_WORKER_RETURN_2026-10-13.md",
+          "--check-shape",
+          "--max-lines",
+          "450",
+          "--max-bytes",
+          "64000"
+        ],
+        "cwd": ".",
+        "startedUtc": "2026-10-13T06:53:59.118612+00:00",
+        "endedUtc": "2026-10-13T06:53:59.194284+00:00",
+        "elapsedSeconds": 0.062,
+        "exitCode": 0,
+        "log": ".cvf/runtime/ncr-brief-reopen-sol-worker-20261013/scaffold.log",
+        "logSha256": "0cfd579d35094d4ee231ea50ddfb19881341f9be678168d85dd50d609f8f1591",
+        "logBytes": 241
+      },
+      {
+        "name": "focused14",
+        "argv": [
+          "node",
+          "node_modules/vitest/vitest.mjs",
+          "run",
+          "src/components/DynamicForm.brief-lifecycle.test.tsx",
+          "src/components/DynamicForm.test.tsx",
+          "src/app/(dashboard)/home/draft-export.test.tsx",
+          "--reporter=verbose"
+        ],
+        "cwd": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web",
+        "startedUtc": "2026-10-13T06:54:07.853755+00:00",
+        "endedUtc": "2026-10-13T06:54:20.466558+00:00",
+        "elapsedSeconds": 12.609,
+        "exitCode": 0,
+        "log": ".cvf/runtime/ncr-brief-reopen-sol-worker-20261013/focused14.log",
+        "logSha256": "c482617d7687972d0fc77d8e3abb31cd64580e40988c62ed9a0e467594fcd106",
+        "logBytes": 3069
+      },
+      {
+        "name": "typecheck",
+        "argv": [
+          "node",
+          "node_modules/typescript/bin/tsc",
+          "--noEmit",
+          "--incremental",
+          "false"
+        ],
+        "cwd": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web",
+        "startedUtc": "2026-10-13T06:54:40.641053+00:00",
+        "endedUtc": "2026-10-13T06:54:58.314486+00:00",
+        "elapsedSeconds": 17.672,
+        "exitCode": 0,
+        "log": ".cvf/runtime/ncr-brief-reopen-sol-worker-20261013/typecheck.log",
+        "logSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "logBytes": 0
+      },
+      {
+        "name": "lint",
+        "argv": [
+          "node",
+          "node_modules/eslint/bin/eslint.js",
+          "src/components/DynamicForm.test.tsx"
+        ],
+        "cwd": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web",
+        "startedUtc": "2026-10-13T06:55:14.778463+00:00",
+        "endedUtc": "2026-10-13T06:55:17.787727+00:00",
+        "elapsedSeconds": 3.0,
+        "exitCode": 0,
+        "log": ".cvf/runtime/ncr-brief-reopen-sol-worker-20261013/lint.log",
+        "logSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "logBytes": 0
+      }
+    ],
+    "sourceReadLedger": [
+      {
+        "path": "AGENTS.md",
+        "action": "PARTIAL_READ",
+        "scope": "progressive startup/authority instructions supplied and selected on-disk front-door scope",
+        "sha256": "efd70dc9521a16589d72a4cb92314d1d0e6e1f05481e8ab62065948fa07bf451",
+        "claimBoundary": "Self-reported scoped read; hash establishes byte identity, not understanding or full-file reading"
+      },
+      {
+        "path": "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json",
+        "action": "FULL_READ",
+        "scope": "full compact bootstrap initial and resumed",
+        "sha256": "3a3c8d198f07d359ffcdacf7125d8f3442dfc34b7cd777338db887e8eed3331e",
+        "claimBoundary": "Self-reported scoped read; hash establishes byte identity, not understanding or full-file reading"
+      },
+      {
+        "path": "CVF_SESSION_MEMORY.md",
+        "action": "FULL_READ",
+        "scope": "full compact front door initial",
+        "claimBoundary": "Self-reported scoped read; hash establishes byte identity, not understanding or full-file reading",
+        "readRevision": "2c6d23b87c7884c222b94de3e733f4b487da1b57",
+        "readBlobSha256": "e98837fcf22a4bf6a7ad3160a897a320340c23b09747ff03b263a1d9256f83d6",
+        "currentRawSha256": "f7ff73a15672193658b5984a9d92fae0f3be744c07d9c476066ccbace6a70b8c",
+        "currentRawIsReadEvidence": false
+      },
+      {
+        "path": "AGENT_HANDOFF_V63_2026-09-18.md",
+        "action": "FULL_READ",
+        "scope": "full current handoff initial",
+        "claimBoundary": "Self-reported scoped read; hash establishes byte identity, not understanding or full-file reading",
+        "readRevision": "2c6d23b87c7884c222b94de3e733f4b487da1b57",
+        "readBlobSha256": "0ca5617d5049534e2add3f6b76867af866b19cd5f24e5f0749a5f40ab9cb3806",
+        "currentRawSha256": "abe735c4f18a9a1a9a12616bc98d827b5887d571569da2d4876d6b63bfc06f1d",
+        "currentRawIsReadEvidence": false
+      },
+      {
+        "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_BRIEF_REOPEN_RETURN_REPAIR_2026-10-13.md",
+        "action": "PARTIAL_READ",
+        "scope": "paired contract scopes initial; amended immutable anchor/source pins on resume; output transport truncation limits recorded",
+        "sha256": "a737804f6ad439c6ddfec3b41c4d96447e5e3ede595f9b573fab1d283c5854af",
+        "claimBoundary": "Self-reported scoped read; hash establishes byte identity, not understanding or full-file reading",
+        "initialReadBlobSha256": "1d6ca143b201fefc1383d9ec385c5113c9587e59f21541cc6df29222d065c302",
+        "currentReadRevision": "a439f197bfe08e0e1bf423b6d5af1e1203817f02"
+      },
+      {
+        "path": "docs/baselines/CVF_GC018_NCR_BRIEF_REOPEN_RETURN_REPAIR_2026-10-13.md",
+        "action": "FULL_READ",
+        "scope": "full initial baseline; amended anchor scope on resume",
+        "sha256": "3cfd6a7f6a93bf59d055b7d341944114c503da3cc388870b690ee837972a20d4",
+        "claimBoundary": "Self-reported scoped read; hash establishes byte identity, not understanding or full-file reading",
+        "initialReadBlobSha256": "28541d1dcf03bfbb184d307e5e51c7766a22097481d0e2db476080614ecdc6e9",
+        "currentReadRevision": "a439f197bfe08e0e1bf423b6d5af1e1203817f02"
+      },
+      {
+        "path": "docs/work_orders/archive/CVF_AGENT_WORK_ORDER_NCR_BRIEF_REOPEN_RETURN_REPAIR_DISPATCH_2026-10-13.md",
+        "action": "PARTIAL_READ",
+        "scope": "initial exact-byte work-order contents plus missing scaffold/lineage scope targeted reads",
+        "sha256": "1d6ca143b201fefc1383d9ec385c5113c9587e59f21541cc6df29222d065c302",
+        "claimBoundary": "Self-reported scoped read; hash establishes byte identity, not understanding or full-file reading"
+      },
+      {
+        "path": "docs/reference/CVF_AGENT_INSTRUCTION_CARRIER_ROUTING_INDEX_2026-08-11.md",
+        "action": "PARTIAL_READ",
+        "scope": "startup/worker/trace/lifecycle routing map",
+        "sha256": "eda3a0c643e35caf22d8d1f0b5cab8f906186adc2276552379ce138ea2daf521",
+        "claimBoundary": "Self-reported scoped read; hash establishes byte identity, not understanding or full-file reading"
+      },
+      {
+        "path": "docs/reference/guard_orientation/README.md",
+        "action": "PARTIAL_READ",
+        "scope": "task-first startup/worker guard map and failure prevention",
+        "sha256": "1f36328e7f84c4620063fb865616fd0a2011088e7c473759d5b63b7b69f9822d",
+        "claimBoundary": "Self-reported scoped read; hash establishes byte identity, not understanding or full-file reading"
+      },
+      {
+        "path": "docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md",
+        "action": "PARTIAL_READ",
+        "scope": "applicable checklist including trace, source inventory, heading, corpus, scaffold and equivalence traps",
+        "sha256": "dcb12ad8df392298ebd54b3cb4a721553387329d9053e26543f1ab0b3d1d8996",
+        "claimBoundary": "Self-reported scoped read; hash establishes byte identity, not understanding or full-file reading"
+      },
+      {
+        "path": "docs/reference/CVF_GOVERNED_WORK_LIFECYCLE_AND_DESIGN_CONTROL_STANDARD_2026-06-11.md",
+        "action": "PARTIAL_READ",
+        "scope": "Agent Continuation And Action Readiness; Outputs Designed For Receiving Agent; Outcome-Bound selection; design gate",
+        "sha256": "b48f11363ee62a2ec4c85c6f9fba4540b90eb74475c31aeab18cfe4492a536de",
+        "claimBoundary": "Self-reported scoped read; hash establishes byte identity, not understanding or full-file reading"
+      },
+      {
+        "path": "docs/reference/external_agent_review/CVF_CROSS_WORKSPACE_EVIDENCE_RELAY_METHOD.md",
+        "action": "PARTIAL_READ",
+        "scope": "scope, internal handoff and role responsibilities",
+        "sha256": "4616ac6986c9a8e0f8049c3432f7b6febc7bc8a9c361f8540ec78a590b77b869",
+        "claimBoundary": "Self-reported scoped read; hash establishes byte identity, not understanding or full-file reading"
+      },
+      {
+        "path": "docs/reference/external_agent_review/CVF_CROSS_WORKSPACE_DOMAIN_FUNNEL_ABSORPTION_METHOD.md",
+        "action": "PARTIAL_READ",
+        "scope": "scope, two-step agreement and internal worker boundary",
+        "sha256": "a584b8f419fac59914d800ddef38eb49ae9723459b5b3c07ba7a3352fe7dfa88",
+        "claimBoundary": "Self-reported scoped read; hash establishes byte identity, not understanding or full-file reading"
+      },
+      {
+        "path": "DESIGN.md",
+        "action": "PARTIAL_READ",
+        "scope": "existing UI protected constraints, accessibility/language and agent prompt guide; transport-limited output",
+        "sha256": "15c1b5061bd2e1f763638beb83a84d06eb8ccbc470747c01f236033a834a987e",
+        "claimBoundary": "Self-reported scoped read; hash establishes byte identity, not understanding or full-file reading"
+      },
+      {
+        "path": "docs/reviews/CVF_NCR_BRIEF_REOPEN_PRIMARY_QUALITY_2026-10-13.md",
+        "action": "FULL_READ",
+        "scope": "full compact rejection/root contract",
+        "sha256": "6e5557606c623081ccef88fb88def4224f111ce6ef34d1f4a7bc94463e82ce8c",
+        "claimBoundary": "Self-reported scoped read; hash establishes byte identity, not understanding or full-file reading"
+      },
+      {
+        "path": "docs/reviews/evidence/ncr-brief-reopen-quality-20261013.json",
+        "action": "PARTIAL_READ",
+        "scope": "targeted findings/digest, original identities, normalization, source restoration, Local probe/copy results; embedded original bytes hash-verified without dumping custody",
+        "sha256": "983bf7f43ab23c6c4f909177e4e92290605b5b53f8bb9f8d196f47997c309038",
+        "claimBoundary": "Self-reported scoped read; hash establishes byte identity, not understanding or full-file reading"
+      },
+      {
+        "path": "docs/reviews/evidence/ncr-brief-reopen-worker-20261013.json",
+        "action": "PARTIAL_READ",
+        "scope": "primary verdict, original FAIL/digest-label/time and gate limitations",
+        "sha256": "7ea54cd46949b6f37241b048bef257e49944a5827895ce4dd4b319e11fd5d1ed",
+        "claimBoundary": "Self-reported scoped read; hash establishes byte identity, not understanding or full-file reading"
+      },
+      {
+        "path": "docs/reviews/CVF_NCR_BRIEF_REOPEN_WORKER_RETURN_2026-10-13.md",
+        "action": "PARTIAL_READ",
+        "scope": "primary status/requirements/SCEC/initial read and convergence records",
+        "sha256": "16bafd3c2c8e2ddf7bda5330c8bab6d65fc6caaf6b7f96689b9f5356fe04f8c7",
+        "claimBoundary": "Self-reported scoped read; hash establishes byte identity, not understanding or full-file reading"
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.tsx",
+        "action": "PARTIAL_READ",
+        "scope": "initial values, watch/localization, open/toggle/send, retained child mounting lines91-155/327-366",
+        "sha256": "a970962580b3d12b2ec0c26004162122cd647df5e564bf10db8b0672e79bfe32",
+        "claimBoundary": "Self-reported scoped read; hash establishes byte identity, not understanding or full-file reading"
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/SpecExport.tsx",
+        "action": "PARTIAL_READ",
+        "scope": "real sourceKey/version/confirmation/packet and download/copy/send scope539-709",
+        "sha256": "8c425b3b0f4d468ee129224c688d30141a8924e01f78dcf0d1d28a4357d9689a",
+        "claimBoundary": "Self-reported scoped read; hash establishes byte identity, not understanding or full-file reading"
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/template-i18n.ts",
+        "action": "PARTIAL_READ",
+        "scope": "current app_builder_complete English description line66",
+        "sha256": "96e8a9d5f583816d6f62234ebcc0524a7d369951f70896f0a294fe9a90d74a4b",
+        "claimBoundary": "Self-reported scoped read; hash establishes byte identity, not understanding or full-file reading"
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.brief-lifecycle.test.tsx",
+        "action": "FULL_READ",
+        "scope": "full focused lifecycle test",
+        "sha256": "6b9971ceca6babcf6291ae3ad3f5ce381ab39d4aa5ad3a3b75530ff49782dd6d",
+        "claimBoundary": "Self-reported scoped read; hash establishes byte identity, not understanding or full-file reading"
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.test.tsx",
+        "action": "FULL_READ",
+        "scope": "full current three-case chrome test",
+        "sha256": "3e3d98cf8e8aead5180d3f253310aa0c3fdc15c1e5d2cfbbda522bc885ac0257",
+        "claimBoundary": "Self-reported scoped read; hash establishes byte identity, not understanding or full-file reading"
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/draft-export.test.tsx",
+        "action": "FULL_READ",
+        "scope": "full ten-case Home draft/export composition test",
+        "sha256": "a1fccf902fc3c91442b7f70beebff6c860693feb3ffb38f0fab546feaba407de",
+        "claimBoundary": "Self-reported scoped read; hash establishes byte identity, not understanding or full-file reading"
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/test/setup.ts",
+        "action": "FULL_READ",
+        "scope": "full provider guard/external store clearing/test cleanup",
+        "sha256": "bc573b2a6133b07404c42f797bce43fe73464711e0281f29da8234bf2fed6b27",
+        "claimBoundary": "Self-reported scoped read; hash establishes byte identity, not understanding or full-file reading"
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/vitest.config.ts",
+        "action": "FULL_READ",
+        "scope": "full live-selection exclusions/shared setup and runner settings",
+        "sha256": "9a4a65976b5b7a5d038f9cb412a90d417f804108cf1dd33bae4421989a863420",
+        "claimBoundary": "Self-reported scoped read; hash establishes byte identity, not understanding or full-file reading"
+      },
+      {
+        "path": "governance/compat/check_worker_return_quality_gate.py",
+        "action": "PARTIAL_READ",
+        "scope": "required constants/sections/ready-state or lineage predicates selected before prose",
+        "sha256": "c87f1a50dd95af3459e3af1bcc6aaed8e0c1f5cec28e7761a9f3b254f3ec7257",
+        "claimBoundary": "Self-reported scoped read; hash establishes byte identity, not understanding or full-file reading"
+      },
+      {
+        "path": "governance/compat/check_work_order_acceptance_ledger.py",
+        "action": "PARTIAL_READ",
+        "scope": "required constants/sections/ready-state or lineage predicates selected before prose",
+        "sha256": "8b6ce487f01eb432cab16456da98c79f0995468f6a1da8c16765d204cc6a39b4",
+        "claimBoundary": "Self-reported scoped read; hash establishes byte identity, not understanding or full-file reading"
+      },
+      {
+        "path": "governance/compat/check_agent_operation_trace.py",
+        "action": "PARTIAL_READ",
+        "scope": "required constants/sections/ready-state or lineage predicates selected before prose",
+        "sha256": "57aaac11abdca0b7a94998dfb21bc259d8013ce0b9bdc9d53a906202e9fabaaa",
+        "claimBoundary": "Self-reported scoped read; hash establishes byte identity, not understanding or full-file reading"
+      },
+      {
+        "path": "governance/compat/check_review_cost_control.py",
+        "action": "PARTIAL_READ",
+        "scope": "required constants/sections/ready-state or lineage predicates selected before prose",
+        "sha256": "82d970a5f89fb33bb4d400ffc64330d1ee54c637a2817295beb781c77d590c6c",
+        "claimBoundary": "Self-reported scoped read; hash establishes byte identity, not understanding or full-file reading"
+      },
+      {
+        "path": "governance/compat/check_gate_to_role_closeability.py",
+        "action": "PARTIAL_READ",
+        "scope": "required constants/sections/ready-state or lineage predicates selected before prose",
+        "sha256": "8f00c6421eebe3c1b237e5307ac6e2b0b0343c9a35cf635bbab17aa886e00e8e",
+        "claimBoundary": "Self-reported scoped read; hash establishes byte identity, not understanding or full-file reading"
+      },
+      {
+        "path": "governance/compat/check_semantic_convergence_control.py",
+        "action": "PARTIAL_READ",
+        "scope": "required constants/sections/ready-state or lineage predicates selected before prose",
+        "sha256": "94d4a26f130f5fd20eefa54871e3533e9755164dfc8204864e7f555f211352e9",
+        "claimBoundary": "Self-reported scoped read; hash establishes byte identity, not understanding or full-file reading"
+      },
+      {
+        "path": "governance/compat/check_independent_review_probe_admission.py",
+        "action": "PARTIAL_READ",
+        "scope": "required constants/sections/ready-state or lineage predicates selected before prose",
+        "sha256": "738cfd2da5a58910d7334805fb9bab074ddddfc8c156e4a2a9f4573c6ac51a96",
+        "claimBoundary": "Self-reported scoped read; hash establishes byte identity, not understanding or full-file reading"
+      },
+      {
+        "path": "governance/compat/check_markdown_structural_completeness.py",
+        "action": "PARTIAL_READ",
+        "scope": "required constants/sections/ready-state or lineage predicates selected before prose",
+        "sha256": "a76806333a19814c1cb1fe04f305dec33a9c5572175db728e30441637d2e78c7",
+        "claimBoundary": "Self-reported scoped read; hash establishes byte identity, not understanding or full-file reading"
+      },
+      {
+        "path": "governance/compat/check_epistemic_process_packet.py",
+        "action": "PARTIAL_READ",
+        "scope": "required constants/sections/ready-state or lineage predicates selected before prose",
+        "sha256": "b95e5c7a6e2c75d8be2911ec47d15f92842193977fded7aa6debd04f43c3711f",
+        "claimBoundary": "Self-reported scoped read; hash establishes byte identity, not understanding or full-file reading"
+      },
+      {
+        "path": "governance/compat/check_governed_artifact_checker_read_ahead.py",
+        "action": "PARTIAL_READ",
+        "scope": "required constants/sections/ready-state or lineage predicates selected before prose",
+        "sha256": "44f4b67c9441c541a42f91526d8f25c8805efeb1e08e6aed69c60aee6153ef77",
+        "claimBoundary": "Self-reported scoped read; hash establishes byte identity, not understanding or full-file reading"
+      },
+      {
+        "path": "governance/compat/check_finding_to_governance_learning.py",
+        "action": "PARTIAL_READ",
+        "scope": "required constants/sections/ready-state or lineage predicates selected before prose",
+        "sha256": "338a3d7492ad6fd6b962157a668c3d13a47b286580c36a26f1acf897a50049ea",
+        "claimBoundary": "Self-reported scoped read; hash establishes byte identity, not understanding or full-file reading"
+      },
+      {
+        "path": "governance/compat/check_worker_experience_retrospective.py",
+        "action": "PARTIAL_READ",
+        "scope": "required constants/sections/ready-state or lineage predicates selected before prose",
+        "sha256": "230f30ec0821e94f56daeabcb3b134459706089dae945777f59eb779fa0c0d88",
+        "claimBoundary": "Self-reported scoped read; hash establishes byte identity, not understanding or full-file reading"
+      },
+      {
+        "path": "governance/compat/check_external_knowledge_intake_routing.py",
+        "action": "PARTIAL_READ",
+        "scope": "corrective read after first fast failure: internal source path row and input enums",
+        "sha256": "1b43209d92a1aba7cfd4c750db8625b2e82e4545b43372cd59ec2504ccc92c96",
+        "claimBoundary": "Self-reported scoped read; hash establishes byte identity, not understanding or full-file reading"
+      }
+    ]
+  },
+  "originalEvidence": {
+    "workerDeclaredStatus": "BLOCKED_WITH_REASON",
+    "qualityDisposition": "QUALITY_REJECTED_WITH_CONSOLIDATED_FINDINGS",
+    "originalCombinedResult": "FAIL_EXIT_1_2_FAILED_12_PASSED_OF_14",
+    "primaryPreliminaryClockAndGateFields": "Historical null/pending/provisional fields retained; final original06:11:29Z separately attributed to Local intake evidence",
+    "artifacts": [
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.tsx",
+        "originalRawSha256": "a970962580b3d12b2ec0c26004162122cd647df5e564bf10db8b0672e79bfe32",
+        "originalRawBytes": 18207,
+        "snapshot": ".cvf/runtime/ncr-brief-reopen-local-20261013/original-0.bin",
+        "canonical": {
+          "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.tsx",
+          "sha256": "a970962580b3d12b2ec0c26004162122cd647df5e564bf10db8b0672e79bfe32",
+          "bytes": 18207
+        },
+        "custodyVerification": "MATCH_EMBEDDED_BYTES_AND_SNAPSHOT"
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.brief-lifecycle.test.tsx",
+        "originalRawSha256": "6b9971ceca6babcf6291ae3ad3f5ce381ab39d4aa5ad3a3b75530ff49782dd6d",
+        "originalRawBytes": 7447,
+        "snapshot": ".cvf/runtime/ncr-brief-reopen-local-20261013/original-1.bin",
+        "canonical": {
+          "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.brief-lifecycle.test.tsx",
+          "sha256": "6b9971ceca6babcf6291ae3ad3f5ce381ab39d4aa5ad3a3b75530ff49782dd6d",
+          "bytes": 7447
+        },
+        "custodyVerification": "MATCH_EMBEDDED_BYTES_AND_SNAPSHOT"
+      },
+      {
+        "path": "docs/reviews/evidence/ncr-brief-reopen-worker-20261013.json",
+        "originalRawSha256": "cc701aebc213bfa75e502aab0778578afc07ed985325c5ac6deb7d282a58b55d",
+        "originalRawBytes": 15383,
+        "snapshot": ".cvf/runtime/ncr-brief-reopen-local-20261013/original-2.bin",
+        "canonical": {
+          "path": "docs/reviews/evidence/ncr-brief-reopen-worker-20261013.json",
+          "sha256": "7ea54cd46949b6f37241b048bef257e49944a5827895ce4dd4b319e11fd5d1ed",
+          "bytes": 15142
+        },
+        "custodyVerification": "MATCH_EMBEDDED_BYTES_AND_SNAPSHOT"
+      },
+      {
+        "path": "docs/reviews/CVF_NCR_BRIEF_REOPEN_WORKER_RETURN_2026-10-13.md",
+        "originalRawSha256": "534185f61b52664d96b1a84870a61053d69fd1ea12d4b6e0ca82c39bcae386b8",
+        "originalRawBytes": 23177,
+        "snapshot": ".cvf/runtime/ncr-brief-reopen-local-20261013/original-3.bin",
+        "canonical": {
+          "path": "docs/reviews/CVF_NCR_BRIEF_REOPEN_WORKER_RETURN_2026-10-13.md",
+          "sha256": "16bafd3c2c8e2ddf7bda5330c8bab6d65fc6caaf6b7f96689b9f5356fe04f8c7",
+          "bytes": 23170
+        },
+        "custodyVerification": "MATCH_EMBEDDED_BYTES_AND_SNAPSHOT"
+      }
+    ],
+    "logs": [
+      {
+        "path": ".cvf/runtime/autorun-receipts/pre-implementation.json",
+        "evidenceByteSource": ".cvf/runtime/ncr-brief-reopen-sol-worker-20261013/primary-pre-implementation-receipt-preserved.json",
+        "sha256": "1240b2a97a4ae3bb2582f8a27ec1f0b643d343bb3069db8bbbb0e9c7c5b06cf1",
+        "bytes": 39084,
+        "reportedDigest": "1240b2a97a4ae3bb2582f8a27ec1f0b643d343bb3069db8bbbb0e9c7c5b06cf1",
+        "reportedDigestStatus": "MATCH"
+      },
+      {
+        "path": ".cvf/runtime/ncr-brief-reopen-worker-20261013/lifecycle-final2.log",
+        "evidenceByteSource": ".cvf/runtime/ncr-brief-reopen-worker-20261013/lifecycle-final2.log",
+        "sha256": "1d0c73434ec75102a754959ba14d789b7d5669f4a5d66ef1d26e9db19c2d9850",
+        "bytes": 515,
+        "reportedDigest": "1d0c73434ec75102a754959ba14d789b7d5669f4a5d66ef1d26e9db19c2d9850",
+        "reportedDigestStatus": "MATCH"
+      },
+      {
+        "path": ".cvf/runtime/ncr-brief-reopen-worker-20261013/candidate1-source-red.log",
+        "evidenceByteSource": ".cvf/runtime/ncr-brief-reopen-worker-20261013/candidate1-source-red.log",
+        "sha256": "6a3b4d4af7b28fdf2d148b15d5a85bc4adf1b4e0fefc6cb5eb52cf636243fea0",
+        "bytes": 1298,
+        "reportedDigest": "6a3b4d4af7b28fdf2d148b15d5a85bc4adf1b4e0fefc6cb5eb52cf636243fea0",
+        "reportedDigestStatus": "MATCH"
+      },
+      {
+        "path": ".cvf/runtime/ncr-brief-reopen-worker-20261013/candidate2-source-red.log",
+        "evidenceByteSource": ".cvf/runtime/ncr-brief-reopen-worker-20261013/candidate2-source-red.log",
+        "sha256": "bd6317e0214c0b3d2fd5d138cff1ca4bfed137c4883684b6986fb0dd98216136",
+        "bytes": 23715,
+        "reportedDigest": "bd6317e0214c0b3d2fd5d138cff1ca4bfed137c4883684b6986fb0dd98216136",
+        "reportedDigestStatus": "MATCH"
+      },
+      {
+        "path": ".cvf/runtime/ncr-brief-reopen-worker-20261013/candidate3-source-red.log",
+        "evidenceByteSource": ".cvf/runtime/ncr-brief-reopen-worker-20261013/candidate3-source-red.log",
+        "sha256": "5dd685b1c87b7c4e58c2a8608c386b85a4f9b02219eb87b3dbbabacfc55309ca",
+        "bytes": 1726,
+        "reportedDigest": "5dd685b1c87b7c4e58c2a8608c386b85a4f9b02219eb87b3dbbabacfc55309ca",
+        "reportedDigestStatus": "MATCH"
+      },
+      {
+        "path": ".cvf/runtime/ncr-brief-reopen-worker-20261013/focused-tests-final.log",
+        "evidenceByteSource": ".cvf/runtime/ncr-brief-reopen-worker-20261013/focused-tests-final.log",
+        "sha256": "50079ec06eee60967e1eeb5be56e73a645ef39dbb3df89e442a9c61768ece79f",
+        "bytes": 29543,
+        "reportedDigest": "50079ec06eee60967e1eeb5e56e73a645ef39dbb3df89e442a9c61768ece79f",
+        "reportedDigestStatus": "INVALID_OR_DIFFERENT_RETAINED"
+      },
+      {
+        "path": ".cvf/runtime/ncr-brief-reopen-worker-20261013/lifecycle-final2.log",
+        "evidenceByteSource": ".cvf/runtime/ncr-brief-reopen-worker-20261013/lifecycle-final2.log",
+        "sha256": "1d0c73434ec75102a754959ba14d789b7d5669f4a5d66ef1d26e9db19c2d9850",
+        "bytes": 515,
+        "reportedDigest": "1d0c73434ec75102a754959ba14d789b7d5669f4a5d66ef1d26e9db19c2d9850",
+        "reportedDigestStatus": "MATCH"
+      },
+      {
+        "path": ".cvf/runtime/ncr-brief-reopen-worker-20261013/typecheck-final.log",
+        "evidenceByteSource": ".cvf/runtime/ncr-brief-reopen-worker-20261013/typecheck-final.log",
+        "sha256": "48c6c944ccece44d30eda0921c04a6584bb3136355246a54d61a56d0924730f2",
+        "bytes": 663,
+        "reportedDigest": "48c6c944ccece44d30eda0921c04a6584bb3136355246a54d61a56d0924730f2",
+        "reportedDigestStatus": "MATCH"
+      },
+      {
+        "path": ".cvf/runtime/ncr-brief-reopen-worker-20261013/typecheck-final2.log",
+        "evidenceByteSource": ".cvf/runtime/ncr-brief-reopen-worker-20261013/typecheck-final2.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0,
+        "reportedDigest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reportedDigestStatus": "MATCH"
+      },
+      {
+        "path": ".cvf/runtime/ncr-brief-reopen-worker-20261013/lint-final2.log",
+        "evidenceByteSource": ".cvf/runtime/ncr-brief-reopen-worker-20261013/lint-final2.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0,
+        "reportedDigest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reportedDigestStatus": "MATCH"
+      },
+      {
+        "path": ".cvf/runtime/ncr-brief-reopen-worker-20261013/fast-gate-first.log",
+        "evidenceByteSource": ".cvf/runtime/ncr-brief-reopen-worker-20261013/fast-gate-first.log",
+        "sha256": "42627a2b084508a1df4f517518fb1c58968797782641f0341dbbaf31285440ba",
+        "bytes": 15803,
+        "reportedDigest": "42627a2b084508a1df4f517518fb1c58968797782641f0341dbbaf31285440ba",
+        "reportedDigestStatus": "MATCH"
+      },
+      {
+        "path": ".cvf/runtime/ncr-brief-reopen-worker-20261013/fast-gate-candidate2.log",
+        "evidenceByteSource": ".cvf/runtime/ncr-brief-reopen-worker-20261013/fast-gate-candidate2.log",
+        "sha256": "c4b64f04a46d7c7ef8ec33b99db64d00096a999b44626587a90e89f9dec70eea",
+        "bytes": 11009,
+        "reportedDigest": "c4b64f04a46d7c7ef8ec33b99db64d00096a999b44626587a90e89f9dec70eea",
+        "reportedDigestStatus": "MATCH"
+      },
+      {
+        "path": ".cvf/runtime/ncr-brief-reopen-worker-20261013/fast-gate-final2.log",
+        "evidenceByteSource": ".cvf/runtime/ncr-brief-reopen-worker-20261013/fast-gate-final2.log",
+        "sha256": "687c5b0101474600d2d25074435b153ef6c5e00dd599cc0afd9555de6a1e781f",
+        "bytes": 11009,
+        "reportedDigest": null,
+        "reportedDigestStatus": "INVALID_OR_DIFFERENT_RETAINED"
+      },
+      {
+        "path": ".cvf/runtime/ncr-brief-reopen-worker-20261013/ledger-pre-final.log",
+        "evidenceByteSource": ".cvf/runtime/ncr-brief-reopen-worker-20261013/ledger-pre-final.log",
+        "sha256": "4e241054fd8f3e98a904265c2db377b5dcedf77c27ab0b6eedfeb0a6994455d2",
+        "bytes": 58,
+        "reportedDigest": "4e241054fd8f3e98a904265c2db377b5dcedf77c27ab0b6eedfeb0a6994455d2",
+        "reportedDigestStatus": "MATCH"
+      },
+      {
+        "path": ".cvf/runtime/ncr-brief-reopen-worker-20261013/ledger-final2.log",
+        "evidenceByteSource": ".cvf/runtime/ncr-brief-reopen-worker-20261013/ledger-final2.log",
+        "sha256": "4e241054fd8f3e98a904265c2db377b5dcedf77c27ab0b6eedfeb0a6994455d2",
+        "bytes": 58,
+        "reportedDigest": null,
+        "reportedDigestStatus": "INVALID_OR_DIFFERENT_RETAINED"
+      },
+      {
+        "path": ".cvf/runtime/ncr-brief-reopen-worker-20261013/fast-gate-final2.log",
+        "evidenceByteSource": ".cvf/runtime/ncr-brief-reopen-worker-20261013/fast-gate-final2.log",
+        "sha256": "687c5b0101474600d2d25074435b153ef6c5e00dd599cc0afd9555de6a1e781f",
+        "bytes": 11009,
+        "reportedDigest": null,
+        "reportedDigestStatus": "MATCH"
+      },
+      {
+        "path": ".cvf/runtime/ncr-brief-reopen-worker-20261013/ledger-final2.log",
+        "evidenceByteSource": ".cvf/runtime/ncr-brief-reopen-worker-20261013/ledger-final2.log",
+        "sha256": "4e241054fd8f3e98a904265c2db377b5dcedf77c27ab0b6eedfeb0a6994455d2",
+        "bytes": 58,
+        "reportedDigest": null,
+        "reportedDigestStatus": "MATCH"
+      }
+    ],
+    "mutableReceiptNote": "Primary pre-implementation receipt current runtime path refreshed by new gate; original exact UTF-8 bytes preserved from hash-bound quality consumedLogs[0].text into worker-owned ignored snapshot; not confused with current receipt",
+    "normalizationReconstruction": [
+      {
+        "path": "docs/reviews/evidence/ncr-brief-reopen-worker-20261013.json",
+        "operation": "CRLF_TO_LF_ONLY",
+        "sourceSnapshot": ".cvf/runtime/ncr-brief-reopen-local-20261013/original-2.bin",
+        "sourceSha256": "cc701aebc213bfa75e502aab0778578afc07ed985325c5ac6deb7d282a58b55d",
+        "normalizedSha256": "7ea54cd46949b6f37241b048bef257e49944a5827895ce4dd4b319e11fd5d1ed",
+        "result": "MATCH_RECONSTRUCTED_BYTES"
+      },
+      {
+        "path": "docs/reviews/CVF_NCR_BRIEF_REOPEN_WORKER_RETURN_2026-10-13.md",
+        "operation": "TRAILING_WHITESPACE_AND_EOF_THEN_CRLF_TO_LF",
+        "sourceSnapshot": ".cvf/runtime/ncr-brief-reopen-local-20261013/original-3.bin",
+        "sourceSha256": "534185f61b52664d96b1a84870a61053d69fd1ea12d4b6e0ca82c39bcae386b8",
+        "intermediateSnapshot": ".cvf/runtime/ncr-brief-reopen-sol-worker-20261013/primary-return-hygiene-intermediate.bin",
+        "intermediateSha256": "5af7e7efcbbae40d97cb94601ff59132eb907631e916d07a7d31ad97dc19d0a7",
+        "normalizedSha256": "16bafd3c2c8e2ddf7bda5330c8bab6d65fc6caaf6b7f96689b9f5356fe04f8c7",
+        "result": "MATCH_RECONSTRUCTED_BYTES"
+      }
+    ],
+    "canonicalNormalization": [
+      {
+        "path": "docs/reviews/evidence/ncr-brief-reopen-worker-20261013.json",
+        "beforeCanonicalSha256": "cc701aebc213bfa75e502aab0778578afc07ed985325c5ac6deb7d282a58b55d",
+        "normalizedSha256": "7ea54cd46949b6f37241b048bef257e49944a5827895ce4dd4b319e11fd5d1ed",
+        "reason": "LF-only repository text encoding; original complete raw bytes retained in originalWorkerArtifacts. Values/status unchanged."
+      },
+      {
+        "path": "docs/reviews/CVF_NCR_BRIEF_REOPEN_WORKER_RETURN_2026-10-13.md",
+        "beforeCanonicalSha256": "5af7e7efcbbae40d97cb94601ff59132eb907631e916d07a7d31ad97dc19d0a7",
+        "normalizedSha256": "16bafd3c2c8e2ddf7bda5330c8bab6d65fc6caaf6b7f96689b9f5356fe04f8c7",
+        "reason": "LF-only repository text encoding; original complete raw bytes retained in originalWorkerArtifacts. Values/status unchanged."
+      }
+    ],
+    "markdownWhitespaceNormalization": [
+      {
+        "path": "docs/reviews/CVF_NCR_BRIEF_REOPEN_WORKER_RETURN_2026-10-13.md",
+        "originalSha256": "534185f61b52664d96b1a84870a61053d69fd1ea12d4b6e0ca82c39bcae386b8",
+        "currentSha256": "5af7e7efcbbae40d97cb94601ff59132eb907631e916d07a7d31ad97dc19d0a7",
+        "reason": "Local pre-dispatch trailing-whitespace/EOF-only hygiene; full original bytes retained in this evidence. No behavior or authority change."
+      }
+    ],
+    "sourceRestoration": {
+      "reason": "Generic whitespace cleanup briefly trimmed existing production whitespace unnecessarily; restored immediately from frozen snapshot before dispatch or any new test. Production source is byte-identical to the terminal primary artifact.",
+      "sourceSha256": "a970962580b3d12b2ec0c26004162122cd647df5e564bf10db8b0672e79bfe32"
+    },
+    "digestCorrection": {
+      "path": ".cvf/runtime/ncr-brief-reopen-worker-20261013/focused-tests-final.log",
+      "declaredInvalidDigest": "50079ec06eee60967e1eeb5e56e73a645ef39dbb3df89e442a9c61768ece79f",
+      "declaredLength": 63,
+      "actualSha256": "50079ec06eee60967e1eeb5be56e73a645ef39dbb3df89e442a9c61768ece79f",
+      "result": "SUPPLEMENTED_ONLY_ORIGINAL_FAIL_RETAINED"
+    },
+    "labelCorrection": {
+      "originalLabel": "baselineTranslationBlobSha256",
+      "gitBlobOidSha1": "a55f643357840e55b305793500bdb13641671bc1",
+      "rawAndHeadBlobSha256": "96e8a9d5f583816d6f62234ebcc0524a7d369951f70896f0a294fe9a90d74a4b",
+      "result": "GIT_SHA1_OID_SEPARATE_FROM_SHA256"
+    }
+  },
+  "localAcceptedEvidence": {
+    "panelProbeLogPath": ".cvf/runtime/ncr-brief-reopen-local-20261013/probe.log",
+    "chromeLogPath": ".cvf/runtime/ncr-brief-reopen-local-20261013/chrome-repair.log",
+    "review": {
+      "path": "docs/reviews/CVF_NCR_BRIEF_REOPEN_PRIMARY_QUALITY_2026-10-13.md",
+      "sha256": "6e5557606c623081ccef88fb88def4224f111ce6ef34d1f4a7bc94463e82ce8c",
+      "bytes": 13072
+    },
+    "quality": {
+      "path": "docs/reviews/evidence/ncr-brief-reopen-quality-20261013.json",
+      "sha256": "983bf7f43ab23c6c4f909177e4e92290605b5b53f8bb9f8d196f47997c309038",
+      "bytes": 288952
+    },
+    "panelProbeResult": "PASS_1_OF_1_REUSED_BY_PRODUCTION_RAW_HASH_MATCH",
+    "panelProbeImplementationSha256": "a970962580b3d12b2ec0c26004162122cd647df5e564bf10db8b0672e79bfe32",
+    "panelProbeLogSha256": "ed482b6693fb4f377efc31f0682e2e8ad1f55e55d7f2d8814249e3730b36e345",
+    "chromeResult": "PASS_3_OF_3_LOCAL_COPY_CORRECTION",
+    "chromeLogSha256": "5ec93cc4c09e9079cbf0744d6af0c24df7b060d2f0ee638fdbd266dbdd709d36",
+    "reuseBoundary": "Local evidence consumed, not worker independent certification; reviewer disposition remains pending"
+  },
+  "sourcePins": [
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.tsx",
+      "expectedRawSha256": "a970962580b3d12b2ec0c26004162122cd647df5e564bf10db8b0672e79bfe32",
+      "expectedHeadBlobSha256": "a970962580b3d12b2ec0c26004162122cd647df5e564bf10db8b0672e79bfe32",
+      "rawSha256": "a970962580b3d12b2ec0c26004162122cd647df5e564bf10db8b0672e79bfe32",
+      "headBlobSha256": "a970962580b3d12b2ec0c26004162122cd647df5e564bf10db8b0672e79bfe32",
+      "gitBlobOidSha1": "883ba48cbb13a59c7c1946c6f7f8869bfc95bd1c",
+      "result": "MATCH"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.brief-lifecycle.test.tsx",
+      "expectedRawSha256": "6b9971ceca6babcf6291ae3ad3f5ce381ab39d4aa5ad3a3b75530ff49782dd6d",
+      "expectedHeadBlobSha256": "6b9971ceca6babcf6291ae3ad3f5ce381ab39d4aa5ad3a3b75530ff49782dd6d",
+      "rawSha256": "6b9971ceca6babcf6291ae3ad3f5ce381ab39d4aa5ad3a3b75530ff49782dd6d",
+      "headBlobSha256": "6b9971ceca6babcf6291ae3ad3f5ce381ab39d4aa5ad3a3b75530ff49782dd6d",
+      "gitBlobOidSha1": "c87283cf9bd77baed117ff279d82e008843cb197",
+      "result": "MATCH"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.test.tsx",
+      "expectedRawSha256": "3e3d98cf8e8aead5180d3f253310aa0c3fdc15c1e5d2cfbbda522bc885ac0257",
+      "expectedHeadBlobSha256": "3e3d98cf8e8aead5180d3f253310aa0c3fdc15c1e5d2cfbbda522bc885ac0257",
+      "rawSha256": "3e3d98cf8e8aead5180d3f253310aa0c3fdc15c1e5d2cfbbda522bc885ac0257",
+      "headBlobSha256": "3e3d98cf8e8aead5180d3f253310aa0c3fdc15c1e5d2cfbbda522bc885ac0257",
+      "gitBlobOidSha1": "3889793c0c6f738d53194e8c5e6316f99e4c14f5",
+      "result": "MATCH"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/template-i18n.ts",
+      "expectedRawSha256": "96e8a9d5f583816d6f62234ebcc0524a7d369951f70896f0a294fe9a90d74a4b",
+      "expectedHeadBlobSha256": "96e8a9d5f583816d6f62234ebcc0524a7d369951f70896f0a294fe9a90d74a4b",
+      "rawSha256": "96e8a9d5f583816d6f62234ebcc0524a7d369951f70896f0a294fe9a90d74a4b",
+      "headBlobSha256": "96e8a9d5f583816d6f62234ebcc0524a7d369951f70896f0a294fe9a90d74a4b",
+      "gitBlobOidSha1": "a55f643357840e55b305793500bdb13641671bc1",
+      "result": "MATCH"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/draft-export.test.tsx",
+      "expectedRawSha256": "a1fccf902fc3c91442b7f70beebff6c860693feb3ffb38f0fab546feaba407de",
+      "expectedHeadBlobSha256": "a1fccf902fc3c91442b7f70beebff6c860693feb3ffb38f0fab546feaba407de",
+      "rawSha256": "a1fccf902fc3c91442b7f70beebff6c860693feb3ffb38f0fab546feaba407de",
+      "headBlobSha256": "a1fccf902fc3c91442b7f70beebff6c860693feb3ffb38f0fab546feaba407de",
+      "gitBlobOidSha1": "56fac35c561394193cf6d4e00fa4dd26c35ee429",
+      "result": "MATCH"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/SpecExport.tsx",
+      "expectedRawSha256": "8c425b3b0f4d468ee129224c688d30141a8924e01f78dcf0d1d28a4357d9689a",
+      "expectedHeadBlobSha256": "8c425b3b0f4d468ee129224c688d30141a8924e01f78dcf0d1d28a4357d9689a",
+      "rawSha256": "8c425b3b0f4d468ee129224c688d30141a8924e01f78dcf0d1d28a4357d9689a",
+      "headBlobSha256": "8c425b3b0f4d468ee129224c688d30141a8924e01f78dcf0d1d28a4357d9689a",
+      "gitBlobOidSha1": "10b02a7aea64b0eecc9ad8b80d8d8026611ac951",
+      "result": "MATCH"
+    }
+  ],
+  "gateEvidence": {
+    "firstFastGate": {
+      "name": "fast-first",
+      "argv": [
+        "python",
+        "governance/compat/run_worker_return_fast_gate.py",
+        "--active-work-order",
+        "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_BRIEF_REOPEN_RETURN_REPAIR_2026-10-13.md",
+        "--max-return-lines",
+        "450",
+        "--max-return-bytes",
+        "64000"
+      ],
+      "cwd": ".",
+      "startedUtc": "2026-10-13T07:01:04.711756+00:00",
+      "endedUtc": "2026-10-13T07:01:10.635997+00:00",
+      "elapsedSeconds": 5.937,
+      "exitCode": 1,
+      "log": ".cvf/runtime/ncr-brief-reopen-sol-worker-20261013/fast-first.log",
+      "logSha256": "0ba507a56923b35eea2e86136a9661ceb4ecebe06d85b94eecd8cb239aa0e16a",
+      "logBytes": 12290
+    },
+    "firstLedger": {
+      "name": "ledger-first",
+      "argv": [
+        "python",
+        "governance/compat/check_work_order_acceptance_ledger.py",
+        "--work-order",
+        "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_BRIEF_REOPEN_RETURN_REPAIR_2026-10-13.md",
+        "--return",
+        "docs/reviews/CVF_NCR_BRIEF_REOPEN_SOL_WORKER_RETURN_2026-10-13.md",
+        "--enforce"
+      ],
+      "cwd": ".",
+      "startedUtc": "2026-10-13T07:01:25.703468+00:00",
+      "endedUtc": "2026-10-13T07:01:25.898205+00:00",
+      "elapsedSeconds": 0.187,
+      "exitCode": 0,
+      "log": ".cvf/runtime/ncr-brief-reopen-sol-worker-20261013/ledger-first.log",
+      "logSha256": "4e241054fd8f3e98a904265c2db377b5dcedf77c27ab0b6eedfeb0a6994455d2",
+      "logBytes": 58
+    },
+    "finalGateConfirmation": "DETACHED_POST_GATE_MESSAGE_REQUIRED_NO_ARTIFACT_REWRITE",
+    "correctiveFastGate": {
+      "name": "fast-corrective",
+      "argv": [
+        "python",
+        "governance/compat/run_worker_return_fast_gate.py",
+        "--active-work-order",
+        "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_BRIEF_REOPEN_RETURN_REPAIR_2026-10-13.md",
+        "--max-return-lines",
+        "450",
+        "--max-return-bytes",
+        "64000"
+      ],
+      "cwd": ".",
+      "startedUtc": "2026-10-13T07:02:18.732777+00:00",
+      "endedUtc": "2026-10-13T07:02:25.146872+00:00",
+      "elapsedSeconds": 6.406,
+      "exitCode": 0,
+      "log": ".cvf/runtime/ncr-brief-reopen-sol-worker-20261013/fast-corrective.log",
+      "logSha256": "be815ae316b418901372fa356edea68b65dfa6300259cb63d0fe6d8ec2a91a24",
+      "logBytes": 11069
+    }
+  },
+  "claimBoundary": "Offline jsdom panel visibility, text/revision/packet identity and callback or adapter counts only; synthetic governance leaves are fixtures. No real-provider AI governance, browser/OS, durable recovery, full job/R3/R4, release/public/deploy or model-quality claim.",
+  "REQ-SUPPLEMENT": {
+    "proofId": "PROOF-REQ-SUPPLEMENT",
+    "status": "PASS",
+    "evidence": [
+      "originalEvidence",
+      "localAcceptedEvidence"
+    ],
+    "assertion": "All positive identities independently computed from original snapshot and actual current/log bytes; invalid63-character declaration explicitly retained; Git SHA1 separately labelled"
+  },
+  "REQ-VALIDATION": {
+    "proofId": "PROOF-REQ-VALIDATION",
+    "status": "PASS",
+    "focusedPassed": 14,
+    "focusedTotal": 14,
+    "currentCommandNames": [
+      "focused14",
+      "typecheck",
+      "lint"
+    ],
+    "sourcePinsMatched": 6,
+    "providerDenial": "Real shared guard rejects provider URL before transmission; destination denial case PASS; no capability grant or live-selection mode",
+    "syntheticSeams": [
+      "lifecycle: real DynamicForm/SpecExport; synthetic settings/language/context/skill/workflow/spec-gate/enforcement/governance-context and URL/anchor/clipboard",
+      "chrome: real DynamicForm/localization; synthetic SpecExport/language/skill lookup",
+      "Home: real Home/DynamicForm/ProcessingScreen/SpecExport/store/brief builders/event; synthetic result callbacks/browse/wizard/settings/analytics/provider hook/API execute recording adapter/browser exports"
+    ],
+    "terminalBoundary": "Synthetic callback/event counts do not prove agent receipt, backend cancellation, browser download or governance efficacy"
+  },
+  "REQ-RETURN": {
+    "proofId": "PROOF-REQ-RETURN",
+    "status": "PASS",
+    "procedureDisposition": "PARTIAL_WITH_REASON",
+    "scope": "exact2",
+    "actualScaffoldBeforeProse": true,
+    "finalGateAssertion": "PASS conditional assertion requires actual later final exact2 fast and ledger before terminal release",
+    "firstAndCorrectiveEvidence": "gateEvidence",
+    "independentProbeDisposition": "PENDING_REVIEWER_EXECUTION",
+    "noSelfReviewOrClosure": true
+  }
+}
