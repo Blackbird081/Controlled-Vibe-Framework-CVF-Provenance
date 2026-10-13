@@ -36,12 +36,12 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_NCR_BRIEF_REOPEN_RETURN_REPAIR_2026-10-13.md",
-    "baselineSha256": "91ef78d0f43279c1aca08426bffca0b96506c7ee2d0fab04abe4966bbd803a8d",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_BRIEF_REOPEN_RETURN_REPAIR_2026-10-13.md",
-    "workOrderSha256": "41d519ff1435caabc6c17a12cc8c473d3c613007137260542340e0557cec27a7"
+    "baselinePath": "docs/baselines/CVF_GC018_NCR_WORK_TRANSFER_BROWSER_2026-10-13.md",
+    "baselineSha256": "d4dd28272ec2f659ba1e75a5de5744e786b53234588f5a5f4221f83b90531100",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_WORK_TRANSFER_BROWSER_2026-10-13.md",
+    "workOrderSha256": "6327b082cf5d02d3087b3b177fd5f51dd2fdef0a271b645650df088646aee1ca"
   },
-  "currentAuthoritySyncReason": "Clipboard direct Local material 1638a1d3db959b8ec52b4e931682c8eba04b86b1; prior closed pair retained; exact6 continuity; parked effects unchanged.",
+  "currentAuthoritySyncReason": "Work Transfer browser dispatch material 7fc374206318e3f58a9314f0a7f36afcece519f5; exact6 source/generated continuity; final bound release pending. Operator NCR continuation and Alibaba test authority; whole pilot/effects remain separate.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
@@ -110,8 +110,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_ncr_brief_copy_closed_useful_selection",
-  "previousMode": "cvf_ncr_result_isolation_worker_execution",
+  "currentMode": "cvf_ncr_work_transfer_browser_dispatch_ready",
+  "previousMode": "cvf_ncr_brief_copy_closed_useful_selection",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",

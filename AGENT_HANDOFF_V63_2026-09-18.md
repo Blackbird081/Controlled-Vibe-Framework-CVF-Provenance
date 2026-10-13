@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Current NCR Continuation
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `8189a7ef90da0f4b401405502851aa3b81324536`. Material SHA: `1638a1d3db959b8ec52b4e931682c8eba04b86b1`. Batch ID: CVF-NCR-BRIEF-COPY-20261013. Direct Local clipboard UI maintenance; prior closed work-order authority retained. Procedure qualifications remain in evidence.
+Current HEAD recorded for this handoff: `7fc374206318e3f58a9314f0a7f36afcece519f5`. Material SHA: `7fc374206318e3f58a9314f0a7f36afcece519f5`. Batch ID: CVF-NCR-WORK-TRANSFER-BROWSER-20261013. Exact3 dispatch material; dedicated exact6 continuity; final bound pre-dispatch required before BUILD.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -13,21 +13,21 @@ Current continuation only. Root AGENTS.md and canonical routing owners retain fu
 Closed history is preserved byte-for-byte at `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V63_PRE_NCR_COMPACTION_2026-10-07.md` (SHA256 `54801fdcf14e9abe17592352ec3c69a0b0e855632991af0caacac7b65252ccba`); it is NOT_ACTIVE_AUTHORITY and not default startup reading.
 ## Scope / Target / Owner Boundary
 
-Local INTERNAL_AGENT owns direct clipboard implementation, tests and final decision; Luna only read-only advisory review. No delegated implementation BUILD or new work-order fulfillment; prior closed pair and historical procedure/quality dispositions retain their scope.
+Local INTERNAL_AGENT orchestrator/reviewer owns final technical disposition, dispatch/closure commits and continuity. One distinct internal test-only worker after bound release; exact3 outputs, no product changes or commit. Separate Alibaba live diagnostic retains its bounded evidence; no NCR pilot activation.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_brief_copy_closed_useful_selection`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=select useful coding outcome; role=Local INTERNAL_AGENT implementation/decision owner; phase=direct maintenance continuity; decision owner=Local; parked checkpoint=provider/public/deploy/sourceR2/Expense/S5/PLL/scoring/Gateway/media/P11/Customer Care.
+Startup acknowledged: current mode=`cvf_ncr_work_transfer_browser_dispatch_ready`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=bound browser worker release; role=Local INTERNAL_AGENT orchestrator/reviewer; phase=dispatch continuity; decision owner=Local; parked checkpoint=real-data writer/custody/business acceptance/public/deploy/P11 and unrelated lanes.
 
 ## Current Mode
 
-`cvf_ncr_brief_copy_closed_useful_selection`. Direct clipboard feedback accepted bounded;46/46/type/lint, exact source oracle1/1 and read-only Luna review. Procedure PARTIAL_WITH_REASON: late pre-implementation confirmation; Root fixture/wrapper failures retained. Prior brief-panel closure retains its qualifications and26 implementation observations; whole job remains open.
+`cvf_ncr_work_transfer_browser_dispatch_ready`. Dispatch pair/source pins committed at 7fc374206318e3f58a9314f0a7f36afcece519f5; final bound release pending. Root full pre-commit91/91 PASS after one consolidated same-scope packet repair. Earlier authoring-order gate failures retained, no worker BUILD occurred.
 
 ## Current Authority
 
-Baseline: `docs/baselines/CVF_GC018_NCR_BRIEF_REOPEN_RETURN_REPAIR_2026-10-13.md`; SHA256 `91ef78d0f43279c1aca08426bffca0b96506c7ee2d0fab04abe4966bbd803a8d`.
-Work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_BRIEF_REOPEN_RETURN_REPAIR_2026-10-13.md`; SHA256 `41d519ff1435caabc6c17a12cc8c473d3c613007137260542340e0557cec27a7`.
-Completion: docs/reviews/CVF_NCR_BRIEF_REOPEN_COMPLETION_2026-10-13.md; Local evidence docs/reviews/evidence/ncr-brief-reopen-local-20261013.json.
+Baseline: `docs/baselines/CVF_GC018_NCR_WORK_TRANSFER_BROWSER_2026-10-13.md`; SHA256 `d4dd28272ec2f659ba1e75a5de5744e786b53234588f5a5f4221f83b90531100`.
+Work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_WORK_TRANSFER_BROWSER_2026-10-13.md`; SHA256 `6327b082cf5d02d3087b3b177fd5f51dd2fdef0a271b645650df088646aee1ca`.
+Dispatch evidence: docs/reviews/evidence/ncr-work-transfer-browser-dispatch-20261013.json. Worker/browser completion pending; prior accepted evidence remains in its named owners.
 
 ## Accepted NCR Evidence And Continuation
 
@@ -39,7 +39,7 @@ Finite clipboard result ordering is accepted; actual OS write cancellation, whol
 
 ## Next Allowed Move
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=SELECT_USEFUL_CODING_OUTCOME; BATCH_ID=CVF-NCR-BRIEF-REOPEN-RETURN-REPAIR-20261013. Prior closed work order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_BRIEF_REOPEN_RETURN_REPAIR_2026-10-13.md. Direct Local maintenance CVF-NCR-BRIEF-COPY-20261013 at material 1638a1d3db959b8ec52b4e931682c8eba04b86b1; evidence docs/reviews/evidence/ncr-brief-copy-local-20261013.json. Latest copy owns UI feedback; source/mode A-B-A and unmount invalidate pending completion. procedure PARTIAL_WITH_REASON retained.26 implementation observations unchanged; no implementation worker BUILD or automatic successor. Whole job/browser/backend/R3/R4 and Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11/Customer Care parked; LHW24.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_WORK_ORDER; BATCH_ID=CVF-NCR-WORK-TRANSFER-BROWSER-20261013. Execute docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_WORK_TRANSFER_BROWSER_2026-10-13.md only after final bound pre-dispatch PASS. One internal no-commit worker; exact3 synthetic browser draft/route-byte proof, no product or provider edits. Local review/closure/continuity owns disposition. Separate current Alibaba canonical release diagnostic PASS; no full NCR R3/R4 exit. Real-data/acceptance/public/deploy/P11 and unrelated lanes parked; no automatic successor. Latest closed wave LHW24 retained.
 
 ## Active Boundary
 T3B has a Local-verified active v1 specification. Party B is verified and T3C-C1 tooling accepted at `db78c87df`; T3C-C2 and Party C are verified. T3D-C1 tooling is accepted at `9ed844c2a` without source. T3D-C0-R1 closed at `2fffa1ef7`. T3D-C3 was accepted bounded at `88137e9a2`, but actual-mode prepare attempts failed before Party B/C execution; authorized cleanup removed the failed root and discarded unaccepted worker changes. G1 stopped, G2-G6 parked, and G7 research closed at `660601f0e` with `ADAPT_EXISTING_HANDOFF_ONLY`. Evidence-join sufficiency stays WATCH; no implementation successor exists. Rejected T2 paths remain archived; HRLTP-T2 paused.
@@ -64,10 +64,10 @@ AKOE current roadmap `docs/roadmaps/CVF_ACEL_APPLIED_KNOWLEDGE_OWNER_ENRICHMENT_
 - promotion or restoration of the thirteen rejected archived paths without fresh Local review.
 The historic provider/live parked line applies to those stopped lanes; it does not revoke the separately authorized bounded Alibaba NCR tests. No pilot/runtime activation follows from a test.
 Q001/Q004 actual-data source/writer,custody,retention/RPO/RTO/cost checkpoints are action-specific; do not require a user-supplied ledger copy for unrelated fresh isolated development.
-NCR send/B2 STOP and S05/C1 remain; IAB unavailable; repo Playwright Chromium present; vision/full P04/full release remain unproved. No autonomous P11/public/deploy activation.
+NCR send/B2 STOP and S05/C1 remain; IAB unavailable; repo Playwright Chromium present. Canonical release bundle9/9 PASS on current sources with real Alibaba; full P04 and NCR R3/R4 remain open. No autonomous P11/public/deploy activation.
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: exact6 direct clipboard continuity; no checker/source edit.
+Authorized guard-maintenance scope: exact6 Work Transfer browser dispatch/closure continuity; no checker or product-source edit.
 Protected paths:
 - `AGENT_HANDOFF_V63_2026-09-18.md`
 - `CVF_SESSION_MEMORY.md`
@@ -75,31 +75,31 @@ Protected paths:
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-Operator authorization: 2026-10-13 continue CVF with primary/conditional workers; Local owns review/closure/commits.
+Operator authorization: 2026-10-13 continue NCR; primary/conditional internal workers and Alibaba live tests; Local owns review/closure/commits.
 Rollback boundary: exact6; preserve original archive and accepted/blocked history, parked effects and prior observations. Historical P4 safety adjudication .cvf/runtime/mfrp-p4-shadow-canary/adjudications/ncr-offline-journey-marker-20261013.json remains valid for its original marker; no blanket clearance of future markers. Current marker OBS-70961d0b8b4d27db separately adjudicated by Local at .cvf/runtime/mfrp-p4-shadow-canary/adjudications/ncr-brief-reopen-marker-20261013.json, SHA256 c006bb09e83c08442460212cbabca0e100d22b27280af25c58a5df97804f9671; exact marker removed, journal/historical blocks/C15 exclusions unchanged.
 
 ## Agent Operation Trace Block
 
 | Field | Evidence |
 |---|---|
-| Actor | Local INTERNAL_AGENT GC020 handoff-sync steward |
+| Actor | Local INTERNAL_AGENT session-sync steward |
 | Provider or surface | private shared workspace |
-| Session or invocation | ncr-brief-copy-final-head-sync-20261013 |
+| Session or invocation | ncr-work-transfer-browser-dispatch-sync-20261013 |
 | Working directory | repository root |
-| Command or tool surface | dedicated active handoff marker update after roadmap projection correction; exact1 staged checks/hooks |
-| Target paths | `AGENT_HANDOFF_V63_2026-09-18.md` |
-| Allowed scope source | operator CVF continuation; Local owns direct maintenance/continuity |
-| Before status evidence | 8189a7ef90da0f4b401405502851aa3b81324536; clean worktree |
-| After status evidence | exact1 handoff synchronization; clipboard material/proof and source/generated state retained |
-| Diff evidence | git diff --name-status; git diff --cached --check; exact1 manifest |
-| Approval boundary | parked effects retain prior authority |
-| Claim boundary | offline clipboard feedback; no runtime selector, governance efficacy or whole-job claim |
+| Command or tool surface | source entry/core update, active front door/handoff, canonical state generator |
+| Target paths | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Allowed scope source | operator NCR continuation; exact6 authority in paired baseline/order |
+| Before status evidence | 7fc374206318e3f58a9314f0a7f36afcece519f5; clean worktree and staged empty after exact3 material commit |
+| After status evidence | exact6 continuity; final bound release pending |
+| Diff evidence | source/generated reconciliation; exact6 git diff --name-status; git diff --cached --check |
+| Approval boundary | browser draft test only; real-data/acceptance/public/deploy parked |
+| Claim boundary | committed dispatch readiness only; no worker outcome or full pilot exit |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-brief-copy-final-head-sync-20261013 |
-| Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md` |
-| Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md` |
+| Invocation ID | ncr-work-transfer-browser-dispatch-sync-20261013 |
+| Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Manifest delta | MATCH required before commit |
-| Deletion or rename disposition | None; actual HEAD marker and operation trace only |
+| Deletion or rename disposition | None |
 
 ## Claim Boundary
 Current facts, exact packet binding and permitted next action only. Historical Home/O6 evidence remains bounded; no whole-roadmap, live/provider, backend cancellation, release/public/deployment or model-winner claim.

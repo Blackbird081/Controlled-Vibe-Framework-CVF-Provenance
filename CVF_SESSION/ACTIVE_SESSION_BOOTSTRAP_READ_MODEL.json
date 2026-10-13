@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "cvf_ncr_brief_copy_closed_useful_selection",
+  "currentMode": "cvf_ncr_work_transfer_browser_dispatch_ready",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=SELECT_USEFUL_CODING_OUTCOME; BATCH_ID=CVF-NCR-BRIEF-REOPEN-RETURN-REPAIR-20261013. Prior closed work order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_BRIEF_REOPEN_RETURN_REPAIR_2026-10-13.md. Direct Local maintenance CVF-NCR-BRIEF-COPY-20261013 at material 1638a1d3db959b8ec52b4e931682c8eba04b86b1; evidence docs/reviews/evidence/ncr-brief-copy-local-20261013.json. Latest copy owns UI feedback; source/mode A-B-A and unmount invalidate pending completion. procedure PARTIAL_WITH_REASON retained.26 implementation observations unchanged; no implementation worker BUILD or automatic successor. Whole job/browser/backend/R3/R4 and Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11/Customer Care parked; LHW24.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_WORK_ORDER; BATCH_ID=CVF-NCR-WORK-TRANSFER-BROWSER-20261013. Execute docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_WORK_TRANSFER_BROWSER_2026-10-13.md only after final bound pre-dispatch PASS. One internal no-commit worker; exact3 synthetic browser draft/route-byte proof, no product or provider edits. Local review/closure/continuity owns disposition. Separate current Alibaba canonical release diagnostic PASS; no full NCR R3/R4 exit. Real-data/acceptance/public/deploy/P11 and unrelated lanes parked; no automatic successor. Latest closed wave LHW24 retained.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_NCR_BRIEF_REOPEN_RETURN_REPAIR_2026-10-13.md",
-    "baselineSha256": "91ef78d0f43279c1aca08426bffca0b96506c7ee2d0fab04abe4966bbd803a8d",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_BRIEF_REOPEN_RETURN_REPAIR_2026-10-13.md",
-    "workOrderSha256": "41d519ff1435caabc6c17a12cc8c473d3c613007137260542340e0557cec27a7"
+    "baselinePath": "docs/baselines/CVF_GC018_NCR_WORK_TRANSFER_BROWSER_2026-10-13.md",
+    "baselineSha256": "d4dd28272ec2f659ba1e75a5de5744e786b53234588f5a5f4221f83b90531100",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_WORK_TRANSFER_BROWSER_2026-10-13.md",
+    "workOrderSha256": "6327b082cf5d02d3087b3b177fd5f51dd2fdef0a271b645650df088646aee1ca"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }
