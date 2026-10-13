@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Current NCR Continuation
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `9894a374ff72b500852e3c00f566b0a0fb9dd35a`. Pre-closure parent SHA: `9894a374ff72b500852e3c00f566b0a0fb9dd35a`. Batch ID: CVF-NCR-WORK-TRANSFER-BROWSER-RIPA-CORRECTION-20261013. Accepted finite browser contribution; Root mandatory admission heading correction; historical P4 failure retained; next bounded selection only; actual reviewed material SHA will be bound by dedicated exact6 after commit.
+Current HEAD recorded for this handoff: `ad19c7392b9067d85ca1a7aa728021b2a9cadb25`. Material SHA: `ad19c7392b9067d85ca1a7aa728021b2a9cadb25`. Batch ID: CVF-NCR-WORK-TRANSFER-BROWSER-RIPA-CORRECTION-20261013. Accepted finite browser contribution; Root mandatory admission heading corrected; historical P4 failure retained; next bounded selection only; dedicated exact6 continuity.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -17,17 +17,17 @@ Local INTERNAL_AGENT orchestrator/reviewer owns final technical disposition, dis
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_work_transfer_browser_closed_useful_selection`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=Accepted finite browser contribution; Root mandatory admission heading correction; historical P4 failure retained; next bounded selection only; role=Local INTERNAL_AGENT orchestrator/reviewer; phase=private continuity; decision owner=Local; parked checkpoint=real-data writer/custody/business acceptance/public/deploy/P11 and unrelated lanes.
+Startup acknowledged: current mode=`cvf_ncr_work_transfer_browser_closed_useful_selection`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=Accepted finite browser contribution; Root mandatory admission heading corrected; historical P4 failure retained; next bounded selection only; role=Local INTERNAL_AGENT orchestrator/reviewer; phase=private continuity; decision owner=Local; parked checkpoint=real-data writer/custody/business acceptance/public/deploy/P11 and unrelated lanes.
 
 ## Current Mode
 
-`cvf_ncr_work_transfer_browser_closed_useful_selection`. Accepted finite browser contribution; Root mandatory admission heading correction; historical P4 failure retained; next bounded selection only. Primary failed evidence retained. Conditional finite browser contribution accepted; no automatic worker successor. Separate current Alibaba9/9 remains bounded; full R1-R4 open.
+`cvf_ncr_work_transfer_browser_closed_useful_selection`. Accepted finite browser contribution; Root mandatory admission heading corrected; historical P4 failure retained; next bounded selection only. Primary failed evidence retained. Conditional finite browser contribution accepted; no automatic worker successor. Separate current Alibaba9/9 remains bounded; full R1-R4 open.
 
 ## Current Authority
 
 Baseline: `docs/baselines/CVF_GC018_NCR_WORK_TRANSFER_BROWSER_RETURN_REPAIR_2026-10-13.md`; SHA256 `b5b7f39dc6d930df05762238746ccc5b902705970d48cf120fe8c793510db864`.
 Work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_WORK_TRANSFER_BROWSER_RETURN_REPAIR_2026-10-13.md`; SHA256 `62b0dd61d6b86228999ba21186b8662b18253a1ca22ce18e91d95971d88b233a`.
-Accepted finite browser contribution; Root mandatory admission heading correction; historical P4 failure retained; next bounded selection only. Primary frozen custody: docs/reviews/evidence/ncr-work-transfer-browser-primary-quality-20261013.json; Local decision: docs/reviews/CVF_NCR_WORK_TRANSFER_BROWSER_PRIMARY_QUALITY_REVIEW_2026-10-13.md.
+Accepted finite browser contribution; Root mandatory admission heading corrected; historical P4 failure retained; next bounded selection only. Primary frozen custody: docs/reviews/evidence/ncr-work-transfer-browser-primary-quality-20261013.json; Local decision: docs/reviews/CVF_NCR_WORK_TRANSFER_BROWSER_PRIMARY_QUALITY_REVIEW_2026-10-13.md.
 
 ## Accepted NCR Evidence And Continuation
 
@@ -39,7 +39,7 @@ Finite clipboard result ordering is accepted; actual OS write cancellation, whol
 
 ## Next Allowed Move
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=SELECT_BOUNDED_OUTCOME; BATCH_ID=CVF-NCR-WORK-TRANSFER-BROWSER-CLOSURE-20261013. Finite synthetic browser contribution CLOSED_PASS_BOUNDED: focused Chromium2/2 and distinct Local probe PASS; separate Alibaba canonical9/9 diagnostic retained. Select one next bounded existing-owner gap with exact source/effect/acceptance/provider budget before dispatch. Primary failure retained; full R1-R4 open; R5/R6 deferred; real-data writer/custody/business acceptance/public/deploy/P11 parked. No automatic successor or new provider run. Reviewed material commit=c79fcd98859506d9c94c387219e0b0e4c31b55fd; reviewer-fast70/70 and mandatory pre-commit91/91 PASS. Dedicated actual-SHA continuity; latest closed LHW24 retained. Root RIPA mandatory admission heading restored; historical P4 receipt failure retained and exact marker Local-adjudicated; no change to browser/live evidence.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=SELECT_BOUNDED_OUTCOME; BATCH_ID=CVF-NCR-WORK-TRANSFER-BROWSER-CLOSURE-20261013. Finite synthetic browser contribution CLOSED_PASS_BOUNDED: focused Chromium2/2 and distinct Local probe PASS; separate Alibaba canonical9/9 diagnostic retained. Select one next bounded existing-owner gap with exact source/effect/acceptance/provider budget before dispatch. Primary failure retained; full R1-R4 open; R5/R6 deferred; real-data writer/custody/business acceptance/public/deploy/P11 parked. No automatic successor or new provider run. Reviewed material commit=c79fcd98859506d9c94c387219e0b0e4c31b55fd; reviewer-fast70/70 and mandatory pre-commit91/91 PASS. Dedicated actual-SHA continuity; latest closed LHW24 retained. Root RIPA mandatory admission heading restored; historical P4 receipt failure retained and exact marker Local-adjudicated; no change to browser/live evidence. Reviewed metadata correction=ad19c7392b9067d85ca1a7aa728021b2a9cadb25; mandatory91/91 PASS; original P4 failed receipt remains historical.
 
 ## Active Boundary
 T3B has a Local-verified active v1 specification. Party B is verified and T3C-C1 tooling accepted at `db78c87df`; T3C-C2 and Party C are verified. T3D-C1 tooling is accepted at `9ed844c2a` without source. T3D-C0-R1 closed at `2fffa1ef7`. T3D-C3 was accepted bounded at `88137e9a2`, but actual-mode prepare attempts failed before Party B/C execution; authorized cleanup removed the failed root and discarded unaccepted worker changes. G1 stopped, G2-G6 parked, and G7 research closed at `660601f0e` with `ADAPT_EXISTING_HANDOFF_ONLY`. Evidence-join sufficiency stays WATCH; no implementation successor exists. Rejected T2 paths remain archived; HRLTP-T2 paused.
@@ -89,8 +89,8 @@ Rollback boundary: exact6; preserve original archive and accepted/blocked histor
 | Command or tool surface | source entry/core update, active front door/handoff, canonical state generator |
 | Target paths | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Allowed scope source | operator NCR continuation; exact6 authority in paired baseline/order |
-| Before status evidence | 9894a374ff72b500852e3c00f566b0a0fb9dd35a; clean worktree before exact8 Root contract metadata correction |
-| After status evidence | exact8 coherent material; actual-SHA continuity remains a steward action; Accepted finite browser contribution; Root mandatory admission heading correction; historical P4 failure retained; next bounded selection only |
+| Before status evidence | ad19c7392b9067d85ca1a7aa728021b2a9cadb25; clean worktree and staged empty after reviewed material commit |
+| After status evidence | exact6 source/generated continuity; Accepted finite browser contribution; Root mandatory admission heading corrected; historical P4 failure retained; next bounded selection only |
 | Diff evidence | source/generated reconciliation; exact6 git diff --name-status; git diff --cached --check |
 | Approval boundary | browser draft test only; real-data/acceptance/public/deploy parked |
 | Claim boundary | accepted finite browser contribution and separate authorized Alibaba9/9 diagnostic; no full pilot exit or new provider grant |

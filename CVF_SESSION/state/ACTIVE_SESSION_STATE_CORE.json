@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_WORK_TRANSFER_BROWSER_RETURN_REPAIR_2026-10-13.md",
     "workOrderSha256": "62b0dd61d6b86228999ba21186b8662b18253a1ca22ce18e91d95971d88b233a"
   },
-  "currentAuthoritySyncReason": "Accepted finite browser contribution; Root mandatory admission heading correction; historical P4 failure retained; next bounded selection only Pre-closure parent 9894a374ff72b500852e3c00f566b0a0fb9dd35a; coherent source/generated authority; actual-SHA dedicated continuity follows material. Whole NCR pilot/effects remain separate.",
+  "currentAuthoritySyncReason": "Accepted finite browser contribution; Root mandatory admission heading corrected; historical P4 failure retained; next bounded selection only Material ad19c7392b9067d85ca1a7aa728021b2a9cadb25; coherent source/generated authority; actual-SHA dedicated continuity follows material. Whole NCR pilot/effects remain separate.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
