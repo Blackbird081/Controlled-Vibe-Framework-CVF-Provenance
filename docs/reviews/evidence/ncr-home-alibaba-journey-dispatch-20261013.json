@@ -1,0 +1,353 @@
+{
+  "schemaVersion": "cvf.ncrHomeAlibabaJourneyDispatchPins.v1",
+  "date": "2026-10-13",
+  "inspectionHead": "84bfd4902e9ace48e069698ec7dfd02a296ca402",
+  "status": "SOURCE_PINNED_BOUNDED_DISPATCH_ADMISSION",
+  "claimBoundary": "Historical raw preimage and bounded read spans. DynamicForm lacks a visible submit action, so the proposed proof requires a narrow R1 submit wiring repair before live provider execution. No live call or release is claimed.",
+  "sources": [
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.tsx",
+      "sha256": "b6b1d7ff64bcc5586b830b2a23c8e1b94957ef276a4abd9cea9eaa0825965322",
+      "lineCount": 728,
+      "readSpans": [
+        "385-510",
+        "680-725"
+      ],
+      "symbols": [
+        "handleFormSubmit",
+        "handleProcessingComplete",
+        "handleFollowUp",
+        "ProcessingScreen",
+        "ResultViewer"
+      ]
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ProcessingScreen.tsx",
+      "sha256": "e34ff88d91b25e8274042cc7f77871eb25570ce01eb8e4531b75a274a99a77ec",
+      "lineCount": 950,
+      "readSpans": [
+        "185-315",
+        "505-516"
+      ],
+      "symbols": [
+        "executeReal",
+        "deliverOnce",
+        "executionProvider",
+        "selectedModel"
+      ]
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.tsx",
+      "sha256": "e9dfa5c3bf2e6280e267f0b9b3ffa6d1aedf5b3a43959cbc605ca8c914f322c0",
+      "lineCount": 837,
+      "readSpans": [
+        "28-92",
+        "156-205",
+        "529-548",
+        "741-780"
+      ],
+      "symbols": [
+        "ResultViewerBody",
+        "handleExportToFile",
+        "onFollowUp"
+      ]
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultExportControls.tsx",
+      "sha256": "38ea1e80a82a3e2ca9c1db25905e1f89619f805aa377d508cadff9ff6c1e433f",
+      "lineCount": 181,
+      "readSpans": [
+        "1-76",
+        "115-160"
+      ],
+      "symbols": [
+        "ResultExportControls",
+        "onDownloadMarkdown"
+      ]
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts",
+      "sha256": "5f6545ac8c08f6bd55de14cb43e668a403cbf193289f277372e42f1af4949101",
+      "lineCount": 936,
+      "readSpans": [
+        "49-130",
+        "215-230",
+        "550-655",
+        "735-845"
+      ],
+      "symbols": [
+        "POST",
+        "resolveAlibabaApiKey",
+        "routeWebProvider",
+        "admitAndInvokeProvider"
+      ]
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/ai/providers.ts",
+      "sha256": "bca40aab2d66df9ee5f7060b0d7558d6e499cca1b5a118ed367e546ca04d94aa",
+      "lineCount": 573,
+      "readSpans": [
+        "265-408",
+        "534-565"
+      ],
+      "symbols": [
+        "executeAlibaba",
+        "executeAI"
+      ]
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/rate-limit.ts",
+      "sha256": "3d0bd39f2f45e734bc9b87351ccce810a1d9854208789f1d775e072aae563ad5",
+      "lineCount": 296,
+      "readSpans": [
+        "90-101",
+        "240-296"
+      ],
+      "symbols": [
+        "CVF_PROVIDER_QUOTA_PER_MIN",
+        "consumeProviderAttempt"
+      ]
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/Settings.tsx",
+      "sha256": "ac4d1ce70d08a277f1724860efd16f2d264133ba54de97afb189745a06574814",
+      "lineCount": 808,
+      "readSpans": [
+        "84-155",
+        "165-210"
+      ],
+      "symbols": [
+        "defaultSettings",
+        "loadInitialSettings",
+        "cvf_settings"
+      ]
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/playwright.config.ts",
+      "sha256": "9ff2949abff54f6e8543d6030206138c90abee70e2ef59c6ab6c378cb9199f43",
+      "lineCount": 42,
+      "readSpans": [
+        "1-42"
+      ],
+      "symbols": [
+        "loadEnvConfig",
+        "webServer"
+      ]
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/utils.ts",
+      "sha256": "6a27d4aa18f22a4c869189caaf32925121ebf77282629b8e374f3762ca77a6fb",
+      "lineCount": 250,
+      "readSpans": [
+        "1-45",
+        "85-160"
+      ],
+      "symbols": [
+        "login",
+        "openStrategyAnalysis",
+        "seedStorageWithAlibaba"
+      ]
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/ncr-work-transfer-browser.spec.ts",
+      "sha256": "a7c4d8379cb3552bd037bf8b2e1577501d5a38d1ec0374aa107a163b4336847c",
+      "lineCount": 392,
+      "readSpans": [
+        "125-190",
+        "190-270"
+      ],
+      "symbols": [
+        "preflight",
+        "isolated audit and snapshot paths"
+      ]
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/noncoder-followup-continuity.live.spec.ts",
+      "sha256": "121cffbd23078b7f61eb562ed4a3687ca3bf7a87cc27471c8cb76fa6f40d0ab1",
+      "lineCount": 175,
+      "readSpans": [
+        "124-175"
+      ],
+      "symbols": [
+        "J3 API-only follow-up"
+      ]
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execution-continuity.ts",
+      "sha256": "3faf1a73620fc37853736a832c4b59ed02df557e18ec81bdc856089e722ea09a",
+      "lineCount": 134,
+      "readSpans": [
+        "1-46",
+        "112-134"
+      ],
+      "symbols": [
+        "buildContinuationExecution",
+        "parentExecutionId"
+      ]
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/proof.ts",
+      "sha256": "fbdcc3a434eea13842c9f692d2b54cc9955e80d8c8777d9dfaa14cace9cdfcaf",
+      "lineCount": 160,
+      "readSpans": [
+        "1-105"
+      ],
+      "symbols": [
+        "fetchGovernanceReceipt"
+      ]
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.tsx",
+      "sha256": "a970962580b3d12b2ec0c26004162122cd647df5e564bf10db8b0672e79bfe32",
+      "lineCount": 370,
+      "readSpans": [
+        "100-157",
+        "195-205",
+        "320-355"
+      ],
+      "symbols": [
+        "handleSubmit",
+        "onFormSubmit",
+        "ExportSpec",
+        "CreateAgentSpec",
+        "missing visible type=submit"
+      ]
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.test.tsx",
+      "sha256": "3e3d98cf8e8aead5180d3f253310aa0c3fdc15c1e5d2cfbbda522bc885ac0257",
+      "lineCount": 105,
+      "readSpans": [
+        "1-105"
+      ],
+      "symbols": [
+        "existing DynamicForm i18n tests"
+      ]
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.brief-lifecycle.test.tsx",
+      "sha256": "6b9971ceca6babcf6291ae3ad3f5ce381ab39d4aa5ad3a3b75530ff49782dd6d",
+      "lineCount": 158,
+      "readSpans": [
+        "1-158"
+      ],
+      "symbols": [
+        "existing brief lifecycle regression"
+      ]
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.journey.test.tsx",
+      "sha256": "e0240e4775c75cba0d7604aadc7fd640f9c220ca3a9298ef9968b6aef29e5e70",
+      "lineCount": 257,
+      "readSpans": [
+        "190-257"
+      ],
+      "symbols": [
+        "fireEvent.submit bypasses visible click"
+      ]
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/knowledge-store.ts",
+      "sha256": "663468b073e03308f5e1cdd4a2d9c6b472606592cef134d6128766acbeb08989",
+      "lineCount": 199,
+      "readSpans": [
+        "133-158",
+        "190-199"
+      ],
+      "symbols": [
+        "FileBackedKnowledgeStore",
+        "KNOWLEDGE_STORE_PATH"
+      ]
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/knowledge-retrieval.ts",
+      "sha256": "dbf71c7f9ba2c4ca11b7871a30b6639457de67a919a05f4058e3fb530e273a16",
+      "lineCount": 168,
+      "readSpans": [
+        "20-33",
+        "60-80"
+      ],
+      "symbols": [
+        "ensureStoreSeeded"
+      ]
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/approvals/store.ts",
+      "sha256": "18976337028ea7e2461f2444134b1cbc212fdc2f3cdc999c094f8fa1bc26eb53",
+      "lineCount": 137,
+      "readSpans": [
+        "120-137"
+      ],
+      "symbols": [
+        "APPROVAL_STORE_PATH"
+      ]
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/durable-memory-route.ts",
+      "sha256": "492779c568a32d194d4c064ebc9c904199abe0cbcea5a0e24659d9d165e551b7",
+      "lineCount": 218,
+      "readSpans": [
+        "1-35"
+      ],
+      "symbols": [
+        "CVF_DURABLE_MEMORY_STORE_PATH"
+      ]
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/sot3-activation-evidence-readout.ts",
+      "sha256": "c31ab6c42adf220e1814ab10ebae2797b76b99455489ef47a10c3a6de1bb60cf",
+      "lineCount": 138,
+      "readSpans": [
+        "85-100"
+      ],
+      "symbols": [
+        "CVF_SOT3_ACTIVATION_EVIDENCE_PATH"
+      ]
+    }
+  ],
+  "rootAdmission": {
+    "actor": "LOCAL_REVIEWER_CODEX_ROOT",
+    "decision": "ADMIT_BOUNDED_AFTER_COMMITTED_RELEASE",
+    "sourceContradiction": "Visible DynamicForm buttons only opened spec; Home unit directly submitted form. R1 click wiring included before live proof.",
+    "draftQualification": "Author-fast 7/7 and ledger PASS were narrow DRAFT checks. Root repaired READY-only TPGR enums/full path union, convergence enum, Source dispositions and active learning binding before activation.",
+    "providerCallsSoFar": 0,
+    "materialManifest": [
+      "docs/baselines/CVF_GC018_NCR_HOME_ALIBABA_JOURNEY_2026-10-13.md",
+      "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HOME_ALIBABA_JOURNEY_2026-10-13.md",
+      "docs/reviews/evidence/ncr-home-alibaba-journey-dispatch-20261013.json"
+    ],
+    "workerManifest": [
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.tsx",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.test.tsx",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.journey.test.tsx",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/ncr-home-alibaba-journey.live.spec.ts",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/support/ncr-alibaba-boundary-preload.cjs",
+      "docs/reviews/evidence/ncr-home-alibaba-journey-worker-20261013.json",
+      "docs/reviews/CVF_NCR_HOME_ALIBABA_JOURNEY_WORKER_RETURN_2026-10-13.md"
+    ],
+    "rootClosureManifest": [
+      "docs/reviews/archive/CVF_AGENT_WORK_ORDER_NCR_HOME_ALIBABA_JOURNEY_DISPATCH_2026-10-13.md",
+      "docs/reviews/evidence/ncr-home-alibaba-journey-local-20261013.json",
+      "docs/reviews/CVF_NCR_HOME_ALIBABA_JOURNEY_COMPLETION_2026-10-13.md",
+      "docs/corpus-intelligence/registry/entries/cvf-ncr-home-alibaba-journey.json",
+      "docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json",
+      "docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md",
+      "docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md"
+    ],
+    "continuityManifest": [
+      "AGENT_HANDOFF_V63_2026-09-18.md",
+      "CVF_SESSION_MEMORY.md",
+      "CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json",
+      "CVF_SESSION/state/entries/nextAllowedMove.json",
+      "CVF_SESSION/ACTIVE_SESSION_STATE.json",
+      "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json"
+    ],
+    "callBudget": {
+      "worker": 6,
+      "reviewer": 3,
+      "total": 9
+    },
+    "independentOraclePath": ".cvf/runtime/ncr-home-alibaba-root-20261013/independent-probe.cjs",
+    "independentOracleSha256": "70e9322da9666703d2383617b0da9c649f2987207ad5e832a690ba9c76264b24"
+  }
+}
