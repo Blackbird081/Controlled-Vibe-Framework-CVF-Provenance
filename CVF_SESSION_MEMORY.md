@@ -31,21 +31,21 @@ artifact.
 | Prior handoff (archive-qualified) | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V62_2026-09-17.md` |
 | Latest front-door archive | `CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_COMPACTION_ARCHIVE_2026-08-11.md` |
 | Current authority evidence | `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` `currentAuthority` |
-| Parent maintenance | Brief-panel worker release pending; full job open |
+| Parent maintenance | Brief-panel accepted bounded; full job open |
 | Freeze posture | `governance_kernel_freeze_recommended` |
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_brief_reopen_sol_return_repair_execution`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=final exact2 conditional Sol BUILD; primary quality rejected; role=Local INTERNAL_AGENT dispatcher; phase=bounded BUILD release; decision owner=Local; parked checkpoint=provider/public/deploy/sourceR2/Expense/S5/PLL/scoring/Gateway/media/P11/Customer Care.
+Startup acknowledged: current mode=`cvf_ncr_brief_reopen_closed_useful_selection`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=select useful coding outcome; role=Local INTERNAL_AGENT reviewer/closer; phase=bounded closure; decision owner=Local; parked checkpoint=provider/public/deploy/sourceR2/Expense/S5/PLL/scoring/Gateway/media/P11/Customer Care.
 
 ## Current Mode
 
-Current mode marker: `cvf_ncr_brief_reopen_sol_return_repair_execution`
-Current mode: `cvf_ncr_brief_reopen_sol_return_repair_execution`; previous mode marker: `cvf_ncr_brief_reopen_sol_return_repair_execution`
+Current mode marker: `cvf_ncr_brief_reopen_closed_useful_selection`
+Current mode: `cvf_ncr_brief_reopen_closed_useful_selection`; previous mode marker: `cvf_ncr_brief_reopen_sol_return_repair_execution`
 
 ## Next Allowed Move
 
-Mode: `cvf_ncr_brief_reopen_sol_return_repair_execution`
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_BOUNDED_RETURN_EVIDENCE_REPAIR; BATCH_ID=CVF-NCR-BRIEF-REOPEN-RETURN-REPAIR-20261013. Material 2acd458d4; work order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_BRIEF_REOPEN_RETURN_REPAIR_2026-10-13.md. Primary Luna return QUALITY_REJECTED_WITH_CONSOLIDATED_FINDINGS; original bytes/verdict preserved. Local panel1/1 and single legacy-copy correction3/3 PASS. Final conditional INTERNAL_AGENT Sol medium BUILD exact2 new proof/return; all source/tests read-only;<=45min, no third BUILD.24 prior observations retained. Whole job/browser/backend/R3/R4 and Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11/Customer Care parked; LHW24.
+Mode: `cvf_ncr_brief_reopen_closed_useful_selection`
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=SELECT_USEFUL_CODING_OUTCOME; BATCH_ID=CVF-NCR-BRIEF-REOPEN-RETURN-REPAIR-20261013. Material 8e504119706e45d7a098e0bca9fe05fa3f60ccc7; work order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_BRIEF_REOPEN_RETURN_REPAIR_2026-10-13.md. Voluntary brief close/reopen technically accepted bounded; procedures PARTIAL_WITH_REASON retained; hidden revision invalidation and successful-send reset retained. Completion docs/reviews/CVF_NCR_BRIEF_REOPEN_COMPLETION_2026-10-13.md;26 observations, prior24 retained; primary rejection and conditional Sol acceptance separately attributed; no automatic successor. Whole job/browser/backend/R3/R4 and Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11/Customer Care parked; LHW24.
 Historical G1-G7 terminal baseline: mode `acel_g1_g7_research_terminally_closed`. G1-G6 terminal review: `docs/reviews/CVF_ACEL_G1_G6_TERMINAL_STOP_CLOSURE_2026-09-24.md`; G7 research closure: `docs/reviews/CVF_ACEL_G7_CROSS_RUN_CAPABILITY_EVOLUTION_RESEARCH_CLOSURE_2026-09-24.md`. The packet-only post-G7 reconciliation review at `docs/reviews/CVF_ACEL_POST_G7_FULL_CORPUS_ABSORPTION_CLOSURE_2026-09-24.md` is superseded for repository absorption by the 2026-09-25 pinned-source audit. G1 is stopped, G2-G6 remain parked, G7 research is closed, and no automatic G1-G7 successor exists.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1

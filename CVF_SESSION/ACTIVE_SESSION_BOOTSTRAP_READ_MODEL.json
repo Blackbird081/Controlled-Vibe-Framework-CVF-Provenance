@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "cvf_ncr_brief_reopen_sol_return_repair_execution",
+  "currentMode": "cvf_ncr_brief_reopen_closed_useful_selection",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_BOUNDED_RETURN_EVIDENCE_REPAIR; BATCH_ID=CVF-NCR-BRIEF-REOPEN-RETURN-REPAIR-20261013. Material 2acd458d4; work order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_BRIEF_REOPEN_RETURN_REPAIR_2026-10-13.md. Primary Luna return QUALITY_REJECTED_WITH_CONSOLIDATED_FINDINGS; original bytes/verdict preserved. Local panel1/1 and single legacy-copy correction3/3 PASS. Final conditional INTERNAL_AGENT Sol medium BUILD exact2 new proof/return; all source/tests read-only;<=45min, no third BUILD.24 prior observations retained. Whole job/browser/backend/R3/R4 and Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11/Customer Care parked; LHW24.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=SELECT_USEFUL_CODING_OUTCOME; BATCH_ID=CVF-NCR-BRIEF-REOPEN-RETURN-REPAIR-20261013. Material 8e504119706e45d7a098e0bca9fe05fa3f60ccc7; work order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_BRIEF_REOPEN_RETURN_REPAIR_2026-10-13.md. Voluntary brief close/reopen technically accepted bounded; procedures PARTIAL_WITH_REASON retained; hidden revision invalidation and successful-send reset retained. Completion docs/reviews/CVF_NCR_BRIEF_REOPEN_COMPLETION_2026-10-13.md;26 observations, prior24 retained; primary rejection and conditional Sol acceptance separately attributed; no automatic successor. Whole job/browser/backend/R3/R4 and Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11/Customer Care parked; LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

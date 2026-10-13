@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_BRIEF_REOPEN_RETURN_REPAIR_2026-10-13.md",
     "workOrderSha256": "41d519ff1435caabc6c17a12cc8c473d3c613007137260542340e0557cec27a7"
   },
-  "currentAuthoritySyncReason": "Local accepted bounded brief-panel closure raw authority projection; actual-SHA continuity follows material commit.",
+  "currentAuthoritySyncReason": "Brief-panel closed material 8e504119706e45d7a098e0bca9fe05fa3f60ccc7; exact6 actual-SHA continuity; original history archived; no other effect grant.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
@@ -110,7 +110,7 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_ncr_brief_reopen_sol_return_repair_execution",
+  "currentMode": "cvf_ncr_brief_reopen_closed_useful_selection",
   "previousMode": "cvf_ncr_result_isolation_worker_execution",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
