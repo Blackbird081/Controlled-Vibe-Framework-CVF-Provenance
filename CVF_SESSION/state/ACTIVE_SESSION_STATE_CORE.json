@@ -36,12 +36,12 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_NCR_WORK_TRANSFER_BROWSER_2026-10-13.md",
-    "baselineSha256": "d4dd28272ec2f659ba1e75a5de5744e786b53234588f5a5f4221f83b90531100",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_WORK_TRANSFER_BROWSER_2026-10-13.md",
-    "workOrderSha256": "6327b082cf5d02d3087b3b177fd5f51dd2fdef0a271b645650df088646aee1ca"
+    "baselinePath": "docs/baselines/CVF_GC018_NCR_WORK_TRANSFER_BROWSER_RETURN_REPAIR_2026-10-13.md",
+    "baselineSha256": "1cf2ab60e4429c347d2b7b3496ac2a1fb2964a67dacb33b9bfe3016dcc59d361",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_WORK_TRANSFER_BROWSER_RETURN_REPAIR_2026-10-13.md",
+    "workOrderSha256": "726074de4a1f2f902b74544b4eab89338c7aefa8cace9fed0ab19d694f1724f3"
   },
-  "currentAuthoritySyncReason": "Primary quality rejected and exact8 custody/GC051 coverage committed; author one controlled same-scope conditional packet Material ab1f36a92c301db42879e36437ffdb228b22555f; dedicated exact6 source/generated continuity. Whole NCR pilot/effects remain separate.",
+  "currentAuthoritySyncReason": "Conditional same-scope browser repair packet committed, primary custody retained; bound release pending Material 69f45d69f1e883c41a75c3e83b3b46f694a5680e; dedicated exact6 source/generated continuity. Whole NCR pilot/effects remain separate.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
@@ -110,7 +110,7 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_ncr_work_transfer_browser_repair_preparation",
+  "currentMode": "cvf_ncr_work_transfer_browser_conditional_execution",
   "previousMode": "cvf_ncr_brief_copy_closed_useful_selection",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
