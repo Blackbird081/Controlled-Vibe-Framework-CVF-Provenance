@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_WORK_TRANSFER_BROWSER_RETURN_REPAIR_2026-10-13.md",
     "workOrderSha256": "89ba615a294bd77b8cd46dc3e0053aef0c0a95463ee49190c8fd1a8b5c712f10"
   },
-  "currentAuthoritySyncReason": "Finite Work Transfer browser contribution accepted; Root completion docs/reviews/CVF_NCR_WORK_TRANSFER_BROWSER_COMPLETION_2026-10-13.md; separate Alibaba9/9; next bounded selection only Pre-closure parent 8fd2c56d26f441fa9824e71211178f6e85eee5f6; coherent source/generated authority; actual-SHA dedicated continuity follows material. Whole NCR pilot/effects remain separate.",
+  "currentAuthoritySyncReason": "Finite Work Transfer browser contribution accepted; Root completion docs/reviews/CVF_NCR_WORK_TRANSFER_BROWSER_COMPLETION_2026-10-13.md; separate Alibaba9/9; next bounded selection only Material c79fcd98859506d9c94c387219e0b0e4c31b55fd; coherent source/generated authority; actual-SHA dedicated continuity follows material. Whole NCR pilot/effects remain separate.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
