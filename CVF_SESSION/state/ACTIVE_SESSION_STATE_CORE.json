@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_BRIEF_REOPEN_RETURN_REPAIR_2026-10-13.md",
     "workOrderSha256": "a737804f6ad439c6ddfec3b41c4d96447e5e3ede595f9b573fab1d283c5854af"
   },
-  "currentAuthoritySyncReason": "Same final Sol BUILD immutable dispatch-lineage rebind; zero worker writes/runs; original clock and preparation disclosure retained.",
+  "currentAuthoritySyncReason": "Brief-panel worker material 2acd458d4; exact6 actual-SHA continuity; original history archived; no other effect grant.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",

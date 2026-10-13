@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Current NCR Continuation
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `5d3de96c6968002a89edc9af18ab563b1364f389`. Material SHA: `5d3de96c6968002a89edc9af18ab563b1364f389`. Batch ID: CVF-NCR-BRIEF-REOPEN-RETURN-REPAIR-20261013. Final exact2 conditional Sol evidence/return worker; original primary quality rejected. No provider/full-job/public/deploy claim.
+Current HEAD recorded for this handoff: `2acd458d4eec3ba2768568e7a74c2483a5ec443f`. Material SHA: `2acd458d4`. Batch ID: CVF-NCR-BRIEF-REOPEN-RETURN-REPAIR-20261013. Final exact2 conditional Sol evidence/return worker; original primary quality rejected. No provider/full-job/public/deploy claim.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -25,8 +25,8 @@ Startup acknowledged: current mode=`cvf_ncr_brief_reopen_sol_return_repair_execu
 
 ## Current Authority
 
-Baseline: `docs/baselines/CVF_GC018_NCR_BRIEF_REOPEN_RETURN_REPAIR_2026-10-13.md`; SHA256 `28541d1dcf03bfbb184d307e5e51c7766a22097481d0e2db476080614ecdc6e9`.
-Work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_BRIEF_REOPEN_RETURN_REPAIR_2026-10-13.md`; SHA256 `1d6ca143b201fefc1383d9ec385c5113c9587e59f21541cc6df29222d065c302`.
+Baseline: `docs/baselines/CVF_GC018_NCR_BRIEF_REOPEN_RETURN_REPAIR_2026-10-13.md`; SHA256 `3cfd6a7f6a93bf59d055b7d341944114c503da3cc388870b690ee837972a20d4`.
+Work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_BRIEF_REOPEN_RETURN_REPAIR_2026-10-13.md`; SHA256 `a737804f6ad439c6ddfec3b41c4d96447e5e3ede595f9b573fab1d283c5854af`.
 Primary rejected; Root contract docs/reviews/CVF_NCR_BRIEF_REOPEN_PRIMARY_QUALITY_2026-10-13.md and custody docs/reviews/evidence/ncr-brief-reopen-quality-20261013.json; final exact2 Sol proof/return, current14/type/lint and bound gates required; Local acceptance pending.
 
 ## Accepted NCR Evidence And Continuation
@@ -37,7 +37,7 @@ Primary panel behavior independently1/1 PASS, return quality rejected; original 
 
 ## Next Allowed Move
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_BOUNDED_RETURN_EVIDENCE_REPAIR; BATCH_ID=CVF-NCR-BRIEF-REOPEN-RETURN-REPAIR-20261013. Material 5d3de96c6968002a89edc9af18ab563b1364f389; work order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_BRIEF_REOPEN_RETURN_REPAIR_2026-10-13.md. Primary Luna return QUALITY_REJECTED_WITH_CONSOLIDATED_FINDINGS; original bytes/verdict preserved. Local panel1/1 and single legacy-copy correction3/3 PASS. Final conditional INTERNAL_AGENT Sol medium BUILD exact2 new proof/return; all source/tests read-only;<=45min, no third BUILD.24 prior observations retained. Whole job/browser/backend/R3/R4 and Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11/Customer Care parked; LHW24.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_BOUNDED_RETURN_EVIDENCE_REPAIR; BATCH_ID=CVF-NCR-BRIEF-REOPEN-RETURN-REPAIR-20261013. Material 2acd458d4; work order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_BRIEF_REOPEN_RETURN_REPAIR_2026-10-13.md. Primary Luna return QUALITY_REJECTED_WITH_CONSOLIDATED_FINDINGS; original bytes/verdict preserved. Local panel1/1 and single legacy-copy correction3/3 PASS. Final conditional INTERNAL_AGENT Sol medium BUILD exact2 new proof/return; all source/tests read-only;<=45min, no third BUILD.24 prior observations retained. Whole job/browser/backend/R3/R4 and Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11/Customer Care parked; LHW24.
 
 ## Active Boundary
 T3B has a Local-verified active v1 specification. Party B is verified and T3C-C1 tooling accepted at `db78c87df`; T3C-C2 and Party C are verified. T3D-C1 tooling is accepted at `9ed844c2a` without source. T3D-C0-R1 closed at `2fffa1ef7`. T3D-C3 was accepted bounded at `88137e9a2`, but actual-mode prepare attempts failed before Party B/C execution; authorized cleanup removed the failed root and discarded unaccepted worker changes. G1 stopped, G2-G6 parked, and G7 research closed at `660601f0e` with `ADAPT_EXISTING_HANDOFF_ONLY`. Evidence-join sufficiency stays WATCH; no implementation successor exists. Rejected T2 paths remain archived; HRLTP-T2 paused.
@@ -87,7 +87,7 @@ Rollback boundary: exact6; preserve original archive and accepted/blocked histor
 | Command or tool surface | exact6 continuity sources, generator, staged checks, hook and bound release |
 | Target paths | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Allowed scope source | operator continuation and Local continuity ownership |
-| Before status evidence | 5d3de96c6968002a89edc9af18ab563b1364f389; clean worktree |
+| Before status evidence | 2acd458d4eec3ba2768568e7a74c2483a5ec443f; clean worktree |
 | After status evidence | exact6 worker continuity only; final conditional BUILD pending |
 | Diff evidence | git diff --cached --check and exact6 manifest |
 | Approval boundary | no provider/public/push/deploy or other effect grant |
