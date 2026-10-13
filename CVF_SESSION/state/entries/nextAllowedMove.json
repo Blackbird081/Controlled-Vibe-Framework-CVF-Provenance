@@ -1,5 +1,5 @@
 {
   "stateOrder": 2980,
   "stateKey": "nextAllowedMove",
-  "value": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_BOUNDED_WORK_ORDER; BATCH_ID=CVF-NCR-RESULT-EXPORT-FEEDBACK-20261013. Execute docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RESULT_EXPORT_FEEDBACK_2026-10-13.md only after committed bound pre-dispatch PASS. One internal worker60min, exact7 source/test/proof/return, zero provider budget; Root reviewer/closer owns closure. PDF/Word feedback only; R1/R2 partial, R3/R4 open, R5/R6 deferred; real-data/send/B2/P11/public/deploy parked. No automatic successor. Latest closed wave LHW24 retained."
+  "value": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_BOUNDED_WORK_ORDER; BATCH_ID=CVF-NCR-RESULT-EXPORT-FEEDBACK-20261013. Execute docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RESULT_EXPORT_FEEDBACK_2026-10-13.md only after committed bound pre-dispatch PASS. One internal worker60min, exact7 source/test/proof/return, zero provider budget; Root reviewer/closer owns closure. PDF/Word feedback only; R1/R2 partial, R3/R4 open, R5/R6 deferred; real-data/send/B2/P11/public/deploy parked. No automatic successor. Latest closed wave LHW24 retained. Dispatch material=4fa597879416e9dacd8388b4ef1b24dab6db8c08; mandatory91/91 PASS; actual-SHA exact6 binding corrected after initial four-file projection."
 }

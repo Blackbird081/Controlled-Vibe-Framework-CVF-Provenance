@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Current NCR Continuation
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `4fa597879416e9dacd8388b4ef1b24dab6db8c08`. Material SHA: `4fa597879416e9dacd8388b4ef1b24dab6db8c08`. Batch ID: CVF-NCR-RESULT-EXPORT-FEEDBACK-20261013. Finite PDF/Word feedback dispatch material4fa597879 passed mandatory91/91; one internal worker after final bound release; dedicated exact6 continuity.
+Current HEAD recorded for this handoff: `4fa597879416e9dacd8388b4ef1b24dab6db8c08`. Material SHA: `4fa597879416e9dacd8388b4ef1b24dab6db8c08`. Batch ID: CVF-NCR-RESULT-EXPORT-FEEDBACK-20261013. Finite PDF/Word packet4fa597879 mandatory91/91 PASS; Root correction synchronizes exact6 after initial4 projection; final bound release required; dedicated exact6 continuity.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -17,17 +17,17 @@ Local INTERNAL_AGENT orchestrator/reviewer owns final technical disposition, dis
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_result_export_feedback_admitted`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=Finite PDF/Word feedback dispatch material4fa597879 passed mandatory91/91; one internal worker after final bound release; role=Local INTERNAL_AGENT orchestrator/reviewer; phase=private continuity; decision owner=Local; parked checkpoint=real-data writer/custody/business acceptance/public/deploy/P11 and unrelated lanes.
+Startup acknowledged: current mode=`cvf_ncr_result_export_feedback_admitted`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=Finite PDF/Word packet4fa597879 mandatory91/91 PASS; Root correction synchronizes exact6 after initial4 projection; final bound release required; role=Local INTERNAL_AGENT orchestrator/reviewer; phase=private continuity; decision owner=Local; parked checkpoint=real-data writer/custody/business acceptance/public/deploy/P11 and unrelated lanes.
 
 ## Current Mode
 
-`cvf_ncr_result_export_feedback_admitted`. Finite PDF/Word feedback dispatch material4fa597879 passed mandatory91/91; one internal worker after final bound release. One internal worker only after committed bound admission; zero provider budget. Prior Work Transfer browser and Alibaba9/9 evidence retained in their owners; full R1-R4 open.
+`cvf_ncr_result_export_feedback_admitted`. Finite PDF/Word packet4fa597879 mandatory91/91 PASS; Root correction synchronizes exact6 after initial4 projection; final bound release required. One internal worker only after committed bound admission; zero provider budget. Prior Work Transfer browser and Alibaba9/9 evidence retained in their owners; full R1-R4 open.
 
 ## Current Authority
 
 Baseline: `docs/baselines/CVF_GC018_NCR_RESULT_EXPORT_FEEDBACK_2026-10-13.md`; SHA256 `3d8441b8e5a5ddad1e9407d42cd9f09e99182d3bf63c9d889193a057ca754832`.
 Work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RESULT_EXPORT_FEEDBACK_2026-10-13.md`; SHA256 `dcce9a465b8e67f03604b9b182982d82ff1130c9bdc2e682856c1c7117a83032`.
-Finite PDF/Word feedback dispatch material4fa597879 passed mandatory91/91; one internal worker after final bound release. Existing browser/live evidence and original failures remain historical in their current reviews; this source pair governs only ResultViewer export feedback.
+Finite PDF/Word packet4fa597879 mandatory91/91 PASS; Root correction synchronizes exact6 after initial4 projection; final bound release required. Existing browser/live evidence and original failures remain historical in their current reviews; this source pair governs only ResultViewer export feedback.
 
 ## Accepted NCR Evidence And Continuation
 
@@ -39,7 +39,7 @@ Finite clipboard result ordering is accepted; actual OS write cancellation, whol
 
 ## Next Allowed Move
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_BOUNDED_WORK_ORDER; BATCH_ID=CVF-NCR-RESULT-EXPORT-FEEDBACK-20261013. Execute docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RESULT_EXPORT_FEEDBACK_2026-10-13.md only after committed bound pre-dispatch PASS. One internal worker60min, exact7 source/test/proof/return, zero provider budget; Root reviewer/closer owns closure. PDF/Word feedback only; R1/R2 partial, R3/R4 open, R5/R6 deferred; real-data/send/B2/P11/public/deploy parked. No automatic successor. Latest closed wave LHW24 retained.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_BOUNDED_WORK_ORDER; BATCH_ID=CVF-NCR-RESULT-EXPORT-FEEDBACK-20261013. Execute docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RESULT_EXPORT_FEEDBACK_2026-10-13.md only after committed bound pre-dispatch PASS. One internal worker60min, exact7 source/test/proof/return, zero provider budget; Root reviewer/closer owns closure. PDF/Word feedback only; R1/R2 partial, R3/R4 open, R5/R6 deferred; real-data/send/B2/P11/public/deploy parked. No automatic successor. Latest closed wave LHW24 retained. Dispatch material=4fa597879416e9dacd8388b4ef1b24dab6db8c08; mandatory91/91 PASS; actual-SHA exact6 binding corrected after initial four-file projection.
 
 ## Active Boundary
 T3B has a Local-verified active v1 specification. Party B is verified and T3C-C1 tooling accepted at `db78c87df`; T3C-C2 and Party C are verified. T3D-C1 tooling is accepted at `9ed844c2a` without source. T3D-C0-R1 closed at `2fffa1ef7`. T3D-C3 was accepted bounded at `88137e9a2`, but actual-mode prepare attempts failed before Party B/C execution; authorized cleanup removed the failed root and discarded unaccepted worker changes. G1 stopped, G2-G6 parked, and G7 research closed at `660601f0e` with `ADAPT_EXISTING_HANDOFF_ONLY`. Evidence-join sufficiency stays WATCH; no implementation successor exists. Rejected T2 paths remain archived; HRLTP-T2 paused.
@@ -89,8 +89,8 @@ Rollback boundary: exact6; preserve original archive and accepted/blocked histor
 | Command or tool surface | source entry/core update, active front door/handoff, canonical state generator |
 | Target paths | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Allowed scope source | operator NCR continuation; exact6 authority in paired baseline/order |
-| Before status evidence | 4fa597879416e9dacd8388b4ef1b24dab6db8c08; clean worktree and staged empty after reviewed material commit |
-| After status evidence | exact6 source/generated continuity; Finite PDF/Word feedback dispatch material4fa597879 passed mandatory91/91; one internal worker after final bound release |
+| Before status evidence | e2625428e7a65cc84e0fcbc7927439d69e59aae1; clean worktree and staged empty after reviewed material commit |
+| After status evidence | exact6 source/generated continuity; Finite PDF/Word packet4fa597879 mandatory91/91 PASS; Root correction synchronizes exact6 after initial4 projection; final bound release required |
 | Diff evidence | source/generated reconciliation; exact6 git diff --name-status; git diff --cached --check |
 | Approval boundary | bounded PDF/Word feedback; real-data/acceptance/public/deploy parked |
 | Claim boundary | finite UI export feedback; zero new provider budget; full NCR pilot open |
