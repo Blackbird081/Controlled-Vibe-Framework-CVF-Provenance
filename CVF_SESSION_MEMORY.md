@@ -16,13 +16,10 @@ history/state aggregate is a targeted lookup, not a default startup step:
 Canonical read-budget standard:
 `docs/reference/CVF_ACTIVE_CONTINUITY_READ_BUDGET_STANDARD_2026-08-10.md`.
 Machine guard: `governance/compat/check_active_session_state.py`.
-
 Read `DESIGN.md` only when touching Web, UI, or dashboard work. Read
 `docs/reference/guard_orientation/README.md` before authoring a governed
 artifact.
-
 ## Active Pointers
-
 | Field | Path |
 |---|---|
 | Bootstrap read model | `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
@@ -34,21 +31,19 @@ artifact.
 | Prior handoff (archive-qualified) | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V62_2026-09-17.md` |
 | Latest front-door archive | `CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_COMPACTION_ARCHIVE_2026-08-11.md` |
 | Current authority evidence | `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` `currentAuthority` |
-| Parent maintenance | ResultViewer isolation accepted bounded;whole job open |
+| Parent maintenance | Offline UI journey worker released;whole job open |
 | Freeze posture | `governance_kernel_freeze_recommended` |
-
 ## Startup Acknowledgment
-
-Startup acknowledged: current mode=`cvf_ncr_result_isolation_closed_useful_selection`;handoff=`AGENT_HANDOFF_V63_2026-09-18.md`;next=select useful coding outcome;role=Local INTERNAL_AGENT reviewer/closer;phase=private bounded closure;decision owner=Local;parked checkpoint=Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11/Customer Care application.
-
+Startup acknowledged: current mode=`cvf_ncr_offline_journey_worker_execution`;handoff=`AGENT_HANDOFF_V63_2026-09-18.md`;next=execute exact3 offline UI journey worker;role=Local INTERNAL_AGENT orchestrator/dispatcher;phase=internal BUILD release;decision owner=Local;parked checkpoint=Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11/Customer Care application.
 ## Current Mode
-Current mode marker: `cvf_ncr_result_isolation_closed_useful_selection`
-Current mode: `cvf_ncr_result_isolation_closed_useful_selection`; previous mode marker: `cvf_ncr_result_isolation_worker_execution`
+
+Current mode marker: `cvf_ncr_offline_journey_worker_execution`
+Current mode: `cvf_ncr_offline_journey_worker_execution`; previous mode marker: `cvf_ncr_offline_journey_worker_execution`
 
 ## Next Allowed Move
 
-Mode: `cvf_ncr_result_isolation_closed_useful_selection`
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=SELECT_USEFUL_CODING_OUTCOME; BATCH_ID=CVF-NCR-RESULT-ISOLATION-20261012. Material 60d08d8f2a4abdb590f6c67ec96f45498edc3ffc;completion docs/reviews/CVF_NCR_RESULT_ISOLATION_COMPLETION_2026-10-12.md,Local proof docs/reviews/evidence/ncr-result-isolation-local-20261012.json. ResultViewer isolation CLOSED_PASS_BOUNDED:worker105/105,valid source-red15FAIL/3PASS,Local PDF/Home2/2PASS. Run transient UI isolated,same-run draft/view retained,old async cannot alter replacement/reopened UI;current Home continuation parent/payload verified. Original four unchanged,no Local production edits/redispatch;preparation PARTIAL_WITH_REASON,reuse citation gap retained.23 tasks10Haiku/9Sonnet/4Luna,previous22 preserved,cost deferred. Select useful outcome from evidence;no automatic successor. Whole job/full/browser/backend/OS-side-effect cancellation/R3/R4 unproved;Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11/Customer Care application parked;LHW24.
+Mode: `cvf_ncr_offline_journey_worker_execution`
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_BOUNDED_OFFLINE_UI_JOURNEY; BATCH_ID=CVF-NCR-OFFLINE-JOURNEY-20261013. Material 3d945c446583bf51b405a4596531f02fb880fef9;work order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_OFFLINE_JOURNEY_2026-10-13.md. One operator-authorized Luna max INTERNAL_AGENT BUILD, exact3 new test/evidence/return paths, production read-only; bound pre-implementation required. Offline real Home/form/processing/result/store parent-child display/payload composition only; plain synthetic transport is not AI governance proof.23 prior observations retained. Whole job/browser/backend/R3/R4 and Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11/Customer Care parked;LHW24.
 Historical G1-G7 terminal baseline: mode `acel_g1_g7_research_terminally_closed`. G1-G6 terminal review: `docs/reviews/CVF_ACEL_G1_G6_TERMINAL_STOP_CLOSURE_2026-09-24.md`; G7 research closure: `docs/reviews/CVF_ACEL_G7_CROSS_RUN_CAPABILITY_EVOLUTION_RESEARCH_CLOSURE_2026-09-24.md`. The packet-only post-G7 reconciliation review at `docs/reviews/CVF_ACEL_POST_G7_FULL_CORPUS_ABSORPTION_CLOSURE_2026-09-24.md` is superseded for repository absorption by the 2026-09-25 pinned-source audit. G1 is stopped, G2-G6 remain parked, G7 research is closed, and no automatic G1-G7 successor exists.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
@@ -96,6 +91,10 @@ RSPB-AI-T7 is `CLOSED_PASS_BOUNDED`: material and reviewer repair `63b2f7367`, c
 RSPB-AI-T13 is `CLOSED_PASS_BOUNDED`: material `737ae97fb3e2fb29524019df04b29f8f4b618a5c`, completion review `f232eeeecf70f9a175eb8028a648130f86c8823d`. Reviewer repaired projection completeness, ACTIVE UAT gating, revoked-Proxy safety, packet shape, and freshness. Evidence: focused 39/39, composed 93/93, package 856 plus 5 skipped, TypeScript PASS, freshness CURRENT, reviewer-fast 65/65, pre-commit 86/86, zero provider/live calls. Continue with the next non-duplicate high-value cluster from the existing ledger; all runtime/external authority remains parked.
 RSPB-AI-T14 is `CLOSED_PASS_BOUNDED`: material `6fc8f9872117f3fbadf3240569b92686c4f24809`, reviewer acceptance/completion `f0c16ee85ca6f9a35524f9712941d53d7b0b6a94`. Evidence: focused 38/38, composed 155/155, package 894 plus 5 skipped, TypeScript PASS, freshness CURRENT, worker-return fast PASS, pre-commit 86/86, zero provider/live calls. Next is a plan-only second Task-Proportional Governance upgrade for Claude critique; do not open T15 or implement before operator approval.
 RSPB-AI-T9 is `CLOSED_PASS_BOUNDED`: material and reviewer repair `5e5aeb8a4`, completion review `d34dce4c5`, machine closure `b78651eac`. Evidence: focused 42/42, T3/T8/T9 composed 105/105, package 743 plus 5 skipped, TypeScript PASS, freshness CURRENT, reviewer-fast 64/64, pre-commit 85/85, zero provider/live calls. Continue with the next highest-value local cluster without restarting full-corpus proof; all runtime/external authority remains parked.
+
+
+
+
 ## Parked Checkpoints
 
 NCR-R0/W00 documentation-only worker return is Local-accepted bounded at `c7b7a2c72`; the operator's pilot/effect/expense choice remains pending. U1 code import/runtime use, out-of-manifest production TypeScript edits, existing-guard edits, hook/autorun/CI wiring, provider/live, credential access, quota mutation, CLI/MCP invocation, public sync, deployment, production, trusted-evidence readiness and cross-runtime determinism claims remain parked.

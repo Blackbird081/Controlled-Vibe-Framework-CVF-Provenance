@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Current NCR Continuation
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `bf13b91bdbf3d7173ef34a6b21bd4f3f3e2833fc`. Material SHA: `03b99b35d9f6b3f71909d29f6cc4dbf75828bc4b`. Batch ID: CCMA-SEVEN-FINDING-PUBLIC-EXPORT-20261013. Per-output guidance returned to CCMA project branch `9ae219c67c7bf258c095a2acd76e969345110753`; public-safe checklist exported via public PR #11, main `fa34ed49e56648acafe8b0388e48e0aa0523f007`. Typed loopback receipts remain documentation-only; no new live runtime claim.
+Current HEAD recorded for this handoff: `3d945c446583bf51b405a4596531f02fb880fef9`. Material SHA: `3d945c446583bf51b405a4596531f02fb880fef9`. Batch ID: CVF-NCR-OFFLINE-JOURNEY-20261013. Exact3 test/evidence/return worker release; production read-only; independent review pending. No provider/live/public/deploy or whole-job claim.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -13,21 +13,21 @@ Current continuation only. Root AGENTS.md and canonical routing owners retain fu
 Closed history is preserved byte-for-byte at `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V63_PRE_NCR_COMPACTION_2026-10-07.md` (SHA256 `54801fdcf14e9abe17592352ec3c69a0b0e855632991af0caacac7b65252ccba`); it is NOT_ACTIVE_AUTHORITY and not default startup reading.
 ## Scope / Target / Owner Boundary
 
-Local INTERNAL_AGENT reviewer/closer/steward;ResultViewer bounded accepted,worker4 unchanged,no Local product repair/redispatch.23 observations;provider memory not authority.
+Local INTERNAL_AGENT orchestrator/dispatcher;one operator-authorized shared-workspace worker,exact3 outputs;production read-only;23 prior observations retained.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_result_isolation_closed_useful_selection`;handoff=`AGENT_HANDOFF_V63_2026-09-18.md`;next=select useful coding outcome;role=Local INTERNAL_AGENT reviewer/closer;phase=private bounded closure;decision owner=Local;parked checkpoint=Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11/Customer Care application.
+Startup acknowledged: current mode=`cvf_ncr_offline_journey_worker_execution`;handoff=`AGENT_HANDOFF_V63_2026-09-18.md`;next=execute exact3 offline UI journey worker;role=Local INTERNAL_AGENT orchestrator/dispatcher;phase=internal BUILD release;decision owner=Local;parked checkpoint=Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11/Customer Care application.
 
 ## Current Mode
 
-`cvf_ncr_result_isolation_closed_useful_selection`. ResultViewer run isolation offline accepted;preparation limits separate. Select useful outcome;whole job/R3/R4 open,LHW24.
+`cvf_ncr_offline_journey_worker_execution`. One offline UI parent-child composition worker released;accepted prior controls unchanged. LHW24.
 
 ## Current Authority
 
-Baseline: `docs/baselines/CVF_GC018_NCR_RESULT_ISOLATION_2026-10-12.md`; SHA256 `a550d13df6f4e1086a0a3f849e11ab936883800fa3e6022a42c0b070c2918388`.
-Work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RESULT_ISOLATION_2026-10-12.md`; SHA256 `d1fd2ebef8308351d501da58b1d4ff84f7bbb8889118ccc0758bafcf4cd1edc0`; CLOSED_PASS_BOUNDED technical,preparation PARTIAL_WITH_REASON.
-Completion: `docs/reviews/CVF_NCR_RESULT_ISOLATION_COMPLETION_2026-10-12.md`; Local proof: `docs/reviews/evidence/ncr-result-isolation-local-20261012.json`.23 tasks;no successor.
+Baseline: `docs/baselines/CVF_GC018_NCR_OFFLINE_JOURNEY_2026-10-13.md`; SHA256 `2b942e0564388cc1a16e4b09b693def97acd91335a8ee3b3e38777a296710461`.
+Work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_OFFLINE_JOURNEY_2026-10-13.md`; SHA256 `32572eed0b084045c9d92dd88886c2aa2efb9751dffcf67b326950ece03f49b4`.
+Exact3 new outputs;worker bound pre-implementation then focused UI test/type/lint and final ledger/fast;independent Local review pending. No production repair or automatic successor.
 
 ## O6 Release Rebind After Provenance Sync (2026-10-11)
 Root marker replacement aa32f666 blocked DR-04/DR-05; rebind bd13e1a80 restored release. Log C:/Users/DELL/AppData/Local/Temp/o6_preimpl.log retained; no worker defect. Provenance lane closed, URL locked.
@@ -110,7 +110,7 @@ Consume returned evidence under MFRP P4-C1: EVALUATE_RETURNED_EVIDENCE_NOT_RECRE
 Alibaba calls are authorized for meaningful scoped tests; no other provider call,Claude dispatch,public push,deployment or actual-data cutover is inferred.
 ## Next Allowed Move
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=SELECT_USEFUL_CODING_OUTCOME; BATCH_ID=CVF-NCR-RESULT-ISOLATION-20261012. Material 60d08d8f2a4abdb590f6c67ec96f45498edc3ffc;completion docs/reviews/CVF_NCR_RESULT_ISOLATION_COMPLETION_2026-10-12.md,Local proof docs/reviews/evidence/ncr-result-isolation-local-20261012.json. ResultViewer isolation CLOSED_PASS_BOUNDED:worker105/105,valid source-red15FAIL/3PASS,Local PDF/Home2/2PASS. Run transient UI isolated,same-run draft/view retained,old async cannot alter replacement/reopened UI;current Home continuation parent/payload verified. Original four unchanged,no Local production edits/redispatch;preparation PARTIAL_WITH_REASON,reuse citation gap retained.23 tasks10Haiku/9Sonnet/4Luna,previous22 preserved,cost deferred. Select useful outcome from evidence;no automatic successor. Whole job/full/browser/backend/OS-side-effect cancellation/R3/R4 unproved;Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11/Customer Care application parked;LHW24.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_BOUNDED_OFFLINE_UI_JOURNEY; BATCH_ID=CVF-NCR-OFFLINE-JOURNEY-20261013. Material 3d945c446583bf51b405a4596531f02fb880fef9;work order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_OFFLINE_JOURNEY_2026-10-13.md. One operator-authorized Luna max INTERNAL_AGENT BUILD, exact3 new test/evidence/return paths, production read-only; bound pre-implementation required. Offline real Home/form/processing/result/store parent-child display/payload composition only; plain synthetic transport is not AI governance proof.23 prior observations retained. Whole job/browser/backend/R3/R4 and Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11/Customer Care parked;LHW24.
 
 ## Active Boundary
 T3B has a Local-verified active v1 specification. Party B is verified and T3C-C1 tooling accepted at `db78c87df`; T3C-C2 and Party C are verified. T3D-C1 tooling is accepted at `9ed844c2a` without source. T3D-C0-R1 closed at `2fffa1ef7`. T3D-C3 was accepted bounded at `88137e9a2`, but actual-mode prepare attempts failed before Party B/C execution; authorized cleanup removed the failed root and discarded unaccepted worker changes. G1 stopped, G2-G6 parked, and G7 research closed at `660601f0e` with `ADAPT_EXISTING_HANDOFF_ONLY`. Evidence-join sufficiency stays WATCH; no implementation successor exists. Rejected T2 paths remain archived; HRLTP-T2 paused.
@@ -138,7 +138,7 @@ Q001/Q004 actual-data source/writer,custody,retention/RPO/RTO/cost checkpoints a
 NCR send/B2 STOP and S05/C1 remain; IAB unavailable; repo Playwright Chromium present; vision/full P04/full release remain unproved. No autonomous P11/public/deploy activation.
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: exact6 bounded ResultViewer closure continuity,no checker/product edit.
+Authorized guard-maintenance scope: exact6 offline UI journey dispatch continuity;no checker/product edit.
 Protected paths:
 - `AGENT_HANDOFF_V63_2026-09-18.md`
 - `CVF_SESSION_MEMORY.md`
@@ -147,27 +147,27 @@ Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 
-Operator authorization: standing Local reviewer/closer and returned COMPLETE_PENDING_REVIEW.
-Rollback boundary: exact6;original worker4 and previous22 observations unchanged.
+Operator authorization: 2026-10-13 continue CVF Core and authorize Luna max worker;Local owns review/commits.
+Rollback boundary: exact6;accepted previous proof/source and23 prior observations retained.
 
 ## Agent Operation Trace Block
 
 | Field | Evidence |
 |---|---|
-| Actor | Local reviewer/closer/session-sync steward |
+| Actor | Local orchestrator/dispatcher/session-sync steward |
 | Provider or surface | private shared workspace |
-| Session or invocation | ncr-result-isolation-closure-sync-20261012 |
+| Session or invocation | ncr-offline-journey-worker-sync-20261013 |
 | Working directory | repo root |
 | Command or tool surface | canonical generator,exact6 continuity and gates |
 | Target paths | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Allowed scope source | standing returned-worker review;exact17 material 60d08d8f2a4abdb590f6c67ec96f45498edc3ffc |
-| Before status evidence | 60d08d8f2a4abdb590f6c67ec96f45498edc3ffc;material committed,91/91 precommit PASS;clean |
-| After status evidence | exact6;bounded technical acceptance,23 observations |
+| Before status evidence | 3d945c446583bf51b405a4596531f02fb880fef9; exact6 continuity only |
+| After status evidence | exact6 dedicated sync; worker BUILD pending,23 prior observations |
 | Diff evidence | git diff --check;exact6 manifest |
 | Approval boundary | private closure continuity;no successor/provider/public/push |
-| Claim boundary | offline ResultViewer/Home UI only;preparation and whole-job gaps retained |
+| Claim boundary | offline UI composition only;no AI governance/provider/live/full-job/public/deploy claim |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-result-isolation-closure-sync-20261012 |
+| Invocation ID | ncr-offline-journey-worker-sync-20261013 |
 | Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Manifest delta | MATCH |

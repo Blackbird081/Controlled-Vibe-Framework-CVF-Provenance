@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_OFFLINE_JOURNEY_2026-10-13.md",
     "workOrderSha256": "32572eed0b084045c9d92dd88886c2aa2efb9751dffcf67b326950ece03f49b4"
   },
-  "currentAuthoritySyncReason": "Operator 2026-10-13 CVF Core continuation and Luna max worker; test-only offline UI journey packet; dedicated material-SHA continuity follows before BUILD.",
+  "currentAuthoritySyncReason": "Offline journey worker material 3d945c446583bf51b405a4596531f02fb880fef9; dedicated exact6 actual-SHA continuity; synthetic UI only.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
@@ -110,7 +110,7 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_ncr_result_isolation_closed_useful_selection",
+  "currentMode": "cvf_ncr_offline_journey_worker_execution",
   "previousMode": "cvf_ncr_result_isolation_worker_execution",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",

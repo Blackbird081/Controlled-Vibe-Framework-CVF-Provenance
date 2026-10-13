@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "cvf_ncr_result_isolation_closed_useful_selection",
+  "currentMode": "cvf_ncr_offline_journey_worker_execution",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=SELECT_USEFUL_CODING_OUTCOME; BATCH_ID=CVF-NCR-RESULT-ISOLATION-20261012. Material 60d08d8f2a4abdb590f6c67ec96f45498edc3ffc;completion docs/reviews/CVF_NCR_RESULT_ISOLATION_COMPLETION_2026-10-12.md,Local proof docs/reviews/evidence/ncr-result-isolation-local-20261012.json. ResultViewer isolation CLOSED_PASS_BOUNDED:worker105/105,valid source-red15FAIL/3PASS,Local PDF/Home2/2PASS. Run transient UI isolated,same-run draft/view retained,old async cannot alter replacement/reopened UI;current Home continuation parent/payload verified. Original four unchanged,no Local production edits/redispatch;preparation PARTIAL_WITH_REASON,reuse citation gap retained.23 tasks10Haiku/9Sonnet/4Luna,previous22 preserved,cost deferred. Select useful outcome from evidence;no automatic successor. Whole job/full/browser/backend/OS-side-effect cancellation/R3/R4 unproved;Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11/Customer Care application parked;LHW24.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_BOUNDED_OFFLINE_UI_JOURNEY; BATCH_ID=CVF-NCR-OFFLINE-JOURNEY-20261013. Material 3d945c446583bf51b405a4596531f02fb880fef9;work order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_OFFLINE_JOURNEY_2026-10-13.md. One operator-authorized Luna max INTERNAL_AGENT BUILD, exact3 new test/evidence/return paths, production read-only; bound pre-implementation required. Offline real Home/form/processing/result/store parent-child display/payload composition only; plain synthetic transport is not AI governance proof.23 prior observations retained. Whole job/browser/backend/R3/R4 and Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11/Customer Care parked;LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
