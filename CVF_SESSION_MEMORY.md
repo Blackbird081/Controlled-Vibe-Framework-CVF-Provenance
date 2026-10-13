@@ -35,17 +35,17 @@ artifact.
 | Freeze posture | `governance_kernel_freeze_recommended` |
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_brief_reopen_worker_execution`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=exact4 primary worker BUILD; conditional repair on rejected quality only; role=Local INTERNAL_AGENT dispatcher; phase=bounded BUILD release; decision owner=Local; parked checkpoint=provider/public/deploy/sourceR2/Expense/S5/PLL/scoring/Gateway/media/P11/Customer Care.
+Startup acknowledged: current mode=`cvf_ncr_brief_reopen_sol_return_repair_execution`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=final exact2 conditional Sol BUILD; primary quality rejected; role=Local INTERNAL_AGENT dispatcher; phase=bounded BUILD release; decision owner=Local; parked checkpoint=provider/public/deploy/sourceR2/Expense/S5/PLL/scoring/Gateway/media/P11/Customer Care.
 
 ## Current Mode
 
-Current mode marker: `cvf_ncr_brief_reopen_worker_execution`
-Current mode: `cvf_ncr_brief_reopen_worker_execution`; previous mode marker: `cvf_ncr_offline_journey_closed_useful_selection`
+Current mode marker: `cvf_ncr_brief_reopen_sol_return_repair_execution`
+Current mode: `cvf_ncr_brief_reopen_sol_return_repair_execution`; previous mode marker: `cvf_ncr_brief_reopen_worker_execution`
 
 ## Next Allowed Move
 
-Mode: `cvf_ncr_brief_reopen_worker_execution`
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_BOUNDED_BRIEF_PANEL_CONTINUITY; BATCH_ID=CVF-NCR-BRIEF-REOPEN-20261013. Material d528e39f7e5d02982091cf545122aca5ec65b805; work order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_BRIEF_REOPEN_2026-10-13.md. Primary INTERNAL_AGENT BUILD exact4: DynamicForm panel lifetime/new test/proof/return; voluntary close retains same-idea brief, hidden edits invalidate, successful send resets. Configured Luna max; Sol medium only after Local quality rejection and distinct repair release.24 prior observations retained. Whole job/browser/backend/R3/R4 and Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11/Customer Care parked; LHW24.
+Mode: `cvf_ncr_brief_reopen_sol_return_repair_execution`
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_BOUNDED_RETURN_EVIDENCE_REPAIR; BATCH_ID=CVF-NCR-BRIEF-REOPEN-RETURN-REPAIR-20261013. Material 5d3de96c6968002a89edc9af18ab563b1364f389; work order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_BRIEF_REOPEN_RETURN_REPAIR_2026-10-13.md. Primary Luna return QUALITY_REJECTED_WITH_CONSOLIDATED_FINDINGS; original bytes/verdict preserved. Local panel1/1 and single legacy-copy correction3/3 PASS. Final conditional INTERNAL_AGENT Sol medium BUILD exact2 new proof/return; all source/tests read-only;<=45min, no third BUILD.24 prior observations retained. Whole job/browser/backend/R3/R4 and Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11/Customer Care parked; LHW24.
 Historical G1-G7 terminal baseline: mode `acel_g1_g7_research_terminally_closed`. G1-G6 terminal review: `docs/reviews/CVF_ACEL_G1_G6_TERMINAL_STOP_CLOSURE_2026-09-24.md`; G7 research closure: `docs/reviews/CVF_ACEL_G7_CROSS_RUN_CAPABILITY_EVOLUTION_RESEARCH_CLOSURE_2026-09-24.md`. The packet-only post-G7 reconciliation review at `docs/reviews/CVF_ACEL_POST_G7_FULL_CORPUS_ABSORPTION_CLOSURE_2026-09-24.md` is superseded for repository absorption by the 2026-09-25 pinned-source audit. G1 is stopped, G2-G6 remain parked, G7 research is closed, and no automatic G1-G7 successor exists.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1

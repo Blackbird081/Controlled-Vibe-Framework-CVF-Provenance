@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Current NCR Continuation
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `d528e39f7e5d02982091cf545122aca5ec65b805`. Material SHA: `d528e39f7e5d02982091cf545122aca5ec65b805`. Batch ID: CVF-NCR-BRIEF-REOPEN-20261013. Exact4 primary worker; conditional repair only on Local quality rejection. No provider/full-job/public/deploy claim.
+Current HEAD recorded for this handoff: `5d3de96c6968002a89edc9af18ab563b1364f389`. Material SHA: `5d3de96c6968002a89edc9af18ab563b1364f389`. Batch ID: CVF-NCR-BRIEF-REOPEN-RETURN-REPAIR-20261013. Final exact2 conditional Sol evidence/return worker; original primary quality rejected. No provider/full-job/public/deploy claim.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -13,31 +13,31 @@ Current continuation only. Root AGENTS.md and canonical routing owners retain fu
 Closed history is preserved byte-for-byte at `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V63_PRE_NCR_COMPACTION_2026-10-07.md` (SHA256 `54801fdcf14e9abe17592352ec3c69a0b0e855632991af0caacac7b65252ccba`); it is NOT_ACTIVE_AUTHORITY and not default startup reading.
 ## Scope / Target / Owner Boundary
 
-Local INTERNAL_AGENT dispatcher; exact4 primary worker release after final bound gate; sequential conditional repair requires quality rejection and bound packet; no shared-lane overlap.
+Local INTERNAL_AGENT dispatcher; exact2 final conditional worker release after final bound gate; quality rejection and integrated root contract recorded; final conditional exact2, no third BUILD or shared-lane overlap.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_brief_reopen_worker_execution`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=exact4 primary worker BUILD; conditional repair on rejected quality only; role=Local INTERNAL_AGENT dispatcher; phase=bounded BUILD release; decision owner=Local; parked checkpoint=provider/public/deploy/sourceR2/Expense/S5/PLL/scoring/Gateway/media/P11/Customer Care.
+Startup acknowledged: current mode=`cvf_ncr_brief_reopen_sol_return_repair_execution`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=final exact2 conditional Sol BUILD; primary quality rejected; role=Local INTERNAL_AGENT dispatcher; phase=bounded BUILD release; decision owner=Local; parked checkpoint=provider/public/deploy/sourceR2/Expense/S5/PLL/scoring/Gateway/media/P11/Customer Care.
 
 ## Current Mode
 
-`cvf_ncr_brief_reopen_worker_execution`. Primary INTERNAL_AGENT BUILD exact4: DynamicForm panel lifetime/new test/proof/return; voluntary close retains same-idea brief, hidden edits invalidate, successful send resets. Configured Luna max; Sol medium only after Local quality rejection and distinct repair release.24 prior observations retained.
+`cvf_ncr_brief_reopen_sol_return_repair_execution`. Primary Luna return QUALITY_REJECTED_WITH_CONSOLIDATED_FINDINGS; original bytes/verdict preserved. Local panel1/1 and single legacy-copy correction3/3 PASS. Final conditional INTERNAL_AGENT Sol medium BUILD exact2 new proof/return; all source/tests read-only;<=45min, no third BUILD.24 prior observations retained.
 
 ## Current Authority
 
-Baseline: `docs/baselines/CVF_GC018_NCR_BRIEF_REOPEN_2026-10-13.md`; SHA256 `b1fb402dc02b820b4a880fe4442085ad017b15ec571de9bfa468c1d90d08b4fe`.
-Work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_BRIEF_REOPEN_2026-10-13.md`; SHA256 `0cf950e92200cb8b02c6518b721eb4a253b0695199ca1d7838a40743f984c150`.
-Bound pre-implementation, exact4 writes and final fast/ledger required; independent Local acceptance pending.
+Baseline: `docs/baselines/CVF_GC018_NCR_BRIEF_REOPEN_RETURN_REPAIR_2026-10-13.md`; SHA256 `28541d1dcf03bfbb184d307e5e51c7766a22097481d0e2db476080614ecdc6e9`.
+Work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_BRIEF_REOPEN_RETURN_REPAIR_2026-10-13.md`; SHA256 `1d6ca143b201fefc1383d9ec385c5113c9587e59f21541cc6df29222d065c302`.
+Primary rejected; Root contract docs/reviews/CVF_NCR_BRIEF_REOPEN_PRIMARY_QUALITY_2026-10-13.md and custody docs/reviews/evidence/ncr-brief-reopen-quality-20261013.json; final exact2 Sol proof/return, current14/type/lint and bound gates required; Local acceptance pending.
 
 ## Accepted NCR Evidence And Continuation
 
 Closed history is preserved as exact raw preimage `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V63_PRE_BRIEF_REOPEN_2026-10-13.md`; SHA256 `8b2c763668d87f99b4d85ea2a5d7df9c0a66c3bd94790414e21c32d5de31867b`; NOT_ACTIVE_AUTHORITY, targeted lookup only.
 Latest accepted offline composition: docs/reviews/CVF_NCR_OFFLINE_JOURNEY_COMPLETION_2026-10-13.md; test-only bounded acceptance, procedure PARTIAL_WITH_REASON, production unchanged;24 model observations. All historical BLOCKED/procedure and provider/whole-job limits retained in their owners.
-Current brief-panel work is a fresh finite presentation-lifetime outcome, not a stopped source-chain successor. Successful-send/reopen reset is a locked compatibility boundary.
+Primary panel behavior independently1/1 PASS, return quality rejected; original failures preserved. Root single chrome assertion correction3/3 and actual digest supplementation resolve admission dependency. Integrated final conditional Sol proof/return validates current14; panel/source/tests frozen; no SourceR2/kernel/provider chain reopen.
 
 ## Next Allowed Move
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_BOUNDED_BRIEF_PANEL_CONTINUITY; BATCH_ID=CVF-NCR-BRIEF-REOPEN-20261013. Material d528e39f7e5d02982091cf545122aca5ec65b805; work order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_BRIEF_REOPEN_2026-10-13.md. Primary INTERNAL_AGENT BUILD exact4: DynamicForm panel lifetime/new test/proof/return; voluntary close retains same-idea brief, hidden edits invalidate, successful send resets. Configured Luna max; Sol medium only after Local quality rejection and distinct repair release.24 prior observations retained. Whole job/browser/backend/R3/R4 and Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11/Customer Care parked; LHW24.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_BOUNDED_RETURN_EVIDENCE_REPAIR; BATCH_ID=CVF-NCR-BRIEF-REOPEN-RETURN-REPAIR-20261013. Material 5d3de96c6968002a89edc9af18ab563b1364f389; work order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_BRIEF_REOPEN_RETURN_REPAIR_2026-10-13.md. Primary Luna return QUALITY_REJECTED_WITH_CONSOLIDATED_FINDINGS; original bytes/verdict preserved. Local panel1/1 and single legacy-copy correction3/3 PASS. Final conditional INTERNAL_AGENT Sol medium BUILD exact2 new proof/return; all source/tests read-only;<=45min, no third BUILD.24 prior observations retained. Whole job/browser/backend/R3/R4 and Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11/Customer Care parked; LHW24.
 
 ## Active Boundary
 T3B has a Local-verified active v1 specification. Party B is verified and T3C-C1 tooling accepted at `db78c87df`; T3C-C2 and Party C are verified. T3D-C1 tooling is accepted at `9ed844c2a` without source. T3D-C0-R1 closed at `2fffa1ef7`. T3D-C3 was accepted bounded at `88137e9a2`, but actual-mode prepare attempts failed before Party B/C execution; authorized cleanup removed the failed root and discarded unaccepted worker changes. G1 stopped, G2-G6 parked, and G7 research closed at `660601f0e` with `ADAPT_EXISTING_HANDOFF_ONLY`. Evidence-join sufficiency stays WATCH; no implementation successor exists. Rejected T2 paths remain archived; HRLTP-T2 paused.
@@ -87,8 +87,8 @@ Rollback boundary: exact6; preserve original archive and accepted/blocked histor
 | Command or tool surface | exact6 continuity sources, generator, staged checks, hook and bound release |
 | Target paths | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Allowed scope source | operator continuation and Local continuity ownership |
-| Before status evidence | d528e39f7e5d02982091cf545122aca5ec65b805; clean worktree |
-| After status evidence | exact6 worker continuity only; primary BUILD pending |
+| Before status evidence | 5d3de96c6968002a89edc9af18ab563b1364f389; clean worktree |
+| After status evidence | exact6 worker continuity only; final conditional BUILD pending |
 | Diff evidence | git diff --cached --check and exact6 manifest |
 | Approval boundary | no provider/public/push/deploy or other effect grant |
 | Claim boundary | offline panel presentation only; no runtime selector or whole-job claim |
