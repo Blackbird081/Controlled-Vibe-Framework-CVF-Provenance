@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Current NCR Continuation
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `c570563fff2344458752122073cd35c0cb571a72`. Material SHA: `8e504119706e45d7a098e0bca9fe05fa3f60ccc7`. Batch ID: CVF-NCR-BRIEF-REOPEN-RETURN-REPAIR-20261013. Brief-panel presentation accepted bounded; original worker custody and quality disposition retained. No provider/full-job/public/deploy claim.
+Current HEAD recorded for this handoff: `1638a1d3db959b8ec52b4e931682c8eba04b86b1`. Material SHA: `1638a1d3db959b8ec52b4e931682c8eba04b86b1`. Batch ID: CVF-NCR-BRIEF-COPY-20261013. Direct Local clipboard UI maintenance; prior closed work-order authority retained. Procedure qualifications remain in evidence.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -13,15 +13,15 @@ Current continuation only. Root AGENTS.md and canonical routing owners retain fu
 Closed history is preserved byte-for-byte at `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V63_PRE_NCR_COMPACTION_2026-10-07.md` (SHA256 `54801fdcf14e9abe17592352ec3c69a0b0e855632991af0caacac7b65252ccba`); it is NOT_ACTIVE_AUTHORITY and not default startup reading.
 ## Scope / Target / Owner Boundary
 
-Local INTERNAL_AGENT reviewer/closer; brief-panel finite outcome accepted; quality rejection and integrated root contract recorded; final conditional exact2, no third BUILD or shared-lane overlap.
+Local INTERNAL_AGENT owns direct clipboard implementation, tests and final decision; Luna only read-only advisory review. No delegated implementation BUILD or new work-order fulfillment; prior closed pair and historical procedure/quality dispositions retain their scope.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_brief_reopen_closed_useful_selection`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=select useful coding outcome; role=Local INTERNAL_AGENT reviewer/closer; phase=bounded closure; decision owner=Local; parked checkpoint=provider/public/deploy/sourceR2/Expense/S5/PLL/scoring/Gateway/media/P11/Customer Care.
+Startup acknowledged: current mode=`cvf_ncr_brief_copy_closed_useful_selection`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=select useful coding outcome; role=Local INTERNAL_AGENT implementation/decision owner; phase=direct maintenance continuity; decision owner=Local; parked checkpoint=provider/public/deploy/sourceR2/Expense/S5/PLL/scoring/Gateway/media/P11/Customer Care.
 
 ## Current Mode
 
-`cvf_ncr_brief_reopen_closed_useful_selection`. Voluntary brief close/reopen technically accepted bounded; procedures PARTIAL_WITH_REASON retained; hidden revision invalidation and successful-send reset retained. Completion docs/reviews/CVF_NCR_BRIEF_REOPEN_COMPLETION_2026-10-13.md;26 observations, prior24 retained; primary rejection and conditional Sol acceptance separately attributed; no automatic successor.
+`cvf_ncr_brief_copy_closed_useful_selection`. Direct clipboard feedback accepted bounded;46/46/type/lint, exact source oracle1/1 and read-only Luna review. Procedure PARTIAL_WITH_REASON: late pre-implementation confirmation; Root fixture/wrapper failures retained. Prior brief-panel closure retains its qualifications and26 implementation observations; whole job remains open.
 
 ## Current Authority
 
@@ -34,10 +34,12 @@ Completion: docs/reviews/CVF_NCR_BRIEF_REOPEN_COMPLETION_2026-10-13.md; Local ev
 Closed history is preserved as exact raw preimage `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V63_PRE_BRIEF_REOPEN_2026-10-13.md`; SHA256 `8b2c763668d87f99b4d85ea2a5d7df9c0a66c3bd94790414e21c32d5de31867b`; NOT_ACTIVE_AUTHORITY, targeted lookup only.
 Latest accepted offline composition: docs/reviews/CVF_NCR_OFFLINE_JOURNEY_COMPLETION_2026-10-13.md; test-only bounded acceptance, procedure PARTIAL_WITH_REASON, production unchanged;24 model observations. All historical BLOCKED/procedure and provider/whole-job limits retained in their owners.
 Primary panel behavior independently1/1 PASS, return quality rejected; original failures preserved. Root single chrome assertion correction3/3 and actual digest supplementation resolve admission dependency. Integrated final conditional Sol proof/return validates current14; panel/source/tests frozen; no SourceR2/kernel/provider chain reopen.
+Latest direct Local clipboard feedback evidence: `docs/reviews/evidence/ncr-brief-copy-local-20261013.json`; source RED1/1 -> exact-oracle GREEN1/1,46/46/type/lint; read-only Luna review. No independent executed worker oracle or new implementation-model observation. Root procedure limitations retained.
+Finite clipboard result ordering is accepted; actual OS write cancellation, whole job/browser/backend/R3/R4 and parked effects remain unproved.
 
 ## Next Allowed Move
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=SELECT_USEFUL_CODING_OUTCOME; BATCH_ID=CVF-NCR-BRIEF-REOPEN-RETURN-REPAIR-20261013. Material 8e504119706e45d7a098e0bca9fe05fa3f60ccc7; work order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_BRIEF_REOPEN_RETURN_REPAIR_2026-10-13.md. Voluntary brief close/reopen technically accepted bounded; procedures PARTIAL_WITH_REASON retained; hidden revision invalidation and successful-send reset retained. Completion docs/reviews/CVF_NCR_BRIEF_REOPEN_COMPLETION_2026-10-13.md;26 observations, prior24 retained; primary rejection and conditional Sol acceptance separately attributed; no automatic successor. Whole job/browser/backend/R3/R4 and Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11/Customer Care parked; LHW24.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=SELECT_USEFUL_CODING_OUTCOME; BATCH_ID=CVF-NCR-BRIEF-REOPEN-RETURN-REPAIR-20261013. Prior closed work order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_BRIEF_REOPEN_RETURN_REPAIR_2026-10-13.md. Direct Local maintenance CVF-NCR-BRIEF-COPY-20261013 at material 1638a1d3db959b8ec52b4e931682c8eba04b86b1; evidence docs/reviews/evidence/ncr-brief-copy-local-20261013.json. Latest copy owns UI feedback; source/mode A-B-A and unmount invalidate pending completion. procedure PARTIAL_WITH_REASON retained.26 implementation observations unchanged; no implementation worker BUILD or automatic successor. Whole job/browser/backend/R3/R4 and Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11/Customer Care parked; LHW24.
 
 ## Active Boundary
 T3B has a Local-verified active v1 specification. Party B is verified and T3C-C1 tooling accepted at `db78c87df`; T3C-C2 and Party C are verified. T3D-C1 tooling is accepted at `9ed844c2a` without source. T3D-C0-R1 closed at `2fffa1ef7`. T3D-C3 was accepted bounded at `88137e9a2`, but actual-mode prepare attempts failed before Party B/C execution; authorized cleanup removed the failed root and discarded unaccepted worker changes. G1 stopped, G2-G6 parked, and G7 research closed at `660601f0e` with `ADAPT_EXISTING_HANDOFF_ONLY`. Evidence-join sufficiency stays WATCH; no implementation successor exists. Rejected T2 paths remain archived; HRLTP-T2 paused.
@@ -65,7 +67,7 @@ Q001/Q004 actual-data source/writer,custody,retention/RPO/RTO/cost checkpoints a
 NCR send/B2 STOP and S05/C1 remain; IAB unavailable; repo Playwright Chromium present; vision/full P04/full release remain unproved. No autonomous P11/public/deploy activation.
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: exact6 brief-panel closed continuity; no checker/source edit.
+Authorized guard-maintenance scope: exact6 direct clipboard continuity; no checker/source edit.
 Protected paths:
 - `AGENT_HANDOFF_V63_2026-09-18.md`
 - `CVF_SESSION_MEMORY.md`
@@ -80,24 +82,24 @@ Rollback boundary: exact6; preserve original archive and accepted/blocked histor
 
 | Field | Evidence |
 |---|---|
-| Actor | Local reviewer/closer/session-sync steward |
+| Actor | Local INTERNAL_AGENT continuity steward |
 | Provider or surface | private shared workspace |
-| Session or invocation | ncr-brief-reopen-closed-sync-20261013 |
+| Session or invocation | ncr-brief-copy-sync-20261013 |
 | Working directory | repository root |
-| Command or tool surface | exact6 continuity sources, generator, staged checks, hook and bound release |
+| Command or tool surface | exact6 continuity sources, generated state, staged checks/hooks and committed-range pre-closure |
 | Target paths | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Allowed scope source | operator continuation and Local continuity ownership |
-| Before status evidence | c570563fff2344458752122073cd35c0cb571a72; clean worktree |
-| After status evidence | exact6 closed continuity only; accepted finite outcome; no successor |
-| Diff evidence | git diff --cached --check and exact6 manifest |
-| Approval boundary | no provider/public/push/deploy or other effect grant |
-| Claim boundary | offline panel presentation only; no runtime selector or whole-job claim |
+| Allowed scope source | operator CVF continuation; Local owns direct maintenance/continuity |
+| Before status evidence | 1638a1d3db959b8ec52b4e931682c8eba04b86b1; clean worktree |
+| After status evidence | exact6 continuity; finite clipboard contribution accepted with procedure qualifications |
+| Diff evidence | git diff --name-status; git diff --cached --check; exact6 manifest |
+| Approval boundary | parked effects retain prior authority |
+| Claim boundary | offline clipboard feedback; no runtime selector, governance efficacy or whole-job claim |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-brief-reopen-closed-sync-20261013 |
+| Invocation ID | ncr-brief-copy-sync-20261013 |
 | Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Manifest delta | MATCH required before commit |
-| Deletion or rename disposition | N/A with reason: current fields/pointers replaced; exact raw preimage already archived in dispatch material |
+| Deletion or rename disposition | None; update current continuity fields and retain historical evidence owners |
 
 ## Claim Boundary
 Current facts, exact packet binding and permitted next action only. Historical Home/O6 evidence remains bounded; no whole-roadmap, live/provider, backend cancellation, release/public/deployment or model-winner claim.
