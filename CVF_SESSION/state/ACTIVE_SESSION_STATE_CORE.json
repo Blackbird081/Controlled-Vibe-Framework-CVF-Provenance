@@ -36,12 +36,12 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_NCR_BRIEF_REOPEN_2026-10-13.md",
-    "baselineSha256": "b1fb402dc02b820b4a880fe4442085ad017b15ec571de9bfa468c1d90d08b4fe",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_BRIEF_REOPEN_2026-10-13.md",
-    "workOrderSha256": "0cf950e92200cb8b02c6518b721eb4a253b0695199ca1d7838a40743f984c150"
+    "baselinePath": "docs/baselines/CVF_GC018_NCR_BRIEF_REOPEN_RETURN_REPAIR_2026-10-13.md",
+    "baselineSha256": "28541d1dcf03bfbb184d307e5e51c7766a22097481d0e2db476080614ecdc6e9",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_BRIEF_REOPEN_RETURN_REPAIR_2026-10-13.md",
+    "workOrderSha256": "1d6ca143b201fefc1383d9ec385c5113c9587e59f21541cc6df29222d065c302"
   },
-  "currentAuthoritySyncReason": "Brief-panel worker material d528e39f7e5d02982091cf545122aca5ec65b805; exact6 actual-SHA continuity; original history archived; no other effect grant.",
+  "currentAuthoritySyncReason": "Primary quality rejected; integrated conditional exact2 return-evidence root contract; actual-SHA continuity follows dispatch material.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",

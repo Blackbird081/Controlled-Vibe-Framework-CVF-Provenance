@@ -1,0 +1,242 @@
+{
+  "schemaVersion": "cvf.ncrBriefReopenWorkerEvidence@1.0.0",
+  "batchId": "CVF-NCR-BRIEF-REOPEN-20261013",
+  "role": "INTERNAL_AGENT",
+  "phase": "bounded BUILD",
+  "decisionOwner": "Local orchestrator/reviewer",
+  "executionBaseHead": "b3d0e8540c69b3c7ecf3e8db6a6816889788485f",
+  "timestampsUtc": {
+    "readOnlyIntakeStarted": "2026-10-13T05:05:04Z",
+    "buildStartedBeforeRequiredReads": "2026-10-13T05:23:24Z",
+    "preliminaryProofEnd": "2026-10-13T06:07:01Z",
+    "finalGateConfirmation": null,
+    "finalWorkerMessage": null
+  },
+  "configuration": {
+    "primaryRequestedModel": "gpt-6-luna",
+    "primaryRequestedReasoningEffort": "max",
+    "conditionalFallbackRequestedModel": "gpt-6.1-sol",
+    "conditionalFallbackRequestedReasoningEffort": "medium",
+    "conditionalFallbackUsed": false,
+    "nativeModelIdentity": null,
+    "nativeUsage": null,
+    "nativeUsageReason": "Provider-neutral tool surface exposes no native model identity, token, billing, or quota meter."
+  },
+  "scope": {
+    "ownedPaths": [
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.tsx",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.brief-lifecycle.test.tsx",
+      "docs/reviews/evidence/ncr-brief-reopen-worker-20261013.json",
+      "docs/reviews/CVF_NCR_BRIEF_REOPEN_WORKER_RETURN_2026-10-13.md"
+    ],
+    "actualChangedSetAtProofCreation": [
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.tsx",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.brief-lifecycle.test.tsx",
+      "docs/reviews/evidence/ncr-brief-reopen-worker-20261013.json",
+      "docs/reviews/CVF_NCR_BRIEF_REOPEN_WORKER_RETURN_2026-10-13.md"
+    ],
+    "noStageOrCommit": true,
+    "noProviderNetworkBrowserServerDependencyInstallOrNestedAgent": true,
+    "noProductionChangesOutsideDynamicForm": true
+  },
+  "preparation": {
+    "sourcePins": {
+      "reference": "docs/reviews/evidence/ncr-brief-reopen-dispatch-20261013.json#sourcePins",
+      "verifiedBeforeFirstEdit": 10,
+      "result": "MATCH_ALL_TEN_RAW_AND_HEAD_PINS",
+      "changedPinnedSource": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.tsx"
+    },
+    "workerReturnScaffold": {
+      "command": "python -B governance/compat/run_worker_return_scaffold.py --write docs/reviews/CVF_NCR_BRIEF_REOPEN_WORKER_RETURN_2026-10-13.md --check-shape --max-lines 450 --max-bytes 64000",
+      "result": "PASS_PREPARATION_SHAPE_PRESENT",
+      "writtenBeforeLongProse": true
+    },
+    "preImplementationGate": {
+      "command": "python -B governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_BRIEF_REOPEN_2026-10-13.md",
+      "result": "PASS_88_CHECKS",
+      "elapsedSeconds": 8.94,
+      "receipt": ".cvf/runtime/autorun-receipts/pre-implementation.json",
+      "receiptSha256": "1240b2a97a4ae3bb2582f8a27ec1f0b643d343bb3069db8bbbb0e9c7c5b06cf1"
+    }
+  },
+  "productionChange": {
+    "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.tsx",
+    "symbols": [
+      "hasOpenedSpecExport",
+      "openSpecExport",
+      "toggleSpecExport",
+      "handleSendToAgent"
+    ],
+    "anchors": "DynamicForm.tsx:98-119,327-366",
+    "baselineRawSha256": "2cf58f9f22145c9755285b7340e9a6858fc8de98b4ae79bbc72315911b30a1ac",
+    "currentRawSha256": "a970962580b3d12b2ec0c26004162122cd647df5e564bf10db8b0672e79bfe32",
+    "lineCount": 370,
+    "behavior": [
+      "Initial panel remains lazy.",
+      "After first open, the real SpecExport stays mounted under a hidden wrapper when the user voluntarily closes it; both existing parent controls and the child close control continue to work.",
+      "The existing child revision owner observes source edits while hidden; A -> B -> A does not restore the old confirmation or packet.",
+      "The existing onSendToAgent callback is invoked first; panel lifetime resets only after it returns successfully, preserving the current send/reopen boundary.",
+      "No SpecExport/Home/API, permission, routing, provider, governance, or execution change."
+    ]
+  },
+  "requirements": [
+    {
+      "requirementId": "REQ-REOPEN",
+      "proofId": "PROOF-REQ-REOPEN",
+      "status": "PASS",
+      "productionPath": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.tsx",
+      "testPath": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.brief-lifecycle.test.tsx",
+      "testRawSha256": "6b9971ceca6babcf6291ae3ad3f5ce381ab39d4aa5ad3a3b75530ff49782dd6d",
+      "realComponents": [
+        "DynamicForm",
+        "SpecExport"
+      ],
+      "case": "DynamicForm brief panel voluntary-close lifetime > keeps the same confirmed packet through both open controls and invalidates hidden A -> B -> A edits",
+      "observations": [
+        "No status region or download/copy/send callback effect before first open.",
+        "Confirming source ALPHA-IDEA-4017 produces one object URL and one anchor click; voluntary close via child X then reopen via Create Agent Spec retains revision 1, confirmed status, and exact packet text equality.",
+        "Reopening adds no object URL, anchor click, clipboard write, submit, or send callback.",
+        "The parent Export Spec control remains a close toggle."
+      ],
+      "syntheticSeams": [
+        "local settings and language/context leaves",
+        "workflow visualizer and skill-template lookup",
+        "spec-gate/enforcement/governance-context leaf functions, asserted only as fixture behavior and not for governance efficacy",
+        "URL object URL/revoke, anchor click, and clipboard adapters"
+      ],
+      "offlineTest": {
+        "command": "node node_modules/vitest/vitest.mjs run src/components/DynamicForm.brief-lifecycle.test.tsx --reporter=verbose",
+        "cwd": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web",
+        "result": "PASS_1_OF_1",
+        "log": ".cvf/runtime/ncr-brief-reopen-worker-20261013/lifecycle-final2.log",
+        "logSha256": "1d0c73434ec75102a754959ba14d789b7d5669f4a5d66ef1d26e9db19c2d9850"
+      }
+    },
+    {
+      "requirementId": "REQ-REVISION",
+      "proofId": "PROOF-REQ-REVISION",
+      "status": "PASS",
+      "testPath": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.brief-lifecycle.test.tsx",
+      "case": "same parent-child test as PROOF-REQ-REOPEN",
+      "observations": [
+        "While hidden, changing ALPHA-IDEA-4017 to BRAVO-IDEA-9026 and back advances the child-owned revision from 1 to 3.",
+        "On reopen, revision 3 is unconfirmed, the current Working Brief packet is absent, and Send to Agent is disabled; the earlier confirmation cannot revive.",
+        "The successful send/reopen and template/form lifecycle compatibility contract is witnessed once by the existing draft-export integration file, read-only; its ten tests passed within the combined focused run.",
+        "The original-source candidate 3 red was captured before the DynamicForm production edit: closing and reopening the conditional parent child lost the revision-1 confirmation and packet."
+      ],
+      "sourceRedCandidates": [
+        {
+          "candidate": 1,
+          "classification": "HARNESS_ONLY",
+          "failure": "missing Testing Library render import in initial test scaffold",
+          "log": ".cvf/runtime/ncr-brief-reopen-worker-20261013/candidate1-source-red.log",
+          "logSha256": "6a3b4d4af7b28fdf2d148b15d5a85bc4adf1b4e0fefc6cb5eb52cf636243fea0"
+        },
+        {
+          "candidate": 2,
+          "classification": "HARNESS_ONLY",
+          "failure": "initial accessible-name locator omitted the existing button icon",
+          "log": ".cvf/runtime/ncr-brief-reopen-worker-20261013/candidate2-source-red.log",
+          "logSha256": "bd6317e0214c0b3d2fd5d138cff1ca4bfed137c4883684b6986fb0dd98216136"
+        },
+        {
+          "candidate": 3,
+          "classification": "PRODUCT_SOURCE_RED_BEFORE_PRODUCTION_EDIT",
+          "failure": "reopen showed version 1 but unconfirmed state and no current Working Brief packet where retained confirmation and packet were expected",
+          "log": ".cvf/runtime/ncr-brief-reopen-worker-20261013/candidate3-source-red.log",
+          "logSha256": "5dd685b1c87b7c4e58c2a8608c386b85a4f9b02219eb87b3dbbabacfc55309ca"
+        }
+      ]
+    },
+    {
+      "requirementId": "REQ-RETURN",
+      "proofId": "PROOF-REQ-RETURN",
+      "status": "BLOCKED",
+      "reason": "The admitted combined focused command returned nonzero because the untouched existing DynamicForm chrome suite expected copy absent from the release baseline. Preserve the failed command as FAIL; Local owns quality disposition.",
+      "actualArtifacts": [
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.tsx",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.brief-lifecycle.test.tsx",
+        "docs/reviews/evidence/ncr-brief-reopen-worker-20261013.json",
+        "docs/reviews/CVF_NCR_BRIEF_REOPEN_WORKER_RETURN_2026-10-13.md"
+      ],
+      "validation": {
+        "requiredCombinedFocus": {
+          "command": "node node_modules/vitest/vitest.mjs run src/components/DynamicForm.brief-lifecycle.test.tsx src/components/DynamicForm.test.tsx 'src/app/(dashboard)/home/draft-export.test.tsx' --reporter=verbose",
+          "result": "FAIL_EXIT_1_2_FAILED_12_PASSED_OF_14",
+          "timingSeconds": 12.37,
+          "components": {
+            "newLifecycleTestAtThatRun": "FAIL_HARNESS_ONLY_UNSUPPORTED_toBeDisabled_MATCHER",
+            "existingDynamicFormChromeTest": "FAIL_PREEXISTING_BASELINE_COPY_MISMATCH",
+            "existingDraftExportIntegration": "PASS_10_OF_10"
+          },
+          "log": ".cvf/runtime/ncr-brief-reopen-worker-20261013/focused-tests-final.log",
+          "logSha256": "50079ec06eee60967e1eeb5e56e73a645ef39dbb3df89e442a9c61768ece79f"
+        },
+        "newLifecycleAfterMatcherAndFixtureCorrections": {
+          "command": "node node_modules/vitest/vitest.mjs run src/components/DynamicForm.brief-lifecycle.test.tsx --reporter=verbose",
+          "result": "PASS_1_OF_1",
+          "log": ".cvf/runtime/ncr-brief-reopen-worker-20261013/lifecycle-final2.log",
+          "logSha256": "1d0c73434ec75102a754959ba14d789b7d5669f4a5d66ef1d26e9db19c2d9850"
+        },
+        "typecheckInitial": {
+          "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+          "result": "FAIL_EXIT_2_NEW_FIXTURE_USED_DIFFICULTY_beginner",
+          "log": ".cvf/runtime/ncr-brief-reopen-worker-20261013/typecheck-final.log",
+          "logSha256": "48c6c944ccece44d30eda0921c04a6584bb3136355246a54d61a56d0924730f2"
+        },
+        "typecheckAfterFixtureCorrection": {
+          "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+          "result": "PASS_EXIT_0",
+          "log": ".cvf/runtime/ncr-brief-reopen-worker-20261013/typecheck-final2.log",
+          "logSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "ownedPathLint": {
+          "command": "node node_modules/eslint/bin/eslint.js src/components/DynamicForm.tsx src/components/DynamicForm.brief-lifecycle.test.tsx",
+          "result": "PASS_EXIT_0",
+          "log": ".cvf/runtime/ncr-brief-reopen-worker-20261013/lint-final2.log",
+          "logSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "baselineMismatchAttribution": {
+          "oldTestPath": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.test.tsx",
+          "oldTestLine": 66,
+          "oldTestExpected": "Create a full product brief",
+          "oldTestRawSha256MatchesDispatchPin": true,
+          "releaseBaselineHead": "b3d0e8540c69b3c7ecf3e8db6a6816889788485f",
+          "baselineTranslationPath": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/template-i18n.ts",
+          "baselineTranslationBlobSha256": "a55f643357840e55b305793500bdb13641671bc1",
+          "baselineTranslationText": "Create a structured product brief for receiving-agent INTAKE without requiring the user to choose a technical stack.",
+          "translationCurrentRawSha256": "96e8a9d5f583816d6f62234ebcc0524a7d369951f70896f0a294fe9a90d74a4b",
+          "disposition": "PREEXISTING_EXPECTATION_SOURCE_MISMATCH_NOT_EDITED_NO_BROAD_RERUN"
+        },
+        "requiredWorkerReturnFastGate": {
+          "command": "python governance/compat/run_worker_return_fast_gate.py --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_BRIEF_REOPEN_2026-10-13.md --max-return-lines 450 --max-return-bytes 64000",
+          "firstRunResult": "FAIL_6_RETURN_METADATA_FINDINGS",
+          "firstRunLog": ".cvf/runtime/ncr-brief-reopen-worker-20261013/fast-gate-first.log",
+          "firstRunLogSha256": "42627a2b084508a1df4f517518fb1c58968797782641f0341dbbaf31285440ba",
+          "correctedCandidateResult": "PASS_NOT_FINAL_BYTE_CONFIRMATION",
+          "correctedCandidateLog": ".cvf/runtime/ncr-brief-reopen-worker-20261013/fast-gate-candidate2.log",
+          "correctedCandidateLogSha256": "c4b64f04a46d7c7ef8ec33b99db64d00096a999b44626587a90e89f9dec70eea",
+          "finalByteRun": "PASS_ASSERTION_TO_BE_CONFIRMED_BY_FINAL_EXACT_COMMAND",
+          "finalByteLog": ".cvf/runtime/ncr-brief-reopen-worker-20261013/fast-gate-final2.log"
+        },
+        "requiredAcceptanceLedger": {
+          "command": "python governance/compat/check_work_order_acceptance_ledger.py --work-order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_BRIEF_REOPEN_2026-10-13.md --return docs/reviews/CVF_NCR_BRIEF_REOPEN_WORKER_RETURN_2026-10-13.md --enforce",
+          "preFinalStandaloneResult": "PASS",
+          "preFinalStandaloneLog": ".cvf/runtime/ncr-brief-reopen-worker-20261013/ledger-pre-final.log",
+          "preFinalStandaloneLogSha256": "4e241054fd8f3e98a904265c2db377b5dcedf77c27ab0b6eedfeb0a6994455d2",
+          "finalByteRun": "PASS_ASSERTION_TO_BE_CONFIRMED_BY_FINAL_EXACT_COMMAND",
+          "finalByteLog": ".cvf/runtime/ncr-brief-reopen-worker-20261013/ledger-final2.log"
+        }
+      },
+      "requiredWorkerReturnFastGate": {
+        "command": "python governance/compat/run_worker_return_fast_gate.py --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_BRIEF_REOPEN_2026-10-13.md --max-return-lines 450 --max-return-bytes 64000",
+        "result": "PENDING_FIRST_RUN"
+      },
+      "requiredAcceptanceLedger": {
+        "command": "python governance/compat/check_work_order_acceptance_ledger.py --work-order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_BRIEF_REOPEN_2026-10-13.md --return docs/reviews/CVF_NCR_BRIEF_REOPEN_WORKER_RETURN_2026-10-13.md --enforce",
+        "result": "PENDING_FIRST_RUN"
+      }
+    }
+  ],
+  "claimBoundary": "Offline jsdom panel visibility, text identity/revision, and callback/browser-adapter counts only. Synthetic governance leaf functions are fixtures; no AI governance efficacy, provider, actual browser/OS, durable recovery, whole job, R3/R4, release, public export, deploy, or model-quality claim."
+}

@@ -63,7 +63,7 @@ describe('DynamicForm Surface 1 template i18n', () => {
         render(<DynamicForm {...defaultProps} />);
 
         expect(screen.getByText(/App Builder Complete/)).toBeTruthy();
-        expect(screen.getByText(/Create a full product brief/)).toBeTruthy();
+        expect(screen.getByText('Create a structured product brief for receiving-agent INTAKE without requiring the user to choose a technical stack.')).toBeTruthy();
         expect(screen.getByText('1. App / product name')).toBeTruthy();
         expect(screen.getByText('3. What problem does it solve?')).toBeTruthy();
         expect(screen.getByText(/Focus on the real-world problem/)).toBeTruthy();

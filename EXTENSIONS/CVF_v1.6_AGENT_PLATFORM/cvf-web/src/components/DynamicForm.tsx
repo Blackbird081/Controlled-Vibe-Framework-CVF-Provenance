@@ -95,6 +95,27 @@ export function DynamicForm({ template, onSubmit, onBack, onSendToAgent, initial
         && template.fields.some(field => field.section === 'advanced' && draftValues[field.id])));
     const [showPreview, setShowPreview] = useState(false);
     const [showSpecExport, setShowSpecExport] = useState(false);
+    const [hasOpenedSpecExport, setHasOpenedSpecExport] = useState(false);
+
+    const openSpecExport = () => {
+        setHasOpenedSpecExport(true);
+        setShowSpecExport(true);
+    };
+
+    const toggleSpecExport = () => {
+        if (showSpecExport) {
+            setShowSpecExport(false);
+            return;
+        }
+        openSpecExport();
+    };
+
+    const handleSendToAgent = (spec: string) => {
+        // Clear the retained session only after the existing handoff callback succeeds.
+        onSendToAgent?.(spec);
+        setShowSpecExport(false);
+        setHasOpenedSpecExport(false);
+    };
 
     const { register, handleSubmit, control, formState: { errors } } = useForm<Record<string, string>>({
         defaultValues: draftValues,
@@ -306,7 +327,7 @@ export function DynamicForm({ template, onSubmit, onBack, onSendToAgent, initial
                     {/* Export/Copy Spec Button */}
                     <button
                         type="button"
-                        onClick={() => setShowSpecExport(!showSpecExport)}
+                        onClick={toggleSpecExport}
                         className="flex-1 py-4 px-6 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 
                          text-gray-700 dark:text-gray-300 font-semibold rounded-lg
                          transition-all duration-200
@@ -319,7 +340,7 @@ export function DynamicForm({ template, onSubmit, onBack, onSendToAgent, initial
                     {/* Submit Button - Opens SpecExport to choose mode first */}
                     <button
                         type="button"
-                        onClick={() => setShowSpecExport(true)}
+                        onClick={openSpecExport}
                         title={language === 'en' ? 'Submit this form to generate AI output' : 'Gửi form để AI tạo kết quả'}
                         className="flex-1 py-4 px-6 bg-blue-600 hover:bg-blue-700 
                          text-white font-semibold rounded-lg
@@ -334,13 +355,13 @@ export function DynamicForm({ template, onSubmit, onBack, onSendToAgent, initial
             </form>
 
             {/* Spec Export Panel */}
-            {showSpecExport && (
-                <div className="mt-6">
+            {hasOpenedSpecExport && (
+                <div className="mt-6" hidden={!showSpecExport}>
                     <SpecExport
                         template={template}
                         values={formValues}
                         onClose={() => setShowSpecExport(false)}
-                        onSendToAgent={onSendToAgent}
+                        onSendToAgent={onSendToAgent ? handleSendToAgent : undefined}
                     />
                 </div>
             )}
