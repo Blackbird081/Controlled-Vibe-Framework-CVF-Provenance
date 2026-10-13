@@ -74,3 +74,23 @@ docs/reviews/evidence/ncr-result-isolation-worker-20261012.json text eol=lf
 docs/reviews/CVF_NCR_RESULT_ISOLATION_WORKER_RETURN_2026-10-12.md text eol=lf
 docs/reviews/CVF_NCR_RESULT_ISOLATION_COMPLETION_2026-10-12.md text eol=lf
 docs/reviews/evidence/ncr-result-isolation-local-20261012.json text eol=lf
+
+# NCR offline UI journey packet and future evidence raw identity
+docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_OFFLINE_JOURNEY_2026-10-13.md text eol=lf
+docs/baselines/CVF_GC018_NCR_OFFLINE_JOURNEY_2026-10-13.md text eol=lf
+docs/reviews/evidence/ncr-offline-journey-dispatch-20261013.json text eol=lf
+EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.journey.test.tsx text eol=lf
+docs/reviews/evidence/ncr-offline-journey-worker-20261013.json text eol=lf
+docs/reviews/CVF_NCR_OFFLINE_JOURNEY_WORKER_RETURN_2026-10-13.md text eol=lf
+docs/reviews/CVF_NCR_OFFLINE_JOURNEY_COMPLETION_2026-10-13.md text eol=lf
+docs/reviews/evidence/ncr-offline-journey-local-20261013.json text eol=lf
+
+# NCR offline UI journey packet and future evidence raw identity
+docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_OFFLINE_JOURNEY_2026-10-13.md text eol=lf
+docs/baselines/CVF_GC018_NCR_OFFLINE_JOURNEY_2026-10-13.md text eol=lf
+docs/reviews/evidence/ncr-offline-journey-dispatch-20261013.json text eol=lf
+EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.journey.test.tsx text eol=lf
+docs/reviews/evidence/ncr-offline-journey-worker-20261013.json text eol=lf
+docs/reviews/CVF_NCR_OFFLINE_JOURNEY_WORKER_RETURN_2026-10-13.md text eol=lf
+docs/reviews/CVF_NCR_OFFLINE_JOURNEY_COMPLETION_2026-10-13.md text eol=lf
+docs/reviews/evidence/ncr-offline-journey-local-20261013.json text eol=lf

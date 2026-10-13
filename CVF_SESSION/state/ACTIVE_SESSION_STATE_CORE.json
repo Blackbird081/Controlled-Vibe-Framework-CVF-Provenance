@@ -36,12 +36,12 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_NCR_RESULT_ISOLATION_2026-10-12.md",
-    "baselineSha256": "a550d13df6f4e1086a0a3f849e11ab936883800fa3e6022a42c0b070c2918388",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RESULT_ISOLATION_2026-10-12.md",
-    "workOrderSha256": "d1fd2ebef8308351d501da58b1d4ff84f7bbb8889118ccc0758bafcf4cd1edc0"
+    "baselinePath": "docs/baselines/CVF_GC018_NCR_OFFLINE_JOURNEY_2026-10-13.md",
+    "baselineSha256": "2b942e0564388cc1a16e4b09b693def97acd91335a8ee3b3e38777a296710461",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_OFFLINE_JOURNEY_2026-10-13.md",
+    "workOrderSha256": "32572eed0b084045c9d92dd88886c2aa2efb9751dffcf67b326950ece03f49b4"
   },
-  "currentAuthoritySyncReason": "ResultViewer bounded closure material 60d08d8f2a4abdb590f6c67ec96f45498edc3ffc;exact6 actual-SHA continuity;worker4 unchanged,preparation limits separate,23 observations.",
+  "currentAuthoritySyncReason": "Operator 2026-10-13 CVF Core continuation and Luna max worker; test-only offline UI journey packet; dedicated material-SHA continuity follows before BUILD.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",

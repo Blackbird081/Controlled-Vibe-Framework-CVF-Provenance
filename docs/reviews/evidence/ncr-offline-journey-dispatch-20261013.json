@@ -1,0 +1,92 @@
+{
+  "schemaVersion": "cvf.ncrOfflineJourneyDispatch@1.0.0",
+  "batchId": "CVF-NCR-OFFLINE-JOURNEY-20261013",
+  "inspectionBaseHead": "4cb80e5ac7f715089df89610ea696647f16e565e",
+  "timestampUtc": "2026-10-13T03:47:35.836290+00:00",
+  "sourcePins": [
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.tsx",
+      "rawSha256": "b6b1d7ff64bcc5586b830b2a23c8e1b94957ef276a4abd9cea9eaa0825965322",
+      "headBlobSha256": "b6b1d7ff64bcc5586b830b2a23c8e1b94957ef276a4abd9cea9eaa0825965322"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.test.tsx",
+      "rawSha256": "332a100889580078daca4dbb0a1e815a2c6d9e0e0fcdbfa912b02fa0e1af63e2",
+      "headBlobSha256": "332a100889580078daca4dbb0a1e815a2c6d9e0e0fcdbfa912b02fa0e1af63e2"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.tsx",
+      "rawSha256": "2cf58f9f22145c9755285b7340e9a6858fc8de98b4ae79bbc72315911b30a1ac",
+      "headBlobSha256": "2cf58f9f22145c9755285b7340e9a6858fc8de98b4ae79bbc72315911b30a1ac"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ProcessingScreen.tsx",
+      "rawSha256": "e34ff88d91b25e8274042cc7f77871eb25570ce01eb8e4531b75a274a99a77ec",
+      "headBlobSha256": "e34ff88d91b25e8274042cc7f77871eb25570ce01eb8e4531b75a274a99a77ec"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.tsx",
+      "rawSha256": "b2d33d48d394cb6973ad85c06d31434c0de6a4c54f14dccd253a29cd3cbf71a1",
+      "headBlobSha256": "b2d33d48d394cb6973ad85c06d31434c0de6a4c54f14dccd253a29cd3cbf71a1"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/store.ts",
+      "rawSha256": "f5deb700c631c680924d3ba74fd1c56ef862e99703fe59c461828a8a64953c06",
+      "headBlobSha256": "f5deb700c631c680924d3ba74fd1c56ef862e99703fe59c461828a8a64953c06"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/draft-recovery.test.tsx",
+      "rawSha256": "7d1b53ab1a36af0dac594cafce082eb48db3a553e7cdc273486b99c8557e33d3",
+      "headBlobSha256": "7d1b53ab1a36af0dac594cafce082eb48db3a553e7cdc273486b99c8557e33d3"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/templates/index.ts",
+      "rawSha256": "058320e6073533f4c2cc4fb9edcc94e87162ae88671368bc58bd2c696e719805",
+      "headBlobSha256": "058320e6073533f4c2cc4fb9edcc94e87162ae88671368bc58bd2c696e719805"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execution-continuity.ts",
+      "rawSha256": "3faf1a73620fc37853736a832c4b59ed02df557e18ec81bdc856089e722ea09a",
+      "headBlobSha256": "3faf1a73620fc37853736a832c4b59ed02df557e18ec81bdc856089e722ea09a"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/deliverable-pack.ts",
+      "rawSha256": "9a9b93dbaa503baf33e38ea3a5cacc6d0cb1da7e696adeab3f033c9fe97415a9",
+      "headBlobSha256": "9a9b93dbaa503baf33e38ea3a5cacc6d0cb1da7e696adeab3f033c9fe97415a9"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/test/setup.ts",
+      "rawSha256": "bc573b2a6133b07404c42f797bce43fe73464711e0281f29da8234bf2fed6b27",
+      "headBlobSha256": "bc573b2a6133b07404c42f797bce43fe73464711e0281f29da8234bf2fed6b27"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/vitest.config.ts",
+      "rawSha256": "9a4a65976b5b7a5d038f9cb412a90d417f804108cf1dd33bae4421989a863420",
+      "headBlobSha256": "9a4a65976b5b7a5d038f9cb412a90d417f804108cf1dd33bae4421989a863420"
+    }
+  ],
+  "selection": {
+    "outcome": "Test-only actual Home/form/processing/result composition with synthetic transport and OS adapters",
+    "gap": "Existing Home tests stub DynamicForm, ProcessingScreen and ResultViewer. Accepted component evidence does not accept the whole UI journey.",
+    "sourceDefectClaim": "NONE: this is new composition coverage, not a production repair",
+    "claimBoundary": "UI navigation, field/payload identity, display and local recovery only. No AI governance or provider proof."
+  },
+  "operatorAuthority": "2026-10-13: continue CVF Core and authorize Luna max subagent worker; Local root retains review/closure/commit",
+  "requestedConfiguration": {
+    "model": "gpt-6-luna",
+    "reasoningEffort": "max",
+    "nativeUsage": "NOT_AVAILABLE_WITH_REASON: tool provides configured request, not billing/tokens"
+  },
+  "ownedPaths": [
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.journey.test.tsx",
+    "docs/reviews/evidence/ncr-offline-journey-worker-20261013.json",
+    "docs/reviews/CVF_NCR_OFFLINE_JOURNEY_WORKER_RETURN_2026-10-13.md"
+  ],
+  "sourceReadClaim": "Targeted dispatcher scopes; worker reads exact required scopes before BUILD. No corpus completeness claim.",
+  "adif": {
+    "command": "python -B governance/compat/run_adif_defect_resolver.py --task-class work-order --role dispatcher --lifecycle-phase pre-dispatch",
+    "result": "NONE_RETURNED; zero candidates/returned, not truncated"
+  },
+  "scaffold": "Actual build_dispatch_packet_scaffold.py invocation retained in .cvf/runtime/ncr-offline-journey-20261013/scaffold.txt; adapted known accepted packet shape",
+  "failedPreparation": []
+}
