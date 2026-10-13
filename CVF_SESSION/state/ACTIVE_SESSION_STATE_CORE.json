@@ -36,12 +36,12 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_NCR_WORK_TRANSFER_BROWSER_RETURN_REPAIR_2026-10-13.md",
-    "baselineSha256": "b5b7f39dc6d930df05762238746ccc5b902705970d48cf120fe8c793510db864",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_WORK_TRANSFER_BROWSER_RETURN_REPAIR_2026-10-13.md",
-    "workOrderSha256": "62b0dd61d6b86228999ba21186b8662b18253a1ca22ce18e91d95971d88b233a"
+    "baselinePath": "docs/baselines/CVF_GC018_NCR_RESULT_EXPORT_FEEDBACK_2026-10-13.md",
+    "baselineSha256": "3d8441b8e5a5ddad1e9407d42cd9f09e99182d3bf63c9d889193a057ca754832",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RESULT_EXPORT_FEEDBACK_2026-10-13.md",
+    "workOrderSha256": "dcce9a465b8e67f03604b9b182982d82ff1130c9bdc2e682856c1c7117a83032"
   },
-  "currentAuthoritySyncReason": "Accepted finite browser contribution; Root mandatory admission heading corrected; historical P4 failure retained; next bounded selection only Material ad19c7392b9067d85ca1a7aa728021b2a9cadb25; coherent source/generated authority; actual-SHA dedicated continuity follows material. Whole NCR pilot/effects remain separate.",
+  "currentAuthoritySyncReason": "Admitted finite ResultViewer PDF/Word failure feedback and retry; one internal worker after bound release Pre-closure parent 5c8bd0a5f3aa88edbaf14eab019d25b2ec36af13; coherent source/generated authority; actual-SHA dedicated continuity follows material. Whole NCR pilot/effects remain separate.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
@@ -110,7 +110,7 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_ncr_work_transfer_browser_closed_useful_selection",
+  "currentMode": "cvf_ncr_result_export_feedback_admitted",
   "previousMode": "cvf_ncr_brief_copy_closed_useful_selection",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",

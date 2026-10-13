@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Current NCR Continuation
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `ad19c7392b9067d85ca1a7aa728021b2a9cadb25`. Material SHA: `ad19c7392b9067d85ca1a7aa728021b2a9cadb25`. Batch ID: CVF-NCR-WORK-TRANSFER-BROWSER-RIPA-CORRECTION-20261013. Accepted finite browser contribution; Root mandatory admission heading corrected; historical P4 failure retained; next bounded selection only; dedicated exact6 continuity.
+Current HEAD recorded for this handoff: `5c8bd0a5f3aa88edbaf14eab019d25b2ec36af13`. Pre-closure parent SHA: `5c8bd0a5f3aa88edbaf14eab019d25b2ec36af13`. Batch ID: CVF-NCR-RESULT-EXPORT-FEEDBACK-20261013. Admitted finite ResultViewer PDF/Word failure feedback and retry; one internal worker after bound release; actual reviewed material SHA will be bound by dedicated exact6 after commit.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -13,21 +13,21 @@ Current continuation only. Root AGENTS.md and canonical routing owners retain fu
 Closed history is preserved byte-for-byte at `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V63_PRE_NCR_COMPACTION_2026-10-07.md` (SHA256 `54801fdcf14e9abe17592352ec3c69a0b0e855632991af0caacac7b65252ccba`); it is NOT_ACTIVE_AUTHORITY and not default startup reading.
 ## Scope / Target / Owner Boundary
 
-Local INTERNAL_AGENT orchestrator/reviewer owns final technical disposition, dispatch/closure commits and continuity. One distinct internal test-only worker after bound release; exact3 outputs, no product changes or commit. Separate Alibaba live diagnostic retains its bounded evidence; no NCR pilot activation.
+Local INTERNAL_AGENT orchestrator/reviewer owns final technical disposition, dispatch/closure commits and continuity. One internal implementation worker after bound release; exact7 PDF/Word UI/test/proof outputs, no worker commit. Separate Alibaba live diagnostic retains its bounded evidence; no NCR pilot activation.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_work_transfer_browser_closed_useful_selection`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=Accepted finite browser contribution; Root mandatory admission heading corrected; historical P4 failure retained; next bounded selection only; role=Local INTERNAL_AGENT orchestrator/reviewer; phase=private continuity; decision owner=Local; parked checkpoint=real-data writer/custody/business acceptance/public/deploy/P11 and unrelated lanes.
+Startup acknowledged: current mode=`cvf_ncr_result_export_feedback_admitted`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=Admitted finite ResultViewer PDF/Word failure feedback and retry; one internal worker after bound release; role=Local INTERNAL_AGENT orchestrator/reviewer; phase=private continuity; decision owner=Local; parked checkpoint=real-data writer/custody/business acceptance/public/deploy/P11 and unrelated lanes.
 
 ## Current Mode
 
-`cvf_ncr_work_transfer_browser_closed_useful_selection`. Accepted finite browser contribution; Root mandatory admission heading corrected; historical P4 failure retained; next bounded selection only. Primary failed evidence retained. Conditional finite browser contribution accepted; no automatic worker successor. Separate current Alibaba9/9 remains bounded; full R1-R4 open.
+`cvf_ncr_result_export_feedback_admitted`. Admitted finite ResultViewer PDF/Word failure feedback and retry; one internal worker after bound release. One internal worker only after committed bound admission; zero provider budget. Prior Work Transfer browser and Alibaba9/9 evidence retained in their owners; full R1-R4 open.
 
 ## Current Authority
 
-Baseline: `docs/baselines/CVF_GC018_NCR_WORK_TRANSFER_BROWSER_RETURN_REPAIR_2026-10-13.md`; SHA256 `b5b7f39dc6d930df05762238746ccc5b902705970d48cf120fe8c793510db864`.
-Work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_WORK_TRANSFER_BROWSER_RETURN_REPAIR_2026-10-13.md`; SHA256 `62b0dd61d6b86228999ba21186b8662b18253a1ca22ce18e91d95971d88b233a`.
-Accepted finite browser contribution; Root mandatory admission heading corrected; historical P4 failure retained; next bounded selection only. Primary frozen custody: docs/reviews/evidence/ncr-work-transfer-browser-primary-quality-20261013.json; Local decision: docs/reviews/CVF_NCR_WORK_TRANSFER_BROWSER_PRIMARY_QUALITY_REVIEW_2026-10-13.md.
+Baseline: `docs/baselines/CVF_GC018_NCR_RESULT_EXPORT_FEEDBACK_2026-10-13.md`; SHA256 `3d8441b8e5a5ddad1e9407d42cd9f09e99182d3bf63c9d889193a057ca754832`.
+Work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RESULT_EXPORT_FEEDBACK_2026-10-13.md`; SHA256 `dcce9a465b8e67f03604b9b182982d82ff1130c9bdc2e682856c1c7117a83032`.
+Admitted finite ResultViewer PDF/Word failure feedback and retry; one internal worker after bound release. Existing browser/live evidence and original failures remain historical in their current reviews; this source pair governs only ResultViewer export feedback.
 
 ## Accepted NCR Evidence And Continuation
 
@@ -39,7 +39,7 @@ Finite clipboard result ordering is accepted; actual OS write cancellation, whol
 
 ## Next Allowed Move
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=SELECT_BOUNDED_OUTCOME; BATCH_ID=CVF-NCR-WORK-TRANSFER-BROWSER-CLOSURE-20261013. Finite synthetic browser contribution CLOSED_PASS_BOUNDED: focused Chromium2/2 and distinct Local probe PASS; separate Alibaba canonical9/9 diagnostic retained. Select one next bounded existing-owner gap with exact source/effect/acceptance/provider budget before dispatch. Primary failure retained; full R1-R4 open; R5/R6 deferred; real-data writer/custody/business acceptance/public/deploy/P11 parked. No automatic successor or new provider run. Reviewed material commit=c79fcd98859506d9c94c387219e0b0e4c31b55fd; reviewer-fast70/70 and mandatory pre-commit91/91 PASS. Dedicated actual-SHA continuity; latest closed LHW24 retained. Root RIPA mandatory admission heading restored; historical P4 receipt failure retained and exact marker Local-adjudicated; no change to browser/live evidence. Reviewed metadata correction=ad19c7392b9067d85ca1a7aa728021b2a9cadb25; mandatory91/91 PASS; original P4 failed receipt remains historical.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_BOUNDED_WORK_ORDER; BATCH_ID=CVF-NCR-RESULT-EXPORT-FEEDBACK-20261013. Execute docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RESULT_EXPORT_FEEDBACK_2026-10-13.md only after committed bound pre-dispatch PASS. One internal worker60min, exact7 source/test/proof/return, zero provider budget; Root reviewer/closer owns closure. PDF/Word feedback only; R1/R2 partial, R3/R4 open, R5/R6 deferred; real-data/send/B2/P11/public/deploy parked. No automatic successor. Latest closed wave LHW24 retained.
 
 ## Active Boundary
 T3B has a Local-verified active v1 specification. Party B is verified and T3C-C1 tooling accepted at `db78c87df`; T3C-C2 and Party C are verified. T3D-C1 tooling is accepted at `9ed844c2a` without source. T3D-C0-R1 closed at `2fffa1ef7`. T3D-C3 was accepted bounded at `88137e9a2`, but actual-mode prepare attempts failed before Party B/C execution; authorized cleanup removed the failed root and discarded unaccepted worker changes. G1 stopped, G2-G6 parked, and G7 research closed at `660601f0e` with `ADAPT_EXISTING_HANDOFF_ONLY`. Evidence-join sufficiency stays WATCH; no implementation successor exists. Rejected T2 paths remain archived; HRLTP-T2 paused.
@@ -67,7 +67,7 @@ Q001/Q004 actual-data source/writer,custody,retention/RPO/RTO/cost checkpoints a
 NCR send/B2 STOP and S05/C1 remain; IAB unavailable; repo Playwright Chromium present. Canonical release bundle9/9 PASS on current sources with real Alibaba; full P04 and NCR R3/R4 remain open. No autonomous P11/public/deploy activation.
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: exact6 Work Transfer browser dispatch/closure continuity; no checker or product-source edit.
+Authorized guard-maintenance scope: exact6 ResultViewer export feedback dispatch/closure continuity; no checker edit by this steward.
 Protected paths:
 - `AGENT_HANDOFF_V63_2026-09-18.md`
 - `CVF_SESSION_MEMORY.md`
@@ -84,18 +84,18 @@ Rollback boundary: exact6; preserve original archive and accepted/blocked histor
 |---|---|
 | Actor | Local INTERNAL_AGENT session-sync steward |
 | Provider or surface | private shared workspace |
-| Session or invocation | cvf-ncr-work-transfer-browser-ripa-correction-20261013-sync |
+| Session or invocation | cvf-ncr-result-export-feedback-20261013-sync |
 | Working directory | repository root |
 | Command or tool surface | source entry/core update, active front door/handoff, canonical state generator |
 | Target paths | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Allowed scope source | operator NCR continuation; exact6 authority in paired baseline/order |
-| Before status evidence | ad19c7392b9067d85ca1a7aa728021b2a9cadb25; clean worktree and staged empty after reviewed material commit |
-| After status evidence | exact6 source/generated continuity; Accepted finite browser contribution; Root mandatory admission heading corrected; historical P4 failure retained; next bounded selection only |
+| Before status evidence | 5c8bd0a5f3aa88edbaf14eab019d25b2ec36af13; clean worktree at selection; exact2 packet author return consumed |
+| After status evidence | exact8 coherent material; actual-SHA continuity remains a steward action; Admitted finite ResultViewer PDF/Word failure feedback and retry; one internal worker after bound release |
 | Diff evidence | source/generated reconciliation; exact6 git diff --name-status; git diff --cached --check |
-| Approval boundary | browser draft test only; real-data/acceptance/public/deploy parked |
-| Claim boundary | accepted finite browser contribution and separate authorized Alibaba9/9 diagnostic; no full pilot exit or new provider grant |
+| Approval boundary | bounded PDF/Word feedback; real-data/acceptance/public/deploy parked |
+| Claim boundary | finite UI export feedback; zero new provider budget; full NCR pilot open |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | cvf-ncr-work-transfer-browser-ripa-correction-20261013-sync |
+| Invocation ID | cvf-ncr-result-export-feedback-20261013-sync |
 | Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Manifest delta | MATCH required before commit |
