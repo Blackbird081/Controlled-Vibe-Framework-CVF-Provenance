@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RESULT_EXPORT_FEEDBACK_2026-10-13.md",
     "workOrderSha256": "676e2b2c631b19fd4ad3a4d9c2a5f4fb9b3b7629d34957d53d35b10883efafee"
   },
-  "currentAuthoritySyncReason": "Finite PDF/Word UI accepted:67/67,type/lint,frozen fast/ledger PASS; physical-count/clock and preparation qualifications retained; zero provider Pre-closure parent a623874447952534b0fddbf21acff843e70caf80; coherent source/generated authority; actual-SHA dedicated continuity follows material. Whole NCR pilot/effects remain separate.",
+  "currentAuthoritySyncReason": "PDF/Word finite UI materialb12b7f31d mandatory91/91 PASS; frozen worker9.58s fast/ledger and67/67 accepted; original failures/metadata qualifications retained Material b12b7f31d28002cd23e2e0509c97a8eb6271f36d; coherent source/generated authority; actual-SHA dedicated continuity follows material. Whole NCR pilot/effects remain separate.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
