@@ -8,7 +8,7 @@ parentFindingId: CCMA-OUTPUT-DELIVERY-TRUTH-20261013
 
 ## Purpose And Decision Boundary
 
-Local reconciles the seven selected Customer-Care-Monitor runtime fixes at project revision `cdf5537e10c7a285f0f08d51753a749eac75abb8` with the current private CVF Core at `b3d19eb36940848161ecc651d8961f5bcad42283`. This is a bounded source/review comparison and parent written-guidance update. It does not reopen the project fixes, assert whole-project coverage, run a provider, alter CVF runtime or publish to the public Core.
+Local reconciled the seven selected Customer-Care-Monitor runtime fixes at project revision `cdf5537e10c7a285f0f08d51753a749eac75abb8` with the private CVF Core at `b3d19eb36940848161ecc651d8961f5bcad42283`. This is a bounded source/review comparison and parent written-guidance update. It does not reopen the project fixes, assert whole-project coverage, run a provider or alter CVF runtime. Later project return and public documentation export are recorded separately below.
 
 The reusable addition is a per-output delivery evidence contract: admission/claim, remote acceptance, durable outcome and result marker are separate facts. A caller may retry only an output proven failed; transport uncertainty or a failed outcome write must remain unresolved until reconciliation. An aggregate send status cannot substitute for the identity and persisted state of each output.
 
@@ -63,10 +63,10 @@ These are review oracles derived from selected source/review evidence, not newly
 | Project finding/action | RESOLVED_BOUNDED | R088/R090/R091 final reviews and project source at pinned revision; full product stage exits remain open. |
 | Parent value decision | MERGE | One per-output companion under the existing Build Learning Evidence Checklist owner; six routes deduplicated as `RULE_EXISTS`. |
 | Parent implementation | IMPLEMENTED_BOUNDED | Written companion checklist only after the selected changed-set and F2G gates pass. |
-| Return delivery | NOT_RETURNED | No typed delivery receipt from Core to the project; Git discovery is not a receiving-agent acknowledgment. |
-| Source-project application of parent control | NOT_APPLIED | CCMA fixed its own code before this parent guidance; no later project adoption proof is inferred. |
+| Return delivery | RETURNED | Project record at `9ae219c67c7bf258c095a2acd76e969345110753`, remote branch readback and typed delivery receipt in `docs/reviews/evidence/ccma-seven-finding-delivery-receipt-20261013.json`. |
+| Source-project application of parent control | APPLIED_BOUNDED_DOCUMENTATION_ONLY | Project learning record copies the guidance for future reviews; typed application receipt is `docs/reviews/evidence/ccma-seven-finding-application-receipt-20261013.json`. R091 code fixes predate this checklist. |
 
-The operator's request authorizes this parent intake, not source-project editing or public Core publication. Existing Facebook/Zalo OA checkpoints and product release limits are unchanged.
+The later operator request authorized Local to return the guidance to the project and prepare a public-safe documentation export. Existing Facebook/Zalo OA checkpoints and product release limits are unchanged.
 
 ## Finding-To-Governance Learning Disposition
 
@@ -93,17 +93,22 @@ the bounded task boundary, not a claim that every project file was read.
 
 | Field | Value |
 |---|---|
-| applicableCheckersRead | `governance/compat/check_finding_to_governance_learning.py`; `governance/compat/parent_learning_evidence.py`; `governance/compat/check_epistemic_process_packet.py`; `governance/compat/check_governed_artifact_checker_read_ahead.py`; `governance/compat/check_external_knowledge_intake_routing.py` |
+| applicableCheckersRead | `governance/compat/check_finding_to_governance_learning.py`; `governance/compat/parent_learning_evidence.py`; `governance/compat/check_epistemic_process_packet.py`; `governance/compat/check_governed_artifact_checker_read_ahead.py`; `governance/compat/check_external_knowledge_intake_routing.py`; `governance/compat/check_public_export_disposition.py` |
 | literalTokensReviewed | `parentFindingId`; `TEMPLATE_UPDATED`; `RULE_EXISTS`; `RUNTIME_SIGNAL_GAP`; `GOVERNANCE_CONTROL_PLANE`; `control:`; `proof-positive:`; `proof-negative:`; `PROJECT_TO_PARENT_COMPARISON` |
 | gateRunPurpose | Confirm the pre-read source pins, five value checks, typed parent lifecycle, exact changed paths and document structure; gates confirm prepared evidence rather than discover the finding. |
-| claimBoundary | Passing static gates cannot establish agent comprehension, outbound exactly-once delivery, live provider behavior or project adoption. |
+| claimBoundary | Passing static gates alone cannot establish agent comprehension, outbound exactly-once delivery or live provider behavior; documentary project adoption is separately evidenced by the typed loopback receipts. |
 
 ## Public Export Disposition
 
-DEFERRED_PRIVATE_ONLY
+EXPORTED
 
-Reason: private CVF parent learning. No public-sync remote/commit/artifact proof or new public publication authority; source project branch publication is a different repository.
+Public-sync remote: `https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git`
+Public-sync commit: `fa34ed49e56648acafe8b0388e48e0aa0523f007` (PR #11 squash merge; `origin/main` readback).
+Public artifact paths: `docs/reference/downstream_gate_profile/CVF_PER_OUTPUT_DELIVERY_EVIDENCE_CHECKLIST.md`; `docs/reference/downstream_gate_profile/CVF_BUILD_LEARNING_EVIDENCE_CHECKLIST.md`.
+Public checklist Git-blob SHA-256: `8b79097d726f9ba274a7a0be0f93e3e59c7723f4cb6703a128048cd6bf9d1baf` at the merged commit.
+Public catalog paths: N/A with reason - the public change is a reference checklist and discoverability link, not a catalog entry.
+Export scope: public-safe written guidance only. The private learning record, source manifest, typed loopback receipts and historical project evidence were not exported; CCMA retains its older pinned public Core and its own portable guidance copy.
 
 ## Claim Boundary
 
-This record is a finite selected-use-case intake. It neither changes Customer Care code nor asserts that CVF governed its AI runtime. The parent merge is complete only after companion guidance, typed evidence, link/index and applicable checks pass; its return/application states stay separately open.
+This record is a finite selected-use-case intake. It neither changes Customer Care code nor asserts that CVF governed its AI runtime. The parent companion, project documentation return and public-safe checklist are independently evidenced; no real SMTP, customer-delivery or runtime-governance proof follows.

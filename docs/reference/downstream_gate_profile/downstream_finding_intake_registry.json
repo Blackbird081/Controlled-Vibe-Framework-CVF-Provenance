@@ -738,7 +738,7 @@
               "sourceProject": "Customer-Care-Monitor-AI",
               "evidence": {
                 "path": "docs/reviews/learnings/CVF_CCMA_SEVEN_FINDING_DELIVERY_LEARNING_2026-10-13.md",
-                "sha256": "eee97e82d7b109242bebe90d6bba39abc4bed0ddd748bac168a75ddc7c2bcd4c",
+                "sha256": "9339aee500efa4faafc3b6853281e2262b81e337e2cc4a4cd0e81af7ef3a9d1b",
                 "fragment": "Source Confidence And Scope",
                 "evidenceClass": "OBSERVED_LOCAL"
               }
@@ -756,12 +756,12 @@
                   },
                   {
                     "path": "docs/reviews/learnings/CVF_CCMA_SEVEN_FINDING_DELIVERY_LEARNING_2026-10-13.md",
-                    "sha256": "eee97e82d7b109242bebe90d6bba39abc4bed0ddd748bac168a75ddc7c2bcd4c",
+                    "sha256": "9339aee500efa4faafc3b6853281e2262b81e337e2cc4a4cd0e81af7ef3a9d1b",
                     "fragment": "Five Parent Value Checks",
                     "evidenceClass": "OBSERVED_LOCAL"
                   }
                 ],
-                "limits": "Selected project source and final reviews are pinned but historical runtime tests are attributed. Later return/application receipts prove prospective documentation adoption only; no live SMTP, project runtime rerun, universal agent compliance or public Core sync is claimed."
+                "limits": "Selected project source and final reviews are pinned but historical runtime tests are attributed. Later return/application receipts prove prospective documentation adoption only; no live SMTP, project runtime rerun or universal agent compliance is claimed; public export is written guidance only."
               },
               "reusableMechanism": {
                 "status": "SUPPORTED",
@@ -775,12 +775,12 @@
                   },
                   {
                     "path": "docs/reviews/learnings/CVF_CCMA_SEVEN_FINDING_DELIVERY_LEARNING_2026-10-13.md",
-                    "sha256": "eee97e82d7b109242bebe90d6bba39abc4bed0ddd748bac168a75ddc7c2bcd4c",
+                    "sha256": "9339aee500efa4faafc3b6853281e2262b81e337e2cc4a4cd0e81af7ef3a9d1b",
                     "fragment": "Five Parent Value Checks",
                     "evidenceClass": "OBSERVED_LOCAL"
                   }
                 ],
-                "limits": "Selected project source and final reviews are pinned but historical runtime tests are attributed. Later return/application receipts prove prospective documentation adoption only; no live SMTP, project runtime rerun, universal agent compliance or public Core sync is claimed."
+                "limits": "Selected project source and final reviews are pinned but historical runtime tests are attributed. Later return/application receipts prove prospective documentation adoption only; no live SMTP, project runtime rerun or universal agent compliance is claimed; public export is written guidance only."
               },
               "existingCoverage": {
                 "status": "SUPPORTED",
@@ -799,7 +799,7 @@
                     "evidenceClass": "OBSERVED_LOCAL"
                   }
                 ],
-                "limits": "Selected project source and final reviews are pinned but historical runtime tests are attributed. Later return/application receipts prove prospective documentation adoption only; no live SMTP, project runtime rerun, universal agent compliance or public Core sync is claimed."
+                "limits": "Selected project source and final reviews are pinned but historical runtime tests are attributed. Later return/application receipts prove prospective documentation adoption only; no live SMTP, project runtime rerun or universal agent compliance is claimed; public export is written guidance only."
               },
               "incrementalValue": {
                 "status": "SUPPORTED",
@@ -813,12 +813,12 @@
                   },
                   {
                     "path": "docs/reviews/learnings/CVF_CCMA_SEVEN_FINDING_DELIVERY_LEARNING_2026-10-13.md",
-                    "sha256": "eee97e82d7b109242bebe90d6bba39abc4bed0ddd748bac168a75ddc7c2bcd4c",
+                    "sha256": "9339aee500efa4faafc3b6853281e2262b81e337e2cc4a4cd0e81af7ef3a9d1b",
                     "fragment": "Five Parent Value Checks",
                     "evidenceClass": "OBSERVED_LOCAL"
                   }
                 ],
-                "limits": "Selected project source and final reviews are pinned but historical runtime tests are attributed. Later return/application receipts prove prospective documentation adoption only; no live SMTP, project runtime rerun, universal agent compliance or public Core sync is claimed."
+                "limits": "Selected project source and final reviews are pinned but historical runtime tests are attributed. Later return/application receipts prove prospective documentation adoption only; no live SMTP, project runtime rerun or universal agent compliance is claimed; public export is written guidance only."
               },
               "boundedProof": {
                 "status": "SUPPORTED",
@@ -837,7 +837,7 @@
                     "evidenceClass": "ATTRIBUTED_SOURCE"
                   }
                 ],
-                "limits": "Selected project source and final reviews are pinned but historical runtime tests are attributed. Later return/application receipts prove prospective documentation adoption only; no live SMTP, project runtime rerun, universal agent compliance or public Core sync is claimed."
+                "limits": "Selected project source and final reviews are pinned but historical runtime tests are attributed. Later return/application receipts prove prospective documentation adoption only; no live SMTP, project runtime rerun or universal agent compliance is claimed; public export is written guidance only."
               }
             },
             "decision": {
@@ -849,7 +849,7 @@
               "evidence": [
                 {
                   "path": "docs/reviews/learnings/CVF_CCMA_SEVEN_FINDING_DELIVERY_LEARNING_2026-10-13.md",
-                  "sha256": "eee97e82d7b109242bebe90d6bba39abc4bed0ddd748bac168a75ddc7c2bcd4c",
+                  "sha256": "9339aee500efa4faafc3b6853281e2262b81e337e2cc4a4cd0e81af7ef3a9d1b",
                   "fragment": "Five Parent Value Checks",
                   "evidenceClass": "OBSERVED_LOCAL"
                 }
@@ -915,7 +915,7 @@
                 }
               ]
             },
-            "claimLimits": "Selected project source and final reviews are pinned but historical runtime tests are attributed. Return and application receipts cover prospective documentation adoption only; no live SMTP, project runtime rerun, universal agent compliance or public Core sync is claimed."
+            "claimLimits": "Selected project source and final reviews are pinned but historical runtime tests are attributed. Return and application receipts cover prospective documentation adoption only; no live SMTP, project runtime rerun or universal agent compliance is claimed; public export is written guidance only."
           }
         }
       ],
@@ -927,11 +927,12 @@
         "sourceManifest": "docs/reviews/evidence/ccma-seven-finding-learning-source-20261013.json",
         "loopbackObservation": "docs/reviews/evidence/ccma-seven-finding-project-loopback-20261013.json",
         "deliveryReceipt": "docs/reviews/evidence/ccma-seven-finding-delivery-receipt-20261013.json",
-        "applicationReceipt": "docs/reviews/evidence/ccma-seven-finding-application-receipt-20261013.json"
+        "applicationReceipt": "docs/reviews/evidence/ccma-seven-finding-application-receipt-20261013.json",
+        "publicExportCommit": "fa34ed49e56648acafe8b0388e48e0aa0523f007",
+        "publicExportPath": "docs/reference/downstream_gate_profile/CVF_PER_OUTPUT_DELIVERY_EVIDENCE_CHECKLIST.md"
       },
       "deferred": [
-        "live SMTP/provider/browser/deploy",
-        "public Core sync"
+        "live SMTP/provider/browser/deploy"
       ]
     }
   ]
