@@ -310,7 +310,7 @@
     "decision": "ADMIT_BOUNDED_AFTER_COMMITTED_RELEASE",
     "sourceContradiction": "Visible DynamicForm buttons only opened spec; Home unit directly submitted form. R1 click wiring included before live proof.",
     "draftQualification": "Author-fast 7/7 and ledger PASS were narrow DRAFT checks. Root repaired READY-only TPGR enums/full path union, convergence enum, Source dispositions and active learning binding before activation.",
-    "providerCallsSoFar": 0,
+    "providerCallsSoFar": 1,
     "materialManifest": [
       "docs/baselines/CVF_GC018_NCR_HOME_ALIBABA_JOURNEY_2026-10-13.md",
       "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HOME_ALIBABA_JOURNEY_2026-10-13.md",
@@ -348,6 +348,36 @@
       "total": 9
     },
     "independentOraclePath": ".cvf/runtime/ncr-home-alibaba-root-20261013/independent-probe.cjs",
-    "independentOracleSha256": "70e9322da9666703d2383617b0da9c649f2987207ad5e832a690ba9c76264b24"
+    "independentOracleSha256": "70e9322da9666703d2383617b0da9c649f2987207ad5e832a690ba9c76264b24",
+    "amendment": {
+      "baseHead": "152481577108f2815f953471201b12473be45efa",
+      "originalBuildStartUtc": "2026-10-13T16:25:17Z",
+      "hardStopUtc": "2026-10-13T17:40:17Z",
+      "priorWorkerCalls": 1,
+      "priorWorkerUiPosts": 1,
+      "cumulativeWorkerUiCeiling": 3,
+      "remainingWorkerCalls": 5,
+      "freshWorkerCap": 5,
+      "credentialSource": "DIRECT_FILE_DASHSCOPE_API_KEY_SOLE_SERVER_ALIAS",
+      "workerBlockedFast": "69/70; sole Root GC051 dependency repaired before resume",
+      "custodyRef": ".cvf/runtime/ncr-home-alibaba-root-20261013/worker-blocked-custody.json",
+      "stash": "04c9d343fded6b6edd8b47fa303a09df94bcf40f",
+      "amendmentManifest": [
+        "docs/baselines/CVF_GC018_NCR_HOME_ALIBABA_JOURNEY_2026-10-13.md",
+        "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HOME_ALIBABA_JOURNEY_2026-10-13.md",
+        "docs/reviews/evidence/ncr-home-alibaba-journey-dispatch-20261013.json",
+        "docs/corpus-intelligence/registry/entries/cvf-ncr-home-alibaba-journey.json",
+        "docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json",
+        "docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md",
+        "AGENT_HANDOFF_V63_2026-09-18.md",
+        "CVF_SESSION_MEMORY.md",
+        "CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json",
+        "CVF_SESSION/state/entries/nextAllowedMove.json",
+        "CVF_SESSION/ACTIVE_SESSION_STATE.json",
+        "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json"
+      ],
+      "originalMaterialHead": "60e5e7197770105d2dc670e5051c340733cda945",
+      "originalContinuityHead": "152481577108f2815f953471201b12473be45efa"
+    }
   }
 }

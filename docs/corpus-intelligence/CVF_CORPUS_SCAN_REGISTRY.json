@@ -9072,6 +9072,36 @@
       "nextScanRecommendation": "Reuse the accepted bounded result export evidence for its stated scope; semantic corpus processing remains NOT_STARTED."
     },
     {
+      "id": "cvf-ncr-home-alibaba-journey",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "NCR Home Alibaba bounded synthetic browser journey test",
+      "scopePaths": [
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/ncr-home-alibaba-journey.live.spec.ts",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/support/ncr-alibaba-boundary-preload.cjs"
+      ],
+      "fileCount": null,
+      "status": "NOT_STARTED",
+      "scanWave": null,
+      "scanDate": null,
+      "manifestHash": null,
+      "hashAlgorithm": null,
+      "hashInput": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_NCR_HOME_ALIBABA_JOURNEY_COMPLETION_2026-10-13.md",
+      "completionReviewPath": null,
+      "gcBaselineRef": "docs/baselines/CVF_GC018_NCR_HOME_ALIBABA_JOURNEY_2026-10-13.md",
+      "verdicts": {
+        "gc047": "NOT_RUN",
+        "gc048": "NOT_RUN",
+        "gc050": "NOT_RUN"
+      },
+      "semanticRegions": [],
+      "priorAbsorption": "Named test registration before worker-return gate; semantic processing NOT_STARTED; no live acceptance inferred.",
+      "findings": [],
+      "negativeSearchTerms": [],
+      "nextScanRecommendation": "Consume bounded journey evidence after Local review; semantic corpus processing remains NOT_STARTED."
+    },
+    {
       "id": "ccma-shared-learning-delta-20261012",
       "corpusType": "PROJECT_SOURCE",
       "displayName": "Customer Care ten shared learning records, 2026-10-12 delta",

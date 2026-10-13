@@ -37,11 +37,11 @@
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_NCR_HOME_ALIBABA_JOURNEY_2026-10-13.md",
-    "baselineSha256": "dbb1c25666fddd2f64b4194aca9cc26d8f56da7d9bebcfe3ee0574b6e54b8048",
+    "baselineSha256": "2ebbe707ea3609c806523096f5df3d1b638f5f7c894bff696e782697fe97d30a",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HOME_ALIBABA_JOURNEY_2026-10-13.md",
-    "workOrderSha256": "4d083e4c5b80de148b49a1260e9a491eb83a576a8cc17820c9d810a4f7bd4aee"
+    "workOrderSha256": "937657883dd1feec1a240e84aac93848068e6c15cb2214f9bcd5a1219e4794e0"
   },
-  "currentAuthoritySyncReason": "Visible Home submit repair and bounded synthetic Alibaba root/child/download proof admitted; execution awaits bound gate Material 60e5e7197770105d2dc670e5051c340733cda945; coherent source/generated authority; actual-SHA dedicated continuity follows material. Whole NCR pilot/effects remain separate.",
+  "currentAuthoritySyncReason": "Home Alibaba diagnostic amendment; failed401/prior1 retained; Root registry dependency admitted Pre-closure parent 152481577108f2815f953471201b12473be45efa; coherent source/generated authority; actual-SHA dedicated continuity follows material. Whole NCR pilot/effects remain separate.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",

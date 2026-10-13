@@ -12,8 +12,8 @@ providerExecutionGrantOwner: ORCHESTRATOR
 providerExecutionGrantSubject: /root/ncr_export_packet Local INTERNAL_AGENT Sol-medium worker
 providerExecutionGrantDelegationId: NCR-HOME-ALIBABA-JOURNEY-WORKER-20261013
 providerExecutionGrantMaxCalls: 6
-providerExecutionGrantExpiresAt: 2026-10-13T18:30:00Z
-providerExecutionGrantBoundary: only after committed bound release; two synthetic UI submits; test preload hard cap six; earlier BUILD ceiling and expiry wins
+providerExecutionGrantExpiresAt: 2026-10-13T17:40:17Z
+providerExecutionGrantBoundary: only after committed bound release; three cumulative synthetic UI submits including the failed root; fresh preload hard cap five; cumulative six; earlier BUILD ceiling and expiry wins
 Worker return path: `docs/reviews/CVF_NCR_HOME_ALIBABA_JOURNEY_WORKER_RETURN_2026-10-13.md`
 
 ## Dispatch Prompt Envelope
@@ -22,10 +22,20 @@ Role: Local INTERNAL_AGENT implementation worker; Root is dispatcher/reviewer/cl
 Canonical packet: `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HOME_ALIBABA_JOURNEY_2026-10-13.md`
 Commit mode: WORKER_MUST_NOT_COMMIT
 executionBaseHead: WORKER_MUST_CAPTURE_AT_START using full HEAD before edits.
-Current-time notes: operator NCR continuation and Alibaba authority are bounded here to two synthetic UI submissions, at most six worker provider calls, 75-minute BUILD, and exact seven tracked outputs. Root's separate one-submission probe can make at most three calls; combined ceiling nine.
+Current-time notes: operator NCR continuation and Alibaba authority are bounded here to three cumulative synthetic UI submissions (failed root plus replacement root/child), at most six worker provider calls, 75-minute BUILD, and exact seven tracked outputs. Root's separate one-submission probe can make at most three calls; combined ceiling nine.
 Do-not-misread notes: the committed packet still requires a later exact-six continuity commit and final bound release. Root must bind/commit packet plus exact-six continuity and pass full bound pre-dispatch before worker invocation. No raw key may enter the browser. No product change outside the named form action; chosen HTML business acceptance stays parked.
 Required first actions: progressive startup, bound pre-implementation PASS, focused source pins and live diagnostic owner, return scaffold and processed-server profile preflight before any provider call.
 Return contract: COMPLETE_PENDING_REVIEW only with exact seven artifacts, unit RED-to-GREEN, strict live assertion evidence and final fast/ledger PASS; otherwise BLOCKED_WITH_REASON. No staging, commit, additional server run or blind retry.
+
+## Root Diagnostic Amendment - 2026-10-13
+
+The first BUILD started 2026-10-13T16:25:17Z; its unchanged 75-minute hard stop is 2026-10-13T17:40:17Z. Original invocation and all failed evidence remain historical. Four launcher attempts / three server starts consumed one actual UI root POST and one Alibaba call; that call returned HTTP 401. No child/export succeeded. Worker quiesced BLOCKED_WITH_REASON; final fast was 69/70 with only Root-owned GC-051 registration missing. Root froze exact seven bytes under ignored worker-blocked-custody.json before amendment; restore those bytes after the committed bound release. Initial source pins remain inspection preimages, not current post-edit hashes. Reuse valid unit29/29, RED qualification and initial 23 pin checks; no duplicate unit replay.
+
+Secret-safe diagnosis independently read the local configuration file: ALIBABA_API_KEY and DASHSCOPE_API_KEY there are equal; inherited ALIBABA_API_KEY differs; inherited DASHSCOPE_API_KEY is absent. Next merged values preserve the inherited ALIBABA key. The earlier worker inference that the two file keys differ was rejected. Local env is runtime profile provenance, not canonical CVF authority or a validity claim. Next fresh launcher must directly parse FILE DASHSCOPE_API_KEY into sole server DASHSCOPE_API_KEY, blank ALIBABA_API_KEY/other Alibaba aliases and all eligible provider aliases including GOOGLE_AI_API_KEY, plus Redis aliases, before Next loads env. No secret value/digest is logged or enters the browser.
+
+Cumulative worker UI ceiling is amended to three: failed root (one), then at most one replacement root and one child. Cumulative worker provider ceiling stays six, so five calls remain. Fresh counter hard-cap five, prior call count one, cumulative = one + fresh actual fetch starts; no counter/clock/history reset. Root allowance remains one UI / three calls; global ceiling nine. Zero Playwright retries. A further failure/partial result stops and requires a new diagnostic; this amendment admits only one fresh root-child attempt after bound release, within the original hard stop.
+
+Root GC-051 source entry and source-generated JSON/manual Markdown companion are dispatch material dependencies before worker-return-fast, with NOT_STARTED semantics. Worker continues to own exactly seven paths. Consolidated semantic corrections within the existing spec/preload: assert live receipt evidenceMode for both successful responses, distinct child output, actual provider/model, processed GOOGLE_AI_API_KEY absent, cumulative attempt reconciliation and a quiet negative-control observation after Retry. Qualified independent Root oracle remains separate; original dispatch oracle bytes are retained, actual executed digest is recorded in Local proof. Boundary observations establish test-only fetch evidence, not OS isolation.
 
 ## Purpose
 
@@ -43,7 +53,7 @@ Root Local dispatcher binds/releases and closes; an internal worker builds the n
 
 Add one explicit localized EN/VI `type="submit"` Generate result action to `DynamicForm.tsx` via existing `handleSubmit(onFormSubmit)`; preserve Export Spec and Create Agent Spec as non-submitting relay actions. Update its existing unit test and Home journey unit to click this action. No new data fields, API, chooser or permission. Then create a strict live Playwright test and test-only preload under the Web package. Reuse the existing Home, ProcessingScreen, execute route and ResultViewer unchanged. Use synthetic strategy-analysis text, fresh owned localhost Next/Chromium, a unique port/dist, matching `AUTH_URL` and browser base URL, explicit empty `NEXTAUTH_URL`, file adapter, isolated absolute event/snapshot paths, and a clean browser context. Set `KNOWLEDGE_STORE_PATH` to a precreated owned JSON `[]` file and `APPROVAL_STORE_PATH`, `CVF_DURABLE_MEMORY_STORE_PATH`, `CVF_SOT3_ACTIVATION_EVIDENCE_PATH` to owned disposable paths; require blank Redis/rate-limit external-store aliases. Missing/corrupt knowledge file seeds defaults and is a preflight failure. Preload guards the actual server fetch surface: log safe path/host/attempt counts, permit only the expected Alibaba endpoint for provider calls, deny unexpected provider or governance-evaluate remote hops, and record processed-server credential *names/states* without values. This is test-only fetch-boundary evidence, not machine-wide network isolation. Test keyless `cvf_settings` uses `defaultProvider=alibaba`, `selectedModel=qwen-flash`, `apiKey=''`; the sole credential alias remains server-side. Existing `seedStorageWithAlibaba` is prohibited for this proof because it injects a raw key into browser localStorage.
 
-Exactly two worker `/api/execute` UI submits: root and its refinement child. Route automatic output-validation retry allows at most three Alibaba fetches per submit, so six worker calls are the maximum. Zero Playwright retries; zero automatic rerun of a failed/partial/ambiguous live result. Check any contradiction under the canonical live-run diagnostic standard before Root decides whether a further run fits remaining authority. The bounded browser test may exercise draft return/reload after completion only if it causes no third submit. Do not press Accept or Send to Agent, call the HTML export route, or alter product code beyond the named form action.
+Three cumulative worker `/api/execute` UI submits maximum: the failed root and the replacement root/refinement child. Route automatic output-validation retry allows at most three Alibaba fetches per submit, so six worker calls are the maximum. Zero Playwright retries; zero automatic rerun of a failed/partial/ambiguous live result. Check any contradiction under the canonical live-run diagnostic standard before Root decides whether a further run fits remaining authority. The bounded browser test may exercise draft return/reload after completion only if it causes no fourth cumulative submit. Do not press Accept or Send to Agent, call the HTML export route, or alter product code beyond the named form action.
 
 ## Design Control Gate
 
@@ -76,7 +86,7 @@ No tracked product source change outside `DynamicForm.tsx`; no dependency or tra
 | REQ-LIVE-ROOT | Actual UI root submit returns HTTP 200, `success=true`, nonempty Alibaba `qwen-flash` output and governance receipt; root result and store reflect exact run/receipt. |
 | REQ-CHILD | Actual UI refinement submit carries `_previousOutput` prefix of root output and creates linked child with distinct output/receipt, preserving root record; second real response also HTTP 200 success. |
 | REQ-EXPORT | Browser child Markdown download bytes contain exact clean child output and receipt ID; return-to-edit/reload negative control produces no extra execute/provider call or stale result attribution. |
-| REQ-BUDGET-RETURN | At most two worker execute POSTs, six actual Alibaba calls including invisible validation retries, zero Playwright retry/rerun, exact seven artifacts, secret-safe proof, final fast/ledger and no commit. |
+| REQ-BUDGET-RETURN | At most three cumulative worker execute POSTs, six actual Alibaba calls including invisible validation retries, zero Playwright retry/rerun, exact seven artifacts, secret-safe proof, final fast/ledger and no commit. |
 
 ## Required First Reads
 
@@ -89,7 +99,7 @@ Mandatory bounded reads are included in the 75-minute BUILD; reserve at most 20 
 | Home `page.tsx` 385-510, 680-725; `execution-continuity.ts` 19-43, 112-134 | run/child IDs, `_previousOutput`, receipt persistence | parent/child browser store oracle, REQ-LIVE-ROOT/CHILD |
 | `ProcessingScreen.tsx` 185-315, 505-516; `Settings.tsx` 84-155 | provider/model request, completion and keyless settings | two UI submits and no browser key, REQ-PROFILE/LIVE-ROOT/CHILD |
 | execute `route.ts` 49-130, 220-224, 559-647, 735-845; AI `providers.ts` 265-408; `rate-limit.ts` 90-101, 281-288 | auth, server key, routing and 1+2 retry multiplier | actual request/attempt cap and destination, REQ-PROFILE/BUDGET-RETURN |
-| `ResultViewer.tsx` 156-205, 529-548, 741-780; `ResultExportControls.tsx` 115-160 | full Markdown content, receipt and follow-up controls | byte oracle, no third submit, REQ-EXPORT |
+| `ResultViewer.tsx` 156-205, 529-548, 741-780; `ResultExportControls.tsx` 115-160 | full Markdown content, receipt and follow-up controls | byte oracle, no fourth cumulative submit, REQ-EXPORT |
 | `knowledge-store.ts` 133-158, 195; `knowledge-retrieval.ts` 20-33; approval `store.ts` 129; durable-memory route 20; SOT3 readout 91 | existing ambient-file defaults and empty-knowledge behavior | owned file profile; zero injected chunks, REQ-PROFILE |
 | `playwright.config.ts` 1-42; `tests/e2e/utils.ts` 85-160; Work Transfer browser test 125-190; Web `package.json` | env load, login, isolation and exact CLI | processed profile and strict run, REQ-PROFILE/RETURN |
 | `run_worker_return_fast_gate.py`, acceptance ledger, RIPA, closeability, trace and changed-corpus registry checkers; canonical live diagnostic | exact return shape, new-test coverage, failed-live handling | REQ-BUDGET-RETURN |
@@ -275,11 +285,12 @@ foreseeableFileSplitDisposition: NOT_REQUIRED_UNDER_SIZE_BUDGET
 | authorization_review | PRE_DISPATCH | dispatcher | PRE_DISPATCH | baseline/order/pins | EXACT_PATHS | Local-closer | DISPATCH_COMMIT | NONE |
 | pre_dispatch_gate | PRE_DISPATCH | dispatcher | PRE_DISPATCH | authoring packet-shape check, not final release | EXACT_PATHS | Local-closer | DISPATCH_COMMIT | authorization_review |
 | dispatch_continuity | IMPLEMENTATION | session-sync-steward | IMPLEMENTATION | AGENT_HANDOFF_V63_2026-09-18.md material-SHA marker and exact-six current continuity | EXACT_PATHS | session-sync-steward | DISPATCH_CONTINUITY_COMMIT | pre_dispatch_gate |
+| registry_admission | PRE_DISPATCH | dispatcher | PRE_DISPATCH | Root GC-051 source entry/generated JSON/manual Markdown | EXACT_PATHS | Local-closer | DISPATCH_COMMIT | authorization_review |
 | bound_dispatch_release_gate | IMPLEMENTATION | dispatcher | IMPLEMENTATION | committed packet/current authority/full bound pre-dispatch release | EXACT_PATHS | Local-closer | DISPATCH_CONTINUITY_COMMIT | dispatch_continuity |
 | pre_implementation_autorun | IMPLEMENTATION | worker | IMPLEMENTATION | exact seven worker paths and ignored runtime | EXACT_PATHS | Local-closer | MATERIAL_COMMIT | bound_dispatch_release_gate |
 | focused_checker_tests | WORKER_RETURN | worker | IMPLEMENTATION | exact seven form/test/preload/proof/return paths | EXACT_PATHS | Local-closer | MATERIAL_COMMIT | dispatch_continuity,pre_implementation_autorun |
 | adif_integrity | WORKER_RETURN | worker | IMPLEMENTATION | proof and worker return | EXACT_PATHS | Local-closer | MATERIAL_COMMIT | focused_checker_tests |
-| worker_return_fast | WORKER_RETURN | worker | WORKER_RETURN | exact seven worker paths | EXACT_PATHS | Local-closer | MATERIAL_COMMIT | adif_integrity |
+| worker_return_fast | WORKER_RETURN | worker | WORKER_RETURN | exact seven worker paths | EXACT_PATHS | Local-closer | MATERIAL_COMMIT | adif_integrity,registry_admission |
 | reviewer_fast | REVIEW | reviewer | REVIEW | worker paths, independent probe, Local completion | EXACT_PATHS | Local-closer | MATERIAL_COMMIT | worker_return_fast |
 | pre_commit | PRE_MATERIAL_COMMIT | reviewer | PRE_MATERIAL_COMMIT | reviewed material and completion | EXACT_PATHS | Local-closer | MATERIAL_COMMIT | reviewer_fast |
 | terminal_completion_review | POST_MATERIAL | reviewer | REVIEW | Local completion review | EXACT_PATHS | Local-closer | MATERIAL_COMMIT | pre_commit |
@@ -324,7 +335,7 @@ activeLaneOwner: Worker only after committed Root release
 laneOwnedPaths: exact seven Required Artifact Manifest paths
 dispatcherMutationBoundary: NO_MUTATION_WHILE_LANE_ACTIVE
 laneReleaseEvidence: terminal worker fast/ledger and original exact-seven custody before Root closure edits
-dispatchBaseHead: `84bfd4902e9ace48e069698ec7dfd02a296ca402`
+dispatchBaseHead: `152481577108f2815f953471201b12473be45efa`
 
 | Field | Value |
 |---|---|
@@ -369,7 +380,7 @@ dispatchBaseHead: `84bfd4902e9ace48e069698ec7dfd02a296ca402`
 |---|---|
 | Foundation path class | existing Home/execute/ResultViewer read-only; new Web e2e test/support and review evidence |
 | Storage decision | fresh disposable file/audit/snapshot paths; no schema, writer or migration |
-| Existing aggregate impact | Root GC-051 source item/registry only after test lands |
+| Existing aggregate impact | Root GC-051 source item/registry committed before worker return |
 | Generated state impact | Root continuity steward only after dispatch/material decisions |
 | Durable governance boundary | browser store receipt snapshot is proof target, not business custody |
 | Duplicate-owner control | no separate persistence owner |
@@ -403,21 +414,21 @@ Claim Update: bounded provider/live dispatch; R3/R4 and selected HTML job remain
 |---|---|
 | Actor | Local INTERNAL_AGENT orchestrator/reviewer dispatch owner |
 | Provider or surface | private shared repository, no provider invocation |
-| Session or invocation | ncr-home-alibaba-journey-dispatch-author-20261013 |
+| Session or invocation | ncr-home-alibaba-journey-root-amendment-20261013 |
 | Working directory | repository root |
 | Command or tool surface | progressive startup, source inspection/scaffold, ADIF resolver and author fast gate |
-| Target paths | `docs/baselines/CVF_GC018_NCR_HOME_ALIBABA_JOURNEY_2026-10-13.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HOME_ALIBABA_JOURNEY_2026-10-13.md`; `docs/reviews/evidence/ncr-home-alibaba-journey-dispatch-20261013.json` |
+| Target paths | `docs/baselines/CVF_GC018_NCR_HOME_ALIBABA_JOURNEY_2026-10-13.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HOME_ALIBABA_JOURNEY_2026-10-13.md`; `docs/reviews/evidence/ncr-home-alibaba-journey-dispatch-20261013.json`; `docs/corpus-intelligence/registry/entries/cvf-ncr-home-alibaba-journey.json`; `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json`; `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Allowed scope source | Root selected finite NCR continuation |
-| Before status evidence | inspection HEAD 84bfd4902e9ace48e069698ec7dfd02a296ca402; clean worktree and staged empty before new draft |
-| After status evidence | exact three reviewed dispatch paths; material then exact-six actual-SHA continuity and bound release follow |
+| Before status evidence | 152481577108f2815f953471201b12473be45efa; terminal blocked exact7 frozen then exact-path stash; clean worktree and staged empty before Root amendment |
+| After status evidence | exact12 coherent amendment material; dedicated actual-SHA exact6 follows; original dispatch attempts retained |
 | Diff evidence | `git status --short`; `git diff --check` at handoff |
 | Approval boundary | Root committed material/current-authority binding and full pre-dispatch release before BUILD |
 | Claim boundary | no actual browser/provider proof or selected HTML acceptance |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-home-alibaba-journey-dispatch-author-20261013 |
-| Expected manifest | `docs/baselines/CVF_GC018_NCR_HOME_ALIBABA_JOURNEY_2026-10-13.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HOME_ALIBABA_JOURNEY_2026-10-13.md`; `docs/reviews/evidence/ncr-home-alibaba-journey-dispatch-20261013.json` |
-| Actual changed set | `docs/baselines/CVF_GC018_NCR_HOME_ALIBABA_JOURNEY_2026-10-13.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HOME_ALIBABA_JOURNEY_2026-10-13.md`; `docs/reviews/evidence/ncr-home-alibaba-journey-dispatch-20261013.json` |
-| Manifest delta | MATCH exact three required before material commit |
+| Invocation ID | ncr-home-alibaba-journey-root-amendment-20261013 |
+| Expected manifest | `docs/baselines/CVF_GC018_NCR_HOME_ALIBABA_JOURNEY_2026-10-13.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HOME_ALIBABA_JOURNEY_2026-10-13.md`; `docs/reviews/evidence/ncr-home-alibaba-journey-dispatch-20261013.json`; `docs/corpus-intelligence/registry/entries/cvf-ncr-home-alibaba-journey.json`; `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json`; `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Actual changed set | `docs/baselines/CVF_GC018_NCR_HOME_ALIBABA_JOURNEY_2026-10-13.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HOME_ALIBABA_JOURNEY_2026-10-13.md`; `docs/reviews/evidence/ncr-home-alibaba-journey-dispatch-20261013.json`; `docs/corpus-intelligence/registry/entries/cvf-ncr-home-alibaba-journey.json`; `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json`; `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Manifest delta | MATCH exact12 amendment material before commit |
 | Deletion or rename disposition | None |
 
 ## Delta Execution Claim Boundary Control Block
@@ -428,7 +439,7 @@ Claim Update: bounded provider/live dispatch; R3/R4 and selected HTML job remain
 | claimDisposition | CLAIM_REJECTED for actual live behavior until executed proof and independent Root probe |
 | receiptEvidence | CLAIM_REJECTED_NO_RECEIPT: source pins and historical receipts do not substitute for this new UI journey |
 | actionEvidence | CLAIM_REJECTED_NO_ACTION: worker and reviewer browser actions after bound release |
-| invocationBoundary | two worker UI submits and one Root distinct UI submit, max nine Alibaba fetches including retries |
+| invocationBoundary | three cumulative worker UI submits and one Root distinct UI submit, max nine Alibaba fetches including retries |
 | interceptionBoundary | test-only server fetch observer, not OS-level network isolation or production enforcement |
 | claimLanguage | bounded future proof only; no release-quality gate, selected HTML acceptance or full R3/R4 exit |
 | forbiddenExpansion | product changes beyond DynamicForm, real-data writes, business accept/send, public/deploy/P11 and other provider destinations |

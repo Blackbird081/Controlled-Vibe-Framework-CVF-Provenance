@@ -2,16 +2,16 @@
   "schemaVersion": "0.1.0",
   "currentMode": "cvf_ncr_home_alibaba_journey_execution",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-HOME-ALIBABA-JOURNEY-20261013. WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HOME_ALIBABA_JOURNEY_2026-10-13.md. Sol-medium internal worker exact7, 75-minute BUILD after bound gate; max2 UI submits/max6 Alibaba calls, Root distinct max1/max3, global max9; keyless browser/owned empty stores. R1/R2 partial, R3/R4 open; real-data/accept/send/B2/P11/public/deploy parked; latest closed LHW24 retained. Reviewed material commit=60e5e7197770105d2dc670e5051c340733cda945; dedicated actual-SHA continuity.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-HOME-ALIBABA-JOURNEY-20261013. WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HOME_ALIBABA_JOURNEY_2026-10-13.md. Sol worker exact7 after amended bound release; hard stop17:40:17UTC unchanged; prior1 UI/call, max3 cumulative UI/max6 calls (fresh max5), Root max1/max3/global9. Direct file DASHSCOPE sole server alias; owned empty stores/keyless browser. R1/R2 partial, R3/R4 open; real-data/accept/send/P11/public/deploy parked; latest closed LHW24 retained.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_NCR_HOME_ALIBABA_JOURNEY_2026-10-13.md",
-    "baselineSha256": "dbb1c25666fddd2f64b4194aca9cc26d8f56da7d9bebcfe3ee0574b6e54b8048",
+    "baselineSha256": "2ebbe707ea3609c806523096f5df3d1b638f5f7c894bff696e782697fe97d30a",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HOME_ALIBABA_JOURNEY_2026-10-13.md",
-    "workOrderSha256": "4d083e4c5b80de148b49a1260e9a491eb83a576a8cc17820c9d810a4f7bd4aee"
+    "workOrderSha256": "937657883dd1feec1a240e84aac93848068e6c15cb2214f9bcd5a1219e4794e0"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }
