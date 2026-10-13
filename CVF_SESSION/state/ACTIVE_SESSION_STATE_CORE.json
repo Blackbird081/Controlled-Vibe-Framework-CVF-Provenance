@@ -36,12 +36,12 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_NCR_OFFLINE_JOURNEY_2026-10-13.md",
-    "baselineSha256": "9f0284a6f0f49c5d13987475d9bb96d4d638c960f83d7b461578860a6576b6c7",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_OFFLINE_JOURNEY_2026-10-13.md",
-    "workOrderSha256": "936132f8b412e864219b309bd342a9077456fee8828b55a4d74f8ae6040482b1"
+    "baselinePath": "docs/baselines/CVF_GC018_NCR_BRIEF_REOPEN_2026-10-13.md",
+    "baselineSha256": "b1fb402dc02b820b4a880fe4442085ad017b15ec571de9bfa468c1d90d08b4fe",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_BRIEF_REOPEN_2026-10-13.md",
+    "workOrderSha256": "0cf950e92200cb8b02c6518b721eb4a253b0695199ca1d7838a40743f984c150"
   },
-  "currentAuthoritySyncReason": "Offline journey closed material 9a9f00459bd47d6cb53407d116cc5a44c7b99c07; dedicated exact6 actual-SHA continuity; synthetic UI only.",
+  "currentAuthoritySyncReason": "Operator CVF continuation: brief panel continuity packet and primary/conditional configuration; dedicated continuity binds release before worker BUILD.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",

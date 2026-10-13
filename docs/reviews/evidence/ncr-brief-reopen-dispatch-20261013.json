@@ -1,0 +1,154 @@
+{
+  "schemaVersion": "cvf.ncrBriefReopenDispatch@1.0.0",
+  "batchId": "CVF-NCR-BRIEF-REOPEN-20261013",
+  "inspectionBaseHead": "6de61d59ae39885b5e8544677966fae37d047d40",
+  "timestampUtc": "2026-10-13T05:17:43.633913+00:00",
+  "sourcePins": [
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.tsx",
+      "rawSha256": "2cf58f9f22145c9755285b7340e9a6858fc8de98b4ae79bbc72315911b30a1ac",
+      "headBlobSha256": "2cf58f9f22145c9755285b7340e9a6858fc8de98b4ae79bbc72315911b30a1ac"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/SpecExport.tsx",
+      "rawSha256": "8c425b3b0f4d468ee129224c688d30141a8924e01f78dcf0d1d28a4357d9689a",
+      "headBlobSha256": "8c425b3b0f4d468ee129224c688d30141a8924e01f78dcf0d1d28a4357d9689a"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.test.tsx",
+      "rawSha256": "02170f9f50454ba0af9562576b618951ba529162304461713427b4d1bdd908b6",
+      "headBlobSha256": "02170f9f50454ba0af9562576b618951ba529162304461713427b4d1bdd908b6"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/SpecExport.test.tsx",
+      "rawSha256": "eb7a781a5d01e4e0b96a450778e16505f281dcdbb9a09f2fda18fbce8202e9af",
+      "headBlobSha256": "eb7a781a5d01e4e0b96a450778e16505f281dcdbb9a09f2fda18fbce8202e9af"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/IntentSpecReview.tsx",
+      "rawSha256": "e2e6239ae45536b77daf11ef9f88435453fb106514cec8a1f78132fe43655ecc",
+      "headBlobSha256": "e2e6239ae45536b77daf11ef9f88435453fb106514cec8a1f78132fe43655ecc"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/spec-export-english-working-brief.ts",
+      "rawSha256": "76604b150f0a7f4e5379cf0d6ae5a41d3ab7152b034de940eab6d6515f41fb44",
+      "headBlobSha256": "76604b150f0a7f4e5379cf0d6ae5a41d3ab7152b034de940eab6d6515f41fb44"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.tsx",
+      "rawSha256": "b6b1d7ff64bcc5586b830b2a23c8e1b94957ef276a4abd9cea9eaa0825965322",
+      "headBlobSha256": "b6b1d7ff64bcc5586b830b2a23c8e1b94957ef276a4abd9cea9eaa0825965322"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/draft-export.test.tsx",
+      "rawSha256": "a1fccf902fc3c91442b7f70beebff6c860693feb3ffb38f0fab546feaba407de",
+      "headBlobSha256": "a1fccf902fc3c91442b7f70beebff6c860693feb3ffb38f0fab546feaba407de"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/test/setup.ts",
+      "rawSha256": "bc573b2a6133b07404c42f797bce43fe73464711e0281f29da8234bf2fed6b27",
+      "headBlobSha256": "bc573b2a6133b07404c42f797bce43fe73464711e0281f29da8234bf2fed6b27"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/vitest.config.ts",
+      "rawSha256": "9a4a65976b5b7a5d038f9cb412a90d417f804108cf1dd33bae4421989a863420",
+      "headBlobSha256": "9a4a65976b5b7a5d038f9cb412a90d417f804108cf1dd33bae4421989a863420"
+    }
+  ],
+  "archivePreimages": [
+    {
+      "sourcePath": "docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md",
+      "archivePath": "docs/roadmaps/archive/CVF_NCR_PRE_BRIEF_REOPEN_2026-10-13.md",
+      "rawSha256": "23bf5f92280b29bfa243bb7b42c4a98a340448cd5389151de4e72c1c1afcb0a4",
+      "bytes": 249424,
+      "status": "NOT_ACTIVE_AUTHORITY",
+      "representation": "EXACT_RAW_PREIMAGE"
+    },
+    {
+      "sourcePath": "AGENT_HANDOFF_V63_2026-09-18.md",
+      "archivePath": "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V63_PRE_BRIEF_REOPEN_2026-10-13.md",
+      "rawSha256": "8b2c763668d87f99b4d85ea2a5d7df9c0a66c3bd94790414e21c32d5de31867b",
+      "bytes": 32530,
+      "status": "NOT_ACTIVE_AUTHORITY",
+      "representation": "EXACT_RAW_PREIMAGE"
+    }
+  ],
+  "selection": {
+    "outcome": "Preserve confirmed Working Brief through close/reopen; invalidate hidden edits",
+    "sourceFacts": [
+      "DynamicForm conditionally unmounts SpecExport on close",
+      "SpecExport owns revision/confirmation/artifact identity",
+      "Existing standalone revision tests retain component lifetime"
+    ],
+    "claimBoundary": "Offline UI visibility/text identity/callback counts only; no AI governance efficacy or whole job"
+  },
+  "operatorAuthority": "2026-10-13 CVF continuation, primary Luna max and conditional Sol medium if quality inadequate",
+  "requestedConfiguration": {
+    "primary": {
+      "model": "gpt-6-luna",
+      "reasoningEffort": "max"
+    },
+    "conditionalRepair": {
+      "model": "gpt-6.1-sol",
+      "reasoningEffort": "medium",
+      "trigger": "Local QUALITY_REJECTED_WITH_CONSOLIDATED_FINDINGS and distinct bounded packet release"
+    },
+    "nativeUsage": null,
+    "nativeUsageReason": "Tool configured request only; native tokens/bill unavailable"
+  },
+  "ownedPaths": [
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.tsx",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.brief-lifecycle.test.tsx",
+    "docs/reviews/evidence/ncr-brief-reopen-worker-20261013.json",
+    "docs/reviews/CVF_NCR_BRIEF_REOPEN_WORKER_RETURN_2026-10-13.md"
+  ],
+  "dispatchMaterialPaths": [
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_BRIEF_REOPEN_2026-10-13.md",
+    "docs/baselines/CVF_GC018_NCR_BRIEF_REOPEN_2026-10-13.md",
+    "docs/reviews/evidence/ncr-brief-reopen-dispatch-20261013.json",
+    ".gitattributes",
+    "docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md",
+    "docs/roadmaps/archive/CVF_NCR_PRE_BRIEF_REOPEN_2026-10-13.md",
+    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V63_PRE_BRIEF_REOPEN_2026-10-13.md",
+    "CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json",
+    "CVF_SESSION/ACTIVE_SESSION_STATE.json",
+    "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json"
+  ],
+  "sourceReadClaim": "Targeted dispatcher source/checker scopes; no complete scan or all-files-read claim",
+  "scaffoldCommand": "python -B governance/compat/build_dispatch_packet_scaffold.py --packet-kind web-ui-dashboard --batch-id CVF-NCR-BRIEF-REOPEN-20261013 --title \"NCR Brief Panel Reopen Continuity\" --date 2026-10-13 --base 6de61d59ae39885b5e8544677966fae37d047d40 --commit-mode WORKER_MUST_NOT_COMMIT --dependency docs/reviews/CVF_NCR_OFFLINE_JOURNEY_COMPLETION_2026-10-13.md --include-worker-return-skeleton --no-evidence-readiness-applicable --scec-problem-key ncr-brief-panel-reopen --scec-successor-scope NO_SUCCESSOR --stdout",
+  "scaffoldRawSha256": "ba691a2a131af33733224a25932faf6be97b2ee33ecba7045e7f769e3e675b6a",
+  "adifQuery": {
+    "taskClass": "work-order",
+    "role": "dispatcher",
+    "lifecyclePhase": "pre-dispatch",
+    "returned": []
+  },
+  "boundWorkerBuildStatus": "NOT_RELEASED",
+  "preparationEvents": [
+    {
+      "owner": "LOCAL_DISPATCHER",
+      "status": "FAILED_THEN_CORRECTED",
+      "event": "Helper expected110 rows but source contained104 actual D001-D110 rows; source assumption corrected; original full roadmap raw archived. No worker BUILD."
+    },
+    {
+      "owner": "LOCAL_DISPATCHER",
+      "status": "FAILED_THEN_CORRECTED",
+      "event": "First reviewer-preflight blocked two packet literals: UI ownership phrasing matched filesystem ownership trigger and clean/staged wording missed clean worktree marker. Relevant predicates read and documentary fields corrected; first log retained.",
+      "log": ".cvf/runtime/ncr-brief-reopen-20261013/dispatch-preflight.log",
+      "logSha256": "95e1f0bc44768fe8f4472f2cc74c033f536dea7a2369fbcc70ddb4e1e8756182"
+    }
+  ],
+  "historyExtraction": {
+    "sourcePresentRows": 104,
+    "requestedHistoricalIdRange": "D001-D110",
+    "missingIdsInOriginal": [
+      "D105",
+      "D106",
+      "D107",
+      "D108",
+      "D109",
+      "D110"
+    ],
+    "sourceRawPreimageRetained": true
+  }
+}
