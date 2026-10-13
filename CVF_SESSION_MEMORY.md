@@ -45,7 +45,7 @@ Current mode: `cvf_ncr_home_alibaba_journey_closed_bounded`; previous mode marke
 ## Next Allowed Move
 
 Mode: `cvf_ncr_home_alibaba_journey_closed_bounded`
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=LOCAL_DISPOSITION_ONLY; BATCH_ID=CVF-NCR-NEXT-INTAKE-20261014. Home Alibaba synthetic journey accepted bounded; finite closure only, no active worker/provider grant. Next intake from NCR roadmap R1-R4: history reload clears full receipt, selected HTML pilot/timeout-cancel/restart-backup/connection recovery remain open. Review cost threshold reached; no additional rework/repeat-live cycle without separately admitted contract. R1/R2 partial,R3/R4 open,R5/R6 deferred; real-data/accept/send/B2/P11/public/deploy parked; latest closed LHW24 retained.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=LOCAL_DISPOSITION_ONLY; BATCH_ID=CVF-NCR-NEXT-INTAKE-20261014. Home Alibaba synthetic journey accepted bounded; finite closure only, no active worker/provider grant. Next intake from NCR roadmap R1-R4: history reload clears full receipt, selected HTML pilot/timeout-cancel/restart-backup/connection recovery remain open. Review cost threshold reached; no additional rework/repeat-live cycle without separately admitted contract. R1/R2 partial,R3/R4 open,R5/R6 deferred; real-data/accept/send/B2/P11/public/deploy parked; latest closed LHW24 retained. Reviewed material commit=5d386124671a9d463418d53c4d1079490fe88260; dedicated actual-SHA continuity.
 Historical G1-G7 terminal baseline: mode `acel_g1_g7_research_terminally_closed`. G1-G6 terminal review: `docs/reviews/CVF_ACEL_G1_G6_TERMINAL_STOP_CLOSURE_2026-09-24.md`; G7 research closure: `docs/reviews/CVF_ACEL_G7_CROSS_RUN_CAPABILITY_EVOLUTION_RESEARCH_CLOSURE_2026-09-24.md`. The packet-only post-G7 reconciliation review at `docs/reviews/CVF_ACEL_POST_G7_FULL_CORPUS_ABSORPTION_CLOSURE_2026-09-24.md` is superseded for repository absorption by the 2026-09-25 pinned-source audit. G1 is stopped, G2-G6 remain parked, G7 research is closed, and no automatic G1-G7 successor exists.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
@@ -96,7 +96,7 @@ RSPB-AI-T9 is `CLOSED_PASS_BOUNDED`: material and reviewer repair `5e5aeb8a4`, c
 
 ## Parked Checkpoints
 
-NCR-R0/W00 documentation-only worker return is Local-accepted bounded at `c7b7a2c72`; the operator's pilot/effect/expense choice remains pending. U1 code import/runtime use, out-of-manifest production TypeScript edits, existing-guard edits, hook/autorun/CI wiring, provider/live, credential access, quota mutation, CLI/MCP invocation, public sync, deployment, production, trusted-evidence readiness and cross-runtime determinism claims remain parked.
+NCR-R0 limited pilot selection is retained; real-data writer/custody, business acceptance and effect-specific cost decisions remain action-specific checkpoints. U1 code import/runtime use, out-of-manifest production TypeScript edits, existing-guard edits, hook/autorun/CI wiring, provider/live, credential access, quota mutation, CLI/MCP invocation, public sync, deployment, production, trusted-evidence readiness and cross-runtime determinism claims remain parked.
 T4 closed as standalone static checker work with no hook wiring or production-source mutation.
 Prior unrelated checkpoints remain historical.
 
