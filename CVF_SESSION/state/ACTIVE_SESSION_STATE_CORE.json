@@ -39,9 +39,9 @@
     "baselinePath": "docs/baselines/CVF_GC018_NCR_WORK_TRANSFER_BROWSER_RETURN_REPAIR_2026-10-13.md",
     "baselineSha256": "b5b7f39dc6d930df05762238746ccc5b902705970d48cf120fe8c793510db864",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_WORK_TRANSFER_BROWSER_RETURN_REPAIR_2026-10-13.md",
-    "workOrderSha256": "89ba615a294bd77b8cd46dc3e0053aef0c0a95463ee49190c8fd1a8b5c712f10"
+    "workOrderSha256": "62b0dd61d6b86228999ba21186b8662b18253a1ca22ce18e91d95971d88b233a"
   },
-  "currentAuthoritySyncReason": "Finite Work Transfer browser contribution accepted; Root completion docs/reviews/CVF_NCR_WORK_TRANSFER_BROWSER_COMPLETION_2026-10-13.md; separate Alibaba9/9; next bounded selection only Material c79fcd98859506d9c94c387219e0b0e4c31b55fd; coherent source/generated authority; actual-SHA dedicated continuity follows material. Whole NCR pilot/effects remain separate.",
+  "currentAuthoritySyncReason": "Accepted finite browser contribution; Root mandatory admission heading correction; historical P4 failure retained; next bounded selection only Pre-closure parent 9894a374ff72b500852e3c00f566b0a0fb9dd35a; coherent source/generated authority; actual-SHA dedicated continuity follows material. Whole NCR pilot/effects remain separate.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",

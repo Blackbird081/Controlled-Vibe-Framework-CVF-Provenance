@@ -89,7 +89,7 @@ continuityCommitCount: 2
 valueDelta: real composed browser draft transport regression and distinct byte/stale/selection oracle now proved
 stopDisposition: COMPLETE_REVIEW
 preRepairAuditDisposition: COMPLETE_BEFORE_FIRST_REPAIR
-commitPlanDisposition: EXCEPTION_WITH_REASON: primary immutable retention and conditional dispatch needed two prior material/continuity pairs; final coherent exact22 plus dedicated actual-SHA exact6, initial dispatch excluded
+commitPlanDisposition: EXCEPTION_WITH_REASON: primary immutable retention and conditional dispatch needed two prior material/continuity pairs; final coherent exact8 corrective plus dedicated actual-SHA exact6, initial dispatch excluded
 latencyDisposition: LATENCY_BUDGET_EXCEEDED_WITH_REASON: review interval includes primary rejection, conditional worker, literal preparation and independent browser oracle; no model speed comparison
 avoidableDelayClass: MULTIPLE_AVOIDABLE_DELAYS
 
@@ -124,23 +124,23 @@ Runtime/provider/cost learning: N/A_WITH_REASON for browser-only contribution; s
 | Session or invocation | ncr-work-transfer-browser-local-review-20261013 |
 | Working directory | repository root and installed Web package |
 | Command or tool surface | raw custody and pins; one distinct Node/Chromium Local probe; byte oracle; closure gates and actual-SHA continuity |
-| Target paths | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/ncr-work-transfer-browser.spec.ts`; `docs/reviews/evidence/ncr-work-transfer-browser-conditional-worker-20261013.json`; `docs/reviews/CVF_NCR_WORK_TRANSFER_BROWSER_CONDITIONAL_RETURN_2026-10-13.md`; `docs/reviews/CVF_NCR_WORK_TRANSFER_BROWSER_COMPLETION_2026-10-13.md`; `docs/reviews/evidence/ncr-work-transfer-browser-local-20261013.json`; `docs/reviews/evidence/ncr-alibaba-release-local-20261013.json`; `docs/baselines/CVF_GC018_NCR_WORK_TRANSFER_BROWSER_RETURN_REPAIR_2026-10-13.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_WORK_TRANSFER_BROWSER_RETURN_REPAIR_2026-10-13.md`; `docs/baselines/CVF_GC018_NCR_WORK_TRANSFER_BROWSER_2026-10-13.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_WORK_TRANSFER_BROWSER_2026-10-13.md`; `docs/reviews/CVF_NCR_W05_SELECTED_CHAIN_READINESS_2026-10-07.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `docs/roadmaps/README.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.csv`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `docs/reviews/archive/CVF_AGENT_WORK_ORDER_NCR_WORK_TRANSFER_BROWSER_RETURN_REPAIR_DISPATCH_2026-10-13.md` |
+| Target paths | `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_WORK_TRANSFER_BROWSER_RETURN_REPAIR_2026-10-13.md`; `docs/reviews/CVF_NCR_WORK_TRANSFER_BROWSER_COMPLETION_2026-10-13.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Allowed scope source | operator NCR continuation, conditional packet and Local closure authority |
-| Before status evidence | HEAD8fd2c56d26f441fa9824e71211178f6e85eee5f6; terminal conditional exact3; staged empty |
-| After status evidence | exact22 coherent material with pre-closure parent; dedicated exact6 actual-SHA continuity after commit |
+| Before status evidence | HEAD9894a374ff72b500852e3c00f566b0a0fb9dd35a; clean worktree before Root exact8 contract correction; original exact22/6 history retained |
+| After status evidence | exact8 corrective coherent material with pre-closure parent; dedicated exact6 actual-SHA continuity after commit |
 | Diff evidence | git diff --cached --check and exact manifest reconciliation required before commit; no production source/dependency delta |
 | Approval boundary | selected browser test and authorized separate Alibaba diagnostic; no new provider run or parked effects |
 | Claim boundary | Synthetic real-browser draft edit/preview/download/version/selection transport only. Output remains NOT_CONFIGURED/DRAFT_UNACCEPTED. Separate current Alibaba canonical9/9 is real-provider governance diagnostic evidence, not a composed accepted NCR job. Full R1-R4 exits, durable acceptance, two independent provider connections, restart/backup/restore, real-data/public/deploy/P11 remain open or parked. R5/R6 deferred. |
 | Agent type | INTERNAL_AGENT |
 | Invocation ID | ncr-work-transfer-browser-local-review-20261013 |
-| Expected manifest | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/ncr-work-transfer-browser.spec.ts`; `docs/reviews/evidence/ncr-work-transfer-browser-conditional-worker-20261013.json`; `docs/reviews/CVF_NCR_WORK_TRANSFER_BROWSER_CONDITIONAL_RETURN_2026-10-13.md`; `docs/reviews/CVF_NCR_WORK_TRANSFER_BROWSER_COMPLETION_2026-10-13.md`; `docs/reviews/evidence/ncr-work-transfer-browser-local-20261013.json`; `docs/reviews/evidence/ncr-alibaba-release-local-20261013.json`; `docs/baselines/CVF_GC018_NCR_WORK_TRANSFER_BROWSER_RETURN_REPAIR_2026-10-13.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_WORK_TRANSFER_BROWSER_RETURN_REPAIR_2026-10-13.md`; `docs/baselines/CVF_GC018_NCR_WORK_TRANSFER_BROWSER_2026-10-13.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_WORK_TRANSFER_BROWSER_2026-10-13.md`; `docs/reviews/CVF_NCR_W05_SELECTED_CHAIN_READINESS_2026-10-07.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `docs/roadmaps/README.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.csv`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `docs/reviews/archive/CVF_AGENT_WORK_ORDER_NCR_WORK_TRANSFER_BROWSER_RETURN_REPAIR_DISPATCH_2026-10-13.md` |
-| Actual changed set | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/ncr-work-transfer-browser.spec.ts`; `docs/reviews/evidence/ncr-work-transfer-browser-conditional-worker-20261013.json`; `docs/reviews/CVF_NCR_WORK_TRANSFER_BROWSER_CONDITIONAL_RETURN_2026-10-13.md`; `docs/reviews/CVF_NCR_WORK_TRANSFER_BROWSER_COMPLETION_2026-10-13.md`; `docs/reviews/evidence/ncr-work-transfer-browser-local-20261013.json`; `docs/reviews/evidence/ncr-alibaba-release-local-20261013.json`; `docs/baselines/CVF_GC018_NCR_WORK_TRANSFER_BROWSER_RETURN_REPAIR_2026-10-13.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_WORK_TRANSFER_BROWSER_RETURN_REPAIR_2026-10-13.md`; `docs/baselines/CVF_GC018_NCR_WORK_TRANSFER_BROWSER_2026-10-13.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_WORK_TRANSFER_BROWSER_2026-10-13.md`; `docs/reviews/CVF_NCR_W05_SELECTED_CHAIN_READINESS_2026-10-07.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `docs/roadmaps/README.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.csv`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `docs/reviews/archive/CVF_AGENT_WORK_ORDER_NCR_WORK_TRANSFER_BROWSER_RETURN_REPAIR_DISPATCH_2026-10-13.md` |
+| Expected manifest | `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_WORK_TRANSFER_BROWSER_RETURN_REPAIR_2026-10-13.md`; `docs/reviews/CVF_NCR_WORK_TRANSFER_BROWSER_COMPLETION_2026-10-13.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Actual changed set | `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_WORK_TRANSFER_BROWSER_RETURN_REPAIR_2026-10-13.md`; `docs/reviews/CVF_NCR_WORK_TRANSFER_BROWSER_COMPLETION_2026-10-13.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Manifest delta | MATCH required before material commit |
 | Deletion or rename disposition | N/A with reason: no tracked deletion; owned untracked build dirs preserved by native move in ignored runtime |
 
 ## Required Artifact Manifest
 
-Exact22 material: `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/ncr-work-transfer-browser.spec.ts`; `docs/reviews/evidence/ncr-work-transfer-browser-conditional-worker-20261013.json`; `docs/reviews/CVF_NCR_WORK_TRANSFER_BROWSER_CONDITIONAL_RETURN_2026-10-13.md`; `docs/reviews/CVF_NCR_WORK_TRANSFER_BROWSER_COMPLETION_2026-10-13.md`; `docs/reviews/evidence/ncr-work-transfer-browser-local-20261013.json`; `docs/reviews/evidence/ncr-alibaba-release-local-20261013.json`; `docs/baselines/CVF_GC018_NCR_WORK_TRANSFER_BROWSER_RETURN_REPAIR_2026-10-13.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_WORK_TRANSFER_BROWSER_RETURN_REPAIR_2026-10-13.md`; `docs/baselines/CVF_GC018_NCR_WORK_TRANSFER_BROWSER_2026-10-13.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_WORK_TRANSFER_BROWSER_2026-10-13.md`; `docs/reviews/CVF_NCR_W05_SELECTED_CHAIN_READINESS_2026-10-07.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `docs/roadmaps/README.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.csv`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `docs/reviews/archive/CVF_AGENT_WORK_ORDER_NCR_WORK_TRANSFER_BROWSER_RETURN_REPAIR_DISPATCH_2026-10-13.md`. Dedicated exact6 follows actual reviewed material SHA. Original primary raw bytes retained; original conditional return embedded; unchanged test/proof identities verified. No future SHA asserted.
+Exact8 corrective material: `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_WORK_TRANSFER_BROWSER_RETURN_REPAIR_2026-10-13.md`; `docs/reviews/CVF_NCR_WORK_TRANSFER_BROWSER_COMPLETION_2026-10-13.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`. Dedicated exact6 follows actual reviewed material SHA. Original primary raw bytes retained; original conditional return embedded; unchanged test/proof identities verified. No future SHA asserted.
 
 ## Machine Closure Package
 
@@ -164,7 +164,7 @@ workerRedispatchAllowed: NO
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: exact22 material coherent raw closed authority and retired execution projection; dedicated exact6 actual-SHA continuity. No checker/hook changes.
+Authorized guard-maintenance scope: exact8 corrective material coherent raw closed authority and retired execution projection; dedicated exact6 actual-SHA continuity. No checker/hook changes.
 Protected paths:
 - `AGENT_HANDOFF_V63_2026-09-18.md`
 - `CVF_SESSION_MEMORY.md`
@@ -174,37 +174,23 @@ Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 
 Operator authorization: 2026-10-13 continue NCR; Luna max primary, Sol medium conditional after actual quality failure; Alibaba API live test authorized; Local owns review/closure/commits.
-Rollback boundary: exact22 reviewed delta and dedicated actual-SHA continuity; original primary and conditional worker raw custody retained; aggregates regenerated from source only.
+Rollback boundary: exact8 corrective reviewed delta and dedicated actual-SHA continuity; original primary and conditional worker raw custody retained; aggregates regenerated from source only.
 
 ## Mixed Protected-Path Atomicity Authorization
 
 Disposition: AUTHORIZED_EXACT_MANIFEST
-Atomicity reason: finite test/proofs, immutable predecessor archive, paired closure and roadmap require coherent source/generated continuity to retire EXECUTE; isolated partial projections would leave stale authority.
-Rollback boundary: exact22 material; dedicated exact6 binds actual reviewed material SHA afterwards.
+Atomicity reason: restoring the required admission heading changes current work-order raw authority; Root correction disclosure and coherent six source/generated projections must bind those bytes in one metadata correction.
+Rollback boundary: exact8 corrective material; dedicated exact6 binds actual reviewed material SHA afterwards.
 Exact changed manifest:
 
-- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/ncr-work-transfer-browser.spec.ts`
-- `docs/reviews/evidence/ncr-work-transfer-browser-conditional-worker-20261013.json`
-- `docs/reviews/CVF_NCR_WORK_TRANSFER_BROWSER_CONDITIONAL_RETURN_2026-10-13.md`
-- `docs/reviews/CVF_NCR_WORK_TRANSFER_BROWSER_COMPLETION_2026-10-13.md`
-- `docs/reviews/evidence/ncr-work-transfer-browser-local-20261013.json`
-- `docs/reviews/evidence/ncr-alibaba-release-local-20261013.json`
-- `docs/baselines/CVF_GC018_NCR_WORK_TRANSFER_BROWSER_RETURN_REPAIR_2026-10-13.md`
 - `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_WORK_TRANSFER_BROWSER_RETURN_REPAIR_2026-10-13.md`
-- `docs/baselines/CVF_GC018_NCR_WORK_TRANSFER_BROWSER_2026-10-13.md`
-- `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_WORK_TRANSFER_BROWSER_2026-10-13.md`
-- `docs/reviews/CVF_NCR_W05_SELECTED_CHAIN_READINESS_2026-10-07.md`
-- `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`
-- `docs/roadmaps/README.md`
-- `docs/roadmaps/CVF_ROADMAP_INVENTORY.md`
-- `docs/roadmaps/CVF_ROADMAP_INVENTORY.csv`
-- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `docs/reviews/CVF_NCR_WORK_TRANSFER_BROWSER_COMPLETION_2026-10-13.md`
 - `AGENT_HANDOFF_V63_2026-09-18.md`
 - `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
-- `docs/reviews/archive/CVF_AGENT_WORK_ORDER_NCR_WORK_TRANSFER_BROWSER_RETURN_REPAIR_DISPATCH_2026-10-13.md`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 
 ## Corpus Completeness And Report Integrity
 
@@ -247,3 +233,9 @@ Synthetic real-browser draft edit/preview/download/version/selection transport o
 | INTERNAL_AGENT conditional | configured Sol/medium, one BUILD | QUALITY_ACCEPTED_BOUNDED | LOCAL |
 | Local review/closure | private source, distinct real browser probe and separate authorized live diagnostic | IMPLEMENTED_BOUNDED | LOCAL |
 | External advisory research | no new external intake | DEFERRED_WITH_REASON | LOCAL |
+
+## Root Committed-Range Contract Correction
+
+Initial material c79fcd98859506d9c94c387219e0b0e4c31b55fd exact22 and continuity9894a374f retained. Both mandatory91/91 passed, but post-commit P4 collection rejected the material pre-closure on the renamed mandatory admission heading. That historical receipt remains failed, never promoted. Root restores only the exact `Independent Review Probe Admission Contract` heading; actual independent evidence is unchanged. Targeted bound RIPA PASS; one exact8 metadata correction and dedicated exact6 actual-SHA continuity follow. Technical review telemetry above describes the earlier acceptance interval and prior pairs; this later correction is additional Local metadata cost, not a worker repair or model benchmark.
+
+Local marker adjudication: `.cvf/runtime/mfrp-p4-shadow-canary/adjudications/ncr-work-transfer-browser-marker-20261013.json`, SHA256 `ab42577ad08b59f54abb80ebbee64c6aae9b0d570018e8fccda9d5a2e0180c81`; original marker SHA256 `d8d91ae25bd487b6798d7d7e48816cd7fb363d2d98bc27a6e70c43ee65eabbaa`. Existing P4 Write Ownership authorizes Local reviewer evidence repair and marker adjudication. Exact marker is preserved privately; pending journal and historical exclusions remain unchanged. Split committed-range gates must confirm final correction; no blind retry of provider/browser tests.

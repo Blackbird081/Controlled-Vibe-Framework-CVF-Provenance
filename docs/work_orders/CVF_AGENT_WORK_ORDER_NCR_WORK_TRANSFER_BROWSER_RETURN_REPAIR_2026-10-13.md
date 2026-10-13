@@ -326,7 +326,7 @@ The worker return must carry Purpose, Target / Source, Scope / Methodology, Find
 
 scaffoldPreparationCommand: `python governance/compat/run_worker_return_scaffold.py --write docs/reviews/CVF_NCR_WORK_TRANSFER_BROWSER_CONDITIONAL_RETURN_2026-10-13.md --check-shape --max-lines 450 --max-bytes 64000`
 
-## Historical Independent Review Probe Admission Contract
+## Independent Review Probe Admission Contract
 
 independentProbeRequired: YES
 independentProbeRiskClass: BROWSER_REAL_ROUTE_DRAFT_VERSION_BYTE_TRANSPORT
