@@ -31,11 +31,11 @@ artifact.
 | Prior handoff (archive-qualified) | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V62_2026-09-17.md` |
 | Latest front-door archive | `CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_COMPACTION_ARCHIVE_2026-08-11.md` |
 | Current authority evidence | `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` `currentAuthority` |
-| Parent maintenance | Admitted finite ResultViewer PDF/Word failure feedback and retry; one internal worker after bound release; whole job open |
+| Parent maintenance | Finite PDF/Word feedback dispatch material4fa597879 passed mandatory91/91; one internal worker after final bound release; whole job open |
 | Freeze posture | `governance_kernel_freeze_recommended` |
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_result_export_feedback_admitted`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=Admitted finite ResultViewer PDF/Word failure feedback and retry; one internal worker after bound release; role=Local INTERNAL_AGENT orchestrator/reviewer; phase=private continuity; decision owner=Local; parked checkpoint=real-data writer/custody/business acceptance/public/deploy/P11 and unrelated lanes.
+Startup acknowledged: current mode=`cvf_ncr_result_export_feedback_admitted`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=Finite PDF/Word feedback dispatch material4fa597879 passed mandatory91/91; one internal worker after final bound release; role=Local INTERNAL_AGENT orchestrator/reviewer; phase=private continuity; decision owner=Local; parked checkpoint=real-data writer/custody/business acceptance/public/deploy/P11 and unrelated lanes.
 
 ## Current Mode
 

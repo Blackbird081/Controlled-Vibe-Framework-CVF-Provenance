@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Current NCR Continuation
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `5c8bd0a5f3aa88edbaf14eab019d25b2ec36af13`. Pre-closure parent SHA: `5c8bd0a5f3aa88edbaf14eab019d25b2ec36af13`. Batch ID: CVF-NCR-RESULT-EXPORT-FEEDBACK-20261013. Admitted finite ResultViewer PDF/Word failure feedback and retry; one internal worker after bound release; actual reviewed material SHA will be bound by dedicated exact6 after commit.
+Current HEAD recorded for this handoff: `4fa597879416e9dacd8388b4ef1b24dab6db8c08`. Material SHA: `4fa597879416e9dacd8388b4ef1b24dab6db8c08`. Batch ID: CVF-NCR-RESULT-EXPORT-FEEDBACK-20261013. Finite PDF/Word feedback dispatch material4fa597879 passed mandatory91/91; one internal worker after final bound release; dedicated exact6 continuity.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -17,17 +17,17 @@ Local INTERNAL_AGENT orchestrator/reviewer owns final technical disposition, dis
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_result_export_feedback_admitted`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=Admitted finite ResultViewer PDF/Word failure feedback and retry; one internal worker after bound release; role=Local INTERNAL_AGENT orchestrator/reviewer; phase=private continuity; decision owner=Local; parked checkpoint=real-data writer/custody/business acceptance/public/deploy/P11 and unrelated lanes.
+Startup acknowledged: current mode=`cvf_ncr_result_export_feedback_admitted`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=Finite PDF/Word feedback dispatch material4fa597879 passed mandatory91/91; one internal worker after final bound release; role=Local INTERNAL_AGENT orchestrator/reviewer; phase=private continuity; decision owner=Local; parked checkpoint=real-data writer/custody/business acceptance/public/deploy/P11 and unrelated lanes.
 
 ## Current Mode
 
-`cvf_ncr_result_export_feedback_admitted`. Admitted finite ResultViewer PDF/Word failure feedback and retry; one internal worker after bound release. One internal worker only after committed bound admission; zero provider budget. Prior Work Transfer browser and Alibaba9/9 evidence retained in their owners; full R1-R4 open.
+`cvf_ncr_result_export_feedback_admitted`. Finite PDF/Word feedback dispatch material4fa597879 passed mandatory91/91; one internal worker after final bound release. One internal worker only after committed bound admission; zero provider budget. Prior Work Transfer browser and Alibaba9/9 evidence retained in their owners; full R1-R4 open.
 
 ## Current Authority
 
 Baseline: `docs/baselines/CVF_GC018_NCR_RESULT_EXPORT_FEEDBACK_2026-10-13.md`; SHA256 `3d8441b8e5a5ddad1e9407d42cd9f09e99182d3bf63c9d889193a057ca754832`.
 Work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RESULT_EXPORT_FEEDBACK_2026-10-13.md`; SHA256 `dcce9a465b8e67f03604b9b182982d82ff1130c9bdc2e682856c1c7117a83032`.
-Admitted finite ResultViewer PDF/Word failure feedback and retry; one internal worker after bound release. Existing browser/live evidence and original failures remain historical in their current reviews; this source pair governs only ResultViewer export feedback.
+Finite PDF/Word feedback dispatch material4fa597879 passed mandatory91/91; one internal worker after final bound release. Existing browser/live evidence and original failures remain historical in their current reviews; this source pair governs only ResultViewer export feedback.
 
 ## Accepted NCR Evidence And Continuation
 
@@ -89,8 +89,8 @@ Rollback boundary: exact6; preserve original archive and accepted/blocked histor
 | Command or tool surface | source entry/core update, active front door/handoff, canonical state generator |
 | Target paths | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Allowed scope source | operator NCR continuation; exact6 authority in paired baseline/order |
-| Before status evidence | 5c8bd0a5f3aa88edbaf14eab019d25b2ec36af13; clean worktree at selection; exact2 packet author return consumed |
-| After status evidence | exact8 coherent material; actual-SHA continuity remains a steward action; Admitted finite ResultViewer PDF/Word failure feedback and retry; one internal worker after bound release |
+| Before status evidence | 4fa597879416e9dacd8388b4ef1b24dab6db8c08; clean worktree and staged empty after reviewed material commit |
+| After status evidence | exact6 source/generated continuity; Finite PDF/Word feedback dispatch material4fa597879 passed mandatory91/91; one internal worker after final bound release |
 | Diff evidence | source/generated reconciliation; exact6 git diff --name-status; git diff --cached --check |
 | Approval boundary | bounded PDF/Word feedback; real-data/acceptance/public/deploy parked |
 | Claim boundary | finite UI export feedback; zero new provider budget; full NCR pilot open |
