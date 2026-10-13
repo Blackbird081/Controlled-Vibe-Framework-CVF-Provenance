@@ -18,17 +18,24 @@ import HomePage from '../app/(dashboard)/home/page';
 import { useExecutionStore } from '@/lib/store';
 import type { Execution } from '@/types';
 
-const { lang, track, clip, docx, saveAs, nav } = vi.hoisted(() => ({
+const { lang, track, clip, docx, pdf, saveAs, nav } = vi.hoisted(() => ({
     lang: { value: 'en' },
     track: vi.fn(),
     clip: { calls: [] as Array<{ text: string; resolve: () => void; reject: (e: Error) => void }> },
     docx: { calls: [] as Array<{ resolve: (b: Blob) => void; reject: (e: Error) => void }> },
+    pdf: {
+        internal: { pageSize: { getWidth: () => 210, getHeight: () => 297 } },
+        setFontSize: vi.fn(), setFont: vi.fn(), setDrawColor: vi.fn(),
+        splitTextToSize: vi.fn((text: string) => [text]), text: vi.fn(), line: vi.fn(), addPage: vi.fn(),
+        save: vi.fn(),
+    },
     saveAs: vi.fn(),
     nav: { params: new URLSearchParams() },
 }));
 
 vi.mock('@/lib/i18n', () => ({ useLanguage: () => ({ language: lang.value, t: (key: string) => key }) }));
 vi.mock('@/lib/analytics', () => ({ trackEvent: (...args: unknown[]) => track(...args) }));
+vi.mock('jspdf', () => ({ jsPDF: function JsPDF() { return pdf; } }));
 vi.mock('file-saver', () => ({ saveAs: (...args: unknown[]) => saveAs(...args) }));
 vi.mock('docx', () => {
     function Ctor(this: Record<string, unknown>, opts: Record<string, unknown>) { Object.assign(this, opts); }
@@ -89,7 +96,8 @@ const menuOpen = () => screen.queryByText(/Export Result|Xuất Kết Quả/) !=
 const openMenu = () => { if (!menuOpen()) fireEvent.click(screen.getByRole('button', { name: /Export$/ })); };
 const menuEl = () => screen.queryByText(/Export Result|Xuất Kết Quả/)?.closest('.absolute') as HTMLElement | null;
 const copyBtn = () => (menuEl() ? within(menuEl()!).queryByRole('button', { name: /Copy to Clipboard|Copied!|Sao chép|Đã sao chép/ }) : null);
-const wordBtn = () => (menuEl() ? within(menuEl()!).queryByRole('button', { name: /Download Word|Tải Word|Exporting|Đang xuất/ }) as HTMLButtonElement | null : null);
+const pdfBtn = () => (menuEl() ? within(menuEl()!).queryByRole('button', { name: /Download PDF|Tải PDF/ }) as HTMLButtonElement | null : null);
+const wordBtn = () => (menuEl() ? within(menuEl()!).queryByRole('button', { name: /Download Word|Tải Word|Exporting Word|Đang xuất Word/ }) as HTMLButtonElement | null : null);
 const receiptSection = () => within(screen.getByTestId('w119-evidence-receipt')).getByRole('button');
 const nudge = () => screen.getByTestId('nudge-copy-evidence-btn');
 const viewMode = () => (screen.queryByTestId('deliverable-pack-preview') ? 'pack' : 'result');
@@ -110,7 +118,7 @@ const trackedFor = (event: string) => track.mock.calls.filter(c => c[0] === even
 
 beforeEach(() => {
     lang.value = 'en';
-    track.mockReset(); saveAs.mockReset();
+    track.mockReset(); saveAs.mockReset(); pdf.save.mockReset();
     clip.calls.length = 0; docx.calls.length = 0;
     Object.defineProperty(navigator, 'clipboard', {
         value: { writeText: (text: string) => new Promise<void>((resolve, reject) => { clip.calls.push({ text, resolve, reject: reject as (e: Error) => void }); }) },
@@ -380,6 +388,11 @@ describe('ResultViewer: deferred Word export', () => {
         expect(wordBtn()!.textContent).toContain('Exporting');
         expect(menuOpen()).toBe(true);
         expect(saveAs).not.toHaveBeenCalled();
+        expect(screen.queryByRole('alert')).toBeNull();
+        await act(async () => { docx.calls[1].resolve(new Blob(['DOCX_B'])); });
+        await waitFor(() => expect(saveAs).toHaveBeenCalledTimes(1));
+        await waitFor(() => expect(menuOpen()).toBe(false));
+        expect(screen.queryByRole('alert')).toBeNull();
     });
 
     it('A finishing after A to B to A leaves the reopened A menu and busy state alone', async () => {
@@ -395,6 +408,68 @@ describe('ResultViewer: deferred Word export', () => {
         await sleep0();
         expect(menuOpen()).toBe(true);
         expect(wordBtn()!.textContent).toContain('Download Word');
+    });
+
+    it('an older PDF failure cannot replace the newer same-run Word busy state', async () => {
+        const consoleSpy = vi.spyOn(console, 'error').mockImplementation(() => undefined);
+        pdf.save.mockImplementationOnce(() => { throw new Error('old PDF failure'); });
+        render(<ResultViewer {...mk('A')} />);
+        openMenu();
+
+        fireEvent.click(pdfBtn()!);
+        fireEvent.click(wordBtn()!);
+        await waitFor(() => expect(docx.calls).toHaveLength(1));
+        await waitFor(() => expect(consoleSpy).toHaveBeenCalledWith('PDF export failed:', expect.any(Error)));
+
+        expect(wordBtn()!.textContent).toContain('Exporting');
+        expect(wordBtn()!.disabled).toBe(true);
+        expect(menuOpen()).toBe(true);
+        expect(screen.queryByRole('alert')).toBeNull();
+        await act(async () => { docx.calls[0].resolve(new Blob(['DOCX_A'])); });
+        await waitFor(() => expect(saveAs).toHaveBeenCalledTimes(1));
+        await waitFor(() => expect(menuOpen()).toBe(false));
+        expect(screen.queryByRole('alert')).toBeNull();
+    });
+
+    it('an older same-run Word success cannot clear newer PDF failure feedback', async () => {
+        render(<ResultViewer {...mk('A')} />);
+        openMenu();
+        fireEvent.click(wordBtn()!);
+        await waitFor(() => expect(docx.calls).toHaveLength(1));
+
+        pdf.save.mockImplementationOnce(() => { throw new Error('new PDF failure'); });
+        fireEvent.click(pdfBtn()!);
+        expect((await screen.findByRole('alert')).textContent).toMatch(/PDF export failed/);
+        expect(menuOpen()).toBe(false);
+
+        await act(async () => { docx.calls[0].resolve(new Blob(['DOCX_OLD'])); });
+        await waitFor(() => expect(saveAs).toHaveBeenCalledTimes(1));
+        expect(screen.getByRole('alert').textContent).toMatch(/PDF export failed/);
+        expect(screen.getByRole('alert').textContent).not.toMatch(/Word export failed/);
+        openMenu();
+        expect(wordBtn()!.textContent).toContain('Download Word');
+        expect(wordBtn()!.disabled).toBe(false);
+    });
+
+    it('an older same-run Word failure cannot replace newer PDF success', async () => {
+        const consoleSpy = vi.spyOn(console, 'error').mockImplementation(() => undefined);
+        render(<ResultViewer {...mk('A')} />);
+        openMenu();
+        fireEvent.click(wordBtn()!);
+        await waitFor(() => expect(docx.calls).toHaveLength(1));
+
+        fireEvent.click(pdfBtn()!);
+        await waitFor(() => expect(pdf.save).toHaveBeenCalledTimes(1));
+        await waitFor(() => expect(menuOpen()).toBe(false));
+        expect(track.mock.calls.filter(c => c[0] === 'evidence_exported')).toHaveLength(1);
+
+        await act(async () => { docx.calls[0].reject(new Error('old Word failure')); });
+        await waitFor(() => expect(consoleSpy).toHaveBeenCalledWith('Word export failed:', expect.any(Error)));
+        expect(screen.queryByRole('alert')).toBeNull();
+        openMenu();
+        expect(wordBtn()!.textContent).toContain('Download Word');
+        expect(wordBtn()!.disabled).toBe(false);
+        expect(menuOpen()).toBe(true);
     });
 });
 

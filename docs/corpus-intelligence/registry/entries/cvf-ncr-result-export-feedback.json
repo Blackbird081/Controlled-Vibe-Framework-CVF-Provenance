@@ -1,0 +1,31 @@
+{
+  "registryOrder": 218,
+  "id": "cvf-ncr-result-export-feedback",
+  "corpusType": "CVF_EXTENSION",
+  "displayName": "NCR ResultViewer export controls and focused failure recovery test",
+  "scopePaths": [
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultExportControls.tsx",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.export-feedback.test.tsx"
+  ],
+  "fileCount": null,
+  "status": "NOT_STARTED",
+  "scanWave": null,
+  "scanDate": null,
+  "manifestHash": null,
+  "hashAlgorithm": null,
+  "hashInput": null,
+  "manifestPath": null,
+  "packetPath": "docs/reviews/CVF_NCR_RESULT_EXPORT_FEEDBACK_COMPLETION_2026-10-13.md",
+  "completionReviewPath": null,
+  "gcBaselineRef": "docs/baselines/CVF_GC018_NCR_RESULT_EXPORT_FEEDBACK_2026-10-13.md",
+  "verdicts": {
+    "gc047": "NOT_RUN",
+    "gc048": "NOT_RUN",
+    "gc050": "NOT_RUN"
+  },
+  "semanticRegions": [],
+  "priorAbsorption": "Named source/test registration only; semantic processing NOT_STARTED. Finite offline UI acceptance does not establish repository-wide processing.",
+  "findings": [],
+  "negativeSearchTerms": [],
+  "nextScanRecommendation": "Reuse the accepted bounded result export evidence for its stated scope; semantic corpus processing remains NOT_STARTED."
+}

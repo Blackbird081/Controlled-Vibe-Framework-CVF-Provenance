@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "cvf_ncr_result_export_feedback_admitted",
+  "currentMode": "cvf_ncr_result_export_feedback_closed_useful_selection",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_BOUNDED_WORK_ORDER; BATCH_ID=CVF-NCR-RESULT-EXPORT-FEEDBACK-20261013. Execute docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RESULT_EXPORT_FEEDBACK_2026-10-13.md only after committed bound pre-dispatch PASS. One internal worker60min, exact7 source/test/proof/return, zero provider budget; Root reviewer/closer owns closure. PDF/Word feedback only; R1/R2 partial, R3/R4 open, R5/R6 deferred; real-data/send/B2/P11/public/deploy parked. No automatic successor. Latest closed wave LHW24 retained. Dispatch material=4fa597879416e9dacd8388b4ef1b24dab6db8c08; mandatory91/91 PASS; actual-SHA exact6 binding corrected after initial four-file projection.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=SELECT_BOUNDED_OUTCOME; BATCH_ID=CVF-NCR-RESULT-EXPORT-FEEDBACK-20261013. Finite PDF/Word UI feedback/retry CLOSED_PASS_BOUNDED: sourceRED10failed/57passed ->final67/67, type/lint, frozen fast/ledger PASS; Root metadata qualification retained. Select one useful finite existing-owner gap with exact source/effect/acceptance/provider budget before dispatch. R1/R2 partial, R3/R4 open, R5/R6 deferred; real-data/send/B2/P11/public/deploy parked. Separate prior Alibaba9/9 retained; no new provider call. No automatic successor; latest closed LHW24 retained.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_NCR_RESULT_EXPORT_FEEDBACK_2026-10-13.md",
-    "baselineSha256": "3d8441b8e5a5ddad1e9407d42cd9f09e99182d3bf63c9d889193a057ca754832",
+    "baselineSha256": "06286226600bec44318e8b6ed48b13af732bc54d75cb7932e2756fba199de981",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RESULT_EXPORT_FEEDBACK_2026-10-13.md",
-    "workOrderSha256": "dcce9a465b8e67f03604b9b182982d82ff1130c9bdc2e682856c1c7117a83032"
+    "workOrderSha256": "676e2b2c631b19fd4ad3a4d9c2a5f4fb9b3b7629d34957d53d35b10883efafee"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

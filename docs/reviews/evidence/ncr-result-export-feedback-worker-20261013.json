@@ -1,0 +1,358 @@
+{
+  "schemaVersion": "cvf.workOrderAcceptanceEvidence@1.0.0",
+  "executionBaseHead": "a623874447952534b0fddbf21acff843e70caf80",
+  "results": [
+    {
+      "requirementId": "REQ-FAILURE",
+      "actualArtifacts": [
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.tsx",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultExportControls.tsx",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.test.tsx",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.export-feedback.test.tsx",
+        "docs/reviews/evidence/ncr-result-export-feedback-worker-20261013.json"
+      ],
+      "proofRefs": [
+        "PROOF-REQ-FAILURE"
+      ],
+      "status": "BLOCKED"
+    },
+    {
+      "requirementId": "REQ-RETRY",
+      "actualArtifacts": [
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.tsx",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.export-feedback.test.tsx",
+        "docs/reviews/evidence/ncr-result-export-feedback-worker-20261013.json"
+      ],
+      "proofRefs": [
+        "PROOF-REQ-RETRY"
+      ],
+      "status": "BLOCKED"
+    },
+    {
+      "requirementId": "REQ-ISOLATION",
+      "actualArtifacts": [
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.isolation.test.tsx",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.export-feedback.test.tsx",
+        "docs/reviews/evidence/ncr-result-export-feedback-worker-20261013.json"
+      ],
+      "proofRefs": [
+        "PROOF-REQ-ISOLATION"
+      ],
+      "status": "BLOCKED"
+    },
+    {
+      "requirementId": "REQ-MAINTAINABILITY",
+      "actualArtifacts": [
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.tsx",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultExportControls.tsx",
+        "docs/reviews/evidence/ncr-result-export-feedback-worker-20261013.json"
+      ],
+      "proofRefs": [
+        "PROOF-REQ-MAINTAINABILITY"
+      ],
+      "status": "BLOCKED"
+    },
+    {
+      "requirementId": "REQ-RETURN",
+      "actualArtifacts": [
+        "docs/reviews/evidence/ncr-result-export-feedback-worker-20261013.json",
+        "docs/reviews/CVF_NCR_RESULT_EXPORT_FEEDBACK_WORKER_RETURN_2026-10-13.md"
+      ],
+      "proofRefs": [
+        "PROOF-REQ-RETURN"
+      ],
+      "status": "BLOCKED"
+    }
+  ],
+  "rolePhaseDecisionOwner": {
+    "role": "Local INTERNAL_AGENT implementation worker",
+    "phase": "BUILD; return pending reviewer evaluation",
+    "decisionOwner": "Root Local reviewer/closer"
+  },
+  "authorizationAndEffects": {
+    "providerCalls": 0,
+    "externalAgentInvocations": 0,
+    "endpointsAdded": 0,
+    "storageChanges": 0,
+    "sendOrRealDataEffects": 0,
+    "publicWrites": 0,
+    "commitsByWorker": 0
+  },
+  "executionBase": {
+    "head": "a623874447952534b0fddbf21acff843e70caf80",
+    "initialStatus": "clean; no staged files",
+    "inspectionHead": "5c8bd0a5f3aa88edbaf14eab019d25b2ec36af13",
+    "sourcePinVerificationAtWorkerStart": "MATCH: raw source pins and HEAD blobs per admitted packet"
+  },
+  "sourcePins": [
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.tsx",
+      "inspectionRawSha256": "b2d33d48d394cb6973ad85c06d31434c0de6a4c54f14dccd253a29cd3cbf71a1",
+      "verifiedAtStart": "MATCH",
+      "finalRawSha256": "e9dfa5c3bf2e6280e267f0b9b3ffa6d1aedf5b3a43959cbc605ca8c914f322c0",
+      "finalLines": 837
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.test.tsx",
+      "inspectionRawSha256": "d55efdeb542eeef9b4e3e7a4732432895fff7547dcef7bd1ed4c26ed7d996396",
+      "verifiedAtStart": "MATCH",
+      "finalRawSha256": "839689f8871208ba26448332cbf0a7620c5bdebb55f668c4f555efe677f54836",
+      "finalLines": 689
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.isolation.test.tsx",
+      "inspectionRawSha256": "843ca3e36d5b4de06c4ac92d8b241d1b8b3f2097456014c3fe2c8d4e93145aba",
+      "verifiedAtStart": "MATCH",
+      "finalRawSha256": "6ab64e0f9bf9b96ecee556d46d967959805165591e478faf84e46ddca4ed792d",
+      "finalLines": 531
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultExportControls.tsx",
+      "finalRawSha256": "38ea1e80a82a3e2ca9c1db25905e1f89619f805aa377d508cadff9ff6c1e433f",
+      "finalLines": 181
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.export-feedback.test.tsx",
+      "finalRawSha256": "90e5ce0ebcced7332bc99c08a0a66aff847e6bee99c617d501ebe80bf88ba085",
+      "finalLines": 116
+    }
+  ],
+  "preparation": {
+    "boundPreImplementationGate": {
+      "command": "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base a623874447952534b0fddbf21acff843e70caf80 --head HEAD --enforce",
+      "result": "PASS",
+      "checks": "88/88",
+      "elapsedSeconds": 12.26
+    },
+    "scaffold": [
+      {
+        "command": "python governance/compat/run_worker_return_scaffold.py --write docs/reviews/CVF_NCR_RESULT_EXPORT_FEEDBACK_WORKER_RETURN_2026-10-13.md --check-shape --max-lines 300 --max-bytes 24000",
+        "result": "BLOCKED_BEFORE_WRITE",
+        "reason": "full-profile scaffold generated 323 lines, exceeding the 300-line preparation bound"
+      },
+      {
+        "command": "python governance/compat/run_worker_return_scaffold.py --write docs/reviews/CVF_NCR_RESULT_EXPORT_FEEDBACK_WORKER_RETURN_2026-10-13.md --check-shape --max-lines 400 --max-bytes 24000",
+        "result": "PASS",
+        "reason": "Root-authorized preparation ceiling adjustment; final return remains bound to 300 lines and 24000 bytes"
+      }
+    ]
+  },
+  "proofRecords": {
+    "PROOF-REQ-FAILURE": {
+      "sourceRed": {
+        "command": "npx.cmd vitest run src/components/ResultViewer.test.tsx src/components/ResultViewer.isolation.test.tsx src/components/ResultViewer.export-feedback.test.tsx",
+        "result": "EXPECTED_RED",
+        "exitCode": 1,
+        "tests": 67,
+        "passed": 57,
+        "failed": 10,
+        "elapsedSeconds": 15.68,
+        "log": ".cvf/runtime/ncr-result-export-feedback-20261013/red-all-focused.log",
+        "boundedOutput": "3 files failed; 10 failed, 57 passed. Existing catches only logged errors: new failure assertions found no role=alert/direct retry. Forced PDF/Word fixtures retained generic error text only in console."
+      },
+      "finalGreen": {
+        "result": "PASS",
+        "exitCode": 0,
+        "tests": 67,
+        "passed": 67,
+        "failed": 0,
+        "elapsedSeconds": 14.66,
+        "log": ".cvf/runtime/ncr-result-export-feedback-20261013/green-focused-3.log",
+        "boundedOutput": "Test Files 3 passed (3); Tests 67 passed (67); Duration 14.66s."
+      },
+      "behavior": "EN/VI per-format alert, raw exception exclusion, preserved result and receipt, direct retry; failed attempts do not emit success analytics."
+    },
+    "PROOF-REQ-RETRY": {
+      "attempts": [
+        {
+          "run": "green-focused-1",
+          "exitCode": 1,
+          "tests": 67,
+          "passed": 63,
+          "failed": 4,
+          "elapsedSeconds": 20.34,
+          "log": ".cvf/runtime/ncr-result-export-feedback-20261013/green-focused-1.log",
+          "boundedOutput": "Selector ambiguity after retry controls were rendered: generic Export / Exporting names matched the new direct-retry controls. These were test-query failures, not production behavior failures."
+        },
+        {
+          "run": "green-focused-2",
+          "exitCode": 1,
+          "tests": 67,
+          "passed": 66,
+          "failed": 1,
+          "elapsedSeconds": 22.4,
+          "log": ".cvf/runtime/ncr-result-export-feedback-20261013/green-focused-2.log",
+          "boundedOutput": "One remaining isolation selector wordBtn() found both the existing Word menu action and the new Retry Word export button; tightened to the menu container."
+        },
+        {
+          "run": "green-focused-3",
+          "exitCode": 0,
+          "tests": 67,
+          "passed": 67,
+          "failed": 0,
+          "elapsedSeconds": 14.66,
+          "log": ".cvf/runtime/ncr-result-export-feedback-20261013/green-focused-3.log"
+        }
+      ],
+      "finalBehavior": "Same-run PDF retry clears only PDF failure, preserves Word failure, succeeds via existing PDF save path and analytics; failed exports emit no success analytics."
+    },
+    "PROOF-REQ-ISOLATION": {
+      "finalGreen": {
+        "command": "npx.cmd vitest run src/components/ResultViewer.test.tsx src/components/ResultViewer.isolation.test.tsx src/components/ResultViewer.export-feedback.test.tsx",
+        "exitCode": 0,
+        "tests": 67,
+        "passed": 67,
+        "failed": 0,
+        "log": ".cvf/runtime/ncr-result-export-feedback-20261013/green-focused-3.log"
+      },
+      "negativeControls": [
+        "Deferred run A failure after run B mounts leaves B unchanged.",
+        "Older PDF failure cannot replace newer same-run Word busy state.",
+        "Older Word success cannot clear newer PDF failure feedback.",
+        "Older Word failure cannot replace newer PDF success."
+      ]
+    },
+    "PROOF-REQ-MAINTAINABILITY": {
+      "entrypointFinalLines": 837,
+      "inspectionLines": 941,
+      "netShrink": 104,
+      "requirementMaximum": 891,
+      "helper": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultExportControls.tsx",
+      "helperFinalLines": 181,
+      "extraction": "Localized export labels, menu actions, busy controls, and failure/retry presentation."
+    },
+    "PROOF-REQ-RETURN": {
+      "typecheck": {
+        "command": "npm.cmd run check (package script: tsc --noEmit)",
+        "childExitCode": 0,
+        "elapsedSeconds": 13.05,
+        "capturedRerunChildExitCode": 0,
+        "log": ".cvf/runtime/ncr-result-export-feedback-20261013/typecheck-final.log",
+        "exitCapture": ".cvf/runtime/ncr-result-export-feedback-20261013/typecheck-final.exit"
+      },
+      "eslint": {
+        "command": "npx.cmd eslint src/components/ResultViewer.tsx src/components/ResultExportControls.tsx src/components/ResultViewer.test.tsx src/components/ResultViewer.isolation.test.tsx src/components/ResultViewer.export-feedback.test.tsx",
+        "childExitCode": 0,
+        "elapsedSeconds": 20.54,
+        "capturedRerunChildExitCode": 0,
+        "log": ".cvf/runtime/ncr-result-export-feedback-20261013/eslint-final.log",
+        "exitCapture": ".cvf/runtime/ncr-result-export-feedback-20261013/eslint-final.exit"
+      },
+      "changedCorpusCoverage": {
+        "command": "python governance/compat/check_changed_corpus_registry_coverage.py --base a623874447952534b0fddbf21acff843e70caf80 --head HEAD --enforce",
+        "result": "PASS",
+        "outcome": "2 new governed sources/tests checked, 0 violations; Root owns GC-051 registry source item and generated update."
+      },
+      "diffCheck": {
+        "command": "git diff --check",
+        "result": "PASS"
+      },
+      "firstWorkerReturnFastGate": {
+        "command": "python governance/compat/run_worker_return_fast_gate.py --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RESULT_EXPORT_FEEDBACK_2026-10-13.md --max-return-lines 300 --max-return-bytes 24000",
+        "result": "FAIL",
+        "exitCode": 1,
+        "elapsedSeconds": 7.3,
+        "reason": "Generated return was 598 lines and 33784 bytes; the required limits are 300 lines and 24000 bytes. The gate stopped at RETURN_BUDGET_BLOCKED before other validators.",
+        "log": ".cvf/runtime/ncr-result-export-feedback-20261013/fast-gate-provisional.log"
+      },
+      "finalWorkerFastGate": {
+        "command": "python governance/compat/run_worker_return_fast_gate.py --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RESULT_EXPORT_FEEDBACK_2026-10-13.md --max-return-lines 300 --max-return-bytes 24000",
+        "result": "PASS",
+        "exitCode": 0,
+        "elapsedSeconds": 9.58,
+        "log": ".cvf/runtime/ncr-result-export-feedback-20261013/fast-gate-final-frozen.log",
+        "exitCapture": ".cvf/runtime/ncr-result-export-feedback-20261013/fast-gate-final-frozen.exit",
+        "returnLinesAtRun": 299,
+        "returnBytesAtRun": 22872,
+        "reviewerFastChecks": "70/70 PASS",
+        "qualifier": "Original frozen exact7; Local later metadata conversion is separate."
+      },
+      "exactWorkerUnion": [
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.tsx",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultExportControls.tsx",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.test.tsx",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.isolation.test.tsx",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.export-feedback.test.tsx",
+        "docs/reviews/evidence/ncr-result-export-feedback-worker-20261013.json",
+        "docs/reviews/CVF_NCR_RESULT_EXPORT_FEEDBACK_WORKER_RETURN_2026-10-13.md"
+      ],
+      "fastGateAttempts": [
+        {
+          "attempt": "fast-gate-provisional-2",
+          "result": "FAIL",
+          "exitCode": 1,
+          "log": ".cvf/runtime/ncr-result-export-feedback-20261013/fast-gate-draft-2.log",
+          "boundedOutput": "Second provisional full-profile attempt: return read-ahead/literal, SCEC fence, external internal-source, rescan, finding disposition, and epistemic predicates were not yet corrected; subsequent bounded literal fixes are recorded in return."
+        },
+        {
+          "attempt": "fast-gate-ready-draft-3",
+          "result": "FAIL",
+          "exitCode": 1,
+          "elapsedSeconds": 21.13,
+          "log": ".cvf/runtime/ncr-result-export-feedback-20261013/fast-gate-final.log",
+          "boundedOutput": "All 70 reviewer-fast checks except review-cost ready-state telemetry and worker-return required PASS evidence; the complete reviewer-fast hook itself reported two failures."
+        },
+        {
+          "attempt": "fast-gate-blocked-preflight",
+          "result": "PASS",
+          "exitCode": 0,
+          "elapsedSeconds": 14.49,
+          "log": ".cvf/runtime/ncr-result-export-feedback-20261013/fast-gate-blocked-preflight.log",
+          "exitCapture": ".cvf/runtime/ncr-result-export-feedback-20261013/fast-gate-blocked-preflight.exit",
+          "boundedOutput": "COMPLETE: truthful BLOCKED_WITH_REASON preflight; all 70 reviewer-fast checks passed."
+        },
+        {
+          "attempt": "fast-gate-final-ready-state",
+          "result": "PASS",
+          "exitCode": 0,
+          "elapsedSeconds": 9.18,
+          "log": ".cvf/runtime/ncr-result-export-feedback-20261013/fast-gate-final-ready.log",
+          "exitCapture": ".cvf/runtime/ncr-result-export-feedback-20261013/fast-gate-final-ready.exit",
+          "returnLimits": "300 lines / 24000 bytes",
+          "reviewerFastChecks": "70/70 PASS"
+        }
+      ],
+      "priorReadyStateWorkerFastGate": {
+        "command": "python governance/compat/run_worker_return_fast_gate.py --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RESULT_EXPORT_FEEDBACK_2026-10-13.md --max-return-lines 300 --max-return-bytes 24000",
+        "result": "PASS",
+        "exitCode": 0,
+        "elapsedSeconds": 9.18,
+        "log": ".cvf/runtime/ncr-result-export-feedback-20261013/fast-gate-final-ready.log",
+        "exitCapture": ".cvf/runtime/ncr-result-export-feedback-20261013/fast-gate-final-ready.exit",
+        "returnLinesAtRun": 298,
+        "returnBytesAtRun": 22822,
+        "reviewerFastChecks": "70/70 PASS"
+      }
+    }
+  },
+  "localReviewerMetadataCorrection": {
+    "physicalSourceLineCounts": {
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.tsx": 837,
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultExportControls.tsx": 181,
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.test.tsx": 689,
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.isolation.test.tsx": 531,
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.export-feedback.test.tsx": 116
+    },
+    "entrypointInspectionLines": 941,
+    "entrypointFinalLines": 837,
+    "netShrink": 104,
+    "finalFrozenWorkerGate": {
+      "command": "python governance/compat/run_worker_return_fast_gate.py --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RESULT_EXPORT_FEEDBACK_2026-10-13.md --max-return-lines 300 --max-return-bytes 24000",
+      "result": "PASS",
+      "exitCode": 0,
+      "elapsedSeconds": 9.58,
+      "log": ".cvf/runtime/ncr-result-export-feedback-20261013/fast-gate-final-frozen.log",
+      "exitCapture": ".cvf/runtime/ncr-result-export-feedback-20261013/fast-gate-final-frozen.exit",
+      "returnLinesAtRun": 299,
+      "returnBytesAtRun": 22872,
+      "reviewerFastChecks": "70/70 PASS",
+      "qualifier": "Original frozen exact7; Local later metadata conversion is separate."
+    },
+    "originalWorkerProofSha256": "d50c5e2ccf34242f9444fa6e02936cdb8b43c557b1a4f870d5d75d02a5b02116",
+    "BUILDClock": "Worker startup clock not retained; no precise start or exact elapsed claimed.",
+    "boundAdmissionCompletionLogMtimeUtc": "2026-10-13T14:19:38.071024+00:00",
+    "terminalWorkerClockUtc": "2026-10-13T15:13:36+00:00",
+    "maximumReleaseToTerminalSecondsFromLocalLog": 3237.928976,
+    "mtimeClaimBoundary": "Local log timestamp and explicit dispatch-after-clean-PASS ordering, not an external timestamp attestation."
+  }
+}

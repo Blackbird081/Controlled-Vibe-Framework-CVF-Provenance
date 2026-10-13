@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Current NCR Continuation
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `4fa597879416e9dacd8388b4ef1b24dab6db8c08`. Material SHA: `4fa597879416e9dacd8388b4ef1b24dab6db8c08`. Batch ID: CVF-NCR-RESULT-EXPORT-FEEDBACK-20261013. Finite PDF/Word packet4fa597879 mandatory91/91 PASS; Root correction synchronizes exact6 after initial4 projection; final bound release required; dedicated exact6 continuity.
+Current HEAD recorded for this handoff: `a623874447952534b0fddbf21acff843e70caf80`. Pre-closure parent SHA: `a623874447952534b0fddbf21acff843e70caf80`. Batch ID: CVF-NCR-RESULT-EXPORT-FEEDBACK-20261013. Finite PDF/Word UI accepted:67/67,type/lint,frozen fast/ledger PASS; physical-count/clock and preparation qualifications retained; zero provider; actual reviewed material SHA will be bound by dedicated exact6 after commit.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -13,21 +13,21 @@ Current continuation only. Root AGENTS.md and canonical routing owners retain fu
 Closed history is preserved byte-for-byte at `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V63_PRE_NCR_COMPACTION_2026-10-07.md` (SHA256 `54801fdcf14e9abe17592352ec3c69a0b0e855632991af0caacac7b65252ccba`); it is NOT_ACTIVE_AUTHORITY and not default startup reading.
 ## Scope / Target / Owner Boundary
 
-Local INTERNAL_AGENT orchestrator/reviewer owns final technical disposition, dispatch/closure commits and continuity. One internal implementation worker after bound release; exact7 PDF/Word UI/test/proof outputs, no worker commit. Separate Alibaba live diagnostic retains its bounded evidence; no NCR pilot activation.
+Local INTERNAL_AGENT orchestrator/reviewer owns final technical disposition, dispatch/closure commits and continuity. Terminal internal worker exact7 PDF/Word UI/test/proof accepted with Local metadata qualification; no worker commit or active BUILD. Separate Alibaba live diagnostic retains its bounded evidence; no NCR pilot activation.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_result_export_feedback_admitted`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=Finite PDF/Word packet4fa597879 mandatory91/91 PASS; Root correction synchronizes exact6 after initial4 projection; final bound release required; role=Local INTERNAL_AGENT orchestrator/reviewer; phase=private continuity; decision owner=Local; parked checkpoint=real-data writer/custody/business acceptance/public/deploy/P11 and unrelated lanes.
+Startup acknowledged: current mode=`cvf_ncr_result_export_feedback_closed_useful_selection`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=Finite PDF/Word UI accepted:67/67,type/lint,frozen fast/ledger PASS; physical-count/clock and preparation qualifications retained; zero provider; role=Local INTERNAL_AGENT orchestrator/reviewer; phase=private continuity; decision owner=Local; parked checkpoint=real-data writer/custody/business acceptance/public/deploy/P11 and unrelated lanes.
 
 ## Current Mode
 
-`cvf_ncr_result_export_feedback_admitted`. Finite PDF/Word packet4fa597879 mandatory91/91 PASS; Root correction synchronizes exact6 after initial4 projection; final bound release required. One internal worker only after committed bound admission; zero provider budget. Prior Work Transfer browser and Alibaba9/9 evidence retained in their owners; full R1-R4 open.
+`cvf_ncr_result_export_feedback_closed_useful_selection`. Finite PDF/Word UI accepted:67/67,type/lint,frozen fast/ledger PASS; physical-count/clock and preparation qualifications retained; zero provider. Finite PDF/Word feedback contribution accepted; no automatic successor. Prior Work Transfer browser and Alibaba9/9 evidence retained in their owners; full R1-R4 open.
 
 ## Current Authority
 
-Baseline: `docs/baselines/CVF_GC018_NCR_RESULT_EXPORT_FEEDBACK_2026-10-13.md`; SHA256 `3d8441b8e5a5ddad1e9407d42cd9f09e99182d3bf63c9d889193a057ca754832`.
-Work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RESULT_EXPORT_FEEDBACK_2026-10-13.md`; SHA256 `dcce9a465b8e67f03604b9b182982d82ff1130c9bdc2e682856c1c7117a83032`.
-Finite PDF/Word packet4fa597879 mandatory91/91 PASS; Root correction synchronizes exact6 after initial4 projection; final bound release required. Existing browser/live evidence and original failures remain historical in their current reviews; this source pair governs only ResultViewer export feedback.
+Baseline: `docs/baselines/CVF_GC018_NCR_RESULT_EXPORT_FEEDBACK_2026-10-13.md`; SHA256 `06286226600bec44318e8b6ed48b13af732bc54d75cb7932e2756fba199de981`.
+Work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RESULT_EXPORT_FEEDBACK_2026-10-13.md`; SHA256 `676e2b2c631b19fd4ad3a4d9c2a5f4fb9b3b7629d34957d53d35b10883efafee`.
+Finite PDF/Word UI accepted:67/67,type/lint,frozen fast/ledger PASS; physical-count/clock and preparation qualifications retained; zero provider. Existing browser/live evidence and original failures remain historical in their current reviews; this source pair governs only ResultViewer export feedback.
 
 ## Accepted NCR Evidence And Continuation
 
@@ -39,7 +39,7 @@ Finite clipboard result ordering is accepted; actual OS write cancellation, whol
 
 ## Next Allowed Move
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_BOUNDED_WORK_ORDER; BATCH_ID=CVF-NCR-RESULT-EXPORT-FEEDBACK-20261013. Execute docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RESULT_EXPORT_FEEDBACK_2026-10-13.md only after committed bound pre-dispatch PASS. One internal worker60min, exact7 source/test/proof/return, zero provider budget; Root reviewer/closer owns closure. PDF/Word feedback only; R1/R2 partial, R3/R4 open, R5/R6 deferred; real-data/send/B2/P11/public/deploy parked. No automatic successor. Latest closed wave LHW24 retained. Dispatch material=4fa597879416e9dacd8388b4ef1b24dab6db8c08; mandatory91/91 PASS; actual-SHA exact6 binding corrected after initial four-file projection.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=SELECT_BOUNDED_OUTCOME; BATCH_ID=CVF-NCR-RESULT-EXPORT-FEEDBACK-20261013. Finite PDF/Word UI feedback/retry CLOSED_PASS_BOUNDED: sourceRED10failed/57passed ->final67/67, type/lint, frozen fast/ledger PASS; Root metadata qualification retained. Select one useful finite existing-owner gap with exact source/effect/acceptance/provider budget before dispatch. R1/R2 partial, R3/R4 open, R5/R6 deferred; real-data/send/B2/P11/public/deploy parked. Separate prior Alibaba9/9 retained; no new provider call. No automatic successor; latest closed LHW24 retained.
 
 ## Active Boundary
 T3B has a Local-verified active v1 specification. Party B is verified and T3C-C1 tooling accepted at `db78c87df`; T3C-C2 and Party C are verified. T3D-C1 tooling is accepted at `9ed844c2a` without source. T3D-C0-R1 closed at `2fffa1ef7`. T3D-C3 was accepted bounded at `88137e9a2`, but actual-mode prepare attempts failed before Party B/C execution; authorized cleanup removed the failed root and discarded unaccepted worker changes. G1 stopped, G2-G6 parked, and G7 research closed at `660601f0e` with `ADAPT_EXISTING_HANDOFF_ONLY`. Evidence-join sufficiency stays WATCH; no implementation successor exists. Rejected T2 paths remain archived; HRLTP-T2 paused.
@@ -89,8 +89,8 @@ Rollback boundary: exact6; preserve original archive and accepted/blocked histor
 | Command or tool surface | source entry/core update, active front door/handoff, canonical state generator |
 | Target paths | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Allowed scope source | operator NCR continuation; exact6 authority in paired baseline/order |
-| Before status evidence | e2625428e7a65cc84e0fcbc7927439d69e59aae1; clean worktree and staged empty after reviewed material commit |
-| After status evidence | exact6 source/generated continuity; Finite PDF/Word packet4fa597879 mandatory91/91 PASS; Root correction synchronizes exact6 after initial4 projection; final bound release required |
+| Before status evidence | a623874447952534b0fddbf21acff843e70caf80; terminal frozen worker exact7, staged empty; Local original raw custody before metadata conversion |
+| After status evidence | exact22 coherent material; actual-SHA continuity remains a steward action; Finite PDF/Word UI accepted:67/67,type/lint,frozen fast/ledger PASS; physical-count/clock and preparation qualifications retained; zero provider |
 | Diff evidence | source/generated reconciliation; exact6 git diff --name-status; git diff --cached --check |
 | Approval boundary | bounded PDF/Word feedback; real-data/acceptance/public/deploy parked |
 | Claim boundary | finite UI export feedback; zero new provider budget; full NCR pilot open |

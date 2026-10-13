@@ -37,11 +37,11 @@
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_NCR_RESULT_EXPORT_FEEDBACK_2026-10-13.md",
-    "baselineSha256": "3d8441b8e5a5ddad1e9407d42cd9f09e99182d3bf63c9d889193a057ca754832",
+    "baselineSha256": "06286226600bec44318e8b6ed48b13af732bc54d75cb7932e2756fba199de981",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RESULT_EXPORT_FEEDBACK_2026-10-13.md",
-    "workOrderSha256": "dcce9a465b8e67f03604b9b182982d82ff1130c9bdc2e682856c1c7117a83032"
+    "workOrderSha256": "676e2b2c631b19fd4ad3a4d9c2a5f4fb9b3b7629d34957d53d35b10883efafee"
   },
-  "currentAuthoritySyncReason": "Finite PDF/Word packet4fa597879 mandatory91/91 PASS; Root correction synchronizes exact6 after initial4 projection; final bound release required Material 4fa597879416e9dacd8388b4ef1b24dab6db8c08; coherent source/generated authority; actual-SHA dedicated continuity follows material. Whole NCR pilot/effects remain separate.",
+  "currentAuthoritySyncReason": "Finite PDF/Word UI accepted:67/67,type/lint,frozen fast/ledger PASS; physical-count/clock and preparation qualifications retained; zero provider Pre-closure parent a623874447952534b0fddbf21acff843e70caf80; coherent source/generated authority; actual-SHA dedicated continuity follows material. Whole NCR pilot/effects remain separate.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
@@ -110,7 +110,7 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_ncr_result_export_feedback_admitted",
+  "currentMode": "cvf_ncr_result_export_feedback_closed_useful_selection",
   "previousMode": "cvf_ncr_brief_copy_closed_useful_selection",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",

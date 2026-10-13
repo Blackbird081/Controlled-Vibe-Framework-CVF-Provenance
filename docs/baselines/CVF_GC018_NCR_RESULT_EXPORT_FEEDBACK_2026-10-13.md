@@ -2,7 +2,7 @@
 
 Memory class: governed-dispatch-baseline
 docType: baseline
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 Date: 2026-10-13
 Batch ID: CVF-NCR-RESULT-EXPORT-FEEDBACK-20261013
 Inspection base: `5c8bd0a5f3aa88edbaf14eab019d25b2ec36af13`
@@ -11,15 +11,15 @@ providerExecutionAuthority: FORBIDDEN
 
 ## Purpose
 
-Select one finite NCR R1 result-recovery gap: PDF and Word exports currently catch failures in `ResultViewer` and log them, without showing the user an actionable failure. Add accessible English/Vietnamese failure feedback and a same-run retry while preserving the result, run, receipt, and successful export behavior. This is a private offline UI contribution, not full R1/R2 completion or an NCR pilot exit.
+Close the selected R1 ResultViewer PDF/Word error-feedback and retry gap. Dispatch inspection found logging-only failures; current reviewed source now shows safe localized alerts and direct retry. Finite offline PDF/Word feedback and retry; browser download initiation only. R1/R2 partial, R3/R4 open, R5/R6 deferred; real-data writer/custody/business acceptance, send/B2, P11, public and deployment parked.
 
 ## Decision / Proposed Tranche
 
-One internal no-commit, 60-minute implementation tranche follows a materially bound dispatch. Root retains reviewer/closer and all authority/continuity decisions. This document remains a draft hold until binding.
+CLOSED_PASS_BOUNDED; QUALITY_ACCEPTED_BOUNDED. Worker source RED10failed/57passed -> final67/67 PASS, type/scoped lint child exits0, final bound fast/ledger PASS consumed. Root inspected full bounded source/test matrix, no product repair or duplicate suite; procedure PARTIAL_WITH_REASON.
 
 ## Evidence
 
-Source inspection at the stated HEAD confirms the two logging-only catch paths and existing deferred isolation tests; exact symbols and lines appear below. No test or export behavior is claimed by this packet.
+Original dispatch/source-pin facts are immutable in `docs/reviews/archive/CVF_AGENT_WORK_ORDER_NCR_RESULT_EXPORT_FEEDBACK_DISPATCH_2026-10-13.md`. Current source verification and raw hashes are recorded separately below; returned offline UI tests prove only this finite contribution.
 
 ## Scope / Target / Owner Boundary
 
@@ -41,30 +41,31 @@ For each selected export, a failure belongs only to the mounted run and the newe
 
 ## Source Verification Block
 
-| Claimed item | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Disposition |
-|---|---|---|---|---|---|
-| Run-keyed body and export sequence | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.tsx` | 69-92 | `ResultViewerBody`, `exportSeq` | ResultViewer | ACCEPT |
-| PDF failure and menu finalization | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.tsx` | 283-381 | PDF export catch/finally | ResultViewer | ACCEPT |
-| Word failure and menu finalization | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.tsx` | 383-522 | Word export catch/finally | ResultViewer | ACCEPT |
-| Existing error tests assert console only | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.test.tsx` | 413-423; 477-487 | PDF/Word error tests | component tests | ACCEPT |
-| Existing deferred run isolation tests | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.isolation.test.tsx` | 228; 331-397 | deferred Word export suite | component isolation tests | ACCEPT |
-| R1 remains partial | `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` | 19-29; 88-90 | R1 journey and current continuation | NCR roadmap | ACCEPT |
+| Claimed item | Claim type | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Disposition |
+|---|---|---|---|---|---|---|
+| Run identity and token | EXISTS | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.tsx` | 38 | `ResultViewerBody` | ResultViewer | ACCEPT |
+| PDF safe failure and latest-token finalization | EXISTS | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.tsx` | 244 | `handleExportPdf` | ResultViewer | ACCEPT |
+| Word safe failure and latest-token finalization | EXISTS | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.tsx` | 348 | `handleExportDocx` | ResultViewer | ACCEPT |
+| Visible failure controls | EXISTS | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultExportControls.tsx` | ResultExportControls function | `ResultExportControls` | export controls | ACCEPT |
+| Focused failure and retry proof | EXISTS | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.export-feedback.test.tsx` | visible export failure recovery suite | describe | component tests | ACCEPT |
+| Deferred competing export proof | EXISTS | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.isolation.test.tsx` | deferred Word export suite | describe | isolation tests | ACCEPT |
+| NCR R1 partial | EXISTS | `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` | Current Delivery Checkpoint | current outcome | NCR roadmap | ACCEPT |
 
 ## Checker Source Read-Ahead Block
 
-| Field | Value |
+| Field | Evidence |
 |---|---|
-| applicableCheckersRead | `governance/compat/check_governed_artifact_checker_read_ahead.py`; `governance/compat/check_work_order_acceptance_ledger.py`; `governance/compat/check_gate_to_role_closeability.py`; `governance/compat/check_review_cost_control.py` |
-| literalTokensReviewed | Checker Source Read-Ahead Block; acceptance-ledger-json; gateId, mustPassBy, repairOwner, mutationSurface; dispatchKind INITIAL |
-| gateRunPurpose | Draft shape confirmation before Root material binding and bound dispatch; no gate PASS asserted. |
-| claimBoundary | Read-ahead confirms listed predicates only; Root must complete full pre-dispatch read/gate. |
+| applicableCheckersRead | `governance/compat/check_machine_closure_package.py`; `governance/compat/check_review_cost_control.py`; `governance/compat/check_independent_review_probe_admission.py`; `governance/compat/check_agent_operation_trace.py`; `governance/compat/check_core_guard_self_protection.py`; `governance/compat/check_work_order_dispatch_quality_lifecycle.py`; `governance/compat/check_closure_packaging_preflight.py` |
+| literalTokensReviewed | exact8 closure rows; AUTHORIZED_EXACT_MANIFEST; source symbols/current lines; historical pins; RIPA N/A work-order declaration |
+| gateRunPurpose | confirmation/evidence after semantic review; returned fast gate already passed; Root closure checks validate final metadata |
+| claimBoundary | machine shape does not prove provider/governance or whole-job behavior |
 
 ## Epistemic Process Block
 
-- Expected Result / Prediction: visible format-specific failure and retry will let a user recover from a failed local export without losing the result.
-- Evidence Comparison: current catch paths log; existing tests assert console calls and no visible recovery.
-- Contradiction Or Gap Disposition: selected source has no visible failure control; negative races require new focused tests.
-- Claim Update: proposal and source pin only; no implementation result yet.
+Expected Result / Prediction: visible localized failure and own-format retry preserve the mounted run.
+Evidence Comparison: source RED10/67 -> final67/67; actual type/lint/fast/ledger PASS; full Root matrix consumed.
+Contradiction Or Gap Disposition: Root preparation and worker literal failures retained; no product contradiction remains; full NCR exits separate.
+Claim Update: finite UI contribution accepted bounded; Finite offline PDF/Word feedback and retry; browser download initiation only. R1/R2 partial, R3/R4 open, R5/R6 deferred; real-data writer/custody/business acceptance, send/B2, P11, public and deployment parked.
 
 ## ADIF Defect Registry Disclosure
 
@@ -90,24 +91,24 @@ Dispatch impact: preserve scoped checks and truthful evidence.
 
 | Field | Evidence |
 |---|---|
-| Actor | Local INTERNAL_AGENT orchestrator/reviewer dispatch owner |
-| Provider or surface | shared private workspace |
-| Session or invocation | ncr-result-export-feedback-packet-20261013 |
+| Actor | Local INTERNAL_AGENT orchestrator/reviewer/closer |
+| Provider or surface | private shared repository |
+| Session or invocation | ncr-result-export-feedback-local-review-20261013 |
 | Working directory | repository root |
-| Command or tool surface | targeted source/standards reads; scaffold; draft authoring |
-| Target paths | `docs/baselines/CVF_GC018_NCR_RESULT_EXPORT_FEEDBACK_2026-10-13.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RESULT_EXPORT_FEEDBACK_2026-10-13.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Allowed scope source | operator NCR continuation and Root bounded selection |
-| Before status evidence | inspection HEAD `5c8bd0a5f3aa88edbaf14eab019d25b2ec36af13`; clean at intake |
-| After status evidence | exact8 packet/source-generated material admission; final actual-SHA continuity and bound release follow |
-| Diff evidence | `git diff --name-status` at handoff |
-| Approval boundary | offline UI, zero provider budget |
-| Claim boundary | packet draft, no execution proof |
+| Command or tool surface | returned evidence and source matrix; raw custody; registry generation; closure gates and commits |
+| Target paths | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultExportControls.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.export-feedback.test.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.isolation.test.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.test.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.tsx`; `docs/baselines/CVF_GC018_NCR_RESULT_EXPORT_FEEDBACK_2026-10-13.md`; `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json`; `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md`; `docs/corpus-intelligence/registry/entries/cvf-ncr-result-export-feedback.json`; `docs/reviews/CVF_NCR_RESULT_EXPORT_FEEDBACK_COMPLETION_2026-10-13.md`; `docs/reviews/CVF_NCR_RESULT_EXPORT_FEEDBACK_WORKER_RETURN_2026-10-13.md`; `docs/reviews/archive/CVF_AGENT_WORK_ORDER_NCR_RESULT_EXPORT_FEEDBACK_DISPATCH_2026-10-13.md`; `docs/reviews/evidence/ncr-result-export-feedback-local-20261013.json`; `docs/reviews/evidence/ncr-result-export-feedback-worker-20261013.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RESULT_EXPORT_FEEDBACK_2026-10-13.md` |
+| Allowed scope source | operator NCR continuation and reviewer-owned closure authority |
+| Before status evidence | HEAD a623874447952534b0fddbf21acff843e70caf80; terminal exact7 worker paths, staged empty, original raw custody captured |
+| After status evidence | reviewed exact22 coherent material; dedicated actual-SHA exact6 follows material commit |
+| Diff evidence | git diff --cached --check and exact manifest reconciliation required at commit |
+| Approval boundary | bounded PDF/Word feedback; zero provider budget; parked effects retained |
+| Claim boundary | Finite offline PDF/Word feedback and retry; browser download initiation only. R1/R2 partial, R3/R4 open, R5/R6 deferred; real-data writer/custody/business acceptance, send/B2, P11, public and deployment parked. |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-result-export-feedback-packet-20261013 |
-| Expected manifest | `docs/baselines/CVF_GC018_NCR_RESULT_EXPORT_FEEDBACK_2026-10-13.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RESULT_EXPORT_FEEDBACK_2026-10-13.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Actual changed set | `docs/baselines/CVF_GC018_NCR_RESULT_EXPORT_FEEDBACK_2026-10-13.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RESULT_EXPORT_FEEDBACK_2026-10-13.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Manifest delta | MATCH exact8 required before commit |
-| Deletion or rename disposition | N/A with reason: none planned |
+| Invocation ID | ncr-result-export-feedback-local-review-20261013 |
+| Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultExportControls.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.export-feedback.test.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.isolation.test.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.test.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.tsx`; `docs/baselines/CVF_GC018_NCR_RESULT_EXPORT_FEEDBACK_2026-10-13.md`; `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json`; `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md`; `docs/corpus-intelligence/registry/entries/cvf-ncr-result-export-feedback.json`; `docs/reviews/CVF_NCR_RESULT_EXPORT_FEEDBACK_COMPLETION_2026-10-13.md`; `docs/reviews/CVF_NCR_RESULT_EXPORT_FEEDBACK_WORKER_RETURN_2026-10-13.md`; `docs/reviews/archive/CVF_AGENT_WORK_ORDER_NCR_RESULT_EXPORT_FEEDBACK_DISPATCH_2026-10-13.md`; `docs/reviews/evidence/ncr-result-export-feedback-local-20261013.json`; `docs/reviews/evidence/ncr-result-export-feedback-worker-20261013.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RESULT_EXPORT_FEEDBACK_2026-10-13.md` |
+| Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultExportControls.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.export-feedback.test.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.isolation.test.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.test.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.tsx`; `docs/baselines/CVF_GC018_NCR_RESULT_EXPORT_FEEDBACK_2026-10-13.md`; `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json`; `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md`; `docs/corpus-intelligence/registry/entries/cvf-ncr-result-export-feedback.json`; `docs/reviews/CVF_NCR_RESULT_EXPORT_FEEDBACK_COMPLETION_2026-10-13.md`; `docs/reviews/CVF_NCR_RESULT_EXPORT_FEEDBACK_WORKER_RETURN_2026-10-13.md`; `docs/reviews/archive/CVF_AGENT_WORK_ORDER_NCR_RESULT_EXPORT_FEEDBACK_DISPATCH_2026-10-13.md`; `docs/reviews/evidence/ncr-result-export-feedback-local-20261013.json`; `docs/reviews/evidence/ncr-result-export-feedback-worker-20261013.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RESULT_EXPORT_FEEDBACK_2026-10-13.md` |
+| Manifest delta | MATCH required before commit |
+| Deletion or rename disposition | None |
 
 ## Public Export Disposition
 
@@ -130,3 +131,42 @@ Rollback boundary: this packet and future bounded continuity only; preserve acce
 ## Claim Boundary
 
 R1/R2 remain partial, R3/R4 open, R5/R6 deferred. Real-data writer/custody/business acceptance, send/B2, P11, public and deployment stay parked. No live-governance claim or provider budget follows from this packet.
+
+## Local Closure Disposition
+
+CLOSED_PASS_BOUNDED; QUALITY_ACCEPTED_BOUNDED. Worker source RED10failed/57passed -> final67/67 PASS, type/scoped lint child exits0, final bound fast/ledger PASS consumed. Root inspected full bounded source/test matrix, no product repair or duplicate suite; procedure PARTIAL_WITH_REASON.
+
+Finite offline PDF/Word feedback and retry; browser download initiation only. R1/R2 partial, R3/R4 open, R5/R6 deferred; real-data writer/custody/business acceptance, send/B2, P11, public and deployment parked.
+
+Original worker return/proof bytes and all failed local logs are retained in `docs/reviews/evidence/ncr-result-export-feedback-local-20261013.json`; original frozen9.58s fast/ledger validates the pre-closure exact7, not Root-expanded22. Root metadata conversion corrects nonblank source counts to physical837/689/531/181/116, preserves prior9.18s and adds actual frozen9.58s gate, and changes active return status/package; no source/tests change. Worker startup clock was not retained; Local clean release-log14:19:38UTC to terminal15:13:36UTC bounds possible BUILD below60min, no exact start/elapsed claimed. Immutable dispatch archive `docs/reviews/archive/CVF_AGENT_WORK_ORDER_NCR_RESULT_EXPORT_FEEDBACK_DISPATCH_2026-10-13.md`, raw SHA256 `dcce9a465b8e67f03604b9b182982d82ff1130c9bdc2e682856c1c7117a83032`.
+
+| Reviewed source path | Raw SHA256 | Lines |
+|---|---|---|
+| `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.tsx` | `e9dfa5c3bf2e6280e267f0b9b3ffa6d1aedf5b3a43959cbc605ca8c914f322c0` | 837 |
+| `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultExportControls.tsx` | `38ea1e80a82a3e2ca9c1db25905e1f89619f805aa377d508cadff9ff6c1e433f` | 181 |
+| `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.test.tsx` | `839689f8871208ba26448332cbf0a7620c5bdebb55f668c4f555efe677f54836` | 689 |
+| `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.isolation.test.tsx` | `6ab64e0f9bf9b96ecee556d46d967959805165591e478faf84e46ddca4ed792d` | 531 |
+| `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.export-feedback.test.tsx` | `90e5ce0ebcced7332bc99c08a0a66aff847e6bee99c617d501ebe80bf88ba085` | 116 |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RESULT_EXPORT_FEEDBACK_2026-10-13.md` | CLOSED_PASS_BOUNDED; exact dispatch archive retained | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_NCR_RESULT_EXPORT_FEEDBACK_COMPLETION_2026-10-13.md` | five requirements accepted bounded; original failures retained | PASS |
+| Roadmap state | `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` | finite R1 contribution; full exits remain open | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json`; `docs/corpus-intelligence/registry/entries/cvf-ncr-result-export-feedback.json` | helper/test named registration, NOT_STARTED | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | human companion quick lookup updated from new source item | PASS |
+| External evidence digest | `docs/reviews/evidence/ncr-result-export-feedback-local-20261013.json` | sha256:24837db7760ea8c646886ab815405a25d8291ad902aab70f3390252a17e73802; internal Local raw custody and semantic review only | PASS |
+| System loop interlock | parked checkpoints | no runtime loop or successor opened | N/A with reason: reversible component UI only |
+| Session continuity | six current source/generated surfaces | coherent closed pair raw authority; dedicated actual-SHA binding | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Requirement | Actual assertion/evidence | Disposition |
+|---|---|---|
+| REQ-FAILURE | PDF/Word EN/VI accessible safe alert, direct retry, output/receipt retained; failure no success analytics; `docs/reviews/evidence/ncr-result-export-feedback-worker-20261013.json#REQ-FAILURE` | ACCEPTED_BOUNDED |
+| REQ-RETRY | own-format clear with other failure retained; retry reaches PDF download and existing analytics; Word success path unchanged; `docs/reviews/evidence/ncr-result-export-feedback-worker-20261013.json#REQ-RETRY` | ACCEPTED_BOUNDED |
+| REQ-ISOLATION | deferred A-to-B and older-failure/newer-busy, older-success/newer-failure, older-failure/newer-success negatives; `docs/reviews/evidence/ncr-result-export-feedback-worker-20261013.json#REQ-ISOLATION` | ACCEPTED_BOUNDED |
+| REQ-MAINTAINABILITY | ResultViewer837 vs historical941;104 net reduction; cohesive export controls helper; `docs/reviews/evidence/ncr-result-export-feedback-worker-20261013.json#REQ-MAINTAINABILITY` | ACCEPTED_BOUNDED |
+| REQ-RETURN | sourceRED10failed/57pass, GREEN67/67, child type/lint0, final fast/ledger PASS, exact7 and no commit/provider; `docs/reviews/evidence/ncr-result-export-feedback-worker-20261013.json#REQ-RETURN` | ACCEPTED_BOUNDED |
