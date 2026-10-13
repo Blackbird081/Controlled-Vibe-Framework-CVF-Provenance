@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "cvf_ncr_result_export_feedback_closed_useful_selection",
+  "currentMode": "cvf_ncr_home_alibaba_journey_execution",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=SELECT_BOUNDED_OUTCOME; BATCH_ID=CVF-NCR-RESULT-EXPORT-FEEDBACK-20261013. Finite PDF/Word UI feedback/retry CLOSED_PASS_BOUNDED: sourceRED10failed/57passed ->final67/67, type/lint, frozen fast/ledger PASS; Root metadata qualification retained. Select one useful finite existing-owner gap with exact source/effect/acceptance/provider budget before dispatch. R1/R2 partial, R3/R4 open, R5/R6 deferred; real-data/send/B2/P11/public/deploy parked. Separate prior Alibaba9/9 retained; no new provider call. No automatic successor; latest closed LHW24 retained. Reviewed material commit=b12b7f31d28002cd23e2e0509c97a8eb6271f36d; dedicated actual-SHA continuity.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-HOME-ALIBABA-JOURNEY-20261013. WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HOME_ALIBABA_JOURNEY_2026-10-13.md. Sol-medium internal worker exact7, 75-minute BUILD after bound gate; max2 UI submits/max6 Alibaba calls, Root distinct max1/max3, global max9; keyless browser/owned empty stores. R1/R2 partial, R3/R4 open; real-data/accept/send/B2/P11/public/deploy parked; latest closed LHW24 retained. Reviewed material commit=60e5e7197770105d2dc670e5051c340733cda945; dedicated actual-SHA continuity.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_NCR_RESULT_EXPORT_FEEDBACK_2026-10-13.md",
-    "baselineSha256": "06286226600bec44318e8b6ed48b13af732bc54d75cb7932e2756fba199de981",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RESULT_EXPORT_FEEDBACK_2026-10-13.md",
-    "workOrderSha256": "676e2b2c631b19fd4ad3a4d9c2a5f4fb9b3b7629d34957d53d35b10883efafee"
+    "baselinePath": "docs/baselines/CVF_GC018_NCR_HOME_ALIBABA_JOURNEY_2026-10-13.md",
+    "baselineSha256": "dbb1c25666fddd2f64b4194aca9cc26d8f56da7d9bebcfe3ee0574b6e54b8048",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HOME_ALIBABA_JOURNEY_2026-10-13.md",
+    "workOrderSha256": "4d083e4c5b80de148b49a1260e9a491eb83a576a8cc17820c9d810a4f7bd4aee"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

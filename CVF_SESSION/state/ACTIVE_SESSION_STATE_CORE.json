@@ -36,12 +36,12 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_NCR_RESULT_EXPORT_FEEDBACK_2026-10-13.md",
-    "baselineSha256": "06286226600bec44318e8b6ed48b13af732bc54d75cb7932e2756fba199de981",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RESULT_EXPORT_FEEDBACK_2026-10-13.md",
-    "workOrderSha256": "676e2b2c631b19fd4ad3a4d9c2a5f4fb9b3b7629d34957d53d35b10883efafee"
+    "baselinePath": "docs/baselines/CVF_GC018_NCR_HOME_ALIBABA_JOURNEY_2026-10-13.md",
+    "baselineSha256": "dbb1c25666fddd2f64b4194aca9cc26d8f56da7d9bebcfe3ee0574b6e54b8048",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HOME_ALIBABA_JOURNEY_2026-10-13.md",
+    "workOrderSha256": "4d083e4c5b80de148b49a1260e9a491eb83a576a8cc17820c9d810a4f7bd4aee"
   },
-  "currentAuthoritySyncReason": "PDF/Word finite UI materialb12b7f31d mandatory91/91 PASS; frozen worker9.58s fast/ledger and67/67 accepted; original failures/metadata qualifications retained Material b12b7f31d28002cd23e2e0509c97a8eb6271f36d; coherent source/generated authority; actual-SHA dedicated continuity follows material. Whole NCR pilot/effects remain separate.",
+  "currentAuthoritySyncReason": "Visible Home submit repair and bounded synthetic Alibaba root/child/download proof admitted; execution awaits bound gate Material 60e5e7197770105d2dc670e5051c340733cda945; coherent source/generated authority; actual-SHA dedicated continuity follows material. Whole NCR pilot/effects remain separate.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
@@ -110,7 +110,7 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_ncr_result_export_feedback_closed_useful_selection",
+  "currentMode": "cvf_ncr_home_alibaba_journey_execution",
   "previousMode": "cvf_ncr_brief_copy_closed_useful_selection",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
