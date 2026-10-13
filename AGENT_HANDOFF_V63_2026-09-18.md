@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Current NCR Continuation
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `1638a1d3db959b8ec52b4e931682c8eba04b86b1`. Material SHA: `1638a1d3db959b8ec52b4e931682c8eba04b86b1`. Batch ID: CVF-NCR-BRIEF-COPY-20261013. Direct Local clipboard UI maintenance; prior closed work-order authority retained. Procedure qualifications remain in evidence.
+Current HEAD recorded for this handoff: `8189a7ef90da0f4b401405502851aa3b81324536`. Material SHA: `1638a1d3db959b8ec52b4e931682c8eba04b86b1`. Batch ID: CVF-NCR-BRIEF-COPY-20261013. Direct Local clipboard UI maintenance; prior closed work-order authority retained. Procedure qualifications remain in evidence.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -82,24 +82,24 @@ Rollback boundary: exact6; preserve original archive and accepted/blocked histor
 
 | Field | Evidence |
 |---|---|
-| Actor | Local INTERNAL_AGENT continuity steward |
+| Actor | Local INTERNAL_AGENT GC020 handoff-sync steward |
 | Provider or surface | private shared workspace |
-| Session or invocation | ncr-brief-copy-sync-20261013 |
+| Session or invocation | ncr-brief-copy-final-head-sync-20261013 |
 | Working directory | repository root |
-| Command or tool surface | exact6 continuity sources, generated state, staged checks/hooks and committed-range pre-closure |
-| Target paths | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Command or tool surface | dedicated active handoff marker update after roadmap projection correction; exact1 staged checks/hooks |
+| Target paths | `AGENT_HANDOFF_V63_2026-09-18.md` |
 | Allowed scope source | operator CVF continuation; Local owns direct maintenance/continuity |
-| Before status evidence | 1638a1d3db959b8ec52b4e931682c8eba04b86b1; clean worktree |
-| After status evidence | exact6 continuity; finite clipboard contribution accepted with procedure qualifications |
-| Diff evidence | git diff --name-status; git diff --cached --check; exact6 manifest |
+| Before status evidence | 8189a7ef90da0f4b401405502851aa3b81324536; clean worktree |
+| After status evidence | exact1 handoff synchronization; clipboard material/proof and source/generated state retained |
+| Diff evidence | git diff --name-status; git diff --cached --check; exact1 manifest |
 | Approval boundary | parked effects retain prior authority |
 | Claim boundary | offline clipboard feedback; no runtime selector, governance efficacy or whole-job claim |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-brief-copy-sync-20261013 |
-| Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Invocation ID | ncr-brief-copy-final-head-sync-20261013 |
+| Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md` |
+| Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md` |
 | Manifest delta | MATCH required before commit |
-| Deletion or rename disposition | None; update current continuity fields and retain historical evidence owners |
+| Deletion or rename disposition | None; actual HEAD marker and operation trace only |
 
 ## Claim Boundary
 Current facts, exact packet binding and permitted next action only. Historical Home/O6 evidence remains bounded; no whole-roadmap, live/provider, backend cancellation, release/public/deployment or model-winner claim.
