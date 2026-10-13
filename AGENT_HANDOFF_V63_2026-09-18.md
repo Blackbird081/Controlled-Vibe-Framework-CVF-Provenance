@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Current NCR Continuation
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `60d08d8f2a4abdb590f6c67ec96f45498edc3ffc`. Material SHA: `60d08d8f2a4abdb590f6c67ec96f45498edc3ffc`. Batch ID: CVF-NCR-RESULT-ISOLATION-20261012. Exact17 closure/exact6 continuity;no push.
+Current HEAD recorded for this handoff: `b4d44307c22f68340746eccd2089d121430905d3`. Material SHA: `b4d44307c22f68340746eccd2089d121430905d3`. Batch ID: CCMA-SEVEN-FINDING-20261013. Private Core per-output delivery learning committed; project loopback receipt is the next bounded move; no Core public sync.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
