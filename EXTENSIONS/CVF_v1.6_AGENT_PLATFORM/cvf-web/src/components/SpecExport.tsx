@@ -1,7 +1,7 @@
 // Text Encoding Exception: Vietnamese user-facing copy and matching localization fixtures.
 'use client';
 
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Template } from '@/types';
 import { useUserContext } from './UserContext';
 import { WorkflowVisualizer } from './WorkflowVisualizer';
@@ -563,6 +563,9 @@ export function SpecExport({ template, values, onClose, onSendToAgent }: SpecExp
     const liveKey = `${current.revision}:${exportMode}`;
     const live = useRef(liveKey);
     live.current = liveKey;
+    const copyAttempt = useRef(0);
+    // Pending adapter completions lose ownership when this panel unmounts.
+    useEffect(() => () => { copyAttempt.current += 1; }, []);
     const hasIdea = Object.values(sourceValues).some(value => value.trim());
     const missing = evaluateSpecGate(template.fields.filter(field => field.required), sourceValues).missing;
     // This callback opens the agent conversation. It is not a builder/executor gate.
@@ -613,11 +616,15 @@ export function SpecExport({ template, values, onClose, onSendToAgent }: SpecExp
     const copyWorkingBrief = async () => {
         if (!packet) return;
         const expected = liveKey;
+        const attempt = ++copyAttempt.current;
+        const isCurrent = () => live.current === expected && copyAttempt.current === attempt;
+        setCopiedKey(null);
+        setError(null);
         try {
             await navigator.clipboard.writeText(packet);
-            if (live.current === expected) { setCopiedKey(expected); setError(null); }
+            if (isCurrent()) { setCopiedKey(expected); setError(null); }
         } catch {
-            if (live.current === expected) setError({ revision: current.revision, text: 'Chưa sao chép được. Working Brief được giữ; bạn có thể thử lại hoặc tải file.' });
+            if (isCurrent()) setError({ revision: current.revision, text: 'Chưa sao chép được. Working Brief được giữ; bạn có thể thử lại hoặc tải file.' });
         }
     };
 
@@ -651,7 +658,14 @@ export function SpecExport({ template, values, onClose, onSendToAgent }: SpecExp
                 <summary className="cursor-pointer text-sm font-medium text-gray-900 dark:text-gray-100">Hướng dẫn kèm theo cho agent</summary>
                 <div className="my-3 grid grid-cols-3 gap-2" aria-label="Chế độ hướng dẫn">
                     {(['simple', 'governance', 'full'] as const).map(mode => (
-                        <button type="button" key={mode} aria-pressed={exportMode === mode} onClick={() => setExportMode(mode)}
+                        <button type="button" key={mode} aria-pressed={exportMode === mode} onClick={() => {
+                            if (mode === exportMode) return;
+                            // An A -> B -> A mode change must not revive an old copy attempt.
+                            copyAttempt.current += 1;
+                            setCopiedKey(null);
+                            setError(null);
+                            setExportMode(mode);
+                        }}
                             className={`${control} ${exportMode === mode ? 'border-indigo-500 bg-indigo-50 text-indigo-800 dark:bg-indigo-950 dark:text-indigo-200' : 'text-gray-700 dark:text-gray-200'}`}>
                             {mode === 'simple' ? modeLabels.vi.simpleMode : mode === 'governance' ? modeLabels.vi.governanceMode : modeLabels.vi.fullMode}
                         </button>

@@ -65,6 +65,11 @@ parent-only presentation repair. Conditional focused14/14, TypeScript, scoped li
 Voluntary panel close/reopen retains confirmed same-idea packet; hidden edits invalidate, including A-B-A; successful send and form/template unmount reset. Initial panel remains lazy. Primary QUALITY_REJECTED_WITH_CONSOLIDATED_FINDINGS; conditional Sol QUALITY_ACCEPTED_BOUNDED.
 26 task/repair observations, prior24 unchanged; native usage/bill unavailable.
 Whole job, browser/backend and real-provider R3/R4 remain open.
+**Accepted direct Local contribution - Working Brief copy ordering, 2026-10-13:**
+`docs/reviews/evidence/ncr-brief-copy-local-20261013.json` records source RED1/1 -> exact-oracle GREEN1/1, focused46/46, TypeScript/scoped lint PASS.
+Latest copy owns feedback; source revision, mode A-B-A and unmount invalidate pending results; retry keeps packet/confirmation.
+Luna max reviewed read-only; Local owns implementation/decision. Procedure PARTIAL_WITH_REASON: full pre-implementation confirmation occurred after edits; Root fixture/wrapper failures retained.
+Small direct lifecycle route, no work-order fulfillment claim or new implementation-model observation;26 retained. Offline UI only; OS clipboard writes are not cancelled.
 **Next selection:** select the next useful finite coding outcome from existing NCR owners; no automatic successor or additional worker release.
 Whole job/full/browser/backend/provider/R3/R4 remain open.
 
@@ -727,6 +732,7 @@ Historical D001-D110 rows are preserved in `docs/roadmaps/archive/CVF_NCR_PRE_BR
 | ID | Ngày | Quyết định / trạng thái | Lý do / bước tiếp |
 |---|---|---|---|
 | D113 | 2026-10-13 | Accepted bounded brief-panel lifetime repair; primary QUALITY_REJECTED_WITH_CONSOLIDATED_FINDINGS; conditional Sol accepted bounded | Original4 retained; worker final proofs consumed and independent Local1/1;26 task/repair observations/prior24 retained; whole job/R3/R4 remain open |
+| D114 | 2026-10-13 | Direct Local clipboard feedback ordering repair; Luna read-only code review | Source RED1/1 -> GREEN1/1;46/46/type/lint; procedure PARTIAL_WITH_REASON; finite UI contribution only |
 | D112 | 2026-10-13 | Selected bounded brief-panel continuity repair; exact4 worker outputs; conditional repair only on Local quality rejection | Existing child revision owner retained; roadmap raw history archived/shrunk, active handoff preimage archived; no whole-job/R3/R4 exit or new effects |
 | D111 | 2026-10-12 | Current Delivery Checkpoint: finite existing-consumer outcome, bounded proof gaps and quality/time collection; no phase exit | Existing lifecycle/Review Cost owners; three-action selection/repair-if-needed/review route; preserve parked effects; raw historical section archived; exact-path active-window registration; document checks only, rollback this four-path batch if routing/proof text regresses |
 | Q001 | PILOT_CANDIDATE_SELECTED_SCOPE_OPEN; D009/D010/D016-D033/D035/D036; SYNTHETIC_SQLITE_TARGET_PUBLICATION_ACCEPTED_BOUNDED | Ứng viên HTML đã chọn; source repair, receipt/ledger wiring, enforcement, browser UI và GitHub OAuth/admin local đã kiểm bounded. Work Transfer từ phiên GitHub có response trực tiếp `authMode=session`, `ALLOW`/`DRAFT_UNACCEPTED` và request ID khớp ledger. D029 chấp nhận SQLite local candidate, D030 chứng minh synthetic Web→engine→SQLite, D031 ghi các lỗi rehearsal, D032 lập corrective packet, D033 chấp nhận sửa target publication trên dữ liệu synthetic. D035 chọn Profile A không effect làm mặc định; D036 chấp nhận riêng B1 consumer binding bằng mocked UI tests, không thêm effect. Bản sao ledger thật và cutover là hai bước có điều kiện khác nhau. Còn authoritative instance/retry, latency, retention/backup dưới failure, live effect, deployment/cost, full P08, baseline/metric và RPO/RTO | Giữ pilot effect parked. Operator cần xác định ledger/instance nào là nguồn, phân loại dữ liệu và quyền đọc bản sao trước Profile B; sau đó mới chốt writer, backup location/key/retention, RPO/RTO, P08 áp dụng, cost/retry, artifact acceptance và pilot/live. Profile C chưa được phép; chưa cấp work order thi công real ledger. `ALLOW` không là artifact approval hoặc provider-governance proof; cost vẫn `UNKNOWN`; video có scope/approval riêng |
@@ -1045,28 +1051,37 @@ Discovery changes apply to this Core and newly generated downstream instruction
 carriers when this template is used. Existing downstream workspaces and Web
 orientation packets are not refreshed by this private local edit.
 
+## Checker Source Read-Ahead Block
+
+| Field | Evidence |
+|---|---|
+| applicableCheckersRead | `governance/compat/check_governed_artifact_checker_read_ahead.py`; `governance/compat/check_agent_operation_trace.py`; `governance/compat/check_core_guard_self_protection.py`; `governance/compat/check_review_cost_control.py`. Selected constants/shape sections read before this update; bounded excerpts only. |
+| literalTokensReviewed | applicableCheckersRead; literalTokensReviewed; gateRunPurpose; claimBoundary; Agent Operation Trace Block; Expected manifest; Actual changed set; Manifest delta |
+| gateRunPurpose | confirm final artifact shape and source evidence; earlier late code-edit confirmation is not temporal compliance |
+| claimBoundary | direct Local offline UI repair; selected source excerpts and read-only review; parked effects retain prior authority |
+
 ## Agent Operation Trace Block
 
 | Field | Evidence |
 |---|---|
-| Actor | Local INTERNAL_AGENT dispatcher |
+| Actor | Local INTERNAL_AGENT implementation/test/decision owner; Luna read-only advisory reviewer |
 | Provider or surface | private shared workspace |
-| Session or invocation | ncr-brief-reopen-dispatch-20261013 |
+| Session or invocation | ncr-brief-copy-local-20261013 |
 | Working directory | repository root and installed Web package |
-| Command or tool surface | targeted reads, actual scaffold/ADIF, source pins/raw archive, packet/gates/commit |
-| Target paths | `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_BRIEF_REOPEN_2026-10-13.md`; `docs/baselines/CVF_GC018_NCR_BRIEF_REOPEN_2026-10-13.md`; `docs/reviews/evidence/ncr-brief-reopen-dispatch-20261013.json`; `.gitattributes`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `docs/roadmaps/archive/CVF_NCR_PRE_BRIEF_REOPEN_2026-10-13.md`; `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V63_PRE_BRIEF_REOPEN_2026-10-13.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Allowed scope source | operator CVF continuation and primary/conditional worker instructions 2026-10-13 |
-| Before status evidence | 6de61d59ae39885b5e8544677966fae37d047d40;clean/staged empty |
-| After status evidence | exact10 dispatch material then exact6 continuity; primary BUILD pending |
-| Diff evidence | git diff --check and exact staged manifest |
-| Approval boundary | one primary and at most one separately released conditional repair BUILD; no provider/effects |
-| Claim boundary | offline UI presentation lifetime only; no AI governance/full-job/live/public/deploy |
+| Command or tool surface | source RED/GREEN, focused Vitest/type/scoped lint, read-only review, staged checks and gates |
+| Target paths | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/SpecExport.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/SpecExport.clipboard-lifecycle.test.tsx`; `docs/reviews/evidence/ncr-brief-copy-local-20261013.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` |
+| Allowed scope source | operator CVF continuation; existing lifecycle small direct task |
+| Before status evidence | 762f968ca7c916968da9ccc3df3121a968b24775; clean worktree; staged empty |
+| After status evidence | exact4 finite material; separate exact6 continuity after material commit |
+| Diff evidence | git diff --name-status; git diff --cached --check; exact staged manifest |
+| Approval boundary | private local reversible task; parked effects retain prior authority |
+| Claim boundary | offline UI feedback only; no governance efficacy, actual browser/OS cancellation or whole-job claim |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-brief-reopen-dispatch-20261013 |
-| Expected manifest | `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_BRIEF_REOPEN_2026-10-13.md`; `docs/baselines/CVF_GC018_NCR_BRIEF_REOPEN_2026-10-13.md`; `docs/reviews/evidence/ncr-brief-reopen-dispatch-20261013.json`; `.gitattributes`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `docs/roadmaps/archive/CVF_NCR_PRE_BRIEF_REOPEN_2026-10-13.md`; `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V63_PRE_BRIEF_REOPEN_2026-10-13.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Actual changed set | `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_BRIEF_REOPEN_2026-10-13.md`; `docs/baselines/CVF_GC018_NCR_BRIEF_REOPEN_2026-10-13.md`; `docs/reviews/evidence/ncr-brief-reopen-dispatch-20261013.json`; `.gitattributes`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `docs/roadmaps/archive/CVF_NCR_PRE_BRIEF_REOPEN_2026-10-13.md`; `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V63_PRE_BRIEF_REOPEN_2026-10-13.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Invocation ID | ncr-brief-copy-local-20261013 |
+| Expected manifest | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/SpecExport.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/SpecExport.clipboard-lifecycle.test.tsx`; `docs/reviews/evidence/ncr-brief-copy-local-20261013.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` |
+| Actual changed set | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/SpecExport.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/SpecExport.clipboard-lifecycle.test.tsx`; `docs/reviews/evidence/ncr-brief-copy-local-20261013.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` |
 | Manifest delta | MATCH required before commit |
-| Deletion or rename disposition | N/A with reason: raw archive copies and historical owner extraction; no path deletion/rename |
+| Deletion or rename disposition | None; temporary exact-oracle test removed after byte comparison |
 
 ## Public Export Disposition
 
