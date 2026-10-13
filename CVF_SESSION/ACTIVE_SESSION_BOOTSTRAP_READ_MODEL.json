@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "cvf_ncr_work_transfer_browser_dispatch_ready",
+  "currentMode": "cvf_ncr_work_transfer_browser_repair_preparation",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_WORK_ORDER; BATCH_ID=CVF-NCR-WORK-TRANSFER-BROWSER-20261013. Execute docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_WORK_TRANSFER_BROWSER_2026-10-13.md only after final bound pre-dispatch PASS. One internal no-commit worker; exact3 synthetic browser draft/route-byte proof, no product or provider edits. Local review/closure/continuity owns disposition. Separate current Alibaba canonical release diagnostic PASS; no full NCR R3/R4 exit. Real-data/acceptance/public/deploy/P11 and unrelated lanes parked; no automatic successor. Latest closed wave LHW24 retained.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=AUTHOR_RETURN_REPAIR; BATCH_ID=CVF-NCR-WORK-TRANSFER-BROWSER-20261013. Primary browser worker terminal BLOCKED and quality rejected; do not redispatch it. Author one conditional REWORK generation1 packet from frozen primary custody and Local finding digest, using user-authorized Sol medium fallback. No conditional BUILD before committed pair, exact6 continuity and bound pre-dispatch PASS. Separate Alibaba9/9 diagnostic remains bounded; whole R1-R4 and real-data/acceptance/public/deploy/P11 remain open or parked. No automatic successor. Latest closed wave LHW24 retained.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

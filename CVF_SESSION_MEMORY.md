@@ -31,21 +31,23 @@ artifact.
 | Prior handoff (archive-qualified) | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V62_2026-09-17.md` |
 | Latest front-door archive | `CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_COMPACTION_ARCHIVE_2026-08-11.md` |
 | Current authority evidence | `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` `currentAuthority` |
-| Parent maintenance | Work Transfer browser dispatch committed; full job open |
+| Parent maintenance | Primary quality rejected and exact8 custody/GC051 coverage committed; author one controlled same-scope conditional packet; whole job open |
 | Freeze posture | `governance_kernel_freeze_recommended` |
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_work_transfer_browser_dispatch_ready`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=bound browser worker release; role=Local INTERNAL_AGENT orchestrator/reviewer; phase=dispatch continuity; decision owner=Local; parked checkpoint=real-data writer/custody/business acceptance/public/deploy/P11 and unrelated lanes.
+
+Startup acknowledged: current mode=`cvf_ncr_work_transfer_browser_repair_preparation`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=Primary quality rejected and exact8 custody/GC051 coverage committed; author one controlled same-scope conditional packet; role=Local INTERNAL_AGENT orchestrator/reviewer; phase=private continuity; decision owner=Local; parked checkpoint=real-data writer/custody/business acceptance/public/deploy/P11 and unrelated lanes.
 
 ## Current Mode
 
-Current mode marker: `cvf_ncr_work_transfer_browser_dispatch_ready`
-Current mode: `cvf_ncr_work_transfer_browser_dispatch_ready`; previous mode marker: `cvf_ncr_brief_copy_closed_useful_selection`
+
+Current mode marker: `cvf_ncr_work_transfer_browser_repair_preparation`
+Current mode: `cvf_ncr_work_transfer_browser_repair_preparation`; previous mode marker: `cvf_ncr_work_transfer_browser_dispatch_ready`
 
 ## Next Allowed Move
 
-Mode: `cvf_ncr_work_transfer_browser_dispatch_ready`
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_WORK_ORDER; BATCH_ID=CVF-NCR-WORK-TRANSFER-BROWSER-20261013. Execute docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_WORK_TRANSFER_BROWSER_2026-10-13.md only after final bound pre-dispatch PASS. One internal no-commit worker; exact3 synthetic browser draft/route-byte proof, no product or provider edits. Local review/closure/continuity owns disposition. Separate current Alibaba canonical release diagnostic PASS; no full NCR R3/R4 exit. Real-data/acceptance/public/deploy/P11 and unrelated lanes parked; no automatic successor. Latest closed wave LHW24 retained.
+Mode: `cvf_ncr_work_transfer_browser_repair_preparation`
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=AUTHOR_RETURN_REPAIR; BATCH_ID=CVF-NCR-WORK-TRANSFER-BROWSER-20261013. Primary browser worker terminal BLOCKED and quality rejected; do not redispatch it. Author one conditional REWORK generation1 packet from frozen primary custody and Local finding digest, using user-authorized Sol medium fallback. No conditional BUILD before committed pair, exact6 continuity and bound pre-dispatch PASS. Separate Alibaba9/9 diagnostic remains bounded; whole R1-R4 and real-data/acceptance/public/deploy/P11 remain open or parked. No automatic successor. Latest closed wave LHW24 retained.
 Historical G1-G7 terminal baseline: mode `acel_g1_g7_research_terminally_closed`. G1-G6 terminal review: `docs/reviews/CVF_ACEL_G1_G6_TERMINAL_STOP_CLOSURE_2026-09-24.md`; G7 research closure: `docs/reviews/CVF_ACEL_G7_CROSS_RUN_CAPABILITY_EVOLUTION_RESEARCH_CLOSURE_2026-09-24.md`. The packet-only post-G7 reconciliation review at `docs/reviews/CVF_ACEL_POST_G7_FULL_CORPUS_ABSORPTION_CLOSURE_2026-09-24.md` is superseded for repository absorption by the 2026-09-25 pinned-source audit. G1 is stopped, G2-G6 remain parked, G7 research is closed, and no automatic G1-G7 successor exists.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
