@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "cvf_ncr_offline_journey_worker_execution",
+  "currentMode": "cvf_ncr_offline_journey_closed_useful_selection",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_BOUNDED_OFFLINE_UI_JOURNEY; BATCH_ID=CVF-NCR-OFFLINE-JOURNEY-20261013. Material 3d945c446583bf51b405a4596531f02fb880fef9;work order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_OFFLINE_JOURNEY_2026-10-13.md. One operator-authorized Luna max INTERNAL_AGENT BUILD, exact3 new test/evidence/return paths, production read-only; bound pre-implementation required. Offline real Home/form/processing/result/store parent-child display/payload composition only; plain synthetic transport is not AI governance proof.23 prior observations retained. Whole job/browser/backend/R3/R4 and Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11/Customer Care parked;LHW24.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=SELECT_USEFUL_CODING_OUTCOME; BATCH_ID=CVF-NCR-OFFLINE-JOURNEY-20261013. Material 9a9f00459bd47d6cb53407d116cc5a44c7b99c07;work order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_OFFLINE_JOURNEY_2026-10-13.md. Offline UI parent-child journey accepted bounded;completion docs/reviews/CVF_NCR_OFFLINE_JOURNEY_COMPLETION_2026-10-13.md.24 task observations, prior23 retained;production unchanged;no automatic successor. Whole job/browser/backend/R3/R4 and Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11/Customer Care parked;LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

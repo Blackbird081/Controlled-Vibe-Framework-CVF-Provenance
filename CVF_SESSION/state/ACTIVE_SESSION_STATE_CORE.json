@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_OFFLINE_JOURNEY_2026-10-13.md",
     "workOrderSha256": "936132f8b412e864219b309bd342a9077456fee8828b55a4d74f8ae6040482b1"
   },
-  "currentAuthoritySyncReason": "Local bounded offline UI journey closure raw packet hash projection; dedicated actual-SHA continuity follows material commit.",
+  "currentAuthoritySyncReason": "Offline journey closed material 9a9f00459bd47d6cb53407d116cc5a44c7b99c07; dedicated exact6 actual-SHA continuity; synthetic UI only.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
@@ -110,7 +110,7 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_ncr_offline_journey_worker_execution",
+  "currentMode": "cvf_ncr_offline_journey_closed_useful_selection",
   "previousMode": "cvf_ncr_result_isolation_worker_execution",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
