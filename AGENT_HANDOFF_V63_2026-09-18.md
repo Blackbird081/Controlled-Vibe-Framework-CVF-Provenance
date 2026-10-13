@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Current NCR Continuation
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `2acd458d4eec3ba2768568e7a74c2483a5ec443f`. Material SHA: `2acd458d4`. Batch ID: CVF-NCR-BRIEF-REOPEN-RETURN-REPAIR-20261013. Final exact2 conditional Sol evidence/return worker; original primary quality rejected. No provider/full-job/public/deploy claim.
+Current HEAD recorded for this handoff: `8e504119706e45d7a098e0bca9fe05fa3f60ccc7`. Material SHA: `8e504119706e45d7a098e0bca9fe05fa3f60ccc7`. Batch ID: CVF-NCR-BRIEF-REOPEN-RETURN-REPAIR-20261013. Bounded panel and conditional proof materially closed; primary quality rejection retained; procedure partial. Actual-SHA continuity follows bound pre-closure. No provider/full-job/public/deploy claim.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
