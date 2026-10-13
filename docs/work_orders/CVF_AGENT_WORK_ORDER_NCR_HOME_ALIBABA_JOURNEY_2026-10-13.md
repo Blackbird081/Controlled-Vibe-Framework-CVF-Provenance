@@ -9,11 +9,11 @@ Inspection base: `84bfd4902e9ace48e069698ec7dfd02a296ca402`
 Commit mode: WORKER_MUST_NOT_COMMIT
 providerExecutionAuthority: ORCHESTRATOR_GRANT_REQUIRED
 providerExecutionGrantOwner: ORCHESTRATOR
-providerExecutionGrantSubject: /root/ncr_export_packet Local INTERNAL_AGENT Sol-medium worker
-providerExecutionGrantDelegationId: NCR-HOME-ALIBABA-JOURNEY-WORKER-20261013
-providerExecutionGrantMaxCalls: 6
-providerExecutionGrantExpiresAt: 2026-10-13T17:40:17Z
-providerExecutionGrantBoundary: only after committed bound release; four cumulative synthetic UI submits including two failed roots; fresh preload hard cap four; cumulative six; earlier BUILD ceiling and expiry wins
+providerExecutionGrantSubject: /root/ncr_export_packet Local INTERNAL_AGENT Sol-medium continuation worker
+providerExecutionGrantDelegationId: NCR-HOME-ALIBABA-JOURNEY-CONTINUATION-20261013
+providerExecutionGrantMaxCalls: 2
+providerExecutionGrantExpiresAt: 2026-10-13T18:20:00Z
+providerExecutionGrantBoundary: separate continuation after committed bound release; original BUILD stopped at 17:40:17Z with four calls/posts charged; max two new root+child calls/posts, cumulative six/six; 30 minutes from actual release or 18:20:00Z, whichever first
 Worker return path: `docs/reviews/CVF_NCR_HOME_ALIBABA_JOURNEY_WORKER_RETURN_2026-10-13.md`
 
 ## Dispatch Prompt Envelope
@@ -22,10 +22,12 @@ Role: Local INTERNAL_AGENT implementation worker; Root is dispatcher/reviewer/cl
 Canonical packet: `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HOME_ALIBABA_JOURNEY_2026-10-13.md`
 Commit mode: WORKER_MUST_NOT_COMMIT
 executionBaseHead: WORKER_MUST_CAPTURE_AT_START using full HEAD before edits.
-Current-time notes: operator NCR continuation and Alibaba authority are bounded here to four cumulative synthetic UI submissions (two failed roots plus replacement root/child), at most six worker provider calls, 75-minute BUILD, and exact seven tracked outputs. Root's separate one-submission probe can make at most three calls; combined ceiling nine.
+Current-time notes: separate continuation after original BUILD STOPPED at 17:40:17UTC with prior4 UI/calls charged; one new root+child max2 UI/calls, cumulative6/6; Root1UI/3calls/global9. New delegation NCR-HOME-ALIBABA-JOURNEY-CONTINUATION-20261013; max30min from actual release or expiry2026-10-13T18:20:00Z first.
 Do-not-misread notes: the committed packet still requires a later exact-six continuity commit and final bound release. Root must bind/commit packet plus exact-six continuity and pass full bound pre-dispatch before worker invocation. No raw key may enter the browser. No product change outside the named form action; chosen HTML business acceptance stays parked.
 Required first actions: progressive startup, bound pre-implementation PASS, focused source pins and live diagnostic owner, return scaffold and processed-server profile preflight before any provider call.
 Return contract: COMPLETE_PENDING_REVIEW only with exact seven artifacts, unit RED-to-GREEN, strict live assertion evidence and final fast/ledger PASS; otherwise BLOCKED_WITH_REASON. No staging, commit, additional server run or blind retry.
+
+Continuation qualification: prior root/child PASS; corrected VI Markdown selector includes xuong. No history receipt injection or weaker assertions. Exact original seven; no automatic rerun.
 
 ## Root Diagnostic Amendment 2 - Concise Fixture Admission
 
@@ -36,6 +38,16 @@ Source diagnosis: existing resolveExecutionMaxTokens(strategy_analysis) returns2
 Current cumulative worker UI ceiling four: two failed roots, then at most one new root and one child. Cumulative provider ceiling six remains; prior actual calls two, fresh hardcap four, cumulative = two + fresh actual fetch starts. Root stays one UI/maxthree calls; global ceiling nine. Original clock, all failures, unit29/29 and original source23-pin verification remain. Only one fresh replacement root-child run after new committed bound release. Existing worker seven paths restored from frozen custody; original vs resumed phase heads recorded separately. Root GC051 registration is already committed NOT_STARTED before worker-fast.
 
 Profile keeps direct parse of FILE DASHSCOPE_API_KEY into sole server DASHSCOPE; all other eligible aliases including GOOGLE_AI_API_KEY and Alibaba/Redis aliases blank; owned empty stores/keyless browser/fresh owned port/web-local ignored dist. Spec/preload must assert live receipt evidenceMode, actual provider/model, distinct child output, previous-output/parent linkage, downloaded exact child output/receipt, and quiet Retry no-extra-call; fresh/cumulative counters reconcile. Root distinct fixture may likewise request a concise <=180-word output before its first probe; oracle actual digest and original preimage both retained. This proves only bounded test fetch/receipt evidence, no OS isolation or whole NCR exit.
+
+## Root Continuation Amendment 3 - VI Export Selector Recovery
+
+The original worker BUILD ran 2026-10-13T16:25:17Z to 2026-10-13T17:40:17Z and is STOPPED. Four cumulative worker UI posts and four Alibaba fetch starts are charged; failures, successful root/child response evidence, and frozen exact-seven custody remain historical. This is a separate, bounded continuation phase, not a clock or counter reset.
+
+The latest root and child reached real Alibaba success and distinct receipts. The VI export selector omitted `xuong`, so the browser did not click the Markdown download action; opening Export succeeded. A history clearing step removed the receipt; a zero-call edit cannot prove receipt-in-Markdown. The only permitted test correction is the VI selector oracle. No product source, provider/model/token limit, fixture bound, request profile, receipt/store assertion, or export byte assertion may be weakened.
+
+After committed exact-nine dispatch/current-authority material, dedicated actual-SHA exact-six continuity, and full bound release, delegation `NCR-HOME-ALIBABA-JOURNEY-CONTINUATION-20261013` permits one fresh root+child attempt: at most two new UI posts and two new Alibaba fetch starts. Cumulative worker ceiling six UI/six calls; Root separate one UI/max three calls; global nine. Zero Playwright retries and no automatic rerun. Separate continuation BUILD starts at actual release, lasts at most 30 minutes and expires no later than 2026-10-13T18:20:00Z; earlier limit wins. Original stopped interval and all four prior calls remain charged.
+
+Profile remains direct FILE DASHSCOPE as sole server alias, empty other eligible aliases, owned empty stores, keyless browser and test-only fetch boundary. Exact same seven worker paths, concise <=180-word root/child, full existing source/receipt/child/download/retry assertions and no staging or commit. Root's independent probe remains unused and separately limited. R1/R2 partial, R3/R4 open; real-data/business/send/P11/public/deploy parked.
 
 ## Purpose
 
@@ -53,7 +65,7 @@ Root Local dispatcher binds/releases and closes; an internal worker builds the n
 
 Add one explicit localized EN/VI `type="submit"` Generate result action to `DynamicForm.tsx` via existing `handleSubmit(onFormSubmit)`; preserve Export Spec and Create Agent Spec as non-submitting relay actions. Update its existing unit test and Home journey unit to click this action. No new data fields, API, chooser or permission. Then create a strict live Playwright test and test-only preload under the Web package. Reuse the existing Home, ProcessingScreen, execute route and ResultViewer unchanged. Use synthetic strategy-analysis text, fresh owned localhost Next/Chromium, a unique port/dist, matching `AUTH_URL` and browser base URL, explicit empty `NEXTAUTH_URL`, file adapter, isolated absolute event/snapshot paths, and a clean browser context. Set `KNOWLEDGE_STORE_PATH` to a precreated owned JSON `[]` file and `APPROVAL_STORE_PATH`, `CVF_DURABLE_MEMORY_STORE_PATH`, `CVF_SOT3_ACTIVATION_EVIDENCE_PATH` to owned disposable paths; require blank Redis/rate-limit external-store aliases. Missing/corrupt knowledge file seeds defaults and is a preflight failure. Preload guards the actual server fetch surface: log safe path/host/attempt counts, permit only the expected Alibaba endpoint for provider calls, deny unexpected provider or governance-evaluate remote hops, and record processed-server credential *names/states* without values. This is test-only fetch-boundary evidence, not machine-wide network isolation. Test keyless `cvf_settings` uses `defaultProvider=alibaba`, `selectedModel=qwen-flash`, `apiKey=''`; the sole credential alias remains server-side. Existing `seedStorageWithAlibaba` is prohibited for this proof because it injects a raw key into browser localStorage.
 
-Four cumulative worker `/api/execute` UI submits maximum: two failed roots and the replacement root/refinement child. Route automatic output-validation retry allows at most three Alibaba fetches per submit, so six worker calls are the maximum. Zero Playwright retries; zero automatic rerun of a failed/partial/ambiguous live result. Check any contradiction under the canonical live-run diagnostic standard before Root decides whether a further run fits remaining authority. The bounded browser test may exercise draft return/reload after completion only if it causes no fifth cumulative submit. Do not press Accept or Send to Agent, call the HTML export route, or alter product code beyond the named form action.
+Six cumulative worker `/api/execute` UI submits maximum: four prior UI posts (two failed roots, then one successful root and child), then one continuation root and one child. Route automatic output-validation retry allows at most three Alibaba fetches per submit, so six worker calls are the maximum. Zero Playwright retries; zero automatic rerun of a failed/partial/ambiguous live result. Check any contradiction under the canonical live-run diagnostic standard before Root decides whether a further run fits remaining authority. The bounded browser test may exercise draft return/reload after completion only if it causes no seventh cumulative submit. Do not press Accept or Send to Agent, call the HTML export route, or alter product code beyond the named form action.
 
 ## Design Control Gate
 
@@ -86,11 +98,11 @@ No tracked product source change outside `DynamicForm.tsx`; no dependency or tra
 | REQ-LIVE-ROOT | Actual UI root submit returns HTTP 200, `success=true`, nonempty Alibaba `qwen-flash` output and governance receipt; root result and store reflect exact run/receipt. |
 | REQ-CHILD | Actual UI refinement submit carries `_previousOutput` prefix of root output and creates linked child with distinct output/receipt, preserving root record; second real response also HTTP 200 success. |
 | REQ-EXPORT | Browser child Markdown download bytes contain exact clean child output and receipt ID; return-to-edit/reload negative control produces no extra execute/provider call or stale result attribution. |
-| REQ-BUDGET-RETURN | At most four cumulative worker execute POSTs, six actual Alibaba calls including invisible validation retries, zero Playwright retry/rerun, exact seven artifacts, secret-safe proof, final fast/ledger and no commit. |
+| REQ-BUDGET-RETURN | At most six cumulative worker execute POSTs, six actual Alibaba calls including invisible validation retries, zero Playwright retry/rerun, exact seven artifacts, secret-safe proof, final fast/ledger and no commit. |
 
 ## Required First Reads
 
-Mandatory bounded reads are included in the 75-minute BUILD; reserve at most 20 minutes for these reads: root `AGENTS.md`, progressive bootstrap/front door/handoff (full registry only on contradiction), guard orientation/literal gotchas, paired baseline/order and dispatch pin JSON, `DESIGN.md` accessibility; current Home/ProcessingScreen/execute/ResultViewer/Settings/continuity source spans below; existing live Playwright config and Work Transfer isolation test; test helper security caveat; selected package scripts; return/acceptance/operation-trace/closeability/RIPA/checker sources and live diagnostic. Optional only on contradiction: old Alibaba diagnostic proof and older live tests beyond named spans. Stop with truthful blocked evidence if the required reads, profile and proof cannot fit the ceiling.
+Mandatory bounded reads are included in the separate maximum 30-minute continuation BUILD after actual committed release; reserve at most 20 minutes for these reads: root `AGENTS.md`, progressive bootstrap/front door/handoff (full registry only on contradiction), guard orientation/literal gotchas, paired baseline/order and dispatch pin JSON, `DESIGN.md` accessibility; current Home/ProcessingScreen/execute/ResultViewer/Settings/continuity source spans below; existing live Playwright config and Work Transfer isolation test; test helper security caveat; selected package scripts; return/acceptance/operation-trace/closeability/RIPA/checker sources and live diagnostic. Optional only on contradiction: old Alibaba diagnostic proof and older live tests beyond named spans. Stop with truthful blocked evidence if the required reads, profile and proof cannot fit the ceiling.
 
 | Mandatory source/read span | Why mandatory | Derived condition and observable proof |
 |---|---|---|
@@ -99,7 +111,7 @@ Mandatory bounded reads are included in the 75-minute BUILD; reserve at most 20 
 | Home `page.tsx` 385-510, 680-725; `execution-continuity.ts` 19-43, 112-134 | run/child IDs, `_previousOutput`, receipt persistence | parent/child browser store oracle, REQ-LIVE-ROOT/CHILD |
 | `ProcessingScreen.tsx` 185-315, 505-516; `Settings.tsx` 84-155 | provider/model request, completion and keyless settings | two UI submits and no browser key, REQ-PROFILE/LIVE-ROOT/CHILD |
 | execute `route.ts` 49-130, 220-224, 559-647, 735-845; AI `providers.ts` 265-408; `rate-limit.ts` 90-101, 281-288 | auth, server key, routing and 1+2 retry multiplier | actual request/attempt cap and destination, REQ-PROFILE/BUDGET-RETURN |
-| `ResultViewer.tsx` 156-205, 529-548, 741-780; `ResultExportControls.tsx` 115-160 | full Markdown content, receipt and follow-up controls | byte oracle, no fifth cumulative submit, REQ-EXPORT |
+| `ResultViewer.tsx` 156-205, 529-548, 741-780; `ResultExportControls.tsx` 115-160 | full Markdown content, receipt and follow-up controls | byte oracle, no seventh cumulative submit, REQ-EXPORT |
 | `knowledge-store.ts` 133-158, 195; `knowledge-retrieval.ts` 20-33; approval `store.ts` 129; durable-memory route 20; SOT3 readout 91 | existing ambient-file defaults and empty-knowledge behavior | owned file profile; zero injected chunks, REQ-PROFILE |
 | `playwright.config.ts` 1-42; `tests/e2e/utils.ts` 85-160; Work Transfer browser test 125-190; Web `package.json` | env load, login, isolation and exact CLI | processed profile and strict run, REQ-PROFILE/RETURN |
 | `run_worker_return_fast_gate.py`, acceptance ledger, RIPA, closeability, trace and changed-corpus registry checkers; canonical live diagnostic | exact return shape, new-test coverage, failed-live handling | REQ-BUDGET-RETURN |
@@ -335,7 +347,7 @@ activeLaneOwner: Worker only after committed Root release
 laneOwnedPaths: exact seven Required Artifact Manifest paths
 dispatcherMutationBoundary: NO_MUTATION_WHILE_LANE_ACTIVE
 laneReleaseEvidence: terminal worker fast/ledger and original exact-seven custody before Root closure edits
-dispatchBaseHead: `d7e4a5f6e5805ac5a31909047cbb432cf5d290a0`
+dispatchBaseHead: `1253047add170085400ffe97c549e51e3e761dda`
 
 | Field | Value |
 |---|---|
@@ -419,8 +431,8 @@ Claim Update: bounded provider/live dispatch; R3/R4 and selected HTML job remain
 | Command or tool surface | progressive startup, source inspection/scaffold, ADIF resolver and author fast gate |
 | Target paths | `docs/baselines/CVF_GC018_NCR_HOME_ALIBABA_JOURNEY_2026-10-13.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HOME_ALIBABA_JOURNEY_2026-10-13.md`; `docs/reviews/evidence/ncr-home-alibaba-journey-dispatch-20261013.json`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Allowed scope source | Root selected finite NCR continuation |
-| Before status evidence | d7e4a5f6e5805ac5a31909047cbb432cf5d290a0; terminal second blocked exact7 frozen/stashed; clean worktree and staged empty before Root exact9 amendment |
-| After status evidence | exact9 coherent concise-fixture amendment; dedicated actual-SHA exact6 follows; original failures retained |
+| Before status evidence | 1253047add170085400ffe97c549e51e3e761dda; original BUILD STOPPED; exact7 custody3 frozen/stashed; clean worktree and staged empty before exact9 continuation |
+| After status evidence | exact9 coherent separate continuation; actual-SHA exact6 and bound gate required |
 | Diff evidence | `git status --short`; `git diff --check` at handoff |
 | Approval boundary | Root committed material/current-authority binding and full pre-dispatch release before BUILD |
 | Claim boundary | no actual browser/provider proof or selected HTML acceptance |
@@ -439,7 +451,7 @@ Claim Update: bounded provider/live dispatch; R3/R4 and selected HTML job remain
 | claimDisposition | CLAIM_REJECTED for actual live behavior until executed proof and independent Root probe |
 | receiptEvidence | CLAIM_REJECTED_NO_RECEIPT: source pins and historical receipts do not substitute for this new UI journey |
 | actionEvidence | CLAIM_REJECTED_NO_ACTION: worker and reviewer browser actions after bound release |
-| invocationBoundary | four cumulative worker UI submits and one Root distinct UI submit, max nine Alibaba fetches including retries |
+| invocationBoundary | six cumulative worker UI submits and one Root distinct UI submit, max nine Alibaba fetches including retries |
 | interceptionBoundary | test-only server fetch observer, not OS-level network isolation or production enforcement |
 | claimLanguage | bounded future proof only; no release-quality gate, selected HTML acceptance or full R3/R4 exit |
 | forbiddenExpansion | product changes beyond DynamicForm, real-data writes, business accept/send, public/deploy/P11 and other provider destinations |

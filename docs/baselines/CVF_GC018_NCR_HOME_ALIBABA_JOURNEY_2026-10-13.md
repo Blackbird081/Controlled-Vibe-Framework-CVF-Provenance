@@ -19,13 +19,23 @@ Current cumulative worker UI ceiling four: two failed roots, then at most one ne
 
 Profile keeps direct parse of FILE DASHSCOPE_API_KEY into sole server DASHSCOPE; all other eligible aliases including GOOGLE_AI_API_KEY and Alibaba/Redis aliases blank; owned empty stores/keyless browser/fresh owned port/web-local ignored dist. Spec/preload must assert live receipt evidenceMode, actual provider/model, distinct child output, previous-output/parent linkage, downloaded exact child output/receipt, and quiet Retry no-extra-call; fresh/cumulative counters reconcile. Root distinct fixture may likewise request a concise <=180-word output before its first probe; oracle actual digest and original preimage both retained. This proves only bounded test fetch/receipt evidence, no OS isolation or whole NCR exit.
 
+## Root Continuation Amendment 3 - VI Export Selector Recovery
+
+The original worker BUILD ran 2026-10-13T16:25:17Z to 2026-10-13T17:40:17Z and is STOPPED. Four cumulative worker UI posts and four Alibaba fetch starts are charged; failures, successful root/child response evidence, and frozen exact-seven custody remain historical. This is a separate, bounded continuation phase, not a clock or counter reset.
+
+The latest root and child reached real Alibaba success and distinct receipts. The VI export selector omitted `xuong`, so the browser did not click the Markdown download action; opening Export succeeded. A history clearing step removed the receipt; a zero-call edit cannot prove receipt-in-Markdown. The only permitted test correction is the VI selector oracle. No product source, provider/model/token limit, fixture bound, request profile, receipt/store assertion, or export byte assertion may be weakened.
+
+After committed exact-nine dispatch/current-authority material, dedicated actual-SHA exact-six continuity, and full bound release, delegation `NCR-HOME-ALIBABA-JOURNEY-CONTINUATION-20261013` permits one fresh root+child attempt: at most two new UI posts and two new Alibaba fetch starts. Cumulative worker ceiling six UI/six calls; Root separate one UI/max three calls; global nine. Zero Playwright retries and no automatic rerun. Separate continuation BUILD starts at actual release, lasts at most 30 minutes and expires no later than 2026-10-13T18:20:00Z; earlier limit wins. Original stopped interval and all four prior calls remain charged.
+
+Profile remains direct FILE DASHSCOPE as sole server alias, empty other eligible aliases, owned empty stores, keyless browser and test-only fetch boundary. Exact same seven worker paths, concise <=180-word root/child, full existing source/receipt/child/download/retry assertions and no staging or commit. Root's independent probe remains unused and separately limited. R1/R2 partial, R3/R4 open; real-data/business/send/P11/public/deploy parked.
+
 ## Purpose
 
 Repair the missing visible Home form submit action, then prove one finite real-browser synthetic Home journey: authenticated form submission invokes the governed Alibaba `qwen-flash` execute route, shows a result and receipt, submits one refinement child carrying its parent output, and downloads the child's Markdown result. A separately executed Local reviewer probe uses a distinct synthetic fixture. This is a bounded R1 wiring plus generic R3/R4 composition contribution, not acceptance of the selected Work Transfer HTML pilot.
 
 ## Decision / Proposed Tranche
 
-`DISPATCH_READY`: Root selected the finite R1 wiring and synthetic live composition after source verification. Root must materially bind the baseline/order, synchronize exact current authority, and pass the full bound pre-dispatch release before implementation. Worker execution and live calls require the final clean committed bound release.
+`DISPATCH_READY_CONTINUATION`: Root selected the finite R1 wiring and synthetic live composition after source verification. Root must materially bind the baseline/order, synchronize exact current authority, and pass the full bound pre-dispatch release before implementation. Worker execution and live calls require the final clean committed bound release.
 
 ## Scope / Target / Owner Boundary
 
@@ -33,7 +43,7 @@ Worker may modify only `DynamicForm.tsx`, its existing unit test, and the existi
 
 Profile: fresh owned localhost Next/Chromium process; unique port and Next build directory; matching `AUTH_URL` and browser base URL; explicit empty `NEXTAUTH_URL`; fresh browser context; file storage adapter with task-specific absolute audit/event and policy snapshot paths under ignored runtime. Set `KNOWLEDGE_STORE_PATH` to a precreated owned JSON `[]` file, and `APPROVAL_STORE_PATH`, `CVF_DURABLE_MEMORY_STORE_PATH` and `CVF_SOT3_ACTIVATION_EVIDENCE_PATH` to owned disposable paths. In Node dev the existing knowledge store returns after a valid empty array, avoiding ambient knowledge; a missing/corrupt file would seed defaults. Keep Redis/rate-limit external-store aliases empty. Only synthetic strategy-analysis input may leave to Alibaba. The browser settings may select Alibaba `qwen-flash` with an empty `apiKey`; the credential remains in one server-side environment alias and is never copied into localStorage, the browser bundle, Playwright trace, request log or proof. Preflight must inspect the processed server's *names and states*, not secret values, and permit only the intended Alibaba provider destination. `.env.local` is loaded by live Playwright configuration and Next, so a parent-shell check alone is insufficient. The test-only preload may count and reject unexpected server fetch destinations; it is not OS-level network isolation.
 
-Worker may submit one replacement root and child in one fresh server run after two failed roots; cumulative UI ceiling four. The execute route can perform one initial Alibaba call plus at most two invisible output-validation retries per submit; worker ceiling six actual calls. Root's distinct fresh fixture, server and browser permit one submit and at most three calls. Combined ceiling nine. Playwright retries zero; no blind server/test rerun. A failed/partial/ambiguous live run is diagnosed secret-safely under the canonical live diagnostic owner before any new call decision. A per-minute quota is not represented as a global call cap. Capture actual request and provider-attempt counts, including retries, and stop if the approved submission/destination/profile boundary cannot be shown.
+Worker may submit one continuation root and child in one fresh server run after four prior UI posts; cumulative UI ceiling six. The execute route can perform one initial Alibaba call plus at most two invisible output-validation retries per submit; worker ceiling six actual calls. Root's distinct fresh fixture, server and browser permit one submit and at most three calls. Combined ceiling nine. Playwright retries zero; no blind server/test rerun. A failed/partial/ambiguous live run is diagnosed secret-safely under the canonical live diagnostic owner before any new call decision. A per-minute quota is not represented as a global call cap. Capture actual request and provider-attempt counts, including retries, and stop if the approved submission/destination/profile boundary cannot be shown.
 
 ## Design Control Gate
 
@@ -48,7 +58,7 @@ Before a live call, unit RED must show that no visible click submits a valid for
 | REQ-LIVE-ROOT | One UI root submit reaches a real Alibaba `qwen-flash` governed execute response and visible result with nonempty output/receipt. |
 | REQ-CHILD | One UI refinement creates a distinct child linked to the root; its request includes the root output prefix; response/result/store preserve child output and receipt without overwriting the root. |
 | REQ-EXPORT | Actual browser Markdown download from child is byte-inspected for exact child clean output and receipt; return-to-edit/reload negative control causes no additional execution or stale attribution. |
-| REQ-BUDGET-RETURN | Maximum four cumulative worker submissions and six actual provider calls, no Playwright retry/automatic rerun; exact seven worker artifacts, real proof/cost boundary, fast gate and no commit. Root's independent one-submit/three-call probe remains reviewer-owned. |
+| REQ-BUDGET-RETURN | Maximum six cumulative worker submissions and six actual provider calls, no Playwright retry/automatic rerun; exact seven worker artifacts, real proof/cost boundary, fast gate and no commit. Root's independent one-submit/three-call probe remains reviewer-owned. |
 
 ## Evidence / Verification
 
@@ -121,8 +131,8 @@ Dispatch impact: no additional defect-specific dispatch obligation returned.
 | Command or tool surface | progressive startup, source inspection, scaffold, ADIF resolver, author fast gate |
 | Target paths | `docs/baselines/CVF_GC018_NCR_HOME_ALIBABA_JOURNEY_2026-10-13.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HOME_ALIBABA_JOURNEY_2026-10-13.md`; `docs/reviews/evidence/ncr-home-alibaba-journey-dispatch-20261013.json`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Allowed scope source | Root's selected finite NCR continuation assignment |
-| Before status evidence | d7e4a5f6e5805ac5a31909047cbb432cf5d290a0; terminal second blocked exact7 frozen/stashed; clean worktree and staged empty before Root exact9 amendment |
-| After status evidence | exact9 coherent concise-fixture amendment; dedicated actual-SHA exact6 follows; original failures retained |
+| Before status evidence | 1253047add170085400ffe97c549e51e3e761dda; original BUILD STOPPED; exact7 custody3 frozen/stashed; clean worktree and staged empty before exact9 continuation |
+| After status evidence | exact9 coherent separate continuation; actual-SHA exact6 and bound gate required |
 | Diff evidence | `git status --short`; `git diff --check` before handoff |
 | Approval boundary | Root owns final dispatch release after committed binding |
 | Claim boundary | no executed browser/provider or release-quality proof |

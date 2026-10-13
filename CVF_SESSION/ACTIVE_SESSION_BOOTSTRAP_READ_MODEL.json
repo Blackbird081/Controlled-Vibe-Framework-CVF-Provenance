@@ -2,16 +2,16 @@
   "schemaVersion": "0.1.0",
   "currentMode": "cvf_ncr_home_alibaba_journey_execution",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-HOME-ALIBABA-JOURNEY-20261013. WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HOME_ALIBABA_JOURNEY_2026-10-13.md. Sol exact7 after bound amendment2; original hardstop17:40:17UTC; prior2 UI/calls, max4 cumulative UI/max6 calls(freshmax4), Rootmax1/max3/global9. Concise synthetic root+child <=180words, unchanged model/route/assertions; direct FILE DASHSCOPE, owned empty stores/keyless browser. R1/R2 partial,R3/R4 open; real-data/accept/send/P11/public/deploy parked; latest closed LHW24 retained. Reviewed material commit=6df91b10673928f27fe6f5c63f0f49d53afe59a5; dedicated actual-SHA continuity.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-HOME-ALIBABA-JOURNEY-20261013. WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HOME_ALIBABA_JOURNEY_2026-10-13.md. Separate continuation delegation NCR-HOME-ALIBABA-JOURNEY-CONTINUATION-20261013 after original BUILD STOPPED 2026-10-13T17:40:17Z; prior4 calls/4 UI retained, one fresh root+child max2 calls/2 UI, cumulative6/6, Root max1 UI/3 calls/global9. Actual committed release starts at most30min BUILD, expires2026-10-13T18:20:00Z first. VI export selector `xuong` only; unchanged product/model/route/receipt/download assertions; direct FILE DASHSCOPE, owned empty stores/keyless browser. R1/R2 partial,R3/R4 open; real-data/accept/send/P11/public/deploy parked; latest closed LHW24 retained.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_NCR_HOME_ALIBABA_JOURNEY_2026-10-13.md",
-    "baselineSha256": "3543be322699a152836ac85d3ded199d1aace4c8d932f6a1fea4784f151caefe",
+    "baselineSha256": "3f982d0f002c6c18bf27cd9f45f00bcc0480f1f77ca848f1bedc7c6806ab4c36",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HOME_ALIBABA_JOURNEY_2026-10-13.md",
-    "workOrderSha256": "32601c8f35e7ec70bd2806f9575d730ec410c28578f748250d6591b2361de95c"
+    "workOrderSha256": "7d2de537d250235f38fac3ed7ed5993e53914cb5c689a7a0c8e12b7a8df41ffc"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }
