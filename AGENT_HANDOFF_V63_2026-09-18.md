@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Current NCR Continuation
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `d8a7d666b9300cc277f14eaf16f1053389263502`. Material SHA: `9a9f00459bd47d6cb53407d116cc5a44c7b99c07`. Batch ID: CVF-NCR-OFFLINE-JOURNEY-20261013. Offline UI parent-child journey accepted bounded; original3 receipts retained;Local return EOF normalization; production unchanged;24 observations. No provider/live/public/deploy or whole-job claim.
+Current HEAD recorded for this handoff: `d528e39f7e5d02982091cf545122aca5ec65b805`. Material SHA: `d528e39f7e5d02982091cf545122aca5ec65b805`. Batch ID: CVF-NCR-BRIEF-REOPEN-20261013. Exact4 primary worker; conditional repair only on Local quality rejection. No provider/full-job/public/deploy claim.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -13,104 +13,31 @@ Current continuation only. Root AGENTS.md and canonical routing owners retain fu
 Closed history is preserved byte-for-byte at `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V63_PRE_NCR_COMPACTION_2026-10-07.md` (SHA256 `54801fdcf14e9abe17592352ec3c69a0b0e855632991af0caacac7b65252ccba`); it is NOT_ACTIVE_AUTHORITY and not default startup reading.
 ## Scope / Target / Owner Boundary
 
-Local INTERNAL_AGENT reviewer/closer;offline UI journey accepted bounded;original3 receipts retained;return EOF normalized;production unchanged;24 observations.
+Local INTERNAL_AGENT dispatcher; exact4 primary worker release after final bound gate; sequential conditional repair requires quality rejection and bound packet; no shared-lane overlap.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_offline_journey_closed_useful_selection`;handoff=`AGENT_HANDOFF_V63_2026-09-18.md`;next=select useful coding outcome;role=Local INTERNAL_AGENT reviewer/closer;phase=private bounded closure;decision owner=Local;parked checkpoint=Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11/Customer Care application.
+Startup acknowledged: current mode=`cvf_ncr_brief_reopen_worker_execution`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=exact4 primary worker BUILD; conditional repair on rejected quality only; role=Local INTERNAL_AGENT dispatcher; phase=bounded BUILD release; decision owner=Local; parked checkpoint=provider/public/deploy/sourceR2/Expense/S5/PLL/scoring/Gateway/media/P11/Customer Care.
 
 ## Current Mode
 
-`cvf_ncr_offline_journey_closed_useful_selection`. Offline form/processing/result/follow-up/child UI composition accepted bounded;whole job/R3/R4 open. LHW24.
+`cvf_ncr_brief_reopen_worker_execution`. Primary INTERNAL_AGENT BUILD exact4: DynamicForm panel lifetime/new test/proof/return; voluntary close retains same-idea brief, hidden edits invalidate, successful send resets. Configured Luna max; Sol medium only after Local quality rejection and distinct repair release.24 prior observations retained.
 
 ## Current Authority
 
-Baseline: `docs/baselines/CVF_GC018_NCR_OFFLINE_JOURNEY_2026-10-13.md`; SHA256 `9f0284a6f0f49c5d13987475d9bb96d4d638c960f83d7b461578860a6576b6c7`.
-Work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_OFFLINE_JOURNEY_2026-10-13.md`; SHA256 `936132f8b412e864219b309bd342a9077456fee8828b55a4d74f8ae6040482b1`.
-Completion: docs/reviews/CVF_NCR_OFFLINE_JOURNEY_COMPLETION_2026-10-13.md;Local proof docs/reviews/evidence/ncr-offline-journey-local-20261013.json.24 observations;no successor.
-
-## O6 Release Rebind After Provenance Sync (2026-10-11)
-Root marker replacement aa32f666 blocked DR-04/DR-05; rebind bd13e1a80 restored release. Log C:/Users/DELL/AppData/Local/Temp/o6_preimpl.log retained; no worker defect. Provenance lane closed, URL locked.
-Learning: ORCHESTRATOR_PACKET_GAP; GOVERNANCE_CONTROL_PLANE; RULE_EXISTS. Future active dispatch continuity preserves packet binding and revalidates release; no checker change.
-
-## Publication And Packet Update (2026-10-10)
-Web review reconciled at `9c6186c5f`: NO_MATERIAL_BLOCKER for R2; 01/04/06 enrich first manual task, 02/03/07 owner pointers, 05 deferred API cash condition. Local disposition: `docs/reviews/CVF_MODEL_SELECTION_WEB_REVIEW_LOCAL_DISPOSITION_2026-10-10.md`; raw return in its evidence folder. Public context pin `e9ddcbcdcac2a9df520f5eb0761dbdb609b9deba`. Historical Web-pin stage; S3/S4 now bounded manual closures, Expense/provider parked.
+Baseline: `docs/baselines/CVF_GC018_NCR_BRIEF_REOPEN_2026-10-13.md`; SHA256 `b1fb402dc02b820b4a880fe4442085ad017b15ec571de9bfa468c1d90d08b4fe`.
+Work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_BRIEF_REOPEN_2026-10-13.md`; SHA256 `0cf950e92200cb8b02c6518b721eb4a253b0695199ca1d7838a40743f984c150`.
+Bound pre-implementation, exact4 writes and final fast/ledger required; independent Local acceptance pending.
 
 ## Accepted NCR Evidence And Continuation
-Receiving lifecycle accepted: docs/reviews/CVF_NCR_AGENT_HANDOFF_COMPLETION_2026-10-12.md;worker35/35,old-source9/12FAIL,Local actual chat/hook2/2PASS;original4 retained,BLOCKED/procedureFAIL;Local literal/manifest repair,no source repair.21 tasks10Haiku/7Sonnet/4Luna,cost deferred.
-Narrow layout accepted: docs/reviews/CVF_NCR_EXPENSE_NARROW_LAYOUT_COMPLETION_2026-10-10.md;original5;own330 literal-text containment/nowrap negative PASS;guide erratum and Local path defect;timer/read/scaffold limits. Worker ledger fourHaiku plus Sonnet,5families,bill unknown.
-Touch target accepted: docs/reviews/CVF_NCR_EXPENSE_TOUCH_TARGET_COMPLETION_2026-10-10.md;own32044/contrast/36 rejection PASS;original5;timer/read and320 content limits retained. Model ledger docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json;Haiku reviewed3;report docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md;bill unknown.
-Expense browser accepted: docs/reviews/CVF_NCR_EXPENSE_BROWSER_PREVIEW_COMPLETION_2026-10-10.md;docs/reviews/evidence/cvf-expense-browser-local-review-2026-10-10.json;original5;independent browser/sentinel PASS;timer/read limitations,38px outer input,dark only. Model ledger docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json;Haiku reviewed2,bill unknown.
-Expense fixture accepted: docs/reviews/CVF_NCR_EXPENSE_FILTER_FIXTURE_COMPLETION_2026-10-09.md;docs/reviews/evidence/cvf-expense-filter-local-review-2026-10-09.json;five original bytes;probe4/4,type/lint PASS;Haiku5.5/Max operator-reported;timer/confirmation deviations retained;no effect grant.
-Offline UI accepted: docs/reviews/CVF_NCR_OFFLINE_PREVIEW_DELIVERY_COMPLETION_2026-10-09.md;docs/reviews/evidence/cvf-storyboard-preview-local-review-2026-10-09.json;seven original worker bytes retained;independent3/3;Sonnet5.5/High operator-reported,self-repair2passes,27.6min reported,cost unknown;Haiku5.5/Max next preference only. Parent RETURNED/APPLIED for one Local dispatch/result workflow;projectResolution OPEN;typed receipt docs/reviews/evidence/cvf-offline-preview-learning-application-receipt-2026-10-09.json;source/media/public holds retained.
-HTML reconciliation 48600e77f: docs/reviews/CVF_NCR_W05_SELECTED_CHAIN_READINESS_2026-10-07.md;docs/reviews/evidence/cvf-video-storyboard-reconciliation-2026-10-09.json;current24571B/original19136B/before26084B separately retained;scene body exact MATCH;desktop/mobile PASS;same Local actor,zero provider calls. Final content PENDING_OPERATOR;learning RETURNED/NOT_APPLIED,Local application candidate only;actual dispatch measurement remains pending. R2/source/native/production checkpoints unchanged.
-Forward learning application maintenance 7c708d6acae554f757b0f028e27e48cae9ab34a0:docs/reviews/CVF_LEARNING_APPLICATION_BINDING_COMPLETION_2026-10-09.md;docs/reviews/evidence/cvf-learning-application-binding-2026-10-09.json;existing F2G/PLL owners enforce forward enrollment and dispatch binding,67 PASS/1 skip. NCR-LEARNING-APPLICATION-OBSERVABILITY now OPEN/RETURNED/NOT_APPLIED via the newer Local HTML reception receipt;no semantic or universal compliance claim,no source acceptance or successor. Maintenance authority:docs/baselines/CVF_GC018_LEARNING_APPLICATION_BINDING_2026-10-09.md.
-R2 finalized Local result 5c1c5bf30525c091deda533b92608fe76a13ad21:docs/reviews/CVF_NCR_C1_S1_CONSOLIDATED_REPAIR_COMPLETION_2026-10-09.md;original COMPLETE_PENDING_REVIEW worker bytes retained;technical10/12/13 checks positive;full fulfillment blocked on historical preparation/receipt-read deviations. Gate receipt allowlist attributed to dispatcher. Existing lifecycle/learning updated for feasible transport,total cost and scope discipline. Active workerordinal5/current6/streak1/cumulative0/0/1 preserved,no resolution or successor. Root created and attempt spent;older release notes below are historical,not next-execution authority.
-Approved R2 dispatch d9cf106be755b5a312cb751d257b666e8924a8c4:docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_C1_S1_CONSOLIDATED_REPAIR_2026-10-08.md;operator exact root/16-source/two-return approval recorded in paired baseline;READY/currentAuthority bound. Corrected18-path allowlist/manifest;final exact FEASIBLE and70 reviewer-fast PASS. Manual worker only after actual committed bound pre-dispatch PASS;worker/root not started. Ordinal4 retains4/derived streak0/cumulative0/0/1,old failed source/custody preserved;new worker independent review/custody pending.
-Consolidated S1 repair proposal f1859537d62c2023a4728cd4450ebf05f3d2a529:docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_C1_S1_CONSOLIDATED_REPAIR_2026-10-08.md;exact caller FEASIBLE/70 reviewer-fast PASS,not source release. Current Local accepts only completed integrated static-review task;prospective ordinal4 retains4/derived streak0,cumulative0/0/1 unchanged;active ordinal3 unchanged. Operator exact new root/16-source-path attempt approval pending;old roots/blocked attempt preserved. MFRP old machine-clean/trusted-block marker adjudicated with written reviewer evidence;old row/blocked outcome retained.
-Local S1 blocked disposition c9a5de25effd081657f49f9ebcfe0a007673a2ad:docs/reviews/CVF_NCR_C1_S1_INTEGRATED_SOURCE_COMPLETION_2026-10-08.md;consumed bounded AST/custody evidence,no source acceptance;all5 blockers retained. Real-resolver prospective ordinal4/streak2 CONTINUE rejected,STOP/NO_SUCCESSOR declaration valid only. Next one grouped technical architectural reassessment,no actual successor or redispatch.
-Current bounded continuation 008e37a63873153a58ac635c333edb2618a37aaa: bound-return feasibility guard material committed;117 focused tests PASS;BLOCKED source return preserved,attempt spent,no source acceptance or successor.
-Current bounded continuation e33cda04abdc8b4e53ee5798e11121e49cf0c278: learning guard pending material commit;BLOCKED source return preserved,attempt spent,no source acceptance or successor.
-Integrated S1 dispatch b1d44462ff2bfbe9c583e7fe5d127652e22c049d:docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_C1_S1_INTEGRATED_SOURCE_2026-10-08.md;one source-only14-path/2-return attempt,real native ABI derived from20/20 bounded Microsoft responses;source root NOT_CREATED,no worker/network/native/fixture effect. Exact explicit caller FEASIBLE,one same-chain ordinal2/resolved old-review task/three retained blockers,real accepted-review evidence. Actual final committed bound release required;new source review/custody remain pending.
-S1 architectural reassessment 4cc47d786f4f1f5c3791d015f7dab2d17c6f0217:docs/reference/CVF_NCR_C1_S1_ARCHITECTURAL_REASSESSMENT_2026-10-08.md;present Local accepts completion of retained71-check/eight-mutation independent static review only,not source/custody closure. Exact opt-in proposal docs/reference/CVF_NCR_C1_S1_REASSESSED_ADMISSION_PROPOSAL_2026-10-08.md caller FEASIBLE with1 object/0 violations,3 required/3 deferred,effectAdmissionfalse. Prospective same-key ordinal2 resolves only pending-review blocker,retains3,derived streak0;active ordinal1 unchanged. One integrated source work order may be prepared;no source dispatch yet.
-Final nonmixed PREFEAS-C1 closure packet 8f0590337ee652f7fd1cae649037008ff84cf748;primary full-bundle PASS/initial mixed pre-closure rejection retained in Local evidence;source/implementation unchanged by packet correction.
-PREFEAS-C1 Local closure material 51cc377340e48701fb2d19659e36824b46c491a0;completion:docs/reviews/CVF_PREFEAS_C1_COMPLETION_2026-10-08.md;receipt docs/reviews/evidence/cvf-prefeas-c1-local-review-2026-10-08.json;original worker evidence preserved,three grouped repairs,15 independent CLI cases and103 focused tests PASS;source chains untouched.
-Preapproval guard dispatch 33309dfa065a46a853d81b4ed9112810f9277166:docs/work_orders/CVF_AGENT_WORK_ORDER_PREFEAS_C1_2026-10-08.md;stable design docs/reference/preapproval_feasibility/README.md;one actual initial canonical SCEC object validated,exact12 worker paths/seven defect classes/eight proofs;implementation/caller proof pending;old source chains untouched.
-Orchestrator learning 1b97c9ced37056f6ba9764547e2e03e1aff725d7:docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md;29 selected source/log pins,five causes,phase/identity/preapproval rule added in existing lifecycle;machine candidate and agent application unproved;source approval/holds retained.
-S1 approval/disposition 9584f26abbb76dec5b86dd25eed785a1e1971d61:docs/reference/CVF_NCR_C1_S1_APPROVAL_DISPATCH_DISPOSITION_2026-10-08.md;operator approved exact14 source/docs scope;retained-counter FAIL/correct CONTINUE FAIL/correct STOP shape PASS,source dispatch blocked;approval not revoked,old chains unchanged,zero effects.
-Joined source proposal a3eae872ce3859d14f870da0078485f98e4f8e37:docs/reference/CVF_NCR_C1_MANIFEST_CONTROL_SOURCE_PROPOSAL_2026-10-08.md;14 exact prospective source paths,Microsoft docs scope proposed,57/14 npm joins preserved;no source/docs effects or historical freeze/custody acceptance.
-E1 finite result c3ad9502e06827b736214fcf60a01627b9650e8b:docs/reference/CVF_NCR_C1_E1_METADATA_RESULT_2026-10-08.md;approved envelope consumed,160 requests/2939306 B/66.531s,78 declared wheel joins/57 npm responses;negative15/unread4 preserved,locator defect exposed;no payload/rights/control/production acceptance or rerun.
-C1 grouped effect proposal d41de95e54fad1e31780317e9797825cd7c46d0b:docs/reference/CVF_NCR_C1_GROUPED_EFFECT_PROPOSAL_2026-10-08.md;29 obligations routed,ten stage holds retained;E1 exact six-host/160-request/16MiB/1200s scope proposed,zero helper paths requested;no network effect or dispatch.
-C1 S0 closure: docs/reviews/CVF_NCR_C1_OFFLINE_PRODUCTION_READINESS_COMPLETION_2026-10-08.md;positive/five mutation classes PASS,two documentary joins repaired,original return preserved,29 obligations/10 stages held;no production/source-supervisor or STOP clearance.
-C1 S0 amendment 12334db6331a51d1f944ac3a6c86b412aafa514f:documentary evidence levels/source joins/closeable return repaired;accepted metadata reused,host proposal claims unbound;no runtime/source-supervisor or STOP resolution. Intake docs/reviews/evidence/cvf-ncr-c1-offline-production-amendment-intake-2026-10-08.json.
-C1 operator selection 13826c97d55ba5267fb000750469aa0020c9d880:offline/cache and10GiB disk/8GiB RAM confirmed;four condition groups in one held work order,no worker/download/install/media effect. Selection evidence docs/reviews/evidence/cvf-ncr-c1-offline-production-selection-2026-10-08.json.
-Video preparation accepted at a50514d45f07d2658c2834ac9b5d789521db149b:docs/reviews/CVF_NCR_VIDEO_PRODUCTION_PREPARATION_COMPLETION_2026-10-08.md;original worker evidence preserved,one grouped malformed-input repair,37 tests/eight CLI cases PASS. Kit runtime NO_GO;rights/enforcement unknowns and old STOP counters retained;no redispatch/media effects.
-Video storyboard HTML 15569c6b1ecc4f58d985b837f268b0dd68734db7:operator selected existing accepted video design as local review source;source unchanged,routeHTTP200/NOT_CONFIGURED/DRAFT_UNACCEPTED,19136 bytes;Chromium10 scenes and zero observed HTTP requests PASS,viewport inspected,cleanup complete. Local file .cvf/runtime/cvf-video-storyboard-review-20261008/CVF_VIDEO_STORYBOARD_REVIEW.html;final operator content review pending,no audio/MP4/S05/C1/provider/public effects.
-Consolidated readiness 8203b10cff5b84a584490c306292ebf9b93d6026:candidate14 Git-byte/browser12 worktree pins match;Preview/Print accepted20261001/02 consumed with current handler/test qualification. Necessary cp1252 Git HEAD-count crash repaired with raw-byte LF/CRLF/CR counting;red1FAIL/9PASS,green10PASS,direct roadmap1174/file-size PASS. Existing W05 frontier and Q001/Q004/Q005 HTML contract prepared;roadmap unchanged,no replay/provider/effects or new tranche.
-W05 browser e941b11dfe34dc0d473da57858402cd9089ed815:one actual Work Transfer synthetic event/export,exact receipt/engine/store ID and two2703-byte downloads before/after unsent edit PASS;draft/stale notes retained. Named12 pins match,cleanup bounded;initial missing-selection fixture FAIL retained/corrected. Existing five HTTP cases/canonical9/9 consumed without replay;no product/provider/real-data/acceptance/public/deploy expansion.
-Grouped candidate f0e21e2f0b9b757785ad554ac2b16940ed42c53b:shared child credential parity and fresh-page cold fixture repaired together;25 focused/typecheck/lint and structural browser PASS;canonical9/9PASS,exit0,505671ms. Source pins/manifest3 verified,Next config restored;prior FAIL retained. Operator grouped/value-over-cost autonomy captured in owner;Local synthetic acceptance only,no real-data/remote/P11/public/deploy.
-Final-source candidate c5fc8ef74ad83cdca7fac42671eb92a2ff7115ea:canonical bundle FAIL/exit1,617671ms;8 PASS/live FAIL. Six route200/success=false/provider401;separate delayed-JS disabled assertion FAIL. Alias inequality observed,validity/cause unproved. Manifest3 verified,source pins match,Next config restored. Source-only diagnosis next,no replay or effect activation.
-Browser readiness `8c66986726d72cdd5be99bdefc6ddd2e5cc8c6ff`:card hydration/login-before-fill/navigation repairs;5 focused tests/typecheck/lint PASS;complete serial live stage PASS elapsed159094ms. Whole bundle8 PASS/1 FAIL and parallel cold11 PASS/1 FAIL retained;no fresh whole-bundle or concurrency claim.
-Canonical candidate `6bf611954fe05fb62e57cc1c78dff6b7217c7600`:fresh complete bundle FAIL,elapsed1002547ms;stage/source/diagnostic reconciliation recorded;prior FAIL retained,Local synthetic candidate only.
-Closure packet `8beb7dc86af409034b088cdebe95063727d12075`:worker/subagent provider delegation forbidden;implementation6435e0dae and its two-case live PASS retained,no replay.
-Intake dispatch `6435e0dae08f6f866512ede6aeaa9cb2156398ac`:session/timer and env-parity repairs;original3 negatives,final45 tests/typecheck/lint PASS;selected full-mode API1 call/0 retry and client1 POST/INTAKE PASS74875ms. Previous FAIL retained,no whole-release claim.
-Full-mode `3025d52372cd38330429988f2063be7727776d46`:actual client confirmed idea/export/INTAKE reached,but2 identical POSTs;single-send FAIL retained. API Local429 before dispatch,no API replay;final lint PASS.
-Secret fixture `98661aa28567e995dd628400bacc2ece7ed1f930`:77 exact reviewed pins in44 files;29 regressions and selected declared-scope scan PASS,0 unreadable/no stop;initial bundle FAIL retained,prior live PASS consumed.
-Finite live fixture `c86e21c72297b367117061758090ef89a67f0993`:bounded180-word intent;selected Alibaba suite PASS,full-mode skipped;cap/model/assertions unchanged;initial bundle FAIL/scan debt retained.
-Candidate bundle `be361a8b5bf7cd962f5d53ea7ff5e28410d6ea68`:one current canonical command;FAIL/exit1 retained with stage/source/diagnostic evidence;no remote/public/production acceptance or blind rerun.
-Semantic observation `a8d6d9da15e34bd93947bc0d0502f9d424d0973c`: two real Alibaba HTTP200 responses;12/12 fixed classifications,Local reasons reviewed;retry qualification/heldEffects omission retained;no actual whole lifecycle or automatic effects proof.
-Coverage design `14f19a819586cc92c000640b0df106ec72cec3b7`: four outputs delivered;three Git role-delta observations and phase rejection;GO existing phase owners,NO_GO blind extension;no new implementation packet.
-Audit selection `f885b7e0e943ff67a662a6380f84ebfb6888673a`: scoped existing-owner Local outcome coverage design selected;four finite outputs,actual authority/ledger coverage reconciled;no implementation activation or priority re-question.
-Steward adapter `9b34fe14d9a340ce8aee78e3e2bfe5abe9891996`: optional explicit work-order forwarding;21 tests/parser checks;default and child failure retained;no actual acceptance or general automation proof.
-Local fulfillment `7e58cb22c2ac0bca5e3a6b2913146702b74b2ace`: five real-Git structural cases; explicit acceptance binding and proof-content boundary; reuse existing route,no actual dispatch or universal automation proof.
-Frontier `150a595ece9ae700f1edf33de36db28a5d272cd3`: six accepted evidence identities match; grouped candidate/browser/operational/automation outcomes; IAB unavailable; no product replay or whole-program closure.
-P02 dependency `543d45c912f8efe52fb528681f992dbc7fb624f7`: Git-visible closure,strict reads and resolved-ref/source-hash observations;26 isolated Git/CLI fixtures PASS;no actual public candidate/sync,whole P02 or live/release claim.
-Canary diagnosis `7e26053c898b84ed46a25c2e3dd8561fce83e9f3`: scalar fixture and Qwen3 decimal recognition repaired;61 tests/typecheck/lint PASS;two selected Alibaba cases one PASS/one45s FAIL with late200,four skipped;old timeout cause unproved,no certification/replay.
-Canary controls `0d753ea06d4fb0ee59d6dcecdc2704feff901f1e`: explicit key source/model binding and truthful collection/process/scenario result;15 unit tests/typecheck/lint PASS,transport200/model match,route canary6 FAIL retained;no certification or automatic rerun.
-Action-specific reading aid `f45beaad3b0c14d641356e681893306e56b4944b`: existing startup orientation enriched; four fixed Alibaba probes passed both source-only/quick-read conditions, improvement NOT_DEMONSTRATED; no universal behavior or enforcement claim.
-W05 current proof `c82b8a9c9486dda77e0d0b279c72fd3690b9d796`: Docker-engine/local-Web runner exit 0, five cases passed, owned cleanup checked; separate diagnosed Alibaba sample retained two limits but over-parked continuation. No full browser/live AI/pre-live closure.
-Historical W05 proof plan `6a834efb95c320ecde00686375a1b6bfc7fc8310`: five fixed synthetic-route cases and source/dependency/backend checkpoints prepared in the existing readiness owner; execution/admission unopened, pre-live NOT_CLOSED.
-Learning loopback `1b79b6a50998c67dd116cdf585cdf0d42db7be9e`: current parser/discovery/continuation states reconciled; full outcome automation and W05 runtime remain unproved. General orientation accepted2026-10-02; reuse existing guide.
-Local closure evidence: `docs/reviews/CVF_NCR_NEXT_MOVE_ALIGNMENT_COMPLETION_2026-10-07.md`; `docs/reviews/evidence/cvf-ncr-next-move-alignment-local-review-2026-10-07.json`. Independent probe accepted; logic unchanged; terminal test blank spacing removed; F1 LOW limit retained, F2/F3 provenance clarified. No provider/runtime claim or automatic successor.
-Execution admission `3813c7e3b57a085444c0c39a149984166ec4a8bc`: exact six-path NCR repair, committed pins and release gate required. Worker LOCAL_CODEX_ROOT; independent reviewer LOCAL_CLAUDE_OPERATOR_RELAY via operator relay. Historical admission; now closed by the separate Local review below.
-Packet `7d4a67f95976ab14444df08882e98bec492454ef`: `docs/baselines/CVF_GC018_NCR_NEXT_MOVE_ALIGNMENT_2026-10-07.md` and named work order. Six proposed paths, NCR/legacy comparison semantics, file-size extraction, required proof IDs and reviewer plan bound. DRAFT; ledger/candidate graph and planning gates PASS, checker unchanged; implementation/release NOT_EXECUTED.
-Design `e5dc51ef27ef5ddbc176e1e00b3ba7d5eeb4534e`: existing acceptance-ledger addendum/checker already owns eligible requirement/Git/proof/terminal joins. Lifecycle outcome routing added;shared learning coverage corrected. Six structural fixtures PASS;universal maintenance candidate NOT_IMPLEMENTED; historical NCR next-token candidate now accepted bounded by the later closure. Full admission-to-terminal application not proven.
-W05 finite source/evidence package `0c96a2ad61de54246099b68844820bedc5820057`: `docs/reviews/CVF_NCR_W05_SELECTED_CHAIN_READINESS_2026-10-07.md`. Source/evidence pins,stage matrix,checkpoint groups and terminal disposition delivered together. LOCAL_CHAIN_RECONCILED_BOUNDED;historical proofs remain separate;W05 pre-live NOT_CLOSED;no product/provider rerun.
-Foundation learning `e331c45ef344140363f36998bbf63ae590962eff`: `docs/reviews/learnings/CVF_OUTCOME_BOUND_CONTINUATION_LEARNING_2026-10-07.md`. Read before selection/terminal review; existing rules alone do not prove application. Conditional shadow value coverage and next-token helper gap retained; general outcome automation NOT_IMPLEMENTED; NCR lexical candidate now accepted bounded with F1 limit; W05 source/evidence disposition delivered, current integrated behavior NOT_VERIFIED.
-Operator correction at `a4ba7b2617bb79819d42da3076917a7b86ed04b7`: end open-ended endpoint hunting and patch-by-patch final answers. Use one selected-work outcome with finite scope/terminal deliverable;batch compatible fixes and finish authorized work without another next. See current continuation Operator Review section;prior repair proof remains valid.
-- Guard endpoint admission: `c0e9bfb4ec62c3a488a766c37f4ee842e49edbe6`,39/39 structural tests; guard/rate-limit stubs declared,no live governance decision proof.
-Current consumer continuation: `docs/baselines/CVF_GC018_NCR_LOCAL_CONSUMER_CONTINUATION_2026-10-07.md`; memory optional-type/finite-number repair35/35 focused tests at `28ad4166de7cdad94b24d8ce9ffb7569e60bc129`; structural parsing/projection only.
-Owner: `docs/baselines/CVF_GC018_NCR_CONSOLIDATED_LOCAL_FOUNDATION_2026-10-06.md`; split state entry: `CVF_SESSION/state/entries/cvfNcrConsolidatedLocalFoundation20261006.json`.
-- QBS/LPCI input shapes: `eefca1bd827f6f6f87d94a310ac0a0f2bf73ee15`,23/23 focused tests; no coercion or unhandled malformed path input.
-- UTF8 reader: `b7306c7ec447feed5a5c83b2d3e9cc9ccdf56ef5`,168/168 focused tests; selected invalid bytes HTTP400 before downstream admission.
-- Linux CI clean build: `8f189c02aa94746c4ae049f099a1ece9c1ed149d`,13 stages/30 structural-policy tests; Node20 Debian,not remote Ubuntu/GitHub or live OAuth proof.
-- Prior bounded Docker/storage/provider receipts and diagnostics remain in the owner and split entry; no new summed test count or universal clearance.
-Receiving agents clarify incomplete ideas according to the existing lifecycle standard; upstream brief is one INTAKE input,not a build-ready guarantee. VI human Idea Brief and EN agent Working Brief serve different audiences.
-Consume returned evidence under MFRP P4-C1: EVALUATE_RETURNED_EVIDENCE_NOT_RECREATE_IMPLEMENTATION. A rerun needs a named contradiction/changed consumer,information gain and cost reason.
-Alibaba calls are authorized for meaningful scoped tests; no other provider call,Claude dispatch,public push,deployment or actual-data cutover is inferred.
+
+Closed history is preserved as exact raw preimage `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V63_PRE_BRIEF_REOPEN_2026-10-13.md`; SHA256 `8b2c763668d87f99b4d85ea2a5d7df9c0a66c3bd94790414e21c32d5de31867b`; NOT_ACTIVE_AUTHORITY, targeted lookup only.
+Latest accepted offline composition: docs/reviews/CVF_NCR_OFFLINE_JOURNEY_COMPLETION_2026-10-13.md; test-only bounded acceptance, procedure PARTIAL_WITH_REASON, production unchanged;24 model observations. All historical BLOCKED/procedure and provider/whole-job limits retained in their owners.
+Current brief-panel work is a fresh finite presentation-lifetime outcome, not a stopped source-chain successor. Successful-send/reopen reset is a locked compatibility boundary.
+
 ## Next Allowed Move
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=SELECT_USEFUL_CODING_OUTCOME; BATCH_ID=CVF-NCR-OFFLINE-JOURNEY-20261013. Material 9a9f00459bd47d6cb53407d116cc5a44c7b99c07;work order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_OFFLINE_JOURNEY_2026-10-13.md. Offline UI parent-child journey accepted bounded;completion docs/reviews/CVF_NCR_OFFLINE_JOURNEY_COMPLETION_2026-10-13.md.24 task observations, prior23 retained;production unchanged;no automatic successor. Whole job/browser/backend/R3/R4 and Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11/Customer Care parked;LHW24.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_BOUNDED_BRIEF_PANEL_CONTINUITY; BATCH_ID=CVF-NCR-BRIEF-REOPEN-20261013. Material d528e39f7e5d02982091cf545122aca5ec65b805; work order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_BRIEF_REOPEN_2026-10-13.md. Primary INTERNAL_AGENT BUILD exact4: DynamicForm panel lifetime/new test/proof/return; voluntary close retains same-idea brief, hidden edits invalidate, successful send resets. Configured Luna max; Sol medium only after Local quality rejection and distinct repair release.24 prior observations retained. Whole job/browser/backend/R3/R4 and Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11/Customer Care parked; LHW24.
 
 ## Active Boundary
 T3B has a Local-verified active v1 specification. Party B is verified and T3C-C1 tooling accepted at `db78c87df`; T3C-C2 and Party C are verified. T3D-C1 tooling is accepted at `9ed844c2a` without source. T3D-C0-R1 closed at `2fffa1ef7`. T3D-C3 was accepted bounded at `88137e9a2`, but actual-mode prepare attempts failed before Party B/C execution; authorized cleanup removed the failed root and discarded unaccepted worker changes. G1 stopped, G2-G6 parked, and G7 research closed at `660601f0e` with `ADAPT_EXISTING_HANDOFF_ONLY`. Evidence-join sufficiency stays WATCH; no implementation successor exists. Rejected T2 paths remain archived; HRLTP-T2 paused.
@@ -138,7 +65,7 @@ Q001/Q004 actual-data source/writer,custody,retention/RPO/RTO/cost checkpoints a
 NCR send/B2 STOP and S05/C1 remain; IAB unavailable; repo Playwright Chromium present; vision/full P04/full release remain unproved. No autonomous P11/public/deploy activation.
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: exact6 offline UI journey closure continuity;no checker/product edit.
+Authorized guard-maintenance scope: exact6 brief-panel worker continuity; no checker/source edit.
 Protected paths:
 - `AGENT_HANDOFF_V63_2026-09-18.md`
 - `CVF_SESSION_MEMORY.md`
@@ -146,32 +73,31 @@ Protected paths:
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-
-Operator authorization: 2026-10-13 continue CVF Core and authorize Luna max worker;Local owns review/commits.
-Rollback boundary: exact1 marker anchor then exact6 final mode sync;prior23 retained. Exception: material-range proof before source/generated mode change;PASS receipt .cvf/runtime/ncr-offline-journey-local-20261013/material-preclosure-receipt.json. P4-C1 Local adjudicated historical BLOCKED rows retained/excluded;current UI row bounded. Evidence .cvf/runtime/mfrp-p4-shadow-canary/adjudications/ncr-offline-journey-marker-20261013.json;no source/live readiness promotion.
+Operator authorization: 2026-10-13 continue CVF with primary/conditional workers; Local owns review/closure/commits.
+Rollback boundary: exact6; preserve original archive and accepted/blocked history, parked effects and prior observations. Historical P4 safety adjudication .cvf/runtime/mfrp-p4-shadow-canary/adjudications/ncr-offline-journey-marker-20261013.json remains valid for its original marker; no blanket clearance of future markers.
 
 ## Agent Operation Trace Block
 
 | Field | Evidence |
 |---|---|
-| Actor | Local reviewer/closer/session-sync steward |
+| Actor | Local dispatcher/session-sync steward |
 | Provider or surface | private shared workspace |
-| Session or invocation | ncr-offline-journey-closure-sync-20261013 |
-| Working directory | repo root |
-| Command or tool surface | canonical generator, exact6 closure continuity, gates |
+| Session or invocation | ncr-brief-reopen-worker-sync-20261013 |
+| Working directory | repository root |
+| Command or tool surface | exact6 continuity sources, generator, staged checks, hook and bound release |
 | Target paths | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Allowed scope source | operator continue CVF and Local closure; exact16 material 9a9f00459bd47d6cb53407d116cc5a44c7b99c07 |
-| Before status evidence | d8a7d666b9300cc277f14eaf16f1053389263502; clean marker anchor; material-range closure PASS |
-| After status evidence | exact6 final mode/next/actual-SHA sync;24 observations; whole job/R3/R4 open |
-| Diff evidence | git diff --check;exact6 manifest |
-| Approval boundary | private closure continuity;no successor/provider/public/push |
-| Claim boundary | offline UI composition only;no AI governance/provider/live/full-job/public/deploy claim |
+| Allowed scope source | operator continuation and Local continuity ownership |
+| Before status evidence | d528e39f7e5d02982091cf545122aca5ec65b805; clean worktree |
+| After status evidence | exact6 worker continuity only; primary BUILD pending |
+| Diff evidence | git diff --cached --check and exact6 manifest |
+| Approval boundary | no provider/public/push/deploy or other effect grant |
+| Claim boundary | offline panel presentation only; no runtime selector or whole-job claim |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-offline-journey-closure-sync-20261013 |
+| Invocation ID | ncr-brief-reopen-worker-sync-20261013 |
 | Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Manifest delta | MATCH |
-| Deletion or rename disposition | N/A with reason:none |
+| Manifest delta | MATCH required before commit |
+| Deletion or rename disposition | N/A with reason: current fields/pointers replaced; exact raw preimage already archived in dispatch material |
 
 ## Claim Boundary
 Current facts, exact packet binding and permitted next action only. Historical Home/O6 evidence remains bounded; no whole-roadmap, live/provider, backend cancellation, release/public/deployment or model-winner claim.

@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_BRIEF_REOPEN_2026-10-13.md",
     "workOrderSha256": "0cf950e92200cb8b02c6518b721eb4a253b0695199ca1d7838a40743f984c150"
   },
-  "currentAuthoritySyncReason": "Operator CVF continuation: brief panel continuity packet and primary/conditional configuration; dedicated continuity binds release before worker BUILD.",
+  "currentAuthoritySyncReason": "Brief-panel worker material d528e39f7e5d02982091cf545122aca5ec65b805; exact6 actual-SHA continuity; original history archived; no other effect grant.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
@@ -110,7 +110,7 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_ncr_offline_journey_closed_useful_selection",
+  "currentMode": "cvf_ncr_brief_reopen_worker_execution",
   "previousMode": "cvf_ncr_result_isolation_worker_execution",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
