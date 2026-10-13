@@ -1,0 +1,275 @@
+{
+  "schemaVersion": "cvf.ncrWorkTransferBrowserWorkerEvidence@1.0.0",
+  "taskId": "CVF-NCR-WORK-TRANSFER-BROWSER-20261013",
+  "workerRole": "INTERNAL_AGENT",
+  "decisionOwner": "LOCAL reviewer/closer",
+  "preparationDisposition": "PARTIAL_WITH_REASON",
+  "qualityDisposition": "QUALITY_REJECTED_WITH_CONSOLIDATED_FINDINGS",
+  "terminalReadinessVerdict": "BLOCKED_WITH_REASON",
+  "executionBaseHead": "1d2f4bbae0b7ad8326c609cb3adc6a87ed08bf2e",
+  "buildStartUtc": "2026-10-13T10:12:19.0799578Z",
+  "intakeWindow": {
+    "startedByUtc": "2026-10-13T10:12:19.0799578Z",
+    "completedNoLaterThanUtc": "2026-10-13T10:18:16.4552317Z",
+    "exactEndCaptured": false,
+    "reason": "Read-only intake was complete before the bound pre-implementation gate receipt; no separate exact cutoff clock was captured."
+  },
+  "preImplementationGate": {
+    "command": "python -B governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_WORK_TRANSFER_BROWSER_2026-10-13.md",
+    "result": "COMPLIANT",
+    "exitCode": 0,
+    "receipt": ".cvf/runtime/autorun-receipts/pre-implementation.json",
+    "writtenAtUtc": "2026-10-13T10:18:16.4552317Z"
+  },
+  "startup": {
+    "acknowledgment": "Startup acknowledged: current mode=bounded internal implementation; active handoff=AGENT_HANDOFF_V63_2026-09-18.md; next allowed move=perform the named browser-test work order then return to Local review; parked checkpoint=operator real-data/provider/public/deployment checkpoints remain parked.",
+    "rolePhaseOwner": "INTERNAL_AGENT / bounded implementation / Local reviewer-closer decides acceptance.",
+    "procedureDeviation": "A full CVF_SESSION/ACTIVE_SESSION_STATE.json aggregate was read during startup instead of using the required targeted lookup only. Root instructed retaining this as a worker procedure deviation; no historical grant was inferred and no reread was done."
+  },
+  "initialWorkspace": {
+    "gitHead": "1d2f4bbae0b7ad8326c609cb3adc6a87ed08bf2e",
+    "trackedWorkingTreeClean": true,
+    "stagedSetEmpty": true,
+    "capturedBeforeRequiredReads": true
+  },
+  "dispatchAnchors": {
+    "baselinePath": "docs/baselines/CVF_GC018_NCR_WORK_TRANSFER_BROWSER_2026-10-13.md",
+    "baselineSha256": "d4dd28272ec2f659ba1e75a5de5744e786b53234588f5a5f4221f83b90531100",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_WORK_TRANSFER_BROWSER_2026-10-13.md",
+    "workOrderSha256": "6327b082cf5d02d3087b3b177fd5f51dd2fdef0a271b645650df088646aee1ca",
+    "dispatchEvidencePath": "docs/reviews/evidence/ncr-work-transfer-browser-dispatch-20261013.json"
+  },
+  "sourcePins": [
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/page.tsx",
+      "rawSha256": "0ed365b59324bb836d8ec56cba143df941e7a7f8dfa11b841b28a68212f1b35d",
+      "headBlobSha256": "0ed365b59324bb836d8ec56cba143df941e7a7f8dfa11b841b28a68212f1b35d",
+      "dispatchPinMatched": true
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/page.test.tsx",
+      "rawSha256": "12b85adb86b0433c136e1dfd638347bc73869ea206bc1871b40d7a390a330b4c",
+      "headBlobSha256": "12b85adb86b0433c136e1dfd638347bc73869ea206bc1871b40d7a390a330b4c",
+      "dispatchPinMatched": true
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.tsx",
+      "rawSha256": "efc5839896236dacc7b37e145fda9904a9513bea434b3ff5c8bcd81652e9ea3e",
+      "headBlobSha256": "0b1005a456c2e400d0f9ae1323351716bf877ca4ff83ca1941e6f786356c27d8",
+      "dispatchPinMatched": true
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/route.ts",
+      "rawSha256": "a17ddd57882be1e58a86fb1d86bea8a2693f1169f5ba0c8b6da2af75d7f024ae",
+      "headBlobSha256": "22f08a7ed8a4a4eb06c63bde244c0e2e9f752758bb6f48acbfb12bf57a2862f1",
+      "dispatchPinMatched": true
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/proof.ts",
+      "rawSha256": "fbdcc3a434eea13842c9f692d2b54cc9955e80d8c8777d9dfaa14cace9cdfcaf",
+      "headBlobSha256": "fbdcc3a434eea13842c9f692d2b54cc9955e80d8c8777d9dfaa14cace9cdfcaf",
+      "dispatchPinMatched": true
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/artifact-export-route-byte-download.spec.ts",
+      "rawSha256": "d79ee472bee95e7a1b0d7a650f6059a9ff3fd5c12303c610aa3e7001e752cf02",
+      "headBlobSha256": "d79ee472bee95e7a1b0d7a650f6059a9ff3fd5c12303c610aa3e7001e752cf02",
+      "dispatchPinMatched": true
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/support/b2d-no-hop-preload.cjs",
+      "rawSha256": "43c2ebc6ac5ee8501a29e84724ec353d278ea048481806ee83982592883f4eea",
+      "headBlobSha256": "43c2ebc6ac5ee8501a29e84724ec353d278ea048481806ee83982592883f4eea",
+      "dispatchPinMatched": true
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/playwright.config.mock.ts",
+      "rawSha256": "704c9b4fcfa8a248a9e4fb82b49af184ee6840ccf60b44909d142fc7f61ff712",
+      "headBlobSha256": "704c9b4fcfa8a248a9e4fb82b49af184ee6840ccf60b44909d142fc7f61ff712",
+      "dispatchPinMatched": true
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/utils.ts",
+      "rawSha256": "6a27d4aa18f22a4c869189caaf32925121ebf77282629b8e374f3762ca77a6fb",
+      "headBlobSha256": "6a27d4aa18f22a4c869189caaf32925121ebf77282629b8e374f3762ca77a6fb",
+      "dispatchPinMatched": true
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/admin/audit/route.ts",
+      "rawSha256": "83c83600655cd5637bdebc5fc6fac3ff67573a2a42c9b0ec4c8ca57f6cda614d",
+      "headBlobSha256": "83c83600655cd5637bdebc5fc6fac3ff67573a2a42c9b0ec4c8ca57f6cda614d",
+      "dispatchPinMatched": true
+    }
+  ],
+  "browserHarness": {
+    "browser": "Chromium",
+    "projectFlag": "omitted; default browser configuration used",
+    "port": 3021,
+    "baseUrl": "http://localhost:3021",
+    "authUrl": "http://localhost:3021",
+    "parentNextauthUrl": "EMPTY",
+    "distDir": ".next-ncr-work-transfer-browser",
+    "auditInterception": "GET /api/admin/audit synthetic fixture only",
+    "exportInterception": "none; POST /api/artifacts/export reached real local route",
+    "credentialAliases": "cleared by name; ALIBABA_API_KEY was named, no credential values were read",
+    "preflightPositive": "serial preflight passed before export on final two full browser runs: wrapper reached processed Next server context, parent and server NEXTAUTH_URL empty, zero evaluate attempts and zero export methods at preflight",
+    "finalRunNoHopSummary": {
+      "processedServerContexts": 139,
+      "nextauthUrlStates": [
+        "EMPTY"
+      ],
+      "wrapperObserved": true,
+      "attemptEvents": 0,
+      "maxAttemptCount": 0
+    },
+    "routeResponseGeneratedAtUtc": "2026-10-13T10:37:06.464Z",
+    "routeResponse": {
+      "path": ".cvf/runtime/ncr-work-transfer-browser-worker-20261013/route-response.json",
+      "bytes": 5137,
+      "sha256": "58352df47b1be815d64ff7c7ed16eb9d0138eff8252cc0705764edc8c8e4c5b6",
+      "httpStatus": 200,
+      "filename": "ncr-browser-draft-alpha.html",
+      "governanceReceiptStatus": "NOT_CONFIGURED",
+      "governanceState": "DRAFT_UNACCEPTED",
+      "receiptPresent": false,
+      "attemptIdPresent": false,
+      "routeGovernanceProofDecisionMetadata": "ALLOW (present in raw route response; not asserted or represented as artifact approval)",
+      "htmlUtf8Bytes": 3191,
+      "htmlUtf8Sha256": "88104f269e31d8cf0d4128eac73caf6da35f0f0165880bd47144c632fcdbee13",
+      "sourceHashRenderedInHtml": "6b5b9564a202e7f836f2fc8eabecccef290080f732cf5d82ce2d615ba900a98f",
+      "downloadedHtmlPath": null,
+      "downloadedHtmlBytes": null,
+      "downloadedHtmlSha256": null,
+      "byteEqualityProven": false,
+      "byteEqualityBlocker": "Journey stopped on strict heading locator before download; raw route response exists, saved download does not."
+    }
+  },
+  "failedCandidates": [
+    {
+      "candidate": 1,
+      "group": "launcher/preload setup",
+      "events": [
+        "PowerShell NODE_OPTIONS --require quoting stripped Windows path characters; process failed before Playwright CLI.",
+        "Resolve-Path was later evaluated under the wrong current-directory base and did not find tests/e2e/support/b2d-no-hop-preload.cjs."
+      ],
+      "result": "pre-CLI setup failure; no application or test assertion reached; exact PowerShell exit code was not retained",
+      "noHopLog": "C:\\Users\\DELL\\AppData\\Local\\Temp\\cvf-ncr-work-transfer-browser-nohop-20261013-101219z.jsonl",
+      "noHopLogBytes": 0,
+      "noHopLogSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "candidate": 2,
+      "group": "port preflight",
+      "cause": "PORT=3021 was set, but playwright.config.mock.ts reads CVF_PLAYWRIGHT_PORT; configured server used default port 3001 and serial preflight failed.",
+      "testCommandExitCode": 1,
+      "noHopLog": "C:\\Users\\DELL\\AppData\\Local\\Temp\\cvf-ncr-work-transfer-browser-nohop-20261013-1021z-retry2.jsonl",
+      "noHopLogBytes": 35286,
+      "noHopLogSha256": "bfe736697d0d919dfb8fb3c3ffb4d04321267b79dfa6fc61a8ea897e550c3120"
+    },
+    {
+      "candidate": 3,
+      "group": "alias-name preflight",
+      "cause": "Telemetry binding CVF_NCR_CLEARED_CREDENTIAL_ALIASES was classified by the spec's credential-alias name predicate; renamed in test to CVF_NCR_CLEARED_ALIAS_NAMES without weakening alias-clearance assertion.",
+      "testCommandExitCode": 1,
+      "noHopLog": "C:\\Users\\DELL\\AppData\\Local\\Temp\\cvf-ncr-work-transfer-browser-nohop-20261013-1028z-retry3.jsonl",
+      "noHopLogBytes": 16042,
+      "noHopLogSha256": "45bb22f43419e99b651e0a50c4de45fd9b1da724723f5987ba27b895560ac2a6"
+    },
+    {
+      "candidate": 4,
+      "group": "journey locator ambiguity",
+      "cause": "Global Work Transfer text matched navigation and main content; selector was narrowed to main. The promised whole-locator audit failed to catch the dependent preview two-h1 case, retained as a preparation quality finding.",
+      "testCommandExitCode": 1,
+      "noHopLog": "C:\\Users\\DELL\\AppData\\Local\\Temp\\cvf-ncr-work-transfer-browser-nohop-20261013-1030z-final.jsonl",
+      "noHopLogBytes": 212889,
+      "noHopLogSha256": "470cffbb87566d2e36bd29f7f14d01b75ae352e0ed080bd2c06996590b3acc43"
+    },
+    {
+      "candidate": 5,
+      "group": "journey locator ambiguity",
+      "cause": "Preview locator expecting a sole h1 encountered both the built title heading and static Audit Record Draft h1; strict-mode assertion at test line 289 failed. Parent froze test bytes after this diagnosis; no rerun followed.",
+      "testCommandExitCode": 1,
+      "observedTestSummary": "1 passed, 1 failed; preflight passed and journey failed at preview heading locator.",
+      "noHopLog": "C:\\Users\\DELL\\AppData\\Local\\Temp\\cvf-ncr-work-transfer-browser-nohop-20261013-final-retry.jsonl",
+      "noHopLogBytes": 200064,
+      "noHopLogSha256": "d2bab7169f8c557bb5f0c8431f4a0790beef1a9770b9c358968be2c394e6b5f6"
+    }
+  ],
+  "journeyAssertionsReachedBeforeStop": [
+    "real /work-transfer route loaded and synthetic audit alpha selected",
+    "title and source fields edited",
+    "real unmocked POST /api/artifacts/export returned HTTP 200",
+    "request fields, selected receipt anchor, NOT_CONFIGURED, receipt/attempt absence, DRAFT_UNACCEPTED, filename and draft UI assertions passed",
+    "source/JSON-wire/HTML identities were recorded distinctly by run; raw response reread and decoded HTML hashed"
+  ],
+  "journeyAssertionsNotReached": [
+    "preview title locator completion",
+    "post-build stale edit observation",
+    "browser download and saved-byte comparison",
+    "deselect/reselect, switch and reload truth assertions",
+    "zero evaluate attempts after full journey"
+  ],
+  "independentProbeDisposition": "PENDING_REVIEWER_EXECUTION",
+  "independentReviewerProbe": "Worker does not perform or self-certify the separately admitted Local semantic probe.",
+  "cleanup": {
+    "ownedWebServerStopped": true,
+    "listenersAt3001And3021": [],
+    "ownedDistRemoved": true,
+    "distPath": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/.next-ncr-work-transfer-browser",
+    "distRemovalNote": "Resolved target was checked inside the Web package; PowerShell recursive delete was blocked twice, then the exact checked path was removed with Node fs. Retained browser traces/screenshots/videos and route-response evidence under the ignored worker runtime directory.",
+    "retainedWorkerRuntime": ".cvf/runtime/ncr-work-transfer-browser-worker-20261013/",
+    "tsconfigRestore": {
+      "owner": "Root",
+      "receipt": ".cvf/runtime/ncr-work-transfer-browser-root-20261013/primary-tsconfig-cleanup.json",
+      "restoredRawSha256": "d4af4823c8a2919796c5faa29805cd152217fbc25d6021c2da57541a685ea0f6",
+      "gitClean": true
+    },
+    "adapterStateFilesMatchingEventsSnapshotOrAdapter": []
+  },
+  "changedSet": [
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/ncr-work-transfer-browser.spec.ts",
+    "docs/reviews/evidence/ncr-work-transfer-browser-worker-20261013.json",
+    "docs/reviews/CVF_NCR_WORK_TRANSFER_BROWSER_WORKER_RETURN_2026-10-13.md"
+  ],
+  "modelAndUsage": {
+    "requested": "gpt-6-luna reasoning max; conditional gpt-6-sol reasoning medium only if quality/scope failure justifies",
+    "actualModel": null,
+    "actualModelReason": "Native invocation/model identity is not exposed on this worker surface.",
+    "tokenUsage": null,
+    "tokenUsageReason": "No native token or quota meter is exposed; no usage was inferred."
+  },
+  "focusedVerification": {
+    "typescript": {
+      "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+      "exitCode": 0,
+      "result": "PASS"
+    },
+    "eslint": {
+      "command": "node node_modules/eslint/bin/eslint.js tests/e2e/ncr-work-transfer-browser.spec.ts",
+      "exitCode": 0,
+      "result": "PASS"
+    },
+    "acceptanceLedger": {
+      "command": "python governance/compat/check_work_order_acceptance_ledger.py --work-order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_WORK_TRANSFER_BROWSER_2026-10-13.md --return docs/reviews/CVF_NCR_WORK_TRANSFER_BROWSER_WORKER_RETURN_2026-10-13.md --enforce",
+      "exitCode": 0,
+      "result": "COMPLIANT"
+    }
+  },
+  "workerReturnFastGate": {
+    "firstRun": {
+      "exitCode": 1,
+      "result": "FAIL",
+      "details": "Initial return-format omissions plus changed corpus coverage finding; stdout retained in the first gate tool exchange, no separate file was captured."
+    },
+    "finalRun": {
+      "exitCode": 1,
+      "result": "BLOCKED",
+      "command": "python governance/compat/run_worker_return_fast_gate.py --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_WORK_TRANSFER_BROWSER_2026-10-13.md --max-return-lines 450 --max-return-bytes 64000",
+      "outputLog": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-work-transfer-browser-worker-20261013\\worker-return-fast-final-20261013.log",
+      "outputLogBytes": 11651,
+      "outputLogSha256": "6a04b1b8321758a4eb2aa253b90eee33dd4a5758a77fabf0c2b4f7c4dd605979",
+      "remainingFailure": "GC-051 changed corpus registry coverage: new test path is absent from docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json scopePaths; worker scope forbids registry edit."
+    }
+  },
+  "testSpecSha256": "7eee3f58bd71ec9c38f661527812b1dff96dc2cc01f82495b22b9fc93cdcd446"
+}

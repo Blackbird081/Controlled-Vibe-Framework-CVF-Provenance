@@ -9013,6 +9013,35 @@
       "nextScanRecommendation": "Consume this exact scope for NIS-T1B-D R1 worker evidence and Local review; reconcile actual files on return without expanding to a broad corpus scan."
     },
     {
+      "id": "cvf-ncr-work-transfer-browser-test",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "NCR Work Transfer bounded synthetic browser test",
+      "scopePaths": [
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/ncr-work-transfer-browser.spec.ts"
+      ],
+      "fileCount": null,
+      "status": "NOT_STARTED",
+      "scanWave": null,
+      "scanDate": null,
+      "manifestHash": null,
+      "hashAlgorithm": null,
+      "hashInput": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_NCR_WORK_TRANSFER_BROWSER_PRIMARY_QUALITY_REVIEW_2026-10-13.md",
+      "completionReviewPath": null,
+      "gcBaselineRef": "docs/baselines/CVF_GC018_NCR_WORK_TRANSFER_BROWSER_2026-10-13.md",
+      "verdicts": {
+        "gc047": "NOT_RUN",
+        "gc048": "NOT_RUN",
+        "gc050": "NOT_RUN"
+      },
+      "semanticRegions": [],
+      "priorAbsorption": "Named new synthetic browser test registration only. Primary browser journey is blocked; raw failed evidence retained. No complete corpus scan or browser acceptance is claimed.",
+      "findings": [],
+      "negativeSearchTerms": [],
+      "nextScanRecommendation": "Consume the Local quality decision and bounded conditional evidence if admitted. Full semantic corpus scan remains NOT_STARTED; do not repeat existing B2d/W05 proofs."
+    },
+    {
       "id": "ccma-shared-learning-delta-20261012",
       "corpusType": "PROJECT_SOURCE",
       "displayName": "Customer Care ten shared learning records, 2026-10-12 delta",
