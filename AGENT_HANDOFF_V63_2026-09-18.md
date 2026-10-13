@@ -1,10 +1,13 @@
 # CVF Agent Handoff V63 - Current NCR Continuation
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `03b99b35d9f6b3f71909d29f6cc4dbf75828bc4b`. Material SHA: `03b99b35d9f6b3f71909d29f6cc4dbf75828bc4b`. Batch ID: CCMA-SEVEN-FINDING-PUBLIC-EXPORT-20261013. Per-output guidance returned to CCMA project branch `9ae219c67c7bf258c095a2acd76e969345110753`; public-safe checklist exported via public PR #11, main `fa34ed49e56648acafe8b0388e48e0aa0523f007`. Typed loopback receipts remain documentation-only; no new live runtime claim.
+Current HEAD recorded for this handoff: `bf13b91bdbf3d7173ef34a6b21bd4f3f3e2833fc`. Material SHA: `03b99b35d9f6b3f71909d29f6cc4dbf75828bc4b`. Batch ID: CCMA-SEVEN-FINDING-PUBLIC-EXPORT-20261013. Per-output guidance returned to CCMA project branch `9ae219c67c7bf258c095a2acd76e969345110753`; public-safe checklist exported via public PR #11, main `fa34ed49e56648acafe8b0388e48e0aa0523f007`. Typed loopback receipts remain documentation-only; no new live runtime claim.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
+Remote tracking branch: `origin/main`
+Exact remote SHA must be derived live from git when needed
+External agent memory files: non-canonical convenience only
 ## Purpose
 Current continuation only. Root AGENTS.md and canonical routing owners retain full rules.
 Closed history is preserved byte-for-byte at `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V63_PRE_NCR_COMPACTION_2026-10-07.md` (SHA256 `54801fdcf14e9abe17592352ec3c69a0b0e855632991af0caacac7b65252ccba`); it is NOT_ACTIVE_AUTHORITY and not default startup reading.
