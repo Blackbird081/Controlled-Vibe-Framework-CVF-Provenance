@@ -303,6 +303,30 @@
       "symbols": [
         "CVF_SOT3_ACTIVATION_EVIDENCE_PATH"
       ]
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execute-route-budget.ts",
+      "sha256": "256868a42135c19f457d373eb09c3dafb224376cd04fa6e20d75672ce3e38d1a",
+      "lineCount": 41,
+      "readSpans": [
+        "1-42"
+      ],
+      "symbols": [
+        "resolveExecutionMaxTokens"
+      ],
+      "pinPhase": "ROOT_AMENDMENT2_DIAGNOSTIC_CURRENT_UNCHANGED_SOURCE"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/templates/business.ts",
+      "sha256": "1038301afa58af2136240782e23d90cf8e8c03afa45e0cabbe07627ffb12b928",
+      "lineCount": 369,
+      "readSpans": [
+        "1-90"
+      ],
+      "symbols": [
+        "strategy_analysis outputTemplate"
+      ],
+      "pinPhase": "ROOT_AMENDMENT2_DIAGNOSTIC_CURRENT_UNCHANGED_SOURCE"
     }
   ],
   "rootAdmission": {
@@ -310,7 +334,7 @@
     "decision": "ADMIT_BOUNDED_AFTER_COMMITTED_RELEASE",
     "sourceContradiction": "Visible DynamicForm buttons only opened spec; Home unit directly submitted form. R1 click wiring included before live proof.",
     "draftQualification": "Author-fast 7/7 and ledger PASS were narrow DRAFT checks. Root repaired READY-only TPGR enums/full path union, convergence enum, Source dispositions and active learning binding before activation.",
-    "providerCallsSoFar": 1,
+    "providerCallsSoFar": 2,
     "materialManifest": [
       "docs/baselines/CVF_GC018_NCR_HOME_ALIBABA_JOURNEY_2026-10-13.md",
       "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HOME_ALIBABA_JOURNEY_2026-10-13.md",
@@ -378,6 +402,33 @@
       ],
       "originalMaterialHead": "60e5e7197770105d2dc670e5051c340733cda945",
       "originalContinuityHead": "152481577108f2815f953471201b12473be45efa"
+    },
+    "diagnosticAmendment2": {
+      "baseHead": "d7e4a5f6e5805ac5a31909047cbb432cf5d290a0",
+      "priorCalls": 2,
+      "priorUiPosts": 2,
+      "workerUiCeiling": 4,
+      "freshHardCap": 4,
+      "workerCumulativeCap": 6,
+      "hardStopUtc": "2026-10-13T17:40:17Z",
+      "fixtureBound": "<=180 words total with compact required sections; child same bound",
+      "workerCustodyRef": ".cvf/runtime/ncr-home-alibaba-root-20261013/worker-blocked-custody-2.json",
+      "stash": "dbf4122491904bfcca47c11fca9d7e590ba01357",
+      "materialManifest": [
+        "docs/baselines/CVF_GC018_NCR_HOME_ALIBABA_JOURNEY_2026-10-13.md",
+        "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HOME_ALIBABA_JOURNEY_2026-10-13.md",
+        "docs/reviews/evidence/ncr-home-alibaba-journey-dispatch-20261013.json",
+        "AGENT_HANDOFF_V63_2026-09-18.md",
+        "CVF_SESSION_MEMORY.md",
+        "CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json",
+        "CVF_SESSION/state/entries/nextAllowedMove.json",
+        "CVF_SESSION/ACTIVE_SESSION_STATE.json",
+        "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json"
+      ],
+      "providerHttpStatus": 200,
+      "routeSuccess": false,
+      "diagnosticClass": "output_validation_failed",
+      "proofDisposition": "ONLY_DIAGNOSTIC_NO_CHILD_EXPORT_SUCCESS"
     }
   }
 }

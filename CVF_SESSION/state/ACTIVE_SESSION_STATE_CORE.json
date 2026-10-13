@@ -37,11 +37,11 @@
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_NCR_HOME_ALIBABA_JOURNEY_2026-10-13.md",
-    "baselineSha256": "2ebbe707ea3609c806523096f5df3d1b638f5f7c894bff696e782697fe97d30a",
+    "baselineSha256": "3543be322699a152836ac85d3ded199d1aace4c8d932f6a1fea4784f151caefe",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HOME_ALIBABA_JOURNEY_2026-10-13.md",
-    "workOrderSha256": "937657883dd1feec1a240e84aac93848068e6c15cb2214f9bcd5a1219e4794e0"
+    "workOrderSha256": "32601c8f35e7ec70bd2806f9575d730ec410c28578f748250d6591b2361de95c"
   },
-  "currentAuthoritySyncReason": "Home Alibaba diagnostic amendment committed; prior401/one call retained; Root GC051 dependency admitted Material 3c1d4492264177c0b29ba82c988291d52f66a235; coherent source/generated authority; actual-SHA dedicated continuity follows material. Whole NCR pilot/effects remain separate.",
+  "currentAuthoritySyncReason": "Concise-fixture diagnostic amendment; prior401/output-limit two calls retained Pre-closure parent d7e4a5f6e5805ac5a31909047cbb432cf5d290a0; coherent source/generated authority; actual-SHA dedicated continuity follows material. Whole NCR pilot/effects remain separate.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
