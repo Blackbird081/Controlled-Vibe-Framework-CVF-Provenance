@@ -1,0 +1,35 @@
+{
+  "schemaVersion": "cvf.ncrWorkTransferBrowserDispatch@1.0.0",
+  "batchId": "CVF-NCR-WORK-TRANSFER-BROWSER-20261013",
+  "inspectionBaseHead": "8accf591da4223fe0a88fc6c63b2062cce733ee1",
+  "inspectionStatus": "clean worktree and empty staged set before dispatch authoring",
+  "role": "INTERNAL_AGENT dispatch author",
+  "phase": "internal work-order preparation",
+  "decisionOwner": "Local reviewer/closer",
+  "selection": {
+    "consumer": "Work Transfer HTML draft browser journey",
+    "gap": "Existing B2d proves a real export-route byte download through the artifacts page; current Work Transfer page unit tests stub the export panel. The selected gap is browser composition from a selected audit fixture through that panel.",
+    "scope": "one synthetic Playwright Chromium test, one proof JSON, one worker return; no production edits",
+    "predecessor": "docs/reviews/CVF_NCR_W05_SELECTED_CHAIN_READINESS_2026-10-07.md",
+    "roadmap": "docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md"
+  },
+  "sourcePins": [
+    {"path":"EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/page.tsx","rawSha256":"0ed365b59324bb836d8ec56cba143df941e7a7f8dfa11b841b28a68212f1b35d","headBlobSha256":"0ed365b59324bb836d8ec56cba143df941e7a7f8dfa11b841b28a68212f1b35d"},
+    {"path":"EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/page.test.tsx","rawSha256":"12b85adb86b0433c136e1dfd638347bc73869ea206bc1871b40d7a390a330b4c","headBlobSha256":"12b85adb86b0433c136e1dfd638347bc73869ea206bc1871b40d7a390a330b4c"},
+    {"path":"EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.tsx","rawSha256":"efc5839896236dacc7b37e145fda9904a9513bea434b3ff5c8bcd81652e9ea3e","headBlobSha256":"0b1005a456c2e400d0f9ae1323351716bf877ca4ff83ca1941e6f786356c27d8"},
+    {"path":"EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/route.ts","rawSha256":"a17ddd57882be1e58a86fb1d86bea8a2693f1169f5ba0c8b6da2af75d7f024ae","headBlobSha256":"22f08a7ed8a4a4eb06c63bde244c0e2e9f752758bb6f48acbfb12bf57a2862f1"},
+    {"path":"EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/proof.ts","rawSha256":"fbdcc3a434eea13842c9f692d2b54cc9955e80d8c8777d9dfaa14cace9cdfcaf","headBlobSha256":"fbdcc3a434eea13842c9f692d2b54cc9955e80d8c8777d9dfaa14cace9cdfcaf"},
+    {"path":"EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/artifact-export-route-byte-download.spec.ts","rawSha256":"d79ee472bee95e7a1b0d7a650f6059a9ff3fd5c12303c610aa3e7001e752cf02","headBlobSha256":"d79ee472bee95e7a1b0d7a650f6059a9ff3fd5c12303c610aa3e7001e752cf02"},
+    {"path":"EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/support/b2d-no-hop-preload.cjs","rawSha256":"43c2ebc6ac5ee8501a29e84724ec353d278ea048481806ee83982592883f4eea","headBlobSha256":"43c2ebc6ac5ee8501a29e84724ec353d278ea048481806ee83982592883f4eea"},
+    {"path":"EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/playwright.config.mock.ts","rawSha256":"704c9b4fcfa8a248a9e4fb82b49af184ee6840ccf60b44909d142fc7f61ff712","headBlobSha256":"704c9b4fcfa8a248a9e4fb82b49af184ee6840ccf60b44909d142fc7f61ff712"},
+    {"path":"EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/utils.ts","rawSha256":"6a27d4aa18f22a4c869189caaf32925121ebf77282629b8e374f3762ca77a6fb","headBlobSha256":"6a27d4aa18f22a4c869189caaf32925121ebf77282629b8e374f3762ca77a6fb"},
+    {"path":"EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/admin/audit/route.ts","rawSha256":"83c83600655cd5637bdebc5fc6fac3ff67573a2a42c9b0ec4c8ca57f6cda614d","headBlobSha256":"83c83600655cd5637bdebc5fc6fac3ff67573a2a42c9b0ec4c8ca57f6cda614d"}
+  ],
+  "pinMethod": "rawSha256=SHA256(Path.read_bytes()); headBlobSha256=SHA256(git show HEAD:path bytes); no normalization",
+  "plannedWorkerManifest": [
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/ncr-work-transfer-browser.spec.ts",
+    "docs/reviews/evidence/ncr-work-transfer-browser-worker-20261013.json",
+    "docs/reviews/CVF_NCR_WORK_TRANSFER_BROWSER_WORKER_RETURN_2026-10-13.md"
+  ],
+  "claimBoundary": "Dispatch source pins and selection only; no worker execution, browser observation, provider proof, durable draft, approval, real-data or R3/R4 claim."
+}
