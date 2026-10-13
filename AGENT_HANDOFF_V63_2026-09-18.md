@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Current NCR Continuation
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `b4d44307c22f68340746eccd2089d121430905d3`. Material SHA: `b4d44307c22f68340746eccd2089d121430905d3`. Batch ID: CCMA-SEVEN-FINDING-20261013. Private Core per-output delivery learning committed; project loopback receipt is the next bounded move; no Core public sync.
+Current HEAD recorded for this handoff: `9fdf1271cf82b38f226e3fe301fe9e868a6ab668`. Material SHA: `9fdf1271cf82b38f226e3fe301fe9e868a6ab668`. Batch ID: CCMA-SEVEN-FINDING-LOOPBACK-20261013. Private Core per-output delivery learning was returned to the CCMA project branch at `9ae219c67c7bf258c095a2acd76e969345110753`; typed delivery and prospective documentation-only application receipts are committed. No Core public sync or live runtime claim.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
