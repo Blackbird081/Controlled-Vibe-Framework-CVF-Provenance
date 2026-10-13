@@ -22,6 +22,10 @@ Do-not-misread notes: exact2 new proof/return only; every source/test/primary ar
 Required first actions: progressive startup/role, full pair/scopes and six pins, actual scaffold and bound pre-implementation before edits.
 Return contract: all new criteria/current commands/final gates PASS for COMPLETE_PENDING_REVIEW; otherwise consolidated blocker; no stage/commit/provider/network/third worker.
 
+## Immutable Return Lineage Anchor
+
+Exact-byte dispatch archive: `docs/work_orders/archive/CVF_AGENT_WORK_ORDER_NCR_BRIEF_REOPEN_RETURN_REPAIR_DISPATCH_2026-10-13.md`; SHA256 `1d6ca143b201fefc1383d9ec385c5113c9587e59f21541cc6df29222d065c302`. Historical frozen dispatch, NOT_ACTIVE_AUTHORITY. The final Sol return MUST use this immutable SCEC predecessor, chainOrdinal=3, problemKey=ncr-brief-panel-reopen. Active authority remains this paired order/baseline. No new assignment: original BUILD start 2026-10-13T06:42:06.7316596Z and deadline 2026-10-13T07:27:06.7316596Z retained; worker released with zero writes/runs. Root pause/rebind time is separately disclosed. Original later HEAD capture remains a preparation deviation. Required final proof: prior/current blockers empty, nonDecreasingBlockerTransitions=1, reviewerScopeExpansions=1 retained; READY_WITH_EXECUTABLE_PROOF / EXECUTABLE_IMPLEMENTATION only with actual current validation and final gates. If blocked, report truthful consolidated blockers under existing counters. Archive prevents later in-place closure from invalidating predecessor bytes.
+
 ## Purpose
 
 Create a fresh, accurate supplemental return for the rejected primary brief-panel contribution and validate current focused compatibility. Panel behavior already has distinct Local1/1 PASS; do not recreate implementation. Original failed logs/blocked primary remain retained.
@@ -232,20 +236,20 @@ Claim Update: integrated conditional evidence repair; no new product/live/whole-
 |---|---|
 | Actor | Local INTERNAL_AGENT reviewer/dispatcher |
 | Provider or surface | private shared workspace |
-| Session or invocation | ncr-brief-reopen-sol-dispatch-20261013 |
+| Session or invocation | ncr-brief-reopen-lineage-rebind-20261013 |
 | Working directory | repository root and installed Web package |
 | Command or tool surface | terminal evidence/byte custody, Local probe/copy correction, root contract and gates |
-| Target paths | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.brief-lifecycle.test.tsx`; `docs/reviews/evidence/ncr-brief-reopen-worker-20261013.json`; `docs/reviews/CVF_NCR_BRIEF_REOPEN_WORKER_RETURN_2026-10-13.md`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.test.tsx`; `docs/reviews/evidence/ncr-brief-reopen-quality-20261013.json`; `docs/reviews/CVF_NCR_BRIEF_REOPEN_PRIMARY_QUALITY_2026-10-13.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_BRIEF_REOPEN_RETURN_REPAIR_2026-10-13.md`; `docs/baselines/CVF_GC018_NCR_BRIEF_REOPEN_RETURN_REPAIR_2026-10-13.md`; `.gitattributes`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Target paths | `docs/work_orders/archive/CVF_AGENT_WORK_ORDER_NCR_BRIEF_REOPEN_RETURN_REPAIR_DISPATCH_2026-10-13.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_BRIEF_REOPEN_RETURN_REPAIR_2026-10-13.md`; `docs/baselines/CVF_GC018_NCR_BRIEF_REOPEN_RETURN_REPAIR_2026-10-13.md`; `.gitattributes`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Allowed scope source | operator explicit conditional Sol medium after inadequate quality; original Local closure responsibilities |
-| Before status evidence | b3d0e8540c69b3c7ecf3e8db6a6816889788485f; primary exact2 released, staged empty; release will be clean worktree |
-| After status evidence | exact13 rejected-primary/root-contract dispatch; then exact6 actual-SHA continuity |
+| Before status evidence | 2c6d23b87c7884c222b94de3e733f4b487da1b57; clean worktree, Sol released with zero writes/runs |
+| After status evidence | exact7 immutable dispatch-lineage rebind, then exact6 actual-SHA continuity; same final BUILD |
 | Diff evidence | exact staged manifest and git diff --cached --check before commit |
 | Approval boundary | one final conditional BUILD; no third worker or parked effects |
 | Claim boundary | offline UI and proof identity only; original BLOCKED retained |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-brief-reopen-sol-dispatch-20261013 |
-| Expected manifest | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.brief-lifecycle.test.tsx`; `docs/reviews/evidence/ncr-brief-reopen-worker-20261013.json`; `docs/reviews/CVF_NCR_BRIEF_REOPEN_WORKER_RETURN_2026-10-13.md`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.test.tsx`; `docs/reviews/evidence/ncr-brief-reopen-quality-20261013.json`; `docs/reviews/CVF_NCR_BRIEF_REOPEN_PRIMARY_QUALITY_2026-10-13.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_BRIEF_REOPEN_RETURN_REPAIR_2026-10-13.md`; `docs/baselines/CVF_GC018_NCR_BRIEF_REOPEN_RETURN_REPAIR_2026-10-13.md`; `.gitattributes`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Actual changed set | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.brief-lifecycle.test.tsx`; `docs/reviews/evidence/ncr-brief-reopen-worker-20261013.json`; `docs/reviews/CVF_NCR_BRIEF_REOPEN_WORKER_RETURN_2026-10-13.md`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.test.tsx`; `docs/reviews/evidence/ncr-brief-reopen-quality-20261013.json`; `docs/reviews/CVF_NCR_BRIEF_REOPEN_PRIMARY_QUALITY_2026-10-13.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_BRIEF_REOPEN_RETURN_REPAIR_2026-10-13.md`; `docs/baselines/CVF_GC018_NCR_BRIEF_REOPEN_RETURN_REPAIR_2026-10-13.md`; `.gitattributes`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Invocation ID | ncr-brief-reopen-lineage-rebind-20261013 |
+| Expected manifest | `docs/work_orders/archive/CVF_AGENT_WORK_ORDER_NCR_BRIEF_REOPEN_RETURN_REPAIR_DISPATCH_2026-10-13.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_BRIEF_REOPEN_RETURN_REPAIR_2026-10-13.md`; `docs/baselines/CVF_GC018_NCR_BRIEF_REOPEN_RETURN_REPAIR_2026-10-13.md`; `.gitattributes`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Actual changed set | `docs/work_orders/archive/CVF_AGENT_WORK_ORDER_NCR_BRIEF_REOPEN_RETURN_REPAIR_DISPATCH_2026-10-13.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_BRIEF_REOPEN_RETURN_REPAIR_2026-10-13.md`; `docs/baselines/CVF_GC018_NCR_BRIEF_REOPEN_RETURN_REPAIR_2026-10-13.md`; `.gitattributes`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Manifest delta | MATCH required before commit |
 | Deletion or rename disposition | N/A with reason: ignored temporary probe removed after capture; original byte custody retained; no tracked deletion |
 
@@ -435,7 +439,7 @@ This graph assigns repair and commit owners; it does not report those future gat
 ## Task Governance Routing Manifest
 
 ```json
-{"schemaVersion":"cvf.taskGovernanceManifest.v1","taskId":"CVF-NCR-BRIEF-REOPEN-RETURN-REPAIR-20261013","requestedProfile":"P3_ELEVATED","classification":{"taskKind":"PURE_LOCAL_IMPLEMENTATION","authorityImpact":"ENRICHES_EXISTING_OWNER","externalEffect":"LOCAL_REVERSIBLE","dataSensitivity":"PRIVATE_REPO","reversibility":"GIT_REVERSIBLE","sourceScale":"NAMED_FILES","delegation":"MULTI_ROLE_NO_COMMIT","novelty":"KNOWN_PATTERN"},"pathFamilies":["EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.tsx","EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.brief-lifecycle.test.tsx","docs/reviews/evidence/ncr-brief-reopen-worker-20261013.json","docs/reviews/CVF_NCR_BRIEF_REOPEN_WORKER_RETURN_2026-10-13.md","EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.test.tsx","docs/reviews/evidence/ncr-brief-reopen-quality-20261013.json","docs/reviews/CVF_NCR_BRIEF_REOPEN_PRIMARY_QUALITY_2026-10-13.md","docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_BRIEF_REOPEN_RETURN_REPAIR_2026-10-13.md","docs/baselines/CVF_GC018_NCR_BRIEF_REOPEN_RETURN_REPAIR_2026-10-13.md",".gitattributes","CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json","CVF_SESSION/ACTIVE_SESSION_STATE.json","CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json","AGENT_HANDOFF_V63_2026-09-18.md","CVF_SESSION_MEMORY.md","CVF_SESSION/state/entries/nextAllowedMove.json","docs/reviews/evidence/ncr-brief-reopen-sol-worker-20261013.json","docs/reviews/CVF_NCR_BRIEF_REOPEN_SOL_WORKER_RETURN_2026-10-13.md","docs/reviews/CVF_NCR_BRIEF_REOPEN_COMPLETION_2026-10-13.md","docs/reviews/evidence/ncr-brief-reopen-local-20261013.json","docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json","docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md","docs/roadmaps/README.md","docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md","docs/roadmaps/CVF_ROADMAP_INVENTORY.md","docs/roadmaps/CVF_ROADMAP_INVENTORY.csv"],"claims":["BOUNDED_OFFLINE_PANEL_CONTINUITY","NO_AI_GOVERNANCE_OR_FULL_JOB_EXIT"],"requiredProof":["PROOF-REQ-SUPPLEMENT","PROOF-REQ-VALIDATION","PROOF-REQ-RETURN"],"operatorCheckpoints":[],"forbiddenEffects":["PROVIDER_CALL","NETWORK_WRITE","PUBLIC_WRITE","DEPLOYMENT","REAL_DATA_MUTATION","HOOK_WIRING"],"sourceEvidence":{"selectedFilesFullyRead":false,"corpusReceiptRef":null,"completenessClaimChanged":false}}
+{"schemaVersion":"cvf.taskGovernanceManifest.v1","taskId":"CVF-NCR-BRIEF-REOPEN-RETURN-REPAIR-20261013","requestedProfile":"P3_ELEVATED","classification":{"taskKind":"PURE_LOCAL_IMPLEMENTATION","authorityImpact":"ENRICHES_EXISTING_OWNER","externalEffect":"LOCAL_REVERSIBLE","dataSensitivity":"PRIVATE_REPO","reversibility":"GIT_REVERSIBLE","sourceScale":"NAMED_FILES","delegation":"MULTI_ROLE_NO_COMMIT","novelty":"KNOWN_PATTERN"},"pathFamilies":["EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.tsx","EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.brief-lifecycle.test.tsx","docs/reviews/evidence/ncr-brief-reopen-worker-20261013.json","docs/reviews/CVF_NCR_BRIEF_REOPEN_WORKER_RETURN_2026-10-13.md","EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.test.tsx","docs/reviews/evidence/ncr-brief-reopen-quality-20261013.json","docs/reviews/CVF_NCR_BRIEF_REOPEN_PRIMARY_QUALITY_2026-10-13.md","docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_BRIEF_REOPEN_RETURN_REPAIR_2026-10-13.md","docs/baselines/CVF_GC018_NCR_BRIEF_REOPEN_RETURN_REPAIR_2026-10-13.md",".gitattributes","CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json","CVF_SESSION/ACTIVE_SESSION_STATE.json","CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json","AGENT_HANDOFF_V63_2026-09-18.md","CVF_SESSION_MEMORY.md","CVF_SESSION/state/entries/nextAllowedMove.json","docs/reviews/evidence/ncr-brief-reopen-sol-worker-20261013.json","docs/reviews/CVF_NCR_BRIEF_REOPEN_SOL_WORKER_RETURN_2026-10-13.md","docs/reviews/CVF_NCR_BRIEF_REOPEN_COMPLETION_2026-10-13.md","docs/reviews/evidence/ncr-brief-reopen-local-20261013.json","docs/reviews/evidence/cvf-worker-model-tranche-evaluation-2026-10-10.json","docs/reviews/CVF_WORKER_MODEL_SELECTION_PRELIMINARY_REPORT_2026-10-10.md","docs/roadmaps/README.md","docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md","docs/roadmaps/CVF_ROADMAP_INVENTORY.md","docs/roadmaps/CVF_ROADMAP_INVENTORY.csv","docs/work_orders/archive/CVF_AGENT_WORK_ORDER_NCR_BRIEF_REOPEN_RETURN_REPAIR_DISPATCH_2026-10-13.md"],"claims":["BOUNDED_OFFLINE_PANEL_CONTINUITY","NO_AI_GOVERNANCE_OR_FULL_JOB_EXIT"],"requiredProof":["PROOF-REQ-SUPPLEMENT","PROOF-REQ-VALIDATION","PROOF-REQ-RETURN"],"operatorCheckpoints":[],"forbiddenEffects":["PROVIDER_CALL","NETWORK_WRITE","PUBLIC_WRITE","DEPLOYMENT","REAL_DATA_MUTATION","HOOK_WIRING"],"sourceEvidence":{"selectedFilesFullyRead":false,"corpusReceiptRef":null,"completenessClaimChanged":false}}
 ```
 
 ## Knowledge System Applicability
@@ -466,7 +470,7 @@ Primary original quality rejection/byte custody retained; no third BUILD or auto
 
 ## Commit Prompt Readiness
 
-Local exact13 rejected-primary/root-contract dispatch from b3d0e8540c69b3c7ecf3e8db6a6816889788485f then dedicated exact6 actual-SHA continuity and clean bound pre-dispatch. Scope includes original primary candidate and disclosed Markdown trailing-whitespace normalization, Local chrome assertion and evidence, paired exact2 repair and raw authority. Worker must not stage/commit.
+Local exact7 immutable dispatch-lineage rebind from 2c6d23b87c7884c222b94de3e733f4b487da1b57 then exact6 actual-SHA continuity and clean bound pre-dispatch. Same Sol BUILD and original deadline; no new source/test writes or third assignment.
 
 ## Rescan Intelligence Hardening
 
@@ -505,7 +509,7 @@ Worker proof128000bytes; return450lines/64000bytes. Source/tests read-only; curr
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: exact13 rejected-primary/integrated-repair dispatch raw authority, then exact6 continuity; no guard/hook edits.
+Authorized guard-maintenance scope: exact7 immutable dispatch-lineage rebind raw authority, then exact6 continuity; no guard/hook edits.
 Protected paths:
 - `AGENT_HANDOFF_V63_2026-09-18.md`
 - `CVF_SESSION_MEMORY.md`
@@ -514,22 +518,16 @@ Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 Operator authorization: 2026-10-13 continue CVF; conditional Sol medium on inadequate primary return; Local owns scoped repair/review/commits.
-Rollback boundary: exact13 then exact6; original bytes and prior24 observations retained; no parked effect.
+Rollback boundary: exact7 then exact6; original bytes and prior24 observations retained; no parked effect.
 
 ## Mixed Protected-Path Atomicity Authorization
 
 Disposition: AUTHORIZED_EXACT_MANIFEST
-Atomicity reason: rejected primary custody, actual Local dependency repair, integrated conditional contract and raw authority bind one release.
-Rollback boundary: exact13.
+Atomicity reason: immutable predecessor archive and active contract/authority must bind together before the same worker resumes.
+Rollback boundary: exact7, then exact6 continuity; no product/test changes.
 Exact changed manifest:
 
-- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.tsx`
-- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.brief-lifecycle.test.tsx`
-- `docs/reviews/evidence/ncr-brief-reopen-worker-20261013.json`
-- `docs/reviews/CVF_NCR_BRIEF_REOPEN_WORKER_RETURN_2026-10-13.md`
-- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.test.tsx`
-- `docs/reviews/evidence/ncr-brief-reopen-quality-20261013.json`
-- `docs/reviews/CVF_NCR_BRIEF_REOPEN_PRIMARY_QUALITY_2026-10-13.md`
+- `docs/work_orders/archive/CVF_AGENT_WORK_ORDER_NCR_BRIEF_REOPEN_RETURN_REPAIR_DISPATCH_2026-10-13.md`
 - `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_BRIEF_REOPEN_RETURN_REPAIR_2026-10-13.md`
 - `docs/baselines/CVF_GC018_NCR_BRIEF_REOPEN_RETURN_REPAIR_2026-10-13.md`
 - `.gitattributes`
@@ -537,7 +535,7 @@ Exact changed manifest:
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 
-Expected Artifact Existence: original candidate4 and existing chrome; new quality/review/pair; future conditional2 absent.
+Expected Artifact Existence: archive created from exact bytes; active pair and session sources exist; worker exact2 still absent.
 
 ## Finding-To-Governance Learning Disposition
 

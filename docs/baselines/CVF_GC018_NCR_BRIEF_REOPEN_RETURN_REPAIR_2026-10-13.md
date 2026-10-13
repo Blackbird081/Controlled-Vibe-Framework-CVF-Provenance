@@ -9,6 +9,10 @@ Dispatch base head: b3d0e8540c69b3c7ecf3e8db6a6816889788485f
 Commit mode: WORKER_MUST_NOT_COMMIT
 providerExecutionAuthority: FORBIDDEN
 
+## Immutable Return Lineage Anchor
+
+Exact-byte dispatch archive: `docs/work_orders/archive/CVF_AGENT_WORK_ORDER_NCR_BRIEF_REOPEN_RETURN_REPAIR_DISPATCH_2026-10-13.md`; SHA256 `1d6ca143b201fefc1383d9ec385c5113c9587e59f21541cc6df29222d065c302`. Historical frozen dispatch, NOT_ACTIVE_AUTHORITY. The final Sol return MUST use this immutable SCEC predecessor, chainOrdinal=3, problemKey=ncr-brief-panel-reopen. Active authority remains this paired order/baseline. No new assignment: original BUILD start 2026-10-13T06:42:06.7316596Z and deadline 2026-10-13T07:27:06.7316596Z retained; worker released with zero writes/runs. Root pause/rebind time is separately disclosed. Original later HEAD capture remains a preparation deviation. Required final proof: prior/current blockers empty, nonDecreasingBlockerTransitions=1, reviewerScopeExpansions=1 retained; READY_WITH_EXECUTABLE_PROOF / EXECUTABLE_IMPLEMENTATION only with actual current validation and final gates. If blocked, report truthful consolidated blockers under existing counters. Archive prevents later in-place closure from invalidating predecessor bytes.
+
 ## Purpose
 
 Create a fresh, accurate supplemental return for the rejected primary brief-panel contribution and validate current focused compatibility. Panel behavior already has distinct Local1/1 PASS; do not recreate implementation. Original failed logs/blocked primary remain retained.
@@ -71,20 +75,20 @@ Actual result: 0 candidates, 0 returned, not truncated. This query does not prov
 |---|---|
 | Actor | Local INTERNAL_AGENT reviewer/dispatcher |
 | Provider or surface | private shared workspace |
-| Session or invocation | ncr-brief-reopen-sol-dispatch-20261013 |
+| Session or invocation | ncr-brief-reopen-lineage-rebind-20261013 |
 | Working directory | repository root and installed Web package |
 | Command or tool surface | terminal evidence/byte custody, Local probe/copy correction, root contract and gates |
-| Target paths | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.brief-lifecycle.test.tsx`; `docs/reviews/evidence/ncr-brief-reopen-worker-20261013.json`; `docs/reviews/CVF_NCR_BRIEF_REOPEN_WORKER_RETURN_2026-10-13.md`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.test.tsx`; `docs/reviews/evidence/ncr-brief-reopen-quality-20261013.json`; `docs/reviews/CVF_NCR_BRIEF_REOPEN_PRIMARY_QUALITY_2026-10-13.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_BRIEF_REOPEN_RETURN_REPAIR_2026-10-13.md`; `docs/baselines/CVF_GC018_NCR_BRIEF_REOPEN_RETURN_REPAIR_2026-10-13.md`; `.gitattributes`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Target paths | `docs/work_orders/archive/CVF_AGENT_WORK_ORDER_NCR_BRIEF_REOPEN_RETURN_REPAIR_DISPATCH_2026-10-13.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_BRIEF_REOPEN_RETURN_REPAIR_2026-10-13.md`; `docs/baselines/CVF_GC018_NCR_BRIEF_REOPEN_RETURN_REPAIR_2026-10-13.md`; `.gitattributes`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Allowed scope source | operator explicit conditional Sol medium after inadequate quality; original Local closure responsibilities |
-| Before status evidence | b3d0e8540c69b3c7ecf3e8db6a6816889788485f; primary exact2 released, staged empty; release will be clean worktree |
-| After status evidence | exact13 rejected-primary/root-contract dispatch; then exact6 actual-SHA continuity |
+| Before status evidence | 2c6d23b87c7884c222b94de3e733f4b487da1b57; clean worktree, Sol released with zero writes/runs |
+| After status evidence | exact7 immutable dispatch-lineage rebind, then exact6 actual-SHA continuity; same final BUILD |
 | Diff evidence | exact staged manifest and git diff --cached --check before commit |
 | Approval boundary | one final conditional BUILD; no third worker or parked effects |
 | Claim boundary | offline UI and proof identity only; original BLOCKED retained |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-brief-reopen-sol-dispatch-20261013 |
-| Expected manifest | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.brief-lifecycle.test.tsx`; `docs/reviews/evidence/ncr-brief-reopen-worker-20261013.json`; `docs/reviews/CVF_NCR_BRIEF_REOPEN_WORKER_RETURN_2026-10-13.md`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.test.tsx`; `docs/reviews/evidence/ncr-brief-reopen-quality-20261013.json`; `docs/reviews/CVF_NCR_BRIEF_REOPEN_PRIMARY_QUALITY_2026-10-13.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_BRIEF_REOPEN_RETURN_REPAIR_2026-10-13.md`; `docs/baselines/CVF_GC018_NCR_BRIEF_REOPEN_RETURN_REPAIR_2026-10-13.md`; `.gitattributes`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Actual changed set | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.brief-lifecycle.test.tsx`; `docs/reviews/evidence/ncr-brief-reopen-worker-20261013.json`; `docs/reviews/CVF_NCR_BRIEF_REOPEN_WORKER_RETURN_2026-10-13.md`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.test.tsx`; `docs/reviews/evidence/ncr-brief-reopen-quality-20261013.json`; `docs/reviews/CVF_NCR_BRIEF_REOPEN_PRIMARY_QUALITY_2026-10-13.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_BRIEF_REOPEN_RETURN_REPAIR_2026-10-13.md`; `docs/baselines/CVF_GC018_NCR_BRIEF_REOPEN_RETURN_REPAIR_2026-10-13.md`; `.gitattributes`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Invocation ID | ncr-brief-reopen-lineage-rebind-20261013 |
+| Expected manifest | `docs/work_orders/archive/CVF_AGENT_WORK_ORDER_NCR_BRIEF_REOPEN_RETURN_REPAIR_DISPATCH_2026-10-13.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_BRIEF_REOPEN_RETURN_REPAIR_2026-10-13.md`; `docs/baselines/CVF_GC018_NCR_BRIEF_REOPEN_RETURN_REPAIR_2026-10-13.md`; `.gitattributes`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Actual changed set | `docs/work_orders/archive/CVF_AGENT_WORK_ORDER_NCR_BRIEF_REOPEN_RETURN_REPAIR_DISPATCH_2026-10-13.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_BRIEF_REOPEN_RETURN_REPAIR_2026-10-13.md`; `docs/baselines/CVF_GC018_NCR_BRIEF_REOPEN_RETURN_REPAIR_2026-10-13.md`; `.gitattributes`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Manifest delta | MATCH required before commit |
 | Deletion or rename disposition | N/A with reason: ignored temporary probe removed after capture; original byte custody retained; no tracked deletion |
 
@@ -102,7 +106,7 @@ Reason: private dispatch and offline proof only; no publication grant.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: exact13 rejected-primary/integrated-repair dispatch raw authority, then exact6 continuity; no guard/hook edits.
+Authorized guard-maintenance scope: exact7 immutable dispatch-lineage rebind raw authority, then exact6 continuity; no guard/hook edits.
 Protected paths:
 - `AGENT_HANDOFF_V63_2026-09-18.md`
 - `CVF_SESSION_MEMORY.md`
@@ -111,22 +115,16 @@ Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 Operator authorization: 2026-10-13 continue CVF; conditional Sol medium on inadequate primary return; Local owns scoped repair/review/commits.
-Rollback boundary: exact13 then exact6; original bytes and prior24 observations retained; no parked effect.
+Rollback boundary: exact7 then exact6; original bytes and prior24 observations retained; no parked effect.
 
 ## Mixed Protected-Path Atomicity Authorization
 
 Disposition: AUTHORIZED_EXACT_MANIFEST
-Atomicity reason: rejected primary custody, actual Local dependency repair, integrated conditional contract and raw authority bind one release.
-Rollback boundary: exact13.
+Atomicity reason: immutable predecessor archive and active contract/authority must bind together before the same worker resumes.
+Rollback boundary: exact7, then exact6 continuity; no product/test changes.
 Exact changed manifest:
 
-- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.tsx`
-- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.brief-lifecycle.test.tsx`
-- `docs/reviews/evidence/ncr-brief-reopen-worker-20261013.json`
-- `docs/reviews/CVF_NCR_BRIEF_REOPEN_WORKER_RETURN_2026-10-13.md`
-- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.test.tsx`
-- `docs/reviews/evidence/ncr-brief-reopen-quality-20261013.json`
-- `docs/reviews/CVF_NCR_BRIEF_REOPEN_PRIMARY_QUALITY_2026-10-13.md`
+- `docs/work_orders/archive/CVF_AGENT_WORK_ORDER_NCR_BRIEF_REOPEN_RETURN_REPAIR_DISPATCH_2026-10-13.md`
 - `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_BRIEF_REOPEN_RETURN_REPAIR_2026-10-13.md`
 - `docs/baselines/CVF_GC018_NCR_BRIEF_REOPEN_RETURN_REPAIR_2026-10-13.md`
 - `.gitattributes`
@@ -134,7 +132,7 @@ Exact changed manifest:
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 
-Expected Artifact Existence: original candidate4 and existing chrome; new quality/review/pair; future conditional2 absent.
+Expected Artifact Existence: archive created from exact bytes; active pair and session sources exist; worker exact2 still absent.
 
 ## External Knowledge Intake Routing
 
