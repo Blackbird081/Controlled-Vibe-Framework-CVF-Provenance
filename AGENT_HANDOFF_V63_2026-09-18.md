@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Current NCR Continuation
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `3d945c446583bf51b405a4596531f02fb880fef9`. Material SHA: `3d945c446583bf51b405a4596531f02fb880fef9`. Batch ID: CVF-NCR-OFFLINE-JOURNEY-20261013. Exact3 test/evidence/return worker release; production read-only; independent review pending. No provider/live/public/deploy or whole-job claim.
+Current HEAD recorded for this handoff: `9a9f00459bd47d6cb53407d116cc5a44c7b99c07`. Material SHA: `9a9f00459bd47d6cb53407d116cc5a44c7b99c07`. Batch ID: CVF-NCR-OFFLINE-JOURNEY-20261013. Marker-only anchor before split-range closure proof; final exact6 mode sync follows. Offline UI contribution only.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -138,7 +138,7 @@ Q001/Q004 actual-data source/writer,custody,retention/RPO/RTO/cost checkpoints a
 NCR send/B2 STOP and S05/C1 remain; IAB unavailable; repo Playwright Chromium present; vision/full P04/full release remain unproved. No autonomous P11/public/deploy activation.
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: exact6 offline UI journey dispatch continuity;no checker/product edit.
+Authorized guard-maintenance scope: exact1 material marker anchor before committed proof, then final exact6 closure continuity;no checker/product edit.
 Protected paths:
 - `AGENT_HANDOFF_V63_2026-09-18.md`
 - `CVF_SESSION_MEMORY.md`
@@ -148,28 +148,28 @@ Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 
 Operator authorization: 2026-10-13 continue CVF Core and authorize Luna max worker;Local owns review/commits.
-Rollback boundary: exact6;accepted previous proof/source and23 prior observations retained.
+Rollback boundary: exact1 then exact6;prior23 retained. Choreography exception: marker anchor before material proof preserves exact committed material bytes; final mode sync changes source/generated state afterward.
 
 ## Agent Operation Trace Block
 
 | Field | Evidence |
 |---|---|
-| Actor | Local orchestrator/dispatcher/session-sync steward |
+| Actor | Local reviewer/closer/session-sync steward |
 | Provider or surface | private shared workspace |
-| Session or invocation | ncr-offline-journey-worker-sync-20261013 |
+| Session or invocation | ncr-offline-journey-material-anchor-20261013 |
 | Working directory | repo root |
-| Command or tool surface | canonical generator,exact6 continuity and gates |
-| Target paths | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Allowed scope source | standing returned-worker review;exact17 material 60d08d8f2a4abdb590f6c67ec96f45498edc3ffc |
-| Before status evidence | 3d945c446583bf51b405a4596531f02fb880fef9; exact6 continuity only |
-| After status evidence | exact6 dedicated sync; worker BUILD pending,23 prior observations |
-| Diff evidence | git diff --check;exact6 manifest |
+| Command or tool surface | exact1 material-SHA marker anchor, then committed material-range gate before final mode projection |
+| Target paths | `AGENT_HANDOFF_V63_2026-09-18.md` |
+| Allowed scope source | current exact16 reviewed closure and standing Local GC020 marker ownership |
+| Before status evidence | 9a9f00459bd47d6cb53407d116cc5a44c7b99c07; clean material commit, old marker |
+| After status evidence | exact1 marker-only continuity; material proof then final exact6 closure sync |
+| Diff evidence | git diff --check;exact1 marker manifest |
 | Approval boundary | private closure continuity;no successor/provider/public/push |
 | Claim boundary | offline UI composition only;no AI governance/provider/live/full-job/public/deploy claim |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-offline-journey-worker-sync-20261013 |
-| Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Invocation ID | ncr-offline-journey-material-anchor-20261013 |
+| Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md` |
+| Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason:none |
 
