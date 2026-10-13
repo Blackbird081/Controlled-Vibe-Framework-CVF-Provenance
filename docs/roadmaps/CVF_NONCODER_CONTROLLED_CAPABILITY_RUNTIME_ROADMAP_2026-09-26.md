@@ -11,7 +11,7 @@ Decision owner: operator về định hướng/phạm vi; Local reviewer về đ
 
 ## Current Delivery Checkpoint - 2026-10-13
 
-Current delivery projection; Local decision owner. Current mode=cvf_ncr_brief_reopen_closed_useful_selection,
+Current delivery projection; Local decision owner. Current mode=cvf_ncr_brief_copy_closed_useful_selection,
 handoff=AGENT_HANDOFF_V63_2026-09-18.md, next=useful coding outcome selection.
 Prior evidence/phase/effect checkpoints retain their scope.
 
@@ -1064,24 +1064,24 @@ orientation packets are not refreshed by this private local edit.
 
 | Field | Evidence |
 |---|---|
-| Actor | Local INTERNAL_AGENT implementation/test/decision owner; Luna read-only advisory reviewer |
+| Actor | Local INTERNAL_AGENT documentation steward |
 | Provider or surface | private shared workspace |
-| Session or invocation | ncr-brief-copy-local-20261013 |
+| Session or invocation | ncr-brief-copy-projection-sync-20261013 |
 | Working directory | repository root and installed Web package |
-| Command or tool surface | source RED/GREEN, focused Vitest/type/scoped lint, read-only review, staged checks and gates |
-| Target paths | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/SpecExport.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/SpecExport.clipboard-lifecycle.test.tsx`; `docs/reviews/evidence/ncr-brief-copy-local-20261013.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` |
+| Command or tool surface | targeted bootstrap read, roadmap mode projection correction and staged hooks |
+| Target paths | `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` |
 | Allowed scope source | operator CVF continuation; existing lifecycle small direct task |
-| Before status evidence | 762f968ca7c916968da9ccc3df3121a968b24775; clean worktree; staged empty |
-| After status evidence | exact4 finite material; separate exact6 continuity after material commit |
-| Diff evidence | git diff --name-status; git diff --cached --check; exact staged manifest |
+| Before status evidence | eaa5bfc551ae9f8c7dc5c9a29bb351f7b8e5ca19; clean worktree |
+| After status evidence | roadmap-only projection alignment; clipboard implementation/evidence unchanged |
+| Diff evidence | git diff --name-status; git diff --cached --check; exact1 manifest |
 | Approval boundary | private local reversible task; parked effects retain prior authority |
 | Claim boundary | offline UI feedback only; no governance efficacy, actual browser/OS cancellation or whole-job claim |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-brief-copy-local-20261013 |
-| Expected manifest | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/SpecExport.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/SpecExport.clipboard-lifecycle.test.tsx`; `docs/reviews/evidence/ncr-brief-copy-local-20261013.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` |
-| Actual changed set | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/SpecExport.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/SpecExport.clipboard-lifecycle.test.tsx`; `docs/reviews/evidence/ncr-brief-copy-local-20261013.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` |
+| Invocation ID | ncr-brief-copy-projection-sync-20261013 |
+| Expected manifest | `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` |
+| Actual changed set | `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` |
 | Manifest delta | MATCH required before commit |
-| Deletion or rename disposition | None; temporary exact-oracle test removed after byte comparison |
+| Deletion or rename disposition | None; current checkpoint mode text and current operation trace only |
 
 ## Public Export Disposition
 
