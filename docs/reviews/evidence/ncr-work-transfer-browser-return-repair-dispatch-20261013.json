@@ -1,0 +1,117 @@
+{
+  "schemaVersion": "cvf.ncrWorkTransferBrowserReturnRepairDispatch@1.0.0",
+  "batchId": "CVF-NCR-WORK-TRANSFER-BROWSER-RETURN-REPAIR-20261013",
+  "inspectionBaseHead": "8050a3631770ec902758da1691c627345db48b4c",
+  "inspectionStatus": "clean worktree and empty staged index before conditional authoring",
+  "role": "INTERNAL_AGENT dispatch author",
+  "phase": "conditional REWORK generation 1 packet preparation",
+  "decisionOwner": "Local reviewer/closer",
+  "primaryRetentionCommit": "ab1f36a92c301db42879e36437ffdb228b22555f",
+  "frozenPrimary": {
+    "testRawSha256": "7eee3f58bd71ec9c38f661527812b1dff96dc2cc01f82495b22b9fc93cdcd446",
+    "proofRawSha256": "2cc16e758cb590a6971db2cc885619a6d245ee6e42efed6f4bb81be7854db712",
+    "returnRawSha256": "f2494fbdd9bc32e4e81da1d9ee5a3e23fa3dc193af20124a6c1efb2da79d0732",
+    "qualityReviewPath": "docs/reviews/CVF_NCR_WORK_TRANSFER_BROWSER_PRIMARY_QUALITY_REVIEW_2026-10-13.md",
+    "qualityReviewRawSha256": "c4e32b9c9f2cc8a87bbf279bb9017c1bdd282b74d15d2f1624ae1a9f001f5e92",
+    "custodyPath": "docs/reviews/evidence/ncr-work-transfer-browser-primary-quality-20261013.json",
+    "custodyRawSha256": "27d73f14a1d09b785a4acdebc2233259f8ae3b9eb4ed7672e22b5fdd84826d3c",
+    "fiveFailedCandidatesRetained": true
+  },
+  "selection": {
+    "gap": "primary partial route200 did not finish preview/download/stale/selection/reload; harness and locator preparation failed",
+    "rootCauseClusterId": "NCR_WORK_TRANSFER_BROWSER_HARNESS_LOCATOR_PROOF",
+    "priorFindingSetDigest": "27d73f14a1d09b785a4acdebc2233259f8ae3b9eb4ed7672e22b5fdd84826d3c",
+    "reworkGeneration": 1,
+    "workerConfiguration": "gpt-6-sol/medium requested configuration metadata only; INTERNAL_AGENT implementation worker role",
+    "budgetMinutes": 45,
+    "originalRequirements": [
+      "REQ-PREFLIGHT",
+      "REQ-JOURNEY",
+      "REQ-VERSION-BYTES",
+      "REQ-RETURN"
+    ],
+    "registryCoverage": "Root committed named GC-051 source and regenerated aggregate; scan status NOT_STARTED; conditional worker read-only",
+    "conditionalOutputNamespace": ".cvf/runtime/ncr-work-transfer-browser-conditional-20261013",
+    "conditionalExternalNoHopLog": "absolute external temporary path with conditional-only basename; distinct from primary log",
+    "primaryOutputProtection": "modified test must write raw wire/decoded HTML/download/test-owned logs only to conditional namespace; preserve primary raw paths and failure candidates",
+    "outputManifest": {
+      "modifiedExistingTest": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/ncr-work-transfer-browser.spec.ts",
+      "newProof": "docs/reviews/evidence/ncr-work-transfer-browser-conditional-worker-20261013.json",
+      "newReturn": "docs/reviews/CVF_NCR_WORK_TRANSFER_BROWSER_CONDITIONAL_RETURN_2026-10-13.md"
+    }
+  },
+  "sourcePins": [
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/ncr-work-transfer-browser.spec.ts",
+      "rawSha256": "7eee3f58bd71ec9c38f661527812b1dff96dc2cc01f82495b22b9fc93cdcd446",
+      "headBlobSha256": "7eee3f58bd71ec9c38f661527812b1dff96dc2cc01f82495b22b9fc93cdcd446"
+    },
+    {
+      "path": "docs/reviews/evidence/ncr-work-transfer-browser-worker-20261013.json",
+      "rawSha256": "2cc16e758cb590a6971db2cc885619a6d245ee6e42efed6f4bb81be7854db712",
+      "headBlobSha256": "45c47ee89a7703d31f833019c72255a54d1c0b67a3d1b1c8c43329281ca59e7f"
+    },
+    {
+      "path": "docs/reviews/CVF_NCR_WORK_TRANSFER_BROWSER_WORKER_RETURN_2026-10-13.md",
+      "rawSha256": "f2494fbdd9bc32e4e81da1d9ee5a3e23fa3dc193af20124a6c1efb2da79d0732",
+      "headBlobSha256": "bdb02eb9e0bdc6c1b8ca5e7f1f51294c78bde229b312c2bbc2052f423685764a"
+    },
+    {
+      "path": "docs/reviews/CVF_NCR_WORK_TRANSFER_BROWSER_PRIMARY_QUALITY_REVIEW_2026-10-13.md",
+      "rawSha256": "c4e32b9c9f2cc8a87bbf279bb9017c1bdd282b74d15d2f1624ae1a9f001f5e92",
+      "headBlobSha256": "7d1f72cec2a2ec55cee448881403f6a7fc220574d3e17c39135aa437f3f0b433"
+    },
+    {
+      "path": "docs/reviews/evidence/ncr-work-transfer-browser-primary-quality-20261013.json",
+      "rawSha256": "27d73f14a1d09b785a4acdebc2233259f8ae3b9eb4ed7672e22b5fdd84826d3c",
+      "headBlobSha256": "fa210de4b48cac1dce84205a583971794c4e4fa73a49bdca66284725c935d897"
+    },
+    {
+      "path": "docs/corpus-intelligence/registry/entries/cvf-ncr-work-transfer-browser-test.json",
+      "rawSha256": "6e167b60e2f9960c34f70ca66068c333e785456a1d17c8412ed6589c21022b36",
+      "headBlobSha256": "d1ae1a81982c379b576316325882006c92260f27f3a4432ddc1b66083c5f4db2"
+    },
+    {
+      "path": "docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json",
+      "rawSha256": "589fe77a05778fce7128470d53be957ba302b9d20cb9ea0f34d5ee8d5dfefb3f",
+      "headBlobSha256": "fd76919f093b4fe11ca762704643127ed8eb049e4045de7f20012779dcf6d9fd"
+    },
+    {
+      "path": "docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md",
+      "rawSha256": "259e2ddd46e3f4e442b002b7f02f14adb8ba6dd5eda33552a4f98716cc2a8bc2",
+      "headBlobSha256": "99e0d323960d3ac6ed3614cfcc10cc96ce9817e117c90890a775d2da67867ba4"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/playwright.config.mock.ts",
+      "rawSha256": "704c9b4fcfa8a248a9e4fb82b49af184ee6840ccf60b44909d142fc7f61ff712",
+      "headBlobSha256": "704c9b4fcfa8a248a9e4fb82b49af184ee6840ccf60b44909d142fc7f61ff712"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/support/b2d-no-hop-preload.cjs",
+      "rawSha256": "43c2ebc6ac5ee8501a29e84724ec353d278ea048481806ee83982592883f4eea",
+      "headBlobSha256": "43c2ebc6ac5ee8501a29e84724ec353d278ea048481806ee83982592883f4eea"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/page.tsx",
+      "rawSha256": "0ed365b59324bb836d8ec56cba143df941e7a7f8dfa11b841b28a68212f1b35d",
+      "headBlobSha256": "0ed365b59324bb836d8ec56cba143df941e7a7f8dfa11b841b28a68212f1b35d"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.tsx",
+      "rawSha256": "efc5839896236dacc7b37e145fda9904a9513bea434b3ff5c8bcd81652e9ea3e",
+      "headBlobSha256": "0b1005a456c2e400d0f9ae1323351716bf877ca4ff83ca1941e6f786356c27d8"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/route.ts",
+      "rawSha256": "a17ddd57882be1e58a86fb1d86bea8a2693f1169f5ba0c8b6da2af75d7f024ae",
+      "headBlobSha256": "22f08a7ed8a4a4eb06c63bde244c0e2e9f752758bb6f48acbfb12bf57a2862f1"
+    }
+  ],
+  "pinMethod": "rawSha256=SHA256(Path.read_bytes()); headBlobSha256=SHA256(git show HEAD:path bytes); no normalization",
+  "plannedConditionalWorkerManifest": [
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/ncr-work-transfer-browser.spec.ts",
+    "docs/reviews/evidence/ncr-work-transfer-browser-conditional-worker-20261013.json",
+    "docs/reviews/CVF_NCR_WORK_TRANSFER_BROWSER_CONDITIONAL_RETURN_2026-10-13.md"
+  ],
+  "claimBoundary": "Dispatch source pins and bounded REWORK assignment only; no conditional browser execution, provider proof, artifact approval, real-data or NCR R3/R4 claim."
+}
