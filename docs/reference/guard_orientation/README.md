@@ -38,6 +38,9 @@ checker semantics, runtime behavior, provider behavior, or public-sync state.
    `## Checker Source Read-Ahead Block` when the artifact is under
    `docs/baselines`, `docs/work_orders`, `docs/reviews`, or `docs/roadmaps`.
 6. Read the guard surfaces named in the "Read first" column before editing.
+   Workers: also use Worker Preparation Reminder in
+   `docs/reference/CVF_AGENT_EXECUTION_WORKFLOW_SOP_2026-05-19.md` before
+   the first edit; current work-order authority and required reads control.
 
 ### Action-Specific Continuation Quick Read
 
