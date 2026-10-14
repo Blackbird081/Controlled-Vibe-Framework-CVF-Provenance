@@ -200,4 +200,3 @@ Local admits one finite conditional REWORK generation1 under standing NCR contin
 
 
 Seven mechanical requirements plus consolidated REQ-07 control negatives, exact4 conditional outputs, frozen original4, source pins, before-effect counters and full final gates are required. Conditional evidence pending; complete contract is in the paired work order.
-

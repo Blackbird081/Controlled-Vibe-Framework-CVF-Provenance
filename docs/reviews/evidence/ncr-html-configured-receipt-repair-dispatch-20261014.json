@@ -158,5 +158,14 @@
   },
   "primaryFrozenCustody": ".cvf/runtime/ncr-html-configured-receipt-20261014/local-review/frozen-worker",
   "primaryScriptPathDisposition": "conditional-owned MODIFY; original raw preimages immutable in frozen custody",
-  "dispatcherPacketGapCorrection": "original literal pre-implementation command omitted --active-work-order; conditional literal command now binds it explicitly"
+  "dispatcherPacketGapCorrection": "original literal pre-implementation command omitted --active-work-order; conditional literal command now binds it explicitly",
+  "localEofCorrection": {
+    "initialPreparationCommit": "1d37e32f9ce8f012e0bfff9e3796aca70af89dc4",
+    "kind": "two new Local unbound authority-document EOF blank tails corrected, native CRLF retained",
+    "preCommitCorrectionFirstExit": 1,
+    "failure": "pair-only correction set conflicted with dispatcher exact3 trace; companion dispatch metadata included in coherent correction",
+    "failureLog": ".cvf/runtime/ncr-request-cancellation-20261014/html-repair-authority-eof-correction-commit.log",
+    "failureSha256": "d83b9780e01c4b5c582f4b04c9230cb5d9a62c25e7c7263e37bbc1d9582d7b2d",
+    "primaryRuntimeAndOriginalWorkerBytesUnchanged": true
+  }
 }
