@@ -31,21 +31,21 @@ artifact.
 | Prior handoff (archive-qualified) | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V62_2026-09-17.md` |
 | Latest front-door archive | `CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_COMPACTION_ARCHIVE_2026-08-11.md` |
 | Current authority evidence | `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` `currentAuthority` |
-| Parent maintenance | Owned-profile choices resolved; integrated root-control contract PLAN next, cleanup frozen/no effects |
+| Parent maintenance | Integrated HTML root specified; preapproval HOLD, Local admission route next; cleanup frozen/no effects |
 | Freeze posture | `governance_kernel_freeze_recommended` |
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_owned_profile_admission_plan_complete`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=Local integrated root-control/profile contract PLAN, no worker/runtime; role=Local INTERNAL_AGENT orchestrator/reviewer; phase=profile PLAN disposition; decision owner=Local; parked checkpoint=actual-data/custody/business acceptance/provider/live/send/B2/P11/public/deploy and stopped lanes.
+Startup acknowledged: current mode=`cvf_ncr_html_integrated_root_contract_held`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=Local root-design ratification and DESIGN-to-BUILD admission PLAN, no worker/runtime; role=Local INTERNAL_AGENT orchestrator/reviewer; phase=root contract held; decision owner=Local; parked checkpoint=actual-data/custody/business/provider/send/B2/P11/public/deploy and stopped lanes.
 
 ## Current Mode
 
-Current mode marker: `cvf_ncr_owned_profile_admission_plan_complete`
-Current mode: `cvf_ncr_owned_profile_admission_plan_complete`; previous mode marker: `cvf_ncr_html_user_journey_spec_reviewed_plan`
+Current mode marker: `cvf_ncr_html_integrated_root_contract_held`
+Current mode: `cvf_ncr_html_integrated_root_contract_held`; previous mode marker: `cvf_ncr_owned_profile_admission_plan_complete`
 
 ## Next Allowed Move
 
-Mode: `cvf_ncr_owned_profile_admission_plan_complete`
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-OWNED-PROFILE-ADMISSION-PLAN-20261014. Plan=docs/assessments/CVF_NCR_HTML_OWNED_PROFILE_ADMISSION_PLAN_2026-10-14.md; evidence=docs/reviews/evidence/ncr-html-owned-profile-admission-plan-local-20261014.json; material=b40587d3917afb29b9e1661573a5eba3c51c4b39. Source25/eight predicates: proposed developer /artifacts v1/v2, own staged cwd/file event-policy store, real isolated engine/fresh SQLite, app-only token. Legacy mode is inadmissible: retired scope/pins/admin-audit/3-export flow and failed-query false absence. Next Local author one integrated root-control/profile contract and evaluate hash-bound scope/closeability; no narrow third repair or old invocation. Cleanup NCR_HTML_CONFIGURED_RECEIPT_CONTROL_PROOF BLOCKED/FEATURE_SUCCESSORS_FROZEN, primary/conditional remainders retired. No worker/product/browser/engine/provider/config-value/store grant. SPEC bounded/REQ-07 procedure partial; actual values/tools/image/ports UNKNOWN. R1/R2partial,R3/R4open,R5/R6deferred; Q001/Q004/actual-data/custody/business acceptance/send/B2/P11/public/deploy parked; LHW24 retained; historical provider12/13/unused1 retired.
+Mode: `cvf_ncr_html_integrated_root_contract_held`
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-INTEGRATED-ROOT-CONTRACT-20261014. Contract=docs/reviews/CVF_NCR_HTML_INTEGRATED_ROOT_CONTRACT_2026-10-14.md; evidence=docs/reviews/evidence/ncr-html-integrated-root-contract-local-20261014.json; material=c097b206028a89cc2aae8b483724823cd0031b6e. One hash-bound ordinal2 control root, historical EGRESS/ADMISSION bounded resolutions; cleanup/fresh-profile blockers2, partial2/correction2, ROOT_CONTRACT_REQUIRED/INTEGRATED_ROOT_CONTRACT. Explicit preapproval1 object HOLD/exit2; conditional12-gate projection PASS is not active dispatch admission. Next Local ratify root design and resolve DESIGN-to-BUILD admission under existing owners before any fresh pair/release; no operator waiver, narrow third repair or old invocation. NCR_HTML_CONFIGURED_RECEIPT_CONTROL_PROOF BLOCKED/FEATURE_SUCCESSORS_FROZEN, old grants retired. No worker/product/browser/engine/provider/config/store grant. SPEC bounded/REQ07 partial; tools/image/ports UNKNOWN. R1/R2partial,R3/R4open,R5/R6deferred; Q001/Q004/data/custody/business/send/B2/P11/public/deploy parked; LHW24 retained; provider12/13/unused1 retired.
 Historical G1-G7 terminal baseline: mode `acel_g1_g7_research_terminally_closed`. G1-G6 terminal review: `docs/reviews/CVF_ACEL_G1_G6_TERMINAL_STOP_CLOSURE_2026-09-24.md`; G7 research closure: `docs/reviews/CVF_ACEL_G7_CROSS_RUN_CAPABILITY_EVOLUTION_RESEARCH_CLOSURE_2026-09-24.md`. The packet-only post-G7 reconciliation review at `docs/reviews/CVF_ACEL_POST_G7_FULL_CORPUS_ABSORPTION_CLOSURE_2026-09-24.md` is superseded for repository absorption by the 2026-09-25 pinned-source audit. G1 is stopped, G2-G6 remain parked, G7 research is closed, and no automatic G1-G7 successor exists.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
