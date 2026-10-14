@@ -1,0 +1,590 @@
+{
+ "documentKind": "ncr-selected-pilot-convergence-worker-evidence",
+ "notice": "Documentary evidence for Local review; not a new CVF governance schema; source-only; nothing executed",
+ "status": "SOURCE_REVIEW_PENDING_LOCAL_DECISION",
+ "batchId": "CVF-NCR-MILESTONE-CONVERGENCE-20261014",
+ "returnFront": "docs/reviews/CVF_NCR_SELECTED_PILOT_CONVERGENCE_RETURN_2026-10-14.md",
+ "capturedAtUtc": "2026-10-14T04:59:49Z (HEAD capture); analysis followed",
+ "startup": {
+  "mode": "cvf_ncr_selected_pilot_convergence_review_ready",
+  "handoff": "AGENT_HANDOFF_V63_2026-09-18.md",
+  "role": "Local INTERNAL_AGENT source/evidence review worker",
+  "phase": "NCR planning / manual transfer",
+  "decisionOwner": "Local",
+  "nextAllowedMove": "PLAN; read-only review, exact2 documentary outputs, one next-outcome proposal; no BUILD, product test/process/browser or provider grant",
+  "locator": "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json; CVF_SESSION_MEMORY.md Startup Acknowledgment"
+ },
+ "sourceHead": "595eacf9b4314f6ee33cff90ea49f7ce0635ff7a",
+ "executionBaseHead": "429d92760d9615a3200131f51fb17115ab128152",
+ "headDelta": "git diff --name-status 595eacf9b..HEAD = 8 paths: 6 continuity, the assignment, the roadmap; no product or engine file",
+ "worktreeAtStart": "clean (git status --short empty), nothing staged",
+ "sourcePins": [
+  {
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/page.tsx",
+   "kind": "product",
+   "readSpan": "86-180 + grep",
+   "gitBlobSha256": "0ed365b59324bb836d8ec56cba143df941e7a7f8dfa11b841b28a68212f1b35d",
+   "rawWorktreeSha256": "0ed365b59324bb836d8ec56cba143df941e7a7f8dfa11b841b28a68212f1b35d",
+   "physicalLinesBlob": 313,
+   "lastCommit": "40138f664 2026-10-02T14:25:43+07:00"
+  },
+  {
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.tsx",
+   "kind": "product",
+   "readSpan": "1-941 full",
+   "gitBlobSha256": "0b1005a456c2e400d0f9ae1323351716bf877ca4ff83ca1941e6f786356c27d8",
+   "rawWorktreeSha256": "efc5839896236dacc7b37e145fda9904a9513bea434b3ff5c8bcd81652e9ea3e",
+   "physicalLinesBlob": 941,
+   "lastCommit": "01a102476 2026-10-06T22:09:06+07:00"
+  },
+  {
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/route.ts",
+   "kind": "product",
+   "readSpan": "1-376 full",
+   "gitBlobSha256": "22f08a7ed8a4a4eb06c63bde244c0e2e9f752758bb6f48acbfb12bf57a2862f1",
+   "rawWorktreeSha256": "a17ddd57882be1e58a86fb1d86bea8a2693f1169f5ba0c8b6da2af75d7f024ae",
+   "physicalLinesBlob": 376,
+   "lastCommit": "b7306c7ec 2026-10-07T06:07:44+07:00"
+  },
+  {
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/proof.ts",
+   "kind": "product",
+   "readSpan": "1-160 full",
+   "gitBlobSha256": "fbdcc3a434eea13842c9f692d2b54cc9955e80d8c8777d9dfaa14cace9cdfcaf",
+   "rawWorktreeSha256": "fbdcc3a434eea13842c9f692d2b54cc9955e80d8c8777d9dfaa14cace9cdfcaf",
+   "physicalLinesBlob": 160,
+   "lastCommit": "65238b20d 2026-09-29T01:49:31+07:00"
+  },
+  {
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/governance/evaluate/route.ts",
+   "kind": "product",
+   "readSpan": "1-94 full",
+   "gitBlobSha256": "b232dcbdfb1a5ec7982e2ed35caf1e9313dec553a3dcf5752576cc110955c1cb",
+   "rawWorktreeSha256": "b232dcbdfb1a5ec7982e2ed35caf1e9313dec553a3dcf5752576cc110955c1cb",
+   "physicalLinesBlob": 94,
+   "lastCommit": "7a6f909ef 2026-03-08T14:19:11+07:00"
+  },
+  {
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/governance-engine.ts",
+   "kind": "product",
+   "readSpan": "1-233 full",
+   "gitBlobSha256": "48d3252df6614866b3fe84904a0c0f4bd6528d42f1da76543a0db76947494dde",
+   "rawWorktreeSha256": "48d3252df6614866b3fe84904a0c0f4bd6528d42f1da76543a0db76947494dde",
+   "physicalLinesBlob": 233,
+   "lastCommit": "7a6f909ef 2026-03-08T14:19:11+07:00"
+  },
+  {
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/route-governance-proof.ts",
+   "kind": "product",
+   "readSpan": "1-262 full",
+   "gitBlobSha256": "17c19ccc4e31d5e068b728304e4a0970ddc072a9711460dd62b859f3ade15b6e",
+   "rawWorktreeSha256": "17c19ccc4e31d5e068b728304e4a0970ddc072a9711460dd62b859f3ade15b6e",
+   "physicalLinesBlob": 262,
+   "lastCommit": "6284e5bd1 2026-08-15T17:33:06+07:00"
+  },
+  {
+   "path": "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/ledger_layer/sqlite_ledger.py",
+   "kind": "product",
+   "readSpan": "296-435 + grep outline 1-295",
+   "gitBlobSha256": "df353a92b3adead1ed5cf00d7128ba9039c573e0441b819118094ec77c4c4ce5",
+   "rawWorktreeSha256": "df353a92b3adead1ed5cf00d7128ba9039c573e0441b819118094ec77c4c4ce5",
+   "physicalLinesBlob": 435,
+   "lastCommit": "a90756b6a 2026-09-30T12:30:30+07:00"
+  },
+  {
+   "path": "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/api/server.py",
+   "kind": "additional-owner",
+   "readSpan": "75-235 + grep endpoints",
+   "gitBlobSha256": "3f8ab3f8ab336488398d54686611950c0a0efa155ff1cb5168f34475bcd812dd",
+   "rawWorktreeSha256": "b557d28703c22353c74de170e5eb9151e73fa216a44fb3af39935b92da055bd6",
+   "physicalLinesBlob": 295,
+   "lastCommit": "49c5ab395 2026-09-29T20:16:03+07:00"
+  },
+  {
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/ncr-work-transfer-browser.spec.ts",
+   "kind": "additional-owner",
+   "readSpan": "187-391 + grep",
+   "gitBlobSha256": "a7c4d8379cb3552bd037bf8b2e1577501d5a38d1ec0374aa107a163b4336847c",
+   "rawWorktreeSha256": "a7c4d8379cb3552bd037bf8b2e1577501d5a38d1ec0374aa107a163b4336847c",
+   "physicalLinesBlob": 392,
+   "lastCommit": "c79fcd988 2026-10-13T19:10:34+07:00"
+  },
+  {
+   "path": "docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md",
+   "kind": "roadmap",
+   "readSpan": "1-100;379-414;493-506;557-760;1096-1108",
+   "gitBlobSha256": "517a3aa5f56d8e0501c38f7afa5a17415a7378f0a0a15f7634a7d15a6c2f1aad",
+   "rawWorktreeSha256": "78f43f80101bfc08bff52f073f6e5ec4aa584ee7884d035368940eec9e87932c",
+   "lastCommit": "c619ee784 2026-10-14T11:51:42+07:00"
+  },
+  {
+   "path": "docs/reviews/CVF_NCR_W05_SELECTED_CHAIN_READINESS_2026-10-07.md",
+   "kind": "evidence",
+   "readSpan": "1-340",
+   "gitBlobSha256": "f6f68f743129f442d971cc2efd18f6ab831597a197f4aed5eeaa95be656210d5",
+   "rawWorktreeSha256": "f6f68f743129f442d971cc2efd18f6ab831597a197f4aed5eeaa95be656210d5",
+   "lastCommit": "c79fcd988 2026-10-13T19:10:34+07:00"
+  },
+  {
+   "path": "docs/reviews/evidence/cvf-ncr-w05-chain-reconciliation-2026-10-07.json",
+   "kind": "evidence",
+   "readSpan": "key survey + browserConsumer20261008, consolidatedReadiness20261008, currentRouteExecution20261007",
+   "gitBlobSha256": "b4fc29a1711abc89e5e2f08a8e7f28b4dad6d4f80eec81fbb7918b86ade8b15b",
+   "rawWorktreeSha256": "78309ff2e7e9484c8e08ed9701084dbe0d3e14b6248ef6554a9008d7cf5f6fde",
+   "lastCommit": "15569c6b1 2026-10-08T05:48:04+07:00"
+  },
+  {
+   "path": "docs/reviews/CVF_NCR_WORK_TRANSFER_BROWSER_COMPLETION_2026-10-13.md",
+   "kind": "evidence",
+   "readSpan": "1-150",
+   "gitBlobSha256": "71822047b3e2df291a1878fdf83bf2a8f5473e5cb8439aca6f1b734de73d98ea",
+   "rawWorktreeSha256": "71822047b3e2df291a1878fdf83bf2a8f5473e5cb8439aca6f1b734de73d98ea",
+   "lastCommit": "ad19c7392 2026-10-13T19:18:22+07:00"
+  },
+  {
+   "path": "docs/reviews/evidence/ncr-work-transfer-browser-local-20261013.json",
+   "kind": "evidence",
+   "readSpan": "top-level key survey",
+   "gitBlobSha256": "e60f215b5f137e3516e57546efb81243cee997b2aee1dda1302e8c26bc81b22e",
+   "rawWorktreeSha256": "40893e1d692f19bf762393995a24d6b26835f4619de5a848b9517540c21593a7",
+   "lastCommit": "c79fcd988 2026-10-13T19:10:34+07:00"
+  },
+  {
+   "path": "docs/reviews/CVF_NCR_HOME_ALIBABA_JOURNEY_COMPLETION_2026-10-13.md",
+   "kind": "evidence",
+   "readSpan": "1-130",
+   "gitBlobSha256": "1f56615639443c0c4ff3bf9293633f3bbd4db542bb2fea101efd3b5141566135",
+   "rawWorktreeSha256": "a522c731213c201787b521ef39a3da4e4bb0cd92863a4be793d3707c36054b65",
+   "lastCommit": "5d3861246 2026-10-14T01:03:33+07:00"
+  },
+  {
+   "path": "docs/reviews/CVF_NCR_RECEIPT_HISTORY_COMPLETION_2026-10-14.md",
+   "kind": "evidence",
+   "readSpan": "1-110",
+   "gitBlobSha256": "b643e2277e2995f06cf862a3f2002523a1690dbb00194ad22fa3337e0b129d2e",
+   "rawWorktreeSha256": "29b049b7c4f5347350fcbbee863aa76fcf45680077708916ff272b2131bf0d3a",
+   "lastCommit": "145a591e1 2026-10-14T08:31:20+07:00"
+  },
+  {
+   "path": "docs/reviews/CVF_NCR_REQUEST_CANCELLATION_COMPLETION_2026-10-14.md",
+   "kind": "evidence",
+   "readSpan": "1-120",
+   "gitBlobSha256": "bc87e2e3597ca2432daf1975aa289e4e332dfbd18e80dde17c119744d4dbc1b0",
+   "rawWorktreeSha256": "1a0ad104c0c9e14483d267656f05bceeade0421646715b4d4e847cdc8f787ea8",
+   "lastCommit": "7d7e7a1a6 2026-10-14T10:55:48+07:00"
+  },
+  {
+   "path": "docs/reviews/evidence/ncr-alibaba-release-local-20261013.json",
+   "kind": "evidence",
+   "readSpan": "1-140",
+   "gitBlobSha256": "1f80f032e4c4a5caf6e752a3af97d95eba3f882e39935bcb7d8a263766b04c09",
+   "rawWorktreeSha256": "cbbdcb7e064b77cebec67218030747611b449a9e7f15d5930a3657310197f44b",
+   "lastCommit": "c79fcd988 2026-10-13T19:10:34+07:00"
+  },
+  {
+   "path": "docs/assessments/CVF_NCR_SELECTED_PILOT_CONVERGENCE_ASSIGNMENT_2026-10-14.md",
+   "kind": "assignment",
+   "readSpan": "1-217 full",
+   "gitBlobSha256": "b5d1883ae3ead8308f4196663733635f95d44033eeed740481959b0ada62e5c1",
+   "rawWorktreeSha256": "84a8cf2adb6d7598019c9570dec4af62111a62293f81e5c2418a9d81a08e0235",
+   "lastCommit": "c619ee784 2026-10-14T11:51:42+07:00"
+  }
+ ],
+ "pinNote": "gitBlobSha256 = SHA-256 of `git show HEAD:path`; rawWorktreeSha256 differs where CRLF worktree bytes differ from LF blob (panel, export route, engine server.py)",
+ "freshness": {
+  "w05PinComparison": "gitBlobSha256 at HEAD equals all 8 sourceBlobSha256 pins in docs/reviews/evidence/cvf-ncr-w05-chain-reconciliation-2026-10-07.json (page, panel, export route, proof, evaluate route, governance-engine, route-governance-proof, sqlite_ledger)",
+  "lastCommits": "page 40138f664 2026-10-02; panel 01a102476 2026-10-06; export route b7306c7ec 2026-10-07; proof 65238b20d 2026-09-29; evaluate route and governance-engine 7a6f909ef 2026-03-08; route-governance-proof 6284e5bd1 2026-08-15; sqlite_ledger a90756b6a 2026-09-30; engine server 49c5ab395 2026-09-29",
+  "changesAfterBrowserBase8fd2c56d2": "non-test cvf-web/src changes are Home/execute/provider only: home/page.tsx, api/execute/route.ts, DynamicForm, ResultExportControls, ResultViewer, lib/ai/providers+types, execution-diagnostics, execution-receipt-archive, provider-attempt-admission, provider-request-cancellation, types/index.ts; engine unchanged; e2e support harness files for Home paths",
+  "unknown": "transitive imports beyond named files (bounded-request-body.ts last changed b7306c7ec 2026-10-07 with the export route; dashboard layout.tsx last changed 8b18c412b 2026-10-12, before the 10-13 browser base)",
+  "claimClass": "byte identity of named files; not a runtime result"
+ },
+ "additionalOwnersFollowed": [
+  {
+   "n": 1,
+   "path": "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/api/server.py",
+   "why": "evaluate endpoint and ledger backend selection (effect owner)",
+   "depth": "L75-235 plus endpoint grep"
+  },
+  {
+   "n": 2,
+   "path": "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/**/*.py",
+   "why": "answer provider use for the engine side",
+   "depth": "case-insensitive grep openai|dashscope|alibaba|anthropic|httpx|requests.|urllib|aiohttp|socket|api_key: 0 files"
+  },
+  {
+   "n": 3,
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/ncr-work-transfer-browser.spec.ts",
+   "why": "exact 10-13 assertions and receipt configuration",
+   "depth": "L187-391 plus grep"
+  },
+  {
+   "n": 4,
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/artifact-export-loopback-receipt.spec.ts",
+   "why": "receipt configuration pattern (loopback stub)",
+   "depth": "grep only"
+  },
+  {
+   "n": 5,
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/artifact-export-loopback-timeout.spec.ts",
+   "why": "timeout pattern",
+   "depth": "grep only"
+  },
+  {
+   "n": 6,
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/artifact-export-route-byte-download.spec.ts",
+   "why": "no-hop configuration pattern",
+   "depth": "grep only"
+  }
+ ],
+ "notRead": [
+  "core_orchestrator and ledger event schema",
+  "scripts/probe_cvf_q001_synthetic_system_chain.py",
+  "scripts/probe_cvf_w05_browser_chain.cjs",
+  "credential values",
+  "user ledgers",
+  "archived roadmap D-rows"
+ ],
+ "stageMatrix": [
+  {
+   "gate": "R1",
+   "requirement": "RM L581-592: one slice UX/contract usable; L589 simulated-user acceptance; L591 pre-effect profile checks (actual NEXTAUTH_URL, receiver, data, retention, latency, cost, deny/limit), separate UI walkthrough, remaining P06/P08",
+   "owner": [
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/page.tsx L100-120,L145-173",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.tsx L434-440,L483-529,L797-819"
+   ],
+   "evidence": [
+    "10-13 browser completion (base 8fd2c56d2)",
+    "10-08 configured browser consumer (base 5540847da) in W05 JSON browserConsumer20261008",
+    "B1/secret/preview/print records retained in W05 JSON"
+   ],
+   "evidenceClass": "synthetic real-browser transport; mocked-UI component proofs",
+   "missingProof": [
+    "effectful-profile values UNKNOWN (configuration out of scope)",
+    "simulated non-coder walkthrough log not located in named sources (UNKNOWN)",
+    "configured-receipt plus rich-UI composition"
+   ],
+   "missingImplementation": "none established; accept step absent by design (B2 parked)",
+   "dependency": "Q001, Q003",
+   "nextAction": "composed proof (nextOutcome); locate or defer walkthrough log",
+   "status": "PARTIAL (unchanged)"
+  },
+  {
+   "gate": "R2",
+   "requirement": "RM L594-604: offline integration; durable intent/admission before effect; write failure grants nothing; single claim; timeout/cancel/unknown not blind replay; W05 chain; L602 negative cases",
+   "owner": [
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/route.ts L257-376",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/proof.ts L56-160",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/governance/evaluate/route.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/governance-engine.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/route-governance-proof.ts",
+    "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/api/server.py",
+    "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/ledger_layer/sqlite_ledger.py"
+   ],
+   "evidence": [
+    "W05 stage matrix 10-07 SOURCE_RECONCILED",
+    "five synthetic route cases base 0d92eb76 (same-actor, Docker engine + disposable SQLite)",
+    "10-08 browser consumer",
+    "Q008 route selection source-confirmed"
+   ],
+   "evidenceClass": "source reconciliation; synthetic process/store; browser transport",
+   "missingProof": [
+    "current whole-route run through real Work Transfer session with receipt configured and recovery join; W05 pre-live NOT_CLOSED"
+   ],
+   "decisionNeeded": "whether durable server-side intent before the receipt effect is required; source shows ID minted in process, echoed in response, ledger append idempotent per request_id",
+   "missingImplementation": "none established",
+   "dependency": "local engine image, disposable store, ephemeral token",
+   "nextAction": "composed proof; Local disposition of intent question",
+   "status": "PARTIAL (unchanged)"
+  },
+  {
+   "gate": "R3",
+   "requirement": "RM L613 entry (R2/W05 pre-live in scope, no unresolved impactful P1, Q004/Q005, provider/model/auth/cost/data/stop authority); L609-614 and A04 L701 exit incl. real-provider governance proof and receipt bound to run/version/input/output",
+   "owner": [
+    "whole chain; acceptance owner not implemented (B2 parked)"
+   ],
+   "evidence": [
+    "none composed"
+   ],
+   "evidenceClass": "none; 10-13 Alibaba canonical 9/9 is separate live diagnostic",
+   "missingProof": [
+    "entire R3 run"
+   ],
+   "decisionNeeded": [
+    "D-1 real-provider rule for provider-free chain",
+    "D-2 acceptance owner for exact artifact (B2/Q004)",
+    "D-3 ledger profile for any configured receipt beyond disposable SQLite"
+   ],
+   "missingImplementation": "receipt-to-artifact binding weak (blocker 3); no in-chain agent stage (D015)",
+   "dependency": "R2 pre-live; Q001/Q004/Q005",
+   "nextAction": "not a worker outcome",
+   "status": "OPEN (unchanged)"
+  },
+  {
+   "gate": "R4",
+   "requirement": "RM L619-623: restart/crash/reconnect/cancel/duplicate/unknown-effect, clean backup/restore, no artifact loss, no duplicate effect, two independent connections",
+   "owner": [
+    "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/ledger_layer/sqlite_ledger.py L301-329,L396-435",
+    "panel state (no persistence)"
+   ],
+   "evidence": [
+    "W05-P2 restart, P4 response loss, P5 wrong ID/store on disposable single-host SQLite",
+    "09-30 target-publication repair (synthetic)",
+    "10-13 reload clears panel"
+   ],
+   "evidenceClass": "synthetic store recovery; source existence of backup_to/restore_backup",
+   "missingProof": [
+    "composed restore on selected chain",
+    "duplicate semantics: UI suppresses only a resend of an unchanged in-flight snapshot; each Build mints new ID and ledger block"
+   ],
+   "decisionNeeded": "two connections for provider-free chain: applicable or NOT_APPLICABLE_WITH_REASON",
+   "missingImplementation": "none established; packet resume on another device unsupported (server stores no packet)",
+   "dependency": "R3",
+   "nextAction": "defer after composed proof and decisions",
+   "status": "OPEN (unchanged)"
+  },
+  {
+   "gate": "R5/R6",
+   "status": "DEFERRED",
+   "note": "no hosted or new-capability scope introduced"
+  }
+ ],
+ "selectedChain": {
+  "classNote": "all entries are source-derived (S) unless marked otherwise; nothing was executed by this worker",
+  "providerUse": {
+   "usesProvider": false,
+   "basis": "no model/agent/MCP call in route.ts, proof.ts, evaluate route, governance-engine.ts, engine api; engine-wide grep for provider/HTTP-client/key tokens: 0 files",
+   "outboundHops": [
+    "route -> NEXTAUTH_URL/api/governance/evaluate (only if absolute)",
+    "evaluate proxy -> GOVERNANCE_ENGINE_URL (default localhost:8000)/api/v1/evaluate"
+   ],
+   "realGovernanceRelation": "AGENTS.md live-proof rule and RM L612 ask real-provider proof for governance behavior; this chain's governance is a deterministic pipeline plus ledger append; real-provider evidence (canonical 9/9, W05 ambiguity probe, Home/Alibaba) lies outside the chain; resolution is Local decision D-1"
+  },
+  "retry": "none automatic in UI, route or proxy (governance-engine.ts L48-88 single fetch despite header comment)",
+  "fallback": "fail-open for the draft: HTML returned on receipt NOT_CONFIGURED/UNAVAILABLE/INVALID_RESPONSE/TIMED_OUT/denied (route.ts L351-375)",
+  "effectBoundary": "bytes returned to browser; only persistent effect is engine ledger append inside evaluate when hop configured and engine enabled; unset CVF_GOVERNANCE_LEDGER_PATH -> JSON default ledger_layer/ledger_chain.json (Q001 Profile A boundary); server.py L83-86",
+  "timeoutWindow": "helper default 4000 ms (1000-30000) < proxy default 5000 ms: commit after helper abort structurally possible; W05-P4 observed (synthetic)",
+  "receiptMeaning": "PRESENT = well-formed engine response with matching request_id/artifact_id, decision-to-action mapping, ledger flags (proof.ts L111-135); receiptId = in-process attempt ID; engine saw anchor slug + first 500 source chars at REVIEW/R0; ALLOW is not artifact approval; APPROVED branch and allowNote badge reachable only via legacy envelope (proof.ts L137-152), so current-engine path yields DRAFT_UNACCEPTED",
+  "versionInputOutput": "browser keeps seven-field snapshot + attempt number; sourceHash covers full trimmed source; HTML built before hop so file carries anchor and sourceHash, not receipt/attempt ID; server stores no packet; ledger payload retention UNKNOWN",
+  "recovery": "attempt ID shown on TIMED_OUT/UNAVAILABLE; no in-product lookup; built-but-undownloaded packet and edits lost on reload/selection change (10-13 browser L318-343, observed); disclosure of that loss to user UNKNOWN",
+  "locators": {
+   "page": "page.tsx L100-120,L145-173",
+   "panel": "ArtifactExportPanel.tsx L89-97,L434-440,L483-529,L531-542,L797-819",
+   "route": "route.ts L257-376",
+   "proof": "proof.ts L56-160",
+   "proxy": "evaluate/route.ts L21-77; governance-engine.ts L28-88,L134-142",
+   "engine": "server.py L83-86,L154-188; sqlite_ledger.py L235-236,L301-329,L396-435"
+  }
+ },
+ "evidenceDisposition": [
+  {
+   "evidence": "W05 10-07 five route cases (base 0d92eb76)",
+   "class": "synthetic signed export -> engine -> SQLite, restart, response loss; same-actor; no provider",
+   "applicability": "DIRECT at current bytes"
+  },
+  {
+   "evidence": "W05 10-08 browser consumer (base 5540847da)",
+   "class": "one real-browser build, receipt PRESENT/ALLOW, exact ID in SQLite, saved bytes equal, stale-form binding; disposable store; no provider",
+   "applicability": "DIRECT at current bytes; one build; no preview/selection/reload assertions recorded"
+  },
+  {
+   "evidence": "10-13 browser completion (base 8fd2c56d2)",
+   "class": "edit/preview/byte-equal download/stale/selection/reload; receipt NOT_CONFIGURED, evaluate attempts 0; independent probe",
+   "applicability": "DIRECT for UI behavior only"
+  },
+  {
+   "evidence": "10-13 Alibaba canonical 9/9",
+   "class": "release-bundle live diagnostic, unsigned dirty-base, SOT3 qwen-flash, partial cost",
+   "applicability": "NOT on this chain; separate; not composed"
+  },
+  {
+   "evidence": "Home/Alibaba journey",
+   "class": "Home Generate -> ResultViewer Markdown with live receipt",
+   "applicability": "different consumer; Work Transfer drafts from an audit record; no data path from Home output found; audit-record provenance of Home activity UNKNOWN; supporting pattern only"
+  },
+  {
+   "evidence": "receipt history 10-14",
+   "class": "Home saved receipt archive reload/restart",
+   "applicability": "INAPPLICABLE as proof: Work Transfer has no saved packet history"
+  },
+  {
+   "evidence": "request cancellation 10-14",
+   "class": "Home execute/provider abort",
+   "applicability": "INAPPLICABLE: no cancellable provider call; panel has no abort; hop is timeout-bounded"
+  }
+ ],
+ "combinationRule": "distinct observations are never combined into a new full-route PASS",
+ "roadmapProjectionObservations": [
+  "checkpoint table already names the selected HTML milestone",
+  "R2 row does not separate the 10-08 configured browser consumer",
+  "projection states source HEAD 595eacf9b while HEAD is 429d92760 (documentary delta only)",
+  "assignment preliminary note about export-feedback mode not observable at HEAD",
+  "D015 line locators drifted: ArtifactExportPanel 238-258 -> 483-529; route 235-306 -> 257-376; proof 24-84 -> 56-160; conclusion holds"
+ ],
+ "topBlockers": [
+  {
+   "rank": 1,
+   "class": "action-specific decision",
+   "summary": "R3 entry decisions D-1 real-provider rule for provider-free chain, D-2 acceptance owner (B2/Q004), D-3 ledger profile, A07 applicability",
+   "impact": "blocks all of R3",
+   "workerActionable": false
+  },
+  {
+   "rank": 2,
+   "class": "missing proof",
+   "summary": "configured-receipt composition through real Work Transfer session at current bytes (remaining W05/R2 pre-live gap)",
+   "impact": "unblocks R2 pre-live regardless of D-1..D-3",
+   "workerActionable": true
+  },
+  {
+   "rank": 3,
+   "class": "missing implementation (conditional)",
+   "summary": "receipt-to-artifact binding: 500-char excerpt, anchor slug as artifact ID, receipt ID absent from file; decide after rank 2 with its own spec",
+   "impact": "R3 receipt bound to run/version/input/output",
+   "workerActionable": false
+  }
+ ],
+ "inapplicable": [
+  "request cancellation",
+  "saved receipt history",
+  "Home journey as HTML pilot stage",
+  "selected-agent stage (D015)"
+ ],
+ "nextOutcome": {
+  "id": "NCR-HTML-CONFIGURED-RECEIPT-BROWSER-COMPOSITION",
+  "type": "smallest missing integrated proof; implementation unnecessary",
+  "consumer": "Local orchestrator and operator deciding R3 entry",
+  "pathsToChangeOrTest": [
+   "scripts/probe_cvf_w05_browser_chain.cjs (not read)",
+   "scripts/probe_cvf_q001_synthetic_system_chain.py (not read)",
+   "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/ncr-work-transfer-browser.spec.ts"
+  ],
+  "pathChoice": "extend script vs add spec deferred to work-order authoring after reading them; product sources read-only",
+  "acceptanceCases": [
+   "configured receipt: edited 3 fields -> one POST; PRESENT, ALLOW, DRAFT_UNACCEPTED, attempt ID == receipt ID; evaluated note, not approval badge",
+   "disposable SQLite read-only join: exact request_id, count 1, chain valid, artifact_id == anchor slug",
+   "preview heading and download bytes equal route HTML; sourceHash == sha256(trimmed source)",
+   "post-build edit -> stale; old preview/receipt labeled; no new POST; second Build mints new ID and second block (count 2) without mutating first",
+   "deselect/reselect/other record/reload -> panel cleared; ledger count unchanged",
+   "engine stopped -> HTML still returned, UNAVAILABLE/TIMED_OUT, attempt ID shown, no auto retry, count unchanged",
+   "zero browser/server provider requests; product provider starts 0"
+  ],
+  "authorityRequired": "Local admission and work order; product test/process/browser permission; existing local engine image (no pull); disposable ignored-runtime store, ephemeral token, owned loopback ports; no user ledger copy, credentials or provider. No grant follows from this proposal",
+  "stopConditions": "product-source defect or unexpected provider/network request -> stop and record without repair; at most one diagnosed harness failure; image absent -> stop; no automatic successor",
+  "costEstimate": {
+   "worker": "45-90 min BUILD (estimate)",
+   "reviewer": "20-40 min with one distinct probe (estimate)",
+   "providerCalls": 0,
+   "tokensBilling": "UNKNOWN",
+   "basis": "10-13 worker BUILD 11:25:30Z-11:44:28Z = 19 min under 45 min cap; 10-08 runner 72438 ms; 10-13 review 70 min incl primary rejection",
+   "label": "estimate, not measured"
+  }
+ },
+ "authorityCheckpoints": [
+  {
+   "id": "A-1",
+   "item": "BUILD/work-order admission for nextOutcome",
+   "state": "ABSENT; bootstrap grants PLAN only"
+  },
+  {
+   "id": "A-2",
+   "item": "product tests/process/browser/Docker",
+   "state": "not granted"
+  },
+  {
+   "id": "A-3",
+   "item": "provider call",
+   "state": "allowed0; prior 12/13 retired, no reset"
+  },
+  {
+   "id": "D-1",
+   "item": "real-provider rule vs provider-free chain",
+   "state": "OPEN Local decision"
+  },
+  {
+   "id": "D-2",
+   "item": "acceptance owner of exact artifact (B2/Q004)",
+   "state": "OPEN, parked"
+  },
+  {
+   "id": "D-3",
+   "item": "ledger profile beyond disposable SQLite (default JSON ledger = Profile A)",
+   "state": "OPEN, parked; Q001/Q004"
+  },
+  {
+   "id": "D-4",
+   "item": "durable intent before receipt effect (R2) and A07 two connections (R4) applicability",
+   "state": "OPEN Local disposition"
+  }
+ ],
+ "retainedLimits": [
+  "R0 data/configuration/walkthrough conditions",
+  "Q001, Q004, B2, business acceptance, send, P11, public sync, deploy",
+  "old stopped lanes and LHW24",
+  "Expense/S5/PLL/scoring/Gateway/sourceR2/media/Customer Care parked",
+  "MFRP sample eligibility separate from useful technical evidence",
+  "R1/R2 partial; R3/R4 open; R5/R6 deferred (carried, unchanged)"
+ ],
+ "unknowns": [
+  "effectful-profile values (NEXTAUTH_URL, receiver, retention, latency, cost): configuration out of scope",
+  "simulated non-coder walkthrough log for this slice",
+  "ledger event payload retention of the 500-char excerpt (orchestrator not read)",
+  "transitive imports beyond named files",
+  "audit-record provenance of Home activity",
+  "whether UI discloses loss of unsaved packet on reload",
+  "model-native usage and billing for this worker invocation"
+ ],
+ "commands": {
+  "analysis": [
+   {
+    "cmd": "git rev-parse HEAD; git status --short; git log --oneline -3",
+    "exit": 0,
+    "result": "HEAD 429d92760d9615a3200131f51fb17115ab128152; status empty"
+   },
+   {
+    "cmd": "python -B -I (pins: git show HEAD:path, sha256, raw sha256, git log -1)",
+    "exit": 0,
+    "result": "20 pins recorded; 8 product blobs equal W05 pins"
+   },
+   {
+    "cmd": "git diff --name-only 8fd2c56d2..HEAD (cvf-web/src, tests, engine); git diff --name-status 595eacf9b..HEAD",
+    "exit": 0,
+    "result": "Home/execute/provider only; docs/continuity only"
+   },
+   {
+    "cmd": "ripgrep over engine *.py for provider/HTTP/key tokens",
+    "exit": "no match",
+    "result": "0 files"
+   }
+  ],
+  "structuralCheck": "First reviewer-fast run exit 1 (3 named families: Source Verification symbol literal; external intake routing needs Internal source and one Coordination Binding section; equivalence-claim wording near paths). Only the two output artifacts were repaired; second run exit 0, all 70 checks passed. Run twice, not once, because of the first failure. JSON gained this annotation after the second run (metadata only; parse re-verified).",
+  "finalCommands": [
+   {
+    "cmd": "python -B governance/compat/run_local_governance_hook_chain.py --hook reviewer-fast (run 1)",
+    "exit": 1,
+    "log": "session scratchpad reviewer-fast.log",
+    "logSha256": "1f9475ba403e370aadbcfffdd4316c047e02c49188be9148222d189ca4226306",
+    "lines": 178
+   },
+   {
+    "cmd": "python -B governance/compat/run_local_governance_hook_chain.py --hook reviewer-fast (run 2, after repair)",
+    "exit": 0,
+    "log": "session scratchpad reviewer-fast-rerun.log",
+    "logSha256": "dae15e16e59f415dd56e16629997965e73df71d67b9cc1e5f91dd69626156e25",
+    "result": "All reviewer-fast governance checks passed (70/70)"
+   },
+   {
+    "cmd": "git diff --check",
+    "exit": 0,
+    "result": "no output; note it does not inspect untracked files"
+   },
+   {
+    "cmd": "git status --short",
+    "exit": 0,
+    "result": "exactly two untracked: the return Markdown and this JSON; nothing staged; HEAD unchanged 429d92760d9615a3200131f51fb17115ab128152"
+   }
+  ]
+ },
+ "noStageNoCommit": "nothing staged, nothing committed, no push, no subagent, no provider call",
+ "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
+ "claimBoundary": "Source inspection only; no current runtime result; R1/R2 partial, R3/R4 open, R5/R6 deferred; no acceptance, readiness or closure claimed"
+}
