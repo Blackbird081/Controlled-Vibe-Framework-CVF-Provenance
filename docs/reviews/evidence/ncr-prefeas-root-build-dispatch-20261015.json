@@ -1,0 +1,123 @@
+{
+  "schemaVersion": "cvf.preapprovalFeasibility.v1",
+  "proposal": {
+    "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_PREFEAS_ROOT_BUILD_2026-10-15.md",
+    "sha256": "65ada5dec6e975988cf8cc4c9a5a5e4d575b2fb3f8424e522d7ee3a5fbf49dd7"
+  },
+  "approvalTarget": {
+    "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_PREFEAS_ROOT_BUILD_2026-10-15.md",
+    "sha256": "65ada5dec6e975988cf8cc4c9a5a5e4d575b2fb3f8424e522d7ee3a5fbf49dd7",
+    "prospectiveOutcomeSha256": "3e07f08362d2b5c591f439e315e461322f02f58e4f4d84b5c5d19d1311af81e4"
+  },
+  "prospectiveOutcome": {
+    "schemaVersion": "cvf.semanticConvergenceControl.v1",
+    "problemKey": "ncr-preapproval-integrated-root-build-action-admission",
+    "chainMode": "INITIAL",
+    "chainOrdinal": 0,
+    "predecessor": null,
+    "blockerDelta": {
+      "prior": [],
+      "resolved": [],
+      "retained": [],
+      "new": [],
+      "reopened": [],
+      "current": []
+    },
+    "resolutionEvidence": {},
+    "counters": {
+      "partialReadyClosures": 0,
+      "reviewerScopeExpansions": 0,
+      "sameClaimCorrections": 0,
+      "nonDecreasingBlockerTransitions": 0
+    },
+    "claims": [],
+    "requiredDisposition": "CONTINUE_BOUNDED",
+    "successorScope": "INITIAL_BOUNDED"
+  },
+  "phasePrerequisites": {
+    "phase": "PRE_DISPATCH_GOVERNANCE_OWNER_AMENDMENT",
+    "rows": [
+      {
+        "requirementId": "LOCKED_BASELINE",
+        "requiredForPhase": true,
+        "evidence": {
+          "path": "docs/baselines/CVF_GC018_NCR_PREFEAS_ROOT_BUILD_2026-10-15.md",
+          "sha256": "5a0f7eb8a3e203c81fe847a996a68097fb2eea4bc5c43a8bf23afd138ea29140",
+          "locator": "SPEC version NCR_PREFEAS_ROOT_BUILD_ACTION_V1"
+        },
+        "deferredToPhase": null
+      },
+      {
+        "requirementId": "SOURCE-1",
+        "requiredForPhase": true,
+        "evidence": {
+          "path": "docs/reference/preapproval_feasibility/README.md",
+          "sha256": "838f85553bbaeeaa3289cff3a0fbb69cd53ad39c1c7a3902684b943f107b265d",
+          "locator": "## Disposition / Receipt Contract"
+        },
+        "deferredToPhase": null
+      },
+      {
+        "requirementId": "SOURCE-2",
+        "requiredForPhase": true,
+        "evidence": {
+          "path": "governance/compat/preapproval_feasibility_contract.py",
+          "sha256": "d2ad96194befdc81baa563dca2ceddad989e9f33a6af651cf41e707fb223835f",
+          "locator": "def evaluate("
+        },
+        "deferredToPhase": null
+      },
+      {
+        "requirementId": "SOURCE-3",
+        "requiredForPhase": true,
+        "evidence": {
+          "path": "governance/compat/run_preapproval_feasibility_gate.py",
+          "sha256": "c7b958dc5436671cda5d66e67068a26ba81dd50765da3b1b8da7425fff42b50c",
+          "locator": "def main("
+        },
+        "deferredToPhase": null
+      },
+      {
+        "requirementId": "SOURCE-4",
+        "requiredForPhase": true,
+        "evidence": {
+          "path": "governance/compat/check_preapproval_feasibility.py",
+          "sha256": "f9eba51905101423a61eded8a5283e11559b7f10aa49ab248ef202119af5bc69",
+          "locator": "def run("
+        },
+        "deferredToPhase": null
+      },
+      {
+        "requirementId": "SOURCE-5",
+        "requiredForPhase": true,
+        "evidence": {
+          "path": "governance/compat/test_check_preapproval_feasibility.py",
+          "sha256": "dc1aed809361d946cfde49b31d40dd4746a71589a6126c7ce66243056fce7fe9",
+          "locator": "def test_class2_valid_escalation_is_hold_and_nonzero("
+        },
+        "deferredToPhase": null
+      },
+      {
+        "requirementId": "APPROVED_SOURCE_PROPOSAL",
+        "requiredForPhase": true,
+        "evidence": {
+          "path": "docs/assessments/CVF_NCR_HTML_ROOT_ADMISSION_RECONCILIATION_2026-10-14.md",
+          "sha256": "db271f758ac8f582d4ca153b71e2fe7b0c6ed423d2ca33a98e3b71709dfdf134",
+          "locator": "Proposed Existing-Owner Amendment / Reviewable Scope"
+        },
+        "deferredToPhase": null
+      },
+      {
+        "requirementId": "BOUND_LEARNING_CONTROL",
+        "requiredForPhase": true,
+        "evidence": {
+          "path": "governance/compat/learning_application_binding.py",
+          "sha256": "84068b6f197c19404a23daa643266d7f9ed334f313cd2d8bbe2f2e6d37d7b7b8",
+          "locator": "def validate_changed("
+        },
+        "deferredToPhase": null
+      }
+    ]
+  },
+  "requestQueue": null
+}
