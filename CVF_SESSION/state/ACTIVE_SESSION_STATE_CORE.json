@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_REQUEST_CANCELLATION_CLOSURE_CONTROL_2026-10-14.md",
     "workOrderSha256": "88082f9083a0f0b278feb7df10d5c5d560f7e3fe1489ab521a52e83030643cec"
   },
-  "currentAuthoritySyncReason": "NCR selected HTML milestone convergence; operator manual source-review worker; prior grants retired; reviewed material c619ee784341a2644857e596856dffec5f841f30; source-only assignment docs/assessments/CVF_NCR_SELECTED_PILOT_CONVERGENCE_ASSIGNMENT_2026-10-14.md under operator2026-10-14. Prior cancellation authority hash pair unchanged; this planning review grants no implementation/provider effects.",
+  "currentAuthoritySyncReason": "Qualified source-review intake committed at 8f64032400176728d6536efe3340aa7e5e5985a6; exact6 actual-SHA continuity. Prior cancellation pair unchanged. New test dispatch is being prepared, not execution authority until committed pair and release continuity/gates.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
@@ -110,7 +110,7 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_ncr_selected_pilot_convergence_review_ready",
+  "currentMode": "cvf_ncr_selected_pilot_convergence_review_accepted",
   "previousMode": "cvf_ncr_brief_copy_closed_useful_selection",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",

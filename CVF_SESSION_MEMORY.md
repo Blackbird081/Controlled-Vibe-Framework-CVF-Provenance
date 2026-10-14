@@ -31,21 +31,21 @@ artifact.
 | Prior handoff (archive-qualified) | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V62_2026-09-17.md` |
 | Latest front-door archive | `CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_COMPACTION_ARCHIVE_2026-08-11.md` |
 | Current authority evidence | `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` `currentAuthority` |
-| Parent maintenance | Selected HTML source-only convergence; manual worker transfer; full pilot open |
+| Parent maintenance | Qualified source review accepted; finite synthetic test release preparation; pilot open |
 | Freeze posture | `governance_kernel_freeze_recommended` |
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_selected_pilot_convergence_review_ready`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=selected HTML source/evidence convergence under `docs/assessments/CVF_NCR_SELECTED_PILOT_CONVERGENCE_ASSIGNMENT_2026-10-14.md`; role=Local INTERNAL_AGENT orchestrator/reviewer; phase=NCR planning/manual transfer; decision owner=Local; parked checkpoint=real-data writer/custody/business acceptance/send/P11/public/deploy and unrelated stopped lanes.
+Startup acknowledged: current mode=`cvf_ncr_selected_pilot_convergence_review_accepted`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=prepare finite synthetic configured HTML test pair and bound release; role=Local INTERNAL_AGENT orchestrator/reviewer; phase=NCR dispatch preparation; decision owner=Local; parked checkpoint=actual-data/custody/business acceptance/provider/live/send/P11/public/deploy and unrelated stopped lanes.
 
 ## Current Mode
 
-Current mode marker: `cvf_ncr_selected_pilot_convergence_review_ready`
-Current mode: `cvf_ncr_selected_pilot_convergence_review_ready`; previous mode marker: `cvf_ncr_request_cancellation_closed`
+Current mode marker: `cvf_ncr_selected_pilot_convergence_review_accepted`
+Current mode: `cvf_ncr_selected_pilot_convergence_review_accepted`; previous mode marker: `cvf_ncr_selected_pilot_convergence_review_ready`
 
 ## Next Allowed Move
 
-Mode: `cvf_ncr_selected_pilot_convergence_review_ready`
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-MILESTONE-CONVERGENCE-20261014. REVIEW_ASSIGNMENT=docs/assessments/CVF_NCR_SELECTED_PILOT_CONVERGENCE_ASSIGNMENT_2026-10-14.md. User transfers one Local INTERNAL_AGENT source/evidence review manually using chosen worker configuration. Read-only selected HTML Work Transfer/R1-R4 exit mapping; exact2 documentary outputs; one next-outcome proposal. No implementation work-order fulfillment, BUILD, product tests/process/browser or provider call grant. Prior observed12/13 and all old grants retired; no reset. Root evaluates roadmap before each dispatch/after each return. R1/R2partial,R3/R4open,R5/R6deferred; Q001/Q004/B2/business/send/P11/public/deploy parked; LHW24 retained. Reviewed documentary material=c619ee784341a2644857e596856dffec5f841f30.
+Mode: `cvf_ncr_selected_pilot_convergence_review_accepted`
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-MILESTONE-CONVERGENCE-20261014. Source review accepted with qualifications at docs/assessments/CVF_NCR_SELECTED_PILOT_CONVERGENCE_LOCAL_DISPOSITION_2026-10-14.md; source material=8f64032400176728d6536efe3340aa7e5e5985a6. Local prepares paired finite test-only docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_CONFIGURED_RECEIPT_2026-10-14.md and its dedicated release continuity/bound gates before manual worker transfer. No BUILD or provider call yet. Selected synthetic browser/receipt/request-row/byte gap only; no governance-policy, artifact acceptance or full W05/R2/R3/R4 closure. Original2 retained; R1/R2partial,R3/R4open,R5/R6deferred. Q001/Q004 actual-data/custody/business acceptance/send/B2/P11/public/deploy parked; LHW24 retained. Prior observed12/13; all old/unused provider grants retired, no reset.
 Historical G1-G7 terminal baseline: mode `acel_g1_g7_research_terminally_closed`. G1-G6 terminal review: `docs/reviews/CVF_ACEL_G1_G6_TERMINAL_STOP_CLOSURE_2026-09-24.md`; G7 research closure: `docs/reviews/CVF_ACEL_G7_CROSS_RUN_CAPABILITY_EVOLUTION_RESEARCH_CLOSURE_2026-09-24.md`. The packet-only post-G7 reconciliation review at `docs/reviews/CVF_ACEL_POST_G7_FULL_CORPUS_ABSORPTION_CLOSURE_2026-09-24.md` is superseded for repository absorption by the 2026-09-25 pinned-source audit. G1 is stopped, G2-G6 remain parked, G7 research is closed, and no automatic G1-G7 successor exists.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
