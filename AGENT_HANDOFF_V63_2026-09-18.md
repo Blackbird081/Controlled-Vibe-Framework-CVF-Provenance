@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Current NCR Continuation
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `e06397c34d04700223f55972b0b84d7c4a74c0b8`. Material SHA: `e06397c34d04700223f55972b0b84d7c4a74c0b8`. Batch ID: CVF-NCR-HTML-CONFIGURED-RECEIPT-REPAIR-20261014. Conditional cleanup blocked; six cases/authenticity PASS retained; separate exact6 actual-SHA continuity; no third BUILD.
+Current HEAD recorded for this handoff: `9e1fca2d70aee6695041f012012d9156642f4531`. Material SHA: `9e1fca2d70aee6695041f012012d9156642f4531`. Batch ID: CVF-NCR-SELECTED-PILOT-PREREQUISITES-20261014. Exact3 source/PLAN reassessment; existing fresh-source entry/profile facts; exact6 actual-SHA continuity; no runtime or third BUILD.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -13,21 +13,22 @@ Current continuation only. Root AGENTS.md and canonical routing owners retain fu
 Closed history is preserved byte-for-byte at `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V63_PRE_NCR_COMPACTION_2026-10-07.md` (SHA256 `54801fdcf14e9abe17592352ec3c69a0b0e855632991af0caacac7b65252ccba`); it is NOT_ACTIVE_AUTHORITY and not default startup reading.
 ## Scope / Target / Owner Boundary
 
-Local owns conditional review/roadmap/material retention and exact6 actual-SHA continuity. Original conditional4 raw bytes retained; no Local tracked implementation repair. Six mechanical cases and actual authenticity PASS retained; mandatory cleanup acceptance blocked. Repeated control root stops automatic third BUILD; all runtime grants retired. Next source/PLAN pilot-prerequisite reassessment only; no worker/provider/live/new-capability/public/deploy release.
+Local completed exact3 source/PLAN reassessment and owns exact6 actual-SHA continuity. Existing /artifacts entry selected for fresh explicitly chosen source, Work Transfer remains audit variant. No product/worker/runtime action. Next finite design-only SPEC packet preparation under existing owners, separate paired scope/release before manual worker transfer. Same cleanup cluster blocked, no third BUILD or renamed repair; old grants retired. External research, new UI/audit/storage/runtime owners, real-data/provider/live/public/deploy remain unopened.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_html_conditional_reviewed_cleanup_blocked`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=Local source/PLAN pilot-prerequisite reassessment, no current BUILD; role=Local INTERNAL_AGENT orchestrator/reviewer; phase=NCR conditional blocked disposition; decision owner=Local; parked checkpoint=actual-data/custody/business acceptance/provider/live/send/P11/public/deploy and stopped lanes.
+Startup acknowledged: current mode=`cvf_ncr_selected_pilot_prerequisites_reconciled_plan`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=Local paired design-only HTML user-journey SPEC preparation, no current worker/runtime; role=Local INTERNAL_AGENT orchestrator/reviewer; phase=NCR source/PLAN disposition; decision owner=Local; parked checkpoint=actual-data/custody/business acceptance/provider/live/send/B2/P11/public/deploy and stopped lanes.
 
 ## Current Mode
 
-`cvf_ncr_html_conditional_reviewed_cleanup_blocked`. Local conditional review docs/reviews/CVF_NCR_HTML_CONFIGURED_RECEIPT_CONDITIONAL_COMPLETION_2026-10-14.md is BLOCKED_WITH_REASON for full REQ-07. Egress/admission resolved bounded, legacy exception isolated; actual cleanup finally can yield ok=true when taskkill/tasklist/Docker-ps fail. No actual surviving worker process inferred. Distinct Local authenticity PASS60.08s, export1/evaluate1,2762-byte row/download identity, provider0; terminal probe admission blocked separately. Raw4/34 verified, products12 unchanged; SQL checkpoint-only, Chromium subtree indirect, procedure PARTIAL_WITH_REASON. Worker conditional3/2 and Local1/1 consumed; all remainders retired. RECURRING_CLUSTER_STOP/OPERATOR_NOTICE_REQUIRED/FEATURE_SUCCESSORS_FROZEN, no automatic third BUILD. R1/R2partial,R3/R4open,R5/R6deferred; actual-profile/data/custody/business walkthrough and durable intent/A07 open. Historical provider12/13/unused1 retired; LHW24 and MFRP raw-only/no-sample qualification retained.
+`cvf_ncr_selected_pilot_prerequisites_reconciled_plan`. Source assessment docs/assessments/CVF_NCR_SELECTED_PILOT_PREREQUISITES_REASSESSMENT_2026-10-14.md and JSON docs/reviews/evidence/ncr-selected-pilot-prerequisites-local-20261014.json pin29 named sources. /artifacts already renders same export form without audit fixture; existing navigation links it. Successful execute telemetry may produce metadata audit after cost append; caught errors can degrade and audit access is owner/admin. Actual source/output/version transfer, identity/origin/engine/store/SIEM/retention/cost/business walkthrough not proved. File/SQLite event retention null; file reads can initialize/repair stores. No runtime/data/provider read or product change in this source task. Existing six HTML cases and Local60.08s/2762-byte authenticity retained; full REQ-07 cleanup BLOCKED, all remainders retired, no third BUILD. Next design-only SPEC planning. R1/R2partial,R3/R4open,R5/R6deferred; historical provider12/13/unused1 retired, LHW24 retained. P4 current conditional BLOCKED row and exact-marker adjudication remain separately disclosed below; no new sample claimed.
 
 ## Current Authority
 
-Retained immutable conditional execution baseline: `docs/baselines/CVF_GC018_NCR_HTML_CONFIGURED_RECEIPT_REPAIR_2026-10-14.md`; SHA256 `f24b4e6c5762d755da3f79461c84f5840ed2d88b9bf776e782e217dcc2d16dbd`.
-Retained immutable conditional work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_CONFIGURED_RECEIPT_REPAIR_2026-10-14.md`; SHA256 `d7c6d15f32c28225df4925ced2cb4609b547868245b3895e2d053bb459700f84`.
-Execution scope retired; these unchanged bytes are historical authority, not another run. Local review `docs/reviews/CVF_NCR_HTML_CONFIGURED_RECEIPT_CONDITIONAL_COMPLETION_2026-10-14.md`; evidence `docs/reviews/evidence/ncr-html-configured-receipt-conditional-local-20261014.json`; actual material `e06397c34d04700223f55972b0b84d7c4a74c0b8`. PLAN only, no third worker BUILD; any future effect reuse needs separately reviewed correction/authority.
+Current source/PLAN owner: `docs/assessments/CVF_NCR_SELECTED_PILOT_PREREQUISITES_REASSESSMENT_2026-10-14.md`; evidence `docs/reviews/evidence/ncr-selected-pilot-prerequisites-local-20261014.json`; actual material `9e1fca2d70aee6695041f012012d9156642f4531`. No worker packet or runtime authority released.
+Retained retired execution baseline: `docs/baselines/CVF_GC018_NCR_HTML_CONFIGURED_RECEIPT_REPAIR_2026-10-14.md`; SHA256 `f24b4e6c5762d755da3f79461c84f5840ed2d88b9bf776e782e217dcc2d16dbd`.
+Retained retired execution work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_CONFIGURED_RECEIPT_REPAIR_2026-10-14.md`; SHA256 `d7c6d15f32c28225df4925ced2cb4609b547868245b3895e2d053bb459700f84`.
+These unchanged bytes preserve historical scope only. Conditional full REQ-07 remains blocked; current source/PLAN does not reopen cleanup budgets or grant actual profile/provider/pilot effects.
 
 ## Accepted NCR Evidence And Continuation
 
@@ -39,7 +40,7 @@ Finite clipboard result ordering is accepted; actual OS write cancellation, whol
 
 ## Next Allowed Move
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-CONFIGURED-RECEIPT-REPAIR-20261014. Review=docs/reviews/CVF_NCR_HTML_CONFIGURED_RECEIPT_CONDITIONAL_COMPLETION_2026-10-14.md; evidence=docs/reviews/evidence/ncr-html-configured-receipt-conditional-local-20261014.json; material=e06397c34d04700223f55972b0b84d7c4a74c0b8. Conditional full REQ-07 blocked: failed cleanup/absence commands can yield ok=true. Six mechanical cases retained; egress/admission resolved bounded, legacy exception isolated. Distinct Local authenticity PASS60.08s, export1/evaluate1,2762-byte request-row/download identity, provider0; closure admission blocked separately. Raw conditional4/34 bindings and products12 unchanged. Worker conditional3 exports/2 alive attempts plus Local1/1 consumed; all primary/conditional remaining grants retired. RECURRING_CLUSTER_STOP, operator notice and FEATURE_SUCCESSORS_FROZEN; no automatic third BUILD or seven-case replay. Next Local source/PLAN reassessment of actual-profile/data/custody/business walkthrough prerequisites under existing selected-pilot disposition; cleanup requires separate reviewed correction before harness effect reuse. No current worker/runtime/provider/live/new-capability grant. R1/R2partial,R3/R4open,R5/R6deferred; Q001/Q004/send/B2/P11/public/deploy parked; LHW24 retained. Historical provider12/13 and unused1 retired; no reset.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-SELECTED-PILOT-PREREQUISITES-20261014. Source assessment=docs/assessments/CVF_NCR_SELECTED_PILOT_PREREQUISITES_REASSESSMENT_2026-10-14.md; evidence=docs/reviews/evidence/ncr-selected-pilot-prerequisites-local-20261014.json; material=9e1fca2d70aee6695041f012012d9156642f4531. Source29 pins: existing /artifacts form for fresh explicitly chosen source; Work Transfer audited-record variant. Home audit producer exists conditionally, metadata not full output; telemetry can degrade, audit access owner/admin. Actual origin/evaluate/engine/store/SIEM/retention/cost/identity and business walkthrough remain open. Next Local prepares one finite design-only NCR-HTML-FRESH-PROFILE-USER-JOURNEY-SPEC paired packet and release before manual selected-worker transfer; no current worker dispatch, product or runtime grant. Keep existing seven fields/owners; no new UI/audit/storage/runtime capability. Conditional full REQ-07 cleanup still blocked; same-cluster FEATURE_SUCCESSORS_FROZEN/no third BUILD, all primary/conditional remainders retired. R1/R2partial,R3/R4open,R5/R6deferred; Q001/Q004/actual-data/custody/business acceptance/send/B2/P11/public/deploy parked; LHW24 retained. Historical provider12/13/unused1 retired; provider calls0 this source task, no fresh live grant.
 
 ## Active Boundary
 T3B has a Local-verified active v1 specification. Party B is verified and T3C-C1 tooling accepted at `db78c87df`; T3C-C2 and Party C are verified. T3D-C1 tooling is accepted at `9ed844c2a` without source. T3D-C0-R1 closed at `2fffa1ef7`. T3D-C3 was accepted bounded at `88137e9a2`, but actual-mode prepare attempts failed before Party B/C execution; authorized cleanup removed the failed root and discarded unaccepted worker changes. G1 stopped, G2-G6 parked, and G7 research closed at `660601f0e` with `ADAPT_EXISTING_HANDOFF_ONLY`. Evidence-join sufficiency stays WATCH; no implementation successor exists. Rejected T2 paths remain archived; HRLTP-T2 paused.
@@ -71,7 +72,7 @@ Actual exact6 continuity commit: e623de377e26f24fecce030164eb001dc51f00d1; mater
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: Local handoff-only post-commit P4 safety disclosure after exact6 conditional blocked-disposition/retired-grant actual-SHA continuity; no product/guard/hook/checker edits.
+Authorized guard-maintenance scope: Local exact6 source/generated source-PLAN and actual material-SHA continuity; retain prior P4 exact-marker disclosure, no product/guard/hook/checker edits.
 Protected paths:
 - `AGENT_HANDOFF_V63_2026-09-18.md`
 - `CVF_SESSION_MEMORY.md`
@@ -79,30 +80,30 @@ Protected paths:
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-Operator authorization: 2026-10-14 NCR continuation and regular roadmap reassessment/manual worker transfer; finite Local review, admitted distinct probe and continuity.
+Operator authorization: NCR continuation and regular roadmap reassessment; current Local source/PLAN and exact6 continuity only, future manually selected worker requires its own paired release.
 Rollback boundary: exact6; preserve original archive and accepted/blocked history, parked effects and prior observations. Historical P4 safety adjudication .cvf/runtime/mfrp-p4-shadow-canary/adjudications/ncr-offline-journey-marker-20261013.json remains valid for its original marker; no blanket clearance of future markers. New P4 receipt-generation marker d8d91ae25bd487b6798d7d7e48816cd7fb363d2d98bc27a6e70c43ee65eabbaa separately adjudicated by Local at .cvf/runtime/mfrp-p4-shadow-canary/adjudications/ncr-work-transfer-browser-marker-20261013.json, SHA256 ab42577ad08b59f54abb80ebbee64c6aae9b0d570018e8fccda9d5a2e0180c81; exact marker preserved in private custody; required admission heading restored; old failed receipt not promoted. Current marker OBS-70961d0b8b4d27db separately adjudicated by Local at .cvf/runtime/mfrp-p4-shadow-canary/adjudications/ncr-brief-reopen-marker-20261013.json, SHA256 c006bb09e83c08442460212cbabca0e100d22b27280af25c58a5df97804f9671; exact marker removed, journal/historical blocks/C15 exclusions unchanged.
 
 ## Agent Operation Trace Block
 
 | Field | Evidence |
 |---|---|
-| Actor | Local INTERNAL_AGENT reviewer/closer and handoff steward |
+| Actor | Local INTERNAL_AGENT session-sync steward |
 | Provider or surface | private shared workspace |
-| Session or invocation | ncr-html-conditional-p4-disclosure-20261014 |
+| Session or invocation | ncr-pilot-prerequisites-continuity-20261014 |
 | Working directory | repository root |
-| Command or tool surface | committed P4 blob/receipt/row validation, exact-marker adjudication and handoff-only disclosure |
-| Target paths | AGENT_HANDOFF_V63_2026-09-18.md |
+| Command or tool surface | source/core entry update and canonical generator; material-SHA handoff/front-door reconciliation |
+| Target paths | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Allowed scope source | operator NCR continuation; exact6 authority in paired baseline/order |
-| Before status evidence | e623de377e26f24fecce030164eb001dc51f00d1; clean exact6 continuity; new P4 safety marker |
-| After status evidence | handoff-only actual safety disclosure; verified marker adjudicated, journal unchanged |
-| Diff evidence | git diff --name-status and staged whitespace; adjudication digest bound above |
-| Approval boundary | Local source/PLAN only; no third BUILD or runtime/provider/new-capability grant |
-| Claim boundary | actual authenticity PASS retained; mandatory REQ-07 cleanup acceptance blocked; six mechanical cases retained, phase exits open |
+| Before status evidence | 9e1fca2d70aee6695041f012012d9156642f4531; exact3 documentary material committed, clean worktree/stage empty |
+| After status evidence | exact6 source/generated PLAN continuity; retired execution raw pair unchanged |
+| Diff evidence | git diff --name-status and final exact6 staged whitespace; state generator check |
+| Approval boundary | source/PLAN only; future design worker packet not yet released; no current runtime/provider grant |
+| Claim boundary | source29 pinned facts and conditional design; prior cleanup BLOCKED/P4/current historical proofs preserved |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-html-conditional-p4-disclosure-20261014 |
-| Expected manifest | AGENT_HANDOFF_V63_2026-09-18.md |
-| Actual changed set | AGENT_HANDOFF_V63_2026-09-18.md |
-| Manifest delta | MATCH exact1 handoff disclosure |
+| Invocation ID | ncr-pilot-prerequisites-continuity-20261014 |
+| Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Manifest delta | MATCH exact6 continuity |
 | Deletion or rename disposition | None |
 
 ## Claim Boundary
