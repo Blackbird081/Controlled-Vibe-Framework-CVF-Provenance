@@ -1,0 +1,153 @@
+{
+  "schemaVersion": "cvf.ncrRootAdmissionReconciliation.v1",
+  "sourceHead": "7305a6787e27fbfe049e5a70df1ccf54ed4d5bfb",
+  "status": "EXISTING_OWNER_PHASE_GAP_SCOPE_DECISION_REQUIRED",
+  "sourcePins": [
+    {
+      "path": "docs/reference/preapproval_feasibility/README.md",
+      "rawSha256": "838f85553bbaeeaa3289cff3a0fbb69cd53ad39c1c7a3902684b943f107b265d",
+      "gitBlobSha256": "838f85553bbaeeaa3289cff3a0fbb69cd53ad39c1c7a3902684b943f107b265d",
+      "classification": "READ_ONLY_NAMED_SOURCE"
+    },
+    {
+      "path": "governance/compat/preapproval_feasibility_contract.py",
+      "rawSha256": "d2ad96194befdc81baa563dca2ceddad989e9f33a6af651cf41e707fb223835f",
+      "gitBlobSha256": "693095033001bdfb8827dbbc2508bc2ecfca3ea74bca7b37f44ba29aad0b6c2d",
+      "classification": "READ_ONLY_NAMED_SOURCE"
+    },
+    {
+      "path": "governance/compat/run_preapproval_feasibility_gate.py",
+      "rawSha256": "c7b958dc5436671cda5d66e67068a26ba81dd50765da3b1b8da7425fff42b50c",
+      "gitBlobSha256": "c7b958dc5436671cda5d66e67068a26ba81dd50765da3b1b8da7425fff42b50c",
+      "classification": "READ_ONLY_NAMED_SOURCE"
+    },
+    {
+      "path": "governance/compat/check_preapproval_feasibility.py",
+      "rawSha256": "f9eba51905101423a61eded8a5283e11559b7f10aa49ab248ef202119af5bc69",
+      "gitBlobSha256": "f9eba51905101423a61eded8a5283e11559b7f10aa49ab248ef202119af5bc69",
+      "classification": "READ_ONLY_NAMED_SOURCE"
+    },
+    {
+      "path": "governance/compat/test_check_preapproval_feasibility.py",
+      "rawSha256": "dc1aed809361d946cfde49b31d40dd4746a71589a6126c7ce66243056fce7fe9",
+      "gitBlobSha256": "8d77f5967dcc5ad9926e318eee2daa2b0850e8a86370090adaa78c71b914347d",
+      "classification": "READ_ONLY_NAMED_SOURCE"
+    },
+    {
+      "path": "docs/reviews/CVF_NCR_HTML_INTEGRATED_ROOT_CONTRACT_2026-10-14.md",
+      "rawSha256": "5998f2db7ca40457ffdecc08654456f19b20ee0ba97fbc43e6942c729b5a38f7",
+      "gitBlobSha256": "5998f2db7ca40457ffdecc08654456f19b20ee0ba97fbc43e6942c729b5a38f7",
+      "classification": "READ_ONLY_NAMED_SOURCE"
+    },
+    {
+      "path": "docs/reviews/evidence/ncr-html-integrated-root-contract-local-20261014.json",
+      "rawSha256": "aecdf954d64b0cb53f5e7246bec81abe1f303aac4ac7ebda4dfaf7e9328a2887",
+      "gitBlobSha256": "aecdf954d64b0cb53f5e7246bec81abe1f303aac4ac7ebda4dfaf7e9328a2887",
+      "classification": "READ_ONLY_NAMED_SOURCE"
+    },
+    {
+      "path": "docs/reference/semantic_convergence_control/CVF_SEMANTIC_CONVERGENCE_AND_ESCALATION_CONTROL_STANDARD.md",
+      "rawSha256": "1d2753fd56108eb8a0ed5cc5f03ab85ee67e9c18ff4d1390ef55c45473cc0196",
+      "gitBlobSha256": "1d2753fd56108eb8a0ed5cc5f03ab85ee67e9c18ff4d1390ef55c45473cc0196",
+      "classification": "READ_ONLY_NAMED_SOURCE"
+    },
+    {
+      "path": "docs/reference/CVF_GOVERNED_WORK_LIFECYCLE_AND_DESIGN_CONTROL_STANDARD_2026-06-11.md",
+      "rawSha256": "b48f11363ee62a2ec4c85c6f9fba4540b90eb74475c31aeab18cfe4492a536de",
+      "gitBlobSha256": "b48f11363ee62a2ec4c85c6f9fba4540b90eb74475c31aeab18cfe4492a536de",
+      "classification": "READ_ONLY_NAMED_SOURCE"
+    },
+    {
+      "path": "governance/compat/check_core_guard_self_protection.py",
+      "rawSha256": "fb373c5efa08b6fd6a8a4bfcfa7d58918a102e4d23f6f1b3bb29c3689e800c60",
+      "gitBlobSha256": "92388d7bbd51d287449325b83e5a9cf966688021216fd3a102557d9c8b42a71d",
+      "classification": "READ_ONLY_NAMED_SOURCE"
+    },
+    {
+      "path": "governance/compat/model_selection_reviewed_outcome.py",
+      "rawSha256": "9526916557ef81654930bac9697bc242d6b8ebf41163b23977b78729392ec0ff",
+      "gitBlobSha256": "d2c64c950ffac3cce59d13ef5fb5da210b8f305f823e1d8699b3523935dbefcb",
+      "classification": "READ_ONLY_NAMED_SOURCE"
+    },
+    {
+      "path": "docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md",
+      "rawSha256": "185a3a1db183ced45185c7a65fbcb94444b5b4137143e5bb537a4f145997653c",
+      "gitBlobSha256": "185a3a1db183ced45185c7a65fbcb94444b5b4137143e5bb537a4f145997653c",
+      "classification": "ROADMAP_PREIMAGE"
+    }
+  ],
+  "sourceProof": {
+    "kind": "AST_SOURCE_INSPECTION_NOT_RUNTIME_PROBE",
+    "selector": "disposition in HOLD_DISPOSITIONS",
+    "branch": "elif disposition in HOLD_DISPOSITIONS:\n        receipt[\"technicalDisposition\"] = \"HOLD\"\n    else:\n        diags.append(diag(\"OUTCOME_DISPOSITION_UNKNOWN\", \"requiredDisposition is not a known canonical disposition\"))\n        return finish()",
+    "phaseConsultedByDispositionBranch": false,
+    "existingRootReceipt": {
+      "schemaVersion": "cvf.preapprovalFeasibilityReceipt.v1",
+      "proposal": {
+        "path": "docs/reviews/CVF_NCR_HTML_INTEGRATED_ROOT_CONTRACT_2026-10-14.md",
+        "sha256": "5998f2db7ca40457ffdecc08654456f19b20ee0ba97fbc43e6942c729b5a38f7"
+      },
+      "companion": {
+        "path": "docs/reviews/evidence/ncr-html-integrated-root-contract-preapproval-20261014.json",
+        "sha256": "2908a915a7219da53aa683cd086d4019f1f7618b910f79af81af7822fbc5e01a"
+      },
+      "approvalTarget": {
+        "path": "docs/reviews/CVF_NCR_HTML_INTEGRATED_ROOT_CONTRACT_2026-10-14.md",
+        "sha256": "5998f2db7ca40457ffdecc08654456f19b20ee0ba97fbc43e6942c729b5a38f7"
+      },
+      "prospectiveOutcomeSha256": "a3986c6222e1c3a6310df522a6a365585929206a45e8c47d56ed944276b77b67",
+      "canonicalBlockCount": 1,
+      "canonicalViolations": [],
+      "prerequisites": {
+        "examined": 3,
+        "deferred": 3
+      },
+      "queue": null,
+      "technicalDisposition": "HOLD",
+      "coverageDisposition": "NOT_APPLICABLE",
+      "operatorApprovalRequired": true,
+      "effectAdmission": false,
+      "diagnostics": []
+    },
+    "retainedReceiptConsumedWithoutRerun": true
+  },
+  "existingOwnerRegressionSource": "test_class2_valid_escalation_is_hold_and_nonzero",
+  "consumerSearch": {
+    "command": "rg -l 'technicalDisposition|FEASIBLE_DISPOSITIONS|HOLD_DISPOSITIONS' governance/compat scripts -g '*.py' -g '*.cjs'",
+    "hits": 6,
+    "preapprovalConsumers": 4,
+    "unrelatedModelOutcomeHits": 2,
+    "qualification": "named token search; no wider consumer/completeness claim"
+  },
+  "proposal": {
+    "authorization": "NOT_GRANTED",
+    "paths": [
+      "docs/reference/preapproval_feasibility/README.md",
+      "governance/compat/preapproval_feasibility_contract.py",
+      "governance/compat/run_preapproval_feasibility_gate.py",
+      "governance/compat/check_preapproval_feasibility.py",
+      "governance/compat/test_check_preapproval_feasibility.py"
+    ],
+    "semantics": "explicit requested root-build action yields separate typed build-feasible disposition after canonical validation; legacy ROOT remains HOLD, STOP always HOLD, no READY claim",
+    "currentRootStateUnchanged": true,
+    "runtimeGrant": false
+  },
+  "effects": {
+    "workerInvocations": 0,
+    "browserStarts": 0,
+    "nextStarts": 0,
+    "engineStarts": 0,
+    "providerStarts": 0,
+    "actualConfigValueReads": 0,
+    "userStoreReads": 0,
+    "coreGuardWrites": 0,
+    "dependencyInstalls": 0
+  },
+  "nativeUsage": "UNKNOWN",
+  "billing": "UNKNOWN",
+  "materialPaths": [
+    "docs/assessments/CVF_NCR_HTML_ROOT_ADMISSION_RECONCILIATION_2026-10-14.md",
+    "docs/reviews/evidence/ncr-html-root-admission-reconciliation-local-20261014.json",
+    "docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md"
+  ]
+}
