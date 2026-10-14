@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Current NCR Continuation
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `85e984bc92b54eba22ec7fb2a879dd619b3c7a41`. Material SHA: `85e984bc92b54eba22ec7fb2a879dd619b3c7a41`. Batch ID: CVF-NCR-HTML-FRESH-PROFILE-USER-JOURNEY-SPEC-20261014. Exact3 documentary pair; exact6 raw-authority/actual-SHA continuity; worker manual transfer after final bound gates; no runtime or third control BUILD.
+Current HEAD recorded for this handoff: `8d674f0896432fac9bd2f87a900610da743b4a6b`. Material SHA: `8d674f0896432fac9bd2f87a900610da743b4a6b`. Batch ID: CVF-NCR-HTML-FRESH-PROFILE-USER-JOURNEY-SPEC-20261014. Exact6 documentary review; exact6 actual-SHA continuity; corrected design bounded/procedure partial; profile PLAN only, no worker/runtime or third control BUILD.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -13,22 +13,22 @@ Current continuation only. Root AGENTS.md and canonical routing owners retain fu
 Closed history is preserved byte-for-byte at `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V63_PRE_NCR_COMPACTION_2026-10-07.md` (SHA256 `54801fdcf14e9abe17592352ec3c69a0b0e855632991af0caacac7b65252ccba`); it is NOT_ACTIVE_AUTHORITY and not default startup reading.
 ## Scope / Target / Owner Boundary
 
-Local exact3 immutable paired documentary release and exact6 raw-authority/actual-SHA continuity. Manually selected INTERNAL_AGENT worker owns exact3 new documents and hard75minutes; no product/browser/engine/provider/data/config value action. Final bound pre-dispatch PASS before transfer, worker bound pre-implementation before writing. No dispatcher mutation while active; return COMPLETE_PENDING_REVIEW or consolidated BLOCKED_WITH_REASON, staged empty/no commit. Prior cleanup recurrence frozen/no third control BUILD; all runtime/provider remainders retired.
+Local exact6 documentary material reviewed/committed; owns exact6 actual-SHA continuity. Corrected SPEC accepted technical design bounded; full REQ-07 procedure partial, original return/proof preserved. Distinct documentary probe positive/eight mutations PASS; no browser/engine/provider/config/store effects. Worker lane ended, no re-dispatch/successor. Next Local profile/effect admission feasibility PLAN only; all cleanup freezes/retired grants and operator checkpoints retained.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_html_fresh_profile_user_journey_spec_dispatch_ready`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=manual exact3 design-only SPEC after bound gates; role=Local INTERNAL_AGENT dispatcher/reviewer; phase=SPEC dispatch; decision owner=Local; parked checkpoint=actual-data/custody/business acceptance/provider/live/send/B2/P11/public/deploy and stopped lanes.
+Startup acknowledged: current mode=`cvf_ncr_html_user_journey_spec_reviewed_plan`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=Local owned-profile/effect feasibility PLAN, no worker/runtime; role=Local INTERNAL_AGENT reviewer/closer; phase=SPEC disposition; decision owner=Local; parked checkpoint=actual-data/custody/business acceptance/provider/live/send/B2/P11/public/deploy and stopped lanes.
 
 ## Current Mode
 
-`cvf_ncr_html_fresh_profile_user_journey_spec_dispatch_ready`. Existing /artifacts journey SPEC only: seven-field synthetic proposed input/version, owned profile/effect map, Vietnamese walkthrough and source/acceptance/decision matrix. Mandatory source scopes and current source31 pins; no invented producer/UI/storage owner, no actual profile/store/config read. Worker not started by Local. R1/R2partial,R3/R4open,R5/R6deferred. Prior six mechanical contributions and Local60.08s/2762-byte authenticity retained; full REQ-07 cleanup BLOCKED, recurrence freeze and retired grants remain. P4 conditional BLOCKED row and exact-marker adjudication retained below; no new sample claimed. LHW24 and historical provider12/13/unused1 retired.
+`cvf_ncr_html_user_journey_spec_reviewed_plan`. Existing /artifacts/seven-field synthetic journey design accepted after bounded app-auth/two-hop/real-engine and action-specific decision corrections. Original3 plus13 custody/log hashes and31 intake pins verified; current SPEC separately hashed. Full REQ-07 not fulfilled: declared late checker and omitted mandatory reassessment sourcePins reads. Local own source/fixture oracle PASS, not worker20/20 or a runtime proof. D-08 improvements deferred; D-09 owned-profile feasibility PLAN; D-10 full-R3 real-provider/output-version join separate; D-11 named operator effects parked. Actual values UNKNOWN, R1/R2partial,R3/R4open,R5/R6deferred. Cleanup BLOCKED/frozen/no third control BUILD, all remainders retired; LHW24 retained. Prior P4 BLOCKED/adjudication preserved below; no manufactured sample/model observation.
 
 ## Current Authority
 
-Design-only baseline: `docs/baselines/CVF_GC018_NCR_HTML_FRESH_PROFILE_USER_JOURNEY_SPEC_2026-10-14.md`; SHA256 `3e87e418cc84065d8b497381a72cf93e5e3c3ce9fc30ace4b729b957b7862b39`.
-Design-only work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_FRESH_PROFILE_USER_JOURNEY_SPEC_2026-10-14.md`; SHA256 `c681775f3fd5592ffed5a9924a1582ad08be98587c614179dd458e86049ad8fd`.
-Dispatcher proof: `docs/reviews/evidence/ncr-html-fresh-profile-user-journey-spec-dispatch-20261014.json`; actual paired material `85e984bc92b54eba22ec7fb2a879dd619b3c7a41`.
-Pair immutable through worker/review; release after exact6 continuity and final bound pre-dispatch PASS. No product/runtime/provider authority; conditional cleanup BLOCKED/freeze and all retired counters remain owned by prior Local review. Capture actual released HEAD, not inspection/material base.
+Local technical disposition: `docs/reviews/CVF_NCR_HTML_FRESH_PROFILE_USER_JOURNEY_SPEC_COMPLETION_2026-10-14.md`; evidence `docs/reviews/evidence/ncr-html-fresh-profile-user-journey-spec-local-20261014.json`; corrected SPEC `docs/assessments/CVF_NCR_HTML_FRESH_PROFILE_USER_JOURNEY_SPEC_2026-10-14.md`; actual material `8d674f0896432fac9bd2f87a900610da743b4a6b`.
+Retained immutable retired design baseline: `docs/baselines/CVF_GC018_NCR_HTML_FRESH_PROFILE_USER_JOURNEY_SPEC_2026-10-14.md`; SHA256 `3e87e418cc84065d8b497381a72cf93e5e3c3ce9fc30ace4b729b957b7862b39`.
+Retained immutable retired design work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_FRESH_PROFILE_USER_JOURNEY_SPEC_2026-10-14.md`; SHA256 `c681775f3fd5592ffed5a9924a1582ad08be98587c614179dd458e86049ad8fd`.
+No further worker/runtime grant; only independent source/profile feasibility PLAN. Design acceptance does not close full work-order procedure, actual profile or R3/R4.
 
 ## Accepted NCR Evidence And Continuation
 
@@ -40,7 +40,7 @@ Finite clipboard result ordering is accepted; actual OS write cancellation, whol
 
 ## Next Allowed Move
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-HTML-FRESH-PROFILE-USER-JOURNEY-SPEC-20261014. Design-only pair=docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_FRESH_PROFILE_USER_JOURNEY_SPEC_2026-10-14.md; baseline=docs/baselines/CVF_GC018_NCR_HTML_FRESH_PROFILE_USER_JOURNEY_SPEC_2026-10-14.md; proof=docs/reviews/evidence/ncr-html-fresh-profile-user-journey-spec-dispatch-20261014.json; material=85e984bc92b54eba22ec7fb2a879dd619b3c7a41. Manual INTERNAL_AGENT worker captures released HEAD/status and bound pre-implementation PASS after final bound pre-dispatch PASS. Exact3 NEW SPEC/return/JSON, hard75minutes, WORKER_MUST_NOT_COMMIT; all7 requirements/full worker gate; no subdelegation. Existing /artifacts/seven inputs; proposed synthetic profile/effects, Vietnamese walkthrough and source/proof/decision map. Product/browser/engine/provider/config-values/user-store effects0; actual profile/business/full R3/R4 unproved. Cleanup NCR_HTML_CONFIGURED_RECEIPT_CONTROL_PROOF remains BLOCKED/FEATURE_SUCCESSORS_FROZEN/no third control BUILD; primary/conditional remainders retired. R1/R2partial,R3/R4open,R5/R6deferred; Q001/Q004/actual-data/custody/business acceptance/send/B2/P11/public/deploy parked; LHW24 retained. Historical provider12/13/unused1 retired, no fresh live grant.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-FRESH-PROFILE-USER-JOURNEY-SPEC-20261014. Review=docs/reviews/CVF_NCR_HTML_FRESH_PROFILE_USER_JOURNEY_SPEC_COMPLETION_2026-10-14.md; evidence=docs/reviews/evidence/ncr-html-fresh-profile-user-journey-spec-local-20261014.json; SPEC=docs/assessments/CVF_NCR_HTML_FRESH_PROFILE_USER_JOURNEY_SPEC_2026-10-14.md; material=8d674f0896432fac9bd2f87a900610da743b4a6b. Corrected design accepted bounded; full REQ-07 procedure PARTIAL_WITH_REASON. Local documentary positive/eight mutations PASS; original return/proof retained. Next Local PLAN owned synthetic profile/effect-admission feasibility: D-08 optional product changes deferred, D-09 actual values UNKNOWN, D-10 full-R3 real-provider/exact-output-version join separate, D-11 operator effects parked. No worker successor or product/browser/engine/provider/config-value/store grant. Cleanup NCR_HTML_CONFIGURED_RECEIPT_CONTROL_PROOF BLOCKED/FEATURE_SUCCESSORS_FROZEN/no third control BUILD; primary/conditional remainders retired. R1/R2partial,R3/R4open,R5/R6deferred; Q001/Q004/actual-data/custody/business acceptance/send/B2/P11/public/deploy parked; LHW24 retained; historical provider12/13/unused1 retired.
 
 ## Active Boundary
 T3B has a Local-verified active v1 specification. Party B is verified and T3C-C1 tooling accepted at `db78c87df`; T3C-C2 and Party C are verified. T3D-C1 tooling is accepted at `9ed844c2a` without source. T3D-C0-R1 closed at `2fffa1ef7`. T3D-C3 was accepted bounded at `88137e9a2`, but actual-mode prepare attempts failed before Party B/C execution; authorized cleanup removed the failed root and discarded unaccepted worker changes. G1 stopped, G2-G6 parked, and G7 research closed at `660601f0e` with `ADAPT_EXISTING_HANDOFF_ONLY`. Evidence-join sufficiency stays WATCH; no implementation successor exists. Rejected T2 paths remain archived; HRLTP-T2 paused.
@@ -72,7 +72,7 @@ Actual exact6 continuity commit: e623de377e26f24fecce030164eb001dc51f00d1; mater
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: Local exact6 source/generated documentary release and actual material-SHA continuity; preserve P4 exact-marker disclosure; no worker protected edits or hook/checker changes.
+Authorized guard-maintenance scope: Local exact6 source/generated SPEC-disposition and actual material-SHA continuity; preserve P4 disclosures and retired grants; no product/guard/hook/checker changes.
 Protected paths:
 - `AGENT_HANDOFF_V63_2026-09-18.md`
 - `CVF_SESSION_MEMORY.md`
@@ -80,7 +80,7 @@ Protected paths:
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-Operator authorization: NCR continuation, roadmap reassessment and manual worker transfer; finite documentary SPEC release/exact6 continuity only.
+Operator authorization: NCR continuation and regular roadmap review; bounded Local documentary disposition/exact6 continuity only.
 Rollback boundary: exact6; preserve original archive and accepted/blocked history, parked effects and prior observations. Historical P4 safety adjudication .cvf/runtime/mfrp-p4-shadow-canary/adjudications/ncr-offline-journey-marker-20261013.json remains valid for its original marker; no blanket clearance of future markers. New P4 receipt-generation marker d8d91ae25bd487b6798d7d7e48816cd7fb363d2d98bc27a6e70c43ee65eabbaa separately adjudicated by Local at .cvf/runtime/mfrp-p4-shadow-canary/adjudications/ncr-work-transfer-browser-marker-20261013.json, SHA256 ab42577ad08b59f54abb80ebbee64c6aae9b0d570018e8fccda9d5a2e0180c81; exact marker preserved in private custody; required admission heading restored; old failed receipt not promoted. Current marker OBS-70961d0b8b4d27db separately adjudicated by Local at .cvf/runtime/mfrp-p4-shadow-canary/adjudications/ncr-brief-reopen-marker-20261013.json, SHA256 c006bb09e83c08442460212cbabca0e100d22b27280af25c58a5df97804f9671; exact marker removed, journal/historical blocks/C15 exclusions unchanged.
 
 ## Agent Operation Trace Block
@@ -89,18 +89,18 @@ Rollback boundary: exact6; preserve original archive and accepted/blocked histor
 |---|---|
 | Actor | Local INTERNAL_AGENT session-sync steward |
 | Provider or surface | private shared workspace |
-| Session or invocation | ncr-html-user-journey-spec-continuity-20261014 |
+| Session or invocation | ncr-html-spec-review-continuity-20261014 |
 | Working directory | repository root |
-| Command or tool surface | source/core entry update, canonical generator and actual material-SHA handoff/front-door sync |
+| Command or tool surface | source/core entry update and canonical generator; actual material-SHA front-door/handoff sync |
 | Target paths | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Allowed scope source | operator NCR continuation; exact6 authority in paired baseline/order |
-| Before status evidence | 85e984bc92b54eba22ec7fb2a879dd619b3c7a41; exact3 paired material committed, clean worktree/stage empty |
-| After status evidence | exact6 documentary dispatch continuity and new raw pair; retired grants/cleanup freeze preserved |
-| Diff evidence | exact6 staged paths/whitespace and canonical generator validation |
-| Approval boundary | document-only exact3 worker after final bound gates; no runtime/provider/data grant |
-| Claim boundary | SPEC release only; actual profile and R3/R4 remain open, prior BLOCKED/P4 retained |
+| Before status evidence | 8d674f0896432fac9bd2f87a900610da743b4a6b; exact6 documentary material committed, clean worktree/stage empty |
+| After status evidence | exact6 PLAN continuity; immutable raw pair retained and retired |
+| Diff evidence | exact6 staged manifest/whitespace; generator compatibility |
+| Approval boundary | Local source/profile feasibility PLAN only; no worker or effect grant |
+| Claim boundary | bounded design accepted, procedure partial; prior cleanup BLOCKED/P4 and all retired grants retained |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-html-user-journey-spec-continuity-20261014 |
+| Invocation ID | ncr-html-spec-review-continuity-20261014 |
 | Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Manifest delta | MATCH exact6 continuity |
