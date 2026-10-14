@@ -1,0 +1,127 @@
+{
+  "schemaVersion": "cvf.ncrReceiptHistoryWorkerEvidence.v1",
+  "executionBaseHead": "b0a51264eeebf87f5143b77f832dae53c5b1f3e1",
+  "status": "COMPLETE_PENDING_REVIEW",
+  "sourcePins": "docs/reviews/evidence/ncr-receipt-history-dispatch-20261014.json",
+  "claimBoundary": "One synthetic real Alibaba Home root and its saved local browser history. The local digest detects accidental changes but does not authenticate localStorage or freshly verify the route on reload. No full NCR, production, public export, or general provider claim.",
+  "proofs": [
+    {
+      "proofId": "PROOF-REQ-ARCHIVE",
+      "requirementId": "REQ-ARCHIVE",
+      "status": "PASS",
+      "evidence": [
+        "src/lib/execution-receipt-archive.ts strict scalar whitelist, schema and WebCrypto SHA-256",
+        "src/lib/execution-receipt-archive.test.ts Unicode digest, malformed, legacy and no-WebCrypto cases",
+        "No nested trace, durable memory, telemetry, receiptIntegrity or secret fields in saved projection"
+      ]
+    },
+    {
+      "proofId": "PROOF-REQ-CAPTURE",
+      "requirementId": "REQ-CAPTURE",
+      "status": "PASS",
+      "evidence": [
+        "Home completion remains synchronous while archive hash runs asynchronously",
+        "Captured execution ID, completed status, exact output and fresh snapshot receipt/provider/model joins rechecked before store update, even after navigation",
+        "Home delayed hash, Back/Retry navigation, deletion, changed output, changed snapshot receipt/provider/model and no-WebCrypto regression cases"
+      ]
+    },
+    {
+      "proofId": "PROOF-REQ-RESTORE",
+      "requirementId": "REQ-RESTORE",
+      "status": "PASS",
+      "evidence": [
+        "Schema, receipt scalar types, selected execution ID, snapshot receipt/provider/model and exact output digest validated",
+        "Home receipt epoch invalidates stale restores on query/navigation, Follow Up, new submit and unmount; selected snapshot receipt/provider/model is rechecked after digest",
+        "Live output, archive ID and malformed receipt mutations omitted the archive without execute POST or provider fetch"
+      ]
+    },
+    {
+      "proofId": "PROOF-REQ-EXPORT",
+      "requirementId": "REQ-EXPORT",
+      "status": "PASS",
+      "evidence": [
+        "ResultViewer saved-local-history notice data-testid=saved-receipt-origin",
+        "Live Markdown SHA-256 b66965eefcb21dd1a3594d58f89e474cbff838a284c9d40ae56da1af41b76eed includes original output, receipt ID, saved-copy origin and original evidence mode live"
+      ]
+    },
+    {
+      "proofId": "PROOF-REQ-LIVE",
+      "requirementId": "REQ-LIVE",
+      "status": "PASS",
+      "evidence": [
+        ".cvf/runtime/ncr-receipt-history-20261014/worker-live/runtime-proof-attempt3.json",
+        "One real Home response HTTP 200 success true ALLOW alibaba/qwen-flash, evidenceMode live, knowledge chunks zero",
+        "Stored output SHA-256 e3273e6ed90ad9a65591680847d3b7e29ee23b2c03a27c894bbadb4db26bd631 matched archive through reload, owned server restart and Markdown",
+        "One execution POST and one Alibaba provider fetch start total; no additional calls on history or negative reloads"
+      ]
+    },
+    {
+      "proofId": "PROOF-REQ-BUDGET-RETURN",
+      "requirementId": "REQ-BUDGET-RETURN",
+      "status": "PASS",
+      "evidence": [
+        "Three Playwright CLI invocations: first failed before spawn due to null stream fd; second started owned Next with default Turbopack path failure before UI; third passed with --webpack and --hostname localhost",
+        "Attempts one and two: zero UI submissions, zero execute POSTs, zero provider fetch starts; attempt three: one UI, one execute POST, one provider fetch start; zero Playwright retries",
+        "One processed FILE DASHSCOPE alias; other provider and Redis aliases empty, browser key empty, mock 0, exact owned auth/dist/stores and empty knowledge/approval; seven profile checks true before paid fetch",
+        "Two framework Next npm dist-tags denials classified, zero unexpected denials; owned server stopped; tsconfig generated transient restored",
+        "Focused Vitest 7 files/118 tests PASS before final Retry test addition; affected Home journey and draft recovery 5 files/54 tests PASS on final source; TypeScript, scoped ESLint and prior-source Playwright single-case PASS; current repaired source awaits Root oracle; no worker commit"
+      ]
+    }
+  ],
+  "runtime": {
+    "proofPath": ".cvf/runtime/ncr-receipt-history-20261014/worker-live/runtime-proof-attempt3.json",
+    "priorDiagnostics": [
+      ".cvf/runtime/ncr-receipt-history-20261014/worker-live/diagnostic-1.json",
+      ".cvf/runtime/ncr-receipt-history-20261014/worker-live/diagnostic-2.json"
+    ],
+    "rootAdmissions": [
+      ".cvf/runtime/ncr-receipt-history-20261014/worker-live/root-rerun-admission-1.json",
+      ".cvf/runtime/ncr-receipt-history-20261014/worker-live/root-rerun-admission-2.json"
+    ],
+    "uiSubmissions": 1,
+    "executePosts": 1,
+    "providerFetchStarts": 1,
+    "providerStartCap": 3,
+    "playwrightRetries": 0
+  },
+  "tests": [
+    {
+      "command": "npx vitest run src/lib/execution-receipt-archive.test.ts src/app/(dashboard)/home/page.test.tsx src/components/ResultViewer.receipt-history.test.tsx src/lib/execution-continuity.test.ts src/components/ResultViewer.test.tsx src/components/ResultViewer.isolation.test.tsx src/components/ResultViewer.export-feedback.test.tsx",
+      "result": "PASS 7 files 118 tests after critical repair"
+    },
+    {
+      "command": "npm run check",
+      "result": "PASS TypeScript"
+    },
+    {
+      "command": "npx eslint src/app/(dashboard)/home/page.tsx tests/e2e/ncr-receipt-history.live.spec.ts tests/e2e/support/ncr-receipt-history-boundary.cjs",
+      "result": "PASS"
+    },
+    {
+      "command": "npx playwright test --config tests/e2e/support/ncr-receipt-history-boundary.cjs --workers=1 --retries=0 --reporter=line",
+      "result": "PASS one case, third and only provider-bearing invocation, 1.4 minutes"
+    },
+    {
+      "command": "npx vitest run src/app/(dashboard)/home/page.test.tsx src/app/(dashboard)/home/page.journey.test.tsx src/app/(dashboard)/home/draft-recovery.test.tsx src/lib/execution-receipt-archive.test.ts src/components/ResultViewer.receipt-history.test.tsx",
+      "result": "PASS 5 files 54 tests after critical capture repair, including both existing Home journey and draft recovery suites"
+    }
+  ],
+  "workerSourceSha256": {
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/types/index.ts": "557e2c26c0e5ad9f3c946cd022c96ce3ba9cf982b04340a0835dc09f25d9abc4",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execution-receipt-archive.ts": "67a68c06772b4bab323da4f62868cbe9c3130db7de45bc6dbec6b62506438119",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.tsx": "ae5160169f828a7ec9b1a9ad576a2ad37b9c3343cb882ec706c7631f01113b31",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.tsx": "7099bdc7b7d0d1d4fd5aea8de0285892c4e6866a2392d237d4b885f027bca48c",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execution-receipt-archive.test.ts": "a5564802341121eca2f7ca30a70d5bf73edf7ddc9ea33954368f8c78d7f5e3fe",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.test.tsx": "c320e52ffe22c4a4fd01fba69457b718a5e9261534e7e3587ed2a55789582465",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.receipt-history.test.tsx": "cab5f3aba0447fe855993666aa6170019156b8596eb6e187e79d2aa14dd5c821",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/ncr-receipt-history.live.spec.ts": "d5a49b2364d92e907dfec07b104b4a7157baa656c25091d56608da08eeed300e",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/support/ncr-receipt-history-boundary.cjs": "e52d910c26f80d62cc2db2ea8ae85c356cab9252df07b61a740d89bfb536bf31"
+  },
+  "liveSourcePreimageAndRepair": {
+    "workerLiveHomeSha256BeforeCriticalRepair": "805fbe1acbf9b8617f981edac951b515d330068f4c9f17e3e7c9b907327dcbf3",
+    "workerLiveSpecSha256BeforeEncodingNote": "4d71bc2c489517b01af60849af92dfabe1f80b029d22f058c5ee60af872c97ee",
+    "criticalRepair": "Capture persists the unchanged original completed row after navigation; capture and restore recheck fresh snapshot receiptId/provider/model after pending digest. Worker live case was on the prior Home preimage; the current repaired Home is covered by focused regressions and awaits Root distinct current-code probe.",
+    "workerLiveReplay": false,
+    "rootCurrentCodeProbe": "PENDING_REVIEWER_EXECUTION"
+  }
+}

@@ -2,8 +2,8 @@
   "schemaVersion": "cvf.ncrReceiptHistoryDispatchPins.v1",
   "date": "2026-10-14",
   "inspectionHead": "d2125357262a6f7825d14fedcb21d76b0b376516",
-  "status": "SOURCE_PINNED_ROOT_ADMITTED_PENDING_COMMITTED_RELEASE",
-  "claimBoundary": "Selected exact raw source preimages; no full corpus, implementation or live proof.",
+  "status": "HISTORICAL_DISPATCH_PINS_ROOT_CLOSED_BOUNDED",
+  "claimBoundary": "Historical source preimages only; current source pins and proof are in Local digest. R1/R2 partial; R3/R4 open; R5/R6 deferred. Real-data writer/custody/business acceptance, selected HTML pilot, send/B2, P11, public sync, deployment and production remain parked; LHW24 retained.",
   "sources": [
     {
       "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/types/index.ts",
@@ -218,6 +218,20 @@
       "phase": "PRE_RELEASE_ZERO_PROVIDER_CALLS",
       "reason": "Read-only internal review identified cleanup confirmation, scalar allowlist, snapshot-join negative and explicit no-reverification UI assertion gaps. Restart handshake now allows a timing margin. Root owner corrected its private oracle before worker BUILD; no implementation or old paid-grant reuse.",
       "wrapperSha256": "d478e08767f5ba505b1b0facf72de84959b62e007bd81b64283020eb9bd9d5de"
+    }
+  },
+  "rootClosure": {
+    "decision": "CLOSED_PASS_BOUNDED",
+    "executionBaseHead": "b0a51264eeebf87f5143b77f832dae53c5b1f3e1",
+    "workerProofSha256": "545299dced23aa4fb62c90eea2d47f56b66a015e0a1929bf19a74a7fd4cb5001",
+    "localProofSha256": "ad7b6ef44f6eceb85b6c7d487ee2c4bc9f488912c57d6733536e463f9d6ebb97",
+    "originalArchiveRawSha256": "34940b486da684611e5c7fece49048e3e2c90ba8f8f27384090ca979b9a70e60",
+    "originalArchiveGitLfSha256": "69c729e2613c52fe96452d99922772faec5bb8b3182a8dc7a9ec5e81fb85f0e1",
+    "currentSourceRawSha256": {
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/types/index.ts": "557e2c26c0e5ad9f3c946cd022c96ce3ba9cf982b04340a0835dc09f25d9abc4",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execution-receipt-archive.ts": "67a68c06772b4bab323da4f62868cbe9c3130db7de45bc6dbec6b62506438119",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.tsx": "ae5160169f828a7ec9b1a9ad576a2ad37b9c3343cb882ec706c7631f01113b31",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.tsx": "7099bdc7b7d0d1d4fd5aea8de0285892c4e6866a2392d237d4b885f027bca48c"
     }
   }
 }

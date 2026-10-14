@@ -2,38 +2,31 @@
 
 Memory class: governed-worker-dispatch
 docType: work_order
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 Date: 2026-10-14
 Batch ID: CVF-NCR-HOME-RECEIPT-HISTORY-20261014
 Inspection base: `d2125357262a6f7825d14fedcb21d76b0b376516`
 Commit mode: WORKER_MUST_NOT_COMMIT
-providerExecutionAuthority: ORCHESTRATOR_GRANT_REQUIRED
+providerExecutionAuthority: FORBIDDEN
 providerExecutionGrantOwner: ORCHESTRATOR
 providerExecutionGrantSubject: /root/ncr_receipt_packet Local INTERNAL_AGENT worker
 providerExecutionGrantDelegationId: NCR-RECEIPT-HISTORY-WORKER-20261014
 providerExecutionGrantMaxCalls: 3
 providerExecutionGrantExpiresAt: 2026-10-14T02:00:00Z
-providerExecutionGrantBoundary: only after committed bound release; one synthetic UI submit; worker hard cap three starts; 75-minute BUILD window or UTC expiry, whichever first
+providerExecutionGrantBoundary: CLOSED; grant retired; no repeat-live authority
 Worker return path: `docs/reviews/CVF_NCR_RECEIPT_HISTORY_WORKER_RETURN_2026-10-14.md`
 
 ## Dispatch Prompt Envelope
 
-Role: INTERNAL_AGENT worker in shared private CVF workspace; Root Local owns final review.
-Canonical packet: `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RECEIPT_HISTORY_2026-10-14.md` and `docs/baselines/CVF_GC018_NCR_RECEIPT_HISTORY_2026-10-14.md`.
-Commit mode: `WORKER_MUST_NOT_COMMIT`.
-executionBaseHead: capture actual committed bound-release HEAD at start; draft inspection HEAD `d2125357262a6f7825d14fedcb21d76b0b376516` is not execution base.
-Current-time notes: 2026-10-14; BUILD window 75 minutes from actual Root release; hard expiry `2026-10-14T02:00:00Z`, whichever first.
-Do-not-misread notes: BUILD waits committed packet plus actual-SHA continuity and bound release; worker must not stage/commit. No full R1-R4, selected HTML, trusted localStorage, business/public/deploy claim.
-Required first actions: startup/bootstrap/front door/handoff; external/local role owners; guard orientation/literal gotchas/lifecycle; paired packet and `docs/reviews/evidence/ncr-receipt-history-dispatch-20261014.json`; DESIGN; source and checker read-ahead.
-Return contract: exact eleven paths, six proof IDs, secret-safe budget, no commit; `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`.
+Terminal Local disposition: CLOSED_PASS_BOUNDED; QUALITY_ACCEPTED_BOUNDED. Frozen worker proof sha256:545299dced23aa4fb62c90eea2d47f56b66a015e0a1929bf19a74a7fd4cb5001; independent Local proof sha256:ad7b6ef44f6eceb85b6c7d487ee2c4bc9f488912c57d6733536e463f9d6ebb97. R1/R2 partial; R3/R4 open; R5/R6 deferred. Real-data writer/custody/business acceptance, selected HTML pilot, send/B2, P11, public sync, deployment and production remain parked; LHW24 retained. Original dispatch wording/action sequence retained byte-for-byte in `docs/reviews/archive/CVF_AGENT_WORK_ORDER_NCR_RECEIPT_HISTORY_DISPATCH_2026-10-14.md`; no successor grant.
 
 ## Purpose
 
-Implement one finite Home saved scalar-receipt archive/reload contribution, with original evidence mode and local-history UI/Markdown origin. Prove one synthetic real Alibaba root across reload and owned server restart. Root independent probe and final decision are separate.
+Record actual bounded Root acceptance. R1/R2 partial; R3/R4 open; R5/R6 deferred. Real-data writer/custody/business acceptance, selected HTML pilot, send/B2, P11, public sync, deployment and production remain parked; LHW24 retained.
 
 ## Authority Chain
 
-Operator authorized finite NCR continuation; Root Local separately admits this source-bound slice only through committed `docs/baselines/CVF_GC018_NCR_RECEIPT_HISTORY_2026-10-14.md`, `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RECEIPT_HISTORY_2026-10-14.md`, `docs/reviews/evidence/ncr-receipt-history-dispatch-20261014.json`, current-authority continuity and full bound pre-dispatch release. Committed bound release is required before implementation.
+Terminal Local disposition: CLOSED_PASS_BOUNDED; QUALITY_ACCEPTED_BOUNDED. Frozen worker proof sha256:545299dced23aa4fb62c90eea2d47f56b66a015e0a1929bf19a74a7fd4cb5001; independent Local proof sha256:ad7b6ef44f6eceb85b6c7d487ee2c4bc9f488912c57d6733536e463f9d6ebb97. R1/R2 partial; R3/R4 open; R5/R6 deferred. Real-data writer/custody/business acceptance, selected HTML pilot, send/B2, P11, public sync, deployment and production remain parked; LHW24 retained. Original dispatch wording/action sequence retained byte-for-byte in `docs/reviews/archive/CVF_AGENT_WORK_ORDER_NCR_RECEIPT_HISTORY_DISPATCH_2026-10-14.md`; no successor grant.
 
 ## Agent Roles
 
@@ -49,7 +42,7 @@ Use exact `schemaVersion: cvf.executionReceiptArchive.v1`; `Execution.savedRecei
 
 ## Write Ownership
 
-Worker owns only eleven manifest paths, does not stage/commit. Root owns three dispatch, seven review/registry/roadmap, six continuity; no concurrent Root mutation of worker paths while lane active. Root may repair after frozen worker return under closure authority.
+Worker lane released under actual frozen exact11 custody; Root owns terminal conversion and separate commits. R1/R2 partial; R3/R4 open; R5/R6 deferred. Real-data writer/custody/business acceptance, selected HTML pilot, send/B2, P11, public sync, deployment and production remain parked; LHW24 retained.
 
 ## Required Artifact Manifest
 
@@ -84,11 +77,11 @@ Current startup and role owners, paired baseline/order, `docs/reviews/evidence/n
 
 ## Pre-Flight Checks
 
-Reconcile actual bound HEAD and exact raw pins; check owned test/server storage and env aliases, mock 0, Alibaba server key only, all other provider/Redis blank, empty knowledge/approval/memory/SOT/event/snapshot; browser no key; zero prior task calls. Root bound release and 75-minute clock required before BUILD.
+Terminal Local disposition: CLOSED_PASS_BOUNDED; QUALITY_ACCEPTED_BOUNDED. Frozen worker proof sha256:545299dced23aa4fb62c90eea2d47f56b66a015e0a1929bf19a74a7fd4cb5001; independent Local proof sha256:ad7b6ef44f6eceb85b6c7d487ee2c4bc9f488912c57d6733536e463f9d6ebb97. R1/R2 partial; R3/R4 open; R5/R6 deferred. Real-data writer/custody/business acceptance, selected HTML pilot, send/B2, P11, public sync, deployment and production remain parked; LHW24 retained. Original dispatch wording/action sequence retained byte-for-byte in `docs/reviews/archive/CVF_AGENT_WORK_ORDER_NCR_RECEIPT_HISTORY_DISPATCH_2026-10-14.md`; no successor grant.
 
 ## Execution Plan
 
-Build helper/type/Home/ResultViewer, focused tests and TypeScript; preserve synchronous completion. Then one budgeted real Home root. Capture actual route receipt/output, wait persisted archive, reload saved ID, restart only owned server on same profile, download exact Markdown; mutate only test-owned local storage for output/ID/malformed negatives without new API call. Stop at ceiling/expiry and return.
+Terminal Local disposition: CLOSED_PASS_BOUNDED; QUALITY_ACCEPTED_BOUNDED. Frozen worker proof sha256:545299dced23aa4fb62c90eea2d47f56b66a015e0a1929bf19a74a7fd4cb5001; independent Local proof sha256:ad7b6ef44f6eceb85b6c7d487ee2c4bc9f488912c57d6733536e463f9d6ebb97. R1/R2 partial; R3/R4 open; R5/R6 deferred. Real-data writer/custody/business acceptance, selected HTML pilot, send/B2, P11, public sync, deployment and production remain parked; LHW24 retained. Original dispatch wording/action sequence retained byte-for-byte in `docs/reviews/archive/CVF_AGENT_WORK_ORDER_NCR_RECEIPT_HISTORY_DISPATCH_2026-10-14.md`; no successor grant.
 
 ## Evidence Requirements
 
@@ -100,11 +93,11 @@ Exactly eleven worker paths. Return maps each REQ to its PROOF ID and artifact; 
 
 ## Verification Commands
 
-Focused archive/Home/ResultViewer tests and TypeScript; live Playwright spec once under approved profile; `python -B governance/compat/run_worker_return_fast_gate.py --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RECEIPT_HISTORY_2026-10-14.md --max-return-lines 450 --max-return-bytes 64000`; required pre-implementation/ADIF/registry gates; `git diff --check` and `git status --short`. Commands/results must be exact in proof.
+Terminal Local disposition: CLOSED_PASS_BOUNDED; QUALITY_ACCEPTED_BOUNDED. Frozen worker proof sha256:545299dced23aa4fb62c90eea2d47f56b66a015e0a1929bf19a74a7fd4cb5001; independent Local proof sha256:ad7b6ef44f6eceb85b6c7d487ee2c4bc9f488912c57d6733536e463f9d6ebb97. R1/R2 partial; R3/R4 open; R5/R6 deferred. Real-data writer/custody/business acceptance, selected HTML pilot, send/B2, P11, public sync, deployment and production remain parked; LHW24 retained. Original dispatch wording/action sequence retained byte-for-byte in `docs/reviews/archive/CVF_AGENT_WORK_ORDER_NCR_RECEIPT_HISTORY_DISPATCH_2026-10-14.md`; no successor grant.
 
 ## Review Gate
 
-Root consumes six returned proof IDs, frozen worker bytes, manifest and budget. Root runs one distinct fixture/own oracle only if worker proof passes admission, max one UI/three provider fetches. Review by M5/M10/safety/M20; no duplicate broad rerun.
+Terminal Local disposition: CLOSED_PASS_BOUNDED; QUALITY_ACCEPTED_BOUNDED. Frozen worker proof sha256:545299dced23aa4fb62c90eea2d47f56b66a015e0a1929bf19a74a7fd4cb5001; independent Local proof sha256:ad7b6ef44f6eceb85b6c7d487ee2c4bc9f488912c57d6733536e463f9d6ebb97. R1/R2 partial; R3/R4 open; R5/R6 deferred. Real-data writer/custody/business acceptance, selected HTML pilot, send/B2, P11, public sync, deployment and production remain parked; LHW24 retained. Original dispatch wording/action sequence retained byte-for-byte in `docs/reviews/archive/CVF_AGENT_WORK_ORDER_NCR_RECEIPT_HISTORY_DISPATCH_2026-10-14.md`; no successor grant.
 
 ## Closure Checklist
 
@@ -112,11 +105,11 @@ Exact 27 manifest: worker11, dispatch3, Root review/registry7, continuity6. Root
 
 ## Return-To-Orchestrator Conditions
 
-Return `BLOCKED_WITH_REASON` on source/path/authority contradiction, failed/partial/ambiguous live proof after secret-safe diagnostic, call ceiling, or 75-minute/UTC expiry. No automatic retry or role expansion.
+Terminal Local disposition: CLOSED_PASS_BOUNDED; QUALITY_ACCEPTED_BOUNDED. Frozen worker proof sha256:545299dced23aa4fb62c90eea2d47f56b66a015e0a1929bf19a74a7fd4cb5001; independent Local proof sha256:ad7b6ef44f6eceb85b6c7d487ee2c4bc9f488912c57d6733536e463f9d6ebb97. R1/R2 partial; R3/R4 open; R5/R6 deferred. Real-data writer/custody/business acceptance, selected HTML pilot, send/B2, P11, public sync, deployment and production remain parked; LHW24 retained. Original dispatch wording/action sequence retained byte-for-byte in `docs/reviews/archive/CVF_AGENT_WORK_ORDER_NCR_RECEIPT_HISTORY_DISPATCH_2026-10-14.md`; no successor grant.
 
 ## Operator Checkpoint
 
-Real-data writer/custody, business acceptance, selected HTML pilot, send/B2/P11, public/deploy and full R3/R4 remain parked. Root can decide finite private dispatch within existing operator NCR authorization.
+Terminal Local disposition: CLOSED_PASS_BOUNDED; QUALITY_ACCEPTED_BOUNDED. Frozen worker proof sha256:545299dced23aa4fb62c90eea2d47f56b66a015e0a1929bf19a74a7fd4cb5001; independent Local proof sha256:ad7b6ef44f6eceb85b6c7d487ee2c4bc9f488912c57d6733536e463f9d6ebb97. R1/R2 partial; R3/R4 open; R5/R6 deferred. Real-data writer/custody/business acceptance, selected HTML pilot, send/B2, P11, public sync, deployment and production remain parked; LHW24 retained. Original dispatch wording/action sequence retained byte-for-byte in `docs/reviews/archive/CVF_AGENT_WORK_ORDER_NCR_RECEIPT_HISTORY_DISPATCH_2026-10-14.md`; no successor grant.
 
 ## Roadmap-to-Work-Order Trace Matrix
 
@@ -128,7 +121,7 @@ Real-data writer/custody, business acceptance, selected HTML pilot, send/B2/P11,
 
 ## Worker Autonomy / No-Question Rule
 
-Worker resolves routine implementation within exact eleven paths; returns to Root only for real source/authority contradiction, forbidden path, budget/expiry or failed live diagnostic. No worker commit.
+Terminal Local disposition: CLOSED_PASS_BOUNDED; QUALITY_ACCEPTED_BOUNDED. Frozen worker proof sha256:545299dced23aa4fb62c90eea2d47f56b66a015e0a1929bf19a74a7fd4cb5001; independent Local proof sha256:ad7b6ef44f6eceb85b6c7d487ee2c4bc9f488912c57d6733536e463f9d6ebb97. R1/R2 partial; R3/R4 open; R5/R6 deferred. Real-data writer/custody/business acceptance, selected HTML pilot, send/B2, P11, public sync, deployment and production remain parked; LHW24 retained. Original dispatch wording/action sequence retained byte-for-byte in `docs/reviews/archive/CVF_AGENT_WORK_ORDER_NCR_RECEIPT_HISTORY_DISPATCH_2026-10-14.md`; no successor grant.
 
 ## Intake Role Routing Decision
 
@@ -177,24 +170,20 @@ Dispatch impact: preserve strict live and secret-safe boundary evidence.
 
 | Field | Evidence |
 |---|---|
-| applicableCheckersRead | `governance/compat/check_task_governance_route.py`; `governance/compat/check_review_cost_control.py`; `governance/compat/check_finding_to_governance_learning.py`; `governance/compat/check_work_order_dispatch_quality_lifecycle.py`; `governance/compat/check_gate_to_role_closeability.py`; `governance/compat/check_independent_review_probe_admission.py`; `governance/compat/check_work_order_acceptance_ledger.py`; `governance/compat/check_agent_operation_trace.py`; `governance/compat/check_core_guard_self_protection.py` |
-| literalTokensReviewed | DRAFT pending status, exact eleven-path ledger, one RIPA YES block, closeability graph phases, operation trace labels, no Core Guard heading in work order |
-| gateRunPurpose | confirmation/evidence after source and literal review; Root later owns material and bound dispatch release |
-| claimBoundary | machine shape cannot certify actual browser/provider/download or complete NCR behavior |
+| applicableCheckersRead | Root inspected applicable constants/declarations in governance/compat/check_machine_closure_package.py, governance/compat/check_review_cost_control.py, governance/compat/check_independent_review_probe_admission.py, governance/compat/check_agent_operation_trace.py, governance/compat/check_core_guard_self_protection.py, governance/compat/check_finding_to_governance_learning.py and governance/compat/check_corpus_to_knowledge_map_reconciliation.py; recorded read spans are bounded, not an all-source claim |
+| literalTokensReviewed | exact telemetry fields/round3 escalation; controlled RIPA role and singleton digest union; permitted learning classes/lanes; six assertions, exact8 MCP, seven source columns and16 knowledge fields |
+| gateRunPurpose | confirmation/evidence of current terminal metadata and phase-specific committed range after semantic proof; source-shape compliance alone is not runtime proof |
+| claimBoundary | Procedure PARTIAL_WITH_REASON; late pre-release/worker-source defects remain disclosed; full source read or perfect historical preflight not asserted |
 
 ## Source Verification Block
 
 | Claimed item | Claim type | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Disposition |
 |---|---|---|---|---|---|---|
-| Execution extension and seven-field legacy snapshot | EXISTS | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/types/index.ts` | 36-67 | `ExecutionEvidenceSnapshot; Execution` | types | ACCEPT |
-| Route scalar/nested receipt distinction | EXISTS | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/ai/types.ts` | 133-167 | `GovernanceEvidenceReceipt` | AI types | ACCEPT |
-| Zustand optional-field persistence | EXISTS | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/store.ts` | 11-75, 162 | `updateExecution; cvf-executions-storage` | store | ACCEPT |
-| Home exact history selection and completion | EXISTS | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.tsx` | 363-438 | `restore effect; handleProcessingComplete` | Home | ACCEPT |
-| Home invalidation and follow-up seams | EXISTS | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.tsx` | 121-129, 440-501, 543-558 | `clearRecoveryContext; returnToDraft; handleFollowUp` | Home | ACCEPT |
-| Existing receipt UI and Markdown export | EXISTS | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.tsx` | 108-170, 552-583 | `generateEvidenceReceiptContent; receipt card` | ResultViewer | ACCEPT |
-| Lightweight snapshot is separate | EXISTS | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execution-continuity.ts` | 88-103 | `buildEvidenceSnapshot` | continuity | ACCEPT |
+| ExecutionEvidenceSnapshot; Execution.savedReceiptArchive | EXISTS | `docs/reviews/evidence/ncr-receipt-history-local-20261014.json` | currentSourcePins 36-68 | ExecutionEvidenceSnapshot; Execution.savedReceiptArchive | archive helper, HomePage, ResultViewer and Execution types | ACCEPT |
+| RECEIPT_ARCHIVE_VERSION; projectReceipt; hashExactOutput; createReceiptArchive; restoreReceiptArchive | EXISTS | `docs/reviews/evidence/ncr-receipt-history-local-20261014.json` | currentSourcePins 1-99 | RECEIPT_ARCHIVE_VERSION; projectReceipt; hashExactOutput; createReceiptArchive; restoreReceiptArchive | archive helper, HomePage, ResultViewer and Execution types | ACCEPT |
+| receiptEpoch; selected restore; handleProcessingComplete; snapshot receiptId/provider/model rechecks | EXISTS | `docs/reviews/evidence/ncr-receipt-history-local-20261014.json` | currentSourcePins diff;373-474;128-136;479-545;747-758 | receiptEpoch; selected restore; handleProcessingComplete; snapshot receiptId/provider/model rechecks | archive helper, HomePage, ResultViewer and Execution types | ACCEPT |
+| savedLocalHistory; generateEvidenceReceiptContent; saved-receipt-origin | EXISTS | `docs/reviews/evidence/ncr-receipt-history-local-20261014.json` | currentSourcePins diff;111-178;568-583 | savedLocalHistory; generateEvidenceReceiptContent; saved-receipt-origin | archive helper, HomePage, ResultViewer and Execution types | ACCEPT |
 
-Current raw SHA/line pins: `docs/reviews/evidence/ncr-receipt-history-dispatch-20261014.json`; selected inspection, no corpus completeness claim.
 
 ## Work-Order Acceptance Requirement Ledger
 
@@ -231,6 +220,18 @@ negativeMutationClasses: local output/ID/malformed archive mismatch omits receip
 expectedInformationGain: detects fixture-specific false positive and stale archived receipt/output attribution.
 rerunCostReason: at most one Root UI submission and three additional provider starts; no worker suite duplication or retry without named contradiction/diagnostic/budget decision.
 reviewerDecisionOwner: LOCAL
+independentProbeDisposition: PASS_INDEPENDENT_PROBE
+implementationWorkerActor: INTERNAL_WORKER_SOL_CONFIGURED
+probeExecutorActor: LOCAL_REVIEWER_CODEX_ROOT
+probeCommandOrMethod: python -B .cvf/runtime/ncr-receipt-history-20261014/root/run-review.py
+probeObservedResult: Actual Root 11 assertion records PASS; wrapper PASS, shutdown confirmed
+oracleSeparationBasis: Distinct worker/Root invocation and fictional museum fixture; Root separate executed oracle raw SHA256 93d24b6648fef74face356ea7546448fbd2ab3758035af2c7bb0e81fc0b543a7; no worker-spec/helper assertion imports; worker proof raw SHA256 545299dced23aa4fb62c90eea2d47f56b66a015e0a1929bf19a74a7fd4cb5001
+workerInvocationId: ncr-receipt-history-worker-20261014
+probeInvocationId: ncr-receipt-history-root-museum-20261014
+workerEvidenceRef: docs/reviews/evidence/ncr-receipt-history-worker-20261014.json
+probeEvidenceRef: docs/reviews/evidence/ncr-receipt-history-local-20261014.json
+workerOracleSha256: 545299dced23aa4fb62c90eea2d47f56b66a015e0a1929bf19a74a7fd4cb5001
+probeOracleSha256: ad7b6ef44f6eceb85b6c7d487ee2c4bc9f488912c57d6733536e463f9d6ebb97
 
 ## Worker Return Packet Shape Contract
 
@@ -291,7 +292,7 @@ reviewerOwnedClosurePaths:
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-pendingStatusTokensAllowedBeforeReview: COMPLETE_PENDING_REVIEW worker only
+pendingStatusTokensAllowedBeforeReview: NOT_APPLICABLE_WITH_REASON - terminal review completed
 forbiddenClosedEquivalentResidue: no active dispatch instruction after closure
 predecessorClosureFactSource: current stable completion/review, not old dispatch archive
 closureOwner: Local reviewer/closer
@@ -301,10 +302,10 @@ workerCommitPermission: FORBIDDEN
 
 Contract source archive-qualified exception: `docs/reference/CVF_AHB_T2_AGENT_HANDOFF_CONTRACT_RATIFICATION_2026-06-16.md`
 sharedWorktreeCoordinationMode: EXPLICIT_LANE_HANDOFF
-activeLaneOwner: Worker only after committed Root release
+activeLaneOwner: Local reviewer/closer; implementation worker released after frozen exact11 return
 laneOwnedPaths: exact eleven Required Artifact Manifest paths
 dispatcherMutationBoundary: NO_MUTATION_WHILE_LANE_ACTIVE
-laneReleaseEvidence: terminal worker fast/ledger and frozen original eleven-path custody
+laneReleaseEvidence: frozen exact11 actual custody in docs/reviews/evidence/ncr-receipt-history-local-20261014.json
 dispatchBaseHead: `d2125357262a6f7825d14fedcb21d76b0b376516`
 
 | Field | Value |
@@ -361,10 +362,10 @@ dispatchBaseHead: `d2125357262a6f7825d14fedcb21d76b0b376516`
 
 ## Epistemic Process Block
 
-Expected Result / Prediction: saved scalar receipt remains bound to selected exact output across reload and owned server restart.
-Evidence Comparison: current packet records selected source preimages and fixed mandatory criteria; prior seven live calls remain historical.
-Contradiction Or Gap Disposition: Unicode digest, async races, malformed archive, real route and Root oracle remain pending.
-Claim Update: admitted finite R1/R4, not trusted storage/full NCR.
+Expected Result / Prediction: strict scalar saved receipt binds selected exact output across reload/owned restart and visible historical-copy export.
+Evidence Comparison: CLOSED_PASS_BOUNDED; QUALITY_ACCEPTED_BOUNDED. Frozen worker proof sha256:545299dced23aa4fb62c90eea2d47f56b66a015e0a1929bf19a74a7fd4cb5001; independent Local proof sha256:ad7b6ef44f6eceb85b6c7d487ee2c4bc9f488912c57d6733536e463f9d6ebb97. R1/R2 partial; R3/R4 open; R5/R6 deferred. Real-data writer/custody/business acceptance, selected HTML pilot, send/B2, P11, public sync, deployment and production remain parked; LHW24 retained.
+Contradiction Or Gap Disposition: Root corrected pre-release packet literal/trace and independent-oracle preparation before BUILD/provider effects. Worker first CLI failed before server spawn with null WriteStream fd; second owned Next startup failed on default Turbopack/dist configuration before UI/provider effects; both diagnostics and separately named Root rerun admissions retained. Third CLI used corrected canonical dist, FILE DASHSCOPE credential priority, bounded processed paid profile and owned stores, producing one UI/POST/Alibaba start. Original release00:49:43Z and UTC02:00 expiry/counter remain unchanged. Root final source review found capture incorrectly gated by UI epoch after Back/Retry and missing fresh snapshot receiptId/provider/model post-await joins in capture/restore. Worker repaired only bounded current source, final affected54/54 plus TypeScript/lint and fast70/70; prior118-test suite and prior-source live Home preimage remain historical, not current-code paid replay. Root distinct current-code proof now supplies actual 11 assertions; original failed setup outcomes are not provider/product failures.
+Claim Update: bounded R1/R4 contribution; R1/R2 partial; R3/R4 open; R5/R6 deferred. Real-data writer/custody/business acceptance, selected HTML pilot, send/B2, P11, public sync, deployment and production remain parked; LHW24 retained.
 
 ## Scaffold Provenance Block
 
@@ -382,23 +383,23 @@ Claim Update: admitted finite R1/R4, not trusted storage/full NCR.
 
 | Field | Evidence |
 |---|---|
-| Actor | Local INTERNAL_AGENT orchestrator/reviewer dispatch owner |
-| Provider or surface | private shared repository, no provider invocation |
-| Session or invocation | ncr-receipt-history-dispatch-author-20261014 |
+| Actor | Local INTERNAL_AGENT Root reviewer/closer |
+| Provider or surface | private shared workspace; actual frozen Alibaba evidence |
+| Session or invocation | ncr-receipt-history-root-museum-20261014 |
 | Working directory | repository root |
-| Command or tool surface | progressive source/literal review, ADIF resolver0, governed packet/registration publication and canonical state generator |
-| Target paths | `docs/baselines/CVF_GC018_NCR_RECEIPT_HISTORY_2026-10-14.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RECEIPT_HISTORY_2026-10-14.md`; `docs/reviews/evidence/ncr-receipt-history-dispatch-20261014.json`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Allowed scope source | Root selected finite NCR continuation |
-| Before status evidence | 677d3f92ab6ce768c8213dcc824f1bea2180fae5; clean worktree and staged empty after dispatch material before exact9 pre-release amendment |
-| After status evidence | exact9 coherent dispatch amendment/continuity; material commit and dedicated actual-SHA exact6 precede bound release |
-| Diff evidence | git status exact9 and git diff --check before commit |
-| Approval boundary | Root committed material/current-authority binding and full pre-dispatch release before BUILD |
-| Claim boundary | no actual browser/provider proof or selected HTML acceptance |
+| Command or tool surface | frozen worker custody, distinct Root probe, coherent MATERIAL closure and current source/generated continuity |
+| Target paths | `docs/baselines/CVF_GC018_NCR_RECEIPT_HISTORY_2026-10-14.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RECEIPT_HISTORY_2026-10-14.md`; `docs/reviews/evidence/ncr-receipt-history-dispatch-20261014.json`; `docs/corpus-intelligence/registry/entries/cvf-ncr-receipt-history.json`; `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json`; `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md`; `docs/reviews/evidence/ncr-receipt-history-local-20261014.json`; `docs/reviews/CVF_NCR_RECEIPT_HISTORY_COMPLETION_2026-10-14.md`; `docs/reviews/archive/CVF_AGENT_WORK_ORDER_NCR_RECEIPT_HISTORY_DISPATCH_2026-10-14.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/types/index.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execution-receipt-archive.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execution-receipt-archive.test.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.test.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.receipt-history.test.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/ncr-receipt-history.live.spec.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/support/ncr-receipt-history-boundary.cjs`; `docs/reviews/evidence/ncr-receipt-history-worker-20261014.json`; `docs/reviews/CVF_NCR_RECEIPT_HISTORY_WORKER_RETURN_2026-10-14.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Allowed scope source | current paired order and bound release b0a51264eeebf87f5143b77f832dae53c5b1f3e1 |
+| Before status evidence | execution/closure HEAD b0a51264eeebf87f5143b77f832dae53c5b1f3e1; executionBaseHead=b0a51264eeebf87f5143b77f832dae53c5b1f3e1; frozenUTC=2026-10-14T01:19:28.346455+00:00 exact11 original worker raw custody, staged empty; no worker commit |
+| After status evidence | coherent exact27 MATERIAL projection; paired current-authority raw hashes and completed mode/status regenerated; dedicated actual-SHA exact6 and committed-range closure follow actual material commit |
+| Diff evidence | git diff --name-status and git diff --cached --name-status; exact27 recorded in private material-diff-name-status.txt; coherent source/generated projection; committed-range closure follows commit |
+| Approval boundary | finite synthetic receipt history only |
+| Claim boundary | R1/R2 partial; R3/R4 open; R5/R6 deferred. Real-data writer/custody/business acceptance, selected HTML pilot, send/B2, P11, public sync, deployment and production remain parked; LHW24 retained. |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-receipt-history-dispatch-author-20261014 |
-| Expected manifest | `docs/baselines/CVF_GC018_NCR_RECEIPT_HISTORY_2026-10-14.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RECEIPT_HISTORY_2026-10-14.md`; `docs/reviews/evidence/ncr-receipt-history-dispatch-20261014.json`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Actual changed set | `docs/baselines/CVF_GC018_NCR_RECEIPT_HISTORY_2026-10-14.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RECEIPT_HISTORY_2026-10-14.md`; `docs/reviews/evidence/ncr-receipt-history-dispatch-20261014.json`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Manifest delta | MATCH exact9 required before commit |
+| Invocation ID | ncr-receipt-history-root-museum-20261014 |
+| Expected manifest | `docs/baselines/CVF_GC018_NCR_RECEIPT_HISTORY_2026-10-14.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RECEIPT_HISTORY_2026-10-14.md`; `docs/reviews/evidence/ncr-receipt-history-dispatch-20261014.json`; `docs/corpus-intelligence/registry/entries/cvf-ncr-receipt-history.json`; `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json`; `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md`; `docs/reviews/evidence/ncr-receipt-history-local-20261014.json`; `docs/reviews/CVF_NCR_RECEIPT_HISTORY_COMPLETION_2026-10-14.md`; `docs/reviews/archive/CVF_AGENT_WORK_ORDER_NCR_RECEIPT_HISTORY_DISPATCH_2026-10-14.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/types/index.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execution-receipt-archive.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execution-receipt-archive.test.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.test.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.receipt-history.test.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/ncr-receipt-history.live.spec.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/support/ncr-receipt-history-boundary.cjs`; `docs/reviews/evidence/ncr-receipt-history-worker-20261014.json`; `docs/reviews/CVF_NCR_RECEIPT_HISTORY_WORKER_RETURN_2026-10-14.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Actual changed set | `docs/baselines/CVF_GC018_NCR_RECEIPT_HISTORY_2026-10-14.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RECEIPT_HISTORY_2026-10-14.md`; `docs/reviews/evidence/ncr-receipt-history-dispatch-20261014.json`; `docs/corpus-intelligence/registry/entries/cvf-ncr-receipt-history.json`; `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json`; `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md`; `docs/reviews/evidence/ncr-receipt-history-local-20261014.json`; `docs/reviews/CVF_NCR_RECEIPT_HISTORY_COMPLETION_2026-10-14.md`; `docs/reviews/archive/CVF_AGENT_WORK_ORDER_NCR_RECEIPT_HISTORY_DISPATCH_2026-10-14.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/types/index.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execution-receipt-archive.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execution-receipt-archive.test.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.test.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.receipt-history.test.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/ncr-receipt-history.live.spec.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/support/ncr-receipt-history-boundary.cjs`; `docs/reviews/evidence/ncr-receipt-history-worker-20261014.json`; `docs/reviews/CVF_NCR_RECEIPT_HISTORY_WORKER_RETURN_2026-10-14.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Manifest delta | MATCH exact27 coherent MATERIAL after publication/source-generation/sync reconciliation |
 | Deletion or rename disposition | None |
 
 ## Delta Execution Claim Boundary Control Block
@@ -417,12 +418,12 @@ Claim Update: admitted finite R1/R4, not trusted storage/full NCR.
 ## Public Export Disposition
 
 DEFERRED_PRIVATE_ONLY
-Reason: private synthetic NCR proof dispatch.
+
+Private bounded synthetic receipt-history evidence; no public-sync artifact.
 
 ## Claim Boundary
 
-Finite admitted packet; BUILD only after committed bound release. No worker stage/commit. Finite saved-history contribution; original evidenceMode remains historical, no fresh route/signature verification on reload.
-
+R1/R2 partial; R3/R4 open; R5/R6 deferred. Real-data writer/custody/business acceptance, selected HTML pilot, send/B2, P11, public sync, deployment and production remain parked; LHW24 retained. Terminal bounded evidence only; no active BUILD, provider grant or automatic successor.
 
 ## Locked Scalar And Async Publication Contract
 
@@ -443,3 +444,40 @@ NOT_APPLICABLE_WITH_REASON - existing Web receipt consumer enhancement, no legac
 ## Pre-Release Reviewer Preparation Amendment
 
 Before any BUILD or provider call, Local reviewed and corrected its independent oracle: strict scalar allowlist, snapshot receipt mismatch, exact saved-copy/no-reverification UI wording, confirmed owned-server cleanup and restart timing margin. Current oracle and wrapper hashes are recorded in the dispatch evidence; prior oracle preimage remains private evidence. This does not change the eleven-path implementation or six-call task budget. Owned Next development startup may transiently add its named ignored dist include to tsconfig; capture the preimage and restore only those generated additions after shutdown, holding any other delta for Local review. No lasting configuration change is authorized.
+
+## Acceptance Receipt Assertion Matrix
+
+| Requirement | Required value | Observed value / evidence | Status |
+|---|---|---|---|
+| REQ-ARCHIVE | Governing mandatory REQ-ARCHIVE | Consumed frozen strict-schema/scalar/legacy/Unicode/no-crypto worker tests and Root scalar persisted archive/output identity assertions; actual worker proof 545299dced23aa4fb62c90eea2d47f56b66a015e0a1929bf19a74a7fd4cb5001. | PASS |
+| REQ-CAPTURE | Governing mandatory REQ-CAPTURE | Consumed final54 affected tests and Root-inspected completed-row capture rechecks; original valid row can archive after navigation while changed/deleted output or receiptId/provider/model omits publication. Earlier worker paid-source preimage retained; Root current-code live capture joins observed. | PASS |
+| REQ-RESTORE | Governing mandatory REQ-RESTORE | Root current-code saved receipt restored after reload/owned restart; changed output/archiveID/snapshot receipt/malformed original mode omit receipt with unchanged POST/provider counters. Final worker async snapshot/provider/model/race regressions consumed. | PASS |
+| REQ-EXPORT | Governing mandatory REQ-EXPORT | Root actual downloaded Markdown 2200 bytes sha256:ec46e5aea0167c0486ad1aa656e1e84c4d58c07235d5cd7b903d827c5f6acd7c contains exact original output/receipt and saved-copy origin, original mode live. | PASS |
+| REQ-LIVE | Governing mandatory REQ-LIVE | Root distinct fictional museum fixture actual 11 assertions PASS; live Alibaba receipt rcpt-env-mv7fag9d-zg8rpt outputsha256:fe7c1b1547eaeb7572b73b9cdbdcc2bfbf9910563d00b2d98179f999b439aa2d; one POST/1 starts; reload/restart/negatives/Retry add zero. | PASS |
+| REQ-BUDGET-RETURN | Governing mandatory REQ-BUDGET-RETURN | Frozen exact11 raw custody, final workerfast70/70 and no worker commit consumed; worker1 plus Root1 paid starts=2 additional, historical7 retained; Root actual shutdown verified. Worker first2 CLI zero effects and diagnostic admissions preserved. | PASS |
+
+## Local Closure Disposition
+
+CLOSED_PASS_BOUNDED; QUALITY_ACCEPTED_BOUNDED. Frozen worker proof sha256:545299dced23aa4fb62c90eea2d47f56b66a015e0a1929bf19a74a7fd4cb5001; independent Local proof sha256:ad7b6ef44f6eceb85b6c7d487ee2c4bc9f488912c57d6733536e463f9d6ebb97. R1/R2 partial; R3/R4 open; R5/R6 deferred. Real-data writer/custody/business acceptance, selected HTML pilot, send/B2, P11, public sync, deployment and production remain parked; LHW24 retained.
+
+## Current Source Raw-Byte Hash Table
+
+| Reviewed source path | Current raw SHA256 | Physical lines |
+|---|---|---|
+| `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/types/index.ts` | `557e2c26c0e5ad9f3c946cd022c96ce3ba9cf982b04340a0835dc09f25d9abc4` | 92 |
+| `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execution-receipt-archive.ts` | `67a68c06772b4bab323da4f62868cbe9c3130db7de45bc6dbec6b62506438119` | 99 |
+| `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.tsx` | `ae5160169f828a7ec9b1a9ad576a2ad37b9c3343cb882ec706c7631f01113b31` | 772 |
+| `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.tsx` | `7099bdc7b7d0d1d4fd5aea8de0285892c4e6866a2392d237d4b885f027bca48c` | 852 |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RECEIPT_HISTORY_2026-10-14.md` | CLOSED_PASS_BOUNDED; frozen dispatch archive | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_NCR_RECEIPT_HISTORY_COMPLETION_2026-10-14.md` | six actual mandatory receipt decisions; independent Root proof | PASS |
+| Roadmap state | `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` | v2.12 bounded contribution; full exits open | PASS |
+| Registry JSON | `docs/corpus-intelligence/registry/entries/cvf-ncr-receipt-history.json`; `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | source note; canonical generated aggregate; NOT_STARTED | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | bounded completion lookup; NOT_STARTED | PASS |
+| External evidence digest | `docs/reviews/evidence/ncr-receipt-history-local-20261014.json` | sha256:ad7b6ef44f6eceb85b6c7d487ee2c4bc9f488912c57d6733536e463f9d6ebb97 | PASS |
+| System loop interlock | `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `docs/reviews/CVF_NCR_RECEIPT_HISTORY_COMPLETION_2026-10-14.md` | R1/R2 partial; R3/R4 open; R5/R6 deferred. Real-data writer/custody/business acceptance, selected HTML pilot, send/B2, P11, public sync, deployment and production remain parked; LHW24 retained. | PASS |
+| Session continuity | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | PASS scoped to coherent CURRENT material projection: current-authority hashes and completed mode/status source/generated join; dedicated actual-SHA exact6 and committed-range closure still follow actual material commit, not asserted completed | PASS |

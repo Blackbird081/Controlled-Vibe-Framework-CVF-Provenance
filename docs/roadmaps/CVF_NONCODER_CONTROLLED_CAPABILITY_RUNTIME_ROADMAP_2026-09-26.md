@@ -11,6 +11,8 @@ Decision owner: operator về định hướng/phạm vi; Local reviewer về đ
 
 ## Current Delivery Checkpoint - 2026-10-14
 
+**Accepted bounded saved receipt history, 2026-10-14:** `docs/reviews/CVF_NCR_RECEIPT_HISTORY_COMPLETION_2026-10-14.md`. Current-code saved scalar receipt/output identity observed through page reload, owned restart and exact Markdown with explicit historical saved-copy origin; finite R1/R4 contribution only. Procedure PARTIAL_WITH_REASON. R1/R2 partial; R3/R4 open; R5/R6 deferred. Real-data writer/custody/business acceptance, selected HTML pilot, send/B2, P11, public sync, deployment and production remain parked; LHW24 retained.
+
 **Accepted bounded Home/Alibaba contribution, 2026-10-14:** `docs/reviews/CVF_NCR_HOME_ALIBABA_JOURNEY_COMPLETION_2026-10-13.md` accepts the finite synthetic visible Generate root/child journey, governed Alibaba receipt, actual child Markdown bytes and return-to-edit checks based on frozen worker and distinct Local proof. Original BUILD stopped at 17:40:17Z with four calls/posts charged; separate continuation corrected the VI `xuong` export selector under its own bound. Earlier 401 and output-limit attempts remain failed history; the successful pre-continuation root/child lacked a Markdown download click. Procedure PARTIAL_WITH_REASON. R1/R2 partial; R3/R4 open; R5/R6 deferred. Selected HTML business pilot, real-data writer/custody, business acceptance, send/B2, P11, public sync, deployment and production remain parked.
 
 Current delivery projection; Local decision owner. Current mode=cvf_ncr_result_export_feedback_closed_useful_selection,

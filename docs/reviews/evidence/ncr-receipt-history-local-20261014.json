@@ -1,0 +1,404 @@
+{
+  "schemaVersion": "cvf.ncrReceiptHistoryLocalProof.v1",
+  "status": "PASS",
+  "rootReviewStatus": "PASS",
+  "executionBaseHead": "b0a51264eeebf87f5143b77f832dae53c5b1f3e1",
+  "closureBaseHead": "b0a51264eeebf87f5143b77f832dae53c5b1f3e1",
+  "frozenWorkerCustody": {
+    "schemaVersion": "cvf.ncrReceiptHistoryCustody.v1",
+    "frozenUtc": "2026-10-14T01:19:28.346455+00:00",
+    "executionBaseHead": "b0a51264eeebf87f5143b77f832dae53c5b1f3e1",
+    "actor": "LOCAL_REVIEWER_CODEX_ROOT",
+    "manifestCount": 11,
+    "stagedEmpty": true,
+    "exactChangedSet": true,
+    "records": [
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/types/index.ts",
+        "sha256": "557e2c26c0e5ad9f3c946cd022c96ce3ba9cf982b04340a0835dc09f25d9abc4",
+        "bytes": 3564,
+        "physicalLines": 92,
+        "frozenPath": ".cvf/runtime/ncr-receipt-history-20261014/frozen-worker/EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/types/index.ts"
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execution-receipt-archive.ts",
+        "sha256": "67a68c06772b4bab323da4f62868cbe9c3130db7de45bc6dbec6b62506438119",
+        "bytes": 5035,
+        "physicalLines": 99,
+        "frozenPath": ".cvf/runtime/ncr-receipt-history-20261014/frozen-worker/EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execution-receipt-archive.ts"
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.tsx",
+        "sha256": "ae5160169f828a7ec9b1a9ad576a2ad37b9c3343cb882ec706c7631f01113b31",
+        "bytes": 35116,
+        "physicalLines": 772,
+        "frozenPath": ".cvf/runtime/ncr-receipt-history-20261014/frozen-worker/EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.tsx"
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.tsx",
+        "sha256": "7099bdc7b7d0d1d4fd5aea8de0285892c4e6866a2392d237d4b885f027bca48c",
+        "bytes": 45032,
+        "physicalLines": 852,
+        "frozenPath": ".cvf/runtime/ncr-receipt-history-20261014/frozen-worker/EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.tsx"
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execution-receipt-archive.test.ts",
+        "sha256": "a5564802341121eca2f7ca30a70d5bf73edf7ddc9ea33954368f8c78d7f5e3fe",
+        "bytes": 4204,
+        "physicalLines": 55,
+        "frozenPath": ".cvf/runtime/ncr-receipt-history-20261014/frozen-worker/EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execution-receipt-archive.test.ts"
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.test.tsx",
+        "sha256": "c320e52ffe22c4a4fd01fba69457b718a5e9261534e7e3587ed2a55789582465",
+        "bytes": 22983,
+        "physicalLines": 520,
+        "frozenPath": ".cvf/runtime/ncr-receipt-history-20261014/frozen-worker/EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.test.tsx"
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.receipt-history.test.tsx",
+        "sha256": "cab5f3aba0447fe855993666aa6170019156b8596eb6e187e79d2aa14dd5c821",
+        "bytes": 2776,
+        "physicalLines": 58,
+        "frozenPath": ".cvf/runtime/ncr-receipt-history-20261014/frozen-worker/EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.receipt-history.test.tsx"
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/ncr-receipt-history.live.spec.ts",
+        "sha256": "d5a49b2364d92e907dfec07b104b4a7157baa656c25091d56608da08eeed300e",
+        "bytes": 15499,
+        "physicalLines": 236,
+        "frozenPath": ".cvf/runtime/ncr-receipt-history-20261014/frozen-worker/EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/ncr-receipt-history.live.spec.ts"
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/support/ncr-receipt-history-boundary.cjs",
+        "sha256": "e52d910c26f80d62cc2db2ea8ae85c356cab9252df07b61a740d89bfb536bf31",
+        "bytes": 7165,
+        "physicalLines": 128,
+        "frozenPath": ".cvf/runtime/ncr-receipt-history-20261014/frozen-worker/EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/support/ncr-receipt-history-boundary.cjs"
+      },
+      {
+        "path": "docs/reviews/evidence/ncr-receipt-history-worker-20261014.json",
+        "sha256": "545299dced23aa4fb62c90eea2d47f56b66a015e0a1929bf19a74a7fd4cb5001",
+        "bytes": 8706,
+        "physicalLines": 127,
+        "frozenPath": ".cvf/runtime/ncr-receipt-history-20261014/frozen-worker/docs/reviews/evidence/ncr-receipt-history-worker-20261014.json"
+      },
+      {
+        "path": "docs/reviews/CVF_NCR_RECEIPT_HISTORY_WORKER_RETURN_2026-10-14.md",
+        "sha256": "65759de162a353b7d72133ed2b7d49e75a6f237c974e260aaa0cf58106e9d8db",
+        "bytes": 24132,
+        "physicalLines": 281,
+        "frozenPath": ".cvf/runtime/ncr-receipt-history-20261014/frozen-worker/docs/reviews/CVF_NCR_RECEIPT_HISTORY_WORKER_RETURN_2026-10-14.md"
+      }
+    ],
+    "claimBoundary": "Original worker raw bytes frozen before any Root metadata conversion; filesystem custody does not prove semantic acceptance."
+  },
+  "workerProofSha256": "545299dced23aa4fb62c90eea2d47f56b66a015e0a1929bf19a74a7fd4cb5001",
+  "workerReturnOriginalSha256": "65759de162a353b7d72133ed2b7d49e75a6f237c974e260aaa0cf58106e9d8db",
+  "currentSourcePins": [
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/types/index.ts",
+      "sha256": "557e2c26c0e5ad9f3c946cd022c96ce3ba9cf982b04340a0835dc09f25d9abc4",
+      "readSpans": "36-68",
+      "reviewedSymbols": "ExecutionEvidenceSnapshot; Execution.savedReceiptArchive",
+      "readDepth": "Root types diff/current seam",
+      "rootSourceReadAcknowledgment": "ROOT_REVIEWED_FOUR_PRODUCTION_SOURCES_AND_CRITICAL_JOINS"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execution-receipt-archive.ts",
+      "sha256": "67a68c06772b4bab323da4f62868cbe9c3130db7de45bc6dbec6b62506438119",
+      "readSpans": "1-99",
+      "reviewedSymbols": "RECEIPT_ARCHIVE_VERSION; projectReceipt; hashExactOutput; createReceiptArchive; restoreReceiptArchive",
+      "readDepth": "Root full helper read",
+      "rootSourceReadAcknowledgment": "ROOT_REVIEWED_FOUR_PRODUCTION_SOURCES_AND_CRITICAL_JOINS"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.tsx",
+      "sha256": "ae5160169f828a7ec9b1a9ad576a2ad37b9c3343cb882ec706c7631f01113b31",
+      "readSpans": "diff;373-474;128-136;479-545;747-758",
+      "reviewedSymbols": "receiptEpoch; selected restore; handleProcessingComplete; snapshot receiptId/provider/model rechecks",
+      "readDepth": "Root Home diff and critical capture/restore joins spot read",
+      "rootSourceReadAcknowledgment": "ROOT_REVIEWED_FOUR_PRODUCTION_SOURCES_AND_CRITICAL_JOINS"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.tsx",
+      "sha256": "7099bdc7b7d0d1d4fd5aea8de0285892c4e6866a2392d237d4b885f027bca48c",
+      "readSpans": "diff;111-178;568-583",
+      "reviewedSymbols": "savedLocalHistory; generateEvidenceReceiptContent; saved-receipt-origin",
+      "readDepth": "Root ResultViewer diff and origin/export consumer spot read",
+      "rootSourceReadAcknowledgment": "ROOT_REVIEWED_FOUR_PRODUCTION_SOURCES_AND_CRITICAL_JOINS"
+    }
+  ],
+  "rootReview": {
+    "schemaVersion": "cvf.ncrReceiptHistoryRootProbe.v1",
+    "actor": "LOCAL_REVIEWER_CODEX_ROOT",
+    "invocationId": "ncr-receipt-history-root-museum-20261014",
+    "startUtc": "2026-10-14T01:19:39.407Z",
+    "assertions": [
+      {
+        "name": "real same-origin test authentication",
+        "result": "PASS"
+      },
+      {
+        "name": "one real root result and live receipt with bounded provider attempts and zero knowledge",
+        "result": "PASS"
+      },
+      {
+        "name": "actual persisted scalar archive has exact execution and independently computed UTF8 output identity",
+        "result": "PASS"
+      },
+      {
+        "name": "full page history reload restores original receipt without another execute or provider call",
+        "result": "PASS"
+      },
+      {
+        "name": "owned development server restart retains actual browser history receipt without reexecution",
+        "result": "PASS"
+      },
+      {
+        "name": "actual downloaded Markdown preserves original output and original receipt with local history origin",
+        "result": "PASS"
+      },
+      {
+        "name": "changed output omits archived receipt and causes no execution",
+        "result": "PASS"
+      },
+      {
+        "name": "wrong archive execution binding omits receipt and causes no execution",
+        "result": "PASS"
+      },
+      {
+        "name": "snapshot receipt mismatch omits archived receipt and causes no execution",
+        "result": "PASS"
+      },
+      {
+        "name": "malformed original mode is never upgraded to live",
+        "result": "PASS"
+      },
+      {
+        "name": "Retry returns original editable draft and clears archived attribution without another call",
+        "result": "PASS"
+      }
+    ],
+    "outcome": "PASS",
+    "providerCalls": 1,
+    "receipt": {
+      "receiptId": "rcpt-env-mv7fag9d-zg8rpt",
+      "envelopeId": "env-mv7fag9d-zg8rpt",
+      "evidenceMode": "live",
+      "provider": "alibaba",
+      "model": "qwen-flash"
+    },
+    "outputSha256": "fe7c1b1547eaeb7572b73b9cdbdcc2bfbf9910563d00b2d98179f999b439aa2d",
+    "executionId": "exec_1791940801840_0",
+    "archiveSha256": "4e46ad041770af0750a59e5a2956d05c7481c4db1d18d25a8967c13745ffd97b",
+    "download": {
+      "bytes": 2200,
+      "sha256": "ec46e5aea0167c0486ad1aa656e1e84c4d58c07235d5cd7b903d827c5f6acd7c",
+      "originalOutputContained": true,
+      "originalReceiptContained": true,
+      "savedHistoryOriginContained": true
+    },
+    "executePostCount": 1,
+    "endUtc": "2026-10-14T01:20:50.300Z",
+    "oracleSha256": "93d24b6648fef74face356ea7546448fbd2ab3758035af2c7bb0e81fc0b543a7"
+  },
+  "rootRun": {
+    "outcome": "PASS",
+    "serverLaunched": true,
+    "providerCalls": 1,
+    "preflightProfiles": [
+      {
+        "utc": "2026-10-14T01:19:37.895Z",
+        "pid": 27628,
+        "credentialStates": {
+          "ALIBABA_API_KEY": false,
+          "DASHSCOPE_API_KEY": true,
+          "CVF_BENCHMARK_ALIBABA_KEY": false,
+          "CVF_ALIBABA_API_KEY": false,
+          "OPENAI_API_KEY": false,
+          "ANTHROPIC_API_KEY": false,
+          "GOOGLE_AI_API_KEY": false,
+          "GEMINI_API_KEY": false,
+          "OPENROUTER_API_KEY": false,
+          "DEEPSEEK_API_KEY": false
+        },
+        "storePaths": {
+          "CVF_CONTROL_PLANE_EVENTS_PATH": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-receipt-history-20261014\\root\\root-events.json",
+          "CVF_POLICY_SNAPSHOT_DIR": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-receipt-history-20261014\\root\\root-policy-snapshots",
+          "KNOWLEDGE_STORE_PATH": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-receipt-history-20261014\\root\\root-knowledge.json",
+          "APPROVAL_STORE_PATH": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-receipt-history-20261014\\root\\root-approvals.json",
+          "CVF_DURABLE_MEMORY_STORE_PATH": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-receipt-history-20261014\\root\\root-memory.json",
+          "CVF_SOT3_ACTIVATION_EVIDENCE_PATH": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-receipt-history-20261014\\root\\root-sot3.json"
+        },
+        "ownedPaths": true,
+        "knowledgeEmpty": true,
+        "wrapped": true,
+        "mockAiDisabled": true,
+        "mockAiMode": "0",
+        "authOrigin": "http://localhost:3047",
+        "nextAuthEmpty": true,
+        "storageAdapter": "file",
+        "rateLimitStore": "memory",
+        "valid": true
+      },
+      {
+        "utc": "2026-10-14T01:19:38.115Z",
+        "pid": 35640,
+        "credentialStates": {
+          "ALIBABA_API_KEY": false,
+          "DASHSCOPE_API_KEY": true,
+          "CVF_BENCHMARK_ALIBABA_KEY": false,
+          "CVF_ALIBABA_API_KEY": false,
+          "OPENAI_API_KEY": false,
+          "ANTHROPIC_API_KEY": false,
+          "GOOGLE_AI_API_KEY": false,
+          "GEMINI_API_KEY": false,
+          "OPENROUTER_API_KEY": false,
+          "DEEPSEEK_API_KEY": false
+        },
+        "storePaths": {
+          "CVF_CONTROL_PLANE_EVENTS_PATH": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-receipt-history-20261014\\root\\root-events.json",
+          "CVF_POLICY_SNAPSHOT_DIR": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-receipt-history-20261014\\root\\root-policy-snapshots",
+          "KNOWLEDGE_STORE_PATH": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-receipt-history-20261014\\root\\root-knowledge.json",
+          "APPROVAL_STORE_PATH": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-receipt-history-20261014\\root\\root-approvals.json",
+          "CVF_DURABLE_MEMORY_STORE_PATH": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-receipt-history-20261014\\root\\root-memory.json",
+          "CVF_SOT3_ACTIVATION_EVIDENCE_PATH": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-receipt-history-20261014\\root\\root-sot3.json"
+        },
+        "ownedPaths": true,
+        "knowledgeEmpty": true,
+        "wrapped": true,
+        "mockAiDisabled": true,
+        "mockAiMode": "0",
+        "authOrigin": "http://localhost:3047",
+        "nextAuthEmpty": true,
+        "storageAdapter": "file",
+        "rateLimitStore": "memory",
+        "valid": true
+      },
+      {
+        "utc": "2026-10-14T01:19:38.325Z",
+        "pid": 39100,
+        "credentialStates": {
+          "ALIBABA_API_KEY": false,
+          "DASHSCOPE_API_KEY": true,
+          "CVF_BENCHMARK_ALIBABA_KEY": false,
+          "CVF_ALIBABA_API_KEY": false,
+          "OPENAI_API_KEY": false,
+          "ANTHROPIC_API_KEY": false,
+          "GOOGLE_AI_API_KEY": false,
+          "GEMINI_API_KEY": false,
+          "OPENROUTER_API_KEY": false,
+          "DEEPSEEK_API_KEY": false
+        },
+        "storePaths": {
+          "CVF_CONTROL_PLANE_EVENTS_PATH": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-receipt-history-20261014\\root\\root-events.json",
+          "CVF_POLICY_SNAPSHOT_DIR": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-receipt-history-20261014\\root\\root-policy-snapshots",
+          "KNOWLEDGE_STORE_PATH": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-receipt-history-20261014\\root\\root-knowledge.json",
+          "APPROVAL_STORE_PATH": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-receipt-history-20261014\\root\\root-approvals.json",
+          "CVF_DURABLE_MEMORY_STORE_PATH": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-receipt-history-20261014\\root\\root-memory.json",
+          "CVF_SOT3_ACTIVATION_EVIDENCE_PATH": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-receipt-history-20261014\\root\\root-sot3.json"
+        },
+        "ownedPaths": true,
+        "knowledgeEmpty": true,
+        "wrapped": true,
+        "mockAiDisabled": true,
+        "mockAiMode": "0",
+        "authOrigin": "http://localhost:3047",
+        "nextAuthEmpty": true,
+        "storageAdapter": "file",
+        "rateLimitStore": "memory",
+        "valid": true
+      }
+    ],
+    "ownedRestarts": 1,
+    "callsBeforeRestart": 1,
+    "probeExit": 0,
+    "boundaryEvents": [
+      {
+        "utc": "2026-10-14T01:19:32.457Z",
+        "pid": 35640,
+        "kind": "DENIED_UNEXPECTED_DESTINATION",
+        "host": "registry.npmjs.org",
+        "path": "/-/package/next/dist-tags"
+      },
+      {
+        "utc": "2026-10-14T01:20:07.767Z",
+        "pid": 35640,
+        "kind": "ALIBABA_FETCH_STARTED",
+        "count": 1,
+        "host": "dashscope-intl.aliyuncs.com",
+        "path": "/compatible-mode/v1/chat/completions"
+      },
+      {
+        "utc": "2026-10-14T01:20:09.518Z",
+        "pid": 35640,
+        "kind": "ALIBABA_FETCH_COMPLETED",
+        "count": 1,
+        "httpStatus": 200
+      },
+      {
+        "utc": "2026-10-14T01:20:18.488Z",
+        "pid": 6760,
+        "kind": "DENIED_UNEXPECTED_DESTINATION",
+        "host": "registry.npmjs.org",
+        "path": "/-/package/next/dist-tags"
+      }
+    ],
+    "safeDiagnostic": "No automatic rerun; inspect own proof and boundary events if FAIL.",
+    "ownedServerStopExit": 0,
+    "ownedPortClosed": true,
+    "restoredOwnGeneratedTsconfig": {
+      "preimageSha256": "d4af4823c8a2919796c5faa29805cd152217fbc25d6021c2da57541a685ea0f6",
+      "generatedSha256": "b49de2af19dffe8f48554f4a54896ecfb7702bbd789ec6d89ee84c24bc42c7d2",
+      "restoredSha256": "d4af4823c8a2919796c5faa29805cd152217fbc25d6021c2da57541a685ea0f6",
+      "addedOwnedIncludes": [
+        ".next-cvf-ncr-receipt-history-root-20261014/dev/types/**/*.ts",
+        ".next-cvf-ncr-receipt-history-root-20261014/types/**/*.ts"
+      ]
+    },
+    "endUtc": "2026-10-14T01:20:52.654217+00:00"
+  },
+  "observedCounts": {
+    "workerProviderStarts": 1,
+    "reviewerProviderStarts": 1,
+    "workerUiPosts": 1,
+    "reviewerUiPosts": 1
+  },
+  "historicalObservedProviderCalls": 7,
+  "taskProviderCalls": 2,
+  "programObservedProviderCalls": 9,
+  "requirementDecisions": {
+    "REQ-ARCHIVE": {
+      "status": "CONSUMED_WORKER_PASS",
+      "basis": "Consumed frozen strict-schema/scalar/legacy/Unicode/no-crypto worker tests and Root scalar persisted archive/output identity assertions; actual worker proof 545299dced23aa4fb62c90eea2d47f56b66a015e0a1929bf19a74a7fd4cb5001."
+    },
+    "REQ-CAPTURE": {
+      "status": "CONSUMED_WORKER_PASS",
+      "basis": "Consumed final54 affected tests and Root-inspected completed-row capture rechecks; original valid row can archive after navigation while changed/deleted output or receiptId/provider/model omits publication. Earlier worker paid-source preimage retained; Root current-code live capture joins observed."
+    },
+    "REQ-RESTORE": {
+      "status": "CONSUMED_WORKER_PASS",
+      "basis": "Root current-code saved receipt restored after reload/owned restart; changed output/archiveID/snapshot receipt/malformed original mode omit receipt with unchanged POST/provider counters. Final worker async snapshot/provider/model/race regressions consumed."
+    },
+    "REQ-EXPORT": {
+      "status": "CONSUMED_WORKER_PASS",
+      "basis": "Root actual downloaded Markdown 2200 bytes sha256:ec46e5aea0167c0486ad1aa656e1e84c4d58c07235d5cd7b903d827c5f6acd7c contains exact original output/receipt and saved-copy origin, original mode live."
+    },
+    "REQ-LIVE": {
+      "status": "PASS",
+      "basis": "Root distinct fictional museum fixture actual 11 assertions PASS; live Alibaba receipt rcpt-env-mv7fag9d-zg8rpt outputsha256:fe7c1b1547eaeb7572b73b9cdbdcc2bfbf9910563d00b2d98179f999b439aa2d; one POST/1 starts; reload/restart/negatives/Retry add zero."
+    },
+    "REQ-BUDGET-RETURN": {
+      "status": "CONSUMED_WORKER_PASS",
+      "basis": "Frozen exact11 raw custody, final workerfast70/70 and no worker commit consumed; worker1 plus Root1 paid starts=2 additional, historical7 retained; Root actual shutdown verified. Worker first2 CLI zero effects and diagnostic admissions preserved."
+    }
+  },
+  "procedureDisposition": "PARTIAL_WITH_REASON",
+  "procedureReason": "Root corrected pre-release packet literal/trace and independent-oracle preparation before BUILD/provider effects. Worker first CLI failed before server spawn with null WriteStream fd; second owned Next startup failed on default Turbopack/dist configuration before UI/provider effects; both diagnostics and separately named Root rerun admissions retained. Third CLI used corrected canonical dist, FILE DASHSCOPE credential priority, bounded processed paid profile and owned stores, producing one UI/POST/Alibaba start. Original release00:49:43Z and UTC02:00 expiry/counter remain unchanged. Root final source review found capture incorrectly gated by UI epoch after Back/Retry and missing fresh snapshot receiptId/provider/model post-await joins in capture/restore. Worker repaired only bounded current source, final affected54/54 plus TypeScript/lint and fast70/70; prior118-test suite and prior-source live Home preimage remain historical, not current-code paid replay. Root distinct current-code proof now supplies actual 11 assertions; original failed setup outcomes are not provider/product failures.",
+  "ripaEvidenceBindings": {
+    "workerProofRef": "docs/reviews/evidence/ncr-receipt-history-worker-20261014.json",
+    "localProofRef": "docs/reviews/evidence/ncr-receipt-history-local-20261014.json"
+  },
+  "claimBoundary": "R1/R2 partial; R3/R4 open; R5/R6 deferred. Real-data writer/custody/business acceptance, selected HTML pilot, send/B2, P11, public sync, deployment and production remain parked; LHW24 retained."
+}

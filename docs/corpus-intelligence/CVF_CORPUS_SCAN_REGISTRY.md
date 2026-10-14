@@ -29,7 +29,7 @@ and staged runtime, per
 
 ---
 
-| `NCR saved receipt history named source and tests` | CVF_EXTENSION | NOT_STARTED | None | unknown | Exact helper/test registration; bounded proof awaits worker/reviewer; source-wide processing NOT_STARTED |
+| `NCR saved receipt history named source and tests` | CVF_EXTENSION | NOT_STARTED | None | unknown | Finite receipt history accepted bounded at `docs/reviews/CVF_NCR_RECEIPT_HISTORY_COMPLETION_2026-10-14.md`; source-wide processing NOT_STARTED |
 
 ## Scope / Target / Owner Boundary
 

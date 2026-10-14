@@ -19,6 +19,7 @@ import {
 } from '@/lib/governed-starter-path';
 import { isIntentFirstEnabled, type IntentRouteResult } from '@/lib/intent-router';
 import { buildContinuationExecution, buildEvidenceSnapshot } from '@/lib/execution-continuity';
+import { createReceiptArchive, restoreReceiptArchive } from '@/lib/execution-receipt-archive';
 import { OUTCOME_WORKFLOW_REGISTRY } from '@/lib/workflow-composition';
 import {
     DynamicForm,
@@ -90,6 +91,8 @@ export default function HomePage() {
     const [selectedCategory, setSelectedCategory] = useState('all');
     const [currentOutput, setCurrentOutput] = useState('');
     const [currentEvidenceReceipt, setCurrentEvidenceReceipt] = useState<GovernanceEvidenceReceipt | undefined>(undefined);
+    const [savedLocalHistory, setSavedLocalHistory] = useState(false);
+    const receiptEpoch = useRef(0);
     const [currentInput, setCurrentInput] = useState<Record<string, string>>({});
     const [currentIntent, setCurrentIntent] = useState('');
     const [currentFolder, setCurrentFolder] = useState<string | null>(null);
@@ -122,11 +125,15 @@ export default function HomePage() {
 
     // A fresh template choice must not inherit a previous attempt's draft, notice or context.
     const clearRecoveryContext = useCallback(() => {
+        receiptEpoch.current++;
+        setSavedLocalHistory(false);
         setFormRevision(revision => revision + 1);
         setDraftInput(null);
         setStopNotice(false);
         setIterationContext(null);
     }, []);
+
+    useEffect(() => () => { receiptEpoch.current++; }, []);
 
     const allRunnableTemplates = useMemo(
         () => templates.filter(template => !template.isFolder),
@@ -372,6 +379,7 @@ export default function HomePage() {
         const tpl = exec ? templates.find((t) => t.id === exec.templateId) : undefined;
         startTransition(() => {
             clearRecoveryContext();
+            const generation = receiptEpoch.current;
             if (!exec || exec.status !== 'completed' || !exec.output || !tpl
                 || (hasContinue && exec.result !== 'accepted')) {
                 // Invalid history query: drop any prior bound context and return to browse.
@@ -389,7 +397,23 @@ export default function HomePage() {
             setCurrentOutput(exec.output);
             setCurrentEvidenceReceipt(undefined);
             setWorkflowState('result');
+            if (exec.savedReceiptArchive) {
+                void restoreReceiptArchive(exec.savedReceiptArchive, exec.id, exec.output, exec.evidenceReceiptSnapshot)
+                    .then(receipt => {
+                        if (!receipt || receiptEpoch.current !== generation) return;
+                        const selected = useExecutionStore.getState().getExecutionById(exec.id);
+                        if (!selected || selected.status !== 'completed' || selected.output !== exec.output ||
+                            selected.savedReceiptArchive !== exec.savedReceiptArchive ||
+                            selected.evidenceReceiptSnapshot?.receiptId !== receipt.receiptId ||
+                            selected.evidenceReceiptSnapshot?.provider !== receipt.provider ||
+                            selected.evidenceReceiptSnapshot?.model !== receipt.model) return;
+                        setCurrentEvidenceReceipt(receipt);
+                        setSavedLocalHistory(true);
+                    }).catch(() => { /* Saved output remains viewable without an archive. */ });
+            }
         });
+        const currentReceiptEpoch = receiptEpoch;
+        return () => { currentReceiptEpoch.current++; };
     }, [searchParams, getExecutionById, clearRecoveryContext]);
 
     // An explicit submit starts a new attempt: no inherited result, receipt or continuation context.
@@ -417,8 +441,10 @@ export default function HomePage() {
     const handleProcessingComplete = useCallback((output: string, evidenceReceipt?: GovernanceEvidenceReceipt) => {
         // A stopped attempt has no binding left, so a late delivery can never reach a record.
         if (!activeExecutionId) return;
+        receiptEpoch.current++;
         setCurrentOutput(output);
         setCurrentEvidenceReceipt(evidenceReceipt);
+        setSavedLocalHistory(false);
         if (activeExecutionId) {
             // W123-T1: snapshot evidence receipt + knowledge collection into execution for continuity chain
             const snap = buildEvidenceSnapshot(evidenceReceipt as Record<string, unknown> | undefined);
@@ -430,6 +456,19 @@ export default function HomePage() {
                 ...(snap ? { evidenceReceiptSnapshot: snap } : {}),
                 ...(snap?.knowledgeCollectionId ? { knowledgeCollectionId: snap.knowledgeCollectionId } : {}),
             });
+            if (evidenceReceipt) {
+                const completedId = activeExecutionId;
+                const receiptId = evidenceReceipt.receiptId;
+                void createReceiptArchive(completedId, output, evidenceReceipt).then(archive => {
+                    if (!archive) return;
+                    const selected = useExecutionStore.getState().getExecutionById(completedId);
+                    if (!selected || selected.status !== 'completed' || selected.output !== output ||
+                        selected.evidenceReceiptSnapshot?.receiptId !== receiptId ||
+                        selected.evidenceReceiptSnapshot?.provider !== archive.receipt.provider ||
+                        selected.evidenceReceiptSnapshot?.model !== archive.receipt.model) return;
+                    useExecutionStore.getState().updateExecution(completedId, { savedReceiptArchive: archive });
+                }).catch(() => { /* Missing WebCrypto leaves the ordinary result intact. */ });
+            }
         }
         setWorkflowState('result');
     }, [activeExecutionId, updateExecution]);
@@ -448,6 +487,8 @@ export default function HomePage() {
     // Return to the editable form with the exact submitted fields. Nothing is executed
     // here; only an explicit submit starts a new attempt.
     const returnToDraft = useCallback((stopped: boolean) => {
+        receiptEpoch.current++;
+        setSavedLocalHistory(false);
         setDraftInput({ ...currentInput });
         setStopNotice(stopped);
         setActiveExecutionId(null);
@@ -471,6 +512,8 @@ export default function HomePage() {
 
     const handleFollowUp = useCallback((refinement: string) => {
         if (!selectedTemplate || !currentOutput) return;
+        receiptEpoch.current++;
+        setSavedLocalHistory(false);
         const truncated = currentOutput.length > 600
             ? currentOutput.slice(0, 600) + '…'
             : currentOutput;
@@ -712,6 +755,7 @@ export default function HomePage() {
                     onSendToAgent={handleSendToAgent}
                     onFollowUp={handleFollowUp}
                     evidenceReceipt={currentEvidenceReceipt}
+                    savedLocalHistory={savedLocalHistory}
                 />
             )}
 

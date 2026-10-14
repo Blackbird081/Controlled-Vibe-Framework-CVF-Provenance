@@ -27,8 +27,8 @@
     "gc050": "NOT_RUN"
   },
   "semanticRegions": [],
-  "priorAbsorption": "Named expected helper/test registration before worker return; no executed proof or source-wide processing claim.",
+  "priorAbsorption": "Finite saved receipt history accepted bounded at docs/reviews/CVF_NCR_RECEIPT_HISTORY_COMPLETION_2026-10-14.md; source-wide processing NOT_STARTED.",
   "findings": [],
   "negativeSearchTerms": [],
-  "nextScanRecommendation": "Await bounded receipt-history evidence; source-wide processing remains NOT_STARTED."
+  "nextScanRecommendation": "Retain named bounded proof; source-wide processing requires separate admission."
 }

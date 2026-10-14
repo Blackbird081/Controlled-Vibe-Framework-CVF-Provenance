@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "cvf_ncr_receipt_history_execution",
+  "currentMode": "cvf_ncr_receipt_history_closed_bounded",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-HOME-RECEIPT-HISTORY-20261014. WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RECEIPT_HISTORY_2026-10-14.md. Internal worker exact11 after committed bound release; 75min BUILD or UTC02:00 expiry first; worker1UI/3 Alibaba starts, Root distinct1/3, newtask6 plus historical7(programmax13). Saved scalar receipt and exact output SHA; no fresh verification on reload, no extra execute across owned restart. R1/R2partial,R3/R4open,R5/R6deferred; real-data/accept/send/B2/P11/public/deploy parked; LHW24 retained. Pre-release reviewer oracle corrected and hash-pinned; zero provider calls before release. Reviewed material commit=5e51086044adb6a403158475ef14d471e575bd4f; dedicated actual-SHA continuity.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=LOCAL_DISPOSITION_ONLY; BATCH_ID=CVF-NCR-HOME-RECEIPT-HISTORY-20261014. Finite saved receipt-history contribution closed bounded; no active worker or unused paid grant. REVIEW_COST_ESCALATION_REQUIRED: no same-cycle successor or rerun. Root may perform read-only next-gap intake under NCR roadmap before a separately admitted future slice. R1/R2 partial; R3/R4 open; R5/R6 deferred; real-data/custody/business acceptance/selected HTML/send/B2/P11/public/deploy parked; LHW24 retained.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_NCR_RECEIPT_HISTORY_2026-10-14.md",
-    "baselineSha256": "0164eaef0d4d26e8833b8bdc827a755703e4733837e8a7594287f3a07f6bb2ac",
+    "baselineSha256": "dc0d80a77177a28d12e1a211e6e61b4d92fd5b2152465d7540ee4998970e4a8e",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RECEIPT_HISTORY_2026-10-14.md",
-    "workOrderSha256": "34940b486da684611e5c7fece49048e3e2c90ba8f8f27384090ca979b9a70e60"
+    "workOrderSha256": "54a57f86246fa3370284fdab788836c7668cfe89b28da03dab2af7182b6dbb47"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

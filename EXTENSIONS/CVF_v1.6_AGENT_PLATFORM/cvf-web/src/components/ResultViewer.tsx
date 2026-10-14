@@ -1,5 +1,7 @@
 'use client';
 
+// Text Encoding Exception: Vietnamese product copy needs its native characters.
+
 import { useState, useCallback, useMemo, useRef, useEffect } from 'react';
 import { generateDeliverablePack, serializePackToMarkdown } from '@/lib/deliverable-pack';
 import ReactMarkdown from 'react-markdown';
@@ -23,6 +25,7 @@ interface ResultViewerProps {
     onFollowUp?: (refinement: string) => void;
     // W119-T1: route-returned evidence receipt for non-coder handoff.
     evidenceReceipt?: GovernanceEvidenceReceipt;
+    savedLocalHistory?: boolean;
 }
 
 // A run's transient UI (draft, view, menu, copy feedback, busy state and deferred work) lives in a
@@ -35,7 +38,7 @@ export function ResultViewer(props: ResultViewerProps) {
     return <ResultViewerBody key={props.execution.id} {...props} exportLang={exportLang} onExportLangChange={setExportLang} />;
 }
 
-function ResultViewerBody({ execution, output, onAccept, onReject, onRetry, onBack, onSendToAgent, onFollowUp, evidenceReceipt, exportLang, onExportLangChange }: ResultViewerProps & {
+function ResultViewerBody({ execution, output, onAccept, onReject, onRetry, onBack, onSendToAgent, onFollowUp, evidenceReceipt, savedLocalHistory, exportLang, onExportLangChange }: ResultViewerProps & {
     exportLang: ExportLanguage;
     onExportLangChange: (lang: ExportLanguage) => void;
 }) {
@@ -135,6 +138,11 @@ function ResultViewerBody({ execution, output, onAccept, onReject, onRetry, onBa
         return [
             '## CVF Evidence Receipt',
             '',
+            ...(savedLocalHistory ? [
+                'Saved local history receipt. This is a saved copy; it has not been reverified.',
+                `Original evidence mode: ${evidenceReceipt.evidenceMode}.`,
+                '',
+            ] : []),
             '### What happened',
             `CVF evaluated this run on \`${evidenceReceipt.routeId}\` and recorded decision \`${decision}\` using ${provider} / ${model}.`,
             '',
@@ -151,7 +159,7 @@ function ResultViewerBody({ execution, output, onAccept, onReject, onRetry, onBa
             '',
             '_No raw provider keys are included in this receipt._',
         ].join('\n');
-    }, [evidenceReceipt]);
+    }, [evidenceReceipt, savedLocalHistory]);
 
     // Generate export content - remove any existing footer from output to prevent duplication
     const generateExportContent = () => {
@@ -557,6 +565,13 @@ ${evidenceReceipt ? generateEvidenceReceiptContent() : ''}
                     <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
                         <div>
                             <div className="text-sm font-semibold">{labels.evidenceTitle}</div>
+                            {savedLocalHistory && (
+                                <p data-testid="saved-receipt-origin" className="mt-2 text-xs">
+                                    {language === 'vi'
+                                        ? 'Biên nhận lưu trong lịch sử cục bộ. Đây là bản đã lưu; chưa được xác minh lại.'
+                                        : 'Saved local history receipt. This is a saved copy; it has not been reverified.'}
+                                </p>
+                            )}
                             <div className="mt-2 grid gap-x-5 gap-y-1 text-xs sm:grid-cols-2">
                                 {evidenceReceipt.decision && <p><span className="font-medium">Decision:</span> {evidenceReceipt.decision}</p>}
                                 {evidenceReceipt.riskLevel && <p><span className="font-medium">Risk:</span> {evidenceReceipt.riskLevel}</p>}

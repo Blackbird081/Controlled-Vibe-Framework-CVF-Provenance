@@ -1,12 +1,14 @@
 /**
  * @vitest-environment jsdom
  */
-import { describe, it, expect, vi, beforeEach } from 'vitest';
-import { render, screen, fireEvent, act } from '@testing-library/react';
+import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
+import { render, screen, fireEvent, act, waitFor } from '@testing-library/react';
+import { webcrypto } from 'node:crypto';
 import HomePage from './page';
 import { templates } from '@/lib/templates';
 import { useExecutionStore } from '@/lib/store';
 import type { Execution } from '@/types';
+import { createReceiptArchive } from '@/lib/execution-receipt-archive';
 
 const navigation = vi.hoisted(() => ({ params: new URLSearchParams() }));
 
@@ -43,22 +45,34 @@ vi.mock('@/components', () => ({
             <button onClick={() => props.onSubmit({ topic: 'fresh topic' }, 'fresh intent')}>submit-form</button>
         </div>
     ),
-    ProcessingScreen: (props: { onComplete: (output: string) => void }) => (
+    ProcessingScreen: (props: { onComplete: (output: string, receipt?: unknown) => void }) => (
         <div data-testid="processing-screen">
             <button onClick={() => props.onComplete('OUTPUT_NEW')}>complete-processing</button>
+            <button onClick={() => props.onComplete('OUTPUT_RECEIPT', {
+                receiptId: 'route-receipt-1', evidenceMode: 'live', routeId: '/api/execute',
+                generatedAt: '2026-10-14T00:00:00Z', provider: 'alibaba', model: 'qwen-flash',
+            })}>complete-with-receipt</button>
         </div>
     ),
     ResultViewer: (props: {
         execution: Execution;
         output: string;
+        evidenceReceipt?: { receiptId: string };
+        savedLocalHistory?: boolean;
         onAccept: () => void;
         onReject: () => void;
+        onBack: () => void;
+        onRetry: () => void;
         onFollowUp?: (refinement: string) => void;
     }) => (
         <div data-testid="result-viewer">
             <span data-testid="result-id">{props.execution.id}</span>
             <span data-testid="result-template">{props.execution.templateId}</span>
             <span data-testid="result-output">{props.output}</span>
+            <span data-testid="result-receipt">{props.evidenceReceipt?.receiptId ?? ''}</span>
+            <span data-testid="result-origin">{props.savedLocalHistory ? 'saved' : 'current'}</span>
+            <button onClick={props.onBack}>back</button>
+            <button onClick={props.onRetry}>retry-result</button>
             <button onClick={props.onAccept}>accept</button>
             <button onClick={props.onReject}>reject</button>
             <button onClick={() => props.onFollowUp?.('refine it')}>follow-up</button>
@@ -163,13 +177,148 @@ function startFreshRun() {
 }
 
 beforeEach(() => {
+    vi.stubGlobal('crypto', webcrypto);
     localStorage.clear();
     sessionStorage.clear();
     navigation.params = new URLSearchParams();
     useExecutionStore.setState({ executions: [], currentExecution: null });
 });
+afterEach(() => vi.unstubAllGlobals());
 
 describe('HomePage', () => {
+    it('captures route receipt without delaying the completed result', async () => {
+        render(<HomePage />);
+        startFreshRun();
+        click('complete-with-receipt');
+        expect(screen.getByTestId('result-output').textContent).toBe('OUTPUT_RECEIPT');
+        expect(screen.getByTestId('result-receipt').textContent).toBe('route-receipt-1');
+        expect(screen.getByTestId('result-origin').textContent).toBe('current');
+        const id = screen.getByTestId('result-id').textContent!;
+        await waitFor(() => expect(byId(id)?.savedReceiptArchive?.receipt.receiptId).toBe('route-receipt-1'));
+    });
+
+    it('restores only the exact selected saved archive and omits a mismatched one', async () => {
+        const archive = (await createReceiptArchive('exec_fixture_A', 'OUTPUT_A', {
+            receiptId: 'saved-A', evidenceMode: 'mock', routeId: '/api/execute',
+            generatedAt: '2026-10-14T00:00:00Z', provider: 'alibaba', model: 'qwen-flash',
+        }))!;
+        const a = buildA();
+        a.savedReceiptArchive = archive;
+        a.evidenceReceiptSnapshot = { receiptId: 'saved-A', provider: 'alibaba', model: 'qwen-flash' };
+        seed([a], null);
+        navigation.params = new URLSearchParams('result=exec_fixture_A');
+        const view = render(<HomePage />);
+        await waitFor(() => expect(screen.getByTestId('result-receipt').textContent).toBe('saved-A'));
+        expect(screen.getByTestId('result-origin').textContent).toBe('saved');
+        view.unmount();
+        seed([{ ...a, output: 'TAMPERED' }], null);
+        render(<HomePage />);
+        await waitFor(() => expect(screen.getByTestId('result-output').textContent).toBe('TAMPERED'));
+        expect(screen.getByTestId('result-receipt').textContent).toBe('');
+    });
+
+    it.each(['back', 'retry-result'] as const)(
+        'archives the unchanged completed row after %s without publishing a stale UI receipt', async action => {
+            let resolveDigest: ((digest: ArrayBuffer) => void) | undefined;
+            vi.stubGlobal('crypto', { subtle: { digest: () => new Promise<ArrayBuffer>(resolve => { resolveDigest = resolve; }) } });
+            render(<HomePage />);
+            startFreshRun();
+            click('complete-with-receipt');
+            const id = screen.getByTestId('result-id').textContent!;
+            expect(screen.getByTestId('result-output').textContent).toBe('OUTPUT_RECEIPT');
+            click(action);
+            await act(async () => {
+                resolveDigest!(await webcrypto.subtle.digest('SHA-256', new TextEncoder().encode('OUTPUT_RECEIPT')));
+            });
+            await waitFor(() => expect(byId(id)?.savedReceiptArchive?.receipt.receiptId).toBe('route-receipt-1'));
+            expect(screen.queryByTestId('result-viewer')).toBeNull();
+        },
+    );
+
+    it.each(['output', 'deleted', 'snapshot', 'provider', 'model'] as const)(
+        'rejects a delayed captured receipt when the original row has changed: %s',
+        async change => {
+            let resolveDigest: ((digest: ArrayBuffer) => void) | undefined;
+            vi.stubGlobal('crypto', { subtle: { digest: () => new Promise<ArrayBuffer>(resolve => { resolveDigest = resolve; }) } });
+            render(<HomePage />);
+            startFreshRun();
+            click('complete-with-receipt');
+            const id = screen.getByTestId('result-id').textContent!;
+            click('back');
+            if (change === 'output') useExecutionStore.getState().updateExecution(id, { output: 'CHANGED' });
+            if (change === 'snapshot') useExecutionStore.getState().updateExecution(id, { evidenceReceiptSnapshot: { receiptId: 'other' } });
+            if (change === 'provider') useExecutionStore.getState().updateExecution(id, { evidenceReceiptSnapshot: { receiptId: 'route-receipt-1', provider: 'openai', model: 'qwen-flash' } });
+            if (change === 'model') useExecutionStore.getState().updateExecution(id, { evidenceReceiptSnapshot: { receiptId: 'route-receipt-1', provider: 'alibaba', model: 'other-model' } });
+            if (change === 'deleted') useExecutionStore.setState({ executions: [], currentExecution: null });
+            await act(async () => {
+                resolveDigest!(await webcrypto.subtle.digest('SHA-256', new TextEncoder().encode('OUTPUT_RECEIPT')));
+            });
+            expect(byId(id)?.savedReceiptArchive).toBeUndefined();
+            expect(screen.queryByTestId('result-viewer')).toBeNull();
+        },
+    );
+
+    it('does not publish a delayed restored receipt after leaving history', async () => {
+        const archive = (await createReceiptArchive('exec_fixture_A', 'OUTPUT_A', {
+            receiptId: 'saved-A', evidenceMode: 'static', routeId: '/api/execute',
+            generatedAt: '2026-10-14T00:00:00Z',
+        }))!;
+        const a = buildA();
+        a.savedReceiptArchive = archive;
+        a.evidenceReceiptSnapshot = { receiptId: 'saved-A' };
+        seed([a], null);
+        navigation.params = new URLSearchParams('result=exec_fixture_A');
+        let resolveDigest: ((digest: ArrayBuffer) => void) | undefined;
+        vi.stubGlobal('crypto', { subtle: { digest: () => new Promise<ArrayBuffer>(resolve => { resolveDigest = resolve; }) } });
+        render(<HomePage />);
+        expect(screen.getByTestId('result-id').textContent).toBe(a.id);
+        click('back');
+        await act(async () => {
+            resolveDigest!(await webcrypto.subtle.digest('SHA-256', new TextEncoder().encode('OUTPUT_A')));
+        });
+        expect(screen.queryByTestId('result-viewer')).toBeNull();
+    });
+
+    it.each(['provider', 'model'] as const)(
+        'does not publish a delayed restored receipt after the selected snapshot changes: %s',
+        async change => {
+            const archive = (await createReceiptArchive('exec_fixture_A', 'OUTPUT_A', {
+                receiptId: 'saved-A', evidenceMode: 'live', routeId: '/api/execute',
+                generatedAt: '2026-10-14T00:00:00Z', provider: 'alibaba', model: 'qwen-flash',
+            }))!;
+            const a = buildA();
+            a.savedReceiptArchive = archive;
+            a.evidenceReceiptSnapshot = { receiptId: 'saved-A', provider: 'alibaba', model: 'qwen-flash' };
+            seed([a], null);
+            navigation.params = new URLSearchParams('result=exec_fixture_A');
+            let resolveDigest: ((digest: ArrayBuffer) => void) | undefined;
+            vi.stubGlobal('crypto', { subtle: { digest: () => new Promise<ArrayBuffer>(resolve => { resolveDigest = resolve; }) } });
+            render(<HomePage />);
+            expect(screen.getByTestId('result-id').textContent).toBe(a.id);
+            useExecutionStore.getState().updateExecution(a.id, {
+                evidenceReceiptSnapshot: change === 'provider'
+                    ? { receiptId: 'saved-A', provider: 'openai', model: 'qwen-flash' }
+                    : { receiptId: 'saved-A', provider: 'alibaba', model: 'other-model' },
+            });
+            await act(async () => {
+                resolveDigest!(await webcrypto.subtle.digest('SHA-256', new TextEncoder().encode('OUTPUT_A')));
+            });
+            expect(screen.getByTestId('result-receipt').textContent).toBe('');
+            expect(screen.getByTestId('result-origin').textContent).toBe('current');
+        },
+    );
+
+    it('keeps ordinary completed output when WebCrypto is unavailable', async () => {
+        vi.stubGlobal('crypto', {});
+        render(<HomePage />);
+        startFreshRun();
+        click('complete-with-receipt');
+        const id = screen.getByTestId('result-id').textContent!;
+        expect(screen.getByTestId('result-output').textContent).toBe('OUTPUT_RECEIPT');
+        expect(screen.getByTestId('result-receipt').textContent).toBe('route-receipt-1');
+        await act(async () => { await Promise.resolve(); });
+        expect(byId(id)?.savedReceiptArchive).toBeUndefined();
+    });
     it('renders the browse experience by default', () => {
         render(<HomePage />);
         expect(screen.getByTestId('home-browse-experience')).toBeTruthy();
