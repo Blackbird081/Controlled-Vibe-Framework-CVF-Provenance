@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Current NCR Continuation
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `d0af2a0cce568f7f8cfaa7d4e60a197f8ec76b07`. Material SHA: `d0af2a0cce568f7f8cfaa7d4e60a197f8ec76b07`. Batch ID: CVF-NCR-REQUEST-CANCELLATION-20261014. Accepted bounded cancellation evidence; immutable Local closure control and retired grants; dedicated exact6 continuity.
+Current HEAD recorded for this handoff: `7d7e7a1a6222205822984231535164d7d4c168c8`. Material SHA: `7d7e7a1a6222205822984231535164d7d4c168c8`. Batch ID: CVF-NCR-REQUEST-CANCELLATION-20261014. Selected Alibaba local cancellation accepted bounded; actual semantic material and retired grants; dedicated exact6 continuity.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -13,21 +13,21 @@ Current continuation only. Root AGENTS.md and canonical routing owners retain fu
 Closed history is preserved byte-for-byte at `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V63_PRE_NCR_COMPACTION_2026-10-07.md` (SHA256 `54801fdcf14e9abe17592352ec3c69a0b0e855632991af0caacac7b65252ccba`); it is NOT_ACTIVE_AUTHORITY and not default startup reading.
 ## Scope / Target / Owner Boundary
 
-Local reviewer/closer owns frozen actual evidence and metadata closure. Immutable reviewer pair2 supplies Local closure authority only; no worker BUILD/provider grant. Semantic material remains pending; business/public/deploy checkpoints stay parked.
+Local INTERNAL_AGENT orchestrator/reviewer owns technical disposition, commits and continuity. Terminal bounded request-cancellation evidence accepted; no active BUILD or automatic successor. Selected HTML pilot and business acceptance remain open.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_request_cancellation_reviewer_control`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=Accepted bounded cancellation evidence; immutable Local closure control and retired grants; role=Local INTERNAL_AGENT orchestrator/reviewer; phase=private continuity; decision owner=Local; parked checkpoint=real-data writer/custody/business acceptance/public/deploy/P11 and unrelated lanes.
+Startup acknowledged: current mode=`cvf_ncr_request_cancellation_closed`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=Selected Alibaba local cancellation accepted bounded; actual semantic material and retired grants; role=Local INTERNAL_AGENT orchestrator/reviewer; phase=private continuity; decision owner=Local; parked checkpoint=real-data writer/custody/business acceptance/public/deploy/P11 and unrelated lanes.
 
 ## Current Mode
 
-`cvf_ncr_request_cancellation_reviewer_control`. Accepted bounded cancellation evidence; immutable Local closure control and retired grants. Frozen actual evidence admitted for Local metadata closure only; immutable pair2 unchanged; semantic26 excludes protected6/control2. Worker2 and Root1 actual starts; prior9+new3=12/13; all provider grants retired. No BUILD/live or automatic successor; actual semantic commit and exact6 disclosure still follow. Prior Work Transfer browser and Alibaba9/9 evidence retained in their owners; full R1-R4 open.
+`cvf_ncr_request_cancellation_closed`. Selected Alibaba local cancellation accepted bounded; actual semantic material and retired grants. Finite incoming request cancellation contribution accepted; no automatic successor. Prior Work Transfer browser and Alibaba9/9 evidence retained in their owners; full R1-R4 open.
 
 ## Current Authority
 
 Baseline: `docs/baselines/CVF_GC018_NCR_REQUEST_CANCELLATION_CLOSURE_CONTROL_2026-10-14.md`; SHA256 `756ba9fa38cecf6162b4cd5683d849bdd749f9d690a9501b1f4ee9658a2862c2`.
 Work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_REQUEST_CANCELLATION_CLOSURE_CONTROL_2026-10-14.md`; SHA256 `88082f9083a0f0b278feb7df10d5c5d560f7e3fe1489ab521a52e83030643cec`.
-Accepted bounded cancellation evidence; immutable Local closure control and retired grants. Existing browser/live evidence and original failures remain historical in their current reviews; this source pair governs the bounded synthetic request-cancellation journey.
+Selected Alibaba local cancellation accepted bounded; actual semantic material and retired grants. Existing browser/live evidence and original failures remain historical in their current reviews; this source pair governs the bounded synthetic request-cancellation journey.
 
 ## Accepted NCR Evidence And Continuation
 
@@ -39,7 +39,7 @@ Finite clipboard result ordering is accepted; actual OS write cancellation, whol
 
 ## Next Allowed Move
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=REVIEW; BATCH_ID=CVF-NCR-REQUEST-CANCELLATION-20261014. Frozen worker16/Root7 actual evidence accepted bounded. Immutable closure-control pair2 supplies Local metadata closure only; import nonoverlapping committed authority6, capture actual closureBaseHead, then semantic26 excluding control2/protected6; dedicated actual6 and proper split-range closure required. Worker2+Root1 starts/prior9=12/13, all grants retired. R1/R2partial,R3/R4open,R5/R6deferred; realdata/business/public/deploy/P11 parked; LHW24 retained. Reviewed material commit=d0af2a0cce568f7f8cfaa7d4e60a197f8ec76b07; dedicated actual-SHA continuity.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-REQUEST-CANCELLATION-20261014. Selected nonvision text Alibaba request cancellation is CLOSED_PASS_BOUNDED; worker51/143/9 and distinct Root six live assertions accepted, new starts3 plus prior9=12/13, all grants retired. Consume current completion and existing roadmap to select the next finite R1/R2 error/timeout/recovery or controlled-execution gap; current source/authority/spec/cost readiness before any BUILD. No automatic successor/provider grant. R1/R2partial,R3/R4open,R5/R6deferred; realdata/custody/business acceptance/send/B2/public/deploy/P11 parked; LHW24 retained. Reviewed material commit=7d7e7a1a6222205822984231535164d7d4c168c8; dedicated actual-SHA continuity.
 
 ## Active Boundary
 T3B has a Local-verified active v1 specification. Party B is verified and T3C-C1 tooling accepted at `db78c87df`; T3C-C2 and Party C are verified. T3D-C1 tooling is accepted at `9ed844c2a` without source. T3D-C0-R1 closed at `2fffa1ef7`. T3D-C3 was accepted bounded at `88137e9a2`, but actual-mode prepare attempts failed before Party B/C execution; authorized cleanup removed the failed root and discarded unaccepted worker changes. G1 stopped, G2-G6 parked, and G7 research closed at `660601f0e` with `ADAPT_EXISTING_HANDOFF_ONLY`. Evidence-join sufficiency stays WATCH; no implementation successor exists. Rejected T2 paths remain archived; HRLTP-T2 paused.
@@ -89,8 +89,8 @@ Rollback boundary: exact6; preserve original archive and accepted/blocked histor
 | Command or tool surface | source entry/core update, active front door/handoff, canonical state generator |
 | Target paths | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Allowed scope source | operator NCR continuation; exact6 authority in paired baseline/order |
-| Before status evidence | d0af2a0cce568f7f8cfaa7d4e60a197f8ec76b07; clean worktree and staged empty after reviewed material commit |
-| After status evidence | exact6 source/generated continuity; Accepted bounded cancellation evidence; immutable Local closure control and retired grants |
+| Before status evidence | 7d7e7a1a6222205822984231535164d7d4c168c8; clean worktree and staged empty after reviewed material commit |
+| After status evidence | exact6 source/generated continuity; Selected Alibaba local cancellation accepted bounded; actual semantic material and retired grants |
 | Diff evidence | source/generated reconciliation; exact6 git diff --name-status; git diff --cached --check |
 | Approval boundary | bounded synthetic request-cancellation proof; real-data/acceptance/public/deploy parked |
 | Claim boundary | selected text Alibaba local cancellation proof; worker2+Root1 actual starts plus historical9=12/13; all grants retired; remote stop/billing unknown; full NCR pilot open |

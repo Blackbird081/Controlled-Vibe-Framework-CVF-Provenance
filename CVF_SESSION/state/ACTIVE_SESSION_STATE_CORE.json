@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_REQUEST_CANCELLATION_CLOSURE_CONTROL_2026-10-14.md",
     "workOrderSha256": "88082f9083a0f0b278feb7df10d5c5d560f7e3fe1489ab521a52e83030643cec"
   },
-  "currentAuthoritySyncReason": "Accepted bounded cancellation evidence; immutable Local closure control and retired grants Material d0af2a0cce568f7f8cfaa7d4e60a197f8ec76b07; coherent source/generated authority; actual-SHA dedicated continuity follows material. Whole NCR pilot/effects remain separate.",
+  "currentAuthoritySyncReason": "Selected Alibaba local cancellation accepted bounded; actual semantic material and retired grants Material 7d7e7a1a6222205822984231535164d7d4c168c8; coherent source/generated authority; actual-SHA dedicated continuity follows material. Whole NCR pilot/effects remain separate.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
@@ -110,7 +110,7 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_ncr_request_cancellation_reviewer_control",
+  "currentMode": "cvf_ncr_request_cancellation_closed",
   "previousMode": "cvf_ncr_brief_copy_closed_useful_selection",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",

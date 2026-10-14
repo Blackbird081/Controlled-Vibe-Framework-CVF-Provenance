@@ -31,21 +31,21 @@ artifact.
 | Prior handoff (archive-qualified) | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V62_2026-09-17.md` |
 | Latest front-door archive | `CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_COMPACTION_ARCHIVE_2026-08-11.md` |
 | Current authority evidence | `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` `currentAuthority` |
-| Parent maintenance | Accepted bounded cancellation evidence; immutable Local closure control and retired grants; whole job open |
+| Parent maintenance | Selected Alibaba local cancellation accepted bounded; actual semantic material and retired grants; whole job open |
 | Freeze posture | `governance_kernel_freeze_recommended` |
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_request_cancellation_reviewer_control`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=Accepted bounded cancellation evidence; immutable Local closure control and retired grants; role=Local INTERNAL_AGENT orchestrator/reviewer; phase=private continuity; decision owner=Local; parked checkpoint=real-data writer/custody/business acceptance/public/deploy/P11 and unrelated lanes.
+Startup acknowledged: current mode=`cvf_ncr_request_cancellation_closed`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=Selected Alibaba local cancellation accepted bounded; actual semantic material and retired grants; role=Local INTERNAL_AGENT orchestrator/reviewer; phase=private continuity; decision owner=Local; parked checkpoint=real-data writer/custody/business acceptance/public/deploy/P11 and unrelated lanes.
 
 ## Current Mode
 
-Current mode marker: `cvf_ncr_request_cancellation_reviewer_control`
-Current mode: `cvf_ncr_request_cancellation_reviewer_control`; previous mode marker: `cvf_ncr_request_cancellation_execution`
+Current mode marker: `cvf_ncr_request_cancellation_closed`
+Current mode: `cvf_ncr_request_cancellation_closed`; previous mode marker: `cvf_ncr_request_cancellation_reviewer_control`
 
 ## Next Allowed Move
 
-Mode: `cvf_ncr_request_cancellation_reviewer_control`
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=REVIEW; BATCH_ID=CVF-NCR-REQUEST-CANCELLATION-20261014. Frozen worker16/Root7 actual evidence accepted bounded. Immutable closure-control pair2 supplies Local metadata closure only; import nonoverlapping committed authority6, capture actual closureBaseHead, then semantic26 excluding control2/protected6; dedicated actual6 and proper split-range closure required. Worker2+Root1 starts/prior9=12/13, all grants retired. R1/R2partial,R3/R4open,R5/R6deferred; realdata/business/public/deploy/P11 parked; LHW24 retained. Reviewed material commit=d0af2a0cce568f7f8cfaa7d4e60a197f8ec76b07; dedicated actual-SHA continuity.
+Mode: `cvf_ncr_request_cancellation_closed`
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-REQUEST-CANCELLATION-20261014. Selected nonvision text Alibaba request cancellation is CLOSED_PASS_BOUNDED; worker51/143/9 and distinct Root six live assertions accepted, new starts3 plus prior9=12/13, all grants retired. Consume current completion and existing roadmap to select the next finite R1/R2 error/timeout/recovery or controlled-execution gap; current source/authority/spec/cost readiness before any BUILD. No automatic successor/provider grant. R1/R2partial,R3/R4open,R5/R6deferred; realdata/custody/business acceptance/send/B2/public/deploy/P11 parked; LHW24 retained. Reviewed material commit=7d7e7a1a6222205822984231535164d7d4c168c8; dedicated actual-SHA continuity.
 Historical G1-G7 terminal baseline: mode `acel_g1_g7_research_terminally_closed`. G1-G6 terminal review: `docs/reviews/CVF_ACEL_G1_G6_TERMINAL_STOP_CLOSURE_2026-09-24.md`; G7 research closure: `docs/reviews/CVF_ACEL_G7_CROSS_RUN_CAPABILITY_EVOLUTION_RESEARCH_CLOSURE_2026-09-24.md`. The packet-only post-G7 reconciliation review at `docs/reviews/CVF_ACEL_POST_G7_FULL_CORPUS_ABSORPTION_CLOSURE_2026-09-24.md` is superseded for repository absorption by the 2026-09-25 pinned-source audit. G1 is stopped, G2-G6 remain parked, G7 research is closed, and no automatic G1-G7 successor exists.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
