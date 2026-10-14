@@ -1,0 +1,1332 @@
+{
+  "schemaVersion": "cvf.ncrHtmlConditionalLocalReview.documentary.v1",
+  "status": "BLOCKED_WITH_REASON",
+  "actor": "LOCAL_REVIEWER_CODEX_ROOT",
+  "reviewBaseHead": "9451c06c7ee09f1e3539ed0e33b1fd1c3f88c784",
+  "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_CONFIGURED_RECEIPT_REPAIR_2026-10-14.md",
+  "baseline": {
+    "path": "docs/baselines/CVF_GC018_NCR_HTML_CONFIGURED_RECEIPT_REPAIR_2026-10-14.md",
+    "bytes": 20148,
+    "sha256": "f24b4e6c5762d755da3f79461c84f5840ed2d88b9bf776e782e217dcc2d16dbd"
+  },
+  "workOrderPin": {
+    "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_CONFIGURED_RECEIPT_REPAIR_2026-10-14.md",
+    "bytes": 60792,
+    "sha256": "d7c6d15f32c28225df4925ced2cb4609b547868245b3895e2d053bb459700f84"
+  },
+  "claimBoundary": "Mechanical synthetic transport/persistence/presentation only. No work-order fulfillment, governance efficacy, provider/live or R1-R4 exit.",
+  "intake": {
+    "actor": "LOCAL_REVIEWER_CODEX_ROOT",
+    "startedUtc": "2026-10-14T10:47:59Z",
+    "head": "9451c06c7ee09f1e3539ed0e33b1fd1c3f88c784",
+    "frozen": {
+      "scripts/probe_cvf_q001_synthetic_system_chain.py": {
+        "bytes": 50269,
+        "sha256": "26b34890e3031f5b13ca4965585adbdf14a483aefe246834d3848cb165c3fe9d",
+        "custody": ".cvf/runtime/ncr-html-configured-receipt-20261014/local-conditional-review/frozen-worker/scripts/probe_cvf_q001_synthetic_system_chain.py"
+      },
+      "scripts/probe_cvf_w05_browser_chain.cjs": {
+        "bytes": 23186,
+        "sha256": "2f0981b2356a51a85f34d3d6ed94a0d0a0606c48d306888711876a5c2b225dec",
+        "custody": ".cvf/runtime/ncr-html-configured-receipt-20261014/local-conditional-review/frozen-worker/scripts/probe_cvf_w05_browser_chain.cjs"
+      },
+      "docs/reviews/CVF_NCR_HTML_CONFIGURED_RECEIPT_CONDITIONAL_RETURN_2026-10-14.md": {
+        "bytes": 32946,
+        "sha256": "ec8a0418af0db8aacde0df54b73a583758dbf33959556c965c328b4604d85254",
+        "custody": ".cvf/runtime/ncr-html-configured-receipt-20261014/local-conditional-review/frozen-worker/docs/reviews/CVF_NCR_HTML_CONFIGURED_RECEIPT_CONDITIONAL_RETURN_2026-10-14.md"
+      },
+      "docs/reviews/evidence/ncr-html-configured-receipt-conditional-worker-20261014.json": {
+        "bytes": 27084,
+        "sha256": "3a696b1689d226375c407cc7a18275c853be92ded9e51eb9a35bef430016855a",
+        "custody": ".cvf/runtime/ncr-html-configured-receipt-20261014/local-conditional-review/frozen-worker/docs/reviews/evidence/ncr-html-configured-receipt-conditional-worker-20261014.json"
+      }
+    },
+    "verified": [
+      {
+        "path": "docs/reviews/CVF_NCR_HTML_CONFIGURED_RECEIPT_CONDITIONAL_RETURN_2026-10-14.md",
+        "bytes": 32946,
+        "sha256": "ec8a0418af0db8aacde0df54b73a583758dbf33959556c965c328b4604d85254",
+        "matches": true
+      },
+      {
+        "path": "docs/reviews/evidence/ncr-html-configured-receipt-conditional-worker-20261014.json",
+        "bytes": 27084,
+        "sha256": "3a696b1689d226375c407cc7a18275c853be92ded9e51eb9a35bef430016855a",
+        "matches": true
+      },
+      {
+        "path": ".cvf/runtime/ncr-html-configured-receipt-20261014/conditional-worker-logs/worker-return-fast-1.log",
+        "bytes": 12518,
+        "sha256": "921f16e4caf843867386aea23ab7a8ef54092f9a8f79d86be7cec71031b2b767",
+        "matches": true
+      },
+      {
+        "path": ".cvf/runtime/ncr-html-configured-receipt-20261014/conditional-worker-logs/worker-return-fast-2.log",
+        "bytes": 11374,
+        "sha256": "2eae85dcf8bb88d117497de7a53366aaf26671ce6f92440ffda912d07f7da386",
+        "matches": true
+      },
+      {
+        "path": ".cvf/runtime/ncr-html-configured-receipt-20261014/conditional-worker-logs/pre-implementation.log",
+        "bytes": 4798,
+        "sha256": "2dd8954b75edf10919827ea99c6a8d16c0b8198a1081c1ef04bd1bc3687ad7d9",
+        "matches": true
+      },
+      {
+        "path": ".cvf/runtime/ncr-html-configured-receipt-20261014/conditional-worker-logs/static-controls.log",
+        "bytes": 633,
+        "sha256": "a0e8c15bf7f23e08e0501924316473bb85a397d540c264e2f2bcebb15f12af96",
+        "matches": true
+      },
+      {
+        "path": ".cvf/runtime/ncr-html-configured-receipt-20261014/conditional-worker-logs/corrected-controls.log",
+        "bytes": 276,
+        "sha256": "551f5a85c05e60edafb0b15326981d52579948021b6b5a60a31f079ce6de23e8",
+        "matches": true
+      },
+      {
+        "path": ".cvf/runtime/ncr-html-configured-receipt-20261014/conditional-worker-logs/guard-test.log",
+        "bytes": 915,
+        "sha256": "35044263799f5ab8b8c4077256fe5fcb7c4ff28d7582ee5a1da67fcb66e2586d",
+        "matches": true
+      },
+      {
+        "path": ".cvf/runtime/ncr-html-configured-receipt-20261014/conditional-worker-logs/legacy-diff.log",
+        "bytes": 2165,
+        "sha256": "50090bd1309d0c22bfb136260753ff3b271e725a180d86e33d17ee96ea2b4f63",
+        "matches": true
+      },
+      {
+        "path": ".cvf/runtime/ncr-html-configured-receipt-20261014/conditional-worker-logs/run1.stdout.log",
+        "bytes": 11523,
+        "sha256": "0e29f48df5a05d5d8f1c3609bf4d21efed9440df71c698ab75ee850fb1a686fd",
+        "matches": true
+      },
+      {
+        "path": ".cvf/runtime/ncr-html-configured-receipt-20261014/conditional-worker-logs/run1.stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "matches": true
+      },
+      {
+        "path": "scripts/probe_cvf_q001_synthetic_system_chain.py",
+        "bytes": 50269,
+        "sha256": "26b34890e3031f5b13ca4965585adbdf14a483aefe246834d3848cb165c3fe9d",
+        "matches": true
+      },
+      {
+        "path": "scripts/probe_cvf_w05_browser_chain.cjs",
+        "bytes": 23186,
+        "sha256": "2f0981b2356a51a85f34d3d6ed94a0d0a0606c48d306888711876a5c2b225dec",
+        "matches": true
+      },
+      {
+        "path": ".cvf/runtime/ncr-html-configured-receipt-20261014/conditional-worker/run-20261014T095945Z-5a1486/custody/browser-helper.cjs",
+        "bytes": 23186,
+        "sha256": "2f0981b2356a51a85f34d3d6ed94a0d0a0606c48d306888711876a5c2b225dec",
+        "matches": true
+      },
+      {
+        "path": ".cvf/runtime/ncr-html-configured-receipt-20261014/conditional-worker/run-20261014T095945Z-5a1486/custody/browser.json",
+        "bytes": 6243,
+        "sha256": "7b7037e4545cdab7ad89bd7a0a0a0f02a49e17e51f3d786ead54a74e44d95d72",
+        "matches": true
+      },
+      {
+        "path": ".cvf/runtime/ncr-html-configured-receipt-20261014/conditional-worker/run-20261014T095945Z-5a1486/custody/build1-decoded.html",
+        "bytes": 2748,
+        "sha256": "cc1d2dfc42ed3e6dabb78f0834ddc9c08d76a45c2fb95297c93507f4033bf995",
+        "matches": true
+      },
+      {
+        "path": ".cvf/runtime/ncr-html-configured-receipt-20261014/conditional-worker/run-20261014T095945Z-5a1486/custody/build1-download.html",
+        "bytes": 2748,
+        "sha256": "cc1d2dfc42ed3e6dabb78f0834ddc9c08d76a45c2fb95297c93507f4033bf995",
+        "matches": true
+      },
+      {
+        "path": ".cvf/runtime/ncr-html-configured-receipt-20261014/conditional-worker/run-20261014T095945Z-5a1486/custody/build1-route.json",
+        "bytes": 4850,
+        "sha256": "360163795e7e6e98ba4d371398a2d1c47c12133d5da1363edf3d4cfa443775da",
+        "matches": true
+      },
+      {
+        "path": ".cvf/runtime/ncr-html-configured-receipt-20261014/conditional-worker/run-20261014T095945Z-5a1486/custody/build2-decoded.html",
+        "bytes": 2771,
+        "sha256": "304531b743e05c1ce2a441e13b5f087b88fa202aefdb3b41212153818e86ce68",
+        "matches": true
+      },
+      {
+        "path": ".cvf/runtime/ncr-html-configured-receipt-20261014/conditional-worker/run-20261014T095945Z-5a1486/custody/build2-download.html",
+        "bytes": 2771,
+        "sha256": "304531b743e05c1ce2a441e13b5f087b88fa202aefdb3b41212153818e86ce68",
+        "matches": true
+      },
+      {
+        "path": ".cvf/runtime/ncr-html-configured-receipt-20261014/conditional-worker/run-20261014T095945Z-5a1486/custody/build2-route.json",
+        "bytes": 4873,
+        "sha256": "5f88fde8e29111ee20f232182d49d3f6d2333c57e226058bb503d0223d115ce9",
+        "matches": true
+      },
+      {
+        "path": ".cvf/runtime/ncr-html-configured-receipt-20261014/conditional-worker/run-20261014T095945Z-5a1486/custody/build3-decoded.html",
+        "bytes": 3082,
+        "sha256": "d5f457aef1c68f217ebf25e2c16899a0da8cb2157d343efde90efcfbc4e8836f",
+        "matches": true
+      },
+      {
+        "path": ".cvf/runtime/ncr-html-configured-receipt-20261014/conditional-worker/run-20261014T095945Z-5a1486/custody/build3-download.html",
+        "bytes": 3082,
+        "sha256": "d5f457aef1c68f217ebf25e2c16899a0da8cb2157d343efde90efcfbc4e8836f",
+        "matches": true
+      },
+      {
+        "path": ".cvf/runtime/ncr-html-configured-receipt-20261014/conditional-worker/run-20261014T095945Z-5a1486/custody/build3-route.json",
+        "bytes": 5119,
+        "sha256": "944cd20822ba67ab4c1ce49b5b04b6f9bfdf5e21b15cd7870d541580b9f2c56a",
+        "matches": true
+      },
+      {
+        "path": ".cvf/runtime/ncr-html-configured-receipt-20261014/conditional-worker/run-20261014T095945Z-5a1486/custody/raw-observations.json",
+        "bytes": 4746,
+        "sha256": "ebba8869ea5150ca5e695433c9f339d85c7a2476d840d7b03377f7237021222d",
+        "matches": true
+      },
+      {
+        "path": ".cvf/runtime/ncr-html-configured-receipt-20261014/conditional-worker/run-20261014T095945Z-5a1486/custody/runner-result.json",
+        "bytes": 11521,
+        "sha256": "dbc90198090bf6d35a0824c0216c4078d2e25e3c7fbff0a96bd8447b806ce53e",
+        "matches": true
+      },
+      {
+        "path": ".cvf/runtime/ncr-html-configured-receipt-20261014/conditional-worker/run-20261014T095945Z-5a1486/custody/stale-download.html",
+        "bytes": 2748,
+        "sha256": "cc1d2dfc42ed3e6dabb78f0834ddc9c08d76a45c2fb95297c93507f4033bf995",
+        "matches": true
+      },
+      {
+        "path": ".cvf/runtime/ncr-html-configured-receipt-20261014/conditional-worker/run-20261014T095945Z-5a1486/logs/egress.jsonl",
+        "bytes": 5214,
+        "sha256": "097dd118cd373c56ea6da48c970fbda9c082331181fc3766b31fa9df883d464b",
+        "matches": true
+      },
+      {
+        "path": ".cvf/runtime/ncr-html-configured-receipt-20261014/conditional-worker/run-20261014T095945Z-5a1486/logs/engine.log",
+        "bytes": 395,
+        "sha256": "8a0b69cbc01401025fa7f155a6bab56d24303de0df3df3ed6a786f8d1f36996e",
+        "matches": true
+      },
+      {
+        "path": ".cvf/runtime/ncr-html-configured-receipt-20261014/conditional-worker/run-20261014T095945Z-5a1486/logs/helper.stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "matches": true
+      },
+      {
+        "path": ".cvf/runtime/ncr-html-configured-receipt-20261014/conditional-worker/run-20261014T095945Z-5a1486/logs/web.log",
+        "bytes": 2253,
+        "sha256": "0323d4d15f4c6730f02ff5bb5cfbacdea161de8c9bb2dab2924b6c9d47a0e61f",
+        "matches": true
+      },
+      {
+        "path": ".cvf/runtime/ncr-html-configured-receipt-20261014/conditional-worker/run-20261014T095945Z-5a1486/store/proof.sqlite",
+        "bytes": 12288,
+        "sha256": "16f72c65604cf90c5022ad6d10f22e743f5de83ea860a45c1ab73380a84664c8",
+        "matches": true
+      },
+      {
+        "path": ".cvf/runtime/ncr-html-configured-receipt-20261014/conditional-worker/run-20261014T095945Z-5a1486/store/proof.sqlite-shm",
+        "bytes": 32768,
+        "sha256": "fd4c9fda9cd3f9ae7c962b0ddf37232294d55580e1aa165aa06129b8549389eb",
+        "matches": true
+      },
+      {
+        "path": ".cvf/runtime/ncr-html-configured-receipt-20261014/conditional-worker/run-20261014T095945Z-5a1486/store/proof.sqlite-wal",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "matches": true
+      }
+    ],
+    "sourcePins": [
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/page.tsx",
+        "bytes": 17439,
+        "sha256": "0ed365b59324bb836d8ec56cba143df941e7a7f8dfa11b841b28a68212f1b35d",
+        "matches": true
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.tsx",
+        "bytes": 49819,
+        "sha256": "efc5839896236dacc7b37e145fda9904a9513bea434b3ff5c8bcd81652e9ea3e",
+        "matches": true
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/route.ts",
+        "bytes": 13773,
+        "sha256": "a17ddd57882be1e58a86fb1d86bea8a2693f1169f5ba0c8b6da2af75d7f024ae",
+        "matches": true
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/proof.ts",
+        "bytes": 5702,
+        "sha256": "fbdcc3a434eea13842c9f692d2b54cc9955e80d8c8777d9dfaa14cace9cdfcaf",
+        "matches": true
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/governance/evaluate/route.ts",
+        "bytes": 3336,
+        "sha256": "b232dcbdfb1a5ec7982e2ed35caf1e9313dec553a3dcf5752576cc110955c1cb",
+        "matches": true
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/governance-engine.ts",
+        "bytes": 7192,
+        "sha256": "48d3252df6614866b3fe84904a0c0f4bd6528d42f1da76543a0db76947494dde",
+        "matches": true
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/route-governance-proof.ts",
+        "bytes": 8576,
+        "sha256": "17c19ccc4e31d5e068b728304e4a0970ddc072a9711460dd62b859f3ade15b6e",
+        "matches": true
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/ledger_layer/sqlite_ledger.py",
+        "bytes": 17336,
+        "sha256": "df353a92b3adead1ed5cf00d7128ba9039c573e0441b819118094ec77c4c4ce5",
+        "matches": true
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/core_orchestrator.py",
+        "bytes": 9607,
+        "sha256": "9d35ed87fafeb5a21814f94dbdd7db8e2e96ab430eb300f5f2a1ae77faa85a69",
+        "matches": true
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/api/server.py",
+        "bytes": 9642,
+        "sha256": "b557d28703c22353c74de170e5eb9151e73fa216a44fb3af39935b92da055bd6",
+        "matches": true
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/admin/audit/route.ts",
+        "bytes": 1857,
+        "sha256": "83c83600655cd5637bdebc5fc6fac3ff67573a2a42c9b0ec4c8ca57f6cda614d",
+        "matches": true
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/ncr-work-transfer-browser.spec.ts",
+        "bytes": 17938,
+        "sha256": "a7c4d8379cb3552bd037bf8b2e1577501d5a38d1ec0374aa107a163b4336847c",
+        "matches": true
+      },
+      {
+        "path": "docs/reviews/CVF_NCR_HTML_CONFIGURED_RECEIPT_WORKER_RETURN_2026-10-14.md",
+        "bytes": 25426,
+        "sha256": "53b97dd0dff1004f2c73038335ffe9a6a75ea5fc14a159e431654706e719efe0",
+        "matches": true
+      },
+      {
+        "path": "docs/reviews/evidence/ncr-html-configured-receipt-worker-20261014.json",
+        "bytes": 19600,
+        "sha256": "499bc23435e10a893acccc4e45ba63d17a40d1a83a3e2a909f28938f22934968",
+        "matches": true
+      },
+      {
+        "path": "docs/reviews/CVF_NCR_HTML_CONFIGURED_RECEIPT_COMPLETION_2026-10-14.md",
+        "bytes": 22043,
+        "sha256": "62fcfd1fffe39edb30c858b741141889f48e7442719907835f184b258d00216b",
+        "matches": true
+      },
+      {
+        "path": "docs/reviews/evidence/ncr-html-configured-receipt-local-20261014.json",
+        "bytes": 34956,
+        "sha256": "aa150551a3e49140a7db2e4de323e1fb1ec2a780bfb360861ae0f9615e162d9c",
+        "matches": true
+      }
+    ],
+    "failures": [],
+    "status": " M scripts/probe_cvf_q001_synthetic_system_chain.py\n M scripts/probe_cvf_w05_browser_chain.cjs\n?? docs/reviews/CVF_NCR_HTML_CONFIGURED_RECEIPT_CONDITIONAL_RETURN_2026-10-14.md\n?? docs/reviews/evidence/ncr-html-configured-receipt-conditional-worker-20261014.json\n",
+    "workerGateFinal": true,
+    "workerProofSummary": {
+      "clocks": {
+        "workerIntakeAndBuildStartUtc": "2026-10-14T09:33:35Z",
+        "preImplementationGateEndUtc": "2026-10-14T09:34:22Z",
+        "runtimeRunStartUtc": "2026-10-14T09:59:45Z",
+        "runtimeRunEndUtc": "2026-10-14T10:02:07Z",
+        "runtimeElapsedSeconds": 142.2,
+        "buildHardLimitUtc": "2026-10-14T11:03:35Z",
+        "note": "final return time and gate times are recorded in the return packet and ignored sidecar"
+      },
+      "counters": {
+        "runtimeRuns": 1,
+        "repairAttempts": 0,
+        "exportPostTotal": 3,
+        "exportPostCap": 3,
+        "evaluateArrivedAtProxy": 3,
+        "aliveEngineAttempts": 2,
+        "aliveEngineAttemptCap": 2,
+        "evaluateCompleted": 2,
+        "confirmedDeadTransportFailures": 1,
+        "refusedExtraEvaluates": 0,
+        "providerStarts": 0,
+        "nativeUsageBilling": "UNKNOWN"
+      },
+      "preflight": {
+        "preImplementationGate": {
+          "cmd": "python -B governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base 9451c06c7ee09f1e3539ed0e33b1fd1c3f88c784 --head HEAD --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_CONFIGURED_RECEIPT_REPAIR_2026-10-14.md",
+          "exit": 0,
+          "result": "COMPLIANT pre-implementation autorun gate passed in 25.77s",
+          "log": ".cvf/runtime/ncr-html-configured-receipt-20261014/conditional-worker-logs/pre-implementation.log"
+        },
+        "pairAndSourcePins": "baseline sha256 f24b4e6c... and work order sha256 d7c6d15f... matched bootstrap; 18/18 dispatch source pins matched before edits; the runner re-verified the 16 non-script pins, HEAD cleanliness and empty index before the first effect",
+        "image": [
+          "sha256:a0725d62d5cfa8fc47b5e30be04bc08ea714a9cdd72c259595526f691db95294",
+          "linux",
+          "amd64"
+        ],
+        "namespace": ".cvf/runtime/ncr-html-configured-receipt-20261014/conditional-worker/run-20261014T095945Z-5a1486",
+        "ports": {
+          "proxy": 58214,
+          "web": 58215
+        },
+        "credentialLikeEnvNamesCleared": [
+          "ALIBABA_API_KEY",
+          "ALIBABA_BASE_URL",
+          "CLAUDE_CODE_MESSAGING_TOKEN",
+          "NODE_TLS_REJECT_UNAUTHORIZED"
+        ],
+        "stagedGitVisibleFileCount": 1235,
+        "engineContainer": {
+          "addedEnvNames": [
+            "CVF_GOVERNANCE_LEDGER_PATH"
+          ],
+          "dockerEndpointKind": "npipe",
+          "egressProbe": "BLOCKED",
+          "id": "ee649ac2f53c7f33cd189220d4845c0f41c256413edd47ee54894bf2ddadae2f",
+          "idPrefix": "ee649ac2f53c",
+          "image": "sha256:a0725d62d5cfa8fc47b5e30be04bc08ea714a9cdd72c259595526f691db95294",
+          "interfaces": "lo",
+          "mounts": {
+            "/data": "rw",
+            "/engine": "ro"
+          },
+          "name": "/cvf-q001-web-36e16d9e",
+          "networkMode": "none",
+          "networks": [
+            "none"
+          ],
+          "portBindings": {}
+        },
+        "preflightEgress": {
+          "classified": [
+            "framework-version-metadata",
+            "selftest",
+            "selftest",
+            "selftest",
+            "selftest",
+            "selftest",
+            "selftest"
+          ],
+          "loadedProcesses": 2,
+          "serverSelftestDenied": 1
+        },
+        "freshStoreEmptyBeforeFirstExport": true
+      },
+      "controls": {
+        "correctedProbes(inside the CLI, zero product/engine/provider calls)": {
+          "cleanupErrorCannotBeOk": true,
+          "earlyOrRepeatedStopRaises": true,
+          "fourthExportAndWrongLivenessRaise": true,
+          "knownPassiveClassified": true,
+          "thirdAliveForwardRaises": true,
+          "unknownAndProviderEgressRaise": true,
+          "unknownPreflightBlocksFirstExport": true
+        },
+        "staticComparisons(separate command, zero runtime)": {
+          "primaryBytesPinned": true,
+          "originalGaps(primary bytes)": {
+            "bridgeRelayAndNoUnknownEgressStop": true,
+            "preflightAppendsAndContinues": true,
+            "stopWithoutCompletedAssociations": true,
+            "sharedProxyCatchesOSError": true,
+            "okIgnoresCleanupErrors": true
+          },
+          "corrected(current bytes)": {
+            "noBridgeNoRelayInOptInPath": true,
+            "engineNetworkNone": true,
+            "sharedProxyHasNoOSErrorBranch": true,
+            "okRequiresCleanupClean": true
+          },
+          "legacy": {
+            "topLevelNodesCompared": 16,
+            "changedOrMissingNodes": [],
+            "browserLegacyTailIdentical": true,
+            "mainBlockOptInOnly": true
+          }
+        },
+        "standaloneGuardProbe(.invalid hosts only, deny-before-connect)": ".cvf/runtime/ncr-html-configured-receipt-20261014/conditional-worker-logs/guard-test.log",
+        "correctedProbeStandaloneLog": ".cvf/runtime/ncr-html-configured-receipt-20261014/conditional-worker-logs/corrected-controls.log"
+      },
+      "gates": [
+        {
+          "alive": true,
+          "aliveAttempts": 0,
+          "arrived": 0,
+          "completed": 0,
+          "n": 1,
+          "rows": []
+        },
+        {
+          "alive": true,
+          "aliveAttempts": 1,
+          "arrived": 1,
+          "completed": 1,
+          "n": 2,
+          "rows": [
+            [
+              "91d855257e98929ef69ad27d75cd55180c4455e03152abe64090d1149b46f2bf",
+              "5430ab8c139216eb07426d1fb90d1d903a0664c0d9b1baca2e70f891ddd56c65"
+            ]
+          ]
+        },
+        {
+          "alive": false,
+          "aliveAttempts": 2,
+          "arrived": 2,
+          "completed": 2,
+          "n": 3,
+          "rows": [
+            [
+              "91d855257e98929ef69ad27d75cd55180c4455e03152abe64090d1149b46f2bf",
+              "5430ab8c139216eb07426d1fb90d1d903a0664c0d9b1baca2e70f891ddd56c65"
+            ],
+            [
+              "6f4613f3d4586fe67140119060cf459b8bd5ecd519b909851359fec1578bcac3",
+              "2017b6642804b66a207793094c34c21052d24c96e004f8392b59e4d9e1ad29d4"
+            ]
+          ]
+        }
+      ],
+      "finalView": {
+        "alive": false,
+        "aliveAttempts": 2,
+        "arrived": 3,
+        "completed": 2,
+        "rows": [
+          [
+            "91d855257e98929ef69ad27d75cd55180c4455e03152abe64090d1149b46f2bf",
+            "5430ab8c139216eb07426d1fb90d1d903a0664c0d9b1baca2e70f891ddd56c65"
+          ],
+          [
+            "6f4613f3d4586fe67140119060cf459b8bd5ecd519b909851359fec1578bcac3",
+            "2017b6642804b66a207793094c34c21052d24c96e004f8392b59e4d9e1ad29d4"
+          ]
+        ]
+      },
+      "runnerChecks": {
+        "allEgressClassified": true,
+        "firstRowUnchanged": true,
+        "gateCounters": true,
+        "helperCompleted": true,
+        "noExtraAfterFallback": true,
+        "noProviderOrAi": true,
+        "requestRowAnchorJoins": true
+      },
+      "runnerFailures": []
+    }
+  },
+  "workerRuntimeEvidence": {
+    "clocks": {
+      "workerIntakeAndBuildStartUtc": "2026-10-14T09:33:35Z",
+      "preImplementationGateEndUtc": "2026-10-14T09:34:22Z",
+      "runtimeRunStartUtc": "2026-10-14T09:59:45Z",
+      "runtimeRunEndUtc": "2026-10-14T10:02:07Z",
+      "runtimeElapsedSeconds": 142.2,
+      "buildHardLimitUtc": "2026-10-14T11:03:35Z",
+      "note": "final return time and gate times are recorded in the return packet and ignored sidecar"
+    },
+    "counters": {
+      "runtimeRuns": 1,
+      "repairAttempts": 0,
+      "exportPostTotal": 3,
+      "exportPostCap": 3,
+      "evaluateArrivedAtProxy": 3,
+      "aliveEngineAttempts": 2,
+      "aliveEngineAttemptCap": 2,
+      "evaluateCompleted": 2,
+      "confirmedDeadTransportFailures": 1,
+      "refusedExtraEvaluates": 0,
+      "providerStarts": 0,
+      "nativeUsageBilling": "UNKNOWN"
+    },
+    "preflight": {
+      "preImplementationGate": {
+        "cmd": "python -B governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base 9451c06c7ee09f1e3539ed0e33b1fd1c3f88c784 --head HEAD --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_CONFIGURED_RECEIPT_REPAIR_2026-10-14.md",
+        "exit": 0,
+        "result": "COMPLIANT pre-implementation autorun gate passed in 25.77s",
+        "log": ".cvf/runtime/ncr-html-configured-receipt-20261014/conditional-worker-logs/pre-implementation.log"
+      },
+      "pairAndSourcePins": "baseline sha256 f24b4e6c... and work order sha256 d7c6d15f... matched bootstrap; 18/18 dispatch source pins matched before edits; the runner re-verified the 16 non-script pins, HEAD cleanliness and empty index before the first effect",
+      "image": [
+        "sha256:a0725d62d5cfa8fc47b5e30be04bc08ea714a9cdd72c259595526f691db95294",
+        "linux",
+        "amd64"
+      ],
+      "namespace": ".cvf/runtime/ncr-html-configured-receipt-20261014/conditional-worker/run-20261014T095945Z-5a1486",
+      "ports": {
+        "proxy": 58214,
+        "web": 58215
+      },
+      "credentialLikeEnvNamesCleared": [
+        "ALIBABA_API_KEY",
+        "ALIBABA_BASE_URL",
+        "CLAUDE_CODE_MESSAGING_TOKEN",
+        "NODE_TLS_REJECT_UNAUTHORIZED"
+      ],
+      "stagedGitVisibleFileCount": 1235,
+      "engineContainer": {
+        "addedEnvNames": [
+          "CVF_GOVERNANCE_LEDGER_PATH"
+        ],
+        "dockerEndpointKind": "npipe",
+        "egressProbe": "BLOCKED",
+        "id": "ee649ac2f53c7f33cd189220d4845c0f41c256413edd47ee54894bf2ddadae2f",
+        "idPrefix": "ee649ac2f53c",
+        "image": "sha256:a0725d62d5cfa8fc47b5e30be04bc08ea714a9cdd72c259595526f691db95294",
+        "interfaces": "lo",
+        "mounts": {
+          "/data": "rw",
+          "/engine": "ro"
+        },
+        "name": "/cvf-q001-web-36e16d9e",
+        "networkMode": "none",
+        "networks": [
+          "none"
+        ],
+        "portBindings": {}
+      },
+      "preflightEgress": {
+        "classified": [
+          "framework-version-metadata",
+          "selftest",
+          "selftest",
+          "selftest",
+          "selftest",
+          "selftest",
+          "selftest"
+        ],
+        "loadedProcesses": 2,
+        "serverSelftestDenied": 1
+      },
+      "freshStoreEmptyBeforeFirstExport": true
+    },
+    "controls": {
+      "correctedProbes(inside the CLI, zero product/engine/provider calls)": {
+        "cleanupErrorCannotBeOk": true,
+        "earlyOrRepeatedStopRaises": true,
+        "fourthExportAndWrongLivenessRaise": true,
+        "knownPassiveClassified": true,
+        "thirdAliveForwardRaises": true,
+        "unknownAndProviderEgressRaise": true,
+        "unknownPreflightBlocksFirstExport": true
+      },
+      "staticComparisons(separate command, zero runtime)": {
+        "primaryBytesPinned": true,
+        "originalGaps(primary bytes)": {
+          "bridgeRelayAndNoUnknownEgressStop": true,
+          "preflightAppendsAndContinues": true,
+          "stopWithoutCompletedAssociations": true,
+          "sharedProxyCatchesOSError": true,
+          "okIgnoresCleanupErrors": true
+        },
+        "corrected(current bytes)": {
+          "noBridgeNoRelayInOptInPath": true,
+          "engineNetworkNone": true,
+          "sharedProxyHasNoOSErrorBranch": true,
+          "okRequiresCleanupClean": true
+        },
+        "legacy": {
+          "topLevelNodesCompared": 16,
+          "changedOrMissingNodes": [],
+          "browserLegacyTailIdentical": true,
+          "mainBlockOptInOnly": true
+        }
+      },
+      "standaloneGuardProbe(.invalid hosts only, deny-before-connect)": ".cvf/runtime/ncr-html-configured-receipt-20261014/conditional-worker-logs/guard-test.log",
+      "correctedProbeStandaloneLog": ".cvf/runtime/ncr-html-configured-receipt-20261014/conditional-worker-logs/corrected-controls.log"
+    },
+    "gates": [
+      {
+        "alive": true,
+        "aliveAttempts": 0,
+        "arrived": 0,
+        "completed": 0,
+        "n": 1,
+        "rows": []
+      },
+      {
+        "alive": true,
+        "aliveAttempts": 1,
+        "arrived": 1,
+        "completed": 1,
+        "n": 2,
+        "rows": [
+          [
+            "91d855257e98929ef69ad27d75cd55180c4455e03152abe64090d1149b46f2bf",
+            "5430ab8c139216eb07426d1fb90d1d903a0664c0d9b1baca2e70f891ddd56c65"
+          ]
+        ]
+      },
+      {
+        "alive": false,
+        "aliveAttempts": 2,
+        "arrived": 2,
+        "completed": 2,
+        "n": 3,
+        "rows": [
+          [
+            "91d855257e98929ef69ad27d75cd55180c4455e03152abe64090d1149b46f2bf",
+            "5430ab8c139216eb07426d1fb90d1d903a0664c0d9b1baca2e70f891ddd56c65"
+          ],
+          [
+            "6f4613f3d4586fe67140119060cf459b8bd5ecd519b909851359fec1578bcac3",
+            "2017b6642804b66a207793094c34c21052d24c96e004f8392b59e4d9e1ad29d4"
+          ]
+        ]
+      }
+    ],
+    "finalView": {
+      "alive": false,
+      "aliveAttempts": 2,
+      "arrived": 3,
+      "completed": 2,
+      "rows": [
+        [
+          "91d855257e98929ef69ad27d75cd55180c4455e03152abe64090d1149b46f2bf",
+          "5430ab8c139216eb07426d1fb90d1d903a0664c0d9b1baca2e70f891ddd56c65"
+        ],
+        [
+          "6f4613f3d4586fe67140119060cf459b8bd5ecd519b909851359fec1578bcac3",
+          "2017b6642804b66a207793094c34c21052d24c96e004f8392b59e4d9e1ad29d4"
+        ]
+      ]
+    },
+    "runnerChecks": {
+      "allEgressClassified": true,
+      "firstRowUnchanged": true,
+      "gateCounters": true,
+      "helperCompleted": true,
+      "noExtraAfterFallback": true,
+      "noProviderOrAi": true,
+      "requestRowAnchorJoins": true
+    },
+    "runnerFailures": []
+  },
+  "independentProbe": {
+    "disposition": "EXECUTED_AUTHENTICITY_PASS_CLOSURE_BLOCKED",
+    "result": {
+      "actor": "LOCAL_REVIEWER_NOT_IMPLEMENTATION_WORKER",
+      "probeInvocationId": "cvf-ncr-hcr-conditional-local-0ebc2e33c133",
+      "workerInvocationId": "ncr-html-configured-receipt-conditional-worker-20261014",
+      "isolation": "engine network=none; bounded host loopback Docker-exec transport; no Internet relay",
+      "providerStarts": 0,
+      "positiveControl": "distinct browser/response/download/request-row join",
+      "negativeControls": [
+        "unsubmitted source excluded",
+        "wrong request ID absent",
+        "decoy selection resets packet"
+      ],
+      "ok": true,
+      "engineIdentity": {
+        "Id": "43e6ec464d59a557a37026ea70c1083b9ab845fdd168af39a474d7720f713dc1",
+        "Image": "sha256:a0725d62d5cfa8fc47b5e30be04bc08ea714a9cdd72c259595526f691db95294",
+        "networkMode": "none"
+      },
+      "engineEgress": [
+        "lo",
+        "BLOCKED"
+      ],
+      "startupEgress": [
+        {
+          "pid": 22092,
+          "event": "LOADED",
+          "host": "local-control",
+          "stack": [
+            "at Object.<anonymous> (D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-html-configured-receipt-20261014\\local-conditional-review\\probe-20261014T105109Z-3620a5\\preload.cjs:8:1)",
+            "at Module._compile (node:internal/modules/cjs/loader:1730:14)",
+            "at Object..js (node:internal/modules/cjs/loader:1895:10)",
+            "at Module.load (node:internal/modules/cjs/loader:1465:32)",
+            "at Function._load (node:internal/modules/cjs/loader:1282:12)"
+          ]
+        },
+        {
+          "pid": 22092,
+          "event": "DENIED_TCP",
+          "host": "local-egress-selftest.invalid",
+          "stack": [
+            "at net.Socket.connect (D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-html-configured-receipt-20261014\\local-conditional-review\\probe-20261014T105109Z-3620a5\\preload.cjs:4:349)",
+            "at Object.connect (node:net:245:17)",
+            "at Object.<anonymous> (D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-html-configured-receipt-20261014\\local-conditional-review\\probe-20261014T105109Z-3620a5\\preload.cjs:8:35)",
+            "at Module._compile (node:internal/modules/cjs/loader:1730:14)",
+            "at Object..js (node:internal/modules/cjs/loader:1895:10)"
+          ]
+        },
+        {
+          "pid": 45684,
+          "event": "LOADED",
+          "host": "local-control",
+          "stack": [
+            "at Object.<anonymous> (D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-html-configured-receipt-20261014\\local-conditional-review\\probe-20261014T105109Z-3620a5\\preload.cjs:8:1)",
+            "at Module._compile (node:internal/modules/cjs/loader:1730:14)",
+            "at Object..js (node:internal/modules/cjs/loader:1895:10)",
+            "at Module.load (node:internal/modules/cjs/loader:1465:32)",
+            "at Function._load (node:internal/modules/cjs/loader:1282:12)"
+          ]
+        },
+        {
+          "pid": 45684,
+          "event": "DENIED_TCP",
+          "host": "local-egress-selftest.invalid",
+          "stack": [
+            "at net.Socket.connect (D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-html-configured-receipt-20261014\\local-conditional-review\\probe-20261014T105109Z-3620a5\\preload.cjs:4:349)",
+            "at Object.connect (node:net:245:17)",
+            "at Object.<anonymous> (D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-html-configured-receipt-20261014\\local-conditional-review\\probe-20261014T105109Z-3620a5\\preload.cjs:8:35)",
+            "at Module._compile (node:internal/modules/cjs/loader:1730:14)",
+            "at Object..js (node:internal/modules/cjs/loader:1895:10)"
+          ]
+        },
+        {
+          "pid": 45684,
+          "event": "DENIED_TCP",
+          "host": "registry.npmjs.org",
+          "stack": [
+            "at net.Socket.connect (D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-html-configured-receipt-20261014\\local-conditional-review\\probe-20261014T105109Z-3620a5\\preload.cjs:4:349)",
+            "at Object.connect (node:_tls_wrap:1802:13)",
+            "at Client.connect (node:internal/deps/undici/undici:2507:24)",
+            "at socket (node:internal/deps/undici/undici:7890:29)",
+            "at new Promise (<anonymous>)"
+          ]
+        },
+        {
+          "pid": 45684,
+          "event": "LOADED",
+          "host": "local-control",
+          "stack": [
+            "at Object.<anonymous> (D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-html-configured-receipt-20261014\\local-conditional-review\\probe-20261014T105109Z-3620a5\\preload.cjs:8:1)",
+            "at Module._compile (node:internal/modules/cjs/loader:1730:14)",
+            "at Module._extensions..js (node:internal/modules/cjs/loader:1895:10)",
+            "at Module.load (node:internal/modules/cjs/loader:1465:32)",
+            "at Module._load (node:internal/modules/cjs/loader:1282:12)"
+          ]
+        },
+        {
+          "pid": 45684,
+          "event": "DENIED_TCP",
+          "host": "local-egress-selftest.invalid",
+          "stack": [
+            "at net.Socket.connect (D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-html-configured-receipt-20261014\\local-conditional-review\\probe-20261014T105109Z-3620a5\\preload.cjs:4:349)",
+            "at Object.connect (node:net:245:17)",
+            "at Object.<anonymous> (D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-html-configured-receipt-20261014\\local-conditional-review\\probe-20261014T105109Z-3620a5\\preload.cjs:8:35)",
+            "at Module._compile (node:internal/modules/cjs/loader:1730:14)",
+            "at Module._extensions..js (node:internal/modules/cjs/loader:1895:10)"
+          ]
+        }
+      ],
+      "unclassifiedStartup": [],
+      "warmStatusObserved": 401,
+      "browserExit": 0,
+      "browser": {
+        "actor": "LOCAL_REVIEWER_NOT_IMPLEMENTATION_WORKER",
+        "fixture": "distinct-conditional-review-record-and-source",
+        "ok": true,
+        "fixtureIds": {
+          "primary": "219b8079-1957-4c01-9b3f-c3786b34a088",
+          "decoy": "8bf56e41-81c5-4d20-9f63-53faad5a8bde"
+        },
+        "exportPosts": 1,
+        "aiPosts": [],
+        "attemptId": "artifact-proof-transfer-219b8079-1957-4c01-9b3f-c3786b34a088-1791975125876",
+        "receiptId": "artifact-proof-transfer-219b8079-1957-4c01-9b3f-c3786b34a088-1791975125876",
+        "receiptAnchor": "transfer-219b8079-1957-4c01-9b3f-c3786b34a088",
+        "decisionLabel": "ALLOW",
+        "artifactState": "DRAFT_UNACCEPTED",
+        "wireSha256": "929677e3a8214c6f50b7ce1597331e563188d3bd8f5e0525fdf3eb6d835c2865",
+        "htmlSha256": "3b504605176a98ee15fd1fa3df483a7a7173cff90d6c1570693e6dfb0cbd4660",
+        "downloadSha256": "3b504605176a98ee15fd1fa3df483a7a7173cff90d6c1570693e6dfb0cbd4660",
+        "downloadBytes": 2762,
+        "sourceSha256": "d77847d68ad5bbb04482ef9dcfd42068abcf61058b6ca515a3b62b02ade720ff",
+        "staleSourceExcluded": true,
+        "decoySelectionReset": true,
+        "outsideRequests": [
+          {
+            "host": "fonts.googleapis.com",
+            "method": "GET"
+          }
+        ]
+      },
+      "engineRequest": {
+        "request_id": "artifact-proof-transfer-219b8079-1957-4c01-9b3f-c3786b34a088-1791975125876",
+        "artifact_id": "transfer-219b8079-1957-4c01-9b3f-c3786b34a088"
+      },
+      "sqlite": {
+        "rows": 1,
+        "exactRequestId": "artifact-proof-transfer-219b8079-1957-4c01-9b3f-c3786b34a088-1791975125876",
+        "blockJsonSha256": "893e85b2546f70395d2274d8d5858d509eb53caffc37f3cad65251d9de49ad80",
+        "wrongIdCount": 0
+      },
+      "evaluateCount": 1,
+      "elapsedSeconds": 60.08,
+      "namespace": ".cvf\\runtime\\ncr-html-configured-receipt-20261014\\local-conditional-review\\probe-20261014T105109Z-3620a5",
+      "cleanupDockerAbsent": true,
+      "finalEgress": [
+        {
+          "pid": 22092,
+          "event": "LOADED",
+          "host": "local-control",
+          "stack": [
+            "at Object.<anonymous> (D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-html-configured-receipt-20261014\\local-conditional-review\\probe-20261014T105109Z-3620a5\\preload.cjs:8:1)",
+            "at Module._compile (node:internal/modules/cjs/loader:1730:14)",
+            "at Object..js (node:internal/modules/cjs/loader:1895:10)",
+            "at Module.load (node:internal/modules/cjs/loader:1465:32)",
+            "at Function._load (node:internal/modules/cjs/loader:1282:12)"
+          ]
+        },
+        {
+          "pid": 22092,
+          "event": "DENIED_TCP",
+          "host": "local-egress-selftest.invalid",
+          "stack": [
+            "at net.Socket.connect (D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-html-configured-receipt-20261014\\local-conditional-review\\probe-20261014T105109Z-3620a5\\preload.cjs:4:349)",
+            "at Object.connect (node:net:245:17)",
+            "at Object.<anonymous> (D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-html-configured-receipt-20261014\\local-conditional-review\\probe-20261014T105109Z-3620a5\\preload.cjs:8:35)",
+            "at Module._compile (node:internal/modules/cjs/loader:1730:14)",
+            "at Object..js (node:internal/modules/cjs/loader:1895:10)"
+          ]
+        },
+        {
+          "pid": 45684,
+          "event": "LOADED",
+          "host": "local-control",
+          "stack": [
+            "at Object.<anonymous> (D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-html-configured-receipt-20261014\\local-conditional-review\\probe-20261014T105109Z-3620a5\\preload.cjs:8:1)",
+            "at Module._compile (node:internal/modules/cjs/loader:1730:14)",
+            "at Object..js (node:internal/modules/cjs/loader:1895:10)",
+            "at Module.load (node:internal/modules/cjs/loader:1465:32)",
+            "at Function._load (node:internal/modules/cjs/loader:1282:12)"
+          ]
+        },
+        {
+          "pid": 45684,
+          "event": "DENIED_TCP",
+          "host": "local-egress-selftest.invalid",
+          "stack": [
+            "at net.Socket.connect (D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-html-configured-receipt-20261014\\local-conditional-review\\probe-20261014T105109Z-3620a5\\preload.cjs:4:349)",
+            "at Object.connect (node:net:245:17)",
+            "at Object.<anonymous> (D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-html-configured-receipt-20261014\\local-conditional-review\\probe-20261014T105109Z-3620a5\\preload.cjs:8:35)",
+            "at Module._compile (node:internal/modules/cjs/loader:1730:14)",
+            "at Object..js (node:internal/modules/cjs/loader:1895:10)"
+          ]
+        },
+        {
+          "pid": 45684,
+          "event": "DENIED_TCP",
+          "host": "registry.npmjs.org",
+          "stack": [
+            "at net.Socket.connect (D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-html-configured-receipt-20261014\\local-conditional-review\\probe-20261014T105109Z-3620a5\\preload.cjs:4:349)",
+            "at Object.connect (node:_tls_wrap:1802:13)",
+            "at Client.connect (node:internal/deps/undici/undici:2507:24)",
+            "at socket (node:internal/deps/undici/undici:7890:29)",
+            "at new Promise (<anonymous>)"
+          ]
+        },
+        {
+          "pid": 45684,
+          "event": "LOADED",
+          "host": "local-control",
+          "stack": [
+            "at Object.<anonymous> (D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-html-configured-receipt-20261014\\local-conditional-review\\probe-20261014T105109Z-3620a5\\preload.cjs:8:1)",
+            "at Module._compile (node:internal/modules/cjs/loader:1730:14)",
+            "at Module._extensions..js (node:internal/modules/cjs/loader:1895:10)",
+            "at Module.load (node:internal/modules/cjs/loader:1465:32)",
+            "at Module._load (node:internal/modules/cjs/loader:1282:12)"
+          ]
+        },
+        {
+          "pid": 45684,
+          "event": "DENIED_TCP",
+          "host": "local-egress-selftest.invalid",
+          "stack": [
+            "at net.Socket.connect (D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-html-configured-receipt-20261014\\local-conditional-review\\probe-20261014T105109Z-3620a5\\preload.cjs:4:349)",
+            "at Object.connect (node:net:245:17)",
+            "at Object.<anonymous> (D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-html-configured-receipt-20261014\\local-conditional-review\\probe-20261014T105109Z-3620a5\\preload.cjs:8:35)",
+            "at Module._compile (node:internal/modules/cjs/loader:1730:14)",
+            "at Module._extensions..js (node:internal/modules/cjs/loader:1895:10)"
+          ]
+        },
+        {
+          "pid": 20744,
+          "event": "LOADED",
+          "host": "local-control",
+          "stack": [
+            "at Object.<anonymous> (D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-html-configured-receipt-20261014\\local-conditional-review\\probe-20261014T105109Z-3620a5\\preload.cjs:8:1)",
+            "at Module._compile (node:internal/modules/cjs/loader:1730:14)",
+            "at Object..js (node:internal/modules/cjs/loader:1895:10)",
+            "at Module.load (node:internal/modules/cjs/loader:1465:32)",
+            "at Function._load (node:internal/modules/cjs/loader:1282:12)"
+          ]
+        },
+        {
+          "pid": 20744,
+          "event": "DENIED_TCP",
+          "host": "local-egress-selftest.invalid",
+          "stack": [
+            "at net.Socket.connect (D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-html-configured-receipt-20261014\\local-conditional-review\\probe-20261014T105109Z-3620a5\\preload.cjs:4:349)",
+            "at Object.connect (node:net:245:17)",
+            "at Object.<anonymous> (D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-html-configured-receipt-20261014\\local-conditional-review\\probe-20261014T105109Z-3620a5\\preload.cjs:8:35)",
+            "at Module._compile (node:internal/modules/cjs/loader:1730:14)",
+            "at Object..js (node:internal/modules/cjs/loader:1895:10)"
+          ]
+        },
+        {
+          "pid": 32620,
+          "event": "LOADED",
+          "host": "local-control",
+          "stack": [
+            "at Object.<anonymous> (D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-html-configured-receipt-20261014\\local-conditional-review\\probe-20261014T105109Z-3620a5\\preload.cjs:8:1)",
+            "at Module._compile (node:internal/modules/cjs/loader:1730:14)",
+            "at Object..js (node:internal/modules/cjs/loader:1895:10)",
+            "at Module.load (node:internal/modules/cjs/loader:1465:32)",
+            "at Function._load (node:internal/modules/cjs/loader:1282:12)"
+          ]
+        },
+        {
+          "pid": 32620,
+          "event": "DENIED_TCP",
+          "host": "local-egress-selftest.invalid",
+          "stack": [
+            "at net.Socket.connect (D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-html-configured-receipt-20261014\\local-conditional-review\\probe-20261014T105109Z-3620a5\\preload.cjs:4:349)",
+            "at Object.connect (node:net:245:17)",
+            "at Object.<anonymous> (D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-html-configured-receipt-20261014\\local-conditional-review\\probe-20261014T105109Z-3620a5\\preload.cjs:8:35)",
+            "at Module._compile (node:internal/modules/cjs/loader:1730:14)",
+            "at Object..js (node:internal/modules/cjs/loader:1895:10)"
+          ]
+        },
+        {
+          "pid": 20756,
+          "event": "LOADED",
+          "host": "local-control",
+          "stack": [
+            "at Object.<anonymous> (D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-html-configured-receipt-20261014\\local-conditional-review\\probe-20261014T105109Z-3620a5\\preload.cjs:8:1)",
+            "at Module._compile (node:internal/modules/cjs/loader:1730:14)",
+            "at Object..js (node:internal/modules/cjs/loader:1895:10)",
+            "at Module.load (node:internal/modules/cjs/loader:1465:32)",
+            "at Function._load (node:internal/modules/cjs/loader:1282:12)"
+          ]
+        },
+        {
+          "pid": 20756,
+          "event": "DENIED_TCP",
+          "host": "local-egress-selftest.invalid",
+          "stack": [
+            "at net.Socket.connect (D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-html-configured-receipt-20261014\\local-conditional-review\\probe-20261014T105109Z-3620a5\\preload.cjs:4:349)",
+            "at Object.connect (node:net:245:17)",
+            "at Object.<anonymous> (D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-html-configured-receipt-20261014\\local-conditional-review\\probe-20261014T105109Z-3620a5\\preload.cjs:8:35)",
+            "at Module._compile (node:internal/modules/cjs/loader:1730:14)",
+            "at Object..js (node:internal/modules/cjs/loader:1895:10)"
+          ]
+        },
+        {
+          "pid": 3928,
+          "event": "LOADED",
+          "host": "local-control",
+          "stack": [
+            "at Object.<anonymous> (D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-html-configured-receipt-20261014\\local-conditional-review\\probe-20261014T105109Z-3620a5\\preload.cjs:8:1)",
+            "at Module._compile (node:internal/modules/cjs/loader:1730:14)",
+            "at Object..js (node:internal/modules/cjs/loader:1895:10)",
+            "at Module.load (node:internal/modules/cjs/loader:1465:32)",
+            "at Function._load (node:internal/modules/cjs/loader:1282:12)"
+          ]
+        },
+        {
+          "pid": 3928,
+          "event": "DENIED_TCP",
+          "host": "local-egress-selftest.invalid",
+          "stack": [
+            "at net.Socket.connect (D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-html-configured-receipt-20261014\\local-conditional-review\\probe-20261014T105109Z-3620a5\\preload.cjs:4:349)",
+            "at Object.connect (node:net:245:17)",
+            "at Object.<anonymous> (D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-html-configured-receipt-20261014\\local-conditional-review\\probe-20261014T105109Z-3620a5\\preload.cjs:8:35)",
+            "at Module._compile (node:internal/modules/cjs/loader:1730:14)",
+            "at Object..js (node:internal/modules/cjs/loader:1895:10)"
+          ]
+        }
+      ],
+      "cleanupProcessRootsAbsent": true,
+      "cleanupPortsAbsent": true,
+      "probeSourceSha256": "b7d66e0b4143fc5ba194ad442a5790f97c0bbc488a4c79314e6ecac8c58e1778",
+      "browserOracleSha256": "922dac83bf6ded82ea31eee0d64f62d60f30d0886a589d8ef6ce16049e74fd35"
+    },
+    "resultPin": {
+      "path": ".cvf/runtime/ncr-html-configured-receipt-20261014/local-conditional-review/probe-20261014T105109Z-3620a5/result.json",
+      "bytes": 18482,
+      "sha256": "2d98ec0c1b912cd5203748dff1d509d2991d615fed8f7864f672ee87d2ca2d68"
+    },
+    "oracleFiles": [
+      {
+        "path": ".cvf/runtime/ncr-html-configured-receipt-20261014/local-conditional-review/probe.py",
+        "bytes": 12465,
+        "sha256": "b7d66e0b4143fc5ba194ad442a5790f97c0bbc488a4c79314e6ecac8c58e1778"
+      },
+      {
+        "path": ".cvf/runtime/ncr-html-configured-receipt-20261014/local-conditional-review/probe.cjs",
+        "bytes": 5303,
+        "sha256": "922dac83bf6ded82ea31eee0d64f62d60f30d0886a589d8ef6ce16049e74fd35"
+      }
+    ],
+    "custody": [
+      {
+        "path": ".cvf/runtime/ncr-html-configured-receipt-20261014/local-conditional-review/probe-20261014T105109Z-3620a5/custody/browser-local.json",
+        "bytes": 1150,
+        "sha256": "a35b69a6aff34b996f70c04a6a9c52bcb8def8d169f4ee68be8a25754d51d115"
+      },
+      {
+        "path": ".cvf/runtime/ncr-html-configured-receipt-20261014/local-conditional-review/probe-20261014T105109Z-3620a5/custody/decoded.html",
+        "bytes": 2762,
+        "sha256": "3b504605176a98ee15fd1fa3df483a7a7173cff90d6c1570693e6dfb0cbd4660"
+      },
+      {
+        "path": ".cvf/runtime/ncr-html-configured-receipt-20261014/local-conditional-review/probe-20261014T105109Z-3620a5/custody/download.html",
+        "bytes": 2762,
+        "sha256": "3b504605176a98ee15fd1fa3df483a7a7173cff90d6c1570693e6dfb0cbd4660"
+      },
+      {
+        "path": ".cvf/runtime/ncr-html-configured-receipt-20261014/local-conditional-review/probe-20261014T105109Z-3620a5/custody/engine-response.json",
+        "bytes": 2079,
+        "sha256": "48b5c46dc9adf4feb7a33fcb35fa1e95567a2e89bcd7a844e1e890e02a5b6c3b"
+      },
+      {
+        "path": ".cvf/runtime/ncr-html-configured-receipt-20261014/local-conditional-review/probe-20261014T105109Z-3620a5/custody/route.json",
+        "bytes": 4891,
+        "sha256": "929677e3a8214c6f50b7ce1597331e563188d3bd8f5e0525fdf3eb6d835c2865"
+      }
+    ],
+    "budget": {
+      "exportPostCap": 2,
+      "evaluateCap": 1,
+      "providerCap": 0,
+      "runtimeAttempts": 1,
+      "exportsUsed": 1,
+      "evaluatesUsed": 1,
+      "allRemainingGrantRetired": true
+    },
+    "executionResult": "PASS",
+    "closureAdmission": "BLOCKED_WITH_REASON: mandatory cleanup remains incomplete; partial review is not terminal accepted/closed tranche."
+  },
+  "cleanupNegative": {
+    "result": {
+      "method": "current finally AST; all subprocesses inert; no real process/container/network effect",
+      "sourceSha256": "26b34890e3031f5b13ca4965585adbdf14a483aefe246834d3848cb165c3fe9d",
+      "calls": [
+        {
+          "argv": [
+            "taskkill",
+            "/PID",
+            "12121",
+            "/T",
+            "/F"
+          ],
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "injected observation/cleanup command failure"
+        },
+        {
+          "argv": [
+            "taskkill",
+            "/PID",
+            "12122",
+            "/T",
+            "/F"
+          ],
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "injected observation/cleanup command failure"
+        },
+        {
+          "argv": [
+            "tasklist",
+            "/FI",
+            "PID eq 12121",
+            "/NH",
+            "/FO",
+            "CSV"
+          ],
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "injected observation/cleanup command failure"
+        },
+        {
+          "argv": [
+            "tasklist",
+            "/FI",
+            "PID eq 12122",
+            "/NH",
+            "/FO",
+            "CSV"
+          ],
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "injected observation/cleanup command failure"
+        },
+        {
+          "argv": [
+            "docker",
+            "ps",
+            "-a",
+            "--format",
+            "{{.Names}}"
+          ],
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "injected observation/cleanup command failure"
+        }
+      ],
+      "observedOutput": {
+        "cleanup": {
+          "errors": [],
+          "pidsAlive": [],
+          "dockerRemaining": [],
+          "portsListening": [],
+          "stageRemoved": true
+        },
+        "elapsedSeconds": 1,
+        "failures": [],
+        "ok": true
+      },
+      "expectedOutcome": "ok=false when cleanup or absence-observation commands fail",
+      "contradiction": true,
+      "providerStarts": 0
+    },
+    "resultPin": {
+      "path": ".cvf/runtime/ncr-html-configured-receipt-20261014/local-conditional-review/cleanup-negative.json",
+      "bytes": 1832,
+      "sha256": "723c4ab30a043201657fcbde0b9873f8f964c1ffe6ba7bada0ef485e322aff32"
+    },
+    "oraclePin": {
+      "path": ".cvf/runtime/ncr-html-configured-receipt-20261014/local-conditional-review/cleanup-negative.py",
+      "bytes": 2403,
+      "sha256": "c58a7c318995bf7dcc353b82001e57b965c7f6c8009bdb900bc38f12560947f2"
+    },
+    "informationGain": "Test actual cleanup command-result propagation, beyond worker reducer-only tests; no product/engine/provider/process effects."
+  },
+  "findings": [
+    {
+      "id": "HCR-CONTROL-EGRESS",
+      "disposition": "RESOLVED_BOUNDED",
+      "basis": "network=none fixed Docker-exec HTTP; restored BLOCKED engine socket probe; exact known passive host classification and unknown stop before export; TCP/DNS/UDP guard evidence"
+    },
+    {
+      "id": "HCR-CONTROL-ADMISSION",
+      "disposition": "RESOLVED_BOUNDED",
+      "basis": "preflight stops; parent export admission; alive attempted forwards charged before effect; early/repeated stop checks; two matching request rows then verified engine exit; real dead transport failure"
+    },
+    {
+      "id": "HCR-CONTROL-LEGACY-CLEANUP",
+      "disposition": "PARTIALLY_RESOLVED_NOT_ACCEPTED",
+      "resolved": "Legacy shared proxy has original AST and helper legacy tail retained; explicitly collected errors reach final outcome.",
+      "remaining": "Current finally ignores nonzero taskkill/tasklist/Docker-ps results. Independent inert actual-finally execution injected five exit1 commands and yielded errors=[], ok=true. Absence-observation failure is mistaken for resource absence. Chromium descendants only indirect.",
+      "observedWorkerIncident": "NOT_ESTABLISHED: this counterexample does not assert those failures or surviving processes occurred in the worker run."
+    }
+  ],
+  "requirementDisposition": {
+    "REQ-01": "ACCEPTED_MECHANICAL_WITH_DECLARED_LIMITS",
+    "REQ-02": "ACCEPTED_MECHANICAL_WITH_DECLARED_LIMITS",
+    "REQ-03": "ACCEPTED_MECHANICAL_WITH_DECLARED_LIMITS",
+    "REQ-04": "ACCEPTED_MECHANICAL_WITH_DECLARED_LIMITS",
+    "REQ-05": "ACCEPTED_MECHANICAL_WITH_DECLARED_LIMITS",
+    "REQ-06": "ACCEPTED_MECHANICAL_WITH_DECLARED_LIMITS",
+    "REQ-07": "NOT_ACCEPTED_MANDATORY_CONTROL_INCOMPLETE"
+  },
+  "procedure": {
+    "disposition": "PARTIAL_WITH_REASON",
+    "beforeEffectAdmission": "actual bound pre-implementation PASS consumed",
+    "readAhead": "baseline/primary review/some checker reads after runtime; dispatcher checker bodies not fully read; no retroactive compliance claim",
+    "classifier": "one denied edit; explicit engine egress probe restored before runtime; no operator question"
+  },
+  "unknowns": [
+    "native model usage and billing",
+    "WAL read coherence over the bind mount (read-only sampling observed zero errors; not a coherence proof)",
+    "Chromium child processes are closed by Playwright and covered by taskkill /T only while their parent lives",
+    "registry.npmjs.org metadata GET attempt is attributed to the installed Next getVersionInfo by Local's prior diagnostic; here it is only classified and blocked",
+    "cost and latency are test settings, not measurements",
+    "No continuous SQL polling in conditional run; no hidden-row absence proof between finite checkpoints.",
+    "Cleanup failure counterexample establishes a control gap, not an actual leftover-worker-process incident."
+  ],
+  "gates": {
+    "workerFinalFast": "PASS_FINAL_BYTES_VERIFIED_SIDECAR",
+    "workerFirstFast": "FAIL_LITERAL_EQUIVALENCE_PHRASE_RETAINED",
+    "localBoundPreImplementation": "PASS",
+    "localAuthenticityProbe": "PASS",
+    "localCleanupFailurePropagation": "CONTRADICTION_ESTABLISHED",
+    "localFinalReviewGates": "FINAL_RESULTS_IN_BOUND_SIDECAR"
+  },
+  "logPins": {
+    "html-conditional-local-pre-implementation.log": {
+      "path": ".cvf/runtime/ncr-request-cancellation-20261014/html-conditional-local-pre-implementation.log",
+      "bytes": 4800,
+      "sha256": "c67d9a4ebbddb32575a205c80a695616c2f4d919dc77666944f03108189b8243"
+    },
+    "html-conditional-independent-probe.log": {
+      "path": ".cvf/runtime/ncr-request-cancellation-20261014/html-conditional-independent-probe.log",
+      "bytes": 230,
+      "sha256": "29340fd2ff9d8bd3b0b9d1533483d2fc535f3600da2f141dca974132b36ed88f"
+    }
+  },
+  "disposition": "Retain six mechanical cases and distinct authenticity proof; full mandatory REQ-07 rejected; no third automatic BUILD, no repeated seven-case campaign.",
+  "roadmapCadence": {
+    "milestone": "R1 selected HTML artifact journey and finite R2 request-row evidence",
+    "gateAdvanced": "Configured browser/engine/SQLite authenticity; egress/admission controls bounded",
+    "remaining": "cleanup command-result propagation; actual-profile/data/custody/business walkthrough, durable intent/A07 and whole R3/R4",
+    "nextAction": "Local PLAN review of nearest actual-profile and end-to-end pilot prerequisites using existing source disposition; keep harness unsafe for future effect reuse until separately reviewed correction. No new worker runtime granted."
+  },
+  "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
+  "historicalProviderProgram": {
+    "used": 12,
+    "cap": 13,
+    "unusedRetired": 1,
+    "noRepeatAuthority": true
+  },
+  "reviewerPreparationDiagnostic": {
+    "stage": "local_governance_gate_cli",
+    "class": "unsupported_cli_arguments",
+    "retryable": true,
+    "userAction": "none_local_corrected_command",
+    "safeMessage": "First Local hook command used unsupported --base/--head flags and exited2 before checks; corrected invocation ran70/70 PASS. No runtime or tracked implementation change.",
+    "failedLog": ".cvf/runtime/ncr-request-cancellation-20261014/html-conditional-local-reviewer-fast.log",
+    "failedLogSha256": "17c60972e23fe646f98ee54f4cc15cb95e57867940e82772f1381907d9f1c7b4",
+    "correctedPassLog": ".cvf/runtime/ncr-request-cancellation-20261014/html-conditional-local-reviewer-fast-2.log",
+    "correctedPassLogSha256": "893424d50204b1e5f2b698a25ce259efbd2a9ac23032fb1292c553e712b840e3"
+  },
+  "reviewerGateDiagnostics": {
+    "firstStewardFailure": "Unbound fast wrapper identified invalid PASS_INDEPENDENT_PROBE with nonterminal REVIEWED_WITH_REWORK_REQUIRED status. Correct partial status/disposition rather than marking full tranche accepted.",
+    "secondStewardFailure": "Bound worker fast wrapper also compares all current7 reviewer/worker paths against original worker4. Original final-byte worker gate remains valid; consume it, do not widen worker originals to claim reviewer-owned paths.",
+    "repair": "Own Local review uses BLOCKED_WITH_REASON and reasoned blocked closure admission; actual authenticity execution PASS is preserved separately. Final Local reviewer-fast/pre-commit validate review scope; no duplicate implementation or worker edit.",
+    "logs": [
+      {
+        "path": ".cvf/runtime/ncr-request-cancellation-20261014/html-conditional-material-preflight.log",
+        "sha256": "0eb60b83b407fc2398b091fe9c13a3277caaf3daa8cece17293e081acfbc91a2",
+        "bytes": 12867
+      },
+      {
+        "path": ".cvf/runtime/ncr-request-cancellation-20261014/html-conditional-material-preflight-2.log",
+        "sha256": "2b677861aced49aa3c7c94ad9a3142fd30a204a0f1f2d358f4254ad0db0b664b",
+        "bytes": 14474
+      },
+      {
+        "path": ".cvf/runtime/ncr-request-cancellation-20261014/html-conditional-material-reviewer-final.log",
+        "sha256": "b38fbe86ef492c05f924ebe2e2a15bde7576b7c761852a487e987c8ef444e32b",
+        "bytes": 14189
+      }
+    ],
+    "blockedStatusDisclosure": "Blocked status also requires recurring-root and operator-notice/successor-freeze declarations; added to own review after source predicate read. No implementation/worker edit."
+  }
+}

@@ -1,0 +1,665 @@
+{
+ "schemaVersion": "ncr-html-configured-receipt-conditional-worker-proof (documentary; not a CVF governance schema)",
+ "status": "COMPLETE_PENDING_REVIEW_CANDIDATE",
+ "batchId": "CVF-NCR-HTML-CONFIGURED-RECEIPT-REPAIR-20261014",
+ "executionBaseHead": "9451c06c7ee09f1e3539ed0e33b1fd1c3f88c784",
+ "claimBoundary": "Synthetic browser transport, fresh-store persistence and presentation observations plus test-harness control proof only. No policy correctness, permission enforcement, artifact approval, durable intent, exactly-once, W05/R2 exit, real-provider R3, R4 recovery/backup/restore or two-connection proof. Returned decision labels are recorded data, not asserted correct. Runtime observations do not waive mandatory live governance proof.",
+ "clocks": {
+  "workerIntakeAndBuildStartUtc": "2026-10-14T09:33:35Z",
+  "preImplementationGateEndUtc": "2026-10-14T09:34:22Z",
+  "runtimeRunStartUtc": "2026-10-14T09:59:45Z",
+  "runtimeRunEndUtc": "2026-10-14T10:02:07Z",
+  "runtimeElapsedSeconds": 142.2,
+  "buildHardLimitUtc": "2026-10-14T11:03:35Z",
+  "note": "final return time and gate times are recorded in the return packet and ignored sidecar"
+ },
+ "counters": {
+  "runtimeRuns": 1,
+  "repairAttempts": 0,
+  "exportPostTotal": 3,
+  "exportPostCap": 3,
+  "evaluateArrivedAtProxy": 3,
+  "aliveEngineAttempts": 2,
+  "aliveEngineAttemptCap": 2,
+  "evaluateCompleted": 2,
+  "confirmedDeadTransportFailures": 1,
+  "refusedExtraEvaluates": 0,
+  "providerStarts": 0,
+  "nativeUsageBilling": "UNKNOWN"
+ },
+ "runtimeCommand": "python -X utf8 -B scripts/probe_cvf_q001_synthetic_system_chain.py --configured-receipt-browser-composition --engine-docker-image sha256:a0725d62d5cfa8fc47b5e30be04bc08ea714a9cdd72c259595526f691db95294",
+ "runtimeExit": 0,
+ "runtimeLogs": {
+  "stdout": ".cvf/runtime/ncr-html-configured-receipt-20261014/conditional-worker-logs/run1.stdout.log",
+  "stderr": ".cvf/runtime/ncr-html-configured-receipt-20261014/conditional-worker-logs/run1.stderr.log",
+  "exit": "run1.exit",
+  "start": "run1.start",
+  "end": "run1.end"
+ },
+ "preflight": {
+  "preImplementationGate": {
+   "cmd": "python -B governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base 9451c06c7ee09f1e3539ed0e33b1fd1c3f88c784 --head HEAD --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_CONFIGURED_RECEIPT_REPAIR_2026-10-14.md",
+   "exit": 0,
+   "result": "COMPLIANT pre-implementation autorun gate passed in 25.77s",
+   "log": ".cvf/runtime/ncr-html-configured-receipt-20261014/conditional-worker-logs/pre-implementation.log"
+  },
+  "pairAndSourcePins": "baseline sha256 f24b4e6c... and work order sha256 d7c6d15f... matched bootstrap; 18/18 dispatch source pins matched before edits; the runner re-verified the 16 non-script pins, HEAD cleanliness and empty index before the first effect",
+  "image": [
+   "sha256:a0725d62d5cfa8fc47b5e30be04bc08ea714a9cdd72c259595526f691db95294",
+   "linux",
+   "amd64"
+  ],
+  "namespace": ".cvf/runtime/ncr-html-configured-receipt-20261014/conditional-worker/run-20261014T095945Z-5a1486",
+  "ports": {
+   "proxy": 58214,
+   "web": 58215
+  },
+  "credentialLikeEnvNamesCleared": [
+   "ALIBABA_API_KEY",
+   "ALIBABA_BASE_URL",
+   "CLAUDE_CODE_MESSAGING_TOKEN",
+   "NODE_TLS_REJECT_UNAUTHORIZED"
+  ],
+  "stagedGitVisibleFileCount": 1235,
+  "engineContainer": {
+   "addedEnvNames": [
+    "CVF_GOVERNANCE_LEDGER_PATH"
+   ],
+   "dockerEndpointKind": "npipe",
+   "egressProbe": "BLOCKED",
+   "id": "ee649ac2f53c7f33cd189220d4845c0f41c256413edd47ee54894bf2ddadae2f",
+   "idPrefix": "ee649ac2f53c",
+   "image": "sha256:a0725d62d5cfa8fc47b5e30be04bc08ea714a9cdd72c259595526f691db95294",
+   "interfaces": "lo",
+   "mounts": {
+    "/data": "rw",
+    "/engine": "ro"
+   },
+   "name": "/cvf-q001-web-36e16d9e",
+   "networkMode": "none",
+   "networks": [
+    "none"
+   ],
+   "portBindings": {}
+  },
+  "preflightEgress": {
+   "classified": [
+    "framework-version-metadata",
+    "selftest",
+    "selftest",
+    "selftest",
+    "selftest",
+    "selftest",
+    "selftest"
+   ],
+   "loadedProcesses": 2,
+   "serverSelftestDenied": 1
+  },
+  "freshStoreEmptyBeforeFirstExport": true
+ },
+ "controls": {
+  "correctedProbes(inside the CLI, zero product/engine/provider calls)": {
+   "cleanupErrorCannotBeOk": true,
+   "earlyOrRepeatedStopRaises": true,
+   "fourthExportAndWrongLivenessRaise": true,
+   "knownPassiveClassified": true,
+   "thirdAliveForwardRaises": true,
+   "unknownAndProviderEgressRaise": true,
+   "unknownPreflightBlocksFirstExport": true
+  },
+  "staticComparisons(separate command, zero runtime)": {
+   "primaryBytesPinned": true,
+   "originalGaps(primary bytes)": {
+    "bridgeRelayAndNoUnknownEgressStop": true,
+    "preflightAppendsAndContinues": true,
+    "stopWithoutCompletedAssociations": true,
+    "sharedProxyCatchesOSError": true,
+    "okIgnoresCleanupErrors": true
+   },
+   "corrected(current bytes)": {
+    "noBridgeNoRelayInOptInPath": true,
+    "engineNetworkNone": true,
+    "sharedProxyHasNoOSErrorBranch": true,
+    "okRequiresCleanupClean": true
+   },
+   "legacy": {
+    "topLevelNodesCompared": 16,
+    "changedOrMissingNodes": [],
+    "browserLegacyTailIdentical": true,
+    "mainBlockOptInOnly": true
+   }
+  },
+  "standaloneGuardProbe(.invalid hosts only, deny-before-connect)": ".cvf/runtime/ncr-html-configured-receipt-20261014/conditional-worker-logs/guard-test.log",
+  "correctedProbeStandaloneLog": ".cvf/runtime/ncr-html-configured-receipt-20261014/conditional-worker-logs/corrected-controls.log"
+ },
+ "gates": [
+  {
+   "alive": true,
+   "aliveAttempts": 0,
+   "arrived": 0,
+   "completed": 0,
+   "n": 1,
+   "rows": []
+  },
+  {
+   "alive": true,
+   "aliveAttempts": 1,
+   "arrived": 1,
+   "completed": 1,
+   "n": 2,
+   "rows": [
+    [
+     "91d855257e98929ef69ad27d75cd55180c4455e03152abe64090d1149b46f2bf",
+     "5430ab8c139216eb07426d1fb90d1d903a0664c0d9b1baca2e70f891ddd56c65"
+    ]
+   ]
+  },
+  {
+   "alive": false,
+   "aliveAttempts": 2,
+   "arrived": 2,
+   "completed": 2,
+   "n": 3,
+   "rows": [
+    [
+     "91d855257e98929ef69ad27d75cd55180c4455e03152abe64090d1149b46f2bf",
+     "5430ab8c139216eb07426d1fb90d1d903a0664c0d9b1baca2e70f891ddd56c65"
+    ],
+    [
+     "6f4613f3d4586fe67140119060cf459b8bd5ecd519b909851359fec1578bcac3",
+     "2017b6642804b66a207793094c34c21052d24c96e004f8392b59e4d9e1ad29d4"
+    ]
+   ]
+  }
+ ],
+ "finalView": {
+  "alive": false,
+  "aliveAttempts": 2,
+  "arrived": 3,
+  "completed": 2,
+  "rows": [
+   [
+    "91d855257e98929ef69ad27d75cd55180c4455e03152abe64090d1149b46f2bf",
+    "5430ab8c139216eb07426d1fb90d1d903a0664c0d9b1baca2e70f891ddd56c65"
+   ],
+   [
+    "6f4613f3d4586fe67140119060cf459b8bd5ecd519b909851359fec1578bcac3",
+    "2017b6642804b66a207793094c34c21052d24c96e004f8392b59e4d9e1ad29d4"
+   ]
+  ]
+ },
+ "runnerChecks": {
+  "allEgressClassified": true,
+  "firstRowUnchanged": true,
+  "gateCounters": true,
+  "helperCompleted": true,
+  "noExtraAfterFallback": true,
+  "noProviderOrAi": true,
+  "requestRowAnchorJoins": true
+ },
+ "runnerFailures": [],
+ "REQ-01": {
+  "proofKind": "COMMAND",
+  "observation": {
+   "attemptId": "artifact-proof-transfer-9fdc8e42-e50c-46b7-b14a-4e68c8bf6c72-1791972108761",
+   "authMode": "session",
+   "filename": "hcr-browser-packet-one.html",
+   "governanceState": "DRAFT_UNACCEPTED",
+   "htmlBytes": 2748,
+   "htmlSha256": "cc1d2dfc42ed3e6dabb78f0834ddc9c08d76a45c2fb95297c93507f4033bf995",
+   "httpStatus": 200,
+   "receiptAnchor": "transfer-9fdc8e42-e50c-46b7-b14a-4e68c8bf6c72",
+   "receiptDecision": "ALLOW",
+   "receiptId": "artifact-proof-transfer-9fdc8e42-e50c-46b7-b14a-4e68c8bf6c72-1791972108761",
+   "receiptPresent": true,
+   "receiptStatus": "PRESENT",
+   "routeDecision": "ALLOW",
+   "sourceTrimmedSha256": "2286649484e1da8ab151c7c73c09d3f656505b2814d9f45a87154eb7b51c4b21",
+   "submittedFields": true,
+   "success": true,
+   "visibleNote": "governance-receipt-evaluated-note",
+   "wireBytes": 4850,
+   "wireSha256": "360163795e7e6e98ba4d371398a2d1c47c12133d5da1363edf3d4cfa443775da"
+  },
+  "associations": {
+   "attemptEqualsReceiptId": true,
+   "visibleNote": "governance-receipt-evaluated-note",
+   "draftState": "DRAFT_UNACCEPTED"
+  },
+  "note": "auth, route and receipt decision labels recorded as data; no verdict-correctness or permission-enforcement assertion"
+ },
+ "REQ-02": {
+  "proofKind": "COMMAND",
+  "sqlite": {
+   "finalCount": 2,
+   "finalRequestIds": [
+    "artifact-proof-transfer-9fdc8e42-e50c-46b7-b14a-4e68c8bf6c72-1791972108761",
+    "artifact-proof-transfer-9fdc8e42-e50c-46b7-b14a-4e68c8bf6c72-1791972111820"
+   ],
+   "tipHash": "6f4613f3d4586fe67140119060cf459b8bd5ecd519b909851359fec1578bcac3",
+   "readMode": "native sqlite3 URI mode=ro",
+   "rawRows": ".cvf/runtime/ncr-html-configured-receipt-20261014/conditional-worker/run-20261014T095945Z-5a1486/custody/raw-observations.json"
+  },
+  "joins": [
+   {
+    "attemptId": "artifact-proof-transfer-9fdc8e42-e50c-46b7-b14a-4e68c8bf6c72-1791972108761",
+    "sqlRowsWithRequestId": 1,
+    "orchestratorBlockHash": "91d855257e98929ef69ad27d75cd55180c4455e03152abe64090d1149b46f2bf",
+    "rowJson": {
+     "event": {
+      "cvf_phase": "REVIEW",
+      "cvf_risk_level": "R0",
+      "decision": {
+       "evaluated_at": "2026-10-14T10:01:49.024237",
+       "final_decision": "ALLOW",
+       "risk_score": 0.0,
+       "triggered_rules": []
+      },
+      "request_id": "artifact-proof-transfer-9fdc8e42-e50c-46b7-b14a-4e68c8bf6c72-1791972108761",
+      "timestamp": "2026-10-14T10:01:49.024354"
+     },
+     "hash": "91d855257e98929ef69ad27d75cd55180c4455e03152abe64090d1149b46f2bf",
+     "previous_hash": "GENESIS",
+     "timestamp": "2026-10-14T10:01:49.084047"
+    },
+    "rowJsonSha256": "5430ab8c139216eb07426d1fb90d1d903a0664c0d9b1baca2e70f891ddd56c65",
+    "engineHttpStatus": 200,
+    "engineRequestId": "artifact-proof-transfer-9fdc8e42-e50c-46b7-b14a-4e68c8bf6c72-1791972108761",
+    "engineArtifactId": "transfer-9fdc8e42-e50c-46b7-b14a-4e68c8bf6c72",
+    "panelReceiptAnchor": "transfer-9fdc8e42-e50c-46b7-b14a-4e68c8bf6c72",
+    "engineDecisionLabel": "ALLOW",
+    "ledgerAttached": true,
+    "enginePayloadSha256": "4af2a81699fbefa89f5f4d1cb27456e12b785cc9b6417a14de1b79b0506cc713"
+   },
+   {
+    "attemptId": "artifact-proof-transfer-9fdc8e42-e50c-46b7-b14a-4e68c8bf6c72-1791972111820",
+    "sqlRowsWithRequestId": 1,
+    "orchestratorBlockHash": "6f4613f3d4586fe67140119060cf459b8bd5ecd519b909851359fec1578bcac3",
+    "rowJson": {
+     "event": {
+      "cvf_phase": "REVIEW",
+      "cvf_risk_level": "R0",
+      "decision": {
+       "evaluated_at": "2026-10-14T10:01:52.014763",
+       "final_decision": "ALLOW",
+       "risk_score": 0.0,
+       "triggered_rules": []
+      },
+      "request_id": "artifact-proof-transfer-9fdc8e42-e50c-46b7-b14a-4e68c8bf6c72-1791972111820",
+      "timestamp": "2026-10-14T10:01:52.014806"
+     },
+     "hash": "6f4613f3d4586fe67140119060cf459b8bd5ecd519b909851359fec1578bcac3",
+     "previous_hash": "91d855257e98929ef69ad27d75cd55180c4455e03152abe64090d1149b46f2bf",
+     "timestamp": "2026-10-14T10:01:52.086411"
+    },
+    "rowJsonSha256": "2017b6642804b66a207793094c34c21052d24c96e004f8392b59e4d9e1ad29d4",
+    "engineHttpStatus": 200,
+    "engineRequestId": "artifact-proof-transfer-9fdc8e42-e50c-46b7-b14a-4e68c8bf6c72-1791972111820",
+    "engineArtifactId": "transfer-9fdc8e42-e50c-46b7-b14a-4e68c8bf6c72",
+    "panelReceiptAnchor": "transfer-9fdc8e42-e50c-46b7-b14a-4e68c8bf6c72",
+    "engineDecisionLabel": "ALLOW",
+    "ledgerAttached": true,
+    "enginePayloadSha256": "d3891922ae1495e15b3271eabcee8c852237825a63b7f9661c0c3b8d277f61f4"
+   }
+  ],
+  "note": "artifact_id was taken only from the engine response and joined by the same request_id to the panel receipt anchor; the ledger was not searched by artifact_id or content"
+ },
+ "REQ-03": {
+  "proofKind": "COMMAND",
+  "downloads": {
+   "build1": {
+    "bytes": 2748,
+    "filename": "hcr-browser-packet-one.html",
+    "previewHeadingMatches": true,
+    "previewMarkerVisible": true,
+    "routeHtmlEqualsDownload": true,
+    "sha256": "cc1d2dfc42ed3e6dabb78f0834ddc9c08d76a45c2fb95297c93507f4033bf995"
+   },
+   "build2": {
+    "bytes": 2771,
+    "filename": "hcr-unsent-later-edit.html",
+    "previewHeadingMatches": true,
+    "routeHtmlEqualsDownload": true,
+    "sha256": "304531b743e05c1ce2a441e13b5f087b88fa202aefdb3b41212153818e86ce68"
+   }
+  },
+  "build3": {
+   "bytes": 3082,
+   "filename": "hcr-engine-down-packet.html",
+   "sha256": "d5f457aef1c68f217ebf25e2c16899a0da8cb2157d343efde90efcfbc4e8836f"
+  },
+  "stale": {
+   "bytes": 2748,
+   "filename": "hcr-browser-packet-one.html",
+   "sha256": "cc1d2dfc42ed3e6dabb78f0834ddc9c08d76a45c2fb95297c93507f4033bf995"
+  },
+  "custody": {
+   ".cvf/runtime/ncr-html-configured-receipt-20261014/conditional-worker/run-20261014T095945Z-5a1486/custody/build1-decoded.html": {
+    "bytes": 2748,
+    "sha256": "cc1d2dfc42ed3e6dabb78f0834ddc9c08d76a45c2fb95297c93507f4033bf995"
+   },
+   ".cvf/runtime/ncr-html-configured-receipt-20261014/conditional-worker/run-20261014T095945Z-5a1486/custody/build1-download.html": {
+    "bytes": 2748,
+    "sha256": "cc1d2dfc42ed3e6dabb78f0834ddc9c08d76a45c2fb95297c93507f4033bf995"
+   },
+   ".cvf/runtime/ncr-html-configured-receipt-20261014/conditional-worker/run-20261014T095945Z-5a1486/custody/build1-route.json": {
+    "bytes": 4850,
+    "sha256": "360163795e7e6e98ba4d371398a2d1c47c12133d5da1363edf3d4cfa443775da"
+   },
+   ".cvf/runtime/ncr-html-configured-receipt-20261014/conditional-worker/run-20261014T095945Z-5a1486/custody/build2-decoded.html": {
+    "bytes": 2771,
+    "sha256": "304531b743e05c1ce2a441e13b5f087b88fa202aefdb3b41212153818e86ce68"
+   },
+   ".cvf/runtime/ncr-html-configured-receipt-20261014/conditional-worker/run-20261014T095945Z-5a1486/custody/build2-download.html": {
+    "bytes": 2771,
+    "sha256": "304531b743e05c1ce2a441e13b5f087b88fa202aefdb3b41212153818e86ce68"
+   },
+   ".cvf/runtime/ncr-html-configured-receipt-20261014/conditional-worker/run-20261014T095945Z-5a1486/custody/build2-route.json": {
+    "bytes": 4873,
+    "sha256": "5f88fde8e29111ee20f232182d49d3f6d2333c57e226058bb503d0223d115ce9"
+   },
+   ".cvf/runtime/ncr-html-configured-receipt-20261014/conditional-worker/run-20261014T095945Z-5a1486/custody/build3-decoded.html": {
+    "bytes": 3082,
+    "sha256": "d5f457aef1c68f217ebf25e2c16899a0da8cb2157d343efde90efcfbc4e8836f"
+   },
+   ".cvf/runtime/ncr-html-configured-receipt-20261014/conditional-worker/run-20261014T095945Z-5a1486/custody/build3-download.html": {
+    "bytes": 3082,
+    "sha256": "d5f457aef1c68f217ebf25e2c16899a0da8cb2157d343efde90efcfbc4e8836f"
+   },
+   ".cvf/runtime/ncr-html-configured-receipt-20261014/conditional-worker/run-20261014T095945Z-5a1486/custody/build3-route.json": {
+    "bytes": 5119,
+    "sha256": "944cd20822ba67ab4c1ce49b5b04b6f9bfdf5e21b15cd7870d541580b9f2c56a"
+   },
+   ".cvf/runtime/ncr-html-configured-receipt-20261014/conditional-worker/run-20261014T095945Z-5a1486/custody/stale-download.html": {
+    "bytes": 2748,
+    "sha256": "cc1d2dfc42ed3e6dabb78f0834ddc9c08d76a45c2fb95297c93507f4033bf995"
+   }
+  },
+  "note": "route HTML, decoded HTML and downloaded bytes compared byte-for-byte in the helper (assert) and recorded; wire, HTML and trimmed-source hashes are distinct"
+ },
+ "REQ-04": {
+  "proofKind": "COMMAND",
+  "stale": {
+   "exportPostsBeforeRebuild": 1,
+   "oldDownload": {
+    "bytes": 2748,
+    "filename": "hcr-browser-packet-one.html",
+    "sha256": "cc1d2dfc42ed3e6dabb78f0834ddc9c08d76a45c2fb95297c93507f4033bf995"
+   },
+   "previewRetained": true,
+   "versionState": "stale"
+  },
+  "build2": {
+   "attemptId": "artifact-proof-transfer-9fdc8e42-e50c-46b7-b14a-4e68c8bf6c72-1791972111820",
+   "authMode": "session",
+   "filename": "hcr-unsent-later-edit.html",
+   "governanceState": "DRAFT_UNACCEPTED",
+   "htmlBytes": 2771,
+   "htmlSha256": "304531b743e05c1ce2a441e13b5f087b88fa202aefdb3b41212153818e86ce68",
+   "httpStatus": 200,
+   "receiptAnchor": "transfer-9fdc8e42-e50c-46b7-b14a-4e68c8bf6c72",
+   "receiptDecision": "ALLOW",
+   "receiptId": "artifact-proof-transfer-9fdc8e42-e50c-46b7-b14a-4e68c8bf6c72-1791972111820",
+   "receiptPresent": true,
+   "receiptStatus": "PRESENT",
+   "routeDecision": "ALLOW",
+   "sourceTrimmedSha256": "1c6bf419c93a29526c01af94df708d53561820836aea83779c8593b49998c8af",
+   "success": true,
+   "versionState": "current",
+   "wireBytes": 4873,
+   "wireSha256": "5f88fde8e29111ee20f232182d49d3f6d2333c57e226058bb503d0223d115ce9"
+  },
+  "exportPostsAfterRebuild": 2,
+  "gateRows": [
+   [
+    1,
+    0
+   ],
+   [
+    2,
+    1
+   ],
+   [
+    3,
+    2
+   ]
+  ],
+  "firstRowBlockHashAtGate2AndGate3AndFinal": [
+   [
+    "91d855257e98929ef69ad27d75cd55180c4455e03152abe64090d1149b46f2bf",
+    "5430ab8c139216eb07426d1fb90d1d903a0664c0d9b1baca2e70f891ddd56c65"
+   ],
+   [
+    "91d855257e98929ef69ad27d75cd55180c4455e03152abe64090d1149b46f2bf",
+    "5430ab8c139216eb07426d1fb90d1d903a0664c0d9b1baca2e70f891ddd56c65"
+   ],
+   [
+    "91d855257e98929ef69ad27d75cd55180c4455e03152abe64090d1149b46f2bf",
+    "5430ab8c139216eb07426d1fb90d1d903a0664c0d9b1baca2e70f891ddd56c65"
+   ]
+  ],
+  "note": "finite observed checkpoints (parent-admitted gates plus final read-only SQL); not universal idempotency or exactly-once proof"
+ },
+ "REQ-05": {
+  "proofKind": "COMMAND",
+  "observation": {
+   "deselectReselectReset": true,
+   "exportPostsAfterReset": 2,
+   "otherFixtureReset": true,
+   "priorPacketShownAsCurrent": false,
+   "reloadLossWarningObserved": false,
+   "reloadReset": true
+  },
+  "gateCountersAtThirdAdmission": {
+   "arrived": 2,
+   "aliveAttempts": 2,
+   "completed": 2
+  },
+  "sqlRowsAtThirdAdmission": 2,
+  "note": "reload-loss warning absence recorded as an observation only"
+ },
+ "REQ-06": {
+  "proofKind": "COMMAND",
+  "observation": {
+   "absentNoteVisible": true,
+   "attemptId": "artifact-proof-transfer-9fdc8e42-e50c-46b7-b14a-4e68c8bf6c72-1791972117447",
+   "attemptIdVisible": true,
+   "authMode": "session",
+   "download": {
+    "bytes": 3082,
+    "filename": "hcr-engine-down-packet.html",
+    "sha256": "d5f457aef1c68f217ebf25e2c16899a0da8cb2157d343efde90efcfbc4e8836f"
+   },
+   "exportPostsTotal": 3,
+   "filename": "hcr-engine-down-packet.html",
+   "governanceState": "DRAFT_UNACCEPTED",
+   "htmlBytes": 3082,
+   "htmlSha256": "d5f457aef1c68f217ebf25e2c16899a0da8cb2157d343efde90efcfbc4e8836f",
+   "httpStatus": 200,
+   "receiptAnchor": "transfer-9fdc8e42-e50c-46b7-b14a-4e68c8bf6c72",
+   "receiptPresent": false,
+   "receiptStatus": "UNAVAILABLE",
+   "routeDecision": "ALLOW",
+   "sourceTrimmedSha256": "617c0a4b632e09e86c95b5c25502ef30096a6c7505bbcd8c1fac0a740530cb5a",
+   "success": true,
+   "wireBytes": 5119,
+   "wireSha256": "944cd20822ba67ab4c1ce49b5b04b6f9bfdf5e21b15cd7870d541580b9f2c56a"
+  },
+  "proxy": {
+   "mode": "docker exec forward (never simulated)",
+   "arrived": 3,
+   "aliveAttempts": 2,
+   "completed": 2,
+   "confirmedDeadTransportFailures": 1
+  },
+  "engineStoppedBeforeBuild3": true,
+  "sqlCountAfterFallback": 2,
+  "note": "actual receipt status for the third export is UNAVAILABLE; the owned engine was verified absent by the parent before the third admission"
+ },
+ "REQ-07": {
+  "proofKind": "COMMAND",
+  "exportPostCount": 3,
+  "forwardedEvaluateCompleted": 2,
+  "providerStarts": 0,
+  "finalEgress": {
+   "browserAiPosts": [],
+   "browserExternal": [
+    {
+     "category": "passive-font-asset",
+     "host": "fonts.googleapis.com",
+     "method": "GET"
+    },
+    {
+     "category": "passive-font-asset",
+     "host": "fonts.googleapis.com",
+     "method": "GET"
+    }
+   ],
+   "providerAttempts": 0,
+   "providerStarts": 0,
+   "serverDenied": [
+    "egress-selftest.invalid|selftest|tcp|node:net:245,loader:1730,loader:1895|9",
+    "egress-selftest.invalid|selftest|udp|loader:1730,loader:1895,loader:1465|9",
+    "registry.npmjs.org|framework-version-metadata|tcp|node:_tls_wrap:1802,undici:2507,undici:7890|1"
+   ]
+  },
+  "cleanup": {
+   "dockerRemaining": [],
+   "errors": [],
+   "pidsAlive": [],
+   "portsListening": [],
+   "stageRemoved": true
+  },
+  "ownProcessSubtree": "taskkill /T of the owned Next server and browser helper plus every Node process that loaded the guard; independent post-run process, container, port and stage scan found none",
+  "exactFourChangedPaths": [
+   "scripts/probe_cvf_q001_synthetic_system_chain.py",
+   "scripts/probe_cvf_w05_browser_chain.cjs",
+   "docs/reviews/CVF_NCR_HTML_CONFIGURED_RECEIPT_CONDITIONAL_RETURN_2026-10-14.md",
+   "docs/reviews/evidence/ncr-html-configured-receipt-conditional-worker-20261014.json"
+  ],
+  "legacyBranchEvidence": ".cvf/runtime/ncr-html-configured-receipt-20261014/conditional-worker-logs/legacy-diff.log",
+  "note": "controls and counters are harness controls, not policy, auth or governance tests"
+ },
+ "harness": {
+  "scripts": {
+   "scripts/probe_cvf_q001_synthetic_system_chain.py": {
+    "sha256": "26b34890e3031f5b13ca4965585adbdf14a483aefe246834d3848cb165c3fe9d",
+    "bytes": 50269,
+    "lines": 746
+   },
+   "scripts/probe_cvf_w05_browser_chain.cjs": {
+    "sha256": "2f0981b2356a51a85f34d3d6ed94a0d0a0606c48d306888711876a5c2b225dec",
+    "bytes": 23186,
+    "lines": 396
+   }
+  },
+  "stagedHelperCopySameBytesAsRepositoryHelper": true,
+  "sizeBudgets": {
+   "pythonLinesMax": 750,
+   "browserHelperLinesMax": 450
+  }
+ },
+ "custodyFiles": {
+  ".cvf/runtime/ncr-html-configured-receipt-20261014/conditional-worker/run-20261014T095945Z-5a1486/custody/browser-helper.cjs": {
+   "bytes": 23186,
+   "sha256": "2f0981b2356a51a85f34d3d6ed94a0d0a0606c48d306888711876a5c2b225dec"
+  },
+  ".cvf/runtime/ncr-html-configured-receipt-20261014/conditional-worker/run-20261014T095945Z-5a1486/custody/browser.json": {
+   "bytes": 6243,
+   "sha256": "7b7037e4545cdab7ad89bd7a0a0a0f02a49e17e51f3d786ead54a74e44d95d72"
+  },
+  ".cvf/runtime/ncr-html-configured-receipt-20261014/conditional-worker/run-20261014T095945Z-5a1486/custody/build1-decoded.html": {
+   "bytes": 2748,
+   "sha256": "cc1d2dfc42ed3e6dabb78f0834ddc9c08d76a45c2fb95297c93507f4033bf995"
+  },
+  ".cvf/runtime/ncr-html-configured-receipt-20261014/conditional-worker/run-20261014T095945Z-5a1486/custody/build1-download.html": {
+   "bytes": 2748,
+   "sha256": "cc1d2dfc42ed3e6dabb78f0834ddc9c08d76a45c2fb95297c93507f4033bf995"
+  },
+  ".cvf/runtime/ncr-html-configured-receipt-20261014/conditional-worker/run-20261014T095945Z-5a1486/custody/build1-route.json": {
+   "bytes": 4850,
+   "sha256": "360163795e7e6e98ba4d371398a2d1c47c12133d5da1363edf3d4cfa443775da"
+  },
+  ".cvf/runtime/ncr-html-configured-receipt-20261014/conditional-worker/run-20261014T095945Z-5a1486/custody/build2-decoded.html": {
+   "bytes": 2771,
+   "sha256": "304531b743e05c1ce2a441e13b5f087b88fa202aefdb3b41212153818e86ce68"
+  },
+  ".cvf/runtime/ncr-html-configured-receipt-20261014/conditional-worker/run-20261014T095945Z-5a1486/custody/build2-download.html": {
+   "bytes": 2771,
+   "sha256": "304531b743e05c1ce2a441e13b5f087b88fa202aefdb3b41212153818e86ce68"
+  },
+  ".cvf/runtime/ncr-html-configured-receipt-20261014/conditional-worker/run-20261014T095945Z-5a1486/custody/build2-route.json": {
+   "bytes": 4873,
+   "sha256": "5f88fde8e29111ee20f232182d49d3f6d2333c57e226058bb503d0223d115ce9"
+  },
+  ".cvf/runtime/ncr-html-configured-receipt-20261014/conditional-worker/run-20261014T095945Z-5a1486/custody/build3-decoded.html": {
+   "bytes": 3082,
+   "sha256": "d5f457aef1c68f217ebf25e2c16899a0da8cb2157d343efde90efcfbc4e8836f"
+  },
+  ".cvf/runtime/ncr-html-configured-receipt-20261014/conditional-worker/run-20261014T095945Z-5a1486/custody/build3-download.html": {
+   "bytes": 3082,
+   "sha256": "d5f457aef1c68f217ebf25e2c16899a0da8cb2157d343efde90efcfbc4e8836f"
+  },
+  ".cvf/runtime/ncr-html-configured-receipt-20261014/conditional-worker/run-20261014T095945Z-5a1486/custody/build3-route.json": {
+   "bytes": 5119,
+   "sha256": "944cd20822ba67ab4c1ce49b5b04b6f9bfdf5e21b15cd7870d541580b9f2c56a"
+  },
+  ".cvf/runtime/ncr-html-configured-receipt-20261014/conditional-worker/run-20261014T095945Z-5a1486/custody/raw-observations.json": {
+   "bytes": 4746,
+   "sha256": "ebba8869ea5150ca5e695433c9f339d85c7a2476d840d7b03377f7237021222d"
+  },
+  ".cvf/runtime/ncr-html-configured-receipt-20261014/conditional-worker/run-20261014T095945Z-5a1486/custody/runner-result.json": {
+   "bytes": 11521,
+   "sha256": "dbc90198090bf6d35a0824c0216c4078d2e25e3c7fbff0a96bd8447b806ce53e"
+  },
+  ".cvf/runtime/ncr-html-configured-receipt-20261014/conditional-worker/run-20261014T095945Z-5a1486/custody/stale-download.html": {
+   "bytes": 2748,
+   "sha256": "cc1d2dfc42ed3e6dabb78f0834ddc9c08d76a45c2fb95297c93507f4033bf995"
+  }
+ },
+ "logFiles": {
+  ".cvf/runtime/ncr-html-configured-receipt-20261014/conditional-worker/run-20261014T095945Z-5a1486/logs/egress.jsonl": {
+   "bytes": 5214,
+   "sha256": "097dd118cd373c56ea6da48c970fbda9c082331181fc3766b31fa9df883d464b"
+  },
+  ".cvf/runtime/ncr-html-configured-receipt-20261014/conditional-worker/run-20261014T095945Z-5a1486/logs/engine.log": {
+   "bytes": 395,
+   "sha256": "8a0b69cbc01401025fa7f155a6bab56d24303de0df3df3ed6a786f8d1f36996e"
+  },
+  ".cvf/runtime/ncr-html-configured-receipt-20261014/conditional-worker/run-20261014T095945Z-5a1486/logs/helper.stderr.log": {
+   "bytes": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  ".cvf/runtime/ncr-html-configured-receipt-20261014/conditional-worker/run-20261014T095945Z-5a1486/logs/web.log": {
+   "bytes": 2253,
+   "sha256": "0323d4d15f4c6730f02ff5bb5cfbacdea161de8c9bb2dab2924b6c9d47a0e61f"
+  }
+ },
+ "storeFiles": {
+  ".cvf/runtime/ncr-html-configured-receipt-20261014/conditional-worker/run-20261014T095945Z-5a1486/store/proof.sqlite": {
+   "bytes": 12288,
+   "sha256": "16f72c65604cf90c5022ad6d10f22e743f5de83ea860a45c1ab73380a84664c8"
+  },
+  ".cvf/runtime/ncr-html-configured-receipt-20261014/conditional-worker/run-20261014T095945Z-5a1486/store/proof.sqlite-shm": {
+   "bytes": 32768,
+   "sha256": "fd4c9fda9cd3f9ae7c962b0ddf37232294d55580e1aa165aa06129b8549389eb"
+  },
+  ".cvf/runtime/ncr-html-configured-receipt-20261014/conditional-worker/run-20261014T095945Z-5a1486/store/proof.sqlite-wal": {
+   "bytes": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+ },
+ "retainedRawNamespace": ".cvf/runtime/ncr-html-configured-receipt-20261014/conditional-worker/run-20261014T095945Z-5a1486",
+ "gateMetadata": {
+  "workerReturnFastGate": "FINAL_RESULTS_IN_BOUND_SIDECAR",
+  "sidecar": ".cvf/runtime/ncr-html-configured-receipt-20261014/conditional-worker-logs",
+  "note": "final gate results are in the ignored sidecar and the terminal message because bytes may not change after the gate"
+ },
+ "unknowns": [
+  "native model usage and billing",
+  "WAL read coherence over the bind mount (read-only sampling observed zero errors; not a coherence proof)",
+  "Chromium child processes are closed by Playwright and covered by taskkill /T only while their parent lives",
+  "registry.npmjs.org metadata GET attempt is attributed to the installed Next getVersionInfo by Local's prior diagnostic; here it is only classified and blocked",
+  "cost and latency are test settings, not measurements"
+ ]
+}

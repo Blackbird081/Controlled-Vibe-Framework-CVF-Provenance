@@ -9,12 +9,68 @@ const sha = buffer => createHash('sha256').update(buffer).digest('hex');
 const LOCAL_HOSTS = new Set(['127.0.0.1', 'localhost']);
 const EXPORT_PATH = '/api/artifacts/export';
 
-function waitOwnedEngineStopped() {
-  return new Promise((resolve, reject) => {
-    const timer = setTimeout(() => reject(new Error('OWNED_ENGINE_STOPPED not received')), 60000);
-    require('node:readline').createInterface({ input: process.stdin }).on('line', line => {
-      if (line.trim() === 'OWNED_ENGINE_STOPPED') { clearTimeout(timer); resolve(); }
-    });
+// Opt-in Node egress guard. Next and the browser helper load this file through NODE_OPTIONS --require (the helper itself runs from a copy),
+// so only loopback TCP/DNS/UDP is allowed; every other destination is denied and logged as host, route and a finite callsite.
+function installEgressGuard() {
+  const fs = require('node:fs'), net = require('node:net'), dns = require('node:dns'), dgram = require('node:dgram');
+  const LOG = process.env.CVF_HCR_EGRESS_LOG, LOCAL = new Set(['127.0.0.1', 'localhost', '::1']), seen = new Set(), self = path.basename(__filename);
+  const log = entry => { try { fs.appendFileSync(LOG, JSON.stringify({ pid: process.pid, title: process.title, argv: process.argv.slice(1, 4).map(a => String(a).split(/[\\/]/).pop()), ...entry }) + '\n'); } catch (_) {} };
+  const site = () => new Error().stack.split('\n').slice(2).map(l => /([^\\/()\s]+:\d+):\d+\)?\s*$/.exec(l)).filter(m => m && !m[1].startsWith(self)).slice(0, 3).map(m => m[1]);
+  const deny = (host, via) => log({ event: 'denied', via, host: /^[a-z0-9.:-]{1,253}$/i.test(String(host)) ? String(host).toLowerCase() : 'REDACTED_HOST', site: site() });
+  const isLocal = host => LOCAL.has(String(host).replace(/^\[|\]$/g, '').toLowerCase());
+  const connect = net.Socket.prototype.connect;
+  net.Socket.prototype.connect = function (...args) {
+    let a = Array.isArray(args[0]) ? args[0][0] : args[0];
+    if (a === null || typeof a !== 'object') a = /^\d+$/.test(String(a)) ? { port: Number(a), host: typeof args[1] === 'string' ? args[1] : 'localhost' } : { path: String(a) };
+    if (a.path) return connect.apply(this, args);
+    if (!isLocal(a.host || 'localhost')) {
+      deny(a.host, 'tcp');
+      process.nextTick(() => this.destroy(Object.assign(new Error('egress denied'), { code: 'ECVFEGRESSDENIED' })));
+      return this;
+    }
+    if (!seen.has(a.port)) { seen.add(a.port); log({ event: 'loopback-connect', port: Number(a.port) }); }
+    return connect.apply(this, args);
+  };
+  const lookup = dns.lookup;
+  dns.lookup = function (host, ...rest) {
+    if (host && !isLocal(host)) {
+      deny(host, 'dns');
+      return process.nextTick(rest[rest.length - 1], Object.assign(new Error('egress denied'), { code: 'ECVFEGRESSDENIED' }));
+    }
+    return lookup.call(this, host, ...rest);
+  };
+  for (const method of ['connect', 'send']) {
+    const original = dgram.Socket.prototype[method];
+    dgram.Socket.prototype[method] = function (...args) {
+      const host = args.slice(1).reverse().find(x => typeof x === 'string' && !/^\d+$/.test(x));
+      if (host !== undefined && !isLocal(host)) { deny(host, 'udp'); throw Object.assign(new Error('egress denied'), { code: 'ECVFEGRESSDENIED' }); }
+      return original.apply(this, args);
+    };
+  }
+  log({ event: 'loaded', nodeOptionsActive: Boolean(process.env.NODE_OPTIONS) });
+  net.connect({ host: 'egress-selftest.invalid', port: 9 }).on('error', () => {});
+  const udp = dgram.createSocket('udp4');
+  try { udp.send('x', 9, 'egress-selftest.invalid'); } catch (_) {}
+  udp.close();
+}
+if (require.main !== module) { if (process.env.CVF_HCR_EGRESS_LOG) installEgressGuard(); return; }
+
+// Parent admission channel: one request line on stdout, one reply line on stdin. Any other reply stops the run before the next effect.
+function controlChannel() {
+  const replies = [];
+  let wake = null;
+  require('node:readline').createInterface({ input: process.stdin }).on('line', line => { replies.push(line.trim()); if (wake) wake(); });
+  return (request, expected) => new Promise((resolve, reject) => {
+    const timer = setTimeout(() => reject(new Error(`${expected} not received`)), 90000);
+    wake = () => {
+      if (!replies.length) return;
+      clearTimeout(timer);
+      wake = null;
+      const line = replies.shift();
+      line.startsWith(expected) ? resolve(line) : reject(new Error(`control refused: ${line.slice(0, 160)}`));
+    };
+    process.stdout.write(request + '\n');
+    wake();
   });
 }
 
@@ -24,15 +80,15 @@ async function composition(modules, baseURL, output, custody) {
   const steps = [];
   const mark = (step, extra = {}) => steps.push({ step, atMs: Date.now(), ...extra });
   const result = { mode: 'configured-receipt-browser-composition', partial: true, steps };
+  const control = controlChannel();
   const browser = await chromium.launch({ headless: true, args: ['--host-resolver-rules=MAP * ~NOTFOUND , EXCLUDE 127.0.0.1 , EXCLUDE localhost'] });
   try {
     const context = await browser.newContext({ baseURL, acceptDownloads: true });
     const externalRequests = [];
-    const category = host => (/(^|\.)(googleapis|gstatic)\.com$/i.test(host) ? 'passive-font-asset' : 'other-external');
     await context.route('**/*', route => {
       const url = new URL(route.request().url());
-      if (LOCAL_HOSTS.has(url.hostname)) return route.continue();
-      externalRequests.push({ method: route.request().method(), category: category(url.hostname) });
+      if (!url.hostname || LOCAL_HOSTS.has(url.hostname)) return route.continue();
+      externalRequests.push({ host: url.hostname, method: route.request().method() });
       return route.abort('blockedbyclient');
     });
     const csrf = await (await context.request.get('/api/auth/csrf')).json();
@@ -73,6 +129,8 @@ async function composition(modules, baseURL, output, custody) {
     const select = async name => { await page.getByTestId(`export-record-${records[name]}`).click(); };
     const build = async label => {
       assert.ok(exportPosts.length < 3, 'export POST cap');
+      const n = exportPosts.length + 1;  // the parent admits each export (cap, egress, engine liveness) before the click
+      await control(`EXPORT_GATE_REQUEST ${JSON.stringify({ n, external: externalRequests, aiPosts: aiRequests.length })}`, `EXPORT_GATE_OK ${n}`);
       const pending = page.waitForResponse(r => new URL(r.url()).pathname === EXPORT_PATH && r.request().method() === 'POST', { timeout: 30000 });
       await page.getByRole('button', { name: 'Build HTML', exact: true }).click();
       const response = await pending;
@@ -195,9 +253,8 @@ async function composition(modules, baseURL, output, custody) {
     assert.equal(exportPosts.length, 2);
     mark('reset-end');
 
-    process.stdout.write('OWNED_ENGINE_STOP_REQUEST\n');
     mark('engine-stop-requested');
-    await waitOwnedEngineStopped();
+    await control('OWNED_ENGINE_STOP_REQUEST', 'OWNED_ENGINE_STOPPED');
     mark('engine-stopped');
     await field('Title').fill('HCR Engine Down Packet');
     mark('build-3-start');

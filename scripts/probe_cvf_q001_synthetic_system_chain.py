@@ -19,6 +19,8 @@ import threading
 import time
 import urllib.error
 import urllib.request
+from collections import Counter
+from contextlib import closing, suppress
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 
@@ -134,8 +136,6 @@ class EngineProxy(ThreadingHTTPServer):
         self.engine_port = engine_port
         self.mode = "forward"
         self.forwarded = 0
-        self.attempted = 0
-        self.forward_failures = 0
         self.engine_observations: dict[str, dict] = {}
         self.committed_before_delay = threading.Event()
         self.daemon_threads = True
@@ -161,16 +161,11 @@ class ProxyHandler(BaseHTTPRequestHandler):
                 f"http://127.0.0.1:{server.engine_port}/api/v1/evaluate",
                 data=raw, headers={"Content-Type": "application/json"}, method="POST",
             )
-            server.attempted += 1
             try:
                 with urllib.request.urlopen(request, timeout=6) as response:
                     status, payload = response.status, response.read()
             except urllib.error.HTTPError as error:
                 status, payload = error.code, error.read()
-            except OSError:
-                server.forward_failures += 1  # engine unreachable: drop the connection, do not simulate a status
-                self.close_connection = True
-                return
             server.forwarded += 1
             if status == 200:
                 submitted = json.loads(raw)
@@ -449,285 +444,292 @@ def run_probe(engine_docker_image: str | None = None, *, browser_export_only: bo
                 os.rmdir(junction)
 
 
-HCR_ROOT = RUNTIME / "ncr-html-configured-receipt-20261014" / "worker"
-HCR_PRODUCT_PINS = "docs/reviews/evidence/ncr-html-configured-receipt-dispatch-20261014.json"
+HCR_ROOT = RUNTIME / "ncr-html-configured-receipt-20261014" / "conditional-worker"
+HCR_PINS = "docs/reviews/evidence/ncr-html-configured-receipt-repair-dispatch-20261014.json"
+HCR_PATHS = {"scripts/probe_cvf_q001_synthetic_system_chain.py", "scripts/probe_cvf_w05_browser_chain.cjs", "docs/reviews/CVF_NCR_HTML_CONFIGURED_RECEIPT_CONDITIONAL_RETURN_2026-10-14.md",
+             "docs/reviews/evidence/ncr-html-configured-receipt-conditional-worker-20261014.json"}
+HCR_EXPORT_CAP, HCR_ALIVE_CAP = 3, 2
+HCR_PASSIVE = {"fonts.googleapis.com": "passive-font-asset", "fonts.gstatic.com": "passive-font-asset", "registry.npmjs.org": "framework-version-metadata"}
 HCR_SAFE_ENV = {"PATH", "SYSTEMROOT", "SYSTEMDRIVE", "TEMP", "TMP", "USERPROFILE", "HOMEDRIVE", "HOMEPATH", "APPDATA",
                 "LOCALAPPDATA", "COMSPEC", "PATHEXT", "WINDIR", "PROCESSOR_ARCHITECTURE", "NUMBER_OF_PROCESSORS", "OS", "USERNAME"}
-HCR_RELAY = ("import asyncio,sys\nT=sys.argv[1]\n"
-             "async def pipe(r,w):\n try:\n  while d:=await r.read(65536):\n   w.write(d);await w.drain()\n except Exception:pass\n finally:\n  w.close()\n"
-             "async def h(r,w):\n try:u=await asyncio.open_connection(T,8100)\n except Exception:\n  w.close();return\n await asyncio.gather(pipe(r,u[1]),pipe(u[0],w))\n"
-             "async def m():\n s=await asyncio.start_server(h,'0.0.0.0',8100);await s.serve_forever()\nasyncio.run(m())\n")
-# Owned Node preload (written into the ignored namespace, never a tracked helper): loopback-only TCP/DNS for Next and the browser helper.
-HCR_PRELOAD = r"""'use strict';
-const fs = require('node:fs'), net = require('node:net'), dns = require('node:dns');
-const LOG = process.env.CVF_HCR_EGRESS_LOG, LOCAL = new Set(['127.0.0.1', 'localhost', '::1']), seen = new Set();
-const log = entry => { try { fs.appendFileSync(LOG, JSON.stringify({ pid: process.pid, title: process.title, argv: process.argv.slice(1, 4).map(a => String(a).split(/[\\/]/).pop()), ...entry }) + '\n'); } catch (_) {} };
-const kind = host => (/(^|\.)(googleapis|gstatic)\.com$/i.test(host) ? 'passive-font-asset' : /dashscope|aliyun|openai|anthropic|deepseek|generativelanguage/i.test(host) ? 'provider-or-ai-api' : 'other-external');
-const denied = host => ({ event: /\.invalid$/.test(host) ? 'selftest-denied' : 'denied', category: kind(host) });
-const connect = net.Socket.prototype.connect;
-net.Socket.prototype.connect = function (...args) {
-  let a = Array.isArray(args[0]) ? args[0][0] : args[0];
-  if (a === null || typeof a !== 'object') a = /^\d+$/.test(String(a)) ? { port: Number(a), host: typeof args[1] === 'string' ? args[1] : 'localhost' } : { path: String(a) };
-  if (a.path) return connect.apply(this, args);
-  const host = String(a.host || 'localhost').replace(/^\[|\]$/g, '').toLowerCase();
-  if (!LOCAL.has(host)) {
-    log(denied(host));
-    process.nextTick(() => this.destroy(Object.assign(new Error('egress denied'), { code: 'ECVFEGRESSDENIED' })));
-    return this;
-  }
-  if (!seen.has(a.port)) { seen.add(a.port); log({ event: 'loopback-connect', port: Number(a.port) }); }
-  return connect.apply(this, args);
-};
-const lookup = dns.lookup;
-dns.lookup = function (host, ...rest) {
-  if (host && !LOCAL.has(String(host).toLowerCase())) {
-    log({ ...denied(String(host)), event: 'denied-dns' });
-    return process.nextTick(rest[rest.length - 1], Object.assign(new Error('egress denied'), { code: 'ECVFEGRESSDENIED' }));
-  }
-  return lookup.call(this, host, ...rest);
-};
-log({ event: 'loaded', nodeOptionsActive: Boolean(process.env.NODE_OPTIONS) });
-net.connect({ host: 'egress-selftest.invalid', port: 9 }).on('error', () => {});
-"""
-
-def hcr_env(extra: dict) -> dict:
-    env = {k: v for k, v in os.environ.items() if k.upper() in HCR_SAFE_ENV}
-    env.update(extra)
-    return env
+# Bounded transport into the network=none engine container: one fixed loopback HTTP call per docker exec.
+HCR_EXEC = ("import http.client,json,sys\nx=json.load(sys.stdin);c=http.client.HTTPConnection('127.0.0.1',8100,timeout=4)\n"
+            "c.request(x['method'],x['path'],json.dumps(x['body']) if x.get('body') is not None else None,{'Content-Type':'application/json'})\n"
+            "r=c.getresponse();print(json.dumps({'status':r.status,'body':r.read().decode()}))\n")
 
 def hcr_docker(*args: str, check: bool = True, timeout: int = 90) -> subprocess.CompletedProcess:
     return subprocess.run(["docker", *args], capture_output=True, text=True, check=check, timeout=timeout)
 
+def hcr_exec(container: str, method: str, path: str, body: dict | None = None, timeout: int = 6) -> tuple[int, bytes]:
+    proc = subprocess.run(["docker", "exec", "-i", container, "python", "-c", HCR_EXEC], capture_output=True, text=True, timeout=timeout, check=True,
+                          input=json.dumps({"method": method, "path": path, "body": body}))
+    reply = json.loads(proc.stdout)
+    return reply["status"], reply["body"].encode()
+
 def hcr_ro_rows(store: Path) -> list:
-    conn = sqlite3.connect(store.resolve().as_uri() + "?mode=ro", uri=True, timeout=1)
-    try:
+    if not store.exists():
+        return []
+    with closing(sqlite3.connect(store.resolve().as_uri() + "?mode=ro", uri=True, timeout=1)) as conn:
         return conn.execute("SELECT ordinal, request_id, block_json, block_hash FROM blocks ORDER BY ordinal").fetchall()
-    finally:
-        conn.close()
 
-class HcrPoller(threading.Thread):
-    def __init__(self, store: Path):
-        super().__init__(daemon=True)
-        self.store, self.halt, self.samples, self.errors = store, threading.Event(), [], 0
+def hcr_egress(path: Path, event: str | None = None) -> list:
+    return [e for e in (json.loads(x) for x in path.read_text(encoding="utf-8").splitlines() if x.strip()) if event in (None, e["event"])] if path.exists() else []
 
-    def run(self) -> None:
-        while not self.halt.is_set():
+def hcr_classify(host: str) -> str:
+    host = host.lower()
+    if host == "egress-selftest.invalid" or host in HCR_PASSIVE:
+        return HCR_PASSIVE.get(host, "selftest")
+    return "provider-or-ai-api" if any(t in host for t in ("dashscope", "aliyun", "openai", "anthropic", "deepseek", "generativelanguage")) else "unknown-external"
+
+def hcr_admit_egress(denied: list) -> list:  # fail closed: every denied destination must be the self-test or an exact known passive request
+    for entry in denied:
+        if (category := hcr_classify(entry["host"])) not in ("selftest", *HCR_PASSIVE.values()):
+            raise RuntimeError(f"unclassified egress {category}: host={entry['host']} via={entry.get('via')} site={entry.get('site')}")
+    return sorted(hcr_classify(e["host"]) for e in denied)
+
+def hcr_admit_export(n: int, state: dict, denied: list, alive: bool, failure: str | None) -> None:  # pre-effect admission: failure, cap/order, egress, planned engine liveness
+    if failure or state["error"] or n != state["exports"] + 1 or n > HCR_EXPORT_CAP or alive != (n <= 2):
+        raise RuntimeError(f"export POST {n} refused (cap {HCR_EXPORT_CAP}, alive={alive}): {failure or state['error']}")
+    hcr_admit_egress(denied)
+    state["exports"] = n
+
+def hcr_raised(fn, *args) -> bool:
+    with suppress(RuntimeError):
+        fn(*args)
+        return False
+    return True
+
+def hcr_admit_forward(alive: bool, attempts: int) -> str:
+    if alive and attempts >= HCR_ALIVE_CAP:
+        raise RuntimeError("alive-engine forward budget exhausted")
+    return "alive" if alive else "dead"
+
+def hcr_admit_stop(requests: int, completed: int, matched_rows: int) -> None:
+    if requests != 1 or completed != 2 or matched_rows != 2:
+        raise RuntimeError(f"stop refused: request {requests}, completed {completed}, matched rows {matched_rows}")
+
+def hcr_final_ok(failures: list, cleanup: dict) -> bool:
+    return not (failures or cleanup["errors"] or cleanup["pidsAlive"] or cleanup["dockerRemaining"] or cleanup["portsListening"]) and cleanup["stageRemoved"]
+
+class HcrProxy(ThreadingHTTPServer):  # opt-in; legacy EngineProxy/ProxyHandler stay untouched; the engine is reachable only through bounded docker exec
+    def __init__(self, port: int, container: str):
+        super().__init__(("127.0.0.1", port), HcrHandler)
+        self.container, self.lock, self.alive, self.failure, self.daemon_threads, self.order, self.observed = container, threading.Lock(), True, None, True, [], {}
+        self.arrived = self.alive_attempts = self.dead_failures = self.refused = 0
+
+class HcrHandler(BaseHTTPRequestHandler):
+    log_message = lambda *_args: None  # noqa: E731 - quiet like the legacy handler
+
+    def do_POST(self) -> None:
+        s: HcrProxy = self.server  # type: ignore[assignment]
+        raw = self.rfile.read(int(self.headers.get("Content-Length", "0")))
+        if self.path != "/api/v1/evaluate":
+            return self.send_error(404)
+        with s.lock:
+            s.arrived += 1
             try:
-                rows = hcr_ro_rows(self.store)
-                self.samples.append((int(time.time() * 1000), [(r[1], r[3], hashlib.sha256(r[2].encode()).hexdigest()) for r in rows]))
-            except sqlite3.Error:
-                self.errors += 1
-            time.sleep(0.15)
+                mode = hcr_admit_forward(s.alive, s.alive_attempts)
+            except RuntimeError as error:  # a refused extra evaluate is never executed
+                s.refused, s.failure = s.refused + 1, s.failure or str(error)
+                return self.send_error(429)
+            s.alive_attempts += mode == "alive"
+        try:
+            status, payload = hcr_exec(s.container, "POST", self.path, json.loads(raw))
+        except (OSError, subprocess.SubprocessError, ValueError, KeyError) as error:  # actual absence/ambiguity: no replay, no simulated status
+            with s.lock:
+                s.dead_failures += mode == "dead"
+                s.failure = s.failure or (None if mode == "dead" else f"alive forward failed or ambiguous: {type(error).__name__}")
+            self.close_connection = True
+            return
+        with s.lock:
+            s.failure = s.failure or ("engine answered after confirmed stop" if mode == "dead" else None)
+            s.order.append(json.loads(raw)["request_id"])
+            s.observed[s.order[-1]] = (status, payload)
+        self.send_response(status)
+        self.send_header("Content-Type", "application/json")
+        self.send_header("Content-Length", str(len(payload)))
+        self.end_headers()
+        self.wfile.write(payload)
 
-def hcr_window(poller: HcrPoller, steps: list, start: str, end: str) -> dict:
-    at = {s["step"]: s["atMs"] for s in steps}
-    counts = [len(rows) for ms, rows in poller.samples if at[start] <= ms <= at[end]]
-    return {"from": start, "to": end, "samples": len(counts), "min": min(counts, default=None), "max": max(counts, default=None)}
+def hcr_controls() -> dict:  # tiny generic harness probes (no product, engine or provider call); original gaps and legacy identity: separate static comparisons
+    bad, clean, first = {"host": "example.org", "via": "tcp", "site": ["x.js:1"]}, {"errors": [], "pidsAlive": [], "dockerRemaining": [], "portsListening": [], "stageRemoved": True}, {"exports": 0, "error": None}
+    corrected = {
+        "unknownAndProviderEgressRaise": hcr_raised(hcr_admit_egress, [bad]) and hcr_raised(hcr_admit_egress, [{"host": "dashscope.aliyuncs.com"}]),
+        "knownPassiveClassified": hcr_admit_egress([{"host": h} for h in (*HCR_PASSIVE, "egress-selftest.invalid")]) == ["framework-version-metadata", "passive-font-asset", "passive-font-asset", "selftest"],
+        "unknownPreflightBlocksFirstExport": hcr_raised(hcr_admit_export, 1, first, [bad], True, None) and first["exports"] == 0,
+        "fourthExportAndWrongLivenessRaise": hcr_raised(hcr_admit_export, 4, {"exports": 3, "error": None}, [], False, None) and hcr_raised(hcr_admit_export, 3, {"exports": 2, "error": None}, [], True, None),
+        "thirdAliveForwardRaises": hcr_raised(hcr_admit_forward, True, HCR_ALIVE_CAP) and hcr_admit_forward(False, HCR_ALIVE_CAP) == "dead",
+        "earlyOrRepeatedStopRaises": hcr_raised(hcr_admit_stop, 1, 1, 2) and hcr_raised(hcr_admit_stop, 1, 2, 1) and hcr_raised(hcr_admit_stop, 2, 2, 2) and hcr_admit_stop(1, 2, 2) is None,
+        "cleanupErrorCannotBeOk": not any(hcr_final_ok(f, {**clean, **c}) for f, c in (([], {"errors": ["x"]}), ([], {"pidsAlive": [1]}), (["f"], {}), ([], {"stageRemoved": False}))) and hcr_final_ok([], clean)}
+    if not all(corrected.values()):
+        raise RuntimeError("harness control probes failed: " + json.dumps(corrected, sort_keys=True))
+    return corrected
+
+def hcr_verify_engine(name: str, image: str, engine_process: subprocess.Popen) -> dict:
+    host = hcr_docker("context", "inspect", "--format", "{{.Endpoints.docker.Host}}").stdout.strip()
+    info = json.loads(hcr_docker("container", "inspect", name).stdout)[0]
+    image_env = {e.split("=")[0] for e in json.loads(hcr_docker("image", "inspect", image).stdout)[0]["Config"]["Env"]}
+    probe = hcr_docker("exec", name, "python", "-c", "import socket;print(','.join(n for _, n in socket.if_nameindex()))\ntry:socket.create_connection(('1.1.1.1',53),3);print('OPEN')\nexcept OSError:print('BLOCKED')").stdout.split()
+    ev = {"dockerEndpointKind": host.split(":")[0], "idPrefix": info["Id"][:12], "name": info["Name"], "image": info["Image"], "networkMode": info["HostConfig"]["NetworkMode"],
+          "networks": sorted(info["NetworkSettings"]["Networks"]), "portBindings": info["HostConfig"]["PortBindings"], "interfaces": probe[0], "egressProbe": probe[1],
+          "mounts": {m["Destination"]: ("rw" if m["RW"] else "ro") for m in info["Mounts"]}, "addedEnvNames": sorted({e.split("=")[0] for e in info["Config"]["Env"]} - image_env)}
+    if not (ev["dockerEndpointKind"] == "npipe" and os.environ.get("DOCKER_HOST", "npipe:").startswith("npipe:") and ev["name"] == "/" + name and ev["image"] == image and ev["networkMode"] == "none"
+            and ev["networks"] == ["none"] and not ev["portBindings"] and ev["interfaces"] == "lo" and ev["egressProbe"] == "BLOCKED" and ev["mounts"] == {"/engine": "ro", "/data": "rw"}
+            and ev["addedEnvNames"] == ["CVF_GOVERNANCE_LEDGER_PATH"] and engine_process.poll() is None):
+        raise RuntimeError("engine container identity/isolation not verified: " + json.dumps(ev, sort_keys=True))
+    return {**ev, "id": info["Id"]}
+
+def hcr_remove_stage(stage: Path, namespace: Path) -> None:
+    if (stage / WEB / "node_modules").exists():
+        os.rmdir(stage / WEB / "node_modules")  # junction to the installed dependencies: remove the link, never the target
+    if stage.is_symlink() or not stage.resolve().is_relative_to(namespace.resolve()):
+        raise RuntimeError("stage escaped the owned namespace")
+    for base, dirs, files in os.walk(stage):
+        if any(os.lstat(Path(base) / item).st_file_attributes & 0x400 for item in dirs + files):
+            raise RuntimeError("reparse point inside stage; not removed")
+    shutil.rmtree(stage)
 
 def run_configured_receipt_browser_composition(image: str) -> dict:
-    started = time.time()
-    failures: list[str] = []
-    dispatch = json.loads((ROOT / HCR_PRODUCT_PINS).read_text(encoding="utf-8"))
-    drift = [p["path"] for p in dispatch["sourcePins"] if not p["path"].startswith("scripts/")
-             and hashlib.sha256((ROOT / p["path"]).read_bytes()).hexdigest() != p["rawSha256"]]
-    if drift: raise RuntimeError(f"product pin drift: {drift}")
+    started, failures, state = time.time(), [], {"exports": 0, "stopRequests": 0, "gates": [], "error": None}
+    controls, git = hcr_controls(), lambda *a: subprocess.check_output(["git", *a], cwd=ROOT, text=True)
+    pins = json.loads((ROOT / HCR_PINS).read_text(encoding="utf-8"))["sourcePins"]
+    drift = [p["path"] for p in pins if not p["path"].startswith("scripts/") and hashlib.sha256((ROOT / p["path"]).read_bytes()).hexdigest() != p["rawSha256"]]
+    dirty = sorted(x[3:].strip('"') for x in git("status", "--porcelain", "--untracked-files=all").splitlines() if x[3:].strip('"') not in HCR_PATHS)
     inspected = hcr_docker("image", "inspect", image, "--format", "{{.Id}} {{.Os}} {{.Architecture}}").stdout.split()
-    if inspected != [image, "linux", "amd64"]: raise RuntimeError("immutable image ID/os/architecture mismatch")
-    HCR_ROOT.mkdir(parents=True, exist_ok=True)
+    if drift or dirty or git("diff", "--cached", "--name-only").split() or inspected != [image, "linux", "amd64"]:
+        raise RuntimeError(f"pin drift {drift}, extra dirty paths {dirty}, staged paths or image mismatch {inspected}")
     scratch = HCR_ROOT / ("run-" + time.strftime("%Y%m%dT%H%M%SZ", time.gmtime()) + "-" + secrets.token_hex(3))
-    scratch.mkdir()
-    if scratch.is_symlink() or not scratch.resolve().is_relative_to(RUNTIME.resolve()): raise RuntimeError("namespace escaped ignored runtime")
-    stage, custody, logs = scratch / "source", scratch / "custody", scratch / "logs"
-    custody.mkdir(); logs.mkdir()
-    staged_count = stage_tracked_source(stage)
-    web, engine = stage / WEB, stage / ENGINE
-    modules = ROOT / WEB / "node_modules"
-    junction = web / "node_modules"
-    subprocess.run(["cmd", "/c", "mklink", "/J", str(junction), str(modules)], check=True, capture_output=True)
-    store = scratch / "store" / "proof.sqlite"
-    store.parent.mkdir()
-    while len(ports := {free_port(), free_port(), free_port()}) < 3:
-        pass
-    engine_port, proxy_port, web_port = sorted(ports)
-    token = "synthetic-hcr-" + secrets.token_hex(24)
-    preload, egress_log = scratch / "egress-preload.cjs", logs / "egress.jsonl"
-    preload.write_text(HCR_PRELOAD, encoding="utf-8")
-    suffix = secrets.token_hex(4)
-    net_name, engine_name, relay_name = f"cvf-ncr-hcr-net-{suffix}", f"cvf-q001-web-{suffix}", f"cvf-q001-web-relay-{suffix}"
-    names_only = sorted(k for k in os.environ if any(t in k.upper() for t in ("KEY", "TOKEN", "SECRET", "PASSWORD", "AUTH", "DATABASE", "CREDENTIAL", "DASHSCOPE", "ALIBABA", "OPENAI", "ANTHROPIC")))
-    engine_process = relay_process = web_process = helper = proxy = proxy_thread = poller = None
-    logs_open = [open(logs / n, "wb") for n in ("engine.log", "relay.log", "web.log", "helper.stderr.log")]
-    ipc: dict = {"stopRequests": 0, "other": [], "error": None}
-    output = {"schemaVersion": "cvf.ncrHtmlConfiguredReceiptComposition.v1", "scope": "SYNTHETIC_BROWSER_TRANSPORT_PERSISTENCE_PRESENTATION_ONLY",
-              "namespace": scratch.relative_to(ROOT).as_posix(), "image": inspected, "stagedGitVisibleFileCount": staged_count,
-              "ports": {"engineRelay": engine_port, "proxy": proxy_port, "web": web_port}, "credentialLikeEnvNamesCleared": names_only,
-              "executionBaseHead": subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()}
+    stage, custody, logs, store = scratch / "source", scratch / "custody", scratch / "logs", scratch / "store" / "proof.sqlite"
+    for folder in (custody, logs, store.parent):
+        folder.mkdir(parents=True)
+    proxy_port, web_port = sorted({free_port(), free_port()})  # a collision raises here, before any effect
+    name, base, egress_log, cjs = f"cvf-q001-web-{secrets.token_hex(4)}", f"http://127.0.0.1:{web_port}", logs / "egress.jsonl", ROOT / "scripts/probe_cvf_w05_browser_chain.cjs"
+    engine_process = web_process = helper = proxy = proxy_thread = None
+    owned_pids: set = set()  # Next server, browser helper and every Node process that loaded the egress guard
+    logs_open = [open(logs / n, "wb") for n in ("engine.log", "web.log", "helper.stderr.log")]
+    output = {"schemaVersion": "cvf.ncrHtmlConfiguredReceiptComposition.v2", "scope": "SYNTHETIC_BROWSER_TRANSPORT_PERSISTENCE_PRESENTATION_ONLY", "controls": controls, "state": state,
+              "namespace": scratch.relative_to(ROOT).as_posix(), "image": inspected, "ports": {"proxy": proxy_port, "web": web_port}, "executionBaseHead": git("rev-parse", "HEAD").strip(),
+              "credentialLikeEnvNamesCleared": sorted(k for k in os.environ if any(t in k.upper() for t in ("KEY", "TOKEN", "SECRET", "PASSWORD", "AUTH", "DATABASE", "CREDENTIAL", "DASHSCOPE", "ALIBABA", "OPENAI", "ANTHROPIC")))}
     try:
-        hcr_docker("network", "create", "--internal", net_name)
+        output["stagedGitVisibleFileCount"] = stage_tracked_source(stage)
+        web, engine, modules = stage / WEB, stage / ENGINE, ROOT / WEB / "node_modules"
+        subprocess.run(["cmd", "/c", "mklink", "/J", str(web / "node_modules"), str(modules)], check=True, capture_output=True)
         engine_process = subprocess.Popen(
-            ["docker", "run", "--rm", "--pull=never", "--name", engine_name, "--network", net_name,
+            ["docker", "run", "--rm", "--pull=never", "--name", name, "--network", "none",
              "--mount", f"type=bind,src={engine},dst=/engine,readonly", "--mount", f"type=bind,src={store.parent},dst=/data",
              "-w", "/engine", "-e", "CVF_GOVERNANCE_LEDGER_PATH=/data/proof.sqlite", image, "python", "-m", "uvicorn",
-             "api.server:app", "--host", "0.0.0.0", "--port", "8100"], stdout=logs_open[0], stderr=subprocess.STDOUT)
-        engine_process.cvf_docker_name = engine_name
-        relay_process = subprocess.Popen(
-            ["docker", "run", "--rm", "--pull=never", "--name", relay_name, "--network", "bridge", "-p", f"127.0.0.1:{engine_port}:8100",
-             image, "python", "-c", HCR_RELAY, engine_name], stdout=logs_open[1], stderr=subprocess.STDOUT)
-        relay_process.cvf_docker_name = relay_name
-        for _ in range(60):
-            if hcr_docker("container", "inspect", relay_name, "--format", "{{.State.Running}}", check=False).stdout.strip() == "true":
-                break
-            time.sleep(0.5)
-        hcr_docker("network", "connect", net_name, relay_name)
-        wait_ready(f"http://127.0.0.1:{engine_port}/api/v1/health", engine_process)
-        inspect = json.loads(hcr_docker("container", "inspect", engine_name).stdout)[0]
-        engine_id = inspect["Id"]
-        probe = hcr_docker("exec", engine_name, "python", "-c",
-                           "import socket\ns=socket.socket();s.settimeout(3)\ntry:\n s.connect(('1.1.1.1',53));print('OPEN')\nexcept OSError:\n print('BLOCKED')\n", check=False)
-        output["engineContainer"] = {"idPrefix": engine_id[:12], "networks": sorted(inspect["NetworkSettings"]["Networks"]), "internalNetwork": net_name,
-                                     "mounts": [{"dst": m["Destination"], "rw": m["RW"]} for m in inspect["Mounts"]], "credentialEnvNames": [e.split("=")[0] for e in inspect["Config"]["Env"] if e.split("=")[0] != "PATH"],
-                                     "egressProbe": probe.stdout.strip(), "relay": "same image, no mounts, no credentials; bridge plus internal network; forwards loopback port to engine"}
-        if output["engineContainer"]["egressProbe"] != "BLOCKED" or output["engineContainer"]["networks"] != [net_name]:
-            failures.append("engine container is not egress-isolated")
-        if store.exists() and hcr_ro_rows(store):
-            failures.append("fresh store did not begin empty")
-        proxy = EngineProxy(proxy_port, engine_port)
+             "api.server:app", "--host", "127.0.0.1", "--port", "8100"], stdout=logs_open[0], stderr=subprocess.STDOUT)
+        engine_process.cvf_docker_name = name
+        for _ in range(150):  # health through the same bounded exec transport
+            time.sleep(0.4)
+            try:
+                if engine_process.poll() is None and hcr_exec(name, "GET", "/api/v1/health")[0] == 200:
+                    break
+            except (OSError, subprocess.SubprocessError, ValueError):
+                pass
+        else:
+            raise TimeoutError("owned engine not healthy")
+        output["engineContainer"] = hcr_verify_engine(name, image, engine_process)
+        if hcr_ro_rows(store):
+            raise RuntimeError("fresh store did not begin empty")
+        proxy = HcrProxy(proxy_port, name)
         proxy_thread = threading.Thread(target=proxy.serve_forever, daemon=True)
         proxy_thread.start()
-        base = f"http://127.0.0.1:{web_port}"
-        env = hcr_env({
-            "NODE_OPTIONS": f'--require "{preload.as_posix()}"', "CVF_HCR_EGRESS_LOG": str(egress_log), "NEXT_TELEMETRY_DISABLED": "1",
+        shutil.copy2(cjs, custody / "browser-helper.cjs")  # runs as the entry module; the repository path is the --require guard copy
+        env = {k: v for k, v in os.environ.items() if k.upper() in HCR_SAFE_ENV}
+        env.update({
+            "NODE_OPTIONS": f'--require "{cjs.as_posix()}"', "CVF_HCR_EGRESS_LOG": str(egress_log), "NEXT_TELEMETRY_DISABLED": "1",
             "NEXTAUTH_URL": base, "AUTH_URL": base, "NEXTAUTH_SECRET": secrets.token_hex(24), "AUTH_SECRET": secrets.token_hex(24),
-            "CVF_SERVICE_TOKEN": token, "GOVERNANCE_ENGINE_URL": f"http://127.0.0.1:{proxy_port}", "GOVERNANCE_ENGINE_ENABLED": "true",
+            "CVF_SERVICE_TOKEN": "synthetic-hcr-" + secrets.token_hex(24), "GOVERNANCE_ENGINE_URL": f"http://127.0.0.1:{proxy_port}", "GOVERNANCE_ENGINE_ENABLED": "true",
             "GOVERNANCE_ENGINE_TIMEOUT": str(ENGINE_TIMEOUT_MS), "CVF_GOVERNANCE_RECEIPT_TIMEOUT_MS": str(RECEIPT_TIMEOUT_MS),
-            "CVF_STORAGE_ADAPTER_TYPE": "file", "CVF_CONTROL_PLANE_EVENTS_PATH": str(scratch / "events.json"),
-        })
+            "CVF_STORAGE_ADAPTER_TYPE": "file", "CVF_CONTROL_PLANE_EVENTS_PATH": str(scratch / "events.json")})
         web_process = subprocess.Popen(["node", str(modules / "next/dist/bin/next"), "dev", "--webpack", "-p", str(web_port), "-H", "127.0.0.1"],
-                                       cwd=web, env=env, stdout=logs_open[2], stderr=subprocess.STDOUT)
+                                       cwd=web, env=env, stdout=logs_open[1], stderr=subprocess.STDOUT)
         wait_ready(f"{base}/login", web_process)
-        warm_status, _ = request_json(f"{base}/api/governance/evaluate", {})
-        if warm_status != 401 or proxy.attempted != 0:
-            failures.append("unauthenticated proxy warmup reached the engine")
-        entries = [json.loads(line) for line in egress_log.read_text(encoding="utf-8").splitlines() if line.strip()] if egress_log.exists() else []
-        server_pids = {e["pid"] for e in entries if "start-server.js" in e.get("argv", []) or str(e.get("title", "")).startswith("next-server")}
-        proven = {e["pid"] for e in entries if e["event"] == "selftest-denied"} & server_pids
-        output["preflightEgress"] = {"loadedProcesses": len({e["pid"] for e in entries if e["event"] == "loaded"}), "serverPids": len(server_pids), "serverSelftestDenied": len(proven)}
-        if not proven or hcr_ro_rows(store):
-            raise RuntimeError("egress preload not proven in the Next server before first export, or store not empty")
-        poller = HcrPoller(store)
-        poller.start()
-        helper_out = custody / "browser.json"
-        helper = subprocess.Popen(["node", str(ROOT / "scripts/probe_cvf_w05_browser_chain.cjs"), str(modules), base, str(helper_out), str(custody), "configured-receipt-composition"],
-                                  cwd=web, env=env, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=logs_open[3], text=True)
+        if request_json(f"{base}/api/governance/evaluate", {})[0] != 401 or proxy.arrived:
+            raise RuntimeError("unauthenticated proxy warmup reached the engine")
+        entries = hcr_egress(egress_log)
+        proven = {e["pid"] for e in entries if e["event"] == "denied" and hcr_classify(e["host"]) == "selftest" and ("start-server.js" in e.get("argv", []) or str(e.get("title", "")).startswith("next-server"))}
+        output["preflightEgress"] = {"loadedProcesses": len({e["pid"] for e in entries if e["event"] == "loaded"}), "serverSelftestDenied": len(proven), "classified": hcr_admit_egress(hcr_egress(egress_log, "denied"))}
+        if not proven:
+            raise RuntimeError("egress guard not proven in the Next server before the first export")
+        helper = subprocess.Popen(["node", str(custody / "browser-helper.cjs"), str(modules), base, str(custody / "browser.json"), str(custody), "configured-receipt-composition"],
+                                  cwd=web, env=env, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=logs_open[2], text=True)
+        view = lambda: {"arrived": proxy.arrived, "aliveAttempts": proxy.alive_attempts, "completed": len(proxy.order), "alive": proxy.alive,  # noqa: E731 - read-only SQL view at a boundary
+                        "rows": [(r[3], hashlib.sha256(r[2].encode()).hexdigest()) for r in hcr_ro_rows(store)]}
 
-        def pump() -> None:
-            for line in helper.stdout:
-                line = line.strip()
-                if line != "OWNED_ENGINE_STOP_REQUEST":
-                    ipc["other"].append(line[:200])
-                    continue
-                ipc["stopRequests"] += 1
-                if ipc["stopRequests"] > 1:
-                    ipc["error"] = "second stop request"
-                    continue
-                try:
-                    if json.loads(hcr_docker("container", "inspect", engine_name).stdout)[0]["Id"] != engine_id or engine_process.poll() is not None:
+        def handle(line: str) -> str:
+            try:
+                if line.startswith("EXPORT_GATE_REQUEST "):
+                    gate = json.loads(line.split(" ", 1)[1])
+                    hcr_admit_export(gate["n"], state, hcr_egress(egress_log, "denied") + gate["external"], proxy.alive, proxy.failure or ("browser AI POST observed" if gate["aiPosts"] else None))
+                    state["gates"].append({"n": gate["n"], **view()})
+                    return f"EXPORT_GATE_OK {gate['n']}"
+                if line == "OWNED_ENGINE_STOP_REQUEST":
+                    state["stopRequests"] += 1
+                    ids = {r[1] for r in hcr_ro_rows(store)}
+                    hcr_admit_stop(state["stopRequests"], len(proxy.order), len([r for r in proxy.order if r in ids]))
+                    if json.loads(hcr_docker("container", "inspect", name).stdout)[0]["Id"] != output["engineContainer"]["id"] or engine_process.poll() is not None:
                         raise RuntimeError("owned engine identity changed")
                     stop(engine_process)
-                    if hcr_docker("container", "inspect", engine_name, check=False).returncode == 0 or engine_process.poll() is None:
+                    if hcr_docker("container", "inspect", name, check=False).returncode == 0 or engine_process.poll() is None:
                         raise RuntimeError("owned engine did not exit")
-                    ipc["engineStoppedAtMs"] = int(time.time() * 1000)
-                    helper.stdin.write("OWNED_ENGINE_STOPPED\n")
-                    helper.stdin.flush()
-                except Exception as error:  # noqa: BLE001 - recorded as the consolidated blocker
-                    ipc["error"] = str(error)[:300]
-        pumper = threading.Thread(target=pump, daemon=True)
-        pumper.start()
-        try:
-            helper.wait(timeout=300)
-        except subprocess.TimeoutExpired:
-            helper.kill()
-            failures.append("browser helper timed out")
-        pumper.join(timeout=5)
-        time.sleep(0.5)
-        poller.halt.set()
-        poller.join(timeout=3)
-        browser = json.loads(helper_out.read_text(encoding="utf-8")) if helper_out.exists() else {"partial": True, "error": "no helper output"}
-        output["browser"] = browser
-        output["ipc"] = ipc
-        if helper.returncode or browser.get("partial") or ipc["error"] or ipc["stopRequests"] != 1:
-            failures.append(f"browser composition incomplete: {browser.get('error') or ipc['error'] or helper.returncode}")
-        final_rows = hcr_ro_rows(store)
-        ids = [r[1] for r in final_rows]
+                    proxy.alive = False
+                    return "OWNED_ENGINE_STOPPED"
+                raise RuntimeError("unknown control line")
+            except Exception as error:  # noqa: BLE001 - recorded as the consolidated blocker
+                state["error"] = state["error"] or str(error)[:300]
+                return "EXPORT_GATE_DENY" if line.startswith("EXPORT_GATE") else "OWNED_ENGINE_STOP_DENIED"
+        (watchdog := threading.Timer(300, helper.kill)).start()
+        for line in helper.stdout:  # sequential admission: the helper blocks until each reply
+            helper.stdin.write(handle(line.strip()) + "\n")
+            helper.stdin.flush()
+        helper.wait()
+        watchdog.cancel()
+        browser = json.loads((custody / "browser.json").read_text(encoding="utf-8")) if (custody / "browser.json").exists() else {"partial": True, "error": "no helper output"}
+        output["browser"], output["finalView"], rows = browser, (final := view()), hcr_ro_rows(store)
+        (custody / "raw-observations.json").write_text(json.dumps({"sqlRows": rows, "enginePayloads": {k: [v[0], v[1].decode()] for k, v in proxy.observed.items()}}), encoding="utf-8")
         builds = [browser.get("req01", {}), browser.get("req04", {}).get("build2", {})]
-        attempts = [b.get("attemptId") for b in builds]
-        joins = []
-        for build in builds:
-            observed = proxy.engine_observations.get(build.get("attemptId"), {})
-            matching = [r for r in final_rows if r[1] == build.get("attemptId")]
-            joins.append({"attemptId": build.get("attemptId"), "sqlRowsWithRequestId": len(matching), "orchestratorBlockHash": matching[0][3] if matching else None,
-                          "rowJson": json.loads(matching[0][2]) if matching else None, "engineArtifactId": observed.get("artifactId"),
-                          "panelReceiptAnchor": build.get("receiptAnchor"), "engineRequestId": observed.get("requestId"), "ledgerAttached": observed.get("ledgerAttached"),
-                          "engineDecisionLabel": observed.get("decision")})
-            if len(matching) != 1 or observed.get("artifactId") != build.get("receiptAnchor") or observed.get("requestId") != build.get("attemptId"):
-                failures.append("request/row/anchor join failed")
-        first_hashes = {s[1][0][2] for s in poller.samples if s[1]}
-        steps = browser.get("steps", [])
-        windows = {}
-        if steps and {"stale-edit-start", "stale-window-end", "reset-start", "reset-end", "engine-stopped", "build-3-end"} <= {s["step"] for s in steps}:
-            windows = {"stale": hcr_window(poller, steps, "stale-edit-start", "stale-window-end"), "reset": hcr_window(poller, steps, "reset-start", "reset-end"),
-                       "fallback": hcr_window(poller, steps, "engine-stopped", "build-3-end")}
-        output["sql"] = {"finalCount": len(final_rows), "finalRequestIds": ids, "attemptIds": attempts, "joins": joins, "samples": len(poller.samples), "sampleErrors": poller.errors,
-                         "maxCountObserved": max((len(s[1]) for s in poller.samples), default=None), "firstRowJsonHashesSeen": sorted(first_hashes), "windows": windows,
-                         "tipHash": final_rows[-1][3] if final_rows else None, "readMode": "native sqlite3 URI mode=ro"}
-        if len(final_rows) != 2 or sorted(ids) != sorted(attempts) or len(first_hashes) != 1 or output["sql"]["maxCountObserved"] != 2:
-            failures.append("SQLite row accounting differs from two exact builds")
-        if windows and (windows["stale"]["max"] != 1 or windows["reset"]["min"] != 2 or windows["reset"]["max"] != 2 or windows["fallback"]["max"] != 2):
-            failures.append("row counts moved inside a no-export window")
-        if windows and min(windows[k]["samples"] for k in windows) == 0:
-            failures.append("a no-export window had no SQL sample")
-        output["proxy"] = {"evaluateAttempted": proxy.attempted, "forwardedCompleted": proxy.forwarded, "forwardFailures": proxy.forward_failures, "mode": proxy.mode}
-        if proxy.forwarded != 2 or proxy.attempted > 3 or proxy.mode != "forward":
-            failures.append("evaluate accounting differs from 2 completed forwards")
-        entries = [json.loads(line) for line in egress_log.read_text(encoding="utf-8").splitlines() if line.strip()]
-        denied = {}
-        for e in entries:
-            if e["event"] in ("denied", "denied-dns"):
-                denied[e["category"]] = denied.get(e["category"], 0) + 1
-        output["finalEgress"] = {"serverDeniedByCategory": denied, "browserExternalRequests": browser.get("req07", {}).get("externalRequests"),
-                                 "loopbackPortsSeen": sorted({e["port"] for e in entries if e["event"] == "loopback-connect"}), "providerStarts": 0}
-        if denied.get("provider-or-ai-api") or browser.get("req07", {}).get("observedBrowserAiPosts"):
-            failures.append("provider/AI egress attempt observed")
+        reports = [json.loads(proxy.observed.get(b.get("attemptId"), (0, b"{}"))[1]).get("data", {}) for b in builds]
+        denied, g = hcr_egress(egress_log, "denied"), state["gates"]
+        external = [{**x, "category": hcr_classify(x["host"])} for x in browser.get("req07", {}).get("externalRequests", [])]
+        provider = sum(hcr_classify(e["host"]) == "provider-or-ai-api" for e in denied + external)
+        output["finalEgress"] = {"serverDenied": sorted(f"{h}|{c}|{v}|{s}|{n}" for (h, c, v, s), n in Counter((e["host"], hcr_classify(e["host"]), e["via"], ",".join(e.get("site", []))) for e in denied).items()),
+                                 "browserExternal": external, "browserAiPosts": browser.get("req07", {}).get("observedBrowserAiPosts"), "providerAttempts": provider, "providerStarts": provider}
+        output["checks"] = checks = {
+            "helperCompleted": not (helper.returncode or browser.get("partial") or state["error"]) and state["stopRequests"] == 1,
+            "requestRowAnchorJoins": [r[1] for r in rows] == [b.get("attemptId") for b in builds] and all(len([r for r in rows if r[1] == b.get("attemptId")]) == 1 and d.get("report", {}).get("request_summary", {}).get("request_id") == b.get("attemptId")
+                                         and d.get("report", {}).get("request_summary", {}).get("artifact_id") == b.get("receiptAnchor") and d.get("execution_record", {}).get("ledger_attached") is True for b, d in zip(builds, reports)),
+            "gateCounters": [(x["arrived"], x["aliveAttempts"], x["completed"], x["alive"], len(x["rows"])) for x in g] == [(0, 0, 0, True, 0), (1, 1, 1, True, 1), (2, 2, 2, False, 2)],
+            "firstRowUnchanged": len(final["rows"]) == 2 and g[1]["rows"][0] == g[2]["rows"][0] == final["rows"][0] if len(g) == 3 else False,
+            "noExtraAfterFallback": (final["arrived"], final["aliveAttempts"], final["completed"], proxy.dead_failures, proxy.refused, state["exports"], browser.get("req07", {}).get("exportPostCount")) == (3, 2, 2, 1, 0, 3, 3) and not proxy.failure,
+            "noProviderOrAi": not provider and not browser.get("req07", {}).get("observedBrowserAiPosts"),
+            "allEgressClassified": all(hcr_classify(e["host"]) in ("selftest", *HCR_PASSIVE.values()) for e in denied + external)}
+        failures += [k for k, ok in checks.items() if not ok]
+    except Exception as error:  # noqa: BLE001 - any preflight/runtime stop fails the outcome
+        failures.append(f"stopped: {type(error).__name__}: {str(error)[:400]}")
     finally:
-        if poller is not None:
-            poller.halt.set()
-        cleanup = {}
-        for label, proc in (("helper", helper), ("web", web_process), ("engine", engine_process), ("relay", relay_process)):
+        cleanup: dict = {"errors": [], "pidsAlive": [], "dockerRemaining": [], "portsListening": [], "stageRemoved": False}
+        roots = {p.pid for p in (web_process, helper) if p is not None}
+
+        def attempt(label: str, fn, *args) -> None:
             try:
-                if label == "helper":
-                    if proc is not None and proc.poll() is None:
-                        proc.kill()
-                else:
-                    stop(proc)
-            except Exception as error:  # noqa: BLE001
-                cleanup[label + "Error"] = str(error)[:200]
-        hcr_docker("network", "rm", net_name, check=False)
-        if proxy is not None:
-            proxy.shutdown(); proxy.server_close()
-        if proxy_thread is not None:
-            proxy_thread.join(timeout=3)
-        for handle in logs_open:
-            handle.close()
-        if junction.exists():
-            os.rmdir(junction)
-        left = hcr_docker("ps", "-a", "--format", "{{.Names}}", check=False).stdout.split() + hcr_docker("network", "ls", "--format", "{{.Name}}", check=False).stdout.split()
-        cleanup["ownedDockerObjectsRemaining"] = [n for n in left if n.endswith(suffix)]
-        cleanup["portsListening"] = [p for p in (engine_port, proxy_port, web_port) if socket.socket().connect_ex(("127.0.0.1", p)) == 0]
-        output["cleanup"] = cleanup
-        output["elapsedSeconds"] = round(time.time() - started, 1)
-        output["failures"] = failures
-        output["ok"] = not failures and not cleanup["ownedDockerObjectsRemaining"] and not cleanup["portsListening"]
-        (custody / "runner-result.json").write_text(json.dumps(output, indent=2, sort_keys=True), encoding="utf-8")
+                fn(*args)
+            except Exception as error:  # noqa: BLE001 - every cleanup error fails the outcome
+                cleanup["errors"].append(f"{label}: {type(error).__name__}: {str(error)[:160]}")
+        owned_pids.update(roots | {e["pid"] for e in hcr_egress(egress_log) if e["event"] == "loaded"})
+        attempt("kill", lambda: [subprocess.run(["taskkill", "/PID", str(p), "/T", "/F"], capture_output=True, timeout=30) for p in sorted(roots)])
+        attempt("engine", stop, engine_process)
+        attempt("proxy", lambda: (proxy_thread and proxy.shutdown(), proxy and proxy.server_close()))
+        [handle_.close() for handle_ in logs_open]
+        attempt("stage", lambda: stage.exists() and hcr_remove_stage(stage, scratch))
+        cleanup["stageRemoved"] = not stage.exists()
+        time.sleep(1.0)
+        attempt("pids", lambda: cleanup.update(pidsAlive=[p for p in sorted(owned_pids) if f'"{p}"' in subprocess.run(["tasklist", "/FI", f"PID eq {p}", "/NH", "/FO", "CSV"], capture_output=True, text=True, timeout=30).stdout]))
+        cleanup["dockerRemaining"] = [n for n in hcr_docker("ps", "-a", "--format", "{{.Names}}", check=False).stdout.split() if n == name]
+        cleanup["portsListening"] = [p for p in (proxy_port, web_port) if socket.socket().connect_ex(("127.0.0.1", p)) == 0]
+        output["cleanup"], output["elapsedSeconds"], output["failures"], output["ok"] = cleanup, round(time.time() - started, 1), failures, hcr_final_ok(failures, cleanup)
+        (custody / "runner-result.json").write_text(json.dumps(output, indent=2, sort_keys=True, default=str), encoding="utf-8")
     return output
 
 
@@ -738,9 +740,7 @@ if __name__ == "__main__":
     parser.add_argument("--configured-receipt-browser-composition", action="store_true", help="Opt-in: one fresh configured-receipt browser composition (requires immutable --engine-docker-image)")
     args = parser.parse_args()
     if args.configured_receipt_browser_composition:
-        if not args.engine_docker_image or not args.engine_docker_image.startswith("sha256:"):
-            parser.error("--configured-receipt-browser-composition requires --engine-docker-image sha256:<id>")
-        outcome = run_configured_receipt_browser_composition(args.engine_docker_image)
+        outcome = run_configured_receipt_browser_composition(args.engine_docker_image or parser.error("--configured-receipt-browser-composition requires --engine-docker-image sha256:<id>"))
         print(json.dumps(outcome, indent=2, sort_keys=True))
         sys.exit(0 if outcome["ok"] else 1)
     print(json.dumps(run_probe(args.engine_docker_image, browser_export_only=args.browser_export_only), indent=2, sort_keys=True))

@@ -5,7 +5,7 @@ docType: roadmap
 Status: ACCEPTED_UNIFIED_ROADMAP_LOCAL_CONSUMER_BOUNDED_FULL_PILOT_OPEN
 Date: 2026-09-26
 Program ID: CVF-NCR
-Version: 2.15
+Version: 2.16
 Revision disposition: LOCAL_CONSUMER_MAINTENANCE_ACCEPTED_BOUNDED; END_TO_END_PILOT_OPEN; Q001_AND_P11_CHECKPOINTS_RETAINED
 Decision owner: operator về định hướng/phạm vi; Local reviewer về đối chiếu kỹ thuật và nghiệm thu.
 
@@ -23,6 +23,10 @@ Current delivery projection reviewed at source HEAD `429d92760d9615a3200131f51fb
 **2026-10-14 source convergence disposition:** twenty named source bindings verified at review HEAD; original2 returned files preserved. Rich browser assertions and configured receipt proof remain separate. Current engine event has request_id/decision/timestamp, not artifact_id or the500-character evaluate payload; join SQL request ID to engine response artifact ID. D015 current locators corrected without changing Q008. Durable intent and A07 independent-connection proof stay open. Owned fresh synthetic configuration does not certify actual profile, data/custody, walkthrough, business acceptance or retention/cost. Proposed45-90/20-40minute costs are estimates; usage/billing UNKNOWN. R1/R2 partial; R3/R4 open; R5/R6 deferred.
 
 **Configured HTML primary review, 2026-10-14:** `docs/reviews/CVF_NCR_HTML_CONFIGURED_RECEIPT_COMPLETION_2026-10-14.md` retains six mechanical cases and verifies original4/22 custody bindings plus twelve product pins. Local independent fresh configured browser/request-row/download/stale/decoy probe PASS92.73s, one export/evaluate,2734-byte identity, provider0. Full REQ-07 acceptance is rejected: relay egress, missing startup destination/stop disposition, effect caps/IPC/shared legacy exception and cleanup controls need one consolidated harness repair. Primary3 exports/2 completed evaluates plus Local1/1 are historical consumed counters, all primary runtime authority retired. Next finite control repair must use a fresh paired release; no automatic retry, provider grant, pilot/phase exit or new capability. Actual-profile/data/custody/business acceptance and durable intent/A07 remain open.
+
+**Configured HTML conditional review, 2026-10-14:** `docs/reviews/CVF_NCR_HTML_CONFIGURED_RECEIPT_CONDITIONAL_COMPLETION_2026-10-14.md` retains six mechanical cases and verifies conditional raw4/34 named artifact hashes with twelve product pins unchanged. Distinct Local fresh browser/engine/SQLite/request-row/download probe PASS60.08s, one export/evaluate,2762-byte identity, provider0. Engine network=none, restored egress probe BLOCKED, unknown-stop and before-effect admission evidence resolve egress/admission bounded; legacy exception branch isolated. Mandatory REQ-07 still NOT_ACCEPTED: inert execution of the actual cleanup finally with failed taskkill/tasklist/Docker-ps commands gives errors=[] and ok=true. This proves a failure-propagation gap, not an actual worker leftover. SQL is checkpoint-only and Chromium cleanup indirect; procedure PARTIAL_WITH_REASON, native billing UNKNOWN. Conditional worker3 exports/2 alive attempts and Local1/1 are consumed; every remainder retired. No automatic third BUILD or repeated seven-case harness campaign.
+
+**Roadmap reassessment after repeated control repair:** R1 selected HTML edited preview/export and finite R2 receipt/request-row evidence advanced; whole R1/R2 remain partial and R3/R4 open. Stop the automatic harness-repair loop. Local next PLAN checks actual-profile/data/custody/business walkthrough prerequisites against the existing selected-pilot source disposition; no new runtime/provider/worker grant from this review. Cleanup correction must be separately reviewed before harness effect reuse. R5/R6 deferred, durable intent/A07 and send/B2/P11/public/deploy parked; LHW24 retained. This is a finite review disposition, not full work-order acceptance.
 
 | Stage | Accepted evidence / scope | Remaining exit gap |
 |---|---|---|
