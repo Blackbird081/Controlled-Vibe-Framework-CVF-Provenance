@@ -5,11 +5,13 @@ docType: roadmap
 Status: ACCEPTED_UNIFIED_ROADMAP_LOCAL_CONSUMER_BOUNDED_FULL_PILOT_OPEN
 Date: 2026-09-26
 Program ID: CVF-NCR
-Version: 2.22
+Version: 2.23
 Revision disposition: LOCAL_CONSUMER_MAINTENANCE_ACCEPTED_BOUNDED; END_TO_END_PILOT_OPEN; Q001_AND_P11_CHECKPOINTS_RETAINED
 Decision owner: operator về định hướng/phạm vi; Local reviewer về đối chiếu kỹ thuật và nghiệm thu.
 
 ## Current Delivery Checkpoint - 2026-10-14
+
+**2026-10-15 accepted technical preapproval amendment:** `docs/reviews/CVF_NCR_PREFEAS_ROOT_BUILD_COMPLETION_2026-10-15.md` accepts REQ-01..07 bounded after Local correction of an unsupported direct-child baseline constraint. Worker original165/165 and final raw/log hashes are consumed; Local focused55/55, distinct CLI/range10/10 and compile4 PASS. Final bound fast passes on amended exact7. REQ-08 is BLOCKED for historical mandatory-read order; preparation remains PARTIAL_WITH_REASON and full contract fulfillment is not asserted. Original pair/worker bytes and failed9/10 probe are retained. Strict action/phase/same-baseline/production-return joins yield only FEASIBLE_FOR_INTEGRATED_ROOT_BUILD with runtimeReadiness=false/effectAdmission=false/operatorApprovalRequired=true; default ROOT/STOP HOLD remains. This advances the finite R1/R2 admission prerequisite only. Next Local prepares the separate HTML root-build proposal/pair under this action; no runtime release, old grant reuse, counter reset or third narrow repair. R1/R2partial,R3/R4open,R5/R6deferred; data/custody/business/send/B2/P11/public/deploy and LHW24 retained.
 
 **Accepted bounded saved receipt history, 2026-10-14:** `docs/reviews/CVF_NCR_RECEIPT_HISTORY_COMPLETION_2026-10-14.md`. Current-code saved scalar receipt/output identity observed through page reload, owned restart and exact Markdown with explicit historical saved-copy origin; finite R1/R4 contribution only. Procedure PARTIAL_WITH_REASON. R1/R2 partial; R3/R4 open; R5/R6 deferred. Real-data writer/custody/business acceptance, selected HTML pilot, send/B2, P11, public sync, deployment and production remain parked; LHW24 retained.
 
@@ -94,7 +96,7 @@ Luna max reviewed read-only; Local owns implementation/decision. Procedure PARTI
 Small direct lifecycle route, no work-order fulfillment claim or new implementation-model observation;26 retained. Offline UI only; OS clipboard writes are not cancelled.
 **Accepted finite contribution - PDF/Word failure feedback, 2026-10-13:**
 `docs/reviews/CVF_NCR_RESULT_EXPORT_FEEDBACK_COMPLETION_2026-10-13.md` accepts safe localized EN/VI alerts outside the menu and direct own-format retry; result/receipt retained. SourceRED10failed/57passed -> final67/67, type/scoped lint child0, bound finalfast/ledger PASS consumed; Root full source/test matrix, no product repair or duplicate suite. Existing run-keyed body/latest-token checks isolate late and competing completions. ResultViewer941 ->837 lines,104 net reduction into cohesive helper. Original failures and preparation PARTIAL_WITH_REASON retained; GC-051 new helper/test registered NOT_STARTED. Browser download initiation only, no OS persistence. Historical26 observations retained; no model comparison/provider call. R1/R2 partial, R3/R4 open, R5/R6 deferred; real-data/send/B2/P11/public/deploy parked. Public Export Disposition: DEFERRED_PRIVATE_ONLY.
-**Next selection:** one manual shared-workspace worker executes `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_PREFEAS_ROOT_BUILD_2026-10-15.md` only after committed pair/continuity and final bound pre-dispatch PASS; exact5 existing owner edits/full return2, no commit. Local reviews actual evidence and one distinct probe, then returns to HTML root admission. No runtime/feature successor is released by this dispatch.
+**Next selection:** Local prepares the separately scoped HTML integrated-root build proposal/pair and its action-qualified admission after technical acceptance of the preapproval amendment. Retain the existing root predecessor/counters/blockers/freeze. Exact action feasibility is not an effect grant; runtime execution still needs its own immutable pair, operator effect decision and before-effect gates. No implementation worker or runtime successor is released by this technical acceptance.
 Whole job/full/browser/backend/provider/R3/R4 remain open.
 
 Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11 remain

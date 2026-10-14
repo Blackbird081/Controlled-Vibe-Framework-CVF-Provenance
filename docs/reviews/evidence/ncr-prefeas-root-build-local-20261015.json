@@ -1,0 +1,1280 @@
+{
+  "status": "ACCEPTED_TECHNICAL_BOUNDED_PROCEDURE_PARTIAL",
+  "reviewBaseHead": "8a2d1c8e6db97e90ffd166b70ae66037a48eb70f",
+  "originalFrozenCustody": {
+    "owner": "Local reviewer/closer",
+    "reason": "Freeze original worker and released pair before bounded Local correction; worker files temporarily held for separate documentation commit",
+    "files": {
+      "docs/reference/preapproval_feasibility/README.md": "93b99109e1b1f0d8eda22e674740650d0271dfdeeefb5cf8c4d4cb3e2960e075",
+      "governance/compat/preapproval_feasibility_contract.py": "2b60c762144c64ea867430086757d69b015c64de52e5942c3b5d8f78e5f2ad0c",
+      "governance/compat/run_preapproval_feasibility_gate.py": "5da6f2d90bcba3a0c252cd9af808daf22a600d8cdbf28d6a54f2f606fded675c",
+      "governance/compat/check_preapproval_feasibility.py": "8203d4cadd809818867cead838734458b068950db42b35bca3927e816d806fd9",
+      "governance/compat/test_check_preapproval_feasibility.py": "15a2c7c189ff2cc5284e3b19430ad0a0f03211c39cd0c2bbd34540d49d442b5c",
+      "docs/reviews/CVF_NCR_PREFEAS_ROOT_BUILD_WORKER_RETURN_2026-10-15.md": "1865aa9ea3f1dcca14cc0a503b688d1999f4c45dd9fd4296b7280e7d3bb16a78",
+      "docs/reviews/evidence/ncr-prefeas-root-build-worker-20261015.json": "c7a202d8b2c344975fc3ce8da2b82f2f754bd02beef29b5c039a7df148b908df",
+      "docs/baselines/CVF_GC018_NCR_PREFEAS_ROOT_BUILD_2026-10-15.md": "5a0f7eb8a3e203c81fe847a996a68097fb2eea4bc5c43a8bf23afd138ea29140",
+      "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_PREFEAS_ROOT_BUILD_2026-10-15.md": "65ada5dec6e975988cf8cc4c9a5a5e4d575b2fb3f8424e522d7ee3a5fbf49dd7",
+      "docs/reviews/evidence/ncr-prefeas-root-build-dispatch-20261015.json": "f9342f8e77d56d9d2774560ec1c4fd1cda2e74d74e6940ed514403cc6c50031a"
+    }
+  },
+  "sourceOnlyProtocolProof": true,
+  "providerCalls": 0,
+  "externalAgentInvocations": 0,
+  "workerTestsConsumed": "165 passed in 20.11s on original bytes; original4 raw log hashes checked",
+  "localRepairTests": "55 passed, 110 deselected in 9.08s; named nested-baseline contradiction justified the bounded rerun",
+  "independentProbeOriginal": {
+    "actor": "LOCAL_REVIEWER_NOT_IMPLEMENTATION_WORKER",
+    "startedUtc": "2026-10-14T21:02:11.609364+00:00",
+    "finishedUtc": "2026-10-14T21:02:13.208990+00:00",
+    "oracleSeparationBasis": "Locally authored declarative fixtures and SPEC assertions; subprocess-only caller/range execution; no worker test helper or evaluator import.",
+    "probeOracleSha256": "a7c61ff90a7da0eb820ed15666bf53bfab945097168891256a1a16d8e9ed95c9",
+    "passed": 9,
+    "total": 10,
+    "cases": [
+      {
+        "case": "positive-initial-zero-counters",
+        "expected": "FEASIBLE_FOR_INTEGRATED_ROOT_BUILD",
+        "observed": "FEASIBLE_FOR_INTEGRATED_ROOT_BUILD",
+        "diagnosticCodes": [],
+        "pass": true,
+        "invocation": {
+          "command": [
+            "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+            "-B",
+            "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\governance\\compat\\run_preapproval_feasibility_gate.py",
+            "--repo-root",
+            "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-prefeas-root-build-local-20261015\\local-owned-fixture-cbs135dr",
+            "--proposal",
+            "docs/work_orders/CVF_LOCAL_ROOT_PROBE.md",
+            "--approval-target",
+            "docs/work_orders/CVF_LOCAL_ROOT_PROBE.md",
+            "--json"
+          ],
+          "exitCode": 0,
+          "elapsedSeconds": 0.101,
+          "stdout": "{\n  \"approvalTarget\": {\n    \"path\": \"docs/work_orders/CVF_LOCAL_ROOT_PROBE.md\",\n    \"sha256\": \"780244438051e3ea393edea4654211611b27dd4e30d8511ab8f4f8ec847da841\"\n  },\n  \"canonicalBlockCount\": 1,\n  \"canonicalViolations\": [],\n  \"companion\": {\n    \"path\": \"docs/reviews/evidence/local-root-probe.json\",\n    \"sha256\": \"9006e1befa8d6a17cfe6cfc6b2935b30cf94fe6f1ffd3dd40ac20aebb6a153a1\"\n  },\n  \"coverageDisposition\": \"NOT_APPLICABLE\",\n  \"diagnostics\": [],\n  \"effectAdmission\": false,\n  \"operatorApprovalRequired\": true,\n  \"prerequisites\": {\n    \"deferred\": 0,\n    \"examined\": 2\n  },\n  \"proposal\": {\n    \"path\": \"docs/work_orders/CVF_LOCAL_ROOT_PROBE.md\",\n    \"sha256\": \"780244438051e3ea393edea4654211611b27dd4e30d8511ab8f4f8ec847da841\"\n  },\n  \"prospectiveOutcomeSha256\": \"1b72710bbb26878a4352256be4c85461514a041e6472b5cbe2d234fc72a63a1a\",\n  \"queue\": null,\n  \"runtimeReadiness\": false,\n  \"schemaVersion\": \"cvf.preapprovalFeasibilityReceipt.v1\",\n  \"technicalDisposition\": \"FEASIBLE_FOR_INTEGRATED_ROOT_BUILD\"\n}\n",
+          "stderr": ""
+        },
+        "receipt": {
+          "approvalTarget": {
+            "path": "docs/work_orders/CVF_LOCAL_ROOT_PROBE.md",
+            "sha256": "780244438051e3ea393edea4654211611b27dd4e30d8511ab8f4f8ec847da841"
+          },
+          "canonicalBlockCount": 1,
+          "canonicalViolations": [],
+          "companion": {
+            "path": "docs/reviews/evidence/local-root-probe.json",
+            "sha256": "9006e1befa8d6a17cfe6cfc6b2935b30cf94fe6f1ffd3dd40ac20aebb6a153a1"
+          },
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnostics": [],
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "prerequisites": {
+            "deferred": 0,
+            "examined": 2
+          },
+          "proposal": {
+            "path": "docs/work_orders/CVF_LOCAL_ROOT_PROBE.md",
+            "sha256": "780244438051e3ea393edea4654211611b27dd4e30d8511ab8f4f8ec847da841"
+          },
+          "prospectiveOutcomeSha256": "1b72710bbb26878a4352256be4c85461514a041e6472b5cbe2d234fc72a63a1a",
+          "queue": null,
+          "runtimeReadiness": false,
+          "schemaVersion": "cvf.preapprovalFeasibilityReceipt.v1",
+          "technicalDisposition": "FEASIBLE_FOR_INTEGRATED_ROOT_BUILD"
+        }
+      },
+      {
+        "case": "phase-only-no-action",
+        "expected": "HOLD",
+        "observed": "HOLD",
+        "diagnosticCodes": [],
+        "pass": true,
+        "invocation": {
+          "command": [
+            "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+            "-B",
+            "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\governance\\compat\\run_preapproval_feasibility_gate.py",
+            "--repo-root",
+            "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-prefeas-root-build-local-20261015\\local-owned-fixture-cbs135dr",
+            "--proposal",
+            "docs/work_orders/CVF_LOCAL_ROOT_PROBE.md",
+            "--approval-target",
+            "docs/work_orders/CVF_LOCAL_ROOT_PROBE.md",
+            "--json"
+          ],
+          "exitCode": 2,
+          "elapsedSeconds": 0.091,
+          "stdout": "{\n  \"approvalTarget\": {\n    \"path\": \"docs/work_orders/CVF_LOCAL_ROOT_PROBE.md\",\n    \"sha256\": \"780244438051e3ea393edea4654211611b27dd4e30d8511ab8f4f8ec847da841\"\n  },\n  \"canonicalBlockCount\": 1,\n  \"canonicalViolations\": [],\n  \"companion\": {\n    \"path\": \"docs/reviews/evidence/local-root-probe.json\",\n    \"sha256\": \"1eeb91cec8872839710170d837e8322452a2f008e9bf5f2f16987fd982462f75\"\n  },\n  \"coverageDisposition\": \"NOT_APPLICABLE\",\n  \"diagnostics\": [],\n  \"effectAdmission\": false,\n  \"operatorApprovalRequired\": true,\n  \"prerequisites\": {\n    \"deferred\": 0,\n    \"examined\": 2\n  },\n  \"proposal\": {\n    \"path\": \"docs/work_orders/CVF_LOCAL_ROOT_PROBE.md\",\n    \"sha256\": \"780244438051e3ea393edea4654211611b27dd4e30d8511ab8f4f8ec847da841\"\n  },\n  \"prospectiveOutcomeSha256\": \"1b72710bbb26878a4352256be4c85461514a041e6472b5cbe2d234fc72a63a1a\",\n  \"queue\": null,\n  \"schemaVersion\": \"cvf.preapprovalFeasibilityReceipt.v1\",\n  \"technicalDisposition\": \"HOLD\"\n}\n",
+          "stderr": ""
+        },
+        "receipt": {
+          "approvalTarget": {
+            "path": "docs/work_orders/CVF_LOCAL_ROOT_PROBE.md",
+            "sha256": "780244438051e3ea393edea4654211611b27dd4e30d8511ab8f4f8ec847da841"
+          },
+          "canonicalBlockCount": 1,
+          "canonicalViolations": [],
+          "companion": {
+            "path": "docs/reviews/evidence/local-root-probe.json",
+            "sha256": "1eeb91cec8872839710170d837e8322452a2f008e9bf5f2f16987fd982462f75"
+          },
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnostics": [],
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "prerequisites": {
+            "deferred": 0,
+            "examined": 2
+          },
+          "proposal": {
+            "path": "docs/work_orders/CVF_LOCAL_ROOT_PROBE.md",
+            "sha256": "780244438051e3ea393edea4654211611b27dd4e30d8511ab8f4f8ec847da841"
+          },
+          "prospectiveOutcomeSha256": "1b72710bbb26878a4352256be4c85461514a041e6472b5cbe2d234fc72a63a1a",
+          "queue": null,
+          "schemaVersion": "cvf.preapprovalFeasibilityReceipt.v1",
+          "technicalDisposition": "HOLD"
+        }
+      },
+      {
+        "case": "stop-with-action",
+        "expected": "HOLD",
+        "observed": "HOLD",
+        "diagnosticCodes": [],
+        "pass": true,
+        "invocation": {
+          "command": [
+            "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+            "-B",
+            "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\governance\\compat\\run_preapproval_feasibility_gate.py",
+            "--repo-root",
+            "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-prefeas-root-build-local-20261015\\local-owned-fixture-cbs135dr",
+            "--proposal",
+            "docs/work_orders/CVF_LOCAL_ROOT_PROBE.md",
+            "--approval-target",
+            "docs/work_orders/CVF_LOCAL_ROOT_PROBE.md",
+            "--json"
+          ],
+          "exitCode": 2,
+          "elapsedSeconds": 0.093,
+          "stdout": "{\n  \"approvalTarget\": {\n    \"path\": \"docs/work_orders/CVF_LOCAL_ROOT_PROBE.md\",\n    \"sha256\": \"0a427269eb7e3191b08cd1496f0ae339d16be839e91fd42db51e5a27f31057c2\"\n  },\n  \"canonicalBlockCount\": 1,\n  \"canonicalViolations\": [],\n  \"companion\": {\n    \"path\": \"docs/reviews/evidence/local-root-probe.json\",\n    \"sha256\": \"169ccb83d28f6484a678361acef695bb3a2fb1e7fff42b0e9b17ac723d723254\"\n  },\n  \"coverageDisposition\": \"NOT_APPLICABLE\",\n  \"diagnostics\": [],\n  \"effectAdmission\": false,\n  \"operatorApprovalRequired\": true,\n  \"prerequisites\": {\n    \"deferred\": 0,\n    \"examined\": 2\n  },\n  \"proposal\": {\n    \"path\": \"docs/work_orders/CVF_LOCAL_ROOT_PROBE.md\",\n    \"sha256\": \"0a427269eb7e3191b08cd1496f0ae339d16be839e91fd42db51e5a27f31057c2\"\n  },\n  \"prospectiveOutcomeSha256\": \"c4b97f6a5b3e1dfc2533b809e6bcdb8448d0a8efc1a5aebaf946c874ef8c9044\",\n  \"queue\": null,\n  \"schemaVersion\": \"cvf.preapprovalFeasibilityReceipt.v1\",\n  \"technicalDisposition\": \"HOLD\"\n}\n",
+          "stderr": ""
+        },
+        "receipt": {
+          "approvalTarget": {
+            "path": "docs/work_orders/CVF_LOCAL_ROOT_PROBE.md",
+            "sha256": "0a427269eb7e3191b08cd1496f0ae339d16be839e91fd42db51e5a27f31057c2"
+          },
+          "canonicalBlockCount": 1,
+          "canonicalViolations": [],
+          "companion": {
+            "path": "docs/reviews/evidence/local-root-probe.json",
+            "sha256": "169ccb83d28f6484a678361acef695bb3a2fb1e7fff42b0e9b17ac723d723254"
+          },
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnostics": [],
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "prerequisites": {
+            "deferred": 0,
+            "examined": 2
+          },
+          "proposal": {
+            "path": "docs/work_orders/CVF_LOCAL_ROOT_PROBE.md",
+            "sha256": "0a427269eb7e3191b08cd1496f0ae339d16be839e91fd42db51e5a27f31057c2"
+          },
+          "prospectiveOutcomeSha256": "c4b97f6a5b3e1dfc2533b809e6bcdb8448d0a8efc1a5aebaf946c874ef8c9044",
+          "queue": null,
+          "schemaVersion": "cvf.preapprovalFeasibilityReceipt.v1",
+          "technicalDisposition": "HOLD"
+        }
+      },
+      {
+        "case": "numeric-zero-is-not-false",
+        "expected": "INVALID",
+        "observed": "INVALID",
+        "diagnosticCodes": [
+          "ACTION_READINESS_CLAIM_INVALID"
+        ],
+        "pass": true,
+        "invocation": {
+          "command": [
+            "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+            "-B",
+            "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\governance\\compat\\run_preapproval_feasibility_gate.py",
+            "--repo-root",
+            "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-prefeas-root-build-local-20261015\\local-owned-fixture-cbs135dr",
+            "--proposal",
+            "docs/work_orders/CVF_LOCAL_ROOT_PROBE.md",
+            "--approval-target",
+            "docs/work_orders/CVF_LOCAL_ROOT_PROBE.md",
+            "--json"
+          ],
+          "exitCode": 1,
+          "elapsedSeconds": 0.101,
+          "stdout": "{\n  \"approvalTarget\": {\n    \"path\": \"docs/work_orders/CVF_LOCAL_ROOT_PROBE.md\",\n    \"sha256\": \"780244438051e3ea393edea4654211611b27dd4e30d8511ab8f4f8ec847da841\"\n  },\n  \"canonicalBlockCount\": 1,\n  \"canonicalViolations\": [],\n  \"companion\": {\n    \"path\": \"docs/reviews/evidence/local-root-probe.json\",\n    \"sha256\": \"8ed90ef35bafafd9afc757e0037c03ff700d904233439939930c28cdd7473f84\"\n  },\n  \"coverageDisposition\": \"NOT_APPLICABLE\",\n  \"diagnostics\": [\n    {\n      \"code\": \"ACTION_READINESS_CLAIM_INVALID\",\n      \"message\": \"requestedAction.runtimeReadinessClaim must be the boolean false\"\n    }\n  ],\n  \"effectAdmission\": false,\n  \"operatorApprovalRequired\": true,\n  \"prerequisites\": {\n    \"deferred\": 0,\n    \"examined\": 2\n  },\n  \"proposal\": {\n    \"path\": \"docs/work_orders/CVF_LOCAL_ROOT_PROBE.md\",\n    \"sha256\": \"780244438051e3ea393edea4654211611b27dd4e30d8511ab8f4f8ec847da841\"\n  },\n  \"prospectiveOutcomeSha256\": \"1b72710bbb26878a4352256be4c85461514a041e6472b5cbe2d234fc72a63a1a\",\n  \"queue\": null,\n  \"schemaVersion\": \"cvf.preapprovalFeasibilityReceipt.v1\",\n  \"technicalDisposition\": \"INVALID\"\n}\n",
+          "stderr": ""
+        },
+        "receipt": {
+          "approvalTarget": {
+            "path": "docs/work_orders/CVF_LOCAL_ROOT_PROBE.md",
+            "sha256": "780244438051e3ea393edea4654211611b27dd4e30d8511ab8f4f8ec847da841"
+          },
+          "canonicalBlockCount": 1,
+          "canonicalViolations": [],
+          "companion": {
+            "path": "docs/reviews/evidence/local-root-probe.json",
+            "sha256": "8ed90ef35bafafd9afc757e0037c03ff700d904233439939930c28cdd7473f84"
+          },
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnostics": [
+            {
+              "code": "ACTION_READINESS_CLAIM_INVALID",
+              "message": "requestedAction.runtimeReadinessClaim must be the boolean false"
+            }
+          ],
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "prerequisites": {
+            "deferred": 0,
+            "examined": 2
+          },
+          "proposal": {
+            "path": "docs/work_orders/CVF_LOCAL_ROOT_PROBE.md",
+            "sha256": "780244438051e3ea393edea4654211611b27dd4e30d8511ab8f4f8ec847da841"
+          },
+          "prospectiveOutcomeSha256": "1b72710bbb26878a4352256be4c85461514a041e6472b5cbe2d234fc72a63a1a",
+          "queue": null,
+          "schemaVersion": "cvf.preapprovalFeasibilityReceipt.v1",
+          "technicalDisposition": "INVALID"
+        }
+      },
+      {
+        "case": "explicit-null-action",
+        "expected": "INVALID",
+        "observed": "INVALID",
+        "diagnosticCodes": [
+          "ACTION_SHAPE"
+        ],
+        "pass": true,
+        "invocation": {
+          "command": [
+            "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+            "-B",
+            "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\governance\\compat\\run_preapproval_feasibility_gate.py",
+            "--repo-root",
+            "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-prefeas-root-build-local-20261015\\local-owned-fixture-cbs135dr",
+            "--proposal",
+            "docs/work_orders/CVF_LOCAL_ROOT_PROBE.md",
+            "--approval-target",
+            "docs/work_orders/CVF_LOCAL_ROOT_PROBE.md",
+            "--json"
+          ],
+          "exitCode": 1,
+          "elapsedSeconds": 0.086,
+          "stdout": "{\n  \"approvalTarget\": {\n    \"path\": \"docs/work_orders/CVF_LOCAL_ROOT_PROBE.md\",\n    \"sha256\": \"780244438051e3ea393edea4654211611b27dd4e30d8511ab8f4f8ec847da841\"\n  },\n  \"canonicalBlockCount\": 1,\n  \"canonicalViolations\": [],\n  \"companion\": {\n    \"path\": \"docs/reviews/evidence/local-root-probe.json\",\n    \"sha256\": \"5a5973e012d624d06aeab8833ada9088028d30a61bc5630c0ee690abdabc7757\"\n  },\n  \"coverageDisposition\": \"NOT_APPLICABLE\",\n  \"diagnostics\": [\n    {\n      \"code\": \"ACTION_SHAPE\",\n      \"message\": \"requestedAction must be an object\"\n    }\n  ],\n  \"effectAdmission\": false,\n  \"operatorApprovalRequired\": true,\n  \"prerequisites\": {\n    \"deferred\": 0,\n    \"examined\": 2\n  },\n  \"proposal\": {\n    \"path\": \"docs/work_orders/CVF_LOCAL_ROOT_PROBE.md\",\n    \"sha256\": \"780244438051e3ea393edea4654211611b27dd4e30d8511ab8f4f8ec847da841\"\n  },\n  \"prospectiveOutcomeSha256\": \"1b72710bbb26878a4352256be4c85461514a041e6472b5cbe2d234fc72a63a1a\",\n  \"queue\": null,\n  \"schemaVersion\": \"cvf.preapprovalFeasibilityReceipt.v1\",\n  \"technicalDisposition\": \"INVALID\"\n}\n",
+          "stderr": ""
+        },
+        "receipt": {
+          "approvalTarget": {
+            "path": "docs/work_orders/CVF_LOCAL_ROOT_PROBE.md",
+            "sha256": "780244438051e3ea393edea4654211611b27dd4e30d8511ab8f4f8ec847da841"
+          },
+          "canonicalBlockCount": 1,
+          "canonicalViolations": [],
+          "companion": {
+            "path": "docs/reviews/evidence/local-root-probe.json",
+            "sha256": "5a5973e012d624d06aeab8833ada9088028d30a61bc5630c0ee690abdabc7757"
+          },
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnostics": [
+            {
+              "code": "ACTION_SHAPE",
+              "message": "requestedAction must be an object"
+            }
+          ],
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "prerequisites": {
+            "deferred": 0,
+            "examined": 2
+          },
+          "proposal": {
+            "path": "docs/work_orders/CVF_LOCAL_ROOT_PROBE.md",
+            "sha256": "780244438051e3ea393edea4654211611b27dd4e30d8511ab8f4f8ec847da841"
+          },
+          "prospectiveOutcomeSha256": "1b72710bbb26878a4352256be4c85461514a041e6472b5cbe2d234fc72a63a1a",
+          "queue": null,
+          "schemaVersion": "cvf.preapprovalFeasibilityReceipt.v1",
+          "technicalDisposition": "INVALID"
+        }
+      },
+      {
+        "case": "baseline-source-drift",
+        "expected": "INVALID",
+        "observed": "INVALID",
+        "diagnosticCodes": [
+          "PREREQ_EVIDENCE_HASH_MISMATCH",
+          "PREREQ_EVIDENCE_HASH_MISMATCH"
+        ],
+        "pass": true,
+        "invocation": {
+          "command": [
+            "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+            "-B",
+            "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\governance\\compat\\run_preapproval_feasibility_gate.py",
+            "--repo-root",
+            "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-prefeas-root-build-local-20261015\\local-owned-fixture-cbs135dr",
+            "--proposal",
+            "docs/work_orders/CVF_LOCAL_ROOT_PROBE.md",
+            "--approval-target",
+            "docs/work_orders/CVF_LOCAL_ROOT_PROBE.md",
+            "--json"
+          ],
+          "exitCode": 1,
+          "elapsedSeconds": 0.086,
+          "stdout": "{\n  \"approvalTarget\": {\n    \"path\": \"docs/work_orders/CVF_LOCAL_ROOT_PROBE.md\",\n    \"sha256\": \"780244438051e3ea393edea4654211611b27dd4e30d8511ab8f4f8ec847da841\"\n  },\n  \"canonicalBlockCount\": 1,\n  \"canonicalViolations\": [],\n  \"companion\": {\n    \"path\": \"docs/reviews/evidence/local-root-probe.json\",\n    \"sha256\": \"9006e1befa8d6a17cfe6cfc6b2935b30cf94fe6f1ffd3dd40ac20aebb6a153a1\"\n  },\n  \"coverageDisposition\": \"NOT_APPLICABLE\",\n  \"diagnostics\": [\n    {\n      \"code\": \"PREREQ_EVIDENCE_HASH_MISMATCH\",\n      \"message\": \"phasePrerequisites.rows[0] evidence sha256 does not match the current bytes\"\n    },\n    {\n      \"code\": \"PREREQ_EVIDENCE_HASH_MISMATCH\",\n      \"message\": \"phasePrerequisites.rows[1] evidence sha256 does not match the current bytes\"\n    }\n  ],\n  \"effectAdmission\": false,\n  \"operatorApprovalRequired\": true,\n  \"prerequisites\": {\n    \"deferred\": 0,\n    \"examined\": 2\n  },\n  \"proposal\": {\n    \"path\": \"docs/work_orders/CVF_LOCAL_ROOT_PROBE.md\",\n    \"sha256\": \"780244438051e3ea393edea4654211611b27dd4e30d8511ab8f4f8ec847da841\"\n  },\n  \"prospectiveOutcomeSha256\": \"1b72710bbb26878a4352256be4c85461514a041e6472b5cbe2d234fc72a63a1a\",\n  \"queue\": null,\n  \"schemaVersion\": \"cvf.preapprovalFeasibilityReceipt.v1\",\n  \"technicalDisposition\": \"INVALID\"\n}\n",
+          "stderr": ""
+        },
+        "receipt": {
+          "approvalTarget": {
+            "path": "docs/work_orders/CVF_LOCAL_ROOT_PROBE.md",
+            "sha256": "780244438051e3ea393edea4654211611b27dd4e30d8511ab8f4f8ec847da841"
+          },
+          "canonicalBlockCount": 1,
+          "canonicalViolations": [],
+          "companion": {
+            "path": "docs/reviews/evidence/local-root-probe.json",
+            "sha256": "9006e1befa8d6a17cfe6cfc6b2935b30cf94fe6f1ffd3dd40ac20aebb6a153a1"
+          },
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnostics": [
+            {
+              "code": "PREREQ_EVIDENCE_HASH_MISMATCH",
+              "message": "phasePrerequisites.rows[0] evidence sha256 does not match the current bytes"
+            },
+            {
+              "code": "PREREQ_EVIDENCE_HASH_MISMATCH",
+              "message": "phasePrerequisites.rows[1] evidence sha256 does not match the current bytes"
+            }
+          ],
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "prerequisites": {
+            "deferred": 0,
+            "examined": 2
+          },
+          "proposal": {
+            "path": "docs/work_orders/CVF_LOCAL_ROOT_PROBE.md",
+            "sha256": "780244438051e3ea393edea4654211611b27dd4e30d8511ab8f4f8ec847da841"
+          },
+          "prospectiveOutcomeSha256": "1b72710bbb26878a4352256be4c85461514a041e6472b5cbe2d234fc72a63a1a",
+          "queue": null,
+          "schemaVersion": "cvf.preapprovalFeasibilityReceipt.v1",
+          "technicalDisposition": "INVALID"
+        }
+      },
+      {
+        "case": "unbuildable-return-route",
+        "expected": "INVALID",
+        "observed": "INVALID",
+        "diagnosticCodes": [
+          "WORKER_RETURN_ROUTE_UNBUILDABLE"
+        ],
+        "pass": true,
+        "invocation": {
+          "command": [
+            "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+            "-B",
+            "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\governance\\compat\\run_preapproval_feasibility_gate.py",
+            "--repo-root",
+            "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-prefeas-root-build-local-20261015\\local-owned-fixture-cbs135dr",
+            "--proposal",
+            "docs/work_orders/CVF_LOCAL_ROOT_PROBE.md",
+            "--approval-target",
+            "docs/work_orders/CVF_LOCAL_ROOT_PROBE.md",
+            "--json"
+          ],
+          "exitCode": 1,
+          "elapsedSeconds": 0.081,
+          "stdout": "{\n  \"approvalTarget\": {\n    \"path\": \"docs/work_orders/CVF_LOCAL_ROOT_PROBE.md\",\n    \"sha256\": \"24ccd4e2689dbbdf5d510adb27def5f7d8752af21fd1d35be8ab98b366f95dbc\"\n  },\n  \"canonicalBlockCount\": 1,\n  \"canonicalViolations\": [],\n  \"companion\": {\n    \"path\": \"docs/reviews/evidence/local-root-probe.json\",\n    \"sha256\": \"4acd053f0aeb399925832eb3239df7a33fc7b3dc0d2d2e4a1bc3bc1ef351e6e2\"\n  },\n  \"coverageDisposition\": \"NOT_APPLICABLE\",\n  \"diagnostics\": [\n    {\n      \"code\": \"WORKER_RETURN_ROUTE_UNBUILDABLE\",\n      \"message\": \"bound worker-return command construction failed: active work order lacks an exact workerReturnPath\"\n    }\n  ],\n  \"effectAdmission\": false,\n  \"operatorApprovalRequired\": true,\n  \"prerequisites\": {\n    \"deferred\": 0,\n    \"examined\": 2\n  },\n  \"proposal\": {\n    \"path\": \"docs/work_orders/CVF_LOCAL_ROOT_PROBE.md\",\n    \"sha256\": \"24ccd4e2689dbbdf5d510adb27def5f7d8752af21fd1d35be8ab98b366f95dbc\"\n  },\n  \"prospectiveOutcomeSha256\": \"1b72710bbb26878a4352256be4c85461514a041e6472b5cbe2d234fc72a63a1a\",\n  \"queue\": null,\n  \"schemaVersion\": \"cvf.preapprovalFeasibilityReceipt.v1\",\n  \"technicalDisposition\": \"INVALID\"\n}\n",
+          "stderr": ""
+        },
+        "receipt": {
+          "approvalTarget": {
+            "path": "docs/work_orders/CVF_LOCAL_ROOT_PROBE.md",
+            "sha256": "24ccd4e2689dbbdf5d510adb27def5f7d8752af21fd1d35be8ab98b366f95dbc"
+          },
+          "canonicalBlockCount": 1,
+          "canonicalViolations": [],
+          "companion": {
+            "path": "docs/reviews/evidence/local-root-probe.json",
+            "sha256": "4acd053f0aeb399925832eb3239df7a33fc7b3dc0d2d2e4a1bc3bc1ef351e6e2"
+          },
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnostics": [
+            {
+              "code": "WORKER_RETURN_ROUTE_UNBUILDABLE",
+              "message": "bound worker-return command construction failed: active work order lacks an exact workerReturnPath"
+            }
+          ],
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "prerequisites": {
+            "deferred": 0,
+            "examined": 2
+          },
+          "proposal": {
+            "path": "docs/work_orders/CVF_LOCAL_ROOT_PROBE.md",
+            "sha256": "24ccd4e2689dbbdf5d510adb27def5f7d8752af21fd1d35be8ab98b366f95dbc"
+          },
+          "prospectiveOutcomeSha256": "1b72710bbb26878a4352256be4c85461514a041e6472b5cbe2d234fc72a63a1a",
+          "queue": null,
+          "schemaVersion": "cvf.preapprovalFeasibilityReceipt.v1",
+          "technicalDisposition": "INVALID"
+        }
+      },
+      {
+        "case": "missing-root-scope",
+        "expected": "INVALID",
+        "observed": "INVALID",
+        "diagnosticCodes": [
+          "ROOT_BUILD_ROW_MISSING"
+        ],
+        "pass": true,
+        "invocation": {
+          "command": [
+            "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+            "-B",
+            "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\governance\\compat\\run_preapproval_feasibility_gate.py",
+            "--repo-root",
+            "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-prefeas-root-build-local-20261015\\local-owned-fixture-cbs135dr",
+            "--proposal",
+            "docs/work_orders/CVF_LOCAL_ROOT_PROBE.md",
+            "--approval-target",
+            "docs/work_orders/CVF_LOCAL_ROOT_PROBE.md",
+            "--json"
+          ],
+          "exitCode": 1,
+          "elapsedSeconds": 0.083,
+          "stdout": "{\n  \"approvalTarget\": {\n    \"path\": \"docs/work_orders/CVF_LOCAL_ROOT_PROBE.md\",\n    \"sha256\": \"780244438051e3ea393edea4654211611b27dd4e30d8511ab8f4f8ec847da841\"\n  },\n  \"canonicalBlockCount\": 1,\n  \"canonicalViolations\": [],\n  \"companion\": {\n    \"path\": \"docs/reviews/evidence/local-root-probe.json\",\n    \"sha256\": \"abf89b0a8ebd785c52f3270e56c962b367d6056ef2136a0ca929d0f8b984b279\"\n  },\n  \"coverageDisposition\": \"NOT_APPLICABLE\",\n  \"diagnostics\": [\n    {\n      \"code\": \"ROOT_BUILD_ROW_MISSING\",\n      \"message\": \"exactly one `ROOT_BUILD_SCOPE` prerequisite row is required; found 0\"\n    }\n  ],\n  \"effectAdmission\": false,\n  \"operatorApprovalRequired\": true,\n  \"prerequisites\": {\n    \"deferred\": 0,\n    \"examined\": 1\n  },\n  \"proposal\": {\n    \"path\": \"docs/work_orders/CVF_LOCAL_ROOT_PROBE.md\",\n    \"sha256\": \"780244438051e3ea393edea4654211611b27dd4e30d8511ab8f4f8ec847da841\"\n  },\n  \"prospectiveOutcomeSha256\": \"1b72710bbb26878a4352256be4c85461514a041e6472b5cbe2d234fc72a63a1a\",\n  \"queue\": null,\n  \"schemaVersion\": \"cvf.preapprovalFeasibilityReceipt.v1\",\n  \"technicalDisposition\": \"INVALID\"\n}\n",
+          "stderr": ""
+        },
+        "receipt": {
+          "approvalTarget": {
+            "path": "docs/work_orders/CVF_LOCAL_ROOT_PROBE.md",
+            "sha256": "780244438051e3ea393edea4654211611b27dd4e30d8511ab8f4f8ec847da841"
+          },
+          "canonicalBlockCount": 1,
+          "canonicalViolations": [],
+          "companion": {
+            "path": "docs/reviews/evidence/local-root-probe.json",
+            "sha256": "abf89b0a8ebd785c52f3270e56c962b367d6056ef2136a0ca929d0f8b984b279"
+          },
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnostics": [
+            {
+              "code": "ROOT_BUILD_ROW_MISSING",
+              "message": "exactly one `ROOT_BUILD_SCOPE` prerequisite row is required; found 0"
+            }
+          ],
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "prerequisites": {
+            "deferred": 0,
+            "examined": 1
+          },
+          "proposal": {
+            "path": "docs/work_orders/CVF_LOCAL_ROOT_PROBE.md",
+            "sha256": "780244438051e3ea393edea4654211611b27dd4e30d8511ab8f4f8ec847da841"
+          },
+          "prospectiveOutcomeSha256": "1b72710bbb26878a4352256be4c85461514a041e6472b5cbe2d234fc72a63a1a",
+          "queue": null,
+          "schemaVersion": "cvf.preapprovalFeasibilityReceipt.v1",
+          "technicalDisposition": "INVALID"
+        }
+      },
+      {
+        "case": "nested-baseline-within-spec-family",
+        "expected": "FEASIBLE_FOR_INTEGRATED_ROOT_BUILD",
+        "observed": "INVALID",
+        "diagnosticCodes": [
+          "ROOT_BUILD_BASELINE_PATH_INVALID"
+        ],
+        "pass": false,
+        "invocation": {
+          "command": [
+            "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+            "-B",
+            "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\governance\\compat\\run_preapproval_feasibility_gate.py",
+            "--repo-root",
+            "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-prefeas-root-build-local-20261015\\local-owned-fixture-cbs135dr",
+            "--proposal",
+            "docs/work_orders/CVF_LOCAL_ROOT_PROBE.md",
+            "--approval-target",
+            "docs/work_orders/CVF_LOCAL_ROOT_PROBE.md",
+            "--json"
+          ],
+          "exitCode": 1,
+          "elapsedSeconds": 0.092,
+          "stdout": "{\n  \"approvalTarget\": {\n    \"path\": \"docs/work_orders/CVF_LOCAL_ROOT_PROBE.md\",\n    \"sha256\": \"780244438051e3ea393edea4654211611b27dd4e30d8511ab8f4f8ec847da841\"\n  },\n  \"canonicalBlockCount\": 1,\n  \"canonicalViolations\": [],\n  \"companion\": {\n    \"path\": \"docs/reviews/evidence/local-root-probe.json\",\n    \"sha256\": \"3eb67f326e0a238e39ca5f032c1b8d10a21f6bdb94e4549ce20736fa23bf0995\"\n  },\n  \"coverageDisposition\": \"NOT_APPLICABLE\",\n  \"diagnostics\": [\n    {\n      \"code\": \"ROOT_BUILD_BASELINE_PATH_INVALID\",\n      \"message\": \"both root-build rows need one normalized docs/baselines/CVF_GC018_*.md path\"\n    }\n  ],\n  \"effectAdmission\": false,\n  \"operatorApprovalRequired\": true,\n  \"prerequisites\": {\n    \"deferred\": 0,\n    \"examined\": 2\n  },\n  \"proposal\": {\n    \"path\": \"docs/work_orders/CVF_LOCAL_ROOT_PROBE.md\",\n    \"sha256\": \"780244438051e3ea393edea4654211611b27dd4e30d8511ab8f4f8ec847da841\"\n  },\n  \"prospectiveOutcomeSha256\": \"1b72710bbb26878a4352256be4c85461514a041e6472b5cbe2d234fc72a63a1a\",\n  \"queue\": null,\n  \"schemaVersion\": \"cvf.preapprovalFeasibilityReceipt.v1\",\n  \"technicalDisposition\": \"INVALID\"\n}\n",
+          "stderr": ""
+        },
+        "receipt": {
+          "approvalTarget": {
+            "path": "docs/work_orders/CVF_LOCAL_ROOT_PROBE.md",
+            "sha256": "780244438051e3ea393edea4654211611b27dd4e30d8511ab8f4f8ec847da841"
+          },
+          "canonicalBlockCount": 1,
+          "canonicalViolations": [],
+          "companion": {
+            "path": "docs/reviews/evidence/local-root-probe.json",
+            "sha256": "3eb67f326e0a238e39ca5f032c1b8d10a21f6bdb94e4549ce20736fa23bf0995"
+          },
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnostics": [
+            {
+              "code": "ROOT_BUILD_BASELINE_PATH_INVALID",
+              "message": "both root-build rows need one normalized docs/baselines/CVF_GC018_*.md path"
+            }
+          ],
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "prerequisites": {
+            "deferred": 0,
+            "examined": 2
+          },
+          "proposal": {
+            "path": "docs/work_orders/CVF_LOCAL_ROOT_PROBE.md",
+            "sha256": "780244438051e3ea393edea4654211611b27dd4e30d8511ab8f4f8ec847da841"
+          },
+          "prospectiveOutcomeSha256": "1b72710bbb26878a4352256be4c85461514a041e6472b5cbe2d234fc72a63a1a",
+          "queue": null,
+          "schemaVersion": "cvf.preapprovalFeasibilityReceipt.v1",
+          "technicalDisposition": "INVALID"
+        }
+      },
+      {
+        "case": "actual-range-separate-scoped-bucket",
+        "pass": true,
+        "invocation": {
+          "command": [
+            "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+            "-B",
+            "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\governance\\compat\\check_preapproval_feasibility.py",
+            "--repo-root",
+            "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-prefeas-root-build-local-20261015\\local-owned-fixture-cbs135dr",
+            "--base",
+            "HEAD",
+            "--head",
+            "HEAD",
+            "--enforce",
+            "--json"
+          ],
+          "exitCode": 0,
+          "elapsedSeconds": 0.403,
+          "stdout": "{\n  \"counts\": {\n    \"FEASIBLE\": 0,\n    \"FEASIBLE_FOR_INTEGRATED_ROOT_BUILD\": 1,\n    \"HOLD\": 0,\n    \"INVALID\": 0\n  },\n  \"coverage\": {\n    \"candidates\": 3,\n    \"changedEligibleMarkdown\": 3,\n    \"changedJson\": 1,\n    \"companionReferencingProposals\": 1,\n    \"evaluatedMarked\": 1,\n    \"notApplicableUnmarked\": 2\n  },\n  \"receipts\": [\n    {\n      \"approvalTarget\": {\n        \"path\": \"docs/work_orders/CVF_LOCAL_ROOT_PROBE.md\",\n        \"sha256\": \"780244438051e3ea393edea4654211611b27dd4e30d8511ab8f4f8ec847da841\"\n      },\n      \"canonicalBlockCount\": 1,\n      \"canonicalViolations\": [],\n      \"companion\": {\n        \"path\": \"docs/reviews/evidence/local-root-probe.json\",\n        \"sha256\": \"9006e1befa8d6a17cfe6cfc6b2935b30cf94fe6f1ffd3dd40ac20aebb6a153a1\"\n      },\n      \"coverageDisposition\": \"NOT_APPLICABLE\",\n      \"diagnostics\": [],\n      \"effectAdmission\": false,\n      \"operatorApprovalRequired\": true,\n      \"prerequisites\": {\n        \"deferred\": 0,\n        \"examined\": 2\n      },\n      \"proposal\": {\n        \"path\": \"docs/work_orders/CVF_LOCAL_ROOT_PROBE.md\",\n        \"sha256\": \"780244438051e3ea393edea4654211611b27dd4e30d8511ab8f4f8ec847da841\"\n      },\n      \"prospectiveOutcomeSha256\": \"1b72710bbb26878a4352256be4c85461514a041e6472b5cbe2d234fc72a63a1a\",\n      \"queue\": null,\n      \"runtimeReadiness\": false,\n      \"schemaVersion\": \"cvf.preapprovalFeasibilityReceipt.v1\",\n      \"technicalDisposition\": \"FEASIBLE_FOR_INTEGRATED_ROOT_BUILD\"\n    }\n  ],\n  \"schemaVersion\": \"cvf.preapprovalFeasibilityRangeReport.v1\"\n}\n",
+          "stderr": ""
+        },
+        "report": {
+          "counts": {
+            "FEASIBLE": 0,
+            "FEASIBLE_FOR_INTEGRATED_ROOT_BUILD": 1,
+            "HOLD": 0,
+            "INVALID": 0
+          },
+          "coverage": {
+            "candidates": 3,
+            "changedEligibleMarkdown": 3,
+            "changedJson": 1,
+            "companionReferencingProposals": 1,
+            "evaluatedMarked": 1,
+            "notApplicableUnmarked": 2
+          },
+          "receipts": [
+            {
+              "approvalTarget": {
+                "path": "docs/work_orders/CVF_LOCAL_ROOT_PROBE.md",
+                "sha256": "780244438051e3ea393edea4654211611b27dd4e30d8511ab8f4f8ec847da841"
+              },
+              "canonicalBlockCount": 1,
+              "canonicalViolations": [],
+              "companion": {
+                "path": "docs/reviews/evidence/local-root-probe.json",
+                "sha256": "9006e1befa8d6a17cfe6cfc6b2935b30cf94fe6f1ffd3dd40ac20aebb6a153a1"
+              },
+              "coverageDisposition": "NOT_APPLICABLE",
+              "diagnostics": [],
+              "effectAdmission": false,
+              "operatorApprovalRequired": true,
+              "prerequisites": {
+                "deferred": 0,
+                "examined": 2
+              },
+              "proposal": {
+                "path": "docs/work_orders/CVF_LOCAL_ROOT_PROBE.md",
+                "sha256": "780244438051e3ea393edea4654211611b27dd4e30d8511ab8f4f8ec847da841"
+              },
+              "prospectiveOutcomeSha256": "1b72710bbb26878a4352256be4c85461514a041e6472b5cbe2d234fc72a63a1a",
+              "queue": null,
+              "runtimeReadiness": false,
+              "schemaVersion": "cvf.preapprovalFeasibilityReceipt.v1",
+              "technicalDisposition": "FEASIBLE_FOR_INTEGRATED_ROOT_BUILD"
+            }
+          ],
+          "schemaVersion": "cvf.preapprovalFeasibilityRangeReport.v1"
+        }
+      }
+    ],
+    "temporaryFixtureCleanup": {
+      "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-prefeas-root-build-local-20261015\\local-owned-fixture-cbs135dr",
+      "removed": true
+    },
+    "providerCalls": 0
+  },
+  "independentProbe": {
+    "actor": "LOCAL_REVIEWER_NOT_IMPLEMENTATION_WORKER",
+    "startedUtc": "2026-10-14T21:23:51.412932+00:00",
+    "finishedUtc": "2026-10-14T21:23:52.943235+00:00",
+    "oracleSeparationBasis": "Locally authored declarative fixtures and SPEC assertions; subprocess-only caller/range execution; no worker test helper or evaluator import.",
+    "probeOracleSha256": "a7c61ff90a7da0eb820ed15666bf53bfab945097168891256a1a16d8e9ed95c9",
+    "passed": 10,
+    "total": 10,
+    "cases": [
+      {
+        "case": "positive-initial-zero-counters",
+        "expected": "FEASIBLE_FOR_INTEGRATED_ROOT_BUILD",
+        "observed": "FEASIBLE_FOR_INTEGRATED_ROOT_BUILD",
+        "diagnosticCodes": [],
+        "pass": true,
+        "invocation": {
+          "command": [
+            "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+            "-B",
+            "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\governance\\compat\\run_preapproval_feasibility_gate.py",
+            "--repo-root",
+            "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-prefeas-root-build-local-20261015\\local-owned-fixture-h00ogtyl",
+            "--proposal",
+            "docs/work_orders/CVF_LOCAL_ROOT_PROBE.md",
+            "--approval-target",
+            "docs/work_orders/CVF_LOCAL_ROOT_PROBE.md",
+            "--json"
+          ],
+          "exitCode": 0,
+          "elapsedSeconds": 0.094,
+          "stdout": "{\n  \"approvalTarget\": {\n    \"path\": \"docs/work_orders/CVF_LOCAL_ROOT_PROBE.md\",\n    \"sha256\": \"780244438051e3ea393edea4654211611b27dd4e30d8511ab8f4f8ec847da841\"\n  },\n  \"canonicalBlockCount\": 1,\n  \"canonicalViolations\": [],\n  \"companion\": {\n    \"path\": \"docs/reviews/evidence/local-root-probe.json\",\n    \"sha256\": \"9006e1befa8d6a17cfe6cfc6b2935b30cf94fe6f1ffd3dd40ac20aebb6a153a1\"\n  },\n  \"coverageDisposition\": \"NOT_APPLICABLE\",\n  \"diagnostics\": [],\n  \"effectAdmission\": false,\n  \"operatorApprovalRequired\": true,\n  \"prerequisites\": {\n    \"deferred\": 0,\n    \"examined\": 2\n  },\n  \"proposal\": {\n    \"path\": \"docs/work_orders/CVF_LOCAL_ROOT_PROBE.md\",\n    \"sha256\": \"780244438051e3ea393edea4654211611b27dd4e30d8511ab8f4f8ec847da841\"\n  },\n  \"prospectiveOutcomeSha256\": \"1b72710bbb26878a4352256be4c85461514a041e6472b5cbe2d234fc72a63a1a\",\n  \"queue\": null,\n  \"runtimeReadiness\": false,\n  \"schemaVersion\": \"cvf.preapprovalFeasibilityReceipt.v1\",\n  \"technicalDisposition\": \"FEASIBLE_FOR_INTEGRATED_ROOT_BUILD\"\n}\n",
+          "stderr": ""
+        },
+        "receipt": {
+          "approvalTarget": {
+            "path": "docs/work_orders/CVF_LOCAL_ROOT_PROBE.md",
+            "sha256": "780244438051e3ea393edea4654211611b27dd4e30d8511ab8f4f8ec847da841"
+          },
+          "canonicalBlockCount": 1,
+          "canonicalViolations": [],
+          "companion": {
+            "path": "docs/reviews/evidence/local-root-probe.json",
+            "sha256": "9006e1befa8d6a17cfe6cfc6b2935b30cf94fe6f1ffd3dd40ac20aebb6a153a1"
+          },
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnostics": [],
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "prerequisites": {
+            "deferred": 0,
+            "examined": 2
+          },
+          "proposal": {
+            "path": "docs/work_orders/CVF_LOCAL_ROOT_PROBE.md",
+            "sha256": "780244438051e3ea393edea4654211611b27dd4e30d8511ab8f4f8ec847da841"
+          },
+          "prospectiveOutcomeSha256": "1b72710bbb26878a4352256be4c85461514a041e6472b5cbe2d234fc72a63a1a",
+          "queue": null,
+          "runtimeReadiness": false,
+          "schemaVersion": "cvf.preapprovalFeasibilityReceipt.v1",
+          "technicalDisposition": "FEASIBLE_FOR_INTEGRATED_ROOT_BUILD"
+        }
+      },
+      {
+        "case": "phase-only-no-action",
+        "expected": "HOLD",
+        "observed": "HOLD",
+        "diagnosticCodes": [],
+        "pass": true,
+        "invocation": {
+          "command": [
+            "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+            "-B",
+            "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\governance\\compat\\run_preapproval_feasibility_gate.py",
+            "--repo-root",
+            "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-prefeas-root-build-local-20261015\\local-owned-fixture-h00ogtyl",
+            "--proposal",
+            "docs/work_orders/CVF_LOCAL_ROOT_PROBE.md",
+            "--approval-target",
+            "docs/work_orders/CVF_LOCAL_ROOT_PROBE.md",
+            "--json"
+          ],
+          "exitCode": 2,
+          "elapsedSeconds": 0.087,
+          "stdout": "{\n  \"approvalTarget\": {\n    \"path\": \"docs/work_orders/CVF_LOCAL_ROOT_PROBE.md\",\n    \"sha256\": \"780244438051e3ea393edea4654211611b27dd4e30d8511ab8f4f8ec847da841\"\n  },\n  \"canonicalBlockCount\": 1,\n  \"canonicalViolations\": [],\n  \"companion\": {\n    \"path\": \"docs/reviews/evidence/local-root-probe.json\",\n    \"sha256\": \"1eeb91cec8872839710170d837e8322452a2f008e9bf5f2f16987fd982462f75\"\n  },\n  \"coverageDisposition\": \"NOT_APPLICABLE\",\n  \"diagnostics\": [],\n  \"effectAdmission\": false,\n  \"operatorApprovalRequired\": true,\n  \"prerequisites\": {\n    \"deferred\": 0,\n    \"examined\": 2\n  },\n  \"proposal\": {\n    \"path\": \"docs/work_orders/CVF_LOCAL_ROOT_PROBE.md\",\n    \"sha256\": \"780244438051e3ea393edea4654211611b27dd4e30d8511ab8f4f8ec847da841\"\n  },\n  \"prospectiveOutcomeSha256\": \"1b72710bbb26878a4352256be4c85461514a041e6472b5cbe2d234fc72a63a1a\",\n  \"queue\": null,\n  \"schemaVersion\": \"cvf.preapprovalFeasibilityReceipt.v1\",\n  \"technicalDisposition\": \"HOLD\"\n}\n",
+          "stderr": ""
+        },
+        "receipt": {
+          "approvalTarget": {
+            "path": "docs/work_orders/CVF_LOCAL_ROOT_PROBE.md",
+            "sha256": "780244438051e3ea393edea4654211611b27dd4e30d8511ab8f4f8ec847da841"
+          },
+          "canonicalBlockCount": 1,
+          "canonicalViolations": [],
+          "companion": {
+            "path": "docs/reviews/evidence/local-root-probe.json",
+            "sha256": "1eeb91cec8872839710170d837e8322452a2f008e9bf5f2f16987fd982462f75"
+          },
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnostics": [],
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "prerequisites": {
+            "deferred": 0,
+            "examined": 2
+          },
+          "proposal": {
+            "path": "docs/work_orders/CVF_LOCAL_ROOT_PROBE.md",
+            "sha256": "780244438051e3ea393edea4654211611b27dd4e30d8511ab8f4f8ec847da841"
+          },
+          "prospectiveOutcomeSha256": "1b72710bbb26878a4352256be4c85461514a041e6472b5cbe2d234fc72a63a1a",
+          "queue": null,
+          "schemaVersion": "cvf.preapprovalFeasibilityReceipt.v1",
+          "technicalDisposition": "HOLD"
+        }
+      },
+      {
+        "case": "stop-with-action",
+        "expected": "HOLD",
+        "observed": "HOLD",
+        "diagnosticCodes": [],
+        "pass": true,
+        "invocation": {
+          "command": [
+            "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+            "-B",
+            "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\governance\\compat\\run_preapproval_feasibility_gate.py",
+            "--repo-root",
+            "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-prefeas-root-build-local-20261015\\local-owned-fixture-h00ogtyl",
+            "--proposal",
+            "docs/work_orders/CVF_LOCAL_ROOT_PROBE.md",
+            "--approval-target",
+            "docs/work_orders/CVF_LOCAL_ROOT_PROBE.md",
+            "--json"
+          ],
+          "exitCode": 2,
+          "elapsedSeconds": 0.085,
+          "stdout": "{\n  \"approvalTarget\": {\n    \"path\": \"docs/work_orders/CVF_LOCAL_ROOT_PROBE.md\",\n    \"sha256\": \"0a427269eb7e3191b08cd1496f0ae339d16be839e91fd42db51e5a27f31057c2\"\n  },\n  \"canonicalBlockCount\": 1,\n  \"canonicalViolations\": [],\n  \"companion\": {\n    \"path\": \"docs/reviews/evidence/local-root-probe.json\",\n    \"sha256\": \"169ccb83d28f6484a678361acef695bb3a2fb1e7fff42b0e9b17ac723d723254\"\n  },\n  \"coverageDisposition\": \"NOT_APPLICABLE\",\n  \"diagnostics\": [],\n  \"effectAdmission\": false,\n  \"operatorApprovalRequired\": true,\n  \"prerequisites\": {\n    \"deferred\": 0,\n    \"examined\": 2\n  },\n  \"proposal\": {\n    \"path\": \"docs/work_orders/CVF_LOCAL_ROOT_PROBE.md\",\n    \"sha256\": \"0a427269eb7e3191b08cd1496f0ae339d16be839e91fd42db51e5a27f31057c2\"\n  },\n  \"prospectiveOutcomeSha256\": \"c4b97f6a5b3e1dfc2533b809e6bcdb8448d0a8efc1a5aebaf946c874ef8c9044\",\n  \"queue\": null,\n  \"schemaVersion\": \"cvf.preapprovalFeasibilityReceipt.v1\",\n  \"technicalDisposition\": \"HOLD\"\n}\n",
+          "stderr": ""
+        },
+        "receipt": {
+          "approvalTarget": {
+            "path": "docs/work_orders/CVF_LOCAL_ROOT_PROBE.md",
+            "sha256": "0a427269eb7e3191b08cd1496f0ae339d16be839e91fd42db51e5a27f31057c2"
+          },
+          "canonicalBlockCount": 1,
+          "canonicalViolations": [],
+          "companion": {
+            "path": "docs/reviews/evidence/local-root-probe.json",
+            "sha256": "169ccb83d28f6484a678361acef695bb3a2fb1e7fff42b0e9b17ac723d723254"
+          },
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnostics": [],
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "prerequisites": {
+            "deferred": 0,
+            "examined": 2
+          },
+          "proposal": {
+            "path": "docs/work_orders/CVF_LOCAL_ROOT_PROBE.md",
+            "sha256": "0a427269eb7e3191b08cd1496f0ae339d16be839e91fd42db51e5a27f31057c2"
+          },
+          "prospectiveOutcomeSha256": "c4b97f6a5b3e1dfc2533b809e6bcdb8448d0a8efc1a5aebaf946c874ef8c9044",
+          "queue": null,
+          "schemaVersion": "cvf.preapprovalFeasibilityReceipt.v1",
+          "technicalDisposition": "HOLD"
+        }
+      },
+      {
+        "case": "numeric-zero-is-not-false",
+        "expected": "INVALID",
+        "observed": "INVALID",
+        "diagnosticCodes": [
+          "ACTION_READINESS_CLAIM_INVALID"
+        ],
+        "pass": true,
+        "invocation": {
+          "command": [
+            "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+            "-B",
+            "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\governance\\compat\\run_preapproval_feasibility_gate.py",
+            "--repo-root",
+            "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-prefeas-root-build-local-20261015\\local-owned-fixture-h00ogtyl",
+            "--proposal",
+            "docs/work_orders/CVF_LOCAL_ROOT_PROBE.md",
+            "--approval-target",
+            "docs/work_orders/CVF_LOCAL_ROOT_PROBE.md",
+            "--json"
+          ],
+          "exitCode": 1,
+          "elapsedSeconds": 0.08,
+          "stdout": "{\n  \"approvalTarget\": {\n    \"path\": \"docs/work_orders/CVF_LOCAL_ROOT_PROBE.md\",\n    \"sha256\": \"780244438051e3ea393edea4654211611b27dd4e30d8511ab8f4f8ec847da841\"\n  },\n  \"canonicalBlockCount\": 1,\n  \"canonicalViolations\": [],\n  \"companion\": {\n    \"path\": \"docs/reviews/evidence/local-root-probe.json\",\n    \"sha256\": \"8ed90ef35bafafd9afc757e0037c03ff700d904233439939930c28cdd7473f84\"\n  },\n  \"coverageDisposition\": \"NOT_APPLICABLE\",\n  \"diagnostics\": [\n    {\n      \"code\": \"ACTION_READINESS_CLAIM_INVALID\",\n      \"message\": \"requestedAction.runtimeReadinessClaim must be the boolean false\"\n    }\n  ],\n  \"effectAdmission\": false,\n  \"operatorApprovalRequired\": true,\n  \"prerequisites\": {\n    \"deferred\": 0,\n    \"examined\": 2\n  },\n  \"proposal\": {\n    \"path\": \"docs/work_orders/CVF_LOCAL_ROOT_PROBE.md\",\n    \"sha256\": \"780244438051e3ea393edea4654211611b27dd4e30d8511ab8f4f8ec847da841\"\n  },\n  \"prospectiveOutcomeSha256\": \"1b72710bbb26878a4352256be4c85461514a041e6472b5cbe2d234fc72a63a1a\",\n  \"queue\": null,\n  \"schemaVersion\": \"cvf.preapprovalFeasibilityReceipt.v1\",\n  \"technicalDisposition\": \"INVALID\"\n}\n",
+          "stderr": ""
+        },
+        "receipt": {
+          "approvalTarget": {
+            "path": "docs/work_orders/CVF_LOCAL_ROOT_PROBE.md",
+            "sha256": "780244438051e3ea393edea4654211611b27dd4e30d8511ab8f4f8ec847da841"
+          },
+          "canonicalBlockCount": 1,
+          "canonicalViolations": [],
+          "companion": {
+            "path": "docs/reviews/evidence/local-root-probe.json",
+            "sha256": "8ed90ef35bafafd9afc757e0037c03ff700d904233439939930c28cdd7473f84"
+          },
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnostics": [
+            {
+              "code": "ACTION_READINESS_CLAIM_INVALID",
+              "message": "requestedAction.runtimeReadinessClaim must be the boolean false"
+            }
+          ],
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "prerequisites": {
+            "deferred": 0,
+            "examined": 2
+          },
+          "proposal": {
+            "path": "docs/work_orders/CVF_LOCAL_ROOT_PROBE.md",
+            "sha256": "780244438051e3ea393edea4654211611b27dd4e30d8511ab8f4f8ec847da841"
+          },
+          "prospectiveOutcomeSha256": "1b72710bbb26878a4352256be4c85461514a041e6472b5cbe2d234fc72a63a1a",
+          "queue": null,
+          "schemaVersion": "cvf.preapprovalFeasibilityReceipt.v1",
+          "technicalDisposition": "INVALID"
+        }
+      },
+      {
+        "case": "explicit-null-action",
+        "expected": "INVALID",
+        "observed": "INVALID",
+        "diagnosticCodes": [
+          "ACTION_SHAPE"
+        ],
+        "pass": true,
+        "invocation": {
+          "command": [
+            "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+            "-B",
+            "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\governance\\compat\\run_preapproval_feasibility_gate.py",
+            "--repo-root",
+            "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-prefeas-root-build-local-20261015\\local-owned-fixture-h00ogtyl",
+            "--proposal",
+            "docs/work_orders/CVF_LOCAL_ROOT_PROBE.md",
+            "--approval-target",
+            "docs/work_orders/CVF_LOCAL_ROOT_PROBE.md",
+            "--json"
+          ],
+          "exitCode": 1,
+          "elapsedSeconds": 0.095,
+          "stdout": "{\n  \"approvalTarget\": {\n    \"path\": \"docs/work_orders/CVF_LOCAL_ROOT_PROBE.md\",\n    \"sha256\": \"780244438051e3ea393edea4654211611b27dd4e30d8511ab8f4f8ec847da841\"\n  },\n  \"canonicalBlockCount\": 1,\n  \"canonicalViolations\": [],\n  \"companion\": {\n    \"path\": \"docs/reviews/evidence/local-root-probe.json\",\n    \"sha256\": \"5a5973e012d624d06aeab8833ada9088028d30a61bc5630c0ee690abdabc7757\"\n  },\n  \"coverageDisposition\": \"NOT_APPLICABLE\",\n  \"diagnostics\": [\n    {\n      \"code\": \"ACTION_SHAPE\",\n      \"message\": \"requestedAction must be an object\"\n    }\n  ],\n  \"effectAdmission\": false,\n  \"operatorApprovalRequired\": true,\n  \"prerequisites\": {\n    \"deferred\": 0,\n    \"examined\": 2\n  },\n  \"proposal\": {\n    \"path\": \"docs/work_orders/CVF_LOCAL_ROOT_PROBE.md\",\n    \"sha256\": \"780244438051e3ea393edea4654211611b27dd4e30d8511ab8f4f8ec847da841\"\n  },\n  \"prospectiveOutcomeSha256\": \"1b72710bbb26878a4352256be4c85461514a041e6472b5cbe2d234fc72a63a1a\",\n  \"queue\": null,\n  \"schemaVersion\": \"cvf.preapprovalFeasibilityReceipt.v1\",\n  \"technicalDisposition\": \"INVALID\"\n}\n",
+          "stderr": ""
+        },
+        "receipt": {
+          "approvalTarget": {
+            "path": "docs/work_orders/CVF_LOCAL_ROOT_PROBE.md",
+            "sha256": "780244438051e3ea393edea4654211611b27dd4e30d8511ab8f4f8ec847da841"
+          },
+          "canonicalBlockCount": 1,
+          "canonicalViolations": [],
+          "companion": {
+            "path": "docs/reviews/evidence/local-root-probe.json",
+            "sha256": "5a5973e012d624d06aeab8833ada9088028d30a61bc5630c0ee690abdabc7757"
+          },
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnostics": [
+            {
+              "code": "ACTION_SHAPE",
+              "message": "requestedAction must be an object"
+            }
+          ],
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "prerequisites": {
+            "deferred": 0,
+            "examined": 2
+          },
+          "proposal": {
+            "path": "docs/work_orders/CVF_LOCAL_ROOT_PROBE.md",
+            "sha256": "780244438051e3ea393edea4654211611b27dd4e30d8511ab8f4f8ec847da841"
+          },
+          "prospectiveOutcomeSha256": "1b72710bbb26878a4352256be4c85461514a041e6472b5cbe2d234fc72a63a1a",
+          "queue": null,
+          "schemaVersion": "cvf.preapprovalFeasibilityReceipt.v1",
+          "technicalDisposition": "INVALID"
+        }
+      },
+      {
+        "case": "baseline-source-drift",
+        "expected": "INVALID",
+        "observed": "INVALID",
+        "diagnosticCodes": [
+          "PREREQ_EVIDENCE_HASH_MISMATCH",
+          "PREREQ_EVIDENCE_HASH_MISMATCH"
+        ],
+        "pass": true,
+        "invocation": {
+          "command": [
+            "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+            "-B",
+            "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\governance\\compat\\run_preapproval_feasibility_gate.py",
+            "--repo-root",
+            "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-prefeas-root-build-local-20261015\\local-owned-fixture-h00ogtyl",
+            "--proposal",
+            "docs/work_orders/CVF_LOCAL_ROOT_PROBE.md",
+            "--approval-target",
+            "docs/work_orders/CVF_LOCAL_ROOT_PROBE.md",
+            "--json"
+          ],
+          "exitCode": 1,
+          "elapsedSeconds": 0.091,
+          "stdout": "{\n  \"approvalTarget\": {\n    \"path\": \"docs/work_orders/CVF_LOCAL_ROOT_PROBE.md\",\n    \"sha256\": \"780244438051e3ea393edea4654211611b27dd4e30d8511ab8f4f8ec847da841\"\n  },\n  \"canonicalBlockCount\": 1,\n  \"canonicalViolations\": [],\n  \"companion\": {\n    \"path\": \"docs/reviews/evidence/local-root-probe.json\",\n    \"sha256\": \"9006e1befa8d6a17cfe6cfc6b2935b30cf94fe6f1ffd3dd40ac20aebb6a153a1\"\n  },\n  \"coverageDisposition\": \"NOT_APPLICABLE\",\n  \"diagnostics\": [\n    {\n      \"code\": \"PREREQ_EVIDENCE_HASH_MISMATCH\",\n      \"message\": \"phasePrerequisites.rows[0] evidence sha256 does not match the current bytes\"\n    },\n    {\n      \"code\": \"PREREQ_EVIDENCE_HASH_MISMATCH\",\n      \"message\": \"phasePrerequisites.rows[1] evidence sha256 does not match the current bytes\"\n    }\n  ],\n  \"effectAdmission\": false,\n  \"operatorApprovalRequired\": true,\n  \"prerequisites\": {\n    \"deferred\": 0,\n    \"examined\": 2\n  },\n  \"proposal\": {\n    \"path\": \"docs/work_orders/CVF_LOCAL_ROOT_PROBE.md\",\n    \"sha256\": \"780244438051e3ea393edea4654211611b27dd4e30d8511ab8f4f8ec847da841\"\n  },\n  \"prospectiveOutcomeSha256\": \"1b72710bbb26878a4352256be4c85461514a041e6472b5cbe2d234fc72a63a1a\",\n  \"queue\": null,\n  \"schemaVersion\": \"cvf.preapprovalFeasibilityReceipt.v1\",\n  \"technicalDisposition\": \"INVALID\"\n}\n",
+          "stderr": ""
+        },
+        "receipt": {
+          "approvalTarget": {
+            "path": "docs/work_orders/CVF_LOCAL_ROOT_PROBE.md",
+            "sha256": "780244438051e3ea393edea4654211611b27dd4e30d8511ab8f4f8ec847da841"
+          },
+          "canonicalBlockCount": 1,
+          "canonicalViolations": [],
+          "companion": {
+            "path": "docs/reviews/evidence/local-root-probe.json",
+            "sha256": "9006e1befa8d6a17cfe6cfc6b2935b30cf94fe6f1ffd3dd40ac20aebb6a153a1"
+          },
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnostics": [
+            {
+              "code": "PREREQ_EVIDENCE_HASH_MISMATCH",
+              "message": "phasePrerequisites.rows[0] evidence sha256 does not match the current bytes"
+            },
+            {
+              "code": "PREREQ_EVIDENCE_HASH_MISMATCH",
+              "message": "phasePrerequisites.rows[1] evidence sha256 does not match the current bytes"
+            }
+          ],
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "prerequisites": {
+            "deferred": 0,
+            "examined": 2
+          },
+          "proposal": {
+            "path": "docs/work_orders/CVF_LOCAL_ROOT_PROBE.md",
+            "sha256": "780244438051e3ea393edea4654211611b27dd4e30d8511ab8f4f8ec847da841"
+          },
+          "prospectiveOutcomeSha256": "1b72710bbb26878a4352256be4c85461514a041e6472b5cbe2d234fc72a63a1a",
+          "queue": null,
+          "schemaVersion": "cvf.preapprovalFeasibilityReceipt.v1",
+          "technicalDisposition": "INVALID"
+        }
+      },
+      {
+        "case": "unbuildable-return-route",
+        "expected": "INVALID",
+        "observed": "INVALID",
+        "diagnosticCodes": [
+          "WORKER_RETURN_ROUTE_UNBUILDABLE"
+        ],
+        "pass": true,
+        "invocation": {
+          "command": [
+            "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+            "-B",
+            "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\governance\\compat\\run_preapproval_feasibility_gate.py",
+            "--repo-root",
+            "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-prefeas-root-build-local-20261015\\local-owned-fixture-h00ogtyl",
+            "--proposal",
+            "docs/work_orders/CVF_LOCAL_ROOT_PROBE.md",
+            "--approval-target",
+            "docs/work_orders/CVF_LOCAL_ROOT_PROBE.md",
+            "--json"
+          ],
+          "exitCode": 1,
+          "elapsedSeconds": 0.089,
+          "stdout": "{\n  \"approvalTarget\": {\n    \"path\": \"docs/work_orders/CVF_LOCAL_ROOT_PROBE.md\",\n    \"sha256\": \"24ccd4e2689dbbdf5d510adb27def5f7d8752af21fd1d35be8ab98b366f95dbc\"\n  },\n  \"canonicalBlockCount\": 1,\n  \"canonicalViolations\": [],\n  \"companion\": {\n    \"path\": \"docs/reviews/evidence/local-root-probe.json\",\n    \"sha256\": \"4acd053f0aeb399925832eb3239df7a33fc7b3dc0d2d2e4a1bc3bc1ef351e6e2\"\n  },\n  \"coverageDisposition\": \"NOT_APPLICABLE\",\n  \"diagnostics\": [\n    {\n      \"code\": \"WORKER_RETURN_ROUTE_UNBUILDABLE\",\n      \"message\": \"bound worker-return command construction failed: active work order lacks an exact workerReturnPath\"\n    }\n  ],\n  \"effectAdmission\": false,\n  \"operatorApprovalRequired\": true,\n  \"prerequisites\": {\n    \"deferred\": 0,\n    \"examined\": 2\n  },\n  \"proposal\": {\n    \"path\": \"docs/work_orders/CVF_LOCAL_ROOT_PROBE.md\",\n    \"sha256\": \"24ccd4e2689dbbdf5d510adb27def5f7d8752af21fd1d35be8ab98b366f95dbc\"\n  },\n  \"prospectiveOutcomeSha256\": \"1b72710bbb26878a4352256be4c85461514a041e6472b5cbe2d234fc72a63a1a\",\n  \"queue\": null,\n  \"schemaVersion\": \"cvf.preapprovalFeasibilityReceipt.v1\",\n  \"technicalDisposition\": \"INVALID\"\n}\n",
+          "stderr": ""
+        },
+        "receipt": {
+          "approvalTarget": {
+            "path": "docs/work_orders/CVF_LOCAL_ROOT_PROBE.md",
+            "sha256": "24ccd4e2689dbbdf5d510adb27def5f7d8752af21fd1d35be8ab98b366f95dbc"
+          },
+          "canonicalBlockCount": 1,
+          "canonicalViolations": [],
+          "companion": {
+            "path": "docs/reviews/evidence/local-root-probe.json",
+            "sha256": "4acd053f0aeb399925832eb3239df7a33fc7b3dc0d2d2e4a1bc3bc1ef351e6e2"
+          },
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnostics": [
+            {
+              "code": "WORKER_RETURN_ROUTE_UNBUILDABLE",
+              "message": "bound worker-return command construction failed: active work order lacks an exact workerReturnPath"
+            }
+          ],
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "prerequisites": {
+            "deferred": 0,
+            "examined": 2
+          },
+          "proposal": {
+            "path": "docs/work_orders/CVF_LOCAL_ROOT_PROBE.md",
+            "sha256": "24ccd4e2689dbbdf5d510adb27def5f7d8752af21fd1d35be8ab98b366f95dbc"
+          },
+          "prospectiveOutcomeSha256": "1b72710bbb26878a4352256be4c85461514a041e6472b5cbe2d234fc72a63a1a",
+          "queue": null,
+          "schemaVersion": "cvf.preapprovalFeasibilityReceipt.v1",
+          "technicalDisposition": "INVALID"
+        }
+      },
+      {
+        "case": "missing-root-scope",
+        "expected": "INVALID",
+        "observed": "INVALID",
+        "diagnosticCodes": [
+          "ROOT_BUILD_ROW_MISSING"
+        ],
+        "pass": true,
+        "invocation": {
+          "command": [
+            "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+            "-B",
+            "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\governance\\compat\\run_preapproval_feasibility_gate.py",
+            "--repo-root",
+            "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-prefeas-root-build-local-20261015\\local-owned-fixture-h00ogtyl",
+            "--proposal",
+            "docs/work_orders/CVF_LOCAL_ROOT_PROBE.md",
+            "--approval-target",
+            "docs/work_orders/CVF_LOCAL_ROOT_PROBE.md",
+            "--json"
+          ],
+          "exitCode": 1,
+          "elapsedSeconds": 0.09,
+          "stdout": "{\n  \"approvalTarget\": {\n    \"path\": \"docs/work_orders/CVF_LOCAL_ROOT_PROBE.md\",\n    \"sha256\": \"780244438051e3ea393edea4654211611b27dd4e30d8511ab8f4f8ec847da841\"\n  },\n  \"canonicalBlockCount\": 1,\n  \"canonicalViolations\": [],\n  \"companion\": {\n    \"path\": \"docs/reviews/evidence/local-root-probe.json\",\n    \"sha256\": \"abf89b0a8ebd785c52f3270e56c962b367d6056ef2136a0ca929d0f8b984b279\"\n  },\n  \"coverageDisposition\": \"NOT_APPLICABLE\",\n  \"diagnostics\": [\n    {\n      \"code\": \"ROOT_BUILD_ROW_MISSING\",\n      \"message\": \"exactly one `ROOT_BUILD_SCOPE` prerequisite row is required; found 0\"\n    }\n  ],\n  \"effectAdmission\": false,\n  \"operatorApprovalRequired\": true,\n  \"prerequisites\": {\n    \"deferred\": 0,\n    \"examined\": 1\n  },\n  \"proposal\": {\n    \"path\": \"docs/work_orders/CVF_LOCAL_ROOT_PROBE.md\",\n    \"sha256\": \"780244438051e3ea393edea4654211611b27dd4e30d8511ab8f4f8ec847da841\"\n  },\n  \"prospectiveOutcomeSha256\": \"1b72710bbb26878a4352256be4c85461514a041e6472b5cbe2d234fc72a63a1a\",\n  \"queue\": null,\n  \"schemaVersion\": \"cvf.preapprovalFeasibilityReceipt.v1\",\n  \"technicalDisposition\": \"INVALID\"\n}\n",
+          "stderr": ""
+        },
+        "receipt": {
+          "approvalTarget": {
+            "path": "docs/work_orders/CVF_LOCAL_ROOT_PROBE.md",
+            "sha256": "780244438051e3ea393edea4654211611b27dd4e30d8511ab8f4f8ec847da841"
+          },
+          "canonicalBlockCount": 1,
+          "canonicalViolations": [],
+          "companion": {
+            "path": "docs/reviews/evidence/local-root-probe.json",
+            "sha256": "abf89b0a8ebd785c52f3270e56c962b367d6056ef2136a0ca929d0f8b984b279"
+          },
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnostics": [
+            {
+              "code": "ROOT_BUILD_ROW_MISSING",
+              "message": "exactly one `ROOT_BUILD_SCOPE` prerequisite row is required; found 0"
+            }
+          ],
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "prerequisites": {
+            "deferred": 0,
+            "examined": 1
+          },
+          "proposal": {
+            "path": "docs/work_orders/CVF_LOCAL_ROOT_PROBE.md",
+            "sha256": "780244438051e3ea393edea4654211611b27dd4e30d8511ab8f4f8ec847da841"
+          },
+          "prospectiveOutcomeSha256": "1b72710bbb26878a4352256be4c85461514a041e6472b5cbe2d234fc72a63a1a",
+          "queue": null,
+          "schemaVersion": "cvf.preapprovalFeasibilityReceipt.v1",
+          "technicalDisposition": "INVALID"
+        }
+      },
+      {
+        "case": "nested-baseline-within-spec-family",
+        "expected": "FEASIBLE_FOR_INTEGRATED_ROOT_BUILD",
+        "observed": "FEASIBLE_FOR_INTEGRATED_ROOT_BUILD",
+        "diagnosticCodes": [],
+        "pass": true,
+        "invocation": {
+          "command": [
+            "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+            "-B",
+            "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\governance\\compat\\run_preapproval_feasibility_gate.py",
+            "--repo-root",
+            "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-prefeas-root-build-local-20261015\\local-owned-fixture-h00ogtyl",
+            "--proposal",
+            "docs/work_orders/CVF_LOCAL_ROOT_PROBE.md",
+            "--approval-target",
+            "docs/work_orders/CVF_LOCAL_ROOT_PROBE.md",
+            "--json"
+          ],
+          "exitCode": 0,
+          "elapsedSeconds": 0.085,
+          "stdout": "{\n  \"approvalTarget\": {\n    \"path\": \"docs/work_orders/CVF_LOCAL_ROOT_PROBE.md\",\n    \"sha256\": \"780244438051e3ea393edea4654211611b27dd4e30d8511ab8f4f8ec847da841\"\n  },\n  \"canonicalBlockCount\": 1,\n  \"canonicalViolations\": [],\n  \"companion\": {\n    \"path\": \"docs/reviews/evidence/local-root-probe.json\",\n    \"sha256\": \"3eb67f326e0a238e39ca5f032c1b8d10a21f6bdb94e4549ce20736fa23bf0995\"\n  },\n  \"coverageDisposition\": \"NOT_APPLICABLE\",\n  \"diagnostics\": [],\n  \"effectAdmission\": false,\n  \"operatorApprovalRequired\": true,\n  \"prerequisites\": {\n    \"deferred\": 0,\n    \"examined\": 2\n  },\n  \"proposal\": {\n    \"path\": \"docs/work_orders/CVF_LOCAL_ROOT_PROBE.md\",\n    \"sha256\": \"780244438051e3ea393edea4654211611b27dd4e30d8511ab8f4f8ec847da841\"\n  },\n  \"prospectiveOutcomeSha256\": \"1b72710bbb26878a4352256be4c85461514a041e6472b5cbe2d234fc72a63a1a\",\n  \"queue\": null,\n  \"runtimeReadiness\": false,\n  \"schemaVersion\": \"cvf.preapprovalFeasibilityReceipt.v1\",\n  \"technicalDisposition\": \"FEASIBLE_FOR_INTEGRATED_ROOT_BUILD\"\n}\n",
+          "stderr": ""
+        },
+        "receipt": {
+          "approvalTarget": {
+            "path": "docs/work_orders/CVF_LOCAL_ROOT_PROBE.md",
+            "sha256": "780244438051e3ea393edea4654211611b27dd4e30d8511ab8f4f8ec847da841"
+          },
+          "canonicalBlockCount": 1,
+          "canonicalViolations": [],
+          "companion": {
+            "path": "docs/reviews/evidence/local-root-probe.json",
+            "sha256": "3eb67f326e0a238e39ca5f032c1b8d10a21f6bdb94e4549ce20736fa23bf0995"
+          },
+          "coverageDisposition": "NOT_APPLICABLE",
+          "diagnostics": [],
+          "effectAdmission": false,
+          "operatorApprovalRequired": true,
+          "prerequisites": {
+            "deferred": 0,
+            "examined": 2
+          },
+          "proposal": {
+            "path": "docs/work_orders/CVF_LOCAL_ROOT_PROBE.md",
+            "sha256": "780244438051e3ea393edea4654211611b27dd4e30d8511ab8f4f8ec847da841"
+          },
+          "prospectiveOutcomeSha256": "1b72710bbb26878a4352256be4c85461514a041e6472b5cbe2d234fc72a63a1a",
+          "queue": null,
+          "runtimeReadiness": false,
+          "schemaVersion": "cvf.preapprovalFeasibilityReceipt.v1",
+          "technicalDisposition": "FEASIBLE_FOR_INTEGRATED_ROOT_BUILD"
+        }
+      },
+      {
+        "case": "actual-range-separate-scoped-bucket",
+        "pass": true,
+        "invocation": {
+          "command": [
+            "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+            "-B",
+            "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\governance\\compat\\check_preapproval_feasibility.py",
+            "--repo-root",
+            "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-prefeas-root-build-local-20261015\\local-owned-fixture-h00ogtyl",
+            "--base",
+            "HEAD",
+            "--head",
+            "HEAD",
+            "--enforce",
+            "--json"
+          ],
+          "exitCode": 0,
+          "elapsedSeconds": 0.351,
+          "stdout": "{\n  \"counts\": {\n    \"FEASIBLE\": 0,\n    \"FEASIBLE_FOR_INTEGRATED_ROOT_BUILD\": 1,\n    \"HOLD\": 0,\n    \"INVALID\": 0\n  },\n  \"coverage\": {\n    \"candidates\": 3,\n    \"changedEligibleMarkdown\": 3,\n    \"changedJson\": 1,\n    \"companionReferencingProposals\": 1,\n    \"evaluatedMarked\": 1,\n    \"notApplicableUnmarked\": 2\n  },\n  \"receipts\": [\n    {\n      \"approvalTarget\": {\n        \"path\": \"docs/work_orders/CVF_LOCAL_ROOT_PROBE.md\",\n        \"sha256\": \"780244438051e3ea393edea4654211611b27dd4e30d8511ab8f4f8ec847da841\"\n      },\n      \"canonicalBlockCount\": 1,\n      \"canonicalViolations\": [],\n      \"companion\": {\n        \"path\": \"docs/reviews/evidence/local-root-probe.json\",\n        \"sha256\": \"9006e1befa8d6a17cfe6cfc6b2935b30cf94fe6f1ffd3dd40ac20aebb6a153a1\"\n      },\n      \"coverageDisposition\": \"NOT_APPLICABLE\",\n      \"diagnostics\": [],\n      \"effectAdmission\": false,\n      \"operatorApprovalRequired\": true,\n      \"prerequisites\": {\n        \"deferred\": 0,\n        \"examined\": 2\n      },\n      \"proposal\": {\n        \"path\": \"docs/work_orders/CVF_LOCAL_ROOT_PROBE.md\",\n        \"sha256\": \"780244438051e3ea393edea4654211611b27dd4e30d8511ab8f4f8ec847da841\"\n      },\n      \"prospectiveOutcomeSha256\": \"1b72710bbb26878a4352256be4c85461514a041e6472b5cbe2d234fc72a63a1a\",\n      \"queue\": null,\n      \"runtimeReadiness\": false,\n      \"schemaVersion\": \"cvf.preapprovalFeasibilityReceipt.v1\",\n      \"technicalDisposition\": \"FEASIBLE_FOR_INTEGRATED_ROOT_BUILD\"\n    }\n  ],\n  \"schemaVersion\": \"cvf.preapprovalFeasibilityRangeReport.v1\"\n}\n",
+          "stderr": ""
+        },
+        "report": {
+          "counts": {
+            "FEASIBLE": 0,
+            "FEASIBLE_FOR_INTEGRATED_ROOT_BUILD": 1,
+            "HOLD": 0,
+            "INVALID": 0
+          },
+          "coverage": {
+            "candidates": 3,
+            "changedEligibleMarkdown": 3,
+            "changedJson": 1,
+            "companionReferencingProposals": 1,
+            "evaluatedMarked": 1,
+            "notApplicableUnmarked": 2
+          },
+          "receipts": [
+            {
+              "approvalTarget": {
+                "path": "docs/work_orders/CVF_LOCAL_ROOT_PROBE.md",
+                "sha256": "780244438051e3ea393edea4654211611b27dd4e30d8511ab8f4f8ec847da841"
+              },
+              "canonicalBlockCount": 1,
+              "canonicalViolations": [],
+              "companion": {
+                "path": "docs/reviews/evidence/local-root-probe.json",
+                "sha256": "9006e1befa8d6a17cfe6cfc6b2935b30cf94fe6f1ffd3dd40ac20aebb6a153a1"
+              },
+              "coverageDisposition": "NOT_APPLICABLE",
+              "diagnostics": [],
+              "effectAdmission": false,
+              "operatorApprovalRequired": true,
+              "prerequisites": {
+                "deferred": 0,
+                "examined": 2
+              },
+              "proposal": {
+                "path": "docs/work_orders/CVF_LOCAL_ROOT_PROBE.md",
+                "sha256": "780244438051e3ea393edea4654211611b27dd4e30d8511ab8f4f8ec847da841"
+              },
+              "prospectiveOutcomeSha256": "1b72710bbb26878a4352256be4c85461514a041e6472b5cbe2d234fc72a63a1a",
+              "queue": null,
+              "runtimeReadiness": false,
+              "schemaVersion": "cvf.preapprovalFeasibilityReceipt.v1",
+              "technicalDisposition": "FEASIBLE_FOR_INTEGRATED_ROOT_BUILD"
+            }
+          ],
+          "schemaVersion": "cvf.preapprovalFeasibilityRangeReport.v1"
+        }
+      }
+    ],
+    "temporaryFixtureCleanup": {
+      "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-prefeas-root-build-local-20261015\\local-owned-fixture-h00ogtyl",
+      "removed": true
+    },
+    "providerCalls": 0
+  },
+  "workerOracleSha256": "15a2c7c189ff2cc5284e3b19430ad0a0f03211c39cd0c2bbd34540d49d442b5c",
+  "probeOracleSha256": "a7c61ff90a7da0eb820ed15666bf53bfab945097168891256a1a16d8e9ed95c9",
+  "probeOracleSource": "\"\"\"Local reviewer oracle from locked SPEC; no worker helper/import reuse.\"\"\"\nfrom pathlib import Path\nfrom datetime import datetime, timezone\nimport copy\nimport hashlib\nimport json\nimport shutil\nimport stat\nimport subprocess\nimport sys\nimport tempfile\nimport time\n\nREPO = Path(__file__).resolve().parents[3]\nCUSTODY = Path(__file__).resolve().parent\nCLI = REPO / 'governance/compat/run_preapproval_feasibility_gate.py'\nRANGE = REPO / 'governance/compat/check_preapproval_feasibility.py'\nPROPOSAL = 'docs/work_orders/CVF_LOCAL_ROOT_PROBE.md'\nCOMPANION = 'docs/reviews/evidence/local-root-probe.json'\nBASELINE = 'docs/baselines/CVF_GC018_LOCAL_ORACLE.md'\nRETURN = 'docs/reviews/CVF_LOCAL_ROOT_PROBE_RETURN.md'\nSCOPED = 'FEASIBLE_FOR_INTEGRATED_ROOT_BUILD'\nOUTCOME = {\n    'schemaVersion': 'cvf.semanticConvergenceControl.v1',\n    'problemKey': 'local-independent-ncr-root-build-oracle',\n    'chainMode': 'INITIAL', 'chainOrdinal': 0, 'predecessor': None,\n    'blockerDelta': {k: [] for k in ('prior','resolved','retained','new','reopened','current')},\n    'resolutionEvidence': {},\n    'counters': {k: 0 for k in ('partialReadyClosures','reviewerScopeExpansions','sameClaimCorrections','nonDecreasingBlockerTransitions')},\n    'claims': [], 'requiredDisposition': 'ROOT_CONTRACT_REQUIRED',\n    'successorScope': 'INTEGRATED_ROOT_CONTRACT',\n}\n\ndef sha(data):\n    return hashlib.sha256(data).hexdigest()\n\ndef write(root, path, data):\n    target = root / path\n    target.parent.mkdir(parents=True, exist_ok=True)\n    target.write_bytes(data.encode('utf-8') if isinstance(data,str) else data)\n\ndef fixture(root, outcome=None, baseline=BASELINE, return_field=True):\n    outcome = copy.deepcopy(outcome or OUTCOME)\n    source = '# Local locked baseline\\n\\n## Build baseline\\n\\n## Build scope\\n'\n    write(root, baseline, source)\n    text = '# Local independent caller fixture\\n\\ndocType: work_order\\nStatus: DISPATCH_READY\\n'\n    text += 'Preapproval-Feasibility: REQUIRED\\nPreapproval-Feasibility-Companion: ' + COMPANION + '\\n'\n    if return_field:\n        text += 'workerReturnPath: `' + RETURN + '`\\n'\n    text += '\\n## Semantic Convergence Outcome\\n\\n```json\\n' + json.dumps(outcome,indent=2) + '\\n```\\n'\n    write(root, PROPOSAL, text)\n    proposal_sha = sha(text.encode())\n    comp = {\n        'schemaVersion':'cvf.preapprovalFeasibility.v1',\n        'proposal':{'path':PROPOSAL,'sha256':proposal_sha},\n        'approvalTarget':{'path':PROPOSAL,'sha256':proposal_sha,\n            'prospectiveOutcomeSha256':sha(json.dumps(outcome,sort_keys=True,ensure_ascii=True,separators=(',',':')).encode())},\n        'prospectiveOutcome':outcome,\n        'phasePrerequisites':{'phase':'PRE_DISPATCH_INTEGRATED_ROOT_CONTRACT_BUILD','rows':[\n            {'requirementId':rid,'requiredForPhase':True,'evidence':{'path':baseline,'sha256':sha(source.encode()),'locator':locator},'deferredToPhase':None}\n            for rid,locator in [('ROOT_BUILD_BASELINE','## Build baseline'),('ROOT_BUILD_SCOPE','## Build scope')]\n        ]},\n        'requestQueue':None,\n        'requestedAction':{'kind':'INTEGRATED_ROOT_CONTRACT_BUILD','runtimeReadinessClaim':False},\n    }\n    save_comp(root,comp)\n    return comp\n\ndef save_comp(root, comp):\n    write(root,COMPANION,json.dumps(comp,indent=2)+'\\n')\n\ndef run(command, root):\n    started=time.perf_counter()\n    p=subprocess.run(command,cwd=root,capture_output=True,text=True,encoding='utf-8',timeout=25)\n    return {'command':command,'exitCode':p.returncode,'elapsedSeconds':round(time.perf_counter()-started,3),'stdout':p.stdout,'stderr':p.stderr}\n\ndef remove_owned_fixture(root):\n    root = root.resolve()\n    root.relative_to(CUSTODY.resolve())\n    if not root.name.startswith('local-owned-fixture-'):\n        raise ValueError('not a Local owned fixture')\n    def writable_retry(function, path, exc_info):\n        target=Path(path).resolve()\n        target.relative_to(root)\n        target.chmod(stat.S_IWRITE | stat.S_IREAD)\n        function(path)\n    shutil.rmtree(root,onerror=writable_retry)\n\ndef observe(root,label,expected,code=None):\n    result=run([sys.executable,'-B',str(CLI),'--repo-root',str(root),'--proposal',PROPOSAL,'--approval-target',PROPOSAL,'--json'],root)\n    receipt=json.loads(result['stdout'])\n    codes=[d['code'] for d in receipt['diagnostics']]\n    passed=(result['exitCode']=={'INVALID':1,'HOLD':2,SCOPED:0}[expected]\n        and receipt['technicalDisposition']==expected\n        and receipt['effectAdmission'] is False and receipt['operatorApprovalRequired'] is True\n        and (receipt.get('runtimeReadiness') is False if expected==SCOPED else 'runtimeReadiness' not in receipt)\n        and (code is None or code in codes))\n    return {'case':label,'expected':expected,'observed':receipt['technicalDisposition'],'diagnosticCodes':codes,'pass':passed,'invocation':result,'receipt':receipt}\n\ndef main():\n    started=datetime.now(timezone.utc).isoformat()\n    root=Path(tempfile.mkdtemp(prefix='local-owned-fixture-',dir=CUSTODY)).resolve()\n    root.relative_to(CUSTODY.resolve())\n    cases=[]\n    try:\n        fixture(root)\n        cases.append(observe(root,'positive-initial-zero-counters',SCOPED))\n        comp=fixture(root); del comp['requestedAction']; save_comp(root,comp)\n        cases.append(observe(root,'phase-only-no-action','HOLD'))\n        stop=copy.deepcopy(OUTCOME); stop.update(requiredDisposition='STOP_REASSESS_ARCHITECTURE',successorScope='NO_SUCCESSOR')\n        fixture(root,stop)\n        cases.append(observe(root,'stop-with-action','HOLD'))\n        comp=fixture(root); comp['requestedAction']['runtimeReadinessClaim']=0; save_comp(root,comp)\n        cases.append(observe(root,'numeric-zero-is-not-false','INVALID','ACTION_READINESS_CLAIM_INVALID'))\n        comp=fixture(root); comp['requestedAction']=None; save_comp(root,comp)\n        cases.append(observe(root,'explicit-null-action','INVALID','ACTION_SHAPE'))\n        fixture(root); write(root,BASELINE,'# changed baseline bytes\\n')\n        cases.append(observe(root,'baseline-source-drift','INVALID','PREREQ_EVIDENCE_HASH_MISMATCH'))\n        fixture(root,return_field=False)\n        cases.append(observe(root,'unbuildable-return-route','INVALID','WORKER_RETURN_ROUTE_UNBUILDABLE'))\n        comp=fixture(root); comp['phasePrerequisites']['rows'].pop(); save_comp(root,comp)\n        cases.append(observe(root,'missing-root-scope','INVALID','ROOT_BUILD_ROW_MISSING'))\n        fixture(root,baseline='docs/baselines/local/CVF_GC018_LOCAL_ORACLE.md')\n        cases.append(observe(root,'nested-baseline-within-spec-family',SCOPED))\n        fixture(root)\n        for args in [['init','-q'],['config','user.name','Local disposable probe'],['config','user.email','local-probe@example.invalid'],['config','core.autocrlf','false']]:\n            subprocess.run(['git',*args],cwd=root,check=True,capture_output=True)\n        write(root,'fixture-anchor.txt','Local disposable anchor\\n')\n        subprocess.run(['git','add','fixture-anchor.txt'],cwd=root,check=True,capture_output=True)\n        subprocess.run(['git','-c','core.hooksPath=NUL','commit','-qm','Local disposable anchor'],cwd=root,check=True,capture_output=True)\n        result=run([sys.executable,'-B',str(RANGE),'--repo-root',str(root),'--base','HEAD','--head','HEAD','--enforce','--json'],root)\n        report=json.loads(result['stdout'])\n        passed=(result['exitCode']==0 and report['counts']=={'FEASIBLE':0,SCOPED:1,'HOLD':0,'INVALID':0} and report['coverage']['evaluatedMarked']==1)\n        cases.append({'case':'actual-range-separate-scoped-bucket','pass':passed,'invocation':result,'report':report})\n    finally:\n        write(CUSTODY,'probe-before-cleanup.json',json.dumps(cases,indent=2)+'\\n')\n        remove_owned_fixture(root)\n    payload={'actor':'LOCAL_REVIEWER_NOT_IMPLEMENTATION_WORKER','startedUtc':started,\n        'finishedUtc':datetime.now(timezone.utc).isoformat(),'oracleSeparationBasis':'Locally authored declarative fixtures and SPEC assertions; subprocess-only caller/range execution; no worker test helper or evaluator import.',\n        'probeOracleSha256':sha(Path(__file__).read_bytes()),'passed':sum(c['pass'] for c in cases),'total':len(cases),\n        'cases':cases,'temporaryFixtureCleanup':{'path':str(root),'removed':not root.exists()},'providerCalls':0}\n    write(CUSTODY,'probe-results.json',json.dumps(payload,indent=2)+'\\n')\n    print(json.dumps({'passed':payload['passed'],'total':payload['total'],'cases':[{k:c[k] for k in ('case','pass')} for c in cases],'fixtureRemoved':not root.exists()},indent=2))\n    return 0 if all(c['pass'] for c in cases) else 1\n\nif __name__=='__main__':\n    raise SystemExit(main())\n",
+  "workerMaterialHashes": {
+    "docs/reference/preapproval_feasibility/README.md": "2fe3b782e339a566072e121d0968c1e579efe8119c47fe0cbe40a075b4bbf724",
+    "governance/compat/preapproval_feasibility_contract.py": "c351608f82d25ff99f3911c1f13c4990cf5a7ad9a886a23f946fa804010e346b",
+    "governance/compat/run_preapproval_feasibility_gate.py": "5da6f2d90bcba3a0c252cd9af808daf22a600d8cdbf28d6a54f2f606fded675c",
+    "governance/compat/check_preapproval_feasibility.py": "8203d4cadd809818867cead838734458b068950db42b35bca3927e816d806fd9",
+    "governance/compat/test_check_preapproval_feasibility.py": "9c2b406c2c7c8b504fc47c9e705dd6baed0ea67637ebcfd1d9c69b3eeb7ff111",
+    "docs/reviews/CVF_NCR_PREFEAS_ROOT_BUILD_WORKER_RETURN_2026-10-15.md": "cddd3f565c8582a24d4472b98b3dc3b3a31402a84b5b5b043d6f9ea9f86099ab",
+    "docs/reviews/evidence/ncr-prefeas-root-build-worker-20261015.json": "7cb87ee0439faf846abd77323950eb33db5e88ce62d314934b37a2e5fef80ae4"
+  },
+  "requirements": {
+    "REQ-01": "ACCEPTED_TECHNICAL_BOUNDED",
+    "REQ-02": "ACCEPTED_TECHNICAL_BOUNDED",
+    "REQ-03": "ACCEPTED_TECHNICAL_BOUNDED",
+    "REQ-04": "ACCEPTED_TECHNICAL_BOUNDED",
+    "REQ-05": "ACCEPTED_TECHNICAL_BOUNDED",
+    "REQ-06": "ACCEPTED_TECHNICAL_BOUNDED",
+    "REQ-07": "ACCEPTED_TECHNICAL_BOUNDED",
+    "REQ-08": "NOT_FULLY_FULFILLED_MANDATORY_READ_ORDER; final-byte delivery retained"
+  },
+  "findings": {
+    "LOCAL-F01": "CORRECTED_NORMALIZED_BASELINE_SUBTREE",
+    "LOCAL-F02": "CORRECTED_BLOCKED_REQ_08_NO_RETROACTIVE_PASS",
+    "LOCAL-F03": "CORRECTED_SIX_RETURN_FIELD_DEFECT_COUNT"
+  },
+  "compile": "four Python paths PASS",
+  "boundFast": {
+    "result": "PASS",
+    "seconds": 10.52,
+    "log": ".cvf/runtime/ncr-prefeas-close-20261015/amended-bound-fast.log",
+    "sha256": "ac5778c954631b6f59fc6494d8e6bced423fb25e70b827767654e28113b31103"
+  },
+  "cleanup": "Local disposable Git fixture removed; temporary patch tools will be removed after final handoff; Local retains raw custody/oracle/logs as review evidence",
+  "nextPermittedAction": "PLAN separate HTML integrated-root build pair/action admission; no runtime/provider effect or old grant reuse",
+  "authorityMetadataDisposition": "Original paired grant remains byte-identical and consumed; Local completion owns technical acceptance and partial fulfillment. Companion carries reviewed current source bindings after original dispatch custody was frozen."
+}

@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Explicit before-approval caller for the opt-in preapproval feasibility protocol.
 
-Prints the typed receipt and exits 0 only for FEASIBLE. HOLD exits 2 and INVALID
-exits 1. Every invocation re-reads and re-validates all bytes; there is no
+Prints the typed receipt and exits 0 only for FEASIBLE or the action-scoped
+FEASIBLE_FOR_INTEGRATED_ROOT_BUILD (shown with runtimeReadiness=false, never a
+grant). HOLD exits 2 and INVALID exits 1. Every invocation re-reads and re-validates all bytes; there is no
 interactive prompt, cached PASS, grant write or effect admission.
 """
 from __future__ import annotations
@@ -18,7 +19,7 @@ if str(COMPAT_DIR) not in sys.path:
 
 import preapproval_feasibility_contract as contract  # noqa: E402
 
-EXIT_CODES = {"FEASIBLE": 0, "INVALID": 1, "HOLD": 2}
+EXIT_CODES = {"FEASIBLE": 0, contract.ROOT_BUILD_DISPOSITION: 0, "INVALID": 1, "HOLD": 2}
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -33,7 +34,8 @@ def main(argv: list[str] | None = None) -> int:
     args = parser.parse_args(argv)
     receipt = contract.evaluate(Path(args.repo_root), args.proposal, args.approval_target, explicit=True)
     if not args.json:
-        print(f"technicalDisposition={receipt['technicalDisposition']} coverageDisposition={receipt['coverageDisposition']} effectAdmission=false operatorApprovalRequired=true")
+        scoped = " runtimeReadiness=false" if receipt["technicalDisposition"] == contract.ROOT_BUILD_DISPOSITION else ""
+        print(f"technicalDisposition={receipt['technicalDisposition']} coverageDisposition={receipt['coverageDisposition']} effectAdmission=false operatorApprovalRequired=true{scoped}")
     print(json.dumps(receipt, indent=2, sort_keys=True, ensure_ascii=True))
     return EXIT_CODES.get(receipt["technicalDisposition"], 1)
 

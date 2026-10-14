@@ -52,7 +52,7 @@
         "requiredForPhase": true,
         "evidence": {
           "path": "docs/reference/preapproval_feasibility/README.md",
-          "sha256": "838f85553bbaeeaa3289cff3a0fbb69cd53ad39c1c7a3902684b943f107b265d",
+          "sha256": "2fe3b782e339a566072e121d0968c1e579efe8119c47fe0cbe40a075b4bbf724",
           "locator": "## Disposition / Receipt Contract"
         },
         "deferredToPhase": null
@@ -62,7 +62,7 @@
         "requiredForPhase": true,
         "evidence": {
           "path": "governance/compat/preapproval_feasibility_contract.py",
-          "sha256": "d2ad96194befdc81baa563dca2ceddad989e9f33a6af651cf41e707fb223835f",
+          "sha256": "c351608f82d25ff99f3911c1f13c4990cf5a7ad9a886a23f946fa804010e346b",
           "locator": "def evaluate("
         },
         "deferredToPhase": null
@@ -72,7 +72,7 @@
         "requiredForPhase": true,
         "evidence": {
           "path": "governance/compat/run_preapproval_feasibility_gate.py",
-          "sha256": "c7b958dc5436671cda5d66e67068a26ba81dd50765da3b1b8da7425fff42b50c",
+          "sha256": "5da6f2d90bcba3a0c252cd9af808daf22a600d8cdbf28d6a54f2f606fded675c",
           "locator": "def main("
         },
         "deferredToPhase": null
@@ -82,7 +82,7 @@
         "requiredForPhase": true,
         "evidence": {
           "path": "governance/compat/check_preapproval_feasibility.py",
-          "sha256": "f9eba51905101423a61eded8a5283e11559b7f10aa49ab248ef202119af5bc69",
+          "sha256": "8203d4cadd809818867cead838734458b068950db42b35bca3927e816d806fd9",
           "locator": "def run("
         },
         "deferredToPhase": null
@@ -92,7 +92,7 @@
         "requiredForPhase": true,
         "evidence": {
           "path": "governance/compat/test_check_preapproval_feasibility.py",
-          "sha256": "dc1aed809361d946cfde49b31d40dd4746a71589a6126c7ce66243056fce7fe9",
+          "sha256": "9c2b406c2c7c8b504fc47c9e705dd6baed0ea67637ebcfd1d9c69b3eeb7ff111",
           "locator": "def test_class2_valid_escalation_is_hold_and_nonzero("
         },
         "deferredToPhase": null

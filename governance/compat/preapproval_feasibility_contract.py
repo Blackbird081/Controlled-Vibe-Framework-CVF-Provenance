@@ -35,6 +35,15 @@ QUEUE_KEYS = ("rows", "requestCeiling", "promisedFullCoverage", "coverageDisposi
 QUEUE_ROW_KEYS = ("rowId", "kind", "packageName", "discoveryLocator")
 FEASIBLE_DISPOSITIONS = ("CONTINUE_BOUNDED", "READY_WITH_EXECUTABLE_PROOF")
 HOLD_DISPOSITIONS = ("STOP_REASSESS_ARCHITECTURE", "ROOT_CONTRACT_REQUIRED")
+ACTION_SPEC_VERSION = "NCR_PREFEAS_ROOT_BUILD_ACTION_V1"
+ACTION_KEY = "requestedAction"
+ACTION_KEYS = ("kind", "runtimeReadinessClaim")
+ROOT_BUILD_KIND = "INTEGRATED_ROOT_CONTRACT_BUILD"
+ROOT_BUILD_PHASE = "PRE_DISPATCH_INTEGRATED_ROOT_CONTRACT_BUILD"
+ROOT_BUILD_DISPOSITION = "FEASIBLE_FOR_INTEGRATED_ROOT_BUILD"
+ROOT_BUILD_ROW_IDS = ("ROOT_BUILD_BASELINE", "ROOT_BUILD_SCOPE")
+ROOT_BUILD_BASELINE_DIR = "docs/baselines"
+ROOT_BUILD_BASELINE_PREFIX = "CVF_GC018_"
 PACKAGE_NAME_RE = re.compile(r"^(?:@[A-Za-z0-9][A-Za-z0-9._~-]*/)?[A-Za-z0-9][A-Za-z0-9._~-]*$")
 
 
@@ -114,14 +123,8 @@ def outcome_digest(outcome: Any) -> str:
     return hashlib.sha256(canonical.encode("utf-8")).hexdigest()
 
 
-def parse_declarations(text: str) -> tuple[str, str | None, list[dict[str, str]]]:
-    """Return (UNMARKED|MARKED|MALFORMED, companion path, diagnostics).
-
-    Only standalone lines outside fenced blocks count; inline or fenced examples
-    never activate and substring matches are never used as triggers.
-    """
-    markers: list[str] = []
-    companions: list[str] = []
+def _unfenced_lines(text: str):
+    """Yield standalone lines outside fenced blocks; fence delimiters are never yielded."""
     in_fence, width = False, 0
     for raw in text.split("\n"):
         line = raw.rstrip("\r")
@@ -133,7 +136,20 @@ def parse_declarations(text: str) -> tuple[str, str | None, list[dict[str, str]]
         opening = scec.OPEN_FENCE_LINE_RE.match(line)
         if opening:
             in_fence, width = True, len(opening.group(1))
-        elif line.startswith(COMPANION_PREFIX):
+            continue
+        yield line
+
+
+def parse_declarations(text: str) -> tuple[str, str | None, list[dict[str, str]]]:
+    """Return (UNMARKED|MARKED|MALFORMED, companion path, diagnostics).
+
+    Only standalone lines outside fenced blocks count; inline or fenced examples
+    never activate and substring matches are never used as triggers.
+    """
+    markers: list[str] = []
+    companions: list[str] = []
+    for line in _unfenced_lines(text):
+        if line.startswith(COMPANION_PREFIX):
             companions.append(line)
         elif line.startswith(MARKER_PREFIX):
             markers.append(line)
@@ -353,6 +369,88 @@ def check_queue(queue: Any, diags: list) -> tuple[dict[str, int] | None, str]:
     return summary, computed
 
 
+def _check_action(action: Any, comp: dict, proposal_path: str, text: str, diags: list) -> None:
+    """Static validity of the optional requestedAction; it never grants anything."""
+    if not _exact_keys(action, ACTION_KEYS, ACTION_KEY, "ACTION_SHAPE", diags):
+        return
+    if action["kind"] != ROOT_BUILD_KIND:
+        diags.append(diag("ACTION_KIND_INVALID", f"requestedAction.kind must be exactly {ROOT_BUILD_KIND}"))
+    if action["runtimeReadinessClaim"] is not False:
+        diags.append(diag("ACTION_READINESS_CLAIM_INVALID", "requestedAction.runtimeReadinessClaim must be the boolean false"))
+    block = comp["phasePrerequisites"]
+    if not isinstance(block, dict) or block.get("phase") != ROOT_BUILD_PHASE:
+        diags.append(diag("ACTION_PHASE_MISMATCH", f"requestedAction requires phasePrerequisites.phase {ROOT_BUILD_PHASE}"))
+    doc_types = [line.rstrip(" \t") for line in _unfenced_lines(text) if line.startswith("docType:")]
+    if not proposal_path.startswith("docs/work_orders/") or doc_types != ["docType: work_order"]:
+        diags.append(diag("ACTION_PROPOSAL_NOT_WORK_ORDER", "requestedAction needs a docs/work_orders proposal with one standalone docType: work_order"))
+
+
+def _is_root_build_baseline_path(path: Any) -> bool:
+    if not isinstance(path, str) or not path.endswith(".md") or not scec._is_safe_repo_relative_path(path):
+        return False
+    posix = PurePosixPath(path)
+    return posix.as_posix() == path and path.startswith(ROOT_BUILD_BASELINE_DIR + "/") and posix.name.startswith(ROOT_BUILD_BASELINE_PREFIX)
+
+
+def _check_root_build_rows(block: dict, diags: list) -> None:
+    """Join structure of the two root-build rows; hash/locator were verified by check_prerequisites."""
+    paths = []
+    for rid in ROOT_BUILD_ROW_IDS:
+        rows = [r for r in block["rows"] if r["requirementId"] == rid]
+        if len(rows) != 1:
+            diags.append(diag("ROOT_BUILD_ROW_MISSING", f"exactly one `{rid}` prerequisite row is required; found {len(rows)}"))
+        elif rows[0]["requiredForPhase"] is not True or rows[0]["deferredToPhase"] is not None:
+            diags.append(diag("ROOT_BUILD_ROW_NOT_REQUIRED", f"`{rid}` must be requiredForPhase=true with deferredToPhase null"))
+        else:
+            paths.append(rows[0]["evidence"]["path"])
+    if len(paths) == len(ROOT_BUILD_ROW_IDS) and (paths[0] != paths[1] or not _is_root_build_baseline_path(paths[0])):
+        diags.append(diag("ROOT_BUILD_BASELINE_PATH_INVALID", f"both root-build rows need one normalized {ROOT_BUILD_BASELINE_DIR}/{ROOT_BUILD_BASELINE_PREFIX}*.md path"))
+
+
+def _check_worker_return_route(proposal_path: str, text: str, snap: Snapshot, diags: list) -> bool:
+    """Compose the production return runner's bound commands on the snapshotted bytes."""
+    try:
+        # No gate, test or candidate code is executed; construction only.
+        commands = worker_return_gate.build_commands(
+            (), proposal_path, repo_root=snap.root, work_order_text=text,
+        )
+        return_path = worker_return_gate._worker_return_path(
+            proposal_path, repo_root=snap.root, work_order_text=text,
+        )
+        required_bindings = {
+            "work-order acceptance ledger": (("--work-order", proposal_path), ("--return", return_path)),
+            "worker-return quality gate": (("--active-work-order", proposal_path),),
+            "independent review probe admission": (("--active-work-order", proposal_path),),
+        }
+        for label, pairs in required_bindings.items():
+            matching = [c.command for c in commands if c.name == label]
+            if len(matching) != 1 or not all(
+                any(tuple(matching[0][i:i + 2]) == pair for i in range(len(matching[0]) - 1))
+                for pair in pairs
+            ):
+                raise ValueError(f"{label} lacks the exact work-order/return binding")
+    except (OSError, ValueError, RuntimeError) as exc:
+        diags.append(diag("WORKER_RETURN_ROUTE_UNBUILDABLE", f"bound worker-return command construction failed: {exc}"))
+        return False
+    return True
+
+
+def _resolve_root_build(comp: dict, disposition: str | None, proposal_path: str, text: str, snap: Snapshot, receipt: dict) -> bool:
+    """Resolve a statically valid requestedAction after canonical and prerequisite checks passed."""
+    diags = receipt["diagnostics"]
+    if disposition != "ROOT_CONTRACT_REQUIRED" or comp["prospectiveOutcome"].get("successorScope") != "INTEGRATED_ROOT_CONTRACT":
+        diags.append(diag("ACTION_DISPOSITION_MISMATCH", "requestedAction qualifies only ROOT_CONTRACT_REQUIRED with successorScope INTEGRATED_ROOT_CONTRACT"))
+        return False
+    _check_root_build_rows(comp["phasePrerequisites"], diags)
+    if not diags:
+        _check_worker_return_route(proposal_path, text, snap, diags)
+    if diags:
+        return False
+    receipt["technicalDisposition"] = ROOT_BUILD_DISPOSITION
+    receipt["runtimeReadiness"] = False
+    return True
+
+
 def evaluate(root: Path | str, proposal_path: Any, approval_target: Any = None, *, explicit: bool = True) -> dict[str, Any]:
     """Evaluate one proposal; every call re-reads and re-validates all bytes."""
     receipt = new_receipt(proposal_path)
@@ -399,7 +497,8 @@ def evaluate(root: Path | str, proposal_path: Any, approval_target: Any = None, 
     except (UnicodeDecodeError, ValueError) as exc:
         diags.append(diag("COMPANION_MALFORMED_JSON", f"companion is not strict UTF-8 JSON without duplicate keys: {exc}"))
         return finish()
-    if not _exact_keys(comp, TOP_KEYS, "companion", "COMPANION_SHAPE", diags):
+    declared = isinstance(comp, dict) and ACTION_KEY in comp
+    if not _exact_keys(comp, TOP_KEYS + ((ACTION_KEY,) if declared else ()), "companion", "COMPANION_SHAPE", diags):
         return finish()
     if comp["schemaVersion"] != COMPANION_SCHEMA:
         diags.append(diag("COMPANION_SCHEMA_INVALID", f"schemaVersion must be {COMPANION_SCHEMA}"))
@@ -408,34 +507,15 @@ def evaluate(root: Path | str, proposal_path: Any, approval_target: Any = None, 
     receipt["prerequisites"]["examined"], receipt["prerequisites"]["deferred"] = check_prerequisites(comp["phasePrerequisites"], snap, diags)
     if comp["requestQueue"] is not None:
         receipt["queue"], receipt["coverageDisposition"] = check_queue(comp["requestQueue"], diags)
+    if declared:
+        _check_action(comp[ACTION_KEY], comp, proposal_path, text, diags)
     if diags or receipt["canonicalViolations"] or receipt["canonicalBlockCount"] != 1:
         return finish()
+    if declared and disposition != "STOP_REASSESS_ARCHITECTURE":
+        return receipt if _resolve_root_build(comp, disposition, proposal_path, text, snap, receipt) else finish()
     if disposition in FEASIBLE_DISPOSITIONS:
-        if proposal_path.startswith("docs/work_orders/"):
-            try:
-                # Compose the production runner's bound commands on these exact
-                # snapshotted bytes; no gate, test or candidate code is executed.
-                commands = worker_return_gate.build_commands(
-                    (), proposal_path, repo_root=snap.root, work_order_text=text,
-                )
-                return_path = worker_return_gate._worker_return_path(
-                    proposal_path, repo_root=snap.root, work_order_text=text,
-                )
-                required_bindings = {
-                    "work-order acceptance ledger": (("--work-order", proposal_path), ("--return", return_path)),
-                    "worker-return quality gate": (("--active-work-order", proposal_path),),
-                    "independent review probe admission": (("--active-work-order", proposal_path),),
-                }
-                for label, pairs in required_bindings.items():
-                    matching = [c.command for c in commands if c.name == label]
-                    if len(matching) != 1 or not all(
-                        any(tuple(matching[0][i:i + 2]) == pair for i in range(len(matching[0]) - 1))
-                        for pair in pairs
-                    ):
-                        raise ValueError(f"{label} lacks the exact work-order/return binding")
-            except (OSError, ValueError, RuntimeError) as exc:
-                diags.append(diag("WORKER_RETURN_ROUTE_UNBUILDABLE", f"bound worker-return command construction failed: {exc}"))
-                return finish()
+        if proposal_path.startswith("docs/work_orders/") and not _check_worker_return_route(proposal_path, text, snap, diags):
+            return finish()
         receipt["technicalDisposition"] = "FEASIBLE"
     elif disposition in HOLD_DISPOSITIONS:
         receipt["technicalDisposition"] = "HOLD"

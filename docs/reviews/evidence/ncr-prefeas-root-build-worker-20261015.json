@@ -1,0 +1,396 @@
+{
+ "schemaVersion": "cvf.ncrPrefeasRootBuildWorkerEvidence@1",
+ "batchId": "CVF-NCR-PREFEAS-ROOT-BUILD-20261015",
+ "worker": "INTERNAL_AGENT implementation worker (manual shared-workspace invocation; model identity metadata only)",
+ "executionBaseHead": "7275abf672a010f0263a771d88056146cc1f4586",
+ "headAtCapture": "7275abf672a010f0263a771d88056146cc1f4586",
+ "clocksUtc": {
+  "buildStart": "2026-10-14T20:25:04Z",
+  "preImplementationPassAndScaffoldAfter": "2026-10-14T20:26Z",
+  "lateStandardReads": "2026-10-14T20:35Z"
+ },
+ "sourcePinsPreEdit": {
+  "rawSha256": {
+   "docs/baselines/CVF_GC018_NCR_PREFEAS_ROOT_BUILD_2026-10-15.md": "5a0f7eb8a3e203c81fe847a996a68097fb2eea4bc5c43a8bf23afd138ea29140",
+   "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_PREFEAS_ROOT_BUILD_2026-10-15.md": "65ada5dec6e975988cf8cc4c9a5a5e4d575b2fb3f8424e522d7ee3a5fbf49dd7",
+   "docs/reference/preapproval_feasibility/README.md": "838f85553bbaeeaa3289cff3a0fbb69cd53ad39c1c7a3902684b943f107b265d",
+   "governance/compat/preapproval_feasibility_contract.py": "d2ad96194befdc81baa563dca2ceddad989e9f33a6af651cf41e707fb223835f",
+   "governance/compat/run_preapproval_feasibility_gate.py": "c7b958dc5436671cda5d66e67068a26ba81dd50765da3b1b8da7425fff42b50c",
+   "governance/compat/check_preapproval_feasibility.py": "f9eba51905101423a61eded8a5283e11559b7f10aa49ab248ef202119af5bc69",
+   "governance/compat/test_check_preapproval_feasibility.py": "dc1aed809361d946cfde49b31d40dd4746a71589a6126c7ce66243056fce7fe9",
+   "docs/assessments/CVF_NCR_HTML_ROOT_ADMISSION_RECONCILIATION_2026-10-14.md": "db271f758ac8f582d4ca153b71e2fe7b0c6ed423d2ca33a98e3b71709dfdf134",
+   "governance/compat/learning_application_binding.py": "84068b6f197c19404a23daa643266d7f9ed334f313cd2d8bbe2f2e6d37d7b7b8"
+  },
+  "sizesLinesBytes": {
+   "docs/reference/preapproval_feasibility/README.md": [
+    188,
+    23429
+   ],
+   "governance/compat/preapproval_feasibility_contract.py": [
+    445,
+    22109
+   ],
+   "governance/compat/run_preapproval_feasibility_gate.py": [
+    42,
+    1789
+   ],
+   "governance/compat/check_preapproval_feasibility.py": [
+    153,
+    7067
+   ],
+   "governance/compat/test_check_preapproval_feasibility.py": [
+    558,
+    33274
+   ]
+  },
+  "matchedDispatchCompanion": true
+ },
+ "postEditFinal": {
+  "files": {
+   "docs/reference/preapproval_feasibility/README.md": {
+    "sha256": "93b99109e1b1f0d8eda22e674740650d0271dfdeeefb5cf8c4d4cb3e2960e075",
+    "lines": 208,
+    "bytes": 27294
+   },
+   "governance/compat/preapproval_feasibility_contract.py": {
+    "sha256": "2b60c762144c64ea867430086757d69b015c64de52e5942c3b5d8f78e5f2ad0c",
+    "lines": 525,
+    "bytes": 26743
+   },
+   "governance/compat/run_preapproval_feasibility_gate.py": {
+    "sha256": "5da6f2d90bcba3a0c252cd9af808daf22a600d8cdbf28d6a54f2f606fded675c",
+    "lines": 44,
+    "bytes": 2061
+   },
+   "governance/compat/check_preapproval_feasibility.py": {
+    "sha256": "8203d4cadd809818867cead838734458b068950db42b35bca3927e816d806fd9",
+    "lines": 158,
+    "bytes": 7538
+   },
+   "governance/compat/test_check_preapproval_feasibility.py": {
+    "sha256": "15a2c7c189ff2cc5284e3b19430ad0a0f03211c39cd0c2bbd34540d49d442b5c",
+    "lines": 768,
+    "bytes": 47608
+   }
+  },
+  "limitsLinesBytes": {
+   "docs/reference/preapproval_feasibility/README.md": [
+    300,
+    48000
+   ],
+   "governance/compat/preapproval_feasibility_contract.py": [
+    750,
+    52000
+   ],
+   "governance/compat/run_preapproval_feasibility_gate.py": [
+    120,
+    16000
+   ],
+   "governance/compat/check_preapproval_feasibility.py": [
+    240,
+    24000
+   ],
+   "governance/compat/test_check_preapproval_feasibility.py": [
+    900,
+    64000
+   ]
+  }
+ },
+ "commands": [
+  {
+   "id": "C1",
+   "cmd": "python -B governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base 7275abf672a010f0263a771d88056146cc1f4586 --head HEAD --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_PREFEAS_ROOT_BUILD_2026-10-15.md",
+   "result": "PASS, 34.18s, before any edit or test",
+   "log": "ignored .cvf/runtime/ncr-prefeas-root-build-worker-20261015/pre-implementation.log"
+  },
+  {
+   "id": "C2",
+   "cmd": "python -B governance/compat/run_worker_return_scaffold.py --write docs/reviews/CVF_NCR_PREFEAS_ROOT_BUILD_WORKER_RETURN_2026-10-15.md --title \"NCR Preapproval Root Build Worker Return\" --check-shape",
+   "result": "exit 0 before implementation edits"
+  },
+  {
+   "id": "C3",
+   "cmd": "python -B -m pytest -q governance/compat/test_check_preapproval_feasibility.py",
+   "result": "110 passed on amended evaluator before new tests; 163 passed 1 failed after appending tests (see failures); 165 passed 20.11s on final bytes (21.1s wall)"
+  },
+  {
+   "id": "C4",
+   "cmd": "python -B -m py_compile on the four Python paths with PYTHONPYCACHEPREFIX owned under ignored .cvf/runtime, then unset",
+   "result": "exit 0"
+  },
+  {
+   "id": "C5",
+   "cmd": "python -B governance/compat/check_preapproval_feasibility.py --base HEAD --head HEAD --enforce (real working tree)",
+   "result": "exit 0, evaluatedMarked=0, NOT_APPLICABLE; no real marked proposal contains the action"
+  },
+  {
+   "id": "C6",
+   "cmd": "python -B governance/compat/run_worker_return_fast_gate.py --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_PREFEAS_ROOT_BUILD_2026-10-15.md --max-return-lines 450 --max-return-bytes 64000",
+   "result": "first run: FAIL 8.19s (4 return-shape defects: terminalReadinessVerdict token, command-evidence PASS wording, trace manifest paths without backticks, missing Internal source row; a second run found 2 review-cost telemetry tokens; code, README and the other reviewer-fast checks passed; all repaired); final run result and digests are recorded in ignored custody only (no tracked append after the final gate)"
+  }
+ ],
+ "failedOrCorrectedAttempts": [
+  "ADIF resolver for worker/implementation under three task-class values returned 0 candidates each; no entry was applied.",
+  "First Bash heredoc patch attempt failed with a shell parse error before any file changed; payload moved to a scratchpad script.",
+  "First patch script asserted pure CRLF and aborted before writing because README, runner, range and return files are LF while contract and tests are CRLF; per-file EOL is now preserved (no normalization).",
+  "One authored test (lowered sameClaimCorrections on an INITIAL ROOT outcome) failed because canonical SCEC accepts that outcome; the test was replaced by two canonical-invalid or wrong-scope cases. No evaluator change was made for it."
+ ],
+ "toolClassifier": {
+  "events": 0,
+  "platformForcedPrompts": 0,
+  "workerAuthoredQuestions": 0,
+  "recoveryAttempts": 0,
+  "disposition": "NO_EVENT"
+ },
+ "usage": {
+  "nativeUsageBilling": "UNKNOWN",
+  "providerCalls": 0,
+  "externalAgentInvocations": 0,
+  "network": 0,
+  "browser": 0
+ },
+ "requirements": {
+  "REQ-01": {
+   "status": "PASS",
+   "actualArtifacts": [
+    "docs/reference/preapproval_feasibility/README.md",
+    "governance/compat/preapproval_feasibility_contract.py",
+    "docs/reviews/evidence/ncr-prefeas-root-build-worker-20261015.json"
+   ],
+   "proofRefs": [
+    "PROOF-REQ-01"
+   ],
+   "statement": "No-action v1 behavior preserved: new tests assert the no-action receipt key set equals new_receipt, ordinary FEASIBLE and ROOT/STOP-without-action stay FEASIBLE/HOLD (CLI exit 0/2) even with the matching phase; the 110 original tests pass unchanged on the amended code; duplicate requestedAction key is COMPANION_MALFORMED_JSON; unknown top-level key stays COMPANION_SHAPE. Owner README documents the unchanged default."
+  },
+  "REQ-02": {
+   "status": "PASS",
+   "actualArtifacts": [
+    "governance/compat/preapproval_feasibility_contract.py",
+    "governance/compat/test_check_preapproval_feasibility.py",
+    "docs/reviews/evidence/ncr-prefeas-root-build-worker-20261015.json"
+   ],
+   "proofRefs": [
+    "PROOF-REQ-02"
+   ],
+   "statement": "requestedAction exact shape {kind,runtimeReadinessClaim}; explicit null, list, empty, missing, extra, wrong kind (padded/lower/null/number), claim true/0/'false'/null, wrong or case-variant phase, non-work-order family, missing/wrong/duplicate/fenced-only docType, CONTINUE_BOUNDED and READY-class disposition, stale predecessor, proposal/outcome drift and wrong successor scope all return INVALID with the named code (parameterized ACTION_CASES, each also asserting CLI exit 1)."
+  },
+  "REQ-03": {
+   "status": "PASS",
+   "actualArtifacts": [
+    "governance/compat/preapproval_feasibility_contract.py",
+    "governance/compat/test_check_preapproval_feasibility.py",
+    "docs/reviews/evidence/ncr-prefeas-root-build-worker-20261015.json"
+   ],
+   "proofRefs": [
+    "PROOF-REQ-03"
+   ],
+   "statement": "ROOT_BUILD_BASELINE/ROOT_BUILD_SCOPE rows: missing, duplicate, deferred, different path, wrong directory/prefix/nesting/extension, unsafe path, baseline byte drift and absent locator all INVALID; positive case verifies hash and locator through the existing check_prerequisites. Return route is built by the shared _check_worker_return_route; missing, bare and duplicate workerReturnPath and an unbound build_commands result are INVALID WORKER_RETURN_ROUTE_UNBUILDABLE. Canonical checks, queue and digest checks run first."
+  },
+  "REQ-04": {
+   "status": "PASS",
+   "actualArtifacts": [
+    "docs/reference/preapproval_feasibility/README.md",
+    "governance/compat/preapproval_feasibility_contract.py",
+    "docs/reviews/evidence/ncr-prefeas-root-build-worker-20261015.json"
+   ],
+   "proofRefs": [
+    "PROOF-REQ-04"
+   ],
+   "statement": "Valid root-build fixture returns technicalDisposition FEASIBLE_FOR_INTEGRATED_ROOT_BUILD with runtimeReadiness false, effectAdmission false, operatorApprovalRequired true, no diagnostics; runtimeReadiness is absent on every other receipt. Owner README Integrated Root Build Action section states producer/consumer/limits."
+  },
+  "REQ-05": {
+   "status": "PASS",
+   "actualArtifacts": [
+    "governance/compat/run_preapproval_feasibility_gate.py",
+    "governance/compat/check_preapproval_feasibility.py",
+    "governance/compat/test_check_preapproval_feasibility.py",
+    "docs/reviews/evidence/ncr-prefeas-root-build-worker-20261015.json"
+   ],
+   "proofRefs": [
+    "PROOF-REQ-05"
+   ],
+   "statement": "Real run_preapproval_feasibility_gate.py subprocess: scoped exit 0 with display ending 'operatorApprovalRequired=true runtimeReadiness=false', HOLD 2, INVALID 1. Real check_preapproval_feasibility.py subprocess on disposable Git fixtures: separate scoped count (counts FEASIBLE 0, scoped 1, HOLD 1, INVALID 0), SCOPED line, evaluatedMarked=2, companion-only drift and invalid-action edits exit 1; the original zero-object NOT_APPLICABLE tests still pass; real-repo range run reported evaluatedMarked=0 NOT_APPLICABLE exit 0."
+  },
+  "REQ-06": {
+   "status": "PASS",
+   "actualArtifacts": [
+    "governance/compat/test_check_preapproval_feasibility.py",
+    "docs/reviews/evidence/ncr-prefeas-root-build-worker-20261015.json"
+   ],
+   "proofRefs": [
+    "PROOF-REQ-06"
+   ],
+   "statement": "165 passed (110 original + 55 new) in 20.11s pytest time (21.1s wall) on final bytes; tests exercise the real evaluator, CLI subprocess, range subprocess, and the production worker_return_gate.build_commands through a spy (called once per proposal with the snapshot text, subprocess.run forbidden). py_compile of the four Python files exit 0 under an owned ignored PYTHONPYCACHEPREFIX, then unset."
+  },
+  "REQ-07": {
+   "status": "PASS",
+   "actualArtifacts": [
+    "docs/reference/preapproval_feasibility/README.md",
+    "governance/compat/preapproval_feasibility_contract.py",
+    "governance/compat/run_preapproval_feasibility_gate.py",
+    "governance/compat/check_preapproval_feasibility.py",
+    "governance/compat/test_check_preapproval_feasibility.py",
+    "docs/reviews/evidence/ncr-prefeas-root-build-worker-20261015.json"
+   ],
+   "proofRefs": [
+    "PROOF-REQ-07"
+   ],
+   "statement": "Only the five manifest paths were edited, within limits (see postEditSizes); no SCEC, hook catalog, registry, product, provider or HTML change; no new helper path; parse_declarations and the route block were refactored in place (shared _unfenced_lines, _check_worker_return_route) rather than duplicated. README states rollback boundary."
+  },
+  "REQ-08": {
+   "status": "BLOCKED",
+   "actualArtifacts": [
+    "docs/reviews/CVF_NCR_PREFEAS_ROOT_BUILD_WORKER_RETURN_2026-10-15.md",
+    "docs/reviews/evidence/ncr-prefeas-root-build-worker-20261015.json"
+   ],
+   "proofRefs": [
+    "PROOF-REQ-08"
+   ],
+   "statement": "Local corrected disposition: delivered return/proof joins and actual final-byte evidence are retained, but mandatory reads before edits were not completed. Historical Preparation remains PARTIAL_WITH_REASON; full REQ-08 is not fulfilled. Technical acceptance is a separate Local bounded disposition."
+  }
+ },
+ "limits": "Worker self-tests are not independent evidence; Local independent probe is PENDING_REVIEWER_EXECUTION. Declared-state cooperative protocol only: no runtime readiness, effect admission or HTML grant.",
+ "REQ-01": {
+  "status": "PASS",
+  "actualArtifacts": [
+   "docs/reference/preapproval_feasibility/README.md",
+   "governance/compat/preapproval_feasibility_contract.py",
+   "docs/reviews/evidence/ncr-prefeas-root-build-worker-20261015.json"
+  ],
+  "proofRefs": [
+   "PROOF-REQ-01"
+  ],
+  "statement": "No-action v1 behavior preserved: new tests assert the no-action receipt key set equals new_receipt, ordinary FEASIBLE and ROOT/STOP-without-action stay FEASIBLE/HOLD (CLI exit 0/2) even with the matching phase; the 110 original tests pass unchanged on the amended code; duplicate requestedAction key is COMPANION_MALFORMED_JSON; unknown top-level key stays COMPANION_SHAPE. Owner README documents the unchanged default."
+ },
+ "REQ-02": {
+  "status": "PASS",
+  "actualArtifacts": [
+   "governance/compat/preapproval_feasibility_contract.py",
+   "governance/compat/test_check_preapproval_feasibility.py",
+   "docs/reviews/evidence/ncr-prefeas-root-build-worker-20261015.json"
+  ],
+  "proofRefs": [
+   "PROOF-REQ-02"
+  ],
+  "statement": "requestedAction exact shape {kind,runtimeReadinessClaim}; explicit null, list, empty, missing, extra, wrong kind (padded/lower/null/number), claim true/0/'false'/null, wrong or case-variant phase, non-work-order family, missing/wrong/duplicate/fenced-only docType, CONTINUE_BOUNDED and READY-class disposition, stale predecessor, proposal/outcome drift and wrong successor scope all return INVALID with the named code (parameterized ACTION_CASES, each also asserting CLI exit 1)."
+ },
+ "REQ-03": {
+  "status": "PASS",
+  "actualArtifacts": [
+   "governance/compat/preapproval_feasibility_contract.py",
+   "governance/compat/test_check_preapproval_feasibility.py",
+   "docs/reviews/evidence/ncr-prefeas-root-build-worker-20261015.json"
+  ],
+  "proofRefs": [
+   "PROOF-REQ-03"
+  ],
+  "statement": "ROOT_BUILD_BASELINE/ROOT_BUILD_SCOPE rows: missing, duplicate, deferred, different path, wrong directory/prefix/nesting/extension, unsafe path, baseline byte drift and absent locator all INVALID; positive case verifies hash and locator through the existing check_prerequisites. Return route is built by the shared _check_worker_return_route; missing, bare and duplicate workerReturnPath and an unbound build_commands result are INVALID WORKER_RETURN_ROUTE_UNBUILDABLE. Canonical checks, queue and digest checks run first."
+ },
+ "REQ-04": {
+  "status": "PASS",
+  "actualArtifacts": [
+   "docs/reference/preapproval_feasibility/README.md",
+   "governance/compat/preapproval_feasibility_contract.py",
+   "docs/reviews/evidence/ncr-prefeas-root-build-worker-20261015.json"
+  ],
+  "proofRefs": [
+   "PROOF-REQ-04"
+  ],
+  "statement": "Valid root-build fixture returns technicalDisposition FEASIBLE_FOR_INTEGRATED_ROOT_BUILD with runtimeReadiness false, effectAdmission false, operatorApprovalRequired true, no diagnostics; runtimeReadiness is absent on every other receipt. Owner README Integrated Root Build Action section states producer/consumer/limits."
+ },
+ "REQ-05": {
+  "status": "PASS",
+  "actualArtifacts": [
+   "governance/compat/run_preapproval_feasibility_gate.py",
+   "governance/compat/check_preapproval_feasibility.py",
+   "governance/compat/test_check_preapproval_feasibility.py",
+   "docs/reviews/evidence/ncr-prefeas-root-build-worker-20261015.json"
+  ],
+  "proofRefs": [
+   "PROOF-REQ-05"
+  ],
+  "statement": "Real run_preapproval_feasibility_gate.py subprocess: scoped exit 0 with display ending 'operatorApprovalRequired=true runtimeReadiness=false', HOLD 2, INVALID 1. Real check_preapproval_feasibility.py subprocess on disposable Git fixtures: separate scoped count (counts FEASIBLE 0, scoped 1, HOLD 1, INVALID 0), SCOPED line, evaluatedMarked=2, companion-only drift and invalid-action edits exit 1; the original zero-object NOT_APPLICABLE tests still pass; real-repo range run reported evaluatedMarked=0 NOT_APPLICABLE exit 0."
+ },
+ "REQ-06": {
+  "status": "PASS",
+  "actualArtifacts": [
+   "governance/compat/test_check_preapproval_feasibility.py",
+   "docs/reviews/evidence/ncr-prefeas-root-build-worker-20261015.json"
+  ],
+  "proofRefs": [
+   "PROOF-REQ-06"
+  ],
+  "statement": "165 passed (110 original + 55 new) in 20.11s pytest time (21.1s wall) on final bytes; tests exercise the real evaluator, CLI subprocess, range subprocess, and the production worker_return_gate.build_commands through a spy (called once per proposal with the snapshot text, subprocess.run forbidden). py_compile of the four Python files exit 0 under an owned ignored PYTHONPYCACHEPREFIX, then unset."
+ },
+ "REQ-07": {
+  "status": "PASS",
+  "actualArtifacts": [
+   "docs/reference/preapproval_feasibility/README.md",
+   "governance/compat/preapproval_feasibility_contract.py",
+   "governance/compat/run_preapproval_feasibility_gate.py",
+   "governance/compat/check_preapproval_feasibility.py",
+   "governance/compat/test_check_preapproval_feasibility.py",
+   "docs/reviews/evidence/ncr-prefeas-root-build-worker-20261015.json"
+  ],
+  "proofRefs": [
+   "PROOF-REQ-07"
+  ],
+  "statement": "Only the five manifest paths were edited, within limits (see postEditSizes); no SCEC, hook catalog, registry, product, provider or HTML change; no new helper path; parse_declarations and the route block were refactored in place (shared _unfenced_lines, _check_worker_return_route) rather than duplicated. README states rollback boundary."
+ },
+ "REQ-08": {
+  "status": "BLOCKED",
+  "actualArtifacts": [
+   "docs/reviews/CVF_NCR_PREFEAS_ROOT_BUILD_WORKER_RETURN_2026-10-15.md",
+   "docs/reviews/evidence/ncr-prefeas-root-build-worker-20261015.json"
+  ],
+  "proofRefs": [
+   "PROOF-REQ-08"
+  ],
+  "statement": "Local corrected disposition: delivered return/proof joins and actual final-byte evidence are retained, but mandatory reads before edits were not completed. Historical Preparation remains PARTIAL_WITH_REASON; full REQ-08 is not fulfilled. Technical acceptance is a separate Local bounded disposition."
+ },
+ "localReviewerAmendment": {
+  "actor": "LOCAL_REVIEWER_CODEX_ROOT",
+  "baseHead": "8a2d1c8e6db97e90ffd166b70ae66037a48eb70f",
+  "originalWorkerReturnSha256": "1865aa9ea3f1dcca14cc0a503b688d1999f4c45dd9fd4296b7280e7d3bb16a78",
+  "originalWorkerEvidenceSha256": "c7a202d8b2c344975fc3ce8da2b82f2f754bd02beef29b5c039a7df148b908df",
+  "originalWorkerExecutionBaseHead": "7275abf672a010f0263a771d88056146cc1f4586",
+  "ledgerRevalidationBaseMeaning": "Current Local same-scope amended pending material only; original invocation and original self-claims preserved in frozen custody.",
+  "findingsDisposition": {
+   "LOCAL-F01": "corrected normalized baseline subtree semantics; nested positive replaces unauthorized negative",
+   "LOCAL-F02": "REQ-08 BLOCKED for unmet historical mandatory read order; useful technical delivery retained",
+   "LOCAL-F03": "post-scaffold count corrected to six distinct return-field/token defects"
+  },
+  "focusedRepair": "55 passed, 110 deselected in 9.08s; original 165/165 evidence consumed for unchanged scope",
+  "independentProbe": "10/10 current CLI/range cases PASS; original 9/10 retained",
+  "compile": "four changed Python files PASS",
+  "files": {
+   "docs/reference/preapproval_feasibility/README.md": {
+    "sha256": "2fe3b782e339a566072e121d0968c1e579efe8119c47fe0cbe40a075b4bbf724",
+    "lines": 208,
+    "bytes": 27284
+   },
+   "governance/compat/preapproval_feasibility_contract.py": {
+    "sha256": "c351608f82d25ff99f3911c1f13c4990cf5a7ad9a886a23f946fa804010e346b",
+    "lines": 525,
+    "bytes": 26739
+   },
+   "governance/compat/run_preapproval_feasibility_gate.py": {
+    "sha256": "5da6f2d90bcba3a0c252cd9af808daf22a600d8cdbf28d6a54f2f606fded675c",
+    "lines": 44,
+    "bytes": 2061
+   },
+   "governance/compat/check_preapproval_feasibility.py": {
+    "sha256": "8203d4cadd809818867cead838734458b068950db42b35bca3927e816d806fd9",
+    "lines": 158,
+    "bytes": 7538
+   },
+   "governance/compat/test_check_preapproval_feasibility.py": {
+    "sha256": "9c2b406c2c7c8b504fc47c9e705dd6baed0ea67637ebcfd1d9c69b3eeb7ff111",
+    "lines": 775,
+    "bytes": 47850
+   }
+  },
+  "providerCalls": 0
+ },
+ "status": "BLOCKED_WITH_REASON"
+}

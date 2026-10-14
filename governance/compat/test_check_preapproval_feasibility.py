@@ -556,3 +556,220 @@ def test_held_work_order_does_not_require_execution_route(root):
     prop = work_order_fixture(root, body, root_contract())
     code, receipt = cli(root, prop)
     assert code == 2 and receipt["technicalDisposition"] == "HOLD"
+
+
+# NCR_PREFEAS_ROOT_BUILD_ACTION_V1: optional requestedAction, scoped typed result,
+# exercised through the real evaluator, CLI subprocess and range subprocess.
+RB_BASE = "docs/baselines/CVF_GC018_ROOT_BUILD_FIXTURE.md"
+RB_TEXT = "# Baseline\n\nroot-build-baseline-locator\nroot-build-scope-locator\n"
+RB_ACTION = {"kind": "INTEGRATED_ROOT_CONTRACT_BUILD", "runtimeReadinessClaim": False}
+RB_SCOPED = "FEASIBLE_FOR_INTEGRATED_ROOT_BUILD"
+NO_ACTION = object()
+
+def rb_row(rid, path=RB_BASE, data=RB_TEXT, **over):
+    locator = "root-build-baseline-locator" if rid == "ROOT_BUILD_BASELINE" else "root-build-scope-locator"
+    evidence = {"path": path, "sha256": sha(data.encode()), "locator": locator}
+    return {"requirementId": rid, "requiredForPhase": True, "evidence": evidence, "deferredToPhase": None, **over}
+
+def rb_rows(**kw):
+    return [rb_row("ROOT_BUILD_BASELINE", **kw), rb_row("ROOT_BUILD_SCOPE", **kw)]
+
+def root_build(root, *, outcome=None, action=RB_ACTION, phase="PRE_DISPATCH_INTEGRATED_ROOT_CONTRACT_BUILD", rows=None,
+               doc_type="docType: work_order\n", return_line="workerReturnPath: `docs/reviews/return.md`\n",
+               base_text=RB_TEXT, name="rb", family="docs/work_orders", tweak=None, extra_files=None):
+    prop, comp_rel = f"{family}/{name}.md", f"docs/reviews/evidence/{name}.json"
+    data = (f"# Work order\n{doc_type}Preapproval-Feasibility: REQUIRED\n"
+            f"Preapproval-Feasibility-Companion: {comp_rel}\n{return_line}").encode("utf-8")
+    outcome = outcome if outcome is not None else root_contract()
+    comp = {
+        "schemaVersion": pf.COMPANION_SCHEMA, "proposal": {"path": prop, "sha256": sha(data)},
+        "approvalTarget": {"path": prop, "sha256": sha(data), "prospectiveOutcomeSha256": digest(outcome)},
+        "prospectiveOutcome": outcome, "phasePrerequisites": {"phase": phase, "rows": rows if rows is not None else rb_rows()},
+        "requestQueue": None,
+    }
+    if action is not NO_ACTION:
+        comp["requestedAction"] = action
+    if tweak:
+        tweak(comp)
+    for rel, text in {RB_BASE: base_text, EVID: GOOD_EVID, **(extra_files or {})}.items():
+        write(root, rel, text)
+    write(root, prop, data)
+    write(root, comp_rel, json.dumps(comp, indent=1))
+    return prop, comp_rel
+
+def other_scope_root() -> dict:
+    block = root_contract()
+    block["successorScope"] = "NO_SUCCESSOR"
+    return block
+
+def cli_text(root, prop):
+    cmd = [sys.executable, "-B", RUNNER, "--repo-root", str(root), "--proposal", prop, "--approval-target", prop]
+    done = subprocess.run(cmd, cwd=REPO, capture_output=True, text=True, encoding="utf-8")
+    return done.returncode, done.stdout.splitlines()[0]
+
+def test_root_build_valid_action_yields_only_scoped_result(root):
+    prop, _ = root_build(root)
+    receipt = run_eval(root, prop)
+    assert receipt["technicalDisposition"] == pf.ROOT_BUILD_DISPOSITION == RB_SCOPED
+    assert receipt["diagnostics"] == [] and receipt["canonicalViolations"] == [] and receipt["prerequisites"]["examined"] == 2
+    assert receipt["runtimeReadiness"] is False and receipt["effectAdmission"] is False and receipt["operatorApprovalRequired"] is True
+    code, cli_receipt = cli(root, prop)
+    assert code == 0 and cli_receipt == receipt
+    code, line = cli_text(root, prop)
+    assert code == 0 and f"technicalDisposition={RB_SCOPED}" in line
+    assert line.endswith("effectAdmission=false operatorApprovalRequired=true runtimeReadiness=false")
+
+@pytest.mark.parametrize("phase", ["documentary-plan", "PRE_DISPATCH_INTEGRATED_ROOT_CONTRACT_BUILD"])
+def test_root_build_without_action_stays_hold_even_with_matching_phase(root, phase):
+    prop, _ = root_build(root, action=NO_ACTION, phase=phase)
+    receipt = run_eval(root, prop)
+    assert receipt["technicalDisposition"] == "HOLD" and "runtimeReadiness" not in receipt
+    code, cli_receipt = cli(root, prop)
+    assert code == 2 and cli_receipt["technicalDisposition"] == "HOLD"
+
+def test_root_build_valid_stop_with_action_stays_hold(root):
+    prop, _ = root_build(root, outcome=succ())
+    receipt = run_eval(root, prop)
+    assert receipt["technicalDisposition"] == "HOLD" and receipt["canonicalViolations"] == [] and "runtimeReadiness" not in receipt
+    assert cli(root, prop)[0] == 2
+
+def test_no_action_receipt_shape_and_ordinary_feasible_are_unchanged(root):
+    prop, _ = make(root, reducing())
+    receipt = run_eval(root, prop)
+    assert receipt["technicalDisposition"] == "FEASIBLE" and set(receipt) == set(pf.new_receipt(prop))
+    assert cli(root, prop)[0] == 0
+
+ACTION_CASES = {
+    "null": (dict(action=None), "ACTION_SHAPE"),
+    "list": (dict(action=[]), "ACTION_SHAPE"),
+    "empty": (dict(action={}), "ACTION_SHAPE"),
+    "missing-claim": (dict(action={"kind": pf.ROOT_BUILD_KIND}), "ACTION_SHAPE"),
+    "extra-field": (dict(action={**RB_ACTION, "extra": 1}), "ACTION_SHAPE"),
+    "kind-padded": (dict(action={**RB_ACTION, "kind": "INTEGRATED_ROOT_CONTRACT_BUILD "}), "ACTION_KIND_INVALID"),
+    "kind-lower": (dict(action={**RB_ACTION, "kind": "integrated_root_contract_build"}), "ACTION_KIND_INVALID"),
+    "kind-null": (dict(action={**RB_ACTION, "kind": None}), "ACTION_KIND_INVALID"),
+    "kind-number": (dict(action={**RB_ACTION, "kind": 1}), "ACTION_KIND_INVALID"),
+    "claim-true": (dict(action={**RB_ACTION, "runtimeReadinessClaim": True}), "ACTION_READINESS_CLAIM_INVALID"),
+    "claim-zero": (dict(action={**RB_ACTION, "runtimeReadinessClaim": 0}), "ACTION_READINESS_CLAIM_INVALID"),
+    "claim-string": (dict(action={**RB_ACTION, "runtimeReadinessClaim": "false"}), "ACTION_READINESS_CLAIM_INVALID"),
+    "claim-null": (dict(action={**RB_ACTION, "runtimeReadinessClaim": None}), "ACTION_READINESS_CLAIM_INVALID"),
+    "phase-other": (dict(phase="documentary-plan"), "ACTION_PHASE_MISMATCH"),
+    "phase-case": (dict(phase="pre_dispatch_integrated_root_contract_build"), "ACTION_PHASE_MISMATCH"),
+    "not-work-order-family": (dict(family="docs/reference"), "ACTION_PROPOSAL_NOT_WORK_ORDER"),
+    "doctype-missing": (dict(doc_type=""), "ACTION_PROPOSAL_NOT_WORK_ORDER"),
+    "doctype-wrong": (dict(doc_type="docType: baseline\n"), "ACTION_PROPOSAL_NOT_WORK_ORDER"),
+    "doctype-duplicate": (dict(doc_type="docType: work_order\ndocType: work_order\n"), "ACTION_PROPOSAL_NOT_WORK_ORDER"),
+    "doctype-fenced-only": (dict(doc_type="```\ndocType: work_order\n```\n"), "ACTION_PROPOSAL_NOT_WORK_ORDER"),
+    "continue-bounded": (dict(outcome=initial_ok()), "ACTION_DISPOSITION_MISMATCH"),
+    "ready-reducing": (dict(outcome=reducing()), "ACTION_DISPOSITION_MISMATCH"),
+    "stale-predecessor": (dict(outcome=succ(pred_sha="f" * 64)), "PREDECESSOR_HASH_MISMATCH"),
+    "proposal-hash-drift": (dict(tweak=lambda c: c["proposal"].update(sha256="0" * 64)), "PROPOSAL_HASH_DRIFT"),
+    "outcome-digest-drift": (dict(tweak=lambda c: c["prospectiveOutcome"].update(problemKey="drifted")), "OUTCOME_DIGEST_DRIFT"),
+    "unknown-top-field": (dict(tweak=lambda c: c.update(extra=1)), "COMPANION_SHAPE"),
+    "baseline-row-missing": (dict(rows=[rb_row("ROOT_BUILD_SCOPE")]), "ROOT_BUILD_ROW_MISSING"),
+    "scope-row-missing": (dict(rows=[rb_row("ROOT_BUILD_BASELINE")]), "ROOT_BUILD_ROW_MISSING"),
+    "rows-empty": (dict(rows=[]), "ROOT_BUILD_ROW_MISSING"),
+    "baseline-row-duplicate": (dict(rows=[*rb_rows(), rb_row("ROOT_BUILD_BASELINE")]), "PREREQ_ID_DUPLICATE"),
+    "baseline-row-deferred": (dict(rows=[rb_row("ROOT_BUILD_SCOPE"), rb_row("ROOT_BUILD_BASELINE", requiredForPhase=False, evidence=None, deferredToPhase="later")]), "ROOT_BUILD_ROW_NOT_REQUIRED"),
+    "scope-row-other-path": (dict(rows=[rb_row("ROOT_BUILD_BASELINE"), rb_row("ROOT_BUILD_SCOPE", path="docs/baselines/CVF_GC018_OTHER.md")],
+                                  extra_files={"docs/baselines/CVF_GC018_OTHER.md": RB_TEXT}), "ROOT_BUILD_BASELINE_PATH_INVALID"),
+    "path-not-baselines": (dict(rows=rb_rows(path="docs/reference/CVF_GC018_X.md"), extra_files={"docs/reference/CVF_GC018_X.md": RB_TEXT}), "ROOT_BUILD_BASELINE_PATH_INVALID"),
+    "path-prefix-wrong": (dict(rows=rb_rows(path="docs/baselines/X.md"), extra_files={"docs/baselines/X.md": RB_TEXT}), "ROOT_BUILD_BASELINE_PATH_INVALID"),
+    "path-not-markdown": (dict(rows=rb_rows(path="docs/baselines/CVF_GC018_X.txt"), extra_files={"docs/baselines/CVF_GC018_X.txt": RB_TEXT}), "ROOT_BUILD_BASELINE_PATH_INVALID"),
+    "path-unsafe": (dict(rows=rb_rows(path="docs/baselines/../baselines/CVF_GC018_X.md")), "PREREQ_EVIDENCE_UNREADABLE"),
+    "baseline-bytes-drift": (dict(base_text=RB_TEXT + "drift\n"), "PREREQ_EVIDENCE_HASH_MISMATCH"),
+    "locator-absent": (dict(rows=[rb_row("ROOT_BUILD_BASELINE"), {**rb_row("ROOT_BUILD_SCOPE"), "evidence": {**rb_row("ROOT_BUILD_SCOPE")["evidence"], "locator": "absent-locator"}}]), "PREREQ_LOCATOR_NOT_FOUND"),
+    "return-missing": (dict(return_line=""), "WORKER_RETURN_ROUTE_UNBUILDABLE"),
+    "return-bare": (dict(return_line="workerReturnPath: docs/reviews/return.md\n"), "WORKER_RETURN_ROUTE_UNBUILDABLE"),
+    "return-duplicate": (dict(return_line="workerReturnPath: `docs/reviews/a.md`\nworkerReturnPath: `docs/reviews/b.md`\n"), "WORKER_RETURN_ROUTE_UNBUILDABLE"),
+}
+
+@pytest.mark.parametrize("name", sorted(ACTION_CASES))
+def test_root_build_hostile_variants_fail_closed(root, name):
+    kwargs, code = ACTION_CASES[name]
+    prop, _ = root_build(root, **kwargs)
+    receipt = run_eval(root, prop)
+    assert receipt["technicalDisposition"] == "INVALID" and code in codes(receipt), codes(receipt)
+    assert "runtimeReadiness" not in receipt and receipt["effectAdmission"] is False
+    assert cli(root, prop)[0] == 1
+
+@pytest.mark.parametrize("outcome", [succ(streak=1), other_scope_root()], ids=["stop-wrong-streak", "root-other-scope"])
+def test_root_build_canonical_invalid_or_wrong_scope_is_invalid(root, outcome):
+    prop, _ = root_build(root, outcome=outcome)
+    receipt = run_eval(root, prop)
+    assert receipt["technicalDisposition"] == "INVALID" and (receipt["canonicalViolations"] or "ACTION_DISPOSITION_MISMATCH" in codes(receipt))
+    assert "runtimeReadiness" not in receipt and cli(root, prop)[0] == 1
+
+def test_root_build_nested_baseline_within_family_is_scoped(root):
+    path = "docs/baselines/sub/CVF_GC018_X.md"
+    prop, _ = root_build(root, rows=rb_rows(path=path), extra_files={path: RB_TEXT})
+    receipt = run_eval(root, prop)
+    assert receipt["technicalDisposition"] == RB_SCOPED
+    assert receipt["runtimeReadiness"] is False and receipt["effectAdmission"] is False
+    assert cli(root, prop)[0] == 0
+
+def test_root_build_duplicate_action_key_is_malformed_json(root):
+    prop, comp = root_build(root)
+    text = (root / comp).read_text(encoding="utf-8")
+    write(root, comp, text.replace('"requestedAction":', '"requestedAction": {}, "requestedAction":'))
+    assert "COMPANION_MALFORMED_JSON" in codes(run_eval(root, prop))
+
+def test_root_build_and_ordinary_share_the_production_route_builder(root, monkeypatch):
+    original, seen = pf.worker_return_gate.build_commands, []
+    def spy(*args, **kwargs):
+        seen.append((args, kwargs["work_order_text"]))
+        return original(*args, **kwargs)
+    monkeypatch.setattr(pf.worker_return_gate, "build_commands", spy)
+    monkeypatch.setattr(pf.worker_return_gate.subprocess, "run", lambda *a, **k: pytest.fail("downstream command executed"))
+    scoped, _ = root_build(root)
+    ordinary = work_order_fixture(root, b"Preapproval-Feasibility: REQUIRED\nPreapproval-Feasibility-Companion: docs/reviews/evidence/p.json\nworkerReturnPath: `docs/reviews/return.md`\n")
+    assert run_eval(root, scoped)["technicalDisposition"] == RB_SCOPED and run_eval(root, ordinary)["technicalDisposition"] == "FEASIBLE"
+    assert [args for args, _ in seen] == [((), scoped), ((), ordinary)]
+    assert seen[0][1] == (root / scoped).read_text(encoding="utf-8")
+
+def test_root_build_unbound_command_composition_is_invalid(root, monkeypatch):
+    original = pf.worker_return_gate.build_commands
+    prop, _ = root_build(root)
+    monkeypatch.setattr(pf.worker_return_gate, "build_commands", lambda *a, **kw: original())
+    receipt = run_eval(root, prop)
+    assert receipt["technicalDisposition"] == "INVALID" and "WORKER_RETURN_ROUTE_UNBUILDABLE" in codes(receipt)
+
+def test_root_build_receipt_does_not_survive_drift(root):
+    prop, comp = root_build(root)
+    assert cli(root, prop)[0] == 0
+    write(root, RB_BASE, RB_TEXT + "edited after receipt\n")
+    code, receipt = cli(root, prop)
+    assert code == 1 and "PREREQ_EVIDENCE_HASH_MISMATCH" in codes(receipt)
+    prop, comp = root_build(root, name="second")
+    assert cli(root, prop)[0] == 0
+    data = json.loads((root / comp).read_text(encoding="utf-8"))
+    data["prospectiveOutcome"]["counters"]["sameClaimCorrections"] = 9
+    write(root, comp, json.dumps(data))
+    code, receipt = cli(root, prop)
+    assert code == 1 and "OUTCOME_DIGEST_DRIFT" in codes(receipt)
+
+def test_root_build_range_counts_and_displays_scoped_result_separately(tmp_path):
+    git_fixture(tmp_path)
+    root_build(tmp_path)
+    root_build(tmp_path, name="held", action=NO_ACTION)
+    code, out = range_cli(tmp_path, extra=("--json",))
+    report = json.loads(out)
+    assert code == 0 and report["counts"] == {"FEASIBLE": 0, RB_SCOPED: 1, "HOLD": 1, "INVALID": 0}
+    assert report["coverage"]["evaluatedMarked"] == 2
+    assert [r["runtimeReadiness"] for r in report["receipts"] if r["technicalDisposition"] == RB_SCOPED] == [False]
+    code, out = range_cli(tmp_path)
+    assert code == 0 and f"{RB_SCOPED} coverage=" in out and "SCOPED: 1" in out and "runtimeReadiness=false" in out
+    assert "evaluatedMarked=2" in out and "scoped root-build or HOLD" in out
+
+def test_root_build_range_fails_on_companion_only_drift_and_invalid_action(tmp_path):
+    git_fixture(tmp_path)
+    prop, comp = root_build(tmp_path)
+    git(tmp_path, "add", "-A")
+    git(tmp_path, "commit", "-q", "-m", "root build proposal")
+    assert range_cli(tmp_path)[0] == 0
+    data = json.loads((tmp_path / comp).read_text(encoding="utf-8"))
+    data["requestedAction"]["runtimeReadinessClaim"] = True
+    data["approvalTarget"]["prospectiveOutcomeSha256"] = digest(data["prospectiveOutcome"])
+    write(tmp_path, comp, json.dumps(data))
+    code, out = range_cli(tmp_path)
+    assert code == 1 and "companionReferencingProposals=1" in out and "ACTION_READINESS_CLAIM_INVALID" in out

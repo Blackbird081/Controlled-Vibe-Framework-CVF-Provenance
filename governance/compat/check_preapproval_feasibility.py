@@ -3,7 +3,9 @@
 
 Shares the evaluator in preapproval_feasibility_contract. A range PASS with zero
 evaluated proposals is NOT_APPLICABLE coverage, never approval feasibility, and
-a valid HOLD is reported truthfully rather than treated as release.
+a valid HOLD is reported truthfully rather than treated as release. The
+action-scoped FEASIBLE_FOR_INTEGRATED_ROOT_BUILD result has its own count and is
+never folded into FEASIBLE or runtime readiness.
 """
 from __future__ import annotations
 
@@ -90,7 +92,8 @@ def run(root: Path, base: str, head: str) -> dict:
     discovery = discover(root, base, head)
     receipts = [contract.evaluate(root, path, path, explicit=False) for path in discovery["candidates"]]
     evaluated = [r for r in receipts if r["technicalDisposition"] != "NOT_APPLICABLE"]
-    counts = {name: sum(r["technicalDisposition"] == name for r in evaluated) for name in ("FEASIBLE", "HOLD", "INVALID")}
+    names = ("FEASIBLE", contract.ROOT_BUILD_DISPOSITION, "HOLD", "INVALID")
+    counts = {name: sum(r["technicalDisposition"] == name for r in evaluated) for name in names}
     return {
         "schemaVersion": REPORT_SCHEMA,
         "coverage": {
@@ -135,6 +138,8 @@ def main(argv: list[str] | None = None) -> int:
             print(f"  - {receipt['proposal']['path']}: {receipt['technicalDisposition']} coverage={receipt['coverageDisposition']} {codes}")
         if not coverage["evaluatedMarked"]:
             print("NOT_APPLICABLE: 0 marked proposals evaluated; this range result is not approval feasibility and releases nothing.")
+        if report["counts"][contract.ROOT_BUILD_DISPOSITION]:
+            print(f"SCOPED: {report['counts'][contract.ROOT_BUILD_DISPOSITION]} {contract.ROOT_BUILD_DISPOSITION} (runtimeReadiness=false); not FEASIBLE or READY, grants no effect, runtime or execution.")
         if report["counts"]["HOLD"]:
             print("HOLD: a valid STOP/ROOT_CONTRACT record is reported truthfully; range PASS does not release implementation or any effect.")
     if report["counts"]["INVALID"]:
@@ -143,7 +148,7 @@ def main(argv: list[str] | None = None) -> int:
         return 1 if args.enforce else 0
     if not args.json:
         if report["coverage"]["evaluatedMarked"]:
-            print("PASS: every evaluated marked proposal is declared-state valid (FEASIBLE or HOLD); not an approval or effect grant.")
+            print("PASS: every evaluated marked proposal is declared-state valid (FEASIBLE, scoped root-build or HOLD); not an approval or effect grant.")
         else:
             print("PASS (NOT_APPLICABLE): no marked proposal in range; nothing was evaluated.")
     return 0
