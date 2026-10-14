@@ -2,7 +2,7 @@
   "schemaVersion": "0.1.0",
   "currentMode": "cvf_ncr_request_cancellation_execution",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-REQUEST-CANCELLATION-20261014. WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_REQUEST_CANCELLATION_2026-10-14.md. Consolidated worker16 amendment; two prior exactoptions test assertions only. Original02:29 clock and UTC03:30 expiry retained; worker2UI/2starts, Root1cancelUI/2starts; task4+observed9<=13. BUILD resumes only after recorded amended bound release. R1/R2partial,R3/R4open,R5/R6deferred; realdata/accept/send/public/deploy/P11 parked; LHW24 retained.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-REQUEST-CANCELLATION-20261014. WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_REQUEST_CANCELLATION_2026-10-14.md. Consolidated worker16 amendment; two prior exactoptions test assertions only. Original02:29 clock and UTC03:30 expiry retained; worker2UI/2starts, Root1cancelUI/2starts; task4+observed9<=13. BUILD resumes only after recorded amended bound release. R1/R2partial,R3/R4open,R5/R6deferred; realdata/accept/send/public/deploy/P11 parked; LHW24 retained. Reviewed material commit=9a45a7bbfc11726c0c52852a2cc18d3c1f5206c9; dedicated actual-SHA continuity.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

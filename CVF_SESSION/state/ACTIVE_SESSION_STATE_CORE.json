@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_REQUEST_CANCELLATION_2026-10-14.md",
     "workOrderSha256": "700d6a61e4f8de3a59bb927f53d639b2b0c013d91d11c8007cb2659bbec3a570"
   },
-  "currentAuthoritySyncReason": "Consolidated cancellation worker16 scope amendment; original clock and budget retained Pre-closure parent c3ac310aeb53d51a7fe1212639429a3bcf2d19ad; coherent source/generated authority; actual-SHA dedicated continuity follows material. Whole NCR pilot/effects remain separate.",
+  "currentAuthoritySyncReason": "Consolidated cancellation worker16 scope amendment; original clock and budget retained Material 9a45a7bbfc11726c0c52852a2cc18d3c1f5206c9; coherent source/generated authority; actual-SHA dedicated continuity follows material. Whole NCR pilot/effects remain separate.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",

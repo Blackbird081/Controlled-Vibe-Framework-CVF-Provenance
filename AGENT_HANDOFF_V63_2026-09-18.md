@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Current NCR Continuation
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `c3ac310aeb53d51a7fe1212639429a3bcf2d19ad`. Pre-closure parent SHA: `c3ac310aeb53d51a7fe1212639429a3bcf2d19ad`. Batch ID: CVF-NCR-REQUEST-CANCELLATION-20261014. Consolidated cancellation worker16 scope amendment; original clock and budget retained; actual reviewed material SHA will be bound by dedicated exact6 after commit.
+Current HEAD recorded for this handoff: `9a45a7bbfc11726c0c52852a2cc18d3c1f5206c9`. Material SHA: `9a45a7bbfc11726c0c52852a2cc18d3c1f5206c9`. Batch ID: CVF-NCR-REQUEST-CANCELLATION-20261014. Consolidated cancellation worker16 scope amendment; original clock and budget retained; dedicated exact6 continuity.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -39,7 +39,7 @@ Finite clipboard result ordering is accepted; actual OS write cancellation, whol
 
 ## Next Allowed Move
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-REQUEST-CANCELLATION-20261014. WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_REQUEST_CANCELLATION_2026-10-14.md. Consolidated worker16 amendment; two prior exactoptions test assertions only. Original02:29 clock and UTC03:30 expiry retained; worker2UI/2starts, Root1cancelUI/2starts; task4+observed9<=13. BUILD resumes only after recorded amended bound release. R1/R2partial,R3/R4open,R5/R6deferred; realdata/accept/send/public/deploy/P11 parked; LHW24 retained.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-REQUEST-CANCELLATION-20261014. WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_REQUEST_CANCELLATION_2026-10-14.md. Consolidated worker16 amendment; two prior exactoptions test assertions only. Original02:29 clock and UTC03:30 expiry retained; worker2UI/2starts, Root1cancelUI/2starts; task4+observed9<=13. BUILD resumes only after recorded amended bound release. R1/R2partial,R3/R4open,R5/R6deferred; realdata/accept/send/public/deploy/P11 parked; LHW24 retained. Reviewed material commit=9a45a7bbfc11726c0c52852a2cc18d3c1f5206c9; dedicated actual-SHA continuity.
 
 ## Active Boundary
 T3B has a Local-verified active v1 specification. Party B is verified and T3C-C1 tooling accepted at `db78c87df`; T3C-C2 and Party C are verified. T3D-C1 tooling is accepted at `9ed844c2a` without source. T3D-C0-R1 closed at `2fffa1ef7`. T3D-C3 was accepted bounded at `88137e9a2`, but actual-mode prepare attempts failed before Party B/C execution; authorized cleanup removed the failed root and discarded unaccepted worker changes. G1 stopped, G2-G6 parked, and G7 research closed at `660601f0e` with `ADAPT_EXISTING_HANDOFF_ONLY`. Evidence-join sufficiency stays WATCH; no implementation successor exists. Rejected T2 paths remain archived; HRLTP-T2 paused.
@@ -89,8 +89,8 @@ Rollback boundary: exact6; preserve original archive and accepted/blocked histor
 | Command or tool surface | source entry/core update, active front door/handoff, canonical state generator |
 | Target paths | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Allowed scope source | operator NCR continuation; exact6 authority in paired baseline/order |
-| Before status evidence | c3ac310aeb53d51a7fe1212639429a3bcf2d19ad; clean isolated worktree c3ac310ae; primary worker lane parked/raw13 frozen; raw-byte checkout fidelity repaired |
-| After status evidence | exact9 coherent material; actual-SHA continuity remains a steward action; Consolidated cancellation worker16 scope amendment; original clock and budget retained |
+| Before status evidence | 9a45a7bbfc11726c0c52852a2cc18d3c1f5206c9; clean worktree and staged empty after reviewed material commit |
+| After status evidence | exact6 source/generated continuity; Consolidated cancellation worker16 scope amendment; original clock and budget retained |
 | Diff evidence | source/generated reconciliation; exact6 git diff --name-status; git diff --cached --check |
 | Approval boundary | bounded synthetic request-cancellation proof; real-data/acceptance/public/deploy parked |
 | Claim boundary | finite saved request-cancellation proof; new task max4 calls plus historical9/program13; full NCR pilot open |
