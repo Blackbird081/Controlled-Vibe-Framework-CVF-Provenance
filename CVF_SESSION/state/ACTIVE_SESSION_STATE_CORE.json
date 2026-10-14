@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_CONFIGURED_RECEIPT_REPAIR_2026-10-14.md",
     "workOrderSha256": "d7c6d15f32c28225df4925ced2cb4609b547868245b3895e2d053bb459700f84"
   },
-  "currentAuthoritySyncReason": "Operator NCR continuation; primary mandatory-control acceptance rejected, six mechanical contributions and Local authenticity retained. One conditional control repair under immutable corrected dispatch material e119ab1493b533f333974fe60002b953a1efbce8; final bound gate required. Previous cancellation pair unchanged; no provider/real-data/pilot grant.",
+  "currentAuthoritySyncReason": "Retained immutable conditional execution pair, scope retired. Review docs/reviews/CVF_NCR_HTML_CONFIGURED_RECEIPT_CONDITIONAL_COMPLETION_2026-10-14.md; actual material e06397c34d04700223f55972b0b84d7c4a74c0b8. REQ-07 cleanup blocked; authenticity execution PASS retained. PLAN only; no automatic third BUILD or runtime/provider grant.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
@@ -110,8 +110,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_ncr_html_control_repair_dispatch_ready",
-  "previousMode": "cvf_ncr_brief_copy_closed_useful_selection",
+  "currentMode": "cvf_ncr_html_conditional_reviewed_cleanup_blocked",
+  "previousMode": "cvf_ncr_html_control_repair_dispatch_ready",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
