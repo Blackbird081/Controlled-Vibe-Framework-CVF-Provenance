@@ -106,6 +106,16 @@
       ],
       "reviewedSymbols": "existing provider response/deadline neighbors",
       "readDepth": "bounded named seam inspection; test rows selected search only"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.test.ts",
+      "sha256": "2df6d947cf54a3a57596de4fca97048716fd3e0ce5d936d62cf87e822d078cbe",
+      "physicalLines": 1156,
+      "readSpans": [
+        "two existing Alibaba executeAI exact-options assertions reported byworker focusedregression"
+      ],
+      "reviewedSymbols": "existing Alibaba default/explicitoptions tests",
+      "readDepth": "bounded targeted assertion intake"
     }
   ],
   "workerManifest": [
@@ -114,6 +124,7 @@
     "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/ai/providers.ts",
     "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/provider-attempt-admission.ts",
     "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execution-diagnostics.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.test.ts",
     "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/provider-request-cancellation.ts",
     "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.request-cancellation.test.ts",
     "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/ai/providers.request-cancellation.test.ts",
@@ -181,13 +192,14 @@
     "CVF_SESSION/ACTIVE_SESSION_STATE.json",
     "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json"
   ],
-  "totalManifestCount": 33,
+  "totalManifestCount": 34,
   "semanticMaterialManifest": [
     "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts",
     "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/ai/types.ts",
     "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/ai/providers.ts",
     "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/provider-attempt-admission.ts",
     "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execution-diagnostics.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.test.ts",
     "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/provider-request-cancellation.ts",
     "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.request-cancellation.test.ts",
     "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/ai/providers.request-cancellation.test.ts",
@@ -209,7 +221,7 @@
     "docs/reviews/archive/CVF_AGENT_WORK_ORDER_NCR_REQUEST_CANCELLATION_DISPATCH_2026-10-14.md",
     "docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md"
   ],
-  "semanticMaterialCount": 25,
+  "semanticMaterialCount": 26,
   "rootAdmission": {
     "actor": "LOCAL_REVIEWER_CODEX_ROOT",
     "decision": "ADMIT_BOUNDED_REQUEST_CANCELLATION_AFTER_COMMITTED_RELEASE",
@@ -219,6 +231,7 @@
       "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/ai/providers.ts",
       "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/provider-attempt-admission.ts",
       "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execution-diagnostics.ts",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.test.ts",
       "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/provider-request-cancellation.ts",
       "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.request-cancellation.test.ts",
       "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/ai/providers.request-cancellation.test.ts",
@@ -283,7 +296,7 @@
     },
     "actualReleaseUtc": null,
     "actualReleaseEvidence": "dispatcher must record actual UTC/full HEAD/hash-bound grant at bound release; null is not release",
-    "closureChoreography": "Local admitted closure choreography under existing hierarchy and tranche split: after final worker and distinct reviewer evidence is frozen, create/commit immutable reviewer control pair2 with Status REVIEWED_CLOSURE_CONTROL and providerExecutionAuthority FORBIDDEN. It is Local metadata-closure authority only, no BUILD/live grant. Preserve/temporarily hold/restore exact frozen delta by custody to isolate documentary pair commit. Commit exact6 current-authority handoff binding four exact raw path/hash fields to that unchanged pair. Capture closureBaseHead after actual handoff. Semantic25 = dispatch3+worker15+Root7; it excludes control pair2 and protected continuity6. Current immutable pair remains unchanged in semantic material, permitting old execution pair terminal conversion without authority-hash mismatch. Actual6 disclosure follows semantic commit. MFRP evaluates only its proper immutable semantic range after disclosure. No documentary commit is semantic/live proof; REVIEWED_ nonactive status classification is not closeability proof. Never replay the old145a mixed range: verify_worktree_matches_committed_target would observe changed Core/authority, so it is unreplayable; preserve journal and original outcomes, no checker edit or fabricated credit. Only frozen actual facts enter future control pair.",
+    "closureChoreography": "Local amendment: preserve and freeze primary owned delta; commit only documentary control pair2 and exact6 authority handoff in an isolated Local worktree sharing this private Git common directory, then fast-forward primary only after no-path-overlap and raw-delta reconciliation. No product-source hold, deletion, rollback transaction or provider grant. Capture closureBaseHead after imported exact6 authority handoff; semantic26 excludes control2/protected6; final actual6 and proper split-range gates remain mandatory.",
     "preReleaseProcedureDisposition": "PARTIAL_WITH_REASON: initial author fast gate missing envelope/literal command; next layer identified manifest/closure binding omissions; original failures retained and consolidated Root source fixes before release. No worker/provider effects.",
     "preCommitFirstOutcome": {
       "outcome": "FAIL",
@@ -291,6 +304,24 @@
       "failedChecks": 5,
       "log": ".cvf/runtime/ncr-request-cancellation-20261014/dispatch-material-commit.log",
       "disposition": "Consolidated Root repairs of SCEC, baseline external bindings, exact Delta block, clean-worktree literal and scoped knowledge counts; no worker/provider effects."
+    },
+    "scopeAmendment": {
+      "finding": {
+        "id": "NCR-SIGNAL-OPTIONS-REGRESSION-SHAPE",
+        "observed": "focused156 had154PASS/2FAIL; two existing Alibaba executeAI exact-options expectations omit new native signal",
+        "repair": "only two assertions in route.test.ts; preserve all previous exactoptions plus signal expectation; rerun affected focused tests and existingmandatorychecks",
+        "authorityDelta": [
+          "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.test.ts"
+        ],
+        "providerCalls": 0,
+        "expiryUnchanged": "2026-10-14T03:30:00Z",
+        "isolatedMetadataMethod": "canonical packet9 in separate Local worktree; ff primary onlynonworkerpaths; preserve workerrawbytes; no sourcehold/rollback"
+      },
+      "findingSha256": "6aaa73ad2f111fba165d1d5382b50985e4fd3925ff788c712f49754dd0787ebc",
+      "reviewRoundCount": 1,
+      "reworkGeneration": 1,
+      "originalReleaseUtc": "2026-10-14T02:29:05.286566+00:00",
+      "noClockOrQuotaReset": true
     }
   },
   "adifResolverEvidence": {

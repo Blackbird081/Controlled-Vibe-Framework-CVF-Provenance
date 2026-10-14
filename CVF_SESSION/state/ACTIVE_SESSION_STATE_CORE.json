@@ -37,11 +37,11 @@
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_NCR_REQUEST_CANCELLATION_2026-10-14.md",
-    "baselineSha256": "c4b88fd3c6d21225d9264af14b2a2f8993c0afc92348c34a5ddd97f694775931",
+    "baselineSha256": "7f4c574e2c06e9caa034fb5597214c1c1024b7bc6c3d3a8f712424e84e6998f5",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_REQUEST_CANCELLATION_2026-10-14.md",
-    "workOrderSha256": "f46b18e3122a09008f1440cab870f8d76eb21dfbd15010aa0a00da0353a74565"
+    "workOrderSha256": "700d6a61e4f8de3a59bb927f53d639b2b0c013d91d11c8007cb2659bbec3a570"
   },
-  "currentAuthoritySyncReason": "Request-cancellation packet admitted; worker exact15 waits committed bound release Material 57170af2741e7a70bca48ad37a3e80bed079a656; coherent source/generated authority; actual-SHA dedicated continuity follows material. Whole NCR pilot/effects remain separate.",
+  "currentAuthoritySyncReason": "Consolidated cancellation worker16 scope amendment; original clock and budget retained Pre-closure parent c3ac310aeb53d51a7fe1212639429a3bcf2d19ad; coherent source/generated authority; actual-SHA dedicated continuity follows material. Whole NCR pilot/effects remain separate.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",

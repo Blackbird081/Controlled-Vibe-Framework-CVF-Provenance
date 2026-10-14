@@ -19,9 +19,10 @@ DISPATCH_READY: Local contract/source/reviewer topology admitted; actual complet
 
 ## Scope / Target / Owner Boundary
 
-Worker exact15; Root dispatch3/review7/control2/continuity6, union33.
+Worker exact16; Root dispatch3/review7/control2/continuity6, union34.
 
 - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts`
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.test.ts`
 - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/ai/types.ts`
 - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/ai/providers.ts`
 - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/provider-attempt-admission.ts`
@@ -58,7 +59,7 @@ Selected cancellation guard must also run AFTER awaiting buildExecuteFinalRespon
 | REQ-ADMISSION | Check before and after awaited admission before call-start; preabort0/0; admitted-cancel1/0/reconcilesfalse; no refund; `PROOF-REQ-ADMISSION` in `docs/reviews/evidence/ncr-request-cancellation-worker-20261014.json` |
 | REQ-NO-RETRY | After-await/before retry/prestart/terminal guard rejects ignoredabort/lateprovider success and starts no retry; `PROOF-REQ-NO-RETRY` in `docs/reviews/evidence/ncr-request-cancellation-worker-20261014.json` |
 | REQ-LIVE | Worker positive+paidpendingStop and Root distinct paidpendingStop prove local signal delivered/aborted; runtime failure BLOCKED, no remoteStopped claim; `PROOF-REQ-LIVE` in `docs/reviews/evidence/ncr-request-cancellation-worker-20261014.json` |
-| REQ-BUDGET-RETURN | Worker<=2UI/2starts, reviewer<=1cancelUI/2starts, task4+observed9<=13; exact15 fast/ledger/no commit/cleanup; `PROOF-REQ-BUDGET-RETURN` in `docs/reviews/evidence/ncr-request-cancellation-worker-20261014.json` |
+| REQ-BUDGET-RETURN | Worker<=2UI/2starts, reviewer<=1cancelUI/2starts, task4+observed9<=13; exact16 fast/ledger/no commit/cleanup; `PROOF-REQ-BUDGET-RETURN` in `docs/reviews/evidence/ncr-request-cancellation-worker-20261014.json` |
 
 ## Evidence / Verification
 
@@ -80,7 +81,7 @@ Exact current raw source and separate reviewer helper hashes in docs/reviews/evi
 | Field | Evidence |
 |---|---|
 | applicableCheckersRead | governance/compat/check_work_order_dispatch_quality_lifecycle.py; governance/compat/check_gate_to_role_closeability.py; governance/compat/check_active_session_state.py; governance/compat/check_work_order_acceptance_ledger.py; governance/compat/check_task_governance_route.py; governance/compat/check_review_cost_control.py; governance/compat/check_independent_review_probe_admission.py; governance/compat/check_agent_operation_trace.py; governance/compat/check_core_guard_self_protection.py; governance/compat/check_finding_to_governance_learning.py; governance/compat/mfrp_shadow_canary_autocollect.py |
-| literalTokensReviewed | DISPATCH_READY; controlled grant subject/expiry; exact15/33; six ledger proof IDs; all closeability gates/phases; singleton RIPA YES; REVIEWED_ nonactive classification versus contract proof; currentAuthority exact4 raw fields; semantic25 excludes protected6 |
+| literalTokensReviewed | DISPATCH_READY; controlled grant subject/expiry; exact16/33; six ledger proof IDs; all closeability gates/phases; singleton RIPA YES; REVIEWED_ nonactive classification versus contract proof; currentAuthority exact4 raw fields; semantic26 excludes protected6 |
 | gateRunPurpose | confirmation/evidence after source and literal review; Root runs complete author/pre-dispatch/bound-release gates after publication and commits; no future gate PASS claimed |
 | claimBoundary | source-based readiness and Local contract admission only; runtime signal delivery and cancellation behavior require actual bounded proof |
 
@@ -107,7 +108,7 @@ Dispatch impact: applicable defects consumed by Local before release; raw resolv
 | scaffoldHelperCommand | `python governance/compat/build_dispatch_packet_scaffold.py --packet-kind runtime-provider-live --batch-id CVF-NCR-REQUEST-CANCELLATION-20261014 --title "NCR request cancellation" --date 2026-10-14 --base 06f80e58b6d553855ce4aa32c74eb35fb1ba928f --commit-mode WORKER_MUST_NOT_COMMIT --include-worker-return-skeleton --stdout` |
 | generatedProfile | runtime-provider-live plus WORKER_MUST_NOT_COMMIT no-commit worker profile |
 | generatedSkeletonStatus | USED_AS_STARTING_POINT |
-| manualEditsAfterScaffold | Selected request-cancellation source contract/exact15/ledger/graph and reviewer-control choreography; full-form predecessor structures adapted, no previous proof reused |
+| manualEditsAfterScaffold | Selected request-cancellation source contract/exact16/ledger/graph and reviewer-control choreography; full-form predecessor structures adapted, no previous proof reused |
 | checkerReadAheadConfirmation | confirmation/evidence: full checker paths in Checker Source Read-Ahead Block; named source constants/literal contracts reviewed |
 | docOnlyNewFields | None |
 | claimBoundary | Dispatch authoring provenance only; no runtime/provider/live/public/Web/MCP/model-router behavior claim. |
@@ -121,18 +122,18 @@ Dispatch impact: applicable defects consumed by Local before release; raw resolv
 | Session or invocation | ncr-request-cancellation-dispatch-20261014 |
 | Working directory | repository root |
 | Command or tool surface | source pins, full-form render, actual ADIF resolver digest, registry publication and canonical generator |
-| Target paths | `docs/baselines/CVF_GC018_NCR_REQUEST_CANCELLATION_2026-10-14.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_REQUEST_CANCELLATION_2026-10-14.md`; `docs/reviews/evidence/ncr-request-cancellation-dispatch-20261014.json`; `docs/corpus-intelligence/registry/entries/cvf-ncr-request-cancellation.json`; `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json`; `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Target paths | `docs/baselines/CVF_GC018_NCR_REQUEST_CANCELLATION_2026-10-14.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_REQUEST_CANCELLATION_2026-10-14.md`; `docs/reviews/evidence/ncr-request-cancellation-dispatch-20261014.json`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Allowed scope source | operator fresh NCR continuation; Root admitted selected cancellation and closure choreography |
-| Before status evidence | 06f80e58b6d553855ce4aa32c74eb35fb1ba928f; clean worktree/staged empty |
-| After status evidence | exact12 dispatch/registry/coherent source-generated projection; actual material SHA and bound release still follow |
+| Before status evidence | c3ac310aeb53d51a7fe1212639429a3bcf2d19ad; clean worktree and staged empty in isolated Local metadata worktree; primary worker13 rawbindings frozen, lane released, zero provider calls |
+| After status evidence | exact9 consolidated packet/current-authority amendment; primary product delta untouched; original release clock/cap retained |
 | Diff evidence | Root checks exact initial12 composed manifest and git diff --check before dispatch material commit |
 | Approval boundary | Root actual committed bound release before BUILD/live |
 | Claim boundary | no executed cancellation or future gate PASS |
 | Agent type | INTERNAL_AGENT |
 | Invocation ID | ncr-request-cancellation-dispatch-20261014 |
-| Expected manifest | `docs/baselines/CVF_GC018_NCR_REQUEST_CANCELLATION_2026-10-14.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_REQUEST_CANCELLATION_2026-10-14.md`; `docs/reviews/evidence/ncr-request-cancellation-dispatch-20261014.json`; `docs/corpus-intelligence/registry/entries/cvf-ncr-request-cancellation.json`; `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json`; `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Actual changed set | `docs/baselines/CVF_GC018_NCR_REQUEST_CANCELLATION_2026-10-14.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_REQUEST_CANCELLATION_2026-10-14.md`; `docs/reviews/evidence/ncr-request-cancellation-dispatch-20261014.json`; `docs/corpus-intelligence/registry/entries/cvf-ncr-request-cancellation.json`; `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json`; `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Manifest delta | MATCH exact12 validated after canonical registry/current continuity generation; committed release still follows |
+| Expected manifest | `docs/baselines/CVF_GC018_NCR_REQUEST_CANCELLATION_2026-10-14.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_REQUEST_CANCELLATION_2026-10-14.md`; `docs/reviews/evidence/ncr-request-cancellation-dispatch-20261014.json`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Actual changed set | `docs/baselines/CVF_GC018_NCR_REQUEST_CANCELLATION_2026-10-14.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_REQUEST_CANCELLATION_2026-10-14.md`; `docs/reviews/evidence/ncr-request-cancellation-dispatch-20261014.json`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Manifest delta | MATCH exact9 required; no extra product or generated-registry change |
 | Deletion or rename disposition | None |
 
 ## Public Export Disposition
@@ -182,19 +183,19 @@ Real cancellation proof must observe own server paid fetch pending before the ex
 
 ## Agent Roles
 
-Prospective INTERNAL_AGENT worker exact15; Root final review/closure; external advisory only. No worker active before bound release.
+Prospective INTERNAL_AGENT worker exact16; Root final review/closure; external advisory only. No worker active before bound release.
 
 ## Execution Plan
 
-PENDING Root release: locked selected-lane signal/diagnostic contract; meaningful unit races/neighbor regressions; processed paid profile positive/cancel proof within cap2; freeze exact15/no commit; Root distinct cancellation proof.
+PENDING Root release: locked selected-lane signal/diagnostic contract; meaningful unit races/neighbor regressions; processed paid profile positive/cancel proof within cap2; freeze exact16/no commit; Root distinct cancellation proof.
 
 ## Worker Autonomy / No-Question Rule
 
-Routine implementation only within admitted exact15 and locked contract; no BUILD from draft. Root owns authority/size/profile/clock/failed-proof decisions.
+Routine implementation only within admitted exact16 and locked contract; no BUILD from draft. Root owns authority/size/profile/clock/failed-proof decisions.
 
 ## Gate-To-Role Closeability Contract
 
-PENDING canonical current-authority/MFRP topology validation. No CLOSEABLE assertion. Prospective worker exact15, reviewer immutable control-pair handoff; no protected semantic material paths.
+PENDING canonical current-authority/MFRP topology validation. No CLOSEABLE assertion. Prospective worker exact16, reviewer immutable control-pair handoff; no protected semantic material paths.
 
 ## Foundation Storage Layout Block
 
@@ -223,7 +224,7 @@ PENDING Root exact reviewer/registry/control-pair/roadmap/continuity manifest. S
 
 ## Agent Handoff Contract Control Block
 
-PENDING ratified shared-worktree binding at actual release. Prospective worker exact15; Root no mutation while worker active; freeze original return before reviewer metadata conversion.
+PENDING ratified shared-worktree binding at actual release. Prospective worker exact16; Root no mutation while worker active; freeze original return before reviewer metadata conversion.
 
 ## Semantic Convergence Outcome
 
@@ -237,7 +238,7 @@ PENDING Root semantic admission; no successor or actual cancellation claim from 
 
 ## Closure Authority / MFRP Choreography Proposal
 
-Local admitted closure choreography under existing hierarchy and tranche split: after final worker and distinct reviewer evidence is frozen, create/commit immutable reviewer control pair2 with Status REVIEWED_CLOSURE_CONTROL and providerExecutionAuthority FORBIDDEN. It is Local metadata-closure authority only, no BUILD/live grant. Preserve/temporarily hold/restore exact frozen delta by custody to isolate documentary pair commit. Commit exact6 current-authority handoff binding four exact raw path/hash fields to that unchanged pair. Capture closureBaseHead after actual handoff. Semantic25 = dispatch3+worker15+Root7; it excludes control pair2 and protected continuity6. Current immutable pair remains unchanged in semantic material, permitting old execution pair terminal conversion without authority-hash mismatch. Actual6 disclosure follows semantic commit. MFRP evaluates only its proper immutable semantic range after disclosure. No documentary commit is semantic/live proof; REVIEWED_ nonactive status classification is not closeability proof. Never replay the old145a mixed range: verify_worktree_matches_committed_target would observe changed Core/authority, so it is unreplayable; preserve journal and original outcomes, no checker edit or fabricated credit. Only frozen actual facts enter future control pair.
+Local amendment: preserve and freeze primary owned delta; commit only documentary control pair2 and exact6 authority handoff in an isolated Local worktree sharing this private Git common directory, then fast-forward primary only after no-path-overlap and raw-delta reconciliation. No product-source hold, deletion, rollback transaction or provider grant. Capture closureBaseHead after imported exact6 authority handoff; semantic26 excludes control2/protected6; final actual6 and proper split-range gates remain mandatory.
 
 ## Knowledge System Reconciliation
 
@@ -249,7 +250,7 @@ Local admitted closure choreography under existing hierarchy and tranche split: 
 - Authority assets: paired execution packet and Local admitted review-control choreography
 - Derived views: dispatch readiness metadata
 - Semantic region ledger: request route/provider/types/admission/diagnostics/UI Stop seams; tests selected search
-- Region reconciliation: assets=10; mapped=10; deferred=0; unmapped=0; named existing source pins only, source-wide mapping not attempted
+- Region reconciliation: assets=11; mapped=11; deferred=0; unmapped=0; named existing source pins only, source-wide mapping not attempted
 - Orphan or unmapped assets: outside source-wide task
 - Cross-region links: Stop to request signal to provider admission/fetch/retry/diagnostic
 - Drift check: renderer compares exact current raw source pin hashes
@@ -260,7 +261,7 @@ Local admitted closure choreography under existing hierarchy and tranche split: 
 
 ## Closure Checklist
 
-Local admitted closure choreography under existing hierarchy and tranche split: after final worker and distinct reviewer evidence is frozen, create/commit immutable reviewer control pair2 with Status REVIEWED_CLOSURE_CONTROL and providerExecutionAuthority FORBIDDEN. It is Local metadata-closure authority only, no BUILD/live grant. Preserve/temporarily hold/restore exact frozen delta by custody to isolate documentary pair commit. Commit exact6 current-authority handoff binding four exact raw path/hash fields to that unchanged pair. Capture closureBaseHead after actual handoff. Semantic25 = dispatch3+worker15+Root7; it excludes control pair2 and protected continuity6. Current immutable pair remains unchanged in semantic material, permitting old execution pair terminal conversion without authority-hash mismatch. Actual6 disclosure follows semantic commit. MFRP evaluates only its proper immutable semantic range after disclosure. No documentary commit is semantic/live proof; REVIEWED_ nonactive status classification is not closeability proof. Never replay the old145a mixed range: verify_worktree_matches_committed_target would observe changed Core/authority, so it is unreplayable; preserve journal and original outcomes, no checker edit or fabricated credit. Only frozen actual facts enter future control pair.
+Local amendment: preserve and freeze primary owned delta; commit only documentary control pair2 and exact6 authority handoff in an isolated Local worktree sharing this private Git common directory, then fast-forward primary only after no-path-overlap and raw-delta reconciliation. No product-source hold, deletion, rollback transaction or provider grant. Capture closureBaseHead after imported exact6 authority handoff; semantic26 excludes control2/protected6; final actual6 and proper split-range gates remain mandatory.
 
 ## Legacy Absorption Coverage Index Disposition
 
@@ -284,3 +285,9 @@ NOT_APPLICABLE_WITH_REASON - existing request/provider consumer enhancement, no 
 | Owner surface | NCR R3/R4 roadmap and existing Home/execute UI |
 | Disposition | internal synthetic browser proof only |
 | Claim boundary | public absence or external research does not set Local coverage |
+
+## Consolidated Local Scope And Metadata Isolation Amendment
+
+Finding `NCR-SIGNAL-OPTIONS-REGRESSION-SHAPE`, SHA256 `6aaa73ad2f111fba165d1d5382b50985e4fd3925ff788c712f49754dd0787ebc`: two existing exact-options assertions need the native signal field. Authorize only those two assertions in `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.test.ts`; preserve other options and line count below1200. Worker exact16; semantic26; authority union34. Original02:29 release clock,75min/03:30 expiry, worker2UI/2starts and Root1UI/2starts unchanged; no budget reset or blind live replay. Source scope blocker resolved by this grant; actual test PASS still required.
+
+Local amendment: preserve and freeze primary owned delta; commit only documentary control pair2 and exact6 authority handoff in an isolated Local worktree sharing this private Git common directory, then fast-forward primary only after no-path-overlap and raw-delta reconciliation. No product-source hold, deletion, rollback transaction or provider grant. Capture closureBaseHead after imported exact6 authority handoff; semantic26 excludes control2/protected6; final actual6 and proper split-range gates remain mandatory.
