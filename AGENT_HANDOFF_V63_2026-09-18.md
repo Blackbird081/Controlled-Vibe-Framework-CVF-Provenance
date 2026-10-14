@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Current NCR Continuation
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `06f80e58b6d553855ce4aa32c74eb35fb1ba928f`. Pre-closure parent SHA: `06f80e58b6d553855ce4aa32c74eb35fb1ba928f`. Batch ID: CVF-NCR-REQUEST-CANCELLATION-20261014. Request-cancellation packet admitted; worker exact15 waits committed bound release; actual reviewed material SHA will be bound by dedicated exact6 after commit.
+Current HEAD recorded for this handoff: `57170af2741e7a70bca48ad37a3e80bed079a656`. Material SHA: `57170af2741e7a70bca48ad37a3e80bed079a656`. Batch ID: CVF-NCR-REQUEST-CANCELLATION-20261014. Request-cancellation packet admitted; worker exact15 waits committed bound release; dedicated exact6 continuity.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -39,7 +39,7 @@ Finite clipboard result ordering is accepted; actual OS write cancellation, whol
 
 ## Next Allowed Move
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-REQUEST-CANCELLATION-20261014. WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_REQUEST_CANCELLATION_2026-10-14.md. Worker exact15 after committed bound release; max2UI/2starts; reviewer1cancelUI/2starts; task4+observed9<=13;75min actual release orUTC03:30 first. Actual release not yet recorded; no BUILD before full bound release. R1/R2 partial; R3/R4 open; R5/R6 deferred; real-data/custody/business acceptance/selected HTML/send/B2/P11/public/deploy parked; LHW24 retained.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-REQUEST-CANCELLATION-20261014. WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_REQUEST_CANCELLATION_2026-10-14.md. Worker exact15 after committed bound release; max2UI/2starts; reviewer1cancelUI/2starts; task4+observed9<=13;75min actual release orUTC03:30 first. Actual release not yet recorded; no BUILD before full bound release. R1/R2 partial; R3/R4 open; R5/R6 deferred; real-data/custody/business acceptance/selected HTML/send/B2/P11/public/deploy parked; LHW24 retained. Reviewed material commit=57170af2741e7a70bca48ad37a3e80bed079a656; dedicated actual-SHA continuity.
 
 ## Active Boundary
 T3B has a Local-verified active v1 specification. Party B is verified and T3C-C1 tooling accepted at `db78c87df`; T3C-C2 and Party C are verified. T3D-C1 tooling is accepted at `9ed844c2a` without source. T3D-C0-R1 closed at `2fffa1ef7`. T3D-C3 was accepted bounded at `88137e9a2`, but actual-mode prepare attempts failed before Party B/C execution; authorized cleanup removed the failed root and discarded unaccepted worker changes. G1 stopped, G2-G6 parked, and G7 research closed at `660601f0e` with `ADAPT_EXISTING_HANDOFF_ONLY`. Evidence-join sufficiency stays WATCH; no implementation successor exists. Rejected T2 paths remain archived; HRLTP-T2 paused.
@@ -89,8 +89,8 @@ Rollback boundary: exact6; preserve original archive and accepted/blocked histor
 | Command or tool surface | source entry/core update, active front door/handoff, canonical state generator |
 | Target paths | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Allowed scope source | operator NCR continuation; exact6 authority in paired baseline/order |
-| Before status evidence | 06f80e58b6d553855ce4aa32c74eb35fb1ba928f; 06f80e58b6d553855ce4aa32c74eb35fb1ba928f clean worktree before dispatch; all first precommit findings consolidated before release |
-| After status evidence | exact12 coherent material; actual-SHA continuity remains a steward action; Request-cancellation packet admitted; worker exact15 waits committed bound release |
+| Before status evidence | 57170af2741e7a70bca48ad37a3e80bed079a656; clean worktree and staged empty after reviewed material commit |
+| After status evidence | exact6 source/generated continuity; Request-cancellation packet admitted; worker exact15 waits committed bound release |
 | Diff evidence | source/generated reconciliation; exact6 git diff --name-status; git diff --cached --check |
 | Approval boundary | bounded synthetic request-cancellation proof; real-data/acceptance/public/deploy parked |
 | Claim boundary | finite saved request-cancellation proof; new task max4 calls plus historical9/program13; full NCR pilot open |

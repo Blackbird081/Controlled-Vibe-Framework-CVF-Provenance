@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_REQUEST_CANCELLATION_2026-10-14.md",
     "workOrderSha256": "f46b18e3122a09008f1440cab870f8d76eb21dfbd15010aa0a00da0353a74565"
   },
-  "currentAuthoritySyncReason": "Request-cancellation packet admitted; worker exact15 waits committed bound release Pre-closure parent 06f80e58b6d553855ce4aa32c74eb35fb1ba928f; coherent source/generated authority; actual-SHA dedicated continuity follows material. Whole NCR pilot/effects remain separate.",
+  "currentAuthoritySyncReason": "Request-cancellation packet admitted; worker exact15 waits committed bound release Material 57170af2741e7a70bca48ad37a3e80bed079a656; coherent source/generated authority; actual-SHA dedicated continuity follows material. Whole NCR pilot/effects remain separate.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
