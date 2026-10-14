@@ -1,0 +1,128 @@
+{
+  "schemaVersion": "cvf.preapprovalFeasibility.v1",
+  "proposal": {
+    "path": "docs/reviews/CVF_NCR_HTML_INTEGRATED_ROOT_CONTRACT_2026-10-14.md",
+    "sha256": "5998f2db7ca40457ffdecc08654456f19b20ee0ba97fbc43e6942c729b5a38f7"
+  },
+  "approvalTarget": {
+    "path": "docs/reviews/CVF_NCR_HTML_INTEGRATED_ROOT_CONTRACT_2026-10-14.md",
+    "sha256": "5998f2db7ca40457ffdecc08654456f19b20ee0ba97fbc43e6942c729b5a38f7",
+    "prospectiveOutcomeSha256": "a3986c6222e1c3a6310df522a6a365585929206a45e8c47d56ed944276b77b67"
+  },
+  "prospectiveOutcome": {
+    "schemaVersion": "cvf.semanticConvergenceControl.v1",
+    "problemKey": "ncr-html-configured-receipt-browser-composition",
+    "chainMode": "SUCCESSOR",
+    "chainOrdinal": 2,
+    "predecessor": {
+      "path": "docs/reviews/CVF_NCR_HTML_CONFIGURED_RECEIPT_CONDITIONAL_RETURN_2026-10-14.md",
+      "sha256": "ec8a0418af0db8aacde0df54b73a583758dbf33959556c965c328b4604d85254"
+    },
+    "blockerDelta": {
+      "prior": [
+        "HCR-CONTROL-EGRESS",
+        "HCR-CONTROL-ADMISSION",
+        "HCR-CONTROL-LEGACY-CLEANUP"
+      ],
+      "resolved": [
+        "HCR-CONTROL-EGRESS",
+        "HCR-CONTROL-ADMISSION"
+      ],
+      "retained": [
+        "HCR-CONTROL-LEGACY-CLEANUP"
+      ],
+      "new": [
+        "HCR-CONTROL-FRESH-PROFILE-BINDING"
+      ],
+      "reopened": [],
+      "current": [
+        "HCR-CONTROL-LEGACY-CLEANUP",
+        "HCR-CONTROL-FRESH-PROFILE-BINDING"
+      ]
+    },
+    "resolutionEvidence": {
+      "HCR-CONTROL-EGRESS": {
+        "evidenceClass": "ACCEPTED_REVIEW",
+        "evidencePath": "docs/reviews/CVF_NCR_HTML_CONFIGURED_RECEIPT_CONDITIONAL_COMPLETION_2026-10-14.md",
+        "sha256": "36c9b8513fdd614d9e798b4ef88960f68887fa43ec43b67811d6560d736805bd",
+        "locator": "HCR-CONTROL-EGRESS: RESOLVED_BOUNDED"
+      },
+      "HCR-CONTROL-ADMISSION": {
+        "evidenceClass": "ACCEPTED_REVIEW",
+        "evidencePath": "docs/reviews/CVF_NCR_HTML_CONFIGURED_RECEIPT_CONDITIONAL_COMPLETION_2026-10-14.md",
+        "sha256": "36c9b8513fdd614d9e798b4ef88960f68887fa43ec43b67811d6560d736805bd",
+        "locator": "HCR-CONTROL-ADMISSION: RESOLVED_BOUNDED"
+      }
+    },
+    "counters": {
+      "partialReadyClosures": 2,
+      "reviewerScopeExpansions": 0,
+      "sameClaimCorrections": 2,
+      "nonDecreasingBlockerTransitions": 0
+    },
+    "claims": [
+      {
+        "claimId": "NCR-HTML-INTEGRATED-ROOT-DESIGN",
+        "claimClass": "DOCUMENTATION_ONLY",
+        "proofClass": "PROPOSAL_ONLY_NO_RUNTIME_READINESS",
+        "evidenceRef": "docs/reviews/CVF_NCR_HTML_INTEGRATED_ROOT_CONTRACT_2026-10-14.md"
+      }
+    ],
+    "requiredDisposition": "ROOT_CONTRACT_REQUIRED",
+    "successorScope": "INTEGRATED_ROOT_CONTRACT"
+  },
+  "phasePrerequisites": {
+    "phase": "LOCAL_ROOT_DESIGN_DISPOSITION",
+    "rows": [
+      {
+        "requirementId": "PROFILE_PLAN",
+        "requiredForPhase": true,
+        "evidence": {
+          "path": "docs/assessments/CVF_NCR_HTML_OWNED_PROFILE_ADMISSION_PLAN_2026-10-14.md",
+          "sha256": "66e7780972a41a6155707d85c8058ecc2bf7f3766e9047387ae495cfced7eb91",
+          "locator": "Integrated Root Contract Proposal"
+        },
+        "deferredToPhase": null
+      },
+      {
+        "requirementId": "JOURNEY_SPEC",
+        "requiredForPhase": true,
+        "evidence": {
+          "path": "docs/assessments/CVF_NCR_HTML_FRESH_PROFILE_USER_JOURNEY_SPEC_2026-10-14.md",
+          "sha256": "1d1a42f2c3f1e9d573b30cb46221e24ea1365d9f60aec95b6938e9fd10fb6a83",
+          "locator": "Source Verification Block"
+        },
+        "deferredToPhase": null
+      },
+      {
+        "requirementId": "CONTROL_REVIEW",
+        "requiredForPhase": true,
+        "evidence": {
+          "path": "docs/reviews/CVF_NCR_HTML_CONFIGURED_RECEIPT_CONDITIONAL_COMPLETION_2026-10-14.md",
+          "sha256": "36c9b8513fdd614d9e798b4ef88960f68887fa43ec43b67811d6560d736805bd",
+          "locator": "HCR-CONTROL-LEGACY-CLEANUP: PARTIALLY_RESOLVED_NOT_ACCEPTED"
+        },
+        "deferredToPhase": null
+      },
+      {
+        "requirementId": "ACTUAL_COLLECTOR_CONTROL_PROOF",
+        "requiredForPhase": false,
+        "evidence": null,
+        "deferredToPhase": "FUTURE_ADMITTED_IMPLEMENTATION_OR_RUNTIME"
+      },
+      {
+        "requirementId": "OWNED_TOOL_IMAGE_PORT_IDENTITY",
+        "requiredForPhase": false,
+        "evidence": null,
+        "deferredToPhase": "FUTURE_ADMITTED_IMPLEMENTATION_OR_RUNTIME"
+      },
+      {
+        "requirementId": "FRESH_PROFILE_RUNTIME_AND_ABSENCE",
+        "requiredForPhase": false,
+        "evidence": null,
+        "deferredToPhase": "FUTURE_ADMITTED_IMPLEMENTATION_OR_RUNTIME"
+      }
+    ]
+  },
+  "requestQueue": null
+}

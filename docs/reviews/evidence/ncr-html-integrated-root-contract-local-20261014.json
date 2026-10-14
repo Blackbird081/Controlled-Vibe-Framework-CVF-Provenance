@@ -1,0 +1,336 @@
+{
+  "schemaVersion": "cvf.ncrIntegratedRootContractLocal.v1",
+  "sourceHead": "f9422888c62c0482f4c485fac3f6a9ac9fa5e9c0",
+  "invocationId": "ncr-html-integrated-root-contract-local-20261014",
+  "status": "CONTRACT_SPECIFIED_EXECUTION_HELD",
+  "materialPaths": [
+    "docs/reviews/CVF_NCR_HTML_INTEGRATED_ROOT_CONTRACT_2026-10-14.md",
+    "docs/reviews/evidence/ncr-html-integrated-root-contract-preapproval-20261014.json",
+    "docs/reviews/evidence/ncr-html-integrated-root-contract-local-20261014.json",
+    "docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md"
+  ],
+  "sourcePins": [
+    {
+      "path": "docs/assessments/CVF_NCR_HTML_OWNED_PROFILE_ADMISSION_PLAN_2026-10-14.md",
+      "rawSha256": "66e7780972a41a6155707d85c8058ecc2bf7f3766e9047387ae495cfced7eb91",
+      "gitBlobSha256": "66e7780972a41a6155707d85c8058ecc2bf7f3766e9047387ae495cfced7eb91",
+      "disposition": "READ_ONLY_NAMED_INPUT"
+    },
+    {
+      "path": "docs/assessments/CVF_NCR_HTML_FRESH_PROFILE_USER_JOURNEY_SPEC_2026-10-14.md",
+      "rawSha256": "1d1a42f2c3f1e9d573b30cb46221e24ea1365d9f60aec95b6938e9fd10fb6a83",
+      "gitBlobSha256": "1d1a42f2c3f1e9d573b30cb46221e24ea1365d9f60aec95b6938e9fd10fb6a83",
+      "disposition": "READ_ONLY_NAMED_INPUT"
+    },
+    {
+      "path": "docs/reviews/CVF_NCR_HTML_CONFIGURED_RECEIPT_CONDITIONAL_RETURN_2026-10-14.md",
+      "rawSha256": "ec8a0418af0db8aacde0df54b73a583758dbf33959556c965c328b4604d85254",
+      "gitBlobSha256": "ec8a0418af0db8aacde0df54b73a583758dbf33959556c965c328b4604d85254",
+      "disposition": "READ_ONLY_NAMED_INPUT"
+    },
+    {
+      "path": "docs/reviews/CVF_NCR_HTML_CONFIGURED_RECEIPT_WORKER_RETURN_2026-10-14.md",
+      "rawSha256": "53b97dd0dff1004f2c73038335ffe9a6a75ea5fc14a159e431654706e719efe0",
+      "gitBlobSha256": "53b97dd0dff1004f2c73038335ffe9a6a75ea5fc14a159e431654706e719efe0",
+      "disposition": "READ_ONLY_NAMED_INPUT"
+    },
+    {
+      "path": "docs/reviews/CVF_NCR_HTML_CONFIGURED_RECEIPT_CONDITIONAL_COMPLETION_2026-10-14.md",
+      "rawSha256": "36c9b8513fdd614d9e798b4ef88960f68887fa43ec43b67811d6560d736805bd",
+      "gitBlobSha256": "36c9b8513fdd614d9e798b4ef88960f68887fa43ec43b67811d6560d736805bd",
+      "disposition": "READ_ONLY_NAMED_INPUT"
+    },
+    {
+      "path": "docs/reviews/CVF_NCR_HTML_CONFIGURED_RECEIPT_COMPLETION_2026-10-14.md",
+      "rawSha256": "62fcfd1fffe39edb30c858b741141889f48e7442719907835f184b258d00216b",
+      "gitBlobSha256": "036ccf48979a09aefbcc14570abbd0020db275aa58eb243eb1fe93b0bbd7c100",
+      "disposition": "READ_ONLY_NAMED_INPUT"
+    },
+    {
+      "path": "docs/reviews/evidence/ncr-html-configured-receipt-conditional-local-20261014.json",
+      "rawSha256": "9ceba8d8f6c35cd0fc8072cc6862d4657ee8cf067c6e42c011d179b78da47c71",
+      "gitBlobSha256": "9ceba8d8f6c35cd0fc8072cc6862d4657ee8cf067c6e42c011d179b78da47c71",
+      "disposition": "READ_ONLY_NAMED_INPUT"
+    },
+    {
+      "path": "scripts/probe_cvf_q001_synthetic_system_chain.py",
+      "rawSha256": "26b34890e3031f5b13ca4965585adbdf14a483aefe246834d3848cb165c3fe9d",
+      "gitBlobSha256": "26b34890e3031f5b13ca4965585adbdf14a483aefe246834d3848cb165c3fe9d",
+      "disposition": "READ_ONLY_NAMED_INPUT"
+    },
+    {
+      "path": "scripts/probe_cvf_w05_browser_chain.cjs",
+      "rawSha256": "2f0981b2356a51a85f34d3d6ed94a0d0a0606c48d306888711876a5c2b225dec",
+      "gitBlobSha256": "2f0981b2356a51a85f34d3d6ed94a0d0a0606c48d306888711876a5c2b225dec",
+      "disposition": "READ_ONLY_NAMED_INPUT"
+    },
+    {
+      "path": "docs/reference/semantic_convergence_control/CVF_SEMANTIC_CONVERGENCE_AND_ESCALATION_CONTROL_STANDARD.md",
+      "rawSha256": "1d2753fd56108eb8a0ed5cc5f03ab85ee67e9c18ff4d1390ef55c45473cc0196",
+      "gitBlobSha256": "1d2753fd56108eb8a0ed5cc5f03ab85ee67e9c18ff4d1390ef55c45473cc0196",
+      "disposition": "READ_ONLY_NAMED_INPUT"
+    },
+    {
+      "path": "docs/reference/preapproval_feasibility/README.md",
+      "rawSha256": "838f85553bbaeeaa3289cff3a0fbb69cd53ad39c1c7a3902684b943f107b265d",
+      "gitBlobSha256": "838f85553bbaeeaa3289cff3a0fbb69cd53ad39c1c7a3902684b943f107b265d",
+      "disposition": "READ_ONLY_NAMED_INPUT"
+    },
+    {
+      "path": "docs/reference/CVF_GATE_TO_ROLE_CLOSEABILITY_MACHINE_STANDARD.md",
+      "rawSha256": "b3af2fcbd09160d9f2ae88c861bd67d45ba1425bd21e577bf880cb0f1f29ea3c",
+      "gitBlobSha256": "b3af2fcbd09160d9f2ae88c861bd67d45ba1425bd21e577bf880cb0f1f29ea3c",
+      "disposition": "READ_ONLY_NAMED_INPUT"
+    },
+    {
+      "path": "governance/compat/check_semantic_convergence_control.py",
+      "rawSha256": "94d4a26f130f5fd20eefa54871e3533e9755164dfc8204864e7f555f211352e9",
+      "gitBlobSha256": "6a080dd30ef603ef6a5b75f33546b74f99a9f1d4884e8b426aca56ce0dba0356",
+      "disposition": "READ_ONLY_NAMED_INPUT"
+    },
+    {
+      "path": "governance/compat/preapproval_feasibility_contract.py",
+      "rawSha256": "d2ad96194befdc81baa563dca2ceddad989e9f33a6af651cf41e707fb223835f",
+      "gitBlobSha256": "693095033001bdfb8827dbbc2508bc2ecfca3ea74bca7b37f44ba29aad0b6c2d",
+      "disposition": "READ_ONLY_NAMED_INPUT"
+    },
+    {
+      "path": "governance/compat/check_gate_to_role_closeability.py",
+      "rawSha256": "8f00c6421eebe3c1b237e5307ac6e2b0b0343c9a35cf635bbab17aa886e00e8e",
+      "gitBlobSha256": "8f00c6421eebe3c1b237e5307ac6e2b0b0343c9a35cf635bbab17aa886e00e8e",
+      "disposition": "READ_ONLY_NAMED_INPUT"
+    },
+    {
+      "path": "docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md",
+      "rawSha256": "3961df671776cfa6890cc7b2d7badf13921d8d8883ac31a3a3646d7b2b16d195",
+      "gitBlobSha256": "3961df671776cfa6890cc7b2d7badf13921d8d8883ac31a3a3646d7b2b16d195",
+      "disposition": "PREIMAGE_TO_CHANGE"
+    }
+  ],
+  "predecessorState": {
+    "schemaVersion": "cvf.semanticConvergenceControl.v1",
+    "problemKey": "ncr-html-configured-receipt-browser-composition",
+    "chainMode": "SUCCESSOR",
+    "chainOrdinal": 1,
+    "predecessor": {
+      "path": "docs/reviews/CVF_NCR_HTML_CONFIGURED_RECEIPT_WORKER_RETURN_2026-10-14.md",
+      "sha256": "53b97dd0dff1004f2c73038335ffe9a6a75ea5fc14a159e431654706e719efe0"
+    },
+    "blockerDelta": {
+      "prior": [],
+      "resolved": [],
+      "retained": [],
+      "new": [
+        "HCR-CONTROL-EGRESS",
+        "HCR-CONTROL-ADMISSION",
+        "HCR-CONTROL-LEGACY-CLEANUP"
+      ],
+      "reopened": [],
+      "current": [
+        "HCR-CONTROL-EGRESS",
+        "HCR-CONTROL-ADMISSION",
+        "HCR-CONTROL-LEGACY-CLEANUP"
+      ]
+    },
+    "resolutionEvidence": {},
+    "counters": {
+      "partialReadyClosures": 0,
+      "reviewerScopeExpansions": 0,
+      "sameClaimCorrections": 1,
+      "nonDecreasingBlockerTransitions": 1
+    },
+    "claims": [],
+    "requiredDisposition": "CONTINUE_BOUNDED",
+    "successorScope": "NO_SUCCESSOR"
+  },
+  "prospectiveOutcome": {
+    "schemaVersion": "cvf.semanticConvergenceControl.v1",
+    "problemKey": "ncr-html-configured-receipt-browser-composition",
+    "chainMode": "SUCCESSOR",
+    "chainOrdinal": 2,
+    "predecessor": {
+      "path": "docs/reviews/CVF_NCR_HTML_CONFIGURED_RECEIPT_CONDITIONAL_RETURN_2026-10-14.md",
+      "sha256": "ec8a0418af0db8aacde0df54b73a583758dbf33959556c965c328b4604d85254"
+    },
+    "blockerDelta": {
+      "prior": [
+        "HCR-CONTROL-EGRESS",
+        "HCR-CONTROL-ADMISSION",
+        "HCR-CONTROL-LEGACY-CLEANUP"
+      ],
+      "resolved": [
+        "HCR-CONTROL-EGRESS",
+        "HCR-CONTROL-ADMISSION"
+      ],
+      "retained": [
+        "HCR-CONTROL-LEGACY-CLEANUP"
+      ],
+      "new": [
+        "HCR-CONTROL-FRESH-PROFILE-BINDING"
+      ],
+      "reopened": [],
+      "current": [
+        "HCR-CONTROL-LEGACY-CLEANUP",
+        "HCR-CONTROL-FRESH-PROFILE-BINDING"
+      ]
+    },
+    "resolutionEvidence": {
+      "HCR-CONTROL-EGRESS": {
+        "evidenceClass": "ACCEPTED_REVIEW",
+        "evidencePath": "docs/reviews/CVF_NCR_HTML_CONFIGURED_RECEIPT_CONDITIONAL_COMPLETION_2026-10-14.md",
+        "sha256": "36c9b8513fdd614d9e798b4ef88960f68887fa43ec43b67811d6560d736805bd",
+        "locator": "HCR-CONTROL-EGRESS: RESOLVED_BOUNDED"
+      },
+      "HCR-CONTROL-ADMISSION": {
+        "evidenceClass": "ACCEPTED_REVIEW",
+        "evidencePath": "docs/reviews/CVF_NCR_HTML_CONFIGURED_RECEIPT_CONDITIONAL_COMPLETION_2026-10-14.md",
+        "sha256": "36c9b8513fdd614d9e798b4ef88960f68887fa43ec43b67811d6560d736805bd",
+        "locator": "HCR-CONTROL-ADMISSION: RESOLVED_BOUNDED"
+      }
+    },
+    "counters": {
+      "partialReadyClosures": 2,
+      "reviewerScopeExpansions": 0,
+      "sameClaimCorrections": 2,
+      "nonDecreasingBlockerTransitions": 0
+    },
+    "claims": [
+      {
+        "claimId": "NCR-HTML-INTEGRATED-ROOT-DESIGN",
+        "claimClass": "DOCUMENTATION_ONLY",
+        "proofClass": "PROPOSAL_ONLY_NO_RUNTIME_READINESS",
+        "evidenceRef": "docs/reviews/CVF_NCR_HTML_INTEGRATED_ROOT_CONTRACT_2026-10-14.md"
+      }
+    ],
+    "requiredDisposition": "ROOT_CONTRACT_REQUIRED",
+    "successorScope": "INTEGRATED_ROOT_CONTRACT"
+  },
+  "counterClassification": {
+    "partialReadyClosures": {
+      "before": 0,
+      "after": 2,
+      "basis": [
+        "docs/reviews/CVF_NCR_HTML_CONFIGURED_RECEIPT_COMPLETION_2026-10-14.md",
+        "docs/reviews/CVF_NCR_HTML_CONFIGURED_RECEIPT_CONDITIONAL_COMPLETION_2026-10-14.md"
+      ],
+      "qualification": "two six-mechanical-case partial dispositions; no full work-order closure"
+    },
+    "sameClaimCorrections": {
+      "before": 1,
+      "after": 2,
+      "basis": "docs/reviews/CVF_NCR_HTML_CONFIGURED_RECEIPT_CONDITIONAL_COMPLETION_2026-10-14.md",
+      "qualification": "inherited conditional correction plus cleanup claim contradicted by Local actual-finally probe"
+    },
+    "reviewerScopeExpansions": {
+      "before": 0,
+      "after": 0,
+      "qualification": "no scope expansion inferred"
+    },
+    "nonDecreasingBlockerTransitions": {
+      "before": 1,
+      "after": 0,
+      "priorCount": 3,
+      "currentCount": 2
+    }
+  },
+  "effects": {
+    "workerInvocations": 0,
+    "browserStarts": 0,
+    "nextStarts": 0,
+    "engineStarts": 0,
+    "providerStarts": 0,
+    "actualConfigValueReads": 0,
+    "userStoreReads": 0,
+    "dependencyInstalls": 0
+  },
+  "nativeUsage": "UNKNOWN",
+  "billing": "UNKNOWN",
+  "verification": {
+    "canonicalProposal": {
+      "path": "docs/reviews/CVF_NCR_HTML_INTEGRATED_ROOT_CONTRACT_2026-10-14.md",
+      "rawSha256": "5998f2db7ca40457ffdecc08654456f19b20ee0ba97fbc43e6942c729b5a38f7",
+      "actualBlocks": 1,
+      "violations": []
+    },
+    "explicitPreapprovalReceipt": {
+      "schemaVersion": "cvf.preapprovalFeasibilityReceipt.v1",
+      "proposal": {
+        "path": "docs/reviews/CVF_NCR_HTML_INTEGRATED_ROOT_CONTRACT_2026-10-14.md",
+        "sha256": "5998f2db7ca40457ffdecc08654456f19b20ee0ba97fbc43e6942c729b5a38f7"
+      },
+      "companion": {
+        "path": "docs/reviews/evidence/ncr-html-integrated-root-contract-preapproval-20261014.json",
+        "sha256": "2908a915a7219da53aa683cd086d4019f1f7618b910f79af81af7822fbc5e01a"
+      },
+      "approvalTarget": {
+        "path": "docs/reviews/CVF_NCR_HTML_INTEGRATED_ROOT_CONTRACT_2026-10-14.md",
+        "sha256": "5998f2db7ca40457ffdecc08654456f19b20ee0ba97fbc43e6942c729b5a38f7"
+      },
+      "prospectiveOutcomeSha256": "a3986c6222e1c3a6310df522a6a365585929206a45e8c47d56ed944276b77b67",
+      "canonicalBlockCount": 1,
+      "canonicalViolations": [],
+      "prerequisites": {
+        "examined": 3,
+        "deferred": 3
+      },
+      "queue": null,
+      "technicalDisposition": "HOLD",
+      "coverageDisposition": "NOT_APPLICABLE",
+      "operatorApprovalRequired": true,
+      "effectAdmission": false,
+      "diagnostics": []
+    },
+    "explicitCommand": {
+      "command": [
+        "python",
+        "-B",
+        "governance/compat/run_preapproval_feasibility_gate.py",
+        "--proposal",
+        "docs/reviews/CVF_NCR_HTML_INTEGRATED_ROOT_CONTRACT_2026-10-14.md",
+        "--approval-target",
+        "docs/reviews/CVF_NCR_HTML_INTEGRATED_ROOT_CONTRACT_2026-10-14.md",
+        "--json"
+      ],
+      "expectedAndObservedExit": 2,
+      "log": ".cvf/runtime/ncr-request-cancellation-20261014/root-contract-preapproval-04.log",
+      "sha256": "0b9475a79268863593890013e939d06b47374ed881860f0021c5cab545d84ad5"
+    },
+    "conditionalGraph": {
+      "disposition": "PASS_CONDITIONAL_SOURCE_PROJECTION_ONLY",
+      "actualActiveWorkOrderEvaluated": false,
+      "actualProposalRangeCoverage": "NOT_APPLICABLE",
+      "gateRows": 12,
+      "projectionPath": ".cvf\\runtime\\ncr-html-integrated-root-contract-20261014\\conditional-active-graph-projection.md",
+      "projectionSha256": "f7e728af3d9b6b8125fc066b9448c4a1413bd66096f848587e3b97aecd9b4b08",
+      "transformations": [
+        "one status line PROPOSED_ROOT_CONTRACT_HELD -> ACTIVE",
+        "one prospective graph heading -> canonical contract heading"
+      ],
+      "violations": []
+    },
+    "documentaryMutations": [
+      {
+        "mutation": "silent-drop-cleanup",
+        "rejected": true,
+        "codes": [
+          "SET_RECONCILIATION_CURRENT"
+        ]
+      },
+      {
+        "mutation": "narrow-successor",
+        "rejected": true,
+        "codes": [
+          "NARROW_SUCCESSOR_AFTER_ESCALATION"
+        ]
+      },
+      {
+        "mutation": "paper-ready",
+        "rejected": true,
+        "codes": [
+          "RUNTIME_READINESS_FROM_DOC_ONLY_PROOF"
+        ]
+      }
+    ],
+    "runtimeControlProbe": "NOT_RUN_NO_GRANT; retained actual-finally counterexample consumed, no replay"
+  }
+}
