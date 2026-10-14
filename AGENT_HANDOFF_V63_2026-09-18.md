@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Current NCR Continuation
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `677d3f92ab6ce768c8213dcc824f1bea2180fae5`. Pre-closure parent SHA: `677d3f92ab6ce768c8213dcc824f1bea2180fae5`. Batch ID: CVF-NCR-HOME-RECEIPT-HISTORY-20261014. Receipt-history pre-release reviewer preparation corrected with zero provider calls; exact11 worker BUILD still waits bound release; actual reviewed material SHA will be bound by dedicated exact6 after commit.
+Current HEAD recorded for this handoff: `5e51086044adb6a403158475ef14d471e575bd4f`. Material SHA: `5e51086044adb6a403158475ef14d471e575bd4f`. Batch ID: CVF-NCR-HOME-RECEIPT-HISTORY-20261014. Receipt-history dispatch material and reviewer oracle admitted; worker exact11 waits full bound release; dedicated exact6 continuity.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -17,17 +17,17 @@ Local INTERNAL_AGENT orchestrator/reviewer owns technical disposition, commits a
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_receipt_history_execution`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=Receipt-history pre-release reviewer preparation corrected with zero provider calls; exact11 worker BUILD still waits bound release; role=Local INTERNAL_AGENT orchestrator/reviewer; phase=private continuity; decision owner=Local; parked checkpoint=real-data writer/custody/business acceptance/public/deploy/P11 and unrelated lanes.
+Startup acknowledged: current mode=`cvf_ncr_receipt_history_execution`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=Receipt-history dispatch material and reviewer oracle admitted; worker exact11 waits full bound release; role=Local INTERNAL_AGENT orchestrator/reviewer; phase=private continuity; decision owner=Local; parked checkpoint=real-data writer/custody/business acceptance/public/deploy/P11 and unrelated lanes.
 
 ## Current Mode
 
-`cvf_ncr_receipt_history_execution`. Receipt-history pre-release reviewer preparation corrected with zero provider calls; exact11 worker BUILD still waits bound release. Worker exact11 after committed bound release; max1 UI/3 Alibaba starts; Root distinct max1/3; newtask max6, prior7 retained; 75min BUILD or UTC02:00 expiry first. Prior Work Transfer browser and Alibaba9/9 evidence retained in their owners; full R1-R4 open.
+`cvf_ncr_receipt_history_execution`. Receipt-history dispatch material and reviewer oracle admitted; worker exact11 waits full bound release. Worker exact11 after committed bound release; max1 UI/3 Alibaba starts; Root distinct max1/3; newtask max6, prior7 retained; 75min BUILD or UTC02:00 expiry first. Prior Work Transfer browser and Alibaba9/9 evidence retained in their owners; full R1-R4 open.
 
 ## Current Authority
 
 Baseline: `docs/baselines/CVF_GC018_NCR_RECEIPT_HISTORY_2026-10-14.md`; SHA256 `0164eaef0d4d26e8833b8bdc827a755703e4733837e8a7594287f3a07f6bb2ac`.
 Work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RECEIPT_HISTORY_2026-10-14.md`; SHA256 `34940b486da684611e5c7fece49048e3e2c90ba8f8f27384090ca979b9a70e60`.
-Receipt-history pre-release reviewer preparation corrected with zero provider calls; exact11 worker BUILD still waits bound release. Existing browser/live evidence and original failures remain historical in their current reviews; this source pair governs the bounded synthetic receipt-history journey.
+Receipt-history dispatch material and reviewer oracle admitted; worker exact11 waits full bound release. Existing browser/live evidence and original failures remain historical in their current reviews; this source pair governs the bounded synthetic receipt-history journey.
 
 ## Accepted NCR Evidence And Continuation
 
@@ -39,7 +39,7 @@ Finite clipboard result ordering is accepted; actual OS write cancellation, whol
 
 ## Next Allowed Move
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-HOME-RECEIPT-HISTORY-20261014. WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RECEIPT_HISTORY_2026-10-14.md. Internal worker exact11 after committed bound release; 75min BUILD or UTC02:00 expiry first; worker1UI/3 Alibaba starts, Root distinct1/3, newtask6 plus historical7(programmax13). Saved scalar receipt and exact output SHA; no fresh verification on reload, no extra execute across owned restart. R1/R2partial,R3/R4open,R5/R6deferred; real-data/accept/send/B2/P11/public/deploy parked; LHW24 retained. Pre-release reviewer oracle corrected and hash-pinned; provider calls zero.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-HOME-RECEIPT-HISTORY-20261014. WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RECEIPT_HISTORY_2026-10-14.md. Internal worker exact11 after committed bound release; 75min BUILD or UTC02:00 expiry first; worker1UI/3 Alibaba starts, Root distinct1/3, newtask6 plus historical7(programmax13). Saved scalar receipt and exact output SHA; no fresh verification on reload, no extra execute across owned restart. R1/R2partial,R3/R4open,R5/R6deferred; real-data/accept/send/B2/P11/public/deploy parked; LHW24 retained. Pre-release reviewer oracle corrected and hash-pinned; zero provider calls before release. Reviewed material commit=5e51086044adb6a403158475ef14d471e575bd4f; dedicated actual-SHA continuity.
 
 ## Active Boundary
 T3B has a Local-verified active v1 specification. Party B is verified and T3C-C1 tooling accepted at `db78c87df`; T3C-C2 and Party C are verified. T3D-C1 tooling is accepted at `9ed844c2a` without source. T3D-C0-R1 closed at `2fffa1ef7`. T3D-C3 was accepted bounded at `88137e9a2`, but actual-mode prepare attempts failed before Party B/C execution; authorized cleanup removed the failed root and discarded unaccepted worker changes. G1 stopped, G2-G6 parked, and G7 research closed at `660601f0e` with `ADAPT_EXISTING_HANDOFF_ONLY`. Evidence-join sufficiency stays WATCH; no implementation successor exists. Rejected T2 paths remain archived; HRLTP-T2 paused.
@@ -89,8 +89,8 @@ Rollback boundary: exact6; preserve original archive and accepted/blocked histor
 | Command or tool surface | source entry/core update, active front door/handoff, canonical state generator |
 | Target paths | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Allowed scope source | operator NCR continuation; exact6 authority in paired baseline/order |
-| Before status evidence | 677d3f92ab6ce768c8213dcc824f1bea2180fae5; Clean worktree after prior dispatch material; Local helper review led to exact9 amendment |
-| After status evidence | exact9 coherent material; actual-SHA continuity remains a steward action; Receipt-history pre-release reviewer preparation corrected with zero provider calls; exact11 worker BUILD still waits bound release |
+| Before status evidence | 5e51086044adb6a403158475ef14d471e575bd4f; clean worktree and staged empty after reviewed material commit |
+| After status evidence | exact6 source/generated continuity; Receipt-history dispatch material and reviewer oracle admitted; worker exact11 waits full bound release |
 | Diff evidence | source/generated reconciliation; exact6 git diff --name-status; git diff --cached --check |
 | Approval boundary | bounded synthetic receipt-history proof; real-data/acceptance/public/deploy parked |
 | Claim boundary | finite saved receipt-history proof; new task max6 calls plus historical7; full NCR pilot open |

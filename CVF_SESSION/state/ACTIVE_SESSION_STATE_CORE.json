@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RECEIPT_HISTORY_2026-10-14.md",
     "workOrderSha256": "34940b486da684611e5c7fece49048e3e2c90ba8f8f27384090ca979b9a70e60"
   },
-  "currentAuthoritySyncReason": "Receipt-history pre-release reviewer preparation corrected with zero provider calls; exact11 worker BUILD still waits bound release Pre-closure parent 677d3f92ab6ce768c8213dcc824f1bea2180fae5; coherent source/generated authority; actual-SHA dedicated continuity follows material. Whole NCR pilot/effects remain separate.",
+  "currentAuthoritySyncReason": "Receipt-history dispatch material and reviewer oracle admitted; worker exact11 waits full bound release Material 5e51086044adb6a403158475ef14d471e575bd4f; coherent source/generated authority; actual-SHA dedicated continuity follows material. Whole NCR pilot/effects remain separate.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
