@@ -1,0 +1,152 @@
+{
+  "documentKind": "NCR_HTML_CONFIGURED_RECEIPT_DISPATCH",
+  "status": "PREPARED_PENDING_COMMITTED_RELEASE",
+  "batchId": "CVF-NCR-HTML-CONFIGURED-RECEIPT-20261014",
+  "inspectionBaseHead": "8f64032400176728d6536efe3340aa7e5e5985a6",
+  "sourcePins": [
+    {
+      "path": "scripts/probe_cvf_q001_synthetic_system_chain.py",
+      "rawSha256": "db683256d74474d6d55d1c2e6d93e5a03c7c87d0317e677e7d41523177334b6c",
+      "gitBlobSha256": "db683256d74474d6d55d1c2e6d93e5a03c7c87d0317e677e7d41523177334b6c",
+      "physicalLines": 448
+    },
+    {
+      "path": "scripts/probe_cvf_w05_browser_chain.cjs",
+      "rawSha256": "c46edd6a1bbd07feb0beeb87c691a46e4ae32c2a69329253373cb08bc4630a93",
+      "gitBlobSha256": "c46edd6a1bbd07feb0beeb87c691a46e4ae32c2a69329253373cb08bc4630a93",
+      "physicalLines": 116
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/page.tsx",
+      "rawSha256": "0ed365b59324bb836d8ec56cba143df941e7a7f8dfa11b841b28a68212f1b35d",
+      "gitBlobSha256": "0ed365b59324bb836d8ec56cba143df941e7a7f8dfa11b841b28a68212f1b35d",
+      "physicalLines": 313
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.tsx",
+      "rawSha256": "efc5839896236dacc7b37e145fda9904a9513bea434b3ff5c8bcd81652e9ea3e",
+      "gitBlobSha256": "0b1005a456c2e400d0f9ae1323351716bf877ca4ff83ca1941e6f786356c27d8",
+      "physicalLines": 941
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/route.ts",
+      "rawSha256": "a17ddd57882be1e58a86fb1d86bea8a2693f1169f5ba0c8b6da2af75d7f024ae",
+      "gitBlobSha256": "22f08a7ed8a4a4eb06c63bde244c0e2e9f752758bb6f48acbfb12bf57a2862f1",
+      "physicalLines": 376
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/proof.ts",
+      "rawSha256": "fbdcc3a434eea13842c9f692d2b54cc9955e80d8c8777d9dfaa14cace9cdfcaf",
+      "gitBlobSha256": "fbdcc3a434eea13842c9f692d2b54cc9955e80d8c8777d9dfaa14cace9cdfcaf",
+      "physicalLines": 160
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/governance/evaluate/route.ts",
+      "rawSha256": "b232dcbdfb1a5ec7982e2ed35caf1e9313dec553a3dcf5752576cc110955c1cb",
+      "gitBlobSha256": "b232dcbdfb1a5ec7982e2ed35caf1e9313dec553a3dcf5752576cc110955c1cb",
+      "physicalLines": 94
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/governance-engine.ts",
+      "rawSha256": "48d3252df6614866b3fe84904a0c0f4bd6528d42f1da76543a0db76947494dde",
+      "gitBlobSha256": "48d3252df6614866b3fe84904a0c0f4bd6528d42f1da76543a0db76947494dde",
+      "physicalLines": 233
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/route-governance-proof.ts",
+      "rawSha256": "17c19ccc4e31d5e068b728304e4a0970ddc072a9711460dd62b859f3ade15b6e",
+      "gitBlobSha256": "17c19ccc4e31d5e068b728304e4a0970ddc072a9711460dd62b859f3ade15b6e",
+      "physicalLines": 262
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/ledger_layer/sqlite_ledger.py",
+      "rawSha256": "df353a92b3adead1ed5cf00d7128ba9039c573e0441b819118094ec77c4c4ce5",
+      "gitBlobSha256": "df353a92b3adead1ed5cf00d7128ba9039c573e0441b819118094ec77c4c4ce5",
+      "physicalLines": 435
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/core_orchestrator.py",
+      "rawSha256": "9d35ed87fafeb5a21814f94dbdd7db8e2e96ab430eb300f5f2a1ae77faa85a69",
+      "gitBlobSha256": "ee7c4b81d7d4ed0956fed535f095ff216cfabcf786147c8f9feac983e3c63190",
+      "physicalLines": 265
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/api/server.py",
+      "rawSha256": "b557d28703c22353c74de170e5eb9151e73fa216a44fb3af39935b92da055bd6",
+      "gitBlobSha256": "3f8ab3f8ab336488398d54686611950c0a0efa155ff1cb5168f34475bcd812dd",
+      "physicalLines": 295
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/admin/audit/route.ts",
+      "rawSha256": "83c83600655cd5637bdebc5fc6fac3ff67573a2a42c9b0ec4c8ca57f6cda614d",
+      "gitBlobSha256": "83c83600655cd5637bdebc5fc6fac3ff67573a2a42c9b0ec4c8ca57f6cda614d",
+      "physicalLines": 45
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/ncr-work-transfer-browser.spec.ts",
+      "rawSha256": "a7c4d8379cb3552bd037bf8b2e1577501d5a38d1ec0374aa107a163b4336847c",
+      "gitBlobSha256": "a7c4d8379cb3552bd037bf8b2e1577501d5a38d1ec0374aa107a163b4336847c",
+      "physicalLines": 392
+    }
+  ],
+  "sourceReviewDisposition": "docs/assessments/CVF_NCR_SELECTED_PILOT_CONVERGENCE_LOCAL_DISPOSITION_2026-10-14.md",
+  "workerPaths": [
+    "scripts/probe_cvf_q001_synthetic_system_chain.py",
+    "scripts/probe_cvf_w05_browser_chain.cjs",
+    "docs/reviews/CVF_NCR_HTML_CONFIGURED_RECEIPT_WORKER_RETURN_2026-10-14.md",
+    "docs/reviews/evidence/ncr-html-configured-receipt-worker-20261014.json"
+  ],
+  "providerExecutionAuthority": "FORBIDDEN",
+  "providerStartCeiling": 0,
+  "exportPostCeiling": 3,
+  "forwardedEvaluateCeiling": 2,
+  "workerBuildMinutesCeiling": 90,
+  "repairAttemptsCeiling": 1,
+  "independentProbeRequired": true,
+  "dockerImage": {
+    "tag": "cvf-ncr-docker-proof:20261006",
+    "id": "sha256:a0725d62d5cfa8fc47b5e30be04bc08ea714a9cdd72c259595526f691db95294",
+    "os": "linux",
+    "architecture": "amd64",
+    "state": "READ_ONLY_INSPECTED_NOT_STARTED"
+  },
+  "estimates": {
+    "workerMinutes": [
+      45,
+      90
+    ],
+    "reviewerMinutes": [
+      20,
+      40
+    ],
+    "kind": "ESTIMATE_NOT_MEASURED"
+  },
+  "claimBoundary": "Synthetic browser transport, fresh-store persistence and presentation only. No governance-policy correctness, permission enforcement, artifact approval, durable intent, exactly-once guarantee, W05/R2 exit, real-provider R3 pilot, R4 recovery/backup/restore or two-connection proof. R1/R2 partial; R3/R4 open; R5/R6 deferred. Q001/Q004 actual-data/custody, B2/business acceptance/send/P11/public/deploy parked; LHW24 retained. Program observed12/13; old grants and unused1 retired; provider starts allowed0.",
+  "sourceReviewHead": "429d92760d9615a3200131f51fb17115ab128152",
+  "sourcePinRefresh": {
+    "head": "8f64032400176728d6536efe3340aa7e5e5985a6",
+    "rawAndGitPinsMatchPrior": true,
+    "scope": "14 named harness/product owners only"
+  },
+  "preparationDisclosure": {
+    "initialGate": "FAIL",
+    "log": ".cvf/runtime/ncr-request-cancellation-20261014/html-packet-reviewer-fast-1.log",
+    "sha256": "38ba986a752ee3d73ca0a085bb48fcbdda60595c0d6553570dbbe1d9bfb35dd0",
+    "repair": "consolidated structural/trace/routing corrections; separate source intake commit for truthful clean dispatch base",
+    "runtimeStarted": false,
+    "furtherGates": [
+      {
+        "log": ".cvf/runtime/ncr-request-cancellation-20261014/html-packet-reviewer-fast-2.log",
+        "exit": 1,
+        "sha256": "1f75c99b6285c791562c3e85e3b52408fae3091b6ba9b7fbd3ae1fa162d41a07",
+        "finding": "runtime freshness section and interim material-SHA continuity required; wrapper terminal Unicode display failure, persisted log retained"
+      },
+      {
+        "log": ".cvf/runtime/ncr-request-cancellation-20261014/html-packet-reviewer-fast-3.log",
+        "exit": 1,
+        "sha256": "9fb79757f74c00269237b84f95b2d0ffec5a88b7e8dbe864e1c005ade0dc8bed",
+        "finding": "mixed preparation trace observed intermediate continuity; commit exact6 separately then publish exact3"
+      }
+    ]
+  }
+}
