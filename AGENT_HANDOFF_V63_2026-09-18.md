@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Current NCR Continuation
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `490e4bc858daac281b26f2eccbaa4af94717f206`. Material SHA: `490e4bc858daac281b26f2eccbaa4af94717f206`. Batch ID: CVF-NCR-HTML-INTEGRATED-ROOT-BUILD-20261015. Concrete held root proposal; one-object scoped admission, effect/readiness false; operator effect decision and separate release pending.
+Current HEAD recorded for this handoff: `3e1ef88b2097f48598d470a3ab4cc6d62dd577cb`. Material SHA: `3e1ef88b2097f48598d470a3ab4cc6d62dd577cb`. Batch ID: CVF-NCR-HTML-INTEGRATED-ROOT-BUILD-20261015. Held proposal ADIF metadata/context correction; no scope or effect grant; initial failure and preparation partial retained.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -13,7 +13,7 @@ Current continuation only. Root AGENTS.md and canonical routing owners retain fu
 Closed history is preserved byte-for-byte at `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V63_PRE_NCR_COMPACTION_2026-10-07.md` (SHA256 `54801fdcf14e9abe17592352ec3c69a0b0e855632991af0caacac7b65252ccba`); it is NOT_ACTIVE_AUTHORITY and not default startup reading.
 ## Scope / Target / Owner Boundary
 
-Local exact6 proposed root pair/companion/admission/roadmap material committed, separate exact6 context continuity. Current pair is HOLD_OPERATOR_EFFECT_APPROVAL and NOT_GRANTED. Future exact8 code+return2 only after operator effect decision and finalized immutable release. Old root/freeze/counters/P4, retired grants and parked effects retained.
+Local proposal and context committed; exact9 ADIF metadata/context correction committed, followed by this exact1 handoff sync. Current pair is HOLD_OPERATOR_EFFECT_APPROVAL and NOT_GRANTED. Future exact8 code+return2 only after operator effect decision and finalized immutable release. Old root/freeze/counters/P4, retired grants and parked effects retained.
 
 ## Startup Acknowledgment
 
@@ -25,7 +25,7 @@ Startup acknowledged: current mode=`cvf_ncr_html_root_build_effect_approval_pend
 
 ## Current Authority
 
-ADIF late-disclosure correction is metadata only: all resolver IDs disclosed; current raw pair pins and scoped receipt refreshed. Local preparation remains PARTIAL_WITH_REASON, initial range FAIL retained. Current proposal/effect scope stays NOT_GRANTED; no worker/runtime action.
+ADIF late-disclosure correction material `3e1ef88b2097f48598d470a3ab4cc6d62dd577cb` is metadata only: all resolver IDs disclosed; current raw pair pins and scoped receipt refreshed. Local preparation remains PARTIAL_WITH_REASON, initial range FAIL retained. Current proposal/effect scope stays NOT_GRANTED; no worker/runtime action.
 
 Planning/proposal context only, NOT_GRANTED. Baseline: `docs/baselines/CVF_GC018_NCR_HTML_INTEGRATED_ROOT_BUILD_2026-10-15.md`; SHA256 `5174b2a8548bbbce35b5541dcfe16529bcc1b99680e9008996618eeb2494877f`. Work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_INTEGRATED_ROOT_BUILD_2026-10-15.md`; SHA256 `75c9dd9b3d749847a4a1d87deb54b10c2e577c244eb60369b1345e69b980a3b7`. Companion: `docs/reviews/evidence/ncr-html-integrated-root-build-preapproval-20261015.json`. Admission: `docs/assessments/CVF_NCR_HTML_ROOT_BUILD_ADMISSION_2026-10-15.md`. Material `490e4bc858daac281b26f2eccbaa4af94717f206`. Source binds are current; no worker or runtime grant. Previous accepted technical review remains docs/reviews/CVF_NCR_PREFEAS_ROOT_BUILD_COMPLETION_2026-10-15.md; its original pair/grant is consumed and preserved.
 
@@ -94,21 +94,21 @@ Rollback boundary: exact6; preserve original archive and accepted/blocked histor
 |---|---|
 | Actor | Local INTERNAL_AGENT session-sync steward |
 | Provider or surface | private shared workspace |
-| Session or invocation | ncr-html-root-proposal-context-continuity-20261015 |
+| Session or invocation | ncr-html-root-adif-correction-sha-sync-20261015 |
 | Working directory | repository root |
-| Command or tool surface | held proposal raw pins/current mode/next-action, canonical generator and actual material-SHA sync |
-| Target paths | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Allowed scope source | operator commit/continue instruction; existing Local exact6 continuity authority |
-| Before status evidence | 490e4bc858daac281b26f2eccbaa4af94717f206; exact6 proposal material committed, worktree/stage clean |
-| After status evidence | exact6 held-context source/generated continuity, zero current worker/runtime effect grant |
-| Diff evidence | canonical generator/check and exact6 staged name/whitespace |
-| Approval boundary | operator root effect decision still pending; no worker dispatch |
-| Claim boundary | scoped declaration admission only; original root and P4 limitations retained |
+| Command or tool surface | record actual corrective material SHA; handoff-only continuity |
+| Target paths | `AGENT_HANDOFF_V63_2026-09-18.md` |
+| Allowed scope source | operator commit/continue and existing Local handoff continuity authority |
+| Before status evidence | 3e1ef88b2097f48598d470a3ab4cc6d62dd577cb; exact9 corrective metadata committed, worktree/stage clean; pre-commit91/91 PASS |
+| After status evidence | exact1 handoff SHA sync; mode/current source pins/next PLAN/effect grant unchanged |
+| Diff evidence | exact1 staged manifest and whitespace; actual corrective SHA |
+| Approval boundary | operator effect decision remains pending; worker/runtime grant0 |
+| Claim boundary | metadata continuity only; initial ADIF FAIL and preparation partial retained |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-html-root-proposal-context-continuity-20261015 |
-| Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Manifest delta | MATCH exact6 held proposal context continuity |
+| Invocation ID | ncr-html-root-adif-correction-sha-sync-20261015 |
+| Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md` |
+| Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md` |
+| Manifest delta | MATCH exact1 handoff-only continuity |
 | Deletion or rename disposition | None |
 
 ## Claim Boundary
