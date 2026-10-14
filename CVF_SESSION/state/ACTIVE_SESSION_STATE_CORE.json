@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RECEIPT_HISTORY_2026-10-14.md",
     "workOrderSha256": "54a57f86246fa3370284fdab788836c7668cfe89b28da03dab2af7182b6dbb47"
   },
-  "currentAuthoritySyncReason": "Saved receipt-history contribution accepted bounded; full NCR exits open; no automatic successor Pre-closure parent b0a51264eeebf87f5143b77f832dae53c5b1f3e1; coherent source/generated authority; actual-SHA dedicated continuity follows material. Whole NCR pilot/effects remain separate.",
+  "currentAuthoritySyncReason": "Saved receipt-history contribution accepted bounded; full NCR exits open; no automatic successor Material 145a591e197a9bf90f2ba4dc277016bb435ae4b4; coherent source/generated authority; actual-SHA dedicated continuity follows material. Whole NCR pilot/effects remain separate.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
