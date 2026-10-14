@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "cvf_ncr_html_control_repair_release_preparation",
+  "currentMode": "cvf_ncr_html_control_repair_dispatch_ready",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-CONFIGURED-RECEIPT-REPAIR-20261014. Conditional dispatch preparation material=1d37e32f9ce8f012e0bfff9e3796aca70af89dc4; primary review at docs/reviews/CVF_NCR_HTML_CONFIGURED_RECEIPT_COMPLETION_2026-10-14.md remains qualified, Local authenticity PASS. Local corrects two unbound authority-document EOF tails in a separate metadata commit, then dedicated new raw-pair/actual-SHA continuity and final bound release before manual transfer. No conditional BUILD/runtime/provider started; all primary worker3/2 and Local1/1 budgets retired. Existing two harnesses plus two fresh conditional outputs only; no product/AI policy/phase-exit or new capability. R1/R2partial,R3/R4open,R5/R6deferred; real-data/custody/business acceptance/send/B2/P11/public/deploy parked; LHW24 retained. Prior provider12/13 and old/unused grants retired, no reset.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-HTML-CONFIGURED-RECEIPT-REPAIR-20261014. WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_CONFIGURED_RECEIPT_REPAIR_2026-10-14.md. One manually transferred Local INTERNAL_AGENT conditional REWORK generation1. Release only after final bound pre-dispatch PASS; actual executionBaseHead and bound pre-implementation --active-work-order before effect. Exact4 conditional outputs: existing2 probe scripts plus fresh conditional proof/return. Existing HTML mechanical cases preserved, control-root fixes only: network-none/no-Internet-relay topology, secret-safe known/unknown egress stop, before-effect caps/IPC, opt-in legacy exception boundary and owned cleanup. One90minute BUILD, one diagnosed harness repair, conditional exportPOST<=3/alive-engine attempt<=2/provider starts0. Original primary4 raw custody and return2 read-only; script paths may change inside exact scope. Primary worker3/2 and Local1/1 runtime grants retired; no reset/replay. Root distinct conditional probe/review/closure separate; no automatic successor/third BUILD. No product/AI policy/real-data/live/provider/new-capability/public/deploy or phase-exit claim. R1/R2partial,R3/R4open,R5/R6deferred; Q001/Q004/custody/business acceptance/send/B2/P11/public/deploy parked; LHW24 retained. Historical provider12/13 and old/unused grants retired. Corrected authority material=e119ab1493b533f333974fe60002b953a1efbce8.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_NCR_HTML_CONFIGURED_RECEIPT_2026-10-14.md",
-    "baselineSha256": "5e4fcdd91c14fcf011a6c58dfd923c87ff8c8a19bba6de06aafa4e8ec7213636",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_CONFIGURED_RECEIPT_2026-10-14.md",
-    "workOrderSha256": "5d67a976fde028b7b910e73b9f09906918e98b330ef8051dcb10e66eec11ea22"
+    "baselinePath": "docs/baselines/CVF_GC018_NCR_HTML_CONFIGURED_RECEIPT_REPAIR_2026-10-14.md",
+    "baselineSha256": "f24b4e6c5762d755da3f79461c84f5840ed2d88b9bf776e782e217dcc2d16dbd",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_CONFIGURED_RECEIPT_REPAIR_2026-10-14.md",
+    "workOrderSha256": "d7c6d15f32c28225df4925ced2cb4609b547868245b3895e2d053bb459700f84"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

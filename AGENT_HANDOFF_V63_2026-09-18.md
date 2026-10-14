@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Current NCR Continuation
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `1d37e32f9ce8f012e0bfff9e3796aca70af89dc4`. Material SHA: `1d37e32f9ce8f012e0bfff9e3796aca70af89dc4`. Batch ID: CVF-NCR-HTML-CONFIGURED-RECEIPT-20261014. Conditional release preparation and pending EOF correction; no execution; separate exact6 actual-SHA continuity.
+Current HEAD recorded for this handoff: `e119ab1493b533f333974fe60002b953a1efbce8`. Material SHA: `e119ab1493b533f333974fe60002b953a1efbce8`. Batch ID: CVF-NCR-HTML-CONFIGURED-RECEIPT-REPAIR-20261014. Primary control rejection preserved; one finite conditional repair; corrected EOF pair material, separate exact6 raw-pair/actual-SHA continuity.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -13,21 +13,21 @@ Current continuation only. Root AGENTS.md and canonical routing owners retain fu
 Closed history is preserved byte-for-byte at `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V63_PRE_NCR_COMPACTION_2026-10-07.md` (SHA256 `54801fdcf14e9abe17592352ec3c69a0b0e855632991af0caacac7b65252ccba`); it is NOT_ACTIVE_AUTHORITY and not default startup reading.
 ## Scope / Target / Owner Boundary
 
-Local owns primary quality disposition, roadmap, consolidated repair packet preparation and continuity. Original4 worker raw bytes preserved; no Local tracked code repair. Primary mandatory-control acceptance rejected, six observations retained; distinct Local authenticity probe PASS. All primary runtime counters retired; fresh paired authority required before manual repair transfer, no automatic successor.
+Local dispatcher/reviewer owns selected roadmap decision, release, independent probe, commits and continuity. Operator manually transfers one shared-workspace INTERNAL_AGENT test worker. Worker owns exactly two existing harness scripts plus fresh proof/return named by immutable pair; products/config/real profile/roadmap/continuity read-only. No nested agent, provider/live or automatic successor.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_html_control_repair_release_preparation`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=one consolidated finite test-control repair packet preparation, no current BUILD; role=Local INTERNAL_AGENT orchestrator/reviewer; phase=NCR primary quality disposition/repair planning; decision owner=Local; parked checkpoint=actual-data/custody/business acceptance/provider/live/send/P11/public/deploy and unrelated stopped lanes.
+Startup acknowledged: current mode=`cvf_ncr_html_control_repair_dispatch_ready`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=finite test-only configured HTML composition under `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_CONFIGURED_RECEIPT_REPAIR_2026-10-14.md` after bound release; role=Local INTERNAL_AGENT orchestrator/reviewer; phase=NCR manual conditional control-repair dispatch; decision owner=Local; parked checkpoint=actual-data/custody/business acceptance/provider/live/send/P11/public/deploy and unrelated stopped lanes.
 
 ## Current Mode
 
-`cvf_ncr_html_control_repair_release_preparation`. Primary quality review docs/reviews/CVF_NCR_HTML_CONFIGURED_RECEIPT_COMPLETION_2026-10-14.md requires consolidated control rework; six mechanical observations retained. Local distinct configured browser/receipt/request-row/2734-byte download/stale/decoy probe PASS92.73s, network=none engine, export1/evaluate1/provider0. Worker3/2 and Local1/1 runtime budgets retired. Products12 and original4 raw bindings unchanged. R1/R2partial,R3/R4open,R5/R6deferred. Historical provider12/13 and all old/unused grants retired; MFRP cancellation raw-only/no-sample qualification preserved, no forced credit/source/EOL/journal rewrite.
+`cvf_ncr_html_control_repair_dispatch_ready`. Primary mandatory-control acceptance rejected; six observations and actual Local network-none authenticity PASS92.73s retained. Conditional control repair prepared, no conditional runtime started. Primary worker3/2 and Local1/1 runtime grants retired; fresh conditional zero-provider counters apply only after final bound release. R1/R2partial,R3/R4open,R5/R6deferred; real-data/custody/business acceptance/send/B2/P11/public/deploy parked. Prior observed12/13, all old/unused grants retired. Cancellation7d7e7a1a6 and actual6595eacf9b retained bounded; MFRP last natural closure SKIPPED_NO_COMMITTED_EVIDENCE due two raw-only CRLF/eol=lf material paths; no sample or artificial source/EOL/journal repair. New pair and test do not reopen that closure.
 
 ## Current Authority
 
-Retained immutable primary execution baseline: `docs/baselines/CVF_GC018_NCR_HTML_CONFIGURED_RECEIPT_2026-10-14.md`; SHA256 `5e4fcdd91c14fcf011a6c58dfd923c87ff8c8a19bba6de06aafa4e8ec7213636`.
-Retained immutable primary work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_CONFIGURED_RECEIPT_2026-10-14.md`; SHA256 `5d67a976fde028b7b910e73b9f09906918e98b330ef8051dcb10e66eec11ea22`.
-These bytes describe the retired primary scope, not another run. Local review `docs/reviews/CVF_NCR_HTML_CONFIGURED_RECEIPT_COMPLETION_2026-10-14.md` rejects mandatory-control acceptance; actual material `1d37e32f9ce8f012e0bfff9e3796aca70af89dc4`. Next repair has no execution grant until a new reviewed pair, dedicated continuity and bound release. Primary raw bytes/custody and independent authenticity result are in `docs/reviews/evidence/ncr-html-configured-receipt-local-20261014.json`.
+Immutable test dispatch baseline: `docs/baselines/CVF_GC018_NCR_HTML_CONFIGURED_RECEIPT_REPAIR_2026-10-14.md`; SHA256 `f24b4e6c5762d755da3f79461c84f5840ed2d88b9bf776e782e217dcc2d16dbd`.
+Immutable test work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_CONFIGURED_RECEIPT_REPAIR_2026-10-14.md`; SHA256 `d7c6d15f32c28225df4925ced2cb4609b547868245b3895e2d053bb459700f84`.
+Dispatch material: `e119ab1493b533f333974fe60002b953a1efbce8`. Committed pair and exact6 generated continuity require final bound pre-dispatch PASS before any worker BUILD. Source disposition: `docs/assessments/CVF_NCR_SELECTED_PILOT_CONVERGENCE_LOCAL_DISPOSITION_2026-10-14.md`. Pair remains unchanged while worker active; no implied provider/pilot authority.
 
 ## Accepted NCR Evidence And Continuation
 
@@ -39,7 +39,7 @@ Finite clipboard result ordering is accepted; actual OS write cancellation, whol
 
 ## Next Allowed Move
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-CONFIGURED-RECEIPT-REPAIR-20261014. Conditional dispatch preparation material=1d37e32f9ce8f012e0bfff9e3796aca70af89dc4; primary review at docs/reviews/CVF_NCR_HTML_CONFIGURED_RECEIPT_COMPLETION_2026-10-14.md remains qualified, Local authenticity PASS. Local corrects two unbound authority-document EOF tails in a separate metadata commit, then dedicated new raw-pair/actual-SHA continuity and final bound release before manual transfer. No conditional BUILD/runtime/provider started; all primary worker3/2 and Local1/1 budgets retired. Existing two harnesses plus two fresh conditional outputs only; no product/AI policy/phase-exit or new capability. R1/R2partial,R3/R4open,R5/R6deferred; real-data/custody/business acceptance/send/B2/P11/public/deploy parked; LHW24 retained. Prior provider12/13 and old/unused grants retired, no reset.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-HTML-CONFIGURED-RECEIPT-REPAIR-20261014. WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_CONFIGURED_RECEIPT_REPAIR_2026-10-14.md. One manually transferred Local INTERNAL_AGENT conditional REWORK generation1. Release only after final bound pre-dispatch PASS; actual executionBaseHead and bound pre-implementation --active-work-order before effect. Exact4 conditional outputs: existing2 probe scripts plus fresh conditional proof/return. Existing HTML mechanical cases preserved, control-root fixes only: network-none/no-Internet-relay topology, secret-safe known/unknown egress stop, before-effect caps/IPC, opt-in legacy exception boundary and owned cleanup. One90minute BUILD, one diagnosed harness repair, conditional exportPOST<=3/alive-engine attempt<=2/provider starts0. Original primary4 raw custody and return2 read-only; script paths may change inside exact scope. Primary worker3/2 and Local1/1 runtime grants retired; no reset/replay. Root distinct conditional probe/review/closure separate; no automatic successor/third BUILD. No product/AI policy/real-data/live/provider/new-capability/public/deploy or phase-exit claim. R1/R2partial,R3/R4open,R5/R6deferred; Q001/Q004/custody/business acceptance/send/B2/P11/public/deploy parked; LHW24 retained. Historical provider12/13 and old/unused grants retired. Corrected authority material=e119ab1493b533f333974fe60002b953a1efbce8.
 
 ## Active Boundary
 T3B has a Local-verified active v1 specification. Party B is verified and T3C-C1 tooling accepted at `db78c87df`; T3C-C2 and Party C are verified. T3D-C1 tooling is accepted at `9ed844c2a` without source. T3D-C0-R1 closed at `2fffa1ef7`. T3D-C3 was accepted bounded at `88137e9a2`, but actual-mode prepare attempts failed before Party B/C execution; authorized cleanup removed the failed root and discarded unaccepted worker changes. G1 stopped, G2-G6 parked, and G7 research closed at `660601f0e` with `ADAPT_EXISTING_HANDOFF_ONLY`. Evidence-join sufficiency stays WATCH; no implementation successor exists. Rejected T2 paths remain archived; HRLTP-T2 paused.
@@ -67,7 +67,7 @@ Q001/Q004 actual-data source/writer,custody,retention/RPO/RTO/cost checkpoints a
 NCR send/B2 STOP and S05/C1 remain; IAB unavailable; repo Playwright Chromium present. Canonical release bundle9/9 PASS on current sources with real Alibaba; full P04 and NCR R3/R4 remain open. No autonomous P11/public/deploy activation.
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: Local exact6 primary quality/retired-budget actual-SHA continuity; no worker protected-path, product or checker edits.
+Authorized guard-maintenance scope: Local exact6 immutable-pair test dispatch and actual material-SHA continuity; no worker protected-path, product or checker edits.
 Protected paths:
 - `AGENT_HANDOFF_V63_2026-09-18.md`
 - `CVF_SESSION_MEMORY.md`
@@ -75,7 +75,7 @@ Protected paths:
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-Operator authorization: NCR continuation and regular roadmap review/manual selected-worker transfer; primary review and independent finite probe under immutable paired scope.
+Operator authorization: 2026-10-14 regular NCR roadmap review/continuation and manual selected-worker transfer; finite owned synthetic tests only under Local paired scope.
 Rollback boundary: exact6; preserve original archive and accepted/blocked history, parked effects and prior observations. Historical P4 safety adjudication .cvf/runtime/mfrp-p4-shadow-canary/adjudications/ncr-offline-journey-marker-20261013.json remains valid for its original marker; no blanket clearance of future markers. New P4 receipt-generation marker d8d91ae25bd487b6798d7d7e48816cd7fb363d2d98bc27a6e70c43ee65eabbaa separately adjudicated by Local at .cvf/runtime/mfrp-p4-shadow-canary/adjudications/ncr-work-transfer-browser-marker-20261013.json, SHA256 ab42577ad08b59f54abb80ebbee64c6aae9b0d570018e8fccda9d5a2e0180c81; exact marker preserved in private custody; required admission heading restored; old failed receipt not promoted. Current marker OBS-70961d0b8b4d27db separately adjudicated by Local at .cvf/runtime/mfrp-p4-shadow-canary/adjudications/ncr-brief-reopen-marker-20261013.json, SHA256 c006bb09e83c08442460212cbabca0e100d22b27280af25c58a5df97804f9671; exact marker removed, journal/historical blocks/C15 exclusions unchanged.
 
 ## Agent Operation Trace Block
@@ -84,18 +84,18 @@ Rollback boundary: exact6; preserve original archive and accepted/blocked histor
 |---|---|
 | Actor | Local INTERNAL_AGENT session-sync steward |
 | Provider or surface | private shared workspace |
-| Session or invocation | ncr-html-primary-review-continuity-20261014 |
+| Session or invocation | ncr-html-configured-receipt-continuity-20261014 |
 | Working directory | repository root |
 | Command or tool surface | source entry/core update, active front door/handoff, canonical state generator |
 | Target paths | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Allowed scope source | operator NCR continuation; exact6 authority in paired baseline/order |
-| Before status evidence | 1d37e32f9ce8f012e0bfff9e3796aca70af89dc4; conditional dispatch3 committed; clean worktree and staged empty before interim continuity |
-| After status evidence | exact6 source/generated review continuity; primary authority raw pair unchanged, all primary budgets retired |
+| Before status evidence | e119ab1493b533f333974fe60002b953a1efbce8; clean worktree and staged empty after exact3 dispatch material |
+| After status evidence | exact6 source/generated test-dispatch continuity; raw currentAuthority pair fixed |
 | Diff evidence | source/generated reconciliation; exact6 git diff --name-status; git diff --cached --check |
-| Approval boundary | review/repair preparation only; no current runtime/provider/pilot grant |
-| Claim boundary | Local authenticity PASS, mandatory REQ-07 not accepted; six contributions retained, phase exits open |
+| Approval boundary | finite owned synthetic test only, committed release and bound gates required; provider/pilot checkpoints retained |
+| Claim boundary | primary Local authenticity PASS retained; conditional runtime pending; primary budgets retired, historical12/13 unchanged; no phase exit |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-html-primary-review-continuity-20261014 |
+| Invocation ID | ncr-html-configured-receipt-continuity-20261014 |
 | Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Manifest delta | MATCH required before commit |
