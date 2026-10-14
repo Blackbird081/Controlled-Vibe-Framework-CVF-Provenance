@@ -1,0 +1,104 @@
+{
+  "schemaVersion": "cvf.preapprovalFeasibility.v1",
+  "proposal": {
+    "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_INTEGRATED_ROOT_BUILD_2026-10-15.md",
+    "sha256": "6c8958a952c92aef09a018a341800a4c01cafea90be8295e6d68e76dc135c311"
+  },
+  "approvalTarget": {
+    "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_INTEGRATED_ROOT_BUILD_2026-10-15.md",
+    "sha256": "6c8958a952c92aef09a018a341800a4c01cafea90be8295e6d68e76dc135c311",
+    "prospectiveOutcomeSha256": "a3986c6222e1c3a6310df522a6a365585929206a45e8c47d56ed944276b77b67"
+  },
+  "prospectiveOutcome": {
+    "schemaVersion": "cvf.semanticConvergenceControl.v1",
+    "problemKey": "ncr-html-configured-receipt-browser-composition",
+    "chainMode": "SUCCESSOR",
+    "chainOrdinal": 2,
+    "predecessor": {
+      "path": "docs/reviews/CVF_NCR_HTML_CONFIGURED_RECEIPT_CONDITIONAL_RETURN_2026-10-14.md",
+      "sha256": "ec8a0418af0db8aacde0df54b73a583758dbf33959556c965c328b4604d85254"
+    },
+    "blockerDelta": {
+      "prior": [
+        "HCR-CONTROL-EGRESS",
+        "HCR-CONTROL-ADMISSION",
+        "HCR-CONTROL-LEGACY-CLEANUP"
+      ],
+      "resolved": [
+        "HCR-CONTROL-EGRESS",
+        "HCR-CONTROL-ADMISSION"
+      ],
+      "retained": [
+        "HCR-CONTROL-LEGACY-CLEANUP"
+      ],
+      "new": [
+        "HCR-CONTROL-FRESH-PROFILE-BINDING"
+      ],
+      "reopened": [],
+      "current": [
+        "HCR-CONTROL-LEGACY-CLEANUP",
+        "HCR-CONTROL-FRESH-PROFILE-BINDING"
+      ]
+    },
+    "resolutionEvidence": {
+      "HCR-CONTROL-EGRESS": {
+        "evidenceClass": "ACCEPTED_REVIEW",
+        "evidencePath": "docs/reviews/CVF_NCR_HTML_CONFIGURED_RECEIPT_CONDITIONAL_COMPLETION_2026-10-14.md",
+        "sha256": "36c9b8513fdd614d9e798b4ef88960f68887fa43ec43b67811d6560d736805bd",
+        "locator": "HCR-CONTROL-EGRESS: RESOLVED_BOUNDED"
+      },
+      "HCR-CONTROL-ADMISSION": {
+        "evidenceClass": "ACCEPTED_REVIEW",
+        "evidencePath": "docs/reviews/CVF_NCR_HTML_CONFIGURED_RECEIPT_CONDITIONAL_COMPLETION_2026-10-14.md",
+        "sha256": "36c9b8513fdd614d9e798b4ef88960f68887fa43ec43b67811d6560d736805bd",
+        "locator": "HCR-CONTROL-ADMISSION: RESOLVED_BOUNDED"
+      }
+    },
+    "counters": {
+      "partialReadyClosures": 2,
+      "reviewerScopeExpansions": 0,
+      "sameClaimCorrections": 2,
+      "nonDecreasingBlockerTransitions": 0
+    },
+    "claims": [
+      {
+        "claimId": "NCR-HTML-INTEGRATED-ROOT-DESIGN",
+        "claimClass": "DOCUMENTATION_ONLY",
+        "proofClass": "PROPOSAL_ONLY_NO_RUNTIME_READINESS",
+        "evidenceRef": "docs/reviews/CVF_NCR_HTML_INTEGRATED_ROOT_CONTRACT_2026-10-14.md"
+      }
+    ],
+    "requiredDisposition": "ROOT_CONTRACT_REQUIRED",
+    "successorScope": "INTEGRATED_ROOT_CONTRACT"
+  },
+  "phasePrerequisites": {
+    "phase": "PRE_DISPATCH_INTEGRATED_ROOT_CONTRACT_BUILD",
+    "rows": [
+      {
+        "requirementId": "ROOT_BUILD_BASELINE",
+        "requiredForPhase": true,
+        "evidence": {
+          "path": "docs/baselines/CVF_GC018_NCR_HTML_INTEGRATED_ROOT_BUILD_2026-10-15.md",
+          "sha256": "085486fad7ff6dd7f3bc0149e620854604c1ed66770d98c03b4ec334cdea563a",
+          "locator": "## Authority / Scope"
+        },
+        "deferredToPhase": null
+      },
+      {
+        "requirementId": "ROOT_BUILD_SCOPE",
+        "requiredForPhase": true,
+        "evidence": {
+          "path": "docs/baselines/CVF_GC018_NCR_HTML_INTEGRATED_ROOT_BUILD_2026-10-15.md",
+          "sha256": "085486fad7ff6dd7f3bc0149e620854604c1ed66770d98c03b4ec334cdea563a",
+          "locator": "## Integrated Build Scope"
+        },
+        "deferredToPhase": null
+      }
+    ]
+  },
+  "requestQueue": null,
+  "requestedAction": {
+    "kind": "INTEGRATED_ROOT_CONTRACT_BUILD",
+    "runtimeReadinessClaim": false
+  }
+}

@@ -1,0 +1,169 @@
+{
+  "status": "DRAFT_OPERATOR_EFFECT_APPROVAL_PENDING",
+  "proposalBaseHead": "66eef39a8f579a5d38e1f18f23745ae694e2b4e8",
+  "sourcePins": {
+    "docs/baselines/CVF_GC018_NCR_HTML_INTEGRATED_ROOT_BUILD_2026-10-15.md": "085486fad7ff6dd7f3bc0149e620854604c1ed66770d98c03b4ec334cdea563a",
+    "docs/reviews/CVF_NCR_HTML_INTEGRATED_ROOT_CONTRACT_2026-10-14.md": "5998f2db7ca40457ffdecc08654456f19b20ee0ba97fbc43e6942c729b5a38f7",
+    "docs/assessments/CVF_NCR_HTML_OWNED_PROFILE_ADMISSION_PLAN_2026-10-14.md": "66e7780972a41a6155707d85c8058ecc2bf7f3766e9047387ae495cfced7eb91",
+    "docs/assessments/CVF_NCR_HTML_FRESH_PROFILE_USER_JOURNEY_SPEC_2026-10-14.md": "1d1a42f2c3f1e9d573b30cb46221e24ea1365d9f60aec95b6938e9fd10fb6a83",
+    "docs/reviews/CVF_NCR_PREFEAS_ROOT_BUILD_COMPLETION_2026-10-15.md": "80c712f40938de0b05b2bc71d8339dca6adadf54c03445a73f49e14f75c290c9",
+    "scripts/probe_cvf_q001_synthetic_system_chain.py": "26b34890e3031f5b13ca4965585adbdf14a483aefe246834d3848cb165c3fe9d",
+    "scripts/probe_cvf_w05_browser_chain.cjs": "2f0981b2356a51a85f34d3d6ed94a0d0a0606c48d306888711876a5c2b225dec",
+    "docs/reference/guard_orientation/README.md": "675c4c4a2219b53e73dc7f3fb000750eed859019b2521d01ddf66fba3ae00377",
+    "docs/reference/CVF_AGENT_EXECUTION_WORKFLOW_SOP_2026-05-19.md": "ec0aa577527634f57952fb3d1cfe3af632603cf44d5f433f8c27907384c33796",
+    "docs/reference/CVF_GOVERNED_WORK_LIFECYCLE_AND_DESIGN_CONTROL_STANDARD_2026-06-11.md": "b48f11363ee62a2ec4c85c6f9fba4540b90eb74475c31aeab18cfe4492a536de",
+    "docs/reference/review_cost_control/CVF_REVIEW_COST_AND_DIMINISHING_RETURN_CONTROL_STANDARD.md": "17d27144c7db34b717633c14428a778b2b00949f62d71e6a1d8f4f9a2bbe8700",
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_INTEGRATED_ROOT_BUILD_2026-10-15.md": "6c8958a952c92aef09a018a341800a4c01cafea90be8295e6d68e76dc135c311",
+    "docs/reviews/evidence/ncr-html-integrated-root-build-preapproval-20261015.json": "7f4edaaaa1633ba4eca685b87bc0aa22355c9a72719d735bf88e9c2ba3527395"
+  },
+  "existingRootOutcomeDigest": "a3986c6222e1c3a6310df522a6a365585929206a45e8c47d56ed944276b77b67",
+  "sameExistingRootState": {
+    "schemaVersion": "cvf.semanticConvergenceControl.v1",
+    "problemKey": "ncr-html-configured-receipt-browser-composition",
+    "chainMode": "SUCCESSOR",
+    "chainOrdinal": 2,
+    "predecessor": {
+      "path": "docs/reviews/CVF_NCR_HTML_CONFIGURED_RECEIPT_CONDITIONAL_RETURN_2026-10-14.md",
+      "sha256": "ec8a0418af0db8aacde0df54b73a583758dbf33959556c965c328b4604d85254"
+    },
+    "blockerDelta": {
+      "prior": [
+        "HCR-CONTROL-EGRESS",
+        "HCR-CONTROL-ADMISSION",
+        "HCR-CONTROL-LEGACY-CLEANUP"
+      ],
+      "resolved": [
+        "HCR-CONTROL-EGRESS",
+        "HCR-CONTROL-ADMISSION"
+      ],
+      "retained": [
+        "HCR-CONTROL-LEGACY-CLEANUP"
+      ],
+      "new": [
+        "HCR-CONTROL-FRESH-PROFILE-BINDING"
+      ],
+      "reopened": [],
+      "current": [
+        "HCR-CONTROL-LEGACY-CLEANUP",
+        "HCR-CONTROL-FRESH-PROFILE-BINDING"
+      ]
+    },
+    "resolutionEvidence": {
+      "HCR-CONTROL-EGRESS": {
+        "evidenceClass": "ACCEPTED_REVIEW",
+        "evidencePath": "docs/reviews/CVF_NCR_HTML_CONFIGURED_RECEIPT_CONDITIONAL_COMPLETION_2026-10-14.md",
+        "sha256": "36c9b8513fdd614d9e798b4ef88960f68887fa43ec43b67811d6560d736805bd",
+        "locator": "HCR-CONTROL-EGRESS: RESOLVED_BOUNDED"
+      },
+      "HCR-CONTROL-ADMISSION": {
+        "evidenceClass": "ACCEPTED_REVIEW",
+        "evidencePath": "docs/reviews/CVF_NCR_HTML_CONFIGURED_RECEIPT_CONDITIONAL_COMPLETION_2026-10-14.md",
+        "sha256": "36c9b8513fdd614d9e798b4ef88960f68887fa43ec43b67811d6560d736805bd",
+        "locator": "HCR-CONTROL-ADMISSION: RESOLVED_BOUNDED"
+      }
+    },
+    "counters": {
+      "partialReadyClosures": 2,
+      "reviewerScopeExpansions": 0,
+      "sameClaimCorrections": 2,
+      "nonDecreasingBlockerTransitions": 0
+    },
+    "claims": [
+      {
+        "claimId": "NCR-HTML-INTEGRATED-ROOT-DESIGN",
+        "claimClass": "DOCUMENTATION_ONLY",
+        "proofClass": "PROPOSAL_ONLY_NO_RUNTIME_READINESS",
+        "evidenceRef": "docs/reviews/CVF_NCR_HTML_INTEGRATED_ROOT_CONTRACT_2026-10-14.md"
+      }
+    ],
+    "requiredDisposition": "ROOT_CONTRACT_REQUIRED",
+    "successorScope": "INTEGRATED_ROOT_CONTRACT"
+  },
+  "currentEffects": {
+    "workerInvocation": 0,
+    "productProcess": 0,
+    "provider": 0,
+    "configStoreRead": 0
+  },
+  "workerProposedOutputs": [
+    "scripts/probe_cvf_q001_synthetic_system_chain.py",
+    "scripts/probe_cvf_w05_browser_chain.cjs",
+    "scripts/cvf_ncr_html_owned_profile/__init__.py",
+    "scripts/cvf_ncr_html_owned_profile/lifecycle.py",
+    "scripts/cvf_ncr_html_owned_profile/profile.py",
+    "scripts/cvf_ncr_html_owned_profile/test_control.py",
+    "scripts/cvf_ncr_html_owned_profile/journey.cjs",
+    "scripts/cvf_ncr_html_owned_profile/journey.test.cjs",
+    "docs/reviews/CVF_NCR_HTML_INTEGRATED_ROOT_BUILD_WORKER_RETURN_2026-10-15.md",
+    "docs/reviews/evidence/ncr-html-integrated-root-build-worker-20261015.json"
+  ],
+  "materialManifest": [
+    "docs/baselines/CVF_GC018_NCR_HTML_INTEGRATED_ROOT_BUILD_2026-10-15.md",
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_INTEGRATED_ROOT_BUILD_2026-10-15.md",
+    "docs/reviews/evidence/ncr-html-integrated-root-build-preapproval-20261015.json",
+    "docs/assessments/CVF_NCR_HTML_ROOT_BUILD_ADMISSION_2026-10-15.md",
+    "docs/reviews/evidence/ncr-html-root-build-admission-local-20261015.json",
+    "docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md"
+  ],
+  "claimBoundary": "Proposed concrete scope only; actual action receipt follows; no full dispatch or runtime grant.",
+  "actualAdmission": {
+    "argv": [
+      "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-B",
+      "governance/compat/run_preapproval_feasibility_gate.py",
+      "--proposal",
+      "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_INTEGRATED_ROOT_BUILD_2026-10-15.md",
+      "--approval-target",
+      "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_INTEGRATED_ROOT_BUILD_2026-10-15.md",
+      "--json"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 0.213,
+    "receipt": {
+      "approvalTarget": {
+        "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_INTEGRATED_ROOT_BUILD_2026-10-15.md",
+        "sha256": "6c8958a952c92aef09a018a341800a4c01cafea90be8295e6d68e76dc135c311"
+      },
+      "canonicalBlockCount": 1,
+      "canonicalViolations": [],
+      "companion": {
+        "path": "docs/reviews/evidence/ncr-html-integrated-root-build-preapproval-20261015.json",
+        "sha256": "7f4edaaaa1633ba4eca685b87bc0aa22355c9a72719d735bf88e9c2ba3527395"
+      },
+      "coverageDisposition": "NOT_APPLICABLE",
+      "diagnostics": [],
+      "effectAdmission": false,
+      "operatorApprovalRequired": true,
+      "prerequisites": {
+        "deferred": 0,
+        "examined": 2
+      },
+      "proposal": {
+        "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_INTEGRATED_ROOT_BUILD_2026-10-15.md",
+        "sha256": "6c8958a952c92aef09a018a341800a4c01cafea90be8295e6d68e76dc135c311"
+      },
+      "prospectiveOutcomeSha256": "a3986c6222e1c3a6310df522a6a365585929206a45e8c47d56ed944276b77b67",
+      "queue": null,
+      "runtimeReadiness": false,
+      "schemaVersion": "cvf.preapprovalFeasibilityReceipt.v1",
+      "technicalDisposition": "FEASIBLE_FOR_INTEGRATED_ROOT_BUILD"
+    }
+  },
+  "plannedFileBudgets": {
+    "existingPythonFinalMaxLines": 750,
+    "existingBrowserFinalMaxLines": 396,
+    "newSourceHelperMaxLines": 350,
+    "newTestMaxLines": 500,
+    "workerReturnMaxLines": 450,
+    "workerReturnMaxBytes": 64000,
+    "workerProofMaxBytes": 64000
+  },
+  "sourcePinReadDepth": "Raw-byte integrity of named files; Local semantic reads limited to existing governing root/profile/SPEC and applicable admission predicates. Future worker mandatory full bodies/mapped scopes are separate.",
+  "preparationDisclosure": "PARTIAL_WITH_REASON: concrete text prepared manually before actual scaffold; generated before tracked packet writes. No claim of complete checker read-ahead.",
+  "priorP4Adjudication": {
+    "path": ".cvf/runtime/mfrp-p4-shadow-canary/adjudications/ncr-prefeas-root-build-marker-20261015.json",
+    "sha256": "1b1dccd1035e436bb8f6ca9756c3c67ce5de67ea8004ba4a81b31e67b2864788",
+    "journalRowsPromoted": 0
+  },
+  "initialReviewerFailure": "Structural headings, handoff/trace, enrolled learning and foundation declaration missing; corrected together after reading operative predicates; original log retained. No runtime/worker effects."
+}
