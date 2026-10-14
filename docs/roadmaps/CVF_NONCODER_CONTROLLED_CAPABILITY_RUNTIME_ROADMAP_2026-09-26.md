@@ -5,7 +5,7 @@ docType: roadmap
 Status: ACCEPTED_UNIFIED_ROADMAP_LOCAL_CONSUMER_BOUNDED_FULL_PILOT_OPEN
 Date: 2026-09-26
 Program ID: CVF-NCR
-Version: 2.12
+Version: 2.13
 Revision disposition: LOCAL_CONSUMER_MAINTENANCE_ACCEPTED_BOUNDED; END_TO_END_PILOT_OPEN; Q001_AND_P11_CHECKPOINTS_RETAINED
 Decision owner: operator về định hướng/phạm vi; Local reviewer về đối chiếu kỹ thuật và nghiệm thu.
 
@@ -15,23 +15,21 @@ Decision owner: operator về định hướng/phạm vi; Local reviewer về đ
 
 **Accepted bounded Home/Alibaba contribution, 2026-10-14:** `docs/reviews/CVF_NCR_HOME_ALIBABA_JOURNEY_COMPLETION_2026-10-13.md` accepts the finite synthetic visible Generate root/child journey, governed Alibaba receipt, actual child Markdown bytes and return-to-edit checks based on frozen worker and distinct Local proof. Original BUILD stopped at 17:40:17Z with four calls/posts charged; separate continuation corrected the VI `xuong` export selector under its own bound. Earlier 401 and output-limit attempts remain failed history; the successful pre-continuation root/child lacked a Markdown download click. Procedure PARTIAL_WITH_REASON. R1/R2 partial; R3/R4 open; R5/R6 deferred. Selected HTML business pilot, real-data writer/custody, business acceptance, send/B2, P11, public sync, deployment and production remain parked.
 
-Current delivery projection; Local decision owner. Current mode=cvf_ncr_result_export_feedback_closed_useful_selection,
-handoff=AGENT_HANDOFF_V63_2026-09-18.md, next=useful coding outcome selection.
-Prior evidence/phase/effect checkpoints retain their scope.
+Current delivery projection reviewed at source HEAD `595eacf9b4314f6ee33cff90ea49f7ce0635ff7a`. Active startup mode and next action come from the compact bootstrap/session front door; this roadmap does not duplicate that mutable mode.
 
-**Product destination:** one controlled local job from confirmed idea to a
-run-bound result, preview/revision/export and understandable cancel/error/recovery.
-The user can use the output without reading source or assembling review metadata.
-**Nearest milestone:** demonstrate that finite existing-consumer journey at the
-synthetic browser claim level first; current separate Alibaba9/9 diagnostic is accepted bounded, while full composed real-provider R3 job acceptance remains open.
+**Product destination:** one selected controlled local job from confirmed idea to a version-bound artifact, preview/revision/export and understandable denial/cancel/recovery.
+**Nearest milestone:** reconcile the selected HTML Work Transfer chain and close its applicable R2/W05 pre-live gap before a composed R3 pilot. Source-only assignment: `docs/assessments/CVF_NCR_SELECTED_PILOT_CONVERGENCE_ASSIGNMENT_2026-10-14.md`.
 
-| Stage / contribution | Observed position and evidence | Remaining milestone gap |
+| Stage | Accepted evidence / scope | Remaining exit gap |
 |---|---|---|
-| R0 selection | HTML review-packet candidate selected; prior W00/W01 bounded evidence retained | current route/acceptance must be fixed for the next actual job; no new runtime shortlist |
-| R1 user journey | audience/export evidence archived below; Home history/result/child binding accepted in docs/reviews/CVF_NCR_HOME_HISTORY_BINDING_COMPLETION_2026-10-11.md | one actual offline form-parent-child UI path accepted; complete job/export/recovery remains open |
-| R2/R3 delivery | offline preview package accepted in docs/reviews/CVF_NCR_OFFLINE_PREVIEW_DELIVERY_COMPLETION_2026-10-09.md | source/media/send and real-provider admission remain separately held; no full R2/R3 exit |
-| R4 recovery contribution | ProcessingScreen client attempt isolation/once delivery accepted after Local repair in docs/reviews/CVF_NCR_PROCESSING_LIFECYCLE_COMPLETION_2026-10-12.md | offline client coverage does not prove backend cancellation, durable effects, restart/restore or full R4 exit |
-| R5/R6 | hosted/scale/new-capability work remains demand/authority gated | no automatic implementation from this roadmap |
+| R0 | HTML Work Transfer selected; Q008/D015 existing route without extra worker/MCP runtime | applicable Q001/Q004 data/configuration/effect and walkthrough conditions; do not select another pilot implicitly |
+| R1 | selected HTML synthetic real-browser edit/preview/download/version proof; supporting Home parent-child/export/history evidence | complete selected job flow and acceptance/recovery contract; supporting Home evidence needs an applicability join |
+| R2 | historical synthetic engine/store and selected route evidence; separate current Alibaba diagnostic and bounded local request cancellation | current selected-chain admission/intent/operation/receipt/recovery composition and applicable P1 disposition; no full R2 exit |
+| R3 | current Home/Alibaba and selected HTML browser proofs accepted separately | one composed selected goal-to-artifact-to-verification-to-acceptance pilot; distinct proofs do not produce that result |
+| R4 | saved Home receipt/output survives observed reload/owned restart; selected synthetic store recovery retained historically | applicable durable-effect/restart/duplicate/backup/restore and two independent connection conformance; no full R4 exit |
+| R5/R6 | deferred, demand/authority gated | no hosted or new-capability scope introduced |
+
+Operator 2026-10-14: reassess NCR before each dispatch and after each returned result using the existing Change Control and outcome-bound lifecycle. Record the selected milestone, gate advanced, strongest evidence, remaining blocker and next permitted action. Work without a direct milestone contribution is deferred. Immediate reassessment follows material authority/configuration change or repeated root-cause repair. This applies current owners and creates no new checker, schedule or automation.
 
 **Accepted finite outcome - Agent Chat handoff lifecycle, 2026-10-12:**
 docs/reviews/CVF_NCR_AGENT_HANDOFF_COMPLETION_2026-10-12.md accepts offline/jsdom:
@@ -76,7 +74,7 @@ Luna max reviewed read-only; Local owns implementation/decision. Procedure PARTI
 Small direct lifecycle route, no work-order fulfillment claim or new implementation-model observation;26 retained. Offline UI only; OS clipboard writes are not cancelled.
 **Accepted finite contribution - PDF/Word failure feedback, 2026-10-13:**
 `docs/reviews/CVF_NCR_RESULT_EXPORT_FEEDBACK_COMPLETION_2026-10-13.md` accepts safe localized EN/VI alerts outside the menu and direct own-format retry; result/receipt retained. SourceRED10failed/57passed -> final67/67, type/scoped lint child0, bound finalfast/ledger PASS consumed; Root full source/test matrix, no product repair or duplicate suite. Existing run-keyed body/latest-token checks isolate late and competing completions. ResultViewer941 ->837 lines,104 net reduction into cohesive helper. Original failures and preparation PARTIAL_WITH_REASON retained; GC-051 new helper/test registered NOT_STARTED. Browser download initiation only, no OS persistence. Historical26 observations retained; no model comparison/provider call. R1/R2 partial, R3/R4 open, R5/R6 deferred; real-data/send/B2/P11/public/deploy parked. Public Export Disposition: DEFERRED_PRIVATE_ONLY.
-**Next selection:** select the next useful finite coding outcome from existing NCR owners; no automatic successor or additional worker release.
+**Next selection:** complete the selected HTML source/evidence convergence assignment, then choose one admitted milestone-blocking implementation or integrated proof from its Local-reviewed result; no automatic successor or provider grant.
 Whole job/full/browser/backend/provider/R3/R4 remain open.
 
 Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11 remain
