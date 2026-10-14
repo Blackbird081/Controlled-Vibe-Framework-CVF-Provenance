@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_CONFIGURED_RECEIPT_2026-10-14.md",
     "workOrderSha256": "5d67a976fde028b7b910e73b9f09906918e98b330ef8051dcb10e66eec11ea22"
   },
-  "currentAuthoritySyncReason": "Operator NCR continuation; Local selected finite synthetic test-only browser/receipt composition after qualified source review. Immutable paired dispatch material 7af5b1111bb8e4f88e26d56d72e37a4b502781ec; final bound gate required. Previous cancellation pair unchanged; no provider/real-data/pilot grant.",
+  "currentAuthoritySyncReason": "Primary immutable execution pair retained as source scope only; runtime counters retired. Review docs/reviews/CVF_NCR_HTML_CONFIGURED_RECEIPT_COMPLETION_2026-10-14.md and original raw custody at docs/reviews/evidence/ncr-html-configured-receipt-local-20261014.json; actual material 78f19b6711f4fac857035b2eba13ddc64943aa90. Mandatory control acceptance rejected, Local independent authenticity PASS; new repair remains planning until fresh paired release.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
@@ -110,7 +110,7 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_ncr_html_configured_receipt_dispatch_ready",
+  "currentMode": "cvf_ncr_html_configured_receipt_primary_reviewed_rework_required",
   "previousMode": "cvf_ncr_brief_copy_closed_useful_selection",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",

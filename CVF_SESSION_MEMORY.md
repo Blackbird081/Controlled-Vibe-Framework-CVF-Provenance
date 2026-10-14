@@ -31,21 +31,21 @@ artifact.
 | Prior handoff (archive-qualified) | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V62_2026-09-17.md` |
 | Latest front-door archive | `CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_COMPACTION_ARCHIVE_2026-08-11.md` |
 | Current authority evidence | `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` `currentAuthority` |
-| Parent maintenance | Qualified selected HTML review; finite synthetic test dispatch; full pilot open |
+| Parent maintenance | HTML primary control rework; Local authenticity PASS; all primary runtime grants retired |
 | Freeze posture | `governance_kernel_freeze_recommended` |
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_html_configured_receipt_dispatch_ready`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=finite test-only configured HTML composition under `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_CONFIGURED_RECEIPT_2026-10-14.md` after bound release; role=Local INTERNAL_AGENT orchestrator/reviewer; phase=NCR manual internal implementation dispatch; decision owner=Local; parked checkpoint=actual-data/custody/business acceptance/provider/live/send/P11/public/deploy and unrelated stopped lanes.
+Startup acknowledged: current mode=`cvf_ncr_html_configured_receipt_primary_reviewed_rework_required`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=one consolidated finite test-control repair packet preparation, no current BUILD; role=Local INTERNAL_AGENT orchestrator/reviewer; phase=NCR primary quality disposition/repair planning; decision owner=Local; parked checkpoint=actual-data/custody/business acceptance/provider/live/send/P11/public/deploy and unrelated stopped lanes.
 
 ## Current Mode
 
-Current mode marker: `cvf_ncr_html_configured_receipt_dispatch_ready`
-Current mode: `cvf_ncr_html_configured_receipt_dispatch_ready`; previous mode marker: `cvf_ncr_selected_pilot_convergence_review_accepted`
+Current mode marker: `cvf_ncr_html_configured_receipt_primary_reviewed_rework_required`
+Current mode: `cvf_ncr_html_configured_receipt_primary_reviewed_rework_required`; previous mode marker: `cvf_ncr_html_configured_receipt_dispatch_ready`
 
 ## Next Allowed Move
 
-Mode: `cvf_ncr_html_configured_receipt_dispatch_ready`
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-HTML-CONFIGURED-RECEIPT-20261014. WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_CONFIGURED_RECEIPT_2026-10-14.md. Operator manually transfers one Local INTERNAL_AGENT test/harness worker under chosen configuration. Release only after final bound pre-dispatch PASS; worker captures actual released HEAD and bound pre-implementation PASS. Exact4 outputs: two existing probe scripts plus fresh proof/return. Owned synthetic HTML browser/receipt/request-row/byte composition only; BUILD<=90minutes, one diagnosed harness repair, exportPOST<=3/evaluate<=2/provider starts0. No policy correctness/permission efficacy/artifact acceptance or W05/R2/R3/R4 exit; no product edit, real profile/data, install/build/pull, subdelegation, stage/commit/public/deploy. Root review/probe/closure separate; no automatic successor. Source review accepted with qualifications; R1/R2partial,R3/R4open,R5/R6deferred; Q001/Q004/B2/business/send/P11/public/deploy parked; LHW24 retained. Prior observed12/13; old/unused grants retired, no reset. Dispatch material=7af5b1111bb8e4f88e26d56d72e37a4b502781ec.
+Mode: `cvf_ncr_html_configured_receipt_primary_reviewed_rework_required`
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-CONFIGURED-RECEIPT-20261014. Primary quality review=docs/reviews/CVF_NCR_HTML_CONFIGURED_RECEIPT_COMPLETION_2026-10-14.md; evidence=docs/reviews/evidence/ncr-html-configured-receipt-local-20261014.json; material=78f19b6711f4fac857035b2eba13ddc64943aa90. Six mechanical contributions retained; mandatory REQ-07 control acceptance rejected. Local independent fresh fixture/network-none engine/native-readonly SQL/2734-byte download/stale/decoy/wrong-ID probe PASS92.73s with export1/evaluate1/provider0. Original4 raw bytes and22 custody hashes preserved; products12 unchanged. All primary worker3-export/2-completed-evaluate and Local1/1 budgets retired. Next Local prepares one consolidated existing-harness REWORK generation1 for egress/unknown stop, pre-effect caps/IPC, legacy exception boundary and owned cleanup, then new paired material/continuity/bound release before manual worker transfer. No current BUILD/retry/provider grant or automatic successor. R1/R2partial,R3/R4open,R5/R6deferred; Q001/Q004/actual-data/custody/business acceptance/send/B2/P11/public/deploy parked; LHW24 retained. Historical provider program12/13, all old/unused grants retired; no reset.
 Historical G1-G7 terminal baseline: mode `acel_g1_g7_research_terminally_closed`. G1-G6 terminal review: `docs/reviews/CVF_ACEL_G1_G6_TERMINAL_STOP_CLOSURE_2026-09-24.md`; G7 research closure: `docs/reviews/CVF_ACEL_G7_CROSS_RUN_CAPABILITY_EVOLUTION_RESEARCH_CLOSURE_2026-09-24.md`. The packet-only post-G7 reconciliation review at `docs/reviews/CVF_ACEL_POST_G7_FULL_CORPUS_ABSORPTION_CLOSURE_2026-09-24.md` is superseded for repository absorption by the 2026-09-25 pinned-source audit. G1 is stopped, G2-G6 remain parked, G7 research is closed, and no automatic G1-G7 successor exists.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
