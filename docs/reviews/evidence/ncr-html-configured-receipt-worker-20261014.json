@@ -1,0 +1,529 @@
+{
+ "schemaVersion": "ncr-html-configured-receipt-worker-proof (documentary; not a CVF governance schema)",
+ "status": "COMPLETE_PENDING_REVIEW_CANDIDATE",
+ "batchId": "CVF-NCR-HTML-CONFIGURED-RECEIPT-20261014",
+ "executionBaseHead": "38b73c966462c002c57212c4f3115eba6abc633e",
+ "claimBoundary": "Synthetic browser transport, fresh-store persistence and presentation observations only. No policy correctness, permission enforcement, artifact approval, durable intent, exactly-once, W05/R2 exit, real-provider R3, R4 recovery/backup/restore or two-connection proof. Returned decision labels are recorded data, not asserted correct.",
+ "clocks": {
+  "workerIntakeAndBuildStartUtc": "2026-10-14T06:24:26Z",
+  "runtimeRunStartUtc": "2026-10-14T06:31:47Z",
+  "runtimeRunEndUtc": "2026-10-14T06:33:54Z",
+  "runtimeElapsedSeconds": 126.6,
+  "buildHardLimitUtc": "2026-10-14T07:54:26Z",
+  "note": "final return time recorded in the return packet"
+ },
+ "counters": {
+  "runtimeRuns": 1,
+  "repairAttempts": 0,
+  "exportPostTotal": 3,
+  "exportPostCap": 3,
+  "evaluateAttemptedAtProxy": 3,
+  "evaluateForwardedCompleted": 2,
+  "forwardedCap": 2,
+  "providerStarts": 0,
+  "nativeUsageBilling": "UNKNOWN"
+ },
+ "runtimeCommand": "python -B scripts/probe_cvf_q001_synthetic_system_chain.py --engine-docker-image sha256:a0725d62d5cfa8fc47b5e30be04bc08ea714a9cdd72c259595526f691db95294 --configured-receipt-browser-composition",
+ "runtimeExit": 0,
+ "preflight": {
+  "productPinsVsDispatchJson": "14 raw pins matched (12 product + 2 harness at release); product drift 0 re-verified in runner",
+  "preImplementationGate": {
+   "cmd": "python -B governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base 38b73c966462c002c57212c4f3115eba6abc633e --head HEAD",
+   "exit": 0,
+   "result": "COMPLIANT pre-implementation autorun gate passed"
+  },
+  "image": [
+   "sha256:a0725d62d5cfa8fc47b5e30be04bc08ea714a9cdd72c259595526f691db95294",
+   "linux",
+   "amd64"
+  ],
+  "namespace": ".cvf/runtime/ncr-html-configured-receipt-20261014/worker/run-20261014T063147Z-200ddb",
+  "ports": {
+   "engineRelay": 57433,
+   "proxy": 57434,
+   "web": 57435
+  },
+  "credentialLikeEnvNamesCleared": [
+   "ALIBABA_API_KEY",
+   "ALIBABA_BASE_URL",
+   "CLAUDE_CODE_MESSAGING_TOKEN",
+   "NODE_TLS_REJECT_UNAUTHORIZED"
+  ],
+  "engineContainer": {
+   "credentialEnvNames": [
+    "CVF_GOVERNANCE_LEDGER_PATH",
+    "LANG",
+    "GPG_KEY",
+    "PYTHON_VERSION",
+    "PYTHON_SHA256",
+    "PYTHONDONTWRITEBYTECODE"
+   ],
+   "egressProbe": "BLOCKED",
+   "idPrefix": "dc09549b633c",
+   "internalNetwork": "cvf-ncr-hcr-net-8f9123aa",
+   "mounts": [
+    {
+     "dst": "/data",
+     "rw": true
+    },
+    {
+     "dst": "/engine",
+     "rw": false
+    }
+   ],
+   "networks": [
+    "cvf-ncr-hcr-net-8f9123aa"
+   ],
+   "relay": "same image, no mounts, no credentials; bridge plus internal network; forwards loopback port to engine"
+  },
+  "preflightEgress": {
+   "loadedProcesses": 2,
+   "serverPids": 1,
+   "serverSelftestDenied": 1
+  },
+  "freshStoreEmptyBeforeFirstExport": true
+ },
+ "REQ-01": {
+  "proofKind": "COMMAND",
+  "observation": {
+   "attemptId": "artifact-proof-transfer-aa3ecb08-d931-4dae-976f-618cc373ead3-1791959615780",
+   "authMode": "session",
+   "filename": "hcr-browser-packet-one.html",
+   "governanceState": "DRAFT_UNACCEPTED",
+   "htmlBytes": 2748,
+   "htmlSha256": "2bff62bffeb8efbd9c0910d1687746314ae5c1620268b8a2e5ad5aec4ba1400e",
+   "httpStatus": 200,
+   "receiptAnchor": "transfer-aa3ecb08-d931-4dae-976f-618cc373ead3",
+   "receiptDecision": "ALLOW",
+   "receiptId": "artifact-proof-transfer-aa3ecb08-d931-4dae-976f-618cc373ead3-1791959615780",
+   "receiptPresent": true,
+   "receiptStatus": "PRESENT",
+   "routeDecision": "ALLOW",
+   "sourceTrimmedSha256": "2286649484e1da8ab151c7c73c09d3f656505b2814d9f45a87154eb7b51c4b21",
+   "submittedFields": true,
+   "success": true,
+   "visibleNote": "governance-receipt-evaluated-note",
+   "wireBytes": 4850,
+   "wireSha256": "bb1156d374e1e55cd9302e86a49b5afae00ccfa13d0cceb52d3c40952b700d8f"
+  },
+  "associations": {
+   "attemptEqualsReceiptId": true,
+   "visibleNote": "governance-receipt-evaluated-note",
+   "draftState": "DRAFT_UNACCEPTED"
+  },
+  "note": "auth/route/receipt decision labels recorded as data"
+ },
+ "REQ-02": {
+  "proofKind": "COMMAND",
+  "sqlite": {
+   "finalCount": 2,
+   "finalRequestIds": [
+    "artifact-proof-transfer-aa3ecb08-d931-4dae-976f-618cc373ead3-1791959615780",
+    "artifact-proof-transfer-aa3ecb08-d931-4dae-976f-618cc373ead3-1791959618104"
+   ],
+   "attemptIds": [
+    "artifact-proof-transfer-aa3ecb08-d931-4dae-976f-618cc373ead3-1791959615780",
+    "artifact-proof-transfer-aa3ecb08-d931-4dae-976f-618cc373ead3-1791959618104"
+   ],
+   "readMode": "native sqlite3 URI mode=ro",
+   "tipHash": "919811eb7ed1dcd66c6f0cd477c265a00735754f240a4079dd2d1ce4c5183ba9",
+   "samples": 311,
+   "sampleErrors": 0,
+   "maxCountObserved": 2,
+   "firstRowJsonHashesSeen": [
+    "290818348b100a07a9751b9c28abdf25c96ff04523ac14d67f879b2eed1cfcca"
+   ]
+  },
+  "joins": [
+   {
+    "attemptId": "artifact-proof-transfer-aa3ecb08-d931-4dae-976f-618cc373ead3-1791959615780",
+    "engineArtifactId": "transfer-aa3ecb08-d931-4dae-976f-618cc373ead3",
+    "engineDecisionLabel": "ALLOW",
+    "engineRequestId": "artifact-proof-transfer-aa3ecb08-d931-4dae-976f-618cc373ead3-1791959615780",
+    "ledgerAttached": true,
+    "orchestratorBlockHash": "44dd5de41d489d1d6aabc8f8385de9e087dc3242b76d972734b093d5f3030c97",
+    "panelReceiptAnchor": "transfer-aa3ecb08-d931-4dae-976f-618cc373ead3",
+    "rowJson": {
+     "event": {
+      "cvf_phase": "REVIEW",
+      "cvf_risk_level": "R0",
+      "decision": {
+       "evaluated_at": "2026-10-14T06:33:35.883078",
+       "final_decision": "ALLOW",
+       "risk_score": 0.0,
+       "triggered_rules": []
+      },
+      "request_id": "artifact-proof-transfer-aa3ecb08-d931-4dae-976f-618cc373ead3-1791959615780",
+      "timestamp": "2026-10-14T06:33:35.883219"
+     },
+     "hash": "44dd5de41d489d1d6aabc8f8385de9e087dc3242b76d972734b093d5f3030c97",
+     "previous_hash": "GENESIS",
+     "timestamp": "2026-10-14T06:33:35.920836"
+    },
+    "sqlRowsWithRequestId": 1
+   },
+   {
+    "attemptId": "artifact-proof-transfer-aa3ecb08-d931-4dae-976f-618cc373ead3-1791959618104",
+    "engineArtifactId": "transfer-aa3ecb08-d931-4dae-976f-618cc373ead3",
+    "engineDecisionLabel": "ALLOW",
+    "engineRequestId": "artifact-proof-transfer-aa3ecb08-d931-4dae-976f-618cc373ead3-1791959618104",
+    "ledgerAttached": true,
+    "orchestratorBlockHash": "919811eb7ed1dcd66c6f0cd477c265a00735754f240a4079dd2d1ce4c5183ba9",
+    "panelReceiptAnchor": "transfer-aa3ecb08-d931-4dae-976f-618cc373ead3",
+    "rowJson": {
+     "event": {
+      "cvf_phase": "REVIEW",
+      "cvf_risk_level": "R0",
+      "decision": {
+       "evaluated_at": "2026-10-14T06:33:38.127830",
+       "final_decision": "ALLOW",
+       "risk_score": 0.0,
+       "triggered_rules": []
+      },
+      "request_id": "artifact-proof-transfer-aa3ecb08-d931-4dae-976f-618cc373ead3-1791959618104",
+      "timestamp": "2026-10-14T06:33:38.127862"
+     },
+     "hash": "919811eb7ed1dcd66c6f0cd477c265a00735754f240a4079dd2d1ce4c5183ba9",
+     "previous_hash": "44dd5de41d489d1d6aabc8f8385de9e087dc3242b76d972734b093d5f3030c97",
+     "timestamp": "2026-10-14T06:33:38.174963"
+    },
+    "sqlRowsWithRequestId": 1
+   }
+  ],
+  "artifactIdSource": "engine response observed at the proxy, joined by identical request_id; not searched in SQLite",
+  "eventFieldsInRow": "request_id, decision, timestamp, cvf_phase, cvf_risk_level (CoreOrchestrator.execute L196-208 read)"
+ },
+ "REQ-03": {
+  "proofKind": "COMMAND",
+  "versions": {
+   "build1": {
+    "bytes": 2748,
+    "filename": "hcr-browser-packet-one.html",
+    "previewHeadingMatches": true,
+    "previewMarkerVisible": true,
+    "routeHtmlEqualsDownload": true,
+    "sha256": "2bff62bffeb8efbd9c0910d1687746314ae5c1620268b8a2e5ad5aec4ba1400e"
+   },
+   "build2": {
+    "bytes": 2771,
+    "filename": "hcr-unsent-later-edit.html",
+    "previewHeadingMatches": true,
+    "routeHtmlEqualsDownload": true,
+    "sha256": "957f11a3323e21db4a88dcc56f7befe75ef806c181d2eac2cc92cb0d54154057"
+   }
+  },
+  "hashes": {
+   "build1": {
+    "wireSha256": "bb1156d374e1e55cd9302e86a49b5afae00ccfa13d0cceb52d3c40952b700d8f",
+    "htmlSha256": "2bff62bffeb8efbd9c0910d1687746314ae5c1620268b8a2e5ad5aec4ba1400e",
+    "sourceTrimmedSha256": "2286649484e1da8ab151c7c73c09d3f656505b2814d9f45a87154eb7b51c4b21"
+   },
+   "build2": {
+    "wireSha256": "1b4d6d89ee055abe438a98667de0638c68d9d02c09d6deb77d8e74ddb37ef810",
+    "htmlSha256": "957f11a3323e21db4a88dcc56f7befe75ef806c181d2eac2cc92cb0d54154057",
+    "sourceTrimmedSha256": "1c6bf419c93a29526c01af94df708d53561820836aea83779c8593b49998c8af"
+   }
+  },
+  "unsentSourceInDownloads": false
+ },
+ "REQ-04": {
+  "proofKind": "COMMAND",
+  "stale": {
+   "exportPostsBeforeRebuild": 1,
+   "oldDownload": {
+    "bytes": 2748,
+    "filename": "hcr-browser-packet-one.html",
+    "sha256": "2bff62bffeb8efbd9c0910d1687746314ae5c1620268b8a2e5ad5aec4ba1400e"
+   },
+   "previewRetained": true,
+   "versionState": "stale"
+  },
+  "rebuild": {
+   "build1AttemptId": "artifact-proof-transfer-aa3ecb08-d931-4dae-976f-618cc373ead3-1791959615780",
+   "build2AttemptId": "artifact-proof-transfer-aa3ecb08-d931-4dae-976f-618cc373ead3-1791959618104",
+   "distinct": true,
+   "versionState": "current",
+   "exportPostsAfterRebuild": 2
+  },
+  "sqlWindows": {
+   "fallback": {
+    "from": "engine-stopped",
+    "max": 2,
+    "min": 2,
+    "samples": 9,
+    "to": "build-3-end"
+   },
+   "reset": {
+    "from": "reset-start",
+    "max": 2,
+    "min": 2,
+    "samples": 24,
+    "to": "reset-end"
+   },
+   "stale": {
+    "from": "stale-edit-start",
+    "max": 1,
+    "min": 1,
+    "samples": 8,
+    "to": "stale-window-end"
+   }
+  },
+  "firstRowJsonUnchanged": true,
+  "scopeNote": "finite observed no-extra-post/row check; not idempotency or exactly-once"
+ },
+ "REQ-05": {
+  "proofKind": "COMMAND",
+  "observation": {
+   "deselectReselectReset": true,
+   "exportPostsAfterReset": 2,
+   "otherFixtureReset": true,
+   "priorPacketShownAsCurrent": false,
+   "reloadLossWarningObserved": false,
+   "reloadReset": true
+  },
+  "sqlWindow": {
+   "from": "reset-start",
+   "max": 2,
+   "min": 2,
+   "samples": 24,
+   "to": "reset-end"
+  },
+  "sqlCountStaysTwo": true
+ },
+ "REQ-06": {
+  "proofKind": "COMMAND",
+  "observation": {
+   "absentNoteVisible": true,
+   "attemptId": "artifact-proof-transfer-aa3ecb08-d931-4dae-976f-618cc373ead3-1791959623073",
+   "attemptIdVisible": true,
+   "authMode": "session",
+   "download": {
+    "bytes": 3082,
+    "filename": "hcr-engine-down-packet.html",
+    "sha256": "244129ea34bf50842312087dc3a3fe17c56d4867541cefc098474023f29492ef"
+   },
+   "exportPostsTotal": 3,
+   "filename": "hcr-engine-down-packet.html",
+   "governanceState": "DRAFT_UNACCEPTED",
+   "htmlBytes": 3082,
+   "htmlSha256": "244129ea34bf50842312087dc3a3fe17c56d4867541cefc098474023f29492ef",
+   "httpStatus": 200,
+   "receiptAnchor": "transfer-aa3ecb08-d931-4dae-976f-618cc373ead3",
+   "receiptPresent": false,
+   "receiptStatus": "TIMED_OUT",
+   "routeDecision": "ALLOW",
+   "sourceTrimmedSha256": "e143aec3cf5d0518e17b6ddc6ff5e2d5e66b9d67a611c21fe8544f37939d4eb5",
+   "success": true,
+   "wireBytes": 5117,
+   "wireSha256": "86665d73ede9a743b6f1fbd06d4c92ef8a8c21b853921f54cda4c692f230aee8"
+  },
+  "ipc": {
+   "engineStoppedAtMs": 1791959622942,
+   "error": null,
+   "other": [],
+   "stopRequests": 1
+  },
+  "proxy": {
+   "evaluateAttempted": 3,
+   "forwardFailures": 1,
+   "forwardedCompleted": 2,
+   "mode": "forward"
+  },
+  "sqlWindow": {
+   "from": "engine-stopped",
+   "max": 2,
+   "min": 2,
+   "samples": 9,
+   "to": "build-3-end"
+  },
+  "actualFailureStatus": "TIMED_OUT",
+  "note": "engine container stopped by finite IPC after two finished exports; proxy stayed in forward mode; third evaluate reached the proxy and failed downstream (forwardFailures 1), no completed forward and no third row"
+ },
+ "REQ-07": {
+  "proofKind": "COMMAND",
+  "egress": {
+   "browserExternalRequests": [
+    {
+     "category": "passive-font-asset",
+     "method": "GET"
+    },
+    {
+     "category": "passive-font-asset",
+     "method": "GET"
+    }
+   ],
+   "loopbackPortsSeen": [
+    57434,
+    57435
+   ],
+   "providerStarts": 0,
+   "serverDeniedByCategory": {
+    "other-external": 1
+   }
+  },
+  "browser": {
+   "browserVersion": "145.0.7632.6",
+   "exportPostCount": 3,
+   "externalRequests": [
+    {
+     "category": "passive-font-asset",
+     "method": "GET"
+    },
+    {
+     "category": "passive-font-asset",
+     "method": "GET"
+    }
+   ],
+   "observedBrowserAiPosts": []
+  },
+  "proxy": {
+   "evaluateAttempted": 3,
+   "forwardFailures": 1,
+   "forwardedCompleted": 2,
+   "mode": "forward"
+  },
+  "cleanup": {
+   "ownedDockerObjectsRemaining": [],
+   "portsListening": []
+  },
+  "serverDeniedDisclosure": "one blocked server-side TCP attempt at Next start-server startup, category other-external, destination not recorded by design; provider/AI category 0; nature UNKNOWN (likely framework metadata), reviewer to judge",
+  "relayDisclosure": "engine is only on the internal network; a minimal same-image relay container (no mounts, no credentials) on bridge plus internal network publishes the loopback port because published ports do not work from an --internal network (curl exit 7 observed in a feasibility check)",
+  "feasibilityCheck": "one throwaway container on an --internal network confirmed host unreachable via -p and egress BLOCKED; removed; no export, no evaluate, no store"
+ },
+ "staticChecks": {
+  "pythonAst": "ok",
+  "nodeCheck": "ok",
+  "pythonLines": 746,
+  "pythonLineCap": 750,
+  "browserHelperLines": 339,
+  "browserHelperCap": 450,
+  "legacyBranchInspection": "git diff -U0: only removed line is the argv destructuring in main (extended with mode); default and --browser-export-only branches otherwise untouched; ProxyHandler gained counters and an OSError drop branch used only when the engine is unreachable"
+ },
+ "custodyFiles": [
+  {
+   "path": ".cvf/runtime/ncr-html-configured-receipt-20261014/worker/run-20261014T063147Z-200ddb/custody/browser.json",
+   "bytes": 6245,
+   "sha256": "b88a2630bf3b5c2a80acd910a34673f03050534154ef4d7e149c4ca3390cb81f"
+  },
+  {
+   "path": ".cvf/runtime/ncr-html-configured-receipt-20261014/worker/run-20261014T063147Z-200ddb/custody/build1-decoded.html",
+   "bytes": 2748,
+   "sha256": "2bff62bffeb8efbd9c0910d1687746314ae5c1620268b8a2e5ad5aec4ba1400e"
+  },
+  {
+   "path": ".cvf/runtime/ncr-html-configured-receipt-20261014/worker/run-20261014T063147Z-200ddb/custody/build1-download.html",
+   "bytes": 2748,
+   "sha256": "2bff62bffeb8efbd9c0910d1687746314ae5c1620268b8a2e5ad5aec4ba1400e"
+  },
+  {
+   "path": ".cvf/runtime/ncr-html-configured-receipt-20261014/worker/run-20261014T063147Z-200ddb/custody/build1-route.json",
+   "bytes": 4850,
+   "sha256": "bb1156d374e1e55cd9302e86a49b5afae00ccfa13d0cceb52d3c40952b700d8f"
+  },
+  {
+   "path": ".cvf/runtime/ncr-html-configured-receipt-20261014/worker/run-20261014T063147Z-200ddb/custody/build2-decoded.html",
+   "bytes": 2771,
+   "sha256": "957f11a3323e21db4a88dcc56f7befe75ef806c181d2eac2cc92cb0d54154057"
+  },
+  {
+   "path": ".cvf/runtime/ncr-html-configured-receipt-20261014/worker/run-20261014T063147Z-200ddb/custody/build2-download.html",
+   "bytes": 2771,
+   "sha256": "957f11a3323e21db4a88dcc56f7befe75ef806c181d2eac2cc92cb0d54154057"
+  },
+  {
+   "path": ".cvf/runtime/ncr-html-configured-receipt-20261014/worker/run-20261014T063147Z-200ddb/custody/build2-route.json",
+   "bytes": 4873,
+   "sha256": "1b4d6d89ee055abe438a98667de0638c68d9d02c09d6deb77d8e74ddb37ef810"
+  },
+  {
+   "path": ".cvf/runtime/ncr-html-configured-receipt-20261014/worker/run-20261014T063147Z-200ddb/custody/build3-decoded.html",
+   "bytes": 3082,
+   "sha256": "244129ea34bf50842312087dc3a3fe17c56d4867541cefc098474023f29492ef"
+  },
+  {
+   "path": ".cvf/runtime/ncr-html-configured-receipt-20261014/worker/run-20261014T063147Z-200ddb/custody/build3-download.html",
+   "bytes": 3082,
+   "sha256": "244129ea34bf50842312087dc3a3fe17c56d4867541cefc098474023f29492ef"
+  },
+  {
+   "path": ".cvf/runtime/ncr-html-configured-receipt-20261014/worker/run-20261014T063147Z-200ddb/custody/build3-route.json",
+   "bytes": 5117,
+   "sha256": "86665d73ede9a743b6f1fbd06d4c92ef8a8c21b853921f54cda4c692f230aee8"
+  },
+  {
+   "path": ".cvf/runtime/ncr-html-configured-receipt-20261014/worker/run-20261014T063147Z-200ddb/custody/runner-result.json",
+   "bytes": 13069,
+   "sha256": "cb2a05d35bac8384c72576cd8d407b3068906a4c160bd0c7234dd32c10aa74b4"
+  },
+  {
+   "path": ".cvf/runtime/ncr-html-configured-receipt-20261014/worker/run-20261014T063147Z-200ddb/custody/stale-download.html",
+   "bytes": 2748,
+   "sha256": "2bff62bffeb8efbd9c0910d1687746314ae5c1620268b8a2e5ad5aec4ba1400e"
+  },
+  {
+   "path": ".cvf/runtime/ncr-html-configured-receipt-20261014/worker/run-20261014T063147Z-200ddb/logs/egress.jsonl",
+   "bytes": 2882,
+   "sha256": "66fe7b9363ee39ae0db432bf9e92712e752936a1a6932a9a5d628c073718c157"
+  },
+  {
+   "path": ".cvf/runtime/ncr-html-configured-receipt-20261014/worker/run-20261014T063147Z-200ddb/logs/engine.log",
+   "bytes": 396,
+   "sha256": "7eaa2117535e9becd5e2b4c24b758f863cdae93dccb565c77839ee6e26d2008f"
+  },
+  {
+   "path": ".cvf/runtime/ncr-html-configured-receipt-20261014/worker/run-20261014T063147Z-200ddb/logs/helper.stderr.log",
+   "bytes": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+   "path": ".cvf/runtime/ncr-html-configured-receipt-20261014/worker/run-20261014T063147Z-200ddb/logs/relay.log",
+   "bytes": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+   "path": ".cvf/runtime/ncr-html-configured-receipt-20261014/worker/run-20261014T063147Z-200ddb/logs/web.log",
+   "bytes": 2252,
+   "sha256": "9f885eb8ba29d6cb8a10105e1dc8b1e6549547b8d3a1a1f7e634b2a91263b5cb"
+  },
+  {
+   "path": ".cvf/runtime/ncr-html-configured-receipt-20261014/worker/run-20261014T063147Z-200ddb/egress-preload.cjs",
+   "bytes": 2101,
+   "sha256": "8ade0c789d290a659449aa126f3ce069694921879e07f4108f2725a0f3078ac3"
+  }
+ ],
+ "runLogs": [
+  {
+   "path": ".cvf/runtime/ncr-html-configured-receipt-20261014/worker/logs/pre-implementation.log",
+   "sha256": "ea3fb91f5f8a85bfedbe6299240ee2ec3567e62c9cd71942763193d9f04b776a"
+  },
+  {
+   "path": ".cvf/runtime/ncr-html-configured-receipt-20261014/worker/logs/run1.stdout.json",
+   "sha256": "58b6910d6b609369bd916fcc80723a5e95e441724d418c5923edf284f7990e5f"
+  },
+  {
+   "path": ".cvf/runtime/ncr-html-configured-receipt-20261014/worker/logs/run1.stderr.log",
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+   "path": ".cvf/runtime/ncr-html-configured-receipt-20261014/worker/logs/run1.exit",
+   "sha256": "19eaf43821a7660ec323a87c8457bf74823beb296c39f5e01aa8a683aa50f061"
+  }
+ ],
+ "gates": {
+  "workerReturnFast": "PENDING",
+  "acceptanceLedger": "PENDING"
+ },
+ "changedSet": [
+  "scripts/probe_cvf_q001_synthetic_system_chain.py",
+  "scripts/probe_cvf_w05_browser_chain.cjs",
+  "docs/reviews/CVF_NCR_HTML_CONFIGURED_RECEIPT_WORKER_RETURN_2026-10-14.md",
+  "docs/reviews/evidence/ncr-html-configured-receipt-worker-20261014.json"
+ ],
+ "independentProbe": "PENDING_REVIEWER_EXECUTION",
+ "unknowns": [
+  "native token/usage/billing",
+  "nature of the single blocked server startup outbound attempt",
+  "whether the UI should disclose reload loss (observed: no warning text)",
+  "WAL read-only sampling coherence across the Docker bind mount beyond sampleErrors 0"
+ ]
+}

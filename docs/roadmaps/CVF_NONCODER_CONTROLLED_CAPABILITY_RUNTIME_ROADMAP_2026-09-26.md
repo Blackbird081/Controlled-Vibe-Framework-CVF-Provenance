@@ -5,7 +5,7 @@ docType: roadmap
 Status: ACCEPTED_UNIFIED_ROADMAP_LOCAL_CONSUMER_BOUNDED_FULL_PILOT_OPEN
 Date: 2026-09-26
 Program ID: CVF-NCR
-Version: 2.14
+Version: 2.15
 Revision disposition: LOCAL_CONSUMER_MAINTENANCE_ACCEPTED_BOUNDED; END_TO_END_PILOT_OPEN; Q001_AND_P11_CHECKPOINTS_RETAINED
 Decision owner: operator về định hướng/phạm vi; Local reviewer về đối chiếu kỹ thuật và nghiệm thu.
 
@@ -21,6 +21,8 @@ Current delivery projection reviewed at source HEAD `429d92760d9615a3200131f51fb
 **Nearest milestone:** current selected HTML transport composition before separately admitted live governance/pilot proof. Local source disposition: `docs/assessments/CVF_NCR_SELECTED_PILOT_CONVERGENCE_LOCAL_DISPOSITION_2026-10-14.md`; paired finite harness work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_CONFIGURED_RECEIPT_2026-10-14.md`. A zero-provider mechanical result cannot close full R2/W05 pre-live admission or R3.
 
 **2026-10-14 source convergence disposition:** twenty named source bindings verified at review HEAD; original2 returned files preserved. Rich browser assertions and configured receipt proof remain separate. Current engine event has request_id/decision/timestamp, not artifact_id or the500-character evaluate payload; join SQL request ID to engine response artifact ID. D015 current locators corrected without changing Q008. Durable intent and A07 independent-connection proof stay open. Owned fresh synthetic configuration does not certify actual profile, data/custody, walkthrough, business acceptance or retention/cost. Proposed45-90/20-40minute costs are estimates; usage/billing UNKNOWN. R1/R2 partial; R3/R4 open; R5/R6 deferred.
+
+**Configured HTML primary review, 2026-10-14:** `docs/reviews/CVF_NCR_HTML_CONFIGURED_RECEIPT_COMPLETION_2026-10-14.md` retains six mechanical cases and verifies original4/22 custody bindings plus twelve product pins. Local independent fresh configured browser/request-row/download/stale/decoy probe PASS92.73s, one export/evaluate,2734-byte identity, provider0. Full REQ-07 acceptance is rejected: relay egress, missing startup destination/stop disposition, effect caps/IPC/shared legacy exception and cleanup controls need one consolidated harness repair. Primary3 exports/2 completed evaluates plus Local1/1 are historical consumed counters, all primary runtime authority retired. Next finite control repair must use a fresh paired release; no automatic retry, provider grant, pilot/phase exit or new capability. Actual-profile/data/custody/business acceptance and durable intent/A07 remain open.
 
 | Stage | Accepted evidence / scope | Remaining exit gap |
 |---|---|---|
@@ -76,7 +78,7 @@ Luna max reviewed read-only; Local owns implementation/decision. Procedure PARTI
 Small direct lifecycle route, no work-order fulfillment claim or new implementation-model observation;26 retained. Offline UI only; OS clipboard writes are not cancelled.
 **Accepted finite contribution - PDF/Word failure feedback, 2026-10-13:**
 `docs/reviews/CVF_NCR_RESULT_EXPORT_FEEDBACK_COMPLETION_2026-10-13.md` accepts safe localized EN/VI alerts outside the menu and direct own-format retry; result/receipt retained. SourceRED10failed/57passed -> final67/67, type/scoped lint child0, bound finalfast/ledger PASS consumed; Root full source/test matrix, no product repair or duplicate suite. Existing run-keyed body/latest-token checks isolate late and competing completions. ResultViewer941 ->837 lines,104 net reduction into cohesive helper. Original failures and preparation PARTIAL_WITH_REASON retained; GC-051 new helper/test registered NOT_STARTED. Browser download initiation only, no OS persistence. Historical26 observations retained; no model comparison/provider call. R1/R2 partial, R3/R4 open, R5/R6 deferred; real-data/send/B2/P11/public/deploy parked. Public Export Disposition: DEFERRED_PRIVATE_ONLY.
-**Next selection:** source review accepted with qualifications at `docs/assessments/CVF_NCR_SELECTED_PILOT_CONVERGENCE_LOCAL_DISPOSITION_2026-10-14.md`; prepare/release one finite configured HTML browser/receipt/request-row/byte composition under `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_CONFIGURED_RECEIPT_2026-10-14.md`. Transport/persistence/presentation only; no live governance-policy or full W05/R2/R3 claim. No automatic successor or provider grant.
+**Next selection:** primary control acceptance requires rework at `docs/reviews/CVF_NCR_HTML_CONFIGURED_RECEIPT_COMPLETION_2026-10-14.md`; prepare one consolidated existing-harness control repair, with explicit isolated topology, pre-effect budgets/unknown classification and owned cleanup. Preserve six mechanical cases and Local authenticity PASS; no broad replay or full W05/R2/R3 claim.
 Whole job/full/browser/backend/provider/R3/R4 remain open.
 
 Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11 remain
