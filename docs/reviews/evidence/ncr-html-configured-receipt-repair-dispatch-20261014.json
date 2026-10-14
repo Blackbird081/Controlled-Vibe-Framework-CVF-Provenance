@@ -1,0 +1,162 @@
+{
+  "documentKind": "NCR_HTML_CONFIGURED_RECEIPT_CONTROL_REPAIR_DISPATCH",
+  "status": "SOURCE_PINNED_CONDITIONAL_DISPATCH_PLAN",
+  "batchId": "CVF-NCR-HTML-CONFIGURED-RECEIPT-REPAIR-20261014",
+  "inspectionBaseHead": "c60045a0a1656e608fd0e58102e0d48ef4b48b91",
+  "parentAssignmentId": "CVF-NCR-HTML-CONFIGURED-RECEIPT-20261014",
+  "primaryQualityReview": "docs/reviews/CVF_NCR_HTML_CONFIGURED_RECEIPT_COMPLETION_2026-10-14.md",
+  "priorFindingSetDigest": "aa150551a3e49140a7db2e4de323e1fb1ec2a780bfb360861ae0f9615e162d9c",
+  "reworkGeneration": 1,
+  "sourcePins": [
+    {
+      "path": "scripts/probe_cvf_q001_synthetic_system_chain.py",
+      "rawSha256": "39590e088b89b150e385ac85aed1ab0a3f032864128e7893d4b6efb04c70505c",
+      "gitBlobSha256": "39590e088b89b150e385ac85aed1ab0a3f032864128e7893d4b6efb04c70505c",
+      "physicalLines": 746
+    },
+    {
+      "path": "scripts/probe_cvf_w05_browser_chain.cjs",
+      "rawSha256": "ebe28cb8319410810261bc685eca52b7bb7b81205af5cacd8f2da8f3a6c735e7",
+      "gitBlobSha256": "ebe28cb8319410810261bc685eca52b7bb7b81205af5cacd8f2da8f3a6c735e7",
+      "physicalLines": 339
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/page.tsx",
+      "rawSha256": "0ed365b59324bb836d8ec56cba143df941e7a7f8dfa11b841b28a68212f1b35d",
+      "gitBlobSha256": "0ed365b59324bb836d8ec56cba143df941e7a7f8dfa11b841b28a68212f1b35d",
+      "physicalLines": 313
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.tsx",
+      "rawSha256": "efc5839896236dacc7b37e145fda9904a9513bea434b3ff5c8bcd81652e9ea3e",
+      "gitBlobSha256": "0b1005a456c2e400d0f9ae1323351716bf877ca4ff83ca1941e6f786356c27d8",
+      "physicalLines": 941
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/route.ts",
+      "rawSha256": "a17ddd57882be1e58a86fb1d86bea8a2693f1169f5ba0c8b6da2af75d7f024ae",
+      "gitBlobSha256": "22f08a7ed8a4a4eb06c63bde244c0e2e9f752758bb6f48acbfb12bf57a2862f1",
+      "physicalLines": 376
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/proof.ts",
+      "rawSha256": "fbdcc3a434eea13842c9f692d2b54cc9955e80d8c8777d9dfaa14cace9cdfcaf",
+      "gitBlobSha256": "fbdcc3a434eea13842c9f692d2b54cc9955e80d8c8777d9dfaa14cace9cdfcaf",
+      "physicalLines": 160
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/governance/evaluate/route.ts",
+      "rawSha256": "b232dcbdfb1a5ec7982e2ed35caf1e9313dec553a3dcf5752576cc110955c1cb",
+      "gitBlobSha256": "b232dcbdfb1a5ec7982e2ed35caf1e9313dec553a3dcf5752576cc110955c1cb",
+      "physicalLines": 94
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/governance-engine.ts",
+      "rawSha256": "48d3252df6614866b3fe84904a0c0f4bd6528d42f1da76543a0db76947494dde",
+      "gitBlobSha256": "48d3252df6614866b3fe84904a0c0f4bd6528d42f1da76543a0db76947494dde",
+      "physicalLines": 233
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/route-governance-proof.ts",
+      "rawSha256": "17c19ccc4e31d5e068b728304e4a0970ddc072a9711460dd62b859f3ade15b6e",
+      "gitBlobSha256": "17c19ccc4e31d5e068b728304e4a0970ddc072a9711460dd62b859f3ade15b6e",
+      "physicalLines": 262
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/ledger_layer/sqlite_ledger.py",
+      "rawSha256": "df353a92b3adead1ed5cf00d7128ba9039c573e0441b819118094ec77c4c4ce5",
+      "gitBlobSha256": "df353a92b3adead1ed5cf00d7128ba9039c573e0441b819118094ec77c4c4ce5",
+      "physicalLines": 435
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/core_orchestrator.py",
+      "rawSha256": "9d35ed87fafeb5a21814f94dbdd7db8e2e96ab430eb300f5f2a1ae77faa85a69",
+      "gitBlobSha256": "ee7c4b81d7d4ed0956fed535f095ff216cfabcf786147c8f9feac983e3c63190",
+      "physicalLines": 265
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/api/server.py",
+      "rawSha256": "b557d28703c22353c74de170e5eb9151e73fa216a44fb3af39935b92da055bd6",
+      "gitBlobSha256": "3f8ab3f8ab336488398d54686611950c0a0efa155ff1cb5168f34475bcd812dd",
+      "physicalLines": 295
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/admin/audit/route.ts",
+      "rawSha256": "83c83600655cd5637bdebc5fc6fac3ff67573a2a42c9b0ec4c8ca57f6cda614d",
+      "gitBlobSha256": "83c83600655cd5637bdebc5fc6fac3ff67573a2a42c9b0ec4c8ca57f6cda614d",
+      "physicalLines": 45
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/ncr-work-transfer-browser.spec.ts",
+      "rawSha256": "a7c4d8379cb3552bd037bf8b2e1577501d5a38d1ec0374aa107a163b4336847c",
+      "gitBlobSha256": "a7c4d8379cb3552bd037bf8b2e1577501d5a38d1ec0374aa107a163b4336847c",
+      "physicalLines": 392
+    },
+    {
+      "path": "docs/reviews/CVF_NCR_HTML_CONFIGURED_RECEIPT_WORKER_RETURN_2026-10-14.md",
+      "rawSha256": "53b97dd0dff1004f2c73038335ffe9a6a75ea5fc14a159e431654706e719efe0",
+      "gitBlobSha256": "53b97dd0dff1004f2c73038335ffe9a6a75ea5fc14a159e431654706e719efe0",
+      "physicalLines": 328
+    },
+    {
+      "path": "docs/reviews/evidence/ncr-html-configured-receipt-worker-20261014.json",
+      "rawSha256": "499bc23435e10a893acccc4e45ba63d17a40d1a83a3e2a909f28938f22934968",
+      "gitBlobSha256": "499bc23435e10a893acccc4e45ba63d17a40d1a83a3e2a909f28938f22934968",
+      "physicalLines": 529
+    },
+    {
+      "path": "docs/reviews/CVF_NCR_HTML_CONFIGURED_RECEIPT_COMPLETION_2026-10-14.md",
+      "rawSha256": "62fcfd1fffe39edb30c858b741141889f48e7442719907835f184b258d00216b",
+      "gitBlobSha256": "036ccf48979a09aefbcc14570abbd0020db275aa58eb243eb1fe93b0bbd7c100",
+      "physicalLines": 223
+    },
+    {
+      "path": "docs/reviews/evidence/ncr-html-configured-receipt-local-20261014.json",
+      "rawSha256": "aa150551a3e49140a7db2e4de323e1fb1ec2a780bfb360861ae0f9615e162d9c",
+      "gitBlobSha256": "39e2debaef2378b0d4b63408107088ef5b2563cae77ceee61b2725d928646990",
+      "physicalLines": 637
+    }
+  ],
+  "frozenPrimaryPaths": [
+    "docs/reviews/CVF_NCR_HTML_CONFIGURED_RECEIPT_WORKER_RETURN_2026-10-14.md",
+    "docs/reviews/evidence/ncr-html-configured-receipt-worker-20261014.json"
+  ],
+  "workerPaths": [
+    "scripts/probe_cvf_q001_synthetic_system_chain.py",
+    "scripts/probe_cvf_w05_browser_chain.cjs",
+    "docs/reviews/CVF_NCR_HTML_CONFIGURED_RECEIPT_CONDITIONAL_RETURN_2026-10-14.md",
+    "docs/reviews/evidence/ncr-html-configured-receipt-conditional-worker-20261014.json"
+  ],
+  "engineDockerImage": "sha256:a0725d62d5cfa8fc47b5e30be04bc08ea714a9cdd72c259595526f691db95294",
+  "engineNetwork": "none",
+  "internetRelayAllowed": false,
+  "exportPostCeiling": 3,
+  "aliveEngineAttemptCeiling": 2,
+  "providerStartCeiling": 0,
+  "workerBuildMinutesCeiling": 90,
+  "harnessRepairAttemptsCeiling": 1,
+  "primaryBudgetsRetired": true,
+  "predecessorRawSha256": "53b97dd0dff1004f2c73038335ffe9a6a75ea5fc14a159e431654706e719efe0",
+  "estimatesNotMeasurements": {
+    "workerMinutes": [
+      45,
+      90
+    ],
+    "reviewerMinutes": [
+      20,
+      40
+    ]
+  },
+  "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
+  "claimBoundary": "one conditional test-control repair; no product/AI policy/live/governance/pilot/phase exit or old grant reset",
+  "preparationDisclosure": {
+    "firstReviewerFastExit": 1,
+    "finding": "generated REWORK scaffold placeholder fields duplicated explicit reviewer repair boundary; Local removed placeholder lines and bound parent assignment",
+    "log": ".cvf/runtime/ncr-request-cancellation-20261014/html-repair-packet-reviewer-fast.log",
+    "sha256": "8de04ff67380278395882e9956707bf0bdc7760b71fa211ea340607705dd3e55",
+    "workerCodeChangedByLocal": false
+  },
+  "primaryFrozenCustody": ".cvf/runtime/ncr-html-configured-receipt-20261014/local-review/frozen-worker",
+  "primaryScriptPathDisposition": "conditional-owned MODIFY; original raw preimages immutable in frozen custody",
+  "dispatcherPacketGapCorrection": "original literal pre-implementation command omitted --active-work-order; conditional literal command now binds it explicitly"
+}
