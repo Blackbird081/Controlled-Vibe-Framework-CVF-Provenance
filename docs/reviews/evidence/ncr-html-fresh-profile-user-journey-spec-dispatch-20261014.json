@@ -1,0 +1,553 @@
+{
+  "schemaVersion": "cvf.ncrHtmlJourneySpecDispatch.documentary.v1",
+  "status": "DOCUMENTARY_PAIR_PREPARED_RELEASE_REQUIRES_CONTINUITY_AND_BOUND_GATE",
+  "sourceHead": "a6366007f6761f23796f283e8d929c8b9db76952",
+  "batchId": "CVF-NCR-HTML-FRESH-PROFILE-USER-JOURNEY-SPEC-20261014",
+  "role": "LOCAL_INTERNAL_AGENT_DISPATCHER_REVIEWER",
+  "decisionOwner": "LOCAL",
+  "providerExecutionAuthority": "FORBIDDEN",
+  "workerInvocation": "NOT_STARTED_MANUAL_OPERATOR_TRANSFER",
+  "requestedConfigurationMetadata": "Claude Sonnet5.5 High; descriptive only; native identity/usage/billing UNKNOWN",
+  "dispatchPaths": [
+    "docs/baselines/CVF_GC018_NCR_HTML_FRESH_PROFILE_USER_JOURNEY_SPEC_2026-10-14.md",
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_FRESH_PROFILE_USER_JOURNEY_SPEC_2026-10-14.md",
+    "docs/reviews/evidence/ncr-html-fresh-profile-user-journey-spec-dispatch-20261014.json"
+  ],
+  "workerExactPaths": [
+    "docs/assessments/CVF_NCR_HTML_FRESH_PROFILE_USER_JOURNEY_SPEC_2026-10-14.md",
+    "docs/reviews/CVF_NCR_HTML_FRESH_PROFILE_USER_JOURNEY_SPEC_WORKER_RETURN_2026-10-14.md",
+    "docs/reviews/evidence/ncr-html-fresh-profile-user-journey-spec-worker-20261014.json"
+  ],
+  "sourcePins": [
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/artifacts/page.tsx",
+      "rawSha256": "651652d7ce7757503ca3126bba03889e9286152d4e788e181970a56dfe18b0ec",
+      "rawBytes": 7172,
+      "gitBlobSha256": "651652d7ce7757503ca3126bba03889e9286152d4e788e181970a56dfe18b0ec",
+      "gitBlob": "3bc5014406f638e3149f110e5326405260909e3a",
+      "readScope": "TARGETED_SECTIONS_NOT_FULL_CORPUS",
+      "locator": "starterRequest; ArtifactsPage; unconditional ArtifactExportPanel render",
+      "pinDisposition": "READ_ONLY_INPUT",
+      "capturedAtHead": "a6366007f6761f23796f283e8d929c8b9db76952",
+      "priorPinDisposition": "READ_ONLY_INPUT"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/page.tsx",
+      "rawSha256": "0ed365b59324bb836d8ec56cba143df941e7a7f8dfa11b841b28a68212f1b35d",
+      "rawBytes": 17439,
+      "gitBlobSha256": "0ed365b59324bb836d8ec56cba143df941e7a7f8dfa11b841b28a68212f1b35d",
+      "gitBlob": "a31508d4e5da71c950c718ef99a71b7459f736fb",
+      "readScope": "TARGETED_SECTIONS_NOT_FULL_CORPUS",
+      "locator": "recordToExportRequest; records/selectedRecord conditional panel; admin audit GET",
+      "pinDisposition": "READ_ONLY_INPUT",
+      "capturedAtHead": "a6366007f6761f23796f283e8d929c8b9db76952",
+      "priorPinDisposition": "READ_ONLY_INPUT"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/KnowledgeJourneyNav.tsx",
+      "rawSha256": "3c959fd5d940e525d49d595835af239baee6ede26820369eaa9426c1cb1f92a6",
+      "rawBytes": 3098,
+      "gitBlobSha256": "3c959fd5d940e525d49d595835af239baee6ede26820369eaa9426c1cb1f92a6",
+      "gitBlob": "e57e73c45d1797180859b52d88f3e0cf745512e0",
+      "readScope": "TARGETED_SECTIONS_NOT_FULL_CORPUS",
+      "locator": "steps4 /artifacts and5 /work-transfer",
+      "pinDisposition": "READ_ONLY_INPUT",
+      "capturedAtHead": "a6366007f6761f23796f283e8d929c8b9db76952",
+      "priorPinDisposition": "READ_ONLY_INPUT"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.tsx",
+      "rawSha256": "efc5839896236dacc7b37e145fda9904a9513bea434b3ff5c8bcd81652e9ea3e",
+      "rawBytes": 49819,
+      "gitBlobSha256": "0b1005a456c2e400d0f9ae1323351716bf877ca4ff83ca1941e6f786356c27d8",
+      "gitBlob": "baa4813fd657197f25090dc7afdaffb0831aa351",
+      "readScope": "TARGETED_SECTIONS_NOT_FULL_CORPUS",
+      "locator": "normalizeRequest; handleBuildArtifact; seven fields; preGenerateDisclosure; draft/stale/download",
+      "pinDisposition": "READ_ONLY_INPUT",
+      "capturedAtHead": "a6366007f6761f23796f283e8d929c8b9db76952",
+      "priorPinDisposition": "READ_ONLY_INPUT"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.tsx",
+      "rawSha256": "ae5160169f828a7ec9b1a9ad576a2ad37b9c3343cb882ec706c7631f01113b31",
+      "rawBytes": 35116,
+      "gitBlobSha256": "ae5160169f828a7ec9b1a9ad576a2ad37b9c3343cb882ec706c7631f01113b31",
+      "gitBlob": "68a646a489d01c85f86d037faa3f284023a64381",
+      "readScope": "TARGETED_SECTIONS_NOT_FULL_CORPUS",
+      "locator": "handleExecutionComplete; returnToDraft; handleFollowUp; saved receipt archive",
+      "pinDisposition": "READ_ONLY_INPUT",
+      "capturedAtHead": "a6366007f6761f23796f283e8d929c8b9db76952",
+      "priorPinDisposition": "READ_ONLY_INPUT"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts",
+      "rawSha256": "96d5fcd958549443ab2b6df7e0526a34206cb372f1025467a5dd27bcf44b4a22",
+      "rawBytes": 54487,
+      "gitBlobSha256": "6125ab0ed5ecbea950d60ff5e141c9179cbe4572c5a5f772a34def9b1f84d668",
+      "gitBlob": "62461000da57a60bc500c917bf7ca0b1a9e906d9",
+      "readScope": "TARGETED_SECTIONS_NOT_FULL_CORPUS",
+      "locator": "buildExecuteFinalResponse call after provider invocation",
+      "pinDisposition": "READ_ONLY_INPUT",
+      "capturedAtHead": "a6366007f6761f23796f283e8d929c8b9db76952",
+      "priorPinDisposition": "READ_ONLY_INPUT"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route-final-response.ts",
+      "rawSha256": "3262c07e608dee069d351ef52a5b32f21c4c777ef13ecdefc2a71f22cd938acc",
+      "rawBytes": 24653,
+      "gitBlobSha256": "3262c07e608dee069d351ef52a5b32f21c4c777ef13ecdefc2a71f22cd938acc",
+      "gitBlob": "da79bf2deb5788643e0679b3baefc282245664ad",
+      "readScope": "TARGETED_SECTIONS_NOT_FULL_CORPUS",
+      "locator": "buildExecuteFinalResponse telemetry success condition and catch; runtimeTelemetry",
+      "pinDisposition": "READ_ONLY_INPUT",
+      "capturedAtHead": "a6366007f6761f23796f283e8d929c8b9db76952",
+      "priorPinDisposition": "READ_ONLY_INPUT"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execute-telemetry.ts",
+      "rawSha256": "9e4f0c9613e16fff9694ea57a31974e91dd99308fa6bbf458025311d9cb0f9aa",
+      "rawBytes": 4286,
+      "gitBlobSha256": "9e4f0c9613e16fff9694ea57a31974e91dd99308fa6bbf458025311d9cb0f9aa",
+      "gitBlob": "9101c2fd399cd054dce7d6641f1298436f3e414a",
+      "readScope": "TARGETED_SECTIONS_NOT_FULL_CORPUS",
+      "locator": "emitExecutionTelemetry; cost append before EXECUTION_COMPLETED audit append; metadata payload",
+      "pinDisposition": "READ_ONLY_INPUT",
+      "capturedAtHead": "a6366007f6761f23796f283e8d929c8b9db76952",
+      "priorPinDisposition": "READ_ONLY_INPUT"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/admin/audit/route.ts",
+      "rawSha256": "83c83600655cd5637bdebc5fc6fac3ff67573a2a42c9b0ec4c8ca57f6cda614d",
+      "rawBytes": 1857,
+      "gitBlobSha256": "83c83600655cd5637bdebc5fc6fac3ff67573a2a42c9b0ec4c8ca57f6cda614d",
+      "gitBlob": "bc89848daee633364a0501ae50f215db4eed0522",
+      "readScope": "TARGETED_SECTIONS_NOT_FULL_CORPUS",
+      "locator": "GET requireAdminApiSession and readAuditEvents; POST producer boundary",
+      "pinDisposition": "READ_ONLY_INPUT",
+      "capturedAtHead": "a6366007f6761f23796f283e8d929c8b9db76952",
+      "priorPinDisposition": "READ_ONLY_INPUT"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/admin-session.ts",
+      "rawSha256": "69b33640ec525b486390f3e300215913a2c85fe0c6492d0c9a8efdc07ec304ae",
+      "rawBytes": 7856,
+      "gitBlobSha256": "69b33640ec525b486390f3e300215913a2c85fe0c6492d0c9a8efdc07ec304ae",
+      "gitBlob": "189e64239f513e21c13a70fbb19f1114e6b4382f",
+      "readScope": "TARGETED_SECTIONS_NOT_FULL_CORPUS",
+      "locator": "hasRequiredAccess; requireAdminApiSession",
+      "pinDisposition": "READ_ONLY_INPUT",
+      "capturedAtHead": "a6366007f6761f23796f283e8d929c8b9db76952",
+      "priorPinDisposition": "READ_ONLY_INPUT"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/enterprise-access.ts",
+      "rawSha256": "352242cf9e5b3ea734991f230117e76d60ac6018cf0e1be7399cfa66039a2980",
+      "rawBytes": 573,
+      "gitBlobSha256": "352242cf9e5b3ea734991f230117e76d60ac6018cf0e1be7399cfa66039a2980",
+      "gitBlob": "8970928f57966f741fd751097b0c3aedd6e8b227",
+      "readScope": "TARGETED_SECTIONS_NOT_FULL_CORPUS",
+      "locator": "ADMIN_ROLES; canAccessAdmin",
+      "pinDisposition": "READ_ONLY_INPUT",
+      "capturedAtHead": "a6366007f6761f23796f283e8d929c8b9db76952",
+      "priorPinDisposition": "READ_ONLY_INPUT"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/control-plane-events.ts",
+      "rawSha256": "a95ac544fcdf1fb74042b25f4223cc4742592c57d78f434292f3b290643e83e7",
+      "rawBytes": 8549,
+      "gitBlobSha256": "a95ac544fcdf1fb74042b25f4223cc4742592c57d78f434292f3b290643e83e7",
+      "gitBlob": "20d8d7f386345e0a94887b0f614034c9e3f2b7dc",
+      "readScope": "TARGETED_SECTIONS_NOT_FULL_CORPUS",
+      "locator": "getStorePath; appendEvent; appendAuditEvent; readAuditEvents; conditional SIEM forwarding",
+      "pinDisposition": "READ_ONLY_INPUT",
+      "capturedAtHead": "a6366007f6761f23796f283e8d929c8b9db76952",
+      "priorPinDisposition": "READ_ONLY_INPUT"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/storage-adapter.ts",
+      "rawSha256": "d57ea274ac95235ef15fd3d577c8141ba27458576810acb654f505db83a119e6",
+      "rawBytes": 18903,
+      "gitBlobSha256": "d57ea274ac95235ef15fd3d577c8141ba27458576810acb654f505db83a119e6",
+      "gitBlob": "4c7c7602b1f0c26d0ed7b21d64b915b1c596644d",
+      "readScope": "TARGETED_SECTIONS_NOT_FULL_CORPUS",
+      "locator": "FileEventListAdapter.init/readAll/append/describeCapability; retention null; SQLite retention null; Redis retention constant; adapter selection",
+      "pinDisposition": "READ_ONLY_INPUT",
+      "capturedAtHead": "a6366007f6761f23796f283e8d929c8b9db76952",
+      "priorPinDisposition": "READ_ONLY_INPUT"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/siem-forwarder.ts",
+      "rawSha256": "9ffe398092187cbec2412a3089f0ee3fb8ca4be3d25414ff2e9e15fde8f7aeb1",
+      "rawBytes": 1227,
+      "gitBlobSha256": "9ffe398092187cbec2412a3089f0ee3fb8ca4be3d25414ff2e9e15fde8f7aeb1",
+      "gitBlob": "2ec819e8533ddb11865fe13eb8a91fedc7189a68",
+      "readScope": "TARGETED_SECTIONS_NOT_FULL_CORPUS",
+      "locator": "forwardToSIEM; enabled/configured webhook condition",
+      "pinDisposition": "READ_ONLY_INPUT",
+      "capturedAtHead": "a6366007f6761f23796f283e8d929c8b9db76952",
+      "priorPinDisposition": "READ_ONLY_INPUT"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/policy-reader.ts",
+      "rawSha256": "bfbbdc0eb99cae78cf8ca21a3d9e2633d16e50c6369d8db0bb44b80192fbfc68",
+      "rawBytes": 5122,
+      "gitBlobSha256": "bfbbdc0eb99cae78cf8ca21a3d9e2633d16e50c6369d8db0bb44b80192fbfc68",
+      "gitBlob": "2491bfb040bcaa694277193c6692c410e4a30ec3",
+      "readScope": "TARGETED_SECTIONS_NOT_FULL_CORPUS",
+      "locator": "getActiveSIEMConfig via policy events",
+      "pinDisposition": "READ_ONLY_INPUT",
+      "capturedAtHead": "a6366007f6761f23796f283e8d929c8b9db76952",
+      "priorPinDisposition": "READ_ONLY_INPUT"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/proof.ts",
+      "rawSha256": "fbdcc3a434eea13842c9f692d2b54cc9955e80d8c8777d9dfaa14cace9cdfcaf",
+      "rawBytes": 5702,
+      "gitBlobSha256": "fbdcc3a434eea13842c9f692d2b54cc9955e80d8c8777d9dfaa14cace9cdfcaf",
+      "gitBlob": "fe7fff31003547351f7ac716567867856e6a6c85",
+      "readScope": "TARGETED_SECTIONS_NOT_FULL_CORPUS",
+      "locator": "resolveEvaluateUrl; proofTimeoutMs; fetchGovernanceReceipt;500-character content excerpt",
+      "pinDisposition": "READ_ONLY_INPUT",
+      "capturedAtHead": "a6366007f6761f23796f283e8d929c8b9db76952",
+      "priorPinDisposition": "READ_ONLY_INPUT"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/route.ts",
+      "rawSha256": "a17ddd57882be1e58a86fb1d86bea8a2693f1169f5ba0c8b6da2af75d7f024ae",
+      "rawBytes": 13773,
+      "gitBlobSha256": "22f08a7ed8a4a4eb06c63bde244c0e2e9f752758bb6f48acbfb12bf57a2862f1",
+      "gitBlob": "7c478a146574a56cb885ac6f912c5dfe34f685f6",
+      "readScope": "TARGETED_SECTIONS_NOT_FULL_CORPUS",
+      "locator": "sourceHash; slugged anchor; DRAFT_UNACCEPTED; awaited receipt helper",
+      "pinDisposition": "READ_ONLY_INPUT",
+      "capturedAtHead": "a6366007f6761f23796f283e8d929c8b9db76952",
+      "priorPinDisposition": "READ_ONLY_INPUT"
+    },
+    {
+      "path": "docs/reviews/CVF_NCR_HTML_CONFIGURED_RECEIPT_CONDITIONAL_COMPLETION_2026-10-14.md",
+      "rawSha256": "36c9b8513fdd614d9e798b4ef88960f68887fa43ec43b67811d6560d736805bd",
+      "rawBytes": 24667,
+      "gitBlobSha256": "36c9b8513fdd614d9e798b4ef88960f68887fa43ec43b67811d6560d736805bd",
+      "gitBlob": "d930cef4770d2927405448b2790328e69522d783",
+      "readScope": "TARGETED_SECTIONS_NOT_FULL_CORPUS",
+      "locator": "conditional control disposition; original raw evidence; current blocked cleanup",
+      "pinDisposition": "READ_ONLY_INPUT",
+      "capturedAtHead": "a6366007f6761f23796f283e8d929c8b9db76952",
+      "priorPinDisposition": "READ_ONLY_INPUT"
+    },
+    {
+      "path": "docs/reviews/evidence/ncr-html-configured-receipt-conditional-local-20261014.json",
+      "rawSha256": "9ceba8d8f6c35cd0fc8072cc6862d4657ee8cf067c6e42c011d179b78da47c71",
+      "rawBytes": 62036,
+      "gitBlobSha256": "9ceba8d8f6c35cd0fc8072cc6862d4657ee8cf067c6e42c011d179b78da47c71",
+      "gitBlob": "09afe82f0cbcb097327d18308590d5d7d7d61f27",
+      "readScope": "TARGETED_SECTIONS_NOT_FULL_CORPUS",
+      "locator": "independent authenticity result and inert cleanup counterexample",
+      "pinDisposition": "READ_ONLY_INPUT",
+      "capturedAtHead": "a6366007f6761f23796f283e8d929c8b9db76952",
+      "priorPinDisposition": "READ_ONLY_INPUT"
+    },
+    {
+      "path": "docs/assessments/CVF_NCR_SELECTED_PILOT_CONVERGENCE_LOCAL_DISPOSITION_2026-10-14.md",
+      "rawSha256": "53a6baf2a13032fdaa496b0f1aa0b7156413b90b443e6b2c4f5669a63f87d6df",
+      "rawBytes": 13024,
+      "gitBlobSha256": "ac12f231668cc008e4914a2398fa2300360bf672475d7c6a7cf221fc52656d6e",
+      "gitBlob": "819ab5321de13c416b69bae51bce364dda009d0b",
+      "readScope": "TARGETED_SECTIONS_NOT_FULL_CORPUS",
+      "locator": "selected chain; qualified unknowns; no-runtime Q008",
+      "pinDisposition": "READ_ONLY_INPUT",
+      "capturedAtHead": "a6366007f6761f23796f283e8d929c8b9db76952",
+      "priorPinDisposition": "READ_ONLY_INPUT"
+    },
+    {
+      "path": "docs/reviews/CVF_NCR_W05_SELECTED_CHAIN_READINESS_2026-10-07.md",
+      "rawSha256": "f6f68f743129f442d971cc2efd18f6ab831597a197f4aed5eeaa95be656210d5",
+      "rawBytes": 49228,
+      "gitBlobSha256": "f6f68f743129f442d971cc2efd18f6ab831597a197f4aed5eeaa95be656210d5",
+      "gitBlob": "ac7a553d82e090524c0ae928db154079c223fb2e",
+      "readScope": "TARGETED_SECTIONS_NOT_FULL_CORPUS",
+      "locator": "selected source/evidence scope; pre-live limits",
+      "pinDisposition": "READ_ONLY_INPUT",
+      "capturedAtHead": "a6366007f6761f23796f283e8d929c8b9db76952",
+      "priorPinDisposition": "READ_ONLY_INPUT"
+    },
+    {
+      "path": "docs/reviews/CVF_CVF_NCR_Q001_DOCKER_BROWSER_UI_WALKTHROUGH_2026-09-29.md",
+      "rawSha256": "42fed342a1fefd502f691c9cbb7440d0eec3d417fd6137ab6a5bef35a9bfcd89",
+      "rawBytes": 10268,
+      "gitBlobSha256": "42fed342a1fefd502f691c9cbb7440d0eec3d417fd6137ab6a5bef35a9bfcd89",
+      "gitBlob": "b3f3f451cf1407a631be04184d7482a5299b818f",
+      "readScope": "TARGETED_SECTIONS_NOT_FULL_CORPUS",
+      "locator": "real browser with admin-seeded fixture; cold/warm hop limits",
+      "pinDisposition": "READ_ONLY_INPUT",
+      "capturedAtHead": "a6366007f6761f23796f283e8d929c8b9db76952",
+      "priorPinDisposition": "READ_ONLY_INPUT"
+    },
+    {
+      "path": "docs/reviews/CVF_CVF_NCR_R0_W01_HTML_PROFILE_WORKER_RETURN_2026-09-26.md",
+      "rawSha256": "b30cb5242e4cb15ae7ca2c21aa1896e9828fee70dfda0ec4db225a8f40794d16",
+      "rawBytes": 35222,
+      "gitBlobSha256": "b30cb5242e4cb15ae7ca2c21aa1896e9828fee70dfda0ec4db225a8f40794d16",
+      "gitBlob": "7241c19059798e687727cd67421f2d45e241a849",
+      "readScope": "TARGETED_SECTIONS_NOT_FULL_CORPUS",
+      "locator": "historical profile-only unknowns; later Local qualification",
+      "pinDisposition": "READ_ONLY_INPUT",
+      "capturedAtHead": "a6366007f6761f23796f283e8d929c8b9db76952",
+      "priorPinDisposition": "READ_ONLY_INPUT"
+    },
+    {
+      "path": "docs/reviews/CVF_CVF_NCR_Q001_PRODUCTION_AUTH_PROFILE_BOUNDARY_2026-09-29.md",
+      "rawSha256": "9dcef0803a39c9797f076a1000885f916fdfd57f34d714e50f7c68b6da9c34b5",
+      "rawBytes": 9471,
+      "gitBlobSha256": "9dcef0803a39c9797f076a1000885f916fdfd57f34d714e50f7c68b6da9c34b5",
+      "gitBlob": "6c03174f6299d67652351d53dd189827eaa587a3",
+      "readScope": "TARGETED_SECTIONS_NOT_FULL_CORPUS",
+      "locator": "OAuth/identity/role configuration remains independently required",
+      "pinDisposition": "READ_ONLY_INPUT",
+      "capturedAtHead": "a6366007f6761f23796f283e8d929c8b9db76952",
+      "priorPinDisposition": "READ_ONLY_INPUT"
+    },
+    {
+      "path": "docs/reviews/CVF_NCR_HOME_ALIBABA_JOURNEY_COMPLETION_2026-10-13.md",
+      "rawSha256": "a522c731213c201787b521ef39a3da4e4bb0cd92863a4be793d3707c36054b65",
+      "rawBytes": 31143,
+      "gitBlobSha256": "1f56615639443c0c4ff3bf9293633f3bbd4db542bb2fea101efd3b5141566135",
+      "gitBlob": "37ab34556a41ca529fdac4295b7092fd800cd953",
+      "readScope": "TARGETED_SECTIONS_NOT_FULL_CORPUS",
+      "locator": "accepted bounded Home provider/output journey; not selected full HTML pilot",
+      "pinDisposition": "READ_ONLY_INPUT",
+      "capturedAtHead": "a6366007f6761f23796f283e8d929c8b9db76952",
+      "priorPinDisposition": "READ_ONLY_INPUT"
+    },
+    {
+      "path": "docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md",
+      "rawSha256": "f496a7639d17284dcd6e37fdd599632ae37eab2a83755833062fca4626070744",
+      "rawBytes": 188039,
+      "gitBlobSha256": "f496a7639d17284dcd6e37fdd599632ae37eab2a83755833062fca4626070744",
+      "gitBlob": "fb5ff6441bcb0741c744b367264781ce4058fd1e",
+      "readScope": "TARGETED_SECTIONS_NOT_FULL_CORPUS",
+      "locator": "Current Delivery Checkpoint; Q001/Q003/Q004/Q005/Q008; R0-R4 exits",
+      "pinDisposition": "READ_ONLY_INPUT",
+      "capturedAtHead": "a6366007f6761f23796f283e8d929c8b9db76952",
+      "priorPinDisposition": "SOURCE_PREIMAGE"
+    },
+    {
+      "path": "docs/reference/CVF_FINDING_TO_GOVERNANCE_LEARNING_TRIGGER_STANDARD.md",
+      "rawSha256": "f9f70fa4af76588b92ad3e65c784789ca896c7634cedc9cbfd073ce0d7a26f76",
+      "rawBytes": 11481,
+      "gitBlobSha256": "7e50aec670c647ebbac1fadbabcecaabac4425e31ac5f4ebae1a49604d7a96dd",
+      "gitBlob": "30d48ba03faca76ecd7333be89f369cf4df08178",
+      "readScope": "TARGETED_SECTIONS_NOT_FULL_CORPUS",
+      "locator": "recurring successor freeze applies to same defect cluster",
+      "pinDisposition": "READ_ONLY_INPUT",
+      "capturedAtHead": "a6366007f6761f23796f283e8d929c8b9db76952",
+      "priorPinDisposition": "READ_ONLY_INPUT"
+    },
+    {
+      "path": "docs/reference/CVF_GOVERNED_WORK_LIFECYCLE_AND_DESIGN_CONTROL_STANDARD_2026-06-11.md",
+      "rawSha256": "b48f11363ee62a2ec4c85c6f9fba4540b90eb74475c31aeab18cfe4492a536de",
+      "rawBytes": 23587,
+      "gitBlobSha256": "b48f11363ee62a2ec4c85c6f9fba4540b90eb74475c31aeab18cfe4492a536de",
+      "gitBlob": "3d9a91f40e3e84a9e90fec8c0f0001f2dc6ef789",
+      "readScope": "TARGETED_SECTIONS_NOT_FULL_CORPUS",
+      "locator": "action-specific readiness; outcome-bound continuation",
+      "pinDisposition": "READ_ONLY_INPUT",
+      "capturedAtHead": "a6366007f6761f23796f283e8d929c8b9db76952",
+      "priorPinDisposition": "READ_ONLY_INPUT"
+    },
+    {
+      "path": "DESIGN.md",
+      "rawSha256": "15c1b5061bd2e1f763638beb83a84d06eb8ccbc470747c01f236033a834a987e",
+      "rawBytes": 21490,
+      "gitBlobSha256": "f9e99d08e65eae5a5b95cc1314a5eb75ad726926e1ab82dafa3eafc6d15b44b7",
+      "gitBlob": "260703ec89ffd2282c3960a891337d2b970740f5",
+      "readScope": "TARGETED_SECTIONS_NOT_FULL_CORPUS",
+      "locator": "existing owner and user-facing decisions",
+      "pinDisposition": "READ_ONLY_INPUT",
+      "capturedAtHead": "a6366007f6761f23796f283e8d929c8b9db76952",
+      "priorPinDisposition": "READ_ONLY_INPUT"
+    },
+    {
+      "path": "docs/assessments/CVF_NCR_SELECTED_PILOT_PREREQUISITES_REASSESSMENT_2026-10-14.md",
+      "rawSha256": "cbf0f763b28d260c293ff8d7bb5b6407be728edf922999c7b4258f089c272648",
+      "rawBytes": 21527,
+      "gitBlobSha256": "cbf0f763b28d260c293ff8d7bb5b6407be728edf922999c7b4258f089c272648",
+      "capturedAtHead": "a6366007f6761f23796f283e8d929c8b9db76952",
+      "readScope": "TARGETED_CURRENT_SOURCE_DISPOSITION",
+      "pinDisposition": "READ_ONLY_INPUT"
+    },
+    {
+      "path": "docs/reviews/evidence/ncr-selected-pilot-prerequisites-local-20261014.json",
+      "rawSha256": "2cc4a9a4299bbead72c40fbe172cb1f99f521db34ae6f9aacec126094a7d897e",
+      "rawBytes": 24297,
+      "gitBlobSha256": "2cc4a9a4299bbead72c40fbe172cb1f99f521db34ae6f9aacec126094a7d897e",
+      "capturedAtHead": "a6366007f6761f23796f283e8d929c8b9db76952",
+      "readScope": "TARGETED_CURRENT_SOURCE_DISPOSITION",
+      "pinDisposition": "READ_ONLY_INPUT"
+    }
+  ],
+  "scaffold": {
+    "sourceHead": "a6366007f6761f23796f283e8d929c8b9db76952",
+    "scaffoldCommand": [
+      "python",
+      "-B",
+      "governance/compat/build_dispatch_packet_scaffold.py",
+      "--packet-kind",
+      "generic-worker-dispatch",
+      "--batch-id",
+      "CVF-NCR-HTML-FRESH-PROFILE-USER-JOURNEY-SPEC-20261014",
+      "--title",
+      "NCR HTML Fresh Profile User Journey SPEC",
+      "--date",
+      "2026-10-14",
+      "--base",
+      "a6366007f6761f23796f283e8d929c8b9db76952",
+      "--commit-mode",
+      "WORKER_MUST_NOT_COMMIT",
+      "--dispatch-kind",
+      "INITIAL",
+      "--dispatch-surface",
+      "INTERNAL_AGENT",
+      "--review-round-count",
+      "0",
+      "--scec-problem-key",
+      "ncr-html-fresh-profile-user-journey-spec",
+      "--scec-chain-mode",
+      "INITIAL",
+      "--scec-chain-ordinal",
+      "0",
+      "--scec-required-disposition",
+      "CONTINUE_BOUNDED",
+      "--scec-successor-scope",
+      "INITIAL_BOUNDED",
+      "--no-evidence-readiness-applicable",
+      "--stdout"
+    ],
+    "adifCommand": [
+      "python",
+      "-B",
+      "governance/compat/run_adif_defect_resolver.py",
+      "--task-class",
+      "work-order",
+      "--role",
+      "dispatcher",
+      "--lifecycle-phase",
+      "dispatch",
+      "--json"
+    ],
+    "adif": {
+      "items": [],
+      "truncated": false,
+      "totalCandidates": 0,
+      "claimBoundary": "Returning this packet is not evidence that any caller read or understood it."
+    }
+  },
+  "scaffoldInitialFailure": {
+    "firstScaffoldExit": 2,
+    "class": "INITIAL_SENTINEL_VALIDATION",
+    "actualStderrRetained": false,
+    "sourcePredicate": "review_convergence_scaffold.validate requires NOT_APPLICABLE_INITIAL_DISPATCH for INITIAL rootCauseClusterId",
+    "repair": "remove explicit rework-style root-cause argument; use actual INITIAL scaffold defaults",
+    "effects": "none; no tracked artifacts authored"
+  },
+  "collisionSearch": {
+    "command": [
+      "rg",
+      "-n",
+      "--fixed-strings",
+      "CVF-NCR-HTML-FRESH-PROFILE-USER-JOURNEY-SPEC-20261014",
+      "docs",
+      "CVF_SESSION"
+    ],
+    "exit": 1,
+    "stdout": "",
+    "stderr": "",
+    "absentNewPaths": [
+      "docs/baselines/CVF_GC018_NCR_HTML_FRESH_PROFILE_USER_JOURNEY_SPEC_2026-10-14.md",
+      "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_FRESH_PROFILE_USER_JOURNEY_SPEC_2026-10-14.md",
+      "docs/reviews/evidence/ncr-html-fresh-profile-user-journey-spec-dispatch-20261014.json",
+      "docs/assessments/CVF_NCR_HTML_FRESH_PROFILE_USER_JOURNEY_SPEC_2026-10-14.md",
+      "docs/reviews/CVF_NCR_HTML_FRESH_PROFILE_USER_JOURNEY_SPEC_WORKER_RETURN_2026-10-14.md",
+      "docs/reviews/evidence/ncr-html-fresh-profile-user-journey-spec-worker-20261014.json"
+    ]
+  },
+  "effectCounters": {
+    "browserStarts": 0,
+    "engineStarts": 0,
+    "providerStarts": 0,
+    "actualConfigValueReads": 0,
+    "userStoreReads": 0
+  },
+  "claimBoundary": "DOCUMENTATION_ONLY; PROPOSAL_ONLY_NO_RUNTIME_READINESS. R1/R2 partial, R3/R4 open, R5/R6 deferred. Receipt ALLOW is not artifact acceptance; metadata audit is not full output/version transfer; historical synthetic evidence is not a newcomer/business walkthrough. Actual profile/origin/auth/engine/store/SIEM/retention/latency/cost remain unverified. Q001/Q004 actual-data/custody, business acceptance, B2/send/P11/public/deploy parked; LHW24 retained. Program provider12/13/unused1 retired, current provider calls allowed0.",
+  "requirements": [
+    {
+      "requirementId": "REQ-01",
+      "title": "Entry and producer",
+      "proofId": "PROOF-REQ-01",
+      "acceptance": "Select existing /artifacts as the primary fresh-source entry; map navigation, seven-field panel and existing API. Explain when Work Transfer needs a selectable audit and owner/admin access; successful Home telemetry exists conditionally and carries metadata, not complete output. Negative: no invented missing producer/entry or automatic output join."
+    },
+    {
+      "requirementId": "REQ-02",
+      "title": "Complete synthetic job",
+      "proofId": "PROOF-REQ-02",
+      "acceptance": "Provide a safe Vietnamese newcomer job, all seven literal inputs title/sourcePath/sourceContent/memoryClass/status/claimBoundary/receiptAnchor, and a second edited input version. Replace the starter example explicitly, retain DRAFT_UNACCEPTED and identify intended result/receiver. Proposed fixture must use current source-supported enum values; no customer data or operator business acceptance is claimed."
+    },
+    {
+      "requirementId": "REQ-03",
+      "title": "Profile and effect map",
+      "proofId": "PROOF-REQ-03",
+      "acceptance": "Document proposed owned_local_synthetic profile and actual deployment UNKNOWN separately. Cover every effect/preflight topic above with source, owner, admission evidence and stop condition; retentionSeconds:null in File/SQLite must not become a deployed 30-day guarantee. No values from live env/config/stores are needed for this design."
+    },
+    {
+      "requirementId": "REQ-04",
+      "title": "Vietnamese walkthrough",
+      "proofId": "PROOF-REQ-04",
+      "acceptance": "Give plain Vietnamese sequential instructions create -> edit -> explicit Build -> preview -> download, plus edit-after-Build/stale/rebuild, denial/fallback/reload-loss and stop/ambiguous-result handling. Distinguish current source behavior from a proposed usability improvement; cancel capability or reload warning absence is recorded honestly. Label AGENT_SIMULATION_PROPOSED, not an executed human or business walkthrough."
+    },
+    {
+      "requirementId": "REQ-05",
+      "title": "Acceptance and proof map",
+      "proofId": "PROOF-REQ-05",
+      "acceptance": "For each journey/negative case specify expected source-backed behavior, future independent oracle/evidence, acceptance owner and failure condition. Join exact sent input/version to returned receipt/request and downloaded bytes; separate observation at finite SQL checkpoints from continuous absence/exactly-once. Acceptance fixtures are documentary proposals, no runtime PASS, fresh request ID or provider result invented."
+    },
+    {
+      "requirementId": "REQ-06",
+      "title": "Decision and roadmap boundary",
+      "proofId": "PROOF-REQ-06",
+      "acceptance": "Use LOCKED_SOURCE_FACT / PROPOSED_DESIGN_CHOICE / OPEN_BY_ACTION dispositions with named owner/action/evidence. HTML export itself does not call a model. A future full real-AI R3 job separately needs Home generation/revision through a real provider and explicit exact-output/version transfer into /artifacts. Keep R3/R4 open and business/data/provider/send checkpoints; this SPEC is not a new grant or blocked-cluster cleanup repair."
+    },
+    {
+      "requirementId": "REQ-07",
+      "title": "Continuation and honest return",
+      "proofId": "PROOF-REQ-07",
+      "acceptance": "Return exact3 with all mandatory source scopes read before writing, before/after source pins, seven proof IDs, actual clocks and all command failures/gates. Provider/browser/engine starts0; native usage/billing UNKNOWN unless actual telemetry. Full worker return gate on final bytes; independent documentary probe PENDING_REVIEWER_EXECUTION; no commit or successor."
+    }
+  ],
+  "releaseProofDisposition": "FINAL_RESULTS_IN_BOUND_SIDECAR_AFTER_IMMUTABLE_PAIR_AND_ACTUAL_SHA_CONTINUITY",
+  "rawPairHashes": {
+    "baseline": "3e87e418cc84065d8b497381a72cf93e5e3c3ce9fc30ace4b729b957b7862b39",
+    "workOrder": "c681775f3fd5592ffed5a9924a1582ad08be98587c614179dd458e86049ad8fd"
+  },
+  "nativeUsage": "UNKNOWN",
+  "billing": "UNKNOWN",
+  "dispatcherPreparationDiagnostics": [
+    {
+      "event": "assemble pre-write source comparison",
+      "exit": 1,
+      "cause": "SOURCE_PREIMAGE roadmap pin compared to already committed Version2.17",
+      "repair": "fresh roadmap pin at actual HEAD; all28 read-only prior input hashes match; no tracked effects before failure",
+      "stderrRetained": "tool transcript, no separate raw log"
+    },
+    {
+      "event": "incorrect hook script path",
+      "exit": 2,
+      "log": ".cvf/runtime/ncr-request-cancellation-20261014/journey-spec-reviewer-fast-01.log"
+    },
+    {
+      "event": "first actual reviewer-fast",
+      "exit": 1,
+      "log": ".cvf/runtime/ncr-request-cancellation-20261014/journey-spec-reviewer-fast-02.log",
+      "scope": "dispatcher metadata only; invalid externalEffect enum, baseline missing sections, literal gate command, path-parser parentheses and build-boundary literals repaired inside exact3"
+    }
+  ]
+}
