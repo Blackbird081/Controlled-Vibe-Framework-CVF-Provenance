@@ -2,11 +2,11 @@
   "schemaVersion": "cvf.preapprovalFeasibility.v1",
   "proposal": {
     "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_INTEGRATED_ROOT_BUILD_2026-10-15.md",
-    "sha256": "6c8958a952c92aef09a018a341800a4c01cafea90be8295e6d68e76dc135c311"
+    "sha256": "75c9dd9b3d749847a4a1d87deb54b10c2e577c244eb60369b1345e69b980a3b7"
   },
   "approvalTarget": {
     "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_INTEGRATED_ROOT_BUILD_2026-10-15.md",
-    "sha256": "6c8958a952c92aef09a018a341800a4c01cafea90be8295e6d68e76dc135c311",
+    "sha256": "75c9dd9b3d749847a4a1d87deb54b10c2e577c244eb60369b1345e69b980a3b7",
     "prospectiveOutcomeSha256": "a3986c6222e1c3a6310df522a6a365585929206a45e8c47d56ed944276b77b67"
   },
   "prospectiveOutcome": {
@@ -79,7 +79,7 @@
         "requiredForPhase": true,
         "evidence": {
           "path": "docs/baselines/CVF_GC018_NCR_HTML_INTEGRATED_ROOT_BUILD_2026-10-15.md",
-          "sha256": "085486fad7ff6dd7f3bc0149e620854604c1ed66770d98c03b4ec334cdea563a",
+          "sha256": "5174b2a8548bbbce35b5541dcfe16529bcc1b99680e9008996618eeb2494877f",
           "locator": "## Authority / Scope"
         },
         "deferredToPhase": null
@@ -89,7 +89,7 @@
         "requiredForPhase": true,
         "evidence": {
           "path": "docs/baselines/CVF_GC018_NCR_HTML_INTEGRATED_ROOT_BUILD_2026-10-15.md",
-          "sha256": "085486fad7ff6dd7f3bc0149e620854604c1ed66770d98c03b4ec334cdea563a",
+          "sha256": "5174b2a8548bbbce35b5541dcfe16529bcc1b99680e9008996618eeb2494877f",
           "locator": "## Integrated Build Scope"
         },
         "deferredToPhase": null

@@ -159,3 +159,16 @@ the paired order; none is claimed completed by this baseline.
 ## Claim Boundary
 
 Scoped preparation only; no consent, completed BUILD or runtime readiness.
+
+## ADIF Defect Registry Disclosure
+
+Resolver query: taskClass=`Work-order authoring / dispatch`, role=`dispatcher`, lifecyclePhase=`pre-dispatch`, maxResults=`40`
+Resolver command: `python -B governance/compat/run_adif_defect_resolver.py --task-class "Work-order authoring / dispatch" --role dispatcher --lifecycle-phase pre-dispatch --max-results 40 --json`
+Returned defects: ADIF-0001, ADIF-0002, ADIF-0014, ADIF-0015, ADIF-0020, ADIF-0021, ADIF-0028, ADIF-0029, ADIF-0033, ADIF-0044, ADIF-0045, ADIF-0051, ADIF-0052, ADIF-0056, ADIF-0057, ADIF-0058, ADIF-0061, ADIF-0062, ADIF-0007, ADIF-0016, ADIF-0017, ADIF-0024, ADIF-0031, ADIF-0039, ADIF-0043, ADIF-0049, ADIF-0006
+Actual result: 27 candidates/27 returned, not truncated. Current
+resolver metadata is disclosed; no claim all entry bodies were read. Query and
+disclosure occurred late after the first committed-range gate found the omission,
+so Local preparation remains PARTIAL_WITH_REASON, never retroactive PASS.
+Apply source/authority, operative-checker, phase-boundary and literal-shape rules
+to this held proposal; future worker resolves its own role/phase before edits.
+This correction adds no effect, worker invocation or old grant reuse.

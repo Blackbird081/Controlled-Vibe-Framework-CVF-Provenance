@@ -2,7 +2,7 @@
   "status": "DRAFT_OPERATOR_EFFECT_APPROVAL_PENDING",
   "proposalBaseHead": "66eef39a8f579a5d38e1f18f23745ae694e2b4e8",
   "sourcePins": {
-    "docs/baselines/CVF_GC018_NCR_HTML_INTEGRATED_ROOT_BUILD_2026-10-15.md": "085486fad7ff6dd7f3bc0149e620854604c1ed66770d98c03b4ec334cdea563a",
+    "docs/baselines/CVF_GC018_NCR_HTML_INTEGRATED_ROOT_BUILD_2026-10-15.md": "5174b2a8548bbbce35b5541dcfe16529bcc1b99680e9008996618eeb2494877f",
     "docs/reviews/CVF_NCR_HTML_INTEGRATED_ROOT_CONTRACT_2026-10-14.md": "5998f2db7ca40457ffdecc08654456f19b20ee0ba97fbc43e6942c729b5a38f7",
     "docs/assessments/CVF_NCR_HTML_OWNED_PROFILE_ADMISSION_PLAN_2026-10-14.md": "66e7780972a41a6155707d85c8058ecc2bf7f3766e9047387ae495cfced7eb91",
     "docs/assessments/CVF_NCR_HTML_FRESH_PROFILE_USER_JOURNEY_SPEC_2026-10-14.md": "1d1a42f2c3f1e9d573b30cb46221e24ea1365d9f60aec95b6938e9fd10fb6a83",
@@ -13,8 +13,8 @@
     "docs/reference/CVF_AGENT_EXECUTION_WORKFLOW_SOP_2026-05-19.md": "ec0aa577527634f57952fb3d1cfe3af632603cf44d5f433f8c27907384c33796",
     "docs/reference/CVF_GOVERNED_WORK_LIFECYCLE_AND_DESIGN_CONTROL_STANDARD_2026-06-11.md": "b48f11363ee62a2ec4c85c6f9fba4540b90eb74475c31aeab18cfe4492a536de",
     "docs/reference/review_cost_control/CVF_REVIEW_COST_AND_DIMINISHING_RETURN_CONTROL_STANDARD.md": "17d27144c7db34b717633c14428a778b2b00949f62d71e6a1d8f4f9a2bbe8700",
-    "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_INTEGRATED_ROOT_BUILD_2026-10-15.md": "6c8958a952c92aef09a018a341800a4c01cafea90be8295e6d68e76dc135c311",
-    "docs/reviews/evidence/ncr-html-integrated-root-build-preapproval-20261015.json": "7f4edaaaa1633ba4eca685b87bc0aa22355c9a72719d735bf88e9c2ba3527395"
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_INTEGRATED_ROOT_BUILD_2026-10-15.md": "75c9dd9b3d749847a4a1d87deb54b10c2e577c244eb60369b1345e69b980a3b7",
+    "docs/reviews/evidence/ncr-html-integrated-root-build-preapproval-20261015.json": "f07f19eb1b069da003261b36978217f0d7fa6f3a2429ed6082f8e9bc71e78b7a"
   },
   "existingRootOutcomeDigest": "a3986c6222e1c3a6310df522a6a365585929206a45e8c47d56ed944276b77b67",
   "sameExistingRootState": {
@@ -110,7 +110,7 @@
     "argv": [
       "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
       "-B",
-      "governance/compat/run_preapproval_feasibility_gate.py",
+      "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\governance\\compat\\run_preapproval_feasibility_gate.py",
       "--proposal",
       "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_INTEGRATED_ROOT_BUILD_2026-10-15.md",
       "--approval-target",
@@ -118,17 +118,17 @@
       "--json"
     ],
     "exitCode": 0,
-    "elapsedSeconds": 0.213,
+    "elapsedSeconds": 0.116,
     "receipt": {
       "approvalTarget": {
         "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_INTEGRATED_ROOT_BUILD_2026-10-15.md",
-        "sha256": "6c8958a952c92aef09a018a341800a4c01cafea90be8295e6d68e76dc135c311"
+        "sha256": "75c9dd9b3d749847a4a1d87deb54b10c2e577c244eb60369b1345e69b980a3b7"
       },
       "canonicalBlockCount": 1,
       "canonicalViolations": [],
       "companion": {
         "path": "docs/reviews/evidence/ncr-html-integrated-root-build-preapproval-20261015.json",
-        "sha256": "7f4edaaaa1633ba4eca685b87bc0aa22355c9a72719d735bf88e9c2ba3527395"
+        "sha256": "f07f19eb1b069da003261b36978217f0d7fa6f3a2429ed6082f8e9bc71e78b7a"
       },
       "coverageDisposition": "NOT_APPLICABLE",
       "diagnostics": [],
@@ -140,7 +140,7 @@
       },
       "proposal": {
         "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_INTEGRATED_ROOT_BUILD_2026-10-15.md",
-        "sha256": "6c8958a952c92aef09a018a341800a4c01cafea90be8295e6d68e76dc135c311"
+        "sha256": "75c9dd9b3d749847a4a1d87deb54b10c2e577c244eb60369b1345e69b980a3b7"
       },
       "prospectiveOutcomeSha256": "a3986c6222e1c3a6310df522a6a365585929206a45e8c47d56ed944276b77b67",
       "queue": null,
@@ -165,5 +165,287 @@
     "sha256": "1b1dccd1035e436bb8f6ca9756c3c67ce5de67ea8004ba4a81b31e67b2864788",
     "journalRowsPromoted": 0
   },
-  "initialReviewerFailure": "Structural headings, handoff/trace, enrolled learning and foundation declaration missing; corrected together after reading operative predicates; original log retained. No runtime/worker effects."
+  "initialReviewerFailure": "Structural headings, handoff/trace, enrolled learning and foundation declaration missing; corrected together after reading operative predicates; original log retained. No runtime/worker effects.",
+  "adifLateDisclosure": {
+    "resolverResult": {
+      "items": [
+        {
+          "defectId": "ADIF-0001",
+          "title": "Exhaustive directory claim omits actual children",
+          "defectCategory": "SOURCE_FIDELITY",
+          "defectClass": "WORKER_EXECUTION_ERROR",
+          "severity": "HIGH",
+          "enforcementLevel": "MACHINE_CHECKED",
+          "checkerBindings": "governance/compat/check_closure_packaging_preflight.py (_validate_exhaustive_directory_claims)",
+          "sourcePath": "docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0001.md"
+        },
+        {
+          "defectId": "ADIF-0002",
+          "title": "Provider-local interaction accepted as authority",
+          "defectCategory": "AUTHORITY_BOUNDARY",
+          "defectClass": "ORCHESTRATOR_PACKET_GAP",
+          "severity": "HIGH",
+          "enforcementLevel": "MACHINE_CHECKED",
+          "checkerBindings": "governance/compat/check_closure_packaging_preflight.py (provider-local authority validation)",
+          "sourcePath": "docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0002.md"
+        },
+        {
+          "defectId": "ADIF-0014",
+          "title": "Scope-triggered absorption control evaded by completeness silence",
+          "defectCategory": "SOURCE_FIDELITY",
+          "defectClass": "MACHINE_GATE_GAP",
+          "severity": "HIGH",
+          "enforcementLevel": "MACHINE_CHECKED",
+          "checkerBindings": "governance/compat/check_absorption_blindspot_control_presence.py",
+          "sourcePath": "docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0014.md"
+        },
+        {
+          "defectId": "ADIF-0015",
+          "title": "Declared route mode does not match actor's own execution behavior",
+          "defectCategory": "AUTHORITY_BOUNDARY",
+          "defectClass": "WORKER_EXECUTION_ERROR",
+          "severity": "HIGH",
+          "enforcementLevel": "GUIDANCE_ONLY",
+          "checkerBindings": "NOT_APPLICABLE_WITH_REASON: distinguishing \"dispatch-authoring iteration\" from \"executor-shaped self-correction\" requires judgment a generic diff/keyword checker cannot reliably make; no checker is proposed here",
+          "sourcePath": "docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0015.md"
+        },
+        {
+          "defectId": "ADIF-0020",
+          "title": "Checker source read-ahead skipped before artifact authoring",
+          "defectCategory": "GATE_TRIGGER_FRICTION",
+          "defectClass": "RULE_GAP",
+          "severity": "HIGH",
+          "enforcementLevel": "MACHINE_CHECKED",
+          "checkerBindings": "governance/compat/check_governed_artifact_checker_read_ahead.py",
+          "sourcePath": "docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0020.md"
+        },
+        {
+          "defectId": "ADIF-0021",
+          "title": "Applicability marker overmatch in reference or checker authoring",
+          "defectCategory": "GATE_TRIGGER_FRICTION",
+          "defectClass": "RULE_GAP",
+          "severity": "HIGH",
+          "enforcementLevel": "PARTIAL_CHECK",
+          "checkerBindings": "governance/compat/check_source_intake_decision_packet_preflight.py; governance/compat/check_external_absorption_core.py; governance/compat/check_external_absorption_value_conversion.py; governance/compat/check_external_absorption_overlap_discipline.py",
+          "sourcePath": "docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0021.md"
+        },
+        {
+          "defectId": "ADIF-0028",
+          "title": "Aggregated output exceeds per-item authority evidence",
+          "defectCategory": "AUTHORITY_BOUNDARY",
+          "defectClass": "RULE_GAP",
+          "severity": "HIGH",
+          "enforcementLevel": "GUIDANCE_ONLY",
+          "checkerBindings": "NOT_APPLICABLE_WITH_REASON: per-item authority completeness requires semantic source and test review",
+          "sourcePath": "docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0028.md"
+        },
+        {
+          "defectId": "ADIF-0029",
+          "title": "Durable evidence projection and admission drift",
+          "defectCategory": "AUTHORITY_BOUNDARY",
+          "defectClass": "WORKER_EXECUTION_ERROR",
+          "severity": "HIGH",
+          "enforcementLevel": "GUIDANCE_ONLY",
+          "checkerBindings": "NOT_APPLICABLE_WITH_REASON: projection completeness and admission symmetry require semantic source and negative-test review",
+          "sourcePath": "docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0029.md"
+        },
+        {
+          "defectId": "ADIF-0033",
+          "title": "Protected path listed without dispatch authorization",
+          "defectCategory": "SCOPE_AND_OWNERSHIP",
+          "defectClass": "ORCHESTRATOR_PACKET_GAP",
+          "severity": "HIGH",
+          "enforcementLevel": "PARTIAL_CHECK",
+          "checkerBindings": "governance/compat/check_core_guard_self_protection.py; governance/compat/check_closure_packaging_preflight.py",
+          "sourcePath": "docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0033.md"
+        },
+        {
+          "defectId": "ADIF-0044",
+          "title": "Parent execution ceiling is shorter than child timeout",
+          "defectCategory": "GATE_TRIGGER_FRICTION",
+          "defectClass": "RULE_GAP",
+          "severity": "HIGH",
+          "enforcementLevel": "GUIDANCE_ONLY",
+          "checkerBindings": "NOT_APPLICABLE_WITH_REASON: repository gates cannot observe every worker tool harness command ceiling",
+          "sourcePath": "docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0044.md"
+        },
+        {
+          "defectId": "ADIF-0045",
+          "title": "Detached launch with spaced path lacks preflight proof",
+          "defectCategory": "GATE_TRIGGER_FRICTION",
+          "defectClass": "RULE_GAP",
+          "severity": "HIGH",
+          "enforcementLevel": "GUIDANCE_ONLY",
+          "checkerBindings": "NOT_APPLICABLE_WITH_REASON: generic repository gates cannot prove provider-specific or shell-version-specific command-line marshaling",
+          "sourcePath": "docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0045.md"
+        },
+        {
+          "defectId": "ADIF-0051",
+          "title": "Byte-exact archive scope omits dependent guard reconciliation",
+          "defectCategory": "SCOPE_AND_OWNERSHIP",
+          "defectClass": "MACHINE_GATE_GAP",
+          "severity": "HIGH",
+          "enforcementLevel": "PARTIAL_CHECK",
+          "checkerBindings": "governance/compat/check_agent_packet_authority_and_encoding.py; governance/compat/check_docs_governance_compat.py; governance/compat/check_system_chain_map_freshness.py",
+          "sourcePath": "docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0051.md"
+        },
+        {
+          "defectId": "ADIF-0052",
+          "title": "Continuity dispatch omits transitive pins and post-mode literal",
+          "defectCategory": "SOURCE_FIDELITY",
+          "defectClass": "ORCHESTRATOR_PACKET_GAP",
+          "severity": "HIGH",
+          "enforcementLevel": "GUIDANCE_ONLY",
+          "checkerBindings": "NOT_APPLICABLE_WITH_REASON - the historical project-knowledge checker path no longer exists; target-local session consistency tests are evidence, not an active CVF checker binding",
+          "sourcePath": "docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0052.md"
+        },
+        {
+          "defectId": "ADIF-0056",
+          "title": "Dispatch base reused as worker execution base",
+          "defectCategory": "GATE_TRIGGER_FRICTION",
+          "defectClass": "ORCHESTRATOR_PACKET_GAP",
+          "severity": "HIGH",
+          "enforcementLevel": "MACHINE_CHECKED",
+          "checkerBindings": "governance/compat/check_work_order_dispatch_quality_core.py",
+          "sourcePath": "docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0056.md"
+        },
+        {
+          "defectId": "ADIF-0057",
+          "title": "Frozen authority envelope makes closure unreachable",
+          "defectCategory": "SCOPE_AND_OWNERSHIP",
+          "defectClass": "ORCHESTRATOR_PACKET_GAP",
+          "severity": "HIGH",
+          "enforcementLevel": "MACHINE_CHECKED",
+          "checkerBindings": "governance/compat/check_gate_to_role_closeability.py; governance/compat/check_review_cost_control.py",
+          "sourcePath": "docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0057.md"
+        },
+        {
+          "defectId": "ADIF-0058",
+          "title": "Authoring pass mistaken for worker-release readiness",
+          "defectCategory": "PROCESS_AND_GATE_ORDER",
+          "defectClass": "PHASE_GATE_PLACEMENT_GAP",
+          "severity": "HIGH",
+          "enforcementLevel": "MACHINE_CHECKED",
+          "checkerBindings": "governance/compat/check_dispatch_release_readiness.py; governance/compat/run_agent_autorun_workflow_gate.py",
+          "sourcePath": "docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0058.md"
+        },
+        {
+          "defectId": "ADIF-0061",
+          "title": "Tool classifier escalates governed edit to operator",
+          "defectCategory": "GATE_TRIGGER_FRICTION",
+          "defectClass": "RUNTIME_SIGNAL_GAP",
+          "severity": "HIGH",
+          "enforcementLevel": "GUIDANCE_ONLY",
+          "checkerBindings": "NOT_APPLICABLE_WITH_REASON - no current checker validates tool/classifier-block recovery at dispatch time",
+          "sourcePath": "docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0061.md"
+        },
+        {
+          "defectId": "ADIF-0062",
+          "title": "Acceptance chain lacks a machine-readable join",
+          "defectCategory": "CLOSURE_EVIDENCE",
+          "defectClass": "MACHINE_GATE_GAP",
+          "severity": "HIGH",
+          "enforcementLevel": "PARTIAL_CHECK",
+          "checkerBindings": "governance/compat/check_work_order_dispatch_quality.py; governance/compat/check_worker_return_quality_gate.py; governance/compat/check_agent_operation_trace.py; governance/compat/run_worker_return_fast_gate.py",
+          "sourcePath": "docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0062.md"
+        },
+        {
+          "defectId": "ADIF-0007",
+          "title": "Gate marker in boundary prose triggers wrong evidence class",
+          "defectCategory": "GATE_TRIGGER_FRICTION",
+          "defectClass": "PHASE_GATE_PLACEMENT_GAP",
+          "severity": "MEDIUM",
+          "enforcementLevel": "PARTIAL_CHECK",
+          "checkerBindings": "governance/compat/check_corpus_scan_registry.py; governance/compat/check_finding_to_governance_learning.py; governance/compat/check_delta_execution_claim_boundary.py (not all trigger classes have a dedicated test asserting the false-positive itself)",
+          "sourcePath": "docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0007.md"
+        },
+        {
+          "defectId": "ADIF-0016",
+          "title": "Reusable learning trapped in one-off work order checklist",
+          "defectCategory": "GATE_TRIGGER_FRICTION",
+          "defectClass": "RULE_GAP",
+          "severity": "MEDIUM",
+          "enforcementLevel": "GUIDANCE_ONLY",
+          "checkerBindings": "NOT_APPLICABLE_WITH_REASON: detecting whether a lesson is reusable versus task-local requires reviewer judgment; no generic checker is implemented",
+          "sourcePath": "docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0016.md"
+        },
+        {
+          "defectId": "ADIF-0017",
+          "title": "Commit-shape probing instead of steward-first split planning",
+          "defectCategory": "SCOPE_AND_OWNERSHIP",
+          "defectClass": "WORKER_EXECUTION_ERROR",
+          "severity": "MEDIUM",
+          "enforcementLevel": "PARTIAL_CHECK",
+          "checkerBindings": "governance/compat/run_agent_commit_steward_preflight.py",
+          "sourcePath": "docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0017.md"
+        },
+        {
+          "defectId": "ADIF-0024",
+          "title": "Worker return stale evidence and workspace hygiene drift",
+          "defectCategory": "CLOSURE_EVIDENCE",
+          "defectClass": "RULE_GAP",
+          "severity": "MEDIUM",
+          "enforcementLevel": "PARTIAL_CHECK",
+          "checkerBindings": "governance/compat/check_worker_return_quality_gate.py; governance/compat/check_agent_packet_authority_and_encoding.py; governance/compat/check_work_order_dispatch_quality.py",
+          "sourcePath": "docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0024.md"
+        },
+        {
+          "defectId": "ADIF-0031",
+          "title": "Behavior-changing reject row missing from writable manifest",
+          "defectCategory": "SOURCE_FIDELITY",
+          "defectClass": "RULE_GAP",
+          "severity": "MEDIUM",
+          "enforcementLevel": "GUIDANCE_ONLY",
+          "checkerBindings": "NOT_APPLICABLE_WITH_REASON: current dispatch checker validates cited paths and manifest presence separately but does not reconcile behavior-changing REJECT rows to writable paths",
+          "sourcePath": "docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0031.md"
+        },
+        {
+          "defectId": "ADIF-0039",
+          "title": "Worker return contract omits automation-assist terms",
+          "defectCategory": "GATE_TRIGGER_FRICTION",
+          "defectClass": "RULE_GAP",
+          "severity": "MEDIUM",
+          "enforcementLevel": "PARTIAL_CHECK",
+          "checkerBindings": "governance/compat/run_agent_automation_assist.py",
+          "sourcePath": "docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0039.md"
+        },
+        {
+          "defectId": "ADIF-0043",
+          "title": "Output path contract ignores process working directory",
+          "defectCategory": "SOURCE_FIDELITY",
+          "defectClass": "RULE_GAP",
+          "severity": "MEDIUM",
+          "enforcementLevel": "GUIDANCE_ONLY",
+          "checkerBindings": "NOT_APPLICABLE_WITH_REASON: current source-verification gates confirm parameter existence but do not reconcile process CWD, output containment, and excluded-root constraints",
+          "sourcePath": "docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0043.md"
+        },
+        {
+          "defectId": "ADIF-0049",
+          "title": "Governed command signature invented without help verification",
+          "defectCategory": "SOURCE_FIDELITY",
+          "defectClass": "EVIDENCE_INTERPRETATION_ERROR",
+          "severity": "MEDIUM",
+          "enforcementLevel": "GUIDANCE_ONLY",
+          "checkerBindings": "NOT_APPLICABLE_WITH_REASON: current gates execute applicable checkers but do not validate every command example against each target parser",
+          "sourcePath": "docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0049.md"
+        },
+        {
+          "defectId": "ADIF-0006",
+          "title": "Source Verification symbol cell contains a value/type",
+          "defectCategory": "SOURCE_FIDELITY",
+          "defectClass": "WORKER_EXECUTION_ERROR",
+          "severity": "LOW",
+          "enforcementLevel": "MACHINE_CHECKED",
+          "checkerBindings": "governance/compat/check_work_order_dispatch_quality.py (Verified path or symbol cell validation); governance/compat/check_agent_packet_authority_and_encoding.py (symbol-cell value/type rejection)",
+          "sourcePath": "docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0006.md"
+        }
+      ],
+      "truncated": false,
+      "totalCandidates": 27,
+      "claimBoundary": "Returning this packet is not evidence that any caller read or understood it."
+    },
+    "originalRangeGate": "FAIL missing ADIF before disclosure; not relabeled PASS",
+    "preparation": "PARTIAL_WITH_REASON",
+    "scopeOrEffectChanges": 0
+  }
 }

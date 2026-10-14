@@ -25,7 +25,9 @@ Startup acknowledged: current mode=`cvf_ncr_html_root_build_effect_approval_pend
 
 ## Current Authority
 
-Planning/proposal context only, NOT_GRANTED. Baseline: `docs/baselines/CVF_GC018_NCR_HTML_INTEGRATED_ROOT_BUILD_2026-10-15.md`; SHA256 `085486fad7ff6dd7f3bc0149e620854604c1ed66770d98c03b4ec334cdea563a`. Work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_INTEGRATED_ROOT_BUILD_2026-10-15.md`; SHA256 `6c8958a952c92aef09a018a341800a4c01cafea90be8295e6d68e76dc135c311`. Companion: `docs/reviews/evidence/ncr-html-integrated-root-build-preapproval-20261015.json`. Admission: `docs/assessments/CVF_NCR_HTML_ROOT_BUILD_ADMISSION_2026-10-15.md`. Material `490e4bc858daac281b26f2eccbaa4af94717f206`. Source binds are current; no worker or runtime grant. Previous accepted technical review remains docs/reviews/CVF_NCR_PREFEAS_ROOT_BUILD_COMPLETION_2026-10-15.md; its original pair/grant is consumed and preserved.
+ADIF late-disclosure correction is metadata only: all resolver IDs disclosed; current raw pair pins and scoped receipt refreshed. Local preparation remains PARTIAL_WITH_REASON, initial range FAIL retained. Current proposal/effect scope stays NOT_GRANTED; no worker/runtime action.
+
+Planning/proposal context only, NOT_GRANTED. Baseline: `docs/baselines/CVF_GC018_NCR_HTML_INTEGRATED_ROOT_BUILD_2026-10-15.md`; SHA256 `5174b2a8548bbbce35b5541dcfe16529bcc1b99680e9008996618eeb2494877f`. Work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_INTEGRATED_ROOT_BUILD_2026-10-15.md`; SHA256 `75c9dd9b3d749847a4a1d87deb54b10c2e577c244eb60369b1345e69b980a3b7`. Companion: `docs/reviews/evidence/ncr-html-integrated-root-build-preapproval-20261015.json`. Admission: `docs/assessments/CVF_NCR_HTML_ROOT_BUILD_ADMISSION_2026-10-15.md`. Material `490e4bc858daac281b26f2eccbaa4af94717f206`. Source binds are current; no worker or runtime grant. Previous accepted technical review remains docs/reviews/CVF_NCR_PREFEAS_ROOT_BUILD_COMPLETION_2026-10-15.md; its original pair/grant is consumed and preserved.
 
 ## Accepted NCR Evidence And Continuation
 

@@ -37,11 +37,11 @@
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_NCR_HTML_INTEGRATED_ROOT_BUILD_2026-10-15.md",
-    "baselineSha256": "085486fad7ff6dd7f3bc0149e620854604c1ed66770d98c03b4ec334cdea563a",
+    "baselineSha256": "5174b2a8548bbbce35b5541dcfe16529bcc1b99680e9008996618eeb2494877f",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_INTEGRATED_ROOT_BUILD_2026-10-15.md",
-    "workOrderSha256": "6c8958a952c92aef09a018a341800a4c01cafea90be8295e6d68e76dc135c311"
+    "workOrderSha256": "75c9dd9b3d749847a4a1d87deb54b10c2e577c244eb60369b1345e69b980a3b7"
   },
-  "currentAuthoritySyncReason": "Concrete held root proposal at 490e4bc858daac281b26f2eccbaa4af94717f206; currentAuthority pins the proposal context only, NOT_GRANTED. Actual current explicit CLI evaluates1 canonical object FEASIBLE_FOR_INTEGRATED_ROOT_BUILD with false readiness/effect. Await separate operator effect decision, then immutable release/continuity/bound gates before worker. Preapproval technical acceptance/procedure partial and original root/P4/history retained.",
+  "currentAuthoritySyncReason": "Held proposal context, NOT_GRANTED. ADIF late-disclosure metadata correction to original490e4bc858daac281b26f2eccbaa4af94717f206 updates raw pair pins atomically; source scope and effects unchanged, Local preparation partial. Actual one-object scoped receipt refreshed; operator effect decision still required before immutable release/worker.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
