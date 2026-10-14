@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "cvf_ncr_root_admission_owner_scope_pending",
+  "currentMode": "cvf_ncr_prefeas_root_build_dispatch_ready",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-ROOT-ADMISSION-RECONCILIATION-20261014. Decision=docs/assessments/CVF_NCR_HTML_ROOT_ADMISSION_RECONCILIATION_2026-10-14.md; evidence=docs/reviews/evidence/ncr-html-root-admission-reconciliation-local-20261014.json; material=72630dd6f3296eadbae7ecfd8bdc72f01bc70bad. Source12/AST: existing preapproval ROOT->HOLD independent of phase; retained1-object receipt reused, no rerun. Owner lookup complete. Pending operator scope decision on five exact existing preapproval owner/caller/test paths (four protected Python); proposed scoped root-BUILD feasibility only, no READY or runtime grant. No further automatic PLAN/worker/harness successor; preserve marked root/HOLD and counters/history, no unmarked bypass. NCR_HTML_CONFIGURED_RECEIPT_CONTROL_PROOF BLOCKED/FEATURE_SUCCESSORS_FROZEN; ordinal2 ROOT required, cleanup/profile blockers2. No guard/product/browser/engine/provider/config/store grant. SPEC bounded/REQ07 partial; R1/R2partial,R3/R4open,R5/R6deferred; Q001/Q004/data/custody/business/send/B2/P11/public/deploy parked; LHW24 retained; all old grants/provider12/13/unused1 retired.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-PREFEAS-ROOT-BUILD-20261015. Work order=docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_PREFEAS_ROOT_BUILD_2026-10-15.md; companion=docs/reviews/evidence/ncr-prefeas-root-build-dispatch-20261015.json; material=0c7bbf2a3cbbcb6c20ea719151071406e498e2df. Operator approved five-path owner amendment2026-10-15. Manual INTERNAL_AGENT worker after final bound pre-dispatch PASS; capture released HEAD then mandatory reads/pins, pre-implementation and scaffold before edits/tests. Locked optional root action/phase/baseline-scope/return route, distinct build-feasible receipt; old ROOT/STOP HOLD. Exact5 existing owner/caller/test edits+full return/evidence2;120min, no stage/commit. Local independent probe/closure; no duplicate full suite. NCR_HTML_CONFIGURED_RECEIPT_CONTROL_PROOF stays BLOCKED/FEATURE_SUCCESSORS_FROZEN; ordinal2/counters/blockers and old grants retained, no third harness repair. HTML/browser/engine/provider/config/store/public effects0. R1/R2partial,R3/R4open,R5/R6deferred; data/custody/business/send/B2/P11/public/deploy parked; LHW24 retained; provider12/13/unused1 retired.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_NCR_HTML_FRESH_PROFILE_USER_JOURNEY_SPEC_2026-10-14.md",
-    "baselineSha256": "3e87e418cc84065d8b497381a72cf93e5e3c3ce9fc30ace4b729b957b7862b39",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_FRESH_PROFILE_USER_JOURNEY_SPEC_2026-10-14.md",
-    "workOrderSha256": "c681775f3fd5592ffed5a9924a1582ad08be98587c614179dd458e86049ad8fd"
+    "baselinePath": "docs/baselines/CVF_GC018_NCR_PREFEAS_ROOT_BUILD_2026-10-15.md",
+    "baselineSha256": "5a0f7eb8a3e203c81fe847a996a68097fb2eea4bc5c43a8bf23afd138ea29140",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_PREFEAS_ROOT_BUILD_2026-10-15.md",
+    "workOrderSha256": "65ada5dec6e975988cf8cc4c9a5a5e4d575b2fb3f8424e522d7ee3a5fbf49dd7"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

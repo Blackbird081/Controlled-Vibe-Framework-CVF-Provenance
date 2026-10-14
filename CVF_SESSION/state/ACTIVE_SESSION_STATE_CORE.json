@@ -36,12 +36,12 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_NCR_HTML_FRESH_PROFILE_USER_JOURNEY_SPEC_2026-10-14.md",
-    "baselineSha256": "3e87e418cc84065d8b497381a72cf93e5e3c3ce9fc30ace4b729b957b7862b39",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_FRESH_PROFILE_USER_JOURNEY_SPEC_2026-10-14.md",
-    "workOrderSha256": "c681775f3fd5592ffed5a9924a1582ad08be98587c614179dd458e86049ad8fd"
+    "baselinePath": "docs/baselines/CVF_GC018_NCR_PREFEAS_ROOT_BUILD_2026-10-15.md",
+    "baselineSha256": "5a0f7eb8a3e203c81fe847a996a68097fb2eea4bc5c43a8bf23afd138ea29140",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_PREFEAS_ROOT_BUILD_2026-10-15.md",
+    "workOrderSha256": "65ada5dec6e975988cf8cc4c9a5a5e4d575b2fb3f8424e522d7ee3a5fbf49dd7"
   },
-  "currentAuthoritySyncReason": "Retired SPEC pair immutable. Root admission reconciliation docs/assessments/CVF_NCR_HTML_ROOT_ADMISSION_RECONCILIATION_2026-10-14.md; actual material 72630dd6f3296eadbae7ecfd8bdc72f01bc70bad. Existing owner phase gap resolved source-level, proposed five-path owner amendment needs scope decision. Root/HOLD/counters/freeze and all old grants retained, no automatic worker/runtime/PLAN successor.",
+  "currentAuthoritySyncReason": "Operator yes2026-10-15 authorizes five-path preapproval amendment. New exact4 pair/companion/roadmap material 0c7bbf2a3cbbcb6c20ea719151071406e498e2df; current raw pair pins. Manual exact7 worker only after bound release; Local probe/closure. Historical HTML root/freeze/grants and P4 retained, no HTML/provider effect.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
@@ -110,8 +110,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_ncr_root_admission_owner_scope_pending",
-  "previousMode": "cvf_ncr_html_integrated_root_contract_held",
+  "currentMode": "cvf_ncr_prefeas_root_build_dispatch_ready",
+  "previousMode": "cvf_ncr_root_admission_owner_scope_pending",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",

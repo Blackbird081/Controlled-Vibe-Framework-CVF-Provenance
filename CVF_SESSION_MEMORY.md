@@ -31,21 +31,21 @@ artifact.
 | Prior handoff (archive-qualified) | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V62_2026-09-17.md` |
 | Latest front-door archive | `CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_COMPACTION_ARCHIVE_2026-08-11.md` |
 | Current authority evidence | `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` `currentAuthority` |
-| Parent maintenance | Existing-owner phase gap identified; five-path scope decision pending, no automatic PLAN/runtime |
+| Parent maintenance | Approved preapproval owner amendment dispatch; exact7 manual worker, bound release required; HTML root frozen |
 | Freeze posture | `governance_kernel_freeze_recommended` |
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_root_admission_owner_scope_pending`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=operator scope decision on five-path existing preapproval amendment, no automatic successor; role=Local INTERNAL_AGENT orchestrator/reviewer; phase=admission owner scope pending; decision owner=operator for new protected scope; parked checkpoint=owner scope plus data/custody/business/provider/send/B2/P11/public/deploy.
+Startup acknowledged: current mode=`cvf_ncr_prefeas_root_build_dispatch_ready`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=manual exact7 owner-amendment worker after final bound pre-dispatch PASS; role=Local INTERNAL_AGENT dispatcher/reviewer; phase=approved owner amendment dispatch; decision owner=Local technical review, operator scope approved2026-10-15; parked checkpoint=HTML/provider/data/custody/business/send/B2/P11/public/deploy.
 
 ## Current Mode
 
-Current mode marker: `cvf_ncr_root_admission_owner_scope_pending`
-Current mode: `cvf_ncr_root_admission_owner_scope_pending`; previous mode marker: `cvf_ncr_html_integrated_root_contract_held`
+Current mode marker: `cvf_ncr_prefeas_root_build_dispatch_ready`
+Current mode: `cvf_ncr_prefeas_root_build_dispatch_ready`; previous mode marker: `cvf_ncr_root_admission_owner_scope_pending`
 
 ## Next Allowed Move
 
-Mode: `cvf_ncr_root_admission_owner_scope_pending`
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-ROOT-ADMISSION-RECONCILIATION-20261014. Decision=docs/assessments/CVF_NCR_HTML_ROOT_ADMISSION_RECONCILIATION_2026-10-14.md; evidence=docs/reviews/evidence/ncr-html-root-admission-reconciliation-local-20261014.json; material=72630dd6f3296eadbae7ecfd8bdc72f01bc70bad. Source12/AST: existing preapproval ROOT->HOLD independent of phase; retained1-object receipt reused, no rerun. Owner lookup complete. Pending operator scope decision on five exact existing preapproval owner/caller/test paths (four protected Python); proposed scoped root-BUILD feasibility only, no READY or runtime grant. No further automatic PLAN/worker/harness successor; preserve marked root/HOLD and counters/history, no unmarked bypass. NCR_HTML_CONFIGURED_RECEIPT_CONTROL_PROOF BLOCKED/FEATURE_SUCCESSORS_FROZEN; ordinal2 ROOT required, cleanup/profile blockers2. No guard/product/browser/engine/provider/config/store grant. SPEC bounded/REQ07 partial; R1/R2partial,R3/R4open,R5/R6deferred; Q001/Q004/data/custody/business/send/B2/P11/public/deploy parked; LHW24 retained; all old grants/provider12/13/unused1 retired.
+Mode: `cvf_ncr_prefeas_root_build_dispatch_ready`
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-PREFEAS-ROOT-BUILD-20261015. Work order=docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_PREFEAS_ROOT_BUILD_2026-10-15.md; companion=docs/reviews/evidence/ncr-prefeas-root-build-dispatch-20261015.json; material=0c7bbf2a3cbbcb6c20ea719151071406e498e2df. Operator approved five-path owner amendment2026-10-15. Manual INTERNAL_AGENT worker after final bound pre-dispatch PASS; capture released HEAD then mandatory reads/pins, pre-implementation and scaffold before edits/tests. Locked optional root action/phase/baseline-scope/return route, distinct build-feasible receipt; old ROOT/STOP HOLD. Exact5 existing owner/caller/test edits+full return/evidence2;120min, no stage/commit. Local independent probe/closure; no duplicate full suite. NCR_HTML_CONFIGURED_RECEIPT_CONTROL_PROOF stays BLOCKED/FEATURE_SUCCESSORS_FROZEN; ordinal2/counters/blockers and old grants retained, no third harness repair. HTML/browser/engine/provider/config/store/public effects0. R1/R2partial,R3/R4open,R5/R6deferred; data/custody/business/send/B2/P11/public/deploy parked; LHW24 retained; provider12/13/unused1 retired.
 Historical G1-G7 terminal baseline: mode `acel_g1_g7_research_terminally_closed`. G1-G6 terminal review: `docs/reviews/CVF_ACEL_G1_G6_TERMINAL_STOP_CLOSURE_2026-09-24.md`; G7 research closure: `docs/reviews/CVF_ACEL_G7_CROSS_RUN_CAPABILITY_EVOLUTION_RESEARCH_CLOSURE_2026-09-24.md`. The packet-only post-G7 reconciliation review at `docs/reviews/CVF_ACEL_POST_G7_FULL_CORPUS_ABSORPTION_CLOSURE_2026-09-24.md` is superseded for repository absorption by the 2026-09-25 pinned-source audit. G1 is stopped, G2-G6 remain parked, G7 research is closed, and no automatic G1-G7 successor exists.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
