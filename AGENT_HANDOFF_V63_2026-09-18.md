@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Current NCR Continuation
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `0c7bbf2a3cbbcb6c20ea719151071406e498e2df`. Material SHA: `0c7bbf2a3cbbcb6c20ea719151071406e498e2df`. Batch ID: CVF-NCR-PREFEAS-ROOT-BUILD-20261015. Exact4 approved owner-amendment dispatch; exact6 raw-hash/actual-SHA continuity; manual exact7 worker only after final bound release, no HTML/runtime/provider.
+Current HEAD recorded for this handoff: `5fef70c8bf28362989d18880e53b553f6256e036`. Material SHA: `5fef70c8bf28362989d18880e53b553f6256e036`. Batch ID: CVF-NCR-PREFEAS-ROOT-BUILD-20261015. Intermediate documentation-only commit; original NCR pair/grant and pending worker evidence retained. No HTML/runtime/provider effect.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -92,21 +92,21 @@ Rollback boundary: exact6; preserve original archive and accepted/blocked histor
 |---|---|
 | Actor | Local INTERNAL_AGENT session-sync steward |
 | Provider or surface | private shared workspace |
-| Session or invocation | ncr-prefeas-root-build-dispatch-continuity-20261015 |
+| Session or invocation | worker-preparation-documentation-head-sync-20261015 |
 | Working directory | repository root |
-| Command or tool surface | core authority/raw-hash and entry update, canonical generator, actual material-SHA handoff/front-door sync |
-| Target paths | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Allowed scope source | operator NCR continuation; exact6 authority in paired baseline/order |
-| Before status evidence | 0c7bbf2a3cbbcb6c20ea719151071406e498e2df; exact4 dispatch material committed, clean worktree/stage empty |
-| After status evidence | exact6 raw-hash/actual-SHA current-pair continuity; historical root and P4 retained |
-| Diff evidence | exact6 staged manifest/whitespace; canonical generator compatibility |
-| Approval boundary | manual exact7 owner-amendment worker after bound release only; no HTML/runtime/provider grant |
-| Claim boundary | locked SPEC/declared admission, implementation/probe unexecuted; old root frozen, R3/R4 open |
+| Command or tool surface | actual documentation material SHA handoff-only synchronization |
+| Target paths | `AGENT_HANDOFF_V63_2026-09-18.md` |
+| Allowed scope source | operator commit/continue instruction and GC-020 dedicated handoff sync |
+| Before status evidence | 5fef70c8bf28362989d18880e53b553f6256e036; documentation exact4 committed, worker original exact7 held in private custody |
+| After status evidence | one handoff marker/trace update; existing NCR authority and next move retained |
+| Diff evidence | git diff --check and exact1 staged manifest |
+| Approval boundary | handoff only; no new NCR grant or provider/runtime effect |
+| Claim boundary | documentation material HEAD recorded; NCR correction/review still pending |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-prefeas-root-build-dispatch-continuity-20261015 |
-| Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Manifest delta | MATCH exact6 continuity |
+| Invocation ID | worker-preparation-documentation-head-sync-20261015 |
+| Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md` |
+| Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md` |
+| Manifest delta | MATCH exact1 handoff-only sync |
 | Deletion or rename disposition | None |
 
 ## Claim Boundary
