@@ -1,0 +1,349 @@
+{
+  "schemaVersion": "cvf.ncrRequestCancellationDispatch.v1",
+  "status": "ROOT_ADMITTED_PENDING_COMMITTED_BOUND_RELEASE",
+  "inspectionHead": "06f80e58b6d553855ce4aa32c74eb35fb1ba928f",
+  "sources": [
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts",
+      "sha256": "5f6545ac8c08f6bd55de14cb43e668a403cbf193289f277372e42f1af4949101",
+      "physicalLines": 936,
+      "readSpans": [
+        "49-60",
+        "740-849",
+        "879-922 (Root final builder/catch spotcheck)"
+      ],
+      "reviewedSymbols": "POST; admitAndInvokeProvider initial/retry; validation retry loop",
+      "readDepth": "bounded named seam inspection; test rows selected search only"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/ai/types.ts",
+      "sha256": "58eff6bceea2caa7088fada51dbf4e53d1074633ab4fee15d90f5ff791d4abd3",
+      "physicalLines": 246,
+      "readSpans": [
+        "11-17"
+      ],
+      "reviewedSymbols": "AIConfig",
+      "readDepth": "bounded named seam inspection; test rows selected search only"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/ai/providers.ts",
+      "sha256": "bca40aab2d66df9ee5f7060b0d7558d6e499cca1b5a118ed367e546ca04d94aa",
+      "physicalLines": 573,
+      "readSpans": [
+        "299-408",
+        "534-573"
+      ],
+      "reviewedSymbols": "executeAlibaba; executeAI",
+      "readDepth": "bounded named seam inspection; test rows selected search only"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/provider-attempt-admission.ts",
+      "sha256": "080926b974cad54fb676c14913ead44161cdf39e645cefe04ce96f105180a173",
+      "physicalLines": 379,
+      "readSpans": [
+        "1-379"
+      ],
+      "reviewedSymbols": "admitProviderAttempt; recordProviderCallStart; buildProviderAttemptReconciliation; admitAndInvokeProvider",
+      "readDepth": "bounded named seam inspection; test rows selected search only"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execution-diagnostics.ts",
+      "sha256": "f6af35154cda0778fe798f63b08a6a454b388ee99b0c9770080d3dcd5df96f76",
+      "physicalLines": 217,
+      "readSpans": [
+        "1-175"
+      ],
+      "reviewedSymbols": "ExecutionDiagnosticClass; DEFAULT_BY_CLASS; classifyProviderError",
+      "readDepth": "bounded named seam inspection; test rows selected search only"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ProcessingScreen.tsx",
+      "sha256": "e34ff88d91b25e8274042cc7f77871eb25570ce01eb8e4531b75a274a99a77ec",
+      "physicalLines": 950,
+      "readSpans": [
+        "108-130",
+        "192-244"
+      ],
+      "reviewedSymbols": "attempt AbortController and fetch signal",
+      "readDepth": "bounded named seam inspection; test rows selected search only"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/provider-attempt-admission.test.ts",
+      "sha256": "32a9daa38b882091ed597ff6b1d71b6f14f0bea6336570292c9d19d97ab2b473",
+      "physicalLines": 346,
+      "readSpans": [
+        "named admission/accounting/reconciliation tests"
+      ],
+      "reviewedSymbols": "existing admission positive/negative boundaries",
+      "readDepth": "bounded named seam inspection; test rows selected search only"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.provider-attempt-admission.test.ts",
+      "sha256": "fea4d4554e2cd91d40475eaf6259fdc209dc775ed5de86e74237565337be278c",
+      "physicalLines": 510,
+      "readSpans": [
+        "named initial/retry/count tests"
+      ],
+      "reviewedSymbols": "existing per-attempt accounting",
+      "readDepth": "bounded named seam inspection; test rows selected search only"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.diagnostics.test.ts",
+      "sha256": "d1b0dc95c883bb78763e4d0d7c09796584d43e7475133e3be5157e4bb22b97d4",
+      "physicalLines": 173,
+      "readSpans": [
+        "128-168"
+      ],
+      "reviewedSymbols": "existing provider_timeout classification",
+      "readDepth": "bounded named seam inspection; test rows selected search only"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/ai/providers.test.ts",
+      "sha256": "7832a46a86ea3159f659680131f260df5ee1bf1607f2ae7cb1030c64721ef4f8",
+      "physicalLines": 750,
+      "readSpans": [
+        "named Alibaba/timeout tests"
+      ],
+      "reviewedSymbols": "existing provider response/deadline neighbors",
+      "readDepth": "bounded named seam inspection; test rows selected search only"
+    }
+  ],
+  "workerManifest": [
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/ai/types.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/ai/providers.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/provider-attempt-admission.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execution-diagnostics.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/provider-request-cancellation.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.request-cancellation.test.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/ai/providers.request-cancellation.test.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/provider-attempt-admission.request-cancellation.test.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execution-diagnostics.request-cancellation.test.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/provider-request-cancellation.test.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/ncr-request-cancellation.live.spec.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/support/ncr-request-cancellation-boundary.cjs",
+    "docs/reviews/evidence/ncr-request-cancellation-worker-20261014.json",
+    "docs/reviews/CVF_NCR_REQUEST_CANCELLATION_WORKER_RETURN_2026-10-14.md"
+  ],
+  "dispatchManifest": [
+    "docs/baselines/CVF_GC018_NCR_REQUEST_CANCELLATION_2026-10-14.md",
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_REQUEST_CANCELLATION_2026-10-14.md",
+    "docs/reviews/evidence/ncr-request-cancellation-dispatch-20261014.json"
+  ],
+  "requirements": [
+    "REQ-SIGNAL",
+    "REQ-COMPOSE",
+    "REQ-ADMISSION",
+    "REQ-NO-RETRY",
+    "REQ-LIVE",
+    "REQ-BUDGET-RETURN"
+  ],
+  "budget": {
+    "historicalObserved": 9,
+    "workerUiPositive": 1,
+    "workerUiCancel": 1,
+    "workerProviderStartCap": 2,
+    "rootUiCancel": 1,
+    "rootProviderStartCap": 2,
+    "taskCap": 4,
+    "programCeiling": 13,
+    "expiryUtc": "2026-10-14T03:30:00Z_PROSPECTIVE_PENDING_COMMITTED_RELEASE",
+    "releaseClock": "PENDING_ACTUAL_RELEASE_75MIN"
+  },
+  "blockers": [
+    "Root exact source/size/diagnostic/ledger contract acceptance",
+    "hard expiry and committed bound release",
+    "independent oracle hash/fixture",
+    "GC051 new expected-path registration",
+    "immutable closure-control reviewer-authority feasibility",
+    "actual NextRequest signal delivery must be proved or BLOCKED"
+  ],
+  "claimBoundary": "R1/R2 partial; R3/R4 open; R5/R6 deferred; real-data/custody/business acceptance/selected HTML/send/B2/P11/public/deploy parked; LHW24 retained. Real runtime signal delivery remains required empirical proof, BLOCKED if absent.",
+  "rootClosureControlManifest": [
+    "docs/baselines/CVF_GC018_NCR_REQUEST_CANCELLATION_CLOSURE_CONTROL_2026-10-14.md",
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_REQUEST_CANCELLATION_CLOSURE_CONTROL_2026-10-14.md"
+  ],
+  "closeabilityFeasibility": "PENDING_FULL_CANONICAL_REVIEW; observed nonactive grammar/hashshape only is not admissibility",
+  "rootReviewManifest": [
+    "docs/corpus-intelligence/registry/entries/cvf-ncr-request-cancellation.json",
+    "docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json",
+    "docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md",
+    "docs/reviews/evidence/ncr-request-cancellation-local-20261014.json",
+    "docs/reviews/CVF_NCR_REQUEST_CANCELLATION_COMPLETION_2026-10-14.md",
+    "docs/reviews/archive/CVF_AGENT_WORK_ORDER_NCR_REQUEST_CANCELLATION_DISPATCH_2026-10-14.md",
+    "docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md"
+  ],
+  "continuityManifest": [
+    "AGENT_HANDOFF_V63_2026-09-18.md",
+    "CVF_SESSION_MEMORY.md",
+    "CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json",
+    "CVF_SESSION/state/entries/nextAllowedMove.json",
+    "CVF_SESSION/ACTIVE_SESSION_STATE.json",
+    "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json"
+  ],
+  "totalManifestCount": 33,
+  "semanticMaterialManifest": [
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/ai/types.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/ai/providers.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/provider-attempt-admission.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execution-diagnostics.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/provider-request-cancellation.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.request-cancellation.test.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/ai/providers.request-cancellation.test.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/provider-attempt-admission.request-cancellation.test.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execution-diagnostics.request-cancellation.test.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/provider-request-cancellation.test.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/ncr-request-cancellation.live.spec.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/support/ncr-request-cancellation-boundary.cjs",
+    "docs/reviews/evidence/ncr-request-cancellation-worker-20261014.json",
+    "docs/reviews/CVF_NCR_REQUEST_CANCELLATION_WORKER_RETURN_2026-10-14.md",
+    "docs/baselines/CVF_GC018_NCR_REQUEST_CANCELLATION_2026-10-14.md",
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_REQUEST_CANCELLATION_2026-10-14.md",
+    "docs/reviews/evidence/ncr-request-cancellation-dispatch-20261014.json",
+    "docs/corpus-intelligence/registry/entries/cvf-ncr-request-cancellation.json",
+    "docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json",
+    "docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md",
+    "docs/reviews/evidence/ncr-request-cancellation-local-20261014.json",
+    "docs/reviews/CVF_NCR_REQUEST_CANCELLATION_COMPLETION_2026-10-14.md",
+    "docs/reviews/archive/CVF_AGENT_WORK_ORDER_NCR_REQUEST_CANCELLATION_DISPATCH_2026-10-14.md",
+    "docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md"
+  ],
+  "semanticMaterialCount": 25,
+  "rootAdmission": {
+    "actor": "LOCAL_REVIEWER_CODEX_ROOT",
+    "decision": "ADMIT_BOUNDED_REQUEST_CANCELLATION_AFTER_COMMITTED_RELEASE",
+    "workerManifest": [
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/ai/types.ts",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/ai/providers.ts",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/provider-attempt-admission.ts",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execution-diagnostics.ts",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/provider-request-cancellation.ts",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.request-cancellation.test.ts",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/ai/providers.request-cancellation.test.ts",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/provider-attempt-admission.request-cancellation.test.ts",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execution-diagnostics.request-cancellation.test.ts",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/provider-request-cancellation.test.ts",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/ncr-request-cancellation.live.spec.ts",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/support/ncr-request-cancellation-boundary.cjs",
+      "docs/reviews/evidence/ncr-request-cancellation-worker-20261014.json",
+      "docs/reviews/CVF_NCR_REQUEST_CANCELLATION_WORKER_RETURN_2026-10-14.md"
+    ],
+    "materialManifest": [
+      "docs/baselines/CVF_GC018_NCR_REQUEST_CANCELLATION_2026-10-14.md",
+      "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_REQUEST_CANCELLATION_2026-10-14.md",
+      "docs/reviews/evidence/ncr-request-cancellation-dispatch-20261014.json"
+    ],
+    "rootClosureManifest": [
+      "docs/corpus-intelligence/registry/entries/cvf-ncr-request-cancellation.json",
+      "docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json",
+      "docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md",
+      "docs/reviews/evidence/ncr-request-cancellation-local-20261014.json",
+      "docs/reviews/CVF_NCR_REQUEST_CANCELLATION_COMPLETION_2026-10-14.md",
+      "docs/reviews/archive/CVF_AGENT_WORK_ORDER_NCR_REQUEST_CANCELLATION_DISPATCH_2026-10-14.md",
+      "docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md"
+    ],
+    "reviewerClosureControlManifest": [
+      "docs/baselines/CVF_GC018_NCR_REQUEST_CANCELLATION_CLOSURE_CONTROL_2026-10-14.md",
+      "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_REQUEST_CANCELLATION_CLOSURE_CONTROL_2026-10-14.md"
+    ],
+    "continuityManifest": [
+      "AGENT_HANDOFF_V63_2026-09-18.md",
+      "CVF_SESSION_MEMORY.md",
+      "CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json",
+      "CVF_SESSION/state/entries/nextAllowedMove.json",
+      "CVF_SESSION/ACTIVE_SESSION_STATE.json",
+      "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json"
+    ],
+    "callBudget": {
+      "worker": 2,
+      "reviewer": 2,
+      "additionalTaskTotal": 4,
+      "historicalObserved": 9,
+      "programCeiling": 13
+    },
+    "workerUiCeiling": 2,
+    "reviewerUiCeiling": 1,
+    "workerExpiryUtc": "2026-10-14T03:30:00Z",
+    "workerBuildMinutes": 75,
+    "reviewerHelpers": {
+      "oracle": {
+        "path": ".cvf/runtime/ncr-request-cancellation-20261014/root/independent-probe.cjs",
+        "sha256": "5bf9cc6e07fc18d6ac0eed9a1f5301619ccc15b1c725ebc398713d5506478585"
+      },
+      "boundary": {
+        "path": ".cvf/runtime/ncr-request-cancellation-20261014/root/review-boundary.cjs",
+        "sha256": "9d19064b4aaf9a8021b4e8240357ab909c489a09d85127f4fd5996fae4a81c81"
+      },
+      "wrapper": {
+        "path": ".cvf/runtime/ncr-request-cancellation-20261014/root/run-review.py",
+        "sha256": "48f5c7b976ddd0e9e5c5c4667d5e65ec605c481f70252c231801da70f10c98bb"
+      }
+    },
+    "actualReleaseUtc": null,
+    "actualReleaseEvidence": "dispatcher must record actual UTC/full HEAD/hash-bound grant at bound release; null is not release",
+    "closureChoreography": "Local admitted closure choreography under existing hierarchy and tranche split: after final worker and distinct reviewer evidence is frozen, create/commit immutable reviewer control pair2 with Status REVIEWED_CLOSURE_CONTROL and providerExecutionAuthority FORBIDDEN. It is Local metadata-closure authority only, no BUILD/live grant. Preserve/temporarily hold/restore exact frozen delta by custody to isolate documentary pair commit. Commit exact6 current-authority handoff binding four exact raw path/hash fields to that unchanged pair. Capture closureBaseHead after actual handoff. Semantic25 = dispatch3+worker15+Root7; it excludes control pair2 and protected continuity6. Current immutable pair remains unchanged in semantic material, permitting old execution pair terminal conversion without authority-hash mismatch. Actual6 disclosure follows semantic commit. MFRP evaluates only its proper immutable semantic range after disclosure. No documentary commit is semantic/live proof; REVIEWED_ nonactive status classification is not closeability proof. Never replay the old145a mixed range: verify_worktree_matches_committed_target would observe changed Core/authority, so it is unreplayable; preserve journal and original outcomes, no checker edit or fabricated credit. Only frozen actual facts enter future control pair.",
+    "preReleaseProcedureDisposition": "PARTIAL_WITH_REASON: initial author fast gate missing envelope/literal command; next layer identified manifest/closure binding omissions; original failures retained and consolidated Root source fixes before release. No worker/provider effects.",
+    "preCommitFirstOutcome": {
+      "outcome": "FAIL",
+      "checksTotal": 91,
+      "failedChecks": 5,
+      "log": ".cvf/runtime/ncr-request-cancellation-20261014/dispatch-material-commit.log",
+      "disposition": "Consolidated Root repairs of SCEC, baseline external bindings, exact Delta block, clean-worktree literal and scoped knowledge counts; no worker/provider effects."
+    }
+  },
+  "adifResolverEvidence": {
+    "path": ".cvf/runtime/ncr-request-cancellation-20261014/adif-dispatch.json",
+    "sha256": "ffa99c6e1bacb3065ac7f2b481c15f0e9fd04516fe5867cea28646cd16e13c34",
+    "result": {
+      "items": [],
+      "truncated": false,
+      "totalCandidates": 0,
+      "claimBoundary": "Returning this packet is not evidence that any caller read or understood it."
+    }
+  },
+  "governanceSourcePins": [
+    {
+      "path": "docs/reference/CVF_TRANCHE_COMMIT_CHOREOGRAPHY_STANDARD_2026-06-03.md",
+      "sha256": "1b96c81fa8d6e7dca8f02d51ca091db19a36c64b56b0c5903591ecdfc48cea9b",
+      "readSpans": [
+        "100-107",
+        "112-127",
+        "152-175",
+        "366-383"
+      ],
+      "decisionScope": "Local metadata closure authority/tranche split only; status/hash shape is not gate proof"
+    },
+    {
+      "path": "governance/compat/check_gate_to_role_closeability.py",
+      "sha256": "8f00c6421eebe3c1b237e5307ac6e2b0b0343c9a35cf635bbab17aa886e00e8e",
+      "readSpans": [
+        "223-227"
+      ],
+      "decisionScope": "Local metadata closure authority/tranche split only; status/hash shape is not gate proof"
+    },
+    {
+      "path": "governance/compat/check_active_session_state.py",
+      "sha256": "d8530595346ead44f67cb18b32b6ebcf287c2b460ac68fbf16034f72034f2097",
+      "readSpans": [
+        "274-362"
+      ],
+      "decisionScope": "Local metadata closure authority/tranche split only; status/hash shape is not gate proof"
+    },
+    {
+      "path": "governance/compat/mfrp_shadow_canary_autocollect.py",
+      "sha256": "7002f9e0f72753c65101a3b9e6729bf4ce7186685226a2d85feb627bbd23cab0",
+      "readSpans": [
+        "215-218"
+      ],
+      "decisionScope": "Local metadata closure authority/tranche split only; status/hash shape is not gate proof"
+    }
+  ],
+  "localClosureFeasibility": {
+    "disposition": "LOCAL_ADMITTED_BOUNDED_METADATA_CLOSURE_CHOREOGRAPHY",
+    "basis": "Existing hierarchy/Local closure ownership/tranche split; independent canonical advisory review found no contradiction; Local retains final decision",
+    "notClaimed": "REVIEWED_ skip/hash shape as semantic closeability proof; future semantic25/actual6 gates remain required",
+    "priorMfrpDisposition": "Original mixed145a range/marker rejection retained; no replay/credit/journal edit; new current-authority change makes old target worktree mismatch naturally unreplayable"
+  }
+}

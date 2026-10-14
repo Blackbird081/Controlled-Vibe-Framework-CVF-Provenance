@@ -31,21 +31,21 @@ artifact.
 | Prior handoff (archive-qualified) | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V62_2026-09-17.md` |
 | Latest front-door archive | `CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_COMPACTION_ARCHIVE_2026-08-11.md` |
 | Current authority evidence | `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` `currentAuthority` |
-| Parent maintenance | Saved receipt-history contribution accepted bounded; full NCR exits open; no automatic successor; whole job open |
+| Parent maintenance | Request-cancellation packet admitted; worker exact15 waits committed bound release; whole job open |
 | Freeze posture | `governance_kernel_freeze_recommended` |
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_receipt_history_closed_bounded`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=Saved receipt-history contribution accepted bounded; full NCR exits open; no automatic successor; role=Local INTERNAL_AGENT orchestrator/reviewer; phase=private continuity; decision owner=Local; parked checkpoint=real-data writer/custody/business acceptance/public/deploy/P11 and unrelated lanes.
+Startup acknowledged: current mode=`cvf_ncr_request_cancellation_execution`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=Request-cancellation packet admitted; worker exact15 waits committed bound release; role=Local INTERNAL_AGENT orchestrator/reviewer; phase=private continuity; decision owner=Local; parked checkpoint=real-data writer/custody/business acceptance/public/deploy/P11 and unrelated lanes.
 
 ## Current Mode
 
-Current mode marker: `cvf_ncr_receipt_history_closed_bounded`
-Current mode: `cvf_ncr_receipt_history_closed_bounded`; previous mode marker: `cvf_ncr_receipt_history_closed_bounded`
+Current mode marker: `cvf_ncr_request_cancellation_execution`
+Current mode: `cvf_ncr_request_cancellation_execution`; previous mode marker: `cvf_ncr_request_cancellation_execution`
 
 ## Next Allowed Move
 
-Mode: `cvf_ncr_receipt_history_closed_bounded`
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=LOCAL_DISPOSITION_ONLY; BATCH_ID=CVF-NCR-HOME-RECEIPT-HISTORY-20261014. Finite saved receipt-history contribution closed bounded; no active worker or unused paid grant. REVIEW_COST_ESCALATION_REQUIRED: no same-cycle successor or rerun. Root may perform read-only next-gap intake under NCR roadmap before a separately admitted future slice. R1/R2 partial; R3/R4 open; R5/R6 deferred; real-data/custody/business acceptance/selected HTML/send/B2/P11/public/deploy parked; LHW24 retained. Reviewed material commit=145a591e197a9bf90f2ba4dc277016bb435ae4b4; dedicated actual-SHA continuity.
+Mode: `cvf_ncr_request_cancellation_execution`
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-REQUEST-CANCELLATION-20261014. WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_REQUEST_CANCELLATION_2026-10-14.md. Worker exact15 after committed bound release; max2UI/2starts; reviewer1cancelUI/2starts; task4+observed9<=13;75min actual release orUTC03:30 first. Actual release not yet recorded; no BUILD before full bound release. R1/R2 partial; R3/R4 open; R5/R6 deferred; real-data/custody/business acceptance/selected HTML/send/B2/P11/public/deploy parked; LHW24 retained.
 Historical G1-G7 terminal baseline: mode `acel_g1_g7_research_terminally_closed`. G1-G6 terminal review: `docs/reviews/CVF_ACEL_G1_G6_TERMINAL_STOP_CLOSURE_2026-09-24.md`; G7 research closure: `docs/reviews/CVF_ACEL_G7_CROSS_RUN_CAPABILITY_EVOLUTION_RESEARCH_CLOSURE_2026-09-24.md`. The packet-only post-G7 reconciliation review at `docs/reviews/CVF_ACEL_POST_G7_FULL_CORPUS_ABSORPTION_CLOSURE_2026-09-24.md` is superseded for repository absorption by the 2026-09-25 pinned-source audit. G1 is stopped, G2-G6 remain parked, G7 research is closed, and no automatic G1-G7 successor exists.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1

@@ -36,12 +36,12 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_NCR_RECEIPT_HISTORY_2026-10-14.md",
-    "baselineSha256": "dc0d80a77177a28d12e1a211e6e61b4d92fd5b2152465d7540ee4998970e4a8e",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RECEIPT_HISTORY_2026-10-14.md",
-    "workOrderSha256": "54a57f86246fa3370284fdab788836c7668cfe89b28da03dab2af7182b6dbb47"
+    "baselinePath": "docs/baselines/CVF_GC018_NCR_REQUEST_CANCELLATION_2026-10-14.md",
+    "baselineSha256": "c4b88fd3c6d21225d9264af14b2a2f8993c0afc92348c34a5ddd97f694775931",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_REQUEST_CANCELLATION_2026-10-14.md",
+    "workOrderSha256": "f46b18e3122a09008f1440cab870f8d76eb21dfbd15010aa0a00da0353a74565"
   },
-  "currentAuthoritySyncReason": "Saved receipt-history contribution accepted bounded; full NCR exits open; no automatic successor Material 145a591e197a9bf90f2ba4dc277016bb435ae4b4; coherent source/generated authority; actual-SHA dedicated continuity follows material. Whole NCR pilot/effects remain separate.",
+  "currentAuthoritySyncReason": "Request-cancellation packet admitted; worker exact15 waits committed bound release Pre-closure parent 06f80e58b6d553855ce4aa32c74eb35fb1ba928f; coherent source/generated authority; actual-SHA dedicated continuity follows material. Whole NCR pilot/effects remain separate.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
@@ -110,7 +110,7 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_ncr_receipt_history_closed_bounded",
+  "currentMode": "cvf_ncr_request_cancellation_execution",
   "previousMode": "cvf_ncr_brief_copy_closed_useful_selection",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",

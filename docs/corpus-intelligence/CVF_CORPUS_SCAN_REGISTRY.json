@@ -9135,6 +9135,42 @@
       "nextScanRecommendation": "Retain named bounded proof; source-wide processing requires separate admission."
     },
     {
+      "id": "cvf-ncr-request-cancellation",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "NCR request cancellation named source and tests",
+      "scopePaths": [
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/provider-request-cancellation.ts",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.request-cancellation.test.ts",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/ai/providers.request-cancellation.test.ts",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/provider-attempt-admission.request-cancellation.test.ts",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execution-diagnostics.request-cancellation.test.ts",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/provider-request-cancellation.test.ts",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/ncr-request-cancellation.live.spec.ts",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/support/ncr-request-cancellation-boundary.cjs"
+      ],
+      "fileCount": null,
+      "status": "NOT_STARTED",
+      "scanWave": null,
+      "scanDate": null,
+      "manifestHash": null,
+      "hashAlgorithm": null,
+      "hashInput": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_NCR_REQUEST_CANCELLATION_COMPLETION_2026-10-14.md",
+      "completionReviewPath": "docs/reviews/CVF_NCR_REQUEST_CANCELLATION_COMPLETION_2026-10-14.md",
+      "gcBaselineRef": "docs/baselines/CVF_GC018_NCR_REQUEST_CANCELLATION_2026-10-14.md",
+      "verdicts": {
+        "gc047": "NOT_RUN",
+        "gc048": "NOT_RUN",
+        "gc050": "NOT_RUN"
+      },
+      "semanticRegions": [],
+      "priorAbsorption": "Eight named new source/test/spec/preload paths registered before worker return; authority union33 is in dispatch, not corpus scope; no executed proof/source-wide processing.",
+      "findings": [],
+      "negativeSearchTerms": [],
+      "nextScanRecommendation": "Consume bounded worker/reviewer proof; retain NOT_STARTED for source-wide processing."
+    },
+    {
       "id": "ccma-shared-learning-delta-20261012",
       "corpusType": "PROJECT_SOURCE",
       "displayName": "Customer Care ten shared learning records, 2026-10-12 delta",
