@@ -31,21 +31,21 @@ artifact.
 | Prior handoff (archive-qualified) | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V62_2026-09-17.md` |
 | Latest front-door archive | `CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_COMPACTION_ARCHIVE_2026-08-11.md` |
 | Current authority evidence | `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` `currentAuthority` |
-| Parent maintenance | Selected HTML entry/profile source contract; design-only SPEC planning; cleanup blocked and grants retired |
+| Parent maintenance | Paired design-only HTML journey SPEC dispatch; cleanup blocked, all runtime/provider grants retired |
 | Freeze posture | `governance_kernel_freeze_recommended` |
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_selected_pilot_prerequisites_reconciled_plan`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=Local paired design-only HTML user-journey SPEC preparation, no current worker/runtime; role=Local INTERNAL_AGENT orchestrator/reviewer; phase=NCR source/PLAN disposition; decision owner=Local; parked checkpoint=actual-data/custody/business acceptance/provider/live/send/B2/P11/public/deploy and stopped lanes.
+Startup acknowledged: current mode=`cvf_ncr_html_fresh_profile_user_journey_spec_dispatch_ready`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=manual exact3 design-only SPEC after bound gates; role=Local INTERNAL_AGENT dispatcher/reviewer; phase=SPEC dispatch; decision owner=Local; parked checkpoint=actual-data/custody/business acceptance/provider/live/send/B2/P11/public/deploy and stopped lanes.
 
 ## Current Mode
 
-Current mode marker: `cvf_ncr_selected_pilot_prerequisites_reconciled_plan`
-Current mode: `cvf_ncr_selected_pilot_prerequisites_reconciled_plan`; previous mode marker: `cvf_ncr_html_conditional_reviewed_cleanup_blocked`
+Current mode marker: `cvf_ncr_html_fresh_profile_user_journey_spec_dispatch_ready`
+Current mode: `cvf_ncr_html_fresh_profile_user_journey_spec_dispatch_ready`; previous mode marker: `cvf_ncr_selected_pilot_prerequisites_reconciled_plan`
 
 ## Next Allowed Move
 
-Mode: `cvf_ncr_selected_pilot_prerequisites_reconciled_plan`
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-SELECTED-PILOT-PREREQUISITES-20261014. Source assessment=docs/assessments/CVF_NCR_SELECTED_PILOT_PREREQUISITES_REASSESSMENT_2026-10-14.md; evidence=docs/reviews/evidence/ncr-selected-pilot-prerequisites-local-20261014.json; material=9e1fca2d70aee6695041f012012d9156642f4531. Source29 pins: existing /artifacts form for fresh explicitly chosen source; Work Transfer audited-record variant. Home audit producer exists conditionally, metadata not full output; telemetry can degrade, audit access owner/admin. Actual origin/evaluate/engine/store/SIEM/retention/cost/identity and business walkthrough remain open. Next Local prepares one finite design-only NCR-HTML-FRESH-PROFILE-USER-JOURNEY-SPEC paired packet and release before manual selected-worker transfer; no current worker dispatch, product or runtime grant. Keep existing seven fields/owners; no new UI/audit/storage/runtime capability. Conditional full REQ-07 cleanup still blocked; same-cluster FEATURE_SUCCESSORS_FROZEN/no third BUILD, all primary/conditional remainders retired. R1/R2partial,R3/R4open,R5/R6deferred; Q001/Q004/actual-data/custody/business acceptance/send/B2/P11/public/deploy parked; LHW24 retained. Historical provider12/13/unused1 retired; provider calls0 this source task, no fresh live grant.
+Mode: `cvf_ncr_html_fresh_profile_user_journey_spec_dispatch_ready`
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-HTML-FRESH-PROFILE-USER-JOURNEY-SPEC-20261014. Design-only pair=docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_FRESH_PROFILE_USER_JOURNEY_SPEC_2026-10-14.md; baseline=docs/baselines/CVF_GC018_NCR_HTML_FRESH_PROFILE_USER_JOURNEY_SPEC_2026-10-14.md; proof=docs/reviews/evidence/ncr-html-fresh-profile-user-journey-spec-dispatch-20261014.json; material=85e984bc92b54eba22ec7fb2a879dd619b3c7a41. Manual INTERNAL_AGENT worker captures released HEAD/status and bound pre-implementation PASS after final bound pre-dispatch PASS. Exact3 NEW SPEC/return/JSON, hard75minutes, WORKER_MUST_NOT_COMMIT; all7 requirements/full worker gate; no subdelegation. Existing /artifacts/seven inputs; proposed synthetic profile/effects, Vietnamese walkthrough and source/proof/decision map. Product/browser/engine/provider/config-values/user-store effects0; actual profile/business/full R3/R4 unproved. Cleanup NCR_HTML_CONFIGURED_RECEIPT_CONTROL_PROOF remains BLOCKED/FEATURE_SUCCESSORS_FROZEN/no third control BUILD; primary/conditional remainders retired. R1/R2partial,R3/R4open,R5/R6deferred; Q001/Q004/actual-data/custody/business acceptance/send/B2/P11/public/deploy parked; LHW24 retained. Historical provider12/13/unused1 retired, no fresh live grant.
 Historical G1-G7 terminal baseline: mode `acel_g1_g7_research_terminally_closed`. G1-G6 terminal review: `docs/reviews/CVF_ACEL_G1_G6_TERMINAL_STOP_CLOSURE_2026-09-24.md`; G7 research closure: `docs/reviews/CVF_ACEL_G7_CROSS_RUN_CAPABILITY_EVOLUTION_RESEARCH_CLOSURE_2026-09-24.md`. The packet-only post-G7 reconciliation review at `docs/reviews/CVF_ACEL_POST_G7_FULL_CORPUS_ABSORPTION_CLOSURE_2026-09-24.md` is superseded for repository absorption by the 2026-09-25 pinned-source audit. G1 is stopped, G2-G6 remain parked, G7 research is closed, and no automatic G1-G7 successor exists.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
