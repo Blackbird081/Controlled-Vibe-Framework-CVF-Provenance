@@ -36,7 +36,7 @@ import { buildExecutionIdentityDecision } from '@/lib/execution-identity';
 import { evaluateExecutionActorRoleGate, resolveExecutionCVFRole, resolveExecutionOutputClass } from '@/lib/execute-role-resolver';
 import { buildOutputBypassGuardResult, checkRoleOutputPermission, detectBypassInOutput, resolveGuardAction, shouldRequireSkillPreflight } from '@/lib/execute-route-guards';
 import { buildExecutionDiagnostic } from '@/lib/execution-diagnostics';
-import { admitAndInvokeProvider, buildProviderAttemptDeniedResponse, buildProviderAttemptReconciliation, createProviderAttemptLedger } from '@/lib/provider-attempt-admission';
+import { admitAndInvokeProvider, buildProviderAttemptDeniedResponse, buildProviderAttemptReconciliation, buildProviderRequestCancelledResponse, createProviderAttemptLedger } from '@/lib/provider-attempt-admission';
 import type { ProviderAttemptLedger } from '@/lib/provider-attempt-admission';
 import { assertNonVisionExecutionPathIsDirect, sot3CanonicalExecutionIdFanoutArg } from '@/lib/canonical-web-gateway-execution';
 import { getApprovalStore, type ApprovalRequestRecord } from '../approvals/store';
@@ -50,6 +50,9 @@ export async function POST(request: NextRequest) {
     const routeStartedAtMs = Date.now();
     // F01: hoisted so the outer catch can carry reconciliation evidence too.
     let providerAttemptLedgerForCatch: ProviderAttemptLedger | undefined;
+    let selectedCancellationSignalForCatch: AbortSignal | undefined;
+    let selectedProviderForCatch = 'alibaba';
+    let selectedModelForCatch: string | undefined;
     try {
         const rawBodyText = await readBoundedRequestBody(request, 16 * 1024 * 1024);
         if (rawBodyText === null) return NextResponse.json({ success: false, error: 'Execution request body exceeds 16 MiB limit.' }, { status: 413 });
@@ -86,6 +89,10 @@ export async function POST(request: NextRequest) {
         body.inputs = Object.fromEntries(Object.entries(body.inputs || {}).map(([k, v]) => [k, String(v ?? '').trim()]));
         if (typeof body.model === 'string') body.model = body.model.trim() || undefined;
         const isVisionExecution = prepareVisionRouteRequest(body).isVisionExecution;
+        if (body.provider === 'alibaba' && !isVisionExecution) {
+            selectedCancellationSignalForCatch = request.signal;
+            selectedModelForCatch = body.model;
+        }
         // -- CP7/CP8: Build governance envelope + policy snapshot id ----------
         const govEnvelope = buildGovernanceEnvelope({
             routeId: '/api/execute',
@@ -744,6 +751,12 @@ export async function POST(request: NextRequest) {
             providerModel: `${routedProvider}:${body.model ?? 'default'}`,
         });
         providerAttemptLedgerForCatch = providerAttemptLedger;
+        const selectedRequestSignal = routedProvider === 'alibaba' && !isVisionExecution ? request.signal : undefined;
+        selectedCancellationSignalForCatch = selectedRequestSignal;
+        selectedProviderForCatch = routedProvider;
+        selectedModelForCatch = body.model;
+        const cancelled = () => selectedRequestSignal?.aborted === true;
+        const cancellationResponse = () => buildProviderRequestCancelledResponse({ ledger: providerAttemptLedger, routedProvider, requestedModel: body.model });
         const denyProviderAttempt = (retryAfterSeconds: number) => buildProviderAttemptDeniedResponse({
             ledger: providerAttemptLedger, retryAfterSeconds, routedProvider, requestedModel: body.model,
             govEnvelope, enforcementRiskLevel: enforcement.riskGate?.riskLevel, routingDecision: routingResult.decision,
@@ -757,18 +770,21 @@ export async function POST(request: NextRequest) {
         // invocation, and reconciliation-bearing error handling in one call.
         // CSCC-R1-T2: exactly the direct executeAI path per the selection above. --
         assertNonVisionExecutionPathIsDirect();
+        if (cancelled()) return cancellationResponse();
         let aiResult: ExecutionResponse;
         {
             const outcome = await admitAndInvokeProvider({
                 ledger: providerAttemptLedger, purpose: 'initial', routedProvider, requestedModel: body.model,
                 onDenied: denyProviderAttempt, errorLogLabel: 'Provider invocation error:', errorFallbackMessage: 'Provider invocation failed.',
+                requestSignal: selectedRequestSignal, onCancelled: cancellationResponse,
                 invoke: () => isVisionExecution
                     ? executeVisionRouteRequest({ apiKey: routedApiKey, body, prompt: filteredPrompt, traceId: govEnvelope.envelopeId })
-                    : executeAI(routedProvider, routedApiKey, filteredPrompt, { model: body.model, maxTokens: executionMaxTokens, ...(enrichedSystemPrompt ? { systemPrompt: enrichedSystemPrompt } : {}) }),
+                    : executeAI(routedProvider, routedApiKey, filteredPrompt, { model: body.model, maxTokens: executionMaxTokens, signal: selectedRequestSignal, ...(enrichedSystemPrompt ? { systemPrompt: enrichedSystemPrompt } : {}) }),
             });
             if (!outcome.ok) return outcome.response;
             aiResult = outcome.result;
         }
+        if (cancelled()) return cancellationResponse();
         let outputValidation: ValidationResult | undefined;
         const retryState: RetryState = { attempt: 0, previousIssues: [] };
         let outputSafetyAuditEmitted = false;
@@ -803,9 +819,11 @@ export async function POST(request: NextRequest) {
 
             // -- OUTPUT_SAFETY_TRIGGERED: fire on first UNSAFE_CONTENT detection --
             await emitOutputSafetyTriggered(outputValidation, aiResult);
+            if (cancelled()) return cancellationResponse();
 
             // Auto-retry loop (max 2 retries, invisible to user)
             while (outputValidation.decision === 'RETRY') {
+                if (cancelled()) return cancellationResponse();
                 if (!hasValidationRetryBudget(routeStartedAtMs)) break;
                 const retryDecision = shouldRetry(outputValidation, retryState);
                 if (!retryDecision.retry) break;
@@ -818,6 +836,7 @@ export async function POST(request: NextRequest) {
                     : filteredPrompt;
                 // Validator hints can quote the original intent; filter after composition.
                 const retryDlpPrompt = (await applyDLPFilter(retryPromptDraft)).redacted;
+                if (cancelled()) return cancellationResponse();
                 const retrySafety = runSafetyWorkflowChain(retryDlpPrompt);
                 if (retrySafety.blocked || applySafetyFilters(retrySafety.sanitized).blocked) {
                     return NextResponse.json({ success: false, error: 'Safety screening blocked the validation retry.', provider: routedProvider, model: 'blocked' }, { status: 400 });
@@ -828,10 +847,12 @@ export async function POST(request: NextRequest) {
                 const retryOutcome = await admitAndInvokeProvider({
                     ledger: providerAttemptLedger, purpose: 'retry', routedProvider, requestedModel: body.model,
                     onDenied: denyProviderAttempt, errorLogLabel: 'Provider retry invocation error:', errorFallbackMessage: 'Provider retry invocation failed.',
-                    invoke: () => executeAI(routedProvider, routedApiKey, retryPrompt, { model: body.model, maxTokens: executionMaxTokens, ...(enrichedSystemPrompt ? { systemPrompt: enrichedSystemPrompt } : {}) }),
+                    requestSignal: selectedRequestSignal, onCancelled: cancellationResponse,
+                    invoke: () => executeAI(routedProvider, routedApiKey, retryPrompt, { model: body.model, maxTokens: executionMaxTokens, signal: selectedRequestSignal, ...(enrichedSystemPrompt ? { systemPrompt: enrichedSystemPrompt } : {}) }),
                 });
                 if (!retryOutcome.ok) return retryOutcome.response;
                 aiResult = retryOutcome.result;
+                if (cancelled()) return cancellationResponse();
                 if (!aiResult.success) break;
 
                 outputValidation = validateOutput({
@@ -841,6 +862,7 @@ export async function POST(request: NextRequest) {
                     templateCategory: template?.category,
                 });
                 await emitOutputSafetyTriggered(outputValidation, aiResult);
+                if (cancelled()) return cancellationResponse();
             }
         }
 
@@ -878,7 +900,8 @@ export async function POST(request: NextRequest) {
             }
         }
 
-        return buildExecuteFinalResponse({
+        if (cancelled()) return cancellationResponse();
+        const finalResponse = await buildExecuteFinalResponse({
             aiResult: { ...aiResult, memoryAdvisoryReadout } as ExecutionResponse,
             outputValidation,
             retryState,
@@ -912,7 +935,14 @@ export async function POST(request: NextRequest) {
             actorRoleGate,
             providerAttemptReconciliation: buildProviderAttemptReconciliation(providerAttemptLedger, routedProvider, body.model ?? 'default'),
         });
+        if (cancelled()) return cancellationResponse();
+        return finalResponse;
     } catch (error) {
+        if (selectedCancellationSignalForCatch?.aborted) {
+            const ledger = providerAttemptLedgerForCatch ?? createProviderAttemptLedger({ identityKind: 'service', identityHash: 'pre-admission-cancelled', providerModel: `alibaba:${selectedModelForCatch ?? 'default'}` });
+            return buildProviderRequestCancelledResponse({ ledger,
+                routedProvider: selectedProviderForCatch, requestedModel: selectedModelForCatch });
+        }
         if (error instanceof InvalidRequestBodyEncodingError) {
             return NextResponse.json({ success: false, error: error.message }, { status: 400 });
         }

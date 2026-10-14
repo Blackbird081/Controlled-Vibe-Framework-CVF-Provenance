@@ -2,7 +2,7 @@
 
 Memory class: governed-dispatch-baseline
 docType: baseline
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 Date: 2026-10-14
 Batch ID: CVF-NCR-REQUEST-CANCELLATION-20261014
 Inspection base: `06f80e58b6d553855ce4aa32c74eb35fb1ba928f`
@@ -15,7 +15,7 @@ Implement the Local-admitted selected incoming request cancellation slice after 
 
 ## Decision / Proposed Tranche
 
-DISPATCH_READY: Local contract/source/reviewer topology admitted; actual complete gates, committed packet/coherent authority and recorded bound release precede BUILD/provider calls.75min or03:30Z first.
+RETIRED_EXECUTION_READY_PREIMAGE: Local contract/source/reviewer topology admitted; actual complete gates, committed packet/coherent authority and recorded bound release precede BUILD/provider calls.75min or03:30Z first.
 
 ## Scope / Target / Owner Boundary
 
@@ -81,7 +81,7 @@ Exact current raw source and separate reviewer helper hashes in docs/reviews/evi
 | Field | Evidence |
 |---|---|
 | applicableCheckersRead | governance/compat/check_work_order_dispatch_quality_lifecycle.py; governance/compat/check_gate_to_role_closeability.py; governance/compat/check_active_session_state.py; governance/compat/check_work_order_acceptance_ledger.py; governance/compat/check_task_governance_route.py; governance/compat/check_review_cost_control.py; governance/compat/check_independent_review_probe_admission.py; governance/compat/check_agent_operation_trace.py; governance/compat/check_core_guard_self_protection.py; governance/compat/check_finding_to_governance_learning.py; governance/compat/mfrp_shadow_canary_autocollect.py |
-| literalTokensReviewed | DISPATCH_READY; controlled grant subject/expiry; exact16/33; six ledger proof IDs; all closeability gates/phases; singleton RIPA YES; REVIEWED_ nonactive classification versus contract proof; currentAuthority exact4 raw fields; semantic26 excludes protected6 |
+| literalTokensReviewed | RETIRED_EXECUTION_READY_PREIMAGE; controlled grant subject/expiry; exact16/33; six ledger proof IDs; all closeability gates/phases; singleton RIPA YES; REVIEWED_ nonactive classification versus contract proof; currentAuthority exact4 raw fields; semantic26 excludes protected6 |
 | gateRunPurpose | confirmation/evidence after source and literal review; Root runs complete author/pre-dispatch/bound-release gates after publication and commits; no future gate PASS claimed |
 | claimBoundary | source-based readiness and Local contract admission only; runtime signal delivery and cancellation behavior require actual bounded proof |
 
@@ -90,7 +90,7 @@ Exact current raw source and separate reviewer helper hashes in docs/reviews/evi
 Expected Result / Prediction: incoming request abort reaches local composed Alibaba signal and suppresses starts/retries/late success.
 Evidence Comparison: named source gap and prospective criteria only; actual cancellation proof PENDING.
 Contradiction Or Gap Disposition: Runtime request signal delivery requires empirical proof; Local closure-control scope admitted with limitations.
-Claim Update: DISPATCH_READY finite R2/R4; actual proof unexecuted.
+Claim Update: RETIRED_EXECUTION_READY_PREIMAGE finite R2/R4; actual proof unexecuted.
 
 ## ADIF Defect Registry Disclosure
 
@@ -220,7 +220,7 @@ InspectionHEAD=06f80e58b6d553855ce4aa32c74eb35fb1ba928f; actual source-pins.json
 
 ## Reviewer Closure Conversion Block
 
-PENDING Root exact reviewer/registry/control-pair/roadmap/continuity manifest. Semantic material excludes protected continuity only after immutable reviewer-authority handoff feasibility. Root original custody/current source/terminal RIPA/MCP/private export required.
+Local reviewer accepted selected nonvision text Alibaba local cancellation only. Completion: `docs/reviews/CVF_NCR_REQUEST_CANCELLATION_COMPLETION_2026-10-14.md`. Actual closureBaseHead `b3831ad41019812ae05651e153be0ffffd98fabd`; semantic26 excludes immutable control2 and protected continuity6. Original worker16/Root7 raw custody: `.cvf/runtime/ncr-request-cancellation-20261014/closure-control/frozen/final-actual/custody.json`. Worker JSON is retained byte-for-byte as its original pending return; Root terminal decision is here and in completion. Worker2+Root1 actual starts, prior9+new3=12/13; all live grants retired. No remote stop/billing/full NCR/public/deploy claim.
 
 ## Agent Handoff Contract Control Block
 
@@ -291,3 +291,58 @@ NOT_APPLICABLE_WITH_REASON - existing request/provider consumer enhancement, no 
 Finding `NCR-SIGNAL-OPTIONS-REGRESSION-SHAPE`, SHA256 `6aaa73ad2f111fba165d1d5382b50985e4fd3925ff788c712f49754dd0787ebc`: two existing exact-options assertions need the native signal field. Authorize only those two assertions in `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.test.ts`; preserve other options and line count below1200. Worker exact16; semantic26; authority union34. Original02:29 release clock,75min/03:30 expiry, worker2UI/2starts and Root1UI/2starts unchanged; no budget reset or blind live replay. Source scope blocker resolved by this grant; actual test PASS still required.
 
 Local amendment: preserve and freeze primary owned delta; commit only documentary control pair2 and exact6 authority handoff in an isolated Local worktree sharing this private Git common directory, then fast-forward primary only after no-path-overlap and raw-delta reconciliation. No product-source hold, deletion, rollback transaction or provider grant. Capture closureBaseHead after imported exact6 authority handoff; semantic26 excludes control2/protected6; final actual6 and proper split-range gates remain mandatory.
+
+## Independent Review Probe Admission Contract
+
+independentProbeRequired: YES
+independentProbeRiskClass: P4_CRITICAL_PROVIDER_LIVE_EXTERNAL_EFFECT
+independentProbeDispositionAtDispatch: PENDING_REVIEWER_EXECUTION
+probeExecutorRole: LOCAL_REVIEWER_NOT_IMPLEMENTATION_WORKER
+implementationOracleSeparation: Distinct Root assertion source, synthetic planetarium fixture and invocation.
+positiveControl: Worker real positive ALLOW plus distinct Root actual paid pending fetch before Stop.
+negativeMutationClasses: No retries or late success over the independent 22-second observation window.
+expectedInformationGain: Independent current-code incoming signal delivery and local transport abort.
+rerunCostReason: Executed one admitted Root cancel journey, one actual fetch start; grant now retired.
+reviewerDecisionOwner: LOCAL
+independentProbeDisposition: PASS_INDEPENDENT_PROBE
+implementationWorkerActor: INTERNAL_WORKER_SOL_CONFIGURED
+probeExecutorActor: LOCAL_REVIEWER_CODEX_ROOT
+workerInvocationId: ncr-request-cancellation-worker-20261014
+probeInvocationId: ncr-request-cancellation-root-planetarium-20261014
+probeCommandOrMethod: Distinct Root .cvf/runtime/ncr-request-cancellation-20261014/root/run-review.py and independent-probe.cjs; executed once before grant retirement.
+probeObservedResult: PASS six independent assertions; one UI POST and one actual Alibaba fetch, local abort 103ms after Stop; no retry or late success for22s.
+oracleSeparationBasis: Separately authored Root assertions and fixture with distinct invocation, evidence and source hashes.
+workerEvidenceRef: docs/reviews/evidence/ncr-request-cancellation-worker-20261014.json
+workerOracleSha256: 977a298241c5b0ad979dc20d8909fe9ba38fb2e19c6ddd30c06d59d7d2bb33d9
+probeEvidenceRef: docs/reviews/evidence/ncr-request-cancellation-local-20261014.json
+probeOracleSha256: d207b9326c53583d3b9fbc35d78850de41b7a2cd38a6b46b7a0a5a1fa3dbefea
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_REQUEST_CANCELLATION_2026-10-14.md` | CLOSED_PASS_BOUNDED; providerExecutionAuthority FORBIDDEN | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_NCR_REQUEST_CANCELLATION_COMPLETION_2026-10-14.md` | Six accepted requirements; singleton distinct Root real probe and actual closureBaseHead | PASS |
+| Roadmap state | `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` | Finite cancellation contribution; R1/R2 partial, R3/R4 open, R5/R6 deferred | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | Generator-owned aggregate; source-wide NOT_STARTED retained | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | Bounded contribution lookup; no full scan claim | PASS |
+| External evidence digest | `docs/reviews/evidence/ncr-request-cancellation-local-20261014.json` | sha256:d207b9326c53583d3b9fbc35d78850de41b7a2cd38a6b46b7a0a5a1fa3dbefea; original worker raw sha256:977a298241c5b0ad979dc20d8909fe9ba38fb2e19c6ddd30c06d59d7d2bb33d9 | PASS |
+| System loop interlock | `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` | All provider grants retired; business/public/deploy checkpoints retained | PASS |
+| Session continuity | `AGENT_HANDOFF_V63_2026-09-18.md; CVF_SESSION_MEMORY.md; CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json; CVF_SESSION/state/entries/nextAllowedMove.json; CVF_SESSION/ACTIVE_SESSION_STATE.json; CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Immutable pair2/current authority6 imported at b3831ad41019812ae05651e153be0ffffd98fabd; actual material SHA disclosure separately required | N/A with reason: protected actual6 follows committed semantic material |
+
+## Terminal Local Disposition
+
+Local reviewer accepted selected nonvision text Alibaba local cancellation only. Completion: `docs/reviews/CVF_NCR_REQUEST_CANCELLATION_COMPLETION_2026-10-14.md`. Actual closureBaseHead `b3831ad41019812ae05651e153be0ffffd98fabd`; semantic26 excludes immutable control2 and protected continuity6. Original worker16/Root7 raw custody: `.cvf/runtime/ncr-request-cancellation-20261014/closure-control/frozen/final-actual/custody.json`. Worker JSON is retained byte-for-byte as its original pending return; Root terminal decision is here and in completion. Worker2+Root1 actual starts, prior9+new3=12/13; all live grants retired. No remote stop/billing/full NCR/public/deploy claim.
+
+Provider execution authority: FORBIDDEN. Closed execution metadata carries no BUILD or repeat-live grant.
+
+## Acceptance Receipt Assertion Matrix
+
+| Requirement | Required value | Observed value / evidence | Status |
+|---|---|---|---|
+| REQ-SIGNAL | Governing mandatory REQ-SIGNAL | Original worker PROOF-REQ-SIGNAL PASS; Root six actual cancellation assertions, local abort103ms and22s no retry/late output; raw proofs bound below | PASS |
+| REQ-COMPOSE | Governing mandatory REQ-COMPOSE | Original worker PROOF-REQ-COMPOSE PASS; Root six actual cancellation assertions, local abort103ms and22s no retry/late output; raw proofs bound below | PASS |
+| REQ-ADMISSION | Governing mandatory REQ-ADMISSION | Original worker PROOF-REQ-ADMISSION PASS; Root six actual cancellation assertions, local abort103ms and22s no retry/late output; raw proofs bound below | PASS |
+| REQ-NO-RETRY | Governing mandatory REQ-NO-RETRY | Original worker PROOF-REQ-NO-RETRY PASS; Root six actual cancellation assertions, local abort103ms and22s no retry/late output; raw proofs bound below | PASS |
+| REQ-LIVE | Governing mandatory REQ-LIVE | Original worker PROOF-REQ-LIVE PASS; Root six actual cancellation assertions, local abort103ms and22s no retry/late output; raw proofs bound below | PASS |
+| REQ-BUDGET-RETURN | Governing mandatory REQ-BUDGET-RETURN | Original worker PROOF-REQ-BUDGET-RETURN PASS; Root six actual cancellation assertions, local abort103ms and22s no retry/late output; raw proofs bound below | PASS |

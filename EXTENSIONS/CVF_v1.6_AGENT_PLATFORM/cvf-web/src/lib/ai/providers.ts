@@ -1,5 +1,6 @@
 import { AIConfig, ExecutionResponse, AIProvider, DEFAULT_MODELS, CVF_SYSTEM_PROMPT } from './types';
 import { buildExecutionDiagnostic, buildProviderExecutionDiagnostic } from '@/lib/execution-diagnostics';
+import { composeProviderRequestSignal, PROVIDER_DEADLINE_MESSAGE, REQUEST_CANCELLED_MESSAGE } from '@/lib/provider-request-cancellation';
 
 class ProviderHttpStatusError extends Error {
     readonly httpStatus: number;
@@ -303,8 +304,10 @@ async function executeAlibaba(
 ): Promise<ExecutionResponse> {
     const startTime = Date.now();
     const isStreamingOnly = isAlibabaStreamingOnlyModel(config.model);
+    const cancellation = composeProviderRequestSignal(config.signal, resolveProviderTimeoutMs());
 
     try {
+        cancellation.throwIfTerminal();
         const response = await fetch('https://dashscope-intl.aliyuncs.com/compatible-mode/v1/chat/completions', {
             method: 'POST',
             headers: {
@@ -332,11 +335,13 @@ async function executeAlibaba(
                     : {}),
             }),
             // W133 default remains 60s; EVT/model rebaselines may opt into a longer bounded timeout.
-            signal: AbortSignal.timeout(resolveProviderTimeoutMs()),
+            signal: cancellation.signal,
         });
+        cancellation.throwIfTerminal();
 
         if (!response.ok) {
             const error = await response.json();
+            cancellation.throwIfTerminal();
             const message = error.error?.message || 'Alibaba DashScope API error';
             if (isStreamingOnly && error.error?.code === 'model_not_supported') {
                 throw new Error(
@@ -349,6 +354,7 @@ async function executeAlibaba(
 
         if (isStreamingOnly) {
             const data = await parseAlibabaStreamingResponse(response);
+            cancellation.throwIfTerminal();
             if (data.finishReason === 'length') {
                 return buildAlibabaTruncatedCompletion(config, Date.now() - startTime, data.usage);
             }
@@ -368,6 +374,7 @@ async function executeAlibaba(
         }
 
         const data = await response.json();
+        cancellation.throwIfTerminal();
         const usage = { inputTokens: data.usage?.prompt_tokens, outputTokens: data.usage?.completion_tokens, totalTokens: data.usage?.total_tokens };
         if (data.choices?.[0]?.finish_reason === 'length') {
             return buildAlibabaTruncatedCompletion(config, Date.now() - startTime, {
@@ -397,6 +404,16 @@ async function executeAlibaba(
         };
     } catch (error) {
         const executionTime = Date.now() - startTime;
+        if (cancellation.cause() === 'request') return {
+            success: false, error: REQUEST_CANCELLED_MESSAGE, provider: 'alibaba', model: config.model,
+            executionTime, diagnostic: buildExecutionDiagnostic({ stage: 'provider', class: 'request_cancelled',
+                provider: 'alibaba', model: config.model, httpStatus: 499, latencyMs: executionTime }),
+        };
+        if (cancellation.cause() === 'deadline') return {
+            success: false, error: PROVIDER_DEADLINE_MESSAGE, provider: 'alibaba', model: config.model,
+            executionTime, diagnostic: buildExecutionDiagnostic({ stage: 'provider', class: 'provider_timeout',
+                provider: 'alibaba', model: config.model, latencyMs: executionTime }),
+        };
         return {
             success: false,
             error: error instanceof Error ? error.message : 'Unknown error',
@@ -405,6 +422,8 @@ async function executeAlibaba(
             executionTime,
             diagnostic: buildProviderExecutionDiagnostic({ provider: 'alibaba', model: config.model, error, latencyMs: executionTime }),
         };
+    } finally {
+        cancellation.dispose();
     }
 }
 
@@ -543,6 +562,7 @@ export async function executeAI(
         model: options?.model || DEFAULT_MODELS[provider],
         maxTokens: options?.maxTokens,
         temperature: options?.temperature,
+        signal: options?.signal,
     };
 
     const systemPrompt = options?.systemPrompt ?? CVF_SYSTEM_PROMPT;

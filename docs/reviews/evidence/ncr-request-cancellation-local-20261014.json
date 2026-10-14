@@ -1,0 +1,381 @@
+{
+  "schemaVersion": "cvf.ncrRequestCancellationLocalReview.v1",
+  "status": "ACTUAL_EVIDENCE_ROOT_DECISION_SEPARATE",
+  "decisionOwner": "LOCAL",
+  "workerEvidenceRef": "docs/reviews/evidence/ncr-request-cancellation-worker-20261014.json",
+  "workerEvidenceRawSha256": "977a298241c5b0ad979dc20d8909fe9ba38fb2e19c6ddd30c06d59d7d2bb33d9",
+  "probeEvidenceRef": ".cvf/runtime/ncr-request-cancellation-20261014/root/independent-probe-result.json",
+  "probeEvidenceRawSha256": "f712b7de0005ba27c4b56bc60698c51389d0b50219827f6da45986e5f5050d1a",
+  "runEvidenceRawSha256": "99404eed6ee837514e8942d9b0dbaec7f07dc6130fda1904f1cef9a2c1b75210",
+  "actualEvidenceSummary": {
+    "workerProofRawSha256": "977a298241c5b0ad979dc20d8909fe9ba38fb2e19c6ddd30c06d59d7d2bb33d9",
+    "originalWorkerReturnRawSha256": "143c7ca3bf26d69e56787b8dd3d5ab1234d6d40a75ea76def7d87579bb7f59bf",
+    "workerProofs": [
+      {
+        "proofId": "PROOF-REQ-SIGNAL",
+        "requirementId": "REQ-SIGNAL",
+        "status": "PASS",
+        "evidence": [
+          "Selected text Alibaba route passes the server-only incoming request signal through executeAI; absent-signal neighbors remain valid.",
+          "51 focused Vitest tests passed; TypeScript and scoped ESLint passed"
+        ]
+      },
+      {
+        "proofId": "PROOF-REQ-COMPOSE",
+        "requirementId": "REQ-COMPOSE",
+        "status": "PASS",
+        "evidence": [
+          "Request/deadline compose first-cause semantics, fixed cancellation diagnostic and 499, separate provider timeout, and listener/timer cleanup.",
+          "51 focused Vitest tests passed; TypeScript and scoped ESLint passed"
+        ]
+      },
+      {
+        "proofId": "PROOF-REQ-ADMISSION",
+        "requirementId": "REQ-ADMISSION",
+        "status": "PASS",
+        "evidence": [
+          "Pre-abort 0/0; cancellation while admission awaits 1 admitted/0 started with no refund and truthful reconciliation.",
+          "51 focused Vitest tests passed; TypeScript and scoped ESLint passed"
+        ]
+      },
+      {
+        "proofId": "PROOF-REQ-NO-RETRY",
+        "requirementId": "REQ-NO-RETRY",
+        "status": "PASS",
+        "evidence": [
+          "Cancellation after provider await or final response await suppresses late success and no retry; scoped regression tests pass.",
+          "51 focused Vitest tests passed; TypeScript and scoped ESLint passed"
+        ]
+      },
+      {
+        "proofId": "PROOF-REQ-LIVE",
+        "requirementId": "REQ-LIVE",
+        "status": "PASS",
+        "evidence": [
+          "One real positive root, then a second paid pending root stopped from the existing UI; composed local signal aborted. Remote stop or billing remains unknown.",
+          ".cvf/runtime/ncr-request-cancellation-20261014/worker-live/runtime-proof-attempt1.json"
+        ]
+      },
+      {
+        "proofId": "PROOF-REQ-BUDGET-RETURN",
+        "requirementId": "REQ-BUDGET-RETURN",
+        "status": "PASS",
+        "evidence": [
+          "One Playwright CLI invocation, two UI submissions, two execute POSTs, two actual Alibaba starts, zero retries; owned server stopped, generated tsconfig restored, no worker stage/commit.",
+          "51 focused Vitest tests passed; TypeScript and scoped ESLint passed"
+        ]
+      }
+    ],
+    "workerObservedRuntime": {
+      "proofPath": ".cvf/runtime/ncr-request-cancellation-20261014/worker-live/runtime-proof-attempt1.json",
+      "uiSubmissions": 2,
+      "executePosts": 2,
+      "providerFetchStarts": 2,
+      "providerStartCap": 2,
+      "playwrightRetries": 0,
+      "positive": {
+        "status": 200,
+        "success": true,
+        "decision": "ALLOW",
+        "provider": "alibaba",
+        "model": "qwen-flash",
+        "evidenceMode": "live",
+        "receiptId": "rcpt-env-mv7jfo2g-m5celg",
+        "outputSha256": "58536d130943f38832bfc1116d3a9d97161aed353436200c0b1f9b973a2976bc",
+        "knowledgeInjected": false,
+        "knowledgeChunkCount": 0
+      },
+      "cancelled": {
+        "paidFetchPendingBeforeStop": true,
+        "composedSignalAbortedAfterStop": true,
+        "noSuccessReceiptOrOutputPublished": true,
+        "remoteProviderStopOrBilling": "UNKNOWN"
+      },
+      "profile": {
+        "port": 3048,
+        "browser": "chromium",
+        "fileDashscopeOnly": true,
+        "browserKeyEmpty": true,
+        "mockValue": "0",
+        "ownedStores": [
+          "CVF_CONTROL_PLANE_EVENTS_PATH",
+          "CVF_POLICY_SNAPSHOT_DIR",
+          "KNOWLEDGE_STORE_PATH",
+          "APPROVAL_STORE_PATH",
+          "CVF_DURABLE_MEMORY_STORE_PATH",
+          "CVF_SOT3_ACTIVATION_EVIDENCE_PATH"
+        ],
+        "processedChecks": true
+      },
+      "unexpectedDenials": 0,
+      "ownedServerStopped": true,
+      "boundaryEventsPath": ".cvf/runtime/ncr-request-cancellation-20261014/worker-live/boundary-attempt1.jsonl",
+      "frameworkDenials": {
+        "expectedNextDistTags": 1,
+        "unexpected": 0
+      },
+      "serverCleanup": "Owned port 3048 free after worker invocation; Root independent server later owns its own cleanup"
+    },
+    "rootProbe": {
+      "schemaVersion": "cvf.ncrRequestCancellationRootProbe.v1",
+      "actor": "LOCAL_REVIEWER_CODEX_ROOT",
+      "invocationId": "ncr-request-cancellation-root-planetarium-20261014",
+      "fixture": "distinct fictional planetarium",
+      "startUtc": "2026-10-14T03:19:38.655Z",
+      "assertions": [
+        {
+          "name": "own real same-origin test authentication and keyless browser",
+          "result": "PASS"
+        },
+        {
+          "name": "one actual paid Alibaba fetch is pending with a nonaborted signal before Stop",
+          "result": "PASS"
+        },
+        {
+          "name": "existing UI Stop causes current-code local provider signal and pending transport to abort",
+          "result": "PASS"
+        },
+        {
+          "name": "no extra route validation retry or provider start across20-second retry-admission window",
+          "result": "PASS"
+        },
+        {
+          "name": "cancelled own history stays unsuccessful with no late output or success receipt publication",
+          "result": "PASS"
+        },
+        {
+          "name": "user retains editable inputs and honest provider-stop uncertainty",
+          "result": "PASS"
+        }
+      ],
+      "outcome": "PASS",
+      "stopRequestedUtc": "2026-10-14T03:20:19.732Z",
+      "localAbortUtc": "2026-10-14T03:20:19.835Z",
+      "providerCalls": 1,
+      "executePostCount": 1,
+      "observationWindowAfterStopMs": 22000,
+      "externalCompletionOrBilling": "UNKNOWN_NOT_PROVED_BY_LOCAL_ABORT",
+      "endUtc": "2026-10-14T03:20:43.491Z",
+      "oracleSha256": "5bf9cc6e07fc18d6ac0eed9a1f5301619ccc15b1c725ebc398713d5506478585"
+    },
+    "rootRunOutcome": "PASS",
+    "rootBoundaryEvents": [
+      {
+        "utc": "2026-10-14T03:19:30.566Z",
+        "pid": 39880,
+        "kind": "DENIED_UNEXPECTED_DESTINATION",
+        "host": "registry.npmjs.org",
+        "path": "/-/package/next/dist-tags"
+      },
+      {
+        "utc": "2026-10-14T03:20:19.704Z",
+        "pid": 39880,
+        "kind": "ALIBABA_FETCH_STARTED",
+        "count": 1,
+        "host": "dashscope-intl.aliyuncs.com",
+        "path": "/compatible-mode/v1/chat/completions"
+      },
+      {
+        "utc": "2026-10-14T03:20:19.705Z",
+        "pid": 39880,
+        "kind": "ALIBABA_FETCH_PENDING",
+        "count": 1,
+        "signalPresent": true,
+        "signalAborted": false
+      },
+      {
+        "utc": "2026-10-14T03:20:19.835Z",
+        "pid": 39880,
+        "kind": "ALIBABA_LOCAL_SIGNAL_ABORTED",
+        "count": 1
+      },
+      {
+        "utc": "2026-10-14T03:20:19.842Z",
+        "pid": 39880,
+        "kind": "ALIBABA_FETCH_FAILED",
+        "count": 1,
+        "signalAborted": true
+      },
+      {
+        "utc": "2026-10-14T03:20:19.845Z",
+        "pid": 39880,
+        "kind": "OBSERVER_LISTENER_RELEASED",
+        "count": 1
+      }
+    ],
+    "rootCleanup": {
+      "ownedPortClosed": true,
+      "ownedServerStopExit": 0
+    },
+    "workerTests": "51/51 sixfiles;143/143 tenneighbors;9/9 DLP overlap;TypeScript/lint PASS;finalfast12.10s (Root supplied actual receipt)",
+    "budget": {
+      "workerStarts": 2,
+      "rootStarts": 1,
+      "priorStarts": 9,
+      "programObservedStarts": 12,
+      "programCeiling": 13,
+      "unusedStartsRetired": 1
+    },
+    "externalCompletionOrBilling": "UNKNOWN_NOT_PROVED_BY_LOCAL_ABORT",
+    "grantDisposition": "ALL_RETIRED_ROOT_REPORTED"
+  },
+  "requirements": [
+    {
+      "proofId": "PROOF-REQ-SIGNAL",
+      "requirementId": "REQ-SIGNAL",
+      "status": "PASS",
+      "evidence": [
+        "Selected text Alibaba route passes the server-only incoming request signal through executeAI; absent-signal neighbors remain valid.",
+        "51 focused Vitest tests passed; TypeScript and scoped ESLint passed"
+      ],
+      "rootObservedBasis": "Consumed original worker proof and distinct current-code six-assertion Root cancellation proof; finite selected text Alibaba lane only."
+    },
+    {
+      "proofId": "PROOF-REQ-COMPOSE",
+      "requirementId": "REQ-COMPOSE",
+      "status": "PASS",
+      "evidence": [
+        "Request/deadline compose first-cause semantics, fixed cancellation diagnostic and 499, separate provider timeout, and listener/timer cleanup.",
+        "51 focused Vitest tests passed; TypeScript and scoped ESLint passed"
+      ],
+      "rootObservedBasis": "Consumed original worker proof and distinct current-code six-assertion Root cancellation proof; finite selected text Alibaba lane only."
+    },
+    {
+      "proofId": "PROOF-REQ-ADMISSION",
+      "requirementId": "REQ-ADMISSION",
+      "status": "PASS",
+      "evidence": [
+        "Pre-abort 0/0; cancellation while admission awaits 1 admitted/0 started with no refund and truthful reconciliation.",
+        "51 focused Vitest tests passed; TypeScript and scoped ESLint passed"
+      ],
+      "rootObservedBasis": "Consumed original worker proof and distinct current-code six-assertion Root cancellation proof; finite selected text Alibaba lane only."
+    },
+    {
+      "proofId": "PROOF-REQ-NO-RETRY",
+      "requirementId": "REQ-NO-RETRY",
+      "status": "PASS",
+      "evidence": [
+        "Cancellation after provider await or final response await suppresses late success and no retry; scoped regression tests pass.",
+        "51 focused Vitest tests passed; TypeScript and scoped ESLint passed"
+      ],
+      "rootObservedBasis": "Consumed original worker proof and distinct current-code six-assertion Root cancellation proof; finite selected text Alibaba lane only."
+    },
+    {
+      "proofId": "PROOF-REQ-LIVE",
+      "requirementId": "REQ-LIVE",
+      "status": "PASS",
+      "evidence": [
+        "One real positive root, then a second paid pending root stopped from the existing UI; composed local signal aborted. Remote stop or billing remains unknown.",
+        ".cvf/runtime/ncr-request-cancellation-20261014/worker-live/runtime-proof-attempt1.json"
+      ],
+      "rootObservedBasis": "Consumed original worker proof and distinct current-code six-assertion Root cancellation proof; finite selected text Alibaba lane only."
+    },
+    {
+      "proofId": "PROOF-REQ-BUDGET-RETURN",
+      "requirementId": "REQ-BUDGET-RETURN",
+      "status": "PASS",
+      "evidence": [
+        "One Playwright CLI invocation, two UI submissions, two execute POSTs, two actual Alibaba starts, zero retries; owned server stopped, generated tsconfig restored, no worker stage/commit.",
+        "51 focused Vitest tests passed; TypeScript and scoped ESLint passed"
+      ],
+      "rootObservedBasis": "Consumed original worker proof and distinct current-code six-assertion Root cancellation proof; finite selected text Alibaba lane only."
+    }
+  ],
+  "claimBoundary": "R1/R2 partial; R3/R4 open; R5/R6 deferred; real-data/custody/business acceptance/selected HTML/send/B2/P11/public/deploy parked; LHW24 retained.",
+  "currentSourcePins": [
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts",
+      "sha256": "96d5fcd958549443ab2b6df7e0526a34206cb372f1025467a5dd27bcf44b4a22"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/ai/types.ts",
+      "sha256": "037fe4e2a5831c8fa9c8e5cf51896d6418681277e92701e5d112c841aef1f736"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/ai/providers.ts",
+      "sha256": "f05c8fe1db8a9a049fcea35a25fa4823f1c92ec88c918198f50dbda3465f0f25"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/provider-attempt-admission.ts",
+      "sha256": "4e9640cc3f25fcaffbc916a9d8457e9c57867532fcd0a9e9022667900f0fae84"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execution-diagnostics.ts",
+      "sha256": "8d07d5b626efefbfc71e5dd2d3779fa3ad13fedf47fb44e7760a2957d56f5523"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.test.ts",
+      "sha256": "b1da364554d0f18d0e8bf492dea970f9120fb412bd9d2439d2f4ab66dc902643"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/provider-request-cancellation.ts",
+      "sha256": "07bf5846acb685bc69842d9c5dbfd951b59201722376854ce86b352e3a0d1eea"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.request-cancellation.test.ts",
+      "sha256": "3de2e0ecbbeac0a897266de9b7d080ff55d150dabee2f3affd8b29455fc3982a"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/ai/providers.request-cancellation.test.ts",
+      "sha256": "ca104d7ec21e54603a7e9421d5b57133b32aa1ede645363b02f184e987c33817"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/provider-attempt-admission.request-cancellation.test.ts",
+      "sha256": "def0629857df547bb47f7f2e2cfb998ed782c3d77d37d29c13e3023a09b66609"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execution-diagnostics.request-cancellation.test.ts",
+      "sha256": "52ca558b31bb49ebc72b45dc9cc4a73bd2110060e91d483131ce81846e5ed9e9"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/provider-request-cancellation.test.ts",
+      "sha256": "c1c27b24c2970e6865e0d171a1860bf4f9c178f2eedea6d6cb96da684cd27ef4"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/ncr-request-cancellation.live.spec.ts",
+      "sha256": "333b748aea1f4f4bfdb28f8e2fd3575be4248cf9fd1a0cfb7c46386fd5f132d5"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/support/ncr-request-cancellation-boundary.cjs",
+      "sha256": "fe515b060c15083037e112435e9e696de856e4a7834a8b365b9fce373ea30d44"
+    }
+  ],
+  "sourceReviewScope": "One consolidated changed-seam review of five production diffs, generic helper, signal-contract tests; worker frozen source/live code; no reproduced implementation tests",
+  "sourceReviewAdmission": {
+    "path": ".cvf/runtime/ncr-request-cancellation-20261014/root/source-review-admission.json",
+    "sha256": "f0129f61b679076e42dfe6cee68426227e1e8e53fec1aa5715f110d1a0715bd5"
+  },
+  "realHelperPins": [
+    {
+      "path": ".cvf/runtime/ncr-request-cancellation-20261014/root/independent-probe.cjs",
+      "sha256": "5bf9cc6e07fc18d6ac0eed9a1f5301619ccc15b1c725ebc398713d5506478585"
+    },
+    {
+      "path": ".cvf/runtime/ncr-request-cancellation-20261014/root/review-boundary.cjs",
+      "sha256": "9d19064b4aaf9a8021b4e8240357ab909c489a09d85127f4fd5996fae4a81c81"
+    },
+    {
+      "path": ".cvf/runtime/ncr-request-cancellation-20261014/root/run-review.py",
+      "sha256": "48f5c7b976ddd0e9e5c5c4667d5e65ec605c481f70252c231801da70f10c98bb"
+    }
+  ],
+  "actualReceiptFiles": [
+    {
+      "path": ".cvf/runtime/ncr-request-cancellation-20261014/root/independent-probe-result.json",
+      "sha256": "f712b7de0005ba27c4b56bc60698c51389d0b50219827f6da45986e5f5050d1a"
+    },
+    {
+      "path": ".cvf/runtime/ncr-request-cancellation-20261014/root/review-fetch-events.jsonl",
+      "sha256": "d5c0636d48140054341ff53c275569795f8a9fd168eae9b1c0f0a4acc8f44475"
+    },
+    {
+      "path": ".cvf/runtime/ncr-request-cancellation-20261014/root/review-run-result.json",
+      "sha256": "99404eed6ee837514e8942d9b0dbaec7f07dc6130fda1904f1cef9a2c1b75210"
+    },
+    {
+      "path": ".cvf/runtime/ncr-request-cancellation-20261014/worker-return-fast-final.log",
+      "sha256": "05dd6a8c63ea18c8d710b5852ecfb221b2349e47a0588c1829f1a3320ac145af"
+    }
+  ],
+  "proofLimitations": "Retry DLP-await cancellation guard is code-inspection-only; no executed abort-during-retry-DLP claim. No full release bundle rerun or universal readiness assertion. Remote completion/billing unknown."
+}

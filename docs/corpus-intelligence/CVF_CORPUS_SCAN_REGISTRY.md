@@ -279,3 +279,7 @@ Searches that confirmed absence — prevents re-doing the same negative search.
 
 Do not hand-edit `CVF_CORPUS_SCAN_REGISTRY.json` for ordinary entry updates.
 The checker fails when the aggregate drifts from the per-entry sources.
+
+## NCR Request Cancellation Bounded Evidence
+
+Eight named new source/test paths; finite worker16 evidence and Root six cancellation assertions. Completion `docs/reviews/CVF_NCR_REQUEST_CANCELLATION_COMPLETION_2026-10-14.md`. Source-wide processing NOT_STARTED; no extra corpus verdict.

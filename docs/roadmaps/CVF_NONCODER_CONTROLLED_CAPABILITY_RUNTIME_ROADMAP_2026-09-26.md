@@ -1104,3 +1104,7 @@ Reason: private planning artifact. No public-sync, public catalog, deployment or
 ## Claim Boundary
 
 Roadmap tổng hợp hướng đã thống nhất và đề xuất trình tự thực hiện. Tài liệu không chứng minh capability đã tích hợp, agent đã bị enforcement, provider subscription đã được hỗ trợ, dữ liệu đã backup hoặc cloud đã sẵn sàng. NCR-R0/W00 và W01 đã được Local nghiệm thu bounded; operator đã chọn ứng viên HTML và đồng ý D011 ở mức thiết kế. Pilot effect, tài liệu hướng dẫn được phát hành và video vẫn cần scope/authority/evidence riêng. D014 giữ bốn repo như ứng viên theo job; D015 chỉ kết luận HTML slice hiện tại không cần runtime ngoài, chưa chứng minh UI/live hay giá trị runtime của các job khác. P11 vẫn parked; work order chỉ được giao sau authority và bounded pre-dispatch.
+
+## NCR Request Cancellation Bounded Contribution - 2026-10-14
+
+Selected nonvision text Alibaba: actual incoming signal/paid pending Stop/local abort; worker2 and Root1 starts; prior9+new3=12/13, unused1 retired. Root local abort103ms Stopâ†’abort/130ms pendingâ†’abort;22s no retry/late success. Worker51/143/9 and TS/lint consumed. Completion `docs/reviews/CVF_NCR_REQUEST_CANCELLATION_COMPLETION_2026-10-14.md`; Local `docs/reviews/evidence/ncr-request-cancellation-local-20261014.json` sha256:d207b9326c53583d3b9fbc35d78850de41b7a2cd38a6b46b7a0a5a1fa3dbefea. Procedure PARTIAL_WITH_REASON; remote completion/billing unknown. R1/R2 partial; R3/R4 open; R5/R6 deferred; real-data/custody/business acceptance/selected HTML/send/B2/P11/public/deploy parked; LHW24 retained.

@@ -1,0 +1,183 @@
+{
+  "schemaVersion": "cvf.ncrRequestCancellationWorkerEvidence.v1",
+  "executionBaseHead": "c3ac310aeb53d51a7fe1212639429a3bcf2d19ad",
+  "amendmentHead": "b22b6c3c8dddbcbcf3077b8e2306d04785db7a5d",
+  "status": "COMPLETE_PENDING_REVIEW",
+  "sourcePins": "docs/reviews/evidence/ncr-request-cancellation-dispatch-20261014.json",
+  "claimBoundary": "One owned local Next/browser run proves delivery and abort of the composed local Alibaba fetch signal. It does not prove remote provider stop, billing cancellation, full NCR exit, production readiness, or public export.",
+  "proofs": [
+    {
+      "proofId": "PROOF-REQ-SIGNAL",
+      "requirementId": "REQ-SIGNAL",
+      "status": "PASS",
+      "evidence": [
+        "Selected text Alibaba route passes the server-only incoming request signal through executeAI; absent-signal neighbors remain valid.",
+        "51 focused Vitest tests passed; TypeScript and scoped ESLint passed"
+      ]
+    },
+    {
+      "proofId": "PROOF-REQ-COMPOSE",
+      "requirementId": "REQ-COMPOSE",
+      "status": "PASS",
+      "evidence": [
+        "Request/deadline compose first-cause semantics, fixed cancellation diagnostic and 499, separate provider timeout, and listener/timer cleanup.",
+        "51 focused Vitest tests passed; TypeScript and scoped ESLint passed"
+      ]
+    },
+    {
+      "proofId": "PROOF-REQ-ADMISSION",
+      "requirementId": "REQ-ADMISSION",
+      "status": "PASS",
+      "evidence": [
+        "Pre-abort 0/0; cancellation while admission awaits 1 admitted/0 started with no refund and truthful reconciliation.",
+        "51 focused Vitest tests passed; TypeScript and scoped ESLint passed"
+      ]
+    },
+    {
+      "proofId": "PROOF-REQ-NO-RETRY",
+      "requirementId": "REQ-NO-RETRY",
+      "status": "PASS",
+      "evidence": [
+        "Cancellation after provider await or final response await suppresses late success and no retry; scoped regression tests pass.",
+        "51 focused Vitest tests passed; TypeScript and scoped ESLint passed"
+      ]
+    },
+    {
+      "proofId": "PROOF-REQ-LIVE",
+      "requirementId": "REQ-LIVE",
+      "status": "PASS",
+      "evidence": [
+        "One real positive root, then a second paid pending root stopped from the existing UI; composed local signal aborted. Remote stop or billing remains unknown.",
+        ".cvf/runtime/ncr-request-cancellation-20261014/worker-live/runtime-proof-attempt1.json"
+      ]
+    },
+    {
+      "proofId": "PROOF-REQ-BUDGET-RETURN",
+      "requirementId": "REQ-BUDGET-RETURN",
+      "status": "PASS",
+      "evidence": [
+        "One Playwright CLI invocation, two UI submissions, two execute POSTs, two actual Alibaba starts, zero retries; owned server stopped, generated tsconfig restored, no worker stage/commit.",
+        "51 focused Vitest tests passed; TypeScript and scoped ESLint passed"
+      ]
+    }
+  ],
+  "runtime": {
+    "proofPath": ".cvf/runtime/ncr-request-cancellation-20261014/worker-live/runtime-proof-attempt1.json",
+    "uiSubmissions": 2,
+    "executePosts": 2,
+    "providerFetchStarts": 2,
+    "providerStartCap": 2,
+    "playwrightRetries": 0,
+    "positive": {
+      "status": 200,
+      "success": true,
+      "decision": "ALLOW",
+      "provider": "alibaba",
+      "model": "qwen-flash",
+      "evidenceMode": "live",
+      "receiptId": "rcpt-env-mv7jfo2g-m5celg",
+      "outputSha256": "58536d130943f38832bfc1116d3a9d97161aed353436200c0b1f9b973a2976bc",
+      "knowledgeInjected": false,
+      "knowledgeChunkCount": 0
+    },
+    "cancelled": {
+      "paidFetchPendingBeforeStop": true,
+      "composedSignalAbortedAfterStop": true,
+      "noSuccessReceiptOrOutputPublished": true,
+      "remoteProviderStopOrBilling": "UNKNOWN"
+    },
+    "profile": {
+      "port": 3048,
+      "browser": "chromium",
+      "fileDashscopeOnly": true,
+      "browserKeyEmpty": true,
+      "mockValue": "0",
+      "ownedStores": [
+        "CVF_CONTROL_PLANE_EVENTS_PATH",
+        "CVF_POLICY_SNAPSHOT_DIR",
+        "KNOWLEDGE_STORE_PATH",
+        "APPROVAL_STORE_PATH",
+        "CVF_DURABLE_MEMORY_STORE_PATH",
+        "CVF_SOT3_ACTIVATION_EVIDENCE_PATH"
+      ],
+      "processedChecks": true
+    },
+    "unexpectedDenials": 0,
+    "ownedServerStopped": true,
+    "boundaryEventsPath": ".cvf/runtime/ncr-request-cancellation-20261014/worker-live/boundary-attempt1.jsonl",
+    "frameworkDenials": {
+      "expectedNextDistTags": 1,
+      "unexpected": 0
+    },
+    "serverCleanup": "Owned port 3048 free after worker invocation; Root independent server later owns its own cleanup"
+  },
+  "tests": [
+    {
+      "command": "npx vitest run src/app/api/execute/route.test.ts src/app/api/execute/route.request-cancellation.test.ts src/lib/ai/providers.request-cancellation.test.ts src/lib/provider-attempt-admission.request-cancellation.test.ts src/lib/execution-diagnostics.request-cancellation.test.ts src/lib/provider-request-cancellation.test.ts",
+      "result": "PASS 6 files 51 tests"
+    },
+    {
+      "command": "npx vitest run src/app/api/execute/route.test.ts src/app/api/execute/route.request-cancellation.test.ts src/app/api/execute/route.diagnostics.test.ts src/lib/ai/providers.test.ts src/lib/ai/providers.request-cancellation.test.ts src/lib/provider-attempt-admission.test.ts src/lib/provider-attempt-admission.request-cancellation.test.ts src/lib/execution-diagnostics.test.ts src/lib/execution-diagnostics.request-cancellation.test.ts src/lib/provider-request-cancellation.test.ts",
+      "result": "PASS 10 files 143 tests, includes both amended route assertions"
+    },
+    {
+      "command": "npx vitest run src/app/api/execute/route.dlp.test.ts",
+      "result": "PASS 1 file 9 tests"
+    },
+    {
+      "command": "npm run check",
+      "result": "PASS TypeScript"
+    },
+    {
+      "command": "npx eslint scoped changed product, tests and live spec",
+      "result": "PASS"
+    },
+    {
+      "command": "npx playwright test --config tests/e2e/support/ncr-request-cancellation-boundary.cjs --list",
+      "result": "PASS one case"
+    },
+    {
+      "command": "node --check tests/e2e/support/ncr-request-cancellation-boundary.cjs",
+      "result": "PASS"
+    },
+    {
+      "command": "npx playwright test --config tests/e2e/support/ncr-request-cancellation-boundary.cjs --reporter=line",
+      "result": "PASS one case, two actual Alibaba starts, zero retries"
+    }
+  ],
+  "actualChangedPaths": [
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.test.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/ai/types.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/ai/providers.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/provider-attempt-admission.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execution-diagnostics.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/provider-request-cancellation.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.request-cancellation.test.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/ai/providers.request-cancellation.test.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/provider-attempt-admission.request-cancellation.test.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execution-diagnostics.request-cancellation.test.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/provider-request-cancellation.test.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/ncr-request-cancellation.live.spec.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/support/ncr-request-cancellation-boundary.cjs",
+    "docs/reviews/evidence/ncr-request-cancellation-worker-20261014.json",
+    "docs/reviews/CVF_NCR_REQUEST_CANCELLATION_WORKER_RETURN_2026-10-14.md"
+  ],
+  "workerCommit": false,
+  "sourceHashesSha256": {
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts": "96d5fcd958549443ab2b6df7e0526a34206cb372f1025467a5dd27bcf44b4a22",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.test.ts": "b1da364554d0f18d0e8bf492dea970f9120fb412bd9d2439d2f4ab66dc902643",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/ai/types.ts": "037fe4e2a5831c8fa9c8e5cf51896d6418681277e92701e5d112c841aef1f736",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/ai/providers.ts": "f05c8fe1db8a9a049fcea35a25fa4823f1c92ec88c918198f50dbda3465f0f25",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/provider-attempt-admission.ts": "4e9640cc3f25fcaffbc916a9d8457e9c57867532fcd0a9e9022667900f0fae84",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execution-diagnostics.ts": "8d07d5b626efefbfc71e5dd2d3779fa3ad13fedf47fb44e7760a2957d56f5523",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/provider-request-cancellation.ts": "07bf5846acb685bc69842d9c5dbfd951b59201722376854ce86b352e3a0d1eea",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.request-cancellation.test.ts": "3de2e0ecbbeac0a897266de9b7d080ff55d150dabee2f3affd8b29455fc3982a",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/ai/providers.request-cancellation.test.ts": "ca104d7ec21e54603a7e9421d5b57133b32aa1ede645363b02f184e987c33817",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/provider-attempt-admission.request-cancellation.test.ts": "def0629857df547bb47f7f2e2cfb998ed782c3d77d37d29c13e3023a09b66609",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execution-diagnostics.request-cancellation.test.ts": "52ca558b31bb49ebc72b45dc9cc4a73bd2110060e91d483131ce81846e5ed9e9",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/provider-request-cancellation.test.ts": "c1c27b24c2970e6865e0d171a1860bf4f9c178f2eedea6d6cb96da684cd27ef4",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/ncr-request-cancellation.live.spec.ts": "333b748aea1f4f4bfdb28f8e2fd3575be4248cf9fd1a0cfb7c46386fd5f132d5",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/support/ncr-request-cancellation-boundary.cjs": "fe515b060c15083037e112435e9e696de856e4a7834a8b365b9fce373ea30d44"
+  }
+}

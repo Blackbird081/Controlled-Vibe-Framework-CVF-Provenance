@@ -1,6 +1,6 @@
 {
   "schemaVersion": "cvf.ncrRequestCancellationDispatch.v1",
-  "status": "ROOT_ADMITTED_PENDING_COMMITTED_BOUND_RELEASE",
+  "status": "CLOSED_PASS_BOUNDED",
   "inspectionHead": "06f80e58b6d553855ce4aa32c74eb35fb1ba928f",
   "sources": [
     {
@@ -161,14 +161,7 @@
     "expiryUtc": "2026-10-14T03:30:00Z_PROSPECTIVE_PENDING_COMMITTED_RELEASE",
     "releaseClock": "PENDING_ACTUAL_RELEASE_75MIN"
   },
-  "blockers": [
-    "Root exact source/size/diagnostic/ledger contract acceptance",
-    "hard expiry and committed bound release",
-    "independent oracle hash/fixture",
-    "GC051 new expected-path registration",
-    "immutable closure-control reviewer-authority feasibility",
-    "actual NextRequest signal delivery must be proved or BLOCKED"
-  ],
+  "blockers": [],
   "claimBoundary": "R1/R2 partial; R3/R4 open; R5/R6 deferred; real-data/custody/business acceptance/selected HTML/send/B2/P11/public/deploy parked; LHW24 retained. Real runtime signal delivery remains required empirical proof, BLOCKED if absent.",
   "rootClosureControlManifest": [
     "docs/baselines/CVF_GC018_NCR_REQUEST_CANCELLATION_CLOSURE_CONTROL_2026-10-14.md",
@@ -224,7 +217,7 @@
   "semanticMaterialCount": 26,
   "rootAdmission": {
     "actor": "LOCAL_REVIEWER_CODEX_ROOT",
-    "decision": "ADMIT_BOUNDED_REQUEST_CANCELLATION_AFTER_COMMITTED_RELEASE",
+    "decision": "CLOSED_BOUNDED_NO_EXECUTION_GRANT",
     "workerManifest": [
       "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts",
       "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/ai/types.ts",
@@ -322,7 +315,8 @@
       "reworkGeneration": 1,
       "originalReleaseUtc": "2026-10-14T02:29:05.286566+00:00",
       "noClockOrQuotaReset": true
-    }
+    },
+    "allProviderGrantsRetired": true
   },
   "adifResolverEvidence": {
     "path": ".cvf/runtime/ncr-request-cancellation-20261014/adif-dispatch.json",
@@ -372,9 +366,25 @@
     }
   ],
   "localClosureFeasibility": {
-    "disposition": "LOCAL_ADMITTED_BOUNDED_METADATA_CLOSURE_CHOREOGRAPHY",
+    "disposition": "LOCAL_ACCEPTED_BOUNDED_METADATA_AUTHORITY_IMPORTED",
     "basis": "Existing hierarchy/Local closure ownership/tranche split; independent canonical advisory review found no contradiction; Local retains final decision",
     "notClaimed": "REVIEWED_ skip/hash shape as semantic closeability proof; future semantic25/actual6 gates remain required",
     "priorMfrpDisposition": "Original mixed145a range/marker rejection retained; no replay/credit/journal edit; new current-authority change makes old target worktree mismatch naturally unreplayable"
+  },
+  "closureBaseHead": "b3831ad41019812ae05651e153be0ffffd98fabd",
+  "terminalDisposition": {
+    "owner": "LOCAL",
+    "completionReviewPath": "docs/reviews/CVF_NCR_REQUEST_CANCELLATION_COMPLETION_2026-10-14.md",
+    "originalDispatchRawSha256": "538afc32bb86338d63a05617766de1a21f926031c811b71a3bec59fbf0c5557b",
+    "originalOwnedCustody": ".cvf/runtime/ncr-request-cancellation-20261014/closure-control/frozen/final-actual/custody.json",
+    "workerActualCalls": 2,
+    "reviewerActualCalls": 1,
+    "programObservedCalls": 12,
+    "programCeiling": 13,
+    "allProviderGrantsRetired": true,
+    "unusedCallsRetired": 1,
+    "remoteStopOrBilling": "UNKNOWN",
+    "procedureDisposition": "PARTIAL_WITH_REASON",
+    "rangeGates": "REQUIRED_POST_COMMIT_NOT_CLAIMED_BY_METADATA"
   }
 }

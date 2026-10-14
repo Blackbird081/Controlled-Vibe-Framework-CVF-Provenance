@@ -483,6 +483,7 @@ describe('/api/execute', () => {
         expect(res.status).toBe(200);
         expect(executeAIMock).toHaveBeenCalledWith('alibaba', 'ali-key', expect.any(String), {
             model: 'qvq-max',
+            signal: expect.any(AbortSignal),
         });
     });
 
@@ -565,6 +566,7 @@ describe('/api/execute', () => {
         expect(res.status).toBe(200);
         expect(executeAIMock).toHaveBeenCalledWith('alibaba', 'ali-benchmark-key', expect.any(String), {
             model: undefined,
+            signal: expect.any(AbortSignal),
         });
     });
 

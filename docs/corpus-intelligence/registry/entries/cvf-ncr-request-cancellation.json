@@ -30,8 +30,8 @@
     "gc050": "NOT_RUN"
   },
   "semanticRegions": [],
-  "priorAbsorption": "Eight named new source/test/spec/preload paths registered before worker return; authority union33 is in dispatch, not corpus scope; no executed proof/source-wide processing.",
+  "priorAbsorption": "Eight named new source/test/spec/preload paths registered; bounded request cancellation actual worker/Root proof accepted by Local; source-wide processing remains NOT_STARTED. Authority union34 is in amended dispatch.",
   "findings": [],
   "negativeSearchTerms": [],
-  "nextScanRecommendation": "Consume bounded worker/reviewer proof; retain NOT_STARTED for source-wide processing."
+  "nextScanRecommendation": "Retain NOT_STARTED; consume finite completion and no full NCR exit claim."
 }
