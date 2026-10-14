@@ -5,7 +5,7 @@ docType: roadmap
 Status: ACCEPTED_UNIFIED_ROADMAP_LOCAL_CONSUMER_BOUNDED_FULL_PILOT_OPEN
 Date: 2026-09-26
 Program ID: CVF-NCR
-Version: 2.17
+Version: 2.18
 Revision disposition: LOCAL_CONSUMER_MAINTENANCE_ACCEPTED_BOUNDED; END_TO_END_PILOT_OPEN; Q001_AND_P11_CHECKPOINTS_RETAINED
 Decision owner: operator về định hướng/phạm vi; Local reviewer về đối chiếu kỹ thuật và nghiệm thu.
 
@@ -29,6 +29,8 @@ Current delivery projection reviewed at source HEAD `429d92760d9615a3200131f51fb
 **Roadmap reassessment after repeated control repair:** R1 selected HTML edited preview/export and finite R2 receipt/request-row evidence advanced; whole R1/R2 remain partial and R3/R4 open. Stop the automatic harness-repair loop. Local next PLAN checks actual-profile/data/custody/business walkthrough prerequisites against the existing selected-pilot source disposition; no new runtime/provider/worker grant from this review. Cleanup correction must be separately reviewed before harness effect reuse. R5/R6 deferred, durable intent/A07 and send/B2/P11/public/deploy parked; LHW24 retained. This is a finite review disposition, not full work-order acceptance.
 
 **2026-10-14 pilot-prerequisite reassessment:** `docs/assessments/CVF_NCR_SELECTED_PILOT_PREREQUISITES_REASSESSMENT_2026-10-14.md` resolves source ambiguities without product/runtime changes. Existing /artifacts entry and navigation need no admin fixture; Home has conditional successful-execution audit telemetry, but its metadata is not full output, telemetry can degrade and Work Transfer audit access is owner/admin. Actual NEXTAUTH_URL/evaluate/engine, store/init/repair/SIEM/retention/latency/cost remain profile-specific. File/SQLite event retention is not established by the30-day caller constant. Existing September browser and October separate proofs are qualified evidence, not a fresh novice/business/full-pilot walkthrough. Next finite outcome is design-only NCR-HTML-FRESH-PROFILE-USER-JOURNEY-SPEC with existing seven fields and named conditional profile/effect gates; manual worker transfer requires its own paired scope/release. No current worker/runtime/provider grant, no new UI/audit/storage owner, no third control BUILD. R1/R2partial,R3/R4open,R5/R6deferred; Q001/Q004/send/B2/P11/public/deploy parked; LHW24 retained.
+
+**2026-10-14 HTML journey SPEC disposition:** `docs/reviews/CVF_NCR_HTML_FRESH_PROFILE_USER_JOURNEY_SPEC_COMPLETION_2026-10-14.md` accepts the Local-corrected documentary design bounded; full REQ-07 procedure is not accepted (late checker reads and omitted mandatory sourcePins scope). Original3/13 custody/log items retained, source31 intake pins verified; Local distinct documentary positive association and eight false-claim mutations PASS, provider/browser/engine0. Corrected app-token boundary, two HTTP hops and real-engine proof requirement; no product change. D-08 optional product improvements deferred, D-09 fresh owned-profile admission feasibility PLAN next, D-10 separate full R3 provider/output-version join, D-11 action-specific operator effects parked. Actual profile/origin/auth/store/SIEM/retention/latency/cost UNKNOWN; R1/R2partial,R3/R4open,R5/R6deferred. Cleanup recurring cluster frozen/no third control BUILD, all prior grants retired and LHW24 retained. No worker/runtime successor is released by this review.
 
 | Stage | Accepted evidence / scope | Remaining exit gap |
 |---|---|---|

@@ -1,0 +1,779 @@
+{
+  "schemaVersion": "cvf.ncrHtmlJourneySpecLocal.documentary.v1",
+  "status": "DESIGN_ACCEPTED_BOUNDED_PROCEDURE_PARTIAL",
+  "reviewBaseHead": "c1e1b48d0ae09f6b690a4f6ed08b007d67d4f385",
+  "workerOriginals": {
+    "docs/assessments/CVF_NCR_HTML_FRESH_PROFILE_USER_JOURNEY_SPEC_2026-10-14.md": {
+      "sha256": "b2211aa219017462d6b290b2d334ed3e8cac0270e3ae060bcec566d2f298f9f9",
+      "bytes": 34760,
+      "lines": 266,
+      "custody": ".cvf/runtime/ncr-html-user-journey-spec-20261014/local-review/frozen-worker/CVF_NCR_HTML_FRESH_PROFILE_USER_JOURNEY_SPEC_2026-10-14.md"
+    },
+    "docs/reviews/CVF_NCR_HTML_FRESH_PROFILE_USER_JOURNEY_SPEC_WORKER_RETURN_2026-10-14.md": {
+      "sha256": "543aa8ca977572713b3937f0af7416443e41afcbf29765d109238d39fe173e09",
+      "bytes": 31015,
+      "lines": 392,
+      "custody": ".cvf/runtime/ncr-html-user-journey-spec-20261014/local-review/frozen-worker/CVF_NCR_HTML_FRESH_PROFILE_USER_JOURNEY_SPEC_WORKER_RETURN_2026-10-14.md"
+    },
+    "docs/reviews/evidence/ncr-html-fresh-profile-user-journey-spec-worker-20261014.json": {
+      "sha256": "6ecce30791540b8272ad23a0d245e9582012a9106e119a842c0828cb4c894fa0",
+      "bytes": 44482,
+      "lines": 952,
+      "custody": ".cvf/runtime/ncr-html-user-journey-spec-20261014/local-review/frozen-worker/ncr-html-fresh-profile-user-journey-spec-worker-20261014.json"
+    }
+  },
+  "custody": {
+    "gate-run-01.log": {
+      "sha256": "322751d29dabd8ba40e5174f305ffc196b899013b23d54e268c402e4699c5977",
+      "bytes": 12273,
+      "custody": ".cvf/runtime/ncr-html-user-journey-spec-20261014/local-review/frozen-worker/gate-run-01.log"
+    },
+    "gate-run-02.log": {
+      "sha256": "033467e0e11cde5df9c7633102110c80907bd786f521409b496a2000c0184d0e",
+      "bytes": 11166,
+      "custody": ".cvf/runtime/ncr-html-user-journey-spec-20261014/local-review/frozen-worker/gate-run-02.log"
+    },
+    "preimpl-01.log": {
+      "sha256": "1736080be210b67f20745ce5ae2ef691f32d842b233996684f0c069486e08186",
+      "bytes": 4835,
+      "custody": ".cvf/runtime/ncr-html-user-journey-spec-20261014/local-review/frozen-worker/preimpl-01.log"
+    },
+    "selfcheck-01.log": {
+      "sha256": "e6d52ce2b1817fbe1d0089be70d1188fd22bae5e16a8405070b75dd3d2e0036b",
+      "bytes": 771,
+      "custody": ".cvf/runtime/ncr-html-user-journey-spec-20261014/local-review/frozen-worker/selfcheck-01.log"
+    },
+    "scaffold-01.log": {
+      "sha256": "1a3fa0163d84862f9f1068fd42109ab59c5bfac0416dc3264899bc9796a06792",
+      "bytes": 294,
+      "custody": ".cvf/runtime/ncr-html-user-journey-spec-20261014/local-review/frozen-worker/scaffold-01.log"
+    },
+    "sidecar-summary.json": {
+      "sha256": "9cfe49671e39658389950d9511bb56477fe339d37a27c57c4e0e9e7468c5f4b0",
+      "bytes": 3219,
+      "custody": ".cvf/runtime/ncr-html-user-journey-spec-20261014/local-review/frozen-worker/sidecar-summary.json"
+    },
+    "final-verify.json": {
+      "sha256": "240c588527ea04ac72c792d3e0f9a389c9c85c3d5d608e8e8d3de30702b59594",
+      "bytes": 1326,
+      "custody": ".cvf/runtime/ncr-html-user-journey-spec-20261014/local-review/frozen-worker/final-verify.json"
+    },
+    "fixture.json": {
+      "sha256": "387c9319297f087aac13424336f01a5811f75b392913004cbf6aeee179562fcc",
+      "bytes": 5103,
+      "custody": ".cvf/runtime/ncr-html-user-journey-spec-20261014/local-review/frozen-worker/fixture.json"
+    },
+    "pins-before.json": {
+      "sha256": "5d84499c5eb2dead557c3b1bec5069c89b1851a5f44dfd6f7962d00912b6da8f",
+      "bytes": 6821,
+      "custody": ".cvf/runtime/ncr-html-user-journey-spec-20261014/local-review/frozen-worker/pins-before.json"
+    },
+    "pins-after.json": {
+      "sha256": "5d84499c5eb2dead557c3b1bec5069c89b1851a5f44dfd6f7962d00912b6da8f",
+      "bytes": 6821,
+      "custody": ".cvf/runtime/ncr-html-user-journey-spec-20261014/local-review/frozen-worker/pins-after.json"
+    },
+    "pins-final.json": {
+      "sha256": "5d84499c5eb2dead557c3b1bec5069c89b1851a5f44dfd6f7962d00912b6da8f",
+      "bytes": 6821,
+      "custody": ".cvf/runtime/ncr-html-user-journey-spec-20261014/local-review/frozen-worker/pins-final.json"
+    },
+    "hash-before-run-02.txt": {
+      "sha256": "08a448c2a51ff1df8a3d0b51a18aac8a14bb692d7a8af25494d43ea41c5809c5",
+      "bytes": 444,
+      "custody": ".cvf/runtime/ncr-html-user-journey-spec-20261014/local-review/frozen-worker/hash-before-run-02.txt"
+    },
+    "hash-after-run-02.txt": {
+      "sha256": "08a448c2a51ff1df8a3d0b51a18aac8a14bb692d7a8af25494d43ea41c5809c5",
+      "bytes": 444,
+      "custody": ".cvf/runtime/ncr-html-user-journey-spec-20261014/local-review/frozen-worker/hash-after-run-02.txt"
+    }
+  },
+  "sourcePinIntake": "31/31 MATCH before Local changes; roadmap current preimage recorded separately",
+  "sourcePins": [
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/artifacts/page.tsx",
+      "rawSha256": "651652d7ce7757503ca3126bba03889e9286152d4e788e181970a56dfe18b0ec",
+      "rawBytes": 7172,
+      "gitBlobSha256": "651652d7ce7757503ca3126bba03889e9286152d4e788e181970a56dfe18b0ec",
+      "gitBlob": "3bc5014406f638e3149f110e5326405260909e3a",
+      "readScope": "TARGETED_SECTIONS_NOT_FULL_CORPUS",
+      "locator": "starterRequest; ArtifactsPage; unconditional ArtifactExportPanel render",
+      "pinDisposition": "READ_ONLY_INPUT",
+      "capturedAtHead": "a6366007f6761f23796f283e8d929c8b9db76952",
+      "priorPinDisposition": "READ_ONLY_INPUT"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/page.tsx",
+      "rawSha256": "0ed365b59324bb836d8ec56cba143df941e7a7f8dfa11b841b28a68212f1b35d",
+      "rawBytes": 17439,
+      "gitBlobSha256": "0ed365b59324bb836d8ec56cba143df941e7a7f8dfa11b841b28a68212f1b35d",
+      "gitBlob": "a31508d4e5da71c950c718ef99a71b7459f736fb",
+      "readScope": "TARGETED_SECTIONS_NOT_FULL_CORPUS",
+      "locator": "recordToExportRequest; records/selectedRecord conditional panel; admin audit GET",
+      "pinDisposition": "READ_ONLY_INPUT",
+      "capturedAtHead": "a6366007f6761f23796f283e8d929c8b9db76952",
+      "priorPinDisposition": "READ_ONLY_INPUT"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/KnowledgeJourneyNav.tsx",
+      "rawSha256": "3c959fd5d940e525d49d595835af239baee6ede26820369eaa9426c1cb1f92a6",
+      "rawBytes": 3098,
+      "gitBlobSha256": "3c959fd5d940e525d49d595835af239baee6ede26820369eaa9426c1cb1f92a6",
+      "gitBlob": "e57e73c45d1797180859b52d88f3e0cf745512e0",
+      "readScope": "TARGETED_SECTIONS_NOT_FULL_CORPUS",
+      "locator": "steps4 /artifacts and5 /work-transfer",
+      "pinDisposition": "READ_ONLY_INPUT",
+      "capturedAtHead": "a6366007f6761f23796f283e8d929c8b9db76952",
+      "priorPinDisposition": "READ_ONLY_INPUT"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.tsx",
+      "rawSha256": "efc5839896236dacc7b37e145fda9904a9513bea434b3ff5c8bcd81652e9ea3e",
+      "rawBytes": 49819,
+      "gitBlobSha256": "0b1005a456c2e400d0f9ae1323351716bf877ca4ff83ca1941e6f786356c27d8",
+      "gitBlob": "baa4813fd657197f25090dc7afdaffb0831aa351",
+      "readScope": "TARGETED_SECTIONS_NOT_FULL_CORPUS",
+      "locator": "normalizeRequest; handleBuildArtifact; seven fields; preGenerateDisclosure; draft/stale/download",
+      "pinDisposition": "READ_ONLY_INPUT",
+      "capturedAtHead": "a6366007f6761f23796f283e8d929c8b9db76952",
+      "priorPinDisposition": "READ_ONLY_INPUT"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.tsx",
+      "rawSha256": "ae5160169f828a7ec9b1a9ad576a2ad37b9c3343cb882ec706c7631f01113b31",
+      "rawBytes": 35116,
+      "gitBlobSha256": "ae5160169f828a7ec9b1a9ad576a2ad37b9c3343cb882ec706c7631f01113b31",
+      "gitBlob": "68a646a489d01c85f86d037faa3f284023a64381",
+      "readScope": "TARGETED_SECTIONS_NOT_FULL_CORPUS",
+      "locator": "handleExecutionComplete; returnToDraft; handleFollowUp; saved receipt archive",
+      "pinDisposition": "READ_ONLY_INPUT",
+      "capturedAtHead": "a6366007f6761f23796f283e8d929c8b9db76952",
+      "priorPinDisposition": "READ_ONLY_INPUT"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts",
+      "rawSha256": "96d5fcd958549443ab2b6df7e0526a34206cb372f1025467a5dd27bcf44b4a22",
+      "rawBytes": 54487,
+      "gitBlobSha256": "6125ab0ed5ecbea950d60ff5e141c9179cbe4572c5a5f772a34def9b1f84d668",
+      "gitBlob": "62461000da57a60bc500c917bf7ca0b1a9e906d9",
+      "readScope": "TARGETED_SECTIONS_NOT_FULL_CORPUS",
+      "locator": "buildExecuteFinalResponse call after provider invocation",
+      "pinDisposition": "READ_ONLY_INPUT",
+      "capturedAtHead": "a6366007f6761f23796f283e8d929c8b9db76952",
+      "priorPinDisposition": "READ_ONLY_INPUT"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route-final-response.ts",
+      "rawSha256": "3262c07e608dee069d351ef52a5b32f21c4c777ef13ecdefc2a71f22cd938acc",
+      "rawBytes": 24653,
+      "gitBlobSha256": "3262c07e608dee069d351ef52a5b32f21c4c777ef13ecdefc2a71f22cd938acc",
+      "gitBlob": "da79bf2deb5788643e0679b3baefc282245664ad",
+      "readScope": "TARGETED_SECTIONS_NOT_FULL_CORPUS",
+      "locator": "buildExecuteFinalResponse telemetry success condition and catch; runtimeTelemetry",
+      "pinDisposition": "READ_ONLY_INPUT",
+      "capturedAtHead": "a6366007f6761f23796f283e8d929c8b9db76952",
+      "priorPinDisposition": "READ_ONLY_INPUT"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execute-telemetry.ts",
+      "rawSha256": "9e4f0c9613e16fff9694ea57a31974e91dd99308fa6bbf458025311d9cb0f9aa",
+      "rawBytes": 4286,
+      "gitBlobSha256": "9e4f0c9613e16fff9694ea57a31974e91dd99308fa6bbf458025311d9cb0f9aa",
+      "gitBlob": "9101c2fd399cd054dce7d6641f1298436f3e414a",
+      "readScope": "TARGETED_SECTIONS_NOT_FULL_CORPUS",
+      "locator": "emitExecutionTelemetry; cost append before EXECUTION_COMPLETED audit append; metadata payload",
+      "pinDisposition": "READ_ONLY_INPUT",
+      "capturedAtHead": "a6366007f6761f23796f283e8d929c8b9db76952",
+      "priorPinDisposition": "READ_ONLY_INPUT"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/admin/audit/route.ts",
+      "rawSha256": "83c83600655cd5637bdebc5fc6fac3ff67573a2a42c9b0ec4c8ca57f6cda614d",
+      "rawBytes": 1857,
+      "gitBlobSha256": "83c83600655cd5637bdebc5fc6fac3ff67573a2a42c9b0ec4c8ca57f6cda614d",
+      "gitBlob": "bc89848daee633364a0501ae50f215db4eed0522",
+      "readScope": "TARGETED_SECTIONS_NOT_FULL_CORPUS",
+      "locator": "GET requireAdminApiSession and readAuditEvents; POST producer boundary",
+      "pinDisposition": "READ_ONLY_INPUT",
+      "capturedAtHead": "a6366007f6761f23796f283e8d929c8b9db76952",
+      "priorPinDisposition": "READ_ONLY_INPUT"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/admin-session.ts",
+      "rawSha256": "69b33640ec525b486390f3e300215913a2c85fe0c6492d0c9a8efdc07ec304ae",
+      "rawBytes": 7856,
+      "gitBlobSha256": "69b33640ec525b486390f3e300215913a2c85fe0c6492d0c9a8efdc07ec304ae",
+      "gitBlob": "189e64239f513e21c13a70fbb19f1114e6b4382f",
+      "readScope": "TARGETED_SECTIONS_NOT_FULL_CORPUS",
+      "locator": "hasRequiredAccess; requireAdminApiSession",
+      "pinDisposition": "READ_ONLY_INPUT",
+      "capturedAtHead": "a6366007f6761f23796f283e8d929c8b9db76952",
+      "priorPinDisposition": "READ_ONLY_INPUT"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/enterprise-access.ts",
+      "rawSha256": "352242cf9e5b3ea734991f230117e76d60ac6018cf0e1be7399cfa66039a2980",
+      "rawBytes": 573,
+      "gitBlobSha256": "352242cf9e5b3ea734991f230117e76d60ac6018cf0e1be7399cfa66039a2980",
+      "gitBlob": "8970928f57966f741fd751097b0c3aedd6e8b227",
+      "readScope": "TARGETED_SECTIONS_NOT_FULL_CORPUS",
+      "locator": "ADMIN_ROLES; canAccessAdmin",
+      "pinDisposition": "READ_ONLY_INPUT",
+      "capturedAtHead": "a6366007f6761f23796f283e8d929c8b9db76952",
+      "priorPinDisposition": "READ_ONLY_INPUT"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/control-plane-events.ts",
+      "rawSha256": "a95ac544fcdf1fb74042b25f4223cc4742592c57d78f434292f3b290643e83e7",
+      "rawBytes": 8549,
+      "gitBlobSha256": "a95ac544fcdf1fb74042b25f4223cc4742592c57d78f434292f3b290643e83e7",
+      "gitBlob": "20d8d7f386345e0a94887b0f614034c9e3f2b7dc",
+      "readScope": "TARGETED_SECTIONS_NOT_FULL_CORPUS",
+      "locator": "getStorePath; appendEvent; appendAuditEvent; readAuditEvents; conditional SIEM forwarding",
+      "pinDisposition": "READ_ONLY_INPUT",
+      "capturedAtHead": "a6366007f6761f23796f283e8d929c8b9db76952",
+      "priorPinDisposition": "READ_ONLY_INPUT"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/storage-adapter.ts",
+      "rawSha256": "d57ea274ac95235ef15fd3d577c8141ba27458576810acb654f505db83a119e6",
+      "rawBytes": 18903,
+      "gitBlobSha256": "d57ea274ac95235ef15fd3d577c8141ba27458576810acb654f505db83a119e6",
+      "gitBlob": "4c7c7602b1f0c26d0ed7b21d64b915b1c596644d",
+      "readScope": "TARGETED_SECTIONS_NOT_FULL_CORPUS",
+      "locator": "FileEventListAdapter.init/readAll/append/describeCapability; retention null; SQLite retention null; Redis retention constant; adapter selection",
+      "pinDisposition": "READ_ONLY_INPUT",
+      "capturedAtHead": "a6366007f6761f23796f283e8d929c8b9db76952",
+      "priorPinDisposition": "READ_ONLY_INPUT"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/siem-forwarder.ts",
+      "rawSha256": "9ffe398092187cbec2412a3089f0ee3fb8ca4be3d25414ff2e9e15fde8f7aeb1",
+      "rawBytes": 1227,
+      "gitBlobSha256": "9ffe398092187cbec2412a3089f0ee3fb8ca4be3d25414ff2e9e15fde8f7aeb1",
+      "gitBlob": "2ec819e8533ddb11865fe13eb8a91fedc7189a68",
+      "readScope": "TARGETED_SECTIONS_NOT_FULL_CORPUS",
+      "locator": "forwardToSIEM; enabled/configured webhook condition",
+      "pinDisposition": "READ_ONLY_INPUT",
+      "capturedAtHead": "a6366007f6761f23796f283e8d929c8b9db76952",
+      "priorPinDisposition": "READ_ONLY_INPUT"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/policy-reader.ts",
+      "rawSha256": "bfbbdc0eb99cae78cf8ca21a3d9e2633d16e50c6369d8db0bb44b80192fbfc68",
+      "rawBytes": 5122,
+      "gitBlobSha256": "bfbbdc0eb99cae78cf8ca21a3d9e2633d16e50c6369d8db0bb44b80192fbfc68",
+      "gitBlob": "2491bfb040bcaa694277193c6692c410e4a30ec3",
+      "readScope": "TARGETED_SECTIONS_NOT_FULL_CORPUS",
+      "locator": "getActiveSIEMConfig via policy events",
+      "pinDisposition": "READ_ONLY_INPUT",
+      "capturedAtHead": "a6366007f6761f23796f283e8d929c8b9db76952",
+      "priorPinDisposition": "READ_ONLY_INPUT"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/proof.ts",
+      "rawSha256": "fbdcc3a434eea13842c9f692d2b54cc9955e80d8c8777d9dfaa14cace9cdfcaf",
+      "rawBytes": 5702,
+      "gitBlobSha256": "fbdcc3a434eea13842c9f692d2b54cc9955e80d8c8777d9dfaa14cace9cdfcaf",
+      "gitBlob": "fe7fff31003547351f7ac716567867856e6a6c85",
+      "readScope": "TARGETED_SECTIONS_NOT_FULL_CORPUS",
+      "locator": "resolveEvaluateUrl; proofTimeoutMs; fetchGovernanceReceipt;500-character content excerpt",
+      "pinDisposition": "READ_ONLY_INPUT",
+      "capturedAtHead": "a6366007f6761f23796f283e8d929c8b9db76952",
+      "priorPinDisposition": "READ_ONLY_INPUT"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/route.ts",
+      "rawSha256": "a17ddd57882be1e58a86fb1d86bea8a2693f1169f5ba0c8b6da2af75d7f024ae",
+      "rawBytes": 13773,
+      "gitBlobSha256": "22f08a7ed8a4a4eb06c63bde244c0e2e9f752758bb6f48acbfb12bf57a2862f1",
+      "gitBlob": "7c478a146574a56cb885ac6f912c5dfe34f685f6",
+      "readScope": "TARGETED_SECTIONS_NOT_FULL_CORPUS",
+      "locator": "sourceHash; slugged anchor; DRAFT_UNACCEPTED; awaited receipt helper",
+      "pinDisposition": "READ_ONLY_INPUT",
+      "capturedAtHead": "a6366007f6761f23796f283e8d929c8b9db76952",
+      "priorPinDisposition": "READ_ONLY_INPUT"
+    },
+    {
+      "path": "docs/reviews/CVF_NCR_HTML_CONFIGURED_RECEIPT_CONDITIONAL_COMPLETION_2026-10-14.md",
+      "rawSha256": "36c9b8513fdd614d9e798b4ef88960f68887fa43ec43b67811d6560d736805bd",
+      "rawBytes": 24667,
+      "gitBlobSha256": "36c9b8513fdd614d9e798b4ef88960f68887fa43ec43b67811d6560d736805bd",
+      "gitBlob": "d930cef4770d2927405448b2790328e69522d783",
+      "readScope": "TARGETED_SECTIONS_NOT_FULL_CORPUS",
+      "locator": "conditional control disposition; original raw evidence; current blocked cleanup",
+      "pinDisposition": "READ_ONLY_INPUT",
+      "capturedAtHead": "a6366007f6761f23796f283e8d929c8b9db76952",
+      "priorPinDisposition": "READ_ONLY_INPUT"
+    },
+    {
+      "path": "docs/reviews/evidence/ncr-html-configured-receipt-conditional-local-20261014.json",
+      "rawSha256": "9ceba8d8f6c35cd0fc8072cc6862d4657ee8cf067c6e42c011d179b78da47c71",
+      "rawBytes": 62036,
+      "gitBlobSha256": "9ceba8d8f6c35cd0fc8072cc6862d4657ee8cf067c6e42c011d179b78da47c71",
+      "gitBlob": "09afe82f0cbcb097327d18308590d5d7d7d61f27",
+      "readScope": "TARGETED_SECTIONS_NOT_FULL_CORPUS",
+      "locator": "independent authenticity result and inert cleanup counterexample",
+      "pinDisposition": "READ_ONLY_INPUT",
+      "capturedAtHead": "a6366007f6761f23796f283e8d929c8b9db76952",
+      "priorPinDisposition": "READ_ONLY_INPUT"
+    },
+    {
+      "path": "docs/assessments/CVF_NCR_SELECTED_PILOT_CONVERGENCE_LOCAL_DISPOSITION_2026-10-14.md",
+      "rawSha256": "53a6baf2a13032fdaa496b0f1aa0b7156413b90b443e6b2c4f5669a63f87d6df",
+      "rawBytes": 13024,
+      "gitBlobSha256": "ac12f231668cc008e4914a2398fa2300360bf672475d7c6a7cf221fc52656d6e",
+      "gitBlob": "819ab5321de13c416b69bae51bce364dda009d0b",
+      "readScope": "TARGETED_SECTIONS_NOT_FULL_CORPUS",
+      "locator": "selected chain; qualified unknowns; no-runtime Q008",
+      "pinDisposition": "READ_ONLY_INPUT",
+      "capturedAtHead": "a6366007f6761f23796f283e8d929c8b9db76952",
+      "priorPinDisposition": "READ_ONLY_INPUT"
+    },
+    {
+      "path": "docs/reviews/CVF_NCR_W05_SELECTED_CHAIN_READINESS_2026-10-07.md",
+      "rawSha256": "f6f68f743129f442d971cc2efd18f6ab831597a197f4aed5eeaa95be656210d5",
+      "rawBytes": 49228,
+      "gitBlobSha256": "f6f68f743129f442d971cc2efd18f6ab831597a197f4aed5eeaa95be656210d5",
+      "gitBlob": "ac7a553d82e090524c0ae928db154079c223fb2e",
+      "readScope": "TARGETED_SECTIONS_NOT_FULL_CORPUS",
+      "locator": "selected source/evidence scope; pre-live limits",
+      "pinDisposition": "READ_ONLY_INPUT",
+      "capturedAtHead": "a6366007f6761f23796f283e8d929c8b9db76952",
+      "priorPinDisposition": "READ_ONLY_INPUT"
+    },
+    {
+      "path": "docs/reviews/CVF_CVF_NCR_Q001_DOCKER_BROWSER_UI_WALKTHROUGH_2026-09-29.md",
+      "rawSha256": "42fed342a1fefd502f691c9cbb7440d0eec3d417fd6137ab6a5bef35a9bfcd89",
+      "rawBytes": 10268,
+      "gitBlobSha256": "42fed342a1fefd502f691c9cbb7440d0eec3d417fd6137ab6a5bef35a9bfcd89",
+      "gitBlob": "b3f3f451cf1407a631be04184d7482a5299b818f",
+      "readScope": "TARGETED_SECTIONS_NOT_FULL_CORPUS",
+      "locator": "real browser with admin-seeded fixture; cold/warm hop limits",
+      "pinDisposition": "READ_ONLY_INPUT",
+      "capturedAtHead": "a6366007f6761f23796f283e8d929c8b9db76952",
+      "priorPinDisposition": "READ_ONLY_INPUT"
+    },
+    {
+      "path": "docs/reviews/CVF_CVF_NCR_R0_W01_HTML_PROFILE_WORKER_RETURN_2026-09-26.md",
+      "rawSha256": "b30cb5242e4cb15ae7ca2c21aa1896e9828fee70dfda0ec4db225a8f40794d16",
+      "rawBytes": 35222,
+      "gitBlobSha256": "b30cb5242e4cb15ae7ca2c21aa1896e9828fee70dfda0ec4db225a8f40794d16",
+      "gitBlob": "7241c19059798e687727cd67421f2d45e241a849",
+      "readScope": "TARGETED_SECTIONS_NOT_FULL_CORPUS",
+      "locator": "historical profile-only unknowns; later Local qualification",
+      "pinDisposition": "READ_ONLY_INPUT",
+      "capturedAtHead": "a6366007f6761f23796f283e8d929c8b9db76952",
+      "priorPinDisposition": "READ_ONLY_INPUT"
+    },
+    {
+      "path": "docs/reviews/CVF_CVF_NCR_Q001_PRODUCTION_AUTH_PROFILE_BOUNDARY_2026-09-29.md",
+      "rawSha256": "9dcef0803a39c9797f076a1000885f916fdfd57f34d714e50f7c68b6da9c34b5",
+      "rawBytes": 9471,
+      "gitBlobSha256": "9dcef0803a39c9797f076a1000885f916fdfd57f34d714e50f7c68b6da9c34b5",
+      "gitBlob": "6c03174f6299d67652351d53dd189827eaa587a3",
+      "readScope": "TARGETED_SECTIONS_NOT_FULL_CORPUS",
+      "locator": "OAuth/identity/role configuration remains independently required",
+      "pinDisposition": "READ_ONLY_INPUT",
+      "capturedAtHead": "a6366007f6761f23796f283e8d929c8b9db76952",
+      "priorPinDisposition": "READ_ONLY_INPUT"
+    },
+    {
+      "path": "docs/reviews/CVF_NCR_HOME_ALIBABA_JOURNEY_COMPLETION_2026-10-13.md",
+      "rawSha256": "a522c731213c201787b521ef39a3da4e4bb0cd92863a4be793d3707c36054b65",
+      "rawBytes": 31143,
+      "gitBlobSha256": "1f56615639443c0c4ff3bf9293633f3bbd4db542bb2fea101efd3b5141566135",
+      "gitBlob": "37ab34556a41ca529fdac4295b7092fd800cd953",
+      "readScope": "TARGETED_SECTIONS_NOT_FULL_CORPUS",
+      "locator": "accepted bounded Home provider/output journey; not selected full HTML pilot",
+      "pinDisposition": "READ_ONLY_INPUT",
+      "capturedAtHead": "a6366007f6761f23796f283e8d929c8b9db76952",
+      "priorPinDisposition": "READ_ONLY_INPUT"
+    },
+    {
+      "path": "docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md",
+      "rawSha256": "f496a7639d17284dcd6e37fdd599632ae37eab2a83755833062fca4626070744",
+      "rawBytes": 188039,
+      "gitBlobSha256": "f496a7639d17284dcd6e37fdd599632ae37eab2a83755833062fca4626070744",
+      "gitBlob": "fb5ff6441bcb0741c744b367264781ce4058fd1e",
+      "readScope": "TARGETED_SECTIONS_NOT_FULL_CORPUS",
+      "locator": "Current Delivery Checkpoint; Q001/Q003/Q004/Q005/Q008; R0-R4 exits",
+      "pinDisposition": "SOURCE_PREIMAGE_BEFORE_LOCAL_ROADMAP_RECONCILIATION",
+      "capturedAtHead": "a6366007f6761f23796f283e8d929c8b9db76952",
+      "priorPinDisposition": "SOURCE_PREIMAGE"
+    },
+    {
+      "path": "docs/reference/CVF_FINDING_TO_GOVERNANCE_LEARNING_TRIGGER_STANDARD.md",
+      "rawSha256": "f9f70fa4af76588b92ad3e65c784789ca896c7634cedc9cbfd073ce0d7a26f76",
+      "rawBytes": 11481,
+      "gitBlobSha256": "7e50aec670c647ebbac1fadbabcecaabac4425e31ac5f4ebae1a49604d7a96dd",
+      "gitBlob": "30d48ba03faca76ecd7333be89f369cf4df08178",
+      "readScope": "TARGETED_SECTIONS_NOT_FULL_CORPUS",
+      "locator": "recurring successor freeze applies to same defect cluster",
+      "pinDisposition": "READ_ONLY_INPUT",
+      "capturedAtHead": "a6366007f6761f23796f283e8d929c8b9db76952",
+      "priorPinDisposition": "READ_ONLY_INPUT"
+    },
+    {
+      "path": "docs/reference/CVF_GOVERNED_WORK_LIFECYCLE_AND_DESIGN_CONTROL_STANDARD_2026-06-11.md",
+      "rawSha256": "b48f11363ee62a2ec4c85c6f9fba4540b90eb74475c31aeab18cfe4492a536de",
+      "rawBytes": 23587,
+      "gitBlobSha256": "b48f11363ee62a2ec4c85c6f9fba4540b90eb74475c31aeab18cfe4492a536de",
+      "gitBlob": "3d9a91f40e3e84a9e90fec8c0f0001f2dc6ef789",
+      "readScope": "TARGETED_SECTIONS_NOT_FULL_CORPUS",
+      "locator": "action-specific readiness; outcome-bound continuation",
+      "pinDisposition": "READ_ONLY_INPUT",
+      "capturedAtHead": "a6366007f6761f23796f283e8d929c8b9db76952",
+      "priorPinDisposition": "READ_ONLY_INPUT"
+    },
+    {
+      "path": "DESIGN.md",
+      "rawSha256": "15c1b5061bd2e1f763638beb83a84d06eb8ccbc470747c01f236033a834a987e",
+      "rawBytes": 21490,
+      "gitBlobSha256": "f9e99d08e65eae5a5b95cc1314a5eb75ad726926e1ab82dafa3eafc6d15b44b7",
+      "gitBlob": "260703ec89ffd2282c3960a891337d2b970740f5",
+      "readScope": "TARGETED_SECTIONS_NOT_FULL_CORPUS",
+      "locator": "existing owner and user-facing decisions",
+      "pinDisposition": "READ_ONLY_INPUT",
+      "capturedAtHead": "a6366007f6761f23796f283e8d929c8b9db76952",
+      "priorPinDisposition": "READ_ONLY_INPUT"
+    },
+    {
+      "path": "docs/assessments/CVF_NCR_SELECTED_PILOT_PREREQUISITES_REASSESSMENT_2026-10-14.md",
+      "rawSha256": "cbf0f763b28d260c293ff8d7bb5b6407be728edf922999c7b4258f089c272648",
+      "rawBytes": 21527,
+      "gitBlobSha256": "cbf0f763b28d260c293ff8d7bb5b6407be728edf922999c7b4258f089c272648",
+      "capturedAtHead": "a6366007f6761f23796f283e8d929c8b9db76952",
+      "readScope": "TARGETED_CURRENT_SOURCE_DISPOSITION",
+      "pinDisposition": "READ_ONLY_INPUT"
+    },
+    {
+      "path": "docs/reviews/evidence/ncr-selected-pilot-prerequisites-local-20261014.json",
+      "rawSha256": "2cc4a9a4299bbead72c40fbe172cb1f99f521db34ae6f9aacec126094a7d897e",
+      "rawBytes": 24297,
+      "gitBlobSha256": "2cc4a9a4299bbead72c40fbe172cb1f99f521db34ae6f9aacec126094a7d897e",
+      "capturedAtHead": "a6366007f6761f23796f283e8d929c8b9db76952",
+      "readScope": "TARGETED_CURRENT_SOURCE_DISPOSITION",
+      "pinDisposition": "READ_ONLY_INPUT"
+    }
+  ],
+  "reviewerDocumentaryCorrections": {
+    "path": "docs/assessments/CVF_NCR_HTML_FRESH_PROFILE_USER_JOURNEY_SPEC_2026-10-14.md",
+    "beforeSha256": "b2211aa219017462d6b290b2d334ed3e8cac0270e3ae060bcec566d2f298f9f9",
+    "afterSha256": "1d1a42f2c3f1e9d573b30cb46221e24ea1365d9f60aec95b6938e9fd10fb6a83",
+    "edits": [
+      {
+        "before": "LOCKED_SOURCE_FACT unless stated",
+        "after": "LOCKED_SOURCE_FACT unless explicitly classified as a source-derived inference or proposal"
+      },
+      {
+        "before": "so a PRESENT receipt needs the service token configured (source-derived inference; actual value UNKNOWN). Engine URL env default",
+        "after": "so the proposed same-app hop needs a matching app service token for authentication (source-derived inference; actual value UNKNOWN). Token presence alone does not establish PRESENT; a valid engine response is also needed. The app-to-engine client sends Content-Type only and does not forward this token. Engine URL env default"
+      },
+      {
+        "before": "the receipt hop needs a service token (F-12)",
+        "after": "the proposed same-app receipt hop needs matching app service-token authentication, not an engine token (F-12)"
+      },
+      {
+        "before": "an owned engine stand-in",
+        "after": "an owned real governance engine (source/report/ledger contract; no response stand-in)"
+      },
+      {
+        "before": "fresh single-use token set on the owned app and engine only",
+        "after": "fresh run-scoped matching token on the sending app and receiving app evaluate route; the engine client does not forward it"
+      },
+      {
+        "before": "token shared with any real system",
+        "after": "token shared with any real system; token assumed forwarded to engine"
+      },
+      {
+        "before": "request id, anchor slug and the first 500 UTF-16 code units of sourceContent, plus the token header",
+        "after": "app-to-evaluate: request id, artifact/anchor slug, the first 500 UTF-16 code units of sourceContent, phase REVIEW and risk R0, plus the app token header; evaluate-to-engine: payload/phase/risk identifiers via JSON, no app token header"
+      },
+      {
+        "before": "engine stand-in configured to deny",
+        "after": "owned real engine response observed as DENY; inability to induce DENY stays unresolved, not simulated proof"
+      },
+      {
+        "before": "HTML export itself calls no model; the receipt hop is the only network hop",
+        "after": "HTML export itself calls no model; configured export -> app evaluate -> engine has two HTTP hops, not one"
+      },
+      {
+        "before": "A PRESENT receipt requires the service token on app and engine | LOCKED_SOURCE_FACT (inference from F-11/F-12) | Local verifies at admission",
+        "after": "The proposed same-app hop uses matching app service-token auth; the engine client does not forward it; valid report/ledger response still required for PRESENT | PROPOSED_DESIGN_CHOICE, source-derived inference from F-11/F-12 | Local verifies owned profile at future admission"
+      },
+      {
+        "before": "A missing service token makes every receipt UNAVAILABLE and can be mistaken for a product defect (F-12); admission must check presence.",
+        "after": "Without matching app service-token auth or a forwarded session, the standard app evaluate hop returns 401 mapped to UNAVAILABLE (F-12). NOT_CONFIGURED still sends nothing; token presence is not sufficient for PRESENT. Admission checks matching auth and a valid engine response, without logging the token."
+      },
+      {
+        "before": "Local decides D-08..D-11 before any run; none is required to accept this documentary SPEC.",
+        "after": "Local dispositions are action-specific: D-08 improvements are deferred and do not gate a current-source synthetic rehearsal; D-09 needs a separately admitted owned profile; D-10 needs a separate full R3 provider/output-version join; D-11 operator checkpoints gate their named effects. They do not gate acceptance of this documentary SPEC."
+      },
+      {
+        "before": "Actual profile values (origin, auth, engine, store, SIEM, retention, latency, cost) | OPEN_BY_ACTION | operator/Local; verified only after a separately admitted effect",
+        "after": "Actual profile values (origin, auth, engine, store, SIEM, retention, latency, cost) | OPEN_BY_ACTION | Local can select a fresh owned synthetic profile in a later paired scope; actual deployment or sensitive values require their own admission. Values remain UNKNOWN here"
+      },
+      {
+        "before": "the existing /artifacts source supports a complete synthetic journey design with only deployment values unknown",
+        "after": "the existing /artifacts source supports a bounded synthetic journey design; deployment values, future proof and business acceptance remain unknown"
+      },
+      {
+        "before": "no source contradicted the reassessment.",
+        "after": "no source contradicted the reassessment. Local source review corrected app-versus-engine authentication, two-hop topology and real-engine proof wording; original worker bytes/proof remain in frozen custody."
+      },
+      {
+        "before": "Submit as COMPLETE_PENDING_REVIEW for the Local reviewer (see the worker return for gates). Next permitted Local action: review this packet and one documentary probe; any rehearsal needs its own paired packet, finite effect budget and cleanup admission. No successor is opened by the worker.",
+        "after": "Local-corrected documentary projection of the worker submission; terminal technical disposition is in the Local completion review. The original worker return/proof and final-gate bytes remain preserved. Any rehearsal needs its own paired packet, finite effect budget and cleanup admission; no successor is opened here."
+      }
+    ],
+    "scope": "bounded documentary source/decision corrections only; no product/data/authority change; worker return/proof untouched"
+  },
+  "currentSpecSha256": "1d1a42f2c3f1e9d573b30cb46221e24ea1365d9f60aec95b6938e9fd10fb6a83",
+  "workerReturnProofUnchanged": true,
+  "independentProbe": {
+    "schemaVersion": "cvf.ncrHtmlSpecIndependentDocumentaryProbe.v1",
+    "status": "PASS_DOCUMENTARY_PROBE_ON_LOCAL_CORRECTED_SPEC",
+    "invocationId": "ncr-html-spec-local-4153a2136abc",
+    "startedUtc": "2026-10-14T13:50:12.290687+00:00",
+    "finishedUtc": "2026-10-14T13:50:12.296678+00:00",
+    "seconds": 0.016,
+    "scope": "source/documentary fixture/claim joins only; no behavior efficacy or runtime proof",
+    "sourcePins": [
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/route.ts",
+        "rawSha256": "a17ddd57882be1e58a86fb1d86bea8a2693f1169f5ba0c8b6da2af75d7f024ae"
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/proof.ts",
+        "rawSha256": "fbdcc3a434eea13842c9f692d2b54cc9955e80d8c8777d9dfaa14cace9cdfcaf"
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/governance/evaluate/route.ts",
+        "rawSha256": "b232dcbdfb1a5ec7982e2ed35caf1e9313dec553a3dcf5752576cc110955c1cb"
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/governance-engine.ts",
+        "rawSha256": "48d3252df6614866b3fe84904a0c0f4bd6528d42f1da76543a0db76947494dde"
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execute-telemetry.ts",
+        "rawSha256": "9e4f0c9613e16fff9694ea57a31974e91dd99308fa6bbf458025311d9cb0f9aa"
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/storage-adapter.ts",
+        "rawSha256": "d57ea274ac95235ef15fd3d577c8141ba27458576810acb654f505db83a119e6"
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.tsx",
+        "rawSha256": "efc5839896236dacc7b37e145fda9904a9513bea434b3ff5c8bcd81652e9ea3e"
+      },
+      {
+        "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_FRESH_PROFILE_USER_JOURNEY_SPEC_2026-10-14.md",
+        "rawSha256": "c681775f3fd5592ffed5a9924a1582ad08be98587c614179dd458e86049ad8fd"
+      },
+      {
+        "path": "docs/reviews/CVF_NCR_HTML_CONFIGURED_RECEIPT_CONDITIONAL_COMPLETION_2026-10-14.md",
+        "rawSha256": "36c9b8513fdd614d9e798b4ef88960f68887fa43ec43b67811d6560d736805bd"
+      }
+    ],
+    "oracle": {
+      "profileVerified": false,
+      "receiptAllowsArtifactAcceptance": false,
+      "auditContainsFullOutput": false,
+      "fileSqliteRetentionDays": null,
+      "retiredProviderGrantReopened": false,
+      "appServiceTokenForwardedToEngine": false,
+      "configuredHttpHopCount": 2,
+      "receiptSource": "OWNED_REAL_ENGINE_REQUIRED_FOR_CONFIGURED_PROOF"
+    },
+    "positiveControl": "ACCEPTED_DOCUMENTARY_ASSOCIATION",
+    "negativeMutations": [
+      {
+        "class": "actual_profile_falsely_verified",
+        "mutation": {
+          "profileVerified": true
+        },
+        "result": "REJECTED",
+        "sourceDerivedViolation": [
+          "profileVerified"
+        ]
+      },
+      {
+        "class": "receipt_ALLOW_as_artifact_acceptance",
+        "mutation": {
+          "receiptAllowsArtifactAcceptance": true
+        },
+        "result": "REJECTED",
+        "sourceDerivedViolation": [
+          "receiptAllowsArtifactAcceptance"
+        ]
+      },
+      {
+        "class": "audit_metadata_as_full_output",
+        "mutation": {
+          "auditContainsFullOutput": true
+        },
+        "result": "REJECTED",
+        "sourceDerivedViolation": [
+          "auditContainsFullOutput"
+        ]
+      },
+      {
+        "class": "invented_File_SQLite_30_day_retention",
+        "mutation": {
+          "fileSqliteRetentionDays": 30
+        },
+        "result": "REJECTED",
+        "sourceDerivedViolation": [
+          "fileSqliteRetentionDays"
+        ]
+      },
+      {
+        "class": "retired_provider_grant_as_fresh_authority",
+        "mutation": {
+          "retiredProviderGrantReopened": true
+        },
+        "result": "REJECTED",
+        "sourceDerivedViolation": [
+          "retiredProviderGrantReopened"
+        ]
+      },
+      {
+        "class": "app_token_forwarded_to_engine",
+        "mutation": {
+          "appServiceTokenForwardedToEngine": true
+        },
+        "result": "REJECTED",
+        "sourceDerivedViolation": [
+          "appServiceTokenForwardedToEngine"
+        ]
+      },
+      {
+        "class": "one_hop_topology",
+        "mutation": {
+          "configuredHttpHopCount": 1
+        },
+        "result": "REJECTED",
+        "sourceDerivedViolation": [
+          "configuredHttpHopCount"
+        ]
+      },
+      {
+        "class": "stand_in_as_real_engine_proof",
+        "mutation": {
+          "receiptSource": "STAND_IN"
+        },
+        "result": "REJECTED",
+        "sourceDerivedViolation": [
+          "receiptSource"
+        ]
+      }
+    ],
+    "fixture": {
+      "title": "Local reviewer synthetic receipt plan",
+      "sourcePath": "synthetic/local-review/independent-plan.md",
+      "sourceContent": "# Local reviewer plan\n\nT\u00e0i li\u1ec7u gi\u1ea3 l\u1eadp ch\u1ec9 \u0111\u1ec3 ki\u1ec3m tra thi\u1ebft k\u1ebf.\n\nM\u1ed7i phi\u00ean b\u1ea3n c\u00f3 ngu\u1ed3n ri\u00eang.\nM\u1ed7i phi\u00ean b\u1ea3n c\u00f3 ngu\u1ed3n ri\u00eang.\nM\u1ed7i phi\u00ean b\u1ea3n c\u00f3 ngu\u1ed3n ri\u00eang.\nM\u1ed7i phi\u00ean b\u1ea3n c\u00f3 ngu\u1ed3n ri\u00eang.\nM\u1ed7i phi\u00ean b\u1ea3n c\u00f3 ngu\u1ed3n ri\u00eang.\nM\u1ed7i phi\u00ean b\u1ea3n c\u00f3 ngu\u1ed3n ri\u00eang.\nM\u1ed7i phi\u00ean b\u1ea3n c\u00f3 ngu\u1ed3n ri\u00eang.\nM\u1ed7i phi\u00ean b\u1ea3n c\u00f3 ngu\u1ed3n ri\u00eang.\nM\u1ed7i phi\u00ean b\u1ea3n c\u00f3 ngu\u1ed3n ri\u00eang.\nM\u1ed7i phi\u00ean b\u1ea3n c\u00f3 ngu\u1ed3n ri\u00eang.\nM\u1ed7i phi\u00ean b\u1ea3n c\u00f3 ngu\u1ed3n ri\u00eang.\nM\u1ed7i phi\u00ean b\u1ea3n c\u00f3 ngu\u1ed3n ri\u00eang.\nM\u1ed7i phi\u00ean b\u1ea3n c\u00f3 ngu\u1ed3n ri\u00eang.\nM\u1ed7i phi\u00ean b\u1ea3n c\u00f3 ngu\u1ed3n ri\u00eang.\nM\u1ed7i phi\u00ean b\u1ea3n c\u00f3 ngu\u1ed3n ri\u00eang.\nM\u1ed7i phi\u00ean b\u1ea3n c\u00f3 ngu\u1ed3n ri\u00eang.\nM\u1ed7i phi\u00ean b\u1ea3n c\u00f3 ngu\u1ed3n ri\u00eang.\nM\u1ed7i phi\u00ean b\u1ea3n c\u00f3 ngu\u1ed3n ri\u00eang.\nM\u1ed7i phi\u00ean b\u1ea3n c\u00f3 ngu\u1ed3n ri\u00eang.\nM\u1ed7i phi\u00ean b\u1ea3n c\u00f3 ngu\u1ed3n ri\u00eang.\nM\u1ed7i phi\u00ean b\u1ea3n c\u00f3 ngu\u1ed3n ri\u00eang.\nM\u1ed7i phi\u00ean b\u1ea3n c\u00f3 ngu\u1ed3n ri\u00eang.\nM\u1ed7i phi\u00ean b\u1ea3n c\u00f3 ngu\u1ed3n ri\u00eang.\nM\u1ed7i phi\u00ean b\u1ea3n c\u00f3 ngu\u1ed3n ri\u00eang.\nM\u1ed7i phi\u00ean b\u1ea3n c\u00f3 ngu\u1ed3n ri\u00eang.\n",
+      "memoryClass": "FULL_RECORD",
+      "status": "Draft for review",
+      "claimBoundary": "Synthetic documentary oracle; no acceptance or runtime grant.",
+      "receiptAnchor": "local-spec-probe-20261014"
+    },
+    "fixtureJoin": {
+      "proposedOnly": true,
+      "sha256TrimmedUtf8": "2422e43bdc5a715687afff777ba447df76d47567285996395a55ad6ad5c70423",
+      "utf16CodeUnits": 816,
+      "excerptUtf16Units": 500,
+      "excerptSha256": "f8ef1c7ae85a696871f6761a7fb18646bd271094c59753c4114d2ef4755e040f",
+      "anchor": "local-spec-probe-20261014",
+      "filename": "local-reviewer-synthetic-receipt-plan.html",
+      "httpHops": 2,
+      "authBoundary": "matching app token; engine headers Content-Type only",
+      "requestId": "NO_RUNTIME_REQUEST_CREATED"
+    },
+    "workerFixtureIndependentRecompute": "v1 NFC/hash matches documentary block",
+    "currentSpecChecks": {
+      "no_engine_token_claim": true,
+      "two_hops": true,
+      "real_engine_not_stand_in": true,
+      "profile_unknown": true,
+      "acceptance_boundary": true,
+      "audit_boundary": true,
+      "retention_boundary": true,
+      "retired_boundary": true
+    },
+    "originalSpecFindings": {
+      "token_sent_to_engine": true,
+      "one_network_hop": true,
+      "stand_in_as_configured_engine": true,
+      "all_decisions_block_every_run": true
+    },
+    "effectCounters": {
+      "browser": 0,
+      "engine": 0,
+      "provider": 0,
+      "actualConfigValueReads": 0,
+      "userStoreReads": 0
+    },
+    "workerHelpersImported": false
+  },
+  "independentProbeSource": {
+    "path": ".cvf/runtime/ncr-html-user-journey-spec-20261014/local-review/probe.py",
+    "sha256": "aae5a46c7f486e197ef059af6a17a9a94eabf5ffecbd996e3d7a9d360800766e"
+  },
+  "localFinalWorkerFast": {
+    "command": [
+      "python",
+      "-B",
+      "governance/compat/run_worker_return_fast_gate.py",
+      "--active-work-order",
+      "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_FRESH_PROFILE_USER_JOURNEY_SPEC_2026-10-14.md",
+      "--max-return-lines",
+      "450",
+      "--max-return-bytes",
+      "64000"
+    ],
+    "exit": 0,
+    "seconds": 22.03,
+    "log": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-request-cancellation-20261014\\journey-spec-local-worker-fast.log",
+    "sha256": "29734f27b9bce08cdca4062f0fb2dd4a56db96b78c605424122d666c13539ed0"
+  },
+  "requirementDisposition": {
+    "REQ-01": "ACCEPTED_DOCUMENTARY_BOUNDED_AFTER_LOCAL_CORRECTION",
+    "REQ-02": "ACCEPTED_DOCUMENTARY_BOUNDED_AFTER_LOCAL_CORRECTION",
+    "REQ-03": "ACCEPTED_DOCUMENTARY_BOUNDED_AFTER_LOCAL_CORRECTION",
+    "REQ-04": "ACCEPTED_DOCUMENTARY_BOUNDED_AFTER_LOCAL_CORRECTION",
+    "REQ-05": "ACCEPTED_DOCUMENTARY_BOUNDED_AFTER_LOCAL_CORRECTION",
+    "REQ-06": "ACCEPTED_DOCUMENTARY_BOUNDED_AFTER_LOCAL_CORRECTION",
+    "REQ-07": "NOT_FULLY_FULFILLED_PROCEDURE_PARTIAL; structural/integrity/zero-effect contributions accepted"
+  },
+  "procedureDisposition": "PARTIAL_WITH_REASON",
+  "procedureLimitations": [
+    "worker reports quality/probe checker reads after SPEC authoring and retrospective/routing constants after first full gate",
+    "mandatory reassessment JSON sourcePins scope reported not read; fresh dispatcher31 pin checks retain integrity but do not retroactively fulfill the mandatory read",
+    "bound pre-implementation/scaffold before write and staged/no-commit/zero-effect/final gate evidence are accepted"
+  ],
+  "decisionDispositions": {
+    "D-08": "DEFER_PRODUCT_IMPROVEMENTS_NOT_REQUIRED_FOR_CURRENT_SOURCE_REHEARSAL",
+    "D-09": "FUTURE_LOCAL_OWNED_SYNTHETIC_PROFILE_PLANNING_ONLY; actual values remain UNKNOWN",
+    "D-10": "SEPARATE_FULL_R3_PROVIDER_AND_EXACT_OUTPUT_VERSION_JOIN_REQUIRED",
+    "D-11": "OPERATOR_ACTION_SPECIFIC_CHECKPOINTS_RETAINED"
+  },
+  "effectCounters": {
+    "provider": 0,
+    "browser": 0,
+    "engine": 0,
+    "actualConfigValueReads": 0,
+    "userStoreReads": 0
+  },
+  "probeFirstAttempt": {
+    "exit": 1,
+    "cause": "Local FIELD_LIMITS regex omitted JS numeric separator underscores; parser collected4 of6 bounded field names",
+    "diagnosticEvidence": "tool transcript; raw stderr not separately retained",
+    "repair": "accept numeric separators in source regex; no tracked/runtime effect; corrected probe exit0; no product rerun"
+  },
+  "scope": "exact6 reviewed documentary material; no implementation or future effect grant",
+  "nativeUsage": "UNKNOWN",
+  "billing": "UNKNOWN"
+}

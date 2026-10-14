@@ -1,0 +1,952 @@
+{
+ "schemaVersion": "cvf.ncrHtmlJourneySpecWorker.documentary.v1",
+ "status": "DOCUMENTARY_PROOF_COMPLETE_PENDING_REVIEW",
+ "batchId": "CVF-NCR-HTML-FRESH-PROFILE-USER-JOURNEY-SPEC-20261014",
+ "role": "INTERNAL_AGENT_DESIGN_ONLY_SPEC_WORKER",
+ "executionBaseHead": "c1e1b48d0ae09f6b690a4f6ed08b007d67d4f385",
+ "headAtProofGeneration": "c1e1b48d0ae09f6b690a4f6ed08b007d67d4f385",
+ "stagedAtProofGeneration": "",
+ "requestedConfigurationMetadata": "Claude Sonnet 5.5 High; descriptive only; native identity, usage and billing UNKNOWN",
+ "textEncodingException": "Text Encoding Exception: fixture and Vietnamese walkthrough are intentional UTF-8 NFC user-facing text; this JSON is ASCII-escaped.",
+ "claimBoundary": "DOCUMENTATION_ONLY; PROPOSAL_ONLY_NO_RUNTIME_READINESS. Source and shape observations plus proposal completeness; not a runtime verdict, not business acceptance.",
+ "clocks": {
+  "intakeUtc": "2026-10-14T13:20:45Z",
+  "hardBudgetEndUtc": "2026-10-14T14:35:45Z",
+  "preImplementationPassUtc": "2026-10-14T13:23:09Z",
+  "scaffoldWrittenUtc": "2026-10-14T13:24:27Z",
+  "specFirstWriteApproxUtc": "2026-10-14T13:28:00Z",
+  "proofGeneratedUtc": "2026-10-14T13:35:47Z",
+  "note": "later gate runs and final byte hashes are recorded only in the bound ignored sidecar"
+ },
+ "outputs": {
+  "spec": {
+   "path": "docs/assessments/CVF_NCR_HTML_FRESH_PROFILE_USER_JOURNEY_SPEC_2026-10-14.md",
+   "lines": 266,
+   "bytes": 34760,
+   "sha256AtProofGeneration": "b2211aa219017462d6b290b2d334ed3e8cac0270e3ae060bcec566d2f298f9f9",
+   "caps": {
+    "lines": 350,
+    "bytes": 64000
+   }
+  },
+  "return": {
+   "path": "docs/reviews/CVF_NCR_HTML_FRESH_PROFILE_USER_JOURNEY_SPEC_WORKER_RETURN_2026-10-14.md",
+   "caps": {
+    "lines": 450,
+    "bytes": 64000
+   }
+  },
+  "proof": {
+   "path": "docs/reviews/evidence/ncr-html-fresh-profile-user-journey-spec-worker-20261014.json",
+   "cap": {
+    "bytes": 128000
+   }
+  }
+ },
+ "sourcePins": {
+  "count": 31,
+  "before": [
+   {
+    "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/artifacts/page.tsx",
+    "rawSha256": "651652d7ce7757503ca3126bba03889e9286152d4e788e181970a56dfe18b0ec",
+    "rawBytes": 7172,
+    "match": true
+   },
+   {
+    "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/page.tsx",
+    "rawSha256": "0ed365b59324bb836d8ec56cba143df941e7a7f8dfa11b841b28a68212f1b35d",
+    "rawBytes": 17439,
+    "match": true
+   },
+   {
+    "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/KnowledgeJourneyNav.tsx",
+    "rawSha256": "3c959fd5d940e525d49d595835af239baee6ede26820369eaa9426c1cb1f92a6",
+    "rawBytes": 3098,
+    "match": true
+   },
+   {
+    "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.tsx",
+    "rawSha256": "efc5839896236dacc7b37e145fda9904a9513bea434b3ff5c8bcd81652e9ea3e",
+    "rawBytes": 49819,
+    "match": true
+   },
+   {
+    "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.tsx",
+    "rawSha256": "ae5160169f828a7ec9b1a9ad576a2ad37b9c3343cb882ec706c7631f01113b31",
+    "rawBytes": 35116,
+    "match": true
+   },
+   {
+    "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts",
+    "rawSha256": "96d5fcd958549443ab2b6df7e0526a34206cb372f1025467a5dd27bcf44b4a22",
+    "rawBytes": 54487,
+    "match": true
+   },
+   {
+    "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route-final-response.ts",
+    "rawSha256": "3262c07e608dee069d351ef52a5b32f21c4c777ef13ecdefc2a71f22cd938acc",
+    "rawBytes": 24653,
+    "match": true
+   },
+   {
+    "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execute-telemetry.ts",
+    "rawSha256": "9e4f0c9613e16fff9694ea57a31974e91dd99308fa6bbf458025311d9cb0f9aa",
+    "rawBytes": 4286,
+    "match": true
+   },
+   {
+    "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/admin/audit/route.ts",
+    "rawSha256": "83c83600655cd5637bdebc5fc6fac3ff67573a2a42c9b0ec4c8ca57f6cda614d",
+    "rawBytes": 1857,
+    "match": true
+   },
+   {
+    "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/admin-session.ts",
+    "rawSha256": "69b33640ec525b486390f3e300215913a2c85fe0c6492d0c9a8efdc07ec304ae",
+    "rawBytes": 7856,
+    "match": true
+   },
+   {
+    "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/enterprise-access.ts",
+    "rawSha256": "352242cf9e5b3ea734991f230117e76d60ac6018cf0e1be7399cfa66039a2980",
+    "rawBytes": 573,
+    "match": true
+   },
+   {
+    "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/control-plane-events.ts",
+    "rawSha256": "a95ac544fcdf1fb74042b25f4223cc4742592c57d78f434292f3b290643e83e7",
+    "rawBytes": 8549,
+    "match": true
+   },
+   {
+    "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/storage-adapter.ts",
+    "rawSha256": "d57ea274ac95235ef15fd3d577c8141ba27458576810acb654f505db83a119e6",
+    "rawBytes": 18903,
+    "match": true
+   },
+   {
+    "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/siem-forwarder.ts",
+    "rawSha256": "9ffe398092187cbec2412a3089f0ee3fb8ca4be3d25414ff2e9e15fde8f7aeb1",
+    "rawBytes": 1227,
+    "match": true
+   },
+   {
+    "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/policy-reader.ts",
+    "rawSha256": "bfbbdc0eb99cae78cf8ca21a3d9e2633d16e50c6369d8db0bb44b80192fbfc68",
+    "rawBytes": 5122,
+    "match": true
+   },
+   {
+    "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/proof.ts",
+    "rawSha256": "fbdcc3a434eea13842c9f692d2b54cc9955e80d8c8777d9dfaa14cace9cdfcaf",
+    "rawBytes": 5702,
+    "match": true
+   },
+   {
+    "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/route.ts",
+    "rawSha256": "a17ddd57882be1e58a86fb1d86bea8a2693f1169f5ba0c8b6da2af75d7f024ae",
+    "rawBytes": 13773,
+    "match": true
+   },
+   {
+    "path": "docs/reviews/CVF_NCR_HTML_CONFIGURED_RECEIPT_CONDITIONAL_COMPLETION_2026-10-14.md",
+    "rawSha256": "36c9b8513fdd614d9e798b4ef88960f68887fa43ec43b67811d6560d736805bd",
+    "rawBytes": 24667,
+    "match": true
+   },
+   {
+    "path": "docs/reviews/evidence/ncr-html-configured-receipt-conditional-local-20261014.json",
+    "rawSha256": "9ceba8d8f6c35cd0fc8072cc6862d4657ee8cf067c6e42c011d179b78da47c71",
+    "rawBytes": 62036,
+    "match": true
+   },
+   {
+    "path": "docs/assessments/CVF_NCR_SELECTED_PILOT_CONVERGENCE_LOCAL_DISPOSITION_2026-10-14.md",
+    "rawSha256": "53a6baf2a13032fdaa496b0f1aa0b7156413b90b443e6b2c4f5669a63f87d6df",
+    "rawBytes": 13024,
+    "match": true
+   },
+   {
+    "path": "docs/reviews/CVF_NCR_W05_SELECTED_CHAIN_READINESS_2026-10-07.md",
+    "rawSha256": "f6f68f743129f442d971cc2efd18f6ab831597a197f4aed5eeaa95be656210d5",
+    "rawBytes": 49228,
+    "match": true
+   },
+   {
+    "path": "docs/reviews/CVF_CVF_NCR_Q001_DOCKER_BROWSER_UI_WALKTHROUGH_2026-09-29.md",
+    "rawSha256": "42fed342a1fefd502f691c9cbb7440d0eec3d417fd6137ab6a5bef35a9bfcd89",
+    "rawBytes": 10268,
+    "match": true
+   },
+   {
+    "path": "docs/reviews/CVF_CVF_NCR_R0_W01_HTML_PROFILE_WORKER_RETURN_2026-09-26.md",
+    "rawSha256": "b30cb5242e4cb15ae7ca2c21aa1896e9828fee70dfda0ec4db225a8f40794d16",
+    "rawBytes": 35222,
+    "match": true
+   },
+   {
+    "path": "docs/reviews/CVF_CVF_NCR_Q001_PRODUCTION_AUTH_PROFILE_BOUNDARY_2026-09-29.md",
+    "rawSha256": "9dcef0803a39c9797f076a1000885f916fdfd57f34d714e50f7c68b6da9c34b5",
+    "rawBytes": 9471,
+    "match": true
+   },
+   {
+    "path": "docs/reviews/CVF_NCR_HOME_ALIBABA_JOURNEY_COMPLETION_2026-10-13.md",
+    "rawSha256": "a522c731213c201787b521ef39a3da4e4bb0cd92863a4be793d3707c36054b65",
+    "rawBytes": 31143,
+    "match": true
+   },
+   {
+    "path": "docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md",
+    "rawSha256": "f496a7639d17284dcd6e37fdd599632ae37eab2a83755833062fca4626070744",
+    "rawBytes": 188039,
+    "match": true
+   },
+   {
+    "path": "docs/reference/CVF_FINDING_TO_GOVERNANCE_LEARNING_TRIGGER_STANDARD.md",
+    "rawSha256": "f9f70fa4af76588b92ad3e65c784789ca896c7634cedc9cbfd073ce0d7a26f76",
+    "rawBytes": 11481,
+    "match": true
+   },
+   {
+    "path": "docs/reference/CVF_GOVERNED_WORK_LIFECYCLE_AND_DESIGN_CONTROL_STANDARD_2026-06-11.md",
+    "rawSha256": "b48f11363ee62a2ec4c85c6f9fba4540b90eb74475c31aeab18cfe4492a536de",
+    "rawBytes": 23587,
+    "match": true
+   },
+   {
+    "path": "DESIGN.md",
+    "rawSha256": "15c1b5061bd2e1f763638beb83a84d06eb8ccbc470747c01f236033a834a987e",
+    "rawBytes": 21490,
+    "match": true
+   },
+   {
+    "path": "docs/assessments/CVF_NCR_SELECTED_PILOT_PREREQUISITES_REASSESSMENT_2026-10-14.md",
+    "rawSha256": "cbf0f763b28d260c293ff8d7bb5b6407be728edf922999c7b4258f089c272648",
+    "rawBytes": 21527,
+    "match": true
+   },
+   {
+    "path": "docs/reviews/evidence/ncr-selected-pilot-prerequisites-local-20261014.json",
+    "rawSha256": "2cc4a9a4299bbead72c40fbe172cb1f99f521db34ae6f9aacec126094a7d897e",
+    "rawBytes": 24297,
+    "match": true
+   }
+  ],
+  "after": [
+   {
+    "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/artifacts/page.tsx",
+    "rawSha256": "651652d7ce7757503ca3126bba03889e9286152d4e788e181970a56dfe18b0ec",
+    "rawBytes": 7172,
+    "matchesDispatcherPin": true
+   },
+   {
+    "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/page.tsx",
+    "rawSha256": "0ed365b59324bb836d8ec56cba143df941e7a7f8dfa11b841b28a68212f1b35d",
+    "rawBytes": 17439,
+    "matchesDispatcherPin": true
+   },
+   {
+    "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/KnowledgeJourneyNav.tsx",
+    "rawSha256": "3c959fd5d940e525d49d595835af239baee6ede26820369eaa9426c1cb1f92a6",
+    "rawBytes": 3098,
+    "matchesDispatcherPin": true
+   },
+   {
+    "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.tsx",
+    "rawSha256": "efc5839896236dacc7b37e145fda9904a9513bea434b3ff5c8bcd81652e9ea3e",
+    "rawBytes": 49819,
+    "matchesDispatcherPin": true
+   },
+   {
+    "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.tsx",
+    "rawSha256": "ae5160169f828a7ec9b1a9ad576a2ad37b9c3343cb882ec706c7631f01113b31",
+    "rawBytes": 35116,
+    "matchesDispatcherPin": true
+   },
+   {
+    "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts",
+    "rawSha256": "96d5fcd958549443ab2b6df7e0526a34206cb372f1025467a5dd27bcf44b4a22",
+    "rawBytes": 54487,
+    "matchesDispatcherPin": true
+   },
+   {
+    "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route-final-response.ts",
+    "rawSha256": "3262c07e608dee069d351ef52a5b32f21c4c777ef13ecdefc2a71f22cd938acc",
+    "rawBytes": 24653,
+    "matchesDispatcherPin": true
+   },
+   {
+    "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execute-telemetry.ts",
+    "rawSha256": "9e4f0c9613e16fff9694ea57a31974e91dd99308fa6bbf458025311d9cb0f9aa",
+    "rawBytes": 4286,
+    "matchesDispatcherPin": true
+   },
+   {
+    "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/admin/audit/route.ts",
+    "rawSha256": "83c83600655cd5637bdebc5fc6fac3ff67573a2a42c9b0ec4c8ca57f6cda614d",
+    "rawBytes": 1857,
+    "matchesDispatcherPin": true
+   },
+   {
+    "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/admin-session.ts",
+    "rawSha256": "69b33640ec525b486390f3e300215913a2c85fe0c6492d0c9a8efdc07ec304ae",
+    "rawBytes": 7856,
+    "matchesDispatcherPin": true
+   },
+   {
+    "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/enterprise-access.ts",
+    "rawSha256": "352242cf9e5b3ea734991f230117e76d60ac6018cf0e1be7399cfa66039a2980",
+    "rawBytes": 573,
+    "matchesDispatcherPin": true
+   },
+   {
+    "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/control-plane-events.ts",
+    "rawSha256": "a95ac544fcdf1fb74042b25f4223cc4742592c57d78f434292f3b290643e83e7",
+    "rawBytes": 8549,
+    "matchesDispatcherPin": true
+   },
+   {
+    "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/storage-adapter.ts",
+    "rawSha256": "d57ea274ac95235ef15fd3d577c8141ba27458576810acb654f505db83a119e6",
+    "rawBytes": 18903,
+    "matchesDispatcherPin": true
+   },
+   {
+    "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/siem-forwarder.ts",
+    "rawSha256": "9ffe398092187cbec2412a3089f0ee3fb8ca4be3d25414ff2e9e15fde8f7aeb1",
+    "rawBytes": 1227,
+    "matchesDispatcherPin": true
+   },
+   {
+    "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/policy-reader.ts",
+    "rawSha256": "bfbbdc0eb99cae78cf8ca21a3d9e2633d16e50c6369d8db0bb44b80192fbfc68",
+    "rawBytes": 5122,
+    "matchesDispatcherPin": true
+   },
+   {
+    "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/proof.ts",
+    "rawSha256": "fbdcc3a434eea13842c9f692d2b54cc9955e80d8c8777d9dfaa14cace9cdfcaf",
+    "rawBytes": 5702,
+    "matchesDispatcherPin": true
+   },
+   {
+    "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/route.ts",
+    "rawSha256": "a17ddd57882be1e58a86fb1d86bea8a2693f1169f5ba0c8b6da2af75d7f024ae",
+    "rawBytes": 13773,
+    "matchesDispatcherPin": true
+   },
+   {
+    "path": "docs/reviews/CVF_NCR_HTML_CONFIGURED_RECEIPT_CONDITIONAL_COMPLETION_2026-10-14.md",
+    "rawSha256": "36c9b8513fdd614d9e798b4ef88960f68887fa43ec43b67811d6560d736805bd",
+    "rawBytes": 24667,
+    "matchesDispatcherPin": true
+   },
+   {
+    "path": "docs/reviews/evidence/ncr-html-configured-receipt-conditional-local-20261014.json",
+    "rawSha256": "9ceba8d8f6c35cd0fc8072cc6862d4657ee8cf067c6e42c011d179b78da47c71",
+    "rawBytes": 62036,
+    "matchesDispatcherPin": true
+   },
+   {
+    "path": "docs/assessments/CVF_NCR_SELECTED_PILOT_CONVERGENCE_LOCAL_DISPOSITION_2026-10-14.md",
+    "rawSha256": "53a6baf2a13032fdaa496b0f1aa0b7156413b90b443e6b2c4f5669a63f87d6df",
+    "rawBytes": 13024,
+    "matchesDispatcherPin": true
+   },
+   {
+    "path": "docs/reviews/CVF_NCR_W05_SELECTED_CHAIN_READINESS_2026-10-07.md",
+    "rawSha256": "f6f68f743129f442d971cc2efd18f6ab831597a197f4aed5eeaa95be656210d5",
+    "rawBytes": 49228,
+    "matchesDispatcherPin": true
+   },
+   {
+    "path": "docs/reviews/CVF_CVF_NCR_Q001_DOCKER_BROWSER_UI_WALKTHROUGH_2026-09-29.md",
+    "rawSha256": "42fed342a1fefd502f691c9cbb7440d0eec3d417fd6137ab6a5bef35a9bfcd89",
+    "rawBytes": 10268,
+    "matchesDispatcherPin": true
+   },
+   {
+    "path": "docs/reviews/CVF_CVF_NCR_R0_W01_HTML_PROFILE_WORKER_RETURN_2026-09-26.md",
+    "rawSha256": "b30cb5242e4cb15ae7ca2c21aa1896e9828fee70dfda0ec4db225a8f40794d16",
+    "rawBytes": 35222,
+    "matchesDispatcherPin": true
+   },
+   {
+    "path": "docs/reviews/CVF_CVF_NCR_Q001_PRODUCTION_AUTH_PROFILE_BOUNDARY_2026-09-29.md",
+    "rawSha256": "9dcef0803a39c9797f076a1000885f916fdfd57f34d714e50f7c68b6da9c34b5",
+    "rawBytes": 9471,
+    "matchesDispatcherPin": true
+   },
+   {
+    "path": "docs/reviews/CVF_NCR_HOME_ALIBABA_JOURNEY_COMPLETION_2026-10-13.md",
+    "rawSha256": "a522c731213c201787b521ef39a3da4e4bb0cd92863a4be793d3707c36054b65",
+    "rawBytes": 31143,
+    "matchesDispatcherPin": true
+   },
+   {
+    "path": "docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md",
+    "rawSha256": "f496a7639d17284dcd6e37fdd599632ae37eab2a83755833062fca4626070744",
+    "rawBytes": 188039,
+    "matchesDispatcherPin": true
+   },
+   {
+    "path": "docs/reference/CVF_FINDING_TO_GOVERNANCE_LEARNING_TRIGGER_STANDARD.md",
+    "rawSha256": "f9f70fa4af76588b92ad3e65c784789ca896c7634cedc9cbfd073ce0d7a26f76",
+    "rawBytes": 11481,
+    "matchesDispatcherPin": true
+   },
+   {
+    "path": "docs/reference/CVF_GOVERNED_WORK_LIFECYCLE_AND_DESIGN_CONTROL_STANDARD_2026-06-11.md",
+    "rawSha256": "b48f11363ee62a2ec4c85c6f9fba4540b90eb74475c31aeab18cfe4492a536de",
+    "rawBytes": 23587,
+    "matchesDispatcherPin": true
+   },
+   {
+    "path": "DESIGN.md",
+    "rawSha256": "15c1b5061bd2e1f763638beb83a84d06eb8ccbc470747c01f236033a834a987e",
+    "rawBytes": 21490,
+    "matchesDispatcherPin": true
+   },
+   {
+    "path": "docs/assessments/CVF_NCR_SELECTED_PILOT_PREREQUISITES_REASSESSMENT_2026-10-14.md",
+    "rawSha256": "cbf0f763b28d260c293ff8d7bb5b6407be728edf922999c7b4258f089c272648",
+    "rawBytes": 21527,
+    "matchesDispatcherPin": true
+   },
+   {
+    "path": "docs/reviews/evidence/ncr-selected-pilot-prerequisites-local-20261014.json",
+    "rawSha256": "2cc4a9a4299bbead72c40fbe172cb1f99f521db34ae6f9aacec126094a7d897e",
+    "rawBytes": 24297,
+    "matchesDispatcherPin": true
+   }
+  ],
+  "allUnchanged": true
+ },
+ "readLedger": [
+  {
+   "path": "CVF_SESSION_MEMORY.md",
+   "scopeActuallyRead": "FULL",
+   "method": "Read tool"
+  },
+  {
+   "path": "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json",
+   "scopeActuallyRead": "FULL",
+   "method": "Read tool"
+  },
+  {
+   "path": "AGENT_HANDOFF_V63_2026-09-18.md",
+   "scopeActuallyRead": "FULL (first 6000 bytes plus last 8700 bytes of 14602)",
+   "method": "shell head and tail"
+  },
+  {
+   "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_FRESH_PROFILE_USER_JOURNEY_SPEC_2026-10-14.md",
+   "scopeActuallyRead": "FULL (lines 1-750)",
+   "method": "Read tool in two pages"
+  },
+  {
+   "path": "docs/baselines/CVF_GC018_NCR_HTML_FRESH_PROFILE_USER_JOURNEY_SPEC_2026-10-14.md",
+   "scopeActuallyRead": "FULL",
+   "method": "Read tool"
+  },
+  {
+   "path": "docs/reviews/evidence/ncr-html-fresh-profile-user-journey-spec-dispatch-20261014.json",
+   "scopeActuallyRead": "FULL",
+   "method": "Read tool; 31 sourcePins re-hashed"
+  },
+  {
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/artifacts/page.tsx",
+   "scopeActuallyRead": "FULL",
+   "method": "Read tool"
+  },
+  {
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/KnowledgeJourneyNav.tsx",
+   "scopeActuallyRead": "FULL",
+   "method": "Read tool"
+  },
+  {
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.tsx",
+   "scopeActuallyRead": "FULL",
+   "method": "Read tool"
+  },
+  {
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/route.ts",
+   "scopeActuallyRead": "FULL",
+   "method": "Read tool"
+  },
+  {
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/proof.ts",
+   "scopeActuallyRead": "FULL",
+   "method": "Read tool"
+  },
+  {
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/page.tsx",
+   "scopeActuallyRead": "TARGETED lines 96-186 and 236-296 plus symbol search",
+   "method": "Read tool and Grep"
+  },
+  {
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/admin/audit/route.ts",
+   "scopeActuallyRead": "FULL",
+   "method": "Read tool"
+  },
+  {
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/admin-session.ts",
+   "scopeActuallyRead": "FULL",
+   "method": "Read tool"
+  },
+  {
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/enterprise-access.ts",
+   "scopeActuallyRead": "FULL",
+   "method": "Read tool"
+  },
+  {
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.tsx",
+   "scopeActuallyRead": "TARGETED symbol search plus lines 440-605",
+   "method": "Grep and Read tool"
+  },
+  {
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts",
+   "scopeActuallyRead": "TARGETED import lines 41-48 and call site lines 900-908 only",
+   "method": "Grep with context"
+  },
+  {
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route-final-response.ts",
+   "scopeActuallyRead": "TARGETED lines 1-7, 165-235, 240-272 and symbol search",
+   "method": "Grep and Read tool"
+  },
+  {
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execute-telemetry.ts",
+   "scopeActuallyRead": "FULL",
+   "method": "Read tool"
+  },
+  {
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/control-plane-events.ts",
+   "scopeActuallyRead": "FULL",
+   "method": "Read tool"
+  },
+  {
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/storage-adapter.ts",
+   "scopeActuallyRead": "TARGETED lines 60-100, 100-190, 232-343, 496-543 plus symbol search; Redis and key-value classes not read in full",
+   "method": "Read tool and Grep"
+  },
+  {
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/siem-forwarder.ts",
+   "scopeActuallyRead": "FULL",
+   "method": "Read tool"
+  },
+  {
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/policy-reader.ts",
+   "scopeActuallyRead": "FULL",
+   "method": "Read tool"
+  },
+  {
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/governance/evaluate/route.ts",
+   "scopeActuallyRead": "TARGETED lines 1-80 (extra source needed to follow the receipt hop)",
+   "method": "Read tool"
+  },
+  {
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/route-governance-proof.ts",
+   "scopeActuallyRead": "TARGETED lines 1-80 and 136-290 (extra)",
+   "method": "Read tool"
+  },
+  {
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/governance-engine.ts",
+   "scopeActuallyRead": "TARGETED env/timeout lines by symbol search only (extra)",
+   "method": "Grep"
+  },
+  {
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/policy-events.ts",
+   "scopeActuallyRead": "TARGETED readPolicyEvents symbol only (extra)",
+   "method": "Grep"
+  },
+  {
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/home/HomeBrowseExperience.tsx",
+   "scopeActuallyRead": "TARGETED link line 418 (extra)",
+   "method": "Grep"
+  },
+  {
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/Sidebar.tsx",
+   "scopeActuallyRead": "TARGETED link lines 198-200 (extra)",
+   "method": "Grep"
+  },
+  {
+   "path": "docs/assessments/CVF_NCR_SELECTED_PILOT_PREREQUISITES_REASSESSMENT_2026-10-14.md",
+   "scopeActuallyRead": "FULL",
+   "method": "Read tool"
+  },
+  {
+   "path": "docs/reviews/evidence/ncr-selected-pilot-prerequisites-local-20261014.json",
+   "scopeActuallyRead": "TARGETED keys sourceFacts, proposedContract, unknowns, counters, readBoundary (sourcePins and gate metadata not read)",
+   "method": "python print"
+  },
+  {
+   "path": "docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md",
+   "scopeActuallyRead": "TARGETED Current Delivery Checkpoint lines 12-48 including R0-R6 stage rows; Q008/D015 lines located by symbol search (rows 404, 415, 584, 765 seen)",
+   "method": "sed and Grep"
+  },
+  {
+   "path": "docs/reviews/CVF_NCR_HTML_CONFIGURED_RECEIPT_CONDITIONAL_COMPLETION_2026-10-14.md",
+   "scopeActuallyRead": "TARGETED heading list and Findings / Position through Independent Review Probe Admission",
+   "method": "shell sed"
+  },
+  {
+   "path": "DESIGN.md",
+   "scopeActuallyRead": "TARGETED sections 1-5 (lines 1-140) and 7-10 (lines 196-245) including Accessibility & Language",
+   "method": "shell sed"
+  },
+  {
+   "path": "docs/reference/work_order_template/CVF_WORK_ORDER_SOURCE_VERIFICATION_ADDENDUM.md",
+   "scopeActuallyRead": "TARGETED Orchestrator Source And Acceptance Clarification (lines 52-82)",
+   "method": "shell grep and sed"
+  },
+  {
+   "path": "docs/reference/CVF_GOVERNED_WORK_LIFECYCLE_AND_DESIGN_CONTROL_STANDARD_2026-06-11.md",
+   "scopeActuallyRead": "TARGETED Agent Continuation And Action Readiness through the technical-feasibility subsection (lines 97-175)",
+   "method": "shell sed"
+  },
+  {
+   "path": "docs/reference/guard_orientation/README.md",
+   "scopeActuallyRead": "TARGETED lines 1-120 (Read This First, role terms, task class map)",
+   "method": "shell cat head"
+  },
+  {
+   "path": "governance/compat/run_worker_return_fast_gate.py",
+   "scopeActuallyRead": "lines 1-250 of about 270 (composition read before authoring)",
+   "method": "shell sed"
+  },
+  {
+   "path": "governance/compat/check_work_order_acceptance_ledger.py",
+   "scopeActuallyRead": "lines 1-260 (all)",
+   "method": "shell sed"
+  },
+  {
+   "path": "governance/compat/check_worker_return_quality_gate.py",
+   "scopeActuallyRead": "TARGETED constants 56-180 and diagnose logic 290-480 (read after SPEC authoring, before return prose)",
+   "method": "shell sed"
+  },
+  {
+   "path": "governance/compat/check_independent_review_probe_admission.py",
+   "scopeActuallyRead": "TARGETED closure diagnosis 616-800 (after SPEC authoring, before return prose)",
+   "method": "shell sed"
+  },
+  {
+   "path": "governance/compat/check_markdown_structural_completeness.py",
+   "scopeActuallyRead": "TARGETED common and baseline groups plus classifier",
+   "method": "shell sed"
+  },
+  {
+   "path": "governance/compat/check_agent_packet_authority_and_encoding.py",
+   "scopeActuallyRead": "TARGETED constants 25-120, source-verification and authority rules 353-530",
+   "method": "shell sed"
+  },
+  {
+   "path": "governance/compat/check_finding_to_governance_learning.py",
+   "scopeActuallyRead": "TARGETED constants lines 30-110",
+   "method": "shell sed"
+  },
+  {
+   "path": "governance/compat/check_rescan_intelligence_hardening.py",
+   "scopeActuallyRead": "TARGETED lines 70-120",
+   "method": "shell sed"
+  },
+  {
+   "path": "governance/compat/check_agent_operation_trace.py",
+   "scopeActuallyRead": "TARGETED label and path constants by symbol search",
+   "method": "Grep"
+  },
+  {
+   "path": "governance/compat/check_epistemic_process_packet.py",
+   "scopeActuallyRead": "TARGETED constants by symbol search",
+   "method": "Grep"
+  },
+  {
+   "path": "governance/compat/check_public_export_disposition.py",
+   "scopeActuallyRead": "TARGETED constants by symbol search",
+   "method": "Grep"
+  },
+  {
+   "path": "governance/compat/check_review_cost_control.py",
+   "scopeActuallyRead": "TARGETED worker-return fields lines 80-125 and self-proof validation lines 660-760 (before return prose)",
+   "method": "shell sed"
+  },
+  {
+   "path": "governance/compat/check_worker_experience_retrospective.py",
+   "scopeActuallyRead": "TARGETED enums lines 44-80 (read AFTER full gate run 1 flagged the retrospective block)",
+   "method": "shell sed"
+  },
+  {
+   "path": "governance/compat/check_external_knowledge_intake_routing.py",
+   "scopeActuallyRead": "TARGETED Internal source rule lines 669-681 by symbol search (read AFTER full gate run 1 flagged the routing table)",
+   "method": "Grep"
+  }
+ ],
+ "REQ-01": {
+  "requirementId": "REQ-01",
+  "proofId": "PROOF-REQ-01",
+  "title": "Entry and producer",
+  "kind": "DOCUMENTARY_SOURCE_AND_SHAPE",
+  "specPath": "docs/assessments/CVF_NCR_HTML_FRESH_PROFILE_USER_JOURNEY_SPEC_2026-10-14.md",
+  "specSections": [
+   "Findings / Position F-01,F-02,F-10,F-14,F-15,F-16",
+   "REQ-01 Entry and producer"
+  ],
+  "sourceLocators": [
+   "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/artifacts/page.tsx#ArtifactsPage:42-64,74,121",
+   "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/KnowledgeJourneyNav.tsx#steps:19-20",
+   "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.tsx#ArtifactExportRequest:20-30",
+   "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/route.ts#POST:257-376",
+   "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/page.tsx#recordToExportRequest:100-120;selectedRecord:276-279",
+   "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/admin/audit/route.ts#GET:8-16",
+   "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/enterprise-access.ts#ADMIN_ROLES:4",
+   "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execute-telemetry.ts#emitExecutionTelemetry:26-123",
+   "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route-final-response.ts#buildExecuteFinalResponse:218-231"
+  ],
+  "positiveJoin": "/artifacts renders the seven-field panel unconditionally (nav step 4, sidebar, Home card); Export needs only a valid session; Work Transfer needs owner/admin audit access and a selectable record; Home telemetry is conditional and carries metadata only.",
+  "negativeAssertion": "No entry, producer or Home-output join is invented; the Home card audit wording is recorded as an unverified UI text mismatch.",
+  "remainingAction": "Local decides D-08 wording; no action needed to accept the SPEC.",
+  "disposition": "DOCUMENTARY_COMPLETE_NO_RUNTIME_PASS_CLAIMED"
+ },
+ "REQ-02": {
+  "requirementId": "REQ-02",
+  "proofId": "PROOF-REQ-02",
+  "title": "Complete synthetic job",
+  "kind": "DOCUMENTARY_SOURCE_AND_SHAPE",
+  "specPath": "docs/assessments/CVF_NCR_HTML_FRESH_PROFILE_USER_JOURNEY_SPEC_2026-10-14.md",
+  "specSections": [
+   "REQ-02 Complete synthetic job (fixture v1 table and block, v2 delta, computed table)"
+  ],
+  "sourceLocators": [
+   "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.tsx#ArtifactMemoryClass:20;REQUEST_FIELDS:89-97;normalizeRequest:328",
+   "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/route.ts#FIELD_LIMITS:31-39;renderMarkdownLite:93-137;buildVerification:148-197;sourceHash:347",
+   "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/artifacts/page.tsx#starterRequest:42-64"
+  ],
+  "positiveJoin": "All seven literal inputs plus a second edited version; SHA-256, UTF-16 length, NFC, filename and anchor values computed deterministically and the SPEC block verified byte-for-byte equal to the JSON fixture.",
+  "negativeAssertion": "No customer data, no business acceptance, status keeps Draft for review; the starter example is replaced in every field; no URL, script or secret pattern.",
+  "remainingAction": "A later run must re-verify NFC and hashes at input time (stop condition).",
+  "disposition": "DOCUMENTARY_COMPLETE_NO_RUNTIME_PASS_CLAIMED"
+ },
+ "REQ-03": {
+  "requirementId": "REQ-03",
+  "proofId": "PROOF-REQ-03",
+  "title": "Profile and effect map",
+  "kind": "DOCUMENTARY_SOURCE_AND_SHAPE",
+  "specPath": "docs/assessments/CVF_NCR_HTML_FRESH_PROFILE_USER_JOURNEY_SPEC_2026-10-14.md",
+  "specSections": [
+   "REQ-03 Profile and effect map (table and futureAdmissionEvidence)",
+   "Findings / Position F-11,F-12,F-17,F-18"
+  ],
+  "sourceLocators": [
+   "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/proof.ts#resolveEvaluateUrl:56-62;proofTimeoutMs:20-25;fetchGovernanceReceipt:64-160;excerpt:91",
+   "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/governance/evaluate/route.ts#POST auth:21-31",
+   "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/governance-engine.ts#env:30-32",
+   "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/control-plane-events.ts#getStorePath:101-105;appendAuditEvent:143-156",
+   "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/storage-adapter.ts#FileEventListAdapter:104-190;describeCapability:159-169,324-335;selection:515-533",
+   "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/siem-forwarder.ts#forwardToSIEM:18-43",
+   "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/policy-reader.ts#getActiveSIEMConfig:119-124"
+  ],
+  "positiveJoin": "Twelve topics each carry proposed owned_local_synthetic value, actual deployment UNKNOWN, source, owner, admission evidence and stop condition; five future-admission inputs listed.",
+  "negativeAssertion": "File and SQLite retentionSeconds null is not turned into a 30-day guarantee; the service token dependency is a source-derived inference, actual value UNKNOWN; no live value was read.",
+  "remainingAction": "Local fixes reviewed values and a finite effect budget in a separate paired packet before any effect.",
+  "disposition": "DOCUMENTARY_COMPLETE_NO_RUNTIME_PASS_CLAIMED"
+ },
+ "REQ-04": {
+  "requirementId": "REQ-04",
+  "proofId": "PROOF-REQ-04",
+  "title": "Vietnamese walkthrough",
+  "kind": "DOCUMENTARY_SOURCE_AND_SHAPE",
+  "specPath": "docs/assessments/CVF_NCR_HTML_FRESH_PROFILE_USER_JOURNEY_SPEC_2026-10-14.md",
+  "specSections": [
+   "REQ-04 Vietnamese walkthrough (steps 1-8 and special situations)"
+  ],
+  "sourceLocators": [
+   "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.tsx#LABELS.vi:176-231;handleGenerate:483-529;handleDownload:539-542;versionState:434-449;no abort/unload/persistence matches",
+   "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.tsx#handleStopProcessing:503-509 (Home only)",
+   "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/KnowledgeJourneyNav.tsx#vi labels:19-20"
+  ],
+  "positiveJoin": "Create, edit, explicit Build, preview, download, stale and rebuild, denial, fallback, reload loss and ambiguous outcome are given in Vietnamese with source-behavior and proposed-improvement tags.",
+  "negativeAssertion": "Labelled AGENT_SIMULATION_PROPOSED; absence of a cancel control and of a reload warning in Export is recorded as current source behavior, not claimed fixed.",
+  "remainingAction": "Cancel, reload warning and clear-demo control need a separate product authorization (D-08).",
+  "disposition": "DOCUMENTARY_COMPLETE_NO_RUNTIME_PASS_CLAIMED"
+ },
+ "REQ-05": {
+  "requirementId": "REQ-05",
+  "proofId": "PROOF-REQ-05",
+  "title": "Acceptance and proof map",
+  "kind": "DOCUMENTARY_SOURCE_AND_SHAPE",
+  "specPath": "docs/assessments/CVF_NCR_HTML_FRESH_PROFILE_USER_JOURNEY_SPEC_2026-10-14.md",
+  "specSections": [
+   "REQ-05 Acceptance and proof map (cases C-01..C-11 and join)"
+  ],
+  "sourceLocators": [
+   "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/route.ts#sourceHash:347;filenameFrom:82-85;response:359-375",
+   "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/proof.ts#requestId:77;receipt mapping:107-156",
+   "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.tsx#downloadHtml:336-346;staleness:434-449",
+   "docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md#Current Delivery Checkpoint source convergence disposition",
+   "docs/reviews/CVF_NCR_HTML_CONFIGURED_RECEIPT_CONDITIONAL_COMPLETION_2026-10-14.md#Findings / Position SQL scope"
+  ],
+  "positiveJoin": "Eleven cases each state source-backed expected behavior, independent oracle, owner and failure; the join runs sent fields to hash, anchor, request id, filename and saved bytes.",
+  "negativeAssertion": "Observation is finite at SQL checkpoints; continuous absence and exactly-once are not claimed; no runtime PASS, request id or provider result is invented; excerpt equality needs recipient capture or stays open.",
+  "remainingAction": "A later Local probe builds the distinct oracles; the worker harness is not its own oracle.",
+  "disposition": "DOCUMENTARY_COMPLETE_NO_RUNTIME_PASS_CLAIMED"
+ },
+ "REQ-06": {
+  "requirementId": "REQ-06",
+  "proofId": "PROOF-REQ-06",
+  "title": "Decision and roadmap boundary",
+  "kind": "DOCUMENTARY_SOURCE_AND_SHAPE",
+  "specPath": "docs/assessments/CVF_NCR_HTML_FRESH_PROFILE_USER_JOURNEY_SPEC_2026-10-14.md",
+  "specSections": [
+   "REQ-06 Decision and roadmap boundary (D-01..D-12)"
+  ],
+  "sourceLocators": [
+   "docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md#R0-R6 stage rows;Q008/D015",
+   "docs/reviews/CVF_NCR_HTML_CONFIGURED_RECEIPT_CONDITIONAL_COMPLETION_2026-10-14.md#HCR-CONTROL-LEGACY-CLEANUP",
+   "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.tsx#handleProcessingComplete:441-474;handleFollowUp:513-545",
+   "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/proof.ts#no model invocation"
+  ],
+  "positiveJoin": "Twelve decisions carry LOCKED_SOURCE_FACT, PROPOSED_DESIGN_CHOICE or OPEN_BY_ACTION with owner, action and evidence; HTML export calls no model; full R3 needs Home provider output plus explicit exact-output transfer.",
+  "negativeAssertion": "R3/R4 stay open; business, data, provider and send checkpoints stay parked; not a new grant; not a cleanup repair; no third control BUILD.",
+  "remainingAction": "Operator and Local decide D-08..D-11 before any run.",
+  "disposition": "DOCUMENTARY_COMPLETE_NO_RUNTIME_PASS_CLAIMED"
+ },
+ "REQ-07": {
+  "requirementId": "REQ-07",
+  "proofId": "PROOF-REQ-07",
+  "title": "Continuation and honest return",
+  "kind": "DOCUMENTARY_SOURCE_AND_SHAPE",
+  "specPath": "docs/assessments/CVF_NCR_HTML_FRESH_PROFILE_USER_JOURNEY_SPEC_2026-10-14.md",
+  "specSections": [
+   "Evidence / Verification",
+   "worker return Source Inventory, Gate Evidence, Command Evidence"
+  ],
+  "sourceLocators": [
+   "docs/reviews/CVF_NCR_HTML_FRESH_PROFILE_USER_JOURNEY_SPEC_WORKER_RETURN_2026-10-14.md",
+   "docs/reviews/evidence/ncr-html-fresh-profile-user-journey-spec-worker-20261014.json",
+   "docs/assessments/CVF_NCR_HTML_FRESH_PROFILE_USER_JOURNEY_SPEC_2026-10-14.md"
+  ],
+  "positiveJoin": "Exact three paths; mandatory reads done before the SPEC was written (readLedger records depth, the checker reads done after SPEC authoring, and the two checker reads done only after full gate run 1 flagged them); 31 source pins identical before and after; seven proof ids; actual clocks; provider/browser/engine starts 0.",
+  "negativeAssertion": "Native usage and billing UNKNOWN; independent probe PENDING_REVIEWER_EXECUTION; no commit, no staging, no successor; final gate results live in the bound sidecar, not in these bytes.",
+  "remainingAction": "Local reviewer evaluates the return and runs one documentary probe.",
+  "disposition": "DOCUMENTARY_COMPLETE_NO_RUNTIME_PASS_CLAIMED"
+ },
+ "fixture": {
+  "fixtureVersion": [
+   "v1",
+   "v2"
+  ],
+  "origin": "PROPOSED_DOCUMENTARY_NOT_RUNTIME",
+  "v1": {
+   "fields": {
+    "title": "Huong dan nhan vien moi - ban ra soat v1",
+    "sourcePath": "synthetic/onboarding/huong-dan-nhan-vien-moi-v1.md",
+    "sourceContent": "# H\u01b0\u1edbng d\u1eabn nh\u00e2n vi\u00ean m\u1edbi - ng\u00e0y \u0111\u1ea7u ti\u00ean\n\nRecord type: Complete review record\n\nReview status: Draft for review\n\n## T\u00f3m t\u1eaft\n\n\u0110\u00e2y l\u00e0 v\u00ed d\u1ee5 t\u1ed5ng h\u1ee3p cho c\u1eeda h\u00e0ng gi\u1ea3 \u0111\u1ecbnh **Hoa Sen**. B\u1ea3n n\u00e0y li\u1ec7t k\u00ea ba vi\u1ec7c c\u1ea7n l\u00e0m trong ng\u00e0y \u0111\u1ea7u c\u1ee7a nh\u00e2n vi\u00ean m\u1edbi \u0111\u1ec3 ng\u01b0\u1eddi ph\u1ee5 tr\u00e1ch \u0111\u1ecdc l\u1ea1i tr\u01b0\u1edbc khi d\u00f9ng.\n\n## Vi\u1ec7c c\u1ea7n l\u00e0m ng\u00e0y \u0111\u1ea7u\n\n- Nh\u1eadn th\u1ebb ra v\u00e0o v\u00e0 \u0111\u1ecdc n\u1ed9i quy an to\u00e0n.\n- G\u1eb7p ng\u01b0\u1eddi h\u01b0\u1edbng d\u1eabn v\u00e0 xem b\u1ea3ng ph\u00e2n c\u00f4ng ca l\u00e0m vi\u1ec7c.\n- Cu\u1ed1i ng\u00e0y ghi l\u1ea1i m\u1ed9t c\u00e2u h\u1ecfi ch\u01b0a r\u00f5 \u0111\u1ec3 h\u1ecfi l\u1ea1i v\u00e0o s\u00e1ng h\u00f4m sau.\n\n## Review Boundary\n\n\u0110\u00e2y l\u00e0 b\u1ea3n nh\u00e1p \u0111\u1ec3 r\u00e0 so\u00e1t, kh\u00f4ng ph\u1ea3i quy \u0111\u1ecbnh ch\u00ednh th\u1ee9c v\u00e0 ch\u01b0a \u0111\u01b0\u1ee3c ai ph\u00ea duy\u1ec7t. M\u1ecdi t\u00ean v\u00e0 quy tr\u00ecnh trong b\u1ea3n n\u00e0y \u0111\u1ec1u l\u00e0 d\u1eef li\u1ec7u gi\u1ea3 l\u1eadp.",
+    "memoryClass": "FULL_RECORD",
+    "status": "Draft for review",
+    "claimBoundary": "Ch\u1ec9 l\u00e0 g\u00f3i HTML \u0111\u1ec3 r\u00e0 so\u00e1t. D\u1eef li\u1ec7u gi\u1ea3 l\u1eadp, kh\u00f4ng ph\u1ea3i quy \u0111\u1ecbnh th\u1eadt, ch\u01b0a \u0111\u01b0\u1ee3c duy\u1ec7t v\u00e0 kh\u00f4ng thay th\u1ebf quy\u1ebft \u0111\u1ecbnh c\u1ee7a ng\u01b0\u1eddi ph\u1ee5 tr\u00e1ch.",
+    "receiptAnchor": "onboarding-synth-v1"
+   },
+   "info": {
+    "isNFC": true,
+    "sourceContentUtf16CodeUnits": 650,
+    "sourceContentUtf8Bytes": 834,
+    "sourceContentSha256": "a078550b8cf59759d4eb78413e019ab4f412c5f8fd885bbce5fdb7a721e7a7bd",
+    "excerpt500Utf16Sha256": "0bd07b04c959bf43c2b9d50b18f68e9da24a37aea66507c4abea1ad91ce4db74",
+    "titleSlugFilename": "huong-dan-nhan-vien-moi-ban-ra-soat-v1.html",
+    "receiptAnchorSlug": "onboarding-synth-v1",
+    "titleLen": 40,
+    "claimBoundaryLen": 136,
+    "hasUrlOrScriptOrImport": false,
+    "requestBodyBytesApprox": 1300
+   }
+  },
+  "v2": {
+   "fields": {
+    "title": "Huong dan nhan vien moi - ban ra soat v2",
+    "sourcePath": "synthetic/onboarding/huong-dan-nhan-vien-moi-v2.md",
+    "sourceContent": "# H\u01b0\u1edbng d\u1eabn nh\u00e2n vi\u00ean m\u1edbi - ng\u00e0y \u0111\u1ea7u ti\u00ean\n\nRecord type: Complete review record\n\nReview status: Revised draft for review\n\n## T\u00f3m t\u1eaft\n\n\u0110\u00e2y l\u00e0 v\u00ed d\u1ee5 t\u1ed5ng h\u1ee3p cho c\u1eeda h\u00e0ng gi\u1ea3 \u0111\u1ecbnh **Hoa Sen**. B\u1ea3n n\u00e0y li\u1ec7t k\u00ea b\u1ed1n vi\u1ec7c c\u1ea7n l\u00e0m trong ng\u00e0y \u0111\u1ea7u c\u1ee7a nh\u00e2n vi\u00ean m\u1edbi \u0111\u1ec3 ng\u01b0\u1eddi ph\u1ee5 tr\u00e1ch \u0111\u1ecdc l\u1ea1i tr\u01b0\u1edbc khi d\u00f9ng.\n\n## Vi\u1ec7c c\u1ea7n l\u00e0m ng\u00e0y \u0111\u1ea7u\n\n- Nh\u1eadn th\u1ebb ra v\u00e0o v\u00e0 \u0111\u1ecdc n\u1ed9i quy an to\u00e0n.\n- G\u1eb7p ng\u01b0\u1eddi h\u01b0\u1edbng d\u1eabn v\u00e0 xem b\u1ea3ng ph\u00e2n c\u00f4ng ca l\u00e0m vi\u1ec7c.\n- Cu\u1ed1i ng\u00e0y ghi l\u1ea1i m\u1ed9t c\u00e2u h\u1ecfi ch\u01b0a r\u00f5 \u0111\u1ec3 h\u1ecfi l\u1ea1i v\u00e0o s\u00e1ng h\u00f4m sau.\n- B\u00e1o cho ng\u01b0\u1eddi ph\u1ee5 tr\u00e1ch bi\u1ebft m\u00ecnh \u0111\u00e3 \u0111\u1ecdc xong b\u1ea3n h\u01b0\u1edbng d\u1eabn n\u00e0y.\n\n## Review Boundary\n\n\u0110\u00e2y l\u00e0 b\u1ea3n nh\u00e1p \u0111\u1ec3 r\u00e0 so\u00e1t, kh\u00f4ng ph\u1ea3i quy \u0111\u1ecbnh ch\u00ednh th\u1ee9c v\u00e0 ch\u01b0a \u0111\u01b0\u1ee3c ai ph\u00ea duy\u1ec7t. M\u1ecdi t\u00ean v\u00e0 quy tr\u00ecnh trong b\u1ea3n n\u00e0y \u0111\u1ec1u l\u00e0 d\u1eef li\u1ec7u gi\u1ea3 l\u1eadp.",
+    "memoryClass": "FULL_RECORD",
+    "status": "Revised draft for review",
+    "claimBoundary": "Ch\u1ec9 l\u00e0 g\u00f3i HTML \u0111\u1ec3 r\u00e0 so\u00e1t. D\u1eef li\u1ec7u gi\u1ea3 l\u1eadp, kh\u00f4ng ph\u1ea3i quy \u0111\u1ecbnh th\u1eadt, ch\u01b0a \u0111\u01b0\u1ee3c duy\u1ec7t v\u00e0 kh\u00f4ng thay th\u1ebf quy\u1ebft \u0111\u1ecbnh c\u1ee7a ng\u01b0\u1eddi ph\u1ee5 tr\u00e1ch.",
+    "receiptAnchor": "onboarding-synth-v2"
+   },
+   "info": {
+    "isNFC": true,
+    "sourceContentUtf16CodeUnits": 726,
+    "sourceContentUtf8Bytes": 935,
+    "sourceContentSha256": "cf39b5355aab4603131a4468845881b5d5d9c2ca01ac96a967ff42b5124a1edd",
+    "excerpt500Utf16Sha256": "31cb644321161b34120bac3cd740b69ccbf69f9008781e6a1d77214904eb276e",
+    "titleSlugFilename": "huong-dan-nhan-vien-moi-ban-ra-soat-v2.html",
+    "receiptAnchorSlug": "onboarding-synth-v2",
+    "titleLen": 40,
+    "claimBoundaryLen": 136,
+    "hasUrlOrScriptOrImport": false,
+    "requestBodyBytesApprox": 1410
+   }
+  }
+ },
+ "designDecisionDisposition": {
+  "LOCKED_SOURCE_FACT": [
+   "D-01",
+   "D-02",
+   "D-03",
+   "D-04",
+   "D-12"
+  ],
+  "PROPOSED_DESIGN_CHOICE": [
+   "D-05",
+   "D-06",
+   "D-07"
+  ],
+  "OPEN_BY_ACTION": [
+   "D-08",
+   "D-09",
+   "D-10",
+   "D-11"
+  ]
+ },
+ "zeroEffectCounters": {
+  "browserStarts": 0,
+  "nextStarts": 0,
+  "engineStarts": 0,
+  "containerStarts": 0,
+  "providerStarts": 0,
+  "testRuntimeStarts": 0,
+  "envValueReads": 0,
+  "keyReads": 0,
+  "userStoreReads": 0,
+  "artifactBuilds": 0,
+  "installs": 0,
+  "stageCommitPush": 0,
+  "nestedWorkers": 0,
+  "productEdits": 0
+ },
+ "commandOutcomes": {
+  "preflightExactThreeAbsent": "three ls probes exit 2 because the paths were absent as required",
+  "preImplementation": {
+   "command": "python -B governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base c1e1b48d0ae09f6b690a4f6ed08b007d67d4f385 --head HEAD --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_FRESH_PROFILE_USER_JOURNEY_SPEC_2026-10-14.md",
+   "exit": 0,
+   "durationSeconds": 12.77,
+   "log": ".cvf/runtime/ncr-html-user-journey-spec-20261014/worker/run-01/preimpl-01.log"
+  },
+  "scaffold": {
+   "command": "python -B governance/compat/run_worker_return_scaffold.py --write <return> --check-shape --max-lines 450 --max-bytes 64000",
+   "exit": 0
+  },
+  "otherFailures": "none observed before proof generation; IDE markdown style warnings were advisory only",
+  "fullGateRun1": {
+   "exit": 1,
+   "endUtc": "2026-10-14T13:34:47Z",
+   "log": ".cvf/runtime/ncr-html-user-journey-spec-20261014/worker/run-01/gate-run-01.log",
+   "violations": [
+    "worker experience retrospective: free-text frictionType and preventiveControlCandidate values",
+    "external knowledge intake routing: missing Internal source row"
+   ],
+   "disposition": "repaired inside the return; log retained"
+  }
+ },
+ "finalGateDisposition": "FINAL_RESULTS_IN_BOUND_SIDECAR",
+ "independentProbe": "PENDING_REVIEWER_EXECUTION",
+ "nativeUsage": "UNKNOWN",
+ "billing": "UNKNOWN",
+ "textRecoveryNote": "Vietnamese text in this file is stored as JSON unicode escapes"
+}
