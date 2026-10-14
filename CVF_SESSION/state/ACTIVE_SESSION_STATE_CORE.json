@@ -36,12 +36,12 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_NCR_PREFEAS_ROOT_BUILD_2026-10-15.md",
-    "baselineSha256": "5a0f7eb8a3e203c81fe847a996a68097fb2eea4bc5c43a8bf23afd138ea29140",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_PREFEAS_ROOT_BUILD_2026-10-15.md",
-    "workOrderSha256": "65ada5dec6e975988cf8cc4c9a5a5e4d575b2fb3f8424e522d7ee3a5fbf49dd7"
+    "baselinePath": "docs/baselines/CVF_GC018_NCR_HTML_INTEGRATED_ROOT_BUILD_2026-10-15.md",
+    "baselineSha256": "085486fad7ff6dd7f3bc0149e620854604c1ed66770d98c03b4ec334cdea563a",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_INTEGRATED_ROOT_BUILD_2026-10-15.md",
+    "workOrderSha256": "6c8958a952c92aef09a018a341800a4c01cafea90be8295e6d68e76dc135c311"
   },
-  "currentAuthoritySyncReason": "Technical amendment accepted bounded at ccca5546df6bd4d5f2f8d6423ca729c111825576; Local completion records historical REQ08 procedure BLOCKED. Original raw pair is immutable/consumed, its pins remain correct; no worker re-release. Next Local PLAN separate HTML root-build packet/action admission, no effect grant. P4, prior root/freeze/grants and parked effects retained.",
+  "currentAuthoritySyncReason": "Concrete held root proposal at 490e4bc858daac281b26f2eccbaa4af94717f206; currentAuthority pins the proposal context only, NOT_GRANTED. Actual current explicit CLI evaluates1 canonical object FEASIBLE_FOR_INTEGRATED_ROOT_BUILD with false readiness/effect. Await separate operator effect decision, then immutable release/continuity/bound gates before worker. Preapproval technical acceptance/procedure partial and original root/P4/history retained.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
@@ -110,8 +110,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_ncr_html_root_build_proposal_preparation",
-  "previousMode": "cvf_ncr_prefeas_root_build_dispatch_ready",
+  "currentMode": "cvf_ncr_html_root_build_effect_approval_pending",
+  "previousMode": "cvf_ncr_html_root_build_proposal_preparation",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",

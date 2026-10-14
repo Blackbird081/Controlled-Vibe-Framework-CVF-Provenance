@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Current NCR Continuation
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `ccca5546df6bd4d5f2f8d6423ca729c111825576`. Material SHA: `ccca5546df6bd4d5f2f8d6423ca729c111825576`. Batch ID: CVF-NCR-PREFEAS-ROOT-BUILD-20261015. Technical amendment accepted bounded, REQ08 preparation partial; next separate HTML root-build packet PLAN, no runtime/provider.
+Current HEAD recorded for this handoff: `490e4bc858daac281b26f2eccbaa4af94717f206`. Material SHA: `490e4bc858daac281b26f2eccbaa4af94717f206`. Batch ID: CVF-NCR-HTML-INTEGRATED-ROOT-BUILD-20261015. Concrete held root proposal; one-object scoped admission, effect/readiness false; operator effect decision and separate release pending.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -13,21 +13,19 @@ Current continuation only. Root AGENTS.md and canonical routing owners retain fu
 Closed history is preserved byte-for-byte at `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V63_PRE_NCR_COMPACTION_2026-10-07.md` (SHA256 `54801fdcf14e9abe17592352ec3c69a0b0e855632991af0caacac7b65252ccba`); it is NOT_ACTIVE_AUTHORITY and not default startup reading.
 ## Scope / Target / Owner Boundary
 
-Local accepted exact11 owner/caller/test/return/evidence/source-binding material and now records separate exact6 continuity. Original pair/grant consumed and preserved. Next separate HTML integrated-root packet/action admission PLAN; old root/freeze/ordinal/counters/blockers/P4 and parked effects retained.
+Local exact6 proposed root pair/companion/admission/roadmap material committed, separate exact6 context continuity. Current pair is HOLD_OPERATOR_EFFECT_APPROVAL and NOT_GRANTED. Future exact8 code+return2 only after operator effect decision and finalized immutable release. Old root/freeze/counters/P4, retired grants and parked effects retained.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_html_root_build_proposal_preparation`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=Local separate HTML root-build packet/admission PLAN; role=Local INTERNAL_AGENT reviewer/closer then dispatcher; phase=technical acceptance and root planning; decision owner=Local technical disposition, operator for separately scoped effects; parked checkpoint=HTML runtime/provider/data/custody/business/send/B2/P11/public/deploy.
+Startup acknowledged: current mode=`cvf_ncr_html_root_build_effect_approval_pending`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=operator effect decision on concrete held HTML root proposal, then separately finalized release; role=Local INTERNAL_AGENT dispatcher/reviewer; phase=proposal scoped admission; decision owner=operator for effects, Local for technical verification; parked checkpoint=current worker/runtime/provider/data/custody/business/send/B2/P11/public/deploy.
 
 ## Current Mode
 
-`cvf_ncr_html_root_build_proposal_preparation`. Technical REQ01..07 accepted after Local baseline-subtree correction; focused55/55, independent10/10, compile4, bound fast10.52s and reviewer/pre-commit PASS. REQ08 remains BLOCKED for historical read order; no full fulfillment or runtime READY. Original worker165/165 consumed and original9/10/failures retained. No further worker for this amendment; next named root packet PLAN.
+`cvf_ncr_html_root_build_effect_approval_pending`. Root proposal is concrete; actual CLI evaluates1 canonical object SCOPED with false readiness/effect and approvalRequired=true. Same ordinal2/predecessor/counters/blockers; no old root mutation. Current worker/browser/engine/provider0. Proposed scope only: worker120min/Local60min, worker2 exports/2 evaluates and Local1/1, fresh synthetic profile, honest native cleanup. Source/tool/image/identity unknowns stop. Prior technical amendment accepted, REQ08 historical preparation BLOCKED/PARTIAL; no full fulfillment.
 
 ## Current Authority
 
-Baseline: `docs/baselines/CVF_GC018_NCR_PREFEAS_ROOT_BUILD_2026-10-15.md`; SHA256 `5a0f7eb8a3e203c81fe847a996a68097fb2eea4bc5c43a8bf23afd138ea29140`.
-Work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_PREFEAS_ROOT_BUILD_2026-10-15.md`; SHA256 `65ada5dec6e975988cf8cc4c9a5a5e4d575b2fb3f8424e522d7ee3a5fbf49dd7`.
-Companion: `docs/reviews/evidence/ncr-prefeas-root-build-dispatch-20261015.json`; actual pair material `0c7bbf2a3cbbcb6c20ea719151071406e498e2df`. Immutable during worker; Local closure may update only metadata/reviewed bindings after freezing originals. Original dispatch pair is consumed/immutable; reviewed companion source bindings refreshed at technical acceptance. No worker re-release, HTML runtime or old grant reuse. Completion=docs/reviews/CVF_NCR_PREFEAS_ROOT_BUILD_COMPLETION_2026-10-15.md.
+Planning/proposal context only, NOT_GRANTED. Baseline: `docs/baselines/CVF_GC018_NCR_HTML_INTEGRATED_ROOT_BUILD_2026-10-15.md`; SHA256 `085486fad7ff6dd7f3bc0149e620854604c1ed66770d98c03b4ec334cdea563a`. Work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_INTEGRATED_ROOT_BUILD_2026-10-15.md`; SHA256 `6c8958a952c92aef09a018a341800a4c01cafea90be8295e6d68e76dc135c311`. Companion: `docs/reviews/evidence/ncr-html-integrated-root-build-preapproval-20261015.json`. Admission: `docs/assessments/CVF_NCR_HTML_ROOT_BUILD_ADMISSION_2026-10-15.md`. Material `490e4bc858daac281b26f2eccbaa4af94717f206`. Source binds are current; no worker or runtime grant. Previous accepted technical review remains docs/reviews/CVF_NCR_PREFEAS_ROOT_BUILD_COMPLETION_2026-10-15.md; its original pair/grant is consumed and preserved.
 
 ## Accepted NCR Evidence And Continuation
 
@@ -39,7 +37,7 @@ Finite clipboard result ordering is accepted; actual OS write cancellation, whol
 
 ## Next Allowed Move
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-INTEGRATED-ROOT-BUILD-20261015. Preapproval owner technical amendment accepted at ccca5546df6bd4d5f2f8d6423ca729c111825576; review=docs/reviews/CVF_NCR_PREFEAS_ROOT_BUILD_COMPLETION_2026-10-15.md. REQ-08 preparation BLOCKED/PARTIAL, full work-order fulfillment not claimed; original grant consumed. Local prepares separate immutable HTML integrated-root baseline/order and action-qualified feasibility against docs/reviews/CVF_NCR_HTML_INTEGRATED_ROOT_CONTRACT_2026-10-14.md; no current worker/runtime grant. Keep original root ordinal2/counters/blockers/freeze; no third narrow repair or retired grant reuse. R1/R2partial,R3/R4open,R5/R6deferred. Provider/data/custody/business/send/B2/P11/public/deploy parked; LHW24 retained.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-INTEGRATED-ROOT-BUILD-20261015. Concrete held proposal material=490e4bc858daac281b26f2eccbaa4af94717f206; work order=docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_INTEGRATED_ROOT_BUILD_2026-10-15.md; baseline=docs/baselines/CVF_GC018_NCR_HTML_INTEGRATED_ROOT_BUILD_2026-10-15.md; admission=docs/assessments/CVF_NCR_HTML_ROOT_BUILD_ADMISSION_2026-10-15.md. Actual explicit CLI evaluated1 canonical root object: FEASIBLE_FOR_INTEGRATED_ROOT_BUILD, runtimeReadiness=false/effectAdmission=false/operatorApprovalRequired=true. Await operator effect scope decision; current worker/runtime grant0. Proposed manual worker120min/Local60min, exact8code+return2, inert9/6, worker export/evaluate2/2 and Local1/1, provider0; unknown prerequisites stop. Only after approval finalize immutable pair/current pins/continuity and bound pre-dispatch before worker. Same root ordinal2/counters/blockers/freeze; no third narrow repair or retired grant reuse. REQ08 prior preparation remains BLOCKED/PARTIAL. R1/R2partial,R3/R4open,R5/R6deferred; data/custody/business/send/B2/P11/public/deploy parked; LHW24 retained.
 
 ## Active Boundary
 T3B has a Local-verified active v1 specification. Party B is verified and T3C-C1 tooling accepted at `db78c87df`; T3C-C2 and Party C are verified. T3D-C1 tooling is accepted at `9ed844c2a` without source. T3D-C0-R1 closed at `2fffa1ef7`. T3D-C3 was accepted bounded at `88137e9a2`, but actual-mode prepare attempts failed before Party B/C execution; authorized cleanup removed the failed root and discarded unaccepted worker changes. G1 stopped, G2-G6 parked, and G7 research closed at `660601f0e` with `ADAPT_EXISTING_HANDOFF_ONLY`. Evidence-join sufficiency stays WATCH; no implementation successor exists. Rejected T2 paths remain archived; HRLTP-T2 paused.
@@ -68,6 +66,8 @@ Q001/Q004 actual-data source/writer,custody,retention/RPO/RTO/cost checkpoints a
 NCR send/B2 STOP and S05/C1 remain; IAB unavailable; repo Playwright Chromium present. Canonical release bundle9/9 PASS on current sources with real Alibaba; full P04 and NCR R3/R4 remain open. No autonomous P11/public/deploy activation.
 ## P4 Post-Commit Safety Disposition
 
+Current OBS-5bdc2e2a19e892ad adjudicated by Local: current ACCEPTED_TECHNICAL_BOUNDED_PROCEDURE_PARTIAL row is not trusted_blocks; aggregate retains the same3 historical blocks. Exact marker/journal/receipt/blob preserved in .cvf/runtime/mfrp-p4-shadow-canary/adjudications/ncr-prefeas-root-build-marker-20261015.json, SHA256 1b1dccd1035e436bb8f6ca9756c3c67ce5de67ea8004ba4a81b31e67b2864788. Only exact marker removed after durable adjudication; C15 FALSE_NEGATIVE/exclusion, journal, historical blocks and prior REQ08 procedure remain, no collector rerun/sample promotion/blanket clearance.
+
 
 Actual SPEC exact6 continuity 2e9cb0e55b291a4fa67cdb34687742ce18f6f250 follows material8d674f0896432fac9bd2f87a900610da743b4a6b. Collector added OBS-5d519fddb5f2af4d and raised UNSAFE_MACHINECLOSUREWHERETRUSTEDBLOCKS. Local verified committed design-only disposition, v3 receipt integrity and ancestry: current ACCEPTED_DESIGN_ONLY_BOUNDED row is not trusted_blocks; the aggregate predicate retains three historical blocked-machine rows. Adjudication .cvf/runtime/mfrp-p4-shadow-canary/adjudications/ncr-html-journey-spec-marker-20261014.json, SHA256 331c0e9795109ff1b50c7d4704990647eecec9063002e7e67470b650fe6731f6 preserves journal, historical blocks and current C15 FALSE_NEGATIVE/exclusion. Exact marker/raw bytes retained, only that marker removed after durable adjudication; no sample promotion, checker/hook change, collector rerun or blanket clearance. Full REQ-07 procedure partial and cleanup BLOCKED unchanged. This extra handoff-only disclosure does not alter mode, authority or next PLAN.
 
@@ -75,7 +75,7 @@ Historical conditional OBS-079b96e73400827c trusted BLOCKED/adjudication remains
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: Local exact6 technical-acceptance/current-raw-pair/actual-material-SHA continuity; original four Python paths governed by the consumed owner amendment. No runtime expansion.
+Authorized guard-maintenance scope: Local exact6 held-proposal current raw pins/mode/next-action and actual material-SHA continuity only; no root worker/code/runtime grant.
 Protected paths:
 - `AGENT_HANDOFF_V63_2026-09-18.md`
 - `CVF_SESSION_MEMORY.md`
@@ -83,7 +83,7 @@ Protected paths:
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-Operator authorization: explicit yes2026-10-15 to five-path preapproval owner amendment; NCR continuation and exact6 dispatch continuity. HTML/runtime/provider grants remain closed.
+Operator authorization: current commit/continue-roadmap instruction and existing Local continuity authority; the new root effect scope is explicitly NOT_GRANTED pending operator decision.
 Rollback boundary: exact6; preserve original archive and accepted/blocked history, parked effects and prior observations. Historical P4 safety adjudication .cvf/runtime/mfrp-p4-shadow-canary/adjudications/ncr-offline-journey-marker-20261013.json remains valid for its original marker; no blanket clearance of future markers. New P4 receipt-generation marker d8d91ae25bd487b6798d7d7e48816cd7fb363d2d98bc27a6e70c43ee65eabbaa separately adjudicated by Local at .cvf/runtime/mfrp-p4-shadow-canary/adjudications/ncr-work-transfer-browser-marker-20261013.json, SHA256 ab42577ad08b59f54abb80ebbee64c6aae9b0d570018e8fccda9d5a2e0180c81; exact marker preserved in private custody; required admission heading restored; old failed receipt not promoted. Current marker OBS-70961d0b8b4d27db separately adjudicated by Local at .cvf/runtime/mfrp-p4-shadow-canary/adjudications/ncr-brief-reopen-marker-20261013.json, SHA256 c006bb09e83c08442460212cbabca0e100d22b27280af25c58a5df97804f9671; exact marker removed, journal/historical blocks/C15 exclusions unchanged.
 
 ## Agent Operation Trace Block
@@ -92,21 +92,21 @@ Rollback boundary: exact6; preserve original archive and accepted/blocked histor
 |---|---|
 | Actor | Local INTERNAL_AGENT session-sync steward |
 | Provider or surface | private shared workspace |
-| Session or invocation | ncr-prefeas-root-build-acceptance-continuity-20261015 |
+| Session or invocation | ncr-html-root-proposal-context-continuity-20261015 |
 | Working directory | repository root |
-| Command or tool surface | canonical source mode/next-action update and generator; actual material-SHA handoff/front-door sync |
+| Command or tool surface | held proposal raw pins/current mode/next-action, canonical generator and actual material-SHA sync |
 | Target paths | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Allowed scope source | operator commit/continue instruction; work-order Local exact6 continuity and committed completion authorization |
-| Before status evidence | ccca5546df6bd4d5f2f8d6423ca729c111825576; exact11 technical material committed, stage/worktree clean |
-| After status evidence | exact6 technical acceptance continuity and separate root PLAN; historical P4/root/grants retained |
-| Diff evidence | canonical generator check and exact6 staged manifest/whitespace |
-| Approval boundary | Local root packet PLAN only; HTML/runtime/provider effect still separately held |
-| Claim boundary | technical output accepted bounded, REQ08 BLOCKED; no full work-order or runtime readiness |
+| Allowed scope source | operator commit/continue instruction; existing Local exact6 continuity authority |
+| Before status evidence | 490e4bc858daac281b26f2eccbaa4af94717f206; exact6 proposal material committed, worktree/stage clean |
+| After status evidence | exact6 held-context source/generated continuity, zero current worker/runtime effect grant |
+| Diff evidence | canonical generator/check and exact6 staged name/whitespace |
+| Approval boundary | operator root effect decision still pending; no worker dispatch |
+| Claim boundary | scoped declaration admission only; original root and P4 limitations retained |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-prefeas-root-build-acceptance-continuity-20261015 |
+| Invocation ID | ncr-html-root-proposal-context-continuity-20261015 |
 | Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Manifest delta | MATCH exact6 source/generated continuity |
+| Manifest delta | MATCH exact6 held proposal context continuity |
 | Deletion or rename disposition | None |
 
 ## Claim Boundary

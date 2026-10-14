@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "cvf_ncr_html_root_build_proposal_preparation",
+  "currentMode": "cvf_ncr_html_root_build_effect_approval_pending",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-INTEGRATED-ROOT-BUILD-20261015. Preapproval owner technical amendment accepted at ccca5546df6bd4d5f2f8d6423ca729c111825576; review=docs/reviews/CVF_NCR_PREFEAS_ROOT_BUILD_COMPLETION_2026-10-15.md. REQ-08 preparation BLOCKED/PARTIAL, full work-order fulfillment not claimed; original grant consumed. Local prepares separate immutable HTML integrated-root baseline/order and action-qualified feasibility against docs/reviews/CVF_NCR_HTML_INTEGRATED_ROOT_CONTRACT_2026-10-14.md; no current worker/runtime grant. Keep original root ordinal2/counters/blockers/freeze; no third narrow repair or retired grant reuse. R1/R2partial,R3/R4open,R5/R6deferred. Provider/data/custody/business/send/B2/P11/public/deploy parked; LHW24 retained.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-INTEGRATED-ROOT-BUILD-20261015. Concrete held proposal material=490e4bc858daac281b26f2eccbaa4af94717f206; work order=docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_INTEGRATED_ROOT_BUILD_2026-10-15.md; baseline=docs/baselines/CVF_GC018_NCR_HTML_INTEGRATED_ROOT_BUILD_2026-10-15.md; admission=docs/assessments/CVF_NCR_HTML_ROOT_BUILD_ADMISSION_2026-10-15.md. Actual explicit CLI evaluated1 canonical root object: FEASIBLE_FOR_INTEGRATED_ROOT_BUILD, runtimeReadiness=false/effectAdmission=false/operatorApprovalRequired=true. Await operator effect scope decision; current worker/runtime grant0. Proposed manual worker120min/Local60min, exact8code+return2, inert9/6, worker export/evaluate2/2 and Local1/1, provider0; unknown prerequisites stop. Only after approval finalize immutable pair/current pins/continuity and bound pre-dispatch before worker. Same root ordinal2/counters/blockers/freeze; no third narrow repair or retired grant reuse. REQ08 prior preparation remains BLOCKED/PARTIAL. R1/R2partial,R3/R4open,R5/R6deferred; data/custody/business/send/B2/P11/public/deploy parked; LHW24 retained.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_NCR_PREFEAS_ROOT_BUILD_2026-10-15.md",
-    "baselineSha256": "5a0f7eb8a3e203c81fe847a996a68097fb2eea4bc5c43a8bf23afd138ea29140",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_PREFEAS_ROOT_BUILD_2026-10-15.md",
-    "workOrderSha256": "65ada5dec6e975988cf8cc4c9a5a5e4d575b2fb3f8424e522d7ee3a5fbf49dd7"
+    "baselinePath": "docs/baselines/CVF_GC018_NCR_HTML_INTEGRATED_ROOT_BUILD_2026-10-15.md",
+    "baselineSha256": "085486fad7ff6dd7f3bc0149e620854604c1ed66770d98c03b4ec334cdea563a",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_INTEGRATED_ROOT_BUILD_2026-10-15.md",
+    "workOrderSha256": "6c8958a952c92aef09a018a341800a4c01cafea90be8295e6d68e76dc135c311"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }
