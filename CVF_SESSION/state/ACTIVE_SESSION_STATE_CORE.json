@@ -37,11 +37,11 @@
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_NCR_RECEIPT_HISTORY_2026-10-14.md",
-    "baselineSha256": "98e302c00f1d6602ce33e49bddd881605655ed7d1c3e31c091066d4d6a773fe2",
+    "baselineSha256": "0164eaef0d4d26e8833b8bdc827a755703e4733837e8a7594287f3a07f6bb2ac",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RECEIPT_HISTORY_2026-10-14.md",
-    "workOrderSha256": "665455d7552e6035a29914900c31a36230539427022715c45de5476a2cffce62"
+    "workOrderSha256": "34940b486da684611e5c7fece49048e3e2c90ba8f8f27384090ca979b9a70e60"
   },
-  "currentAuthoritySyncReason": "Receipt history slice admitted; prior Home Alibaba closed7 calls retained; fresh task worker3Root3 cap6 Pre-closure parent d2125357262a6f7825d14fedcb21d76b0b376516; coherent source/generated authority; actual-SHA dedicated continuity follows material. Whole NCR pilot/effects remain separate.",
+  "currentAuthoritySyncReason": "Receipt-history pre-release reviewer preparation corrected with zero provider calls; exact11 worker BUILD still waits bound release Pre-closure parent 677d3f92ab6ce768c8213dcc824f1bea2180fae5; coherent source/generated authority; actual-SHA dedicated continuity follows material. Whole NCR pilot/effects remain separate.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",

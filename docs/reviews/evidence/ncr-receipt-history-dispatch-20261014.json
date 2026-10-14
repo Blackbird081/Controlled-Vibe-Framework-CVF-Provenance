@@ -211,7 +211,13 @@
     "workerExpiryUtc": "2026-10-14T02:00:00Z",
     "workerBuildMinutes": 75,
     "independentOraclePath": ".cvf/runtime/ncr-receipt-history-20261014/root/independent-probe.cjs",
-    "independentOracleSha256": "19958a19a1882109e730b35d86e732cf64c820f38d2f1b78c9d2ae5a648187d9",
-    "authorQualification": "Ignored initial draft omitted structural owners; one consolidated full-form author repair and dispatcher literal/source review. No worker BUILD or provider effects before release."
+    "independentOracleSha256": "93d24b6648fef74face356ea7546448fbd2ab3758035af2c7bb0e81fc0b543a7",
+    "authorQualification": "Ignored initial draft omitted structural owners; one consolidated full-form author repair and dispatcher literal/source review. No worker BUILD or provider effects before release.",
+    "priorIndependentOracleSha256": "19958a19a1882109e730b35d86e732cf64c820f38d2f1b78c9d2ae5a648187d9",
+    "preReleaseReviewAmendment": {
+      "phase": "PRE_RELEASE_ZERO_PROVIDER_CALLS",
+      "reason": "Read-only internal review identified cleanup confirmation, scalar allowlist, snapshot-join negative and explicit no-reverification UI assertion gaps. Restart handshake now allows a timing margin. Root owner corrected its private oracle before worker BUILD; no implementation or old paid-grant reuse.",
+      "wrapperSha256": "d478e08767f5ba505b1b0facf72de84959b62e007bd81b64283020eb9bd9d5de"
+    }
   }
 }

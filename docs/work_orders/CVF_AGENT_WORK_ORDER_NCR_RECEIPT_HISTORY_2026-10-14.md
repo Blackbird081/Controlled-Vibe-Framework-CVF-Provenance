@@ -387,18 +387,18 @@ Claim Update: admitted finite R1/R4, not trusted storage/full NCR.
 | Session or invocation | ncr-receipt-history-dispatch-author-20261014 |
 | Working directory | repository root |
 | Command or tool surface | progressive source/literal review, ADIF resolver0, governed packet/registration publication and canonical state generator |
-| Target paths | `docs/baselines/CVF_GC018_NCR_RECEIPT_HISTORY_2026-10-14.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RECEIPT_HISTORY_2026-10-14.md`; `docs/reviews/evidence/ncr-receipt-history-dispatch-20261014.json`; `docs/corpus-intelligence/registry/entries/cvf-ncr-receipt-history.json`; `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json`; `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Target paths | `docs/baselines/CVF_GC018_NCR_RECEIPT_HISTORY_2026-10-14.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RECEIPT_HISTORY_2026-10-14.md`; `docs/reviews/evidence/ncr-receipt-history-dispatch-20261014.json`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Allowed scope source | Root selected finite NCR continuation |
-| Before status evidence | d2125357262a6f7825d14fedcb21d76b0b376516; clean worktree and staged empty before exact12 dispatch |
-| After status evidence | exact12 coherent dispatch/registration/continuity; material commit and dedicated actual-SHA exact6 precede bound release |
-| Diff evidence | git status exact12 and git diff --check before commit |
+| Before status evidence | 677d3f92ab6ce768c8213dcc824f1bea2180fae5; clean worktree and staged empty after dispatch material before exact9 pre-release amendment |
+| After status evidence | exact9 coherent dispatch amendment/continuity; material commit and dedicated actual-SHA exact6 precede bound release |
+| Diff evidence | git status exact9 and git diff --check before commit |
 | Approval boundary | Root committed material/current-authority binding and full pre-dispatch release before BUILD |
 | Claim boundary | no actual browser/provider proof or selected HTML acceptance |
 | Agent type | INTERNAL_AGENT |
 | Invocation ID | ncr-receipt-history-dispatch-author-20261014 |
-| Expected manifest | `docs/baselines/CVF_GC018_NCR_RECEIPT_HISTORY_2026-10-14.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RECEIPT_HISTORY_2026-10-14.md`; `docs/reviews/evidence/ncr-receipt-history-dispatch-20261014.json`; `docs/corpus-intelligence/registry/entries/cvf-ncr-receipt-history.json`; `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json`; `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Actual changed set | `docs/baselines/CVF_GC018_NCR_RECEIPT_HISTORY_2026-10-14.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RECEIPT_HISTORY_2026-10-14.md`; `docs/reviews/evidence/ncr-receipt-history-dispatch-20261014.json`; `docs/corpus-intelligence/registry/entries/cvf-ncr-receipt-history.json`; `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json`; `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Manifest delta | MATCH exact12 required before commit |
+| Expected manifest | `docs/baselines/CVF_GC018_NCR_RECEIPT_HISTORY_2026-10-14.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RECEIPT_HISTORY_2026-10-14.md`; `docs/reviews/evidence/ncr-receipt-history-dispatch-20261014.json`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Actual changed set | `docs/baselines/CVF_GC018_NCR_RECEIPT_HISTORY_2026-10-14.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RECEIPT_HISTORY_2026-10-14.md`; `docs/reviews/evidence/ncr-receipt-history-dispatch-20261014.json`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Manifest delta | MATCH exact9 required before commit |
 | Deletion or rename disposition | None |
 
 ## Delta Execution Claim Boundary Control Block
@@ -439,3 +439,7 @@ Focused tests: helper/Home/ResultViewer history tests plus existing Home journey
 ## Legacy Absorption Coverage Index Disposition
 
 NOT_APPLICABLE_WITH_REASON - existing Web receipt consumer enhancement, no legacy corpus absorption or workflow-chain coverage revision.
+
+## Pre-Release Reviewer Preparation Amendment
+
+Before any BUILD or provider call, Local reviewed and corrected its independent oracle: strict scalar allowlist, snapshot receipt mismatch, exact saved-copy/no-reverification UI wording, confirmed owned-server cleanup and restart timing margin. Current oracle and wrapper hashes are recorded in the dispatch evidence; prior oracle preimage remains private evidence. This does not change the eleven-path implementation or six-call task budget. Owned Next development startup may transiently add its named ignored dist include to tsconfig; capture the preimage and restore only those generated additions after shutdown, holding any other delta for Local review. No lasting configuration change is authorized.
