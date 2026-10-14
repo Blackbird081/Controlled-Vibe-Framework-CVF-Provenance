@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_PREFEAS_ROOT_BUILD_2026-10-15.md",
     "workOrderSha256": "65ada5dec6e975988cf8cc4c9a5a5e4d575b2fb3f8424e522d7ee3a5fbf49dd7"
   },
-  "currentAuthoritySyncReason": "Operator yes2026-10-15 authorizes five-path preapproval amendment. New exact4 pair/companion/roadmap material 0c7bbf2a3cbbcb6c20ea719151071406e498e2df; current raw pair pins. Manual exact7 worker only after bound release; Local probe/closure. Historical HTML root/freeze/grants and P4 retained, no HTML/provider effect.",
+  "currentAuthoritySyncReason": "Technical amendment accepted bounded at ccca5546df6bd4d5f2f8d6423ca729c111825576; Local completion records historical REQ08 procedure BLOCKED. Original raw pair is immutable/consumed, its pins remain correct; no worker re-release. Next Local PLAN separate HTML root-build packet/action admission, no effect grant. P4, prior root/freeze/grants and parked effects retained.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
@@ -110,8 +110,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_ncr_prefeas_root_build_dispatch_ready",
-  "previousMode": "cvf_ncr_root_admission_owner_scope_pending",
+  "currentMode": "cvf_ncr_html_root_build_proposal_preparation",
+  "previousMode": "cvf_ncr_prefeas_root_build_dispatch_ready",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
