@@ -36,12 +36,12 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_NCR_HOME_ALIBABA_JOURNEY_2026-10-13.md",
-    "baselineSha256": "11b7e494d0d147188eb5d08e724ac9da031a989ab2772981236bf44d9301550e",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HOME_ALIBABA_JOURNEY_2026-10-13.md",
-    "workOrderSha256": "e2fb83ddd742abaf79179ba039738690670f483f1accd65fba3ddede19ba4862"
+    "baselinePath": "docs/baselines/CVF_GC018_NCR_RECEIPT_HISTORY_2026-10-14.md",
+    "baselineSha256": "98e302c00f1d6602ce33e49bddd881605655ed7d1c3e31c091066d4d6a773fe2",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RECEIPT_HISTORY_2026-10-14.md",
+    "workOrderSha256": "665455d7552e6035a29914900c31a36230539427022715c45de5476a2cffce62"
   },
-  "currentAuthoritySyncReason": "Home Alibaba finite journey accepted bounded; worker6 plus Root1 actual calls; prior failures retained Material 5d386124671a9d463418d53c4d1079490fe88260; coherent source/generated authority; actual-SHA dedicated continuity follows material. Whole NCR pilot/effects remain separate.",
+  "currentAuthoritySyncReason": "Receipt history slice admitted; prior Home Alibaba closed7 calls retained; fresh task worker3Root3 cap6 Pre-closure parent d2125357262a6f7825d14fedcb21d76b0b376516; coherent source/generated authority; actual-SHA dedicated continuity follows material. Whole NCR pilot/effects remain separate.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
@@ -110,7 +110,7 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_ncr_home_alibaba_journey_closed_bounded",
+  "currentMode": "cvf_ncr_receipt_history_execution",
   "previousMode": "cvf_ncr_brief_copy_closed_useful_selection",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",

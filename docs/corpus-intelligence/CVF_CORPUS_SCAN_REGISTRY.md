@@ -29,6 +29,8 @@ and staged runtime, per
 
 ---
 
+| `NCR saved receipt history named source and tests` | CVF_EXTENSION | NOT_STARTED | None | unknown | Exact helper/test registration; bounded proof awaits worker/reviewer; source-wide processing NOT_STARTED |
+
 ## Scope / Target / Owner Boundary
 
 Applies to: all agents and operators working on any CVF-governed project.

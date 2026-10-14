@@ -9102,6 +9102,39 @@
       "nextScanRecommendation": "Retain bounded proof; source-wide processing remains NOT_STARTED and requires separate admission."
     },
     {
+      "id": "cvf-ncr-receipt-history",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "NCR saved receipt history named source and tests",
+      "scopePaths": [
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execution-receipt-archive.ts",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execution-receipt-archive.test.ts",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.receipt-history.test.tsx",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/ncr-receipt-history.live.spec.ts",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/support/ncr-receipt-history-boundary.cjs"
+      ],
+      "fileCount": null,
+      "status": "NOT_STARTED",
+      "scanWave": null,
+      "scanDate": null,
+      "manifestHash": null,
+      "hashAlgorithm": null,
+      "hashInput": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_NCR_RECEIPT_HISTORY_COMPLETION_2026-10-14.md",
+      "completionReviewPath": "docs/reviews/CVF_NCR_RECEIPT_HISTORY_COMPLETION_2026-10-14.md",
+      "gcBaselineRef": "docs/baselines/CVF_GC018_NCR_RECEIPT_HISTORY_2026-10-14.md",
+      "verdicts": {
+        "gc047": "NOT_RUN",
+        "gc048": "NOT_RUN",
+        "gc050": "NOT_RUN"
+      },
+      "semanticRegions": [],
+      "priorAbsorption": "Named expected helper/test registration before worker return; no executed proof or source-wide processing claim.",
+      "findings": [],
+      "negativeSearchTerms": [],
+      "nextScanRecommendation": "Await bounded receipt-history evidence; source-wide processing remains NOT_STARTED."
+    },
+    {
       "id": "ccma-shared-learning-delta-20261012",
       "corpusType": "PROJECT_SOURCE",
       "displayName": "Customer Care ten shared learning records, 2026-10-12 delta",

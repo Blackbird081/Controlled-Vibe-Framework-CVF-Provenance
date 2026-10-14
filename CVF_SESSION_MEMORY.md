@@ -31,21 +31,21 @@ artifact.
 | Prior handoff (archive-qualified) | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V62_2026-09-17.md` |
 | Latest front-door archive | `CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_COMPACTION_ARCHIVE_2026-08-11.md` |
 | Current authority evidence | `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` `currentAuthority` |
-| Parent maintenance | Home Alibaba finite journey accepted bounded; worker6 plus Root1 actual calls; prior failures retained; whole job open |
+| Parent maintenance | Receipt history slice admitted; prior Home Alibaba closed7 calls retained; fresh task worker3Root3 cap6; whole job open |
 | Freeze posture | `governance_kernel_freeze_recommended` |
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_home_alibaba_journey_closed_bounded`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=Home Alibaba finite journey accepted bounded; worker6 plus Root1 actual calls; prior failures retained; role=Local INTERNAL_AGENT orchestrator/reviewer; phase=private continuity; decision owner=Local; parked checkpoint=real-data writer/custody/business acceptance/public/deploy/P11 and unrelated lanes.
+Startup acknowledged: current mode=`cvf_ncr_receipt_history_execution`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=Receipt history slice admitted; prior Home Alibaba closed7 calls retained; fresh task worker3Root3 cap6; role=Local INTERNAL_AGENT orchestrator/reviewer; phase=private continuity; decision owner=Local; parked checkpoint=real-data writer/custody/business acceptance/public/deploy/P11 and unrelated lanes.
 
 ## Current Mode
 
-Current mode marker: `cvf_ncr_home_alibaba_journey_closed_bounded`
-Current mode: `cvf_ncr_home_alibaba_journey_closed_bounded`; previous mode marker: `cvf_ncr_home_alibaba_journey_closed_bounded`
+Current mode marker: `cvf_ncr_receipt_history_execution`
+Current mode: `cvf_ncr_receipt_history_execution`; previous mode marker: `cvf_ncr_receipt_history_execution`
 
 ## Next Allowed Move
 
-Mode: `cvf_ncr_home_alibaba_journey_closed_bounded`
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=LOCAL_DISPOSITION_ONLY; BATCH_ID=CVF-NCR-NEXT-INTAKE-20261014. Home Alibaba synthetic journey accepted bounded; finite closure only, no active worker/provider grant. Next intake from NCR roadmap R1-R4: history reload clears full receipt, selected HTML pilot/timeout-cancel/restart-backup/connection recovery remain open. Review cost threshold reached; no additional rework/repeat-live cycle without separately admitted contract. R1/R2 partial,R3/R4 open,R5/R6 deferred; real-data/accept/send/B2/P11/public/deploy parked; latest closed LHW24 retained. Reviewed material commit=5d386124671a9d463418d53c4d1079490fe88260; dedicated actual-SHA continuity.
+Mode: `cvf_ncr_receipt_history_execution`
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-HOME-RECEIPT-HISTORY-20261014. WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RECEIPT_HISTORY_2026-10-14.md. Internal worker exact11 after committed bound release; 75min BUILD or UTC02:00 expiry first; worker1UI/3 Alibaba starts, Root distinct1/3, newtask6 plus historical7(programmax13). Saved scalar receipt and exact output SHA; no fresh verification on reload, no extra execute across owned restart. R1/R2partial,R3/R4open,R5/R6deferred; real-data/accept/send/B2/P11/public/deploy parked; LHW24 retained.
 Historical G1-G7 terminal baseline: mode `acel_g1_g7_research_terminally_closed`. G1-G6 terminal review: `docs/reviews/CVF_ACEL_G1_G6_TERMINAL_STOP_CLOSURE_2026-09-24.md`; G7 research closure: `docs/reviews/CVF_ACEL_G7_CROSS_RUN_CAPABILITY_EVOLUTION_RESEARCH_CLOSURE_2026-09-24.md`. The packet-only post-G7 reconciliation review at `docs/reviews/CVF_ACEL_POST_G7_FULL_CORPUS_ABSORPTION_CLOSURE_2026-09-24.md` is superseded for repository absorption by the 2026-09-25 pinned-source audit. G1 is stopped, G2-G6 remain parked, G7 research is closed, and no automatic G1-G7 successor exists.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1

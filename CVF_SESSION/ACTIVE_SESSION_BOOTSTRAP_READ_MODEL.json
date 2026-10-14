@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "cvf_ncr_home_alibaba_journey_closed_bounded",
+  "currentMode": "cvf_ncr_receipt_history_execution",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=LOCAL_DISPOSITION_ONLY; BATCH_ID=CVF-NCR-NEXT-INTAKE-20261014. Home Alibaba synthetic journey accepted bounded; finite closure only, no active worker/provider grant. Next intake from NCR roadmap R1-R4: history reload clears full receipt, selected HTML pilot/timeout-cancel/restart-backup/connection recovery remain open. Review cost threshold reached; no additional rework/repeat-live cycle without separately admitted contract. R1/R2 partial,R3/R4 open,R5/R6 deferred; real-data/accept/send/B2/P11/public/deploy parked; latest closed LHW24 retained. Reviewed material commit=5d386124671a9d463418d53c4d1079490fe88260; dedicated actual-SHA continuity.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-HOME-RECEIPT-HISTORY-20261014. WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RECEIPT_HISTORY_2026-10-14.md. Internal worker exact11 after committed bound release; 75min BUILD or UTC02:00 expiry first; worker1UI/3 Alibaba starts, Root distinct1/3, newtask6 plus historical7(programmax13). Saved scalar receipt and exact output SHA; no fresh verification on reload, no extra execute across owned restart. R1/R2partial,R3/R4open,R5/R6deferred; real-data/accept/send/B2/P11/public/deploy parked; LHW24 retained.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_NCR_HOME_ALIBABA_JOURNEY_2026-10-13.md",
-    "baselineSha256": "11b7e494d0d147188eb5d08e724ac9da031a989ab2772981236bf44d9301550e",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HOME_ALIBABA_JOURNEY_2026-10-13.md",
-    "workOrderSha256": "e2fb83ddd742abaf79179ba039738690670f483f1accd65fba3ddede19ba4862"
+    "baselinePath": "docs/baselines/CVF_GC018_NCR_RECEIPT_HISTORY_2026-10-14.md",
+    "baselineSha256": "98e302c00f1d6602ce33e49bddd881605655ed7d1c3e31c091066d4d6a773fe2",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RECEIPT_HISTORY_2026-10-14.md",
+    "workOrderSha256": "665455d7552e6035a29914900c31a36230539427022715c45de5476a2cffce62"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

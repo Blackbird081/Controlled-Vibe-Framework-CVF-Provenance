@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Current NCR Continuation
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `5d386124671a9d463418d53c4d1079490fe88260`. Material SHA: `5d386124671a9d463418d53c4d1079490fe88260`. Batch ID: CVF-NCR-HOME-ALIBABA-JOURNEY-20261013. Home Alibaba finite journey accepted bounded; worker6 plus Root1 actual calls; prior failures retained; dedicated exact6 continuity.
+Current HEAD recorded for this handoff: `d2125357262a6f7825d14fedcb21d76b0b376516`. Pre-closure parent SHA: `d2125357262a6f7825d14fedcb21d76b0b376516`. Batch ID: CVF-NCR-HOME-RECEIPT-HISTORY-20261014. Receipt history slice admitted; prior Home Alibaba closed7 calls retained; fresh task worker3Root3 cap6; actual reviewed material SHA will be bound by dedicated exact6 after commit.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -13,21 +13,21 @@ Current continuation only. Root AGENTS.md and canonical routing owners retain fu
 Closed history is preserved byte-for-byte at `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V63_PRE_NCR_COMPACTION_2026-10-07.md` (SHA256 `54801fdcf14e9abe17592352ec3c69a0b0e855632991af0caacac7b65252ccba`); it is NOT_ACTIVE_AUTHORITY and not default startup reading.
 ## Scope / Target / Owner Boundary
 
-Local INTERNAL_AGENT orchestrator/reviewer owns technical disposition, commits and continuity. Terminal bounded Home/Alibaba worker evidence accepted; no active BUILD or automatic successor. Selected HTML pilot and business acceptance remain open.
+Local INTERNAL_AGENT orchestrator/reviewer owns technical disposition, commits and continuity. One internal worker may BUILD only after committed bound release; exact eleven paths, max three Alibaba calls. Root independent probe max three calls. Selected HTML pilot and business acceptance remain open.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_home_alibaba_journey_closed_bounded`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=Home Alibaba finite journey accepted bounded; worker6 plus Root1 actual calls; prior failures retained; role=Local INTERNAL_AGENT orchestrator/reviewer; phase=private continuity; decision owner=Local; parked checkpoint=real-data writer/custody/business acceptance/public/deploy/P11 and unrelated lanes.
+Startup acknowledged: current mode=`cvf_ncr_receipt_history_execution`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=Receipt history slice admitted; prior Home Alibaba closed7 calls retained; fresh task worker3Root3 cap6; role=Local INTERNAL_AGENT orchestrator/reviewer; phase=private continuity; decision owner=Local; parked checkpoint=real-data writer/custody/business acceptance/public/deploy/P11 and unrelated lanes.
 
 ## Current Mode
 
-`cvf_ncr_home_alibaba_journey_closed_bounded`. Home Alibaba finite journey accepted bounded; worker6 plus Root1 actual calls; prior failures retained. Finite synthetic Home/Alibaba UI contribution accepted; no automatic successor. Prior Work Transfer browser and Alibaba9/9 evidence retained in their owners; full R1-R4 open.
+`cvf_ncr_receipt_history_execution`. Receipt history slice admitted; prior Home Alibaba closed7 calls retained; fresh task worker3Root3 cap6. Worker exact11 after committed bound release; max1 UI/3 Alibaba starts; Root distinct max1/3; newtask max6, prior7 retained; 75min BUILD or UTC02:00 expiry first. Prior Work Transfer browser and Alibaba9/9 evidence retained in their owners; full R1-R4 open.
 
 ## Current Authority
 
-Baseline: `docs/baselines/CVF_GC018_NCR_HOME_ALIBABA_JOURNEY_2026-10-13.md`; SHA256 `11b7e494d0d147188eb5d08e724ac9da031a989ab2772981236bf44d9301550e`.
-Work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HOME_ALIBABA_JOURNEY_2026-10-13.md`; SHA256 `e2fb83ddd742abaf79179ba039738690670f483f1accd65fba3ddede19ba4862`.
-Home Alibaba finite journey accepted bounded; worker6 plus Root1 actual calls; prior failures retained. Existing browser/live evidence and original failures remain historical in their current reviews; this source pair governs the bounded synthetic Home/Alibaba journey.
+Baseline: `docs/baselines/CVF_GC018_NCR_RECEIPT_HISTORY_2026-10-14.md`; SHA256 `98e302c00f1d6602ce33e49bddd881605655ed7d1c3e31c091066d4d6a773fe2`.
+Work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RECEIPT_HISTORY_2026-10-14.md`; SHA256 `665455d7552e6035a29914900c31a36230539427022715c45de5476a2cffce62`.
+Receipt history slice admitted; prior Home Alibaba closed7 calls retained; fresh task worker3Root3 cap6. Existing browser/live evidence and original failures remain historical in their current reviews; this source pair governs the bounded synthetic receipt-history journey.
 
 ## Accepted NCR Evidence And Continuation
 
@@ -39,7 +39,7 @@ Finite clipboard result ordering is accepted; actual OS write cancellation, whol
 
 ## Next Allowed Move
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=LOCAL_DISPOSITION_ONLY; BATCH_ID=CVF-NCR-NEXT-INTAKE-20261014. Home Alibaba synthetic journey accepted bounded; finite closure only, no active worker/provider grant. Next intake from NCR roadmap R1-R4: history reload clears full receipt, selected HTML pilot/timeout-cancel/restart-backup/connection recovery remain open. Review cost threshold reached; no additional rework/repeat-live cycle without separately admitted contract. R1/R2 partial,R3/R4 open,R5/R6 deferred; real-data/accept/send/B2/P11/public/deploy parked; latest closed LHW24 retained. Reviewed material commit=5d386124671a9d463418d53c4d1079490fe88260; dedicated actual-SHA continuity.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-HOME-RECEIPT-HISTORY-20261014. WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RECEIPT_HISTORY_2026-10-14.md. Internal worker exact11 after committed bound release; 75min BUILD or UTC02:00 expiry first; worker1UI/3 Alibaba starts, Root distinct1/3, newtask6 plus historical7(programmax13). Saved scalar receipt and exact output SHA; no fresh verification on reload, no extra execute across owned restart. R1/R2partial,R3/R4open,R5/R6deferred; real-data/accept/send/B2/P11/public/deploy parked; LHW24 retained.
 
 ## Active Boundary
 T3B has a Local-verified active v1 specification. Party B is verified and T3C-C1 tooling accepted at `db78c87df`; T3C-C2 and Party C are verified. T3D-C1 tooling is accepted at `9ed844c2a` without source. T3D-C0-R1 closed at `2fffa1ef7`. T3D-C3 was accepted bounded at `88137e9a2`, but actual-mode prepare attempts failed before Party B/C execution; authorized cleanup removed the failed root and discarded unaccepted worker changes. G1 stopped, G2-G6 parked, and G7 research closed at `660601f0e` with `ADAPT_EXISTING_HANDOFF_ONLY`. Evidence-join sufficiency stays WATCH; no implementation successor exists. Rejected T2 paths remain archived; HRLTP-T2 paused.
@@ -84,18 +84,18 @@ Rollback boundary: exact6; preserve original archive and accepted/blocked histor
 |---|---|
 | Actor | Local INTERNAL_AGENT session-sync steward |
 | Provider or surface | private shared workspace |
-| Session or invocation | cvf-ncr-home-alibaba-journey-20261013-sync |
+| Session or invocation | cvf-ncr-home-receipt-history-20261014-sync |
 | Working directory | repository root |
 | Command or tool surface | source entry/core update, active front door/handoff, canonical state generator |
 | Target paths | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Allowed scope source | operator NCR continuation; exact6 authority in paired baseline/order |
-| Before status evidence | 5d386124671a9d463418d53c4d1079490fe88260; clean worktree and staged empty after reviewed material commit |
-| After status evidence | exact6 source/generated continuity; Home Alibaba finite journey accepted bounded; worker6 plus Root1 actual calls; prior failures retained |
+| Before status evidence | d2125357262a6f7825d14fedcb21d76b0b376516; clean before exact12 packet/registration; literal material-SHA marker and graph reconciled |
+| After status evidence | exact12 coherent material; actual-SHA continuity remains a steward action; Receipt history slice admitted; prior Home Alibaba closed7 calls retained; fresh task worker3Root3 cap6 |
 | Diff evidence | source/generated reconciliation; exact6 git diff --name-status; git diff --cached --check |
-| Approval boundary | bounded synthetic Home/Alibaba proof; real-data/acceptance/public/deploy parked |
-| Claim boundary | finite Home/Alibaba proof; max9 total provider calls; full NCR pilot open |
+| Approval boundary | bounded synthetic receipt-history proof; real-data/acceptance/public/deploy parked |
+| Claim boundary | finite saved receipt-history proof; new task max6 calls plus historical7; full NCR pilot open |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | cvf-ncr-home-alibaba-journey-20261013-sync |
+| Invocation ID | cvf-ncr-home-receipt-history-20261014-sync |
 | Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Manifest delta | MATCH required before commit |

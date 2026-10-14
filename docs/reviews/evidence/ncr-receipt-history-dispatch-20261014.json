@@ -1,0 +1,217 @@
+{
+  "schemaVersion": "cvf.ncrReceiptHistoryDispatchPins.v1",
+  "date": "2026-10-14",
+  "inspectionHead": "d2125357262a6f7825d14fedcb21d76b0b376516",
+  "status": "SOURCE_PINNED_ROOT_ADMITTED_PENDING_COMMITTED_RELEASE",
+  "claimBoundary": "Selected exact raw source preimages; no full corpus, implementation or live proof.",
+  "sources": [
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/types/index.ts",
+      "sha256": "924e0ba06697be1de5501f0a8e5d03b73d18da9e86c52482cbfc585ba0d56a85",
+      "lineCount": 90,
+      "readSpans": [
+        "36-67"
+      ],
+      "symbols": []
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/ai/types.ts",
+      "sha256": "58eff6bceea2caa7088fada51dbf4e53d1074633ab4fee15d90f5ff791d4abd3",
+      "lineCount": 246,
+      "readSpans": [
+        "133-167"
+      ],
+      "symbols": []
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/store.ts",
+      "sha256": "f5deb700c631c680924d3ba74fd1c56ef862e99703fe59c461828a8a64953c06",
+      "lineCount": 165,
+      "readSpans": [
+        "11-75",
+        "162"
+      ],
+      "symbols": []
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execution-continuity.ts",
+      "sha256": "3faf1a73620fc37853736a832c4b59ed02df557e18ec81bdc856089e722ea09a",
+      "lineCount": 134,
+      "readSpans": [
+        "88-103"
+      ],
+      "symbols": []
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.tsx",
+      "sha256": "b6b1d7ff64bcc5586b830b2a23c8e1b94957ef276a4abd9cea9eaa0825965322",
+      "lineCount": 728,
+      "readSpans": [
+        "86-129",
+        "363-501",
+        "543-558"
+      ],
+      "symbols": []
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.tsx",
+      "sha256": "e9dfa5c3bf2e6280e267f0b9b3ffa6d1aedf5b3a43959cbc605ca8c914f322c0",
+      "lineCount": 837,
+      "readSpans": [
+        "108-170",
+        "552-583",
+        "713-725"
+      ],
+      "symbols": []
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.test.tsx",
+      "sha256": "332a100889580078daca4dbb0a1e815a2c6d9e0e0fcdbfa912b02fa0e1af63e2",
+      "lineCount": 371,
+      "readSpans": [
+        "1-371"
+      ],
+      "symbols": []
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.test.tsx",
+      "sha256": "839689f8871208ba26448332cbf0a7620c5bdebb55f668c4f555efe677f54836",
+      "lineCount": 689,
+      "readSpans": [
+        "selected test/source inspection"
+      ],
+      "symbols": []
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.isolation.test.tsx",
+      "sha256": "6ab64e0f9bf9b96ecee556d46d967959805165591e478faf84e46ddca4ed792d",
+      "lineCount": 531,
+      "readSpans": [
+        "selected test/source inspection"
+      ],
+      "symbols": []
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execution-continuity.test.ts",
+      "sha256": "f6f74845c98064973815a711d0f233d2294bcd77f86745cc5fb0b394161006a4",
+      "lineCount": 274,
+      "readSpans": [
+        "selected test/source inspection"
+      ],
+      "symbols": []
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/ncr-home-alibaba-journey.live.spec.ts",
+      "sha256": "c09d2f57948be84576ab8bd226187ac659a3dcd482dad943a00ad84fd5a9c014",
+      "lineCount": 249,
+      "readSpans": [
+        "selected test/source inspection"
+      ],
+      "symbols": []
+    }
+  ],
+  "workerManifest": [
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/types/index.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execution-receipt-archive.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.tsx",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.tsx",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execution-receipt-archive.test.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.test.tsx",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.receipt-history.test.tsx",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/ncr-receipt-history.live.spec.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/support/ncr-receipt-history-boundary.cjs",
+    "docs/reviews/evidence/ncr-receipt-history-worker-20261014.json",
+    "docs/reviews/CVF_NCR_RECEIPT_HISTORY_WORKER_RETURN_2026-10-14.md"
+  ],
+  "dispatchManifest": [
+    "docs/baselines/CVF_GC018_NCR_RECEIPT_HISTORY_2026-10-14.md",
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RECEIPT_HISTORY_2026-10-14.md",
+    "docs/reviews/evidence/ncr-receipt-history-dispatch-20261014.json"
+  ],
+  "rootReviewManifest": [
+    "docs/corpus-intelligence/registry/entries/cvf-ncr-receipt-history.json",
+    "docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json",
+    "docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md",
+    "docs/reviews/evidence/ncr-receipt-history-local-20261014.json",
+    "docs/reviews/CVF_NCR_RECEIPT_HISTORY_COMPLETION_2026-10-14.md",
+    "docs/reviews/archive/CVF_AGENT_WORK_ORDER_NCR_RECEIPT_HISTORY_DISPATCH_2026-10-14.md",
+    "docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md"
+  ],
+  "continuityManifest": [
+    "AGENT_HANDOFF_V63_2026-09-18.md",
+    "CVF_SESSION_MEMORY.md",
+    "CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json",
+    "CVF_SESSION/state/entries/nextAllowedMove.json",
+    "CVF_SESSION/ACTIVE_SESSION_STATE.json",
+    "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json"
+  ],
+  "totalManifestCount": 27,
+  "rootAdmission": {
+    "actor": "LOCAL_REVIEWER_CODEX_ROOT",
+    "decision": "ADMIT_NEW_BOUNDED_RECEIPT_HISTORY_SLICE_AFTER_COMMITTED_RELEASE",
+    "baseHead": "d2125357262a6f7825d14fedcb21d76b0b376516",
+    "workerManifest": [
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/types/index.ts",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execution-receipt-archive.ts",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.tsx",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.tsx",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execution-receipt-archive.test.ts",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.test.tsx",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.receipt-history.test.tsx",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/ncr-receipt-history.live.spec.ts",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/support/ncr-receipt-history-boundary.cjs",
+      "docs/reviews/evidence/ncr-receipt-history-worker-20261014.json",
+      "docs/reviews/CVF_NCR_RECEIPT_HISTORY_WORKER_RETURN_2026-10-14.md"
+    ],
+    "materialManifest": [
+      "docs/baselines/CVF_GC018_NCR_RECEIPT_HISTORY_2026-10-14.md",
+      "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RECEIPT_HISTORY_2026-10-14.md",
+      "docs/reviews/evidence/ncr-receipt-history-dispatch-20261014.json"
+    ],
+    "rootClosureManifest": [
+      "docs/corpus-intelligence/registry/entries/cvf-ncr-receipt-history.json",
+      "docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json",
+      "docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md",
+      "docs/reviews/evidence/ncr-receipt-history-local-20261014.json",
+      "docs/reviews/CVF_NCR_RECEIPT_HISTORY_COMPLETION_2026-10-14.md",
+      "docs/reviews/archive/CVF_AGENT_WORK_ORDER_NCR_RECEIPT_HISTORY_DISPATCH_2026-10-14.md",
+      "docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md"
+    ],
+    "continuityManifest": [
+      "AGENT_HANDOFF_V63_2026-09-18.md",
+      "CVF_SESSION_MEMORY.md",
+      "CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json",
+      "CVF_SESSION/state/entries/nextAllowedMove.json",
+      "CVF_SESSION/ACTIVE_SESSION_STATE.json",
+      "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json"
+    ],
+    "initialMaterialManifest": [
+      "docs/baselines/CVF_GC018_NCR_RECEIPT_HISTORY_2026-10-14.md",
+      "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RECEIPT_HISTORY_2026-10-14.md",
+      "docs/reviews/evidence/ncr-receipt-history-dispatch-20261014.json",
+      "docs/corpus-intelligence/registry/entries/cvf-ncr-receipt-history.json",
+      "docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json",
+      "docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md",
+      "AGENT_HANDOFF_V63_2026-09-18.md",
+      "CVF_SESSION_MEMORY.md",
+      "CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json",
+      "CVF_SESSION/state/entries/nextAllowedMove.json",
+      "CVF_SESSION/ACTIVE_SESSION_STATE.json",
+      "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json"
+    ],
+    "callBudget": {
+      "worker": 3,
+      "reviewer": 3,
+      "additionalTaskTotal": 6,
+      "historicalObserved": 7,
+      "programCeiling": 13
+    },
+    "workerUiCeiling": 1,
+    "reviewerUiCeiling": 1,
+    "workerExpiryUtc": "2026-10-14T02:00:00Z",
+    "workerBuildMinutes": 75,
+    "independentOraclePath": ".cvf/runtime/ncr-receipt-history-20261014/root/independent-probe.cjs",
+    "independentOracleSha256": "19958a19a1882109e730b35d86e732cf64c820f38d2f1b78c9d2ae5a648187d9",
+    "authorQualification": "Ignored initial draft omitted structural owners; one consolidated full-form author repair and dispatcher literal/source review. No worker BUILD or provider effects before release."
+  }
+}
