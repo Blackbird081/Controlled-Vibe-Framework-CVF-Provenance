@@ -68,7 +68,10 @@ Q001/Q004 actual-data source/writer,custody,retention/RPO/RTO/cost checkpoints a
 NCR send/B2 STOP and S05/C1 remain; IAB unavailable; repo Playwright Chromium present. Canonical release bundle9/9 PASS on current sources with real Alibaba; full P04 and NCR R3/R4 remain open. No autonomous P11/public/deploy activation.
 ## P4 Post-Commit Safety Disposition
 
-Actual exact6 continuity commit: e623de377e26f24fecce030164eb001dc51f00d1; material e06397c34d04700223f55972b0b84d7c4a74c0b8 unchanged. Natural collector appended OBS-079b96e73400827c for the conditional BLOCKED review and raised UNSAFE_MACHINECLOSUREWHERETRUSTEDBLOCKS. Local verified committed blob/receipt/ancestry and preserved trusted BLOCKED_WITH_REASON, C15 FALSE_NEGATIVE and exclusion from success denominators; structural preflight PASS is not semantic closure. Exact marker/raw bytes retained and adjudicated at .cvf/runtime/mfrp-p4-shadow-canary/adjudications/ncr-html-conditional-cleanup-marker-20261014.json, SHA256 2cc754c7c84ea15205c09c70ffd45aee429c82dda43d7856e8f954c8ab252816. Only that verified marker removed after durable reviewer adjudication; journal unchanged, no blanket clearance/checker/source/EOL/sample promotion or runtime retry. This extra handoff-only disclosure records the actual safety event after the planned material plus exact6 commits; no mode/authority change.
+
+Actual SPEC exact6 continuity 2e9cb0e55b291a4fa67cdb34687742ce18f6f250 follows material8d674f0896432fac9bd2f87a900610da743b4a6b. Collector added OBS-5d519fddb5f2af4d and raised UNSAFE_MACHINECLOSUREWHERETRUSTEDBLOCKS. Local verified committed design-only disposition, v3 receipt integrity and ancestry: current ACCEPTED_DESIGN_ONLY_BOUNDED row is not trusted_blocks; the aggregate predicate retains three historical blocked-machine rows. Adjudication .cvf/runtime/mfrp-p4-shadow-canary/adjudications/ncr-html-journey-spec-marker-20261014.json, SHA256 331c0e9795109ff1b50c7d4704990647eecec9063002e7e67470b650fe6731f6 preserves journal, historical blocks and current C15 FALSE_NEGATIVE/exclusion. Exact marker/raw bytes retained, only that marker removed after durable adjudication; no sample promotion, checker/hook change, collector rerun or blanket clearance. Full REQ-07 procedure partial and cleanup BLOCKED unchanged. This extra handoff-only disclosure does not alter mode, authority or next PLAN.
+
+Historical conditional OBS-079b96e73400827c trusted BLOCKED/adjudication remains at .cvf/runtime/mfrp-p4-shadow-canary/adjudications/ncr-html-conditional-cleanup-marker-20261014.json, SHA256 2cc754c7c84ea15205c09c70ffd45aee429c82dda43d7856e8f954c8ab252816; original prior handoff bytes retained in Local custody.
 
 ## Core Guard Self-Protection Authorization
 
@@ -89,21 +92,21 @@ Rollback boundary: exact6; preserve original archive and accepted/blocked histor
 |---|---|
 | Actor | Local INTERNAL_AGENT session-sync steward |
 | Provider or surface | private shared workspace |
-| Session or invocation | ncr-html-spec-review-continuity-20261014 |
+| Session or invocation | ncr-html-spec-p4-disclosure-20261014 |
 | Working directory | repository root |
-| Command or tool surface | source/core entry update and canonical generator; actual material-SHA front-door/handoff sync |
-| Target paths | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Command or tool surface | exact-marker/source/receipt adjudication already durable; actual P4 result handoff-only disclosure |
+| Target paths | `AGENT_HANDOFF_V63_2026-09-18.md` |
 | Allowed scope source | operator NCR continuation; exact6 authority in paired baseline/order |
-| Before status evidence | 8d674f0896432fac9bd2f87a900610da743b4a6b; exact6 documentary material committed, clean worktree/stage empty |
-| After status evidence | exact6 PLAN continuity; immutable raw pair retained and retired |
-| Diff evidence | exact6 staged manifest/whitespace; generator compatibility |
-| Approval boundary | Local source/profile feasibility PLAN only; no worker or effect grant |
+| Before status evidence | 2e9cb0e55b291a4fa67cdb34687742ce18f6f250; exact6 continuity committed, clean worktree |
+| After status evidence | handoff-only actual P4 disclosure; no state/mode/authority/next change |
+| Diff evidence | one-path Git/staged whitespace; preimage retained in ignored custody |
+| Approval boundary | Local reviewer-owned exact-marker adjudication and continuity; no semantic/full procedural closure or effects |
 | Claim boundary | bounded design accepted, procedure partial; prior cleanup BLOCKED/P4 and all retired grants retained |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-html-spec-review-continuity-20261014 |
-| Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Manifest delta | MATCH exact6 continuity |
+| Invocation ID | ncr-html-spec-p4-disclosure-20261014 |
+| Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md` |
+| Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md` |
+| Manifest delta | MATCH handoff-only safety disclosure |
 | Deletion or rename disposition | None |
 
 ## Claim Boundary
