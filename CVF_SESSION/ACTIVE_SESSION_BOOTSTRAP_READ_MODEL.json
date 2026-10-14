@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "cvf_ncr_request_cancellation_closed",
+  "currentMode": "cvf_ncr_selected_pilot_convergence_review_ready",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-REQUEST-CANCELLATION-20261014. Selected nonvision text Alibaba request cancellation is CLOSED_PASS_BOUNDED; worker51/143/9 and distinct Root six live assertions accepted, new starts3 plus prior9=12/13, all grants retired. Consume current completion and existing roadmap to select the next finite R1/R2 error/timeout/recovery or controlled-execution gap; current source/authority/spec/cost readiness before any BUILD. No automatic successor/provider grant. R1/R2partial,R3/R4open,R5/R6deferred; realdata/custody/business acceptance/send/B2/public/deploy/P11 parked; LHW24 retained. Reviewed material commit=7d7e7a1a6222205822984231535164d7d4c168c8; dedicated actual-SHA continuity.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-MILESTONE-CONVERGENCE-20261014. REVIEW_ASSIGNMENT=docs/assessments/CVF_NCR_SELECTED_PILOT_CONVERGENCE_ASSIGNMENT_2026-10-14.md. User transfers one Local INTERNAL_AGENT source/evidence review manually using chosen worker configuration. Read-only selected HTML Work Transfer/R1-R4 exit mapping; exact2 documentary outputs; one next-outcome proposal. No implementation work-order fulfillment, BUILD, product tests/process/browser or provider call grant. Prior observed12/13 and all old grants retired; no reset. Root evaluates roadmap before each dispatch/after each return. R1/R2partial,R3/R4open,R5/R6deferred; Q001/Q004/B2/business/send/P11/public/deploy parked; LHW24 retained. Reviewed documentary material=c619ee784341a2644857e596856dffec5f841f30.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

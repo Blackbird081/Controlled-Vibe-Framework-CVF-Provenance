@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Current NCR Continuation
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `7d7e7a1a6222205822984231535164d7d4c168c8`. Material SHA: `7d7e7a1a6222205822984231535164d7d4c168c8`. Batch ID: CVF-NCR-REQUEST-CANCELLATION-20261014. Selected Alibaba local cancellation accepted bounded; actual semantic material and retired grants; dedicated exact6 continuity.
+Current HEAD recorded for this handoff: `c619ee784341a2644857e596856dffec5f841f30`. Material SHA: `c619ee784341a2644857e596856dffec5f841f30`. Batch ID: CVF-NCR-MILESTONE-CONVERGENCE-20261014. NCR selected HTML milestone convergence; operator manual source-review worker; prior grants retired; separate exact6 actual-SHA continuity.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -13,21 +13,21 @@ Current continuation only. Root AGENTS.md and canonical routing owners retain fu
 Closed history is preserved byte-for-byte at `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V63_PRE_NCR_COMPACTION_2026-10-07.md` (SHA256 `54801fdcf14e9abe17592352ec3c69a0b0e855632991af0caacac7b65252ccba`); it is NOT_ACTIVE_AUTHORITY and not default startup reading.
 ## Scope / Target / Owner Boundary
 
-Local INTERNAL_AGENT orchestrator/reviewer owns technical disposition, commits and continuity. Terminal bounded request-cancellation evidence accepted; no active BUILD or automatic successor. Selected HTML pilot and business acceptance remain open.
+Local orchestrator/reviewer owns technical decisions, roadmap reconciliation and continuity. Operator manually transfers one shared-workspace source-review assignment. Worker owns only the two documentary outputs named in the assignment; code/current evidence/roadmap/continuity are read-only. No subdelegation or implementation/provider grant.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_request_cancellation_closed`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=Selected Alibaba local cancellation accepted bounded; actual semantic material and retired grants; role=Local INTERNAL_AGENT orchestrator/reviewer; phase=private continuity; decision owner=Local; parked checkpoint=real-data writer/custody/business acceptance/public/deploy/P11 and unrelated lanes.
+Startup acknowledged: current mode=`cvf_ncr_selected_pilot_convergence_review_ready`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=selected HTML source/evidence convergence under `docs/assessments/CVF_NCR_SELECTED_PILOT_CONVERGENCE_ASSIGNMENT_2026-10-14.md`; role=Local INTERNAL_AGENT orchestrator/reviewer; phase=NCR planning/manual transfer; decision owner=Local; parked checkpoint=real-data writer/custody/business acceptance/send/P11/public/deploy and unrelated stopped lanes.
 
 ## Current Mode
 
-`cvf_ncr_request_cancellation_closed`. Selected Alibaba local cancellation accepted bounded; actual semantic material and retired grants. Finite incoming request cancellation contribution accepted; no automatic successor. Prior Work Transfer browser and Alibaba9/9 evidence retained in their owners; full R1-R4 open.
+`cvf_ncr_selected_pilot_convergence_review_ready`. NCR selected HTML milestone convergence; operator manual source-review worker; prior grants retired. Next source-only review maps the selected HTML Work Transfer chain and R1-R4 exits; it does not create an integrated pilot result. Accepted cancellation material7d7e7a1a6/actual6 595eacf9b remains bounded;14 raw source/test bindings unchanged. New calls0; prior program12/13, old grants retired. MFRP last natural result SKIPPED_NO_COMMITTED_EVIDENCE; material raw-only receipt due two CRLF/eol=lf paths; zero new sample/credit, continuity binding separate. No code/EOL/journal/receipt alteration to manufacture a sample. Whole R1-R4 open; R5/R6 deferred.
 
 ## Current Authority
 
-Baseline: `docs/baselines/CVF_GC018_NCR_REQUEST_CANCELLATION_CLOSURE_CONTROL_2026-10-14.md`; SHA256 `756ba9fa38cecf6162b4cd5683d849bdd749f9d690a9501b1f4ee9658a2862c2`.
-Work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_REQUEST_CANCELLATION_CLOSURE_CONTROL_2026-10-14.md`; SHA256 `88082f9083a0f0b278feb7df10d5c5d560f7e3fe1489ab521a52e83030643cec`.
-Selected Alibaba local cancellation accepted bounded; actual semantic material and retired grants. Existing browser/live evidence and original failures remain historical in their current reviews; this source pair governs the bounded synthetic request-cancellation journey.
+Prior accepted cancellation control baseline: `docs/baselines/CVF_GC018_NCR_REQUEST_CANCELLATION_CLOSURE_CONTROL_2026-10-14.md`; SHA256 `756ba9fa38cecf6162b4cd5683d849bdd749f9d690a9501b1f4ee9658a2862c2`.
+Prior control work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_REQUEST_CANCELLATION_CLOSURE_CONTROL_2026-10-14.md`; SHA256 `88082f9083a0f0b278feb7df10d5c5d560f7e3fe1489ab521a52e83030643cec`.
+These byte-hash bindings remain unchanged. Current operator-authorized source-only planning assignment: `docs/assessments/CVF_NCR_SELECTED_PILOT_CONVERGENCE_ASSIGNMENT_2026-10-14.md`. It is not an implementation work order; no machine-reduced fulfillment or effect grant is inferred. Current scope and source-review output requirements are in that assessment and the NCR roadmap.
 
 ## Accepted NCR Evidence And Continuation
 
@@ -39,7 +39,7 @@ Finite clipboard result ordering is accepted; actual OS write cancellation, whol
 
 ## Next Allowed Move
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-REQUEST-CANCELLATION-20261014. Selected nonvision text Alibaba request cancellation is CLOSED_PASS_BOUNDED; worker51/143/9 and distinct Root six live assertions accepted, new starts3 plus prior9=12/13, all grants retired. Consume current completion and existing roadmap to select the next finite R1/R2 error/timeout/recovery or controlled-execution gap; current source/authority/spec/cost readiness before any BUILD. No automatic successor/provider grant. R1/R2partial,R3/R4open,R5/R6deferred; realdata/custody/business acceptance/send/B2/public/deploy/P11 parked; LHW24 retained. Reviewed material commit=7d7e7a1a6222205822984231535164d7d4c168c8; dedicated actual-SHA continuity.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-MILESTONE-CONVERGENCE-20261014. REVIEW_ASSIGNMENT=docs/assessments/CVF_NCR_SELECTED_PILOT_CONVERGENCE_ASSIGNMENT_2026-10-14.md. User transfers one Local INTERNAL_AGENT source/evidence review manually using chosen worker configuration. Read-only selected HTML Work Transfer/R1-R4 exit mapping; exact2 documentary outputs; one next-outcome proposal. No implementation work-order fulfillment, BUILD, product tests/process/browser or provider call grant. Prior observed12/13 and all old grants retired; no reset. Root evaluates roadmap before each dispatch/after each return. R1/R2partial,R3/R4open,R5/R6deferred; Q001/Q004/B2/business/send/P11/public/deploy parked; LHW24 retained. Reviewed documentary material=c619ee784341a2644857e596856dffec5f841f30.
 
 ## Active Boundary
 T3B has a Local-verified active v1 specification. Party B is verified and T3C-C1 tooling accepted at `db78c87df`; T3C-C2 and Party C are verified. T3D-C1 tooling is accepted at `9ed844c2a` without source. T3D-C0-R1 closed at `2fffa1ef7`. T3D-C3 was accepted bounded at `88137e9a2`, but actual-mode prepare attempts failed before Party B/C execution; authorized cleanup removed the failed root and discarded unaccepted worker changes. G1 stopped, G2-G6 parked, and G7 research closed at `660601f0e` with `ADAPT_EXISTING_HANDOFF_ONLY`. Evidence-join sufficiency stays WATCH; no implementation successor exists. Rejected T2 paths remain archived; HRLTP-T2 paused.
@@ -67,7 +67,7 @@ Q001/Q004 actual-data source/writer,custody,retention/RPO/RTO/cost checkpoints a
 NCR send/B2 STOP and S05/C1 remain; IAB unavailable; repo Playwright Chromium present. Canonical release bundle9/9 PASS on current sources with real Alibaba; full P04 and NCR R3/R4 remain open. No autonomous P11/public/deploy activation.
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: exact6 Home/Alibaba dispatch/closure continuity; no checker edit by this steward.
+Authorized guard-maintenance scope: Local exact6 NCR source-review/manual-transfer and actual material-SHA continuity; no worker, checker or product edit by this steward.
 Protected paths:
 - `AGENT_HANDOFF_V63_2026-09-18.md`
 - `CVF_SESSION_MEMORY.md`
@@ -75,7 +75,7 @@ Protected paths:
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-Operator authorization: 2026-10-13 continue NCR; primary/conditional internal workers and Alibaba live tests; Local owns review/closure/commits.
+Operator authorization: 2026-10-14 regular NCR roadmap review, continuation and operator manual transfer to the chosen worker; Local owns review/commits, worker source-only.
 Rollback boundary: exact6; preserve original archive and accepted/blocked history, parked effects and prior observations. Historical P4 safety adjudication .cvf/runtime/mfrp-p4-shadow-canary/adjudications/ncr-offline-journey-marker-20261013.json remains valid for its original marker; no blanket clearance of future markers. New P4 receipt-generation marker d8d91ae25bd487b6798d7d7e48816cd7fb363d2d98bc27a6e70c43ee65eabbaa separately adjudicated by Local at .cvf/runtime/mfrp-p4-shadow-canary/adjudications/ncr-work-transfer-browser-marker-20261013.json, SHA256 ab42577ad08b59f54abb80ebbee64c6aae9b0d570018e8fccda9d5a2e0180c81; exact marker preserved in private custody; required admission heading restored; old failed receipt not promoted. Current marker OBS-70961d0b8b4d27db separately adjudicated by Local at .cvf/runtime/mfrp-p4-shadow-canary/adjudications/ncr-brief-reopen-marker-20261013.json, SHA256 c006bb09e83c08442460212cbabca0e100d22b27280af25c58a5df97804f9671; exact marker removed, journal/historical blocks/C15 exclusions unchanged.
 
 ## Agent Operation Trace Block
@@ -84,18 +84,18 @@ Rollback boundary: exact6; preserve original archive and accepted/blocked histor
 |---|---|
 | Actor | Local INTERNAL_AGENT session-sync steward |
 | Provider or surface | private shared workspace |
-| Session or invocation | cvf-ncr-request-cancellation-20261014-sync |
+| Session or invocation | ncr-selected-pilot-convergence-continuity-20261014 |
 | Working directory | repository root |
 | Command or tool surface | source entry/core update, active front door/handoff, canonical state generator |
 | Target paths | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Allowed scope source | operator NCR continuation; exact6 authority in paired baseline/order |
-| Before status evidence | 7d7e7a1a6222205822984231535164d7d4c168c8; clean worktree and staged empty after reviewed material commit |
-| After status evidence | exact6 source/generated continuity; Selected Alibaba local cancellation accepted bounded; actual semantic material and retired grants |
+| Before status evidence | c619ee784341a2644857e596856dffec5f841f30; clean worktree and staged empty after documentary material |
+| After status evidence | exact6 source/generated planning continuity; prior immutable authority pair unchanged |
 | Diff evidence | source/generated reconciliation; exact6 git diff --name-status; git diff --cached --check |
-| Approval boundary | bounded synthetic request-cancellation proof; real-data/acceptance/public/deploy parked |
-| Claim boundary | selected text Alibaba local cancellation proof; worker2+Root1 actual starts plus historical9=12/13; all grants retired; remote stop/billing unknown; full NCR pilot open |
+| Approval boundary | source-only review/manual transfer; implementation/effect checkpoints retained |
+| Claim boundary | no worker execution yet; prior program12/13 and grants retired; no new provider/whole-roadmap claim |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | cvf-ncr-request-cancellation-20261014-sync |
+| Invocation ID | ncr-selected-pilot-convergence-continuity-20261014 |
 | Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Manifest delta | MATCH required before commit |

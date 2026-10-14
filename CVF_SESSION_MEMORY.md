@@ -31,21 +31,21 @@ artifact.
 | Prior handoff (archive-qualified) | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V62_2026-09-17.md` |
 | Latest front-door archive | `CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_COMPACTION_ARCHIVE_2026-08-11.md` |
 | Current authority evidence | `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` `currentAuthority` |
-| Parent maintenance | Selected Alibaba local cancellation accepted bounded; actual semantic material and retired grants; whole job open |
+| Parent maintenance | Selected HTML source-only convergence; manual worker transfer; full pilot open |
 | Freeze posture | `governance_kernel_freeze_recommended` |
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_request_cancellation_closed`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=Selected Alibaba local cancellation accepted bounded; actual semantic material and retired grants; role=Local INTERNAL_AGENT orchestrator/reviewer; phase=private continuity; decision owner=Local; parked checkpoint=real-data writer/custody/business acceptance/public/deploy/P11 and unrelated lanes.
+Startup acknowledged: current mode=`cvf_ncr_selected_pilot_convergence_review_ready`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=selected HTML source/evidence convergence under `docs/assessments/CVF_NCR_SELECTED_PILOT_CONVERGENCE_ASSIGNMENT_2026-10-14.md`; role=Local INTERNAL_AGENT orchestrator/reviewer; phase=NCR planning/manual transfer; decision owner=Local; parked checkpoint=real-data writer/custody/business acceptance/send/P11/public/deploy and unrelated stopped lanes.
 
 ## Current Mode
 
-Current mode marker: `cvf_ncr_request_cancellation_closed`
-Current mode: `cvf_ncr_request_cancellation_closed`; previous mode marker: `cvf_ncr_request_cancellation_reviewer_control`
+Current mode marker: `cvf_ncr_selected_pilot_convergence_review_ready`
+Current mode: `cvf_ncr_selected_pilot_convergence_review_ready`; previous mode marker: `cvf_ncr_request_cancellation_closed`
 
 ## Next Allowed Move
 
-Mode: `cvf_ncr_request_cancellation_closed`
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-REQUEST-CANCELLATION-20261014. Selected nonvision text Alibaba request cancellation is CLOSED_PASS_BOUNDED; worker51/143/9 and distinct Root six live assertions accepted, new starts3 plus prior9=12/13, all grants retired. Consume current completion and existing roadmap to select the next finite R1/R2 error/timeout/recovery or controlled-execution gap; current source/authority/spec/cost readiness before any BUILD. No automatic successor/provider grant. R1/R2partial,R3/R4open,R5/R6deferred; realdata/custody/business acceptance/send/B2/public/deploy/P11 parked; LHW24 retained. Reviewed material commit=7d7e7a1a6222205822984231535164d7d4c168c8; dedicated actual-SHA continuity.
+Mode: `cvf_ncr_selected_pilot_convergence_review_ready`
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-MILESTONE-CONVERGENCE-20261014. REVIEW_ASSIGNMENT=docs/assessments/CVF_NCR_SELECTED_PILOT_CONVERGENCE_ASSIGNMENT_2026-10-14.md. User transfers one Local INTERNAL_AGENT source/evidence review manually using chosen worker configuration. Read-only selected HTML Work Transfer/R1-R4 exit mapping; exact2 documentary outputs; one next-outcome proposal. No implementation work-order fulfillment, BUILD, product tests/process/browser or provider call grant. Prior observed12/13 and all old grants retired; no reset. Root evaluates roadmap before each dispatch/after each return. R1/R2partial,R3/R4open,R5/R6deferred; Q001/Q004/B2/business/send/P11/public/deploy parked; LHW24 retained. Reviewed documentary material=c619ee784341a2644857e596856dffec5f841f30.
 Historical G1-G7 terminal baseline: mode `acel_g1_g7_research_terminally_closed`. G1-G6 terminal review: `docs/reviews/CVF_ACEL_G1_G6_TERMINAL_STOP_CLOSURE_2026-09-24.md`; G7 research closure: `docs/reviews/CVF_ACEL_G7_CROSS_RUN_CAPABILITY_EVOLUTION_RESEARCH_CLOSURE_2026-09-24.md`. The packet-only post-G7 reconciliation review at `docs/reviews/CVF_ACEL_POST_G7_FULL_CORPUS_ABSORPTION_CLOSURE_2026-09-24.md` is superseded for repository absorption by the 2026-09-25 pinned-source audit. G1 is stopped, G2-G6 remain parked, G7 research is closed, and no automatic G1-G7 successor exists.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
