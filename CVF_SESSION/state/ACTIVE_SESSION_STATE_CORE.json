@@ -36,12 +36,12 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_NCR_REQUEST_CANCELLATION_2026-10-14.md",
-    "baselineSha256": "7f4c574e2c06e9caa034fb5597214c1c1024b7bc6c3d3a8f712424e84e6998f5",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_REQUEST_CANCELLATION_2026-10-14.md",
-    "workOrderSha256": "700d6a61e4f8de3a59bb927f53d639b2b0c013d91d11c8007cb2659bbec3a570"
+    "baselinePath": "docs/baselines/CVF_GC018_NCR_REQUEST_CANCELLATION_CLOSURE_CONTROL_2026-10-14.md",
+    "baselineSha256": "756ba9fa38cecf6162b4cd5683d849bdd749f9d690a9501b1f4ee9658a2862c2",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_REQUEST_CANCELLATION_CLOSURE_CONTROL_2026-10-14.md",
+    "workOrderSha256": "88082f9083a0f0b278feb7df10d5c5d560f7e3fe1489ab521a52e83030643cec"
   },
-  "currentAuthoritySyncReason": "Consolidated cancellation worker16 scope amendment; original clock and budget retained Material 9a45a7bbfc11726c0c52852a2cc18d3c1f5206c9; coherent source/generated authority; actual-SHA dedicated continuity follows material. Whole NCR pilot/effects remain separate.",
+  "currentAuthoritySyncReason": "Accepted bounded cancellation evidence; immutable Local closure control and retired grants Material d0af2a0cce568f7f8cfaa7d4e60a197f8ec76b07; coherent source/generated authority; actual-SHA dedicated continuity follows material. Whole NCR pilot/effects remain separate.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
@@ -110,7 +110,7 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_ncr_request_cancellation_execution",
+  "currentMode": "cvf_ncr_request_cancellation_reviewer_control",
   "previousMode": "cvf_ncr_brief_copy_closed_useful_selection",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",

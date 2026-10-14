@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "cvf_ncr_request_cancellation_execution",
+  "currentMode": "cvf_ncr_request_cancellation_reviewer_control",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-REQUEST-CANCELLATION-20261014. WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_REQUEST_CANCELLATION_2026-10-14.md. Consolidated worker16 amendment; two prior exactoptions test assertions only. Original02:29 clock and UTC03:30 expiry retained; worker2UI/2starts, Root1cancelUI/2starts; task4+observed9<=13. BUILD resumes only after recorded amended bound release. R1/R2partial,R3/R4open,R5/R6deferred; realdata/accept/send/public/deploy/P11 parked; LHW24 retained. Reviewed material commit=9a45a7bbfc11726c0c52852a2cc18d3c1f5206c9; dedicated actual-SHA continuity.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=REVIEW; BATCH_ID=CVF-NCR-REQUEST-CANCELLATION-20261014. Frozen worker16/Root7 actual evidence accepted bounded. Immutable closure-control pair2 supplies Local metadata closure only; import nonoverlapping committed authority6, capture actual closureBaseHead, then semantic26 excluding control2/protected6; dedicated actual6 and proper split-range closure required. Worker2+Root1 starts/prior9=12/13, all grants retired. R1/R2partial,R3/R4open,R5/R6deferred; realdata/business/public/deploy/P11 parked; LHW24 retained. Reviewed material commit=d0af2a0cce568f7f8cfaa7d4e60a197f8ec76b07; dedicated actual-SHA continuity.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_NCR_REQUEST_CANCELLATION_2026-10-14.md",
-    "baselineSha256": "7f4c574e2c06e9caa034fb5597214c1c1024b7bc6c3d3a8f712424e84e6998f5",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_REQUEST_CANCELLATION_2026-10-14.md",
-    "workOrderSha256": "700d6a61e4f8de3a59bb927f53d639b2b0c013d91d11c8007cb2659bbec3a570"
+    "baselinePath": "docs/baselines/CVF_GC018_NCR_REQUEST_CANCELLATION_CLOSURE_CONTROL_2026-10-14.md",
+    "baselineSha256": "756ba9fa38cecf6162b4cd5683d849bdd749f9d690a9501b1f4ee9658a2862c2",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_REQUEST_CANCELLATION_CLOSURE_CONTROL_2026-10-14.md",
+    "workOrderSha256": "88082f9083a0f0b278feb7df10d5c5d560f7e3fe1489ab521a52e83030643cec"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }
