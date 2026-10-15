@@ -66,6 +66,8 @@ Q001/Q004 actual-data source/writer,custody,retention/RPO/RTO/cost checkpoints a
 NCR send/B2 STOP and S05/C1 remain; IAB unavailable; repo Playwright Chromium present. Canonical release bundle9/9 PASS on current sources with real Alibaba; full P04 and NCR R3/R4 remain open. No autonomous P11/public/deploy activation.
 ## P4 Post-Commit Safety Disposition
 
+Latest root-build OBS-3485d7acd9397180 is a current trusted BLOCKED_WITH_REASON row, not merely a historical aggregate trigger. Local verified exact marker/raw journal, committed review blob/ancestry and canonical receipt integrity. Adjudication `.cvf/runtime/mfrp-p4-shadow-canary/adjudications/ncr-html-root-build-blocked-marker-20261015.json`, SHA256 `e1ada040452a5a636c622a719aa64f9e656824df177c048143a54635acc4b03d`, preserves all four blocked-machine rows, current C15 FALSE_NEGATIVE/exclusion and original marker bytes. Deterministic preflight confirms shape, not runtime acceptance. Only exact verified marker removed after durable adjudication; no journal/checker/hook mutation, collector rerun, sample promotion or repeat grant. This handoff-only disclosure retains blocked mode and source-only PLAN.
+
 Current OBS-5bdc2e2a19e892ad adjudicated by Local: current ACCEPTED_TECHNICAL_BOUNDED_PROCEDURE_PARTIAL row is not trusted_blocks; aggregate retains the same3 historical blocks. Exact marker/journal/receipt/blob preserved in .cvf/runtime/mfrp-p4-shadow-canary/adjudications/ncr-prefeas-root-build-marker-20261015.json, SHA256 1b1dccd1035e436bb8f6ca9756c3c67ce5de67ea8004ba4a81b31e67b2864788. Only exact marker removed after durable adjudication; C15 FALSE_NEGATIVE/exclusion, journal, historical blocks and prior REQ08 procedure remain, no collector rerun/sample promotion/blanket clearance.
 
 
@@ -75,7 +77,7 @@ Historical conditional OBS-079b96e73400827c trusted BLOCKED/adjudication remains
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: Local exact6 blocked-review mode/next PLAN and actual material-SHA continuity; unchanged pair pins; no implementation or new execution in this sync.
+Authorized guard-maintenance scope: Local handoff-only P4 adjudication disclosure after the exact6 blocked-review continuity; unchanged material SHA, pair pins, mode and next PLAN; no implementation or new execution.
 Protected paths:
 - `AGENT_HANDOFF_V63_2026-09-18.md`
 - `CVF_SESSION_MEMORY.md`
@@ -92,21 +94,21 @@ Rollback boundary: exact6; preserve original archive and accepted/blocked histor
 |---|---|
 | Actor | Local INTERNAL_AGENT session-sync steward |
 | Provider or surface | private workspace |
-| Session or invocation | ncr-html-root-blocked-review-continuity-20261015 |
+| Session or invocation | ncr-html-root-blocked-p4-disclosure-20261015 |
 | Working directory | repository root |
-| Command or tool surface | blocked review/consumed profiles/current next PLAN; canonical source generator |
-| Target paths | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Command or tool surface | Local exact-marker/current trusted block adjudication disclosure; no new execution |
+| Target paths | `AGENT_HANDOFF_V63_2026-09-18.md` |
 | Allowed scope source | operator commit/roadmap instruction and Local exact6 continuity authority |
-| Before status evidence | c416f69a5e6364db8ecaadccb7431046a3f19b20; exact13 material committed, worktree/stage clean |
-| After status evidence | exact6 blocked-review continuity, no new worker/runtime/provider effects |
-| Diff evidence | exact6 staged manifest, actual material SHA and generator/check |
+| Before status evidence | cac4cfb372a3714a768a37b903d050795363a032; exact6 continuity committed, worktree clean |
+| After status evidence | handoff-only durable adjudication pointer, root BLOCKED and next PLAN unchanged |
+| Diff evidence | one handoff diff; durable exact marker, journal, receipt and blob pins |
 | Approval boundary | source-only PLAN; positive profiles consumed; parked effects retained |
 | Claim boundary | no accepted root or completed runtime control |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-html-root-blocked-review-continuity-20261015 |
-| Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Manifest delta | MATCH exact6 blocked-review continuity |
+| Invocation ID | ncr-html-root-blocked-p4-disclosure-20261015 |
+| Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md` |
+| Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md` |
+| Manifest delta | MATCH one handoff-only P4 disclosure |
 | Deletion or rename disposition | None |
 
 ## Claim Boundary
