@@ -8,7 +8,7 @@ import json
 import os
 import re
 import subprocess
-from contextlib import suppress
+from contextlib import contextmanager, nullcontext, suppress
 from ctypes import wintypes as W
 from pathlib import Path
 
@@ -81,12 +81,17 @@ class ExtLimit(C.Structure):
                 ("PeakProcess", C.c_size_t), ("PeakJob", C.c_size_t)]
 
 
+class ThreadEntry(C.Structure):
+    _fields_ = [("size", W.DWORD), ("usage", W.DWORD), ("tid", W.DWORD), ("pid", W.DWORD),
+                ("priority", W.LONG), ("delta", W.LONG), ("flags", W.DWORD)]
+
+
 class Win32:
-    """Thin kernel32 binding for an admitted real native run only; offline tests inject a double."""
+    """Kernel32 contracts for the admitted native profile; offline tests inject calls, not OS effects."""
     def __init__(self):
         if os.name != "nt":
             raise RuntimeError("this admitted native profile requires Windows")
-        self.k = C.WinDLL("kernel32", use_last_error=True)
+        self.k, self.cleanup_errors = C.WinDLL("kernel32", use_last_error=True), []
         signatures = {
             "CreateJobObjectW": ([C.c_void_p, W.LPCWSTR], W.HANDLE), "OpenProcess": ([W.DWORD, W.BOOL, W.DWORD], W.HANDLE),
             "GetProcessTimes": ([W.HANDLE, C.c_void_p, C.c_void_p, C.c_void_p, C.c_void_p], W.BOOL),
@@ -96,14 +101,29 @@ class Win32:
             "SetInformationJobObject": ([W.HANDLE, C.c_int, C.c_void_p, W.DWORD], W.BOOL),
             "QueryInformationJobObject": ([W.HANDLE, C.c_int, C.c_void_p, W.DWORD, C.c_void_p], W.BOOL),
             "CloseHandle": ([W.HANDLE], W.BOOL), "CreateToolhelp32Snapshot": ([W.DWORD, W.DWORD], W.HANDLE),
+            "Thread32First": ([W.HANDLE, C.POINTER(ThreadEntry)], W.BOOL), "Thread32Next": ([W.HANDLE, C.POINTER(ThreadEntry)], W.BOOL),
+            "GetProcessIdOfThread": ([W.HANDLE], W.DWORD),
             "OpenThread": ([W.DWORD, W.BOOL, W.DWORD], W.HANDLE), "ResumeThread": ([W.HANDLE], W.DWORD)}
         for name, (args, result) in signatures.items():
             getattr(self.k, name).argtypes, getattr(self.k, name).restype = args, result
 
-    def _ok(self, value):
-        if not value:
+    def _ok(self, value, invalid=None):
+        if not value or value == invalid:
             raise C.WinError(C.get_last_error())
         return value
+
+    @contextmanager
+    def _owned(self, handle):
+        try:
+            yield handle
+        except BaseException:
+            try:
+                self.close(handle)
+            except Exception as cleanup:
+                self.cleanup_errors.append("handle-close: " + bounded(cleanup, 180))
+            raise
+        else:
+            self.close(handle)
 
     def create_job(self):
         return self._ok(self.k.CreateJobObjectW(None, None))
@@ -132,17 +152,20 @@ class Win32:
         return self._ok(self.k.OpenProcess(0x1 | 0x1000 | 0x100000, False, pid))
 
     def identity(self, pid, handle=None):
-        h = handle or self.open(pid)
-        try:
+        if handle is not None and handle in (0, -1, C.c_void_p(-1).value):
+            raise ValueError("invalid retained process handle")
+        with self._owned(self.open(pid)) if handle is None else nullcontext(handle) as h:
             values, name, size = [C.c_ulonglong() for _ in range(4)], C.create_unicode_buffer(32768), W.DWORD(32768)
             self._ok(self.k.GetProcessTimes(h, *(C.byref(v) for v in values)) and self.k.QueryFullProcessImageNameW(h, 0, name, C.byref(size)))
             return {"pid": pid, "creation100ns": values[0].value, "image": name.value}
-        finally:
-            if not handle:
-                self.close(h)
 
     def exited(self, handle):
-        return self.k.WaitForSingleObject(handle, 0) == 0
+        status = self.k.WaitForSingleObject(handle, 0)
+        if status == 0xFFFFFFFF:
+            raise C.WinError(C.get_last_error())
+        if status not in (0, 258):
+            raise RuntimeError(f"unexpected process wait status: {status}")
+        return status == 0
 
     def in_job(self, handle, job):
         member = W.BOOL()
@@ -156,31 +179,34 @@ class Win32:
         self._ok(self.k.AssignProcessToJobObject(job, handle))
 
     def resume(self, pid):
-        class Entry(C.Structure):
-            _fields_ = [("size", W.DWORD), ("usage", W.DWORD), ("tid", W.DWORD), ("pid", W.DWORD), ("priority", W.LONG), ("delta", W.LONG), ("flags", W.DWORD)]
-        snap, entry, resumed = self._ok(self.k.CreateToolhelp32Snapshot(4, 0)), Entry(), 0
-        entry.size = C.sizeof(entry)
-        self.k.Thread32First.argtypes = self.k.Thread32Next.argtypes = [W.HANDLE, C.POINTER(Entry)]
-        try:
-            ok = self.k.Thread32First(snap, C.byref(entry))
-            while ok:
+        snapshot = self._ok(self.k.CreateToolhelp32Snapshot(4, 0), C.c_void_p(-1).value)
+        with self._owned(snapshot) as snap:
+            entry, tids, step = ThreadEntry(), [], self.k.Thread32First
+            while True:
+                entry.size = C.sizeof(entry)
+                if not step(snap, C.byref(entry)):
+                    error = C.get_last_error()
+                    if error != 18:  # ERROR_NO_MORE_FILES alone proves complete enumeration
+                        raise C.WinError(error)
+                    break
+                if entry.size < ThreadEntry.pid.offset + C.sizeof(W.DWORD):
+                    raise RuntimeError("thread record does not cover ownership fields")
                 if entry.pid == pid:
-                    thread = self._ok(self.k.OpenThread(2, False, entry.tid))
-                    try:
-                        if self.k.ResumeThread(thread) == 0xFFFFFFFF:
-                            raise RuntimeError("owned suspended thread could not resume")
-                    finally:
-                        self.close(thread)
-                    resumed += 1
-                ok = self.k.Thread32Next(snap, C.byref(entry))
-            if resumed != 1:
+                    tids.append(entry.tid)
+                step = self.k.Thread32Next
+            if len(tids) != 1:
                 raise RuntimeError("unexpected suspended thread count")
-        finally:
-            self.close(snap)
+            with self._owned(self._ok(self.k.OpenThread(0x802, False, tids[0]))) as thread:
+                if self._ok(self.k.GetProcessIdOfThread(thread)) != pid:
+                    raise RuntimeError("opened thread is not owned by the pinned process")
+                previous = self.k.ResumeThread(thread)
+                if previous == 0xFFFFFFFF:
+                    raise C.WinError(C.get_last_error())
+                if previous != 1:
+                    raise RuntimeError(f"unexpected prior suspend count: {previous}")
 
     def close(self, handle):
         self._ok(self.k.CloseHandle(handle))
-
 
 class Native:
     """Job membership owns descendants; retained process handles pin creation identity. API and Popen are injectable."""
@@ -189,13 +215,18 @@ class Native:
         self.stage, self.namespace, self.dependency, self.job = stage, namespace, None, None
         self.roots, self.container, self.container_identity, self.ports = [], None, None, []
         self.container_identity_pending, self.retained = False, {}
+        if isinstance(self.api, Win32):
+            self.api.cleanup_errors = self.c.cleanup_errors
         job = self.api.create_job()
         try:  # configure and read back the policy before any utility query or child can exist
             self.api.set_limits(job, JOB_LIMIT)
             if self.api.query_limits(job) != {"active": JOB_LIMIT, "killOnClose": True, "breakaway": False, "silentBreakaway": False}:
                 raise RuntimeError("owned job safety policy was not confirmed")
         except BaseException:
-            self.api.close(job)
+            try:
+                self.api.close(job)
+            except Exception as cleanup:
+                self.c.cleanup_errors.append("job-close: " + bounded(cleanup, 180))
             raise
         self.job = job
 
