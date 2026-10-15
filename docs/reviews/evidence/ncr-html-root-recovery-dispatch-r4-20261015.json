@@ -1,0 +1,266 @@
+{
+  "schemaVersion": "cvf.ncrHtmlRootRecoveryDispatch@1",
+  "phase": "PRE_DISPATCH_INTEGRATED_ROOT_CONTRACT_BUILD",
+  "sourceHead": "d87e90cb4f7b1ce67c17cc00fc4ca14f008d9000",
+  "operatorInstruction": "Actual persistent Local full-authority/no-micro-confirmation and new next; see new grant source, not provider memory",
+  "localAuthorityRuling": "The actual operator delegated Local orchestration/review with: \"b\u1ea1n l\u00e0 orchestrator/reviewer, cho ph\u00e9p b\u1ea1n l\u00e0m, kh\u00f4ng ch\u1edd h\u1ecfi t\u00f4i t\u1eebng ch\u00fat\" and \"cho to\u00e0n quy\u1ec1n, ko ch\u1edd h\u1ecfi t\u00f4i m\u1ea5y vi\u1ec7c n\u00e0y\", then said \"next\" after the rejection. Local uses that persistent instruction to choose this prospective finite offline scope and budget. This is an explicit Local technical disposition under delegated authority, not a claim that the operator separately enumerated the new numbers or that the R1 grant is reusable. Read-only advisory review warned that R1 alone cannot authorize these deltas; Local agrees and binds this new grant/packet to the actual broader instruction instead.\n\nThis R4 authorizes existing6 plus NEW execution.py/test_execution.py and NEW return/proof10, keeps the same offline objective/risk/effect/commit-owner classes, and clarifies the impossible delete-then-preserve outcome into retained-stage evidence plus modeled disposal eligibility. Full parent cleanup remains open. Parent/root unchanged; actual rework round/generation4 carries finding digest 35447819f0e8d9b8b07dcf461cac9db68d87f656726e83dd0fefa4f85d576ac4; prior round3 and SCEC ordinal2/counters2,0,2,0/two blockers/freeze remain historical/current respectively. No fabricated independent critical evidence, successor reset or old-profile refill. Local decision owner owns technical packet selection and consent verification; parser checks declared joins only.",
+  "findingSet": {
+    "sourceReview": {
+      "path": "docs/reviews/CVF_NCR_HTML_ROOT_CONTINUATION_COMPLETION_2026-10-15.md",
+      "sha256": "7d92ebee9ad7eaeab547ec9322a22bfe1265bf987ebb1f11d0e644c8538eb3b1"
+    },
+    "sourceProof": {
+      "path": "docs/reviews/evidence/ncr-html-root-continuation-local-20261015.json",
+      "sha256": "46a532fff62580ac8081b98dc64399fa386ceeb6444eba1638ed2f81fee378a6"
+    },
+    "findings": [
+      "F01-control-receipt",
+      "F02-safe-command-unknown",
+      "F03-deadline",
+      "F04-terminal-preservation",
+      "F05-scope-budget",
+      "F06-preparation"
+    ],
+    "localOracleError": "LOCAL-E01 Node adapter retained; not a browser observation"
+  },
+  "priorFindingSetDigest": "35447819f0e8d9b8b07dcf461cac9db68d87f656726e83dd0fefa4f85d576ac4",
+  "sourcePins": {
+    "scripts/cvf_ncr_html_owned_profile/__init__.py": "8133757501bbbcc154a92e7758df1a3df3c2957a0e205cd4f39cf03721ea69fd",
+    "scripts/cvf_ncr_html_owned_profile/lifecycle.py": "4d086bb21745aee82648a37f15ef428d37a936102ad47f38911c7e4e13abbd0b",
+    "scripts/cvf_ncr_html_owned_profile/profile.py": "730a1c33bc8258a6003023fad60f6ab9fb7cb775e054c5b9629c9cf59e893e76",
+    "scripts/cvf_ncr_html_owned_profile/test_control.py": "2a4f6acff7a23f4c783277ca6966c77d89a442ae2f297fb0dbe7529e2abf5aa3",
+    "scripts/cvf_ncr_html_owned_profile/journey.cjs": "37d7316cc62c1b757750d570063e78cc059c1c8d53865af16e0af0d01ba38431",
+    "scripts/cvf_ncr_html_owned_profile/journey.test.cjs": "0e8187004d28ba2685e19c9397ec4c2ec1add0fb403a3c3f3e78216fe5c0d00c",
+    "scripts/probe_cvf_q001_synthetic_system_chain.py": "b09924875254872611332baa11fdad4ec0b574d69c74e217ba0bb81a56cf2662",
+    "scripts/probe_cvf_w05_browser_chain.cjs": "0d9a261cddc5e21c00938570f5f692163d91cade21d2cc02c54c20bbbe91c494",
+    "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/core_orchestrator.py": "9d35ed87fafeb5a21814f94dbdd7db8e2e96ab430eb300f5f2a1ae77faa85a69",
+    "governance/compat/review_convergence_scaffold.py": "69821687c7a5103549d3f769d47069b83b1f43b3387687cdf782d9a11c0858bd",
+    "governance/compat/check_review_cost_control.py": "68e70bd29221e6d758ca7117a9a4fa18498f63406909b927d0e8e5423ab5e48b",
+    "docs/reference/review_cost_control/CVF_REVIEW_COST_AND_DIMINISHING_RETURN_CONTROL_STANDARD.md": "59ab670a0b3d723b50f8fed690e6c40be76cb14f1b0a5b72085a38efbb4f27a7",
+    "docs/assessments/CVF_NCR_HTML_ROOT_BUILD_SOURCE_REASSESSMENT_2026-10-15.md": "cd7be9162321be4287c850243cf6c2df79f45936650f5dd3cb7668e53775d66c",
+    "governance/compat/preapproval_feasibility_contract.py": "c351608f82d25ff99f3911c1f13c4990cf5a7ad9a886a23f946fa804010e346b",
+    "governance/compat/learning_application_binding.py": "84068b6f197c19404a23daa643266d7f9ed334f313cd2d8bbe2f2e6d37d7b7b8",
+    "docs/baselines/CVF_GC018_NCR_HTML_ROOT_RECOVERY_R4_2026-10-15.md": "876c1c6ed90271f98abbade9224cdda22df87174b9957ae93514cd3d64797d96",
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_ROOT_RECOVERY_R4_2026-10-15.md": "b73cb3f4d4c014b1b0eb806f9de1259b55d40419cef3791632389543112514f9",
+    "docs/baselines/CVF_NCR_HTML_ROOT_RECOVERY_AUTHORIZATION_R4_2026-10-15.md": "ea052518b8943c7d7ba70c7e195caff7003111a32d955fa528ffdeef6756d97f",
+    "docs/reviews/evidence/ncr-html-root-recovery-preapproval-r4-20261015.json": "2d2100bb755668d15dcce28b794a90effed301f6c6cac62f6fb4f01b62b1292c",
+    "docs/reviews/CVF_NCR_HTML_ROOT_CONTINUATION_COMPLETION_2026-10-15.md": "7d92ebee9ad7eaeab547ec9322a22bfe1265bf987ebb1f11d0e644c8538eb3b1",
+    "docs/reviews/evidence/ncr-html-root-continuation-local-20261015.json": "46a532fff62580ac8081b98dc64399fa386ceeb6444eba1638ed2f81fee378a6"
+  },
+  "expectedWorkerOutputs": [
+    "scripts/cvf_ncr_html_owned_profile/__init__.py",
+    "scripts/cvf_ncr_html_owned_profile/lifecycle.py",
+    "scripts/cvf_ncr_html_owned_profile/profile.py",
+    "scripts/cvf_ncr_html_owned_profile/test_control.py",
+    "scripts/cvf_ncr_html_owned_profile/journey.cjs",
+    "scripts/cvf_ncr_html_owned_profile/journey.test.cjs",
+    "scripts/cvf_ncr_html_owned_profile/execution.py",
+    "scripts/cvf_ncr_html_owned_profile/test_execution.py",
+    "docs/reviews/CVF_NCR_HTML_ROOT_RECOVERY_R4_WORKER_RETURN_2026-10-15.md",
+    "docs/reviews/evidence/ncr-html-root-recovery-worker-r4-20261015.json"
+  ],
+  "materialManifest": [
+    "docs/baselines/CVF_GC018_NCR_HTML_ROOT_RECOVERY_R4_2026-10-15.md",
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_ROOT_RECOVERY_R4_2026-10-15.md",
+    "docs/baselines/CVF_NCR_HTML_ROOT_RECOVERY_AUTHORIZATION_R4_2026-10-15.md",
+    "docs/reviews/evidence/ncr-html-root-recovery-preapproval-r4-20261015.json",
+    "docs/reviews/evidence/ncr-html-root-recovery-dispatch-r4-20261015.json",
+    "docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md"
+  ],
+  "pairedArtifacts": {
+    "baseline": "docs/baselines/CVF_GC018_NCR_HTML_ROOT_RECOVERY_R4_2026-10-15.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_ROOT_RECOVERY_R4_2026-10-15.md",
+    "grant": "docs/baselines/CVF_NCR_HTML_ROOT_RECOVERY_AUTHORIZATION_R4_2026-10-15.md",
+    "companion": "docs/reviews/evidence/ncr-html-root-recovery-preapproval-r4-20261015.json"
+  },
+  "sourceVersionBoundary": "Current helpers are restored preimages. Rejected source6 may be hash-verified from the immutable Local JSON and recovered only after preparation/scaffold; not accepted implementation.",
+  "newPaths": {
+    "scripts/cvf_ncr_html_owned_profile/execution.py": "DOC_ONLY_NEW; may be created only by the admitted worker",
+    "scripts/cvf_ncr_html_owned_profile/test_execution.py": "DOC_ONLY_NEW; may be created only by the admitted worker"
+  },
+  "design": {
+    "control": "strict case-specific raw receipt consistency; no execution or consent authenticity claim from editable bytes",
+    "deadline": "one owner, fresh remaining time, bounded drains and parent-owned cancellation; unpreemptible calls may end UNKNOWN",
+    "terminal": "retained stage; immutable evidence bytes/readback and separate write acknowledgment; only modeled disposal eligibility",
+    "topology": "source8 plus new return/proof2; no compression; test_control recovered346 -> <=296, minimum shrink50"
+  },
+  "advisoryReviews": [
+    {
+      "role": "INTERNAL_AGENT_READ_ONLY_SOURCE_REVIEWER",
+      "recommendation": "new execution/test_execution modules; no delete-then-preserve guarantee; contract must be fixed before worker"
+    },
+    {
+      "role": "INTERNAL_AGENT_READ_ONLY_AUTHORITY_REVIEWER",
+      "recommendation": "R1 alone cannot authorize paths/caps/terminal changes; hold until concrete new decision; actual explicit delegated scope/budget instruction may change this",
+      "localDisposition": "Accepted caution against R1 reuse. Root verifies actual user full-authority and new next, owns prospective selection and binds new grant; no hidden consent or old-counter reset."
+    }
+  ],
+  "effectCeilings": {
+    "providerCalls": 0,
+    "networkCalls": 0,
+    "publicWrites": 0,
+    "deployments": 0,
+    "realDataMutations": 0,
+    "destructiveActions": 0,
+    "productRuntimeStarts": 0
+  },
+  "numericalCeilings": {
+    "workerMinutes": 180,
+    "reviewerMinutes": 90,
+    "workerTestRunners": 6,
+    "reviewerTestRunners": 4,
+    "workerNegativeSubprocesses": 27,
+    "reviewerNegativeSubprocesses": 0,
+    "sourceGitCommands": 24,
+    "externalInvocationCeiling": 0,
+    "nativeChildren": 0,
+    "runtimeUtilities": 0,
+    "containers": 0,
+    "browserProfiles": 0,
+    "workerExports": 0,
+    "workerEvaluates": 0,
+    "reviewerExports": 0,
+    "reviewerEvaluates": 0,
+    "loopbackRequests": 0,
+    "reviewerSourceGitCommands": 16
+  },
+  "history": {
+    "parent": "CVF-NCR-HTML-CONFIGURED-RECEIPT-CONTROL",
+    "root": "NCR_HTML_CONFIGURED_RECEIPT_CONTROL_PROOF",
+    "priorRound": 3,
+    "newRound": 4,
+    "scec": {
+      "schemaVersion": "cvf.semanticConvergenceControl.v1",
+      "problemKey": "ncr-html-configured-receipt-browser-composition",
+      "chainMode": "SUCCESSOR",
+      "chainOrdinal": 2,
+      "predecessor": {
+        "path": "docs/reviews/CVF_NCR_HTML_CONFIGURED_RECEIPT_CONDITIONAL_RETURN_2026-10-14.md",
+        "sha256": "ec8a0418af0db8aacde0df54b73a583758dbf33959556c965c328b4604d85254"
+      },
+      "blockerDelta": {
+        "prior": [
+          "HCR-CONTROL-EGRESS",
+          "HCR-CONTROL-ADMISSION",
+          "HCR-CONTROL-LEGACY-CLEANUP"
+        ],
+        "resolved": [
+          "HCR-CONTROL-EGRESS",
+          "HCR-CONTROL-ADMISSION"
+        ],
+        "retained": [
+          "HCR-CONTROL-LEGACY-CLEANUP"
+        ],
+        "new": [
+          "HCR-CONTROL-FRESH-PROFILE-BINDING"
+        ],
+        "reopened": [],
+        "current": [
+          "HCR-CONTROL-LEGACY-CLEANUP",
+          "HCR-CONTROL-FRESH-PROFILE-BINDING"
+        ]
+      },
+      "resolutionEvidence": {
+        "HCR-CONTROL-EGRESS": {
+          "evidenceClass": "ACCEPTED_REVIEW",
+          "evidencePath": "docs/reviews/CVF_NCR_HTML_CONFIGURED_RECEIPT_CONDITIONAL_COMPLETION_2026-10-14.md",
+          "sha256": "36c9b8513fdd614d9e798b4ef88960f68887fa43ec43b67811d6560d736805bd",
+          "locator": "HCR-CONTROL-EGRESS: RESOLVED_BOUNDED"
+        },
+        "HCR-CONTROL-ADMISSION": {
+          "evidenceClass": "ACCEPTED_REVIEW",
+          "evidencePath": "docs/reviews/CVF_NCR_HTML_CONFIGURED_RECEIPT_CONDITIONAL_COMPLETION_2026-10-14.md",
+          "sha256": "36c9b8513fdd614d9e798b4ef88960f68887fa43ec43b67811d6560d736805bd",
+          "locator": "HCR-CONTROL-ADMISSION: RESOLVED_BOUNDED"
+        }
+      },
+      "counters": {
+        "partialReadyClosures": 2,
+        "reviewerScopeExpansions": 0,
+        "sameClaimCorrections": 2,
+        "nonDecreasingBlockerTransitions": 0
+      },
+      "claims": [
+        {
+          "claimId": "NCR-HTML-INTEGRATED-ROOT-DESIGN",
+          "claimClass": "DOCUMENTATION_ONLY",
+          "proofClass": "PROPOSAL_ONLY_NO_RUNTIME_READINESS",
+          "evidenceRef": "docs/reviews/CVF_NCR_HTML_INTEGRATED_ROOT_CONTRACT_2026-10-14.md"
+        }
+      ],
+      "requiredDisposition": "ROOT_CONTRACT_REQUIRED",
+      "successorScope": "INTEGRATED_ROOT_CONTRACT"
+    },
+    "priorR1Spending": "preserved; worker4 runners/26 children/reported21 Git, Local2 runners/8 Git; Local Node oracle failed; no parent profile revival"
+  },
+  "scaffold": {
+    "command": [
+      "python",
+      "-B",
+      "governance/compat/build_dispatch_packet_scaffold.py",
+      "--packet-kind",
+      "generic-worker-dispatch",
+      "--batch-id",
+      "CVF-NCR-HTML-CONFIGURED-RECEIPT-CONTROL",
+      "--title",
+      "NCR HTML Root Offline Recovery R4",
+      "--date",
+      "2026-10-15",
+      "--base",
+      "d87e90cb4f7b1ce67c17cc00fc4ca14f008d9000",
+      "--commit-mode",
+      "WORKER_MUST_NOT_COMMIT",
+      "--dispatch-kind",
+      "REWORK",
+      "--review-round-count",
+      "4",
+      "--root-cause-cluster-id",
+      "NCR_HTML_CONFIGURED_RECEIPT_CONTROL_PROOF",
+      "--prior-finding-set-digest",
+      "35447819f0e8d9b8b07dcf461cac9db68d87f656726e83dd0fefa4f85d576ac4",
+      "--operator-continuation-evidence-path",
+      "docs/baselines/CVF_NCR_HTML_ROOT_RECOVERY_AUTHORIZATION_R4_2026-10-15.md",
+      "--operator-continuation-evidence-sha256",
+      "ea052518b8943c7d7ba70c7e195caff7003111a32d955fa528ffdeef6756d97f",
+      "--stdout"
+    ],
+    "exitCode": 0,
+    "stdoutSha256": "73f7b23fb138f3c35d77cf180b5e98323d77fab4672f37483a92244f033270d7",
+    "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "adif": {
+    "rawPath": ".cvf/runtime/ncr-html-root-recovery-plan-20261015/adif.json",
+    "rawSha256": "669a86021fd61cb8fd91fba96e39dce168ebd62345ac043d635612a531b3b687",
+    "query": "Work-order authoring / dispatch; dispatcher; pre-dispatch"
+  },
+  "preparation": "PARTIAL_WITH_REASON: encoding/scaffold-specific predicates completed after first draft; first reviewer-fast metadata failures retained. Other mapped dispatch scopes preceded draft; no all-body/history claim or historical upgrade.",
+  "claimBoundary": "prospective packet source/declared-state admission only; no implementation test/model observation, actual effect, parent acceptance or cap reuse",
+  "preflightDesignReconciliation": "Before reviewer-fast: corrected inherited six/eight counts, test6 reservation, R1 historical text, dual consumer table and new grant/scaffold/hash joins; no implementation or test invocation.",
+  "firstGateFailure": {
+    "path": ".cvf/runtime/ncr-html-root-recovery-plan-20261015/reviewer-fast.log",
+    "sha256": "17bf289e2d2dd1c43b8d158241ce50e1e3985fe84a500c998ab42df4fe5591f3",
+    "reason": "three exact Vietnamese quotation encoding exceptions and baseline actual scaffold-helper command missing; corrected before release"
+  },
+  "advisoryReviewDisposition": {
+    "sourceConsumer": "Two concrete corrections completed: final pytest explicitly collects both files in one launch; future Local receipt admission fails closed until a separately declared case matrix and actual controls exist.",
+    "scope": "No further material consumer blocker in bounded pass; no tests/Git/writes by advisers.",
+    "authorityPhaseCaution": "Resolved by explicit canonical-wrapper/actual-source-subphase mapping in baseline and required R4_OFFLINE_SCOPE row; retain canonical exact action/phase/outcome grammar instead of inventing unsupported enums."
+  },
+  "executionSubphase": "OFFLINE_SOURCE_RECOVERY_ONLY",
+  "canonicalAdmissionMapping": "Existing exact root-build action grammar wraps the same integrated root source/control subphase; required baseline/scope/R4_OFFLINE_SCOPE joins enforce source-only intent. No new SCEC transition/action, readiness or effect authority.",
+  "preapprovalEvidence": {
+    "path": ".cvf/runtime/ncr-html-root-recovery-plan-20261015/feasibility-release-bound.json",
+    "sha256": "96941b9903eee3f0d6310ea91b518e8997dc804f1a7146e7335cd8f58d40ec1d",
+    "canonicalBlockCount": 1,
+    "technicalDisposition": "FEASIBLE_FOR_INTEGRATED_ROOT_BUILD",
+    "runtimeReadiness": false,
+    "effectAdmission": false,
+    "operatorApprovalRequired": true,
+    "claimBoundary": "declaration/route source admission only; actual authority independently verified by Local"
+  },
+  "reviewerReleaseEvidence": {
+    "path": ".cvf/runtime/ncr-html-root-recovery-plan-20261015/reviewer-release.log",
+    "sha256": "fe0bbbbd8d7a4e9c32fd08f64af80859bf92dc60b73ddb74fd933cabb3e5aab9",
+    "result": "PASS"
+  }
+}

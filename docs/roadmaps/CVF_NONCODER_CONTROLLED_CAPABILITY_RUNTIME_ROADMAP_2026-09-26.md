@@ -5,11 +5,13 @@ docType: roadmap
 Status: ACCEPTED_UNIFIED_ROADMAP_LOCAL_CONSUMER_BOUNDED_FULL_PILOT_OPEN
 Date: 2026-09-26
 Program ID: CVF-NCR
-Version: 2.34
+Version: 2.35
 Revision disposition: LOCAL_CONSUMER_MAINTENANCE_ACCEPTED_BOUNDED; END_TO_END_PILOT_OPEN; Q001_AND_P11_CHECKPOINTS_RETAINED
 Decision owner: operator về định hướng/phạm vi; Local reviewer về đối chiếu kỹ thuật và nghiệm thu.
 
 ## Current Delivery Checkpoint - 2026-10-14
+
+**2026-10-15 consolidated recovery R4 packet:** `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_ROOT_RECOVERY_R4_2026-10-15.md` / `docs/baselines/CVF_GC018_NCR_HTML_ROOT_RECOVERY_R4_2026-10-15.md` implement F01-F06 in existing6+NEW execution.py/test_execution.py plus NEW return/proof10, each source<350 without compression. Terminal contract retains stage, writes/verifies immutable evidence and models disposal eligibility; actual deletion/B-E remains deferred. Local uses persistent full-authority and current next for a separately bound prospective grant, not R1 cap reuse: worker180/Local90min, test6/4, Git24/16, inert27/0, all7 effects0. Qualified advisory scope/cap caution and Local ruling retained in `docs/reviews/evidence/ncr-html-root-recovery-dispatch-r4-20261015.json`. Same parent/root, actual rework4/generation4/new finding digest, SCEC ordinal2/counters2,0,2,0/blockers/freeze/spent profiles retained. Release only after current exact6 material/continuity and bound gates; manual worker transfer, no automatic invocation or new checker. Prior rejection/REQ08/Local Node failure/P4 exclusions remain; R1/R2partial,R3/R4open,R5/R6deferred, parked lanes/LHW24 retained.
 
 **2026-10-15 root offline continuation rejected:** `docs/reviews/CVF_NCR_HTML_ROOT_CONTINUATION_COMPLETION_2026-10-15.md` records independent Python11 (positive3 PASS, negative8 FAIL), invalid Local Node adapter retained, two-runner cap consumed. REQ01/02/03/06 blocked for control authenticity, credential/unknown handling, deadlines and terminal preservation; REQ07 worker-reported Git21/8 overrun, REQ08 late preparation retained. Original64/5 tests, nine26 controls, exact8 bytes and six raw source snapshots preserved; rejected helpers restored to execution-base source. Evidence-only material, no implementation accepted or automatic worker retry. Next Local source-only consolidated recovery feasibility; current R1 pair/grant remains immutable consumed-phase provenance. Same root round3/generation3, SCEC ordinal2/counters2,0,2,0/blockers/freeze and spent profiles retained. B-E/native/product/profile deferred; R1/R2partial,R3/R4open,R5/R6deferred, parked effects/LHW24 retained. No new checker.
 
