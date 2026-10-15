@@ -20,10 +20,10 @@
     "docs/assessments/CVF_NCR_HTML_ROOT_BUILD_SOURCE_REASSESSMENT_2026-10-15.md": "cd7be9162321be4287c850243cf6c2df79f45936650f5dd3cb7668e53775d66c",
     "governance/compat/preapproval_feasibility_contract.py": "c351608f82d25ff99f3911c1f13c4990cf5a7ad9a886a23f946fa804010e346b",
     "governance/compat/learning_application_binding.py": "84068b6f197c19404a23daa643266d7f9ed334f313cd2d8bbe2f2e6d37d7b7b8",
-    "docs/baselines/CVF_GC018_NCR_HTML_ROOT_CONTINUATION_2026-10-15.md": "e00fd35e1c07fd2330c7de0dc8b0c9d5c7ed376a15af2c1ed6734147bfea35d5",
-    "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_ROOT_CONTINUATION_2026-10-15.md": "46d41387d1115b893abdfea0f0695368396116829e1b3826af5ac53cc8755caf",
-    "docs/baselines/CVF_NCR_HTML_ROOT_CONTINUATION_AUTHORIZATION_2026-10-15.md": "fd38e91e6be6fb79ea33b45d12acc9159f61f68dffe42a6c50ea76c1f4f0babb",
-    "docs/reviews/evidence/ncr-html-root-continuation-preapproval-20261015.json": "079b240bfec1c944d42dfcaaa1c60b93a631fa0600fa1c4fcf7698705734dce1"
+    "docs/baselines/CVF_GC018_NCR_HTML_ROOT_CONTINUATION_R1_2026-10-15.md": "4a5ddefc2d634402417c79a07faa99ce930c777aef608e647141f4796f092760",
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_ROOT_CONTINUATION_R1_2026-10-15.md": "6d11ce2d63606e20e744fd0536723e8731948f841f07f665d6facc019730a3ee",
+    "docs/baselines/CVF_NCR_HTML_ROOT_CONTINUATION_AUTHORIZATION_R1_2026-10-15.md": "221d40500d617f47a35a40f1b995eb853c17344fd40102286bac3ff12064a984",
+    "docs/reviews/evidence/ncr-html-root-continuation-preapproval-r1-20261015.json": "f4efcd30e5d8626efd6a1391be361ceb461e2c71a21366b3a91d2df3771b4747"
   },
   "sourceFacts": {
     "scripts/cvf_ncr_html_owned_profile/__init__.py": {
@@ -128,18 +128,18 @@
     "docs/reviews/evidence/ncr-html-root-continuation-worker-20261015.json"
   ],
   "materialManifest": [
-    "docs/baselines/CVF_GC018_NCR_HTML_ROOT_CONTINUATION_2026-10-15.md",
-    "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_ROOT_CONTINUATION_2026-10-15.md",
-    "docs/baselines/CVF_NCR_HTML_ROOT_CONTINUATION_AUTHORIZATION_2026-10-15.md",
-    "docs/reviews/evidence/ncr-html-root-continuation-preapproval-20261015.json",
+    "docs/baselines/CVF_GC018_NCR_HTML_ROOT_CONTINUATION_R1_2026-10-15.md",
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_ROOT_CONTINUATION_R1_2026-10-15.md",
+    "docs/baselines/CVF_NCR_HTML_ROOT_CONTINUATION_AUTHORIZATION_R1_2026-10-15.md",
+    "docs/reviews/evidence/ncr-html-root-continuation-preapproval-r1-20261015.json",
     "docs/reviews/evidence/ncr-html-root-continuation-dispatch-20261015.json",
     "docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md"
   ],
   "pairedArtifacts": {
-    "docs/baselines/CVF_GC018_NCR_HTML_ROOT_CONTINUATION_2026-10-15.md": "e00fd35e1c07fd2330c7de0dc8b0c9d5c7ed376a15af2c1ed6734147bfea35d5",
-    "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_ROOT_CONTINUATION_2026-10-15.md": "46d41387d1115b893abdfea0f0695368396116829e1b3826af5ac53cc8755caf",
-    "docs/baselines/CVF_NCR_HTML_ROOT_CONTINUATION_AUTHORIZATION_2026-10-15.md": "fd38e91e6be6fb79ea33b45d12acc9159f61f68dffe42a6c50ea76c1f4f0babb",
-    "docs/reviews/evidence/ncr-html-root-continuation-preapproval-20261015.json": "079b240bfec1c944d42dfcaaa1c60b93a631fa0600fa1c4fcf7698705734dce1"
+    "docs/baselines/CVF_GC018_NCR_HTML_ROOT_CONTINUATION_R1_2026-10-15.md": "4a5ddefc2d634402417c79a07faa99ce930c777aef608e647141f4796f092760",
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_ROOT_CONTINUATION_R1_2026-10-15.md": "6d11ce2d63606e20e744fd0536723e8731948f841f07f665d6facc019730a3ee",
+    "docs/baselines/CVF_NCR_HTML_ROOT_CONTINUATION_AUTHORIZATION_R1_2026-10-15.md": "221d40500d617f47a35a40f1b995eb853c17344fd40102286bac3ff12064a984",
+    "docs/reviews/evidence/ncr-html-root-continuation-preapproval-r1-20261015.json": "f4efcd30e5d8626efd6a1391be361ceb461e2c71a21366b3a91d2df3771b4747"
   },
   "advisoryReviews": {
     "authorityActor": "INTERNAL_AGENT_LUNA_MAX",
@@ -221,16 +221,16 @@
       "--prior-finding-set-digest",
       "cd7be9162321be4287c850243cf6c2df79f45936650f5dd3cb7668e53775d66c",
       "--operator-continuation-evidence-path",
-      "docs/baselines/CVF_NCR_HTML_ROOT_CONTINUATION_AUTHORIZATION_2026-10-15.md",
+      "docs/baselines/CVF_NCR_HTML_ROOT_CONTINUATION_AUTHORIZATION_R1_2026-10-15.md",
       "--operator-continuation-evidence-sha256",
-      "fd38e91e6be6fb79ea33b45d12acc9159f61f68dffe42a6c50ea76c1f4f0babb",
+      "221d40500d617f47a35a40f1b995eb853c17344fd40102286bac3ff12064a984",
       "--no-evidence-readiness-applicable",
       "--stdout"
     ],
     "exitCode": 0,
-    "logSha256": "f71caf7f9b718d672ceb7e50ffd6886934b25698fa151ea6f72a99dff16210b4",
+    "logSha256": "9fee0b7e48f2b27e7f1f69c35e3bd2de33edcee43723d6f79ae42fb3243e4ae5",
     "parentVsBatch": "Scaffold batch flag binds historical parent; final batch metadata is separately authored, parent scalar retained.",
-    "log": ".cvf/runtime/ncr-html-root-continuation-dispatch-20261015/scaffold-final.log"
+    "log": ".cvf/runtime/ncr-html-root-continuation-dispatch-20261015/scaffold-r1-final.log"
   },
   "heldSnapshot": {
     "path": "docs/reviews/evidence/ncr-html-root-admission-v2-packet-20261015.json",
@@ -257,5 +257,26 @@
       "sha256": "432ebc5fdaa10a9a4ab88bba8e9f929a5b3b2ed8e867c35fee50ba3679934895",
       "reason": "Authorization baseline lacked explicit Evidence / Verification heading; added before final freeze."
     }
-  ]
+  ],
+  "committedMaterialGateFailure": {
+    "base": "2102ae5e29ac6436cbaecba205326bdc970a65f5",
+    "head": "ddeab068a16cde4e6fcb480e239b2b73ad0d4344",
+    "logSha256": "ed313bc6af74be4f787c23a820205c843a89ac3214f00c4485d53baa6c211a5f",
+    "reason": "GC018 baseline omitted ADIF disclosure while order had actual27/27 resolver receipt; copied exact query/full result and checked through canonical component.",
+    "commitPlan": "EXCEPTION_WITH_REASON: pre-release documentary ADIF omission requires one extra material/continuity pair; worker/source/effect scope unchanged."
+  },
+  "preReleaseRevision": {
+    "revision": "R1",
+    "reason": "Original pair is pinned in current session state; pre-commit correctly rejected mutating its raw bytes. Create separate immutable R1 and change authority only in subsequent exact6 continuity.",
+    "preservedOriginal": {
+      "docs/baselines/CVF_GC018_NCR_HTML_ROOT_CONTINUATION_2026-10-15.md": "e00fd35e1c07fd2330c7de0dc8b0c9d5c7ed376a15af2c1ed6734147bfea35d5",
+      "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_ROOT_CONTINUATION_2026-10-15.md": "46d41387d1115b893abdfea0f0695368396116829e1b3826af5ac53cc8755caf",
+      "docs/baselines/CVF_NCR_HTML_ROOT_CONTINUATION_AUTHORIZATION_2026-10-15.md": "fd38e91e6be6fb79ea33b45d12acc9159f61f68dffe42a6c50ea76c1f4f0babb",
+      "docs/reviews/evidence/ncr-html-root-continuation-preapproval-20261015.json": "079b240bfec1c944d42dfcaaa1c60b93a631fa0600fa1c4fcf7698705734dce1"
+    },
+    "failedCommitLogSha256": "1a0607a56e6f95a880c23b21d3c6e9fb1179ff95fd879f48492f4a784b2f7f96",
+    "oldMaterial": "ddeab068a16cde4e6fcb480e239b2b73ad0d4344",
+    "oldContinuity": "83813a7f976fd20084153d93f8d962eaf7ae9a32",
+    "workerInvoked": false
+  }
 }
