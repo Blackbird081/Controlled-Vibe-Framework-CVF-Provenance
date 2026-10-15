@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Current NCR Continuation
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `c379cb3c06219c483b5102a067f8de619ae2646a`. Material SHA: `c379cb3c06219c483b5102a067f8de619ae2646a`. Batch ID: CVF-NCR-HTML-CAP1-ADMISSION-LOCAL-20261016. Source121PASS bounded; independent matrix FAIL_ORACLE, no parent release.
+Current HEAD recorded for this handoff: `e10c2698202fb3e9de65cd878d6a10022afba4a4`. Material SHA: `e10c2698202fb3e9de65cd878d6a10022afba4a4`. Batch ID: CVF-NCR-HTML-CAP1-COMPLETION-LOCAL-20261016. Independent9cases/26children PASS bounded; next B-E preparation ready, no parent release.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -13,19 +13,19 @@ Current continuation only. Root AGENTS.md and canonical routing owners retain fu
 Closed history is preserved byte-for-byte at `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V63_PRE_NCR_COMPACTION_2026-10-07.md` (SHA256 `54801fdcf14e9abe17592352ec3c69a0b0e855632991af0caacac7b65252ccba`); it is NOT_ACTIVE_AUTHORITY and not default startup reading.
 ## Scope / Target / Owner Boundary
 
-Direct Local material7 source/control outcome reviewed through tests, one failed independent inert attempt and commits. Local owns source/disposition; distinct INTERNAL_AGENT authored its own ignored oracle. Source accepted bounded; actual matrix incomplete after3 children and original probe enum error. No retry/refill, no phase-by-phase operator stop. B-E/product effects held.
+Direct Local failed-control completion material4 finished through static review, fake preflight, actual independent matrix, root raw-join review and commits. Source12 unchanged. Selected cap1 proof accepted bounded; next B-E source-release/prerequisite tranche ready for Local preparation. Old failures retained. No operator micro-stops or manual implementation relay; B-E effects need current prospective admission.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_html_cap1_source_accepted_independent_matrix_held`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=Local correct independent oracle vocabulary/preflight and consolidate fresh complete-matrix/B-E admission, then carry admitted work through commit; role=INTERNAL_AGENT Local implementer/reviewer/steward with distinct control reviewer; phase=source accepted bounded, independent actual matrix FAIL_ORACLE/incomplete; decision owner=Local; parked checkpoint=actual B-E/product/browser/container/provider/stage/parent/public/deploy. No micro-stops/manual relay; old control/native windows closed.
+Startup acknowledged: current mode=`cvf_ncr_html_cap1_control_accepted_b_e_source_release_entry`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=Local enters B-E source-release/prerequisite tranche and carries admitted connected work through verification/commit; role=INTERNAL_AGENT Local reviewer/steward with distinct independent probe executor; phase=cap1 control proof accepted bounded, next tranche preparation ready; decision owner=Local; parked checkpoint=B-E/product/browser/container/provider/stage/parent/public/deploy effects require current before-effect admission. No micro-stops/manual relay; old/current control/native slots closed.
 
 ## Current Mode
 
-`cvf_ncr_html_cap1_source_accepted_independent_matrix_held`. Source65/selected121PASS; independent actual matrix FAIL_ORACLE, no saved terminal/receipt or acceptance. Source12 frozen and current helper pins strict; prior unsupported old-pin claim corrected. Materialc379cb3c06219c483b5102a067f8de619ae2646a; exact6 continuity then serial split closure. Parent R1/R2partial,R3/R4open.
+`cvf_ncr_html_cap1_control_accepted_b_e_source_release_entry`. Fake9/26calls/child0 PASS/refused as fake; actual independent9cases/26children PASS, root raw joins/admission PASS. Materiale10c2698202fb3e9de65cd878d6a10022afba4a4; exact6 continuity then serial split closure. Source12 stable, current historical runtime manifest unreleased. Parent R1/R2partial,R3/R4open.
 
 ## Current Authority
 
-Consumed direct Local scope `docs/baselines/CVF_GC018_NCR_HTML_CAP1_ADMISSION_LOCAL_2026-10-16.md` SHA256 `4283dd015170ed905b8c712698b808fadcb98eb80e4ae3a0aff9370f29550ad1`; disposition `docs/assessments/CVF_NCR_HTML_CAP1_ADMISSION_LOCAL_DISPOSITION_2026-10-16.md`; proof `docs/reviews/evidence/ncr-html-cap1-admission-local-20261016.json`. Source12/focused tests accepted bounded; current historical runtime pins intentionally unreleased and now fail missing current oracles. Independent failed program3children, all source/control slots closed; native old slots also closed. No executable work order. Schema-required currentAuthority four-field R5 pair is historical only. Standing Local autonomy continues preparation and dependent same-scope work, not an old-slot refill or B-E/provider/public grant.
+Consumed current completion envelope `docs/baselines/CVF_GC018_NCR_HTML_CAP1_COMPLETION_LOCAL_2026-10-16.md` SHA256 `62cfdebd404e5263a7a703a28ff6477d3198a40eb0c93bf6e66c314ef1ca66d0`; disposition `docs/assessments/CVF_NCR_HTML_CAP1_COMPLETION_LOCAL_DISPOSITION_2026-10-16.md`; proof `docs/reviews/evidence/ncr-html-cap1-completion-local-20261016.json`. Current operator explicitly authorized fixing failed parts and moving tranche. Independent cap1 receipt9fde97a251da6a94a8df86e337819b04a43e6e683e21bf8a3c44d55e77118e3c supports frozen source12 only. All control/native windows closed; no old slot refill or runtime/source release from this proof. No executable work order; schema-required currentAuthority four-field R5 pair historical only. Standing Local autonomy admits next connected preparation without phase-by-phase confirmation; B-E product/provider/public effects retain their before-effect boundaries.
 
 ## Accepted NCR Evidence And Continuation
 
@@ -37,7 +37,7 @@ Finite clipboard result ordering is accepted; actual OS write cancellation, whol
 
 ## Next Allowed Move
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-CAP1-ADMISSION-LOCAL-20261016. Source material=c379cb3c06219c483b5102a067f8de619ae2646a; proof=docs/reviews/evidence/ncr-html-cap1-admission-local-20261016.json. Local next prepares the corrected independent control oracle against actual protocol vocabulary and a fresh complete-matrix admission, joined with current B-E source/profile/tool requirements. Continue admitted preparation/implementation/verification/commit without per-documentary-step operator stops or manual relay. Current source12, six production/six oracles: exact int cap1 LOCAL_REVIEWER versus cap2 IMPLEMENTATION_WORKER; mandatory every current helper pin and comparison of all supplied source hashes before Git. Prior claim old pins necessarily rejected lifecycle drift was unsupported because helpers were excluded; corrected now, old46-pin manifest lacks two current oracles and refuses before Git. No old pin/proof rewrite or runtime release. Root RED33FAIL/32PASS then65PASS; connected121PASS/1deselected. Distinct one-shot actual inert attempt FAIL_ORACLE after3 reaped children: probe literal UNKNOWN differs from NOT_ACCEPTED_UNKNOWN; first-case terminal and receipt never saved. Preserve failure, no fabricated completion or accepted independent matrix. Root3/5 and reviewer1/2 programs, matrix1/1, children3/26, all remaining slots retired; no refill/replay. Prior native one-shot windows remain closed. Six tool paths and two dependencies present only, Docker daemon/image/Chromium/full staged source/B-E actual cleanup and journeys still unproved. Source acceptance bounded; no executable WO and no B-E/cap1 product/parent/disposal/provider/public release. CurrentAuthority four-field R5 pair historical only. Same root NCR_HTML_CONFIGURED_RECEIPT_CONTROL_PROOF, dependent source generation8, SCEC2/counters2,0,2,0/two blockers/freeze; no transition or independentCriticalEvidence. Procedure PARTIAL_WITH_REASON; original failures/raw custody retained, no cleanup/deletion attempted. Prior7 P4 blocked/excluded rows retained, normal collector only. R1/R2partial,R3/R4open,R5/R6deferred; foundation active/extension NOT_APPLIED/projectOPEN; data/custody/business/send/B2/P11/public/deploy parked; LHW24 retained.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-CAP1-COMPLETION-LOCAL-20261016. Material=e10c2698202fb3e9de65cd878d6a10022afba4a4; proof=docs/reviews/evidence/ncr-html-cap1-completion-local-20261016.json. NEXT_TRANCHE=NCR_HTML_B_E_SOURCE_RELEASE_AND_PREREQUISITE_QUALIFICATION; entry=READY_FOR_LOCAL_PREPARATION. Local enters the next tranche: current immutable source/profile release and exact pins, scoped Docker context/daemon/cached image and Chromium identity qualification, owned synthetic stage and prospective finite B-E effect/cleanup envelope. Continue admitted preparation/implementation/verification/commit without documentary micro-stops or manual relay; current receipt alone does not release product/runtime effects. Do not rewrite/repoint old pin evidence or refill old slots. Selected failed cap1 proof now resolved: source-reviewed corrected independent oracle, fake9cases/26calls/child0 PASS and fake receipt refused, actual9cases/26 inert children PASS. Receipt SHA2569fde97a251da6a94a8df86e337819b04a43e6e683e21bf8a3c44d55e77118e3c; raw commands/terminals precede assertions, separate digest and root joins/admission PASS. Source12 and old failed proof hashes stable, production edits0; prior121/65 source tests and distinct bounded native proof consumed at original revisions, no broad/native rerun. Old failed3-child control and Local native ACK failure remain historical failures, not upgraded. Fresh current operator completion grant root1/3/reviewer2/4 programs, matrix1/2, children26/52; no new matrix retry, unused slots retired. All old/new control/native windows closed. B-E/cap1 product journey/full parent/disposal/provider/public unproved and unreleased; no executable WO. Four-field currentAuthority R5 pair historical only. Same root NCR_HTML_CONFIGURED_RECEIPT_CONTROL_PROOF/source generation8/SCEC2/counters2,0,2,0/two blockers/freeze; no transition or independentCriticalEvidence. Earlier preparation PARTIAL_WITH_REASON retained, current probe full model preflight before actual children; all custody retained, no cleanup deletion. Prior7 P4 blocked/excluded rows retained, normal collector only. R1/R2partial,R3/R4open,R5/R6deferred; foundation active/extension NOT_APPLIED/projectOPEN; data/custody/business/send/B2/P11/public/deploy parked; LHW24 retained.
 
 ## Active Boundary
 T3B has a Local-verified active v1 specification. Party B is verified and T3C-C1 tooling accepted at `db78c87df`; T3C-C2 and Party C are verified. T3D-C1 tooling is accepted at `9ed844c2a` without source. T3D-C0-R1 closed at `2fffa1ef7`. T3D-C3 was accepted bounded at `88137e9a2`, but actual-mode prepare attempts failed before Party B/C execution; authorized cleanup removed the failed root and discarded unaccepted worker changes. G1 stopped, G2-G6 parked, and G7 research closed at `660601f0e` with `ADAPT_EXISTING_HANDOFF_ONLY`. Evidence-join sufficiency stays WATCH; no implementation successor exists. Rejected T2 paths remain archived; HRLTP-T2 paused.
@@ -83,7 +83,7 @@ Historical conditional OBS-079b96e73400827c trusted BLOCKED/adjudication remains
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: exact6 source/generated continuity for current cap1 source disposition and incomplete independent proof; no checker/hook/carrier semantics.
+Authorized guard-maintenance scope: exact6 source/generated continuity for accepted independent cap1 proof and next B-E preparation tranche; no checker/hook/carrier semantics.
 Protected paths:
 - `AGENT_HANDOFF_V63_2026-09-18.md`
 - `CVF_SESSION_MEMORY.md`
@@ -91,8 +91,8 @@ Protected paths:
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-Operator authorization: current next and standing direct Local implementation/review/commit authority without micro-stops.
-Rollback boundary: exact6 only; preserve source proofs, every failed attempt, all SCEC counters/blockers/freeze, P4 exclusions and parked effects.
+Operator authorization: current fix-failures/move-tranche instruction plus standing Local review/implementation/commit autonomy.
+Rollback boundary: exact6 only; preserve source12, old/new proof and failure history, SCEC counters/blockers/freeze, P4 exclusions and parked effects.
 
 ## Agent Operation Trace Block
 
@@ -100,22 +100,22 @@ Rollback boundary: exact6 only; preserve source proofs, every failed attempt, al
 |---|---|
 | Actor | Local INTERNAL_AGENT steward |
 | Provider or surface | private workspace |
-| Session or invocation | ncr-html-cap1-admission-local-20261016 |
+| Session or invocation | ncr-html-cap1-completion-local-20261016 |
 | Working directory | repository root |
-| Command or tool surface | four source continuity edits, canonical generator, exact6 commit and serial split closure |
+| Command or tool surface | four continuity source edits, canonical generator, exact6 commit and serial split closure |
 | Target paths | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Allowed scope source | current next and fresh direct Local cap1/source envelope |
-| Before status evidence | exact7 material c379cb3c06219c483b5102a067f8de619ae2646a committed; stagedempty |
-| After status evidence | exact6 current mode/next aligned; source accepted and failed independent matrix kept separate |
-| Diff evidence | exact6 staged manifest and split ranges |
-| Approval boundary | documentary continuity only; no runtime/profile/native repeat/provider/public release |
-| Claim boundary | bounded source acceptance; actual matrix/B-E incomplete |
+| Allowed scope source | current finish-failures/move-tranche instruction and completion baseline |
+| Before status evidence | exact4 material e10c2698202fb3e9de65cd878d6a10022afba4a4 committed; stagedempty |
+| After status evidence | exact6 accepted cap1/next B-E preparation state aligned; old failures retained |
+| Diff evidence | exact6 staged manifest and split committed ranges |
+| Approval boundary | continuity and next preparation only; no B-E/runtime/provider/public effect grant |
+| Claim boundary | current cap1 nine-case control proof only, no full parent/disposal |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-html-cap1-admission-local-20261016 |
+| Invocation ID | ncr-html-cap1-completion-local-20261016 |
 | Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Manifest delta | MATCH exact6 |
-| Deletion or rename disposition | none; raw failures/custody retained |
+| Deletion or rename disposition | none; raw old/new custody retained |
 
 ## Claim Boundary
 Current facts, exact packet binding and permitted next action only. Historical Home/O6 evidence remains bounded; no whole-roadmap, live/provider, backend cancellation, release/public/deployment or model-winner claim.
