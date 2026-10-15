@@ -1,0 +1,215 @@
+{
+  "schemaVersion": "cvf.ncrHtmlRootAdmissionDesignEvidence.v1",
+  "recordedAtUtc": "2026-10-15T03:06:34.346372+00:00",
+  "sourceHead": "022edc35a100dd1b989f182c67d3974c4389a75a",
+  "overallExecutionAdmission": "BLOCKED_EXISTING_ROUND_THREE_ROUTE",
+  "newEffectApprovalRequested": false,
+  "snapshotPacket": {
+    "path": "docs/reviews/evidence/ncr-html-root-admission-v2-packet-20261015.json",
+    "rawSha256": "9b904944a77cb9e7c228a17ebc692ca926e21cdfb6755d1dd77544af5bb5c3f6"
+  },
+  "evaluationScope": "ISOLATED_BYTE_IDENTICAL_PROSPECTIVE_PAIR_NOT_PRODUCTION_DISPATCH",
+  "canonicalCommand": [
+    "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+    "-B",
+    "governance/compat/run_preapproval_feasibility_gate.py",
+    "--repo-root",
+    "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-html-root-admission-v2-design-20261015\\snapshot-root-terminal",
+    "--proposal",
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_ROOT_ADMISSION_V2_2026-10-15.md",
+    "--approval-target",
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_ROOT_ADMISSION_V2_2026-10-15.md",
+    "--json"
+  ],
+  "canonicalExitCode": 0,
+  "canonicalReceipt": {
+    "approvalTarget": {
+      "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_ROOT_ADMISSION_V2_2026-10-15.md",
+      "sha256": "36635e00a3178d8581ae3da7a76c73bff39993379af3e5a2becf68a382e86778"
+    },
+    "canonicalBlockCount": 1,
+    "canonicalViolations": [],
+    "companion": {
+      "path": "docs/reviews/evidence/ncr-html-root-admission-v2-preapproval-20261015.json",
+      "sha256": "80ba6517d2fa0a4689ef3aa30e130f4fdeeee691b02fe937e871789a0e050d87"
+    },
+    "coverageDisposition": "NOT_APPLICABLE",
+    "diagnostics": [],
+    "effectAdmission": false,
+    "operatorApprovalRequired": true,
+    "prerequisites": {
+      "deferred": 2,
+      "examined": 2
+    },
+    "proposal": {
+      "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_ROOT_ADMISSION_V2_2026-10-15.md",
+      "sha256": "36635e00a3178d8581ae3da7a76c73bff39993379af3e5a2becf68a382e86778"
+    },
+    "prospectiveOutcomeSha256": "a3986c6222e1c3a6310df522a6a365585929206a45e8c47d56ed944276b77b67",
+    "queue": null,
+    "runtimeReadiness": false,
+    "schemaVersion": "cvf.preapprovalFeasibilityReceipt.v1",
+    "technicalDisposition": "FEASIBLE_FOR_INTEGRATED_ROOT_BUILD"
+  },
+  "reviewCost": {
+    "canonicalFunction": "check_review_cost_control.diagnose",
+    "applicable": true,
+    "issues": [
+      "reviewRoundCount >= 3 is not eligible for automatic re-dispatch; operator escalation is required",
+      "reviewRoundCount >= 2 requires exact new independent critical evidence IDs"
+    ],
+    "verdict": "BLOCKED"
+  },
+  "roleGraph": {
+    "canonicalFunction": "check_gate_to_role_closeability.check_work_order",
+    "candidateStatus": "HOLD_ADMISSION_RECONCILIATION",
+    "conditionalProjectionStatus": "ACTIVE",
+    "violations": [],
+    "claimBoundary": "Conditional graph only; no live active work order or dispatch authority."
+  },
+  "stockScaffold": {
+    "exitCode": 2,
+    "log": ".cvf/runtime/ncr-html-root-admission-v2-design-20261015/scaffold-round3-stop.log",
+    "result": "REJECTED_BEFORE_OUTPUT"
+  },
+  "sourcePins": [
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/__init__.py",
+      "rawSha256": "8133757501bbbcc154a92e7758df1a3df3c2957a0e205cd4f39cf03721ea69fd",
+      "scope": "TARGETED_OPERATIVE_SOURCES_NOT_CORPUS_COVERAGE"
+    },
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/lifecycle.py",
+      "rawSha256": "4d086bb21745aee82648a37f15ef428d37a936102ad47f38911c7e4e13abbd0b",
+      "scope": "TARGETED_OPERATIVE_SOURCES_NOT_CORPUS_COVERAGE"
+    },
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/profile.py",
+      "rawSha256": "730a1c33bc8258a6003023fad60f6ab9fb7cb775e054c5b9629c9cf59e893e76",
+      "scope": "TARGETED_OPERATIVE_SOURCES_NOT_CORPUS_COVERAGE"
+    },
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/test_control.py",
+      "rawSha256": "2a4f6acff7a23f4c783277ca6966c77d89a442ae2f297fb0dbe7529e2abf5aa3",
+      "scope": "TARGETED_OPERATIVE_SOURCES_NOT_CORPUS_COVERAGE"
+    },
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/journey.cjs",
+      "rawSha256": "37d7316cc62c1b757750d570063e78cc059c1c8d53865af16e0af0d01ba38431",
+      "scope": "TARGETED_OPERATIVE_SOURCES_NOT_CORPUS_COVERAGE"
+    },
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/journey.test.cjs",
+      "rawSha256": "0e8187004d28ba2685e19c9397ec4c2ec1add0fb403a3c3f3e78216fe5c0d00c",
+      "scope": "TARGETED_OPERATIVE_SOURCES_NOT_CORPUS_COVERAGE"
+    },
+    {
+      "path": "scripts/probe_cvf_q001_synthetic_system_chain.py",
+      "rawSha256": "b09924875254872611332baa11fdad4ec0b574d69c74e217ba0bb81a56cf2662",
+      "scope": "TARGETED_OPERATIVE_SOURCES_NOT_CORPUS_COVERAGE"
+    },
+    {
+      "path": "scripts/probe_cvf_w05_browser_chain.cjs",
+      "rawSha256": "0d9a261cddc5e21c00938570f5f692163d91cade21d2cc02c54c20bbbe91c494",
+      "scope": "TARGETED_OPERATIVE_SOURCES_NOT_CORPUS_COVERAGE"
+    },
+    {
+      "path": "docs/assessments/CVF_NCR_HTML_ROOT_BUILD_SOURCE_REASSESSMENT_2026-10-15.md",
+      "rawSha256": "cd7be9162321be4287c850243cf6c2df79f45936650f5dd3cb7668e53775d66c",
+      "scope": "TARGETED_OPERATIVE_SOURCES_NOT_CORPUS_COVERAGE"
+    },
+    {
+      "path": "governance/compat/check_review_cost_control.py",
+      "rawSha256": "82d970a5f89fb33bb4d400ffc64330d1ee54c637a2817295beb781c77d590c6c",
+      "scope": "TARGETED_OPERATIVE_SOURCES_NOT_CORPUS_COVERAGE"
+    },
+    {
+      "path": "governance/compat/review_convergence_scaffold.py",
+      "rawSha256": "9ce51804784a1f1f1ff085133811ee452675b6dc379362f65109eb793f5fbafa",
+      "scope": "TARGETED_OPERATIVE_SOURCES_NOT_CORPUS_COVERAGE"
+    },
+    {
+      "path": "governance/compat/preapproval_feasibility_contract.py",
+      "rawSha256": "c351608f82d25ff99f3911c1f13c4990cf5a7ad9a886a23f946fa804010e346b",
+      "scope": "TARGETED_OPERATIVE_SOURCES_NOT_CORPUS_COVERAGE"
+    },
+    {
+      "path": "docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0026.md",
+      "rawSha256": "9d949e61de7f01944afd988dfb38fb5c7d6f57c8dea81198e7f158d9910338a8",
+      "scope": "TARGETED_OPERATIVE_SOURCES_NOT_CORPUS_COVERAGE"
+    },
+    {
+      "path": "docs/reference/review_cost_control/CVF_REVIEW_COST_AND_DIMINISHING_RETURN_CONTROL_STANDARD.md",
+      "rawSha256": "17d27144c7db34b717633c14428a778b2b00949f62d71e6a1d8f4f9a2bbe8700",
+      "scope": "TARGETED_OPERATIVE_SOURCES_NOT_CORPUS_COVERAGE"
+    }
+  ],
+  "copiedCanonicalDependencies": [
+    {
+      "path": "docs/reviews/CVF_NCR_HTML_CONFIGURED_RECEIPT_CONDITIONAL_COMPLETION_2026-10-14.md",
+      "rawSha256": "36c9b8513fdd614d9e798b4ef88960f68887fa43ec43b67811d6560d736805bd"
+    },
+    {
+      "path": "docs/reviews/CVF_NCR_HTML_CONFIGURED_RECEIPT_CONDITIONAL_RETURN_2026-10-14.md",
+      "rawSha256": "ec8a0418af0db8aacde0df54b73a583758dbf33959556c965c328b4604d85254"
+    },
+    {
+      "path": "docs/reviews/CVF_NCR_HTML_CONFIGURED_RECEIPT_WORKER_RETURN_2026-10-14.md",
+      "rawSha256": "53b97dd0dff1004f2c73038335ffe9a6a75ea5fc14a159e431654706e719efe0"
+    }
+  ],
+  "budgetArithmetic": {
+    "utilityByPhase": [
+      5,
+      2,
+      10,
+      37
+    ],
+    "utilityTotal": 54,
+    "separateRootLaunches": 4,
+    "readinessByPhase": [
+      4,
+      6,
+      2
+    ],
+    "readinessTotal": 12,
+    "workSeconds": 900,
+    "cleanupSeconds": 120,
+    "totalControlledWaitSeconds": 1020,
+    "sourceGitStarts": 8,
+    "jobConcurrentProcesses": 32
+  },
+  "newOperations": {
+    "workers": 0,
+    "nativeProbeStarts": 0,
+    "productStarts": 0,
+    "browserStarts": 0,
+    "containerCreates": 0,
+    "exportPosts": 0,
+    "evaluatePosts": 0,
+    "providerCalls": 0,
+    "officialApiReferenceReads": 2,
+    "offlineCanonicalCallerInvocations": 3
+  },
+  "rootHistory": {
+    "chainOrdinal": 2,
+    "prospectiveReworkGeneration": 3,
+    "counterReset": false,
+    "newIndependentCriticalEvidence": "NONE",
+    "allSixFindingsDependent": true
+  },
+  "nextOwner": "LOCAL_EXISTING_ROUND_THREE_OWNER_AND_MACHINE_ADMISSION_RECONCILIATION",
+  "claimBoundary": "Source/design proof only. Lower-level declared-state FEASIBLE does not supersede explicit redispatch rejection. No code/checker/guard or source-history changed.",
+  "documentaryCorrection": {
+    "firstPreflight": "FAIL confirmation-purpose/intake-routing headings",
+    "sourcePreparation": "PARTIAL_WITH_REASON: two operative checker bodies read after initial preflight",
+    "sourceOfChange": "Baseline documentary fields only; work-order bytes, outcome, requirements, phase budgets and source pins preserved",
+    "initialPacketCustody": ".cvf/runtime/ncr-html-root-admission-v2-design-20261015/initial-ncr-html-root-admission-v2-packet-20261015.json",
+    "initialLocalCustody": ".cvf/runtime/ncr-html-root-admission-v2-design-20261015/initial-ncr-html-root-admission-v2-local-20261015.json",
+    "finalBaselineRawSha256": "06fda4d913337b3c5b2be3faef8cc6018c5de5e4be38af1837c220bb79a0a59c",
+    "refreshPurpose": "Bind actual final baseline bytes; no runtime retry",
+    "secondPreflight": "FAIL missing conditional Internal source row; predicate then read and corrected",
+    "preTerminalPacketCustody": ".cvf/runtime/ncr-html-root-admission-v2-design-20261015/pre-terminal-ncr-html-root-admission-v2-packet-20261015.json",
+    "preTerminalLocalCustody": ".cvf/runtime/ncr-html-root-admission-v2-design-20261015/pre-terminal-ncr-html-root-admission-v2-local-20261015.json"
+  }
+}
