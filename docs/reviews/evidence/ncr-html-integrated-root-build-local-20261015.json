@@ -1,0 +1,655 @@
+{
+  "schemaVersion": "cvf.ncrHtmlRootLocalReview.v1",
+  "status": "BLOCKED_WITH_REASON",
+  "reviewBaseHead": "0850546dea01b0f15586132549e4330a1af25c72",
+  "recordedAtUtc": "2026-10-15T02:27:51.572908+00:00",
+  "dispatchWorkOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_INTEGRATED_ROOT_BUILD_RELEASE_2026-10-15.md",
+  "reviewMatrix": {
+    "reviewBaseHead": "0850546dea01b0f15586132549e4330a1af25c72",
+    "recordedAtUtc": "2026-10-15T02:17:05.330021+00:00",
+    "preRepairAuditDisposition": "COMPLETE_BEFORE_FIRST_REPAIR",
+    "manifest": [
+      "scripts/probe_cvf_q001_synthetic_system_chain.py",
+      "scripts/probe_cvf_w05_browser_chain.cjs",
+      "scripts/cvf_ncr_html_owned_profile/__init__.py",
+      "scripts/cvf_ncr_html_owned_profile/lifecycle.py",
+      "scripts/cvf_ncr_html_owned_profile/profile.py",
+      "scripts/cvf_ncr_html_owned_profile/test_control.py",
+      "scripts/cvf_ncr_html_owned_profile/journey.cjs",
+      "scripts/cvf_ncr_html_owned_profile/journey.test.cjs",
+      "docs/reviews/CVF_NCR_HTML_INTEGRATED_ROOT_BUILD_WORKER_RETURN_2026-10-15.md",
+      "docs/reviews/evidence/ncr-html-integrated-root-build-worker-20261015.json"
+    ],
+    "workerOriginalHashes": {
+      "scripts/probe_cvf_q001_synthetic_system_chain.py": "b09924875254872611332baa11fdad4ec0b574d69c74e217ba0bb81a56cf2662",
+      "scripts/probe_cvf_w05_browser_chain.cjs": "0d9a261cddc5e21c00938570f5f692163d91cade21d2cc02c54c20bbbe91c494",
+      "scripts/cvf_ncr_html_owned_profile/__init__.py": "730c636c86f996588580716960460f8c5e796da14d98a2d9a5fff549c419db22",
+      "scripts/cvf_ncr_html_owned_profile/lifecycle.py": "a194ade8d773bae1a872ed71a71b830c2fb84eb3df48c96b5939e4ef1e933431",
+      "scripts/cvf_ncr_html_owned_profile/profile.py": "2b7173b1b0e4a6f59e9adaed345e9741cce2da77a0ad467bad09cd227e88658e",
+      "scripts/cvf_ncr_html_owned_profile/test_control.py": "2a4f6acff7a23f4c783277ca6966c77d89a442ae2f297fb0dbe7529e2abf5aa3",
+      "scripts/cvf_ncr_html_owned_profile/journey.cjs": "9303e4df0ed0f54b1182e0117fb6b39c0c6b6cc842ff11ca91bd91cd29315383",
+      "scripts/cvf_ncr_html_owned_profile/journey.test.cjs": "0e8187004d28ba2685e19c9397ec4c2ec1add0fb403a3c3f3e78216fe5c0d00c",
+      "docs/reviews/CVF_NCR_HTML_INTEGRATED_ROOT_BUILD_WORKER_RETURN_2026-10-15.md": "8e7d03ac5325076e9c1688fee63cf6f184c2362142766bbc71bdef54eae76897",
+      "docs/reviews/evidence/ncr-html-integrated-root-build-worker-20261015.json": "ff32ddd56f2b85be2f15ffd02afc144be3f5888a593dc858705d0fda4a2652fd"
+    },
+    "sourceReadDepth": "All8 changed source bodies and both entry diffs; full worker return, selected proof requirement/command/failed-run/freeze fields. No complete checker/corpus claim.",
+    "matrix": {
+      "contract_schema": "pair/ledger/frozen gate valid; worker positive and REQ08 truthfully BLOCKED",
+      "authority_source": "new release13 pins verified; no retry/new worker container; Local6+1/1 remains separate",
+      "path_repository": "exact10, no staged paths, selected source Git pinned; originals preserved",
+      "negative_cases": "worker9/26 consumed, bounded reuse; Local6 independently authored controls next",
+      "test_adequacy": "native launch error path and ambiguous creation identity not covered; no new source assertions from test counts",
+      "closure_range_commit": "one amended material plus one exact6 continuity, no combined-range manifest fiction"
+    },
+    "findings": [
+      {
+        "id": "LOCAL-HCR-01",
+        "priority": "P1",
+        "source": "lifecycle.py Native.launch",
+        "fact": "Popen precedes fallible identity and registration; identity failure can leave suspended created process outside roots/job",
+        "action": "register provisional creation handle immediately; assign/identify/persist inside guarded block; kill/wait exact retained Popen handle on failure"
+      },
+      {
+        "id": "LOCAL-HCR-02",
+        "priority": "P1",
+        "source": "__init__.py Docker create; lifecycle.py finalize",
+        "fact": "unknown created container ID maps None not in queried set to ABSENT and may allow stage deletion",
+        "action": "mark pending identity before create; persist expected candidate; unresolved identity remains UNKNOWN and forbids disposal"
+      },
+      {
+        "id": "LOCAL-HCR-03",
+        "priority": "P2",
+        "source": "Collector.command and controller waits",
+        "fact": "runtime deadline enforced only in browser loop, not all later command/start/wait admissions",
+        "action": "clamp commands/HTTP waits and native launch admission to original runtime deadline; separate cleanup120 cap"
+      },
+      {
+        "id": "LOCAL-HCR-04",
+        "priority": "P2",
+        "source": "controller env and journey preview assertion",
+        "fact": "env.items eagerly evaluates disallowed values; Local arbitrary input is coupled to literal Hoa Sen",
+        "action": "read allowed env values only; derive preview heading from actual input"
+      }
+    ],
+    "repairRouting": "BOUNDED_LOCAL_CORRECTION: same ROOT01..07 and exact8 code family, no architecture/authority/effect/budget expansion or new worker invocation",
+    "localBudget": {
+      "controlClasses": 6,
+      "substituteStarts": 18,
+      "substituteTimeoutSeconds": 2,
+      "controlTotalSeconds": 60,
+      "exports": 1,
+      "evaluates": 1,
+      "provider": 0
+    }
+  },
+  "materialManifest": [
+    "scripts/probe_cvf_q001_synthetic_system_chain.py",
+    "scripts/probe_cvf_w05_browser_chain.cjs",
+    "scripts/cvf_ncr_html_owned_profile/__init__.py",
+    "scripts/cvf_ncr_html_owned_profile/lifecycle.py",
+    "scripts/cvf_ncr_html_owned_profile/profile.py",
+    "scripts/cvf_ncr_html_owned_profile/test_control.py",
+    "scripts/cvf_ncr_html_owned_profile/journey.cjs",
+    "scripts/cvf_ncr_html_owned_profile/journey.test.cjs",
+    "docs/reviews/CVF_NCR_HTML_INTEGRATED_ROOT_BUILD_WORKER_RETURN_2026-10-15.md",
+    "docs/reviews/evidence/ncr-html-integrated-root-build-worker-20261015.json",
+    "docs/reviews/CVF_NCR_HTML_INTEGRATED_ROOT_BUILD_COMPLETION_2026-10-15.md",
+    "docs/reviews/evidence/ncr-html-integrated-root-build-local-20261015.json",
+    "docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md"
+  ],
+  "originalWorkerEvidenceSha256": "ff32ddd56f2b85be2f15ffd02afc144be3f5888a593dc858705d0fda4a2652fd",
+  "originalFreezeReceipt": ".cvf/runtime/ncr-html-integrated-root-build-worker-20261015/final-frozen-gate-receipt.json",
+  "finalCodeSources": {
+    "scripts/probe_cvf_q001_synthetic_system_chain.py": "b09924875254872611332baa11fdad4ec0b574d69c74e217ba0bb81a56cf2662",
+    "scripts/probe_cvf_w05_browser_chain.cjs": "0d9a261cddc5e21c00938570f5f692163d91cade21d2cc02c54c20bbbe91c494",
+    "scripts/cvf_ncr_html_owned_profile/__init__.py": "8133757501bbbcc154a92e7758df1a3df3c2957a0e205cd4f39cf03721ea69fd",
+    "scripts/cvf_ncr_html_owned_profile/lifecycle.py": "4d086bb21745aee82648a37f15ef428d37a936102ad47f38911c7e4e13abbd0b",
+    "scripts/cvf_ncr_html_owned_profile/profile.py": "730a1c33bc8258a6003023fad60f6ab9fb7cb775e054c5b9629c9cf59e893e76",
+    "scripts/cvf_ncr_html_owned_profile/test_control.py": "2a4f6acff7a23f4c783277ca6966c77d89a442ae2f297fb0dbe7529e2abf5aa3",
+    "scripts/cvf_ncr_html_owned_profile/journey.cjs": "37d7316cc62c1b757750d570063e78cc059c1c8d53865af16e0af0d01ba38431",
+    "scripts/cvf_ncr_html_owned_profile/journey.test.cjs": "0e8187004d28ba2685e19c9397ec4c2ec1add0fb403a3c3f3e78216fe5c0d00c"
+  },
+  "controls": {
+    "actor": "LOCAL_REVIEWER_NOT_IMPLEMENTATION_WORKER",
+    "passed": 6,
+    "substituteStarts": 7,
+    "oraclePath": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-html-root-local-review-20261015\\probe_controls.py",
+    "oracleSha256": "b8a2b712002536faa5a7e211c08fda79a2f4a027154ff0a386391a8ea1f10def",
+    "cases": [
+      {
+        "case": "kill-exit",
+        "pass": true,
+        "observed": {
+          "result": {
+            "errors": [
+              "taskkill: RuntimeError: taskkill: command failed or timed out; evidence retained"
+            ],
+            "ownedIdentities": [
+              {
+                "pid": 432100002,
+                "creation100ns": 71,
+                "image": "INERT_NO_PRODUCT"
+              }
+            ],
+            "processQuery": "ABSENT",
+            "containerQuery": "ABSENT",
+            "descendantQuery": "ABSENT",
+            "listenerQuery": "ABSENT",
+            "stageRemoved": false,
+            "disposition": "NOT_ACCEPTED_UNKNOWN"
+          },
+          "errors": [],
+          "substituteStarts": 1,
+          "events": [
+            {
+              "kind": "taskkill",
+              "argv": [
+                "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+                "-B",
+                "-c",
+                "import sys,time;time.sleep(0);sys.stdout.write('');sys.exit(37)"
+              ],
+              "timeoutSeconds": 2,
+              "exitCode": 37,
+              "stdout": "",
+              "stderr": "",
+              "timedOut": false,
+              "elapsedSeconds": 0.031
+            }
+          ],
+          "elapsedSeconds": 0.031,
+          "createdChildStillAlive": null
+        }
+      },
+      {
+        "case": "process-exit",
+        "pass": true,
+        "observed": {
+          "result": {
+            "errors": [
+              "tasklist: RuntimeError: tasklist: command failed or timed out; evidence retained"
+            ],
+            "ownedIdentities": [
+              {
+                "pid": 432100002,
+                "creation100ns": 71,
+                "image": "INERT_NO_PRODUCT"
+              }
+            ],
+            "processQuery": "UNKNOWN",
+            "containerQuery": "ABSENT",
+            "descendantQuery": "ABSENT",
+            "listenerQuery": "ABSENT",
+            "stageRemoved": false,
+            "disposition": "NOT_ACCEPTED_UNKNOWN"
+          },
+          "errors": [],
+          "substituteStarts": 1,
+          "events": [
+            {
+              "kind": "tasklist",
+              "argv": [
+                "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+                "-B",
+                "-c",
+                "import sys,time;time.sleep(0);sys.stdout.write('');sys.exit(31)"
+              ],
+              "timeoutSeconds": 2,
+              "exitCode": 31,
+              "stdout": "",
+              "stderr": "",
+              "timedOut": false,
+              "elapsedSeconds": 0.047
+            }
+          ],
+          "elapsedSeconds": 0.047,
+          "createdChildStillAlive": null
+        }
+      },
+      {
+        "case": "container-exit",
+        "pass": true,
+        "observed": {
+          "result": {
+            "errors": [
+              "docker-ps: RuntimeError: docker-ps: command failed or timed out; evidence retained"
+            ],
+            "ownedIdentities": [
+              {
+                "pid": 432100002,
+                "creation100ns": 71,
+                "image": "INERT_NO_PRODUCT"
+              }
+            ],
+            "processQuery": "ABSENT",
+            "containerQuery": "UNKNOWN",
+            "descendantQuery": "ABSENT",
+            "listenerQuery": "ABSENT",
+            "stageRemoved": false,
+            "disposition": "NOT_ACCEPTED_UNKNOWN"
+          },
+          "errors": [],
+          "substituteStarts": 1,
+          "events": [
+            {
+              "kind": "docker-ps",
+              "argv": [
+                "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+                "-B",
+                "-c",
+                "import sys,time;time.sleep(0);sys.stdout.write('');sys.exit(29)"
+              ],
+              "timeoutSeconds": 2,
+              "exitCode": 29,
+              "stdout": "",
+              "stderr": "",
+              "timedOut": false,
+              "elapsedSeconds": 0.047
+            }
+          ],
+          "elapsedSeconds": 0.047,
+          "createdChildStillAlive": null
+        }
+      },
+      {
+        "case": "timeout-and-parse",
+        "pass": true,
+        "observed": {
+          "result": {
+            "errors": [
+              "tasklist: RuntimeError: tasklist: command failed or timed out; evidence retained",
+              "docker-ps: RuntimeError: Docker query was malformed, not proof of absence"
+            ],
+            "ownedIdentities": [
+              {
+                "pid": 432100002,
+                "creation100ns": 71,
+                "image": "INERT_NO_PRODUCT"
+              }
+            ],
+            "processQuery": "UNKNOWN",
+            "containerQuery": "UNKNOWN",
+            "descendantQuery": "ABSENT",
+            "listenerQuery": "ABSENT",
+            "stageRemoved": false,
+            "disposition": "NOT_ACCEPTED_UNKNOWN"
+          },
+          "errors": [],
+          "substituteStarts": 2,
+          "events": [
+            {
+              "kind": "tasklist",
+              "argv": [
+                "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+                "-B",
+                "-c",
+                "import sys,time;time.sleep(1);sys.stdout.write('');sys.exit(0)"
+              ],
+              "timeoutSeconds": 0.07999999995809048,
+              "exitCode": null,
+              "stdout": "",
+              "stderr": "",
+              "timedOut": true,
+              "elapsedSeconds": 0.109
+            },
+            {
+              "kind": "docker-ps",
+              "argv": [
+                "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+                "-B",
+                "-c",
+                "import sys,time;time.sleep(0);sys.stdout.write('malformed identity\\n');sys.exit(0)"
+              ],
+              "timeoutSeconds": 2,
+              "exitCode": 0,
+              "stdout": "malformed identity\n",
+              "stderr": "",
+              "timedOut": false,
+              "elapsedSeconds": 0.047
+            }
+          ],
+          "elapsedSeconds": 0.156,
+          "createdChildStillAlive": null
+        }
+      },
+      {
+        "case": "creation-identity-failure",
+        "pass": true,
+        "observed": {
+          "result": {
+            "errors": [],
+            "ownedIdentities": [],
+            "processQuery": "ABSENT",
+            "containerQuery": "ABSENT",
+            "descendantQuery": "ABSENT",
+            "listenerQuery": "ABSENT",
+            "stageRemoved": true,
+            "disposition": "NOT_ACCEPTED_UNKNOWN"
+          },
+          "errors": [],
+          "substituteStarts": 1,
+          "events": [
+            {
+              "kind": "tasklist",
+              "argv": [
+                "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+                "-B",
+                "-c",
+                "import sys,time;time.sleep(0);sys.stdout.write('\"inert.exe\",\"4\",\"Console\",\"1\",\"1 K\"\\n');sys.exit(0)"
+              ],
+              "timeoutSeconds": 2,
+              "exitCode": 0,
+              "stdout": "\"inert.exe\",\"4\",\"Console\",\"1\",\"1 K\"\n",
+              "stderr": "",
+              "timedOut": false,
+              "elapsedSeconds": 0.031
+            }
+          ],
+          "elapsedSeconds": 0.031,
+          "createdChildStillAlive": false
+        }
+      },
+      {
+        "case": "unidentified-live-container",
+        "pass": true,
+        "observed": {
+          "result": {
+            "errors": [
+              "container identity unresolved after creation attempt; preserve stage"
+            ],
+            "ownedIdentities": [],
+            "processQuery": "ABSENT",
+            "containerQuery": "UNKNOWN",
+            "descendantQuery": "ABSENT",
+            "listenerQuery": "ABSENT",
+            "stageRemoved": false,
+            "disposition": "NOT_ACCEPTED_UNKNOWN"
+          },
+          "errors": [],
+          "substituteStarts": 1,
+          "events": [
+            {
+              "kind": "docker-ps",
+              "argv": [
+                "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+                "-B",
+                "-c",
+                "import sys,time;time.sleep(0);sys.stdout.write('ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff\\n');sys.exit(0)"
+              ],
+              "timeoutSeconds": 2,
+              "exitCode": 0,
+              "stdout": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff\n",
+              "stderr": "",
+              "timedOut": false,
+              "elapsedSeconds": 0.047
+            }
+          ],
+          "elapsedSeconds": 0.047,
+          "createdChildStillAlive": null
+        }
+      }
+    ],
+    "elapsedSeconds": 0.359,
+    "productStarts": 0,
+    "engineStarts": 0,
+    "providerStarts": 0,
+    "implementationSourceHashes": {
+      "scripts/cvf_ncr_html_owned_profile/journey.cjs": "37d7316cc62c1b757750d570063e78cc059c1c8d53865af16e0af0d01ba38431",
+      "scripts/cvf_ncr_html_owned_profile/journey.test.cjs": "0e8187004d28ba2685e19c9397ec4c2ec1add0fb403a3c3f3e78216fe5c0d00c",
+      "scripts/cvf_ncr_html_owned_profile/lifecycle.py": "4d086bb21745aee82648a37f15ef428d37a936102ad47f38911c7e4e13abbd0b",
+      "scripts/cvf_ncr_html_owned_profile/profile.py": "730a1c33bc8258a6003023fad60f6ab9fb7cb775e054c5b9629c9cf59e893e76",
+      "scripts/cvf_ncr_html_owned_profile/test_control.py": "2a4f6acff7a23f4c783277ca6966c77d89a442ae2f297fb0dbe7529e2abf5aa3",
+      "scripts/cvf_ncr_html_owned_profile/__init__.py": "8133757501bbbcc154a92e7758df1a3df3c2957a0e205cd4f39cf03721ea69fd"
+    }
+  },
+  "positive": {
+    "actor": "LOCAL_REVIEWER_NOT_IMPLEMENTATION_WORKER",
+    "namespace": "C:\\Users\\DELL\\AppData\\Local\\Temp\\cvf-ncr-html-local-20261015-0850546-022218",
+    "exitCode": 1,
+    "elapsedSeconds": 11.297,
+    "assertions": {
+      "actual_cli_completed": false,
+      "source_bytes_unchanged_after_control_and_positive": true,
+      "one_export_evaluate_no_model": false
+    },
+    "errors": [
+      "actual_cli_completed",
+      "one_export_evaluate_no_model",
+      "FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\DELL\\\\AppData\\\\Local\\\\Temp\\\\cvf-ncr-html-local-20261015-0850546-022218\\\\custody\\\\v1-route.json'"
+    ],
+    "oracleSha256": "e5d98df343f53f1fcb795c25b8bf359a10a894beac2fd5625baad8b1a731f44a",
+    "actualCounters": {
+      "exports": 0,
+      "readinessGets": 0
+    },
+    "actualFailures": [
+      "RuntimeError: installed-browser-path: command failed or timed out; evidence retained"
+    ],
+    "cleanup": {
+      "disposition": "NOT_STARTED_NO_NATIVE_RESOURCES",
+      "stageRemoved": true
+    },
+    "pass": false
+  },
+  "positiveAdmission": {
+    "actor": "LOCAL_REVIEWER_NOT_IMPLEMENTATION_WORKER",
+    "namespace": "C:\\Users\\DELL\\AppData\\Local\\Temp\\cvf-ncr-html-local-20261015-0850546-022218",
+    "argv": [
+      "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-B",
+      "scripts/probe_cvf_q001_synthetic_system_chain.py",
+      "--owned-profile-root",
+      "C:\\Users\\DELL\\AppData\\Local\\Temp\\cvf-ncr-html-local-20261015-0850546-022218",
+      "--engine-docker-image",
+      "sha256:a0725d62d5cfa8fc47b5e30be04bc08ea714a9cdd72c259595526f691db95294",
+      "--owned-profile-cap",
+      "1",
+      "--owned-profile-input",
+      "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-html-root-local-review-20261015\\positive-input.json",
+      "--owned-profile-controls",
+      "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-html-root-local-review-20261015\\controls-result.json"
+    ],
+    "startedAtUtc": "2026-10-15T02:22:18.034280+00:00",
+    "inputSha256": "b44c2b0e520b8a7423271a4614b535df054f7225bb317febb8752aff7107d270",
+    "sourceHashes": {
+      "scripts/cvf_ncr_html_owned_profile/journey.cjs": "37d7316cc62c1b757750d570063e78cc059c1c8d53865af16e0af0d01ba38431",
+      "scripts/cvf_ncr_html_owned_profile/journey.test.cjs": "0e8187004d28ba2685e19c9397ec4c2ec1add0fb403a3c3f3e78216fe5c0d00c",
+      "scripts/cvf_ncr_html_owned_profile/lifecycle.py": "4d086bb21745aee82648a37f15ef428d37a936102ad47f38911c7e4e13abbd0b",
+      "scripts/cvf_ncr_html_owned_profile/profile.py": "730a1c33bc8258a6003023fad60f6ab9fb7cb775e054c5b9629c9cf59e893e76",
+      "scripts/cvf_ncr_html_owned_profile/test_control.py": "2a4f6acff7a23f4c783277ca6966c77d89a442ae2f297fb0dbe7529e2abf5aa3",
+      "scripts/cvf_ncr_html_owned_profile/__init__.py": "8133757501bbbcc154a92e7758df1a3df3c2957a0e205cd4f39cf03721ea69fd"
+    },
+    "caps": {
+      "exports": 1,
+      "evaluates": 1,
+      "engineContainers": 1,
+      "provider": 0,
+      "readinessGets": 12,
+      "runtimeSeconds": 900,
+      "cleanupSeconds": 120
+    },
+    "controlReceiptSha256": "961b4b5f1d4a70bd561406b0e3832aa0927c042fc393f2d6532a4e75e495a464",
+    "noRetry": true
+  },
+  "actualLocalRunner": {
+    "schemaVersion": "cvf.ncrHtmlOwnedProfile.v1",
+    "namespace": "C:\\Users\\DELL\\AppData\\Local\\Temp\\cvf-ncr-html-local-20261015-0850546-022218",
+    "sources": {
+      "executionBaseHead": "0850546dea01b0f15586132549e4330a1af25c72",
+      "immutablePins": {
+        "docs/reviews/CVF_NCR_HTML_INTEGRATED_ROOT_CONTRACT_2026-10-14.md": "5998f2db7ca40457ffdecc08654456f19b20ee0ba97fbc43e6942c729b5a38f7",
+        "docs/assessments/CVF_NCR_HTML_OWNED_PROFILE_ADMISSION_PLAN_2026-10-14.md": "66e7780972a41a6155707d85c8058ecc2bf7f3766e9047387ae495cfced7eb91",
+        "docs/assessments/CVF_NCR_HTML_FRESH_PROFILE_USER_JOURNEY_SPEC_2026-10-14.md": "1d1a42f2c3f1e9d573b30cb46221e24ea1365d9f60aec95b6938e9fd10fb6a83",
+        "docs/reviews/CVF_NCR_PREFEAS_ROOT_BUILD_COMPLETION_2026-10-15.md": "80c712f40938de0b05b2bc71d8339dca6adadf54c03445a73f49e14f75c290c9",
+        "docs/reference/guard_orientation/README.md": "675c4c4a2219b53e73dc7f3fb000750eed859019b2521d01ddf66fba3ae00377",
+        "docs/reference/CVF_AGENT_EXECUTION_WORKFLOW_SOP_2026-05-19.md": "ec0aa577527634f57952fb3d1cfe3af632603cf44d5f433f8c27907384c33796",
+        "docs/reference/CVF_GOVERNED_WORK_LIFECYCLE_AND_DESIGN_CONTROL_STANDARD_2026-06-11.md": "b48f11363ee62a2ec4c85c6f9fba4540b90eb74475c31aeab18cfe4492a536de",
+        "docs/reference/review_cost_control/CVF_REVIEW_COST_AND_DIMINISHING_RETURN_CONTROL_STANDARD.md": "17d27144c7db34b717633c14428a778b2b00949f62d71e6a1d8f4f9a2bbe8700",
+        "docs/baselines/CVF_GC018_NCR_HTML_INTEGRATED_ROOT_BUILD_RELEASE_2026-10-15.md": "af06c979946f3547abbf90e8bed61613576c977bdd34624d46b8030e1c64f485",
+        "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_INTEGRATED_ROOT_BUILD_RELEASE_2026-10-15.md": "60ffd9fcb62a8b0854e4cf0fc846b979ae9934b8e8febc57db028b5c41721038",
+        "docs/reviews/evidence/ncr-html-integrated-root-build-release-preapproval-20261015.json": "31f33e9944983e9a08423ba62bacb6542abe5a75afb3d87395e70be9a9021af6"
+      },
+      "implementedHelpers": {
+        "scripts/probe_cvf_q001_synthetic_system_chain.py": "b09924875254872611332baa11fdad4ec0b574d69c74e217ba0bb81a56cf2662",
+        "scripts/probe_cvf_w05_browser_chain.cjs": "0d9a261cddc5e21c00938570f5f692163d91cade21d2cc02c54c20bbbe91c494",
+        "scripts/cvf_ncr_html_owned_profile/__init__.py": "8133757501bbbcc154a92e7758df1a3df3c2957a0e205cd4f39cf03721ea69fd",
+        "scripts/cvf_ncr_html_owned_profile/lifecycle.py": "4d086bb21745aee82648a37f15ef428d37a936102ad47f38911c7e4e13abbd0b",
+        "scripts/cvf_ncr_html_owned_profile/profile.py": "730a1c33bc8258a6003023fad60f6ab9fb7cb775e054c5b9629c9cf59e893e76",
+        "scripts/cvf_ncr_html_owned_profile/test_control.py": "2a4f6acff7a23f4c783277ca6966c77d89a442ae2f297fb0dbe7529e2abf5aa3",
+        "scripts/cvf_ncr_html_owned_profile/journey.cjs": "37d7316cc62c1b757750d570063e78cc059c1c8d53865af16e0af0d01ba38431",
+        "scripts/cvf_ncr_html_owned_profile/journey.test.cjs": "0e8187004d28ba2685e19c9397ec4c2ec1add0fb403a3c3f3e78216fe5c0d00c"
+      }
+    },
+    "caps": {
+      "exports": 1,
+      "evaluates": 1,
+      "readinessGets": 12,
+      "runtimeSeconds": 900,
+      "cleanupSeconds": 120
+    },
+    "state": {
+      "exports": 0,
+      "readinessGets": 0
+    },
+    "checkpoints": [],
+    "failures": [
+      "RuntimeError: installed-browser-path: command failed or timed out; evidence retained"
+    ],
+    "providerStarts": 0,
+    "actualDataConfigStoreReads": 0,
+    "retentionSeconds": null,
+    "cleanup": {
+      "disposition": "NOT_STARTED_NO_NATIVE_RESOURCES",
+      "stageRemoved": true
+    },
+    "elapsedSeconds": 11.157,
+    "ok": false
+  },
+  "actualLocalCommands": [
+    {
+      "kind": "docker-context",
+      "argv": [
+        "C:\\Users\\DELL\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.EXE",
+        "context",
+        "show"
+      ],
+      "timeoutSeconds": 10,
+      "exitCode": 0,
+      "stdout": "desktop-linux\n",
+      "stderr": "",
+      "timedOut": false,
+      "elapsedSeconds": 0.11
+    },
+    {
+      "kind": "docker-context-inspect",
+      "argv": [
+        "C:\\Users\\DELL\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.EXE",
+        "context",
+        "inspect",
+        "desktop-linux"
+      ],
+      "timeoutSeconds": 10,
+      "exitCode": 0,
+      "stdout": "[\n    {\n        \"Name\": \"desktop-linux\",\n        \"Metadata\": {\n            \"Description\": \"Docker Desktop\",\n            \"GODEBUG\": \"x509negativeserial=1\",\n            \"otel\": {\n                \"OTEL_EXPORTER_OTLP_ENDPOINT\": \"unix:////./c:/Users/DELL/AppData/Local/Docker/run/userAnalyticsOtlpHttp.sock\"\n            }\n        },\n        \"Endpoints\": {\n            \"docker\": {\n                \"Host\": \"npipe:////./pipe/dockerDesktopLinuxEngine\",\n                \"SkipTLSVerify\": false\n            }\n        },\n        \"TLSMaterial\": {},\n        \"Storage\": {\n            \"MetadataPath\": \"C:\\\\Users\\\\DELL\\\\.docker\\\\contexts\\\\meta\\\\fe9c6bd7a66301f49ca9b6a70b217107cd1284598bfc254700c989b916da791e\",\n            \"TLSPath\": \"C:\\\\Users\\\\DELL\\\\.docker\\\\contexts\\\\tls\\\\fe9c6bd7a66301f49ca9b6a70b217107cd1284598bfc254700c989b916da791e\"\n        }\n    }\n]\n",
+      "stderr": "",
+      "timedOut": false,
+      "elapsedSeconds": 0.046
+    },
+    {
+      "kind": "docker-local-server",
+      "argv": [
+        "C:\\Users\\DELL\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.EXE",
+        "--context",
+        "desktop-linux",
+        "version",
+        "--format",
+        "{{.Server.Os}}"
+      ],
+      "timeoutSeconds": 10,
+      "exitCode": 0,
+      "stdout": "linux\n",
+      "stderr": "",
+      "timedOut": false,
+      "elapsedSeconds": 0.063
+    },
+    {
+      "kind": "cached-image",
+      "argv": [
+        "C:\\Users\\DELL\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.EXE",
+        "--context",
+        "desktop-linux",
+        "image",
+        "inspect",
+        "sha256:a0725d62d5cfa8fc47b5e30be04bc08ea714a9cdd72c259595526f691db95294"
+      ],
+      "timeoutSeconds": 10,
+      "exitCode": 0,
+      "stdout": "[\n    {\n        \"Id\": \"sha256:a0725d62d5cfa8fc47b5e30be04bc08ea714a9cdd72c259595526f691db95294\",\n        \"RepoTags\": [\n            \"cvf-ncr-docker-proof:20261006\"\n        ],\n        \"RepoDigests\": [\n            \"cvf-ncr-docker-proof@sha256:a0725d62d5cfa8fc47b5e30be04bc08ea714a9cdd72c259595526f691db95294\"\n        ],\n        \"Comment\": \"buildkit.dockerfile.v0\",\n        \"Created\": \"2026-10-06T14:17:08.980407203Z\",\n        \"Config\": {\n            \"Env\": [\n                \"PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin\",\n                \"LANG=C.UTF-8\",\n                \"GPG_KEY=A035C8C19219BA821ECEA86B64E628F8D684696D\",\n                \"PYTHON_VERSION=3.11.17\",\n                \"PYTHON_SHA256=bfb74ad39efae27cda510f134ab408e00f9992c56851cfc0b1cdb5646da11599\",\n                \"PYTHONDONTWRITEBYTECODE=1\"\n            ],\n            \"Cmd\": [\n                \"python3\"\n            ]\n        },\n        \"Architecture\": \"amd64\",\n        \"Os\": \"linux\",\n        \"Size\": 248256538,\n        \"RootFS\": {\n            \"Type\": \"layers\",\n            \"Layers\": [\n                \"sha256:15f1c8eb1ab18eae260c7fb6296434cbe1ff0e1e30fd814ae92a80dd54005e62\",\n                \"sha256:56864e09c37360dbf846cf5ac9fc3090034f02e382fd0fbe4c7b576207436200\",\n                \"sha256:ba18d048b43a42f86dc288babadbdfe01602571200fd60c9e172deb8abf4147f\",\n                \"sha256:020f37c339b9fc549a11bcc5a937b81e3500281270bb62edde29022b27919d86\",\n                \"sha256:e268793815eb6f07bd3cc1f83b80729b8c06971d051bd3d43d6045c5e901a54e\",\n                \"sha256:ecc6d8f62c4709bbf2821e5f5f0fc85615ba8442c870e68fb9617e81992551f7\"\n            ]\n        },\n        \"Metadata\": {\n            \"LastTagTime\": \"2026-10-06T14:17:10.655616122Z\"\n        },\n        \"Descriptor\": {\n            \"mediaType\": \"application/vnd.oci.image.index.v1+json\",\n            \"digest\": \"sha256:a0725d62d5cfa8fc47b5e30be04bc08ea714a9cdd72c259595526f691db95294\",\n            \"size\": 856\n        },\n        \"Identity\": {\n            \"Build\": [\n                {\n                    \"Ref\": \"in9p6o88qeotbzebqs8wuu6zr\",\n                    \"CreatedAt\": \"2026-10-06T14:17:13.035095309Z\"\n                }\n            ]\n        }\n    }\n]\n",
+      "stderr": "",
+      "timedOut": false,
+      "elapsedSeconds": 0.062
+    },
+    {
+      "kind": "installed-browser-path",
+      "argv": [
+        "C:\\nvm4w\\nodejs\\node.EXE",
+        "-e",
+        "console.log(require(process.argv[1]).chromium.executablePath())",
+        "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\EXTENSIONS\\CVF_v1.6_AGENT_PLATFORM\\cvf-web\\node_modules\\@playwright\\test"
+      ],
+      "timeoutSeconds": 10,
+      "exitCode": null,
+      "stdout": "",
+      "stderr": "",
+      "timedOut": true,
+      "elapsedSeconds": 10.032
+    }
+  ],
+  "sourceReadBoundary": "Full8 source bodies, exact entry diffs, full return and selected proof commands/requirements/freeze. No corpus/all-checker read claim.",
+  "repairDisposition": "One consolidated bounded Local correction of four dependent findings in existing code paths, no worker redispatch or effect/budget expansion.",
+  "reusedWorkerEvidence": {
+    "python": 11,
+    "node": 3,
+    "inertClasses": 9,
+    "substituteStarts": 26,
+    "limit": "original frozen worker code; unchanged legacy bodies and failure cases consumed; not a current full-suite rerun or positive proof"
+  },
+  "effectAccounting": {
+    "workerInvocations": 1,
+    "workerProfilesAttempted": 1,
+    "workerContainerCreates": 1,
+    "workerContainerRemoved": 1,
+    "localProfilesAttempted": 1,
+    "localContainerCreates": 0,
+    "workerProductStarts": 0,
+    "localProductStarts": 0,
+    "workerExports": 0,
+    "workerEvaluates": 0,
+    "localExports": 0,
+    "localEvaluates": 0,
+    "providerCalls": 0,
+    "localSubstituteStarts": 7,
+    "workerSubstituteStarts": 26,
+    "additionalRetryGrant": false
+  },
+  "remainingRequirements": [
+    "REQ-02 native running identity/descendants",
+    "REQ-04 running-product cleanup",
+    "REQ-05 developer v1 actual flow",
+    "REQ-06 v2 stale/rebuild association",
+    "REQ-08 historical procedure"
+  ],
+  "oracleLimit": "Positive oracle did not reach route/SQLite assertions. Source inspection later found its unreached event.final_decision assertion should address event.decision.final_decision; original executed source retained and no pass is claimed.",
+  "claimBoundary": "Six Local controls PASS, current source corrections bounded; actual positive proof BLOCKED before product. No full root/work-order acceptance, no runtime/provider/public/deployment readiness.",
+  "rawEvidence": {
+    ".cvf/runtime/ncr-html-root-local-review-20261015/controls-result.json": "961b4b5f1d4a70bd561406b0e3832aa0927c042fc393f2d6532a4e75e495a464",
+    ".cvf/runtime/ncr-html-root-local-review-20261015/controls.log": "9bef13ac0ac09672147d3c5c63d242853288dc3378aa83901dc449371396ad1a",
+    ".cvf/runtime/ncr-html-root-local-review-20261015/probe_controls.py": "b8a2b712002536faa5a7e211c08fda79a2f4a027154ff0a386391a8ea1f10def",
+    ".cvf/runtime/ncr-html-root-local-review-20261015/positive-result.json": "140e7bff69d6190b28068b75824e5d84ace82a8996f3b1a2d11852d094e2fb96",
+    ".cvf/runtime/ncr-html-root-local-review-20261015/positive-admission.json": "dfda4a766cd3894834e133300c97fb1a00535855db3e715e1e7814cf0e99b77b",
+    ".cvf/runtime/ncr-html-root-local-review-20261015/positive_oracle.py": "e5d98df343f53f1fcb795c25b8bf359a10a894beac2fd5625baad8b1a731f44a",
+    ".cvf/runtime/ncr-html-root-local-review-20261015/positive-oracle.log": "140e7bff69d6190b28068b75824e5d84ace82a8996f3b1a2d11852d094e2fb96",
+    ".cvf/runtime/ncr-html-root-local-review-20261015/positive-cli.log": "ca8f2cfa6667abba0294a8e940ac9792841365de6ca3d081c6ab48ce608bc247",
+    ".cvf/runtime/ncr-html-root-local-review-20261015/single-pass-review-matrix.json": "decefc1f6a61c8b32dde19c94af7d0d8bf245af605dadcb61b5b0fb7696412fc"
+  }
+}

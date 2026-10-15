@@ -734,6 +734,9 @@ def run_configured_receipt_browser_composition(image: str) -> dict:
 
 
 if __name__ == "__main__":
+    if "--owned-profile-root" in sys.argv:
+        from cvf_ncr_html_owned_profile import cli
+        sys.exit(cli())
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--engine-docker-image", help="Explicit prebuilt local test image; never builds or pulls it")
     parser.add_argument("--browser-export-only", action="store_true", help="One browser export/download; do not replay five HTTP cases")

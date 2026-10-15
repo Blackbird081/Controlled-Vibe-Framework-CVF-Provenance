@@ -286,6 +286,7 @@ async function composition(modules, baseURL, output, custody) {
 
 async function main() {
   const [modules, baseURL, output, downloadDir, mode] = process.argv.slice(2);
+  if (mode === 'owned-profile') return require(process.argv[7]).run({ modules, baseURL, output, custody: downloadDir, control: controlChannel(), config: process.argv[8] });
   if (mode === 'configured-receipt-composition') return composition(modules, baseURL, output, downloadDir);
   const { chromium, expect } = require(path.join(modules, '@playwright/test'));
   const browser = await chromium.launch({ headless: true });
@@ -392,5 +393,4 @@ async function main() {
     await browser.close();
   }
 }
-
 main().catch(error => { console.error(error.message); process.exitCode = 1; });
