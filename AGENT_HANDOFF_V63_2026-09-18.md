@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Current NCR Continuation
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `3eeb1206075ff51a0f4e10f49e470a21ce0425a7`. Material SHA: `3eeb1206075ff51a0f4e10f49e470a21ce0425a7`. Source-only semantic design; fresh work-order proposal next, implementation held.
+Current HEAD recorded for this handoff: `7a6ae25eb2a2ad01795b372596953dcd754e9076`. Material SHA: `7a6ae25eb2a2ad01795b372596953dcd754e9076`. Batch ID: CVF-NCR-HTML-ROOT-SEMANTIC-R5-20261015. Source-only R5 dispatch; final bound release before manual transfer, actual effects held.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -13,19 +13,19 @@ Current continuation only. Root AGENTS.md and canonical routing owners retain fu
 Closed history is preserved byte-for-byte at `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V63_PRE_NCR_COMPACTION_2026-10-07.md` (SHA256 `54801fdcf14e9abe17592352ec3c69a0b0e855632991af0caacac7b65252ccba`); it is NOT_ACTIVE_AUTHORITY and not default startup reading.
 ## Scope / Target / Owner Boundary
 
-Local owns completed source-only semantic design and its exact6 continuity under persistent operator maintenance/commit authority. Design4 is committed; two advisers were read-only. No helper implementation, new test-control program or actual native/browser/product/delete effect. Next proposal must bind fresh finite authority and actual canonical readiness before manual transfer. R4 rejection, raw snapshots and foundation evidence remain.
+Local owns committed R5 source-only packet and exact6 continuity under actual persistent operator authority/current next. Worker source10/output12 consists of working6 plus CREATE4 and new return/proof2. Fresh Local-selected finite envelope is not consumed R4 reuse. Two advisers read-only; Local implementation/control/runtime starts0. One manual shared-workspace worker only after final committed bound release. Native/product/browser/delete and unrelated checkpoints held; original R4 rejection/source snapshots/P4 history preserved.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_html_semantic_design_locked_work_order_proposal_next`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=prepare fresh bounded source-only work-order proposal; role=Local INTERNAL_AGENT orchestrator/reviewer; phase=semantic design closure/continuity; decision owner=Local; parked checkpoint=actual ABI/B-E/native/product/browser/delete and unrelated data/public/deploy. No implementation worker released.
+Startup acknowledged: current mode=`cvf_ncr_html_root_semantic_r5_dispatch_ready`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=final bound R5 release then operator manual source-only worker transfer; role=Local INTERNAL_AGENT dispatcher/reviewer; phase=source-only semantic dispatch; decision owner=Local under persistent operator authority; parked checkpoint=actual ABI/B-E/native/product/browser/delete and unrelated data/public/deploy. No implementation worker invoked.
 
 ## Current Mode
 
-`cvf_ncr_html_semantic_design_locked_work_order_proposal_next`. Source-only design is locked; implementation is not released.
+`cvf_ncr_html_root_semantic_r5_dispatch_ready`. New paired source-only packet committed; final bound release then manual worker transfer. Reviewer-fast70 and exact1 canonical scoped feasibility passed on current packet, runtimeReadiness/effectAdmission=false. This is declaration/phase readiness, not implementation or runtime proof. Local preparation remains PARTIAL after source-table header correction; initial failure retained.
 
 ## Current Authority
 
-Consumed R4 immutable pair remains historical review provenance only: baseline `docs/baselines/CVF_GC018_NCR_HTML_ROOT_RECOVERY_R4_2026-10-15.md` SHA256 `876c1c6ed90271f98abbade9224cdda22df87174b9957ae93514cd3d64797d96`; work order `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_ROOT_RECOVERY_R4_2026-10-15.md` SHA256 `b73cb3f4d4c014b1b0eb806f9de1259b55d40419cef3791632389543112514f9`. Prospective design reference `docs/baselines/CVF_GC018_NCR_HTML_SEMANTIC_STATE_MACHINE_DESIGN_2026-10-15.md` SHA256 `597f082c21dcf1635ceacd05b37f11612bfa3b47e1d4aeb5810b7e47cdf7b8cf`, material `3eeb1206075ff51a0f4e10f49e470a21ce0425a7`; review `docs/reviews/CVF_NCR_HTML_SEMANTIC_STATE_MACHINE_DESIGN_REVIEW_2026-10-15.md`; companion `docs/reviews/evidence/ncr-html-semantic-design-20261015.json`. Design is not paired to the consumed R4 order and grants no repeat execution. Foundation active; preparation remains PARTIAL and runtime/parent proof gaps held.
+Active R5 baseline `docs/baselines/CVF_GC018_NCR_HTML_ROOT_SEMANTIC_R5_2026-10-15.md` SHA256 `4f011ee1b64dcc5967729b2424a3f1e63e354789a8dc239cff85d535215121da`; order `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_ROOT_SEMANTIC_R5_2026-10-15.md` SHA256 `7fad2760c90dae3c44776fa5a72e31ababa3cc151ec9ed61cfa90039c125bf55`. New read-only grant `docs/baselines/CVF_NCR_HTML_ROOT_SEMANTIC_AUTHORIZATION_R5_2026-10-15.md` SHA256 `64a8b47c48fac133cdf8ed32fe25e022f158ff801c778cbd0b8e5e921dbe2aaf`; companion `docs/reviews/evidence/ncr-html-root-semantic-preapproval-r5-20261015.json`; dispatch/source proof `docs/reviews/evidence/ncr-html-root-semantic-dispatch-r5-20261015.json`; material `7a6ae25eb2a2ad01795b372596953dcd754e9076`. Actual rework5/gen5/new consolidated digest, with same SCEC ordinal2/counters/blockers/freeze. Operator delegated selection; Local chose figures/topology explicitly. Consumed R4 pair/worker proof/negative review remain historical, never repeat execution authority. Final committed bound release and manual transfer required. No actual B-E/native/product/browser/delete permission.
 
 ## Accepted NCR Evidence And Continuation
 
@@ -37,7 +37,7 @@ Finite clipboard result ordering is accepted; actual OS write cancellation, whol
 
 ## Next Allowed Move
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-SEMANTIC-DESIGN-20261015. Design locked=docs/baselines/CVF_GC018_NCR_HTML_SEMANTIC_STATE_MACHINE_DESIGN_2026-10-15.md; raw SHA256=597f082c21dcf1635ceacd05b37f11612bfa3b47e1d4aeb5810b7e47cdf7b8cf; Local review=docs/reviews/CVF_NCR_HTML_SEMANTIC_STATE_MACHINE_DESIGN_REVIEW_2026-10-15.md; companion=docs/reviews/evidence/ncr-html-semantic-design-20261015.json; material=3eeb1206075ff51a0f4e10f49e470a21ce0425a7. Local next prepares one fresh bounded source-only work-order proposal: bind admission commit/UNKNOWN, separate work/cleanup cutoffs, acyclic child/parent bytes/ACK, source10/output12 capacity, complete named reading spans, finite per-actor source/test/Git/time caps, independent composed-case proof and actual canonical readiness before manual worker transfer. Current working6; execution.py/test_execution.py must be NEW reintroductions from pinned unaccepted R4 snapshots; protocol.py/test_protocol.py NEW design. This design emits no implementation order/grant/worker or cap/profile refill; no new checker. R4 negative review/source proof retained:17 historical assertions7 PASS/10 FAIL;0 reexecutions/new control programs/effect starts in design. Worker REQ08 and Local preparation remain PARTIAL; initial Local design material gate failed missing ADIF disclosure, corrected without historical upgrade. Foundation6f661a7807da3a3937fb235df636a996b15003c9 active; learning extension NOT_APPLIED/projectOPEN; origin custody retained, inactive worktree removed. Same root NCR_HTML_CONFIGURED_RECEIPT_CONTROL_PROOF; actual rework4/generation4/finding digest35447819f0e8d9b8b07dcf461cac9db68d87f656726e83dd0fefa4f85d576ac4; no new SCEC transition; ordinal2/counters2,0,2,0/two blockers/freeze/retired profiles unchanged. Consumed R4 pair/grant is historical review provenance only. Actual Windows ABI/B-E/native/product/browser/container/stage-delete and parent custody unaccepted; R1/R2partial,R3/R4open,R5/R6deferred. Data/business/send/B2/P11/public/deploy parked; LHW24/P4 exclusions retained. Admitted Local maintenance proceeds without micro-confirmation.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-HTML-ROOT-SEMANTIC-R5-20261015. R5 source-only semantic packet material=7a6ae25eb2a2ad01795b372596953dcd754e9076; baseline=docs/baselines/CVF_GC018_NCR_HTML_ROOT_SEMANTIC_R5_2026-10-15.md; order=docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_ROOT_SEMANTIC_R5_2026-10-15.md; grant=docs/baselines/CVF_NCR_HTML_ROOT_SEMANTIC_AUTHORIZATION_R5_2026-10-15.md; companion=docs/reviews/evidence/ncr-html-root-semantic-preapproval-r5-20261015.json; dispatchProof=docs/reviews/evidence/ncr-html-root-semantic-dispatch-r5-20261015.json. Final committed bound pre-dispatch PASS required, then operator manual transfer to one INTERNAL_AGENT implementation worker; Local has invoked no worker. Current6 plus CREATE execution.py/test_execution.py/protocol.py/test_protocol.py and NEW return/proof2, exact12/source10, WORKER_MUST_NOT_COMMIT. Fresh delegated Local-selected envelope worker240/Local90min, test-program launches8/4 including failures/custom, sourceGit32/20 including test/helper reads, inert27/0; all7 effects0. Final9-case inert matrix once on final production bytes; Local independent fresh oracle pending with0 children; no broad duplicate R4 rerun. Complete all named heading/predicate scopes before recovery/edit/test; bound default clean-frontier entry gate and full scaffold before source changes. Rejected R4 snapshots8 may be SHA-verified as unaccepted starting material only; new protocol owner/test, exact bindings/fixtures and readable shrink before tests. Locked admission commit/UNKNOWN, immutable work/separate cleanup cutoffs, fresh positive actual waits/lazy calls, acyclic child/parent bytes/exit/ACK and retained stage control acceptance. Actual Review Cost rework5/generation5/digest3d0687960e6e71b9a22990dd371bfe7139f4b784818c26f5f74d3d52d5bc0ed1; same root NCR_HTML_CONFIGURED_RECEIPT_CONTROL_PROOF; SCEC ordinal2/counters2,0,2,0/two blockers/freeze unchanged, no new transition. R4 rejection, raw source8,17 historical observations7 PASS/10 FAIL and all preparation/Node/metadata failures remain; no old grant/cap/profile reuse. Two read-only adviser passes; Local preparation PARTIAL after exact source-table header correction, initial fail preserved. Actual Windows ABI/B-E/native/product/browser/container/stage-delete/provider and parent custody unaccepted. Foundation active, extension NOT_APPLIED/projectOPEN; P4 historical6 blocks/exclusions retained. No automatic worker/retry, runtime effect, new checker, public/deploy or unrelated data/business/send/B2/P11 release. R1/R2partial,R3/R4open,R5/R6deferred; LHW24 retained. Admitted ordinary work needs no micro-confirmation.
 
 ## Active Boundary
 T3B has a Local-verified active v1 specification. Party B is verified and T3C-C1 tooling accepted at `db78c87df`; T3C-C2 and Party C are verified. T3D-C1 tooling is accepted at `9ed844c2a` without source. T3D-C0-R1 closed at `2fffa1ef7`. T3D-C3 was accepted bounded at `88137e9a2`, but actual-mode prepare attempts failed before Party B/C execution; authorized cleanup removed the failed root and discarded unaccepted worker changes. G1 stopped, G2-G6 parked, and G7 research closed at `660601f0e` with `ADAPT_EXISTING_HANDOFF_ONLY`. Evidence-join sufficiency stays WATCH; no implementation successor exists. Rejected T2 paths remain archived; HRLTP-T2 paused.
@@ -79,7 +79,7 @@ Historical conditional OBS-079b96e73400827c trusted BLOCKED/adjudication remains
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: exact6 continuity for committed source-only semantic design; no checker/hook/AGENTS semantic changes.
+Authorized guard-maintenance scope: exact6 active continuity for the committed R5 source-only dispatch pair and actual material marker; no checker/hook/AGENTS semantic change.
 Protected paths:
 - `AGENT_HANDOFF_V63_2026-09-18.md`
 - `CVF_SESSION_MEMORY.md`
@@ -87,8 +87,8 @@ Protected paths:
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-Operator authorization: next and persistent full Local orchestration/review/maintenance/commit authority.
-Rollback boundary: these exact6 paths; preserve R4 rejection/source snapshots, active foundation, SCEC counters, P4 exclusions and held effects.
+Operator authorization: current next and persistent full Local orchestration/review/maintenance/commit authority; R5 work-order protected-path carrier.
+Rollback boundary: exact6 continuity; preserve committed R5/R4/design/foundation evidence, SCEC counters, P4 exclusions and held effects.
 
 ## Agent Operation Trace Block
 
@@ -96,18 +96,18 @@ Rollback boundary: these exact6 paths; preserve R4 rejection/source snapshots, a
 |---|---|
 | Actor | Local INTERNAL_AGENT session-sync steward |
 | Provider or surface | private provenance workspace |
-| Session or invocation | ncr-html-semantic-design-continuity-20261015 |
+| Session or invocation | ncr-html-root-semantic-r5-dispatch-continuity-20261015 |
 | Working directory | repository root |
-| Command or tool surface | four continuity source edits; canonical generator; exact6 manual continuity commit; split canonical closure gates |
+| Command or tool surface | four continuity source edits; canonical generator; manual exact6 commit; serial split closure and bound release gates |
 | Target paths | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Allowed scope source | operator next, persistent Local authority and committed design review protected-path authorization |
-| Before status evidence | design material 3eeb1206075ff51a0f4e10f49e470a21ce0425a7 committed; exact4 documentary batch; continuity pending |
-| After status evidence | exact6; source-only design locked; next fresh proposal, implementation held |
-| Diff evidence | exact6 staged manifest and split committed ranges |
-| Approval boundary | continuity only; no fresh source execution authority |
-| Claim boundary | no implementation/native/browser/parent/live/public acceptance |
+| Allowed scope source | actual persistent Local authority and R5 work-order Core authorization |
+| Before status evidence | material 7a6ae25eb2a2ad01795b372596953dcd754e9076 committed; exact6 documentary dispatch, implementation not run |
+| After status evidence | exact6 continuity; active new R5 pair; final bound release/manual transfer still required |
+| Diff evidence | exact6 staged manifest and separate committed-range gates |
+| Approval boundary | new finite source-only R5 packet; all actual B-E/native/product/browser/delete effects held |
+| Claim boundary | declared packet readiness only; no implementation or parent/runtime acceptance |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-html-semantic-design-continuity-20261015 |
+| Invocation ID | ncr-html-root-semantic-r5-dispatch-continuity-20261015 |
 | Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Manifest delta | MATCH exact6 |
