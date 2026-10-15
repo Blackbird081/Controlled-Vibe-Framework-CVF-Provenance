@@ -1,0 +1,701 @@
+{
+  "schemaVersion": "cvf.ncrHtmlRootSemanticWorkerProof@1",
+  "batchId": "CVF-NCR-HTML-ROOT-SEMANTIC-R5-20261015",
+  "role": "INTERNAL_AGENT_IMPLEMENTATION_WORKER",
+  "commitMode": "WORKER_MUST_NOT_COMMIT",
+  "workOrder": {
+    "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_ROOT_SEMANTIC_R5_2026-10-15.md",
+    "sha256": "7fad2760c90dae3c44776fa5a72e31ababa3cc151ec9ed61cfa90039c125bf55"
+  },
+  "executionBaseHead": "8b7d0efbbe102d2200b0a4c53be30726a2b283ed",
+  "invocationId": "worker-r5-e916a4df7bc8",
+  "custody": {
+    "path": ".cvf/runtime/ncr-html-root-semantic-worker-r5-20261015/worker-r5-e916a4df7bc8",
+    "owner": "IMPLEMENTATION_WORKER",
+    "retentionReason": "raw gate and test logs, extracted rejected-R4 reading copies, patch scripts and fixture trees are retained evidence for the Local reviewer; nothing was deleted (destructiveActions 0)"
+  },
+  "pairedArtifactPins": {
+    "baseline": "4f011ee1b64dcc5967729b2424a3f1e63e354789a8dc239cff85d535215121da",
+    "workOrder": "7fad2760c90dae3c44776fa5a72e31ababa3cc151ec9ed61cfa90039c125bf55",
+    "authorization": "64a8b47c48fac133cdf8ed32fe25e022f158ff801c778cbd0b8e5e921dbe2aaf",
+    "preapprovalCompanion": "7d9eb40ed148ef03b6839dbda6ae91d405b159ecdf2d724b71df8f2c309c7f02",
+    "dispatchPinsVerified": 39,
+    "dispatchPinMismatches": 0
+  },
+  "preparation": {
+    "status": "PARTIAL_WITH_REASON",
+    "reason": "all mandatory scopes were read before the first edit or control test, but the earliest reads (AGENTS, order, front door, bootstrap, handoff, pair, grant, companion, dispatch proof) carry no tool timestamp; the first recorded timestamp is 12:52:40Z",
+    "readChronologyUtc": [
+      {
+        "utc": "12:52:40Z",
+        "event": "first recorded timestamp; custody directory created; sizes of design, R4 review and R4 proof recorded"
+      },
+      {
+        "utc": "12:56:21Z",
+        "event": "all mapped reads complete; 39 dispatch source pins verified (0 mismatch); current six sources verified LF with expected lines; HEAD and status captured"
+      },
+      {
+        "utc": "12:56:3xZ",
+        "event": "immutable 0850546 blobs verified: q001 26b34890..., w05 2f0981b2... (sha256 of git show output)"
+      },
+      {
+        "utc": "12:56:39Z-12:57:26Z",
+        "event": "bound pre-implementation entry gate on the clean worker-start frontier, exit 0"
+      },
+      {
+        "utc": "12:57:xxZ",
+        "event": "full return scaffold generated with --check-shape, 323 lines; no source file existed yet changed"
+      }
+    ],
+    "mandatoryScopesRead": [
+      "AGENTS.md full; bootstrap read model; front door; active handoff; guard orientation Read This First, Action-Specific Continuation, Task Class Guard Map rows, Common Failure Patterns",
+      "work order full; baseline full; authorization full; preapproval companion full; dispatch proof full",
+      "semantic design baseline full; design proof observationsConsumed, plannedComposedCases, capacity, rootPreserved",
+      "R4 completion review Findings / Position, Risk / Corrective Action, useful value, decision and limits; R4 proof independentProbe observations, sourceSnapshots identities, localDiagnostics, requirementRuling",
+      "all six current source/test files full; all eight rejected R4 snapshot bodies full (decoded from the proof JSON into custody, sha256 MATCH 8/8)",
+      "probe_cvf_q001 routing branch (lines 725-750); probe_cvf_w05 controlChannel (50-100) and main/run dynamic helper call (270-300); core_orchestrator execute and ledger_entry (120-235)",
+      "lifecycle standard lines 97-389 (Agent Continuation And Action Readiness including Outcome-Bound Work Selection And Terminal Review, and Design Control Gate)",
+      "review-cost standard lines 253-655 (Same-Scope Authority Continuity, Operator-Cleared Same-Scope Continuation, Independent Review Probe Admission Boundary with all subordinate sections) and Worker Return Convergence Self-Proof 88-132",
+      "SOP lines 55-151 (Requirements 1-13) and Worker Preparation Reminder 206-257; source-verification and acceptance-ledger addenda full",
+      "work-order template sections: Required First Reads, Source-Fidelity Pass, Maintainability And Acceptance Ledger, Design Control Carry-Forward, Evidence Requirements through Worker Return Packet Shape, Independent Review Probe Admission Contract",
+      "workerCheckerReadScopes: fast gate full; quality gate constants and diagnose, _required_gate_consistency_issues, diagnose_active_work_order; acceptance ledger full; operation trace constants, is_trace_artifact, missing_trace_labels, _check_manifest_delta, find_trace_violations; core guard _is_protected, _has_core_auth, _run_check; probe admission DeclarationScanner and diagnose functions; epistemic predicates; review cost _work_order_state and diagnose_worker_return; finding-to-governance validators; packet authority validators; read-ahead check_text/check_path",
+      "gotchas checklist items 1-47; ADIF-0026 full"
+    ],
+    "rejectedR4Recovery": "NOT byte-recovered into admitted paths; the eight snapshots were decoded into custody for reading only (sha256 MATCH 8/8) and every admitted file was written as new bytes",
+    "entryGate": {
+      "command": "python -B governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_ROOT_SEMANTIC_R5_2026-10-15.md",
+      "exitCode": 0,
+      "receipt": ".cvf/runtime/autorun-receipts/pre-implementation.json",
+      "logSha256": "943074bc1aaa3ab1c1fda055c382ff095193508129f2af2cb5a043c405cf003a"
+    },
+    "scaffold": {
+      "command": "python -B governance/compat/run_worker_return_scaffold.py --write <return> --title \"NCR HTML Root Offline Implementation Worker Return\" --check-shape",
+      "result": "PREPARATION_SHAPE_PRESENT",
+      "logSha256": "48ef407978ee425417267e6ab8d4481b170d3d1f2ddc0bbd537e958af713373c"
+    }
+  },
+  "sources": {
+    "scripts/cvf_ncr_html_owned_profile/__init__.py": {
+      "sha256": "283f238f1196e3dc401ec8538e894db063c0f42123c2a9d730e124c6cef3f541",
+      "lines": 322,
+      "bytes": 20987,
+      "lineEnding": "LF",
+      "finalLf": true,
+      "crlf": false,
+      "ceiling": 329,
+      "withinCeiling": true,
+      "nonAsciiBytes": 0
+    },
+    "scripts/cvf_ncr_html_owned_profile/lifecycle.py": {
+      "sha256": "e616869574405d1a8bd39afc9cf47a405cbca34e0b9590425b70657ef957afd0",
+      "lines": 297,
+      "bytes": 15172,
+      "lineEnding": "LF",
+      "finalLf": true,
+      "crlf": false,
+      "ceiling": 329,
+      "withinCeiling": true,
+      "nonAsciiBytes": 0
+    },
+    "scripts/cvf_ncr_html_owned_profile/profile.py": {
+      "sha256": "ead231c2f37d48b1c3e8e92dde00d6430337e883c6a2efe21ab6132c7b6fd156",
+      "lines": 297,
+      "bytes": 18702,
+      "lineEnding": "LF",
+      "finalLf": true,
+      "crlf": false,
+      "ceiling": 329,
+      "withinCeiling": true,
+      "nonAsciiBytes": 48
+    },
+    "scripts/cvf_ncr_html_owned_profile/execution.py": {
+      "sha256": "79b9bb1681fe9dec3c2545bf55afc315dc230fa4df3c8a4e19ef16bf67abfa29",
+      "lines": 328,
+      "bytes": 18102,
+      "lineEnding": "LF",
+      "finalLf": true,
+      "crlf": false,
+      "ceiling": 329,
+      "withinCeiling": true,
+      "nonAsciiBytes": 0
+    },
+    "scripts/cvf_ncr_html_owned_profile/journey.cjs": {
+      "sha256": "f76b6d0fec14f2d208fee63004aec2b7211799e5d37160e414633e9dd15d69e0",
+      "lines": 258,
+      "bytes": 16755,
+      "lineEnding": "LF",
+      "finalLf": true,
+      "crlf": false,
+      "ceiling": 329,
+      "withinCeiling": true,
+      "nonAsciiBytes": 60
+    },
+    "scripts/cvf_ncr_html_owned_profile/protocol.py": {
+      "sha256": "dcc36153457e028db1e7d0e1650526bc6f36803297a1f1df3746f8369bb07681",
+      "lines": 274,
+      "bytes": 12640,
+      "lineEnding": "LF",
+      "finalLf": true,
+      "crlf": false,
+      "ceiling": 299,
+      "withinCeiling": true,
+      "nonAsciiBytes": 0
+    },
+    "scripts/cvf_ncr_html_owned_profile/test_protocol.py": {
+      "sha256": "a18cff0cdbcccd0b1aa8cf6e3919992de5b2d82968304023f6593cafd0343bb4",
+      "lines": 297,
+      "bytes": 17144,
+      "lineEnding": "LF",
+      "finalLf": true,
+      "crlf": false,
+      "ceiling": 299,
+      "withinCeiling": true,
+      "nonAsciiBytes": 0
+    },
+    "scripts/cvf_ncr_html_owned_profile/journey.test.cjs": {
+      "sha256": "d12aa8b77df01d69a13aab00e160e528361b6bab901eddfd13450852569c2dfe",
+      "lines": 240,
+      "bytes": 18623,
+      "lineEnding": "LF",
+      "finalLf": true,
+      "crlf": false,
+      "ceiling": 299,
+      "withinCeiling": true,
+      "nonAsciiBytes": 0
+    },
+    "scripts/cvf_ncr_html_owned_profile/test_control.py": {
+      "sha256": "e51cb763c379cac042bc741dbca2b680b1799072a3ca020b5d7e22606e2b44e6",
+      "lines": 296,
+      "bytes": 18867,
+      "lineEnding": "LF",
+      "finalLf": true,
+      "crlf": false,
+      "ceiling": 296,
+      "withinCeiling": true,
+      "nonAsciiBytes": 0
+    },
+    "scripts/cvf_ncr_html_owned_profile/test_execution.py": {
+      "sha256": "fb7a2f9be590c472321fb6cc43505cc8a5c5ae0ea27c1f6efda63081d6963be4",
+      "lines": 286,
+      "bytes": 19703,
+      "lineEnding": "LF",
+      "finalLf": true,
+      "crlf": false,
+      "ceiling": 286,
+      "withinCeiling": true,
+      "nonAsciiBytes": 0
+    }
+  },
+  "counters": {
+    "workerMinutes": {
+      "ceiling": 240,
+      "firstRecordedUtc": "12:52:40Z",
+      "proofFreezeUtcApprox": "13:41Z",
+      "elapsedApproxMinutes": "about 49 after the first recorded timestamp plus untimestamped earlier reads of a few minutes; far below the ceiling"
+    },
+    "testProgramLaunches": {
+      "ceiling": 8,
+      "used": 7,
+      "pureOrInProcessIteration": {
+        "ceiling": 6,
+        "used": 5
+      },
+      "finalPython": 1,
+      "finalNode": 1,
+      "sparedLaunches": 1,
+      "launches": [
+        {
+          "id": 1,
+          "kind": "pytest in-process",
+          "files": "test_protocol, test_execution, test_control",
+          "result": "1 collection error at the 15th item (scratch fixture name truncation collision), run used -x",
+          "log": "iter1-pytest.log",
+          "logSha256": "bac71cc8d008c34610ed3046db319e37400cc687af44d7887341c657b2404e32"
+        },
+        {
+          "id": 2,
+          "kind": "pytest in-process",
+          "result": "138 passed, 1 failed (NOT_ATTEMPTED wording in cleanup-exhaustion error text)",
+          "log": "iter2-pytest.log",
+          "logSha256": "adf0fdf8a75d9f0506949590dc49b4c35ffe09c0383f64db794577493323c069"
+        },
+        {
+          "id": 3,
+          "kind": "node --test journey.test.cjs",
+          "result": "11 passed",
+          "log": "iter3-node.log",
+          "logSha256": "ac008b2565de6ddaf4df0fde8c069fb9d8b8e83a08b87b97315a89580fc76191"
+        },
+        {
+          "id": 4,
+          "kind": "pytest in-process",
+          "result": "142 passed",
+          "log": "iter4-pytest.log",
+          "logSha256": "485e3f5a29d872c88e044f14b94b476b4a5aa66eba5a503e4d446582df627a08"
+        },
+        {
+          "id": 5,
+          "kind": "node --test journey.test.cjs",
+          "result": "13 passed",
+          "log": "iter5-node.log",
+          "logSha256": "bb8f9b0d4e8efbd501d925bc3074003d37b1bec05be91fad77164bcc83d3b6de"
+        },
+        {
+          "id": 6,
+          "kind": "FINAL pytest with CVF_R5_SUBSTITUTE=subprocess (test_control, test_execution, test_protocol)",
+          "result": "142 passed in 2.46s",
+          "log": "final-python.log",
+          "logSha256": "6dd9215811cb02df2eb57729224ffe391cfc6c9c3354cb0fde83d091573e8311",
+          "endUtc": "13:34:54Z"
+        },
+        {
+          "id": 7,
+          "kind": "FINAL node --test journey.test.cjs",
+          "result": "13 passed",
+          "log": "final-node.log",
+          "logSha256": "5a13139be7e78813480a4ded45f62273dce6d2209d13ae998b69e6d6a50e16bc",
+          "endUtc": "13:35:17Z"
+        }
+      ],
+      "countingUnit": "one program launch per python -m pytest or node --test invocation, including the failed first one; py_compile, node --check and static AST scans are treated as metadata programs that execute no control and assert nothing"
+    },
+    "inertSubstituteChildStarts": {
+      "ceiling": 27,
+      "used": 26,
+      "occurred": "final Python launch only; iteration launches interpreted the inert program in process (0 children)"
+    },
+    "sourceGit": {
+      "ceiling": 32,
+      "manualCommands": 9,
+      "list": [
+        "git rev-parse HEAD",
+        "git status --short",
+        "git show 0850546:<q001 path> (digest only)",
+        "git show 0850546:<w05 path> (digest only)",
+        "git status --short (after sources)",
+        "git status --short (before data collection)",
+        "git diff --name-status",
+        "git status --short (return section, after proof)",
+        "git rev-parse HEAD (HEAD unchanged check)"
+      ],
+      "testOrHelperGit": 0,
+      "afterProofFreeze": "later read-only status or HEAD checks after the final gate are logged in ignored custody and are not counted in the figure above",
+      "note": "canonical gates and their trusted receipt Git are separately logged mandatory controls; tests monkeypatched the Git helper and used pinned sha256 constants for the immutable 0850546 blobs"
+    }
+  },
+  "controlReceipt": {
+    "path": ".cvf/runtime/ncr-html-root-semantic-worker-r5-20261015/worker-279cd1f1edf4d3ae/inert-results.json",
+    "runner": "SUBPROCESS",
+    "passed": 9,
+    "substituteStarts": 26,
+    "sha256": "dd910c07c5787f2877e63640ae0192f682e9620c8d8d32fe34776692896f13b6",
+    "frozenDigestSidecar": ".cvf/runtime/ncr-html-root-semantic-worker-r5-20261015/worker-279cd1f1edf4d3ae/inert-results.sha256",
+    "perCaseStarts": {
+      "taskkill-nonzero": 3,
+      "tasklist-nonzero": 3,
+      "docker-ps-nonzero": 3,
+      "timeout": 3,
+      "tasklist-malformed": 3,
+      "identity-mismatch": 2,
+      "still-live": 3,
+      "unsafe-path": 3,
+      "docker-ps-malformed": 3
+    },
+    "productionBound": [
+      "scripts/cvf_ncr_html_owned_profile/__init__.py",
+      "scripts/cvf_ncr_html_owned_profile/execution.py",
+      "scripts/cvf_ncr_html_owned_profile/journey.cjs",
+      "scripts/cvf_ncr_html_owned_profile/lifecycle.py",
+      "scripts/cvf_ncr_html_owned_profile/profile.py",
+      "scripts/cvf_ncr_html_owned_profile/protocol.py"
+    ],
+    "oraclesBound": [
+      "scripts/cvf_ncr_html_owned_profile/journey.test.cjs",
+      "scripts/cvf_ncr_html_owned_profile/test_control.py",
+      "scripts/cvf_ncr_html_owned_profile/test_execution.py",
+      "scripts/cvf_ncr_html_owned_profile/test_protocol.py"
+    ]
+  },
+  "PROOF-REQ-01": {
+    "requirement": "REQ-01",
+    "status": "PASS",
+    "implementationSources": [
+      "scripts/cvf_ncr_html_owned_profile/profile.py",
+      "scripts/cvf_ncr_html_owned_profile/journey.cjs"
+    ],
+    "oracleTests": [
+      "test_control.py::test_actual_terminal_boundary_rejects_failed_native_control x9 (real children, final launch)",
+      "test_control.py::test_receipt_admission_is_case_specific_hash_joined_and_never_proof_of_execution",
+      "test_control.py::test_each_hostile_receipt_is_rejected_for_its_own_reason x20",
+      "test_control.py::TestAdmissionBeforeEffects x23 (13 wrong inputs, 6 wrong controls, 3 drift, 1 valid first-effect)",
+      "journey.test.cjs: inputs tests x2"
+    ],
+    "observedOutcome": "exact seven NFC string inputs and cap 1/2 refused before source read, namespace or effect; nine case identities with expected class/query/retention joined to six production and four oracle hashes; duplicates, missing, stale, forged, boolean-count and in-process receipts fail; Local runtime receipt admission stays closed (cap 1 fail-closed)",
+    "limit": "offline source-model evidence only; actual B-E, native, browser, container, product and deletion proof remain deferred"
+  },
+  "PROOF-REQ-02": {
+    "requirement": "REQ-02",
+    "status": "PASS",
+    "implementationSources": [
+      "scripts/cvf_ncr_html_owned_profile/execution.py",
+      "scripts/cvf_ncr_html_owned_profile/lifecycle.py"
+    ],
+    "oracleTests": [
+      "test_execution.py::TestSafeEvidence x26 (25 quoted/escaped/adjacent/nested credential forms plus the truncation and dict-key serializer test)",
+      "test_execution.py::TestCommands (completion x7, failure classes x5, fresh wait after persistence, failed prelaunch persistence, one-shot module query)",
+      "test_execution.py::TestOwnership utility timeout cases"
+    ],
+    "observedOutcome": "credentials are redacted before truncation in text and bytes, including quoted, JSON-escaped to any depth, scheme-plus-quoted and adjacent dash/slash argv forms; only int 0 succeeds; prelaunch persistence precedes the final admission; a final persistence failure never replaces the primary failure; one module query without fallback",
+    "limit": "offline source-model evidence only; actual B-E, native, browser, container, product and deletion proof remain deferred"
+  },
+  "PROOF-REQ-03": {
+    "requirement": "REQ-03",
+    "status": "PASS",
+    "implementationSources": [
+      "scripts/cvf_ncr_html_owned_profile/protocol.py",
+      "scripts/cvf_ncr_html_owned_profile/__init__.py",
+      "scripts/cvf_ncr_html_owned_profile/execution.py",
+      "scripts/cvf_ncr_html_owned_profile/lifecycle.py",
+      "scripts/cvf_ncr_html_owned_profile/profile.py",
+      "scripts/cvf_ncr_html_owned_profile/journey.cjs"
+    ],
+    "oracleTests": [
+      "test_protocol.py::TestPhaseAndTime x3",
+      "test_protocol.py::TestAdmission x3",
+      "test_protocol.py::TestBodyAndForward x3 (incl. Handler.do_POST late forward)",
+      "test_protocol.py::TestBudgets x2",
+      "test_protocol.py::TestChildContract ipc and child-limits",
+      "test_protocol.py::test_first_cleanup_step_consuming_the_remainder_leaves_every_later_step_not_attempted",
+      "test_execution.py::TestCommands fresh-wait; TestDeadlines drain",
+      "journey.test.cjs: allowances, child clocks, lazy calls, whole-line replies, withBudget/teardown, full journey x2"
+    ],
+    "observedOutcome": "one parent protocol owner: immutable workEnd, irreversible fence, cleanupEnd = min(close+allowance, workEnd+allowance) once; atomic QUEUED to DISPATCHED after persistence with one clock sample and a finite positive (integer-quantized when needed) wait; queued work revoked at close; committed work stays tracked UNKNOWN even before adapter entry; body at most 64KiB with chunk waits bounded by the original work cutoff; whole-line reply identity/generation/operation validation on both sides; child limits only shorten",
+    "limit": "offline source-model evidence only; actual B-E, native, browser, container, product and deletion proof remain deferred"
+  },
+  "PROOF-REQ-04": {
+    "requirement": "REQ-04",
+    "status": "PASS",
+    "implementationSources": [
+      "scripts/cvf_ncr_html_owned_profile/profile.py"
+    ],
+    "oracleTests": [
+      "test_control.py::test_ledger_oracle_joins_the_real_nested_schema_and_rejects_old_missing_or_mismatched_rows",
+      "test_control.py::test_excerpt_counts_utf16_units_like_the_renderer_including_split_surrogates",
+      "test_control.py::test_legacy_python_entry_is_the_pinned_immutable_blob_plus_one_routing_branch",
+      "test_control.py::test_canonical_fixtures_exact12_family_readable_ceilings_and_pinned_immutable_legacy_blob",
+      "journey.test.cjs: legacy browser branches against blob digest"
+    ],
+    "observedOutcome": "immutable 0850546 inverse of both entrypoints (sha256 constants, no moving HEAD, no test Git); real nested event.request_id/timestamp/decision.final_decision and report.request_summary joins; thirteen malformed rows and three malformed responses rejected; v1 rows unchanged at checkpoints; first 500 UTF-16 units including a split surrogate",
+    "limit": "offline source-model evidence only; actual B-E, native, browser, container, product and deletion proof remain deferred"
+  },
+  "PROOF-REQ-05": {
+    "requirement": "REQ-05",
+    "status": "PASS",
+    "implementationSources": [
+      "scripts/cvf_ncr_html_owned_profile/lifecycle.py",
+      "scripts/cvf_ncr_html_owned_profile/protocol.py"
+    ],
+    "oracleTests": [
+      "test_execution.py::TestOwnership x4 tests (job policy readback before any child, failed ownership steps x4, persistence consuming the cutoff refuses resume, utility sharing the job)",
+      "test_protocol.py::test_only_a_cleanup_scope_may_queue_after_the_fence"
+    ],
+    "observedOutcome": "job32/no-breakaway/kill-on-close set and read back before a suspended child; assign, exact identity, persist, FRESH WORK check, then resume; persistence that consumes the cutoff refuses resume and stops only the exact creation handle within min(close+allowance, workEnd+allowance); no PID or name kill; injected doubles only",
+    "limit": "offline source-model evidence only; actual B-E, native, browser, container, product and deletion proof remain deferred"
+  },
+  "PROOF-REQ-06": {
+    "requirement": "REQ-06",
+    "status": "PASS",
+    "implementationSources": [
+      "scripts/cvf_ncr_html_owned_profile/execution.py",
+      "scripts/cvf_ncr_html_owned_profile/lifecycle.py",
+      "scripts/cvf_ncr_html_owned_profile/__init__.py",
+      "scripts/cvf_ncr_html_owned_profile/journey.cjs",
+      "scripts/cvf_ncr_html_owned_profile/protocol.py"
+    ],
+    "oracleTests": [
+      "test_execution.py::TestRetainedStageTerminal x4 tests (11 injected faults, ack faults, proxy/reader faults with pending work, no-native run)",
+      "test_protocol.py::TestChildContract::test_parent_acceptance_needs_independent_child_bytes_exit_teardown_and_a_separate_readback x8",
+      "journey.test.cjs: close/hang/stdin snapshot test, exhausted-cleanup test, full journey x2"
+    ],
+    "observedOutcome": "each stop/query/close/context/stdin attempt records CONFIRMED, FAILED, UNKNOWN or NOT_ATTEMPTED from a fresh finite wait; child teardown precedes one frozen snapshot that carries those outcomes and never its own save; the parent recomputes child bytes/hash, observes exit, freezes its own bytes, writes and reads back with a separate acknowledgment; any later failure, pending or UNKNOWN operation blocks acceptance and disposal eligibility; the stage is retained and nothing is deleted",
+    "limit": "offline source-model evidence only; actual B-E, native, browser, container, product and deletion proof remain deferred"
+  },
+  "PROOF-REQ-07": {
+    "requirement": "REQ-07",
+    "status": "PASS",
+    "implementationSources": [
+      "scripts/cvf_ncr_html_owned_profile/__init__.py",
+      "scripts/cvf_ncr_html_owned_profile/lifecycle.py",
+      "scripts/cvf_ncr_html_owned_profile/profile.py",
+      "scripts/cvf_ncr_html_owned_profile/execution.py",
+      "scripts/cvf_ncr_html_owned_profile/journey.cjs",
+      "scripts/cvf_ncr_html_owned_profile/protocol.py",
+      "scripts/cvf_ncr_html_owned_profile/test_protocol.py",
+      "scripts/cvf_ncr_html_owned_profile/journey.test.cjs",
+      "scripts/cvf_ncr_html_owned_profile/test_control.py",
+      "scripts/cvf_ncr_html_owned_profile/test_execution.py"
+    ],
+    "oracleTests": [
+      "test_control.py::test_canonical_fixtures_exact12_family_readable_ceilings_and_pinned_immutable_legacy_blob (ceilings enforced in the suite)"
+    ],
+    "observedOutcome": "source10 plus return and proof is the exact twelve-path union; all ten sources are LF with a final LF and within their readable ceilings (see sources); test_execution.py shrank from the rejected 346 to 286; effects are zero; counters above are finite and truthful",
+    "limit": "offline source-model evidence only; actual B-E, native, browser, container, product and deletion proof remain deferred"
+  },
+  "PROOF-REQ-08": {
+    "requirement": "REQ-08",
+    "status": "PASS",
+    "limit": "preparation is disclosed as PARTIAL_WITH_REASON above (earliest reads untimestamped); the requirement is PASS because every mapped mandatory scope was read before the first edit or control test, the entry gate and a real scaffold preceded source writing, all eight proof joins exist, and the independent Local probe is left PENDING_REVIEWER_EXECUTION",
+    "finalGate": "python -B governance/compat/run_worker_return_fast_gate.py --active-work-order <order> --max-return-lines 450 --max-return-bytes 64000 runs on the frozen tracked bytes; its actual log and digests are kept in ignored custody and are not appended to tracked bytes"
+  },
+  "historicalCases": [
+    {
+      "case": "POS-receipt-and-duplicate-refusal",
+      "requirement": "REQ-01",
+      "was": "PASS",
+      "now": "PASS",
+      "tests": [
+        "test_control receipt admission + hostile receipts x20",
+        "9 real-children cases"
+      ]
+    },
+    {
+      "case": "POS-input-completion-utf16",
+      "requirement": "REQ-04",
+      "was": "PASS",
+      "now": "PASS",
+      "tests": [
+        "test_control excerpt + BAD inputs x13",
+        "test_execution completion x7"
+      ]
+    },
+    {
+      "case": "POS-ordinary-redaction",
+      "requirement": "REQ-02",
+      "was": "PASS",
+      "now": "PASS",
+      "tests": [
+        "test_execution TestSafeEvidence ordinary rows"
+      ]
+    },
+    {
+      "case": "POS-immutable-terminal",
+      "requirement": "REQ-06",
+      "was": "PASS",
+      "now": "PASS",
+      "tests": [
+        "test_execution fault None accepted+eligible; primary_only refused; stage retained",
+        "test_protocol child confirmed [confirmed]"
+      ]
+    },
+    {
+      "case": "NEG-quoted-bearer",
+      "requirement": "REQ-02",
+      "was": "FAIL",
+      "now": "REJECTED (credential removed)",
+      "tests": [
+        "test_execution TestSafeEvidence quoted, escaped, nested-escaped and scheme-plus-quoted rows"
+      ]
+    },
+    {
+      "case": "NEG-prelaunch-fresh-timeout",
+      "requirement": "REQ-03",
+      "was": "FAIL",
+      "now": "runner wait is the fresh remainder (2 of 10)",
+      "tests": [
+        "test_execution TestCommands fresh wait after persistence"
+      ]
+    },
+    {
+      "case": "NEG-post-persist-expired-start",
+      "requirement": "REQ-03",
+      "was": "FAIL",
+      "now": "runner never invoked; event NOT_LAUNCHED/REFUSED",
+      "tests": [
+        "test_execution TestCommands fresh wait (second half)"
+      ]
+    },
+    {
+      "case": "NEG-expired-drain",
+      "requirement": "REQ-03",
+      "was": "FAIL",
+      "now": "no drain call at zero remainder; .3 remainder drains .3",
+      "tests": [
+        "test_execution TestDeadlines drain"
+      ]
+    },
+    {
+      "case": "NEG-terminal-fresh-waits",
+      "requirement": "REQ-06",
+      "was": "FAIL",
+      "now": "later steps and terminal write/readback NOT_ATTEMPTED",
+      "tests": [
+        "test_protocol cleanup-exhaustion",
+        "test_execution ack faults"
+      ]
+    },
+    {
+      "case": "NEG-expired-resume",
+      "requirement": "REQ-05",
+      "was": "FAIL",
+      "now": "resume refused; exact child stopped within the 4s cleanup remainder",
+      "tests": [
+        "test_execution TestOwnership persistence consuming the cutoff"
+      ]
+    },
+    {
+      "case": "NEG-late-proxy-forward",
+      "requirement": "REQ-03",
+      "was": "FAIL",
+      "now": "forward refused at the final admission; pending read uncertain",
+      "tests": [
+        "test_protocol TestBodyAndForward pending body"
+      ]
+    },
+    {
+      "case": "POS-invalid-input-no-browser",
+      "requirement": "REQ-01",
+      "was": "PASS",
+      "now": "PASS",
+      "tests": [
+        "journey.test inputs x2",
+        "test_control wrong input x13"
+      ]
+    },
+    {
+      "case": "POS-launch-failure-still-custody-stdin",
+      "requirement": "REQ-06",
+      "was": "PASS",
+      "now": "PASS",
+      "tests": [
+        "journey.test close/hang/stdin snapshot test"
+      ]
+    },
+    {
+      "case": "POS-close-failure-independent-teardown",
+      "requirement": "REQ-06",
+      "was": "PASS",
+      "now": "PASS",
+      "tests": [
+        "journey.test close/hang/stdin snapshot test"
+      ]
+    },
+    {
+      "case": "NEG-expiry-zero-timeout",
+      "requirement": "REQ-03",
+      "was": "FAIL",
+      "now": "integer allowance >= 1 or refusal; clock sampled once",
+      "tests": [
+        "journey.test allowances"
+      ]
+    },
+    {
+      "case": "NEG-expired-control-no-effect",
+      "requirement": "REQ-03",
+      "was": "FAIL",
+      "now": "control callback never invoked after exhaustion",
+      "tests": [
+        "journey.test lazy calls",
+        "journey.test cleanup-spent/work-spent"
+      ]
+    },
+    {
+      "case": "NEG-durable-stdin-outcome",
+      "requirement": "REQ-06",
+      "was": "FAIL",
+      "now": "stdin failure is inside the saved bytes",
+      "tests": [
+        "journey.test stdin-failed variant"
+      ]
+    }
+  ],
+  "composedSchedules": [
+    {
+      "id": "MODEL-PENDING-BODY",
+      "tests": [
+        "test_protocol TestBodyAndForward::test_pending_body_at_close_refuses_the_forward_and_retains_the_pending_read"
+      ],
+      "result": "forward refused for explicit close and for expiry during the read; body-read operation uncertain"
+    },
+    {
+      "id": "MODEL-QUEUED-REPLY",
+      "tests": [
+        "test_protocol TestAdmission::test_queued_reply_is_revoked_at_close_and_its_adapter_never_runs"
+      ],
+      "result": "revoked; adapter and follow-on queue refused"
+    },
+    {
+      "id": "MODEL-INFLIGHT-WRITE",
+      "tests": [
+        "test_protocol TestAdmission::test_close_during_or_after_the_write_leaves_a_tracked_unknown_that_late_completion_cannot_upgrade",
+        "test_protocol TestAdmission::test_close_revokes_queued_work_but_tracks_committed_work_even_before_its_adapter_runs"
+      ],
+      "result": "committed-before-adapter, close-during-write and unfinished-write all stay UNKNOWN; late completion recorded as late after freeze"
+    },
+    {
+      "id": "MODEL-CLEANUP-EXHAUSTION",
+      "tests": [
+        "test_protocol test_first_cleanup_step_consuming_the_remainder_leaves_every_later_step_not_attempted"
+      ],
+      "result": "later steps NOT_ATTEMPTED; no floor, no timeout 0, no replenished wait; ack NOT_ATTEMPTED"
+    },
+    {
+      "id": "MODEL-CHILD-CLOCK",
+      "tests": [
+        "test_protocol TestChildContract::test_child_limits_derive_from_the_parent_remainder_and_only_shorten",
+        "journey.test child startup delay and wall-clock rollback"
+      ],
+      "result": "child authority is min(absolute cutoff, relative budget minus monotonic uptime); never extended"
+    },
+    {
+      "id": "MODEL-CHILD-ACK",
+      "tests": [
+        "test_protocol TestChildContract::test_parent_acceptance_needs_independent_child_bytes_exit_teardown_and_a_separate_readback x8"
+      ],
+      "result": "missing, wrong bytes, unknown/nonzero exit, failed teardown, self-save claim and failed readback all give accepted=false with the stage retained"
+    }
+  ],
+  "ledgerLocationNote": "the acceptance ledger lists fixed artifact sets per requirement; oracle tests for REQ-03 and REQ-06 also live in test_execution.py and test_control.py, and REQ-04 oracle tests live in test_control.py, exactly as the per-requirement oracleTests above name them",
+  "ipcSubcases": [
+    "close before commit revokes queue (test_protocol TestAdmission)",
+    "close after commit before adapter keeps pending UNKNOWN (test_protocol TestAdmission)",
+    "wrong identity/generation/operation or reply tail refuses (test_protocol ipc test; journey.test whole-line reply and journey tests)"
+  ],
+  "failuresAndDeviations": [
+    "test launch 1 failed at collection of the 15th item: my scratch fixture truncated the test name and two parametrized cases collided; fixed by keeping the name suffix; the launch is counted",
+    "test launch 2: one assertion failed because the cleanup NOT_ATTEMPTED error text omitted the token; fixed in execution.finalize",
+    "drafts exceeded raw line ceilings (execution 343, test_execution 369, test_control 324) and were reduced before any ceiling-checked run; oracle tests were placed in test_control.py (REQ-04 owner), budget/poll tests in test_protocol.py, child_evidence in lifecycle.py",
+    "one PowerShell here-string lost a newline and merged two regex statements; py_compile caught it before any test; one replace helper aborted on a missing literal before writing; both repaired with a file-backed Python patch",
+    "two defects were found by my own review after launches 2 and 3 and fixed before launch 4: a timed-out command whose killed child was never observed to exit (now a tracked UNKNOWN operation) and a nested-escape and scheme-plus-quoted redaction hole (now named-group quoting); both are covered by launch 4 and the final launches",
+    "git reported LF to CRLF conversion warnings for the six modified tracked files under the repository autocrlf setting; bytes were left LF as pinned",
+    "preparation is PARTIAL_WITH_REASON because the earliest reads have no tool timestamp",
+    "full return gate run 1 FAILED in the reviewer-fast external knowledge intake routing guard (missing Internal source row); repaired in the return only; run 2 passed on the repaired bytes and the final-byte run is kept in ignored custody",
+    "no tool classifier block or platform prompt occurred; no subagent was spawned; no provider call"
+  ],
+  "effects": {
+    "providerCalls": 0,
+    "networkCalls": 0,
+    "loopbackRequests": 0,
+    "publicWrites": 0,
+    "deployments": 0,
+    "realDataMutations": 0,
+    "destructiveActions": 0,
+    "productRuntimeStarts": 0,
+    "nativeChildren": 0,
+    "runtimeUtilities": 0,
+    "containers": 0,
+    "browserProfiles": 0,
+    "exports": 0,
+    "evaluates": 0,
+    "stageDeletions": 0
+  },
+  "deferred": [
+    "actual Windows ABI, job, handle and thread behavior",
+    "B-E native, container, Web, browser/profile, loopback, export and evaluate proof",
+    "stage deletion and physical cleanup",
+    "actual cross-process cancellation, shared-clock and crash-durability behavior",
+    "provider/live, public and deploy",
+    "Local independent probe (PENDING_REVIEWER_EXECUTION)",
+    "parent root acceptance and any successor"
+  ],
+  "claimBoundary": "offline source-model implementation evidence for the locked R5 design only; not native, browser, product, runtime or parent-root acceptance; no new SCEC transition; same root, rework generation 5, ordinal 2 counters 2,0,2,0 retained"
+}

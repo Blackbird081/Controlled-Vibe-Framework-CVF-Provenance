@@ -5,11 +5,13 @@ docType: roadmap
 Status: ACCEPTED_UNIFIED_ROADMAP_LOCAL_CONSUMER_BOUNDED_FULL_PILOT_OPEN
 Date: 2026-09-26
 Program ID: CVF-NCR
-Version: 2.36
+Version: 2.37
 Revision disposition: LOCAL_CONSUMER_MAINTENANCE_ACCEPTED_BOUNDED; END_TO_END_PILOT_OPEN; Q001_AND_P11_CHECKPOINTS_RETAINED
 Decision owner: operator về định hướng/phạm vi; Local reviewer về đối chiếu kỹ thuật và nghiệm thu.
 
 ## Current Delivery Checkpoint - 2026-10-14
+
+**2026-10-15 R5 offline implementation rejected:** `docs/reviews/CVF_NCR_HTML_ROOT_SEMANTIC_R5_COMPLETION_2026-10-15.md` and `docs/reviews/evidence/ncr-html-root-semantic-local-r5-20261015.json` preserve original worker12,142 Python/13 Node,26 inert starts and all10 raw source snapshots. Local fresh22 assertions yield raw17 PASS/5 FAIL,0 harness errors: four confirmed REQ02/03/05/06 contradictions (ambiguous credential tail, stale utility wait after identity persistence, kill after cleanup cutoff, late terminal ACK acceptance); one too-strong Local completion assertion narrowed without rerun. PID cleanup race is source-only risk, not native observation. Preparation missing timestamps does not establish late reading; metadata syntax/static checks are excluded by R5. Recorded Git12/32 after three post-gate reads. Restore6 exact preimages/remove4 NEW rejected sources after durable readback; original return/proof remain unchanged. Corrected production needs fresh final9 matrix, unavailable within worker1 remaining/Local0; no local rushed patch, refill or automatic worker. Next Local prepares one consolidated repair packet under already locked design; no repeated design campaign/new checker. Same root actual review5/generation5/SCEC2/counters2,0,2,0/blockers/freeze retained; native/B-E/product/browser/delete, parent and parked effects remain held.
 
 **2026-10-15 semantic source R5 packet:** `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_ROOT_SEMANTIC_R5_2026-10-15.md` / `docs/baselines/CVF_GC018_NCR_HTML_ROOT_SEMANTIC_R5_2026-10-15.md` carry locked admission-commit/UNKNOWN, separate work/cleanup cutoffs and acyclic child/parent snapshot/ACK into source10/output12. Four CREATE paths include reintroduced rejected execution/test_execution and new protocol/test_protocol; readable shrink/capacity and17 retained cases plus6 composed schedules bound before implementation. Fresh delegated grant: worker240/Local90min, test8/4, sourceGit32/20, inert27/0, effects0; no R4 reuse or automatic worker. Same root actual rework5/generation5, SCEC ordinal2/counters2,0,2,0/blockers/freeze preserved. Manual transfer only after current committed pair/exact6 continuity/one-object feasibility and bound release. Actual native/product/browser/delete and parked lanes remain held.
 
