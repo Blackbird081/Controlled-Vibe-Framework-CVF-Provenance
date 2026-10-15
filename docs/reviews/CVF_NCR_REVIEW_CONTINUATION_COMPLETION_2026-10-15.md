@@ -6,7 +6,7 @@ Status: ACCEPTED_TECHNICAL_BOUNDED_PROCEDURE_PARTIAL
 Date: 2026-10-15
 rawMemoryReleased=false
 Batch ID: CVF-NCR-REVIEW-CONTINUATION-20261015
-reviewBaseHead: 436c4cc8e9f23b1d3c11a0b32775aa2d19858f78
+reviewBaseHead: 27c37aa0922b3fc3198d5676c2ba27e02adf1760
 dispatchWorkOrder: `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_REVIEW_CONTINUATION_2026-10-15.md`
 
 ## Purpose
@@ -15,19 +15,19 @@ Accept the finite existing-owner declaration amendment technically. Full work-or
 
 ## Target / Source
 
-Original exact8 worker bytes, released pair and companion are frozen before Local transition. Current proof `docs/reviews/evidence/ncr-review-continuation-local-20261015.json` includes raw hashes, retained log hashes, all independent case results and the full Local probe script. Original pair and eight worker files remain intact; MATCH is checked by raw SHA-256 and byte comparison in the Local closure author script. Current companion refreshes reviewed source6 hashes only; original dispatch bytes remain in custody.
+Original exact8 worker bytes, released pair and companion are frozen before Local transition. Current proof `docs/reviews/evidence/ncr-review-continuation-local-20261015.json` includes raw hashes, retained log hashes, all independent case results and the full Local probe script. Original pair and original eight-file custody remain intact; MATCH was checked by raw SHA-256 before Local review. LOCAL-F03 subsequently changes helper/test only; original source bytes and initial acceptance remain historical evidence, superseded for that missing valid-input domain. Current companion refreshes reviewed source6 hashes only; original dispatch bytes remain in custody.
 
 ## Scope / Methodology
 
-EVALUATE_RETURNED_EVIDENCE_NOT_RECREATE_IMPLEMENTATION. Consume hash-verified worker161 pytest,144 unittest, compile5,9 killed controls and final exact8 fast-gate PASS5.30s. No duplicate full suite, historical per-row review or parity sweep. Local's named information gain is independent real-process CLI admission, binding/completion joins and hostile declaration assertions. Missing durable pristine-HEAD evidence justifies only the four-node baseline check, which reproduces the four failures and assertion messages on a bounded HEAD export. MFRP remains M5/M10/safety/M20; no new model observation.
+EVALUATE_RETURNED_EVIDENCE_NOT_RECREATE_IMPLEMENTATION. Consume hash-verified worker161 pytest,144 unittest, compile5,9 killed controls and final exact8 fast-gate PASS5.30s. No duplicate full suite, historical per-row review or parity sweep. A newly identified digit-only SHA256 contradiction justified a second independent36-case variant and focused62 checker tests after a two-source Local repair. Local's named information gain is independent real-process CLI admission, binding/completion joins and hostile declaration assertions. Missing durable pristine-HEAD evidence justifies only the four-node baseline check, which reproduces the four failures and assertion messages on a bounded HEAD export. MFRP remains M5/M10/safety/M20; no new model observation.
 
 ## Findings / Position
 
 | Requirement or finding | Local disposition |
 |---|---|
 | REQ-01..05 | accepted bounded: closed grant, strict source/hash/expiry/binding/scope/ledger joins; exact CLI route and completion link; only two conditional exceptions |
-| REQ-06 | original161/144 and9 killed controls consumed; independent36/36 PASS |
-| REQ-07 | exact6 plus return/proof; no Local code/test edits; sizes and original raw bytes verified |
+| REQ-06 | original161/144 and9 killed controls consumed; Local focused62/62; independent72/72 PASS after numeric-text correction |
+| REQ-07 | original exact8 preserved in custody; Local bounded helper/test correction and exact6 repair material; original pair unchanged |
 | REQ-08 | BLOCKED; late/missing mandatory reads cannot become timely preparation after the fact |
 | Interpretation: Commit mode | identical repeats accepted as one unambiguous value, matching actual scaffold's two declarations; conflicting value rejected; other bound scalar duplicates rejected |
 | Interpretation: scope | type-strict JSON, list order significant, object member order immaterial |
@@ -36,6 +36,8 @@ EVALUATE_RETURNED_EVIDENCE_NOT_RECREATE_IMPLEMENTATION. Consume hash-verified wo
 | LOCAL-E02 | worker baseline log unavailable in named custody; Local now reproduces exact four failures on HEAD, with saved log; no fixes outside scope |
 
 Actual file symlink creation was attempted and failed with Windows privilege error1314. That case is UNAVAILABLE_WITH_REASON, not PASS. Worker real directory-junction control remains consumed evidence. No privilege/configuration change or dependency installation. Local probe uses ordinary aggregate assertions, independent of pytest subTest support. Differential parity receipt is limited output-comparison evidence, never complete source reading or scan evidence.
+
+| LOCAL-F03 | valid digit-only SHA256/ID strings were coerced to integers; corrected only three integer fields, regression62/62 and own72/72; initial numeric probe32/36 FAIL retained |
 
 ## Independent Review Probe Admission
 
@@ -47,11 +49,11 @@ workerInvocationId: ncr-review-continuation-worker-20261015
 probeInvocationId: ncr-review-continuation-local-independent-20261015
 reviewerDecisionOwner: LOCAL
 workerOracleSha256: 986f632e3ea07e72aeeac3d747ed70d6d18443a33d56d0adb630b5220951a1c3
-probeOracleSha256: efd6d606240014dd8dcb1014cc893293dc6e2fb5b9f9edd2bba705ac3c0f7d9a
+probeOracleSha256: 46ec6f0e139cce6007f30212d6d23701397a18d72d982fa6c29dc263f9535096
 workerEvidenceRef: docs/reviews/evidence/ncr-review-continuation-worker-20261015.json
 probeEvidenceRef: docs/reviews/evidence/ncr-review-continuation-local-20261015.json
 probeCommandOrMethod: python -B .cvf/runtime/ncr-review-continuation-local-20261015/probe.py
-probeObservedResult: 36/36 PASS; actual CLI subprocess, positive round3, malformed/partial/duplicate declarations, source hash/revocation/expiry/size/UTF8, strict scope, retained audit/successor restrictions and completion joins; real file symlink unavailable error1314.
+probeObservedResult: 72/72 PASS after numeric-text repair; original36 plus digit-only digest variant36; initial numeric variant32/36 FAIL retained; actual CLI subprocess, positive round3, malformed/partial/duplicate declarations, source hash/revocation/expiry/size/UTF8, strict scope, retained audit/successor restrictions and completion joins; real file symlink unavailable error1314.
 oracleSeparationBasis: Local authored independent synthetic inputs and explicit expected outcomes from locked SPEC; actual subprocess CLI then production diagnostic; no worker fixture/helper imports; full script and distinct actor/invocation/evidence bindings retained.
 
 ## Risk / Corrective Action
@@ -60,7 +62,7 @@ Validator checks declarations, not whether consent was actually given. Local ver
 
 ## Decision / Disposition
 
-ACCEPTED_TECHNICAL_BOUNDED_PROCEDURE_PARTIAL. No redispatch or historical preparation upgrade. Next Local derives a separate immutable HTML root continuation packet and checks its current phase feasibility. This review supplies no execution/profile refill. Same HTML root ordinal2/counters2,0,2,0/blockers/freeze and consumed grants remain. R1/R2 partial, R3/R4 open, R5/R6 deferred; data/custody/business/send/B2/P11/public/deploy parked; LHW24 retained.
+ACCEPTED_TECHNICAL_BOUNDED_PROCEDURE_PARTIAL. One bounded Local repair, no redispatch or historical preparation upgrade. Next Local derives a separate immutable HTML root continuation packet and checks its current phase feasibility. This review supplies no execution/profile refill. Same HTML root ordinal2/counters2,0,2,0/blockers/freeze and consumed grants remain. R1/R2 partial, R3/R4 open, R5/R6 deferred; data/custody/business/send/B2/P11/public/deploy parked; LHW24 retained.
 
 ## Return-Time Closeability Recheck
 
@@ -76,21 +78,21 @@ Finite technical output is closeable; full work-order fulfillment remains blocke
 Review-Cost Telemetry: REQUIRED
 reviewRoundCount: 1
 workerRepairTurnCount: 0
-newRootCauseCountThisRound: 0
+newRootCauseCountThisRound: 1
 dependentFindingCountThisRound: 2
 elapsedReviewMinutes: NOT_AVAILABLE_WITH_REASON: total wall time not captured; retained command logs provide bounded timings
 providerCallCount: 0
 tokenOrQuotaUsage: NOT_AVAILABLE_WITH_REASON: native usage and billing unavailable
-materialCommitCount: 0
-continuityCommitCount: 0
-valueDelta: independent36-case admission proof; three interpretation decisions; four HEAD failures confirmed; technical acceptance separated from blocked preparation
+materialCommitCount: 1
+continuityCommitCount: 1
+valueDelta: independent72-case admission proof after numeric-text repair; three interpretation decisions; four HEAD failures confirmed; technical acceptance separated from blocked preparation
 stopDisposition: COMPLETE_REVIEW
 preRepairAuditDisposition: COMPLETE_BEFORE_FIRST_REPAIR
-commitPlanDisposition: DEFAULT_ONE_MATERIAL_ONE_CONTINUITY
+commitPlanDisposition: EXCEPTION_WITH_REASON: digit-only digest contradiction discovered after initial material/continuity; bounded corrective material and refreshed continuity preserve the failed probe and prior acceptance
 latencyDisposition: WITHIN_FAST_PATH_TARGET
 avoidableDelayClass: NONE
 
-Counts precede this material/continuity pair; no new implementation turn.
+Counts precede the corrective material/continuity pair; one Local source repair, no new worker implementation turn. Initial acceptance was incomplete for numeric textual bindings; its failed extension and superseding correction are retained.
 
 ## Checker Source Read-Ahead Block
 
@@ -110,18 +112,18 @@ Counts precede this material/continuity pair; no new implementation turn.
 | Session or invocation | ncr-review-continuation-local-close-20261015 |
 | Working directory | repository root |
 | Command or tool surface | raw custody freeze, source review, independent probe, four-node HEAD regression, metadata source bindings and canonical gates |
-| Target paths | `docs/reference/review_cost_control/CVF_REVIEW_COST_AND_DIMINISHING_RETURN_CONTROL_STANDARD.md`; `governance/compat/build_dispatch_packet_scaffold.py`; `governance/compat/check_review_cost_control.py`; `governance/compat/review_convergence_scaffold.py`; `governance/compat/test_build_dispatch_packet_scaffold.py`; `governance/compat/test_check_review_cost_control.py`; `docs/reviews/CVF_NCR_REVIEW_CONTINUATION_WORKER_RETURN_2026-10-15.md`; `docs/reviews/evidence/ncr-review-continuation-worker-20261015.json`; `docs/reviews/evidence/ncr-review-continuation-dispatch-20261015.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `docs/reviews/CVF_NCR_REVIEW_CONTINUATION_COMPLETION_2026-10-15.md`; `docs/reviews/evidence/ncr-review-continuation-local-20261015.json` |
+| Target paths | `governance/compat/review_convergence_scaffold.py`; `governance/compat/test_check_review_cost_control.py`; `docs/reviews/evidence/ncr-review-continuation-dispatch-20261015.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `docs/reviews/CVF_NCR_REVIEW_CONTINUATION_COMPLETION_2026-10-15.md`; `docs/reviews/evidence/ncr-review-continuation-local-20261015.json` |
 | Allowed scope source | original work-order Reviewer Closure Conversion and actual operator full-authority instruction |
-| Before status evidence | HEAD436c4cc8e9f23b1d3c11a0b32775aa2d19858f78; exact8 pending worker files; stage empty |
-| After status evidence | exact12 material; original pair and worker8 preserved; source6 companion hashes refreshed |
-| Diff evidence | git diff --check and exact12 material manifest reconciled to Local proof |
+| Before status evidence | repair base 27c37aa0922b3fc3198d5676c2ba27e02adf1760; clean after initial material and continuity; numeric probe four failed positives |
+| After status evidence | exact6 repair material; original worker custody/pair intact; current source6 companion refreshed |
+| Diff evidence | git diff --check and exact6 corrective material manifest reconciled to Local proof |
 | Approval boundary | existing-owner maintenance and ordinary Local commit; no HTML effect grant |
 | Claim boundary | declaration protocol technical acceptance; REQ08 BLOCKED |
 | Agent type | INTERNAL_AGENT |
 | Invocation ID | ncr-review-continuation-local-close-20261015 |
-| Expected manifest | `docs/reference/review_cost_control/CVF_REVIEW_COST_AND_DIMINISHING_RETURN_CONTROL_STANDARD.md`; `governance/compat/build_dispatch_packet_scaffold.py`; `governance/compat/check_review_cost_control.py`; `governance/compat/review_convergence_scaffold.py`; `governance/compat/test_build_dispatch_packet_scaffold.py`; `governance/compat/test_check_review_cost_control.py`; `docs/reviews/CVF_NCR_REVIEW_CONTINUATION_WORKER_RETURN_2026-10-15.md`; `docs/reviews/evidence/ncr-review-continuation-worker-20261015.json`; `docs/reviews/evidence/ncr-review-continuation-dispatch-20261015.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `docs/reviews/CVF_NCR_REVIEW_CONTINUATION_COMPLETION_2026-10-15.md`; `docs/reviews/evidence/ncr-review-continuation-local-20261015.json` |
-| Actual changed set | `docs/reference/review_cost_control/CVF_REVIEW_COST_AND_DIMINISHING_RETURN_CONTROL_STANDARD.md`; `governance/compat/build_dispatch_packet_scaffold.py`; `governance/compat/check_review_cost_control.py`; `governance/compat/review_convergence_scaffold.py`; `governance/compat/test_build_dispatch_packet_scaffold.py`; `governance/compat/test_check_review_cost_control.py`; `docs/reviews/CVF_NCR_REVIEW_CONTINUATION_WORKER_RETURN_2026-10-15.md`; `docs/reviews/evidence/ncr-review-continuation-worker-20261015.json`; `docs/reviews/evidence/ncr-review-continuation-dispatch-20261015.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `docs/reviews/CVF_NCR_REVIEW_CONTINUATION_COMPLETION_2026-10-15.md`; `docs/reviews/evidence/ncr-review-continuation-local-20261015.json` |
-| Manifest delta | MATCH exact12 Local material; original exact8 separately frozen |
+| Expected manifest | `governance/compat/review_convergence_scaffold.py`; `governance/compat/test_check_review_cost_control.py`; `docs/reviews/evidence/ncr-review-continuation-dispatch-20261015.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `docs/reviews/CVF_NCR_REVIEW_CONTINUATION_COMPLETION_2026-10-15.md`; `docs/reviews/evidence/ncr-review-continuation-local-20261015.json` |
+| Actual changed set | `governance/compat/review_convergence_scaffold.py`; `governance/compat/test_check_review_cost_control.py`; `docs/reviews/evidence/ncr-review-continuation-dispatch-20261015.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `docs/reviews/CVF_NCR_REVIEW_CONTINUATION_COMPLETION_2026-10-15.md`; `docs/reviews/evidence/ncr-review-continuation-local-20261015.json` |
+| Manifest delta | MATCH exact6 corrective material; initial exact12 and original exact8 separately preserved |
 | Deletion or rename disposition | None |
 
 ## Core Guard Self-Protection Authorization
@@ -165,6 +167,7 @@ Rollback boundary: this bounded material and exact6 continuity; preserve receive
 
 | Finding | Defect class | Learning lane | Disposition | Next control action | Handled or deferred |
 |---|---|---|---|---|---|
+| Numeric textual binding coercion | WORKER_EXECUTION_ERROR | GOVERNANCE_CONTROL_PLANE | RULE_EXISTS | convert by declared field type and independently test valid digit-only digest/IDs | corrected bounded |
 | Late/missing mapped preparation | WORKER_EXECUTION_ERROR | GOVERNANCE_CONTROL_PLANE | RULE_EXISTS | dispatch with existing Worker Preparation Reminder and retain truthful BLOCKED | historical omission retained |
 | ADIF custody and missing baseline log | WORKER_EXECUTION_ERROR | DOCUMENTATION_ONLY_LEARNING | RULE_EXISTS | bind claims to actual retained raw logs; preserve originals and Local qualification | corrected in Local disposition |
 
@@ -173,7 +176,7 @@ N/A_WITH_REASON: no new checker or runtime/provider learning promotion.
 ## Epistemic Process Block
 
 Expected Result / Prediction: only fully bound operator-cleared dependent declarations bypass the two default round stops; completion links preserve all other controls.
-Evidence Comparison: verified worker evidence consumed; own36/36 PASS; four targeted HEAD failures reproduce worker assertions; source8 unchanged.
+Evidence Comparison: verified worker evidence consumed; own72/72 PASS after initial numeric32/36 exposed four invalid positive rejections; regression62/62; four targeted HEAD failures reproduce worker assertions; original8 custody preserved, helper/test corrected.
 Contradiction Or Gap Disposition: preparation remains BLOCKED; initial ADIF zero-result custody unverified; symlink unavailable; bounded baseline proof now retained.
 Claim Update: accept finite technical amendment; separate root packet preparation only, no stage exit or effect release.
 
@@ -191,6 +194,10 @@ Claim Update: accept finite technical amendment; separate root packet preparatio
 DEFERRED_PRIVATE_ONLY
 
 Reason: private provenance maintenance and technical review only.
+
+## P4 Exact Marker Adjudication
+
+Local adjudicated exact marker OBS-ce87793c1f8be372 in ignored durable custody before removal. Current technical/partial row is not a trusted-block outcome; canonical aggregate trigger comes from four historical blocked machine-accepted rows, which remain unchanged and excluded from success denominators. Current numeric-text defect is separately corrected, not erased by receipt PASS. No blanket marker clearance or journal/hook change.
 
 ## Claim Boundary
 

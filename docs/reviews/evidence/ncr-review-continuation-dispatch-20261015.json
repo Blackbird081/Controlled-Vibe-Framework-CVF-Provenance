@@ -72,7 +72,7 @@
         "requiredForPhase": true,
         "evidence": {
           "path": "governance/compat/review_convergence_scaffold.py",
-          "sha256": "8409912a170dd99fff67a792962568d2d98fa560372a9e5badb74cd897341f57",
+          "sha256": "69821687c7a5103549d3f769d47069b83b1f43b3387687cdf782d9a11c0858bd",
           "locator": "def validate("
         },
         "deferredToPhase": null
@@ -92,7 +92,7 @@
         "requiredForPhase": true,
         "evidence": {
           "path": "governance/compat/test_check_review_cost_control.py",
-          "sha256": "a79fb5297eb8fa5c5e7df4a4aa27b0bb4ba7bc147f5f45b7d0973d52acec43db",
+          "sha256": "e2fb430bc6b16491a6aa87152bdc13a3ea4efdd2f0009d429f19576bd6c17d3e",
           "locator": "def test_round_three_is_not_automatic_dispatch_eligible("
         },
         "deferredToPhase": null

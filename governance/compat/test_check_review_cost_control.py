@@ -677,6 +677,16 @@ class OperatorClearedContinuationTests(unittest.TestCase):
         self.assertTrue(d.applicable and d.is_clean, d.issues)
         self.assertTrue(self.case(_grant(reviewRoundCount=2, reworkGeneration=2), reviewRoundCount="2", reworkGeneration="2").is_clean)
 
+    def test_numeric_text_binding_scalars_remain_strings(self):
+        cases = [
+            (_grant(priorFindingSetDigest="1" * 64), dict(priorFindingSetDigest="1" * 64)),
+            (_grant(rootCauseClusterId="00456"), dict(rootCauseClusterId="00456")),
+            (_grant(parentAssignmentId="00123"), dict(edit=lambda text: text.replace("parentAssignmentId: parent-1", "parentAssignmentId: 00123"))),
+        ]
+        for grant, fields in cases:
+            diagnostic = self.case(grant, **fields)
+            self.assertTrue(diagnostic.is_clean, diagnostic.issues)
+
     def test_valid_timed_and_external_variants_are_clean(self):
         timed = _with(_with(_grant(), ("validityDisposition",), "UNTIL_UTC_EXPIRY"), ("expiresAtUtc",), "2026-10-16T00:00:00Z")
         self.assertTrue(self.case(timed).is_clean)

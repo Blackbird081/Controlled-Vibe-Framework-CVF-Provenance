@@ -245,7 +245,8 @@ def work_order_target(text: str) -> tuple[dict[str, Any], list[str]]:
         if len(values) != 1:
             issues.append(f"work order must declare exactly one {key} for the operator continuation binding")
         else:
-            target[key] = int(values[0]) if re.fullmatch(r"\d+", values[0]) else values[0]
+            numeric = key in ("reviewRoundCount", "reworkGeneration", "externalInvocationCeiling")
+            target[key] = int(values[0]) if numeric and re.fullmatch(r"\d+", values[0]) else values[0]
     modes = {value.strip().rstrip(".").strip(" `") for value in re.findall(r"(?m)^Commit mode:[ \t]*(.+)$", text)}
     if len(modes) != 1:
         issues.append("work order must declare one unambiguous Commit mode")
