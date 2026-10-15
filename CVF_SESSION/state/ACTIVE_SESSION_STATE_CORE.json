@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_INTEGRATED_ROOT_BUILD_RELEASE_2026-10-15.md",
     "workOrderSha256": "60ffd9fcb62a8b0854e4cf0fc846b979ae9934b8e8febc57db028b5c41721038"
   },
-  "currentAuthoritySyncReason": "Source-only assessment committed at f138de608ef9613ece16d743624ed5925f6115a2, with source facts and coupled design. Runtime root remains BLOCKED; original finite worker/Local positive profiles consumed. Release pair raw pins retained as provenance only. Next Local documentary consolidated admission contract/prospective pair plus phase budgets and actual feasibility before a new effect decision; no automatic worker/patch/runtime or counter reset. Original preparation partial, root/freeze/P4 history retained.",
+  "currentAuthoritySyncReason": "Held V2 design/snapshot/evidence committed at e91bd74600f9555f64f33c42597c4dd884ac7dc0; source/grammar snapshot result is scoped only, actual round3 redispatch remains blocked. No new live work order exists. Existing pair pins retained as consumed provenance; do not combine new design baseline with old work order or reuse effects. Next documentary reconciliation of existing round-three owner/machine route; no patch/new checker/worker/runtime. Root/counters/freeze/partial history retained.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
@@ -110,8 +110,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_ncr_html_root_source_reassessment_complete_design_pending",
-  "previousMode": "cvf_ncr_html_root_build_blocked_after_local_review",
+  "currentMode": "cvf_ncr_html_admission_v2_design_held_existing_route",
+  "previousMode": "cvf_ncr_html_root_source_reassessment_complete_design_pending",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
