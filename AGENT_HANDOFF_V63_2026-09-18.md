@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Current NCR Continuation
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `b6b63c8329398c0b1eff4ca565ada4edcb999dde`. Material SHA: `b6b63c8329398c0b1eff4ca565ada4edcb999dde`. Batch ID: CVF-NCR-HTML-DIRECT-LOCAL-REPAIR-20261016. Bounded direct Local source repair; actual native/parent proof held.
+Current HEAD recorded for this handoff: `94f7793e17d31ca825280ea27d996a041ab48951`. Material SHA: `94f7793e17d31ca825280ea27d996a041ab48951`. Batch ID: CVF-NCR-HTML-DIRECT-LOCAL-REPAIR-20261016. Final normal-UNKNOWN fence correction; source160/13/independent14, no actual native/parent proof.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -17,15 +17,15 @@ Operator selected direct Local implementation on2026-10-16; prior manual impleme
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_html_direct_local_source_repair_accepted_native_prerequisite_plan`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=connected material correction then final continuity/split closure; role=INTERNAL_AGENT Local implementer/reviewer/steward; phase=freshness prerequisite continuity, distinct internal probe complete; decision owner=Local; parked checkpoint=actual Windows/native/B-E/browser/product/container/provider/stage/parent/public/deploy. Local control window closed.
+Startup acknowledged: current mode=`cvf_ncr_html_direct_local_source_repair_accepted_native_prerequisite_plan`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=final split closure then Local native-proof prerequisite PLAN; role=INTERNAL_AGENT Local implementer/disposition owner/steward with distinct internal probe executor; phase=bounded direct source repair complete; decision owner=Local; parked checkpoint=actual Windows ABI/B-E/native/browser/product/container/provider/stage deletion/parent/public/deploy. Direct implementation selected; no manual relay, current Local control-program window closed.
 
 ## Current Mode
 
-`cvf_ncr_html_direct_local_source_repair_accepted_native_prerequisite_plan`. First repair committed; connected UNKNOWN correction has final160/13/independent14 evidence but remains pending material commit. This exact6 precursor resolves next-move dirty-target ambiguity before material restoration. Local8/8 closed; no runtime successor.
+`cvf_ncr_html_direct_local_source_repair_accepted_native_prerequisite_plan`. Final160 Python/13 Node and independent14 PASS, including actual readiness retry fence/known-failure recovery. Two matrices52 inert; Local8/8 program window closed. First two split ranges passed; final correction committed and exact6 continuity then final split gates. No runtime successor.
 
 ## Current Authority
 
-Current direct Local authorization `docs/baselines/CVF_GC018_NCR_HTML_DIRECT_LOCAL_REPAIR_2026-10-16.md` SHA256 `9cb12b1a60a9027b73355862cffc088f4104b20cc608ab17fd94dea96917978c`; bounded disposition `docs/assessments/CVF_NCR_HTML_DIRECT_LOCAL_REPAIR_DISPOSITION_2026-10-16.md`; evidence `docs/reviews/evidence/ncr-html-direct-local-repair-20261016.json`. No active executable work order. The existing machine state schema requires a baseline/workOrder pair, so its currentAuthority retains the consumed R5 pair as historical provenance only; do not pair the new Local baseline with the old work order or treat it as an executable grant. Source-model acceptance does not reopen R5 or refill its budgets. The locked semantic design and current explicit instruction control this direct action.
+Current direct Local authorization `docs/baselines/CVF_GC018_NCR_HTML_DIRECT_LOCAL_REPAIR_2026-10-16.md` SHA256 `ff850e9bd1e4a1435c2990b758d6d6e6909b681e2b358687d576e0e850063138`; current disposition `docs/assessments/CVF_NCR_HTML_DIRECT_LOCAL_REPAIR_DISPOSITION_2026-10-16.md`; proof `docs/reviews/evidence/ncr-html-direct-local-repair-20261016.json`. No executable work order. Existing currentAuthority four-field schema retains the consumed R5 pair as historical provenance only, never the current Local grant. Two source revisions remain in Git; current proof supersedes first157/12 at bounded source scope. Original R5 rejection/spent profiles and all prior failures remain.
 
 ## Accepted NCR Evidence And Continuation
 
@@ -37,7 +37,7 @@ Finite clipboard result ordering is accepted; actual OS write cancellation, whol
 
 ## Next Allowed Move
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-DIRECT-LOCAL-REPAIR-20261016. Committed first source disposition remains material b6b63c8329398c0b1eff4ca565ada4edcb999dde and continuity4c1bd70d19ddbb3075366a9934c1c4d827dcbb64. Next finish the connected normal-UNKNOWN fence correction material and final exact6 continuity, then split closure. The source correction has final160 Python/13 Node and distinct14 PASS; not yet committed or finally closed. Pending correction9 are hash-preserved in .cvf/runtime/ncr-html-root-local-repair-20261016/pending-correction-before-continuity/manifest.json while this precursor is committed. The prior next move named the mutable disposition as a target; the exact-target checker correctly reported AMBIGUOUS_DIRTY_TARGET. This precursor selects the actual remaining commit/closure action; no assessment is a dispatch or planning target. Restore pending bytes exactly after this commit. EXCEPTION_WITH_REASON: two material/three exact6 continuity commits, including this freshness prerequisite. No checker change or bypass. Direct Local implementation only under docs/baselines/CVF_GC018_NCR_HTML_DIRECT_LOCAL_REPAIR_2026-10-16.md; no executable work order or manual relay. Required currentAuthority pair is consumed R5 historical provenance only, never an execution grant. R5 rejection and all original failures remain. Local8/8 test programs CLOSED,52/54 inert completed; reviewer3/4,0 children. No more Local controls or profile/counter refill. After final closure Local PLAN reconciles actual Windows ABI/B-E/native/browser/product/container/cleanup prerequisites. Actual effects0 and parent/stage proof unaccepted. Same root NCR_HTML_CONFIGURED_RECEIPT_CONTROL_PROOF/generation6/SCEC ordinal2/counters2,0,2,0/two blockers/freeze; no new transition/critical evidence/checker. Partial preparation retained. Outside pytest cleanup policy-blocked; archives/exact paths/Local owner in current custody all-temp-retention.json; no alternate delete. Prior7 P4 exclusions preserved, first continuity collector skipped no eligible candidate. R1/R2partial,R3/R4open,R5/R6deferred; foundation active/extension NOT_APPLIED/projectOPEN; data/custody/business/send/B2/P11/public/deploy parked; LHW24 retained. No micro-confirmation for admitted Local work.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-DIRECT-LOCAL-REPAIR-20261016. Final source repair accepted bounded material=94f7793e17d31ca825280ea27d996a041ab48951; authorization=docs/baselines/CVF_GC018_NCR_HTML_DIRECT_LOCAL_REPAIR_2026-10-16.md; proof=docs/reviews/evidence/ncr-html-direct-local-repair-20261016.json. Operator selects direct Local implementation; prior manual relay retired. No active executable work order; schema-required currentAuthority pair is consumed R5 historical provenance only. Four R5 failures/PID cleanup race, cancellation/spawn primary errors and connected normal-UNKNOWN readiness fence corrected. Unconfirmed completion closes WORK, revokes queued work and prevents sleep/retry; confirmed nonzero may retry within budget. Final160 Python/13 Node and independent program3:14 PASS/0 FAIL. Two source-bound9-case matrices52/54 inert total,26 latest; Local8/8 programs CLOSED, reviewer3/4 and0 children. No further Local control launch in this window. First materialb6b63c83/continuity4c1bd70d1 retained; second minimal correction9 within originalsource10/documentary5. EXCEPTION_WITH_REASON: connected UNKNOWN fence found after first commit; two material/three exact6 continuity including the checker-required freshness precursor, no counter/profile refill. Preparation PARTIAL and all first failures retained, including RED3 and GREEN159/1 old private exception expectation; final current proof supersedes earlier157/12 only at source-model scope. Checked outside pytest cleanup was policy-blocked; all exact recording paths/archives/Local ownership in .cvf/runtime/ncr-html-root-local-repair-20261016/all-temp-retention.json; no alternate removal. Premature correction pre-closure failed only the unsynced handoff HEAD marker; failure retained, final continuity precedes the split rerun. A metadata-only inline script then failed PowerShell quoting before writing; file-backed correction used. Finish serial split closure then Local PLAN reconciles actual Windows ABI/B-E/native/browser/product/container/cleanup prerequisites; no automatic runtime/worker or effect release. Same root NCR_HTML_CONFIGURED_RECEIPT_CONTROL_PROOF/generation6/SCEC ordinal2/counters2,0,2,0/two blockers/freeze; no new transition/independentCriticalEvidence/new checker. Actual effects0, all52 inert children completed; parent custody/stage deletion unaccepted. Prior7 P4 blocks/exclusions preserved; automatic collector SKIPPED_NO_ELIGIBLE_CANDIDATE after first continuity, no manufactured observation. R1/R2partial,R3/R4open,R5/R6deferred; foundation active/extension NOT_APPLIED/projectOPEN; data/custody/business/send/B2/P11/public/deploy parked; LHW24 retained. No micro-confirmation for admitted Local work.
 
 ## Active Boundary
 T3B has a Local-verified active v1 specification. Party B is verified and T3C-C1 tooling accepted at `db78c87df`; T3C-C2 and Party C are verified. T3D-C1 tooling is accepted at `9ed844c2a` without source. T3D-C0-R1 closed at `2fffa1ef7`. T3D-C3 was accepted bounded at `88137e9a2`, but actual-mode prepare attempts failed before Party B/C execution; authorized cleanup removed the failed root and discarded unaccepted worker changes. G1 stopped, G2-G6 parked, and G7 research closed at `660601f0e` with `ADAPT_EXISTING_HANDOFF_ONLY`. Evidence-join sufficiency stays WATCH; no implementation successor exists. Rejected T2 paths remain archived; HRLTP-T2 paused.
@@ -100,22 +100,23 @@ Rollback boundary: these exact6; preserve R5 rejection/current source proof, all
 |---|---|
 | Actor | Local INTERNAL_AGENT steward |
 | Provider or surface | private workspace |
-| Session or invocation | ncr-html-direct-local-continuity-20261016 |
+| Session or invocation | ncr-html-direct-local-final-continuity-20261016 |
 | Working directory | repository root |
-| Command or tool surface | four source continuity edits; canonical generator; exact6 staging/commit; serial split closure |
+| Command or tool surface | four continuity source edits; canonical generator; exact6 commit; serial split closure |
 | Target paths | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Allowed scope source | direct Local instruction and current GC-018 exact6 authorization |
-| Before status evidence | source10/documentary5 material b6b63c8329398c0b1eff4ca565ada4edcb999dde committed; clean/stagedempty |
-| After status evidence | exact6 binds bounded source acceptance and direct implementation preference; actual effects held |
-| Diff evidence | exact6 staged manifest and separate committed ranges |
-| Approval boundary | documentary continuity only, no runtime successor |
-| Claim boundary | no work-order fulfillment/native/parent/provider/public acceptance |
+| Allowed scope source | current direct Local GC-018 and explicit operator implementation instruction |
+| Before status evidence | correction9 material 94f7793e17d31ca825280ea27d996a041ab48951 committed; stagedempty |
+| After status evidence | exact6; final160/13/independent14, normal UNKNOWN fenced, current control window closed |
+| Diff evidence | exact6 staged manifest and split committed ranges |
+| Approval boundary | documentary continuity only; no runtime/profile refill |
+| Claim boundary | no work-order fulfillment/real Windows/native/parent/provider/public acceptance |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-html-direct-local-continuity-20261016 |
+| Invocation ID | ncr-html-direct-local-final-continuity-20261016 |
 | Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Manifest delta | MATCH exact6 |
-| Deletion or rename disposition | none; policy-blocked outside recording fixture retained with exact owner/path |
+| Deletion or rename disposition | none; outside recording fixture retention remains explicit |
+
 
 ## Claim Boundary
 Current facts, exact packet binding and permitted next action only. Historical Home/O6 evidence remains bounded; no whole-roadmap, live/provider, backend cancellation, release/public/deployment or model-winner claim.
