@@ -36,12 +36,12 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_NCR_REVIEW_CONTINUATION_2026-10-15.md",
-    "baselineSha256": "325a064e5e90094a7a24da124c520ad3f03116b97eaf90a5d24ef46032c94ef7",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_REVIEW_CONTINUATION_2026-10-15.md",
-    "workOrderSha256": "f1faedca774e2f97b36028ec2c3054f2057edde3b57f35f624b49a131d38d733"
+    "baselinePath": "docs/baselines/CVF_GC018_NCR_HTML_ROOT_CONTINUATION_2026-10-15.md",
+    "baselineSha256": "e00fd35e1c07fd2330c7de0dc8b0c9d5c7ed376a15af2c1ed6734147bfea35d5",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_ROOT_CONTINUATION_2026-10-15.md",
+    "workOrderSha256": "46d41387d1115b893abdfea0f0695368396116829e1b3826af5ac53cc8755caf"
   },
-  "currentAuthoritySyncReason": "Finite maintenance technical acceptance at 4c7e61932063ef0816d4907d902ccb261ddf3e04; Local independent72/72, original worker8/pair frozen, current companion source6 bindings refreshed. Review/proof=docs/reviews/CVF_NCR_REVIEW_CONTINUATION_COMPLETION_2026-10-15.md; docs/reviews/evidence/ncr-review-continuation-local-20261015.json. REQ08/preparation remain BLOCKED/PARTIAL; four existing HEAD failures verified. Actual operator full-authority instruction continues ordinary Local work without micro-confirmation. Consumed maintenance pair remains evidence only; next separate HTML root continuation packet PLAN/phase feasibility. No effects, root/counter reset or spent-profile refill; historical P4 rows/C15, parked effects and LHW24 retained. First Local preflight missing raw-memory false token retained, corrected; final reviewer preflight PASS. Late valid numeric-text binding contradiction required a two-source Local correction after initial commits; focused62/62, original36 plus numeric36 PASS. Initial numeric32/36 failure retained; one additional material/continuity pair is justified, not new worker scope. Exact P4 marker OBS-ce87793c1f8be372 adjudicated in durable ignored custody; aggregate historical four blocks/C15/journal preserved.",
+  "currentAuthoritySyncReason": "Offline-only integrated root implementation dispatch at ddeab068a16cde4e6fcb480e239b2b73ad0d4344; exact6 material and current raw pair/grant/source pins, then exact6 continuity. Two authorized read-only internal reviewers completed; no implementation invoked. Actual next/work-order instruction covers manual offline implementation, seven effects0 and runtime slots0; native/product/profile B-E proof remains deferred and old slots spent. Round3 source-bound grant preserves root/ordinal2/counters/blockers/freeze. Dispatcher preparation PARTIAL and first/second carrier/literal gate failures retained; final reviewer preflight and material91/91 PASS. Final bound pre-dispatch required before manual transfer. Ordinary same-scope offline work needs no repeated micro-confirmation. Historical REQ08/failures/P4 exclusions, parked effects and LHW24 retained.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
@@ -110,8 +110,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_ncr_review_continuation_accepted_root_packet_plan",
-  "previousMode": "cvf_ncr_review_continuation_worker_dispatch_ready",
+  "currentMode": "cvf_ncr_html_root_offline_continuation_dispatch_ready",
+  "previousMode": "cvf_ncr_review_continuation_accepted_root_packet_plan",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
