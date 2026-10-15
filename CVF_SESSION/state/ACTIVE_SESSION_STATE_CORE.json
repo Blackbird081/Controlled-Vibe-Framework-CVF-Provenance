@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_ROOT_CONTINUATION_R1_2026-10-15.md",
     "workOrderSha256": "6d11ce2d63606e20e744fd0536723e8731948f841f07f665d6facc019730a3ee"
   },
-  "currentAuthoritySyncReason": "Offline-only integrated root implementation dispatch at 0d7d6c3843c74a7065665cd22fc71fcb4aa67d11; exact6 material and current raw pair/grant/source pins, then exact6 continuity. Two authorized read-only internal reviewers completed; no implementation invoked. Actual next/work-order instruction covers manual offline implementation, seven effects0 and runtime slots0; native/product/profile B-E proof remains deferred and old slots spent. Round3 source-bound grant preserves root/ordinal2/counters/blockers/freeze. Dispatcher preparation PARTIAL and first/second carrier/literal gate failures retained; final reviewer preflight and material91/91 PASS. Final bound pre-dispatch required before manual transfer. Ordinary same-scope offline work needs no repeated micro-confirmation. Historical REQ08/failures/P4 exclusions, parked effects and LHW24 retained. Initial material pre-closure found missing GC018 ADIF disclosure although actual27/27 query/order existed. Attempt to modify pinned active pair was rejected; original four raw artifacts restored and separate immutable R1 created before this authority switch. Corrected baseline/grant/order/companion/dispatch/roadmap as exact6, source-bound current pins and component PASS. Initial material ddeab068a/continuity83813a7f9 and failed receipt retained; additional material/continuity is a disclosed exception before any manual transfer, no worker/source/effect expansion.",
+  "currentAuthoritySyncReason": "Negative Local review material=7ce72c4391b2eb0b6bfd38b2350df2803ecef67a; review=docs/reviews/CVF_NCR_HTML_ROOT_CONTINUATION_COMPLETION_2026-10-15.md; proof=docs/reviews/evidence/ncr-html-root-continuation-local-20261015.json. Worker phase executed/returned and rejected; original exact8/immutable packet/raw source snapshots preserved; helpers restored to raw dispatch preimages, no source implementation accepted. Python independent11=3 positive PASS/8 negative FAIL; Local Node adapter invalid retained, runners2 consumed. Git worker-reported21/8 ruled actor-wide; REQ07 and08 blocked, Local preparation PARTIAL retained. Current immutable R1 pair is consumed-phase provenance, not rerun permission. Next Local source-only consolidated recovery feasibility; no worker, effects or cap/profile refill. Same parent/root/round3/generation3/digest, SCEC ordinal2/counters2,0,2,0/blockers/freeze, P4 historical exclusions and parked lanes/LHW24 retained. No new checker or provider-memory authority.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
@@ -110,7 +110,7 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_ncr_html_root_offline_continuation_dispatch_ready",
+  "currentMode": "cvf_ncr_html_root_offline_continuation_rejected_recovery_plan",
   "previousMode": "cvf_ncr_review_continuation_accepted_root_packet_plan",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
