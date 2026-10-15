@@ -179,9 +179,11 @@ class Protocol:
             else:
                 op.state, op.outcome = (DONE if ok else FAILED), outcome
 
-    def timed_out(self, op):
+    def timed_out(self, op, outcome="WAIT_BOUND_MISSED"):
         with self.lock:
-            op.outcome = "WAIT_BOUND_MISSED"  # state stays DISPATCHED: the call may still be running
+            op.outcome = outcome  # state stays DISPATCHED: completion was not observed
+            if not op.cleanup:
+                self._close(self.clock(), outcome)  # unknown normal work cannot authorize retries or other follow-on work
 
     def snapshot(self):
         with self.lock:

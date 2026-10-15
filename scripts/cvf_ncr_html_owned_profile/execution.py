@@ -115,7 +115,7 @@ class Collector:
         return run_op(self.proto, kind, fn, requested, **kw)
 
     def sleep(self, seconds):
-        wait = self.proto.left(seconds, work_only=True)
+        wait = min(seconds, self.proto.check())
         if wait <= 0:
             raise Deadline("sleep: work cutoff reached")
         self.sleeper(wait)
@@ -144,11 +144,13 @@ class Collector:
             event.update(state="STARTED", timeoutSeconds=wait)
         fields, stdout, result, failure, stop, unresolved = {}, "", None, None, None, False
         self.local.op = op
+        cleanup_count = len(self.cleanup_errors)
         try:
             p = self.runner(list(argv), input=data, capture_output=True, text=True, encoding="utf-8", errors="replace", timeout=wait)
             stdout, code = p.stdout or "", getattr(p, "returncode", None)
             fields = {"exitCode": code if type(code) is int else None, "stdout": bounded(stdout), "stderr": bounded(p.stderr)}
             failure = None if completion(code) == "SUCCESS" else completion(code)
+            unresolved = failure == "UNKNOWN"
         except subprocess.TimeoutExpired as error:
             fields, failure, unresolved = {"stdout": bounded(error.stdout), "stderr": bounded(error.stderr), "timedOut": True}, "TIMEOUT", getattr(error, "drained", True) is False
             fields["cleanupError"] = getattr(error, "cleanup_error", None)
@@ -158,13 +160,14 @@ class Collector:
             fields, failure = {"stderr": bounded(repr(error))}, "SPAWN" if isinstance(error, OSError) else "UNKNOWN"
         finally:
             self.local.op = None
+        unresolved = unresolved or len(self.cleanup_errors) > cleanup_count
         if parse and failure is None:
             try:
                 result = parse(stdout)
             except Exception as error:
                 fields["parseError"], failure = bounded(repr(error), 200), "PARSE"
         if unresolved:  # the child was told to stop but its exit was not observed: the operation stays UNKNOWN and tracked
-            self.proto.timed_out(op)
+            self.proto.timed_out(op, "WAIT_BOUND_MISSED" if failure == "TIMEOUT" else "UNCONFIRMED_COMPLETION")
         else:
             self.proto.complete(op, failure is None, failure)
         self.finish(kind, event, fields, failure)

@@ -252,7 +252,7 @@ class TestAdmissionBeforeEffects:
         assert E.sha((namespace / "custody/terminal-evidence.json").read_bytes()) == terminal["evidenceSha256"]  # persisted bytes are the frozen bytes
 
 
-CEILINGS = {P.INIT: 329, P.LIFECYCLE: 329, P.PROFILE: 329, P.EXECUTION: 349, P.JOURNEY: 329, P.PROTOCOL: 299, P.TEST_PROTOCOL: 329, P.JOURNEY_TEST: 299, P.TEST_CONTROL: 296, P.TEST_EXECUTION: 349}
+CEILINGS = {P.INIT: 329, P.LIFECYCLE: 329, P.PROFILE: 329, P.EXECUTION: 349, P.JOURNEY: 329, P.PROTOCOL: 299, P.TEST_PROTOCOL: 349, P.JOURNEY_TEST: 299, P.TEST_CONTROL: 296, P.TEST_EXECUTION: 349}
 
 
 def test_canonical_fixtures_exact12_family_readable_ceilings_and_pinned_immutable_legacy_blob():

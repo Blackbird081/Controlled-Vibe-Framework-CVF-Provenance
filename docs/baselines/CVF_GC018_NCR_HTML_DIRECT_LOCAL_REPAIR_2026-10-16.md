@@ -48,6 +48,7 @@ starting bytes only; acceptance requires current independent evidence.
 | Cleanup cutoff | Failed pre-resume ownership/persistence step never kills or waits after cleanup remainder is exhausted. Keep original error; retain unresolved exact child for future admitted cleanup. |
 | Terminal ACK | A write/readback completed beyond cleanup cutoff cannot certify timely acknowledgment or acceptance. Immutable bytes remain untouched; unknown/late status prevents acceptance. |
 | Exact handle | Cleanup stops the pinned creation handle with identity checked through that handle, not taskkill /PID after an earlier PID check. PID reuse cannot select a replacement process. |
+| UNKNOWN normal fence | Unobserved timeout, malformed exit or failed spawned-child cleanup closes normal admission before readiness retry/sleep, retaining pending operations and revoking queued work. Confirmed failure may retry within the readiness budget. |
 | Preserved value | Keep R5 input/receipt/schema/UTF16, queued-vs-committed uncertainty, body fence, lazy child and independent child-byte/exit/ACK controls. Confirmed-late completion before fence is not automatically a failure. |
 
 Same root NCR_HTML_CONFIGURED_RECEIPT_CONTROL_PROOF, actual dependent repair
@@ -70,13 +71,13 @@ Recover/adapt these exact10 source/test paths; six MODIFY and four CREATE:
 - `scripts/cvf_ncr_html_owned_profile/test_protocol.py`
 
 Preserve LF source endings. Source ceilings remain<350 lines, with existing
-readable allocation except prospective test_execution<=349 and test_protocol<=329
+readable allocation except prospective test_execution<=349 and test_protocol<=349
 to fit consolidated new regression coverage without compression; neither expands
 production topology. Execution<=349 explicitly accommodates fresh wait and
 post-call ACK checks without compression (R5 was328 lines); this changes a
 planning allocation, not the locked semantic contract or hard349 ceiling.
 Existing test_control<=296, protocol<=299, journey.test<=299; other production
-files<=329. Additional timeout-cancellation and spawn-cleanup preservation
+files<=329. Additional timeout-cancellation, normal-UNKNOWN fencing and spawn-cleanup preservation
 coverage found by independent review uses test_execution's explicit349 ceiling
 before its final run; the hard349/source limit stays. No tests in production modules.
 
@@ -193,8 +194,8 @@ Retained evidence custody owner=Local; ordinary owned scratch is cleaned under S
 | Claim boundary | no work-order fulfillment, actual runtime/native/provider/public acceptance |
 | Agent type | INTERNAL_AGENT |
 | Invocation ID | ncr-html-direct-local-repair-20261016 |
-| Expected manifest | `scripts/cvf_ncr_html_owned_profile/__init__.py`; `scripts/cvf_ncr_html_owned_profile/lifecycle.py`; `scripts/cvf_ncr_html_owned_profile/profile.py`; `scripts/cvf_ncr_html_owned_profile/test_control.py`; `scripts/cvf_ncr_html_owned_profile/journey.cjs`; `scripts/cvf_ncr_html_owned_profile/journey.test.cjs`; `scripts/cvf_ncr_html_owned_profile/execution.py`; `scripts/cvf_ncr_html_owned_profile/test_execution.py`; `scripts/cvf_ncr_html_owned_profile/protocol.py`; `scripts/cvf_ncr_html_owned_profile/test_protocol.py`; `docs/baselines/CVF_GC018_NCR_HTML_DIRECT_LOCAL_REPAIR_2026-10-16.md`; `docs/assessments/CVF_NCR_HTML_DIRECT_LOCAL_REPAIR_DISPOSITION_2026-10-16.md`; `docs/reviews/evidence/ncr-html-direct-local-repair-20261016.json`; `docs/reviews/evidence/ncr-html-direct-local-repair-pins-20261016.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` |
-| Actual changed set | `scripts/cvf_ncr_html_owned_profile/__init__.py`; `scripts/cvf_ncr_html_owned_profile/lifecycle.py`; `scripts/cvf_ncr_html_owned_profile/profile.py`; `scripts/cvf_ncr_html_owned_profile/test_control.py`; `scripts/cvf_ncr_html_owned_profile/journey.cjs`; `scripts/cvf_ncr_html_owned_profile/journey.test.cjs`; `scripts/cvf_ncr_html_owned_profile/execution.py`; `scripts/cvf_ncr_html_owned_profile/test_execution.py`; `scripts/cvf_ncr_html_owned_profile/protocol.py`; `scripts/cvf_ncr_html_owned_profile/test_protocol.py`; `docs/baselines/CVF_GC018_NCR_HTML_DIRECT_LOCAL_REPAIR_2026-10-16.md`; `docs/assessments/CVF_NCR_HTML_DIRECT_LOCAL_REPAIR_DISPOSITION_2026-10-16.md`; `docs/reviews/evidence/ncr-html-direct-local-repair-20261016.json`; `docs/reviews/evidence/ncr-html-direct-local-repair-pins-20261016.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` |
+| Expected manifest | `scripts/cvf_ncr_html_owned_profile/execution.py`; `scripts/cvf_ncr_html_owned_profile/protocol.py`; `scripts/cvf_ncr_html_owned_profile/test_control.py`; `scripts/cvf_ncr_html_owned_profile/test_protocol.py`; `docs/baselines/CVF_GC018_NCR_HTML_DIRECT_LOCAL_REPAIR_2026-10-16.md`; `docs/assessments/CVF_NCR_HTML_DIRECT_LOCAL_REPAIR_DISPOSITION_2026-10-16.md`; `docs/reviews/evidence/ncr-html-direct-local-repair-20261016.json`; `docs/reviews/evidence/ncr-html-direct-local-repair-pins-20261016.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` |
+| Actual changed set | `scripts/cvf_ncr_html_owned_profile/execution.py`; `scripts/cvf_ncr_html_owned_profile/protocol.py`; `scripts/cvf_ncr_html_owned_profile/test_control.py`; `scripts/cvf_ncr_html_owned_profile/test_protocol.py`; `docs/baselines/CVF_GC018_NCR_HTML_DIRECT_LOCAL_REPAIR_2026-10-16.md`; `docs/assessments/CVF_NCR_HTML_DIRECT_LOCAL_REPAIR_DISPOSITION_2026-10-16.md`; `docs/reviews/evidence/ncr-html-direct-local-repair-20261016.json`; `docs/reviews/evidence/ncr-html-direct-local-repair-pins-20261016.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` |
 | Manifest delta | bounded final15; disposition records actual reconciliation |
 | Deletion or rename disposition | none; no stage disposal; recover4 NEW rejected source owners and MODIFY6 |
 

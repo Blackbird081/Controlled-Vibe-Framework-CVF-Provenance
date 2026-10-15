@@ -48,18 +48,44 @@ Queued/committed uncertainty, input/schema/UTF16 and child byte/exit/ACK control
 remain covered. Legacy taskkill failure IDs in the inert matrix test the
 collector/terminal substitute path, not actual handle termination.
 
+## Connected UNKNOWN Fence Correction After First Commit
+
+After material b6b63c83/continuity4c1bd70d1, Local source inspection identified
+that timed_out preserved uncertainty but left WORK open. Actual engine readiness
+poll catches CommandFailure as RuntimeError and could start a second request.
+The existing locked design forbids follow-on work from unobserved completion;
+read-only authority reconciliation confirmed this connected obligation.
+
+Focused RED program6 fails all3 schedules: unobserved timeout, unknown exit and
+spawn failure with unconfirmed cleanup. Protocol now closes normal admission
+under its existing lock, retains DISPATCHED uncertainty and revokes queued work.
+Collector marks each unconfirmed completion; normal sleep checks the closed
+phase. Cleanup-class attempts remain admitted within their own remainder.
+
+Current independent program3:14 PASS/0 FAIL/0 oracle errors. Each readiness case
+has exactly1 runner invocation,0 sleeps,1 charged GET, CLOSING, revoked queued
+work and tracked uncertainty. Confirmed nonzero exit followed by int0 still
+recovers with2 calls/1 sleep in WORK. Final program8:160 Python PASS and a fresh
+second26-start matrix bound to current production6/oracle4. Node13 evidence is
+consumed at its unchanged journey/oracle hashes; no extra Node rerun.
+
+GREEN program7 had159 PASS/1 old private exception-type expectation: expired
+sleep now raises NotAdmitted at the phase fence. The exact expected class was
+corrected; the no-sleep condition remains. This is not weakened acceptance.
+Independent production6 are byte-identical to program3; its captured ten-hash
+manifest differs only in that subsequently corrected test-oracle line.
+
 ## Evidence / Verification
 
 - Python iteration1:153 PASS, in-process substitutes, actual children0.
 - Node initial13 PASS; fresh scratch owner corrected, final Node13 PASS.
 - Python iteration2:156 PASS/1 FAIL because Local placed pytest basetemp inside
   provenance. The namespace guard correctly refused before Native. No source
-  weakening; retained failure log. Final outside-provenance Python157 PASS.
-- Final9-case matrix executed once on final production6/oracle4 hashes:26 actual
-  inert children. Local5/8 test programs,26/54 children; reviewer2/4 programs,
+  weakening; retained failure log. That revision passed157; final corrected revision outside-provenance Python160 PASS.
+- Two9-case matrices were executed on two successive frozen revisions:52 actual
+  inert children total,26 on the latest bytes. Local8/8 test programs,52/54 children; reviewer3/4 programs,
   children0. Source Git2/40 before commit; reviewer0. Canonical controls separate.
-- Distinct reviewer12 PASS/0 FAIL/0 oracle errors after one named source-changing
-  rerun; initial9/2 negative evidence retained. Fresh recording objects; no worker
+- Distinct reviewer final14 PASS/0 FAIL/0 oracle errors at program3; intermediate12 PASS and initial9/2 negative evidence retained. Fresh recording objects; no worker
   test/fixture or root probe imports. Source10 hashes matched before/after.
 
 Detailed results, raw independent scripts, current source identities, final
@@ -71,8 +97,8 @@ in owned custody; structural gates concern source/evidence discipline only.
 
 ACCEPTED_SOURCE_ONLY_BOUNDED. The four original observed failures, related PID
 race and newly observed cancellation dependency are corrected at the tested
-source boundary. All10 readable files remain<350 lines: execution345,
-lifecycle312,test_execution333,test_protocol322; explicit capacity adjusted before
+source boundary. All10 readable files remain<350 lines: execution348,
+lifecycle312,protocol276,test_execution333,test_protocol343; explicit capacity adjusted before
 final execution without compression. No actual native or full parent acceptance.
 
 Same root, actual dependent generation6; SCEC ordinal2/counters2,0,2,0/two
@@ -80,7 +106,8 @@ blockers/freeze retained. No SCEC transition, independent critical evidence,
 retired-profile refill, new checker or automatic runtime successor. R1/R2partial,
 R3/R4open,R5/R6deferred; parked effects and LHW24 unchanged. Next Local PLAN
 reconciles native/B-E proof prerequisites against current source; no execution
-grant for those effects follows. Finite material15 then exact6 continuity.
+grant for those effects follows. Original material15 then connected correction9; separate exact6 continuity after each, plus the freshness prerequisite before correction9.
+commitPlanDisposition: EXCEPTION_WITH_REASON: normal-UNKNOWN readiness fence was found after the first committed repair; two material/three exact6 continuity commits preserve that history within the existing finite envelope. The additional precursor resolves a real dirty-target freshness ambiguity, without changing or bypassing the checker.
 
 ## Independent Review Probe Disposition
 
@@ -90,8 +117,8 @@ implementationWorkerActor: LOCAL_IMPLEMENTER_ROOT
 probeExecutorActor: DISTINCT_INTERNAL_AGENT_REVIEWER
 reviewerDecisionOwner: LOCAL
 probeEvidenceRef: docs/reviews/evidence/ncr-html-direct-local-repair-20261016.json
-probeCommandOrMethod: two reviewer-owned Python recording programs; unchanged failed first evidence and current source hashes embedded in proof
-probeObservedResult: final12 PASS/0 FAIL/0 oracle errors; children and actual effects0
+probeCommandOrMethod: three reviewer-owned Python recording programs; unchanged failed first evidence and current source hashes embedded in proof
+probeObservedResult: final14 PASS/0 FAIL/0 oracle errors; children and actual effects0
 oracleSeparationBasis: fresh clock/API/process/bytes objects; no implementation assertion/fixture imports; distinct execution actor
 
 ## Local Preparation / Failures / Resources
@@ -119,7 +146,7 @@ pytest directory with reason `blocked by policy`. It remains at
 custody, retention disposition=RETAINED_POLICY_BLOCK. No alternate deletion
 attempt. This is a recording fixture, not a native/product stage. Other owned
 fixture trees/logs are retained as source-proof custody; no process/listener or
-browser was started. The ordinary temporary directory is explicitly not claimed removed.
+browser was started. No outside fixture directory is claimed removed. Additional exact recording paths and archives are listed in `.cvf/runtime/ncr-html-root-local-repair-20261016/all-temp-retention.json`, owner=Local.
 
 ## Agent Operation Trace Block
 
@@ -129,19 +156,19 @@ browser was started. The ordinary temporary directory is explicitly not claimed 
 | Provider or surface | private workspace, distinct internal reviewer |
 | Session or invocation | ncr-html-direct-local-repair-20261016 |
 | Working directory | repository root |
-| Command or tool surface | clean entry; source recovery/repair; five Local and two independent programs; current pins; canonical gates/material/continuity |
+| Command or tool surface | clean entry; source recovery/repair; eight Local and three independent programs; current pins; canonical gates/material/continuity |
 | Target paths | `scripts/cvf_ncr_html_owned_profile/__init__.py`; `scripts/cvf_ncr_html_owned_profile/lifecycle.py`; `scripts/cvf_ncr_html_owned_profile/profile.py`; `scripts/cvf_ncr_html_owned_profile/test_control.py`; `scripts/cvf_ncr_html_owned_profile/journey.cjs`; `scripts/cvf_ncr_html_owned_profile/journey.test.cjs`; `scripts/cvf_ncr_html_owned_profile/execution.py`; `scripts/cvf_ncr_html_owned_profile/test_execution.py`; `scripts/cvf_ncr_html_owned_profile/protocol.py`; `scripts/cvf_ncr_html_owned_profile/test_protocol.py`; `docs/baselines/CVF_GC018_NCR_HTML_DIRECT_LOCAL_REPAIR_2026-10-16.md`; `docs/assessments/CVF_NCR_HTML_DIRECT_LOCAL_REPAIR_DISPOSITION_2026-10-16.md`; `docs/reviews/evidence/ncr-html-direct-local-repair-20261016.json`; `docs/reviews/evidence/ncr-html-direct-local-repair-pins-20261016.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` |
 | Allowed scope source | explicit new operator instruction and fresh Local GC-018 |
 | Before status evidence | clean HEAD16deaa8e9; exact R5 rejected snapshots/preimages retained |
-| After status evidence | exact source10/documentary5; accepted bounded source only |
+| After status evidence | exact source10/documentary5 overall; correction9 and final source accepted bounded |
 | Diff evidence | exact15 staged manifest; git diff --check; proof-bound hashes |
 | Approval boundary | direct Local source-only repair; no automatic implementation delegation or runtime grant |
 | Claim boundary | no work-order fulfillment or native/parent/provider/public acceptance |
 | Agent type | INTERNAL_AGENT |
 | Invocation ID | ncr-html-direct-local-repair-20261016 |
-| Expected manifest | `scripts/cvf_ncr_html_owned_profile/__init__.py`; `scripts/cvf_ncr_html_owned_profile/lifecycle.py`; `scripts/cvf_ncr_html_owned_profile/profile.py`; `scripts/cvf_ncr_html_owned_profile/test_control.py`; `scripts/cvf_ncr_html_owned_profile/journey.cjs`; `scripts/cvf_ncr_html_owned_profile/journey.test.cjs`; `scripts/cvf_ncr_html_owned_profile/execution.py`; `scripts/cvf_ncr_html_owned_profile/test_execution.py`; `scripts/cvf_ncr_html_owned_profile/protocol.py`; `scripts/cvf_ncr_html_owned_profile/test_protocol.py`; `docs/baselines/CVF_GC018_NCR_HTML_DIRECT_LOCAL_REPAIR_2026-10-16.md`; `docs/assessments/CVF_NCR_HTML_DIRECT_LOCAL_REPAIR_DISPOSITION_2026-10-16.md`; `docs/reviews/evidence/ncr-html-direct-local-repair-20261016.json`; `docs/reviews/evidence/ncr-html-direct-local-repair-pins-20261016.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` |
-| Actual changed set | `scripts/cvf_ncr_html_owned_profile/__init__.py`; `scripts/cvf_ncr_html_owned_profile/lifecycle.py`; `scripts/cvf_ncr_html_owned_profile/profile.py`; `scripts/cvf_ncr_html_owned_profile/test_control.py`; `scripts/cvf_ncr_html_owned_profile/journey.cjs`; `scripts/cvf_ncr_html_owned_profile/journey.test.cjs`; `scripts/cvf_ncr_html_owned_profile/execution.py`; `scripts/cvf_ncr_html_owned_profile/test_execution.py`; `scripts/cvf_ncr_html_owned_profile/protocol.py`; `scripts/cvf_ncr_html_owned_profile/test_protocol.py`; `docs/baselines/CVF_GC018_NCR_HTML_DIRECT_LOCAL_REPAIR_2026-10-16.md`; `docs/assessments/CVF_NCR_HTML_DIRECT_LOCAL_REPAIR_DISPOSITION_2026-10-16.md`; `docs/reviews/evidence/ncr-html-direct-local-repair-20261016.json`; `docs/reviews/evidence/ncr-html-direct-local-repair-pins-20261016.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` |
-| Manifest delta | MATCH material15; exact6 continuity separate |
+| Expected manifest | `scripts/cvf_ncr_html_owned_profile/execution.py`; `scripts/cvf_ncr_html_owned_profile/protocol.py`; `scripts/cvf_ncr_html_owned_profile/test_control.py`; `scripts/cvf_ncr_html_owned_profile/test_protocol.py`; `docs/baselines/CVF_GC018_NCR_HTML_DIRECT_LOCAL_REPAIR_2026-10-16.md`; `docs/assessments/CVF_NCR_HTML_DIRECT_LOCAL_REPAIR_DISPOSITION_2026-10-16.md`; `docs/reviews/evidence/ncr-html-direct-local-repair-20261016.json`; `docs/reviews/evidence/ncr-html-direct-local-repair-pins-20261016.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` |
+| Actual changed set | `scripts/cvf_ncr_html_owned_profile/execution.py`; `scripts/cvf_ncr_html_owned_profile/protocol.py`; `scripts/cvf_ncr_html_owned_profile/test_control.py`; `scripts/cvf_ncr_html_owned_profile/test_protocol.py`; `docs/baselines/CVF_GC018_NCR_HTML_DIRECT_LOCAL_REPAIR_2026-10-16.md`; `docs/assessments/CVF_NCR_HTML_DIRECT_LOCAL_REPAIR_DISPOSITION_2026-10-16.md`; `docs/reviews/evidence/ncr-html-direct-local-repair-20261016.json`; `docs/reviews/evidence/ncr-html-direct-local-repair-pins-20261016.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` |
+| Manifest delta | MATCH correction9 within original15 allowed paths; separate exact6 continuity |
 | Deletion or rename disposition | no tracked deletion/rename; outside fixture cleanup policy-blocked and retained; actual stage disposal0 |
 
 ## Checker Source Read-Ahead Block
@@ -167,7 +194,7 @@ N/A_WITH_REASON: no runtime/provider/cost learning claim; synthetic source proof
 
 Expected Result / Prediction: corrected bytes should reject the old failure
 schedules and preserve primary errors/uncertainty in coupled cleanup failures.
-Evidence Comparison: final157 Python/13 Node/9 inert cases; distinct12 positive
+Evidence Comparison: final160 Python/13 Node/9 latest inert cases; distinct14 positive
 recordings after initial9 PASS/2 FAIL exposed a missed dependency.
 Contradiction Or Gap Disposition: connected error fixed and source-bound rerun
 justified; retain Local setup failures/policy-blocked cleanup and actual-effect holds.
@@ -222,3 +249,22 @@ Rollback boundary: source10/documentary5 and exact6 continuity; preserve all ori
 | Owner surface | Local direct source disposition |
 | Disposition | N/A with reason: internal-only returned implementation, no external absorption |
 | Claim boundary | private source review, no external authority promotion |
+
+## Committed Freshness Prerequisite
+
+The first correction material preflight failed next-move freshness: current
+continuity named this assessment while its bytes differed from committed HEAD.
+The checker correctly reported AMBIGUOUS_DIRTY_TARGET. Its committed-only rule
+requires a distinct precursor, not a material gate waiver. Local preserved all9
+pending material byte streams with exact hashes in owned custody, restored their
+HEAD bytes, then committed exact6 continuity selecting the remaining commit/closure
+action rather than the assessment as a planning target. Precursor commit
+`c3af4b25a79f5b2ede807d1931f6dd1802ca41a0` passed all91 hook checks and its own exact6 pre-closure
+receipt. Local then restored all9 saved bytes exactly; only this factual process
+disclosure and corresponding proof/pins were subsequently updated. No production,
+test-oracle or independent probe bytes changed. No extra control program launched.
+
+The failed preflight log and the unsupported diagnostic CLI flags are retained
+as metadata process errors. Preparation remains PARTIAL. Final topology is two
+material commits and three exact6 continuity commits, including this necessary
+freshness precursor. Next native-proof prerequisite PLAN remains source-only.

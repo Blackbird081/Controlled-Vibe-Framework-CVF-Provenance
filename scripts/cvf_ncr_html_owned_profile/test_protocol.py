@@ -153,7 +153,7 @@ class TestBudgets:
         assert attempts == [1, 2, 3, 4] and sleeps == [1, 1, 1]  # charged before each request, sleeps clamped, none after the last
         refuse(E.BudgetExhausted, E.poll, c, budget, "engine", down, 1, 0)
         clock.now = 5
-        refuse(PR.Deadline, c.sleep, 1)  # an expired cutoff sleeps zero seconds
+        refuse(PR.NotAdmitted, c.sleep, 1)  # expiry irreversibly closes WORK; the phase guard refuses any sleep
 
 class Rfile:
     def __init__(self, data, hook=None):
@@ -286,6 +286,27 @@ def test_retained_handle_stop_ignores_reused_pid_and_refuses_nonmember_handle(sc
     with pytest.raises(RuntimeError, match="not a member"):
         ops.prepare_kill()
     assert calls == [("identity", 55), ("terminate", 55)]
+
+
+@pytest.mark.parametrize("fault", ("timeout", "unknown-exit", "spawn-cleanup"))
+def test_unknown_normal_completion_fences_readiness_retry(scratch, fault):
+    calls, slept = [], []
+    clock, proto = make()
+    def pending(argv, **kw):
+        calls.append(argv)
+        if fault == "unknown-exit":
+            return subprocess.CompletedProcess(argv, None, "", "")
+        if fault == "spawn-cleanup":
+            c.cleanup_errors.append("owned child cleanup unconfirmed")
+            raise OSError("spawn failed after owned child creation")
+        error = subprocess.TimeoutExpired("inert", 1)
+        error.drained = False
+        raise error
+    c = E.Collector(scratch, runner=pending, proto=proto, sleeper=slept.append)
+    refuse(PR.Stop, E.poll, c, E.Budget("model"), "engine", lambda: c.command("probe", ["inert"]), 2, 1)
+    assert len(calls) == 1 and slept == [] and proto.state == PR.CLOSING
+    refuse(PR.NotAdmitted, proto.queue, "normal-follow-on")
+    assert proto.snapshot()["operations"][0]["uncertain"] is True
 
 
 def raising(error):
