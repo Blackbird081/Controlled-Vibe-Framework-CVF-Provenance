@@ -31,21 +31,22 @@ artifact.
 | Prior handoff (archive-qualified) | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V62_2026-09-17.md` |
 | Latest front-door archive | `CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_COMPACTION_ARCHIVE_2026-08-11.md` |
 | Current authority evidence | `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` `currentAuthority` |
-| Parent maintenance | concrete root proposal scoped-admissible, operator effect decision pending; current execution grant0 |
+| Parent maintenance | approved finite synthetic root release; final bound pre-dispatch before worker |
 | Freeze posture | `governance_kernel_freeze_recommended` |
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_html_root_build_effect_approval_pending`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=operator effect decision on concrete held HTML root proposal, then separately finalized release; role=Local INTERNAL_AGENT dispatcher/reviewer; phase=proposal scoped admission; decision owner=operator for effects, Local for technical verification; parked checkpoint=current worker/runtime/provider/data/custody/business/send/B2/P11/public/deploy.
+Startup acknowledged: current mode=`cvf_ncr_html_root_build_released_execution_pending`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=final bound release then one INTERNAL_AGENT worker exact10; role=Local INTERNAL_AGENT orchestrator/reviewer; phase=approved finite release; decision owner=Local for dispatch/technical review, operator approval recorded2026-10-15 for named synthetic effects; parked checkpoint=provider/actual-data/config/store/business/send/B2/P11/public/deploy.
 
 ## Current Mode
 
-Current mode marker: `cvf_ncr_html_root_build_effect_approval_pending`
-Current mode: `cvf_ncr_html_root_build_effect_approval_pending`; previous mode marker: `cvf_ncr_html_root_build_proposal_preparation`
+Current mode marker: `cvf_ncr_html_root_build_released_execution_pending`
+Current mode: `cvf_ncr_html_root_build_released_execution_pending`; previous mode marker: `cvf_ncr_html_root_build_effect_approval_pending`
 
 ## Next Allowed Move
 
-Mode: `cvf_ncr_html_root_build_effect_approval_pending`
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-INTEGRATED-ROOT-BUILD-20261015. Concrete held proposal material=490e4bc858daac281b26f2eccbaa4af94717f206; work order=docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_INTEGRATED_ROOT_BUILD_2026-10-15.md; baseline=docs/baselines/CVF_GC018_NCR_HTML_INTEGRATED_ROOT_BUILD_2026-10-15.md; admission=docs/assessments/CVF_NCR_HTML_ROOT_BUILD_ADMISSION_2026-10-15.md. Actual explicit CLI evaluated1 canonical root object: FEASIBLE_FOR_INTEGRATED_ROOT_BUILD, runtimeReadiness=false/effectAdmission=false/operatorApprovalRequired=true. Await operator effect scope decision; current worker/runtime grant0. Proposed manual worker120min/Local60min, exact8code+return2, inert9/6, worker export/evaluate2/2 and Local1/1, provider0; unknown prerequisites stop. Only after approval finalize immutable pair/current pins/continuity and bound pre-dispatch before worker. Same root ordinal2/counters/blockers/freeze; no third narrow repair or retired grant reuse. REQ08 prior preparation remains BLOCKED/PARTIAL. R1/R2partial,R3/R4open,R5/R6deferred; data/custody/business/send/B2/P11/public/deploy parked; LHW24 retained.
+Mode: `cvf_ncr_html_root_build_released_execution_pending`
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-HTML-INTEGRATED-ROOT-BUILD-20261015. Approved finite root release material=10fee6c246bf5c4ab1c4600799dcdac4cfe50402; work order=docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_INTEGRATED_ROOT_BUILD_RELEASE_2026-10-15.md; baseline=docs/baselines/CVF_GC018_NCR_HTML_INTEGRATED_ROOT_BUILD_RELEASE_2026-10-15.md; admission=docs/assessments/CVF_NCR_HTML_ROOT_BUILD_RELEASE_2026-10-15.md. One INTERNAL_AGENT worker exact8code+return2 after actual committed/current-pinned pair/continuity and bound pre-dispatch PASS; then mandatory reads/pins, bound pre-implementation/scaffold, integrated root build and honest full return. Operator2026-10-15 approved worker120min/Local60min, inert9/6 and27/18 substitute starts, worker export/evaluate2/2 and Local1/1, GET12/runtime900s+cleanup120s, provider0 and actual data/config/store0. Unknown prerequisites/identity/source/caps stop dependent effects. Ordinary in-scope fixes/review/cleanup/local commits need no repeated operator approval. Local consumes return and runs distinct probe; no broad duplicate legacy replay. Same root ordinal2/counters/blockers/freeze, no third narrow repair or old grant reuse; historical REQ08 procedure partial retained. R1/R2partial,R3/R4open,R5/R6deferred; business/data/custody/send/B2/P11/public/deploy parked; LHW24 retained.
+
 Historical G1-G7 terminal baseline: mode `acel_g1_g7_research_terminally_closed`. G1-G6 terminal review: `docs/reviews/CVF_ACEL_G1_G6_TERMINAL_STOP_CLOSURE_2026-09-24.md`; G7 research closure: `docs/reviews/CVF_ACEL_G7_CROSS_RUN_CAPABILITY_EVOLUTION_RESEARCH_CLOSURE_2026-09-24.md`. The packet-only post-G7 reconciliation review at `docs/reviews/CVF_ACEL_POST_G7_FULL_CORPUS_ABSORPTION_CLOSURE_2026-09-24.md` is superseded for repository absorption by the 2026-09-25 pinned-source audit. G1 is stopped, G2-G6 remain parked, G7 research is closed, and no automatic G1-G7 successor exists.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
