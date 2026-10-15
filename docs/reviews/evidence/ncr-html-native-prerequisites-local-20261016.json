@@ -1,0 +1,218 @@
+{
+  "schemaVersion": "cvf.ncrHtmlNativePrerequisitesPlan@1",
+  "status": "PLAN_COMPLETE_NATIVE_ENTRY_BLOCKED",
+  "date": "2026-10-16",
+  "recordedAtUtc": "2026-10-15T22:13:34.185839+00:00",
+  "sourceHead": "60484debf0f8bde1c35ea867cffb53c823f98ef0",
+  "owner": "LOCAL",
+  "role": "INTERNAL_AGENT",
+  "phase": "PLAN",
+  "plan": "docs/assessments/CVF_NCR_HTML_NATIVE_PROOF_PREREQUISITES_2026-10-16.md",
+  "planRawSha256": "79fe3160b9a24db56b36a9e13a91f0f4cb831f201098ff3106ecc25d9bd596aa",
+  "sourcePins": {
+    "scripts/cvf_ncr_html_owned_profile/__init__.py": "283f238f1196e3dc401ec8538e894db063c0f42123c2a9d730e124c6cef3f541",
+    "scripts/cvf_ncr_html_owned_profile/lifecycle.py": "95c98a6d81ebfc36cf61c1d24c36bc554a5f5c96a3716f73296322a899297d6e",
+    "scripts/cvf_ncr_html_owned_profile/profile.py": "956b31047083b440314a8985383705e0923eb8d0229a74d141b9ae33c2b20caf",
+    "scripts/cvf_ncr_html_owned_profile/test_control.py": "b557081a4bc919d552e5c702ee89d148f2090554c5960af7e65e0441289910a8",
+    "scripts/cvf_ncr_html_owned_profile/journey.cjs": "f76b6d0fec14f2d208fee63004aec2b7211799e5d37160e414633e9dd15d69e0",
+    "scripts/cvf_ncr_html_owned_profile/journey.test.cjs": "a36539cd8021d8ccc2407e7d3c4edaead49fd01d8525dd460ec43752c0d8a66e",
+    "scripts/cvf_ncr_html_owned_profile/execution.py": "937d7d726f33b1d801936370d3771ca86feaacdc243364bd10331e17d810fc4d",
+    "scripts/cvf_ncr_html_owned_profile/test_execution.py": "7a352621b1a9db2a0a9978edd23c9ca4acb82386a3d5eacc583479fcfdc70357",
+    "scripts/cvf_ncr_html_owned_profile/protocol.py": "7f14b3e57efe30912418be1add87d43069b914906476d5820b255120924e4277",
+    "scripts/cvf_ncr_html_owned_profile/test_protocol.py": "4efa78090505b69e1fbc4e95359cc086764b228726554a0fc31a94324d97e7ba",
+    "docs/baselines/CVF_GC018_NCR_HTML_DIRECT_LOCAL_REPAIR_2026-10-16.md": "ff850e9bd1e4a1435c2990b758d6d6e6909b681e2b358687d576e0e850063138",
+    "docs/assessments/CVF_NCR_HTML_DIRECT_LOCAL_REPAIR_DISPOSITION_2026-10-16.md": "b12dc027612984a8a91b148fbfd0f5c2f4c54aa3a5f002827a22ea72b7607c16",
+    "docs/reviews/evidence/ncr-html-direct-local-repair-20261016.json": "736378edb31ed90c8439768f59a7edef019f184e6a6a6dcf8cee481c7ac3ba66",
+    "docs/baselines/CVF_GC018_NCR_HTML_SEMANTIC_STATE_MACHINE_DESIGN_2026-10-15.md": "597f082c21dcf1635ceacd05b37f11612bfa3b47e1d4aeb5810b7e47cdf7b8cf",
+    "docs/assessments/CVF_NCR_HTML_OWNED_PROFILE_ADMISSION_PLAN_2026-10-14.md": "66e7780972a41a6155707d85c8058ecc2bf7f3766e9047387ae495cfced7eb91",
+    "docs/reviews/CVF_NCR_HTML_INTEGRATED_ROOT_CONTRACT_2026-10-14.md": "5998f2db7ca40457ffdecc08654456f19b20ee0ba97fbc43e6942c729b5a38f7",
+    "docs/reference/CVF_GOVERNED_WORK_LIFECYCLE_AND_DESIGN_CONTROL_STANDARD_2026-06-11.md": "b48f11363ee62a2ec4c85c6f9fba4540b90eb74475c31aeab18cfe4492a536de"
+  },
+  "source10Preserved": {
+    "scripts/cvf_ncr_html_owned_profile/__init__.py": "283f238f1196e3dc401ec8538e894db063c0f42123c2a9d730e124c6cef3f541",
+    "scripts/cvf_ncr_html_owned_profile/lifecycle.py": "95c98a6d81ebfc36cf61c1d24c36bc554a5f5c96a3716f73296322a899297d6e",
+    "scripts/cvf_ncr_html_owned_profile/profile.py": "956b31047083b440314a8985383705e0923eb8d0229a74d141b9ae33c2b20caf",
+    "scripts/cvf_ncr_html_owned_profile/test_control.py": "b557081a4bc919d552e5c702ee89d148f2090554c5960af7e65e0441289910a8",
+    "scripts/cvf_ncr_html_owned_profile/journey.cjs": "f76b6d0fec14f2d208fee63004aec2b7211799e5d37160e414633e9dd15d69e0",
+    "scripts/cvf_ncr_html_owned_profile/journey.test.cjs": "a36539cd8021d8ccc2407e7d3c4edaead49fd01d8525dd460ec43752c0d8a66e",
+    "scripts/cvf_ncr_html_owned_profile/execution.py": "937d7d726f33b1d801936370d3771ca86feaacdc243364bd10331e17d810fc4d",
+    "scripts/cvf_ncr_html_owned_profile/test_execution.py": "7a352621b1a9db2a0a9978edd23c9ca4acb82386a3d5eacc583479fcfdc70357",
+    "scripts/cvf_ncr_html_owned_profile/protocol.py": "7f14b3e57efe30912418be1add87d43069b914906476d5820b255120924e4277",
+    "scripts/cvf_ncr_html_owned_profile/test_protocol.py": "4efa78090505b69e1fbc4e95359cc086764b228726554a0fc31a94324d97e7ba"
+  },
+  "currentScope": [
+    "docs/assessments/CVF_NCR_HTML_NATIVE_PROOF_PREREQUISITES_2026-10-16.md",
+    "docs/reviews/evidence/ncr-html-native-prerequisites-local-20261016.json",
+    "docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md"
+  ],
+  "continuityScope": "separate exact6; canonical source generator",
+  "previousClosureIndexSha256": "a3ce7e8d8fdd1deee037f0af0c9cb6ca0f0a8f17abb71aa76c514b686dbe919b",
+  "previousReceiptsConsumed": [
+    {
+      "path": ".cvf/runtime/ncr-html-root-local-repair-20261016/closure-material-v1-receipt.json",
+      "sha256": "66921cd08baf313470ef46fb1adf5bb5dea17d3f876e34becaf55ae70f288dc3",
+      "valid": true,
+      "phase": "pre-closure",
+      "base": "16deaa8e9d8c4f1659d7bfff5bad5f1cd7af633d",
+      "head": "b6b63c8329398c0b1eff4ca565ada4edcb999dde",
+      "checkCount": 84
+    },
+    {
+      "path": ".cvf/runtime/ncr-html-root-local-repair-20261016/closure-continuity-v1-receipt.json",
+      "sha256": "99f53e90601b97595fb629dcf6e24a1451c689e0e132c8e62e22b6a1da17828a",
+      "valid": true,
+      "phase": "pre-closure",
+      "base": "b6b63c8329398c0b1eff4ca565ada4edcb999dde",
+      "head": "4c1bd70d1",
+      "checkCount": 84
+    },
+    {
+      "path": ".cvf/runtime/ncr-html-root-local-repair-20261016/bridge-closure-receipts/pre-closure.json",
+      "sha256": "9b03b1148384863ef26994dfe7e842f6a41a5044799b634d7c6ce89c772374eb",
+      "valid": true,
+      "phase": "pre-closure",
+      "base": "4c1bd70d19ddbb3075366a9934c1c4d827dcbb64",
+      "head": "c3af4b25a",
+      "checkCount": 84
+    },
+    {
+      "path": ".cvf/runtime/ncr-html-root-local-repair-20261016/correction-closure-receipts/pre-closure.json",
+      "sha256": "33f851a7c240baab5561ce7c6efed3a5f09c8338263d434c9dc056b53e93f8a6",
+      "valid": true,
+      "phase": "pre-closure",
+      "base": "c3af4b25a79f5b2ede807d1931f6dd1802ca41a0",
+      "head": "94f7793e17d31ca825280ea27d996a041ab48951",
+      "checkCount": 84
+    },
+    {
+      "path": ".cvf/runtime/ncr-html-root-local-repair-20261016/final-continuity-closure-receipts/pre-closure.json",
+      "sha256": "55e7c8cc65327ebc3bc9f37891032f70296e8e61453fcf44e3afbe3d65ba7e30",
+      "valid": true,
+      "phase": "pre-closure",
+      "base": "94f7793e17d31ca825280ea27d996a041ab48951",
+      "head": "HEAD",
+      "checkCount": 84
+    },
+    {
+      "path": ".cvf/runtime/ncr-html-root-local-repair-20261016/correction-pre-implementation-receipt.json",
+      "sha256": "692072788c0bb735616eb5683d58c9441ae632f1f4e04ffd939ec3b5632544fb",
+      "valid": true,
+      "phase": "pre-implementation",
+      "base": "c3af4b25a79f5b2ede807d1931f6dd1802ca41a0",
+      "head": "HEAD",
+      "checkCount": 86
+    }
+  ],
+  "adviser": {
+    "role": "INTERNAL_AGENT_READ_ONLY",
+    "task": "native_prerequisite_review",
+    "rootReverified": true,
+    "sourceEdits": 0,
+    "controls": 0,
+    "gitCommands": 0
+  },
+  "readScopes": {
+    "lifecycle.py": "selected Win32/Native functions and structures",
+    "__init__.py": "run admission/startup/finally boundaries",
+    "profile.py": "control_issue and prerequisites",
+    "semanticDesign": "native order/cutoff/terminal/dispatch scopes",
+    "governance": "startup; continuation/outcome; selected applicable checker constants/operative predicates; no full-history claim"
+  },
+  "finding": {
+    "id": "NATIVE-SNAPSHOT-SENTINEL",
+    "source": "scripts/cvf_ncr_html_owned_profile/lifecycle.py",
+    "symbols": [
+      "Win32._ok",
+      "Win32.resume"
+    ],
+    "sourceLines": [
+      103,
+      162
+    ],
+    "disposition": "DOCUMENTED_API_CONTRACT_MISMATCH_NATIVE_ENTRY_BLOCKER",
+    "actualWindowsFailureObserved": false,
+    "criticalIndependentEvidence": false,
+    "repairExecuted": false
+  },
+  "primaryReferenceInputs": [
+    {
+      "url": "https://learn.microsoft.com/en-us/windows/win32/api/tlhelp32/nf-tlhelp32-createtoolhelp32snapshot",
+      "section": "Return value",
+      "fact": "Failure returns INVALID_HANDLE_VALUE; obtain extended error via GetLastError"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/windows/win32/api/jobapi2/nf-jobapi2-queryinformationjobobject",
+      "section": "Parameters",
+      "fact": "Class3 basic process ID list; class9 extended limits"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/windows/win32/api/winnt/ns-winnt-jobobject_extended_limit_information",
+      "section": "Syntax",
+      "fact": "Canonical extended-limit structure reference; actual ctypes layout remains unverified"
+    }
+  ],
+  "referenceAuthority": "EXTERNAL_REFERENCE_INPUT; not CVF consent or runtime evidence",
+  "documentationReads": 3,
+  "currentCounts": {
+    "controlPrograms": 0,
+    "nativeStarts": 0,
+    "children": 0,
+    "runtimeNetworkCalls": 0,
+    "providerCalls": 0,
+    "productStarts": 0,
+    "deletionAttempts": 0
+  },
+  "requiredOutputs": {
+    "nativeMatrix": [
+      "N1",
+      "N2",
+      "N3",
+      "N4"
+    ],
+    "sourceEntryBlocker": "NATIVE-SNAPSHOT-SENTINEL",
+    "dependencies": [
+      "sourceContract",
+      "independentCap1",
+      "ownedProfileToolsImageContext",
+      "authStoresEgress",
+      "browserEngineReceipt",
+      "parentCleanup"
+    ],
+    "nextAction": "Local consolidate bounded native source correction envelope; no edit/test/effect granted by this plan"
+  },
+  "proposedOnly": {
+    "localNativePrograms": 1,
+    "reviewerNativePrograms": 1,
+    "cumulativeBenignChildren": 2,
+    "workSeconds": 30,
+    "cleanupSeconds": 10,
+    "watchdogSeconds": 60
+  },
+  "rootPreserved": {
+    "rootCauseClusterId": "NCR_HTML_CONFIGURED_RECEIPT_CONTROL_PROOF",
+    "dependentRepairGeneration": 6,
+    "scecOrdinal": 2,
+    "counters": [
+      2,
+      0,
+      2,
+      0
+    ],
+    "blockers": 2,
+    "freeze": true,
+    "newTransition": false,
+    "newIndependentCriticalEvidence": "NONE"
+  },
+  "oldControlWindowRefilled": false,
+  "newChecker": false,
+  "claimBoundary": "source/API PLAN; no actual native or product proof; R1/R2partial,R3/R4open,R5/R6deferred",
+  "metadataDiagnostic": "initial author script detected two existing roadmap read-ahead headings before roadmap write; older heading explicitly historical, current block refreshed; zero source/control mutations",
+  "preparation": "PARTIAL_WITH_REASON: corpus N/A extraction predicate read after first material preflight failed for missing bullet; original failure retained, exact line corrected",
+  "failedGates": [
+    {
+      "log": "material-first-corpus-format-fail.log",
+      "gate": "corpus completeness and report integrity",
+      "cause": "N/A verdict line missing required bullet; no corpus completeness claimed"
+    }
+  ]
+}

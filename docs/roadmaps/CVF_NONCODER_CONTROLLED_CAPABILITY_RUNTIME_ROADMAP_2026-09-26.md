@@ -5,11 +5,13 @@ docType: roadmap
 Status: ACCEPTED_UNIFIED_ROADMAP_LOCAL_CONSUMER_BOUNDED_FULL_PILOT_OPEN
 Date: 2026-09-26
 Program ID: CVF-NCR
-Version: 2.39
+Version: 2.40
 Revision disposition: LOCAL_CONSUMER_MAINTENANCE_ACCEPTED_BOUNDED; END_TO_END_PILOT_OPEN; Q001_AND_P11_CHECKPOINTS_RETAINED
 Decision owner: operator về định hướng/phạm vi; Local reviewer về đối chiếu kỹ thuật và nghiệm thu.
 
 ## Current Delivery Checkpoint - 2026-10-14
+
+**2026-10-16 native prerequisite PLAN complete; entry blocked:** `docs/assessments/CVF_NCR_HTML_NATIVE_PROOF_PREREQUISITES_2026-10-16.md` / `docs/reviews/evidence/ncr-html-native-prerequisites-local-20261016.json` consume prior160 Python/13 Node/14 independent and six read-only validated receipts without control rerun. Standalone Windows ABI/owned benign-child N1-N4 can precede B-E; documented snapshot INVALID_HANDLE_VALUE differs from zero-only Win32._ok used by resume, so one consolidated existing-owner source envelope comes first. Actual failure unobserved; current cap1 refuses before namespace, tools/image/host unknown. No native/product/browser/container/provider/delete or budget refill. Same root/generation6/SCEC2/counters2,0,2,0/blockers/freeze/P4 exclusions retained. Local prepares the source-correction envelope directly, no manual relay/new checker. R1/R2partial,R3/R4open,R5/R6deferred; parked effects/LHW24 unchanged.
 
 **2026-10-16 direct Local source repair accepted bounded:** `docs/assessments/CVF_NCR_HTML_DIRECT_LOCAL_REPAIR_DISPOSITION_2026-10-16.md` / `docs/reviews/evidence/ncr-html-direct-local-repair-20261016.json` implement the operator-selected direct Local route; previous manual implementation relay retired. R5 source10 recovered from verified rejected snapshots, then credential ambiguity, fresh native utility wait, expired cleanup and late ACK fixed; PID cleanup uses retained creation handles and membership checks. Distinct reviewer first9 PASS/2 FAIL found timeout cancellation accounting; Local fixed it and spawn primary-error preservation, then intermediate independent12 PASS/0 FAIL, then final14 PASS with normal-UNKNOWN fence and known-failure retry control. Final160 Python/13 Node and independent14 PASS bind current source. After first commit, normal UNKNOWN readiness retry was corrected: focusedRED3, final160 and latest9-case26-start matrix; two frozen revision matrices52/54 inert total. Local8/8 programs, reviewer3/4; all actual effects0. Local metadata/scratch/basetemp failures preserved; checked outside pytest cleanup policy-blocked, exact fixture retained with Local owner/archive. Source-only acceptance, no machine work-order fulfillment or real Windows/native/B-E/browser/product/delete/parent proof. Same root/generation6/SCEC2/counters2,0,2,0/blockers/freeze and prior7 P4 exclusions retained; no new checker or automatic runtime grant. Next Local PLAN reconciles remaining native/B-E prerequisites; R1/R2partial,R3/R4open,R5/R6deferred and parked effects/LHW24 unchanged.
 
@@ -977,7 +979,7 @@ This block accounts only for zero new ingested source assets created by committi
 
 External research stays advisory and ends before internal implementation/review/closure. Shared-workspace workers are INTERNAL_AGENT regardless of provider. Local owns private-CVF verification and final technical disposition; external shortlist is not the Local coverage boundary. Reuse `docs/reference/external_agent_review/CVF_CROSS_WORKSPACE_EVIDENCE_RELAY_METHOD.md` and `docs/reference/external_agent_review/CVF_CROSS_WORKSPACE_DOMAIN_FUNNEL_ABSORPTION_METHOD.md`; no parallel process is introduced.
 
-## Checker Source Read-Ahead Block
+## Historical Checker Source Read-Ahead Block
 
 2026-10-12 follow-up: governance/compat/check_active_archive_hygiene.py and
 governance/compat/check_active_window_registry.py read before additive registration;
@@ -1126,33 +1128,33 @@ orientation packets are not refreshed by this private local edit.
 
 | Field | Evidence |
 |---|---|
-| applicableCheckersRead | governance/compat/check_machine_closure_package.py; governance/compat/check_review_cost_control.py; governance/compat/check_independent_review_probe_admission.py; governance/compat/check_agent_operation_trace.py; governance/compat/check_core_guard_self_protection.py; governance/compat/check_finding_to_governance_learning.py; governance/compat/check_work_order_dispatch_quality.py; governance/compat/check_governed_artifact_checker_read_ahead.py |
-| literalTokensReviewed | CLOSED_PASS_BOUNDED; PASS_INDEPENDENT_PROBE; required actor/oracle fields; REQUIRED_CLOSURE_ITEMS; TRACE_REQUIRED_LABELS; AUTHORIZED_EXACT_MANIFEST; raw source pins and telemetry |
-| gateRunPurpose | confirmation/evidence of current bounded closure after returned-proof review and distinct actual Local probe |
-| claimBoundary | targeted constants/branches read; machine shape does not certify universal governance behavior |
+| applicableCheckersRead | governance/compat/check_markdown_structural_completeness.py; governance/compat/check_agent_operation_trace.py; governance/compat/check_core_guard_self_protection.py; governance/compat/check_agent_packet_authority_and_encoding.py; governance/compat/check_finding_to_governance_learning.py; governance/compat/check_epistemic_process_packet.py; governance/compat/check_governed_artifact_checker_read_ahead.py; governance/compat/check_adif_defect_registry_disclosure.py |
+| literalTokensReviewed | common/source/decision/evidence and risk headings; Source fact type; DOC_ONLY_NEW; trace labels and exact manifests; RULE_EXISTS; Core protected paths; read-ahead field names; ADIF dispatch-only applicability |
+| gateRunPurpose | confirmation of current documentary bytes and scope; not first discovery of required labels |
+| claimBoundary | selected constants and operative predicates read before authoring; initial clipped outputs followed by targeted reads; no all-checker-body or all-files-read claim |
 
 ## Agent Operation Trace Block
 
 | Field | Evidence |
 |---|---|
-| Actor | Local INTERNAL_AGENT orchestrator/reviewer/closer |
-| Provider or surface | private shared repository |
-| Session or invocation | ncr-result-export-feedback-local-review-20261013 |
+| Actor | Local INTERNAL_AGENT planner/reviewer/steward |
+| Provider or surface | private shared workspace; one read-only internal adviser |
+| Session or invocation | ncr-html-native-prerequisites-plan-20261016 |
 | Working directory | repository root |
-| Command or tool surface | returned evidence and source matrix; raw custody; registry generation; closure gates and commits |
-| Target paths | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultExportControls.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.export-feedback.test.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.isolation.test.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.test.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.tsx`; `docs/baselines/CVF_GC018_NCR_RESULT_EXPORT_FEEDBACK_2026-10-13.md`; `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json`; `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md`; `docs/corpus-intelligence/registry/entries/cvf-ncr-result-export-feedback.json`; `docs/reviews/CVF_NCR_RESULT_EXPORT_FEEDBACK_COMPLETION_2026-10-13.md`; `docs/reviews/CVF_NCR_RESULT_EXPORT_FEEDBACK_WORKER_RETURN_2026-10-13.md`; `docs/reviews/archive/CVF_AGENT_WORK_ORDER_NCR_RESULT_EXPORT_FEEDBACK_DISPATCH_2026-10-13.md`; `docs/reviews/evidence/ncr-result-export-feedback-local-20261013.json`; `docs/reviews/evidence/ncr-result-export-feedback-worker-20261013.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RESULT_EXPORT_FEEDBACK_2026-10-13.md` |
-| Allowed scope source | operator NCR continuation and reviewer-owned closure authority |
-| Before status evidence | HEAD a623874447952534b0fddbf21acff843e70caf80; terminal exact7 worker paths, staged empty, original raw custody captured |
-| After status evidence | reviewed exact22 coherent material; dedicated actual-SHA exact6 follows material commit |
-| Diff evidence | git diff --cached --check and exact manifest reconciliation required at commit |
-| Approval boundary | bounded PDF/Word feedback; zero provider budget; parked effects retained |
-| Claim boundary | Finite offline PDF/Word feedback and retry; browser download initiation only. R1/R2 partial, R3/R4 open, R5/R6 deferred; real-data writer/custody/business acceptance, send/B2, P11, public and deployment parked. |
+| Command or tool surface | source reads; three primary documentation pages; prior receipt read-only validation; canonical gates/commits |
+| Target paths | `docs/assessments/CVF_NCR_HTML_NATIVE_PROOF_PREREQUISITES_2026-10-16.md`; `docs/reviews/evidence/ncr-html-native-prerequisites-local-20261016.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` |
+| Allowed scope source | operator next, direct Local preference, standing autonomous roadmap/commit authority, active native prerequisite PLAN |
+| Before status evidence | clean HEAD60484debf; previous Local control window closed |
+| After status evidence | documentary3; no production or control-program change/start |
+| Diff evidence | exact3 material manifest, source pins and separate exact6 continuity |
+| Approval boundary | PLAN only; native effect decision and before-effect release remain separate |
+| Claim boundary | source feasibility and documented ABI mismatch, no actual Windows/product readiness |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-result-export-feedback-local-review-20261013 |
-| Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultExportControls.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.export-feedback.test.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.isolation.test.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.test.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.tsx`; `docs/baselines/CVF_GC018_NCR_RESULT_EXPORT_FEEDBACK_2026-10-13.md`; `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json`; `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md`; `docs/corpus-intelligence/registry/entries/cvf-ncr-result-export-feedback.json`; `docs/reviews/CVF_NCR_RESULT_EXPORT_FEEDBACK_COMPLETION_2026-10-13.md`; `docs/reviews/CVF_NCR_RESULT_EXPORT_FEEDBACK_WORKER_RETURN_2026-10-13.md`; `docs/reviews/archive/CVF_AGENT_WORK_ORDER_NCR_RESULT_EXPORT_FEEDBACK_DISPATCH_2026-10-13.md`; `docs/reviews/evidence/ncr-result-export-feedback-local-20261013.json`; `docs/reviews/evidence/ncr-result-export-feedback-worker-20261013.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RESULT_EXPORT_FEEDBACK_2026-10-13.md` |
-| Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultExportControls.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.export-feedback.test.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.isolation.test.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.test.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ResultViewer.tsx`; `docs/baselines/CVF_GC018_NCR_RESULT_EXPORT_FEEDBACK_2026-10-13.md`; `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json`; `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md`; `docs/corpus-intelligence/registry/entries/cvf-ncr-result-export-feedback.json`; `docs/reviews/CVF_NCR_RESULT_EXPORT_FEEDBACK_COMPLETION_2026-10-13.md`; `docs/reviews/CVF_NCR_RESULT_EXPORT_FEEDBACK_WORKER_RETURN_2026-10-13.md`; `docs/reviews/archive/CVF_AGENT_WORK_ORDER_NCR_RESULT_EXPORT_FEEDBACK_DISPATCH_2026-10-13.md`; `docs/reviews/evidence/ncr-result-export-feedback-local-20261013.json`; `docs/reviews/evidence/ncr-result-export-feedback-worker-20261013.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RESULT_EXPORT_FEEDBACK_2026-10-13.md` |
-| Manifest delta | MATCH required before commit |
-| Deletion or rename disposition | None |
+| Invocation ID | ncr-html-native-prerequisites-plan-20261016 |
+| Expected manifest | `docs/assessments/CVF_NCR_HTML_NATIVE_PROOF_PREREQUISITES_2026-10-16.md`; `docs/reviews/evidence/ncr-html-native-prerequisites-local-20261016.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` |
+| Actual changed set | `docs/assessments/CVF_NCR_HTML_NATIVE_PROOF_PREREQUISITES_2026-10-16.md`; `docs/reviews/evidence/ncr-html-native-prerequisites-local-20261016.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` |
+| Manifest delta | MATCH exact3 documentary material |
+| Deletion or rename disposition | none; no cleanup action or custody disposal |
 
 ## Public Export Disposition
 
