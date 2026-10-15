@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_INTEGRATED_ROOT_BUILD_RELEASE_2026-10-15.md",
     "workOrderSha256": "60ffd9fcb62a8b0854e4cf0fc846b979ae9934b8e8febc57db028b5c41721038"
   },
-  "currentAuthoritySyncReason": "Operator approved the concrete finite root scope in current2026-10-15 message. Fresh release pair committed together at 10fee6c246bf5c4ab1c4600799dcdac4cfe50402; old held pair retained. Named worker120/Local60 synthetic scope only; actual final bound pre-dispatch still required before one worker. No completed control/runtime readiness/provider/active data grant.",
+  "currentAuthoritySyncReason": "Finite release10fee6c246bf5c4ab1c4600799dcdac4cfe50402 executed once per actor and consumed. Reviewed material c416f69a5e6364db8ecaadccb7431046a3f19b20 is BLOCKED_WITH_REASON; Local6/6 controls PASS but neither positive reached product. Pair raw pins unchanged for provenance, NOT repeat execution authority. Next source-only PLAN; no redispatch/third narrow repair. Original HOLD, counters/freeze and REQ08 partial retained.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
@@ -110,8 +110,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_ncr_html_root_build_released_execution_pending",
-  "previousMode": "cvf_ncr_html_root_build_effect_approval_pending",
+  "currentMode": "cvf_ncr_html_root_build_blocked_after_local_review",
+  "previousMode": "cvf_ncr_html_root_build_released_execution_pending",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
