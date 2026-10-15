@@ -1,0 +1,341 @@
+{
+  "schemaVersion": "cvf.ncrHtmlSemanticDesign@1",
+  "phase": "SOURCE_ONLY_DESIGN",
+  "baseHead": "5a18075c93d935d1cecf492dfde856c3566aa3f1",
+  "decisionOwner": "LOCAL",
+  "role": "INTERNAL_AGENT",
+  "decision": "SPEC_LOCKED_IMPLEMENTATION_NOT_RELEASED",
+  "manifest": [
+    "docs/baselines/CVF_GC018_NCR_HTML_SEMANTIC_STATE_MACHINE_DESIGN_2026-10-15.md",
+    "docs/reviews/CVF_NCR_HTML_SEMANTIC_STATE_MACHINE_DESIGN_REVIEW_2026-10-15.md",
+    "docs/reviews/evidence/ncr-html-semantic-design-20261015.json",
+    "docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md"
+  ],
+  "sourcePins": {
+    "docs/reviews/CVF_NCR_HTML_ROOT_RECOVERY_R4_COMPLETION_2026-10-15.md": "37acb0087cdc78312853544f3b7f82cbcd024fa9a2c8d8905e1d21fb2a0763c9",
+    "docs/reviews/evidence/ncr-html-root-recovery-local-r4-20261015.json": "a6ec844c07157ab34beade8cb668996e7f46379eaa7af2ba73843e45b0ee5f82",
+    "docs/baselines/CVF_GC018_NCR_HTML_ROOT_RECOVERY_R4_2026-10-15.md": "876c1c6ed90271f98abbade9224cdda22df87174b9957ae93514cd3d64797d96",
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_ROOT_RECOVERY_R4_2026-10-15.md": "b73cb3f4d4c014b1b0eb806f9de1259b55d40419cef3791632389543112514f9",
+    "docs/reference/work_order_template/CVF_WORK_ORDER_SOURCE_VERIFICATION_ADDENDUM.md": "5c154b9eeb020ab22fe2a40e33a1f40af0ec8ee7a22165b3682f09c593a45680",
+    "docs/reference/work_order_template/CVF_WORK_ORDER_ACCEPTANCE_LEDGER_ADDENDUM.md": "4840327b2cd8272a34f23f39e7c599295487c61018229d316261eada381b1a38",
+    "docs/reference/CVF_GOVERNED_WORK_LIFECYCLE_AND_DESIGN_CONTROL_STANDARD_2026-06-11.md": "b48f11363ee62a2ec4c85c6f9fba4540b90eb74475c31aeab18cfe4492a536de",
+    "docs/reference/review_cost_control/CVF_REVIEW_COST_AND_DIMINISHING_RETURN_CONTROL_STANDARD.md": "59ab670a0b3d723b50f8fed690e6c40be76cb14f1b0a5b72085a38efbb4f27a7",
+    "docs/reference/CVF_AGENT_EXECUTION_WORKFLOW_SOP_2026-05-19.md": "cd50be4119b6ece9be9209a88fe9f07af2b9ea156dcb2c4f4e4b0e05b887bf96",
+    "docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md": "946c7f0988e5ebbc9d26899934f016ce979903f55b51d9c13e057da0afa6758a",
+    "scripts/probe_cvf_w05_browser_chain.cjs": "0d9a261cddc5e21c00938570f5f692163d91cade21d2cc02c54c20bbbe91c494",
+    "scripts/probe_cvf_q001_synthetic_system_chain.py": "b09924875254872611332baa11fdad4ec0b574d69c74e217ba0bb81a56cf2662"
+  },
+  "designBaseline": {
+    "path": "docs/baselines/CVF_GC018_NCR_HTML_SEMANTIC_STATE_MACHINE_DESIGN_2026-10-15.md",
+    "sha256": "597f082c21dcf1635ceacd05b37f11612bfa3b47e1d4aeb5810b7e47cdf7b8cf"
+  },
+  "observationsConsumed": [
+    {
+      "case": "POS-receipt-and-duplicate-refusal",
+      "kind": "positive",
+      "status": "PASS",
+      "detail": "genuine receipt accepted; duplicate matrix and Local runtime admission refused"
+    },
+    {
+      "case": "POS-input-completion-utf16",
+      "kind": "positive",
+      "status": "PASS",
+      "detail": "strict caps, unknown completion and split-surrogate result match contract"
+    },
+    {
+      "case": "POS-ordinary-redaction",
+      "kind": "positive",
+      "status": "PASS",
+      "detail": "ordinary bearer and split argv redacted"
+    },
+    {
+      "case": "POS-immutable-terminal",
+      "kind": "positive",
+      "status": "PASS",
+      "detail": "clean acknowledged immutable bytes accepted; primary error refuses eligibility; stage retained"
+    },
+    {
+      "case": "NEG-quoted-bearer",
+      "kind": "negative",
+      "status": "FAIL",
+      "detail": "quoted bearer credential survives safe serializer"
+    },
+    {
+      "case": "NEG-prelaunch-fresh-timeout",
+      "kind": "negative",
+      "status": "FAIL",
+      "detail": "runner timeout [10] exceeds fresh remaining 1s after prelaunch persistence"
+    },
+    {
+      "case": "NEG-post-persist-expired-start",
+      "kind": "negative",
+      "status": "FAIL",
+      "detail": "runner invoked after persistence consumed entire work deadline"
+    },
+    {
+      "case": "NEG-expired-drain",
+      "kind": "negative",
+      "status": "FAIL",
+      "detail": "post-expiry drain granted 0.5s beyond remaining zero"
+    },
+    {
+      "case": "NEG-terminal-fresh-waits",
+      "kind": "negative",
+      "status": "FAIL",
+      "detail": "cleanup waits exceed fresh remaining zero: [('before', 0.5), ('terminal-write', 10), ('terminal-readback', 10)]"
+    },
+    {
+      "case": "NEG-expired-resume",
+      "kind": "negative",
+      "status": "FAIL",
+      "detail": "child resumed after persistence exhausted deadline: ['job', ('limit', 32), 'query', 'suspended-create', 'assign', 'identity', 'persist', ('resume', 2)]"
+    },
+    {
+      "case": "NEG-late-proxy-forward",
+      "kind": "negative",
+      "status": "FAIL",
+      "detail": "pending work request forwarded during cleanup at clock [11]"
+    },
+    {
+      "case": "POS-invalid-input-no-browser",
+      "kind": "positive",
+      "status": "PASS",
+      "detail": "invalid exact shape refuses before browser"
+    },
+    {
+      "case": "POS-launch-failure-still-custody-stdin",
+      "kind": "positive",
+      "status": "PASS",
+      "detail": "launch error preserved; save and stdin attempted"
+    },
+    {
+      "case": "POS-close-failure-independent-teardown",
+      "kind": "positive",
+      "status": "PASS",
+      "detail": "close error does not skip save/stdin"
+    },
+    {
+      "case": "NEG-expiry-zero-timeout",
+      "kind": "negative",
+      "status": "FAIL",
+      "detail": "crossing expiry produced timeout=0, disabling Playwright timeout"
+    },
+    {
+      "case": "NEG-expired-control-no-effect",
+      "kind": "negative",
+      "status": "FAIL",
+      "detail": "control callback invoked after final fill exhausted work deadline\n\n1 !== 0\n"
+    },
+    {
+      "case": "NEG-durable-stdin-outcome",
+      "kind": "negative",
+      "status": "FAIL",
+      "detail": "saved bytes omit the observed stdin teardown failure"
+    }
+  ],
+  "observationsReexecuted": 0,
+  "newTestPrograms": 0,
+  "effectStarts": 0,
+  "plannedComposedCases": [
+    {
+      "id": "MODEL-PENDING-BODY",
+      "schedule": "close work while a bounded body read is pending",
+      "expected": "after return, refuse forward; retain pending read uncertainty",
+      "status": "NOT_RUN_DESIGN_ONLY"
+    },
+    {
+      "id": "MODEL-QUEUED-REPLY",
+      "schedule": "close before atomic admission commit under parent lock",
+      "expected": "revoke queued reply; never call its adapter or admit follow-on work",
+      "status": "NOT_RUN_DESIGN_ONLY"
+    },
+    {
+      "id": "MODEL-INFLIGHT-WRITE",
+      "schedule": "close between admission commit and adapter entry; separately close during an invoked write",
+      "expected": "retain committed pending identity and UNKNOWN; no false cancellation, follow-on grant or acceptance upgrade on late completion",
+      "status": "NOT_RUN_DESIGN_ONLY"
+    },
+    {
+      "id": "MODEL-CLEANUP-EXHAUSTION",
+      "schedule": "first cleanup step consumes remainder",
+      "expected": "record later steps NOT_ATTEMPTED/UNKNOWN; no timeout0, floor or replenished wait",
+      "status": "NOT_RUN_DESIGN_ONLY"
+    },
+    {
+      "id": "MODEL-CHILD-CLOCK",
+      "schedule": "child startup delay or wall clock rollback",
+      "expected": "child estimate cannot extend parent authority; parent fence/unknown remain controlling",
+      "status": "NOT_RUN_DESIGN_ONLY"
+    },
+    {
+      "id": "MODEL-CHILD-ACK",
+      "schedule": "child snapshot missing, wrong bytes, unresolved exit or readback failure",
+      "expected": "parent acceptance false; retained stage; no self-referential save success",
+      "status": "NOT_RUN_DESIGN_ONLY"
+    }
+  ],
+  "prospectiveSourcePaths": [
+    "scripts/cvf_ncr_html_owned_profile/__init__.py",
+    "scripts/cvf_ncr_html_owned_profile/lifecycle.py",
+    "scripts/cvf_ncr_html_owned_profile/profile.py",
+    "scripts/cvf_ncr_html_owned_profile/execution.py",
+    "scripts/cvf_ncr_html_owned_profile/protocol.py",
+    "scripts/cvf_ncr_html_owned_profile/test_control.py",
+    "scripts/cvf_ncr_html_owned_profile/test_execution.py",
+    "scripts/cvf_ncr_html_owned_profile/test_protocol.py",
+    "scripts/cvf_ncr_html_owned_profile/journey.cjs",
+    "scripts/cvf_ncr_html_owned_profile/journey.test.cjs"
+  ],
+  "prospectiveOutputCount": 12,
+  "writeAuthorityForProposedSources": false,
+  "capacity": [
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/__init__.py",
+      "frozenR4Lines": 301,
+      "prospectiveCeiling": 329,
+      "action": "controller and existing proxy; fence before shutdown; phase checks after body/queue acquisition"
+    },
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/lifecycle.py",
+      "frozenR4Lines": 269,
+      "prospectiveCeiling": 329,
+      "action": "exact process/handle identity; fresh check after identity persistence before resume"
+    },
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/profile.py",
+      "frozenR4Lines": 294,
+      "prospectiveCeiling": 329,
+      "action": "case-specific receipts and source/oracle joins; retain schema/UTF16 logic"
+    },
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/execution.py",
+      "frozenR4Lines": 310,
+      "prospectiveCeiling": 329,
+      "action": "serializer, command lifecycle and immutable terminal bytes; delegate phase/clock policy"
+    },
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/protocol.py",
+      "frozenR4Lines": null,
+      "prospectiveCeiling": 299,
+      "action": "NEW sole phase/clock/admission owner and pending-operation accounting"
+    },
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/test_control.py",
+      "frozenR4Lines": 294,
+      "prospectiveCeiling": 296,
+      "action": "nine inert-control matrix and canonical fixtures; do not expand here"
+    },
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/test_execution.py",
+      "frozenR4Lines": 346,
+      "prospectiveCeiling": 286,
+      "action": "move coherent protocol schedules before adding coverage; shrink at least60"
+    },
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/test_protocol.py",
+      "frozenR4Lines": null,
+      "prospectiveCeiling": 299,
+      "action": "NEW deterministic composed clock/phase/late-completion tests"
+    },
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/journey.cjs",
+      "frozenR4Lines": 229,
+      "prospectiveCeiling": 329,
+      "action": "lazy child calls, local wait clamps, child snapshot and complete reply validation"
+    },
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/journey.test.cjs",
+      "frozenR4Lines": 114,
+      "prospectiveCeiling": 299,
+      "action": "fresh VM input, timing, close/stdin/snapshot controls"
+    }
+  ],
+  "advisoryReview": {
+    "python": "bounded new work-order proposal feasible if cutoff means admission, in-flight UNKNOWN; exact future scope/grant still required",
+    "javascript": "design-only protocol first; child teardown before immutable snapshot; parent owns independent readback/exit ACK",
+    "localDisposition": "lock design now; next proposal must bind new finite authority/topology/requirements before any manual worker transfer",
+    "sourceCaution": "restored pre-R4 source is distinct from frozen R4 snapshots; only retained observations are executed evidence",
+    "finalDisposition": "both read-only advisers found no blocking documentary design contradiction; Local adopted atomic admission commit and close-before-adapter schedule; no test or runtime proof"
+  },
+  "rootPreserved": {
+    "rootCauseClusterId": "NCR_HTML_CONFIGURED_RECEIPT_CONTROL_PROOF",
+    "actualReworkGeneration": 4,
+    "scecOrdinal": 2,
+    "counters": [
+      2,
+      0,
+      2,
+      0
+    ],
+    "newTransition": false,
+    "R4BudgetRefill": false
+  },
+  "limits": [
+    "no implementation changes or real runtime proof",
+    "no automatic worker",
+    "not machine proof of semantics",
+    "no new checker or parent learning application claim"
+  ],
+  "custody": {
+    "path": "D:/UNG DUNG AI/TOOL AI 2026/Controlled-Vibe-Framework-CVF/.cvf/runtime/ncr-html-semantic-design-20261015",
+    "owner": "LOCAL",
+    "retentionReason": "source pins, design reconciliation, canonical authoring/material/continuity logs"
+  },
+  "prospectivePathClassification": {
+    "existingWorkingSources": 6,
+    "newReintroducedFromUnacceptedPinnedR4": [
+      "scripts/cvf_ncr_html_owned_profile/execution.py",
+      "scripts/cvf_ncr_html_owned_profile/test_execution.py"
+    ],
+    "newDesignSources": [
+      "scripts/cvf_ncr_html_owned_profile/protocol.py",
+      "scripts/cvf_ncr_html_owned_profile/test_protocol.py"
+    ]
+  },
+  "localPreparation": {
+    "status": "PARTIAL",
+    "lateAction": "ADIF resolver query and baseline disclosure after first material validation failure",
+    "initialGateFailure": "material-initial-fail.json",
+    "initialGateFailureSha256": "f67dc1d4185d2c6f2ca13f849741ac0bac5b6ee6ee9ffeb8ded7a838f4789aa7",
+    "resolverPacket": "adif.json",
+    "resolverPacketSha256": "5dce1c2d0f359a9aaaefcb771728dba6b20a1e1fd58cbfd3a653b5da8f032afb",
+    "defectIds": [
+      "ADIF-0020",
+      "ADIF-0021",
+      "ADIF-0026",
+      "ADIF-0028",
+      "ADIF-0029",
+      "ADIF-0030",
+      "ADIF-0034",
+      "ADIF-0035",
+      "ADIF-0037",
+      "ADIF-0038",
+      "ADIF-0040",
+      "ADIF-0042",
+      "ADIF-0044",
+      "ADIF-0045",
+      "ADIF-0047",
+      "ADIF-0048",
+      "ADIF-0050",
+      "ADIF-0051",
+      "ADIF-0054",
+      "ADIF-0055",
+      "ADIF-0056",
+      "ADIF-0057",
+      "ADIF-0061",
+      "ADIF-0062",
+      "ADIF-0007",
+      "ADIF-0022",
+      "ADIF-0023",
+      "ADIF-0024",
+      "ADIF-0025",
+      "ADIF-0031",
+      "ADIF-0032",
+      "ADIF-0036",
+      "ADIF-0039",
+      "ADIF-0043",
+      "ADIF-0049"
+    ],
+    "historicalVerdictUpgraded": false
+  }
+}
