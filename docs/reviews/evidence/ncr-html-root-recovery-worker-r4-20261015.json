@@ -1,0 +1,321 @@
+{
+  "schemaVersion": "cvf.ncrHtmlRootRecoveryWorkerProof@1",
+  "batchId": "CVF-NCR-HTML-ROOT-RECOVERY-R4-20261015",
+  "status": "BLOCKED_WITH_REASON",
+  "statusReason": "REQ-08 only: two mandatory named read scopes were completed after the first edit; REQ-01..07 evidence is complete and returned for Local review",
+  "actor": {
+    "role": "INTERNAL_AGENT implementation worker",
+    "invocation": "worker-r4-154698778efc",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "workerRedispatchAllowed": "NO"
+  },
+  "executionBaseHead": "e41466ac64b5d2c7f7edee57d5bbcfb65918d5c5",
+  "baseStatusBeforeEdits": "git status --short empty and staged empty at the released R4 continuity commit",
+  "custody": {
+    "root": ".cvf/runtime/ncr-html-root-recovery-worker-r4-20261015/worker-r4-154698778efc/",
+    "owner": "implementation worker",
+    "retentionReason": "logs, receipts and fixture trees are retained as evidence; nothing was deleted"
+  },
+  "requirementDispositions": {
+    "REQ-01": "PASS",
+    "REQ-02": "PASS",
+    "REQ-03": "PASS",
+    "REQ-04": "PASS",
+    "REQ-05": "PASS",
+    "REQ-06": "PASS",
+    "REQ-07": "PASS",
+    "REQ-08": "BLOCKED"
+  },
+  "REQ-01": {
+    "status": "PASS",
+    "evidence": [
+      "profile.validate_inputs and journey.validateInputs admit exactly seven NFC strings, synthetic path/title, distinct anchors and cap 1/2 before namespace, Native or utility (test_control TestAdmissionBeforeEffects, journey.test.cjs input tests)",
+      "profile.control_issue/case_issue: closed shape, exact distinct nine-case matrix with per-case expected failure class, query verdicts, command kinds, NOT_ACCEPTED_UNKNOWN, retained stage, strict int counts, aggregate reconciliation, zero effects, current production/oracle hashes and a separately supplied receipt digest (26 hostile receipt mutations plus the positive fixture)",
+      "Local actor receipts stay fail-closed; an in-process-runner receipt is refused"
+    ],
+    "tests": [
+      "test_control.py::test_receipt_admission_is_case_specific_hash_joined_and_never_proof_of_execution",
+      "test_control.py::test_each_hostile_receipt_is_rejected_for_its_own_reason",
+      "test_control.py::TestAdmissionBeforeEffects",
+      "test_control.py::test_actual_terminal_boundary_rejects_failed_native_control"
+    ]
+  },
+  "REQ-02": {
+    "status": "PASS",
+    "evidence": [
+      "execution.redact/bounded/argv_evidence/safe: one serializer for command events, process-root records and exceptions; bearer and adjacent sensitive values removed across text, bytes, dash and slash flags before truncation",
+      "execution.completion: only type int and value 0 succeeds; bool/None/str/float are UNKNOWN",
+      "Collector.command persists prelaunch identity/budget/deadline evidence before the runner; a failed prelaunch write or spent deadline prevents invocation; final-write failure keeps the original failure; one module query attempt"
+    ],
+    "tests": [
+      "test_execution.py::TestSafeEvidence",
+      "test_execution.py::TestCommands"
+    ]
+  },
+  "REQ-03": {
+    "status": "PASS",
+    "evidence": [
+      "one Collector owner supplies fresh remaining time to every command, communicate, bounded drain, sleep and teardown wait; no unbounded communicate fallback; uninterruptible calls are bounded_call with UNKNOWN outcome",
+      "Budget engine4/web6/route2 inside global12, debited before each attempt, no transfer between buckets or actors",
+      "journey.cjs: absolute-epoch child deadline clamps every browser wait, control wait via withBudget; parent clock and kill remain authoritative"
+    ],
+    "tests": [
+      "test_execution.py::TestDeadlinesAndBudgets",
+      "test_execution.py::TestOwnership::test_an_expired_owner_deadline_admits_no_child_and_failure_waits_use_the_remaining_time",
+      "journey.test.cjs: deadline clamp, withBudget and teardown tests"
+    ]
+  },
+  "REQ-04": {
+    "status": "PASS",
+    "evidence": [
+      "legacy q001 entry minus the single routing branch equals the pinned immutable 0850546 blob digest; legacy w05 entry minus the routing line equals its pinned digest (no test-time Git)",
+      "check_row joins the real nested event.decision.final_decision schema and request_summary; excerpt keeps 500 UTF-16 units including a split surrogate"
+    ],
+    "tests": [
+      "test_control.py::test_canonical_fixtures_exact10_family_and_pinned_immutable_legacy_blob",
+      "test_control.py::test_legacy_python_entry_is_the_pinned_immutable_blob_plus_one_routing_branch",
+      "test_execution.py::TestOracles",
+      "journey.test.cjs: legacy browser branches test"
+    ]
+  },
+  "REQ-05": {
+    "status": "PASS",
+    "evidence": [
+      "Native with injected API/Popen: job 32 / no breakaway / kill-on-close set and read back before any child; suspended create, assign, identity, safe persist, then resume; failed step kills only the exact child and never resumes; utility children share the job; exact handle close attempts every handle"
+    ],
+    "tests": [
+      "test_execution.py::TestOwnership"
+    ]
+  },
+  "REQ-06": {
+    "status": "PASS",
+    "evidence": [
+      "execution.finalize: independent attempts after earlier errors, stage always retained, evidence frozen once, written, read back and acknowledged separately, accepted only when pre-ack evidence is clean and write is ACKNOWLEDGED with MATCH; disposal eligibility is modeled only",
+      "journey.cjs teardown: browser close, custody save and stdin teardown are independent bounded attempts; a hung or rejected close never skips the others"
+    ],
+    "tests": [
+      "test_execution.py::TestRetainedStageTerminal",
+      "test_control.py::TestAdmissionBeforeEffects::test_valid_admission_reaches_only_the_first_owned_effect_and_the_terminal_bytes_are_acknowledged",
+      "journey.test.cjs: browser close rejection or hang test"
+    ]
+  },
+  "REQ-07": {
+    "status": "PASS",
+    "evidence": [
+      "source8 = existing6 + NEW execution.py and test_execution.py; every file below 350 lines; test_control.py 346 -> 294 lines (shrink 52, target 296); LF endings preserved; counters within the new window; seven effects zero; no out-of-scope path changed"
+    ],
+    "tests": [
+      "test_control.py::test_canonical_fixtures_exact10_family_and_pinned_immutable_legacy_blob"
+    ]
+  },
+  "REQ-08": {
+    "status": "BLOCKED",
+    "evidence": [
+      "entry gate, scaffold, per-file pins/endings, runner/Git reservations and return scaffold were completed before the first edit",
+      "Late mandatory reads (completed after the first edit and after test launches 1-5): lifecycle standard Agent Continuation And Action Readiness lines 167-320 (Execution-Surface And Total-Cost Feasibility, Receiving Analysis And Question Discipline, Audience-Specific Briefs, Outputs Designed For The Receiving Agent); review-cost standard Independent Review Probe Admission Boundary lines 463-655",
+      "Per the work order, late reads stay PARTIAL and REQ-08 BLOCKED; gate PASS cannot repair this history"
+    ],
+    "tests": []
+  },
+  "sourcePreimagePins": {
+    "scripts/cvf_ncr_html_owned_profile/__init__.py": "8133757501bbbcc154a92e7758df1a3df3c2957a0e205cd4f39cf03721ea69fd",
+    "scripts/cvf_ncr_html_owned_profile/lifecycle.py": "4d086bb21745aee82648a37f15ef428d37a936102ad47f38911c7e4e13abbd0b",
+    "scripts/cvf_ncr_html_owned_profile/profile.py": "730a1c33bc8258a6003023fad60f6ab9fb7cb775e054c5b9629c9cf59e893e76",
+    "scripts/cvf_ncr_html_owned_profile/test_control.py": "2a4f6acff7a23f4c783277ca6966c77d89a442ae2f297fb0dbe7529e2abf5aa3",
+    "scripts/cvf_ncr_html_owned_profile/journey.cjs": "37d7316cc62c1b757750d570063e78cc059c1c8d53865af16e0af0d01ba38431",
+    "scripts/cvf_ncr_html_owned_profile/journey.test.cjs": "0e8187004d28ba2685e19c9397ec4c2ec1add0fb403a3c3f3e78216fe5c0d00c"
+  },
+  "sourceFinal": {
+    "scripts/cvf_ncr_html_owned_profile/__init__.py": {
+      "sha256": "fa7729a061041f97058d51106d7c0b2fba39538b9a9675d388ed04a4e68bb2ca",
+      "lines": 301,
+      "bytes": 19726,
+      "crlf": 0,
+      "unchangedSinceFinalRunner": true
+    },
+    "scripts/cvf_ncr_html_owned_profile/lifecycle.py": {
+      "sha256": "a7b579f753b7313f5c6b31d0c04a6057eb440880936cb7d6264441f180cb6daa",
+      "lines": 269,
+      "bytes": 13529,
+      "crlf": 0,
+      "unchangedSinceFinalRunner": true
+    },
+    "scripts/cvf_ncr_html_owned_profile/profile.py": {
+      "sha256": "1a876ccb12670cf22a4f8fd92a38e5e7d2a2dc6ec7fdee5fdaa691073427c787",
+      "lines": 294,
+      "bytes": 18495,
+      "crlf": 0,
+      "unchangedSinceFinalRunner": true
+    },
+    "scripts/cvf_ncr_html_owned_profile/test_control.py": {
+      "sha256": "ea4a4ac7d405550511449fbc5e197f59759b4bcf97013c27e8827953f143e9b1",
+      "lines": 294,
+      "bytes": 16955,
+      "crlf": 0,
+      "unchangedSinceFinalRunner": true
+    },
+    "scripts/cvf_ncr_html_owned_profile/journey.cjs": {
+      "sha256": "2eeeed590805291f28463e871646023a54ead4f7478a2ce5294cde8d5cdc494d",
+      "lines": 229,
+      "bytes": 13780,
+      "crlf": 0,
+      "unchangedSinceFinalRunner": true
+    },
+    "scripts/cvf_ncr_html_owned_profile/journey.test.cjs": {
+      "sha256": "0694464bf61ce0874fe2d2b43cc6b423e357dd768c787c20b35c24b7e45076a4",
+      "lines": 114,
+      "bytes": 7793,
+      "crlf": 0,
+      "unchangedSinceFinalRunner": true
+    },
+    "scripts/cvf_ncr_html_owned_profile/execution.py": {
+      "sha256": "c71f2a10978b833769b308a490903a8e99d11bc9b5576d23a117715186c91ed0",
+      "lines": 310,
+      "bytes": 16302,
+      "crlf": 0,
+      "unchangedSinceFinalRunner": true
+    },
+    "scripts/cvf_ncr_html_owned_profile/test_execution.py": {
+      "sha256": "c1dffe1e148311fc8a40b1859274fb20649451ed48130be6990b416c03908287",
+      "lines": 346,
+      "bytes": 24192,
+      "crlf": 0,
+      "unchangedSinceFinalRunner": true
+    }
+  },
+  "rejectedSnapshots": {
+    "hashVerified": true,
+    "sha256": {
+      "scripts/cvf_ncr_html_owned_profile/__init__.py": "a04411f9edad885cc68826248a5444a0177e7d7055382e5ae7b5383f77fbb31a",
+      "scripts/cvf_ncr_html_owned_profile/lifecycle.py": "49fb5727840ae89ea462220e6574b3bcc3ccb0564b8bc684a7f520b9299a4539",
+      "scripts/cvf_ncr_html_owned_profile/profile.py": "2c9debe43bac43c22afae1cdc8155f4f8f7e182e5e38603772334ddff92676b0",
+      "scripts/cvf_ncr_html_owned_profile/test_control.py": "ae94e6c376e52a719b57b6348f8ff95f3879bf63d17e30ec982cfa1fc6672c31",
+      "scripts/cvf_ncr_html_owned_profile/journey.cjs": "8d55b5d12668ce1f9db2cedc1f3f6bd6cda01eeb6eb621a12444e3e368d8a0b2",
+      "scripts/cvf_ncr_html_owned_profile/journey.test.cjs": "a2b87986b685585dcfac0668db1ca11d9f04bbef063f88fbdb071a006c89176e"
+    },
+    "disposition": "read as read-only reference only; the eight sources were re-authored, not byte-recovered, so the optional recovery step was not used"
+  },
+  "immutableEntrypointBlobs": {
+    "commit": "0850546dea01b0f15586132549e4330a1af25c72",
+    "q001EntrySha256": "26b34890e3031f5b13ca4965585adbdf14a483aefe246834d3848cb165c3fe9d",
+    "w05EntrySha256": "2f0981b2356a51a85f34d3d6ed94a0d0a0606c48d306888711876a5c2b225dec",
+    "method": "two manual git show reads before the first edit; tests pin the digests and spawn no Git"
+  },
+  "budget": {
+    "testProgramLaunches": {
+      "used": 5,
+      "limit": 6,
+      "unused": 1,
+      "countingUnit": "each pytest or node --test invocation; static ast.parse and node --check syntax checks execute no controls and are not charged"
+    },
+    "substitutedChildStarts": {
+      "used": 26,
+      "limit": 27,
+      "allInLaunch": 5,
+      "detail": "8 cases x 3 commands + identity-mismatch x 2"
+    },
+    "manualSourceGit": {
+      "used": 14,
+      "limit": 24,
+      "testSpawned": 0,
+      "commands": [
+        "rev-parse HEAD",
+        "status --short",
+        "log -3",
+        "log -3 -- scripts dir",
+        "log -1 format",
+        "check-ignore .cvf/runtime",
+        "show 0850546:q001 | sha256",
+        "show 0850546:w05 | sha256",
+        "status --short",
+        "diff --name-status base",
+        "diff --cached --name-only",
+        "status --short (final)",
+        "diff --name-status base (final)",
+        "diff --cached --name-only (final)"
+      ],
+      "carveOut": "canonical governance gates and their own trusted receipt operations are separate and logged separately"
+    },
+    "workerMinutes": "custody created 17:54:38 local, last measured 18:25; reads before custody creation were not separately timed; inside the 180 minute window"
+  },
+  "testLogs": [
+    {
+      "log": ".cvf/runtime/ncr-html-root-recovery-worker-r4-20261015/worker-r4-154698778efc/entry-gate.log",
+      "sha256": "a3ade7e0edb6c740946ca0b021cd6f2be6999d5087323d5266b19d7c2f5fced8",
+      "kind": "canonical bound pre-implementation gate, not a test program",
+      "result": "COMPLIANT"
+    },
+    {
+      "log": ".cvf/runtime/ncr-html-root-recovery-worker-r4-20261015/worker-r4-154698778efc/runner1-pytest-inprocess.log",
+      "sha256": "58aafe7f645d9168c520bb16d05ba4c369503b262545f4951c09f6608bceec84",
+      "kind": "test program 1: pytest both files, in-process inert runner",
+      "result": "117 passed, 1 failed: the valid-admission test used a namespace inside the provenance tree"
+    },
+    {
+      "log": ".cvf/runtime/ncr-html-root-recovery-worker-r4-20261015/worker-r4-154698778efc/runner2-node.log",
+      "sha256": "dd69687a9a28164dd2294fcb5f940ec7b813e1d06440f75a5af835be026aa628",
+      "kind": "test program 2: node --test journey.test.cjs",
+      "result": "7 passed, 0 failed"
+    },
+    {
+      "log": ".cvf/runtime/ncr-html-root-recovery-worker-r4-20261015/worker-r4-154698778efc/runner3-pytest-inprocess.log",
+      "sha256": "9b7ae6b489c6b59b0806aa2885561bfa71438b64a0c74b2a6c6b631369f15880",
+      "kind": "test program 3: pytest both files, in-process inert runner",
+      "result": "114 passed"
+    },
+    {
+      "log": ".cvf/runtime/ncr-html-root-recovery-worker-r4-20261015/worker-r4-154698778efc/runner4-pytest-inprocess.log",
+      "sha256": "f5bf8e7fe5d6b4408b83779771d91571fc22f2a68721f56e1407b7200e5479f2",
+      "kind": "test program 4: pytest both files, in-process inert runner, after the final production edits",
+      "result": "114 passed"
+    },
+    {
+      "log": ".cvf/runtime/ncr-html-root-recovery-worker-r4-20261015/worker-r4-154698778efc/runner5-pytest-final-real-substitutes.log",
+      "sha256": "6b27c271e6401184a681dd820e5099f6b7c630812a8c8ae12972e72a716e810c",
+      "kind": "test program 5: pytest both files with CVF_R4_SUBSTITUTE=subprocess (nine real inert substitutes)",
+      "result": "114 passed; 26 substituted child starts"
+    },
+    {
+      "log": ".cvf/runtime/ncr-html-root-recovery-worker-r4-20261015/worker-r4-154698778efc/fast-gate-1.log",
+      "sha256": "d835538c49571c4c9625bbaeb7e5c207cbc625d58fd42027aba2a6ac1de2a326",
+      "kind": "first full bound worker-return fast gate, not a test program",
+      "result": "FAIL: 1 of 6 commands (reviewer-fast external knowledge intake routing: Internal source row missing); repaired once in the return"
+    }
+  ],
+  "realSubstituteReceipt": {
+    "path": ".cvf/runtime/ncr-html-root-recovery-worker-r4-20261015/worker-6b183fbbcbb035ed/inert-results.json",
+    "receiptSha256": "0d6fa1751eba53afbcb25b903a5aa823bc910069c41ecc205fc9a6e8c2851d1e",
+    "frozenDigestFile": ".cvf/runtime/ncr-html-root-recovery-worker-r4-20261015/worker-6b183fbbcbb035ed/inert-results.sha256",
+    "frozenDigest": "0d6fa1751eba53afbcb25b903a5aa823bc910069c41ecc205fc9a6e8c2851d1e",
+    "runner": "SUBPROCESS",
+    "invocation": "worker-6b183fbbcbb035ed",
+    "substituteStarts": 26,
+    "cases": 9,
+    "productionParserCheck": "asserted inside launch 5: control_issue returned no issue for the file as written"
+  },
+  "effects": {
+    "providerCalls": 0,
+    "networkCalls": 0,
+    "publicWrites": 0,
+    "deployments": 0,
+    "realDataMutations": 0,
+    "destructiveActions": 0,
+    "productRuntimeStarts": 0,
+    "nativeChildren": 0,
+    "runtimeUtilities": 0,
+    "containers": 0,
+    "browserProfiles": 0,
+    "exports": 0,
+    "evaluates": 0,
+    "loopbackRequests": 0,
+    "windowsApiCalls": 0,
+    "filesystemDisposal": 0
+  },
+  "deferredParentProof": [
+    "actual Windows job/handle ABI and process-association feasibility",
+    "actual B-E native, product, browser and engine run",
+    "actual stage deletion reporting DELETED/NOT_DELETED/UNKNOWN",
+    "real operator-owned receipt custody",
+    "Local independent offline probe (pending reviewer execution)"
+  ]
+}
