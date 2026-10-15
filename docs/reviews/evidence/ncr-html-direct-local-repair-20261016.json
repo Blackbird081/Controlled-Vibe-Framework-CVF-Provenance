@@ -1,0 +1,2484 @@
+{
+  "schemaVersion": "cvf.ncrHtmlDirectLocalSourceRepair@1",
+  "status": "ACCEPTED_SOURCE_ONLY_BOUNDED",
+  "decisionOwner": "LOCAL",
+  "implementationActor": "LOCAL_IMPLEMENTER_ROOT",
+  "probeExecutor": "DISTINCT_INTERNAL_AGENT_REVIEWER",
+  "authorization": "docs/baselines/CVF_GC018_NCR_HTML_DIRECT_LOCAL_REPAIR_2026-10-16.md",
+  "authorizationRawSha256": "9cb12b1a60a9027b73355862cffc088f4104b20cc608ab17fd94dea96917978c",
+  "date": "2026-10-16",
+  "baseHead": "16deaa8e9d8c4f1659d7bfff5bad5f1cd7af633d",
+  "recordedAtUtc": "2026-10-15T17:54:22.919518+00:00",
+  "source10": {
+    "scripts/cvf_ncr_html_owned_profile/__init__.py": {
+      "sha256": "283f238f1196e3dc401ec8538e894db063c0f42123c2a9d730e124c6cef3f541",
+      "lines": 322,
+      "bytes": 20987,
+      "lineEnding": "LF"
+    },
+    "scripts/cvf_ncr_html_owned_profile/lifecycle.py": {
+      "sha256": "95c98a6d81ebfc36cf61c1d24c36bc554a5f5c96a3716f73296322a899297d6e",
+      "lines": 312,
+      "bytes": 15999,
+      "lineEnding": "LF"
+    },
+    "scripts/cvf_ncr_html_owned_profile/profile.py": {
+      "sha256": "956b31047083b440314a8985383705e0923eb8d0229a74d141b9ae33c2b20caf",
+      "lines": 297,
+      "bytes": 18834,
+      "lineEnding": "LF"
+    },
+    "scripts/cvf_ncr_html_owned_profile/test_control.py": {
+      "sha256": "aa860384683a1c20a4ae3052e281062110be2840182df475e01d3d72a4c0b078",
+      "lines": 296,
+      "bytes": 18871,
+      "lineEnding": "LF"
+    },
+    "scripts/cvf_ncr_html_owned_profile/journey.cjs": {
+      "sha256": "f76b6d0fec14f2d208fee63004aec2b7211799e5d37160e414633e9dd15d69e0",
+      "lines": 258,
+      "bytes": 16755,
+      "lineEnding": "LF"
+    },
+    "scripts/cvf_ncr_html_owned_profile/journey.test.cjs": {
+      "sha256": "a36539cd8021d8ccc2407e7d3c4edaead49fd01d8525dd460ec43752c0d8a66e",
+      "lines": 240,
+      "bytes": 18617,
+      "lineEnding": "LF"
+    },
+    "scripts/cvf_ncr_html_owned_profile/execution.py": {
+      "sha256": "013486fc5f51f704051f299d1fdb8ee1ce0b69bd7a4313918210ca630a02d00f",
+      "lines": 345,
+      "bytes": 19301,
+      "lineEnding": "LF"
+    },
+    "scripts/cvf_ncr_html_owned_profile/test_execution.py": {
+      "sha256": "7a352621b1a9db2a0a9978edd23c9ca4acb82386a3d5eacc583479fcfdc70357",
+      "lines": 333,
+      "bytes": 22493,
+      "lineEnding": "LF"
+    },
+    "scripts/cvf_ncr_html_owned_profile/protocol.py": {
+      "sha256": "dcc36153457e028db1e7d0e1650526bc6f36803297a1f1df3746f8369bb07681",
+      "lines": 274,
+      "bytes": 12640,
+      "lineEnding": "LF"
+    },
+    "scripts/cvf_ncr_html_owned_profile/test_protocol.py": {
+      "sha256": "044b2ef8d6beb99445c1e7ec23a1b55eeb4c64766dde65cae882e3b46d2ed767",
+      "lines": 322,
+      "bytes": 18386,
+      "lineEnding": "LF"
+    }
+  },
+  "sourceRecovery": {
+    "reference": "docs/reviews/evidence/ncr-html-root-semantic-local-r5-20261015.json",
+    "rawSha256": "d9016246389cc46de9ba5ac96bf8f90ae1a9d70febdea0b1fe223d2d40558f4c",
+    "recoveredSha256": {
+      "scripts/cvf_ncr_html_owned_profile/__init__.py": "283f238f1196e3dc401ec8538e894db063c0f42123c2a9d730e124c6cef3f541",
+      "scripts/cvf_ncr_html_owned_profile/lifecycle.py": "e616869574405d1a8bd39afc9cf47a405cbca34e0b9590425b70657ef957afd0",
+      "scripts/cvf_ncr_html_owned_profile/profile.py": "ead231c2f37d48b1c3e8e92dde00d6430337e883c6a2efe21ab6132c7b6fd156",
+      "scripts/cvf_ncr_html_owned_profile/test_control.py": "e51cb763c379cac042bc741dbca2b680b1799072a3ca020b5d7e22606e2b44e6",
+      "scripts/cvf_ncr_html_owned_profile/journey.cjs": "f76b6d0fec14f2d208fee63004aec2b7211799e5d37160e414633e9dd15d69e0",
+      "scripts/cvf_ncr_html_owned_profile/journey.test.cjs": "d12aa8b77df01d69a13aab00e160e528361b6bab901eddfd13450852569c2dfe",
+      "scripts/cvf_ncr_html_owned_profile/execution.py": "79b9bb1681fe9dec3c2545bf55afc315dc230fa4df3c8a4e19ef16bf67abfa29",
+      "scripts/cvf_ncr_html_owned_profile/test_execution.py": "fb7a2f9be590c472321fb6cc43505cc8a5c5ae0ea27c1f6efda63081d6963be4",
+      "scripts/cvf_ncr_html_owned_profile/protocol.py": "dcc36153457e028db1e7d0e1650526bc6f36803297a1f1df3746f8369bb07681",
+      "scripts/cvf_ncr_html_owned_profile/test_protocol.py": "a18cff0cdbcccd0b1aa8cf6e3919992de5b2d82968304023f6593cafd0343bb4"
+    },
+    "r5Accepted": false
+  },
+  "requirements": {
+    "ambiguousRecognizedCredentials": "PASS",
+    "postIdentityFreshWait": "PASS",
+    "expiredCleanupNoKillWait": "PASS",
+    "lateTerminalAckRefusal": "PASS",
+    "pinnedCreationHandleAndJobMembership": "PASS",
+    "cancellationFaultKeepsUnknown": "PASS",
+    "spawnPrimaryAndSecondaryFailurePreservation": "PASS"
+  },
+  "localAdmission": {
+    "phase": "DIRECT_LOCAL_REPAIR_UNDER_NEW_OPERATOR_INSTRUCTION",
+    "operatorInstruction": "B\u1ea1n t\u1ef1 s\u1eeda lu\u00f4n, t\u1eeb gi\u1edd kh\u00f4ng giao claude n\u1eefa",
+    "clientDate": "2026-10-16",
+    "recordedAtUtc": "2026-10-15T17:35:00.994075+00:00",
+    "startBasis": "includes startup and bounded preparation already performed this turn; add conservative15min",
+    "baseHead": "16deaa8e9d8c4f1659d7bfff5bad5f1cd7af633d",
+    "owner": "LOCAL_IMPLEMENTER_ROOT",
+    "reviewOwner": "DISTINCT_INTERNAL_REVIEWER",
+    "localMinutes": 180,
+    "reviewerMinutes": 60,
+    "testProgramsCeiling": 8,
+    "testProgramsUsed": 5,
+    "reviewerTestProgramsCeiling": 4,
+    "inertChildCeiling": 54,
+    "inertChildUsed": 26,
+    "reviewerInertChildCeiling": 0,
+    "sourceGitCeiling": 40,
+    "sourceGitUsed": 2,
+    "reviewerSourceGitCeiling": 20,
+    "countingUnit": "each control/assertion Python or Node launch including failures; metadata/hash/syntax/gates and separately logged canonical receipt/staging/commit operations excluded",
+    "sourceScope": [
+      "scripts/cvf_ncr_html_owned_profile/__init__.py",
+      "scripts/cvf_ncr_html_owned_profile/lifecycle.py",
+      "scripts/cvf_ncr_html_owned_profile/profile.py",
+      "scripts/cvf_ncr_html_owned_profile/test_control.py",
+      "scripts/cvf_ncr_html_owned_profile/journey.cjs",
+      "scripts/cvf_ncr_html_owned_profile/journey.test.cjs",
+      "scripts/cvf_ncr_html_owned_profile/execution.py",
+      "scripts/cvf_ncr_html_owned_profile/test_execution.py",
+      "scripts/cvf_ncr_html_owned_profile/protocol.py",
+      "scripts/cvf_ncr_html_owned_profile/test_protocol.py"
+    ],
+    "originalProofSha256": "d9016246389cc46de9ba5ac96bf8f90ae1a9d70febdea0b1fe223d2d40558f4c",
+    "freshBudgetBasis": "new explicit user instruction plus standing delegated Local technical budget selection; R5 remains spent, no reused profile or automatic refill",
+    "effects": {
+      "providerCalls": 0,
+      "networkCalls": 0,
+      "publicWrites": 0,
+      "deployments": 0,
+      "realDataMutations": 0,
+      "destructiveActions": 0,
+      "productRuntimeStarts": 0
+    },
+    "retentionOwner": "LOCAL",
+    "retentionReason": "source preimages, rejected snapshots, regression/probe evidence and canonical receipts",
+    "newChecker": false,
+    "launches": [
+      {
+        "id": 1,
+        "kind": "pytest in-process full source tests",
+        "log": "iteration-python.log"
+      },
+      {
+        "id": 2,
+        "kind": "node --test journey",
+        "log": "node.log"
+      },
+      {
+        "id": 3,
+        "kind": "pytest after independent timeout-fault repair; in-process",
+        "log": "iteration-python-2.log"
+      },
+      {
+        "id": 4,
+        "kind": "final node after owned scratch binding correction",
+        "log": "final-node.log"
+      },
+      {
+        "id": 5,
+        "kind": "FINAL pytest full157 with subprocess inert matrix on frozen production bytes",
+        "log": "final-python.log",
+        "childReservation": 26
+      }
+    ],
+    "reviewerTestProgramsUsed": 2,
+    "reviewerInertChildUsed": 0,
+    "localDiagnostics": [
+      "file-backed metadata patch script SyntaxError before any production write, corrected; no test slot",
+      "first disposition metadata comparison assumed full paths, while independent source-hash keys are unique basenames; corrected exact normalization, no source drift or test rerun",
+      "initial Node fresh scratch child used historical R5 parent; exact fresh child moved into current custody, binding corrected before final13 PASS",
+      "program3 used pytest basetemp inside provenance; guard correctly refused one positive namespace before first owned Native effect,156 passed/1 failed; final157 outside provenance PASS",
+      "outside-repo owned pytest cleanup rejected by automatic policy; exact directory retained with archive/manifest and Local ownership",
+      "first reviewer-fast lacked baseline/assessment structural headings; existing content labeled after late operative predicate read, production unchanged",
+      "material preflight ADIF disclosure omission; late connected-review query35 disclosed, initial implementation query0 retained without absence claim; no source/control rerun"
+    ]
+  },
+  "localTestLogs": {
+    "iteration-python.log": {
+      "sha256": "4b7ed4f881ccbdd34b5d6576302e7469d45fd17db8fb0b6de81760f40fe48ef3",
+      "bytes": 925
+    },
+    "node.log": {
+      "sha256": "b2e53c5b94bca1196454ac8a76f2602c94fb96689e543efc3ebd159f7c40f6ee",
+      "bytes": 3567
+    },
+    "iteration-python-2.log": {
+      "sha256": "fbf1dd40c99fbb8f9dd637591a85ae24227d7a6c3997adfbe768269e6528a556",
+      "bytes": 3908
+    },
+    "final-node.log": {
+      "sha256": "b541e3c97dc9f72885906245dfb761708dfd6fec826f76123a2e4d511e995245",
+      "bytes": 3563
+    },
+    "final-python.log": {
+      "sha256": "7d814d7bde9fb82fb75e9f250439465fff388a82059aeff25d992ce09f8b1753",
+      "bytes": 925
+    }
+  },
+  "finalPython": {
+    "passed": 157,
+    "exitCode": 0,
+    "launchId": 5
+  },
+  "finalNode": {
+    "passed": 13,
+    "exitCode": 0,
+    "launchId": 4
+  },
+  "independentProbe": {
+    "initial": {
+      "programCount": 1,
+      "childStarts": 0,
+      "nativeCalls": 0,
+      "networkBrowserProviderDeletion": 0,
+      "sourceHashesBefore": {
+        "__init__.py": "283f238f1196e3dc401ec8538e894db063c0f42123c2a9d730e124c6cef3f541",
+        "profile.py": "956b31047083b440314a8985383705e0923eb8d0229a74d141b9ae33c2b20caf",
+        "lifecycle.py": "91e6867a2d223a6318aaaecf4d864a51d2831f4cbc82a4a832b74e0e7e8dc05c",
+        "execution.py": "ea8491bf2a3c8b93a4391d43ba4cc723e499628f6ed32764652d768db048bb4c",
+        "protocol.py": "dcc36153457e028db1e7d0e1650526bc6f36803297a1f1df3746f8369bb07681",
+        "journey.cjs": "f76b6d0fec14f2d208fee63004aec2b7211799e5d37160e414633e9dd15d69e0",
+        "test_control.py": "feedb9668f4d0da843abc4cb3559b0ab33b4e9f297b74b75a2c76207c406705a",
+        "test_execution.py": "bd1b904be7f68aaf5a0dc7ce3e2776d477acecb27a5ae060cb3717aee98efb3c",
+        "test_protocol.py": "044b2ef8d6beb99445c1e7ec23a1b55eeb4c64766dde65cae882e3b46d2ed767",
+        "journey.test.cjs": "a36539cd8021d8ccc2407e7d3c4edaead49fd01d8525dd460ec43752c0d8a66e"
+      },
+      "sourceHashesAfter": {
+        "__init__.py": "283f238f1196e3dc401ec8538e894db063c0f42123c2a9d730e124c6cef3f541",
+        "profile.py": "956b31047083b440314a8985383705e0923eb8d0229a74d141b9ae33c2b20caf",
+        "lifecycle.py": "91e6867a2d223a6318aaaecf4d864a51d2831f4cbc82a4a832b74e0e7e8dc05c",
+        "execution.py": "ea8491bf2a3c8b93a4391d43ba4cc723e499628f6ed32764652d768db048bb4c",
+        "protocol.py": "dcc36153457e028db1e7d0e1650526bc6f36803297a1f1df3746f8369bb07681",
+        "journey.cjs": "f76b6d0fec14f2d208fee63004aec2b7211799e5d37160e414633e9dd15d69e0",
+        "test_control.py": "feedb9668f4d0da843abc4cb3559b0ab33b4e9f297b74b75a2c76207c406705a",
+        "test_execution.py": "bd1b904be7f68aaf5a0dc7ce3e2776d477acecb27a5ae060cb3717aee98efb3c",
+        "test_protocol.py": "044b2ef8d6beb99445c1e7ec23a1b55eeb4c64766dde65cae882e3b46d2ed767",
+        "journey.test.cjs": "a36539cd8021d8ccc2407e7d3c4edaead49fd01d8525dd460ec43752c0d8a66e"
+      },
+      "sourcesUnchanged": true,
+      "programSha256": "66646db356ff37e48753bfa71c923793737d5bcc5017d1c1fa79b57bc1966e86",
+      "cases": [
+        {
+          "id": "ambiguous-credential-tails",
+          "status": "PASS",
+          "observed": {
+            "recognizedVariants": 8,
+            "ordinaryPreserved": true
+          }
+        },
+        {
+          "id": "fresh-post-identity-wait",
+          "status": "PASS",
+          "observed": {
+            "communicationWaits": [
+              2.0
+            ]
+          }
+        },
+        {
+          "id": "expired-utility-no-communication",
+          "status": "PASS",
+          "observed": {
+            "communicate": 0,
+            "resume": 0
+          }
+        },
+        {
+          "id": "past-cleanup-no-kill-or-wait",
+          "status": "PASS",
+          "observed": {
+            "kill": 0,
+            "wait": 0,
+            "retainedRoots": 1
+          }
+        },
+        {
+          "id": "late-write-no-accept",
+          "status": "PASS",
+          "observed": {
+            "write": "UNKNOWN",
+            "readBack": "NOT_ATTEMPTED",
+            "error": "terminal-write: completion observed after cleanup cutoff; outcome UNKNOWN"
+          }
+        },
+        {
+          "id": "late-readback-no-accept",
+          "status": "PASS",
+          "observed": {
+            "write": "ACKNOWLEDGED",
+            "readBack": "UNKNOWN",
+            "error": "terminal-readback: completion observed after cleanup cutoff; outcome UNKNOWN"
+          }
+        },
+        {
+          "id": "retained-handle-despite-PID-replacement",
+          "status": "PASS",
+          "observed": {
+            "terminatedHandle": 501,
+            "replacementHandle": 601
+          }
+        },
+        {
+          "id": "member-open-race-refuses-non-job",
+          "status": "PASS",
+          "observed": {
+            "nonJobRefused": true,
+            "openedHandleClosed": true
+          }
+        },
+        {
+          "id": "queued-committed-and-confirmed-late",
+          "status": "PASS",
+          "observed": {
+            "queuedRevoked": true,
+            "committedUncertain": true,
+            "confirmedBeforeFence": true
+          }
+        },
+        {
+          "id": "cancel-kill-observed",
+          "status": "OBSERVATION",
+          "observed": {
+            "failureClass": "SPAWN",
+            "operation": {
+              "id": 1,
+              "kind": "utility",
+              "cleanup": false,
+              "state": "FAILED",
+              "outcome": "SPAWN",
+              "inflightAtClose": false,
+              "uncertain": false
+            },
+            "calls": [
+              [
+                "communicate",
+                2
+              ],
+              [
+                "kill"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "cancellation-kill-failure-preservation",
+          "status": "FAIL",
+          "reason": "cancellation kill failure replaced primary TIMEOUT with SPAWN"
+        },
+        {
+          "id": "cancel-drain-observed",
+          "status": "OBSERVATION",
+          "observed": {
+            "failureClass": "SPAWN",
+            "operation": {
+              "id": 1,
+              "kind": "utility",
+              "cleanup": false,
+              "state": "FAILED",
+              "outcome": "SPAWN",
+              "inflightAtClose": false,
+              "uncertain": false
+            },
+            "calls": [
+              [
+                "communicate",
+                2
+              ],
+              [
+                "kill"
+              ],
+              [
+                "communicate",
+                2
+              ]
+            ]
+          }
+        },
+        {
+          "id": "cancellation-drain-failure-preservation",
+          "status": "FAIL",
+          "reason": "cancellation drain failure replaced primary TIMEOUT with SPAWN"
+        }
+      ],
+      "counts": {
+        "PASS": 9,
+        "FAIL": 2,
+        "ORACLE_ERROR": 0,
+        "OBSERVATION": 2
+      },
+      "exitCode": 1
+    },
+    "final": {
+      "programCount": 2,
+      "namedInformationGain": "changed production bytes for two confirmed cancellation failures plus connected spawn primary-error preservation",
+      "childStarts": 0,
+      "nativeCalls": 0,
+      "networkBrowserProviderDeletion": 0,
+      "sourceHashesBefore": {
+        "__init__.py": "283f238f1196e3dc401ec8538e894db063c0f42123c2a9d730e124c6cef3f541",
+        "profile.py": "956b31047083b440314a8985383705e0923eb8d0229a74d141b9ae33c2b20caf",
+        "lifecycle.py": "95c98a6d81ebfc36cf61c1d24c36bc554a5f5c96a3716f73296322a899297d6e",
+        "execution.py": "013486fc5f51f704051f299d1fdb8ee1ce0b69bd7a4313918210ca630a02d00f",
+        "protocol.py": "dcc36153457e028db1e7d0e1650526bc6f36803297a1f1df3746f8369bb07681",
+        "journey.cjs": "f76b6d0fec14f2d208fee63004aec2b7211799e5d37160e414633e9dd15d69e0",
+        "test_control.py": "aa860384683a1c20a4ae3052e281062110be2840182df475e01d3d72a4c0b078",
+        "test_execution.py": "7a352621b1a9db2a0a9978edd23c9ca4acb82386a3d5eacc583479fcfdc70357",
+        "test_protocol.py": "044b2ef8d6beb99445c1e7ec23a1b55eeb4c64766dde65cae882e3b46d2ed767",
+        "journey.test.cjs": "a36539cd8021d8ccc2407e7d3c4edaead49fd01d8525dd460ec43752c0d8a66e"
+      },
+      "sourceHashesAfter": {
+        "__init__.py": "283f238f1196e3dc401ec8538e894db063c0f42123c2a9d730e124c6cef3f541",
+        "profile.py": "956b31047083b440314a8985383705e0923eb8d0229a74d141b9ae33c2b20caf",
+        "lifecycle.py": "95c98a6d81ebfc36cf61c1d24c36bc554a5f5c96a3716f73296322a899297d6e",
+        "execution.py": "013486fc5f51f704051f299d1fdb8ee1ce0b69bd7a4313918210ca630a02d00f",
+        "protocol.py": "dcc36153457e028db1e7d0e1650526bc6f36803297a1f1df3746f8369bb07681",
+        "journey.cjs": "f76b6d0fec14f2d208fee63004aec2b7211799e5d37160e414633e9dd15d69e0",
+        "test_control.py": "aa860384683a1c20a4ae3052e281062110be2840182df475e01d3d72a4c0b078",
+        "test_execution.py": "7a352621b1a9db2a0a9978edd23c9ca4acb82386a3d5eacc583479fcfdc70357",
+        "test_protocol.py": "044b2ef8d6beb99445c1e7ec23a1b55eeb4c64766dde65cae882e3b46d2ed767",
+        "journey.test.cjs": "a36539cd8021d8ccc2407e7d3c4edaead49fd01d8525dd460ec43752c0d8a66e"
+      },
+      "sourcesUnchanged": true,
+      "programSha256": "bd9c88091f8cf03c0a1d0a2e60b581c7252b71eea33979293be8c5284300593b",
+      "cases": [
+        {
+          "id": "ambiguous-credential-tails",
+          "status": "PASS",
+          "observed": {
+            "recognizedVariants": 8,
+            "ordinaryPreserved": true
+          }
+        },
+        {
+          "id": "fresh-post-identity-wait",
+          "status": "PASS",
+          "observed": {
+            "communicationWaits": [
+              2.0
+            ]
+          }
+        },
+        {
+          "id": "expired-utility-no-communication",
+          "status": "PASS",
+          "observed": {
+            "communicate": 0,
+            "resume": 0
+          }
+        },
+        {
+          "id": "past-cleanup-no-kill-or-wait",
+          "status": "PASS",
+          "observed": {
+            "kill": 0,
+            "wait": 0,
+            "retainedRoots": 1
+          }
+        },
+        {
+          "id": "late-write-no-accept",
+          "status": "PASS",
+          "observed": {
+            "write": "UNKNOWN",
+            "readBack": "NOT_ATTEMPTED",
+            "error": "terminal-write: completion observed after cleanup cutoff; outcome UNKNOWN"
+          }
+        },
+        {
+          "id": "late-readback-no-accept",
+          "status": "PASS",
+          "observed": {
+            "write": "ACKNOWLEDGED",
+            "readBack": "UNKNOWN",
+            "error": "terminal-readback: completion observed after cleanup cutoff; outcome UNKNOWN"
+          }
+        },
+        {
+          "id": "retained-handle-despite-PID-replacement",
+          "status": "PASS",
+          "observed": {
+            "terminatedHandle": 501,
+            "replacementHandle": 601
+          }
+        },
+        {
+          "id": "member-open-race-refuses-non-job",
+          "status": "PASS",
+          "observed": {
+            "nonJobRefused": true,
+            "openedHandleClosed": true
+          }
+        },
+        {
+          "id": "queued-committed-and-confirmed-late",
+          "status": "PASS",
+          "observed": {
+            "queuedRevoked": true,
+            "committedUncertain": true,
+            "confirmedBeforeFence": true
+          }
+        },
+        {
+          "id": "cancel-kill-observed",
+          "status": "OBSERVATION",
+          "observed": {
+            "failureClass": "TIMEOUT",
+            "operation": {
+              "id": 1,
+              "kind": "utility",
+              "cleanup": false,
+              "state": "DISPATCHED",
+              "outcome": "WAIT_BOUND_MISSED",
+              "inflightAtClose": false,
+              "uncertain": true
+            },
+            "calls": [
+              [
+                "communicate",
+                2
+              ],
+              [
+                "kill"
+              ]
+            ],
+            "cleanupError": "OSError('independent cancellation failure')"
+          }
+        },
+        {
+          "id": "cancellation-kill-failure-preservation",
+          "status": "PASS",
+          "observed": {
+            "failureClass": "TIMEOUT",
+            "operation": {
+              "id": 1,
+              "kind": "utility",
+              "cleanup": false,
+              "state": "DISPATCHED",
+              "outcome": "WAIT_BOUND_MISSED",
+              "inflightAtClose": false,
+              "uncertain": true
+            },
+            "calls": [
+              [
+                "communicate",
+                2
+              ],
+              [
+                "kill"
+              ]
+            ],
+            "cleanupError": "OSError('independent cancellation failure')"
+          }
+        },
+        {
+          "id": "cancel-drain-observed",
+          "status": "OBSERVATION",
+          "observed": {
+            "failureClass": "TIMEOUT",
+            "operation": {
+              "id": 1,
+              "kind": "utility",
+              "cleanup": false,
+              "state": "DISPATCHED",
+              "outcome": "WAIT_BOUND_MISSED",
+              "inflightAtClose": false,
+              "uncertain": true
+            },
+            "calls": [
+              [
+                "communicate",
+                2
+              ],
+              [
+                "kill"
+              ],
+              [
+                "communicate",
+                2
+              ]
+            ],
+            "cleanupError": "OSError('independent drain failure')"
+          }
+        },
+        {
+          "id": "cancellation-drain-failure-preservation",
+          "status": "PASS",
+          "observed": {
+            "failureClass": "TIMEOUT",
+            "operation": {
+              "id": 1,
+              "kind": "utility",
+              "cleanup": false,
+              "state": "DISPATCHED",
+              "outcome": "WAIT_BOUND_MISSED",
+              "inflightAtClose": false,
+              "uncertain": true
+            },
+            "calls": [
+              [
+                "communicate",
+                2
+              ],
+              [
+                "kill"
+              ],
+              [
+                "communicate",
+                2
+              ]
+            ],
+            "cleanupError": "OSError('independent drain failure')"
+          }
+        },
+        {
+          "id": "spawn-secondary-failure-primary-and-terminal",
+          "status": "PASS",
+          "observed": [
+            {
+              "mode": "kill",
+              "originalIdentityPreserved": true,
+              "terminalErrors": [
+                "spawn-cleanup: OSError: independent cancellation failure"
+              ],
+              "accepted": false,
+              "calls": [
+                [
+                  "poll"
+                ],
+                [
+                  "kill"
+                ]
+              ]
+            },
+            {
+              "mode": "wait",
+              "originalIdentityPreserved": true,
+              "terminalErrors": [
+                "spawn-cleanup: OSError: independent wait failure"
+              ],
+              "accepted": false,
+              "calls": [
+                [
+                  "poll"
+                ],
+                [
+                  "kill"
+                ],
+                [
+                  "wait",
+                  5
+                ]
+              ]
+            }
+          ]
+        }
+      ],
+      "counts": {
+        "PASS": 12,
+        "FAIL": 0,
+        "ORACLE_ERROR": 0,
+        "OBSERVATION": 2
+      },
+      "exitCode": 0
+    },
+    "programsUsed": 2,
+    "programCeiling": 4,
+    "initialExit": 1,
+    "finalExit": 0,
+    "disposition": "PASS_INDEPENDENT_PROBE",
+    "scripts": {
+      "probe-initial.py": {
+        "sha256": "66646db356ff37e48753bfa71c923793737d5bcc5017d1c1fa79b57bc1966e86",
+        "rawBytesBase64": "IiIiSW5kZXBlbmRlbnQgc291cmNlLWFkYXB0ZXIgcmVjb3JkaW5nOyBubyBuYXRpdmUgY29uc3RydWN0b3JzIG9yIGNoaWxkIGxhdW5jaGVzLiIiIgppbXBvcnQgaGFzaGxpYgppbXBvcnQganNvbgppbXBvcnQgc3VicHJvY2VzcwppbXBvcnQgc3lzCmZyb20gcGF0aGxpYiBpbXBvcnQgUGF0aAoKc3lzLmRvbnRfd3JpdGVfYnl0ZWNvZGUgPSBUcnVlClJPT1QgPSBQYXRoLmN3ZCgpCk9XTiA9IFBhdGgoX19maWxlX18pLnJlc29sdmUoKS5wYXJlbnQKc3lzLnBhdGguaW5zZXJ0KDAsIHN0cihST09UIC8gJ3NjcmlwdHMnKSkKZnJvbSBjdmZfbmNyX2h0bWxfb3duZWRfcHJvZmlsZSBpbXBvcnQgZXhlY3V0aW9uIGFzIEUsIGxpZmVjeWNsZSBhcyBMLCBwcm90b2NvbCBhcyBQCgpGSUxFUyA9IFsnX19pbml0X18ucHknLCAncHJvZmlsZS5weScsICdsaWZlY3ljbGUucHknLCAnZXhlY3V0aW9uLnB5JywgJ3Byb3RvY29sLnB5JywKICAgICAgICAgJ2pvdXJuZXkuY2pzJywgJ3Rlc3RfY29udHJvbC5weScsICd0ZXN0X2V4ZWN1dGlvbi5weScsICd0ZXN0X3Byb3RvY29sLnB5JywgJ2pvdXJuZXkudGVzdC5janMnXQpkZWYgaGFzaGVzKCk6CiAgICByZXR1cm4ge246IGhhc2hsaWIuc2hhMjU2KChST09UIC8gJ3NjcmlwdHMvY3ZmX25jcl9odG1sX293bmVkX3Byb2ZpbGUnIC8gbikucmVhZF9ieXRlcygpKS5oZXhkaWdlc3QoKSBmb3IgbiBpbiBGSUxFU30KQkVGT1JFID0gaGFzaGVzKCkKUk9XUyA9IFtdCgpjbGFzcyBDbG9jazoKICAgIGRlZiBfX2luaXRfXyhzZWxmKTogc2VsZi5ub3cgPSAwLjAKICAgIGRlZiBfX2NhbGxfXyhzZWxmKTogcmV0dXJuIHNlbGYubm93CgpkZWYgY29udGV4dChuYW1lLCB3b3JrPTEwLCBjbGVhbnVwPTUpOgogICAgY2xvY2sgPSBDbG9jaygpCiAgICBwcm90byA9IFAuUHJvdG9jb2woY2xvY2ssIHdvcmssIGNsZWFudXAsIGdlbmVyYXRpb249J2dhYmMnKS5zdGFydCgpCiAgICBwYXRoID0gT1dOIC8gbmFtZQogICAgcGF0aC5ta2RpcihwYXJlbnRzPVRydWUsIGV4aXN0X29rPVRydWUpCiAgICByZXR1cm4gY2xvY2ssIHByb3RvLCBFLkNvbGxlY3RvcihwYXRoLCBwcm90bz1wcm90bykKCmRlZiByZXF1aXJlKHZhbHVlLCBkZXRhaWwpOgogICAgaWYgbm90IHZhbHVlOiByYWlzZSBBc3NlcnRpb25FcnJvcihkZXRhaWwpCgpkZWYgY2FzZShuYW1lLCBmbik6CiAgICB0cnk6CiAgICAgICAgZGV0YWlscyA9IGZuKCkKICAgICAgICBST1dTLmFwcGVuZCh7J2lkJzogbmFtZSwgJ3N0YXR1cyc6ICdQQVNTJywgJ29ic2VydmVkJzogZGV0YWlsc30pCiAgICBleGNlcHQgQXNzZXJ0aW9uRXJyb3IgYXMgZXJyb3I6CiAgICAgICAgUk9XUy5hcHBlbmQoeydpZCc6IG5hbWUsICdzdGF0dXMnOiAnRkFJTCcsICdyZWFzb24nOiBzdHIoZXJyb3IpfSkKICAgIGV4Y2VwdCBFeGNlcHRpb24gYXMgZXJyb3I6CiAgICAgICAgUk9XUy5hcHBlbmQoeydpZCc6IG5hbWUsICdzdGF0dXMnOiAnT1JBQ0xFX0VSUk9SJywgJ3JlYXNvbic6IHR5cGUoZXJyb3IpLl9fbmFtZV9fICsgJzogJyArIHN0cihlcnJvcil9KQoKY2xhc3MgUHJvY2VzczoKICAgIHBpZCwgX2hhbmRsZSwgcmV0dXJuY29kZSA9IDcxLCA1MDEsIDAKICAgIGRlZiBfX2luaXRfXyhzZWxmKTogc2VsZi5jYWxscyA9IFtdOyBzZWxmLnRpbWVvdXQgPSBGYWxzZTsgc2VsZi5raWxsX2Vycm9yID0gRmFsc2U7IHNlbGYuZHJhaW5fZXJyb3IgPSBGYWxzZQogICAgZGVmIHBvbGwoc2VsZik6IHNlbGYuY2FsbHMuYXBwZW5kKFsncG9sbCddKTsgcmV0dXJuIE5vbmUKICAgIGRlZiBraWxsKHNlbGYpOgogICAgICAgIHNlbGYuY2FsbHMuYXBwZW5kKFsna2lsbCddKQogICAgICAgIGlmIHNlbGYua2lsbF9lcnJvcjogcmFpc2UgT1NFcnJvcignaW5kZXBlbmRlbnQgY2FuY2VsbGF0aW9uIGZhaWx1cmUnKQogICAgZGVmIHdhaXQoc2VsZiwgdGltZW91dCk6IHNlbGYuY2FsbHMuYXBwZW5kKFsnd2FpdCcsIHRpbWVvdXRdKTsgcmV0dXJuIDAKICAgIGRlZiBjb21tdW5pY2F0ZShzZWxmLCBkYXRhPU5vbmUsIHRpbWVvdXQ9Tm9uZSk6CiAgICAgICAgc2VsZi5jYWxscy5hcHBlbmQoWydjb21tdW5pY2F0ZScsIHRpbWVvdXRdKQogICAgICAgIGNvdW50ID0gc3VtKHhbMF0gPT0gJ2NvbW11bmljYXRlJyBmb3IgeCBpbiBzZWxmLmNhbGxzKQogICAgICAgIGlmIHNlbGYudGltZW91dCBhbmQgY291bnQgPT0gMTogcmFpc2Ugc3VicHJvY2Vzcy5UaW1lb3V0RXhwaXJlZCgnaW5kZXBlbmRlbnQnLCB0aW1lb3V0KQogICAgICAgIGlmIHNlbGYuZHJhaW5fZXJyb3I6IHJhaXNlIE9TRXJyb3IoJ2luZGVwZW5kZW50IGRyYWluIGZhaWx1cmUnKQogICAgICAgIHJldHVybiAnb3JkaW5hcnknLCAnJwoKY2xhc3MgQXBpOgogICAgZGVmIF9faW5pdF9fKHNlbGYpOiBzZWxmLmNhbGxzID0gW107IHNlbGYubWVtYmVyID0gVHJ1ZTsgc2VsZi5ieV9oYW5kbGUgPSB7NTAxOiAnb3JpZ2luYWwnLCA2MDE6ICdyZXBsYWNlbWVudCd9CiAgICBkZWYgY3JlYXRlX2pvYihzZWxmKTogcmV0dXJuIDgwMQogICAgZGVmIHNldF9saW1pdHMoc2VsZiwgam9iLCBhY3RpdmUpOiBwYXNzCiAgICBkZWYgcXVlcnlfbGltaXRzKHNlbGYsIGpvYik6IHJldHVybiB7J2FjdGl2ZSc6IEwuSk9CX0xJTUlULCAna2lsbE9uQ2xvc2UnOiBUcnVlLCAnYnJlYWthd2F5JzogRmFsc2UsICdzaWxlbnRCcmVha2F3YXknOiBGYWxzZX0KICAgIGRlZiBjbG9zZShzZWxmLCBoKTogc2VsZi5jYWxscy5hcHBlbmQoWydjbG9zZScsIGhdKQogICAgZGVmIGFzc2lnbihzZWxmLCBqb2IsIGgpOiBzZWxmLmNhbGxzLmFwcGVuZChbJ2Fzc2lnbicsIGhdKQogICAgZGVmIGlkZW50aXR5KHNlbGYsIHBpZCwgaGFuZGxlPU5vbmUpOiByZXR1cm4geydwaWQnOiBwaWQsICdjcmVhdGlvbjEwMG5zJzogc2VsZi5ieV9oYW5kbGUuZ2V0KGhhbmRsZSwgJ3JlcGxhY2VtZW50JyksICdpbWFnZSc6ICdzeW50aGV0aWMuZXhlJ30KICAgIGRlZiByZXN1bWUoc2VsZiwgcGlkKTogc2VsZi5jYWxscy5hcHBlbmQoWydyZXN1bWUnLCBwaWRdKQogICAgZGVmIG1lbWJlcnMoc2VsZiwgam9iKTogcmV0dXJuIFs3MV0KICAgIGRlZiBvcGVuKHNlbGYsIHBpZCk6IHNlbGYuY2FsbHMuYXBwZW5kKFsnb3BlbicsIHBpZF0pOyByZXR1cm4gNjAxCiAgICBkZWYgaW5fam9iKHNlbGYsIGhhbmRsZSwgam9iKTogc2VsZi5jYWxscy5hcHBlbmQoWydtZW1iZXJzaGlwJywgaGFuZGxlXSk7IHJldHVybiBzZWxmLm1lbWJlcgogICAgZGVmIGV4aXRlZChzZWxmLCBoYW5kbGUpOiByZXR1cm4gRmFsc2UKICAgIGRlZiB0ZXJtaW5hdGUoc2VsZiwgaGFuZGxlKTogc2VsZi5jYWxscy5hcHBlbmQoWyd0ZXJtaW5hdGUnLCBoYW5kbGVdKQoKZGVmIG5hdGl2ZShjLCBwcm9jLCBhcGkpOgogICAgcmV0dXJuIEwuTmF0aXZlKGMsIFtdLCBPV04sIE9XTiwgYXBpPWFwaSwgcG9wZW49bGFtYmRhICphLCAqKmt3OiBwcm9jKQoKZGVmIGNyZWRlbnRpYWxzKCk6CiAgICB2YXJpYW50cyA9IFsndG9rZW49IkFMUEhBIE9NRUdBJywgInBhc3N3b3JkPSdBTFBIQSBPTUVHQSIsIHInYXBpX2tleT1cIkFMUEhBIE9NRUdBJywKICAgICAgICAgICAgICAgICdCZWFyZXIgIkFMUEhBIE9NRUdBJywgIi0tc2VjcmV0ICdBTFBIQSBPTUVHQSIsICcvY3JlZGVudGlhbDoiQUxQSEEgT01FR0EnLAogICAgICAgICAgICAgICAgJ2F1dGhvcml6YXRpb246IEJlYXJlciAiQUxQSEEgT01FR0EnLCAndG9rZW49IkFMUEhBXFwiIE9NRUdBJ10KICAgIGZvciByYXcgaW4gdmFyaWFudHM6CiAgICAgICAgdGV4dCA9IHN0cihFLmJvdW5kZWQoJ29yZGluYXJ5ICcgKyByYXcsIDIwMDApKQogICAgICAgIHJlcXVpcmUoJ0FMUEhBJyBub3QgaW4gdGV4dCBhbmQgJ09NRUdBJyBub3QgaW4gdGV4dCBhbmQgJ29yZGluYXJ5JyBpbiB0ZXh0LCAncmVjb2duaXplZCBhbWJpZ3VvdXMgdGFpbCBlc2NhcGVkIHJlZGFjdGlvbicpCiAgICByZXR1cm4geydyZWNvZ25pemVkVmFyaWFudHMnOiBsZW4odmFyaWFudHMpLCAnb3JkaW5hcnlQcmVzZXJ2ZWQnOiBUcnVlfQoKZGVmIHdhaXRfYWZ0ZXJfaWRlbnRpdHkoKToKICAgIGNsb2NrLCBwcm90bywgYyA9IGNvbnRleHQoJ2ZyZXNoLXdhaXQnKTsgcHJvYywgYXBpID0gUHJvY2VzcygpLCBBcGkoKTsgb3BzID0gbmF0aXZlKGMsIHByb2MsIGFwaSkKICAgIG9wcy5fcmVjb3JkID0gbGFtYmRhOiBzZXRhdHRyKGNsb2NrLCAnbm93JywgOC4wKQogICAgYy5ydW5uZXIgPSBvcHMucnVuX3V0aWxpdHkKICAgIHJlcXVpcmUoYy5jb21tYW5kKCd1dGlsaXR5JywgWydzeW50aGV0aWMuZXhlJ10sIHRpbWVvdXQ9MTApID09ICdvcmRpbmFyeScsICd1dGlsaXR5IHBvc2l0aXZlIGZhaWxlZCcpCiAgICB3YWl0cyA9IFt4WzFdIGZvciB4IGluIHByb2MuY2FsbHMgaWYgeFswXSA9PSAnY29tbXVuaWNhdGUnXQogICAgcmVxdWlyZSh3YWl0cyA9PSBbMi4wXSwgJ2NvbW11bmljYXRlIGRpZCBub3QgdXNlIGZyZXNoIHBvc3QtaWRlbnRpdHkgcmVtYWluZGVyJykKICAgIHJldHVybiB7J2NvbW11bmljYXRpb25XYWl0cyc6IHdhaXRzfQoKZGVmIGV4cGlyZWRfdXRpbGl0eSgpOgogICAgY2xvY2ssIHByb3RvLCBjID0gY29udGV4dCgnZXhwaXJlZCcpOyBwcm9jLCBhcGkgPSBQcm9jZXNzKCksIEFwaSgpOyBvcHMgPSBuYXRpdmUoYywgcHJvYywgYXBpKQogICAgb3BzLl9yZWNvcmQgPSBsYW1iZGE6IHNldGF0dHIoY2xvY2ssICdub3cnLCAxMS4wKQogICAgYy5ydW5uZXIgPSBvcHMucnVuX3V0aWxpdHkKICAgIHRyeTogYy5jb21tYW5kKCd1dGlsaXR5JywgWydzeW50aGV0aWMuZXhlJ10pCiAgICBleGNlcHQgUC5TdG9wOiBwYXNzCiAgICBlbHNlOiByYWlzZSBBc3NlcnRpb25FcnJvcignZXhwaXJlZCB1dGlsaXR5IGFjY2VwdGVkJykKICAgIHJlcXVpcmUobm90IGFueSh4WzBdID09ICdjb21tdW5pY2F0ZScgZm9yIHggaW4gcHJvYy5jYWxscyksICdleHBpcmVkIHV0aWxpdHkgY29tbXVuaWNhdGVkJykKICAgIHJlcXVpcmUobm90IGFueSh4WzBdID09ICdyZXN1bWUnIGZvciB4IGluIGFwaS5jYWxscyksICdleHBpcmVkIHV0aWxpdHkgcmVzdW1lZCcpCiAgICByZXR1cm4geydjb21tdW5pY2F0ZSc6IDAsICdyZXN1bWUnOiAwfQoKZGVmIGV4aGF1c3RlZF9yZXN1bWUoKToKICAgIGNsb2NrLCBwcm90bywgYyA9IGNvbnRleHQoJ2NsZWFudXAtZXhoYXVzdGVkJyk7IHByb2MsIGFwaSA9IFByb2Nlc3MoKSwgQXBpKCk7IG9wcyA9IG5hdGl2ZShjLCBwcm9jLCBhcGkpCiAgICBvcHMuX3JlY29yZCA9IGxhbWJkYTogc2V0YXR0cihjbG9jaywgJ25vdycsIDE2LjApCiAgICB0cnk6IG9wcy5fc3Bhd24oWydzeW50aGV0aWMuZXhlJ10pCiAgICBleGNlcHQgUC5TdG9wOiBwYXNzCiAgICBlbHNlOiByYWlzZSBBc3NlcnRpb25FcnJvcignbGF0ZSByZXN1bWUgYWNjZXB0ZWQnKQogICAgcmVxdWlyZShub3QgYW55KHhbMF0gaW4gKCdraWxsJywgJ3dhaXQnKSBmb3IgeCBpbiBwcm9jLmNhbGxzKSwgJ2V4aGF1c3RlZCBmYWlsdXJlIGludm9rZWQga2lsbC93YWl0JykKICAgIHJlcXVpcmUobGVuKG9wcy5yb290cykgPT0gMSBhbmQgb3BzLnJvb3RzWzBdWydwJ10gaXMgcHJvYywgJ3VucmVzb2x2ZWQgZXhhY3Qgcm9vdCBsb3N0JykKICAgIHJldHVybiB7J2tpbGwnOiAwLCAnd2FpdCc6IDAsICdyZXRhaW5lZFJvb3RzJzogMX0KCmNsYXNzIFRlcm1pbmFsT3BzOgogICAgY29udGFpbmVyLCBjb250YWluZXJfaWRlbnRpdHlfcGVuZGluZyA9IE5vbmUsIEZhbHNlCiAgICBkZWYgX19pbml0X18oc2VsZik6IHNlbGYuc3RhZ2UgPSBPV04KICAgIGRlZiBwcmVwYXJlX2tpbGwoc2VsZik6IHJldHVybiBbXQogICAgZGVmIHJlbW92ZV9jb250YWluZXIoc2VsZik6IHBhc3MKICAgIGRlZiBxdWVyeV9wcm9jZXNzZXMoc2VsZik6IHJldHVybiBzZXQoKQogICAgZGVmIHF1ZXJ5X2NvbnRhaW5lcnMoc2VsZik6IHJldHVybiBzZXQoKQogICAgZGVmIG1lbWJlcnMoc2VsZik6IHJldHVybiBbXQogICAgZGVmIGxpc3RlbmVycyhzZWxmKTogcmV0dXJuIFtdCiAgICBkZWYgdmVyaWZ5X2Rpc3Bvc2FsX3RhcmdldChzZWxmKTogcmV0dXJuIFRydWUKICAgIGRlZiBjbG9zZShzZWxmKTogcGFzcwoKZGVmIGxhdGVfYWNrKHdoaWNoKToKICAgIGNsb2NrLCBwcm90bywgYyA9IGNvbnRleHQoJ2xhdGUtJyArIHdoaWNoKTsgYm94ID0ge30KICAgIGRlZiBzYXZlKHJhdyk6CiAgICAgICAgYm94WydyYXcnXSA9IHJhdwogICAgICAgIGlmIHdoaWNoID09ICd3cml0ZSc6IGNsb2NrLm5vdyA9IDYuMAogICAgZGVmIHJlYWQoKToKICAgICAgICBpZiB3aGljaCA9PSAncmVhZCc6IGNsb2NrLm5vdyA9IDYuMAogICAgICAgIHJldHVybiBib3hbJ3JhdyddCiAgICByZXN1bHQgPSBFLmZpbmFsaXplKFRlcm1pbmFsT3BzKCksIFtdLCBjLCBwZXJzaXN0PXNhdmUsIHJlYWRfYmFjaz1yZWFkKQogICAgcmVxdWlyZShub3QgcmVzdWx0WydhY2NlcHRlZCddLCAnbGF0ZSBjb21wbGV0aW9uIHdhcyBhY2NlcHRlZCcpCiAgICByZXF1aXJlKHJlc3VsdFsnYWNrbm93bGVkZ21lbnQnXVsnd3JpdGUnIGlmIHdoaWNoID09ICd3cml0ZScgZWxzZSAncmVhZEJhY2snXSA9PSAnVU5LTk9XTicsICdsYXRlIGFja25vd2xlZGdtZW50IG5vdCBVTktOT1dOJykKICAgIHJlcXVpcmUoaGFzaGxpYi5zaGEyNTYoYm94WydyYXcnXSkuaGV4ZGlnZXN0KCkgPT0gcmVzdWx0WydldmlkZW5jZVNoYTI1NiddLCAnaW1tdXRhYmxlIGJ5dGVzIGNoYW5nZWQnKQogICAgcmV0dXJuIHJlc3VsdFsnYWNrbm93bGVkZ21lbnQnXQoKZGVmIGV4YWN0X2hhbmRsZSgpOgogICAgY2xvY2ssIHByb3RvLCBjID0gY29udGV4dCgnaGFuZGxlJyk7IGFwaSwgcHJvYyA9IEFwaSgpLCBQcm9jZXNzKCk7IG9wcyA9IG5hdGl2ZShjLCBwcm9jLCBhcGkpCiAgICBvcHMucmV0YWluZWRbNzFdID0gNTAxCiAgICBpZGVudGl0eSA9IGFwaS5pZGVudGl0eSg3MSwgNTAxKQogICAgb3BzLmtpbGwoaWRlbnRpdHkpCiAgICByZXF1aXJlKFsndGVybWluYXRlJywgNTAxXSBpbiBhcGkuY2FsbHMgYW5kIG5vdCBhbnkoeFswXSA9PSAnb3BlbicgZm9yIHggaW4gYXBpLmNhbGxzKSwgJ3N0b3AgcmVvcGVuZWQvcmVwbGFjZWQgUElEIGluc3RlYWQgb2YgcmV0YWluZWQgaGFuZGxlJykKICAgIHJldHVybiB7J3Rlcm1pbmF0ZWRIYW5kbGUnOiA1MDEsICdyZXBsYWNlbWVudEhhbmRsZSc6IDYwMX0KCmRlZiBtZW1iZXJfcmFjZSgpOgogICAgY2xvY2ssIHByb3RvLCBjID0gY29udGV4dCgnbWVtYmVyLXJhY2UnKTsgYXBpLCBwcm9jID0gQXBpKCksIFByb2Nlc3MoKTsgYXBpLm1lbWJlciA9IEZhbHNlOyBvcHMgPSBuYXRpdmUoYywgcHJvYywgYXBpKQogICAgdHJ5OiBvcHMucHJlcGFyZV9raWxsKCkKICAgIGV4Y2VwdCBSdW50aW1lRXJyb3I6IHBhc3MKICAgIGVsc2U6IHJhaXNlIEFzc2VydGlvbkVycm9yKCdub24tam9iIHJlcGxhY2VtZW50IGFkbWl0dGVkJykKICAgIHJlcXVpcmUobm90IGFueSh4WzBdID09ICd0ZXJtaW5hdGUnIGZvciB4IGluIGFwaS5jYWxscyksICdub24tam9iIHJlcGxhY2VtZW50IHN0b3BwZWQnKQogICAgb3BzLmNsb3NlKCkKICAgIHJlcXVpcmUoWydjbG9zZScsIDYwMV0gaW4gYXBpLmNhbGxzLCAncmVqZWN0ZWQgb3BlbmVkIGhhbmRsZSBub3QgcmV0YWluZWQgZm9yIGNsb3NlJykKICAgIHJldHVybiB7J25vbkpvYlJlZnVzZWQnOiBUcnVlLCAnb3BlbmVkSGFuZGxlQ2xvc2VkJzogVHJ1ZX0KCmRlZiBhY2NvdW50aW5nKCk6CiAgICBjbG9jaywgcHJvdG8sIGMgPSBjb250ZXh0KCdhY2NvdW50aW5nJyk7IHF1ZXVlZCA9IHByb3RvLnF1ZXVlKCdxdWV1ZWQnKTsgY29tbWl0dGVkID0gcHJvdG8ucXVldWUoJ2NvbW1pdHRlZCcpOyBwcm90by5ncmFudChjb21taXR0ZWQsIDIpCiAgICBwcm90by5jbG9zZSgpOyBwcm90by5jb21wbGV0ZShjb21taXR0ZWQpCiAgICByZXF1aXJlKHF1ZXVlZC5zdGF0ZSA9PSBQLlJFVk9LRUQgYW5kIGNvbW1pdHRlZC5yZWNvcmQoKVsndW5jZXJ0YWluJ10sICdmZW5jZSBsb3N0IHF1ZXVlZC9jb21taXR0ZWQgZGlzdGluY3Rpb24nKQogICAgY2xvY2syLCBwMiwgYzIgPSBjb250ZXh0KCdjb25maXJtZWQtbGF0ZScpOyBvcCA9IHAyLnF1ZXVlKCdjb25maXJtZWQnKTsgcDIuZ3JhbnQob3AsIDIpOyBjbG9jazIubm93ID0gMTE7IHAyLmNvbXBsZXRlKG9wKQogICAgcmVxdWlyZShvcC5zdGF0ZSA9PSBQLkRPTkUgYW5kIG5vdCBvcC5yZWNvcmQoKVsndW5jZXJ0YWluJ10sICdjb25maXJtZWQgY29tcGxldGlvbiBiZWZvcmUgZmVuY2UgaW5jb3JyZWN0bHkgdW5rbm93bicpCiAgICByZXR1cm4geydxdWV1ZWRSZXZva2VkJzogVHJ1ZSwgJ2NvbW1pdHRlZFVuY2VydGFpbic6IFRydWUsICdjb25maXJtZWRCZWZvcmVGZW5jZSc6IFRydWV9CgpkZWYgY2FuY2VsbGF0aW9uX2ZhdWx0KG1vZGUpOgogICAgY2xvY2ssIHByb3RvLCBjID0gY29udGV4dCgnY2FuY2VsLScgKyBtb2RlKTsgcHJvYyA9IFByb2Nlc3MoKTsgcHJvYy50aW1lb3V0ID0gVHJ1ZQogICAgcHJvYy5raWxsX2Vycm9yLCBwcm9jLmRyYWluX2Vycm9yID0gbW9kZSA9PSAna2lsbCcsIG1vZGUgPT0gJ2RyYWluJwogICAgYy5ydW5uZXIgPSBsYW1iZGEgKmEsICoqa3c6IHN1YnByb2Nlc3MuQ29tcGxldGVkUHJvY2VzcyhhLCAwLCAqRS5ib3VuZGVkX2NvbW11bmljYXRlKHByb2MsIGMsIHRpbWVvdXQ9a3dbJ3RpbWVvdXQnXSkpCiAgICBmYWlsdXJlID0gTm9uZQogICAgdHJ5OiBjLmNvbW1hbmQoJ3V0aWxpdHknLCBbJ3N5bnRoZXRpYy5leGUnXSwgdGltZW91dD0yKQogICAgZXhjZXB0IEUuQ29tbWFuZEZhaWx1cmUgYXMgZXJyb3I6IGZhaWx1cmUgPSBlcnJvci5mYWlsdXJlX2NsYXNzCiAgICBvYnNlcnZlZCA9IHsnZmFpbHVyZUNsYXNzJzogZmFpbHVyZSwgJ29wZXJhdGlvbic6IHByb3RvLm9wc1swXS5yZWNvcmQoKSwgJ2NhbGxzJzogcHJvYy5jYWxsc30KICAgIFJPV1MuYXBwZW5kKHsnaWQnOiAnY2FuY2VsLScgKyBtb2RlICsgJy1vYnNlcnZlZCcsICdzdGF0dXMnOiAnT0JTRVJWQVRJT04nLCAnb2JzZXJ2ZWQnOiBvYnNlcnZlZH0pCiAgICByZXF1aXJlKGZhaWx1cmUgPT0gJ1RJTUVPVVQnLCAnY2FuY2VsbGF0aW9uICcgKyBtb2RlICsgJyBmYWlsdXJlIHJlcGxhY2VkIHByaW1hcnkgVElNRU9VVCB3aXRoICcgKyBzdHIoZmFpbHVyZSkpCiAgICByZXF1aXJlKHByb3RvLm9wc1swXS5yZWNvcmQoKVsndW5jZXJ0YWluJ10sICd1bm9ic2VydmVkIGNoaWxkIGV4aXQgbG9zdCB1bmNlcnRhaW4gYWNjb3VudGluZycpCiAgICByZXR1cm4gb2JzZXJ2ZWQKCmNhc2UoJ2FtYmlndW91cy1jcmVkZW50aWFsLXRhaWxzJywgY3JlZGVudGlhbHMpCmNhc2UoJ2ZyZXNoLXBvc3QtaWRlbnRpdHktd2FpdCcsIHdhaXRfYWZ0ZXJfaWRlbnRpdHkpCmNhc2UoJ2V4cGlyZWQtdXRpbGl0eS1uby1jb21tdW5pY2F0aW9uJywgZXhwaXJlZF91dGlsaXR5KQpjYXNlKCdwYXN0LWNsZWFudXAtbm8ta2lsbC1vci13YWl0JywgZXhoYXVzdGVkX3Jlc3VtZSkKY2FzZSgnbGF0ZS13cml0ZS1uby1hY2NlcHQnLCBsYW1iZGE6IGxhdGVfYWNrKCd3cml0ZScpKQpjYXNlKCdsYXRlLXJlYWRiYWNrLW5vLWFjY2VwdCcsIGxhbWJkYTogbGF0ZV9hY2soJ3JlYWQnKSkKY2FzZSgncmV0YWluZWQtaGFuZGxlLWRlc3BpdGUtUElELXJlcGxhY2VtZW50JywgZXhhY3RfaGFuZGxlKQpjYXNlKCdtZW1iZXItb3Blbi1yYWNlLXJlZnVzZXMtbm9uLWpvYicsIG1lbWJlcl9yYWNlKQpjYXNlKCdxdWV1ZWQtY29tbWl0dGVkLWFuZC1jb25maXJtZWQtbGF0ZScsIGFjY291bnRpbmcpCmNhc2UoJ2NhbmNlbGxhdGlvbi1raWxsLWZhaWx1cmUtcHJlc2VydmF0aW9uJywgbGFtYmRhOiBjYW5jZWxsYXRpb25fZmF1bHQoJ2tpbGwnKSkKY2FzZSgnY2FuY2VsbGF0aW9uLWRyYWluLWZhaWx1cmUtcHJlc2VydmF0aW9uJywgbGFtYmRhOiBjYW5jZWxsYXRpb25fZmF1bHQoJ2RyYWluJykpCkFGVEVSID0gaGFzaGVzKCkKcmVjb3JkID0geydwcm9ncmFtQ291bnQnOiAxLCAnY2hpbGRTdGFydHMnOiAwLCAnbmF0aXZlQ2FsbHMnOiAwLCAnbmV0d29ya0Jyb3dzZXJQcm92aWRlckRlbGV0aW9uJzogMCwKICAgICAgICAgICdzb3VyY2VIYXNoZXNCZWZvcmUnOiBCRUZPUkUsICdzb3VyY2VIYXNoZXNBZnRlcic6IEFGVEVSLCAnc291cmNlc1VuY2hhbmdlZCc6IEJFRk9SRSA9PSBBRlRFUiwKICAgICAgICAgICdwcm9ncmFtU2hhMjU2JzogaGFzaGxpYi5zaGEyNTYoUGF0aChfX2ZpbGVfXykucmVhZF9ieXRlcygpKS5oZXhkaWdlc3QoKSwgJ2Nhc2VzJzogUk9XUywKICAgICAgICAgICdjb3VudHMnOiB7czogc3VtKHJbJ3N0YXR1cyddID09IHMgZm9yIHIgaW4gUk9XUykgZm9yIHMgaW4gWydQQVNTJywgJ0ZBSUwnLCAnT1JBQ0xFX0VSUk9SJywgJ09CU0VSVkFUSU9OJ119fQpyZWNvcmRbJ2V4aXRDb2RlJ10gPSAxIGlmIHJlY29yZFsnY291bnRzJ11bJ0ZBSUwnXSBvciByZWNvcmRbJ2NvdW50cyddWydPUkFDTEVfRVJST1InXSBvciBCRUZPUkUgIT0gQUZURVIgZWxzZSAwCihPV04gLyAncmVzdWx0cy5qc29uJykud3JpdGVfdGV4dChqc29uLmR1bXBzKHJlY29yZCwgaW5kZW50PTIpLCBlbmNvZGluZz0ndXRmLTgnKQpzdW1tYXJ5ID0ganNvbi5kdW1wcyh7J2V4aXRDb2RlJzogcmVjb3JkWydleGl0Q29kZSddLCAnY291bnRzJzogcmVjb3JkWydjb3VudHMnXSwgJ3NvdXJjZXNVbmNoYW5nZWQnOiByZWNvcmRbJ3NvdXJjZXNVbmNoYW5nZWQnXX0pCihPV04gLyAncHJvYmUubG9nJykud3JpdGVfdGV4dChzdW1tYXJ5ICsgJ1xuJywgZW5jb2Rpbmc9J3V0Zi04JykKcHJpbnQoc3VtbWFyeSkKc3lzLmV4aXQocmVjb3JkWydleGl0Q29kZSddKQo="
+      },
+      "probe.py": {
+        "sha256": "bd9c88091f8cf03c0a1d0a2e60b581c7252b71eea33979293be8c5284300593b",
+        "rawBytesBase64": "IiIiSW5kZXBlbmRlbnQgc291cmNlLWFkYXB0ZXIgcmVjb3JkaW5nOyBubyBuYXRpdmUgY29uc3RydWN0b3JzIG9yIGNoaWxkIGxhdW5jaGVzLiIiIgppbXBvcnQgaGFzaGxpYgppbXBvcnQganNvbgppbXBvcnQgc3VicHJvY2VzcwppbXBvcnQgc3lzCmZyb20gcGF0aGxpYiBpbXBvcnQgUGF0aAoKc3lzLmRvbnRfd3JpdGVfYnl0ZWNvZGUgPSBUcnVlClJPT1QgPSBQYXRoLmN3ZCgpCk9XTiA9IFBhdGgoX19maWxlX18pLnJlc29sdmUoKS5wYXJlbnQKc3lzLnBhdGguaW5zZXJ0KDAsIHN0cihST09UIC8gJ3NjcmlwdHMnKSkKZnJvbSBjdmZfbmNyX2h0bWxfb3duZWRfcHJvZmlsZSBpbXBvcnQgZXhlY3V0aW9uIGFzIEUsIGxpZmVjeWNsZSBhcyBMLCBwcm90b2NvbCBhcyBQCgpGSUxFUyA9IFsnX19pbml0X18ucHknLCAncHJvZmlsZS5weScsICdsaWZlY3ljbGUucHknLCAnZXhlY3V0aW9uLnB5JywgJ3Byb3RvY29sLnB5JywKICAgICAgICAgJ2pvdXJuZXkuY2pzJywgJ3Rlc3RfY29udHJvbC5weScsICd0ZXN0X2V4ZWN1dGlvbi5weScsICd0ZXN0X3Byb3RvY29sLnB5JywgJ2pvdXJuZXkudGVzdC5janMnXQpkZWYgaGFzaGVzKCk6CiAgICByZXR1cm4ge246IGhhc2hsaWIuc2hhMjU2KChST09UIC8gJ3NjcmlwdHMvY3ZmX25jcl9odG1sX293bmVkX3Byb2ZpbGUnIC8gbikucmVhZF9ieXRlcygpKS5oZXhkaWdlc3QoKSBmb3IgbiBpbiBGSUxFU30KQkVGT1JFID0gaGFzaGVzKCkKUk9XUyA9IFtdCgpjbGFzcyBDbG9jazoKICAgIGRlZiBfX2luaXRfXyhzZWxmKTogc2VsZi5ub3cgPSAwLjAKICAgIGRlZiBfX2NhbGxfXyhzZWxmKTogcmV0dXJuIHNlbGYubm93CgpkZWYgY29udGV4dChuYW1lLCB3b3JrPTEwLCBjbGVhbnVwPTUpOgogICAgY2xvY2sgPSBDbG9jaygpCiAgICBwcm90byA9IFAuUHJvdG9jb2woY2xvY2ssIHdvcmssIGNsZWFudXAsIGdlbmVyYXRpb249J2dhYmMnKS5zdGFydCgpCiAgICBwYXRoID0gT1dOIC8gbmFtZQogICAgcGF0aC5ta2RpcihwYXJlbnRzPVRydWUsIGV4aXN0X29rPVRydWUpCiAgICByZXR1cm4gY2xvY2ssIHByb3RvLCBFLkNvbGxlY3RvcihwYXRoLCBwcm90bz1wcm90bykKCmRlZiByZXF1aXJlKHZhbHVlLCBkZXRhaWwpOgogICAgaWYgbm90IHZhbHVlOiByYWlzZSBBc3NlcnRpb25FcnJvcihkZXRhaWwpCgpkZWYgY2FzZShuYW1lLCBmbik6CiAgICB0cnk6CiAgICAgICAgZGV0YWlscyA9IGZuKCkKICAgICAgICBST1dTLmFwcGVuZCh7J2lkJzogbmFtZSwgJ3N0YXR1cyc6ICdQQVNTJywgJ29ic2VydmVkJzogZGV0YWlsc30pCiAgICBleGNlcHQgQXNzZXJ0aW9uRXJyb3IgYXMgZXJyb3I6CiAgICAgICAgUk9XUy5hcHBlbmQoeydpZCc6IG5hbWUsICdzdGF0dXMnOiAnRkFJTCcsICdyZWFzb24nOiBzdHIoZXJyb3IpfSkKICAgIGV4Y2VwdCBFeGNlcHRpb24gYXMgZXJyb3I6CiAgICAgICAgUk9XUy5hcHBlbmQoeydpZCc6IG5hbWUsICdzdGF0dXMnOiAnT1JBQ0xFX0VSUk9SJywgJ3JlYXNvbic6IHR5cGUoZXJyb3IpLl9fbmFtZV9fICsgJzogJyArIHN0cihlcnJvcil9KQoKY2xhc3MgUHJvY2VzczoKICAgIHBpZCwgX2hhbmRsZSwgcmV0dXJuY29kZSA9IDcxLCA1MDEsIDAKICAgIGRlZiBfX2luaXRfXyhzZWxmKTogc2VsZi5jYWxscyA9IFtdOyBzZWxmLnRpbWVvdXQgPSBGYWxzZTsgc2VsZi5raWxsX2Vycm9yID0gRmFsc2U7IHNlbGYuZHJhaW5fZXJyb3IgPSBGYWxzZQogICAgZGVmIHBvbGwoc2VsZik6IHNlbGYuY2FsbHMuYXBwZW5kKFsncG9sbCddKTsgcmV0dXJuIE5vbmUKICAgIGRlZiBraWxsKHNlbGYpOgogICAgICAgIHNlbGYuY2FsbHMuYXBwZW5kKFsna2lsbCddKQogICAgICAgIGlmIHNlbGYua2lsbF9lcnJvcjogcmFpc2UgT1NFcnJvcignaW5kZXBlbmRlbnQgY2FuY2VsbGF0aW9uIGZhaWx1cmUnKQogICAgZGVmIHdhaXQoc2VsZiwgdGltZW91dCk6IHNlbGYuY2FsbHMuYXBwZW5kKFsnd2FpdCcsIHRpbWVvdXRdKTsgcmV0dXJuIDAKICAgIGRlZiBjb21tdW5pY2F0ZShzZWxmLCBkYXRhPU5vbmUsIHRpbWVvdXQ9Tm9uZSk6CiAgICAgICAgc2VsZi5jYWxscy5hcHBlbmQoWydjb21tdW5pY2F0ZScsIHRpbWVvdXRdKQogICAgICAgIGNvdW50ID0gc3VtKHhbMF0gPT0gJ2NvbW11bmljYXRlJyBmb3IgeCBpbiBzZWxmLmNhbGxzKQogICAgICAgIGlmIHNlbGYudGltZW91dCBhbmQgY291bnQgPT0gMTogcmFpc2Ugc3VicHJvY2Vzcy5UaW1lb3V0RXhwaXJlZCgnaW5kZXBlbmRlbnQnLCB0aW1lb3V0KQogICAgICAgIGlmIHNlbGYuZHJhaW5fZXJyb3I6IHJhaXNlIE9TRXJyb3IoJ2luZGVwZW5kZW50IGRyYWluIGZhaWx1cmUnKQogICAgICAgIHJldHVybiAnb3JkaW5hcnknLCAnJwoKY2xhc3MgQXBpOgogICAgZGVmIF9faW5pdF9fKHNlbGYpOiBzZWxmLmNhbGxzID0gW107IHNlbGYubWVtYmVyID0gVHJ1ZTsgc2VsZi5ieV9oYW5kbGUgPSB7NTAxOiAnb3JpZ2luYWwnLCA2MDE6ICdyZXBsYWNlbWVudCd9CiAgICBkZWYgY3JlYXRlX2pvYihzZWxmKTogcmV0dXJuIDgwMQogICAgZGVmIHNldF9saW1pdHMoc2VsZiwgam9iLCBhY3RpdmUpOiBwYXNzCiAgICBkZWYgcXVlcnlfbGltaXRzKHNlbGYsIGpvYik6IHJldHVybiB7J2FjdGl2ZSc6IEwuSk9CX0xJTUlULCAna2lsbE9uQ2xvc2UnOiBUcnVlLCAnYnJlYWthd2F5JzogRmFsc2UsICdzaWxlbnRCcmVha2F3YXknOiBGYWxzZX0KICAgIGRlZiBjbG9zZShzZWxmLCBoKTogc2VsZi5jYWxscy5hcHBlbmQoWydjbG9zZScsIGhdKQogICAgZGVmIGFzc2lnbihzZWxmLCBqb2IsIGgpOiBzZWxmLmNhbGxzLmFwcGVuZChbJ2Fzc2lnbicsIGhdKQogICAgZGVmIGlkZW50aXR5KHNlbGYsIHBpZCwgaGFuZGxlPU5vbmUpOiByZXR1cm4geydwaWQnOiBwaWQsICdjcmVhdGlvbjEwMG5zJzogc2VsZi5ieV9oYW5kbGUuZ2V0KGhhbmRsZSwgJ3JlcGxhY2VtZW50JyksICdpbWFnZSc6ICdzeW50aGV0aWMuZXhlJ30KICAgIGRlZiByZXN1bWUoc2VsZiwgcGlkKTogc2VsZi5jYWxscy5hcHBlbmQoWydyZXN1bWUnLCBwaWRdKQogICAgZGVmIG1lbWJlcnMoc2VsZiwgam9iKTogcmV0dXJuIFs3MV0KICAgIGRlZiBvcGVuKHNlbGYsIHBpZCk6IHNlbGYuY2FsbHMuYXBwZW5kKFsnb3BlbicsIHBpZF0pOyByZXR1cm4gNjAxCiAgICBkZWYgaW5fam9iKHNlbGYsIGhhbmRsZSwgam9iKTogc2VsZi5jYWxscy5hcHBlbmQoWydtZW1iZXJzaGlwJywgaGFuZGxlXSk7IHJldHVybiBzZWxmLm1lbWJlcgogICAgZGVmIGV4aXRlZChzZWxmLCBoYW5kbGUpOiByZXR1cm4gRmFsc2UKICAgIGRlZiB0ZXJtaW5hdGUoc2VsZiwgaGFuZGxlKTogc2VsZi5jYWxscy5hcHBlbmQoWyd0ZXJtaW5hdGUnLCBoYW5kbGVdKQoKZGVmIG5hdGl2ZShjLCBwcm9jLCBhcGkpOgogICAgcmV0dXJuIEwuTmF0aXZlKGMsIFtdLCBPV04sIE9XTiwgYXBpPWFwaSwgcG9wZW49bGFtYmRhICphLCAqKmt3OiBwcm9jKQoKZGVmIGNyZWRlbnRpYWxzKCk6CiAgICB2YXJpYW50cyA9IFsndG9rZW49IkFMUEhBIE9NRUdBJywgInBhc3N3b3JkPSdBTFBIQSBPTUVHQSIsIHInYXBpX2tleT1cIkFMUEhBIE9NRUdBJywKICAgICAgICAgICAgICAgICdCZWFyZXIgIkFMUEhBIE9NRUdBJywgIi0tc2VjcmV0ICdBTFBIQSBPTUVHQSIsICcvY3JlZGVudGlhbDoiQUxQSEEgT01FR0EnLAogICAgICAgICAgICAgICAgJ2F1dGhvcml6YXRpb246IEJlYXJlciAiQUxQSEEgT01FR0EnLCAndG9rZW49IkFMUEhBXFwiIE9NRUdBJ10KICAgIGZvciByYXcgaW4gdmFyaWFudHM6CiAgICAgICAgdGV4dCA9IHN0cihFLmJvdW5kZWQoJ29yZGluYXJ5ICcgKyByYXcsIDIwMDApKQogICAgICAgIHJlcXVpcmUoJ0FMUEhBJyBub3QgaW4gdGV4dCBhbmQgJ09NRUdBJyBub3QgaW4gdGV4dCBhbmQgJ29yZGluYXJ5JyBpbiB0ZXh0LCAncmVjb2duaXplZCBhbWJpZ3VvdXMgdGFpbCBlc2NhcGVkIHJlZGFjdGlvbicpCiAgICByZXR1cm4geydyZWNvZ25pemVkVmFyaWFudHMnOiBsZW4odmFyaWFudHMpLCAnb3JkaW5hcnlQcmVzZXJ2ZWQnOiBUcnVlfQoKZGVmIHdhaXRfYWZ0ZXJfaWRlbnRpdHkoKToKICAgIGNsb2NrLCBwcm90bywgYyA9IGNvbnRleHQoJ2ZyZXNoLXdhaXQnKTsgcHJvYywgYXBpID0gUHJvY2VzcygpLCBBcGkoKTsgb3BzID0gbmF0aXZlKGMsIHByb2MsIGFwaSkKICAgIG9wcy5fcmVjb3JkID0gbGFtYmRhOiBzZXRhdHRyKGNsb2NrLCAnbm93JywgOC4wKQogICAgYy5ydW5uZXIgPSBvcHMucnVuX3V0aWxpdHkKICAgIHJlcXVpcmUoYy5jb21tYW5kKCd1dGlsaXR5JywgWydzeW50aGV0aWMuZXhlJ10sIHRpbWVvdXQ9MTApID09ICdvcmRpbmFyeScsICd1dGlsaXR5IHBvc2l0aXZlIGZhaWxlZCcpCiAgICB3YWl0cyA9IFt4WzFdIGZvciB4IGluIHByb2MuY2FsbHMgaWYgeFswXSA9PSAnY29tbXVuaWNhdGUnXQogICAgcmVxdWlyZSh3YWl0cyA9PSBbMi4wXSwgJ2NvbW11bmljYXRlIGRpZCBub3QgdXNlIGZyZXNoIHBvc3QtaWRlbnRpdHkgcmVtYWluZGVyJykKICAgIHJldHVybiB7J2NvbW11bmljYXRpb25XYWl0cyc6IHdhaXRzfQoKZGVmIGV4cGlyZWRfdXRpbGl0eSgpOgogICAgY2xvY2ssIHByb3RvLCBjID0gY29udGV4dCgnZXhwaXJlZCcpOyBwcm9jLCBhcGkgPSBQcm9jZXNzKCksIEFwaSgpOyBvcHMgPSBuYXRpdmUoYywgcHJvYywgYXBpKQogICAgb3BzLl9yZWNvcmQgPSBsYW1iZGE6IHNldGF0dHIoY2xvY2ssICdub3cnLCAxMS4wKQogICAgYy5ydW5uZXIgPSBvcHMucnVuX3V0aWxpdHkKICAgIHRyeTogYy5jb21tYW5kKCd1dGlsaXR5JywgWydzeW50aGV0aWMuZXhlJ10pCiAgICBleGNlcHQgUC5TdG9wOiBwYXNzCiAgICBlbHNlOiByYWlzZSBBc3NlcnRpb25FcnJvcignZXhwaXJlZCB1dGlsaXR5IGFjY2VwdGVkJykKICAgIHJlcXVpcmUobm90IGFueSh4WzBdID09ICdjb21tdW5pY2F0ZScgZm9yIHggaW4gcHJvYy5jYWxscyksICdleHBpcmVkIHV0aWxpdHkgY29tbXVuaWNhdGVkJykKICAgIHJlcXVpcmUobm90IGFueSh4WzBdID09ICdyZXN1bWUnIGZvciB4IGluIGFwaS5jYWxscyksICdleHBpcmVkIHV0aWxpdHkgcmVzdW1lZCcpCiAgICByZXR1cm4geydjb21tdW5pY2F0ZSc6IDAsICdyZXN1bWUnOiAwfQoKZGVmIGV4aGF1c3RlZF9yZXN1bWUoKToKICAgIGNsb2NrLCBwcm90bywgYyA9IGNvbnRleHQoJ2NsZWFudXAtZXhoYXVzdGVkJyk7IHByb2MsIGFwaSA9IFByb2Nlc3MoKSwgQXBpKCk7IG9wcyA9IG5hdGl2ZShjLCBwcm9jLCBhcGkpCiAgICBvcHMuX3JlY29yZCA9IGxhbWJkYTogc2V0YXR0cihjbG9jaywgJ25vdycsIDE2LjApCiAgICB0cnk6IG9wcy5fc3Bhd24oWydzeW50aGV0aWMuZXhlJ10pCiAgICBleGNlcHQgUC5TdG9wOiBwYXNzCiAgICBlbHNlOiByYWlzZSBBc3NlcnRpb25FcnJvcignbGF0ZSByZXN1bWUgYWNjZXB0ZWQnKQogICAgcmVxdWlyZShub3QgYW55KHhbMF0gaW4gKCdraWxsJywgJ3dhaXQnKSBmb3IgeCBpbiBwcm9jLmNhbGxzKSwgJ2V4aGF1c3RlZCBmYWlsdXJlIGludm9rZWQga2lsbC93YWl0JykKICAgIHJlcXVpcmUobGVuKG9wcy5yb290cykgPT0gMSBhbmQgb3BzLnJvb3RzWzBdWydwJ10gaXMgcHJvYywgJ3VucmVzb2x2ZWQgZXhhY3Qgcm9vdCBsb3N0JykKICAgIHJldHVybiB7J2tpbGwnOiAwLCAnd2FpdCc6IDAsICdyZXRhaW5lZFJvb3RzJzogMX0KCmNsYXNzIFRlcm1pbmFsT3BzOgogICAgY29udGFpbmVyLCBjb250YWluZXJfaWRlbnRpdHlfcGVuZGluZyA9IE5vbmUsIEZhbHNlCiAgICBkZWYgX19pbml0X18oc2VsZik6IHNlbGYuc3RhZ2UgPSBPV04KICAgIGRlZiBwcmVwYXJlX2tpbGwoc2VsZik6IHJldHVybiBbXQogICAgZGVmIHJlbW92ZV9jb250YWluZXIoc2VsZik6IHBhc3MKICAgIGRlZiBxdWVyeV9wcm9jZXNzZXMoc2VsZik6IHJldHVybiBzZXQoKQogICAgZGVmIHF1ZXJ5X2NvbnRhaW5lcnMoc2VsZik6IHJldHVybiBzZXQoKQogICAgZGVmIG1lbWJlcnMoc2VsZik6IHJldHVybiBbXQogICAgZGVmIGxpc3RlbmVycyhzZWxmKTogcmV0dXJuIFtdCiAgICBkZWYgdmVyaWZ5X2Rpc3Bvc2FsX3RhcmdldChzZWxmKTogcmV0dXJuIFRydWUKICAgIGRlZiBjbG9zZShzZWxmKTogcGFzcwoKZGVmIGxhdGVfYWNrKHdoaWNoKToKICAgIGNsb2NrLCBwcm90bywgYyA9IGNvbnRleHQoJ2xhdGUtJyArIHdoaWNoKTsgYm94ID0ge30KICAgIGRlZiBzYXZlKHJhdyk6CiAgICAgICAgYm94WydyYXcnXSA9IHJhdwogICAgICAgIGlmIHdoaWNoID09ICd3cml0ZSc6IGNsb2NrLm5vdyA9IDYuMAogICAgZGVmIHJlYWQoKToKICAgICAgICBpZiB3aGljaCA9PSAncmVhZCc6IGNsb2NrLm5vdyA9IDYuMAogICAgICAgIHJldHVybiBib3hbJ3JhdyddCiAgICByZXN1bHQgPSBFLmZpbmFsaXplKFRlcm1pbmFsT3BzKCksIFtdLCBjLCBwZXJzaXN0PXNhdmUsIHJlYWRfYmFjaz1yZWFkKQogICAgcmVxdWlyZShub3QgcmVzdWx0WydhY2NlcHRlZCddLCAnbGF0ZSBjb21wbGV0aW9uIHdhcyBhY2NlcHRlZCcpCiAgICByZXF1aXJlKHJlc3VsdFsnYWNrbm93bGVkZ21lbnQnXVsnd3JpdGUnIGlmIHdoaWNoID09ICd3cml0ZScgZWxzZSAncmVhZEJhY2snXSA9PSAnVU5LTk9XTicsICdsYXRlIGFja25vd2xlZGdtZW50IG5vdCBVTktOT1dOJykKICAgIHJlcXVpcmUoaGFzaGxpYi5zaGEyNTYoYm94WydyYXcnXSkuaGV4ZGlnZXN0KCkgPT0gcmVzdWx0WydldmlkZW5jZVNoYTI1NiddLCAnaW1tdXRhYmxlIGJ5dGVzIGNoYW5nZWQnKQogICAgcmV0dXJuIHJlc3VsdFsnYWNrbm93bGVkZ21lbnQnXQoKZGVmIGV4YWN0X2hhbmRsZSgpOgogICAgY2xvY2ssIHByb3RvLCBjID0gY29udGV4dCgnaGFuZGxlJyk7IGFwaSwgcHJvYyA9IEFwaSgpLCBQcm9jZXNzKCk7IG9wcyA9IG5hdGl2ZShjLCBwcm9jLCBhcGkpCiAgICBvcHMucmV0YWluZWRbNzFdID0gNTAxCiAgICBpZGVudGl0eSA9IGFwaS5pZGVudGl0eSg3MSwgNTAxKQogICAgb3BzLmtpbGwoaWRlbnRpdHkpCiAgICByZXF1aXJlKFsndGVybWluYXRlJywgNTAxXSBpbiBhcGkuY2FsbHMgYW5kIG5vdCBhbnkoeFswXSA9PSAnb3BlbicgZm9yIHggaW4gYXBpLmNhbGxzKSwgJ3N0b3AgcmVvcGVuZWQvcmVwbGFjZWQgUElEIGluc3RlYWQgb2YgcmV0YWluZWQgaGFuZGxlJykKICAgIHJldHVybiB7J3Rlcm1pbmF0ZWRIYW5kbGUnOiA1MDEsICdyZXBsYWNlbWVudEhhbmRsZSc6IDYwMX0KCmRlZiBtZW1iZXJfcmFjZSgpOgogICAgY2xvY2ssIHByb3RvLCBjID0gY29udGV4dCgnbWVtYmVyLXJhY2UnKTsgYXBpLCBwcm9jID0gQXBpKCksIFByb2Nlc3MoKTsgYXBpLm1lbWJlciA9IEZhbHNlOyBvcHMgPSBuYXRpdmUoYywgcHJvYywgYXBpKQogICAgdHJ5OiBvcHMucHJlcGFyZV9raWxsKCkKICAgIGV4Y2VwdCBSdW50aW1lRXJyb3I6IHBhc3MKICAgIGVsc2U6IHJhaXNlIEFzc2VydGlvbkVycm9yKCdub24tam9iIHJlcGxhY2VtZW50IGFkbWl0dGVkJykKICAgIHJlcXVpcmUobm90IGFueSh4WzBdID09ICd0ZXJtaW5hdGUnIGZvciB4IGluIGFwaS5jYWxscyksICdub24tam9iIHJlcGxhY2VtZW50IHN0b3BwZWQnKQogICAgb3BzLmNsb3NlKCkKICAgIHJlcXVpcmUoWydjbG9zZScsIDYwMV0gaW4gYXBpLmNhbGxzLCAncmVqZWN0ZWQgb3BlbmVkIGhhbmRsZSBub3QgcmV0YWluZWQgZm9yIGNsb3NlJykKICAgIHJldHVybiB7J25vbkpvYlJlZnVzZWQnOiBUcnVlLCAnb3BlbmVkSGFuZGxlQ2xvc2VkJzogVHJ1ZX0KCmRlZiBhY2NvdW50aW5nKCk6CiAgICBjbG9jaywgcHJvdG8sIGMgPSBjb250ZXh0KCdhY2NvdW50aW5nJyk7IHF1ZXVlZCA9IHByb3RvLnF1ZXVlKCdxdWV1ZWQnKTsgY29tbWl0dGVkID0gcHJvdG8ucXVldWUoJ2NvbW1pdHRlZCcpOyBwcm90by5ncmFudChjb21taXR0ZWQsIDIpCiAgICBwcm90by5jbG9zZSgpOyBwcm90by5jb21wbGV0ZShjb21taXR0ZWQpCiAgICByZXF1aXJlKHF1ZXVlZC5zdGF0ZSA9PSBQLlJFVk9LRUQgYW5kIGNvbW1pdHRlZC5yZWNvcmQoKVsndW5jZXJ0YWluJ10sICdmZW5jZSBsb3N0IHF1ZXVlZC9jb21taXR0ZWQgZGlzdGluY3Rpb24nKQogICAgY2xvY2syLCBwMiwgYzIgPSBjb250ZXh0KCdjb25maXJtZWQtbGF0ZScpOyBvcCA9IHAyLnF1ZXVlKCdjb25maXJtZWQnKTsgcDIuZ3JhbnQob3AsIDIpOyBjbG9jazIubm93ID0gMTE7IHAyLmNvbXBsZXRlKG9wKQogICAgcmVxdWlyZShvcC5zdGF0ZSA9PSBQLkRPTkUgYW5kIG5vdCBvcC5yZWNvcmQoKVsndW5jZXJ0YWluJ10sICdjb25maXJtZWQgY29tcGxldGlvbiBiZWZvcmUgZmVuY2UgaW5jb3JyZWN0bHkgdW5rbm93bicpCiAgICByZXR1cm4geydxdWV1ZWRSZXZva2VkJzogVHJ1ZSwgJ2NvbW1pdHRlZFVuY2VydGFpbic6IFRydWUsICdjb25maXJtZWRCZWZvcmVGZW5jZSc6IFRydWV9CgpkZWYgY2FuY2VsbGF0aW9uX2ZhdWx0KG1vZGUpOgogICAgY2xvY2ssIHByb3RvLCBjID0gY29udGV4dCgnY2FuY2VsLScgKyBtb2RlKTsgcHJvYyA9IFByb2Nlc3MoKTsgcHJvYy50aW1lb3V0ID0gVHJ1ZQogICAgcHJvYy5raWxsX2Vycm9yLCBwcm9jLmRyYWluX2Vycm9yID0gbW9kZSA9PSAna2lsbCcsIG1vZGUgPT0gJ2RyYWluJwogICAgYy5ydW5uZXIgPSBsYW1iZGEgKmEsICoqa3c6IHN1YnByb2Nlc3MuQ29tcGxldGVkUHJvY2VzcyhhLCAwLCAqRS5ib3VuZGVkX2NvbW11bmljYXRlKHByb2MsIGMsIHRpbWVvdXQ9a3dbJ3RpbWVvdXQnXSkpCiAgICBmYWlsdXJlID0gTm9uZQogICAgdHJ5OiBjLmNvbW1hbmQoJ3V0aWxpdHknLCBbJ3N5bnRoZXRpYy5leGUnXSwgdGltZW91dD0yKQogICAgZXhjZXB0IEUuQ29tbWFuZEZhaWx1cmUgYXMgZXJyb3I6IGZhaWx1cmUgPSBlcnJvci5mYWlsdXJlX2NsYXNzCiAgICBvYnNlcnZlZCA9IHsnZmFpbHVyZUNsYXNzJzogZmFpbHVyZSwgJ29wZXJhdGlvbic6IHByb3RvLm9wc1swXS5yZWNvcmQoKSwgJ2NhbGxzJzogcHJvYy5jYWxscywgJ2NsZWFudXBFcnJvcic6IGMuZXZlbnRzWzBdLmdldCgnY2xlYW51cEVycm9yJyl9CiAgICBST1dTLmFwcGVuZCh7J2lkJzogJ2NhbmNlbC0nICsgbW9kZSArICctb2JzZXJ2ZWQnLCAnc3RhdHVzJzogJ09CU0VSVkFUSU9OJywgJ29ic2VydmVkJzogb2JzZXJ2ZWR9KQogICAgcmVxdWlyZShmYWlsdXJlID09ICdUSU1FT1VUJywgJ2NhbmNlbGxhdGlvbiAnICsgbW9kZSArICcgZmFpbHVyZSByZXBsYWNlZCBwcmltYXJ5IFRJTUVPVVQgd2l0aCAnICsgc3RyKGZhaWx1cmUpKQogICAgcmVxdWlyZShwcm90by5vcHNbMF0ucmVjb3JkKClbJ3VuY2VydGFpbiddLCAndW5vYnNlcnZlZCBjaGlsZCBleGl0IGxvc3QgdW5jZXJ0YWluIGFjY291bnRpbmcnKQogICAgcmVxdWlyZShib29sKG9ic2VydmVkWydjbGVhbnVwRXJyb3InXSksICdzZWNvbmRhcnkgY2FuY2VsbGF0aW9uIGVycm9yIGFic2VudCBmcm9tIGNvbW1hbmQgZXZpZGVuY2UnKQogICAgcmV0dXJuIG9ic2VydmVkCgpkZWYgc3Bhd25fc2Vjb25kYXJ5KCk6CiAgICBvYnNlcnZhdGlvbnMgPSBbXQogICAgZm9yIG1vZGUgaW4gKCdraWxsJywgJ3dhaXQnKToKICAgICAgICBjbG9jaywgcHJvdG8sIGMgPSBjb250ZXh0KCdzcGF3bi1zZWNvbmRhcnktJyArIG1vZGUpCiAgICAgICAgcHJvYywgYXBpID0gUHJvY2VzcygpLCBBcGkoKQogICAgICAgIHByb2Mua2lsbF9lcnJvciA9IG1vZGUgPT0gJ2tpbGwnCiAgICAgICAgaWYgbW9kZSA9PSAnd2FpdCc6CiAgICAgICAgICAgIGRlZiBiYWRfd2FpdCh0aW1lb3V0KToKICAgICAgICAgICAgICAgIHByb2MuY2FsbHMuYXBwZW5kKFsnd2FpdCcsIHRpbWVvdXRdKQogICAgICAgICAgICAgICAgcmFpc2UgT1NFcnJvcignaW5kZXBlbmRlbnQgd2FpdCBmYWlsdXJlJykKICAgICAgICAgICAgcHJvYy53YWl0ID0gYmFkX3dhaXQKICAgICAgICBvcHMgPSBuYXRpdmUoYywgcHJvYywgYXBpKQogICAgICAgIG9yaWdpbmFsID0gVmFsdWVFcnJvcignaW5kZXBlbmRlbnQgaWRlbnRpdHkgcGVyc2lzdGVuY2UgcHJpbWFyeScpCiAgICAgICAgZGVmIGJhZF9yZWNvcmQoKTogcmFpc2Ugb3JpZ2luYWwKICAgICAgICBvcHMuX3JlY29yZCA9IGJhZF9yZWNvcmQKICAgICAgICBjYXVnaHQgPSBOb25lCiAgICAgICAgdHJ5OiBvcHMuX3NwYXduKFsnc3ludGhldGljLmV4ZSddKQogICAgICAgIGV4Y2VwdCBWYWx1ZUVycm9yIGFzIGVycm9yOiBjYXVnaHQgPSBlcnJvcgogICAgICAgIHJlcXVpcmUoY2F1Z2h0IGlzIG9yaWdpbmFsLCAnc2Vjb25kYXJ5IHNwYXduIGZhaWx1cmUgcmVwbGFjZWQgb3JpZ2luYWwgZXhjZXB0aW9uJykKICAgICAgICByZXF1aXJlKG9wcy5yb290c1swXVsncCddIGlzIHByb2MsICd1bnJlc29sdmVkIGV4YWN0IGNyZWF0aW9uIHJvb3QgbG9zdCcpCiAgICAgICAgYm94ID0ge30KICAgICAgICByZXN1bHQgPSBFLmZpbmFsaXplKFRlcm1pbmFsT3BzKCksIFtjYXVnaHRdLCBjLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgcGVyc2lzdD1sYW1iZGEgcmF3OiBib3gudXBkYXRlKHJhdz1yYXcpLCByZWFkX2JhY2s9bGFtYmRhOiBib3hbJ3JhdyddKQogICAgICAgIGVycm9ycyA9IHJlc3VsdFsnZXZpZGVuY2UnXVsnZXJyb3JzJ10KICAgICAgICByZXF1aXJlKGFueSgnc3Bhd24tY2xlYW51cDogT1NFcnJvcicgaW4geCBmb3IgeCBpbiBlcnJvcnMpLCAnc2Vjb25kYXJ5IGVycm9yIG1pc3NpbmcgZnJvbSBmcm96ZW4gdGVybWluYWwgZXJyb3JzJykKICAgICAgICByZXF1aXJlKG5vdCByZXN1bHRbJ2FjY2VwdGVkJ10sICd0ZXJtaW5hbCBhY2NlcHRlZCBkZXNwaXRlIHNwYXduIGNsZWFudXAgZXJyb3InKQogICAgICAgIG9ic2VydmF0aW9ucy5hcHBlbmQoeydtb2RlJzogbW9kZSwgJ29yaWdpbmFsSWRlbnRpdHlQcmVzZXJ2ZWQnOiBjYXVnaHQgaXMgb3JpZ2luYWwsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgJ3Rlcm1pbmFsRXJyb3JzJzogZXJyb3JzLCAnYWNjZXB0ZWQnOiByZXN1bHRbJ2FjY2VwdGVkJ10sICdjYWxscyc6IHByb2MuY2FsbHN9KQogICAgcmV0dXJuIG9ic2VydmF0aW9ucwoKY2FzZSgnYW1iaWd1b3VzLWNyZWRlbnRpYWwtdGFpbHMnLCBjcmVkZW50aWFscykKY2FzZSgnZnJlc2gtcG9zdC1pZGVudGl0eS13YWl0Jywgd2FpdF9hZnRlcl9pZGVudGl0eSkKY2FzZSgnZXhwaXJlZC11dGlsaXR5LW5vLWNvbW11bmljYXRpb24nLCBleHBpcmVkX3V0aWxpdHkpCmNhc2UoJ3Bhc3QtY2xlYW51cC1uby1raWxsLW9yLXdhaXQnLCBleGhhdXN0ZWRfcmVzdW1lKQpjYXNlKCdsYXRlLXdyaXRlLW5vLWFjY2VwdCcsIGxhbWJkYTogbGF0ZV9hY2soJ3dyaXRlJykpCmNhc2UoJ2xhdGUtcmVhZGJhY2stbm8tYWNjZXB0JywgbGFtYmRhOiBsYXRlX2FjaygncmVhZCcpKQpjYXNlKCdyZXRhaW5lZC1oYW5kbGUtZGVzcGl0ZS1QSUQtcmVwbGFjZW1lbnQnLCBleGFjdF9oYW5kbGUpCmNhc2UoJ21lbWJlci1vcGVuLXJhY2UtcmVmdXNlcy1ub24tam9iJywgbWVtYmVyX3JhY2UpCmNhc2UoJ3F1ZXVlZC1jb21taXR0ZWQtYW5kLWNvbmZpcm1lZC1sYXRlJywgYWNjb3VudGluZykKY2FzZSgnY2FuY2VsbGF0aW9uLWtpbGwtZmFpbHVyZS1wcmVzZXJ2YXRpb24nLCBsYW1iZGE6IGNhbmNlbGxhdGlvbl9mYXVsdCgna2lsbCcpKQpjYXNlKCdjYW5jZWxsYXRpb24tZHJhaW4tZmFpbHVyZS1wcmVzZXJ2YXRpb24nLCBsYW1iZGE6IGNhbmNlbGxhdGlvbl9mYXVsdCgnZHJhaW4nKSkKY2FzZSgnc3Bhd24tc2Vjb25kYXJ5LWZhaWx1cmUtcHJpbWFyeS1hbmQtdGVybWluYWwnLCBzcGF3bl9zZWNvbmRhcnkpCkFGVEVSID0gaGFzaGVzKCkKcmVjb3JkID0geydwcm9ncmFtQ291bnQnOiAyLCAnbmFtZWRJbmZvcm1hdGlvbkdhaW4nOiAnY2hhbmdlZCBwcm9kdWN0aW9uIGJ5dGVzIGZvciB0d28gY29uZmlybWVkIGNhbmNlbGxhdGlvbiBmYWlsdXJlcyBwbHVzIGNvbm5lY3RlZCBzcGF3biBwcmltYXJ5LWVycm9yIHByZXNlcnZhdGlvbicsICdjaGlsZFN0YXJ0cyc6IDAsICduYXRpdmVDYWxscyc6IDAsICduZXR3b3JrQnJvd3NlclByb3ZpZGVyRGVsZXRpb24nOiAwLAogICAgICAgICAgJ3NvdXJjZUhhc2hlc0JlZm9yZSc6IEJFRk9SRSwgJ3NvdXJjZUhhc2hlc0FmdGVyJzogQUZURVIsICdzb3VyY2VzVW5jaGFuZ2VkJzogQkVGT1JFID09IEFGVEVSLAogICAgICAgICAgJ3Byb2dyYW1TaGEyNTYnOiBoYXNobGliLnNoYTI1NihQYXRoKF9fZmlsZV9fKS5yZWFkX2J5dGVzKCkpLmhleGRpZ2VzdCgpLCAnY2FzZXMnOiBST1dTLAogICAgICAgICAgJ2NvdW50cyc6IHtzOiBzdW0oclsnc3RhdHVzJ10gPT0gcyBmb3IgciBpbiBST1dTKSBmb3IgcyBpbiBbJ1BBU1MnLCAnRkFJTCcsICdPUkFDTEVfRVJST1InLCAnT0JTRVJWQVRJT04nXX19CnJlY29yZFsnZXhpdENvZGUnXSA9IDEgaWYgcmVjb3JkWydjb3VudHMnXVsnRkFJTCddIG9yIHJlY29yZFsnY291bnRzJ11bJ09SQUNMRV9FUlJPUiddIG9yIEJFRk9SRSAhPSBBRlRFUiBlbHNlIDAKKE9XTiAvICdyZXN1bHRzLXJlcnVuLmpzb24nKS53cml0ZV90ZXh0KGpzb24uZHVtcHMocmVjb3JkLCBpbmRlbnQ9MiksIGVuY29kaW5nPSd1dGYtOCcpCnN1bW1hcnkgPSBqc29uLmR1bXBzKHsnZXhpdENvZGUnOiByZWNvcmRbJ2V4aXRDb2RlJ10sICdjb3VudHMnOiByZWNvcmRbJ2NvdW50cyddLCAnc291cmNlc1VuY2hhbmdlZCc6IHJlY29yZFsnc291cmNlc1VuY2hhbmdlZCddfSkKKE9XTiAvICdwcm9iZS1yZXJ1bi5sb2cnKS53cml0ZV90ZXh0KHN1bW1hcnkgKyAnXG4nLCBlbmNvZGluZz0ndXRmLTgnKQpwcmludChzdW1tYXJ5KQpzeXMuZXhpdChyZWNvcmRbJ2V4aXRDb2RlJ10pCg=="
+      }
+    },
+    "logHashes": {
+      "probe.log": "aa6f52b4e2706f0b62b3aafa6c889eb00258285da4e3031a00bbc49ce894c49d",
+      "probe-rerun.log": "c46d9897949f9b3179da9def9ddf365497f45b11748fad2ddba08ec6829dd6b7"
+    },
+    "basis": "fresh recording clocks/API/process/terminal objects, no implementation test helpers or prior root probe imports; root is implementation actor, distinct agent executes"
+  },
+  "finalInertMatrix": {
+    "path": ".cvf/runtime/ncr-html-root-local-repair-20261016/worker-50dc25c2fcc1779c/inert-results.json",
+    "sha256": "fba2cfb0fdacdb55064a498c15c944ce77f8528c3ed3c3aef8e7c1a7047ef7b4",
+    "receipt": {
+      "actor": "IMPLEMENTATION_WORKER",
+      "cases": [
+        {
+          "case": "taskkill-nonzero",
+          "commands": [
+            {
+              "argc": 4,
+              "args": [
+                "-B",
+                "-c",
+                "import time,sys;time.sleep(0);sys.stdout.write('');sys.exit(7)"
+              ],
+              "elapsedSeconds": 0.047,
+              "executable": "python.exe",
+              "exitCode": 7,
+              "failureClass": "NONZERO_EXIT",
+              "inputBytes": 0,
+              "kind": "taskkill",
+              "seq": 1,
+              "startedAt": 26967.906,
+              "state": "FINISHED",
+              "stderr": "",
+              "stdout": "",
+              "timedOut": false,
+              "timeoutSeconds": 2
+            },
+            {
+              "argc": 4,
+              "args": [
+                "-B",
+                "-c",
+                "import time,sys;time.sleep(0);sys.stdout.write('\"system.exe\",\"4\",\"Services\",\"0\",\"1 K\"');sys.exit(0)"
+              ],
+              "elapsedSeconds": 0.047,
+              "executable": "python.exe",
+              "exitCode": 0,
+              "failureClass": null,
+              "inputBytes": 0,
+              "kind": "tasklist",
+              "seq": 2,
+              "startedAt": 26967.953,
+              "state": "FINISHED",
+              "stderr": "",
+              "stdout": "\"system.exe\",\"4\",\"Services\",\"0\",\"1 K\"",
+              "timedOut": false,
+              "timeoutSeconds": 2
+            },
+            {
+              "argc": 4,
+              "args": [
+                "-B",
+                "-c",
+                "import time,sys;time.sleep(0);sys.stdout.write('');sys.exit(0)"
+              ],
+              "elapsedSeconds": 0.046,
+              "executable": "python.exe",
+              "exitCode": 0,
+              "failureClass": null,
+              "inputBytes": 0,
+              "kind": "docker-ps",
+              "seq": 3,
+              "startedAt": 26968.0,
+              "state": "FINISHED",
+              "stderr": "",
+              "stdout": "",
+              "timedOut": false,
+              "timeoutSeconds": 2
+            }
+          ],
+          "commandsSha256": "d31af155b9710127f9bf985610a506db0e2845c1501447cbbab770dd288072b9",
+          "effects": {
+            "engineStarts": 0,
+            "nativeChildren": 0,
+            "networkCalls": 0,
+            "productStarts": 0,
+            "providerStarts": 0
+          },
+          "invocation": "worker-50dc25c2fcc1779c",
+          "substituteStarts": 3,
+          "terminal": {
+            "accepted": false,
+            "acknowledgment": {
+              "error": null,
+              "readBack": "NOT_ATTEMPTED",
+              "write": "NOT_ATTEMPTED"
+            },
+            "actualDisposal": "NOT_ATTEMPTED",
+            "disposalEligible": false,
+            "evidence": {
+              "actions": [
+                {
+                  "action": "identity",
+                  "outcome": "CONFIRMED"
+                },
+                {
+                  "action": "taskkill",
+                  "outcome": "FAILED"
+                },
+                {
+                  "action": "container-remove",
+                  "outcome": "CONFIRMED"
+                },
+                {
+                  "action": "tasklist",
+                  "outcome": "CONFIRMED"
+                },
+                {
+                  "action": "docker-ps",
+                  "outcome": "CONFIRMED"
+                },
+                {
+                  "action": "descendants",
+                  "outcome": "CONFIRMED"
+                },
+                {
+                  "action": "listeners",
+                  "outcome": "CONFIRMED"
+                },
+                {
+                  "action": "disposal-target",
+                  "outcome": "CONFIRMED"
+                },
+                {
+                  "action": "handle-close",
+                  "outcome": "CONFIRMED"
+                }
+              ],
+              "child": {
+                "confirmed": true,
+                "reason": "NOT_LAUNCHED"
+              },
+              "containerQuery": "ABSENT",
+              "descendantQuery": "ABSENT",
+              "disposalTarget": "SAFE",
+              "errors": [
+                "taskkill: CommandFailure: taskkill: NONZERO_EXIT; evidence retained"
+              ],
+              "listenerQuery": "ABSENT",
+              "ownedIdentities": [
+                {
+                  "creation100ns": 123,
+                  "image": "INERT_NO_PRODUCT",
+                  "pid": 43210
+                }
+              ],
+              "preAckDisposition": "NOT_ACCEPTED_UNKNOWN",
+              "primaryFailures": [],
+              "processQuery": "ABSENT",
+              "protocol": {
+                "cleanupSeconds": 120,
+                "closedBy": "TERMINAL",
+                "generation": "gb17fff08",
+                "operations": [
+                  {
+                    "cleanup": true,
+                    "id": 1,
+                    "inflightAtClose": false,
+                    "kind": "taskkill",
+                    "outcome": "NONZERO_EXIT",
+                    "state": "FAILED",
+                    "uncertain": false
+                  },
+                  {
+                    "cleanup": true,
+                    "id": 2,
+                    "inflightAtClose": false,
+                    "kind": "tasklist",
+                    "outcome": null,
+                    "state": "DONE",
+                    "uncertain": false
+                  },
+                  {
+                    "cleanup": true,
+                    "id": 3,
+                    "inflightAtClose": false,
+                    "kind": "docker-ps",
+                    "outcome": null,
+                    "state": "DONE",
+                    "uncertain": false
+                  }
+                ],
+                "phase": "CLEANUP",
+                "workSeconds": 900
+              },
+              "stageRetained": true,
+              "uncertainOperations": []
+            },
+            "evidenceBytes": 2016,
+            "evidenceSha256": "d9549103d811a9aa53a23c8c49e1f161a2da7549ac066448158328e6d87f6fc9",
+            "stageRetained": true
+          }
+        },
+        {
+          "case": "tasklist-nonzero",
+          "commands": [
+            {
+              "argc": 4,
+              "args": [
+                "-B",
+                "-c",
+                "import time,sys;time.sleep(0);sys.stdout.write('');sys.exit(0)"
+              ],
+              "elapsedSeconds": 0.047,
+              "executable": "python.exe",
+              "exitCode": 0,
+              "failureClass": null,
+              "inputBytes": 0,
+              "kind": "taskkill",
+              "seq": 1,
+              "startedAt": 26968.046,
+              "state": "FINISHED",
+              "stderr": "",
+              "stdout": "",
+              "timedOut": false,
+              "timeoutSeconds": 2
+            },
+            {
+              "argc": 4,
+              "args": [
+                "-B",
+                "-c",
+                "import time,sys;time.sleep(0);sys.stdout.write('\"system.exe\",\"4\",\"Services\",\"0\",\"1 K\"');sys.exit(9)"
+              ],
+              "elapsedSeconds": 0.032,
+              "executable": "python.exe",
+              "exitCode": 9,
+              "failureClass": "NONZERO_EXIT",
+              "inputBytes": 0,
+              "kind": "tasklist",
+              "seq": 2,
+              "startedAt": 26968.093,
+              "state": "FINISHED",
+              "stderr": "",
+              "stdout": "\"system.exe\",\"4\",\"Services\",\"0\",\"1 K\"",
+              "timedOut": false,
+              "timeoutSeconds": 2
+            },
+            {
+              "argc": 4,
+              "args": [
+                "-B",
+                "-c",
+                "import time,sys;time.sleep(0);sys.stdout.write('');sys.exit(0)"
+              ],
+              "elapsedSeconds": 0.031,
+              "executable": "python.exe",
+              "exitCode": 0,
+              "failureClass": null,
+              "inputBytes": 0,
+              "kind": "docker-ps",
+              "seq": 3,
+              "startedAt": 26968.125,
+              "state": "FINISHED",
+              "stderr": "",
+              "stdout": "",
+              "timedOut": false,
+              "timeoutSeconds": 2
+            }
+          ],
+          "commandsSha256": "8e68e9986a2189a3c893a002a21aa24925cde4efa3f7df43c6689c0113646d0d",
+          "effects": {
+            "engineStarts": 0,
+            "nativeChildren": 0,
+            "networkCalls": 0,
+            "productStarts": 0,
+            "providerStarts": 0
+          },
+          "invocation": "worker-50dc25c2fcc1779c",
+          "substituteStarts": 3,
+          "terminal": {
+            "accepted": false,
+            "acknowledgment": {
+              "error": null,
+              "readBack": "NOT_ATTEMPTED",
+              "write": "NOT_ATTEMPTED"
+            },
+            "actualDisposal": "NOT_ATTEMPTED",
+            "disposalEligible": false,
+            "evidence": {
+              "actions": [
+                {
+                  "action": "identity",
+                  "outcome": "CONFIRMED"
+                },
+                {
+                  "action": "taskkill",
+                  "outcome": "CONFIRMED"
+                },
+                {
+                  "action": "container-remove",
+                  "outcome": "CONFIRMED"
+                },
+                {
+                  "action": "tasklist",
+                  "outcome": "FAILED"
+                },
+                {
+                  "action": "docker-ps",
+                  "outcome": "CONFIRMED"
+                },
+                {
+                  "action": "descendants",
+                  "outcome": "CONFIRMED"
+                },
+                {
+                  "action": "listeners",
+                  "outcome": "CONFIRMED"
+                },
+                {
+                  "action": "disposal-target",
+                  "outcome": "CONFIRMED"
+                },
+                {
+                  "action": "handle-close",
+                  "outcome": "CONFIRMED"
+                }
+              ],
+              "child": {
+                "confirmed": true,
+                "reason": "NOT_LAUNCHED"
+              },
+              "containerQuery": "ABSENT",
+              "descendantQuery": "ABSENT",
+              "disposalTarget": "SAFE",
+              "errors": [
+                "tasklist: CommandFailure: tasklist: NONZERO_EXIT; evidence retained"
+              ],
+              "listenerQuery": "ABSENT",
+              "ownedIdentities": [
+                {
+                  "creation100ns": 123,
+                  "image": "INERT_NO_PRODUCT",
+                  "pid": 43210
+                }
+              ],
+              "preAckDisposition": "NOT_ACCEPTED_UNKNOWN",
+              "primaryFailures": [],
+              "processQuery": "UNKNOWN",
+              "protocol": {
+                "cleanupSeconds": 120,
+                "closedBy": "TERMINAL",
+                "generation": "g54d039ce",
+                "operations": [
+                  {
+                    "cleanup": true,
+                    "id": 1,
+                    "inflightAtClose": false,
+                    "kind": "taskkill",
+                    "outcome": null,
+                    "state": "DONE",
+                    "uncertain": false
+                  },
+                  {
+                    "cleanup": true,
+                    "id": 2,
+                    "inflightAtClose": false,
+                    "kind": "tasklist",
+                    "outcome": "NONZERO_EXIT",
+                    "state": "FAILED",
+                    "uncertain": false
+                  },
+                  {
+                    "cleanup": true,
+                    "id": 3,
+                    "inflightAtClose": false,
+                    "kind": "docker-ps",
+                    "outcome": null,
+                    "state": "DONE",
+                    "uncertain": false
+                  }
+                ],
+                "phase": "CLEANUP",
+                "workSeconds": 900
+              },
+              "stageRetained": true,
+              "uncertainOperations": []
+            },
+            "evidenceBytes": 2017,
+            "evidenceSha256": "1ce96797e32bf43ae0de40f1602273c627db55639c32861c8c4731598de3d665",
+            "stageRetained": true
+          }
+        },
+        {
+          "case": "docker-ps-nonzero",
+          "commands": [
+            {
+              "argc": 4,
+              "args": [
+                "-B",
+                "-c",
+                "import time,sys;time.sleep(0);sys.stdout.write('');sys.exit(0)"
+              ],
+              "elapsedSeconds": 0.032,
+              "executable": "python.exe",
+              "exitCode": 0,
+              "failureClass": null,
+              "inputBytes": 0,
+              "kind": "taskkill",
+              "seq": 1,
+              "startedAt": 26968.171,
+              "state": "FINISHED",
+              "stderr": "",
+              "stdout": "",
+              "timedOut": false,
+              "timeoutSeconds": 2
+            },
+            {
+              "argc": 4,
+              "args": [
+                "-B",
+                "-c",
+                "import time,sys;time.sleep(0);sys.stdout.write('\"system.exe\",\"4\",\"Services\",\"0\",\"1 K\"');sys.exit(0)"
+              ],
+              "elapsedSeconds": 0.031,
+              "executable": "python.exe",
+              "exitCode": 0,
+              "failureClass": null,
+              "inputBytes": 0,
+              "kind": "tasklist",
+              "seq": 2,
+              "startedAt": 26968.203,
+              "state": "FINISHED",
+              "stderr": "",
+              "stdout": "\"system.exe\",\"4\",\"Services\",\"0\",\"1 K\"",
+              "timedOut": false,
+              "timeoutSeconds": 2
+            },
+            {
+              "argc": 4,
+              "args": [
+                "-B",
+                "-c",
+                "import time,sys;time.sleep(0);sys.stdout.write('');sys.exit(8)"
+              ],
+              "elapsedSeconds": 0.031,
+              "executable": "python.exe",
+              "exitCode": 8,
+              "failureClass": "NONZERO_EXIT",
+              "inputBytes": 0,
+              "kind": "docker-ps",
+              "seq": 3,
+              "startedAt": 26968.234,
+              "state": "FINISHED",
+              "stderr": "",
+              "stdout": "",
+              "timedOut": false,
+              "timeoutSeconds": 2
+            }
+          ],
+          "commandsSha256": "49404466ded8b6171189b1e9bf48d4af578729fe436c930b1abaa9de73720a04",
+          "effects": {
+            "engineStarts": 0,
+            "nativeChildren": 0,
+            "networkCalls": 0,
+            "productStarts": 0,
+            "providerStarts": 0
+          },
+          "invocation": "worker-50dc25c2fcc1779c",
+          "substituteStarts": 3,
+          "terminal": {
+            "accepted": false,
+            "acknowledgment": {
+              "error": null,
+              "readBack": "NOT_ATTEMPTED",
+              "write": "NOT_ATTEMPTED"
+            },
+            "actualDisposal": "NOT_ATTEMPTED",
+            "disposalEligible": false,
+            "evidence": {
+              "actions": [
+                {
+                  "action": "identity",
+                  "outcome": "CONFIRMED"
+                },
+                {
+                  "action": "taskkill",
+                  "outcome": "CONFIRMED"
+                },
+                {
+                  "action": "container-remove",
+                  "outcome": "CONFIRMED"
+                },
+                {
+                  "action": "tasklist",
+                  "outcome": "CONFIRMED"
+                },
+                {
+                  "action": "docker-ps",
+                  "outcome": "FAILED"
+                },
+                {
+                  "action": "descendants",
+                  "outcome": "CONFIRMED"
+                },
+                {
+                  "action": "listeners",
+                  "outcome": "CONFIRMED"
+                },
+                {
+                  "action": "disposal-target",
+                  "outcome": "CONFIRMED"
+                },
+                {
+                  "action": "handle-close",
+                  "outcome": "CONFIRMED"
+                }
+              ],
+              "child": {
+                "confirmed": true,
+                "reason": "NOT_LAUNCHED"
+              },
+              "containerQuery": "UNKNOWN",
+              "descendantQuery": "ABSENT",
+              "disposalTarget": "SAFE",
+              "errors": [
+                "docker-ps: CommandFailure: docker-ps: NONZERO_EXIT; evidence retained"
+              ],
+              "listenerQuery": "ABSENT",
+              "ownedIdentities": [
+                {
+                  "creation100ns": 123,
+                  "image": "INERT_NO_PRODUCT",
+                  "pid": 43210
+                }
+              ],
+              "preAckDisposition": "NOT_ACCEPTED_UNKNOWN",
+              "primaryFailures": [],
+              "processQuery": "ABSENT",
+              "protocol": {
+                "cleanupSeconds": 120,
+                "closedBy": "TERMINAL",
+                "generation": "g58d9850e",
+                "operations": [
+                  {
+                    "cleanup": true,
+                    "id": 1,
+                    "inflightAtClose": false,
+                    "kind": "taskkill",
+                    "outcome": null,
+                    "state": "DONE",
+                    "uncertain": false
+                  },
+                  {
+                    "cleanup": true,
+                    "id": 2,
+                    "inflightAtClose": false,
+                    "kind": "tasklist",
+                    "outcome": null,
+                    "state": "DONE",
+                    "uncertain": false
+                  },
+                  {
+                    "cleanup": true,
+                    "id": 3,
+                    "inflightAtClose": false,
+                    "kind": "docker-ps",
+                    "outcome": "NONZERO_EXIT",
+                    "state": "FAILED",
+                    "uncertain": false
+                  }
+                ],
+                "phase": "CLEANUP",
+                "workSeconds": 900
+              },
+              "stageRetained": true,
+              "uncertainOperations": []
+            },
+            "evidenceBytes": 2019,
+            "evidenceSha256": "9e33a9b16f988591bdb9ddc4fe23a269a006e2e30590cb12ef7b056cb50db581",
+            "stageRetained": true
+          }
+        },
+        {
+          "case": "timeout",
+          "commands": [
+            {
+              "argc": 4,
+              "args": [
+                "-B",
+                "-c",
+                "import time,sys;time.sleep(1);sys.stdout.write('');sys.exit(0)"
+              ],
+              "cleanupError": null,
+              "elapsedSeconds": 0.172,
+              "executable": "python.exe",
+              "exitCode": null,
+              "failureClass": "TIMEOUT",
+              "inputBytes": 0,
+              "kind": "taskkill",
+              "seq": 1,
+              "startedAt": 26968.281,
+              "state": "FINISHED",
+              "stderr": "",
+              "stdout": "",
+              "timedOut": true,
+              "timeoutSeconds": 0.15
+            },
+            {
+              "argc": 4,
+              "args": [
+                "-B",
+                "-c",
+                "import time,sys;time.sleep(0);sys.stdout.write('\"system.exe\",\"4\",\"Services\",\"0\",\"1 K\"');sys.exit(0)"
+              ],
+              "elapsedSeconds": 0.031,
+              "executable": "python.exe",
+              "exitCode": 0,
+              "failureClass": null,
+              "inputBytes": 0,
+              "kind": "tasklist",
+              "seq": 2,
+              "startedAt": 26968.453,
+              "state": "FINISHED",
+              "stderr": "",
+              "stdout": "\"system.exe\",\"4\",\"Services\",\"0\",\"1 K\"",
+              "timedOut": false,
+              "timeoutSeconds": 2
+            },
+            {
+              "argc": 4,
+              "args": [
+                "-B",
+                "-c",
+                "import time,sys;time.sleep(0);sys.stdout.write('');sys.exit(0)"
+              ],
+              "elapsedSeconds": 0.016,
+              "executable": "python.exe",
+              "exitCode": 0,
+              "failureClass": null,
+              "inputBytes": 0,
+              "kind": "docker-ps",
+              "seq": 3,
+              "startedAt": 26968.484,
+              "state": "FINISHED",
+              "stderr": "",
+              "stdout": "",
+              "timedOut": false,
+              "timeoutSeconds": 2
+            }
+          ],
+          "commandsSha256": "318a390c0ce13804d69b1fa010210b45bb09eb21f35db0cfb0f07a2a805d1e96",
+          "effects": {
+            "engineStarts": 0,
+            "nativeChildren": 0,
+            "networkCalls": 0,
+            "productStarts": 0,
+            "providerStarts": 0
+          },
+          "invocation": "worker-50dc25c2fcc1779c",
+          "substituteStarts": 3,
+          "terminal": {
+            "accepted": false,
+            "acknowledgment": {
+              "error": null,
+              "readBack": "NOT_ATTEMPTED",
+              "write": "NOT_ATTEMPTED"
+            },
+            "actualDisposal": "NOT_ATTEMPTED",
+            "disposalEligible": false,
+            "evidence": {
+              "actions": [
+                {
+                  "action": "identity",
+                  "outcome": "CONFIRMED"
+                },
+                {
+                  "action": "taskkill",
+                  "outcome": "FAILED"
+                },
+                {
+                  "action": "container-remove",
+                  "outcome": "CONFIRMED"
+                },
+                {
+                  "action": "tasklist",
+                  "outcome": "CONFIRMED"
+                },
+                {
+                  "action": "docker-ps",
+                  "outcome": "CONFIRMED"
+                },
+                {
+                  "action": "descendants",
+                  "outcome": "CONFIRMED"
+                },
+                {
+                  "action": "listeners",
+                  "outcome": "CONFIRMED"
+                },
+                {
+                  "action": "disposal-target",
+                  "outcome": "CONFIRMED"
+                },
+                {
+                  "action": "handle-close",
+                  "outcome": "CONFIRMED"
+                }
+              ],
+              "child": {
+                "confirmed": true,
+                "reason": "NOT_LAUNCHED"
+              },
+              "containerQuery": "ABSENT",
+              "descendantQuery": "ABSENT",
+              "disposalTarget": "SAFE",
+              "errors": [
+                "taskkill: CommandFailure: taskkill: TIMEOUT; evidence retained"
+              ],
+              "listenerQuery": "ABSENT",
+              "ownedIdentities": [
+                {
+                  "creation100ns": 123,
+                  "image": "INERT_NO_PRODUCT",
+                  "pid": 43210
+                }
+              ],
+              "preAckDisposition": "NOT_ACCEPTED_UNKNOWN",
+              "primaryFailures": [],
+              "processQuery": "ABSENT",
+              "protocol": {
+                "cleanupSeconds": 120,
+                "closedBy": "TERMINAL",
+                "generation": "g9dd991c3",
+                "operations": [
+                  {
+                    "cleanup": true,
+                    "id": 1,
+                    "inflightAtClose": false,
+                    "kind": "taskkill",
+                    "outcome": "TIMEOUT",
+                    "state": "FAILED",
+                    "uncertain": false
+                  },
+                  {
+                    "cleanup": true,
+                    "id": 2,
+                    "inflightAtClose": false,
+                    "kind": "tasklist",
+                    "outcome": null,
+                    "state": "DONE",
+                    "uncertain": false
+                  },
+                  {
+                    "cleanup": true,
+                    "id": 3,
+                    "inflightAtClose": false,
+                    "kind": "docker-ps",
+                    "outcome": null,
+                    "state": "DONE",
+                    "uncertain": false
+                  }
+                ],
+                "phase": "CLEANUP",
+                "workSeconds": 900
+              },
+              "stageRetained": true,
+              "uncertainOperations": []
+            },
+            "evidenceBytes": 2006,
+            "evidenceSha256": "e7adca14c6c9cd99e5bba0ddb6bd81c1248fc4d2dbed2a816f3e63a0da56557c",
+            "stageRetained": true
+          }
+        },
+        {
+          "case": "tasklist-malformed",
+          "commands": [
+            {
+              "argc": 4,
+              "args": [
+                "-B",
+                "-c",
+                "import time,sys;time.sleep(0);sys.stdout.write('');sys.exit(0)"
+              ],
+              "elapsedSeconds": 0.031,
+              "executable": "python.exe",
+              "exitCode": 0,
+              "failureClass": null,
+              "inputBytes": 0,
+              "kind": "taskkill",
+              "seq": 1,
+              "startedAt": 26968.515,
+              "state": "FINISHED",
+              "stderr": "",
+              "stdout": "",
+              "timedOut": false,
+              "timeoutSeconds": 2
+            },
+            {
+              "argc": 4,
+              "args": [
+                "-B",
+                "-c",
+                "import time,sys;time.sleep(0);sys.stdout.write('not CSV');sys.exit(0)"
+              ],
+              "elapsedSeconds": 0.032,
+              "executable": "python.exe",
+              "exitCode": 0,
+              "failureClass": "PARSE",
+              "inputBytes": 0,
+              "kind": "tasklist",
+              "parseError": "RuntimeError('tasklist query was malformed, not proof of absence')",
+              "seq": 2,
+              "startedAt": 26968.546,
+              "state": "FINISHED",
+              "stderr": "",
+              "stdout": "not CSV",
+              "timedOut": false,
+              "timeoutSeconds": 2
+            },
+            {
+              "argc": 4,
+              "args": [
+                "-B",
+                "-c",
+                "import time,sys;time.sleep(0);sys.stdout.write('');sys.exit(0)"
+              ],
+              "elapsedSeconds": 0.031,
+              "executable": "python.exe",
+              "exitCode": 0,
+              "failureClass": null,
+              "inputBytes": 0,
+              "kind": "docker-ps",
+              "seq": 3,
+              "startedAt": 26968.578,
+              "state": "FINISHED",
+              "stderr": "",
+              "stdout": "",
+              "timedOut": false,
+              "timeoutSeconds": 2
+            }
+          ],
+          "commandsSha256": "238a5dc7782a47934d76b207c31d87976f5858acfff2264832868cb59c5f9256",
+          "effects": {
+            "engineStarts": 0,
+            "nativeChildren": 0,
+            "networkCalls": 0,
+            "productStarts": 0,
+            "providerStarts": 0
+          },
+          "invocation": "worker-50dc25c2fcc1779c",
+          "substituteStarts": 3,
+          "terminal": {
+            "accepted": false,
+            "acknowledgment": {
+              "error": null,
+              "readBack": "NOT_ATTEMPTED",
+              "write": "NOT_ATTEMPTED"
+            },
+            "actualDisposal": "NOT_ATTEMPTED",
+            "disposalEligible": false,
+            "evidence": {
+              "actions": [
+                {
+                  "action": "identity",
+                  "outcome": "CONFIRMED"
+                },
+                {
+                  "action": "taskkill",
+                  "outcome": "CONFIRMED"
+                },
+                {
+                  "action": "container-remove",
+                  "outcome": "CONFIRMED"
+                },
+                {
+                  "action": "tasklist",
+                  "outcome": "FAILED"
+                },
+                {
+                  "action": "docker-ps",
+                  "outcome": "CONFIRMED"
+                },
+                {
+                  "action": "descendants",
+                  "outcome": "CONFIRMED"
+                },
+                {
+                  "action": "listeners",
+                  "outcome": "CONFIRMED"
+                },
+                {
+                  "action": "disposal-target",
+                  "outcome": "CONFIRMED"
+                },
+                {
+                  "action": "handle-close",
+                  "outcome": "CONFIRMED"
+                }
+              ],
+              "child": {
+                "confirmed": true,
+                "reason": "NOT_LAUNCHED"
+              },
+              "containerQuery": "ABSENT",
+              "descendantQuery": "ABSENT",
+              "disposalTarget": "SAFE",
+              "errors": [
+                "tasklist: CommandFailure: tasklist: PARSE; evidence retained"
+              ],
+              "listenerQuery": "ABSENT",
+              "ownedIdentities": [
+                {
+                  "creation100ns": 123,
+                  "image": "INERT_NO_PRODUCT",
+                  "pid": 43210
+                }
+              ],
+              "preAckDisposition": "NOT_ACCEPTED_UNKNOWN",
+              "primaryFailures": [],
+              "processQuery": "UNKNOWN",
+              "protocol": {
+                "cleanupSeconds": 120,
+                "closedBy": "TERMINAL",
+                "generation": "gcd6703e9",
+                "operations": [
+                  {
+                    "cleanup": true,
+                    "id": 1,
+                    "inflightAtClose": false,
+                    "kind": "taskkill",
+                    "outcome": null,
+                    "state": "DONE",
+                    "uncertain": false
+                  },
+                  {
+                    "cleanup": true,
+                    "id": 2,
+                    "inflightAtClose": false,
+                    "kind": "tasklist",
+                    "outcome": "PARSE",
+                    "state": "FAILED",
+                    "uncertain": false
+                  },
+                  {
+                    "cleanup": true,
+                    "id": 3,
+                    "inflightAtClose": false,
+                    "kind": "docker-ps",
+                    "outcome": null,
+                    "state": "DONE",
+                    "uncertain": false
+                  }
+                ],
+                "phase": "CLEANUP",
+                "workSeconds": 900
+              },
+              "stageRetained": true,
+              "uncertainOperations": []
+            },
+            "evidenceBytes": 2003,
+            "evidenceSha256": "e8fff3cb040b3526c20796388e7a627a235026e687e632099aad8f337770f0d0",
+            "stageRetained": true
+          }
+        },
+        {
+          "case": "identity-mismatch",
+          "commands": [
+            {
+              "argc": 4,
+              "args": [
+                "-B",
+                "-c",
+                "import time,sys;time.sleep(0);sys.stdout.write('\"system.exe\",\"4\",\"Services\",\"0\",\"1 K\"');sys.exit(0)"
+              ],
+              "elapsedSeconds": 0.031,
+              "executable": "python.exe",
+              "exitCode": 0,
+              "failureClass": null,
+              "inputBytes": 0,
+              "kind": "tasklist",
+              "seq": 1,
+              "startedAt": 26968.625,
+              "state": "FINISHED",
+              "stderr": "",
+              "stdout": "\"system.exe\",\"4\",\"Services\",\"0\",\"1 K\"",
+              "timedOut": false,
+              "timeoutSeconds": 2
+            },
+            {
+              "argc": 4,
+              "args": [
+                "-B",
+                "-c",
+                "import time,sys;time.sleep(0);sys.stdout.write('');sys.exit(0)"
+              ],
+              "elapsedSeconds": 0.015,
+              "executable": "python.exe",
+              "exitCode": 0,
+              "failureClass": null,
+              "inputBytes": 0,
+              "kind": "docker-ps",
+              "seq": 2,
+              "startedAt": 26968.656,
+              "state": "FINISHED",
+              "stderr": "",
+              "stdout": "",
+              "timedOut": false,
+              "timeoutSeconds": 2
+            }
+          ],
+          "commandsSha256": "9a6f09e49dd8bffeac3574a3a190b77e6ef3867eb70913bfb2d25f5a64387a30",
+          "effects": {
+            "engineStarts": 0,
+            "nativeChildren": 0,
+            "networkCalls": 0,
+            "productStarts": 0,
+            "providerStarts": 0
+          },
+          "invocation": "worker-50dc25c2fcc1779c",
+          "substituteStarts": 2,
+          "terminal": {
+            "accepted": false,
+            "acknowledgment": {
+              "error": null,
+              "readBack": "NOT_ATTEMPTED",
+              "write": "NOT_ATTEMPTED"
+            },
+            "actualDisposal": "NOT_ATTEMPTED",
+            "disposalEligible": false,
+            "evidence": {
+              "actions": [
+                {
+                  "action": "identity",
+                  "outcome": "FAILED"
+                },
+                {
+                  "action": "container-remove",
+                  "outcome": "CONFIRMED"
+                },
+                {
+                  "action": "tasklist",
+                  "outcome": "CONFIRMED"
+                },
+                {
+                  "action": "docker-ps",
+                  "outcome": "CONFIRMED"
+                },
+                {
+                  "action": "descendants",
+                  "outcome": "CONFIRMED"
+                },
+                {
+                  "action": "listeners",
+                  "outcome": "CONFIRMED"
+                },
+                {
+                  "action": "disposal-target",
+                  "outcome": "CONFIRMED"
+                },
+                {
+                  "action": "handle-close",
+                  "outcome": "CONFIRMED"
+                }
+              ],
+              "child": {
+                "confirmed": true,
+                "reason": "NOT_LAUNCHED"
+              },
+              "containerQuery": "ABSENT",
+              "descendantQuery": "LIVE",
+              "disposalTarget": "SAFE",
+              "errors": [
+                "identity: RuntimeError: creation identity differs from recorded owner"
+              ],
+              "listenerQuery": "ABSENT",
+              "ownedIdentities": [],
+              "preAckDisposition": "NOT_ACCEPTED_UNKNOWN",
+              "primaryFailures": [],
+              "processQuery": "ABSENT",
+              "protocol": {
+                "cleanupSeconds": 120,
+                "closedBy": "TERMINAL",
+                "generation": "gf3036e35",
+                "operations": [
+                  {
+                    "cleanup": true,
+                    "id": 1,
+                    "inflightAtClose": false,
+                    "kind": "tasklist",
+                    "outcome": null,
+                    "state": "DONE",
+                    "uncertain": false
+                  },
+                  {
+                    "cleanup": true,
+                    "id": 2,
+                    "inflightAtClose": false,
+                    "kind": "docker-ps",
+                    "outcome": null,
+                    "state": "DONE",
+                    "uncertain": false
+                  }
+                ],
+                "phase": "CLEANUP",
+                "workSeconds": 900
+              },
+              "stageRetained": true,
+              "uncertainOperations": []
+            },
+            "evidenceBytes": 1639,
+            "evidenceSha256": "de747f444d6e755ae94fc06f78b9893ebe47d2fb425333c8ba1a2d27b3809225",
+            "stageRetained": true
+          }
+        },
+        {
+          "case": "still-live",
+          "commands": [
+            {
+              "argc": 4,
+              "args": [
+                "-B",
+                "-c",
+                "import time,sys;time.sleep(0);sys.stdout.write('');sys.exit(0)"
+              ],
+              "elapsedSeconds": 0.031,
+              "executable": "python.exe",
+              "exitCode": 0,
+              "failureClass": null,
+              "inputBytes": 0,
+              "kind": "taskkill",
+              "seq": 1,
+              "startedAt": 26968.687,
+              "state": "FINISHED",
+              "stderr": "",
+              "stdout": "",
+              "timedOut": false,
+              "timeoutSeconds": 2
+            },
+            {
+              "argc": 4,
+              "args": [
+                "-B",
+                "-c",
+                "import time,sys;time.sleep(0);sys.stdout.write('\"inert.exe\",\"43210\",\"Console\",\"1\",\"1 K\"');sys.exit(0)"
+              ],
+              "elapsedSeconds": 0.047,
+              "executable": "python.exe",
+              "exitCode": 0,
+              "failureClass": null,
+              "inputBytes": 0,
+              "kind": "tasklist",
+              "seq": 2,
+              "startedAt": 26968.718,
+              "state": "FINISHED",
+              "stderr": "",
+              "stdout": "\"inert.exe\",\"43210\",\"Console\",\"1\",\"1 K\"",
+              "timedOut": false,
+              "timeoutSeconds": 2
+            },
+            {
+              "argc": 4,
+              "args": [
+                "-B",
+                "-c",
+                "import time,sys;time.sleep(0);sys.stdout.write('');sys.exit(0)"
+              ],
+              "elapsedSeconds": 0.031,
+              "executable": "python.exe",
+              "exitCode": 0,
+              "failureClass": null,
+              "inputBytes": 0,
+              "kind": "docker-ps",
+              "seq": 3,
+              "startedAt": 26968.765,
+              "state": "FINISHED",
+              "stderr": "",
+              "stdout": "",
+              "timedOut": false,
+              "timeoutSeconds": 2
+            }
+          ],
+          "commandsSha256": "c679486a89789260328a98b03ee53f055ea7b3fc80bfe75bb75272bc874b8e81",
+          "effects": {
+            "engineStarts": 0,
+            "nativeChildren": 0,
+            "networkCalls": 0,
+            "productStarts": 0,
+            "providerStarts": 0
+          },
+          "invocation": "worker-50dc25c2fcc1779c",
+          "substituteStarts": 3,
+          "terminal": {
+            "accepted": false,
+            "acknowledgment": {
+              "error": null,
+              "readBack": "NOT_ATTEMPTED",
+              "write": "NOT_ATTEMPTED"
+            },
+            "actualDisposal": "NOT_ATTEMPTED",
+            "disposalEligible": false,
+            "evidence": {
+              "actions": [
+                {
+                  "action": "identity",
+                  "outcome": "CONFIRMED"
+                },
+                {
+                  "action": "taskkill",
+                  "outcome": "CONFIRMED"
+                },
+                {
+                  "action": "container-remove",
+                  "outcome": "CONFIRMED"
+                },
+                {
+                  "action": "tasklist",
+                  "outcome": "CONFIRMED"
+                },
+                {
+                  "action": "docker-ps",
+                  "outcome": "CONFIRMED"
+                },
+                {
+                  "action": "descendants",
+                  "outcome": "CONFIRMED"
+                },
+                {
+                  "action": "listeners",
+                  "outcome": "CONFIRMED"
+                },
+                {
+                  "action": "disposal-target",
+                  "outcome": "CONFIRMED"
+                },
+                {
+                  "action": "handle-close",
+                  "outcome": "CONFIRMED"
+                }
+              ],
+              "child": {
+                "confirmed": true,
+                "reason": "NOT_LAUNCHED"
+              },
+              "containerQuery": "ABSENT",
+              "descendantQuery": "LIVE",
+              "disposalTarget": "SAFE",
+              "errors": [],
+              "listenerQuery": "ABSENT",
+              "ownedIdentities": [
+                {
+                  "creation100ns": 123,
+                  "image": "INERT_NO_PRODUCT",
+                  "pid": 43210
+                }
+              ],
+              "preAckDisposition": "NOT_ACCEPTED_UNKNOWN",
+              "primaryFailures": [],
+              "processQuery": "LIVE",
+              "protocol": {
+                "cleanupSeconds": 120,
+                "closedBy": "TERMINAL",
+                "generation": "gd87a73f3",
+                "operations": [
+                  {
+                    "cleanup": true,
+                    "id": 1,
+                    "inflightAtClose": false,
+                    "kind": "taskkill",
+                    "outcome": null,
+                    "state": "DONE",
+                    "uncertain": false
+                  },
+                  {
+                    "cleanup": true,
+                    "id": 2,
+                    "inflightAtClose": false,
+                    "kind": "tasklist",
+                    "outcome": null,
+                    "state": "DONE",
+                    "uncertain": false
+                  },
+                  {
+                    "cleanup": true,
+                    "id": 3,
+                    "inflightAtClose": false,
+                    "kind": "docker-ps",
+                    "outcome": null,
+                    "state": "DONE",
+                    "uncertain": false
+                  }
+                ],
+                "phase": "CLEANUP",
+                "workSeconds": 900
+              },
+              "stageRetained": true,
+              "uncertainOperations": []
+            },
+            "evidenceBytes": 1926,
+            "evidenceSha256": "1877a23847c9849c58d02513bed1a8639e694d771e0a5ff643dbe1442e17f3e3",
+            "stageRetained": true
+          }
+        },
+        {
+          "case": "unsafe-path",
+          "commands": [
+            {
+              "argc": 4,
+              "args": [
+                "-B",
+                "-c",
+                "import time,sys;time.sleep(0);sys.stdout.write('');sys.exit(0)"
+              ],
+              "elapsedSeconds": 0.031,
+              "executable": "python.exe",
+              "exitCode": 0,
+              "failureClass": null,
+              "inputBytes": 0,
+              "kind": "taskkill",
+              "seq": 1,
+              "startedAt": 26968.812,
+              "state": "FINISHED",
+              "stderr": "",
+              "stdout": "",
+              "timedOut": false,
+              "timeoutSeconds": 2
+            },
+            {
+              "argc": 4,
+              "args": [
+                "-B",
+                "-c",
+                "import time,sys;time.sleep(0);sys.stdout.write('\"system.exe\",\"4\",\"Services\",\"0\",\"1 K\"');sys.exit(0)"
+              ],
+              "elapsedSeconds": 0.016,
+              "executable": "python.exe",
+              "exitCode": 0,
+              "failureClass": null,
+              "inputBytes": 0,
+              "kind": "tasklist",
+              "seq": 2,
+              "startedAt": 26968.843,
+              "state": "FINISHED",
+              "stderr": "",
+              "stdout": "\"system.exe\",\"4\",\"Services\",\"0\",\"1 K\"",
+              "timedOut": false,
+              "timeoutSeconds": 2
+            },
+            {
+              "argc": 4,
+              "args": [
+                "-B",
+                "-c",
+                "import time,sys;time.sleep(0);sys.stdout.write('');sys.exit(0)"
+              ],
+              "elapsedSeconds": 0.015,
+              "executable": "python.exe",
+              "exitCode": 0,
+              "failureClass": null,
+              "inputBytes": 0,
+              "kind": "docker-ps",
+              "seq": 3,
+              "startedAt": 26968.875,
+              "state": "FINISHED",
+              "stderr": "",
+              "stdout": "",
+              "timedOut": false,
+              "timeoutSeconds": 2
+            }
+          ],
+          "commandsSha256": "1191a6f96e7dc3529fb25b39ab43e21daa8b60a730d07d92f0837a1246021486",
+          "effects": {
+            "engineStarts": 0,
+            "nativeChildren": 0,
+            "networkCalls": 0,
+            "productStarts": 0,
+            "providerStarts": 0
+          },
+          "invocation": "worker-50dc25c2fcc1779c",
+          "substituteStarts": 3,
+          "terminal": {
+            "accepted": false,
+            "acknowledgment": {
+              "error": null,
+              "readBack": "NOT_ATTEMPTED",
+              "write": "NOT_ATTEMPTED"
+            },
+            "actualDisposal": "NOT_ATTEMPTED",
+            "disposalEligible": false,
+            "evidence": {
+              "actions": [
+                {
+                  "action": "identity",
+                  "outcome": "CONFIRMED"
+                },
+                {
+                  "action": "taskkill",
+                  "outcome": "CONFIRMED"
+                },
+                {
+                  "action": "container-remove",
+                  "outcome": "CONFIRMED"
+                },
+                {
+                  "action": "tasklist",
+                  "outcome": "CONFIRMED"
+                },
+                {
+                  "action": "docker-ps",
+                  "outcome": "CONFIRMED"
+                },
+                {
+                  "action": "descendants",
+                  "outcome": "CONFIRMED"
+                },
+                {
+                  "action": "listeners",
+                  "outcome": "CONFIRMED"
+                },
+                {
+                  "action": "disposal-target",
+                  "outcome": "FAILED"
+                },
+                {
+                  "action": "handle-close",
+                  "outcome": "CONFIRMED"
+                }
+              ],
+              "child": {
+                "confirmed": true,
+                "reason": "NOT_LAUNCHED"
+              },
+              "containerQuery": "ABSENT",
+              "descendantQuery": "ABSENT",
+              "disposalTarget": "UNSAFE_OR_UNKNOWN",
+              "errors": [
+                "disposal-target: RuntimeError: unsafe disposal target"
+              ],
+              "listenerQuery": "ABSENT",
+              "ownedIdentities": [
+                {
+                  "creation100ns": 123,
+                  "image": "INERT_NO_PRODUCT",
+                  "pid": 43210
+                }
+              ],
+              "preAckDisposition": "NOT_ACCEPTED_UNKNOWN",
+              "primaryFailures": [],
+              "processQuery": "ABSENT",
+              "protocol": {
+                "cleanupSeconds": 120,
+                "closedBy": "TERMINAL",
+                "generation": "gae7f3234",
+                "operations": [
+                  {
+                    "cleanup": true,
+                    "id": 1,
+                    "inflightAtClose": false,
+                    "kind": "taskkill",
+                    "outcome": null,
+                    "state": "DONE",
+                    "uncertain": false
+                  },
+                  {
+                    "cleanup": true,
+                    "id": 2,
+                    "inflightAtClose": false,
+                    "kind": "tasklist",
+                    "outcome": null,
+                    "state": "DONE",
+                    "uncertain": false
+                  },
+                  {
+                    "cleanup": true,
+                    "id": 3,
+                    "inflightAtClose": false,
+                    "kind": "docker-ps",
+                    "outcome": null,
+                    "state": "DONE",
+                    "uncertain": false
+                  }
+                ],
+                "phase": "CLEANUP",
+                "workSeconds": 900
+              },
+              "stageRetained": true,
+              "uncertainOperations": []
+            },
+            "evidenceBytes": 2003,
+            "evidenceSha256": "018d95801e1979de58b1cc24811ca97ac1f513f9c20a2f1fa799bc8052283378",
+            "stageRetained": true
+          }
+        },
+        {
+          "case": "docker-ps-malformed",
+          "commands": [
+            {
+              "argc": 4,
+              "args": [
+                "-B",
+                "-c",
+                "import time,sys;time.sleep(0);sys.stdout.write('');sys.exit(0)"
+              ],
+              "elapsedSeconds": 0.031,
+              "executable": "python.exe",
+              "exitCode": 0,
+              "failureClass": null,
+              "inputBytes": 0,
+              "kind": "taskkill",
+              "seq": 1,
+              "startedAt": 26968.906,
+              "state": "FINISHED",
+              "stderr": "",
+              "stdout": "",
+              "timedOut": false,
+              "timeoutSeconds": 2
+            },
+            {
+              "argc": 4,
+              "args": [
+                "-B",
+                "-c",
+                "import time,sys;time.sleep(0);sys.stdout.write('\"system.exe\",\"4\",\"Services\",\"0\",\"1 K\"');sys.exit(0)"
+              ],
+              "elapsedSeconds": 0.031,
+              "executable": "python.exe",
+              "exitCode": 0,
+              "failureClass": null,
+              "inputBytes": 0,
+              "kind": "tasklist",
+              "seq": 2,
+              "startedAt": 26968.937,
+              "state": "FINISHED",
+              "stderr": "",
+              "stdout": "\"system.exe\",\"4\",\"Services\",\"0\",\"1 K\"",
+              "timedOut": false,
+              "timeoutSeconds": 2
+            },
+            {
+              "argc": 4,
+              "args": [
+                "-B",
+                "-c",
+                "import time,sys;time.sleep(0);sys.stdout.write('not-an-id');sys.exit(0)"
+              ],
+              "elapsedSeconds": 0.031,
+              "executable": "python.exe",
+              "exitCode": 0,
+              "failureClass": "PARSE",
+              "inputBytes": 0,
+              "kind": "docker-ps",
+              "parseError": "RuntimeError('Docker query was malformed, not proof of absence')",
+              "seq": 3,
+              "startedAt": 26968.984,
+              "state": "FINISHED",
+              "stderr": "",
+              "stdout": "not-an-id",
+              "timedOut": false,
+              "timeoutSeconds": 2
+            }
+          ],
+          "commandsSha256": "00e61715750dd18c24bdb0e6d701bdfd065560417527755b02e36a4eda060b9f",
+          "effects": {
+            "engineStarts": 0,
+            "nativeChildren": 0,
+            "networkCalls": 0,
+            "productStarts": 0,
+            "providerStarts": 0
+          },
+          "invocation": "worker-50dc25c2fcc1779c",
+          "substituteStarts": 3,
+          "terminal": {
+            "accepted": false,
+            "acknowledgment": {
+              "error": null,
+              "readBack": "NOT_ATTEMPTED",
+              "write": "NOT_ATTEMPTED"
+            },
+            "actualDisposal": "NOT_ATTEMPTED",
+            "disposalEligible": false,
+            "evidence": {
+              "actions": [
+                {
+                  "action": "identity",
+                  "outcome": "CONFIRMED"
+                },
+                {
+                  "action": "taskkill",
+                  "outcome": "CONFIRMED"
+                },
+                {
+                  "action": "container-remove",
+                  "outcome": "CONFIRMED"
+                },
+                {
+                  "action": "tasklist",
+                  "outcome": "CONFIRMED"
+                },
+                {
+                  "action": "docker-ps",
+                  "outcome": "FAILED"
+                },
+                {
+                  "action": "descendants",
+                  "outcome": "CONFIRMED"
+                },
+                {
+                  "action": "listeners",
+                  "outcome": "CONFIRMED"
+                },
+                {
+                  "action": "disposal-target",
+                  "outcome": "CONFIRMED"
+                },
+                {
+                  "action": "handle-close",
+                  "outcome": "CONFIRMED"
+                }
+              ],
+              "child": {
+                "confirmed": true,
+                "reason": "NOT_LAUNCHED"
+              },
+              "containerQuery": "UNKNOWN",
+              "descendantQuery": "ABSENT",
+              "disposalTarget": "SAFE",
+              "errors": [
+                "docker-ps: CommandFailure: docker-ps: PARSE; evidence retained"
+              ],
+              "listenerQuery": "ABSENT",
+              "ownedIdentities": [
+                {
+                  "creation100ns": 123,
+                  "image": "INERT_NO_PRODUCT",
+                  "pid": 43210
+                }
+              ],
+              "preAckDisposition": "NOT_ACCEPTED_UNKNOWN",
+              "primaryFailures": [],
+              "processQuery": "ABSENT",
+              "protocol": {
+                "cleanupSeconds": 120,
+                "closedBy": "TERMINAL",
+                "generation": "gdd2287e0",
+                "operations": [
+                  {
+                    "cleanup": true,
+                    "id": 1,
+                    "inflightAtClose": false,
+                    "kind": "taskkill",
+                    "outcome": null,
+                    "state": "DONE",
+                    "uncertain": false
+                  },
+                  {
+                    "cleanup": true,
+                    "id": 2,
+                    "inflightAtClose": false,
+                    "kind": "tasklist",
+                    "outcome": null,
+                    "state": "DONE",
+                    "uncertain": false
+                  },
+                  {
+                    "cleanup": true,
+                    "id": 3,
+                    "inflightAtClose": false,
+                    "kind": "docker-ps",
+                    "outcome": "PARSE",
+                    "state": "FAILED",
+                    "uncertain": false
+                  }
+                ],
+                "phase": "CLEANUP",
+                "workSeconds": 900
+              },
+              "stageRetained": true,
+              "uncertainOperations": []
+            },
+            "evidenceBytes": 2005,
+            "evidenceSha256": "9aefd6158abe80094b86a2605233311d994b2d9dcdf3d35cb0609843c6d6a1ba",
+            "stageRetained": true
+          }
+        }
+      ],
+      "invocation": "worker-50dc25c2fcc1779c",
+      "oracles": {
+        "scripts/cvf_ncr_html_owned_profile/journey.test.cjs": "a36539cd8021d8ccc2407e7d3c4edaead49fd01d8525dd460ec43752c0d8a66e",
+        "scripts/cvf_ncr_html_owned_profile/test_control.py": "aa860384683a1c20a4ae3052e281062110be2840182df475e01d3d72a4c0b078",
+        "scripts/cvf_ncr_html_owned_profile/test_execution.py": "7a352621b1a9db2a0a9978edd23c9ca4acb82386a3d5eacc583479fcfdc70357",
+        "scripts/cvf_ncr_html_owned_profile/test_protocol.py": "044b2ef8d6beb99445c1e7ec23a1b55eeb4c64766dde65cae882e3b46d2ed767"
+      },
+      "passed": 9,
+      "production": {
+        "scripts/cvf_ncr_html_owned_profile/__init__.py": "283f238f1196e3dc401ec8538e894db063c0f42123c2a9d730e124c6cef3f541",
+        "scripts/cvf_ncr_html_owned_profile/execution.py": "013486fc5f51f704051f299d1fdb8ee1ce0b69bd7a4313918210ca630a02d00f",
+        "scripts/cvf_ncr_html_owned_profile/journey.cjs": "f76b6d0fec14f2d208fee63004aec2b7211799e5d37160e414633e9dd15d69e0",
+        "scripts/cvf_ncr_html_owned_profile/lifecycle.py": "95c98a6d81ebfc36cf61c1d24c36bc554a5f5c96a3716f73296322a899297d6e",
+        "scripts/cvf_ncr_html_owned_profile/profile.py": "956b31047083b440314a8985383705e0923eb8d0229a74d141b9ae33c2b20caf",
+        "scripts/cvf_ncr_html_owned_profile/protocol.py": "dcc36153457e028db1e7d0e1650526bc6f36803297a1f1df3746f8369bb07681"
+      },
+      "runner": "SUBPROCESS",
+      "schema": "cvf.ncrHtmlInertControls@3",
+      "substituteStarts": 26
+    },
+    "onceOnFinalProductionBytes": true,
+    "actualSubstituteStarts": 26,
+    "boundary": "collector/terminal failure controls using inert utility substitutes; not real Windows owned-handle/native proof"
+  },
+  "temporaryResourceRetention": {
+    "path": "C:\\Users\\DELL\\AppData\\Local\\Temp\\cvf-ncr-local-repair-20261016-final-2a219c81207e4c469e48b2c8fb7bd0d2",
+    "owner": "LOCAL",
+    "disposition": "RETAINED_POLICY_BLOCK",
+    "reason": "automatic approval review rejected the checked outside-repo pytest-directory cleanup with blocked by policy; do not retry another deletion mechanism",
+    "archive": ".cvf/runtime/ncr-html-root-local-repair-20261016/final-pytest-fixtures.zip",
+    "archiveSha256": "2a0a4aa1c094bf328033509cf3537a2331b1508d73e38484f4ad3d57a699924c",
+    "fixtureFiles": 3,
+    "scope": "recording fixtures only, no native/product stage"
+  },
+  "rootPreserved": {
+    "rootCauseClusterId": "NCR_HTML_CONFIGURED_RECEIPT_CONTROL_PROOF",
+    "dependentRepairGeneration": 6,
+    "scecOrdinal": 2,
+    "counters": [
+      2,
+      0,
+      2,
+      0
+    ],
+    "blockers": 2,
+    "freeze": true,
+    "newTransition": false,
+    "newIndependentCriticalEvidence": "NONE"
+  },
+  "workOrderFulfillmentClaim": false,
+  "effects": {
+    "providerCalls": 0,
+    "networkCalls": 0,
+    "publicWrites": 0,
+    "deployments": 0,
+    "realDataMutations": 0,
+    "destructiveActions": 0,
+    "productRuntimeStarts": 0
+  },
+  "claimBoundary": "source-model repair accepted only; no real Windows ABI/native/product/browser/container/provider/stage deletion/parent/runtime/public proof",
+  "firstDocumentaryGate": {
+    "result": "FAIL_STRUCTURAL_HEADINGS_ONLY",
+    "logSha256": "485de7e9ad892b7b07109c393b96683bf55f9385796eb7311d6243472c60b6c4"
+  },
+  "adifDisclosure": {
+    "query": {
+      "taskClass": "Reviewer-return review",
+      "role": "reviewer",
+      "lifecyclePhase": "pre-implementation"
+    },
+    "ids": [
+      "ADIF-0020",
+      "ADIF-0021",
+      "ADIF-0026",
+      "ADIF-0028",
+      "ADIF-0029",
+      "ADIF-0030",
+      "ADIF-0034",
+      "ADIF-0035",
+      "ADIF-0037",
+      "ADIF-0038",
+      "ADIF-0040",
+      "ADIF-0042",
+      "ADIF-0044",
+      "ADIF-0045",
+      "ADIF-0047",
+      "ADIF-0048",
+      "ADIF-0050",
+      "ADIF-0051",
+      "ADIF-0054",
+      "ADIF-0055",
+      "ADIF-0056",
+      "ADIF-0057",
+      "ADIF-0061",
+      "ADIF-0062",
+      "ADIF-0007",
+      "ADIF-0022",
+      "ADIF-0023",
+      "ADIF-0024",
+      "ADIF-0025",
+      "ADIF-0031",
+      "ADIF-0032",
+      "ADIF-0036",
+      "ADIF-0039",
+      "ADIF-0043",
+      "ADIF-0049"
+    ],
+    "packetSha256": "5dce1c2d0f359a9aaaefcb771728dba6b20a1e1fd58cbfd3a653b5da8f032afb",
+    "readTiming": "LATE_AT_MATERIAL_PREFLIGHT"
+  }
+}

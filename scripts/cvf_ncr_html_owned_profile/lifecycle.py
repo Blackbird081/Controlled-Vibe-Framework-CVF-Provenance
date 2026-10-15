@@ -1,4 +1,4 @@
-"""Owned Windows process identities and one failure-preserving cleanup collector."""
+"""Owned Windows process identities, exact handle ownership and the native half of the retained-stage terminal boundary."""
 from __future__ import annotations
 
 import csv
@@ -7,44 +7,14 @@ import io
 import json
 import os
 import re
-import shutil
 import subprocess
-import time
-from pathlib import Path
+from contextlib import suppress
 from ctypes import wintypes as W
+from pathlib import Path
 
+from .execution import argv_evidence, bounded, bounded_communicate, completion, dumps, sha
 
-class Collector:
-    def __init__(self, custody: Path, runner=None):
-        self.custody, self.runner, self.events = custody, runner or subprocess.run, []
-        self.deadline = None
-
-    def remaining(self, requested):
-        remaining = requested if self.deadline is None else min(requested, self.deadline - time.monotonic())
-        if remaining <= 0:
-            raise TimeoutError("owned invocation deadline exhausted before command/start")
-        return remaining
-
-    def command(self, kind, argv, *, timeout=10, data=None):
-        started = time.monotonic()
-        timeout = self.remaining(timeout)
-        event = {"kind": kind, "argv": list(argv), "timeoutSeconds": timeout}
-        try:
-            p = self.runner(argv, input=data, capture_output=True, text=True,
-                            encoding="utf-8", errors="replace", timeout=timeout)
-            event.update(exitCode=p.returncode, stdout=p.stdout, stderr=p.stderr, timedOut=False)
-        except subprocess.TimeoutExpired:
-            event.update(exitCode=None, stdout="", stderr="", timedOut=True)
-        event["elapsedSeconds"] = round(time.monotonic() - started, 4)
-        self.events.append(event)
-        self.flush()
-        if event["timedOut"] or event["exitCode"] != 0:
-            raise RuntimeError(f"{kind}: command failed or timed out; evidence retained")
-        return event["stdout"]
-
-    def flush(self):
-        self.custody.mkdir(parents=True, exist_ok=True)
-        (self.custody / "commands.json").write_text(json.dumps(self.events, indent=2), encoding="utf-8")
+JOB_LIMIT, ACTIVE, BREAKAWAY, SILENT, KILL_CLOSE, EXTENDED = 32, 0x8, 0x800, 0x1000, 0x2000, 9
 
 
 def parse_tasklist(raw):
@@ -66,217 +36,277 @@ def no_reparse(path: Path):
         raise RuntimeError(f"reparse path refused: {path.name}")
 
 
-def remove_disposable(stage: Path, namespace: Path, dependency=None):
+def check_disposable(stage: Path, namespace: Path, dependency=None):
+    """Modeled disposal eligibility only: verify the exact target and the dependency link identity. Nothing is ever deleted here;
+    actual deletion is a separate future admitted action that must cite accepted terminal evidence."""
     no_reparse(namespace)
     no_reparse(stage)
     if stage.resolve() != namespace.resolve() / "source" or not (namespace / "owner.json").is_file():
         raise RuntimeError("unsafe disposal target")
+    link = None
     if dependency:
         link, target = dependency
-        if link.exists():
-            if link.resolve() != target.resolve() or not link.is_relative_to(stage):
-                raise RuntimeError("dependency link identity changed")
-            os.rmdir(link)  # exact junction only; never traverse the installed dependency target
-    if stage.exists():
-        for base, dirs, files in os.walk(stage, followlinks=False):
-            for name in dirs + files:
+        if link.exists() and (link.resolve() != target.resolve() or not link.is_relative_to(stage)):
+            raise RuntimeError("dependency link identity changed")
+    for base, dirs, files in os.walk(stage, followlinks=False):
+        for name in dirs + files:
+            if Path(base) / name != link:  # the one admitted junction is identity-checked above and never traversed
                 no_reparse(Path(base) / name)
-        shutil.rmtree(stage)
+    return True
 
 
-class Native:
-    """Job membership owns descendants; retained process handles pin creation identity."""
-    def __init__(self, collector, docker_prefix, stage, namespace):
+def child_evidence(read, exit_code, claim):
+    """Parent-side verification of the child's saved snapshot: bytes and hash recomputed here, exit independently observed. The child's
+    stdout claim is only compared, never trusted, and a snapshot never certifies its own save."""
+    ev = {"confirmed": False, "exit": completion(exit_code), "snapshot": "MISSING", "claimMatch": False, "teardown": None}
+    try:
+        raw = read()
+        snap = json.loads(raw)
+    except (OSError, ValueError) as error:
+        return {**ev, "reason": f"{type(error).__name__}: {bounded(error, 120)}"}
+    teardown = snap.get("teardown") if isinstance(snap, dict) else None
+    ev.update(snapshot="READ", bytes=len(raw), sha256=sha(raw), claimMatch=claim == f"{sha(raw)} {len(raw)}", teardown=teardown)
+    steps = isinstance(teardown, dict) and {"contextClose", "stdinDestroy"} <= set(teardown) and all(v == "OK" for v in teardown.values())
+    ev["confirmed"] = ev["exit"] == "SUCCESS" and ev["claimMatch"] and bool(steps)
+    return ev
+
+
+class BasicLimit(C.Structure):
+    _fields_ = [("UserTime", C.c_int64), ("JobUserTime", C.c_int64), ("LimitFlags", W.DWORD), ("MinWs", C.c_size_t), ("MaxWs", C.c_size_t),
+                ("ActiveProcessLimit", W.DWORD), ("Affinity", C.c_size_t), ("PriorityClass", W.DWORD), ("SchedulingClass", W.DWORD)]
+
+
+class ExtLimit(C.Structure):
+    _fields_ = [("Basic", BasicLimit), ("Io", C.c_uint64 * 6), ("ProcessMemory", C.c_size_t), ("JobMemory", C.c_size_t),
+                ("PeakProcess", C.c_size_t), ("PeakJob", C.c_size_t)]
+
+
+class Win32:
+    """Thin kernel32 binding for an admitted real native run only; offline tests inject a double."""
+    def __init__(self):
         if os.name != "nt":
             raise RuntimeError("this admitted native profile requires Windows")
-        self.c, self.docker = collector, docker_prefix
-        self.stage, self.namespace, self.dependency = stage, namespace, None
-        self.roots, self.container, self.container_identity, self.ports = [], None, None, []
-        self.container_identity_pending = False
-        self.retained = {}
         self.k = C.WinDLL("kernel32", use_last_error=True)
         signatures = {
-            "CreateJobObjectW": ([C.c_void_p, W.LPCWSTR], W.HANDLE),
-            "OpenProcess": ([W.DWORD, W.BOOL, W.DWORD], W.HANDLE),
+            "CreateJobObjectW": ([C.c_void_p, W.LPCWSTR], W.HANDLE), "OpenProcess": ([W.DWORD, W.BOOL, W.DWORD], W.HANDLE),
             "GetProcessTimes": ([W.HANDLE, C.c_void_p, C.c_void_p, C.c_void_p, C.c_void_p], W.BOOL),
             "QueryFullProcessImageNameW": ([W.HANDLE, W.DWORD, W.LPWSTR, C.POINTER(W.DWORD)], W.BOOL),
-            "AssignProcessToJobObject": ([W.HANDLE, W.HANDLE], W.BOOL),
+            "TerminateProcess": ([W.HANDLE, W.UINT], W.BOOL), "IsProcessInJob": ([W.HANDLE, W.HANDLE, C.POINTER(W.BOOL)], W.BOOL),
+            "AssignProcessToJobObject": ([W.HANDLE, W.HANDLE], W.BOOL), "WaitForSingleObject": ([W.HANDLE, W.DWORD], W.DWORD),
+            "SetInformationJobObject": ([W.HANDLE, C.c_int, C.c_void_p, W.DWORD], W.BOOL),
             "QueryInformationJobObject": ([W.HANDLE, C.c_int, C.c_void_p, W.DWORD, C.c_void_p], W.BOOL),
-            "WaitForSingleObject": ([W.HANDLE, W.DWORD], W.DWORD),
-            "CloseHandle": ([W.HANDLE], W.BOOL),
-            "CreateToolhelp32Snapshot": ([W.DWORD, W.DWORD], W.HANDLE),
-            "OpenThread": ([W.DWORD, W.BOOL, W.DWORD], W.HANDLE),
-            "ResumeThread": ([W.HANDLE], W.DWORD),
-        }
+            "CloseHandle": ([W.HANDLE], W.BOOL), "CreateToolhelp32Snapshot": ([W.DWORD, W.DWORD], W.HANDLE),
+            "OpenThread": ([W.DWORD, W.BOOL, W.DWORD], W.HANDLE), "ResumeThread": ([W.HANDLE], W.DWORD)}
         for name, (args, result) in signatures.items():
             getattr(self.k, name).argtypes, getattr(self.k, name).restype = args, result
-        self.job = self.k.CreateJobObjectW(None, None)
-        if not self.job:
+
+    def _ok(self, value):
+        if not value:
             raise C.WinError(C.get_last_error())
+        return value
+
+    def create_job(self):
+        return self._ok(self.k.CreateJobObjectW(None, None))
+
+    def set_limits(self, job, active):
+        info = ExtLimit()
+        info.Basic.LimitFlags, info.Basic.ActiveProcessLimit = ACTIVE | KILL_CLOSE, active
+        self._ok(self.k.SetInformationJobObject(job, EXTENDED, C.byref(info), C.sizeof(info)))
+
+    def query_limits(self, job):
+        info = ExtLimit()
+        self._ok(self.k.QueryInformationJobObject(job, EXTENDED, C.byref(info), C.sizeof(info), None))
+        flags = info.Basic.LimitFlags
+        return {"active": info.Basic.ActiveProcessLimit if flags & ACTIVE else None, "killOnClose": bool(flags & KILL_CLOSE),
+                "breakaway": bool(flags & BREAKAWAY), "silentBreakaway": bool(flags & SILENT)}
+
+    def members(self, job):
+        raw = C.create_string_buffer(65536)
+        self._ok(self.k.QueryInformationJobObject(job, 3, raw, len(raw), None))
+        assigned, count = C.cast(raw, C.POINTER(W.DWORD))[:2]
+        if count != assigned:
+            raise RuntimeError("descendant query was truncated")
+        return list((C.c_size_t * count).from_buffer(raw, 8))
+
+    def open(self, pid):
+        return self._ok(self.k.OpenProcess(0x1 | 0x1000 | 0x100000, False, pid))
 
     def identity(self, pid, handle=None):
-        h = handle or self.k.OpenProcess(0x1000 | 0x100000, False, pid)
-        if not h:
-            raise RuntimeError(f"process identity unavailable: {pid}")
+        h = handle or self.open(pid)
         try:
-            values = [C.c_ulonglong() for _ in range(4)]
-            name, size = C.create_unicode_buffer(32768), W.DWORD(32768)
-            if not self.k.GetProcessTimes(h, *(C.byref(v) for v in values)) or not self.k.QueryFullProcessImageNameW(h, 0, name, C.byref(size)):
-                raise C.WinError(C.get_last_error())
+            values, name, size = [C.c_ulonglong() for _ in range(4)], C.create_unicode_buffer(32768), W.DWORD(32768)
+            self._ok(self.k.GetProcessTimes(h, *(C.byref(v) for v in values)) and self.k.QueryFullProcessImageNameW(h, 0, name, C.byref(size)))
             return {"pid": pid, "creation100ns": values[0].value, "image": name.value}
         finally:
             if not handle:
-                self.k.CloseHandle(h)
+                self.close(h)
 
-    def launch(self, argv, *, cwd, env, stdout, stdin=None):
-        self.c.remaining(1)
-        p = subprocess.Popen(argv, cwd=cwd, env=env, stdout=stdout, stderr=subprocess.STDOUT,
-                             stdin=stdin, creationflags=0x00000004,  # Windows CREATE_SUSPENDED; not exported by subprocess
-                             text=stdin is not None, encoding="utf-8" if stdin is not None else None)
-        root = {"p": p, "identity": None, "argv": list(argv)}
-        self.roots.append(root)
-        try:
-            if not self.k.AssignProcessToJobObject(self.job, int(p._handle)):
-                raise RuntimeError("cannot assign suspended owned process to descendant job")
-            root["identity"] = self.identity(p.pid, int(p._handle))
-            (self.c.custody / "process-roots.json").write_text(json.dumps(
-                [{k: v for k, v in x.items() if k != "p"} for x in self.roots], indent=2), encoding="utf-8")
-            self._resume_owned(p)
-        except BaseException:
-            # Popen retains the exact creation handle even when identity capture fails.
-            # Never leave an unregistered suspended child or kill a recycled PID.
-            if p.poll() is None:
-                p.kill()
-            p.wait(timeout=5)
-            raise
-        return p
+    def exited(self, handle):
+        return self.k.WaitForSingleObject(handle, 0) == 0
 
-    def _resume_owned(self, p):
-        self.c.remaining(1)
-        # Resume only this suspended process's main thread, after ownership has been persisted.
-        class ThreadEntry(C.Structure):
-            _fields_ = [("size", W.DWORD), ("usage", W.DWORD), ("tid", W.DWORD),
-                        ("pid", W.DWORD), ("priority", W.LONG), ("delta", W.LONG), ("flags", W.DWORD)]
-        snap, entry = self.k.CreateToolhelp32Snapshot(4, 0), ThreadEntry()
+    def in_job(self, handle, job):
+        member = W.BOOL()
+        self._ok(self.k.IsProcessInJob(handle, job, C.byref(member)))
+        return bool(member.value)
+
+    def terminate(self, handle):
+        self._ok(self.k.TerminateProcess(handle, 1))
+
+    def assign(self, job, handle):
+        self._ok(self.k.AssignProcessToJobObject(job, handle))
+
+    def resume(self, pid):
+        class Entry(C.Structure):
+            _fields_ = [("size", W.DWORD), ("usage", W.DWORD), ("tid", W.DWORD), ("pid", W.DWORD), ("priority", W.LONG), ("delta", W.LONG), ("flags", W.DWORD)]
+        snap, entry, resumed = self._ok(self.k.CreateToolhelp32Snapshot(4, 0)), Entry(), 0
         entry.size = C.sizeof(entry)
-        self.k.Thread32First.argtypes = self.k.Thread32Next.argtypes = [W.HANDLE, C.POINTER(ThreadEntry)]
+        self.k.Thread32First.argtypes = self.k.Thread32Next.argtypes = [W.HANDLE, C.POINTER(Entry)]
         try:
-            ok, resumed = self.k.Thread32First(snap, C.byref(entry)), 0
+            ok = self.k.Thread32First(snap, C.byref(entry))
             while ok:
-                if entry.pid == p.pid:
-                    thread = self.k.OpenThread(2, False, entry.tid)
-                    if not thread:
-                        raise RuntimeError("owned suspended thread could not resume")
+                if entry.pid == pid:
+                    thread = self._ok(self.k.OpenThread(2, False, entry.tid))
                     try:
                         if self.k.ResumeThread(thread) == 0xFFFFFFFF:
                             raise RuntimeError("owned suspended thread could not resume")
                     finally:
-                        self.k.CloseHandle(thread)
+                        self.close(thread)
                     resumed += 1
                 ok = self.k.Thread32Next(snap, C.byref(entry))
             if resumed != 1:
                 raise RuntimeError("unexpected suspended thread count")
         finally:
-            self.k.CloseHandle(snap)
+            self.close(snap)
 
-    def members(self):
-        raw = C.create_string_buffer(65536)
-        if not self.k.QueryInformationJobObject(self.job, 3, raw, len(raw), None):
-            raise RuntimeError("descendant job query failed")
-        assigned, count = C.cast(raw, C.POINTER(W.DWORD))[:2]
-        if count != assigned:
-            raise RuntimeError("descendant query was truncated")
-        ids = (C.c_size_t * count).from_buffer(raw, 8)
-        return list(ids)
+    def close(self, handle):
+        self._ok(self.k.CloseHandle(handle))
+
+
+class Native:
+    """Job membership owns descendants; retained process handles pin creation identity. API and Popen are injectable."""
+    def __init__(self, collector, docker_prefix, stage, namespace, *, api=None, popen=None):
+        self.c, self.docker, self.api, self.popen = collector, docker_prefix, api or Win32(), popen or subprocess.Popen
+        self.stage, self.namespace, self.dependency, self.job = stage, namespace, None, None
+        self.roots, self.container, self.container_identity, self.ports = [], None, None, []
+        self.container_identity_pending, self.retained = False, {}
+        job = self.api.create_job()
+        try:  # configure and read back the policy before any utility query or child can exist
+            self.api.set_limits(job, JOB_LIMIT)
+            if self.api.query_limits(job) != {"active": JOB_LIMIT, "killOnClose": True, "breakaway": False, "silentBreakaway": False}:
+                raise RuntimeError("owned job safety policy was not confirmed")
+        except BaseException:
+            self.api.close(job)
+            raise
+        self.job = job
+
+    def identity(self, pid, handle=None):
+        return self.api.identity(pid, handle)
+
+    def _record(self):
+        rows = [{"identity": x["identity"], **x["evidence"]} for x in self.roots]
+        (self.c.custody / "process-roots.json").write_bytes(dumps(rows))  # one safe serializer: no raw argv reaches custody
+
+    def _spawn(self, argv, *, admitted=False, **kw):
+        """Final admission, suspended create, job assign, exact identity, persist it, then a FRESH phase/time check before resume. A failed or
+        refused step never resumes the child; only the exact owned creation handle is stopped, within the remaining finite wait."""
+        proto, own = self.c.proto, None
+        op = self.c.current_op() if admitted else None
+        if op is None:
+            own = op = proto.queue("launch")
+            proto.grant(op, 1)
+        p = self.popen(argv, creationflags=0x00000004, **kw)  # Windows CREATE_SUSPENDED
+        root = {"p": p, "identity": None, "evidence": argv_evidence(argv)}
+        self.roots.append(root)
+        try:
+            self.api.assign(self.job, int(p._handle))
+            root["identity"] = self.api.identity(p.pid, int(p._handle))
+            self._record()  # identity persistence may block or consume the whole cutoff
+            proto.check(op)
+            self.api.resume(p.pid)
+        except BaseException as error:
+            try:
+                if proto.left(5) > 0 and p.poll() is None and proto.left(5) > 0:
+                    p.kill()  # fresh cleanup admission; the exact creation handle cannot target a reused PID
+                wait = proto.left(5)
+                if wait > 0:
+                    with suppress(subprocess.TimeoutExpired):
+                        p.wait(timeout=wait)
+            except Exception as cleanup:
+                self.c.cleanup_errors.append(f"spawn-cleanup: {type(cleanup).__name__}: {bounded(cleanup, 180)}")
+            if own:
+                proto.complete(own, False, type(error).__name__)
+            raise
+        if own:
+            proto.complete(own)
+        return p
+
+    def launch(self, argv, *, cwd, env, stdout, stdin=None):
+        return self._spawn(argv, cwd=cwd, env=env, stdout=stdout, stderr=subprocess.STDOUT, stdin=stdin,
+                           text=stdin is not None, encoding="utf-8" if stdin is not None else None)
+
+    def run_utility(self, argv, *, input=None, timeout=None, **_ignored):
+        """Collector runner: utility children share the job; a timeout kills only this exact child and drains within the remaining wait."""
+        p = self._spawn(argv, admitted=True, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, encoding="utf-8", errors="replace")
+        out, err = bounded_communicate(p, self.c, input, timeout)
+        return subprocess.CompletedProcess(argv, p.returncode, out, err)
 
     def prepare_kill(self):
-        owned = set(self.members())
+        owned = set(self.api.members(self.job))
         for x in self.roots:
-            p = x["p"]
-            if p.poll() is None and self.identity(p.pid) != x["identity"]:
+            if x["p"].poll() is None and self.api.identity(x["p"].pid, int(x["p"]._handle)) != x["identity"]:
                 raise RuntimeError("root process creation identity changed")
         identities = []
         for pid in sorted(owned):
-            handle = self.k.OpenProcess(0x1000 | 0x100000, False, pid)
-            if not handle:
-                raise RuntimeError("descendant identity handle unavailable")
-            self.retained[pid] = handle
-            identities.append(self.identity(pid, handle))
-        (self.c.custody / "descendants-before-cleanup.json").write_text(json.dumps(identities, indent=2), encoding="utf-8")
+            handle = self.retained[pid] = self.api.open(pid)
+            if not self.api.in_job(handle, self.job):
+                raise RuntimeError("opened process is not a member of the owned job")
+            identities.append(self.api.identity(pid, handle))
+        (self.c.custody / "descendants-before-cleanup.json").write_bytes(dumps(identities))
         return identities
 
     def kill(self, identity):
-        if self.k.WaitForSingleObject(self.retained[identity["pid"]], 0) == 0:
-            return  # retained creation handle proves this exact owned process already exited
-        if self.identity(identity["pid"]) != identity:
-            raise RuntimeError("identity changed before taskkill")
-        self.c.command("taskkill", ["taskkill", "/PID", str(identity["pid"]), "/F"], timeout=5)
+        handle = self.retained[identity["pid"]]
+        if self.api.exited(handle):
+            return  # the retained creation handle proves this exact owned process already exited
+        if self.api.identity(identity["pid"], handle) != identity:
+            raise RuntimeError("retained handle identity changed before stop")
+        self.c.op("owned-handle-stop", lambda wait: self.api.terminate(handle), 5, bounded=True)
 
     def remove_container(self):
         if self.container:
-            actual = json.loads(self.c.command("container-identity", [*self.docker, "inspect", self.container]))[0]
+            actual = self.c.command("container-identity", [*self.docker, "inspect", self.container], parse=lambda raw: json.loads(raw)[0])
             if [actual["Id"], actual["Image"], actual["Name"]] != self.container_identity:
                 raise RuntimeError("container identity changed before removal")
             self.c.command("container-remove", [*self.docker, "rm", "-f", self.container], timeout=15)
 
     def query_processes(self):
-        return parse_tasklist(self.c.command("tasklist", ["tasklist", "/NH", "/FO", "CSV"], timeout=10))
+        return self.c.command("tasklist", ["tasklist", "/NH", "/FO", "CSV"], timeout=10, parse=parse_tasklist)
 
     def query_containers(self):
-        return parse_docker_ids(self.c.command("docker-ps", [*self.docker, "ps", "-a", "--no-trunc", "--format", "{{.ID}}"], timeout=10))
+        if not self.docker:
+            return set()  # no Docker context was admitted, so no container can exist
+        return self.c.command("docker-ps", [*self.docker, "ps", "-a", "--no-trunc", "--format", "{{.ID}}"], timeout=10, parse=parse_docker_ids)
+
+    def members(self):
+        return self.api.members(self.job)
 
     def listeners(self):
-        raw = self.c.command("netstat", ["netstat", "-ano", "-p", "tcp"], timeout=10)
-        rows = [r.split() for r in raw.splitlines() if r.strip().startswith("TCP")]
-        if any(len(r) != 5 or not r[4].isdigit() for r in rows):
-            raise RuntimeError("native listener query malformed")
-        return [{"address": r[1], "pid": int(r[4])} for r in rows if r[3] == "LISTENING" and int(r[1].rsplit(":", 1)[1]) in self.ports]
+        def parse(raw):
+            rows = [r.split() for r in raw.splitlines() if r.strip().startswith("TCP")]
+            if any(len(r) != 5 or not r[4].isdigit() for r in rows):
+                raise RuntimeError("native listener query malformed")
+            return [{"address": r[1], "pid": int(r[4])} for r in rows if r[3] == "LISTENING" and int(r[1].rsplit(":", 1)[1]) in self.ports]
+        return self.c.command("netstat", ["netstat", "-ano", "-p", "tcp"], timeout=10, parse=parse)
 
-    def dispose(self):
-        remove_disposable(self.stage, self.namespace, self.dependency)
+    def verify_disposal_target(self):
+        return check_disposable(self.stage, self.namespace, self.dependency)
 
     def close(self):
-        for handle in self.retained.values():
-            self.k.CloseHandle(handle)
-        self.k.CloseHandle(self.job)
-
-
-def finalize(ops, failures, *, seconds=120):
-    """Always query after action errors; deletion is conditional on successful native absence."""
-    until = time.monotonic() + seconds
-    result = {"errors": [], "ownedIdentities": [], "processQuery": "UNKNOWN", "containerQuery": "UNKNOWN",
-              "descendantQuery": "UNKNOWN", "listenerQuery": "UNKNOWN", "stageRemoved": False}
-    if getattr(ops, "container_identity_pending", False):
-        result["errors"].append("container identity unresolved after creation attempt; preserve stage")
-    def attempt(label, fn):
-        try:
-            if time.monotonic() >= until:
-                raise TimeoutError("cleanup deadline exhausted")
-            return fn()
-        except Exception as error:
-            result["errors"].append(f"{label}: {type(error).__name__}: {str(error)[:180]}")
-    try:
-        identities = attempt("identity", ops.prepare_kill)
-        if identities is not None:
-            result["ownedIdentities"] = identities
-            # Individual exact PID actions keep creation checks immediately before each effect.
-            for identity in reversed(identities):
-                attempt("taskkill", lambda x=identity: ops.kill(x))
-        attempt("container-remove", ops.remove_container)
-        pids, containers, members, listeners = (attempt("tasklist", ops.query_processes),
-            attempt("docker-ps", ops.query_containers), attempt("descendants", ops.members), attempt("listeners", ops.listeners))
-        if pids is not None:
-            result["processQuery"] = "ABSENT" if not (set(pids) & {x["pid"] for x in result["ownedIdentities"]}) else "LIVE"
-        if containers is not None and not getattr(ops, "container_identity_pending", False):
-            result["containerQuery"] = "ABSENT" if ops.container not in containers else "LIVE"
-        if members is not None:
-            result["descendantQuery"] = "ABSENT" if not members else "LIVE"
-        if listeners is not None:
-            result["listenerQuery"] = "ABSENT" if not listeners else "LIVE"
-        if not result["errors"] and all(result[k] == "ABSENT" for k in ("processQuery", "containerQuery", "descendantQuery", "listenerQuery")):
-            attempt("disposal", ops.dispose)
-            result["stageRemoved"] = not ops.stage.exists()
-        result["disposition"] = "ACCEPTED_CLEANUP" if not failures and not result["errors"] and result["stageRemoved"] else "NOT_ACCEPTED_UNKNOWN"
-        return result
-    finally:
-        ops.close()
+        errors = []
+        for handle in [*self.retained.values(), self.job]:  # every exact handle is attempted; a close error stays a failure
+            try:
+                self.api.close(handle)
+            except Exception as error:
+                errors.append(f"{type(error).__name__}: {str(error)[:80]}")
+        if errors:
+            raise RuntimeError("exact-handle close failed: " + "; ".join(errors))
