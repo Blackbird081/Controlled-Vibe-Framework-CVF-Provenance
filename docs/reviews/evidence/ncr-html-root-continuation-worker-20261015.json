@@ -1,0 +1,458 @@
+{
+  "schemaVersion": "cvf.ncrHtmlRootContinuationWorkerEvidence@1.0.0",
+  "status": "BLOCKED_WITH_REASON",
+  "terminalReason": "REQ-08 BLOCKED: mandatory mapped reads were late or incomplete relative to first edit and tests; REQ-01..07 delivered and evidenced",
+  "workOrder": {
+    "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_ROOT_CONTINUATION_R1_2026-10-15.md",
+    "sha256": "6d11ce2d63606e20e744fd0536723e8731948f841f07f665d6facc019730a3ee"
+  },
+  "executionBaseHead": "2d8ea143beed3cce7bc380025285da67d8b2768c",
+  "phase": "OFFLINE_IMPLEMENTATION_ONLY",
+  "immutableInputsVerifiedBeforeFirstEdit": {
+    "baseline": "4a5ddefc2d634402417c79a07faa99ce930c777aef608e647141f4796f092760",
+    "workOrder": "6d11ce2d63606e20e744fd0536723e8731948f841f07f665d6facc019730a3ee",
+    "grant": "221d40500d617f47a35a40f1b995eb853c17344fd40102286bac3ff12064a984",
+    "companion": "f4efcd30e5d8626efd6a1391be361ceb461e2c71a21366b3a91d2df3771b4747",
+    "dispatchProof": "fc611623b5c6f7f8a6efeb602aaa610b01c4638864d8abdad2f5d9251ff28dcf",
+    "sixHelperPreimages": "all six matched the dispatch sourcePins before the first edit; Git status clean at 2d8ea143beed3cce7bc380025285da67d8b2768c",
+    "entrypointBlobs": {
+      "scripts/probe_cvf_q001_synthetic_system_chain.py": "26b34890e3031f5b13ca4965585adbdf14a483aefe246834d3848cb165c3fe9d",
+      "scripts/probe_cvf_w05_browser_chain.cjs": "2f0981b2356a51a85f34d3d6ed94a0d0a0606c48d306888711876a5c2b225dec"
+    }
+  },
+  "preparation": {
+    "disposition": "PARTIAL_WITH_REASON",
+    "chronologyUtc": {
+      "firstToolCall": "2026-10-15T08:17:21Z",
+      "boundPreImplementationGateStart": "2026-10-15T08:19:02Z",
+      "scaffoldWritten": "after the gate PASS and before any code edit",
+      "firstSourceEdit": "between the 08:22:37Z and 08:36:23Z clock probes (profile.py binding constants first)",
+      "runnerLogMtimeUtc": {
+        "runner1-pytest-inprocess.log": "2026-10-15T08:46:20Z",
+        "runner2-pytest-inprocess.log": "2026-10-15T08:47:32Z",
+        "runner3-node.log": "2026-10-15T08:47:43Z",
+        "runner4-pytest-full.log": "2026-10-15T08:48:32Z"
+      },
+      "finalFullPytestWindow": "2026-10-15T08:48:29Z to 08:48:32Z",
+      "lateReadsStarted": "after the final full pytest runner, before authoring the return and proof"
+    },
+    "completeBeforeFirstEdit": [
+      "AGENTS.md",
+      "work order full",
+      "baseline full",
+      "grant full",
+      "companion full",
+      "dispatch proof full",
+      "CVF_SESSION_MEMORY.md",
+      "bootstrap read model",
+      "active handoff V63",
+      "source assessment full",
+      "held V2 design Six Coupled Obligations and Phase Budgets",
+      "all six helper files full",
+      "entrypoint routing branches (q001 lines 725-749, w05 lines 280-296) and inverse comparison to 0850546",
+      "core_orchestrator execute ledger_entry block",
+      "SOP Requirement 13 and Worker Preparation Reminder",
+      "run_worker_return_fast_gate.py full",
+      "CVF_ADIF-0026 full",
+      "acceptance-ledger addendum full",
+      "lifecycle Agent Continuation lines 97-164 and Outcome-Bound Work Selection full",
+      "Review Cost Same-Scope lines 253-283, Operator-Cleared lines 285-300 and 380-390, Probe Admission lines 391-445"
+    ],
+    "lateOrIncomplete": [
+      "template source-verification addendum: never read before edits; read in full after the final pytest runner",
+      "lifecycle Agent Continuation lines 165-317: read after the final pytest runner",
+      "Review Cost Operator-Cleared lines 300-380 and Probe Admission lines 445-540: read after the final pytest runner",
+      "guard orientation README: worker rows only by grep-level extraction before edits; not a full read",
+      "literal-format gotchas: lines 1-330 read after edits and before authoring the return",
+      "checker predicates for quality gate, acceptance ledger, review-cost worker-return, epistemic, trace, probe admission, learning, SCEC, closeability, authority/encoding, retrospective, Delta, core guard: read after code and tests, before authoring the return/proof"
+    ],
+    "claim": "Technical results do not repair history; no retroactive compliance is claimed."
+  },
+  "sources": {
+    "scripts/cvf_ncr_html_owned_profile/__init__.py": {
+      "sha256": "a04411f9edad885cc68826248a5444a0177e7d7055382e5ae7b5383f77fbb31a",
+      "bytes": 20031,
+      "lines": 320,
+      "crlf": 0,
+      "finalLF": true,
+      "baseLines": 259
+    },
+    "scripts/cvf_ncr_html_owned_profile/lifecycle.py": {
+      "sha256": "49fb5727840ae89ea462220e6574b3bcc3ccb0564b8bc684a7f520b9299a4539",
+      "bytes": 16810,
+      "lines": 324,
+      "crlf": 0,
+      "finalLF": true,
+      "baseLines": 282
+    },
+    "scripts/cvf_ncr_html_owned_profile/profile.py": {
+      "sha256": "2c9debe43bac43c22afae1cdc8155f4f8f7e182e5e38603772334ddff92676b0",
+      "bytes": 18246,
+      "lines": 320,
+      "crlf": 0,
+      "finalLF": true,
+      "baseLines": 200
+    },
+    "scripts/cvf_ncr_html_owned_profile/test_control.py": {
+      "sha256": "ae94e6c376e52a719b57b6348f8ff95f3879bf63d17e30ec982cfa1fc6672c31",
+      "bytes": 23140,
+      "lines": 346,
+      "crlf": 0,
+      "finalLF": true,
+      "baseLines": 113
+    },
+    "scripts/cvf_ncr_html_owned_profile/journey.cjs": {
+      "sha256": "8d55b5d12668ce1f9db2cedc1f3f6bd6cda01eeb6eb621a12444e3e368d8a0b2",
+      "bytes": 11923,
+      "lines": 200,
+      "crlf": 0,
+      "finalLF": true,
+      "baseLines": 182
+    },
+    "scripts/cvf_ncr_html_owned_profile/journey.test.cjs": {
+      "sha256": "a2b87986b685585dcfac0668db1ca11d9f04bbef063f88fbdb071a006c89176e",
+      "bytes": 4201,
+      "lines": 67,
+      "crlf": 0,
+      "finalLF": true,
+      "baseLines": 33
+    }
+  },
+  "REQ-01": {
+    "status": "PASS",
+    "artifacts": [
+      "scripts/cvf_ncr_html_owned_profile/__init__.py",
+      "scripts/cvf_ncr_html_owned_profile/profile.py",
+      "scripts/cvf_ncr_html_owned_profile/test_control.py",
+      "scripts/cvf_ncr_html_owned_profile/journey.cjs",
+      "scripts/cvf_ncr_html_owned_profile/journey.test.cjs",
+      "docs/reviews/evidence/ncr-html-root-continuation-worker-20261015.json"
+    ],
+    "implementation": [
+      "profile.validate_inputs exact seven fields, types, NFC, synthetic path, title, distinct anchors, cap1/2 as strict int",
+      "profile.admit_controls typed receipt bound to PRODUCTION hashes plus oracle hash, actor, invocation join",
+      "profile.admit_sources requires pair/grant/companion pins; constants ENTRY_PY ENTRY_CJS HELPERS OUTPUTS WO PINS PAIR replace old bindings",
+      "__init__.run orders env refusal, inputs, controls, sources, namespace before Native/utility/socket; journey.validateInputs mirrors Python",
+      "test_control SCRATCH is a fresh per-invocation directory; receipt aggregates only this invocation"
+    ],
+    "tests": [
+      "TestAdmission::test_wrong_input_or_control_stops_before_source_read_namespace_or_effect[inputs0-2-over0]",
+      "TestAdmission::test_wrong_input_or_control_stops_before_source_read_namespace_or_effect[inputs1-1-over1]",
+      "TestAdmission::test_wrong_input_or_control_stops_before_source_read_namespace_or_effect[inputs2-2-over2]",
+      "TestAdmission::test_wrong_input_or_control_stops_before_source_read_namespace_or_effect[inputs3-2-over3]",
+      "TestAdmission::test_wrong_input_or_control_stops_before_source_read_namespace_or_effect[inputs4-2-over4]",
+      "TestAdmission::test_wrong_input_or_control_stops_before_source_read_namespace_or_effect[inputs5-2-over5]",
+      "TestAdmission::test_wrong_input_or_control_stops_before_source_read_namespace_or_effect[inputs6-2-over6]",
+      "TestAdmission::test_wrong_input_or_control_stops_before_source_read_namespace_or_effect[inputs7-2-over7]",
+      "TestAdmission::test_wrong_input_or_control_stops_before_source_read_namespace_or_effect[inputs8-True-over8]",
+      "TestAdmission::test_wrong_input_or_control_stops_before_source_read_namespace_or_effect[inputs9-3-over9]",
+      "TestAdmission::test_wrong_input_or_control_stops_before_source_read_namespace_or_effect[text-2-over10]",
+      "TestAdmission::test_wrong_input_or_control_stops_before_source_read_namespace_or_effect[None-1-over11]",
+      "TestAdmission::test_wrong_input_or_control_stops_before_source_read_namespace_or_effect[inputs12-1-over12]",
+      "TestAdmission::test_wrong_input_or_control_stops_before_source_read_namespace_or_effect[None-2-over13]",
+      "TestAdmission::test_wrong_input_or_control_stops_before_source_read_namespace_or_effect[None-2-over14]",
+      "TestAdmission::test_wrong_input_or_control_stops_before_source_read_namespace_or_effect[None-2-over15]",
+      "TestAdmission::test_wrong_input_or_control_stops_before_source_read_namespace_or_effect[None-2-over16]",
+      "TestAdmission::test_wrong_input_or_control_stops_before_source_read_namespace_or_effect[None-2-over17]",
+      "TestAdmission::test_wrong_input_or_control_stops_before_source_read_namespace_or_effect[None-2-over18]",
+      "TestAdmission::test_wrong_input_or_control_stops_before_source_read_namespace_or_effect[None-2-over19]",
+      "TestAdmission::test_wrong_input_or_control_stops_before_source_read_namespace_or_effect[None-2-over20]",
+      "TestAdmission::test_wrong_input_or_control_stops_before_source_read_namespace_or_effect[None-2-over21]",
+      "TestAdmission::test_source_grant_or_environment_drift_stops_before_namespace[pin]",
+      "TestAdmission::test_source_grant_or_environment_drift_stops_before_namespace[pair-missing]",
+      "TestAdmission::test_source_grant_or_environment_drift_stops_before_namespace[env]",
+      "TestAdmission::test_valid_admission_reaches_only_the_first_owned_effect_and_terminal_custody_keeps_primary_and_teardown_errors",
+      "test_canonical_fixtures_pins_exact8_family_and_immutable_legacy_blob",
+      "Local distinct one-build and worker two-build budgets are explicit",
+      "missing, extra, mistyped and non-synthetic inputs fail before login",
+      "import installs no network guard and starts no runtime"
+    ]
+  },
+  "REQ-02": {
+    "status": "PASS",
+    "artifacts": [
+      "scripts/cvf_ncr_html_owned_profile/lifecycle.py",
+      "scripts/cvf_ncr_html_owned_profile/test_control.py",
+      "docs/reviews/evidence/ncr-html-root-continuation-worker-20261015.json"
+    ],
+    "implementation": [
+      "profile.Collector.command persists STARTED evidence before runner call; persistence or deadline failure never invokes the runner",
+      "failure classes SPAWN TIMEOUT NONZERO_EXIT PARSE UNKNOWN PERSIST REPEAT_REFUSED; bounded() redacts token-like text and limits size",
+      "ONE_SHOT installed-browser-path refused on repeat; no retry or fallback; injectable clock/runner/sleeper"
+    ],
+    "tests": [
+      "TestCommandsAndBudgets::test_start_evidence_precedes_launch_and_persistence_or_deadline_failure_prevents_it",
+      "TestCommandsAndBudgets::test_failure_classes_are_distinct_bounded_and_secret_safe[runner-SPAWN-kw0]",
+      "TestCommandsAndBudgets::test_failure_classes_are_distinct_bounded_and_secret_safe[runner-UNKNOWN-kw1]",
+      "TestCommandsAndBudgets::test_failure_classes_are_distinct_bounded_and_secret_safe[<lambda>-NONZERO_EXIT-kw2]",
+      "TestCommandsAndBudgets::test_failure_classes_are_distinct_bounded_and_secret_safe[<lambda>-PARSE-kw3]",
+      "TestCommandsAndBudgets::test_failure_classes_are_distinct_bounded_and_secret_safe[runner-TIMEOUT-kw4]",
+      "TestCommandsAndBudgets::test_the_one_shot_module_query_never_retries_or_falls_back"
+    ]
+  },
+  "REQ-03": {
+    "status": "PASS",
+    "artifacts": [
+      "scripts/cvf_ncr_html_owned_profile/__init__.py",
+      "scripts/cvf_ncr_html_owned_profile/profile.py",
+      "scripts/cvf_ncr_html_owned_profile/test_control.py",
+      "scripts/cvf_ncr_html_owned_profile/journey.cjs",
+      "scripts/cvf_ncr_html_owned_profile/journey.test.cjs",
+      "docs/reviews/evidence/ncr-html-root-continuation-worker-20261015.json"
+    ],
+    "implementation": [
+      "__init__.Budget engine4 web6 route2 global12 debit before every attempt; __init__.poll sleeps clamped via Collector.sleep",
+      "Collector.remaining clamps command/HTTP/IPC/wait/teardown to the monotonic deadline; journey.deadlineClock clamps browser waits",
+      "run uses WORK_SECONDS 900 and CLEANUP_SECONDS 120 as implementation limits only"
+    ],
+    "tests": [
+      "TestCommandsAndBudgets::test_budget_buckets_accept_the_exact_boundary_refuse_the_next_attempt_and_never_transfer",
+      "TestCommandsAndBudgets::test_poll_debits_before_each_attempt_clamps_sleeps_and_refuses_without_a_request",
+      "every browser wait is clamped to the monotonic work deadline"
+    ]
+  },
+  "REQ-04": {
+    "status": "PASS",
+    "artifacts": [
+      "scripts/cvf_ncr_html_owned_profile/__init__.py",
+      "scripts/cvf_ncr_html_owned_profile/profile.py",
+      "scripts/cvf_ncr_html_owned_profile/test_control.py",
+      "scripts/cvf_ncr_html_owned_profile/journey.cjs",
+      "scripts/cvf_ncr_html_owned_profile/journey.test.cjs",
+      "docs/reviews/evidence/ncr-html-root-continuation-worker-20261015.json"
+    ],
+    "implementation": [
+      "profile.BASE_COMMIT and BASE_BLOBS pin immutable 0850546 entry blobs; tests and journey.test.cjs compare against them, not HEAD",
+      "profile.check_row joins event.request_id, event.timestamp, event.decision.final_decision and report.request_summary; rejects event.final_decision",
+      "profile.excerpt keeps JS slice(0,500) UTF-16 semantics including a split surrogate; v1_changed checks unchanged v1"
+    ],
+    "tests": [
+      "test_canonical_fixtures_pins_exact8_family_and_immutable_legacy_blob",
+      "TestOracles::test_ledger_oracle_joins_the_real_schema_and_rejects_old_missing_or_mismatched_rows",
+      "TestOracles::test_excerpt_counts_utf16_units_like_the_renderer_including_split_surrogates",
+      "legacy browser branches survive exact routing-only patch against the immutable base blob"
+    ]
+  },
+  "REQ-05": {
+    "status": "PASS",
+    "artifacts": [
+      "scripts/cvf_ncr_html_owned_profile/__init__.py",
+      "scripts/cvf_ncr_html_owned_profile/lifecycle.py",
+      "scripts/cvf_ncr_html_owned_profile/test_control.py",
+      "docs/reviews/evidence/ncr-html-root-continuation-worker-20261015.json"
+    ],
+    "implementation": [
+      "lifecycle.Native job32 ACTIVE_PROCESS plus KILL_ON_JOB_CLOSE, no breakaway, set then read-back before any child",
+      "Native._spawn: suspended create, assign, identity, persist, then resume; a failed step kills only the exact Popen handle",
+      "Native.run_utility owns utility children in the same job; Native.close attempts every exact handle and raises on any close error",
+      "lifecycle.Win32 is the only kernel32 binding and is never constructed in tests; Kernel double injected"
+    ],
+    "tests": [
+      "TestOwnership::test_job_policy_is_read_back_before_any_child_and_identity_is_persisted_before_resume",
+      "TestOwnership::test_a_failed_ownership_step_kills_only_the_exact_child_and_never_resumes_before_it[assign]",
+      "TestOwnership::test_a_failed_ownership_step_kills_only_the_exact_child_and_never_resumes_before_it[identity]",
+      "TestOwnership::test_a_failed_ownership_step_kills_only_the_exact_child_and_never_resumes_before_it[persist]",
+      "TestOwnership::test_a_failed_ownership_step_kills_only_the_exact_child_and_never_resumes_before_it[resume]",
+      "TestOwnership::test_utility_commands_share_the_job_and_a_timeout_kills_only_the_exact_child"
+    ]
+  },
+  "REQ-06": {
+    "status": "PASS",
+    "artifacts": [
+      "scripts/cvf_ncr_html_owned_profile/__init__.py",
+      "scripts/cvf_ncr_html_owned_profile/lifecycle.py",
+      "scripts/cvf_ncr_html_owned_profile/profile.py",
+      "scripts/cvf_ncr_html_owned_profile/test_control.py",
+      "scripts/cvf_ncr_html_owned_profile/journey.cjs",
+      "scripts/cvf_ncr_html_owned_profile/journey.test.cjs",
+      "docs/reviews/evidence/ncr-html-root-continuation-worker-20261015.json"
+    ],
+    "implementation": [
+      "lifecycle.finalize one boundary: before actions, identity, kill, container, queries, after actions, disposal only if no error, handle close, final persistence",
+      "persistence failure becomes UNKNOWN; disposition NOT_ACCEPTED_UNKNOWN on any error; __init__.run passes proxy/join/reservation/log actions",
+      "tests inject every fault independently and preserve primary plus teardown errors in final custody"
+    ],
+    "tests": [
+      "test_actual_finally_rejects_failed_native_control[taskkill-nonzero]",
+      "test_actual_finally_rejects_failed_native_control[tasklist-nonzero]",
+      "test_actual_finally_rejects_failed_native_control[docker-ps-nonzero]",
+      "test_actual_finally_rejects_failed_native_control[timeout]",
+      "test_actual_finally_rejects_failed_native_control[tasklist-malformed]",
+      "test_actual_finally_rejects_failed_native_control[identity-mismatch]",
+      "test_actual_finally_rejects_failed_native_control[still-live]",
+      "test_actual_finally_rejects_failed_native_control[unsafe-path]",
+      "test_actual_finally_rejects_failed_native_control[docker-ps-malformed]",
+      "TestAdmission::test_valid_admission_reaches_only_the_first_owned_effect_and_terminal_custody_keeps_primary_and_teardown_errors",
+      "TestTerminal::test_each_injected_fault_is_preserved_never_accepted_and_does_not_skip_later_actions[None]",
+      "TestTerminal::test_each_injected_fault_is_preserved_never_accepted_and_does_not_skip_later_actions[prepare_kill]",
+      "TestTerminal::test_each_injected_fault_is_preserved_never_accepted_and_does_not_skip_later_actions[kill]",
+      "TestTerminal::test_each_injected_fault_is_preserved_never_accepted_and_does_not_skip_later_actions[remove_container]",
+      "TestTerminal::test_each_injected_fault_is_preserved_never_accepted_and_does_not_skip_later_actions[query_processes]",
+      "TestTerminal::test_each_injected_fault_is_preserved_never_accepted_and_does_not_skip_later_actions[query_containers]",
+      "TestTerminal::test_each_injected_fault_is_preserved_never_accepted_and_does_not_skip_later_actions[members]",
+      "TestTerminal::test_each_injected_fault_is_preserved_never_accepted_and_does_not_skip_later_actions[listeners]",
+      "TestTerminal::test_each_injected_fault_is_preserved_never_accepted_and_does_not_skip_later_actions[dispose]",
+      "TestTerminal::test_each_injected_fault_is_preserved_never_accepted_and_does_not_skip_later_actions[close]",
+      "TestTerminal::test_proxy_reader_log_and_persistence_faults_are_attempted_and_an_expired_deadline_still_closes_handles"
+    ]
+  },
+  "REQ-07": {
+    "status": "PASS",
+    "artifacts": [
+      "scripts/cvf_ncr_html_owned_profile/__init__.py",
+      "scripts/cvf_ncr_html_owned_profile/lifecycle.py",
+      "scripts/cvf_ncr_html_owned_profile/profile.py",
+      "scripts/cvf_ncr_html_owned_profile/test_control.py",
+      "scripts/cvf_ncr_html_owned_profile/journey.cjs",
+      "scripts/cvf_ncr_html_owned_profile/journey.test.cjs",
+      "docs/reviews/evidence/ncr-html-root-continuation-worker-20261015.json"
+    ],
+    "implementation": [
+      "exact6 helper files modified, return and proof new; every helper below 350 lines, LF, UTF-8, no trailing whitespace",
+      "runner count 4 of 4, real substitute starts 26 of 27, effects 0"
+    ],
+    "tests": [
+      "test_canonical_fixtures_pins_exact8_family_and_immutable_legacy_blob",
+      "test_actual_finally_rejects_failed_native_control[taskkill-nonzero]",
+      "test_actual_finally_rejects_failed_native_control[tasklist-nonzero]",
+      "test_actual_finally_rejects_failed_native_control[docker-ps-nonzero]",
+      "test_actual_finally_rejects_failed_native_control[timeout]",
+      "test_actual_finally_rejects_failed_native_control[tasklist-malformed]",
+      "test_actual_finally_rejects_failed_native_control[identity-mismatch]",
+      "test_actual_finally_rejects_failed_native_control[still-live]",
+      "test_actual_finally_rejects_failed_native_control[unsafe-path]",
+      "test_actual_finally_rejects_failed_native_control[docker-ps-malformed]"
+    ],
+    "gitCommandAccounting": "AMBIGUOUS_CEILING_INTERPRETATION routed to Local; see counts.gitCommands"
+  },
+  "REQ-08": {
+    "status": "BLOCKED",
+    "artifacts": [
+      "docs/reviews/CVF_NCR_HTML_ROOT_CONTINUATION_WORKER_RETURN_2026-10-15.md",
+      "docs/reviews/evidence/ncr-html-root-continuation-worker-20261015.json"
+    ],
+    "reason": "mandatory mapped reads late or incomplete; see preparation.lateOrIncomplete",
+    "delivered": [
+      "actual scaffold before code (shape present)",
+      "bound pre-implementation PASS",
+      "full return with proof joins",
+      "learning/self-proof/retrospective fields",
+      "final-byte full gate run after freeze; its result is recorded only in ignored custody and is not predeclared here"
+    ]
+  },
+  "counts": {
+    "testRunners": {
+      "limit": 4,
+      "used": 4,
+      "pytest": 3,
+      "nodeTest": 1,
+      "detail": [
+        "R1 pytest in-process selection: 54 passed 1 failed (fake Git double returned the same text for ls-files and cached diff)",
+        "R2 pytest in-process selection: 55 passed 9 deselected",
+        "R3 node --test journey.test.cjs: 5 passed",
+        "R4 pytest full test_control.py: 64 passed including nine real inert classes"
+      ]
+    },
+    "substituteStarts": {
+      "limit": 27,
+      "pythonRealChildren": 26,
+      "nodeChildren": 0,
+      "perCase": {
+        "taskkill-nonzero": 3,
+        "tasklist-nonzero": 3,
+        "docker-ps-nonzero": 3,
+        "timeout": 3,
+        "tasklist-malformed": 3,
+        "identity-mismatch": 2,
+        "still-live": 3,
+        "unsafe-path": 3,
+        "docker-ps-malformed": 3
+      }
+    },
+    "nonRunnerStarts": {
+      "preflightFakeSubprocessScript": 2,
+      "nodeSyntaxCheck": 3,
+      "note": "no pytest/node --test runner, zero real children; the script drives the nine case bodies with an in-process stand-in"
+    },
+    "gitCommands": {
+      "limitStatedByOrder": 8,
+      "harnessAdmitSourcesPerCall": 4,
+      "harnessAdmitSourcesActualCalls": 0,
+      "testCodeGitShowExecutions": 4,
+      "workerShellInspectionBeforeFinalObservations": 15,
+      "finalObservations": 2,
+      "reading": "Strict per-actor reading is exceeded by shell inspection (15 plus 2 plus 4 test executions); the design reading (phase A runtime admission subprocesses, 4 per call, 0 calls) is within the cap. Routed to Local for interpretation; no further Git inspection beyond the gate-required status and diff observations."
+    },
+    "effects": {
+      "providerCalls": 0,
+      "networkCalls": 0,
+      "publicWrites": 0,
+      "deployments": 0,
+      "realDataMutations": 0,
+      "destructiveActions": 0,
+      "productRuntimeStarts": 0,
+      "nativeChildren": 0,
+      "runtimeUtilities": 0,
+      "containers": 0,
+      "browserProfiles": 0,
+      "exports": 0,
+      "evaluates": 0,
+      "loopbackRequests": 0,
+      "windowsApiCalls": 0
+    },
+    "tests": {
+      "python": 64,
+      "node": 5
+    }
+  },
+  "custody": {
+    "root": ".cvf/runtime/ncr-html-root-continuation-worker-20261015 (ignored)",
+    "invocation": "worker-c7caaa74a599dbc8",
+    "retained": {
+      "inv1/entry-gate.log": "68cd751232fc2a6e3f0f709ea9b8016e374003c2ecebc0155069f219878a424f",
+      "inv1/scaffold.log": "1252eb5dda19d434517ba97aec07fc9b07e75d33c6f97ed97d1e1d3bb27ec70b",
+      "inv1/runner1-pytest-inprocess.log (FAIL, retained)": "cc5c72bb621766d2a443872c0f25a6f42e50d23a1c3d4cc06d28ee620ea8bbe4",
+      "inv1/runner2-pytest-inprocess.log": "b00ca2e13a2ab85657f92f7522bc9a48b843d16a39ce6a6c3e2c7742a8085e4a",
+      "inv1/runner3-node.log": "771db8df0e5142d2551f156f1794a4412b8940bbe152a89d4f6618c0d6571336",
+      "inv1/runner4-pytest-full.log": "08439333c421a7df9816907f19ccdcc4d321c71b38cd78d017be192649ffb929",
+      "inv1/preflight-dryrun-nine-fake-subprocess.log": "85ce747a23f5689614eaee1983fcc01bc2e0bacbd90dffa1bb1e8076894193fd",
+      "inv1/sources-before-runner4.sha256": "8d691d7ea510efb31248c85dd420533f7735c8041b18b0cda97046af1f6f6f33",
+      "inv1/sources-after-runner4.sha256": "8d691d7ea510efb31248c85dd420533f7735c8041b18b0cda97046af1f6f6f33",
+      "worker-invocation/inert-results.json": "5a458383b89b5eb30bd9e4b47202acc4e25f5d0e754a2db4389ca180389eb91a"
+    },
+    "owner": "Local reviewer after the worker lane releases",
+    "reason": "failed first run, actual control receipt and gate logs must survive review; fixtures hold inert stage directories only",
+    "removed": "scratchpad pytest basetemp directories, temporary generator and preflight scripts, task-owned temporary files outside the repository",
+    "untouched": "old failed custody, shared cache, active profile, pre-existing dependencies"
+  },
+  "originalFailures": [
+    {
+      "id": "R1",
+      "what": "TestAdmission valid-admission test failed: the fake Git returned the base text for untracked and cached queries, so the lane-drift guard rejected the admission; repaired in the test double only",
+      "logSha256": "cc5c72bb621766d2a443872c0f25a6f42e50d23a1c3d4cc06d28ee620ea8bbe4"
+    },
+    {
+      "id": "AUTHORING",
+      "what": "text tools and shell heredocs normalised backslash and Unicode escapes in three edits (SOP reminder item 3 applies); each affected edit was redone from a file-backed or ASCII-safe form",
+      "logSha256": "not applicable"
+    },
+    {
+      "id": "LINE_CEILING",
+      "what": "test_control.py needed nine size iterations (556, 457, 432, 406, 386, 379, 358, 349, 346 lines) to stay below 350; Collector, Budget and the proxy classes were relocated between helper files within the exact6 family",
+      "logSha256": "not applicable"
+    }
+  ],
+  "deferredParentProof": [
+    "B installed prerequisite module query on the real host",
+    "C real Windows suspended-create/job/identity/persist/resume/stop/absence child",
+    "D fresh HTML v1 and v2 product positive with real engine, browser, session and download bytes",
+    "E native cleanup and custody with running product",
+    "actual ctypes ABI behaviour (only structure sizes 64 and 144 are asserted; no kernel call)",
+    "R1 R2 R3 R4 full exits and business acceptance",
+    "spent profiles are not refilled; no B-E grant is implied"
+  ],
+  "independentProbe": {
+    "disposition": "PENDING_REVIEWER_EXECUTION",
+    "note": "worker self-tests are not the Local probe"
+  }
+}
