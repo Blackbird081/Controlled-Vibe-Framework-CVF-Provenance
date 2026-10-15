@@ -36,12 +36,12 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_NCR_HTML_ROOT_CONTINUATION_R1_2026-10-15.md",
-    "baselineSha256": "4a5ddefc2d634402417c79a07faa99ce930c777aef608e647141f4796f092760",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_ROOT_CONTINUATION_R1_2026-10-15.md",
-    "workOrderSha256": "6d11ce2d63606e20e744fd0536723e8731948f841f07f665d6facc019730a3ee"
+    "baselinePath": "docs/baselines/CVF_GC018_NCR_HTML_ROOT_RECOVERY_R4_2026-10-15.md",
+    "baselineSha256": "876c1c6ed90271f98abbade9224cdda22df87174b9957ae93514cd3d64797d96",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_ROOT_RECOVERY_R4_2026-10-15.md",
+    "workOrderSha256": "b73cb3f4d4c014b1b0eb806f9de1259b55d40419cef3791632389543112514f9"
   },
-  "currentAuthoritySyncReason": "Negative Local review material=7ce72c4391b2eb0b6bfd38b2350df2803ecef67a; review=docs/reviews/CVF_NCR_HTML_ROOT_CONTINUATION_COMPLETION_2026-10-15.md; proof=docs/reviews/evidence/ncr-html-root-continuation-local-20261015.json. Worker phase executed/returned and rejected; original exact8/immutable packet/raw source snapshots preserved; helpers restored to raw dispatch preimages, no source implementation accepted. Python independent11=3 positive PASS/8 negative FAIL; Local Node adapter invalid retained, runners2 consumed. Git worker-reported21/8 ruled actor-wide; REQ07 and08 blocked, Local preparation PARTIAL retained. Current immutable R1 pair is consumed-phase provenance, not rerun permission. Next Local source-only consolidated recovery feasibility; no worker, effects or cap/profile refill. Same parent/root/round3/generation3/digest, SCEC ordinal2/counters2,0,2,0/blockers/freeze, P4 historical exclusions and parked lanes/LHW24 retained. No new checker or provider-memory authority.",
+  "currentAuthoritySyncReason": "New prospective R4 source-only packet material=cfae1255a7809f031f85c7d1498f0216d98d3810; pair=docs/baselines/CVF_GC018_NCR_HTML_ROOT_RECOVERY_R4_2026-10-15.md, docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_ROOT_RECOVERY_R4_2026-10-15.md; grant=docs/baselines/CVF_NCR_HTML_ROOT_RECOVERY_AUTHORIZATION_R4_2026-10-15.md; companion=docs/reviews/evidence/ncr-html-root-recovery-preapproval-r4-20261015.json; proof=docs/reviews/evidence/ncr-html-root-recovery-dispatch-r4-20261015.json. Actual persistent full Local authority/no micro-confirmation and new next delegates selection; R1 cap spending stays historical, not reused. Source8 plus NEW return/proof2, retained stage/immutable terminal receipt/modeled disposal eligibility; worker180/Local90, test6/4, Git24/16, inert27/0 and all7 effects0. Two read-only reviews completed; consumer/source phase wrapper corrections applied; final reviewer PASS and exact1 canonical scoped feasibility, runtimeReadiness/effectAdmission=false. Dispatcher preparation PARTIAL and first metadata-failure log retained; prior R1 rejection/REQ08/Local Node adapter/P4 exclusions unchanged. No implementation worker invoked; final committed bound pre-dispatch PASS then operator manual transfer. Same parent/root, actual round4/generation4/new finding digest, SCEC ordinal2/counters2,0,2,0/blockers/freeze/retired profiles retained. Actual B-E/native/product/delete stays deferred, no new checker. Parked lanes/LHW24 retained.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
@@ -110,7 +110,7 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_ncr_html_root_offline_continuation_rejected_recovery_plan",
+  "currentMode": "cvf_ncr_html_root_recovery_r4_dispatch_ready",
   "previousMode": "cvf_ncr_review_continuation_accepted_root_packet_plan",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
