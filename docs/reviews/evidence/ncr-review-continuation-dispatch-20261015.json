@@ -1,0 +1,123 @@
+{
+  "schemaVersion": "cvf.preapprovalFeasibility.v1",
+  "proposal": {
+    "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_REVIEW_CONTINUATION_2026-10-15.md",
+    "sha256": "f1faedca774e2f97b36028ec2c3054f2057edde3b57f35f624b49a131d38d733"
+  },
+  "approvalTarget": {
+    "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_REVIEW_CONTINUATION_2026-10-15.md",
+    "sha256": "f1faedca774e2f97b36028ec2c3054f2057edde3b57f35f624b49a131d38d733",
+    "prospectiveOutcomeSha256": "4a7b740889602796bf7f2cf9f7b07f167cd2303b8a25b1864604781cf0b21518"
+  },
+  "prospectiveOutcome": {
+    "schemaVersion": "cvf.semanticConvergenceControl.v1",
+    "problemKey": "ncr-review-dispatch-operator-cleared-continuation",
+    "chainMode": "INITIAL",
+    "chainOrdinal": 0,
+    "predecessor": null,
+    "blockerDelta": {
+      "prior": [],
+      "resolved": [],
+      "retained": [],
+      "new": [],
+      "reopened": [],
+      "current": []
+    },
+    "resolutionEvidence": {},
+    "counters": {
+      "partialReadyClosures": 0,
+      "reviewerScopeExpansions": 0,
+      "sameClaimCorrections": 0,
+      "nonDecreasingBlockerTransitions": 0
+    },
+    "claims": [],
+    "requiredDisposition": "CONTINUE_BOUNDED",
+    "successorScope": "INITIAL_BOUNDED"
+  },
+  "phasePrerequisites": {
+    "phase": "PRE_DISPATCH_GOVERNANCE_OWNER_AMENDMENT",
+    "rows": [
+      {
+        "requirementId": "LOCKED_BASELINE",
+        "requiredForPhase": true,
+        "evidence": {
+          "path": "docs/baselines/CVF_GC018_NCR_REVIEW_CONTINUATION_2026-10-15.md",
+          "sha256": "325a064e5e90094a7a24da124c520ad3f03116b97eaf90a5d24ef46032c94ef7",
+          "locator": "SPEC version NCR_REVIEW_CONTINUATION_V1"
+        },
+        "deferredToPhase": null
+      },
+      {
+        "requirementId": "SOURCE-1",
+        "requiredForPhase": true,
+        "evidence": {
+          "path": "docs/reference/review_cost_control/CVF_REVIEW_COST_AND_DIMINISHING_RETURN_CONTROL_STANDARD.md",
+          "sha256": "17d27144c7db34b717633c14428a778b2b00949f62d71e6a1d8f4f9a2bbe8700",
+          "locator": "## Same-Scope Authority Continuity And Micro-Checkpoint Prevention"
+        },
+        "deferredToPhase": null
+      },
+      {
+        "requirementId": "SOURCE-2",
+        "requiredForPhase": true,
+        "evidence": {
+          "path": "governance/compat/check_review_cost_control.py",
+          "sha256": "82d970a5f89fb33bb4d400ffc64330d1ee54c637a2817295beb781c77d590c6c",
+          "locator": "def diagnose_work_order("
+        },
+        "deferredToPhase": null
+      },
+      {
+        "requirementId": "SOURCE-3",
+        "requiredForPhase": true,
+        "evidence": {
+          "path": "governance/compat/review_convergence_scaffold.py",
+          "sha256": "9ce51804784a1f1f1ff085133811ee452675b6dc379362f65109eb793f5fbafa",
+          "locator": "def validate("
+        },
+        "deferredToPhase": null
+      },
+      {
+        "requirementId": "SOURCE-4",
+        "requiredForPhase": true,
+        "evidence": {
+          "path": "governance/compat/build_dispatch_packet_scaffold.py",
+          "sha256": "32e5bd11ff785de601228a15e44b5904b0ed1de53bac467694ac733f0a11bf92",
+          "locator": "class ScaffoldArgs:"
+        },
+        "deferredToPhase": null
+      },
+      {
+        "requirementId": "SOURCE-5",
+        "requiredForPhase": true,
+        "evidence": {
+          "path": "governance/compat/test_check_review_cost_control.py",
+          "sha256": "fcd383a4c86953bbcc653c7874eb285a34a2d0572563ba5ef621a60e968a707a",
+          "locator": "def test_round_three_is_not_automatic_dispatch_eligible("
+        },
+        "deferredToPhase": null
+      },
+      {
+        "requirementId": "SOURCE-6",
+        "requiredForPhase": true,
+        "evidence": {
+          "path": "governance/compat/test_build_dispatch_packet_scaffold.py",
+          "sha256": "c67dc09590cefca623e7219528460e6e644799a4e5b4b5fdf8dfd854e4743d7b",
+          "locator": "def _base_args("
+        },
+        "deferredToPhase": null
+      },
+      {
+        "requirementId": "LOCAL_PRIOR_RULING",
+        "requiredForPhase": true,
+        "evidence": {
+          "path": "docs/reviews/evidence/ncr-html-root-admission-v2-local-20261015.json",
+          "sha256": "c6649f55c93ca8bd9a27d21cf2cae4fc2d0b12a741d3624c0196e0bcf7b44dc4",
+          "locator": "ownerReconciliation"
+        },
+        "deferredToPhase": null
+      }
+    ]
+  },
+  "requestQueue": null
+}
