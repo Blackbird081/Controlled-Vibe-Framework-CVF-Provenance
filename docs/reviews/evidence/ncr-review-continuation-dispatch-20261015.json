@@ -52,7 +52,7 @@
         "requiredForPhase": true,
         "evidence": {
           "path": "docs/reference/review_cost_control/CVF_REVIEW_COST_AND_DIMINISHING_RETURN_CONTROL_STANDARD.md",
-          "sha256": "17d27144c7db34b717633c14428a778b2b00949f62d71e6a1d8f4f9a2bbe8700",
+          "sha256": "59ab670a0b3d723b50f8fed690e6c40be76cb14f1b0a5b72085a38efbb4f27a7",
           "locator": "## Same-Scope Authority Continuity And Micro-Checkpoint Prevention"
         },
         "deferredToPhase": null
@@ -62,7 +62,7 @@
         "requiredForPhase": true,
         "evidence": {
           "path": "governance/compat/check_review_cost_control.py",
-          "sha256": "82d970a5f89fb33bb4d400ffc64330d1ee54c637a2817295beb781c77d590c6c",
+          "sha256": "68e70bd29221e6d758ca7117a9a4fa18498f63406909b927d0e8e5423ab5e48b",
           "locator": "def diagnose_work_order("
         },
         "deferredToPhase": null
@@ -72,7 +72,7 @@
         "requiredForPhase": true,
         "evidence": {
           "path": "governance/compat/review_convergence_scaffold.py",
-          "sha256": "9ce51804784a1f1f1ff085133811ee452675b6dc379362f65109eb793f5fbafa",
+          "sha256": "8409912a170dd99fff67a792962568d2d98fa560372a9e5badb74cd897341f57",
           "locator": "def validate("
         },
         "deferredToPhase": null
@@ -82,7 +82,7 @@
         "requiredForPhase": true,
         "evidence": {
           "path": "governance/compat/build_dispatch_packet_scaffold.py",
-          "sha256": "32e5bd11ff785de601228a15e44b5904b0ed1de53bac467694ac733f0a11bf92",
+          "sha256": "29b7c97c94a18426c172c63774b697395f20a8e70093217661c5f0f070b87f4a",
           "locator": "class ScaffoldArgs:"
         },
         "deferredToPhase": null
@@ -92,7 +92,7 @@
         "requiredForPhase": true,
         "evidence": {
           "path": "governance/compat/test_check_review_cost_control.py",
-          "sha256": "fcd383a4c86953bbcc653c7874eb285a34a2d0572563ba5ef621a60e968a707a",
+          "sha256": "a79fb5297eb8fa5c5e7df4a4aa27b0bb4ba7bc147f5f45b7d0973d52acec43db",
           "locator": "def test_round_three_is_not_automatic_dispatch_eligible("
         },
         "deferredToPhase": null
@@ -102,7 +102,7 @@
         "requiredForPhase": true,
         "evidence": {
           "path": "governance/compat/test_build_dispatch_packet_scaffold.py",
-          "sha256": "c67dc09590cefca623e7219528460e6e644799a4e5b4b5fdf8dfd854e4743d7b",
+          "sha256": "737b3e4ba8910726f90fbacbaafa12377a003960fa74b42028dcdc851974954c",
           "locator": "def _base_args("
         },
         "deferredToPhase": null

@@ -5,11 +5,13 @@ docType: roadmap
 Status: ACCEPTED_UNIFIED_ROADMAP_LOCAL_CONSUMER_BOUNDED_FULL_PILOT_OPEN
 Date: 2026-09-26
 Program ID: CVF-NCR
-Version: 2.29
+Version: 2.30
 Revision disposition: LOCAL_CONSUMER_MAINTENANCE_ACCEPTED_BOUNDED; END_TO_END_PILOT_OPEN; Q001_AND_P11_CHECKPOINTS_RETAINED
 Decision owner: operator về định hướng/phạm vi; Local reviewer về đối chiếu kỹ thuật và nghiệm thu.
 
 ## Current Delivery Checkpoint - 2026-10-14
+
+**2026-10-15 review-continuation maintenance accepted technically:** `docs/reviews/CVF_NCR_REVIEW_CONTINUATION_COMPLETION_2026-10-15.md` accepts the exact6 existing owner/checker/scaffold/test change after Local independent36/36 PASS; original worker161 tests and nine killed controls consumed. REQ-08 remains BLOCKED and preparation PARTIAL; original exact8/pair and failure logs retained. Four reported consumer failures independently reproduced on HEAD. Same-scope authority is declared and source-bound, never inferred consent. Next Local derives a separate immutable HTML root continuation packet and verifies phase feasibility; no effect release, counter reset or profile refill. R1/R2partial,R3/R4open,R5/R6deferred; frozen root, parked effects and LHW24 retained.
 
 **2026-10-15 admission-owner reconciliation CLOSED_DOCUMENTARY_BOUNDED:** Local selects KEEP_STOPPED_PENDING_PROTECTED_MAINTENANCE_SCOPE. The owner distinguishes automatic redispatch from operator-cleared same-scope continuation; the current checker/scaffold encode only the automatic stop. Both current rejection messages are valid under current machine semantics. The smallest selected remedy is a conditional amendment to the existing owner/checker/scaffold, with focused tests; no new checker. The exact held baseline/snapshot remain unchanged, so the previous one-object receipt remains evidence of those historical bytes only. This decision finishes the reconciliation PLAN; it does not release HTML repair or a maintenance worker. See Admission Owner Ruling below and the ownerReconciliation member of `docs/reviews/evidence/ncr-html-root-admission-v2-local-20261015.json`.
 

@@ -94,6 +94,8 @@ class ScaffoldArgs:
     cumulative_external_invocation_count: int = 0
     external_invocation_ceiling: int = 0
     new_independent_critical_evidence: str = "NONE"
+    operator_continuation_evidence_path: str | None = None
+    operator_continuation_evidence_sha256: str | None = None
     scec_problem_key: str | None = None; scec_chain_mode: str = "INITIAL"
     scec_chain_ordinal: int = 0; scec_predecessor_path: str | None = None
     scec_predecessor_sha256: str | None = None

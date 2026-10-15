@@ -1,0 +1,569 @@
+{
+  "schemaVersion": "cvf.ncrReviewContinuationWorkerEvidence@1.0.0",
+  "batchId": "CVF-NCR-REVIEW-CONTINUATION-20261015",
+  "workOrder": {
+    "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_REVIEW_CONTINUATION_2026-10-15.md",
+    "sha256": "f1faedca774e2f97b36028ec2c3054f2057edde3b57f35f624b49a131d38d733"
+  },
+  "baseline": {
+    "path": "docs/baselines/CVF_GC018_NCR_REVIEW_CONTINUATION_2026-10-15.md",
+    "sha256": "325a064e5e90094a7a24da124c520ad3f03116b97eaf90a5d24ef46032c94ef7"
+  },
+  "executionBaseHead": "436c4cc8e9f23b1d3c11a0b32775aa2d19858f78",
+  "headAtEvidenceBuild": "436c4cc8e9f23b1d3c11a0b32775aa2d19858f78",
+  "statusAtStart": "git status --short empty; staged empty",
+  "clocksUtc": {
+    "workerStart": "2026-10-15T04:42:54Z",
+    "preImplementationGatePass": "2026-10-15T04:44:43Z",
+    "lateReadsStart": "2026-10-15T05:05:19Z",
+    "finalFocusedRunStart": "2026-10-15T05:08:16Z",
+    "evidenceBuilt": "2026-10-15T05:13:14Z"
+  },
+  "usage": {
+    "providerCalls": 0,
+    "networkCalls": 0,
+    "internalAgentInvocations": 0,
+    "externalAgentInvocations": 0,
+    "tokenOrQuota": "UNKNOWN - not exposed to the worker"
+  },
+  "sourcePins": {
+    "before": {
+      "docs/reference/review_cost_control/CVF_REVIEW_COST_AND_DIMINISHING_RETURN_CONTROL_STANDARD.md": {
+        "sha256": "17d27144c7db34b717633c14428a778b2b00949f62d71e6a1d8f4f9a2bbe8700",
+        "lines": 941,
+        "bytes": 51872,
+        "lineEnding": "CRLF922+bareLF19"
+      },
+      "governance/compat/check_review_cost_control.py": {
+        "sha256": "82d970a5f89fb33bb4d400ffc64330d1ee54c637a2817295beb781c77d590c6c",
+        "lines": 775,
+        "bytes": 32232,
+        "lineEnding": "CRLF688+bareLF87"
+      },
+      "governance/compat/review_convergence_scaffold.py": {
+        "sha256": "9ce51804784a1f1f1ff085133811ee452675b6dc379362f65109eb793f5fbafa",
+        "lines": 137,
+        "bytes": 7517,
+        "lineEnding": "LF137"
+      },
+      "governance/compat/build_dispatch_packet_scaffold.py": {
+        "sha256": "32e5bd11ff785de601228a15e44b5904b0ed1de53bac467694ac733f0a11bf92",
+        "lines": 831,
+        "bytes": 36842,
+        "lineEnding": "CRLF831"
+      },
+      "governance/compat/test_check_review_cost_control.py": {
+        "sha256": "fcd383a4c86953bbcc653c7874eb285a34a2d0572563ba5ef621a60e968a707a",
+        "lines": 550,
+        "bytes": 24826,
+        "lineEnding": "CRLF491+bareLF59"
+      },
+      "governance/compat/test_build_dispatch_packet_scaffold.py": {
+        "sha256": "c67dc09590cefca623e7219528460e6e644799a4e5b4b5fdf8dfd854e4743d7b",
+        "lines": 1078,
+        "bytes": 50722,
+        "lineEnding": "CRLF1078"
+      }
+    },
+    "after": {
+      "docs/reference/review_cost_control/CVF_REVIEW_COST_AND_DIMINISHING_RETURN_CONTROL_STANDARD.md": {
+        "path": "docs/reference/review_cost_control/CVF_REVIEW_COST_AND_DIMINISHING_RETURN_CONTROL_STANDARD.md",
+        "sha256": "59ab670a0b3d723b50f8fed690e6c40be76cb14f1b0a5b72085a38efbb4f27a7",
+        "lines": 1054,
+        "bytes": 59023,
+        "crlf": 1035,
+        "bareLf": 19,
+        "maxLines": 1100,
+        "maxBytes": 100000,
+        "withinLimits": true
+      },
+      "governance/compat/check_review_cost_control.py": {
+        "path": "governance/compat/check_review_cost_control.py",
+        "sha256": "68e70bd29221e6d758ca7117a9a4fa18498f63406909b927d0e8e5423ab5e48b",
+        "lines": 869,
+        "bytes": 37293,
+        "crlf": 782,
+        "bareLf": 87,
+        "maxLines": 950,
+        "maxBytes": 64000,
+        "withinLimits": true
+      },
+      "governance/compat/review_convergence_scaffold.py": {
+        "path": "governance/compat/review_convergence_scaffold.py",
+        "sha256": "8409912a170dd99fff67a792962568d2d98fa560372a9e5badb74cd897341f57",
+        "lines": 446,
+        "bytes": 24890,
+        "crlf": 0,
+        "bareLf": 446,
+        "maxLines": 600,
+        "maxBytes": 64000,
+        "withinLimits": true
+      },
+      "governance/compat/build_dispatch_packet_scaffold.py": {
+        "path": "governance/compat/build_dispatch_packet_scaffold.py",
+        "sha256": "29b7c97c94a18426c172c63774b697395f20a8e70093217661c5f0f070b87f4a",
+        "lines": 833,
+        "bytes": 36964,
+        "crlf": 833,
+        "bareLf": 0,
+        "maxLines": 850,
+        "maxBytes": 80000,
+        "withinLimits": true
+      },
+      "governance/compat/test_check_review_cost_control.py": {
+        "path": "governance/compat/test_check_review_cost_control.py",
+        "sha256": "a79fb5297eb8fa5c5e7df4a4aa27b0bb4ba7bc147f5f45b7d0973d52acec43db",
+        "lines": 864,
+        "bytes": 46702,
+        "crlf": 805,
+        "bareLf": 59,
+        "maxLines": 1000,
+        "maxBytes": 100000,
+        "withinLimits": true
+      },
+      "governance/compat/test_build_dispatch_packet_scaffold.py": {
+        "path": "governance/compat/test_build_dispatch_packet_scaffold.py",
+        "sha256": "737b3e4ba8910726f90fbacbaafa12377a003960fa74b42028dcdc851974954c",
+        "lines": 1156,
+        "bytes": 56158,
+        "crlf": 1156,
+        "bareLf": 0,
+        "maxLines": 1160,
+        "maxBytes": 120000,
+        "withinLimits": true
+      }
+    }
+  },
+  "preparation": {
+    "overall": "PARTIAL_WITH_REASON",
+    "preImplementationGate": "PASS before any tracked edit or test (clock 04:44:43Z)",
+    "readBeforeFirstEditOrTest": [
+      "AGENTS.md; CVF_SESSION_MEMORY.md; bootstrap read model; active handoff V63 (full)",
+      "docs/reference/guard_orientation/README.md (full)",
+      "work order and baseline (full); companion dispatch JSON (full)",
+      "check_review_cost_control.py, review_convergence_scaffold.py, build_dispatch_packet_scaffold.py, both test files (full bodies)",
+      "owner standard: lines 1-135, 250-285, 625-775 only (about 40 percent of the body)",
+      "ADIF-0026 (full); lifecycle standard Agent Continuation 97-175 and Outcome-Bound 321-370; acceptance-ledger addendum (full); SOP Worker Preparation Reminder",
+      "check_work_order_acceptance_ledger.py and check_dispatch_scaffold_provenance.py (full); run_worker_return_fast_gate.py (full); learning_application_binding.py (full)",
+      "check_worker_return_quality_gate.py lines 1-500; check_core_guard_self_protection.py lines 1-120; probe-admission and epistemic constants by grep only"
+    ],
+    "readAfterFirstEditOrTest_disclosedLate": [
+      "roadmap Admission Owner Ruling and ownerReconciliation.documentaryRulingMarkdown",
+      "owner standard remainder (135-250, 285-625 except probe boundary skim, 775-941)",
+      "lifecycle standard Agent Continuation 176-320",
+      "work-order source-verification addendum (first 130 of 256 lines)",
+      "SOP Requirement 13 temporary-resource lifecycle",
+      "check_agent_operation_trace.py 241-440; check_core_guard_self_protection.py 120-380; check_epistemic_process_packet.py 28-255",
+      "ADIF resolver for the worker role: first query (task class Worker execution) returned 0 candidates and was not saved; second query (task class Worker execution (WORKER_MUST_NOT_COMMIT), role worker, phase pre-implementation) returned 14 candidates ADIF-0028/29/30/31/32/33/34/39/40/41/42/43/44/45, saved in custody as adif-worker.json; metadata only, entry bodies not read"
+    ],
+    "notReadAtAll": [
+      "check_worker_return_quality_gate.py lines 500-966 (evidence-readiness path, not applicable to this order)",
+      "second half of the source-verification addendum"
+    ],
+    "disposition": "REQ-08 cannot be PASS: mandatory mapped reads were not all complete before the first edit or test. Late reads were used for contradiction checking only and are not retroactive PASS."
+  },
+  "REQ-01": {
+    "requirementId": "REQ-01",
+    "status": "PASS",
+    "expectedArtifacts": [
+      "docs/reference/review_cost_control/CVF_REVIEW_COST_AND_DIMINISHING_RETURN_CONTROL_STANDARD.md",
+      "docs/reviews/evidence/ncr-review-continuation-worker-20261015.json"
+    ],
+    "summary": "Owner standard gained section Operator-Cleared Same-Scope Continuation (opt-in, failure behavior, grant source, binding and scope, effect on dispatch and completion checks, authority persistence) plus three cross-reference edits and two machine-boundary rows.",
+    "evidence": [
+      "sizes",
+      "git diff of the standard"
+    ]
+  },
+  "REQ-02": {
+    "requirementId": "REQ-02",
+    "status": "PASS",
+    "expectedArtifacts": [
+      "governance/compat/review_convergence_scaffold.py",
+      "governance/compat/test_check_review_cost_control.py",
+      "docs/reviews/evidence/ncr-review-continuation-worker-20261015.json"
+    ],
+    "summary": "Single shared strict validator in the existing convergence helper: bounded read, path safety, symlink and junction rejection, raw hash, one fenced block, duplicate-member and NaN rejection, closed schemas, strict int and bool/float/string substitution rejection, expiry against actual UTC time, scope and effect ceilings.",
+    "tests": {
+      "checker": [
+        "missing source",
+        "hash mismatch",
+        "uppercase hash",
+        "not utf8",
+        "no fence",
+        "two fences",
+        "bad json",
+        "duplicate top key",
+        "duplicate nested key",
+        "non finite",
+        "oversize",
+        "tilde grant fence",
+        "four backtick fence",
+        "archive path",
+        "wrong prefix",
+        "not markdown",
+        "backslash",
+        "absolute",
+        "drive",
+        "dot segment",
+        "traversal",
+        "empty segment",
+        "whitespace",
+        "worker writable return"
+      ]
+    },
+    "junctionOrSymlinkCaseExecuted": true
+  },
+  "REQ-03": {
+    "requirementId": "REQ-03",
+    "status": "PASS",
+    "expectedArtifacts": [
+      "governance/compat/check_review_cost_control.py",
+      "governance/compat/test_check_review_cost_control.py",
+      "docs/reviews/evidence/ncr-review-continuation-worker-20261015.json"
+    ],
+    "summary": "diagnose_work_order bypasses only round>=3 automatic-dispatch rejection and the NONE critical-evidence rejection when the declaration validates; binding, scope-type identity and acceptance-ledger union are joined; every other control retained; invalid declaration never falls back.",
+    "tests": {
+      "declarationAndRoute": [
+        "path only",
+        "sha only",
+        "scope only",
+        "no scope",
+        "tilde scope fence",
+        "empty path",
+        "duplicate path",
+        "duplicate scope",
+        "initial dispatch",
+        "rework round one",
+        "generation mismatch",
+        "ambiguous scalar",
+        "conflicting commit mode",
+        "placeholder critical evidence",
+        "no ledger",
+        "ledger extra artifact",
+        "ledger missing artifact",
+        "scope extra artifact",
+        "scope type substitution",
+        "allowedArtifacts",
+        "numericalCeilings",
+        "workerMinutes",
+        "reviewerMinutes"
+      ]
+    }
+  },
+  "REQ-04": {
+    "requirementId": "REQ-04",
+    "status": "PASS",
+    "expectedArtifacts": [
+      "governance/compat/review_convergence_scaffold.py",
+      "governance/compat/build_dispatch_packet_scaffold.py",
+      "governance/compat/test_build_dispatch_packet_scaffold.py",
+      "docs/reviews/evidence/ncr-review-continuation-worker-20261015.json"
+    ],
+    "summary": "Actual CLI parses the two flags, validates source and argument bindings with cwd as repository root, threads them via kwargs into ScaffoldArgs, emits both scalar fields plus the exact grant.scope block, records both flags in reproducible provenance, and its completed output passes the real work-order checker; defaults unchanged.",
+    "tests": {
+      "packetCli": [
+        "test_default_callers_and_no_clearance_stops_are_unchanged",
+        "test_cleared_cli_emits_scope_and_provenance_and_passes_the_final_checker",
+        "test_hostile_cli_sources_exit_nonzero_before_any_candidate"
+      ],
+      "hostileCliCases": [
+        "one flag",
+        "empty values",
+        "wrong sha",
+        "missing source",
+        "binding mismatch",
+        "expired",
+        "duplicate key",
+        "initial dispatch",
+        "round one"
+      ]
+    }
+  },
+  "REQ-05": {
+    "requirementId": "REQ-05",
+    "status": "PASS",
+    "expectedArtifacts": [
+      "docs/reference/review_cost_control/CVF_REVIEW_COST_AND_DIMINISHING_RETURN_CONTROL_STANDARD.md",
+      "governance/compat/check_review_cost_control.py",
+      "governance/compat/test_check_review_cost_control.py",
+      "docs/reviews/evidence/ncr-review-continuation-worker-20261015.json"
+    ],
+    "summary": "Completion review optional continuationWorkOrderPath/Sha256 pair: safe existing docs/work_orders file, raw hash, no self or cycle, referenced order must be a valid cleared dispatch, round equality; permits only COMPLETE_REVIEW and CONSOLIDATE_SINGLE_REPAIR at the cleared boundary; CONTINUE_NEW_CRITICAL_EVIDENCE still needs a new root; invalid link keeps existing restrictions.",
+    "tests": {
+      "completionLink": [
+        "no link",
+        "one sided",
+        "wrong sha",
+        "uppercase sha",
+        "round mismatch",
+        "legacy order",
+        "outside work orders",
+        "traversal",
+        "archive",
+        "missing order",
+        "expired grant",
+        "authorization cycle"
+      ],
+      "positiveTokens": [
+        "test_valid_cleared_round_three_with_honest_none_is_clean",
+        "test_valid_timed_and_external_variants_are_clean",
+        "test_default_stops_are_unchanged_without_a_declaration",
+        "test_hostile_grant_sources_are_rejected_without_ordinary_fallback",
+        "test_linked_directory_grant_source_is_rejected",
+        "test_hostile_grant_members_and_type_substitutions_are_rejected",
+        "test_declaration_cardinality_and_route_restrictions_fail_closed",
+        "test_external_ceiling_and_usage_controls_survive_clearance",
+        "test_linked_completion_permits_only_existing_tokens_at_cleared_boundary",
+        "test_completion_without_valid_link_keeps_round_and_root_restrictions"
+      ]
+    }
+  },
+  "REQ-06": {
+    "requirementId": "REQ-06",
+    "status": "PASS",
+    "expectedArtifacts": [
+      "governance/compat/test_check_review_cost_control.py",
+      "governance/compat/test_build_dispatch_packet_scaffold.py",
+      "docs/reviews/evidence/ncr-review-continuation-worker-20261015.json"
+    ],
+    "summary": "Focused production-route tests (positive, default-stop, hostile, completion, actual CLI to final checker) plus read-only provenance regression; five Python files compile under an owned PYTHONPYCACHEPREFIX.",
+    "counts": {
+      "checkerModule": 61,
+      "packetModule": 83,
+      "provenanceModule": 17
+    }
+  },
+  "REQ-07": {
+    "requirementId": "REQ-07",
+    "status": "PASS",
+    "expectedArtifacts": [
+      "docs/reference/review_cost_control/CVF_REVIEW_COST_AND_DIMINISHING_RETURN_CONTROL_STANDARD.md",
+      "governance/compat/check_review_cost_control.py",
+      "governance/compat/review_convergence_scaffold.py",
+      "governance/compat/build_dispatch_packet_scaffold.py",
+      "governance/compat/test_check_review_cost_control.py",
+      "governance/compat/test_build_dispatch_packet_scaffold.py",
+      "docs/reviews/evidence/ncr-review-continuation-worker-20261015.json"
+    ],
+    "summary": "Exactly six existing files plus the return and this proof changed; all within size limits; UTF-8 without BOM; each file's original line-ending convention preserved by whole-line patching (new lines inherit the neighbouring EOL; bare-LF line counts unchanged); no new checker, hook, helper module, effect, or scope escape.",
+    "sizes": {
+      "docs/reference/review_cost_control/CVF_REVIEW_COST_AND_DIMINISHING_RETURN_CONTROL_STANDARD.md": {
+        "path": "docs/reference/review_cost_control/CVF_REVIEW_COST_AND_DIMINISHING_RETURN_CONTROL_STANDARD.md",
+        "sha256": "59ab670a0b3d723b50f8fed690e6c40be76cb14f1b0a5b72085a38efbb4f27a7",
+        "lines": 1054,
+        "bytes": 59023,
+        "crlf": 1035,
+        "bareLf": 19,
+        "maxLines": 1100,
+        "maxBytes": 100000,
+        "withinLimits": true
+      },
+      "governance/compat/check_review_cost_control.py": {
+        "path": "governance/compat/check_review_cost_control.py",
+        "sha256": "68e70bd29221e6d758ca7117a9a4fa18498f63406909b927d0e8e5423ab5e48b",
+        "lines": 869,
+        "bytes": 37293,
+        "crlf": 782,
+        "bareLf": 87,
+        "maxLines": 950,
+        "maxBytes": 64000,
+        "withinLimits": true
+      },
+      "governance/compat/review_convergence_scaffold.py": {
+        "path": "governance/compat/review_convergence_scaffold.py",
+        "sha256": "8409912a170dd99fff67a792962568d2d98fa560372a9e5badb74cd897341f57",
+        "lines": 446,
+        "bytes": 24890,
+        "crlf": 0,
+        "bareLf": 446,
+        "maxLines": 600,
+        "maxBytes": 64000,
+        "withinLimits": true
+      },
+      "governance/compat/build_dispatch_packet_scaffold.py": {
+        "path": "governance/compat/build_dispatch_packet_scaffold.py",
+        "sha256": "29b7c97c94a18426c172c63774b697395f20a8e70093217661c5f0f070b87f4a",
+        "lines": 833,
+        "bytes": 36964,
+        "crlf": 833,
+        "bareLf": 0,
+        "maxLines": 850,
+        "maxBytes": 80000,
+        "withinLimits": true
+      },
+      "governance/compat/test_check_review_cost_control.py": {
+        "path": "governance/compat/test_check_review_cost_control.py",
+        "sha256": "a79fb5297eb8fa5c5e7df4a4aa27b0bb4ba7bc147f5f45b7d0973d52acec43db",
+        "lines": 864,
+        "bytes": 46702,
+        "crlf": 805,
+        "bareLf": 59,
+        "maxLines": 1000,
+        "maxBytes": 100000,
+        "withinLimits": true
+      },
+      "governance/compat/test_build_dispatch_packet_scaffold.py": {
+        "path": "governance/compat/test_build_dispatch_packet_scaffold.py",
+        "sha256": "737b3e4ba8910726f90fbacbaafa12377a003960fa74b42028dcdc851974954c",
+        "lines": 1156,
+        "bytes": 56158,
+        "crlf": 1156,
+        "bareLf": 0,
+        "maxLines": 1160,
+        "maxBytes": 120000,
+        "withinLimits": true
+      }
+    }
+  },
+  "REQ-08": {
+    "requirementId": "REQ-08",
+    "status": "BLOCKED",
+    "expectedArtifacts": [
+      "docs/reviews/CVF_NCR_REVIEW_CONTINUATION_WORKER_RETURN_2026-10-15.md",
+      "docs/reviews/evidence/ncr-review-continuation-worker-20261015.json"
+    ],
+    "summary": "Implementation and joins are complete, but mandatory mapped reads were not all complete before the first edit or test (see preparation). Local decides whether to accept the preparation gap as bounded PARTIAL; this worker cannot upgrade it.",
+    "pendingIndependentProbe": "PENDING_REVIEWER_EXECUTION"
+  },
+  "commands": [
+    {
+      "id": "C1",
+      "command": "python -B governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base 436c4cc8e9f23b1d3c11a0b32775aa2d19858f78 --head HEAD --active-work-order <work order>",
+      "result": "PASS exit 0",
+      "log": {
+        "file": ".cvf/runtime/ncr-review-continuation-worker-20261015/pre-implementation.log",
+        "sha256": "5f4a2fc9f036b689a73bac68f5077600fa932c25d44bcc9cf6d64b69abacf8fa",
+        "bytes": 4805
+      }
+    },
+    {
+      "id": "C2",
+      "command": "python -B governance/compat/run_worker_return_scaffold.py --write <return> --title \"NCR Review Continuation Worker Return\" --check-shape --max-lines 450 --max-bytes 64000",
+      "result": "PASS shape present; 323 lines 13375 bytes before prose",
+      "log": {
+        "file": ".cvf/runtime/ncr-review-continuation-worker-20261015/scaffold.log",
+        "sha256": "951b0f7f5307ecaf21b2648f7f67db847c0549c7c0da3ee717fde70098476c60",
+        "bytes": 244
+      }
+    },
+    {
+      "id": "C3",
+      "command": "python -B -m pytest -q test_check_review_cost_control.py test_build_dispatch_packet_scaffold.py test_check_dispatch_scaffold_provenance.py -p no:cacheprovider",
+      "result": "PASS 161 passed",
+      "log": {
+        "file": ".cvf/runtime/ncr-review-continuation-worker-20261015/final-focused-pytest.log",
+        "sha256": "7a1179d6ef9e4b0181de5f5545a2911a20f75060ed6c311ed5a5a7043ae2f200",
+        "bytes": 932
+      }
+    },
+    {
+      "id": "C4",
+      "command": "python -B -m unittest test_check_review_cost_control test_build_dispatch_packet_scaffold (cwd governance/compat)",
+      "result": "PASS Ran 144 OK",
+      "log": {
+        "file": ".cvf/runtime/ncr-review-continuation-worker-20261015/final-unittest.log",
+        "sha256": "2efdcc08552e595f8b4da9bfeb16189cf52b652100d4f2d99cc8bae194eb6ed6",
+        "bytes": 22964
+      }
+    },
+    {
+      "id": "C5",
+      "command": "PYTHONPYCACHEPREFIX=<owned custody> python -m py_compile <five Python files>",
+      "result": "PASS exit 0; ambient PYTHONPYCACHEPREFIX unset before and after",
+      "log": {
+        "file": ".cvf/runtime/ncr-review-continuation-worker-20261015/final-compile.log",
+        "sha256": "19eaf43821a7660ec323a87c8457bf74823beb296c39f5e01aa8a683aa50f061",
+        "bytes": 7
+      }
+    },
+    {
+      "id": "C6",
+      "command": "author parity sweep: HEAD checker vs working checker over every tracked docs/work_orders and docs/reviews Markdown",
+      "result": "PASS 4850 files read, 1783 applicable, 0 differences",
+      "log": {
+        "file": ".cvf/runtime/ncr-review-continuation-worker-20261015/final-parity.log",
+        "sha256": "55486ce18e8543a05e6f0707b5ab8a27f76bcaed9e73e782956b815dd8520c75",
+        "bytes": 59
+      }
+    },
+    {
+      "id": "C7",
+      "command": "author mutation probe: disable one control at a time against OperatorClearedContinuationTests",
+      "result": "PASS 9 of 9 mutations killed, baseline 0 failures",
+      "log": {
+        "file": ".cvf/runtime/ncr-review-continuation-worker-20261015/final-mutation.log",
+        "sha256": "273744fef4852208f5f683331e4b731e2d85b00c513e72bf0bb73e693580fe58",
+        "bytes": 578
+      }
+    },
+    {
+      "id": "C8",
+      "command": "read-only consumer regression: 9 test modules that reference the changed modules",
+      "result": "305 passed 4 failed; the same 4 fail on a pristine git archive export of HEAD (plus 2 more caused by that partial export), so they are pre-existing",
+      "log": {
+        "file": ".cvf/runtime/ncr-review-continuation-worker-20261015/consumer-regression.log",
+        "sha256": "a69ddefab351274c4b30a9f6b47b0866e5c44c9848da827e867577b0810e4b82",
+        "bytes": 6236
+      },
+      "failures": [
+        "test_check_dispatch_return_loop_control::DispatchManifestAdmissionTests::test_dispatch_quality_command_must_not_reuse_dispatch_base",
+        "test_check_dispatch_return_loop_control::ActiveWorkOrderReturnAdmissionTests::test_drc04_committed_valid_exact_return_admitted_when_discovery_selects_zero",
+        "test_check_dispatch_return_loop_control::ActiveWorkOrderReturnAdmissionTests::test_drc05_exact_return_is_diagnosed_once_when_also_changed",
+        "test_downstream_gate_profile::ProfileContractTests::test_new_files_obey_size_budget"
+      ]
+    }
+  ],
+  "fastGate": {
+    "firstRun": {
+      "command": "python -B governance/compat/run_worker_return_fast_gate.py --active-work-order <work order> --max-return-lines 450 --max-return-bytes 64000",
+      "result": "PASS exit 0 in 6.04s; six gate commands including reviewer-fast with 70 checks",
+      "log": {
+        "file": ".cvf/runtime/ncr-review-continuation-worker-20261015/first-fast-gate.log",
+        "sha256": "649ce8d228d20889e25907727e013005cdd6c9c5b619ffcee6b0645ee6cf7f83",
+        "bytes": 11665
+      }
+    },
+    "finalRun": "held outside tracked bytes in ignored custody final-fast-gate.log with its digest; no tracked PASS line is appended after it"
+  },
+  "failedOrAmbiguousRuns": [
+    {
+      "id": "F1",
+      "what": "consumer regression 4 failures (C8)",
+      "disposition": "pre-existing on HEAD; retained, not repaired (outside exact8)"
+    },
+    {
+      "id": "F2",
+      "what": "pytest without pytest-subtests silently ignores unittest subTest failures",
+      "disposition": "new multi-case tests use a failure-collecting context so pytest reports them; verified by mutation probe C7"
+    },
+    {
+      "id": "F3",
+      "what": "author scratch errors before any tracked write was affected: eolpatch f-string SyntaxError, one heredoc anchor mismatch in the packet-test patch, one shell-quoting mismatch while fixing the test block, first parity sweep missing sys.modules registration",
+      "disposition": "scratch only; fixed and rerun; no tracked file was left in a partial state"
+    },
+    {
+      "id": "F4",
+      "what": "first ADIF resolver query (task class Worker execution) returned 0 candidates",
+      "disposition": "second query with the exact task-class label returned 14; both retained in custody"
+    }
+  ],
+  "toolClassifierEvents": {
+    "count": 0,
+    "platformForcedPrompts": 0,
+    "workerAuthoredQuestions": 0,
+    "recoveryAttempts": 0
+  },
+  "interpretations": [
+    "Commit mode appears twice in generated work orders (header and envelope); identical repeats are accepted, conflicting values reject. The six convergence scalars must each occur exactly once.",
+    "Equality of grant.scope and the work-order continuation-scope-json is structural and type-strict; list order is significant.",
+    "A tilde fence or four-backtick fence of the declared tag counts as a declaration attempt and fails closed."
+  ],
+  "workerCoverageNotes": {
+    "gapNamedForLocalProbe": [
+      "a file symlink could not be created on this Windows host, so the linked-directory case ran through a directory junction (realpath re-resolution), not a symlink",
+      "the checker clock is the real UTC clock; only tests inject a fixed aware datetime"
+    ]
+  },
+  "claimBoundary": "Declaration admission and offline fixtures only. No operator-consent proof, no effect control, no HTML repair release, no independent Local probe executed by the worker."
+}

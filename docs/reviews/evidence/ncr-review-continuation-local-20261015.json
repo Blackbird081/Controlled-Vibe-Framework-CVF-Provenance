@@ -1,0 +1,393 @@
+{
+  "schemaVersion": "cvf.ncrReviewContinuationLocalReview@1.0.0",
+  "status": "ACCEPTED_TECHNICAL_BOUNDED_PROCEDURE_PARTIAL",
+  "reviewBaseHead": "436c4cc8e9f23b1d3c11a0b32775aa2d19858f78",
+  "received": {
+    "base": "436c4cc8e9f23b1d3c11a0b32775aa2d19858f78",
+    "paths": [
+      {
+        "path": "docs/reference/review_cost_control/CVF_REVIEW_COST_AND_DIMINISHING_RETURN_CONTROL_STANDARD.md",
+        "sha256": "59ab670a0b3d723b50f8fed690e6c40be76cb14f1b0a5b72085a38efbb4f27a7",
+        "bytes": 59023
+      },
+      {
+        "path": "governance/compat/build_dispatch_packet_scaffold.py",
+        "sha256": "29b7c97c94a18426c172c63774b697395f20a8e70093217661c5f0f070b87f4a",
+        "bytes": 36964
+      },
+      {
+        "path": "governance/compat/check_review_cost_control.py",
+        "sha256": "68e70bd29221e6d758ca7117a9a4fa18498f63406909b927d0e8e5423ab5e48b",
+        "bytes": 37293
+      },
+      {
+        "path": "governance/compat/review_convergence_scaffold.py",
+        "sha256": "8409912a170dd99fff67a792962568d2d98fa560372a9e5badb74cd897341f57",
+        "bytes": 24890
+      },
+      {
+        "path": "governance/compat/test_build_dispatch_packet_scaffold.py",
+        "sha256": "737b3e4ba8910726f90fbacbaafa12377a003960fa74b42028dcdc851974954c",
+        "bytes": 56158
+      },
+      {
+        "path": "governance/compat/test_check_review_cost_control.py",
+        "sha256": "a79fb5297eb8fa5c5e7df4a4aa27b0bb4ba7bc147f5f45b7d0973d52acec43db",
+        "bytes": 46702
+      },
+      {
+        "path": "docs/reviews/CVF_NCR_REVIEW_CONTINUATION_WORKER_RETURN_2026-10-15.md",
+        "sha256": "b224c4fb4e6667ec51511e963b7a3e29e75c246a57bac7e7c1ad2aae590d2768",
+        "bytes": 30256
+      },
+      {
+        "path": "docs/reviews/evidence/ncr-review-continuation-worker-20261015.json",
+        "sha256": "986f632e3ea07e72aeeac3d747ed70d6d18443a33d56d0adb630b5220951a1c3",
+        "bytes": 26461
+      },
+      {
+        "path": "docs/baselines/CVF_GC018_NCR_REVIEW_CONTINUATION_2026-10-15.md",
+        "sha256": "325a064e5e90094a7a24da124c520ad3f03116b97eaf90a5d24ef46032c94ef7",
+        "bytes": 26478
+      },
+      {
+        "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_REVIEW_CONTINUATION_2026-10-15.md",
+        "sha256": "f1faedca774e2f97b36028ec2c3054f2057edde3b57f35f624b49a131d38d733",
+        "bytes": 57867
+      },
+      {
+        "path": "docs/reviews/evidence/ncr-review-continuation-dispatch-20261015.json",
+        "sha256": "d1c3cc3e70fa50de26defa0f28b2aa2e238459e2f3c51c779462ea853225a462",
+        "bytes": 4408
+      }
+    ],
+    "verifiedWorkerLogs": [
+      ".cvf/runtime/ncr-review-continuation-worker-20261015/pre-implementation.log",
+      ".cvf/runtime/ncr-review-continuation-worker-20261015/scaffold.log",
+      ".cvf/runtime/ncr-review-continuation-worker-20261015/final-focused-pytest.log",
+      ".cvf/runtime/ncr-review-continuation-worker-20261015/final-unittest.log",
+      ".cvf/runtime/ncr-review-continuation-worker-20261015/final-compile.log",
+      ".cvf/runtime/ncr-review-continuation-worker-20261015/final-parity.log",
+      ".cvf/runtime/ncr-review-continuation-worker-20261015/final-mutation.log",
+      ".cvf/runtime/ncr-review-continuation-worker-20261015/consumer-regression.log"
+    ]
+  },
+  "originalWorkerArtifactsUnchanged": true,
+  "originalPairUnchanged": true,
+  "currentCompanionSha256": "13d9fcf3ce0bd93f30eda6d60cb79be9cbc86b0ea48a72cb681c4ba7d73a32af",
+  "requirements": {
+    "REQ-01": "ACCEPTED_TECHNICAL_BOUNDED",
+    "REQ-02": "ACCEPTED_TECHNICAL_BOUNDED",
+    "REQ-03": "ACCEPTED_TECHNICAL_BOUNDED",
+    "REQ-04": "ACCEPTED_TECHNICAL_BOUNDED",
+    "REQ-05": "ACCEPTED_TECHNICAL_BOUNDED",
+    "REQ-06": "ACCEPTED_TECHNICAL_BOUNDED",
+    "REQ-07": "ACCEPTED_TECHNICAL_BOUNDED",
+    "REQ-08": "BLOCKED"
+  },
+  "independentProbe": {
+    "schemaVersion": "cvf.localIndependentProbe@1.0.0",
+    "cases": [
+      {
+        "name": "real process CLI emits cleared round three",
+        "actual": 0,
+        "expected": 0,
+        "passed": true
+      },
+      {
+        "name": "completed generated order accepted",
+        "actual": true,
+        "expected": true,
+        "passed": true
+      },
+      {
+        "name": "scaffold generates two identical Commit mode declarations",
+        "actual": 2,
+        "expected": 2,
+        "passed": true
+      },
+      {
+        "name": "identical Commit mode repeat accepted",
+        "actual": true,
+        "expected": true,
+        "passed": true
+      },
+      {
+        "name": "conflicting Commit mode rejected",
+        "actual": false,
+        "expected": false,
+        "passed": true
+      },
+      {
+        "name": "duplicate round scalar rejected",
+        "actual": false,
+        "expected": false,
+        "passed": true
+      },
+      {
+        "name": "wrong source hash",
+        "actual": false,
+        "expected": false,
+        "passed": true
+      },
+      {
+        "name": "partial declaration",
+        "actual": false,
+        "expected": false,
+        "passed": true
+      },
+      {
+        "name": "tilde scope opener",
+        "actual": false,
+        "expected": false,
+        "passed": true
+      },
+      {
+        "name": "four backtick scope opener",
+        "actual": false,
+        "expected": false,
+        "passed": true
+      },
+      {
+        "name": "scope list reorder",
+        "actual": false,
+        "expected": false,
+        "passed": true
+      },
+      {
+        "name": "scope numeric type substitution",
+        "actual": false,
+        "expected": false,
+        "passed": true
+      },
+      {
+        "name": "critical placeholder",
+        "actual": false,
+        "expected": false,
+        "passed": true
+      },
+      {
+        "name": "dependency audit retained",
+        "actual": false,
+        "expected": false,
+        "passed": true
+      },
+      {
+        "name": "successor restriction retained",
+        "actual": false,
+        "expected": false,
+        "passed": true
+      },
+      {
+        "name": "ledger union mismatch",
+        "actual": false,
+        "expected": false,
+        "passed": true
+      },
+      {
+        "name": "revoked",
+        "actual": false,
+        "expected": false,
+        "passed": true
+      },
+      {
+        "name": "expired",
+        "actual": false,
+        "expected": false,
+        "passed": true
+      },
+      {
+        "name": "grant bool substituted for integer",
+        "actual": false,
+        "expected": false,
+        "passed": true
+      },
+      {
+        "name": "grant wrong parent",
+        "actual": false,
+        "expected": false,
+        "passed": true
+      },
+      {
+        "name": "grant unknown key",
+        "actual": false,
+        "expected": false,
+        "passed": true
+      },
+      {
+        "name": "worker writable source",
+        "actual": false,
+        "expected": false,
+        "passed": true
+      },
+      {
+        "name": "duplicate nested JSON member",
+        "actual": false,
+        "expected": false,
+        "passed": true
+      },
+      {
+        "name": "malformed grant four backticks",
+        "actual": false,
+        "expected": false,
+        "passed": true
+      },
+      {
+        "name": "malformed grant tildes",
+        "actual": false,
+        "expected": false,
+        "passed": true
+      },
+      {
+        "name": "source over byte limit",
+        "actual": false,
+        "expected": false,
+        "passed": true
+      },
+      {
+        "name": "source invalid UTF8",
+        "actual": false,
+        "expected": false,
+        "passed": true
+      },
+      {
+        "name": "legacy CLI round three stops",
+        "actual": 2,
+        "expected": 2,
+        "passed": true
+      },
+      {
+        "name": "partial CLI flag stops",
+        "actual": 2,
+        "expected": 2,
+        "passed": true
+      },
+      {
+        "name": "bound completion complete permitted",
+        "actual": true,
+        "expected": true,
+        "passed": true
+      },
+      {
+        "name": "bound completion consolidate permitted",
+        "actual": true,
+        "expected": true,
+        "passed": true
+      },
+      {
+        "name": "unlinked round three stays stopped",
+        "actual": false,
+        "expected": false,
+        "passed": true
+      },
+      {
+        "name": "bad completion raw hash stays stopped",
+        "actual": false,
+        "expected": false,
+        "passed": true
+      },
+      {
+        "name": "completion round mismatch",
+        "actual": false,
+        "expected": false,
+        "passed": true
+      },
+      {
+        "name": "new critical still requires positive root count",
+        "actual": false,
+        "expected": false,
+        "passed": true
+      },
+      {
+        "name": "park token stays rejected",
+        "actual": false,
+        "expected": false,
+        "passed": true
+      }
+    ],
+    "passed": 36,
+    "failed": 0,
+    "fileSymlink": {
+      "disposition": "UNAVAILABLE_WITH_REASON",
+      "reason": "OSError",
+      "winerror": 1314
+    },
+    "probeScriptSha256": "c7db2c8f6996736e9c50d28ef9b3f3b71a4a871e7a62467191f42bbf9bdfd929"
+  },
+  "probeSource": "\"\"\"Local independent declaration probe. No worker fixtures or test helpers imported.\"\"\"\nfrom pathlib import Path\nimport copy, hashlib, json, os, re, subprocess, sys, tempfile\n\nROOT = Path.cwd()\nCUSTODY = ROOT / '.cvf/runtime/ncr-review-continuation-local-20261015'\nsys.path.insert(0, str(ROOT / 'governance/compat'))\nimport check_review_cost_control as production\n\nresults = []\ndef record(name, actual, expected):\n    results.append(dict(name=name, actual=actual, expected=expected, passed=actual == expected))\n\ndef sha(raw): return hashlib.sha256(raw).hexdigest()\nART = ['governance/compat/probe_target.py', 'docs/reviews/probe_return.md', 'docs/reviews/evidence/probe.json']\nSCOPE = dict(objectiveId='LOCAL-INDEPENDENT-ADMISSION', acceptanceItems=['A-LOCAL', 'B-LOCAL'],\n    allowedArtifacts=ART, riskCeiling='SAME_AS_AUTHORIZED_PARENT',\n    effectCeilings={k:0 for k in ['providerCalls','networkCalls','publicWrites','deployments','realDataMutations','destructiveActions','productRuntimeStarts']},\n    numericalCeilings=dict(workerMinutes=20, reviewerMinutes=20), commitOwner='reviewer-closer')\nGRANT = dict(schemaVersion='cvf.reviewDispatchContinuationAuthorization@1.0.0', decisionOwner='OPERATOR',\n    operatorInstructionEvidence='Synthetic fixture: operator instruction verified separately by Local in the actual session.',\n    status='ACTIVE', expiresAtUtc=None, validityDisposition='UNTIL_REVOKED_OR_SCOPE_CHANGE',\n    binding=dict(parentAssignmentId='LOCAL-PROBE',rootCauseClusterId='LOCAL-DEPENDENT-ROOT',reviewRoundCount=3,\n        reworkGeneration=3,priorFindingSetDigest='d'*64,dispatchSurface='INTERNAL_AGENT',commitMode='WORKER_MUST_NOT_COMMIT'),scope=SCOPE)\nLEDGER = dict(schemaVersion='cvf.workOrderAcceptanceLedger@1.0.0',requirements=[dict(requirementId='LOCAL-REQ',mandatory=True,\n    expectedArtifacts=ART,requiredProofIds=['LOCAL-PROOF'])],proofCatalog=[dict(proofId='LOCAL-PROOF',kind='offline',locator='probe#result')])\nSOURCE = 'docs/reviews/local-grant.md'\nWO = 'docs/work_orders/local-probe.md'\n\ndef grant_bytes(g):\n    return ('# Independent fixture\\n\\n```operator-continuation-authorization-json\\n'+json.dumps(g,indent=2)+'\\n```\\n').encode()\n\nwith tempfile.TemporaryDirectory(prefix='cvf-local-probe-') as tmp:\n    root = Path(tmp)\n    def put(p,b):\n        dest=root/p; dest.parent.mkdir(parents=True,exist_ok=True); dest.write_bytes(b)\n    def diagnose(order): return production.diagnose(WO,order,root=root).is_clean\n    raw=grant_bytes(GRANT); put(SOURCE,raw)\n    args=[sys.executable,'-B',str(ROOT/'governance/compat/build_dispatch_packet_scaffold.py'),\n        '--packet-kind','generic-worker-dispatch','--batch-id','LOCAL-PROBE','--title','Local isolated fixture',\n        '--date','2026-10-15','--base','436c4cc8e','--commit-mode','WORKER_MUST_NOT_COMMIT',\n        '--dispatch-kind','REWORK','--review-round-count','3','--root-cause-cluster-id','LOCAL-DEPENDENT-ROOT',\n        '--prior-finding-set-digest','d'*64,'--stdout']\n    flags=['--operator-continuation-evidence-path',SOURCE,'--operator-continuation-evidence-sha256',sha(raw)]\n    def cli(extra): return subprocess.run(args+extra,cwd=root,capture_output=True,encoding='utf-8',errors='replace')\n    p=cli(flags); record('real process CLI emits cleared round three',p.returncode,0)\n    assert p.returncode==0,p.stderr\n    (CUSTODY/'cli-output.txt').write_text(p.stdout,encoding='utf-8')\n    order=p.stdout.split('=== Generated Work Order Skeleton ===',1)[1]\n    order=re.sub(r'```acceptance-ledger-json\\n.*?\\n```','```acceptance-ledger-json\\n'+json.dumps(LEDGER)+'\\n```',order,flags=re.S)\n    order=order.replace('reviewerLocalRepairBoundary: FILL_ME','reviewerLocalRepairBoundary: NEW_EVIDENCE_REQUIRED')\n    order=order.replace('reviewerLocalRepairBasis: FILL_ME (cite the finding and controlling boundary)',\n        'reviewerLocalRepairBasis: Independent fixture requires source evidence owned by the implementation worker.')\n    record('completed generated order accepted',diagnose(order),True)\n    record('scaffold generates two identical Commit mode declarations',len(re.findall(r'^Commit mode:',order,re.M)),2)\n    record('identical Commit mode repeat accepted',diagnose(order+'\\nCommit mode: WORKER_MUST_NOT_COMMIT\\n'),True)\n    record('conflicting Commit mode rejected',diagnose(order+'\\nCommit mode: WORKER_MAY_COMMIT\\n'),False)\n    record('duplicate round scalar rejected',diagnose(order+'\\nreviewRoundCount: 3\\n'),False)\n    for name,changed in [\n        ('wrong source hash',order.replace(sha(raw),'0'*64)),\n        ('partial declaration',re.sub(r'^operatorContinuationEvidenceSha256:.*\\n','',order,flags=re.M)),\n        ('tilde scope opener',order.replace('```continuation-scope-json','~~~continuation-scope-json')),\n        ('four backtick scope opener',order.replace('```continuation-scope-json','````continuation-scope-json')),\n        ('scope list reorder',order.replace('\"A-LOCAL\",\\n    \"B-LOCAL\"','\"B-LOCAL\",\\n    \"A-LOCAL\"')),\n        ('scope numeric type substitution',order.replace('\"workerMinutes\": 20','\"workerMinutes\": 20.0')),\n        ('critical placeholder',order.replace('newIndependentCriticalEvidence: NONE','newIndependentCriticalEvidence: FILL_ME')),\n        ('dependency audit retained',order.replace('dependencyAuditDisposition: COMPLETE_BEFORE_FIRST_REPAIR','dependencyAuditDisposition: NONE')),\n        ('successor restriction retained',order.replace('successorTrancheOpened: NO','successorTrancheOpened: YES')),\n        ('ledger union mismatch',order.replace('\"expectedArtifacts\": [','\"expectedArtifacts\": [\"docs/reviews/additional.md\",')),\n    ]:\n        record(name,diagnose(changed),False)\n    for name,edit in [\n        ('revoked',lambda g:g.update(status='REVOKED')),\n        ('expired',lambda g:g.update(validityDisposition='UNTIL_UTC_EXPIRY',expiresAtUtc='2000-01-01T00:00:00Z')),\n        ('grant bool substituted for integer',lambda g:g['scope']['effectCeilings'].update(providerCalls=False)),\n        ('grant wrong parent',lambda g:g['binding'].update(parentAssignmentId='OTHER-PARENT')),\n        ('grant unknown key',lambda g:g.update(unknown=0)),\n        ('worker writable source',lambda g:g['scope']['allowedArtifacts'].append(SOURCE)),\n    ]:\n        g=copy.deepcopy(GRANT); edit(g); altered=grant_bytes(g); put(SOURCE,altered)\n        record(name,diagnose(order.replace(sha(raw),sha(altered))),False)\n    for name,altered in [\n        ('duplicate nested JSON member',raw.replace(b'\"providerCalls\": 0',b'\"providerCalls\": 0, \"providerCalls\": 0')),\n        ('malformed grant four backticks',raw.replace(b'```operator-',b'````operator-')),\n        ('malformed grant tildes',raw.replace(b'```operator-',b'~~~operator-')),\n        ('source over byte limit',raw+b' ' * 65536),\n        ('source invalid UTF8',raw+b'\\xff'),\n    ]:\n        put(SOURCE,altered); record(name,diagnose(order.replace(sha(raw),sha(altered))),False)\n    put(SOURCE,raw)\n    record('legacy CLI round three stops',cli([]).returncode,2)\n    record('partial CLI flag stops',cli(flags[:2]).returncode,2)\n    put(WO,order.encode())\n    telemetry=dict(reviewRoundCount=3,workerRepairTurnCount=1,newRootCauseCountThisRound=0,dependentFindingCountThisRound=1,\n        elapsedReviewMinutes=10,providerCallCount=0,tokenOrQuotaUsage='NOT_AVAILABLE_WITH_REASON: local fixture',\n        valueDelta='Disposition of one dependent declaration fixture.',stopDisposition='COMPLETE_REVIEW',\n        preRepairAuditDisposition='COMPLETE_BEFORE_FIRST_REPAIR',materialCommitCount=1,continuityCommitCount=1,\n        commitPlanDisposition='DEFAULT_ONE_MATERIAL_ONE_CONTINUITY',latencyDisposition='WITHIN_FAST_PATH_TARGET',avoidableDelayClass='NONE')\n    completion='# Local fixture\\nStatus: ACCEPTED_BOUNDED\\ndocType: completion_review\\nReview-Cost Telemetry: REQUIRED\\n\\n'\n    completion+='\\n'.join(f'{k}: {v}' for k,v in telemetry.items())+'\\n'\n    link=f'continuationWorkOrderPath: {WO}\\ncontinuationWorkOrderSha256: {sha(order.encode())}\\n'\n    def done(t): return production.diagnose('docs/reviews/local-completion.md',t,root=root).is_clean\n    record('bound completion complete permitted',done(completion+link),True)\n    record('bound completion consolidate permitted',done((completion+link).replace('stopDisposition: COMPLETE_REVIEW','stopDisposition: CONSOLIDATE_SINGLE_REPAIR')),True)\n    record('unlinked round three stays stopped',done(completion),False)\n    record('bad completion raw hash stays stopped',done(completion+link.replace(sha(order.encode()),'0'*64)),False)\n    record('completion round mismatch',done((completion+link).replace('reviewRoundCount: 3','reviewRoundCount: 4')),False)\n    record('new critical still requires positive root count',done((completion+link).replace('stopDisposition: COMPLETE_REVIEW','stopDisposition: CONTINUE_NEW_CRITICAL_EVIDENCE')),False)\n    record('park token stays rejected',done((completion+link).replace('stopDisposition: COMPLETE_REVIEW','stopDisposition: PARK_LOW_INCREMENTAL_VALUE')),False)\n    sym=root/'docs/reviews/file-link.md'\n    try:\n        os.symlink(root/SOURCE,sym)\n    except (OSError,NotImplementedError) as e:\n        symlink=dict(disposition='UNAVAILABLE_WITH_REASON',reason=type(e).__name__,winerror=getattr(e,'winerror',None))\n    else:\n        linked=order.replace(SOURCE,'docs/reviews/file-link.md'); record('real file symlink rejected',diagnose(linked),False)\n        symlink=dict(disposition='EXECUTED_FILE_SYMLINK')\n\nout=dict(schemaVersion='cvf.localIndependentProbe@1.0.0',cases=results,passed=sum(r['passed'] for r in results),\n    failed=sum(not r['passed'] for r in results),fileSymlink=symlink,probeScriptSha256=sha(Path(__file__).read_bytes()))\n(CUSTODY/'probe-result.json').write_text(json.dumps(out,indent=2)+'\\n',encoding='utf-8')\nprint(json.dumps(out,indent=2))\nsys.exit(bool(out['failed']))\n",
+  "logs": {
+    "entry-gate.log": {
+      "path": ".cvf/runtime/ncr-review-continuation-local-20261015/entry-gate.log",
+      "sha256": "922e4cec31c253d64031cbcace69679f6c34a6d790362246bb1a0e456085c4c3",
+      "bytes": 4643
+    },
+    "probe.log": {
+      "path": ".cvf/runtime/ncr-review-continuation-local-20261015/probe.log",
+      "sha256": "372070cebf56905866cfd413a25ad8322886ac50bafc54bd3115dcf25ff96f4d",
+      "bytes": 5076
+    },
+    "head-regression.log": {
+      "path": ".cvf/runtime/ncr-review-continuation-local-20261015/head-regression.log",
+      "sha256": "6d77556b9bea863c43a2f3937c19233e0ffba988a88ddee4aceb7c6f6bbb2050",
+      "bytes": 5892
+    }
+  },
+  "existingEvidenceDisposition": {
+    "focusedPytest": "CONSUMED_HASH_VERIFIED_161_PASS",
+    "unittest": "CONSUMED_HASH_VERIFIED_144_PASS",
+    "mutation": "CONSUMED_HASH_VERIFIED_9_KILLED",
+    "parity": "CONSUMED_LIMITED_DIFFERENTIAL_RECEIPT_1783_APPLICABLE_ZERO_DIFFERENCES_NOT_CORPUS_COMPLETENESS",
+    "finalWorkerFastGate": "CONSUMED_HASH_VERIFIED_FINAL_EXACT8_PASS_5.30_SECONDS"
+  },
+  "oldConsumerFailures": {
+    "result": "REPRODUCED_FOUR_ON_PRISTINE_HEAD",
+    "head": "436c4cc8e9f23b1d3c11a0b32775aa2d19858f78",
+    "exportPaths": [
+      "governance/compat",
+      "scripts/lib/downstream_governance",
+      "docs/reference/downstream_gate_profile"
+    ],
+    "selection": "Exactly four failing node IDs from the hash-verified worker consumer log; no broad regression replay",
+    "exitCode": 1,
+    "limitation": "Bounded archive export, not a full repository checkout; reproduces the same assertion messages and node IDs."
+  },
+  "interpretations": {
+    "commitMode": "Identical repeated declarations denote one unambiguous value; conflicting values reject; other binding scalars singular.",
+    "scope": "Strict JSON types and ordered lists; object key order immaterial.",
+    "fences": "Declared tags require the exact canonical triple-backtick grammar; malformed declared forms reject."
+  },
+  "operatorAuthority": {
+    "source": "Actual operator instruction in current session: full authority, no repeated micro-confirmation, after the concrete six-file proposal.",
+    "decisionOwner": "LOCAL",
+    "boundary": "Existing-owner maintenance and ordinary technical disposition/commits; no HTML/native/provider effect grant inferred."
+  },
+  "contradictions": [
+    {
+      "id": "LOCAL-E01",
+      "description": "Worker F4 says both ADIF queries retained; preparation says initial zero-result query not saved.",
+      "disposition": "Only second query has retained raw evidence. Initial zero result remains worker-reported; original worker proof preserved, no retroactive custody claim."
+    },
+    {
+      "id": "LOCAL-E02",
+      "description": "No retained worker pristine-HEAD log found in named custody.",
+      "disposition": "Local independently reproduced precisely four reported failures on bounded HEAD export; local log retained."
+    }
+  ],
+  "preparation": {
+    "worker": "PARTIAL_WITH_REASON_NOT_REPAIRED",
+    "local": "Targeted current owner/predicate reads and entry gate preceded Local probe and governed closure writes; no all-body or historical preparation claim."
+  },
+  "changes": "No Local implementation/test edits; twelve-path material then separate generated exact6 continuity.",
+  "nextAllowedMove": "Local preparation of a separate immutable HTML root continuation packet and scoped phase feasibility; no runtime execution admitted.",
+  "preserved": "HTML root ordinal2/counters2,0,2,0/blockers/freeze, four historical P4 exclusions, spent profiles, REQ08 failures; R1/R2partial,R3/R4open,R5/R6deferred, parked effects, LHW24.",
+  "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
+  "localClosureGateFailures": [
+    {
+      "gate": "first reviewer-return preflight",
+      "result": "FAIL",
+      "reason": "Missing explicit rawMemoryReleased=false in Local completion coordination section",
+      "repair": "Added explicit false assertion; no source/test change",
+      "logSha256": "a8f7c01b1e212267d78d3c9f2f96e963562db5c313105738bbec0bf3ccc1cb3a"
+    }
+  ]
+}
