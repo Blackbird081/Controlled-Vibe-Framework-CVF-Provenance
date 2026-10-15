@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Current NCR Continuation
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `1bd5095079f58cdb148cdfb007f964827b64c6dc`. Material SHA: `1bd5095079f58cdb148cdfb007f964827b64c6dc`. Batch ID: CVF-NCR-HTML-NATIVE-PREREQUISITES-20261016. Native source/API prerequisite PLAN complete; no native effect grant.
+Current HEAD recorded for this handoff: `cbf22efeba80f53fad754016a1be6268342e97f9`. Material SHA: `cbf22efeba80f53fad754016a1be6268342e97f9`. Batch ID: CVF-NCR-HTML-NATIVE-BINDING-LOCAL-20261016. Source50/independent actual native PASS bounded; Local own ACK FAIL retained, no parent release.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -13,19 +13,19 @@ Current continuation only. Root AGENTS.md and canonical routing owners retain fu
 Closed history is preserved byte-for-byte at `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V63_PRE_NCR_COMPACTION_2026-10-07.md` (SHA256 `54801fdcf14e9abe17592352ec3c69a0b0e855632991af0caacac7b65252ccba`); it is NOT_ACTIVE_AUTHORITY and not default startup reading.
 ## Scope / Target / Owner Boundary
 
-Current finite PLAN owns documentary3 and separate exact6 continuity. Source10, tests, accepted source evidence, old execution pairs/grants and root state are read-only. One internal source adviser; Local reverified the source/API finding and owns the decision. Direct Local implementation preference remains; no manual relay.
+Direct Local source2/documentary4 outcome completed through tests, independent actual native proof and material commit. No phase-by-phase operator confirmation. One distinct INTERNAL_AGENT did source inspection and one actual benign-child proof; Local owns production and disposition. Local own native terminal proof remains failed, both native slots spent. Next selected cap1/B-E preparation does not admit full runtime effects.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_html_native_prerequisites_complete_source_contract_plan`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=Local consolidate bounded native-binding source-correction envelope; role=INTERNAL_AGENT Local planner/implementer/reviewer/steward, one read-only internal adviser; phase=prerequisite PLAN complete/native entry source-blocked; decision owner=Local; parked checkpoint=actual native/B-E/product/browser/container/provider/stage/parent/public/deploy. Direct implementation, no manual relay.
+Startup acknowledged: current mode=`cvf_ncr_html_native_binding_accepted_independent_cap1_admission_plan`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=Local consolidate cap1/source-admission plus B-E prerequisites and carry admitted steps through verification/commit; role=INTERNAL_AGENT Local implementer/reviewer/steward with distinct native probe executor; phase=source and independent native accepted bounded, Local failed ACK retained; decision owner=Local; parked checkpoint=actual B-E/product/browser/container/provider/stage/parent/public/deploy. No documentary micro-stops or manual relay; native slots spent.
 
 ## Current Mode
 
-`cvf_ncr_html_native_prerequisites_complete_source_contract_plan`. Source/API prerequisite PLAN complete at material1bd5095079f58cdb148cdfb007f964827b64c6dc; no new control program or native effect. Snapshot error convention must be corrected before actual N1-N4. Source-model160/13/14 remains prior bounded evidence; R1/R2partial,R3/R4open.
+`cvf_ncr_html_native_binding_accepted_independent_cap1_admission_plan`. Source50 PASS; independent actual Windows64 one-child/Job/handle proof PASS and frozen terminal/ACK match. Local Native FAIL from early protocol freeze kept separately, procedure partial. Materialcbf22efeba80f53fad754016a1be6268342e97f9; separate exact6 continuity then serial split closure. Parent R1/R2partial,R3/R4open.
 
 ## Current Authority
 
-Current documentary disposition `docs/assessments/CVF_NCR_HTML_NATIVE_PROOF_PREREQUISITES_2026-10-16.md` SHA256 `79fe3160b9a24db56b36a9e13a91f0f4cb831f201098ff3106ecc25d9bd596aa`; evidence `docs/reviews/evidence/ncr-html-native-prerequisites-local-20261016.json`. This is PLAN, no executable work order or native grant. Existing required currentAuthority four-field pair is consumed R5 historical provenance only. Prior accepted direct source material94f7793e and continuity60484debf remain; old source window closed. Local next prepares the existing-owner source envelope under current continuation/standing authority, then its own before-effect release where applicable.
+Consumed direct Local scope `docs/baselines/CVF_GC018_NCR_HTML_NATIVE_BINDING_LOCAL_2026-10-16.md` SHA256 `8bb157c9682572011aa2202d8930f5ad89dd3c05df4573545f3c7b594de25ca1`; disposition `docs/assessments/CVF_NCR_HTML_NATIVE_BINDING_LOCAL_DISPOSITION_2026-10-16.md`; proof `docs/reviews/evidence/ncr-html-native-binding-local-20261016.json`. Source11 frozen at lifecycle343/test_win32258. One complete distinct actual native result supports this host/revision only; Local failure does not become PASS. No executable work order, no native slot refill. Existing currentAuthority four-field R5 pair is historical only. User standing direct Local autonomy persists through dependent work; actual B-E/data/provider/public effects retain their own before-effect boundaries.
 
 ## Accepted NCR Evidence And Continuation
 
@@ -37,7 +37,7 @@ Finite clipboard result ordering is accepted; actual OS write cancellation, whol
 
 ## Next Allowed Move
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-NATIVE-PREREQUISITES-20261016. Native prerequisite PLAN material=1bd5095079f58cdb148cdfb007f964827b64c6dc; evidence=docs/reviews/evidence/ncr-html-native-prerequisites-local-20261016.json. Local next consolidates one bounded existing-owner native-binding source-correction envelope, including snapshot failure sentinel and directly connected resume/enumeration error contracts before any edit/test. Win32._ok currently rejects zero only while Microsoft documents INVALID_HANDLE_VALUE for CreateToolhelp32Snapshot used by resume. This is a verified source/API mismatch, not an observed native failure or independent critical evidence. Keep lifecycle owner and focused non-native regression scope; bind exact paths/capacity, failure oracles, authority and a fresh prospective budget first. No new checker, product/guard/legacy entrypoint change, broad ABI campaign or manual implementation relay. N1-N4 standalone Windows ABI/owned benign-child/handle-stop/terminal proof is selected for a later separate before-effect release, never full runner as inventory. Current native/test/child/product/browser/container/provider/deletion0; primary documentation reads3. cap1 control admission remains fail-closed; B-E profile/tools/image/host and actual parent cleanup/disposal unproved. No native effect or control slot granted by this plan; old Local8/8 and52/54 window closed, original grants spent. Prior direct Local source acceptance160 Python/13 Node/14 independent retained at94f7793e; prior six receipts consumed read-only, no control rerun. All failures and source pins retained; Local owns direct implementation/disposition/commit and routine documentary steps without micro-confirmation. Schema-required currentAuthority R5 pair remains consumed historical provenance, no executable order. Same root NCR_HTML_CONFIGURED_RECEIPT_CONTROL_PROOF/generation6/SCEC2/counters2,0,2,0/two blockers/freeze, no transition/new independentCriticalEvidence. Prior7 P4 blocked rows/exclusions and exact adjudications preserved; consume normal collector only, no manual rerun/promotion. R1/R2partial,R3/R4open,R5/R6deferred; foundation active/extension NOT_APPLIED/projectOPEN; data/custody/business/send/B2/P11/public/deploy parked; LHW24 retained. Existing outside-temp fixtures retained by Local after prior policy rejection; no new deletion attempt or alternate removal.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-NATIVE-BINDING-LOCAL-20261016. Source/native material=cbf22efeba80f53fad754016a1be6268342e97f9; proof=docs/reviews/evidence/ncr-html-native-binding-local-20261016.json. Local next consolidates independent cap1 control/source-admission and B-E synthetic owned-profile prerequisites into one finite direct envelope, then continues admitted preparation/implementation/verification/commit without phase-by-phase operator stops. Keep real authority/effect checkpoints explicit; no manual implementation relay, new checker, broad hardening or old-slot refill. Current source11: lifecycle343 plus new focused test_win32258, other nine original code bytes retained. Snapshot/wait/enumeration/prior-count/post-open-thread-owner/primary+close contracts corrected. Final selected50 PASS/93deselected; old160/13/14 remains predecessor evidence, no whole suite replay. Distinct one-shot actual Windows64 Job/one-benign-child proof PASS: independent ABI/policy/identity, nonce ACK, retained-handle stop, signaled exit/empty members, all closes and exact2239-byte terminal/separate ACK. Local own native program remains FAIL_NATIVE: froze protocol before terminal ACK, FROZEN correctly refused write; no terminal bytes saved, no recovery/replay/upgrade. Procedure/preparation PARTIAL_WITH_REASON. Root5/6 and reviewer1/2 programs; native1/1 and child1/1 each,2 actual benign children total. Both native windows closed, no repeat slot. Product effects0; B-E/cap1/full parent/disposal unproved, old runtime source pins intentionally refuse changed lifecycle. New baseline consumed for this bounded outcome; no executable work order. Schema-required currentAuthority R5 pair is historical provenance only. Same root NCR_HTML_CONFIGURED_RECEIPT_CONTROL_PROOF, actual dependent source generation7; SCEC2/counters2,0,2,0/two blockers/freeze unchanged, no transition or independentCriticalEvidence. All failed source/native attempts and four exact fresh legacy-caller fixture relocations preserved in current custody; no historical data touched or outside-temp deletion attempted. Prior7 P4 blocked rows/exclusions preserved, use normal collector only, no manual rerun/promotion. R1/R2partial,R3/R4open,R5/R6deferred; foundation active/extension NOT_APPLIED/projectOPEN; data/custody/business/send/B2/P11/public/deploy parked; LHW24 retained.
 
 ## Active Boundary
 T3B has a Local-verified active v1 specification. Party B is verified and T3C-C1 tooling accepted at `db78c87df`; T3C-C2 and Party C are verified. T3D-C1 tooling is accepted at `9ed844c2a` without source. T3D-C0-R1 closed at `2fffa1ef7`. T3D-C3 was accepted bounded at `88137e9a2`, but actual-mode prepare attempts failed before Party B/C execution; authorized cleanup removed the failed root and discarded unaccepted worker changes. G1 stopped, G2-G6 parked, and G7 research closed at `660601f0e` with `ADAPT_EXISTING_HANDOFF_ONLY`. Evidence-join sufficiency stays WATCH; no implementation successor exists. Rejected T2 paths remain archived; HRLTP-T2 paused.
@@ -83,7 +83,7 @@ Historical conditional OBS-079b96e73400827c trusted BLOCKED/adjudication remains
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: exact6 continuity for completed native prerequisite PLAN and selected source-contract envelope; no checker/hook/AGENTS semantics.
+Authorized guard-maintenance scope: exact6 continuity for accepted source/independent native outcome and next cap1/source admission envelope; no checker/hook/AGENTS semantics.
 Protected paths:
 - `AGENT_HANDOFF_V63_2026-09-18.md`
 - `CVF_SESSION_MEMORY.md`
@@ -91,31 +91,31 @@ Protected paths:
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-Operator authorization: current next, direct Local implementation preference and standing Local roadmap/review/maintenance/commit authority; current PLAN exact6 scope.
+Operator authorization: current no-micro-stops continuation and standing direct Local implementation/review/commit authority; current native/source exact6 scope.
 Rollback boundary: these exact6; preserve R5 rejection/current source proof, all SCEC counters/blockers/freeze, P4 exclusions and held effects.
 
 ## Agent Operation Trace Block
 
 | Field | Evidence |
 |---|---|
-| Actor | Local INTERNAL_AGENT session-sync steward |
+| Actor | Local INTERNAL_AGENT steward |
 | Provider or surface | private workspace |
-| Session or invocation | ncr-html-native-prerequisites-plan-20261016 |
+| Session or invocation | ncr-html-native-binding-local-20261016 |
 | Working directory | repository root |
-| Command or tool surface | four source edits; canonical state generator; exact6 commit; serial split closure |
+| Command or tool surface | four continuity source edits, canonical generator, exact6 commit, serial split closure |
 | Target paths | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Allowed scope source | current next; standing direct Local roadmap/commit authority; current documentary PLAN |
-| Before status evidence | exact3 PLAN material 1bd5095079f58cdb148cdfb007f964827b64c6dc committed; stagedempty |
-| After status evidence | exact6; current PLAN complete, source/API entry blocked and next envelope selected |
-| Diff evidence | exact6 staged paths and material/continuity split ranges |
-| Approval boundary | documentary continuity only; no native/source/test/effect release |
-| Claim boundary | no observed native failure or actual ABI/B-E/parent acceptance |
+| Allowed scope source | current no-micro-stops instruction and direct Local native/source envelope |
+| Before status evidence | exact6 material cbf22efeba80f53fad754016a1be6268342e97f9 committed; stagedempty |
+| After status evidence | exact6 mode/authority/next aligned; Local native FAIL and independent PASS separate |
+| Diff evidence | exact6 staged manifest and split ranges |
+| Approval boundary | documentary continuity only, no B-E/native repeat/provider/public grant |
+| Claim boundary | source plus one complete independent host/revision native proof; parent remains open |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-html-native-prerequisites-plan-20261016 |
+| Invocation ID | ncr-html-native-binding-local-20261016 |
 | Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Manifest delta | MATCH exact6 |
-| Deletion or rename disposition | none; prior outside-temp custody retained |
+| Deletion or rename disposition | none; all raw custody retained |
 
 ## Claim Boundary
 Current facts, exact packet binding and permitted next action only. Historical Home/O6 evidence remains bounded; no whole-roadmap, live/provider, backend cancellation, release/public/deployment or model-winner claim.
