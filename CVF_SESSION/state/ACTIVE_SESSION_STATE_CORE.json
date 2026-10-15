@@ -36,12 +36,12 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_NCR_HTML_INTEGRATED_ROOT_BUILD_RELEASE_2026-10-15.md",
-    "baselineSha256": "af06c979946f3547abbf90e8bed61613576c977bdd34624d46b8030e1c64f485",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_INTEGRATED_ROOT_BUILD_RELEASE_2026-10-15.md",
-    "workOrderSha256": "60ffd9fcb62a8b0854e4cf0fc846b979ae9934b8e8febc57db028b5c41721038"
+    "baselinePath": "docs/baselines/CVF_GC018_NCR_REVIEW_CONTINUATION_2026-10-15.md",
+    "baselineSha256": "325a064e5e90094a7a24da124c520ad3f03116b97eaf90a5d24ef46032c94ef7",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_REVIEW_CONTINUATION_2026-10-15.md",
+    "workOrderSha256": "f1faedca774e2f97b36028ec2c3054f2057edde3b57f35f624b49a131d38d733"
   },
-  "currentAuthoritySyncReason": "Owner reconciliation complete at 3064e1d8030c4942d7bd8db7212907a9e0fbd9e6; exact2 roadmap/evidence, unchanged held V2 baseline/snapshot/source14. KEEP_STOPPED_PENDING_PROTECTED_MAINTENANCE_SCOPE for six existing owner/code/test paths including five protected Python files. No new work order, patch or checker; no runtime grant. Consumed release pair remains provenance only. Operator manual-copy worker preference recorded; no worker invocation. Original root/freeze/caps/partial failures retained.",
+  "currentAuthoritySyncReason": "Operator2026-10-15 full authority supersedes maintenance checkpoint. New exact3 pair/companion at 4be6fae004f2fea98edb5de7d8be0486c8a7644f; six existing owner/checker/scaffold/test paths plus return/proof2. Ordinary same-scope packet/test/review/cleanup/commits require no repeat question. Operator manual worker copy after final bound release PASS; no agent invoked here. This distinct maintenance INITIAL does not reset HTML root or refill spent profiles. Historical PARTIAL/failures/P4 and parked effects retained; original roadmap unchanged historical selection, active authority is this new pair.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
@@ -110,7 +110,7 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_ncr_html_admission_owner_ruling_complete_maintenance_held",
+  "currentMode": "cvf_ncr_review_continuation_worker_dispatch_ready",
   "previousMode": "cvf_ncr_html_root_source_reassessment_complete_design_pending",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",

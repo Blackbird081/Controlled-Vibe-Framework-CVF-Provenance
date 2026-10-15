@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Current NCR Continuation
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `3064e1d8030c4942d7bd8db7212907a9e0fbd9e6`. Material SHA: `3064e1d8030c4942d7bd8db7212907a9e0fbd9e6`. Batch ID: CVF-NCR-HTML-EXISTING-ADMISSION-ROUTE-RECONCILIATION. Exact2 documentary ruling/evidence; maintenance scope held, no worker/effects.
+Current HEAD recorded for this handoff: `4be6fae004f2fea98edb5de7d8be0486c8a7644f`. Material SHA: `4be6fae004f2fea98edb5de7d8be0486c8a7644f`. Batch ID: CVF-NCR-REVIEW-CONTINUATION-20261015. Exact3 authorized maintenance baseline/order/companion; bound release before manual transfer, implementation pending.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -13,19 +13,19 @@ Current continuation only. Root AGENTS.md and canonical routing owners retain fu
 Closed history is preserved byte-for-byte at `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V63_PRE_NCR_COMPACTION_2026-10-07.md` (SHA256 `54801fdcf14e9abe17592352ec3c69a0b0e855632991af0caacac7b65252ccba`); it is NOT_ACTIVE_AUTHORITY and not default startup reading.
 ## Scope / Target / Owner Boundary
 
-Documentary owner reconciliation complete in existing roadmap/evidence, exact2 material plus exact6 continuity. Selected remedy is a conditional bound-clearance amendment to the existing owner/checker/scaffold, six existing paths including five protected Python files. No new checker or implementation release. Operator manually copies a future ready packet to the preferred model; Local does not invoke workers. Original held baseline/snapshot and source14 stay unchanged.
+Operator full-authority instruction supersedes the pending six-file maintenance scope checkpoint. Exact3 paired baseline/order/companion committed; roadmap unchanged because it was the committed next-move target, not this dispatch authority. Worker exact8, no commit, no new checker/hook. Current raw pair and source6 pins bind the release. Operator manual copy only; no worker invoked. Local handles ordinary same-scope packet/implementation-dependent review corrections and local commits without asking again.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_html_admission_owner_ruling_complete_maintenance_held`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=operator scope disposition for concrete existing-owner maintenance, then Local admitted packet; role=Local INTERNAL_AGENT orchestrator/reviewer; phase=documentary ruling complete, execution held; decision owner=Local technical, operator protected scope/effects; parked checkpoint=five protected Python edits and any fresh HTML effects, provider/data/business/send/B2/P11/public/deploy. Future worker transfer is operator manual copy; no agent invocation.
+Startup acknowledged: current mode=`cvf_ncr_review_continuation_worker_dispatch_ready`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=final bound release then operator manual worker transfer; role=Local INTERNAL_AGENT dispatcher/reviewer; phase=authorized maintenance dispatch; decision owner=Local technical/commit under operator full-authority instruction; parked checkpoint=unrelated HTML/provider/data/business/send/B2/P11/public/deploy effects, not routine six-file maintenance approval.
 
 ## Current Mode
 
-`cvf_ncr_html_admission_owner_ruling_complete_maintenance_held`. KEEP_STOPPED_PENDING_PROTECTED_MAINTENANCE_SCOPE; finite documentary ruling complete. Roadmap Admission Owner Ruling names exact future paths, source predicates, acceptance matrix and non-waiver boundaries. No maintenance work order is installed and no HTML effect is admitted. Earlier REQ08/read-ahead PARTIAL and all failed receipts remain. Do not rerun completed source reconciliation.
+`cvf_ncr_review_continuation_worker_dispatch_ready`. Six existing owner/checker/scaffold/test edits GRANTED; actual implementation and independent Local probe pending. Final bound pre-dispatch must PASS before transfer. Dispatcher preparation PARTIAL_WITH_REASON: companion/header/intake defects and later non-intake control sections corrected; invalid/failed receipts retained. Historical HTML root/REQ08/failures/P4 and spent profiles remain. No routine maintenance-scope question.
 
 ## Current Authority
 
-Consumed provenance pair only: baseline `docs/baselines/CVF_GC018_NCR_HTML_INTEGRATED_ROOT_BUILD_RELEASE_2026-10-15.md`, SHA256 `af06c979946f3547abbf90e8bed61613576c977bdd34624d46b8030e1c64f485`; work order `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_INTEGRATED_ROOT_BUILD_RELEASE_2026-10-15.md`, SHA256 `60ffd9fcb62a8b0854e4cf0fc846b979ae9934b8e8febc57db028b5c41721038`. No repeat execution authority. Latest held contract `docs/baselines/CVF_GC018_NCR_HTML_ROOT_ADMISSION_V2_DESIGN_2026-10-15.md`; snapshot `docs/reviews/evidence/ncr-html-root-admission-v2-packet-20261015.json`; evidence `docs/reviews/evidence/ncr-html-root-admission-v2-local-20261015.json`; material `e91bd74600f9555f64f33c42597c4dd884ac7dc0`. The snapshot contains exact prospective pair/companion bytes but neither candidate work order nor its companion is installed. Latest owner ruling material `3064e1d8030c4942d7bd8db7212907a9e0fbd9e6` is in roadmap Admission Owner Ruling and evidence ownerReconciliation; historical design bytes remain unchanged. Root blocked review `docs/reviews/CVF_NCR_HTML_INTEGRATED_ROOT_BUILD_COMPLETION_2026-10-15.md` and source reassessment `docs/assessments/CVF_NCR_HTML_ROOT_BUILD_SOURCE_REASSESSMENT_2026-10-15.md` remain bounded evidence. Current counters, freeze, spent profiles and prior partial preparation are not reset.
+Active maintenance pair: baseline `docs/baselines/CVF_GC018_NCR_REVIEW_CONTINUATION_2026-10-15.md`, raw SHA256 `325a064e5e90094a7a24da124c520ad3f03116b97eaf90a5d24ef46032c94ef7`; work order `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_REVIEW_CONTINUATION_2026-10-15.md`, raw SHA256 `f1faedca774e2f97b36028ec2c3054f2057edde3b57f35f624b49a131d38d733`; companion `docs/reviews/evidence/ncr-review-continuation-dispatch-20261015.json`. Material `4be6fae004f2fea98edb5de7d8be0486c8a7644f`. Operator2026-10-15 full-authority instruction follows the exact six-file proposal; routine same-scope work needs no repeated confirmation. Pair becomes transferable only after exact6 generated continuity and actual bound pre-dispatch PASS. Worker implementation6 plus return/proof2; no code is changed yet. Prior HTML release pair and held V2 baseline/snapshot are consumed/historical provenance only, not current worker authority or a runtime refill. Prior source/ruling evidence remains under docs/reviews/evidence/ncr-html-root-admission-v2-local-20261015.json and original blocked review/source assessment; stopped root ord2/counters2,0,2,0/blockers/freeze remain.
 
 ## Accepted NCR Evidence And Continuation
 
@@ -37,7 +37,7 @@ Finite clipboard result ordering is accepted; actual OS write cancellation, whol
 
 ## Next Allowed Move
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-EXISTING-OWNER-MAINTENANCE-SCOPE. Reconciliation CLOSED_DOCUMENTARY_BOUNDED at 3064e1d8030c4942d7bd8db7212907a9e0fbd9e6; ruling/prospective six-path scope=docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md, Admission Owner Ruling; source proof=docs/reviews/evidence/ncr-html-root-admission-v2-local-20261015.json ownerReconciliation. Disposition KEEP_STOPPED_PENDING_PROTECTED_MAINTENANCE_SCOPE: existing Review Cost owner/checker/scaffold plus focused tests, six existing paths/five protected Python paths; no new checker. Scope authority required before its own admitted packet/BUILD; no code patch or ready work order. Operator manually copies future ready packet to Sonnet 5.5 High; execution metadata only, shared-workspace role INTERNAL_AGENT, no automatic agent invocation. Do not repeat completed reconciliation, lower round3, use INITIAL for HTML repair, invent independent critical findings, or ask runtime approval against blocked admission. Held V2 baseline/snapshot and fourteen prior pins unchanged; historical scoped1-object FEASIBLE is not overall admission. Old pair consumed provenance only. Worker/native/browser/container/export/evaluate/provider starts0; no spent profile refill or positive retry. Preserve root ordinal2/counters2,0,2,0/two blockers/freeze, REQ08 and prior preparation PARTIAL, original failed bytes, four P4 blocked rows/C15 exclusions. R1/R2partial,R3/R4open,R5/R6deferred; data/custody/business/send/B2/P11/public/deploy parked; LHW24 retained. Ordinary admitted documentary work/gates/local commits need no repeated micro-approval.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=BUILD; BATCH_ID=CVF-NCR-REVIEW-CONTINUATION-20261015. Operator2026-10-15 grants full authority for selected six-file existing Review Cost owner/checker/scaffold/test maintenance and same-scope corrections; do not ask repeated micro-confirmations for packet, tests, Local review/cleanup/commits. Active baseline=docs/baselines/CVF_GC018_NCR_REVIEW_CONTINUATION_2026-10-15.md; workOrder=docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_REVIEW_CONTINUATION_2026-10-15.md; companion=docs/reviews/evidence/ncr-review-continuation-dispatch-20261015.json; material=4be6fae004f2fea98edb5de7d8be0486c8a7644f. Exact8 worker outputs/all8 requirements; WORKER_MUST_NOT_COMMIT. Final bound pre-dispatch PASS on committed current pair/continuity required before manual transfer; receipt=.cvf/runtime/ncr-review-continuation-dispatch-20261015/release-receipts/pre-dispatch.json. Operator copies short prompt to Sonnet 5.5 High; model metadata only, INTERNAL_AGENT in shared workspace; Local does not invoke worker and freezes mutation while worker lane active. Return COMPLETE_PENDING_REVIEW only with all mandatory proof, otherwise consolidated BLOCKED_WITH_REASON; distinct Local probe pending. No new checker/hook or HTML/native/browser/container/provider run. This initial maintenance identity does not reset stopped HTML ordinal2/counters2,0,2,0/blockers/freeze or refill consumed profiles. Historical failures/REQ08/preparation PARTIAL and four P4 blocked rows/C15 exclusions preserved. R1/R2partial,R3/R4open,R5/R6deferred; data/custody/business/send/B2/P11/public/deploy parked; LHW24 retained. Completed source reconciliation is not repeated.
 
 ## Active Boundary
 T3B has a Local-verified active v1 specification. Party B is verified and T3C-C1 tooling accepted at `db78c87df`; T3C-C2 and Party C are verified. T3D-C1 tooling is accepted at `9ed844c2a` without source. T3D-C0-R1 closed at `2fffa1ef7`. T3D-C3 was accepted bounded at `88137e9a2`, but actual-mode prepare attempts failed before Party B/C execution; authorized cleanup removed the failed root and discarded unaccepted worker changes. G1 stopped, G2-G6 parked, and G7 research closed at `660601f0e` with `ADAPT_EXISTING_HANDOFF_ONLY`. Evidence-join sufficiency stays WATCH; no implementation successor exists. Rejected T2 paths remain archived; HRLTP-T2 paused.
@@ -77,7 +77,7 @@ Historical conditional OBS-079b96e73400827c trusted BLOCKED/adjudication remains
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: Local exact6 completed documentary owner-ruling mode/next protected-maintenance scope checkpoint and actual material-SHA continuity; consumed pair raw pins retained; no code/checker/new execution.
+Authorized guard-maintenance scope: Local exact6 maintenance dispatch mode/active raw pair/next manual-transfer and actual material-SHA continuity. The separate six-file implementation authority is in the active baseline/order; no implementation or agent invocation in this continuity change.
 Protected paths:
 - `AGENT_HANDOFF_V63_2026-09-18.md`
 - `CVF_SESSION_MEMORY.md`
@@ -85,7 +85,7 @@ Protected paths:
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-Operator authorization: current commit/continue-roadmap instruction and existing Local continuity authority; the approved finite synthetic profiles are consumed; this scope records blocked review and source-only PLAN; other parked effects remain.
+Operator authorization:2026-10-15 full-authority instruction for the proposed maintenance and no repeated micro-confirmation, plus existing Local continuity/commit authority. Consumed HTML profiles stay consumed; this exact6 activates only the named maintenance pair and manual-transfer step.
 Rollback boundary: exact6; preserve original archive and accepted/blocked history, parked effects and prior observations. Historical P4 safety adjudication .cvf/runtime/mfrp-p4-shadow-canary/adjudications/ncr-offline-journey-marker-20261013.json remains valid for its original marker; no blanket clearance of future markers. New P4 receipt-generation marker d8d91ae25bd487b6798d7d7e48816cd7fb363d2d98bc27a6e70c43ee65eabbaa separately adjudicated by Local at .cvf/runtime/mfrp-p4-shadow-canary/adjudications/ncr-work-transfer-browser-marker-20261013.json, SHA256 ab42577ad08b59f54abb80ebbee64c6aae9b0d570018e8fccda9d5a2e0180c81; exact marker preserved in private custody; required admission heading restored; old failed receipt not promoted. Current marker OBS-70961d0b8b4d27db separately adjudicated by Local at .cvf/runtime/mfrp-p4-shadow-canary/adjudications/ncr-brief-reopen-marker-20261013.json, SHA256 c006bb09e83c08442460212cbabca0e100d22b27280af25c58a5df97804f9671; exact marker removed, journal/historical blocks/C15 exclusions unchanged.
 
 ## Agent Operation Trace Block
@@ -94,21 +94,21 @@ Rollback boundary: exact6; preserve original archive and accepted/blocked histor
 |---|---|
 | Actor | Local INTERNAL_AGENT session-sync steward |
 | Provider or surface | private workspace |
-| Session or invocation | ncr-html-admission-owner-ruling-continuity-20261015 |
+| Session or invocation | ncr-review-continuation-dispatch-continuity-20261015 |
 | Working directory | repository root |
-| Command or tool surface | owner ruling material SHA/mode/maintenance scope checkpoint and canonical generator |
+| Command or tool surface | active maintenance pair raw hashes/material SHA/mode/manual transfer and canonical generator |
 | Target paths | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Allowed scope source | operator next and existing Local exact6 documentary continuity authority |
-| Before status evidence | 3064e1d8030c4942d7bd8db7212907a9e0fbd9e6; exact2 owner ruling/evidence committed, worktree clean |
-| After status evidence | exact6 owner-ruling continuity; no new work order or effects |
+| Before status evidence | 4be6fae004f2fea98edb5de7d8be0486c8a7644f; exact3 pair/companion committed; worktree clean |
+| After status evidence | exact6 authorized maintenance dispatch continuity; new committed pair, no worker or runtime effects |
 | Diff evidence | exact6 staged manifest, generator/check, actual material SHA |
-| Approval boundary | documentary ruling complete; protected maintenance and new HTML effects remain held |
-| Claim boundary | no overall execution admission, root acceptance or new grant |
+| Approval boundary | maintenance authorized, final bound release required; unrelated HTML effects remain held |
+| Claim boundary | maintenance packet readiness only; no implementation acceptance or HTML effect grant |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-html-admission-owner-ruling-continuity-20261015 |
+| Invocation ID | ncr-review-continuation-dispatch-continuity-20261015 |
 | Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Manifest delta | MATCH exact6 owner-ruling continuity |
+| Manifest delta | MATCH exact6 authorized maintenance dispatch continuity |
 | Deletion or rename disposition | None |
 
 ## Claim Boundary
