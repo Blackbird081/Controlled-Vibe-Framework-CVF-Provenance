@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Current NCR Continuation
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `14508749185abad85a015c3119f57b213a196fbe`. Material SHA: `14508749185abad85a015c3119f57b213a196fbe`. Batch ID: CVF-NCR-REVIEW-CONTINUATION-20261015. Exact12 maintenance technical acceptance; procedure PARTIAL/REQ08 BLOCKED; separate root packet PLAN next.
+Current HEAD recorded for this handoff: `4c7e61932063ef0816d4907d902ccb261ddf3e04`. Material SHA: `4c7e61932063ef0816d4907d902ccb261ddf3e04`. Batch ID: CVF-NCR-REVIEW-CONTINUATION-20261015. Corrective exact6 maintenance material; initial material/continuity retained; procedure PARTIAL/REQ08 BLOCKED; separate root packet PLAN next.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -13,7 +13,7 @@ Current continuation only. Root AGENTS.md and canonical routing owners retain fu
 Closed history is preserved byte-for-byte at `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V63_PRE_NCR_COMPACTION_2026-10-07.md` (SHA256 `54801fdcf14e9abe17592352ec3c69a0b0e855632991af0caacac7b65252ccba`); it is NOT_ACTIVE_AUTHORITY and not default startup reading.
 ## Scope / Target / Owner Boundary
 
-Operator full-authority instruction covers the reviewed six existing paths, ordinary Local corrections/review/commits and exact6 continuity. Original worker8 and dispatch pair preserved; no Local implementation repair. Distinct Local36/36 and four-node HEAD baseline proof retained. Next root packet PLAN only; later immutable release/effect authority remains separate. No new checker, hook or automatic worker invocation.
+Operator full-authority instruction covers the reviewed six existing paths, ordinary Local corrections/review/commits and exact6 continuity. Original worker8 and dispatch pair preserved; no Local implementation repair. Distinct Local72/72 and four-node HEAD baseline proof retained. Initial material145087491 and continuity27c37aa are historical; new contradiction requires one corrective material/continuity exception, no worker redispatch. Next root packet PLAN only; later immutable release/effect authority remains separate. No new checker, hook or automatic worker invocation.
 
 ## Startup Acknowledgment
 
@@ -21,11 +21,11 @@ Startup acknowledged: current mode=`cvf_ncr_review_continuation_accepted_root_pa
 
 ## Current Mode
 
-`cvf_ncr_review_continuation_accepted_root_packet_plan`. Review `docs/reviews/CVF_NCR_REVIEW_CONTINUATION_COMPLETION_2026-10-15.md` accepts technical REQ01..07; REQ08 and mandatory preparation chronology stay BLOCKED/PARTIAL. Worker original161/144, mutation9 and final-byte gate consumed; Local independent36/36 PASS. Windows file symlink unavailable1314, directory-junction worker evidence retained. Four consumer failures reproduced on bounded HEAD export. Local first preflight omitted rawMemoryReleased=false; failure retained, declaration corrected, final reviewer preflight PASS. No source/test repair or new model observation.
+`cvf_ncr_review_continuation_accepted_root_packet_plan`. Review `docs/reviews/CVF_NCR_REVIEW_CONTINUATION_COMPLETION_2026-10-15.md` accepts technical REQ01..07; REQ08 and mandatory preparation chronology stay BLOCKED/PARTIAL. Worker original161/144, mutation9 and final-byte gate consumed; Local independent72/72 PASS. Windows file symlink unavailable1314, directory-junction worker evidence retained. Four consumer failures reproduced on bounded HEAD export. Local first preflight omitted rawMemoryReleased=false; failure retained, declaration corrected, final reviewer preflight PASS. Local two-source repair followed a late independent valid-input contradiction; original worker bytes stay in custody, original numeric failure retained; no new model observation.
 
 ## Current Authority
 
-Consumed maintenance baseline `docs/baselines/CVF_GC018_NCR_REVIEW_CONTINUATION_2026-10-15.md`, raw SHA256 `325a064e5e90094a7a24da124c520ad3f03116b97eaf90a5d24ef46032c94ef7`; order `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_REVIEW_CONTINUATION_2026-10-15.md`, raw SHA256 `f1faedca774e2f97b36028ec2c3054f2057edde3b57f35f624b49a131d38d733`. Original pair unchanged; current companion source6 bindings refreshed for reviewed bytes, original dispatch custody retained. Material `14508749185abad85a015c3119f57b213a196fbe`; review `docs/reviews/CVF_NCR_REVIEW_CONTINUATION_COMPLETION_2026-10-15.md`; proof `docs/reviews/evidence/ncr-review-continuation-local-20261015.json`. Pair is consumed evidence, not another implementation dispatch. Next Local derives a separate root continuation grant/pair from held V2 and six source obligations; actual scoped consent must be verified before any later effects. Same HTML root ordinal2/counters2,0,2,0/blockers/freeze and spent profiles remain. Original source pins for changed Review Cost owner/checker/helper are superseded only by this authorized maintenance, not asserted historically unchanged.
+Consumed maintenance baseline `docs/baselines/CVF_GC018_NCR_REVIEW_CONTINUATION_2026-10-15.md`, raw SHA256 `325a064e5e90094a7a24da124c520ad3f03116b97eaf90a5d24ef46032c94ef7`; order `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_REVIEW_CONTINUATION_2026-10-15.md`, raw SHA256 `f1faedca774e2f97b36028ec2c3054f2057edde3b57f35f624b49a131d38d733`. Original pair unchanged; current companion source6 bindings refreshed after bounded numeric-text helper/test correction, original dispatch and worker custody retained. Material `4c7e61932063ef0816d4907d902ccb261ddf3e04`; review `docs/reviews/CVF_NCR_REVIEW_CONTINUATION_COMPLETION_2026-10-15.md`; proof `docs/reviews/evidence/ncr-review-continuation-local-20261015.json`. Pair is consumed evidence, not another implementation dispatch. Next Local derives a separate root continuation grant/pair from held V2 and six source obligations; actual scoped consent must be verified before any later effects. Same HTML root ordinal2/counters2,0,2,0/blockers/freeze and spent profiles remain. Original source pins for changed Review Cost owner/checker/helper are superseded only by this authorized maintenance, not asserted historically unchanged.
 
 ## Accepted NCR Evidence And Continuation
 
@@ -37,7 +37,7 @@ Finite clipboard result ordering is accepted; actual OS write cancellation, whol
 
 ## Next Allowed Move
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-ROOT-CONTINUATION-PACKET-20261015. Review-continuation maintenance accepted technically at 14508749185abad85a015c3119f57b213a196fbe; review=docs/reviews/CVF_NCR_REVIEW_CONTINUATION_COMPLETION_2026-10-15.md; proof=docs/reviews/evidence/ncr-review-continuation-local-20261015.json; independent36/36 PASS, worker161/144 and9 killed controls consumed, original exact8/pair retained. REQ08/preparation remains BLOCKED/PARTIAL; four consumer failures reproduced on HEAD, no out-of-scope repair. Local next derives one separate immutable HTML root continuation grant/pair from the held V2 contract and six source obligations, then current phase feasibility; do not replay completed source reconciliation or ask repeated ordinary same-scope micro-confirmations. Verify actual operator scope/effect instructions separately from declaration validity. No worker invocation or HTML/native/browser/container/export/evaluate/provider action, no new checker/hook, root/counter reset or spent-profile refill admitted by this maintenance. Same HTML ordinal2/counters2,0,2,0/blockers/freeze, historical failures/four P4 blocked rows/C15 exclusions retained. R1/R2partial,R3/R4open,R5/R6deferred; data/custody/business/send/B2/P11/public/deploy parked; LHW24 retained. Operator manually transfers a future admitted packet to Sonnet 5.5 High when ready; Local remains technical/commit decision owner.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-ROOT-CONTINUATION-PACKET-20261015. Review-continuation maintenance accepted technically at 4c7e61932063ef0816d4907d902ccb261ddf3e04; review=docs/reviews/CVF_NCR_REVIEW_CONTINUATION_COMPLETION_2026-10-15.md; proof=docs/reviews/evidence/ncr-review-continuation-local-20261015.json; independent72/72 PASS, worker161/144 and9 killed controls consumed, original exact8 custody/pair retained; Local numeric-text repair62/62 and original numeric32/36 failure disclosed. REQ08/preparation remains BLOCKED/PARTIAL; four consumer failures reproduced on HEAD, no out-of-scope repair. Local next derives one separate immutable HTML root continuation grant/pair from the held V2 contract and six source obligations, then current phase feasibility; do not replay completed source reconciliation or ask repeated ordinary same-scope micro-confirmations. Verify actual operator scope/effect instructions separately from declaration validity. No worker invocation or HTML/native/browser/container/export/evaluate/provider action, no new checker/hook, root/counter reset or spent-profile refill admitted by this maintenance. Same HTML ordinal2/counters2,0,2,0/blockers/freeze, historical failures/four P4 blocked rows/C15 exclusions retained. R1/R2partial,R3/R4open,R5/R6deferred; data/custody/business/send/B2/P11/public/deploy parked; LHW24 retained. Operator manually transfers a future admitted packet to Sonnet 5.5 High when ready; Local remains technical/commit decision owner.
 
 ## Active Boundary
 T3B has a Local-verified active v1 specification. Party B is verified and T3C-C1 tooling accepted at `db78c87df`; T3C-C2 and Party C are verified. T3D-C1 tooling is accepted at `9ed844c2a` without source. T3D-C0-R1 closed at `2fffa1ef7`. T3D-C3 was accepted bounded at `88137e9a2`, but actual-mode prepare attempts failed before Party B/C execution; authorized cleanup removed the failed root and discarded unaccepted worker changes. G1 stopped, G2-G6 parked, and G7 research closed at `660601f0e` with `ADAPT_EXISTING_HANDOFF_ONLY`. Evidence-join sufficiency stays WATCH; no implementation successor exists. Rejected T2 paths remain archived; HRLTP-T2 paused.
@@ -94,22 +94,24 @@ Rollback boundary: exact6; preserve original archive and accepted/blocked histor
 |---|---|
 | Actor | Local INTERNAL_AGENT session-sync steward |
 | Provider or surface | private workspace |
-| Session or invocation | ncr-review-continuation-close-continuity-20261015 |
+| Session or invocation | ncr-review-continuation-repair-continuity-20261015 |
 | Working directory | repository root |
-| Command or tool surface | accepted maintenance evidence, actual material SHA, next root packet PLAN and canonical generator |
+| Command or tool surface | corrected numeric-text binding evidence, actual material SHA, preserved failed probe, next root packet PLAN and canonical generator |
 | Target paths | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Allowed scope source | operator next and existing Local exact6 documentary continuity authority |
-| Before status evidence | material 14508749185abad85a015c3119f57b213a196fbe; clean stage/worktree before exact6 sync |
-| After status evidence | exact6 generated continuity; finite technical acceptance/procedure partial and next PLAN recorded |
+| Before status evidence | material 4c7e61932063ef0816d4907d902ccb261ddf3e04; clean stage/worktree before exact6 sync |
+| After status evidence | exact6 generated continuity; numeric-text correction, technical acceptance/procedure partial and next PLAN recorded |
 | Diff evidence | exact6 staged manifest, generator/check, actual material SHA |
 | Approval boundary | maintenance accepted technically; all later HTML effects remain held |
 | Claim boundary | finite maintenance technical acceptance only; REQ08 blocked, no full fulfillment or HTML effect grant |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-review-continuation-close-continuity-20261015 |
+| Invocation ID | ncr-review-continuation-repair-continuity-20261015 |
 | Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Manifest delta | MATCH exact6 maintenance acceptance continuity |
+| Manifest delta | MATCH exact6 corrected maintenance acceptance continuity |
 | Deletion or rename disposition | None |
+
+Exact marker OBS-ce87793c1f8be372 was independently adjudicated at `.cvf/runtime/mfrp-p4-shadow-canary/adjudications/ncr-review-continuation-marker-20261015.json`; receipt and trusted blob verified; four historical blocked rows, journal and C15 exclusions preserved. Current accepted/partial row is not trusted_blocks. No blanket clearance of later markers.
 
 ## Claim Boundary
 Current facts, exact packet binding and permitted next action only. Historical Home/O6 evidence remains bounded; no whole-roadmap, live/provider, backend cancellation, release/public/deployment or model-winner claim.
