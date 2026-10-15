@@ -5,11 +5,13 @@ docType: roadmap
 Status: ACCEPTED_UNIFIED_ROADMAP_LOCAL_CONSUMER_BOUNDED_FULL_PILOT_OPEN
 Date: 2026-09-26
 Program ID: CVF-NCR
-Version: 2.31
+Version: 2.32
 Revision disposition: LOCAL_CONSUMER_MAINTENANCE_ACCEPTED_BOUNDED; END_TO_END_PILOT_OPEN; Q001_AND_P11_CHECKPOINTS_RETAINED
 Decision owner: operator về định hướng/phạm vi; Local reviewer về đối chiếu kỹ thuật và nghiệm thu.
 
 ## Current Delivery Checkpoint - 2026-10-14
+
+**2026-10-15 root offline continuation packet:** `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_ROOT_CONTINUATION_2026-10-15.md` / `docs/baselines/CVF_GC018_NCR_HTML_ROOT_CONTINUATION_2026-10-15.md` derive one round3 source-bound operator-cleared phase for all AD2-01..06 across helper6+return/proof8. All7 effects0; worker120min/Local60min, runner4/2, inert substitutes27/18 and Git8. Actual B-E/native/product/profile/export/evaluate/custody proof stays deferred and parent unaccepted; spent grants/root ordinal2/counters2,0,2,0/blockers/freeze retained. Two read-only internal reviews; implementation only after committed current pair/continuity and bound release PASS, then operator manual transfer. No new checker, scope reset or runtime observation; R1/R2partial,R3/R4open,R5/R6deferred, parked effects/LHW24 retained.
 
 **2026-10-15 review-continuation maintenance accepted technically:** `docs/reviews/CVF_NCR_REVIEW_CONTINUATION_COMPLETION_2026-10-15.md` accepts the exact6 existing owner/checker/scaffold/test change after Local independent72/72 PASS after digit-only SHA256/ID coercion correction; focused62/62; original worker161 tests and nine killed controls consumed. REQ-08 remains BLOCKED and preparation PARTIAL; original exact8/pair and failure logs retained. Four reported consumer failures independently reproduced on HEAD. Same-scope authority is declared and source-bound, never inferred consent. Next Local derives a separate immutable HTML root continuation packet and verifies phase feasibility; no effect release, counter reset or profile refill. R1/R2partial,R3/R4open,R5/R6deferred; frozen root, parked effects and LHW24 retained.
 

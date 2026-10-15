@@ -1,0 +1,261 @@
+{
+  "schemaVersion": "cvf.ncrHtmlRootContinuationDispatch@1.0.0",
+  "sourceHead": "2102ae5e29ac6436cbaecba205326bdc970a65f5",
+  "phase": "OFFLINE_IMPLEMENTATION_ONLY",
+  "operatorInstruction": "Actual2026-10-15 next/subagent/work-order instruction; manual implementation after work order delivery.",
+  "operatorAuthorityBoundary": "Offline helper6 plus return/proof and bounded pure/inert controls only; no B-E/native/product/profile or spent-slot refill.",
+  "sourcePins": {
+    "scripts/cvf_ncr_html_owned_profile/__init__.py": "8133757501bbbcc154a92e7758df1a3df3c2957a0e205cd4f39cf03721ea69fd",
+    "scripts/cvf_ncr_html_owned_profile/lifecycle.py": "4d086bb21745aee82648a37f15ef428d37a936102ad47f38911c7e4e13abbd0b",
+    "scripts/cvf_ncr_html_owned_profile/profile.py": "730a1c33bc8258a6003023fad60f6ab9fb7cb775e054c5b9629c9cf59e893e76",
+    "scripts/cvf_ncr_html_owned_profile/test_control.py": "2a4f6acff7a23f4c783277ca6966c77d89a442ae2f297fb0dbe7529e2abf5aa3",
+    "scripts/cvf_ncr_html_owned_profile/journey.cjs": "37d7316cc62c1b757750d570063e78cc059c1c8d53865af16e0af0d01ba38431",
+    "scripts/cvf_ncr_html_owned_profile/journey.test.cjs": "0e8187004d28ba2685e19c9397ec4c2ec1add0fb403a3c3f3e78216fe5c0d00c",
+    "scripts/probe_cvf_q001_synthetic_system_chain.py": "b09924875254872611332baa11fdad4ec0b574d69c74e217ba0bb81a56cf2662",
+    "scripts/probe_cvf_w05_browser_chain.cjs": "0d9a261cddc5e21c00938570f5f692163d91cade21d2cc02c54c20bbbe91c494",
+    "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/core_orchestrator.py": "9d35ed87fafeb5a21814f94dbdd7db8e2e96ab430eb300f5f2a1ae77faa85a69",
+    "governance/compat/review_convergence_scaffold.py": "69821687c7a5103549d3f769d47069b83b1f43b3387687cdf782d9a11c0858bd",
+    "governance/compat/check_review_cost_control.py": "68e70bd29221e6d758ca7117a9a4fa18498f63406909b927d0e8e5423ab5e48b",
+    "docs/reference/review_cost_control/CVF_REVIEW_COST_AND_DIMINISHING_RETURN_CONTROL_STANDARD.md": "59ab670a0b3d723b50f8fed690e6c40be76cb14f1b0a5b72085a38efbb4f27a7",
+    "docs/assessments/CVF_NCR_HTML_ROOT_BUILD_SOURCE_REASSESSMENT_2026-10-15.md": "cd7be9162321be4287c850243cf6c2df79f45936650f5dd3cb7668e53775d66c",
+    "governance/compat/preapproval_feasibility_contract.py": "c351608f82d25ff99f3911c1f13c4990cf5a7ad9a886a23f946fa804010e346b",
+    "governance/compat/learning_application_binding.py": "84068b6f197c19404a23daa643266d7f9ed334f313cd2d8bbe2f2e6d37d7b7b8",
+    "docs/baselines/CVF_GC018_NCR_HTML_ROOT_CONTINUATION_2026-10-15.md": "e00fd35e1c07fd2330c7de0dc8b0c9d5c7ed376a15af2c1ed6734147bfea35d5",
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_ROOT_CONTINUATION_2026-10-15.md": "46d41387d1115b893abdfea0f0695368396116829e1b3826af5ac53cc8755caf",
+    "docs/baselines/CVF_NCR_HTML_ROOT_CONTINUATION_AUTHORIZATION_2026-10-15.md": "fd38e91e6be6fb79ea33b45d12acc9159f61f68dffe42a6c50ea76c1f4f0babb",
+    "docs/reviews/evidence/ncr-html-root-continuation-preapproval-20261015.json": "079b240bfec1c944d42dfcaaa1c60b93a631fa0600fa1c4fcf7698705734dce1"
+  },
+  "sourceFacts": {
+    "scripts/cvf_ncr_html_owned_profile/__init__.py": {
+      "sha256": "8133757501bbbcc154a92e7758df1a3df3c2957a0e205cd4f39cf03721ea69fd",
+      "bytes": 16829,
+      "lines": 259,
+      "crlf": 0
+    },
+    "scripts/cvf_ncr_html_owned_profile/lifecycle.py": {
+      "sha256": "4d086bb21745aee82648a37f15ef428d37a936102ad47f38911c7e4e13abbd0b",
+      "bytes": 14177,
+      "lines": 282,
+      "crlf": 0
+    },
+    "scripts/cvf_ncr_html_owned_profile/profile.py": {
+      "sha256": "730a1c33bc8258a6003023fad60f6ab9fb7cb775e054c5b9629c9cf59e893e76",
+      "bytes": 11056,
+      "lines": 200,
+      "crlf": 0
+    },
+    "scripts/cvf_ncr_html_owned_profile/test_control.py": {
+      "sha256": "2a4f6acff7a23f4c783277ca6966c77d89a442ae2f297fb0dbe7529e2abf5aa3",
+      "bytes": 5241,
+      "lines": 113,
+      "crlf": 0
+    },
+    "scripts/cvf_ncr_html_owned_profile/journey.cjs": {
+      "sha256": "37d7316cc62c1b757750d570063e78cc059c1c8d53865af16e0af0d01ba38431",
+      "bytes": 10864,
+      "lines": 182,
+      "crlf": 0
+    },
+    "scripts/cvf_ncr_html_owned_profile/journey.test.cjs": {
+      "sha256": "0e8187004d28ba2685e19c9397ec4c2ec1add0fb403a3c3f3e78216fe5c0d00c",
+      "bytes": 2058,
+      "lines": 33,
+      "crlf": 0
+    },
+    "scripts/probe_cvf_q001_synthetic_system_chain.py": {
+      "sha256": "b09924875254872611332baa11fdad4ec0b574d69c74e217ba0bb81a56cf2662",
+      "bytes": 50387,
+      "lines": 749,
+      "crlf": 0
+    },
+    "scripts/probe_cvf_w05_browser_chain.cjs": {
+      "sha256": "0d9a261cddc5e21c00938570f5f692163d91cade21d2cc02c54c20bbbe91c494",
+      "bytes": 23358,
+      "lines": 396,
+      "crlf": 0
+    },
+    "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/core_orchestrator.py": {
+      "sha256": "9d35ed87fafeb5a21814f94dbdd7db8e2e96ab430eb300f5f2a1ae77faa85a69",
+      "bytes": 9607,
+      "lines": 265,
+      "crlf": 233
+    },
+    "governance/compat/review_convergence_scaffold.py": {
+      "sha256": "69821687c7a5103549d3f769d47069b83b1f43b3387687cdf782d9a11c0858bd",
+      "bytes": 25001,
+      "lines": 447,
+      "crlf": 0
+    },
+    "governance/compat/check_review_cost_control.py": {
+      "sha256": "68e70bd29221e6d758ca7117a9a4fa18498f63406909b927d0e8e5423ab5e48b",
+      "bytes": 37293,
+      "lines": 869,
+      "crlf": 782
+    },
+    "docs/reference/review_cost_control/CVF_REVIEW_COST_AND_DIMINISHING_RETURN_CONTROL_STANDARD.md": {
+      "sha256": "59ab670a0b3d723b50f8fed690e6c40be76cb14f1b0a5b72085a38efbb4f27a7",
+      "bytes": 59023,
+      "lines": 1054,
+      "crlf": 1035
+    },
+    "docs/assessments/CVF_NCR_HTML_ROOT_BUILD_SOURCE_REASSESSMENT_2026-10-15.md": {
+      "sha256": "cd7be9162321be4287c850243cf6c2df79f45936650f5dd3cb7668e53775d66c",
+      "bytes": 19011,
+      "lines": 227,
+      "crlf": 0
+    },
+    "governance/compat/preapproval_feasibility_contract.py": {
+      "sha256": "c351608f82d25ff99f3911c1f13c4990cf5a7ad9a886a23f946fa804010e346b",
+      "bytes": 26739,
+      "lines": 525,
+      "crlf": 525
+    },
+    "governance/compat/learning_application_binding.py": {
+      "sha256": "84068b6f197c19404a23daa643266d7f9ed334f313cd2d8bbe2f2e6d37d7b7b8",
+      "bytes": 7297,
+      "lines": 126,
+      "crlf": 0
+    }
+  },
+  "expectedWorkerOutputs": [
+    "scripts/cvf_ncr_html_owned_profile/__init__.py",
+    "scripts/cvf_ncr_html_owned_profile/lifecycle.py",
+    "scripts/cvf_ncr_html_owned_profile/profile.py",
+    "scripts/cvf_ncr_html_owned_profile/test_control.py",
+    "scripts/cvf_ncr_html_owned_profile/journey.cjs",
+    "scripts/cvf_ncr_html_owned_profile/journey.test.cjs",
+    "docs/reviews/CVF_NCR_HTML_ROOT_CONTINUATION_WORKER_RETURN_2026-10-15.md",
+    "docs/reviews/evidence/ncr-html-root-continuation-worker-20261015.json"
+  ],
+  "materialManifest": [
+    "docs/baselines/CVF_GC018_NCR_HTML_ROOT_CONTINUATION_2026-10-15.md",
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_ROOT_CONTINUATION_2026-10-15.md",
+    "docs/baselines/CVF_NCR_HTML_ROOT_CONTINUATION_AUTHORIZATION_2026-10-15.md",
+    "docs/reviews/evidence/ncr-html-root-continuation-preapproval-20261015.json",
+    "docs/reviews/evidence/ncr-html-root-continuation-dispatch-20261015.json",
+    "docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md"
+  ],
+  "pairedArtifacts": {
+    "docs/baselines/CVF_GC018_NCR_HTML_ROOT_CONTINUATION_2026-10-15.md": "e00fd35e1c07fd2330c7de0dc8b0c9d5c7ed376a15af2c1ed6734147bfea35d5",
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_ROOT_CONTINUATION_2026-10-15.md": "46d41387d1115b893abdfea0f0695368396116829e1b3826af5ac53cc8755caf",
+    "docs/baselines/CVF_NCR_HTML_ROOT_CONTINUATION_AUTHORIZATION_2026-10-15.md": "fd38e91e6be6fb79ea33b45d12acc9159f61f68dffe42a6c50ea76c1f4f0babb",
+    "docs/reviews/evidence/ncr-html-root-continuation-preapproval-20261015.json": "079b240bfec1c944d42dfcaaa1c60b93a631fa0600fa1c4fcf7698705734dce1"
+  },
+  "advisoryReviews": {
+    "authorityActor": "INTERNAL_AGENT_LUNA_MAX",
+    "consumerActor": "INTERNAL_AGENT_SOL_MEDIUM",
+    "role": "READ_ONLY_ADVISORY_LOCAL_DECISION_OWNER",
+    "count": 2,
+    "implementationInvocations": 0
+  },
+  "rootHistory": {
+    "problemKey": "ncr-html-configured-receipt-browser-composition",
+    "chainOrdinal": 2,
+    "counters": {
+      "partialReadyClosures": 2,
+      "reviewerScopeExpansions": 0,
+      "sameClaimCorrections": 2,
+      "nonDecreasingBlockerTransitions": 0
+    },
+    "blockers": [
+      "HCR-CONTROL-LEGACY-CLEANUP",
+      "HCR-CONTROL-FRESH-PROFILE-BINDING"
+    ],
+    "reviewRoundCount": 3,
+    "reworkGeneration": 3,
+    "priorFindingSetDigest": "cd7be9162321be4287c850243cf6c2df79f45936650f5dd3cb7668e53775d66c",
+    "parentAcceptance": "OPEN_REAL_B_E_PROOF_DEFERRED",
+    "spentProfiles": "NOT_REFILLED"
+  },
+  "effectCeilings": {
+    "providerCalls": 0,
+    "networkCalls": 0,
+    "publicWrites": 0,
+    "deployments": 0,
+    "realDataMutations": 0,
+    "destructiveActions": 0,
+    "productRuntimeStarts": 0
+  },
+  "numericalCeilings": {
+    "workerMinutes": 120,
+    "reviewerMinutes": 60,
+    "workerTestRunners": 4,
+    "reviewerTestRunners": 2,
+    "workerNegativeSubprocesses": 27,
+    "reviewerNegativeSubprocesses": 18,
+    "sourceGitCommands": 8,
+    "externalInvocationCeiling": 0,
+    "nativeChildren": 0,
+    "runtimeUtilities": 0,
+    "containers": 0,
+    "browserProfiles": 0,
+    "workerExports": 0,
+    "workerEvaluates": 0,
+    "reviewerExports": 0,
+    "reviewerEvaluates": 0,
+    "loopbackRequests": 0
+  },
+  "scaffold": {
+    "command": [
+      "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-B",
+      "governance/compat/build_dispatch_packet_scaffold.py",
+      "--packet-kind",
+      "generic-worker-dispatch",
+      "--batch-id",
+      "CVF-NCR-HTML-CONFIGURED-RECEIPT-CONTROL",
+      "--title",
+      "NCR HTML Root Offline Continuation",
+      "--date",
+      "2026-10-15",
+      "--base",
+      "2102ae5e29ac6436cbaecba205326bdc970a65f5",
+      "--commit-mode",
+      "WORKER_MUST_NOT_COMMIT",
+      "--dispatch-kind",
+      "REWORK",
+      "--review-round-count",
+      "3",
+      "--root-cause-cluster-id",
+      "NCR_HTML_CONFIGURED_RECEIPT_CONTROL_PROOF",
+      "--prior-finding-set-digest",
+      "cd7be9162321be4287c850243cf6c2df79f45936650f5dd3cb7668e53775d66c",
+      "--operator-continuation-evidence-path",
+      "docs/baselines/CVF_NCR_HTML_ROOT_CONTINUATION_AUTHORIZATION_2026-10-15.md",
+      "--operator-continuation-evidence-sha256",
+      "fd38e91e6be6fb79ea33b45d12acc9159f61f68dffe42a6c50ea76c1f4f0babb",
+      "--no-evidence-readiness-applicable",
+      "--stdout"
+    ],
+    "exitCode": 0,
+    "logSha256": "f71caf7f9b718d672ceb7e50ffd6886934b25698fa151ea6f72a99dff16210b4",
+    "parentVsBatch": "Scaffold batch flag binds historical parent; final batch metadata is separately authored, parent scalar retained.",
+    "log": ".cvf/runtime/ncr-html-root-continuation-dispatch-20261015/scaffold-final.log"
+  },
+  "heldSnapshot": {
+    "path": "docs/reviews/evidence/ncr-html-root-admission-v2-packet-20261015.json",
+    "sha256": "9b904944a77cb9e7c228a17ebc692ca926e21cdfb6755d1dd77544af5bb5c3f6",
+    "disposition": "UNCHANGED_HISTORICAL_NOT_DISPATCHED"
+  },
+  "adif": {
+    "totalCandidates": 27,
+    "returned": 27,
+    "truncated": false,
+    "sha256": "669a86021fd61cb8fd91fba96e39dce168ebd62345ac043d635612a531b3b687"
+  },
+  "claimBoundary": "Packet joins/phase readiness only; implementation and real native/HTML/governance behavior unexecuted.",
+  "preparation": "PARTIAL_WITH_REASON: exact carrier/literal predicates for six first-gate families completed after first draft; earlier targeted read scopes and failed logs retained.",
+  "firstGateFailure": {
+    "log": ".cvf/runtime/ncr-html-root-continuation-dispatch-20261015/reviewer-first.log",
+    "sha256": "66fafe9d734cc4ccff5ffb1e36f0b195c362737b3b0edd3fbbc4867162b1b5d5",
+    "disposition": "One consolidated carrier/format/false-trigger repair; no checker behavior changed."
+  },
+  "advisoryReviewDisposition": "Authority reviewer supports offline dispatch after exact work order; consumer reviewer found stale per-requirement owner mapping/proof kind and inherited evaluator wording; corrected without changing exact8.",
+  "additionalGateFailures": [
+    {
+      "log": "reviewer-current.log",
+      "sha256": "432ebc5fdaa10a9a4ab88bba8e9f929a5b3b2ed8e867c35fee50ba3679934895",
+      "reason": "Authorization baseline lacked explicit Evidence / Verification heading; added before final freeze."
+    }
+  ]
+}
