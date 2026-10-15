@@ -1,0 +1,118 @@
+{
+  "scope": "Core documentary integration after R4 terminal return and exact lane release; prospective guidance only",
+  "baseHead": "7443193a645666a8b82450b22079794ef7516b18",
+  "manifest": [
+    "docs/reference/work_order_template/CVF_WORK_ORDER_SOURCE_VERIFICATION_ADDENDUM.md",
+    "docs/reference/work_order_template/CVF_WORK_ORDER_ACCEPTANCE_LEDGER_ADDENDUM.md",
+    "docs/reference/CVF_AGENT_EXECUTION_WORKFLOW_SOP_2026-05-19.md",
+    "docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md",
+    "docs/reference/downstream_gate_profile/downstream_finding_intake_registry.json",
+    "docs/reviews/evidence/ncr-constructive-closeability-learning-20261015.json"
+  ],
+  "authority": "operator immediate foundation repair and standing Local maintenance authority",
+  "decisionOwner": "LOCAL",
+  "role": "INTERNAL_AGENT",
+  "phase": "FOUNDATION_DOCUMENTARY_AMENDMENT",
+  "sources": [
+    {
+      "path": "docs/reviews/CVF_NCR_HTML_ROOT_CONTINUATION_COMPLETION_2026-10-15.md",
+      "sha256": "7d92ebee9ad7eaeab547ec9322a22bfe1265bf987ebb1f11d0e644c8538eb3b1"
+    },
+    {
+      "path": "docs/reviews/evidence/ncr-html-root-continuation-local-20261015.json",
+      "sha256": "46a532fff62580ac8081b98dc64399fa386ceeb6444eba1638ed2f81fee378a6"
+    },
+    {
+      "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_ROOT_CONTINUATION_R1_2026-10-15.md",
+      "sha256": "6d11ce2d63606e20e744fd0536723e8731948f841f07f665d6facc019730a3ee",
+      "use": "immutable contract/design evidence only; no active worker implementation observation"
+    },
+    {
+      "path": "docs/baselines/CVF_GC018_NCR_HTML_ROOT_RECOVERY_R4_2026-10-15.md",
+      "sha256": "876c1c6ed90271f98abbade9224cdda22df87174b9957ae93514cd3d64797d96",
+      "use": "immutable contract/design evidence only; no active worker implementation observation"
+    }
+  ],
+  "ownerChanges": [
+    {
+      "path": "docs/reference/work_order_template/CVF_WORK_ORDER_SOURCE_VERIFICATION_ADDENDUM.md",
+      "sha256": "5c154b9eeb020ab22fe2a40e33a1f40af0ec8ee7a22165b3682f09c593a45680"
+    },
+    {
+      "path": "docs/reference/work_order_template/CVF_WORK_ORDER_ACCEPTANCE_LEDGER_ADDENDUM.md",
+      "sha256": "4840327b2cd8272a34f23f39e7c599295487c61018229d316261eada381b1a38"
+    },
+    {
+      "path": "docs/reference/CVF_AGENT_EXECUTION_WORKFLOW_SOP_2026-05-19.md",
+      "sha256": "cd50be4119b6ece9be9209a88fe9f07af2b9ea156dcb2c4f4e4b0e05b887bf96"
+    }
+  ],
+  "classification": "MERGE_INTO_EXISTING_OWNER; no new checker",
+  "extensionLifecycle": {
+    "implementation": "WRITTEN_CORE_DOCUMENTARY_GUIDANCE",
+    "returnDelivery": "NOT_RETURNED",
+    "projectApplication": "NOT_APPLIED",
+    "projectResolution": "OPEN"
+  },
+  "cases": [
+    {
+      "id": "destruction-later-persistence-failure",
+      "class": "negative",
+      "evidence": "F04 / NEG modeled stage removal and durable ATTEMPTED",
+      "decision": "hold impossible preservation; retain stage or admit a durable copy/compensation path"
+    },
+    {
+      "id": "retained-stage-immutable-proof",
+      "class": "positive-design",
+      "evidence": "failure model comparison only; no R4 execution claim",
+      "decision": "jointly satisfiable documentary postconditions; actual disposal requires later admission"
+    },
+    {
+      "id": "count-only-controls",
+      "class": "negative",
+      "evidence": "F01 / NEG-duplicate-fabricated-controls",
+      "decision": "case identities and expected outcomes required at mapped boundary"
+    },
+    {
+      "id": "mutable-persistence-alias",
+      "class": "negative",
+      "evidence": "F04 / JSON-copy durable ATTEMPTED versus returned PERSISTED",
+      "decision": "inspect serialized/read-back bytes"
+    },
+    {
+      "id": "unbounded-timeout-drain",
+      "class": "negative",
+      "evidence": "F03 / NEG-utility-timeout-drain-bounded [0.01,null]",
+      "decision": "cover actual waits/cancellation and exhausted deadline outcome"
+    },
+    {
+      "id": "capacity",
+      "class": "negative-design",
+      "evidence": "R1 exact-six file envelope; R4 prospective source-eight redesign, no return acceptance",
+      "decision": "readable implementation and mandatory semantic tests must fit before dispatch"
+    }
+  ],
+  "verification": {
+    "entry": "PASS after line-ending fidelity and clean index; raw-checkout failures retained",
+    "semantic": "source-backed documentary review; implementation suite not rerun",
+    "finalGate": "subsequent actual logs in owned ignored custody"
+  },
+  "custody": ".cvf/runtime/foundation-semantic-proof-20261015; Local owner; retain until integration",
+  "claimLimits": [
+    "R4 immutable while active",
+    "no new runtime/native/browser/provider or public effect",
+    "no automated semantic prevention claim",
+    "no new extension application receipt",
+    "prior parent lifecycle states not upgraded"
+  ],
+  "isolatedBaseHead": "e41466ac64b5d2c7f7edee57d5bbcfb65918d5c5",
+  "originMaterial": "337609caae90fdb4fac82adbb4c686b535aae0c6",
+  "integrationEvidence": {
+    "review": "docs/reviews/CVF_NCR_HTML_ROOT_RECOVERY_R4_COMPLETION_2026-10-15.md",
+    "reviewMaterial": "699d8f69df1579b0f5e21866debe8cc4ed00dd39",
+    "laneRelease": "terminal worker return, exact10, stagedempty verified before Local review mutations",
+    "actualAdoption": "NOT_APPLIED",
+    "localSequencingFailureLog": ".cvf/runtime/ncr-html-root-recovery-local-r4-20261015/local-review-r4-20261015/continuity-range.log",
+    "localSequencingFailureSha256": "5cb97675471f1196d6c966369f0cdca8cbe23d0741f16e3f90bdca88f847f3af"
+  }
+}

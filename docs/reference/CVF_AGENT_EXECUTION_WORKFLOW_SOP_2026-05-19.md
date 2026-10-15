@@ -237,6 +237,10 @@ reinforces existing preparation and evidence rules; it adds no machine gate.
 5. Check consequential fixture assumptions against the canonical owner before
    encoding them as assertions. Preserve locked SPEC semantics; route a material
    interpretation conflict to Local instead of silently tightening the contract.
+   Follow the mapped observable boundary: a receipt count is not case coverage,
+   a mutable saved object is not persisted bytes, and a timeout helper is not a
+   bounded wait. Test doubles must preserve the relevant failure behavior. Route
+   impossible postconditions or insufficient scope before encoding a weaker oracle.
 6. Report actual failures, requirement dispositions and repair counts with a
    stated counting unit. For a final-byte gate, freeze tracked outputs first and
    keep the subsequent actual result/log in the admitted evidence custody; a

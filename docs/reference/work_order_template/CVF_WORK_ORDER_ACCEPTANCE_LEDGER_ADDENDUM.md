@@ -58,6 +58,12 @@ current count, hard threshold, extraction/split target, new helper path,
 `Minimum shrink target: 50 lines`, post-change count command and write
 ownership. The entrypoint cannot simultaneously be forbidden.
 
+Before dispatch, the near-threshold split/topology plan MUST leave capacity
+within the admitted manifest or bounded path family for readable implementation,
+required semantic/negative tests and proof outputs. If it cannot, redesign the
+prospective packet before dispatch; compressed code or omitted required cases
+does not satisfy the file-size constraint or fulfillment requirement.
+
 The acceptance ledger is the canonical Required Artifact and Required Proof
 manifest. Human-readable tables may summarize it but cannot change its rows.
 Forbidden paths, forbidden filesystem state and pre-existing dirty exemptions

@@ -11,7 +11,7 @@ providerExecutionAuthority: FORBIDDEN
 
 Owner: CVF orchestration and delegation surface
 
-Last revised: 2026-10-12 - orchestrator-owned source and acceptance clarification.
+Last revised: 2026-10-15 - constructive closeability before dispatch.
 
 rawMemoryReleased: false
 Text Encoding Exception: em dash and standard punctuation used in governance prose
@@ -73,6 +73,23 @@ guess why it controls acceptance. Reuse existing tables or concise rows rather
 than duplicating a plan or adding a new required section/schema. Observable
 conditions constrain the result while leaving implementation choices to the
 worker within the granted scope.
+
+Before dispatch, mandatory acceptance conditions MUST be jointly achievable by
+the assigned role and phase under the stated failure model. For a consequential
+irreversible transition, identify the point of no return, failures still possible
+after it, and the admissible terminal postcondition. Do not require preservation
+or recovery after destruction unless an authorized durable copy or compensation
+path can provide it. Resolve a contradictory contract before implementation;
+operator authorization does not make an impossible postcondition achievable.
+
+Bind acceptance to the boundary actually claimed: distinguish a modeled action,
+an operation request, its observed outcome and a durable artifact. Where relevant,
+specify case identities and expected outcomes rather than counts or hashes alone;
+compare serialized/read-back evidence rather than a mutable in-memory alias; and
+cover each consequential blocking operation, cancellation and deadline-exhaustion
+outcome rather than only the deadline helper. Include a later failure when it can
+invalidate an apparent success. Use the existing requirement/proof mapping and
+only task-relevant conditions; this adds no separate schema or blanket test suite.
 
 The worker follows the declared mandatory scope and reports actual evidence or
 an unmet requirement. It must not silently downgrade mandatory reads or claim

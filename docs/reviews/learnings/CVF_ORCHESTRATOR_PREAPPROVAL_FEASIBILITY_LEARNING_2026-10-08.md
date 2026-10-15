@@ -437,7 +437,7 @@ commitPlanDisposition: DEFAULT_ONE_MATERIAL_ONE_CONTINUITY
 latencyDisposition: NOT_MEASURED_WITH_REASON: intake timing unavailable
 avoidableDelayClass: NONE
 
-## Agent Operation Trace Block
+## Historical Application Observation Operation Trace
 
 | Field | Evidence |
 |---|---|
@@ -459,3 +459,126 @@ avoidableDelayClass: NONE
 | Actual changed set | `docs/reference/downstream_gate_profile/downstream_finding_intake_registry.json`; `docs/reviews/evidence/cvf-offline-preview-learning-application-2026-10-09.json`; `docs/reviews/evidence/cvf-offline-preview-learning-application-receipt-2026-10-09.json`; `docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md`; `docs/reviews/learnings/README.md` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |
+
+## Constructive Closeability Extension - 2026-10-15
+
+This is a bounded extension of the existing preapproval-feasibility finding,
+not a new machine-control finding. Operator requested foundation repair while
+the R4 worker is active. Local INTERNAL_AGENT orchestrator/reviewer owns this
+isolated documentary amendment at base e41466ac64b5d2c7f7edee57d5bbcfb65918d5c5.
+R4 remains immutable until terminal return, exact-10 reconciliation and an empty
+staged set in its lane. No requirement is applied retroactively to that dispatch.
+
+Source evidence: `docs/reviews/CVF_NCR_HTML_ROOT_CONTINUATION_COMPLETION_2026-10-15.md`
+and its frozen Local proof, bound in
+`docs/reviews/evidence/ncr-constructive-closeability-learning-20261015.json`.
+R1's independent Python probe observed three positive passes and eight negative
+failures; the separate Local Node adapter failed before browser assertions.
+Those observations are consumed without rerunning the implementation. R4 has
+no reviewed return and supplies no new behavioral evidence for this extension.
+
+### Value / Dedup And Control Disposition
+
+| Finding | Defect class | Learning lane | Disposition / next action |
+|---|---|---|---|
+| Delete then retain after later failure; exact path/size envelope squeezes required tests | ORCHESTRATOR_PACKET_GAP | GOVERNANCE_CONTROL_PLANE | TEMPLATE_UPDATED: constructive closeability and capacity clauses in the existing two addenda; Local owns packet feasibility |
+| Counts/hashes, mutable saved aliases and deadline helpers substituted for observable guarantees | WORKER_EXECUTION_ERROR | GOVERNANCE_CONTROL_PLANE | RULE_EXISTS: lifecycle semantic evidence and Review Cost independent-probe rules; source addendum and SOP make task-specific application explicit |
+| Late mandatory reading and actor-wide Git cap overrun | WORKER_EXECUTION_ERROR | GOVERNANCE_CONTROL_PLANE | RULE_EXISTS: apply current preparation/budget controls; no retroactive PASS or cap refill |
+| Invalid Local Node adapter | WORKER_EXECUTION_ERROR | GOVERNANCE_CONTROL_PLANE | RULE_EXISTS: retain invalid result, consumed runner and browser evidence gap; Local owns this error |
+
+Five value checks: source confidence is bounded by the governed negative review
+and frozen observations; the reusable mechanism is failure to compose acceptance
+across state transitions; existing coverage is the lifecycle, source mapping,
+topology philosophy, SOP and independent-probe owner; incremental value is an
+explicit constructive postcondition/capacity check and concrete worker cues;
+bounded proof is source-backed counterexample review plus documentary gates.
+This does not establish automated semantic prevention or future agent compliance.
+
+Local decision: MERGE_INTO_EXISTING_OWNER; documentary implementation only in an
+isolated branch, pending integration. Extension delivery NOT_RETURNED; extension
+application NOT_APPLIED; source project OPEN. The prior typed parent's APPLIED
+state concerns its recorded 2026-10-09 dispatch only and is not extended by this
+amendment. Existing parent decision/control/receipt semantics are preserved;
+registry source pins are refreshed for this record's current raw bytes only.
+
+### Validation And Cutover
+
+Entry gate PASS on the clean isolated base after checkout line-ending fidelity
+was established. Earlier checkout diagnostics are retained in owned runtime
+custody. Final authoring, precommit and committed-range results must be read
+from the actual subsequent logs, not inferred from this prospective description.
+Expected Result: contradictory destruction/preservation is held; retained-stage
+documentary scope is feasible; count-only and alias-only evidence are insufficient.
+Evidence Comparison: companion maps each case to the R1 evidence and amended owner.
+Contradiction Or Gap Disposition: packet and worker/application errors remain
+separate; no checker, hook, provider-memory authority or new runtime allowance.
+Claim Update: written foundation clarification only; effectiveness NOT_PROVEN.
+Local retains the isolated worktree and its ignored custody until safe integration.
+
+## Historical Foundation Draft Operation Trace
+
+| Field | Evidence |
+|---|---|
+| Actor | Local INTERNAL_AGENT orchestrator/reviewer |
+| Provider or surface | isolated private CVF worktree; two read-only internal advisers |
+| Session or invocation | foundation-semantic-proof-20261015 |
+| Working directory | sibling Controlled-Vibe-Framework-CVF-foundation-proof-20261015 |
+| Command or tool surface | targeted reads; clean entry gate; documentary amendment; canonical validation; isolated commit |
+| Target paths | `docs/reference/work_order_template/CVF_WORK_ORDER_SOURCE_VERIFICATION_ADDENDUM.md`; `docs/reference/work_order_template/CVF_WORK_ORDER_ACCEPTANCE_LEDGER_ADDENDUM.md`; `docs/reference/CVF_AGENT_EXECUTION_WORKFLOW_SOP_2026-05-19.md`; `docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md`; `docs/reference/downstream_gate_profile/downstream_finding_intake_registry.json`; `docs/reviews/evidence/ncr-constructive-closeability-learning-20261015.json` |
+| Allowed scope source | operator requests immediate foundation repair; standing Local maintenance/commit authority |
+| Before status evidence | clean isolated base e41466ac6; active R4 shared lane excluded |
+| After status evidence | documentary six-path batch; no shared-lane integration |
+| Diff evidence | exact six-path staged manifest and git diff --check |
+| Approval boundary | forward documentary maintenance; shared R4 lane release required before integration |
+| Claim boundary | no behavioral, browser, native, live, public or product acceptance |
+| Agent type | INTERNAL_AGENT |
+| Invocation ID | foundation-semantic-proof-20261015 |
+| Expected manifest | `docs/reference/work_order_template/CVF_WORK_ORDER_SOURCE_VERIFICATION_ADDENDUM.md`; `docs/reference/work_order_template/CVF_WORK_ORDER_ACCEPTANCE_LEDGER_ADDENDUM.md`; `docs/reference/CVF_AGENT_EXECUTION_WORKFLOW_SOP_2026-05-19.md`; `docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md`; `docs/reference/downstream_gate_profile/downstream_finding_intake_registry.json`; `docs/reviews/evidence/ncr-constructive-closeability-learning-20261015.json` |
+| Actual changed set | `docs/reference/work_order_template/CVF_WORK_ORDER_SOURCE_VERIFICATION_ADDENDUM.md`; `docs/reference/work_order_template/CVF_WORK_ORDER_ACCEPTANCE_LEDGER_ADDENDUM.md`; `docs/reference/CVF_AGENT_EXECUTION_WORKFLOW_SOP_2026-05-19.md`; `docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md`; `docs/reference/downstream_gate_profile/downstream_finding_intake_registry.json`; `docs/reviews/evidence/ncr-constructive-closeability-learning-20261015.json` |
+| Manifest delta | MATCH: six documentary paths |
+| Deletion or rename disposition | no tracked deletion or rename; isolated worktree/custody retained under Local ownership pending integration |
+
+## Foundation Integration After R4 Return - 2026-10-15
+
+The isolated draft above is now integrated prospectively after terminal R4,
+exact10 reconciliation and staged-empty lane release. Origin material337609c;
+integration base7443193a645666a8b82450b22079794ef7516b18. R4 negative review is
+`docs/reviews/CVF_NCR_HTML_ROOT_RECOVERY_R4_COMPLETION_2026-10-15.md`, material699d8f69d.
+Its17 independent assertions include7 PASS/10 FAIL. R4 remains technically
+rejected; its immutable packet, original return/proof and8 rejected source byte
+snapshots remain evidence. These findings violate frozen R4, not this later rule.
+
+Parent implementation for this extension is written Core documentary guidance.
+Extension delivery NOT_RETURNED and application NOT_APPLIED remain; project OPEN.
+No new typed parent decision, receipt, lifecycle promotion or checker is created.
+The prior APPLIED finding remains bounded to its recorded October9 observation.
+Raw source pins are refreshed; final gates concern documentary integrity only.
+
+Local sequencing disclosure: staging foundation began before the prior continuity
+gate finished; that gate failed worktree finality on this known six-path batch.
+No runtime/source-control test was repeated. The actual failure is retained and
+split closure will be checked after the tree is clean. Earlier Local R4 packaging
+and probe-sentinel errors remain in its negative review; preparation stays partial.
+
+## Agent Operation Trace Block
+
+| Field | Evidence |
+|---|---|
+| Actor | Local INTERNAL_AGENT maintainer/reviewer |
+| Provider or surface | private CVF root, reviewed isolated draft337609c |
+| Session or invocation | foundation-integration-after-r4-20261015 |
+| Working directory | repository root |
+| Command or tool surface | reviewed six-path cherry-pick without commit; raw-byte reconciliation; pin refresh; canonical material/continuity gates |
+| Target paths | `docs/reference/work_order_template/CVF_WORK_ORDER_SOURCE_VERIFICATION_ADDENDUM.md`; `docs/reference/work_order_template/CVF_WORK_ORDER_ACCEPTANCE_LEDGER_ADDENDUM.md`; `docs/reference/CVF_AGENT_EXECUTION_WORKFLOW_SOP_2026-05-19.md`; `docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md`; `docs/reference/downstream_gate_profile/downstream_finding_intake_registry.json`; `docs/reviews/evidence/ncr-constructive-closeability-learning-20261015.json` |
+| Allowed scope source | operator immediate foundation repair and persistent Local maintenance/commit authority; R4 lane released |
+| Before status evidence | R4 evidence-only rejection699d8f69d and continuity7443193a6 committed; rejected implementation excluded |
+| After status evidence | existing owner guidance and learning active for future packets; source project application unproved |
+| Diff evidence | exact six-path staged documentary batch; source hash reconciliation |
+| Approval boundary | documentary maintenance; no implementation or runtime release |
+| Claim boundary | no automated semantic prevention, worker adoption or parent acceptance |
+| Agent type | INTERNAL_AGENT |
+| Invocation ID | foundation-integration-after-r4-20261015 |
+| Expected manifest | `docs/reference/work_order_template/CVF_WORK_ORDER_SOURCE_VERIFICATION_ADDENDUM.md`; `docs/reference/work_order_template/CVF_WORK_ORDER_ACCEPTANCE_LEDGER_ADDENDUM.md`; `docs/reference/CVF_AGENT_EXECUTION_WORKFLOW_SOP_2026-05-19.md`; `docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md`; `docs/reference/downstream_gate_profile/downstream_finding_intake_registry.json`; `docs/reviews/evidence/ncr-constructive-closeability-learning-20261015.json` |
+| Actual changed set | `docs/reference/work_order_template/CVF_WORK_ORDER_SOURCE_VERIFICATION_ADDENDUM.md`; `docs/reference/work_order_template/CVF_WORK_ORDER_ACCEPTANCE_LEDGER_ADDENDUM.md`; `docs/reference/CVF_AGENT_EXECUTION_WORKFLOW_SOP_2026-05-19.md`; `docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md`; `docs/reference/downstream_gate_profile/downstream_finding_intake_registry.json`; `docs/reviews/evidence/ncr-constructive-closeability-learning-20261015.json` |
+| Manifest delta | MATCH six documentary paths |
+| Deletion or rename disposition | no tracked deletion/rename; isolated task worktree removed only after custody transfer and clean-state verification |

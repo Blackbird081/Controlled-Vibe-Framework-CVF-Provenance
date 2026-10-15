@@ -253,7 +253,7 @@
               "sourceProject": "CVF-CORE",
               "evidence": {
                 "path": "docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md",
-                "sha256": "1609cc9d955bc88b2e09179331d7828406114d98b23c81cfb3f2992afa3920f6",
+                "sha256": "946c7f0988e5ebbc9d26899934f016ce979903f55b51d9c13e057da0afa6758a",
                 "fragment": "Forward Application Control",
                 "evidenceClass": "OBSERVED_LOCAL"
               }
@@ -265,7 +265,7 @@
                 "evidence": [
                   {
                     "path": "docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md",
-                    "sha256": "1609cc9d955bc88b2e09179331d7828406114d98b23c81cfb3f2992afa3920f6",
+                    "sha256": "946c7f0988e5ebbc9d26899934f016ce979903f55b51d9c13e057da0afa6758a",
                     "fragment": "R2 Result And Cost-Aware Dispatcher Learning",
                     "evidenceClass": "OBSERVED_LOCAL"
                   }
