@@ -198,7 +198,7 @@
     "newIndependentCriticalEvidence": "NONE",
     "allSixFindingsDependent": true
   },
-  "nextOwner": "LOCAL_EXISTING_ROUND_THREE_OWNER_AND_MACHINE_ADMISSION_RECONCILIATION",
+  "nextOwner": "Operator scope owner for concrete protected maintenance proposal; then Local dispatcher. Completed reconciliation must not be repeated.",
   "claimBoundary": "Source/design proof only. Lower-level declared-state FEASIBLE does not supersede explicit redispatch rejection. No code/checker/guard or source-history changed.",
   "documentaryCorrection": {
     "firstPreflight": "FAIL confirmation-purpose/intake-routing headings",
@@ -211,5 +211,100 @@
     "secondPreflight": "FAIL missing conditional Internal source row; predicate then read and corrected",
     "preTerminalPacketCustody": ".cvf/runtime/ncr-html-root-admission-v2-design-20261015/pre-terminal-ncr-html-root-admission-v2-packet-20261015.json",
     "preTerminalLocalCustody": ".cvf/runtime/ncr-html-root-admission-v2-design-20261015/pre-terminal-ncr-html-root-admission-v2-local-20261015.json"
+  },
+  "ownerReconciliation": {
+    "recordedAtUtc": "2026-10-15T03:44:21.694684+00:00",
+    "sourceHead": "148aa77f449172969db03831ae31f185d2f17f3f",
+    "status": "CLOSED_DOCUMENTARY_BOUNDED",
+    "executionDisposition": "KEEP_STOPPED_PENDING_PROTECTED_MAINTENANCE_SCOPE",
+    "decisionOwner": "LOCAL_INTERNAL_AGENT_ORCHESTRATOR_REVIEWER",
+    "selectedRemedy": "AMEND_EXISTING_OWNER_CHECKER_AND_SCAFFOLD_WITH_BOUND_OPERATOR_CLEARANCE",
+    "prospectiveExistingImplementationPaths": [
+      "docs/reference/review_cost_control/CVF_REVIEW_COST_AND_DIMINISHING_RETURN_CONTROL_STANDARD.md",
+      "governance/compat/check_review_cost_control.py",
+      "governance/compat/review_convergence_scaffold.py",
+      "governance/compat/build_dispatch_packet_scaffold.py",
+      "governance/compat/test_check_review_cost_control.py",
+      "governance/compat/test_build_dispatch_packet_scaffold.py"
+    ],
+    "protectedPythonPathCount": 5,
+    "actualMaterialPaths": [
+      "docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md",
+      "docs/reviews/evidence/ncr-html-root-admission-v2-local-20261015.json"
+    ],
+    "sourcePins": [
+      {
+        "path": "docs/reference/review_cost_control/CVF_REVIEW_COST_AND_DIMINISHING_RETURN_CONTROL_STANDARD.md",
+        "rawSha256": "17d27144c7db34b717633c14428a778b2b00949f62d71e6a1d8f4f9a2bbe8700",
+        "lines": 941
+      },
+      {
+        "path": "governance/compat/check_review_cost_control.py",
+        "rawSha256": "82d970a5f89fb33bb4d400ffc64330d1ee54c637a2817295beb781c77d590c6c",
+        "lines": 775
+      },
+      {
+        "path": "governance/compat/review_convergence_scaffold.py",
+        "rawSha256": "9ce51804784a1f1f1ff085133811ee452675b6dc379362f65109eb793f5fbafa",
+        "lines": 137
+      },
+      {
+        "path": "governance/compat/build_dispatch_packet_scaffold.py",
+        "rawSha256": "32e5bd11ff785de601228a15e44b5904b0ed1de53bac467694ac733f0a11bf92",
+        "lines": 831
+      },
+      {
+        "path": "governance/compat/test_check_review_cost_control.py",
+        "rawSha256": "fcd383a4c86953bbcc653c7874eb285a34a2d0572563ba5ef621a60e968a707a",
+        "lines": 550
+      },
+      {
+        "path": "governance/compat/test_build_dispatch_packet_scaffold.py",
+        "rawSha256": "c67dc09590cefca623e7219528460e6e644799a4e5b4b5fdf8dfd854e4743d7b",
+        "lines": 1078
+      },
+      {
+        "path": "docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0026.md",
+        "rawSha256": "9d949e61de7f01944afd988dfb38fb5c7d6f57c8dea81198e7f158d9910338a8",
+        "lines": 226
+      },
+      {
+        "path": "docs/reference/CVF_GOVERNED_WORK_LIFECYCLE_AND_DESIGN_CONTROL_STANDARD_2026-06-11.md",
+        "rawSha256": "b48f11363ee62a2ec4c85c6f9fba4540b90eb74475c31aeab18cfe4492a536de",
+        "lines": 437
+      },
+      {
+        "path": "governance/compat/check_core_guard_self_protection.py",
+        "rawSha256": "fb373c5efa08b6fd6a8a4bfcfa7d58918a102e4d23f6f1b3bb29c3689e800c60",
+        "lines": 569
+      },
+      {
+        "path": "governance/compat/check_python_automation_size.py",
+        "rawSha256": "e3925c1ebff7f8fff0ac3aa279b0c02bfae9ec2add1ed047b3cb76b25508b9c1",
+        "lines": 532
+      }
+    ],
+    "priorSourcePinsVerifiedUnchanged": 14,
+    "heldBaselineAndPacketVerifiedUnchanged": true,
+    "priorCanonicalReceiptDisposition": "CONSUMED_UNCHANGED_EXACT_SNAPSHOT_NOT_RERUN_NOT_OVERALL_ADMISSION",
+    "newCanonicalFeasibilityInvocations": 0,
+    "newMaintenanceSuiteInvocations": 0,
+    "newWorkerNativeBrowserContainerExportEvaluateProviderStarts": 0,
+    "operatorDeliveryPreference": {
+      "modelMetadata": "Sonnet 5.5 High",
+      "transport": "OPERATOR_MANUAL_COPY_WHEN_ADMITTED",
+      "roleIfSharedWorkspace": "INTERNAL_AGENT",
+      "agentInvocationAuthorized": false
+    },
+    "preparation": "PARTIAL_WITH_REASON: targeted operative reads preceded edits, but roadmap file-size predicate was read after the failed commit hook; all historical partial preparation retained.",
+    "terminalBoundary": "Protected maintenance scope must be admitted before packet release; HTML finite effects remain separately held.",
+    "claimBoundary": "Documentary owner decision only; no new checker, current machine admission or HTML fulfillment.",
+    "documentaryRulingMarkdown": "## Admission Owner Ruling - 2026-10-15\n\nStatus: CLOSED_DOCUMENTARY_BOUNDED; execution disposition: KEEP_STOPPED_PENDING_PROTECTED_MAINTENANCE_SCOPE.\nConsumer: Local dispatcher preparing a future technically admissible internal work order.\nSource base: `148aa77f449172969db03831ae31f185d2f17f3f`; worktree was clean.\n\n### Source facts and selected remedy\n\nReview Cost owner sections Review Dispatch Convergence And Invocation Budget Control and Same-Scope Authority Continuity And Micro-Checkpoint Prevention, plus ADIF-0026 Same-scope authority continuity, distinguish automatic dispatch from operator-cleared dependent continuation. The latter preserves authority only while objective, paths, risk/effects and commit ownership remain unchanged, and never replenishes a numerical cap. The machine-enforceable table and current completion stop vocabulary still contain no encoded clearance branch. This is an owner/machine route gap requiring an explicit amendment; it is not evidence that any of the six HTML findings is independently critical.\n\n`check_review_cost_control.diagnose_work_order` unconditionally rejects rework round >=3 and, separately, missing independent critical evidence at round >=2. `review_convergence_scaffold.validate` rejects the same two cases. A clearance phrase or a HOLD status does not alter either predicate. The scoped preapproval result and conditional role graph do not test or override these predicates. Existing failed receipts remain failed.\n\nSelected conditional remedy: enrich the existing Review Cost owner with a narrowly bound operator-cleared continuation route and implement that route in its existing checker and scaffold. Default behavior stays closed. Proposed evidence path plus raw SHA must bind an existing governed operator scope-decision artifact to the exact parent assignment, root cluster, consolidated finding digest, permitted round/generation, six-obligation scope, role/commit owner, expiry/revocation posture and effect/numerical ceilings. Local verifies the actual operator instruction; matching text/hash is declaration evidence, not proof of consent. Missing, stale, malformed, unsafe, recursive, mismatched or expired evidence cannot enable continuation. No boolean or unbound free-text waiver.\n\nOnly that validated route may permit dependent-only continuation without inventing critical evidence. It must explicitly reconcile both rejection predicates and the dispatch/completion vocabulary in the owner. It cannot waive SCEC, role closeability, acceptance-ledger, Core Guard authorization, actual effect admission, a spent profile, or an external invocation ceiling. Historical completion records and HTML root ordinal2/counters2,0,2,0/freeze remain unchanged.\n\n### Prospective implementation scope - not released\n\n| Existing path | Proposed responsibility |\n|---|---|\n| `docs/reference/review_cost_control/CVF_REVIEW_COST_AND_DIMINISHING_RETURN_CONTROL_STANDARD.md` | Conditional clearance contract, truthful completion disposition and explicit non-waiver boundaries |\n| `governance/compat/check_review_cost_control.py` | Validate the bound route before the two existing round predicates; preserve default stops |\n| `governance/compat/review_convergence_scaffold.py` | CLI validation, emitted clearance fields and reproducible provenance for that same route |\n| `governance/compat/build_dispatch_packet_scaffold.py` | Thread the optional fields through ScaffoldArgs without breaking ordinary callers |\n| `governance/compat/test_check_review_cost_control.py` | Focused default-stop and bound-clearance rejection/acceptance matrix |\n| `governance/compat/test_build_dispatch_packet_scaffold.py` | Actual CLI/kwargs/serialized packet/provenance parity and backward-compatible defaults |\n\nThese are six existing owner/code/test paths, including five protected Python paths. Required future baseline, work order, worker return/proof and Local closure evidence must be added to the eventual packet's output union; this table is not its final deliverable manifest. No hook, new checker, registry, SCEC/preapproval amendment or HTML helper mutation is selected. Apply Python size classes: current checker775<1000, scaffold helper137<900, packet helper831<900, checker test550<1200, packet test1078<1200; additions must remain below near-hard triggers or be resolved inside the admitted scope before dispatch. Counts are source observations, not implementation proof.\n\nRequired future offline proof: the unchanged no-clearance round3 and round2/NONE cases still reject; exact granted clearance admits only its matching bounded candidate; each omitted/mismatched source field, tampered source hash, wrong root/digest/round, unsafe path, recursive evidence, expiry/revocation and reached external ceiling rejects. Exercise the real scaffold CLI, current checker and final packet together; preserve root/generation and honest dependent findings. Local executes a distinct adversarial probe rather than repeating the worker oracle. No browser/container/provider/native product proof belongs to this maintenance proposal. This is planned proof only; no maintenance suite was executed here.\n\n### Authority, delivery and terminal decision\n\nThis PLAN authorizes documentation and source verification only. The bootstrap nextAllowedMove explicitly excludes source/checker patches. The Core Guard policy separately requires same-change-set authorization for every protected path. Those are the concrete scope boundaries before this proposal can become executable; ordinary continuing instructions do not refill the consumed HTML effect budgets. No runtime approval is requested while the current route is uncloseable.\n\nOperator delivery preference recorded2026-10-15: manual copy to Sonnet 5.5 High when implementation is needed. This is execution metadata, not a normative model requirement or an instruction to invoke an agent. A worker in this private shared workspace is INTERNAL_AGENT regardless of provider; Local retains final review/commit ownership. A future copyable packet must include the exact admitted work-order path/base, required first reads and checker literals, scope/output union, focused proof and stop conditions, and WORKER_MUST_NOT_COMMIT. Do not transfer the held HTML snapshot as an executable packet.\n\nFinite outcome delivered: source-backed owner ruling, selected smallest existing-owner remedy, bounded acceptance matrix and explicit keep-stopped disposition. No further automatic reconciliation or harness campaign is selected. R1/R2partial,R3/R4open,R5/R6deferred; REQ08 and earlier preparation PARTIAL, original failed bytes, four P4 blocked rows/C15 exclusions, parked effects and LHW24 remain. Public Export Disposition: DEFERRED_PRIVATE_ONLY.\n\n",
+    "validationHistory": {
+      "initialReviewerPreflight": "PASS 47.79s; fourteen source pins/snapshot unchanged",
+      "firstCommitHook": "FAIL governed file size: roadmap1181 within25 of1200; no commit made",
+      "correction": "Keep concise roadmap ruling; full proposal retained in this existing evidence JSON. Size checker operative predicate read after hook; preparation remains PARTIAL_WITH_REASON for this omission.",
+      "failureLog": ".cvf/runtime/ncr-html-admission-route-ruling-20261015/material-commit.log"
+    }
   }
 }
