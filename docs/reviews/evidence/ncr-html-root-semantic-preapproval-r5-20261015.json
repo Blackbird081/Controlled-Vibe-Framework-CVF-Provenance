@@ -1,0 +1,338 @@
+{
+  "schemaVersion": "cvf.preapprovalFeasibility.v1",
+  "proposal": {
+    "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_ROOT_SEMANTIC_R5_2026-10-15.md",
+    "sha256": "7fad2760c90dae3c44776fa5a72e31ababa3cc151ec9ed61cfa90039c125bf55"
+  },
+  "approvalTarget": {
+    "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_ROOT_SEMANTIC_R5_2026-10-15.md",
+    "sha256": "7fad2760c90dae3c44776fa5a72e31ababa3cc151ec9ed61cfa90039c125bf55",
+    "prospectiveOutcomeSha256": "a3986c6222e1c3a6310df522a6a365585929206a45e8c47d56ed944276b77b67"
+  },
+  "prospectiveOutcome": {
+    "schemaVersion": "cvf.semanticConvergenceControl.v1",
+    "problemKey": "ncr-html-configured-receipt-browser-composition",
+    "chainMode": "SUCCESSOR",
+    "chainOrdinal": 2,
+    "predecessor": {
+      "path": "docs/reviews/CVF_NCR_HTML_CONFIGURED_RECEIPT_CONDITIONAL_RETURN_2026-10-14.md",
+      "sha256": "ec8a0418af0db8aacde0df54b73a583758dbf33959556c965c328b4604d85254"
+    },
+    "blockerDelta": {
+      "prior": [
+        "HCR-CONTROL-EGRESS",
+        "HCR-CONTROL-ADMISSION",
+        "HCR-CONTROL-LEGACY-CLEANUP"
+      ],
+      "resolved": [
+        "HCR-CONTROL-EGRESS",
+        "HCR-CONTROL-ADMISSION"
+      ],
+      "retained": [
+        "HCR-CONTROL-LEGACY-CLEANUP"
+      ],
+      "new": [
+        "HCR-CONTROL-FRESH-PROFILE-BINDING"
+      ],
+      "reopened": [],
+      "current": [
+        "HCR-CONTROL-LEGACY-CLEANUP",
+        "HCR-CONTROL-FRESH-PROFILE-BINDING"
+      ]
+    },
+    "resolutionEvidence": {
+      "HCR-CONTROL-EGRESS": {
+        "evidenceClass": "ACCEPTED_REVIEW",
+        "evidencePath": "docs/reviews/CVF_NCR_HTML_CONFIGURED_RECEIPT_CONDITIONAL_COMPLETION_2026-10-14.md",
+        "sha256": "36c9b8513fdd614d9e798b4ef88960f68887fa43ec43b67811d6560d736805bd",
+        "locator": "HCR-CONTROL-EGRESS: RESOLVED_BOUNDED"
+      },
+      "HCR-CONTROL-ADMISSION": {
+        "evidenceClass": "ACCEPTED_REVIEW",
+        "evidencePath": "docs/reviews/CVF_NCR_HTML_CONFIGURED_RECEIPT_CONDITIONAL_COMPLETION_2026-10-14.md",
+        "sha256": "36c9b8513fdd614d9e798b4ef88960f68887fa43ec43b67811d6560d736805bd",
+        "locator": "HCR-CONTROL-ADMISSION: RESOLVED_BOUNDED"
+      }
+    },
+    "counters": {
+      "partialReadyClosures": 2,
+      "reviewerScopeExpansions": 0,
+      "sameClaimCorrections": 2,
+      "nonDecreasingBlockerTransitions": 0
+    },
+    "claims": [
+      {
+        "claimId": "NCR-HTML-INTEGRATED-ROOT-DESIGN",
+        "claimClass": "DOCUMENTATION_ONLY",
+        "proofClass": "PROPOSAL_ONLY_NO_RUNTIME_READINESS",
+        "evidenceRef": "docs/reviews/CVF_NCR_HTML_INTEGRATED_ROOT_CONTRACT_2026-10-14.md"
+      }
+    ],
+    "requiredDisposition": "ROOT_CONTRACT_REQUIRED",
+    "successorScope": "INTEGRATED_ROOT_CONTRACT"
+  },
+  "phasePrerequisites": {
+    "phase": "PRE_DISPATCH_INTEGRATED_ROOT_CONTRACT_BUILD",
+    "rows": [
+      {
+        "requirementId": "ROOT_BUILD_BASELINE",
+        "requiredForPhase": true,
+        "evidence": {
+          "path": "docs/baselines/CVF_GC018_NCR_HTML_ROOT_SEMANTIC_R5_2026-10-15.md",
+          "sha256": "4f011ee1b64dcc5967729b2424a3f1e63e354789a8dc239cff85d535215121da",
+          "locator": "## Scope / Target / Owner Boundary"
+        },
+        "deferredToPhase": null
+      },
+      {
+        "requirementId": "ROOT_BUILD_SCOPE",
+        "requiredForPhase": true,
+        "evidence": {
+          "path": "docs/baselines/CVF_GC018_NCR_HTML_ROOT_SEMANTIC_R5_2026-10-15.md",
+          "sha256": "4f011ee1b64dcc5967729b2424a3f1e63e354789a8dc239cff85d535215121da",
+          "locator": "## Integrated Build Scope"
+        },
+        "deferredToPhase": null
+      },
+      {
+        "requirementId": "SOURCE-1",
+        "requiredForPhase": true,
+        "evidence": {
+          "path": "scripts/cvf_ncr_html_owned_profile/__init__.py",
+          "sha256": "8133757501bbbcc154a92e7758df1a3df3c2957a0e205cd4f39cf03721ea69fd",
+          "locator": "\"\"\"Finite, opt-in owned synthetic HTML invocation; legacy branches are not called.\"\"\""
+        },
+        "deferredToPhase": null
+      },
+      {
+        "requirementId": "SOURCE-2",
+        "requiredForPhase": true,
+        "evidence": {
+          "path": "scripts/cvf_ncr_html_owned_profile/lifecycle.py",
+          "sha256": "4d086bb21745aee82648a37f15ef428d37a936102ad47f38911c7e4e13abbd0b",
+          "locator": "\"\"\"Owned Windows process identities and one failure-preserving cleanup collector.\"\"\""
+        },
+        "deferredToPhase": null
+      },
+      {
+        "requirementId": "SOURCE-3",
+        "requiredForPhase": true,
+        "evidence": {
+          "path": "scripts/cvf_ncr_html_owned_profile/profile.py",
+          "sha256": "730a1c33bc8258a6003023fad60f6ab9fb7cb775e054c5b9629c9cf59e893e76",
+          "locator": "\"\"\"Fresh source admission, bounded real-engine transport, and exact receipt joins.\"\"\""
+        },
+        "deferredToPhase": null
+      },
+      {
+        "requirementId": "SOURCE-4",
+        "requiredForPhase": true,
+        "evidence": {
+          "path": "scripts/cvf_ncr_html_owned_profile/test_control.py",
+          "sha256": "2a4f6acff7a23f4c783277ca6966c77d89a442ae2f297fb0dbe7529e2abf5aa3",
+          "locator": "\"\"\"Nine admitted inert failure classes exercise the same finally collector as runtime.\"\"\""
+        },
+        "deferredToPhase": null
+      },
+      {
+        "requirementId": "SOURCE-5",
+        "requiredForPhase": true,
+        "evidence": {
+          "path": "scripts/cvf_ncr_html_owned_profile/journey.cjs",
+          "sha256": "37d7316cc62c1b757750d570063e78cc059c1c8d53865af16e0af0d01ba38431",
+          "locator": "/* Fresh developer journey and opt-in Node network observation. No policy verdict simulation. */"
+        },
+        "deferredToPhase": null
+      },
+      {
+        "requirementId": "SOURCE-6",
+        "requiredForPhase": true,
+        "evidence": {
+          "path": "scripts/cvf_ncr_html_owned_profile/journey.test.cjs",
+          "sha256": "0e8187004d28ba2685e19c9397ec4c2ec1add0fb403a3c3f3e78216fe5c0d00c",
+          "locator": "/* Pure input/branch regressions; no browser/engine/provider/substitute start. */"
+        },
+        "deferredToPhase": null
+      },
+      {
+        "requirementId": "SOURCE-7",
+        "requiredForPhase": true,
+        "evidence": {
+          "path": "scripts/probe_cvf_q001_synthetic_system_chain.py",
+          "sha256": "b09924875254872611332baa11fdad4ec0b574d69c74e217ba0bb81a56cf2662",
+          "locator": "#!/usr/bin/env python3"
+        },
+        "deferredToPhase": null
+      },
+      {
+        "requirementId": "SOURCE-8",
+        "requiredForPhase": true,
+        "evidence": {
+          "path": "scripts/probe_cvf_w05_browser_chain.cjs",
+          "sha256": "0d9a261cddc5e21c00938570f5f692163d91cade21d2cc02c54c20bbbe91c494",
+          "locator": "/* Disposable W05 browser transport/presentation proof; no provider invocation. */"
+        },
+        "deferredToPhase": null
+      },
+      {
+        "requirementId": "SOURCE-9",
+        "requiredForPhase": true,
+        "evidence": {
+          "path": "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/core_orchestrator.py",
+          "sha256": "9d35ed87fafeb5a21814f94dbdd7db8e2e96ab430eb300f5f2a1ae77faa85a69",
+          "locator": "\"\"\""
+        },
+        "deferredToPhase": null
+      },
+      {
+        "requirementId": "SOURCE-10",
+        "requiredForPhase": true,
+        "evidence": {
+          "path": "governance/compat/review_convergence_scaffold.py",
+          "sha256": "69821687c7a5103549d3f769d47069b83b1f43b3387687cdf782d9a11c0858bd",
+          "locator": "#!/usr/bin/env python3"
+        },
+        "deferredToPhase": null
+      },
+      {
+        "requirementId": "SOURCE-11",
+        "requiredForPhase": true,
+        "evidence": {
+          "path": "governance/compat/check_review_cost_control.py",
+          "sha256": "68e70bd29221e6d758ca7117a9a4fa18498f63406909b927d0e8e5423ab5e48b",
+          "locator": "#!/usr/bin/env python3"
+        },
+        "deferredToPhase": null
+      },
+      {
+        "requirementId": "SOURCE-12",
+        "requiredForPhase": true,
+        "evidence": {
+          "path": "docs/reference/review_cost_control/CVF_REVIEW_COST_AND_DIMINISHING_RETURN_CONTROL_STANDARD.md",
+          "sha256": "59ab670a0b3d723b50f8fed690e6c40be76cb14f1b0a5b72085a38efbb4f27a7",
+          "locator": "# CVF Review Cost And Diminishing Return Control Standard"
+        },
+        "deferredToPhase": null
+      },
+      {
+        "requirementId": "SOURCE-13",
+        "requiredForPhase": true,
+        "evidence": {
+          "path": "docs/assessments/CVF_NCR_HTML_ROOT_BUILD_SOURCE_REASSESSMENT_2026-10-15.md",
+          "sha256": "cd7be9162321be4287c850243cf6c2df79f45936650f5dd3cb7668e53775d66c",
+          "locator": "# NCR HTML Root Build - Source Reassessment And Consolidated Admission Design"
+        },
+        "deferredToPhase": null
+      },
+      {
+        "requirementId": "SOURCE-14",
+        "requiredForPhase": true,
+        "evidence": {
+          "path": "governance/compat/preapproval_feasibility_contract.py",
+          "sha256": "c351608f82d25ff99f3911c1f13c4990cf5a7ad9a886a23f946fa804010e346b",
+          "locator": "#!/usr/bin/env python3"
+        },
+        "deferredToPhase": null
+      },
+      {
+        "requirementId": "SOURCE-15",
+        "requiredForPhase": true,
+        "evidence": {
+          "path": "governance/compat/learning_application_binding.py",
+          "sha256": "84068b6f197c19404a23daa643266d7f9ed334f313cd2d8bbe2f2e6d37d7b7b8",
+          "locator": "\"\"\"F2G learning enrollment and dispatch plans. Declared joins, never semantic acceptance.\"\"\""
+        },
+        "deferredToPhase": null
+      },
+      {
+        "requirementId": "OPERATOR_OFFLINE_CONTINUATION",
+        "requiredForPhase": true,
+        "evidence": {
+          "path": "docs/baselines/CVF_NCR_HTML_ROOT_SEMANTIC_AUTHORIZATION_R5_2026-10-15.md",
+          "sha256": "64a8b47c48fac133cdf8ed32fe25e022f158ff801c778cbd0b8e5e921dbe2aaf",
+          "locator": "## Bound Declaration"
+        },
+        "deferredToPhase": null
+      },
+      {
+        "requirementId": "NEW_EFFECT_AUTHORITY",
+        "requiredForPhase": false,
+        "evidence": null,
+        "deferredToPhase": "BEFORE_ANY_B_E_EFFECT"
+      },
+      {
+        "requirementId": "HOST_NATIVE_PROOF",
+        "requiredForPhase": false,
+        "evidence": null,
+        "deferredToPhase": "C_NATIVE_CONTROL"
+      },
+      {
+        "requirementId": "PRODUCT_V1_V2_AND_CUSTODY",
+        "requiredForPhase": false,
+        "evidence": null,
+        "deferredToPhase": "D_E_RUNTIME"
+      },
+      {
+        "requirementId": "R5_R4_NEGATIVE_REVIEW",
+        "requiredForPhase": true,
+        "evidence": {
+          "path": "docs/reviews/CVF_NCR_HTML_ROOT_RECOVERY_R4_COMPLETION_2026-10-15.md",
+          "sha256": "37acb0087cdc78312853544f3b7f82cbcd024fa9a2c8d8905e1d21fb2a0763c9",
+          "locator": "## Findings / Position"
+        },
+        "deferredToPhase": null
+      },
+      {
+        "requirementId": "R5_R4_REJECTED_SOURCE_CUSTODY",
+        "requiredForPhase": true,
+        "evidence": {
+          "path": "docs/reviews/evidence/ncr-html-root-recovery-local-r4-20261015.json",
+          "sha256": "a6ec844c07157ab34beade8cb668996e7f46379eaa7af2ba73843e45b0ee5f82",
+          "locator": "\"sourceSnapshots\""
+        },
+        "deferredToPhase": null
+      },
+      {
+        "requirementId": "ACTUAL_STAGE_DELETION",
+        "requiredForPhase": false,
+        "evidence": null,
+        "deferredToPhase": "SEPARATELY_ADMITTED_POST_TERMINAL_ACTION"
+      },
+      {
+        "requirementId": "R5_OFFLINE_SCOPE",
+        "requiredForPhase": true,
+        "evidence": {
+          "path": "docs/baselines/CVF_GC018_NCR_HTML_ROOT_SEMANTIC_R5_2026-10-15.md",
+          "sha256": "4f011ee1b64dcc5967729b2424a3f1e63e354789a8dc239cff85d535215121da",
+          "locator": "Actual execution subphase is OFFLINE_SOURCE_RECOVERY_ONLY"
+        },
+        "deferredToPhase": null
+      },
+      {
+        "requirementId": "R5_LOCKED_SEMANTICS",
+        "requiredForPhase": true,
+        "evidence": {
+          "path": "docs/baselines/CVF_GC018_NCR_HTML_SEMANTIC_STATE_MACHINE_DESIGN_2026-10-15.md",
+          "sha256": "597f082c21dcf1635ceacd05b37f11612bfa3b47e1d4aeb5810b7e47cdf7b8cf",
+          "locator": "## Protocol / State Transitions"
+        },
+        "deferredToPhase": null
+      },
+      {
+        "requirementId": "R5_LOCKED_CASE_MAPPING",
+        "requiredForPhase": true,
+        "evidence": {
+          "path": "docs/reviews/evidence/ncr-html-semantic-design-20261015.json",
+          "sha256": "2f336f3db64dd45560d5be2525ad8d21e9f4c7d78173a5f4073c71d48d55d373",
+          "locator": "\"plannedComposedCases\""
+        },
+        "deferredToPhase": null
+      }
+    ]
+  },
+  "requestQueue": null,
+  "requestedAction": {
+    "kind": "INTEGRATED_ROOT_CONTRACT_BUILD",
+    "runtimeReadinessClaim": false
+  }
+}

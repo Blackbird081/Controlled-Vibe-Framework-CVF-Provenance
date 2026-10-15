@@ -5,11 +5,13 @@ docType: roadmap
 Status: ACCEPTED_UNIFIED_ROADMAP_LOCAL_CONSUMER_BOUNDED_FULL_PILOT_OPEN
 Date: 2026-09-26
 Program ID: CVF-NCR
-Version: 2.35
+Version: 2.36
 Revision disposition: LOCAL_CONSUMER_MAINTENANCE_ACCEPTED_BOUNDED; END_TO_END_PILOT_OPEN; Q001_AND_P11_CHECKPOINTS_RETAINED
 Decision owner: operator về định hướng/phạm vi; Local reviewer về đối chiếu kỹ thuật và nghiệm thu.
 
 ## Current Delivery Checkpoint - 2026-10-14
+
+**2026-10-15 semantic source R5 packet:** `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_ROOT_SEMANTIC_R5_2026-10-15.md` / `docs/baselines/CVF_GC018_NCR_HTML_ROOT_SEMANTIC_R5_2026-10-15.md` carry locked admission-commit/UNKNOWN, separate work/cleanup cutoffs and acyclic child/parent snapshot/ACK into source10/output12. Four CREATE paths include reintroduced rejected execution/test_execution and new protocol/test_protocol; readable shrink/capacity and17 retained cases plus6 composed schedules bound before implementation. Fresh delegated grant: worker240/Local90min, test8/4, sourceGit32/20, inert27/0, effects0; no R4 reuse or automatic worker. Same root actual rework5/generation5, SCEC ordinal2/counters2,0,2,0/blockers/freeze preserved. Manual transfer only after current committed pair/exact6 continuity/one-object feasibility and bound release. Actual native/product/browser/delete and parked lanes remain held.
 
 **2026-10-15 semantic state-machine design locked, implementation held:** `docs/baselines/CVF_GC018_NCR_HTML_SEMANTIC_STATE_MACHINE_DESIGN_2026-10-15.md` and `docs/reviews/CVF_NCR_HTML_SEMANTIC_STATE_MACHINE_DESIGN_REVIEW_2026-10-15.md` consume R4 seventeen retained assertions without rerun. Work admission closes irreversibly; cleanup has its own cutoff; in-flight completion uncertainty stays UNKNOWN; lazy child calls and fresh post-persist/resume checks apply. Child close/stdin precede its immutable snapshot, parent owns byte/exit/ACK observation. Prospective source10/output12 adds protocol.py/test_protocol.py for readable capacity; no source or grant is created. Next Local prepares a fresh bounded work-order proposal and validates scope/authority/acceptance before manual transfer. Same root/rework4/SCEC2/blockers/freeze and actual B-E/native/product/browser/delete holds retained; no new checker or automatic worker.
 

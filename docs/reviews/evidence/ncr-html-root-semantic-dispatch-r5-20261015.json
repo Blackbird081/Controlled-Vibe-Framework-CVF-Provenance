@@ -1,0 +1,909 @@
+{
+  "schemaVersion": "cvf.ncrHtmlRootSemanticDispatch@1",
+  "phase": "PRE_DISPATCH_INTEGRATED_ROOT_CONTRACT_BUILD",
+  "executionSubphase": "OFFLINE_SOURCE_RECOVERY_ONLY",
+  "sourceHead": "3a2bf3634a644d87a65d5af7ae0416789e0e71bc",
+  "batchId": "CVF-NCR-HTML-ROOT-SEMANTIC-R5-20261015",
+  "decisionOwner": "LOCAL",
+  "operatorInstruction": "Actual operator instruction: \"b\u1ea1n l\u00e0 orchestrator/reviewer, cho ph\u00e9p b\u1ea1n l\u00e0m, kh\u00f4ng ch\u1edd h\u1ecfi t\u00f4i t\u1eebng ch\u00fat\"; \"cho to\u00e0n quy\u1ec1n, ko ch\u1edd h\u1ecfi t\u00f4i m\u1ea5y vi\u1ec7c n\u00e0y\"; \"next, b\u1ea1n to\u00e0n quy\u1ec1n t\u1ea1o subagent - Luna max/Sol-Medium \u0111\u1ec3 l\u00e0m vi\u1ec7c, ch\u1ec9 ra t\u1edbi work order t\u00f4i m\u1edbi giao l\u1ea1i cho CLAUDE\"; current next after semantic design material3eeb12060/continuity3a2bf3634a644d87a65d5af7ae0416789e0e71bc. Local verifies that persistent delegation and chooses the explicit fresh finite source-only limits here. These numbers and four CREATE paths are Local prospective technical selection, not a claim the operator individually enumerated them. Old R4 authorization is consumed evidence only.\n\nSame objective/acceptance/risk/effect/commit-owner classes, expanded readable allocation within the same helper/test path family: working6 plus CREATE execution.py/test_execution.py/protocol.py/test_protocol.py and NEW return/proof12. The first two CREATE paths may recover pinned rejected R4 bytes as unaccepted starting material. No source accepted or effects admitted by design alone. Actual rework round/generation5 and finding digest 3d0687960e6e71b9a22990dd371bfe7139f4b784818c26f5f74d3d52d5bc0ed1; SCEC ordinal2/counters2,0,2,0/two blockers/freeze remain without a new transition. newIndependentCriticalEvidence remains NONE. Parsing checks declarations, not actual operator consent or implementation truth. Local owns disposition; manual shared-workspace worker transfer only after committed packet/current continuity/bound gates.",
+  "findingSet": {
+    "sourceReview": {
+      "path": "docs/reviews/CVF_NCR_HTML_ROOT_RECOVERY_R4_COMPLETION_2026-10-15.md",
+      "sha256": "37acb0087cdc78312853544f3b7f82cbcd024fa9a2c8d8905e1d21fb2a0763c9"
+    },
+    "sourceProof": {
+      "path": "docs/reviews/evidence/ncr-html-root-recovery-local-r4-20261015.json",
+      "sha256": "a6ec844c07157ab34beade8cb668996e7f46379eaa7af2ba73843e45b0ee5f82"
+    },
+    "lockedDesign": {
+      "path": "docs/baselines/CVF_GC018_NCR_HTML_SEMANTIC_STATE_MACHINE_DESIGN_2026-10-15.md",
+      "sha256": "597f082c21dcf1635ceacd05b37f11612bfa3b47e1d4aeb5810b7e47cdf7b8cf"
+    },
+    "findings": [
+      {
+        "id": "R4-F02",
+        "requirements": [
+          "REQ-02"
+        ],
+        "class": "WORKER_EXECUTION_ERROR",
+        "evidence": "NEG-quoted-bearer; quoted bearer survives safe serializer"
+      },
+      {
+        "id": "R4-F03",
+        "requirements": [
+          "REQ-03"
+        ],
+        "class": "WORKER_EXECUTION_ERROR",
+        "evidence": "stale prelaunch timeout, expired invocation, .5s drain floor, fixed terminal waits, JS zero timeout/eager control"
+      },
+      {
+        "id": "R4-F05",
+        "requirements": [
+          "REQ-05"
+        ],
+        "class": "WORKER_EXECUTION_ERROR",
+        "evidence": "NEG-expired-resume; job policy/order precedes child, but identity persistence exhaustion does not prevent resume"
+      },
+      {
+        "id": "R4-F03-PROXY",
+        "requirements": [
+          "REQ-03"
+        ],
+        "class": "WORKER_EXECUTION_ERROR",
+        "evidence": "NEG-late-proxy-forward; delayed body can forward after collector deadline extended into cleanup"
+      },
+      {
+        "id": "R4-F04",
+        "requirements": [
+          "REQ-06"
+        ],
+        "class": "WORKER_EXECUTION_ERROR",
+        "evidence": "NEG-durable-stdin-outcome; saved browser bytes omit failed stdin teardown"
+      },
+      {
+        "id": "R4-F06",
+        "requirements": [
+          "REQ-08"
+        ],
+        "class": "WORKER_EXECUTION_ERROR",
+        "evidence": "worker admits late mandatory reads; remains BLOCKED independently of technical rejection"
+      }
+    ],
+    "scope": "dependent R4 redaction/time/resume/proxy/terminal/preparation repair; no new independent critical root",
+    "localDiagnosticsPreserved": "post-assertion synthetic Node rejection, partial preparation and later documentary gate failures are not product observations"
+  },
+  "priorFindingSetDigest": "3d0687960e6e71b9a22990dd371bfe7139f4b784818c26f5f74d3d52d5bc0ed1",
+  "sourcePins": {
+    "scripts/cvf_ncr_html_owned_profile/__init__.py": "8133757501bbbcc154a92e7758df1a3df3c2957a0e205cd4f39cf03721ea69fd",
+    "scripts/cvf_ncr_html_owned_profile/lifecycle.py": "4d086bb21745aee82648a37f15ef428d37a936102ad47f38911c7e4e13abbd0b",
+    "scripts/cvf_ncr_html_owned_profile/profile.py": "730a1c33bc8258a6003023fad60f6ab9fb7cb775e054c5b9629c9cf59e893e76",
+    "scripts/cvf_ncr_html_owned_profile/test_control.py": "2a4f6acff7a23f4c783277ca6966c77d89a442ae2f297fb0dbe7529e2abf5aa3",
+    "scripts/cvf_ncr_html_owned_profile/journey.cjs": "37d7316cc62c1b757750d570063e78cc059c1c8d53865af16e0af0d01ba38431",
+    "scripts/cvf_ncr_html_owned_profile/journey.test.cjs": "0e8187004d28ba2685e19c9397ec4c2ec1add0fb403a3c3f3e78216fe5c0d00c",
+    "docs/baselines/CVF_GC018_NCR_HTML_SEMANTIC_STATE_MACHINE_DESIGN_2026-10-15.md": "597f082c21dcf1635ceacd05b37f11612bfa3b47e1d4aeb5810b7e47cdf7b8cf",
+    "docs/reviews/evidence/ncr-html-semantic-design-20261015.json": "2f336f3db64dd45560d5be2525ad8d21e9f4c7d78173a5f4073c71d48d55d373",
+    "docs/reviews/CVF_NCR_HTML_ROOT_RECOVERY_R4_COMPLETION_2026-10-15.md": "37acb0087cdc78312853544f3b7f82cbcd024fa9a2c8d8905e1d21fb2a0763c9",
+    "docs/reviews/evidence/ncr-html-root-recovery-local-r4-20261015.json": "a6ec844c07157ab34beade8cb668996e7f46379eaa7af2ba73843e45b0ee5f82",
+    "docs/baselines/CVF_GC018_NCR_HTML_ROOT_RECOVERY_R4_2026-10-15.md": "876c1c6ed90271f98abbade9224cdda22df87174b9957ae93514cd3d64797d96",
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_ROOT_RECOVERY_R4_2026-10-15.md": "b73cb3f4d4c014b1b0eb806f9de1259b55d40419cef3791632389543112514f9",
+    "docs/reference/work_order_template/CVF_WORK_ORDER_SOURCE_VERIFICATION_ADDENDUM.md": "5c154b9eeb020ab22fe2a40e33a1f40af0ec8ee7a22165b3682f09c593a45680",
+    "docs/reference/work_order_template/CVF_WORK_ORDER_ACCEPTANCE_LEDGER_ADDENDUM.md": "4840327b2cd8272a34f23f39e7c599295487c61018229d316261eada381b1a38",
+    "docs/reference/CVF_GOVERNED_WORK_LIFECYCLE_AND_DESIGN_CONTROL_STANDARD_2026-06-11.md": "b48f11363ee62a2ec4c85c6f9fba4540b90eb74475c31aeab18cfe4492a536de",
+    "docs/reference/review_cost_control/CVF_REVIEW_COST_AND_DIMINISHING_RETURN_CONTROL_STANDARD.md": "59ab670a0b3d723b50f8fed690e6c40be76cb14f1b0a5b72085a38efbb4f27a7",
+    "docs/reference/CVF_AGENT_EXECUTION_WORKFLOW_SOP_2026-05-19.md": "cd50be4119b6ece9be9209a88fe9f07af2b9ea156dcb2c4f4e4b0e05b887bf96",
+    "docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md": "946c7f0988e5ebbc9d26899934f016ce979903f55b51d9c13e057da0afa6758a",
+    "scripts/probe_cvf_w05_browser_chain.cjs": "0d9a261cddc5e21c00938570f5f692163d91cade21d2cc02c54c20bbbe91c494",
+    "scripts/probe_cvf_q001_synthetic_system_chain.py": "b09924875254872611332baa11fdad4ec0b574d69c74e217ba0bb81a56cf2662",
+    "governance/compat/run_worker_return_fast_gate.py": "8132cd26c46bb9a2c26e2dd86a13a45b07cdbbe822f62011adee1af6b801e8ee",
+    "governance/compat/check_worker_return_quality_gate.py": "c87f1a50dd95af3459e3af1bcc6aaed8e0c1f5cec28e7761a9f3b254f3ec7257",
+    "governance/compat/check_work_order_acceptance_ledger.py": "8b6ce487f01eb432cab16456da98c79f0995468f6a1da8c16765d204cc6a39b4",
+    "governance/compat/check_agent_operation_trace.py": "57aaac11abdca0b7a94998dfb21bc259d8013ce0b9bdc9d53a906202e9fabaaa",
+    "governance/compat/check_core_guard_self_protection.py": "fb373c5efa08b6fd6a8a4bfcfa7d58918a102e4d23f6f1b3bb29c3689e800c60",
+    "governance/compat/check_independent_review_probe_admission.py": "738cfd2da5a58910d7334805fb9bab074ddddfc8c156e4a2a9f4573c6ac51a96",
+    "governance/compat/check_epistemic_process_packet.py": "b95e5c7a6e2c75d8be2911ec47d15f92842193977fded7aa6debd04f43c3711f",
+    "governance/compat/check_review_cost_control.py": "68e70bd29221e6d758ca7117a9a4fa18498f63406909b927d0e8e5423ab5e48b",
+    "governance/compat/check_finding_to_governance_learning.py": "338a3d7492ad6fd6b962157a668c3d13a47b286580c36a26f1acf897a50049ea",
+    "governance/compat/check_agent_packet_authority_and_encoding.py": "5f1ce8f2cde856707e6375ebdc6667f270db411aabb3971c85981e757abb3d78",
+    "governance/compat/check_governed_artifact_checker_read_ahead.py": "44f4b67c9441c541a42f91526d8f25c8805efeb1e08e6aed69c60aee6153ef77",
+    "governance/compat/review_convergence_scaffold.py": "69821687c7a5103549d3f769d47069b83b1f43b3387687cdf782d9a11c0858bd",
+    "governance/compat/preapproval_feasibility_contract.py": "c351608f82d25ff99f3911c1f13c4990cf5a7ad9a886a23f946fa804010e346b",
+    "governance/compat/learning_application_binding.py": "84068b6f197c19404a23daa643266d7f9ed334f313cd2d8bbe2f2e6d37d7b7b8",
+    "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/core_orchestrator.py": "9d35ed87fafeb5a21814f94dbdd7db8e2e96ab430eb300f5f2a1ae77faa85a69",
+    "docs/baselines/CVF_GC018_NCR_HTML_ROOT_SEMANTIC_R5_2026-10-15.md": "4f011ee1b64dcc5967729b2424a3f1e63e354789a8dc239cff85d535215121da",
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_ROOT_SEMANTIC_R5_2026-10-15.md": "7fad2760c90dae3c44776fa5a72e31ababa3cc151ec9ed61cfa90039c125bf55",
+    "docs/baselines/CVF_NCR_HTML_ROOT_SEMANTIC_AUTHORIZATION_R5_2026-10-15.md": "64a8b47c48fac133cdf8ed32fe25e022f158ff801c778cbd0b8e5e921dbe2aaf",
+    "docs/reviews/evidence/ncr-html-root-semantic-preapproval-r5-20261015.json": "7d9eb40ed148ef03b6839dbda6ae91d405b159ecdf2d724b71df8f2c309c7f02"
+  },
+  "expectedWorkerOutputs": [
+    "scripts/cvf_ncr_html_owned_profile/__init__.py",
+    "scripts/cvf_ncr_html_owned_profile/lifecycle.py",
+    "scripts/cvf_ncr_html_owned_profile/profile.py",
+    "scripts/cvf_ncr_html_owned_profile/test_control.py",
+    "scripts/cvf_ncr_html_owned_profile/journey.cjs",
+    "scripts/cvf_ncr_html_owned_profile/journey.test.cjs",
+    "scripts/cvf_ncr_html_owned_profile/execution.py",
+    "scripts/cvf_ncr_html_owned_profile/test_execution.py",
+    "scripts/cvf_ncr_html_owned_profile/protocol.py",
+    "scripts/cvf_ncr_html_owned_profile/test_protocol.py",
+    "docs/reviews/CVF_NCR_HTML_ROOT_SEMANTIC_R5_WORKER_RETURN_2026-10-15.md",
+    "docs/reviews/evidence/ncr-html-root-semantic-worker-r5-20261015.json"
+  ],
+  "materialManifest": [
+    "docs/baselines/CVF_GC018_NCR_HTML_ROOT_SEMANTIC_R5_2026-10-15.md",
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_ROOT_SEMANTIC_R5_2026-10-15.md",
+    "docs/baselines/CVF_NCR_HTML_ROOT_SEMANTIC_AUTHORIZATION_R5_2026-10-15.md",
+    "docs/reviews/evidence/ncr-html-root-semantic-preapproval-r5-20261015.json",
+    "docs/reviews/evidence/ncr-html-root-semantic-dispatch-r5-20261015.json",
+    "docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md"
+  ],
+  "pairedArtifacts": {
+    "baseline": "docs/baselines/CVF_GC018_NCR_HTML_ROOT_SEMANTIC_R5_2026-10-15.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_ROOT_SEMANTIC_R5_2026-10-15.md",
+    "authorization": "docs/baselines/CVF_NCR_HTML_ROOT_SEMANTIC_AUTHORIZATION_R5_2026-10-15.md",
+    "companion": "docs/reviews/evidence/ncr-html-root-semantic-preapproval-r5-20261015.json"
+  },
+  "sourceVersionBoundary": "current working6 differs from rejected R4 source8; four CREATE source/test paths; recovery is unaccepted material only",
+  "rejectedR4SourceSnapshots": {
+    "scripts/cvf_ncr_html_owned_profile/__init__.py": {
+      "sha256": "fa7729a061041f97058d51106d7c0b2fba39538b9a9675d388ed04a4e68bb2ca",
+      "lines": 301,
+      "lineEnding": "LF"
+    },
+    "scripts/cvf_ncr_html_owned_profile/lifecycle.py": {
+      "sha256": "a7b579f753b7313f5c6b31d0c04a6057eb440880936cb7d6264441f180cb6daa",
+      "lines": 269,
+      "lineEnding": "LF"
+    },
+    "scripts/cvf_ncr_html_owned_profile/profile.py": {
+      "sha256": "1a876ccb12670cf22a4f8fd92a38e5e7d2a2dc6ec7fdee5fdaa691073427c787",
+      "lines": 294,
+      "lineEnding": "LF"
+    },
+    "scripts/cvf_ncr_html_owned_profile/test_control.py": {
+      "sha256": "ea4a4ac7d405550511449fbc5e197f59759b4bcf97013c27e8827953f143e9b1",
+      "lines": 294,
+      "lineEnding": "LF"
+    },
+    "scripts/cvf_ncr_html_owned_profile/journey.cjs": {
+      "sha256": "2eeeed590805291f28463e871646023a54ead4f7478a2ce5294cde8d5cdc494d",
+      "lines": 229,
+      "lineEnding": "LF"
+    },
+    "scripts/cvf_ncr_html_owned_profile/journey.test.cjs": {
+      "sha256": "0694464bf61ce0874fe2d2b43cc6b423e357dd768c787c20b35c24b7e45076a4",
+      "lines": 114,
+      "lineEnding": "LF"
+    },
+    "scripts/cvf_ncr_html_owned_profile/execution.py": {
+      "sha256": "c71f2a10978b833769b308a490903a8e99d11bc9b5576d23a117715186c91ed0",
+      "lines": 310,
+      "lineEnding": "LF"
+    },
+    "scripts/cvf_ncr_html_owned_profile/test_execution.py": {
+      "sha256": "c1dffe1e148311fc8a40b1859274fb20649451ed48130be6990b416c03908287",
+      "lines": 346,
+      "lineEnding": "LF"
+    }
+  },
+  "newPaths": [
+    "scripts/cvf_ncr_html_owned_profile/execution.py",
+    "scripts/cvf_ncr_html_owned_profile/test_execution.py",
+    "scripts/cvf_ncr_html_owned_profile/protocol.py",
+    "scripts/cvf_ncr_html_owned_profile/test_protocol.py",
+    "docs/reviews/CVF_NCR_HTML_ROOT_SEMANTIC_R5_WORKER_RETURN_2026-10-15.md",
+    "docs/reviews/evidence/ncr-html-root-semantic-worker-r5-20261015.json"
+  ],
+  "capacity": [
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/__init__.py",
+      "frozenR4Lines": 301,
+      "prospectiveCeiling": 329,
+      "action": "controller and existing proxy; fence before shutdown; phase checks after body/queue acquisition"
+    },
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/lifecycle.py",
+      "frozenR4Lines": 269,
+      "prospectiveCeiling": 329,
+      "action": "exact process/handle identity; fresh check after identity persistence before resume"
+    },
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/profile.py",
+      "frozenR4Lines": 294,
+      "prospectiveCeiling": 329,
+      "action": "case-specific receipts and source/oracle joins; retain schema/UTF16 logic"
+    },
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/execution.py",
+      "frozenR4Lines": 310,
+      "prospectiveCeiling": 329,
+      "action": "serializer, command lifecycle and immutable terminal bytes; delegate phase/clock policy"
+    },
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/protocol.py",
+      "frozenR4Lines": null,
+      "prospectiveCeiling": 299,
+      "action": "NEW sole phase/clock/admission owner and pending-operation accounting"
+    },
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/test_control.py",
+      "frozenR4Lines": 294,
+      "prospectiveCeiling": 296,
+      "action": "nine inert-control matrix and canonical fixtures; do not expand here"
+    },
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/test_execution.py",
+      "frozenR4Lines": 346,
+      "prospectiveCeiling": 286,
+      "action": "move coherent protocol schedules before adding coverage; shrink at least60"
+    },
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/test_protocol.py",
+      "frozenR4Lines": null,
+      "prospectiveCeiling": 299,
+      "action": "NEW deterministic composed clock/phase/late-completion tests"
+    },
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/journey.cjs",
+      "frozenR4Lines": 229,
+      "prospectiveCeiling": 329,
+      "action": "lazy child calls, local wait clamps, child snapshot and complete reply validation"
+    },
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/journey.test.cjs",
+      "frozenR4Lines": 114,
+      "prospectiveCeiling": 299,
+      "action": "fresh VM input, timing, close/stdin/snapshot controls"
+    }
+  ],
+  "historicalCases": [
+    {
+      "case": "POS-receipt-and-duplicate-refusal",
+      "kind": "positive",
+      "status": "PASS",
+      "detail": "genuine receipt accepted; duplicate matrix and Local runtime admission refused",
+      "requirementId": "REQ-01",
+      "newEvidenceRequired": "fresh current-source observed boundary outcome; preserve useful positive or reject/refuse/UNKNOWN as locked design; historical result is not new proof"
+    },
+    {
+      "case": "POS-input-completion-utf16",
+      "kind": "positive",
+      "status": "PASS",
+      "detail": "strict caps, unknown completion and split-surrogate result match contract",
+      "requirementId": "REQ-04",
+      "newEvidenceRequired": "fresh current-source observed boundary outcome; preserve useful positive or reject/refuse/UNKNOWN as locked design; historical result is not new proof"
+    },
+    {
+      "case": "POS-ordinary-redaction",
+      "kind": "positive",
+      "status": "PASS",
+      "detail": "ordinary bearer and split argv redacted",
+      "requirementId": "REQ-02",
+      "newEvidenceRequired": "fresh current-source observed boundary outcome; preserve useful positive or reject/refuse/UNKNOWN as locked design; historical result is not new proof"
+    },
+    {
+      "case": "POS-immutable-terminal",
+      "kind": "positive",
+      "status": "PASS",
+      "detail": "clean acknowledged immutable bytes accepted; primary error refuses eligibility; stage retained",
+      "requirementId": "REQ-06",
+      "newEvidenceRequired": "fresh current-source observed boundary outcome; preserve useful positive or reject/refuse/UNKNOWN as locked design; historical result is not new proof"
+    },
+    {
+      "case": "NEG-quoted-bearer",
+      "kind": "negative",
+      "status": "FAIL",
+      "detail": "quoted bearer credential survives safe serializer",
+      "requirementId": "REQ-02",
+      "newEvidenceRequired": "fresh current-source observed boundary outcome; preserve useful positive or reject/refuse/UNKNOWN as locked design; historical result is not new proof"
+    },
+    {
+      "case": "NEG-prelaunch-fresh-timeout",
+      "kind": "negative",
+      "status": "FAIL",
+      "detail": "runner timeout [10] exceeds fresh remaining 1s after prelaunch persistence",
+      "requirementId": "REQ-03",
+      "newEvidenceRequired": "fresh current-source observed boundary outcome; preserve useful positive or reject/refuse/UNKNOWN as locked design; historical result is not new proof"
+    },
+    {
+      "case": "NEG-post-persist-expired-start",
+      "kind": "negative",
+      "status": "FAIL",
+      "detail": "runner invoked after persistence consumed entire work deadline",
+      "requirementId": "REQ-03",
+      "newEvidenceRequired": "fresh current-source observed boundary outcome; preserve useful positive or reject/refuse/UNKNOWN as locked design; historical result is not new proof"
+    },
+    {
+      "case": "NEG-expired-drain",
+      "kind": "negative",
+      "status": "FAIL",
+      "detail": "post-expiry drain granted 0.5s beyond remaining zero",
+      "requirementId": "REQ-03",
+      "newEvidenceRequired": "fresh current-source observed boundary outcome; preserve useful positive or reject/refuse/UNKNOWN as locked design; historical result is not new proof"
+    },
+    {
+      "case": "NEG-terminal-fresh-waits",
+      "kind": "negative",
+      "status": "FAIL",
+      "detail": "cleanup waits exceed fresh remaining zero: [('before', 0.5), ('terminal-write', 10), ('terminal-readback', 10)]",
+      "requirementId": "REQ-06",
+      "newEvidenceRequired": "fresh current-source observed boundary outcome; preserve useful positive or reject/refuse/UNKNOWN as locked design; historical result is not new proof"
+    },
+    {
+      "case": "NEG-expired-resume",
+      "kind": "negative",
+      "status": "FAIL",
+      "detail": "child resumed after persistence exhausted deadline: ['job', ('limit', 32), 'query', 'suspended-create', 'assign', 'identity', 'persist', ('resume', 2)]",
+      "requirementId": "REQ-05",
+      "newEvidenceRequired": "fresh current-source observed boundary outcome; preserve useful positive or reject/refuse/UNKNOWN as locked design; historical result is not new proof"
+    },
+    {
+      "case": "NEG-late-proxy-forward",
+      "kind": "negative",
+      "status": "FAIL",
+      "detail": "pending work request forwarded during cleanup at clock [11]",
+      "requirementId": "REQ-03",
+      "newEvidenceRequired": "fresh current-source observed boundary outcome; preserve useful positive or reject/refuse/UNKNOWN as locked design; historical result is not new proof"
+    },
+    {
+      "case": "POS-invalid-input-no-browser",
+      "kind": "positive",
+      "status": "PASS",
+      "detail": "invalid exact shape refuses before browser",
+      "requirementId": "REQ-01",
+      "newEvidenceRequired": "fresh current-source observed boundary outcome; preserve useful positive or reject/refuse/UNKNOWN as locked design; historical result is not new proof"
+    },
+    {
+      "case": "POS-launch-failure-still-custody-stdin",
+      "kind": "positive",
+      "status": "PASS",
+      "detail": "launch error preserved; save and stdin attempted",
+      "requirementId": "REQ-06",
+      "newEvidenceRequired": "fresh current-source observed boundary outcome; preserve useful positive or reject/refuse/UNKNOWN as locked design; historical result is not new proof"
+    },
+    {
+      "case": "POS-close-failure-independent-teardown",
+      "kind": "positive",
+      "status": "PASS",
+      "detail": "close error does not skip save/stdin",
+      "requirementId": "REQ-06",
+      "newEvidenceRequired": "fresh current-source observed boundary outcome; preserve useful positive or reject/refuse/UNKNOWN as locked design; historical result is not new proof"
+    },
+    {
+      "case": "NEG-expiry-zero-timeout",
+      "kind": "negative",
+      "status": "FAIL",
+      "detail": "crossing expiry produced timeout=0, disabling Playwright timeout",
+      "requirementId": "REQ-03",
+      "newEvidenceRequired": "fresh current-source observed boundary outcome; preserve useful positive or reject/refuse/UNKNOWN as locked design; historical result is not new proof"
+    },
+    {
+      "case": "NEG-expired-control-no-effect",
+      "kind": "negative",
+      "status": "FAIL",
+      "detail": "control callback invoked after final fill exhausted work deadline\n\n1 !== 0\n",
+      "requirementId": "REQ-03",
+      "newEvidenceRequired": "fresh current-source observed boundary outcome; preserve useful positive or reject/refuse/UNKNOWN as locked design; historical result is not new proof"
+    },
+    {
+      "case": "NEG-durable-stdin-outcome",
+      "kind": "negative",
+      "status": "FAIL",
+      "detail": "saved bytes omit the observed stdin teardown failure",
+      "requirementId": "REQ-06",
+      "newEvidenceRequired": "fresh current-source observed boundary outcome; preserve useful positive or reject/refuse/UNKNOWN as locked design; historical result is not new proof"
+    }
+  ],
+  "plannedComposedCases": [
+    {
+      "id": "MODEL-PENDING-BODY",
+      "schedule": "close work while a bounded body read is pending",
+      "expected": "after return, refuse forward; retain pending read uncertainty",
+      "status": "NOT_RUN_DESIGN_ONLY",
+      "requirementId": "REQ-03"
+    },
+    {
+      "id": "MODEL-QUEUED-REPLY",
+      "schedule": "close before atomic admission commit under parent lock",
+      "expected": "revoke queued reply; never call its adapter or admit follow-on work",
+      "status": "NOT_RUN_DESIGN_ONLY",
+      "requirementId": "REQ-03"
+    },
+    {
+      "id": "MODEL-INFLIGHT-WRITE",
+      "schedule": "close between admission commit and adapter entry; separately close during an invoked write",
+      "expected": "retain committed pending identity and UNKNOWN; no false cancellation, follow-on grant or acceptance upgrade on late completion",
+      "status": "NOT_RUN_DESIGN_ONLY",
+      "requirementId": "REQ-03"
+    },
+    {
+      "id": "MODEL-CLEANUP-EXHAUSTION",
+      "schedule": "first cleanup step consumes remainder",
+      "expected": "record later steps NOT_ATTEMPTED/UNKNOWN; no timeout0, floor or replenished wait",
+      "status": "NOT_RUN_DESIGN_ONLY",
+      "requirementId": "REQ-03"
+    },
+    {
+      "id": "MODEL-CHILD-CLOCK",
+      "schedule": "child startup delay or wall clock rollback",
+      "expected": "child estimate cannot extend parent authority; parent fence/unknown remain controlling",
+      "status": "NOT_RUN_DESIGN_ONLY",
+      "requirementId": "REQ-03"
+    },
+    {
+      "id": "MODEL-CHILD-ACK",
+      "schedule": "child snapshot missing, wrong bytes, unresolved exit or readback failure",
+      "expected": "parent acceptance false; retained stage; no self-referential save success",
+      "status": "NOT_RUN_DESIGN_ONLY",
+      "requirementId": "REQ-06"
+    }
+  ],
+  "additionalIpcSubcases": [
+    "close before commit revokes queue",
+    "close after commit before adapter retains pending UNKNOWN",
+    "wrong identity/generation/operation or unexpected reply tail refuses"
+  ],
+  "workerCheckerReadScopes": [
+    {
+      "path": "governance/compat/run_worker_return_fast_gate.py",
+      "sha256": "8132cd26c46bb9a2c26e2dd86a13a45b07cdbbe822f62011adee1af6b801e8ee",
+      "mandatory": "module constants plus complete named predicates and their task-applicable called validators; no first-screenful substitution",
+      "predicates": [
+        {
+          "symbol": "_worker_return_path",
+          "start": 26,
+          "end": 41
+        },
+        {
+          "symbol": "build_commands",
+          "start": 108,
+          "end": 161
+        },
+        {
+          "symbol": "return_budget_issues",
+          "start": 190,
+          "end": 197
+        },
+        {
+          "symbol": "main",
+          "start": 200,
+          "end": 254
+        }
+      ]
+    },
+    {
+      "path": "governance/compat/check_worker_return_quality_gate.py",
+      "sha256": "c87f1a50dd95af3459e3af1bcc6aaed8e0c1f5cec28e7761a9f3b254f3ec7257",
+      "mandatory": "module constants plus complete named predicates and their task-applicable called validators; no first-screenful substitution",
+      "predicates": [
+        {
+          "symbol": "diagnose",
+          "start": 384,
+          "end": 478
+        },
+        {
+          "symbol": "_required_gate_consistency_issues",
+          "start": 303,
+          "end": 327
+        },
+        {
+          "symbol": "diagnose_active_work_order",
+          "start": 792,
+          "end": 846
+        }
+      ]
+    },
+    {
+      "path": "governance/compat/check_work_order_acceptance_ledger.py",
+      "sha256": "8b6ce487f01eb432cab16456da98c79f0995468f6a1da8c16765d204cc6a39b4",
+      "mandatory": "module constants plus complete named predicates and their task-applicable called validators; no first-screenful substitution",
+      "predicates": [
+        {
+          "symbol": "validate_work_order",
+          "start": 83,
+          "end": 131
+        },
+        {
+          "symbol": "validate_return",
+          "start": 142,
+          "end": 208
+        },
+        {
+          "symbol": "_classifier_event_issues",
+          "start": 44,
+          "end": 79
+        },
+        {
+          "symbol": "git_observed_paths",
+          "start": 211,
+          "end": 222
+        }
+      ]
+    },
+    {
+      "path": "governance/compat/check_agent_operation_trace.py",
+      "sha256": "57aaac11abdca0b7a94998dfb21bc259d8013ce0b9bdc9d53a906202e9fabaaa",
+      "mandatory": "module constants plus complete named predicates and their task-applicable called validators; no first-screenful substitution",
+      "predicates": [
+        {
+          "symbol": "is_trace_artifact",
+          "start": 164,
+          "end": 197
+        },
+        {
+          "symbol": "missing_trace_labels",
+          "start": 200,
+          "end": 205
+        },
+        {
+          "symbol": "_check_manifest_delta",
+          "start": 315,
+          "end": 397
+        },
+        {
+          "symbol": "find_trace_violations",
+          "start": 418,
+          "end": 470
+        }
+      ]
+    },
+    {
+      "path": "governance/compat/check_core_guard_self_protection.py",
+      "sha256": "fb373c5efa08b6fd6a8a4bfcfa7d58918a102e4d23f6f1b3bb29c3689e800c60",
+      "mandatory": "module constants plus complete named predicates and their task-applicable called validators; no first-screenful substitution",
+      "predicates": [
+        {
+          "symbol": "_is_protected",
+          "start": 120,
+          "end": 130
+        },
+        {
+          "symbol": "_has_core_auth",
+          "start": 264,
+          "end": 277
+        },
+        {
+          "symbol": "_run_check",
+          "start": 354,
+          "end": 500
+        }
+      ]
+    },
+    {
+      "path": "governance/compat/check_independent_review_probe_admission.py",
+      "sha256": "738cfd2da5a58910d7334805fb9bab074ddddfc8c156e4a2a9f4573c6ac51a96",
+      "mandatory": "module constants plus complete named predicates and their task-applicable called validators; no first-screenful substitution",
+      "predicates": [
+        {
+          "symbol": "DeclarationScanner",
+          "start": 173,
+          "end": 242
+        },
+        {
+          "symbol": "diagnose_dispatch",
+          "start": 630,
+          "end": 705
+        },
+        {
+          "symbol": "diagnose_closure",
+          "start": 718,
+          "end": 793
+        },
+        {
+          "symbol": "_diagnose_pass_fields",
+          "start": 796,
+          "end": 863
+        }
+      ]
+    },
+    {
+      "path": "governance/compat/check_epistemic_process_packet.py",
+      "sha256": "b95e5c7a6e2c75d8be2911ec47d15f92842193977fded7aa6debd04f43c3711f",
+      "mandatory": "module constants plus complete named predicates and their task-applicable called validators; no first-screenful substitution",
+      "predicates": [
+        {
+          "symbol": "is_evidence_heavy_packet",
+          "start": 171,
+          "end": 182
+        },
+        {
+          "symbol": "find_epistemic_violations",
+          "start": 211,
+          "end": 252
+        }
+      ]
+    },
+    {
+      "path": "governance/compat/check_review_cost_control.py",
+      "sha256": "68e70bd29221e6d758ca7117a9a4fa18498f63406909b927d0e8e5423ab5e48b",
+      "mandatory": "module constants plus complete named predicates and their task-applicable called validators; no first-screenful substitution",
+      "predicates": [
+        {
+          "symbol": "diagnose_worker_return",
+          "start": 755,
+          "end": 826
+        },
+        {
+          "symbol": "_work_order_state",
+          "start": 536,
+          "end": 752
+        }
+      ]
+    },
+    {
+      "path": "governance/compat/check_finding_to_governance_learning.py",
+      "sha256": "338a3d7492ad6fd6b962157a668c3d13a47b286580c36a26f1acf897a50049ea",
+      "mandatory": "module constants plus complete named predicates and their task-applicable called validators; no first-screenful substitution",
+      "predicates": [
+        {
+          "symbol": "_validate_standard",
+          "start": 331,
+          "end": 346
+        },
+        {
+          "symbol": "_validate_binding",
+          "start": 349,
+          "end": 355
+        },
+        {
+          "symbol": "_validate_finding_doc",
+          "start": 366,
+          "end": 406
+        },
+        {
+          "symbol": "_validate_provider_memory_learning_escape",
+          "start": 409,
+          "end": 434
+        },
+        {
+          "symbol": "_validate_recurring_blocked_return",
+          "start": 461,
+          "end": 590
+        },
+        {
+          "symbol": "_validate_path_with_text",
+          "start": 593,
+          "end": 602
+        },
+        {
+          "symbol": "_validate_path",
+          "start": 605,
+          "end": 610
+        }
+      ]
+    },
+    {
+      "path": "governance/compat/check_agent_packet_authority_and_encoding.py",
+      "sha256": "5f1ce8f2cde856707e6375ebdc6667f270db411aabb3971c85981e757abb3d78",
+      "mandatory": "module constants plus complete named predicates and their task-applicable called validators; no first-screenful substitution",
+      "predicates": [
+        {
+          "symbol": "find_source_verification_fidelity_violations",
+          "start": 353,
+          "end": 382
+        },
+        {
+          "symbol": "find_pending_worker_evidence_violations",
+          "start": 385,
+          "end": 428
+        },
+        {
+          "symbol": "find_authority_reference_violations",
+          "start": 453,
+          "end": 466
+        },
+        {
+          "symbol": "find_provider_specific_authority_violations",
+          "start": 469,
+          "end": 526
+        },
+        {
+          "symbol": "find_non_ascii_line_violations",
+          "start": 533,
+          "end": 548
+        }
+      ]
+    },
+    {
+      "path": "governance/compat/check_governed_artifact_checker_read_ahead.py",
+      "sha256": "44f4b67c9441c541a42f91526d8f25c8805efeb1e08e6aed69c60aee6153ef77",
+      "mandatory": "module constants plus complete named predicates and their task-applicable called validators; no first-screenful substitution",
+      "predicates": [
+        {
+          "symbol": "check_text",
+          "start": 151,
+          "end": 226
+        },
+        {
+          "symbol": "check_path",
+          "start": 229,
+          "end": 232
+        }
+      ]
+    }
+  ],
+  "effectCeilings": {
+    "providerCalls": 0,
+    "networkCalls": 0,
+    "publicWrites": 0,
+    "deployments": 0,
+    "realDataMutations": 0,
+    "destructiveActions": 0,
+    "productRuntimeStarts": 0
+  },
+  "numericalCeilings": {
+    "workerMinutes": 240,
+    "reviewerMinutes": 90,
+    "workerTestRunners": 8,
+    "reviewerTestRunners": 4,
+    "workerNegativeSubprocesses": 27,
+    "reviewerNegativeSubprocesses": 0,
+    "sourceGitCommands": 32,
+    "externalInvocationCeiling": 0,
+    "nativeChildren": 0,
+    "runtimeUtilities": 0,
+    "containers": 0,
+    "browserProfiles": 0,
+    "workerExports": 0,
+    "workerEvaluates": 0,
+    "reviewerExports": 0,
+    "reviewerEvaluates": 0,
+    "loopbackRequests": 0,
+    "reviewerSourceGitCommands": 20
+  },
+  "history": {
+    "R4": "rejected; original return/proof/source8/17 observations preserved",
+    "root": "same NCR_HTML_CONFIGURED_RECEIPT_CONTROL_PROOF",
+    "actualReworkGeneration": 5,
+    "scecOrdinal": 2,
+    "counters": [
+      2,
+      0,
+      2,
+      0
+    ],
+    "newTransition": false,
+    "spentProfileRefill": false,
+    "newIndependentCriticalEvidence": "NONE"
+  },
+  "scaffold": {
+    "command": [
+      "python",
+      "-B",
+      "governance/compat/build_dispatch_packet_scaffold.py",
+      "--packet-kind",
+      "generic-worker-dispatch",
+      "--batch-id",
+      "CVF-NCR-HTML-CONFIGURED-RECEIPT-CONTROL",
+      "--title",
+      "NCR HTML Root Offline Semantic R5",
+      "--date",
+      "2026-10-15",
+      "--base",
+      "3a2bf3634a644d87a65d5af7ae0416789e0e71bc",
+      "--commit-mode",
+      "WORKER_MUST_NOT_COMMIT",
+      "--dispatch-kind",
+      "REWORK",
+      "--review-round-count",
+      "5",
+      "--root-cause-cluster-id",
+      "NCR_HTML_CONFIGURED_RECEIPT_CONTROL_PROOF",
+      "--prior-finding-set-digest",
+      "3d0687960e6e71b9a22990dd371bfe7139f4b784818c26f5f74d3d52d5bc0ed1",
+      "--operator-continuation-evidence-path",
+      "docs/baselines/CVF_NCR_HTML_ROOT_SEMANTIC_AUTHORIZATION_R5_2026-10-15.md",
+      "--operator-continuation-evidence-sha256",
+      "64a8b47c48fac133cdf8ed32fe25e022f158ff801c778cbd0b8e5e921dbe2aaf",
+      "--stdout"
+    ],
+    "exitCode": 0,
+    "stdoutSha256": "b643a3d1962ca1dd06c20566929d697af3a9db652ab27be66be092c9f70d198c",
+    "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "adif": {
+    "packetSha256": "669a86021fd61cb8fd91fba96e39dce168ebd62345ac043d635612a531b3b687",
+    "defects": [
+      "ADIF-0001",
+      "ADIF-0002",
+      "ADIF-0014",
+      "ADIF-0015",
+      "ADIF-0020",
+      "ADIF-0021",
+      "ADIF-0028",
+      "ADIF-0029",
+      "ADIF-0033",
+      "ADIF-0044",
+      "ADIF-0045",
+      "ADIF-0051",
+      "ADIF-0052",
+      "ADIF-0056",
+      "ADIF-0057",
+      "ADIF-0058",
+      "ADIF-0061",
+      "ADIF-0062",
+      "ADIF-0007",
+      "ADIF-0016",
+      "ADIF-0017",
+      "ADIF-0024",
+      "ADIF-0031",
+      "ADIF-0039",
+      "ADIF-0043",
+      "ADIF-0049",
+      "ADIF-0006"
+    ]
+  },
+  "preparation": "PARTIAL_WITH_REASON: exact Source fact type authority-checker literal completed/corrected after initial draft failure; earlier mapped authoring scopes retained, no historical upgrade",
+  "advisoryReviewDisposition": {
+    "packet": "bounded read-only review: no material protocol/topology/ledger/case/budget blocker; full peer-heading reading clarification adopted",
+    "authority": "bounded final single-snapshot PASS: current6 hashes/counts/LF, pair/grant/companion joins, actual rework5/gen5, unchanged SCEC and finite zero-effect phase coherent; earlier round/ordinal advice corrected",
+    "scope": "two INTERNAL_AGENT advisers; no Git/tests/writes/implementation; advice not primary evidence"
+  },
+  "canonicalAdmissionMapping": "existing exact root-build action wraps source-only subphase; no new SCEC/action enum; actual canonical one-object confirmation required before release",
+  "claimBoundary": "declaration/source/phase packet only; no implementation/runtime/native/browser/provider/public acceptance",
+  "custody": {
+    "owner": "LOCAL",
+    "path": ".cvf/runtime/ncr-html-root-semantic-r5-plan-20261015",
+    "retentionReason": "mapped preparation, actual scaffold and canonical release receipts; no running process/service/profile"
+  },
+  "currentWorkingSources": {
+    "scripts/cvf_ncr_html_owned_profile/__init__.py": {
+      "sha256": "8133757501bbbcc154a92e7758df1a3df3c2957a0e205cd4f39cf03721ea69fd",
+      "lines": 259,
+      "lineEnding": "LF"
+    },
+    "scripts/cvf_ncr_html_owned_profile/lifecycle.py": {
+      "sha256": "4d086bb21745aee82648a37f15ef428d37a936102ad47f38911c7e4e13abbd0b",
+      "lines": 282,
+      "lineEnding": "LF"
+    },
+    "scripts/cvf_ncr_html_owned_profile/profile.py": {
+      "sha256": "730a1c33bc8258a6003023fad60f6ab9fb7cb775e054c5b9629c9cf59e893e76",
+      "lines": 200,
+      "lineEnding": "LF"
+    },
+    "scripts/cvf_ncr_html_owned_profile/test_control.py": {
+      "sha256": "2a4f6acff7a23f4c783277ca6966c77d89a442ae2f297fb0dbe7529e2abf5aa3",
+      "lines": 113,
+      "lineEnding": "LF"
+    },
+    "scripts/cvf_ncr_html_owned_profile/journey.cjs": {
+      "sha256": "37d7316cc62c1b757750d570063e78cc059c1c8d53865af16e0af0d01ba38431",
+      "lines": 182,
+      "lineEnding": "LF"
+    },
+    "scripts/cvf_ncr_html_owned_profile/journey.test.cjs": {
+      "sha256": "0e8187004d28ba2685e19c9397ec4c2ec1add0fb403a3c3f3e78216fe5c0d00c",
+      "lines": 33,
+      "lineEnding": "LF"
+    }
+  },
+  "firstGateFailure": {
+    "path": ".cvf/runtime/ncr-html-root-semantic-r5-plan-20261015/reviewer-initial.log",
+    "sha256": "95353b51efe4a3cc9206fd70b1a9558deb6773308eefe661e7ab487d9bbe64a2",
+    "reason": "new DOC_ONLY_NEW source row requires exact Source fact type header; inherited Claim type was insufficient"
+  },
+  "advisoryCorrection": "Authority adviser initially conflated Review Cost round with SCEC ordinal; corrected after actual R4 rejection chronology/source: actual new rework5/gen5 with fresh finding digest, SCEC unchanged. Advisory opinion is not primary authority.",
+  "priorCanonicalReadback": {
+    "path": ".cvf/runtime/ncr-html-root-semantic-r5-plan-20261015/feasibility-reconciled.json",
+    "sha256": "3107c55f9b41dcc9ed507d79525269932745655c54c97da1fab1a5d6aff9b69a",
+    "result": "FEASIBLE_FOR_INTEGRATED_ROOT_BUILD",
+    "canonicalBlockCount": 1,
+    "claimBoundary": "earlier pre-wording bytes only; final-byte caller required again before release"
+  },
+  "preapprovalEvidence": {
+    "path": ".cvf/runtime/ncr-html-root-semantic-r5-plan-20261015/feasibility-final.json",
+    "sha256": "55a255e81d9bbbb044219fb67ef61e7c2200f62fd68dbd42db7412622b342685",
+    "result": "FEASIBLE_FOR_INTEGRATED_ROOT_BUILD",
+    "canonicalBlockCount": 1,
+    "runtimeReadiness": false,
+    "effectAdmission": false,
+    "claimBoundary": "exact current proposal/companion bytes; declared feasibility only, not consent or release"
+  },
+  "reviewerReleaseEvidence": {
+    "path": ".cvf/runtime/ncr-html-root-semantic-r5-plan-20261015/reviewer-final.log",
+    "sha256": "59e2bf2e01c097a4b100c39f547cd5cd9980769ac0001e4f15b2f2c6b541f3da",
+    "checks": 70,
+    "result": "PASS",
+    "claimBoundary": "prepared documentary packet; current committed release/continuity still required"
+  }
+}
