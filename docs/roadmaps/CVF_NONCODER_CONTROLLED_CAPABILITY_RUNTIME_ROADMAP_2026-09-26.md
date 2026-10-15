@@ -5,11 +5,13 @@ docType: roadmap
 Status: ACCEPTED_UNIFIED_ROADMAP_LOCAL_CONSUMER_BOUNDED_FULL_PILOT_OPEN
 Date: 2026-09-26
 Program ID: CVF-NCR
-Version: 2.26
+Version: 2.27
 Revision disposition: LOCAL_CONSUMER_MAINTENANCE_ACCEPTED_BOUNDED; END_TO_END_PILOT_OPEN; Q001_AND_P11_CHECKPOINTS_RETAINED
 Decision owner: operator về định hướng/phạm vi; Local reviewer về đối chiếu kỹ thuật và nghiệm thu.
 
 ## Current Delivery Checkpoint - 2026-10-14
+
+**2026-10-15 source-only root reassessment:** `docs/assessments/CVF_NCR_HTML_ROOT_BUILD_SOURCE_REASSESSMENT_2026-10-15.md` finishes the admitted PLAN at sourcef8d3a4c8b. Two static inverse entry comparisons MATCH pre-build0850546; current HEAD is a moving regression oracle. Readiness worst-case6+6+2 exceeds cap12; Local unreached SQL decision locator and late custom-input admission are source-bound, and terminal custody needs a consolidated teardown design. Historical Chromium query remains timeout/UNKNOWN, not absence or a verified timeout-only fix. Select one coupled admission contract/prospective-packet design with phase budgets and actual feasibility before any new effect decision; no third narrow BUILD or grant reset. Original Local6/6 controls and blocked positives retain their bytes/scope; new product/browser/container/export/evaluate/provider/worker starts0. Root ordinal2/counters2,0,2,0/blockers/feature freeze and REQ08 partial retained; R1/R2partial,R3/R4open,R5/R6deferred, parked effects/LHW24 retained.
 
 **2026-10-15 root BUILD blocked after Local review:** `docs/reviews/CVF_NCR_HTML_INTEGRATED_ROOT_BUILD_COMPLETION_2026-10-15.md` records exact10 worker source/return plus bounded Local correction. Worker Python11/Node3 and9 actual negative classes/26 substitutes consumed; Local own6 controls PASS with7 substitutes. Worker positive stopped before Popen at unsupported native constant (fixed without retry), created/unstarted container removed and native absence verified. Separate Local profile stopped at installed-browser-path query timeout before Native/container; exports/evaluates/provider0 for both. Provisional process/unknown-container identity, deadline and fixture-coupling source gaps corrected in one Local batch, with original bytes retained. Positive native/HTML/v1/v2 proof and REQ08 preparation remain BLOCKED; no full root acceptance. Existing finite profile grants are consumed, no retry/new namespace/worker redispatch or unused-budget transfer. Next Local source-only before-start feasibility/reassessment, not a third narrow repair. Same root ordinal2/counters/blockers/freeze; R1/R2partial,R3/R4open,R5/R6deferred, parked effects/LHW24 retained.
 
@@ -102,7 +104,7 @@ Luna max reviewed read-only; Local owns implementation/decision. Procedure PARTI
 Small direct lifecycle route, no work-order fulfillment claim or new implementation-model observation;26 retained. Offline UI only; OS clipboard writes are not cancelled.
 **Accepted finite contribution - PDF/Word failure feedback, 2026-10-13:**
 `docs/reviews/CVF_NCR_RESULT_EXPORT_FEEDBACK_COMPLETION_2026-10-13.md` accepts safe localized EN/VI alerts outside the menu and direct own-format retry; result/receipt retained. SourceRED10failed/57passed -> final67/67, type/scoped lint child0, bound finalfast/ledger PASS consumed; Root full source/test matrix, no product repair or duplicate suite. Existing run-keyed body/latest-token checks isolate late and competing completions. ResultViewer941 ->837 lines,104 net reduction into cohesive helper. Original failures and preparation PARTIAL_WITH_REASON retained; GC-051 new helper/test registered NOT_STARTED. Browser download initiation only, no OS persistence. Historical26 observations retained; no model comparison/provider call. R1/R2 partial, R3/R4 open, R5/R6 deferred; real-data/send/B2/P11/public/deploy parked. Public Export Disposition: DEFERRED_PRIVATE_ONLY.
-**Next selection:** operator effect decision on the concrete held HTML root-build pair and source-bound one-object scoped admission. Any approval is followed by finalized immutable release/current pins/continuity and bound pre-dispatch before a manual worker. Current runtime/worker grant remains zero; original root/freeze/grants and R1-R4 limitations retained.
+**Next selection:** Local consolidates the six source reassessment obligations into a new admission contract/prospective paired packet and phase budgets, then verifies that actual proposal before a new effect decision. The prior approved profiles are consumed; no runtime/worker retry, third narrow BUILD, counter reset or automatic redispatch. Original root/freeze/history and R1-R4 limitations retained.
 Whole job/full/browser/backend/provider/R3/R4 remain open.
 
 Expense/S5/PLL/scoring/Gateway/sourceR2/media/provider/public/deploy/P11 remain

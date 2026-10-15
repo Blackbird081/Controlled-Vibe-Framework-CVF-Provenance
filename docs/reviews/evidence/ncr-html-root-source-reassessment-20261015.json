@@ -1,0 +1,196 @@
+{
+  "schemaVersion": "cvf.ncrHtmlRootSourceReassessment.v1",
+  "recordedAtUtc": "2026-10-15T02:44:37.590501+00:00",
+  "sourceHead": "f8d3a4c8b34e801d1a16ec7d16c2f22b81247bd2",
+  "role": "LOCAL_INTERNAL_AGENT_ORCHESTRATOR_REVIEWER",
+  "authority": "SOURCE_ONLY_PLAN",
+  "sourcePins": [
+    {
+      "path": "scripts/probe_cvf_q001_synthetic_system_chain.py",
+      "rawSha256": "b09924875254872611332baa11fdad4ec0b574d69c74e217ba0bb81a56cf2662",
+      "gitBlob": "3981eefa0175d24fcfd5ee799b5a0bd09d8cad11",
+      "readScope": "TARGETED_SECTIONS_OR_NAMED_SYMBOLS_NOT_CORPUS_COVERAGE"
+    },
+    {
+      "path": "scripts/probe_cvf_w05_browser_chain.cjs",
+      "rawSha256": "0d9a261cddc5e21c00938570f5f692163d91cade21d2cc02c54c20bbbe91c494",
+      "gitBlob": "099d86b31f2f81cb37110cf42ca94fc07c897ce5",
+      "readScope": "TARGETED_SECTIONS_OR_NAMED_SYMBOLS_NOT_CORPUS_COVERAGE"
+    },
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/__init__.py",
+      "rawSha256": "8133757501bbbcc154a92e7758df1a3df3c2957a0e205cd4f39cf03721ea69fd",
+      "gitBlob": "0f25ba24885a6490b36a5dcdb7be0629780b0160",
+      "readScope": "TARGETED_SECTIONS_OR_NAMED_SYMBOLS_NOT_CORPUS_COVERAGE"
+    },
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/lifecycle.py",
+      "rawSha256": "4d086bb21745aee82648a37f15ef428d37a936102ad47f38911c7e4e13abbd0b",
+      "gitBlob": "717386d98b50e905bfe8b926b909efec5486eea8",
+      "readScope": "TARGETED_SECTIONS_OR_NAMED_SYMBOLS_NOT_CORPUS_COVERAGE"
+    },
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/profile.py",
+      "rawSha256": "730a1c33bc8258a6003023fad60f6ab9fb7cb775e054c5b9629c9cf59e893e76",
+      "gitBlob": "b5a882c1685f62285369f3ee65f0ec7597b421a6",
+      "readScope": "TARGETED_SECTIONS_OR_NAMED_SYMBOLS_NOT_CORPUS_COVERAGE"
+    },
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/test_control.py",
+      "rawSha256": "2a4f6acff7a23f4c783277ca6966c77d89a442ae2f297fb0dbe7529e2abf5aa3",
+      "gitBlob": "1d17accc04be2ba11bd805fda21587194e42c8d4",
+      "readScope": "TARGETED_SECTIONS_OR_NAMED_SYMBOLS_NOT_CORPUS_COVERAGE"
+    },
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/journey.cjs",
+      "rawSha256": "37d7316cc62c1b757750d570063e78cc059c1c8d53865af16e0af0d01ba38431",
+      "gitBlob": "6c8bd81e020aecc426ba7056b13d14fbd5b8f572",
+      "readScope": "TARGETED_SECTIONS_OR_NAMED_SYMBOLS_NOT_CORPUS_COVERAGE"
+    },
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/journey.test.cjs",
+      "rawSha256": "0e8187004d28ba2685e19c9397ec4c2ec1add0fb403a3c3f3e78216fe5c0d00c",
+      "gitBlob": "e0a42bf2b17a7afccc5c9a942f81d6a09dbbd847",
+      "readScope": "TARGETED_SECTIONS_OR_NAMED_SYMBOLS_NOT_CORPUS_COVERAGE"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/proof.ts",
+      "rawSha256": "fbdcc3a434eea13842c9f692d2b54cc9955e80d8c8777d9dfaa14cace9cdfcaf",
+      "gitBlob": "fe7fff31003547351f7ac716567867856e6a6c85",
+      "readScope": "TARGETED_SECTIONS_OR_NAMED_SYMBOLS_NOT_CORPUS_COVERAGE"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/core_orchestrator.py",
+      "rawSha256": "9d35ed87fafeb5a21814f94dbdd7db8e2e96ab430eb300f5f2a1ae77faa85a69",
+      "gitBlob": "487087255b3566ee1d6e192ae650979f0484c878",
+      "readScope": "TARGETED_SECTIONS_OR_NAMED_SYMBOLS_NOT_CORPUS_COVERAGE"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/ledger_layer/sqlite_ledger.py",
+      "rawSha256": "df353a92b3adead1ed5cf00d7128ba9039c573e0441b819118094ec77c4c4ce5",
+      "gitBlob": "3b5d2f1c15e387b99d17d9a5ffdaf5286266bb84",
+      "readScope": "TARGETED_SECTIONS_OR_NAMED_SYMBOLS_NOT_CORPUS_COVERAGE"
+    },
+    {
+      "path": "docs/reviews/CVF_NCR_HTML_INTEGRATED_ROOT_BUILD_COMPLETION_2026-10-15.md",
+      "rawSha256": "214c4e9c6f2923bb276c2e5bc4a275724b2b9b7d92b72ca47a490ced9308aaad",
+      "gitBlob": "d570d4b3bd7ceaf35599c1bd68622680901a991b",
+      "readScope": "TARGETED_SECTIONS_OR_NAMED_SYMBOLS_NOT_CORPUS_COVERAGE"
+    },
+    {
+      "path": "docs/reviews/evidence/ncr-html-integrated-root-build-local-20261015.json",
+      "rawSha256": "7afd7177af6249f5c3a8518bc970f3a8f86e5511d445909cd172c6c864864da5",
+      "gitBlob": "9c8a7a472c4a43ffb3bdcac557fe9168ad825f7d",
+      "readScope": "TARGETED_SECTIONS_OR_NAMED_SYMBOLS_NOT_CORPUS_COVERAGE"
+    },
+    {
+      "path": "docs/reviews/CVF_NCR_HTML_INTEGRATED_ROOT_BUILD_WORKER_RETURN_2026-10-15.md",
+      "rawSha256": "8e7d03ac5325076e9c1688fee63cf6f184c2362142766bbc71bdef54eae76897",
+      "gitBlob": "258a98fb7a460a0fadf642ee287aa0a689cfd1ad",
+      "readScope": "TARGETED_SECTIONS_OR_NAMED_SYMBOLS_NOT_CORPUS_COVERAGE"
+    },
+    {
+      "path": "docs/reviews/evidence/ncr-html-integrated-root-build-worker-20261015.json",
+      "rawSha256": "ff32ddd56f2b85be2f15ffd02afc144be3f5888a593dc858705d0fda4a2652fd",
+      "gitBlob": "946928f68f960b4d0c9b459b28a957a6e70cdf43",
+      "readScope": "TARGETED_SECTIONS_OR_NAMED_SYMBOLS_NOT_CORPUS_COVERAGE"
+    },
+    {
+      "path": "docs/baselines/CVF_GC018_NCR_HTML_INTEGRATED_ROOT_BUILD_RELEASE_2026-10-15.md",
+      "rawSha256": "af06c979946f3547abbf90e8bed61613576c977bdd34624d46b8030e1c64f485",
+      "gitBlob": "db7d6d4b5e45842093f684c4de19f8e00a8df317",
+      "readScope": "TARGETED_SECTIONS_OR_NAMED_SYMBOLS_NOT_CORPUS_COVERAGE"
+    },
+    {
+      "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_INTEGRATED_ROOT_BUILD_RELEASE_2026-10-15.md",
+      "rawSha256": "60ffd9fcb62a8b0854e4cf0fc846b979ae9934b8e8febc57db028b5c41721038",
+      "gitBlob": "2156c78037f8587a741863c907c31417008704dc",
+      "readScope": "TARGETED_SECTIONS_OR_NAMED_SYMBOLS_NOT_CORPUS_COVERAGE"
+    },
+    {
+      "path": "docs/reviews/CVF_NCR_HTML_INTEGRATED_ROOT_CONTRACT_2026-10-14.md",
+      "rawSha256": "5998f2db7ca40457ffdecc08654456f19b20ee0ba97fbc43e6942c729b5a38f7",
+      "gitBlob": "01abf3d19325e343ab5611587c321f05749e7ea1",
+      "readScope": "TARGETED_SECTIONS_OR_NAMED_SYMBOLS_NOT_CORPUS_COVERAGE"
+    }
+  ],
+  "claimBoundary": "Named source/AST/byte comparisons only; no executed product, control suite, or complete corpus claim.",
+  "legacyByteComparisons": {
+    "scripts/probe_cvf_q001_synthetic_system_chain.py": {
+      "removedCurrentOptInMatchesFrozenPreBuildBlob": true,
+      "removedCurrentOptInMatchesMovingHeadBlob": false,
+      "frozenBase": "0850546dea01b0f15586132549e4330a1af25c72",
+      "restoredSha256": "26b34890e3031f5b13ca4965585adbdf14a483aefe246834d3848cb165c3fe9d"
+    },
+    "scripts/probe_cvf_w05_browser_chain.cjs": {
+      "removedCurrentOptInMatchesFrozenPreBuildBlob": true,
+      "removedCurrentOptInMatchesMovingHeadBlob": false,
+      "frozenBase": "0850546dea01b0f15586132549e4330a1af25c72",
+      "restoredSha256": "2f0981b2356a51a85f34d3d6ed94a0d0a0606c48d306888711876a5c2b225dec"
+    }
+  },
+  "readinessBudget": {
+    "engineWorstCase": 6,
+    "webWorstCase": 6,
+    "mandatoryWarmup": 2,
+    "total": 14,
+    "declaredGetCap": 12,
+    "worstCaseFits": false,
+    "proposedReservation": [
+      4,
+      6,
+      2
+    ]
+  },
+  "ledgerEntryKeys": [
+    "request_id",
+    "decision",
+    "timestamp"
+  ],
+  "requiredDecisionLocator": "block.event.decision.final_decision",
+  "unreachedOracleLocator": "block.event.final_decision",
+  "oracleExecutedAgain": false,
+  "priorBrowserQuery": {
+    "kind": "installed-browser-path",
+    "timeoutSeconds": 10,
+    "exitCode": null,
+    "timedOut": true,
+    "elapsedSeconds": 10.032
+  },
+  "priorControlsConsumed": {
+    "passed": 6,
+    "substituteStarts": 7,
+    "receiptSha256": "961b4b5f1d4a70bd561406b0e3832aa0927c042fc393f2d6532a4e75e495a464"
+  },
+  "priorEvidencePins": [
+    {
+      "path": ".cvf/runtime/ncr-html-root-local-review-20261015/positive_oracle.py",
+      "rawSha256": "e5d98df343f53f1fcb795c25b8bf359a10a894beac2fd5625baad8b1a731f44a"
+    },
+    {
+      "path": ".cvf/runtime/ncr-html-root-local-review-20261015/positive-result.json",
+      "rawSha256": "140e7bff69d6190b28068b75824e5d84ace82a8996f3b1a2d11852d094e2fb96"
+    },
+    {
+      "path": ".cvf/runtime/ncr-html-root-local-review-20261015/controls-result.json",
+      "rawSha256": "961b4b5f1d4a70bd561406b0e3832aa0927c042fc393f2d6532a4e75e495a464"
+    },
+    {
+      "path": ".cvf/runtime/ncr-html-root-local-review-20261015/final-state-verification.json",
+      "rawSha256": "0df474d65505a43af5af840a1df5db119a24dd6cb2c03fea088ee58409038c11"
+    }
+  ],
+  "newEffects": {
+    "productStarts": 0,
+    "browserStarts": 0,
+    "containerCreates": 0,
+    "exportPosts": 0,
+    "evaluatePosts": 0,
+    "providerCalls": 0,
+    "testSubstituteStarts": 0,
+    "workers": 0
+  },
+  "result": "SOURCE_REASSESSMENT_COMPLETE_EXECUTION_NOT_ADMITTED",
+  "nextOwner": "LOCAL_CONSOLIDATED_SOURCE_AND_ADMISSION_DESIGN",
+  "newExecutionApprovalClaimed": false
+}
