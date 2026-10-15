@@ -32,12 +32,12 @@ REGISTRY = ("governance/toolkit/03_CONTROL/CVF_AGENT_REGISTRY.md",
             "docs/reference/CVF_GOVERNANCE_STATE_REGISTRY.json")
 HELPERS = tuple("scripts/cvf_ncr_html_owned_profile/" + n for n in (
     "__init__.py", "lifecycle.py", "profile.py", "test_control.py", "journey.cjs", "journey.test.cjs",
-    "execution.py", "test_execution.py", "protocol.py", "test_protocol.py"))
-INIT, LIFECYCLE, PROFILE, TEST_CONTROL, JOURNEY, JOURNEY_TEST, EXECUTION, TEST_EXECUTION, PROTOCOL, TEST_PROTOCOL = HELPERS
+    "execution.py", "test_execution.py", "protocol.py", "test_protocol.py", "test_win32.py", "test_admission.py"))
+INIT, LIFECYCLE, PROFILE, TEST_CONTROL, JOURNEY, JOURNEY_TEST, EXECUTION, TEST_EXECUTION, PROTOCOL, TEST_PROTOCOL, TEST_WIN32, TEST_ADMISSION = HELPERS
 PRODUCTION = (INIT, LIFECYCLE, PROFILE, EXECUTION, PROTOCOL, JOURNEY)  # control receipts bind all six production owners
-ORACLES = (TEST_CONTROL, TEST_EXECUTION, TEST_PROTOCOL, JOURNEY_TEST)  # ...and the four oracle sources
+ORACLES = (TEST_CONTROL, TEST_EXECUTION, TEST_PROTOCOL, JOURNEY_TEST, TEST_WIN32, TEST_ADMISSION)  # all current oracle sources
 OUTPUTS = (*HELPERS, "docs/assessments/CVF_NCR_HTML_DIRECT_LOCAL_REPAIR_DISPOSITION_2026-10-16.md",
-           "docs/reviews/evidence/ncr-html-direct-local-repair-20261016.json")  # source10 plus direct disposition/evidence
+           "docs/reviews/evidence/ncr-html-direct-local-repair-20261016.json")  # legacy writable lane, not permission to ignore source hashes
 WORK_SECONDS, CLEANUP_SECONDS = 900, 120
 SAFE_ENV = {"PATH", "SYSTEMROOT", "SYSTEMDRIVE", "TEMP", "TMP", "USERPROFILE", "HOMEDRIVE", "HOMEPATH",
             "APPDATA", "LOCALAPPDATA", "COMSPEC", "PATHEXT", "WINDIR", "PROCESSOR_ARCHITECTURE", "NUMBER_OF_PROCESSORS", "OS", "USERNAME"}
@@ -70,10 +70,11 @@ def git(*args):
 
 def admit_sources():
     """Four read-only Git commands; current Local authorization/contract/evidence pins must match. Runtime needs separate admission."""
-    pins = json.loads((ROOT / PINS).read_text(encoding="utf-8"))["sourcePins"]
-    if any(p not in pins for p in PAIR):
-        raise RuntimeError("release pair/grant/companion pin missing")
-    immutable = {p: h for p, h in pins.items() if p not in OUTPUTS}
+    document = json.loads((ROOT / PINS).read_text(encoding="utf-8"))
+    pins = document.get("sourcePins") if type(document) is dict else None
+    if type(pins) is not dict or any(p not in pins for p in (*PAIR, *HELPERS)):
+        raise RuntimeError("release pair/current source pin missing")
+    immutable = pins  # writable scope never exempts source bytes from the frozen release
     if any(sha((ROOT / p).read_bytes()) != h for p, h in immutable.items()):
         raise RuntimeError("immutable release/source pin drift")
     dirty = set(git("diff", "--name-only", "HEAD").decode().splitlines()) | set(git("ls-files", "--others", "--exclude-standard").decode().splitlines())
@@ -133,12 +134,13 @@ def case_issue(x, name, invocation):
 
 def control_issue(control, cap, frozen_digest):
     """Closed-shape, case-specific, hash-joined receipt admission. Declared joins only: editable bytes are not proof of execution."""
-    if cap != 2:
-        return "Local collector receipt admission is fail-closed until a future exact case matrix and actual controls exist"
+    if type(cap) is not int or cap not in (1, 2):
+        return "fail-closed actor/cap: exact integer 1 or 2 required"
     if type(control) is not dict or set(control) != CONTROL_KEYS or control["schema"] != "cvf.ncrHtmlInertControls@3":
         return "receipt shape"
-    if control["actor"] != "IMPLEMENTATION_WORKER" or type(control["invocation"]) is not str or not control["invocation"]:
-        return "actor/invocation"
+    actor = "LOCAL_REVIEWER" if cap == 1 else "IMPLEMENTATION_WORKER"
+    if control["actor"] != actor or type(control["invocation"]) is not str or not control["invocation"]:
+        return "fail-closed actor/cap/invocation"
     if control["runner"] != "SUBPROCESS":
         return "receipt was not produced by real inert substitute children"
     if {k: control[k] for k in ("production", "oracles")} != control_binding():

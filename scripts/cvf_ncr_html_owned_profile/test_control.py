@@ -149,7 +149,7 @@ MUTATIONS = {
     "stale-oracle": (lambda r: r["oracles"].update({P.TEST_PROTOCOL: "0" * 64}), "stale production/oracle hashes"),
     "start-sum": (lambda r: r.update(substituteStarts=r["substituteStarts"] + 1), "aggregate counts"),
     "in-process-runner": (lambda r: r.update(runner="IN_PROCESS_FAKE"), "not produced by real inert substitute children"),
-    "local-actor": (lambda r: r.update(actor="LOCAL_REVIEWER_NOT_IMPLEMENTATION_WORKER"), "actor/invocation"),
+    "local-actor": (lambda r: r.update(actor="LOCAL_REVIEWER_NOT_IMPLEMENTATION_WORKER"), "actor/cap"),
     "extra-top-key": (lambda r: r.update(extra=1), "receipt shape"),
 }
 
@@ -158,7 +158,7 @@ def test_receipt_admission_is_case_specific_hash_joined_and_never_proof_of_execu
     base = good()
     assert P.control_issue(base, 2, digest(base)) is None and P.admit_controls(base, 2, digest(base)) == "IMPLEMENTATION_WORKER"
     assert [x["case"] for x in base["cases"]] == list(P.CASES) and base["substituteStarts"] == 26 and base["passed"] == 9
-    assert set(base["production"]) == set(P.PRODUCTION) and len(base["production"]) == 6 and set(base["oracles"]) == set(P.ORACLES) and len(base["oracles"]) == 4
+    assert set(base["production"]) == set(P.PRODUCTION) and len(base["production"]) == 6 and set(base["oracles"]) == set(P.ORACLES) and len(base["oracles"]) == 6
     assert "frozen digest" in P.control_issue(base, 2, "0" * 64) and "frozen digest" in P.control_issue(base, 2, None)
     assert "fail-closed" in P.control_issue(base, 1, digest(base)) and P.control_issue(None, 2, "x") == "receipt shape"
     with pytest.raises(RuntimeError, match="inert collector controls are required"):
@@ -187,8 +187,12 @@ def scratch(request):
 
 
 @pytest.fixture
-def effects(monkeypatch):
+def effects(monkeypatch, scratch):
     hits = []
+    pins = json.loads((P.ROOT / P.PINS).read_bytes())
+    pins["sourcePins"].update({p: E.sha((P.ROOT / p).read_bytes()) for p in P.HELPERS})
+    (scratch / "released-pins.json").write_bytes(E.dumps(pins))  # fixture only, never rewrite the historical manifest
+    monkeypatch.setattr(P, "PINS", str(scratch / "released-pins.json"))
     sentinel = lambda name: lambda *_a, **_k: (hits.append(name), (_ for _ in ()).throw(AssertionError("effect: " + name)))  # an ordinary Exception, as the run reports it
     for owner, attr in ((subprocess, "Popen"), (subprocess, "run"), (H.socket, "socket"), (H.urllib.request, "urlopen"), (H, "Native"), (P, "prerequisites"), (P, "stage_source")):
         monkeypatch.setattr(owner, attr, sentinel(attr))
@@ -223,7 +227,7 @@ class TestAdmissionBeforeEffects:
         with pytest.raises(RuntimeError, match="inert collector controls are required"):
             H.run(scratch / "ns", IMAGE, **controls(scratch, MUTATIONS[name][0]))
         assert effects == [] and not (scratch / "ns").exists()
-        with pytest.raises(RuntimeError, match="fail-closed"):  # Local admission stays closed: no genuine matrix exists for it
+        with pytest.raises(RuntimeError, match="fail-closed"):  # worker receipt cannot be relabelled by selecting cap1
             H.run(scratch / "ns", IMAGE, inputs=[FIX[0]], cap=1, **controls(scratch))
         assert effects == []
 
@@ -252,12 +256,12 @@ class TestAdmissionBeforeEffects:
         assert E.sha((namespace / "custody/terminal-evidence.json").read_bytes()) == terminal["evidenceSha256"]  # persisted bytes are the frozen bytes
 
 
-CEILINGS = {P.INIT: 329, P.LIFECYCLE: 329, P.PROFILE: 329, P.EXECUTION: 349, P.JOURNEY: 329, P.PROTOCOL: 299, P.TEST_PROTOCOL: 349, P.JOURNEY_TEST: 299, P.TEST_CONTROL: 296, P.TEST_EXECUTION: 349}
+CEILINGS = {P.INIT: 329, P.LIFECYCLE: 349, P.PROFILE: 329, P.EXECUTION: 349, P.JOURNEY: 329, P.PROTOCOL: 299, P.TEST_PROTOCOL: 349, P.JOURNEY_TEST: 299, P.TEST_CONTROL: 329, P.TEST_EXECUTION: 349, P.TEST_WIN32: 299, P.TEST_ADMISSION: 299}
 
 
-def test_canonical_fixtures_exact12_family_readable_ceilings_and_pinned_immutable_legacy_blob():
+def test_canonical_fixtures_exact14_family_readable_ceilings_and_pinned_immutable_legacy_blob():
     assert [len(x["sourceContent"].encode("utf-16-le")) // 2 for x in FIX] == [650, 726] and P.validate_inputs(FIX, 2) is FIX
-    assert "?mode=ro" in Path(P.__file__).read_text(encoding="utf-8") and len(P.OUTPUTS) == 12 and set(P.HELPERS) < set(P.OUTPUTS)
+    assert "?mode=ro" in Path(P.__file__).read_text(encoding="utf-8") and len(P.OUTPUTS) == 14 and set(P.HELPERS) < set(P.OUTPUTS)
     lines = {r: len((P.ROOT / r).read_bytes().splitlines()) for r in P.HELPERS}
     assert all(n < 350 for n in lines.values()) and all(lines[r] <= limit for r, limit in CEILINGS.items()) and not {P.ENTRY_PY, P.ENTRY_CJS} & set(P.OUTPUTS)
     pins = json.loads((P.ROOT / P.PINS).read_text(encoding="utf-8"))["sourcePins"]

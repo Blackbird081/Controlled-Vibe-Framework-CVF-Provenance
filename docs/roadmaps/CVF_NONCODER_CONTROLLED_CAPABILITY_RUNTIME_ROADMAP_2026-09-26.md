@@ -5,13 +5,13 @@ docType: roadmap
 Status: ACCEPTED_UNIFIED_ROADMAP_LOCAL_CONSUMER_BOUNDED_FULL_PILOT_OPEN
 Date: 2026-09-26
 Program ID: CVF-NCR
-Version: 2.41
+Version: 2.42
 Revision disposition: LOCAL_CONSUMER_MAINTENANCE_ACCEPTED_BOUNDED; END_TO_END_PILOT_OPEN; Q001_AND_P11_CHECKPOINTS_RETAINED
 Decision owner: operator về định hướng/phạm vi; Local reviewer về đối chiếu kỹ thuật và nghiệm thu.
 
 ## Current Delivery Checkpoint - 2026-10-14
 
-**2026-10-16 direct native-binding correction accepted bounded; procedure partial:** `docs/assessments/CVF_NCR_HTML_NATIVE_BINDING_LOCAL_DISPOSITION_2026-10-16.md` / `docs/reviews/evidence/ncr-html-native-binding-local-20261016.json` fix snapshot sentinel, exact wait/enumeration/suspend count, post-open thread ownership and primary/close errors in lifecycle343 plus focused test258. RED25FAIL/13PASS; current50PASS/93deselected. Local native proof FAIL_NATIVE because protocol freeze preceded ACK, retained with no refill. Distinct independent actual Windows64 Job/one-child proof PASS: policy/identity/signaled exit/empty membership/handle closes and exact2239-byte terminal plus separate ACK. Root5/6/reviewer1/2 programs, native1/1 each,2 benign children total; product effects0. Source11 frozen, nine earlier other code files retained; old full-run pins and cap1 remain fail-closed. Same root/generation7/SCEC2/counters2,0,2,0/blockers/freeze/P4 exclusions; no parent or B-E acceptance. Local continues finite admitted work through verification/commit without documentary micro-stops; next cap1/source admission plus B-E prerequisites, no automatic runtime/profile refill/new checker. R1/R2partial,R3/R4open,R5/R6deferred; parked effects/LHW24 retained.
+**2026-10-16 cap1/source admission accepted bounded; independent matrix incomplete:** `docs/assessments/CVF_NCR_HTML_CAP1_ADMISSION_LOCAL_DISPOSITION_2026-10-16.md` / `docs/reviews/evidence/ncr-html-cap1-admission-local-20261016.json` add exact LOCAL_REVIEWER cap1 versus worker cap2 and current source12/six-oracle bindings. All helper pins now mandatory/compared before Git; prior claim old pins automatically refused lifecycle drift was unsupported because helpers were excluded, now repaired. RED33FAIL/32PASS, GREEN65PASS, selected121PASS/1deselected. Distinct one-shot actual inert probe FAIL_ORACLE: wrong UNKNOWN enum after3 reaped children, no terminal/receipt saved; no rerun/refill. Root3/5/reviewer1/2, actual matrix1/1, children3/26, unused retired. Filesystem tools/dependencies present only; B-E runtime/source release and complete independent matrix remain held. Same root/generation8/SCEC2/counters2,0,2,0/blockers/freeze/P4 exclusions, effects0; no new checker. Continue connected Local admission without micro-stops; R1/R2partial,R3/R4open,R5/R6deferred and parked effects/LHW24 retained.
 
 **2026-10-16 native prerequisite PLAN complete; entry blocked:** `docs/assessments/CVF_NCR_HTML_NATIVE_PROOF_PREREQUISITES_2026-10-16.md` / `docs/reviews/evidence/ncr-html-native-prerequisites-local-20261016.json` consume prior160 Python/13 Node/14 independent and six read-only validated receipts without control rerun. Standalone Windows ABI/owned benign-child N1-N4 can precede B-E; documented snapshot INVALID_HANDLE_VALUE differs from zero-only Win32._ok used by resume, so one consolidated existing-owner source envelope comes first. Actual failure unobserved; current cap1 refuses before namespace, tools/image/host unknown. No native/product/browser/container/provider/delete or budget refill. Same root/generation6/SCEC2/counters2,0,2,0/blockers/freeze/P4 exclusions retained. Local prepares the source-correction envelope directly, no manual relay/new checker. R1/R2partial,R3/R4open,R5/R6deferred; parked effects/LHW24 unchanged.
 
@@ -1130,33 +1130,33 @@ orientation packets are not refreshed by this private local edit.
 
 | Field | Evidence |
 |---|---|
-| applicableCheckersRead | governance/compat/check_markdown_structural_completeness.py; governance/compat/check_agent_operation_trace.py; governance/compat/check_core_guard_self_protection.py; governance/compat/check_agent_packet_authority_and_encoding.py; governance/compat/check_finding_to_governance_learning.py; governance/compat/check_epistemic_process_packet.py; governance/compat/check_governed_artifact_checker_read_ahead.py; governance/compat/check_adif_defect_registry_disclosure.py; governance/compat/check_corpus_completeness_report_integrity.py |
-| literalTokensReviewed | source/decision/evidence/risk headings; exact trace/Core paths; Source fact type; RULE_EXISTS; exact corpus N/A bullet; ADIF exact query and IDs |
-| gateRunPurpose | confirmation of scoped source/native evidence and documentary continuity |
-| claimBoundary | selected constants/operative predicates reused and read before authoring; no all-checker-body claim |
+| applicableCheckersRead | governance/compat/check_markdown_structural_completeness.py; governance/compat/check_agent_operation_trace.py; governance/compat/check_core_guard_self_protection.py; governance/compat/check_agent_packet_authority_and_encoding.py; governance/compat/check_governed_artifact_checker_read_ahead.py; governance/compat/check_epistemic_process_packet.py |
+| literalTokensReviewed | source/decision/evidence/risk headings; Source fact type/symbol cells; exact trace labels; four read-ahead fields; corpus N/A bullet |
+| gateRunPurpose | confirmation of source/control disposition and separate continuity, not runtime proof |
+| claimBoundary | selected constants/predicates read or reused; no all-checker-body/corpus claim |
 
 ## Agent Operation Trace Block
 
 | Field | Evidence |
 |---|---|
 | Actor | Local INTERNAL_AGENT implementer/reviewer/steward |
-| Provider or surface | private workspace with distinct internal reviewer |
-| Session or invocation | ncr-html-native-binding-local-20261016 |
+| Provider or surface | private workspace with distinct internal control reviewer |
+| Session or invocation | ncr-html-cap1-admission-local-20261016 |
 | Working directory | repository root |
-| Command or tool surface | entry gate, source fault tests, bounded one-native-program per actor, evidence, canonical commits |
-| Target paths | `scripts/cvf_ncr_html_owned_profile/lifecycle.py`; `scripts/cvf_ncr_html_owned_profile/test_win32.py`; `docs/baselines/CVF_GC018_NCR_HTML_NATIVE_BINDING_LOCAL_2026-10-16.md`; `docs/assessments/CVF_NCR_HTML_NATIVE_BINDING_LOCAL_DISPOSITION_2026-10-16.md`; `docs/reviews/evidence/ncr-html-native-binding-local-20261016.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` |
-| Allowed scope source | current no-micro-stops instruction, standing Local authority and this fresh scope |
-| Before status evidence | clean297ef76e2; source10 preimages verified; old control window closed |
-| After status evidence | exact6 material and separate exact6 continuity; final technical disposition in owned assessment |
-| Diff evidence | exact6 source/documentary manifest and source11 fingerprints |
-| Approval boundary | one native Job/benign-child per actor only; no B-E/product/provider/public effect |
-| Claim boundary | same host/revision native contribution, not parent readiness or actual stage deletion |
+| Command or tool surface | source tests, one independent inert attempt, filesystem-only prerequisites, evidence and canonical commits |
+| Target paths | `scripts/cvf_ncr_html_owned_profile/profile.py`; `scripts/cvf_ncr_html_owned_profile/test_control.py`; `scripts/cvf_ncr_html_owned_profile/test_admission.py`; `docs/baselines/CVF_GC018_NCR_HTML_CAP1_ADMISSION_LOCAL_2026-10-16.md`; `docs/assessments/CVF_NCR_HTML_CAP1_ADMISSION_LOCAL_DISPOSITION_2026-10-16.md`; `docs/reviews/evidence/ncr-html-cap1-admission-local-20261016.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` |
+| Allowed scope source | current next, standing direct Local authority and fresh cap1 envelope |
+| Before status evidence | clean07f344ea1; entry gate PASS; source11 preimages retained |
+| After status evidence | exact7 material; independent FAIL_ORACLE, no receipt/terminal invented |
+| Diff evidence | exact7 manifest; source12 frozen and predecessor9 raw hashes MATCH |
+| Approval boundary | only bounded inert children; product/B-E effects held |
+| Claim boundary | source accepted bounded; actual independent matrix incomplete |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-html-native-binding-local-20261016 |
-| Expected manifest | `scripts/cvf_ncr_html_owned_profile/lifecycle.py`; `scripts/cvf_ncr_html_owned_profile/test_win32.py`; `docs/baselines/CVF_GC018_NCR_HTML_NATIVE_BINDING_LOCAL_2026-10-16.md`; `docs/assessments/CVF_NCR_HTML_NATIVE_BINDING_LOCAL_DISPOSITION_2026-10-16.md`; `docs/reviews/evidence/ncr-html-native-binding-local-20261016.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` |
-| Actual changed set | `scripts/cvf_ncr_html_owned_profile/lifecycle.py`; `scripts/cvf_ncr_html_owned_profile/test_win32.py`; `docs/baselines/CVF_GC018_NCR_HTML_NATIVE_BINDING_LOCAL_2026-10-16.md`; `docs/assessments/CVF_NCR_HTML_NATIVE_BINDING_LOCAL_DISPOSITION_2026-10-16.md`; `docs/reviews/evidence/ncr-html-native-binding-local-20261016.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` |
-| Manifest delta | MATCH exact6 material |
-| Deletion or rename disposition | none; synthetic raw custody retained; no data/stage deletion |
+| Invocation ID | ncr-html-cap1-admission-local-20261016 |
+| Expected manifest | `scripts/cvf_ncr_html_owned_profile/profile.py`; `scripts/cvf_ncr_html_owned_profile/test_control.py`; `scripts/cvf_ncr_html_owned_profile/test_admission.py`; `docs/baselines/CVF_GC018_NCR_HTML_CAP1_ADMISSION_LOCAL_2026-10-16.md`; `docs/assessments/CVF_NCR_HTML_CAP1_ADMISSION_LOCAL_DISPOSITION_2026-10-16.md`; `docs/reviews/evidence/ncr-html-cap1-admission-local-20261016.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` |
+| Actual changed set | `scripts/cvf_ncr_html_owned_profile/profile.py`; `scripts/cvf_ncr_html_owned_profile/test_control.py`; `scripts/cvf_ncr_html_owned_profile/test_admission.py`; `docs/baselines/CVF_GC018_NCR_HTML_CAP1_ADMISSION_LOCAL_2026-10-16.md`; `docs/assessments/CVF_NCR_HTML_CAP1_ADMISSION_LOCAL_DISPOSITION_2026-10-16.md`; `docs/reviews/evidence/ncr-html-cap1-admission-local-20261016.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` |
+| Manifest delta | MATCH exact7 material |
+| Deletion or rename disposition | none; all raw failures/fixtures retained in current custody |
 
 ## Public Export Disposition
 
