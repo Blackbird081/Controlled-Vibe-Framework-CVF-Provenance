@@ -5,11 +5,13 @@ docType: roadmap
 Status: ACCEPTED_UNIFIED_ROADMAP_LOCAL_CONSUMER_BOUNDED_FULL_PILOT_OPEN
 Date: 2026-09-26
 Program ID: CVF-NCR
-Version: 2.24
+Version: 2.25
 Revision disposition: LOCAL_CONSUMER_MAINTENANCE_ACCEPTED_BOUNDED; END_TO_END_PILOT_OPEN; Q001_AND_P11_CHECKPOINTS_RETAINED
 Decision owner: operator về định hướng/phạm vi; Local reviewer về đối chiếu kỹ thuật và nghiệm thu.
 
 ## Current Delivery Checkpoint - 2026-10-14
+
+**2026-10-15 operator-approved root BUILD release:** `docs/assessments/CVF_NCR_HTML_ROOT_BUILD_RELEASE_2026-10-15.md` records the current operator approval of the concrete finite scope. Fresh immutable pair `docs/baselines/CVF_GC018_NCR_HTML_INTEGRATED_ROOT_BUILD_RELEASE_2026-10-15.md` / `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_INTEGRATED_ROOT_BUILD_RELEASE_2026-10-15.md` preserves the held predecessor rather than mutating it. One INTERNAL_AGENT worker120min and Local60min; worker export/evaluate2/2, Local1/1, inert9/6, provider0; exact8code+return2 and own synthetic resources only. Actual CLI evaluates1 object FEASIBLE_FOR_INTEGRATED_ROOT_BUILD with readiness/effect false; separate operator consent supplies the finite authority. Dispatcher commits material and later exact6 continuity, then final bound pre-dispatch must PASS before worker start. Same root ordinal2/history/counters/blockers/freeze; no third narrow repair or completed control. R1/R2partial,R3/R4open,R5/R6deferred; parked effects/LHW24 retained. Ordinary in-scope work proceeds without repeated operator micro-approval.
 
 **2026-10-15 concrete HTML root-build proposal:** `docs/assessments/CVF_NCR_HTML_ROOT_BUILD_ADMISSION_2026-10-15.md` binds the held pair `docs/baselines/CVF_GC018_NCR_HTML_INTEGRATED_ROOT_BUILD_2026-10-15.md` / `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_INTEGRATED_ROOT_BUILD_2026-10-15.md` and actual explicit CLI result: one canonical object, FEASIBLE_FOR_INTEGRATED_ROOT_BUILD, runtimeReadiness=false/effectAdmission=false/operatorApprovalRequired=true. Same existing root ordinal2/predecessor/counters/blockers retained, original marked root HOLD unchanged. Proposed exact8 code+return2, coupled fresh v1/v2 and real cleanup controls; worker120min/Local60min, worker2 export/evaluate and Local1/1, provider0. Scope/effect approval is NOT_GRANTED; no worker, browser, engine or active config/store read. Next operator effect decision on the concrete held scope, then only separately finalized immutable release/continuity/bound admission; no automatic third narrow repair. R1/R2partial,R3/R4open,R5/R6deferred; parked effects/LHW24 retained.
 
