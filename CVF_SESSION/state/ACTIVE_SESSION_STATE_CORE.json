@@ -36,12 +36,12 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_RETURN_ROUTE_EARLY_2026-10-16.md",
-    "baselineSha256": "e85d2d4cae3ae20a1ad86af46a7b7871004a46a2b5ae16b5990e236e4974e1dc",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_RETURN_ROUTE_EARLY_2026-10-16.md",
-    "workOrderSha256": "46a61fced477f2b42d94cc5b818ec3b56d23e0542c04abf7af1f8ab136ff7b00"
+    "baselinePath": "docs/baselines/CVF_GC018_NCR_HTML_WINDOWS_SOURCE_2026-10-16.md",
+    "baselineSha256": "c63d94eab84910808ae703821f28bb82eee4658f621a6cca9c5182266330e263",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_WINDOWS_SOURCE_2026-10-16.md",
+    "workOrderSha256": "5d0217866d82f8268af09ddcdc377490ed66c9912b1e04bfacaffbca2a43edad"
   },
-  "currentAuthoritySyncReason": "Accepted planning artifact docs/assessments/CVF_NCR_HTML_WINDOWS_SOURCE_CORRECTION_PLAN_2026-10-16.md; last paired guard authority remains closed provenance. See nextAllowedMove for consolidated source-only order authoring; no current BUILD/native/runtime grant.",
+  "currentAuthoritySyncReason": "Windows source dispatch material 6aab58dadf64a31b90edddcb19af15f28c8b1eb2; raw paired authority synchronized. Source/test-only grant and finite synthetic Windows fixtures; no product runtime.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
@@ -110,8 +110,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_ncr_html_windows_source_correction_plan_ready",
-  "previousMode": "cvf_return_route_early_guard_accepted_source_plan",
+  "currentMode": "cvf_ncr_html_windows_source_dispatched",
+  "previousMode": "cvf_ncr_html_windows_source_correction_plan_ready",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",

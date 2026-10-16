@@ -31,22 +31,22 @@ artifact.
 | Prior handoff (archive-qualified) | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V62_2026-09-17.md` |
 | Latest front-door archive | `CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_COMPACTION_ARCHIVE_2026-08-11.md` |
 | Current authority evidence | `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` `currentAuthority` |
-| Parent maintenance | Windows source-correction PLAN accepted; one source-only order next |
+| Parent maintenance | Windows source correction dispatch; product B-E not accepted |
 | Freeze posture | `governance_kernel_freeze_recommended` |
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_html_windows_source_correction_plan_ready`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=Local author/review/release of one consolidated source-only correction order from accepted Windows PLAN; role=INTERNAL_AGENT Local orchestrator/reviewer/steward; phase=PLAN_ACCEPTED; decision owner=LOCAL; parked checkpoint=old runtime grants retired and effect-specific product/live/deletion lanes parked, no generic documentary checkpoint.
+Startup acknowledged: current mode=`cvf_ncr_html_windows_source_dispatched`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=execute one consolidated source-only correction under committed pair and bound gates; role=INTERNAL_AGENT Local orchestrator/reviewer/steward; phase=DISPATCH; decision owner=LOCAL; parked checkpoint=old runtime grants retired, product/provider/deletion and unrelated effects parked, no generic operator checkpoint.
 
 ## Current Mode
 
-Current mode marker: `cvf_ncr_html_windows_source_correction_plan_ready`
-Current mode: `cvf_ncr_html_windows_source_correction_plan_ready`; previous mode marker: `cvf_return_route_early_guard_accepted_source_plan`
+Current mode marker: `cvf_ncr_html_windows_source_dispatched`
+Current mode: `cvf_ncr_html_windows_source_dispatched`; previous mode marker: `cvf_ncr_html_windows_source_correction_plan_ready`
 
 ## Next Allowed Move
 
-Mode: `cvf_ncr_html_windows_source_correction_plan_ready`
+Mode: `cvf_ncr_html_windows_source_dispatched`
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-WINDOWS-SOURCE-CORRECTION-20261016. Consolidated Windows source correction PLAN accepted at material e09a23ae298895123e994073fbc5ac78564fec5a; consume docs/assessments/CVF_NCR_HTML_WINDOWS_SOURCE_CORRECTION_PLAN_2026-10-16.md and docs/reviews/evidence/ncr-html-windows-source-correction-plan-20261016.json. Next Local authors/reviews/releases ONE source-only baseline/work order covering canonical NODE_OPTIONS producer/strict adjunct, existing source_release path-admission extraction, exact verified junction topdown pruning/refusal, six-path source/test union and measured per-file budgets. Admit future Windows synthetic fixture programs only through that concrete order, with distinct worker/Local budgets and frozen new source-admission authority before new release digest. Current plan grants no BUILD/test/runtime; ordinary design/packet details Local, no generic operator checkpoint. Original source13/adjunct5 and releases unchanged now; later accepted changed source needs NEW identity, never old-release repin. No old B-E replay/provider/deletion. Old1spent/2retired, gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7 exclusions/parked LHW24 retained; R1/R2partial,R3/R4open,R5/R6deferred. Early return-route guard must construct exact later READY return command; repository gates are not Windows/B-E acceptance.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-HTML-WINDOWS-SOURCE-20261016. Local releases INTERNAL_AGENT source worker under docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_WINDOWS_SOURCE_2026-10-16.md and docs/baselines/CVF_GC018_NCR_HTML_WINDOWS_SOURCE_2026-10-16.md at material 6aab58dadf64a31b90edddcb19af15f28c8b1eb2. Worker exact6 planned code/test plus return/evidence2, no commit; one consolidated Windows preload/strict adjunct and verified-junction pruning/refusal correction. Read accepted PLAN and required owners. One pure Python group; exact native fixture suite once max3Node/5mklink,10seconds/child,120seconds total,retry0. Local separate1Node/2mklink,60seconds. Root later freezes accepted B/W bytes, creates new SOURCE_IDENTITY_ONLY release, binds only F release constants and final identity proof after worker lane returns. No source edits by Local during active lane. No old runtime replay, product/browser/Docker/provider/network/deletion. Old1spent/2retired, gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7 exclusions/LHW24 retained; no generic operator checkpoint.
 
 ## Parked Checkpoints
 
