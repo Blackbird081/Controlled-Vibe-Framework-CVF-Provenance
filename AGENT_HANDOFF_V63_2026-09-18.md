@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Current NCR Continuation
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `16636960c36db619af0f4788e56f51d67e6704a6`. Material SHA: `16636960c36db619af0f4788e56f51d67e6704a6`. Batch ID: CVF-NCR-HTML-B-E-ADJUNCT-SOURCE-20261016. Pre-material parent for exact17 blocked implementation/review record; later handoff-only sync records actual material SHA. No accepted source or runtime release.
+Current HEAD recorded for this handoff: `01dca0c070bd9a2787e9227b383135fa6ff16a0a`. Material SHA: `01dca0c070bd9a2787e9227b383135fa6ff16a0a`. Batch ID: CVF-NCR-HTML-B-E-ADJUNCT-SOURCE-20261016. Exact17 source implementation and BLOCKED independent review record; normal91/91 PASS, automatic P4 SKIPPED_NO_ELIGIBLE_CANDIDATE. This handoff-only sync records actual material SHA before clean split-range closure; no promotion of failed Python probe or source release.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -22,6 +22,8 @@ Local proof: `docs/reviews/evidence/ncr-html-b-e-adjunct-source-local-20261016.j
 Startup acknowledged: current mode=`cvf_ncr_html_b_e_adjunct_source_implemented_review_blocked`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=static diagnostic and consolidated evidence-recovery disposition, no probe retry; role=INTERNAL_AGENT Local reviewer/steward; phase=source implementation retained, independent acceptance blocked; decision owner=LOCAL; parked checkpoint=Local probe allowance exhausted, actual B-E/Native/browser/container/provider/disposal/public/deploy still separately held.
 
 ## Current Mode
+
+Material `01dca0c070bd9a2787e9227b383135fa6ff16a0a`: source5 and exact7 worker bytes retained; normal91 PASS. Initial material pre-closure was correctly blocked because the material HEAD needed its dedicated handoff SHA sync; raw log `.cvf/runtime/ncr-be-adjunct-source-20261016/blocked-material-closure.log`, SHA256 `db93ee09608099c3778ca643263f618ac030ce712ef7fbfad626710f93e7073c`. Clean split-range closure follows this actual-SHA handoff commit, with named information gain: validate the now-correct marker/finality, not replay source programs. Independent Python failure and Local2/2 allowance unchanged. Root first material commit failure (learning/routing/Delta literals) retained; corrected completion-only fields passed direct guards before normal91. Final range results are inspected after this sync, without source/probe replay.
 
 `cvf_ncr_html_b_e_adjunct_source_implemented_review_blocked`. Worker source5 retained at243/221/292/125/124 lines, source13 unchanged. Worker35/30 PASS and full gate6.83s; LocalJS18 PASS, LocalPython fixture failed before endpoint runner and never reached admission/marker. All2 Local slots spent. Procedure partial; no accepted adjunct release or runtime readiness. Task06:54Z/deadlines09:54Z/10:54Z retained without extension. Preparatory normal-commit failures and worker ledger race preserved. Same SCEC/freeze/prior7 exclusions and parked effects.
 
@@ -67,6 +69,8 @@ The historic provider/live parked line applies to those stopped lanes; it does n
 Q001/Q004 actual-data source/writer,custody,retention/RPO/RTO/cost checkpoints are action-specific; do not require a user-supplied ledger copy for unrelated fresh isolated development.
 NCR send/B2 STOP and S05/C1 remain; IAB unavailable; repo Playwright Chromium present. Historical canonical release bundle9/9 PASS with real Alibaba at its recorded revision; this controls package provides no fresh current-source live result; full P04 and NCR R3/R4 remain open. No autonomous P11/public/deploy activation.
 ## P4 Post-Commit Safety Disposition
+
+Current adjunct material `01dca0c070bd9a2787e9227b383135fa6ff16a0a`: automatic P4-C1 SKIPPED_NO_ELIGIBLE_CANDIDATE. Normal collector only; no manual rerun, observation promotion or prior7 exclusion change. Final handoff collector is inspected separately after its normal commit.
 
 Current amended paired source-only dispatch: normal automatic collector inspected; no manual rerun or prior7 exclusion promotion. This continuity and final source closure use the normal collector only.
 
@@ -138,22 +142,22 @@ Rollback boundary: current17 only, preserve all frozen worker bytes, failed prob
 |---|---|
 | Actor | Local INTERNAL_AGENT reviewer/steward |
 | Provider or surface | private shared workspace |
-| Session or invocation | ncr-be-adjunct-local-review-20261016 |
+| Session or invocation | ncr-be-adjunct-blocked-handoff-20261016 |
 | Working directory | repository root |
-| Command or tool surface | consume frozen worker/full-gate evidence; two distinct fake Local programs; static failure diagnosis; exact17 blocked material and actual-SHA sync |
-| Target paths | `scripts/cvf_ncr_html_effect_fence.py`; `scripts/run_cvf_ncr_html_effect_driver.py`; `scripts/test_cvf_ncr_html_effect_driver.py`; `scripts/cvf_ncr_html_browser_fence.cjs`; `scripts/cvf_ncr_html_browser_fence.test.cjs`; `docs/reviews/CVF_NCR_HTML_B_E_ADJUNCT_SOURCE_WORKER_RETURN_2026-10-16.md`; `docs/reviews/evidence/ncr-html-b-e-adjunct-source-worker-20261016.json`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md`; `docs/reviews/CVF_NCR_HTML_B_E_ADJUNCT_SOURCE_COMPLETION_2026-10-16.md`; `docs/reviews/evidence/ncr-html-b-e-adjunct-source-local-20261016.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Allowed scope source | operator full Local roadmap handling; amended source-only baseline/order; conditional release withheld |
-| Before status evidence | clean released16636960c; worker yielded exact7 unstaged, no root tracked writes while lane active |
-| After status evidence | exact17 blocked material; no release path; source13 unchanged |
-| Diff evidence | exact17 observed/staged manifest, no deletions or renamed paths |
-| Approval boundary | source-only material preservation; independent acceptance blocked; no runtime or retry |
-| Claim boundary | worker source/fake results retained; incomplete Local Python proof, no acceptance or AI-governance claim |
+| Command or tool surface | handoff-only actual material SHA, normal hook and initial range-failure disclosure |
+| Target paths | `AGENT_HANDOFF_V63_2026-09-18.md` |
+| Allowed scope source | exact17 blocked completion authorization plus existing Local roadmap grant |
+| Before status evidence | clean at 01dca0c070bd9a2787e9227b383135fa6ff16a0a; material normal91 PASS, initial range blocked by missing dedicated actual-SHA sync |
+| After status evidence | handoff-only actual-SHA/P4/range metadata; source and proof untouched |
+| Diff evidence | one-path handoff-only manifest |
+| Approval boundary | continuity evidence only; source acceptance still blocked and Local probe allowance2/2 spent |
+| Claim boundary | no accepted source/runtime release, retry, budget reset or parent blocker removal |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-be-adjunct-local-review-20261016 |
-| Expected manifest | `scripts/cvf_ncr_html_effect_fence.py`; `scripts/run_cvf_ncr_html_effect_driver.py`; `scripts/test_cvf_ncr_html_effect_driver.py`; `scripts/cvf_ncr_html_browser_fence.cjs`; `scripts/cvf_ncr_html_browser_fence.test.cjs`; `docs/reviews/CVF_NCR_HTML_B_E_ADJUNCT_SOURCE_WORKER_RETURN_2026-10-16.md`; `docs/reviews/evidence/ncr-html-b-e-adjunct-source-worker-20261016.json`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md`; `docs/reviews/CVF_NCR_HTML_B_E_ADJUNCT_SOURCE_COMPLETION_2026-10-16.md`; `docs/reviews/evidence/ncr-html-b-e-adjunct-source-local-20261016.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Actual changed set | `scripts/cvf_ncr_html_effect_fence.py`; `scripts/run_cvf_ncr_html_effect_driver.py`; `scripts/test_cvf_ncr_html_effect_driver.py`; `scripts/cvf_ncr_html_browser_fence.cjs`; `scripts/cvf_ncr_html_browser_fence.test.cjs`; `docs/reviews/CVF_NCR_HTML_B_E_ADJUNCT_SOURCE_WORKER_RETURN_2026-10-16.md`; `docs/reviews/evidence/ncr-html-b-e-adjunct-source-worker-20261016.json`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md`; `docs/reviews/CVF_NCR_HTML_B_E_ADJUNCT_SOURCE_COMPLETION_2026-10-16.md`; `docs/reviews/evidence/ncr-html-b-e-adjunct-source-local-20261016.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Manifest delta | MATCH exact17, conditional release absent |
-| Deletion or rename disposition | none; all old/new custody retained |
+| Invocation ID | ncr-be-adjunct-blocked-handoff-20261016 |
+| Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md` |
+| Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md` |
+| Manifest delta | MATCH handoff-only; material17 retained in completion |
+| Deletion or rename disposition | none; all frozen source/probe/failure custody retained |
 
 ## Claim Boundary
 Current facts, exact packet binding and permitted next action only. Historical Home/O6 evidence remains bounded; no whole-roadmap, live/provider, backend cancellation, release/public/deployment or model-winner claim.
