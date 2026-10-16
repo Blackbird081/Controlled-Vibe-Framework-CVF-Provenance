@@ -1,0 +1,356 @@
+{
+  "schemaVersion": "cvf.ncrHtmlBEEffectDesignEvidence@1",
+  "status": "ACCEPTED_DESIGN_ONLY_BOUNDED",
+  "sourceHead": "7ce762f9e504e7f7efc91a5e572804409956cfe4",
+  "recordedAtUtc": "2026-10-16T06:42:37.270146+00:00",
+  "authority": {
+    "baselinePath": "docs/baselines/CVF_GC018_NCR_HTML_SOURCE13_CONTROLS_LOCAL_2026-10-16.md",
+    "baselineSha256": "7396a646eb42004093634d6d7beef77111b6256fe03b7a8325b1589fdd6744b5",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_SOURCE13_CONTROLS_2026-10-16.md",
+    "workOrderSha256": "1ee37e0ea67f579eeda6a49a37cc8df268a2c0fee9a37dec0e9894202df269b3"
+  },
+  "sourceRelease": {
+    "path": "docs/reviews/evidence/ncr-html-source-release-20261016.json",
+    "sha256": "d1a591633d144bacf0c5ffa8afc019b981b2b587e8512dd3ac549a1681397fc5",
+    "bytes": 3151
+  },
+  "source13Metadata": [
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/__init__.py",
+      "sha256": "de4221c23be9051a158cf85cbfd51e89a798b1726affa9ba27f0b207d34b70f6",
+      "bytes": 21484,
+      "expectedSha256": "de4221c23be9051a158cf85cbfd51e89a798b1726affa9ba27f0b207d34b70f6"
+    },
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/lifecycle.py",
+      "sha256": "c4fab8696982227bc202ae969d72f193448e504ca4a6d7d579e609dbd7764605",
+      "bytes": 17745,
+      "expectedSha256": "c4fab8696982227bc202ae969d72f193448e504ca4a6d7d579e609dbd7764605"
+    },
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/profile.py",
+      "sha256": "77a0d032b1d402c5be8890353718ee057fd72633027c4864a0030ecf93fafa96",
+      "bytes": 19512,
+      "expectedSha256": "77a0d032b1d402c5be8890353718ee057fd72633027c4864a0030ecf93fafa96"
+    },
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/test_control.py",
+      "sha256": "829f6f28863a945e6c8a889332d82ff01875bce769efe0696df70c1caa09243c",
+      "bytes": 19452,
+      "expectedSha256": "829f6f28863a945e6c8a889332d82ff01875bce769efe0696df70c1caa09243c"
+    },
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/journey.cjs",
+      "sha256": "f76b6d0fec14f2d208fee63004aec2b7211799e5d37160e414633e9dd15d69e0",
+      "bytes": 16755,
+      "expectedSha256": "f76b6d0fec14f2d208fee63004aec2b7211799e5d37160e414633e9dd15d69e0"
+    },
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/journey.test.cjs",
+      "sha256": "a36539cd8021d8ccc2407e7d3c4edaead49fd01d8525dd460ec43752c0d8a66e",
+      "bytes": 18617,
+      "expectedSha256": "a36539cd8021d8ccc2407e7d3c4edaead49fd01d8525dd460ec43752c0d8a66e"
+    },
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/execution.py",
+      "sha256": "937d7d726f33b1d801936370d3771ca86feaacdc243364bd10331e17d810fc4d",
+      "bytes": 19539,
+      "expectedSha256": "937d7d726f33b1d801936370d3771ca86feaacdc243364bd10331e17d810fc4d"
+    },
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/test_execution.py",
+      "sha256": "7a352621b1a9db2a0a9978edd23c9ca4acb82386a3d5eacc583479fcfdc70357",
+      "bytes": 22493,
+      "expectedSha256": "7a352621b1a9db2a0a9978edd23c9ca4acb82386a3d5eacc583479fcfdc70357"
+    },
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/protocol.py",
+      "sha256": "7f14b3e57efe30912418be1add87d43069b914906476d5820b255120924e4277",
+      "bytes": 12809,
+      "expectedSha256": "7f14b3e57efe30912418be1add87d43069b914906476d5820b255120924e4277"
+    },
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/test_protocol.py",
+      "sha256": "4efa78090505b69e1fbc4e95359cc086764b228726554a0fc31a94324d97e7ba",
+      "bytes": 19451,
+      "expectedSha256": "4efa78090505b69e1fbc4e95359cc086764b228726554a0fc31a94324d97e7ba"
+    },
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/test_win32.py",
+      "sha256": "ad249cfada2737ed038e2468854996417a0c8d4e8fbf16562695532dfc9f9228",
+      "bytes": 9499,
+      "expectedSha256": "ad249cfada2737ed038e2468854996417a0c8d4e8fbf16562695532dfc9f9228"
+    },
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/test_admission.py",
+      "sha256": "e9d7c6efa93ef0e326312426fd2b85eef94b0a43c838336d775288d275959702",
+      "bytes": 13104,
+      "expectedSha256": "e9d7c6efa93ef0e326312426fd2b85eef94b0a43c838336d775288d275959702"
+    },
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/source_release.py",
+      "sha256": "4d694c4066f93f317b5bbea76bb876bb1555482b471b38d36f87250ca142878b",
+      "bytes": 6030,
+      "expectedSha256": "4d694c4066f93f317b5bbea76bb876bb1555482b471b38d36f87250ca142878b"
+    }
+  ],
+  "source13AllMatch": true,
+  "sourceIdentityAuthority": {
+    "docs/baselines/CVF_GC018_NCR_HTML_SOURCE_ADMISSION_2026-10-16.md": "1c33647040bc57cd32a6edb27533d7d728158b18660dbcf87a3ae0b89dfa1056",
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_SOURCE_ADMISSION_2026-10-16.md": "028da14681111f8dd7effd3ee9901142949a0328434f5de35e3ca9b4a850afd9"
+  },
+  "controlsCompletion": {
+    "path": "docs/reviews/CVF_NCR_HTML_SOURCE13_CONTROLS_COMPLETION_2026-10-16.md",
+    "sha256": "19395084e680003f3caa8cdc343f2ed568dab8a15bf820b974521b683c971ba4",
+    "bytes": 28751
+  },
+  "qualificationEvidence": {
+    "path": "docs/reviews/evidence/ncr-html-b-e-qualification-local-20261016.json",
+    "sha256": "63cc72cc8842395a3efda2771fd6e7ea08ad96ed6acd78af9b81e5d36d74debd",
+    "bytes": 83777
+  },
+  "qualifiedChromiumHistoricalObservation": {
+    "status": "QUALIFIED_FILE_IDENTITY_ONLY",
+    "path": "C:\\Users\\DELL\\AppData\\Local\\ms-playwright\\chromium-1208\\chrome-win64\\chrome.exe",
+    "resolvedPath": "C:\\Users\\DELL\\AppData\\Local\\ms-playwright\\chromium-1208\\chrome-win64\\chrome.exe",
+    "bytes": 3006464,
+    "sha256": "ff0c99fc5bb2301cad77930aa76e5354cf2a5fefb7efdcf3b3bc10ba0550c015",
+    "launched": false
+  },
+  "qualifiedChromiumReobservedThisTask": false,
+  "selectedSourceExcerpts": [
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/__init__.py",
+      "sha256": "de4221c23be9051a158cf85cbfd51e89a798b1726affa9ba27f0b207d34b70f6",
+      "bytes": 21484,
+      "firstLine": 88,
+      "lastLine": 127,
+      "fact": "Runner admission, namespace and sole parent protocol precede Native; no standalone stage.",
+      "excerptUtf8": "def run(namespace, image, *, inputs=None, cap=2, controls_receipt=None, controls_digest=None, source_release=None, source_release_sha256=None, clock=None):\n    started, failures = time.monotonic(), []\n    # Pure admission precedes every effect: exact inputs, typed current controls, pinned sources, fresh namespace.\n    if {\"CVF_NCR_ALLOWED_PORTS\", \"CVF_HCR_EGRESS_LOG\"} & set(os.environ):\n        raise RuntimeError(\"inherited network-guard activation is refused\")\n    inputs = P.validate_inputs(P.fixtures() if inputs is None and cap == 2 else inputs, cap)\n    actor = P.admit_controls(json.loads(Path(controls_receipt).read_text(encoding=\"utf-8\")) if controls_receipt else None, cap, controls_digest)\n    sources = P.admit_sources(source_release, source_release_sha256)\n    namespace = Path(namespace).absolute()\n    no_reparse(namespace.parent)\n    if namespace.exists() or namespace.resolve().is_relative_to(P.ROOT) or not namespace.parent.is_dir():\n        raise RuntimeError(\"a fresh namespace outside provenance is required\")\n    namespace.mkdir()\n    custody, stage = namespace / \"custody\", namespace / \"source\"\n    custody.mkdir()\n    (namespace / \"owner.json\").write_text(json.dumps({\"owner\": actor, \"nonce\": secrets.token_hex(16), \"namespace\": str(namespace.resolve()),\n        \"source\": sources, \"profile\": \"NCR_HTML_OWNED_SYNTHETIC_FRESH_SOURCE_V1\"}, indent=2), encoding=\"utf-8\")\n    proto = PR.Protocol(clock or time.monotonic, P.WORK_SECONDS, P.CLEANUP_SECONDS).start()  # the one phase/time owner; workEnd is fixed here\n    c, ops, proxy, thread, reader_thread, helper = E.Collector(custody, proto=proto), None, None, None, None, None\n    logs, reservations, budget, seen, claim = [], [], E.Budget(actor), set(), [None]\n    output = {\"schemaVersion\": \"cvf.ncrHtmlOwnedProfile.v1\", \"namespace\": str(namespace), \"sources\": sources,\n              \"caps\": {\"exports\": cap, \"evaluates\": cap, \"readinessGets\": budget.GLOBAL, \"readinessBuckets\": budget.LIMITS,\n                       \"runtimeSeconds\": P.WORK_SECONDS, \"cleanupSeconds\": P.CLEANUP_SECONDS},\n              \"state\": {\"exports\": 0, \"readinessGets\": budget.used}, \"checkpoints\": [], \"failures\": failures,\n              \"providerStarts\": 0, \"actualDataConfigStoreReads\": 0, \"retentionSeconds\": None}\n\n    def persist():\n        (custody / \"runner-result.json\").write_bytes(E.dumps(output))\n\n    def send(line):  # an admitted, bounded pipe write: an unfinished write stays a tracked UNKNOWN operation\n        def write(_wait):\n            helper.stdin.write(line + \"\\n\")\n            helper.stdin.flush()\n        c.op(\"controller-reply\", write, 10, bounded=True)\n    try:\n        ops = Native(c, [], stage, namespace)  # job policy is read back before any utility query or child exists\n        c.runner = ops.run_utility\n        prereq = P.prerequisites(c, image)\n        ops.docker = prereq[\"dockerPrefix\"]\n        output[\"prerequisites\"], output[\"controllerIdentity\"] = prereq, ops.identity(os.getpid())\n",
+      "excerptSha256": "32911a7b0986aea08c75bb2651de62305f6f2af8a7b7f33916f95a9799fb65ea"
+    },
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/__init__.py",
+      "sha256": "de4221c23be9051a158cf85cbfd51e89a798b1726affa9ba27f0b207d34b70f6",
+      "bytes": 21484,
+      "firstLine": 193,
+      "lastLine": 221,
+      "fact": "Existing sanitized helper env, fixed argv and parent-produced child config.",
+      "excerptUtf8": "            \"CVF_STORAGE_ADAPTER_TYPE\": \"file\", \"CVF_CONTROL_PLANE_EVENTS_PATH\": str(events), \"GOVERNANCE_ENGINE_ENABLED\": \"true\",\n            \"GOVERNANCE_ENGINE_URL\": f\"http://127.0.0.1:{proxy_port}\", \"GOVERNANCE_ENGINE_TIMEOUT\": \"3000\", \"CVF_GOVERNANCE_RECEIPT_TIMEOUT_MS\": \"10000\"})\n        reservations[0].close()\n        web_process = ops.launch([prereq[\"tools\"][\"node\"], str(modules / \"next/dist/bin/next\"), \"dev\", \"--webpack\", \"-p\", str(web_port), \"-H\", \"127.0.0.1\"], cwd=web, env=env, stdout=logs[1])\n\n        def web_ready():\n            if web_process.poll() is not None:\n                raise E.Stop(\"owned Web exited before readiness\")\n            return c.op(\"web-ready\", lambda wait: fetch(base + \"/login\", wait) == 200, 60)\n        E.poll(c, budget, \"web\", web_ready, 6, 2)\n        for route in (\"/api/artifacts/export\", \"/api/governance/evaluate\"):\n            budget.debit(\"route\")  # charged before the GET, including a failing one\n            try:\n                c.op(\"route-compile\", lambda wait: urllib.request.urlopen(base + route, timeout=wait).close(), 90)\n            except urllib.error.HTTPError as response:\n                if response.code != 405:\n                    raise RuntimeError(\"non-effectful route compilation GET did not return405\")\n        entries = P.egress(egress_log)\n        if not any(e[\"event\"] == \"denied\" and e[\"host\"] == \"egress-selftest.invalid\" for e in entries):\n            raise RuntimeError(\"Node egress guard not proven before login\")\n        listeners = ops.listeners()\n        if {int(x[\"address\"].rsplit(\":\", 1)[1]) for x in listeners} != set(ops.ports) or any(x[\"pid\"] not in set(ops.members()) | {os.getpid()} or not x[\"address\"].startswith(\"127.0.0.1:\") for x in listeners):\n            raise RuntimeError(\"owned loopback listener identity mismatch\")\n        output[\"listenerIdentity\"] = listeners\n        config = custody / \"journey-input.json\"\n        # The child clock is advisory: limits derive from the parent's remainder and the child may only shorten its waits.\n        config.write_text(json.dumps({\"inputs\": inputs, \"cap\": cap, \"browserProfile\": str(stage / \"browser-profile\"),\n                                      **PR.child_limits(proto, int(time.time() * 1000), P.CLEANUP_SECONDS)}, ensure_ascii=True, indent=2), encoding=\"utf-8\")\n        helper = ops.launch([prereq[\"tools\"][\"node\"], str(P.ROOT / P.ENTRY_CJS), str(modules), base,\n",
+      "excerptSha256": "c4a730e91f1039e831724ed487af616999e4d6a096fee3cc65d46426caa717c3"
+    },
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/execution.py",
+      "sha256": "937d7d726f33b1d801936370d3771ca86feaacdc243364bd10331e17d810fc4d",
+      "bytes": 19539,
+      "firstLine": 104,
+      "lastLine": 160,
+      "fact": "Collector exposes dispatched thread-local op to utility runner.",
+      "excerptUtf8": "    prelaunch persistence, so the runner never sees a stale wait, an expired invocation or a revoked operation.\"\"\"\n    def __init__(self, custody: Path, runner=None, proto=None, sleeper=None):\n        self.custody, self.runner, self.events = custody, runner or subprocess.run, []\n        self.proto, self.sleeper = proto or Protocol().start(), sleeper or time.sleep\n        self.lock, self.local = threading.RLock(), threading.local()\n        self.cleanup_errors = []\n\n    def current_op(self):\n        return getattr(self.local, \"op\", None)\n\n    def op(self, kind, fn, requested, **kw):\n        return run_op(self.proto, kind, fn, requested, **kw)\n\n    def sleep(self, seconds):\n        wait = min(seconds, self.proto.check())\n        if wait <= 0:\n            raise Deadline(\"sleep: work cutoff reached\")\n        self.sleeper(wait)\n\n    def command(self, kind, argv, *, timeout=10, data=None, parse=None):\n        \"\"\"Persist prelaunch evidence, take the final admission with a fresh finite wait, launch once, classify; never retry or fall back.\"\"\"\n        if kind in ONE_SHOT and any(e[\"kind\"] == kind for e in self.events):\n            raise CommandFailure(kind, \"REPEAT_REFUSED\")\n        op, started = self.proto.queue(kind), self.proto.clock()\n        with self.lock:\n            event = {\"seq\": len(self.events) + 1, \"kind\": kind, **argv_evidence(argv), \"inputBytes\": len(data or \"\"), \"startedAt\": started,\n                     \"timeoutSeconds\": None, \"state\": \"QUEUED\", \"failureClass\": None, \"exitCode\": None, \"stdout\": \"\", \"stderr\": \"\", \"timedOut\": False}\n            self.events.append(event)\n            try:\n                self.save(kind, unlaunched=True)  # may block; a failed prelaunch write prevents the invocation\n            except CommandFailure:\n                self.proto.complete(op, False, \"PERSIST\")\n                raise\n        try:\n            wait = self.proto.grant(op, timeout)  # fresh phase and time after persistence; QUEUED -> DISPATCHED under the parent lock\n        except Stop as error:\n            with suppress(CommandFailure):\n                self.finish(kind, event, {\"stderr\": bounded(repr(error))}, \"REFUSED\")\n            raise\n        with self.lock:\n            event.update(state=\"STARTED\", timeoutSeconds=wait)\n        fields, stdout, result, failure, stop, unresolved = {}, \"\", None, None, None, False\n        self.local.op = op\n        cleanup_count = len(self.cleanup_errors)\n        try:\n            p = self.runner(list(argv), input=data, capture_output=True, text=True, encoding=\"utf-8\", errors=\"replace\", timeout=wait)\n            stdout, code = p.stdout or \"\", getattr(p, \"returncode\", None)\n            fields = {\"exitCode\": code if type(code) is int else None, \"stdout\": bounded(stdout), \"stderr\": bounded(p.stderr)}\n            failure = None if completion(code) == \"SUCCESS\" else completion(code)\n            unresolved = failure == \"UNKNOWN\"\n        except subprocess.TimeoutExpired as error:\n            fields, failure, unresolved = {\"stdout\": bounded(error.stdout), \"stderr\": bounded(error.stderr), \"timedOut\": True}, \"TIMEOUT\", getattr(error, \"drained\", True) is False\n            fields[\"cleanupError\"] = getattr(error, \"cleanup_error\", None)\n        except Stop as error:  # the cutoff passed inside the runner: finish the evidence, then keep stopping\n            fields, failure, stop = {\"stderr\": bounded(repr(error))}, \"DEADLINE\", error\n        except Exception as error:\n            fields, failure = {\"stderr\": bounded(repr(error))}, \"SPAWN\" if isinstance(error, OSError) else \"UNKNOWN\"\n",
+      "excerptSha256": "037a054c8c95bdcff29518ef54e3b378fd1c4226b83506a9bbf2dc3800f714d4"
+    },
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/lifecycle.py",
+      "sha256": "c4fab8696982227bc202ae969d72f193448e504ca4a6d7d579e609dbd7764605",
+      "bytes": 17745,
+      "firstLine": 212,
+      "lastLine": 283,
+      "fact": "Injectable Native Popen, original suspended/Job/identity/persist/check/resume order.",
+      "excerptUtf8": "    \"\"\"Job membership owns descendants; retained process handles pin creation identity. API and Popen are injectable.\"\"\"\n    def __init__(self, collector, docker_prefix, stage, namespace, *, api=None, popen=None):\n        self.c, self.docker, self.api, self.popen = collector, docker_prefix, api or Win32(), popen or subprocess.Popen\n        self.stage, self.namespace, self.dependency, self.job = stage, namespace, None, None\n        self.roots, self.container, self.container_identity, self.ports = [], None, None, []\n        self.container_identity_pending, self.retained = False, {}\n        if isinstance(self.api, Win32):\n            self.api.cleanup_errors = self.c.cleanup_errors\n        job = self.api.create_job()\n        try:  # configure and read back the policy before any utility query or child can exist\n            self.api.set_limits(job, JOB_LIMIT)\n            if self.api.query_limits(job) != {\"active\": JOB_LIMIT, \"killOnClose\": True, \"breakaway\": False, \"silentBreakaway\": False}:\n                raise RuntimeError(\"owned job safety policy was not confirmed\")\n        except BaseException:\n            try:\n                self.api.close(job)\n            except Exception as cleanup:\n                self.c.cleanup_errors.append(\"job-close: \" + bounded(cleanup, 180))\n            raise\n        self.job = job\n\n    def identity(self, pid, handle=None):\n        return self.api.identity(pid, handle)\n\n    def _record(self):\n        rows = [{\"identity\": x[\"identity\"], **x[\"evidence\"]} for x in self.roots]\n        (self.c.custody / \"process-roots.json\").write_bytes(dumps(rows))  # one safe serializer: no raw argv reaches custody\n\n    def _spawn(self, argv, *, admitted=False, **kw):\n        \"\"\"Final admission, suspended create, job assign, exact identity, persist it, then a FRESH phase/time check before resume. A failed or\n        refused step never resumes the child; only the exact owned creation handle is stopped, within the remaining finite wait.\"\"\"\n        proto, own = self.c.proto, None\n        op = self.c.current_op() if admitted else None\n        if op is None:\n            own = op = proto.queue(\"launch\")\n            proto.grant(op, 1)\n        p = self.popen(argv, creationflags=0x00000004, **kw)  # Windows CREATE_SUSPENDED\n        root = {\"p\": p, \"identity\": None, \"evidence\": argv_evidence(argv)}\n        self.roots.append(root)\n        try:\n            self.api.assign(self.job, int(p._handle))\n            root[\"identity\"] = self.api.identity(p.pid, int(p._handle))\n            self._record()  # identity persistence may block or consume the whole cutoff\n            proto.check(op)\n            self.api.resume(p.pid)\n        except BaseException as error:\n            try:\n                if proto.left(5) > 0 and p.poll() is None and proto.left(5) > 0:\n                    p.kill()  # fresh cleanup admission; the exact creation handle cannot target a reused PID\n                wait = proto.left(5)\n                if wait > 0:\n                    with suppress(subprocess.TimeoutExpired):\n                        p.wait(timeout=wait)\n            except Exception as cleanup:\n                self.c.cleanup_errors.append(f\"spawn-cleanup: {type(cleanup).__name__}: {bounded(cleanup, 180)}\")\n            if own:\n                proto.complete(own, False, type(error).__name__)\n            raise\n        if own:\n            proto.complete(own)\n        return p\n\n    def launch(self, argv, *, cwd, env, stdout, stdin=None):\n        return self._spawn(argv, cwd=cwd, env=env, stdout=stdout, stderr=subprocess.STDOUT, stdin=stdin,\n                           text=stdin is not None, encoding=\"utf-8\" if stdin is not None else None)\n\n    def run_utility(self, argv, *, input=None, timeout=None, **_ignored):\n        \"\"\"Collector runner: utility children share the job; a timeout kills only this exact child and drains within the remaining wait.\"\"\"\n        p = self._spawn(argv, admitted=True, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, encoding=\"utf-8\", errors=\"replace\")\n        out, err = bounded_communicate(p, self.c, input, timeout)\n        return subprocess.CompletedProcess(argv, p.returncode, out, err)\n\n",
+      "excerptSha256": "e0dcd51b079feaf677b6f6a845695c2ec77b56191433d6dad41ac2c371eef7a9"
+    },
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/profile.py",
+      "sha256": "77a0d032b1d402c5be8890353718ee057fd72633027c4864a0030ecf93fafa96",
+      "bytes": 19512,
+      "firstLine": 248,
+      "lastLine": 279,
+      "fact": "Current prerequisite endpoint prefix/discovery existence checks are weaker than exact identities.",
+      "excerptUtf8": "def prerequisites(c, image):\n    if not re.fullmatch(r\"sha256:[0-9a-f]{64}\", image or \"\"):\n        raise RuntimeError(\"explicit immutable cached engine image required\")\n    paths = {n: shutil.which(n) for n in (\"node\", \"docker\", \"git\", \"taskkill\", \"tasklist\", \"netstat\")}\n    modules = ROOT / WEB / \"node_modules\"\n    for p in (modules / \"next/dist/bin/next\", modules / \"@playwright/test/package.json\"):\n        if not p.is_file():\n            raise RuntimeError(\"installed read-only dependency missing\")\n    if not all(paths.values()):\n        raise RuntimeError(\"installed native prerequisite missing\")\n    context = c.command(\"docker-context\", [paths[\"docker\"], \"context\", \"show\"]).strip()\n    info = c.command(\"docker-context-inspect\", [paths[\"docker\"], \"context\", \"inspect\", context], parse=lambda raw: json.loads(raw)[0])\n    endpoint = info[\"Endpoints\"][\"docker\"][\"Host\"]\n    if not endpoint.startswith(\"npipe://\") or any(k in os.environ for k in (\"DOCKER_HOST\", \"DOCKER_CONTEXT\")):\n        raise RuntimeError(\"unknown or remote Docker context\")\n    prefix = [paths[\"docker\"], \"--context\", context]\n    c.command(\"docker-local-server\", [*prefix, \"version\", \"--format\", \"{{.Server.Os}}\"])\n    image_info = c.command(\"cached-image\", [*prefix, \"image\", \"inspect\", image], parse=lambda raw: json.loads(raw)[0])\n    if (image_info[\"Id\"], image_info[\"Os\"], image_info[\"Architecture\"]) != (image, \"linux\", \"amd64\"):\n        raise RuntimeError(\"cached image identity/platform mismatch\")\n    # One installed-browser module query per actor: Collector refuses a repeat, and no fallback or install follows a failure.\n    exe = c.command(\"installed-browser-path\", [paths[\"node\"], \"-e\", \"console.log(require(process.argv[1]).chromium.executablePath())\", str(modules / \"@playwright/test\")], timeout=30).strip()\n    if not Path(exe).is_file():\n        raise RuntimeError(\"installed Chromium missing\")\n    return {\"tools\": paths, \"modules\": str(modules.resolve()), \"dependencyAccess\": \"PRE_EXISTING_READ_ONLY_NOT_DISPOSABLE\",\n            \"browserExecutable\": exe, \"dockerContext\": context, \"dockerEndpoint\": endpoint, \"image\": image, \"dockerPrefix\": prefix}\n\n\ndef _reply(raw):\n    reply = json.loads(raw)\n    if type(reply[\"status\"]) is not int or type(reply[\"body\"]) is not str:\n        raise ValueError(\"malformed engine reply\")\n",
+      "excerptSha256": "2cfd0b6a955f1e657a424b23812b9009545c14cd18090e9da9ff68ef839a57f8"
+    },
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/protocol.py",
+      "sha256": "7f14b3e57efe30912418be1add87d43069b914906476d5820b255120924e4277",
+      "bytes": 12809,
+      "firstLine": 119,
+      "lastLine": 157,
+      "fact": "Operation cleanup classification and original atomic grant.",
+      "excerptUtf8": "                self.state = CLEANUP\n\n    @staticmethod\n    def _wait(remaining, requested, unit=None):\n        \"\"\"Finite strictly positive wait no greater than the request or the remainder; integer-unit adapters quantize DOWN.\"\"\"\n        wait = min(requested, remaining)\n        wait = math.floor(wait / unit) * unit if unit and math.isfinite(wait) else wait\n        return wait if math.isfinite(wait) and wait > 0 else None\n\n    def queue(self, kind):\n        with self.lock:\n            cleanup = self.state != WORK and getattr(self.scope, \"on\", False)\n            if self.state in (PREPARED, FROZEN) or (self.state != WORK and not cleanup):\n                raise NotAdmitted(f\"{kind}: protocol is {self.state}; no new normal work\")\n            op = Op(next(self.ids), kind, cleanup)\n            self.ops.append(op)\n            return op\n\n    def grant(self, op, requested, unit=None):\n        \"\"\"Atomic QUEUED -> DISPATCHED against the operation's own cutoff, with one clock sample. The caller runs the adapter AFTER this\n        returns; a refusal means the adapter is never called.\"\"\"\n        with self.lock:\n            now = self.clock()\n            self._tick(now)\n            in_phase = self.state in (CLOSING, CLEANUP) if op.cleanup else self.state == WORK\n            if op.state != QUEUED or not in_phase:\n                op.state = REVOKED if op.state == QUEUED else op.state\n                raise NotAdmitted(f\"{op.kind}: {op.state} in phase {self.state}; adapter not called\")\n            wait = self._wait((self.cleanup_end if op.cleanup else self.work_end) - now, requested, unit)\n            if wait is None:\n                op.state = REVOKED\n                raise Deadline(f\"{op.kind}: no positive wait remains; adapter not called\")\n            op.state = DISPATCHED\n            return wait\n\n    def left(self, requested, work_only=False):\n        \"\"\"Fresh finite wait for a step inside an admitted operation or cleanup action; 0.0 means invoke nothing new (no floor, no timeout0).\"\"\"\n        with self.lock:\n            now = self.clock()\n",
+      "excerptSha256": "c651d525c2c7f8aca94f638c1c8c84661996c3c61a42f0a67781a071968ddb6f"
+    },
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/journey.cjs",
+      "sha256": "f76b6d0fec14f2d208fee63004aec2b7211799e5d37160e414633e9dd15d69e0",
+      "bytes": 16755,
+      "firstLine": 82,
+      "lastLine": 95,
+      "fact": "Existing absolute wall/uptime allowance owner.",
+      "excerptUtf8": "function authority(limits, now = Date.now, uptime = () => process.uptime() * 1000) {\n  const finite = n => typeof n === 'number' && Number.isFinite(n);\n  assert.ok(plain(limits) && finite(limits.deadlineAtMs) && finite(limits.cleanupAtMs) && /^g[0-9a-f]{1,16}$/.test(limits.generation));\n  assert.ok(finite(limits.workMs) && limits.workMs >= 1 && limits.workMs <= 900000 && finite(limits.cleanupMs) && limits.cleanupMs >= 1 && limits.cleanupMs <= 120000);\n  const left = (absolute, relative) => Math.min(absolute - now(), relative - uptime());\n  const take = (ms, remaining) => {\n    const wait = Math.floor(Math.min(ms, remaining));\n    if (!(wait >= 1)) throw new Error('allowance exhausted before the call; nothing started');\n    return wait;\n  };\n  const work = ms => take(ms, left(limits.deadlineAtMs, limits.workMs));\n  const cleanup = ms => take(ms, left(limits.cleanupAtMs, limits.workMs + limits.cleanupMs));\n  return { work, cleanup };\n}\n",
+      "excerptSha256": "4e424daccf5d62ccf397ed977209c1c0fbf5a37132b4feefbd2ac28463b2099f"
+    },
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/journey.cjs",
+      "sha256": "f76b6d0fec14f2d208fee63004aec2b7211799e5d37160e414633e9dd15d69e0",
+      "bytes": 16755,
+      "firstLine": 129,
+      "lastLine": 150,
+      "fact": "Lazy act launch calls same Chromium API without executablePath.",
+      "excerptUtf8": "const actor = work => (label, ms, fn) => { const wait = work(ms); return withBudget(() => fn({ timeout: wait }), wait, label); };\nconst controller = (control, work, generation) => {\n  let seq = 0;\n  return async (build, expected) => {\n    const op = 'c' + (++seq), wait = work(90000);\n    return validateReply(await withBudget(() => control(build(op), expected), wait, 'control'), expected, generation, op);\n  };\n};\n\nasync function run({ modules, baseURL, output, custody, control, config, now, uptime, emit = s => process.stdout.write(s) }) {\n  const cfg = JSON.parse(fs.readFileSync(config, 'utf8'));\n  validateInputs(cfg.inputs, cfg.cap);\n  const { work, cleanup } = authority(cfg, now, uptime);\n  const act = actor(work), ctl = controller(control, work, cfg.generation);\n  const { chromium, expect } = require(path.join(modules, '@playwright/test'));\n  const result = { mode: 'owned-profile', partial: true, builds: [], checkpoints: [], exportPosts: [], aiPosts: [], external: [] };\n  let context;\n  try {\n    context = await act('launch', 60000, o => chromium.launchPersistentContext(cfg.browserProfile, { headless: true, acceptDownloads: true, ...o,\n      baseURL, args: ['--disable-background-networking', '--host-resolver-rules=MAP * ~NOTFOUND , EXCLUDE 127.0.0.1 , EXCLUDE localhost'] }));\n    await act('route', 30000, () => context.route('**/*', route => {\n      const url = new URL(route.request().url());\n",
+      "excerptSha256": "01ff0ba0d448bc6e429c8c0bf6cddbeaacdc3c9bc163d13ccb6c032bc364354d"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/node_modules/@playwright/test/index.js",
+      "sha256": "499da5dd8585212108a1443793de31ebc061ca7db02343f107955f261180cdfc",
+      "bytes": 648,
+      "firstLine": 17,
+      "lastLine": 17,
+      "fact": "Installed package forwards to playwright/test.",
+      "excerptUtf8": "module.exports = require('playwright/test');\n",
+      "excerptSha256": "04b5f4362303d6d0fd49c63c721cbeaa54e11a3be8c2c5313df2d5cc2128de35"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/node_modules/playwright-core/lib/server/chromium/chromium.js",
+      "sha256": "3da2c7355ea37fd89c072680cf559129943730b2a684809b1dbe43d19cabc745",
+      "bytes": 18246,
+      "firstLine": 317,
+      "lastLine": 325,
+      "fact": "Headless default selects chromium-headless-shell.",
+      "excerptUtf8": "  getExecutableName(options) {\n    if (options.channel && import_registry.registry.isChromiumAlias(options.channel))\n      return \"chromium\";\n    if (options.channel === \"chromium-tip-of-tree\")\n      return options.headless ? \"chromium-tip-of-tree-headless-shell\" : \"chromium-tip-of-tree\";\n    if (options.channel)\n      return options.channel;\n    return options.headless ? \"chromium-headless-shell\" : \"chromium\";\n  }\n",
+      "excerptSha256": "7bf3b906ab46b25b8089eb4ea99ae306444428f9dbb86c0e85de4e59bfc7fac2"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/node_modules/playwright-core/lib/server/browserType.js",
+      "sha256": "08266f672f1ba9dedd77fb30008c7590e6400dcf9bf497fe3fe61ce0e74bcbf0",
+      "bytes": 15435,
+      "firstLine": 172,
+      "lastLine": 185,
+      "fact": "Explicit executablePath bypasses default registry executable selection.",
+      "excerptUtf8": "      browserArguments.push(...(await this.defaultArgs(options, isPersistent, userDataDir)).filter((arg) => ignoreDefaultArgs.indexOf(arg) === -1));\n    else\n      browserArguments.push(...await this.defaultArgs(options, isPersistent, userDataDir));\n    let executable;\n    if (executablePath) {\n      if (!await (0, import_fileUtils.existsAsync)(executablePath))\n        throw new Error(`Failed to launch ${this._name} because executable doesn't exist at ${executablePath}`);\n      executable = executablePath;\n    } else {\n      const registryExecutable = import_registry.registry.findExecutable(this.getExecutableName(options));\n      if (!registryExecutable || registryExecutable.browserName !== this._name)\n        throw new Error(`Unsupported ${this._name} channel \"${options.channel}\"`);\n      executable = registryExecutable.executablePathOrDie(this.attribution.playwright.options.sdkLanguage);\n      await import_registry.registry.validateHostRequirementsForExecutablesIfNeeded([registryExecutable], this.attribution.playwright.options.sdkLanguage);\n",
+      "excerptSha256": "c9c790b5f1635e4dbeba4c6b09d5964e17f868700b5d6504b661dfa6bb745b02"
+    }
+  ],
+  "advisory": {
+    "role": "INTERNAL_AGENT",
+    "phase": "LOCAL_SOURCE_DESIGN_REVIEW",
+    "decisionOwner": "LOCAL",
+    "taskName": "/root/be_feasibility",
+    "reportedModel": "gpt-6.1-sol",
+    "reportedEffort": "medium",
+    "readOnlyExchanges": 4,
+    "disposition": "PRELOAD_ROUTE_WORKABLE_WITH_EXPLICIT_CONSTRAINTS",
+    "constraintsAdopted": [
+      "helper-only exact binding and frozen parent config",
+      "same cached Chromium object, this preserved, one spent invocation",
+      "qualified explicit executablePath, no channel, positive shrinking timeout",
+      "post-hash/persist original journey authority check, no extra grant",
+      "ambient overrides rejected before prerequisite discovery",
+      "counter class from exact dispatched op.cleanup with observational direct grant frame",
+      "no default Headless Shell qualification or hostile-TOCTOU claim"
+    ],
+    "executionEvidence": "NONE_SOURCE_ADVICE_ONLY",
+    "tokenCost": "UNKNOWN",
+    "monetaryCost": "UNKNOWN",
+    "finalCanonicalDesignReview": "ACCEPT_DESIGN_ONLY_BOUNDED; no material design or continuation blocker; read-only/no writes/tests/gates/effects"
+  },
+  "chosenSourceOwnersNotCreated": [
+    "scripts/cvf_ncr_html_effect_fence.py",
+    "scripts/run_cvf_ncr_html_effect_driver.py",
+    "scripts/test_cvf_ncr_html_effect_driver.py",
+    "scripts/cvf_ncr_html_browser_fence.cjs",
+    "scripts/cvf_ncr_html_browser_fence.test.cjs"
+  ],
+  "prospectivePerRun": {
+    "controlledRootAttempts": 64,
+    "work": 56,
+    "cleanup": 8,
+    "jobConcurrentMembers": 32,
+    "workSeconds": 900,
+    "cleanupSeconds": 120,
+    "actors": [
+      {
+        "ordinal": 1,
+        "actor": "IMPLEMENTATION_WORKER",
+        "cap": 2
+      },
+      {
+        "ordinal": 2,
+        "actor": "LOCAL_REVIEWER",
+        "cap": 1
+      }
+    ]
+  },
+  "runtimeReleased": false,
+  "implementationReleased": false,
+  "executedRefusalPrograms": 0,
+  "actualEffects": {
+    "native": 0,
+    "job": 0,
+    "browser": 0,
+    "container": 0,
+    "listener": 0,
+    "provider": 0,
+    "credentials": 0,
+    "stageDeletion": 0
+  },
+  "entryPreflight": {
+    "path": ".cvf/runtime/ncr-be-effect-driver-20261016/entry-preflight.log",
+    "sha256": "295813423763f3d3036cff469f75d00dd99f5fa8f2a2bf6638d981383e6e9d15",
+    "bytes": 5638
+  },
+  "adif": {
+    "query": {
+      "taskClass": "Closure",
+      "role": "closer",
+      "lifecyclePhase": "pre-closure",
+      "maxResults": 100
+    },
+    "returnedDefectIds": [
+      "ADIF-0003",
+      "ADIF-0008",
+      "ADIF-0013",
+      "ADIF-0019",
+      "ADIF-0020",
+      "ADIF-0021",
+      "ADIF-0026",
+      "ADIF-0027",
+      "ADIF-0028",
+      "ADIF-0029",
+      "ADIF-0030",
+      "ADIF-0038",
+      "ADIF-0042",
+      "ADIF-0046",
+      "ADIF-0047",
+      "ADIF-0048",
+      "ADIF-0050",
+      "ADIF-0051",
+      "ADIF-0004",
+      "ADIF-0005",
+      "ADIF-0007",
+      "ADIF-0009",
+      "ADIF-0017",
+      "ADIF-0018",
+      "ADIF-0022",
+      "ADIF-0049"
+    ],
+    "rawSha256": "4252b4788c36982ba40127f9df812b671d1fe1b69539f88e3b0505eb3be6552d",
+    "rawBase64": "ew0KICAiaXRlbXMiOiBbDQogICAgew0KICAgICAgImRlZmVjdElkIjogIkFESUYtMDAwMyIsDQogICAgICAidGl0bGUiOiAiQ2xvc2VkIEdDLTAxOCBsYWNrcyBNYWNoaW5lIENsb3N1cmUgUGFja2FnZSIsDQogICAgICAiZGVmZWN0Q2F0ZWdvcnkiOiAiQ0xPU1VSRV9FVklERU5DRSIsDQogICAgICAiZGVmZWN0Q2xhc3MiOiAiTUFDSElORV9HQVRFX0dBUCIsDQogICAgICAic2V2ZXJpdHkiOiAiSElHSCIsDQogICAgICAiZW5mb3JjZW1lbnRMZXZlbCI6ICJNQUNISU5FX0NIRUNLRUQiLA0KICAgICAgImNoZWNrZXJCaW5kaW5ncyI6ICJnb3Zlcm5hbmNlL2NvbXBhdC9jaGVja19tYWNoaW5lX2Nsb3N1cmVfcGFja2FnZS5weSIsDQogICAgICAic291cmNlUGF0aCI6ICJkb2NzL3JlZmVyZW5jZS9hZ2VudF9kZWZlY3RfaW50ZWxsaWdlbmNlL2VudHJpZXMvQ1ZGX0FESUYtMDAwMy5tZCINCiAgICB9LA0KICAgIHsNCiAgICAgICJkZWZlY3RJZCI6ICJBRElGLTAwMDgiLA0KICAgICAgInRpdGxlIjogIlJldXNhYmxlIGxlc3NvbiByZW1haW5zIG9ubHkgaW4gcHJvdmlkZXIgbWVtb3J5IiwNCiAgICAgICJkZWZlY3RDYXRlZ29yeSI6ICJBVVRIT1JJVFlfQk9VTkRBUlkiLA0KICAgICAgImRlZmVjdENsYXNzIjogIlJVTEVfR0FQIiwNCiAgICAgICJzZXZlcml0eSI6ICJISUdIIiwNCiAgICAgICJlbmZvcmNlbWVudExldmVsIjogIk1BQ0hJTkVfQ0hFQ0tFRCIsDQogICAgICAiY2hlY2tlckJpbmRpbmdzIjogImdvdmVybmFuY2UvY29tcGF0L2NoZWNrX2ZpbmRpbmdfdG9fZ292ZXJuYW5jZV9sZWFybmluZy5weSIsDQogICAgICAic291cmNlUGF0aCI6ICJkb2NzL3JlZmVyZW5jZS9hZ2VudF9kZWZlY3RfaW50ZWxsaWdlbmNlL2VudHJpZXMvQ1ZGX0FESUYtMDAwOC5tZCINCiAgICB9LA0KICAgIHsNCiAgICAgICJkZWZlY3RJZCI6ICJBRElGLTAwMTMiLA0KICAgICAgInRpdGxlIjogIlVwc3RyZWFtIHB1c2ggZGVidCByYW5nZSBiYWNrbG9nIiwNCiAgICAgICJkZWZlY3RDYXRlZ29yeSI6ICJTVEFURV9DT05USU5VSVRZIiwNCiAgICAgICJkZWZlY3RDbGFzcyI6ICJSVUxFX0dBUCIsDQogICAgICAic2V2ZXJpdHkiOiAiSElHSCIsDQogICAgICAiZW5mb3JjZW1lbnRMZXZlbCI6ICJNQUNISU5FX0NIRUNLRUQiLA0KICAgICAgImNoZWNrZXJCaW5kaW5ncyI6ICJnb3Zlcm5hbmNlL2NvbXBhdC9ydW5fYWdlbnRfcHVzaF9yZWFkaW5lc3NfcHJldmlldy5weSIsDQogICAgICAic291cmNlUGF0aCI6ICJkb2NzL3JlZmVyZW5jZS9hZ2VudF9kZWZlY3RfaW50ZWxsaWdlbmNlL2VudHJpZXMvQ1ZGX0FESUYtMDAxMy5tZCINCiAgICB9LA0KICAgIHsNCiAgICAgICJkZWZlY3RJZCI6ICJBRElGLTAwMTkiLA0KICAgICAgInRpdGxlIjogIkdhdGUtcGFzc2luZyBhYnNvcnB0aW9uIG92ZXItZGVmZXJzIHZhbHVlLWJlYXJpbmcgc291cmNlIiwNCiAgICAgICJkZWZlY3RDYXRlZ29yeSI6ICJDTE9TVVJFX0VWSURFTkNFIiwNCiAgICAgICJkZWZlY3RDbGFzcyI6ICJPUkNIRVNUUkFUT1JfUEFDS0VUX0dBUCIsDQogICAgICAic2V2ZXJpdHkiOiAiSElHSCIsDQogICAgICAiZW5mb3JjZW1lbnRMZXZlbCI6ICJQQVJUSUFMX0NIRUNLIiwNCiAgICAgICJjaGVja2VyQmluZGluZ3MiOiAiZ292ZXJuYW5jZS9jb21wYXQvY2hlY2tfZXh0ZXJuYWxfYWJzb3JwdGlvbl92YWx1ZV9jb252ZXJzaW9uLnB5OyBnb3Zlcm5hbmNlL2NvbXBhdC9jaGVja19jb3JwdXNfY29tcGxldGVuZXNzX3JlcG9ydF9pbnRlZ3JpdHkucHk7IGdvdmVybmFuY2UvY29tcGF0L3J1bl93b3JrZXJfcmV0dXJuX2Zhc3RfZ2F0ZS5weSIsDQogICAgICAic291cmNlUGF0aCI6ICJkb2NzL3JlZmVyZW5jZS9hZ2VudF9kZWZlY3RfaW50ZWxsaWdlbmNlL2VudHJpZXMvQ1ZGX0FESUYtMDAxOS5tZCINCiAgICB9LA0KICAgIHsNCiAgICAgICJkZWZlY3RJZCI6ICJBRElGLTAwMjAiLA0KICAgICAgInRpdGxlIjogIkNoZWNrZXIgc291cmNlIHJlYWQtYWhlYWQgc2tpcHBlZCBiZWZvcmUgYXJ0aWZhY3QgYXV0aG9yaW5nIiwNCiAgICAgICJkZWZlY3RDYXRlZ29yeSI6ICJHQVRFX1RSSUdHRVJfRlJJQ1RJT04iLA0KICAgICAgImRlZmVjdENsYXNzIjogIlJVTEVfR0FQIiwNCiAgICAgICJzZXZlcml0eSI6ICJISUdIIiwNCiAgICAgICJlbmZvcmNlbWVudExldmVsIjogIk1BQ0hJTkVfQ0hFQ0tFRCIsDQogICAgICAiY2hlY2tlckJpbmRpbmdzIjogImdvdmVybmFuY2UvY29tcGF0L2NoZWNrX2dvdmVybmVkX2FydGlmYWN0X2NoZWNrZXJfcmVhZF9haGVhZC5weSIsDQogICAgICAic291cmNlUGF0aCI6ICJkb2NzL3JlZmVyZW5jZS9hZ2VudF9kZWZlY3RfaW50ZWxsaWdlbmNlL2VudHJpZXMvQ1ZGX0FESUYtMDAyMC5tZCINCiAgICB9LA0KICAgIHsNCiAgICAgICJkZWZlY3RJZCI6ICJBRElGLTAwMjEiLA0KICAgICAgInRpdGxlIjogIkFwcGxpY2FiaWxpdHkgbWFya2VyIG92ZXJtYXRjaCBpbiByZWZlcmVuY2Ugb3IgY2hlY2tlciBhdXRob3JpbmciLA0KICAgICAgImRlZmVjdENhdGVnb3J5IjogIkdBVEVfVFJJR0dFUl9GUklDVElPTiIsDQogICAgICAiZGVmZWN0Q2xhc3MiOiAiUlVMRV9HQVAiLA0KICAgICAgInNldmVyaXR5IjogIkhJR0giLA0KICAgICAgImVuZm9yY2VtZW50TGV2ZWwiOiAiUEFSVElBTF9DSEVDSyIsDQogICAgICAiY2hlY2tlckJpbmRpbmdzIjogImdvdmVybmFuY2UvY29tcGF0L2NoZWNrX3NvdXJjZV9pbnRha2VfZGVjaXNpb25fcGFja2V0X3ByZWZsaWdodC5weTsgZ292ZXJuYW5jZS9jb21wYXQvY2hlY2tfZXh0ZXJuYWxfYWJzb3JwdGlvbl9jb3JlLnB5OyBnb3Zlcm5hbmNlL2NvbXBhdC9jaGVja19leHRlcm5hbF9hYnNvcnB0aW9uX3ZhbHVlX2NvbnZlcnNpb24ucHk7IGdvdmVybmFuY2UvY29tcGF0L2NoZWNrX2V4dGVybmFsX2Fic29ycHRpb25fb3ZlcmxhcF9kaXNjaXBsaW5lLnB5IiwNCiAgICAgICJzb3VyY2VQYXRoIjogImRvY3MvcmVmZXJlbmNlL2FnZW50X2RlZmVjdF9pbnRlbGxpZ2VuY2UvZW50cmllcy9DVkZfQURJRi0wMDIxLm1kIg0KICAgIH0sDQogICAgew0KICAgICAgImRlZmVjdElkIjogIkFESUYtMDAyNiIsDQogICAgICAidGl0bGUiOiAiU2VxdWVudGlhbCByZXZpZXdlciBmaW5kaW5nIGNhc2NhZGUiLA0KICAgICAgImRlZmVjdENhdGVnb3J5IjogIkdBVEVfVFJJR0dFUl9GUklDVElPTiIsDQogICAgICAiZGVmZWN0Q2xhc3MiOiAiUlVMRV9HQVAiLA0KICAgICAgInNldmVyaXR5IjogIkhJR0giLA0KICAgICAgImVuZm9yY2VtZW50TGV2ZWwiOiAiUEFSVElBTF9DSEVDSyIsDQogICAgICAiY2hlY2tlckJpbmRpbmdzIjogImdvdmVybmFuY2UvY29tcGF0L2NoZWNrX3Jldmlld19jb3N0X2NvbnRyb2wucHkiLA0KICAgICAgInNvdXJjZVBhdGgiOiAiZG9jcy9yZWZlcmVuY2UvYWdlbnRfZGVmZWN0X2ludGVsbGlnZW5jZS9lbnRyaWVzL0NWRl9BRElGLTAwMjYubWQiDQogICAgfSwNCiAgICB7DQogICAgICAiZGVmZWN0SWQiOiAiQURJRi0wMDI3IiwNCiAgICAgICJ0aXRsZSI6ICJBYnNvcnB0aW9uIG9taXRzIHJldmVyc2UgYXJjaGl0ZWN0dXJlIHByb2plY3Rpb24iLA0KICAgICAgImRlZmVjdENhdGVnb3J5IjogIkNMT1NVUkVfRVZJREVOQ0UiLA0KICAgICAgImRlZmVjdENsYXNzIjogIlJVTEVfR0FQIiwNCiAgICAgICJzZXZlcml0eSI6ICJISUdIIiwNCiAgICAgICJlbmZvcmNlbWVudExldmVsIjogIkdVSURBTkNFX09OTFkiLA0KICAgICAgImNoZWNrZXJCaW5kaW5ncyI6ICJOT1RfQVBQTElDQUJMRV9XSVRIX1JFQVNPTjogYXJjaGl0ZWN0dXJlIGltcGFjdCBhbmQgb3duZXIgbm92ZWx0eSByZXF1aXJlIHNlbWFudGljIHJldmlldyIsDQogICAgICAic291cmNlUGF0aCI6ICJkb2NzL3JlZmVyZW5jZS9hZ2VudF9kZWZlY3RfaW50ZWxsaWdlbmNlL2VudHJpZXMvQ1ZGX0FESUYtMDAyNy5tZCINCiAgICB9LA0KICAgIHsNCiAgICAgICJkZWZlY3RJZCI6ICJBRElGLTAwMjgiLA0KICAgICAgInRpdGxlIjogIkFnZ3JlZ2F0ZWQgb3V0cHV0IGV4Y2VlZHMgcGVyLWl0ZW0gYXV0aG9yaXR5IGV2aWRlbmNlIiwNCiAgICAgICJkZWZlY3RDYXRlZ29yeSI6ICJBVVRIT1JJVFlfQk9VTkRBUlkiLA0KICAgICAgImRlZmVjdENsYXNzIjogIlJVTEVfR0FQIiwNCiAgICAgICJzZXZlcml0eSI6ICJISUdIIiwNCiAgICAgICJlbmZvcmNlbWVudExldmVsIjogIkdVSURBTkNFX09OTFkiLA0KICAgICAgImNoZWNrZXJCaW5kaW5ncyI6ICJOT1RfQVBQTElDQUJMRV9XSVRIX1JFQVNPTjogcGVyLWl0ZW0gYXV0aG9yaXR5IGNvbXBsZXRlbmVzcyByZXF1aXJlcyBzZW1hbnRpYyBzb3VyY2UgYW5kIHRlc3QgcmV2aWV3IiwNCiAgICAgICJzb3VyY2VQYXRoIjogImRvY3MvcmVmZXJlbmNlL2FnZW50X2RlZmVjdF9pbnRlbGxpZ2VuY2UvZW50cmllcy9DVkZfQURJRi0wMDI4Lm1kIg0KICAgIH0sDQogICAgew0KICAgICAgImRlZmVjdElkIjogIkFESUYtMDAyOSIsDQogICAgICAidGl0bGUiOiAiRHVyYWJsZSBldmlkZW5jZSBwcm9qZWN0aW9uIGFuZCBhZG1pc3Npb24gZHJpZnQiLA0KICAgICAgImRlZmVjdENhdGVnb3J5IjogIkFVVEhPUklUWV9CT1VOREFSWSIsDQogICAgICAiZGVmZWN0Q2xhc3MiOiAiV09SS0VSX0VYRUNVVElPTl9FUlJPUiIsDQogICAgICAic2V2ZXJpdHkiOiAiSElHSCIsDQogICAgICAiZW5mb3JjZW1lbnRMZXZlbCI6ICJHVUlEQU5DRV9PTkxZIiwNCiAgICAgICJjaGVja2VyQmluZGluZ3MiOiAiTk9UX0FQUExJQ0FCTEVfV0lUSF9SRUFTT046IHByb2plY3Rpb24gY29tcGxldGVuZXNzIGFuZCBhZG1pc3Npb24gc3ltbWV0cnkgcmVxdWlyZSBzZW1hbnRpYyBzb3VyY2UgYW5kIG5lZ2F0aXZlLXRlc3QgcmV2aWV3IiwNCiAgICAgICJzb3VyY2VQYXRoIjogImRvY3MvcmVmZXJlbmNlL2FnZW50X2RlZmVjdF9pbnRlbGxpZ2VuY2UvZW50cmllcy9DVkZfQURJRi0wMDI5Lm1kIg0KICAgIH0sDQogICAgew0KICAgICAgImRlZmVjdElkIjogIkFESUYtMDAzMCIsDQogICAgICAidGl0bGUiOiAiTGl2ZSB0ZXN0IGRpcmVjdCBpbnZvY2F0aW9uIGJ5cGFzc2VzIGV2aWRlbmNlIGNhcHR1cmUiLA0KICAgICAgImRlZmVjdENhdGVnb3J5IjogIkdBVEVfVFJJR0dFUl9GUklDVElPTiIsDQogICAgICAiZGVmZWN0Q2xhc3MiOiAiV09SS0VSX0VYRUNVVElPTl9FUlJPUiIsDQogICAgICAic2V2ZXJpdHkiOiAiSElHSCIsDQogICAgICAiZW5mb3JjZW1lbnRMZXZlbCI6ICJHVUlEQU5DRV9PTkxZIiwNCiAgICAgICJjaGVja2VyQmluZGluZ3MiOiAiTk9UX0FQUExJQ0FCTEVfV0lUSF9SRUFTT046IHRoZSBBMyBwZXJtaXQgZ3VhcmQgaXMgbG9jYWwgZXhlY3V0YWJsZSBwcm9vZiwgd2hpbGUgbm8gZ2VuZXJhbCBnb3Zlcm5hbmNlIGNoZWNrZXIgeWV0IGNvdmVycyBldmVyeSBsaXZlLXRlc3QgcnVubmVyIGRlc2lnbiIsDQogICAgICAic291cmNlUGF0aCI6ICJkb2NzL3JlZmVyZW5jZS9hZ2VudF9kZWZlY3RfaW50ZWxsaWdlbmNlL2VudHJpZXMvQ1ZGX0FESUYtMDAzMC5tZCINCiAgICB9LA0KICAgIHsNCiAgICAgICJkZWZlY3RJZCI6ICJBRElGLTAwMzgiLA0KICAgICAgInRpdGxlIjogIldvcmtlciByZXR1cm4gZmFzdCBnYXRlIGFjY2VwdHMgc2NhZmZvbGQgY2xvc3VyZSByZXNpZHVlIiwNCiAgICAgICJkZWZlY3RDYXRlZ29yeSI6ICJDTE9TVVJFX0VWSURFTkNFIiwNCiAgICAgICJkZWZlY3RDbGFzcyI6ICJNQUNISU5FX0dBVEVfR0FQIiwNCiAgICAgICJzZXZlcml0eSI6ICJISUdIIiwNCiAgICAgICJlbmZvcmNlbWVudExldmVsIjogIlBBUlRJQUxfQ0hFQ0siLA0KICAgICAgImNoZWNrZXJCaW5kaW5ncyI6ICJnb3Zlcm5hbmNlL2NvbXBhdC9jaGVja193b3JrZXJfcmV0dXJuX3F1YWxpdHlfZ2F0ZS5weTsgZ292ZXJuYW5jZS9jb21wYXQvY2hlY2tfbWFjaGluZV9jbG9zdXJlX3BhY2thZ2UucHkiLA0KICAgICAgInNvdXJjZVBhdGgiOiAiZG9jcy9yZWZlcmVuY2UvYWdlbnRfZGVmZWN0X2ludGVsbGlnZW5jZS9lbnRyaWVzL0NWRl9BRElGLTAwMzgubWQiDQogICAgfSwNCiAgICB7DQogICAgICAiZGVmZWN0SWQiOiAiQURJRi0wMDQyIiwNCiAgICAgICJ0aXRsZSI6ICJTY3JlZW5zaG90IG1ldGFkYXRhIGFjY2VwdGVkIHdpdGhvdXQgcGl4ZWwtc3RhdGUgYmluZGluZyIsDQogICAgICAiZGVmZWN0Q2F0ZWdvcnkiOiAiQ0xPU1VSRV9FVklERU5DRSIsDQogICAgICAiZGVmZWN0Q2xhc3MiOiAiRVZJREVOQ0VfSU5URVJQUkVUQVRJT05fRVJST1IiLA0KICAgICAgInNldmVyaXR5IjogIkhJR0giLA0KICAgICAgImVuZm9yY2VtZW50TGV2ZWwiOiAiR1VJREFOQ0VfT05MWSIsDQogICAgICAiY2hlY2tlckJpbmRpbmdzIjogIk5PVF9BUFBMSUNBQkxFX1dJVEhfUkVBU09OOiBjdXJyZW50IHN0cnVjdHVyYWwgZ2F0ZXMgdmFsaWRhdGUgcGFja2V0IHNoYXBlIGJ1dCBkbyBub3QgaW5zcGVjdCBhcmJpdHJhcnkgc2NyZWVuc2hvdCBwaXhlbHMgYWdhaW5zdCBKU09OIGNsYWltcyIsDQogICAgICAic291cmNlUGF0aCI6ICJkb2NzL3JlZmVyZW5jZS9hZ2VudF9kZWZlY3RfaW50ZWxsaWdlbmNlL2VudHJpZXMvQ1ZGX0FESUYtMDA0Mi5tZCINCiAgICB9LA0KICAgIHsNCiAgICAgICJkZWZlY3RJZCI6ICJBRElGLTAwNDYiLA0KICAgICAgInRpdGxlIjogIkJyb2FkIHByb2plY3Rpb24gcmV2aXZlcyBzdXBlcnNlZGVkIHB1YmxpYyBjbGFpbSIsDQogICAgICAiZGVmZWN0Q2F0ZWdvcnkiOiAiU09VUkNFX0ZJREVMSVRZIiwNCiAgICAgICJkZWZlY3RDbGFzcyI6ICJNQUNISU5FX0dBVEVfR0FQIiwNCiAgICAgICJzZXZlcml0eSI6ICJISUdIIiwNCiAgICAgICJlbmZvcmNlbWVudExldmVsIjogIkdVSURBTkNFX09OTFkiLA0KICAgICAgImNoZWNrZXJCaW5kaW5ncyI6ICJOT1RfQVBQTElDQUJMRV9XSVRIX1JFQVNPTjogbm8gY3VycmVudCBjaGVja2VyIGNvbXBhcmVzIGNyb3NzLXN1cmZhY2Ugc2VtYW50aWMgZGlzcG9zaXRpb25zIGFuZCBzdXBlcnNlZGluZyByZXZpZXcgZGVjaXNpb25zIGJlZm9yZSBwcm9qZWN0aW9uIiwNCiAgICAgICJzb3VyY2VQYXRoIjogImRvY3MvcmVmZXJlbmNlL2FnZW50X2RlZmVjdF9pbnRlbGxpZ2VuY2UvZW50cmllcy9DVkZfQURJRi0wMDQ2Lm1kIg0KICAgIH0sDQogICAgew0KICAgICAgImRlZmVjdElkIjogIkFESUYtMDA0NyIsDQogICAgICAidGl0bGUiOiAiUHJvdmlkZXItYmFja2VkIHN1cmZhY2UgbWlzcmVwb3J0ZWQgYXMgemVybyBpbnZvY2F0aW9uIGNvbnN1bXB0aW9uIiwNCiAgICAgICJkZWZlY3RDYXRlZ29yeSI6ICJDTE9TVVJFX0VWSURFTkNFIiwNCiAgICAgICJkZWZlY3RDbGFzcyI6ICJFVklERU5DRV9JTlRFUlBSRVRBVElPTl9FUlJPUiIsDQogICAgICAic2V2ZXJpdHkiOiAiSElHSCIsDQogICAgICAiZW5mb3JjZW1lbnRMZXZlbCI6ICJHVUlEQU5DRV9PTkxZIiwNCiAgICAgICJjaGVja2VyQmluZGluZ3MiOiAiTk9UX0FQUExJQ0FCTEVfV0lUSF9SRUFTT046IGN1cnJlbnQgZ2F0ZXMgdmFsaWRhdGUgZmllbGQgcHJlc2VuY2UgYnV0IGRvIG5vdCBkaXN0aW5ndWlzaCBob3N0LXNlc3Npb24gY29uc3VtcHRpb24gZnJvbSB3b3JrZXItaW5pdGlhdGVkIG91dGJvdW5kIGNhbGxzIiwNCiAgICAgICJzb3VyY2VQYXRoIjogImRvY3MvcmVmZXJlbmNlL2FnZW50X2RlZmVjdF9pbnRlbGxpZ2VuY2UvZW50cmllcy9DVkZfQURJRi0wMDQ3Lm1kIg0KICAgIH0sDQogICAgew0KICAgICAgImRlZmVjdElkIjogIkFESUYtMDA0OCIsDQogICAgICAidGl0bGUiOiAiU2Vzc2lvbi1zdGFydCBzdGF0ZSBtaXNyZXBvcnRlZCBhcyBkaXNwYXRjaCBwcm92ZW5hbmNlIiwNCiAgICAgICJkZWZlY3RDYXRlZ29yeSI6ICJTT1VSQ0VfRklERUxJVFkiLA0KICAgICAgImRlZmVjdENsYXNzIjogIkVWSURFTkNFX0lOVEVSUFJFVEFUSU9OX0VSUk9SIiwNCiAgICAgICJzZXZlcml0eSI6ICJISUdIIiwNCiAgICAgICJlbmZvcmNlbWVudExldmVsIjogIkdVSURBTkNFX09OTFkiLA0KICAgICAgImNoZWNrZXJCaW5kaW5ncyI6ICJOT1RfQVBQTElDQUJMRV9XSVRIX1JFQVNPTjogc2Vzc2lvbiBpZGVudGl0eSBhbmQgZmlsZSBjcmVhdGlvbiBwcm92ZW5hbmNlIGFyZSBub3QgcmVsaWFibHkgZXhwb3NlZCB0byBjdXJyZW50IHJlcG9zaXRvcnktbG9jYWwgZ2F0ZXMiLA0KICAgICAgInNvdXJjZVBhdGgiOiAiZG9jcy9yZWZlcmVuY2UvYWdlbnRfZGVmZWN0X2ludGVsbGlnZW5jZS9lbnRyaWVzL0NWRl9BRElGLTAwNDgubWQiDQogICAgfSwNCiAgICB7DQogICAgICAiZGVmZWN0SWQiOiAiQURJRi0wMDUwIiwNCiAgICAgICJ0aXRsZSI6ICJQdWJsaWMgcmVwb3NpdG9yeSB1c2VkIGFzIGdvdmVybmVkIGF1dGhvcmluZyBzb3VyY2UiLA0KICAgICAgImRlZmVjdENhdGVnb3J5IjogIkFVVEhPUklUWV9CT1VOREFSWSIsDQogICAgICAiZGVmZWN0Q2xhc3MiOiAiUFJPQ0VTU19OT05DT01QTElBTkNFIiwNCiAgICAgICJzZXZlcml0eSI6ICJISUdIIiwNCiAgICAgICJlbmZvcmNlbWVudExldmVsIjogIkdVSURBTkNFX09OTFkiLA0KICAgICAgImNoZWNrZXJCaW5kaW5ncyI6ICJOT1RfQVBQTElDQUJMRV9XSVRIX1JFQVNPTjogY3VycmVudCBsb2NhbCBnYXRlcyBjYW5ub3QgcHJldmVudCBhIHNlcGFyYXRlIG1hY2hpbmUgb3IgYWdlbnQgZnJvbSBhdXRob3JpbmcgYW5kIHB1c2hpbmcgZGlyZWN0bHkgaW4gdGhlIHB1YmxpYyBjbG9uZSIsDQogICAgICAic291cmNlUGF0aCI6ICJkb2NzL3JlZmVyZW5jZS9hZ2VudF9kZWZlY3RfaW50ZWxsaWdlbmNlL2VudHJpZXMvQ1ZGX0FESUYtMDA1MC5tZCINCiAgICB9LA0KICAgIHsNCiAgICAgICJkZWZlY3RJZCI6ICJBRElGLTAwNTEiLA0KICAgICAgInRpdGxlIjogIkJ5dGUtZXhhY3QgYXJjaGl2ZSBzY29wZSBvbWl0cyBkZXBlbmRlbnQgZ3VhcmQgcmVjb25jaWxpYXRpb24iLA0KICAgICAgImRlZmVjdENhdGVnb3J5IjogIlNDT1BFX0FORF9PV05FUlNISVAiLA0KICAgICAgImRlZmVjdENsYXNzIjogIk1BQ0hJTkVfR0FURV9HQVAiLA0KICAgICAgInNldmVyaXR5IjogIkhJR0giLA0KICAgICAgImVuZm9yY2VtZW50TGV2ZWwiOiAiUEFSVElBTF9DSEVDSyIsDQogICAgICAiY2hlY2tlckJpbmRpbmdzIjogImdvdmVybmFuY2UvY29tcGF0L2NoZWNrX2FnZW50X3BhY2tldF9hdXRob3JpdHlfYW5kX2VuY29kaW5nLnB5OyBnb3Zlcm5hbmNlL2NvbXBhdC9jaGVja19kb2NzX2dvdmVybmFuY2VfY29tcGF0LnB5OyBnb3Zlcm5hbmNlL2NvbXBhdC9jaGVja19zeXN0ZW1fY2hhaW5fbWFwX2ZyZXNobmVzcy5weSIsDQogICAgICAic291cmNlUGF0aCI6ICJkb2NzL3JlZmVyZW5jZS9hZ2VudF9kZWZlY3RfaW50ZWxsaWdlbmNlL2VudHJpZXMvQ1ZGX0FESUYtMDA1MS5tZCINCiAgICB9LA0KICAgIHsNCiAgICAgICJkZWZlY3RJZCI6ICJBRElGLTAwMDQiLA0KICAgICAgInRpdGxlIjogIkRlY2lkZWQgcm9hZG1hcCByZXRhaW5zIHNhbWUtdHJhbmNoZSBwYXJrZWQgcmVzaWR1ZSIsDQogICAgICAiZGVmZWN0Q2F0ZWdvcnkiOiAiU1RBVEVfQ09OVElOVUlUWSIsDQogICAgICAiZGVmZWN0Q2xhc3MiOiAiTUFDSElORV9HQVRFX0dBUCIsDQogICAgICAic2V2ZXJpdHkiOiAiTUVESVVNIiwNCiAgICAgICJlbmZvcmNlbWVudExldmVsIjogIk1BQ0hJTkVfQ0hFQ0tFRCIsDQogICAgICAiY2hlY2tlckJpbmRpbmdzIjogImdvdmVybmFuY2UvY29tcGF0L2NoZWNrX2Nsb3N1cmVfcGFja2FnaW5nX3ByZWZsaWdodC5weSAoX3ZhbGlkYXRlX2RlY2lkZWRfcm9hZG1hcF9yZXNpZHVlKSIsDQogICAgICAic291cmNlUGF0aCI6ICJkb2NzL3JlZmVyZW5jZS9hZ2VudF9kZWZlY3RfaW50ZWxsaWdlbmNlL2VudHJpZXMvQ1ZGX0FESUYtMDAwNC5tZCINCiAgICB9LA0KICAgIHsNCiAgICAgICJkZWZlY3RJZCI6ICJBRElGLTAwMDUiLA0KICAgICAgInRpdGxlIjogIkNsb3NlZCBhcnRpZmFjdCByZXRhaW5zIHBlbmRpbmctZ2F0ZSByZXNpZHVlIiwNCiAgICAgICJkZWZlY3RDYXRlZ29yeSI6ICJDTE9TVVJFX0VWSURFTkNFIiwNCiAgICAgICJkZWZlY3RDbGFzcyI6ICJNQUNISU5FX0dBVEVfR0FQIiwNCiAgICAgICJzZXZlcml0eSI6ICJNRURJVU0iLA0KICAgICAgImVuZm9yY2VtZW50TGV2ZWwiOiAiTUFDSElORV9DSEVDS0VEIiwNCiAgICAgICJjaGVja2VyQmluZGluZ3MiOiAiZ292ZXJuYW5jZS9jb21wYXQvY2hlY2tfY2xvc3VyZV9wYWNrYWdpbmdfcHJlZmxpZ2h0LnB5IChjbG9zdXJlLXJlc2lkdWUgdmFsaWRhdGlvbiwgc2hhcmVkIGxvZ2ljIHdpdGggX3ZhbGlkYXRlX2RlY2lkZWRfcm9hZG1hcF9yZXNpZHVlIGFuZCBfaXNfY2xvc2VkX2VxdWl2YWxlbnQpIiwNCiAgICAgICJzb3VyY2VQYXRoIjogImRvY3MvcmVmZXJlbmNlL2FnZW50X2RlZmVjdF9pbnRlbGxpZ2VuY2UvZW50cmllcy9DVkZfQURJRi0wMDA1Lm1kIg0KICAgIH0sDQogICAgew0KICAgICAgImRlZmVjdElkIjogIkFESUYtMDAwNyIsDQogICAgICAidGl0bGUiOiAiR2F0ZSBtYXJrZXIgaW4gYm91bmRhcnkgcHJvc2UgdHJpZ2dlcnMgd3JvbmcgZXZpZGVuY2UgY2xhc3MiLA0KICAgICAgImRlZmVjdENhdGVnb3J5IjogIkdBVEVfVFJJR0dFUl9GUklDVElPTiIsDQogICAgICAiZGVmZWN0Q2xhc3MiOiAiUEhBU0VfR0FURV9QTEFDRU1FTlRfR0FQIiwNCiAgICAgICJzZXZlcml0eSI6ICJNRURJVU0iLA0KICAgICAgImVuZm9yY2VtZW50TGV2ZWwiOiAiUEFSVElBTF9DSEVDSyIsDQogICAgICAiY2hlY2tlckJpbmRpbmdzIjogImdvdmVybmFuY2UvY29tcGF0L2NoZWNrX2NvcnB1c19zY2FuX3JlZ2lzdHJ5LnB5OyBnb3Zlcm5hbmNlL2NvbXBhdC9jaGVja19maW5kaW5nX3RvX2dvdmVybmFuY2VfbGVhcm5pbmcucHk7IGdvdmVybmFuY2UvY29tcGF0L2NoZWNrX2RlbHRhX2V4ZWN1dGlvbl9jbGFpbV9ib3VuZGFyeS5weSAobm90IGFsbCB0cmlnZ2VyIGNsYXNzZXMgaGF2ZSBhIGRlZGljYXRlZCB0ZXN0IGFzc2VydGluZyB0aGUgZmFsc2UtcG9zaXRpdmUgaXRzZWxmKSIsDQogICAgICAic291cmNlUGF0aCI6ICJkb2NzL3JlZmVyZW5jZS9hZ2VudF9kZWZlY3RfaW50ZWxsaWdlbmNlL2VudHJpZXMvQ1ZGX0FESUYtMDAwNy5tZCINCiAgICB9LA0KICAgIHsNCiAgICAgICJkZWZlY3RJZCI6ICJBRElGLTAwMDkiLA0KICAgICAgInRpdGxlIjogIkJhY2t0aWNrLXF1b3RlZCBoZWFkaW5nIG5hbWUgdHJ1bmNhdGVzIHJlYWwgc2VjdGlvbiIsDQogICAgICAiZGVmZWN0Q2F0ZWdvcnkiOiAiR0FURV9UUklHR0VSX0ZSSUNUSU9OIiwNCiAgICAgICJkZWZlY3RDbGFzcyI6ICJQSEFTRV9HQVRFX1BMQUNFTUVOVF9HQVAiLA0KICAgICAgInNldmVyaXR5IjogIk1FRElVTSIsDQogICAgICAiZW5mb3JjZW1lbnRMZXZlbCI6ICJQQVJUSUFMX0NIRUNLIiwNCiAgICAgICJjaGVja2VyQmluZGluZ3MiOiAiZ292ZXJuYW5jZS9jb21wYXQvY2hlY2tfcmVzY2FuX2ludGVsbGlnZW5jZV9oYXJkZW5pbmcucHkgKGNvbmZpcm1lZCByb290IGNhdXNlOiBgX2V4dHJhY3Rfc2VjdGlvbmAgdXNlcyBgdGV4dC5maW5kKGhlYWRpbmcpYCk7IGxpa2VseSBhbHNvIGFmZmVjdHMgb3RoZXIgc2VjdGlvbi1zY29wZWQgY2hlY2tlcnMgdXNpbmcgdGhlIHNhbWUgcGF0dGVybiAoZS5nLiBjb3JwdXMtY29tcGxldGVuZXNzLCBkZWx0YS1leGVjdXRpb24tY2xhaW0tYm91bmRhcnksIGVwaXN0ZW1pYy1wcm9jZXNzKSBidXQgZWFjaCBoYXMgbm90IGJlZW4gaW5kaXZpZHVhbGx5IGNvbmZpcm1lZCIsDQogICAgICAic291cmNlUGF0aCI6ICJkb2NzL3JlZmVyZW5jZS9hZ2VudF9kZWZlY3RfaW50ZWxsaWdlbmNlL2VudHJpZXMvQ1ZGX0FESUYtMDAwOS5tZCINCiAgICB9LA0KICAgIHsNCiAgICAgICJkZWZlY3RJZCI6ICJBRElGLTAwMTciLA0KICAgICAgInRpdGxlIjogIkNvbW1pdC1zaGFwZSBwcm9iaW5nIGluc3RlYWQgb2Ygc3Rld2FyZC1maXJzdCBzcGxpdCBwbGFubmluZyIsDQogICAgICAiZGVmZWN0Q2F0ZWdvcnkiOiAiU0NPUEVfQU5EX09XTkVSU0hJUCIsDQogICAgICAiZGVmZWN0Q2xhc3MiOiAiV09SS0VSX0VYRUNVVElPTl9FUlJPUiIsDQogICAgICAic2V2ZXJpdHkiOiAiTUVESVVNIiwNCiAgICAgICJlbmZvcmNlbWVudExldmVsIjogIlBBUlRJQUxfQ0hFQ0siLA0KICAgICAgImNoZWNrZXJCaW5kaW5ncyI6ICJnb3Zlcm5hbmNlL2NvbXBhdC9ydW5fYWdlbnRfY29tbWl0X3N0ZXdhcmRfcHJlZmxpZ2h0LnB5IiwNCiAgICAgICJzb3VyY2VQYXRoIjogImRvY3MvcmVmZXJlbmNlL2FnZW50X2RlZmVjdF9pbnRlbGxpZ2VuY2UvZW50cmllcy9DVkZfQURJRi0wMDE3Lm1kIg0KICAgIH0sDQogICAgew0KICAgICAgImRlZmVjdElkIjogIkFESUYtMDAxOCIsDQogICAgICAidGl0bGUiOiAiT3B0aW9uYWwgY29tcGxldGlvbiByZXZpZXcgb3ZlcmJ1aWx0IGludG8gY2xvc3VyZS1zaGFwZSBkcmFnIiwNCiAgICAgICJkZWZlY3RDYXRlZ29yeSI6ICJHQVRFX1RSSUdHRVJfRlJJQ1RJT04iLA0KICAgICAgImRlZmVjdENsYXNzIjogIldPUktFUl9FWEVDVVRJT05fRVJST1IiLA0KICAgICAgInNldmVyaXR5IjogIk1FRElVTSIsDQogICAgICAiZW5mb3JjZW1lbnRMZXZlbCI6ICJHVUlEQU5DRV9PTkxZIiwNCiAgICAgICJjaGVja2VyQmluZGluZ3MiOiAiTk9UX0FQUExJQ0FCTEVfV0lUSF9SRUFTT046IGRlY2lkaW5nIHdoZXRoZXIgYSBjb21wbGV0aW9uIHJldmlldyBpcyByZXF1aXJlZCB2ZXJzdXMgb3B0aW9uYWwgZGVwZW5kcyBvbiB0aGUgd29yayBvcmRlcidzIFJldmlld2VyIENsb3N1cmUgQ29udmVyc2lvbiBhbmQgcmV2aWV3ZXIganVkZ21lbnQiLA0KICAgICAgInNvdXJjZVBhdGgiOiAiZG9jcy9yZWZlcmVuY2UvYWdlbnRfZGVmZWN0X2ludGVsbGlnZW5jZS9lbnRyaWVzL0NWRl9BRElGLTAwMTgubWQiDQogICAgfSwNCiAgICB7DQogICAgICAiZGVmZWN0SWQiOiAiQURJRi0wMDIyIiwNCiAgICAgICJ0aXRsZSI6ICJMaXRlcmFsIGV2aWRlbmNlIHJvdyBmYWxzZSBwb3NpdGl2ZXMgaW4gd29ya2VyIHJldHVybnMiLA0KICAgICAgImRlZmVjdENhdGVnb3J5IjogIkdBVEVfVFJJR0dFUl9GUklDVElPTiIsDQogICAgICAiZGVmZWN0Q2xhc3MiOiAiUlVMRV9HQVAiLA0KICAgICAgInNldmVyaXR5IjogIk1FRElVTSIsDQogICAgICAiZW5mb3JjZW1lbnRMZXZlbCI6ICJQQVJUSUFMX0NIRUNLIiwNCiAgICAgICJjaGVja2VyQmluZGluZ3MiOiAiZ292ZXJuYW5jZS9jb21wYXQvY2hlY2tfYWdlbnRfcGFja2V0X2F1dGhvcml0eV9hbmRfZW5jb2RpbmcucHk7IGdvdmVybmFuY2UvY29tcGF0L2NoZWNrX2ZpbmRpbmdfdG9fZ292ZXJuYW5jZV9sZWFybmluZy5weSIsDQogICAgICAic291cmNlUGF0aCI6ICJkb2NzL3JlZmVyZW5jZS9hZ2VudF9kZWZlY3RfaW50ZWxsaWdlbmNlL2VudHJpZXMvQ1ZGX0FESUYtMDAyMi5tZCINCiAgICB9LA0KICAgIHsNCiAgICAgICJkZWZlY3RJZCI6ICJBRElGLTAwNDkiLA0KICAgICAgInRpdGxlIjogIkdvdmVybmVkIGNvbW1hbmQgc2lnbmF0dXJlIGludmVudGVkIHdpdGhvdXQgaGVscCB2ZXJpZmljYXRpb24iLA0KICAgICAgImRlZmVjdENhdGVnb3J5IjogIlNPVVJDRV9GSURFTElUWSIsDQogICAgICAiZGVmZWN0Q2xhc3MiOiAiRVZJREVOQ0VfSU5URVJQUkVUQVRJT05fRVJST1IiLA0KICAgICAgInNldmVyaXR5IjogIk1FRElVTSIsDQogICAgICAiZW5mb3JjZW1lbnRMZXZlbCI6ICJHVUlEQU5DRV9PTkxZIiwNCiAgICAgICJjaGVja2VyQmluZGluZ3MiOiAiTk9UX0FQUExJQ0FCTEVfV0lUSF9SRUFTT046IGN1cnJlbnQgZ2F0ZXMgZXhlY3V0ZSBhcHBsaWNhYmxlIGNoZWNrZXJzIGJ1dCBkbyBub3QgdmFsaWRhdGUgZXZlcnkgY29tbWFuZCBleGFtcGxlIGFnYWluc3QgZWFjaCB0YXJnZXQgcGFyc2VyIiwNCiAgICAgICJzb3VyY2VQYXRoIjogImRvY3MvcmVmZXJlbmNlL2FnZW50X2RlZmVjdF9pbnRlbGxpZ2VuY2UvZW50cmllcy9DVkZfQURJRi0wMDQ5Lm1kIg0KICAgIH0NCiAgXSwNCiAgInRydW5jYXRlZCI6IGZhbHNlLA0KICAidG90YWxDYW5kaWRhdGVzIjogMjYsDQogICJjbGFpbUJvdW5kYXJ5IjogIlJldHVybmluZyB0aGlzIHBhY2tldCBpcyBub3QgZXZpZGVuY2UgdGhhdCBhbnkgY2FsbGVyIHJlYWQgb3IgdW5kZXJzdG9vZCBpdC4iDQp9DQo="
+  },
+  "procedureObservations": [
+    "One PowerShell metadata search failed to parse bash-style braces before execution; corrected explicit directory rg. No effect slot involved."
+  ],
+  "reviewBoundary": "EVALUATE_RETURNED_EVIDENCE_NOT_RECREATE_IMPLEMENTATION",
+  "parentRoot": "NCR_HTML_CONFIGURED_RECEIPT_CONTROL_PROOF",
+  "generation": 9,
+  "scecOrdinal": 2,
+  "counters": [
+    2,
+    0,
+    2,
+    0
+  ],
+  "blockers": 2,
+  "freeze": "governance_kernel_freeze_recommended",
+  "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
+  "claimBoundary": "Selected-source design and byte joins only; no implementation, refusal execution, B-E or AI governance proof."
+}
