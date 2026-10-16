@@ -464,6 +464,17 @@ def _validate_recurring_blocked_return(path: str, text: str) -> list[dict[str, s
         return violations
     if not BLOCKED_WITH_REASON_RE.search(text):
         return violations
+    # The escalation contract governs worker returns, not the reviewer's
+    # disposition of that same event. Require an unambiguous explicit type;
+    # untyped/ambiguous blocked reviews retain the existing fail-closed checks.
+    preamble = re.split(r"(?m)^##\s+", text, maxsplit=1)[0]
+    doc_types = re.findall(r"(?im)^docType:[ \t]*(\S+)[ \t]*$", preamble)
+    worker_return = re.search(
+        r"(?im)^(?:Self-declared worker-return artifact:[ \t]*yes|"
+        r"contractProfile:[ \t]*WORKER_RETURN\S*)[ \t]*$", preamble
+    )
+    if doc_types == ["completion_review"] and not worker_return:
+        return violations
 
     cluster_match = ROOT_CAUSE_CLUSTER_RE.search(text)
     cluster_id = (

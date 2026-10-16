@@ -496,6 +496,43 @@ All clear.
     assert issues == []
 
 
+def test_blocked_completion_review_keeps_generic_finding_validation() -> None:
+    doc = "# Local Review\n\ndocType: completion_review\nStatus: BLOCKED_WITH_REASON\n"
+    doc += "\n## Findings / Position\n\nThe original worker result remains blocked.\n"
+    issues = MODULE._validate_path_with_text("docs/reviews/CVF_TEST.md", doc)
+    assert {issue["type"] for issue in issues} == {"learning_disposition_section_missing"}
+    assert MODULE._validate_recurring_blocked_return("docs/reviews/CVF_TEST.md", doc) == []
+
+
+def test_actual_first_worker_return_remains_valid_beside_same_event_review(tmp_path) -> None:
+    worker_path = "docs/reviews/CVF_NCR_HTML_B_E_R1C_RUNTIME_WORKER_RETURN_2026-10-17.md"
+    worker = (MODULE.REPO_ROOT / worker_path).read_text(encoding="utf-8")
+    cluster = MODULE.ROOT_CAUSE_CLUSTER_RE.search(worker).group(1)
+    review = "# Local Review\n\ndocType: completion_review\nStatus: BLOCKED_WITH_REASON\n"
+    review += f"\n## Findings / Position\n\nSame-event binding: worker rootCauseClusterId {cluster}.\n"
+    target = tmp_path / worker_path
+    target.parent.mkdir(parents=True)
+    target.write_text(worker, encoding="utf-8")
+    review_path = "docs/reviews/CVF_TEST_COMPLETION.md"
+    (tmp_path / review_path).write_text(review, encoding="utf-8")
+    with patch.object(MODULE, "REPO_ROOT", tmp_path):
+        assert MODULE._validate_recurring_blocked_return(worker_path, worker) == []
+        assert MODULE._validate_recurring_blocked_return(review_path, review) == []
+
+
+def test_completion_review_type_does_not_exempt_declared_worker_return() -> None:
+    for marker in ("Self-declared worker-return artifact: yes", "contractProfile: WORKER_RETURN_FULL_GATE_V1"):
+        doc = "docType: completion_review\n" + marker + "\n" + _BLOCKED_RETURN_MISSING_RECURRENCE
+        issues = MODULE._validate_recurring_blocked_return("docs/reviews/CVF_TEST.md", doc)
+        assert "recurrence_disposition_missing" in {issue["type"] for issue in issues}
+
+
+def test_ambiguous_completion_review_type_remains_fail_closed() -> None:
+    doc = "docType: completion_review\ndocType: review\n" + _BLOCKED_RETURN_MISSING_RECURRENCE
+    issues = MODULE._validate_recurring_blocked_return("docs/reviews/CVF_TEST.md", doc)
+    assert "recurrence_disposition_missing" in {issue["type"] for issue in issues}
+
+
 def test_provider_memory_escape_work_order_allows_governed_disposition() -> None:
     doc = """
 # Work Order

@@ -37,11 +37,11 @@
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_NCR_HTML_B_E_R1C_RUNTIME_2026-10-17.md",
-    "baselineSha256": "0335841c316591ab728c97787ddcbbcfd789c853c042763c4a4df2305ad57d93",
+    "baselineSha256": "5915cfb0d9c8cdce316a383c97c51c59bd214c23ae925fedc2d09ac9882b87ef",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R1C_RUNTIME_2026-10-17.md",
-    "workOrderSha256": "f4f86ac9367387396519c952e0b78d1ba858d80bc725175d282f01a8ec83b43d"
+    "workOrderSha256": "0065807778e47a02808d30b6409cbcafac497d0f5ad40912bccd29755b5c9a40"
   },
-  "currentAuthoritySyncReason": "Fresh first-result continuity: BE-R01 spent blocked first result: worker=BLOCKED_WITH_REASON; independent oracle=REJECTED_NOT_ACCEPTED; program/result acceptance=False; exhausted grant, source identity unchanged.",
+  "currentAuthoritySyncReason": "Fresh first-result reviewer-correction: Reviewer adjudication complete; runtime acceptance remains blocked and grant spent. First material dbb07364863ea627c22b07fd23b62a574b10aea0/continuity e4497e82cafe81b302d30aa5cbaa2331f6397a35 passed normal91/91, but automatic P4 committed-range generation failed RIPA on root-selected invalid reviewer Status. That unsafe automatic result is retained, never promoted. Existing canonical Recurring Blocked-Return Escalation governs blocked worker returns; explicit completion_review negative adjudication is not a new worker return. The narrow existing checker correction retains generic finding validation, actual/ambiguous worker enforcement and original FIRST_OCCURRENCE worker bytes. Worker focused tests and distinct root five-case metadata probe passed; no runtime/provider/native effect or worker repair/replay. Final first-result combined material range has15 paths (original13 plus checker2), following actual-SHA continuity6. Root corrective metadata helper first stopped on a Windows default-codepage read after partial documentary writes; exact preimages restored, UTF-8 explicit, no tests/effects replayed. Worker encoding inspection followed its initial patch and is recorded as partial preparation. BE-S10-G tracks this prerequisite; BE-S10 passive observer source work remains pending separate authority. Corrective normal hook attempt90/91 passed, active continuity failed because root move omitted explicit LHW24; existing marker restored, no new rule/checker or effect rerun.; exhausted grant, source identity unchanged.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",

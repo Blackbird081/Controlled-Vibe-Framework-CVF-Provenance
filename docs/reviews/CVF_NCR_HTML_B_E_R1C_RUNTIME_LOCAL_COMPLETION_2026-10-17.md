@@ -2,7 +2,7 @@
 
 Memory class: governed-completion-review
 docType: completion_review
-Status: REVIEWER_ACCEPTED_BLOCKED_SPENT_FIRST_RESULT
+Status: BLOCKED_WITH_REASON
 Runtime result status: BLOCKED_WITH_REASON
 Date: 2026-10-17
 Batch ID: CVF-NCR-HTML-B-E-R1C-RUNTIME-20261017
@@ -18,7 +18,7 @@ Record the actual cap2 first result, close/exhaust its one-actor grant and retai
 
 ## Target / Source
 
-docs/reviews/CVF_NCR_HTML_B_E_R1C_RUNTIME_WORKER_RETURN_2026-10-17.md SHA256 fea59eaed1f173e9e655745c6427d52c51c37677749728e88a8d958081868444; docs/reviews/evidence/ncr-html-b-e-r1c-runtime-worker-20261017.json SHA256 e69bb9272e504799980ea3a1fd11091eaebda457af1e6ff682dc7217a0cfe220; docs/reviews/evidence/ncr-html-b-e-r1c-runtime-local-20261017.json SHA256 16ea2668bf6d6050cef874d7fcd3cd9320c10899f6f532e93650afd20ab3f707. Actual execution B/W preimages/admission/pins/grant/envelope/program/result/stdout-stderr/terminal/browser/download-row evidence durably retained as reviewed secret-safe bytes or explicitly labelled derivatives with original hashes. Source18/accepted source B/W/release/qualification/old grants unchanged.
+docs/reviews/CVF_NCR_HTML_B_E_R1C_RUNTIME_WORKER_RETURN_2026-10-17.md SHA256 fea59eaed1f173e9e655745c6427d52c51c37677749728e88a8d958081868444; docs/reviews/evidence/ncr-html-b-e-r1c-runtime-worker-20261017.json SHA256 e69bb9272e504799980ea3a1fd11091eaebda457af1e6ff682dc7217a0cfe220; docs/reviews/evidence/ncr-html-b-e-r1c-runtime-local-20261017.json SHA256 1d37d2db02fcd970525bf4c5ec7c6ee28d0fc4262ad7c866c321962998689040. Actual execution B/W preimages/admission/pins/grant/envelope/program/result/stdout-stderr/terminal/browser/download-row evidence durably retained as reviewed secret-safe bytes or explicitly labelled derivatives with original hashes. Source18/accepted source B/W/release/qualification/old grants unchanged.
 
 ## Scope / Methodology
 
@@ -32,7 +32,7 @@ New r1c distinct grant/namespace, actual Q02 predecessor and corrected main-entr
 
 ## Independent Review Probe Admission
 
-independentProbeDisposition: BLOCKED_INDEPENDENT_PROBE_WITH_REASON: actual first-result acceptance incomplete/rejected; retained evidence
+independentProbeDisposition: FAIL_INDEPENDENT_PROBE
 probeExecutorRole: LOCAL_REVIEWER_NOT_IMPLEMENTATION_WORKER
 implementationWorkerActor: INTERNAL_AGENT_WORKER:ncr-be-worker-20261017-r1c
 probeExecutorActor: local-be-r1c-reviewer-20261017
@@ -75,18 +75,18 @@ workerRedispatchAllowed: NO
 ## Review Cost Telemetry And Stop Disposition
 
 Review-Cost Telemetry: REQUIRED
-reviewRoundCount: 1
+reviewRoundCount: 2
 workerRepairTurnCount: 1
 newRootCauseCountThisRound: 1
-dependentFindingCountThisRound: 0
-elapsedReviewMinutes: 12
+dependentFindingCountThisRound: 1
+elapsedReviewMinutes: 26
 providerCallCount: 0
 tokenOrQuotaUsage: NOT_AVAILABLE_WITH_REASON: native usage meter unavailable
-materialCommitCount: 0
-continuityCommitCount: 0
+materialCommitCount: 1
+continuityCommitCount: 1
 valueDelta: truthful one-shot first-result/custody and grant exhaustion; metadata repair is not new capability
 stopDisposition: COMPLETE_REVIEW
-preRepairAuditDisposition: NO_REPAIR_REQUIRED
+preRepairAuditDisposition: BLOCKED_REVIEW_MATRIX_INCOMPLETE
 commitPlanDisposition: DEFAULT_ONE_MATERIAL_ONE_CONTINUITY
 latencyDisposition: NOT_MEASURED_WITH_REASON: actual component timing preserved, no controlled end-to-end benchmark
 avoidableDelayClass: MULTIPLE_AVOIDABLE_DELAYS
@@ -95,10 +95,11 @@ Observed counts at review freeze; final material/continuity and clean split gate
 
 ## Finding-To-Governance Learning Disposition
 
-Same-event binding: worker rootCauseClusterId NCR_HTML_R1C_EVALUATE_BODY_DISTURBED_20261017. This closed Local review consumes that first event; it does not declare a second runtime occurrence. Reviewer packet state records accepted review of a spent blocked result; runtime outcome remains BLOCKED_WITH_REASON and acceptedfalse.
+Same-event binding: worker rootCauseClusterId NCR_HTML_R1C_EVALUATE_BODY_DISTURBED_20261017. This Local review adjudication consumes that first event; it does not declare a second runtime occurrence. Reviewer packet state records blocked acceptance after completed adjudication of the spent result; runtime outcome remains BLOCKED_WITH_REASON and acceptedfalse.
 
 | Finding | Defect class | Learning lane | Disposition | Next control action | Handled or deferred |
 |---|---|---|---|---|---|
+| Reviewer recurrence applicability and invalid negative-review status | MACHINE_GATE_GAP | GOVERNANCE_CONTROL_PLANE | MACHINE_CHECK_ADDED | existing worker recurrence guard excludes explicit completion_review; actual worker and generic learning checks retained, earliest existing autorun binding unchanged | 40 focused tests and distinct root metadata probe5/5; initial P4 failure retained |
 | Historical and actual packet-preparation defects (if any) | ORCHESTRATOR_PACKET_GAP | GOVERNANCE_CONTROL_PLANE | RULE_EXISTS | existing canonical shapes and consolidated source/gate review; preserve first failures | metadata corrected before effect; no capability credit |
 | Actual fresh cap2 first-result boundary | RUNTIME_SIGNAL_GAP | RUNTIME_BEHAVIOR_LEARNING | RULE_EXISTS | consume actual one-shot terminal/journey/custody and independent pure proof; do not retry/relabel | BE-R01 spent blocked first result: worker=BLOCKED_WITH_REASON; independent oracle=REJECTED_NOT_ACCEPTED; program/result acceptance=False |
 
@@ -184,17 +185,15 @@ Unchanged parent projection from the retired B-E authority: no new SCEC transiti
 
 | Field | Evidence |
 |---|---|
-| applicableCheckersRead | governance/compat/check_work_order_acceptance_ledger.py; governance/compat/check_independent_review_probe_admission.py; governance/compat/check_machine_closure_package.py; governance/compat/check_review_cost_control.py; governance/compat/check_agent_operation_trace.py; governance/compat/check_delta_execution_claim_boundary.py |
+| applicableCheckersRead | governance/compat/check_work_order_acceptance_ledger.py; governance/compat/check_independent_review_probe_admission.py; governance/compat/check_machine_closure_package.py; governance/compat/check_review_cost_control.py; governance/compat/check_agent_operation_trace.py; governance/compat/check_delta_execution_claim_boundary.py; governance/compat/check_finding_to_governance_learning.py; governance/compat/check_independent_review_probe_admission.py; governance/compat/test_check_finding_to_governance_learning.py |
 | literalTokensReviewed | exact13/6; original requirement/proof joins; PASS or blocked independent disposition; original SCEC2 projection; integer telemetry; eight MCP rows; Delta markers |
 | gateRunPurpose | confirmation of final evidence/documentary integration after bounded review; no new runtime proof |
 | claimBoundary | root actually reviews applicable sources before gates; no hidden agent adherence claim |
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: close fresh one-actor grant/result/roadmap and current6 only; no source/checker/hook semantics.
+Authorized guard-maintenance scope: negative reviewer status/result/roadmap/current6 and the exact two existing finding-learning checker/test paths; worker-return recurrence scope corrected to canonical owner, no hook/runtime semantics.
 Protected paths:
-- `docs/reviews/CVF_NCR_HTML_B_E_R1C_RUNTIME_WORKER_RETURN_2026-10-17.md`
-- `docs/reviews/evidence/ncr-html-b-e-r1c-runtime-worker-20261017.json`
 - `docs/reviews/CVF_NCR_HTML_B_E_R1C_RUNTIME_LOCAL_COMPLETION_2026-10-17.md`
 - `docs/reviews/evidence/ncr-html-b-e-r1c-runtime-local-20261017.json`
 - `docs/baselines/CVF_GC018_NCR_HTML_B_E_R1C_RUNTIME_2026-10-17.md`
@@ -206,6 +205,8 @@ Protected paths:
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `governance/compat/check_finding_to_governance_learning.py`
+- `governance/compat/test_check_finding_to_governance_learning.py`
 Operator authorization: current one-actor order and standing Local first-result review/closure/steward authority.
 Rollback boundary: listed metadata only; worker2/actual execution authority and all immutable source/qualification/old custody preserved. gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7 exclusions/LHW24 and R1/R2partial,R3/R4open,R5/R6deferred unchanged; old1spent/2retired never replayed.
 
@@ -213,12 +214,10 @@ Rollback boundary: listed metadata only; worker2/actual execution authority and 
 
 Disposition: AUTHORIZED_EXACT_MANIFEST
 
-Atomicity reason: exhausted current grant, actual first-result disposition, raw closed authority hashes/roadmap and source-generated projection align atomically. Following actual-material-SHA continuity exact6 separate.
+Atomicity reason: bounded reviewer-local correction, negative first-result status, exact existing checker/test applicability, roadmap and source-generated projection align atomically. Following actual-material-SHA continuity exact6 separate.
 
 Exact changed manifest:
 
-- `docs/reviews/CVF_NCR_HTML_B_E_R1C_RUNTIME_WORKER_RETURN_2026-10-17.md`
-- `docs/reviews/evidence/ncr-html-b-e-r1c-runtime-worker-20261017.json`
 - `docs/reviews/CVF_NCR_HTML_B_E_R1C_RUNTIME_LOCAL_COMPLETION_2026-10-17.md`
 - `docs/reviews/evidence/ncr-html-b-e-r1c-runtime-local-20261017.json`
 - `docs/baselines/CVF_GC018_NCR_HTML_B_E_R1C_RUNTIME_2026-10-17.md`
@@ -230,6 +229,8 @@ Exact changed manifest:
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `governance/compat/check_finding_to_governance_learning.py`
+- `governance/compat/test_check_finding_to_governance_learning.py`
 
 Rollback boundary: listed metadata only; no new effects/retry/cleanup/deletion.
 
@@ -323,19 +324,38 @@ BE-R01 spent blocked first result: worker=BLOCKED_WITH_REASON; independent oracl
 |---|---|
 | Actor | Local INTERNAL_AGENT reviewer/closer/steward |
 | Provider or surface | private shared workspace |
-| Session or invocation | ncr-be-r1c-r01-material-20261017 |
+| Session or invocation | ncr-be-r1c-r01-reviewer-correction-20261017 |
 | Working directory | repository root |
 | Command or tool surface | consume frozen first-result/terminal worker gate and independent Local pure output; documentary closure/current6 generation; normal gates/commits separately owned by root |
-| Target paths | `docs/reviews/CVF_NCR_HTML_B_E_R1C_RUNTIME_WORKER_RETURN_2026-10-17.md`; `docs/reviews/evidence/ncr-html-b-e-r1c-runtime-worker-20261017.json`; `docs/reviews/CVF_NCR_HTML_B_E_R1C_RUNTIME_LOCAL_COMPLETION_2026-10-17.md`; `docs/reviews/evidence/ncr-html-b-e-r1c-runtime-local-20261017.json`; `docs/baselines/CVF_GC018_NCR_HTML_B_E_R1C_RUNTIME_2026-10-17.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R1C_RUNTIME_2026-10-17.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Target paths | `docs/reviews/CVF_NCR_HTML_B_E_R1C_RUNTIME_LOCAL_COMPLETION_2026-10-17.md`; `docs/reviews/evidence/ncr-html-b-e-r1c-runtime-local-20261017.json`; `docs/baselines/CVF_GC018_NCR_HTML_B_E_R1C_RUNTIME_2026-10-17.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R1C_RUNTIME_2026-10-17.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `governance/compat/check_finding_to_governance_learning.py`; `governance/compat/test_check_finding_to_governance_learning.py` |
 | Allowed scope source | one-actor first-result review and standing Local closure/steward authority |
-| Before status evidence | HEAD 9a490e5d55adb81dfc60b3c3b709ec1a8cad66b3; worker terminal lane released/frozen |
-| After status evidence | BE-R01 spent blocked first result: worker=BLOCKED_WITH_REASON; independent oracle=REJECTED_NOT_ACCEPTED; program/result acceptance=False; grant exhausted, cap1/provider/deletion/retry not granted |
-| Diff evidence | exact13 material manifest |
+| Before status evidence | HEAD e4497e82cafe81b302d30aa5cbaa2331f6397a35; worker terminal lane released/frozen |
+| After status evidence | Reviewer adjudication complete; runtime acceptance remains blocked and grant spent. First material dbb07364863ea627c22b07fd23b62a574b10aea0/continuity e4497e82cafe81b302d30aa5cbaa2331f6397a35 passed normal91/91, but automatic P4 committed-range generation failed RIPA on root-selected invalid reviewer Status. That unsafe automatic result is retained, never promoted. Existing canonical Recurring Blocked-Return Escalation governs blocked worker returns; explicit completion_review negative adjudication is not a new worker return. The narrow existing checker correction retains generic finding validation, actual/ambiguous worker enforcement and original FIRST_OCCURRENCE worker bytes. Worker focused tests and distinct root five-case metadata probe passed; no runtime/provider/native effect or worker repair/replay. Final first-result combined material range has15 paths (original13 plus checker2), following actual-SHA continuity6. Root corrective metadata helper first stopped on a Windows default-codepage read after partial documentary writes; exact preimages restored, UTF-8 explicit, no tests/effects replayed. Worker encoding inspection followed its initial patch and is recorded as partial preparation. BE-S10-G tracks this prerequisite; BE-S10 passive observer source work remains pending separate authority.; grant exhausted, cap1/provider/deletion/retry not granted |
+| Diff evidence | exact13 reviewer-correction manifest |
 | Approval boundary | metadata first-result closure only; no further runtime/native/provider/deletion |
 | Claim boundary | actual cap2 first result only, not cap1/final B-E/live governance |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-be-r1c-r01-material-20261017 |
-| Expected manifest | `docs/reviews/CVF_NCR_HTML_B_E_R1C_RUNTIME_WORKER_RETURN_2026-10-17.md`; `docs/reviews/evidence/ncr-html-b-e-r1c-runtime-worker-20261017.json`; `docs/reviews/CVF_NCR_HTML_B_E_R1C_RUNTIME_LOCAL_COMPLETION_2026-10-17.md`; `docs/reviews/evidence/ncr-html-b-e-r1c-runtime-local-20261017.json`; `docs/baselines/CVF_GC018_NCR_HTML_B_E_R1C_RUNTIME_2026-10-17.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R1C_RUNTIME_2026-10-17.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Actual changed set | `docs/reviews/CVF_NCR_HTML_B_E_R1C_RUNTIME_WORKER_RETURN_2026-10-17.md`; `docs/reviews/evidence/ncr-html-b-e-r1c-runtime-worker-20261017.json`; `docs/reviews/CVF_NCR_HTML_B_E_R1C_RUNTIME_LOCAL_COMPLETION_2026-10-17.md`; `docs/reviews/evidence/ncr-html-b-e-r1c-runtime-local-20261017.json`; `docs/baselines/CVF_GC018_NCR_HTML_B_E_R1C_RUNTIME_2026-10-17.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R1C_RUNTIME_2026-10-17.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Invocation ID | ncr-be-r1c-r01-reviewer-correction-20261017 |
+| Expected manifest | `docs/reviews/CVF_NCR_HTML_B_E_R1C_RUNTIME_LOCAL_COMPLETION_2026-10-17.md`; `docs/reviews/evidence/ncr-html-b-e-r1c-runtime-local-20261017.json`; `docs/baselines/CVF_GC018_NCR_HTML_B_E_R1C_RUNTIME_2026-10-17.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R1C_RUNTIME_2026-10-17.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `governance/compat/check_finding_to_governance_learning.py`; `governance/compat/test_check_finding_to_governance_learning.py` |
+| Actual changed set | `docs/reviews/CVF_NCR_HTML_B_E_R1C_RUNTIME_LOCAL_COMPLETION_2026-10-17.md`; `docs/reviews/evidence/ncr-html-b-e-r1c-runtime-local-20261017.json`; `docs/baselines/CVF_GC018_NCR_HTML_B_E_R1C_RUNTIME_2026-10-17.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R1C_RUNTIME_2026-10-17.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `governance/compat/check_finding_to_governance_learning.py`; `governance/compat/test_check_finding_to_governance_learning.py` |
 | Manifest delta | MATCH exact13 |
 | Deletion or rename disposition | none; actual resources/custody retained as observed |
+
+
+## Reviewer-Local Correction And First Post-Commit Failure
+
+Reviewer adjudication complete; runtime acceptance remains blocked and grant spent. First material dbb07364863ea627c22b07fd23b62a574b10aea0/continuity e4497e82cafe81b302d30aa5cbaa2331f6397a35 passed normal91/91, but automatic P4 committed-range generation failed RIPA on root-selected invalid reviewer Status. That unsafe automatic result is retained, never promoted. Existing canonical Recurring Blocked-Return Escalation governs blocked worker returns; explicit completion_review negative adjudication is not a new worker return. The narrow existing checker correction retains generic finding validation, actual/ambiguous worker enforcement and original FIRST_OCCURRENCE worker bytes. Worker focused tests and distinct root five-case metadata probe passed; no runtime/provider/native effect or worker repair/replay. Final first-result combined material range has15 paths (original13 plus checker2), following actual-SHA continuity6. Root corrective metadata helper first stopped on a Windows default-codepage read after partial documentary writes; exact preimages restored, UTF-8 explicit, no tests/effects replayed. Worker encoding inspection followed its initial patch and is recorded as partial preparation. BE-S10-G tracks this prerequisite; BE-S10 passive observer source work remains pending separate authority.
+
+| Finding | Defect class | Learning lane | Disposition | Next control action | Handled or deferred |
+|---|---|---|---|---|---|
+| Worker-only recurrence guard applied to completion reviews, and root chose an unrecognized negative-review status | MACHINE_GATE_GAP | GOVERNANCE_CONTROL_PLANE | MACHINE_CHECK_ADDED | existing recurrence applicability corrected; existing earliest autorun binding retained, no new hook | actual focused tests and distinct root metadata probe; original failure disclosed |
+
+Current Local proof SHA256 `1d37d2db02fcd970525bf4c5ec7c6ee28d0fc4262ad7c866c321962998689040`. Original runtime oracle remains3/10 REJECTED_NOT_ACCEPTED, acceptedfalse, no execution rerun.
+
+## P4 Post-Commit Safety Adjudication
+
+Decision owner: LOCAL reviewer/closer. Disposition: RESOLVED_NAMED_PREDICATE_ONLY_NO_PROMOTION. Original unsafe automatic committed-range attempt and marker raw SHA256 `7502dc91254b541cfbdd8fb4576e88e9e0e8576188cb58b521bbc1ce1d82df31` retained in Local proof. Current RIPA actual exit0/1.500s and finding-learning actual exit0/0.922s confirm the named status/applicability contradiction corrected; focused40 and distinct root5/5 retained without duplicate test/runtime runs. Root explicitly authorizes clearing only this marker under existing P4-C1 contract so the corrective commit can undergo normal gates. Initial corrective commit refusal exit1/0.250s is preserved. No P4 evidence promotion, prior7 reset, product acceptance or runtime retry. Updated Local proof SHA256 `1562e6b4dc6a5dadf5873b161e547cf3d59345d5c6d7c812f3882952e80a59ff`.
+
+## Corrective Continuity First Failure
+
+Actual normal corrective commit exit1/68.125s:90/91 PASS, active session checker rejected missing explicit LHW24 in nextAllowedMove/front door. Root restored the existing unchanged LHW24 marker, retained raw first log in Local proof, and did not rerun focused tests or runtime effects. Updated Local proof SHA256 `102d1de95bfca304660175384fa5b6d1bbc640671173ea379cec427ba60680dc`.
