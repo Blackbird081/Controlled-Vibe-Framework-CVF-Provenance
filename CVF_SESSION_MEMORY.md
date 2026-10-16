@@ -31,22 +31,22 @@ artifact.
 | Prior handoff (archive-qualified) | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V62_2026-09-17.md` |
 | Latest front-door archive | `CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_COMPACTION_ARCHIVE_2026-08-11.md` |
 | Current authority evidence | `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` `currentAuthority` |
-| Parent maintenance | current qualification accepted bounded; BE-Q02 checked, BE-R01/R02 open |
+| Parent maintenance | BE-S09/Q02 accepted; r1c one-actor grant pending actual result; BE-R02 open |
 | Freeze posture | `governance_kernel_freeze_recommended` |
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_html_current_source_qualification_accepted_bounded`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=plan fresh BE-R01 admission against accepted current identity; role=INTERNAL_AGENT Local reviewer/closer/steward; phase=CONTINUITY; decision owner=LOCAL; parked checkpoint=cap1 actual/product/provider/deletion separately admitted, old grants retired; no generic operator checkpoint.
+Startup acknowledged: current mode=`cvf_ncr_html_r1c_be_r01_dispatched`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=new one-actor cap2 r1c execution only after committed bound external release; role=INTERNAL_AGENT Local orchestrator/reviewer/steward; phase=MATERIAL; decision owner=LOCAL; parked checkpoint=old grants spent/retired, cap1/provider/deletion separate; no generic operator checkpoint.
 
 ## Current Mode
 
-Current mode marker: `cvf_ncr_html_current_source_qualification_accepted_bounded`
-Current mode: `cvf_ncr_html_current_source_qualification_accepted_bounded`; previous mode marker: `cvf_ncr_html_current_source_qualification_dispatched`
+Current mode marker: `cvf_ncr_html_r1c_be_r01_dispatched`
+Current mode: `cvf_ncr_html_r1c_be_r01_dispatched`; previous mode marker: `cvf_ncr_html_current_source_qualification_accepted_bounded`
 
 ## Next Allowed Move
 
-Mode: `cvf_ncr_html_current_source_qualification_accepted_bounded`
+Mode: `cvf_ncr_html_r1c_be_r01_dispatched`
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-CURRENT-SOURCE-QUALIFICATION-20261017. Current-source cap2 actual9/26 and Docker4 qualification accepted bounded with distinct Local PURE10; consume docs/reviews/CVF_NCR_HTML_CURRENT_SOURCE_QUALIFICATION_COMPLETION_2026-10-17.md and docs/reviews/evidence/ncr-html-current-source-qualification-local-20261017.json. BE-Q02 checked bounded, BE-R01/BE-R02 remain open. Next Local plans fresh separately admitted cap2 product invocation against immutable new source identity, no automatic EXECUTE. Cap1 actual waits for accepted future cap2 product predecessor. Source18/accepted source authority/release unchanged; no old-grant replay/provider/deletion or generic documentary operator checkpoint. gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 and R1/R2partial,R3/R4open,R5/R6deferred unchanged; old1spent/2retired never replayed. Qualification material 47ef5cacfe40420389cadb0e62ebe206e4808f84 committed; exact6 actual-material-SHA continuity prepared; clean split gates pending.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-HTML-B-E-R1C-RUNTIME-20261017. Under docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R1C_RUNTIME_2026-10-17.md and docs/baselines/CVF_GC018_NCR_HTML_B_E_R1C_RUNTIME_2026-10-17.md, release INTERNAL_AGENT worker only after committed exact9 authority/actual-SHA continuity, bound pre-dispatch PASS, frozen external pins/inputs/admission/grant/envelope hashes and worker preimplementation PASS. New IMPLEMENTATION_WORKER cap2 ordinal1 runId ncr-be-worker-20261017-r1c only; namespace D:/CVF_NCR_RUNTIME/ncr-be-worker-20261017-r1c; custody D:/CVF_NCR_RUNTIME/custody-be-r1c-20261017. One original D.execute program; work900/cleanup120sec, starts56/8, readiness4/6/2, outer1080/wait1070/termination5; retry0. Inclusive preparation18:02Z, workerhard19:32Z/latestlaunch19:14Z, Localhard21:02Z on2026-10-16. Worker exact2 publishes only after program/cleanup terminal; Local distinct PURE review then actual first-result closure. Accepted Q02/current source18/main-entry authority/release/CP/LP and historical grants/custody immutable; no duplicate qualification/native campaign, cap1/provider/deletion or old actor replay. BE-R01 remains open until actual accepted product result; BE-R02 unadmitted. Parent gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 retained. No generic operator checkpoint. Runtime dispatch material 47df7845fdcd20f45e4166d8e65d58e23ddace67; source6 records the actual material anchor before worker release.
 
 ## Parked Checkpoints
 
