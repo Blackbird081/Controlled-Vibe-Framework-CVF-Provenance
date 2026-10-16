@@ -5,7 +5,7 @@ docType: work_order
 Status: DISPATCH_READY
 Date: 2026-10-16
 Batch ID: CVF-NCR-HTML-B-E-ADJUNCT-SOURCE-20261016
-Dispatch base head: f9ca6a26ef281ae14035ab5fb1d83cfc6658b000
+Dispatch base head: 97150799b69aa635c3a527c57b2a0cb62e204df5
 Commit mode: WORKER_MUST_NOT_COMMIT
 providerExecutionAuthority: FORBIDDEN
 Worker: INTERNAL_AGENT implementation worker role
@@ -374,7 +374,7 @@ Contract source archive-qualified exception: docs/reference/CVF_AHB_T2_AGENT_HAN
 | route | MULTI_AGENT_MULTI_ROLE |
 | rolePattern | dispatcher -> implementation worker -> Local reviewer/closer -> session-sync steward |
 | phase | accepted-design source-only implementation |
-| baseHeadFor(phase) | dispatchBaseHead=f9ca6a26ef281ae14035ab5fb1d83cfc6658b000; executionBaseHead=WORKER_MUST_CAPTURE_AT_START; closureBaseHead=REVIEWER_TO_SET |
+| baseHeadFor(phase) | dispatchBaseHead=97150799b69aa635c3a527c57b2a0cb62e204df5; executionBaseHead=WORKER_MUST_CAPTURE_AT_START; closureBaseHead=REVIEWER_TO_SET |
 | changedSetScope(phase) | worker exact7; Local material/review plus exact6 continuity |
 | traceScope(phase, actor) | worker records actual executionBaseHead and changed7; Local records probes, exact18 and actual-SHA sync |
 | commitOwner(phase) | worker forbidden; Local reviewer/closer and steward own commits |
@@ -528,18 +528,18 @@ Dispatch marker binds actual paired material SHA before worker release. Preserve
 | Session or invocation | ncr-be-adjunct-source-dispatch-20261016 |
 | Working directory | repository root |
 | Command or tool surface | mapped reads; actual root resolver/entry gate; advisory scaffold/drafts; Local consolidated adoption/corrections and canonical author gates |
-| Target paths | canonical paired baseline/work order; exact6 dispatch continuity later |
+| Target paths | `docs/baselines/CVF_GC018_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Allowed scope source | operator full Local roadmap handling and committed five-file design |
-| Before status evidence | clean worktree f9ca6a26ef281ae14035ab5fb1d83cfc6658b000; git status --short empty; entry gate PASS12.54s |
+| Before status evidence | clean worktree: git status --short empty at original entry f9ca6a26e/PASS12.54s; pre-edit amendment lane yielded clean at97150799b with bound setup PASS91.55s and zero source/scaffold/test writes |
 | After status evidence | canonical pair only; no implementation/source or runtime effect |
 | Diff evidence | exact paired staged manifest before material commit |
 | Approval boundary | bound pair/continuity/pre-dispatch precede implementation release; runtime excluded |
 | Claim boundary | source-only prospective contract, not executed source or runtime proof |
 | Agent type | INTERNAL_AGENT |
 | Invocation ID | ncr-be-adjunct-source-dispatch-20261016 |
-| Expected manifest | `docs/baselines/CVF_GC018_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md` |
-| Actual changed set | `docs/baselines/CVF_GC018_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md` |
-| Manifest delta | MATCH exact pair |
+| Expected manifest | `docs/baselines/CVF_GC018_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Actual changed set | `docs/baselines/CVF_GC018_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Manifest delta | MATCH exact8 atomic pre-edit authority repair; no worker source changes |
 | Deletion or rename disposition | none; all prior source/proof/custody retained |
 
 ## Delta Execution Claim Boundary Control Block
@@ -656,6 +656,8 @@ No extra operator checkpoint is required for this already authorized source-only
 Root adopted an ignored advisory pair after a consolidated source/schema/path/authority/acceptance/closure review. Helper ran scaffold metadata only, consumed root resolver/expectations and no gates/tests; one oversized PowerShell write failed before process creation (Windows206), then apply_patch wrote ignored drafts. Root fixed lock/persist ordering, phase/base order, missing role/quality sections, source-symbol/hash/ADIF formatting, typed retained SCEC and the unnecessary pre-return probe barrier before first author gate. Root actual clean entry preflight PASS12.54s at f9ca6a26e; required handoff-boundary fields read before adoption. First author-fast gate rejected missing baseline evidence heading, exact artifact/trace fields, envelope notes, conditional MCP term and source-symbol literal cells. Local corrected this consolidated literal set before rerunning; original failure retained. Full prospective preflight then identified exact handoff-marker spelling, missing coordination/learning JSON, Delta table shape and a schema-inline truth-pattern false positive. Root repaired this consolidated set before release; all initial logs retained. No procedural-perfection, corpus or runtime claim.
 
 Two normal commit attempts were rejected by the applicability guard: missing same-line reason, then an incidental wording collision. A targeted failure did not stop the host command chain, so the second failed commit is retained as redundant preparation cost. Local corrected the wording and the targeted checker passed before the next normal commit. All logs remain in current custody; no effect/source program ran.
+
+Pre-edit consistency amendment: the worker caught the baseline overview lock/persist and probe-order contradiction against its detailed API and the work-order plan. Original bound setup PASS91.55s; clean lane yielded at97150799b before any source/scaffold/test write, zero program slots used. Local aligned both overview clauses and refreshed the base anchor. Same scope/actor/initial implementation and inclusive budgets; no SCEC transition or reset. Renewed canonical pair/exact6/bound release precede resumption; original setup/raw receipts remain retained.
 
 ## Scaffold Provenance Block
 

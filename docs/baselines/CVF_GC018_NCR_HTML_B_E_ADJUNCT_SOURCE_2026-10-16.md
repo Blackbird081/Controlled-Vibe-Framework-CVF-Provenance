@@ -5,7 +5,7 @@ docType: baseline
 Status: ACTIVE
 Date: 2026-10-16
 Batch ID: CVF-NCR-HTML-B-E-ADJUNCT-SOURCE-20261016
-Dispatch base head: f9ca6a26ef281ae14035ab5fb1d83cfc6658b000
+Dispatch base head: 97150799b69aa635c3a527c57b2a0cb62e204df5
 providerExecutionAuthority: FORBIDDEN
 Role: INTERNAL_AGENT Local dispatcher/reviewer
 Phase: source-only implementation dispatch preparation
@@ -135,7 +135,7 @@ Reject ambient NODE_OPTIONS, NODE_PATH, PWDEBUG, PLAYWRIGHT_* and npm_config_/np
 
 ## Native Counter And Preservation Contract
 
-Use one scoped invocation guard. FencedNative._spawn establishes a thread-local frame and calls original Native._spawn exactly once. Do not carry the Native algorithm into the adjunct. A valid charge occurs under the counter lock before original Popen; snapshots are copied/secret-safe and file persistence does not hold that lock. Fresh protocol check occurs after persistence and before original delegation. Preserve the original runner's staging, protocol, finalizer and ACK. Job32 is a separate concurrent membership cap; the root counter is cumulative controlled Native Popen attempts per invocation and does not count browser/Next descendants or in-container processes.
+Use one scoped invocation guard. FencedNative._spawn establishes a thread-local frame and calls original Native._spawn exactly once. Do not carry the Native algorithm into the adjunct. Serialize valid precharge and secret-safe snapshot persistence under the counter lock, then release it before fresh protocol validation and original Popen. Never hold the parent protocol lock across IO. Preserve the original runner's staging, protocol, finalizer and ACK. Job32 is a separate concurrent membership cap; the root counter is cumulative controlled Native Popen attempts per invocation and does not count browser/Next descendants or in-container processes.
 
 ## Source-Only Acceptance / Test Budget
 
@@ -152,7 +152,9 @@ Worker source/manual Git activity limit is 64 operations. Root limit is 128 from
 
 Root expectation metadata is fixed at .cvf/runtime/ncr-be-adjunct-source-20261016/local-expectations.json SHA-256 9264d071f5b488d626b34a18af7da91bcb8a5fc72a7376bd3317d55a32259c15. It defines at most two independent focused fake programs, each <=90 seconds: a Python fake program and a JavaScript fake program. Expected predicates are the recorded positive and negative boundary groups: charged work/cleanup boundaries and preserved grant/order; refusal before dependent Docker work on endpoint mismatch; marker spent before runner and retained after failure/second-use refusal; exception restoration; qualified cached Chromium object/original receiver/explicit executable path and shortened timeout; no delegation after deadline-consuming verification; binding identity/canonical-byte refusal; no installation on plain import or partial binding environment. This file is Local-owned test guidance only; no worker test helper/assertion import and no live effects.
 
-Worker first completes only the five new source/test files and reports WAIT_ROOT_PROBE with the exact source hashes; tracked worker bytes remain frozen while Local runs the two probes. After Local accepts or authorizes one bounded repair, worker finishes the exact return/evidence pair and runs both required fake commands plus the mandatory worker fast gate. Root evaluates returned evidence, does not recreate implementation, and writes its distinct Local proof. Root may spend the two probe slots once each; a failed/ambiguous program consumes its slot.
+Worker completes the five new source/test files, both required fake commands, exact return/evidence and mandatory full worker fast gate, then freezes all7 bytes and returns the lane. Local first consumes that returned evidence and then runs its two distinct focused probes; no pre-return probe barrier applies. Root writes its distinct Local proof after execution. Each failed or ambiguous program consumes its slot; any repair stays within the original remaining allowance.
+
+Pre-execution amendment: the first worker identified contradictory lock and probe-order prose before edits, completed its original bound setup gate and yielded a clean lane at97150799b. Local aligned this overview to Source Interface Bindings and the work-order Execution Plan. No source/scaffold/test was written and no fake-program slot was spent. The same scope, actor and inclusive06:54Z deadlines remain; renewed pair/continuity/bound release precede resumption.
 
 Root closure is acyclic: Local proof binds the dispatch-work-order preimage, exact five source files and worker return/proof; the closed work order references that Local proof; the SOURCE_ADJUNCT_ONLY release binds the closed authority, five source hashes and accepted Local proof; completion links the closed work order, root proof and release. Do not repin source13.
 
@@ -284,16 +286,16 @@ Source-only implementation/test grant after committed bound release; no current 
 | Session or invocation | ncr-be-adjunct-source-dispatch-20261016 |
 | Working directory | repository root |
 | Command or tool surface | mapped reads; actual root resolver/entry gate; advisory scaffold/drafts; Local consolidated adoption/corrections and canonical author gates |
-| Target paths | canonical paired baseline/work order; exact6 dispatch continuity later |
+| Target paths | `docs/baselines/CVF_GC018_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Allowed scope source | operator full Local roadmap handling and committed five-file design |
-| Before status evidence | clean worktree f9ca6a26ef281ae14035ab5fb1d83cfc6658b000; git status --short empty; entry gate PASS12.54s |
+| Before status evidence | original clean entry f9ca6a26e/PASS12.54s; pre-edit amendment lane yielded clean at97150799b with bound setup PASS91.55s and zero source/scaffold/test writes |
 | After status evidence | canonical pair only; no implementation/source or runtime effect |
 | Diff evidence | exact paired staged manifest before material commit |
 | Approval boundary | bound pair/continuity/pre-dispatch precede implementation release; runtime excluded |
 | Claim boundary | source-only prospective contract, not executed source or runtime proof |
 | Agent type | INTERNAL_AGENT |
 | Invocation ID | ncr-be-adjunct-source-dispatch-20261016 |
-| Expected manifest | `docs/baselines/CVF_GC018_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md` |
-| Actual changed set | `docs/baselines/CVF_GC018_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md` |
-| Manifest delta | MATCH exact pair |
+| Expected manifest | `docs/baselines/CVF_GC018_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Actual changed set | `docs/baselines/CVF_GC018_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Manifest delta | MATCH exact8 atomic pre-edit authority repair; no worker source changes |
 | Deletion or rename disposition | none; all prior source/proof/custody retained |
