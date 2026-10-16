@@ -31,22 +31,22 @@ artifact.
 | Prior handoff (archive-qualified) | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V62_2026-09-17.md` |
 | Latest front-door archive | `CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_COMPACTION_ARCHIVE_2026-08-11.md` |
 | Current authority evidence | `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` `currentAuthority` |
-| Parent maintenance | Adjunct source accepted bounded; Local actual B-E readiness/prerequisite assessment next |
+| Parent maintenance | Readiness reconciled; concrete B-E admission packet next |
 | Freeze posture | `governance_kernel_freeze_recommended` |
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_html_b_e_adjunct_source_accepted_readiness_open`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=Local actual B-E technical readiness/prerequisite assessment under existing design; role=INTERNAL_AGENT Local closure/session-sync steward; phase=source-only adjunct accepted/procedure partial, effects held; decision owner=Local root; parked checkpoint=concrete runtime readiness/effect admission required, no extra generic operator checkpoint for routine technical choices; Local3 spent and original10:54Z deadline retained.
+Startup acknowledged: current mode=`cvf_ncr_html_b_e_readiness_assessed_runtime_packet_pending`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=Local PLAN concrete runtime authority/pins/admission under existing design; role=INTERNAL_AGENT Local orchestrator/reviewer/steward; phase=readiness reconciliation plus read-only Docker qualification delivered, product effect packet pending; decision owner=LOCAL; parked checkpoint=actual B-E runtime effects need specific admission; no generic operator documentary checkpoint and no old-window refill.
 
 ## Current Mode
 
-Current mode marker: `cvf_ncr_html_b_e_adjunct_source_accepted_readiness_open`
-Current mode: `cvf_ncr_html_b_e_adjunct_source_accepted_readiness_open`; previous mode marker: `cvf_ncr_html_b_e_python_oracle_recovery_local_allowance_admitted`
+Current mode marker: `cvf_ncr_html_b_e_readiness_assessed_runtime_packet_pending`
+Current mode: `cvf_ncr_html_b_e_readiness_assessed_runtime_packet_pending`; previous mode marker: `cvf_ncr_html_b_e_adjunct_source_accepted_readiness_open`
 
 ## Next Allowed Move
 
-Mode: `cvf_ncr_html_b_e_adjunct_source_accepted_readiness_open`
+Mode: `cvf_ncr_html_b_e_readiness_assessed_runtime_packet_pending`
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=ASSESS; BATCH_ID=CVF-NCR-HTML-B-E-PYTHON-ORACLE-RECOVERY-20261016. ACCEPTED_SOURCE_ONLY_PROCEDURE_PARTIAL: frozen adjunct5/worker7 accepted with actual root Python45 predicates including20 typed/message refusals, prior valid LocalJS18 and worker35/30/full gate reused. Source-only release issued; no runtime release or AI-governance proof. Next Local assesses actual B-E technical readiness/prerequisites under existing docs/assessments/CVF_NCR_HTML_B_E_EFFECT_DRIVER_LOCAL_DESIGN_2026-10-16.md, preparing concrete before-effect authority/identity/custody/budgets as needed. Routine technical choices proceed under existing Local delegation; no generic operator documentary checkpoint. Actual Native/Job/product/browser/container/provider/disposal/public/deploy effects held until concrete readiness/effect admission. Local3/3 spent, original failed Python/JS18/old ledger retained, no retry/refill/worker or JS rerun. Original root deadline10:54Z elapsed after valid09:33Z proof; terminal docs only11:13Z-11:43Z under Local decision, procedure PARTIAL and no proof or timer reset. Source13/gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7 P4 exclusions unchanged; no transition/new independentCriticalEvidence. R1/R2partial,R3/R4open,R5/R6deferred; parked effects/LHW24 retained. Accepted source material commit 3ab8d3f06f47abd8c7c2348d54e33bd587aef5fa; normal91/91 and terminal reviewer70/70 PASS consumed; original late-closure disclosure retained, terminal documentation scope only.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-B-E-RUNTIME-ADMISSION-20261016. Local prepares concrete runtime authority pair, immutable pins/admission serialization, unused two-actor identities/namespaces, custody and inclusive deadlines/watchdog under existing docs/assessments/CVF_NCR_HTML_B_E_EFFECT_DRIVER_LOCAL_DESIGN_2026-10-16.md. Current prerequisite delta docs/assessments/CVF_NCR_HTML_B_E_RUNTIME_READINESS_LOCAL_DISPOSITION_2026-10-16.md and docs/reviews/evidence/ncr-html-b-e-runtime-readiness-local-20261016.json at material 0c6cb5278f8076fbd003f484ef725f26d065e36c; normal91/91 PASS. Native N1-N4 unchanged leaf, current source13 actor receipts and adjunct acceptance are reusable at their recorded scopes; no old proof replay. Fresh read-only Docker qualification PASS4/4 at11:45:20Z: desktop-linux/exact pipe/server29.8.2 linux-amd64/exact cached image. Node alias reparse is resolved to verified physical Node; future invocation must bind exact process-local discovery spelling. No Node launch or environment change. First actual terminal/ACK/positive absence Local acceptance gates independent run2. Current action grants no effects; future concrete before-effect authority/readiness required, ordinary technical choices remain Local. This45min ASSESS ends12:11Z with evidence/continuity only; all old windows/spent3 stay closed. Source13/adjunct5/gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7 exclusions unchanged; R1/R2partial,R3/R4open,R5/R6deferred; parked effects/LHW24 retained.
 
 ## Parked Checkpoints
 

@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Current NCR Continuation
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `3ab8d3f06f47abd8c7c2348d54e33bd587aef5fa`. Material SHA: `3ab8d3f06f47abd8c7c2348d54e33bd587aef5fa`. Batch ID: CVF-NCR-HTML-B-E-PYTHON-ORACLE-RECOVERY-20261016. Atomic exact12 accepted source-only recovery; normal91/91 PASS, automatic collector only. This exact6 sync binds actual material SHA. Root Python45 including20 refusals, priorJS18/worker35/30/full gate consumed; Local3 spent, no runtime release or semantic transition.
+Current HEAD recorded for this handoff: `0c6cb5278f8076fbd003f484ef725f26d065e36c`. Material SHA: `0c6cb5278f8076fbd003f484ef725f26d065e36c`. Batch ID: CVF-NCR-HTML-B-E-RUNTIME-READINESS-20261016. Exact4 readiness assessment/evidence/roadmap, normal91/91 PASS; automatic collector SKIPPED_NO_ELIGIBLE_CANDIDATE. Exact6 continuity binds actual material SHA; one read-only Docker qualification/four utility starts completed; no B-E product effect or source mutation.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -13,19 +13,19 @@ Current continuation only. Root AGENTS.md and canonical routing owners retain fu
 Closed history is preserved byte-for-byte at `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V63_PRE_NCR_COMPACTION_2026-10-07.md` (SHA256 `54801fdcf14e9abe17592352ec3c69a0b0e855632991af0caacac7b65252ccba`); it is NOT_ACTIVE_AUTHORITY and not default startup reading.
 ## Scope / Target / Owner Boundary
 
-Root actual accepted-source decision is packaged in `docs/reviews/CVF_NCR_HTML_B_E_PYTHON_ORACLE_RECOVERY_COMPLETION_2026-10-16.md`, new proof `docs/reviews/evidence/ncr-html-b-e-python-oracle-recovery-local-20261016.json` SHA256 `d23baa0799af4703a338f715c748401a7e05436512473541a5ea3c0ea5ad5e8a` and source-only release `docs/reviews/evidence/ncr-html-b-e-adjunct-source-release-20261016.json` SHA256 `518e5d84f163ddc3fed7fe11783bf83ab80a958e652ba7c6cbc548c4a7154ba5`. Original failed Local proof/completion, static A/E, source5/worker7/source13 and old ledger remain unchanged. Exact12 closed-WO/currentAuthority/generated closure then separate exact6 actual-material-SHA sync; no probe replay by steward.
+Current Local readiness result `docs/assessments/CVF_NCR_HTML_B_E_RUNTIME_READINESS_LOCAL_DISPOSITION_2026-10-16.md` raw SHA256 `8fe440013e0f87f73276c8925eb22d6252ca351539a52b232b88f0ac6f549db0`; evidence `docs/reviews/evidence/ncr-html-b-e-runtime-readiness-local-20261016.json` raw SHA256 `650592a0ce66bf773024d9298bf3c0357bb827ea3108fdbf5bcfed3089950c06`. Historical native N1-N4 leaf remains reusable on unchanged native-owner bytes; Local failed ACK stays failed. Current cap1/cap2 receipt originals equal embedded canonical bytes and current source13; old snapshot/cap1/source-selector/adjunct-pending blockers are superseded. Earlier file-only snapshot is preserved; separate prospectively admitted Docker qualification PASS4/4 at11:45:20Z with exact context/endpoint/server/image identity, no mutation. Node alias reparse needs verified physical pin and explicit process-local discovery binding in the future runtime packet. No runtime authority or effect is selected by this assessment.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_html_b_e_adjunct_source_accepted_readiness_open`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=Local actual B-E technical readiness/prerequisite assessment under existing design; role=INTERNAL_AGENT Local closure/session-sync steward; phase=source-only adjunct accepted/procedure partial, effects held; decision owner=Local root; parked checkpoint=concrete runtime readiness/effect admission required, no extra generic operator checkpoint for routine technical choices; Local3 spent and original10:54Z deadline retained.
+Startup acknowledged: current mode=`cvf_ncr_html_b_e_readiness_assessed_runtime_packet_pending`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=Local PLAN concrete runtime authority/pins/admission under existing design; role=INTERNAL_AGENT Local orchestrator/reviewer/steward; phase=readiness reconciliation plus read-only Docker qualification delivered, product effect packet pending; decision owner=LOCAL; parked checkpoint=actual B-E runtime effects need specific admission; no generic operator documentary checkpoint and no old-window refill.
 
 ## Current Mode
 
-`cvf_ncr_html_b_e_adjunct_source_accepted_readiness_open`. Root alone executed ordinal3 once09:33:49Z:45 predicates including20 typed/message refusals, both groups completed, exit0,0.225431s interval, actualRuntimeEffects0. Root technical decision ACCEPTED_SOURCE_ONLY_PROCEDURE_PARTIAL; retain old failed Python, JS18 PASS, worker35/30/full gate. Local3/3 spent/no refill; same gen9/SCEC2/counters2,0,2,0/blockers/freeze/P4 exclusions. All actual B-E/runtime/parent/disposal/AI-governance claims remain open. Source-only release and closed source order do not grant effects.
+`cvf_ncr_html_b_e_readiness_assessed_runtime_packet_pending`. Exact4 prerequisite delta is delivered; next finite connected work is concrete before-effect runtime packet under locked two-run design. Current assessment has exactly1 read-only Docker qualification program/4 utility starts; Native Job/product/browser/container-create/provider/credential/store/delete effects0, no source/model/native rerun. Existing actor/native/qualification/adjunct observations are consumed at their scopes without rerun. Source13/adjunct5 and old failure/receipt/ledger bytes remain unchanged. Source gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7 exclusions; no semantic transition/new independentCriticalEvidence. Current45min documentary assessment11:26Z-12:11Z does not refill any previous window.
 
 ## Current Authority
 
-Baseline `docs/baselines/CVF_GC018_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md` raw SHA256 `83b976dd141d5594c28a7fd40b2f585e8bcac8fc188c16059966e85243ef8581` terminal-doc amendment only; CLOSED_PASS_SOURCE_ADJUNCT_ONLY work order `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md` raw SHA256 `3c15c3c94d97b7c04ed47184253ee7b6f8458c715b1615c3b81ee97ffb11e4ed`. Completion `docs/reviews/CVF_NCR_HTML_B_E_PYTHON_ORACLE_RECOVERY_COMPLETION_2026-10-16.md`; accepted Local proof `docs/reviews/evidence/ncr-html-b-e-python-oracle-recovery-local-20261016.json` SHA256 `d23baa0799af4703a338f715c748401a7e05436512473541a5ea3c0ea5ad5e8a`; SOURCE_ADJUNCT_ONLY release `docs/reviews/evidence/ncr-html-b-e-adjunct-source-release-20261016.json` SHA256 `518e5d84f163ddc3fed7fe11783bf83ab80a958e652ba7c6cbc548c4a7154ba5`. LP embeds actual authority preimagebdfc... and raw root recovery/allowance decision bytes. Original source13 release and source/control authority unchanged. Original task deadline elapsed; terminal documentation grant ends11:43Z. Current next action requires a fresh bounded Local assessment; no inherited proof or runtime allowance.
+Closed source-only provenance baseline `docs/baselines/CVF_GC018_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md` raw SHA256 `83b976dd141d5594c28a7fd40b2f585e8bcac8fc188c16059966e85243ef8581`; work order `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md` raw SHA256 `3c15c3c94d97b7c04ed47184253ee7b6f8458c715b1615c3b81ee97ffb11e4ed`, both unchanged. Current direct Local ASSESS uses standing operator authority and existing lifecycle; these closed artifacts grant no runtime effects. Source-only release/current controls/native proof are prerequisite evidence with their original limits. Next runtime packet needs its own selected concrete authority and fresh bounds.
 
 ## Accepted NCR Evidence And Continuation
 
@@ -37,7 +37,7 @@ Finite clipboard result ordering is accepted; actual OS write cancellation, whol
 
 ## Next Allowed Move
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=ASSESS; BATCH_ID=CVF-NCR-HTML-B-E-PYTHON-ORACLE-RECOVERY-20261016. ACCEPTED_SOURCE_ONLY_PROCEDURE_PARTIAL: frozen adjunct5/worker7 accepted with actual root Python45 predicates including20 typed/message refusals, prior valid LocalJS18 and worker35/30/full gate reused. Source-only release issued; no runtime release or AI-governance proof. Next Local assesses actual B-E technical readiness/prerequisites under existing docs/assessments/CVF_NCR_HTML_B_E_EFFECT_DRIVER_LOCAL_DESIGN_2026-10-16.md, preparing concrete before-effect authority/identity/custody/budgets as needed. Routine technical choices proceed under existing Local delegation; no generic operator documentary checkpoint. Actual Native/Job/product/browser/container/provider/disposal/public/deploy effects held until concrete readiness/effect admission. Local3/3 spent, original failed Python/JS18/old ledger retained, no retry/refill/worker or JS rerun. Original root deadline10:54Z elapsed after valid09:33Z proof; terminal docs only11:13Z-11:43Z under Local decision, procedure PARTIAL and no proof or timer reset. Source13/gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7 P4 exclusions unchanged; no transition/new independentCriticalEvidence. R1/R2partial,R3/R4open,R5/R6deferred; parked effects/LHW24 retained. Accepted source material commit 3ab8d3f06f47abd8c7c2348d54e33bd587aef5fa; normal91/91 and terminal reviewer70/70 PASS consumed; original late-closure disclosure retained, terminal documentation scope only.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-B-E-RUNTIME-ADMISSION-20261016. Local prepares concrete runtime authority pair, immutable pins/admission serialization, unused two-actor identities/namespaces, custody and inclusive deadlines/watchdog under existing docs/assessments/CVF_NCR_HTML_B_E_EFFECT_DRIVER_LOCAL_DESIGN_2026-10-16.md. Current prerequisite delta docs/assessments/CVF_NCR_HTML_B_E_RUNTIME_READINESS_LOCAL_DISPOSITION_2026-10-16.md and docs/reviews/evidence/ncr-html-b-e-runtime-readiness-local-20261016.json at material 0c6cb5278f8076fbd003f484ef725f26d065e36c; normal91/91 PASS. Native N1-N4 unchanged leaf, current source13 actor receipts and adjunct acceptance are reusable at their recorded scopes; no old proof replay. Fresh read-only Docker qualification PASS4/4 at11:45:20Z: desktop-linux/exact pipe/server29.8.2 linux-amd64/exact cached image. Node alias reparse is resolved to verified physical Node; future invocation must bind exact process-local discovery spelling. No Node launch or environment change. First actual terminal/ACK/positive absence Local acceptance gates independent run2. Current action grants no effects; future concrete before-effect authority/readiness required, ordinary technical choices remain Local. This45min ASSESS ends12:11Z with evidence/continuity only; all old windows/spent3 stay closed. Source13/adjunct5/gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7 exclusions unchanged; R1/R2partial,R3/R4open,R5/R6deferred; parked effects/LHW24 retained.
 
 ## Active Boundary
 T3B has a Local-verified active v1 specification. Party B is verified and T3C-C1 tooling accepted at `db78c87df`; T3C-C2 and Party C are verified. T3D-C1 tooling is accepted at `9ed844c2a` without source. T3D-C0-R1 closed at `2fffa1ef7`. T3D-C3 was accepted bounded at `88137e9a2`, but actual-mode prepare attempts failed before Party B/C execution; authorized cleanup removed the failed root and discarded unaccepted worker changes. G1 stopped, G2-G6 parked, and G7 research closed at `660601f0e` with `ADAPT_EXISTING_HANDOFF_ONLY`. Evidence-join sufficiency stays WATCH; no implementation successor exists. Rejected T2 paths remain archived; HRLTP-T2 paused.
@@ -121,7 +121,7 @@ Exact changed manifest:
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: atomic exact12 accepted-source closure and separate exact6 actual-material-SHA continuity.
+Authorized guard-maintenance scope: exact6 current readiness mode/next/result alignment after exact4 material, canonical generation only. No currentAuthority artifact/hash or governance semantics change.
 Protected paths:
 - `AGENT_HANDOFF_V63_2026-09-18.md`
 - `CVF_SESSION_MEMORY.md`
@@ -129,39 +129,39 @@ Protected paths:
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-Operator authorization: existing full Local technical delegation, root actual source-only decision and closure stewardship.
-Rollback boundary: exact12 then exact6 only; preserve A/E/oldCP/oldLP/worker7/source13/ledgers, spent3 and SCEC/freeze/P4 exclusions. No source/hook/carrier semantics, runtime effect or replay.
+Operator authorization: current next and standing full Local orchestrator/reviewer handling; bounded ASSESS only, no runtime effect or old-window extension.
+Rollback boundary: current material4/continuity6 only; retain source13/adjunct5, all old proof/failure/receipt/ledger bytes, spent windows, SCEC/freeze/prior7 exclusions. No hook/checker/carrier change or deletion.
 
 ## Agent Operation Trace Block
 
 | Field | Evidence |
 |---|---|
-| Actor | INTERNAL_AGENT Local closure/session-sync steward; root final technical decision owner |
+| Actor | Local INTERNAL_AGENT orchestrator/reviewer/session-sync steward |
 | Provider or surface | private shared workspace |
-| Session or invocation | ncr-be-terminal-root-finality-20261016 |
+| Session or invocation | ncr-be-readiness-continuity-20261016 |
 | Working directory | repository root |
-| Command or tool surface | metadata proof/closed WO/release/CP/roadmap and exact6 generation; normal governance commits; no probe rerun |
+| Command or tool surface | source continuity edits and canonical generation after committed exact4; repository gates/normal commit only |
 | Target paths | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Allowed scope source | root actual source-only acceptance and exclusive exact12/6 closure delegation |
-| Before status evidence | clean fc6eb6e00 with root ordinal3 PASS and immutable old records |
-| After status evidence | accepted source-only/procedure partial; actual effects0 and Local3 spent |
-| Diff evidence | git diff --name-status and exact staged paths; no deletes/renames |
-| Approval boundary | next technical readiness assessment; concrete runtime admission still required |
-| Claim boundary | source adjunct only; no AI/runtime/parent/disposal proof |
+| Allowed scope source | standing Local handling, delivered readiness ASSESS and exact6 self-protection authority |
+| Before status evidence | clean material 0c6cb5278f8076fbd003f484ef725f26d065e36c normal91/91 PASS and automatic collector SKIPPED_NO_ELIGIBLE_CANDIDATE |
+| After status evidence | exact6 current mode/next/result pointers, currentAuthority unchanged, effects0 |
+| Diff evidence | exact6 source/generated paths, no deletion/rename |
+| Approval boundary | next documentary PLAN remains Local; actual effects need concrete admission |
+| Claim boundary | prerequisite/evidence reconciliation, no new native/control/B-E/live proof |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-be-terminal-root-finality-20261016 |
+| Invocation ID | ncr-be-readiness-continuity-20261016 |
 | Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Manifest delta | MATCH exact6 |
-| Deletion or rename disposition | none; all old/new evidence retained |
+| Deletion or rename disposition | none; old/new custody retained |
 
 ## Claim Boundary
 Current facts, exact packet binding and permitted next action only. Historical Home/O6 evidence remains bounded; no whole-roadmap, live/provider, backend cancellation, release/public/deployment or model-winner claim.
 
-## Terminal Timing Disclosure
+## Historical Terminal Timing Disclosure - Prior Source Recovery
 
 Original10:54Z closure deadline exceeded. Valid09:33Z proof retained; Local terminal docs only11:13Z-11:43Z. Procedure PARTIAL; no proof, worker or runtime continuation.
 
-## Terminal Timing Disclosure
+## Historical Terminal Timing Disclosure - Prior Source Recovery
 
 Original10:54Z closure deadline exceeded. Valid09:33Z proof retained; Local terminal docs only11:13Z-11:43Z. Procedure PARTIAL; no proof, worker or runtime continuation.
