@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Current NCR Continuation
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `0c6cb5278f8076fbd003f484ef725f26d065e36c`. Material SHA: `0c6cb5278f8076fbd003f484ef725f26d065e36c`. Batch ID: CVF-NCR-HTML-B-E-RUNTIME-READINESS-20261016. Exact4 readiness assessment/evidence/roadmap, normal91/91 PASS; automatic collector SKIPPED_NO_ELIGIBLE_CANDIDATE. Exact6 continuity binds actual material SHA; one read-only Docker qualification/four utility starts completed; no B-E product effect or source mutation.
+Paired runtime packet preparation at parent `c112f571942d46975b9998f8c6f62f152dfdfdf6`; Batch ID: CVF-NCR-HTML-B-E-RUNTIME-ADMISSION-20261016. Before-effect gates are pending; no runtime result asserted.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -13,19 +13,19 @@ Current continuation only. Root AGENTS.md and canonical routing owners retain fu
 Closed history is preserved byte-for-byte at `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V63_PRE_NCR_COMPACTION_2026-10-07.md` (SHA256 `54801fdcf14e9abe17592352ec3c69a0b0e855632991af0caacac7b65252ccba`); it is NOT_ACTIVE_AUTHORITY and not default startup reading.
 ## Scope / Target / Owner Boundary
 
-Current Local readiness result `docs/assessments/CVF_NCR_HTML_B_E_RUNTIME_READINESS_LOCAL_DISPOSITION_2026-10-16.md` raw SHA256 `8fe440013e0f87f73276c8925eb22d6252ca351539a52b232b88f0ac6f549db0`; evidence `docs/reviews/evidence/ncr-html-b-e-runtime-readiness-local-20261016.json` raw SHA256 `650592a0ce66bf773024d9298bf3c0357bb827ea3108fdbf5bcfed3089950c06`. Historical native N1-N4 leaf remains reusable on unchanged native-owner bytes; Local failed ACK stays failed. Current cap1/cap2 receipt originals equal embedded canonical bytes and current source13; old snapshot/cap1/source-selector/adjunct-pending blockers are superseded. Earlier file-only snapshot is preserved; separate prospectively admitted Docker qualification PASS4/4 at11:45:20Z with exact context/endpoint/server/image identity, no mutation. Node alias reparse needs verified physical pin and explicit process-local discovery binding in the future runtime packet. No runtime authority or effect is selected by this assessment.
+Concrete runtime pair and unused two-actor identities selected; exact8 executable pins and canonical fixtures independently frozen after pair. Docker qualification PASS4/4 at11:45:20Z is consumed at its scope. Physical Node exact discovery spelling is process-local. Current source13 controls/native leaf and accepted adjunct proof are reused, no replay. Run1 actual terminal/ACK/positive absence gates independent run2; product effects remain conditional until bound gates and immutable admission.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_html_b_e_readiness_assessed_runtime_packet_pending`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=Local PLAN concrete runtime authority/pins/admission under existing design; role=INTERNAL_AGENT Local orchestrator/reviewer/steward; phase=readiness reconciliation plus read-only Docker qualification delivered, product effect packet pending; decision owner=LOCAL; parked checkpoint=actual B-E runtime effects need specific admission; no generic operator documentary checkpoint and no old-window refill.
+Startup acknowledged: current mode=`cvf_ncr_html_b_e_runtime_packet_prepared`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=bound gates then concrete first runtime invocation; role=INTERNAL_AGENT Local orchestrator/reviewer/steward; phase=runtime packet preparation; decision owner=LOCAL; parked checkpoint=actual effects conditional on before-effect gates, run2 on accepted run1; other parked lanes retained.
 
 ## Current Mode
 
-`cvf_ncr_html_b_e_readiness_assessed_runtime_packet_pending`. Exact4 prerequisite delta is delivered; next finite connected work is concrete before-effect runtime packet under locked two-run design. Current assessment has exactly1 read-only Docker qualification program/4 utility starts; Native Job/product/browser/container-create/provider/credential/store/delete effects0, no source/model/native rerun. Existing actor/native/qualification/adjunct observations are consumed at their scopes without rerun. Source13/adjunct5 and old failure/receipt/ledger bytes remain unchanged. Source gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7 exclusions; no semantic transition/new independentCriticalEvidence. Current45min documentary assessment11:26Z-12:11Z does not refill any previous window.
+`cvf_ncr_html_b_e_runtime_packet_prepared`. Runtime packet selected, actual B-E outcome pending. Fresh task12:01Z-13:31Z; worker inclusive13:00Z, Local13:20Z. Exactly one program per actor, source900/120sec and56/8 starts;1080sec external watchdog. No inherited slot, reset or retry. Source13/adjunct5/gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7 exclusions unchanged. Parked effects retain their owners.
 
 ## Current Authority
 
-Closed source-only provenance baseline `docs/baselines/CVF_GC018_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md` raw SHA256 `83b976dd141d5594c28a7fd40b2f585e8bcac8fc188c16059966e85243ef8581`; work order `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md` raw SHA256 `3c15c3c94d97b7c04ed47184253ee7b6f8458c715b1615c3b81ee97ffb11e4ed`, both unchanged. Current direct Local ASSESS uses standing operator authority and existing lifecycle; these closed artifacts grant no runtime effects. Source-only release/current controls/native proof are prerequisite evidence with their original limits. Next runtime packet needs its own selected concrete authority and fresh bounds.
+Baseline `docs/baselines/CVF_GC018_NCR_HTML_B_E_RUNTIME_2026-10-16.md` raw SHA256 `a5996906a1788a95e428cfa643eb933633c7ae89b8b44bf09fc87138a653b273`; work order `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_RUNTIME_2026-10-16.md` raw SHA256 `e77d463a22ff1672111eb779ac6eae570f807b79a1a206ac0d0e48519d754a68`. Specific owned synthetic B-E envelope only; runtime still requires committed continuity, bound gates, independently frozen pins/admission and actor freshness. Original releases remain prerequisite evidence, not effect consent.
 
 ## Accepted NCR Evidence And Continuation
 
@@ -37,7 +37,7 @@ Finite clipboard result ordering is accepted; actual OS write cancellation, whol
 
 ## Next Allowed Move
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-B-E-RUNTIME-ADMISSION-20261016. Local prepares concrete runtime authority pair, immutable pins/admission serialization, unused two-actor identities/namespaces, custody and inclusive deadlines/watchdog under existing docs/assessments/CVF_NCR_HTML_B_E_EFFECT_DRIVER_LOCAL_DESIGN_2026-10-16.md. Current prerequisite delta docs/assessments/CVF_NCR_HTML_B_E_RUNTIME_READINESS_LOCAL_DISPOSITION_2026-10-16.md and docs/reviews/evidence/ncr-html-b-e-runtime-readiness-local-20261016.json at material 0c6cb5278f8076fbd003f484ef725f26d065e36c; normal91/91 PASS. Native N1-N4 unchanged leaf, current source13 actor receipts and adjunct acceptance are reusable at their recorded scopes; no old proof replay. Fresh read-only Docker qualification PASS4/4 at11:45:20Z: desktop-linux/exact pipe/server29.8.2 linux-amd64/exact cached image. Node alias reparse is resolved to verified physical Node; future invocation must bind exact process-local discovery spelling. No Node launch or environment change. First actual terminal/ACK/positive absence Local acceptance gates independent run2. Current action grants no effects; future concrete before-effect authority/readiness required, ordinary technical choices remain Local. This45min ASSESS ends12:11Z with evidence/continuity only; all old windows/spent3 stay closed. Source13/adjunct5/gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7 exclusions unchanged; R1/R2partial,R3/R4open,R5/R6deferred; parked effects/LHW24 retained.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-HTML-B-E-RUNTIME-ADMISSION-20261016. Local executes docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_RUNTIME_2026-10-16.md concrete paired runtime envelope under existing locked B-E design. Require committed paired authority/exact6 actual-SHA continuity and bound pre-dispatch/pre-implementation PASS before effects; then independently freeze pins/admission raw hashes. Worker ncr-be-worker-20261016-r1a cap2 once; actual accepted terminal/ACK/positive absence plus committed Local acceptance gates distinct Local ncr-be-local-20261016-r2a cap1 once. Exact external namespaces/custody and process-local physical Node discovery are in paired order. Task12:01Z-13:31Z; worker inclusive13:00Z, Local13:20Z; latest launches12:42Z/13:02Z with1080sec watchdog. No reset/retry/fallback; failures consume identity and block dependent2. Source13/adjunct5/gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7 exclusions unchanged; no real-data/provider/delete/public/deploy or LHW24 effects. Runtime result remains unobserved until actual returned proof; no generic operator checkpoint.
 
 ## Active Boundary
 T3B has a Local-verified active v1 specification. Party B is verified and T3C-C1 tooling accepted at `db78c87df`; T3C-C2 and Party C are verified. T3D-C1 tooling is accepted at `9ed844c2a` without source. T3D-C0-R1 closed at `2fffa1ef7`. T3D-C3 was accepted bounded at `88137e9a2`, but actual-mode prepare attempts failed before Party B/C execution; authorized cleanup removed the failed root and discarded unaccepted worker changes. G1 stopped, G2-G6 parked, and G7 research closed at `660601f0e` with `ADAPT_EXISTING_HANDOFF_ONLY`. Evidence-join sufficiency stays WATCH; no implementation successor exists. Rejected T2 paths remain archived; HRLTP-T2 paused.
@@ -105,13 +105,13 @@ Historical conditional OBS-079b96e73400827c trusted BLOCKED/adjudication remains
 
 Disposition: AUTHORIZED_EXACT_MANIFEST
 
-Atomicity reason: amended currentAuthority source bytes and exact6 generated/current continuity must change together to prevent stale hashes. Worker yielded clean before source/scaffold/tests; no lane is active. This is the bounded pre-edit dispatch repair only.
-
-Rollback boundary: these exact8 files only; preserve all historical evidence, source13, budgets, SCEC/freeze, prior7 exclusions and parked effects. No runtime activation.
+Atomicity reason: currentAuthority raw hashes and paired packet must align atomically; subsequent exact6 records actual pair SHA before bound release.
 
 Exact changed manifest:
-- `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md`
-- `docs/baselines/CVF_GC018_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md`
+
+- `docs/baselines/CVF_GC018_NCR_HTML_B_E_RUNTIME_2026-10-16.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_RUNTIME_2026-10-16.md`
+- `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`
 - `AGENT_HANDOFF_V63_2026-09-18.md`
 - `CVF_SESSION_MEMORY.md`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
@@ -119,9 +119,11 @@ Exact changed manifest:
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 
+Rollback boundary: only listed paths; no old evidence, product source or governance-semantic mutation.
+
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: exact6 current readiness mode/next/result alignment after exact4 material, canonical generation only. No currentAuthority artifact/hash or governance semantics change.
+Authorized guard-maintenance scope: exact6 currentAuthority/hash/mode/next alignment and canonical generation for concrete paired runtime packet; no guard semantics change.
 Protected paths:
 - `AGENT_HANDOFF_V63_2026-09-18.md`
 - `CVF_SESSION_MEMORY.md`
@@ -129,8 +131,8 @@ Protected paths:
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-Operator authorization: current next and standing full Local orchestrator/reviewer handling; bounded ASSESS only, no runtime effect or old-window extension.
-Rollback boundary: current material4/continuity6 only; retain source13/adjunct5, all old proof/failure/receipt/ledger bytes, spent windows, SCEC/freeze/prior7 exclusions. No hook/checker/carrier change or deletion.
+Operator authorization: current next and standing full Local orchestrator/reviewer authority; specific finite pair fixes effects and gates.
+Rollback boundary: selected packet and exact6 only; all source13/adjunct5, old evidence/failures/receipts, spent windows, SCEC/freeze/prior7 exclusions retained.
 
 ## Agent Operation Trace Block
 
@@ -138,22 +140,22 @@ Rollback boundary: current material4/continuity6 only; retain source13/adjunct5,
 |---|---|
 | Actor | Local INTERNAL_AGENT orchestrator/reviewer/session-sync steward |
 | Provider or surface | private shared workspace |
-| Session or invocation | ncr-be-readiness-continuity-20261016 |
+| Session or invocation | ncr-be-runtime-admission-material-20261016 |
 | Working directory | repository root |
-| Command or tool surface | source continuity edits and canonical generation after committed exact4; repository gates/normal commit only |
-| Target paths | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Allowed scope source | standing Local handling, delivered readiness ASSESS and exact6 self-protection authority |
-| Before status evidence | clean material 0c6cb5278f8076fbd003f484ef725f26d065e36c normal91/91 PASS and automatic collector SKIPPED_NO_ELIGIBLE_CANDIDATE |
-| After status evidence | exact6 current mode/next/result pointers, currentAuthority unchanged, effects0 |
-| Diff evidence | exact6 source/generated paths, no deletion/rename |
-| Approval boundary | next documentary PLAN remains Local; actual effects need concrete admission |
-| Claim boundary | prerequisite/evidence reconciliation, no new native/control/B-E/live proof |
+| Command or tool surface | source continuity edits, canonical generation, exact-path gates and normal commits |
+| Target paths | `docs/baselines/CVF_GC018_NCR_HTML_B_E_RUNTIME_2026-10-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_RUNTIME_2026-10-16.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Allowed scope source | standing Local roadmap authority and concrete B-E paired envelope |
+| Before status evidence | entry clean c112f571942d46975b9998f8c6f62f152dfdfdf6; prior readiness closed |
+| After status evidence | paired authority pointers synchronized; runtime result pending |
+| Diff evidence | exact selected manifest; no deletion or rename |
+| Approval boundary | specific effects require bound gates and immutable admission; run2 requires real accepted run1 |
+| Claim boundary | packet preparation and continuity; no current runtime/live proof |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-be-readiness-continuity-20261016 |
-| Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Manifest delta | MATCH exact6 |
-| Deletion or rename disposition | none; old/new custody retained |
+| Invocation ID | ncr-be-runtime-admission-material-20261016 |
+| Expected manifest | `docs/baselines/CVF_GC018_NCR_HTML_B_E_RUNTIME_2026-10-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_RUNTIME_2026-10-16.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Actual changed set | `docs/baselines/CVF_GC018_NCR_HTML_B_E_RUNTIME_2026-10-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_RUNTIME_2026-10-16.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | none; selected custody retained by Local |
 
 ## Claim Boundary
 Current facts, exact packet binding and permitted next action only. Historical Home/O6 evidence remains bounded; no whole-roadmap, live/provider, backend cancellation, release/public/deployment or model-winner claim.

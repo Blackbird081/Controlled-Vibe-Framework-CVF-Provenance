@@ -31,22 +31,22 @@ artifact.
 | Prior handoff (archive-qualified) | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V62_2026-09-17.md` |
 | Latest front-door archive | `CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_COMPACTION_ARCHIVE_2026-08-11.md` |
 | Current authority evidence | `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` `currentAuthority` |
-| Parent maintenance | Readiness reconciled; concrete B-E admission packet next |
+| Parent maintenance | Concrete B-E packet; bound runtime gates next |
 | Freeze posture | `governance_kernel_freeze_recommended` |
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_html_b_e_readiness_assessed_runtime_packet_pending`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=Local PLAN concrete runtime authority/pins/admission under existing design; role=INTERNAL_AGENT Local orchestrator/reviewer/steward; phase=readiness reconciliation plus read-only Docker qualification delivered, product effect packet pending; decision owner=LOCAL; parked checkpoint=actual B-E runtime effects need specific admission; no generic operator documentary checkpoint and no old-window refill.
+Startup acknowledged: current mode=`cvf_ncr_html_b_e_runtime_packet_prepared`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=bound gates then concrete first runtime invocation; role=INTERNAL_AGENT Local orchestrator/reviewer/steward; phase=runtime packet preparation; decision owner=LOCAL; parked checkpoint=actual effects conditional on before-effect gates, run2 on accepted run1; other parked lanes retained.
 
 ## Current Mode
 
-Current mode marker: `cvf_ncr_html_b_e_readiness_assessed_runtime_packet_pending`
-Current mode: `cvf_ncr_html_b_e_readiness_assessed_runtime_packet_pending`; previous mode marker: `cvf_ncr_html_b_e_adjunct_source_accepted_readiness_open`
+Current mode marker: `cvf_ncr_html_b_e_runtime_packet_prepared`
+Current mode: `cvf_ncr_html_b_e_runtime_packet_prepared`; previous mode marker: `cvf_ncr_html_b_e_readiness_assessed_runtime_packet_pending`
 
 ## Next Allowed Move
 
-Mode: `cvf_ncr_html_b_e_readiness_assessed_runtime_packet_pending`
+Mode: `cvf_ncr_html_b_e_runtime_packet_prepared`
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-B-E-RUNTIME-ADMISSION-20261016. Local prepares concrete runtime authority pair, immutable pins/admission serialization, unused two-actor identities/namespaces, custody and inclusive deadlines/watchdog under existing docs/assessments/CVF_NCR_HTML_B_E_EFFECT_DRIVER_LOCAL_DESIGN_2026-10-16.md. Current prerequisite delta docs/assessments/CVF_NCR_HTML_B_E_RUNTIME_READINESS_LOCAL_DISPOSITION_2026-10-16.md and docs/reviews/evidence/ncr-html-b-e-runtime-readiness-local-20261016.json at material 0c6cb5278f8076fbd003f484ef725f26d065e36c; normal91/91 PASS. Native N1-N4 unchanged leaf, current source13 actor receipts and adjunct acceptance are reusable at their recorded scopes; no old proof replay. Fresh read-only Docker qualification PASS4/4 at11:45:20Z: desktop-linux/exact pipe/server29.8.2 linux-amd64/exact cached image. Node alias reparse is resolved to verified physical Node; future invocation must bind exact process-local discovery spelling. No Node launch or environment change. First actual terminal/ACK/positive absence Local acceptance gates independent run2. Current action grants no effects; future concrete before-effect authority/readiness required, ordinary technical choices remain Local. This45min ASSESS ends12:11Z with evidence/continuity only; all old windows/spent3 stay closed. Source13/adjunct5/gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7 exclusions unchanged; R1/R2partial,R3/R4open,R5/R6deferred; parked effects/LHW24 retained.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-HTML-B-E-RUNTIME-ADMISSION-20261016. Local executes docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_RUNTIME_2026-10-16.md concrete paired runtime envelope under existing locked B-E design. Require committed paired authority/exact6 actual-SHA continuity and bound pre-dispatch/pre-implementation PASS before effects; then independently freeze pins/admission raw hashes. Worker ncr-be-worker-20261016-r1a cap2 once; actual accepted terminal/ACK/positive absence plus committed Local acceptance gates distinct Local ncr-be-local-20261016-r2a cap1 once. Exact external namespaces/custody and process-local physical Node discovery are in paired order. Task12:01Z-13:31Z; worker inclusive13:00Z, Local13:20Z; latest launches12:42Z/13:02Z with1080sec watchdog. No reset/retry/fallback; failures consume identity and block dependent2. Source13/adjunct5/gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7 exclusions unchanged; no real-data/provider/delete/public/deploy or LHW24 effects. Runtime result remains unobserved until actual returned proof; no generic operator checkpoint.
 
 ## Parked Checkpoints
 
