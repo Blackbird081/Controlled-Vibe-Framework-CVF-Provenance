@@ -5,13 +5,13 @@ docType: roadmap
 Status: ACCEPTED_UNIFIED_ROADMAP_LOCAL_CONSUMER_BOUNDED_FULL_PILOT_OPEN
 Date: 2026-09-26
 Program ID: CVF-NCR
-Version: 2.47
+Version: 2.48
 Revision disposition: LOCAL_CONSUMER_MAINTENANCE_ACCEPTED_BOUNDED; END_TO_END_PILOT_OPEN; Q001_AND_P11_CHECKPOINTS_RETAINED
 Decision owner: operator về định hướng/phạm vi; Local reviewer về đối chiếu kỹ thuật và nghiệm thu.
 
 ## Current Delivery Checkpoint - 2026-10-14
 
-**2026-10-16 B-E effect-driver design accepted only:** `docs/assessments/CVF_NCR_HTML_B_E_EFFECT_DRIVER_LOCAL_DESIGN_2026-10-16.md` / `docs/reviews/evidence/ncr-html-b-e-effect-design-local-20261016.json` lock five proposed adjunct owners, counter/op identity, exact prerequisite fences, helper-only explicit qualified Chrome preload and closed prospective admission shape. Installed Playwright defaults headless launch to Headless Shell; prior chrome.exe qualification is file identity only, no actual wrong-browser observation. All13 frozen source hashes match; source13/production7/oracles6/gen9/release/current verification authority and existing worker cap2/Local cap1 controls remain retained without replay. No implementation/refusal/native/product/browser/container/provider/delete executed. Future two sequential cap2v1v2 then distinct cap1v1 runs each have64 controlled root attempts56work/8cleanup, separate Job32 and900/120s, no standalone stage/resume. Next Local authors a bound source-only adjunct GC-018/work order and focused fake proofs; actual runtime awaits accepted adjunct and exact effect admission. Same root/SCEC2/counters2,0,2,0/blockers/freeze/prior7 P4 exclusions; no transition/new critical evidence. R1/R2partial,R3/R4open,R5/R6deferred; parked effects/LHW24 retained. Public Export Disposition: DEFERRED_PRIVATE_ONLY.
+**2026-10-16 B-E adjunct implemented; independent review blocked:** `docs/reviews/CVF_NCR_HTML_B_E_ADJUNCT_SOURCE_COMPLETION_2026-10-16.md` / `docs/reviews/evidence/ncr-html-b-e-adjunct-source-local-20261016.json` retain exact five adjunct source/test files below350 lines and frozen worker7. Worker Python35/35, JS30/30 and full gate PASS; actual2/6 programs after preserved metadata-ledger race. Local distinct JS18 predicates PASS; Python probe failed because its in-memory Sink lacks mkdir before endpoint runner, so admission/marker group was not reached. Local2/2 programs are spent; no refund, worker-slot transfer, retry or SOURCE_ADJUNCT_ONLY release. No source defect is established by this fixture failure. Source13/production7/oracles6/gen9/original source release/authority/control receipts unchanged; no prior matrix replay or runtime effect. Procedure PARTIAL_WITH_REASON, original preparation/packet/probe failures retained. Next Local static consolidated evidence-recovery disposition only; actual B-E/native/browser/container/provider/delete remains held. Same root/SCEC2/counters2,0,2,0/blockers/freeze/prior7 P4 exclusions; no transition/critical-evidence increment. R1/R2partial,R3/R4open,R5/R6deferred; parked effects/LHW24 retained. Public Export Disposition: DEFERRED_PRIVATE_ONLY.
 
 **2026-10-16 native prerequisite PLAN complete; entry blocked:** `docs/assessments/CVF_NCR_HTML_NATIVE_PROOF_PREREQUISITES_2026-10-16.md` / `docs/reviews/evidence/ncr-html-native-prerequisites-local-20261016.json` consume prior160 Python/13 Node/14 independent and six read-only validated receipts without control rerun. Standalone Windows ABI/owned benign-child N1-N4 can precede B-E; documented snapshot INVALID_HANDLE_VALUE differs from zero-only Win32._ok used by resume, so one consolidated existing-owner source envelope comes first. Actual failure unobserved; current cap1 refuses before namespace, tools/image/host unknown. No native/product/browser/container/provider/delete or budget refill. Same root/generation6/SCEC2/counters2,0,2,0/blockers/freeze/P4 exclusions retained. Local prepares the source-correction envelope directly, no manual relay/new checker. R1/R2partial,R3/R4open,R5/R6deferred; parked effects/LHW24 unchanged.
 
@@ -1140,23 +1140,23 @@ orientation packets are not refreshed by this private local edit.
 | Field | Evidence |
 |---|---|
 | Actor | Local INTERNAL_AGENT reviewer/steward |
-| Provider or surface | private workspace with distinct independent internal probe executor |
-| Session or invocation | ncr-html-cap1-completion-local-20261016 |
+| Provider or surface | private shared workspace |
+| Session or invocation | ncr-be-adjunct-local-review-20261016 |
 | Working directory | repository root |
-| Command or tool surface | source review, fake preflight, actual inert matrix, root receipt validation, canonical gates and commits |
-| Target paths | `docs/baselines/CVF_GC018_NCR_HTML_CAP1_COMPLETION_LOCAL_2026-10-16.md`; `docs/assessments/CVF_NCR_HTML_CAP1_COMPLETION_LOCAL_DISPOSITION_2026-10-16.md`; `docs/reviews/evidence/ncr-html-cap1-completion-local-20261016.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` |
-| Allowed scope source | current finish-failures/move-tranche operator instruction and fresh completion envelope |
-| Before status evidence | cleanfc3f33362; source12 frozen; old failed proof retained |
-| After status evidence | material4; independent9/26 actual PASS; no production/source or B-E effect change |
-| Diff evidence | exact4 material; source12 hashes MATCH; old proof SHA MATCH |
-| Approval boundary | bounded inert matrix only, next B-E preparation; no product/provider/public grant |
-| Claim boundary | accepted cap1 control leaf, no parent/B-E/disposal acceptance |
+| Command or tool surface | consume frozen worker/full-gate evidence; two distinct fake Local programs; static failure diagnosis; exact17 blocked material and actual-SHA sync |
+| Target paths | `scripts/cvf_ncr_html_effect_fence.py`; `scripts/run_cvf_ncr_html_effect_driver.py`; `scripts/test_cvf_ncr_html_effect_driver.py`; `scripts/cvf_ncr_html_browser_fence.cjs`; `scripts/cvf_ncr_html_browser_fence.test.cjs`; `docs/reviews/CVF_NCR_HTML_B_E_ADJUNCT_SOURCE_WORKER_RETURN_2026-10-16.md`; `docs/reviews/evidence/ncr-html-b-e-adjunct-source-worker-20261016.json`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md`; `docs/reviews/CVF_NCR_HTML_B_E_ADJUNCT_SOURCE_COMPLETION_2026-10-16.md`; `docs/reviews/evidence/ncr-html-b-e-adjunct-source-local-20261016.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Allowed scope source | operator full Local roadmap handling; amended source-only baseline/order; conditional release withheld |
+| Before status evidence | clean released16636960c; worker yielded exact7 unstaged, no root tracked writes while lane active |
+| After status evidence | exact17 blocked material; no release path; source13 unchanged |
+| Diff evidence | exact17 observed/staged manifest, no deletions or renamed paths |
+| Approval boundary | source-only material preservation; independent acceptance blocked; no runtime or retry |
+| Claim boundary | worker source/fake results retained; incomplete Local Python proof, no acceptance or AI-governance claim |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-html-cap1-completion-local-20261016 |
-| Expected manifest | `docs/baselines/CVF_GC018_NCR_HTML_CAP1_COMPLETION_LOCAL_2026-10-16.md`; `docs/assessments/CVF_NCR_HTML_CAP1_COMPLETION_LOCAL_DISPOSITION_2026-10-16.md`; `docs/reviews/evidence/ncr-html-cap1-completion-local-20261016.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` |
-| Actual changed set | `docs/baselines/CVF_GC018_NCR_HTML_CAP1_COMPLETION_LOCAL_2026-10-16.md`; `docs/assessments/CVF_NCR_HTML_CAP1_COMPLETION_LOCAL_DISPOSITION_2026-10-16.md`; `docs/reviews/evidence/ncr-html-cap1-completion-local-20261016.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` |
-| Manifest delta | MATCH exact4 material |
-| Deletion or rename disposition | none; all old/new raw failures/custody retained |
+| Invocation ID | ncr-be-adjunct-local-review-20261016 |
+| Expected manifest | `scripts/cvf_ncr_html_effect_fence.py`; `scripts/run_cvf_ncr_html_effect_driver.py`; `scripts/test_cvf_ncr_html_effect_driver.py`; `scripts/cvf_ncr_html_browser_fence.cjs`; `scripts/cvf_ncr_html_browser_fence.test.cjs`; `docs/reviews/CVF_NCR_HTML_B_E_ADJUNCT_SOURCE_WORKER_RETURN_2026-10-16.md`; `docs/reviews/evidence/ncr-html-b-e-adjunct-source-worker-20261016.json`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md`; `docs/reviews/CVF_NCR_HTML_B_E_ADJUNCT_SOURCE_COMPLETION_2026-10-16.md`; `docs/reviews/evidence/ncr-html-b-e-adjunct-source-local-20261016.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Actual changed set | `scripts/cvf_ncr_html_effect_fence.py`; `scripts/run_cvf_ncr_html_effect_driver.py`; `scripts/test_cvf_ncr_html_effect_driver.py`; `scripts/cvf_ncr_html_browser_fence.cjs`; `scripts/cvf_ncr_html_browser_fence.test.cjs`; `docs/reviews/CVF_NCR_HTML_B_E_ADJUNCT_SOURCE_WORKER_RETURN_2026-10-16.md`; `docs/reviews/evidence/ncr-html-b-e-adjunct-source-worker-20261016.json`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md`; `docs/reviews/CVF_NCR_HTML_B_E_ADJUNCT_SOURCE_COMPLETION_2026-10-16.md`; `docs/reviews/evidence/ncr-html-b-e-adjunct-source-local-20261016.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Manifest delta | MATCH exact17, conditional release absent |
+| Deletion or rename disposition | none; all old/new custody retained |
 
 ## Public Export Disposition
 

@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 docType: work_order
-Status: DISPATCH_READY
+Status: BLOCKED_WITH_REASON
 Date: 2026-10-16
 Batch ID: CVF-NCR-HTML-B-E-ADJUNCT-SOURCE-20261016
 Dispatch base head: 97150799b69aa635c3a527c57b2a0cb62e204df5
@@ -17,7 +17,7 @@ Worker return path: `docs/reviews/CVF_NCR_HTML_B_E_ADJUNCT_SOURCE_WORKER_RETURN_
 Role: INTERNAL_AGENT implementation worker.
 Canonical packet: docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md; paired baseline docs/baselines/CVF_GC018_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md.
 Commit mode: WORKER_MUST_NOT_COMMIT.
-executionBaseHead: WORKER_MUST_CAPTURE_AT_START from the actual released clean HEAD before bound pre-implementation.
+executionBaseHead: 16636960c36db619af0f4788e56f51d67e6704a6; captured clean before the renewed bound pre-implementation.
 Current-time notes: current operator next/full Local handling; no runtime authority or historical proof-slot reuse.
 Do-not-misread notes: exact7 source-only/fake-only output; source13/release immutable; no staging/commit/provider or B-E effect.
 Phase: source-only implementation within the accepted Local design.
@@ -374,7 +374,7 @@ Contract source archive-qualified exception: docs/reference/CVF_AHB_T2_AGENT_HAN
 | route | MULTI_AGENT_MULTI_ROLE |
 | rolePattern | dispatcher -> implementation worker -> Local reviewer/closer -> session-sync steward |
 | phase | accepted-design source-only implementation |
-| baseHeadFor(phase) | dispatchBaseHead=97150799b69aa635c3a527c57b2a0cb62e204df5; executionBaseHead=WORKER_MUST_CAPTURE_AT_START; closureBaseHead=REVIEWER_TO_SET |
+| baseHeadFor(phase) | dispatchBaseHead=97150799b69aa635c3a527c57b2a0cb62e204df5; executionBaseHead=16636960c36db619af0f4788e56f51d67e6704a6; closureBaseHead=16636960c36db619af0f4788e56f51d67e6704a6 |
 | changedSetScope(phase) | worker exact7; Local material/review plus exact6 continuity |
 | traceScope(phase, actor) | worker records actual executionBaseHead and changed7; Local records probes, exact18 and actual-SHA sync |
 | commitOwner(phase) | worker forbidden; Local reviewer/closer and steward own commits |
@@ -528,7 +528,7 @@ Dispatch marker binds actual paired material SHA before worker release. Preserve
 | Session or invocation | ncr-be-adjunct-source-dispatch-20261016 |
 | Working directory | repository root |
 | Command or tool surface | mapped reads; actual root resolver/entry gate; advisory scaffold/drafts; Local consolidated adoption/corrections and canonical author gates |
-| Target paths | `docs/baselines/CVF_GC018_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Target paths | `scripts/cvf_ncr_html_effect_fence.py`; `scripts/run_cvf_ncr_html_effect_driver.py`; `scripts/test_cvf_ncr_html_effect_driver.py`; `scripts/cvf_ncr_html_browser_fence.cjs`; `scripts/cvf_ncr_html_browser_fence.test.cjs`; `docs/reviews/CVF_NCR_HTML_B_E_ADJUNCT_SOURCE_WORKER_RETURN_2026-10-16.md`; `docs/reviews/evidence/ncr-html-b-e-adjunct-source-worker-20261016.json`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md`; `docs/reviews/CVF_NCR_HTML_B_E_ADJUNCT_SOURCE_COMPLETION_2026-10-16.md`; `docs/reviews/evidence/ncr-html-b-e-adjunct-source-local-20261016.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Allowed scope source | operator full Local roadmap handling and committed five-file design |
 | Before status evidence | clean worktree: git status --short empty at original entry f9ca6a26e/PASS12.54s; pre-edit amendment lane yielded clean at97150799b with bound setup PASS91.55s and zero source/scaffold/test writes |
 | After status evidence | canonical pair only; no implementation/source or runtime effect |
@@ -537,9 +537,9 @@ Dispatch marker binds actual paired material SHA before worker release. Preserve
 | Claim boundary | source-only prospective contract, not executed source or runtime proof |
 | Agent type | INTERNAL_AGENT |
 | Invocation ID | ncr-be-adjunct-source-dispatch-20261016 |
-| Expected manifest | `docs/baselines/CVF_GC018_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Actual changed set | `docs/baselines/CVF_GC018_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Manifest delta | MATCH exact8 atomic pre-edit authority repair; no worker source changes |
+| Expected manifest | `scripts/cvf_ncr_html_effect_fence.py`; `scripts/run_cvf_ncr_html_effect_driver.py`; `scripts/test_cvf_ncr_html_effect_driver.py`; `scripts/cvf_ncr_html_browser_fence.cjs`; `scripts/cvf_ncr_html_browser_fence.test.cjs`; `docs/reviews/CVF_NCR_HTML_B_E_ADJUNCT_SOURCE_WORKER_RETURN_2026-10-16.md`; `docs/reviews/evidence/ncr-html-b-e-adjunct-source-worker-20261016.json`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md`; `docs/reviews/CVF_NCR_HTML_B_E_ADJUNCT_SOURCE_COMPLETION_2026-10-16.md`; `docs/reviews/evidence/ncr-html-b-e-adjunct-source-local-20261016.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Actual changed set | `scripts/cvf_ncr_html_effect_fence.py`; `scripts/run_cvf_ncr_html_effect_driver.py`; `scripts/test_cvf_ncr_html_effect_driver.py`; `scripts/cvf_ncr_html_browser_fence.cjs`; `scripts/cvf_ncr_html_browser_fence.test.cjs`; `docs/reviews/CVF_NCR_HTML_B_E_ADJUNCT_SOURCE_WORKER_RETURN_2026-10-16.md`; `docs/reviews/evidence/ncr-html-b-e-adjunct-source-worker-20261016.json`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md`; `docs/reviews/CVF_NCR_HTML_B_E_ADJUNCT_SOURCE_COMPLETION_2026-10-16.md`; `docs/reviews/evidence/ncr-html-b-e-adjunct-source-local-20261016.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Manifest delta | MATCH exact17 blocked material; conditional release deliberately absent |
 | Deletion or rename disposition | none; all prior source/proof/custody retained |
 
 ## Delta Execution Claim Boundary Control Block
@@ -688,3 +688,9 @@ Pre-edit consistency amendment: the worker caught the baseline overview lock/per
 ## Claim Boundary
 
 Bound source-only implementation after committed pair/exact6 and bound gates. This packet claims no current source implementation, passing fake/independent proof, runtime admission or B-E/AI/provider/disposal/public/deploy behavior. Synthetic runtime-shaped test data is never operational consent.
+
+## Local Review Disposition - 2026-10-16
+
+Local review is BLOCKED_WITH_REASON at 2026-10-16T08:06:46.490328+00:00. Worker exact7 and full gate are consumed; Python35/JS30 PASS, actual2/6 worker programs. Independent Local JavaScript18 predicates PASS; Local Python program failed at the endpoint fixture because Sink lacks mkdir; admission/marker probes were not reached. Local2/2 slots are spent. No source defect is established by that fixture failure. Source5 stays unaccepted and no SOURCE_ADJUNCT_ONLY release is issued. Worker remaining4 are not Local slots. No retry, new namespace, runtime effect, budget refill or worker redispatch follows.
+
+Local proof: `docs/reviews/evidence/ncr-html-b-e-adjunct-source-local-20261016.json`, raw SHA256 `b78629db7f49efba10cbcd09a265aea10ba53e15c650bda8794aa1e7dc04328a`. Dispatch preimage raw SHA256 f9f1006c38c33c0426f2ca2cd76e0abd5063024609bbae7e09ed777b7087b131 is embedded there. Exact17 blocked material omits the conditional release from the planned acceptance18; all other output paths remain inside the original Local scope. Next is static consolidated evidence-recovery planning only.

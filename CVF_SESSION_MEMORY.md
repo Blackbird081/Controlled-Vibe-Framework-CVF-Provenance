@@ -31,22 +31,22 @@ artifact.
 | Prior handoff (archive-qualified) | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V62_2026-09-17.md` |
 | Latest front-door archive | `CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_COMPACTION_ARCHIVE_2026-08-11.md` |
 | Current authority evidence | `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` `currentAuthority` |
-| Parent maintenance | B-E source-only adjunct pair committed; bound implementation release and fake proofs next |
+| Parent maintenance | B-E adjunct implemented; independent Python fixture review blocked; no release |
 | Freeze posture | `governance_kernel_freeze_recommended` |
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_html_b_e_adjunct_source_released`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=bound source-only adjunct implementation release and fake proofs; role=INTERNAL_AGENT Local dispatcher/reviewer/steward; phase=source-only dispatch, bound gate required before worker; decision owner=Local; parked checkpoint=actual B-E/Native/product/browser/container/provider/disposal/parent/public/deploy require separate current effect admission; no extra operator checkpoint for this source-only package.
+Startup acknowledged: current mode=`cvf_ncr_html_b_e_adjunct_source_implemented_review_blocked`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=static diagnostic and consolidated evidence-recovery disposition, no probe retry; role=INTERNAL_AGENT Local reviewer/steward; phase=source implementation retained, independent acceptance blocked; decision owner=LOCAL; parked checkpoint=Local probe allowance exhausted, actual B-E/Native/browser/container/provider/disposal/public/deploy still separately held.
 
 ## Current Mode
 
-Current mode marker: `cvf_ncr_html_b_e_adjunct_source_released`
-Current mode: `cvf_ncr_html_b_e_adjunct_source_released`; previous mode marker: `cvf_ncr_html_b_e_effect_design_accepted_source_packet_open`
+Current mode marker: `cvf_ncr_html_b_e_adjunct_source_implemented_review_blocked`
+Current mode: `cvf_ncr_html_b_e_adjunct_source_implemented_review_blocked`; previous mode marker: `cvf_ncr_html_b_e_adjunct_source_released`
 
 ## Next Allowed Move
 
-Mode: `cvf_ncr_html_b_e_adjunct_source_released`
+Mode: `cvf_ncr_html_b_e_adjunct_source_implemented_review_blocked`
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-HTML-B-E-ADJUNCT-SOURCE-20261016. WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md; baseline=docs/baselines/CVF_GC018_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md. Committed pair and exact6 continuity require current bound pre-dispatch PASS before worker starts; worker captures clean actual HEAD and bound pre-implementation before ignored scaffold/source/tests. INTERNAL_AGENT source-only worker exact7: five new adjunct source/test files below350 lines each plus return/proof. Locked APIs/counter56work8cleanup/identity/browser/helper/admission schemas and fixed root expectations; worker6 fake programs/root2 independent90s each, all preparation from06:54Z worker deadline09:54Z/root10:54Z; no budget reset. Full worker return gate and byte freeze, then distinct Local probes, accepted source-only release, atomic18 closure and handoff-only SHA sync. No actual runtime admission/pins/namespace/Job/Native children/browser/container/listener/provider/credentials/delete. Source13/production7/oracles6/gen9/original release/source authority and prior controls immutable; old5 programs/52 starts closed, no replay/refill. Same root NCR_HTML_CONFIGURED_RECEIPT_CONTROL_PROOF/SCEC2/counters2,0,2,0/blockers2/freeze; no transition/independentCriticalEvidence. Prior7 P4 exclusions retained, normal collector only; R1/R2partial,R3/R4open,R5/R6deferred, foundation active/extension NOT_APPLIED/projectOPEN; parked effects/LHW24 retained. Pre-edit authority amendment fixes counter-lock persistence and worker-before-Local probe order; renewed bound dispatch required, slots0 and deadlines unchanged.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=ASSESS; BATCH_ID=CVF-NCR-HTML-B-E-ADJUNCT-SOURCE-20261016. WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md; completion=docs/reviews/CVF_NCR_HTML_B_E_ADJUNCT_SOURCE_COMPLETION_2026-10-16.md; Local proof=docs/reviews/evidence/ncr-html-b-e-adjunct-source-local-20261016.json. Five adjunct files implemented; worker Python35/JS30 and full gate PASS, exact7 frozen. Independent Local JS18 PASS; Python fixture lacks Sink.mkdir before endpoint runner, so admission/marker group unexecuted and acceptance BLOCKED. Local2/2 fake programs spent; worker2/6, remaining4 not transferable; no retry/refill/reset or source release. Next Local static diagnostic/consolidated evidence-recovery disposition only, no new test/worker/Native/browser/container/provider/delete starts. Source13/production7/oracles6/gen9/original release/source authority/control receipts immutable; old5 programs/52 starts closed, no replay. Same root NCR_HTML_CONFIGURED_RECEIPT_CONTROL_PROOF/SCEC2/counters2,0,2,0/blockers2/freeze/prior7 P4 exclusions, normal collector only; no transition/independentCriticalEvidence. R1/R2partial,R3/R4open,R5/R6deferred; foundationactive/extensionNOT_APPLIED/projectOPEN and parked effects/LHW24 retained.
 
 ## Parked Checkpoints
 

@@ -1,0 +1,390 @@
+{
+  "schemaVersion": "cvf.ncrHtmlBEAdjunctSourceWorkerEvidence@1",
+  "executionBaseHead": "16636960c36db619af0f4788e56f51d67e6704a6",
+  "dispatchWorkOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md",
+  "dispatchWorkOrderSha256": "f9f1006c38c33c0426f2ca2cd76e0abd5063024609bbae7e09ed777b7087b131",
+  "actor": "INTERNAL_AGENT_IMPLEMENTATION_WORKER",
+  "providerExecutionAuthority": "FORBIDDEN",
+  "status": "COMPLETE_PENDING_REVIEW",
+  "source5": [
+    {
+      "path": "scripts/cvf_ncr_html_effect_fence.py",
+      "sha256": "086668fd5daae6f2f52feeb3e94a30262fb031c840b627a9a717e7b0f9ca6fde",
+      "bytes": 11707,
+      "lines": 243
+    },
+    {
+      "path": "scripts/run_cvf_ncr_html_effect_driver.py",
+      "sha256": "b67d1b27983d5bf21c64f11bac45a066bd8c9427bc3f539bc7b3bfdb3294c3bf",
+      "bytes": 12783,
+      "lines": 221
+    },
+    {
+      "path": "scripts/test_cvf_ncr_html_effect_driver.py",
+      "sha256": "80236c0e191721eb6e5f74effb1e031a10d5226753dc8588cc6c3ce99fb9f4d2",
+      "bytes": 15467,
+      "lines": 292
+    },
+    {
+      "path": "scripts/cvf_ncr_html_browser_fence.cjs",
+      "sha256": "5558933ac9c1702555af598b6275d00428300b960b29adc15a0bec1adec4d9a6",
+      "bytes": 7796,
+      "lines": 125
+    },
+    {
+      "path": "scripts/cvf_ncr_html_browser_fence.test.cjs",
+      "sha256": "24adfa5f9d46a290a7a4820db84e5fbbfaec05daf7c2046fe043b1e450ea23bf",
+      "bytes": 8519,
+      "lines": 124
+    }
+  ],
+  "source13": [
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/__init__.py",
+      "sha256": "de4221c23be9051a158cf85cbfd51e89a798b1726affa9ba27f0b207d34b70f6",
+      "bytes": 21484,
+      "lines": 325,
+      "expectedSha256": "de4221c23be9051a158cf85cbfd51e89a798b1726affa9ba27f0b207d34b70f6",
+      "matches": true
+    },
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/lifecycle.py",
+      "sha256": "c4fab8696982227bc202ae969d72f193448e504ca4a6d7d579e609dbd7764605",
+      "bytes": 17745,
+      "lines": 343,
+      "expectedSha256": "c4fab8696982227bc202ae969d72f193448e504ca4a6d7d579e609dbd7764605",
+      "matches": true
+    },
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/profile.py",
+      "sha256": "77a0d032b1d402c5be8890353718ee057fd72633027c4864a0030ecf93fafa96",
+      "bytes": 19512,
+      "lines": 304,
+      "expectedSha256": "77a0d032b1d402c5be8890353718ee057fd72633027c4864a0030ecf93fafa96",
+      "matches": true
+    },
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/test_control.py",
+      "sha256": "829f6f28863a945e6c8a889332d82ff01875bce769efe0696df70c1caa09243c",
+      "bytes": 19452,
+      "lines": 306,
+      "expectedSha256": "829f6f28863a945e6c8a889332d82ff01875bce769efe0696df70c1caa09243c",
+      "matches": true
+    },
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/journey.cjs",
+      "sha256": "f76b6d0fec14f2d208fee63004aec2b7211799e5d37160e414633e9dd15d69e0",
+      "bytes": 16755,
+      "lines": 258,
+      "expectedSha256": "f76b6d0fec14f2d208fee63004aec2b7211799e5d37160e414633e9dd15d69e0",
+      "matches": true
+    },
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/journey.test.cjs",
+      "sha256": "a36539cd8021d8ccc2407e7d3c4edaead49fd01d8525dd460ec43752c0d8a66e",
+      "bytes": 18617,
+      "lines": 240,
+      "expectedSha256": "a36539cd8021d8ccc2407e7d3c4edaead49fd01d8525dd460ec43752c0d8a66e",
+      "matches": true
+    },
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/execution.py",
+      "sha256": "937d7d726f33b1d801936370d3771ca86feaacdc243364bd10331e17d810fc4d",
+      "bytes": 19539,
+      "lines": 348,
+      "expectedSha256": "937d7d726f33b1d801936370d3771ca86feaacdc243364bd10331e17d810fc4d",
+      "matches": true
+    },
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/test_execution.py",
+      "sha256": "7a352621b1a9db2a0a9978edd23c9ca4acb82386a3d5eacc583479fcfdc70357",
+      "bytes": 22493,
+      "lines": 333,
+      "expectedSha256": "7a352621b1a9db2a0a9978edd23c9ca4acb82386a3d5eacc583479fcfdc70357",
+      "matches": true
+    },
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/protocol.py",
+      "sha256": "7f14b3e57efe30912418be1add87d43069b914906476d5820b255120924e4277",
+      "bytes": 12809,
+      "lines": 276,
+      "expectedSha256": "7f14b3e57efe30912418be1add87d43069b914906476d5820b255120924e4277",
+      "matches": true
+    },
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/test_protocol.py",
+      "sha256": "4efa78090505b69e1fbc4e95359cc086764b228726554a0fc31a94324d97e7ba",
+      "bytes": 19451,
+      "lines": 343,
+      "expectedSha256": "4efa78090505b69e1fbc4e95359cc086764b228726554a0fc31a94324d97e7ba",
+      "matches": true
+    },
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/test_win32.py",
+      "sha256": "ad249cfada2737ed038e2468854996417a0c8d4e8fbf16562695532dfc9f9228",
+      "bytes": 9499,
+      "lines": 258,
+      "expectedSha256": "ad249cfada2737ed038e2468854996417a0c8d4e8fbf16562695532dfc9f9228",
+      "matches": true
+    },
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/test_admission.py",
+      "sha256": "e9d7c6efa93ef0e326312426fd2b85eef94b0a43c838336d775288d275959702",
+      "bytes": 13104,
+      "lines": 311,
+      "expectedSha256": "e9d7c6efa93ef0e326312426fd2b85eef94b0a43c838336d775288d275959702",
+      "matches": true
+    },
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/source_release.py",
+      "sha256": "4d694c4066f93f317b5bbea76bb876bb1555482b471b38d36f87250ca142878b",
+      "bytes": 6030,
+      "lines": 124,
+      "expectedSha256": "4d694c4066f93f317b5bbea76bb876bb1555482b471b38d36f87250ca142878b",
+      "matches": true
+    }
+  ],
+  "source13AllMatch": true,
+  "sourceRelease": {
+    "path": "docs/reviews/evidence/ncr-html-source-release-20261016.json",
+    "sha256": "d1a591633d144bacf0c5ffa8afc019b981b2b587e8512dd3ac549a1681397fc5",
+    "bytes": 3151,
+    "lines": 40
+  },
+  "sourceAuthority": [
+    {
+      "path": "docs/baselines/CVF_GC018_NCR_HTML_SOURCE_ADMISSION_2026-10-16.md",
+      "sha256": "1c33647040bc57cd32a6edb27533d7d728158b18660dbcf87a3ae0b89dfa1056",
+      "bytes": 16528,
+      "lines": 221
+    },
+    {
+      "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_SOURCE_ADMISSION_2026-10-16.md",
+      "sha256": "028da14681111f8dd7effd3ee9901142949a0328434f5de35e3ca9b4a850afd9",
+      "bytes": 55297,
+      "lines": 875
+    }
+  ],
+  "programsConsumed": 2,
+  "programCeiling": 6,
+  "programs": [
+    {
+      "reconciledAccountingOrdinal": 1,
+      "originalFaultySlotLabel": 1,
+      "name": "python",
+      "command": [
+        "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "-B",
+        "-m",
+        "pytest",
+        "scripts/test_cvf_ncr_html_effect_driver.py",
+        "-q",
+        "-p",
+        "no:cacheprovider"
+      ],
+      "timeoutSeconds": 90,
+      "elapsedSeconds": 0.61,
+      "exitCode": 0,
+      "watchdogExpired": false,
+      "passed": 35,
+      "failed": 0,
+      "stdout": {
+        "path": ".cvf/runtime/ncr-be-adjunct-source-20261016/worker-slot-1-python.stdout",
+        "sha256": "bed962cc017bdedccbca3ce69bba4662f01cfbe7a51bd8e4cac45441c164e4b4",
+        "bytes": 101,
+        "lines": 2
+      },
+      "stderr": {
+        "path": ".cvf/runtime/ncr-be-adjunct-source-20261016/worker-slot-1-python.stderr",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0,
+        "lines": 0
+      }
+    },
+    {
+      "reconciledAccountingOrdinal": 2,
+      "originalFaultySlotLabel": 1,
+      "name": "node",
+      "command": [
+        "node",
+        "scripts/cvf_ncr_html_browser_fence.test.cjs"
+      ],
+      "timeoutSeconds": 90,
+      "elapsedSeconds": 0.125,
+      "exitCode": 0,
+      "watchdogExpired": false,
+      "passed": 30,
+      "failed": 0,
+      "stdout": {
+        "path": ".cvf/runtime/ncr-be-adjunct-source-20261016/worker-slot-1-node.stdout",
+        "sha256": "a486812609f41fe109d3e2b89e4624d5f06fbc88ca658d6a37fe086c624074f9",
+        "bytes": 1336,
+        "lines": 31
+      },
+      "stderr": {
+        "path": ".cvf/runtime/ncr-be-adjunct-source-20261016/worker-slot-1-node.stderr",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0,
+        "lines": 0
+      }
+    }
+  ],
+  "effects": {
+    "native": 0,
+    "job": 0,
+    "childrenWithinProof": 0,
+    "browser": 0,
+    "network": 0,
+    "container": 0,
+    "provider": 0,
+    "credentials": 0,
+    "runtimeMarker": 0
+  },
+  "acceptanceEvidence": {
+    "schemaVersion": "cvf.workOrderAcceptanceEvidence@1.0.0",
+    "executionBaseHead": "16636960c36db619af0f4788e56f51d67e6704a6",
+    "results": [
+      {
+        "requirementId": "REQ-COUNTER",
+        "actualArtifacts": [
+          "scripts/cvf_ncr_html_effect_fence.py",
+          "scripts/test_cvf_ncr_html_effect_driver.py"
+        ],
+        "proofRefs": [
+          "PROOF-COUNTER"
+        ],
+        "status": "PASS"
+      },
+      {
+        "requirementId": "REQ-IDENTITY",
+        "actualArtifacts": [
+          "scripts/cvf_ncr_html_effect_fence.py",
+          "scripts/test_cvf_ncr_html_effect_driver.py"
+        ],
+        "proofRefs": [
+          "PROOF-IDENTITY"
+        ],
+        "status": "PASS"
+      },
+      {
+        "requirementId": "REQ-BROWSER",
+        "actualArtifacts": [
+          "scripts/cvf_ncr_html_browser_fence.cjs",
+          "scripts/cvf_ncr_html_browser_fence.test.cjs"
+        ],
+        "proofRefs": [
+          "PROOF-BROWSER"
+        ],
+        "status": "PASS"
+      },
+      {
+        "requirementId": "REQ-ADMISSION",
+        "actualArtifacts": [
+          "scripts/run_cvf_ncr_html_effect_driver.py",
+          "scripts/test_cvf_ncr_html_effect_driver.py"
+        ],
+        "proofRefs": [
+          "PROOF-ADMISSION"
+        ],
+        "status": "PASS"
+      },
+      {
+        "requirementId": "REQ-PRESERVE",
+        "actualArtifacts": [
+          "scripts/cvf_ncr_html_effect_fence.py",
+          "scripts/run_cvf_ncr_html_effect_driver.py",
+          "scripts/cvf_ncr_html_browser_fence.cjs"
+        ],
+        "proofRefs": [
+          "PROOF-PRESERVE"
+        ],
+        "status": "PASS"
+      },
+      {
+        "requirementId": "REQ-RETURN",
+        "actualArtifacts": [
+          "docs/reviews/CVF_NCR_HTML_B_E_ADJUNCT_SOURCE_WORKER_RETURN_2026-10-16.md",
+          "docs/reviews/evidence/ncr-html-b-e-adjunct-source-worker-20261016.json"
+        ],
+        "proofRefs": [
+          "PROOF-RETURN"
+        ],
+        "status": "PASS"
+      }
+    ]
+  },
+  "proofs": {
+    "PROOF-COUNTER": {
+      "kind": "COMMAND",
+      "locator": "Python fake source-program receipt for charged work and cleanup boundaries",
+      "evidence": ".cvf/runtime/ncr-be-adjunct-source-20261016/worker-slot-1-python.stdout"
+    },
+    "PROOF-IDENTITY": {
+      "kind": "COMMAND",
+      "locator": "Python fake source-program receipt for frame, endpoint, marker and refusal boundaries",
+      "evidence": ".cvf/runtime/ncr-be-adjunct-source-20261016/worker-slot-1-python.stdout"
+    },
+    "PROOF-BROWSER": {
+      "kind": "COMMAND",
+      "locator": "Plain-node fake Chromium/browser-helper source-program receipt",
+      "evidence": ".cvf/runtime/ncr-be-adjunct-source-20261016/worker-slot-1-node.stdout"
+    },
+    "PROOF-ADMISSION": {
+      "kind": "COMMAND",
+      "locator": "Python fake source-program receipt for closed admission, run marker and scoped restore",
+      "evidence": ".cvf/runtime/ncr-be-adjunct-source-20261016/worker-slot-1-python.stdout"
+    },
+    "PROOF-PRESERVE": {
+      "kind": "COMMAND",
+      "locator": "Fake-source receipts for original grant/delegation and terminal joins",
+      "evidence": ".cvf/runtime/ncr-be-adjunct-source-20261016/worker-slot-1-python.stdout"
+    },
+    "PROOF-RETURN": {
+      "kind": "COMMAND",
+      "locator": "Evidence joins, final fast gate, clean manifest and no-commit statement",
+      "evidence": ".cvf/runtime/ncr-be-adjunct-source-20261016/worker-full-fast-final.log"
+    }
+  },
+  "preparationDisposition": "PARTIAL_WITH_REASON: truncated grouped reads followed by targeted reads; later return-specific operative predicates read before return authoring",
+  "procedure": [
+    "Original pre-edit packet contradictions yielded clean; Local amended and renewed release.",
+    "Two focused commands mistakenly ran concurrently against one non-atomic metadata ledger; both raw receipts retained and reconciled without rerun."
+  ],
+  "manualGitOperationsAtPackaging": 8,
+  "manualGitScope": "Worker explicit commands only; gate internals separate. Final detached status/HEAD checks add2 for total10.",
+  "fullGateHistory": [
+    {
+      "path": ".cvf/runtime/ncr-be-adjunct-source-20261016/worker-full-fast-candidate.log",
+      "sha256": "65f8e917993cc00914dd41d224577131b8ee9031f9b12330ea53b6c576f76cdf",
+      "result": "FAIL"
+    },
+    {
+      "path": ".cvf/runtime/ncr-be-adjunct-source-20261016/worker-full-fast-candidate2.log",
+      "sha256": "bd2dc13bd0e825982fb7d7bb1751d423217fb2d69f1918d5d6558630e47e2d5c",
+      "result": "FAIL"
+    },
+    {
+      "path": ".cvf/runtime/ncr-be-adjunct-source-20261016/worker-full-fast-candidate3.log",
+      "sha256": "e1dd797ffcad110e9bbd8623fbe2f5d45906cc1e6ca2f22a354a764306aa8111",
+      "result": "PASS"
+    },
+    {
+      "path": ".cvf/runtime/ncr-be-adjunct-source-20261016/worker-full-fast-final-attempt1.log",
+      "sha256": "a2d11921efcf1921f215d5830819ec6101fda343d279b6fa495e28cc7ab2ed62",
+      "result": "FAIL"
+    }
+  ],
+  "rootProjection": {
+    "generation": 9,
+    "scecOrdinal": 2,
+    "counters": [
+      2,
+      0,
+      2,
+      0
+    ],
+    "blockers": 2,
+    "freeze": "governance_kernel_freeze_recommended"
+  },
+  "claimBoundary": "Source-only fake models; no runtime or AI governance proof. Full gate and final7 raw hashes recorded separately, avoiding self-hash cycle."
+}
