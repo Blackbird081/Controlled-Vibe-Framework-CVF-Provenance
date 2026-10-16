@@ -35,7 +35,7 @@ artifact.
 | Freeze posture | `governance_kernel_freeze_recommended` |
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_html_windows_qualification_accepted_bounded`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=plan fresh BE-R01 admission against accepted current identity; role=INTERNAL_AGENT Local reviewer/closer/steward; phase=MATERIAL; decision owner=LOCAL; parked checkpoint=cap1 actual/product/provider/deletion separately admitted, old grants retired; no generic operator checkpoint.
+Startup acknowledged: current mode=`cvf_ncr_html_windows_qualification_accepted_bounded`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=plan fresh BE-R01 admission against accepted current identity; role=INTERNAL_AGENT Local reviewer/closer/steward; phase=CONTINUITY; decision owner=LOCAL; parked checkpoint=cap1 actual/product/provider/deletion separately admitted, old grants retired; no generic operator checkpoint.
 
 ## Current Mode
 
@@ -46,7 +46,7 @@ Current mode: `cvf_ncr_html_windows_qualification_accepted_bounded`; previous mo
 
 Mode: `cvf_ncr_html_windows_qualification_accepted_bounded`
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-FRESH-BE-R01-ADMISSION-20261016. Current-source cap2 actual9/26 and Docker4 qualification accepted bounded with distinct Local PURE10; consume docs/reviews/CVF_NCR_HTML_WINDOWS_QUALIFICATION_COMPLETION_2026-10-16.md and docs/reviews/evidence/ncr-html-windows-qualification-local-20261016.json. BE-Q01 checked bounded, BE-R01/BE-R02 remain open. Next Local plans fresh separately admitted cap2 product invocation against immutable new source identity, no automatic EXECUTE. Cap1 actual waits for accepted future cap2 product predecessor. Source18/accepted source authority/release unchanged; no old-grant replay/provider/deletion or generic documentary operator checkpoint. gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 and R1/R2partial,R3/R4open,R5/R6deferred unchanged; old1spent/2retired never replayed. Material/actual-SHA continuity and clean split gates pending.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-FRESH-BE-R01-ADMISSION-20261016. Current-source cap2 actual9/26 and Docker4 qualification accepted bounded with distinct Local PURE10; consume docs/reviews/CVF_NCR_HTML_WINDOWS_QUALIFICATION_COMPLETION_2026-10-16.md and docs/reviews/evidence/ncr-html-windows-qualification-local-20261016.json. BE-Q01 checked bounded, BE-R01/BE-R02 remain open. Next Local plans fresh separately admitted cap2 product invocation against immutable new source identity, no automatic EXECUTE. Cap1 actual waits for accepted future cap2 product predecessor. Source18/accepted source authority/release unchanged; no old-grant replay/provider/deletion or generic documentary operator checkpoint. gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 and R1/R2partial,R3/R4open,R5/R6deferred unchanged; old1spent/2retired never replayed. Qualification material 0a865bdfd3019351791d19fbaa2cae1ee3d3d913 committed; exact6 actual-material-SHA continuity prepared; clean split gates pending.
 
 ## Parked Checkpoints
 

@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_WINDOWS_QUALIFICATION_2026-10-16.md",
     "workOrderSha256": "4d1c34f7cd71367d0ff5d1df9d9b9bcbda5a5a7250f2e9427d26167bd54eb1f6"
   },
-  "currentAuthoritySyncReason": "Bounded qualification material; source18/source authority/release immutable; BE-R01/R02 open.",
+  "currentAuthoritySyncReason": "Bounded qualification continuity; source18/source authority/release immutable; BE-R01/R02 open.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
