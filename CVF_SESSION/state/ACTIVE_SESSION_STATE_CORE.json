@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R1D_RUNTIME_2026-10-17.md",
     "workOrderSha256": "4091a828d721a920e65e8d962ba5abadf4f27127c540f4c1342ce2f7ae479317"
   },
-  "currentAuthoritySyncReason": "Fresh first-result material: BE-R01 spent blocked first result: worker=BLOCKED_WITH_REASON; independent oracle=REJECTED_NOT_ACCEPTED; program/result acceptance=False; exhausted grant, source identity unchanged.",
+  "currentAuthoritySyncReason": "Fresh first-result continuity: BE-R01 spent blocked first result: worker=BLOCKED_WITH_REASON; independent oracle=REJECTED_NOT_ACCEPTED; program/result acceptance=False; exhausted grant, source identity unchanged.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
