@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Current NCR Continuation
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `e6de9ae45d3da60315a71d6c5219cdcea62a1437`. Material SHA: `e6de9ae45d3da60315a71d6c5219cdcea62a1437`. Batch ID: CVF-NCR-HTML-SOURCE-ADMISSION-20261016. Source-only worker packet is committed; bound dispatch gate remains pending.
+Current HEAD recorded for this handoff: `1c8825f3fa96b08a4e80a73d6ec037caca6d9632`. Material SHA: `1c8825f3fa96b08a4e80a73d6ec037caca6d9632`. Batch ID: CVF-NCR-HTML-SOURCE-ADMISSION-20261016. Source identity accepted bounded/procedure partial; actual clean committed admission PASS; B-E runtime remains open.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -21,7 +21,7 @@ Startup acknowledged: current mode=`cvf_ncr_html_source_admission_accepted_b_e_c
 
 ## Current Mode
 
-`cvf_ncr_html_source_admission_accepted_b_e_controls_open`. Source13/production7/oracles6 accepted bounded; source generation9, existing SCEC2/counters2,0,2,0/two blockers/freeze retained. Full B-E/parent/disposal unproved. Actual material SHA enters this handoff after commit; no predicted SHA.
+`cvf_ncr_html_source_admission_accepted_b_e_controls_open`. Source13/production7/oracles6 accepted bounded; source generation9, existing SCEC2/counters2,0,2,0/two blockers/freeze retained. Full B-E/parent/disposal unproved. Actual material `1c8825f3fa96b08a4e80a73d6ec037caca6d9632`; clean committed admission PASS source13/production7/oracles6; receipt `.cvf/runtime/ncr-source-admission-20261016/committed-admission.stdout.json`, raw SHA256 `1cc1b500f419ef362adeb4c59c71f7b695631859dac91a5695149d9640d1db63`. Watchdog0.766s/exit0/no expiry/stderr empty. Actual old cap1 receipt read-only validation refused stale production/oracle hashes; canonical digest9fde97a251da6a94a8df86e337819b04a43e6e683e21bf8a3c44d55e77118e3c unchanged, no execution replay. Local3/3 source programs closed (distinct30/30, corrected test1/1, one committed metadata admission); worker4/6 used, unused slots retired. Actual runtime/native/provider/delete0; one tiny synthetic stage fixture only. Prior7 P4 exclusions and root counters/freeze retained.
 
 ## Current Authority
 
@@ -66,6 +66,8 @@ Q001/Q004 actual-data source/writer,custody,retention/RPO/RTO/cost checkpoints a
 NCR send/B2 STOP and S05/C1 remain; IAB unavailable; repo Playwright Chromium present. Canonical release bundle9/9 PASS on current sources with real Alibaba; full P04 and NCR R3/R4 remain open. No autonomous P11/public/deploy activation.
 ## P4 Post-Commit Safety Disposition
 
+Current source material `1c8825f3fa96b08a4e80a73d6ec037caca6d9632` normal automatic collector: SKIPPED_NO_ELIGIBLE_CANDIDATE. No manual collector rerun or prior7 block/exclusion promotion. Final handoff collector result is inspected separately.
+
 Current qualification material `db619cf48555ea1740973ed96cac0e72eafc35f7` normal collector: SKIPPED_NO_ELIGIBLE_CANDIDATE. No new observation or manual rerun; prior7 blocked/excluded rows remain unchanged.
 
 R5 OBS-c372468b81347dfa was exactly adjudicated after continuity16deaa8e9; record `.cvf/runtime/mfrp-p4-shadow-canary/adjudications/ncr-html-root-semantic-r5-rejection-marker-20261015.json`, SHA256 `b5570d8ff7a05ca7a0229ad12ee19ca8e9de52a53518f2133788842973844cb1`. Seven blocked-machine rows, FALSE_NEGATIVE and all exclusions preserved; only exact marker removed. Current direct Local source assessment is bounded implementation evidence, never a promotion of those old rows. Consume normal automatic collector result after this continuity; no manual collector rerun or manufactured success observation.
@@ -85,39 +87,34 @@ Historical conditional OBS-079b96e73400827c trusted BLOCKED/adjudication remains
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: exact6 closure-state alignment in atomic material18; final actual-SHA/result handoff-only sync; no checker/hook/carrier semantics.
+Authorized guard-maintenance scope: final active-handoff-only actual material SHA and committed source-read result; no checker/hook/carrier or generated state semantics.
 Protected paths:
 - `AGENT_HANDOFF_V63_2026-09-18.md`
-- `CVF_SESSION_MEMORY.md`
-- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/nextAllowedMove.json`
-- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-Operator authorization: current roadmap/full Local handling under rules, canonical closure choreography and same-commit completion authorization.
-Rollback boundary: exact18 source/review and aligned continuity only, then exact active handoff result sync; preserve raw failures/history, SCEC/root counters/freeze/P4 exclusions and parked effects.
+Operator authorization: current roadmap/full Local handling and same-commit source completion exact18/then handoff-only choreography.
+Rollback boundary: this single handoff result sync only; preserve material18, immutable source release, worker/Local failures and proof, source13, root counters/freeze/P4 exclusions and all parked effects.
 
 ## Agent Operation Trace Block
 
 | Field | Evidence |
 |---|---|
 | Actor | Local INTERNAL_AGENT reviewer/closer/steward |
-| Provider or surface | private shared workspace |
-| Session or invocation | ncr-source-admission-local-20261016 |
+| Provider or surface | private workspace |
+| Session or invocation | ncr-source-admission-handoff-sync-20261016 |
 | Working directory | repository root |
-| Command or tool surface | returned-evidence joins, distinct source probe, bounded oracle-map repair, frozen manifest, atomic closure state; final handoff-only SHA sync |
-| Target paths | `scripts/cvf_ncr_html_owned_profile/__init__.py`; `scripts/cvf_ncr_html_owned_profile/profile.py`; `scripts/cvf_ncr_html_owned_profile/test_admission.py`; `scripts/cvf_ncr_html_owned_profile/test_control.py`; `scripts/cvf_ncr_html_owned_profile/source_release.py`; `docs/reviews/CVF_NCR_HTML_SOURCE_ADMISSION_WORKER_RETURN_2026-10-16.md`; `docs/reviews/evidence/ncr-html-source-admission-worker-20261016.json`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_SOURCE_ADMISSION_2026-10-16.md`; `docs/reviews/CVF_NCR_HTML_SOURCE_ADMISSION_COMPLETION_2026-10-16.md`; `docs/reviews/evidence/ncr-html-source-admission-local-20261016.json`; `docs/reviews/evidence/ncr-html-source-release-20261016.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Allowed scope source | current operator full Local grant, paired baseline/order and closure amendment |
-| Before status evidence | clean execution base8b75bde52; worker exact7 returned unstaged |
-| After status evidence | source13 accepted bounded; exact18 atomic state aligned; no runtime effects |
-| Diff evidence | exact18 staged manifest; final handoff-only sync checked separately |
-| Approval boundary | source identity only; no B-E/provider/public/deploy effect grant |
-| Claim boundary | deterministic source identity model and raw pins, no whole journey proof |
+| Command or tool surface | one clean committed source read followed by active-handoff-only actual-SHA sync and split committed closure |
+| Target paths | `AGENT_HANDOFF_V63_2026-09-18.md` |
+| Allowed scope source | current Local grant and source completion choreography |
+| Before status evidence | clean exact18 material `1c8825f3fa96b08a4e80a73d6ec037caca6d9632`; actual source admission PASS on same HEAD |
+| After status evidence | exact1 handoff actual material/result sync; all other source/state bytes unchanged |
+| Diff evidence | exact1 staged manifest; material18 and handoff1 committed ranges separate |
+| Approval boundary | source identity metadata only; no B-E/provider/public/deploy effect grant |
+| Claim boundary | source admission PASS and old control refusal by read-only validation; no native/control replay or parent proof |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-source-admission-local-20261016 |
-| Expected manifest | `scripts/cvf_ncr_html_owned_profile/__init__.py`; `scripts/cvf_ncr_html_owned_profile/profile.py`; `scripts/cvf_ncr_html_owned_profile/test_admission.py`; `scripts/cvf_ncr_html_owned_profile/test_control.py`; `scripts/cvf_ncr_html_owned_profile/source_release.py`; `docs/reviews/CVF_NCR_HTML_SOURCE_ADMISSION_WORKER_RETURN_2026-10-16.md`; `docs/reviews/evidence/ncr-html-source-admission-worker-20261016.json`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_SOURCE_ADMISSION_2026-10-16.md`; `docs/reviews/CVF_NCR_HTML_SOURCE_ADMISSION_COMPLETION_2026-10-16.md`; `docs/reviews/evidence/ncr-html-source-admission-local-20261016.json`; `docs/reviews/evidence/ncr-html-source-release-20261016.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Actual changed set | `scripts/cvf_ncr_html_owned_profile/__init__.py`; `scripts/cvf_ncr_html_owned_profile/profile.py`; `scripts/cvf_ncr_html_owned_profile/test_admission.py`; `scripts/cvf_ncr_html_owned_profile/test_control.py`; `scripts/cvf_ncr_html_owned_profile/source_release.py`; `docs/reviews/CVF_NCR_HTML_SOURCE_ADMISSION_WORKER_RETURN_2026-10-16.md`; `docs/reviews/evidence/ncr-html-source-admission-worker-20261016.json`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_SOURCE_ADMISSION_2026-10-16.md`; `docs/reviews/CVF_NCR_HTML_SOURCE_ADMISSION_COMPLETION_2026-10-16.md`; `docs/reviews/evidence/ncr-html-source-admission-local-20261016.json`; `docs/reviews/evidence/ncr-html-source-release-20261016.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Manifest delta | MATCH exact18; final handoff-only sync separate |
-| Deletion or rename disposition | none; all custody and failed evidence retained |
+| Invocation ID | ncr-source-admission-handoff-sync-20261016 |
+| Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md` |
+| Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md` |
+| Manifest delta | MATCH exact1 |
+| Deletion or rename disposition | none; all custody retained |
 
 ## Claim Boundary
 Current facts, exact packet binding and permitted next action only. Historical Home/O6 evidence remains bounded; no whole-roadmap, live/provider, backend cancellation, release/public/deployment or model-winner claim.
