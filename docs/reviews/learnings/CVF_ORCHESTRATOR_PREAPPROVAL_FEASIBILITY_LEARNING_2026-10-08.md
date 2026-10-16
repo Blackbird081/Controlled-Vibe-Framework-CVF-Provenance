@@ -9,7 +9,7 @@ rawMemoryReleased=false
 providerExecutionAuthority: FORBIDDEN
 Source project: private CVF NCR C1
 Source revision: c67e9a7b1f02b99cf14565c527a63ad830bc2e46
-Updated: 2026-10-08
+Updated: 2026-10-16
 
 parentFindingId: NCR-LEARNING-APPLICATION-OBSERVABILITY
 
@@ -84,6 +84,8 @@ Related records: Outcome-Bound Continuation already owns fragment selection/prem
 | O5 reference proposal has no automatic prospective-state join | MACHINE_GATE_GAP | GOVERNANCE_CONTROL_PLANE | MACHINE_CHECK_CANDIDATE | design opt-in proposal binding to existing canonical validator and preapproval caller;cases below | deferred,not implemented |
 | O6 released packet cannot compose its bound return route | MACHINE_GATE_GAP | GOVERNANCE_CONTROL_PLANE | MACHINE_CHECK_ADDED | existing preapproval evaluator uses production return parser/command builder before FEASIBLE; exact bindings required | implemented; deterministic route tests, no source release |
 | prior fragmented continuation or worker/source incidents | ORCHESTRATOR_PACKET_GAP | GOVERNANCE_CONTROL_PLANE | RULE_EXISTS | existing outcome/context records and original worker classifications;no new endpoint/worker rerun | handled dedup/attribution |
+
+| O10-O14 October16 return-route recurrence, packet/platform/command/outcome gaps | ORCHESTRATOR_PACKET_GAP | GOVERNANCE_CONTROL_PLANE | RULE_EXISTS | consume Runtime Recurrence And Application Gap; next concrete dispatch binds action/verification and real receiving result | recorded; extension application/effectiveness NOT_PROVEN |
 
 Runtime/provider/cost learning: N/A_WITH_REASON - this audit makes no AI-governance runtime claim or cost measurement. No live/API/network/source/native fixture proof required or performed.
 
@@ -560,7 +562,7 @@ No runtime/source-control test was repeated. The actual failure is retained and
 split closure will be checked after the tree is clean. Earlier Local R4 packaging
 and probe-sentinel errors remain in its negative review; preparation stays partial.
 
-## Agent Operation Trace Block
+## Historical Foundation Integration Operation Trace
 
 | Field | Evidence |
 |---|---|
@@ -582,3 +584,72 @@ and probe-sentinel errors remain in its negative review; preparation stays parti
 | Actual changed set | `docs/reference/work_order_template/CVF_WORK_ORDER_SOURCE_VERIFICATION_ADDENDUM.md`; `docs/reference/work_order_template/CVF_WORK_ORDER_ACCEPTANCE_LEDGER_ADDENDUM.md`; `docs/reference/CVF_AGENT_EXECUTION_WORKFLOW_SOP_2026-05-19.md`; `docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md`; `docs/reference/downstream_gate_profile/downstream_finding_intake_registry.json`; `docs/reviews/evidence/ncr-constructive-closeability-learning-20261015.json` |
 | Manifest delta | MATCH six documentary paths |
 | Deletion or rename disposition | no tracked deletion/rename; isolated task worktree removed only after custody transfer and clean-state verification |
+
+## Runtime Recurrence And Application Gap - 2026-10-16
+
+Operator requires learning before further roadmap work. Local INTERNAL_AGENT orchestrator/reviewer owns this update and final disposition. This is a recurrence in application of existing learning, not an absent rule or an operator-authority problem. MERGE_INTO_EXISTING_OWNER; no new checker, intake or roadmap tranche.
+
+### Evidence And Attribution
+
+Selected negative outcome: `docs/reviews/CVF_NCR_HTML_B_E_RUNTIME_LOCAL_COMPLETION_2026-10-16.md` and `docs/reviews/evidence/ncr-html-b-e-runtime-local-20261016.json`. Companion `docs/reviews/evidence/cvf-orchestrator-runtime-recurrence-learning-20261016.json` raw SHA256 `388042be920086e8f2a5e34512b3d01fcf0bfb2fa57e0467d773b4747b885b8f` binds current canonical evidence, prior learning revision, exact six-commit sequence and secret-safe excerpts. The previous full bound worker-return attempt failed; subsequent repaired negative-retention gates never replace it.
+
+| Finding | Observed evidence / confidence | Local responsibility and limit |
+|---|---|---|
+| O10 return-route learning recurred | October8 O6 already names bare workerReturnPath; October16 frozen runtime order repeated it and the prescribed bound gate failed before checkers | existing opt-in preapproval construction was not established on this exact released packet; known parser requirement failed application. Do not claim the guard universally covers all orders or was bypassed without a caller trace |
+| O11 packet readiness discovered too late | first authoring reviewer-fast failed six packet-shape checks; later correction preceded effects | root did not consolidate applicable literal/manifest checks before writing/releasing the package; broad gate became discovery |
+| O12 critical Windows integration seams unproved | actual1 exited1 after21.781s; Web preload failed before browser; disposal refused a nested dependency junction | component/fake/native proof had narrower scope; source-to-command Windows encoding and traversal interaction were not demonstrated. Root-cause hypotheses remain inference, not reproduced correction |
+| O13 root command sequencing errors | canonical Local proof procedureLimitations retains control-receipt serialization mismatch, PowerShell backtick parsing and a helper assertion followed by an avoidable handoff commit | root owns shell/serialization/dependency handling; do not attribute these to worker model, Docker availability or operator approval |
+| O14 artifact closure displaced outcome | six recent commits, one actual runtime program, zero exports/evaluations and browser never launched; repository gates passed later | repository/evidence integrity PASS does not complete B-E; batching must follow the receiving outcome with explicit negative disposition |
+
+Docker context/pipe/cache/container health/network isolation were actually observed. The failed journey is not evidence of an unavailable daemon. Terminal ACK/raw joins and four ABSENT observations are real but accepted=false, child NOT_LAUNCHED and stage retention remain. Correctly stopping dependent actor2 is distinct from avoidable preparation defects. This task performs no runtime retry, source repair or disposal.
+
+### Value And Existing-Owner Disposition
+
+| Value check | Decision |
+|---|---|
+| Source confidence | immutable negative runtime/first decision, retained procedure limitations and exact historical learning revision; unknown cognition/time savings remain UNKNOWN |
+| Reusable mechanism | source -> actual invocation/environment -> packet/return -> terminal -> receiving outcome must compose before one-shot release |
+| Existing coverage | O4/O6, chain-first Error-To-Governance, lifecycle action readiness, existing production return parser and forward application binding; outcome-bound continuation remains the companion owner |
+| Incremental value | expose recurrence despite written/machine controls and bind the next task to observable actions; no duplicate semantic rule or checker campaign |
+| Bounded proof | known failed packet/run and zero functional outputs support application-gap classification; effectiveness of the correction is NOT_PROVEN |
+
+### Next Receiving Action And Verification
+
+Before the next source-correction dispatch, Local must consume this section and the blocked runtime proof, then put these concrete actions in the existing learning-application-plan-json binding for `NCR-LEARNING-APPLICATION-OBSERVABILITY` using the current exact control hash. A plan alone does not constitute an APPLICATION receipt.
+
+| Action | Verification required at the applicable admitted boundary |
+|---|---|
+| One consolidated chain review before packet freeze | join source owner, exact Windows invocation/environment, strict adjunct comparison, admitted-link traversal/refusal, authority, return-command construction and final receiving outcome; expose missing proof rather than accept generic PASS |
+| Cover real platform seams proportionally | under a prospective specific grant, exercise the actual Windows command/path and admitted-junction topology with meaningful refusal/containment cases; component success cannot substitute. Consume valid prior proof at its exact scope; no duplicate old suite or spent-run replay |
+| Construct the mandatory return route before release | use the production parser/command builder on the exact candidate packet; exact single backticked workerReturnPath and bound downstream commands must compose. Construction is static feasibility, not downstream success |
+| Stop dependent commands after failure | check every subprocess exit/assertion before mutation, commit or receipt copy; use file-based helpers for Markdown/backticks and owner serialization for hash joins; failed predecessor permits no dependent commit |
+| Close against the receiving result | separate authoring/gate/closure PASS from functional acceptance, retain first negative facts, batch related preparation, and record the actual accepted or blocked outcome |
+
+Current extension states: RECORDED; delivery NOT_RETURNED; application NOT_APPLIED; effectiveness NOT_PROVEN; project OPEN. October9 typed APPLIED/RETURNED evidence remains valid only for that older one-task observation. Its registry states are preserved, not reset or extended to October16. No new typed receipt or control implementation is claimed. The next receiving dispatch/result review must supply observed application evidence under the existing contract; simply rereading or binding this section is insufficient.
+
+### Continuity And Claim Boundary
+
+Learning/discovery/raw source pins are updated first; exact6 continuity then records the actual material SHA and this next application requirement. No roadmap advancement occurs in this task. Retired runtime pair, source13/adjunct5, generation9/SCEC2/counters2,0,2,0/blockers2/freeze, prior7 P4 exclusions and all parked effects remain unchanged. Required repository gates verify documentary integrity only; no AI governance/provider or product readiness claim.
+
+## Agent Operation Trace Block
+
+| Field | Evidence |
+|---|---|
+| Actor | Local INTERNAL_AGENT orchestrator/reviewer |
+| Provider or surface | private CVF shared workspace |
+| Session or invocation | ncr-orchestrator-learning-20261016 |
+| Working directory | repository root |
+| Command or tool surface | selected canonical evidence read, source-pin refresh, normal documentary gates/commits |
+| Target paths | `docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md`; `docs/reviews/learnings/README.md`; `docs/reference/downstream_gate_profile/downstream_finding_intake_registry.json`; `docs/reviews/evidence/cvf-orchestrator-runtime-recurrence-learning-20261016.json` |
+| Allowed scope source | operator explicitly requires learning before roadmap; standing Local maintenance/commit authority |
+| Before status evidence | clean acc39ae824d59f676b05d7f1c5e1d0b094c0b8b3; actual runtime BLOCKED; October8 O6 already recorded |
+| After status evidence | recurrence and next receiving actions recorded; current extension application NOT_APPLIED/effectiveness NOT_PROVEN |
+| Diff evidence | exact4 material paths; no implementation or roadmap change |
+| Approval boundary | learning/discovery maintenance only; old runtime grants retired |
+| Claim boundary | documentary integrity; no future agent adherence or functional success |
+| Agent type | INTERNAL_AGENT |
+| Invocation ID | ncr-orchestrator-learning-20261016 |
+| Expected manifest | `docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md`; `docs/reviews/learnings/README.md`; `docs/reference/downstream_gate_profile/downstream_finding_intake_registry.json`; `docs/reviews/evidence/cvf-orchestrator-runtime-recurrence-learning-20261016.json` |
+| Actual changed set | `docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md`; `docs/reviews/learnings/README.md`; `docs/reference/downstream_gate_profile/downstream_finding_intake_registry.json`; `docs/reviews/evidence/cvf-orchestrator-runtime-recurrence-learning-20261016.json` |
+| Manifest delta | MATCH four documentary paths |
+| Deletion or rename disposition | none; original proof, returns, stage and custody retained |

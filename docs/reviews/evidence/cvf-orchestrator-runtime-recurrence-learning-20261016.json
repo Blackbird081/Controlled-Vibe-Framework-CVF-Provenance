@@ -1,0 +1,122 @@
+{
+  "schemaVersion": "cvf.orchestratorRecurrenceLearning@1",
+  "date": "2026-10-16",
+  "baseHead": "acc39ae824d59f676b05d7f1c5e1d0b094c0b8b3",
+  "parentFindingId": "NCR-LEARNING-APPLICATION-OBSERVABILITY",
+  "role": "INTERNAL_AGENT_LOCAL_ORCHESTRATOR_REVIEWER",
+  "decisionOwner": "LOCAL",
+  "phase": "LEARNING_BEFORE_ROADMAP",
+  "selectedSources": [
+    {
+      "path": "docs/reviews/CVF_NCR_HTML_B_E_RUNTIME_LOCAL_COMPLETION_2026-10-16.md",
+      "sha256": "a181d908bffed6ad9e0b54e21afebd2a471e10a7c01a708b1c876e95945345e1"
+    },
+    {
+      "path": "docs/reviews/evidence/ncr-html-b-e-runtime-local-20261016.json",
+      "sha256": "42d8cf94a55ce14b888fa1ed0db957936333ebae6f8e6079fe542de6abe8a7d7"
+    },
+    {
+      "path": "docs/reviews/evidence/ncr-html-b-e-runtime-first-acceptance-20261016.json",
+      "sha256": "26402ea01438a0df484dce4ff35055e5d810b85a3faeeb77f94bd9d05975c6a5"
+    },
+    {
+      "path": "docs/reviews/CVF_NCR_HTML_B_E_RUNTIME_WORKER_RETURN_2026-10-16.md",
+      "sha256": "6832fee51417210ac46375e96ba7088e14a5fbcb30bf344cc11c59a6a3ef2d59"
+    },
+    {
+      "path": "docs/reviews/evidence/ncr-html-b-e-runtime-worker-20261016.json",
+      "sha256": "7242f15c8c9ccd828759703d7692215e7ef71ce34a5a0b235b9f0149f69af49b"
+    },
+    {
+      "path": "docs/reference/CVF_AGENT_ERROR_TO_GOVERNANCE_LEARNING_PHILOSOPHY_2026-05-28.md",
+      "sha256": "43cf43c03420693ffad5a098c65a8cd4a7c4035f03abbdaa8aba12eac81f6a38"
+    },
+    {
+      "path": "docs/reference/CVF_GOVERNED_WORK_LIFECYCLE_AND_DESIGN_CONTROL_STANDARD_2026-06-11.md",
+      "sha256": "b48f11363ee62a2ec4c85c6f9fba4540b90eb74475c31aeab18cfe4492a536de"
+    },
+    {
+      "path": "governance/compat/learning_application_binding.py",
+      "sha256": "84068b6f197c19404a23daa643266d7f9ed334f313cd2d8bbe2f2e6d37d7b7b8"
+    },
+    {
+      "path": "governance/compat/preapproval_feasibility_contract.py",
+      "sha256": "c351608f82d25ff99f3911c1f13c4990cf5a7ad9a886a23f946fa804010e346b"
+    },
+    {
+      "path": "governance/compat/run_worker_return_fast_gate.py",
+      "sha256": "8132cd26c46bb9a2c26e2dd86a13a45b07cdbbe822f62011adee1af6b801e8ee"
+    }
+  ],
+  "priorLearningSnapshot": {
+    "path": "docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md",
+    "revision": "acc39ae824d59f676b05d7f1c5e1d0b094c0b8b3",
+    "sha256": "946c7f0988e5ebbc9d26899934f016ce979903f55b51d9c13e057da0afa6758a",
+    "sections": [
+      "Bound Worker-Return Route Learning Update (2026-10-08)",
+      "Forward Application Control - 2026-10-09"
+    ]
+  },
+  "observations": {
+    "actualWorkerPrograms": 1,
+    "elapsedSeconds": 21.781,
+    "exitCode": 1,
+    "browserLaunched": false,
+    "exports": 0,
+    "evaluations": 0,
+    "firstAcceptance": false,
+    "actor2": "NOT_RELEASED_DEPENDENCY_FAILED",
+    "docker": "context/pipe/cache/container-health/network-isolation observed; not missing-daemon diagnosis",
+    "web": "MODULE_NOT_FOUND; observed Windows preload locator lost backslashes",
+    "disposal": "nested dependency junction refused; stage retained; no deletion",
+    "sourceDiagnosis": "INFERENCE_NOT_REPRODUCED_CORRECTION",
+    "terminal": "raw/ACK/fourABSENT joined; overall acceptedfalse/childNOT_LAUNCHED"
+  },
+  "procedureLimitations": [
+    "First authoring reviewer-fast failed6 packet-shape checks; consolidated repair preceded effects.",
+    "One preliminary handoff-only sync was committed after a helper assertion; exact6 subsequent sync corrected release before effects. Extra avoidable continuity commit retained.",
+    "Root metadata compact control-receipt recomputation assertion failed; sorted indent2 owner serialization corrected before target import. Exact empty parent/custody and unchanged pin bytes retained.",
+    "Root inline PowerShell backtick delimiter command failed metadata parsing; file-based helper corrected before target import.",
+    "Original worker mandatory gate failed dispatcher scalar; root negative retention sweep also found worker literals, corrected only text while original worker bytes remain captured.",
+    "Current actual outcome remains failed; no success, independent second actor or AI governance proof."
+  ],
+  "selectedCommitSequence": [
+    "acc39ae824d59f676b05d7f1c5e1d0b094c0b8b3 session(ncr): bind actual failed-runtime disposition and next source plan",
+    "4aad1e3481a98a948235101d5f214767617fabbb governance(ncr): retire failed B-E admission and bind source-correction plan",
+    "4f5d1e74a6fcc03f9fc5873347c1bc2959937979 evidence(ncr): preserve failed one-shot B-E runtime and blocked return",
+    "60c63e36dad86097637d1fd04404b846544b9617 session(ncr): synchronize all six B-E runtime release surfaces",
+    "efd40722846647fccb98c0cfb3e1d493824458af session(ncr): bind actual B-E dispatch material and actor bounds",
+    "27dff0217500bd81dd5b8ff0baa82a616e5b6ab4 governance(ncr): bind finite B-E runtime admission packet"
+  ],
+  "attribution": "Local packet preparation, invocation-chain review and command sequencing; no model/operator blame",
+  "disposition": "MERGE_INTO_EXISTING_OWNER_RULE_EXISTS_APPLICATION_GAP",
+  "extensionStates": {
+    "recording": "RECORDED",
+    "delivery": "NOT_RETURNED",
+    "application": "NOT_APPLIED",
+    "effectiveness": "NOT_PROVEN",
+    "projectResolution": "OPEN"
+  },
+  "limits": [
+    "Existing October9 APPLIED receipt retains its one-task scope; no new receipt or promotion.",
+    "Normal artifact gates and closure are not B-E runtime acceptance.",
+    "No source edits, live/provider call, runtime retry, daemon query or deletion in this learning task.",
+    "Selected evidence only; no complete corpus or every-line-read claim."
+  ],
+  "retainedLogExcerpts": [
+    {
+      "ownerLocalPath": ".cvf/runtime/ncr-be-runtime-admission-20261016/dispatch-reviewer-fast.log",
+      "sha256": "20f9f2810c8eaaad26ad2df868c05baf73bc8cc5c98ce446cc198b0b0a3afedc",
+      "bytes": 12618,
+      "excerpt": "[CVF hook] PASS [70/70] active session state compatibility (1.12s)\n[CVF hook] Parallel preflight failures:\n  - [8/70] task-proportional governance shadow route exited 1\n  - [10/70] markdown structural completeness exited 1\n  - [12/70] work-order dispatch quality exited 1\n  - [21/70] agent operation trace integrity exited 1\n  - [22/70] agent handoff boundary exited 1\n  - [39/70] foundation storage layout exited 1",
+      "authority": "Diagnostic snapshot only; governed Local proof is source of disposition"
+    },
+    {
+      "ownerLocalPath": ".cvf/runtime/ncr-be-runtime-admission-20261016/worker-return-fast-gate.log",
+      "sha256": "ad9eff6dd65d744ebf2e2f83cd6cc8f0f7fe04cb2e17c03ef1ba3463acc7c803",
+      "bytes": 1269,
+      "excerpt": "=== CVF Worker Return Fast Gate ===\nPurpose: fail early on worker-return defects before full closure gates.\nTraceback (most recent call last):\n  File \"D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\governance\\compat\\run_worker_return_fast_gate.py\", line 258, in <module>\n    sys.exit(main())\n             ^^^^^^\n  File \"D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\governance\\compat\\run_worker_return_fast_gate.py\", line 246, in main\n    for command in build_commands(tuple(args.pytest_target), args.active_work_order):\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\governance\\compat\\run_worker_return_fast_gate.py\", line 135, in build_commands\n    _worker_return_path(active_work_order, repo_root=repo_root, work_order_text=work_order_text),\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\governance\\compat\\run_worker_return_fast_gate.py\", line 40, in _worker_return_path\n    raise ValueError(\"active work order lacks an exact workerReturnPath\")\nValueError: active work order lacks an exact workerReturnPath",
+      "authority": "Diagnostic snapshot only; governed Local proof is source of disposition"
+    }
+  ]
+}
